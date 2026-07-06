@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/home/Hero";
+import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
 import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
 import LearningPath from "@/components/home/LearningPath";
@@ -12,10 +12,10 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Features />
+        <PhysicsSimulationHero />
         <PhysicsEverywhere />
         <LearningPath />
+        <Features />
         <AboutFounder />
         <Testimonials />
       </main>
