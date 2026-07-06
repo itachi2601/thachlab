@@ -5,6 +5,12 @@ const traits = [
   { label: "Rèn luyện", value: "Gym mỗi ngày" },
 ];
 
+const socials = [
+  { label: "Facebook", href: "https://www.facebook.com/ngodieuthach" },
+  { label: "Instagram", href: "https://www.instagram.com/ngo_dieu_thach" },
+  { label: "TikTok", href: "https://www.tiktok.com/@ngo_dieu_thach" },
+];
+
 export default function AboutFounder() {
   return (
     <section id="about" className="py-24 lg:py-32">
@@ -15,14 +21,18 @@ export default function AboutFounder() {
               Người sáng lập
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Một giáo viên Vật lý, một người luôn đặt câu hỏi.
+              Sống giữa phương trình và chuyển động.
             </h2>
+            <p className="mt-3 font-mono text-sm text-muted">
+              Living between equation and motion.
+            </p>
             <p className="mt-6 text-base leading-relaxed text-muted">
-              ThachLab được sáng lập bởi một giáo viên Vật lý trực tiếp giảng
-              dạy KHTN 9 và chương trình THPT. Với niềm yêu thích cơ khí chế
-              tạo, những giờ trên đường trượt băng tốc độ và phòng gym, mọi bài
-              giảng đều bắt nguồn từ một điều đơn giản: mỗi bài học nên bắt
-              đầu bằng một câu hỏi.
+              ThachLab được sáng lập bởi thầy Thạch — giáo viên trực tiếp giảng
+              dạy KHTN 9 và Vật lý THPT. Với niềm yêu thích cơ khí chế tạo,
+              những giờ trên đường trượt băng tốc độ và phòng gym, thầy tin
+              rằng dạy học và sống đẹp là một: sống khỏe mạnh, có đam mê, và
+              không ngừng học hỏi. Mỗi bài giảng đều bắt nguồn từ một điều đơn
+              giản — mỗi bài học nên bắt đầu bằng một câu hỏi.
             </p>
 
             <blockquote className="mt-8 border-l-2 border-accent pl-6">
@@ -30,6 +40,23 @@ export default function AboutFounder() {
                 &ldquo;Hiểu bản chất, không học thuộc công thức.&rdquo;
               </p>
             </blockquote>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-line bg-white px-5 py-2 text-sm font-medium text-ink transition-colors hover:border-primary/40 hover:text-primary"
+                >
+                  {s.label}
+                </a>
+              ))}
+              <span className="text-sm text-muted">
+                3.300+ người theo dõi trên Facebook
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -52,7 +79,8 @@ export default function AboutFounder() {
                 Triết lý giảng dạy
               </p>
               <p className="mt-2 font-display text-lg font-semibold text-white">
-                Mỗi bài học bắt đầu bằng một câu hỏi.
+                Passionate teaching can inspire students — dạy bằng đam mê để
+                truyền cảm hứng.
               </p>
             </div>
           </div>

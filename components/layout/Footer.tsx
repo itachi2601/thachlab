@@ -1,15 +1,28 @@
 const columns = [
   {
     title: "Khóa học",
-    links: ["Vật lý 10", "Vật lý 11", "Vật lý 12", "Luyện đề THPT"],
+    links: [
+      { label: "Vật lý 10", href: "#learning-path" },
+      { label: "Vật lý 11", href: "#learning-path" },
+      { label: "Vật lý 12", href: "#learning-path" },
+      { label: "Luyện đề THPT", href: "#learning-path" },
+    ],
   },
   {
     title: "ThachLab",
-    links: ["Về chúng tôi", "Phương pháp giảng dạy", "Câu hỏi thường gặp"],
+    links: [
+      { label: "Về chúng tôi", href: "#about" },
+      { label: "Phương pháp giảng dạy", href: "#features" },
+      { label: "Câu hỏi thường gặp", href: "#" },
+    ],
   },
   {
     title: "Kết nối",
-    links: ["Fanpage", "YouTube", "Email hỗ trợ"],
+    links: [
+      { label: "Facebook", href: "https://www.facebook.com/ngodieuthach" },
+      { label: "Instagram", href: "https://www.instagram.com/ngo_dieu_thach" },
+      { label: "TikTok", href: "https://www.tiktok.com/@ngo_dieu_thach" },
+    ],
   },
 ];
 
@@ -41,12 +54,15 @@ export default function Footer() {
               </h4>
               <ul className="mt-4 space-y-3">
                 {col.links.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a
-                      href="#"
+                      href={item.href}
+                      {...(item.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="text-sm text-muted transition-colors hover:text-primary"
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -57,7 +73,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 text-xs text-muted sm:flex-row">
           <p>&copy; {new Date().getFullYear()} ThachLab. Mọi quyền được bảo lưu.</p>
-          <p className="font-mono">Học để hiểu, không học để nhớ.</p>
+          <p className="font-mono">Living between equation and motion.</p>
         </div>
       </div>
     </footer>
