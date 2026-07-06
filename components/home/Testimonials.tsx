@@ -30,6 +30,34 @@ const messages = [
     src: "/images/testimonials/nguoi-cha-thu-hai.jpg",
     alt: "Tin nhắn học trò: thầy là nguồn cảm hứng thay đổi cả định hướng cuộc đời",
   },
+  {
+    src: "/images/testimonials/thu-phong-bi-xanh.jpg",
+    alt: "Thư tay của học trò viết trên giấy trắng, kèm phong bì xanh",
+  },
+  {
+    src: "/images/testimonials/hoc-bong-diem-9.jpg",
+    alt: "Tin nhắn học trò báo được học bổng, điểm trung bình Lý trên 9.0 — và lời đáp của thầy: giúp được các con yêu thích môn học là điều hạnh phúc nhất trong cuộc đời đi dạy",
+  },
+  {
+    src: "/images/testimonials/thu-gui-thay-thach.jpg",
+    alt: "Thư tay 'Gửi thầy Thạch' viết trên giấy kem của học trò lớp NP",
+  },
+  {
+    src: "/images/testimonials/thiep-tri-an-vang.jpg",
+    alt: "Thiệp tri ân màu vàng từ bộ ba học trò lớp 12CL2",
+  },
+  {
+    src: "/images/testimonials/thu-giay-ke.jpg",
+    alt: "Thư tay của học trò viết kín một trang giấy kẻ ngang",
+  },
+  {
+    src: "/images/testimonials/loi-tri-an-ca-lop.jpg",
+    alt: "Trang 'Lời tri ân' với lời nhắn nhiều màu mực của cả lớp gửi thầy",
+  },
+  {
+    src: "/images/testimonials/thu-xuan-quynh-khanh-long.jpg",
+    alt: "Thư tay có chữ ký của hai học trò Xuân Quỳnh và Khánh Long",
+  },
 ];
 
 export default function Testimonials() {
