@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 // Ảnh chụp tin nhắn thật từ học trò — trích từ album "Những lời yêu thương
 // từ học trò" trên Facebook của thầy Thạch. Ảnh nào lộ tên học sinh đã được
 // che/crop trước khi đăng.
@@ -62,33 +64,44 @@ const messages = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="max-w-xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#2563EB]">
+    <section className="relative overflow-hidden py-24 lg:py-32">
+      <div
+        aria-hidden
+        className="glow-blob right-[-10%] top-[5%] h-[400px] w-[400px] bg-rose-600/15"
+      />
+      <div
+        aria-hidden
+        className="glow-blob left-[-8%] bottom-[10%] h-[360px] w-[360px] bg-blue-700/20"
+      />
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
+        <Reveal className="max-w-xl">
+          <p className="font-mono text-xs font-medium uppercase tracking-widest text-cyan-300">
             Học sinh nói gì
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Những lời yêu thương từ học trò.
+            Những lời yêu thương{" "}
+            <span className="text-gradient">từ học trò.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Không phải lời chứng thực được biên tập — đây là những tin nhắn
             thật học trò gửi cho thầy Thạch sau mỗi mùa thi, mỗi lần báo tin
             đỗ đạt.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3">
-          {messages.map((m) => (
-            <figure key={m.src} className="mb-6 break-inside-avoid">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={m.src}
-                alt={m.alt}
-                loading="lazy"
-                className="w-full rounded-2xl border border-line shadow-sm"
-              />
-            </figure>
+          {messages.map((m, i) => (
+            <Reveal key={m.src} delay={(i % 3) * 0.07} className="mb-6 break-inside-avoid">
+              <figure className="group overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/40 transition-all duration-500 hover:-translate-y-1.5 hover:rotate-[0.6deg] hover:border-violet-400/40 hover:shadow-violet-900/40">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={m.src}
+                  alt={m.alt}
+                  loading="lazy"
+                  className="w-full"
+                />
+              </figure>
+            </Reveal>
           ))}
         </div>
 
@@ -98,7 +111,7 @@ export default function Testimonials() {
             href="https://www.facebook.com/ngodieuthach"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-[#2563EB] hover:underline"
+            className="font-medium text-cyan-300 hover:underline"
           >
             &ldquo;Những lời yêu thương từ học trò&rdquo;
           </a>{" "}

@@ -2,13 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0b3d91;
-  --color-primary-dark: #072a66;
-  --color-accent: #f4b400;
-  --color-bg: #f8fafc;
-  --color-ink: #0f172a;
-  --color-muted: #475569;
-  --color-line: #e2e8f0;
+  /* Dark "deep space" palette — toàn trang tối, neon xanh–tím–cyan */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-accent: #facc15;
+  --color-bg: #05070b;
+  --color-panel: #0b1020;
+  --color-ink: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-line: rgba(255, 255, 255, 0.08);
 
   --font-display: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -25,41 +29,76 @@ body {
   font-family: var(--font-body);
 }
 
-/* ---------------------------------------------------------------------
-   Signature motif: the "trajectory" — a parabolic path with a dot that
-   travels along it, standing in for a projectile / a lesson in motion.
-   Reused in the Hero (the flight of the idea) and the Learning Journey
-   section (the arc a student travels through lớp 10 → 11 → 12).
-   ------------------------------------------------------------------- */
-.trajectory-path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw-trajectory 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+/* ---------- Chữ gradient thương hiệu ---------- */
+.text-gradient {
+  background: linear-gradient(100deg, #60a5fa 0%, #8b5cf6 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@keyframes draw-trajectory {
+/* ---------- Thẻ kính mờ ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.glass-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s, box-shadow 0.35s;
+}
+.glass-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 20px 60px -20px rgba(99, 102, 241, 0.45);
+}
+
+/* ---------- Quầng sáng nền (glow blobs) ---------- */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: blob-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes blob-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
   to {
-    stroke-dashoffset: 0;
+    transform: translate3d(40px, -30px, 0) scale(1.15);
   }
 }
 
-.trajectory-dot {
-  offset-path: path(var(--dot-path, "M0,0"));
-  animation: fly-dot 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
-  opacity: 0;
+/* ---------- Lưới nền mờ kiểu "bảng thí nghiệm" ---------- */
+.grid-bg {
+  background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 100%);
 }
 
-@keyframes fly-dot {
-  0% {
-    offset-distance: 0%;
-    opacity: 1;
+/* ---------- Dải công thức chạy (marquee) ---------- */
+.marquee {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    offset-distance: 100%;
-    opacity: 1;
+  to {
+    transform: translateX(-50%);
   }
 }
 
+/* ---------- Hiện dần khi cuộn tới (dùng cùng Reveal.tsx) ---------- */
 .fade-up {
   animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
@@ -85,11 +124,10 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .trajectory-path,
-  .trajectory-dot,
-  .fade-up {
+  .fade-up,
+  .glow-blob,
+  .marquee {
     animation: none !important;
     opacity: 1 !important;
-    stroke-dashoffset: 0 !important;
   }
 }

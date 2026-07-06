@@ -49,17 +49,23 @@ export function PhysicsSimulationHero() {
 
   return (
     <section className="relative overflow-hidden bg-[#05070B] px-6 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:px-12">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-10">
+      {/* Nền: lưới thí nghiệm + quầng sáng neon */}
+      <div aria-hidden className="grid-bg absolute inset-0" />
+      <div aria-hidden className="glow-blob left-[-10%] top-[-5%] h-[420px] w-[420px] bg-blue-600/40" />
+      <div aria-hidden className="glow-blob right-[-8%] top-[30%] h-[380px] w-[380px] bg-violet-600/35 [animation-delay:3s]" />
+      <div aria-hidden className="glow-blob bottom-[-15%] left-[35%] h-[320px] w-[320px] bg-cyan-500/25 [animation-delay:6s]" />
+
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-10">
         {/* ---------------- CỘT TRÁI ---------------- */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm text-slate-300">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm text-slate-300 backdrop-blur">
             💡 Có bao giờ em tự hỏi...
           </span>
 
           <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
             Tại sao mọi thứ
             <br />
-            lại <span className="text-[#2563EB]">dao động?</span>
+            lại <span className="text-gradient">dao động?</span>
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-slate-400 sm:text-lg">
@@ -69,7 +75,7 @@ export function PhysicsSimulationHero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <button className="flex items-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-blue-900/30 transition hover:bg-[#1D4ED8] active:scale-[0.98] sm:text-base">
+            <button className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-violet-900/40 transition hover:shadow-violet-700/50 hover:brightness-110 active:scale-[0.98] sm:text-base">
               Bắt đầu hành trình
               <ArrowRight size={18} />
             </button>
@@ -145,9 +151,9 @@ export function PhysicsSimulationHero() {
       </div>
 
       {/* ---------------- STATS BAR ---------------- */}
-      <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-4 border-t border-white/10 pt-10 sm:grid-cols-3">
+      <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-4 border-t border-white/10 pt-10 sm:grid-cols-3">
         {stats.map((s) => (
-          <div key={s.label} className="flex items-center gap-4">
+          <div key={s.label} className="glass glass-hover flex items-center gap-4 rounded-2xl p-4">
             <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${s.tint}`}>
               <s.icon size={22} />
             </span>
@@ -159,6 +165,32 @@ export function PhysicsSimulationHero() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* ---------------- DẢI CÔNG THỨC CHẠY ---------------- */}
+      <div className="relative mx-auto mt-14 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+        <div className="marquee font-mono text-sm text-slate-500">
+          {[0, 1].map((dup) => (
+            <span key={dup} className="flex shrink-0 items-center gap-12">
+              {[
+                "x = A·cos(ωt + φ)",
+                "F = ma",
+                "E = mc²",
+                "v = dx/dt",
+                "T = 2π√(l/g)",
+                "P = F·v",
+                "λ = v/f",
+                "W = ∫F·ds",
+                "p = mv",
+                "a = -ω²x",
+              ].map((f) => (
+                <span key={f} className="whitespace-nowrap">
+                  {f} <span className="mx-3 text-slate-700">·</span>
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

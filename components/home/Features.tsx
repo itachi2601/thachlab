@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/Reveal";
+
 const features = [
   {
     label: "01",
@@ -23,29 +25,33 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="max-w-xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-widest text-primary">
+    <section id="features" className="relative overflow-hidden py-24 lg:py-32">
+      <div
+        aria-hidden
+        className="glow-blob left-[30%] top-[40%] h-[340px] w-[340px] bg-cyan-600/20"
+      />
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
+        <Reveal className="max-w-xl">
+          <p className="font-mono text-xs font-medium uppercase tracking-widest text-cyan-300">
             Vì sao ThachLab
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Được thiết kế cho cách học sinh thực sự hiểu Vật lý.
+            Được thiết kế cho cách học sinh{" "}
+            <span className="text-gradient">thực sự hiểu Vật lý.</span>
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
-          {features.map((f) => (
-            <div
-              key={f.label}
-              className="group flex flex-col gap-4 bg-white p-8 transition-colors hover:bg-bg lg:p-10"
-            >
-              <span className="font-mono text-sm text-accent">{f.label}</span>
-              <h3 className="font-display text-xl font-semibold text-ink">
-                {f.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
-            </div>
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {features.map((f, i) => (
+            <Reveal key={f.label} delay={i * 0.08}>
+              <div className="glass glass-hover flex h-full flex-col gap-4 rounded-3xl p-8 lg:p-10">
+                <span className="font-mono text-sm text-accent">{f.label}</span>
+                <h3 className="font-display text-xl font-semibold text-ink">
+                  {f.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
