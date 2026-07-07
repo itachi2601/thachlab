@@ -25,6 +25,7 @@ const stages = [
   },
   {
     grade: "Lớp 12",
+    articleHref: "/blog/lo-trinh-hoc-vat-ly-lop-12-muon-tang-diem",
     focus: "Nhiệt, khí & vật lý hiện đại",
     detail:
       "Điểm mới của chương trình 2018: Nhiệt học chuyển lên lớp 12, giảm điện xoay chiều phức tạp. Luyện đề chuẩn cấu trúc thi mới.",
