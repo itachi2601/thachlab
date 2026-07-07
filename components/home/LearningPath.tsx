@@ -4,22 +4,28 @@ import { Reveal } from "@/components/ui/Reveal";
 const stages = [
   {
     grade: "Lớp 10",
-    focus: "Xây nền tảng",
-    detail: "Nắm vững kiến thức cơ bản",
+    focus: "Nhập môn & nền tảng cơ học",
+    detail:
+      "Làm quen cách học mới: ít toán đố, nhiều thực tế. Trọng tâm là đọc – vẽ đồ thị chuyển động.",
+    topics: ["Động học", "Định luật Newton", "Năng lượng", "Chuyển động tròn"],
     icon: BookOpen,
     ring: "from-blue-500 to-cyan-400",
   },
   {
     grade: "Lớp 11",
-    focus: "Tăng tốc bứt phá",
-    detail: "Hiểu sâu, luyện kỹ năng",
+    focus: "Dao động, sóng & điện",
+    detail:
+      "Năm bản lề nhiều khái niệm trừu tượng nhất. Học chắc bản chất qua thí nghiệm và mô phỏng.",
+    topics: ["Dao động", "Sóng cơ & ánh sáng", "Điện trường", "Dòng điện không đổi"],
     icon: Rocket,
     ring: "from-violet-500 to-blue-400",
   },
   {
     grade: "Lớp 12",
-    focus: "Vượt đích thành công",
-    detail: "Ôn luyện, chinh phục mục tiêu",
+    focus: "Nhiệt, khí & vật lý hiện đại",
+    detail:
+      "Điểm mới của chương trình 2018: Nhiệt học chuyển lên lớp 12, giảm điện xoay chiều phức tạp. Luyện đề chuẩn cấu trúc thi mới.",
+    topics: ["Vật lý nhiệt", "Khí lý tưởng", "Từ trường", "Lượng tử & hạt nhân"],
     icon: Flag,
     ring: "from-amber-400 to-orange-500",
   },
@@ -62,6 +68,16 @@ export default function LearningPath() {
                   <p className="mt-2 text-sm leading-relaxed text-muted">
                     {s.detail}
                   </p>
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {s.topics.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-slate-300"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             ))}
