@@ -14,8 +14,8 @@ export async function fetchClasses(includeHidden = false) {
 
 /** Ghi lại danh sách lớp gán cho 1 đề/bài đăng (xóa hết rồi chèn lại). */
 export async function setItemClasses(
-  table: "exam_classes" | "post_classes",
-  idColumn: "exam_id" | "post_id",
+  table: "exam_classes" | "post_classes" | "chapter_classes",
+  idColumn: "exam_id" | "post_id" | "chapter_id",
   itemId: number,
   classIds: number[],
 ) {

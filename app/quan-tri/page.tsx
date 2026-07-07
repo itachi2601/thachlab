@@ -8,10 +8,12 @@ import PostsAdmin from "@/components/admin/PostsAdmin";
 import ExamsAdmin from "@/components/admin/ExamsAdmin";
 import ImportWord from "@/components/admin/ImportWord";
 import ClassesAdmin from "@/components/admin/ClassesAdmin";
+import LessonsAdmin from "@/components/admin/LessonsAdmin";
 import ResultsAdmin from "@/components/admin/ResultsAdmin";
 import MessagesAdmin from "@/components/admin/MessagesAdmin";
 
 const TABS = [
+  { id: "lessons", label: "Bài học" },
   { id: "exams", label: "Đề kiểm tra" },
   { id: "import", label: "Import từ Word" },
   { id: "classes", label: "Lớp học" },
@@ -49,6 +51,7 @@ export default function AdminPage() {
             ))}
           </div>
           <div className="mt-8">
+            {tab === "lessons" && <LessonsAdmin />}
             {tab === "exams" && <ExamsAdmin />}
             {tab === "import" && <ImportWord />}
             {tab === "classes" && <ClassesAdmin />}

@@ -7,10 +7,13 @@ import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
+import type { Chapter, Lesson } from "@/features/lessons/types";
 import { fetchClasses } from "@/services/classes";
+import { fetchChapters, fetchLessons } from "@/services/lessons";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
+  visibleTo,
   type ExamMeta,
   type PostMeta,
 } from "@/services/content";
@@ -21,6 +24,8 @@ export default function ClassHubPage() {
   const { session } = useAuth();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
+  const [chapters, setChapters] = useState<Chapter[] | null>(null);
+  const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [exams, setExams] = useState<ExamMeta[] | null>(null);
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
 
@@ -30,6 +35,8 @@ export default function ClassHubPage() {
       setClasses(cs);
       if (cs.length > 0) setActiveId((prev) => prev ?? cs[0].id);
     });
+    fetchChapters().then(setChapters);
+    fetchLessons().then(setLessons);
     fetchPublishedPosts().then(setPosts);
   }, []);
 
@@ -40,6 +47,9 @@ export default function ClassHubPage() {
   }, [session]);
 
   const active = classes?.find((c) => c.id === activeId);
+  const classChapters = (chapters ?? []).filter((ch) =>
+    visibleTo(ch.classIds, activeId === null ? null : [activeId]),
+  );
   const classPosts = (posts ?? []).filter((p) =>
     p.classIds.includes(activeId ?? -1),
   );
@@ -55,7 +65,8 @@ export default function ClassHubPage() {
           Lớp <span className="text-gradient">học</span>
         </h1>
         <p className="mt-3 mb-8 text-slate-400">
-          Chọn lớp để xem bài viết, đề thi và tài liệu dành riêng cho lớp đó.
+          Chọn lớp để xem chương trình học, đề thi và tài liệu dành riêng cho
+          lớp đó.
         </p>
 
         {!supabaseConfigured ? (
@@ -92,25 +103,69 @@ export default function ClassHubPage() {
               <div className="mt-10 space-y-12">
                 <section>
                   <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                    Đề thi lớp {active.name}
+                    Chương trình lớp {active.name}
                   </h2>
-                  {!session ? (
+                  {!chapters || !lessons ? (
+                    <SkeletonGrid count={2} />
+                  ) : classChapters.length === 0 ? (
                     <p className="text-sm text-slate-400">
-                      <Link
-                        href="/dang-nhap"
-                        className="text-[#3B82F6] hover:underline"
-                      >
-                        Đăng nhập
-                      </Link>{" "}
-                      để xem đề thi của lớp.
-                    </p>
-                  ) : !exams ? (
-                    <SkeletonGrid count={3} />
-                  ) : classExams.length === 0 ? (
-                    <p className="text-sm text-slate-400">
-                      Chưa có đề nào gán riêng cho lớp này.
+                      Chưa có chương trình học cho lớp này.
                     </p>
                   ) : (
+                    <div className="space-y-6">
+                      {classChapters.map((ch) => {
+                        const chapterLessons = lessons.filter(
+                          (l) => l.chapter_id === ch.id,
+                        );
+                        return (
+                          <div
+                            key={ch.id}
+                            className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
+                          >
+                            <p className="px-4 pt-3 pb-2 text-sm font-bold tracking-wide text-slate-200 uppercase">
+                              {ch.title}
+                            </p>
+                            <div className="space-y-1">
+                              {chapterLessons.length === 0 && (
+                                <p className="px-4 pb-3 text-sm text-slate-500">
+                                  Chưa có bài học trong chương này.
+                                </p>
+                              )}
+                              {chapterLessons.map((l, idx) => (
+                                <Link
+                                  key={l.id}
+                                  href={`/lop-hoc/bai?id=${l.id}`}
+                                  className="group flex items-center gap-4 rounded-xl px-4 py-4 transition-colors hover:bg-white/5"
+                                >
+                                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1D3461] text-lg">
+                                    📖
+                                  </span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="block truncate font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-[#3B82F6]">
+                                      Bài {idx + 1}: {l.title}
+                                    </span>
+                                    <span className="mt-0.5 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
+                                      {l.itemCount} mục
+                                    </span>
+                                  </span>
+                                  <span className="text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-[#3B82F6]">
+                                    →
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </section>
+
+                {classExams.length > 0 && (
+                  <section>
+                    <h2 className="mb-4 font-display text-xl font-semibold text-white">
+                      Đề thi lớp {active.name}
+                    </h2>
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                       {classExams.map((exam) => (
                         <Link
@@ -130,20 +185,26 @@ export default function ClassHubPage() {
                         </Link>
                       ))}
                     </div>
-                  )}
-                </section>
+                  </section>
+                )}
 
-                <section>
-                  <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                    Bài viết lớp {active.name}
-                  </h2>
-                  {!posts ? (
-                    <SkeletonGrid count={3} />
-                  ) : classPosts.length === 0 ? (
-                    <p className="text-sm text-slate-400">
-                      Chưa có bài viết nào gán riêng cho lớp này.
-                    </p>
-                  ) : (
+                {!session && (
+                  <p className="text-sm text-slate-400">
+                    <Link
+                      href="/dang-nhap"
+                      className="text-[#3B82F6] hover:underline"
+                    >
+                      Đăng nhập
+                    </Link>{" "}
+                    để xem đề thi và lưu tiến độ học của em.
+                  </p>
+                )}
+
+                {classPosts.length > 0 && (
+                  <section>
+                    <h2 className="mb-4 font-display text-xl font-semibold text-white">
+                      Bài viết lớp {active.name}
+                    </h2>
                     <div className="grid gap-5 sm:grid-cols-2">
                       {classPosts.map((p) => (
                         <Link
@@ -160,8 +221,8 @@ export default function ClassHubPage() {
                         </Link>
                       ))}
                     </div>
-                  )}
-                </section>
+                  </section>
+                )}
               </div>
             )}
           </>
