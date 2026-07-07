@@ -17,6 +17,9 @@ interface Block {
 
 const Q_START = /^C[âa]u\s*(\d+)\s*[.:)]?\s*/i;
 const ANSWER_LINE = /^Đáp\s*án\s*[:.]?\s*/i;
+// Dạng "Chọn đáp án C" — bắt buộc theo sau là 1 chữ cái A–D (word boundary)
+// để không nhận nhầm câu dẫn kiểu "…hãy chọn đáp án đúng nhất".
+const ANSWER_CHOICE = /Chọn\s*đáp\s*án\s*[:.]?\s*([A-D])\b/i;
 const EXPLANATION_LINE = /^(Lời\s*giải|Giải\s*thích|Hướng\s*dẫn(\s*giải)?)\s*[:.]?\s*/i;
 const OPTION_TOKEN = /(?:^|\s)(\*?)([A-D])[.)]\s+/g;
 const STATEMENT_LINE = /^([a-d])[.)]\s*/i;
@@ -80,7 +83,8 @@ export function parseWordHtml(rawHtml: string): ParseResult {
   const questionBlocks: Block[][] = [];
   let current: Block[] | null = null;
   for (const b of blocks) {
-    if (Q_START.test(b.text)) {
+    // "Câu 1 : Chọn đáp án C" là dòng ĐÁP ÁN của câu hiện tại, không phải câu mới
+    if (Q_START.test(b.text) && !ANSWER_CHOICE.test(b.text)) {
       current = [b];
       questionBlocks.push(current);
     } else if (current) {
@@ -107,6 +111,13 @@ export function parseWordHtml(rawHtml: string): ParseResult {
     let inExplanation = false;
 
     for (const b of qb) {
+      // "Chọn đáp án C" (xuất hiện trước và/hoặc sau lời giải) → lấy chữ cái đúng
+      const chosen = b.text.match(ANSWER_CHOICE);
+      if (chosen) {
+        answerText = chosen[1];
+        inExplanation = false;
+        continue;
+      }
       if (ANSWER_LINE.test(b.text)) {
         answerText = b.text.replace(ANSWER_LINE, "").trim();
         inExplanation = false;
