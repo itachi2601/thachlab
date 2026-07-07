@@ -3,8 +3,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const scenes = [
   {
-    tag: "Trượt băng tốc độ",
-    title: "Vì sao người trượt băng cúi người để tăng tốc?",
+    tag: "Trượt băng nghệ thuật",
+    title: "Vì sao vận động viên xoay nhanh hơn khi thu tay lại?",
     icon: Snowflake,
     tint: "from-sky-500/40 to-blue-900/20 text-sky-300",
     glow: "group-hover:shadow-sky-500/30",

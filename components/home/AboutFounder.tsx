@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const traits = [
   { label: "Giảng dạy", value: "KHTN 9 & Vật lý THPT" },
   { label: "Đam mê", value: "Cơ khí chế tạo" },
-  { label: "Thể thao", value: "Trượt băng tốc độ" },
+  { label: "Thể thao", value: "Trượt băng nghệ thuật" },
   { label: "Rèn luyện", value: "Gym mỗi ngày" },
 ];
 
@@ -36,7 +36,7 @@ export default function AboutFounder() {
             <p className="mt-6 text-base leading-relaxed text-muted">
               ThachLab được sáng lập bởi thầy Thạch — giáo viên trực tiếp giảng
               dạy KHTN 9 và Vật lý THPT. Với niềm yêu thích cơ khí chế tạo,
-              những giờ trên đường trượt băng tốc độ và phòng gym, thầy tin
+              những giờ trên sân trượt băng nghệ thuật và phòng gym, thầy tin
               rằng dạy học và sống đẹp là một: sống khỏe mạnh, có đam mê, và
               không ngừng học hỏi. Mỗi bài giảng đều bắt nguồn từ một điều đơn
               giản — mỗi bài học nên bắt đầu bằng một câu hỏi.

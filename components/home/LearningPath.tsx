@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { BookOpen, Flag, Rocket } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const stages = [
   {
     grade: "Lớp 10",
+    articleHref: "/blog/lo-trinh-hoc-vat-ly-lop-10-dung-de-mat-goc",
     focus: "Nhập môn & nền tảng cơ học",
     detail:
       "Làm quen cách học mới: ít toán đố, nhiều thực tế. Trọng tâm là đọc – vẽ đồ thị chuyển động.",
@@ -13,6 +15,7 @@ const stages = [
   },
   {
     grade: "Lớp 11",
+    articleHref: "/blog/lo-trinh-hoc-vat-ly-lop-11-nam-de-duoi-nhat",
     focus: "Dao động, sóng & điện",
     detail:
       "Năm bản lề nhiều khái niệm trừu tượng nhất. Học chắc bản chất qua thí nghiệm và mô phỏng.",
@@ -78,6 +81,14 @@ export default function LearningPath() {
                       </li>
                     ))}
                   </ul>
+                  {"articleHref" in s && s.articleHref && (
+                    <Link
+                      href={s.articleHref}
+                      className="mt-5 inline-flex items-center rounded-full border border-cyan-300/30 px-4 py-2 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:bg-cyan-300/10"
+                    >
+                      Đọc lộ trình {s.grade.toLowerCase()} →
+                    </Link>
+                  )}
                 </div>
               </Reveal>
             ))}
