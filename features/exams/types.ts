@@ -28,12 +28,33 @@ export type ExamQuestion =
   | TrueFalseQuestion
   | ShortAnswerQuestion;
 
+export interface SchoolClass {
+  id: number;
+  name: string;
+  slug: string;
+  color: string;
+  icon: string;
+  sort_order: number;
+  active: boolean;
+}
+
+export type Difficulty = "" | "de" | "trung-binh" | "kho";
+
+export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
+  "": "Chưa phân loại",
+  de: "Dễ",
+  "trung-binh": "Trung bình",
+  kho: "Khó",
+};
+
 export interface Exam {
   id: number;
   title: string;
   duration_minutes: number;
   published: boolean;
   questions: ExamQuestion[];
+  topic?: string;
+  difficulty?: Difficulty;
   created_at?: string;
 }
 

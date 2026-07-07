@@ -1,14 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type {
+  Difficulty,
   Exam,
   ExamQuestion,
   MultipleChoiceQuestion,
   ShortAnswerQuestion,
   TrueFalseQuestion,
 } from "@/features/exams/types";
+import { DIFFICULTY_LABELS } from "@/features/exams/types";
+import ClassPicker from "@/components/admin/ClassPicker";
+import { setItemClasses } from "@/services/classes";
 import { getSupabase } from "@/services/supabase";
+import { useToast } from "@/components/ui/Toast";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
@@ -186,18 +191,38 @@ function QuestionEditor({
 
 export default function ExamEditor({
   exam,
+  initialQuestions,
   onDone,
 }: {
   exam: Exam | null; // null = tạo mới
+  initialQuestions?: ExamQuestion[]; // prefill từ Import Word
   onDone: () => void;
 }) {
+  const toast = useToast();
   const [title, setTitle] = useState(exam?.title ?? "");
   const [duration, setDuration] = useState(exam?.duration_minutes ?? 45);
+  const [topic, setTopic] = useState(exam?.topic ?? "");
+  const [difficulty, setDifficulty] = useState<Difficulty>(
+    exam?.difficulty ?? "",
+  );
+  const [classIds, setClassIds] = useState<number[]>([]);
   const [questions, setQuestions] = useState<ExamQuestion[]>(
-    exam?.questions ?? [],
+    exam?.questions ?? initialQuestions ?? [],
   );
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+
+  // nạp lớp đã gán khi sửa đề
+  useEffect(() => {
+    if (!exam) return;
+    getSupabase()
+      .from("exam_classes")
+      .select("class_id")
+      .eq("exam_id", exam.id)
+      .then(({ data }) =>
+        setClassIds((data ?? []).map((r) => r.class_id as number)),
+      );
+  }, [exam]);
 
   async function save(publish: boolean) {
     if (!title.trim()) {
@@ -213,18 +238,39 @@ export default function ExamEditor({
     const payload = {
       title: title.trim(),
       duration_minutes: duration,
+      topic: topic.trim(),
+      difficulty,
       questions,
       published: publish,
     };
     const supabase = getSupabase();
-    const { error } = exam
-      ? await supabase.from("exams").update(payload).eq("id", exam.id)
-      : await supabase.from("exams").insert(payload);
-    setBusy(false);
-    if (error) {
-      setError(error.message);
-      return;
+    let examId = exam?.id;
+    if (exam) {
+      const { error } = await supabase
+        .from("exams")
+        .update(payload)
+        .eq("id", exam.id);
+      if (error) {
+        setBusy(false);
+        setError(error.message);
+        return;
+      }
+    } else {
+      const { data, error } = await supabase
+        .from("exams")
+        .insert(payload)
+        .select("id")
+        .single();
+      if (error || !data) {
+        setBusy(false);
+        setError(error?.message ?? "Không tạo được đề.");
+        return;
+      }
+      examId = data.id;
     }
+    await setItemClasses("exam_classes", "exam_id", examId!, classIds);
+    setBusy(false);
+    toast("success", publish ? "Đã lưu và mở đề." : "Đã lưu bản nháp.");
     onDone();
   }
 
@@ -250,6 +296,28 @@ export default function ExamEditor({
           phút
         </label>
       </div>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <input
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          placeholder="Chủ đề, vd Dao động điều hòa"
+          className={`${inputCls} flex-1 min-w-52`}
+        />
+        <select
+          value={difficulty}
+          onChange={(e) => setDifficulty(e.target.value as Difficulty)}
+          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-[#3B82F6] focus:outline-none"
+        >
+          {Object.entries(DIFFICULTY_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>
+              Độ khó: {label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <ClassPicker selected={classIds} onChange={setClassIds} />
 
       <div className="space-y-4">
         {questions.map((q, qi) => (

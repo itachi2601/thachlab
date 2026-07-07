@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 const links = [
-  { label: "Bài học", href: "/bai-hoc" },
-  { label: "Kiểm tra", href: "/kiem-tra" },
-  { label: "Tin nhắn", href: "/tin-nhan" },
-  { label: "Lộ trình học", href: "/#learning-path" },
-  { label: "Về ThachLab", href: "/#about" },
+  { label: "Lớp học", href: "/lop-hoc" },
+  { label: "Đề thi", href: "/kiem-tra" },
+  { label: "Tin tức", href: "/tin-tuc" },
+  { label: "Giới thiệu", href: "/#about" },
+  { label: "Liên hệ", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -37,6 +37,16 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          {session && (
+            <li>
+              <Link
+                href="/tin-nhan"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              >
+                Tin nhắn
+              </Link>
+            </li>
+          )}
           {profile?.role === "admin" && (
             <li>
               <Link

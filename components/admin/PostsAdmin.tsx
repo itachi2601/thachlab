@@ -1,7 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import ClassPicker from "@/components/admin/ClassPicker";
+import { setItemClasses } from "@/services/classes";
 import { getSupabase } from "@/services/supabase";
+import { useToast } from "@/components/ui/Toast";
 
 interface Post {
   id: number;
@@ -16,10 +19,12 @@ const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
 
 export default function PostsAdmin() {
+  const toast = useToast();
   const [posts, setPosts] = useState<Post[]>([]);
   const [title, setTitle] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [body, setBody] = useState("");
+  const [classIds, setClassIds] = useState<number[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -37,19 +42,28 @@ export default function PostsAdmin() {
     e.preventDefault();
     setBusy(true);
     setError("");
-    const { error } = await getSupabase().from("posts").insert({
-      title: title.trim(),
-      video_url: videoUrl.trim(),
-      body: body.trim(),
-    });
+    const { data, error } = await getSupabase()
+      .from("posts")
+      .insert({
+        title: title.trim(),
+        video_url: videoUrl.trim(),
+        body: body.trim(),
+      })
+      .select("id")
+      .single();
+    if (!error && data) {
+      await setItemClasses("post_classes", "post_id", data.id, classIds);
+    }
     setBusy(false);
     if (error) {
       setError(error.message);
       return;
     }
+    toast("success", "Đã đăng bài.");
     setTitle("");
     setVideoUrl("");
     setBody("");
+    setClassIds([]);
     reload();
   }
 
@@ -82,6 +96,7 @@ export default function PostsAdmin() {
           rows={4}
           className={inputCls}
         />
+        <ClassPicker selected={classIds} onChange={setClassIds} />
         {error && <p className="text-sm text-red-400">{error}</p>}
         <button
           type="submit"

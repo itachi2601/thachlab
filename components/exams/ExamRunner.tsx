@@ -26,20 +26,39 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   const [saveState, setSaveState] = useState<
     "idle" | "saving" | "saved" | "failed"
   >("idle");
+  const [usedSeconds, setUsedSeconds] = useState(0);
   const startedAt = useRef(0);
-  const usedSeconds = useRef(0);
+  const submittedRef = useRef(false);
+  const responsesRef = useRef(responses);
 
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
   ).length;
 
+  // submit được gọi từ nút bấm và từ interval hết giờ — chấm và lưu ngay tại đây
   const submit = useCallback(() => {
-    setPhase((p) => {
-      if (p !== "running") return p;
-      usedSeconds.current = Math.round((Date.now() - startedAt.current) / 1000);
-      return "done";
-    });
-  }, []);
+    if (submittedRef.current) return;
+    submittedRef.current = true;
+    setUsedSeconds(Math.round((Date.now() - startedAt.current) / 1000));
+    setPhase("done");
+    if (!session) return;
+    setSaveState("saving");
+    const finalResponses = responsesRef.current;
+    const summary = gradeExam(exam.questions, finalResponses);
+    getSupabase()
+      .from("exam_results")
+      .insert({
+        student_id: session.user.id,
+        exam_id: exam.id,
+        score: summary.score10,
+        duration_seconds: Math.round((Date.now() - startedAt.current) / 1000),
+        detail: {
+          responses: finalResponses,
+          correctCount: summary.correctCount,
+        },
+      })
+      .then(({ error }) => setSaveState(error ? "failed" : "saved"));
+  }, [exam, session]);
 
   const confirmSubmit = () => {
     if (
@@ -64,24 +83,6 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     }, 1000);
     return () => clearInterval(timer);
   }, [phase, submit]);
-
-  // Lưu kết quả về Supabase khi nộp
-  useEffect(() => {
-    if (phase !== "done" || !session) return;
-    setSaveState("saving");
-    const summary = gradeExam(exam.questions, responses);
-    getSupabase()
-      .from("exam_results")
-      .insert({
-        student_id: session.user.id,
-        exam_id: exam.id,
-        score: summary.score10,
-        duration_seconds: usedSeconds.current,
-        detail: { responses, correctCount: summary.correctCount },
-      })
-      .then(({ error }) => setSaveState(error ? "failed" : "saved"));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase]);
 
   if (phase === "intro") {
     return (
@@ -146,13 +147,12 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
                 index={qi + 1}
                 question={q}
                 response={responses[qi]}
-                onChange={(r) =>
-                  setResponses((prev) => {
-                    const next = [...prev];
-                    next[qi] = r;
-                    return next;
-                  })
-                }
+                onChange={(r) => {
+                  const next = [...responsesRef.current];
+                  next[qi] = r;
+                  responsesRef.current = next;
+                  setResponses(next);
+                }}
               />
             </li>
           ))}
@@ -181,7 +181,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
         </p>
         <p className="mt-2 text-slate-300">
           Đúng trọn vẹn {summary.correctCount}/{exam.questions.length} câu ·{" "}
-          {formatClock(usedSeconds.current)}
+          {formatClock(usedSeconds)}
         </p>
         <p className="mt-3 text-xs text-slate-500">
           {saveState === "saving" && "Đang lưu điểm…"}

@@ -2,18 +2,10 @@
 
 import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { gradeQuestion } from "@/features/exams/types";
+import Html from "@/components/exams/ContentHtml";
 
 const LETTERS = ["A", "B", "C", "D"];
 const TF_LABELS = ["a)", "b)", "c)", "d)"];
-
-function Html({ html, className = "" }: { html: string; className?: string }) {
-  return (
-    <span
-      className={`exam-content ${className}`}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
-}
 
 interface Props {
   index: number; // số thứ tự hiển thị (1-based)

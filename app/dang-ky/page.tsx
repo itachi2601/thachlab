@@ -1,31 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import type { SchoolClass } from "@/features/exams/types";
+import { fetchClasses } from "@/services/classes";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 
 export default function RegisterPage() {
   const router = useRouter();
   const [fullName, setFullName] = useState("");
-  const [className, setClassName] = useState("");
+  const [classes, setClasses] = useState<SchoolClass[]>([]);
+  const [classId, setClassId] = useState<string>("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [needConfirm, setNeedConfirm] = useState(false);
 
+  useEffect(() => {
+    if (supabaseConfigured) fetchClasses().then(setClasses);
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setBusy(true);
+    const picked = classes.find((c) => String(c.id) === classId);
     const { data, error } = await getSupabase().auth.signUp({
       email,
       password,
       options: {
-        data: { full_name: fullName.trim(), class_name: className.trim() },
+        data: {
+          full_name: fullName.trim(),
+          class_id: classId,
+          class_name: picked?.name ?? "",
+        },
       },
     });
     setBusy(false);
@@ -101,19 +113,28 @@ export default function RegisterPage() {
             </div>
             <div>
               <label
-                htmlFor="class-name"
+                htmlFor="class-id"
                 className="mb-1 block text-sm font-medium text-slate-300"
               >
                 Lớp
               </label>
-              <input
-                id="class-name"
+              <select
+                id="class-id"
                 required
-                value={className}
-                onChange={(e) => setClassName(e.target.value)}
-                placeholder="11A1"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none"
-              />
+                value={classId}
+                onChange={(e) => setClassId(e.target.value)}
+                className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-2.5 text-white focus:border-[#3B82F6] focus:outline-none"
+              >
+                <option value="" disabled>
+                  — Chọn lớp của em —
+                </option>
+                {classes.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.icon && `${c.icon} `}
+                    {c.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <label
