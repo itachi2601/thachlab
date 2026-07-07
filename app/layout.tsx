@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     description: "Học Vật lý THPT cùng thầy Thạch: hiểu bản chất, không học vẹt.",
     images: ["/images/og-lo-trinh-vat-ly.png"],
   },
+  // Xác minh quyền sở hữu site cho Google Search Console (phương thức Thẻ HTML).
+  verification: {
+    google: "0qVSXLYLOif58yDOQmLBCWgDb3zu9CERcFem76Gy-oo",
+  },
   robots: {
     index: true,
     follow: true,
