@@ -131,7 +131,7 @@ export default function ClassHubPage() {
                                   Chưa có bài học trong chương này.
                                 </p>
                               )}
-                              {chapterLessons.map((l, idx) => (
+                              {chapterLessons.map((l) => (
                                 <Link
                                   key={l.id}
                                   href={`/lop-hoc/bai?id=${l.id}`}
@@ -142,7 +142,7 @@ export default function ClassHubPage() {
                                   </span>
                                   <span className="min-w-0 flex-1">
                                     <span className="block truncate font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-[#3B82F6]">
-                                      Bài {idx + 1}: {l.title}
+                                      {l.title}
                                     </span>
                                     <span className="mt-0.5 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
                                       {l.itemCount} mục

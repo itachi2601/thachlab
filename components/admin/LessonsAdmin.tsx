@@ -387,7 +387,7 @@ function ChapterLessonsEditor({
               className="min-w-0 flex-1 text-left"
             >
               <span className="block truncate font-medium text-white hover:text-[#3B82F6]">
-                Bài {idx + 1}: {l.title}
+                {l.title}
               </span>
               <span className="text-xs text-slate-500">{l.itemCount} mục</span>
             </button>
