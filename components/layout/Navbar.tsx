@@ -6,6 +6,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 const links = [
   { label: "Lớp học", href: "/lop-hoc" },
   { label: "Đề thi", href: "/kiem-tra" },
+  { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/#about" },
   { label: "Liên hệ", href: "/#contact" },
