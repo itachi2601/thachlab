@@ -15,12 +15,13 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [needConfirm, setNeedConfirm] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setBusy(true);
-    const { error } = await getSupabase().auth.signUp({
+    const { data, error } = await getSupabase().auth.signUp({
       email,
       password,
       options: {
@@ -36,7 +37,37 @@ export default function RegisterPage() {
       );
       return;
     }
+    // Nếu dự án bật xác nhận email thì chưa có session ngay
+    if (!data.session) {
+      setNeedConfirm(true);
+      return;
+    }
     router.push("/kiem-tra");
+  }
+
+  if (needConfirm) {
+    return (
+      <>
+        <Navbar />
+        <main className="mx-auto min-h-screen w-full max-w-md px-6 pt-32 pb-20">
+          <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center">
+            <p className="text-3xl">📩</p>
+            <h1 className="mt-3 font-display text-xl font-bold text-white">
+              Kiểm tra email của em
+            </h1>
+            <p className="mt-3 text-sm text-slate-400">
+              Thầy đã gửi link xác nhận đến <b>{email}</b>. Bấm vào link trong
+              email rồi quay lại{" "}
+              <Link href="/dang-nhap" className="text-[#3B82F6] hover:underline">
+                đăng nhập
+              </Link>{" "}
+              nhé.
+            </p>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
   }
 
   return (
