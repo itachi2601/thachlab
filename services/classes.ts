@@ -1,8 +1,76 @@
 import type { SchoolClass } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
+interface ManagedClassSeed {
+  name: string;
+  slug: string;
+  color: string;
+  icon: string;
+  sort_order: number;
+}
+
+export const MANAGED_CLASSES: ManagedClassSeed[] = [
+  {
+    name: "KHTN 9",
+    slug: "khtn-9",
+    color: "#10B981",
+    icon: "🔬",
+    sort_order: 1,
+  },
+  {
+    name: "10",
+    slug: "lop-10",
+    color: "#22D3EE",
+    icon: "🎓",
+    sort_order: 2,
+  },
+  {
+    name: "11",
+    slug: "lop-11",
+    color: "#3B82F6",
+    icon: "🎓",
+    sort_order: 3,
+  },
+  {
+    name: "12",
+    slug: "lop-12",
+    color: "#8B5CF6",
+    icon: "🎓",
+    sort_order: 4,
+  },
+];
+
+const MANAGED_CLASS_NAMES = new Set(MANAGED_CLASSES.map((c) => c.name));
+const MANAGED_CLASS_SLUGS = new Set(MANAGED_CLASSES.map((c) => c.slug));
+
+export function isManagedClass(schoolClass: Pick<SchoolClass, "name" | "slug">) {
+  return (
+    MANAGED_CLASS_NAMES.has(schoolClass.name) ||
+    MANAGED_CLASS_SLUGS.has(schoolClass.slug)
+  );
+}
+
 export function classGrade(className: string): string | null {
   return className.match(/\d+/)?.[0] ?? null;
+}
+
+export function displayClassesByGrade(classes: SchoolClass[]): SchoolClass[] {
+  const result: SchoolClass[] = [];
+  for (const managed of MANAGED_CLASSES) {
+    const exact = classes.find(
+      (schoolClass) =>
+        schoolClass.name === managed.name || schoolClass.slug === managed.slug,
+    );
+    if (exact) {
+      result.push(exact);
+      continue;
+    }
+
+    const grade = classGrade(managed.name);
+    const fallback = classes.find((schoolClass) => classGrade(schoolClass.name) === grade);
+    if (fallback) result.push(fallback);
+  }
+  return result;
 }
 
 export function expandClassIdsByGrade(

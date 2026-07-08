@@ -13,6 +13,7 @@ import {
   type LessonItemKind,
 } from "@/features/lessons/types";
 import {
+  displayClassesByGrade,
   expandClassIdsByGrade,
   fetchClasses,
   setItemClasses,
@@ -473,6 +474,7 @@ export default function LessonsAdmin() {
 
   const selectedClass =
     classes.find((schoolClass) => schoolClass.id === selectedClassId) ?? null;
+  const displayClasses = displayClassesByGrade(classes);
   const visibleClassIds =
     selectedClassId === null ? [] : (expandClassIdsByGrade([selectedClassId], classes) ?? []);
   const classChapters =
@@ -533,7 +535,7 @@ export default function LessonsAdmin() {
           1. Chọn lớp
         </p>
         <div className="flex flex-wrap gap-2">
-          {classes.map((schoolClass) => {
+          {displayClasses.map((schoolClass) => {
             const active = schoolClass.id === selectedClassId;
             return (
               <button
@@ -559,7 +561,7 @@ export default function LessonsAdmin() {
               </button>
             );
           })}
-          {classes.length === 0 && (
+          {displayClasses.length === 0 && (
             <span className="text-sm text-slate-500">
               Chưa có lớp — thêm lớp ở mục Lớp học trước.
             </span>

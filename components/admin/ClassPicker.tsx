@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { SchoolClass } from "@/features/exams/types";
-import { fetchClasses } from "@/services/classes";
+import { displayClassesByGrade, fetchClasses } from "@/services/classes";
 
 /** Chọn nhiều lớp dạng chip. Không chọn lớp nào = áp dụng toàn trường. */
 export default function ClassPicker({
@@ -13,6 +13,7 @@ export default function ClassPicker({
   onChange: (ids: number[]) => void;
 }) {
   const [classes, setClasses] = useState<SchoolClass[]>([]);
+  const displayClasses = displayClassesByGrade(classes);
 
   useEffect(() => {
     fetchClasses().then(setClasses);
@@ -27,7 +28,7 @@ export default function ClassPicker({
         </span>
       </p>
       <div className="flex flex-wrap gap-2">
-        {classes.map((c) => {
+        {displayClasses.map((c) => {
           const on = selected.includes(c.id);
           return (
             <button
@@ -52,7 +53,7 @@ export default function ClassPicker({
             </button>
           );
         })}
-        {classes.length === 0 && (
+        {displayClasses.length === 0 && (
           <span className="text-sm text-slate-500">
             Chưa có lớp — thêm ở mục Lớp học.
           </span>

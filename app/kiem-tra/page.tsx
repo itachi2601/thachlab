@@ -10,6 +10,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import type { SchoolClass, Difficulty } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
+  displayClassesByGrade,
   expandClassIdsByGrade,
   fetchClasses,
   fetchMyClassIds,
@@ -50,6 +51,7 @@ function ExamList() {
   const effectiveClassIds = isAdmin
     ? null
     : expandClassIdsByGrade(myClassIds, classes);
+  const displayClasses = displayClassesByGrade(classes);
 
   const topics = useMemo(
     () => [...new Set((exams ?? []).map((e) => e.topic).filter(Boolean))],
@@ -60,7 +62,11 @@ function ExamList() {
     () =>
       (exams ?? []).filter((e) => {
         if (!visibleTo(e.classIds, effectiveClassIds)) return false;
-        if (classFilter && !e.classIds.includes(classFilter)) return false;
+        if (
+          classFilter &&
+          !visibleTo(e.classIds, expandClassIdsByGrade([classFilter], classes))
+        )
+          return false;
         if (topicFilter && e.topic !== topicFilter) return false;
         if (diffFilter !== "all" && e.difficulty !== diffFilter) return false;
         if (durFilter === "short" && e.duration_minutes > 20) return false;
@@ -73,7 +79,16 @@ function ExamList() {
         if (!e.title.toLowerCase().includes(search.toLowerCase())) return false;
         return true;
       }),
-    [exams, effectiveClassIds, classFilter, topicFilter, diffFilter, durFilter, search],
+    [
+      exams,
+      effectiveClassIds,
+      classFilter,
+      classes,
+      topicFilter,
+      diffFilter,
+      durFilter,
+      search,
+    ],
   );
 
   const shown = filtered.slice(0, page * PAGE_SIZE);
@@ -89,14 +104,14 @@ function ExamList() {
           placeholder="🔍 Tìm đề…"
           className="min-w-48 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none"
         />
-        {(isAdmin || !session) && classes.length > 0 && (
+        {(isAdmin || !session) && displayClasses.length > 0 && (
           <select
             value={classFilter}
             onChange={(e) => setClassFilter(Number(e.target.value))}
             className={selectCls}
           >
             <option value={0}>Tất cả lớp</option>
-            {classes.map((c) => (
+            {displayClasses.map((c) => (
               <option key={c.id} value={c.id}>
                 Lớp {c.name}
               </option>

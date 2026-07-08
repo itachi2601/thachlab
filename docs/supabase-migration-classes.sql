@@ -7,8 +7,8 @@
 create table if not exists public.classes (
   id bigint generated always as identity primary key,
   created_at timestamptz not null default now(),
-  name text not null unique,          -- "10A1"
-  slug text not null unique,          -- "10a1"
+  name text not null unique,          -- "KHTN 9", "10", "11", "12"
+  slug text not null unique,          -- "khtn-9", "lop-10", "lop-11", "lop-12"
   color text not null default '#3B82F6',
   icon text not null default '',      -- emoji, tuỳ chọn
   sort_order int not null default 0,
@@ -113,11 +113,9 @@ create policy "anyone reads exam images" on storage.objects
   for select using (bucket_id = 'exam-images');
 
 -- ---------- Lớp mẫu ----------
-insert into public.classes (name, slug, color, sort_order) values
-  ('10A1', '10a1', '#22D3EE', 1),
-  ('10A2', '10a2', '#22D3EE', 2),
-  ('11A1', '11a1', '#3B82F6', 3),
-  ('11A2', '11a2', '#3B82F6', 4),
-  ('12A1', '12a1', '#8B5CF6', 5),
-  ('12A2', '12a2', '#8B5CF6', 6)
+insert into public.classes (name, slug, color, icon, sort_order) values
+  ('KHTN 9', 'khtn-9', '#10B981', '🔬', 1),
+  ('10', 'lop-10', '#22D3EE', '🎓', 2),
+  ('11', 'lop-11', '#3B82F6', '🎓', 3),
+  ('12', 'lop-12', '#8B5CF6', '🎓', 4)
 on conflict (name) do nothing;

@@ -191,14 +191,18 @@ function QuestionEditor({
 export default function ExamEditor({
   exam,
   initialQuestions,
+  initialTitle,
+  initialAzotaEmbed,
   onDone,
 }: {
   exam: Exam | null; // null = tạo mới
-  initialQuestions?: ExamQuestion[]; // prefill từ Import Word
+  initialQuestions?: ExamQuestion[]; // prefill từ Import Word/LaTeX
+  initialTitle?: string; // prefill title từ Import
+  initialAzotaEmbed?: { src: string; title: string }; // AZOTA embed info
   onDone: () => void;
 }) {
   const toast = useToast();
-  const [title, setTitle] = useState(exam?.title ?? "");
+  const [title, setTitle] = useState(exam?.title ?? initialTitle ?? "");
   const [duration, setDuration] = useState(exam?.duration_minutes ?? 45);
   const [topic, setTopic] = useState(exam?.topic ?? "");
   const [difficulty, setDifficulty] = useState<Difficulty>(
@@ -208,6 +212,7 @@ export default function ExamEditor({
   const [questions, setQuestions] = useState<ExamQuestion[]>(
     exam?.questions ?? initialQuestions ?? [],
   );
+  const [azotaEmbed, setAzotaEmbed] = useState(initialAzotaEmbed ?? null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 

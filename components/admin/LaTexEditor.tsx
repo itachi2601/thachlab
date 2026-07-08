@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { latexToHtml, validateLatexSyntax } from "@/services/latex-converter";
 import { parseAzotaIframe, formatAzotaEmbed } from "@/services/azota-formatter";
 
@@ -11,19 +11,12 @@ interface Props {
 }
 
 export default function LaTexEditor({ value, onChange, placeholder }: Props) {
-  const [mode, setMode] = useState<"latex" | "azota" | "html">("latex");
+  const initialMode = value.includes("<") && value.includes(">") ? "html" : "latex";
+  const [mode, setMode] = useState<"latex" | "azota" | "html">(initialMode);
   const [latexText, setLatexText] = useState(value);
   const [htmlPreview, setHtmlPreview] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const [showPreview, setShowPreview] = useState(false);
-
-  useEffect(() => {
-    // Nếu value chứa HTML tags, assume là HTML mode
-    if (value.includes("<") && value.includes(">")) {
-      setMode("html");
-      setLatexText(value);
-    }
-  }, []);
 
   function handleLatexChange(text: string) {
     setLatexText(text);
@@ -246,7 +239,11 @@ Giải thích thêm…
             <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-3">
               <p className="mb-2 text-xs font-semibold text-blue-300">👁️ Preview sau khi embed:</p>
               <div className="max-h-64 overflow-y-auto rounded bg-white/5 p-2">
-                <div dangerouslySetInnerHTML={{ __html: formatAzotaEmbed(latexText) }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: formatAzotaEmbed(parseAzotaIframe(latexText)),
+                  }}
+                />
               </div>
             </div>
           )}
@@ -271,9 +268,9 @@ Giải thích thêm…
             </summary>
             <div className="mt-2 space-y-2 pl-3 text-slate-500">
               <p>1. Vào <code className="text-slate-400">azota.vn</code> → Tìm bài tập/đề</p>
-              <p>2. Click "Chia sẻ" hoặc "Nhúng" → Copy iframe code</p>
+              <p>2. Click &quot;Chia sẻ&quot; hoặc &quot;Nhúng&quot; → Copy iframe code</p>
               <p>3. Dán vào field trên</p>
-              <p>4. Click "✓ Nhúng AZOTA"</p>
+              <p>4. Click &quot;✓ Nhúng AZOTA&quot;</p>
             </div>
           </details>
         </div>

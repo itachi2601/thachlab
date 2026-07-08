@@ -2,53 +2,39 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { SchoolClass } from "@/features/exams/types";
-import { fetchClasses } from "@/services/classes";
+import { fetchClasses, isManagedClass, MANAGED_CLASSES } from "@/services/classes";
 import { getSupabase } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
-
-const inputCls =
-  "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
-
-function toSlug(name: string) {
-  return name
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
 
 export default function ClassesAdmin() {
   const toast = useToast();
   const [classes, setClasses] = useState<SchoolClass[]>([]);
-  const [name, setName] = useState("");
-  const [color, setColor] = useState("#3B82F6");
-  const [icon, setIcon] = useState("");
+  const [busy, setBusy] = useState(false);
 
   const reload = useCallback(() => {
     fetchClasses(true).then(setClasses);
   }, []);
   useEffect(reload, [reload]);
 
-  async function addClass(e: React.FormEvent) {
-    e.preventDefault();
-    const trimmed = name.trim();
-    if (!trimmed) return;
-    const { error } = await getSupabase().from("classes").insert({
-      name: trimmed,
-      slug: toSlug(trimmed),
-      color,
-      icon,
-      sort_order: classes.length + 1,
-    });
-    if (error) {
-      toast("error", error.message.includes("duplicate") ? "Lớp này đã tồn tại." : error.message);
-      return;
+  async function syncManagedClasses() {
+    setBusy(true);
+    const supabase = getSupabase();
+    for (const schoolClass of MANAGED_CLASSES) {
+      const existing = classes.find(
+        (c) => c.slug === schoolClass.slug || c.name === schoolClass.name,
+      );
+      const payload = { ...schoolClass, active: true };
+      const { error } = existing
+        ? await supabase.from("classes").update(payload).eq("id", existing.id)
+        : await supabase.from("classes").insert(payload);
+      if (error) {
+        setBusy(false);
+        toast("error", error.message);
+        return;
+      }
     }
-    toast("success", `Đã thêm lớp ${trimmed}`);
-    setName("");
-    setIcon("");
+    setBusy(false);
+    toast("success", "Đã chuẩn hóa 4 lớp khối: KHTN 9, 10, 11, 12.");
     reload();
   }
 
@@ -70,38 +56,23 @@ export default function ClassesAdmin() {
 
   return (
     <div className="space-y-6">
-      <form
-        onSubmit={addClass}
-        className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5"
-      >
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Tên lớp, vd 10A3"
-          className={`${inputCls} w-36`}
-        />
-        <input
-          value={icon}
-          onChange={(e) => setIcon(e.target.value)}
-          placeholder="Icon 🎓"
-          className={`${inputCls} w-24`}
-        />
-        <label className="flex items-center gap-2 text-sm text-slate-400">
-          Màu
-          <input
-            type="color"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-            className="h-9 w-12 cursor-pointer rounded-lg border border-white/10 bg-transparent"
-          />
-        </label>
+      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <h2 className="font-display text-lg font-semibold text-white">
+          Hệ lớp theo khối
+        </h2>
+        <p className="mt-2 text-sm text-slate-400">
+          Website chỉ dùng 4 lớp khối: KHTN 9, 10, 11 và 12. Chương, bài học và
+          đề kiểm tra gắn trực tiếp với khối nên không cần tạo A1/A2 mỗi năm.
+        </p>
         <button
-          type="submit"
-          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+          type="button"
+          onClick={syncManagedClasses}
+          disabled={busy}
+          className="mt-4 rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
         >
-          + Thêm lớp
+          {busy ? "Đang chuẩn hóa..." : "Tạo/cập nhật 4 lớp khối"}
         </button>
-      </form>
+      </section>
 
       <div className="space-y-2">
         {classes.map((c, idx) => (
@@ -120,6 +91,11 @@ export default function ClassesAdmin() {
               {c.name}
             </span>
             <span className="text-xs text-slate-500">/{c.slug}</span>
+            {!isManagedClass(c) && (
+              <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-xs text-amber-200">
+                Lớp cũ, nên ẩn sau khi chuyển dữ liệu
+              </span>
+            )}
             <span className="ml-auto flex items-center gap-1">
               <button
                 onClick={() => move(idx, -1)}

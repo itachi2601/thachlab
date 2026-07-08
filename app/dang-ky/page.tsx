@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import type { SchoolClass } from "@/features/exams/types";
-import { fetchClasses } from "@/services/classes";
+import { displayClassesByGrade, fetchClasses } from "@/services/classes";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 
 export default function RegisterPage() {
@@ -19,6 +19,7 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [needConfirm, setNeedConfirm] = useState(false);
+  const displayClasses = displayClassesByGrade(classes);
 
   useEffect(() => {
     if (supabaseConfigured) fetchClasses().then(setClasses);
@@ -128,7 +129,7 @@ export default function RegisterPage() {
                 <option value="" disabled>
                   — Chọn lớp của em —
                 </option>
-                {classes.map((c) => (
+                {displayClasses.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.icon && `${c.icon} `}
                     {c.name}

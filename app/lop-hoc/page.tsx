@@ -8,7 +8,12 @@ import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { classGrade, expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import {
+  classGrade,
+  displayClassesByGrade,
+  expandClassIdsByGrade,
+  fetchClasses,
+} from "@/services/classes";
 import { fetchChapters, fetchLessons } from "@/services/lessons";
 import {
   fetchPublishedExams,
@@ -56,6 +61,7 @@ export default function ClassHubPage() {
   }, [session]);
 
   const active = classes?.find((c) => c.id === activeId);
+  const displayClasses = classes ? displayClassesByGrade(classes) : [];
   const visibleClassIds =
     classes && activeId !== null ? expandClassIdsByGrade([activeId], classes) : null;
   const classChapters = (chapters ?? []).filter((ch) =>
@@ -90,7 +96,7 @@ export default function ClassHubPage() {
           <>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {GRADE_ORDER.map((grade) => {
-                const gradeClasses = classes.filter(
+                const gradeClasses = displayClasses.filter(
                   (c) => classGrade(c.name) === grade,
                 );
                 if (gradeClasses.length === 0) return null;
