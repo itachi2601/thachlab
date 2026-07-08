@@ -98,7 +98,7 @@ export default function ClassHubPage() {
                     <img
                       src={GRADE_IMAGES[grade]}
                       alt={`Vật Lý lớp ${grade}`}
-                      className="h-28 w-full object-cover object-top"
+                      className="aspect-[2/3] w-full object-cover"
                       loading="lazy"
                     />
                     <div className="flex flex-wrap gap-2 p-3">
