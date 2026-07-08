@@ -20,6 +20,13 @@ import {
 import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 
+const GRADE_IMAGES: Record<string, string> = {
+  "10": "/images/learning-path/vat-ly-10.jpg",
+  "11": "/images/learning-path/vat-ly-11.jpg",
+  "12": "/images/learning-path/vat-ly-12.jpg",
+};
+const GRADE_ORDER = ["10", "11", "12"];
+
 export default function ClassHubPage() {
   const { session } = useAuth();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
@@ -77,26 +84,47 @@ export default function ClassHubPage() {
           <p className="text-slate-400">Chưa có lớp nào.</p>
         ) : (
           <>
-            <div className="flex flex-wrap gap-2">
-              {classes.map((c) => (
-                <button
-                  key={c.id}
-                  onClick={() => setActiveId(c.id)}
-                  style={
-                    activeId === c.id
-                      ? { backgroundColor: c.color, color: "#fff" }
-                      : undefined
-                  }
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                    activeId === c.id
-                      ? ""
-                      : "bg-white/5 text-slate-300 hover:bg-white/10"
-                  }`}
-                >
-                  {c.icon && `${c.icon} `}
-                  {c.name}
-                </button>
-              ))}
+            <div className="grid gap-4 sm:grid-cols-3">
+              {GRADE_ORDER.map((grade) => {
+                const gradeClasses = classes.filter((c) =>
+                  c.name.startsWith(grade),
+                );
+                if (gradeClasses.length === 0) return null;
+                return (
+                  <div
+                    key={grade}
+                    className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B1020]"
+                  >
+                    <img
+                      src={GRADE_IMAGES[grade]}
+                      alt={`Vật Lý lớp ${grade}`}
+                      className="h-28 w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                    <div className="flex flex-wrap gap-2 p-3">
+                      {gradeClasses.map((c) => (
+                        <button
+                          key={c.id}
+                          onClick={() => setActiveId(c.id)}
+                          style={
+                            activeId === c.id
+                              ? { backgroundColor: c.color, color: "#fff" }
+                              : undefined
+                          }
+                          className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                            activeId === c.id
+                              ? ""
+                              : "bg-white/5 text-slate-300 hover:bg-white/10"
+                          }`}
+                        >
+                          {c.icon && `${c.icon} `}
+                          {c.name}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
             {active && (
