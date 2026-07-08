@@ -11,6 +11,8 @@ export interface PostFrontmatter {
   description: string;
   date: string; // ISO yyyy-mm-dd
   keywords?: string[];
+  category?: string;
+  tags?: string[];
   cover?: string; // đường dẫn ảnh đại diện (dùng cho OG/mạng xã hội)
   author?: string;
 }
@@ -48,6 +50,8 @@ export function getPostBySlug(slug: string): Post {
     description: fm.description,
     date: fm.date,
     keywords: fm.keywords ?? [],
+    category: fm.category,
+    tags: fm.tags ?? [],
     cover: fm.cover,
     author: fm.author ?? "Thầy Thạch",
     readingMinutes: readingTime(content),

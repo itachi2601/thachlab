@@ -35,6 +35,8 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: [post.author ?? "Thầy Thạch"],
+      section: post.category,
+      tags: post.tags,
       ...(post.cover ? { images: [{ url: post.cover }] } : {}),
     },
     twitter: {
@@ -82,6 +84,7 @@ export default async function BlogPostPage({
         },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         ...(post.cover ? { image: `${SITE}${post.cover}` } : {}),
+        articleSection: post.category,
         keywords: (post.keywords ?? []).join(", "),
       },
       {
@@ -121,6 +124,23 @@ export default async function BlogPostPage({
             {post.readingMinutes} phút đọc {" · "}
             {post.author}
           </p>
+          {(post.category || post.tags?.length) ? (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {post.category ? (
+                <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
+                  {post.category}
+                </span>
+              ) : null}
+              {post.tags?.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1 text-xs font-medium text-orange-200"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : null}
 
           <div
             className="blog-prose mt-8"

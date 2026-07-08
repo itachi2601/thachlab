@@ -59,6 +59,23 @@ export default function BlogIndexPage() {
                   <time dateTime={post.date}>{formatDate(post.date)}</time> ·{" "}
                   {post.readingMinutes} phút đọc
                 </p>
+                {(post.category || post.tags?.length) ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {post.category ? (
+                      <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200">
+                        {post.category}
+                      </span>
+                    ) : null}
+                    {post.tags?.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1 text-xs font-medium text-orange-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
                 <h2 className="mt-2 font-display text-xl font-bold text-white group-hover:text-[#3B82F6]">
                   {post.title}
                 </h2>

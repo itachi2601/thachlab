@@ -7,6 +7,8 @@ import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { getSupabase } from "@/services/supabase";
+import ScoreChart from "@/components/analytics/ScoreChart";
+import WrongTopicsTable from "@/components/analytics/WrongTopicsTable";
 
 interface ResultRow {
   id: number;
@@ -60,7 +62,21 @@ function Account() {
 
       <div>
         <h2 className="mb-4 font-display text-xl font-semibold text-white">
-          Lịch sử điểm
+          📊 Phân tích điểm số
+        </h2>
+        <ScoreChart />
+      </div>
+
+      <div>
+        <h2 className="mb-4 font-display text-xl font-semibold text-white">
+          ⚠️ Các chủ đề em hay sai
+        </h2>
+        <WrongTopicsTable />
+      </div>
+
+      <div>
+        <h2 className="mb-4 font-display text-xl font-semibold text-white">
+          📈 Lịch sử điểm
         </h2>
         {!results ? (
           <p className="text-slate-400">Đang tải…</p>

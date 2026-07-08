@@ -10,6 +10,7 @@
  */
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { useHarmonicMotion } from "@/hooks/useHarmonicMotion";
 import { SpringSimulation } from "@/components/physics/SpringSimulation";
@@ -51,14 +52,20 @@ export function PhysicsSimulationHero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <button className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-violet-900/40 transition hover:shadow-violet-700/50 hover:brightness-110 active:scale-[0.98] sm:text-base">
+            <Link
+              href="#learning-roadmap"
+              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-violet-900/40 transition hover:shadow-violet-700/50 hover:brightness-110 active:scale-[0.98] sm:text-base"
+            >
               Bắt đầu hành trình
               <ArrowRight size={18} />
-            </button>
-            <button className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 active:scale-[0.98] sm:text-base">
+            </Link>
+            <Link
+              href="/lop-hoc"
+              className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5 active:scale-[0.98] sm:text-base"
+            >
               <PlayCircle size={18} />
               Xem khóa học
-            </button>
+            </Link>
           </div>
 
           <p className="mt-5 flex items-center gap-2 text-sm text-slate-500">
