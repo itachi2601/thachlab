@@ -13,9 +13,9 @@ export default function Home() {
       <Navbar />
       <main>
         <PhysicsSimulationHero />
+        <Features />
         <PhysicsEverywhere />
         <LearningPath />
-        <Features />
         <AboutFounder />
         <Testimonials />
       </main>

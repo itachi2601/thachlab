@@ -10,7 +10,7 @@
  */
 
 import { useState } from "react";
-import { ArrowRight, PlayCircle, FileVideo, ClipboardCheck, BookOpen } from "lucide-react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import { useHarmonicMotion } from "@/hooks/useHarmonicMotion";
 import { SpringSimulation } from "@/components/physics/SpringSimulation";
 import { DisplacementChart } from "@/components/physics/DisplacementChart";
@@ -18,30 +18,6 @@ import { ControlPanel } from "@/components/physics/ControlPanel";
 import { FormulaPanel } from "@/components/physics/FormulaPanel";
 
 const AVATAR_COLORS = ["#2563EB", "#7C3AED", "#0EA5E9", "#F59E0B"];
-
-const stats = [
-  {
-    icon: FileVideo,
-    tint: "bg-blue-500/15 text-blue-400",
-    value: "500+",
-    label: "Video bài giảng",
-    detail: "Dễ hiểu, trực quan, sinh động",
-  },
-  {
-    icon: ClipboardCheck,
-    tint: "bg-emerald-500/15 text-emerald-400",
-    value: "3.000+",
-    label: "Bài tập thực hành",
-    detail: "Từ cơ bản đến nâng cao",
-  },
-  {
-    icon: BookOpen,
-    tint: "bg-amber-500/15 text-amber-400",
-    value: "100%",
-    label: "Bám sát chương trình",
-    detail: "GDPT 2018 mới nhất",
-  },
-];
 
 export function PhysicsSimulationHero() {
   const motion = useHarmonicMotion({ initialAmplitude: 0.1, initialFrequency: 1 });
@@ -148,23 +124,6 @@ export function PhysicsSimulationHero() {
           {/* CÔNG THỨC */}
           <FormulaPanel open={formulaOpen} period={motion.period} omega={motion.omega} />
         </div>
-      </div>
-
-      {/* ---------------- STATS BAR ---------------- */}
-      <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-4 border-t border-white/10 pt-10 sm:grid-cols-3">
-        {stats.map((s) => (
-          <div key={s.label} className="glass glass-hover flex items-center gap-4 rounded-2xl p-4">
-            <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${s.tint}`}>
-              <s.icon size={22} />
-            </span>
-            <div>
-              <p className="text-lg font-semibold text-white">
-                {s.value} <span className="text-base font-medium text-slate-300">{s.label}</span>
-              </p>
-              <p className="text-sm text-slate-500">{s.detail}</p>
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* ---------------- DẢI CÔNG THỨC CHẠY ---------------- */}
