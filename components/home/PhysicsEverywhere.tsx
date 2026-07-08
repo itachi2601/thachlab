@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Cog, Dumbbell, Snowflake } from "lucide-react";
+import { ArrowRight, Building2, Dumbbell, Snowflake, Zap } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const scenes = [
@@ -12,20 +12,21 @@ const scenes = [
   {
     tag: "Gym & Thể thao",
     title: "Vì sao cơ bắp co lại khi nâng tạ?",
+    href: "/blog/vi-sao-co-bap-co-lai-khi-nang-ta",
     icon: Dumbbell,
     tint: "from-orange-500/40 to-rose-900/20 text-orange-300",
     glow: "group-hover:shadow-orange-500/30",
   },
   {
-    tag: "Cơ khí chế tạo",
-    title: "Vì sao các bánh răng ăn khớp hoàn hảo?",
-    icon: Cog,
+    tag: "Xe điện & Năng lượng",
+    title: "Vì sao phanh tái sinh giúp xe điện sạc lại pin?",
+    icon: Zap,
     tint: "from-slate-400/40 to-slate-900/20 text-slate-300",
     glow: "group-hover:shadow-slate-400/30",
   },
   {
     tag: "Kiến trúc & Cầu đường",
-    title: "Vì sao cầu treo có thể nâng đỡ khối lượng lớn?",
+    title: "Vì sao Taipei 101 treo một con lắc khổng lồ giữa toà nhà?",
     icon: Building2,
     tint: "from-violet-500/40 to-indigo-900/20 text-violet-300",
     glow: "group-hover:shadow-violet-500/30",
@@ -54,7 +55,7 @@ export default function PhysicsEverywhere() {
           {scenes.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
               <a
-                href="#"
+                href={s.href ?? "#"}
                 className={`glass glass-hover group flex h-full flex-col overflow-hidden rounded-2xl transition-shadow ${s.glow}`}
               >
                 <div
