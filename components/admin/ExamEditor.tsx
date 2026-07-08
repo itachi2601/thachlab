@@ -11,6 +11,7 @@ import type {
 } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import ClassPicker from "@/components/admin/ClassPicker";
+import LaTexEditor from "@/components/admin/LaTexEditor";
 import { setItemClasses } from "@/services/classes";
 import { getSupabase } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
@@ -74,12 +75,10 @@ function QuestionEditor({
         </button>
       </div>
 
-      <textarea
+      <LaTexEditor
         value={q.question}
-        onChange={(e) => onChange({ ...q, question: e.target.value })}
-        placeholder="Nội dung câu hỏi"
-        rows={2}
-        className={inputCls}
+        onChange={(html) => onChange({ ...q, question: html })}
+        placeholder="Nội dung câu hỏi (LaTeX, AZOTA, hoặc HTML)"
       />
 
       {q.type === "multiple_choice" && (

@@ -1,6 +1,27 @@
 import type { SchoolClass } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
+export function classGrade(className: string): string | null {
+  return className.match(/\d+/)?.[0] ?? null;
+}
+
+export function expandClassIdsByGrade(
+  classIds: number[] | null,
+  classes: SchoolClass[],
+): number[] | null {
+  if (classIds === null) return null;
+  const grades = new Set(
+    classes
+      .filter((schoolClass) => classIds.includes(schoolClass.id))
+      .map((schoolClass) => classGrade(schoolClass.name))
+      .filter(Boolean),
+  );
+  if (grades.size === 0) return classIds;
+  return classes
+    .filter((schoolClass) => grades.has(classGrade(schoolClass.name)))
+    .map((schoolClass) => schoolClass.id);
+}
+
 export async function fetchClasses(includeHidden = false) {
   let q = getSupabase()
     .from("classes")

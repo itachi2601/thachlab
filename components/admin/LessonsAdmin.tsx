@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import ClassPicker from "@/components/admin/ClassPicker";
 import LaTexEditor from "@/components/admin/LaTexEditor";
 import { useToast } from "@/components/ui/Toast";
+import type { SchoolClass } from "@/features/exams/types";
 import {
   SECTION_META,
   SECTION_ORDER,
@@ -12,7 +12,11 @@ import {
   type LessonItem,
   type LessonItemKind,
 } from "@/features/lessons/types";
-import { setItemClasses } from "@/services/classes";
+import {
+  expandClassIdsByGrade,
+  fetchClasses,
+  setItemClasses,
+} from "@/services/classes";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { getSupabase } from "@/services/supabase";
 
@@ -132,7 +136,7 @@ function ItemForm({
       {!isExamKind && !isVideoKind && (
         <LaTexEditor
           value={bodyHtml}
-          onChange={(html, latex) => setBodyHtml(html)}
+          onChange={(html) => setBodyHtml(html)}
           placeholder="Nội dung (viết LaTeX hoặc HTML)"
         />
       )}
@@ -301,9 +305,11 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
 // ---------- Quản lý bài học của 1 chương ----------
 function ChapterLessonsEditor({
   chapter,
+  schoolClass,
   onBack,
 }: {
   chapter: Chapter;
+  schoolClass: SchoolClass | null;
   onBack: () => void;
 }) {
   const toast = useToast();
@@ -353,9 +359,16 @@ function ChapterLessonsEditor({
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
         <button onClick={onBack} className={chipBtn}>
-          ← Quay lại
+          ← Chọn chương khác
         </button>
-        <h3 className="font-display font-semibold text-white">{chapter.title}</h3>
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-wide text-[#60A5FA]">
+            {schoolClass ? `Lớp ${schoolClass.name}` : "Toàn trường"}
+          </p>
+          <h3 className="truncate font-display font-semibold text-white">
+            {chapter.title}
+          </h3>
+        </div>
       </div>
 
       <form onSubmit={addLesson} className="flex flex-wrap gap-3">
@@ -440,45 +453,73 @@ function ChapterLessonsEditor({
 // ---------- Cấp cao nhất: danh sách chương ----------
 export default function LessonsAdmin() {
   const toast = useToast();
+  const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [openChapter, setOpenChapter] = useState<Chapter | null>(null);
   const [title, setTitle] = useState("");
-  const [classIds, setClassIds] = useState<number[]>([]);
+  const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
 
   const reload = useCallback(() => {
     fetchChapters().then(setChapters);
   }, []);
   useEffect(reload, [reload]);
 
+  useEffect(() => {
+    fetchClasses().then((items) => {
+      setClasses(items);
+      setSelectedClassId((current) => current ?? items[0]?.id ?? null);
+    });
+  }, []);
+
+  const selectedClass =
+    classes.find((schoolClass) => schoolClass.id === selectedClassId) ?? null;
+  const visibleClassIds =
+    selectedClassId === null ? [] : (expandClassIdsByGrade([selectedClassId], classes) ?? []);
+  const classChapters =
+    selectedClassId === null
+      ? []
+      : chapters.filter(
+          (chapter) =>
+            chapter.classIds.length === 0 ||
+            chapter.classIds.some((classId) => visibleClassIds.includes(classId)),
+        );
+
   if (openChapter)
     return (
-      <ChapterLessonsEditor chapter={openChapter} onBack={() => setOpenChapter(null)} />
+      <ChapterLessonsEditor
+        chapter={openChapter}
+        schoolClass={selectedClass}
+        onBack={() => setOpenChapter(null)}
+      />
     );
 
   async function addChapter(e: React.FormEvent) {
     e.preventDefault();
+    if (!selectedClassId) {
+      toast("error", "Hãy chọn lớp trước khi thêm chương.");
+      return;
+    }
     if (!title.trim()) return;
     const { data, error } = await getSupabase()
       .from("chapters")
-      .insert({ title: title.trim(), sort_order: chapters.length + 1 })
+      .insert({ title: title.trim(), sort_order: classChapters.length + 1 })
       .select("id")
       .single();
     if (error || !data) {
       toast("error", error?.message ?? "Không tạo được chương.");
       return;
     }
-    await setItemClasses("chapter_classes", "chapter_id", data.id, classIds);
+    await setItemClasses("chapter_classes", "chapter_id", data.id, [selectedClassId]);
     toast("success", "Đã thêm chương.");
     setTitle("");
-    setClassIds([]);
     reload();
   }
 
   async function move(idx: number, dir: -1 | 1) {
     const other = idx + dir;
-    if (other < 0 || other >= chapters.length) return;
-    const a = chapters[idx];
-    const b = chapters[other];
+    if (other < 0 || other >= classChapters.length) return;
+    const a = classChapters[idx];
+    const b = classChapters[other];
     const supabase = getSupabase();
     await supabase.from("chapters").update({ sort_order: b.sort_order }).eq("id", a.id);
     await supabase.from("chapters").update({ sort_order: a.sort_order }).eq("id", b.id);
@@ -487,29 +528,87 @@ export default function LessonsAdmin() {
 
   return (
     <div className="space-y-6">
+      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <p className="mb-3 text-sm font-medium text-slate-300">
+          1. Chọn lớp
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {classes.map((schoolClass) => {
+            const active = schoolClass.id === selectedClassId;
+            return (
+              <button
+                key={schoolClass.id}
+                type="button"
+                onClick={() => {
+                  setSelectedClassId(schoolClass.id);
+                  setOpenChapter(null);
+                }}
+                style={
+                  active
+                    ? { backgroundColor: schoolClass.color, borderColor: schoolClass.color }
+                    : undefined
+                }
+                className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+                  active
+                    ? "text-white"
+                    : "border-white/10 text-slate-400 hover:border-white/30 hover:text-slate-200"
+                }`}
+              >
+                {schoolClass.icon && `${schoolClass.icon} `}
+                {schoolClass.name}
+              </button>
+            );
+          })}
+          {classes.length === 0 && (
+            <span className="text-sm text-slate-500">
+              Chưa có lớp — thêm lớp ở mục Lớp học trước.
+            </span>
+          )}
+        </div>
+      </section>
+
       <form
         onSubmit={addChapter}
         className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5"
       >
+        <div>
+          <p className="text-sm font-medium text-slate-300">
+            2. Thêm chương cho {selectedClass ? `lớp ${selectedClass.name}` : "lớp đã chọn"}
+          </p>
+          <p className="mt-1 text-xs text-slate-500">
+            Chương mới sẽ chỉ hiện trong lớp đang chọn, sau đó admin vào chương để thêm bài học.
+          </p>
+        </div>
         <div className="flex flex-wrap gap-3">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Tên chương, vd Chương 1: Hàm số lượng giác…"
             className={`${inputCls} min-w-72 flex-1`}
+            disabled={!selectedClassId}
           />
           <button
             type="submit"
+            disabled={!selectedClassId}
             className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
           >
             + Thêm chương
           </button>
         </div>
-        <ClassPicker selected={classIds} onChange={setClassIds} />
       </form>
 
       <div className="space-y-2">
-        {chapters.map((ch, idx) => (
+        <div>
+          <p className="text-sm font-medium text-slate-300">
+            3. Chọn chương để đăng bài học
+          </p>
+          {selectedClass && (
+            <p className="mt-1 text-xs text-slate-500">
+              Đang xem chương của lớp {selectedClass.name}.
+            </p>
+          )}
+        </div>
+        {classChapters.map((ch, idx) => (
           <div
             key={ch.id}
             className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
@@ -522,7 +621,11 @@ export default function LessonsAdmin() {
                 {ch.title}
               </span>
               <span className="text-xs text-slate-500">
-                {ch.classIds.length === 0 ? "Toàn trường" : `${ch.classIds.length} lớp`}
+                {ch.classIds.length === 0
+                  ? "Toàn trường"
+                  : selectedClass
+                    ? `Lớp ${selectedClass.name}`
+                    : `${ch.classIds.length} lớp`}
               </span>
             </button>
             <span className="flex items-center gap-1">
@@ -553,9 +656,9 @@ export default function LessonsAdmin() {
             </span>
           </div>
         ))}
-        {chapters.length === 0 && (
+        {selectedClassId && classChapters.length === 0 && (
           <p className="text-sm text-slate-400">
-            Chưa có chương nào — thêm chương đầu tiên ở trên.
+            Lớp này chưa có chương nào — thêm chương đầu tiên ở trên.
           </p>
         )}
       </div>

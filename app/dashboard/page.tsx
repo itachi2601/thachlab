@@ -8,7 +8,11 @@ import RequireAuth from "@/components/auth/RequireAuth";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { getSupabase } from "@/services/supabase";
-import { fetchMyClassIds } from "@/services/classes";
+import {
+  expandClassIdsByGrade,
+  fetchClasses,
+  fetchMyClassIds,
+} from "@/services/classes";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
@@ -24,6 +28,7 @@ import {
   fetchMyExamScores,
 } from "@/services/lessons";
 import type { Chapter, Lesson } from "@/features/lessons/types";
+import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 
 interface ResultRow {
@@ -44,6 +49,7 @@ function Dashboard() {
   const userId = session?.user.id;
 
   const [myClassIds, setMyClassIds] = useState<number[] | null>(null);
+  const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [doneItemIds, setDoneItemIds] = useState<Set<number> | null>(null);
@@ -56,6 +62,7 @@ function Dashboard() {
   useEffect(() => {
     if (!userId) return;
     fetchMyClassIds(userId).then(setMyClassIds);
+    fetchClasses().then(setClasses);
     fetchChapters().then(setChapters);
     fetchLessons().then(setLessons);
     fetchMyProgress(userId).then(setDoneItemIds);
@@ -76,9 +83,14 @@ function Dashboard() {
     fetchItemIdsByLessons(lessons.map((l) => l.id)).then(setItemsByLesson);
   }, [lessons]);
 
+  const visibleClassIds = useMemo(
+    () => (classes ? expandClassIdsByGrade(myClassIds, classes) : myClassIds),
+    [classes, myClassIds],
+  );
+
   const visibleChapters = useMemo(
-    () => (chapters ?? []).filter((c) => visibleTo(c.classIds, myClassIds)),
-    [chapters, myClassIds],
+    () => (chapters ?? []).filter((c) => visibleTo(c.classIds, visibleClassIds)),
+    [chapters, visibleClassIds],
   );
 
   const chapterProgress: ChapterProgress[] = useMemo(() => {
@@ -109,15 +121,15 @@ function Dashboard() {
   const suggestedExams = useMemo(() => {
     if (!exams || !scores) return [];
     return exams
-      .filter((e) => visibleTo(e.classIds, myClassIds))
+      .filter((e) => visibleTo(e.classIds, visibleClassIds))
       .filter((e) => !scores.has(e.id))
       .slice(0, 4);
-  }, [exams, scores, myClassIds]);
+  }, [exams, scores, visibleClassIds]);
 
   const suggestedPosts = useMemo(() => {
     if (!posts) return [];
-    return posts.filter((p) => visibleTo(p.classIds, myClassIds)).slice(0, 3);
-  }, [posts, myClassIds]);
+    return posts.filter((p) => visibleTo(p.classIds, visibleClassIds)).slice(0, 3);
+  }, [posts, visibleClassIds]);
 
   const loading = !chapters || !lessons || !itemsByLesson || !doneItemIds || !scores;
 

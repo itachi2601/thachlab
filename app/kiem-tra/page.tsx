@@ -9,7 +9,11 @@ import { SkeletonGrid } from "@/components/ui/Skeleton";
 import { useAuth } from "@/components/auth/AuthProvider";
 import type { SchoolClass, Difficulty } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
-import { fetchClasses, fetchMyClassIds } from "@/services/classes";
+import {
+  expandClassIdsByGrade,
+  fetchClasses,
+  fetchMyClassIds,
+} from "@/services/classes";
 import {
   fetchPublishedExams,
   visibleTo,
@@ -43,7 +47,9 @@ function ExamList() {
     if (!isAdmin) fetchMyClassIds(session.user.id).then(setMyClassIds);
   }, [session, isAdmin]);
 
-  const effectiveClassIds = isAdmin ? null : myClassIds;
+  const effectiveClassIds = isAdmin
+    ? null
+    : expandClassIdsByGrade(myClassIds, classes);
 
   const topics = useMemo(
     () => [...new Set((exams ?? []).map((e) => e.topic).filter(Boolean))],

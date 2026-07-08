@@ -8,7 +8,7 @@ import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { fetchClasses } from "@/services/classes";
+import { classGrade, expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { fetchChapters, fetchLessons } from "@/services/lessons";
 import {
   fetchPublishedExams,
@@ -28,10 +28,6 @@ const GRADE_IMAGES: Record<string, string> = {
 };
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
 const GRADE_ORDER = ["9", "10", "11", "12"];
-
-function gradeOf(className: string): string | null {
-  return className.match(/\d+/)?.[0] ?? null;
-}
 
 export default function ClassHubPage() {
   const { session } = useAuth();
@@ -60,14 +56,16 @@ export default function ClassHubPage() {
   }, [session]);
 
   const active = classes?.find((c) => c.id === activeId);
+  const visibleClassIds =
+    classes && activeId !== null ? expandClassIdsByGrade([activeId], classes) : null;
   const classChapters = (chapters ?? []).filter((ch) =>
-    visibleTo(ch.classIds, activeId === null ? null : [activeId]),
+    visibleTo(ch.classIds, visibleClassIds),
   );
   const classPosts = (posts ?? []).filter((p) =>
-    p.classIds.includes(activeId ?? -1),
+    visibleTo(p.classIds, visibleClassIds),
   );
   const classExams = (exams ?? []).filter((e) =>
-    e.classIds.includes(activeId ?? -1),
+    visibleTo(e.classIds, visibleClassIds),
   );
 
   return (
@@ -93,7 +91,7 @@ export default function ClassHubPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {GRADE_ORDER.map((grade) => {
                 const gradeClasses = classes.filter(
-                  (c) => gradeOf(c.name) === grade,
+                  (c) => classGrade(c.name) === grade,
                 );
                 if (gradeClasses.length === 0) return null;
                 return (
