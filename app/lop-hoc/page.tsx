@@ -21,11 +21,17 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 
 const GRADE_IMAGES: Record<string, string> = {
+  "9": "/images/learning-path/khtn-9.jpg",
   "10": "/images/learning-path/vat-ly-10.jpg",
   "11": "/images/learning-path/vat-ly-11.jpg",
   "12": "/images/learning-path/vat-ly-12.jpg",
 };
-const GRADE_ORDER = ["10", "11", "12"];
+const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
+const GRADE_ORDER = ["9", "10", "11", "12"];
+
+function gradeOf(className: string): string | null {
+  return className.match(/\d+/)?.[0] ?? null;
+}
 
 export default function ClassHubPage() {
   const { session } = useAuth();
@@ -84,10 +90,10 @@ export default function ClassHubPage() {
           <p className="text-slate-400">Chưa có lớp nào.</p>
         ) : (
           <>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {GRADE_ORDER.map((grade) => {
-                const gradeClasses = classes.filter((c) =>
-                  c.name.startsWith(grade),
+                const gradeClasses = classes.filter(
+                  (c) => gradeOf(c.name) === grade,
                 );
                 if (gradeClasses.length === 0) return null;
                 return (
@@ -97,7 +103,7 @@ export default function ClassHubPage() {
                   >
                     <img
                       src={GRADE_IMAGES[grade]}
-                      alt={`Vật Lý lớp ${grade}`}
+                      alt={GRADE_LABELS[grade] ?? `Vật Lý lớp ${grade}`}
                       className="aspect-[2/3] w-full object-cover"
                       loading="lazy"
                     />
