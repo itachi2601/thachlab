@@ -38,16 +38,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          {session && (
-            <li>
-              <Link
-                href="/tin-nhan"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-              >
-                Tin nhắn
-              </Link>
-            </li>
-          )}
           {profile?.role === "admin" && (
             <li>
               <Link
