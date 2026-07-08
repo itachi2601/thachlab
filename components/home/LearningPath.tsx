@@ -12,7 +12,6 @@ const stages = [
     topics: ["Động học", "Định luật Newton", "Năng lượng", "Chuyển động tròn"],
     icon: BookOpen,
     ring: "from-blue-500 to-cyan-400",
-    image: "/images/learning-path/vat-ly-10.jpg",
   },
   {
     grade: "Lớp 11",
@@ -23,7 +22,6 @@ const stages = [
     topics: ["Dao động", "Sóng cơ & ánh sáng", "Điện trường", "Dòng điện không đổi"],
     icon: Rocket,
     ring: "from-violet-500 to-blue-400",
-    image: "/images/learning-path/vat-ly-11.jpg",
   },
   {
     grade: "Lớp 12",
@@ -34,7 +32,6 @@ const stages = [
     topics: ["Vật lý nhiệt", "Khí lý tưởng", "Từ trường", "Lượng tử & hạt nhân"],
     icon: Flag,
     ring: "from-amber-400 to-orange-500",
-    image: "/images/learning-path/vat-ly-12.jpg",
   },
 ];
 
@@ -60,23 +57,13 @@ export default function LearningPath() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
             {stages.map((s, i) => (
               <Reveal key={s.grade} delay={i * 0.12}>
-                <div className="glass glass-hover relative flex h-full flex-col items-start overflow-hidden rounded-3xl">
-                  <div className="relative h-44 w-full">
-                    <img
-                      src={s.image}
-                      alt={`Sơ đồ tóm tắt chương trình Vật Lý ${s.grade.toLowerCase()}`}
-                      className="h-full w-full object-cover object-top"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b16] via-transparent to-transparent" />
-                    <span
-                      className={`absolute bottom-3 left-3 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${s.ring} text-white shadow-lg`}
-                    >
-                      <s.icon size={22} />
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col items-start p-7 pt-5">
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                <div className="glass glass-hover relative flex h-full flex-col items-start rounded-3xl p-7">
+                  <span
+                    className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${s.ring} text-white shadow-lg`}
+                  >
+                    <s.icon size={26} />
+                  </span>
+                  <span className="mt-5 font-mono text-xs uppercase tracking-widest text-muted">
                     {s.grade}
                   </span>
                   <h3 className="mt-1 font-display text-xl font-bold text-ink">
@@ -103,7 +90,6 @@ export default function LearningPath() {
                       Đọc lộ trình {s.grade.toLowerCase()} →
                     </Link>
                   )}
-                  </div>
                 </div>
               </Reveal>
             ))}
