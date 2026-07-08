@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import ClassPicker from "@/components/admin/ClassPicker";
+import LaTexEditor from "@/components/admin/LaTexEditor";
 import { useToast } from "@/components/ui/Toast";
 import {
   SECTION_META,
@@ -129,12 +130,10 @@ function ItemForm({
         />
       )}
       {!isExamKind && !isVideoKind && (
-        <textarea
+        <LaTexEditor
           value={bodyHtml}
-          onChange={(e) => setBodyHtml(e.target.value)}
-          placeholder="Nội dung (HTML + công thức $LaTeX$)…"
-          rows={6}
-          className={`${inputCls} w-full font-mono`}
+          onChange={(html, latex) => setBodyHtml(html)}
+          placeholder="Nội dung (viết LaTeX hoặc HTML)"
         />
       )}
       {isExamKind && (
