@@ -1,23 +1,32 @@
+import { BrainCircuit, Sparkles, BarChart3, BookOpenCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const features = [
   {
     label: "01",
+    icon: BrainCircuit,
+    tint: "bg-blue-500/15 text-blue-400",
     title: "Hiểu bản chất, không học vẹt",
     desc: "Mỗi bài học bắt đầu bằng một câu hỏi thực tế, dẫn dắt học sinh tự suy luận ra công thức thay vì ghi nhớ máy móc.",
   },
   {
     label: "02",
+    icon: Sparkles,
+    tint: "bg-violet-500/15 text-violet-400",
     title: "Trực quan hoá mọi hiện tượng",
     desc: "Mô phỏng chuyển động, dao động, điện trường... được minh hoạ sinh động, giúp khái niệm trừu tượng trở nên dễ hình dung.",
   },
   {
     label: "03",
+    icon: BarChart3,
+    tint: "bg-emerald-500/15 text-emerald-400",
     title: "Phân hoá theo năng lực",
     desc: "Bài tập trải dài từ nhận biết, thông hiểu đến vận dụng cao, phù hợp với từng học sinh trong mọi giai đoạn ôn luyện.",
   },
   {
     label: "04",
+    icon: BookOpenCheck,
+    tint: "bg-amber-500/15 text-amber-400",
     title: "Bám sát chương trình mới",
     desc: "Nội dung được xây dựng theo đúng Chương trình GDPT 2018, tương thích Cánh Diều, Kết nối tri thức và Chân trời sáng tạo.",
   },
@@ -45,7 +54,14 @@ export default function Features() {
           {features.map((f, i) => (
             <Reveal key={f.label} delay={i * 0.08}>
               <div className="glass glass-hover flex h-full flex-col gap-4 rounded-3xl p-8 lg:p-10">
-                <span className="font-mono text-sm text-accent">{f.label}</span>
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${f.tint}`}
+                  >
+                    <f.icon size={22} />
+                  </span>
+                  <span className="font-mono text-sm text-accent">{f.label}</span>
+                </div>
                 <h3 className="font-display text-xl font-semibold text-ink">
                   {f.title}
                 </h3>
