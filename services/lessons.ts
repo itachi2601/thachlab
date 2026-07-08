@@ -105,6 +105,24 @@ export async function fetchMyProgress(userId: string): Promise<Set<number>> {
   return new Set((data ?? []).map((r) => r.item_id as number));
 }
 
+/** Danh sách item_id của từng bài học — dùng để tính % tiến độ theo bài/chương. */
+export async function fetchItemIdsByLessons(
+  lessonIds: number[],
+): Promise<Map<number, number[]>> {
+  if (lessonIds.length === 0) return new Map();
+  const { data } = await getSupabase()
+    .from("lesson_items")
+    .select("id, lesson_id")
+    .in("lesson_id", lessonIds);
+  const map = new Map<number, number[]>();
+  for (const row of data ?? []) {
+    const arr = map.get(row.lesson_id) ?? [];
+    arr.push(row.id);
+    map.set(row.lesson_id, arr);
+  }
+  return map;
+}
+
 export async function markItemDone(userId: string, itemId: number) {
   await getSupabase()
     .from("lesson_progress")
