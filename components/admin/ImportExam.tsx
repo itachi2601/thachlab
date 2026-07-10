@@ -54,8 +54,9 @@ export default function ImportExam() {
     setBusy(true);
     try {
       const options = parseAzotaIframe(latexText);
-      setAzotaEmbed(options);
-      toast("success", `Đã nhận diện AZOTA: "${options.title}"`);
+      const embed = { src: options.src, title: options.title ?? "AZOTA Exercise" };
+      setAzotaEmbed(embed);
+      toast("success", `Đã nhận diện AZOTA: "${embed.title}"`);
     } catch (err) {
       toast("error", `Lỗi: ${err instanceof Error ? err.message : err}`);
     } finally {

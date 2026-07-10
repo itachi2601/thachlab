@@ -12,9 +12,11 @@ import ClassesAdmin from "@/components/admin/ClassesAdmin";
 import LessonsAdmin from "@/components/admin/LessonsAdmin";
 import ResultsAdmin from "@/components/admin/ResultsAdmin";
 import MessagesAdmin from "@/components/admin/MessagesAdmin";
+import CncLmsAdmin from "@/components/admin/CncLmsAdmin";
 
 const TABS = [
   { id: "lessons", label: "Bài học" },
+  { id: "cnc-lms", label: "LMS CNC" },
   { id: "exams", label: "Đề kiểm tra" },
   { id: "import-word", label: "Import từ Word" },
   { id: "import-exam", label: "Import Đề" },
@@ -54,6 +56,7 @@ export default function AdminPage() {
           </div>
           <div className="mt-8">
             {tab === "lessons" && <LessonsAdmin />}
+            {tab === "cnc-lms" && <CncLmsAdmin />}
             {tab === "exams" && <ExamsAdmin />}
             {tab === "import-word" && <ImportWord />}
             {tab === "import-exam" && <ImportExam />}

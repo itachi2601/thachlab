@@ -10,7 +10,7 @@ import {
 
 interface ToastItem {
   id: number;
-  kind: "success" | "error" | "info";
+  kind: "success" | "error" | "info" | "warning";
   text: string;
 }
 
@@ -27,12 +27,14 @@ const COLORS: Record<ToastItem["kind"], string> = {
   success: "border-emerald-500/40 text-emerald-200",
   error: "border-red-500/40 text-red-200",
   info: "border-[#3B82F6]/40 text-slate-200",
+  warning: "border-amber-500/40 text-amber-200",
 };
 
 const ICONS: Record<ToastItem["kind"], string> = {
   success: "✓",
   error: "✕",
   info: "ℹ",
+  warning: "!",
 };
 
 export default function ToastProvider({
