@@ -46,8 +46,8 @@
 ## Phần 2 — Dự định phát triển tiếp theo
 
 ### Ưu tiên gần (quick wins)
-- [ ] **Hoàn thiện tài liệu** đang rỗng: `BRAND.md`, `DATABASE.md`, `MANIFESTO.md`,
-      `PROJECT.md`, `UI.md`.
+- [x] **Hoàn thiện tài liệu**: `PROJECT.md`, `DATABASE.md`, `BRAND.md`,
+      `MANIFESTO.md`, `UI.md`.
 - [ ] **Render công thức bằng KaTeX** (đã cài `katex`) thay cho ảnh `<img class="eq">`.
 - [ ] **`sitemap.xml` + RSS** cho blog để tăng phủ SEO.
 - [ ] Thêm bài blog theo từng chương → xây "cluster" nội dung.
