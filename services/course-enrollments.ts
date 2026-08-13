@@ -43,7 +43,7 @@ export async function fetchCourseEnrollments(courseId: number) {
   return (data ?? []).map((row) => ({ ...row, profiles: Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles })) as EnrollmentRow[];
 }
 
-export async function reviewEnrollment(courseId: number, studentId: string, status: "active" | "rejected" | "suspended") {
+export async function reviewEnrollment(courseId: number, studentId: string, status: "active" | "rejected" | "suspended" | "left") {
   const supabase = getSupabase();
   const { data: auth } = await supabase.auth.getUser();
   const { error } = await supabase.from("course_enrollments").update({
