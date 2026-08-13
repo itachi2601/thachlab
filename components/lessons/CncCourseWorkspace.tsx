@@ -60,23 +60,9 @@ import operationTurnQuiz from "@/data/cnc/operation-turn.json";
 import toolSetupTurnQuiz from "@/data/cnc/tool-setup-turn.json";
 import operationMillQuiz from "@/data/cnc/operation-mill.json";
 import toolSetupMillQuiz from "@/data/cnc/tool-setup-mill.json";
+import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 
 const lessons = CNC_COURSE_ITEMS.filter((item) => item.id !== "intro");
-const programmingExerciseIds = ["exercise-1", "exercise-2", "exercise-3", "exercise-4", "exercise-5"] as const;
-
-function completedLessonIds(rows: Awaited<ReturnType<typeof fetchCncLearningRecords>>) {
-  return new Set(lessons.filter((lesson) => {
-    const passed = rows.filter((row) => row.lesson_id === lesson.id && row.completed);
-    if (lesson.id === "lesson-2" || lesson.id === "lesson-3") {
-      return programmingExerciseIds.every((assessmentId) => passed.some((row) => row.assessment_id === assessmentId));
-    }
-    if (lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill") {
-      return ["machine-operation", "tool-setup"].every((assessmentId) => passed.some((row) => row.assessment_id === assessmentId));
-    }
-    return passed.length > 0;
-  }).map((lesson) => lesson.id));
-}
-
 const lessonMeta: Record<string, { theory: number; practice: number; test: number; operation?: boolean; safetyGate?: boolean }> = {
   "lesson-1": { theory: 2, practice: 0, test: 0 },
   "lesson-2": { theory: 2, practice: 5, test: 1 },
@@ -182,14 +168,17 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const [submitted, setSubmitted] = useState(false);
   const [millingGatePassed, setMillingGatePassed] = useState(false);
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
+  const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
   const markCompleted = useCallback((completedLessonId: string) => {
     setCompleted((current) => current[completedLessonId] ? current : ({ ...current, [completedLessonId]: true }));
+    setPassedAssessments((current) => new Set(current).add(`${completedLessonId}:final`));
     if (courseId && session?.user.id && viewerProfile?.role !== "admin") void recordCncLearningResult({ courseId, lessonId: completedLessonId, completed: true });
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   const recordQuiz = useCallback((quizLessonId: string, assessmentId: string, quizScore: number, total: number, didPass: boolean) => {
+    if (didPass) setPassedAssessments((current) => new Set(current).add(`${quizLessonId}:${assessmentId}`));
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
     void recordCncLearningResult({ courseId, lessonId: quizLessonId, assessmentId, score: quizScore, total, completed: didPass });
   }, [courseId, session?.user.id, viewerProfile?.role]);
@@ -205,9 +194,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     [answers, safetyQuiz],
   );
   const passed = submitted && score >= requiredSafetyScore;
-  const progress = Math.round(
-    (Object.values(completed).filter(Boolean).length / lessons.length) * 100,
-  );
+  const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
   const visibleLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
       lessonSearch.trim().toLocaleLowerCase("vi-VN"),
@@ -218,7 +205,10 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
     let cancelled = false;
     fetchCncLearningRecords(courseId, session.user.id).then((rows) => {
-      if (!cancelled) setCompleted(Object.fromEntries([...completedLessonIds(rows)].map((id) => [id, true])));
+      if (!cancelled) {
+        setCompleted(Object.fromEntries([...completedCncLessons(rows)].map((id) => [id, true])));
+        setPassedAssessments(passedAssessmentKeys(rows));
+      }
     }).catch(() => undefined);
     return () => { cancelled = true; };
   }, [courseId, session?.user.id, viewerProfile?.role]);
@@ -281,7 +271,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     if (sectionId === "video") return <Video lesson={lesson} videos={lessonVideos} />;
     if (sectionId === "test") {
       if (meta.safetyGate) {
-        return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => lesson.id === "lesson-4-mill" ? setMillingGatePassed(true) : markCompleted(lesson.id)} />;
+        return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => { setCompleted(current=>({...current,[lesson.id]:true})); if (lesson.id === "lesson-4-mill") setMillingGatePassed(true); }} />;
       }
       if (lesson.id === "lesson-5" || lesson.id === "lesson-6") {
         return <DrawingSubmissionTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} onApproved={markCompleted} />;
@@ -292,7 +282,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
       return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} onResult={(value,total,didPass)=>recordQuiz(lesson.id,"final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
     }
     return lesson.id === "lesson-4-mill"
-      ? <MillingOperationChecklist enabled={millingGatePassed || viewerProfile?.role === "admin"} onPassed={markCompleted} />
+      ? <MillingOperationChecklist enabled={millingGatePassed || viewerProfile?.role === "admin"} onPassed={() => undefined} />
       : <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
   };
 
@@ -311,7 +301,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
           <div className="cnc-progress-card" aria-label={`Tiến độ ${progress}%`}>
             <div><span>Tiến độ học phần</span><strong>{progress}%</strong></div>
             <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
-            <small>{Object.values(completed).filter(Boolean).length}/{lessons.length} bài đã hoàn thành</small>
+            <small>{passedAssessments.size}/{CNC_TOTAL_ASSESSMENTS} bài kiểm tra đã đạt</small>
           </div>
         </div>
         <div className="cnc-stats">
@@ -733,7 +723,8 @@ function MillingFillBlankExercise({onResult}:{onResult?:(score:number,total:numb
   const exercise=millingExercises.exercises[0] as {title:string;levels:(FillLevel&{level:string})[]};
   const[level,setLevel]=useState<"de"|"kho">("de");
   const selected=exercise.levels.find(item=>item.level===level)??exercise.levels[0];
-  return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 3 · ĐIỀN KHUYẾT CHƯƠNG TRÌNH</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3><LevelPicker value={level} onChange={setLevel}/><FillBlankLevel key={`mill-${level}`} level={selected} onResult={onResult}/></div>;
+  const imageMap:{[key:string]:string}={"de":"/images/cnc/phay_bai3_de.png","kho":"/images/cnc/phay_bai3_kho.png"};
+  return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 3 · ĐIỀN KHUYẾT CHƯƠNG TRÌNH</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3><p className="mt-2 text-sm text-[#71808c]">Quan sát bản vẽ và thông số công nghệ, sau đó điền các giá trị còn thiếu trong chương trình.</p><div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe4e8] bg-white"><div className="relative h-[clamp(260px,52vw,570px)] overflow-hidden"><Image src={imageMap[level]} alt="Bản vẽ chi tiết milling exercise" width={1200} height={900} className="absolute inset-x-0 top-0 h-auto w-full" unoptimized priority/></div></div><LevelPicker value={level} onChange={setLevel}/><FillBlankLevel key={`mill-${level}`} level={selected} onResult={onResult}/></div>;
 }
 
 const turningFillBlankProgram=[
