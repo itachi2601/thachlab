@@ -1,8 +1,15 @@
 import millingExercises from "@/data/cnc/phay_bai345.json";
 
+type FillBlankLevel = {
+  part_ref: string;
+  part_image_note: string;
+  program_with_blanks: string[];
+  blanks: Array<{ id: string; answer: string; note: string }>;
+};
+
 export default function TestMillExercise() {
   const exercise = millingExercises.exercises[0];
-  const deLevel = exercise.levels[0];
+  const deLevel = exercise.levels?.[0] as FillBlankLevel;
 
   return (
     <div className="p-8 bg-white">
