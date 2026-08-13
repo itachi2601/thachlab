@@ -1,4 +1,3 @@
-import Image from "next/image";
 import millingExercises from "@/data/cnc/phay_bai345.json";
 
 export default function TestMillExercise() {
@@ -13,13 +12,11 @@ export default function TestMillExercise() {
         <h2 className="font-bold text-lg mb-2">Mức dễ (de):</h2>
         <p className="text-sm text-gray-600 mb-4">{deLevel.part_ref}</p>
 
-        <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden mb-4">
-          <Image
+        <div className="bg-gray-100 rounded-lg overflow-hidden mb-4">
+          <img
             src="/images/cnc/phay_bai3_de.png"
             alt="Bản vẽ chi tiết milling exercise"
-            width={1200}
-            height={900}
-            className="w-full h-full object-contain"
+            className="w-full max-h-96 object-contain"
           />
         </div>
 

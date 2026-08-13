@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   // có route con (vd /lop-hoc/bai) sẽ tạo thư mục trùng tên trang cha,
   // không có index.html thì server trả 403.
   trailingSlash: true,
+  // Disable Image Optimization vì export mode không support server-side optimization
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
