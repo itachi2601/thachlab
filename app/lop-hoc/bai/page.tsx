@@ -1,8 +1,9 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Check, ChevronDown, ChevronRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -264,11 +265,15 @@ function LessonLoader() {
 
   const [title, setTitle] = useState("");
   const [chapterTitle, setChapterTitle] = useState("");
+  const [chapterId, setChapterId] = useState<number | null>(null);
   const [items, setItems] = useState<LessonItem[] | null>(null);
   const [examMetas, setExamMetas] = useState<Map<number, LessonExamMeta>>(new Map());
   const [scores, setScores] = useState<Map<number, number>>(new Map());
   const [done, setDone] = useState<Set<number>>(new Set());
   const [error, setError] = useState("");
+  const [activeSection, setActiveSection] = useState<LessonItemKind | null>(
+    "ly_thuyet",
+  );
 
   useEffect(() => {
     if (!supabaseConfigured || !id) return;
@@ -277,9 +282,11 @@ function LessonLoader() {
       else {
         setTitle(res.lesson.title);
         setChapterTitle(res.chapterTitle);
+        setChapterId(res.lesson.chapter_id);
       }
     });
     fetchLessonItems(id).then(setItems);
+    setActiveSection("ly_thuyet");
   }, [id]);
 
   // dữ liệu cần đăng nhập: thông tin đề (RLS), điểm, tiến độ
@@ -298,7 +305,7 @@ function LessonLoader() {
     return SECTION_ORDER.map((kind) => ({
       kind,
       items: items.filter((i) => i.kind === kind),
-    })).filter((s) => s.items.length > 0);
+    }));
   }, [items]);
 
   function isDone(item: LessonItem) {
@@ -321,93 +328,158 @@ function LessonLoader() {
   if (!items)
     return <p className="text-center text-slate-400">Đang tải bài học…</p>;
 
+  const completedItems = items.filter(isDone).length;
+  const progress = items.length > 0
+    ? Math.round((completedItems / items.length) * 100)
+    : 0;
+
   return (
-    <div>
-      <p className="text-sm text-slate-400">
-        <Link href="/lop-hoc" className="text-[#3B82F6] hover:underline">
-          Lớp học
-        </Link>
-        {chapterTitle && <> · {chapterTitle}</>}
-      </p>
-      <h1 className="mt-2 font-display text-2xl font-bold tracking-wide text-white uppercase sm:text-3xl">
-        {title}
-      </h1>
+    <div className="cnc-embedded secondary-lesson-shell">
+      <header className="cnc-course-header">
+        <div className="cnc-breadcrumb">
+          <Link href="/lop-hoc">Lớp học</Link>
+          <ChevronRight size={14} />
+          <Link href="/lop-hoc?tab=secondary">Trung học</Link>
+          {chapterTitle && <>
+            <ChevronRight size={14} />
+            <Link href={chapterId ? `/lop-hoc?tab=secondary&chapter=${chapterId}#chapter-${chapterId}` : "/lop-hoc?tab=secondary"}>
+              {chapterTitle}
+            </Link>
+          </>}
+        </div>
 
-      {sections.length === 0 && (
-        <p className="mt-10 text-slate-400">Bài học này chưa có nội dung.</p>
-      )}
+        <div className="cnc-header-grid">
+          <div>
+            <span className="cnc-kicker">Chương trình Trung học</span>
+            <h1>{title}</h1>
+            <p>Cấu trúc bài học thống nhất theo lộ trình học tập 6 phần.</p>
+          </div>
+          <div className="cnc-progress-card" aria-label={`Tiến độ bài học ${progress}%`}>
+            <div><span>Tiến độ bài học</span><strong>{progress}%</strong></div>
+            <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
+            <small>{completedItems}/{items.length} nội dung đã hoàn thành</small>
+          </div>
+        </div>
 
-      <div className="mt-10 space-y-10">
-        {sections.map((section, idx) => {
-          const meta = SECTION_META[section.kind];
-          const remaining = section.items.filter((i) => !isDone(i)).length;
-          return (
-            <section key={section.kind}>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="text-xs text-slate-500">§{idx + 1}</span>
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-xl text-base"
-                  style={{ backgroundColor: hexAlpha(meta.color, "26") }}
+        <div className="cnc-stats">
+          <span>📚 6 phần học chuẩn</span>
+          <span>📄 {items.length} nội dung</span>
+          <span>{session ? "✓ Có lưu tiến độ" : "○ Đăng nhập để lưu tiến độ"}</span>
+        </div>
+      </header>
+
+      <div className="cnc-accordion-workspace secondary-lesson-workspace">
+        <div className="cnc-lesson-hero">
+          <div className="cnc-title-row">
+            <div>
+              <span className="cnc-eyebrow">TRUNG HỌC · {chapterTitle || "BÀI HỌC"}</span>
+              <h2>{title}</h2>
+              <p>Học lần lượt theo từng phần và hoàn thành bài kiểm tra cuối bài.</p>
+            </div>
+          </div>
+
+          <div className="cnc-lesson-progress-row">
+            <div className="cnc-section-progress-ring">
+              <strong>{activeSection ? SECTION_ORDER.indexOf(activeSection) + 1 : 0}<small>/6</small></strong>
+            </div>
+            <nav className="cnc-section-pills" aria-label="Đi nhanh đến phần bài học">
+              {sections.map(({ kind, items: sectionItems }, index) => {
+                const meta = SECTION_META[kind];
+                return (
+                  <button
+                    key={kind}
+                    type="button"
+                    disabled={sectionItems.length === 0}
+                    onClick={() => setActiveSection(kind)}
+                    className={`${kind} ${activeSection === kind ? "active" : ""} ${sectionItems.length === 0 ? "empty" : ""}`}
+                    style={{ color: meta.color }}
+                  >
+                    <i />{index + 1}. {meta.label}
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+        </div>
+
+        <div className="cnc-learning-sections">
+          {sections.map((section, idx) => {
+            const meta = SECTION_META[section.kind];
+            const remaining = section.items.filter((item) => !isDone(item)).length;
+            const isActive = activeSection === section.kind;
+            const isEmpty = section.items.length === 0;
+            const sectionComplete = !isEmpty && remaining === 0 && !!session;
+
+            return (
+              <section
+                key={section.kind}
+                className={`cnc-learning-section ${section.kind} ${isActive ? "active" : ""} ${isEmpty ? "empty" : ""}`}
+                style={{ "--section-color": meta.color } as CSSProperties}
+              >
+                <header>
+                  <span>§ {idx + 1}</span>
+                  <div><span aria-hidden="true">{meta.icon}</span><strong>{meta.label}</strong></div>
+                  <i />
+                  <small>{isEmpty ? "Đang cập nhật" : sectionComplete ? "Đã xong" : isActive ? "Đang mở" : "Chưa xong"}</small>
+                  <b>{section.items.length}</b>
+                </header>
+
+                <button
+                  type="button"
+                  disabled={isEmpty}
+                  className="cnc-learning-card"
+                  onClick={() => setActiveSection((current) => current === section.kind ? null : section.kind)}
+                  aria-expanded={isActive}
+                  aria-controls={`secondary-section-${section.kind}`}
                 >
-                  {meta.icon}
-                </span>
-                <span
-                  className="font-display text-sm font-bold tracking-widest uppercase"
-                  style={{ color: meta.color }}
-                >
-                  {meta.label}
-                </span>
-                <span className="h-px flex-1 bg-white/10" />
-                {session && (
-                  <span className="flex items-center gap-2 text-xs text-slate-400">
-                    {remaining > 0 ? "Chưa xong" : "Đã xong"}
-                    {remaining > 0 && (
-                      <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-white/10 px-1.5 font-semibold text-white">
-                        {remaining}
-                      </span>
-                    )}
-                  </span>
+                  <span>{sectionComplete ? <Check size={22} /> : <span aria-hidden="true">{meta.icon}</span>}</span>
+                  <div>
+                    <strong>{meta.label}</strong>
+                    <small>{isEmpty ? "Học liệu đang được giảng viên cập nhật" : `${section.items.length} nội dung trong phần này`}</small>
+                  </div>
+                  <b>{isEmpty ? "Sắp có" : isActive ? "Thu gọn" : meta.action}<ChevronDown size={17} /></b>
+                </button>
+
+                {isActive && !isEmpty && (
+                  <div id={`secondary-section-${section.kind}`} className="cnc-section-body cnc-content">
+                    <div className="space-y-3">
+                      {section.items.map((item) => {
+                        if (item.kind === "video")
+                          return (
+                            <VideoCard
+                              key={item.id}
+                              item={item}
+                              color={meta.color}
+                              onOpen={() => markDone(item)}
+                            />
+                          );
+                        if (item.kind === "luyen_tap_de" || item.kind === "kiem_tra")
+                          return (
+                            <ExamCard
+                              key={item.id}
+                              item={item}
+                              kind={item.kind}
+                              exam={item.exam_id ? examMetas.get(item.exam_id) : undefined}
+                              score={item.exam_id !== null ? scores.get(item.exam_id) : undefined}
+                              loggedIn={!!session}
+                            />
+                          );
+                        return (
+                          <ContentCard
+                            key={item.id}
+                            item={item}
+                            kind={item.kind}
+                            onOpen={() => markDone(item)}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
                 )}
-              </div>
-              <div className="space-y-3">
-                {section.items.map((item) => {
-                  if (item.kind === "video")
-                    return (
-                      <VideoCard
-                        key={item.id}
-                        item={item}
-                        color={meta.color}
-                        onOpen={() => markDone(item)}
-                      />
-                    );
-                  if (item.kind === "luyen_tap_de" || item.kind === "kiem_tra")
-                    return (
-                      <ExamCard
-                        key={item.id}
-                        item={item}
-                        kind={item.kind}
-                        exam={item.exam_id ? examMetas.get(item.exam_id) : undefined}
-                        score={
-                          item.exam_id !== null
-                            ? scores.get(item.exam_id)
-                            : undefined
-                        }
-                        loggedIn={!!session}
-                      />
-                    );
-                  return (
-                    <ContentCard
-                      key={item.id}
-                      item={item}
-                      kind={item.kind}
-                      onOpen={() => markDone(item)}
-                    />
-                  );
-                })}
-              </div>
-            </section>
-          );
-        })}
+              </section>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -417,7 +489,7 @@ export default function LessonPage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto min-h-screen w-full max-w-4xl px-6 pt-28 pb-20 lg:px-8">
+      <main className="min-h-screen w-full pt-[76px]">
         <Suspense
           fallback={<p className="text-center text-slate-400">Đang tải…</p>}
         >

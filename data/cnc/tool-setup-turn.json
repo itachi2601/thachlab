@@ -1,0 +1,242 @@
+[
+  {
+    "id": "tool-setup-turn-q1",
+    "question": "Trên máy tiện CNC, gốc phôi (G54) thường được đặt tại vị trí nào?",
+    "options": [
+      "Mặt đầu phôi, trên đường tâm trục chính (X0 Z0)",
+      "Tại vị trí bất kỳ trên mâm cặp",
+      "Tại điểm tham chiếu máy (Machine Zero Point)",
+      "Tại đầu dao đang gá trên ổ dao"
+    ],
+    "correctIndex": 0,
+    "explanation": "Đây là quy ước chuẩn cho lập trình tiện: gốc phôi tại mặt đầu (Z0) và trên tâm trục (X0) giúp mọi tọa độ đường kính/chiều dài trên bản vẽ có thể áp trực tiếp vào chương trình."
+  },
+  {
+    "id": "tool-setup-turn-q2",
+    "question": "Trong lệnh T0101, hai cặp số \"01\" và \"01\" lần lượt có ý nghĩa gì?",
+    "options": [
+      "Cả hai đều chỉ số hiệu dao, dùng để kiểm tra chéo",
+      "Số đầu là số hiệu dao (Tool Number), số sau là số hiệu bù dao (Offset Number) — thường trùng nhau nhưng có thể khác",
+      "Số đầu là tốc độ trục chính, số sau là lượng chạy dao",
+      "Cả hai đều không có ý nghĩa, chỉ là quy ước đặt tên"
+    ],
+    "correctIndex": 1,
+    "explanation": "T0101 nghĩa là gọi dao số 01 trên đài dao, đồng thời áp dụng bảng bù dao (offset) số 01 — quy ước trùng số giúp dễ quản lý khi có nhiều dao."
+  },
+  {
+    "id": "tool-setup-turn-q3",
+    "question": "Bù dao tiện (Tool Offset) trên máy tiện CNC bao gồm những thông số cơ bản nào?",
+    "options": [
+      "Chỉ có bù theo trục X",
+      "Chỉ có bù theo trục Z",
+      "Bù theo cả trục X và Z (khoảng cách từ mũi dao đến gốc tọa độ chuẩn của đài dao), và có thể có bán kính mũi dao (Tool Nose Radius)",
+      "Chỉ có tốc độ quay của dao"
+    ],
+    "correctIndex": 2,
+    "explanation": "Khác với máy phay chỉ cần bù chiều dài theo Z, máy tiện cần bù cả X và Z vì mỗi dao gá trên đài dao có vị trí mũi dao khác nhau theo cả 2 phương."
+  },
+  {
+    "id": "tool-setup-turn-q4",
+    "question": "Việc xác định gốc phôi theo trục X trên máy tiện thường dựa vào yếu tố nào?",
+    "options": [
+      "Đường kính thực tế của phôi, vì trục X biểu diễn đường kính (hoặc bán kính tùy quy ước máy)",
+      "Chiều dài tổng của phôi",
+      "Tốc độ quay của trục chính",
+      "Loại vật liệu của phôi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trên hầu hết máy tiện Fanuc, X được lập trình theo giá trị đường kính (diameter programming) — nên gốc X0 nằm trên đường tâm trục chính, và mọi giá trị X trong chương trình là đường kính tại điểm đó."
+  },
+  {
+    "id": "tool-setup-turn-q5",
+    "question": "Khi gá phôi trên mâm cặp 3 chấu, chiều dài phôi thò ra ngoài mâm cặp cần được xác định dựa trên yếu tố nào?",
+    "options": [
+      "Càng dài càng tốt để dễ thao tác",
+      "Đủ để gia công hết chiều dài chi tiết cộng thêm khoảng an toàn, nhưng không quá dài gây rung động hoặc thiếu độ cứng vững khi cắt",
+      "Không quan trọng, chiều dài nào cũng được",
+      "Luôn cố định bằng chiều dài mâm cặp"
+    ],
+    "correctIndex": 1,
+    "explanation": "Phôi thò ra quá dài (đặc biệt với đường kính nhỏ) dễ bị rung động, ảnh hưởng độ chính xác và độ bóng bề mặt, thậm chí có thể gãy hoặc văng ra khi cắt ở tốc độ cao."
+  },
+  {
+    "id": "tool-setup-turn-q6",
+    "question": "Phương pháp phổ biến để xác định gốc phôi theo trục Z trên máy tiện (mặt đầu phôi) là gì?",
+    "options": [
+      "Cho dao chạm nhẹ vào mặt đầu phôi (hoặc sau khi tiện mặt đầu), rồi set giá trị Z tại điểm đó bằng 0",
+      "Đo bằng caliper trước khi kẹp phôi lên mâm cặp",
+      "Ước lượng theo kinh nghiệm không cần set",
+      "Luôn lấy giá trị mặc định của nhà sản xuất máy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Khác với phương pháp Z trên máy phay (đo trước khi kẹp bằng caliper), trên máy tiện phổ biến hơn là tiện mặt đầu trước rồi set Z0 tại mặt vừa tiện — vì mặt đầu phôi thô thường không phẳng, cần gia công trước khi làm chuẩn."
+  },
+  {
+    "id": "tool-setup-turn-q7",
+    "question": "Khi thay đổi từ dao tiện thô sang dao tiện ren (ví dụ từ T0101 sang T0202), điều gì cần được đảm bảo trước khi gia công?",
+    "options": [
+      "Không cần làm gì thêm vì máy tự động bù mọi sai lệch",
+      "Dao mới phải đã được set bù dao (offset) riêng, vì mỗi dao có kích thước và vị trí gá khác nhau trên đài dao",
+      "Chỉ cần đảm bảo tốc độ trục chính giống dao cũ",
+      "Chỉ cần đảm bảo hướng quay trục chính không đổi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mỗi vị trí trên đài dao gá 1 dao khác nhau với kích thước/hình dạng khác nhau — nếu offset của dao mới chưa được set đúng, mũi dao sẽ ở sai vị trí so với phôi, gây va chạm hoặc sai kích thước."
+  },
+  {
+    "id": "tool-setup-turn-q8",
+    "question": "Bán kính mũi dao (Tool Nose Radius) cần được khai báo chính xác trong bù dao vì lý do gì?",
+    "options": [
+      "Không quan trọng, chỉ ảnh hưởng đến màu sắc bề mặt",
+      "Ảnh hưởng đến độ chính xác biên dạng khi tiện côn, cung tròn — cần bù bán kính mũi dao (G41/G42) để tránh sai lệch kích thước",
+      "Chỉ ảnh hưởng đến tốc độ cắt",
+      "Chỉ cần khai báo khi tiện ren"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mũi dao tiện không phải là 1 điểm nhọn tuyệt đối mà có bán kính cong nhỏ — khi tiện các đoạn côn hoặc cung tròn, nếu không bù đúng bán kính này, biên dạng thực tế sẽ lệch khỏi bản vẽ."
+  },
+  {
+    "id": "tool-setup-turn-q9",
+    "question": "Trước khi chạy chương trình gia công thật, bước kiểm tra nào giúp phát hiện sai sót trong việc set gốc phôi/bù dao?",
+    "options": [
+      "Không cần kiểm tra, cứ chạy trực tiếp",
+      "Chạy thử ở chế độ Single Block kết hợp quan sát tọa độ hiển thị trên màn hình POSITION, hoặc dùng Dry Run trước khi cắt thật",
+      "Chỉ cần kiểm tra bằng mắt hình dạng phôi",
+      "Chỉ cần hỏi đồng nghiệp có set đúng không"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là bước kiểm chứng bắt buộc trước khi cắt thật — giúp phát hiện sớm sai sót về offset trước khi gây hỏng phôi hoặc va chạm dao."
+  },
+  {
+    "id": "tool-setup-turn-q10",
+    "question": "Nếu offset dao (bù theo X hoặc Z) bị nhập sai dấu (dương thành âm hoặc ngược lại), hậu quả nghiêm trọng nhất có thể xảy ra là gì?",
+    "options": [
+      "Không ảnh hưởng gì vì máy tự động điều chỉnh",
+      "Dao có thể di chuyển đến vị trí hoàn toàn sai lệch so với phôi thực tế, gây va chạm mạnh giữa dao và mâm cặp/phôi",
+      "Chỉ làm chậm tốc độ gia công",
+      "Chỉ ảnh hưởng đến độ bóng bề mặt, không gây nguy hiểm"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sai dấu offset là lỗi nghiêm trọng vì máy sẽ tính toán vị trí dao hoàn toàn ngược với thực tế — có thể khiến dao lao thẳng vào mâm cặp hoặc vượt quá giới hạn hành trình máy."
+  },
+  {
+    "id": "tool-setup-turn-q11",
+    "question": "Vì sao trên máy tiện thường tiện mặt đầu (facing) trước khi set gốc Z0, thay vì set Z0 ngay trên mặt phôi thô ban đầu?",
+    "options": [
+      "Không có lý do đặc biệt, làm cách nào cũng được",
+      "Mặt phôi thô (cắt bằng cưa hoặc để nguyên từ vật liệu cán) thường không phẳng và không vuông góc với trục — tiện mặt đầu tạo ra 1 mặt chuẩn phẳng, chính xác để làm gốc Z0 đáng tin cậy",
+      "Vì máy CNC bắt buộc phải tiện mặt đầu trước khi cho phép set gốc tọa độ",
+      "Chỉ để làm đẹp bề mặt, không liên quan đến độ chính xác gốc tọa độ"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là lý do kỹ thuật quan trọng — nếu set Z0 trên mặt phôi thô gồ ghề, sai số bề mặt sẽ truyền trực tiếp vào toàn bộ chiều dài chi tiết gia công sau đó."
+  },
+  {
+    "id": "tool-setup-turn-q12",
+    "question": "Trên máy tiện, khi lập trình theo đường kính (diameter programming), nếu đo được đường kính phôi thực tế là Ø42 nhưng bản vẽ yêu cầu Ø40, giá trị nào cần nhập vào chương trình cho bước tiện thô đầu tiên?",
+    "options": [
+      "X42 (giữ nguyên đường kính phôi hiện tại) để bắt đầu ăn dao dần xuống Ø40",
+      "X40 ngay lập tức trong bước đầu tiên, bỏ qua đường kính phôi thực tế",
+      "X20 (giá trị bán kính thay vì đường kính)",
+      "Không cần quan tâm đến đường kính phôi thực tế khi lập trình"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bước tiếp cận đầu tiên thường lấy giá trị gần với đường kính phôi thực tế (X42) để tránh chạy dao không vào không khí quá nhiều, sau đó các chu trình cắt (như G71) sẽ tự động ăn dần xuống kích thước cuối cùng X40."
+  },
+  {
+    "id": "tool-setup-turn-q13",
+    "question": "Khi lắp mũi chống tâm (tailstock center) hỗ trợ cho phôi dài trên máy tiện, điều gì cần lưu ý về thông số gia công?",
+    "options": [
+      "Không cần thay đổi gì so với khi tiện không dùng mũi chống tâm",
+      "Không được lập trình dao chạy vào vùng có mũi chống tâm để tránh va chạm, và cần chú ý chiều dài thực tế có thể gia công bị giới hạn bởi vị trí mũi chống tâm",
+      "Chỉ cần tăng tốc độ trục chính lên gấp đôi",
+      "Mũi chống tâm tự động điều chỉnh mọi thông số gia công"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mũi chống tâm là vật cản vật lý trong vùng gia công — người lập trình phải biết chính xác vị trí Z của nó để tránh cho dao chạy vào gây va chạm, đồng thời đầu phôi có mũi chống tâm không tiện được hoàn toàn."
+  },
+  {
+    "id": "tool-setup-turn-q14",
+    "question": "So sánh phương pháp set gốc phôi Z trên máy phay (đã khóa: đo caliper trước khi kẹp) và trên máy tiện (tiện mặt đầu rồi set Z0): điểm khác biệt căn bản là do đâu?",
+    "options": [
+      "Không có khác biệt căn bản, chỉ là thói quen khác nhau của từng giáo viên",
+      "Do đặc điểm hình học khác nhau: phôi phay thường có mặt chuẩn sẵn (mặt đã gia công hoặc mặt cán phẳng) nên đo trước được, còn phôi tiện tròn xoay thường có mặt đầu thô cần gia công trước mới có chuẩn đáng tin cậy",
+      "Do máy phay đắt tiền hơn nên cần phương pháp chính xác hơn",
+      "Do quy định của nhà sản xuất Fanuc yêu cầu 2 phương pháp khác nhau cho 2 loại máy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là điểm khác biệt quan trọng về bản chất hình học của 2 loại phôi — phôi tiện là dạng trụ tròn xoay, mặt đầu cắt thô thường không phẳng/vuông góc nên cần gia công trước, khác với phôi phay dạng khối có thể đã có mặt chuẩn phẳng sẵn."
+  },
+  {
+    "id": "tool-setup-turn-q15",
+    "question": "Khi kiểm tra lại thông số đã cài đặt trước khi chạy chương trình tiện thật, nên xác nhận điều gì trên màn hình OFFSET của Fanuc?",
+    "options": [
+      "Chỉ cần xem tên chương trình đang mở",
+      "Xác nhận đúng giá trị G54 (X, Z) và bảng bù dao (Tool Offset) X, Z, R (bán kính mũi dao) tương ứng với từng dao đang dùng",
+      "Chỉ cần xem tốc độ trục chính hiện tại",
+      "Không cần kiểm tra gì nếu đã set 1 lần trước đó"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là bước kiểm tra bắt buộc — với máy tiện cần kiểm tra nhiều thông số hơn máy phay (cả X, Z, và bán kính mũi dao R cho mỗi dao) vì độ phức tạp của bù dao tiện cao hơn."
+  },
+  {
+    "id": "tool-setup-turn-q16",
+    "question": "Nếu phôi bị tháo ra kẹp lại (ví dụ đảo đầu để gia công mặt còn lại) giữa chừng quá trình gia công, thông số nào bắt buộc phải xác định lại?",
+    "options": [
+      "Không cần xác định lại gì, chương trình cũ vẫn dùng được nguyên vẹn",
+      "Gốc phôi Z0 (vì mặt chuẩn Z0 đã đổi sang đầu mới của phôi) và có thể cả gốc X nếu phôi bị lệch tâm khi kẹp lại",
+      "Chỉ cần kiểm tra lại tốc độ trục chính",
+      "Chỉ cần kiểm tra lại bán kính mũi dao"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đảo đầu phôi là thao tác phổ biến khi cần gia công cả 2 đầu trục — nhưng bắt buộc phải set lại Z0 tại mặt chuẩn mới, và kiểm tra độ đồng tâm khi kẹp lại để tránh sai lệch trục."
+  },
+  {
+    "id": "tool-setup-turn-q17",
+    "question": "Trong chương trình tiện dùng chu trình G71 (tiện thô), thông số U và W trong khối P...Q... (ví dụ U0.5 W0.1) có liên quan gì đến việc cài đặt thông số dao/phôi?",
+    "options": [
+      "Không liên quan gì đến dao/phôi, chỉ là tốc độ trục chính",
+      "Là lượng dư gia công (chừa lại cho tiện tinh) theo X (U) và Z (W) — cần được xác định dựa trên độ chính xác yêu cầu và khả năng của dao tiện tinh, không phải thông số bù dao cố định",
+      "Là giá trị bù dao X, Z giống hệt trong bảng Offset",
+      "Là đường kính và chiều dài phôi thô"
+    ],
+    "correctIndex": 1,
+    "explanation": "U, W là lượng dư gia công (finishing allowance) — một quyết định công nghệ liên quan đến việc chừa vật liệu đủ cho bước tiện tinh đạt kích thước và độ bóng yêu cầu, khác với các thông số offset cố định của dao."
+  },
+  {
+    "id": "tool-setup-turn-q18",
+    "question": "Một sinh viên set gốc phôi X0 tại vị trí không trùng với tâm trục chính (bị lệch vài mm), hậu quả gì sẽ xảy ra khi tiện chi tiết dạng trụ tròn xoay?",
+    "options": [
+      "Không ảnh hưởng gì vì máy CNC luôn tự động canh tâm",
+      "Chi tiết tiện ra sẽ không tròn đều hoặc bị lệch tâm, vì mọi giá trị đường kính trong chương trình đều tính từ gốc X0 đã set sai — đây là lỗi nghiêm trọng vì tiện là gia công đối xứng quay quanh trục",
+      "Chỉ ảnh hưởng nhẹ đến độ bóng bề mặt",
+      "Chỉ ảnh hưởng đến tốc độ cắt, không ảnh hưởng hình dạng"
+    ],
+    "correctIndex": 1,
+    "explanation": "Khác với máy phay (X0, Y0 có thể ở bất kỳ đâu trên mặt phẳng), gốc X0 trên máy tiện BẮT BUỘC phải trùng với tâm quay của trục chính — nếu không, toàn bộ khái niệm 'đường kính' trong chương trình sẽ sai, dẫn đến chi tiết không tròn hoặc lệch tâm nghiêm trọng."
+  },
+  {
+    "id": "tool-setup-turn-q19",
+    "question": "Khi so sánh việc quản lý nhiều dao trên máy phay (dùng H-code + D-code riêng biệt) và máy tiện (dùng chung 1 cặp số T-code cho cả offset X, Z, R), điểm khác biệt về mức độ phức tạp là gì?",
+    "options": [
+      "Không khác biệt, độ phức tạp như nhau ở cả 2 loại máy",
+      "Máy tiện thường quản lý gọn hơn vì mỗi dao chỉ cần 1 số hiệu offset duy nhất chứa đủ cả X, Z, R, trong khi máy phay tách riêng H-code (chiều dài) và D-code (bán kính) cho cùng 1 dao",
+      "Máy phay luôn đơn giản hơn máy tiện trong mọi trường hợp",
+      "Cả 2 loại máy đều không cần quản lý số hiệu dao"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là điểm khác biệt về cấu trúc offset giữa 2 loại máy — trên tiện, 1 số hiệu offset (ví dụ offset 01) chứa trọn bộ X, Z, R cho 1 dao; trên phay, chiều dài (H) và bán kính (D) là 2 bảng tách biệt, có thể dùng số hiệu khác nhau cho cùng 1 dao nếu cần."
+  },
+  {
+    "id": "tool-setup-turn-q20",
+    "question": "Sau khi đã cài đặt gốc phôi và bù dao trên máy tiện, cách kiểm tra an toàn nào phù hợp nhất trước khi chạy gia công tự động?",
+    "options": [
+      "Chạy ngay ở AUTO với Feed Override 100% để kiểm tra nhanh.",
+      "Gọi từng dao, kiểm tra giá trị offset trên màn hình, chạy Dry Run hoặc Single Block với Feed Override thấp và quan sát khoảng cách dao–phôi.",
+      "Chỉ kiểm tra số hiệu chương trình rồi nhấn Cycle Start.",
+      "Tắt chức năng giới hạn hành trình để dao di chuyển tự do."
+    ],
+    "correctIndex": 1,
+    "explanation": "Sau khi cài đặt, phải đối chiếu đúng số dao và giá trị offset, sau đó chạy thử có kiểm soát bằng Dry Run hoặc Single Block với tốc độ chạy dao thấp để phát hiện sai dấu, sai gốc hoặc nguy cơ va chạm."
+  }
+]

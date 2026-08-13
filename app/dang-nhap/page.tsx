@@ -36,14 +36,14 @@ export default function LoginPage() {
       );
       return;
     }
-    router.push(userType === "student" ? "/dashboard" : "/quan-tri");
+    router.push(userType === "student" ? "/tai-khoan" : "/quan-tri");
   }
 
   async function handleGoogleLogin() {
     setError("");
     setBusy(true);
 
-    const { data, error } = await getSupabase().auth.signInWithOAuth({
+    const { error } = await getSupabase().auth.signInWithOAuth({
       provider: "google",
       options: {
         redirectTo: `${window.location.origin}/auth/callback?type=${userType}`,

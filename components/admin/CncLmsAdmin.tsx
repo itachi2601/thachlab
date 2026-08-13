@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   CNC_COURSE_ITEMS,
   CNC_GATE_QUIZ,
@@ -10,6 +10,28 @@ import {
   type CncCourseItem,
 } from "@/services/cnc-lms";
 import { useToast } from "@/components/ui/Toast";
+import {
+  deleteCncLessonFile,
+  fetchCncLessonFiles,
+  formatFileSize,
+  uploadCncLessonFile,
+  type CncLessonFile,
+  type CncLessonFileKind,
+} from "@/services/cnc-lesson-files";
+import {
+  createCncLessonVideo,
+  deleteCncLessonVideo,
+  fetchCncLessonVideos,
+  getYouTubeThumbnailUrl,
+  getYouTubeVideoId,
+  type CncLessonVideo,
+} from "@/services/cnc-lesson-videos";
+import {
+  createCncDrawingDownloadUrl,
+  fetchAllCncDrawingSubmissions,
+  reviewCncDrawingSubmission,
+  type CncDrawingSubmission,
+} from "@/services/cnc-drawing-submissions";
 
 type EditableCncItem = {
   id: string;
@@ -91,37 +113,196 @@ export default function CncLmsAdmin() {
   const [millingQuizScore, setMillingQuizScore] = useState(
     CNC_PROGRESS.millingQuizScore,
   );
-  const [operationPassedByInstructor, setOperationPassedByInstructor] = useState(
-    CNC_PROGRESS.operationPassedByInstructor,
+  const [turningOperationPassed, setTurningOperationPassed] = useState(
+    CNC_PROGRESS.turningOperationPassed,
   );
+  const [millingOperationPassed, setMillingOperationPassed] = useState(
+    CNC_PROGRESS.millingOperationPassed,
+  );
+  const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
+  const [filesLoading, setFilesLoading] = useState(true);
+  const [uploadingKind, setUploadingKind] = useState<CncLessonFileKind | null>(null);
+  const [fileStorageReady, setFileStorageReady] = useState(true);
+  const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
+  const [videosLoading, setVideosLoading] = useState(true);
+  const [videosReady, setVideosReady] = useState(true);
+  const [addingVideo, setAddingVideo] = useState(false);
+  const [videoTitle, setVideoTitle] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
 
   const activeItem = items.find((item) => item.id === activeId) ?? items[0];
-  const lesson4Unlocked = turningQuizScore >= 80 && millingQuizScore >= 80;
-  const productionUnlocked = operationPassedByInstructor;
+  const operationLessonsUnlocked = turningQuizScore >= 80 && millingQuizScore >= 80;
 
   const lockPreview = useMemo(
     () =>
       items.map((item) => {
-        if (item.id === "lesson-4") {
+        if (item.id === "lesson-4-turn" || item.id === "lesson-4-mill") {
           return {
             id: item.id,
             title: item.shortTitle,
-            locked: !lesson4Unlocked,
+            locked: !operationLessonsUnlocked,
             reason: "Quiz Bài 2 và Bài 3 cần đạt từ 80%.",
           };
         }
-        if (item.id === "lesson-5" || item.id === "lesson-6") {
+        if (item.id === "lesson-5") {
           return {
             id: item.id,
             title: item.shortTitle,
-            locked: !productionUnlocked,
-            reason: "Cần giảng viên đánh giá Đạt ở Bài 4.",
+            locked: !turningOperationPassed,
+            reason: "Cần đạt bài Vận hành và cài đặt máy tiện CNC.",
+          };
+        }
+        if (item.id === "lesson-6") {
+          return {
+            id: item.id,
+            title: item.shortTitle,
+            locked: !millingOperationPassed,
+            reason: "Cần đạt bài Vận hành và cài đặt máy phay CNC.",
           };
         }
         return { id: item.id, title: item.shortTitle, locked: false, reason: "" };
       }),
-    [items, lesson4Unlocked, productionUnlocked],
+    [items, operationLessonsUnlocked, turningOperationPassed, millingOperationPassed],
   );
+
+  useEffect(() => {
+    let cancelled = false;
+    setFilesLoading(true);
+    fetchCncLessonFiles(activeId)
+      .then((files) => {
+        if (!cancelled) {
+          setLessonFiles(files);
+          setFileStorageReady(true);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setLessonFiles([]);
+          setFileStorageReady(false);
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setFilesLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeId]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setVideosLoading(true);
+    setVideoTitle("");
+    setVideoUrl("");
+    fetchCncLessonVideos(activeId)
+      .then((videos) => {
+        if (!cancelled) {
+          setLessonVideos(videos);
+          setVideosReady(true);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setLessonVideos([]);
+          setVideosReady(false);
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setVideosLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeId]);
+
+  async function handleLessonFile(
+    kind: CncLessonFileKind,
+    file: File | undefined,
+  ) {
+    if (!file) return;
+    const isPowerPoint = /\.(ppt|pptx)$/i.test(file.name);
+    if (kind === "powerpoint" && !isPowerPoint) {
+      toast("error", "Bài giảng phải là tệp .ppt hoặc .pptx");
+      return;
+    }
+    if (file.size > 50 * 1024 * 1024) {
+      toast("error", "Tệp vượt quá giới hạn 50 MB");
+      return;
+    }
+    setUploadingKind(kind);
+    try {
+      const uploaded = await uploadCncLessonFile({
+        lessonId: activeItem.id,
+        kind,
+        title: file.name.replace(/\.[^.]+$/, ""),
+        file,
+      });
+      setLessonFiles((current) => [uploaded, ...current]);
+      setFileStorageReady(true);
+      toast(
+        "success",
+        kind === "powerpoint"
+          ? "Đã đưa PowerPoint vào nội dung bài học."
+          : "Đã thêm tệp vào mục Tài liệu.",
+      );
+    } catch (error) {
+      setFileStorageReady(false);
+      toast("error", `Không tải được tệp: ${error instanceof Error ? error.message : error}`);
+    } finally {
+      setUploadingKind(null);
+    }
+  }
+
+  async function handleDeleteLessonFile(file: CncLessonFile) {
+    try {
+      await deleteCncLessonFile(file);
+      setLessonFiles((current) => current.filter((item) => item.id !== file.id));
+      toast("success", "Đã xóa tệp khỏi bài học.");
+    } catch (error) {
+      toast("error", `Không xóa được tệp: ${error instanceof Error ? error.message : error}`);
+    }
+  }
+
+  async function handleAddVideo() {
+    if (!videoTitle.trim()) {
+      toast("error", "Hãy nhập tên video");
+      return;
+    }
+    if (!getYouTubeVideoId(videoUrl)) {
+      toast("error", "Liên kết YouTube không hợp lệ");
+      return;
+    }
+
+    setAddingVideo(true);
+    try {
+      const video = await createCncLessonVideo({
+        lessonId: activeItem.id,
+        title: videoTitle,
+        youtubeUrl: videoUrl,
+        sortOrder: lessonVideos.length,
+      });
+      setLessonVideos((current) => [...current, video]);
+      setVideoTitle("");
+      setVideoUrl("");
+      setVideosReady(true);
+      toast("success", "Đã thêm video vào bài học.");
+    } catch (error) {
+      setVideosReady(false);
+      toast("error", `Không thêm được video: ${error instanceof Error ? error.message : error}`);
+    } finally {
+      setAddingVideo(false);
+    }
+  }
+
+  async function handleDeleteVideo(video: CncLessonVideo) {
+    try {
+      await deleteCncLessonVideo(video.id);
+      setLessonVideos((current) => current.filter((item) => item.id !== video.id));
+      toast("success", "Đã xóa video khỏi bài học.");
+    } catch (error) {
+      toast("error", `Không xóa được video: ${error instanceof Error ? error.message : error}`);
+    }
+  }
 
   function updateActive(patch: Partial<EditableCncItem>) {
     setItems((current) =>
@@ -145,13 +326,15 @@ export default function CncLmsAdmin() {
   function exportConfig() {
     const payload = {
       progressRules: {
-        lesson4: "Mở khi Quiz Bài 2 và Bài 3 đều >= 80%",
-        lesson5And6: "Mở khi Bài 4 được giảng viên đánh giá Đạt",
+        operationLessons: "Mở khi Quiz Bài 2 và Bài 3 đều >= 80%",
+        turningProduction: "Mở khi đạt bài Vận hành và cài đặt máy tiện CNC",
+        millingProduction: "Mở khi đạt bài Vận hành và cài đặt máy phay CNC",
       },
       previewProgress: {
         turningQuizScore,
         millingQuizScore,
-        operationPassedByInstructor,
+        turningOperationPassed,
+        millingOperationPassed,
       },
       setupChecklist: checklist,
       gateQuiz,
@@ -244,12 +427,22 @@ export default function CncLmsAdmin() {
             <label className="flex items-center gap-3 rounded-xl bg-white/5 px-3 py-2 text-sm text-slate-300">
               <input
                 type="checkbox"
-                checked={operationPassedByInstructor}
+                checked={turningOperationPassed}
                 onChange={(event) =>
-                  setOperationPassedByInstructor(event.target.checked)
+                  setTurningOperationPassed(event.target.checked)
                 }
               />
-              Bài 4 đã được giảng viên đánh giá Đạt
+              Đã đạt vận hành và cài đặt máy tiện
+            </label>
+            <label className="flex items-center gap-3 rounded-xl bg-white/5 px-3 py-2 text-sm text-slate-300">
+              <input
+                type="checkbox"
+                checked={millingOperationPassed}
+                onChange={(event) =>
+                  setMillingOperationPassed(event.target.checked)
+                }
+              />
+              Đã đạt vận hành và cài đặt máy phay
             </label>
           </div>
         </div>
@@ -283,6 +476,8 @@ export default function CncLmsAdmin() {
         </div>
       </section>
 
+      <CncDrawingApprovals />
+
       <section className="grid gap-5 lg:grid-cols-[280px_1fr]">
         <aside className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
           <p className="px-2 pb-3 text-xs font-bold tracking-wide text-slate-500 uppercase">
@@ -310,6 +505,30 @@ export default function CncLmsAdmin() {
         </aside>
 
         <div className="space-y-5 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <CncFilesAdmin
+            lessonTitle={activeItem.shortTitle}
+            files={lessonFiles}
+            loading={filesLoading}
+            uploadingKind={uploadingKind}
+            storageReady={fileStorageReady}
+            onUpload={handleLessonFile}
+            onDelete={handleDeleteLessonFile}
+          />
+
+          <CncVideosAdmin
+            lessonTitle={activeItem.shortTitle}
+            videos={lessonVideos}
+            loading={videosLoading}
+            ready={videosReady}
+            adding={addingVideo}
+            title={videoTitle}
+            url={videoUrl}
+            onTitleChange={setVideoTitle}
+            onUrlChange={setVideoUrl}
+            onAdd={handleAddVideo}
+            onDelete={handleDeleteVideo}
+          />
+
           <div className="grid gap-4 md:grid-cols-2">
             <label className="text-sm text-slate-300">
               Tên hiển thị trong sidebar
@@ -395,7 +614,7 @@ export default function CncLmsAdmin() {
                 Có khu lớp học đảo ngược
               </label>
               <label className="mt-4 block text-sm text-slate-300">
-                Checklist Bài 4
+                Checklist bài vận hành
                 <textarea
                   value={listToLines(checklist)}
                   onChange={(event) => setChecklist(linesToList(event.target.value))}
@@ -544,6 +763,379 @@ export default function CncLmsAdmin() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function CncDrawingApprovals() {
+  const toast = useToast();
+  const [submissions, setSubmissions] = useState<CncDrawingSubmission[]>([]);
+  const [feedback, setFeedback] = useState<Record<number, string>>({});
+  const [loading, setLoading] = useState(true);
+  const [ready, setReady] = useState(true);
+  const [reviewingId, setReviewingId] = useState<number | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllCncDrawingSubmissions()
+      .then((data) => {
+        if (!cancelled) {
+          setSubmissions(data);
+          setFeedback(Object.fromEntries(data.map((item) => [item.id, item.teacher_feedback])));
+          setReady(true);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setReady(false);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
+
+  async function openDrawing(submission: CncDrawingSubmission) {
+    try {
+      const url = await createCncDrawingDownloadUrl(submission.storage_path);
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      toast("error", `Không mở được bản vẽ: ${error instanceof Error ? error.message : error}`);
+    }
+  }
+
+  async function review(submission: CncDrawingSubmission, status: "approved" | "rejected") {
+    if (status === "rejected" && !feedback[submission.id]?.trim()) {
+      toast("error", "Hãy nhập yêu cầu chỉnh sửa trước khi yêu cầu sinh viên nộp lại.");
+      return;
+    }
+    setReviewingId(submission.id);
+    try {
+      const updated = await reviewCncDrawingSubmission(submission.id, status, feedback[submission.id] ?? "");
+      setSubmissions((current) => current.map((item) => item.id === updated.id ? { ...item, ...updated } : item));
+      toast("success", status === "approved" ? "Đã duyệt bản vẽ và mở quyền gia công CNC cho sinh viên." : "Đã gửi yêu cầu chỉnh sửa bản vẽ.");
+    } catch (error) {
+      toast("error", `Không cập nhật được hồ sơ: ${error instanceof Error ? error.message : error}`);
+    } finally {
+      setReviewingId(null);
+    }
+  }
+
+  const pendingCount = submissions.filter((item) => item.status === "pending").length;
+  return <section className="rounded-2xl border border-emerald-500/25 bg-emerald-500/5 p-5">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+        <p className="text-xs font-bold tracking-wide text-emerald-300 uppercase">Duyệt trước khi gia công</p>
+        <h3 className="mt-1 font-display text-lg font-bold text-white">Bản vẽ Gia công tiện và Gia công phay</h3>
+        <p className="mt-1 text-xs leading-5 text-slate-400">Chỉ sinh viên có bản vẽ được duyệt mới nhận trạng thái cho phép gia công trên máy CNC.</p>
+      </div>
+      <span className="w-fit rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-200">{pendingCount} hồ sơ chờ duyệt</span>
+    </div>
+
+    {!ready && !loading && <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs leading-5 text-amber-200">Chưa có bảng nộp bản vẽ. Hãy chạy migration <strong>supabase-migration-cnc-drawing-submissions.sql</strong>.</div>}
+    <div className="mt-5 space-y-3">
+      {loading ? <p className="text-xs text-slate-400">Đang tải hồ sơ bản vẽ…</p> : submissions.length === 0 ? <p className="rounded-xl border border-dashed border-white/10 px-4 py-6 text-center text-xs text-slate-500">Chưa có sinh viên nộp bản vẽ.</p> : submissions.map((submission) => {
+        const machine = submission.lesson_id === "lesson-5" ? "Tiện CNC" : "Phay CNC";
+        return <article key={submission.id} className="rounded-xl border border-white/10 bg-[#080D1A] p-4">
+          <div className="flex flex-col gap-3 md:flex-row md:items-start">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <strong className="text-sm text-white">{submission.profiles?.full_name || "Sinh viên"}</strong>
+                <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-slate-400">{submission.profiles?.class_name || "Chưa có lớp"}</span>
+                <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-bold text-blue-200">{machine}</span>
+                <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${submission.status === "approved" ? "bg-emerald-500/15 text-emerald-200" : submission.status === "rejected" ? "bg-red-500/15 text-red-200" : "bg-amber-500/15 text-amber-200"}`}>{submission.status === "approved" ? "Đã duyệt" : submission.status === "rejected" ? "Yêu cầu nộp lại" : "Chờ duyệt"}</span>
+              </div>
+              <button type="button" onClick={() => openDrawing(submission)} className="mt-2 block max-w-full truncate text-left text-xs font-semibold text-[#60A5FA] hover:text-[#93C5FD]">Mở bản vẽ: {submission.file_name}</button>
+              <p className="mt-1 text-[10px] text-slate-500">Cập nhật {new Date(submission.updated_at).toLocaleString("vi-VN")}</p>
+            </div>
+            <div className="flex gap-2">
+              <button type="button" disabled={reviewingId === submission.id} onClick={() => review(submission, "approved")} className="rounded-lg bg-emerald-600 px-3 py-2 text-xs font-bold text-white hover:bg-emerald-500 disabled:opacity-50">Duyệt & mở khóa</button>
+              <button type="button" disabled={reviewingId === submission.id} onClick={() => review(submission, "rejected")} className="rounded-lg border border-red-500/30 px-3 py-2 text-xs font-bold text-red-200 hover:bg-red-500/10 disabled:opacity-50">Yêu cầu nộp lại</button>
+            </div>
+          </div>
+          <textarea value={feedback[submission.id] ?? ""} onChange={(event) => setFeedback((current) => ({ ...current, [submission.id]: event.target.value }))} rows={2} placeholder="Nhận xét của giảng viên hoặc yêu cầu chỉnh sửa…" className="mt-3 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white placeholder:text-slate-500" />
+        </article>;
+      })}
+    </div>
+  </section>;
+}
+
+function CncVideosAdmin({
+  lessonTitle,
+  videos,
+  loading,
+  ready,
+  adding,
+  title,
+  url,
+  onTitleChange,
+  onUrlChange,
+  onAdd,
+  onDelete,
+}: {
+  lessonTitle: string;
+  videos: CncLessonVideo[];
+  loading: boolean;
+  ready: boolean;
+  adding: boolean;
+  title: string;
+  url: string;
+  onTitleChange: (value: string) => void;
+  onUrlChange: (value: string) => void;
+  onAdd: () => void;
+  onDelete: (video: CncLessonVideo) => void;
+}) {
+  const previewId = getYouTubeVideoId(url);
+
+  return (
+    <section className="rounded-2xl border border-red-500/25 bg-red-500/5 p-5">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs font-bold tracking-wide text-red-300 uppercase">
+            Video bài giảng
+          </p>
+          <h3 className="mt-1 font-display text-lg font-bold text-white">
+            YouTube · {lessonTitle}
+          </h3>
+          <p className="mt-1 text-xs leading-5 text-slate-400">
+            Có thể thêm nhiều video. Mỗi video sẽ xuất hiện trong mục Video bài giảng của bài đang chọn.
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-200">
+          {videos.length} video
+        </span>
+      </div>
+
+      {!ready && !loading && (
+        <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs leading-5 text-amber-200">
+          Bảng video CNC chưa sẵn sàng. Hãy chạy lại migration
+          <strong> supabase-migration-cnc-files.sql</strong> trong Supabase.
+        </div>
+      )}
+
+      <div className="mt-5 grid gap-4 lg:grid-cols-[1fr_220px]">
+        <div className="space-y-3">
+          <label className="block text-sm text-slate-300">
+            Tên video
+            <input
+              value={title}
+              onChange={(event) => onTitleChange(event.target.value)}
+              placeholder="Ví dụ: Cấu tạo máy tiện CNC"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-[#080D1A] px-3 py-2 text-white placeholder:text-slate-500"
+            />
+          </label>
+          <label className="block text-sm text-slate-300">
+            Liên kết YouTube
+            <input
+              value={url}
+              onChange={(event) => onUrlChange(event.target.value)}
+              placeholder="https://www.youtube.com/watch?v=..."
+              className="mt-1 w-full rounded-xl border border-white/10 bg-[#080D1A] px-3 py-2 text-white placeholder:text-slate-500"
+            />
+          </label>
+          <button
+            type="button"
+            disabled={adding || !title.trim() || !previewId}
+            onClick={onAdd}
+            className="rounded-xl bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {adding ? "Đang thêm video…" : "+ Thêm video vào bài học"}
+          </button>
+        </div>
+
+        <div className="overflow-hidden rounded-xl border border-white/10 bg-[#080D1A]">
+          {previewId ? (
+            <img
+              src={getYouTubeThumbnailUrl(previewId)}
+              alt="Xem trước video YouTube"
+              className="aspect-video h-full w-full object-cover"
+            />
+          ) : (
+            <div className="flex aspect-video items-center justify-center px-5 text-center text-xs text-slate-500">
+              Dán liên kết YouTube để xem trước ảnh video.
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 md:grid-cols-2">
+        {loading ? (
+          <p className="text-xs text-slate-400">Đang tải danh sách video…</p>
+        ) : videos.length === 0 ? (
+          <p className="rounded-xl border border-dashed border-white/10 px-4 py-5 text-center text-xs text-slate-500 md:col-span-2">
+            Bài học này chưa có video YouTube.
+          </p>
+        ) : videos.map((video, index) => (
+          <div key={video.id} className="flex gap-3 rounded-xl border border-white/10 bg-[#080D1A] p-3">
+            <img
+              src={getYouTubeThumbnailUrl(video.youtube_id)}
+              alt=""
+              className="h-16 w-28 rounded-lg object-cover"
+            />
+            <div className="min-w-0 flex-1">
+              <span className="text-[10px] font-bold text-red-300">VIDEO {index + 1}</span>
+              <a href={video.youtube_url} target="_blank" rel="noreferrer" className="mt-0.5 block truncate text-sm font-semibold text-white hover:text-red-300">
+                {video.title}
+              </a>
+              <button type="button" onClick={() => onDelete(video)} className="mt-2 text-[10px] font-bold text-red-300 hover:text-red-200">
+                Xóa video
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CncFilesAdmin({
+  lessonTitle,
+  files,
+  loading,
+  uploadingKind,
+  storageReady,
+  onUpload,
+  onDelete,
+}: {
+  lessonTitle: string;
+  files: CncLessonFile[];
+  loading: boolean;
+  uploadingKind: CncLessonFileKind | null;
+  storageReady: boolean;
+  onUpload: (kind: CncLessonFileKind, file: File | undefined) => void;
+  onDelete: (file: CncLessonFile) => void;
+}) {
+  const powerPoints = files.filter((file) => file.kind === "powerpoint");
+  const materials = files.filter((file) => file.kind === "material");
+
+  return (
+    <section className="rounded-2xl border border-[#3B82F6]/30 bg-[#3B82F6]/10 p-5">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs font-bold tracking-wide text-[#93C5FD] uppercase">
+            Tệp của bài học
+          </p>
+          <h3 className="mt-1 font-display text-lg font-bold text-white">
+            {lessonTitle}
+          </h3>
+          <p className="mt-1 text-xs leading-5 text-slate-400">
+            PowerPoint xuất hiện ở Nội dung bài học; các tệp khác xuất hiện trong mục Tài liệu.
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300">
+          Tối đa 50 MB/tệp
+        </span>
+      </div>
+
+      {!storageReady && !loading && (
+        <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs leading-5 text-amber-200">
+          Kho tệp CNC chưa sẵn sàng. Hãy chạy migration
+          <strong> supabase-migration-cnc-files.sql</strong> trong Supabase trước khi tải tệp.
+        </div>
+      )}
+
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <FileUploadPanel
+          icon="PPT"
+          title="PowerPoint bài giảng"
+          description="Chấp nhận .ppt và .pptx"
+          accept=".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation"
+          busy={uploadingKind === "powerpoint"}
+          files={powerPoints}
+          onFile={(file) => onUpload("powerpoint", file)}
+          onDelete={onDelete}
+        />
+        <FileUploadPanel
+          icon="FILE"
+          title="Tài liệu bài học"
+          description="PDF, Word, Excel, ZIP, NC và tệp văn bản"
+          accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,.nc,.txt"
+          busy={uploadingKind === "material"}
+          files={materials}
+          onFile={(file) => onUpload("material", file)}
+          onDelete={onDelete}
+        />
+      </div>
+    </section>
+  );
+}
+
+function FileUploadPanel({
+  icon,
+  title,
+  description,
+  accept,
+  busy,
+  files,
+  onFile,
+  onDelete,
+}: {
+  icon: string;
+  title: string;
+  description: string;
+  accept: string;
+  busy: boolean;
+  files: CncLessonFile[];
+  onFile: (file: File | undefined) => void;
+  onDelete: (file: CncLessonFile) => void;
+}) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-[#080D1A] p-4">
+      <div className="flex items-center gap-3">
+        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2563EB]/15 text-xs font-black text-[#93C5FD]">
+          {icon}
+        </span>
+        <div>
+          <h4 className="text-sm font-bold text-white">{title}</h4>
+          <p className="mt-0.5 text-xs text-slate-500">{description}</p>
+        </div>
+      </div>
+
+      <label className={`mt-4 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 px-4 py-4 text-center text-xs font-semibold text-slate-300 hover:border-[#3B82F6]/60 hover:bg-[#3B82F6]/10 ${busy ? "pointer-events-none opacity-60" : ""}`}>
+        {busy ? "Đang tải tệp lên…" : "+ Chọn tệp để tải lên"}
+        <input
+          type="file"
+          accept={accept}
+          disabled={busy}
+          onChange={(event) => {
+            onFile(event.target.files?.[0]);
+            event.currentTarget.value = "";
+          }}
+          className="sr-only"
+        />
+      </label>
+
+      <div className="mt-4 space-y-2">
+        {files.length === 0 ? (
+          <p className="rounded-lg bg-white/5 px-3 py-3 text-center text-xs text-slate-500">
+            Chưa có tệp nào.
+          </p>
+        ) : (
+          files.map((file) => (
+            <div key={file.id} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+              <div className="min-w-0 flex-1">
+                <a
+                  href={file.file_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block truncate text-xs font-semibold text-white hover:text-[#60A5FA]"
+                >
+                  {file.title}
+                </a>
+                <p className="mt-0.5 truncate text-[10px] text-slate-500">
+                  {file.file_name} · {formatFileSize(file.size_bytes)}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => onDelete(file)}
+                className="rounded-lg px-2 py-1 text-[10px] font-bold text-red-300 hover:bg-red-500/10"
+              >
+                Xóa
+              </button>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

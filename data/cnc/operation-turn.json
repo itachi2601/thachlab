@@ -1,0 +1,242 @@
+[
+  {
+    "id": "operation-turn-q1",
+    "question": "Chế độ JOG trên máy tiện CNC dùng để làm gì?",
+    "options": [
+      "Di chuyển bàn dao (trục X, Z) bằng tay với tốc độ liên tục, dùng để canh chỉnh vị trí thủ công",
+      "Chạy tự động toàn bộ chương trình NC",
+      "Nhập và chỉnh sửa chương trình bằng tay",
+      "Về điểm tham chiếu máy (Machine Zero Point)"
+    ],
+    "correctIndex": 0,
+    "explanation": "JOG trên máy tiện di chuyển bàn dao theo trục X (đường kính) và Z (dọc trục) — dùng khi canh dao, đo phôi hoặc tiếp cận nhanh trước khi gia công."
+  },
+  {
+    "id": "operation-turn-q2",
+    "question": "Chế độ MDI (Manual Data Input) trên máy tiện dùng để làm gì?",
+    "options": [
+      "Chỉ xem thông số dao đang dùng",
+      "Nhập và chạy thử trực tiếp một vài dòng lệnh đơn lẻ mà không cần chương trình đầy đủ",
+      "Chỉ dùng để về điểm 0 máy",
+      "Tự động chọn dao phù hợp"
+    ],
+    "correctIndex": 1,
+    "explanation": "MDI thường dùng để quay trục chính ở tốc độ cần thiết, gọi dao (T-code), hoặc kiểm tra nhanh 1 dòng lệnh mà không cần soạn cả chương trình gia công."
+  },
+  {
+    "id": "operation-turn-q3",
+    "question": "Chức năng Single Block (SBL) khi bật lên sẽ khiến máy tiện:",
+    "options": [
+      "Chạy toàn bộ chương trình liên tục không dừng",
+      "Dừng lại sau mỗi khối lệnh (block), chờ nhấn Cycle Start để tiếp tục",
+      "Tự động tăng tốc độ trục chính",
+      "Bỏ qua các lệnh có dấu \"/\" (Block Skip)"
+    ],
+    "correctIndex": 1,
+    "explanation": "SBL đặc biệt quan trọng khi chạy thử các chu trình phức tạp như G71/G70/G92 trên máy tiện — giúp quan sát từng bước tiện thô, tiện tinh hoặc tiện ren trước khi tin tưởng chạy AUTO liên tục."
+  },
+  {
+    "id": "operation-turn-q4",
+    "question": "Handle (vô lăng điện tử) trên máy tiện CNC dùng để:",
+    "options": [
+      "Di chuyển bàn dao với độ chính xác cao theo từng nấc (0.001/0.01/0.1mm), thường dùng khi canh dao/phôi",
+      "Thay đổi tốc độ trục chính",
+      "Chọn chương trình gia công",
+      "Bật/tắt dung dịch làm mát"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trên máy tiện, Handle dùng nhiều khi set điểm 0 tại mặt đầu phôi (Z0) hoặc canh dao chạm phôi để xác định offset — cần độ chính xác cao hơn JOG."
+  },
+  {
+    "id": "operation-turn-q5",
+    "question": "Nút Feed Hold (tạm dừng chạy dao) có tác dụng gì khi máy tiện đang chạy tự động?",
+    "options": [
+      "Dừng hẳn chương trình, phải chạy lại từ đầu",
+      "Tạm dừng chuyển động chạy dao ngay lập tức, trục chính vẫn có thể tiếp tục quay, nhấn Cycle Start để chạy tiếp",
+      "Tắt nguồn máy",
+      "Xóa toàn bộ chương trình đang chạy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trên máy tiện, khi nhấn Feed Hold trong lúc tiện ren cần đặc biệt lưu ý — vì dừng giữa chừng khi đang cắt ren có thể ảnh hưởng đến bước ren nếu chạy lại không đúng cách; nên hiểu rõ hành vi này trước khi thao tác."
+  },
+  {
+    "id": "operation-turn-q6",
+    "question": "Nút dừng khẩn cấp (Emergency Stop) khi được nhấn trên máy tiện sẽ:",
+    "options": [
+      "Chỉ tắt dung dịch làm mát",
+      "Ngắt ngay lập tức mọi chuyển động và nguồn động lực của máy, bao gồm dừng quay mâm cặp",
+      "Tạm dừng chương trình nhưng mâm cặp vẫn quay",
+      "Chuyển máy sang chế độ JOG"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trên máy tiện, dừng khẩn cấp phải dừng cả chuyển động bàn dao lẫn quay của mâm cặp/trục chính — vì phôi đang quay tốc độ cao là nguy cơ mất an toàn lớn nhất khi có sự cố."
+  },
+  {
+    "id": "operation-turn-q7",
+    "question": "Trước khi bật nguồn và vận hành máy tiện CNC, bước kiểm tra an toàn đầu tiên nào là bắt buộc?",
+    "options": [
+      "Kiểm tra chương trình NC đã đúng chưa",
+      "Kiểm tra khu vực làm việc, đảm bảo không có vật cản, cửa bảo vệ an toàn đã đóng",
+      "Kiểm tra tốc độ trục chính đã cài đặt",
+      "Kiểm tra dao đã được mài sắc chưa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Giống như máy phay, an toàn khu vực làm việc luôn là bước kiểm tra đầu tiên trước khi khởi động bất kỳ máy công cụ nào."
+  },
+  {
+    "id": "operation-turn-q8",
+    "question": "Khi thay dao trên đài dao (turret) của máy tiện CNC, thao tác nào cần thực hiện trước tiên?",
+    "options": [
+      "Bật ngay trục chính để kiểm tra dao mới",
+      "Dừng hẳn trục chính (M05), đưa bàn dao về vị trí an toàn trước khi tháo/lắp dao trên đài dao",
+      "Tăng tốc độ trục chính lên mức tối đa",
+      "Xóa chương trình đang có trong bộ nhớ"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tương tự máy phay, tuyệt đối không thao tác tay vào vùng dao/mâm cặp khi trục chính còn quay — đặc biệt nguy hiểm trên máy tiện vì mâm cặp có thể đang kẹp phôi nặng và quay tốc độ cao."
+  },
+  {
+    "id": "operation-turn-q9",
+    "question": "Việc về điểm tham chiếu máy (Machine Zero Point) trên máy tiện nên được thực hiện khi nào?",
+    "options": [
+      "Chỉ cần làm 1 lần duy nhất khi mua máy",
+      "Sau mỗi lần bật nguồn máy, để hệ điều khiển xác định lại chính xác vị trí bàn dao",
+      "Chỉ khi máy báo lỗi",
+      "Không cần thiết nếu đã set gốc phôi G54"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sau khi tắt nguồn, hệ điều khiển mất thông tin vị trí tuyệt đối của bàn dao — về điểm tham chiếu máy là bước bắt buộc đầu ca để làm nền tảng chính xác cho hệ tọa độ phôi."
+  },
+  {
+    "id": "operation-turn-q10",
+    "question": "Trên máy tiện CNC, trước khi cho trục chính (mâm cặp) quay tốc độ cao, cần kiểm tra điều gì quan trọng nhất?",
+    "options": [
+      "Phôi đã được kẹp chặt và đủ chấu kẹp tiếp xúc, không có vật lạ trên mâm cặp",
+      "Màu sơn của máy còn mới không",
+      "Số lượng dao trong ổ tích dao",
+      "Nhiệt độ phòng xưởng"
+    ],
+    "correctIndex": 0,
+    "explanation": "Phôi kẹp không chắc trên mâm cặp có thể văng ra khi quay tốc độ cao, gây tai nạn nghiêm trọng — đây là điểm khác biệt an toàn quan trọng nhất giữa máy tiện và máy phay."
+  },
+  {
+    "id": "operation-turn-q11",
+    "question": "Chế độ AUTO (hoặc MEM) trên máy tiện dùng để:",
+    "options": [
+      "Chạy chương trình NC đã lưu trong bộ nhớ máy một cách tự động, liên tục",
+      "Chỉ dùng để xóa chương trình",
+      "Di chuyển bàn dao bằng tay",
+      "Cài đặt thông số bù dao"
+    ],
+    "correctIndex": 0,
+    "explanation": "Đây là chế độ gia công chính thức, chạy toàn bộ chương trình tiện thô, tiện tinh, tiện ren... theo trình tự đã lập, sau khi đã kiểm tra kỹ bằng Single Block/Dry Run."
+  },
+  {
+    "id": "operation-turn-q12",
+    "question": "Núm Spindle Speed Override (điều chỉnh tốc độ trục chính) trên máy tiện dùng để làm gì?",
+    "options": [
+      "Thay đổi chương trình gia công đang chạy",
+      "Tăng/giảm tốc độ quay trục chính thực tế so với giá trị S đã lập trình, mà không cần dừng máy",
+      "Bật/tắt dung dịch làm mát",
+      "Chọn lại dao đang dùng"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hữu ích khi cần điều chỉnh tốc độ cắt thực tế theo tình huống quan sát được (ví dụ rung động, tiếng ồn bất thường) mà không cần dừng máy để sửa chương trình."
+  },
+  {
+    "id": "operation-turn-q13",
+    "question": "Khi vận hành lần đầu một chương trình tiện mới chưa từng chạy thử, thao tác an toàn nào nên áp dụng?",
+    "options": [
+      "Chạy thẳng ở chế độ AUTO tốc độ 100% ngay từ đầu",
+      "Bật Single Block kết hợp giảm Feed Rate Override, quan sát kỹ từng bước, sẵn sàng nhấn Feed Hold nếu bất thường",
+      "Tắt hết các cảm biến an toàn để chạy nhanh hơn",
+      "Không cần theo dõi vì máy đã tự động hoàn toàn"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nguyên tắc chạy thử an toàn áp dụng cho cả tiện lẫn phay — đặc biệt quan trọng với các chu trình phức tạp như G71 (tiện thô) vì một lát cắt sai có thể phá hỏng toàn bộ phôi."
+  },
+  {
+    "id": "operation-turn-q14",
+    "question": "Chức năng Dry Run (chạy không tải) trên máy tiện dùng để:",
+    "options": [
+      "Gia công chi tiết thật với tốc độ chậm",
+      "Cho máy chạy mô phỏng chuyển động theo chương trình mà không thực sự cắt gọt, để kiểm tra quỹ đạo dao",
+      "Tự động mài sắc lại dao",
+      "Chỉ dùng khi thay dầu bôi trơn"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dry Run giúp kiểm tra quỹ đạo bàn dao trên máy tiện (đặc biệt các chu trình G71/G70) trước khi cắt thật, giảm rủi ro va chạm giữa dao và mâm cặp hoặc ụ động."
+  },
+  {
+    "id": "operation-turn-q15",
+    "question": "Trên bảng điều khiển Fanuc của máy tiện, phím Cycle Start dùng để:",
+    "options": [
+      "Dừng khẩn cấp toàn bộ máy",
+      "Bắt đầu hoặc tiếp tục chạy chương trình ở chế độ AUTO/MDI",
+      "Chuyển sang chế độ JOG",
+      "Xóa bộ nhớ chương trình"
+    ],
+    "correctIndex": 1,
+    "explanation": "Giống máy phay, Cycle Start là nút khởi động chuyển động theo chương trình, dùng để bắt đầu AUTO hoặc tiếp tục sau mỗi lần dừng do Single Block/Feed Hold."
+  },
+  {
+    "id": "operation-turn-q16",
+    "question": "Khi đang tiện tự động (AUTO) mà phát hiện tiếng kêu bất thường hoặc rung động lạ, phản ứng đúng đầu tiên là:",
+    "options": [
+      "Tiếp tục quan sát thêm vài phút xem có tự hết không",
+      "Nhấn Feed Hold hoặc dừng khẩn cấp ngay lập tức để kiểm tra nguyên nhân",
+      "Tăng tốc độ trục chính để hoàn thành nhanh hơn",
+      "Rời khỏi vị trí máy để báo cáo sau"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trên máy tiện, rung động bất thường thường liên quan đến phôi kẹp không chắc, dao mòn, hoặc thông số cắt sai — xử lý ngay giúp tránh phôi văng ra hoặc gãy dao nghiêm trọng."
+  },
+  {
+    "id": "operation-turn-q17",
+    "question": "Trang màn hình POSITION trên điều khiển Fanuc của máy tiện hiển thị thông tin gì?",
+    "options": [
+      "Nội dung chương trình NC đang chạy",
+      "Vị trí hiện tại của bàn dao (trục X, Z) — tuyệt đối, tương đối, hoặc theo máy",
+      "Danh sách các dao trên đài dao",
+      "Thông số bù dao (Tool Offset)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Giúp người vận hành theo dõi tọa độ X (đường kính), Z (dọc trục) hiện tại của bàn dao so với gốc máy hoặc gốc phôi trong suốt quá trình gia công."
+  },
+  {
+    "id": "operation-turn-q18",
+    "question": "Chức năng Block Skip (bỏ qua khối lệnh, ký hiệu \"/\" đầu dòng) trên máy tiện dùng để:",
+    "options": [
+      "Xóa vĩnh viễn dòng lệnh đó khỏi chương trình",
+      "Khi được bật, máy sẽ bỏ qua các dòng có dấu \"/\" ở đầu khi chạy chương trình, hữu ích khi cần tùy chọn bỏ một số bước",
+      "Tăng tốc độ đọc chương trình",
+      "Chỉ dùng riêng cho chu trình tiện ren"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ví dụ có thể dùng để tùy chọn bỏ qua bước tiện tinh (G70) khi chỉ cần kiểm tra biên dạng thô, mà không cần viết 2 chương trình riêng biệt."
+  },
+  {
+    "id": "operation-turn-q19",
+    "question": "Trước khi rời khỏi máy tiện sau ca làm việc, quy trình an toàn cơ bản nào cần thực hiện?",
+    "options": [
+      "Cứ để máy chạy chương trình dở dang",
+      "Đưa bàn dao về vị trí an toàn, dừng trục chính, tắt coolant, và tắt nguồn máy theo đúng trình tự",
+      "Không cần làm gì, ca sau tự xử lý",
+      "Chỉ cần tắt màn hình điều khiển"
+    ],
+    "correctIndex": 1,
+    "explanation": "Đây là quy trình kết thúc ca chuẩn cho mọi máy CNC — đảm bảo máy ở trạng thái an toàn cho người vận hành ca tiếp theo."
+  },
+  {
+    "id": "operation-turn-q20",
+    "question": "Khi cửa bảo vệ an toàn (safety door) của máy tiện đang mở, hệ thống điều khiển thường sẽ:",
+    "options": [
+      "Vẫn cho phép chạy chương trình AUTO bình thường",
+      "Tự động khóa không cho chạy tự động hoặc quay trục chính/mâm cặp, để bảo vệ người vận hành",
+      "Tăng tốc độ trục chính lên tối đa",
+      "Không có liên quan gì đến an toàn vận hành"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trên máy tiện, cơ chế khóa liên động đặc biệt quan trọng vì mâm cặp quay có thể cuốn theo quần áo, tóc hoặc tay nếu cửa bảo vệ mở trong lúc gia công."
+  }
+]

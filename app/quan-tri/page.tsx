@@ -13,10 +13,14 @@ import LessonsAdmin from "@/components/admin/LessonsAdmin";
 import ResultsAdmin from "@/components/admin/ResultsAdmin";
 import MessagesAdmin from "@/components/admin/MessagesAdmin";
 import CncLmsAdmin from "@/components/admin/CncLmsAdmin";
+import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
+import CncCourseManager from "@/components/admin/CncCourseManager";
 
 const TABS = [
+  { id: "cnc-courses", label: "Khóa học CNC" },
   { id: "lessons", label: "Bài học" },
   { id: "cnc-lms", label: "LMS CNC" },
+  { id: "cnc-live", label: "Thi trực tiếp CNC" },
   { id: "exams", label: "Đề kiểm tra" },
   { id: "import-word", label: "Import từ Word" },
   { id: "import-exam", label: "Import Đề" },
@@ -34,7 +38,7 @@ export default function AdminPage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto min-h-screen w-full max-w-5xl px-6 pt-28 pb-20 lg:px-8">
+      <main className="mx-auto min-h-screen w-full max-w-7xl px-6 pt-28 pb-20 lg:px-8">
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
           Quản <span className="text-gradient">trị</span>
         </h1>
@@ -55,8 +59,10 @@ export default function AdminPage() {
             ))}
           </div>
           <div className="mt-8">
+            {tab === "cnc-courses" && <CncCourseManager />}
             {tab === "lessons" && <LessonsAdmin />}
             {tab === "cnc-lms" && <CncLmsAdmin />}
+            {tab === "cnc-live" && <CncMillingLiveMonitor />}
             {tab === "exams" && <ExamsAdmin />}
             {tab === "import-word" && <ImportWord />}
             {tab === "import-exam" && <ImportExam />}

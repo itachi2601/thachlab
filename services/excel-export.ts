@@ -43,7 +43,7 @@ export async function exportStudentToExcel(
     pattern: "solid",
     fgColor: { argb: "FF2563EB" },
   };
-  headerRow.alignment = { horizontal: "center", vertical: "center" };
+  headerRow.alignment = { horizontal: "center", vertical: "middle" };
 
   // Add data rows
   students.forEach((student) => {
@@ -66,7 +66,7 @@ export async function exportStudentToExcel(
   worksheet.eachRow((row, rowNumber) => {
     if (rowNumber > 1) {
       row.eachCell((cell) => {
-        cell.alignment = { horizontal: "left", vertical: "center" };
+        cell.alignment = { horizontal: "left", vertical: "middle" };
       });
     }
   });
