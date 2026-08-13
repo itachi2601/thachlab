@@ -7,7 +7,7 @@ import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord 
 import type { CncLearningRecord } from "@/services/cnc-learning-records";
 
 type OverviewStudent={id:string;name:string;className:string;pct:number;xp:number;records:CncLearningRecord[]};
-type DashboardTab="overview"|"progress"|"competencies"|"attendance";
+type DashboardTab="overview"|"progress"|"profile"|"competencies"|"attendance";
 
 export default function TeacherOverview({courseId,students,onOpenTab,onOpenStudent}:{courseId:number;students:OverviewStudent[];onOpenTab:(tab:DashboardTab)=>void;onOpenStudent:(id:string)=>void}){
   const[permissions,setPermissions]=useState<CompetencyPermission[]>([]);const[attendance,setAttendance]=useState<AttendanceRecord[]>([]);const[sessionCount,setSessionCount]=useState(0);

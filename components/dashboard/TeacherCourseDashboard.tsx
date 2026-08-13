@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, CalendarCheck, Eye, LayoutDashboard, Route } from "lucide-react";
+import { Award, CalendarCheck, Eye, LayoutDashboard, Route, UserRound } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -11,6 +11,7 @@ import ClassCompetencyMatrix from "@/components/competencies/ClassCompetencyMatr
 import TeacherOverview from "@/components/dashboard/TeacherOverview";
 import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
 import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";
+import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
 
 type DashboardStudent = {
   id: string; name: string; className: string; xp: number; pct: number; score: string;
@@ -42,7 +43,7 @@ function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): D
 }
 
 export default function TeacherCourseDashboard() {
-  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"competencies"|"attendance">("overview");
+  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"profile"|"competencies"|"attendance">("overview");
   const [activeStudent, setActiveStudent] = useState(0);
   const [studentPreview, setStudentPreview] = useState(false);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
@@ -99,13 +100,14 @@ export default function TeacherCourseDashboard() {
       </div>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck}]as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck}]as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&<TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
     {activeTab==="competencies"&&selectedCourseId&&<ClassCompetencyMatrix courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
 
-    {activeTab==="overview"&&selectedCourseId&&<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index);setActiveTab("progress")}}/>}
+    {activeTab==="overview"&&selectedCourseId&&<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index);setActiveTab("profile")}}/>}
 
     {activeTab==="progress"&&<TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>}
+    {activeTab==="profile"&&<TeacherStudentProfile students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>}
   </div>;
 }
