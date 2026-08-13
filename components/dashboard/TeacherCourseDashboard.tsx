@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { ArrowLeft, Award, BookOpenCheck, CalendarCheck, ChevronRight, Eye, GraduationCap, LayoutDashboard, Route, ShieldCheck } from "lucide-react";
+import { Award, CalendarCheck, Eye, LayoutDashboard, Route } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
 import TeacherAttendancePanel from "@/components/attendance/TeacherAttendancePanel";
-import { cncAssessmentProgress, completedCncLessons, CNC_TOTAL_ASSESSMENTS } from "@/services/cnc-progress";
+import { cncAssessmentProgress, completedCncLessons } from "@/services/cnc-progress";
 import ClassCompetencyMatrix from "@/components/competencies/ClassCompetencyMatrix";
 import TeacherOverview from "@/components/dashboard/TeacherOverview";
 import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
+import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";
 
 type DashboardStudent = {
   id: string; name: string; className: string; xp: number; pct: number; score: string;
@@ -39,11 +39,6 @@ function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): D
     steps: roadmap.map((lesson) => completed.has(lesson.id)),
     records: own,
   };
-}
-
-function roadmapState(student:DashboardStudent,index:number) {
-  const done=Boolean(student.steps[index]);
-  return {done,locked:false,current:false};
 }
 
 export default function TeacherCourseDashboard() {
@@ -93,7 +88,7 @@ export default function TeacherCourseDashboard() {
     return () => { cancelled = true; void unsubscribeFromCncLearningRecords(channel); };
   }, [selectedCourseId]);
 
-  if (studentPreview && student) return <StudentDashboardPreview student={student} course={selectedCourse} onBack={()=>setStudentPreview(false)} />;
+  if (studentPreview && student && selectedCourse) return <StudentLearningDashboard preview profile={{id:student.id,full_name:student.name,class_name:student.className,role:"student"}} studentId={student.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:{...selectedCourse,status:selectedCourse.status}}} records={student.records} onSignOut={()=>setStudentPreview(false)}/>;
 
   return <div className="space-y-6">
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
@@ -114,16 +109,3 @@ export default function TeacherCourseDashboard() {
     {activeTab==="progress"&&<TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>}
   </div>;
 }
-
-function StudentDashboardPreview({student,course,onBack}:{student:DashboardStudent;course:CourseOffering|null;onBack:()=>void}) {
-  return <div className="space-y-6">
-    <button onClick={onBack} className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-bold text-slate-300 hover:border-blue-400/40 hover:text-white"><ArrowLeft size={16}/> Quay lại Dashboard giáo viên</button>
-    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8"><div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl"/><div className="relative"><p className="text-xs font-bold uppercase tracking-[.16em] text-cyan-300">Chế độ xem thử · Học sinh</p><h2 className="mt-2 font-display text-3xl font-bold text-white">Chào {student.name} 👋</h2><p className="mt-2 text-sm text-slate-400">{student.className} · {course?.name ?? "Khóa CNC mẫu"} · {course?.school_year ?? "2026–2027"}</p><ManaBar pct={student.pct} xp={student.xp} color={student.color}/></div></section>
-    <section className="grid gap-3 sm:grid-cols-3"><Stat icon={<Route size={18}/>} value={`${student.pct}%`} label="Tiến độ khóa" tone="blue"/><Stat icon={<BookOpenCheck size={18}/>} value={student.score} label="Quiz an toàn" tone="emerald"/><Stat icon={<ShieldCheck size={18}/>} value={student.steps[4]?"Đã mở":"Đang khóa"} label="Quyền lên máy" tone="amber"/></section>
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6"><div className="flex items-center gap-2"><GraduationCap size={19} className="text-orange-300"/><h3 className="font-display text-xl font-bold text-white">Các bài học CNC</h3></div><p className="mt-1 text-sm text-slate-500">Các bài học độc lập; sinh viên có thể chọn bất kỳ bài nào để học và làm kiểm tra.</p><div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">{roadmap.map((item,index)=>{const state=roadmapState(student,index);return <div key={item.id} className={`relative flex min-h-48 flex-col rounded-2xl border p-4 ${state.done?"border-emerald-500/25 bg-emerald-500/5":state.current?"border-orange-400/35 bg-orange-500/5":"border-blue-500/15 bg-blue-500/[.03]"}`}><span className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold ${state.done?"bg-emerald-500 text-white":state.current?"bg-orange-500 text-white":"bg-blue-500/20 text-blue-300"}`}>{state.done?"✓":index+1}</span><strong className="mt-4 block text-sm text-white">{item.title}</strong><small className={state.done?"text-emerald-300":state.current?"text-orange-300":"text-slate-500"}>{state.done?"Đã hoàn thành":state.current?"Có thể học tiếp":item.duration}</small><div className="mt-auto pt-4"><Link href={`/lop-hoc/cnc/?bai=${item.id}`} className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold ${state.current?"bg-orange-500 text-white":"bg-blue-600 text-white hover:bg-blue-500"}`}>{state.done?"Xem lại":"Vào bài học"}<ChevronRight size={14}/></Link></div></div>})}</div></section>
-  </div>;
-}
-
-function ManaBar({pct,xp,color,compact=false}:{pct:number;xp:number;color:string;compact?:boolean}) { const fill=color==="amber"?"from-amber-500 via-orange-400 to-yellow-300":"from-blue-600 via-cyan-400 to-sky-300"; return <div className={compact?"mt-3":"mt-6 rounded-2xl border border-white/5 bg-black/20 p-4"}><div className="mb-2 flex items-center justify-between"><span className="text-xs font-bold text-slate-300">Tiến độ đánh giá</span><span className="font-mono text-xs text-slate-400">{xp}/{CNC_TOTAL_ASSESSMENTS} bài đạt · {pct}%</span></div><div className={`relative overflow-hidden rounded-full border border-white/10 bg-[#050914] ${compact?"h-2.5":"h-4"}`}><div className={`h-full rounded-full bg-gradient-to-r ${fill} shadow-[0_0_18px_rgba(56,189,248,.45)] transition-all duration-700`} style={{width:`${pct}%`}}/><div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_49%,rgba(255,255,255,.08)_50%,transparent_51%)] bg-[length:20%_100%]"/></div></div> }
-
-function Stat({icon,value,label,tone}:{icon:React.ReactNode;value:string;label:string;tone:string}) { const tones:Record<string,string>={blue:"border-blue-500/20 bg-blue-500/8 text-blue-300",violet:"border-violet-500/20 bg-violet-500/8 text-violet-300",emerald:"border-emerald-500/20 bg-emerald-500/8 text-emerald-300",amber:"border-amber-500/20 bg-amber-500/8 text-amber-300"};return <div className={`rounded-2xl border p-5 ${tones[tone]}`}><div className="flex items-center gap-2">{icon}<span className="text-xs font-semibold uppercase tracking-wider">{label}</span></div><strong className="mt-3 block text-3xl text-white">{value}</strong></div> }

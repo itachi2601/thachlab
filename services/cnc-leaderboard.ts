@@ -1,6 +1,0 @@
-import { getSupabase } from "@/services/supabase";
-
-export type CncLeaderboardRow={student_id:string;first_activity_at:string|null;completed_at:string|null;accuracy:number;passed_count:number};
-export async function fetchCncCourseLeaderboard(courseId:number){const{data,error}=await getSupabase().rpc("get_cnc_course_leaderboard",{p_course_id:courseId});if(error)throw error;return(data??[])as CncLeaderboardRow[]}
-
-export function studentTitles(rows:CncLeaderboardRow[],studentId:string){const eligible=rows.filter(row=>row.passed_count>0);const first=eligible.filter(row=>row.first_activity_at).toSorted((a,b)=>Date.parse(a.first_activity_at!)-Date.parse(b.first_activity_at!))[0]?.student_id;const finishers=rows.filter(row=>row.completed_at).toSorted((a,b)=>Date.parse(a.completed_at!)-Date.parse(b.completed_at!));const mostAccurate=eligible.toSorted((a,b)=>b.accuracy-a.accuracy||b.passed_count-a.passed_count)[0]?.student_id;return[{id:"speedrunner",name:"Quiz Speedrunner",description:"Người mở điểm sớm nhất lớp",earned:first===studentId,icon:"⚡"},{id:"fast-finish",name:"Về đích tốc độ ánh sáng",description:"Hoàn thành khóa sớm nhất lớp",earned:finishers[0]?.student_id===studentId,icon:"🚀"},{id:"accuracy",name:"Aim chuẩn khỏi chỉnh",description:"Độ chính xác cao nhất lớp",earned:mostAccurate===studentId,icon:"🎯"}]}
