@@ -22,8 +22,9 @@ export default function LoginPage() {
     setError("");
     setBusy(true);
 
+    const loginEmail = email.includes("@") ? email : `${email.trim()}@thachlab.local`;
     const { error } = await getSupabase().auth.signInWithPassword({
-      email,
+      email: loginEmail,
       password,
     });
 
@@ -120,11 +121,11 @@ export default function LoginPage() {
                   htmlFor="email"
                   className="mb-1 block text-sm font-medium text-slate-300"
                 >
-                  Email
+                  Email hoặc tên đăng nhập
                 </label>
                 <input
                   id="email"
-                  type="email"
+                  type="text"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
