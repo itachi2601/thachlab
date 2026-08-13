@@ -1,0 +1,190 @@
+{
+  "unit": "Bài 3 – Lập trình phay",
+  "exercises": [
+    {
+      "exercise_id": "phay_bt3",
+      "title": "Bài tập 3: Điền khuyết chương trình phay",
+      "type": "fill_in_blank",
+      "auto_grade": "per_blank",
+      "levels": [
+        {
+          "level": "de",
+          "part_ref": "Phôi 50×50×8 mm – Phay 4 lỗ vuông Ø6 + bo góc R5 (gốc W tại góc dưới-trái P1), chiều sâu phay ngoài 2mm, chiều sâu lỗ 6mm",
+          "part_image_note": "Bản vẽ: 4 lỗ vuông tại 4 góc, khoảng cách từ cạnh 8mm, bo góc R5 quanh các lỗ",
+          "program_with_blanks": [
+            "O0005 (PHAY 4 LO VUONG + BO GIAC R5)",
+            "G21 G90 G94 G17",
+            "G54",
+            "T01 M06",
+            "G43 H01 Z50 M03 S___[B1]___",
+            "M08",
+            "G00 X-10 Y-10",
+            "Z5",
+            "G01 Z-2 F80",
+            "G___[B2]___ D01 X8 Y8 F150",
+            "G02 X12 Y8 R___[B3]___",
+            "X12 Y12 R5",
+            "X8 Y12 R5",
+            "X8 Y___[B4]___ R5",
+            "G40 X-10 Y-10",
+            "G00 Z___[B5]___",
+            "(KHOAN 4 LO)",
+            "G01 Z-6 F60",
+            "G00 X8 Y8",
+            "Z5",
+            "G01 Z___[B6]___ F60",
+            "G00 Z50",
+            "X___[B7]___ Y8",
+            "Z5",
+            "G01 Z-6 F60",
+            "G00 Z50",
+            "X42 Y8",
+            "Z5",
+            "G01 Z-6 F60",
+            "G00 Z50",
+            "X42 Y42",
+            "Z5",
+            "G01 Z-6 F60",
+            "G00 Z50",
+            "M09",
+            "M05",
+            "M30"
+          ],
+          "blanks": [
+            { "id": "B1", "answer": "1000", "note": "tốc độ trục chính vòng/phút, chế độ phay ngoài" },
+            { "id": "B2", "answer": "41", "note": "bù bán kính dao trái G41, vì dao đi theo chiều kim đồng hồ" },
+            { "id": "B3", "answer": "5", "note": "bán kính bo góc R5 tại góc dưới-trái P1" },
+            { "id": "B4", "answer": "8", "note": "hoàn thành bo góc P1(8,8)→P2(12,8)→P3(12,12)→P4(8,12)→P1(8,8)" },
+            { "id": "B5", "answer": "5", "note": "nâng dao lên Z5 trước khi chuyển sang khoan" },
+            { "id": "B6", "answer": "-6", "note": "khoan sâu 6mm từ mặt phôi" },
+            { "id": "B7", "answer": "42", "note": "lỗ thứ 2 tại X42, Y8 (góc dưới-phải)" }
+          ]
+        },
+        {
+          "level": "kho",
+          "part_ref": "Bo cung R15 + túi tròn Ø20, phôi 70×70×15",
+          "part_image_note": "dùng lại hình phay_bai2.png đã có",
+          "program_with_blanks": [
+            "O0202 (DIEN KHUYET - BO CUNG + TUI TRON)",
+            "G21 G90 G94 G17",
+            "G54",
+            "T01 M06",
+            "G43 H01 Z50 M03 S1200",
+            "M08",
+            "G00 X-10 Y-10",
+            "Z5",
+            "G01 Z-5 F80",
+            "G41 D01 X0 Y0 F150",
+            "X60",
+            "Y___[B1]___",
+            "G___[B2]___ X45 Y50 R___[B3]___",
+            "G01 X0",
+            "Y0",
+            "G40 X-10 Y-10",
+            "G00 Z50",
+            "(PHAY TUI TRON)",
+            "G00 X___[B4]___ Y___[B5]___",
+            "Z5",
+            "G01 Z-5 F60",
+            "G41 D01 X40 Y25 F120",
+            "G03 X40 Y25 I___[B6]___ J0",
+            "G40 G01 X30 Y25",
+            "G00 Z50",
+            "M09",
+            "M05",
+            "M30"
+          ],
+          "blanks": [
+            { "id": "B1", "answer": "35", "note": "điểm P3, bắt đầu cung R15, tại Y=35" },
+            { "id": "B2", "answer": "03", "note": "G03: nội suy cung tròn ngược chiều kim đồng hồ" },
+            { "id": "B3", "answer": "15", "note": "bán kính cung bo góc" },
+            { "id": "B4", "answer": "30", "note": "tâm túi tròn theo X" },
+            { "id": "B5", "answer": "25", "note": "tâm túi tròn theo Y" },
+            { "id": "B6", "answer": "-10", "note": "khoảng cách từ điểm bắt đầu (X40,Y25) đến tâm (30,25) theo trục X" }
+          ]
+        }
+      ]
+    },
+    {
+      "exercise_id": "phay_bt4",
+      "title": "Bài tập 4: Viết chương trình phay từ bản vẽ",
+      "type": "free_program",
+      "auto_grade": "checker_plus_rubric",
+      "checker_logic": "So khớp các lệnh bắt buộc (G41/G42, G02/G03, G54, T/H code) và tọa độ X/Y chính tại từng điểm chuyển hướng với đáp án mẫu, cho phép dung sai nhỏ do làm tròn.",
+      "levels": [
+        {
+          "level": "de",
+          "part_ref": "Biên dạng bậc chữ L, phôi 80×60×20 (giống bài tập 3 mức dễ, KHÔNG cho sườn chương trình)",
+          "required_elements": [
+            "G54 khai báo gốc phôi tại P1",
+            "T01 M06 gọi dao, G43 H01 bù chiều dài dao",
+            "Tiếp cận biên dạng từ ngoài phôi trước khi G41/G42",
+            "Chọn đúng chiều bù dao (G41) theo chiều đi P1→P2→P3→P4→P5→P6",
+            "Đi đúng qua các điểm P1(0,0)→P2(80,0)→P3(80,40)→P4(50,40)→P5(50,60)→P6(0,60)→về P1",
+            "Thoát dao ra ngoài biên dạng trước khi G40",
+            "M08/M09, M03/M05, M30 đầy đủ"
+          ],
+          "expected_key_coordinates": [
+            {"point": "P1", "X": 0, "Y": 0},
+            {"point": "P2", "X": 80, "Y": 0},
+            {"point": "P3", "X": 80, "Y": 40},
+            {"point": "P4", "X": 50, "Y": 40},
+            {"point": "P5", "X": 50, "Y": 60},
+            {"point": "P6", "X": 0, "Y": 60}
+          ],
+          "teacher_rubric": [
+            {"criterion": "Trình tự lệnh hợp lý, an toàn (tiếp cận/thoát dao ngoài biên dạng)", "weight": "20%"},
+            {"criterion": "Chọn đúng G41/G42 dựa trên chiều di chuyển dao", "weight": "20%"},
+            {"criterion": "Tính đúng toàn bộ tọa độ (đối chiếu bảng trên)", "weight": "30%"},
+            {"criterion": "Đầy đủ M-code an toàn", "weight": "15%"},
+            {"criterion": "Trình bày rõ ràng, có chú thích", "weight": "15%"}
+          ]
+        },
+        {
+          "level": "kho",
+          "part_ref": "Bo cung R15 + túi tròn Ø20, phôi 70×70×15 (giống bài tập 3 mức khó, KHÔNG cho sườn)",
+          "required_elements": [
+            "Toàn bộ yêu cầu như mức dễ, biên dạng ngoài P1(0,0)→P2(60,0)→P3(60,35)→cung R15→P4(45,50)→P5(0,50)",
+            "Dùng G02 hoặc G03 đúng chiều cho cung R15 (tâm tại 45,35)",
+            "Phần túi tròn: hạ dao thẳng xuống tâm trước, dịch ra bán kính rồi mới phay tròn — không tiếp cận như biên dạng ngoài",
+            "Tính đúng I, J (khoảng cách tương đối đến tâm, không phải tọa độ tuyệt đối)"
+          ],
+          "expected_key_coordinates": [
+            {"point": "P1", "X": 0, "Y": 0},
+            {"point": "P2", "X": 60, "Y": 0},
+            {"point": "P3 (bắt đầu cung)", "X": 60, "Y": 35},
+            {"point": "P4 (kết thúc cung)", "X": 45, "Y": 50},
+            {"point": "Tâm cung R15", "X": 45, "Y": 35},
+            {"point": "P5", "X": 0, "Y": 50},
+            {"point": "Tâm túi tròn", "X": 30, "Y": 25}
+          ],
+          "teacher_rubric": [
+            {"criterion": "Phay biên dạng ngoài đúng trình tự và tọa độ", "weight": "20%"},
+            {"criterion": "Nội suy cung tròn đúng chiều (G02/G03) và đúng bán kính/tâm", "weight": "20%"},
+            {"criterion": "Xử lý đúng logic tiếp cận túi kín (khác biên dạng ngoài)", "weight": "25%"},
+            {"criterion": "Tính đúng I, J hoặc R cho cung tròn", "weight": "20%"},
+            {"criterion": "Đầy đủ M-code, trình bày rõ ràng", "weight": "15%"}
+          ]
+        }
+      ]
+    },
+    {
+      "exercise_id": "phay_bt5",
+      "title": "Bài tập 5: Mô phỏng và kiểm chứng phay",
+      "type": "simulation_evidence",
+      "auto_grade": "teacher_only",
+      "instructions": "Học sinh nhập chương trình đã viết ở Bài tập 4 vào phần mềm mô phỏng (hoặc chạy MDI + Single Block trên EMCO Mill 55), quay video màn hình/máy hoặc chụp ảnh biên dạng sau mô phỏng, nộp kèm chương trình.",
+      "submission_requirements": [
+        "File chương trình NC đã dùng để mô phỏng (định dạng .txt hoặc .nc)",
+        "Video ngắn (tối đa 3 phút) hoặc ảnh chụp màn hình mô phỏng cho thấy biên dạng cuối cùng",
+        "Ghi chú các lỗi (nếu có) đã tự phát hiện và cách sửa"
+      ],
+      "teacher_rubric": [
+        {"criterion": "Biên dạng mô phỏng khớp đúng bản vẽ (dung sai hình dạng, không sai vị trí điểm)", "weight": "40%"},
+        {"criterion": "Không có va chạm/lỗi trình tự khi chạy mô phỏng", "weight": "25%"},
+        {"criterion": "Tự phát hiện và sửa lỗi hợp lý (nếu có)", "weight": "20%"},
+        {"criterion": "Trình bày minh chứng rõ ràng, dễ kiểm tra", "weight": "15%"}
+      ]
+    }
+  ]
+}
