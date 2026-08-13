@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Award, BookOpenCheck, CalendarCheck, ChevronRight, Eye, GraduationCap, LayoutDashboard, Route, Search, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Award, BookOpenCheck, CalendarCheck, ChevronRight, Eye, GraduationCap, LayoutDashboard, Route, ShieldCheck } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -10,6 +10,7 @@ import TeacherAttendancePanel from "@/components/attendance/TeacherAttendancePan
 import { cncAssessmentProgress, completedCncLessons, CNC_TOTAL_ASSESSMENTS } from "@/services/cnc-progress";
 import ClassCompetencyMatrix from "@/components/competencies/ClassCompetencyMatrix";
 import TeacherOverview from "@/components/dashboard/TeacherOverview";
+import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
 
 type DashboardStudent = {
   id: string; name: string; className: string; xp: number; pct: number; score: string;
@@ -17,7 +18,6 @@ type DashboardStudent = {
 };
 
 const roadmap = CNC_COURSE_ITEMS.filter((item)=>item.id!=="intro").map((item)=>({id:item.id,title:item.title,duration:item.duration}));
-const assessmentLabels: Record<string,string>={final:"Kiểm tra cuối bài",basic:"Bài tập 1 · Nhận biết",translate:"Bài tập 2 · Dịch lệnh",drawing:"Bài tập 4 · Bản vẽ","exercise-1":"Bài tập 1 · Nhận biết","exercise-2":"Bài tập 2 · Dịch block","exercise-3":"Bài tập 3 · Điền khuyết","exercise-4":"Bài tập 4 · Viết chương trình","exercise-5":"Bài tập 5 · Mô phỏng",safety:"Kiểm tra an toàn","machine-operation":"Bài 1 · Vận hành máy","tool-setup":"Bài 2 · Cài đặt dao"};
 function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): DashboardStudent {
   const pending = row.status === "pending";
   const own = records.filter((record)=>record.student_id===row.student_id);
@@ -111,22 +111,7 @@ export default function TeacherCourseDashboard() {
 
     {activeTab==="overview"&&selectedCourseId&&<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index);setActiveTab("progress")}}/>}
 
-    {activeTab==="progress"&&<section className="grid gap-5 lg:grid-cols-[.9fr_1.4fr]">
-      <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <div className="flex items-center justify-between"><div><h3 className="font-display text-lg font-bold text-white">Học sinh trong khóa</h3><p className="mt-1 text-xs text-slate-500">Danh sách đăng ký thực tế của khóa đã chọn</p></div><Search size={18} className="text-slate-500" /></div>
-        <div className="mt-4 space-y-2">{students.map((item,index)=><button key={item.id} onClick={()=>setActiveStudent(index)} className={`w-full rounded-xl border p-4 text-left transition ${activeStudent===index?"border-blue-400/50 bg-blue-500/10":"border-white/5 bg-white/[.02] hover:border-white/15"}`}>
-          <div className="flex items-start gap-3"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 font-bold text-white">{item.name.split(" ").at(-1)?.[0]}</div><div className="min-w-0 flex-1"><strong className="block truncate text-sm text-white">{item.name}</strong><small className="text-slate-500">{item.className} · {item.last}</small></div><ChevronRight size={17} className="mt-2 text-slate-500" /></div>
-          <ManaBar pct={item.pct} xp={item.xp} color={item.color} compact />
-        </button>)}{students.length===0&&<p className="py-6 text-center text-sm text-slate-400">Chưa có học sinh đăng ký khóa này.</p>}</div>
-      </div>
-
-      <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
-        {!student ? <div className="grid min-h-80 place-items-center text-center text-sm text-slate-400">Chọn khóa có học sinh để xem hồ sơ tiến độ.</div> : <><div className="flex flex-wrap items-start justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Hồ sơ tiến độ</p><h3 className="mt-1 font-display text-2xl font-bold text-white">{student.name}</h3><p className="text-sm text-slate-500">{student.className}</p></div><span className={`rounded-full px-3 py-1.5 text-xs font-bold ${student.color==="blue"?"bg-blue-500/15 text-blue-200":"bg-amber-500/15 text-amber-200"}`}>{student.status}</span></div>
-        <ManaBar pct={student.pct} xp={student.xp} color={student.color} />
-        <div className="mt-4 space-y-3">{roadmap.map((lesson)=>{const lessonRecords=student.records.filter((record)=>record.lesson_id===lesson.id&&record.total_questions);if(!lessonRecords.length)return null;return <section key={lesson.id} className="rounded-xl border border-white/10 bg-black/15 p-3"><strong className="text-sm text-white">{lesson.title}</strong><div className="mt-2 grid gap-2 sm:grid-cols-2">{lessonRecords.map((record)=>{const passed=record.completed;return <div key={`${record.lesson_id}-${record.assessment_id}`} className={`rounded-lg border p-3 ${passed?"border-emerald-500/20 bg-emerald-500/5":"border-amber-500/20 bg-amber-500/5"}`}><small className="text-slate-400">{assessmentLabels[record.assessment_id]??record.assessment_id}</small><div className="mt-1 flex items-end justify-between"><strong className="text-lg text-white">{record.latest_score}/{record.total_questions}</strong><span className={passed?"text-xs font-bold text-emerald-300":"text-xs font-bold text-amber-300"}>{passed?"Đạt":"Chưa đạt"}</span></div><small className="text-slate-500">Cao nhất {record.best_score}/{record.total_questions} · {record.attempt_count} lần</small></div>})}</div></section>})}</div>
-        <div className="mt-6"><div className="mb-4 flex items-center gap-2"><GraduationCap size={18} className="text-orange-300"/><h4 className="font-semibold text-white">Các bài học CNC độc lập</h4></div><p className="mb-4 text-xs text-slate-500">Sinh viên có thể học không theo thứ tự; bài nào có kết quả sẽ cập nhật riêng bài đó.</p><div className="space-y-2">{roadmap.map((item,index)=>{const state=roadmapState(student,index);return <div key={item.id} className={`flex items-center gap-3 rounded-xl border p-3 ${state.done?"border-emerald-500/20 bg-emerald-500/5":state.current?"border-orange-400/30 bg-orange-500/5":"border-blue-500/15 bg-blue-500/[.03]"}`}><span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${state.done?"bg-emerald-500 text-white":state.current?"bg-orange-500 text-white":"bg-blue-500/20 text-blue-300"}`}>{state.done?"✓":index+1}</span><div className="min-w-0 flex-1"><strong className="block text-sm text-white">{item.title}</strong><small className={state.current?"text-orange-300":"text-slate-500"}>{state.done?"Đã hoàn thành":state.current?"Có thể học tiếp":item.duration}</small></div></div>})}</div></div></>}
-      </div>
-    </section>}
+    {activeTab==="progress"&&<TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>}
   </div>;
 }
 
