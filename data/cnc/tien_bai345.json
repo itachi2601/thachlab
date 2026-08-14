@@ -101,60 +101,37 @@
       "title": "Bài tập 4: Viết chương trình tiện từ bản vẽ",
       "type": "free_program",
       "auto_grade": "checker_plus_rubric",
-      "checker_logic": "So khớp các lệnh bắt buộc (G96/G97, G71/G70, T-code, M-code an toàn) và các tọa độ X/Z chính tại từng điểm chuyển hướng với đáp án mẫu, cho phép dung sai nhỏ do làm tròn.",
+      "checker_logic": "So khớp các lệnh bắt buộc (G95, T0202/T0404, G73/G71/G01, G41/G40, G02/G03) và các tọa độ X/Z chính tại từng điểm chuyển hướng B→H với đáp án mẫu, cho phép dung sai nhỏ do làm tròn.",
       "levels": [
         {
           "level": "de",
-          "part_ref": "Trục bậc + côn, phôi Ø40×80 (giống bài tập 3 mức dễ, nhưng KHÔNG cho sườn chương trình)",
+          "image": "/images/cnc/tien_bai4_de.png",
+          "part_ref": "Phôi Ø20, chiều dài phôi 54±0,5; biên dạng từ gốc phôi W qua B(4,0)→C(8,-2)→D(8,-15)→E(12,-15)→F(16,-17)→G(16,-23)→H(20,-25); vát 2×45° tại B, bo R2 tại 2 vị trí chuyển bậc. Tiện thô: T0202, n1=800 vòng/phút, S1=0,2 mm/vòng, t1=1mm. Tiện tinh: T0404, n2=1000 vòng/phút, S2=0,1 mm/vòng, t2=0,2mm.",
           "required_elements": [
-            "G54 khai báo gốc phôi",
-            "T0101 gọi dao",
-            "G96 hoặc G97 + tốc độ trục chính hợp lý",
-            "G50 giới hạn tốc độ nếu dùng G96",
-            "Chu trình G71 (hoặc G01 thủ công) đi đúng qua các điểm P1(Ø40,Z0)→P2(Ø40,Z-20)→P3(Ø30,Z-20)→P4(Ø30,Z-50)→P5(Ø20,Z-65)→P6(Ø20,Z-80)",
-            "G70 tiện tinh (nếu dùng chu trình)",
-            "M08/M09, M03/M05, M30 đầy đủ"
+            "G90 G95 khai báo tuyệt đối, chạy dao mm/vòng",
+            "T0202 gọi dao tiện thô, M3 S800",
+            "Chu trình G73 (hoặc G71) U.. R.. rồi P.. Q.. U0.5 W0.5 cho lượng dư tiện tinh",
+            "Đường bao đi đúng qua B(4,0)→C(8,-2)→D(8,-15)→E(12,-15)→F(16,-17)→G(16,-23)→H(20,-25)",
+            "Vát 2×45° tại B và 2 cung R2 dùng G02/G03 đúng chiều",
+            "G41 bù dao trái khi vào biên dạng, G40 hủy bù khi rút dao",
+            "Đổi T0404, M3 S1000 F0.1 rồi tiện tinh lại đúng biên dạng (G70 hoặc lặp lại đường bao)",
+            "M30 kết thúc chương trình"
           ],
           "expected_key_coordinates": [
-            {"point": "P1", "X": 40, "Z": 0},
-            {"point": "P2", "X": 40, "Z": -20},
-            {"point": "P3", "X": 30, "Z": -20},
-            {"point": "P4", "X": 30, "Z": -50},
-            {"point": "P5", "X": 20, "Z": -65},
-            {"point": "P6", "X": 20, "Z": -80}
+            {"point": "B", "X": 4, "Z": 0},
+            {"point": "C", "X": 8, "Z": -2},
+            {"point": "D", "X": 8, "Z": -15},
+            {"point": "E", "X": 12, "Z": -15},
+            {"point": "F", "X": 16, "Z": -17},
+            {"point": "G", "X": 16, "Z": -23},
+            {"point": "H", "X": 20, "Z": -25}
           ],
           "teacher_rubric": [
             {"criterion": "Trình tự lệnh hợp lý, an toàn (tiếp cận, rút dao)", "weight": "20%"},
-            {"criterion": "Chọn đúng G96/G97 và có giải thích/căn cứ hợp lý", "weight": "20%"},
-            {"criterion": "Tính đúng toàn bộ tọa độ (đối chiếu bảng trên)", "weight": "30%"},
-            {"criterion": "Đầy đủ M-code an toàn (coolant, spindle, kết thúc chương trình)", "weight": "15%"},
+            {"criterion": "Đúng chu trình thô G73/G71 và thông số U/R, P/Q/U/W", "weight": "20%"},
+            {"criterion": "Tính đúng toàn bộ tọa độ B→H (đối chiếu bảng trên)", "weight": "30%"},
+            {"criterion": "Đủ 2 dao T0202/T0404, đổi dao đúng lúc, M-code an toàn, kết thúc chương trình", "weight": "15%"},
             {"criterion": "Trình bày rõ ràng, có chú thích", "weight": "15%"}
-          ]
-        },
-        {
-          "level": "kho",
-          "part_ref": "Trục bậc có ren M16×1.5, phôi Ø40×65 (giống bài tập 3 mức khó, KHÔNG cho sườn)",
-          "required_elements": [
-            "Toàn bộ yêu cầu như mức dễ, áp dụng cho biên dạng P1(Ø40,Z0)→P2(Ø40,Z-15)→P3(Ø30,Z-15)→P4(Ø30,Z-45)→P5(Ø16,Z-45)→P6(Ø16,Z-60)",
-            "Đổi dao T0202 cho đoạn tiện ren",
-            "Chuyển G97 khi tiện ren (không dùng G96)",
-            "Dùng chu trình tiện ren G92 (hoặc G76) với bước ăn dao giảm dần, bước ren F1.5",
-            "Có đoạn chạy đà trước điểm bắt đầu ren (khoảng 3mm)"
-          ],
-          "expected_key_coordinates": [
-            {"point": "P1", "X": 40, "Z": 0},
-            {"point": "P2", "X": 40, "Z": -15},
-            {"point": "P3", "X": 30, "Z": -15},
-            {"point": "P4", "X": 30, "Z": -45},
-            {"point": "P5", "X": 16, "Z": -45},
-            {"point": "P6", "X": 16, "Z": -60}
-          ],
-          "teacher_rubric": [
-            {"criterion": "Tiện trụ/côn đúng trình tự và tọa độ", "weight": "20%"},
-            {"criterion": "Đổi dao và chuyển G96→G97 đúng thời điểm khi vào đoạn ren", "weight": "20%"},
-            {"criterion": "Chu trình tiện ren đúng bước F, số lần cắt hợp lý (không ăn dao 1 lần)", "weight": "25%"},
-            {"criterion": "Có đoạn chạy đà an toàn trước ren", "weight": "15%"},
-            {"criterion": "Đầy đủ M-code, trình bày rõ ràng", "weight": "20%"}
           ]
         }
       ]
