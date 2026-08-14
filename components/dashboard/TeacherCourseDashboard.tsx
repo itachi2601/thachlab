@@ -20,6 +20,7 @@ type DashboardStudent = {
 };
 
 const roadmap = CNC_COURSE_ITEMS.filter((item)=>item.id!=="intro").map((item)=>({id:item.id,title:item.title,duration:item.duration}));
+function demoCompetencyRecords(courseId:number):CncLearningRecord[]{const now=new Date().toISOString();const assessments=[...[1,2,3,4,5].map(i=>["lesson-2",`exercise-${i}`]),...["machine-operation","tool-setup","checklist"].map(id=>["lesson-4-turn",id]),["lesson-5","final"],...[1,2,3,4,5].map(i=>["lesson-3",`exercise-${i}`])] as string[][];return assessments.map(([lesson_id,assessment_id])=>({course_id:courseId,student_id:"demo-preview",lesson_id,assessment_id,completed:true,latest_score:9,best_score:9,total_questions:10,attempt_count:1,last_activity_at:now}))}
 function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): DashboardStudent {
   const pending = row.status === "pending";
   const own = records.filter((record)=>record.student_id===row.student_id);
@@ -47,6 +48,7 @@ export default function TeacherCourseDashboard() {
   const [activeTab,setActiveTab]=useState<"overview"|"progress"|"profile"|"competencies"|"attendance">("overview");
   const [activeStudent, setActiveStudent] = useState(0);
   const [studentPreview, setStudentPreview] = useState(false);
+  const [demoPreview,setDemoPreview]=useState(false);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
   const [students, setStudents] = useState<DashboardStudent[]>([]);
@@ -91,13 +93,14 @@ export default function TeacherCourseDashboard() {
   }, [selectedCourseId]);
 
   if (studentPreview && student && selectedCourse) return <StudentLearningDashboard preview profile={{id:student.id,full_name:student.name,class_name:student.className,role:"student"}} studentId={student.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:{...selectedCourse,status:selectedCourse.status}}} records={student.records} onSignOut={()=>setStudentPreview(false)}/>;
+  if(demoPreview&&selectedCourse)return <StudentLearningDashboard preview profile={{id:"demo-preview",full_name:"Sinh viên xem thử",class_name:"CNC Demo",role:"student"}} studentId="demo-preview" enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:{...selectedCourse,status:selectedCourse.status}}} records={demoCompetencyRecords(selectedCourse.id)} onSignOut={()=>setDemoPreview(false)}/>;
 
   return <div className="space-y-6">
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
       <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-orange-500/10 blur-3xl" />
       <div className="relative flex flex-wrap items-end justify-between gap-5">
         <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Dashboard giáo viên · CNC</p><h2 className="mt-2 font-display text-3xl font-bold text-white">{selectedCourse?.name ?? "Tiến độ khóa học"}</h2><p className="mt-2 text-sm text-slate-400">{selectedCourse ? `${selectedCourse.class_label || "Chưa đặt tên lớp"} · ${selectedCourse.school_year}` : "Theo dõi lộ trình, điểm chốt chặn và điều kiện lên máy của từng học sinh."}</p>{courseError&&<p className="mt-2 text-xs text-red-300">{courseError}</p>}</div>
-        <div className="flex flex-wrap gap-2"><button disabled={!student} onClick={()=>setStudentPreview(true)} className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"><Eye size={16}/> Xem giao diện học sinh</button><select aria-label="Môn học" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white"><option>Gia công CNC</option></select><select aria-label="Khóa học" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white"><option value="" disabled>{courses.length ? "Chọn khóa học" : "Chưa có khóa CNC"}</option>{courses.map((course)=><option key={course.id} value={course.id}>{course.name} · {course.school_year}</option>)}</select></div>
+        <div className="flex flex-wrap gap-2"><button disabled={!student} onClick={()=>setStudentPreview(true)} className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"><Eye size={16}/> Xem giao diện học sinh</button><button disabled={!selectedCourse} onClick={()=>setDemoPreview(true)} className="inline-flex items-center gap-2 rounded-xl border border-violet-400/30 bg-violet-500/10 px-4 py-2.5 text-sm font-bold text-violet-200 disabled:opacity-40"><Award size={16}/> Xem mẫu năng lực</button><select aria-label="Môn học" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white"><option>Gia công CNC</option></select><select aria-label="Khóa học" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white"><option value="" disabled>{courses.length ? "Chọn khóa học" : "Chưa có khóa CNC"}</option>{courses.map((course)=><option key={course.id} value={course.id}>{course.name} · {course.school_year}</option>)}</select></div>
       </div>
     </section>
 

@@ -64,6 +64,7 @@ import operationMillQuiz from "@/data/cnc/operation-mill.json";
 import toolSetupMillQuiz from "@/data/cnc/tool-setup-mill.json";
 import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
+import { fetchOpenCncLessons } from "@/services/course-lesson-release";
 
 const lessons = CNC_COURSE_ITEMS.filter((item) => item.id !== "intro");
 const lessonMeta: Record<string, { theory: number; practice: number; test: number; operation?: boolean; safetyGate?: boolean }> = {
@@ -238,6 +239,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
   const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>([]);
+  const [openLessonIds, setOpenLessonIds] = useState<string[]>([]);
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
   const markCompleted = useCallback((completedLessonId: string) => {
@@ -281,6 +283,11 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     }).catch(() => undefined);
     return () => { cancelled = true; };
   }, [courseId, session?.user.id, viewerProfile?.role]);
+
+  useEffect(() => {
+    if (!courseId || viewerProfile?.role === "admin") return;
+    void fetchOpenCncLessons(courseId).then(setOpenLessonIds).catch(() => setOpenLessonIds([]));
+  }, [courseId, viewerProfile?.role]);
 
   useEffect(() => {
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
@@ -398,7 +405,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
               const itemMeta = lessonMeta[item.id];
               const active = expandedLessonId === item.id;
               const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
-              const locked = viewerProfile?.role !== "admin" && ((item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
+              const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(item.id);
+              const locked = viewerProfile?.role !== "admin" && (teacherLocked||(item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
               return (
                 <article key={item.id} className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
                   <button

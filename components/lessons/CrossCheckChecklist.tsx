@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertTriangle, Check, ClipboardCheck, RefreshCw, UserRound } from "lucide-react";
+import { AlertTriangle, Check, ClipboardCheck, Clock3, RefreshCw, UserRound } from "lucide-react";
 import {
   turningChecklistSections,
   millingChecklistSections,
@@ -12,6 +12,7 @@ import {
   fetchChecklistSessions,
   fetchCourseClassmates,
   submitChecklistResult,
+  startChecklistAttempt,
   type ChecklistSession,
   type Classmate,
 } from "@/services/cnc-checklist";
@@ -25,6 +26,8 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<{ passed: boolean; score: number; studentName: string } | null>(null);
+  const [startedAt,setStartedAt]=useState("");
+  const [now,setNow]=useState(Date.now());
 
   const sections = machine === "tiện" ? turningChecklistSections : millingChecklistSections;
   const zeroTolerance = machine === "tiện" ? turningZeroTolerance : millingZeroTolerance;
@@ -40,9 +43,13 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
     fetchCourseClassmates(courseId).then(setClassmates).catch(() => setClassmates([]));
   }, [courseId, lessonId]);
   useEffect(() => { load(); }, [load]);
+  useEffect(()=>{const timer=window.setInterval(()=>setNow(Date.now()),1000);return()=>window.clearInterval(timer)},[]);
 
   const openSession = sessions?.[0] ?? null;
   const target = classmates.find((item) => item.student_id === targetId) ?? null;
+  const remaining=startedAt?Math.max(0,240-Math.floor((now-Date.parse(startedAt))/1000)):240;
+
+  async function chooseTarget(studentId:string){setTargetId(studentId);setResult(null);setStartedAt("");setError("");if(!studentId||!courseId||!openSession)return;try{const start=await startChecklistAttempt({courseId,code:openSession.code,studentId,lessonId});setStartedAt(start.started_at);setNow(Date.now())}catch(cause){setError(cause instanceof Error?cause.message:"Không thể bắt đầu lượt checklist.")}}
 
   async function submit() {
     if (!courseId || !openSession || !target) return;
@@ -81,12 +88,12 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
     <div className="cnc-checklist-rules">
       <span><ClipboardCheck size={17} /><b>Phiên đang mở: {openSession.title}</b></span>
       <span><AlertTriangle size={17} /><b>Ngưỡng đạt: 8/10 điểm</b></span>
-      <p>Chọn bạn học bạn đang quan sát và chấm chéo, đánh dấu đúng các bước bạn ấy đã thực hiện chính xác.</p>
+      <p>Chỉ có hiệu lực trong khung 06:30–11:00. Mỗi lượt phải kéo dài tối thiểu 4 phút trước khi nộp.</p>
     </div>
 
     <label className="cnc-cross-check-picker">
       <span><UserRound size={16} /> Đang chấm cho</span>
-      <select value={targetId} onChange={(event) => { setTargetId(event.target.value); setResult(null); }}>
+      <select value={targetId} onChange={(event) => void chooseTarget(event.target.value)}>
         <option value="">— Chọn bạn học —</option>
         {classmates.map((item) => <option key={item.student_id} value={item.student_id}>{item.full_name} · {item.class_name}</option>)}
       </select>
@@ -95,6 +102,7 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
     {!target && <p className="cnc-checklist-hint">Chọn 1 bạn học ở trên để bắt đầu chấm.</p>}
 
     {target && <>
+      <div className="cnc-checklist-rules"><span><Clock3 size={17}/><b>{remaining>0?`Có thể nộp sau ${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,"0")}`:"Đã đủ thời gian tối thiểu 4 phút"}</b></span><p>Thời gian được tính từ máy chủ khi bắt đầu chấm cho {target.full_name}.</p></div>
       <div className="cnc-operation-checklist">
         {sections.map((section) => <section key={section.id}>
           <header><h4>{section.title}</h4><b>{section.maxScore.toFixed(1)} điểm</b></header>
@@ -118,7 +126,7 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
         <div className="cnc-checklist-status"><b>{passed ? "ĐẠT" : "CHƯA ĐẠT"}</b></div>
       </div>
       {error && <p className="cnc-checklist-error">{error}</p>}
-      <button type="button" disabled={busy} onClick={submit} className="cnc-submit">{busy ? "Đang nộp…" : `Nộp kết quả chấm cho ${target.full_name}`}</button>
+      <button type="button" disabled={busy||remaining>0||!startedAt} onClick={submit} className="cnc-submit">{busy ? "Đang nộp…" : remaining>0?`Chờ đủ 4 phút (${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,"0")})`:`Nộp kết quả chấm cho ${target.full_name}`}</button>
     </>}
 
     {result && <div className={`cnc-checklist-congratulations ${result.passed ? "" : "cnc-checklist-warn"}`}>

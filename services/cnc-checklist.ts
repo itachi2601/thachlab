@@ -13,6 +13,8 @@ export interface ChecklistAttempt {
 
 export interface Classmate { student_id: string; full_name: string; class_name: string }
 
+export async function startChecklistAttempt(input:{courseId:number;code:string;studentId:string;lessonId:string}){const{data,error}=await getSupabase().rpc("start_checklist_attempt",{p_course_id:input.courseId,p_code:input.code,p_student_id:input.studentId,p_lesson_id:input.lessonId});if(error)throw error;return data as{started_at:string;minimum_submit_at:string}}
+
 export async function fetchChecklistSessions(courseId: number, lessonId?: string) {
   let query = getSupabase().from("checklist_sessions").select("id, course_id, lesson_id, title, starts_at, closes_at, code, status, created_at").eq("course_id", courseId);
   if (lessonId) query = query.eq("lesson_id", lessonId);
