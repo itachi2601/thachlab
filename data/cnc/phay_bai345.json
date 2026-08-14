@@ -110,60 +110,33 @@
       "title": "Bài tập 4: Viết chương trình phay từ bản vẽ",
       "type": "free_program",
       "auto_grade": "checker_plus_rubric",
-      "checker_logic": "So khớp các lệnh bắt buộc (G41/G42, G02/G03, G54, T/H code) và tọa độ X/Y chính tại từng điểm chuyển hướng với đáp án mẫu, cho phép dung sai nhỏ do làm tròn.",
+      "checker_logic": "So khớp các lệnh bắt buộc (G41/G42, G02/G03, G54, T/H code) và tọa độ X/Y chính tại tâm 2 lỗ với đáp án mẫu, cho phép dung sai nhỏ do làm tròn.",
       "levels": [
         {
           "level": "de",
-          "part_ref": "Biên dạng bậc chữ L, phôi 80×60×20 (giống bài tập 3 mức dễ, KHÔNG cho sườn chương trình)",
+          "image": "/images/cnc/phay_bai4_de.png",
+          "part_ref": "Phôi nhựa (POM/Nylon) 50×50, bo góc R5 tại 4 góc, gốc W tại góc dưới-trái. Khoan/phay 2 lỗ tròn tâm tại (15,30) và (35,21), 1 rãnh dài xiên 45° bo cung R4 hai đầu (rộng 8mm) nối giữa 2 lỗ. Chiều sâu: biên ngoài 2mm, lỗ 6mm, rãnh 3mm. Dao: phay ngón thép gió (HSS) Ø6, 2 me, T01. Chế độ cắt (vật liệu nhựa): n=2500 vòng/phút, F=300 mm/phút (G94), chiều sâu mỗi lớp cắt t=2mm.",
           "required_elements": [
-            "G54 khai báo gốc phôi tại P1",
-            "T01 M06 gọi dao, G43 H01 bù chiều dài dao",
-            "Tiếp cận biên dạng từ ngoài phôi trước khi G41/G42",
-            "Chọn đúng chiều bù dao (G41) theo chiều đi P1→P2→P3→P4→P5→P6",
-            "Đi đúng qua các điểm P1(0,0)→P2(80,0)→P3(80,40)→P4(50,40)→P5(50,60)→P6(0,60)→về P1",
-            "Thoát dao ra ngoài biên dạng trước khi G40",
+            "G54 khai báo gốc phôi tại góc dưới-trái W",
+            "T01 M06 gọi dao phay ngón Ø6 HSS, G43 H01 bù chiều dài dao",
+            "G94, n=2500 (S2500 M03), F300 phù hợp phay nhựa bằng dao thép gió",
+            "Tiếp cận biên dạng/lỗ từ ngoài trước khi G41/G42, thoát ra ngoài trước khi G40",
+            "Phay 2 lỗ tròn tâm (15,30) và (35,21): hạ dao thẳng xuống tâm trước, dịch ra bán kính rồi mới phay tròn",
+            "Phay rãnh nối 2 lỗ: 2 đầu bo R4 dùng G02/G03 đúng chiều, hai biên thẳng song song",
+            "Chia lớp cắt hợp lý theo chiều sâu t=2mm mỗi lớp (không ăn dao 1 lần hết chiều sâu)",
             "M08/M09, M03/M05, M30 đầy đủ"
           ],
           "expected_key_coordinates": [
-            {"point": "P1", "X": 0, "Y": 0},
-            {"point": "P2", "X": 80, "Y": 0},
-            {"point": "P3", "X": 80, "Y": 40},
-            {"point": "P4", "X": 50, "Y": 40},
-            {"point": "P5", "X": 50, "Y": 60},
-            {"point": "P6", "X": 0, "Y": 60}
+            {"point": "Tâm lỗ 1", "X": 15, "Y": 30},
+            {"point": "Tâm lỗ 2", "X": 35, "Y": 21}
           ],
           "teacher_rubric": [
-            {"criterion": "Trình tự lệnh hợp lý, an toàn (tiếp cận/thoát dao ngoài biên dạng)", "weight": "20%"},
-            {"criterion": "Chọn đúng G41/G42 dựa trên chiều di chuyển dao", "weight": "20%"},
-            {"criterion": "Tính đúng toàn bộ tọa độ (đối chiếu bảng trên)", "weight": "30%"},
-            {"criterion": "Đầy đủ M-code an toàn", "weight": "15%"},
-            {"criterion": "Trình bày rõ ràng, có chú thích", "weight": "15%"}
-          ]
-        },
-        {
-          "level": "kho",
-          "part_ref": "Bo cung R15 + túi tròn Ø20, phôi 70×70×15 (giống bài tập 3 mức khó, KHÔNG cho sườn)",
-          "required_elements": [
-            "Toàn bộ yêu cầu như mức dễ, biên dạng ngoài P1(0,0)→P2(60,0)→P3(60,35)→cung R15→P4(45,50)→P5(0,50)",
-            "Dùng G02 hoặc G03 đúng chiều cho cung R15 (tâm tại 45,35)",
-            "Phần túi tròn: hạ dao thẳng xuống tâm trước, dịch ra bán kính rồi mới phay tròn — không tiếp cận như biên dạng ngoài",
-            "Tính đúng I, J (khoảng cách tương đối đến tâm, không phải tọa độ tuyệt đối)"
-          ],
-          "expected_key_coordinates": [
-            {"point": "P1", "X": 0, "Y": 0},
-            {"point": "P2", "X": 60, "Y": 0},
-            {"point": "P3 (bắt đầu cung)", "X": 60, "Y": 35},
-            {"point": "P4 (kết thúc cung)", "X": 45, "Y": 50},
-            {"point": "Tâm cung R15", "X": 45, "Y": 35},
-            {"point": "P5", "X": 0, "Y": 50},
-            {"point": "Tâm túi tròn", "X": 30, "Y": 25}
-          ],
-          "teacher_rubric": [
-            {"criterion": "Phay biên dạng ngoài đúng trình tự và tọa độ", "weight": "20%"},
-            {"criterion": "Nội suy cung tròn đúng chiều (G02/G03) và đúng bán kính/tâm", "weight": "20%"},
-            {"criterion": "Xử lý đúng logic tiếp cận túi kín (khác biên dạng ngoài)", "weight": "25%"},
-            {"criterion": "Tính đúng I, J hoặc R cho cung tròn", "weight": "20%"},
-            {"criterion": "Đầy đủ M-code, trình bày rõ ràng", "weight": "15%"}
+            {"criterion": "Trình tự lệnh hợp lý, an toàn (tiếp cận/thoát dao ngoài biên dạng)", "weight": "15%"},
+            {"criterion": "Chọn đúng dao, tốc độ trục chính và lượng chạy dao phù hợp vật liệu nhựa/dao HSS", "weight": "15%"},
+            {"criterion": "Tính đúng tọa độ tâm 2 lỗ và vị trí rãnh nối", "weight": "25%"},
+            {"criterion": "Xử lý đúng logic phay lỗ kín/rãnh bo đầu (khác biên dạng hở)", "weight": "20%"},
+            {"criterion": "Chia lớp cắt hợp lý theo chiều sâu, đầy đủ M-code an toàn", "weight": "15%"},
+            {"criterion": "Trình bày rõ ràng, có chú thích", "weight": "10%"}
           ]
         }
       ]

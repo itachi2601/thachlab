@@ -7,15 +7,15 @@ export interface CompetencyPermission{course_id:number;student_id:string;compete
 type Requirement={lessonId:string;assessmentId:string};
 
 export const CNC_COMPETENCIES=[
-  {id:"turn-programming" as const,machine:"turn" as const,title:"Lập trình tiện",permission:"Đạt đủ bài tập lập trình 1–4",approvalRequired:false,recordRequirements:[1,2,3,4].map(i=>({lessonId:"lesson-2",assessmentId:`exercise-${i}`}))},
-  {id:"turn-simulation" as const,machine:"turn" as const,title:"Mô phỏng tiện",permission:"Bài mô phỏng số 5 đã được duyệt",approvalRequired:false,recordRequirements:[{lessonId:"lesson-2",assessmentId:"exercise-5"}]},
-  {id:"turn-operation" as const,machine:"turn" as const,title:"Vận hành máy tiện",permission:"Thao tác bảng điều khiển máy tiện",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"machine-operation"}]},
-  {id:"turn-tool-setup" as const,machine:"turn" as const,title:"Cài đặt dao tiện",permission:"Rà dao và nhập offset máy tiện",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"tool-setup"}]},
+  {id:"turn-programming" as const,machine:"turn" as const,title:"Lập trình tiện",permission:"Đạt đủ bài tập lập trình 1–3",approvalRequired:false,recordRequirements:[1,2,3].map(i=>({lessonId:"lesson-2",assessmentId:`exercise-${i}`}))},
+  {id:"turn-simulation" as const,machine:"turn" as const,title:"Mô phỏng tiện",permission:"Đạt đủ bài tập 4–5 (viết chương trình + mô phỏng)",approvalRequired:false,recordRequirements:[4,5].map(i=>({lessonId:"lesson-2",assessmentId:`exercise-${i}`}))},
+  {id:"turn-operation" as const,machine:"turn" as const,title:"Vận hành máy tiện",permission:"Đạt lý thuyết vận hành + checklist chấm chéo",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"machine-operation"},{lessonId:"lesson-4-turn",assessmentId:"checklist"}]},
+  {id:"turn-tool-setup" as const,machine:"turn" as const,title:"Cài đặt dao tiện",permission:"Đạt lý thuyết cài dao + checklist chấm chéo",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"tool-setup"},{lessonId:"lesson-4-turn",assessmentId:"checklist"}]},
   {id:"turn-machining" as const,machine:"turn" as const,title:"Gia công tiện",permission:"Đủ năng lực để thực hành gia công tiện",approvalRequired:false,competencyRequirements:["turn-programming","turn-simulation","turn-operation","turn-tool-setup"] as CompetencyId[]},
-  {id:"mill-programming" as const,machine:"mill" as const,title:"Lập trình phay",permission:"Đạt đủ bài tập lập trình 1–4",approvalRequired:false,recordRequirements:[1,2,3,4].map(i=>({lessonId:"lesson-3",assessmentId:`exercise-${i}`}))},
-  {id:"mill-simulation" as const,machine:"mill" as const,title:"Mô phỏng phay",permission:"Bài mô phỏng số 5 đã được duyệt",approvalRequired:false,recordRequirements:[{lessonId:"lesson-3",assessmentId:"exercise-5"}]},
-  {id:"mill-operation" as const,machine:"mill" as const,title:"Vận hành máy phay",permission:"Thao tác bảng điều khiển máy phay",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"machine-operation"}]},
-  {id:"mill-tool-setup" as const,machine:"mill" as const,title:"Cài đặt dao phay",permission:"Cài G54, H và D trên máy phay",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"tool-setup"}]},
+  {id:"mill-programming" as const,machine:"mill" as const,title:"Lập trình phay",permission:"Đạt đủ bài tập lập trình 1–3",approvalRequired:false,recordRequirements:[1,2,3].map(i=>({lessonId:"lesson-3",assessmentId:`exercise-${i}`}))},
+  {id:"mill-simulation" as const,machine:"mill" as const,title:"Mô phỏng phay",permission:"Đạt đủ bài tập 4–5 (viết chương trình + mô phỏng)",approvalRequired:false,recordRequirements:[4,5].map(i=>({lessonId:"lesson-3",assessmentId:`exercise-${i}`}))},
+  {id:"mill-operation" as const,machine:"mill" as const,title:"Vận hành máy phay",permission:"Đạt lý thuyết vận hành + checklist chấm chéo",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"machine-operation"},{lessonId:"lesson-4-mill",assessmentId:"checklist"}]},
+  {id:"mill-tool-setup" as const,machine:"mill" as const,title:"Cài đặt dao phay",permission:"Đạt lý thuyết cài dao (G54, H, D) + checklist chấm chéo",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"tool-setup"},{lessonId:"lesson-4-mill",assessmentId:"checklist"}]},
   {id:"mill-machining" as const,machine:"mill" as const,title:"Gia công phay",permission:"Đủ năng lực để thực hành gia công phay",approvalRequired:false,competencyRequirements:["mill-programming","mill-simulation","mill-operation","mill-tool-setup"] as CompetencyId[]},
 ] as const;
 

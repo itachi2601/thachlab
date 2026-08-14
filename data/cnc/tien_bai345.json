@@ -115,7 +115,7 @@
             "Vát 2×45° tại B và 2 cung R2 dùng G02/G03 đúng chiều",
             "G41 bù dao trái khi vào biên dạng, G40 hủy bù khi rút dao",
             "Đổi T0404, M3 S1000 F0.1 rồi tiện tinh lại đúng biên dạng (G70 hoặc lặp lại đường bao)",
-            "M30 kết thúc chương trình"
+            "M05 dừng trục chính trước khi kết thúc, M30 kết thúc chương trình"
           ],
           "expected_key_coordinates": [
             {"point": "B", "X": 4, "Z": 0},
