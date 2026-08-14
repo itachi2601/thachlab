@@ -1,15 +1,25 @@
+import type { CncLearningRecord } from "@/services/cnc-learning-records";
 import { getSupabase } from "@/services/supabase";
 
-export type CompetencyId="turn-operation"|"turn-tool-setup"|"mill-operation"|"mill-tool-setup";
+export type CompetencyId="turn-programming"|"turn-simulation"|"turn-operation"|"turn-tool-setup"|"turn-machining"|"mill-programming"|"mill-simulation"|"mill-operation"|"mill-tool-setup"|"mill-machining";
 export type CompetencyPermissionStatus="approved"|"revoked";
 export interface CompetencyPermission{course_id:number;student_id:string;competency_id:CompetencyId;status:CompetencyPermissionStatus;note:string;approved_at:string|null;updated_at:string;approved_by:string|null}
+type Requirement={lessonId:string;assessmentId:string};
 
 export const CNC_COMPETENCIES=[
-  {id:"turn-operation" as const,title:"Vận hành máy tiện",lessonId:"lesson-4-turn",assessmentId:"machine-operation",permission:"Thao tác bảng điều khiển máy tiện"},
-  {id:"turn-tool-setup" as const,title:"Cài đặt dao tiện",lessonId:"lesson-4-turn",assessmentId:"tool-setup",permission:"Rà dao và nhập offset máy tiện"},
-  {id:"mill-operation" as const,title:"Vận hành máy phay",lessonId:"lesson-4-mill",assessmentId:"machine-operation",permission:"Thao tác bảng điều khiển máy phay"},
-  {id:"mill-tool-setup" as const,title:"Cài đặt dao phay",lessonId:"lesson-4-mill",assessmentId:"tool-setup",permission:"Cài G54, H và D trên máy phay"},
-];
+  {id:"turn-programming" as const,machine:"turn" as const,title:"Lập trình tiện",permission:"Đạt đủ bài tập lập trình 1–4",approvalRequired:false,recordRequirements:[1,2,3,4].map(i=>({lessonId:"lesson-2",assessmentId:`exercise-${i}`}))},
+  {id:"turn-simulation" as const,machine:"turn" as const,title:"Mô phỏng tiện",permission:"Bài mô phỏng số 5 đã được duyệt",approvalRequired:false,recordRequirements:[{lessonId:"lesson-2",assessmentId:"exercise-5"}]},
+  {id:"turn-operation" as const,machine:"turn" as const,title:"Vận hành máy tiện",permission:"Thao tác bảng điều khiển máy tiện",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"machine-operation"}]},
+  {id:"turn-tool-setup" as const,machine:"turn" as const,title:"Cài đặt dao tiện",permission:"Rà dao và nhập offset máy tiện",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-turn",assessmentId:"tool-setup"}]},
+  {id:"turn-machining" as const,machine:"turn" as const,title:"Gia công tiện",permission:"Đủ năng lực để thực hành gia công tiện",approvalRequired:false,competencyRequirements:["turn-programming","turn-simulation","turn-operation","turn-tool-setup"] as CompetencyId[]},
+  {id:"mill-programming" as const,machine:"mill" as const,title:"Lập trình phay",permission:"Đạt đủ bài tập lập trình 1–4",approvalRequired:false,recordRequirements:[1,2,3,4].map(i=>({lessonId:"lesson-3",assessmentId:`exercise-${i}`}))},
+  {id:"mill-simulation" as const,machine:"mill" as const,title:"Mô phỏng phay",permission:"Bài mô phỏng số 5 đã được duyệt",approvalRequired:false,recordRequirements:[{lessonId:"lesson-3",assessmentId:"exercise-5"}]},
+  {id:"mill-operation" as const,machine:"mill" as const,title:"Vận hành máy phay",permission:"Thao tác bảng điều khiển máy phay",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"machine-operation"}]},
+  {id:"mill-tool-setup" as const,machine:"mill" as const,title:"Cài đặt dao phay",permission:"Cài G54, H và D trên máy phay",approvalRequired:true,recordRequirements:[{lessonId:"lesson-4-mill",assessmentId:"tool-setup"}]},
+  {id:"mill-machining" as const,machine:"mill" as const,title:"Gia công phay",permission:"Đủ năng lực để thực hành gia công phay",approvalRequired:false,competencyRequirements:["mill-programming","mill-simulation","mill-operation","mill-tool-setup"] as CompetencyId[]},
+] as const;
+
+export function cncCompetencyStates(records:CncLearningRecord[],permissions:CompetencyPermission[]){const states={} as Record<CompetencyId,{eligible:boolean;approved:boolean;revoked:boolean;automatic:boolean}>;for(const item of CNC_COMPETENCIES){const permission=permissions.find(row=>row.competency_id===item.id);const recordRequirements="recordRequirements" in item?item.recordRequirements as readonly Requirement[]:[];const competencyRequirements="competencyRequirements" in item?item.competencyRequirements:[];const eligible=recordRequirements.length>0?recordRequirements.every(required=>records.some(record=>record.lesson_id===required.lessonId&&record.assessment_id===required.assessmentId&&record.completed)):competencyRequirements.every(id=>states[id]?.approved);states[item.id]={eligible,approved:eligible&&(item.approvalRequired?permission?.status==="approved":true),revoked:permission?.status==="revoked",automatic:!item.approvalRequired}}return states}
 
 export async function fetchCourseCompetencyPermissions(courseId:number,studentId?:string){let query=getSupabase().from("cnc_competency_permissions").select("course_id, student_id, competency_id, status, note, approved_at, updated_at, approved_by").eq("course_id",courseId);if(studentId)query=query.eq("student_id",studentId);const{data,error}=await query;if(error)throw error;return(data??[])as CompetencyPermission[]}
 export async function setCompetencyPermission(courseId:number,studentId:string,competencyId:CompetencyId,status:CompetencyPermissionStatus,note=""){const supabase=getSupabase();const{data:auth}=await supabase.auth.getUser();const{error}=await supabase.from("cnc_competency_permissions").upsert({course_id:courseId,student_id:studentId,competency_id:competencyId,status,note,approved_by:auth.user?.id,approved_at:status==="approved"?new Date().toISOString():null,updated_at:new Date().toISOString()},{onConflict:"course_id,student_id,competency_id"});if(error)throw error}

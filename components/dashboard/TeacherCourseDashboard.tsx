@@ -8,6 +8,7 @@ import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFrom
 import TeacherAttendancePanel from "@/components/attendance/TeacherAttendancePanel";
 import { cncAssessmentProgress, completedCncLessons } from "@/services/cnc-progress";
 import ClassCompetencyMatrix from "@/components/competencies/ClassCompetencyMatrix";
+import TeacherChecklistPanel from "@/components/dashboard/TeacherChecklistPanel";
 import TeacherOverview from "@/components/dashboard/TeacherOverview";
 import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
 import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";
@@ -103,7 +104,7 @@ export default function TeacherCourseDashboard() {
     <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck}]as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&<TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
-    {activeTab==="competencies"&&selectedCourseId&&<ClassCompetencyMatrix courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
+    {activeTab==="competencies"&&selectedCourseId&&<div className="space-y-5"><TeacherChecklistPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/><ClassCompetencyMatrix courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/></div>}
 
     {activeTab==="overview"&&selectedCourseId&&<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index);setActiveTab("profile")}}/>}
 

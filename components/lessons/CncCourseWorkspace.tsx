@@ -24,9 +24,11 @@ import {
   Send,
   ShieldCheck,
   UploadCloud,
+  Users,
   Wrench,
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
+import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import {
   CNC_COURSE_ITEMS,
   CNC_LESSON_1_QUIZ,
@@ -61,6 +63,7 @@ import toolSetupTurnQuiz from "@/data/cnc/tool-setup-turn.json";
 import operationMillQuiz from "@/data/cnc/operation-mill.json";
 import toolSetupMillQuiz from "@/data/cnc/tool-setup-mill.json";
 import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
+import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
 
 const lessons = CNC_COURSE_ITEMS.filter((item) => item.id !== "intro");
 const lessonMeta: Record<string, { theory: number; practice: number; test: number; operation?: boolean; safetyGate?: boolean }> = {
@@ -81,7 +84,7 @@ const tabs = [
   { id: "resources", label: "Tài liệu", short: "Tài liệu", description: "Tệp học tập và checklist thực hành", icon: FileText },
 ] as const;
 
-const millingChecklistSections: MillingChecklistSection[] = [
+export const millingChecklistSections: MillingChecklistSection[] = [
   {
     id: "prep",
     title: "I. Chuẩn bị và gá lắp",
@@ -134,14 +137,14 @@ const millingChecklistSections: MillingChecklistSection[] = [
   },
 ];
 
-const millingZeroTolerance = [
+export const millingZeroTolerance = [
   "Không nâng trục Z lên cao khi di chuyển dao giữa các biên phôi, gây va đập hoặc cọ xát dao vào phôi.",
   "Để xảy ra đâm dao vào phôi, ê-tô hoặc Z-Setter do bấm nhầm nút hoặc di chuyển sai hướng.",
   "Cho trục chính quay quá tốc độ cho phép khi dò biên bằng đầu dò cơ khí lệch tâm, gây văng hoặc gãy đầu dò.",
   "Không chạy thử Test Offset ở chế độ MDI trước khi vận hành tự động.",
 ] as const;
 
-const turningChecklistSections: MillingChecklistSection[] = [
+export const turningChecklistSections: MillingChecklistSection[] = [
   {
     id: "turn-prep",
     title: "I. Chuẩn bị và gá lắp",
@@ -158,8 +161,8 @@ const turningChecklistSections: MillingChecklistSection[] = [
     maxScore: 2,
     items: [
       { id: "T4.1", label: "Nhấn OFFSET, vào bảng Work Shift; nhấn DEL đưa dữ liệu X, Z về 0.", score: 0.5, note: "Không xóa dữ liệu cũ có thể gây chồng lấn offset." },
-      { id: "T4.2", label: "Lấy khoảng cách MA, thêm dấu âm và nhập vào ô Z cột Shift Value.", score: 0.5, note: "Sai dấu hoặc nhập nhầm cột: không đạt." },
-      { id: "T4.3", label: "Lấy chiều dài phôi AW đã đo, thêm dấu âm và nhập vào Z cột Measurement.", score: 0.5, note: "Phải dùng số đo của phôi thực tế đang gá." },
+      { id: "T4.2", label: "Lấy khoảng cách MA (khoảng cách từ điểm chuẩn máy M đến mặt đầu mâm cặp A), thêm dấu âm và nhập vào ô Z cột Shift Value.", score: 0.5, note: "Sai dấu hoặc nhập nhầm cột: không đạt." },
+      { id: "T4.3", label: "Lấy chiều dài phôi AW (khoảng cách từ mặt đầu mâm cặp A đến gốc toạ độ phôi W) đã đo, thêm dấu âm và nhập vào Z cột Measurement.", score: 0.5, note: "Phải dùng số đo của phôi thực tế đang gá." },
       { id: "T4.4", label: "Kiểm tra lại Z Work Shift và xác nhận không dùng phương pháp chạm dao vào phôi để lấy gốc Z.", score: 0.5, note: "Dùng lại phương pháp cũ: không đạt.", critical: true },
     ],
   },
@@ -200,7 +203,7 @@ const turningChecklistSections: MillingChecklistSection[] = [
   },
 ];
 
-const turningZeroTolerance = [
+export const turningZeroTolerance = [
   "Không để xảy ra đâm dao vào phôi, mâm cặp hoặc bộ phận máy do bấm nhầm nút hay di chuyển sai hướng.",
   "Không mở cửa khi trục chính chưa dừng hẳn và không vận hành khi cửa an toàn chưa đóng.",
   "Không dùng phương pháp chạm dao vào phôi để lấy gốc Z; phải dùng thước cặp đo H_phôi.",
@@ -209,7 +212,7 @@ const turningZeroTolerance = [
 
 type TabId = (typeof tabs)[number]["id"];
 
-type MillingChecklistItem = {
+export type MillingChecklistItem = {
   id: string;
   label: string;
   score: number;
@@ -217,7 +220,7 @@ type MillingChecklistItem = {
   critical?: boolean;
 };
 
-type MillingChecklistSection = {
+export type MillingChecklistSection = {
   id: string;
   title: string;
   maxScore: number;
@@ -234,6 +237,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const [submitted, setSubmitted] = useState(false);
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
+  const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>([]);
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
   const markCompleted = useCallback((completedLessonId: string) => {
@@ -276,6 +280,11 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
       }
     }).catch(() => undefined);
     return () => { cancelled = true; };
+  }, [courseId, session?.user.id, viewerProfile?.role]);
+
+  useEffect(() => {
+    if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
+    void fetchCourseCompetencyPermissions(courseId, session.user.id).then(setCompetencyPermissions).catch(() => setCompetencyPermissions([]));
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   useEffect(() => {
@@ -349,7 +358,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     const isOperationChecklist = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
     const operationChecklistEnabled = viewerProfile?.role === "admin" || ["machine-operation", "tool-setup"].every((assessmentId) => passedAssessments.has(`${lesson.id}:${assessmentId}`));
     return isOperationChecklist
-      ? <OperationChecklist machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} enabled={operationChecklistEnabled} onPassed={() => undefined} />
+      ? <PracticalChecklistPanel machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled={operationChecklistEnabled} courseId={courseId} />
       : <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
   };
 
@@ -388,7 +397,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
               const index = lessons.findIndex((candidate) => candidate.id === item.id);
               const itemMeta = lessonMeta[item.id];
               const active = expandedLessonId === item.id;
-              const locked = false;
+              const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
+              const locked = viewerProfile?.role !== "admin" && ((item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
               return (
                 <article key={item.id} className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
                   <button
@@ -826,7 +836,7 @@ const turningFillBlankAnswers=[
   {id:"B1",answer:"0202",note:"Dao tiện thô T0202."},{id:"B2",answer:"800",note:"Tốc độ tiện thô n₁ = 800 vòng/phút."},{id:"B3",answer:"22",note:"Đường kính tiếp cận lớn hơn phôi Ø20."},{id:"B4",answer:"0.2",note:"Lượng chạy dao tiện thô S₁ = 0,2 mm/vòng."},{id:"B5",answer:"5",note:"Điểm tiếp cận cách mặt đầu Z5."},{id:"B6",answer:"1",note:"Chiều sâu mỗi lát cắt thô t₁ = 1 mm."},{id:"B7",answer:"1",note:"Khoảng lùi dao của chu trình G73."},{id:"B8",answer:"45",note:"Block bắt đầu biên dạng là N45."},{id:"B9",answer:"70",note:"Block kết thúc biên dạng là N70."},{id:"B10",answer:"3",note:"P2 nằm tại Z-3."},{id:"B11",answer:"16",note:"Đường kính đoạn côn kết thúc là Ø16."},{id:"B12",answer:"25",note:"P4 nằm tại Z-25."},{id:"B13",answer:"20",note:"Đường kính bậc cuối là Ø20."},{id:"B14",answer:"0404",note:"Dao tiện tinh T0404."},{id:"B15",answer:"1000",note:"Tốc độ tiện tinh n₂ = 1000 vòng/phút."},
 ];
 
-function TurningFillBlankExercise({onResult}:{onResult?:(score:number,total:number,passed:boolean)=>void}){return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 3 · ĐIỀN KHUYẾT CHƯƠNG TRÌNH TIỆN</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">Hoàn thành chương trình gia công trục bậc – côn</h3><p className="mt-2 text-sm text-[#71808c]">Quan sát bản vẽ và thông số công nghệ, sau đó điền các giá trị còn thiếu trong chương trình.</p><div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe4e8] bg-white"><Image src="/images/cnc/bai-3-tien-dien-khuyet.png" alt="Bản vẽ chi tiết tiện trục bậc và côn" width={1102} height={1456} className="h-auto w-full" unoptimized priority/></div><div className="mt-4 grid gap-3 sm:grid-cols-2"><div className="rounded-xl border border-orange-100 bg-orange-50 p-4"><strong className="text-sm text-[#17232c]">Tiện thô</strong><ul className="mt-2 space-y-1 text-sm text-[#52616d]"><li>Dao T0202 · n₁ = 800 vòng/phút</li><li>S₁ = 0,2 mm/vòng · t₁ = 1 mm</li></ul></div><div className="rounded-xl border border-cyan-100 bg-cyan-50 p-4"><strong className="text-sm text-[#17232c]">Tiện tinh</strong><ul className="mt-2 space-y-1 text-sm text-[#52616d]"><li>Dao T0404 · n₂ = 1000 vòng/phút</li><li>S₂ = 0,1 mm/vòng · t₂ = 0,5 mm</li></ul></div></div><FillBlankLevel level={{part_ref:"Phôi Ø20 dài 60 mm; biên dạng Ø10 × 3, côn đến Ø16 tại Z-15 và đoạn Ø16 đến Z-25.",part_image_note:"Gốc W đặt tại tâm mặt đầu chi tiết, Z0 ở mặt đầu bên phải.",program_with_blanks:turningFillBlankProgram,blanks:turningFillBlankAnswers}} onResult={onResult}/></div>}
+function TurningFillBlankExercise({onResult}:{onResult?:(score:number,total:number,passed:boolean)=>void}){return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 3 · ĐIỀN KHUYẾT CHƯƠNG TRÌNH TIỆN</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">Hoàn thành chương trình gia công trục bậc – côn</h3><p className="mt-2 text-sm text-[#71808c]">Quan sát bản vẽ và thông số công nghệ, sau đó điền các giá trị còn thiếu trong chương trình.</p><div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe4e8] bg-white"><Image src="/images/cnc/bai-3-tien-dien-khuyet.png" alt="Bản vẽ chi tiết tiện trục bậc và côn" width={1054} height={876} className="h-auto w-full" unoptimized priority/></div><div className="mt-4 grid gap-3 sm:grid-cols-2"><div className="rounded-xl border border-orange-100 bg-orange-50 p-4"><strong className="text-sm text-[#17232c]">Tiện thô</strong><ul className="mt-2 space-y-1 text-sm text-[#52616d]"><li>Dao T0202 · n₁ = 800 vòng/phút</li><li>S₁ = 0,2 mm/vòng · t₁ = 1 mm</li></ul></div><div className="rounded-xl border border-cyan-100 bg-cyan-50 p-4"><strong className="text-sm text-[#17232c]">Tiện tinh</strong><ul className="mt-2 space-y-1 text-sm text-[#52616d]"><li>Dao T0404 · n₂ = 1000 vòng/phút</li><li>S₂ = 0,1 mm/vòng · t₂ = 0,5 mm</li></ul></div></div><FillBlankLevel level={{part_ref:"Phôi Ø20 dài 60 mm; biên dạng Ø10 × 3, côn đến Ø16 tại Z-15 và đoạn Ø16 đến Z-25.",part_image_note:"Gốc W đặt tại tâm mặt đầu chi tiết, Z0 ở mặt đầu bên phải.",program_with_blanks:turningFillBlankProgram,blanks:turningFillBlankAnswers}} onResult={onResult}/></div>}
 
 function InputBlank({id,values,setValues}:{id:string;values:Record<string,string>;setValues:React.Dispatch<React.SetStateAction<Record<string,string>>>}){return <input aria-label={`Giá trị ${id}`} value={values[id]??""} onChange={event=>setValues(current=>({...current,[id]:event.target.value}))} className="mx-1 inline-block w-16 rounded border border-cyan-300/30 bg-white/10 px-2 py-1 text-center text-white outline-none focus:border-cyan-300"/>}
 
@@ -958,6 +968,19 @@ function SafetyGate({ quiz, answers, setAnswers, submitted, setSubmitted, score,
     </div>
     <button className="cnc-submit" disabled={Object.keys(answers).length < quiz.length} onClick={submitSafetyQuiz}><ShieldCheck size={18} /> Nộp bài kiểm tra an toàn máy {machine}</button>
     {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? (machine === "phay" ? "Đạt — Bạn đã được phép thực hiện Checklist vận hành máy phay CNC." : "Đạt — Bài Gia công tiện CNC đã được mở khóa.") : `Chưa đạt — Bạn trả lời đúng ${score}/${quiz.length} câu, cần tối thiểu ${requiredScore}/${quiz.length}. Hãy xem giải thích và làm lại.`}</div>}
+  </>;
+}
+
+function PracticalChecklistPanel({ machine, lessonId, enabled, courseId }: { machine: "tiện" | "phay"; lessonId: "lesson-4-turn" | "lesson-4-mill"; enabled: boolean; courseId?: number }) {
+  const [mode, setMode] = useState<"practice" | "cross-check">("practice");
+  return <>
+    <div className="cnc-checklist-mode-toggle">
+      <button type="button" className={mode === "practice" ? "active" : ""} onClick={() => setMode("practice")}><ClipboardCheck size={15} /> Tự luyện tập</button>
+      <button type="button" className={mode === "cross-check" ? "active" : ""} onClick={() => setMode("cross-check")}><Users size={15} /> Chấm chéo (thi)</button>
+    </div>
+    {mode === "practice"
+      ? <><p className="cnc-checklist-hint">Chế độ tự luyện tập — tự đánh dấu để ôn lại quy trình, không tính điểm và không lưu lại.</p><OperationChecklist machine={machine} enabled={enabled} onPassed={() => undefined} /></>
+      : <CrossCheckChecklist machine={machine} lessonId={lessonId} courseId={courseId} />}
   </>;
 }
 
