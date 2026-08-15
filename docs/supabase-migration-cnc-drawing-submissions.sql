@@ -3,10 +3,11 @@
 
 create table if not exists public.cnc_drawing_submissions (
   id bigint generated always as identity primary key,
+  course_id bigint references public.course_offerings (id) on delete cascade,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   student_id uuid not null references public.profiles (id) on delete cascade,
-  lesson_id text not null check (lesson_id in ('lesson-5', 'lesson-6')),
+  lesson_id text not null check (lesson_id in ('lesson-5', 'lesson-6', 'lesson-2-simulation', 'lesson-3-simulation')),
   file_name text not null,
   storage_path text not null unique,
   mime_type text not null default 'application/octet-stream',
@@ -20,6 +21,15 @@ create table if not exists public.cnc_drawing_submissions (
 
 create index if not exists cnc_drawing_submissions_status_idx
   on public.cnc_drawing_submissions (status, updated_at desc);
+
+-- Bảng có thể đã tồn tại thiếu cột course_id (bản migration cũ); bổ sung cho môi trường đã tạo bảng.
+alter table public.cnc_drawing_submissions add column if not exists course_id bigint references public.course_offerings (id) on delete cascade;
+
+-- Bài tập 5 (mô phỏng và kiểm chứng) của Lập trình tiện/phay nộp minh chứng qua bảng này
+-- với lesson_id "lesson-2-simulation" / "lesson-3-simulation"; nới ràng buộc cho bảng đã tồn tại.
+alter table public.cnc_drawing_submissions drop constraint if exists cnc_drawing_submissions_lesson_id_check;
+alter table public.cnc_drawing_submissions add constraint cnc_drawing_submissions_lesson_id_check
+  check (lesson_id in ('lesson-5', 'lesson-6', 'lesson-2-simulation', 'lesson-3-simulation'));
 
 alter table public.cnc_drawing_submissions enable row level security;
 

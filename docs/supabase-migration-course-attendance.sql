@@ -6,15 +6,19 @@ create table if not exists public.attendance_sessions (
   created_at timestamptz not null default now(), title text not null,
   session_date date not null, starts_at timestamptz not null, late_after timestamptz not null,
   closes_at timestamptz not null, code text not null check (code ~ '^[0-9]{6}$'),
-  status text not null default 'open' check (status in ('open','closed'))
+  status text not null default 'open' check (status in ('open','closed')),
+  note text not null default ''
 );
+alter table public.attendance_sessions add column if not exists note text not null default '';
 create table if not exists public.attendance_records (
   session_id bigint not null references public.attendance_sessions(id) on delete cascade,
   student_id uuid not null references public.profiles(id) on delete cascade,
   status text not null check (status in ('present','late','excused','absent')),
-  checked_in_at timestamptz, note text not null default '', marked_by uuid references public.profiles(id) on delete set null,
+  checked_in_at timestamptz, note text not null default '', bonus_points integer not null default 0,
+  marked_by uuid references public.profiles(id) on delete set null,
   updated_at timestamptz not null default now(), primary key(session_id, student_id)
 );
+alter table public.attendance_records add column if not exists bonus_points integer not null default 0;
 create index if not exists attendance_sessions_course_date_idx on public.attendance_sessions(course_id, starts_at desc);
 create index if not exists attendance_records_student_idx on public.attendance_records(student_id, session_id);
 alter table public.attendance_sessions enable row level security;

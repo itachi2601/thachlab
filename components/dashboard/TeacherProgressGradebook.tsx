@@ -10,7 +10,7 @@ const lessons=[
   {id:"lesson-1",short:"Bài 1",title:"An toàn lao động"},{id:"lesson-2",short:"Bài 2",title:"Lập trình tiện"},{id:"lesson-3",short:"Bài 3",title:"Lập trình phay"},
   {id:"lesson-4-turn",short:"Bài 4T",title:"Vận hành máy tiện"},{id:"lesson-4-mill",short:"Bài 4P",title:"Vận hành máy phay"},{id:"lesson-5",short:"Bài 5",title:"Gia công tiện"},{id:"lesson-6",short:"Bài 6",title:"Gia công phay"},
 ];
-const labels:Record<string,string>={final:"Cuối bài","exercise-1":"Nhận biết","exercise-2":"Dịch block","exercise-3":"Điền khuyết","exercise-4":"Viết CT","exercise-5":"Mô phỏng","machine-operation":"Vận hành","tool-setup":"Cài dao",checklist:"Checklist thực hành"};
+const labels:Record<string,string>={final:"Cuối bài","exercise-1":"Nhận biết","exercise-2":"Dịch block","exercise-3":"Điền khuyết","exercise-4":"Viết CT","exercise-5":"Mô phỏng","machine-operation":"Vận hành","tool-setup":"Cài dao","checklist-practice":"Checklist tự luyện",checklist:"Checklist thực hành"};
 
 export default function TeacherProgressGradebook({students,selectedId,onSelect}:{students:GradeStudent[];selectedId?:string;onSelect:(id:string)=>void}){
   const[lessonId,setLessonId]=useState("lesson-2");const[query,setQuery]=useState("");const[status,setStatus]=useState("all");const[scoreMode,setScoreMode]=useState<"best"|"latest">("best");
