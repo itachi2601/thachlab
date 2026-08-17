@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, UserCheck, Users, Wrench, XCircle } from "lucide-react";
+import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, UserCheck, Users, Wrench, XCircle } from "lucide-react";
 import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
 import { createAttendanceMachinePhotoUrl, EQUIPMENT_STATUS_META, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fiveSScore, FIVE_S_CRITERIA, MILL_MACHINE_CODES, TURN_MACHINE_CODES, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type EquipmentStatus, type MachineCheckpoint } from "@/services/attendance-machine";
+import { createEquipmentBreakdownPhotoUrl, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
 
 type Student={id:string;name:string;className:string};
 const statusMeta:Record<AttendanceStatus,{label:string;short:string;code:string;style:string;active:string;icon:typeof UserCheck}>={
@@ -15,7 +16,9 @@ const statusMeta:Record<AttendanceStatus,{label:string;short:string;code:string;
 
 export default function TeacherAttendancePanel({courseId,students}:{courseId:number;students:Student[]}){
   const[view,setView]=useState<"live"|"machines"|"summary">("live");
-  const[sessions,setSessions]=useState<AttendanceSession[]>([]);const[selectedId,setSelectedId]=useState<number|null>(null);const[records,setRecords]=useState<AttendanceRecord[]>([]);const[allRecords,setAllRecords]=useState<AttendanceRecord[]>([]);const[creating,setCreating]=useState(false);const[busy,setBusy]=useState(false);const[error,setError]=useState("");const[search,setSearch]=useState("");const[copied,setCopied]=useState(false);const[noteDraft,setNoteDraft]=useState("");const[bonusDrafts,setBonusDrafts]=useState<Record<string,string>>({});const[recordNoteDrafts,setRecordNoteDrafts]=useState<Record<string,string>>({});const[machinePhotos,setMachinePhotos]=useState<AttendanceMachinePhoto[]>([]);const[machineScores,setMachineScores]=useState<AttendanceMachineScore[]>([]);
+  const[sessions,setSessions]=useState<AttendanceSession[]>([]);const[selectedId,setSelectedId]=useState<number|null>(null);const[records,setRecords]=useState<AttendanceRecord[]>([]);const[allRecords,setAllRecords]=useState<AttendanceRecord[]>([]);const[creating,setCreating]=useState(false);const[busy,setBusy]=useState(false);const[error,setError]=useState("");const[search,setSearch]=useState("");const[copied,setCopied]=useState(false);const[noteDraft,setNoteDraft]=useState("");const[bonusDrafts,setBonusDrafts]=useState<Record<string,string>>({});const[recordNoteDrafts,setRecordNoteDrafts]=useState<Record<string,string>>({});const[machinePhotos,setMachinePhotos]=useState<AttendanceMachinePhoto[]>([]);const[machineScores,setMachineScores]=useState<AttendanceMachineScore[]>([]);const[breakdowns,setBreakdowns]=useState<EquipmentBreakdownReport[]>([]);
+  const loadBreakdowns=useCallback(()=>void fetchEquipmentBreakdownReports(courseId).then(setBreakdowns).catch(()=>undefined),[courseId]);
+  useEffect(()=>{loadBreakdowns()},[loadBreakdowns]);
   const now=new Date();const[title,setTitle]=useState("Thực hành CNC");const[startsAt,setStartsAt]=useState(new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16));
   const selected=sessions.find(item=>item.id===selectedId)??null;
   const loadSessions=useCallback(()=>fetchAttendanceSessions(courseId).then(rows=>{setSessions(rows);setSelectedId(current=>rows.some(item=>item.id===current)?current:rows[0]?.id??null)}).catch(cause=>setError(cause instanceof Error?cause.message:"Không tải được phiên điểm danh.")),[courseId]);
@@ -42,6 +45,7 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
   const machinesFullyChecked=machineGroups.filter(group=>machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="start")&&machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="end")).length;
   const avgFiveS=machineGroups.length?Math.round(machineGroups.reduce((sum,group)=>sum+fiveSScore(machineScores.find(s=>s.machine_code===group.code)),0)/machineGroups.length):0;
   const machineIssues=machineGroups.filter(group=>{const status=machineScores.find(s=>s.machine_code===group.code)?.equipment_status;return status==="maintenance"||status==="broken"}).length;
+  const openBreakdowns=breakdowns.filter(r=>r.status==="open").length;
 
   return <div className="space-y-5">
     <div className="flex flex-wrap gap-2">
@@ -101,15 +105,16 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
         </select>
         <button aria-label="Làm mới" onClick={loadMachineData} className="text-slate-400"><RefreshCw size={16}/></button>
       </div>
-      {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-3">
+      {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-4">
         <SummaryMetric icon={<CalendarCheck size={16}/>} value={`${machinesFullyChecked}/${machineGroups.length}`} label="Máy đủ ảnh đầu/cuối ca"/>
         <SummaryMetric icon={<Check size={16}/>} value={`${avgFiveS}/10`} label="Điểm 5S trung bình"/>
         <SummaryMetric icon={<AlertTriangle size={16}/>} value={String(machineIssues)} label="Máy cần bảo trì/hỏng" danger={machineIssues>0}/>
+        <SummaryMetric icon={<AlertOctagon size={16}/>} value={String(openBreakdowns)} label="Báo hỏng đang mở" danger={openBreakdowns>0}/>
       </div>}
       {selected?<div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {machineGroups.map(group=><MachineGroupCard key={group.code} sessionId={selected.id} code={group.code} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData}/>)}
-        <MachineGroupCard sessionId={selected.id} code="XUONG" label="Ảnh toàn xưởng" icon={Camera} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="XUONG")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false}/>
-        <MachineGroupCard sessionId={selected.id} code="RAC" label="Ảnh thùng rác" icon={Trash2} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="RAC")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false}/>
+        {machineGroups.map(group=><MachineGroupCard key={group.code} courseId={courseId} sessionId={selected.id} code={group.code} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData} reports={breakdowns.filter(r=>r.machine_code===group.code)} onReported={loadBreakdowns}/>)}
+        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="XUONG" label="Ảnh toàn xưởng" icon={Camera} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="XUONG")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false} reports={breakdowns.filter(r=>r.machine_code==="XUONG")} onReported={loadBreakdowns}/>
+        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="RAC" label="Ảnh thùng rác" icon={Trash2} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="RAC")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false} reports={breakdowns.filter(r=>r.machine_code==="RAC")} onReported={loadBreakdowns}/>
         {!machineGroups.length&&<p className="rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500 sm:col-span-2 xl:col-span-1">Chưa có sinh viên nào chọn máy trong buổi này.</p>}
       </div>:<div className="mt-5 grid min-h-56 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><Wrench size={26}/><span className="mt-2">Chọn một buổi điểm danh để xem tình trạng máy.</span></div>}
     </section>}
@@ -161,9 +166,10 @@ function AttendanceMatrixSummary({students,sessions,allRecords}:{students:Studen
 }
 function SummaryMetric({icon,value,label,danger=false}:{icon:React.ReactNode;value:string;label:string;danger?:boolean}){return <div className={`rounded-xl border p-4 ${danger?"border-red-400/15 bg-red-500/5 text-red-300":"border-cyan-400/10 bg-cyan-500/5 text-cyan-300"}`}><div className="flex items-center gap-2 text-xs font-bold uppercase">{icon}{label}</div><strong className="mt-2 block text-2xl text-white">{value}</strong></div>}
 
-function MachineGroupCard({sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showFiveS=true}:{sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showFiveS?:boolean}){
+function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showFiveS=true,reports,onReported}:{courseId:number;sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showFiveS?:boolean;reports:EquipmentBreakdownReport[];onReported:()=>void}){
   const[noteDraft,setNoteDraft]=useState(score?.note??"");
   useEffect(()=>{setNoteDraft(score?.note??"")},[score?.note]);
+  const openReports=reports.filter(r=>r.status==="open");
   async function toggleCriterion(key:typeof FIVE_S_CRITERIA[number]["key"]){try{await updateAttendanceMachineScore(sessionId,code,{[key]:!score?.[key]});onScoreSaved()}catch{/* silent: hiển thị lại giá trị cũ ở lần tải sau */}}
   async function saveEquipment(status:EquipmentStatus){try{await updateAttendanceMachineScore(sessionId,code,{equipment_status:status});onScoreSaved()}catch{/* silent */}}
   async function saveNote(){try{await updateAttendanceMachineScore(sessionId,code,{note:noteDraft});onScoreSaved()}catch{/* silent */}}
@@ -192,6 +198,37 @@ function MachineGroupCard({sessionId,code,label,icon:Icon=Wrench,members,photos,
       </div>
     </>}
     <input type="text" value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} placeholder="Ghi chú nhóm…" className="mt-2 w-full rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1 text-xs text-white placeholder:text-slate-600"/>
+    <BreakdownReportSection courseId={courseId} sessionId={sessionId} code={code} openReports={openReports} onReported={onReported}/>
+  </div>;
+}
+
+function BreakdownReportSection({courseId,sessionId,code,openReports,onReported}:{courseId:number;sessionId:number;code:string;openReports:EquipmentBreakdownReport[];onReported:()=>void}){
+  const[reporting,setReporting]=useState(false);
+  const[file,setFile]=useState<File|null>(null);
+  const[description,setDescription]=useState("");
+  const[busy,setBusy]=useState(false);
+  const[error,setError]=useState("");
+  async function submit(){if(!file||!description.trim())return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,file});setReporting(false);setFile(null);setDescription("");onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
+  async function resolve(id:number){try{await resolveEquipmentBreakdown(id,"");onReported()}catch{/* silent */}}
+  async function view(path:string){const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createEquipmentBreakdownPhotoUrl(path);if(win)win.location.href=signed}catch{win?.close()}}
+  return <div className="mt-2 border-t border-white/5 pt-2">
+    {openReports.map(report=><div key={report.id} className="mb-1.5 rounded-lg border border-red-400/20 bg-red-500/10 p-2">
+      <div className="flex items-center gap-1.5 text-[11px] font-bold text-red-200"><AlertOctagon size={12}/>Báo hỏng</div>
+      <p className="mt-0.5 text-[11px] text-red-100/80">{report.description}</p>
+      <div className="mt-1.5 flex items-center gap-2">
+        <button type="button" onClick={()=>void view(report.storage_path)} className="text-[10px] font-bold text-red-200 underline">Xem ảnh</button>
+        <button type="button" onClick={()=>void resolve(report.id)} className="text-[10px] font-bold text-emerald-300">Đã sửa xong</button>
+      </div>
+    </div>)}
+    {reporting?<div className="rounded-lg border border-white/10 bg-black/15 p-2">
+      <input type="file" accept="image/*" capture="environment" onChange={e=>setFile(e.target.files?.[0]??null)} className="block w-full text-[10px] text-slate-400"/>
+      <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
+      {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
+      <div className="mt-1.5 flex gap-1.5">
+        <button type="button" disabled={busy||!file||!description.trim()} onClick={submit} className="rounded-md bg-red-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
+        <button type="button" onClick={()=>setReporting(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[10px] font-bold text-slate-300">Hủy</button>
+      </div>
+    </div>:<button type="button" onClick={()=>setReporting(true)} className="flex items-center gap-1 text-[10px] font-bold text-red-300 hover:text-red-200"><AlertOctagon size={11}/>Báo hỏng máy</button>}
   </div>;
 }
 

@@ -30,7 +30,19 @@ export async function createAttendanceSession(input: { courseId: number; title: 
     closes_at: new Date(start.getTime() + input.durationMinutes * 60_000).toISOString(), code, status: "open",
   }).select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note").single();
   if (error) throw error;
+  await cleanupOldMachinePhotos(input.courseId, data.id).catch(() => undefined);
   return data as AttendanceSession;
+}
+
+// Ảnh 5S đầu ca/cuối ca chỉ cần giữ trong buổi hiện tại — khi buổi mới mở, dọn ảnh của các
+// buổi cũ trong cùng khóa để tránh phình dung lượng. Ảnh báo hỏng máy nằm ở bucket riêng nên
+// không bị ảnh hưởng.
+async function cleanupOldMachinePhotos(courseId: number, keepSessionId: number) {
+  const supabase = getSupabase();
+  const { data, error } = await supabase.rpc("cleanup_old_machine_photos", { p_course_id: courseId, p_keep_session_id: keepSessionId });
+  if (error) throw error;
+  const paths = (data ?? []) as string[];
+  if (paths.length) await supabase.storage.from("attendance-machine-photos").remove(paths);
 }
 
 export async function closeAttendanceSession(sessionId: number) {
