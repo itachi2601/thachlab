@@ -80,7 +80,7 @@ export async function submitAttendanceCode(courseId: number, code: string) {
 }
 
 export async function fetchMyAttendance(courseId: number, studentId: string) {
-  const { data, error } = await getSupabase().from("attendance_records").select("session_id, student_id, status, checked_in_at, note, bonus_points, machine_code, attendance_sessions!inner(id, course_id, title, session_date, starts_at)").eq("student_id", studentId).eq("attendance_sessions.course_id", courseId).order("checked_in_at", { ascending: false });
+  const { data, error } = await getSupabase().from("attendance_records").select("session_id, student_id, status, checked_in_at, note, bonus_points, machine_code, attendance_sessions!inner(id, course_id, title, session_date, starts_at)").eq("student_id", studentId).eq("attendance_sessions.course_id", courseId).order("starts_at", { ascending: false, foreignTable: "attendance_sessions" });
   if (error) throw error;
   return data ?? [];
 }
