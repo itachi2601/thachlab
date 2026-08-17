@@ -1,4 +1,5 @@
 import { getSupabase } from "@/services/supabase";
+import { compressImageFile } from "@/services/image-compress";
 
 export const TURN_MACHINE_CODES = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"] as const;
 export const MILL_MACHINE_CODES = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"] as const;
@@ -56,9 +57,10 @@ export async function submitAttendanceMachinePhoto({ sessionId, machineCode, che
   const supabase = getSupabase();
   const { data: authData, error: authError } = await supabase.auth.getUser();
   if (authError || !authData.user) throw new Error("Hãy đăng nhập trước khi nộp ảnh.");
-  const extension = file.name.includes(".") ? `.${file.name.split(".").pop()}` : "";
+  const compressed = await compressImageFile(file);
+  const extension = compressed.name.includes(".") ? `.${compressed.name.split(".").pop()}` : "";
   const path = `${sessionId}/${machineCode}-${checkpoint}-${Date.now()}${extension}`;
-  const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, file, { contentType: file.type || "application/octet-stream", upsert: false });
+  const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, compressed, { contentType: compressed.type || "application/octet-stream", upsert: false });
   if (uploadError) throw uploadError;
   const { error } = await supabase.rpc("submit_attendance_machine_photo", { p_session_id: sessionId, p_machine_code: machineCode, p_checkpoint: checkpoint, p_storage_path: path, p_note: note });
   if (error) {

@@ -1,4 +1,5 @@
 import { getSupabase } from "@/services/supabase";
+import { compressImageFile } from "@/services/image-compress";
 
 export type CncDrawingStatus = "pending" | "approved" | "rejected";
 
@@ -59,20 +60,21 @@ export async function submitCncDrawing({ lessonId, file, courseId }: { lessonId:
   if (existing?.status === "pending") throw new Error("Bản vẽ đang chờ giảng viên duyệt.");
   if (existing?.status === "approved") throw new Error("Bản vẽ đã được duyệt, không cần nộp lại.");
 
-  const path = `${authData.user.id}/${lessonId}/${Date.now()}-${safeFileName(file.name)}`;
+  const compressed = await compressImageFile(file);
+  const path = `${authData.user.id}/${lessonId}/${Date.now()}-${safeFileName(compressed.name)}`;
   const { error: uploadError } = await supabase.storage
     .from(BUCKET)
-    .upload(path, file, { contentType: file.type || "application/octet-stream", upsert: false });
+    .upload(path, compressed, { contentType: compressed.type || "application/octet-stream", upsert: false });
   if (uploadError) throw uploadError;
 
   const payload = {
     course_id: courseId ?? null,
     student_id: authData.user.id,
     lesson_id: lessonId,
-    file_name: file.name,
+    file_name: compressed.name,
     storage_path: path,
-    mime_type: file.type || "application/octet-stream",
-    size_bytes: file.size,
+    mime_type: compressed.type || "application/octet-stream",
+    size_bytes: compressed.size,
     status: "pending" as const,
     teacher_feedback: "",
     reviewed_by: null,
@@ -96,6 +98,19 @@ export async function fetchAllCncDrawingSubmissions() {
   const { data, error } = await getSupabase()
     .from("cnc_drawing_submissions")
     .select(`${SELECT_FIELDS}, profiles!cnc_drawing_submissions_student_id_fkey(full_name, class_name)`)
+    .order("updated_at", { ascending: false });
+  if (error) throw error;
+  return (data ?? []).map((item) => ({
+    ...item,
+    profiles: Array.isArray(item.profiles) ? (item.profiles[0] ?? null) : item.profiles,
+  })) as CncDrawingSubmission[];
+}
+
+export async function fetchCncDrawingSubmissionsByCourse(courseId: number) {
+  const { data, error } = await getSupabase()
+    .from("cnc_drawing_submissions")
+    .select(`${SELECT_FIELDS}, profiles!cnc_drawing_submissions_student_id_fkey(full_name, class_name)`)
+    .eq("course_id", courseId)
     .order("updated_at", { ascending: false });
   if (error) throw error;
   return (data ?? []).map((item) => ({
