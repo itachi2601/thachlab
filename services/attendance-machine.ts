@@ -45,6 +45,12 @@ export async function selectAttendanceMachine(sessionId: number, machineCode: st
   if (error) throw error;
 }
 
+export async function isFirstOnMachine(sessionId: number, machineCode: string) {
+  const { data, error } = await getSupabase().rpc("is_first_on_machine", { p_session_id: sessionId, p_machine_code: machineCode });
+  if (error) throw error;
+  return Boolean(data);
+}
+
 export async function fetchAttendanceMachinePhotos(sessionId: number) {
   const { data, error } = await getSupabase().from("attendance_machine_photos")
     .select("id, session_id, machine_code, checkpoint, storage_path, note, uploaded_by, created_at, profiles!attendance_machine_photos_uploaded_by_fkey(full_name)")

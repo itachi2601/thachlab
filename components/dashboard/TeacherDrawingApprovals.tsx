@@ -9,7 +9,7 @@ import {
   type CncDrawingSubmission,
 } from "@/services/cnc-drawing-submissions";
 
-export default function TeacherDrawingApprovals({ courseId }: { courseId: number }) {
+export default function TeacherDrawingApprovals({ courseId, onPendingCountChange }: { courseId: number; onPendingCountChange?: (count: number) => void }) {
   const toast = useToast();
   const [submissions, setSubmissions] = useState<CncDrawingSubmission[]>([]);
   const [feedback, setFeedback] = useState<Record<number, string>>({});
@@ -64,6 +64,7 @@ export default function TeacherDrawingApprovals({ courseId }: { courseId: number
   }
 
   const pendingCount = submissions.filter((item) => item.status === "pending").length;
+  useEffect(() => { onPendingCountChange?.(pendingCount); }, [pendingCount, onPendingCountChange]);
   return <section className="rounded-2xl border border-emerald-500/25 bg-emerald-500/5 p-5">
     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
       <div>
