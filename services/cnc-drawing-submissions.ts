@@ -94,6 +94,17 @@ export async function submitCncDrawing({ lessonId, file, courseId }: { lessonId:
   return data as CncDrawingSubmission;
 }
 
+export async function fetchMyCncDrawingSubmissions(courseId?: number) {
+  const supabase = getSupabase();
+  const { data: authData } = await supabase.auth.getUser();
+  if (!authData.user) return [];
+  let query = supabase.from("cnc_drawing_submissions").select(SELECT_FIELDS).eq("student_id", authData.user.id);
+  query = courseId ? query.eq("course_id", courseId) : query.is("course_id", null);
+  const { data, error } = await query;
+  if (error) throw error;
+  return (data ?? []) as CncDrawingSubmission[];
+}
+
 export async function fetchAllCncDrawingSubmissions() {
   const { data, error } = await getSupabase()
     .from("cnc_drawing_submissions")
