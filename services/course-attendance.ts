@@ -25,7 +25,7 @@ export async function createAttendanceSession(input: { courseId: number; title: 
   const code = String(crypto.getRandomValues(new Uint32Array(1))[0] % 1_000_000).padStart(6, "0");
   const { data, error } = await supabase.from("attendance_sessions").insert({
     course_id: input.courseId, created_by: auth.user?.id, title: input.title.trim(),
-    session_date: start.toISOString().slice(0, 10), starts_at: start.toISOString(),
+    session_date: input.startsAt.slice(0, 10), starts_at: start.toISOString(),
     late_after: new Date(start.getTime() + input.lateMinutes * 60_000).toISOString(),
     closes_at: new Date(start.getTime() + input.durationMinutes * 60_000).toISOString(), code, status: "open",
   }).select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note").single();
