@@ -45,8 +45,14 @@ export async function selectAttendanceMachine(sessionId: number, machineCode: st
   if (error) throw error;
 }
 
-export async function isFirstOnMachine(sessionId: number, machineCode: string) {
-  const { data, error } = await getSupabase().rpc("is_first_on_machine", { p_session_id: sessionId, p_machine_code: machineCode });
+export async function isPhotoDutyMachine(sessionId: number, machineCode: string) {
+  const { data, error } = await getSupabase().rpc("is_photo_duty_machine", { p_session_id: sessionId, p_machine_code: machineCode });
+  if (error) throw error;
+  return Boolean(data);
+}
+
+export async function isPhotoDutyWorkshop(sessionId: number) {
+  const { data, error } = await getSupabase().rpc("is_photo_duty_workshop", { p_session_id: sessionId });
   if (error) throw error;
   return Boolean(data);
 }
