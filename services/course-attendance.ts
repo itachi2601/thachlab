@@ -5,7 +5,7 @@ export type AttendanceStatus = "present" | "late" | "excused" | "absent";
 export interface AttendanceSession {
   id: number; course_id: number; title: string; session_date: string; starts_at: string;
   closes_at: string; late_after: string; code: string; status: "open" | "closed"; created_at: string; note: string;
-  machine_edit_override: boolean;
+  machine_selection_open: boolean;
 }
 
 export interface AttendanceRecord {
@@ -14,7 +14,7 @@ export interface AttendanceRecord {
 }
 
 export async function fetchAttendanceSessions(courseId: number) {
-  const { data, error } = await getSupabase().from("attendance_sessions").select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_edit_override").eq("course_id", courseId).order("starts_at", { ascending: false });
+  const { data, error } = await getSupabase().from("attendance_sessions").select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open").eq("course_id", courseId).order("starts_at", { ascending: false });
   if (error) throw error;
   return (data ?? []) as AttendanceSession[];
 }
@@ -29,7 +29,7 @@ export async function createAttendanceSession(input: { courseId: number; title: 
     session_date: input.startsAt.slice(0, 10), starts_at: start.toISOString(),
     late_after: new Date(start.getTime() + input.lateMinutes * 60_000).toISOString(),
     closes_at: new Date(start.getTime() + input.durationMinutes * 60_000).toISOString(), code, status: "open",
-  }).select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_edit_override").single();
+  }).select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open").single();
   if (error) throw error;
   await cleanupOldMachinePhotos(input.courseId, data.id).catch(() => undefined);
   return data as AttendanceSession;
@@ -56,8 +56,8 @@ export async function updateAttendanceSessionNote(sessionId: number, note: strin
   if (error) throw error;
 }
 
-export async function setMachineEditOverride(sessionId: number, override: boolean) {
-  const { error } = await getSupabase().from("attendance_sessions").update({ machine_edit_override: override }).eq("id", sessionId);
+export async function setMachineSelectionOpen(sessionId: number, open: boolean) {
+  const { error } = await getSupabase().from("attendance_sessions").update({ machine_selection_open: open }).eq("id", sessionId);
   if (error) throw error;
 }
 
@@ -98,7 +98,7 @@ export async function submitAttendanceCode(courseId: number, code: string) {
 }
 
 export async function fetchMyAttendance(courseId: number, studentId: string) {
-  const { data, error } = await getSupabase().from("attendance_records").select("session_id, student_id, status, checked_in_at, note, bonus_points, machine_code, attendance_sessions!inner(id, course_id, title, session_date, starts_at, status, machine_edit_override)").eq("student_id", studentId).eq("attendance_sessions.course_id", courseId).order("starts_at", { ascending: false, foreignTable: "attendance_sessions" });
+  const { data, error } = await getSupabase().from("attendance_records").select("session_id, student_id, status, checked_in_at, note, bonus_points, machine_code, attendance_sessions!inner(id, course_id, title, session_date, starts_at, status, machine_selection_open)").eq("student_id", studentId).eq("attendance_sessions.course_id", courseId).order("starts_at", { ascending: false, foreignTable: "attendance_sessions" });
   if (error) throw error;
   return data ?? [];
 }
