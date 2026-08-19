@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { CalendarCheck, ChevronDown, ChevronUp, CheckCircle2, Clock3, Wrench, Camera, Trash2, Check, Loader2, Pencil } from "lucide-react";
+import { CalendarCheck, ChevronDown, ChevronUp, CheckCircle2, Clock3, Wrench, Camera, Trash2, Check, Loader2, Pencil, Dices } from "lucide-react";
 import { fetchMyAttendance, submitAttendanceCode } from "@/services/course-attendance";
-import { fetchMachines, groupMachinesByType, selectAttendanceMachine, isFirstOnMachine, fetchAttendanceMachinePhotos, submitAttendanceMachinePhoto, createAttendanceMachinePhotoUrl, type AttendanceMachinePhoto, type MachineCheckpoint, type Machine } from "@/services/attendance-machine";
+import { fetchMachines, groupMachinesByType, selectAttendanceMachine, isPhotoDutyMachine, isPhotoDutyWorkshop, fetchAttendanceMachinePhotos, submitAttendanceMachinePhoto, createAttendanceMachinePhotoUrl, type AttendanceMachinePhoto, type MachineCheckpoint, type Machine } from "@/services/attendance-machine";
 
 const labels:Record<string,string>={present:"Có mặt",late:"Đi muộn",excused:"Vắng có phép",absent:"Vắng không phép"};
 function sessionOf(row:{attendance_sessions:unknown}){const value=row.attendance_sessions as {id:number;title:string;session_date:string;starts_at:string;status:string;machine_selection_open:boolean}|{id:number;title:string;session_date:string;starts_at:string;status:string;machine_selection_open:boolean}[];return Array.isArray(value)?value[0]:value}
@@ -13,17 +13,21 @@ export default function StudentAttendancePanel({courseId,studentId}:{courseId:nu
   {otherOpenRows.map(row=>{const session=sessionOf(row);return <div key={`open-${row.session_id}`}><p className="mt-4 text-xs font-bold text-orange-300">Giáo viên đang cho chọn máy cho buổi {session?.title??""} · {session?.session_date?new Date(`${session.session_date}T00:00:00`).toLocaleDateString("vi-VN"):""}</p><MachineDutyPanel sessionId={row.session_id} machineCode={row.machine_code} open={true} machines={machines} onMachineChosen={load}/></div>})}
   <div className="mt-3 grid gap-2 sm:grid-cols-2">{visibleRows.map(row=>{const session=Array.isArray(row.attendance_sessions)?row.attendance_sessions[0]:row.attendance_sessions;return <div key={row.session_id} className="flex items-center justify-between rounded-xl border border-white/5 bg-black/15 p-3"><div className="min-w-0"><strong className="block text-xs text-white">{session?.title??"Buổi học CNC"}</strong><small className="text-slate-500">{session?.session_date?new Date(`${session.session_date}T00:00:00`).toLocaleDateString("vi-VN"):""}</small>{(row.bonus_points!==0||row.note)&&<div className="mt-1 flex flex-wrap items-center gap-1.5">{row.bonus_points!==0&&<span className={`rounded-full px-1.5 py-0.5 text-[10px] font-bold ${row.bonus_points>0?"bg-emerald-500/15 text-emerald-300":"bg-red-500/15 text-red-300"}`}>{row.bonus_points>0?`+${row.bonus_points}`:row.bonus_points} điểm</span>}{row.note&&<small className="truncate text-slate-500" title={row.note}>{row.note}</small>}</div>}</div><div className="flex shrink-0 flex-col items-end gap-1"><span className={`flex items-center gap-1 text-xs font-bold ${row.status==="present"?"text-emerald-300":row.status==="late"?"text-amber-300":row.status==="excused"?"text-blue-300":"text-red-300"}`}>{row.status==="present"?<CheckCircle2 size={14}/>:<Clock3 size={14}/>} {labels[row.status]}</span>{row.machine_code&&<span className="flex items-center gap-1 rounded-full bg-orange-500/10 px-1.5 py-0.5 text-[10px] font-bold text-orange-200"><Wrench size={10}/>{row.machine_code}</span>}</div></div>})}</div>{rows.length>4&&<button type="button" onClick={()=>setExpanded(value=>!value)} className="mt-3 flex w-full items-center justify-center gap-1 rounded-lg border border-white/5 py-2 text-xs font-bold text-slate-400 hover:text-cyan-200">{expanded?<>Thu gọn<ChevronUp size={14}/></>:<>Xem tất cả {rows.length} buổi<ChevronDown size={14}/></>}</button>}</section>}
 
+function DutyBadge(){return <span className="flex items-center gap-1 rounded-full bg-fuchsia-500/15 px-1.5 py-0.5 text-[9px] font-bold text-fuchsia-200"><Dices size={9}/>Bạn được chọn</span>}
+
 function MachineDutyPanel({sessionId,machineCode,open,machines,onMachineChosen}:{sessionId:number;machineCode:string|null;open:boolean;machines:Machine[];onMachineChosen:()=>void}){
   const[picked,setPicked]=useState("");
   const[busy,setBusy]=useState(false);
   const[error,setError]=useState("");
   const[editing,setEditing]=useState(false);
   const[photos,setPhotos]=useState<AttendanceMachinePhoto[]>([]);
-  const[isFirst,setIsFirst]=useState(false);
+  const[machineDuty,setMachineDuty]=useState(false);
+  const[workshopDuty,setWorkshopDuty]=useState(false);
   const load=useCallback(()=>fetchAttendanceMachinePhotos(sessionId).then(setPhotos).catch(()=>undefined),[sessionId]);
   useEffect(()=>{void load()},[load]);
   useEffect(()=>{setPicked(machineCode??"")},[machineCode]);
-  useEffect(()=>{if(!machineCode){setIsFirst(false);return}void isFirstOnMachine(sessionId,machineCode).then(setIsFirst).catch(()=>setIsFirst(false))},[sessionId,machineCode]);
+  useEffect(()=>{if(!machineCode){setMachineDuty(false);return}void isPhotoDutyMachine(sessionId,machineCode).then(setMachineDuty).catch(()=>setMachineDuty(false))},[sessionId,machineCode]);
+  useEffect(()=>{void isPhotoDutyWorkshop(sessionId).then(setWorkshopDuty).catch(()=>setWorkshopDuty(false))},[sessionId]);
 
   async function chooseMachine(){if(!picked||!open)return;setBusy(true);setError("");try{await selectAttendanceMachine(sessionId,picked);setEditing(false);onMachineChosen()}catch(cause){setError(cause instanceof Error?cause.message:"Không chọn được máy.")}finally{setBusy(false)}}
 
@@ -42,25 +46,25 @@ function MachineDutyPanel({sessionId,machineCode,open,machines,onMachineChosen}:
 
   return <div className="mt-3 space-y-2">
     <div className="rounded-xl border border-orange-400/20 bg-orange-500/5 p-3">
-      <div className="flex items-center justify-between gap-2"><div className="flex items-center gap-2 text-sm font-bold text-white"><Wrench size={15} className="text-orange-300"/>Vệ sinh máy {machineCode}</div>{open&&<button type="button" onClick={()=>setEditing(true)} className="flex items-center gap-1 text-xs font-bold text-orange-300 hover:text-orange-200"><Pencil size={12}/>Đổi máy</button>}</div>
-      <p className="mt-0.5 text-xs text-slate-400">{isFirst?"Bạn là người đầu tiên chọn máy này — bạn phụ trách nộp ảnh cho cả nhóm.":"Chỉ bạn đầu tiên chọn máy này mới nộp được ảnh; bạn có thể xem trạng thái bên dưới."}</p>
+      <div className="flex items-center justify-between gap-2"><div className="flex items-center gap-2 text-sm font-bold text-white"><Wrench size={15} className="text-orange-300"/>Vệ sinh máy {machineCode}{machineDuty&&<DutyBadge/>}</div>{open&&<button type="button" onClick={()=>setEditing(true)} className="flex items-center gap-1 text-xs font-bold text-orange-300 hover:text-orange-200"><Pencil size={12}/>Đổi máy</button>}</div>
+      <p className="mt-0.5 text-xs text-slate-400">{machineDuty?"Hệ thống đã chọn ngẫu nhiên bạn phụ trách nộp ảnh máy cho cả nhóm.":"Hệ thống đã chọn ngẫu nhiên 1 bạn trong nhóm phụ trách nộp ảnh; bạn có thể xem trạng thái bên dưới."}</p>
       <div className="mt-2 grid gap-2 sm:grid-cols-2">
-        <MachineCheckpointSlot sessionId={sessionId} machineCode={machineCode} checkpoint="start" label="Đầu ca" photos={photos} onUploaded={load} canUpload={isFirst}/>
-        <MachineCheckpointSlot sessionId={sessionId} machineCode={machineCode} checkpoint="end" label="Cuối ca" photos={photos} onUploaded={load} canUpload={isFirst}/>
+        <MachineCheckpointSlot sessionId={sessionId} machineCode={machineCode} checkpoint="start" label="Đầu ca" photos={photos} onUploaded={load} canUpload={machineDuty}/>
+        <MachineCheckpointSlot sessionId={sessionId} machineCode={machineCode} checkpoint="end" label="Cuối ca" photos={photos} onUploaded={load} canUpload={machineDuty}/>
       </div>
     </div>
     <div className="rounded-xl border border-white/10 bg-white/[.02] p-3">
       <div className="flex items-center gap-2 text-sm font-bold text-white"><Camera size={15} className="text-cyan-300"/>Ảnh chung buổi học</div>
-      <p className="mt-0.5 text-xs text-slate-400">Cả buổi chỉ cần 1 bạn bất kỳ nộp mỗi ảnh.</p>
+      <p className="mt-0.5 text-xs text-slate-400">Ảnh toàn xưởng: hệ thống chọn ngẫu nhiên 1 bạn trong buổi phụ trách. Ảnh thùng rác: bạn nào cũng nộp được.</p>
       <div className="mt-2 grid gap-2 sm:grid-cols-2">
-        <MachineCheckpointSlot sessionId={sessionId} machineCode="XUONG" checkpoint="end" label="Ảnh toàn xưởng" icon={Camera} photos={photos} onUploaded={load}/>
+        <MachineCheckpointSlot sessionId={sessionId} machineCode="XUONG" checkpoint="end" label="Ảnh toàn xưởng" icon={Camera} photos={photos} onUploaded={load} canUpload={workshopDuty} duty={workshopDuty}/>
         <MachineCheckpointSlot sessionId={sessionId} machineCode="RAC" checkpoint="end" label="Ảnh thùng rác" icon={Trash2} photos={photos} onUploaded={load}/>
       </div>
     </div>
   </div>;
 }
 
-function MachineCheckpointSlot({sessionId,machineCode,checkpoint,label,icon:Icon=Camera,photos,onUploaded,canUpload=true}:{sessionId:number;machineCode:string;checkpoint:MachineCheckpoint;label:string;icon?:typeof Camera;photos:AttendanceMachinePhoto[];onUploaded:()=>void;canUpload?:boolean}){
+function MachineCheckpointSlot({sessionId,machineCode,checkpoint,label,icon:Icon=Camera,photos,onUploaded,canUpload=true,duty=false}:{sessionId:number;machineCode:string;checkpoint:MachineCheckpoint;label:string;icon?:typeof Camera;photos:AttendanceMachinePhoto[];onUploaded:()=>void;canUpload?:boolean;duty?:boolean}){
   const[uploading,setUploading]=useState(false);
   const[error,setError]=useState("");
   const[previewUrl,setPreviewUrl]=useState("");
@@ -79,7 +83,7 @@ function MachineCheckpointSlot({sessionId,machineCode,checkpoint,label,icon:Icon
 
   return <div className="rounded-lg border border-white/10 bg-[#080d1d] p-2.5">
     <div className="flex items-center justify-between gap-2">
-      <span className="flex items-center gap-1.5 text-xs font-bold text-white"><Icon size={13}/>{label}</span>
+      <span className="flex items-center gap-1.5 text-xs font-bold text-white"><Icon size={13}/>{label}{duty&&<DutyBadge/>}</span>
       {photo?<span className="flex items-center gap-1 text-[10px] font-bold text-emerald-300"><Check size={12}/>Đã nộp</span>:<span className="text-[10px] text-slate-500">Chưa nộp</span>}
     </div>
     {photo?<div className="mt-1.5 flex items-center justify-between gap-2 text-[10px] text-slate-500"><span className="truncate">{photo.profiles?.full_name??"Bạn học"} · {new Date(photo.created_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"})}</span><button type="button" onClick={viewPhoto} className="shrink-0 font-bold text-cyan-300">Xem</button></div>
