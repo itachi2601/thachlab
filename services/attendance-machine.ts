@@ -1,10 +1,38 @@
 import { getSupabase } from "@/services/supabase";
 import { compressImageFile } from "@/services/image-compress";
 
-export const TURN_MACHINE_CODES = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"] as const;
-export const MILL_MACHINE_CODES = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"] as const;
 export type MachineCheckpoint = "start" | "end";
 export type EquipmentStatus = "normal" | "maintenance" | "broken";
+export type MachineType = "cnc_turn" | "cnc_mill" | "manual_turn" | "manual_mill";
+
+export const MACHINE_TYPE_LABELS: Record<MachineType, string> = {
+  cnc_turn: "Máy tiện CNC",
+  cnc_mill: "Máy phay CNC",
+  manual_turn: "Máy tiện truyền thống",
+  manual_mill: "Máy phay truyền thống",
+};
+const MACHINE_TYPE_ORDER: MachineType[] = ["cnc_turn", "cnc_mill", "manual_turn", "manual_mill"];
+
+export interface Machine {
+  code: string;
+  label: string;
+  machine_type: MachineType;
+  is_active: boolean;
+}
+
+export async function fetchMachines() {
+  const { data, error } = await getSupabase().from("machines")
+    .select("code, label, machine_type, is_active")
+    .eq("is_active", true).order("machine_type").order("code");
+  if (error) throw error;
+  return (data ?? []) as Machine[];
+}
+
+export function groupMachinesByType(machines: Machine[]) {
+  return MACHINE_TYPE_ORDER
+    .map((type) => ({ type, label: MACHINE_TYPE_LABELS[type], machines: machines.filter((m) => m.machine_type === type) }))
+    .filter((group) => group.machines.length > 0);
+}
 
 const BUCKET = "attendance-machine-photos";
 
