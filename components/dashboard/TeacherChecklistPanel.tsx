@@ -8,17 +8,20 @@ import {
   fetchChecklistAttempts,
   fetchChecklistSessions,
   type ChecklistAttempt,
+  type ChecklistLessonId,
   type ChecklistSession,
 } from "@/services/cnc-checklist";
 
 type Student = { id: string; name: string; className: string };
-const machines: { id: "lesson-4-turn" | "lesson-4-mill"; label: string }[] = [
-  { id: "lesson-4-turn", label: "Máy tiện" },
-  { id: "lesson-4-mill", label: "Máy phay" },
+const machines: { id: ChecklistLessonId; label: string }[] = [
+  { id: "lesson-4-turn", label: "Cài đặt dao – máy tiện" },
+  { id: "lesson-4-mill", label: "Cài đặt dao – máy phay" },
+  { id: "lesson-5", label: "Gia công tiện" },
+  { id: "lesson-6", label: "Gia công phay" },
 ];
 
 export default function TeacherChecklistPanel({ courseId, students }: { courseId: number; students: Student[] }) {
-  const [lessonId, setLessonId] = useState<"lesson-4-turn" | "lesson-4-mill">("lesson-4-turn");
+  const [lessonId, setLessonId] = useState<ChecklistLessonId>("lesson-4-turn");
   const [sessions, setSessions] = useState<ChecklistSession[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [attempts, setAttempts] = useState<ChecklistAttempt[]>([]);
