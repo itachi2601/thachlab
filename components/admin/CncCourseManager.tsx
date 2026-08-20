@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Check, Copy, Plus, UserRoundCheck, Users, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { createCncCourse, fetchCncCourses, fetchCourseEnrollments, reviewEnrollment, type CourseOffering, type EnrollmentMode, type EnrollmentRow } from "@/services/course-enrollments";
+import { SUBJECTS } from "@/services/subjects";
 
 function schoolYear() { const now = new Date(); const start = now.getMonth() >= 7 ? now.getFullYear() : now.getFullYear() - 1; return `${start}-${start + 1}`; }
 function errorMessage(error: unknown, fallback: string) {
@@ -16,11 +17,6 @@ const DEMO_STUDENTS = [
   { id: "demo-nguyen-minh-anh", full_name: "Nguyễn Minh Anh (học sinh mẫu)", class_name: "CĐ CK 25A", status: "active" as const },
   { id: "demo-tran-quoc-bao", full_name: "Trần Quốc Bảo (học sinh mẫu)", class_name: "CĐ CK 25A", status: "pending" as const },
 ];
-
-const SUBJECTS = [
-  { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC" },
-  { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP" },
-] as const;
 
 export default function CncCourseManager() {
   const toast = useToast();
