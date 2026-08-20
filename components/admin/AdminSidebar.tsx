@@ -19,6 +19,7 @@ const SECTIONS = [
     items: [
       { href: "/quan-tri/khoa-hoc", label: "Khóa học theo môn" },
       { href: "/quan-tri/lop-hoc", label: "Lớp học" },
+      { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy" },
       { href: "/quan-tri/thi-truc-tiep", label: "Thi trực tiếp CNC" },
       { href: "/quan-tri/tin-nhan", label: "Tin nhắn" },
     ],

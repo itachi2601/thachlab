@@ -2,27 +2,42 @@ import { getSupabase } from "@/services/supabase";
 import { compressImageFile } from "@/services/image-compress";
 
 export type MachineCheckpoint = "start" | "end";
-export type MachineType = "cnc_turn" | "cnc_mill" | "manual_turn" | "manual_mill";
+export type MachineType = "cnc_turn" | "cnc_mill" | "manual_turn" | "manual_mill" | "auxiliary";
+export type MachineStatus = "ok" | "broken";
 
 export const MACHINE_TYPE_LABELS: Record<MachineType, string> = {
   cnc_turn: "Máy tiện CNC",
   cnc_mill: "Máy phay CNC",
   manual_turn: "Máy tiện truyền thống",
   manual_mill: "Máy phay truyền thống",
+  auxiliary: "Thiết bị khác",
 };
-const MACHINE_TYPE_ORDER: MachineType[] = ["cnc_turn", "cnc_mill", "manual_turn", "manual_mill"];
+const MACHINE_TYPE_ORDER: MachineType[] = ["cnc_turn", "cnc_mill", "manual_turn", "manual_mill", "auxiliary"];
 
 export interface Machine {
   code: string;
   label: string;
   machine_type: MachineType;
+  workshop: string;
+  status: MachineStatus;
+  note: string;
   is_active: boolean;
 }
 
+const MACHINE_FIELDS = "code, label, machine_type, workshop, status, note, is_active";
+
 export async function fetchMachines() {
   const { data, error } = await getSupabase().from("machines")
-    .select("code, label, machine_type, is_active")
+    .select(MACHINE_FIELDS)
     .eq("is_active", true).order("machine_type").order("code");
+  if (error) throw error;
+  return (data ?? []) as Machine[];
+}
+
+export async function fetchAllMachines() {
+  const { data, error } = await getSupabase().from("machines")
+    .select(MACHINE_FIELDS)
+    .order("workshop").order("machine_type").order("code");
   if (error) throw error;
   return (data ?? []) as Machine[];
 }
@@ -31,6 +46,11 @@ export function groupMachinesByType(machines: Machine[]) {
   return MACHINE_TYPE_ORDER
     .map((type) => ({ type, label: MACHINE_TYPE_LABELS[type], machines: machines.filter((m) => m.machine_type === type) }))
     .filter((group) => group.machines.length > 0);
+}
+
+export function groupMachinesByWorkshop(machines: Machine[]) {
+  const workshops = [...new Set(machines.map((m) => m.workshop))].sort();
+  return workshops.map((workshop) => ({ workshop, machines: machines.filter((m) => m.workshop === workshop) }));
 }
 
 const BUCKET = "attendance-machine-photos";
