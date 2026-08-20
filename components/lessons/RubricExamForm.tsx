@@ -22,11 +22,12 @@ export interface RubricExamFormProps {
   readOnly?: boolean;
   referenceLevels?: Record<string, RubricLevel | undefined>;
   referenceLabel?: string;
+  criterionNotes?: Record<string, string>;
 }
 
 export default function RubricExamForm({
   rubric, levels, onLevelChange, zeroToleranceConfirmed, onZeroToleranceChange,
-  notes, onNotesChange, readOnly, referenceLevels, referenceLabel,
+  notes, onNotesChange, readOnly, referenceLevels, referenceLabel, criterionNotes,
 }: RubricExamFormProps) {
   const result = gradeRubricExam(rubric, levels, zeroToleranceConfirmed);
 
@@ -54,6 +55,9 @@ export default function RubricExamForm({
             </div>
             {refLevel && (
               <p className="cnc-rubric-reference">{referenceLabel ?? "Tham khảo"}: <b>{refLevel} — {RUBRIC_LEVEL_LABEL[refLevel]}</b></p>
+            )}
+            {criterionNotes?.[criterion.id] && (
+              <p className="cnc-rubric-reference">{criterionNotes[criterion.id]}</p>
             )}
             <div className="cnc-rubric-levels">
               {RUBRIC_LEVELS.map((level) => {

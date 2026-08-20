@@ -494,7 +494,11 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
         return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => setCompleted(current=>({...current,[lesson.id]:true}))} passed={passedAssessments} attempts={assessmentAttempts} />;
       }
       if (lesson.id === "lesson-5" || lesson.id === "lesson-6") {
-        return <DrawingSubmissionTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} onApproved={markCompleted} />;
+        const rubricMachine = lesson.id === "lesson-5" ? "tien" : "phay";
+        return <>
+          <SectionHeading icon={FileQuestion} kicker="MỤC 04" title="Thi thực hành tổng hợp" description="Tự đánh giá theo rubric mà giảng viên sẽ dùng để chấm chính thức: lập trình, mô phỏng, cài đặt dao/phôi và gia công." />
+          <RubricSelfAssessment key={lesson.id} machine={rubricMachine} courseId={courseId} />
+        </>;
       }
       if (lesson.id === "lesson-2" || lesson.id === "lesson-3") {
         return <ProgrammingTestSuite key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
@@ -510,13 +514,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     }
     if (isMachiningChecklist) {
       const machine = lesson.id === "lesson-5" ? "tiện" : "phay";
-      const rubricMachine = lesson.id === "lesson-5" ? "tien" : "phay";
-      const enabled = viewerProfile?.role === "admin" || passedAssessments.has(`${lesson.id}:final`);
-      return <>
-        <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled={enabled} lockedMessage={`Sinh viên cần được giảng viên duyệt bản vẽ bài tập tổng hợp ở mục Kiểm tra trước khi mở checklist kiểm tra thực hành gia công ${machine}.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />
-        <SectionHeading icon={ClipboardCheck} kicker="MỤC 05" title="Tự đánh giá thi thực hành tổng hợp" description="Điền thử rubric chấm thi (lập trình, mô phỏng, cài đặt, gia công) mà giảng viên sẽ dùng để chấm chính thức." />
-        <RubricSelfAssessment machine={rubricMachine} courseId={courseId} />
-      </>;
+      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled lockedMessage="" courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
     }
     return <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
   };

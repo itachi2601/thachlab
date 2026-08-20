@@ -11,6 +11,7 @@ import {
   type RubricExamAttempt,
   type RubricExamMachine,
 } from "@/services/cnc-rubric-exam";
+import { fetchCncLearningRecords } from "@/services/cnc-learning-records";
 
 type Student = { id: string; name: string; className: string };
 const machines: { id: RubricExamMachine; label: string }[] = [
@@ -25,6 +26,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
   const [zeroTolerance, setZeroTolerance] = useState<Record<number, boolean>>({});
   const [notes, setNotes] = useState("");
   const [selfAttempt, setSelfAttempt] = useState<RubricExamAttempt | null>(null);
+  const [checklistNote, setChecklistNote] = useState("");
   const [courseAttempts, setCourseAttempts] = useState<RubricExamAttempt[]>([]);
   const [busy, setBusy] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -43,6 +45,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
     setZeroTolerance({});
     setNotes("");
     setSelfAttempt(null);
+    setChecklistNote("");
     setSaved(false);
     setError("");
   }, []);
@@ -52,8 +55,12 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
     resetForm();
     if (!id) return;
     setLoading(true);
-    fetchRubricExamAttemptsForStudent(courseId, id, machine)
-      .then((rows) => {
+    const lessonId = machine === "tien" ? "lesson-5" : "lesson-6";
+    Promise.all([
+      fetchRubricExamAttemptsForStudent(courseId, id, machine),
+      fetchCncLearningRecords(courseId, id),
+    ])
+      .then(([rows, records]) => {
         const self = rows.find((row) => row.role === "self") ?? null;
         const teacher = rows.find((row) => row.role === "teacher") ?? null;
         setSelfAttempt(self);
@@ -62,6 +69,8 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
           setZeroTolerance(teacher.zero_tolerance_confirmed);
           setNotes(teacher.notes);
         }
+        const checklistRecord = records.find((row) => row.lesson_id === lessonId && row.assessment_id === "checklist");
+        setChecklistNote(checklistRecord ? `Điểm checklist chấm chéo gia công: ${checklistRecord.best_score ?? 0}/10` : "Chưa có điểm checklist chấm chéo gia công.");
       })
       .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được bài thi của học sinh."))
       .finally(() => setLoading(false));
@@ -128,6 +137,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
         onNotesChange={(value) => { setNotes(value); setSaved(false); }}
         referenceLevels={selfAttempt?.item_levels}
         referenceLabel="SV tự chọn"
+        criterionNotes={checklistNote ? { "cai-dat": checklistNote } : undefined}
       />
       {error && <p className="cnc-checklist-error">{error}</p>}
       <button type="button" disabled={busy || !allLevelsChosen} onClick={submit} className="cnc-submit">
