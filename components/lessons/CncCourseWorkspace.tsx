@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
+import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
 import {
   CNC_COURSE_ITEMS,
   CNC_LESSON_1_QUIZ,
@@ -509,8 +510,13 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     }
     if (isMachiningChecklist) {
       const machine = lesson.id === "lesson-5" ? "tiện" : "phay";
+      const rubricMachine = lesson.id === "lesson-5" ? "tien" : "phay";
       const enabled = viewerProfile?.role === "admin" || passedAssessments.has(`${lesson.id}:final`);
-      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled={enabled} lockedMessage={`Sinh viên cần được giảng viên duyệt bản vẽ bài tập tổng hợp ở mục Kiểm tra trước khi mở checklist kiểm tra thực hành gia công ${machine}.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
+      return <>
+        <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled={enabled} lockedMessage={`Sinh viên cần được giảng viên duyệt bản vẽ bài tập tổng hợp ở mục Kiểm tra trước khi mở checklist kiểm tra thực hành gia công ${machine}.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />
+        <SectionHeading icon={ClipboardCheck} kicker="MỤC 05" title="Tự đánh giá thi thực hành tổng hợp" description="Điền thử rubric chấm thi (lập trình, mô phỏng, cài đặt, gia công) mà giảng viên sẽ dùng để chấm chính thức." />
+        <RubricSelfAssessment machine={rubricMachine} courseId={courseId} />
+      </>;
     }
     return <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
   };
