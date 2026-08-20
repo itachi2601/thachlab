@@ -786,3 +786,31 @@ body {
     opacity: 1 !important;
   }
 }
+
+/* Rubric thi thực hành tổng hợp (lập trình / mô phỏng / cài đặt / gia công) */
+.cnc-rubric-form { display: grid; gap: 16px; margin-top: 14px; }
+.cnc-rubric-group { overflow: hidden; border: 1px solid #dfe4e7; border-radius: 10px; background: #fff; }
+.cnc-rubric-group > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #263f68; padding: 11px 13px; color: #fff; }
+.cnc-rubric-group > header h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; }
+.cnc-rubric-group > header > b { flex: 0 0 auto; font-size: 9px; }
+.cnc-rubric-gate-warning { display: flex; align-items: center; gap: 8px; margin: 10px 13px 0; border-radius: 7px; background: #fff8e8; padding: 8px 10px; color: #b87800; font-size: 11px; font-weight: 700; }
+.cnc-rubric-criterion { border-top: 1px solid #e4e8eb; padding: 13px; }
+.cnc-rubric-criterion-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 12px; font-weight: 700; color: #1a2733; }
+.cnc-rubric-criterion-head span { flex: 0 0 auto; color: #8b969e; font-weight: 800; }
+.cnc-rubric-reference { margin-top: 6px; color: #6b7a86; font-size: 10px; font-style: italic; }
+.cnc-rubric-levels { display: grid; gap: 8px; margin-top: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.cnc-rubric-level { position: relative; display: block; border: 1px solid #dfe4e7; border-radius: 8px; padding: 10px 11px; cursor: pointer; transition: .15s; }
+.cnc-rubric-level:hover { background: #fafbfc; }
+.cnc-rubric-level.selected { border-color: #24945d; background: #f0faf4; }
+.cnc-rubric-level.readonly { cursor: default; }
+.cnc-rubric-level input { position: absolute; opacity: 0; }
+.cnc-rubric-level-head { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.cnc-rubric-level-head b { display: inline-flex; width: 20px; height: 20px; align-items: center; justify-content: center; border-radius: 5px; background: #edf0f2; font-size: 10px; font-weight: 800; }
+.cnc-rubric-level.selected .cnc-rubric-level-head b { background: #24945d; color: #fff; }
+.cnc-rubric-level-head small { font-size: 9px; font-weight: 700; color: #6b7a86; text-transform: uppercase; }
+.cnc-rubric-level p { margin: 0; color: #52616c; font-size: 10px; line-height: 1.55; }
+.cnc-rubric-notes { display: grid; gap: 6px; margin-top: 4px; }
+.cnc-rubric-notes span { font-size: 11px; font-weight: 700; color: #52616c; }
+.cnc-rubric-notes textarea { border: 1px solid #dfe4e7; border-radius: 8px; padding: 10px 12px; font-family: inherit; font-size: 12px; resize: vertical; }
+.cnc-rubric-notes textarea:disabled { background: #f6f8f9; color: #8b969e; }
+.cnc-rubric-self { margin-top: 10px; }

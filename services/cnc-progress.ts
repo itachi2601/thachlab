@@ -6,8 +6,8 @@ export const CNC_ASSESSMENT_PLAN: Record<string, readonly string[]> = {
   "lesson-3": ["exercise-1", "exercise-2", "exercise-3", "exercise-4", "exercise-5"],
   "lesson-4-turn": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
   "lesson-4-mill": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
-  "lesson-5": ["final", "checklist-practice", "checklist"],
-  "lesson-6": ["final", "checklist-practice", "checklist"],
+  "lesson-5": ["final", "checklist-practice", "checklist", "rubric-exam"],
+  "lesson-6": ["final", "checklist-practice", "checklist", "rubric-exam"],
 };
 
 export const CNC_TOTAL_ASSESSMENTS = Object.values(CNC_ASSESSMENT_PLAN).reduce((sum, items) => sum + items.length, 0);
