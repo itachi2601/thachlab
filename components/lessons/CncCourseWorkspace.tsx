@@ -229,6 +229,140 @@ export type MillingChecklistSection = {
   items: MillingChecklistItem[];
 };
 
+export const turningMachiningChecklistSections: MillingChecklistSection[] = [
+  {
+    id: "turn-machining-prep",
+    title: "I. Chuẩn bị và an toàn trước khi gia công",
+    maxScore: 1.5,
+    items: [
+      { id: "M1", label: "Đọc kỹ bản vẽ chi tiết, xác định đúng trình tự nguyên công (tiện thô → tiện tinh → cắt rãnh/ren nếu có).", score: 0.5, note: "Không xác định được trình tự nguyên công: không đạt." },
+      { id: "M2", label: "Chuẩn bị đủ phôi, dao, dụng cụ đo (thước cặp/panme) theo đúng quy trình công nghệ đã lập.", score: 0.5, note: "Thiếu dao hoặc dụng cụ đo cần thiết: không đạt." },
+      { id: "M3", label: "Mặc đầy đủ bảo hộ lao động, không đeo găng tay khi máy đang chạy, đóng cửa an toàn trước khi vận hành tự động.", score: 0.5, note: "Vi phạm an toàn cá nhân cơ bản: lỗi loại trực tiếp.", critical: true },
+    ],
+  },
+  {
+    id: "turn-machining-setup",
+    title: "II. Gá đặt phôi, dao và cài đặt gốc tọa độ",
+    maxScore: 2,
+    items: [
+      { id: "M4", label: "Gá phôi đúng kỹ thuật, đủ chiều dài kẹp, kiểm tra độ đảo trước khi cho trục chính quay.", score: 0.5, note: "Phôi lỏng hoặc lệch tâm: lỗi an toàn nặng.", critical: true },
+      { id: "M5", label: "Gá dao đúng thứ tự trên đài dao, đủ cứng vững, không vướng hành trình khi gia công.", score: 0.5, note: "Dao gá lỏng hoặc sai thứ tự: không đạt." },
+      { id: "M6", label: "Cài đặt lại gốc phôi G54 và bù dao (Geometry) đúng theo quy trình, không dùng lại offset của bài trước.", score: 0.5, note: "Dùng lại offset cũ chưa kiểm tra: lỗi nghiêm trọng.", critical: true },
+      { id: "M7", label: "Nhập đúng chương trình NC đã được giảng viên duyệt; không tự ý sửa chương trình khi chưa mô phỏng lại.", score: 0.5, note: "Sửa chương trình mà không mô phỏng lại: không đạt." },
+    ],
+  },
+  {
+    id: "turn-machining-run",
+    title: "III. Chạy thử và gia công",
+    maxScore: 2.5,
+    items: [
+      { id: "M8", label: "Chạy mô phỏng, Dry Run hoặc Single Block kết hợp Feed Override thấp trước khi cắt thật toàn bộ chương trình.", score: 1, note: "Chạy thẳng AUTO 100% khi chưa kiểm tra: lỗi loại trực tiếp.", critical: true },
+      { id: "M9", label: "Theo dõi sát quá trình gia công, sẵn sàng Feed Hold hoặc dừng khẩn khi có rung động, tiếng kêu hay phoi bất thường.", score: 1, note: "Rời vị trí máy hoặc không quan sát khi máy đang chạy: không đạt." },
+      { id: "M10", label: "Đổi dao đúng trình tự (tiện thô → tiện tinh…), dừng hẳn trục chính trước khi thao tác tay vào vùng dao.", score: 0.5, note: "Thao tác tay khi trục chính còn quay: lỗi an toàn nặng." },
+    ],
+  },
+  {
+    id: "turn-machining-inspect",
+    title: "IV. Đo kiểm sản phẩm sau gia công",
+    maxScore: 2.5,
+    items: [
+      { id: "M11", label: "Dừng hẳn máy, tháo phôi an toàn, dùng thước cặp/panme đo đúng các kích thước chính theo bản vẽ.", score: 1, note: "Đo khi trục chính chưa dừng hẳn: lỗi an toàn nặng." },
+      { id: "M12", label: "Các kích thước đo được nằm trong dung sai cho phép theo bản vẽ hoặc theo yêu cầu của giảng viên.", score: 1, note: "Sai kích thước ngoài dung sai: không đạt." },
+      { id: "M13", label: "Bề mặt gia công không còn vết dao rõ, không bavia lớn, độ bóng đạt yêu cầu.", score: 0.5, note: "Bề mặt còn bavia lớn hoặc vết dao rõ: không đạt." },
+    ],
+  },
+  {
+    id: "turn-machining-finish",
+    title: "V. Kết thúc ca và vệ sinh 5S",
+    maxScore: 1.5,
+    items: [
+      { id: "M14", label: "Đưa bàn dao về vị trí an toàn, tắt trục chính, tắt dung dịch làm mát đúng trình tự trước khi rời máy.", score: 0.5, note: "Bỏ máy ở trạng thái chưa an toàn: không đạt." },
+      { id: "M15", label: "Vệ sinh phoi, lau máy, sắp xếp dao và dụng cụ đúng nơi quy định theo 5S.", score: 0.5, note: "Không vệ sinh khu vực làm việc: không đạt." },
+      { id: "M16", label: "Ghi nhận kết quả đo, lỗi (nếu có) và nguyên nhân vào phiếu thực hành hoặc nộp minh chứng cho giảng viên.", score: 0.5, note: "Không ghi nhận kết quả đo kiểm: không đạt." },
+    ],
+  },
+];
+
+export const turningMachiningZeroTolerance = [
+  "Không xử lý ngay (Feed Hold/dừng khẩn) khi xảy ra va chạm dao–phôi hoặc phôi có nguy cơ văng ra khi đang quay.",
+  "Chạy chương trình ở chế độ AUTO tốc độ 100% khi chưa mô phỏng hoặc chưa chạy Single Block kiểm tra trước.",
+  "Mở cửa an toàn hoặc đưa tay vào vùng mâm cặp/dao khi trục chính còn đang quay.",
+  "Tự công bố sản phẩm đạt yêu cầu mà không đo kiểm bằng dụng cụ đo thực tế.",
+] as const;
+
+export const millingMachiningChecklistSections: MillingChecklistSection[] = [
+  {
+    id: "mill-machining-prep",
+    title: "I. Chuẩn bị và an toàn trước khi gia công",
+    maxScore: 1.5,
+    items: [
+      { id: "P1", label: "Đọc kỹ bản vẽ chi tiết, xác định đúng trình tự nguyên công (phay thô → phay tinh → khoan/tarô nếu có).", score: 0.5, note: "Không xác định được trình tự nguyên công: không đạt." },
+      { id: "P2", label: "Chuẩn bị đủ dao, ê-tô, phôi và dụng cụ đo theo đúng quy trình công nghệ đã lập.", score: 0.5, note: "Thiếu dao hoặc dụng cụ đo cần thiết: không đạt." },
+      { id: "P3", label: "Mặc đầy đủ bảo hộ lao động, không đeo găng tay khi máy đang chạy, đóng cửa an toàn trước khi vận hành tự động.", score: 0.5, note: "Vi phạm an toàn cá nhân cơ bản: lỗi loại trực tiếp.", critical: true },
+    ],
+  },
+  {
+    id: "mill-machining-setup",
+    title: "II. Gá đặt phôi, dao và cài đặt gốc tọa độ",
+    maxScore: 2,
+    items: [
+      { id: "P4", label: "Gá phôi trên ê-tô chắc chắn, kiểm tra độ song song với bàn máy bằng đồng hồ so nếu cần.", score: 0.5, note: "Phôi lỏng hoặc lệch mặt phẳng: lỗi an toàn nặng.", critical: true },
+      { id: "P5", label: "Gá dao đúng, đủ chiều dài kẹp, kiểm tra độ đảo (runout) trước khi gia công.", score: 0.5, note: "Dao gá lỏng hoặc lệch tâm: không đạt." },
+      { id: "P6", label: "Cài đặt lại G54 và bù chiều dài/bán kính dao (H/D) đúng cho từng dao, không dùng lại offset của bài trước.", score: 0.5, note: "Dùng lại offset cũ chưa kiểm tra: lỗi nghiêm trọng.", critical: true },
+      { id: "P7", label: "Nhập đúng chương trình NC đã được giảng viên duyệt; không tự ý sửa chương trình khi chưa mô phỏng lại.", score: 0.5, note: "Sửa chương trình mà không mô phỏng lại: không đạt." },
+    ],
+  },
+  {
+    id: "mill-machining-run",
+    title: "III. Chạy thử và gia công",
+    maxScore: 2.5,
+    items: [
+      { id: "P8", label: "Chạy mô phỏng, Dry Run hoặc Single Block kết hợp Feed Override thấp trước khi cắt thật toàn bộ chương trình.", score: 1, note: "Chạy thẳng AUTO 100% khi chưa kiểm tra: lỗi loại trực tiếp.", critical: true },
+      { id: "P9", label: "Theo dõi sát quá trình gia công, xử lý kịp thời khi rung động, tiếng kêu bất thường hoặc gãy dao.", score: 1, note: "Rời vị trí máy hoặc không quan sát khi máy đang chạy: không đạt." },
+      { id: "P10", label: "Đổi dao đúng trình tự, kiểm tra lại offset (H/D) mỗi khi thay dao mới.", score: 0.5, note: "Đổi dao không kiểm tra lại offset: không đạt." },
+    ],
+  },
+  {
+    id: "mill-machining-inspect",
+    title: "IV. Đo kiểm sản phẩm sau gia công",
+    maxScore: 2.5,
+    items: [
+      { id: "P11", label: "Dừng hẳn máy, tháo phôi an toàn, dùng thước cặp/panme đo đúng các kích thước biên dạng/lỗ/rãnh chính theo bản vẽ.", score: 1, note: "Đo khi trục chính chưa dừng hẳn: lỗi an toàn nặng." },
+      { id: "P12", label: "Các kích thước đo được nằm trong dung sai cho phép theo bản vẽ hoặc theo yêu cầu của giảng viên.", score: 1, note: "Sai kích thước ngoài dung sai: không đạt." },
+      { id: "P13", label: "Bề mặt gia công phẳng, không bavia lớn, các góc/lỗ đúng vị trí theo bản vẽ.", score: 0.5, note: "Bề mặt còn bavia lớn hoặc sai vị trí: không đạt." },
+    ],
+  },
+  {
+    id: "mill-machining-finish",
+    title: "V. Kết thúc ca và vệ sinh 5S",
+    maxScore: 1.5,
+    items: [
+      { id: "P14", label: "Đưa bàn máy/dao về vị trí an toàn, dừng trục chính, tắt dung dịch làm mát đúng trình tự trước khi rời máy.", score: 0.5, note: "Bỏ máy ở trạng thái chưa an toàn: không đạt." },
+      { id: "P15", label: "Vệ sinh phoi, lau máy, sắp xếp dao và dụng cụ đúng nơi quy định theo 5S.", score: 0.5, note: "Không vệ sinh khu vực làm việc: không đạt." },
+      { id: "P16", label: "Ghi nhận kết quả đo, lỗi (nếu có) và nguyên nhân vào phiếu thực hành hoặc nộp minh chứng cho giảng viên.", score: 0.5, note: "Không ghi nhận kết quả đo kiểm: không đạt." },
+    ],
+  },
+];
+
+export const millingMachiningZeroTolerance = [
+  "Không xử lý ngay (Feed Hold/dừng khẩn) khi xảy ra va chạm dao–phôi hoặc gãy dao văng mảnh.",
+  "Chạy chương trình ở chế độ AUTO tốc độ 100% khi chưa mô phỏng hoặc chưa chạy Single Block kiểm tra trước.",
+  "Mở cửa an toàn hoặc đưa tay vào vùng dao khi trục chính còn đang quay.",
+  "Tự công bố sản phẩm đạt yêu cầu mà không đo kiểm bằng dụng cụ đo thực tế.",
+] as const;
+
+export type PracticalChecklistLessonId = "lesson-4-turn" | "lesson-4-mill" | "lesson-5" | "lesson-6";
+
+export const cncChecklistConfig: Record<
+  PracticalChecklistLessonId,
+  { sections: MillingChecklistSection[]; zeroTolerance: readonly string[]; title: string; description: string }
+> = {
+  "lesson-4-turn": { sections: turningChecklistSections, zeroTolerance: turningZeroTolerance, title: "Check list kỹ năng thực hành", description: "Gá phôi, cài đặt offset phôi và dao trên máy tiện CNC." },
+  "lesson-4-mill": { sections: millingChecklistSections, zeroTolerance: millingZeroTolerance, title: "Check list kỹ năng thực hành", description: "Cài đặt dao, phôi trên máy phay CNC và kiểm tra Test Offset." },
+  "lesson-5": { sections: turningMachiningChecklistSections, zeroTolerance: turningMachiningZeroTolerance, title: "Check list kiểm tra thực hành gia công tiện", description: "An toàn, quy trình gia công và đo kiểm sản phẩm trên bài tập tổng hợp tiện CNC." },
+  "lesson-6": { sections: millingMachiningChecklistSections, zeroTolerance: millingMachiningZeroTolerance, title: "Check list kiểm tra thực hành gia công phay", description: "An toàn, quy trình gia công và đo kiểm sản phẩm trên bài tập tổng hợp phay CNC." },
+};
+
 export default function CncCourseWorkspace({ embedded = false, courseId }: { embedded?: boolean; courseId?: number }) {
   const { profile: viewerProfile, session } = useAuth();
   const [lessonId, setLessonId] = useState("lesson-1");
@@ -367,10 +501,18 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
       return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} onResult={(value,total,didPass)=>recordQuiz(lesson.id,"final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
     }
     const isOperationChecklist = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
-    const operationChecklistEnabled = viewerProfile?.role === "admin" || ["machine-operation", "tool-setup"].every((assessmentId) => passedAssessments.has(`${lesson.id}:${assessmentId}`));
-    return isOperationChecklist
-      ? <PracticalChecklistPanel machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled={operationChecklistEnabled} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />
-      : <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
+    const isMachiningChecklist = lesson.id === "lesson-5" || lesson.id === "lesson-6";
+    if (isOperationChecklist) {
+      const machine = lesson.id === "lesson-4-turn" ? "tiện" : "phay";
+      const enabled = viewerProfile?.role === "admin" || ["machine-operation", "tool-setup"].every((assessmentId) => passedAssessments.has(`${lesson.id}:${assessmentId}`));
+      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled={enabled} lockedMessage={`Sinh viên phải hoàn thành và đạt cả hai bài Kiểm tra vận hành máy và Cài đặt dao ${machine} để mở checklist thực hành.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
+    }
+    if (isMachiningChecklist) {
+      const machine = lesson.id === "lesson-5" ? "tiện" : "phay";
+      const enabled = viewerProfile?.role === "admin" || passedAssessments.has(`${lesson.id}:final`);
+      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled={enabled} lockedMessage={`Sinh viên cần được giảng viên duyệt bản vẽ bài tập tổng hợp ở mục Kiểm tra trước khi mở checklist kiểm tra thực hành gia công ${machine}.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
+    }
+    return <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
   };
 
   return (
@@ -451,7 +593,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
                           <div className="cnc-section-progress-ring"><strong>{completed[lesson.id] ? 5 : tabs.findIndex((itemTab) => itemTab.id === tab) + 1}<small>/5</small></strong></div>
                           <nav className="cnc-section-pills" aria-label="Đi nhanh đến phần bài học">
                             {tabs.map(({ id, label }, tabIndex) => {
-                              const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill") && id === "resources" ? "Check list" : label;
+                              const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill" || item.id === "lesson-5" || item.id === "lesson-6") && id === "resources" ? "Check list" : label;
                               return <button key={id} type="button" onClick={() => setTab(id)} className={`${id} ${tab === id ? "active" : ""}`}><i />{tabIndex + 1}. {displayLabel}</button>;
                             })}
                           </nav>
@@ -997,7 +1139,7 @@ function SafetyGate({ quiz, answers, setAnswers, submitted, setSubmitted, score,
   </>;
 }
 
-function PracticalChecklistPanel({ machine, lessonId, enabled, courseId, onResult }: { machine: "tiện" | "phay"; lessonId: "lesson-4-turn" | "lesson-4-mill"; enabled: boolean; courseId?: number; onResult?: (assessmentId: string, score: number, total: number, passed: boolean) => void }) {
+function PracticalChecklistPanel({ machine, lessonId, enabled, lockedMessage, courseId, onResult }: { machine: "tiện" | "phay"; lessonId: PracticalChecklistLessonId; enabled: boolean; lockedMessage: string; courseId?: number; onResult?: (assessmentId: string, score: number, total: number, passed: boolean) => void }) {
   const [mode, setMode] = useState<"practice" | "cross-check">("practice");
   return <>
     <div className="cnc-checklist-mode-toggle">
@@ -1005,18 +1147,18 @@ function PracticalChecklistPanel({ machine, lessonId, enabled, courseId, onResul
       <button type="button" className={mode === "cross-check" ? "active" : ""} onClick={() => setMode("cross-check")}><Users size={15} /> Chấm chéo (thi)</button>
     </div>
     {mode === "practice"
-      ? <><p className="cnc-checklist-hint">Chế độ tự luyện tập — tự đánh dấu để ôn lại quy trình, nộp để ghi nhận điểm và số lần làm vào Điểm &amp; tiến độ.</p><OperationChecklist machine={machine} enabled={enabled} onPassed={() => undefined} onResult={(score, total, didPass) => onResult?.("checklist-practice", score, total, didPass)} /></>
+      ? <><p className="cnc-checklist-hint">Chế độ tự luyện tập — tự đánh dấu để ôn lại quy trình, nộp để ghi nhận điểm và số lần làm vào Điểm &amp; tiến độ.</p><OperationChecklist lessonId={lessonId} machine={machine} enabled={enabled} lockedMessage={lockedMessage} onPassed={() => undefined} onResult={(score, total, didPass) => onResult?.("checklist-practice", score, total, didPass)} /></>
       : <CrossCheckChecklist machine={machine} lessonId={lessonId} courseId={courseId} />}
   </>;
 }
 
-function OperationChecklist({ machine, enabled, onPassed, onResult }: { machine: "tiện" | "phay"; enabled: boolean; onPassed: (lessonId: string) => void; onResult?: (score: number, total: number, passed: boolean) => void }) {
+function OperationChecklist({ lessonId, machine, enabled, lockedMessage, onPassed, onResult }: { lessonId: PracticalChecklistLessonId; machine: "tiện" | "phay"; enabled: boolean; lockedMessage: string; onPassed: (lessonId: string) => void; onResult?: (score: number, total: number, passed: boolean) => void }) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [zeroToleranceClear, setZeroToleranceClear] = useState<Record<number, boolean>>({});
   const [submittedScore, setSubmittedScore] = useState<number | null>(null);
-  const sections = machine === "tiện" ? turningChecklistSections : millingChecklistSections;
-  const zeroTolerance = machine === "tiện" ? turningZeroTolerance : millingZeroTolerance;
-  const lessonId = machine === "tiện" ? "lesson-4-turn" : "lesson-4-mill";
+  const config = cncChecklistConfig[lessonId];
+  const sections = config.sections;
+  const zeroTolerance = config.zeroTolerance;
   const items = sections.flatMap((section) => section.items);
   const score = items.reduce((total, item) => total + (checked[item.id] ? item.score : 0), 0);
   const criticalPassed = items.filter((item) => "critical" in item && item.critical).every((item) => checked[item.id]);
@@ -1034,8 +1176,8 @@ function OperationChecklist({ machine, enabled, onPassed, onResult }: { machine:
   }
 
   return <>
-    <SectionHeading icon={ClipboardCheck} kicker="MỤC 05" title="Check list kỹ năng thực hành" description={machine === "tiện" ? "Gá phôi, cài đặt offset phôi và dao trên máy tiện CNC." : "Cài đặt dao, phôi trên máy phay CNC và kiểm tra Test Offset."} />
-    {!enabled && <div className="cnc-checklist-locked"><LockKeyhole size={19} /><div><strong>Checklist chưa được mở</strong><p>Sinh viên phải hoàn thành và đạt cả hai bài Kiểm tra vận hành máy và Cài đặt dao {machine} để mở checklist thực hành.</p></div></div>}
+    <SectionHeading icon={ClipboardCheck} kicker="MỤC 05" title={config.title} description={config.description} />
+    {!enabled && <div className="cnc-checklist-locked"><LockKeyhole size={19} /><div><strong>Checklist chưa được mở</strong><p>{lockedMessage}</p></div></div>}
     <div className="cnc-checklist-rules">
       <span><ClipboardCheck size={17} /><b>Ngưỡng đạt: 8/10 điểm</b></span>
       <span><AlertTriangle size={17} /><b>Không vi phạm mốc chặn</b></span>
@@ -1069,7 +1211,7 @@ function OperationChecklist({ machine, enabled, onPassed, onResult }: { machine:
         <p>{!enabled ? "Checklist đang khóa." : score < 8 ? `Cần thêm ${(8 - score).toFixed(1)} điểm để đạt ngưỡng.` : !criticalPassed ? "Chưa đạt một hoặc nhiều bước an toàn trọng yếu." : !zeroTolerancePassed ? "Chưa xác nhận đầy đủ các mốc chặn Zero-tolerance." : "Đã đạt điểm và không vi phạm mốc chặn."}</p>
       </div>
     </div>
-    {passed && <div className="cnc-checklist-congratulations"><Check size={25} /><p>Chúc mừng bạn đã vượt qua checklist cài đặt dao, phôi trên máy {machine} CNC.</p></div>}
+    {passed && <div className="cnc-checklist-congratulations"><Check size={25} /><p>Chúc mừng bạn đã vượt qua {config.title.toLowerCase()} trên máy {machine} CNC.</p></div>}
     <button type="button" disabled={!enabled} onClick={submitAttempt} className="cnc-submit"><ClipboardCheck size={18} /> Nộp kết quả tự luyện</button>
     {submittedScore !== null && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đã ghi nhận lượt làm — ${submittedScore.toFixed(1)}/10 điểm, ĐẠT.` : `Đã ghi nhận lượt làm — ${submittedScore.toFixed(1)}/10 điểm, chưa đạt. Xem lịch sử số lần làm ở tab Điểm & tiến độ.`}</div>}
   </>;
