@@ -10,6 +10,7 @@ import {
   submitSelfRubricAssessment,
   type RubricExamAttempt,
 } from "@/services/cnc-rubric-exam";
+import { fetchCncLearningRecords } from "@/services/cnc-learning-records";
 
 export default function RubricSelfAssessment({ machine, courseId }: { machine: "tien" | "phay"; courseId?: number }) {
   const { session } = useAuth();
@@ -18,6 +19,7 @@ export default function RubricSelfAssessment({ machine, courseId }: { machine: "
   const [levels, setLevels] = useState<Record<string, RubricLevel | undefined>>({});
   const [zeroTolerance, setZeroTolerance] = useState<Record<number, boolean>>({});
   const [notes, setNotes] = useState("");
+  const [checklistNote, setChecklistNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [saved, setSaved] = useState(false);
@@ -35,7 +37,16 @@ export default function RubricSelfAssessment({ machine, courseId }: { machine: "
         }
       })
       .catch((cause) => { setAttempts([]); setError(cause instanceof Error ? cause.message : "Không tải được phiếu tự đánh giá."); });
-  }, [courseId, machine]);
+    if (session?.user.id) {
+      const lessonId = machine === "tien" ? "lesson-5" : "lesson-6";
+      fetchCncLearningRecords(courseId, session?.user.id)
+        .then((rows) => {
+          const record = rows.find((row) => row.lesson_id === lessonId && row.assessment_id === "checklist");
+          setChecklistNote(record ? `Điểm checklist chấm chéo gia công: ${record.best_score ?? 0}/10` : "Chưa có điểm checklist chấm chéo gia công.");
+        })
+        .catch(() => setChecklistNote(""));
+    }
+  }, [courseId, machine, session?.user.id]);
   useEffect(() => { load(); }, [load]);
 
   async function submit() {
@@ -82,6 +93,7 @@ export default function RubricSelfAssessment({ machine, courseId }: { machine: "
       onZeroToleranceChange={(index, confirmed) => { setZeroTolerance((current) => ({ ...current, [index]: confirmed })); setSaved(false); }}
       notes={notes}
       onNotesChange={(value) => { setNotes(value); setSaved(false); }}
+      criterionNotes={checklistNote ? { "cai-dat": checklistNote } : undefined}
     />
 
     {error && <p className="cnc-checklist-error">{error}</p>}
