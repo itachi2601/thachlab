@@ -3,10 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { AlertTriangle, Check, ClipboardCheck, Clock3, RefreshCw, UserRound } from "lucide-react";
 import {
-  turningChecklistSections,
-  millingChecklistSections,
-  turningZeroTolerance,
-  millingZeroTolerance,
+  cncChecklistConfig,
+  type PracticalChecklistLessonId,
 } from "@/components/lessons/CncCourseWorkspace";
 import {
   fetchChecklistSessions,
@@ -17,7 +15,7 @@ import {
   type Classmate,
 } from "@/services/cnc-checklist";
 
-export default function CrossCheckChecklist({ machine, lessonId, courseId }: { machine: "tiện" | "phay"; lessonId: "lesson-4-turn" | "lesson-4-mill"; courseId?: number }) {
+export default function CrossCheckChecklist({ machine, lessonId, courseId }: { machine: "tiện" | "phay"; lessonId: PracticalChecklistLessonId; courseId?: number }) {
   const [sessions, setSessions] = useState<ChecklistSession[] | null>(null);
   const [classmates, setClassmates] = useState<Classmate[]>([]);
   const [targetId, setTargetId] = useState("");
@@ -29,8 +27,9 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
   const [startedAt,setStartedAt]=useState("");
   const [now,setNow]=useState(Date.now());
 
-  const sections = machine === "tiện" ? turningChecklistSections : millingChecklistSections;
-  const zeroTolerance = machine === "tiện" ? turningZeroTolerance : millingZeroTolerance;
+  const config = cncChecklistConfig[lessonId];
+  const sections = config.sections;
+  const zeroTolerance = config.zeroTolerance;
   const items = sections.flatMap((section) => section.items);
   const score = items.reduce((total, item) => total + (checked[item.id] ? item.score : 0), 0);
   const criticalOk = items.filter((item) => item.critical).every((item) => checked[item.id]);

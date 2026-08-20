@@ -1,7 +1,9 @@
 import { getSupabase } from "@/services/supabase";
 
+export type ChecklistLessonId = "lesson-4-turn" | "lesson-4-mill" | "lesson-5" | "lesson-6";
+
 export interface ChecklistSession {
-  id: number; course_id: number; lesson_id: "lesson-4-turn" | "lesson-4-mill"; title: string;
+  id: number; course_id: number; lesson_id: ChecklistLessonId; title: string;
   starts_at: string; closes_at: string; code: string; status: "open" | "closed"; created_at: string;
 }
 
@@ -23,7 +25,7 @@ export async function fetchChecklistSessions(courseId: number, lessonId?: string
   return (data ?? []) as ChecklistSession[];
 }
 
-export async function createChecklistSession(input: { courseId: number; lessonId: "lesson-4-turn" | "lesson-4-mill"; title: string; startsAt: string; durationMinutes: number }) {
+export async function createChecklistSession(input: { courseId: number; lessonId: ChecklistLessonId; title: string; startsAt: string; durationMinutes: number }) {
   const supabase = getSupabase();
   const { data: auth } = await supabase.auth.getUser();
   const start = new Date(input.startsAt);
