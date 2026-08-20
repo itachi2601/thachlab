@@ -602,7 +602,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
 
                       <div className="cnc-learning-sections">
                         {tabs.map(({ id, label, description, icon: Icon }, tabIndex) => {
-                          const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill") && id === "resources" ? "Check list" : label;
+                          const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill" || item.id === "lesson-5" || item.id === "lesson-6") && id === "resources" ? "Check list" : label;
                           const isActive = tab === id;
                           return <section key={id} className={`cnc-learning-section ${id} ${isActive ? "active" : ""}`}>
                             <header>
