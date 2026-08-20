@@ -2,7 +2,6 @@ import { getSupabase } from "@/services/supabase";
 import { compressImageFile } from "@/services/image-compress";
 
 export type MachineCheckpoint = "start" | "end";
-export type EquipmentStatus = "normal" | "maintenance" | "broken";
 export type MachineType = "cnc_turn" | "cnc_mill" | "manual_turn" | "manual_mill";
 
 export const MACHINE_TYPE_LABELS: Record<MachineType, string> = {
@@ -45,12 +44,6 @@ export const FIVE_S_CRITERIA = [
 ] as const;
 export type FiveSKey = (typeof FIVE_S_CRITERIA)[number]["key"];
 
-export const EQUIPMENT_STATUS_META: Record<EquipmentStatus, { label: string; style: string }> = {
-  normal: { label: "Bình thường", style: "border-white/10 text-slate-300" },
-  maintenance: { label: "Cần bảo trì", style: "border-amber-400/30 bg-amber-500/10 text-amber-200" },
-  broken: { label: "Hỏng", style: "border-red-400/30 bg-red-500/10 text-red-200" },
-};
-
 export interface AttendanceMachinePhoto {
   id: number; session_id: number; machine_code: string; checkpoint: MachineCheckpoint;
   storage_path: string; note: string; uploaded_by: string | null; created_at: string;
@@ -60,7 +53,7 @@ export interface AttendanceMachinePhoto {
 export interface AttendanceMachineScore {
   session_id: number; machine_code: string;
   sang_loc: boolean; sap_xep: boolean; sach_se: boolean; san_soc: boolean; san_sang: boolean;
-  equipment_status: EquipmentStatus; note: string; updated_at: string;
+  note: string; updated_at: string;
 }
 
 export function fiveSScore(score?: AttendanceMachineScore) {
@@ -116,12 +109,12 @@ export async function createAttendanceMachinePhotoUrl(storagePath: string) {
 }
 
 export async function fetchAttendanceMachineScores(sessionId: number) {
-  const { data, error } = await getSupabase().from("attendance_machine_scores").select("session_id, machine_code, sang_loc, sap_xep, sach_se, san_soc, san_sang, equipment_status, note, updated_at").eq("session_id", sessionId);
+  const { data, error } = await getSupabase().from("attendance_machine_scores").select("session_id, machine_code, sang_loc, sap_xep, sach_se, san_soc, san_sang, note, updated_at").eq("session_id", sessionId);
   if (error) throw error;
   return (data ?? []) as AttendanceMachineScore[];
 }
 
-export async function updateAttendanceMachineScore(sessionId: number, machineCode: string, patch: Partial<Pick<AttendanceMachineScore, FiveSKey | "equipment_status" | "note">>) {
+export async function updateAttendanceMachineScore(sessionId: number, machineCode: string, patch: Partial<Pick<AttendanceMachineScore, FiveSKey | "note">>) {
   const { error } = await getSupabase().from("attendance_machine_scores").upsert({ session_id: sessionId, machine_code: machineCode, updated_at: new Date().toISOString(), ...patch }, { onConflict: "session_id,machine_code" });
   if (error) throw error;
 }

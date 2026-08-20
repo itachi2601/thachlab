@@ -1,10 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, Unlock, UserCheck, Users, Wrench, XCircle } from "lucide-react";
+import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, Unlock, UserCheck, Users, Wrench, XCircle } from "lucide-react";
 import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, setMachineSelectionOpen, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
-import { createAttendanceMachinePhotoUrl, EQUIPMENT_STATUS_META, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchMachines, fiveSScore, FIVE_S_CRITERIA, groupMachinesByType, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type EquipmentStatus, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
-import { createEquipmentBreakdownPhotoUrl, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
+import { createAttendanceMachinePhotoUrl, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchMachines, fiveSScore, FIVE_S_CRITERIA, groupMachinesByType, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
+import { createEquipmentBreakdownPhotoUrl, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, startEquipmentRepair, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
+
+function nowLocalInput(){const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,16)}
+function fmtDateTime(iso:string){return new Date(iso).toLocaleString("vi-VN",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}
 
 type Student={id:string;name:string;className:string};
 const statusMeta:Record<AttendanceStatus,{label:string;short:string;code:string;style:string;active:string;icon:typeof UserCheck}>={
@@ -46,7 +49,7 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
   const machineGroups=machineCodes.map(code=>({code,members:students.filter(student=>records.find(record=>record.student_id===student.id)?.machine_code===code)}));
   const machinesFullyChecked=machineGroups.filter(group=>machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="start")&&machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="end")).length;
   const avgFiveS=machineGroups.length?Math.round(machineGroups.reduce((sum,group)=>sum+fiveSScore(machineScores.find(s=>s.machine_code===group.code)),0)/machineGroups.length):0;
-  const machineIssues=machineGroups.filter(group=>{const status=machineScores.find(s=>s.machine_code===group.code)?.equipment_status;return status==="maintenance"||status==="broken"}).length;
+  const machineIssues=machineGroups.filter(group=>breakdowns.some(r=>r.machine_code===group.code&&(r.status==="open"||r.status==="in_progress"))).length;
   const openBreakdowns=breakdowns.filter(r=>r.status==="open").length;
 
   return <div className="space-y-5">
@@ -172,11 +175,9 @@ function SummaryMetric({icon,value,label,danger=false}:{icon:React.ReactNode;val
 function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showFiveS=true,reports,onReported}:{courseId:number;sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showFiveS?:boolean;reports:EquipmentBreakdownReport[];onReported:()=>void}){
   const[noteDraft,setNoteDraft]=useState(score?.note??"");
   useEffect(()=>{setNoteDraft(score?.note??"")},[score?.note]);
-  const openReports=reports.filter(r=>r.status==="open");
+  const currentIssue=reports.find(r=>r.status==="open"||r.status==="in_progress");
   async function toggleCriterion(key:typeof FIVE_S_CRITERIA[number]["key"]){try{await updateAttendanceMachineScore(sessionId,code,{[key]:!score?.[key]});onScoreSaved()}catch{/* silent: hiển thị lại giá trị cũ ở lần tải sau */}}
-  async function saveEquipment(status:EquipmentStatus){try{await updateAttendanceMachineScore(sessionId,code,{equipment_status:status});onScoreSaved()}catch{/* silent */}}
   async function saveNote(){try{await updateAttendanceMachineScore(sessionId,code,{note:noteDraft});onScoreSaved()}catch{/* silent */}}
-  const equipmentStatus=score?.equipment_status??"normal";
   return <div className="rounded-xl border border-white/10 bg-white/[.02] p-3">
     <div className="flex items-center justify-between gap-2">
       <span className="flex items-center gap-1.5 text-sm font-bold text-white"><Icon size={14} className="text-orange-300"/>{label??`Máy ${code}`}</span>
@@ -190,9 +191,9 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
       </>}
     </div>
     {showFiveS&&<>
-      <select value={equipmentStatus} onChange={e=>void saveEquipment(e.target.value as EquipmentStatus)} className={`mt-2 w-full rounded-lg border bg-[#080d1d] px-2 py-1.5 text-[11px] font-bold ${EQUIPMENT_STATUS_META[equipmentStatus].style}`}>
-        {(Object.entries(EQUIPMENT_STATUS_META) as [EquipmentStatus,{label:string;style:string}][]).map(([value,meta])=><option key={value} value={value}>{meta.label}</option>)}
-      </select>
+      <span className={`mt-2 flex items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-bold ${!currentIssue?"border-emerald-400/20 bg-emerald-500/5 text-emerald-300":currentIssue.status==="open"?"border-red-400/30 bg-red-500/10 text-red-200":"border-amber-400/30 bg-amber-500/10 text-amber-200"}`}>
+        {!currentIssue?<Check size={12}/>:<AlertOctagon size={12}/>}{!currentIssue?"Bình thường":currentIssue.status==="open"?"Đang hỏng":"Đang sửa"}
+      </span>
       <div className="mt-2 space-y-1">
         {FIVE_S_CRITERIA.map(item=>{const achieved=Boolean(score?.[item.key]);return <button key={item.key} type="button" onClick={()=>void toggleCriterion(item.key)} className="flex w-full items-center justify-between gap-2 rounded-lg px-1 py-1 text-left hover:bg-white/[.03]">
           <span className="min-w-0 flex-1 truncate text-[11px] text-slate-300">{item.label} <small className="text-slate-600">— {item.hint}</small></span>
@@ -201,37 +202,81 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
       </div>
     </>}
     <input type="text" value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} placeholder="Ghi chú nhóm…" className="mt-2 w-full rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1 text-xs text-white placeholder:text-slate-600"/>
-    <BreakdownReportSection courseId={courseId} sessionId={sessionId} code={code} openReports={openReports} onReported={onReported}/>
+    <BreakdownReportSection courseId={courseId} sessionId={sessionId} code={code} reports={reports} currentIssue={currentIssue} onReported={onReported}/>
   </div>;
 }
 
-function BreakdownReportSection({courseId,sessionId,code,openReports,onReported}:{courseId:number;sessionId:number;code:string;openReports:EquipmentBreakdownReport[];onReported:()=>void}){
+function BreakdownReportSection({courseId,sessionId,code,reports,currentIssue,onReported}:{courseId:number;sessionId:number;code:string;reports:EquipmentBreakdownReport[];currentIssue?:EquipmentBreakdownReport;onReported:()=>void}){
   const[reporting,setReporting]=useState(false);
   const[file,setFile]=useState<File|null>(null);
   const[description,setDescription]=useState("");
+  const[brokenAt,setBrokenAt]=useState(nowLocalInput);
   const[busy,setBusy]=useState(false);
   const[error,setError]=useState("");
-  async function submit(){if(!file||!description.trim())return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,file});setReporting(false);setFile(null);setDescription("");onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
-  async function resolve(id:number){try{await resolveEquipmentBreakdown(id,"");onReported()}catch{/* silent */}}
+  const[showHistory,setShowHistory]=useState(false);
+  const history=reports.filter(r=>r.status==="resolved");
+  async function submit(){if(!file||!description.trim())return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,brokenAt:new Date(brokenAt).toISOString(),file});setReporting(false);setFile(null);setDescription("");setBrokenAt(nowLocalInput());onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
   async function view(path:string){const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createEquipmentBreakdownPhotoUrl(path);if(win)win.location.href=signed}catch{win?.close()}}
   return <div className="mt-2 border-t border-white/5 pt-2">
-    {openReports.map(report=><div key={report.id} className="mb-1.5 rounded-lg border border-red-400/20 bg-red-500/10 p-2">
-      <div className="flex items-center gap-1.5 text-[11px] font-bold text-red-200"><AlertOctagon size={12}/>Báo hỏng</div>
-      <p className="mt-0.5 text-[11px] text-red-100/80">{report.description}</p>
-      <div className="mt-1.5 flex items-center gap-2">
-        <button type="button" onClick={()=>void view(report.storage_path)} className="text-[10px] font-bold text-red-200 underline">Xem ảnh</button>
-        <button type="button" onClick={()=>void resolve(report.id)} className="text-[10px] font-bold text-emerald-300">Đã sửa xong</button>
-      </div>
-    </div>)}
-    {reporting?<div className="rounded-lg border border-white/10 bg-black/15 p-2">
+    {currentIssue&&<CurrentBreakdownCard report={currentIssue} onReported={onReported} onView={view}/>}
+    {!currentIssue&&(reporting?<div className="rounded-lg border border-white/10 bg-black/15 p-2">
       <input type="file" accept="image/*" capture="environment" onChange={e=>setFile(e.target.files?.[0]??null)} className="block w-full text-[10px] text-slate-400"/>
+      <label className="mt-1.5 block text-[10px] text-slate-500">Giờ hư (ước lượng)</label>
+      <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white"/>
       <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
       {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
       <div className="mt-1.5 flex gap-1.5">
         <button type="button" disabled={busy||!file||!description.trim()} onClick={submit} className="rounded-md bg-red-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
         <button type="button" onClick={()=>setReporting(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[10px] font-bold text-slate-300">Hủy</button>
       </div>
-    </div>:<button type="button" onClick={()=>setReporting(true)} className="flex items-center gap-1 text-[10px] font-bold text-red-300 hover:text-red-200"><AlertOctagon size={11}/>Báo hỏng máy</button>}
+    </div>:<button type="button" onClick={()=>setReporting(true)} className="flex items-center gap-1 text-[10px] font-bold text-red-300 hover:text-red-200"><AlertOctagon size={11}/>Báo hỏng máy</button>)}
+    {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-1.5 flex items-center gap-1 text-[10px] font-bold text-slate-400 hover:text-slate-200"><History size={11}/>Lịch sử hỏng ({history.length})</button>}
+    {showHistory&&<div className="mt-1.5 space-y-1">{history.map(r=><BreakdownHistoryRow key={r.id} report={r} onView={view}/>)}</div>}
+  </div>;
+}
+
+function CurrentBreakdownCard({report,onReported,onView}:{report:EquipmentBreakdownReport;onReported:()=>void;onView:(path:string)=>void}){
+  const[resolving,setResolving]=useState(false);
+  const[busy,setBusy]=useState(false);
+  async function start(){setBusy(true);try{await startEquipmentRepair(report.id);onReported()}catch{/* silent */}finally{setBusy(false)}}
+  return <div className="mb-1.5 rounded-lg border border-red-400/20 bg-red-500/10 p-2">
+    <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center gap-1.5 text-[11px] font-bold text-red-200"><AlertOctagon size={12}/>{report.status==="in_progress"?"Đang sửa":"Báo hỏng"}</div>
+      <small className="text-[10px] text-red-200/70">{fmtDateTime(report.broken_at)}</small>
+    </div>
+    <p className="mt-0.5 text-[11px] text-red-100/80">{report.description}</p>
+    <div className="mt-1.5 flex items-center gap-2">
+      <button type="button" onClick={()=>onView(report.broken_photo_path)} className="text-[10px] font-bold text-red-200 underline">Xem ảnh hỏng</button>
+      {report.status==="open"&&<button type="button" disabled={busy} onClick={()=>void start()} className="text-[10px] font-bold text-amber-300 disabled:opacity-40">Bắt đầu sửa</button>}
+      {!resolving&&<button type="button" onClick={()=>setResolving(true)} className="text-[10px] font-bold text-emerald-300">Đã sửa xong</button>}
+    </div>
+    {resolving&&<ResolveBreakdownForm report={report} onDone={()=>{setResolving(false);onReported()}}/>}
+  </div>;
+}
+
+function ResolveBreakdownForm({report,onDone}:{report:EquipmentBreakdownReport;onDone:()=>void}){
+  const[file,setFile]=useState<File|null>(null);
+  const[note,setNote]=useState("");
+  const[busy,setBusy]=useState(false);
+  const[error,setError]=useState("");
+  async function submit(){if(!file)return;setBusy(true);setError("");try{await resolveEquipmentBreakdown({id:report.id,courseId:report.course_id,machineCode:report.machine_code,note,file});onDone()}catch(cause){setError(cause instanceof Error?cause.message:"Không lưu được.")}finally{setBusy(false)}}
+  return <div className="mt-1.5 rounded-md border border-emerald-400/20 bg-emerald-500/5 p-2">
+    <label className="block text-[10px] text-slate-500">Ảnh sau khi khắc phục</label>
+    <input type="file" accept="image/*" capture="environment" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[10px] text-slate-400"/>
+    <textarea value={note} onChange={e=>setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
+    {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
+    <button type="button" disabled={busy||!file} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
+  </div>;
+}
+
+function BreakdownHistoryRow({report,onView}:{report:EquipmentBreakdownReport;onView:(path:string)=>void}){
+  return <div className="rounded-md border border-white/5 bg-black/10 p-1.5 text-[10px] text-slate-400">
+    <div className="flex items-center justify-between gap-2"><span>{fmtDateTime(report.broken_at)}</span><span className="font-bold text-emerald-400">Đã khắc phục</span></div>
+    <p className="mt-0.5 truncate text-slate-500" title={report.description}>{report.description}</p>
+    <div className="mt-1 flex gap-2">
+      <button type="button" onClick={()=>onView(report.broken_photo_path)} className="font-bold text-red-300 underline">Ảnh lúc hỏng</button>
+      {report.resolved_photo_path&&<button type="button" onClick={()=>onView(report.resolved_photo_path!)} className="font-bold text-emerald-300 underline">Ảnh đã sửa</button>}
+    </div>
   </div>;
 }
 
