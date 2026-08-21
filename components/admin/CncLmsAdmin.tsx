@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { Trash2 } from "lucide-react";
 import {
   CNC_COURSE_ITEMS,
-  CNC_GATE_QUIZ,
   CNC_PROGRESS,
   CNC_SETUP_CHECKLIST,
-  type CncGateQuizQuestion,
   type CncCourseItem,
 } from "@/services/cnc-lms";
+import {
+  fetchQuizQuestions,
+  upsertQuizQuestion,
+  deleteQuizQuestion,
+  type CncQuizQuestion,
+  type CncQuizQuestionType,
+} from "@/services/cnc-quiz-content";
 import { useToast } from "@/components/ui/Toast";
 import {
   deleteCncLessonFile,
@@ -43,12 +49,14 @@ type EditableCncItem = {
   };
 };
 
-type EditableGateQuestion = {
+type EditableQuizRow = {
   id: string;
   question: string;
+  explanation: string;
   options: string[];
   correctIndex: number;
-  explanation: string;
+  keywordsText: string;
+  minKeywordMatches: number;
 };
 
 function normalizeItem(item: CncCourseItem): EditableCncItem {
@@ -69,13 +77,15 @@ function normalizeItem(item: CncCourseItem): EditableCncItem {
   };
 }
 
-function normalizeQuestion(question: CncGateQuizQuestion): EditableGateQuestion {
+function toEditableQuizRow(question: CncQuizQuestion): EditableQuizRow {
   return {
     id: question.id,
     question: question.question,
-    options: [...question.options],
-    correctIndex: question.correctIndex,
     explanation: question.explanation,
+    options: question.options ?? ["", "", "", ""],
+    correctIndex: question.correct_index ?? 0,
+    keywordsText: (question.keywords ?? []).join(", "),
+    minKeywordMatches: question.min_keyword_matches ?? 1,
   };
 }
 
@@ -97,9 +107,6 @@ export default function CncLmsAdmin() {
   );
   const [activeId, setActiveId] = useState(items[0]?.id ?? "intro");
   const [checklist, setChecklist] = useState([...CNC_SETUP_CHECKLIST]);
-  const [gateQuiz, setGateQuiz] = useState<EditableGateQuestion[]>(
-    CNC_GATE_QUIZ.map(normalizeQuestion),
-  );
   const [turningQuizScore, setTurningQuizScore] = useState(
     CNC_PROGRESS.turningQuizScore,
   );
@@ -330,7 +337,6 @@ export default function CncLmsAdmin() {
         millingOperationPassed,
       },
       setupChecklist: checklist,
-      gateQuiz,
       courseItems: items,
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
@@ -342,17 +348,6 @@ export default function CncLmsAdmin() {
     link.download = "cnc-lms-config.json";
     link.click();
     URL.revokeObjectURL(url);
-  }
-
-  function updateGateQuestion(
-    questionId: string,
-    patch: Partial<EditableGateQuestion>,
-  ) {
-    setGateQuiz((current) =>
-      current.map((question) =>
-        question.id === questionId ? { ...question, ...patch } : question,
-      ),
-    );
   }
 
   if (!activeItem) {
@@ -664,97 +659,201 @@ export default function CncLmsAdmin() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h3 className="font-display text-lg font-semibold text-white">
-              Bộ 10 câu Quiz chốt chặn
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Đây là bài kiểm tra điều kiện trước khi sinh viên được lên máy.
-              Logic đạt: đúng toàn bộ {gateQuiz.length}/{gateQuiz.length} câu.
-            </p>
-          </div>
-          <span className="w-fit rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-200">
-            Bắt buộc đạt tuyệt đối
-          </span>
+      <section className="space-y-4">
+        <h3 className="font-display text-lg font-semibold text-white">
+          Ngân hàng câu hỏi (lưu trực tiếp vào Supabase, không cần deploy lại)
+        </h3>
+        <QuizBankEditor quizKey="gate" questionType="multiple_choice" title="Quiz chốt chặn an toàn" passRuleLabel="Bắt buộc đạt tuyệt đối trước khi lên máy" />
+        <QuizBankEditor quizKey="lesson-2-exercise-1" questionType="multiple_choice" title="Bài 2 · Bài tập 1 — Nhận biết câu lệnh (tiện)" passRuleLabel="1 câu ngẫu nhiên/lượt, cần đạt 80% khi đi hết ngân hàng" />
+        <QuizBankEditor quizKey="lesson-2-exercise-2" questionType="multiple_choice" title="Bài 2 · Bài tập 2 — Dịch block lệnh (tiện)" passRuleLabel="1 câu ngẫu nhiên/lượt, cần đạt 80% khi đi hết ngân hàng" />
+        <QuizBankEditor quizKey="lesson-2-exercise-6" questionType="short_answer" title="Bài 2 · Bài tập 3 — Dịch lệnh trả lời ngắn (tiện)" passRuleLabel="Chấm gần đúng theo từ khóa, cần đạt 80% số câu" />
+        <QuizBankEditor quizKey="lesson-3-exercise-1" questionType="multiple_choice" title="Bài 3 · Bài tập 1 — Nhận biết câu lệnh (phay)" passRuleLabel="1 câu ngẫu nhiên/lượt, cần đạt 80% khi đi hết ngân hàng" />
+        <QuizBankEditor quizKey="lesson-3-exercise-2" questionType="multiple_choice" title="Bài 3 · Bài tập 2 — Dịch block lệnh (phay)" passRuleLabel="1 câu ngẫu nhiên/lượt, cần đạt 80% khi đi hết ngân hàng" />
+        <QuizBankEditor quizKey="lesson-3-exercise-6" questionType="short_answer" title="Bài 3 · Bài tập 3 — Dịch lệnh trả lời ngắn (phay)" passRuleLabel="Chấm gần đúng theo từ khóa, cần đạt 80% số câu" />
+      </section>
+    </div>
+  );
+}
+
+function QuizBankEditor({
+  quizKey,
+  questionType,
+  title,
+  passRuleLabel,
+}: {
+  quizKey: string;
+  questionType: CncQuizQuestionType;
+  title: string;
+  passRuleLabel: string;
+}) {
+  const toast = useToast();
+  const [rows, setRows] = useState<EditableQuizRow[] | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchQuizQuestions(quizKey, { fresh: true })
+      .then((data) => { if (!cancelled) setRows(data.map(toEditableQuizRow)); })
+      .catch((error) => { if (!cancelled) { setRows([]); toast("error", error instanceof Error ? error.message : "Không tải được ngân hàng câu hỏi."); } });
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quizKey]);
+
+  function updateRow(id: string, patch: Partial<EditableQuizRow>) {
+    setRows((current) => current?.map((row) => (row.id === id ? { ...row, ...patch } : row)) ?? current);
+  }
+
+  function addRow() {
+    const id = `${quizKey}-${Date.now()}`;
+    setRows((current) => [
+      ...(current ?? []),
+      { id, question: "", explanation: "", options: ["", "", "", ""], correctIndex: 0, keywordsText: "", minKeywordMatches: 1 },
+    ]);
+  }
+
+  async function removeRow(id: string) {
+    const previous = rows;
+    setRows((current) => current?.filter((row) => row.id !== id) ?? current);
+    try {
+      await deleteQuizQuestion(id, quizKey);
+      toast("success", "Đã xóa câu hỏi.");
+    } catch (error) {
+      setRows(previous);
+      toast("error", error instanceof Error ? error.message : "Không xóa được câu hỏi.");
+    }
+  }
+
+  async function saveAll() {
+    if (!rows) return;
+    setSaving(true);
+    try {
+      for (const [index, row] of rows.entries()) {
+        if (!row.question.trim()) continue;
+        await upsertQuizQuestion({
+          id: row.id,
+          quiz_key: quizKey,
+          question_type: questionType,
+          question: row.question,
+          options: questionType === "multiple_choice" ? row.options : null,
+          correct_index: questionType === "multiple_choice" ? row.correctIndex : null,
+          keywords: questionType === "short_answer" ? row.keywordsText.split(",").map((s) => s.trim()).filter(Boolean) : null,
+          min_keyword_matches: questionType === "short_answer" ? row.minKeywordMatches : null,
+          explanation: row.explanation,
+          order_index: index,
+        });
+      }
+      toast("success", `Đã lưu ${rows.length} câu hỏi — học sinh dùng ngay, không cần deploy lại.`);
+    } catch (error) {
+      toast("error", error instanceof Error ? error.message : "Không lưu được ngân hàng câu hỏi.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  if (!rows) {
+    return <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-400">Đang tải {title}…</section>;
+  }
+
+  return (
+    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-400">{rows.length} câu hỏi · {passRuleLabel}</p>
         </div>
+        <div className="flex shrink-0 gap-2">
+          <button type="button" onClick={addRow} className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-white/30">
+            + Thêm câu hỏi
+          </button>
+          <button type="button" disabled={saving} onClick={saveAll} className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50">
+            {saving ? "Đang lưu…" : "Lưu vào cơ sở dữ liệu"}
+          </button>
+        </div>
+      </div>
 
-        <div className="mt-5 space-y-4">
-          {gateQuiz.map((question, questionIndex) => (
-            <div
-              key={question.id}
-              className="rounded-2xl border border-white/10 bg-white/5 p-4"
-            >
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
-                <label className="flex-1 text-sm text-slate-300">
-                  Câu {questionIndex + 1}
-                  <textarea
-                    value={question.question}
-                    onChange={(event) =>
-                      updateGateQuestion(question.id, {
-                        question: event.target.value,
-                      })
-                    }
-                    rows={2}
-                    className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                  />
-                </label>
-                <label className="text-sm text-slate-300 lg:w-44">
-                  Đáp án đúng
-                  <select
-                    value={question.correctIndex}
-                    onChange={(event) =>
-                      updateGateQuestion(question.id, {
-                        correctIndex: Number(event.target.value),
-                      })
-                    }
-                    className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                  >
-                    {question.options.map((_, optionIndex) => (
-                      <option key={optionIndex} value={optionIndex}>
-                        Đáp án {optionIndex + 1}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-
-              <div className="mt-3 grid gap-3 md:grid-cols-2">
-                {question.options.map((option, optionIndex) => (
-                  <label key={optionIndex} className="text-sm text-slate-300">
-                    Lựa chọn {optionIndex + 1}
-                    <input
-                      value={option}
-                      onChange={(event) => {
-                        const nextOptions = [...question.options];
-                        nextOptions[optionIndex] = event.target.value;
-                        updateGateQuestion(question.id, { options: nextOptions });
-                      }}
-                      className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                    />
-                  </label>
-                ))}
-              </div>
-
-              <label className="mt-3 block text-sm text-slate-300">
-                Giải thích khi làm sai
+      <div className="mt-5 space-y-4">
+        {rows.map((row, index) => (
+          <div key={row.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
+              <label className="flex-1 text-sm text-slate-300">
+                Câu {index + 1}
                 <textarea
-                  value={question.explanation}
-                  onChange={(event) =>
-                    updateGateQuestion(question.id, {
-                      explanation: event.target.value,
-                    })
-                  }
+                  value={row.question}
+                  onChange={(event) => updateRow(row.id, { question: event.target.value })}
                   rows={2}
                   className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
                 />
               </label>
+              <button type="button" onClick={() => removeRow(row.id)} aria-label="Xóa câu hỏi" className="shrink-0 rounded-full p-2 text-red-300 hover:bg-red-500/10 lg:mt-6">
+                <Trash2 size={16} />
+              </button>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+
+            {questionType === "multiple_choice" ? (
+              <>
+                <div className="mt-3 grid gap-3 md:grid-cols-2">
+                  {row.options.map((option, optionIndex) => (
+                    <label key={optionIndex} className="text-sm text-slate-300">
+                      Lựa chọn {optionIndex + 1}
+                      <input
+                        value={option}
+                        onChange={(event) => {
+                          const nextOptions = [...row.options];
+                          nextOptions[optionIndex] = event.target.value;
+                          updateRow(row.id, { options: nextOptions });
+                        }}
+                        className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+                      />
+                    </label>
+                  ))}
+                </div>
+                <label className="mt-3 block text-sm text-slate-300 lg:w-44">
+                  Đáp án đúng
+                  <select
+                    value={row.correctIndex}
+                    onChange={(event) => updateRow(row.id, { correctIndex: Number(event.target.value) })}
+                    className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+                  >
+                    {row.options.map((_, optionIndex) => (
+                      <option key={optionIndex} value={optionIndex}>Đáp án {optionIndex + 1}</option>
+                    ))}
+                  </select>
+                </label>
+              </>
+            ) : (
+              <label className="mt-3 block text-sm text-slate-300">
+                Từ khóa chấm (cách nhau bằng dấu phẩy) · số từ khóa tối thiểu để đạt
+                <div className="mt-1 flex flex-col gap-2 sm:flex-row">
+                  <input
+                    value={row.keywordsText}
+                    onChange={(event) => updateRow(row.id, { keywordsText: event.target.value })}
+                    placeholder="G01, tiện thẳng, X30, Z-25"
+                    className="flex-1 rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+                  />
+                  <input
+                    type="number"
+                    min={1}
+                    value={row.minKeywordMatches}
+                    onChange={(event) => updateRow(row.id, { minKeywordMatches: Number(event.target.value) })}
+                    className="w-24 rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+                  />
+                </div>
+              </label>
+            )}
+
+            <label className="mt-3 block text-sm text-slate-300">
+              Giải thích
+              <textarea
+                value={row.explanation}
+                onChange={(event) => updateRow(row.id, { explanation: event.target.value })}
+                rows={2}
+                className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+              />
+            </label>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

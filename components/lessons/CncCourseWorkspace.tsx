@@ -34,10 +34,6 @@ import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
 import {
   CNC_COURSE_ITEMS,
   CNC_LESSON_1_QUIZ,
-  CNC_LESSON_2_QUIZ,
-  CNC_LESSON_3_QUIZ,
-  CNC_MILL_COMMAND_TRANSLATION_QUIZ,
-  CNC_TURN_COMMAND_TRANSLATION_QUIZ,
   CNC_LESSON_4_MILL_QUIZ,
   CNC_LESSON_4_TURN_QUIZ,
 } from "@/services/cnc-lms";
@@ -57,6 +53,11 @@ import {
   type CncDrawingSubmission,
 } from "@/services/cnc-drawing-submissions";
 import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts";
+import {
+  fetchQuizQuestions,
+  gradeShortAnswer,
+  type CncQuizQuestion,
+} from "@/services/cnc-quiz-content";
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
@@ -831,13 +832,7 @@ function Video({ lesson, videos }: { lesson: (typeof lessons)[number]; videos: C
 }
 
 function StandardTest({ lessonId, lessonTitle, onPassed, onResult, showHeading = true }: { lessonId: string; lessonTitle: string; onPassed: () => void; onResult?: (score:number,total:number,passed:boolean)=>void; showHeading?: boolean }) {
-  const quiz = lessonId === "lesson-1"
-    ? CNC_LESSON_1_QUIZ
-    : lessonId === "lesson-2"
-      ? CNC_LESSON_2_QUIZ
-      : lessonId === "lesson-3"
-        ? CNC_LESSON_3_QUIZ
-        : null;
+  const quiz = lessonId === "lesson-1" ? CNC_LESSON_1_QUIZ : null;
   const lessonNumber = lessonId.replace("lesson-", "");
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -851,7 +846,7 @@ function StandardTest({ lessonId, lessonTitle, onPassed, onResult, showHeading =
   </>;
 
   return <>
-    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description={lessonId === "lesson-1" ? "Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC." : lessonId === "lesson-2" ? "Đề trắc nghiệm lập trình tiện CNC trên hệ Fanuc 21T." : "Đề trắc nghiệm lập trình phay CNC trên hệ Fanuc 21M."} />}
+    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description="Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC." />}
     <div className="cnc-gate-banner">
       <FileQuestion size={26} />
       <div><span>BÀI KIỂM TRA KIẾN THỨC</span><h3>{lessonTitle}</h3><p><strong>20 câu trắc nghiệm</strong> · 30 phút · Đạt từ <strong>16/20 câu (80%)</strong></p></div>
@@ -884,71 +879,203 @@ function StandardTest({ lessonId, lessonTitle, onPassed, onResult, showHeading =
   </>;
 }
 
-function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, onPassed, onResult, passed, attempts }: { lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
-  const [level, setLevel] = useState<"exercise-1"|"exercise-2"|"exercise-3"|"exercise-4"|"exercise-5">("exercise-1");
-  const levels = [
-    { id: "exercise-1" as const, name: "Bài tập 1", note: "Nhận biết câu lệnh · 20 câu" },
-    { id: "exercise-2" as const, name: "Bài tập 2", note: "Đọc hiểu và dịch block lệnh" },
-    { id: "exercise-3" as const, name: "Bài tập 3", note: "Điền khuyết chương trình" },
-    { id: "exercise-4" as const, name: "Bài tập 4", note: "Viết chương trình từ bản vẽ" },
-    { id: "exercise-5" as const, name: "Bài tập 5", note: "Mô phỏng và kiểm chứng" },
-  ];
-  return <div className="cnc-programming-suite space-y-5">
-    <SectionHeading icon={FileQuestion} kicker="BỘ 5 BÀI TẬP LẬP TRÌNH CNC" title={`Kiểm tra ${lessonTitle}`} description="Từ nhận biết câu lệnh đến viết, mô phỏng và kiểm chứng chương trình NC." />
-    <div className="cnc-programming-tabs grid gap-2 sm:grid-cols-2 xl:grid-cols-5">{levels.map((item)=><button key={item.id} type="button" onClick={()=>setLevel(item.id)} className={`relative rounded-xl border p-3 text-left transition ${level===item.id?"active border-[#e85d24] bg-[#fff2ec] text-[#b94317]":"border-[#dfe4e8] bg-white text-[#52616d] hover:border-[#efb399]"}`}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,item.id)} attempts={attempts[`${lessonId}:${item.id}`]}/><strong className="block text-xs">{item.name}</strong><small className="mt-1 block text-[10px] opacity-70">{item.note}</small></button>)}</div>
-    {level === "exercise-1" && <StandardTest lessonId={lessonId} lessonTitle={lessonTitle} onPassed={onPassed} onResult={(score,total,passed)=>onResult?.("exercise-1",score,total,passed)} showHeading={false} />}
-    {level === "exercise-2" && <CommandTranslationChallenge machine={lessonId === "lesson-2" ? "turn" : "mill"} onResult={(score,total,passed)=>onResult?.("exercise-2",score,total,passed)} />}
-    {level === "exercise-3" && <FillBlankNcExercise machine={lessonId === "lesson-2" ? "turn" : "mill"} onResult={(score,total,passed)=>onResult?.("exercise-3",score,total,passed)} />}
-    {level === "exercise-4" && <ProgramFromDrawingExercise machine={lessonId === "lesson-2" ? "turn" : "mill"} onResult={(score,total,passed)=>onResult?.("exercise-4",score,total,passed)} />}
-    {level === "exercise-5" && <SimulationEvidenceExercise machine={lessonId === "lesson-2" ? "turn" : "mill"} lessonId={`${lessonId}-simulation`} lessonTitle={`Mô phỏng ${lessonTitle}`} courseId={courseId} onApproved={()=>onResult?.("exercise-5",100,100,true)} />}
-  </div>;
+function shuffleQuestions<T>(items: T[]): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
 }
 
-function CommandTranslationChallenge({machine,onResult}:{machine:"turn"|"mill";onResult?: (score:number,total:number,passed:boolean)=>void}) {
-  const [choice,setChoice]=useState(""); const [checked,setChecked]=useState(false); const command=machine==="turn"?"G01 X30 Z-25 F0.20":"G02 X50 Y30 R15 F200";
-  const correct=machine==="turn"?"turn-translate":"mill-translate";
-  if (machine === "mill") return <MillingCommandTranslationQuiz onResult={onResult} />;
-  if (machine === "turn") return <TurningCommandTranslationQuiz onResult={onResult} />;
-  return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">DẠNG 2 · DỊCH LỆNH</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">Dịch câu lệnh sang ngôn ngữ công nghệ</h3><pre className="mt-4 rounded-xl bg-[#101820] p-5 text-center font-mono text-xl font-bold text-[#b9f6d0]">{command}</pre><div className="mt-4 grid gap-2">{machine==="turn"?<><label className="rounded-xl border border-[#dfe4e8] p-3 text-sm text-[#52616d]"><input type="radio" name="translate-turn" value="turn-translate" onChange={(event)=>{setChoice(event.target.value);setChecked(false)}}/> Tiện thẳng đến X30, Z−25 với lượng chạy dao 0,20 mm/vòng</label><label className="rounded-xl border border-[#dfe4e8] p-3 text-sm text-[#52616d]"><input type="radio" name="translate-turn" value="rapid" onChange={(event)=>{setChoice(event.target.value);setChecked(false)}}/> Chạy nhanh đến X30, Z−25</label></>:<><label className="rounded-xl border border-[#dfe4e8] p-3 text-sm text-[#52616d]"><input type="radio" name="translate-mill" value="mill-translate" onChange={(event)=>{setChoice(event.target.value);setChecked(false)}}/> Nội suy cung tròn chiều kim đồng hồ đến X50 Y30, bán kính 15, F200</label><label className="rounded-xl border border-[#dfe4e8] p-3 text-sm text-[#52616d]"><input type="radio" name="translate-mill" value="line" onChange={(event)=>{setChoice(event.target.value);setChecked(false)}}/> Phay đường thẳng đến X50 Y30</label></>}</div><button type="button" disabled={!choice} onClick={()=>setChecked(true)} className="mt-3 rounded-full bg-[#e85d24] px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40">Kiểm tra bản dịch</button>{checked&&<p className={`mt-3 rounded-xl p-3 text-sm ${choice===correct?"bg-emerald-50 text-emerald-700":"bg-red-50 text-red-700"}`}>{choice===correct?"Chính xác — bản dịch thể hiện đủ dạng chuyển động, tọa độ và lượng chạy dao.":"Chưa đúng — cần dịch đầy đủ mã G, tọa độ đích và thông số F/R."}</p>}</div>;
-}
-
-function TurningCommandTranslationQuiz({onResult}:{onResult?: (score:number,total:number,passed:boolean)=>void}){
-  const quiz=CNC_TURN_COMMAND_TRANSLATION_QUIZ;const[answers,setAnswers]=useState<Record<string,number>>({});const[submitted,setSubmitted]=useState(false);const score=quiz.filter(question=>answers[question.id]===question.correctIndex).length;const required=Math.ceil(quiz.length*.8);const passed=submitted&&score>=required;
-  return <><div className="cnc-gate-banner"><FileQuestion size={26}/><div><span>DẠNG 2 · DỊCH LỆNH</span><h3>Dịch block G-code/M-code tiện CNC</h3><p><strong>20 câu trắc nghiệm</strong> · Đạt từ <strong>16/20 câu (80%)</strong></p></div><b className={passed?"passed":""}>{submitted?`${score}/20`:"80%"}<small>{passed?"ĐÃ ĐẠT":"YÊU CẦU"}</small></b></div><div className="cnc-quiz">{quiz.map((question,index)=><fieldset key={question.id} className={submitted&&answers[question.id]!==question.correctIndex?"wrong":""}><legend><span>{index+1}</span><code>{question.question}</code></legend>{question.options.map((option,optionIndex)=><label key={option}><input type="radio" name={question.id} checked={answers[question.id]===optionIndex} onChange={()=>{setSubmitted(false);setAnswers(current=>({...current,[question.id]:optionIndex}))}}/><i/>{String.fromCharCode(65+optionIndex)}. {option}</label>)}{submitted&&<p>{answers[question.id]===question.correctIndex?"Chính xác. ":`Đáp án đúng: ${String.fromCharCode(65+question.correctIndex)}. `}{question.explanation}</p>}</fieldset>)}</div><button className="cnc-submit" disabled={Object.keys(answers).length<quiz.length} onClick={()=>{setSubmitted(true);onResult?.(score,quiz.length,score>=required)}}><FileQuestion size={18}/>Nộp bài Dạng 2</button>{submitted&&<div className={`cnc-result ${passed?"passed":""}`}>{passed?`Đạt — Bạn trả lời đúng ${score}/20 câu.`:`Chưa đạt — Bạn trả lời đúng ${score}/20 câu. Cần ít nhất 16 câu đúng.`}</div>}</>;
-}
-
-function MillingCommandTranslationQuiz({onResult}:{onResult?: (score:number,total:number,passed:boolean)=>void}) {
-  const quiz = CNC_MILL_COMMAND_TRANSLATION_QUIZ;
+function RandomBankQuiz({ quizKey, kicker, title, onResult }: { quizKey: string; kicker: string; title: string; onResult?: (score: number, total: number, passed: boolean) => void }) {
+  const [bank, setBank] = useState<CncQuizQuestion[] | null>(null);
+  const [order, setOrder] = useState<CncQuizQuestion[]>([]);
+  const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const score = quiz.filter((question) => answers[question.id] === question.correctIndex).length;
-  const requiredScore = Math.ceil(quiz.length * 0.8);
-  const passed = submitted && score >= requiredScore;
+  const [choice, setChoice] = useState<number | null>(null);
+  const [checked, setChecked] = useState(false);
+  const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchQuizQuestions(quizKey)
+      .then((rows) => {
+        if (cancelled) return;
+        setBank(rows);
+        setOrder(shuffleQuestions(rows));
+      })
+      .catch(() => { if (!cancelled) setBank([]); });
+    return () => { cancelled = true; };
+  }, [quizKey]);
+
+  function retry() {
+    if (!bank) return;
+    setOrder(shuffleQuestions(bank));
+    setIndex(0); setAnswers({}); setChoice(null); setChecked(false); setFinished(false);
+  }
+
+  if (!bank) return <div className="cnc-file-empty"><FileQuestion size={28} /><div><strong>Đang tải câu hỏi…</strong></div></div>;
+  if (bank.length === 0) return <div className="cnc-file-empty"><FileQuestion size={28} /><div><strong>Chưa có câu hỏi</strong><p>Giáo viên chưa thêm câu hỏi cho phần này.</p></div></div>;
+
+  const total = order.length;
+  const required = Math.ceil(total * 0.8);
+  const current = order[index];
+  const isLast = index === total - 1;
+  const correctCount = Object.entries(answers).filter(([id, chosen]) => bank.find((q) => q.id === id)?.correct_index === chosen).length;
+
+  function submitChoice() {
+    if (choice === null || !current) return;
+    setAnswers((prev) => ({ ...prev, [current.id]: choice }));
+    setChecked(true);
+  }
+  function next() {
+    if (isLast) {
+      const finalAnswers = current ? { ...answers, [current.id]: choice as number } : answers;
+      const score = order.filter((q) => finalAnswers[q.id] === q.correct_index).length;
+      setFinished(true);
+      onResult?.(score, total, score >= required);
+    } else {
+      setIndex((i) => i + 1); setChoice(null); setChecked(false);
+    }
+  }
+
+  if (finished) {
+    const score = order.filter((q) => answers[q.id] === q.correct_index).length;
+    const finalPassed = score >= required;
+    return <div className={`cnc-result ${finalPassed ? "passed" : ""}`}>
+      {finalPassed ? `Đạt — Bạn trả lời đúng ${score}/${total} câu (đã đi hết ngân hàng đề).` : `Chưa đạt — Bạn trả lời đúng ${score}/${total} câu. Cần ít nhất ${required} câu đúng.`}
+      <button type="button" className="cnc-submit mt-3" onClick={retry}>Làm lại (đề xáo trộn mới)</button>
+    </div>;
+  }
 
   return <>
     <div className="cnc-gate-banner">
       <FileQuestion size={26} />
-      <div><span>DẠNG 2 · DỊCH LỆNH G-CODE</span><h3>Dịch câu lệnh sang ngôn ngữ công nghệ</h3><p><strong>20 câu trắc nghiệm</strong> · Đạt từ <strong>16/20 câu (80%)</strong></p></div>
-      <b className={passed ? "passed" : ""}>{submitted ? `${score}/20` : "80%"}<small>{passed ? "ĐÃ ĐẠT" : "YÊU CẦU"}</small></b>
+      <div><span>{kicker}</span><h3>{title}</h3><p>Câu <strong>{index + 1}/{total}</strong> · Đúng <strong>{correctCount}</strong> · Cần đạt <strong>{required}/{total} (80%)</strong></p></div>
     </div>
-    <div className="cnc-quiz">
-      {quiz.map((question, questionIndex) => (
-        <fieldset key={question.id} className={submitted && answers[question.id] !== question.correctIndex ? "wrong" : ""}>
-          <legend><span>{questionIndex + 1}</span><code>{question.question}</code></legend>
-          {question.options.map((option, optionIndex) => (
-            <label key={option}>
-              <input type="radio" name={question.id} checked={answers[question.id] === optionIndex} onChange={() => { setSubmitted(false); setAnswers((current) => ({ ...current, [question.id]: optionIndex })); }} />
-              <i />{String.fromCharCode(65 + optionIndex)}. {option}
-            </label>
-          ))}
-          {submitted && <p>{answers[question.id] === question.correctIndex ? "Chính xác. " : `Đáp án đúng: ${String.fromCharCode(65 + question.correctIndex)}. `}{question.explanation}</p>}
-        </fieldset>
-      ))}
-    </div>
-    <button className="cnc-submit" disabled={Object.keys(answers).length < quiz.length} onClick={() => {setSubmitted(true);onResult?.(score,quiz.length,score>=requiredScore);}}><FileQuestion size={18} /> Nộp bài Dạng 2</button>
-    {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đạt — Bạn trả lời đúng ${score}/20 câu.` : `Chưa đạt — Bạn trả lời đúng ${score}/20 câu. Cần ít nhất 16 câu đúng; hãy xem giải thích và làm lại.`}</div>}
+    {current && <div className="cnc-quiz">
+      <fieldset className={checked && choice !== current.correct_index ? "wrong" : ""}>
+        <legend><span>{index + 1}</span><code>{current.question}</code></legend>
+        {current.options?.map((option, optionIndex) => (
+          <label key={option}>
+            <input type="radio" name={current.id} checked={choice === optionIndex} disabled={checked} onChange={() => setChoice(optionIndex)} />
+            <i />{String.fromCharCode(65 + optionIndex)}. {option}
+          </label>
+        ))}
+        {checked && <p>{choice === current.correct_index ? "Chính xác. " : `Đáp án đúng: ${String.fromCharCode(65 + (current.correct_index ?? 0))}. `}{current.explanation}</p>}
+      </fieldset>
+    </div>}
+    {!checked
+      ? <button className="cnc-submit" disabled={choice === null} onClick={submitChoice}><FileQuestion size={18} /> Kiểm tra</button>
+      : <button className="cnc-submit" onClick={next}><FileQuestion size={18} /> {isLast ? "Nộp bài" : "Câu tiếp theo"}</button>}
   </>;
 }
+
+function ShortAnswerQuiz({ quizKey, onResult }: { quizKey: string; onResult?: (score: number, total: number, passed: boolean) => void }) {
+  const [bank, setBank] = useState<CncQuizQuestion[] | null>(null);
+  const [index, setIndex] = useState(0);
+  const [draft, setDraft] = useState("");
+  const [results, setResults] = useState<Record<string, { matched: boolean; matchedKeywords: string[] }>>({});
+  const [checked, setChecked] = useState(false);
+  const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchQuizQuestions(quizKey)
+      .then((rows) => { if (!cancelled) setBank(rows); })
+      .catch(() => { if (!cancelled) setBank([]); });
+    return () => { cancelled = true; };
+  }, [quizKey]);
+
+  function retry() {
+    setIndex(0); setDraft(""); setResults({}); setChecked(false); setFinished(false);
+  }
+
+  if (!bank) return <div className="cnc-file-empty"><FileQuestion size={28} /><div><strong>Đang tải câu hỏi…</strong></div></div>;
+  if (bank.length === 0) return <div className="cnc-file-empty"><FileQuestion size={28} /><div><strong>Chưa có câu hỏi</strong><p>Giáo viên chưa thêm câu hỏi cho phần này.</p></div></div>;
+
+  const total = bank.length;
+  const required = Math.ceil(total * 0.8);
+  const current = bank[index];
+  const isLast = index === total - 1;
+  const correctCount = Object.values(results).filter((r) => r.matched).length;
+
+  function submitAnswer() {
+    if (!draft.trim() || !current) return;
+    const graded = gradeShortAnswer(draft, current.keywords ?? [], current.min_keyword_matches ?? 1);
+    setResults((prev) => ({ ...prev, [current.id]: { matched: graded.passed, matchedKeywords: graded.matchedKeywords } }));
+    setChecked(true);
+  }
+  function next() {
+    if (isLast) {
+      const score = Object.values(results).filter((r) => r.matched).length;
+      setFinished(true);
+      onResult?.(score, total, score >= required);
+    } else {
+      setIndex((i) => i + 1); setDraft(""); setChecked(false);
+    }
+  }
+
+  if (finished) {
+    const score = Object.values(results).filter((r) => r.matched).length;
+    const finalPassed = score >= required;
+    return <div className={`cnc-result ${finalPassed ? "passed" : ""}`}>
+      {finalPassed ? `Đạt — Bạn trả lời đúng ${score}/${total} câu.` : `Chưa đạt — Bạn trả lời đúng ${score}/${total} câu. Cần ít nhất ${required} câu đúng.`}
+      <button type="button" className="cnc-submit mt-3" onClick={retry}>Làm lại</button>
+    </div>;
+  }
+
+  const currentResult = current ? results[current.id] : undefined;
+  return <>
+    <div className="cnc-gate-banner">
+      <FileQuestion size={26} />
+      <div><span>DẠNG 3 · DỊCH LỆNH — TRẢ LỜI NGẮN</span><h3>Gõ ý nghĩa của câu lệnh</h3><p>Câu <strong>{index + 1}/{total}</strong> · Đúng <strong>{correctCount}</strong> · Cần đạt <strong>{required}/{total} (80%)</strong></p></div>
+    </div>
+    {current && <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5">
+      <span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">CÂU {index + 1}</span>
+      <pre className="mt-3 rounded-xl bg-[#101820] p-5 text-center font-mono text-xl font-bold text-[#b9f6d0]">{current.question}</pre>
+      <textarea
+        value={draft}
+        disabled={checked}
+        onChange={(event) => setDraft(event.target.value)}
+        rows={3}
+        placeholder="Gõ ý nghĩa của câu lệnh trên (loại chuyển động, tọa độ đích, thông số F/S nếu có)…"
+        className="mt-4 w-full rounded-xl border border-[#dfe4e8] p-3 text-sm text-[#17232c]"
+      />
+      {checked && currentResult && <p className={`mt-3 rounded-xl p-3 text-sm ${currentResult.matched ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"}`}>
+        {currentResult.matched ? "Đạt — " : "Chưa đạt — "}Khớp {currentResult.matchedKeywords.length}/{(current.keywords ?? []).length} từ khóa (cần ≥ {current.min_keyword_matches}). {current.explanation}
+      </p>}
+    </div>}
+    {!checked
+      ? <button className="cnc-submit" disabled={!draft.trim()} onClick={submitAnswer}><FileQuestion size={18} /> Kiểm tra</button>
+      : <button className="cnc-submit" onClick={next}><FileQuestion size={18} /> {isLast ? "Nộp bài" : "Câu tiếp theo"}</button>}
+  </>;
+}
+
+function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, onPassed, onResult, passed, attempts }: { lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
+  const [level, setLevel] = useState<"exercise-1"|"exercise-2"|"exercise-6"|"exercise-3"|"exercise-4"|"exercise-5">("exercise-1");
+  const machine = lessonId === "lesson-2" ? "turn" : "mill";
+  const levels = [
+    { id: "exercise-1" as const, name: "Bài tập 1", note: "Nhận biết câu lệnh · 1 câu ngẫu nhiên/lượt" },
+    { id: "exercise-2" as const, name: "Bài tập 2", note: "Đọc hiểu và dịch block lệnh" },
+    { id: "exercise-6" as const, name: "Bài tập 3", note: "Dịch lệnh — trả lời ngắn" },
+    { id: "exercise-3" as const, name: "Bài tập 4", note: "Điền khuyết chương trình" },
+    { id: "exercise-4" as const, name: "Bài tập 5", note: "Viết chương trình từ bản vẽ" },
+    { id: "exercise-5" as const, name: "Bài tập 6", note: "Mô phỏng và kiểm chứng" },
+  ];
+  return <div className="cnc-programming-suite space-y-5">
+    <SectionHeading icon={FileQuestion} kicker="BỘ 6 BÀI TẬP LẬP TRÌNH CNC" title={`Kiểm tra ${lessonTitle}`} description="Từ nhận biết câu lệnh đến viết, mô phỏng và kiểm chứng chương trình NC." />
+    <div className="cnc-programming-tabs grid gap-2 sm:grid-cols-2 xl:grid-cols-6">{levels.map((item)=><button key={item.id} type="button" onClick={()=>setLevel(item.id)} className={`relative rounded-xl border p-3 text-left transition ${level===item.id?"active border-[#e85d24] bg-[#fff2ec] text-[#b94317]":"border-[#dfe4e8] bg-white text-[#52616d] hover:border-[#efb399]"}`}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,item.id)} attempts={attempts[`${lessonId}:${item.id}`]}/><strong className="block text-xs">{item.name}</strong><small className="mt-1 block text-[10px] opacity-70">{item.note}</small></button>)}</div>
+    {level === "exercise-1" && <RandomBankQuiz quizKey={`${lessonId}-exercise-1`} kicker="DẠNG 1 · NHẬN BIẾT CÂU LỆNH" title="Nhận biết câu lệnh" onResult={(score,total,didPass)=>{onResult?.("exercise-1",score,total,didPass); if (didPass) onPassed();}} />}
+    {level === "exercise-2" && <RandomBankQuiz quizKey={`${lessonId}-exercise-2`} kicker="DẠNG 2 · DỊCH LỆNH" title="Dịch block G-code/M-code" onResult={(score,total,didPass)=>onResult?.("exercise-2",score,total,didPass)} />}
+    {level === "exercise-6" && <ShortAnswerQuiz quizKey={`${lessonId}-exercise-6`} onResult={(score,total,didPass)=>onResult?.("exercise-6",score,total,didPass)} />}
+    {level === "exercise-3" && <FillBlankNcExercise machine={machine} onResult={(score,total,passed)=>onResult?.("exercise-3",score,total,passed)} />}
+    {level === "exercise-4" && <ProgramFromDrawingExercise machine={machine} onResult={(score,total,passed)=>onResult?.("exercise-4",score,total,passed)} />}
+    {level === "exercise-5" && <SimulationEvidenceExercise machine={machine} lessonId={`${lessonId}-simulation`} lessonTitle={`Mô phỏng ${lessonTitle}`} courseId={courseId} onApproved={()=>onResult?.("exercise-5",100,100,true)} />}
+  </div>;
+}
+
 
 function FillBlankNcExercise({machine,onResult}:{machine:"turn"|"mill";onResult?:(score:number,total:number,passed:boolean)=>void}){
   return machine==="turn"?<TurningFillBlankExercise onResult={onResult}/>:<MillingFillBlankExercise onResult={onResult}/>;
@@ -1004,11 +1131,11 @@ function FillBlankLevel({level,onResult}:{level:FillLevel;onResult?:(score:numbe
 function LevelPicker({value,onChange}:{value:"de"|"kho";onChange:(value:"de"|"kho")=>void}){return <div className="mt-4 inline-flex rounded-xl bg-[#f1f4f6] p-1"><button type="button" onClick={()=>onChange("de")} className={`rounded-lg px-4 py-2 text-sm font-bold ${value==="de"?"bg-white text-[#e85d24] shadow-sm":"text-[#71808c]"}`}>Mức dễ</button><button type="button" onClick={()=>onChange("kho")} className={`rounded-lg px-4 py-2 text-sm font-bold ${value==="kho"?"bg-white text-[#e85d24] shadow-sm":"text-[#71808c]"}`}>Mức khó</button></div>}
 
 type ProgramLevel={part_ref:string;image?:string;required_elements:string[];expected_key_coordinates:{point:string;X:number;Y?:number;Z?:number}[];teacher_rubric:{criterion:string;weight:string}[]};
-function ProgramFromDrawingExercise({machine,onResult}:{machine:"turn"|"mill";onResult?:(score:number,total:number,passed:boolean)=>void}){const exercise=(machine==="turn"?turningExercises:millingExercises).exercises[1] as {title:string;levels:(ProgramLevel&{level:string})[]};const[level,setLevel]=useState<"de"|"kho">("de");const selected=exercise.levels.find(item=>item.level===level)??exercise.levels[0];return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 4 · VIẾT CHƯƠNG TRÌNH TỪ BẢN VẼ</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3>{selected.image&&<div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe4e8] bg-white"><Image src={selected.image} alt="Bản vẽ chi tiết bài tập 4" width={1876} height={1580} className="h-auto w-full" unoptimized priority/></div>}{exercise.levels.length>1&&<LevelPicker value={level} onChange={setLevel}/>}<ProgramLevelChallenge key={`${machine}-${level}`} machine={machine} level={selected} onResult={onResult}/></div>}
+function ProgramFromDrawingExercise({machine,onResult}:{machine:"turn"|"mill";onResult?:(score:number,total:number,passed:boolean)=>void}){const exercise=(machine==="turn"?turningExercises:millingExercises).exercises[1] as {title:string;levels:(ProgramLevel&{level:string})[]};const[level,setLevel]=useState<"de"|"kho">("de");const selected=exercise.levels.find(item=>item.level===level)??exercise.levels[0];return <div className="rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 5 · VIẾT CHƯƠNG TRÌNH TỪ BẢN VẼ</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3>{selected.image&&<div className="mt-5 overflow-hidden rounded-2xl border border-[#dfe4e8] bg-white"><Image src={selected.image} alt="Bản vẽ chi tiết bài tập 4" width={1876} height={1580} className="h-auto w-full" unoptimized priority/></div>}{exercise.levels.length>1&&<LevelPicker value={level} onChange={setLevel}/>}<ProgramLevelChallenge key={`${machine}-${level}`} machine={machine} level={selected} onResult={onResult}/></div>}
 
 function ProgramLevelChallenge({machine,level,onResult}:{machine:"turn"|"mill";level:ProgramLevel;onResult?:(score:number,total:number,passed:boolean)=>void}){const[code,setCode]=useState(machine==="turn"?"G90 G95 G18\nT0202\n":"G21 G90 G94 G17\nG54\nT01 M06\nG43 H01 Z50\n");const[result,setResult]=useState<string[]|null>(null);function check(){const value=code.toUpperCase().replace(/\s+/g," ");const tests:[boolean,string][]=[[machine==="mill"?value.includes("G54"):true,"Thiếu khai báo gốc phôi G54"],[/M0?3/.test(value),"Thiếu lệnh quay trục chính M03"],[/M0?5/.test(value),"Thiếu lệnh dừng trục chính M05"],[/M0?30/.test(value),"Thiếu lệnh kết thúc M30"],...level.expected_key_coordinates.map(point=>{const coords=[`X${point.X}`,point.Y!==undefined?`Y${point.Y}`:`Z${point.Z}`];return [coords.every(coord=>new RegExp(`${coord.replace("-","\\-")}(?:\\.0+)?(?:[\\s;]|$)`).test(value)),`Thiếu hoặc sai tọa độ ${point.point}: ${coords.join(" ")}`] as [boolean,string]})];if(machine==="turn")tests.push([/T0?202/.test(value),"Thiếu dao tiện thô T0202"],[/T0?404/.test(value),"Thiếu dao tiện tinh T0404"],[/G95/.test(value),"Thiếu chế độ chạy dao G95 (mm/vòng)"],[/G(?:73|71|0?1)/.test(value),"Thiếu chu trình G73/G71 hoặc nội suy G01"]);else tests.push([/T0?1\s+M0?6/.test(value),"Thiếu T01 M06"],[/G43\s+H0?1/.test(value),"Thiếu bù chiều dài G43 H01"],[/G4[12]/.test(value),"Thiếu bù bán kính G41/G42"],[/G40/.test(value),"Thiếu hủy bù bán kính G40"]);if(level.part_ref.includes("ren"))tests.push([/T0?202/.test(value),"Thiếu dao tiện ren T0202"],[/G(?:92|76)/.test(value),"Thiếu chu trình tiện ren G92/G76"],[/F1(?:\.5|,5)/.test(value),"Sai hoặc thiếu bước ren F1.5"]);if(level.part_ref.includes("cung"))tests.push([/G0?[23]/.test(value),"Thiếu nội suy cung G02/G03"],[/(?:I|J|R)-?\d/.test(value),"Thiếu thông số I, J hoặc R"]);const missing=tests.filter(([ok])=>!ok).map(([,message])=>message);setResult(missing);onResult?.(tests.length-missing.length,tests.length,missing.length===0)}return <div className="mt-4 grid gap-5 lg:grid-cols-[.9fr_1.1fr]"><div><div className="rounded-xl bg-orange-50 p-4"><strong className="text-sm text-[#17232c]">Đề bài</strong><p className="mt-1 text-sm text-[#52616d]">{level.part_ref}</p></div><h4 className="mt-4 font-bold text-[#17232c]">Các yêu cầu cần đạt</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-[#52616d]">{level.required_elements.map(item=><li key={item}>{item}</li>)}</ul><h4 className="mt-4 font-bold text-[#17232c]">Rubric giáo viên</h4>{level.teacher_rubric.map(item=><div key={item.criterion} className="mt-2 flex justify-between gap-3 border-b border-[#edf0f2] pb-2 text-xs text-[#52616d]"><span>{item.criterion}</span><strong>{item.weight}</strong></div>)}</div><div className="rounded-2xl bg-[#101820] p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#67e8f9]">NC CODE CHECKER · {machine==="turn"?"FANUC 21T":"FANUC 21M"}</span><textarea value={code} onChange={event=>{setCode(event.target.value);setResult(null)}} spellCheck={false} className="mt-4 min-h-96 w-full rounded-xl border border-white/10 bg-[#080d12] p-4 font-mono text-sm leading-7 text-[#b9f6d0]"/><button type="button" onClick={check} className="mt-3 rounded-full bg-[#e85d24] px-5 py-2.5 text-sm font-bold text-white">Kiểm tra chương trình</button>{result&&<div className={`mt-3 rounded-xl p-4 text-sm ${result.length===0?"bg-emerald-500/15 text-emerald-200":"bg-amber-500/15 text-amber-100"}`}>{result.length===0?<strong>Đạt — Chương trình đáp ứng đầy đủ tiêu chí tự động.</strong>:<><strong>Còn {result.length} tiêu chí cần sửa:</strong><ul className="mt-2 list-disc space-y-1 pl-5">{result.map(item=><li key={item}>{item}</li>)}</ul></>}</div>}</div></div>}
 
-function SimulationEvidenceExercise({machine,...props}:{machine:"turn"|"mill";lessonId:string;lessonTitle:string;courseId?:number;onApproved:(lessonId:string)=>void}){const exercise=(machine==="turn"?turningExercises:millingExercises).exercises[2];return <div><div className="mb-5 rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 5 · MÔ PHỎNG VÀ KIỂM CHỨNG</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3><p className="mt-2 text-sm leading-6 text-[#52616d]">{exercise.instructions}</p><h4 className="mt-4 font-bold text-[#17232c]">Hồ sơ cần nộp</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-[#52616d]">{exercise.submission_requirements?.map(item=><li key={item}>{item}</li>)}</ul><h4 className="mt-4 font-bold text-[#17232c]">Rubric chấm của giáo viên</h4>{exercise.teacher_rubric?.map(item=><div key={item.criterion} className="mt-2 flex justify-between gap-3 border-b border-[#edf0f2] pb-2 text-xs text-[#52616d]"><span>{item.criterion}</span><strong>{item.weight}</strong></div>)}</div><DrawingSubmissionTest {...props}/></div>}
+function SimulationEvidenceExercise({machine,...props}:{machine:"turn"|"mill";lessonId:string;lessonTitle:string;courseId?:number;onApproved:(lessonId:string)=>void}){const exercise=(machine==="turn"?turningExercises:millingExercises).exercises[2];return <div><div className="mb-5 rounded-2xl border border-[#dfe4e8] bg-white p-5"><span className="text-[10px] font-black tracking-[.15em] text-[#e85d24]">BÀI TẬP 6 · MÔ PHỎNG VÀ KIỂM CHỨNG</span><h3 className="mt-2 text-lg font-extrabold text-[#17232c]">{exercise.title}</h3><p className="mt-2 text-sm leading-6 text-[#52616d]">{exercise.instructions}</p><h4 className="mt-4 font-bold text-[#17232c]">Hồ sơ cần nộp</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-[#52616d]">{exercise.submission_requirements?.map(item=><li key={item}>{item}</li>)}</ul><h4 className="mt-4 font-bold text-[#17232c]">Rubric chấm của giáo viên</h4>{exercise.teacher_rubric?.map(item=><div key={item.criterion} className="mt-2 flex justify-between gap-3 border-b border-[#edf0f2] pb-2 text-xs text-[#52616d]"><span>{item.criterion}</span><strong>{item.weight}</strong></div>)}</div><DrawingSubmissionTest {...props}/></div>}
 
 function MillingDrawingCodeChallenge({onResult}:{onResult?:(score:number,total:number,passed:boolean)=>void}) {
   const starter="G21 G17 G90 G54\nT01 M06\nS1500 M03\nG00 X0 Y0 Z5\nG01 Z-2 F100\n";
