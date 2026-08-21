@@ -31,7 +31,9 @@ export async function addMachineStatusLog(machineCode: string, status: MachineSt
   if (error) throw error;
 }
 
-export async function updateMachineStatusLog(id: number, status: MachineStatus, note: string) {
-  const { error } = await getSupabase().rpc("update_machine_status_log", { p_id: id, p_status: status, p_note: note.trim() });
+export async function updateMachineStatusLog(id: number, status: MachineStatus, note: string, createdAt?: string) {
+  const { error } = await getSupabase().rpc("update_machine_status_log", {
+    p_id: id, p_status: status, p_note: note.trim(), p_created_at: createdAt ?? null,
+  });
   if (error) throw error;
 }

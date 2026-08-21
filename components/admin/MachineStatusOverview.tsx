@@ -17,6 +17,11 @@ function shortLabel(label: string) {
 function fmtDateTime(iso: string) {
   return new Date(iso).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
 }
+function toDateTimeLocal(iso: string) {
+  const d = new Date(iso);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
 
 export default function MachineStatusOverview() {
   const [machines, setMachines] = useState<Machine[]>([]);
@@ -150,6 +155,7 @@ function MachineDetailModal({ machine, onClose, onChanged }: { machine: Machine;
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editStatus, setEditStatus] = useState<MachineStatus>("ok");
   const [editNote, setEditNote] = useState("");
+  const [editDate, setEditDate] = useState("");
   const [editSaving, setEditSaving] = useState(false);
 
   const load = useCallback(() => {
@@ -165,10 +171,16 @@ function MachineDetailModal({ machine, onClose, onChanged }: { machine: Machine;
     catch (cause) { setError(cause instanceof Error ? cause.message : "Không lưu được."); }
     finally { setSaving(false); }
   }
-  function startEdit(entry: MachineStatusLogEntry) { setEditingId(entry.id); setEditStatus(entry.status); setEditNote(entry.note); }
+  function startEdit(entry: MachineStatusLogEntry) {
+    setEditingId(entry.id); setEditStatus(entry.status); setEditNote(entry.note); setEditDate(toDateTimeLocal(entry.created_at));
+  }
   async function saveEdit(id: number) {
     setEditSaving(true); setError("");
-    try { await updateMachineStatusLog(id, editStatus, editNote); setEditingId(null); await load(); onChanged(); }
+    try {
+      const createdAt = editDate ? new Date(editDate).toISOString() : undefined;
+      await updateMachineStatusLog(id, editStatus, editNote, createdAt);
+      setEditingId(null); await load(); onChanged();
+    }
     catch (cause) { setError(cause instanceof Error ? cause.message : "Không lưu được."); }
     finally { setEditSaving(false); }
   }
@@ -210,6 +222,7 @@ function MachineDetailModal({ machine, onClose, onChanged }: { machine: Machine;
                       <button type="button" onClick={() => setEditStatus("broken")} className={`flex-1 rounded-md border py-1.5 font-bold ${editStatus === "broken" ? "border-red-400/40 bg-red-500/10 text-red-200" : "border-white/10 text-slate-400"}`}>Đang hỏng</button>
                     </div>
                     <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)} rows={2} className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-white" />
+                    <input type="datetime-local" value={editDate} onChange={(e) => setEditDate(e.target.value)} className="mt-1.5 w-full rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-white [color-scheme:dark]" />
                     <div className="mt-1.5 flex gap-1.5">
                       <button type="button" disabled={editSaving} onClick={() => void saveEdit(entry.id)} className="rounded-md bg-cyan-600 px-2.5 py-1 font-bold text-white disabled:opacity-40">Lưu</button>
                       <button type="button" onClick={() => setEditingId(null)} className="rounded-md border border-white/10 px-2.5 py-1 font-bold text-slate-300">Hủy</button>
