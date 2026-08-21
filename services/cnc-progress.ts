@@ -2,8 +2,8 @@ import type { CncLearningRecord } from "@/services/cnc-learning-records";
 
 export const CNC_ASSESSMENT_PLAN: Record<string, readonly string[]> = {
   "lesson-1": ["final"],
-  "lesson-2": ["exercise-1", "exercise-2", "exercise-3", "exercise-4", "exercise-5"],
-  "lesson-3": ["exercise-1", "exercise-2", "exercise-3", "exercise-4", "exercise-5"],
+  "lesson-2": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5"],
+  "lesson-3": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5"],
   "lesson-4-turn": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
   "lesson-4-mill": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
   "lesson-5": ["checklist-practice", "checklist", "rubric-exam"],
