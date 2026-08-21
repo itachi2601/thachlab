@@ -23,6 +23,7 @@ export default function MachineStatusOverview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<Machine | null>(null);
+  const [activeWorkshop, setActiveWorkshop] = useState<string | null>(null);
   const load = useCallback(() => {
     setLoading(true);
     fetchAllMachines()
@@ -35,6 +36,7 @@ export default function MachineStatusOverview() {
 
   const workshops = groupMachinesByWorkshop(machines);
   const totalBroken = machines.filter((m) => m.status === "broken").length;
+  const currentWorkshop = workshops.find((ws) => ws.workshop === activeWorkshop) ?? workshops[0] ?? null;
 
   return (
     <div className="space-y-5">
@@ -60,7 +62,30 @@ export default function MachineStatusOverview() {
         <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có dữ liệu máy.</p>
       )}
 
-      {workshops.map((ws) => <WorkshopSection key={ws.workshop} workshop={ws.workshop} machines={ws.machines} onSelect={setSelected} />)}
+      {workshops.length > 1 && (
+        <div className="flex flex-wrap gap-2">
+          {workshops.map((ws) => {
+            const broken = ws.machines.filter((m) => m.status === "broken").length;
+            const active = ws.workshop === currentWorkshop?.workshop;
+            return (
+              <button
+                key={ws.workshop}
+                type="button"
+                onClick={() => setActiveWorkshop(ws.workshop)}
+                className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-bold transition-colors ${
+                  active ? "border-cyan-400/40 bg-cyan-500/10 text-white" : "border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
+                }`}
+              >
+                {WORKSHOP_LABELS[ws.workshop] ?? (ws.workshop || "Chưa gán xưởng")}
+                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-bold text-slate-300">{ws.machines.length}</span>
+                {broken > 0 && <span className="rounded-full bg-red-500/20 px-2 py-0.5 text-[11px] font-bold text-red-300">{broken}</span>}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={setSelected} />}
 
       {selected && <MachineDetailModal machine={selected} onClose={() => setSelected(null)} onChanged={load} />}
     </div>
