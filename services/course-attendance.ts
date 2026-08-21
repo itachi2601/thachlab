@@ -13,6 +13,24 @@ export interface AttendanceRecord {
   note: string; bonus_points: number; machine_code: string | null; profiles?: { full_name: string; class_name: string } | null;
 }
 
+export interface MachineUsageRecord {
+  session_id: number; student_id: string;
+  profiles?: { full_name: string; class_name: string } | null;
+  attendance_sessions?: { session_date: string; course_offerings?: { name: string; class_label: string } | null } | null;
+}
+
+// Sinh viên nào đứng máy nào trong ca thực tập, trên mọi khoá học — dùng cho trang tổng quan
+// tình trạng máy (cấp bộ môn).
+export async function fetchMachineUsageHistory(machineCode: string, limit = 30) {
+  const { data, error } = await getSupabase().from("attendance_records")
+    .select("session_id, student_id, profiles!attendance_records_student_id_fkey(full_name, class_name), attendance_sessions!inner(session_date, course_offerings(name, class_label))")
+    .eq("machine_code", machineCode)
+    .order("session_date", { ascending: false, foreignTable: "attendance_sessions" })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as unknown as MachineUsageRecord[];
+}
+
 export async function fetchAttendanceSessions(courseId: number) {
   const { data, error } = await getSupabase().from("attendance_sessions").select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open").eq("course_id", courseId).order("starts_at", { ascending: false });
   if (error) throw error;
