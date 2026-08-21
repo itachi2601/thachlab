@@ -60,7 +60,7 @@ export default function QuestionCard({
                 type="button"
                 disabled={review}
                 onClick={() => onChange?.(picked ? null : oi)}
-                className={`flex items-start gap-2 rounded-xl border px-3 py-2.5 text-left text-sm transition-colors ${cls}`}
+                className={`flex items-start gap-2 rounded-xl border px-3 py-2.5 text-left text-base transition-colors ${cls}`}
               >
                 <span className="font-semibold">{LETTERS[oi]}.</span>
                 <Html html={opt} />
@@ -79,7 +79,7 @@ export default function QuestionCard({
             return (
               <div
                 key={si}
-                className="flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm"
+                className="flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-base"
               >
                 <span className="font-semibold text-slate-400">
                   {TF_LABELS[si]}
@@ -111,7 +111,7 @@ export default function QuestionCard({
                           next[si] = chosen ? null : val;
                           onChange?.(next);
                         }}
-                        className={`rounded-lg px-3 py-1 text-xs font-semibold transition-colors ${cls}`}
+                        className={`rounded-lg px-3 py-1 text-sm font-semibold transition-colors ${cls}`}
                       >
                         {val ? "Đúng" : "Sai"}
                       </button>
@@ -127,7 +127,7 @@ export default function QuestionCard({
       {q.type === "short_answer" && (
         <div className="mt-4">
           {review ? (
-            <p className="text-sm">
+            <p className="text-base">
               <span className="text-slate-400">Trả lời của em: </span>
               <span className="font-mono font-semibold text-white">
                 {typeof r === "string" && r.trim() !== "" ? r : "—"}
@@ -164,7 +164,7 @@ export default function QuestionCard({
       )}
 
       {review && q.explanation && (
-        <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-300">
+        <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-3 text-base text-slate-300">
           <span className="font-semibold text-[#22D3EE]">Lời giải: </span>
           <Html html={q.explanation} />
         </div>

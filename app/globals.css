@@ -652,6 +652,12 @@ body {
 .delay-4 { animation-delay: 0.55s; }
 
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
 /* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
 .exam-content img.eq {
   display: inline-block;
