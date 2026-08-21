@@ -126,7 +126,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
 
     {loading && <p className="mt-4 text-sm text-slate-500">Đang tải bài thi…</p>}
 
-    {!loading && studentId && <div className="mt-5">
+    {!loading && studentId && <div className="mt-5 cnc-embedded">
       <RubricExamForm
         rubric={rubric}
         levels={levels}
