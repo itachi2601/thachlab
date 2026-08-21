@@ -814,3 +814,23 @@ body {
 .cnc-rubric-notes textarea { border: 1px solid #dfe4e7; border-radius: 8px; padding: 10px 12px; font-family: inherit; font-size: 12px; resize: vertical; }
 .cnc-rubric-notes textarea:disabled { background: #f6f8f9; color: #8b969e; }
 .cnc-rubric-self { margin-top: 10px; }
+
+/* Biến thể tối cho rubric khi nhúng trong khu vực quản trị (theo đúng quy ước .cnc-embedded đã có) */
+.cnc-embedded .cnc-rubric-group { border-color: rgba(255,255,255,.09); background: #0b1020; }
+.cnc-embedded .cnc-rubric-group > header { background: #172b4d; }
+.cnc-embedded .cnc-rubric-gate-warning { background: rgba(245,158,11,.09); color: #fde68a; }
+.cnc-embedded .cnc-rubric-criterion { border-color: rgba(255,255,255,.08); }
+.cnc-embedded .cnc-rubric-criterion-head { color: #e2e8f0; }
+.cnc-embedded .cnc-rubric-criterion-head span { color: #94a3b8; }
+.cnc-embedded .cnc-rubric-reference { color: #94a3b8; }
+.cnc-embedded .cnc-rubric-level { border-color: rgba(255,255,255,.09); background: rgba(255,255,255,.02); }
+.cnc-embedded .cnc-rubric-level:hover { background: rgba(255,255,255,.05); }
+.cnc-embedded .cnc-rubric-level.selected { border-color: #10b981; background: rgba(16,185,129,.1); }
+.cnc-embedded .cnc-rubric-level-head b { background: rgba(255,255,255,.08); color: #cbd5e1; }
+.cnc-embedded .cnc-rubric-level.selected .cnc-rubric-level-head b { background: #10b981; color: #06281d; }
+.cnc-embedded .cnc-rubric-level-head small { color: #94a3b8; }
+.cnc-embedded .cnc-rubric-level p { color: #cbd5e1; }
+.cnc-embedded .cnc-rubric-notes span { color: #cbd5e1; }
+.cnc-embedded .cnc-rubric-notes textarea { border-color: rgba(255,255,255,.09); background: rgba(255,255,255,.03); color: #e2e8f0; }
+.cnc-embedded .cnc-rubric-notes textarea::placeholder { color: #64748b; }
+.cnc-embedded .cnc-rubric-notes textarea:disabled { background: rgba(255,255,255,.02); color: #64748b; }
