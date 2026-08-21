@@ -38,6 +38,24 @@ export async function fetchEquipmentBreakdownReports(courseId: number) {
   return (data ?? []).map(normalize);
 }
 
+export type EquipmentBreakdownReportWithCourse = EquipmentBreakdownReport & { course_offerings?: { name: string; class_label: string } | null };
+
+// Lịch sử báo hỏng của 1 máy trên mọi khoá học — dùng cho trang tổng quan tình trạng máy (cấp bộ môn).
+export async function fetchEquipmentBreakdownReportsByMachine(machineCode: string) {
+  const { data, error } = await getSupabase()
+    .from("equipment_breakdown_reports")
+    .select(`${SELECT_FIELDS}, course_offerings(name, class_label)`)
+    .eq("machine_code", machineCode)
+    .order("broken_at", { ascending: false });
+  if (error) throw error;
+  return (data ?? []).map((row) => {
+    const normalized = normalize(row as Record<string, unknown>) as EquipmentBreakdownReportWithCourse;
+    const courseRaw = (row as Record<string, unknown>).course_offerings;
+    normalized.course_offerings = Array.isArray(courseRaw) ? (courseRaw[0] ?? null) : (courseRaw as EquipmentBreakdownReportWithCourse["course_offerings"]) ?? null;
+    return normalized;
+  });
+}
+
 export async function reportEquipmentBreakdown({ courseId, sessionId, machineCode, description, brokenAt, file }: { courseId: number; sessionId: number | null; machineCode: string; description: string; brokenAt: string; file: File }) {
   const supabase = getSupabase();
   const compressed = await compressImageFile(file);
