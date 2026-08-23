@@ -131,8 +131,8 @@ export default function WrongTopicsTable({ onTopicSelect }: Props) {
       {selectedTopic && (
         <div className="mt-4 p-4 rounded-2xl border border-blue-500/30 bg-blue-500/5">
           <p className="text-sm text-slate-300">
-            💡 Chủ đề "<strong>{selectedTopic}</strong>" được chọn để ôn tập.
-            Các bài ôn tập sẽ được cung cấp sớm.
+            💡 Đã lọc danh sách đề theo chủ đề &quot;<strong>{selectedTopic}</strong>&quot; —
+            cuộn xuống để chọn đề luyện lại.
           </p>
         </div>
       )}

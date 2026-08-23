@@ -81,6 +81,13 @@ function QuestionEditor({
         placeholder="Nội dung câu hỏi (LaTeX, AZOTA, hoặc HTML)"
       />
 
+      <input
+        value={q.topic ?? ""}
+        onChange={(e) => onChange({ ...q, topic: e.target.value })}
+        placeholder="Chủ đề riêng của câu (để trống = dùng chủ đề của đề)"
+        className={`${inputCls} text-xs`}
+      />
+
       {q.type === "multiple_choice" && (
         <div className="space-y-2">
           {(q as MultipleChoiceQuestion).options.map((opt, oi) => (

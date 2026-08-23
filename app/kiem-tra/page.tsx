@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -20,6 +20,9 @@ import {
   visibleTo,
   type ExamMeta,
 } from "@/services/content";
+import ScoreChart from "@/components/analytics/ScoreChart";
+import WrongTopicsTable from "@/components/analytics/WrongTopicsTable";
+import TodayFocus from "@/components/analytics/TodayFocus";
 
 const selectCls =
   "rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-[#3B82F6] focus:outline-none";
@@ -38,8 +41,14 @@ function ExamList() {
   const [diffFilter, setDiffFilter] = useState<Difficulty | "all">("all");
   const [durFilter, setDurFilter] = useState<"all" | "short" | "medium" | "long">("all");
   const [page, setPage] = useState(1);
+  const filterBarRef = useRef<HTMLDivElement>(null);
 
   const isAdmin = profile?.role === "admin";
+
+  function reviewTopic(topic: string) {
+    setTopicFilter(topic);
+    filterBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   useEffect(() => {
     if (!session) return;
@@ -97,7 +106,15 @@ function ExamList() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-center gap-3">
+      {!isAdmin && (
+        <div className="space-y-6">
+          <TodayFocus onReview={reviewTopic} />
+          <ScoreChart />
+          <WrongTopicsTable onTopicSelect={reviewTopic} />
+        </div>
+      )}
+
+      <div ref={filterBarRef} className="flex flex-wrap items-center gap-3">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}

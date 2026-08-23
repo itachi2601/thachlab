@@ -5,7 +5,12 @@ import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import type { Exam, QuestionResponse } from "@/features/exams/types";
-import { emptyResponses, gradeExam, isAnswered } from "@/features/exams/types";
+import {
+  emptyResponses,
+  gradeExam,
+  gradeQuestion,
+  isAnswered,
+} from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
@@ -57,7 +62,28 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           correctCount: summary.correctCount,
         },
       })
-      .then(({ error }) => setSaveState(error ? "failed" : "saved"));
+      .select("id")
+      .single()
+      .then(({ data, error }) => {
+        setSaveState(error ? "failed" : "saved");
+        // Lưu chi tiết đúng/sai từng câu theo chủ đề để phân tích "chủ đề hay sai".
+        // Không chặn luồng nộp bài nếu bảng này chưa có (deployment cũ).
+        if (data) {
+          const rows = exam.questions.map((q, i) => {
+            const g = gradeQuestion(q, finalResponses[i]);
+            return {
+              exam_result_id: data.id,
+              question_index: i,
+              topic: (q.topic || exam.topic || "Chưa phân loại").trim() || "Chưa phân loại",
+              is_correct: g.max > 0 && g.earned === g.max,
+            };
+          });
+          getSupabase()
+            .from("exam_question_results")
+            .insert(rows)
+            .then(() => {});
+        }
+      });
   }, [exam, session]);
 
   const confirmSubmit = () => {

@@ -7,6 +7,7 @@ export interface MultipleChoiceQuestion {
   options: string[]; // 4 đáp án A–D
   answer: number; // chỉ số đáp án đúng (0–3)
   explanation: string;
+  topic?: string; // chủ đề riêng của câu; rỗng = dùng topic của đề
 }
 
 export interface TrueFalseQuestion {
@@ -14,6 +15,7 @@ export interface TrueFalseQuestion {
   question: string;
   statements: { text: string; answer: boolean }[]; // 4 ý a) b) c) d)
   explanation: string;
+  topic?: string;
 }
 
 export interface ShortAnswerQuestion {
@@ -21,6 +23,7 @@ export interface ShortAnswerQuestion {
   question: string;
   answer: string; // tối đa 4 ký tự: chữ số, dấu trừ, dấu phẩy (vd "-1,5")
   explanation: string;
+  topic?: string;
 }
 
 export type ExamQuestion =

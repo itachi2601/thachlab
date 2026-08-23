@@ -82,30 +82,17 @@ Khi tạo đề thi trong Supabase, **mỗi question phải có field `topic`**:
 }
 ```
 
-## 📊 Bước 3: Nhập Chi tiết Câu Sai
+## 📊 Bước 3: Chi tiết câu sai được lưu tự động
 
-Sau khi học sinh làm bài thi, admin cần nhập chi tiết kết quả từng câu vào bảng `exam_question_results`:
+Không cần nhập tay nữa — khi học sinh nộp bài, `ExamRunner` tự chấm từng câu và
+lưu ngay vào `exam_question_results` (topic lấy từ câu hỏi, hoặc từ `topic`
+của cả đề nếu câu không gán riêng, mặc định "Chưa phân loại" nếu cả hai đều
+trống). Vì việc lưu này chạy ở phía trình duyệt học sinh, bảng cần có policy
+insert cho học sinh — đã được thêm vào `docs/supabase-migration-topics.sql`
+(chạy lại file này nếu bạn đã tạo bảng từ trước khi có policy insert).
 
-1. Mở **Supabase Dashboard → Table Editor**
-2. Chọn bảng **exam_question_results**
-3. Nhập dữ liệu cho mỗi câu hỏi:
-
-| Field | Giá trị | Mô tả |
-|---|---|---|
-| `exam_result_id` | 123 | ID của kết quả bài làm (từ exam_results) |
-| `question_index` | 0, 1, 2... | Vị trí câu hỏi trong đề (bắt đầu từ 0) |
-| `topic` | "Lực & chuyển động" | Chủ đề của câu hỏi |
-| `is_correct` | true/false | Câu đúng hay sai |
-
-### Ví dụ dữ liệu:
-```
-exam_result_id | question_index | topic                | is_correct
-123            | 0              | Lực & chuyển động    | true
-123            | 1              | Lực & chuyển động    | false
-123            | 2              | Năng lượng           | true
-123            | 3              | Năng lượng           | false
-123            | 4              | Chuyển động thẳng    | false
-```
+Muốn phân tích chi tiết hơn theo từng câu (không chỉ theo cả đề), vào **Quản
+trị → Đề kiểm tra**, mở từng câu và điền ô "Chủ đề riêng của câu" (tùy chọn).
 
 ## 🎯 Danh sách Topics Đề xuất
 
@@ -144,13 +131,12 @@ Sau khi có dữ liệu:
    - Tổng số câu
    - Số câu sai
    - % câu sai (color-coded: 🔴 đỏ nếu > 50%, 🟡 vàng nếu 30-50%, 🔵 xanh nếu < 30%)
-3. Học sinh có thể click "Ôn tập" để nhận lời khuyên ôn tập lại chủ đề đó
+3. Học sinh có thể bấm "Ôn tập" trong bảng chủ đề (hoặc nút gợi ý ở khối "Hôm
+   nay học gì" đầu trang `/kiem-tra`) để lọc thẳng danh sách đề theo chủ đề đó
 
-## 🤖 Tự động hóa (Tương lai)
-
-Hiện tại, chi tiết câu sai phải nhập thủ công. Trong tương lai, có thể:
-- Sau khi học sinh submit bài thi, tự động lưu kết quả từng câu
-- Tạo bảng điểm tự động trên trang làm bài
+Hai khối này cùng biểu đồ điểm được gắn sẵn ở đầu trang `/kiem-tra` cho học
+sinh (`components/analytics/TodayFocus.tsx`, `ScoreChart.tsx`,
+`WrongTopicsTable.tsx`).
 
 ## 📞 Câu hỏi thường gặp
 

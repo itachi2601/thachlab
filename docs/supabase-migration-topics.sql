@@ -34,6 +34,7 @@ create index if not exists exam_question_results_topic_idx on public.exam_questi
 
 alter table public.exam_question_results enable row level security;
 
+drop policy if exists "student reads own question results" on public.exam_question_results;
 create policy "student reads own question results" on public.exam_question_results
   for select to authenticated using (
     exam_result_id in (
@@ -43,5 +44,17 @@ create policy "student reads own question results" on public.exam_question_resul
     or (select public.is_admin())
   );
 
+-- ExamRunner tự lưu chi tiết đúng/sai từng câu ngay khi nộp bài (client-side insert),
+-- nên học sinh cần được phép insert cho đúng bài làm của chính mình.
+drop policy if exists "student inserts own question results" on public.exam_question_results;
+create policy "student inserts own question results" on public.exam_question_results
+  for insert to authenticated with check (
+    exam_result_id in (
+      select id from public.exam_results
+      where student_id = auth.uid()
+    )
+  );
+
+drop policy if exists "admin manages question results" on public.exam_question_results;
 create policy "admin manages question results" on public.exam_question_results
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
