@@ -4,8 +4,9 @@ import { useCallback, useEffect, useState } from "react";
 import { AlertOctagon, Check, History, Loader2, Pencil, RefreshCw, Users, Wrench, X } from "lucide-react";
 import { fetchAllMachines, groupMachinesByType, groupMachinesByWorkshop, MACHINE_TYPE_LABELS, type Machine, type MachineStatus } from "@/services/attendance-machine";
 import { addMachineStatusLog, fetchMachineStatusLog, updateMachineStatusLog, type MachineStatusLogEntry } from "@/services/machine-status-log";
-import { fetchEquipmentBreakdownReportsByMachine, fetchOpenEquipmentBreakdownReports, createEquipmentBreakdownPhotoUrl, type EquipmentBreakdownReportWithCourse, type BreakdownStatus } from "@/services/equipment-breakdown";
+import { fetchEquipmentBreakdownReportsByMachine, fetchOpenEquipmentBreakdownReports, fetchAdminProfiles, createEquipmentBreakdownPhotoUrl, startEquipmentRepair, resolveEquipmentBreakdown, type EquipmentBreakdownReportWithCourse, type BreakdownStatus, type AdminProfile } from "@/services/equipment-breakdown";
 import { fetchMachineUsageHistory, type MachineUsageRecord } from "@/services/course-attendance";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 const WORKSHOP_LABELS: Record<string, string> = {
   "C1.2": "Phòng CNC C1.2",
@@ -40,6 +41,7 @@ function toDateTimeLocal(iso: string) {
 }
 
 export default function MachineStatusOverview() {
+  const { profile } = useAuth();
   const [machines, setMachines] = useState<Machine[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -49,6 +51,8 @@ export default function MachineStatusOverview() {
   const [openBreakdowns, setOpenBreakdowns] = useState<EquipmentBreakdownReportWithCourse[]>([]);
   const [openBreakdownsLoading, setOpenBreakdownsLoading] = useState(true);
   const [openBreakdownsError, setOpenBreakdownsError] = useState("");
+  const [lecturers, setLecturers] = useState<AdminProfile[]>([]);
+  useEffect(() => { void fetchAdminProfiles().then(setLecturers).catch(() => undefined); }, []);
   const load = useCallback(() => {
     setLoading(true);
     fetchAllMachines()
@@ -124,7 +128,7 @@ export default function MachineStatusOverview() {
 
       {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={(m) => openMachine(m)} />}
 
-      {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelected(null)} onChanged={load} />}
+      {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelected(null)} onChanged={load} lecturers={lecturers} currentUserId={profile?.id ?? null} />}
     </div>
   );
 }
@@ -238,7 +242,7 @@ function MachineTile({ machine, onClick }: { machine: Machine; onClick: () => vo
   );
 }
 
-function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged }: { machine: Machine; initialTab?: "status" | "breakdown" | "usage"; onClose: () => void; onChanged: () => void }) {
+function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged, lecturers, currentUserId }: { machine: Machine; initialTab?: "status" | "breakdown" | "usage"; onClose: () => void; onChanged: () => void; lecturers: AdminProfile[]; currentUserId: string | null }) {
   const [tab, setTab] = useState<"status" | "breakdown" | "usage">(initialTab);
   const [log, setLog] = useState<MachineStatusLogEntry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -263,6 +267,7 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
     setLoading(true);
     fetchMachineStatusLog(machine.code).then(setLog).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được lịch sử.")).finally(() => setLoading(false));
   }, [machine.code]);
+  const [breakdownRefreshKey, setBreakdownRefreshKey] = useState(0);
   useEffect(() => { load(); }, [load]);
   useEffect(() => { setStatus(machine.status); setNote(machine.note); }, [machine.status, machine.note]);
   useEffect(() => {
@@ -274,7 +279,8 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
     fetchMachineUsageHistory(machine.code).then(setUsage)
       .catch((cause) => setUsageError(cause instanceof Error ? cause.message : "Không tải được lịch sử sử dụng."))
       .finally(() => setUsageLoading(false));
-  }, [machine.code]);
+  }, [machine.code, breakdownRefreshKey]);
+  const handleBreakdownChanged = useCallback(() => { setBreakdownRefreshKey((k) => k + 1); onChanged(); }, [onChanged]);
 
   async function saveNew() {
     setSaving(true); setError("");
@@ -373,20 +379,23 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
         </div>
         </>}
 
-        {tab === "breakdown" && <BreakdownSection reports={breakdowns} loading={breakdownLoading} error={breakdownError} />}
+        {tab === "breakdown" && <BreakdownSection reports={breakdowns} loading={breakdownLoading} error={breakdownError} lecturers={lecturers} currentUserId={currentUserId} onChanged={handleBreakdownChanged} />}
         {tab === "usage" && <UsageSection records={usage} loading={usageLoading} error={usageError} />}
       </div>
     </div>
   );
 }
 
-function BreakdownSection({ reports, loading, error }: { reports: EquipmentBreakdownReportWithCourse[]; loading: boolean; error: string }) {
+function BreakdownSection({ reports, loading, error, lecturers, currentUserId, onChanged }: { reports: EquipmentBreakdownReportWithCourse[]; loading: boolean; error: string; lecturers: AdminProfile[]; currentUserId: string | null; onChanged: () => void }) {
   if (loading) return <p className="mt-4 flex items-center gap-2 text-sm text-slate-500"><Loader2 size={14} className="animate-spin" />Đang tải…</p>;
   if (error) return <p className="mt-4 text-sm text-red-300">{error}</p>;
   if (reports.length === 0) return <p className="mt-4 text-sm text-slate-500">Máy này chưa từng được báo hỏng.</p>;
+  const currentIssue = reports.find((r) => r.status === "open" || r.status === "in_progress");
+  const history = reports.filter((r) => r.status === "resolved");
   return (
     <div className="mt-4 space-y-2.5">
-      {reports.map((r) => (
+      {currentIssue && <CurrentBreakdownActions report={currentIssue} lecturers={lecturers} currentUserId={currentUserId} onDone={onChanged} />}
+      {history.map((r) => (
         <div key={r.id} className="rounded-lg border border-white/5 bg-black/15 p-2.5 text-xs">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className={`rounded-full px-2 py-0.5 font-bold ${BREAKDOWN_STATUS_STYLES[r.status]}`}>{BREAKDOWN_STATUS_LABELS[r.status]}</span>
@@ -394,6 +403,7 @@ function BreakdownSection({ reports, loading, error }: { reports: EquipmentBreak
           </div>
           <p className="mt-1.5 text-slate-500">Hư lúc {fmtDateTime(r.broken_at)} · {r.profiles?.full_name ?? "—"} báo</p>
           {r.description && <p className="mt-1 text-slate-300">{r.description}</p>}
+          <p className="mt-1 text-slate-500">GV sửa chữa: {r.assigned_profile?.full_name ?? "—"}</p>
           <div className="mt-1.5 flex flex-wrap gap-1.5">
             <BreakdownPhotoLink path={r.broken_photo_path} label="Ảnh lúc hỏng" />
             {r.resolved_photo_path && <BreakdownPhotoLink path={r.resolved_photo_path} label="Ảnh lúc khắc phục" />}
@@ -405,6 +415,86 @@ function BreakdownSection({ reports, loading, error }: { reports: EquipmentBreak
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+function LecturerSelect({ lecturers, value, onChange, placeholder }: { lecturers: AdminProfile[]; value: string; onChange: (id: string) => void; placeholder: string }) {
+  return (
+    <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-xs text-white">
+      <option value="" disabled>{placeholder}</option>
+      {lecturers.map((l) => <option key={l.id} value={l.id}>{l.full_name}</option>)}
+    </select>
+  );
+}
+
+function CurrentBreakdownActions({ report, lecturers, currentUserId, onDone }: { report: EquipmentBreakdownReportWithCourse; lecturers: AdminProfile[]; currentUserId: string | null; onDone: () => void }) {
+  const [assigning, setAssigning] = useState(false);
+  const [assignedTo, setAssignedTo] = useState(currentUserId ?? "");
+  const [resolving, setResolving] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  async function start() {
+    if (!assignedTo) return;
+    setBusy(true); setError("");
+    try { await startEquipmentRepair(report.id, assignedTo); setAssigning(false); onDone(); }
+    catch (cause) { setError(cause instanceof Error ? cause.message : "Không nhận sửa được."); }
+    finally { setBusy(false); }
+  }
+  return (
+    <div className="rounded-xl border border-red-400/20 bg-red-500/5 p-3 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <span className={`rounded-full px-2 py-0.5 font-bold ${BREAKDOWN_STATUS_STYLES[report.status]}`}>{BREAKDOWN_STATUS_LABELS[report.status]}</span>
+        <span className="text-slate-500">{report.course_offerings ? `${report.course_offerings.name} · ${report.course_offerings.class_label}` : "—"}</span>
+      </div>
+      <p className="mt-1.5 text-slate-500">Hư lúc {fmtDateTime(report.broken_at)} ({fmtElapsed(report.broken_at)} trước)</p>
+      {report.description && <p className="mt-1 text-slate-300">{report.description}</p>}
+      <p className="mt-1 text-slate-500">GV báo hỏng: {report.profiles?.full_name ?? "—"}{report.status === "in_progress" && <> · GV phụ trách sửa: {report.assigned_profile?.full_name ?? "—"}</>}</p>
+      <div className="mt-2 flex flex-wrap items-center gap-2">
+        <BreakdownPhotoLink path={report.broken_photo_path} label="Ảnh lúc hỏng" />
+        {report.status === "open" && !assigning && <button type="button" onClick={() => setAssigning(true)} className="rounded-md border border-amber-400/30 bg-amber-500/10 px-3 py-1.5 font-bold text-amber-200">Nhận sửa</button>}
+        {!resolving && <button type="button" onClick={() => setResolving(true)} className="rounded-md border border-emerald-400/30 bg-emerald-500/10 px-3 py-1.5 font-bold text-emerald-200">Đã sửa xong</button>}
+      </div>
+      {assigning && (
+        <div className="mt-2 rounded-lg border border-amber-400/20 bg-amber-500/5 p-2.5">
+          <label className="block text-slate-500">Giảng viên phụ trách sửa</label>
+          <LecturerSelect lecturers={lecturers} value={assignedTo} onChange={setAssignedTo} placeholder="Chọn giảng viên…" />
+          {error && <p className="mt-1.5 text-red-300">{error}</p>}
+          <div className="mt-2 flex gap-2">
+            <button type="button" disabled={busy || !assignedTo} onClick={() => void start()} className="rounded-md bg-amber-600 px-3 py-1.5 font-bold text-white disabled:opacity-40">Xác nhận</button>
+            <button type="button" onClick={() => setAssigning(false)} className="rounded-md border border-white/10 px-3 py-1.5 font-bold text-slate-300">Hủy</button>
+          </div>
+        </div>
+      )}
+      {resolving && <ResolveBreakdownForm report={report} lecturers={lecturers} currentUserId={currentUserId} onDone={() => { setResolving(false); onDone(); }} />}
+    </div>
+  );
+}
+
+function ResolveBreakdownForm({ report, lecturers, currentUserId, onDone }: { report: EquipmentBreakdownReportWithCourse; lecturers: AdminProfile[]; currentUserId: string | null; onDone: () => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [note, setNote] = useState("");
+  const [resolvedBy, setResolvedBy] = useState(report.assigned_to ?? currentUserId ?? "");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const missing = [!file && "ảnh", !resolvedBy && "giảng viên sửa chữa"].filter((v): v is string => Boolean(v));
+  async function submit() {
+    if (missing.length) return;
+    setBusy(true); setError("");
+    try { await resolveEquipmentBreakdown({ id: report.id, courseId: report.course_id, machineCode: report.machine_code, note, file: file!, resolvedBy }); onDone(); }
+    catch (cause) { setError(cause instanceof Error ? cause.message : "Không lưu được."); }
+    finally { setBusy(false); }
+  }
+  return (
+    <div className="mt-2 rounded-lg border border-emerald-400/20 bg-emerald-500/5 p-2.5">
+      <label className="block text-slate-500">Ảnh sau khi khắc phục</label>
+      <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} className="mt-0.5 block w-full text-slate-400" />
+      <label className="mt-1.5 block text-slate-500">Giảng viên sửa chữa</label>
+      <LecturerSelect lecturers={lecturers} value={resolvedBy} onChange={setResolvedBy} placeholder="Chọn giảng viên…" />
+      <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-white placeholder:text-slate-600" />
+      {error && <p className="mt-1 text-red-300">{error}</p>}
+      <button type="button" disabled={busy || missing.length > 0} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-3 py-1.5 font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
+      {!busy && missing.length > 0 && <p className="mt-1 text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
     </div>
   );
 }
