@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, Unlock, UserCheck, Users, Wrench, XCircle } from "lucide-react";
+import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, Unlock, UserCheck, Users, Wrench, X, XCircle } from "lucide-react";
 import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, setMachineSelectionOpen, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
-import { createAttendanceMachinePhotoUrl, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchMachines, fiveSScore, FIVE_S_CRITERIA, groupMachinesByType, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
+import { createAttendanceMachinePhotoUrl, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchMachines, groupMachinesByType, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
 import { createEquipmentBreakdownPhotoUrl, fetchAdminProfiles, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, startEquipmentRepair, type AdminProfile, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
 import { useAuth } from "@/components/auth/AuthProvider";
 
@@ -51,7 +51,6 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
   const machineCodes=[...new Set(records.map(item=>item.machine_code).filter((code):code is string=>Boolean(code)))].sort();
   const machineGroups=machineCodes.map(code=>({code,members:students.filter(student=>records.find(record=>record.student_id===student.id)?.machine_code===code)}));
   const machinesFullyChecked=machineGroups.filter(group=>machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="start")&&machinePhotos.some(p=>p.machine_code===group.code&&p.checkpoint==="end")).length;
-  const avgFiveS=machineGroups.length?Math.round(machineGroups.reduce((sum,group)=>sum+fiveSScore(machineScores.find(s=>s.machine_code===group.code)),0)/machineGroups.length):0;
   const machineIssues=machineGroups.filter(group=>breakdowns.some(r=>r.machine_code===group.code&&(r.status==="open"||r.status==="in_progress"))).length;
   const openBreakdowns=breakdowns.filter(r=>r.status==="open").length;
 
@@ -105,7 +104,7 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
 
     {view==="machines"&&<section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Thiết bị &amp; 5S</p><h3 className="mt-1 font-display text-2xl font-bold text-white">Tình trạng máy</h3><p className="mt-1 text-sm text-slate-500">Sinh viên tự chọn máy khi điểm danh (hoặc giáo viên gán ở tab Điểm danh trực tiếp); mỗi máy chỉ cần 1 bạn nộp ảnh đầu ca/cuối ca cho cả nhóm.</p></div>
+        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Thiết bị</p><h3 className="mt-1 font-display text-2xl font-bold text-white">Tình trạng máy</h3><p className="mt-1 text-sm text-slate-500">Sinh viên tự chọn máy khi điểm danh (hoặc giáo viên gán ở tab Điểm danh trực tiếp); mỗi máy chỉ cần 1 bạn nộp ảnh đầu ca/cuối ca cho cả nhóm. Bấm NG để báo hỏng máy.</p></div>
       </div>
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <select aria-label="Chọn buổi điểm danh" value={selectedId??""} onChange={e=>setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white sm:flex-none">
@@ -114,16 +113,15 @@ export default function TeacherAttendancePanel({courseId,students}:{courseId:num
         </select>
         <button aria-label="Làm mới" onClick={loadMachineData} className="text-slate-400"><RefreshCw size={16}/></button>
       </div>
-      {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-4">
+      {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-3">
         <SummaryMetric icon={<CalendarCheck size={16}/>} value={`${machinesFullyChecked}/${machineGroups.length}`} label="Máy đủ ảnh đầu/cuối ca"/>
-        <SummaryMetric icon={<Check size={16}/>} value={`${avgFiveS}/10`} label="Điểm 5S trung bình"/>
         <SummaryMetric icon={<AlertTriangle size={16}/>} value={String(machineIssues)} label="Máy cần bảo trì/hỏng" danger={machineIssues>0}/>
         <SummaryMetric icon={<AlertOctagon size={16}/>} value={String(openBreakdowns)} label="Báo hỏng đang mở" danger={openBreakdowns>0}/>
       </div>}
       {selected?<div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {machineGroups.map(group=><MachineGroupCard key={group.code} courseId={courseId} sessionId={selected.id} code={group.code} label={machines.find(m=>m.code===group.code)?.label} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData} reports={breakdowns.filter(r=>r.machine_code===group.code)} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>)}
-        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="XUONG" label="Ảnh toàn xưởng" icon={Camera} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="XUONG")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false} reports={breakdowns.filter(r=>r.machine_code==="XUONG")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
-        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="RAC" label="Ảnh thùng rác" icon={Trash2} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="RAC")} onScoreSaved={loadMachineData} singlePhoto showFiveS={false} reports={breakdowns.filter(r=>r.machine_code==="RAC")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
+        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="XUONG" label="Ảnh toàn xưởng" icon={Camera} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="XUONG")} onScoreSaved={loadMachineData} singlePhoto showStatus={false} reports={breakdowns.filter(r=>r.machine_code==="XUONG")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
+        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="RAC" label="Ảnh thùng rác" icon={Trash2} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="RAC")} onScoreSaved={loadMachineData} singlePhoto showStatus={false} reports={breakdowns.filter(r=>r.machine_code==="RAC")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
         {!machineGroups.length&&<p className="rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500 sm:col-span-2 xl:col-span-1">Chưa có sinh viên nào chọn máy trong buổi này.</p>}
       </div>:<div className="mt-5 grid min-h-56 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><Wrench size={26}/><span className="mt-2">Chọn một buổi điểm danh để xem tình trạng máy.</span></div>}
     </section>}
@@ -182,16 +180,15 @@ function LecturerSelect({lecturers,value,onChange,placeholder}:{lecturers:AdminP
   </select>;
 }
 
-function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showFiveS=true,reports,onReported,lecturers,currentUserId}:{courseId:number;sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showFiveS?:boolean;reports:EquipmentBreakdownReport[];onReported:()=>void;lecturers:AdminProfile[];currentUserId:string|null}){
+function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showStatus=true,reports,onReported,lecturers,currentUserId}:{courseId:number;sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showStatus?:boolean;reports:EquipmentBreakdownReport[];onReported:()=>void;lecturers:AdminProfile[];currentUserId:string|null}){
   const[noteDraft,setNoteDraft]=useState(score?.note??"");
   useEffect(()=>{setNoteDraft(score?.note??"")},[score?.note]);
+  const[breakdownOpen,setBreakdownOpen]=useState(false);
   const currentIssue=reports.find(r=>r.status==="open"||r.status==="in_progress");
-  async function toggleCriterion(key:typeof FIVE_S_CRITERIA[number]["key"]){try{await updateAttendanceMachineScore(sessionId,code,{[key]:!score?.[key]});onScoreSaved()}catch{/* silent: hiển thị lại giá trị cũ ở lần tải sau */}}
   async function saveNote(){try{await updateAttendanceMachineScore(sessionId,code,{note:noteDraft});onScoreSaved()}catch{/* silent */}}
   return <div className="rounded-xl border border-white/10 bg-white/[.02] p-3">
     <div className="flex items-center justify-between gap-2">
       <span className="flex items-center gap-1.5 text-sm font-bold text-white"><Icon size={14} className="text-orange-300"/>{label??`Máy ${code}`}</span>
-      {showFiveS&&<span className="text-xs font-bold text-emerald-300">{fiveSScore(score)}<span className="text-[10px] font-normal text-slate-500">/10</span></span>}
     </div>
     {members.length>0&&<p className="mt-1 truncate text-[11px] text-slate-500" title={members.map(m=>m.name).join(", ")}>{members.map(m=>m.name).join(", ")}</p>}
     <div className={`mt-2 grid gap-1.5 ${singlePhoto?"grid-cols-1":"grid-cols-2"}`}>
@@ -200,54 +197,56 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
         <PhotoCheckpointCell label="Cuối ca" code={code} checkpoint="end" photos={photos}/>
       </>}
     </div>
-    {showFiveS&&<>
-      <span className={`mt-2 flex items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-bold ${!currentIssue?"border-emerald-400/20 bg-emerald-500/5 text-emerald-300":currentIssue.status==="open"?"border-red-400/30 bg-red-500/10 text-red-200":"border-amber-400/30 bg-amber-500/10 text-amber-200"}`}>
-        {!currentIssue?<Check size={12}/>:<AlertOctagon size={12}/>}{!currentIssue?"Bình thường":currentIssue.status==="open"?"Đang hỏng":"Đang sửa"}
-      </span>
-      <div className="mt-2 space-y-1">
-        {FIVE_S_CRITERIA.map(item=>{const achieved=Boolean(score?.[item.key]);return <button key={item.key} type="button" onClick={()=>void toggleCriterion(item.key)} className="flex w-full items-center justify-between gap-2 rounded-lg px-1 py-1 text-left hover:bg-white/[.03]">
-          <span className="min-w-0 flex-1 truncate text-[11px] text-slate-300">{item.label} <small className="text-slate-600">— {item.hint}</small></span>
-          <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${achieved?"bg-emerald-500 text-white":"border border-white/15 text-transparent"}`}><Check size={12}/></span>
-        </button>})}
+    {showStatus&&<>
+      <div className="mt-2 grid grid-cols-2 gap-1.5">
+        <span className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold ${!currentIssue?"border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"border-white/10 text-slate-600"}`}><Check size={13}/>OK</span>
+        <button type="button" onClick={()=>setBreakdownOpen(true)} className={`flex items-center justify-center gap-1 rounded-lg border py-1.5 text-xs font-bold transition-colors ${currentIssue?"border-red-400/40 bg-red-500/10 text-red-200":"border-white/10 text-slate-400 hover:border-red-400/30 hover:text-red-300"}`}><AlertOctagon size={13}/>NG</button>
       </div>
+      {breakdownOpen&&<BreakdownModal courseId={courseId} sessionId={sessionId} code={code} reports={reports} currentIssue={currentIssue} onReported={onReported} onClose={()=>setBreakdownOpen(false)} lecturers={lecturers} currentUserId={currentUserId}/>}
     </>}
     <input type="text" value={noteDraft} onChange={e=>setNoteDraft(e.target.value)} onBlur={saveNote} placeholder="Ghi chú nhóm…" className="mt-2 w-full rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1 text-xs text-white placeholder:text-slate-600"/>
-    <BreakdownReportSection courseId={courseId} sessionId={sessionId} code={code} reports={reports} currentIssue={currentIssue} onReported={onReported} lecturers={lecturers} currentUserId={currentUserId}/>
   </div>;
 }
 
-function BreakdownReportSection({courseId,sessionId,code,reports,currentIssue,onReported,lecturers,currentUserId}:{courseId:number;sessionId:number;code:string;reports:EquipmentBreakdownReport[];currentIssue?:EquipmentBreakdownReport;onReported:()=>void;lecturers:AdminProfile[];currentUserId:string|null}){
-  const[reporting,setReporting]=useState(false);
+function BreakdownModal({courseId,sessionId,code,reports,currentIssue,onReported,onClose,lecturers,currentUserId}:{courseId:number;sessionId:number;code:string;reports:EquipmentBreakdownReport[];currentIssue?:EquipmentBreakdownReport;onReported:()=>void;onClose:()=>void;lecturers:AdminProfile[];currentUserId:string|null}){
+  const[showHistory,setShowHistory]=useState(false);
+  const history=reports.filter(r=>r.status==="resolved");
+  async function view(path:string){const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createEquipmentBreakdownPhotoUrl(path);if(win)win.location.href=signed}catch{win?.close()}}
+  return <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4" onClick={onClose}>
+    <div className="max-h-[85vh] w-full max-w-sm overflow-y-auto rounded-2xl border border-white/10 bg-[#0B1020] p-4" onClick={e=>e.stopPropagation()}>
+      <div className="flex items-center justify-between gap-2">
+        <h4 className="flex items-center gap-1.5 text-sm font-bold text-white"><AlertOctagon size={15} className="text-red-300"/>Máy {code}</h4>
+        <button type="button" onClick={onClose} className="rounded-lg p-1 text-slate-400 hover:bg-white/5 hover:text-white"><X size={16}/></button>
+      </div>
+      {currentIssue
+        ? <div className="mt-3"><CurrentBreakdownCard report={currentIssue} onReported={onReported} onView={view} lecturers={lecturers} currentUserId={currentUserId}/></div>
+        : <ReportBreakdownForm courseId={courseId} sessionId={sessionId} code={code} lecturers={lecturers} currentUserId={currentUserId} onReported={()=>{onReported();onClose()}}/>}
+      {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-3 flex items-center gap-1 text-[11px] font-bold text-slate-400 hover:text-slate-200"><History size={12}/>Lịch sử hỏng ({history.length})</button>}
+      {showHistory&&<div className="mt-1.5 space-y-1">{history.map(r=><BreakdownHistoryRow key={r.id} report={r} onView={view}/>)}</div>}
+    </div>
+  </div>;
+}
+
+function ReportBreakdownForm({courseId,sessionId,code,lecturers,currentUserId,onReported}:{courseId:number;sessionId:number;code:string;lecturers:AdminProfile[];currentUserId:string|null;onReported:()=>void}){
   const[file,setFile]=useState<File|null>(null);
   const[description,setDescription]=useState("");
   const[brokenAt,setBrokenAt]=useState(nowLocalInput);
   const[reportedBy,setReportedBy]=useState(currentUserId??"");
   const[busy,setBusy]=useState(false);
   const[error,setError]=useState("");
-  const[showHistory,setShowHistory]=useState(false);
-  const history=reports.filter(r=>r.status==="resolved");
   const missing=[!file&&"ảnh",!description.trim()&&"mô tả",!reportedBy&&"giảng viên báo hỏng"].filter((v):v is string=>Boolean(v));
-  async function submit(){if(missing.length)return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,brokenAt:new Date(brokenAt).toISOString(),file:file!,reportedBy}); setReporting(false);setFile(null);setDescription("");setBrokenAt(nowLocalInput());onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
-  async function view(path:string){const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createEquipmentBreakdownPhotoUrl(path);if(win)win.location.href=signed}catch{win?.close()}}
-  return <div className="mt-2 border-t border-white/5 pt-2">
-    {currentIssue&&<CurrentBreakdownCard report={currentIssue} onReported={onReported} onView={view} lecturers={lecturers} currentUserId={currentUserId}/>}
-    {!currentIssue&&(reporting?<div className="rounded-lg border border-white/10 bg-black/15 p-2">
-      <label className="block text-[10px] text-slate-500">Ảnh lúc phát hiện hỏng</label>
-      <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[10px] text-slate-400"/>
-      <label className="mt-1.5 block text-[10px] text-slate-500">Giờ hư (ước lượng)</label>
-      <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white"/>
-      <label className="mt-1.5 block text-[10px] text-slate-500">Giảng viên báo hỏng</label>
-      <LecturerSelect lecturers={lecturers} value={reportedBy} onChange={setReportedBy} placeholder="Chọn giảng viên…"/>
-      <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
-      {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
-      <div className="mt-1.5 flex gap-1.5">
-        <button type="button" disabled={busy||missing.length>0} onClick={submit} className="rounded-md bg-red-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
-        <button type="button" onClick={()=>setReporting(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[10px] font-bold text-slate-300">Hủy</button>
-      </div>
-      {!busy&&missing.length>0&&<p className="mt-1 text-[10px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
-    </div>:<button type="button" onClick={()=>{setReportedBy(currentUserId??"");setReporting(true)}} className="flex items-center gap-1 text-[10px] font-bold text-red-300 hover:text-red-200"><AlertOctagon size={11}/>Báo hỏng máy</button>)}
-    {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-1.5 flex items-center gap-1 text-[10px] font-bold text-slate-400 hover:text-slate-200"><History size={11}/>Lịch sử hỏng ({history.length})</button>}
-    {showHistory&&<div className="mt-1.5 space-y-1">{history.map(r=><BreakdownHistoryRow key={r.id} report={r} onView={view}/>)}</div>}
+  async function submit(){if(missing.length)return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,brokenAt:new Date(brokenAt).toISOString(),file:file!,reportedBy});onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
+  return <div className="mt-3 rounded-lg border border-white/10 bg-black/15 p-2">
+    <label className="block text-[10px] text-slate-500">Ảnh lúc phát hiện hỏng</label>
+    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[10px] text-slate-400"/>
+    <label className="mt-1.5 block text-[10px] text-slate-500">Giờ hư (ước lượng)</label>
+    <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white"/>
+    <label className="mt-1.5 block text-[10px] text-slate-500">Giảng viên báo hỏng</label>
+    <LecturerSelect lecturers={lecturers} value={reportedBy} onChange={setReportedBy} placeholder="Chọn giảng viên…"/>
+    <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
+    {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
+    <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 w-full rounded-md bg-red-600 px-2.5 py-1.5 text-[11px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
+    {!busy&&missing.length>0&&<p className="mt-1 text-[10px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
   </div>;
 }
 
