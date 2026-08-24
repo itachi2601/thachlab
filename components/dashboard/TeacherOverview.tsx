@@ -9,7 +9,7 @@ import { CNC_ASSESSMENT_PLAN } from "@/services/cnc-progress";
 import { CNC_LESSON_RELEASES,fetchOpenCncLessons,updateOpenCncLessons } from "@/services/course-lesson-release";
 
 type OverviewStudent={id:string;name:string;className:string;pct:number;xp:number;records:CncLearningRecord[]};
-type DashboardTab="overview"|"progress"|"profile"|"competencies"|"attendance";
+type DashboardTab="overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance";
 type QualityId="excellent"|"on-track"|"support"|"inactive";
 
 export default function TeacherOverview({courseId,students,onOpenTab,onOpenStudent}:{courseId:number;students:OverviewStudent[];onOpenTab:(tab:DashboardTab)=>void;onOpenStudent:(id:string)=>void}){

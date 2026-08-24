@@ -14,7 +14,7 @@ export interface Profile {
   id: string;
   full_name: string;
   class_name: string;
-  role: "student" | "admin";
+  role: "student" | "admin" | "instructor";
 }
 
 interface AuthState {

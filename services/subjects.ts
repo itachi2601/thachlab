@@ -6,11 +6,13 @@ export interface SubjectDefinition {
   hasCurriculum: boolean;
   /** Workshop code (`machines.workshop`) whose machines this subject's attendance/máy picker uses. */
   workshop: string;
+  /** Môn thực tập/thực hành xưởng — chỉ các môn này mới xuất hiện trong dashboard của giảng viên được phân công. */
+  isPracticum: boolean;
 }
 
 export const SUBJECTS: SubjectDefinition[] = [
-  { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2" },
-  { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1" },
+  { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2", isPracticum: true },
+  { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1", isPracticum: true },
 ];
 
 export function getSubject(code: string): SubjectDefinition {

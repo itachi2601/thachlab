@@ -11,8 +11,9 @@ import TeacherCourseDashboard from "@/components/dashboard/TeacherCourseDashboar
 function DashboardRouter() {
   const router = useRouter();
   const { profile, loading } = useAuth();
-  useEffect(() => { if (!loading && profile?.role !== "admin") router.replace("/tai-khoan"); }, [loading, profile?.role, router]);
-  if (loading || profile?.role !== "admin") return <p className="text-slate-400">Đang mở tài khoản sinh viên…</p>;
+  const isStaff = profile?.role === "admin" || profile?.role === "instructor";
+  useEffect(() => { if (!loading && !isStaff) router.replace("/tai-khoan"); }, [loading, isStaff, router]);
+  if (loading || !isStaff) return <p className="text-slate-400">Đang mở tài khoản sinh viên…</p>;
   return <TeacherCourseDashboard/>;
 }
 
