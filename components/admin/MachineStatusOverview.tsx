@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AlertOctagon, Check, History, Loader2, Pencil, RefreshCw, Users, Wrench, X } from "lucide-react";
 import { fetchAllMachines, groupMachinesByType, groupMachinesByWorkshop, MACHINE_TYPE_LABELS, type Machine, type MachineStatus } from "@/services/attendance-machine";
 import { addMachineStatusLog, fetchMachineStatusLog, updateMachineStatusLog, type MachineStatusLogEntry } from "@/services/machine-status-log";
-import { fetchEquipmentBreakdownReportsByMachine, createEquipmentBreakdownPhotoUrl, type EquipmentBreakdownReportWithCourse, type BreakdownStatus } from "@/services/equipment-breakdown";
+import { fetchEquipmentBreakdownReportsByMachine, fetchOpenEquipmentBreakdownReports, createEquipmentBreakdownPhotoUrl, type EquipmentBreakdownReportWithCourse, type BreakdownStatus } from "@/services/equipment-breakdown";
 import { fetchMachineUsageHistory, type MachineUsageRecord } from "@/services/course-attendance";
 
 const WORKSHOP_LABELS: Record<string, string> = {
@@ -18,6 +18,16 @@ function shortLabel(label: string) {
 }
 function fmtDateTime(iso: string) {
   return new Date(iso).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
+}
+function fmtElapsed(iso: string) {
+  const ms = Date.now() - new Date(iso).getTime();
+  const hours = Math.floor(ms / 3_600_000);
+  if (hours < 1) return "vừa xong";
+  if (hours < 24) return `${hours} giờ`;
+  return `${Math.floor(hours / 24)} ngày`;
+}
+function isStale(iso: string, hours: number) {
+  return Date.now() - new Date(iso).getTime() > hours * 3_600_000;
 }
 const BREAKDOWN_STATUS_LABELS: Record<BreakdownStatus, string> = { open: "Chờ xử lý", in_progress: "Đang sửa", resolved: "Đã xong" };
 const BREAKDOWN_STATUS_STYLES: Record<BreakdownStatus, string> = {
@@ -34,16 +44,30 @@ export default function MachineStatusOverview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<Machine | null>(null);
+  const [selectedTab, setSelectedTab] = useState<"status" | "breakdown" | "usage">("status");
   const [activeWorkshop, setActiveWorkshop] = useState<string | null>(null);
+  const [openBreakdowns, setOpenBreakdowns] = useState<EquipmentBreakdownReportWithCourse[]>([]);
+  const [openBreakdownsLoading, setOpenBreakdownsLoading] = useState(true);
+  const [openBreakdownsError, setOpenBreakdownsError] = useState("");
   const load = useCallback(() => {
     setLoading(true);
     fetchAllMachines()
       .then(setMachines)
       .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được danh sách máy."))
       .finally(() => setLoading(false));
+    setOpenBreakdownsLoading(true);
+    fetchOpenEquipmentBreakdownReports()
+      .then(setOpenBreakdowns)
+      .catch((cause) => setOpenBreakdownsError(cause instanceof Error ? cause.message : "Không tải được danh sách máy đang hư."))
+      .finally(() => setOpenBreakdownsLoading(false));
   }, []);
   useEffect(() => { load(); }, [load]);
   useEffect(() => { if (!selected) return; setSelected((current) => machines.find((m) => m.code === current?.code) ?? null); }, [machines]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function openMachine(machine: Machine, tab: "status" | "breakdown" | "usage" = "status") {
+    setSelectedTab(tab);
+    setSelected(machine);
+  }
 
   const workshops = groupMachinesByWorkshop(machines);
   const totalBroken = machines.filter((m) => m.status === "broken").length;
@@ -68,6 +92,8 @@ export default function MachineStatusOverview() {
         </div>
         {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
       </section>
+
+      <OpenBreakdownsBoard reports={openBreakdowns} loading={openBreakdownsLoading} error={openBreakdownsError} machines={machines} onOpenMachine={(code) => { const m = machines.find((item) => item.code === code); if (m) openMachine(m, "breakdown"); }} />
 
       {!loading && workshops.length === 0 && !error && (
         <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có dữ liệu máy.</p>
@@ -96,10 +122,71 @@ export default function MachineStatusOverview() {
         </div>
       )}
 
-      {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={setSelected} />}
+      {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={(m) => openMachine(m)} />}
 
-      {selected && <MachineDetailModal machine={selected} onClose={() => setSelected(null)} onChanged={load} />}
+      {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelected(null)} onChanged={load} />}
     </div>
+  );
+}
+
+function OpenBreakdownsBoard({ reports, loading, error, machines, onOpenMachine }: { reports: EquipmentBreakdownReportWithCourse[]; loading: boolean; error: string; machines: Machine[]; onOpenMachine: (machineCode: string) => void }) {
+  if (loading) return <section className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500"><Loader2 size={14} className="animate-spin" />Đang tải danh sách máy đang hư…</section>;
+  if (error) return <p className="rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>;
+  const openCount = reports.filter((r) => r.status === "open").length;
+  const inProgressCount = reports.filter((r) => r.status === "in_progress").length;
+  return (
+    <section className={`rounded-2xl border p-5 sm:p-6 ${reports.length ? "border-red-400/20 bg-red-500/[.04]" : "border-emerald-400/15 bg-emerald-500/[.03]"}`}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <AlertOctagon size={18} className={reports.length ? "text-red-300" : "text-emerald-300"} />
+          <h3 className="font-display text-lg font-bold text-white">Máy đang hư / chờ sửa</h3>
+        </div>
+        {reports.length > 0 && (
+          <div className="flex gap-2 text-xs font-bold">
+            <span className="rounded-full bg-red-500/15 px-3 py-1 text-red-300">{openCount} chờ xử lý</span>
+            <span className="rounded-full bg-amber-500/15 px-3 py-1 text-amber-300">{inProgressCount} đang sửa</span>
+          </div>
+        )}
+      </div>
+      {reports.length === 0 ? (
+        <p className="mt-3 flex items-center gap-2 text-sm text-emerald-300"><Check size={15} />Không có máy nào đang chờ xử lý — toàn bộ thiết bị đang hoạt động bình thường.</p>
+      ) : (
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[900px] text-left text-xs">
+            <thead>
+              <tr className="border-b border-white/10 text-[10px] uppercase text-slate-500">
+                <th className="p-2">Máy / xưởng</th>
+                <th className="p-2">Trạng thái</th>
+                <th className="p-2">Hư đã</th>
+                <th className="p-2">GV báo hỏng</th>
+                <th className="p-2">GV phụ trách sửa</th>
+                <th className="p-2">Mô tả</th>
+                <th className="p-2">Khóa học</th>
+                <th className="p-2" />
+              </tr>
+            </thead>
+            <tbody>
+              {reports.map((r) => {
+                const m = machines.find((item) => item.code === r.machine_code);
+                const longWait = r.status === "open" && isStale(r.broken_at, 72);
+                return (
+                  <tr key={r.id} className="border-b border-white/5">
+                    <td className="p-2"><span className="font-mono text-cyan-300">{r.machine_code}</span> <span className="text-slate-500">{m ? `(${WORKSHOP_LABELS[m.workshop] ?? m.workshop})` : ""}</span></td>
+                    <td className="p-2"><span className={`rounded-full px-2 py-0.5 font-bold ${BREAKDOWN_STATUS_STYLES[r.status]}`}>{BREAKDOWN_STATUS_LABELS[r.status]}</span></td>
+                    <td className="p-2"><span className={longWait ? "font-bold text-red-300" : "text-slate-300"}>{fmtElapsed(r.broken_at)}</span></td>
+                    <td className="p-2 text-slate-300">{r.profiles?.full_name ?? "—"}</td>
+                    <td className="p-2 text-slate-300">{r.assigned_profile?.full_name ?? "—"}</td>
+                    <td className="max-w-[220px] truncate p-2 text-slate-400" title={r.description}>{r.description || "—"}</td>
+                    <td className="p-2 text-slate-500">{r.course_offerings ? `${r.course_offerings.name} · ${r.course_offerings.class_label}` : "—"}</td>
+                    <td className="p-2"><button type="button" onClick={() => onOpenMachine(r.machine_code)} className="font-bold text-cyan-300 hover:text-cyan-200">Xem</button></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
   );
 }
 
@@ -151,8 +238,8 @@ function MachineTile({ machine, onClick }: { machine: Machine; onClick: () => vo
   );
 }
 
-function MachineDetailModal({ machine, onClose, onChanged }: { machine: Machine; onClose: () => void; onChanged: () => void }) {
-  const [tab, setTab] = useState<"status" | "breakdown" | "usage">("status");
+function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged }: { machine: Machine; initialTab?: "status" | "breakdown" | "usage"; onClose: () => void; onChanged: () => void }) {
+  const [tab, setTab] = useState<"status" | "breakdown" | "usage">(initialTab);
   const [log, setLog] = useState<MachineStatusLogEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
