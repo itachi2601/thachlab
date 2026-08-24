@@ -26,10 +26,10 @@ export interface Machine {
 
 const MACHINE_FIELDS = "code, label, machine_type, workshop, status, note, is_active";
 
-export async function fetchMachines() {
-  const { data, error } = await getSupabase().from("machines")
-    .select(MACHINE_FIELDS)
-    .eq("is_active", true).order("machine_type").order("code");
+export async function fetchMachines(workshop?: string) {
+  let query = getSupabase().from("machines").select(MACHINE_FIELDS).eq("is_active", true);
+  if (workshop) query = query.eq("workshop", workshop);
+  const { data, error } = await query.order("machine_type").order("code");
   if (error) throw error;
   return (data ?? []) as Machine[];
 }

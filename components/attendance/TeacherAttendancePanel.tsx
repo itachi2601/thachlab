@@ -18,13 +18,13 @@ const statusMeta:Record<AttendanceStatus,{label:string;short:string;code:string;
   absent:{label:"Vắng không phép",short:"Vắng",code:"V",style:"text-red-300",active:"border-red-400/50 bg-red-500/15 text-red-200",icon:XCircle},
 };
 
-export default function TeacherAttendancePanel({courseId,students}:{courseId:number;students:Student[]}){
+export default function TeacherAttendancePanel({courseId,students,workshop}:{courseId:number;students:Student[];workshop?:string}){
   const{profile}=useAuth();
   const[view,setView]=useState<"live"|"machines"|"summary">("live");
   const[sessions,setSessions]=useState<AttendanceSession[]>([]);const[selectedId,setSelectedId]=useState<number|null>(null);const[records,setRecords]=useState<AttendanceRecord[]>([]);const[allRecords,setAllRecords]=useState<AttendanceRecord[]>([]);const[creating,setCreating]=useState(false);const[busy,setBusy]=useState(false);const[error,setError]=useState("");const[search,setSearch]=useState("");const[copied,setCopied]=useState(false);const[noteDraft,setNoteDraft]=useState("");const[bonusDrafts,setBonusDrafts]=useState<Record<string,string>>({});const[recordNoteDrafts,setRecordNoteDrafts]=useState<Record<string,string>>({});const[machinePhotos,setMachinePhotos]=useState<AttendanceMachinePhoto[]>([]);const[machineScores,setMachineScores]=useState<AttendanceMachineScore[]>([]);const[breakdowns,setBreakdowns]=useState<EquipmentBreakdownReport[]>([]);const[machines,setMachines]=useState<Machine[]>([]);const[lecturers,setLecturers]=useState<AdminProfile[]>([]);
   const loadBreakdowns=useCallback(()=>void fetchEquipmentBreakdownReports(courseId).then(setBreakdowns).catch(()=>undefined),[courseId]);
   useEffect(()=>{loadBreakdowns()},[loadBreakdowns]);
-  useEffect(()=>{void fetchMachines().then(setMachines).catch(()=>undefined)},[]);
+  useEffect(()=>{void fetchMachines(workshop).then(setMachines).catch(()=>undefined)},[workshop]);
   useEffect(()=>{void fetchAdminProfiles().then(setLecturers).catch(()=>undefined)},[]);
   const now=new Date();const[title,setTitle]=useState("Thực hành CNC");const[startsAt,setStartsAt]=useState(new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16));
   const selected=sessions.find(item=>item.id===selectedId)??null;
