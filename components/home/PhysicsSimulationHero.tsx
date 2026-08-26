@@ -25,7 +25,7 @@ export function PhysicsSimulationHero() {
   const [formulaOpen, setFormulaOpen] = useState(true);
 
   return (
-    <section className="relative overflow-hidden bg-[#05070B] px-6 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:px-12">
+    <section id="thpt" className="relative overflow-hidden bg-[#05070B] px-6 pt-10 pb-16 sm:pt-14 sm:pb-20 lg:px-12">
       {/* Nền: lưới thí nghiệm + quầng sáng neon */}
       <div aria-hidden className="grid-bg absolute inset-0" />
       <div aria-hidden className="glow-blob left-[-10%] top-[-5%] h-[420px] w-[420px] bg-blue-600/40" />

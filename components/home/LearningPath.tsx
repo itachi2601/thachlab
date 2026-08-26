@@ -171,7 +171,7 @@ export default function LearningPath() {
                 </p>
               </div>
               <Link
-                href="/kiem-tra"
+                href="/lop-hoc"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200"
               >
                 <ClipboardCheck size={18} />

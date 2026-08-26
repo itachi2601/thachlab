@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getAllPosts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog Kiến Thức Vật Lý THPT",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: "Blog Kiến Thức Vật Lý THPT — ThachLab",
     description:
       "Lộ trình học, mẹo ôn thi và kiến thức Vật lý THPT theo chương trình mới 2018.",
-    url: "https://thachlab.id.vn/blog",
+    url: `${SITE_URL}/blog`,
     type: "website",
   },
 };
@@ -53,7 +54,7 @@ export default function BlogIndexPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-[#3B82F6]/50"
+                className="group block rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
               >
                 <p className="text-xs text-slate-500">
                   <time dateTime={post.date}>{formatDate(post.date)}</time> ·{" "}
@@ -76,13 +77,13 @@ export default function BlogIndexPage() {
                     ))}
                   </div>
                 ) : null}
-                <h2 className="mt-2 font-display text-xl font-bold text-white group-hover:text-[#3B82F6]">
+                <h2 className="mt-2 font-display text-xl font-bold text-white group-hover:text-primary">
                   {post.title}
                 </h2>
                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-400">
                   {post.description}
                 </p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[#3B82F6]">
+                <span className="mt-4 inline-block text-sm font-semibold text-primary">
                   Đọc tiếp →
                 </span>
               </Link>

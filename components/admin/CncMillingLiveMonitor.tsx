@@ -1,8 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Activity, Medal, Radio, RotateCcw, Send, Target, Trophy, Users } from "lucide-react";
-import { CNC_LESSON_4_MILL_QUIZ } from "@/services/cnc-lms";
+import { Activity, Medal, Radio, RotateCcw, Send, Trophy, Users } from "lucide-react";
 import {
   fetchAllCncMillingQuizAttempts,
   resetAllCncMillingQuizAttempts,
@@ -13,7 +12,7 @@ import {
 
 const statCards = [
   { id: "players", label: "Người tham gia", icon: Users, color: "from-[#7C3AED] to-[#5B21B6]" },
-  { id: "online", label: "Đang làm bài", icon: Activity, color: "from-[#2563EB] to-[#1D4ED8]" },
+  { id: "online", label: "Đang làm bài", icon: Activity, color: "from-[#2563EB] to-primary-dark" },
   { id: "submitted", label: "Đã nộp bài", icon: Send, color: "from-[#F59E0B] to-[#D97706]" },
   { id: "passed", label: "Đã vượt qua", icon: Trophy, color: "from-[#10B981] to-[#059669]" },
 ] as const;
@@ -76,11 +75,6 @@ export default function CncMillingLiveMonitor() {
   const submittedCount = attempts.filter((attempt) => attempt.status !== "in_progress").length;
   const passedCount = attempts.filter((attempt) => attempt.status === "passed").length;
   const statValues = { players: attempts.length, online: onlineCount, submitted: submittedCount, passed: passedCount };
-  const questionStats = CNC_LESSON_4_MILL_QUIZ.map((question, index) => {
-    const answered = attempts.filter((attempt) => attempt.answers[question.id] !== undefined);
-    const correct = answered.filter((attempt) => attempt.answers[question.id] === question.correctIndex).length;
-    return { index: index + 1, answered: answered.length, accuracy: answered.length ? Math.round((correct / answered.length) * 100) : 0 };
-  });
 
   return <div className="cnc-live-game">
     <section className="cnc-live-hero">
@@ -129,18 +123,6 @@ export default function CncMillingLiveMonitor() {
               <strong className="cnc-live-score">{attempt.score}<small>/{attempt.total_questions}</small></strong>
             </article>;
           })}
-        </div>
-      </section>
-
-      <section className="cnc-live-accuracy">
-        <header><Target size={22} /><div><strong>Tỷ lệ đúng theo câu</strong><small>Cập nhật theo đáp án hiện tại</small></div></header>
-        <div>
-          {questionStats.map((question) => <article key={question.index}>
-            <span>Câu {question.index}</span>
-            <strong>{question.accuracy}%</strong>
-            <i><b style={{ width: `${question.accuracy}%` }} /></i>
-            <small>{question.answered} lượt trả lời</small>
-          </article>)}
         </div>
       </section>
     </div>

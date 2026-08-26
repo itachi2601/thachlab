@@ -39,8 +39,8 @@ const KHTN9_SUBJECTS = [
   { label: "Sinh học", icon: "🧬" },
 ];
 const CLASS_TABS = [
-  { id: "secondary", label: "Trung học" },
-  { id: "university", label: "CTTC" },
+  { id: "secondary", label: "Lý thuyết" },
+  { id: "university", label: "Thực hành" },
 ] as const;
 const UNIVERSITY_CLASSES = [
   {
@@ -177,7 +177,7 @@ export default function ClassHubPage() {
               aria-pressed={activeTab === tab.id}
               className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                 activeTab === tab.id
-                  ? "bg-[#3B82F6] text-white"
+                  ? "bg-primary text-white"
                   : "text-slate-300 hover:bg-white/10 hover:text-white"
               }`}
             >
@@ -191,7 +191,7 @@ export default function ClassHubPage() {
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
               <div>
                 <h2 id="cttc-course-heading" className="font-display text-xl font-semibold text-white">
-                  Chương trình CTTC
+                  Chương trình thực hành (CTTC)
                 </h2>
                 <p className="mt-1 text-sm text-slate-400">
                   Chọn môn học để mở không gian học tập và theo dõi tiến độ.
@@ -203,43 +203,27 @@ export default function ClassHubPage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {UNIVERSITY_CLASSES.map((universityClass) => {
-                const cardContent = (
-                  <>
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl">
-                      {universityClass.icon}
-                    </span>
-                    <h3 className="mt-5 font-display text-lg font-bold text-white">
-                      {universityClass.title}
-                    </h3>
-                    <p className="mt-3 min-h-18 text-sm leading-6 text-slate-400">
-                      {universityClass.description}
-                    </p>
-                    <span className={`mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-semibold ${universityClass.href ? "text-[#60A5FA]" : "text-slate-500"}`}>
-                      {universityClass.href ? "Mở môn học" : "Đang cập nhật"}
-                      <span aria-hidden="true">{universityClass.href ? "→" : "—"}</span>
-                    </span>
-                  </>
-                );
-
-                return universityClass.href ? (
-                  <Link
-                    key={universityClass.title}
-                    href={universityClass.href}
-                    className="group rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left transition-all hover:-translate-y-1 hover:border-[#3B82F6]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]"
-                  >
-                    {cardContent}
-                  </Link>
-                ) : (
-                  <article
-                    key={universityClass.title}
-                    aria-disabled="true"
-                    className="rounded-2xl border border-white/[0.07] bg-[#0B1020]/70 p-5 text-left opacity-65"
-                  >
-                    {cardContent}
-                  </article>
-                );
-              })}
+              {UNIVERSITY_CLASSES.filter((universityClass) => universityClass.href).map((universityClass) => (
+                <Link
+                  key={universityClass.title}
+                  href={universityClass.href}
+                  className="group rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left transition-all hover:-translate-y-1 hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl">
+                    {universityClass.icon}
+                  </span>
+                  <h3 className="mt-5 font-display text-lg font-bold text-white">
+                    {universityClass.title}
+                  </h3>
+                  <p className="mt-3 min-h-18 text-sm leading-6 text-slate-400">
+                    {universityClass.description}
+                  </p>
+                  <span className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-semibold text-[#60A5FA]">
+                    Mở môn học
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </Link>
+              ))}
             </div>
           </section>
         )}
@@ -255,7 +239,7 @@ export default function ClassHubPage() {
               <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
                 <div>
                   <h2 className="font-display text-xl font-semibold text-white">
-                    Chương trình Trung học
+                    Chương trình lý thuyết (THPT)
                   </h2>
                   <p className="mt-1 text-sm text-slate-400">
                     Chọn lớp hoặc môn học để xem chương trình và mở từng bài học.
@@ -383,14 +367,14 @@ export default function ClassHubPage() {
                                     📖
                                   </span>
                                   <span className="min-w-0 flex-1">
-                                    <span className="block truncate font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-[#3B82F6]">
+                                    <span className="block truncate font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
                                       {l.title}
                                     </span>
                                     <span className="mt-0.5 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
                                       {l.itemCount} mục
                                     </span>
                                   </span>
-                                  <span className="text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-[#3B82F6]">
+                                  <span className="text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-primary">
                                     →
                                   </span>
                                 </Link>
@@ -413,9 +397,9 @@ export default function ClassHubPage() {
                         <Link
                           key={exam.id}
                           href={`/kiem-tra/lam?id=${exam.id}`}
-                          className="group rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-[#3B82F6]/50"
+                          className="group rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
                         >
-                          <h3 className="font-display font-semibold text-white group-hover:text-[#3B82F6]">
+                          <h3 className="font-display font-semibold text-white group-hover:text-primary">
                             {exam.title}
                           </h3>
                           <p className="mt-2 text-sm text-slate-400">
@@ -434,7 +418,7 @@ export default function ClassHubPage() {
                   <p className="text-sm text-slate-400">
                     <Link
                       href="/dang-nhap"
-                      className="text-[#3B82F6] hover:underline"
+                      className="text-primary hover:underline"
                     >
                       Đăng nhập
                     </Link>{" "}
@@ -452,7 +436,7 @@ export default function ClassHubPage() {
                         <Link
                           key={p.id}
                           href={`/tin-tuc#post-${p.id}`}
-                          className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-[#3B82F6]/50"
+                          className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
                         >
                           <h3 className="font-display font-semibold text-white">
                             {p.title}

@@ -31,16 +31,15 @@ import {
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
-import {
-  CNC_COURSE_ITEMS,
-  CNC_LESSON_1_QUIZ,
-  CNC_LESSON_2_QUIZ,
-  CNC_LESSON_3_QUIZ,
-  CNC_MILL_COMMAND_TRANSLATION_QUIZ,
-  CNC_TURN_COMMAND_TRANSLATION_QUIZ,
-  CNC_LESSON_4_MILL_QUIZ,
-  CNC_LESSON_4_TURN_QUIZ,
-} from "@/services/cnc-lms";
+import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
+import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
+
+const CNC_ACTIVE_QUIZ_BANK_KEYS = [
+  "lesson-1", "lesson-2", "lesson-3",
+  "turn-translate", "mill-translate",
+  "operation-turn", "operation-mill",
+  "tool-setup-turn", "tool-setup-mill",
+];
 import {
   fetchCncLessonFiles,
   formatFileSize,
@@ -60,10 +59,6 @@ import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts"
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
-import operationTurnQuiz from "@/data/cnc/operation-turn.json";
-import toolSetupTurnQuiz from "@/data/cnc/tool-setup-turn.json";
-import operationMillQuiz from "@/data/cnc/operation-mill.json";
-import toolSetupMillQuiz from "@/data/cnc/tool-setup-mill.json";
 import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
 import { fetchOpenCncLessons } from "@/services/course-lesson-release";
@@ -370,8 +365,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const [expandedLessonId, setExpandedLessonId] = useState<string | null>(null);
   const [tab, setTab] = useState<TabId | null>(null);
   const [lessonSearch, setLessonSearch] = useState("");
-  const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [submitted, setSubmitted] = useState(false);
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
   const [assessmentAttempts, setAssessmentAttempts] = useState<Record<string, number>>({});
@@ -379,6 +372,12 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const [openLessonIds, setOpenLessonIds] = useState<string[]>([]);
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
+  const [quizBanks, setQuizBanks] = useState<Record<string, CncQuizQuestion[]>>({});
+  useEffect(() => {
+    let cancelled = false;
+    fetchCncQuizBanks(CNC_ACTIVE_QUIZ_BANK_KEYS).then((map) => { if (!cancelled) setQuizBanks(map); }).catch(() => undefined);
+    return () => { cancelled = true; };
+  }, []);
   const markCompleted = useCallback((completedLessonId: string) => {
     setCompleted((current) => current[completedLessonId] ? current : ({ ...current, [completedLessonId]: true }));
     setPassedAssessments((current) => new Set(current).add(`${completedLessonId}:final`));
@@ -394,15 +393,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
 
   const lesson = lessons.find((item) => item.id === lessonId) ?? lessons[0];
   const meta = lessonMeta[lesson.id];
-  const safetyQuiz = lesson.id === "lesson-4-mill"
-    ? CNC_LESSON_4_MILL_QUIZ
-    : CNC_LESSON_4_TURN_QUIZ;
-  const requiredSafetyScore = safetyQuiz.length;
-  const score = useMemo(
-    () => safetyQuiz.filter((q) => answers[q.id] === q.correctIndex).length,
-    [answers, safetyQuiz],
-  );
-  const passed = submitted && score >= requiredSafetyScore;
   const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
   const visibleLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
@@ -481,8 +471,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     setLessonId(id);
     setExpandedLessonId(id);
     setTab("outcomes");
-    setAnswers({});
-    setSubmitted(false);
   };
 
   const renderSectionContent = (sectionId: TabId) => {
@@ -491,7 +479,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
     if (sectionId === "video") return <Video lesson={lesson} videos={lessonVideos} />;
     if (sectionId === "test") {
       if (meta.safetyGate) {
-        return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => setCompleted(current=>({...current,[lesson.id]:true}))} passed={passedAssessments} attempts={assessmentAttempts} />;
+        return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} quizBanks={quizBanks} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => setCompleted(current=>({...current,[lesson.id]:true}))} passed={passedAssessments} attempts={assessmentAttempts} />;
       }
       if (lesson.id === "lesson-5" || lesson.id === "lesson-6") {
         const rubricMachine = lesson.id === "lesson-5" ? "tien" : "phay";
@@ -501,9 +489,9 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
         </>;
       }
       if (lesson.id === "lesson-2" || lesson.id === "lesson-3") {
-        return <ProgrammingTestSuite key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
+        return <ProgrammingTestSuite key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
       }
-      return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} onResult={(value,total,didPass)=>recordQuiz(lesson.id,"final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
+      return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} quizBanks={quizBanks} onResult={(value,total,didPass)=>recordQuiz(lesson.id,"final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
     }
     const isOperationChecklist = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
     const isMachiningChecklist = lesson.id === "lesson-5" || lesson.id === "lesson-6";
@@ -830,20 +818,17 @@ function Video({ lesson, videos }: { lesson: (typeof lessons)[number]; videos: C
   </>;
 }
 
-function StandardTest({ lessonId, lessonTitle, onPassed, onResult, showHeading = true }: { lessonId: string; lessonTitle: string; onPassed: () => void; onResult?: (score:number,total:number,passed:boolean)=>void; showHeading?: boolean }) {
-  const quiz = lessonId === "lesson-1"
-    ? CNC_LESSON_1_QUIZ
-    : lessonId === "lesson-2"
-      ? CNC_LESSON_2_QUIZ
-      : lessonId === "lesson-3"
-        ? CNC_LESSON_3_QUIZ
-        : null;
+function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, showHeading = true }: { lessonId: string; lessonTitle: string; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (score:number,total:number,passed:boolean)=>void; showHeading?: boolean }) {
+  const bankKey = lessonId === "lesson-1" ? "lesson-1" : lessonId === "lesson-2" ? "lesson-2" : lessonId === "lesson-3" ? "lesson-3" : null;
+  const quiz = bankKey ? (quizBanks[bankKey] ?? null) : null;
   const lessonNumber = lessonId.replace("lesson-", "");
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [submitted, setSubmitted] = useState(false);
   const score = quiz?.filter((question) => answers[question.id] === question.correctIndex).length ?? 0;
   const requiredScore = quiz ? Math.ceil(quiz.length * 0.8) : 0;
   const passed = submitted && score >= requiredScore;
+
+  if (bankKey && !quiz) return <p className="text-sm text-[#71808c]">Đang tải câu hỏi…</p>;
 
   if (!quiz) return <>
     <SectionHeading icon={FileQuestion} kicker="MỤC 04" title="Kiểm tra cuối bài" description="Đánh giá mức độ đạt chuẩn đầu ra của bài học." />
@@ -884,9 +869,12 @@ function StandardTest({ lessonId, lessonTitle, onPassed, onResult, showHeading =
   </>;
 }
 
-function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, onPassed, onResult, passed, attempts }: { lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
+function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, quizBanks, onPassed, onResult, passed, attempts }: { lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
   const [level, setLevel] = useState<"exercise-1"|"exercise-2"|"exercise-3-short"|"exercise-3"|"exercise-4"|"exercise-5">("exercise-1");
   const machine = lessonId === "lesson-2" ? "turn" : "mill";
+  const lessonQuiz = quizBanks[lessonId] ?? null;
+  const translateBankKey = machine === "turn" ? "turn-translate" : "mill-translate";
+  const translateQuiz = quizBanks[translateBankKey] ?? null;
   // id giữ nguyên như dữ liệu tiến độ đã lưu (exercise-1..5); bài dịch lệnh trả lời ngắn mới thêm dùng id riêng "exercise-3-short"
   // để không đè lên tiến độ "Điền khuyết chương trình" (exercise-3) mà sinh viên đã làm trước đó — thứ tự hiển thị "Bài tập N" theo vị trí trong mảng.
   const levels = [
@@ -900,9 +888,9 @@ function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, onPassed, onRes
   return <div className="cnc-programming-suite space-y-5">
     <SectionHeading icon={FileQuestion} kicker="BỘ 6 BÀI TẬP LẬP TRÌNH CNC" title={`Kiểm tra ${lessonTitle}`} description="Từ nhận biết câu lệnh đến viết, mô phỏng và kiểm chứng chương trình NC." />
     <div className="cnc-programming-tabs grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">{levels.map((item)=><button key={item.id} type="button" onClick={()=>setLevel(item.id)} className={`relative rounded-xl border p-3 text-left transition ${level===item.id?"active border-[#e85d24] bg-[#fff2ec] text-[#b94317]":"border-[#dfe4e8] bg-white text-[#52616d] hover:border-[#efb399]"}`}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,item.id)} attempts={attempts[`${lessonId}:${item.id}`]}/><strong className="block text-xs">{item.name}</strong><small className="mt-1 block text-[10px] opacity-70">{item.note}</small></button>)}</div>
-    {level === "exercise-1" && <RandomMcQuiz quiz={machine === "turn" ? CNC_LESSON_2_QUIZ : CNC_LESSON_3_QUIZ} kicker="BÀI TẬP 1 · NHẬN BIẾT CÂU LỆNH" title="Nhận biết câu lệnh G-code/M-code" onResult={(score,total,didPass)=>onResult?.("exercise-1",score,total,didPass)} />}
-    {level === "exercise-2" && <RandomMcQuiz quiz={machine === "turn" ? CNC_TURN_COMMAND_TRANSLATION_QUIZ : CNC_MILL_COMMAND_TRANSLATION_QUIZ} kicker="BÀI TẬP 2 · DỊCH LỆNH (TRẮC NGHIỆM)" title="Đọc hiểu và dịch block lệnh" onResult={(score,total,didPass)=>onResult?.("exercise-2",score,total,didPass)} />}
-    {level === "exercise-3-short" && <ShortAnswerTranslationQuiz machine={machine} onResult={(score,total,didPass)=>onResult?.("exercise-3-short",score,total,didPass)} />}
+    {level === "exercise-1" && (lessonQuiz ? <RandomMcQuiz quiz={lessonQuiz} kicker="BÀI TẬP 1 · NHẬN BIẾT CÂU LỆNH" title="Nhận biết câu lệnh G-code/M-code" onResult={(score,total,didPass)=>onResult?.("exercise-1",score,total,didPass)} /> : <p className="text-sm text-[#71808c]">Đang tải câu hỏi…</p>)}
+    {level === "exercise-2" && (translateQuiz ? <RandomMcQuiz quiz={translateQuiz} kicker="BÀI TẬP 2 · DỊCH LỆNH (TRẮC NGHIỆM)" title="Đọc hiểu và dịch block lệnh" onResult={(score,total,didPass)=>onResult?.("exercise-2",score,total,didPass)} /> : <p className="text-sm text-[#71808c]">Đang tải câu hỏi…</p>)}
+    {level === "exercise-3-short" && (translateQuiz ? <ShortAnswerTranslationQuiz machine={machine} bank={translateQuiz} onResult={(score,total,didPass)=>onResult?.("exercise-3-short",score,total,didPass)} /> : <p className="text-sm text-[#71808c]">Đang tải câu hỏi…</p>)}
     {level === "exercise-3" && <FillBlankNcExercise machine={machine} onResult={(score,total,didPass)=>onResult?.("exercise-3",score,total,didPass)} />}
     {level === "exercise-4" && <ProgramFromDrawingExercise machine={machine} onResult={(score,total,didPass)=>onResult?.("exercise-4",score,total,didPass)} />}
     {level === "exercise-5" && <SimulationEvidenceExercise machine={machine} lessonId={`${lessonId}-simulation`} lessonTitle={`Mô phỏng ${lessonTitle}`} courseId={courseId} onApproved={()=>onResult?.("exercise-5",100,100,true)} />}
@@ -1025,8 +1013,8 @@ function gradeTranslationAnswer(machine: "turn" | "mill", command: string, answe
 }
 
 /** Bài tập 3 · Dịch lệnh trả lời ngắn: sinh viên đánh máy bản dịch, hệ thống chấm gần đúng theo từ khóa của từng mã lệnh trong block. */
-function ShortAnswerTranslationQuiz({ machine, onResult }: { machine: "turn" | "mill"; onResult?: (score: number, total: number, passed: boolean) => void }) {
-  const quiz = machine === "turn" ? CNC_TURN_COMMAND_TRANSLATION_QUIZ : CNC_MILL_COMMAND_TRANSLATION_QUIZ;
+function ShortAnswerTranslationQuiz({ machine, bank, onResult }: { machine: "turn" | "mill"; bank: QuizQuestion[]; onResult?: (score: number, total: number, passed: boolean) => void }) {
+  const quiz = bank;
   const [seed, setSeed] = useState(0);
   const order = useMemo(() => shuffleIndices(quiz.length), [quiz, seed]);
   const [step, setStep] = useState(0);
@@ -1167,13 +1155,14 @@ function ExerciseStatusBadge({status,attempts}:{status:ExerciseStatus;attempts?:
   return null;
 }
 
-function OperationTestSuite({machine,courseId,onResult,onCompleted,passed,attempts}:{machine:"tiện"|"phay";courseId?:number;onResult:(assessmentId:string,score:number,total:number,passed:boolean)=>void;onCompleted:()=>void;passed:Set<string>;attempts:Record<string,number>}){
+function OperationTestSuite({machine,courseId,quizBanks,onResult,onCompleted,passed,attempts}:{machine:"tiện"|"phay";courseId?:number;quizBanks:Record<string,QuizQuestion[]>;onResult:(assessmentId:string,score:number,total:number,passed:boolean)=>void;onCompleted:()=>void;passed:Set<string>;attempts:Record<string,number>}){
   const[active,setActive]=useState<"machine-operation"|"tool-setup">("machine-operation");
   const[passedParts,setPassedParts]=useState<Record<string,boolean>>({});
-  const operationQuiz:SafetyQuiz=machine==="tiện"?operationTurnQuiz:operationMillQuiz;
-  const toolQuiz:SafetyQuiz=machine==="tiện"?toolSetupTurnQuiz:toolSetupMillQuiz;
+  const operationQuiz:SafetyQuiz|null=quizBanks[machine==="tiện"?"operation-turn":"operation-mill"]??null;
+  const toolQuiz:SafetyQuiz|null=quizBanks[machine==="tiện"?"tool-setup-turn":"tool-setup-mill"]??null;
   const lessonId=machine==="tiện"?"lesson-4-turn":"lesson-4-mill";
   function recordPart(assessmentId:string,value:number,total:number,didPass:boolean){onResult(assessmentId,value,total,didPass);if(!didPass)return;const next={...passedParts,[assessmentId]:true};setPassedParts(next);if(next["machine-operation"]&&next["tool-setup"])onCompleted()}
+  if(!operationQuiz||!toolQuiz)return <p className="text-sm text-[#71808c]">Đang tải câu hỏi…</p>;
   return <div className="space-y-5"><SectionHeading icon={ShieldCheck} kicker={`KIỂM TRA VẬN HÀNH MÁY ${machine.toUpperCase()}`} title="Hai bài kiểm tra kỹ năng vận hành" description="Hoàn thành riêng bài vận hành máy và bài cài đặt dao; điểm từng bài được lưu độc lập."/><div className="grid gap-3 sm:grid-cols-2"><button type="button" onClick={()=>setActive("machine-operation")} className={`relative rounded-2xl border p-4 text-left ${active==="machine-operation"?"border-[#e85d24] bg-[#fff2ec]":"border-[#dfe4e8] bg-white"}`}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,"machine-operation")} attempts={attempts[`${lessonId}:machine-operation`]}/><small className="font-black text-[#e85d24]">BÀI KIỂM TRA 1</small><strong className="mt-1 block text-[#17232c]">Vận hành máy {machine}</strong><span className="mt-1 block text-xs text-[#71808c]">{operationQuiz.length} câu · quy trình, an toàn và thao tác máy</span></button><button type="button" onClick={()=>setActive("tool-setup")} className={`relative rounded-2xl border p-4 text-left ${active==="tool-setup"?"border-[#e85d24] bg-[#fff2ec]":"border-[#dfe4e8] bg-white"}`}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,"tool-setup")} attempts={attempts[`${lessonId}:tool-setup`]}/><small className="font-black text-[#e85d24]">BÀI KIỂM TRA 2</small><strong className="mt-1 block text-[#17232c]">Cài đặt dao {machine}</strong><span className="mt-1 block text-xs text-[#71808c]">{toolQuiz.length} câu · rà dao, offset và kiểm tra dao</span></button></div><IndependentSafetyQuiz key={`${machine}-${active}`} quiz={active==="machine-operation"?operationQuiz:toolQuiz} machine={machine} title={active==="machine-operation"?`Kiểm tra vận hành máy ${machine}`:`Kiểm tra cài đặt dao ${machine}`} assessmentId={active} courseId={courseId} onResult={recordPart}/></div>
 }
 

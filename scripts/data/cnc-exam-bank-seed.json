@@ -1,0 +1,2750 @@
+[
+  {
+    "cnc_key": "gate",
+    "title": "Quiz chốt chặn an toàn (chưa gắn vào bài học)",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi mở máy CNC, thao tác nào bắt buộc phải kiểm tra đầu tiên?",
+        "options": [
+          "Nguồn điện, khí nén, dầu bôi trơn và trạng thái nút dừng khẩn.",
+          "Tốc độ cắt trong chương trình NC.",
+          "Màu sắc của phôi sau gia công.",
+          "Tên file chương trình trên máy tính cá nhân."
+        ],
+        "answer": 0,
+        "explanation": "Nguồn, khí nén, bôi trơn và nút dừng khẩn là các điều kiện an toàn nền tảng trước khi vận hành."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi vừa mở máy, vì sao phải đưa máy về chuẩn máy Reference point?",
+        "options": [
+          "Để bộ điều khiển xác lập đúng tọa độ gốc máy trước khi thao tác tiếp.",
+          "Để làm nóng phôi trước khi cắt.",
+          "Để tự động sửa mọi lỗi trong chương trình NC.",
+          "Để tăng tốc độ trục chính lên mức lớn nhất."
+        ],
+        "answer": 0,
+        "explanation": "Reference point giúp máy biết vị trí chuẩn của các trục, tránh sai lệch tọa độ khi vận hành."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi gá phôi, yêu cầu nào là quan trọng nhất trước khi chạy thử?",
+        "options": [
+          "Phôi được kẹp chắc chắn, đúng vị trí và không cản trở hành trình dao.",
+          "Phôi được đặt càng xa mâm cặp càng tốt.",
+          "Phôi chưa cần siết chặt vì chỉ đang chạy mô phỏng.",
+          "Phôi phải chạm trực tiếp vào mọi dao trong ổ dao."
+        ],
+        "answer": 0,
+        "explanation": "Phôi lỏng hoặc đặt sai vị trí có thể gây văng phôi, gãy dao hoặc va chạm máy."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Geometry Offset dùng để làm gì trong quá trình cài đặt dao?",
+        "options": [
+          "Khai báo vị trí/kích thước dao để máy tính đúng đường chạy dao.",
+          "Đổi màu hiển thị của chương trình NC.",
+          "Lưu tên sinh viên thực hành.",
+          "Tự động chọn vật liệu phôi."
+        ],
+        "answer": 0,
+        "explanation": "Geometry Offset cho bộ điều khiển biết vị trí thực của mũi dao theo hệ tọa độ máy/phôi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Work shift hoặc G54 thường được dùng để xác lập điều gì?",
+        "options": [
+          "Gốc tọa độ làm việc của phôi.",
+          "Mật khẩu đăng nhập máy.",
+          "Tốc độ quạt làm mát trong xưởng.",
+          "Số lượng sinh viên trong nhóm."
+        ],
+        "answer": 0,
+        "explanation": "G54/Work shift xác định gốc tọa độ gia công trên phôi để chương trình chạy đúng vị trí."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi cắt thật, sinh viên bắt buộc phải thực hiện bước nào?",
+        "options": [
+          "Mô phỏng, chạy thử không tải hoặc Single Block để kiểm tra va chạm.",
+          "Bỏ qua mô phỏng nếu đã từng làm bài tương tự.",
+          "Tăng Feed Override lên 100% ngay từ đầu.",
+          "Tắt dung dịch làm mát và đứng sát vùng cắt."
+        ],
+        "answer": 0,
+        "explanation": "Chạy thử giúp phát hiện sai tọa độ, sai dao, sai chiều chạy hoặc nguy cơ va chạm trước khi cắt thật."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu trong lúc chạy thử thấy dao đi sai hướng hoặc có nguy cơ va chạm, cần làm gì?",
+        "options": [
+          "Dừng máy ngay bằng Stop/Emergency Stop theo tình huống và báo giảng viên.",
+          "Đứng quan sát thêm đến khi dao chạm phôi.",
+          "Tăng tốc độ chạy dao để chương trình kết thúc nhanh.",
+          "Tự ý tháo phôi khi trục chính còn quay."
+        ],
+        "answer": 0,
+        "explanation": "Khi có nguy cơ mất an toàn, ưu tiên dừng máy và báo giảng viên, không cố tiếp tục chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong chế độ JOG/HANDLE, nguyên tắc thao tác an toàn là gì?",
+        "options": [
+          "Di chuyển từng bước có kiểm soát, quan sát khoảng cách dao-phôi-mâm cặp.",
+          "Giữ nút di chuyển liên tục mà không cần quan sát vùng máy.",
+          "Chỉ nhìn màn hình, không cần nhìn vị trí dao thật.",
+          "Cho phép nhiều người cùng bấm bảng điều khiển."
+        ],
+        "answer": 0,
+        "explanation": "JOG/HANDLE là thao tác tay, nên phải di chuyển chậm, có kiểm soát và luôn quan sát vùng gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi tắt máy và kết thúc ca thực hành, việc nào thuộc quy trình bắt buộc?",
+        "options": [
+          "Tắt máy đúng trình tự, vệ sinh công nghiệp và thực hiện 5S.",
+          "Để phoi và dụng cụ lại cho nhóm sau tự xử lý.",
+          "Tắt nguồn chính khi trục chính vẫn đang quay.",
+          "Mang dao và đồ gá ra khỏi xưởng không cần báo giảng viên."
+        ],
+        "answer": 0,
+        "explanation": "Kết thúc ca phải đưa máy về trạng thái an toàn, vệ sinh và sắp xếp đúng 5S."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điều kiện để được lên máy thực tập trong bài vận hành CNC là gì?",
+        "options": [
+          "Hoàn thành checklist và trả lời đúng toàn bộ 10 câu hỏi chốt chặn.",
+          "Chỉ cần xem tiêu đề video là đủ.",
+          "Chỉ cần có mặt trong xưởng đúng giờ.",
+          "Chỉ cần nộp file .NC, không cần kiểm tra an toàn."
+        ],
+        "answer": 0,
+        "explanation": "Đây là bài kiểm tra chốt chặn an toàn, nên yêu cầu đúng 10/10 trước khi thực hành trực tiếp."
+      }
+    ]
+  },
+  {
+    "cnc_key": "lesson-1",
+    "title": "Quiz cuối Bài 1 — Giới thiệu máy tiện/phay CNC",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Sự khác biệt cơ bản nhất về mặt chức năng giữa hệ thống điều khiển số NC (Numerical Control) và CNC (Computer Numerical Control) là gì?",
+        "options": [
+          "Máy NC sử dụng truyền động vô cấp, còn máy CNC thì không.",
+          "Máy NC không có khả năng lưu trữ chương trình gia công trong bộ nhớ, còn máy CNC tích hợp máy vi tính cho phép đọc, biên sửa và lưu trữ chương trình trong bộ nhớ để tái sử dụng.",
+          "Máy NC gia công chính xác hơn máy CNC nhờ sử dụng băng lỗ nhị phân.",
+          "Máy NC chỉ dùng để gia công các chi tiết có đáy phẳng."
+        ],
+        "answer": 1,
+        "explanation": "Máy NC không có chức năng lưu giữ chương trình. Hệ CNC tích hợp máy vi tính và lưu trữ chương trình gia công trong bộ nhớ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vào năm nào Viện Công nghệ Massachusetts (MIT - Mỹ) đã chế tạo thành công máy phay đứng điều khiển số NC 3D đầu tiên trên thế giới?",
+        "options": [
+          "Năm 1946",
+          "Năm 1952",
+          "Năm 1958",
+          "Năm 1968"
+        ],
+        "answer": 1,
+        "explanation": "Năm 1952, máy phay đứng điều khiển số NC 3D đầu tiên được MIT chế tạo thành công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Giải pháp thay đổi dụng cụ tự động ATC (Automatic Tool Change) được ra đời vào năm nào để nâng cao trình độ tự động hóa trong khâu gia công?",
+        "options": [
+          "Năm 1952",
+          "Năm 1965",
+          "Năm 1968",
+          "Năm 1976"
+        ],
+        "answer": 1,
+        "explanation": "Giải pháp thay đổi dụng cụ tự động (ATC) được ứng dụng từ năm 1965."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Cấu tạo chung của một máy công cụ CNC gồm mấy phần chính?",
+        "options": [
+          "Gồm 2 phần chính: Phần điều khiển và phần chấp hành.",
+          "Gồm 3 phần chính: Phần cơ khí, phần điện tử và phần mềm hệ thống.",
+          "Gồm 4 phần chính: Phần tủ điện, phần động cơ, trục chính và bàn máy.",
+          "Gồm 2 phần chính: Phần cứng máy vi tính và phần mềm WinNC."
+        ],
+        "answer": 0,
+        "explanation": "Cấu tạo máy CNC gồm 2 phần chính: phần điều khiển và phần chấp hành."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Thành phần nào dưới đây thuộc phần chấp hành của máy tiện phay CNC?",
+        "options": [
+          "Bộ xử lý tín hiệu và cơ cấu nội suy.",
+          "Cơ cấu đọc chương trình và bộ nhớ máy.",
+          "Máy cắt kim loại trực tiếp cắt gọt và các cơ cấu phụ trợ như tay máy, ổ chứa dao, tưới nguội, hút phoi.",
+          "Chương trình điều khiển gồm các câu lệnh chuẩn bị."
+        ],
+        "answer": 2,
+        "explanation": "Phần chấp hành gồm máy cắt kim loại và các cơ cấu tự động hóa như tay máy, ổ chứa dao và các cơ cấu phụ trợ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong kết cấu hộp tốc độ của máy CNC, bộ phận nào thường được sử dụng để dễ dàng thay đổi tốc độ tự động và thực hiện truyền động vô cấp?",
+        "options": [
+          "Ly hợp cơ khí dùng chêm đệm.",
+          "Các bánh răng di trượt gạt bằng tay.",
+          "Ly hợp điện từ.",
+          "Động cơ bước kẹp đai truyền."
+        ],
+        "answer": 2,
+        "explanation": "Hộp tốc độ có phạm vi điều chỉnh lớn và truyền động vô cấp thường sử dụng ly hợp điện từ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để khử khe hở của các bộ truyền trong xích truyền động chạy dao của máy CNC, người ta thường sử dụng cơ cấu nào?",
+        "options": [
+          "Cơ cấu bánh răng quay ngược.",
+          "Cơ cấu vít me – đai ốc bi.",
+          "Cơ cấu thanh răng – bánh răng thẳng.",
+          "Cơ cấu tay đòn thủy lực."
+        ],
+        "answer": 1,
+        "explanation": "Trục chạy dao dùng cơ cấu vít me – đai ốc bi để khử khe hở truyền động."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Ổ tích dụng cụ trong máy phay CNC có các dụng cụ cắt được cắm dọc theo chiều dài của xích tải được phân loại là dạng nào?",
+        "options": [
+          "Ổ tích dao dạng đĩa tròn.",
+          "Ổ dao vòng đồng tâm.",
+          "Ổ tích dao dạng băng xích.",
+          "Đài dao xoay hình sao."
+        ],
+        "answer": 2,
+        "explanation": "Nhiều dụng cụ cắt cắm dọc theo chiều dài xích thuộc loại ổ tích dao dạng băng xích."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điểm nào dưới đây là nhược điểm (hạn chế) của việc ứng dụng máy công cụ CNC tại xưởng sản xuất?",
+        "options": [
+          "Năng suất cắt gọt và tính tự động hóa thấp.",
+          "Không thể gia công được các chi tiết có biên dạng phức tạp.",
+          "Giá thành đầu tư ban đầu cao, hệ điều hành cơ - điện phức tạp và yêu cầu bảo dưỡng máy định kỳ rất nghiêm ngặt.",
+          "Độ bóng bề mặt và độ chính xác gia công kém hơn máy vạn năng."
+        ],
+        "answer": 2,
+        "explanation": "Máy CNC có giá thành cao, hệ cơ - điện phức tạp và hiệu quả kinh tế thấp khi gia công các chi tiết đơn giản."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Theo quy tắc bàn tay phải dùng để xác định hệ trục tọa độ trên máy CNC, trục Z luôn trùng với trục chính của máy và được biểu diễn bằng ngón tay nào?",
+        "options": [
+          "Ngón tay cái.",
+          "Ngón tay trỏ.",
+          "Ngón tay giữa.",
+          "Ngón tay áp út."
+        ],
+        "answer": 2,
+        "explanation": "Ngón giữa của bàn tay phải tương ứng với hướng chiều trục Z, trùng phương trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Đối với máy tiện CNC, chiều dương của trục Z được quy ước như thế nào?",
+        "options": [
+          "Hướng đi vào trong mâm cặp.",
+          "Hướng đi ra xa mâm cặp.",
+          "Hướng song song với bàn dao ngang về phía người vận hành.",
+          "Hướng từ trên trần máy thẳng đứng xuống mâm cặp."
+        ],
+        "answer": 1,
+        "explanation": "Trên máy tiện, chiều dương trục Z hướng ra xa mâm cặp và chiều âm hướng vào mâm cặp."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên máy tiện CNC 2D thông thường, trục tọa độ nào sau đây không tồn tại?",
+        "options": [
+          "Trục Z.",
+          "Trục X.",
+          "Trục Y.",
+          "Cả trục X và Z."
+        ],
+        "answer": 2,
+        "explanation": "Máy tiện CNC thông thường chỉ gồm hai trục tịnh tiến X và Z, không có trục Y."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Các chuyển động quay xung quanh các trục tịnh tiến cơ bản X, Y, Z trên máy CNC được ký hiệu tương ứng là gì?",
+        "options": [
+          "U, V, W.",
+          "P, Q, R.",
+          "A, B, C.",
+          "I, J, K."
+        ],
+        "answer": 2,
+        "explanation": "Chuyển động quay tương ứng quanh X, Y, Z được ký hiệu lần lượt bằng A, B, C."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điểm gốc tọa độ của máy M (Machine Zero Point) được định nghĩa là gì?",
+        "options": [
+          "Điểm gốc do người vận hành tự cài đặt tại mặt đầu của phôi gia công.",
+          "Điểm gốc cố định do nhà sản xuất xác lập ngay từ khi thiết kế máy, không thể thay đổi.",
+          "Điểm nằm cố định ở góc trên cùng bên trái của bàn máy phay.",
+          "Điểm dừng nghỉ tạm thời của đài gá dao khi thay đổi dao cắt."
+        ],
+        "answer": 1,
+        "explanation": "Điểm gốc tọa độ máy M do nhà sản xuất xác lập khi thiết kế máy và không thể thay đổi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên máy tiện CNC, điểm gốc tọa độ của máy M (Machine Zero Point) thường nằm ở vị trí nào?",
+        "options": [
+          "Nằm ở tâm mặt đầu ngoài của phôi.",
+          "Nằm ở ổ chứa dao rơvonve.",
+          "Nằm ở bên trong mâm cặp, trên đường tâm trục chính.",
+          "Nằm ở đỉnh nhọn cao nhất của ụ động."
+        ],
+        "answer": 2,
+        "explanation": "Trên máy tiện, gốc tọa độ máy M nằm cố định ở bên trong mâm cặp, trên đường tâm trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Đặc điểm của điểm chuẩn (Zero) của phôi W (Workpiece Zero Point) là gì?",
+        "options": [
+          "Là điểm cố định do nhà sản xuất quy định sẵn, không thể dịch chuyển.",
+          "Là điểm thay đổi, vị trí do người lập trình tự lựa chọn và xác định dựa vào bản vẽ gia công chi tiết.",
+          "Là điểm chuẩn trùng khít hoàn toàn với điểm gốc của dao N tại vành trục chính.",
+          "Là điểm nằm ở ranh giới hành trình xa nhất của đài gá dao."
+        ],
+        "answer": 1,
+        "explanation": "Điểm chuẩn phôi W do người lập trình tự chọn gắn lên phôi và có thể thay đổi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điểm chuẩn tham chiếu R (Reference Point) trên máy CNC có vai trò chính là gì?",
+        "options": [
+          "Là điểm chuẩn để người lập trình bắt đầu gán tọa độ X0, Y0, Z0 cho chi tiết.",
+          "Dùng làm mốc cố định giúp hệ thống điều khiển đo và hiệu chỉnh lại khoảng cách thực tế so với điểm gốc M, đặc biệt sau sự cố mất điện.",
+          "Là điểm tỳ nằm ở mặt đầu của chấu kẹp mâm cặp.",
+          "Là điểm đo chiều dài gá thực tế của từng dao cắt."
+        ],
+        "answer": 1,
+        "explanation": "Điểm R giúp đưa hệ đo lường về trạng thái kiểm tra chuẩn xác sau khi xảy ra sự cố mất điện."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Đối với máy phay CNC, điểm chuẩn dao N (Tool mount reference point) nằm ở vị trí nào?",
+        "options": [
+          "Nằm tại vành trục chính máy phay.",
+          "Nằm tại mặt phẳng tỳ gá của ê-tô bàn máy.",
+          "Nằm tại tâm mặt phẳng của đài dao rơvonve máy tiện.",
+          "Nằm tại đỉnh nhọn thực tế của mũi dụng cụ cắt."
+        ],
+        "answer": 0,
+        "explanation": "Trên máy phay, điểm chuẩn gá dao N nằm tại vành trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Theo tiêu chuẩn ISO R841, ba trục thẳng NC thứ hai song song bắt buộc với các trục cơ bản X, Y, Z được ký hiệu lần lượt là gì?",
+        "options": [
+          "A, B, C.",
+          "U, V, W.",
+          "P, Q, R.",
+          "D, E, F."
+        ],
+        "answer": 1,
+        "explanation": "Ba trục thẳng tịnh tiến phụ song song với X, Y, Z được ký hiệu lần lượt là U, V, W."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Dạng điều khiển đường viền nào cho phép dịch chuyển dụng cụ cắt đồng thời trên cả ba trục X, Y, Z để gia công các bề mặt lồi lõm phức tạp trong không gian 3D?",
+        "options": [
+          "Điều khiển điểm - điểm.",
+          "Điều khiển đoạn thẳng.",
+          "Điều khiển 2½D.",
+          "Điều khiển 3D."
+        ],
+        "answer": 3,
+        "explanation": "Điều khiển đường viền 3D cho phép dịch chuyển đồng thời cả ba trục máy để tạo biên dạng cong."
+      }
+    ]
+  },
+  {
+    "cnc_key": "lesson-2",
+    "title": "Quiz nhận biết lệnh — Bài 2 (Tiện)",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Trong khối lệnh tổng quát N_ G_ X_ Y_ Z_ M_ S_ F_ T_ ;, ký tự N dùng để khai báo thông tin nào?",
+        "options": [
+          "Lệnh tốc độ trục chính",
+          "Số thứ tự câu lệnh",
+          "Lệnh chọn dụng cụ cắt",
+          "Lệnh bước tiến dao"
+        ],
+        "answer": 1,
+        "explanation": "N là số thứ tự của câu lệnh (số block) trong chương trình CNC."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Ký tự nào sau đây biểu thị lệnh bước tiến dao (Feed) trong chương trình tiện CNC?",
+        "options": [
+          "S",
+          "T",
+          "F",
+          "M"
+        ],
+        "answer": 2,
+        "explanation": "F là địa chỉ khai báo lượng hoặc tốc độ chạy dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Ký tự ; đặt ở cuối mỗi khối lệnh trong chương trình CNC có ý nghĩa gì?",
+        "options": [
+          "Bắt đầu khối lệnh",
+          "Khai báo bán kính dao",
+          "Ký tự kết thúc câu lệnh",
+          "Bỏ qua câu lệnh"
+        ],
+        "answer": 2,
+        "explanation": "Dấu chấm phẩy đánh dấu kết thúc một câu lệnh CNC."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Cặp mã lệnh nào được dùng để khai báo đơn vị đo trong hệ tọa độ gia công?",
+        "options": [
+          "G94 và G95",
+          "G70 và G71",
+          "G17 và G18",
+          "G41 và G42"
+        ],
+        "answer": 1,
+        "explanation": "Theo hệ lệnh của tài liệu, G70 và G71 dùng để chọn hệ inch và hệ mét."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G71 dùng để khai báo đơn vị đo theo hệ nào?",
+        "options": [
+          "Hệ inch",
+          "Hệ mét",
+          "Hệ độ (Degree)",
+          "Hệ radian"
+        ],
+        "answer": 1,
+        "explanation": "G71 khai báo đơn vị theo hệ mét trong hệ điều khiển được sử dụng ở bài học."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G95 được ứng dụng trong gia công tiện có ý nghĩa là gì?",
+        "options": [
+          "Chọn lượng chạy dao theo mm/phút",
+          "Chọn lượng chạy dao theo mm/vòng",
+          "Chọn tốc độ trục chính theo vòng/phút",
+          "Khai báo đơn vị đo hệ mét"
+        ],
+        "answer": 1,
+        "explanation": "G95 chọn chế độ lượng chạy dao theo mỗi vòng quay của trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh nào dùng cho chuyển động chạy dao nhanh không cắt gọt?",
+        "options": [
+          "G01",
+          "G00",
+          "G02",
+          "G03"
+        ],
+        "answer": 1,
+        "explanation": "G00 dùng để định vị nhanh, không thực hiện cắt gọt."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong cấu trúc lệnh G00 X(U)... Z(W)...;, hai ký tự U và W biểu thị tọa độ điểm đến theo giá trị nào?",
+        "options": [
+          "Tọa độ tuyệt đối",
+          "Tọa độ tương đối",
+          "Tọa độ cực",
+          "Bán kính cung tròn"
+        ],
+        "answer": 1,
+        "explanation": "U và W biểu thị lượng dịch chuyển tương đối theo trục X và Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G01 thực hiện chức năng gì trong quá trình gia công?",
+        "options": [
+          "Chạy dao nhanh không cắt gọt",
+          "Nội suy cung tròn cùng chiều kim đồng hồ",
+          "Nội suy theo đường thẳng",
+          "Xóa bù trừ bán kính dao"
+        ],
+        "answer": 2,
+        "explanation": "G01 thực hiện nội suy tuyến tính với lượng chạy dao F."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để tiện mặt đầu, tiện trụ thẳng hoặc tiện côn, người ta thường áp dụng lệnh nào?",
+        "options": [
+          "G00",
+          "G01",
+          "G02",
+          "G73"
+        ],
+        "answer": 1,
+        "explanation": "Các chuyển động tiện thẳng và tiện côn cơ bản thường dùng nội suy đường thẳng G01."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G02 có công dụng nào sau đây?",
+        "options": [
+          "Nội suy cung tròn theo cùng chiều kim đồng hồ",
+          "Nội suy cung tròn theo ngược chiều kim đồng hồ",
+          "Nội suy theo đường thẳng",
+          "Chạy dao nhanh"
+        ],
+        "answer": 0,
+        "explanation": "G02 là nội suy cung tròn theo chiều kim đồng hồ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi muốn gia công một khối lồi bằng lệnh nội suy cung tròn ngược chiều kim đồng hồ, mã lệnh cần chọn là:",
+        "options": [
+          "G01",
+          "G02",
+          "G03",
+          "G72"
+        ],
+        "answer": 2,
+        "explanation": "G03 là nội suy cung tròn ngược chiều kim đồng hồ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong lệnh nội suy cung tròn (G02/G03), ký tự R đại diện cho tham số nào?",
+        "options": [
+          "Tốc độ quay trục chính",
+          "Khoảng cách rút dao",
+          "Bán kính cung tròn",
+          "Lượng dư gia công"
+        ],
+        "answer": 2,
+        "explanation": "R khai báo bán kính của cung tròn cần nội suy."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Tham số I và K trong lệnh nội suy cung tròn (G02/G03) là tọa độ tương đối của tâm quay theo hai phương nào?",
+        "options": [
+          "I theo phương Z, K theo phương X",
+          "I theo phương X, K theo phương Z",
+          "I theo phương Y, K theo phương Z",
+          "I và K đều theo phương X"
+        ],
+        "answer": 1,
+        "explanation": "Trên mặt phẳng tiện XZ, I là độ lệch tâm theo X và K là độ lệch tâm theo Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh nào được sử dụng để xóa chức năng bù trừ bán kính dao?",
+        "options": [
+          "G40",
+          "G41",
+          "G42",
+          "G70"
+        ],
+        "answer": 0,
+        "explanation": "G40 hủy chức năng bù bán kính dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để kích hoạt chế độ bù trừ bán kính dao bên phải, ta dùng mã lệnh nào?",
+        "options": [
+          "G40",
+          "G41",
+          "G42",
+          "G73"
+        ],
+        "answer": 2,
+        "explanation": "G42 kích hoạt bù bán kính dao bên phải quỹ đạo lập trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G73 trong lập trình tiện CNC có công dụng là gì?",
+        "options": [
+          "Chu trình tiện tinh dọc trục",
+          "Chu trình tiện thô dọc trục",
+          "Chu trình tiện rãnh",
+          "Lệnh chạy dao nhanh"
+        ],
+        "answer": 1,
+        "explanation": "Theo cấu trúc chu trình trong tài liệu, G73 là chu trình tiện thô dọc trục."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong cấu trúc chu trình G73 P... Q... U2... W...;, tham số U2 và W lần lượt là:",
+        "options": [
+          "Tọa độ điểm bắt đầu và kết thúc",
+          "Chiều sâu cắt thô và khoảng cách rút dao",
+          "Lượng dư gia công tinh theo phương X và phương Z",
+          "Bước tiến dao thô và bước tiến dao tinh"
+        ],
+        "answer": 2,
+        "explanation": "U2 và W là lượng dư để lại cho gia công tinh theo phương X và Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh được dùng để thực hiện chu trình tiện tinh dọc trục là:",
+        "options": [
+          "G01",
+          "G71",
+          "G72",
+          "G73"
+        ],
+        "answer": 2,
+        "explanation": "Theo hệ chu trình trong tài liệu, G72 thực hiện chu trình tiện tinh dọc trục."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong các lệnh chu trình gia công (G73, G72), tham số P và Q có ý nghĩa gì?",
+        "options": [
+          "P là tốc độ trục chính, Q là lượng chạy dao",
+          "P là số thứ tự câu lệnh bắt đầu, Q là số thứ tự câu lệnh kết thúc biên dạng",
+          "P là bán kính dao, Q là lượng dư gia công",
+          "P là chiều sâu cắt, Q là khoảng cách lùi dao"
+        ],
+        "answer": 1,
+        "explanation": "P và Q xác định số thứ tự block bắt đầu và kết thúc của biên dạng gia công."
+      }
+    ]
+  },
+  {
+    "cnc_key": "lesson-3",
+    "title": "Quiz nhận biết lệnh — Bài 3 (Phay)",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Tên chương trình phay CNC tiêu chuẩn trên hệ điều hành Fanuc 21M bắt đầu bằng ký tự nào?",
+        "options": [
+          "Bắt đầu bằng chữ N và theo sau là 4 chữ số.",
+          "Bắt đầu bằng chữ G và theo sau là 3 chữ số.",
+          "Bắt đầu bằng chữ O và theo sau là 4 chữ số.",
+          "Bắt đầu bằng chữ M và theo sau là 2 chữ số."
+        ],
+        "answer": 2,
+        "explanation": "Tên chương trình gồm chữ O và bốn chữ số, ví dụ: O1601."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nguyên công phay CNC cơ bản thường được tiến hành trên mặt phẳng nào và mã lệnh nào dùng để lựa chọn mặt phẳng đó?",
+        "options": [
+          "Mặt phẳng XY (XOY); sử dụng lệnh G17.",
+          "Mặt phẳng ZX (XOZ); sử dụng lệnh G18.",
+          "Mặt phẳng YZ (YOZ); sử dụng lệnh G19.",
+          "Mặt phẳng tự do; sử dụng lệnh G54."
+        ],
+        "answer": 0,
+        "explanation": "G17 chọn mặt phẳng làm việc XY (mặt phẳng XOY) sử dụng cho máy phay."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong chương trình phay CNC, đơn vị tốc độ tiến dao (Feedrate) thường được lập trình bằng đơn vị nào và mã lệnh nào dùng để thiết lập đơn vị đó?",
+        "options": [
+          "mm/vòng; sử dụng lệnh G95.",
+          "mm/phút; sử dụng lệnh G94.",
+          "inch/vòng; sử dụng lệnh G97.",
+          "m/phút; sử dụng lệnh G96."
+        ],
+        "answer": 1,
+        "explanation": "G94 thiết lập lượng chạy dao theo đơn vị mm/phút, đặc trưng trong gia công phay."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi muốn lập trình di chuyển dao đến điểm đích được xác định bằng giá trị khoảng cách tuyệt đối so với điểm gốc phôi (W), ta sử dụng mã lệnh nào?",
+        "options": [
+          "G90",
+          "G91",
+          "G92",
+          "G53"
+        ],
+        "answer": 0,
+        "explanation": "G90 là lệnh tọa độ tuyệt đối, dao di chuyển đến điểm xác định so với điểm gốc chuẩn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong hệ tọa độ tương đối (G91) trên máy phay CNC, dao di chuyển đến vị trí mới dựa trên cơ sở nào?",
+        "options": [
+          "Khoảng cách so với điểm gốc máy M.",
+          "Khoảng cách so với điểm gốc phôi W.",
+          "Khoảng cách từ vị trí hiện tại của dao trước khi thực hiện câu lệnh.",
+          "Khoảng cách so với điểm chuẩn dao N."
+        ],
+        "answer": 2,
+        "explanation": "G91 là hệ tọa độ tương đối, dao tịnh tiến một khoảng so với điểm hiện hành trước đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh G00 trên máy phay CNC được định nghĩa là gì?",
+        "options": [
+          "Chạy dao theo đường thẳng với tốc độ tiến dao định sẵn.",
+          "Di chuyển dao nhanh không cắt gọt để định vị dụng cụ cắt.",
+          "Di chuyển dao tịnh tiến về chuẩn tham chiếu.",
+          "Bù trừ bán kính mũi dao cắt."
+        ],
+        "answer": 1,
+        "explanation": "G00 là lệnh di chuyển nhanh không cắt gọt, dùng để định vị dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khối lệnh N10 G01 X25 Y-25 F100; trên máy phay CNC có ý nghĩa kỹ thuật gì?",
+        "options": [
+          "Định vị nhanh dao đến điểm tọa độ X25 Y-25.",
+          "Nội suy đường thẳng đến điểm X25 Y-25 với tốc độ tiến dao 100 mm/phút.",
+          "Nội suy đường thẳng đến điểm X25 Y-25 với tốc độ tiến dao 100 mm/vòng.",
+          "Di chuyển dao nội suy cung tròn với lượng tiến dao 100 mm/phút."
+        ],
+        "answer": 1,
+        "explanation": "G01 nội suy đường thẳng có cắt gọt; F là tốc độ chạy dao, đơn vị mm/phút khi dùng G94."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi sử dụng lệnh nội suy đường thẳng G01 để bo góc hoặc vát góc trên mặt phẳng gia công, tham số nào được dùng để bo tròn một cung có bán kính quy định?",
+        "options": [
+          "Địa chỉ C.",
+          "Địa chỉ R.",
+          "Địa chỉ I.",
+          "Địa chỉ K."
+        ],
+        "answer": 1,
+        "explanation": "Khi dùng G01 để bo cung, cấu trúc lệnh nhập thêm địa chỉ R."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điểm khác biệt quan trọng nhất giữa mã lệnh G02 và G03 khi phay biên dạng cong là gì?",
+        "options": [
+          "G02 nội suy ngược chiều kim đồng hồ, G03 cùng chiều kim đồng hồ.",
+          "G02 nội suy cùng chiều kim đồng hồ, G03 ngược chiều kim đồng hồ.",
+          "G02 yêu cầu bán kính R, G03 yêu cầu tọa độ tâm I, J.",
+          "G02 dùng trên mặt phẳng XY, G03 dùng trên mặt phẳng YZ."
+        ],
+        "answer": 1,
+        "explanation": "G02 nội suy cùng chiều kim đồng hồ, còn G03 nội suy ngược chiều kim đồng hồ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong câu lệnh phay cung tròn sử dụng tọa độ tâm tương đối, hai địa chỉ I và J biểu diễn khoảng cách hình học nào?",
+        "options": [
+          "Khoảng cách từ tâm cung tròn đến điểm gốc phôi W.",
+          "Khoảng cách từ vị trí bắt đầu của cung tròn đến tâm cung tròn theo hai phương X và Y tương ứng.",
+          "Khoảng cách từ tâm cung tròn đến vị trí kết thúc của cung tròn.",
+          "Bán kính của cung tròn cần nội suy."
+        ],
+        "answer": 1,
+        "explanation": "I và J là tọa độ tương đối của tâm cung tròn so với điểm bắt đầu theo trục X và Y."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để tránh sai số gia công do đường kính dụng cụ cắt gây ra khi phay biên dạng (Profile), người ta sử dụng các lệnh bù trừ bán kính dao nào?",
+        "options": [
+          "G43 và G44.",
+          "G41 và G42.",
+          "G54 và G55.",
+          "G90 và G91."
+        ],
+        "answer": 1,
+        "explanation": "Lệnh bù bán kính để dịch quỹ đạo tâm dao gồm G41 bên trái và G42 bên phải."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi dao phay di chuyển ở phía bên trái của đường biên chi tiết theo chiều tiến dao, ta sử dụng lệnh bù bán kính nào?",
+        "options": [
+          "G40",
+          "G41",
+          "G42",
+          "G43"
+        ],
+        "answer": 1,
+        "explanation": "G41 bù bán kính dao trái, nghĩa là dao nằm bên trái đường biên theo chiều chuyển động."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Lệnh nào được sử dụng để hủy bỏ hiệu chỉnh bù trừ bán kính dao sau khi đã phay xong biên dạng?",
+        "options": [
+          "G40",
+          "G49",
+          "G80",
+          "G53"
+        ],
+        "answer": 0,
+        "explanation": "G40 hủy bỏ hiệu chỉnh bù trừ bán kính dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để hiệu chỉnh bù trừ chiều dài dao theo chiều dương (+), ta sử dụng mã lệnh G nào đi kèm với địa chỉ H?",
+        "options": [
+          "G41 H_",
+          "G42 H_",
+          "G43 H_",
+          "G44 H_"
+        ],
+        "answer": 2,
+        "explanation": "G43 hiệu chỉnh chiều dài dao theo chiều dương, kết hợp với số hiệu hiệu chỉnh H."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Lệnh nào được sử dụng để hủy bỏ hiệu chỉnh bù trừ chiều dài dụng cụ cắt?",
+        "options": [
+          "G40",
+          "G49",
+          "G80",
+          "G98"
+        ],
+        "answer": 1,
+        "explanation": "G49 hủy bỏ hiệu chỉnh chiều dài dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Mã lệnh M06 trong chương trình phay CNC hệ Fanuc 21M có chức năng gì?",
+        "options": [
+          "Quay trục chính cùng chiều kim đồng hồ.",
+          "Dừng trục chính không điều kiện.",
+          "Thay dụng cụ cắt (thay dao tự động).",
+          "Bật dung dịch tưới nguội."
+        ],
+        "answer": 2,
+        "explanation": "M06 là chức năng phụ điều khiển thay dao tự động trên máy phay CNC."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Để thiết lập hệ tọa độ gia công (gốc phôi W) trên máy phay CNC, người lập trình có thể lựa chọn 6 hệ tọa độ làm việc chuẩn nào?",
+        "options": [
+          "G50 đến G55",
+          "G52 đến G57",
+          "G54 đến G59",
+          "G90 đến G95"
+        ],
+        "answer": 2,
+        "explanation": "Sáu hệ tọa độ làm việc chuẩn được chọn bằng các mã G54 đến G59."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Lệnh G80 trong lập trình phay CNC được dùng để làm gì?",
+        "options": [
+          "Kết thúc và hủy bỏ toàn bộ chu trình gia công lỗ.",
+          "Hủy bỏ bù trừ bán kính dụng cụ cắt.",
+          "Khởi động chu trình taro ren.",
+          "Trả dụng cụ cắt về chuẩn tham chiếu máy."
+        ],
+        "answer": 0,
+        "explanation": "G80 hủy bỏ toàn bộ chu trình gia công lỗ đã gọi trước đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong chu trình khoan lỗ sâu bước G83: G83 G99 G90 G00 X50 Y50 Z-98 I-22 J3 F100; hai tham số I và J được định nghĩa lần lượt là gì?",
+        "options": [
+          "I là bán kính hốc tròn, J là chiều sâu một lớp cắt.",
+          "I là giá trị mỗi bước khoan theo phương trục chính, J là số bước khoan thực hiện.",
+          "I là lượng dư gia công thô, J là lượng dư gia công tinh.",
+          "I là khoảng cách an toàn, J là thời gian dừng ở đáy lỗ."
+        ],
+        "answer": 1,
+        "explanation": "Trong chu trình G83 phay Fanuc, I định nghĩa trị số bước khoan và J định nghĩa số lần thực hiện bước khoan."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi mô phỏng chương trình phay CNC trên WinNC32 hệ Fanuc 21M, để chạy mô phỏng kiểm tra chương trình (SIMULATION), ta nhấn phím mềm nào?",
+        "options": [
+          "[TOOLS] (F3)",
+          "[WORKP] (F4)",
+          "[SIMUL] (F6)",
+          "[3DVIEW] (F3)"
+        ],
+        "answer": 2,
+        "explanation": "Ở chế độ phay WinNC 21M, phím đồ họa SIMUL để chạy mô phỏng là F6."
+      }
+    ]
+  },
+  {
+    "cnc_key": "lesson-4-turn",
+    "title": "Quiz Bài 4 — Tiện (chưa gắn vào bài học)",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi mở máy tiện CNC, nội dung nào phải được kiểm tra?",
+        "options": [
+          "Tình trạng nguyên vẹn của máy, nguồn điện, nút dừng khẩn và ổ dao.",
+          "Kết nối Internet của máy tính.",
+          "Mở WinNC và kiểm tra chương trình cũ.",
+          "Tra dầu mâm cặp trước khi cấp nguồn."
+        ],
+        "answer": 0,
+        "explanation": "Phải kiểm tra tình trạng máy, nguồn điện, nút dừng khẩn và ổ dao trước khi cấp nguồn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trình tự mở máy tiện EMCO Turn 55/60 nào đúng?",
+        "options": [
+          "Mở WinNC → mở máy tính → bật CB → mở khóa.",
+          "Bật CB → mở khóa 0→1 → bật máy tính → xoay nút dừng khẩn theo chiều kim đồng hồ → mở WinNC Fanuc 21T.",
+          "Nhấn dừng khẩn → bật CB → mở khóa → mở WinNC.",
+          "Bật máy tính → mở WinNC → bật CB → chạy chương trình."
+        ],
+        "answer": 1,
+        "explanation": "Trình tự đúng là bật CB, mở khóa, bật máy tính, nhả dừng khẩn rồi mở WinNC Fanuc 21T."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Muốn nhả nút dừng khẩn cấp trên máy tiện, cần thao tác thế nào?",
+        "options": [
+          "Nhấn nút thêm một lần.",
+          "Dùng khóa lục giác.",
+          "Xoay nút theo chiều kim đồng hồ.",
+          "Giữ nút trong 5 giây."
+        ],
+        "answer": 2,
+        "explanation": "Nút dừng khẩn được nhả bằng cách xoay theo chiều kim đồng hồ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trình tự đưa máy tiện về điểm chuẩn Reference nào đúng?",
+        "options": [
+          "Chọn JOG → Feed 100% → Reference.",
+          "Chọn chế độ Reference → Feed 100% → thực hiện Reference.",
+          "Nhập G28 trong MDI.",
+          "Chọn EDIT rồi mở POS."
+        ],
+        "answer": 1,
+        "explanation": "Chọn chế độ Reference, đặt Feed Override 100% và đưa máy về chuẩn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong chế độ JOG, muốn di chuyển nhanh các trục cần dùng phím nào?",
+        "options": [
+          "Phím hướng trục kết hợp phím Rapid có biểu tượng sóng.",
+          "Các phím F1–F12.",
+          "Các phím số.",
+          "Shift kết hợp Handle."
+        ],
+        "answer": 0,
+        "explanation": "Dùng phím hướng trục kết hợp phím Rapid để di chuyển nhanh có kiểm soát."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi gá dao tiện, cách kiểm tra chiều cao mũi dao phù hợp là gì?",
+        "options": [
+          "Dùng căn lá.",
+          "Căn mũi dao trùng với tâm ụ động.",
+          "Để dao nhô dài nhất có thể.",
+          "Gõ búa để chỉnh dao."
+        ],
+        "answer": 1,
+        "explanation": "Mũi dao phải được căn trùng với tâm ụ động để bảo đảm đúng chiều cao tâm."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi cài đặt dữ liệu dao và phôi mới, thao tác nào phải thực hiện?",
+        "options": [
+          "Khởi động lại máy.",
+          "Chạy Dry Run ngay.",
+          "Xóa dữ liệu Workshift X/Z và Geometry X/Z/R/T của dao cần cài.",
+          "Nhấn RESET 5 lần."
+        ],
+        "answer": 2,
+        "explanation": "Phải xóa dữ liệu Workshift và Geometry cũ để tránh kế thừa sai lệch từ bài trước."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Công thức xác định khoảng cách MW trong cài đặt Workshift máy tiện là gì?",
+        "options": [
+          "MW = MA − AW.",
+          "MW = MA × AW.",
+          "MW = MA + AW.",
+          "MW = MA ÷ AW."
+        ],
+        "answer": 2,
+        "explanation": "Theo quy trình cài đặt, MW được xác định bằng MA + AW."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi nhập MA và AW vào Workshift, giá trị được nhập theo cách nào?",
+        "options": [
+          "Nhập giá trị dương.",
+          "Nhập −MA tại Shift value Z và −AW tại Measurement Z.",
+          "Nhập cả hai bằng 0.",
+          "Để máy tự động tính, không cần nhập."
+        ],
+        "answer": 1,
+        "explanation": "Các giá trị được nhập theo dấu âm tại đúng trường Shift value Z và Measurement Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi dao cách mặt phôi khoảng 5 mm, cần điều chỉnh lượng chạy dao thế nào?",
+        "options": [
+          "Giữ Feed Override 40%.",
+          "Giảm dần từ 40% xuống 2% hoặc mức nhỏ nhất.",
+          "Tăng lên 100%.",
+          "Chuyển sang Handle nhanh."
+        ],
+        "answer": 1,
+        "explanation": "Khi dao gần phôi phải giảm Feed Override xuống khoảng 2% để rà chạm an toàn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Với dao chuẩn có Ztool1 = 0, tọa độ máy theo Z được nhập vào Workshift thế nào?",
+        "options": [
+          "Nhập +Zmachine.",
+          "Nhập −Zmachine vào Z Workshift.",
+          "Nhập 0.",
+          "Nhập chiều dài phôi."
+        ],
+        "answer": 1,
+        "explanation": "Giá trị tọa độ máy của dao chuẩn được nhập với dấu âm vào Z Workshift."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Công thức xác định giá trị Z của các dao còn lại là gì?",
+        "options": [
+          "Ztool = Zmachine − MW.",
+          "Ztool = Zmachine + MW.",
+          "Ztool = Zmachine × MW.",
+          "Ztool = MW − Zmachine."
+        ],
+        "answer": 0,
+        "explanation": "Giá trị dao còn lại được xác định theo công thức Ztool = Zmachine − MW."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vì sao cần tiện thử một đoạn trụ ngắn khoảng 10 mm khi cài đặt dao?",
+        "options": [
+          "Để kiểm tra rung động trục chính.",
+          "Để tạo một bậc trên phôi.",
+          "Để đo đường kính cắt thực tế bằng thước cặp.",
+          "Để tăng độ cứng của phôi."
+        ],
+        "answer": 2,
+        "explanation": "Đo đoạn trụ vừa tiện giúp xác định chính xác vị trí thực của mũi dao theo phương X."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu đường kính tiện thử đo được là 23,8 mm, cần nhập dữ liệu nào?",
+        "options": [
+          "Nhập 23.8 rồi INPUT.",
+          "Nhập X23.8 rồi chọn MEASURE/F4.",
+          "Nhập X−23.8.",
+          "Nhập X0."
+        ],
+        "answer": 1,
+        "explanation": "Nhập X23.8 và dùng chức năng MEASURE/F4 để bộ điều khiển xác lập bù dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Đoạn lệnh MDI nào phù hợp để kiểm tra dao số 2 sau khi cài đặt?",
+        "options": [
+          "T0202; G00 X0 Z0; M30;",
+          "T0202; M3 (M4) S800; G1 X27 Z0 F1; M5;",
+          "G90 G54; G00 X0 Y0;",
+          "T0202 M03 S1500; G00 X0 Z−50;"
+        ],
+        "answer": 1,
+        "explanation": "Đoạn lệnh gọi dao, quay trục chính ở tốc độ phù hợp và tiến dao chậm để kiểm tra vị trí."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu phát hiện nguy cơ va chạm trong khi vận hành, thao tác ưu tiên là gì?",
+        "options": [
+          "Nhấn RESET.",
+          "Nhấn FEED HOLD.",
+          "Nhấn nút dừng khẩn cấp.",
+          "Tắt nguồn máy tính."
+        ],
+        "answer": 2,
+        "explanation": "Khi có nguy cơ va chạm phải dừng khẩn cấp ngay để bảo vệ người và máy."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu toàn bộ kích thước X/Z đều sai sau khi cài đặt, nguyên nhân thường gặp nhất là gì?",
+        "options": [
+          "Dung dịch làm mát không đủ.",
+          "Rà chạm, đo hoặc nhập dữ liệu cài đặt sai.",
+          "Tốc độ trục chính bị giảm.",
+          "Sai cú pháp G01/G02."
+        ],
+        "answer": 1,
+        "explanation": "Sai lệch đồng loạt thường xuất phát từ thao tác rà chạm, đo hoặc nhập dữ liệu gốc và dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Rà dao với lượng chạy dao quá lớn có thể gây hậu quả nào?",
+        "options": [
+          "Lỏng cơ cấu kẹp dao.",
+          "Mẻ hoặc gãy dao, hỏng phôi và tạo sai số cài đặt lớn.",
+          "Quá tải trục chính ngay lập tức.",
+          "Làm dịch chuyển điểm Reference của máy."
+        ],
+        "answer": 1,
+        "explanation": "Rà dao nhanh dễ làm mẻ/gãy dao, hỏng phôi và khiến giá trị cài đặt sai lớn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Theo nguyên tắc chốt chặn an toàn, điểm bài thực hành được tính khi nào?",
+        "options": [
+          "Chỉ cần đạt phần an toàn rồi lấy điểm trung bình.",
+          "Chỉ tính tổng điểm thực hành khi điểm kỹ thuật đạt từ 2,5/10 trở lên.",
+          "Chỉ tính chất lượng sản phẩm.",
+          "Luôn lấy trung bình, không có điểm chốt chặn."
+        ],
+        "answer": 1,
+        "explanation": "Điểm kỹ thuật tối thiểu 2,5/10 là điều kiện chốt chặn trước khi tính tổng điểm thực hành."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Cuối ca thực hành máy tiện, công việc bảo dưỡng nào phải thực hiện?",
+        "options": [
+          "Tháo toàn bộ ổ dao.",
+          "Vệ sinh phoi và dầu, bôi trơn băng trượt, làm sạch khu vực làm việc.",
+          "Xả toàn bộ dung dịch làm mát.",
+          "Chỉ cần tắt nguồn máy."
+        ],
+        "answer": 1,
+        "explanation": "Cuối ca phải vệ sinh, bôi trơn và thực hiện 5S tại khu vực máy."
+      }
+    ]
+  },
+  {
+    "cnc_key": "lesson-4-mill",
+    "title": "Quiz Bài 4 — Phay (chưa gắn vào bài học)",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Điểm gốc tọa độ máy M (Machine Zero Point) trên máy phay CNC có đặc điểm gì?",
+        "options": [
+          "Do người vận hành tự chọn trước mỗi ca gia công.",
+          "Do nhà sản xuất xác lập cố định, người vận hành không thể thay đổi.",
+          "Thay đổi theo từng loại phôi khác nhau.",
+          "Chỉ tồn tại trên máy tiện, không có trên máy phay."
+        ],
+        "answer": 1,
+        "explanation": "M là gốc tọa độ máy, cố định từ khi thiết kế và là nền tảng để xác định các điểm chuẩn khác như W, N, P."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Điểm chuẩn phôi W (Workpiece Zero Point) khác điểm M ở chỗ nào?",
+        "options": [
+          "W cố định còn M thay đổi.",
+          "W do người lập trình tự chọn dựa trên bản vẽ, có thể thay đổi linh hoạt.",
+          "W chỉ dùng cho trục Z, không dùng cho X, Y.",
+          "W và M luôn trùng nhau trên máy phay."
+        ],
+        "answer": 1,
+        "explanation": "Người lập trình chọn W tùy theo bản vẽ, thường tại tâm mặt đầu hoặc góc phôi; trong khi M là điểm cố định."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bản chất của việc cài đặt Offset trên máy CNC là gì?",
+        "options": [
+          "Vẽ lại bản vẽ chi tiết trên máy tính.",
+          "Khai báo cho bộ điều khiển biết khoảng cách vectơ từ gốc máy M đến gốc phôi W.",
+          "Thay đổi tốc độ quay trục chính.",
+          "Kiểm tra độ mòn của dao cắt."
+        ],
+        "answer": 1,
+        "explanation": "Offset là phần phiên dịch giữa hệ tọa độ máy cố định và hệ tọa độ phôi do người lập trình chọn trong không gian X, Y, Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Giá trị lưu trong bảng Tool Length Offset (mã H) dùng để làm gì?",
+        "options": [
+          "Hiệu chỉnh chiều dài thực tế giữa các dao khác nhau, đưa điểm cắt về đồng nhất với hệ tọa độ phôi.",
+          "Xác định gốc tọa độ phôi W.",
+          "Đo đường kính của dao phay.",
+          "Cài đặt tốc độ trục chính cho từng dao."
+        ],
+        "answer": 0,
+        "explanation": "Mỗi dao có chiều dài lắp khác nhau; bảng H giúp máy xác định vị trí mũi từng dao so với chuẩn trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Đầu dò cơ khí dùng để xác định biên phôi theo X, Y hoạt động dựa trên nguyên lý nào?",
+        "options": [
+          "Phát tín hiệu laser đo khoảng cách.",
+          "Hai phần trụ nối bằng lò xo, lệch tâm khi đầu dò quay và chạm vật cản.",
+          "Cân trọng lượng phôi để suy ra kích thước.",
+          "Đo nhiệt độ bề mặt phôi."
+        ],
+        "answer": 1,
+        "explanation": "Khi đầu dò quay và mũi dò chạm biên phôi, lực chạm làm hai phần trụ lệch tâm, tạo tín hiệu xác định vị trí biên."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi gá phôi có kê thêm tấm kê (parallels), điều gì cần lưu ý khi xác lập gốc phôi G54 theo trục Z?",
+        "options": [
+          "Không cần quan tâm, máy tự động bù trừ.",
+          "Phải tính đến chiều cao của ê-tô và tấm kê vào giá trị gốc Z.",
+          "Chỉ cần quan tâm khi phay lỗ, không cần khi phay mặt phẳng.",
+          "Tấm kê chỉ ảnh hưởng trục X, không ảnh hưởng Z."
+        ],
+        "answer": 1,
+        "explanation": "Chiều cao của ê-tô và tấm kê làm thay đổi vị trí mặt chuẩn theo trục Z, vì vậy phải được tính vào giá trị gốc phôi G54."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vì sao nên dùng thiết bị Z-Setter thay vì ước lượng bằng cảm giác tay khi đo chiều dài dao?",
+        "options": [
+          "Z-Setter giúp gia công nhanh hơn.",
+          "Z-Setter đảm bảo tính đồng nhất và chính xác, không phụ thuộc cảm giác chủ quan của người vận hành.",
+          "Z-Setter thay thế được bảng Tool Offset.",
+          "Z-Setter chỉ cần dùng một lần cho mọi máy."
+        ],
+        "answer": 1,
+        "explanation": "Z-Setter tạo chuẩn đo có thể lặp lại, giảm sai lệch giữa các lần đo và giữa những người vận hành khác nhau."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi đầu dò cơ khí lệch tâm đang tiến vào chạm biên phôi theo phương X, dấu hiệu nào cho biết đầu dò đã chạm đúng vị trí cần đọc giá trị X_M?",
+        "options": [
+          "Đầu dò dừng quay hoàn toàn.",
+          "Đèn báo trên máy chuyển sang màu đỏ.",
+          "Hai phần trụ của đầu dò từ lệch tâm chuyển về đồng tâm (\"nhảy tâm\").",
+          "Trục chính tự động nâng lên độ cao an toàn."
+        ],
+        "answer": 2,
+        "explanation": "Khi hai phần trụ chuyển từ lệch tâm về đồng tâm (nhảy tâm), đầu dò đã chạm biên phôi và người vận hành đọc giá trị tọa độ máy X_M."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu chi tiết gia công bị sai lệch kích thước ĐỀU theo phương X hoặc Y, nguyên nhân nhiều khả năng nhất là gì?",
+        "options": [
+          "Trục chính quay sai chiều.",
+          "Quên cộng/trừ bán kính dao (D/2) khi rà biên phôi.",
+          "Tốc độ chạy dao F quá nhanh.",
+          "Dao bị mòn lưỡi cắt."
+        ],
+        "answer": 1,
+        "explanation": "Sai lệch đều một khoảng cố định là dấu hiệu đặc trưng của lỗi tính toán tọa độ khi rà biên, không phải lỗi ngẫu nhiên như mòn dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sau khi đọc được giá trị tọa độ máy X_M tại thời điểm đầu dò nhảy tâm, công thức tính giá trị X_thực để nhập vào G54 là gì? (biết đường kính đầu dò D = 10mm)",
+        "options": [
+          "X_thực = X_M.",
+          "X_thực = X_M ± D/2.",
+          "X_thực = X_M + D.",
+          "X_thực = X_M − 2D."
+        ],
+        "answer": 1,
+        "explanation": "Tọa độ cần nhập vào G54 phải bù bán kính đầu dò, tức D/2 = 5 mm, theo dấu phù hợp với phía biên phôi đang rà."
+      }
+    ]
+  },
+  {
+    "cnc_key": "mill-translate",
+    "title": "Dịch lệnh G-code — Phay",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "G01 X20 Y10 F150",
+        "options": [
+          "Phay đường thẳng (nội suy tuyến tính) đến X20 Y10, tốc độ chạy dao F150",
+          "Nội suy cung tròn đến X20 Y10, F150",
+          "Chạy dao nhanh (không cắt gọt) đến X20 Y10",
+          "Bù chiều dài dao đến X20 Y10"
+        ],
+        "answer": 0,
+        "explanation": "G01 là nội suy tuyến tính có cắt gọt; X, Y là tọa độ đích và F150 là tốc độ chạy dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G00 X0 Y0 Z50",
+        "options": [
+          "Phay thẳng có cắt gọt đến X0 Y0 Z50",
+          "Di chuyển nhanh (không cắt gọt) dao đến vị trí X0 Y0 Z50",
+          "Nội suy cung tròn đến X0 Y0 Z50",
+          "Dừng chương trình tại X0 Y0 Z50"
+        ],
+        "answer": 1,
+        "explanation": "G00 dùng để định vị nhanh, không thực hiện chuyển động cắt gọt."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G03 X40 Y40 R20 F180",
+        "options": [
+          "Nội suy cung tròn thuận chiều kim đồng hồ đến X40 Y40, R20",
+          "Phay đường thẳng đến X40 Y40, R20",
+          "Nội suy cung tròn ngược chiều kim đồng hồ đến X40 Y40, bán kính 20, F180",
+          "Chạy dao nhanh đến X40 Y40, bán kính 20"
+        ],
+        "answer": 2,
+        "explanation": "G03 là nội suy cung tròn ngược chiều kim đồng hồ; R20 là bán kính và F180 là tốc độ chạy dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G54 G90 G00 X0 Y0",
+        "options": [
+          "Gọi gốc tọa độ máy, hệ tọa độ tương đối, chạy nhanh về X0 Y0",
+          "Gọi gốc tọa độ phôi G54, hệ tọa độ tuyệt đối, chạy nhanh về gốc X0 Y0",
+          "Gọi bù chiều dài dao H01, chạy nhanh về X0 Y0",
+          "Gọi gốc tọa độ phôi G55, hệ tọa độ tương đối, về X0 Y0"
+        ],
+        "answer": 1,
+        "explanation": "G54 chọn gốc phôi, G90 chọn tọa độ tuyệt đối và G00 định vị nhanh đến X0 Y0."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G43 H01 Z50",
+        "options": [
+          "Bù bán kính dao theo H01, di chuyển đến Z50",
+          "Hủy bù chiều dài dao, di chuyển đến Z50",
+          "Bù chiều dài dao theo số hiệu H01, di chuyển dao lên Z50",
+          "Gọi gốc tọa độ phôi H01, lên Z50"
+        ],
+        "answer": 2,
+        "explanation": "G43 kích hoạt bù chiều dài dao dương, H01 chọn ô hiệu chỉnh chiều dài số 01 và Z50 là vị trí đích."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G91 G01 X10",
+        "options": [
+          "Chuyển sang hệ tọa độ tuyệt đối, di chuyển đến X10",
+          "Chuyển sang hệ tọa độ tương đối (incremental), di chuyển thêm 10mm theo X",
+          "Chạy dao nhanh thêm 10mm theo X",
+          "Nội suy cung tròn thêm 10mm theo X"
+        ],
+        "answer": 1,
+        "explanation": "G91 chọn tọa độ tương đối; G01 X10 làm dao nội suy thẳng thêm 10 mm theo chiều dương X."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "M03 S1000",
+        "options": [
+          "Trục chính quay ngược chiều kim đồng hồ, tốc độ 1000mm/phút",
+          "Bật dung dịch làm mát, tốc độ 1000 vòng/phút",
+          "Trục chính quay thuận chiều kim đồng hồ, tốc độ 1000 vòng/phút",
+          "Dừng trục chính ở tốc độ 1000 vòng/phút"
+        ],
+        "answer": 2,
+        "explanation": "M03 khởi động trục chính theo chiều kim đồng hồ; S1000 đặt tốc độ 1000 vòng/phút."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G00 G90 X30 Y30 Z5",
+        "options": [
+          "Chạy dao cắt gọt (feed) đến X30 Y30 Z5",
+          "Chạy dao nhanh, tuyệt đối, đến vị trí X30 Y30 Z5",
+          "Nội suy cung tròn đến X30 Y30 Z5",
+          "Chạy dao nhanh, tương đối, đến X30 Y30 Z5"
+        ],
+        "answer": 1,
+        "explanation": "G00 là chạy nhanh và G90 xác định X30 Y30 Z5 theo hệ tọa độ tuyệt đối."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G02 X60 Y0 I20 J0",
+        "options": [
+          "Nội suy cung tròn dùng bán kính R, không dùng tâm I J",
+          "Phay đường thẳng đến X60 Y0, bỏ qua I J",
+          "Nội suy cung tròn thuận chiều kim đồng hồ đến X60 Y0, tâm cung cách điểm đầu (I20, J0)",
+          "Nội suy cung tròn ngược chiều kim đồng hồ đến X60 Y0, tâm (I20, J0)"
+        ],
+        "answer": 2,
+        "explanation": "G02 nội suy cung tròn theo chiều kim đồng hồ; I và J mô tả độ lệch tâm cung so với điểm bắt đầu."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G28 G91 Z0",
+        "options": [
+          "Về gốc phôi G54 theo trục Z",
+          "Về điểm tham chiếu máy (Machine Zero Point) theo trục Z, hệ tương đối",
+          "Bù chiều dài dao theo trục Z",
+          "Chạy dao nhanh tuyệt đối theo trục Z về 0"
+        ],
+        "answer": 1,
+        "explanation": "G28 đưa trục về điểm tham chiếu máy; G91 Z0 khai báo điểm trung gian theo hệ tương đối cho trục Z."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G01 Z-5 F80",
+        "options": [
+          "Chạy dao nhanh lên Z-5",
+          "Nội suy cung tròn xuống Z-5",
+          "Phay ăn dao xuống theo trục Z, sâu -5mm, F80",
+          "Dừng dao tạm thời tại Z-5"
+        ],
+        "answer": 2,
+        "explanation": "G01 tạo chuyển động ăn dao tuyến tính đến Z-5 với tốc độ chạy dao F80."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "M08 / M09",
+        "options": [
+          "Bật/tắt trục chính (Spindle)",
+          "Bật (M08) và tắt (M09) dung dịch làm mát (Coolant)",
+          "Bật/tắt đèn báo máy",
+          "Bật/tắt chế độ Single Block"
+        ],
+        "answer": 1,
+        "explanation": "M08 bật và M09 tắt hệ thống dung dịch làm mát."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G17 G02 X20 Y0 R10",
+        "options": [
+          "Chọn mặt phẳng nội suy XZ, cung tròn ngược chiều kim đồng hồ",
+          "Chọn mặt phẳng nội suy YZ, cung tròn thuận chiều kim đồng hồ",
+          "Chọn mặt phẳng nội suy XY, cung tròn thuận chiều kim đồng hồ đến X20 Y0, R10",
+          "Chọn mặt phẳng nội suy XY, phay đường thẳng đến X20 Y0"
+        ],
+        "answer": 2,
+        "explanation": "G17 chọn mặt phẳng XY; G02 nội suy cung tròn theo chiều kim đồng hồ đến X20 Y0 với bán kính R10."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G20 / G21",
+        "options": [
+          "Chọn hệ tọa độ tuyệt đối (G20) hoặc tương đối (G21)",
+          "Chọn đơn vị đo Inch (G20) hoặc Milimet (G21)",
+          "Chọn mặt phẳng nội suy XY (G20) hoặc XZ (G21)",
+          "Bật (G20) hoặc tắt (G21) bù bán kính dao"
+        ],
+        "answer": 1,
+        "explanation": "G20 thiết lập đơn vị inch, còn G21 thiết lập đơn vị milimét."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "T01 M06",
+        "options": [
+          "Gọi Work Offset số 01",
+          "Gọi bù chiều dài dao số 01",
+          "Gọi dao số 01 và thực hiện lệnh thay dao (Tool Change)",
+          "Gọi chương trình con số 01"
+        ],
+        "answer": 2,
+        "explanation": "T01 chọn dao số 01 và M06 thực hiện chu trình thay dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G04 X2.0",
+        "options": [
+          "Di chuyển dao nhanh đến X2.0",
+          "Dừng dao tạm thời (Dwell) trong 2 giây",
+          "Phay đường thẳng đến X2.0 trong 2 giây",
+          "Dừng chương trình 2 phút"
+        ],
+        "answer": 1,
+        "explanation": "G04 là lệnh dừng tạm thời; trong cấu trúc của đề, X2.0 quy định thời gian dừng 2 giây."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G01 X50 Y50 Z-2 F100",
+        "options": [
+          "Chỉ di chuyển theo Z, bỏ qua X và Y",
+          "Nội suy cung tròn 3 trục đến (50, 50, -2)",
+          "Chạy dao nhanh 3 trục đến (50, 50, -2)",
+          "Phay nội suy thẳng đồng thời 3 trục X, Y, Z đến điểm (50, 50, -2), F100"
+        ],
+        "answer": 3,
+        "explanation": "G01 nội suy tuyến tính đồng thời các trục được khai báo đến X50 Y50 Z-2 với tốc độ F100."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G40 G01 X30",
+        "options": [
+          "Kích hoạt bù bán kính dao bên trái (G41)",
+          "Hủy bù bán kính dao (Cutter Compensation Cancel), phay thẳng đến X30",
+          "Kích hoạt bù bán kính dao bên phải (G42)",
+          "Hủy bù chiều dài dao, phay thẳng đến X30"
+        ],
+        "answer": 1,
+        "explanation": "G40 hủy bù bán kính dao, sau đó G01 thực hiện chuyển động thẳng đến X30."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "M00 / M01",
+        "options": [
+          "Kết thúc chương trình và quay về đầu (M30)",
+          "Dừng trục chính và tắt coolant",
+          "Dừng chương trình bắt buộc (M00) hoặc dừng tùy chọn (M01 - Optional Stop)",
+          "Gọi chương trình con M00/M01"
+        ],
+        "answer": 2,
+        "explanation": "M00 luôn dừng chương trình; M01 chỉ dừng khi chức năng Optional Stop được bật."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G92 X0 Y0 Z0 (thiết lập G54 tương đương)",
+        "options": [
+          "Về điểm tham chiếu máy (Machine Zero Point)",
+          "Thiết lập/gán giá trị tọa độ hiện tại của dao là gốc tọa độ phôi (Work Offset)",
+          "Hủy toàn bộ Work Offset đang dùng",
+          "Bù chiều dài dao về giá trị 0"
+        ],
+        "answer": 1,
+        "explanation": "Trong ngữ cảnh câu hỏi, G92 gán tọa độ vị trí hiện tại thành X0 Y0 Z0 để thiết lập gốc làm việc."
+      }
+    ]
+  },
+  {
+    "cnc_key": "turn-translate",
+    "title": "Dịch lệnh G-code — Tiện",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "G00 X50 Z2",
+        "options": [
+          "Phay đường thẳng có cắt gọt đến X50 Z2",
+          "Chạy dao nhanh (không cắt gọt) đến vị trí X50 Z2",
+          "Nội suy cung tròn đến X50 Z2",
+          "Tiện ren đến X50 Z2"
+        ],
+        "answer": 1,
+        "explanation": "G00 là chuyển động định vị nhanh, không cắt gọt."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G01 X30 Z-40 F0.2",
+        "options": [
+          "Tiện thẳng (nội suy tuyến tính) đến X30 Z-40, lượng chạy dao 0.2mm/vòng",
+          "Chạy dao nhanh đến X30 Z-40",
+          "Nội suy cung tròn đến X30 Z-40, F0.2",
+          "Tiện ren bước 0.2mm đến X30 Z-40"
+        ],
+        "answer": 0,
+        "explanation": "G01 nội suy tuyến tính đến X30 Z-40 với lượng chạy dao F0.2."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G02 X40 Z-20 R10",
+        "options": [
+          "Nội suy cung tròn ngược chiều kim đồng hồ đến X40 Z-20, bán kính 10",
+          "Nội suy cung tròn thuận chiều kim đồng hồ đến X40 Z-20, bán kính 10",
+          "Tiện côn thẳng đến X40 Z-20, R10",
+          "Tiện rãnh tại X40 Z-20, sâu R10"
+        ],
+        "answer": 1,
+        "explanation": "G02 nội suy cung tròn thuận chiều kim đồng hồ, R10 là bán kính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G54 G90 G00 X100 Z100",
+        "options": [
+          "Gọi gốc tọa độ máy, hệ tương đối, chạy nhanh về X100 Z100",
+          "Gọi gốc tọa độ phôi G54, hệ tọa độ tuyệt đối, chạy nhanh về X100 Z100",
+          "Gọi bù dao T01, chạy nhanh về X100 Z100",
+          "Gọi gốc tọa độ phôi G55, hệ tương đối, về X100 Z100"
+        ],
+        "answer": 1,
+        "explanation": "G54 chọn gốc phôi, G90 chọn tọa độ tuyệt đối và G00 chạy nhanh."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "T0101",
+        "options": [
+          "Gọi dao số 01 và bù dao (offset) số 01",
+          "Gọi chương trình con số 01",
+          "Gọi gốc tọa độ phôi số 01",
+          "Gọi tốc độ trục chính số 01"
+        ],
+        "answer": 0,
+        "explanation": "Hai cặp số lần lượt chỉ số dao và số hiệu offset."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G96 S150 M03",
+        "options": [
+          "Tốc độ trục chính không đổi vòng/phút S150, quay ngược chiều kim đồng hồ",
+          "Tốc độ cắt không đổi (Constant Surface Speed) 150 m/phút, trục chính quay thuận chiều kim đồng hồ",
+          "Tốc độ chạy dao không đổi F150, trục chính dừng",
+          "Giới hạn tốc độ trục chính tối đa 150 vòng/phút"
+        ],
+        "answer": 1,
+        "explanation": "G96 chọn tốc độ cắt không đổi, S150 đặt 150 m/phút và M03 quay thuận."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G97 S1000 M03",
+        "options": [
+          "Tốc độ trục chính không đổi 1000 vòng/phút (constant RPM), quay thuận chiều kim đồng hồ",
+          "Tốc độ cắt không đổi 1000 m/phút, quay ngược chiều kim đồng hồ",
+          "Giới hạn tốc độ cắt tối đa 1000 m/phút",
+          "Chạy dao nhanh với tốc độ trục chính 1000"
+        ],
+        "answer": 0,
+        "explanation": "G97 chọn tốc độ vòng quay không đổi, S1000 và M03 quay thuận."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G71 U2 R1",
+        "options": [
+          "Chu trình tiện tinh, chiều sâu cắt 2mm, lượng lùi dao 1mm",
+          "Chu trình tiện thô dọc trục (Rough Turning Cycle), chiều sâu cắt mỗi lát U2 (2mm/bán kính), lượng lùi dao R1",
+          "Chu trình tiện rãnh, chiều sâu 2mm, bán kính đáy rãnh 1mm",
+          "Chu trình tiện ren, bước ren 2mm, số lần cắt 1"
+        ],
+        "answer": 1,
+        "explanation": "G71 là chu trình tiện thô dọc trục; U và R đặt chiều sâu cắt và lượng lùi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G70 P10 Q20",
+        "options": [
+          "Chu trình tiện thô từ khối lệnh N10 đến N20",
+          "Chu trình tiện tinh (Finishing Cycle), thực hiện lại biên dạng từ khối lệnh N10 đến N20",
+          "Chu trình khoan lỗ từ N10 đến N20",
+          "Chu trình tiện ren từ N10 đến N20"
+        ],
+        "answer": 1,
+        "explanation": "G70 tiện tinh lại biên dạng được xác định từ block P đến Q."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G28 U0 W0",
+        "options": [
+          "Về gốc tọa độ phôi G54 theo X, Z",
+          "Về điểm tham chiếu máy (Machine Zero Point) theo cả hai trục X (U0), Z (W0)",
+          "Chạy dao nhanh đến X0 Z0 theo hệ tuyệt đối",
+          "Tiện côn về vị trí gốc máy"
+        ],
+        "answer": 1,
+        "explanation": "G28 đưa các trục X và Z về điểm tham chiếu máy."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G01 X-2 F0.1",
+        "options": [
+          "Tiện mặt đầu (Facing) vào tâm phôi đến đường kính X-2, F0.1",
+          "Chạy dao nhanh vào tâm phôi",
+          "Tiện ren vào tâm phôi",
+          "Tiện rãnh cắt đứt tại X-2"
+        ],
+        "answer": 0,
+        "explanation": "G01 chạy dao theo X vào qua tâm để tiện mặt đầu với F0.1."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "M08 / M09",
+        "options": [
+          "Bật/tắt trục chính (Spindle)",
+          "Bật (M08) và tắt (M09) dung dịch làm mát (Coolant)",
+          "Bật/tắt chế độ Single Block",
+          "Bật/tắt bù bán kính mũi dao"
+        ],
+        "answer": 1,
+        "explanation": "M08 bật và M09 tắt dung dịch làm mát."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G96 G50 S2000",
+        "options": [
+          "Tốc độ cắt không đổi, giới hạn tốc độ trục chính tối đa (Max Spindle Speed) 2000 vòng/phút",
+          "Đặt gốc tọa độ phôi tại S2000",
+          "Tốc độ trục chính không đổi 2000 vòng/phút, không giới hạn",
+          "Tiện ren với bước 2000"
+        ],
+        "answer": 0,
+        "explanation": "G96 dùng tốc độ cắt không đổi và G50 S2000 giới hạn tốc độ trục chính."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G32 X30 Z-40 F2.0",
+        "options": [
+          "Tiện thẳng thông thường đến X30 Z-40",
+          "Tiện ren (Thread Cutting) đơn giản đến X30 Z-40, bước ren F2.0",
+          "Chạy dao nhanh đến X30 Z-40",
+          "Chu trình tiện thô đến X30 Z-40"
+        ],
+        "answer": 1,
+        "explanation": "G32 cắt ren đến tọa độ đích, F2.0 là bước ren."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G04 X2.0",
+        "options": [
+          "Di chuyển dao nhanh đến X2.0",
+          "Dừng dao tạm thời (Dwell) trong 2 giây",
+          "Tiện rãnh sâu 2.0mm",
+          "Dừng chương trình 2 phút"
+        ],
+        "answer": 1,
+        "explanation": "G04 là lệnh dừng tạm thời; X2.0 quy định thời gian 2 giây."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G01 X50 Z-30 F0.15",
+        "options": [
+          "Tiện côn (taper) đồng thời hai trục X, Z đến điểm (50, -30), F0.15",
+          "Chỉ tiện theo Z, bỏ qua X",
+          "Chỉ tiện theo X, bỏ qua Z",
+          "Nội suy cung tròn đến (50, -30)"
+        ],
+        "answer": 0,
+        "explanation": "G01 nội suy đồng thời X và Z tạo đường côn đến điểm đích."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G40 G01 X30",
+        "options": [
+          "Kích hoạt bù bán kính mũi dao bên trái (G41)",
+          "Hủy bù bán kính mũi dao (Tool Nose Radius Compensation Cancel), tiện thẳng đến X30",
+          "Kích hoạt bù bán kính mũi dao bên phải (G42)",
+          "Hủy bù chiều dài dao, tiện thẳng đến X30"
+        ],
+        "answer": 1,
+        "explanation": "G40 hủy bù bán kính mũi dao, G01 tiếp tục tiện thẳng đến X30."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "M00 / M01",
+        "options": [
+          "Kết thúc chương trình và quay về đầu (M30)",
+          "Dừng trục chính và tắt coolant",
+          "Dừng chương trình bắt buộc (M00) hoặc dừng tùy chọn (M01 - Optional Stop)",
+          "Gọi chương trình con M00/M01"
+        ],
+        "answer": 2,
+        "explanation": "M00 là dừng bắt buộc; M01 dừng khi Optional Stop được bật."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G92 X40 Z-30 F2.0",
+        "options": [
+          "Chu trình tiện ren đơn giản (Simple Threading Cycle) đến X40 Z-30, bước ren F2.0",
+          "Thiết lập gốc tọa độ phôi tại X40 Z-30",
+          "Chu trình tiện thô đến X40 Z-30",
+          "Về điểm tham chiếu máy tại X40 Z-30"
+        ],
+        "answer": 0,
+        "explanation": "Trong ngữ cảnh tiện Fanuc của đề, G92 là chu trình tiện ren đơn giản với bước F2.0."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "G50 X100 Z150",
+        "options": [
+          "Chạy dao nhanh đến X100 Z150",
+          "Thiết lập/gán giá trị tọa độ hiện tại của dao là X100 Z150 (Coordinate System Setting)",
+          "Giới hạn tốc độ trục chính tại X100 Z150",
+          "Về điểm tham chiếu máy tại X100 Z150"
+        ],
+        "answer": 1,
+        "explanation": "G50 với địa chỉ X/Z gán tọa độ hiện tại cho hệ tọa độ."
+      }
+    ]
+  },
+  {
+    "cnc_key": "operation-turn",
+    "title": "Kiểm tra vận hành máy tiện",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ JOG trên máy tiện CNC dùng để làm gì?",
+        "options": [
+          "Di chuyển bàn dao (trục X, Z) bằng tay với tốc độ liên tục, dùng để canh chỉnh vị trí thủ công",
+          "Chạy tự động toàn bộ chương trình NC",
+          "Nhập và chỉnh sửa chương trình bằng tay",
+          "Về điểm tham chiếu máy (Machine Zero Point)"
+        ],
+        "answer": 0,
+        "explanation": "JOG trên máy tiện di chuyển bàn dao theo trục X (đường kính) và Z (dọc trục) — dùng khi canh dao, đo phôi hoặc tiếp cận nhanh trước khi gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ MDI (Manual Data Input) trên máy tiện dùng để làm gì?",
+        "options": [
+          "Chỉ xem thông số dao đang dùng",
+          "Nhập và chạy thử trực tiếp một vài dòng lệnh đơn lẻ mà không cần chương trình đầy đủ",
+          "Chỉ dùng để về điểm 0 máy",
+          "Tự động chọn dao phù hợp"
+        ],
+        "answer": 1,
+        "explanation": "MDI thường dùng để quay trục chính ở tốc độ cần thiết, gọi dao (T-code), hoặc kiểm tra nhanh 1 dòng lệnh mà không cần soạn cả chương trình gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Single Block (SBL) khi bật lên sẽ khiến máy tiện:",
+        "options": [
+          "Chạy toàn bộ chương trình liên tục không dừng",
+          "Dừng lại sau mỗi khối lệnh (block), chờ nhấn Cycle Start để tiếp tục",
+          "Tự động tăng tốc độ trục chính",
+          "Bỏ qua các lệnh có dấu \"/\" (Block Skip)"
+        ],
+        "answer": 1,
+        "explanation": "SBL đặc biệt quan trọng khi chạy thử các chu trình phức tạp như G71/G70/G92 trên máy tiện — giúp quan sát từng bước tiện thô, tiện tinh hoặc tiện ren trước khi tin tưởng chạy AUTO liên tục."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Handle (vô lăng điện tử) trên máy tiện CNC dùng để:",
+        "options": [
+          "Di chuyển bàn dao với độ chính xác cao theo từng nấc (0.001/0.01/0.1mm), thường dùng khi canh dao/phôi",
+          "Thay đổi tốc độ trục chính",
+          "Chọn chương trình gia công",
+          "Bật/tắt dung dịch làm mát"
+        ],
+        "answer": 0,
+        "explanation": "Trên máy tiện, Handle dùng nhiều khi set điểm 0 tại mặt đầu phôi (Z0) hoặc canh dao chạm phôi để xác định offset — cần độ chính xác cao hơn JOG."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nút Feed Hold (tạm dừng chạy dao) có tác dụng gì khi máy tiện đang chạy tự động?",
+        "options": [
+          "Dừng hẳn chương trình, phải chạy lại từ đầu",
+          "Tạm dừng chuyển động chạy dao ngay lập tức, trục chính vẫn có thể tiếp tục quay, nhấn Cycle Start để chạy tiếp",
+          "Tắt nguồn máy",
+          "Xóa toàn bộ chương trình đang chạy"
+        ],
+        "answer": 1,
+        "explanation": "Trên máy tiện, khi nhấn Feed Hold trong lúc tiện ren cần đặc biệt lưu ý — vì dừng giữa chừng khi đang cắt ren có thể ảnh hưởng đến bước ren nếu chạy lại không đúng cách; nên hiểu rõ hành vi này trước khi thao tác."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nút dừng khẩn cấp (Emergency Stop) khi được nhấn trên máy tiện sẽ:",
+        "options": [
+          "Chỉ tắt dung dịch làm mát",
+          "Ngắt ngay lập tức mọi chuyển động và nguồn động lực của máy, bao gồm dừng quay mâm cặp",
+          "Tạm dừng chương trình nhưng mâm cặp vẫn quay",
+          "Chuyển máy sang chế độ JOG"
+        ],
+        "answer": 1,
+        "explanation": "Trên máy tiện, dừng khẩn cấp phải dừng cả chuyển động bàn dao lẫn quay của mâm cặp/trục chính — vì phôi đang quay tốc độ cao là nguy cơ mất an toàn lớn nhất khi có sự cố."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi bật nguồn và vận hành máy tiện CNC, bước kiểm tra an toàn đầu tiên nào là bắt buộc?",
+        "options": [
+          "Kiểm tra chương trình NC đã đúng chưa",
+          "Kiểm tra khu vực làm việc, đảm bảo không có vật cản, cửa bảo vệ an toàn đã đóng",
+          "Kiểm tra tốc độ trục chính đã cài đặt",
+          "Kiểm tra dao đã được mài sắc chưa"
+        ],
+        "answer": 1,
+        "explanation": "Giống như máy phay, an toàn khu vực làm việc luôn là bước kiểm tra đầu tiên trước khi khởi động bất kỳ máy công cụ nào."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi thay dao trên đài dao (turret) của máy tiện CNC, thao tác nào cần thực hiện trước tiên?",
+        "options": [
+          "Bật ngay trục chính để kiểm tra dao mới",
+          "Dừng hẳn trục chính (M05), đưa bàn dao về vị trí an toàn trước khi tháo/lắp dao trên đài dao",
+          "Tăng tốc độ trục chính lên mức tối đa",
+          "Xóa chương trình đang có trong bộ nhớ"
+        ],
+        "answer": 1,
+        "explanation": "Tương tự máy phay, tuyệt đối không thao tác tay vào vùng dao/mâm cặp khi trục chính còn quay — đặc biệt nguy hiểm trên máy tiện vì mâm cặp có thể đang kẹp phôi nặng và quay tốc độ cao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Việc về điểm tham chiếu máy (Machine Zero Point) trên máy tiện nên được thực hiện khi nào?",
+        "options": [
+          "Chỉ cần làm 1 lần duy nhất khi mua máy",
+          "Sau mỗi lần bật nguồn máy, để hệ điều khiển xác định lại chính xác vị trí bàn dao",
+          "Chỉ khi máy báo lỗi",
+          "Không cần thiết nếu đã set gốc phôi G54"
+        ],
+        "answer": 1,
+        "explanation": "Sau khi tắt nguồn, hệ điều khiển mất thông tin vị trí tuyệt đối của bàn dao — về điểm tham chiếu máy là bước bắt buộc đầu ca để làm nền tảng chính xác cho hệ tọa độ phôi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên máy tiện CNC, trước khi cho trục chính (mâm cặp) quay tốc độ cao, cần kiểm tra điều gì quan trọng nhất?",
+        "options": [
+          "Phôi đã được kẹp chặt và đủ chấu kẹp tiếp xúc, không có vật lạ trên mâm cặp",
+          "Màu sơn của máy còn mới không",
+          "Số lượng dao trong ổ tích dao",
+          "Nhiệt độ phòng xưởng"
+        ],
+        "answer": 0,
+        "explanation": "Phôi kẹp không chắc trên mâm cặp có thể văng ra khi quay tốc độ cao, gây tai nạn nghiêm trọng — đây là điểm khác biệt an toàn quan trọng nhất giữa máy tiện và máy phay."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ AUTO (hoặc MEM) trên máy tiện dùng để:",
+        "options": [
+          "Chạy chương trình NC đã lưu trong bộ nhớ máy một cách tự động, liên tục",
+          "Chỉ dùng để xóa chương trình",
+          "Di chuyển bàn dao bằng tay",
+          "Cài đặt thông số bù dao"
+        ],
+        "answer": 0,
+        "explanation": "Đây là chế độ gia công chính thức, chạy toàn bộ chương trình tiện thô, tiện tinh, tiện ren... theo trình tự đã lập, sau khi đã kiểm tra kỹ bằng Single Block/Dry Run."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Núm Spindle Speed Override (điều chỉnh tốc độ trục chính) trên máy tiện dùng để làm gì?",
+        "options": [
+          "Thay đổi chương trình gia công đang chạy",
+          "Tăng/giảm tốc độ quay trục chính thực tế so với giá trị S đã lập trình, mà không cần dừng máy",
+          "Bật/tắt dung dịch làm mát",
+          "Chọn lại dao đang dùng"
+        ],
+        "answer": 1,
+        "explanation": "Hữu ích khi cần điều chỉnh tốc độ cắt thực tế theo tình huống quan sát được (ví dụ rung động, tiếng ồn bất thường) mà không cần dừng máy để sửa chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi vận hành lần đầu một chương trình tiện mới chưa từng chạy thử, thao tác an toàn nào nên áp dụng?",
+        "options": [
+          "Chạy thẳng ở chế độ AUTO tốc độ 100% ngay từ đầu",
+          "Bật Single Block kết hợp giảm Feed Rate Override, quan sát kỹ từng bước, sẵn sàng nhấn Feed Hold nếu bất thường",
+          "Tắt hết các cảm biến an toàn để chạy nhanh hơn",
+          "Không cần theo dõi vì máy đã tự động hoàn toàn"
+        ],
+        "answer": 1,
+        "explanation": "Nguyên tắc chạy thử an toàn áp dụng cho cả tiện lẫn phay — đặc biệt quan trọng với các chu trình phức tạp như G71 (tiện thô) vì một lát cắt sai có thể phá hỏng toàn bộ phôi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Dry Run (chạy không tải) trên máy tiện dùng để:",
+        "options": [
+          "Gia công chi tiết thật với tốc độ chậm",
+          "Cho máy chạy mô phỏng chuyển động theo chương trình mà không thực sự cắt gọt, để kiểm tra quỹ đạo dao",
+          "Tự động mài sắc lại dao",
+          "Chỉ dùng khi thay dầu bôi trơn"
+        ],
+        "answer": 1,
+        "explanation": "Dry Run giúp kiểm tra quỹ đạo bàn dao trên máy tiện (đặc biệt các chu trình G71/G70) trước khi cắt thật, giảm rủi ro va chạm giữa dao và mâm cặp hoặc ụ động."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên bảng điều khiển Fanuc của máy tiện, phím Cycle Start dùng để:",
+        "options": [
+          "Dừng khẩn cấp toàn bộ máy",
+          "Bắt đầu hoặc tiếp tục chạy chương trình ở chế độ AUTO/MDI",
+          "Chuyển sang chế độ JOG",
+          "Xóa bộ nhớ chương trình"
+        ],
+        "answer": 1,
+        "explanation": "Giống máy phay, Cycle Start là nút khởi động chuyển động theo chương trình, dùng để bắt đầu AUTO hoặc tiếp tục sau mỗi lần dừng do Single Block/Feed Hold."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi đang tiện tự động (AUTO) mà phát hiện tiếng kêu bất thường hoặc rung động lạ, phản ứng đúng đầu tiên là:",
+        "options": [
+          "Tiếp tục quan sát thêm vài phút xem có tự hết không",
+          "Nhấn Feed Hold hoặc dừng khẩn cấp ngay lập tức để kiểm tra nguyên nhân",
+          "Tăng tốc độ trục chính để hoàn thành nhanh hơn",
+          "Rời khỏi vị trí máy để báo cáo sau"
+        ],
+        "answer": 1,
+        "explanation": "Trên máy tiện, rung động bất thường thường liên quan đến phôi kẹp không chắc, dao mòn, hoặc thông số cắt sai — xử lý ngay giúp tránh phôi văng ra hoặc gãy dao nghiêm trọng."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trang màn hình POSITION trên điều khiển Fanuc của máy tiện hiển thị thông tin gì?",
+        "options": [
+          "Nội dung chương trình NC đang chạy",
+          "Vị trí hiện tại của bàn dao (trục X, Z) — tuyệt đối, tương đối, hoặc theo máy",
+          "Danh sách các dao trên đài dao",
+          "Thông số bù dao (Tool Offset)"
+        ],
+        "answer": 1,
+        "explanation": "Giúp người vận hành theo dõi tọa độ X (đường kính), Z (dọc trục) hiện tại của bàn dao so với gốc máy hoặc gốc phôi trong suốt quá trình gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Block Skip (bỏ qua khối lệnh, ký hiệu \"/\" đầu dòng) trên máy tiện dùng để:",
+        "options": [
+          "Xóa vĩnh viễn dòng lệnh đó khỏi chương trình",
+          "Khi được bật, máy sẽ bỏ qua các dòng có dấu \"/\" ở đầu khi chạy chương trình, hữu ích khi cần tùy chọn bỏ một số bước",
+          "Tăng tốc độ đọc chương trình",
+          "Chỉ dùng riêng cho chu trình tiện ren"
+        ],
+        "answer": 1,
+        "explanation": "Ví dụ có thể dùng để tùy chọn bỏ qua bước tiện tinh (G70) khi chỉ cần kiểm tra biên dạng thô, mà không cần viết 2 chương trình riêng biệt."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi rời khỏi máy tiện sau ca làm việc, quy trình an toàn cơ bản nào cần thực hiện?",
+        "options": [
+          "Cứ để máy chạy chương trình dở dang",
+          "Đưa bàn dao về vị trí an toàn, dừng trục chính, tắt coolant, và tắt nguồn máy theo đúng trình tự",
+          "Không cần làm gì, ca sau tự xử lý",
+          "Chỉ cần tắt màn hình điều khiển"
+        ],
+        "answer": 1,
+        "explanation": "Đây là quy trình kết thúc ca chuẩn cho mọi máy CNC — đảm bảo máy ở trạng thái an toàn cho người vận hành ca tiếp theo."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi cửa bảo vệ an toàn (safety door) của máy tiện đang mở, hệ thống điều khiển thường sẽ:",
+        "options": [
+          "Vẫn cho phép chạy chương trình AUTO bình thường",
+          "Tự động khóa không cho chạy tự động hoặc quay trục chính/mâm cặp, để bảo vệ người vận hành",
+          "Tăng tốc độ trục chính lên tối đa",
+          "Không có liên quan gì đến an toàn vận hành"
+        ],
+        "answer": 1,
+        "explanation": "Trên máy tiện, cơ chế khóa liên động đặc biệt quan trọng vì mâm cặp quay có thể cuốn theo quần áo, tóc hoặc tay nếu cửa bảo vệ mở trong lúc gia công."
+      }
+    ]
+  },
+  {
+    "cnc_key": "operation-mill",
+    "title": "Kiểm tra vận hành máy phay",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ JOG trên máy phay CNC dùng để làm gì?",
+        "options": [
+          "Di chuyển các trục máy bằng tay với tốc độ liên tục, dùng để canh chỉnh vị trí thủ công",
+          "Chạy tự động toàn bộ chương trình NC",
+          "Nhập và chỉnh sửa chương trình bằng tay",
+          "Về điểm tham chiếu máy (Machine Zero Point)"
+        ],
+        "answer": 0,
+        "explanation": "JOG cho phép di chuyển bàn máy/trục Z bằng tay với tốc độ đều, dùng nhiều khi canh dao, canh phôi hoặc di chuyển nhanh đến gần vị trí gia công trước khi chuyển sang Handle để tinh chỉnh."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ MDI (Manual Data Input) trên máy phay dùng để làm gì?",
+        "options": [
+          "Chỉ xem thông số dao đang dùng",
+          "Nhập và chạy thử trực tiếp một vài dòng lệnh đơn lẻ mà không cần chương trình đầy đủ",
+          "Chỉ dùng để về điểm 0 máy",
+          "Tự động chọn dao phù hợp"
+        ],
+        "answer": 1,
+        "explanation": "MDI thường dùng để gọi dao, set tốc độ trục chính, kiểm tra tọa độ hoặc chạy thử 1-2 lệnh — rất hữu ích khi cần thao tác nhanh mà không cần soạn cả chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Single Block (SBL) khi bật lên sẽ khiến máy phay:",
+        "options": [
+          "Chạy toàn bộ chương trình liên tục không dừng",
+          "Dừng lại sau mỗi khối lệnh (block), chờ nhấn Cycle Start để tiếp tục",
+          "Tự động tăng tốc độ trục chính",
+          "Bỏ qua các lệnh có dấu \"/\" (Block Skip)"
+        ],
+        "answer": 1,
+        "explanation": "SBL là công cụ an toàn quan trọng khi chạy thử chương trình mới hoặc khi thị phạm cho sinh viên quan sát — mỗi lần nhấn Cycle Start chỉ chạy đúng 1 dòng lệnh."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Handle (vô lăng điện tử) trên máy phay CNC dùng để:",
+        "options": [
+          "Di chuyển các trục với độ chính xác cao theo từng nấc (0.001/0.01/0.1mm), thường dùng khi canh dao/phôi",
+          "Thay đổi tốc độ trục chính",
+          "Chọn chương trình gia công",
+          "Bật/tắt dung dịch làm mát"
+        ],
+        "answer": 0,
+        "explanation": "Handle cho phép di chuyển rất tinh (từng micromet đến từng phần mười mm) — bắt buộc phải dùng khi set gốc phôi X, Y, Z hoặc căn dao chính xác, JOG thường không đủ mịn cho việc này."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nút Feed Hold (tạm dừng chạy dao) có tác dụng gì khi máy phay đang chạy tự động?",
+        "options": [
+          "Dừng hẳn chương trình, phải chạy lại từ đầu",
+          "Tạm dừng chuyển động chạy dao ngay lập tức, trục chính vẫn có thể tiếp tục quay, nhấn Cycle Start để chạy tiếp",
+          "Tắt nguồn máy",
+          "Xóa toàn bộ chương trình đang chạy"
+        ],
+        "answer": 1,
+        "explanation": "Feed Hold khác với dừng khẩn cấp — chương trình vẫn được giữ nguyên trạng thái, chỉ tạm ngưng chuyển động chạy dao để người vận hành quan sát hoặc xử lý tình huống, sau đó tiếp tục bình thường."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nút dừng khẩn cấp (Emergency Stop) khi được nhấn trên máy phay sẽ:",
+        "options": [
+          "Chỉ tắt dung dịch làm mát",
+          "Ngắt ngay lập tức mọi chuyển động và nguồn động lực của máy để đảm bảo an toàn",
+          "Tạm dừng chương trình nhưng trục chính vẫn quay",
+          "Chuyển máy sang chế độ JOG"
+        ],
+        "answer": 1,
+        "explanation": "Đây là biện pháp an toàn cuối cùng, cắt toàn bộ nguồn động lực ngay lập tức. Sau khi dùng, cần thực hiện lại quy trình khởi động và về điểm tham chiếu máy trước khi vận hành tiếp."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi bật nguồn và vận hành máy phay CNC, bước kiểm tra an toàn đầu tiên nào là bắt buộc?",
+        "options": [
+          "Kiểm tra chương trình NC đã đúng chưa",
+          "Kiểm tra khu vực làm việc, đảm bảo không có vật cản, cửa bảo vệ an toàn đã đóng",
+          "Kiểm tra tốc độ trục chính đã cài đặt",
+          "Kiểm tra dao đã được mài sắc chưa"
+        ],
+        "answer": 1,
+        "explanation": "An toàn khu vực làm việc luôn là ưu tiên số 1 trước khi khởi động bất kỳ máy công cụ nào — kiểm tra chương trình hay thông số dao là các bước sau đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi thay dao trên máy phay CNC bằng tay (không dùng ổ tích dao tự động), thao tác nào cần thực hiện trước tiên?",
+        "options": [
+          "Bật ngay trục chính để kiểm tra dao mới",
+          "Dừng hẳn trục chính (M05), đưa trục Z về vị trí an toàn trước khi tháo/lắp dao",
+          "Tăng tốc độ chạy dao lên mức tối đa",
+          "Xóa chương trình đang có trong bộ nhớ"
+        ],
+        "answer": 1,
+        "explanation": "Tuyệt đối không được thao tác tay vào vùng dao khi trục chính còn quay hoặc còn khả năng di chuyển bất ngờ — đây là nguyên nhân phổ biến gây tai nạn lao động khi vận hành CNC."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Việc về điểm tham chiếu máy (Machine Zero Point, qua G28 hoặc phím Home/Zero Return) trên máy phay nên được thực hiện khi nào?",
+        "options": [
+          "Chỉ cần làm 1 lần duy nhất khi mua máy",
+          "Sau mỗi lần bật nguồn máy, để hệ điều khiển xác định lại chính xác vị trí các trục",
+          "Chỉ khi máy báo lỗi",
+          "Không cần thiết nếu đã set gốc phôi G54"
+        ],
+        "answer": 1,
+        "explanation": "Sau khi tắt nguồn, hệ điều khiển mất thông tin vị trí tuyệt đối các trục — về điểm tham chiếu máy giúp hệ thống xác định lại gốc tọa độ máy, làm nền tảng cho mọi hệ tọa độ phôi (G54...) sau đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chế độ AUTO (hoặc MEM) trên máy phay dùng để:",
+        "options": [
+          "Chạy chương trình NC đã lưu trong bộ nhớ máy một cách tự động, liên tục",
+          "Chỉ dùng để xóa chương trình",
+          "Di chuyển trục bằng tay",
+          "Cài đặt thông số bù dao"
+        ],
+        "answer": 0,
+        "explanation": "Đây là chế độ gia công chính thức sau khi đã kiểm tra kỹ chương trình bằng MDI/Single Block/Dry Run — máy sẽ chạy hết chương trình theo trình tự đã lập."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Núm Feed Rate Override (điều chỉnh tốc độ chạy dao) dùng để làm gì khi máy phay đang chạy?",
+        "options": [
+          "Thay đổi chương trình gia công đang chạy",
+          "Tăng/giảm tốc độ chạy dao thực tế so với giá trị F đã lập trình, mà không cần dừng máy để sửa chương trình",
+          "Bật/tắt trục chính",
+          "Chọn lại dao đang dùng"
+        ],
+        "answer": 1,
+        "explanation": "Rất hữu ích khi quan sát thấy tốc độ cắt chưa phù hợp — có thể giảm Override xuống để quan sát kỹ hơn khi chạy thử, hoặc tăng lên khi đã yên tâm về chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi vận hành lần đầu một chương trình phay mới chưa từng chạy thử, thao tác an toàn nào nên áp dụng?",
+        "options": [
+          "Chạy thẳng ở chế độ AUTO tốc độ 100% ngay từ đầu",
+          "Bật Single Block kết hợp giảm Feed Rate Override, quan sát kỹ từng bước, sẵn sàng nhấn Feed Hold nếu bất thường",
+          "Tắt hết các cảm biến an toàn để chạy nhanh hơn",
+          "Không cần theo dõi vì máy đã tự động hoàn toàn"
+        ],
+        "answer": 1,
+        "explanation": "Đây là quy trình chuẩn khi chạy thử chương trình mới — kết hợp nhiều lớp an toàn (Single Block + giảm tốc + quan sát liên tục) để phát hiện lỗi trước khi lỗi gây hậu quả nghiêm trọng."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Dry Run (chạy không tải) trên máy phay dùng để:",
+        "options": [
+          "Gia công chi tiết thật với tốc độ chậm",
+          "Cho máy chạy mô phỏng chuyển động theo chương trình mà không thực sự cắt gọt, để kiểm tra quỹ đạo dao",
+          "Tự động mài sắc lại dao",
+          "Chỉ dùng khi thay dầu bôi trơn"
+        ],
+        "answer": 1,
+        "explanation": "Dry Run giúp kiểm tra hình dạng đường chạy dao (thường với dao nâng cao hoặc không có phôi) trước khi cắt thật — phát hiện lỗi lập trình về quỹ đạo mà không tốn phôi hay rủi ro va chạm."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên bảng điều khiển Fanuc của máy phay, phím Cycle Start dùng để:",
+        "options": [
+          "Dừng khẩn cấp toàn bộ máy",
+          "Bắt đầu hoặc tiếp tục chạy chương trình ở chế độ AUTO/MDI",
+          "Chuyển sang chế độ JOG",
+          "Xóa bộ nhớ chương trình"
+        ],
+        "answer": 1,
+        "explanation": "Cycle Start là nút khởi động chuyển động theo chương trình — dùng để bắt đầu chạy AUTO, hoặc để tiếp tục sau mỗi lần dừng do Single Block/Feed Hold."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi đang phay tự động (AUTO) mà phát hiện tiếng kêu bất thường hoặc rung động lạ, phản ứng đúng đầu tiên là:",
+        "options": [
+          "Tiếp tục quan sát thêm vài phút xem có tự hết không",
+          "Nhấn Feed Hold hoặc dừng khẩn cấp ngay lập tức để kiểm tra nguyên nhân",
+          "Tăng tốc độ trục chính để hoàn thành nhanh hơn",
+          "Rời khỏi vị trí máy để báo cáo sau"
+        ],
+        "answer": 1,
+        "explanation": "Tiếng kêu/rung động bất thường thường là dấu hiệu sớm của va chạm, gãy dao, hoặc lỗi kẹp phôi — xử lý ngay giúp tránh hư hỏng nặng hơn cho máy, dao hoặc chi tiết."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trang màn hình POSITION trên điều khiển Fanuc của máy phay hiển thị thông tin gì?",
+        "options": [
+          "Nội dung chương trình NC đang chạy",
+          "Vị trí hiện tại của các trục máy (tuyệt đối, tương đối, hoặc theo máy)",
+          "Danh sách các dao trong ổ tích dao",
+          "Thông số bù chiều dài/bán kính dao"
+        ],
+        "answer": 1,
+        "explanation": "Đây là màn hình được xem nhiều nhất khi vận hành — giúp người vận hành theo dõi tọa độ X, Y, Z hiện tại của dao so với gốc máy hoặc gốc phôi trong suốt quá trình gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Chức năng Block Skip (bỏ qua khối lệnh, ký hiệu \"/\" đầu dòng) trên máy phay dùng để:",
+        "options": [
+          "Xóa vĩnh viễn dòng lệnh đó khỏi chương trình",
+          "Khi được bật, máy sẽ bỏ qua các dòng có dấu \"/\" ở đầu khi chạy chương trình, hữu ích khi cần tùy chọn bỏ một số bước",
+          "Tăng tốc độ đọc chương trình",
+          "Chỉ dùng riêng cho chu trình khoan"
+        ],
+        "answer": 1,
+        "explanation": "Block Skip hữu ích khi chương trình có các bước tùy chọn (ví dụ đo kiểm giữa chừng, hoặc phân biệt phôi thô/đã gia công một phần) mà không cần viết nhiều phiên bản chương trình khác nhau."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi rời khỏi máy phay sau ca làm việc, quy trình an toàn cơ bản nào cần thực hiện?",
+        "options": [
+          "Cứ để máy chạy chương trình dở dang",
+          "Đưa trục về vị trí an toàn, dừng trục chính, tắt coolant, và tắt nguồn máy theo đúng trình tự",
+          "Không cần làm gì, ca sau tự xử lý",
+          "Chỉ cần tắt màn hình điều khiển"
+        ],
+        "answer": 1,
+        "explanation": "Đây là quy trình kết thúc ca chuẩn — giúp máy ở trạng thái an toàn, sẵn sàng cho người vận hành tiếp theo, và tránh hư hỏng do dừng máy đột ngột giữa chừng."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi cửa bảo vệ an toàn (safety door) của máy phay đang mở, hệ thống điều khiển thường sẽ:",
+        "options": [
+          "Vẫn cho phép chạy chương trình AUTO bình thường",
+          "Tự động khóa không cho chạy tự động hoặc quay trục chính, để bảo vệ người vận hành",
+          "Tăng tốc độ trục chính lên tối đa",
+          "Không có liên quan gì đến an toàn vận hành"
+        ],
+        "answer": 1,
+        "explanation": "Đây là cơ chế khóa liên động (interlock) bắt buộc trên hầu hết máy CNC hiện đại — ngăn máy hoạt động khi cửa bảo vệ chưa đóng kín, tránh tai nạn khi tay hoặc vật thể còn trong vùng gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi mới gá phôi lên êtô của máy phay, trước khi chạy chương trình gia công, cần thực hiện thao tác kiểm tra nào?",
+        "options": [
+          "Không cần kiểm tra gì thêm, cứ chạy chương trình luôn",
+          "Kiểm tra phôi đã được kẹp chặt, đúng vị trí, không bị xê dịch khi rung động trong quá trình cắt",
+          "Chỉ cần kiểm tra màu sắc bề mặt phôi",
+          "Chỉ cần kiểm tra tốc độ trục chính đã cài đặt"
+        ],
+        "answer": 1,
+        "explanation": "Phôi kẹp không chắc là nguyên nhân phổ biến gây phế phẩm, gãy dao hoặc tai nạn khi phôi bị văng ra trong lúc gia công — đây là bước kiểm tra bắt buộc trước mỗi lần chạy máy."
+      }
+    ]
+  },
+  {
+    "cnc_key": "tool-setup-turn",
+    "title": "Kiểm tra cài đặt dao tiện",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Trên máy tiện CNC, gốc phôi (G54) thường được đặt tại vị trí nào?",
+        "options": [
+          "Mặt đầu phôi, trên đường tâm trục chính (X0 Z0)",
+          "Tại vị trí bất kỳ trên mâm cặp",
+          "Tại điểm tham chiếu máy (Machine Zero Point)",
+          "Tại đầu dao đang gá trên ổ dao"
+        ],
+        "answer": 0,
+        "explanation": "Đây là quy ước chuẩn cho lập trình tiện: gốc phôi tại mặt đầu (Z0) và trên tâm trục (X0) giúp mọi tọa độ đường kính/chiều dài trên bản vẽ có thể áp trực tiếp vào chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong lệnh T0101, hai cặp số \"01\" và \"01\" lần lượt có ý nghĩa gì?",
+        "options": [
+          "Cả hai đều chỉ số hiệu dao, dùng để kiểm tra chéo",
+          "Số đầu là số hiệu dao (Tool Number), số sau là số hiệu bù dao (Offset Number) — thường trùng nhau nhưng có thể khác",
+          "Số đầu là tốc độ trục chính, số sau là lượng chạy dao",
+          "Cả hai đều không có ý nghĩa, chỉ là quy ước đặt tên"
+        ],
+        "answer": 1,
+        "explanation": "T0101 nghĩa là gọi dao số 01 trên đài dao, đồng thời áp dụng bảng bù dao (offset) số 01 — quy ước trùng số giúp dễ quản lý khi có nhiều dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bù dao tiện (Tool Offset) trên máy tiện CNC bao gồm những thông số cơ bản nào?",
+        "options": [
+          "Chỉ có bù theo trục X",
+          "Chỉ có bù theo trục Z",
+          "Bù theo cả trục X và Z (khoảng cách từ mũi dao đến gốc tọa độ chuẩn của đài dao), và có thể có bán kính mũi dao (Tool Nose Radius)",
+          "Chỉ có tốc độ quay của dao"
+        ],
+        "answer": 2,
+        "explanation": "Khác với máy phay chỉ cần bù chiều dài theo Z, máy tiện cần bù cả X và Z vì mỗi dao gá trên đài dao có vị trí mũi dao khác nhau theo cả 2 phương."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Việc xác định gốc phôi theo trục X trên máy tiện thường dựa vào yếu tố nào?",
+        "options": [
+          "Đường kính thực tế của phôi, vì trục X biểu diễn đường kính (hoặc bán kính tùy quy ước máy)",
+          "Chiều dài tổng của phôi",
+          "Tốc độ quay của trục chính",
+          "Loại vật liệu của phôi"
+        ],
+        "answer": 0,
+        "explanation": "Trên hầu hết máy tiện Fanuc, X được lập trình theo giá trị đường kính (diameter programming) — nên gốc X0 nằm trên đường tâm trục chính, và mọi giá trị X trong chương trình là đường kính tại điểm đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi gá phôi trên mâm cặp 3 chấu, chiều dài phôi thò ra ngoài mâm cặp cần được xác định dựa trên yếu tố nào?",
+        "options": [
+          "Càng dài càng tốt để dễ thao tác",
+          "Đủ để gia công hết chiều dài chi tiết cộng thêm khoảng an toàn, nhưng không quá dài gây rung động hoặc thiếu độ cứng vững khi cắt",
+          "Không quan trọng, chiều dài nào cũng được",
+          "Luôn cố định bằng chiều dài mâm cặp"
+        ],
+        "answer": 1,
+        "explanation": "Phôi thò ra quá dài (đặc biệt với đường kính nhỏ) dễ bị rung động, ảnh hưởng độ chính xác và độ bóng bề mặt, thậm chí có thể gãy hoặc văng ra khi cắt ở tốc độ cao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Phương pháp phổ biến để xác định gốc phôi theo trục Z trên máy tiện (mặt đầu phôi) là gì?",
+        "options": [
+          "Cho dao chạm nhẹ vào mặt đầu phôi (hoặc sau khi tiện mặt đầu), rồi set giá trị Z tại điểm đó bằng 0",
+          "Đo bằng caliper trước khi kẹp phôi lên mâm cặp",
+          "Ước lượng theo kinh nghiệm không cần set",
+          "Luôn lấy giá trị mặc định của nhà sản xuất máy"
+        ],
+        "answer": 0,
+        "explanation": "Khác với phương pháp Z trên máy phay (đo trước khi kẹp bằng caliper), trên máy tiện phổ biến hơn là tiện mặt đầu trước rồi set Z0 tại mặt vừa tiện — vì mặt đầu phôi thô thường không phẳng, cần gia công trước khi làm chuẩn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi thay đổi từ dao tiện thô sang dao tiện ren (ví dụ từ T0101 sang T0202), điều gì cần được đảm bảo trước khi gia công?",
+        "options": [
+          "Không cần làm gì thêm vì máy tự động bù mọi sai lệch",
+          "Dao mới phải đã được set bù dao (offset) riêng, vì mỗi dao có kích thước và vị trí gá khác nhau trên đài dao",
+          "Chỉ cần đảm bảo tốc độ trục chính giống dao cũ",
+          "Chỉ cần đảm bảo hướng quay trục chính không đổi"
+        ],
+        "answer": 1,
+        "explanation": "Mỗi vị trí trên đài dao gá 1 dao khác nhau với kích thước/hình dạng khác nhau — nếu offset của dao mới chưa được set đúng, mũi dao sẽ ở sai vị trí so với phôi, gây va chạm hoặc sai kích thước."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bán kính mũi dao (Tool Nose Radius) cần được khai báo chính xác trong bù dao vì lý do gì?",
+        "options": [
+          "Không quan trọng, chỉ ảnh hưởng đến màu sắc bề mặt",
+          "Ảnh hưởng đến độ chính xác biên dạng khi tiện côn, cung tròn — cần bù bán kính mũi dao (G41/G42) để tránh sai lệch kích thước",
+          "Chỉ ảnh hưởng đến tốc độ cắt",
+          "Chỉ cần khai báo khi tiện ren"
+        ],
+        "answer": 1,
+        "explanation": "Mũi dao tiện không phải là 1 điểm nhọn tuyệt đối mà có bán kính cong nhỏ — khi tiện các đoạn côn hoặc cung tròn, nếu không bù đúng bán kính này, biên dạng thực tế sẽ lệch khỏi bản vẽ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trước khi chạy chương trình gia công thật, bước kiểm tra nào giúp phát hiện sai sót trong việc set gốc phôi/bù dao?",
+        "options": [
+          "Không cần kiểm tra, cứ chạy trực tiếp",
+          "Chạy thử ở chế độ Single Block kết hợp quan sát tọa độ hiển thị trên màn hình POSITION, hoặc dùng Dry Run trước khi cắt thật",
+          "Chỉ cần kiểm tra bằng mắt hình dạng phôi",
+          "Chỉ cần hỏi đồng nghiệp có set đúng không"
+        ],
+        "answer": 1,
+        "explanation": "Đây là bước kiểm chứng bắt buộc trước khi cắt thật — giúp phát hiện sớm sai sót về offset trước khi gây hỏng phôi hoặc va chạm dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu offset dao (bù theo X hoặc Z) bị nhập sai dấu (dương thành âm hoặc ngược lại), hậu quả nghiêm trọng nhất có thể xảy ra là gì?",
+        "options": [
+          "Không ảnh hưởng gì vì máy tự động điều chỉnh",
+          "Dao có thể di chuyển đến vị trí hoàn toàn sai lệch so với phôi thực tế, gây va chạm mạnh giữa dao và mâm cặp/phôi",
+          "Chỉ làm chậm tốc độ gia công",
+          "Chỉ ảnh hưởng đến độ bóng bề mặt, không gây nguy hiểm"
+        ],
+        "answer": 1,
+        "explanation": "Sai dấu offset là lỗi nghiêm trọng vì máy sẽ tính toán vị trí dao hoàn toàn ngược với thực tế — có thể khiến dao lao thẳng vào mâm cặp hoặc vượt quá giới hạn hành trình máy."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vì sao trên máy tiện thường tiện mặt đầu (facing) trước khi set gốc Z0, thay vì set Z0 ngay trên mặt phôi thô ban đầu?",
+        "options": [
+          "Không có lý do đặc biệt, làm cách nào cũng được",
+          "Mặt phôi thô (cắt bằng cưa hoặc để nguyên từ vật liệu cán) thường không phẳng và không vuông góc với trục — tiện mặt đầu tạo ra 1 mặt chuẩn phẳng, chính xác để làm gốc Z0 đáng tin cậy",
+          "Vì máy CNC bắt buộc phải tiện mặt đầu trước khi cho phép set gốc tọa độ",
+          "Chỉ để làm đẹp bề mặt, không liên quan đến độ chính xác gốc tọa độ"
+        ],
+        "answer": 1,
+        "explanation": "Đây là lý do kỹ thuật quan trọng — nếu set Z0 trên mặt phôi thô gồ ghề, sai số bề mặt sẽ truyền trực tiếp vào toàn bộ chiều dài chi tiết gia công sau đó."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trên máy tiện, khi lập trình theo đường kính (diameter programming), nếu đo được đường kính phôi thực tế là Ø42 nhưng bản vẽ yêu cầu Ø40, giá trị nào cần nhập vào chương trình cho bước tiện thô đầu tiên?",
+        "options": [
+          "X42 (giữ nguyên đường kính phôi hiện tại) để bắt đầu ăn dao dần xuống Ø40",
+          "X40 ngay lập tức trong bước đầu tiên, bỏ qua đường kính phôi thực tế",
+          "X20 (giá trị bán kính thay vì đường kính)",
+          "Không cần quan tâm đến đường kính phôi thực tế khi lập trình"
+        ],
+        "answer": 0,
+        "explanation": "Bước tiếp cận đầu tiên thường lấy giá trị gần với đường kính phôi thực tế (X42) để tránh chạy dao không vào không khí quá nhiều, sau đó các chu trình cắt (như G71) sẽ tự động ăn dần xuống kích thước cuối cùng X40."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi lắp mũi chống tâm (tailstock center) hỗ trợ cho phôi dài trên máy tiện, điều gì cần lưu ý về thông số gia công?",
+        "options": [
+          "Không cần thay đổi gì so với khi tiện không dùng mũi chống tâm",
+          "Không được lập trình dao chạy vào vùng có mũi chống tâm để tránh va chạm, và cần chú ý chiều dài thực tế có thể gia công bị giới hạn bởi vị trí mũi chống tâm",
+          "Chỉ cần tăng tốc độ trục chính lên gấp đôi",
+          "Mũi chống tâm tự động điều chỉnh mọi thông số gia công"
+        ],
+        "answer": 1,
+        "explanation": "Mũi chống tâm là vật cản vật lý trong vùng gia công — người lập trình phải biết chính xác vị trí Z của nó để tránh cho dao chạy vào gây va chạm, đồng thời đầu phôi có mũi chống tâm không tiện được hoàn toàn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "So sánh phương pháp set gốc phôi Z trên máy phay (đã khóa: đo caliper trước khi kẹp) và trên máy tiện (tiện mặt đầu rồi set Z0): điểm khác biệt căn bản là do đâu?",
+        "options": [
+          "Không có khác biệt căn bản, chỉ là thói quen khác nhau của từng giáo viên",
+          "Do đặc điểm hình học khác nhau: phôi phay thường có mặt chuẩn sẵn (mặt đã gia công hoặc mặt cán phẳng) nên đo trước được, còn phôi tiện tròn xoay thường có mặt đầu thô cần gia công trước mới có chuẩn đáng tin cậy",
+          "Do máy phay đắt tiền hơn nên cần phương pháp chính xác hơn",
+          "Do quy định của nhà sản xuất Fanuc yêu cầu 2 phương pháp khác nhau cho 2 loại máy"
+        ],
+        "answer": 1,
+        "explanation": "Đây là điểm khác biệt quan trọng về bản chất hình học của 2 loại phôi — phôi tiện là dạng trụ tròn xoay, mặt đầu cắt thô thường không phẳng/vuông góc nên cần gia công trước, khác với phôi phay dạng khối có thể đã có mặt chuẩn phẳng sẵn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi kiểm tra lại thông số đã cài đặt trước khi chạy chương trình tiện thật, nên xác nhận điều gì trên màn hình OFFSET của Fanuc?",
+        "options": [
+          "Chỉ cần xem tên chương trình đang mở",
+          "Xác nhận đúng giá trị G54 (X, Z) và bảng bù dao (Tool Offset) X, Z, R (bán kính mũi dao) tương ứng với từng dao đang dùng",
+          "Chỉ cần xem tốc độ trục chính hiện tại",
+          "Không cần kiểm tra gì nếu đã set 1 lần trước đó"
+        ],
+        "answer": 1,
+        "explanation": "Đây là bước kiểm tra bắt buộc — với máy tiện cần kiểm tra nhiều thông số hơn máy phay (cả X, Z, và bán kính mũi dao R cho mỗi dao) vì độ phức tạp của bù dao tiện cao hơn."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu phôi bị tháo ra kẹp lại (ví dụ đảo đầu để gia công mặt còn lại) giữa chừng quá trình gia công, thông số nào bắt buộc phải xác định lại?",
+        "options": [
+          "Không cần xác định lại gì, chương trình cũ vẫn dùng được nguyên vẹn",
+          "Gốc phôi Z0 (vì mặt chuẩn Z0 đã đổi sang đầu mới của phôi) và có thể cả gốc X nếu phôi bị lệch tâm khi kẹp lại",
+          "Chỉ cần kiểm tra lại tốc độ trục chính",
+          "Chỉ cần kiểm tra lại bán kính mũi dao"
+        ],
+        "answer": 1,
+        "explanation": "Đảo đầu phôi là thao tác phổ biến khi cần gia công cả 2 đầu trục — nhưng bắt buộc phải set lại Z0 tại mặt chuẩn mới, và kiểm tra độ đồng tâm khi kẹp lại để tránh sai lệch trục."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong chương trình tiện dùng chu trình G71 (tiện thô), thông số U và W trong khối P...Q... (ví dụ U0.5 W0.1) có liên quan gì đến việc cài đặt thông số dao/phôi?",
+        "options": [
+          "Không liên quan gì đến dao/phôi, chỉ là tốc độ trục chính",
+          "Là lượng dư gia công (chừa lại cho tiện tinh) theo X (U) và Z (W) — cần được xác định dựa trên độ chính xác yêu cầu và khả năng của dao tiện tinh, không phải thông số bù dao cố định",
+          "Là giá trị bù dao X, Z giống hệt trong bảng Offset",
+          "Là đường kính và chiều dài phôi thô"
+        ],
+        "answer": 1,
+        "explanation": "U, W là lượng dư gia công (finishing allowance) — một quyết định công nghệ liên quan đến việc chừa vật liệu đủ cho bước tiện tinh đạt kích thước và độ bóng yêu cầu, khác với các thông số offset cố định của dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Một sinh viên set gốc phôi X0 tại vị trí không trùng với tâm trục chính (bị lệch vài mm), hậu quả gì sẽ xảy ra khi tiện chi tiết dạng trụ tròn xoay?",
+        "options": [
+          "Không ảnh hưởng gì vì máy CNC luôn tự động canh tâm",
+          "Chi tiết tiện ra sẽ không tròn đều hoặc bị lệch tâm, vì mọi giá trị đường kính trong chương trình đều tính từ gốc X0 đã set sai — đây là lỗi nghiêm trọng vì tiện là gia công đối xứng quay quanh trục",
+          "Chỉ ảnh hưởng nhẹ đến độ bóng bề mặt",
+          "Chỉ ảnh hưởng đến tốc độ cắt, không ảnh hưởng hình dạng"
+        ],
+        "answer": 1,
+        "explanation": "Khác với máy phay (X0, Y0 có thể ở bất kỳ đâu trên mặt phẳng), gốc X0 trên máy tiện BẮT BUỘC phải trùng với tâm quay của trục chính — nếu không, toàn bộ khái niệm 'đường kính' trong chương trình sẽ sai, dẫn đến chi tiết không tròn hoặc lệch tâm nghiêm trọng."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi so sánh việc quản lý nhiều dao trên máy phay (dùng H-code + D-code riêng biệt) và máy tiện (dùng chung 1 cặp số T-code cho cả offset X, Z, R), điểm khác biệt về mức độ phức tạp là gì?",
+        "options": [
+          "Không khác biệt, độ phức tạp như nhau ở cả 2 loại máy",
+          "Máy tiện thường quản lý gọn hơn vì mỗi dao chỉ cần 1 số hiệu offset duy nhất chứa đủ cả X, Z, R, trong khi máy phay tách riêng H-code (chiều dài) và D-code (bán kính) cho cùng 1 dao",
+          "Máy phay luôn đơn giản hơn máy tiện trong mọi trường hợp",
+          "Cả 2 loại máy đều không cần quản lý số hiệu dao"
+        ],
+        "answer": 1,
+        "explanation": "Đây là điểm khác biệt về cấu trúc offset giữa 2 loại máy — trên tiện, 1 số hiệu offset (ví dụ offset 01) chứa trọn bộ X, Z, R cho 1 dao; trên phay, chiều dài (H) và bán kính (D) là 2 bảng tách biệt, có thể dùng số hiệu khác nhau cho cùng 1 dao nếu cần."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sau khi đã cài đặt gốc phôi và bù dao trên máy tiện, cách kiểm tra an toàn nào phù hợp nhất trước khi chạy gia công tự động?",
+        "options": [
+          "Chạy ngay ở AUTO với Feed Override 100% để kiểm tra nhanh.",
+          "Gọi từng dao, kiểm tra giá trị offset trên màn hình, chạy Dry Run hoặc Single Block với Feed Override thấp và quan sát khoảng cách dao–phôi.",
+          "Chỉ kiểm tra số hiệu chương trình rồi nhấn Cycle Start.",
+          "Tắt chức năng giới hạn hành trình để dao di chuyển tự do."
+        ],
+        "answer": 1,
+        "explanation": "Sau khi cài đặt, phải đối chiếu đúng số dao và giá trị offset, sau đó chạy thử có kiểm soát bằng Dry Run hoặc Single Block với tốc độ chạy dao thấp để phát hiện sai dấu, sai gốc hoặc nguy cơ va chạm."
+      }
+    ]
+  },
+  {
+    "cnc_key": "tool-setup-mill",
+    "title": "Kiểm tra cài đặt dao phay",
+    "duration_minutes": 20,
+    "topic": "CNC",
+    "difficulty": "",
+    "published": false,
+    "questions": [
+      {
+        "type": "multiple_choice",
+        "question": "Trong phương pháp cài đặt Z phôi đã áp dụng cho máy phay EMCO Mill 55, công thức tính Z_phôi là:",
+        "options": [
+          "Z_phôi bằng hiệu số giữa chiều cao êtô và chiều cao phôi đo được",
+          "Z_phôi = H_êtô (28mm) + H_phôi (đo bằng caliper trước khi kẹp)",
+          "Z_phôi lấy đúng bằng chiều cao lúc dao vừa chạm mặt phôi",
+          "Z_phôi luôn lấy giá trị 0 mặc định, không cần đo hay tính"
+        ],
+        "answer": 1,
+        "explanation": "Đây là công thức đã chốt cho bài giảng: Z_phôi bằng tổng chiều cao êtô (cố định 28mm, không tấm kê) cộng chiều cao phôi đo được — thay cho phương pháp chạm dao vào phôi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Theo phương pháp đã khóa, chiều cao H_phôi cần được đo bằng dụng cụ gì và tại thời điểm nào?",
+        "options": [
+          "Đo bằng đồng hồ so, thực hiện ngay sau khi đã gia công xong",
+          "Chỉ cần ước lượng bằng mắt, không đòi hỏi đo chính xác",
+          "Đo bằng thước kẻ thông thường, sau khi đã kẹp phôi lên êtô",
+          "Đo bằng caliper (thước cặp), trước khi kẹp phôi lên êtô"
+        ],
+        "answer": 3,
+        "explanation": "Đo trước khi kẹp giúp thao tác thuận tiện và an toàn hơn (không phải luồn caliper vào khe hẹp sau khi đã kẹp), đồng thời tránh sai số do biến dạng nhẹ của phôi khi bị kẹp chặt."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Giá trị H_êtô = 28mm trong công thức Z_phôi áp dụng cho trường hợp nào?",
+        "options": [
+          "Chỉ áp dụng khi có lắp thêm tấm kê (riser plate) bên dưới êtô",
+          "Là giá trị cố định, dùng khi không lắp tấm kê (riser plate)",
+          "Thay đổi tùy theo loại dao đang được gá trên trục chính máy",
+          "Chỉ áp dụng riêng cho loại phôi có dạng hình trụ tròn xoay"
+        ],
+        "answer": 1,
+        "explanation": "28mm là chiều cao chuẩn của êtô khi không lắp thêm tấm kê. Nếu có dùng tấm kê, phải cộng thêm chiều cao tấm kê vào công thức."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Việc tách rời G54-Z (gốc phôi theo Z) với H-code (Tool Length Offset) có ý nghĩa gì?",
+        "options": [
+          "H-code lúc nào cũng phải được nhập bằng đúng giá trị của G54-Z",
+          "G54-Z là vị trí mặt phôi, H-code là chênh lệch chiều dài dao — độc lập",
+          "Không mang ý nghĩa gì đặc biệt, chỉ là hai cách gọi tên khác nhau cho cùng một đại lượng",
+          "Người vận hành chỉ cần set một trong hai giá trị này là đã đủ dùng"
+        ],
+        "answer": 1,
+        "explanation": "Đây là nguyên tắc cốt lõi của phương pháp: G54-Z cố định theo vị trí phôi thực tế, còn H-code thay đổi theo từng dao khi đổi dao — nếu gộp chung sẽ gây sai số khi đổi dao khác."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sau khi đo được H_phôi = 32mm, giá trị Z cần nhập vào bảng Work Offset G54 là:",
+        "options": [
+          "Z = 60, tức tổng của H_êtô 28mm cộng với H_phôi 32mm",
+          "Z = 32, tức chỉ nhập riêng giá trị H_phôi vừa đo được",
+          "Z = 28, tức chỉ nhập cố định giá trị H_êtô của máy",
+          "Z = -60, tức lấy số âm của tổng hai giá trị cộng lại"
+        ],
+        "answer": 0,
+        "explanation": "Áp dụng đúng công thức Z_phôi = H_êtô + H_phôi = 28 + 32 = 60mm — đây là khoảng cách từ mặt bàn máy (hoặc điểm chuẩn máy) đến mặt trên của phôi."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bù chiều dài dao (Tool Length Offset, gọi qua H-code) được xác định bằng cách nào phổ biến trên máy phay?",
+        "options": [
+          "Luôn lấy nguyên giá trị mặc định do nhà sản xuất dao ghi trên bao bì",
+          "Ước lượng theo kinh nghiệm cá nhân, không cần đo đạc lại",
+          "Dùng tool setter hoặc chạm dao vào mặt chuẩn đã biết cao độ",
+          "Đo trực tiếp chiều dài dao bằng caliper trước khi gá lên trục"
+        ],
+        "answer": 2,
+        "explanation": "Khác với việc đo H_phôi (đo trước khi kẹp bằng caliper), bù chiều dài dao cần xác định vị trí đầu dao thực tế trên máy — thường dùng tool setter hoặc chạm dao vào điểm chuẩn đã biết."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Việc thiết lập gốc phôi theo trục X, Y (G54 X, G54 Y) trên máy phay thường dùng dụng cụ nào để canh chính xác?",
+        "options": [
+          "Đồng hồ đo áp suất khí nén gắn trên đường ống cấp khí máy",
+          "Panme đo ngoài, vốn thường dùng để đo đường kính chi tiết",
+          "Chỉ dùng mắt thường quan sát và ước lượng đại khái vị trí cạnh của phôi",
+          "Edge Finder hoặc đồng hồ so để xác định chính xác mép chuẩn của phôi"
+        ],
+        "answer": 3,
+        "explanation": "Edge Finder giúp xác định chính xác vị trí mép phôi (độ chính xác cỡ vài phần trăm mm) — quan trọng vì gốc phôi X, Y quyết định toàn bộ độ chính xác biên dạng gia công."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vì sao phương pháp đo H_phôi bằng caliper trước khi kẹp được chọn thay vì chạm dao vào mặt phôi (tool-touch)?",
+        "options": [
+          "Vì đây là yêu cầu bắt buộc chung cho mọi loại máy phay CNC hiện có trên thị trường",
+          "Vì tách biệt việc xác định gốc phôi khỏi chạm dao, giảm rủi ro va chạm",
+          "Vì thao tác chạm dao vào phôi không thể thực hiện trên máy EMCO Mill 55",
+          "Vì caliper cho kết quả kém chính xác hơn nên cần bù trừ thêm sau khi đo"
+        ],
+        "answer": 1,
+        "explanation": "Đây là lý do sư phạm và kỹ thuật quan trọng của phương pháp đã khóa: đo trước khi kẹp an toàn hơn (không phải hạ dao chạm phôi thật), và tách biệt rõ ràng giữa gốc phôi và bù dao giúp sinh viên hiểu đúng bản chất hai khái niệm khác nhau."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu quên cộng H_êtô (28mm) khi tính Z_phôi và chỉ nhập giá trị H_phôi vào G54-Z, hậu quả có thể là gì?",
+        "options": [
+          "Chỉ ảnh hưởng đến tốc độ quay hiện tại của trục chính máy phay",
+          "Chỉ ảnh hưởng đến trục X và Y, hoàn toàn không liên quan đến trục Z",
+          "Gốc phôi Z sai lệch 28mm, khiến dao ăn sâu hoặc nông hơn dự kiến, dễ gây va chạm",
+          "Không ảnh hưởng gì đáng kể vì máy sẽ tự động bù trừ hết mọi sai số phát sinh này"
+        ],
+        "answer": 2,
+        "explanation": "Đây là lỗi phổ biến nhất khi sinh viên mới học phương pháp này — quên cộng chiều cao êtô sẽ khiến máy hiểu sai hoàn toàn vị trí mặt phôi, rất nguy hiểm khi chạy chương trình thật."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bước nào sau đây đúng trình tự khi cài đặt thông số dao/phôi trên máy phay theo phương pháp đã khóa?",
+        "options": [
+          "Nhập giá trị Z_phôi tùy ý trước rồi mới hiệu chỉnh lại sau khi gia công",
+          "Chạm dao vào mặt phôi, ghi nhận giá trị Z rồi nhập vào H-code",
+          "Kẹp phôi lên êtô trước, sau đó mới tiến hành đo H_phôi bằng caliper",
+          "Đo H_phôi trước khi kẹp, kẹp phôi, tính Z_phôi rồi nhập vào G54-Z"
+        ],
+        "answer": 3,
+        "explanation": "Trình tự đúng: đo trước khi kẹp (an toàn, dễ thao tác) → kẹp phôi → tính toán → nhập vào bảng Work Offset G54, không phải H-code."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Số hiệu dao (T-code) và số hiệu bù chiều dài dao (H-code) trên máy phay có nhất thiết phải trùng nhau không?",
+        "options": [
+          "H-code luôn bắt buộc phải mang giá trị lớn hơn T-code tương ứng",
+          "Không bắt buộc, nhưng thường quy ước trùng nhau để dễ quản lý",
+          "Bắt buộc phải trùng nhau tuyệt đối trong mọi chương trình gia công",
+          "Hai số hiệu này hoàn toàn độc lập, không liên quan gì đến nhau"
+        ],
+        "answer": 1,
+        "explanation": "Về mặt kỹ thuật, T-code và H-code là hai tham số độc lập, nhưng quy ước T nào đi với H đó (ví dụ T01 M06 rồi G43 H01) giúp giảm sai sót khi có nhiều dao trong chương trình."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi đổi từ dao phay ngón Ø10 sang dao phay ngón Ø6 trong cùng một chương trình, điều gì cần được đảm bảo về mặt thông số?",
+        "options": [
+          "Chỉ cần điều chỉnh lại tốc độ trục chính, các thông số khác giữ nguyên",
+          "Phải tính lại toàn bộ gốc phôi G54 ngay từ đầu như lúc mới gá phôi lên bàn máy phay",
+          "Dao mới phải có H-code riêng đã đo và nhập trước, vì chiều dài hai dao khác nhau",
+          "Không cần thao tác gì thêm, chỉ đổi số hiệu dao ghi trong T-code"
+        ],
+        "answer": 2,
+        "explanation": "Mỗi dao có chiều dài thực tế khác nhau khi gá lên trục chính — nếu không cập nhật đúng H-code cho dao mới, máy sẽ tính sai vị trí đầu dao so với mặt phôi, dễ gây va chạm hoặc cắt sai chiều sâu."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Bù bán kính dao (Cutter Radius Compensation, D-code, dùng với G41/G42) có mục đích gì khác với bù chiều dài dao (H-code)?",
+        "options": [
+          "H-code chỉ thực sự cần thiết khi gia công các loại lỗ trên máy phay",
+          "D-code vốn chỉ dùng cho máy tiện, hoàn toàn không áp dụng được cho máy phay",
+          "Hai loại bù này hoàn toàn giống nhau, chỉ khác nhau về cách gọi tên",
+          "D-code bù theo phương ngang X-Y, còn H-code bù theo phương thẳng đứng Z"
+        ],
+        "answer": 3,
+        "explanation": "Hai loại bù phục vụ hai mục đích khác nhau: D-code (bù bán kính) giúp biên dạng cắt ra đúng kích thước bản vẽ dù dao có đường kính khác 0, còn H-code (bù chiều dài) giúp máy biết chính xác đầu dao đang ở độ cao Z nào."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu đo được đường kính thực tế của dao phay không đúng với giá trị đã khai báo trong D-code (dao mòn còn Ø9.8 nhưng khai báo Ø10), hậu quả là gì?",
+        "options": [
+          "Máy sẽ tự động phát hiện sai lệch này và dừng lại ngay để báo lỗi cho người vận hành",
+          "Biên dạng gia công sẽ sai lệch nhẹ so với bản vẽ do máy bù theo số liệu đã khai báo",
+          "Không ảnh hưởng gì cả vì máy CNC luôn cắt đúng theo kích thước lập trình",
+          "Chỉ ảnh hưởng đến tốc độ cắt của dao, không tác động đến kích thước cắt"
+        ],
+        "answer": 1,
+        "explanation": "D-code là giá trị do người vận hành nhập tay dựa trên đo đạc thực tế — nếu không cập nhật khi dao bị mòn, biên dạng cắt ra sẽ lệch khỏi bản vẽ dù chương trình NC hoàn toàn đúng."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Vì sao nên chọn gốc phôi (G54) tại một góc của phôi thay vì tại tâm phôi khi lập trình phay biên dạng ngoài?",
+        "options": [
+          "Vì tâm phôi luôn khó xác định hơn góc phôi trên mọi loại máy phay",
+          "Vì đây là quy định bắt buộc của tiêu chuẩn Fanuc, không thể chọn khác",
+          "Không có lý do đặc biệt nào cả, đặt tại vị trí nào cũng như nhau",
+          "Thuận tiện khi đo đạc bằng Edge Finder và dễ tính tọa độ theo bản vẽ"
+        ],
+        "answer": 3,
+        "explanation": "Đây là lựa chọn thực hành phổ biến: đặt gốc tại góc giúp Edge Finder dò được ngay 2 cạnh chuẩn, và tọa độ các điểm trên bản vẽ CNC thường được ghi theo hệ quy chiếu từ 1 góc, giúp giảm sai sót khi tính tay."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Khi kiểm tra lại thông số đã cài đặt trước khi chạy chương trình thật, nên xác nhận điều gì trên màn hình OFFSET/SETTING của Fanuc?",
+        "options": [
+          "Chỉ cần xem qua tốc độ trục chính đang cài đặt hiện tại trên bảng điều khiển máy",
+          "Xác nhận đúng giá trị G54 (X, Y, Z) và các giá trị H, D từng dao đang dùng",
+          "Chỉ cần kiểm tra tên chương trình đang được mở trên máy",
+          "Không cần kiểm tra lại gì nếu đã từng set một lần trước đó"
+        ],
+        "answer": 1,
+        "explanation": "Đây là bước kiểm tra bắt buộc trước khi chạy AUTO — sai sót trong bảng offset là nguyên nhân phổ biến nhất gây phế phẩm hoặc va chạm, dù chương trình NC hoàn toàn chính xác."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Nếu phôi được tháo ra và kẹp lại giữa chừng quá trình gia công, thông số nào bắt buộc phải kiểm tra/đo lại?",
+        "options": [
+          "Chỉ cần kiểm tra lại giá trị bù bán kính dao D-code đang dùng",
+          "Chỉ cần kiểm tra lại tốc độ trục chính đang cài đặt trên máy phay",
+          "Không cần kiểm tra lại gì cả, chương trình vẫn sẽ chạy đúng như cũ",
+          "Toàn bộ gốc phôi G54 (X, Y, Z), vì vị trí phôi có thể đã thay đổi"
+        ],
+        "answer": 3,
+        "explanation": "Tháo kẹp lại phôi gần như chắc chắn làm thay đổi vị trí thực tế của phôi so với máy — phải đo và set lại toàn bộ G54, không thể tái sử dụng thông số cũ."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trong trường hợp dùng nhiều dao khác nhau trong cùng một chương trình phay, thông số nào KHÔNG cần thay đổi giữa các dao?",
+        "options": [
+          "T-code, tức số hiệu dao, mỗi khi gọi một dao mới vào chương trình",
+          "H-code, tức bù chiều dài riêng, của từng dao đang được sử dụng",
+          "Giá trị G54 (gốc phôi) — giữ nguyên vì vị trí phôi không đổi",
+          "D-code, tức bù bán kính dao, nếu đường kính các dao khác nhau"
+        ],
+        "answer": 2,
+        "explanation": "G54 xác định vị trí phôi trong không gian máy — miễn phôi không bị tháo ra kẹp lại, giá trị này giữ nguyên cho toàn bộ chương trình dù có đổi bao nhiêu dao. Đây chính là lợi ích của việc tách biệt gốc phôi khỏi bù dao."
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Một sinh viên đo H_phôi = 25mm nhưng lại cộng nhầm với H_êtô của máy tiện (nếu có giá trị khác 28mm) thay vì máy phay đang dùng, hậu quả là gì?",
+        "options": [
+          "Máy sẽ tự động phát hiện sai sót này và cảnh báo lỗi ngay lập tức cho người dùng",
+          "Chỉ gây ảnh hưởng rất nhỏ, có thể bỏ qua mức sai số này khi gia công",
+          "Sai giá trị Z_phôi, vì phải luôn dùng đúng H_êtô của máy và đồ gá thực tế",
+          "Không có vấn đề gì cả vì công thức tính là giống nhau cho mọi loại máy"
+        ],
+        "answer": 2,
+        "explanation": "28mm là giá trị riêng cho êtô cụ thể đang dùng trên EMCO Mill 55 trong bài giảng này — sinh viên cần hiểu đây là số đo thực tế của đồ gá, không phải hằng số áp dụng cho mọi máy/đồ gá khác, phải đo lại nếu đổi đồ gá hoặc máy."
+      }
+    ]
+  }
+]

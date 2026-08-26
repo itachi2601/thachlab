@@ -1,7 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
-import AdminSidebar from "@/components/admin/AdminSidebar";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,10 +11,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           Quản <span className="text-gradient">trị</span>
         </h1>
         <RequireAuth adminOnly>
-          <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
-            <AdminSidebar />
-            <div className="min-w-0 flex-1">{children}</div>
-          </div>
+          <div className="mt-8">{children}</div>
         </RequireAuth>
       </main>
       <Footer />

@@ -57,7 +57,7 @@ export default function LoginPage() {
     }
   }
 
-  const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-[#3B82F6] focus:outline-none";
+  const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none";
   const btnCls = "w-full rounded-full px-5 py-3 text-sm font-semibold transition-all disabled:opacity-50";
 
   return (
@@ -80,7 +80,7 @@ export default function LoginPage() {
                 onClick={() => setUserType("student")}
                 className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                   userType === "student"
-                    ? "border-b-2 border-[#3B82F6] text-white"
+                    ? "border-b-2 border-primary text-white"
                     : "text-slate-400 hover:text-slate-300"
                 }`}
               >
@@ -90,7 +90,7 @@ export default function LoginPage() {
                 onClick={() => setUserType("teacher")}
                 className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                   userType === "teacher"
-                    ? "border-b-2 border-[#3B82F6] text-white"
+                    ? "border-b-2 border-primary text-white"
                     : "text-slate-400 hover:text-slate-300"
                 }`}
               >
@@ -152,7 +152,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={busy}
-                className={`${btnCls} bg-[#2563EB] text-white hover:bg-[#1D4ED8]`}
+                className={`${btnCls} bg-[#2563EB] text-white hover:bg-primary-dark`}
               >
                 {busy ? "Đang đăng nhập…" : "Đăng nhập"}
               </button>
@@ -162,7 +162,7 @@ export default function LoginPage() {
             {userType === "student" && (
               <p className="mt-4 text-center text-sm text-slate-400">
                 Chưa có tài khoản?{" "}
-                <Link href="/dang-ky" className="text-[#3B82F6] hover:underline">
+                <Link href="/dang-ky" className="text-primary hover:underline">
                   Đăng ký ngay
                 </Link>
               </p>

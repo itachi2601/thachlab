@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import AudienceChooser from "@/components/home/AudienceChooser";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
 import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <AudienceChooser />
         <PhysicsSimulationHero />
         <Features />
         <PhysicsEverywhere />

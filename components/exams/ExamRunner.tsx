@@ -106,7 +106,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
             startedAt.current = Date.now();
             setPhase("running");
           }}
-          className="mt-6 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-[#1D4ED8]"
+          className="mt-6 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
         >
           Bắt đầu làm bài
         </button>
@@ -127,14 +127,14 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           </span>
           <span
             className={`font-mono text-lg font-semibold ${
-              secondsLeft <= 60 ? "text-red-400" : "text-[#22D3EE]"
+              secondsLeft <= 60 ? "text-red-400" : "text-cyan"
             }`}
           >
             {formatClock(secondsLeft)}
           </span>
           <button
             onClick={confirmSubmit}
-            className="rounded-full bg-[#2563EB] px-4 py-1.5 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+            className="rounded-full bg-[#2563EB] px-4 py-1.5 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             Nộp bài
           </button>
@@ -160,7 +160,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
 
         <button
           onClick={confirmSubmit}
-          className="mt-8 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+          className="mt-8 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
         >
           Nộp bài
         </button>
@@ -190,8 +190,8 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
             "Không lưu được điểm — hãy chụp màn hình kết quả gửi thầy"}
         </p>
         <Link
-          href="/kiem-tra"
-          className="mt-4 inline-block text-sm text-[#3B82F6] hover:underline"
+          href="/lop-hoc"
+          className="mt-4 inline-block text-sm text-primary hover:underline"
         >
           ← Về danh sách đề
         </Link>

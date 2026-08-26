@@ -4,8 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BlogCta from "@/components/blog/BlogCta";
 import { getPostBySlug, getPostSlugs } from "@/lib/blog";
-
-const SITE = "https://thachlab.id.vn";
+import { SITE_URL as SITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -108,7 +107,7 @@ export default async function BlogPostPage({
         />
 
         <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
-          <Link href="/blog" className="text-[#3B82F6] hover:underline">
+          <Link href="/blog" className="text-primary hover:underline">
             Blog
           </Link>{" "}
           / <span>Kiến thức Vật lý THPT</span>
@@ -151,7 +150,7 @@ export default async function BlogPostPage({
         </article>
 
         <div className="mt-10">
-          <Link href="/blog" className="text-sm text-[#3B82F6] hover:underline">
+          <Link href="/blog" className="text-sm text-primary hover:underline">
             ← Xem tất cả bài viết
           </Link>
         </div>

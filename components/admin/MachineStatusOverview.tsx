@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertOctagon, Check, History, Loader2, Pencil, RefreshCw, Users, Wrench, X } from "lucide-react";
-import { fetchAllMachines, groupMachinesByType, groupMachinesByWorkshop, MACHINE_TYPE_LABELS, type Machine, type MachineStatus } from "@/services/attendance-machine";
+import { AlertOctagon, Check, History, Loader2, Pencil, Plus, RefreshCw, Users, Wrench, X } from "lucide-react";
+import { createMachine, fetchAllMachines, groupMachinesByType, groupMachinesByWorkshop, MACHINE_TYPE_LABELS, updateMachineInfo, type Machine, type MachineStatus, type MachineType } from "@/services/attendance-machine";
 import { addMachineStatusLog, fetchMachineStatusLog, updateMachineStatusLog, type MachineStatusLogEntry } from "@/services/machine-status-log";
 import { fetchEquipmentBreakdownReportsByMachine, fetchOpenEquipmentBreakdownReports, fetchAdminProfiles, createEquipmentBreakdownPhotoUrl, startEquipmentRepair, resolveEquipmentBreakdown, type EquipmentBreakdownReportWithCourse, type BreakdownStatus, type AdminProfile } from "@/services/equipment-breakdown";
 import { fetchMachineUsageHistory, type MachineUsageRecord } from "@/services/course-attendance";
@@ -52,6 +52,7 @@ export default function MachineStatusOverview() {
   const [openBreakdownsLoading, setOpenBreakdownsLoading] = useState(true);
   const [openBreakdownsError, setOpenBreakdownsError] = useState("");
   const [lecturers, setLecturers] = useState<AdminProfile[]>([]);
+  const [addingMachine, setAddingMachine] = useState(false);
   useEffect(() => { void fetchAdminProfiles().then(setLecturers).catch(() => undefined); }, []);
   const load = useCallback(() => {
     setLoading(true);
@@ -90,11 +91,17 @@ export default function MachineStatusOverview() {
               {" · "}Click vào 1 máy để xem/sửa lịch sử tình trạng.
             </p>
           </div>
-          <button onClick={load} disabled={loading} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 disabled:opacity-40">
-            <RefreshCw size={16} className={loading ? "animate-spin" : ""} />Làm mới
-          </button>
+          <div className="flex gap-2">
+            <button onClick={() => setAddingMachine((v) => !v)} className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200">
+              <Plus size={16} />Thêm máy mới
+            </button>
+            <button onClick={load} disabled={loading} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 disabled:opacity-40">
+              <RefreshCw size={16} className={loading ? "animate-spin" : ""} />Làm mới
+            </button>
+          </div>
         </div>
         {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
+        {addingMachine && <AddMachineForm onDone={() => { setAddingMachine(false); load(); }} onCancel={() => setAddingMachine(false)} />}
       </section>
 
       <OpenBreakdownsBoard reports={openBreakdowns} loading={openBreakdownsLoading} error={openBreakdownsError} machines={machines} onOpenMachine={(code) => { const m = machines.find((item) => item.code === code); if (m) openMachine(m, "breakdown"); }} />
@@ -129,6 +136,41 @@ export default function MachineStatusOverview() {
       {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={(m) => openMachine(m)} />}
 
       {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelected(null)} onChanged={load} lecturers={lecturers} currentUserId={profile?.id ?? null} />}
+    </div>
+  );
+}
+
+const MACHINE_TYPE_OPTIONS = Object.entries(MACHINE_TYPE_LABELS) as [MachineType, string][];
+
+function AddMachineForm({ onDone, onCancel }: { onDone: () => void; onCancel: () => void }) {
+  const [code, setCode] = useState("");
+  const [label, setLabel] = useState("");
+  const [machineType, setMachineType] = useState<MachineType>("cnc_turn");
+  const [workshop, setWorkshop] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const missing = [!code.trim() && "mã máy", !label.trim() && "tên máy", !workshop.trim() && "xưởng"].filter((v): v is string => Boolean(v));
+  async function submit() {
+    if (missing.length) return;
+    setBusy(true); setError("");
+    try { await createMachine({ code: code.trim(), label: label.trim(), machine_type: machineType, workshop: workshop.trim() }); onDone(); }
+    catch (cause) { setError(cause instanceof Error ? cause.message : "Không thêm được máy."); }
+    finally { setBusy(false); }
+  }
+  return (
+    <div className="mt-4 grid gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-4 sm:grid-cols-2 lg:grid-cols-4">
+      <input value={code} onChange={(e) => setCode(e.target.value)} placeholder="Mã máy (VD: T9)" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+      <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Tên máy" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+      <select value={machineType} onChange={(e) => setMachineType(e.target.value as MachineType)} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white">
+        {MACHINE_TYPE_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+      </select>
+      <input value={workshop} onChange={(e) => setWorkshop(e.target.value)} placeholder="Mã xưởng (VD: C1.2)" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+      <div className="flex gap-2 sm:col-span-2 lg:col-span-4">
+        <button disabled={busy || missing.length > 0} onClick={submit} className="rounded-xl bg-cyan-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40">{busy ? "Đang lưu…" : "Thêm máy"}</button>
+        <button onClick={onCancel} className="rounded-xl border border-white/10 px-5 py-2.5 text-sm font-bold text-slate-300">Hủy</button>
+      </div>
+      {error && <p className="text-sm text-red-300 sm:col-span-2 lg:col-span-4">{error}</p>}
+      {!busy && missing.length > 0 && <p className="text-xs text-amber-300 sm:col-span-2 lg:col-span-4">Cần nhập: {missing.join(", ")}.</p>}
     </div>
   );
 }
@@ -250,6 +292,13 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
   const [status, setStatus] = useState<MachineStatus>(machine.status);
   const [note, setNote] = useState(machine.note);
   const [saving, setSaving] = useState(false);
+  const [editingInfo, setEditingInfo] = useState(false);
+  const [infoLabel, setInfoLabel] = useState(machine.label);
+  const [infoType, setInfoType] = useState<MachineType>(machine.machine_type);
+  const [infoWorkshop, setInfoWorkshop] = useState(machine.workshop);
+  const [infoActive, setInfoActive] = useState(machine.is_active);
+  const [infoSaving, setInfoSaving] = useState(false);
+  const [infoError, setInfoError] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editStatus, setEditStatus] = useState<MachineStatus>("ok");
   const [editNote, setEditNote] = useState("");
@@ -270,6 +319,13 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
   const [breakdownRefreshKey, setBreakdownRefreshKey] = useState(0);
   useEffect(() => { load(); }, [load]);
   useEffect(() => { setStatus(machine.status); setNote(machine.note); }, [machine.status, machine.note]);
+  useEffect(() => { setInfoLabel(machine.label); setInfoType(machine.machine_type); setInfoWorkshop(machine.workshop); setInfoActive(machine.is_active); }, [machine.label, machine.machine_type, machine.workshop, machine.is_active]);
+  async function saveInfo() {
+    setInfoSaving(true); setInfoError("");
+    try { await updateMachineInfo(machine.code, { label: infoLabel.trim(), machine_type: infoType, workshop: infoWorkshop.trim(), is_active: infoActive }); setEditingInfo(false); onChanged(); }
+    catch (cause) { setInfoError(cause instanceof Error ? cause.message : "Không lưu được."); }
+    finally { setInfoSaving(false); }
+  }
   useEffect(() => {
     setBreakdownLoading(true);
     fetchEquipmentBreakdownReportsByMachine(machine.code).then(setBreakdowns)
@@ -331,6 +387,31 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
         </div>
 
         {tab === "status" && <>
+        <div className="mt-4 rounded-xl border border-white/10 bg-white/[.02] p-3">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Thông tin cơ bản</p>
+            {!editingInfo && <button type="button" onClick={() => setEditingInfo(true)} className="flex items-center gap-1 text-xs font-bold text-cyan-300 hover:text-cyan-200"><Pencil size={12} />Sửa</button>}
+          </div>
+          {editingInfo ? <div className="mt-2 space-y-2">
+            <input value={infoLabel} onChange={(e) => setInfoLabel(e.target.value)} placeholder="Tên máy" className="w-full rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
+            <div className="flex gap-2">
+              <select value={infoType} onChange={(e) => setInfoType(e.target.value as MachineType)} className="flex-1 rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white">
+                {MACHINE_TYPE_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+              </select>
+              <input value={infoWorkshop} onChange={(e) => setInfoWorkshop(e.target.value)} placeholder="Xưởng" className="w-28 rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
+            </div>
+            <label className="flex items-center gap-2 text-xs font-bold text-slate-300">
+              <input type="checkbox" checked={infoActive} onChange={(e) => setInfoActive(e.target.checked)} />
+              Đang sử dụng (bỏ tick để ngừng dùng máy, không hiện trong danh sách chọn máy)
+            </label>
+            {infoError && <p className="text-xs text-red-300">{infoError}</p>}
+            <div className="flex gap-2">
+              <button type="button" disabled={infoSaving || !infoLabel.trim() || !infoWorkshop.trim()} onClick={saveInfo} className="rounded-lg bg-cyan-600 px-4 py-2 text-xs font-bold text-white disabled:opacity-40">{infoSaving ? "Đang lưu…" : "Lưu"}</button>
+              <button type="button" onClick={() => setEditingInfo(false)} className="rounded-lg border border-white/10 px-4 py-2 text-xs font-bold text-slate-300">Hủy</button>
+            </div>
+          </div> : <p className="mt-1 text-sm text-slate-300">{shortLabel(machine.label)} · {MACHINE_TYPE_LABELS[machine.machine_type]} · {WORKSHOP_LABELS[machine.workshop] ?? machine.workshop}{!machine.is_active && <span className="ml-1 font-bold text-amber-300">· Ngừng sử dụng</span>}</p>}
+        </div>
+
         <div className="mt-4 rounded-xl border border-white/10 bg-white/[.02] p-3">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Cập nhật tình trạng</p>
           <div className="mt-2 flex gap-2">

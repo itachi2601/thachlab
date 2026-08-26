@@ -62,7 +62,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
   }
 
   const inputCls =
-    "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
+    "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
   return (
     <div className="space-y-3">

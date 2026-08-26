@@ -14,7 +14,7 @@ export default function BlogCta() {
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <Link
           href="/dang-ky"
-          className="rounded-full bg-[#2563EB] px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-[#1D4ED8]"
+          className="rounded-full bg-[#2563EB] px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
         >
           Đăng ký học thử miễn phí
         </Link>

@@ -22,7 +22,7 @@ import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lesson
 import { getSupabase } from "@/services/supabase";
 
 const inputCls =
-  "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
+  "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const chipBtn =
   "rounded-lg bg-white/5 px-2 py-1 text-xs text-slate-300 hover:bg-white/15";
 
@@ -91,7 +91,7 @@ function ItemForm({
   }
 
   return (
-    <div className="space-y-3 rounded-2xl border border-[#3B82F6]/40 bg-[#0B1020] p-5">
+    <div className="space-y-3 rounded-2xl border border-primary/40 bg-[#0B1020] p-5">
       <div className="flex flex-wrap items-center gap-3">
         <select
           value={kind}
@@ -160,7 +160,7 @@ function ItemForm({
         <button
           onClick={save}
           disabled={busy}
-          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
         >
           {item ? "Lưu mục" : "+ Thêm mục"}
         </button>
@@ -217,7 +217,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
         {!adding && !editing && (
           <button
             onClick={() => setAdding(true)}
-            className="ml-auto rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+            className="ml-auto rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             + Thêm mục
           </button>
@@ -381,7 +381,7 @@ function ChapterLessonsEditor({
         />
         <button
           type="submit"
-          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
         >
           + Thêm bài
         </button>
@@ -399,7 +399,7 @@ function ChapterLessonsEditor({
               onClick={() => setOpenLesson(l)}
               className="min-w-0 flex-1 text-left"
             >
-              <span className="block truncate font-medium text-white hover:text-[#3B82F6]">
+              <span className="block truncate font-medium text-white hover:text-primary">
                 {l.title}
               </span>
               <span className="text-xs text-slate-500">{l.itemCount} mục</span>
@@ -592,7 +592,7 @@ export default function LessonsAdmin() {
           <button
             type="submit"
             disabled={!selectedClassId}
-            className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+            className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             + Thêm chương
           </button>
@@ -619,18 +619,45 @@ export default function LessonsAdmin() {
               onClick={() => setOpenChapter(ch)}
               className="min-w-0 flex-1 text-left"
             >
-              <span className="block truncate font-medium text-white hover:text-[#3B82F6]">
+              <span className="block truncate font-medium text-white hover:text-primary">
                 {ch.title}
               </span>
               <span className="text-xs text-slate-500">
                 {ch.classIds.length === 0
-                  ? "Toàn trường"
-                  : selectedClass
-                    ? `Lớp ${selectedClass.name}`
-                    : `${ch.classIds.length} lớp`}
+                  ? "Toàn trường — chưa gán lớp"
+                  : classes
+                      .filter((c) => ch.classIds.includes(c.id))
+                      .map((c) => c.name)
+                      .join(", ")}
               </span>
             </button>
             <span className="flex items-center gap-1">
+              {selectedClassId !== null && (
+                <button
+                  onClick={async () => {
+                    const has = ch.classIds.includes(selectedClassId);
+                    const nextIds = has
+                      ? ch.classIds.filter((id) => id !== selectedClassId)
+                      : [...ch.classIds, selectedClassId];
+                    await setItemClasses("chapter_classes", "chapter_id", ch.id, nextIds);
+                    reload();
+                  }}
+                  title={
+                    ch.classIds.includes(selectedClassId)
+                      ? `Bỏ khỏi lớp ${selectedClass?.name}`
+                      : `Gán vào lớp ${selectedClass?.name}`
+                  }
+                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${
+                    ch.classIds.includes(selectedClassId)
+                      ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200"
+                      : "border-white/15 text-slate-300 hover:border-white/30"
+                  }`}
+                >
+                  {ch.classIds.includes(selectedClassId)
+                    ? `✓ ${selectedClass?.name}`
+                    : `+ ${selectedClass?.name}`}
+                </button>
+              )}
               <button onClick={() => move(idx, -1)} title="Lên" className={chipBtn}>
                 ↑
               </button>

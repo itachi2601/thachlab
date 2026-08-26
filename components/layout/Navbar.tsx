@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { ChevronRight, Menu, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, ChevronRight, LayoutDashboard, LogOut, Menu, ShieldCheck, User, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 const links = [
-  { label: "Lớp học", href: "/lop-hoc" },
-  { label: "Đề thi", href: "/kiem-tra" },
+  { label: "THPT", href: "/lop-hoc" },
+  { label: "CTTC", href: "/lop-hoc?tab=cttc" },
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/#about" },
@@ -16,9 +17,22 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { session, profile } = useAuth();
+  const { session, profile, signOut } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const accountMenuRef = useRef<HTMLDivElement>(null);
+  const isStaff = profile?.role === "admin" || profile?.role === "instructor";
+
+  useEffect(() => {
+    if (!accountMenuOpen) return;
+    function onClickOutside(event: MouseEvent) {
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target as Node)) setAccountMenuOpen(false);
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [accountMenuOpen]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
@@ -43,36 +57,71 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          {session && profile?.role === "admin" && (
-            <li>
-              <Link
-                href="/dashboard"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-              >
-                Dashboard giáo viên
-              </Link>
-            </li>
-          )}
-          {profile?.role === "admin" && (
-            <li>
-              <Link
-                href="/quan-tri"
-                className="text-sm font-medium text-[#22D3EE] transition-colors hover:text-white"
-              >
-                Quản trị
-              </Link>
-            </li>
-          )}
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle />
           {session ? (
-            <Link
-              href="/tai-khoan"
-              className="rounded-full bg-[#2563EB]/15 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-[#2563EB]/25"
-            >
-              {profile?.full_name?.split(" ").pop() ?? "Tài khoản"}
-            </Link>
+            <div className="relative" ref={accountMenuRef}>
+              <button
+                type="button"
+                aria-expanded={accountMenuOpen}
+                aria-haspopup="menu"
+                onClick={() => setAccountMenuOpen((open) => !open)}
+                className="flex items-center gap-1.5 rounded-full bg-[#2563EB]/15 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-[#2563EB]/25"
+              >
+                {profile?.full_name?.split(" ").pop() ?? "Tài khoản"}
+                <ChevronDown size={15} className={`transition-transform ${accountMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+              {accountMenuOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 top-[calc(100%+8px)] w-56 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50"
+                >
+                  <Link
+                    href="/tai-khoan"
+                    onClick={() => setAccountMenuOpen(false)}
+                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                  >
+                    <User size={16} /> Tài khoản của tôi
+                  </Link>
+                  {isStaff && profile?.admin_area !== "thpt" && (
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <LayoutDashboard size={16} /> Dashboard giáo viên · CTTC
+                    </Link>
+                  )}
+                  {isStaff && profile?.admin_area !== "cttc" && (
+                    <Link
+                      href="/dashboard-thpt"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <LayoutDashboard size={16} /> Dashboard giáo viên · THPT
+                    </Link>
+                  )}
+                  {profile?.role === "admin" && (
+                    <Link
+                      href="/quan-tri"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[#22D3EE] transition-colors hover:bg-cyan-400/10"
+                    >
+                      <ShieldCheck size={16} /> Quản trị
+                    </Link>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => { setAccountMenuOpen(false); void signOut().then(() => router.push("/")); }}
+                    className="flex w-full items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/10"
+                  >
+                    <LogOut size={16} /> Đăng xuất
+                  </button>
+                </div>
+              )}
+            </div>
           ) : (
             <>
               <Link
@@ -133,31 +182,6 @@ export default function Navbar() {
                 );
               })}
 
-              {session && profile?.role === "admin" && (
-                <li>
-                  <Link
-                    href="/dashboard"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
-                  >
-                    Dashboard giáo viên
-                    <ChevronRight size={18} className="text-slate-500" />
-                  </Link>
-                </li>
-              )}
-
-              {profile?.role === "admin" && (
-                <li>
-                  <Link
-                    href="/quan-tri"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex min-h-12 items-center justify-between rounded-xl bg-cyan-400/10 px-4 py-3 text-[15px] font-semibold text-[#22D3EE] transition-colors hover:bg-cyan-400/15"
-                  >
-                    Quản trị
-                    <ChevronRight size={18} />
-                  </Link>
-                </li>
-              )}
             </ul>
           </div>
         )}

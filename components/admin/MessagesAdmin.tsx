@@ -21,7 +21,7 @@ interface SentMessage {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
 export default function MessagesAdmin() {
   const { session } = useAuth();
@@ -99,7 +99,7 @@ export default function MessagesAdmin() {
         <select
           value={target}
           onChange={(e) => setTarget(e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-2.5 text-white focus:border-[#3B82F6] focus:outline-none"
+          className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-2.5 text-white focus:border-primary focus:outline-none"
         >
           <option value="all">📢 Toàn bộ học sinh</option>
           {classes.map((c) => (
@@ -132,7 +132,7 @@ export default function MessagesAdmin() {
         <button
           type="submit"
           disabled={busy}
-          className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+          className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
         >
           {busy ? "Đang gửi…" : "Gửi"}
         </button>

@@ -34,7 +34,7 @@ export default function QuestionCard({
   return (
     <div className={`rounded-2xl border bg-[#0B1020] p-5 ${border}`}>
       <p className="exam-content font-medium text-slate-100">
-        <span className="mr-1 font-semibold text-[#3B82F6]">Câu {index}.</span>
+        <span className="mr-1 font-semibold text-primary">Câu {index}.</span>
         <Html html={q.question} />
       </p>
 
@@ -52,7 +52,7 @@ export default function QuestionCard({
                     ? "border-red-500/50 bg-red-500/10 text-red-200"
                     : "border-white/5 text-slate-400";
             } else if (picked) {
-              cls = "border-[#3B82F6] bg-[#3B82F6]/15 text-white";
+              cls = "border-primary bg-primary/15 text-white";
             }
             return (
               <button
@@ -89,7 +89,7 @@ export default function QuestionCard({
                   {([true, false] as const).map((val) => {
                     const chosen = pick === val;
                     let cls = chosen
-                      ? "bg-[#3B82F6] text-white"
+                      ? "bg-primary text-white"
                       : "bg-white/10 text-slate-400 hover:bg-white/20";
                     if (review) {
                       if (val === st.answer)
@@ -147,7 +147,7 @@ export default function QuestionCard({
                 onChange?.(v);
               }}
               placeholder="Đáp án (tối đa 4 ký tự)"
-              className="w-48 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 font-mono text-white placeholder:text-sm placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none"
+              className="w-48 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 font-mono text-white placeholder:text-sm placeholder:text-slate-500 focus:border-primary focus:outline-none"
             />
           )}
         </div>
@@ -165,7 +165,7 @@ export default function QuestionCard({
 
       {review && q.explanation && (
         <div className="mt-3 rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-300">
-          <span className="font-semibold text-[#22D3EE]">Lời giải: </span>
+          <span className="font-semibold text-cyan">Lời giải: </span>
           <Html html={q.explanation} />
         </div>
       )}

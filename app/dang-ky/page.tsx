@@ -9,7 +9,7 @@ import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
 import { exportStudentToExcel } from "@/services/excel-export";
 
-const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-[#3B82F6] focus:outline-none placeholder:text-slate-600";
+const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -232,7 +232,7 @@ export default function RegisterPage() {
             <button
               onClick={handleConfirm}
               disabled={busy}
-              className="flex-1 rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+              className="flex-1 rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
             >
               {busy ? "Đang xử lý…" : "Xác nhận & Download Excel"}
             </button>
@@ -383,14 +383,14 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+            className="w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
           >
             {busy ? "Đang xử lý…" : "Tiếp tục"}
           </button>
 
           <p className="text-center text-sm text-slate-400">
             Đã có tài khoản?{" "}
-            <Link href="/dang-nhap" className="text-[#3B82F6] hover:underline">
+            <Link href="/dang-nhap" className="text-primary hover:underline">
               Đăng nhập
             </Link>
           </p>

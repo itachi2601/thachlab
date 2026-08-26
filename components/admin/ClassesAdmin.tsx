@@ -68,7 +68,7 @@ export default function ClassesAdmin() {
           type="button"
           onClick={syncManagedClasses}
           disabled={busy}
-          className="mt-4 rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+          className="mt-4 rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
         >
           {busy ? "Đang chuẩn hóa..." : "Tạo/cập nhật 4 lớp khối"}
         </button>

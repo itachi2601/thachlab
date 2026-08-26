@@ -81,7 +81,7 @@ export default function ResultsAdmin() {
           onChange={(e) =>
             setExamFilter(e.target.value === "all" ? "all" : Number(e.target.value))
           }
-          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-[#3B82F6] focus:outline-none"
+          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           <option value="all">Tất cả đề</option>
           {examOptions.map(([id, title]) => (
@@ -93,7 +93,7 @@ export default function ResultsAdmin() {
         <select
           value={classFilter}
           onChange={(e) => setClassFilter(e.target.value)}
-          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-[#3B82F6] focus:outline-none"
+          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           <option value="all">Tất cả lớp</option>
           {classOptions.map((c) => (

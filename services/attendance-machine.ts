@@ -42,6 +42,16 @@ export async function fetchAllMachines() {
   return (data ?? []) as Machine[];
 }
 
+export async function createMachine(input: Pick<Machine, "code" | "label" | "machine_type" | "workshop">) {
+  const { error } = await getSupabase().from("machines").insert({ ...input, status: "ok", note: "", is_active: true });
+  if (error) throw error;
+}
+
+export async function updateMachineInfo(code: string, patch: Partial<Pick<Machine, "label" | "machine_type" | "workshop" | "is_active">>) {
+  const { error } = await getSupabase().from("machines").update(patch).eq("code", code);
+  if (error) throw error;
+}
+
 export function groupMachinesByType(machines: Machine[]) {
   return MACHINE_TYPE_ORDER
     .map((type) => ({ type, label: MACHINE_TYPE_LABELS[type], machines: machines.filter((m) => m.machine_type === type) }))
@@ -51,6 +61,31 @@ export function groupMachinesByType(machines: Machine[]) {
 export function groupMachinesByWorkshop(machines: Machine[]) {
   const workshops = [...new Set(machines.map((m) => m.workshop))].sort();
   return workshops.map((workshop) => ({ workshop, machines: machines.filter((m) => m.workshop === workshop) }));
+}
+
+export async function fetchSessionMachineCodes(sessionId: number) {
+  const { data, error } = await getSupabase().from("attendance_session_machines").select("machine_code").eq("session_id", sessionId);
+  if (error) throw error;
+  return (data ?? []).map((row) => row.machine_code as string);
+}
+
+export async function fetchSessionMachines(sessionId: number) {
+  const codes = await fetchSessionMachineCodes(sessionId);
+  if (!codes.length) return [];
+  const { data, error } = await getSupabase().from("machines").select(MACHINE_FIELDS).in("code", codes).order("machine_type").order("code");
+  if (error) throw error;
+  return (data ?? []) as Machine[];
+}
+
+export async function setSessionMachines(sessionId: number, workshop: string, machineCodes: string[]) {
+  const supabase = getSupabase();
+  const { error: workshopError } = await supabase.from("attendance_sessions").update({ workshop }).eq("id", sessionId);
+  if (workshopError) throw workshopError;
+  const { error: deleteError } = await supabase.from("attendance_session_machines").delete().eq("session_id", sessionId);
+  if (deleteError) throw deleteError;
+  if (!machineCodes.length) return;
+  const { error: insertError } = await supabase.from("attendance_session_machines").insert(machineCodes.map((machine_code) => ({ session_id: sessionId, machine_code })));
+  if (insertError) throw insertError;
 }
 
 const BUCKET = "attendance-machine-photos";
@@ -88,12 +123,6 @@ export async function selectAttendanceMachine(sessionId: number, machineCode: st
 
 export async function isPhotoDutyMachine(sessionId: number, machineCode: string) {
   const { data, error } = await getSupabase().rpc("is_photo_duty_machine", { p_session_id: sessionId, p_machine_code: machineCode });
-  if (error) throw error;
-  return Boolean(data);
-}
-
-export async function isPhotoDutyWorkshop(sessionId: number) {
-  const { data, error } = await getSupabase().rpc("is_photo_duty_workshop", { p_session_id: sessionId });
   if (error) throw error;
   return Boolean(data);
 }

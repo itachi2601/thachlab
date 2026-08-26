@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import AuthProvider from "@/components/auth/AuthProvider";
 import ToastProvider from "@/components/ui/Toast";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thachlab.id.vn"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "ThachLab — Vật lý không chỉ là công thức",
     template: "%s | ThachLab",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     title: "ThachLab — Vật lý không chỉ là công thức",
     description:
       "Living between equation and motion. Học Vật lý cùng thầy Thạch: hiểu bản chất, không học vẹt.",
-    url: "https://thachlab.id.vn",
+    url: SITE_URL,
     siteName: "ThachLab",
     locale: "vi_VN",
     type: "website",
@@ -60,8 +61,8 @@ const orgJsonLd = {
   "@type": "EducationalOrganization",
   name: "ThachLab",
   alternateName: "Trung tâm Vật lý thầy Thạch",
-  url: "https://thachlab.id.vn",
-  logo: "https://thachlab.id.vn/images/logo.png",
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.png`,
   description:
     "Trung tâm luyện thi Vật lý THPT theo chương trình GDPT 2018 — học offline kết hợp hệ thống luyện đề online.",
   sameAs: ["https://www.facebook.com/thachlab"],
@@ -73,7 +74,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className="h-full antialiased">
+    <html lang="vi" className="h-full antialiased" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

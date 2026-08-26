@@ -26,7 +26,7 @@ export function useToast() {
 const COLORS: Record<ToastItem["kind"], string> = {
   success: "border-emerald-500/40 text-emerald-200",
   error: "border-red-500/40 text-red-200",
-  info: "border-[#3B82F6]/40 text-slate-200",
+  info: "border-primary/40 text-slate-200",
   warning: "border-amber-500/40 text-amber-200",
 };
 

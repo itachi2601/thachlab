@@ -49,7 +49,7 @@ function VideoCard({
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B1020]">
       <div className="flex flex-wrap items-stretch">
-        <div className="relative flex min-h-36 w-full items-center justify-center bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] sm:w-56">
+        <div className="relative flex min-h-36 w-full items-center justify-center bg-gradient-to-br from-[#2563EB] to-primary-dark sm:w-56">
           {thumb ? (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img

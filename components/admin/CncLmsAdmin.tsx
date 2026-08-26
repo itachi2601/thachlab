@@ -3,12 +3,18 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   CNC_COURSE_ITEMS,
-  CNC_GATE_QUIZ,
   CNC_PROGRESS,
   CNC_SETUP_CHECKLIST,
-  type CncGateQuizQuestion,
   type CncCourseItem,
 } from "@/services/cnc-lms";
+import {
+  fetchCncExamBankMeta,
+  fetchCncExamRow,
+  type CncExamBankMeta,
+} from "@/services/cnc-exam-bank";
+import type { Exam } from "@/features/exams/types";
+import ImportExam from "@/components/admin/ImportExam";
+import ExamEditor from "@/components/admin/ExamEditor";
 import { useToast } from "@/components/ui/Toast";
 import {
   deleteCncLessonFile,
@@ -43,14 +49,6 @@ type EditableCncItem = {
   };
 };
 
-type EditableGateQuestion = {
-  id: string;
-  question: string;
-  options: string[];
-  correctIndex: number;
-  explanation: string;
-};
-
 function normalizeItem(item: CncCourseItem): EditableCncItem {
   return {
     id: item.id,
@@ -66,16 +64,6 @@ function normalizeItem(item: CncCourseItem): EditableCncItem {
       "assignment" in item && item.assignment
         ? { ...item.assignment }
         : undefined,
-  };
-}
-
-function normalizeQuestion(question: CncGateQuizQuestion): EditableGateQuestion {
-  return {
-    id: question.id,
-    question: question.question,
-    options: [...question.options],
-    correctIndex: question.correctIndex,
-    explanation: question.explanation,
   };
 }
 
@@ -97,9 +85,17 @@ export default function CncLmsAdmin() {
   );
   const [activeId, setActiveId] = useState(items[0]?.id ?? "intro");
   const [checklist, setChecklist] = useState([...CNC_SETUP_CHECKLIST]);
-  const [gateQuiz, setGateQuiz] = useState<EditableGateQuestion[]>(
-    CNC_GATE_QUIZ.map(normalizeQuestion),
-  );
+  const [bankMeta, setBankMeta] = useState<CncExamBankMeta[]>([]);
+  const [importBank, setImportBank] = useState<{ key: string; label: string } | null>(null);
+  const [editingBank, setEditingBank] = useState<{ key: string; label: string } | null>(null);
+  const [editingExam, setEditingExam] = useState<Exam | null>(null);
+  const loadBankMeta = () => void fetchCncExamBankMeta().then(setBankMeta).catch(() => undefined);
+  useEffect(() => { loadBankMeta(); }, []);
+  async function openBankEditor(bank: { key: string; label: string }) {
+    const row = await fetchCncExamRow(bank.key).catch(() => null);
+    setEditingBank(bank);
+    setEditingExam(row);
+  }
   const [turningQuizScore, setTurningQuizScore] = useState(
     CNC_PROGRESS.turningQuizScore,
   );
@@ -330,7 +326,6 @@ export default function CncLmsAdmin() {
         millingOperationPassed,
       },
       setupChecklist: checklist,
-      gateQuiz,
       courseItems: items,
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
@@ -344,15 +339,11 @@ export default function CncLmsAdmin() {
     URL.revokeObjectURL(url);
   }
 
-  function updateGateQuestion(
-    questionId: string,
-    patch: Partial<EditableGateQuestion>,
-  ) {
-    setGateQuiz((current) =>
-      current.map((question) =>
-        question.id === questionId ? { ...question, ...patch } : question,
-      ),
-    );
+  if (importBank) {
+    return <ImportExam cncBank={importBank} onDone={() => { setImportBank(null); loadBankMeta(); }} />;
+  }
+  if (editingBank) {
+    return <ExamEditor exam={editingExam} cncBank={editingBank} onDone={() => { setEditingBank(null); setEditingExam(null); loadBankMeta(); }} />;
   }
 
   if (!activeItem) {
@@ -376,7 +367,7 @@ export default function CncLmsAdmin() {
             <button
               type="button"
               onClick={() => toast("success", "Đã lưu bản nháp LMS CNC trên giao diện.")}
-              className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-[#1D4ED8]"
+              className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
             >
               Lưu bản nháp
             </button>
@@ -482,7 +473,7 @@ export default function CncLmsAdmin() {
                 onClick={() => setActiveId(item.id)}
                 className={`w-full rounded-xl border px-3 py-3 text-left transition-colors ${
                   activeItem.id === item.id
-                    ? "border-[#3B82F6]/70 bg-[#3B82F6]/15"
+                    ? "border-primary/70 bg-primary/15"
                     : "border-white/10 bg-white/5 hover:bg-white/10"
                 }`}
               >
@@ -665,93 +656,44 @@ export default function CncLmsAdmin() {
       </section>
 
       <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h3 className="font-display text-lg font-semibold text-white">
-              Bộ 10 câu Quiz chốt chặn
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Đây là bài kiểm tra điều kiện trước khi sinh viên được lên máy.
-              Logic đạt: đúng toàn bộ {gateQuiz.length}/{gateQuiz.length} câu.
-            </p>
-          </div>
-          <span className="w-fit rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-200">
-            Bắt buộc đạt tuyệt đối
-          </span>
-        </div>
-
-        <div className="mt-5 space-y-4">
-          {gateQuiz.map((question, questionIndex) => (
-            <div
-              key={question.id}
-              className="rounded-2xl border border-white/10 bg-white/5 p-4"
-            >
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
-                <label className="flex-1 text-sm text-slate-300">
-                  Câu {questionIndex + 1}
-                  <textarea
-                    value={question.question}
-                    onChange={(event) =>
-                      updateGateQuestion(question.id, {
-                        question: event.target.value,
-                      })
-                    }
-                    rows={2}
-                    className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                  />
-                </label>
-                <label className="text-sm text-slate-300 lg:w-44">
-                  Đáp án đúng
-                  <select
-                    value={question.correctIndex}
-                    onChange={(event) =>
-                      updateGateQuestion(question.id, {
-                        correctIndex: Number(event.target.value),
-                      })
-                    }
-                    className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
+        <h3 className="font-display text-lg font-semibold text-white">
+          Ngân hàng câu hỏi CNC
+        </h3>
+        <p className="mt-2 text-sm leading-6 text-slate-400">
+          Câu hỏi trắc nghiệm của từng bài — bấm &quot;Cập nhật qua LaTeX&quot; để dán file
+          LaTeX thay cả ngân hàng (xem hướng dẫn định dạng ngay trong đó), hoặc bấm &quot;Xem/sửa&quot;
+          để sửa nhanh từng câu.
+        </p>
+        <div className="mt-4 space-y-2">
+          {bankMeta.map((bank) => (
+            <div key={bank.key} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
+              <div>
+                <strong className="text-sm text-white">{bank.label}</strong>
+                <p className="mt-0.5 text-xs text-slate-500">{bank.questionCount} câu{!bank.examId && " · chưa có dữ liệu"}</p>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setImportBank({ key: bank.key, label: bank.label })}
+                  className="rounded-lg border border-orange-400/30 bg-orange-500/10 px-3 py-1.5 text-xs font-bold text-orange-200 hover:bg-orange-500/20"
+                >
+                  Cập nhật qua LaTeX
+                </button>
+                {bank.examId && (
+                  <button
+                    type="button"
+                    onClick={() => void openBankEditor({ key: bank.key, label: bank.label })}
+                    className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-bold text-slate-300 hover:bg-white/10"
                   >
-                    {question.options.map((_, optionIndex) => (
-                      <option key={optionIndex} value={optionIndex}>
-                        Đáp án {optionIndex + 1}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                    Xem/sửa
+                  </button>
+                )}
               </div>
-
-              <div className="mt-3 grid gap-3 md:grid-cols-2">
-                {question.options.map((option, optionIndex) => (
-                  <label key={optionIndex} className="text-sm text-slate-300">
-                    Lựa chọn {optionIndex + 1}
-                    <input
-                      value={option}
-                      onChange={(event) => {
-                        const nextOptions = [...question.options];
-                        nextOptions[optionIndex] = event.target.value;
-                        updateGateQuestion(question.id, { options: nextOptions });
-                      }}
-                      className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                    />
-                  </label>
-                ))}
-              </div>
-
-              <label className="mt-3 block text-sm text-slate-300">
-                Giải thích khi làm sai
-                <textarea
-                  value={question.explanation}
-                  onChange={(event) =>
-                    updateGateQuestion(question.id, {
-                      explanation: event.target.value,
-                    })
-                  }
-                  rows={2}
-                  className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"
-                />
-              </label>
             </div>
           ))}
+          {!bankMeta.length && (
+            <p className="text-sm text-slate-500">Đang tải danh sách ngân hàng câu hỏi…</p>
+          )}
         </div>
       </section>
     </div>
@@ -907,7 +849,7 @@ function CncFilesAdmin({
   const materials = files.filter((file) => file.kind === "material");
 
   return (
-    <section className="rounded-2xl border border-[#3B82F6]/30 bg-[#3B82F6]/10 p-5">
+    <section className="rounded-2xl border border-primary/30 bg-primary/10 p-5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-bold tracking-wide text-[#93C5FD] uppercase">
@@ -989,7 +931,7 @@ function FileUploadPanel({
         </div>
       </div>
 
-      <label className={`mt-4 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 px-4 py-4 text-center text-xs font-semibold text-slate-300 hover:border-[#3B82F6]/60 hover:bg-[#3B82F6]/10 ${busy ? "pointer-events-none opacity-60" : ""}`}>
+      <label className={`mt-4 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 px-4 py-4 text-center text-xs font-semibold text-slate-300 hover:border-primary/60 hover:bg-primary/10 ${busy ? "pointer-events-none opacity-60" : ""}`}>
         {busy ? "Đang tải tệp lên…" : "+ Chọn tệp để tải lên"}
         <input
           type="file"

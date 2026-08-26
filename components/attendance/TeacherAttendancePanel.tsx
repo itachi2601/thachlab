@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertOctagon, AlertTriangle, Camera, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, Unlock, UserCheck, Users, Wrench, X, XCircle } from "lucide-react";
+import { AlertOctagon, AlertTriangle, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Save, Search, ShieldCheck, Unlock, UserCheck, Users, Wrench, X, XCircle } from "lucide-react";
 import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, setMachineSelectionOpen, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
-import { createAttendanceMachinePhotoUrl, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchMachines, groupMachinesByType, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
+import { createAttendanceMachinePhotoUrl, fetchAllMachines, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchSessionMachines, groupMachinesByType, groupMachinesByWorkshop, setSessionMachines, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
 import { createEquipmentBreakdownPhotoUrl, fetchAdminProfiles, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, startEquipmentRepair, type AdminProfile, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
 import { useAuth } from "@/components/auth/AuthProvider";
 
@@ -21,10 +21,11 @@ const statusMeta:Record<AttendanceStatus,{label:string;short:string;code:string;
 export default function TeacherAttendancePanel({courseId,students,workshop}:{courseId:number;students:Student[];workshop?:string}){
   const{profile}=useAuth();
   const[view,setView]=useState<"live"|"machines"|"summary">("live");
-  const[sessions,setSessions]=useState<AttendanceSession[]>([]);const[selectedId,setSelectedId]=useState<number|null>(null);const[records,setRecords]=useState<AttendanceRecord[]>([]);const[allRecords,setAllRecords]=useState<AttendanceRecord[]>([]);const[creating,setCreating]=useState(false);const[busy,setBusy]=useState(false);const[error,setError]=useState("");const[search,setSearch]=useState("");const[copied,setCopied]=useState(false);const[noteDraft,setNoteDraft]=useState("");const[bonusDrafts,setBonusDrafts]=useState<Record<string,string>>({});const[recordNoteDrafts,setRecordNoteDrafts]=useState<Record<string,string>>({});const[machinePhotos,setMachinePhotos]=useState<AttendanceMachinePhoto[]>([]);const[machineScores,setMachineScores]=useState<AttendanceMachineScore[]>([]);const[breakdowns,setBreakdowns]=useState<EquipmentBreakdownReport[]>([]);const[machines,setMachines]=useState<Machine[]>([]);const[lecturers,setLecturers]=useState<AdminProfile[]>([]);
+  const[sessions,setSessions]=useState<AttendanceSession[]>([]);const[selectedId,setSelectedId]=useState<number|null>(null);const[records,setRecords]=useState<AttendanceRecord[]>([]);const[allRecords,setAllRecords]=useState<AttendanceRecord[]>([]);const[creating,setCreating]=useState(false);const[busy,setBusy]=useState(false);const[error,setError]=useState("");const[search,setSearch]=useState("");const[copied,setCopied]=useState(false);const[noteDraft,setNoteDraft]=useState("");const[bonusDrafts,setBonusDrafts]=useState<Record<string,string>>({});const[recordNoteDrafts,setRecordNoteDrafts]=useState<Record<string,string>>({});const[machinePhotos,setMachinePhotos]=useState<AttendanceMachinePhoto[]>([]);const[machineScores,setMachineScores]=useState<AttendanceMachineScore[]>([]);const[breakdowns,setBreakdowns]=useState<EquipmentBreakdownReport[]>([]);const[sessionMachineList,setSessionMachineList]=useState<Machine[]>([]);const[lecturers,setLecturers]=useState<AdminProfile[]>([]);
   const loadBreakdowns=useCallback(()=>void fetchEquipmentBreakdownReports(courseId).then(setBreakdowns).catch(()=>undefined),[courseId]);
   useEffect(()=>{loadBreakdowns()},[loadBreakdowns]);
-  useEffect(()=>{void fetchMachines(workshop).then(setMachines).catch(()=>undefined)},[workshop]);
+  const loadSessionMachines=useCallback(()=>{if(!selectedId){setSessionMachineList([]);return}void fetchSessionMachines(selectedId).then(setSessionMachineList).catch(()=>undefined)},[selectedId]);
+  useEffect(()=>{loadSessionMachines()},[loadSessionMachines]);
   useEffect(()=>{void fetchAdminProfiles().then(setLecturers).catch(()=>undefined)},[]);
   const now=new Date();const[title,setTitle]=useState("Thực hành CNC");const[startsAt,setStartsAt]=useState(new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16));
   const selected=sessions.find(item=>item.id===selectedId)??null;
@@ -98,7 +99,7 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
         </div>
 
         <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2"><Search size={15} className="text-slate-500"/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Tìm sinh viên theo tên hoặc lớp…" className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"/></div>
-        <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[1050px] text-left text-sm"><thead><tr className="border-b border-white/10 text-xs uppercase text-slate-500"><th className="p-3">Sinh viên</th><th className="p-3">Thời gian</th><th className="p-3">Điểm danh</th><th className="p-3">Máy</th><th className="p-3">Điểm cộng/trừ</th><th className="p-3">Ghi chú</th></tr></thead><tbody>{visibleStudents.map(student=>{const record=records.find(item=>item.student_id===student.id);const bonusValue=bonusDrafts[student.id]??String(record?.bonus_points??0);const noteValue=recordNoteDrafts[student.id]??record?.note??"";const bonusNum=Number(bonusValue)||0;return <tr key={student.id} className="border-b border-white/5"><td className="p-3"><strong className="text-white">{student.name}</strong><small className="block text-slate-500">{student.className}</small></td><td className="p-3 text-slate-400">{record?.checked_in_at?new Date(record.checked_in_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}):"—"}</td><td className="p-3"><select disabled={busy} value={record?.status??""} onChange={e=>void mark(student.id,e.target.value as AttendanceStatus)} className={`rounded-lg border bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 ${record?statusMeta[record.status].style:"text-slate-500"} border-white/10`}><option value="" disabled>Chọn</option>{Object.entries(statusMeta).map(([value,meta])=><option key={value} value={value}>{meta.label}</option>)}</select></td><td className="p-3"><select disabled={!record||busy} title={!record?"Điểm danh trước khi gán máy":""} value={record?.machine_code??""} onChange={e=>void assignMachine(student.id,e.target.value)} className="rounded-lg border border-white/10 bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold text-slate-300 disabled:cursor-not-allowed disabled:opacity-30"><option value="">— Chưa chọn —</option>{groupMachinesByType(machines).map(group=><optgroup key={group.type} label={group.label}>{group.machines.map(m=><option key={m.code} value={m.code} title={m.label}>{m.code}</option>)}</optgroup>)}</select></td><td className="p-3"><input type="number" step={1} disabled={!record} title={!record?"Điểm danh trước khi cộng/trừ điểm":""} value={bonusValue} onChange={e=>setBonusDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentBonus(student.id)} className={`w-20 rounded-lg border bg-[#080d1d] px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum>0?"border-emerald-400/30 text-emerald-300":bonusNum<0?"border-red-400/30 text-red-300":"border-white/10 text-slate-300"}`}/></td><td className="p-3"><input type="text" disabled={!record} title={!record?"Điểm danh trước khi ghi chú":""} value={noteValue} onChange={e=>setRecordNoteDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentNote(student.id)} placeholder={record?"Ghi chú…":"—"} className="w-40 rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"/></td></tr>})}{!visibleStudents.length&&<tr><td colSpan={6} className="p-6 text-center text-sm text-slate-500">Không tìm thấy sinh viên phù hợp.</td></tr>}</tbody></table></div>
+        <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[1050px] text-left text-sm"><thead><tr className="border-b border-white/10 text-xs uppercase text-slate-500"><th className="p-3">Sinh viên</th><th className="p-3">Thời gian</th><th className="p-3">Điểm danh</th><th className="p-3">Máy</th><th className="p-3">Điểm cộng/trừ</th><th className="p-3">Ghi chú</th></tr></thead><tbody>{visibleStudents.map(student=>{const record=records.find(item=>item.student_id===student.id);const bonusValue=bonusDrafts[student.id]??String(record?.bonus_points??0);const noteValue=recordNoteDrafts[student.id]??record?.note??"";const bonusNum=Number(bonusValue)||0;return <tr key={student.id} className="border-b border-white/5"><td className="p-3"><strong className="text-white">{student.name}</strong><small className="block text-slate-500">{student.className}</small></td><td className="p-3 text-slate-400">{record?.checked_in_at?new Date(record.checked_in_at).toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}):"—"}</td><td className="p-3"><select disabled={busy} value={record?.status??""} onChange={e=>void mark(student.id,e.target.value as AttendanceStatus)} className={`rounded-lg border bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 ${record?statusMeta[record.status].style:"text-slate-500"} border-white/10`}><option value="" disabled>Chọn</option>{Object.entries(statusMeta).map(([value,meta])=><option key={value} value={value}>{meta.label}</option>)}</select></td><td className="p-3"><select disabled={!record||busy} title={!record?"Điểm danh trước khi gán máy":!sessionMachineList.length?"Giáo viên chưa chọn máy cho buổi này":""} value={record?.machine_code??""} onChange={e=>void assignMachine(student.id,e.target.value)} className="rounded-lg border border-white/10 bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold text-slate-300 disabled:cursor-not-allowed disabled:opacity-30"><option value="">— Chưa chọn —</option>{groupMachinesByType(sessionMachineList).map(group=><optgroup key={group.type} label={group.label}>{group.machines.map(m=><option key={m.code} value={m.code} title={m.label}>{m.code}</option>)}</optgroup>)}</select></td><td className="p-3"><input type="number" step={1} disabled={!record} title={!record?"Điểm danh trước khi cộng/trừ điểm":""} value={bonusValue} onChange={e=>setBonusDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentBonus(student.id)} className={`w-20 rounded-lg border bg-[#080d1d] px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum>0?"border-emerald-400/30 text-emerald-300":bonusNum<0?"border-red-400/30 text-red-300":"border-white/10 text-slate-300"}`}/></td><td className="p-3"><input type="text" disabled={!record} title={!record?"Điểm danh trước khi ghi chú":""} value={noteValue} onChange={e=>setRecordNoteDrafts(current=>({...current,[student.id]:e.target.value}))} onBlur={()=>void saveStudentNote(student.id)} placeholder={record?"Ghi chú…":"—"} className="w-40 rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"/></td></tr>})}{!visibleStudents.length&&<tr><td colSpan={6} className="p-6 text-center text-sm text-slate-500">Không tìm thấy sinh viên phù hợp.</td></tr>}</tbody></table></div>
       </>:<div className="mt-5 grid min-h-72 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><CalendarCheck size={30}/><span className="mt-2">Chọn hoặc mở một phiên điểm danh.</span></div>}
     </section>}
 
@@ -113,15 +114,14 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
         </select>
         <button aria-label="Làm mới" onClick={loadMachineData} className="text-slate-400"><RefreshCw size={16}/></button>
       </div>
+      {selected&&<SessionMachineSetup session={selected} savedMachines={sessionMachineList} defaultWorkshop={workshop} onSaved={()=>{void loadSessionMachines();void loadSessions()}}/>}
       {selected&&<div className="mt-4 grid gap-3 sm:grid-cols-3">
         <SummaryMetric icon={<CalendarCheck size={16}/>} value={`${machinesFullyChecked}/${machineGroups.length}`} label="Máy đủ ảnh đầu/cuối ca"/>
         <SummaryMetric icon={<AlertTriangle size={16}/>} value={String(machineIssues)} label="Máy cần bảo trì/hỏng" danger={machineIssues>0}/>
         <SummaryMetric icon={<AlertOctagon size={16}/>} value={String(openBreakdowns)} label="Báo hỏng đang mở" danger={openBreakdowns>0}/>
       </div>}
       {selected?<div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {machineGroups.map(group=><MachineGroupCard key={group.code} courseId={courseId} sessionId={selected.id} code={group.code} label={machines.find(m=>m.code===group.code)?.label} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData} reports={breakdowns.filter(r=>r.machine_code===group.code)} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>)}
-        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="XUONG" label="Ảnh toàn xưởng" icon={Camera} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="XUONG")} onScoreSaved={loadMachineData} singlePhoto showStatus={false} reports={breakdowns.filter(r=>r.machine_code==="XUONG")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
-        <MachineGroupCard courseId={courseId} sessionId={selected.id} code="RAC" label="Ảnh thùng rác" icon={Trash2} members={[]} photos={machinePhotos} score={machineScores.find(item=>item.machine_code==="RAC")} onScoreSaved={loadMachineData} singlePhoto showStatus={false} reports={breakdowns.filter(r=>r.machine_code==="RAC")} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>
+        {machineGroups.map(group=><MachineGroupCard key={group.code} courseId={courseId} sessionId={selected.id} code={group.code} label={sessionMachineList.find(m=>m.code===group.code)?.label} members={group.members} photos={machinePhotos} score={machineScores.find(item=>item.machine_code===group.code)} onScoreSaved={loadMachineData} reports={breakdowns.filter(r=>r.machine_code===group.code)} onReported={loadBreakdowns} lecturers={lecturers} currentUserId={profile?.id??null}/>)}
         {!machineGroups.length&&<p className="rounded-xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500 sm:col-span-2 xl:col-span-1">Chưa có sinh viên nào chọn máy trong buổi này.</p>}
       </div>:<div className="mt-5 grid min-h-56 place-items-center rounded-2xl border border-dashed border-white/10 text-sm text-slate-500"><Wrench size={26}/><span className="mt-2">Chọn một buổi điểm danh để xem tình trạng máy.</span></div>}
     </section>}
@@ -178,6 +178,54 @@ function LecturerSelect({lecturers,value,onChange,placeholder}:{lecturers:AdminP
     <option value="" disabled>{placeholder}</option>
     {lecturers.map(l=><option key={l.id} value={l.id}>{l.full_name}</option>)}
   </select>;
+}
+
+function SessionMachineSetup({session,savedMachines,defaultWorkshop,onSaved}:{session:AttendanceSession;savedMachines:Machine[];defaultWorkshop?:string;onSaved:()=>void}){
+  const[allMachines,setAllMachines]=useState<Machine[]>([]);
+  const[chosenWorkshop,setChosenWorkshop]=useState(session.workshop??defaultWorkshop??"");
+  const[checked,setChecked]=useState<Set<string>>(new Set(savedMachines.map(m=>m.code)));
+  const[busy,setBusy]=useState(false);
+  const[error,setError]=useState("");
+  const[dirty,setDirty]=useState(false);
+  useEffect(()=>{void fetchAllMachines().then(setAllMachines).catch(()=>undefined)},[]);
+  useEffect(()=>{if(!dirty){setChosenWorkshop(session.workshop??defaultWorkshop??"");setChecked(new Set(savedMachines.map(m=>m.code)))}},[session.id]);// eslint-disable-line react-hooks/exhaustive-deps
+  const workshops=groupMachinesByWorkshop(allMachines);
+  const workshopMachines=allMachines.filter(m=>m.workshop===chosenWorkshop);
+  function toggle(code:string){setDirty(true);setChecked(current=>{const next=new Set(current);if(next.has(code))next.delete(code);else next.add(code);return next})}
+  function changeWorkshop(value:string){setDirty(true);setChosenWorkshop(value);setChecked(new Set())}
+  async function save(){setBusy(true);setError("");try{await setSessionMachines(session.id,chosenWorkshop,[...checked]);setDirty(false);onSaved()}catch(cause){setError(cause instanceof Error?cause.message:"Không lưu được danh sách máy.")}finally{setBusy(false)}}
+  return <div className="mt-4 rounded-2xl border border-orange-400/20 bg-orange-500/5 p-4 sm:p-5">
+    <div className="flex items-center gap-2 text-sm font-bold text-white"><Wrench size={16} className="text-orange-300"/>Xưởng &amp; máy dùng trong buổi này</div>
+    <p className="mt-1 text-xs text-slate-400">Chọn xưởng thực tập và các máy sẽ dùng hôm nay — sinh viên chỉ chọn được máy trong danh sách này. Có thể sửa lại bất cứ lúc nào trong buổi.</p>
+    <div className="mt-3 flex flex-wrap items-center gap-2">
+      <label className="text-xs font-bold text-slate-400">Xưởng thực tập</label>
+      <select value={chosenWorkshop} onChange={e=>changeWorkshop(e.target.value)} className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white">
+        <option value="" disabled>Chọn xưởng…</option>
+        {workshops.map(ws=><option key={ws.workshop} value={ws.workshop}>{ws.workshop}</option>)}
+      </select>
+    </div>
+    {chosenWorkshop&&<div className="mt-3 space-y-4">
+      {groupMachinesByType(workshopMachines).map(group=>{
+        const groupCodes=group.machines.map(m=>m.code);
+        const allChecked=groupCodes.every(code=>checked.has(code));
+        function toggleGroup(){setDirty(true);setChecked(current=>{const next=new Set(current);groupCodes.forEach(code=>allChecked?next.delete(code):next.add(code));return next})}
+        return <div key={group.type}>
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{group.label} · {group.machines.length}</p>
+            <button type="button" onClick={toggleGroup} className="text-[11px] font-bold text-cyan-300 hover:text-cyan-200">{allChecked?"Bỏ chọn nhóm":"Chọn cả nhóm"}</button>
+          </div>
+          <div className="mt-2 grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
+            {group.machines.map(m=>{const broken=m.status==="broken";return <label key={m.code} title={m.label} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-bold ${broken?"cursor-not-allowed border-white/5 text-slate-600 opacity-50":checked.has(m.code)?"cursor-pointer border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"cursor-pointer border-white/10 text-slate-300"}`}>
+              <input type="checkbox" disabled={broken} checked={checked.has(m.code)} onChange={()=>toggle(m.code)}/>{m.code}{broken&&<span className="text-[10px] font-normal text-red-300">(hỏng)</span>}
+            </label>})}
+          </div>
+        </div>;
+      })}
+      {!workshopMachines.length&&<p className="text-xs text-slate-500">Xưởng này chưa có máy nào.</p>}
+    </div>}
+    {error&&<p className="mt-2 text-xs text-red-300">{error}</p>}
+    <button type="button" disabled={busy||!chosenWorkshop} onClick={save} className="mt-3 inline-flex items-center gap-2 rounded-lg bg-orange-600 px-4 py-2 text-xs font-bold text-white disabled:opacity-40"><Save size={13}/>{busy?"Đang lưu…":"Lưu máy dùng hôm nay"}</button>
+  </div>;
 }
 
 function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,members,photos,score,onScoreSaved,singlePhoto=false,showStatus=true,reports,onReported,lecturers,currentUserId}:{courseId:number;sessionId:number;code:string;label?:string;icon?:typeof Wrench;members:{id:string;name:string}[];photos:AttendanceMachinePhoto[];score?:AttendanceMachineScore;onScoreSaved:()=>void;singlePhoto?:boolean;showStatus?:boolean;reports:EquipmentBreakdownReport[];onReported:()=>void;lecturers:AdminProfile[];currentUserId:string|null}){

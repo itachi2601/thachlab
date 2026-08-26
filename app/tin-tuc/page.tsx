@@ -50,7 +50,7 @@ function PostCard({ post }: { post: PostMeta }) {
           href={post.video_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-block text-sm text-[#3B82F6] hover:underline"
+          className="mt-4 inline-block text-sm text-primary hover:underline"
         >
           Xem video ↗
         </a>
@@ -110,7 +110,7 @@ export default function NewsPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="🔍 Tìm bài viết…"
-          className="mb-8 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none"
+          className="mb-8 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none"
         />
         {!supabaseConfigured ? (
           <p className="text-slate-400">Hệ thống đang được cấu hình.</p>

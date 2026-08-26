@@ -15,6 +15,9 @@ export interface Profile {
   full_name: string;
   class_name: string;
   role: "student" | "admin" | "instructor";
+  // Khu vực quản trị được phân công cho giảng viên (null = chưa được cấp vào /quan-tri).
+  // Chỉ áp dụng cho role "instructor" — role "admin" luôn thấy cả 2 khu vực.
+  admin_area: "thpt" | "cttc" | null;
 }
 
 interface AuthState {
@@ -68,14 +71,28 @@ export default function AuthProvider({
     let cancelled = false;
     getSupabase()
       .from("profiles")
-      .select("id, full_name, class_name, role")
+      .select("id, full_name, class_name, role, admin_area")
       .eq("id", session.user.id)
       .single()
-      .then(({ data }) => {
-        if (!cancelled) {
-          setProfile((data as Profile) ?? null);
-          setLoading(false);
+      .then(({ data, error }) => {
+        if (cancelled) return;
+        // Fallback nếu chưa chạy migration thêm cột admin_area (tránh khoá luôn tài khoản admin).
+        if (error) {
+          getSupabase()
+            .from("profiles")
+            .select("id, full_name, class_name, role")
+            .eq("id", session.user.id)
+            .single()
+            .then(({ data: fallbackData }) => {
+              if (!cancelled) {
+                setProfile(fallbackData ? ({ ...fallbackData, admin_area: null } as Profile) : null);
+                setLoading(false);
+              }
+            });
+          return;
         }
+        setProfile((data as Profile) ?? null);
+        setLoading(false);
       });
     return () => {
       cancelled = true;

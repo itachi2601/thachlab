@@ -83,7 +83,7 @@ export function ControlPanel({
       <div className="flex items-center gap-2">
         <button
           onClick={onToggle}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#2563EB] px-3 py-2 text-sm font-medium text-white transition hover:bg-[#1D4ED8] active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#2563EB] px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-dark active:scale-[0.98]"
         >
           {isPlaying ? <Pause size={15} /> : <Play size={15} />}
           {isPlaying ? "Tạm dừng" : "Phát"}
@@ -100,7 +100,7 @@ export function ControlPanel({
           aria-pressed={formulaOpen}
           className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm transition active:scale-[0.98] ${
             formulaOpen
-              ? "bg-[#FACC15] text-[#1E1300]"
+              ? "bg-accent text-[#1E1300]"
               : "border border-white/10 bg-white/[0.04] text-slate-200 hover:bg-white/[0.08]"
           }`}
         >

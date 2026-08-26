@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, CalendarCheck, Construction, Eye, GraduationCap, LayoutDashboard, Route, UserRound } from "lucide-react";
+import { Award, CalendarCheck, Construction, GraduationCap, LayoutDashboard, Route, UserRound, Users2 } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -11,7 +11,6 @@ import TeacherCompetencyHub from "@/components/dashboard/TeacherCompetencyHub";
 import TeacherOverview from "@/components/dashboard/TeacherOverview";
 import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
-import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";
 import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
 import { SUBJECTS, getSubject } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -22,7 +21,6 @@ type DashboardStudent = {
 };
 
 const roadmap = CNC_COURSE_ITEMS.filter((item)=>item.id!=="intro").map((item)=>({id:item.id,title:item.title,duration:item.duration}));
-function demoCompetencyRecords(courseId:number):CncLearningRecord[]{const now=new Date().toISOString();const assessments=[...[1,2,3,4,5].map(i=>["lesson-2",`exercise-${i}`]),...["machine-operation","tool-setup","checklist"].map(id=>["lesson-4-turn",id]),["lesson-5","final"],...[1,2,3,4,5].map(i=>["lesson-3",`exercise-${i}`])] as string[][];return assessments.map(([lesson_id,assessment_id])=>({course_id:courseId,student_id:"demo-preview",lesson_id,assessment_id,completed:true,latest_score:9,best_score:9,total_questions:10,attempt_count:1,last_activity_at:now}))}
 function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): DashboardStudent {
   const pending = row.status === "pending";
   const own = records.filter((record)=>record.student_id===row.student_id);
@@ -47,12 +45,12 @@ function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): D
 }
 
 export default function TeacherCourseDashboard() {
-  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance">("overview");
-  const [activeStudent, setActiveStudent] = useState(0);
-  const [studentPreview, setStudentPreview] = useState(false);
-  const [demoPreview,setDemoPreview]=useState(false);
   const { profile } = useAuth();
   const isInstructor = profile?.role === "instructor";
+  // Giảng viên không quen công nghệ: vào là thấy ngay điểm danh + gán máy + báo hỏng,
+  // thay vì tab Tổng quan nhiều biểu đồ/chỉ số họ chưa cần đến.
+  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance">(isInstructor?"attendance":"overview");
+  const [activeStudent, setActiveStudent] = useState(0);
   const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum) : SUBJECTS;
   const [subjectCode, setSubjectCode] = useState<string>(availableSubjects[0]?.code ?? SUBJECTS[0].code);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
@@ -99,16 +97,31 @@ export default function TeacherCourseDashboard() {
     return () => { cancelled = true; void unsubscribeFromCncLearningRecords(channel); };
   }, [selectedCourseId]);
 
-  if (studentPreview && student && selectedCourse) return <StudentLearningDashboard preview profile={{id:student.id,full_name:student.name,class_name:student.className,role:"student"}} studentId={student.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:{...selectedCourse,status:selectedCourse.status}}} records={student.records} onSignOut={()=>setStudentPreview(false)}/>;
-  if(demoPreview&&selectedCourse)return <StudentLearningDashboard preview profile={{id:"demo-preview",full_name:"Sinh viên xem thử",class_name:"CNC Demo",role:"student"}} studentId="demo-preview" enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:{...selectedCourse,status:selectedCourse.status}}} records={demoCompetencyRecords(selectedCourse.id)} onSignOut={()=>setDemoPreview(false)}/>;
-
-  return <div className="space-y-6">
+  return <div className="teacher-dashboard space-y-6">
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
       <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-orange-500/10 blur-3xl" />
-      <div className="relative flex flex-wrap items-end justify-between gap-5">
-        <div><p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Dashboard giáo viên · {subject.label}</p><h2 className="mt-2 font-display text-3xl font-bold text-white">{selectedCourse?.name ?? "Tiến độ khóa học"}</h2><p className="mt-2 text-sm text-slate-400">{selectedCourse ? `${selectedCourse.class_label || "Chưa đặt tên lớp"} · ${selectedCourse.school_year}` : "Theo dõi lộ trình, điểm chốt chặn và điều kiện lên máy của từng học sinh."}</p>{courseError&&<p className="mt-2 text-xs text-red-300">{courseError}</p>}</div>
-        <div className="flex flex-wrap gap-2">{subject.hasCurriculum&&<button disabled={!student} onClick={()=>setStudentPreview(true)} className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"><Eye size={16}/> Xem giao diện học sinh</button>}{subject.hasCurriculum&&<button disabled={!selectedCourse} onClick={()=>setDemoPreview(true)} className="inline-flex items-center gap-2 rounded-xl border border-violet-400/30 bg-violet-500/10 px-4 py-2.5 text-sm font-bold text-violet-200 disabled:opacity-40"><Award size={16}/> Xem mẫu năng lực</button>}<select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white">{availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}</select><select aria-label="Khóa học" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white"><option value="" disabled>{courses.length ? "Chọn khóa học" : "Chưa có khóa nào"}</option>{courses.map((course)=><option key={course.id} value={course.id}>{course.name} · {course.school_year}</option>)}</select></div>
+      <div className="relative">
+        <p className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Dashboard giáo viên</p>
+        <h2 className="mt-2 font-display text-2xl font-bold text-white">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
+        <p className="mt-2 text-sm text-slate-400">{selectedCourse ? `Đang xem ${selectedCourse.class_label || selectedCourse.name} · ${selectedCourse.school_year} · ${students.length} học sinh` : "Chọn môn học và lớp bên dưới để bắt đầu theo dõi học sinh."}</p>
+        {courseError&&<p className="mt-2 text-xs text-red-300">{courseError}</p>}
       </div>
+    </section>
+
+    <section className="grid gap-3 rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:grid-cols-2 sm:p-5">
+      <label className="block">
+        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><GraduationCap size={14}/> Môn học</span>
+        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white">
+          {availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}
+        </select>
+      </label>
+      <label className="block">
+        <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courses.length} lớp`}</span>
+        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white">
+          <option value="" disabled>{courses.length ? "Chọn lớp đang dạy" : "Chưa có lớp nào"}</option>
+          {courses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
+        </select>
+      </label>
     </section>
 
     <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"final-grades",label:"Tổng kết điểm",icon:GraduationCap},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>

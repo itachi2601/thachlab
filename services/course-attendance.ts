@@ -5,8 +5,10 @@ export type AttendanceStatus = "present" | "late" | "excused" | "absent";
 export interface AttendanceSession {
   id: number; course_id: number; title: string; session_date: string; starts_at: string;
   closes_at: string; late_after: string; code: string; status: "open" | "closed"; created_at: string; note: string;
-  machine_selection_open: boolean;
+  machine_selection_open: boolean; workshop: string | null;
 }
+
+const ATTENDANCE_SESSION_FIELDS = "id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open, workshop";
 
 export interface AttendanceRecord {
   session_id: number; student_id: string; status: AttendanceStatus; checked_in_at: string | null;
@@ -32,7 +34,7 @@ export async function fetchMachineUsageHistory(machineCode: string, limit = 30) 
 }
 
 export async function fetchAttendanceSessions(courseId: number) {
-  const { data, error } = await getSupabase().from("attendance_sessions").select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open").eq("course_id", courseId).order("starts_at", { ascending: false });
+  const { data, error } = await getSupabase().from("attendance_sessions").select(ATTENDANCE_SESSION_FIELDS).eq("course_id", courseId).order("starts_at", { ascending: false });
   if (error) throw error;
   return (data ?? []) as AttendanceSession[];
 }
@@ -47,7 +49,7 @@ export async function createAttendanceSession(input: { courseId: number; title: 
     session_date: input.startsAt.slice(0, 10), starts_at: start.toISOString(),
     late_after: new Date(start.getTime() + input.lateMinutes * 60_000).toISOString(),
     closes_at: new Date(start.getTime() + input.durationMinutes * 60_000).toISOString(), code, status: "open",
-  }).select("id, course_id, title, session_date, starts_at, closes_at, late_after, code, status, created_at, note, machine_selection_open").single();
+  }).select(ATTENDANCE_SESSION_FIELDS).single();
   if (error) throw error;
   await cleanupOldMachinePhotos(input.courseId, data.id).catch(() => undefined);
   return data as AttendanceSession;

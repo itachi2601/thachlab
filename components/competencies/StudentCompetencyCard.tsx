@@ -17,7 +17,7 @@ export default function StudentCompetencyCard({courseId,studentId,records,demo=f
   const effectivePermissions=(demo||studentId==="demo-preview")?[...permissions,{course_id:courseId,student_id:studentId,competency_id:"turn-operation" as const,status:"approved" as const,note:"",approved_at:new Date().toISOString(),updated_at:new Date().toISOString(),approved_by:null},{course_id:courseId,student_id:studentId,competency_id:"turn-tool-setup" as const,status:"approved" as const,note:"",approved_at:new Date().toISOString(),updated_at:new Date().toISOString(),approved_by:null}]:permissions;
   const states=cncCompetencyStates(records,effectivePermissions);
   const unlocked=CNC_COMPETENCIES.filter(item=>states[item.id].approved).length;
-  return <section className="mt-4 border-t border-white/10 pt-4 sm:mt-5">
+  return <section className="student-competencies mt-4 border-t border-white/10 pt-4 sm:mt-5">
     <div className="flex items-end justify-between gap-3"><div><div className="flex items-center gap-2"><Wrench size={17} className="text-cyan-300"/><strong className="text-sm text-white sm:text-base">Huy hiệu năng lực CNC</strong></div><p className="mt-1 text-[11px] text-slate-400 sm:text-xs">Vượt từng chốt để mở khóa năng lực và tiến đến gia công.</p></div><small className="whitespace-nowrap rounded-full bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold text-emerald-300">{unlocked}/10 đã mở</small></div>
     <div className="mt-4 grid gap-3">
       <BadgePath machine="turn" label="Hành trình Tiện CNC" states={states}/>
@@ -28,7 +28,7 @@ export default function StudentCompetencyCard({courseId,studentId,records,demo=f
 
 function BadgePath({machine,label,states}:{machine:"turn"|"mill";label:string;states:ReturnType<typeof cncCompetencyStates>}){
   const items=CNC_COMPETENCIES.filter(item=>item.machine===machine);
-  return <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-3 sm:p-4">
+  return <article className="competency-path overflow-hidden rounded-2xl border border-white/10 bg-black/20 p-3 sm:p-4">
     <div className="flex items-center justify-between"><strong className="text-xs text-white sm:text-sm">{label}</strong><span className="text-[10px] font-bold text-cyan-300">{items.filter(item=>states[item.id].approved).length}/5</span></div>
     <div className="mt-3 grid grid-cols-5 items-start gap-1 sm:gap-3">
       {items.map((item,index)=>{const state=states[item.id];const Icon=icons[item.id];const unlocked=state.approved;const waiting=state.eligible&&!unlocked;return <div key={item.id} className="flex shrink-0 snap-start items-start">

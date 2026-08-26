@@ -70,6 +70,24 @@ export async function fetchMyActiveCncCourse(userId: string, subjectCode: string
   return { status: row.status as EnrollmentStatus, course: course as unknown as { id: number; name: string; class_label: string; school_year: string } };
 }
 
+export async function fetchMyEnrollment(userId: string) {
+  const { data, error } = await getSupabase().from("course_enrollments")
+    .select("status, course_offerings!inner(id, name, class_label, school_year, status, subjects!inner(code, name))")
+    .eq("student_id", userId)
+    .in("status", ["pending", "active", "suspended"]).order("enrolled_at", { ascending: false });
+  if (error) throw error;
+  const row = data?.[0];
+  if (!row) return null;
+  const course = Array.isArray(row.course_offerings) ? row.course_offerings[0] : row.course_offerings;
+  const subject = Array.isArray(course.subjects) ? course.subjects[0] : course.subjects;
+  return {
+    status: row.status as EnrollmentStatus,
+    subjectCode: subject.code as string,
+    subjectName: subject.name as string,
+    course: course as unknown as { id: number; name: string; class_label: string; school_year: string; status: string },
+  };
+}
+
 export async function fetchMyCncEnrollments(userId: string, subjectCode: string = "cnc") {
   const { data, error } = await getSupabase().from("course_enrollments")
     .select("status, enrolled_at, course_offerings!inner(id, name, class_label, school_year, status, subjects!inner(code))")

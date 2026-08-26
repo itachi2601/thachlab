@@ -56,6 +56,7 @@ export interface Exam {
   topic?: string;
   difficulty?: Difficulty;
   created_at?: string;
+  cnc_key?: string | null;
 }
 
 // Bài làm của học sinh: song song với mảng questions
