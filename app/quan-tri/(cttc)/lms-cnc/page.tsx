@@ -1,5 +1,5 @@
-import CncLmsAdmin from "@/components/admin/CncLmsAdmin";
+import CncLmsLessonIndex from "@/components/admin/CncLmsLessonIndex";
 
 export default function Page() {
-  return <CncLmsAdmin />;
+  return <CncLmsLessonIndex />;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import {
   CNC_COURSE_ITEMS,
   CNC_PROGRESS,
@@ -78,12 +79,14 @@ function listToLines(value: string[]) {
   return value.join("\n");
 }
 
-export default function CncLmsAdmin() {
+export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: string }) {
   const toast = useToast();
   const [items, setItems] = useState<EditableCncItem[]>(
     CNC_COURSE_ITEMS.map(normalizeItem),
   );
-  const [activeId, setActiveId] = useState(items[0]?.id ?? "intro");
+  const activeId = items.some((item) => item.id === initialLessonId)
+    ? initialLessonId!
+    : items[0]?.id ?? "intro";
   const [checklist, setChecklist] = useState([...CNC_SETUP_CHECKLIST]);
   const [bankMeta, setBankMeta] = useState<CncExamBankMeta[]>([]);
   const [importBank, setImportBank] = useState<{ key: string; label: string } | null>(null);
@@ -462,15 +465,17 @@ export default function CncLmsAdmin() {
 
       <section className="grid gap-5 lg:grid-cols-[280px_1fr]">
         <aside className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
+          <Link href="/quan-tri/lms-cnc" className="mb-4 inline-flex text-xs font-bold text-[#60A5FA] hover:underline">
+            ← Danh sách bài học
+          </Link>
           <p className="px-2 pb-3 text-xs font-bold tracking-wide text-slate-500 uppercase">
             Cây bài học
           </p>
           <div className="space-y-2">
             {items.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                type="button"
-                onClick={() => setActiveId(item.id)}
+                href={`/quan-tri/lms-cnc/${item.id}`}
                 className={`w-full rounded-xl border px-3 py-3 text-left transition-colors ${
                   activeItem.id === item.id
                     ? "border-primary/70 bg-primary/15"
@@ -481,7 +486,7 @@ export default function CncLmsAdmin() {
                   {item.shortTitle}
                 </span>
                 <span className="mt-1 block text-xs text-slate-400">{item.duration}</span>
-              </button>
+              </Link>
             ))}
           </div>
         </aside>
