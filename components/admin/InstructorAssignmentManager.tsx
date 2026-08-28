@@ -25,7 +25,9 @@ import {
   type CourseInstructor,
 } from "@/services/course-instructors";
 
-const PRACTICUM_SUBJECTS = SUBJECTS.filter((item) => item.isPracticum);
+// Mọi môn CTTC (SUBJECTS chỉ gồm môn CTTC) — kể cả môn lý thuyết "khac" nhập từ Excel,
+// để admin phân công được giảng viên phụ trách lớp học phần lý thuyết.
+const CTTC_SUBJECTS = SUBJECTS;
 
 function errorMessage(error: unknown, fallback: string) {
   if (error instanceof Error) return error.message;
@@ -162,15 +164,15 @@ function ThptInstructorPanel({ roster }: { roster: { id: string; full_name: stri
   </div>;
 }
 
-// ---------- Tab CTTC: gán giảng viên theo khóa thực tập ----------
+// ---------- Tab CTTC: gán giảng viên theo khóa học (thực hành hoặc lý thuyết) ----------
 function CttcInstructorPanel({ roster }: { roster: { id: string; full_name: string; class_name: string }[] }) {
   const toast = useToast();
-  const [subjectCode, setSubjectCode] = useState(PRACTICUM_SUBJECTS[0]?.code ?? "");
+  const [subjectCode, setSubjectCode] = useState(CTTC_SUBJECTS[0]?.code ?? "");
   const [courses, setCourses] = useState<CourseOffering[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [assigned, setAssigned] = useState<CourseInstructor[]>([]);
   const [busy, setBusy] = useState(false);
-  const subject = PRACTICUM_SUBJECTS.find((item) => item.code === subjectCode) ?? PRACTICUM_SUBJECTS[0];
+  const subject = CTTC_SUBJECTS.find((item) => item.code === subjectCode) ?? CTTC_SUBJECTS[0];
   const selected = courses.find((course) => course.id === selectedId) ?? null;
 
   const reloadCourses = useCallback(async () => {
@@ -215,7 +217,7 @@ function CttcInstructorPanel({ roster }: { roster: { id: string; full_name: stri
   return <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
     <aside className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
       <select aria-label="Môn học" value={subjectCode} onChange={(e) => setSubjectCode(e.target.value)} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white">
-        {PRACTICUM_SUBJECTS.map((item) => <option key={item.code} value={item.code}>{item.label}</option>)}
+        {CTTC_SUBJECTS.map((item) => <option key={item.code} value={item.code}>{item.label}</option>)}
       </select>
       <h3 className="mt-4 font-semibold text-white">Các khóa · {subject?.label}</h3>
       <div className="mt-3 space-y-2">

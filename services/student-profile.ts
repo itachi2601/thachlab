@@ -20,3 +20,23 @@ export async function fetchStudentCodes(studentIds: string[]) {
   if (error) throw error;
   return new Map((data ?? []).map((row) => [row.id as string, (row.student_code as string | null) ?? ""]));
 }
+
+export interface StudentRosterInfo {
+  studentCode: string;
+  /** dd/mm/yyyy, đúng định dạng cột "Ngày Sinh" trong file mẫu. */
+  birthDate: string;
+}
+
+export async function fetchStudentRosterInfo(studentIds: string[]) {
+  if (!studentIds.length) return new Map<string, StudentRosterInfo>();
+  const { data, error } = await getSupabase().from("profiles").select("id, student_code, birth_date").in("id", studentIds);
+  if (error) throw error;
+  return new Map((data ?? []).map((row) => {
+    const iso = row.birth_date as string | null;
+    const match = iso ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso) : null;
+    return [row.id as string, {
+      studentCode: (row.student_code as string | null) ?? "",
+      birthDate: match ? `${match[3]}/${match[2]}/${match[1]}` : "",
+    }];
+  }));
+}
