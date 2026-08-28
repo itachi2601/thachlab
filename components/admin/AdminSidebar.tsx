@@ -29,7 +29,7 @@ const AREA_ENTRY_HREF: Record<Area, string> = {
 const SHARED_ITEMS = [
   { href: "/quan-tri/phan-cong-giang-vien", label: "Phân công giảng viên" },
   { href: "/quan-tri/tin-nhan", label: "Tin nhắn" },
-  { href: "/quan-tri/bai-dang", label: "Bài đăng" },
+  { href: "/quan-tri/bai-dang", label: "Thông báo / học liệu" },
 ];
 
 function SidebarLinks({ items, pathname }: { items: { href: string; label: string }[]; pathname: string }) {

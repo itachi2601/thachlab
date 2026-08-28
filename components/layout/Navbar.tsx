@@ -8,7 +8,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
 const links = [
-  { label: "THPT", href: "/lop-hoc" },
+  { label: "THPT – THCS", href: "/lop-hoc" },
   { label: "CTTC", href: "/lop-hoc?tab=cttc" },
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },

@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertTriangle, CalendarCheck, Check, Clock3, Grid3x3, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, UserCheck, Users, XCircle } from "lucide-react";
+import { AlertTriangle, CalendarCheck, Check, Clock3, Grid3x3, NotebookPen, Plus, RefreshCw, Search, ShieldCheck, Trash2, UserCheck, Users, XCircle } from "lucide-react";
 import {
   createAttendanceSession,
+  deleteAttendanceSession,
   fetchAttendanceRecords,
   fetchAttendanceSessions,
   setAttendanceRecord,
@@ -117,6 +118,26 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
     }
   }
 
+  async function removeSelectedSession() {
+    if (!selected) return;
+    const date = new Date(selected.starts_at).toLocaleDateString("vi-VN");
+    const confirmed = window.confirm(
+      `Xóa phiên “${selected.title}” ngày ${date}?\n\nToàn bộ kết quả điểm danh trong phiên này cũng sẽ bị xóa. Thao tác không thể hoàn tác.`,
+    );
+    if (!confirmed) return;
+    setBusy(true);
+    setError("");
+    try {
+      await deleteAttendanceSession(selected.id);
+      setRecords([]);
+      await loadSessions();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Không xóa được phiên điểm danh.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   const presentCount = records.filter((item) => item.status === "present" || item.status === "late").length;
   const unmarkedCount = selected ? students.filter((student) => !records.some((record) => record.student_id === student.id)).length : 0;
   const visibleStudents = students.filter((student) => student.full_name.toLocaleLowerCase("vi-VN").includes(search.trim().toLocaleLowerCase("vi-VN")));
@@ -176,6 +197,14 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
                     </div>
                     <div className="text-right text-sm text-slate-400">
                       <p className="flex items-center justify-end gap-2"><Users size={15} />{presentCount}/{students.length} đã điểm danh</p>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() => void removeSelectedSession()}
+                        className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-red-400/25 px-3 py-1.5 text-xs font-bold text-red-300 hover:border-red-400/50 hover:bg-red-500/10 disabled:opacity-40"
+                      >
+                        <Trash2 size={14} /> Xóa phiên mở nhầm
+                      </button>
                     </div>
                   </div>
                   {unmarkedCount > 0 && (

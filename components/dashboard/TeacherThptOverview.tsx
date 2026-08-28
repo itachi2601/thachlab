@@ -5,6 +5,7 @@ import { AlertTriangle, ArrowRight, CalendarCheck, GraduationCap, Users } from "
 import type { ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
+import TeacherLiveLearningPanel from "@/components/dashboard/TeacherLiveLearningPanel";
 
 export default function TeacherThptOverview({
   classId,
@@ -99,6 +100,8 @@ export default function TeacherThptOverview({
         <Metric icon={<CalendarCheck size={18} />} value={sessionCount && attendanceAverage !== null ? `${attendanceAverage}%` : "—"} label="Tham dự trung bình" tone="emerald" />
         <Metric icon={<AlertTriangle size={18} />} value={String(concern.length)} label="Học sinh cần quan tâm" tone="amber" />
       </section>
+
+      <TeacherLiveLearningPanel classId={classId} studentCount={students.length} onOpenStudent={onOpenStudent} />
 
       <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
         <div className="mb-4 flex items-center gap-2 text-amber-300">

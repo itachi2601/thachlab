@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendarCheck, GraduationCap, LayoutDashboard, UserRound } from "lucide-react";
+import { CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -10,14 +10,16 @@ import TeacherThptOverview from "@/components/dashboard/TeacherThptOverview";
 import TeacherThptGradebook from "@/components/dashboard/TeacherThptGradebook";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
 import TeacherThptAttendancePanel from "@/components/attendance/TeacherThptAttendancePanel";
+import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
 
-type DashboardTab = "overview" | "gradebook" | "profile" | "attendance";
+type DashboardTab = "overview" | "gradebook" | "profile" | "attendance" | "roster";
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
+  { id: "roster", label: "Nhập danh sách", icon: FileSpreadsheet },
 ];
 
 export default function TeacherThptDashboard() {
@@ -48,22 +50,24 @@ export default function TeacherThptDashboard() {
     return () => { cancelled = true; };
   }, [profile, isAdmin]);
 
+  const [studentsNonce, setStudentsNonce] = useState(0);
   useEffect(() => {
-    if (!selectedClassId) { setStudents([]); return; }
     let cancelled = false;
-    fetchClassStudents(selectedClassId)
-      .then((rows) => {
+    void (async () => {
+      if (!selectedClassId) { if (!cancelled) setStudents([]); return; }
+      try {
+        const rows = await fetchClassStudents(selectedClassId);
         if (cancelled) return;
         setStudents(rows);
         setSelectedStudentId((current) => (rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null));
-      })
-      .catch((error: unknown) => {
+      } catch (error) {
         if (cancelled) return;
         setStudents([]);
         setLoadError(error instanceof Error ? error.message : "Không tải được danh sách học sinh.");
-      });
+      }
+    })();
     return () => { cancelled = true; };
-  }, [selectedClassId]);
+  }, [selectedClassId, studentsNonce]);
 
   const selectedClass = classes.find((item) => item.id === selectedClassId) ?? null;
 
@@ -127,6 +131,7 @@ export default function TeacherThptDashboard() {
           {activeTab === "gradebook" && <TeacherThptGradebook students={students} />}
           {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}
+          {activeTab === "roster" && <ClassRosterImportPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onImported={() => setStudentsNonce((n) => n + 1)} />}
         </>
       )}
     </div>

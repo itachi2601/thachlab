@@ -13,6 +13,8 @@ interface Props {
   response: QuestionResponse;
   onChange?: (r: QuestionResponse) => void; // undefined = chế độ xem lại
   review?: boolean;
+  /** Xem đáp án để tự đối chiếu (không tính là một lần làm bài) — bỏ điểm/số câu đúng, không tô đỏ. */
+  selfCheck?: boolean;
 }
 
 export default function QuestionCard({
@@ -21,15 +23,18 @@ export default function QuestionCard({
   response: r,
   onChange,
   review = false,
+  selfCheck = false,
 }: Props) {
-  const graded = review ? gradeQuestion(q, r) : null;
+  const graded = review && !selfCheck ? gradeQuestion(q, r) : null;
   const border = !review
     ? "border-white/10"
-    : graded!.earned === graded!.max
-      ? "border-emerald-500/30 bg-emerald-500/5"
-      : graded!.earned > 0
-        ? "border-amber-500/30 bg-amber-500/5"
-        : "border-red-500/30 bg-red-500/5";
+    : selfCheck
+      ? "border-white/10"
+      : graded!.earned === graded!.max
+        ? "border-emerald-500/30 bg-emerald-500/5"
+        : graded!.earned > 0
+          ? "border-amber-500/30 bg-amber-500/5"
+          : "border-red-500/30 bg-red-500/5";
 
   return (
     <div className={`rounded-2xl border bg-[#0B1020] p-5 ${border}`}>
@@ -128,11 +133,15 @@ export default function QuestionCard({
         <div className="mt-4">
           {review ? (
             <p className="text-sm">
-              <span className="text-slate-400">Trả lời của em: </span>
-              <span className="font-mono font-semibold text-white">
-                {typeof r === "string" && r.trim() !== "" ? r : "—"}
-              </span>
-              <span className="ml-4 text-slate-400">Đáp án: </span>
+              {!selfCheck && (
+                <>
+                  <span className="text-slate-400">Trả lời của em: </span>
+                  <span className="font-mono font-semibold text-white">
+                    {typeof r === "string" && r.trim() !== "" ? r : "—"}
+                  </span>
+                </>
+              )}
+              <span className={`text-slate-400 ${selfCheck ? "" : "ml-4"}`}>Đáp án: </span>
               <span className="font-mono font-semibold text-emerald-300">
                 {q.answer}
               </span>
@@ -153,7 +162,7 @@ export default function QuestionCard({
         </div>
       )}
 
-      {review && graded && (
+      {review && !selfCheck && graded && (
         <p className="mt-3 text-xs text-slate-400">
           Điểm câu này:{" "}
           <span className="font-semibold text-white">

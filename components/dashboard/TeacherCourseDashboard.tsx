@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, CalendarCheck, Construction, GraduationCap, LayoutDashboard, Route, UserRound, Users2 } from "lucide-react";
+import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, Route, UserRound, Users2 } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -12,6 +12,7 @@ import TeacherOverview from "@/components/dashboard/TeacherOverview";
 import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
 import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
+import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
 import { SUBJECTS, getSubject } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
 
@@ -47,11 +48,13 @@ function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): D
 export default function TeacherCourseDashboard() {
   const { profile } = useAuth();
   const isInstructor = profile?.role === "instructor";
+  const isAdmin = profile?.role === "admin";
   // Giảng viên không quen công nghệ: vào là thấy ngay điểm danh + gán máy + báo hỏng,
   // thay vì tab Tổng quan nhiều biểu đồ/chỉ số họ chưa cần đến.
-  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance">(isInstructor?"attendance":"overview");
+  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance"|"roster">(isInstructor?"attendance":"overview");
   const [activeStudent, setActiveStudent] = useState(0);
-  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum) : SUBJECTS;
+  // Môn lý thuyết ("khac") không có chương trình học nhưng vẫn cần tab Nhập danh sách & điểm.
+  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac") : SUBJECTS;
   const [subjectCode, setSubjectCode] = useState<string>(availableSubjects[0]?.code ?? SUBJECTS[0].code);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
@@ -61,6 +64,7 @@ export default function TeacherCourseDashboard() {
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
   const subject = getSubject(subjectCode);
 
+  const [coursesNonce, setCoursesNonce] = useState(0);
   useEffect(() => {
     let cancelled = false;
     fetchCncCourses(subjectCode)
@@ -75,8 +79,10 @@ export default function TeacherCourseDashboard() {
         setCourseError(error && typeof error === "object" && "message" in error ? String(error.message) : "Không tải được danh sách khóa học.");
       });
     return () => { cancelled = true; };
-  }, [subjectCode]);
+  }, [subjectCode, coursesNonce]);
 
+  // Bump để nạp lại danh sách học sinh sau khi nhập danh sách từ Excel (tab Nhập danh sách & điểm).
+  const [studentsNonce, setStudentsNonce] = useState(0);
   useEffect(() => {
     if (!selectedCourseId) return;
     let cancelled = false;
@@ -95,7 +101,7 @@ export default function TeacherCourseDashboard() {
     void reload();
     const channel=subscribeToCncLearningRecords(selectedCourseId,()=>void reload());
     return () => { cancelled = true; void unsubscribeFromCncLearningRecords(channel); };
-  }, [selectedCourseId]);
+  }, [selectedCourseId, studentsNonce]);
 
   return <div className="teacher-dashboard space-y-6">
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
@@ -124,7 +130,7 @@ export default function TeacherCourseDashboard() {
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"final-grades",label:"Tổng kết điểm",icon:GraduationCap},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"final-grades",label:"Tổng kết điểm",icon:GraduationCap},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Nhập danh sách & điểm",icon:FileSpreadsheet}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&<TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>}
     {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
@@ -133,6 +139,8 @@ export default function TeacherCourseDashboard() {
 
     {activeTab==="progress"&&(subject.hasCurriculum?<TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>:<CurriculumPending subjectLabel={subject.label}/>)}
     {activeTab==="final-grades"&&selectedCourseId&&(subject.hasCurriculum?<TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+
+    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
     {activeTab==="profile"&&selectedCourseId&&(subject.hasCurriculum?<TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0)}}/>:<CurriculumPending subjectLabel={subject.label}/>)}
   </div>;
 }

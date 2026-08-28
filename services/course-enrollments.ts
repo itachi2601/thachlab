@@ -22,6 +22,28 @@ export async function fetchCncCourses(subjectCode: string = "cnc") {
   return (data ?? []) as unknown as CourseOffering[];
 }
 
+export interface CourseOfferingWithSubject {
+  id: number; name: string; class_label: string; school_year: string;
+  subjectCode: string; subjectLabel: string; isPracticum: boolean;
+}
+
+/** Toàn bộ khóa học CTTC (mọi môn) — dùng cho picker gán nội dung theo khóa. */
+export async function fetchAllCourseOfferings(): Promise<CourseOfferingWithSubject[]> {
+  const { data, error } = await getSupabase().from("course_offerings")
+    .select("id, name, class_label, school_year, subjects(code, name, is_practicum)")
+    .order("school_year", { ascending: false }).order("name");
+  if (error) throw error;
+  return (data ?? []).map((row) => {
+    const subject = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects;
+    return {
+      id: row.id, name: row.name, class_label: row.class_label, school_year: row.school_year,
+      subjectCode: (subject as { code: string } | null)?.code ?? "",
+      subjectLabel: (subject as { name: string } | null)?.name ?? "",
+      isPracticum: (subject as { is_practicum: boolean } | null)?.is_practicum ?? false,
+    };
+  });
+}
+
 export async function createCncCourse(input: Pick<CourseOffering, "name" | "class_label" | "school_year" | "enrollment_mode">, subjectCode: string = "cnc", joinPrefix: string = "CNC") {
   const supabase = getSupabase();
   const [{ data: subject, error: subjectError }, { data: auth }] = await Promise.all([

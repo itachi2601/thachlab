@@ -8,6 +8,7 @@ import { fetchCourseGradeOverrides, setCourseGradeOverride, type CourseGradeOver
 import { CNC_ASSESSMENT_PLAN } from "@/services/cnc-progress";
 import type { CncLearningRecord } from "@/services/cnc-learning-records";
 import { fetchStudentCodes } from "@/services/student-profile";
+import { computeCncFinalGrade } from "@/services/cnc-final-grade";
 
 type FinalGradeStudent = { id: string; name: string; className: string; records: CncLearningRecord[] };
 function activityCount(records: CncLearningRecord[]) {
@@ -15,10 +16,6 @@ function activityCount(records: CncLearningRecord[]) {
     const record = records.find((item) => item.lesson_id === lessonId && item.assessment_id === id);
     return sum + (id === "checklist-practice" ? (record?.attempt_count ?? 0) : record?.completed ? 1 : 0);
   }, 0), 0);
-}
-
-function rubricScore(attempts: RubricExamAttempt[], studentId: string, machine: "tien" | "phay", role: "self" | "teacher") {
-  return attempts.find((attempt) => attempt.student_id === studentId && attempt.machine === machine && attempt.role === role)?.total_score ?? null;
 }
 
 export default function TeacherFinalGradebook({ courseId, students }: { courseId: number; students: FinalGradeStudent[] }) {
@@ -50,19 +47,9 @@ export default function TeacherFinalGradebook({ courseId, students }: { courseId
   useEffect(() => { fetchStudentCodes(students.map((student)=>student.id)).then(setStudentCodes).catch(()=>setStudentCodes(new Map())); }, [students]);
 
   const rows = useMemo(() => students.map((student) => {
-    const override = (key: string, fallback: number | null) => overrides.find((item) => item.student_id === student.id && item.grade_key === key)?.score ?? fallback;
     const process = activityCount(student.records);
-    const turnSelf = override("rubric:tien:self", rubricScore(attempts, student.id, "tien", "self"));
-    const turnTeacher = override("rubric:tien:teacher", rubricScore(attempts, student.id, "tien", "teacher"));
-    const millSelf = override("rubric:phay:self", rubricScore(attempts, student.id, "phay", "self"));
-    const millTeacher = override("rubric:phay:teacher", rubricScore(attempts, student.id, "phay", "teacher"));
-    const ownAttendance = attendance.filter((record) => record.student_id === student.id);
-    const attended = ownAttendance.filter((record) => record.status === "present" || record.status === "late").length;
-    const attendanceScore = override("attendance", sessionCount ? 10 * attended / sessionCount : 0) ?? 0;
-    const sourceBonus = ownAttendance.reduce((sum, record) => sum + record.bonus_points, 0);
-    const bonus = override("bonus", sourceBonus) ?? 0;
-    const total = Math.min(10, Math.max(0, (turnTeacher ?? 0) * .45 + (millTeacher ?? 0) * .45 + attendanceScore * .1 + bonus));
-    return { ...student, studentCode: studentCodes.get(student.id) ?? "", process, turnSelf, turnTeacher, millSelf, millTeacher, attendanceScore, bonus, total };
+    const grade = computeCncFinalGrade(student.id, attempts, attendance, sessionCount, overrides);
+    return { ...student, studentCode: studentCodes.get(student.id) ?? "", process, ...grade };
   }).filter((student) => `${student.name} ${student.className} ${student.studentCode}`.toLocaleLowerCase("vi-VN").includes(query.trim().toLocaleLowerCase("vi-VN"))), [students, attempts, attendance, sessionCount, overrides, studentCodes, query]);
 
   async function save(studentId: string, gradeKey: string, value: number) {

@@ -11,8 +11,10 @@ import {
   type Lesson,
   type LessonItem,
   type LessonItemKind,
+  type LessonWorkedQuestion,
 } from "@/features/lessons/types";
 import {
+  classGrade,
   displayClassesByGrade,
   expandClassIdsByGrade,
   fetchClasses,
@@ -20,6 +22,7 @@ import {
 } from "@/services/classes";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { getSupabase } from "@/services/supabase";
+import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 
 const inputCls =
   "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -54,11 +57,33 @@ function ItemForm({
   const [videoUrl, setVideoUrl] = useState(item?.video_url ?? "");
   const [pdfUrl, setPdfUrl] = useState(item?.pdf_url ?? "");
   const [bodyHtml, setBodyHtml] = useState(item?.body_html ?? "");
-  const [examId, setExamId] = useState<string>(item?.exam_id ? String(item.exam_id) : "");
+  const [examIds, setExamIds] = useState<number[]>(item?.exam_ids ?? []);
+  const [questions, setQuestions] = useState<LessonWorkedQuestion[]>(
+    item?.questions ?? [],
+  );
   const [busy, setBusy] = useState(false);
 
-  const isExamKind = kind === "luyen_tap_de" || kind === "kiem_tra";
+  const isExamKind = kind === "luyen_tap" || kind === "kiem_tra";
   const isVideoKind = kind === "video";
+  const isWorkedKind = kind === "bai_tap_mau";
+
+  function toggleExam(examOptionId: number) {
+    setExamIds((current) =>
+      current.includes(examOptionId)
+        ? current.filter((id) => id !== examOptionId)
+        : [...current, examOptionId],
+    );
+  }
+
+  function updateQuestion(idx: number, patch: Partial<LessonWorkedQuestion>) {
+    setQuestions((current) =>
+      current.map((q, i) => (i === idx ? { ...q, ...patch } : q)),
+    );
+  }
+
+  function removeQuestion(idx: number) {
+    setQuestions((current) => current.filter((_, i) => i !== idx));
+  }
 
   async function save() {
     if (!title.trim()) {
@@ -71,10 +96,11 @@ function ItemForm({
       kind,
       title: title.trim(),
       subtitle: subtitle.trim(),
-      body_html: isExamKind || isVideoKind ? "" : bodyHtml,
+      body_html: kind === "ly_thuyet" ? bodyHtml : "",
       video_url: isVideoKind ? videoUrl.trim() : "",
-      pdf_url: isExamKind ? "" : pdfUrl.trim(),
-      exam_id: isExamKind && examId ? Number(examId) : null,
+      pdf_url: isExamKind || isWorkedKind ? "" : pdfUrl.trim(),
+      exam_ids: isExamKind ? examIds : [],
+      questions: isWorkedKind ? questions.filter((q) => q.body_html.trim() !== "") : [],
       sort_order: item?.sort_order ?? nextSort,
     };
     const supabase = getSupabase();
@@ -126,7 +152,7 @@ function ItemForm({
           className={`${inputCls} w-full`}
         />
       )}
-      {!isExamKind && (
+      {!isExamKind && !isWorkedKind && (
         <input
           value={pdfUrl}
           onChange={(e) => setPdfUrl(e.target.value)}
@@ -134,26 +160,76 @@ function ItemForm({
           className={`${inputCls} w-full`}
         />
       )}
-      {!isExamKind && !isVideoKind && (
+      {kind === "ly_thuyet" && (
         <LaTexEditor
           value={bodyHtml}
           onChange={(html) => setBodyHtml(html)}
           placeholder="Nội dung (viết LaTeX hoặc HTML)"
         />
       )}
-      {isExamKind && (
-        <select
-          value={examId}
-          onChange={(e) => setExamId(e.target.value)}
-          className={`${inputCls} w-full bg-[#0B1020]`}
-        >
-          <option value="">— Chọn đề đã soạn (tab Đề kiểm tra) —</option>
-          {exams.map((e) => (
-            <option key={e.id} value={e.id}>
-              #{e.id} · {e.title}
-            </option>
+      {isWorkedKind && (
+        <div className="space-y-3">
+          {questions.map((q, idx) => (
+            <div key={idx} className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
+              <div className="flex items-center gap-2">
+                <input
+                  value={q.label}
+                  onChange={(e) => updateQuestion(idx, { label: e.target.value })}
+                  placeholder='Nhãn ngắn, vd "TL" hoặc "Dạng cơ bản"'
+                  className={`${inputCls} flex-1`}
+                />
+                <button
+                  onClick={() => removeQuestion(idx)}
+                  className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                >
+                  Xóa
+                </button>
+              </div>
+              <LaTexEditor
+                value={q.body_html}
+                onChange={(html) => updateQuestion(idx, { body_html: html })}
+                placeholder="Đề bài + lời giải mẫu (viết LaTeX hoặc HTML)"
+              />
+            </div>
           ))}
-        </select>
+          <button
+            onClick={() => setQuestions((current) => [...current, { label: "", body_html: "" }])}
+            className={chipBtn}
+          >
+            + Thêm dạng bài
+          </button>
+        </div>
+      )}
+      {isExamKind && (
+        <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
+          <p className="text-xs text-slate-400">Chọn 1 hoặc nhiều đề đã soạn (tab Đề kiểm tra):</p>
+          <div className="flex flex-wrap gap-2">
+            {exams.map((e) => {
+              const checked = examIds.includes(e.id);
+              return (
+                <label
+                  key={e.id}
+                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-1.5 text-xs ${
+                    checked
+                      ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200"
+                      : "border-white/10 text-slate-300 hover:border-white/30"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggleExam(e.id)}
+                    className="accent-emerald-500"
+                  />
+                  #{e.id} · {e.title}
+                </label>
+              );
+            })}
+            {exams.length === 0 && (
+              <span className="text-xs text-slate-500">Chưa có đề nào — soạn ở tab Đề kiểm tra.</span>
+            )}
+          </div>
+        </div>
       )}
 
       <div className="flex gap-2">
@@ -257,7 +333,8 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
                 </span>
                 <span className="text-xs" style={{ color: meta.color }}>
                   {meta.label}
-                  {it.exam_id && ` · đề #${it.exam_id}`}
+                  {it.exam_ids.length > 0 && ` · ${it.exam_ids.length} đề`}
+                  {it.questions.length > 0 && ` · ${it.questions.length} dạng bài`}
                   {it.video_url && " · video"}
                   {it.pdf_url && " · PDF"}
                 </span>
@@ -281,7 +358,14 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
                 <button
                   onClick={async () => {
                     if (!confirm(`Xóa mục "${it.title}"?`)) return;
-                    await getSupabase().from("lesson_items").delete().eq("id", it.id);
+                    const { error } = await getSupabase()
+                      .from("lesson_items")
+                      .delete()
+                      .eq("id", it.id);
+                    if (error) {
+                      toast("error", error.message);
+                      return;
+                    }
                     toast("success", "Đã xóa mục.");
                     reload();
                   }}
@@ -432,7 +516,14 @@ function ChapterLessonsEditor({
               <button
                 onClick={async () => {
                   if (!confirm(`Xóa bài "${l.title}" và toàn bộ mục bên trong?`)) return;
-                  await getSupabase().from("lessons").delete().eq("id", l.id);
+                  const { error } = await getSupabase()
+                    .from("lessons")
+                    .delete()
+                    .eq("id", l.id);
+                  if (error) {
+                    toast("error", error.message);
+                    return;
+                  }
                   toast("success", "Đã xóa bài học.");
                   reload();
                 }}
@@ -459,6 +550,7 @@ export default function LessonsAdmin() {
   const [openChapter, setOpenChapter] = useState<Chapter | null>(null);
   const [title, setTitle] = useState("");
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
+  const [selectedSubjectCode, setSelectedSubjectCode] = useState("vat-ly");
 
   const reload = useCallback(() => {
     fetchChapters().then(setChapters);
@@ -485,6 +577,9 @@ export default function LessonsAdmin() {
             chapter.classIds.length === 0 ||
             chapter.classIds.some((classId) => visibleClassIds.includes(classId)),
         );
+  const subjectChapters = classChapters.filter(
+    (chapter) => chapter.subjectCode === selectedSubjectCode,
+  );
 
   if (openChapter)
     return (
@@ -504,7 +599,11 @@ export default function LessonsAdmin() {
     if (!title.trim()) return;
     const { data, error } = await getSupabase()
       .from("chapters")
-      .insert({ title: title.trim(), sort_order: classChapters.length + 1 })
+      .insert({
+        title: title.trim(),
+        subject_code: selectedSubjectCode,
+        sort_order: subjectChapters.length + 1,
+      })
       .select("id")
       .single();
     if (error || !data) {
@@ -519,9 +618,9 @@ export default function LessonsAdmin() {
 
   async function move(idx: number, dir: -1 | 1) {
     const other = idx + dir;
-    if (other < 0 || other >= classChapters.length) return;
-    const a = classChapters[idx];
-    const b = classChapters[other];
+    if (other < 0 || other >= subjectChapters.length) return;
+    const a = subjectChapters[idx];
+    const b = subjectChapters[other];
     const supabase = getSupabase();
     await supabase.from("chapters").update({ sort_order: b.sort_order }).eq("id", a.id);
     await supabase.from("chapters").update({ sort_order: a.sort_order }).eq("id", b.id);
@@ -543,6 +642,7 @@ export default function LessonsAdmin() {
                 type="button"
                 onClick={() => {
                   setSelectedClassId(schoolClass.id);
+                  setSelectedSubjectCode("vat-ly");
                   setOpenChapter(null);
                 }}
                 style={
@@ -569,13 +669,35 @@ export default function LessonsAdmin() {
         </div>
       </section>
 
+      {selectedClass && (
+        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <p className="mb-3 text-sm font-medium text-slate-300">2. Chọn môn học</p>
+          <div className="flex flex-wrap gap-2">
+            {subjectsForGrade(classGrade(selectedClass.name) ?? "").map((subject) => (
+              <button
+                key={subject.code}
+                type="button"
+                onClick={() => setSelectedSubjectCode(subject.code)}
+                className={`rounded-full border px-4 py-2 text-sm font-semibold ${
+                  selectedSubjectCode === subject.code
+                    ? "border-blue-400 bg-blue-500/15 text-blue-200"
+                    : "border-white/10 text-slate-400 hover:border-white/30"
+                }`}
+              >
+                {subject.icon} {subject.label}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
       <form
         onSubmit={addChapter}
         className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5"
       >
         <div>
           <p className="text-sm font-medium text-slate-300">
-            2. Thêm chương cho {selectedClass ? `lớp ${selectedClass.name}` : "lớp đã chọn"}
+            3. Thêm chương {academicSubject(selectedSubjectCode).label} cho {selectedClass ? `lớp ${selectedClass.name}` : "lớp đã chọn"}
           </p>
           <p className="mt-1 text-xs text-slate-500">
             Chương mới sẽ chỉ hiện trong lớp đang chọn, sau đó admin vào chương để thêm bài học.
@@ -602,15 +724,15 @@ export default function LessonsAdmin() {
       <div className="space-y-2">
         <div>
           <p className="text-sm font-medium text-slate-300">
-            3. Chọn chương để đăng bài học
+            4. Chọn chương để đăng bài học
           </p>
           {selectedClass && (
             <p className="mt-1 text-xs text-slate-500">
-              Đang xem chương của lớp {selectedClass.name}.
+              Đang xem môn {academicSubject(selectedSubjectCode).label}, lớp {selectedClass.name}.
             </p>
           )}
         </div>
-        {classChapters.map((ch, idx) => (
+        {subjectChapters.map((ch, idx) => (
           <div
             key={ch.id}
             className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
@@ -674,7 +796,14 @@ export default function LessonsAdmin() {
                 onClick={async () => {
                   if (!confirm(`Xóa chương "${ch.title}" và toàn bộ bài học bên trong?`))
                     return;
-                  await getSupabase().from("chapters").delete().eq("id", ch.id);
+                  const { error } = await getSupabase()
+                    .from("chapters")
+                    .delete()
+                    .eq("id", ch.id);
+                  if (error) {
+                    toast("error", error.message);
+                    return;
+                  }
                   toast("success", "Đã xóa chương.");
                   reload();
                 }}
@@ -685,7 +814,7 @@ export default function LessonsAdmin() {
             </span>
           </div>
         ))}
-        {selectedClassId && classChapters.length === 0 && (
+        {selectedClassId && subjectChapters.length === 0 && (
           <p className="text-sm text-slate-400">
             Lớp này chưa có chương nào — thêm chương đầu tiên ở trên.
           </p>

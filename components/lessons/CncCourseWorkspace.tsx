@@ -31,6 +31,7 @@ import {
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
+import CncCourseAnnouncements from "@/components/lessons/CncCourseAnnouncements";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
 
@@ -529,6 +530,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
           <span><Clock3 />70 tiết</span><span><BookOpen />7 bài học</span><span><ShieldCheck />2 cổng an toàn vận hành</span>
         </div>
       </header>
+
+      {courseId && <CncCourseAnnouncements courseId={courseId} />}
 
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">

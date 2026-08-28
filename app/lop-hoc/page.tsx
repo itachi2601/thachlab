@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
@@ -14,7 +15,7 @@ import {
   expandClassIdsByGrade,
   fetchClasses,
 } from "@/services/classes";
-import { fetchChapters, fetchLessons } from "@/services/lessons";
+import { fetchChapters, fetchLessonProgressSummaries, fetchLessons } from "@/services/lessons";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
@@ -24,6 +25,12 @@ import {
 } from "@/services/content";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
+import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
+import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
+import ContinueLearningCard from "@/components/lessons/ContinueLearningCard";
+import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
+
+const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
 const GRADE_IMAGES: Record<string, string> = {
   "9": "/images/learning-path/khtn-9.jpg",
@@ -33,14 +40,9 @@ const GRADE_IMAGES: Record<string, string> = {
 };
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
 const GRADE_ORDER = ["9", "10", "11", "12"];
-const KHTN9_SUBJECTS = [
-  { label: "Vật lý", icon: "⚡" },
-  { label: "Hóa học", icon: "🧪" },
-  { label: "Sinh học", icon: "🧬" },
-];
 const CLASS_TABS = [
-  { id: "secondary", label: "Lý thuyết" },
-  { id: "university", label: "Thực hành" },
+  { id: "secondary", label: "THPT – THCS" },
+  { id: "university", label: "CTTC" },
 ] as const;
 const UNIVERSITY_CLASSES = [
   {
@@ -75,35 +77,48 @@ const UNIVERSITY_CLASSES = [
   },
 ];
 
-export default function ClassHubPage() {
+export default function ClassHubPage({ classSlug }: { classSlug?: string } = {}) {
   const { session } = useAuth();
+  const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<(typeof CLASS_TABS)[number]["id"]>(
     "secondary",
   );
-  const [activeKhtn9Subject, setActiveKhtn9Subject] = useState("Vật lý");
+  const [activeSubjectCode, setActiveSubjectCode] = useState("vat-ly");
   const [requestedChapterId, setRequestedChapterId] = useState<number | null>(null);
+  const [openChapterId, setOpenChapterId] = useState<number | null>(null);
+  const [lastLessonId, setLastLessonId] = useState<number | null>(null);
+  const [lessonProgress, setLessonProgress] = useState<Map<number, InlineLessonProgress>>(new Map());
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [exams, setExams] = useState<ExamMeta[] | null>(null);
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
 
   useEffect(() => {
+    const savedLessonId = Number(window.localStorage.getItem(LAST_LESSON_KEY));
+    if (savedLessonId > 0) setLastLessonId(savedLessonId);
     const requestedTab = new URLSearchParams(window.location.search).get("tab");
     if (requestedTab === "cttc") setActiveTab("university");
+    const requestedSubject = new URLSearchParams(window.location.search).get("subject");
+    if (["vat-ly", "hoa-hoc", "sinh-hoc"].includes(requestedSubject ?? "")) {
+      setActiveSubjectCode(requestedSubject!);
+    }
     const chapterParam = Number(new URLSearchParams(window.location.search).get("chapter"));
     if (chapterParam > 0) setRequestedChapterId(chapterParam);
 
     if (!supabaseConfigured) return;
     fetchClasses().then((cs) => {
       setClasses(cs);
-      if (cs.length > 0) setActiveId((prev) => prev ?? cs[0].id);
+      if (classSlug) {
+        const selectedClass = cs.find((item) => item.slug === classSlug);
+        setActiveId(selectedClass?.id ?? null);
+      }
     });
     fetchChapters().then(setChapters);
     fetchLessons().then(setLessons);
     fetchPublishedPosts().then(setPosts);
-  }, []);
+  }, [classSlug]);
 
   // đề thi yêu cầu đăng nhập (RLS) — chỉ tải khi có session
   useEffect(() => {
@@ -111,26 +126,55 @@ export default function ClassHubPage() {
     fetchPublishedExams().then(setExams);
   }, [session]);
 
+  useEffect(() => {
+    if (!session || !lessons?.length) return;
+    fetchLessonProgressSummaries(session.user.id, lessons.map((lesson) => lesson.id))
+      .then(setLessonProgress)
+      .catch(() => setLessonProgress(new Map()));
+  }, [session, lessons]);
+
   const active = classes?.find((c) => c.id === activeId);
-  const activeDisplayName =
-    active && classGrade(active.name) === "9"
-      ? `KHTN 9 - ${activeKhtn9Subject}`
-      : active?.name;
+  const activeDisplayName = active
+    ? `${classGrade(active.name) === "9" ? "KHTN 9" : active.name} - ${academicSubject(activeSubjectCode).label}`
+    : undefined;
   const displayClasses = classes ? displayClassesByGrade(classes) : [];
   const visibleClassIds =
     classes && activeId !== null ? expandClassIdsByGrade([activeId], classes) : null;
-  const classChapters = (chapters ?? []).filter((ch) =>
-    visibleTo(ch.classIds, visibleClassIds),
+  const classChapters = (chapters ?? []).filter(
+    (ch) => visibleTo(ch.classIds, visibleClassIds) && ch.subjectCode === activeSubjectCode,
   );
-  const classPosts = (posts ?? []).filter((p) =>
-    visibleTo(p.classIds, visibleClassIds),
+  const classPosts = (posts ?? []).filter(
+    (p) => visibleTo(p.classIds, visibleClassIds) && p.subjectCode === activeSubjectCode,
   );
-  const classExams = (exams ?? []).filter((e) =>
-    visibleTo(e.classIds, visibleClassIds),
+  const classExams = (exams ?? []).filter(
+    (e) => visibleTo(e.classIds, visibleClassIds) && e.subjectCode === activeSubjectCode,
   );
+  const visibleLessonIds = new Set(classChapters.map((chapter) => chapter.id));
+  const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;
+  const lastLessonChapter = lastLesson ? classChapters.find((chapter) => chapter.id === lastLesson.chapter_id) ?? null : null;
+
+  function lessonHref(lesson: Lesson) {
+    const params = new URLSearchParams({
+      id: String(lesson.id),
+      subject: activeSubjectCode,
+      chapter: String(lesson.chapter_id),
+    });
+    if (classSlug) params.set("class", classSlug);
+    return `/lop-hoc/bai?${params.toString()}`;
+  }
+
+  function continueLesson(lesson: Lesson) {
+    setLastLessonId(lesson.id);
+    window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
+    router.push(lessonHref(lesson));
+  }
 
   useEffect(() => {
     if (!requestedChapterId || !classes || !chapters) return;
+    if (classSlug) {
+      setOpenChapterId(requestedChapterId);
+      return;
+    }
     const requestedChapter = chapters.find((chapter) => chapter.id === requestedChapterId);
     const targetClassId = requestedChapter?.classIds[0];
     if (targetClassId) {
@@ -141,8 +185,9 @@ export default function ClassHubPage() {
           )
         : undefined;
       setActiveId(representative?.id ?? targetClassId);
+      setOpenChapterId(requestedChapterId);
     }
-  }, [chapters, classes, requestedChapterId]);
+  }, [chapters, classSlug, classes, requestedChapterId]);
 
   useEffect(() => {
     if (!requestedChapterId || !lessons) return;
@@ -158,14 +203,19 @@ export default function ClassHubPage() {
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-20 lg:px-8">
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
-          Lớp <span className="text-gradient">học</span>
+          {classSlug && activeDisplayName ? (
+            <>Lớp <span className="text-gradient">{activeDisplayName}</span></>
+          ) : (
+            <>Lớp <span className="text-gradient">học</span></>
+          )}
         </h1>
         <p className="mt-3 mb-8 text-slate-400">
-          Chọn lớp để xem chương trình học, đề thi và tài liệu dành riêng cho
-          lớp đó.
+          {classSlug
+            ? "Không gian học tập, bài giảng và đề thi dành riêng cho lớp này."
+            : "Chọn lớp để mở không gian học tập và theo dõi tiến độ."}
         </p>
 
-        <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
+        {!classSlug && <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
           {CLASS_TABS.map((tab) => (
             <button
               key={tab.id}
@@ -184,9 +234,9 @@ export default function ClassHubPage() {
               {tab.label}
             </button>
           ))}
-        </div>
+        </div>}
 
-        {activeTab === "university" && (
+        {!classSlug && activeTab === "university" && (
           <section aria-labelledby="cttc-course-heading">
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -239,7 +289,7 @@ export default function ClassHubPage() {
               <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
                 <div>
                   <h2 className="font-display text-xl font-semibold text-white">
-                    Chương trình lý thuyết (THPT)
+                    Chương trình phổ thông (THPT – THCS)
                   </h2>
                   <p className="mt-1 text-sm text-slate-400">
                     Chọn lớp hoặc môn học để xem chương trình và mở từng bài học.
@@ -252,15 +302,16 @@ export default function ClassHubPage() {
                 )}
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {!classSlug && <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {GRADE_ORDER.map((grade) => {
                   const gradeClasses = displayClasses.filter(
                     (c) => classGrade(c.name) === grade,
                   );
                   if (gradeClasses.length === 0) return null;
                   return (
-                    <div
+                    <Link
                       key={grade}
+                      href={`/lop-hoc/${gradeClasses[0].slug}`}
                       className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B1020]"
                     >
                       <img
@@ -269,62 +320,45 @@ export default function ClassHubPage() {
                         className="aspect-[2/3] w-full object-cover"
                         loading="lazy"
                       />
-                      <div className="flex flex-wrap gap-2 p-3">
-                        {grade === "9"
-                          ? KHTN9_SUBJECTS.map((subject) => {
-                              const khtnClass = gradeClasses[0];
-                              const selected =
-                                activeId === khtnClass.id &&
-                                activeKhtn9Subject === subject.label;
-                              return (
-                                <button
-                                  key={subject.label}
-                                  onClick={() => {
-                                    setActiveId(khtnClass.id);
-                                    setActiveKhtn9Subject(subject.label);
-                                  }}
-                                  style={
-                                    selected
-                                      ? { backgroundColor: khtnClass.color, color: "#fff" }
-                                      : undefined
-                                  }
-                                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                                    selected
-                                      ? ""
-                                      : "bg-white/5 text-slate-300 hover:bg-white/10"
-                                  }`}
-                                >
-                                  {subject.icon} {subject.label}
-                                </button>
-                              );
-                            })
-                          : gradeClasses.map((c) => (
-                              <button
-                                key={c.id}
-                                onClick={() => setActiveId(c.id)}
-                                style={
-                                  activeId === c.id
-                                    ? { backgroundColor: c.color, color: "#fff" }
-                                    : undefined
-                                }
-                                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                                  activeId === c.id
-                                    ? ""
-                                    : "bg-white/5 text-slate-300 hover:bg-white/10"
-                                }`}
-                              >
-                                {c.icon && `${c.icon} `}
-                                {c.name}
-                              </button>
-                            ))}
+                      <div className="p-4">
+                        <span className="font-display text-lg font-bold text-white">
+                          {GRADE_LABELS[grade] ?? `Vật lý lớp ${grade}`}
+                        </span>
+                        <span className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 text-sm font-semibold text-[#60A5FA]">
+                          Mở lớp học <span aria-hidden="true">→</span>
+                        </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
-              </div>
+              </div>}
 
-            {active && (
+            {classSlug && active && (
               <div className="mt-10 space-y-12">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <Link href="/lop-hoc" className="text-sm font-semibold text-slate-400 hover:text-white">
+                    ← Tất cả lớp học
+                  </Link>
+                  <div className="flex flex-wrap gap-2">
+                    {subjectsForGrade(classGrade(active.name) ?? "").map((subject) => (
+                      <button
+                        key={subject.code}
+                        type="button"
+                        onClick={() => {
+                          setActiveSubjectCode(subject.code);
+                          setOpenChapterId(null);
+                        }}
+                        className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                          activeSubjectCode === subject.code
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-slate-300 hover:bg-white/10"
+                        }`}
+                      >
+                        {subject.icon} {subject.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <section>
                   <h2 className="mb-4 font-display text-xl font-semibold text-white">
                     Chương trình lớp {activeDisplayName}
@@ -337,10 +371,22 @@ export default function ClassHubPage() {
                     </p>
                   ) : (
                     <div className="space-y-6">
+                      {lastLesson && lastLessonChapter && (
+                        <ContinueLearningCard
+                          chapterTitle={lastLessonChapter.title}
+                          lessonTitle={lastLesson.title}
+                          progress={lessonProgress.get(lastLesson.id)}
+                          onContinue={() => continueLesson(lastLesson)}
+                        />
+                      )}
+                      <MistakeReviewPanel />
                       {classChapters.map((ch) => {
                         const chapterLessons = lessons.filter(
                           (l) => l.chapter_id === ch.id,
                         );
+                        const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
+                        const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
+                        const chapterPercent = chapterTotal > 0 ? Math.round((chapterCompleted / chapterTotal) * 100) : 0;
                         return (
                           <div
                             key={ch.id}
@@ -348,38 +394,68 @@ export default function ClassHubPage() {
                             className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
                             style={{ scrollMarginTop: "104px" }}
                           >
-                            <p className="px-4 pt-3 pb-2 text-sm font-bold tracking-wide text-slate-200 uppercase">
-                              {ch.title}
-                            </p>
-                            <div className="space-y-1">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setOpenChapterId((current) => current === ch.id ? null : ch.id);
+                              }}
+                              aria-expanded={openChapterId === ch.id}
+                              aria-controls={`chapter-lessons-${ch.id}`}
+                              className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
+                            >
+                              <span className="min-w-0 flex-1">
+                                <span className="block truncate">{ch.title}</span>
+                                <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
+                                  <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
+                                </span>
+                              </span>
+                              <span className="flex shrink-0 items-center gap-3">
+                                <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
+                                <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
+                              </span>
+                            </button>
+                            {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
                               {chapterLessons.length === 0 && (
                                 <p className="px-4 pb-3 text-sm text-slate-500">
                                   Chưa có bài học trong chương này.
                                 </p>
                               )}
-                              {chapterLessons.map((l) => (
-                                <Link
-                                  key={l.id}
-                                  href={`/lop-hoc/bai?id=${l.id}`}
-                                  className="group flex items-center gap-4 rounded-xl px-4 py-4 transition-colors hover:bg-white/5"
-                                >
-                                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1D3461] text-lg">
-                                    📖
-                                  </span>
-                                  <span className="min-w-0 flex-1">
-                                    <span className="block truncate font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                      {l.title}
+                              {chapterLessons.map((lesson) => {
+                                const progress = lessonProgress.get(lesson.id);
+                                const percent = progress?.total
+                                  ? Math.round((progress.completed / progress.total) * 100)
+                                  : 0;
+                                return (
+                                  <Link
+                                    key={lesson.id}
+                                    href={lessonHref(lesson)}
+                                    onClick={() => {
+                                      setLastLessonId(lesson.id);
+                                      window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
+                                    }}
+                                    className="group flex items-center gap-4 rounded-xl border border-transparent px-4 py-4 transition-all hover:border-blue-400/20 hover:bg-white/5"
+                                  >
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1D3461] text-xl">
+                                      📖
                                     </span>
-                                    <span className="mt-0.5 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
-                                      {l.itemCount} mục
+                                    <span className="min-w-0 flex-1">
+                                      <span className="block font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                        {lesson.title}
+                                      </span>
+                                      <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
+                                        {lesson.itemCount} mục · {percent}% hoàn thành
+                                      </span>
+                                      <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
+                                        <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
+                                      </span>
                                     </span>
-                                  </span>
-                                  <span className="text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-primary">
-                                    →
-                                  </span>
-                                </Link>
-                              ))}
-                            </div>
+                                    <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
+                                      Vào bài →
+                                    </span>
+                                  </Link>
+                                );
+                              })}
+                            </div>}
                           </div>
                         );
                       })}
@@ -428,9 +504,14 @@ export default function ClassHubPage() {
 
                 {classPosts.length > 0 && (
                   <section>
-                    <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                      Bài viết lớp {activeDisplayName}
-                    </h2>
+                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                      <h2 className="font-display text-xl font-semibold text-white">
+                        Thông báo và học liệu lớp {activeDisplayName}
+                      </h2>
+                      <Link href="/blog" className="text-sm font-semibold text-primary hover:underline">
+                        Xem blog kiến thức →
+                      </Link>
+                    </div>
                     <div className="grid gap-5 sm:grid-cols-2">
                       {classPosts.map((p) => (
                         <Link
@@ -449,6 +530,14 @@ export default function ClassHubPage() {
                     </div>
                   </section>
                 )}
+              </div>
+            )}
+            {classSlug && !active && (
+              <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center">
+                <p className="text-slate-300">Không tìm thấy lớp học này.</p>
+                <Link href="/lop-hoc" className="mt-4 inline-block font-semibold text-primary hover:underline">
+                  Quay lại danh sách lớp học
+                </Link>
               </div>
             )}
           </>

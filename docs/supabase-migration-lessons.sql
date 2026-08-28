@@ -27,19 +27,20 @@ create table if not exists public.lessons (
   published boolean not null default true
 );
 
--- ---------- Mục trong bài học (6 loại, theo thứ tự cố định §1–§6) ----------
+-- ---------- Mục trong bài học (5 loại, theo thứ tự cố định §1–§5) ----------
 create table if not exists public.lesson_items (
   id bigint generated always as identity primary key,
   created_at timestamptz not null default now(),
   lesson_id bigint not null references public.lessons (id) on delete cascade,
   kind text not null check (kind in
-    ('ly_thuyet', 'video', 'bai_tap_mau', 'luyen_tap_sach', 'luyen_tap_de', 'kiem_tra')),
+    ('ly_thuyet', 'video', 'bai_tap_mau', 'luyen_tap', 'kiem_tra')),
   title text not null,
   subtitle text not null default '',
-  body_html text not null default '',   -- lý thuyết / bài tập mẫu (HTML + $LaTeX$)
+  body_html text not null default '',   -- chỉ dùng cho ly_thuyet (HTML + $LaTeX$)
   video_url text not null default '',   -- link YouTube
   pdf_url text not null default '',     -- link PDF (Supabase storage hoặc ngoài)
-  exam_id bigint references public.exams (id) on delete set null, -- luyen_tap_de / kiem_tra
+  questions jsonb not null default '[]'::jsonb, -- bai_tap_mau: mảng {label, body_html}
+  exam_ids bigint[] not null default '{}', -- luyen_tap / kiem_tra: các đề trắc nghiệm gắn vào mục
   sort_order int not null default 0
 );
 
