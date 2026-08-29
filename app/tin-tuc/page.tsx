@@ -12,6 +12,7 @@ import {
   type PostMeta,
 } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
+import { academicSubject } from "@/services/academic-subjects";
 
 /** Đổi link YouTube bất kỳ (watch/youtu.be/shorts) thành link nhúng. */
 function toYouTubeEmbed(url: string): string | null {
@@ -33,6 +34,7 @@ function PostCard({ post }: { post: PostMeta }) {
       </h2>
       <p className="mt-1 text-xs text-slate-500">
         {new Date(post.created_at).toLocaleDateString("vi-VN")}
+        {` · ${academicSubject(post.subjectCode).label}`}
       </p>
       {embed && (
         <div className="mt-4 aspect-video overflow-hidden rounded-xl">
@@ -100,10 +102,10 @@ export default function NewsPage() {
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-3xl px-6 pt-28 pb-20 lg:px-8">
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
-          Tin <span className="text-gradient">tức</span>
+          Thông báo <span className="text-gradient">&amp; học liệu</span>
         </h1>
         <p className="mt-3 mb-6 text-slate-400">
-          Bài giảng, video và thông báo từ thầy Thạch
+          Nội dung ngắn theo lớp và môn học. Các bài kiến thức chuyên sâu nằm trong mục Blog
           {effectiveClassIds !== null && " — hiển thị theo lớp của em"}.
         </p>
         <input

@@ -8,6 +8,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
+import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
+import PracticeQuestionsGrid from "@/components/lessons/PracticeQuestionsGrid";
 import {
   SECTION_META,
   SECTION_ORDER,
@@ -115,7 +117,7 @@ function VideoCard({
   );
 }
 
-/** Thẻ nội dung (lý thuyết, bài tập mẫu, luyện tập sách): bấm nút để mở nội dung. */
+/** Thẻ nội dung lý thuyết: bấm nút để mở nội dung. */
 function ContentCard({
   item,
   kind,
@@ -184,15 +186,15 @@ function ContentCard({
   );
 }
 
-/** Thẻ đề (luyện tập/kiểm tra): thời gian + số câu theo dạng + trạng thái. */
+/** Thẻ 1 đề kiểm tra: thời gian + số câu theo dạng + trạng thái. Một mục có thể có nhiều thẻ (nhiều đề). */
 function ExamCard({
-  item,
+  examId,
   kind,
   exam,
   score,
   loggedIn,
 }: {
-  item: LessonItem;
+  examId: number;
   kind: LessonItemKind;
   exam: LessonExamMeta | undefined;
   score: number | undefined;
@@ -211,7 +213,7 @@ function ExamCard({
       </span>
       <span className="min-w-0 flex-1">
         <span className="block font-display font-bold tracking-wide text-white uppercase">
-          {item.title}
+          {exam?.title ?? `Đề #${examId}`}
         </span>
         <span className="mt-1 flex flex-wrap items-center gap-2 text-sm">
           {exam && (
@@ -233,26 +235,22 @@ function ExamCard({
           )}
         </span>
       </span>
-      {item.exam_id ? (
-        loggedIn ? (
-          <Link
-            href={`/kiem-tra/lam?id=${item.exam_id}`}
-            className="rounded-xl px-5 py-2.5 text-sm font-bold text-white"
-            style={{ backgroundColor: meta.color }}
-          >
-            {score !== undefined ? "Làm lại" : "Làm bài"}
-          </Link>
-        ) : (
-          <Link
-            href="/dang-nhap"
-            className="rounded-xl border px-5 py-2.5 text-sm font-semibold"
-            style={{ borderColor: hexAlpha(meta.color, "66"), color: meta.color }}
-          >
-            Đăng nhập để làm
-          </Link>
-        )
+      {loggedIn ? (
+        <Link
+          href={`/kiem-tra/lam?id=${examId}`}
+          className="rounded-xl px-5 py-2.5 text-sm font-bold text-white"
+          style={{ backgroundColor: meta.color }}
+        >
+          {score !== undefined ? "Làm lại" : "Làm bài"}
+        </Link>
       ) : (
-        <span className="text-sm text-slate-500">Chưa gắn đề</span>
+        <Link
+          href="/dang-nhap"
+          className="rounded-xl border px-5 py-2.5 text-sm font-semibold"
+          style={{ borderColor: hexAlpha(meta.color, "66"), color: meta.color }}
+        >
+          Đăng nhập để làm
+        </Link>
       )}
     </div>
   );
@@ -262,6 +260,8 @@ function LessonLoader() {
   const { session } = useAuth();
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
+  const classSlug = searchParams.get("class");
+  const subjectCode = searchParams.get("subject") ?? "vat-ly";
 
   const [title, setTitle] = useState("");
   const [chapterTitle, setChapterTitle] = useState("");
@@ -289,12 +289,13 @@ function LessonLoader() {
     setActiveSection("ly_thuyet");
   }, [id]);
 
-  // dữ liệu cần đăng nhập: thông tin đề (RLS), điểm, tiến độ
+  // dữ liệu cần đăng nhập: thông tin đề kiểm tra (RLS), điểm, tiến độ
+  // (mục Luyện tập tự lấy đề đầy đủ bên trong PracticeQuestionsGrid)
   useEffect(() => {
     if (!session || !items) return;
     const examIds = items
-      .map((i) => i.exam_id)
-      .filter((v): v is number => v !== null);
+      .filter((i) => i.kind === "kiem_tra")
+      .flatMap((i) => i.exam_ids);
     fetchExamMetas(examIds).then(setExamMetas);
     fetchMyExamScores(session.user.id).then(setScores);
     fetchMyProgress(session.user.id).then(setDone);
@@ -309,8 +310,8 @@ function LessonLoader() {
   }, [items]);
 
   function isDone(item: LessonItem) {
-    if (item.kind === "luyen_tap_de" || item.kind === "kiem_tra")
-      return item.exam_id !== null && scores.has(item.exam_id);
+    if (item.kind === "kiem_tra")
+      return item.exam_ids.length > 0 && item.exam_ids.every((id) => scores.has(id));
     return done.has(item.id);
   }
 
@@ -332,55 +333,45 @@ function LessonLoader() {
   const progress = items.length > 0
     ? Math.round((completedItems / items.length) * 100)
     : 0;
+  const classHref = classSlug
+    ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
+    : "/lop-hoc";
 
   return (
     <div className="cnc-embedded secondary-lesson-shell">
-      <header className="cnc-course-header">
-        <div className="cnc-breadcrumb">
-          <Link href="/lop-hoc">Lớp học</Link>
-          <ChevronRight size={14} />
-          <Link href="/lop-hoc?tab=secondary">Trung học</Link>
-          {chapterTitle && <>
-            <ChevronRight size={14} />
-            <Link href={chapterId ? `/lop-hoc?tab=secondary&chapter=${chapterId}#chapter-${chapterId}` : "/lop-hoc?tab=secondary"}>
-              {chapterTitle}
-            </Link>
-          </>}
-        </div>
-
-        <div className="cnc-header-grid">
-          <div>
-            <span className="cnc-kicker">Chương trình Trung học</span>
-            <h1>{title}</h1>
-            <p>Cấu trúc bài học thống nhất theo lộ trình học tập 6 phần.</p>
-          </div>
-          <div className="cnc-progress-card" aria-label={`Tiến độ bài học ${progress}%`}>
-            <div><span>Tiến độ bài học</span><strong>{progress}%</strong></div>
-            <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
-            <small>{completedItems}/{items.length} nội dung đã hoàn thành</small>
-          </div>
-        </div>
-
-        <div className="cnc-stats">
-          <span>📚 6 phần học chuẩn</span>
-          <span>📄 {items.length} nội dung</span>
-          <span>{session ? "✓ Có lưu tiến độ" : "○ Đăng nhập để lưu tiến độ"}</span>
-        </div>
-      </header>
-
       <div className="cnc-accordion-workspace secondary-lesson-workspace">
         <div className="cnc-lesson-hero">
-          <div className="cnc-title-row">
-            <div>
+          <div className="cnc-breadcrumb">
+            <Link href="/lop-hoc">Lớp học</Link>
+            <ChevronRight size={14} />
+            <Link href={classHref}>Trung học</Link>
+            {chapterTitle && <>
+              <ChevronRight size={14} />
+              <Link href={classHref}>{chapterTitle}</Link>
+            </>}
+          </div>
+
+          <div className="secondary-hero-grid">
+            <div className="secondary-hero-copy">
               <span className="cnc-eyebrow">TRUNG HỌC · {chapterTitle || "BÀI HỌC"}</span>
-              <h2>{title}</h2>
-              <p>Học lần lượt theo từng phần và hoàn thành bài kiểm tra cuối bài.</p>
+              <h1>{title}</h1>
+              <p>Học theo từng chặng, tự kiểm tra kiến thức và hoàn thành bài kiểm tra cuối bài.</p>
+              <div className="cnc-stats">
+                <span>📚 5 chặng học</span>
+                <span>📄 {items.length} nội dung</span>
+                <span>{session ? "✓ Đang lưu tiến độ" : "○ Đăng nhập để lưu"}</span>
+              </div>
+            </div>
+            <div className="cnc-progress-card" aria-label={`Tiến độ bài học ${progress}%`}>
+              <div><span>Tiến độ bài học</span><strong>{progress}%</strong></div>
+              <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
+              <small>{completedItems}/{items.length} nội dung đã hoàn thành</small>
             </div>
           </div>
 
           <div className="cnc-lesson-progress-row">
             <div className="cnc-section-progress-ring">
-              <strong>{activeSection ? SECTION_ORDER.indexOf(activeSection) + 1 : 0}<small>/6</small></strong>
+              <strong>{activeSection ? SECTION_ORDER.indexOf(activeSection) + 1 : 0}<small>/5</small></strong>
             </div>
             <nav className="cnc-section-pills" aria-label="Đi nhanh đến phần bài học">
               {sections.map(({ kind, items: sectionItems }, index) => {
@@ -390,7 +381,10 @@ function LessonLoader() {
                     key={kind}
                     type="button"
                     disabled={sectionItems.length === 0}
-                    onClick={() => setActiveSection(kind)}
+                    onClick={() => {
+                      setActiveSection(kind);
+                      document.getElementById(`secondary-stage-${kind}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
                     className={`${kind} ${activeSection === kind ? "active" : ""} ${sectionItems.length === 0 ? "empty" : ""}`}
                     style={{ color: meta.color }}
                   >
@@ -413,6 +407,7 @@ function LessonLoader() {
             return (
               <section
                 key={section.kind}
+                id={`secondary-stage-${section.kind}`}
                 className={`cnc-learning-section ${section.kind} ${isActive ? "active" : ""} ${isEmpty ? "empty" : ""}`}
                 style={{ "--section-color": meta.color } as CSSProperties}
               >
@@ -453,24 +448,64 @@ function LessonLoader() {
                               onOpen={() => markDone(item)}
                             />
                           );
-                        if (item.kind === "luyen_tap_de" || item.kind === "kiem_tra")
+                        if (item.kind === "ly_thuyet")
                           return (
-                            <ExamCard
+                            <ContentCard
                               key={item.id}
                               item={item}
                               kind={item.kind}
-                              exam={item.exam_id ? examMetas.get(item.exam_id) : undefined}
-                              score={item.exam_id !== null ? scores.get(item.exam_id) : undefined}
-                              loggedIn={!!session}
+                              onOpen={() => markDone(item)}
                             />
                           );
+                        if (item.kind === "kiem_tra")
+                          return (
+                            <div key={item.id} className="space-y-3">
+                              <p className="font-display font-bold text-white">{item.title}</p>
+                              {item.exam_ids.length === 0 ? (
+                                <p className="text-sm text-slate-500">Chưa gắn đề</p>
+                              ) : (
+                                item.exam_ids.map((examId) => (
+                                  <ExamCard
+                                    key={examId}
+                                    examId={examId}
+                                    kind={item.kind}
+                                    exam={examMetas.get(examId)}
+                                    score={scores.get(examId)}
+                                    loggedIn={!!session}
+                                  />
+                                ))
+                              )}
+                            </div>
+                          );
+                        // bai_tap_mau / luyen_tap: lưới từng câu, tự đánh dấu đã làm
                         return (
-                          <ContentCard
+                          <div
                             key={item.id}
-                            item={item}
-                            kind={item.kind}
-                            onOpen={() => markDone(item)}
-                          />
+                            className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5"
+                          >
+                            <div>
+                              <p className="font-display font-bold text-white">{item.title}</p>
+                              {item.subtitle && (
+                                <p className="mt-0.5 text-sm" style={{ color: meta.color }}>
+                                  {item.subtitle}
+                                </p>
+                              )}
+                            </div>
+                            {item.kind === "bai_tap_mau" ? (
+                              <WorkedQuestionsGrid questions={item.questions} color={meta.color} />
+                            ) : (
+                              <PracticeQuestionsGrid examIds={item.exam_ids} color={meta.color} />
+                            )}
+                            {session && !done.has(item.id) && (
+                              <button
+                                type="button"
+                                onClick={() => markDone(item)}
+                                className="rounded-lg border border-white/15 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-emerald-400/40 hover:text-emerald-300"
+                              >
+                                Đánh dấu đã làm
+                              </button>
+                            )}
+                          </div>
                         );
                       })}
                     </div>

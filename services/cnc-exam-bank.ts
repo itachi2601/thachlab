@@ -31,7 +31,9 @@ export interface CncQuizQuestion {
 }
 
 function toQuizQuestions(key: string, questions: MultipleChoiceQuestion[]): CncQuizQuestion[] {
-  return questions.map((q, index) => ({
+  // Các màn hình quiz CNC hiện chấm tự động câu trắc nghiệm. Những dạng còn lại
+  // vẫn được lưu nguyên vẹn trong ngân hàng để giáo viên biên soạn và chấm riêng.
+  return questions.filter((q) => q.type === "multiple_choice").map((q, index) => ({
     id: `${key}-${index}`,
     question: q.question,
     options: q.options,

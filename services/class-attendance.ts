@@ -45,6 +45,15 @@ export async function updateAttendanceSessionNote(sessionId: number, note: strin
   if (error) throw error;
 }
 
+/** Xóa phiên mở nhầm; các bản ghi điểm danh của phiên được xóa cascade trong database. */
+export async function deleteAttendanceSession(sessionId: number) {
+  const { error } = await getSupabase()
+    .from("thpt_attendance_sessions")
+    .delete()
+    .eq("id", sessionId);
+  if (error) throw error;
+}
+
 export async function fetchAttendanceRecords(sessionId: number) {
   const { data, error } = await getSupabase().from("thpt_attendance_records")
     .select("session_id, student_id, status, note, marked_at, profiles!thpt_attendance_records_student_id_fkey(full_name, class_name)")

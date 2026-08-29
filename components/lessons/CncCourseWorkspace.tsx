@@ -31,6 +31,7 @@ import {
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
+import CncCourseAnnouncements from "@/components/lessons/CncCourseAnnouncements";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
 
@@ -359,11 +360,12 @@ export const cncChecklistConfig: Record<
   "lesson-6": { sections: millingMachiningChecklistSections, zeroTolerance: millingMachiningZeroTolerance, title: "Check list kiểm tra thực hành gia công phay", description: "An toàn, quy trình gia công và đo kiểm sản phẩm trên bài tập tổng hợp phay CNC." },
 };
 
-export default function CncCourseWorkspace({ embedded = false, courseId }: { embedded?: boolean; courseId?: number }) {
+export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId }: { embedded?: boolean; courseId?: number; initialLessonId?: string }) {
   const { profile: viewerProfile, session } = useAuth();
-  const [lessonId, setLessonId] = useState("lesson-1");
-  const [expandedLessonId, setExpandedLessonId] = useState<string | null>(null);
-  const [tab, setTab] = useState<TabId | null>(null);
+  const validInitialLessonId = initialLessonId && lessons.some((item) => item.id === initialLessonId) ? initialLessonId : undefined;
+  const [lessonId, setLessonId] = useState(validInitialLessonId ?? "lesson-1");
+  const [expandedLessonId, setExpandedLessonId] = useState<string | null>(validInitialLessonId ?? null);
+  const [tab, setTab] = useState<TabId | null>(validInitialLessonId ? "outcomes" : null);
   const [lessonSearch, setLessonSearch] = useState("");
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
@@ -394,11 +396,14 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   const lesson = lessons.find((item) => item.id === lessonId) ?? lessons[0];
   const meta = lessonMeta[lesson.id];
   const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
-  const visibleLessons = lessons.filter((item) =>
+  const matchingLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
       lessonSearch.trim().toLocaleLowerCase("vi-VN"),
     ),
   );
+  const visibleLessons = validInitialLessonId
+    ? matchingLessons.filter((item) => item.id === validInitialLessonId)
+    : matchingLessons;
 
   useEffect(() => {
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
@@ -424,6 +429,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   useEffect(() => {
+    if (validInitialLessonId) return;
     const requestedLesson = new URLSearchParams(window.location.search).get("bai");
     if (!requestedLesson || !lessons.some((item) => item.id === requestedLesson)) return;
     const timer = window.setTimeout(() => {
@@ -432,7 +438,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
       setTab("outcomes");
     }, 0);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [validInitialLessonId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -530,13 +536,16 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
         </div>
       </header>
 
+      {courseId && <CncCourseAnnouncements courseId={courseId} />}
+
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">
-          <div className="cnc-nav-heading"><span>Chương trình Gia công CNC</span><small>7 BÀI HỌC</small></div>
-          <label className="cnc-lesson-search">
+          <div className="cnc-nav-heading"><span>{validInitialLessonId ? "Nội dung bài học" : "Chương trình Gia công CNC"}</span><small>{validInitialLessonId ? lesson.shortTitle : "7 BÀI HỌC"}</small></div>
+          {validInitialLessonId && <Link href="/lop-hoc/cnc" className="mx-1 mb-4 inline-flex text-sm font-bold text-[#e85d24] hover:underline">← Tất cả bài học</Link>}
+          {!validInitialLessonId && <label className="cnc-lesson-search">
             <Search size={20} />
             <input value={lessonSearch} onChange={(event) => setLessonSearch(event.target.value)} placeholder="Tìm bài học…" />
-          </label>
+          </label>}
           <div className="cnc-lesson-stack">
             {visibleLessons.map((item) => {
               const index = lessons.findIndex((candidate) => candidate.id === item.id);
@@ -547,7 +556,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
               const locked = viewerProfile?.role !== "admin" && (teacherLocked||(item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
               return (
                 <article key={item.id} className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
-                  <button
+                  {validInitialLessonId ? <button
                     type="button"
                     disabled={locked}
                     onClick={() => selectLesson(item.id)}
@@ -568,9 +577,24 @@ export default function CncCourseWorkspace({ embedded = false, courseId }: { emb
                       {active ? "Thu gọn" : "Mở bài"}
                     </span>
                     <ChevronDown className="cnc-accordion-chevron" size={18} />
-                  </button>
+                  </button> : <Link
+                    href={locked ? "/lop-hoc/cnc" : `/lop-hoc/cnc/${item.id}`}
+                    aria-disabled={locked}
+                    className="cnc-lesson-toggle"
+                  >
+                    <span className={`cnc-lesson-number ${completed[item.id] ? "done" : ""}`}>
+                      {completed[item.id] ? <Check size={15} /> : index + 1}
+                    </span>
+                    <span className="cnc-lesson-copy">
+                      <strong>{item.shortTitle}</strong>
+                      <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
+                    </span>
+                    {locked ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
+                    <span className="cnc-lesson-collapse-label">{locked ? "Đang khóa" : "Vào bài"}</span>
+                    <ChevronRight className="cnc-accordion-chevron" size={18} />
+                  </Link>}
 
-                  {active && (
+                  {active && !locked && (
                     <div id={`cnc-lesson-panel-${item.id}`} className="cnc-lesson-panel">
                       <div className="cnc-lesson-hero">
                         <div className="cnc-title-row">

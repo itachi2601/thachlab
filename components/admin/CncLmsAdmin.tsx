@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight, BookOpen, Download, ExternalLink, FileQuestion, FileText, Settings2, Video } from "lucide-react";
 import {
   CNC_COURSE_ITEMS,
   CNC_PROGRESS,
@@ -78,12 +80,14 @@ function listToLines(value: string[]) {
   return value.join("\n");
 }
 
-export default function CncLmsAdmin() {
+export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: string }) {
   const toast = useToast();
   const [items, setItems] = useState<EditableCncItem[]>(
     CNC_COURSE_ITEMS.map(normalizeItem),
   );
-  const [activeId, setActiveId] = useState(items[0]?.id ?? "intro");
+  const activeId = items.some((item) => item.id === initialLessonId)
+    ? initialLessonId!
+    : items[0]?.id ?? "intro";
   const [checklist, setChecklist] = useState([...CNC_SETUP_CHECKLIST]);
   const [bankMeta, setBankMeta] = useState<CncExamBankMeta[]>([]);
   const [importBank, setImportBank] = useState<{ key: string; label: string } | null>(null);
@@ -120,6 +124,9 @@ export default function CncLmsAdmin() {
   const [videoUrl, setVideoUrl] = useState("");
 
   const activeItem = items.find((item) => item.id === activeId) ?? items[0];
+  const activeIndex = items.findIndex((item) => item.id === activeId);
+  const previousItem = activeIndex > 0 ? items[activeIndex - 1] : null;
+  const nextItem = activeIndex >= 0 && activeIndex < items.length - 1 ? items[activeIndex + 1] : null;
   const operationLessonsUnlocked = turningQuizScore >= 80 && millingQuizScore >= 80;
 
   const lockPreview = useMemo(
@@ -352,16 +359,16 @@ export default function CncLmsAdmin() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+      <section className="overflow-hidden rounded-3xl border border-blue-400/20 bg-[radial-gradient(circle_at_90%_0%,rgba(37,99,235,.2),transparent_38%),#0B1020] p-6">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+          <Link href="/quan-tri/lms-cnc" className="inline-flex items-center gap-2 text-sm font-bold text-blue-300 hover:text-blue-200"><ArrowLeft size={17}/> Danh sách bài học</Link>
+          <Link href={activeItem.id === "intro" ? "/lop-hoc/cnc" : `/lop-hoc/cnc/${activeItem.id}`} target="_blank" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-slate-200 hover:bg-white/10">Xem trang học <ExternalLink size={14}/></Link>
+        </div>
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="font-display text-lg font-semibold text-white">
-              Quản lý LMS Gia công CNC
-            </h2>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-              Quản trị cấu trúc môn MĐ CNC, cây bài học, tài nguyên, hoạt động,
-              khu nộp bài, checklist lớp học đảo ngược và rule khóa nội dung.
-            </p>
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-300"><Settings2 size={14}/> {activeItem.id === "intro" ? "Giới thiệu học phần" : `Bài ${activeIndex}`}</span>
+            <h1 className="mt-2 max-w-3xl font-display text-2xl font-bold text-white sm:text-3xl">{activeItem.title}</h1>
+            <p className="mt-2 text-sm text-slate-400">{activeItem.duration} · Trang soạn riêng của bài học</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button
@@ -369,16 +376,22 @@ export default function CncLmsAdmin() {
               onClick={() => toast("success", "Đã lưu bản nháp LMS CNC trên giao diện.")}
               className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
             >
-              Lưu bản nháp
+              Lưu thay đổi
             </button>
             <button
               type="button"
               onClick={exportConfig}
               className="rounded-full border border-white/15 px-5 py-2 text-sm font-semibold text-slate-200 hover:border-white/30"
             >
-              Xuất JSON
+              <Download size={14}/> Xuất JSON
             </button>
           </div>
+        </div>
+        <div className="mt-6 grid grid-cols-2 gap-2 border-t border-white/10 pt-4 sm:grid-cols-4">
+          <Anchor href="#thong-tin" icon={<BookOpen size={15}/>} label="Thông tin"/>
+          <Anchor href="#hoc-lieu" icon={<FileText size={15}/>} label="Học liệu"/>
+          <Anchor href="#video" icon={<Video size={15}/>} label="Video"/>
+          <Anchor href="#cau-hoi" icon={<FileQuestion size={15}/>} label="Câu hỏi"/>
         </div>
       </section>
 
@@ -460,33 +473,10 @@ export default function CncLmsAdmin() {
         </div>
       </section>
 
-      <section className="grid gap-5 lg:grid-cols-[280px_1fr]">
-        <aside className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
-          <p className="px-2 pb-3 text-xs font-bold tracking-wide text-slate-500 uppercase">
-            Cây bài học
-          </p>
-          <div className="space-y-2">
-            {items.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActiveId(item.id)}
-                className={`w-full rounded-xl border px-3 py-3 text-left transition-colors ${
-                  activeItem.id === item.id
-                    ? "border-primary/70 bg-primary/15"
-                    : "border-white/10 bg-white/5 hover:bg-white/10"
-                }`}
-              >
-                <span className="block text-sm font-semibold text-white">
-                  {item.shortTitle}
-                </span>
-                <span className="mt-1 block text-xs text-slate-400">{item.duration}</span>
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        <div className="space-y-5 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section id="thong-tin" className="scroll-mt-28">
+        <div className="space-y-5 rounded-3xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+          <div className="border-b border-white/10 pb-4"><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Nội dung bài học</p><h2 className="mt-1 font-display text-xl font-semibold text-white">Thông tin và tài nguyên</h2><p className="mt-1 text-xs text-slate-500">Các thay đổi tại đây chỉ áp dụng cho {activeItem.shortTitle}.</p></div>
+          <div id="hoc-lieu" className="scroll-mt-28">
           <CncFilesAdmin
             lessonTitle={activeItem.shortTitle}
             files={lessonFiles}
@@ -496,7 +486,9 @@ export default function CncLmsAdmin() {
             onUpload={handleLessonFile}
             onDelete={handleDeleteLessonFile}
           />
+          </div>
 
+          <div id="video" className="scroll-mt-28">
           <CncVideosAdmin
             lessonTitle={activeItem.shortTitle}
             videos={lessonVideos}
@@ -510,6 +502,7 @@ export default function CncLmsAdmin() {
             onAdd={handleAddVideo}
             onDelete={handleDeleteVideo}
           />
+          </div>
 
           <div className="grid gap-4 md:grid-cols-2">
             <label className="text-sm text-slate-300">
@@ -656,6 +649,7 @@ export default function CncLmsAdmin() {
       </section>
 
       <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <div id="cau-hoi" className="scroll-mt-28" />
         <h3 className="font-display text-lg font-semibold text-white">
           Ngân hàng câu hỏi CNC
         </h3>
@@ -679,15 +673,13 @@ export default function CncLmsAdmin() {
                 >
                   Cập nhật qua LaTeX
                 </button>
-                {bank.examId && (
-                  <button
-                    type="button"
-                    onClick={() => void openBankEditor({ key: bank.key, label: bank.label })}
-                    className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-bold text-slate-300 hover:bg-white/10"
-                  >
-                    Xem/sửa
-                  </button>
-                )}
+                <button
+                  type="button"
+                  onClick={() => void openBankEditor({ key: bank.key, label: bank.label })}
+                  className="rounded-lg border border-blue-400/25 bg-blue-500/10 px-3 py-1.5 text-xs font-bold text-blue-200 hover:bg-blue-500/20"
+                >
+                  {bank.examId ? "Nhập / sửa câu hỏi" : "+ Tạo câu hỏi"}
+                </button>
               </div>
             </div>
           ))}
@@ -696,9 +688,16 @@ export default function CncLmsAdmin() {
           )}
         </div>
       </section>
+
+      <nav className="grid gap-3 sm:grid-cols-2" aria-label="Chuyển bài học quản trị">
+        {previousItem ? <Link href={`/quan-tri/lms-cnc/${previousItem.id}`} className="group rounded-2xl border border-white/10 bg-[#0B1020] p-4 hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500"><ArrowLeft size={15}/> Bài trước</span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{previousItem.shortTitle}</strong></Link> : <span/>}
+        {nextItem && <Link href={`/quan-tri/lms-cnc/${nextItem.id}`} className="group rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-right hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500">Bài tiếp theo <ArrowRight size={15}/></span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{nextItem.shortTitle}</strong></Link>}
+      </nav>
     </div>
   );
 }
+
+function Anchor({href,icon,label}:{href:string;icon:React.ReactNode;label:string}){return <a href={href} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-300 hover:border-blue-400/30 hover:text-blue-200">{icon}{label}</a>}
 
 function CncVideosAdmin({
   lessonTitle,

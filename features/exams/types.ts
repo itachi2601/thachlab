@@ -23,10 +23,19 @@ export interface ShortAnswerQuestion {
   explanation: string;
 }
 
+export interface EssayQuestion {
+  type: "essay";
+  question: string;
+  suggestedAnswer: string;
+  gradingGuide: string;
+  explanation: string;
+}
+
 export type ExamQuestion =
   | MultipleChoiceQuestion
   | TrueFalseQuestion
-  | ShortAnswerQuestion;
+  | ShortAnswerQuestion
+  | EssayQuestion;
 
 export interface SchoolClass {
   id: number;
@@ -94,6 +103,9 @@ export function gradeQuestion(
         max: 0.25,
       };
     }
+    case "essay":
+      // Tự luận do giáo viên chấm; không cộng vào điểm tự động.
+      return { earned: 0, max: 0 };
   }
 }
 
@@ -124,7 +136,7 @@ export function gradeExam(
 export function emptyResponses(questions: ExamQuestion[]): QuestionResponse[] {
   return questions.map((q) => {
     if (q.type === "true_false") return [null, null, null, null];
-    if (q.type === "short_answer") return "";
+    if (q.type === "short_answer" || q.type === "essay") return "";
     return null;
   });
 }
