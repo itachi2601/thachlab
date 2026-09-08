@@ -1,4 +1,10 @@
-import type { Chapter, Lesson, LessonItem, TypeCounts } from "@/features/lessons/types";
+import {
+  normalizeLessonItemKind,
+  type Chapter,
+  type Lesson,
+  type LessonItem,
+  type TypeCounts,
+} from "@/features/lessons/types";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { gradeQuestion } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
@@ -56,7 +62,7 @@ export async function fetchLesson(
 }
 
 export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> {
-  const { data } = await getSupabase()
+  const { data, error } = await getSupabase()
     .from("lesson_items")
     .select(
       "id, lesson_id, kind, title, subtitle, body_html, video_url, pdf_url, questions, exam_ids, sort_order",
@@ -64,7 +70,17 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
     .eq("lesson_id", lessonId)
     .order("sort_order")
     .order("id");
-  return (data as LessonItem[]) ?? [];
+  if (error) throw error;
+  return (data ?? []).map((item) => ({
+    ...item,
+    kind: normalizeLessonItemKind(item.kind),
+    subtitle: item.subtitle ?? "",
+    body_html: item.body_html ?? "",
+    video_url: item.video_url ?? "",
+    pdf_url: item.pdf_url ?? "",
+    questions: item.questions ?? [],
+    exam_ids: item.exam_ids ?? [],
+  })) as LessonItem[];
 }
 
 // Thông tin đề gắn vào mục luyện tập/kiểm tra (cần đăng nhập vì RLS exams)
@@ -149,7 +165,7 @@ export async function fetchLessonProgressSummaries(
   if (lessonIds.length === 0) return new Map();
   const supabase = getSupabase();
   const [{ data: itemRows, error: itemError }, { data: progressRows, error: progressError }, { data: resultRows, error: resultError }] = await Promise.all([
-    supabase.from("lesson_items").select("id, lesson_id, exam_id").in("lesson_id", lessonIds),
+    supabase.from("lesson_items").select("id, lesson_id, exam_ids").in("lesson_id", lessonIds),
     supabase.from("lesson_progress").select("item_id").eq("user_id", userId),
     supabase.from("exam_results").select("exam_id").eq("student_id", userId),
   ]);
@@ -163,7 +179,10 @@ export async function fetchLessonProgressSummaries(
   for (const row of itemRows ?? []) {
     const current = summaries.get(row.lesson_id) ?? { completed: 0, total: 0 };
     current.total += 1;
-    if (completedItems.has(row.id) || (row.exam_id && completedExams.has(row.exam_id))) current.completed += 1;
+    // Mục gắn đề tính là xong khi đã làm hết đề — khớp với isDone() ở trang bài học.
+    const examIds = (row.exam_ids as number[] | null) ?? [];
+    const examsDone = examIds.length > 0 && examIds.every((id) => completedExams.has(id));
+    if (completedItems.has(row.id) || examsDone) current.completed += 1;
     summaries.set(row.lesson_id, current);
   }
   return summaries;

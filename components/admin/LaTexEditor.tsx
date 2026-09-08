@@ -17,6 +17,9 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
   const [htmlPreview, setHtmlPreview] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const [showPreview, setShowPreview] = useState(false);
+  const [imageSlug, setImageSlug] = useState("");
+
+  const imageBase = imageSlug.trim() ? `/lessons/${imageSlug.trim().replace(/^\/+|\/+$/g, "")}/media` : "";
 
   function handleLatexChange(text: string) {
     setLatexText(text);
@@ -27,7 +30,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
 
     // Convert to HTML for preview
     if (validation.valid) {
-      const result = latexToHtml(text);
+      const result = latexToHtml(text, imageBase);
       setHtmlPreview(result.html);
     }
   }
@@ -39,7 +42,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
       return;
     }
 
-    const result = latexToHtml(latexText);
+    const result = latexToHtml(latexText, imageBase);
     onChange(result.html, latexText);
     setMode("html");
   }
@@ -113,6 +116,21 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
       {/* LaTeX Mode */}
       {mode === "latex" && (
         <div className="space-y-2">
+          <label className="block text-xs text-slate-400">
+            Thư mục ảnh (slug) — để trống nếu bài không có hình
+            <input
+              type="text"
+              value={imageSlug}
+              onChange={(e) => setImageSlug(e.target.value)}
+              placeholder="12-cd01-su-chuyen-the"
+              className={`${inputCls} mt-1 w-full font-mono`}
+            />
+            <span className="mt-1 block text-[11px] text-slate-500">
+              {imageBase
+                ? `\\includegraphics{images/fig01.png} → ${imageBase}/fig01.png`
+                : "Ảnh phải nằm ở public/lessons/<slug>/media/ trong repo"}
+            </span>
+          </label>
           <textarea
             value={latexText}
             onChange={(e) => handleLatexChange(e.target.value)}

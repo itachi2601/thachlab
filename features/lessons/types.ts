@@ -67,6 +67,14 @@ export const SECTION_META: Record<LessonItemKind, SectionMeta> = {
   kiem_tra: { label: "Kiểm tra", icon: "📝", color: "#F43F5E", action: "Làm bài" },
 };
 
+/** Chuẩn hóa dữ liệu của cấu trúc 6 mục cũ trong lúc migration DB chưa được chạy. */
+export function normalizeLessonItemKind(kind: unknown): LessonItemKind {
+  if (kind === "luyen_tap_sach" || kind === "luyen_tap_de") return "luyen_tap";
+  return SECTION_ORDER.includes(kind as LessonItemKind)
+    ? (kind as LessonItemKind)
+    : "ly_thuyet";
+}
+
 // Nhãn viết tắt số câu theo dạng: 12 TN · 2 ĐS · 4 TLN
 export const TYPE_SHORT: Record<string, string> = {
   multiple_choice: "TN",
