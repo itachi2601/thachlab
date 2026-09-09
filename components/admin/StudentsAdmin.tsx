@@ -1,20 +1,27 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FileSpreadsheet, UserRound } from "lucide-react";
+import { Clock3, FileSpreadsheet, UserRound, UserX } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
+import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
 import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
+import ClassPendingRequests from "@/components/admin/ClassPendingRequests";
+import UnassignedStudents from "@/components/admin/UnassignedStudents";
 
-type Tab = "profile" | "roster";
+type Tab = "profile" | "pending" | "roster" | "unassigned";
 
 const TABS: { id: Tab; label: string; icon: typeof UserRound }[] = [
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
+  { id: "pending", label: "Chờ duyệt", icon: Clock3 },
   { id: "roster", label: "Nhập danh sách", icon: FileSpreadsheet },
 ];
 
 export default function StudentsAdmin() {
+  const { profile } = useAuth();
+  const isAdmin = profile?.role === "admin";
+  const tabs = isAdmin ? [...TABS, { id: "unassigned" as const, label: "Chưa phân lớp", icon: UserX }] : TABS;
   const [tab, setTab] = useState<Tab>("profile");
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
@@ -85,7 +92,7 @@ export default function StudentsAdmin() {
       ) : (
         <>
           <nav className="flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2">
-            {TABS.map((item) => {
+            {tabs.map((item) => {
               const Icon = item.icon;
               return (
                 <button
@@ -109,11 +116,25 @@ export default function StudentsAdmin() {
               onSelect={setSelectedStudentId}
             />
           )}
+          {tab === "pending" && (
+            <ClassPendingRequests
+              classId={selectedClassId}
+              className={selectedClass?.name ?? ""}
+              onReviewed={() => setStudentsNonce((n) => n + 1)}
+            />
+          )}
           {tab === "roster" && (
             <ClassRosterImportPanel
               classId={selectedClassId}
               className={selectedClass?.name ?? ""}
               onImported={() => setStudentsNonce((n) => n + 1)}
+            />
+          )}
+          {tab === "unassigned" && isAdmin && (
+            <UnassignedStudents
+              classes={classes}
+              defaultClassId={selectedClassId}
+              onAssigned={() => setStudentsNonce((n) => n + 1)}
             />
           )}
         </>

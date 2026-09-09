@@ -139,7 +139,10 @@ Deno.serve(async (req) => {
       const { error: enrollError } = isClassMode
         ? await admin
             .from("user_classes")
-            .upsert({ user_id: studentId, class_id: targetId }, { onConflict: "user_id,class_id" })
+            .upsert(
+              { user_id: studentId, class_id: targetId, status: "active", reviewed_by: callerId, reviewed_at: new Date().toISOString() },
+              { onConflict: "user_id,class_id" },
+            )
         : await admin
             .from("course_enrollments")
             .upsert(
