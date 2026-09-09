@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { FileSpreadsheet, Plus, Upload, Download, UserCheck2, UserPlus2, AlertCircle } from "lucide-react";
+import { FileSpreadsheet, Plus, Upload, Download, UserCheck2, UserPlus2, UserRoundCheck, AlertCircle, Check, Copy, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
-import { createCncCourse, fetchCourseEnrollments, type EnrollmentRow } from "@/services/course-enrollments";
+import { createCncCourse, fetchCourseEnrollments, reviewEnrollment, type EnrollmentRow } from "@/services/course-enrollments";
 import { parseRosterFile, importRosterToCourse, type ParsedRoster, type ImportResultRow } from "@/services/roster-import";
 import { exportCourseRoster } from "@/services/roster-export";
 import { fetchStudentRosterInfo, type StudentRosterInfo } from "@/services/student-profile";
@@ -43,15 +43,19 @@ export interface CourseRosterPanelProps {
   isPracticum: boolean;
   /** Chỉ admin mới tạo được lớp học phần mới ngay tại đây. */
   isAdmin: boolean;
+  /** Mã tham gia của lớp học phần đang chọn — hiện chip để copy gửi học sinh. */
+  joinCode?: string;
   /** Gọi sau khi nhập danh sách xong để dashboard nạp lại danh sách học sinh. */
   onImported?: () => void;
   /** Gọi sau khi admin tạo lớp học phần mới. */
   onCourseCreated?: () => void;
+  /** Gọi sau khi duyệt / từ chối / tạm khóa học sinh để dashboard nạp lại sĩ số. */
+  onEnrollmentChange?: () => void;
 }
 
 export default function CourseRosterPanel({
   courseId, courseName, classLabel, schoolYear: courseYear, subjectLabel, subjectCode,
-  isPracticum, isAdmin, onImported, onCourseCreated,
+  isPracticum, isAdmin, joinCode, onImported, onCourseCreated, onEnrollmentChange,
 }: CourseRosterPanelProps) {
   const toast = useToast();
 
@@ -64,6 +68,8 @@ export default function CourseRosterPanel({
   const [importResults, setImportResults] = useState<ImportResultRow[] | null>(null);
 
   const [enrollments, setEnrollments] = useState<EnrollmentRow[]>([]);
+  const [pending, setPending] = useState<EnrollmentRow[]>([]);
+  const [deciding, setDeciding] = useState("");
   const [rosterInfo, setRosterInfo] = useState<Map<string, StudentRosterInfo>>(new Map());
   const [ltOverrides, setLtOverrides] = useState<CourseGradeOverride[]>([]);
   const [cncRecords, setCncRecords] = useState<CncLearningRecord[]>([]);
@@ -77,6 +83,7 @@ export default function CourseRosterPanel({
       const rows = await fetchCourseEnrollments(id);
       const active = rows.filter((row) => row.status === "active");
       setEnrollments(active);
+      setPending(rows.filter((row) => row.status === "pending"));
       const info = await fetchStudentRosterInfo(active.map((row) => row.student_id));
       setRosterInfo(info);
       if (practicum) {
@@ -131,6 +138,20 @@ export default function CourseRosterPanel({
       toast("error", errorMessage(error, "Chưa tạo được lớp học phần."));
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function decide(row: EnrollmentRow, status: "active" | "rejected" | "suspended") {
+    setDeciding(`${row.student_id}:${status}`);
+    try {
+      await reviewEnrollment(courseId, row.student_id, status);
+      await reloadCourseData(courseId, isPracticum);
+      onEnrollmentChange?.();
+      toast("success", status === "active" ? "Đã duyệt học sinh vào lớp." : status === "rejected" ? "Đã từ chối yêu cầu." : "Đã tạm khóa học sinh.");
+    } catch (error) {
+      toast("error", errorMessage(error, "Chưa cập nhật được trạng thái ghi danh."));
+    } finally {
+      setDeciding("");
     }
   }
 
@@ -225,7 +246,7 @@ export default function CourseRosterPanel({
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.16em] text-sky-300">CTTC · {subjectLabel}</p>
-            <h2 className="mt-2 font-display text-2xl font-bold text-white">Nhập danh sách & Bảng điểm</h2>
+            <h2 className="mt-2 font-display text-2xl font-bold text-white">Danh sách lớp & bảng điểm</h2>
             <p className="mt-2 text-sm text-slate-400">
               Nhập file Excel danh sách lớp từ phòng đào tạo → tự tạo tài khoản (mật khẩu là mã số sinh viên) và
               ghi danh vào khóa. Cuối kỳ xuất lại đúng file mẫu kèm điểm.
@@ -252,6 +273,14 @@ export default function CourseRosterPanel({
         <p className="mt-1 text-sm text-slate-400">
           {subjectLabel} · {courseYear}{classLabel ? ` · ${classLabel}` : ""} · {enrollments.length} sinh viên
         </p>
+        {joinCode && (
+          <button
+            onClick={async () => { await navigator.clipboard.writeText(joinCode); toast("success", "Đã sao chép mã tham gia."); }}
+            className="mt-3 inline-flex items-center gap-2 rounded-xl bg-blue-500/10 px-4 py-2 font-mono text-sm font-bold text-blue-200 hover:bg-blue-500/15"
+          >
+            <Copy size={14} /> {joinCode}
+          </button>
+        )}
 
         <label className="mt-4 flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-white/20 bg-white/[.03] px-4 py-3 text-sm text-slate-300 hover:border-blue-400/40">
           <Upload size={16} />
@@ -295,6 +324,49 @@ export default function CourseRosterPanel({
                 <span>{r.status === "created" ? "đã tạo tài khoản mới" : r.status === "linked" ? "đã có tài khoản, ghi danh" : r.message}</span>
               </div>
             ))}
+          </div>
+        )}
+      </section>
+
+      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <div className="flex items-center gap-2">
+          <UserRoundCheck size={18} className="text-amber-300" />
+          <h3 className="font-display text-lg font-bold text-white">Chờ duyệt ghi danh{pending.length > 0 ? ` · ${pending.length}` : ""}</h3>
+        </div>
+        <p className="mt-1 text-xs text-slate-400">Học sinh nhập mã tham gia sẽ vào đây chờ duyệt. Danh sách nhập từ Excel được ghi danh thẳng, không cần duyệt.</p>
+        <div className="mt-4 space-y-2">
+          {pending.map((row) => (
+            <article key={row.student_id} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/5 p-3">
+              <div className="min-w-0 flex-1">
+                <strong className="block text-sm text-white">{row.profiles?.full_name || "Học sinh"}</strong>
+                <small className="text-slate-400">{row.profiles?.class_name || "Chưa có lớp"}</small>
+              </div>
+              <button disabled={!!deciding} onClick={() => void decide(row, "active")} className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white disabled:opacity-40">
+                <Check size={13} /> Duyệt
+              </button>
+              <button disabled={!!deciding} onClick={() => void decide(row, "rejected")} className="inline-flex items-center gap-1 rounded-full border border-red-500/30 px-3 py-1.5 text-xs font-bold text-red-300 disabled:opacity-40">
+                <X size={13} /> Từ chối
+              </button>
+            </article>
+          ))}
+          {pending.length === 0 && <p className="text-sm text-slate-500">Không có yêu cầu nào đang chờ.</p>}
+        </div>
+        {enrollments.length > 0 && (
+          <div className="mt-5 border-t border-white/10 pt-4">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Đang học · {enrollments.length}</p>
+            <div className="mt-3 max-h-96 space-y-2 overflow-y-auto">
+              {enrollments.map((row) => (
+                <article key={row.student_id} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/5 p-3">
+                  <div className="min-w-0 flex-1">
+                    <strong className="block text-sm text-white">{row.profiles?.full_name || "Học sinh"}</strong>
+                    <small className="text-slate-400">{row.profiles?.class_name || "Chưa có lớp"}</small>
+                  </div>
+                  <button disabled={!!deciding} onClick={() => void decide(row, "suspended")} className="rounded-full border border-amber-500/30 px-3 py-1.5 text-xs font-bold text-amber-300 disabled:opacity-40">
+                    Tạm khóa
+                  </button>
+                </article>
+              ))}
+            </div>
           </div>
         )}
       </section>

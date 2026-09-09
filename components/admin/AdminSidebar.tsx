@@ -15,10 +15,8 @@ const AREA_ITEMS: Record<Area, { href: string; label: string }[]> = {
     { href: "/quan-tri/bang-diem", label: "Bảng điểm" },
   ],
   cttc: [
-    { href: "/quan-tri/lms-cnc", label: "LMS CNC" },
-    { href: "/quan-tri/khoa-hoc", label: "Khóa học theo môn" },
+    { href: "/quan-tri/lms-cnc", label: "Nội dung học phần CNC" },
     { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy" },
-    { href: "/quan-tri/thi-truc-tiep", label: "Thi trực tiếp CNC" },
   ],
 };
 

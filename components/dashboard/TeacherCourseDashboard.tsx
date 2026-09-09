@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, Route, UserRound, Users2 } from "lucide-react";
+import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, Users2, X } from "lucide-react";
 import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -13,6 +13,7 @@ import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGrad
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
 import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
 import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
+import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
 import { SUBJECTS, getSubject } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
 
@@ -51,7 +52,13 @@ export default function TeacherCourseDashboard() {
   const isAdmin = profile?.role === "admin";
   // Giảng viên không quen công nghệ: vào là thấy ngay điểm danh + gán máy + báo hỏng,
   // thay vì tab Tổng quan nhiều biểu đồ/chỉ số họ chưa cần đến.
-  const [activeTab,setActiveTab]=useState<"overview"|"progress"|"final-grades"|"profile"|"competencies"|"attendance"|"roster">(isInstructor?"attendance":"overview");
+  const [activeTab,setActiveTab]=useState<"overview"|"grades"|"competencies"|"attendance"|"roster">(isInstructor?"attendance":"overview");
+  // Gộp "Điểm & tiến độ" + "Tổng kết điểm" thành 1 tab Bảng điểm với 2 chế độ xem.
+  const [gradeView,setGradeView]=useState<"process"|"final">("process");
+  // Hồ sơ học sinh mở dạng drawer thay vì tab riêng.
+  const [profileOpen,setProfileOpen]=useState(false);
+  // Phòng thi trực tiếp CNC: overlay toàn màn hình, dữ liệu toàn hệ thống (không theo lớp).
+  const [liveExamOpen,setLiveExamOpen]=useState(false);
   const [activeStudent, setActiveStudent] = useState(0);
   // Môn lý thuyết ("khac") không có chương trình học nhưng vẫn cần tab Nhập danh sách & điểm.
   const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac") : SUBJECTS;
@@ -63,6 +70,12 @@ export default function TeacherCourseDashboard() {
   const student = students[activeStudent] ?? null;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
   const subject = getSubject(subjectCode);
+
+  const openProfile = (id: string) => {
+    const index = students.findIndex((item) => item.id === id);
+    if (index >= 0) setActiveStudent(index);
+    setProfileOpen(true);
+  };
 
   const [coursesNonce, setCoursesNonce] = useState(0);
   useEffect(() => {
@@ -130,18 +143,36 @@ export default function TeacherCourseDashboard() {
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"progress",label:"Điểm & tiến độ",icon:Route},{id:"final-grades",label:"Tổng kết điểm",icon:GraduationCap},{id:"profile",label:"Hồ sơ học sinh",icon:UserRound},{id:"competencies",label:"Năng lực & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Nhập danh sách & điểm",icon:FileSpreadsheet}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&<TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>}
     {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index);setActiveTab("profile")}}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+    {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="progress"&&(subject.hasCurriculum?<TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}}/>:<CurriculumPending subjectLabel={subject.label}/>)}
-    {activeTab==="final-grades"&&selectedCourseId&&(subject.hasCurriculum?<TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+    {activeTab==="grades"&&selectedCourseId&&(subject.hasCurriculum?<div className="space-y-4">
+      <div className="flex w-fit rounded-xl border border-white/10 bg-black/20 p-1">{([["process","Quá trình"],["final","Tổng kết học phần"]] as const).map(([id,label])=><button key={id} onClick={()=>setGradeView(id)} className={`rounded-lg px-4 py-2 text-sm font-bold transition ${gradeView===id?"bg-blue-600 text-white":"text-slate-400 hover:text-white"}`}>{label}</button>)}</div>
+      {gradeView==="process"
+        ? <TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={openProfile}/>
+        : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
+    </div>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
-    {activeTab==="profile"&&selectedCourseId&&(subject.hasCurriculum?<TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={(id)=>{const index=students.findIndex(item=>item.id===id);if(index>=0)setActiveStudent(index)}} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0)}}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
+
+    {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
+      <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>
+      <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-white/10 bg-[#080d1d] p-5 shadow-2xl">
+        <div className="mb-4 flex justify-end"><button onClick={()=>setProfileOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"><X size={14}/>Đóng</button></div>
+        <TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={openProfile} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0);setProfileOpen(false)}}/>
+      </aside>
+    </>}
+
+    {liveExamOpen&&<div className="fixed inset-0 z-[60] overflow-y-auto bg-[#070b16] p-4 sm:p-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-4 flex justify-end"><button onClick={()=>setLiveExamOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"><X size={14}/>Đóng phòng thi</button></div>
+        <CncMillingLiveMonitor/>
+      </div>
+    </div>}
   </div>;
 }
 
