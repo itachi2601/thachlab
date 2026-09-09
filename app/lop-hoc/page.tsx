@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
-import type { Chapter, Lesson } from "@/features/lessons/types";
+import { LESSON_KIND_META, isPeriodicExam, type Chapter, type Lesson } from "@/features/lessons/types";
 import {
   classGrade,
   displayClassesByGrade,
@@ -425,6 +425,8 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                                 const percent = progress?.total
                                   ? Math.round((progress.completed / progress.total) * 100)
                                   : 0;
+                                const periodic = isPeriodicExam(lesson.lesson_kind);
+                                const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
                                 return (
                                   <Link
                                     key={lesson.id}
@@ -433,24 +435,49 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                                       setLastLessonId(lesson.id);
                                       window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
                                     }}
-                                    className="group flex items-center gap-4 rounded-xl border border-transparent px-4 py-4 transition-all hover:border-blue-400/20 hover:bg-white/5"
+                                    className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
+                                    style={{
+                                      borderColor: periodic ? `${kindMeta.color}33` : "transparent",
+                                    }}
                                   >
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1D3461] text-xl">
-                                      📖
+                                    <span
+                                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                      style={{
+                                        backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
+                                      }}
+                                    >
+                                      {periodic ? kindMeta.icon : "📖"}
                                     </span>
                                     <span className="min-w-0 flex-1">
-                                      <span className="block font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                        {lesson.title}
+                                      <span className="flex flex-wrap items-center gap-2">
+                                        {periodic && (
+                                          <span
+                                            className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                                            style={{
+                                              color: kindMeta.color,
+                                              backgroundColor: `${kindMeta.color}22`,
+                                            }}
+                                          >
+                                            {kindMeta.badge}
+                                          </span>
+                                        )}
+                                        <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                          {lesson.title}
+                                        </span>
                                       </span>
                                       <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
-                                        {lesson.itemCount} mục · {percent}% hoàn thành
+                                        {periodic
+                                          ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
+                                          : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
                                       </span>
-                                      <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
-                                        <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
-                                      </span>
+                                      {!periodic && (
+                                        <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
+                                          <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
+                                        </span>
+                                      )}
                                     </span>
                                     <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
-                                      Vào bài →
+                                      {periodic ? "Làm bài →" : "Vào bài →"}
                                     </span>
                                   </Link>
                                 );

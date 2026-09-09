@@ -5,14 +5,23 @@ import LaTexEditor from "@/components/admin/LaTexEditor";
 import { useToast } from "@/components/ui/Toast";
 import type { SchoolClass } from "@/features/exams/types";
 import {
+  LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
+  isPeriodicExam,
   type Chapter,
   type Lesson,
   type LessonItem,
   type LessonItemKind,
+  type LessonKind,
   type LessonWorkedQuestion,
 } from "@/features/lessons/types";
+
+const LESSON_KIND_OPTIONS: LessonKind[] = [
+  "bai_hoc",
+  "kiem_tra_giua_ki",
+  "kiem_tra_cuoi_ki",
+];
 import {
   classGrade,
   displayClassesByGrade,
@@ -401,6 +410,7 @@ function ChapterLessonsEditor({
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [openLesson, setOpenLesson] = useState<Lesson | null>(null);
   const [title, setTitle] = useState("");
+  const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
 
   const reload = useCallback(() => {
     fetchLessons(true).then((ls) =>
@@ -414,10 +424,14 @@ function ChapterLessonsEditor({
 
   async function addLesson(e: React.FormEvent) {
     e.preventDefault();
-    if (!title.trim()) return;
+    const finalTitle =
+      title.trim() ||
+      (isPeriodicExam(lessonKind) ? LESSON_KIND_META[lessonKind].label : "");
+    if (!finalTitle) return;
     const { error } = await getSupabase().from("lessons").insert({
       chapter_id: chapter.id,
-      title: title.trim(),
+      title: finalTitle,
+      lesson_kind: lessonKind,
       sort_order: lessons.length + 1,
     });
     if (error) {
@@ -426,6 +440,19 @@ function ChapterLessonsEditor({
     }
     toast("success", "Đã thêm bài học.");
     setTitle("");
+    setLessonKind("bai_hoc");
+    reload();
+  }
+
+  async function setKind(lesson: Lesson, kind: LessonKind) {
+    const { error } = await getSupabase()
+      .from("lessons")
+      .update({ lesson_kind: kind })
+      .eq("id", lesson.id);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
     reload();
   }
 
@@ -457,10 +484,25 @@ function ChapterLessonsEditor({
       </div>
 
       <form onSubmit={addLesson} className="flex flex-wrap gap-3">
+        <select
+          value={lessonKind}
+          onChange={(e) => setLessonKind(e.target.value as LessonKind)}
+          className={`${inputCls} bg-[#0B1020]`}
+        >
+          {LESSON_KIND_OPTIONS.map((k) => (
+            <option key={k} value={k}>
+              {LESSON_KIND_META[k].icon} {LESSON_KIND_META[k].label}
+            </option>
+          ))}
+        </select>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Tên bài học, vd Giá trị lượng giác của góc lượng giác"
+          placeholder={
+            isPeriodicExam(lessonKind)
+              ? `Tên bài (bỏ trống = "${LESSON_KIND_META[lessonKind].label}")`
+              : "Tên bài học, vd Giá trị lượng giác của góc lượng giác"
+          }
           className={`${inputCls} min-w-72 flex-1`}
         />
         <button
@@ -470,6 +512,12 @@ function ChapterLessonsEditor({
           + Thêm bài
         </button>
       </form>
+      {isPeriodicExam(lessonKind) && (
+        <p className="-mt-1 text-xs text-slate-500">
+          Bài kiểm tra định kỳ: đặt ở cuối chương tương ứng chương trình, chỉ cần
+          soạn mục “Kiểm tra” và gắn đề — hệ thống chấm điểm tự động.
+        </p>
+      )}
 
       <div className="space-y-2">
         {lessons.map((l, idx) => (
@@ -483,12 +531,37 @@ function ChapterLessonsEditor({
               onClick={() => setOpenLesson(l)}
               className="min-w-0 flex-1 text-left"
             >
-              <span className="block truncate font-medium text-white hover:text-primary">
-                {l.title}
+              <span className="flex items-center gap-2">
+                {isPeriodicExam(l.lesson_kind) && (
+                  <span
+                    className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                    style={{
+                      color: LESSON_KIND_META[l.lesson_kind].color,
+                      backgroundColor: `${LESSON_KIND_META[l.lesson_kind].color}22`,
+                    }}
+                  >
+                    {LESSON_KIND_META[l.lesson_kind].badge}
+                  </span>
+                )}
+                <span className="truncate font-medium text-white hover:text-primary">
+                  {l.title}
+                </span>
               </span>
               <span className="text-xs text-slate-500">{l.itemCount} mục</span>
             </button>
-            <span className="flex items-center gap-1">
+            <span className="flex flex-wrap items-center gap-1">
+              <select
+                value={l.lesson_kind}
+                onChange={(e) => setKind(l, e.target.value as LessonKind)}
+                title="Loại bài"
+                className="rounded-lg border border-white/10 bg-[#0B1020] px-2 py-1 text-xs text-slate-300"
+              >
+                {LESSON_KIND_OPTIONS.map((k) => (
+                  <option key={k} value={k}>
+                    {LESSON_KIND_META[k].icon} {LESSON_KIND_META[k].label}
+                  </option>
+                ))}
+              </select>
               <button onClick={() => move(idx, -1)} title="Lên" className={chipBtn}>
                 ↑
               </button>

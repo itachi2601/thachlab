@@ -1,5 +1,6 @@
 import {
   normalizeLessonItemKind,
+  normalizeLessonKind,
   type Chapter,
   type Lesson,
   type LessonItem,
@@ -28,35 +29,63 @@ export async function fetchChapters(): Promise<Chapter[]> {
   }));
 }
 
+// Cột lesson_kind là migration mới (docs/supabase-migration-lessons-periodic-exam.sql).
+// Chọn kèm khi có, tự lùi về danh sách cột cũ khi DB chưa chạy migration.
+type LessonRow = Record<string, unknown> & { lesson_items?: { count: number }[] };
+
 export async function fetchLessons(includeDrafts = false): Promise<Lesson[]> {
-  let q = getSupabase()
+  const withKind = getSupabase()
+    .from("lessons")
+    .select("id, chapter_id, title, sort_order, published, lesson_kind, lesson_items(count)")
+    .order("sort_order")
+    .order("id");
+  const legacy = getSupabase()
     .from("lessons")
     .select("id, chapter_id, title, sort_order, published, lesson_items(count)")
     .order("sort_order")
     .order("id");
-  if (!includeDrafts) q = q.eq("published", true);
-  const { data } = await q;
-  return (data ?? []).map((l) => ({
-    id: l.id,
-    chapter_id: l.chapter_id,
-    title: l.title,
-    sort_order: l.sort_order,
-    published: l.published,
-    itemCount: (l.lesson_items as { count: number }[])?.[0]?.count ?? 0,
+  const primary = await (includeDrafts ? withKind : withKind.eq("published", true));
+  const res = primary.error
+    ? await (includeDrafts ? legacy : legacy.eq("published", true))
+    : primary;
+  return ((res.data ?? []) as LessonRow[]).map((l) => ({
+    id: l.id as number,
+    chapter_id: l.chapter_id as number,
+    title: l.title as string,
+    sort_order: l.sort_order as number,
+    published: l.published as boolean,
+    lesson_kind: normalizeLessonKind(l.lesson_kind),
+    itemCount: l.lesson_items?.[0]?.count ?? 0,
   }));
 }
 
 export async function fetchLesson(
   id: number,
 ): Promise<{ lesson: Lesson; chapterTitle: string } | null> {
-  const { data } = await getSupabase()
+  const withKind = getSupabase()
+    .from("lessons")
+    .select("id, chapter_id, title, sort_order, published, lesson_kind, chapters(title)")
+    .eq("id", id)
+    .single();
+  const legacy = getSupabase()
     .from("lessons")
     .select("id, chapter_id, title, sort_order, published, chapters(title)")
     .eq("id", id)
     .single();
+  const primary = await withKind;
+  const res = primary.error ? await legacy : primary;
+  const data = res.data as (Record<string, unknown> & { chapters?: { title: string } }) | null;
   if (!data) return null;
   return {
-    lesson: { ...data, itemCount: 0 } as unknown as Lesson,
+    lesson: {
+      id: data.id,
+      chapter_id: data.chapter_id,
+      title: data.title,
+      sort_order: data.sort_order,
+      published: data.published,
+      lesson_kind: normalizeLessonKind(data.lesson_kind),
+      itemCount: 0,
+    } as unknown as Lesson,
     chapterTitle: (data.chapters as unknown as { title: string })?.title ?? "",
   };
 }

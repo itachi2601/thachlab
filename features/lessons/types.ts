@@ -15,13 +15,50 @@ export interface Chapter {
   subjectCode: string;
 }
 
+// Bài học thường, hoặc một bài kiểm tra định kỳ đặt cuối chương tương ứng chương trình.
+export type LessonKind = "bai_hoc" | "kiem_tra_giua_ki" | "kiem_tra_cuoi_ki";
+
 export interface Lesson {
   id: number;
   chapter_id: number;
   title: string;
   sort_order: number;
   published: boolean;
+  lesson_kind: LessonKind;
   itemCount: number;
+}
+
+export function isPeriodicExam(kind: LessonKind): boolean {
+  return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki";
+}
+
+export interface LessonKindMeta {
+  label: string; // nhãn đầy đủ, cũng là tên bài mặc định
+  badge: string; // nhãn ngắn hiển thị dạng chip ("" = không hiện)
+  icon: string;
+  color: string;
+}
+
+export const LESSON_KIND_META: Record<LessonKind, LessonKindMeta> = {
+  bai_hoc: { label: "Bài học", badge: "", icon: "📖", color: "#3B82F6" },
+  kiem_tra_giua_ki: {
+    label: "Kiểm tra giữa học kì",
+    badge: "GIỮA HỌC KÌ",
+    icon: "📝",
+    color: "#F59E0B",
+  },
+  kiem_tra_cuoi_ki: {
+    label: "Kiểm tra cuối học kì",
+    badge: "CUỐI HỌC KÌ",
+    icon: "🏁",
+    color: "#F43F5E",
+  },
+};
+
+export function normalizeLessonKind(kind: unknown): LessonKind {
+  return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki"
+    ? kind
+    : "bai_hoc";
 }
 
 // Một "dạng bài" trong mục Các dạng bài tập: đề + lời giải soạn tự do (LaTeX/HTML)

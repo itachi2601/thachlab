@@ -11,13 +11,16 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import PracticeQuestionsGrid from "@/components/lessons/PracticeQuestionsGrid";
 import {
+  LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
+  isPeriodicExam,
   youTubeEmbed,
   youTubeThumb,
   type LessonItem,
   type LessonItemKind,
+  type LessonKind,
 } from "@/features/lessons/types";
 import {
   fetchExamMetas,
@@ -266,6 +269,7 @@ function LessonLoader() {
   const [title, setTitle] = useState("");
   const [chapterTitle, setChapterTitle] = useState("");
   const [chapterId, setChapterId] = useState<number | null>(null);
+  const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
   const [items, setItems] = useState<LessonItem[] | null>(null);
   const [examMetas, setExamMetas] = useState<Map<number, LessonExamMeta>>(new Map());
   const [scores, setScores] = useState<Map<number, number>>(new Map());
@@ -283,6 +287,7 @@ function LessonLoader() {
         setTitle(res.lesson.title);
         setChapterTitle(res.chapterTitle);
         setChapterId(res.lesson.chapter_id);
+        setLessonKind(res.lesson.lesson_kind);
       }
     });
     fetchLessonItems(id).then(setItems);
@@ -329,13 +334,72 @@ function LessonLoader() {
   if (!items)
     return <p className="text-center text-slate-400">Đang tải bài học…</p>;
 
+  const classHref = classSlug
+    ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
+    : "/lop-hoc";
+
+  if (isPeriodicExam(lessonKind)) {
+    const kindMeta = LESSON_KIND_META[lessonKind];
+    const examIds = items
+      .filter((i) => i.kind === "kiem_tra")
+      .flatMap((i) => i.exam_ids);
+    return (
+      <div className="mx-auto w-full max-w-3xl px-6 py-10">
+        <div className="cnc-breadcrumb">
+          <Link href="/lop-hoc">Lớp học</Link>
+          <ChevronRight size={14} />
+          <Link href={classHref}>Trung học</Link>
+          {chapterTitle && (
+            <>
+              <ChevronRight size={14} />
+              <Link href={classHref}>{chapterTitle}</Link>
+            </>
+          )}
+        </div>
+
+        <div
+          className="mt-4 rounded-2xl border p-6"
+          style={{ borderColor: `${kindMeta.color}33`, backgroundColor: `${kindMeta.color}12` }}
+        >
+          <span
+            className="inline-block rounded-full px-3 py-1 text-xs font-bold tracking-wide"
+            style={{ color: kindMeta.color, backgroundColor: `${kindMeta.color}22` }}
+          >
+            {kindMeta.icon} {kindMeta.badge}
+          </span>
+          <h1 className="mt-3 font-display text-2xl font-bold text-white">{title}</h1>
+          <p className="mt-2 text-sm text-slate-400">
+            Bài kiểm tra định kỳ của {chapterTitle || "chương"} — làm bài trực tuyến,
+            hệ thống chấm điểm tự động.
+          </p>
+        </div>
+
+        <div className="mt-6 space-y-3">
+          {examIds.length === 0 ? (
+            <p className="text-sm text-slate-500">
+              Đề kiểm tra đang được giảng viên cập nhật.
+            </p>
+          ) : (
+            examIds.map((examId) => (
+              <ExamCard
+                key={examId}
+                examId={examId}
+                kind="kiem_tra"
+                exam={examMetas.get(examId)}
+                score={scores.get(examId)}
+                loggedIn={!!session}
+              />
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
   const completedItems = items.filter(isDone).length;
   const progress = items.length > 0
     ? Math.round((completedItems / items.length) * 100)
     : 0;
-  const classHref = classSlug
-    ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
-    : "/lop-hoc";
 
   return (
     <div className="cnc-embedded secondary-lesson-shell">
