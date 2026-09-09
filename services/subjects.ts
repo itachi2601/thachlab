@@ -14,7 +14,11 @@ export const SUBJECTS: SubjectDefinition[] = [
   { code: "cnc", label: "Gia công CNC", joinPrefix: "CNC", hasCurriculum: true, workshop: "C1.2", isPracticum: true },
   { code: "tien-phay", label: "Tiện – Phay truyền thống", joinPrefix: "TP", hasCurriculum: false, workshop: "C1.1", isPracticum: true },
   { code: "khac", label: "Môn khác (lý thuyết)", joinPrefix: "LOP", hasCurriculum: false, workshop: "", isPracticum: false },
+  { code: "gddd-ptnn", label: "Giáo dục đạo đức & phát triển nghề nghiệp", joinPrefix: "GDDD", hasCurriculum: false, workshop: "", isPracticum: false },
 ];
+
+/** Môn của giáo viên chủ nhiệm — có trang "Lớp chủ nhiệm" riêng (điểm danh + bảng điểm + hạnh kiểm). */
+export const HOMEROOM_SUBJECT_CODE = "gddd-ptnn";
 
 export function getSubject(code: string): SubjectDefinition {
   return SUBJECTS.find((item) => item.code === code) ?? SUBJECTS[0];

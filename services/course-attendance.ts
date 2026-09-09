@@ -76,6 +76,11 @@ export async function updateAttendanceSessionNote(sessionId: number, note: strin
   if (error) throw error;
 }
 
+export async function deleteAttendanceSession(sessionId: number) {
+  const { error } = await getSupabase().from("attendance_sessions").delete().eq("id", sessionId);
+  if (error) throw error;
+}
+
 export async function setMachineSelectionOpen(sessionId: number, open: boolean) {
   const { error } = await getSupabase().from("attendance_sessions").update({ machine_selection_open: open }).eq("id", sessionId);
   if (error) throw error;

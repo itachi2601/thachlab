@@ -13,8 +13,10 @@ import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGrad
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
 import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
 import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
+import HomeroomAttendancePanel from "@/components/dashboard/HomeroomAttendancePanel";
+import HomeroomGradebook from "@/components/dashboard/HomeroomGradebook";
 import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
-import { SUBJECTS, getSubject } from "@/services/subjects";
+import { SUBJECTS, getSubject, HOMEROOM_SUBJECT_CODE } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 type DashboardStudent = {
@@ -61,7 +63,7 @@ export default function TeacherCourseDashboard() {
   const [liveExamOpen,setLiveExamOpen]=useState(false);
   const [activeStudent, setActiveStudent] = useState(0);
   // Môn lý thuyết ("khac") không có chương trình học nhưng vẫn cần tab Nhập danh sách & điểm.
-  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac") : SUBJECTS;
+  const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac" || item.code === HOMEROOM_SUBJECT_CODE) : SUBJECTS;
   const [subjectCode, setSubjectCode] = useState<string>(availableSubjects[0]?.code ?? SUBJECTS[0].code);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
@@ -70,6 +72,12 @@ export default function TeacherCourseDashboard() {
   const student = students[activeStudent] ?? null;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
   const subject = getSubject(subjectCode);
+  const isHomeroom = subjectCode === HOMEROOM_SUBJECT_CODE;
+
+  // Lớp chủ nhiệm chỉ dùng 3 tab: Điểm danh · Bảng điểm · Danh sách lớp.
+  useEffect(() => {
+    if (isHomeroom && !["attendance", "grades", "roster"].includes(activeTab)) setActiveTab("attendance");
+  }, [isHomeroom, activeTab]);
 
   const openProfile = (id: string) => {
     const index = students.findIndex((item) => item.id === id);
@@ -143,21 +151,25 @@ export default function TeacherCourseDashboard() {
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>!isHomeroom||["attendance","grades","roster"].includes(item.id)).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
-    {activeTab==="attendance"&&selectedCourseId&&<TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>}
+    {activeTab==="attendance"&&selectedCourseId&&(isHomeroom
+      ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
+      : <TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>)}
     {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
     {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="grades"&&selectedCourseId&&(subject.hasCurriculum?<div className="space-y-4">
+    {activeTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
+
+    {activeTab==="grades"&&selectedCourseId&&!isHomeroom&&(subject.hasCurriculum?<div className="space-y-4">
       <div className="flex w-fit rounded-xl border border-white/10 bg-black/20 p-1">{([["process","Quá trình"],["final","Tổng kết học phần"]] as const).map(([id,label])=><button key={id} onClick={()=>setGradeView(id)} className={`rounded-lg px-4 py-2 text-sm font-bold transition ${gradeView===id?"bg-blue-600 text-white":"text-slate-400 hover:text-white"}`}>{label}</button>)}</div>
       {gradeView==="process"
         ? <TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={openProfile}/>
         : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
     </div>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
+    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
 
     {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
       <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>

@@ -45,6 +45,8 @@ export interface CourseRosterPanelProps {
   isAdmin: boolean;
   /** Mã tham gia của lớp học phần đang chọn — hiện chip để copy gửi học sinh. */
   joinCode?: string;
+  /** Ẩn phần bảng điểm + nút xuất file (lớp chủ nhiệm tự có bảng điểm riêng ở tab khác). */
+  hideGradebook?: boolean;
   /** Gọi sau khi nhập danh sách xong để dashboard nạp lại danh sách học sinh. */
   onImported?: () => void;
   /** Gọi sau khi admin tạo lớp học phần mới. */
@@ -55,7 +57,7 @@ export interface CourseRosterPanelProps {
 
 export default function CourseRosterPanel({
   courseId, courseName, classLabel, schoolYear: courseYear, subjectLabel, subjectCode,
-  isPracticum, isAdmin, joinCode, onImported, onCourseCreated, onEnrollmentChange,
+  isPracticum, isAdmin, joinCode, hideGradebook = false, onImported, onCourseCreated, onEnrollmentChange,
 }: CourseRosterPanelProps) {
   const toast = useToast();
 
@@ -371,7 +373,7 @@ export default function CourseRosterPanel({
         )}
       </section>
 
-      {enrollments.length > 0 && (
+      {!hideGradebook && enrollments.length > 0 && (
         <section className="space-y-3">
           <div className="flex items-center justify-between">
             <h3 className="font-display text-lg font-bold text-white">Bảng điểm</h3>
