@@ -5,6 +5,7 @@ import { AlertTriangle, ArrowRight, CalendarCheck, GraduationCap, Users } from "
 import type { ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
+import { fetchClassAlerts, type StudentAlert } from "@/services/analytics";
 import TeacherLiveLearningPanel from "@/components/dashboard/TeacherLiveLearningPanel";
 
 export default function TeacherThptOverview({
@@ -15,18 +16,20 @@ export default function TeacherThptOverview({
 }: {
   classId: number;
   students: ClassStudent[];
-  onOpenTab: (tab: "gradebook" | "attendance") => void;
+  onOpenTab: (tab: "gradebook" | "attendance" | "alerts") => void;
   onOpenStudent: (id: string) => void;
 }) {
   const [results, setResults] = useState<ClassExamResult[]>([]);
   const [attendance, setAttendance] = useState<ThptAttendanceRecord[]>([]);
   const [sessionCount, setSessionCount] = useState(0);
+  const [alerts, setAlerts] = useState<StudentAlert[]>([]);
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
 
   useEffect(() => {
     let cancelled = false;
     fetchClassExamResults(studentIds).then((rows) => { if (!cancelled) setResults(rows); }).catch(() => undefined);
+    fetchClassAlerts(studentIds).then((rows) => { if (!cancelled) setAlerts(rows); }).catch(() => undefined);
     return () => { cancelled = true; };
   }, [studentIds]);
 
@@ -76,21 +79,32 @@ export default function TeacherThptOverview({
     return Math.round(values.reduce((a, b) => a + b, 0) / values.length);
   }, [attendanceRateByStudent]);
 
+  const openAlertBy = useMemo(() => {
+    const m = new Map<string, StudentAlert>();
+    for (const a of alerts) {
+      if (a.status !== "resolved" && a.status !== "dismissed") m.set(a.studentId, a);
+    }
+    return m;
+  }, [alerts]);
+
   const concern = useMemo(() => {
     return students
       .map((student) => {
         const scores = scoreByStudent.get(student.id) ?? [];
         const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : null;
         const rate = attendanceRateByStudent.get(student.id);
+        const alert = openAlertBy.get(student.id);
         const reasons: string[] = [];
+        if (alert) reasons.push(alert.severity === "urgent" ? "⚠ Cần phụ đạo (khẩn)" : "⚠ Cần phụ đạo");
         if (avg === null) reasons.push("Chưa làm bài kiểm tra nào");
         else if (avg < 5) reasons.push(`Điểm trung bình ${avg.toFixed(1)}`);
         if (rate !== undefined && rate < 75) reasons.push(`Đi học ${rate}%`);
-        return { student, reasons };
+        return { student, reasons, hasAlert: Boolean(alert) };
       })
       .filter((item) => item.reasons.length > 0)
-      .slice(0, 8);
-  }, [students, scoreByStudent, attendanceRateByStudent]);
+      .sort((a, b) => Number(b.hasAlert) - Number(a.hasAlert))
+      .slice(0, 10);
+  }, [students, scoreByStudent, attendanceRateByStudent, openAlertBy]);
 
   return (
     <div className="space-y-5">
@@ -98,7 +112,7 @@ export default function TeacherThptOverview({
         <Metric icon={<Users size={18} />} value={String(students.length)} label="Học sinh" tone="blue" />
         <Metric icon={<GraduationCap size={18} />} value={results.length ? classAverage.toFixed(1) : "—"} label="Điểm trung bình lớp" tone="violet" />
         <Metric icon={<CalendarCheck size={18} />} value={sessionCount && attendanceAverage !== null ? `${attendanceAverage}%` : "—"} label="Tham dự trung bình" tone="emerald" />
-        <Metric icon={<AlertTriangle size={18} />} value={String(concern.length)} label="Học sinh cần quan tâm" tone="amber" />
+        <Metric icon={<AlertTriangle size={18} />} value={String(openAlertBy.size)} label="Cảnh báo phụ đạo đang mở" tone="amber" />
       </section>
 
       <TeacherLiveLearningPanel classId={classId} studentCount={students.length} onOpenStudent={onOpenStudent} />
@@ -130,6 +144,18 @@ export default function TeacherThptOverview({
       </section>
 
       <section className="grid gap-3 sm:grid-cols-2">
+        <button
+          onClick={() => onOpenTab("alerts")}
+          className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left hover:border-white/30"
+        >
+          <span>
+            <strong className="block text-lg text-white">Cảnh báo phụ đạo</strong>
+            <small className="text-slate-400">
+              {openAlertBy.size > 0 ? `${openAlertBy.size} học sinh cần xử lý` : "Không có cảnh báo"}
+            </small>
+          </span>
+          <ArrowRight size={18} className="text-amber-300" />
+        </button>
         <button
           onClick={() => onOpenTab("gradebook")}
           className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left hover:border-white/30"
