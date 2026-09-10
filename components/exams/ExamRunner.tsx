@@ -12,7 +12,7 @@ import {
   gradeQuestion,
   isAnswered,
   QUESTION_FORM_LABELS,
-  questionTopicIds,
+  questionTopicNames,
 } from "@/features/exams/types";
 import { fetchQuestionTopics } from "@/services/analytics";
 import { getSupabase } from "@/services/supabase";
@@ -44,23 +44,15 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     isAnswered(q, responses[i]),
   ).length;
 
-  // Nhãn chủ đề + link ôn lại cho phần "Xem lại bài làm"
-  const [topicMap, setTopicMap] = useState<
-    Map<number, { name: string; lessonId: number | null }>
-  >(new Map());
+  // Chủ đề -> bài học để làm nút "Ôn ngay" ở phần "Xem lại bài làm"
+  const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
   useEffect(() => {
     if (phase !== "done") return;
-    const ids = questionTopicIds(exam.questions);
-    if (ids.length === 0) return;
+    const names = questionTopicNames(exam.questions);
+    if (names.length === 0) return;
     fetchQuestionTopics()
       .then((topics) =>
-        setTopicMap(
-          new Map(
-            topics
-              .filter((t) => ids.includes(t.id))
-              .map((t) => [t.id, { name: t.name, lessonId: t.lessonId }]),
-          ),
-        ),
+        setLessonByTopic(new Map(topics.map((t) => [t.name, t.lessonId]))),
       )
       .catch(() => undefined);
   }, [phase, exam.questions]);
@@ -101,16 +93,16 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
       // Chốt đúng/sai + nhãn từng câu để phân tích chủ đề. Không chặn — lỗi ở
       // đây chỉ mất dữ liệu phân tích, điểm vẫn được lưu ở trên.
       try {
-        const topicIds = questionTopicIds(exam.questions);
-        const names = new Map<number, string>();
-        if (topicIds.length) {
+        const names = questionTopicNames(exam.questions);
+        const idByName = new Map<string, number>();
+        if (names.length) {
           const { data: topics } = await supabase
             .from("question_topics")
             .select("id, name")
-            .in("id", topicIds);
-          for (const t of topics ?? []) names.set(t.id as number, t.name as string);
+            .in("name", names);
+          for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
         }
-        const rows = buildQuestionResults(exam.questions, finalResponses, names).map(
+        const rows = buildQuestionResults(exam.questions, finalResponses, idByName).map(
           (r) => ({ ...r, exam_result_id: data.id, student_id: studentId, exam_id: exam.id }),
         );
         await supabase.from("exam_question_results").insert(rows);
@@ -264,8 +256,8 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
         {exam.questions.map((q, qi) => {
           const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
           const wrong = g ? g.earned < g.max : false;
-          const topicId = typeof q.topic_id === "number" ? q.topic_id : null;
-          const topic = topicId ? topicMap.get(topicId) : undefined;
+          const topicName = (q.topic ?? "").trim();
+          const lessonId = topicName ? lessonByTopic.get(topicName) : undefined;
           const formLabel =
             q.form === "ly_thuyet" || q.form === "bai_tap"
               ? QUESTION_FORM_LABELS[q.form]
@@ -273,11 +265,11 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           const stage = q.form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
           return (
             <li key={qi}>
-              {wrong && (topic?.name || formLabel) && (
+              {wrong && (topicName || formLabel) && (
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
-                  {topic?.name && (
+                  {topicName && (
                     <span className="rounded-full bg-amber-500/15 px-2.5 py-1 font-semibold text-amber-300">
-                      {topic.name}
+                      {topicName}
                     </span>
                   )}
                   {formLabel && (
@@ -285,9 +277,9 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
                       {formLabel}
                     </span>
                   )}
-                  {topic?.lessonId && (
+                  {lessonId && (
                     <Link
-                      href={`/lop-hoc/bai/?id=${topic.lessonId}#secondary-stage-${stage}`}
+                      href={`/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}`}
                       className="font-semibold text-primary hover:underline"
                     >
                       Ôn ngay →

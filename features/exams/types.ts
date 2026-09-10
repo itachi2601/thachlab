@@ -2,8 +2,8 @@
 // Các trường *html chứa văn bản + ảnh công thức (<img class="eq">) hoặc hình vẽ.
 
 // Nhãn phân tích, gắn khi soạn đề (skill up-de-kiem-tra hoặc trình soạn):
-//  topic_id  -> public.question_topics.id (danh mục chủ đề chuẩn hoá)
-//  form      -> "lý thuyết" hay "bài tập" — để tách chỗ hổng của học sinh
+//  topic  -> tên chủ đề con, khớp public.question_topics.name (chuẩn hoá theo lớp)
+//  form   -> "lý thuyết" hay "bài tập" — để tách chỗ hổng của học sinh
 export type QuestionForm = "ly_thuyet" | "bai_tap";
 
 export const QUESTION_FORM_LABELS: Record<QuestionForm, string> = {
@@ -12,7 +12,7 @@ export const QUESTION_FORM_LABELS: Record<QuestionForm, string> = {
 };
 
 interface QuestionTags {
-  topic_id?: number | null;
+  topic?: string;
   form?: QuestionForm | "";
 }
 
@@ -163,15 +163,15 @@ export interface QuestionResultRow {
 export function buildQuestionResults(
   questions: ExamQuestion[],
   responses: QuestionResponse[],
-  topicNames?: Map<number, string>,
+  topicIdByName?: Map<string, number>,
 ): QuestionResultRow[] {
   return questions.map((q, i) => {
     const g = gradeQuestion(q, responses[i]);
-    const topicId = typeof q.topic_id === "number" ? q.topic_id : null;
+    const name = (q.topic ?? "").trim();
     return {
       question_index: i,
-      topic_id: topicId,
-      topic_name: topicId ? (topicNames?.get(topicId) ?? "") : "",
+      topic_id: name ? (topicIdByName?.get(name) ?? null) : null,
+      topic_name: name,
       form: q.form ?? "",
       qtype: q.type,
       earned: g.earned,
@@ -181,13 +181,11 @@ export function buildQuestionResults(
   });
 }
 
-/** topic_id có mặt trên các câu của đề — để tra tên chủ đề khi ghi kết quả. */
-export function questionTopicIds(questions: ExamQuestion[]): number[] {
+/** Tên chủ đề xuất hiện trên các câu của đề. */
+export function questionTopicNames(questions: ExamQuestion[]): string[] {
   return [
     ...new Set(
-      questions
-        .map((q) => q.topic_id)
-        .filter((id): id is number => typeof id === "number"),
+      questions.map((q) => (q.topic ?? "").trim()).filter((t) => t !== ""),
     ),
   ];
 }

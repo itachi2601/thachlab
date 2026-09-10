@@ -106,14 +106,14 @@ function GapRow({
   lessonHref,
 }: {
   gap: TopicGap;
-  lessonHref: (topicId: number | null, form: string) => string | null;
+  lessonHref: (topicName: string, form: string) => string | null;
 }) {
   const { session } = useAuth();
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<
     Awaited<ReturnType<typeof fetchMyWrongQuestions>> | null
   >(null);
-  const href = lessonHref(gap.topicId, gap.form);
+  const href = lessonHref(gap.topic, gap.form);
 
   useEffect(() => {
     if (!open || items || !session) return;
@@ -215,9 +215,7 @@ function Dashboard() {
   const [points, setPoints] = useState<ScorePoint[] | null>(null);
   const [gaps, setGaps] = useState<TopicGap[] | null>(null);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
-  const [topicLesson, setTopicLesson] = useState<Map<number, { lessonId: number | null }>>(
-    new Map(),
-  );
+  const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
 
   useEffect(() => {
     if (!session) return;
@@ -226,21 +224,18 @@ function Dashboard() {
     fetchMyTopicGaps(uid).then(setGaps).catch(() => setGaps([]));
     fetchMyAlert(uid).then(setAlert).catch(() => setAlert(null));
     fetchQuestionTopics()
-      .then((topics) =>
-        setTopicLesson(new Map(topics.map((t) => [t.id, { lessonId: t.lessonId }]))),
-      )
+      .then((topics) => setLessonByTopic(new Map(topics.map((t) => [t.name, t.lessonId]))))
       .catch(() => undefined);
   }, [session]);
 
   const lessonHref = useMemo(
-    () => (topicId: number | null, form: string) => {
-      if (!topicId) return null;
-      const lesson = topicLesson.get(topicId)?.lessonId;
+    () => (topicName: string, form: string) => {
+      const lesson = lessonByTopic.get(topicName);
       if (!lesson) return null;
       const stage = form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
       return `/lop-hoc/bai/?id=${lesson}#secondary-stage-${stage}`;
     },
-    [topicLesson],
+    [lessonByTopic],
   );
 
   const avg = useMemo(() => {

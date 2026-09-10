@@ -11,6 +11,7 @@ const AREA_ITEMS: Record<Area, { href: string; label: string }[]> = {
   thpt: [
     { href: "/quan-tri/bai-hoc", label: "Bài học" },
     { href: "/quan-tri/nhap-bai", label: "Nhập bài (LaTeX)" },
+    { href: "/quan-tri/chu-de", label: "Chủ đề câu hỏi" },
     { href: "/quan-tri/lop-hoc", label: "Lớp học" },
     { href: "/quan-tri/bang-diem", label: "Bảng điểm" },
   ],
