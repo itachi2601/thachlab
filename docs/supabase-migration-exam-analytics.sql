@@ -76,6 +76,20 @@ create policy "staff manage question topics" on public.question_topics
 -- ============================================================
 -- 2. Kết quả từng câu — chốt tại thời điểm nộp bài (ảnh chụp)
 -- ============================================================
+-- Bản nháp cũ (supabase-migration-topics.sql, chưa bao giờ wire vào code) tạo bảng
+-- exam_question_results với cột "topic text" + khoá "id". Chỉ bỏ đúng bảng shape cũ đó,
+-- không đụng bảng mới khi chạy lại migration này.
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'exam_question_results'
+      and column_name = 'topic'
+  ) then
+    drop table public.exam_question_results cascade;
+  end if;
+end $$;
+
 create table if not exists public.exam_question_results (
   exam_result_id bigint not null references public.exam_results (id) on delete cascade,
   question_index int not null,
@@ -262,7 +276,7 @@ begin
       v_streak := v_streak + 1;
       v_ids := v_ids || r.id;
       v_reason := v_reason || (case when v_reason = '' then '' else ' · ' end)
-        || r.label || ' (' || to_char(r.best, 'FM990D0') || ')';
+        || r.label || ' (' || replace(to_char(r.best, 'FM990.0'), '.', ',') || ')';
     else
       exit; -- gặp bài đạt -> hết chuỗi
     end if;
@@ -274,7 +288,7 @@ begin
     values (
       p_student, v_class, 'low_score_streak',
       case when v_streak >= 3 then 'urgent' else 'warning' end,
-      v_streak || ' bài liên tiếp < ' || to_char(v_threshold, 'FM990D0') || ': ' || v_reason,
+      v_streak || ' bài liên tiếp < ' || replace(to_char(v_threshold, 'FM990.0'), '.', ',') || ': ' || v_reason,
       v_ids, 'open'
     )
     on conflict (student_id, kind) do update set
