@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import type { Exam, QuestionResponse } from "@/features/exams/types";
-import { emptyResponses, gradeExam, isAnswered } from "@/features/exams/types";
+import {
+  buildQuestionResults,
+  emptyResponses,
+  gradeExam,
+  isAnswered,
+  questionTopicIds,
+} from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
@@ -45,19 +51,49 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     setSaveState("saving");
     const finalResponses = responsesRef.current;
     const summary = gradeExam(exam.questions, finalResponses);
-    getSupabase()
-      .from("exam_results")
-      .insert({
-        student_id: session.user.id,
-        exam_id: exam.id,
-        score: summary.score10,
-        duration_seconds: Math.round((Date.now() - startedAt.current) / 1000),
-        detail: {
-          responses: finalResponses,
-          correctCount: summary.correctCount,
-        },
-      })
-      .then(({ error }) => setSaveState(error ? "failed" : "saved"));
+    const studentId = session.user.id;
+
+    void (async () => {
+      const supabase = getSupabase();
+      const { data, error } = await supabase
+        .from("exam_results")
+        .insert({
+          student_id: studentId,
+          exam_id: exam.id,
+          score: summary.score10,
+          duration_seconds: Math.round((Date.now() - startedAt.current) / 1000),
+          detail: {
+            responses: finalResponses,
+            correctCount: summary.correctCount,
+          },
+        })
+        .select("id")
+        .single();
+      if (error || !data) {
+        setSaveState("failed");
+        return;
+      }
+      setSaveState("saved");
+      // Chốt đúng/sai + nhãn từng câu để phân tích chủ đề. Không chặn — lỗi ở
+      // đây chỉ mất dữ liệu phân tích, điểm vẫn được lưu ở trên.
+      try {
+        const topicIds = questionTopicIds(exam.questions);
+        const names = new Map<number, string>();
+        if (topicIds.length) {
+          const { data: topics } = await supabase
+            .from("question_topics")
+            .select("id, name")
+            .in("id", topicIds);
+          for (const t of topics ?? []) names.set(t.id as number, t.name as string);
+        }
+        const rows = buildQuestionResults(exam.questions, finalResponses, names).map(
+          (r) => ({ ...r, exam_result_id: data.id, student_id: studentId, exam_id: exam.id }),
+        );
+        await supabase.from("exam_question_results").insert(rows);
+      } catch {
+        /* bảng phân tích chưa có / lỗi mạng — bỏ qua */
+      }
+    })();
   }, [exam, session]);
 
   const confirmSubmit = () => {

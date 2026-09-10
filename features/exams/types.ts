@@ -1,7 +1,22 @@
 // 3 dạng câu hỏi theo cấu trúc đề thi 2025 (GDPT 2018).
 // Các trường *html chứa văn bản + ảnh công thức (<img class="eq">) hoặc hình vẽ.
 
-export interface MultipleChoiceQuestion {
+// Nhãn phân tích, gắn khi soạn đề (skill up-de-kiem-tra hoặc trình soạn):
+//  topic_id  -> public.question_topics.id (danh mục chủ đề chuẩn hoá)
+//  form      -> "lý thuyết" hay "bài tập" — để tách chỗ hổng của học sinh
+export type QuestionForm = "ly_thuyet" | "bai_tap";
+
+export const QUESTION_FORM_LABELS: Record<QuestionForm, string> = {
+  ly_thuyet: "Lý thuyết",
+  bai_tap: "Bài tập",
+};
+
+interface QuestionTags {
+  topic_id?: number | null;
+  form?: QuestionForm | "";
+}
+
+export interface MultipleChoiceQuestion extends QuestionTags {
   type: "multiple_choice";
   question: string;
   options: string[]; // 4 đáp án A–D
@@ -9,21 +24,21 @@ export interface MultipleChoiceQuestion {
   explanation: string;
 }
 
-export interface TrueFalseQuestion {
+export interface TrueFalseQuestion extends QuestionTags {
   type: "true_false";
   question: string;
   statements: { text: string; answer: boolean }[]; // 4 ý a) b) c) d)
   explanation: string;
 }
 
-export interface ShortAnswerQuestion {
+export interface ShortAnswerQuestion extends QuestionTags {
   type: "short_answer";
   question: string;
   answer: string; // tối đa 4 ký tự: chữ số, dấu trừ, dấu phẩy (vd "-1,5")
   explanation: string;
 }
 
-export interface EssayQuestion {
+export interface EssayQuestion extends QuestionTags {
   type: "essay";
   question: string;
   suggestedAnswer: string;
@@ -131,6 +146,50 @@ export function gradeExam(
   });
   const score10 = max > 0 ? Math.round((earned / max) * 1000) / 100 : 0;
   return { score10, earned, max, correctCount };
+}
+
+// Một dòng public.exam_question_results — chốt đúng/sai + nhãn từng câu lúc nộp bài.
+export interface QuestionResultRow {
+  question_index: number;
+  topic_id: number | null;
+  topic_name: string;
+  form: string;
+  qtype: string;
+  earned: number;
+  max: number;
+  is_correct: boolean;
+}
+
+export function buildQuestionResults(
+  questions: ExamQuestion[],
+  responses: QuestionResponse[],
+  topicNames?: Map<number, string>,
+): QuestionResultRow[] {
+  return questions.map((q, i) => {
+    const g = gradeQuestion(q, responses[i]);
+    const topicId = typeof q.topic_id === "number" ? q.topic_id : null;
+    return {
+      question_index: i,
+      topic_id: topicId,
+      topic_name: topicId ? (topicNames?.get(topicId) ?? "") : "",
+      form: q.form ?? "",
+      qtype: q.type,
+      earned: g.earned,
+      max: g.max,
+      is_correct: g.max > 0 && g.earned === g.max,
+    };
+  });
+}
+
+/** topic_id có mặt trên các câu của đề — để tra tên chủ đề khi ghi kết quả. */
+export function questionTopicIds(questions: ExamQuestion[]): number[] {
+  return [
+    ...new Set(
+      questions
+        .map((q) => q.topic_id)
+        .filter((id): id is number => typeof id === "number"),
+    ),
+  ];
 }
 
 export function emptyResponses(questions: ExamQuestion[]): QuestionResponse[] {
