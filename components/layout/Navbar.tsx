@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, LayoutDashboard, LogOut, Menu, ShieldCheck, User, X } from "lucide-react";
+import { ChevronDown, ChevronRight, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
@@ -85,6 +85,15 @@ export default function Navbar() {
                   >
                     <User size={16} /> Tài khoản của tôi
                   </Link>
+                  {!isStaff && (
+                    <Link
+                      href="/lop-hoc/ket-qua"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <Target size={16} /> Kết quả học tập
+                    </Link>
+                  )}
                   {isStaff && profile?.admin_area !== "thpt" && (
                     <Link
                       href="/dashboard"

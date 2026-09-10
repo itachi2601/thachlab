@@ -1,21 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
 import { fetchInstructorClasses } from "@/services/class-instructors";
 import TeacherThptOverview from "@/components/dashboard/TeacherThptOverview";
 import TeacherThptGradebook from "@/components/dashboard/TeacherThptGradebook";
+import TeacherThptAnalysis from "@/components/dashboard/TeacherThptAnalysis";
+import TeacherThptAlerts from "@/components/dashboard/TeacherThptAlerts";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
 import TeacherThptAttendancePanel from "@/components/attendance/TeacherThptAttendancePanel";
 import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
 
-type DashboardTab = "overview" | "gradebook" | "profile" | "attendance" | "roster";
+type DashboardTab =
+  | "overview"
+  | "analysis"
+  | "alerts"
+  | "gradebook"
+  | "profile"
+  | "attendance"
+  | "roster";
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
+  { id: "analysis", label: "Phân tích", icon: BarChart3 },
+  { id: "alerts", label: "Cảnh báo phụ đạo", icon: AlertTriangle },
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
@@ -128,6 +139,8 @@ export default function TeacherThptDashboard() {
       ) : (
         <>
           {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={setActiveTab} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
+          {activeTab === "analysis" && <TeacherThptAnalysis classId={selectedClassId} students={students} />}
+          {activeTab === "alerts" && <TeacherThptAlerts classId={selectedClassId} students={students} />}
           {activeTab === "gradebook" && <TeacherThptGradebook students={students} />}
           {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}

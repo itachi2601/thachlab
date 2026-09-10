@@ -9,9 +9,12 @@ import {
   buildQuestionResults,
   emptyResponses,
   gradeExam,
+  gradeQuestion,
   isAnswered,
+  QUESTION_FORM_LABELS,
   questionTopicIds,
 } from "@/features/exams/types";
+import { fetchQuestionTopics } from "@/services/analytics";
 import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
@@ -40,6 +43,27 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
   ).length;
+
+  // Nhãn chủ đề + link ôn lại cho phần "Xem lại bài làm"
+  const [topicMap, setTopicMap] = useState<
+    Map<number, { name: string; lessonId: number | null }>
+  >(new Map());
+  useEffect(() => {
+    if (phase !== "done") return;
+    const ids = questionTopicIds(exam.questions);
+    if (ids.length === 0) return;
+    fetchQuestionTopics()
+      .then((topics) =>
+        setTopicMap(
+          new Map(
+            topics
+              .filter((t) => ids.includes(t.id))
+              .map((t) => [t.id, { name: t.name, lessonId: t.lessonId }]),
+          ),
+        ),
+      )
+      .catch(() => undefined);
+  }, [phase, exam.questions]);
 
   // submit được gọi từ nút bấm và từ interval hết giờ — chấm và lưu ngay tại đây
   const submit = useCallback(() => {
@@ -237,16 +261,49 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
         Xem lại bài làm
       </h2>
       <ol className="space-y-6">
-        {exam.questions.map((q, qi) => (
-          <li key={qi}>
-            <QuestionCard
-              index={qi + 1}
-              question={q}
-              response={responses[qi]}
-              review
-            />
-          </li>
-        ))}
+        {exam.questions.map((q, qi) => {
+          const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
+          const wrong = g ? g.earned < g.max : false;
+          const topicId = typeof q.topic_id === "number" ? q.topic_id : null;
+          const topic = topicId ? topicMap.get(topicId) : undefined;
+          const formLabel =
+            q.form === "ly_thuyet" || q.form === "bai_tap"
+              ? QUESTION_FORM_LABELS[q.form]
+              : "";
+          const stage = q.form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
+          return (
+            <li key={qi}>
+              {wrong && (topic?.name || formLabel) && (
+                <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
+                  {topic?.name && (
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-1 font-semibold text-amber-300">
+                      {topic.name}
+                    </span>
+                  )}
+                  {formLabel && (
+                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
+                      {formLabel}
+                    </span>
+                  )}
+                  {topic?.lessonId && (
+                    <Link
+                      href={`/lop-hoc/bai/?id=${topic.lessonId}#secondary-stage-${stage}`}
+                      className="font-semibold text-primary hover:underline"
+                    >
+                      Ôn ngay →
+                    </Link>
+                  )}
+                </div>
+              )}
+              <QuestionCard
+                index={qi + 1}
+                question={q}
+                response={responses[qi]}
+                review
+              />
+            </li>
+          );
+        })}
       </ol>
     </div>
   );

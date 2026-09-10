@@ -20,6 +20,7 @@ export interface ScorePoint {
 
 export interface TopicGap {
   key: string; // `${topic}|${form}`
+  topicId: number | null;
   topic: string;
   form: string; // "ly_thuyet" | "bai_tap" | ""
   total: number;
@@ -122,9 +123,11 @@ export async function fetchMyTopicGaps(userId: string): Promise<TopicGap[]> {
     const topic = r.topic_name || "Chưa gắn chủ đề";
     const key = `${topic}|${r.form}`;
     const g =
-      map.get(key) ?? { key, topic, form: r.form, total: 0, wrong: 0, pct: 0 };
+      map.get(key) ??
+      { key, topicId: r.topic_id, topic, form: r.form, total: 0, wrong: 0, pct: 0 };
     g.total += 1;
     if (!r.is_correct) g.wrong += 1;
+    if (r.topic_id) g.topicId = r.topic_id;
     map.set(key, g);
   }
   return [...map.values()]
@@ -300,18 +303,21 @@ export async function fetchClassTopicMatrix(
   if (studentIds.length === 0) return [];
   let query = getSupabase()
     .from("exam_question_results")
-    .select("topic_name, form, is_correct")
+    .select("topic_id, topic_name, form, is_correct")
     .in("student_id", studentIds);
   if (examId) query = query.eq("exam_id", examId);
   const { data } = await query;
 
   const map = new Map<string, TopicGap>();
-  for (const r of (data as Pick<EqrRow, "topic_name" | "form" | "is_correct">[]) ?? []) {
+  for (const r of (data as Pick<EqrRow, "topic_id" | "topic_name" | "form" | "is_correct">[]) ?? []) {
     const topic = r.topic_name || "Chưa gắn chủ đề";
     const key = `${topic}|${r.form}`;
-    const g = map.get(key) ?? { key, topic, form: r.form, total: 0, wrong: 0, pct: 0 };
+    const g =
+      map.get(key) ??
+      { key, topicId: r.topic_id, topic, form: r.form, total: 0, wrong: 0, pct: 0 };
     g.total += 1;
     if (!r.is_correct) g.wrong += 1;
+    if (r.topic_id) g.topicId = r.topic_id;
     map.set(key, g);
   }
   return [...map.values()]
