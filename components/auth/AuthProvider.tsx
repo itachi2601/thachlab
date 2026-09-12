@@ -22,21 +22,31 @@ export interface Profile {
 
 interface AuthState {
   session: Session | null;
+  /** Hồ sơ đang hiển thị cho phần còn lại của app — bị ghi đè khi admin bật "Xem như học sinh". */
   profile: Profile | null;
+  /** Hồ sơ thật, không bị ghi đè — dùng để hiện nút bật preview (chỉ role thật = admin mới thấy). */
+  realProfile: Profile | null;
   loading: boolean;
   signOut: () => Promise<void>;
+  previewAsStudent: boolean;
+  setPreviewAsStudent: (value: boolean) => void;
 }
 
 const AuthContext = createContext<AuthState>({
   session: null,
   profile: null,
+  realProfile: null,
   loading: true,
   signOut: async () => {},
+  previewAsStudent: false,
+  setPreviewAsStudent: () => {},
 });
 
 export function useAuth() {
   return useContext(AuthContext);
 }
+
+const PREVIEW_STORAGE_KEY = "thachlab_preview_as_student";
 
 export default function AuthProvider({
   children,
@@ -46,6 +56,25 @@ export default function AuthProvider({
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(supabaseConfigured);
+  const [previewAsStudent, setPreviewAsStudentState] = useState(false);
+
+  useEffect(() => {
+    try {
+      setPreviewAsStudentState(sessionStorage.getItem(PREVIEW_STORAGE_KEY) === "1");
+    } catch {
+      // sessionStorage có thể bị chặn (chế độ ẩn danh nghiêm ngặt) -> bỏ qua, giữ mặc định false.
+    }
+  }, []);
+
+  const setPreviewAsStudent = useCallback((value: boolean) => {
+    setPreviewAsStudentState(value);
+    try {
+      if (value) sessionStorage.setItem(PREVIEW_STORAGE_KEY, "1");
+      else sessionStorage.removeItem(PREVIEW_STORAGE_KEY);
+    } catch {
+      // bỏ qua nếu không lưu được — preview vẫn hoạt động trong phiên hiện tại.
+    }
+  }, []);
 
   useEffect(() => {
     if (!supabaseConfigured) return;
@@ -103,8 +132,25 @@ export default function AuthProvider({
     await getSupabase().auth.signOut();
   }, []);
 
+  // Chỉ ghi đè khi role thật là admin — phòng trường hợp giá trị cũ còn sót trong
+  // sessionStorage sau khi đăng xuất/đăng nhập tài khoản khác không phải admin.
+  const effectiveProfile: Profile | null =
+    previewAsStudent && profile?.role === "admin"
+      ? { ...profile, role: "student", admin_area: null }
+      : profile;
+
   return (
-    <AuthContext.Provider value={{ session, profile, loading, signOut }}>
+    <AuthContext.Provider
+      value={{
+        session,
+        profile: effectiveProfile,
+        realProfile: profile,
+        loading,
+        signOut,
+        previewAsStudent,
+        setPreviewAsStudent,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

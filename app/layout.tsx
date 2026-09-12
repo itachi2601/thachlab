@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AuthProvider from "@/components/auth/AuthProvider";
+import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -88,7 +89,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
         <AuthProvider>
-          <ToastProvider>{children}</ToastProvider>
+          <ToastProvider>
+            {children}
+            <PreviewAsStudentToggle />
+          </ToastProvider>
         </AuthProvider>
       </body>
     </html>
