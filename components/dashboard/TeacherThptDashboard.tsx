@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, BarChart3, CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, UserPlus, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -13,6 +13,7 @@ import TeacherThptAlerts from "@/components/dashboard/TeacherThptAlerts";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
 import TeacherThptAttendancePanel from "@/components/attendance/TeacherThptAttendancePanel";
 import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
+import ThptRegistrationRequestsPanel from "@/components/dashboard/ThptRegistrationRequestsPanel";
 
 type DashboardTab =
   | "overview"
@@ -21,6 +22,7 @@ type DashboardTab =
   | "gradebook"
   | "profile"
   | "attendance"
+  | "registrations"
   | "roster";
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
@@ -30,6 +32,7 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
   { id: "gradebook", label: "Bảng điểm", icon: GraduationCap },
   { id: "profile", label: "Hồ sơ học sinh", icon: UserRound },
   { id: "attendance", label: "Điểm danh", icon: CalendarCheck },
+  { id: "registrations", label: "Đăng ký chờ duyệt", icon: UserPlus },
   { id: "roster", label: "Nhập danh sách", icon: FileSpreadsheet },
 ];
 
@@ -144,6 +147,7 @@ export default function TeacherThptDashboard() {
           {activeTab === "gradebook" && <TeacherThptGradebook students={students} />}
           {activeTab === "profile" && <TeacherThptStudentProfile classId={selectedClassId} students={students} selectedId={selectedStudentId} onSelect={setSelectedStudentId} />}
           {activeTab === "attendance" && <TeacherThptAttendancePanel classId={selectedClassId} students={students} />}
+          {activeTab === "registrations" && <ThptRegistrationRequestsPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onChanged={() => setStudentsNonce((n) => n + 1)} />}
           {activeTab === "roster" && <ClassRosterImportPanel classId={selectedClassId} className={selectedClass?.name ?? ""} onImported={() => setStudentsNonce((n) => n + 1)} />}
         </>
       )}

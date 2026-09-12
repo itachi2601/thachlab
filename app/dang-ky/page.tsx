@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
-import { exportStudentToExcel } from "@/services/excel-export";
+import { fetchClasses } from "@/services/classes";
+import type { SchoolClass } from "@/features/exams/types";
 
 const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
 
@@ -28,7 +29,13 @@ export default function RegisterPage() {
   const [birthDate, setBirthDate] = useState("");
   const [gender, setGender] = useState("");
   const [studentId, setStudentId] = useState("");
+  const [classes, setClasses] = useState<SchoolClass[]>([]);
+  const [classId, setClassId] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    fetchClasses().then(setClasses).catch(() => setClasses([]));
+  }, []);
 
   const validateForm = (): boolean => {
     setError("");
@@ -40,6 +47,11 @@ export default function RegisterPage() {
 
     if (!username.trim()) {
       setError("Vui lòng nhập username");
+      return false;
+    }
+
+    if (!classId) {
+      setError("Vui lòng chọn khối lớp đăng ký");
       return false;
     }
 
@@ -112,6 +124,14 @@ export default function RegisterPage() {
           data: {
             full_name: fullName,
             class_name: "",
+            requested_class_id: classId,
+            username,
+            contact_email: email,
+            phone,
+            parent_phone: parentPhone,
+            birth_date: birthDate,
+            gender,
+            student_code: studentId,
           },
         },
       });
@@ -128,43 +148,7 @@ export default function RegisterPage() {
         return;
       }
 
-      const { error: profileError } = await getSupabase()
-        .from("profiles")
-        .update({
-          full_name: fullName,
-        })
-        .eq("id", authData.user.id);
-
-      if (profileError) {
-        console.error("Profile update error:", profileError);
-      }
-
-      const studentData = {
-        stt: 1,
-        fullName,
-        username,
-        phone: phone || "",
-        parentPhone: parentPhone || "",
-        email: email || "",
-        birthDate: birthDate || "",
-        gender: gender || "",
-        studentId: studentId || "",
-        password,
-        class: "",
-      };
-
-      const excelFile = await exportStudentToExcel([studentData]);
-
-      const url = window.URL.createObjectURL(excelFile);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `danh-sach-hoc-sinh-${Date.now()}.xlsx`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-
-      toast("success", "Đăng ký thành công! File Excel đã được tải xuống.");
+      toast("success", "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.");
 
       setTimeout(() => {
         router.push("/dang-nhap");
@@ -203,6 +187,10 @@ export default function RegisterPage() {
             <p className="text-sm text-slate-300">
               <strong className="text-white">Username:</strong> {username}
             </p>
+            <p className="text-sm text-slate-300">
+              <strong className="text-white">Khối lớp:</strong>{" "}
+              {classes.find((item) => String(item.id) === classId)?.name ?? "—"}
+            </p>
             {email && (
               <p className="text-sm text-slate-300">
                 <strong className="text-white">Email:</strong> {email}
@@ -216,7 +204,7 @@ export default function RegisterPage() {
 
             <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
               <p className="text-xs text-amber-300">
-                ℹ️ Thông tin này sẽ được export ra file Excel để nhập vào AZOTA
+                ℹ️ Sau khi xác nhận, hồ sơ sẽ được gửi đến giáo viên phụ trách khối lớp để duyệt.
               </p>
             </div>
           </div>
@@ -234,7 +222,7 @@ export default function RegisterPage() {
               disabled={busy}
               className="flex-1 rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
             >
-              {busy ? "Đang xử lý…" : "Xác nhận & Download Excel"}
+              {busy ? "Đang xử lý…" : "Xác nhận đăng ký"}
             </button>
           </div>
 
@@ -266,6 +254,16 @@ export default function RegisterPage() {
               placeholder="Nguyễn Văn A"
               className={inputCls}
             />
+          </div>
+
+          <div>
+            <label className="mb-1 block text-sm font-medium text-slate-300">
+              Khối lớp <span className="text-red-400">*</span>
+            </label>
+            <select required value={classId} onChange={(event) => setClassId(event.target.value)} className={inputCls}>
+              <option value="">-- Chọn khối lớp --</option>
+              {classes.map((item) => <option key={item.id} value={item.id}>{item.icon ? `${item.icon} ` : ""}{item.name}</option>)}
+            </select>
           </div>
 
           <div>
