@@ -1,21 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
+import { useAuth } from "@/components/auth/AuthProvider";
+import { useToast } from "@/components/ui/Toast";
 
 type UserType = "student" | "teacher";
 
 export default function LoginPage() {
   const router = useRouter();
+  const toast = useToast();
+  const { session, profile, loading: authLoading } = useAuth();
   const [userType, setUserType] = useState<UserType>("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+
+  // Đã đăng nhập rồi (vd bấm Back, hoặc mở lại tab cũ) -> đưa thẳng vào đúng không gian, không hiện lại form.
+  useEffect(() => {
+    if (authLoading || !session) return;
+    router.replace(profile?.role === "admin" || profile?.role === "instructor" ? "/quan-tri" : "/tai-khoan");
+  }, [authLoading, session, profile, router]);
 
   async function handleEmailLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -37,6 +47,7 @@ export default function LoginPage() {
       );
       return;
     }
+    toast("success", "Đăng nhập thành công!");
     router.push(userType === "student" ? "/tai-khoan" : "/quan-tri");
   }
 
@@ -68,7 +79,11 @@ export default function LoginPage() {
           Đăng <span className="text-gradient">nhập</span>
         </h1>
 
-        {!supabaseConfigured ? (
+        {authLoading || session ? (
+          <p className="mt-6 text-slate-400">
+            {session ? "Bạn đã đăng nhập — đang chuyển hướng…" : "Đang kiểm tra đăng nhập…"}
+          </p>
+        ) : !supabaseConfigured ? (
           <p className="mt-6 text-slate-400">
             Hệ thống đang được cấu hình, vui lòng quay lại sau.
           </p>

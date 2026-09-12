@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
+import { useToast } from "@/components/ui/Toast";
 
 export default function AuthCallbackPage() {
   const router = useRouter();
+  const toast = useToast();
   const [message, setMessage] = useState("Đang hoàn tất đăng nhập...");
 
   useEffect(() => {
@@ -32,13 +34,14 @@ export default function AuthCallbackPage() {
         return;
       }
 
+      toast("success", "Đăng nhập thành công!");
       router.replace(userType === "teacher" ? "/quan-tri" : "/tai-khoan");
     }
 
     completeLogin().catch(() => {
       setMessage("Không thể hoàn tất đăng nhập. Vui lòng thử lại.");
     });
-  }, [router]);
+  }, [router, toast]);
 
   return (
     <>
