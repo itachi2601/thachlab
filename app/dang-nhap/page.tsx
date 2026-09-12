@@ -48,7 +48,6 @@ export default function LoginPage() {
       return;
     }
     toast("success", "Đăng nhập thành công!");
-    router.push(userType === "student" ? "/tai-khoan" : "/quan-tri");
   }
 
   async function handleGoogleLogin() {

@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useState,
+  useSyncExternalStore,
 } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
@@ -47,6 +48,24 @@ export function useAuth() {
 }
 
 const PREVIEW_STORAGE_KEY = "thachlab_preview_as_student";
+const PREVIEW_EVENT = "thachlab-preview-change";
+
+function subscribePreview(onChange: () => void) {
+  window.addEventListener("storage", onChange);
+  window.addEventListener(PREVIEW_EVENT, onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(PREVIEW_EVENT, onChange);
+  };
+}
+
+function readPreview() {
+  try {
+    return sessionStorage.getItem(PREVIEW_STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 export default function AuthProvider({
   children,
@@ -55,22 +74,18 @@ export default function AuthProvider({
 }) {
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [loadedProfileUserId, setLoadedProfileUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(supabaseConfigured);
-  const [previewAsStudent, setPreviewAsStudentState] = useState(false);
-
-  useEffect(() => {
-    try {
-      setPreviewAsStudentState(sessionStorage.getItem(PREVIEW_STORAGE_KEY) === "1");
-    } catch {
-      // sessionStorage có thể bị chặn (chế độ ẩn danh nghiêm ngặt) -> bỏ qua, giữ mặc định false.
-    }
-  }, []);
+  const storedPreview = useSyncExternalStore(subscribePreview, readPreview, () => false);
+  const [previewOverride, setPreviewAsStudentState] = useState<boolean | null>(null);
+  const previewAsStudent = previewOverride ?? storedPreview;
 
   const setPreviewAsStudent = useCallback((value: boolean) => {
     setPreviewAsStudentState(value);
     try {
       if (value) sessionStorage.setItem(PREVIEW_STORAGE_KEY, "1");
       else sessionStorage.removeItem(PREVIEW_STORAGE_KEY);
+      window.dispatchEvent(new Event(PREVIEW_EVENT));
     } catch {
       // bỏ qua nếu không lưu được — preview vẫn hoạt động trong phiên hiện tại.
     }
@@ -89,6 +104,7 @@ export default function AuthProvider({
       setSession(s);
       if (!s) {
         setProfile(null);
+        setLoadedProfileUserId(null);
         setLoading(false);
       }
     });
@@ -115,12 +131,14 @@ export default function AuthProvider({
             .then(({ data: fallbackData }) => {
               if (!cancelled) {
                 setProfile(fallbackData ? ({ ...fallbackData, admin_area: null } as Profile) : null);
+                setLoadedProfileUserId(session.user.id);
                 setLoading(false);
               }
             });
           return;
         }
         setProfile((data as Profile) ?? null);
+        setLoadedProfileUserId(session.user.id);
         setLoading(false);
       });
     return () => {
@@ -145,7 +163,7 @@ export default function AuthProvider({
         session,
         profile: effectiveProfile,
         realProfile: profile,
-        loading,
+        loading: loading || Boolean(session && loadedProfileUserId !== session.user.id),
         signOut,
         previewAsStudent,
         setPreviewAsStudent,
