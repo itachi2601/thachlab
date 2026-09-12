@@ -35,7 +35,8 @@ export async function fetchClassLearningPresence(classId: number): Promise<Class
   const { data: members, error: memberError } = await supabase
     .from("user_classes")
     .select("user_id")
-    .eq("class_id", classId);
+    .eq("class_id", classId)
+    .eq("status", "active");
   if (memberError) throw memberError;
   const studentIds = (members ?? []).map((row) => row.user_id as string);
   if (!studentIds.length) return [];
