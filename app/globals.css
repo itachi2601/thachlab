@@ -1097,23 +1097,23 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 }
 .review-board .rb-stage { max-width: 1180px; margin: 0 auto; padding: clamp(20px,3.6vh,48px) clamp(20px,4vw,56px) 40px; }
 
-.review-board .rb-qmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 18px; }
+.review-board .rb-qmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 26px; }
 .review-board .rb-qnum {
-  font-family: monospace; font-weight: 700; font-size: 1rem; color: var(--rb-ink);
-  background: var(--rb-accent-soft); border: 1px solid var(--rb-line); border-radius: 10px; padding: 6px 14px;
+  font-family: monospace; font-weight: 700; font-size: 2.6rem; color: var(--rb-ink);
+  background: var(--rb-accent-soft); border: 1px solid var(--rb-line); border-radius: 16px; padding: 12px 24px;
 }
 .review-board .rb-tag {
-  font-size: .74rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--rb-line);
+  font-size: 1.9rem; font-weight: 600; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--rb-line);
   color: var(--rb-ink-soft); background: var(--rb-surface);
 }
 .review-board .rb-tag.topic { color: var(--rb-accent-ink); border-color: rgba(79,140,255,.3); }
 .review-board .rb-result {
-  margin-left: auto; display: none; align-items: center; gap: 8px;
-  font-family: monospace; font-size: .85rem; font-weight: 700; padding: 6px 14px; border-radius: 999px;
+  margin-left: auto; display: none; align-items: center; gap: 14px;
+  font-family: monospace; font-size: 2.1rem; font-weight: 700; padding: 12px 24px; border-radius: 999px;
   border: 1px solid var(--rb-line);
 }
 .review-board .rb-result.show { display: inline-flex; }
-.review-board .rb-result .dot { width: 8px; height: 8px; border-radius: 50%; }
+.review-board .rb-result .dot { width: 16px; height: 16px; border-radius: 50%; }
 .review-board .rb-r-easy { color: var(--rb-ok-ink); background: var(--rb-ok-soft); border-color: var(--rb-ok-line); }
 .review-board .rb-r-easy .dot { background: var(--rb-ok); }
 .review-board .rb-r-mid { color: var(--rb-warn-ink); background: var(--rb-warn-soft); border-color: var(--rb-warn-line); }
@@ -1122,60 +1122,59 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .review-board .rb-r-hard .dot { background: var(--rb-bad); }
 
 .review-board .rb-qtext {
-  font-size: clamp(1.3rem, 1.05rem + 1vw, 1.9rem); line-height: 1.5; font-weight: 600; color: var(--rb-ink);
-  margin-bottom: clamp(20px,3vh,34px);
+  font-size: clamp(5.2rem, 4.2rem + 4vw, 7.6rem); line-height: 1.35; font-weight: 600; color: var(--rb-ink);
+  margin-bottom: clamp(28px,4vh,46px);
 }
 .review-board .rb-qtext img.eq { filter: invert(0.9) hue-rotate(180deg); vertical-align: middle; }
 
-.review-board .rb-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 760px) { .review-board .rb-options { grid-template-columns: 1fr; } }
+.review-board .rb-options { display: grid; grid-template-columns: 1fr; gap: 22px; }
 .review-board .rb-opt {
-  position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px;
-  border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface);
-  font-size: clamp(1.02rem,.9rem + .4vw,1.24rem); color: var(--rb-ink-soft);
+  position: relative; display: flex; gap: 22px; align-items: flex-start; padding: 28px 34px;
+  border-radius: 20px; border: 1px solid var(--rb-line); background: var(--rb-surface);
+  font-size: clamp(4.08rem,3.6rem + 1.6vw,4.96rem); color: var(--rb-ink-soft);
 }
 .review-board .rb-opt .rb-letter {
-  flex: none; width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center;
-  font-family: monospace; font-weight: 700; font-size: .95rem;
+  flex: none; width: 64px; height: 64px; border-radius: 16px; display: grid; place-items: center;
+  font-family: monospace; font-weight: 700; font-size: 1.9rem;
   background: var(--rb-surface-2); color: var(--rb-ink-soft); border: 1px solid var(--rb-line);
 }
 .review-board .rb-opt .rb-body { flex: 1; min-width: 0; }
-.review-board .rb-opt .rb-stat { margin-top: 8px; display: none; align-items: center; gap: 8px; font-family: monospace; font-size: .78rem; color: var(--rb-muted); }
-.review-board .rb-opt .rb-bar { flex: 1; max-width: 140px; height: 5px; border-radius: 99px; background: var(--rb-line-soft); overflow: hidden; }
+.review-board .rb-opt .rb-stat { margin-top: 16px; display: none; align-items: center; gap: 14px; font-family: monospace; font-size: 1.6rem; color: var(--rb-muted); }
+.review-board .rb-opt .rb-bar { flex: 1; max-width: 220px; height: 9px; border-radius: 99px; background: var(--rb-line-soft); overflow: hidden; }
 .review-board .rb-opt .rb-bar i { display: block; height: 100%; border-radius: 99px; background: var(--rb-bad); }
 .review-board.rb-revealed .rb-opt .rb-stat { display: flex; }
 .review-board .rb-opt.correct { border-color: var(--rb-ok-line); background: var(--rb-ok-soft); color: var(--rb-ink); }
 .review-board .rb-opt.correct .rb-letter { background: var(--rb-ok); color: #04140d; border-color: var(--rb-ok); }
 .review-board .rb-opt.correct .rb-bar i { background: var(--rb-ok); }
 .review-board.rb-revealed .rb-opt:not(.correct) { opacity: .6; }
-.review-board .rb-opt .rb-badge { display: none; margin-left: auto; flex: none; align-self: center; font-family: monospace; font-size: .72rem; font-weight: 700; color: var(--rb-ok-ink); }
+.review-board .rb-opt .rb-badge { display: none; margin-left: auto; flex: none; align-self: center; font-family: monospace; font-size: 1.5rem; font-weight: 700; color: var(--rb-ok-ink); }
 .review-board .rb-opt.correct .rb-badge { display: inline; }
 
-.review-board .rb-tf-list { display: grid; gap: 12px; }
-.review-board .rb-tf-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface); }
-.review-board .rb-tf-row .rb-letter { font-family: monospace; font-weight: 700; color: var(--rb-muted); flex: none; }
-.review-board .rb-tf-row .rb-body { flex: 1; font-size: clamp(1rem,.9rem + .3vw,1.14rem); color: var(--rb-ink-soft); }
+.review-board .rb-tf-list { display: grid; gap: 20px; }
+.review-board .rb-tf-row { display: flex; align-items: center; gap: 26px; padding: 24px 30px; border-radius: 20px; border: 1px solid var(--rb-line); background: var(--rb-surface); }
+.review-board .rb-tf-row .rb-letter { font-family: monospace; font-weight: 700; font-size: 2.4rem; color: var(--rb-muted); flex: none; }
+.review-board .rb-tf-row .rb-body { flex: 1; font-size: clamp(4rem,3.6rem + 1.2vw,4.56rem); color: var(--rb-ink-soft); }
 .review-board .rb-tf-row .rb-verdict {
-  flex: none; font-family: monospace; font-size: .8rem; font-weight: 700; padding: 6px 14px;
-  border-radius: 999px; border: 1px solid var(--rb-line); color: var(--rb-muted); background: var(--rb-surface-2); min-width: 64px; text-align: center;
+  flex: none; font-family: monospace; font-size: 1.7rem; font-weight: 700; padding: 14px 26px;
+  border-radius: 999px; border: 1px solid var(--rb-line); color: var(--rb-muted); background: var(--rb-surface-2); min-width: 130px; text-align: center;
 }
-.review-board .rb-tf-row .rb-pct { flex: none; width: 76px; text-align: right; font-family: monospace; font-size: .78rem; color: var(--rb-muted); visibility: hidden; }
+.review-board .rb-tf-row .rb-pct { flex: none; width: 150px; text-align: right; font-family: monospace; font-size: 1.5rem; color: var(--rb-muted); visibility: hidden; }
 .review-board.rb-revealed .rb-tf-row .rb-pct { visibility: visible; }
 .review-board.rb-revealed .rb-tf-row.t .rb-verdict { background: var(--rb-ok-soft); border-color: var(--rb-ok-line); color: var(--rb-ok-ink); }
 .review-board.rb-revealed .rb-tf-row.f .rb-verdict { background: var(--rb-bad-soft); border-color: var(--rb-bad-line); color: var(--rb-bad-ink); }
 
-.review-board .rb-sa-box { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 38px 20px; border-radius: 18px; border: 1px dashed var(--rb-line); background: var(--rb-surface); }
-.review-board .rb-sa-box .rb-label { font-family: monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-muted); }
-.review-board .rb-sa-box .rb-value { font-family: monospace; font-size: clamp(2.4rem,1.6rem + 3vw,4rem); font-weight: 700; color: var(--rb-faint); }
+.review-board .rb-sa-box { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 52px 30px; border-radius: 22px; border: 1px dashed var(--rb-line); background: var(--rb-surface); }
+.review-board .rb-sa-box .rb-label { font-family: monospace; font-size: 1.6rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-muted); }
+.review-board .rb-sa-box .rb-value { font-family: monospace; font-size: clamp(9.6rem,6.4rem + 12vw,16rem); font-weight: 700; color: var(--rb-faint); }
 .review-board.rb-revealed .rb-sa-box .rb-value { color: var(--rb-ok-ink); }
 
 .review-board .rb-explain {
-  margin-top: 22px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s ease, opacity .3s ease;
-  border-radius: 14px; background: var(--rb-surface-2); border: 1px solid var(--rb-line);
+  margin-top: 30px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s ease, opacity .3s ease;
+  border-radius: 20px; background: var(--rb-surface-2); border: 1px solid var(--rb-line);
 }
-.review-board .rb-explain.open { max-height: 700px; opacity: 1; }
-.review-board .rb-explain .rb-inner { padding: 18px 22px; font-size: 1rem; line-height: 1.65; color: var(--rb-ink-soft); }
-.review-board .rb-explain .rb-lbl { display: flex; align-items: center; gap: 8px; font-family: monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-accent-ink); margin-bottom: 8px; }
+.review-board .rb-explain.open { max-height: 2400px; opacity: 1; }
+.review-board .rb-explain .rb-inner { padding: 30px 36px; font-size: 2.6rem; line-height: 1.55; color: var(--rb-ink-soft); }
+.review-board .rb-explain .rb-lbl { display: flex; align-items: center; gap: 12px; font-family: monospace; font-size: 1.5rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-accent-ink); margin-bottom: 14px; }
 
 .review-board .rb-hint { margin-top: 26px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: monospace; font-size: .76rem; color: var(--rb-faint); }
 .review-board .rb-hint kbd { background: var(--rb-surface); border: 1px solid var(--rb-line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 7px; color: var(--rb-ink-soft); font-family: inherit; }
