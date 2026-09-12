@@ -21,6 +21,7 @@ create index if not exists user_classes_status_idx on public.user_classes(class_
 -- bao trùm (assigned instructors read class rosters chỉ có SELECT; policy mới có cả SELECT).
 drop policy if exists "admin manages user classes" on public.user_classes;
 drop policy if exists "assigned instructors read class rosters" on public.user_classes;
+drop policy if exists "class managers manage user classes" on public.user_classes;
 create policy "class managers manage user classes" on public.user_classes
   for all to authenticated
   using (public.can_manage_class(class_id))
