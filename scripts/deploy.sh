@@ -28,7 +28,8 @@ git init -q -b deploy
 git add -A
 git -c user.name="ThachLab Deploy" -c user.email="deploy@thachlab.id.vn" \
   commit -qm "deploy: $(date '+%Y-%m-%d %H:%M')"
-git push -f "$REPO_URL" deploy
+# Bản build ~40MB — bộ đệm HTTP mặc định 1MB làm push đứt giữa chừng (curl 55).
+git -c http.postBuffer=524288000 push -f "$REPO_URL" deploy
 rm -rf .git
 
 echo "✓ Đã push bản build lên nhánh deploy — hosting sẽ cập nhật trong vòng 10 phút."
