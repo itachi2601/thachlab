@@ -598,3 +598,102 @@ export async function updateQuestionTopic(
 export function regrade(question: ExamQuestion, response: QuestionResponse) {
   return gradeQuestion(question, response);
 }
+
+// ============================================================
+// Bảng chữa bài (trình chiếu lên TV) — thống kê thật theo từng câu
+// ============================================================
+export interface ReviewQuestionStat {
+  attempted: number; // số học sinh đã nộp đề (lượt gần nhất/em)
+  correctN: number;
+  optionCounts?: number[]; // multiple_choice: số em chọn mỗi phương án A–D
+  statementCorrectN?: number[]; // true_false: số em chọn đúng ở mỗi ý a–d
+}
+
+export interface ExamReviewData {
+  examTitle: string;
+  durationMinutes: number;
+  questions: ExamQuestion[];
+  totalStudents: number; // số lượt (1 học sinh = 1 lượt gần nhất)
+  stats: ReviewQuestionStat[]; // cùng thứ tự với questions
+}
+
+/** Dữ liệu cho màn hình chữa bài: đề + thống kê thật (lượt nộp gần nhất của mỗi học sinh trong lớp). */
+export async function fetchExamReviewData(
+  examId: number,
+  studentIds: string[],
+): Promise<ExamReviewData> {
+  const supabase = getSupabase();
+  const [{ data: exam, error: examError }, { data: results, error: resultsError }] =
+    await Promise.all([
+      supabase
+        .from("exams")
+        .select("title, duration_minutes, questions")
+        .eq("id", examId)
+        .single(),
+      studentIds.length === 0
+        ? Promise.resolve({ data: [] as never[], error: null })
+        : supabase
+            .from("exam_results")
+            .select("student_id, created_at, detail")
+            .eq("exam_id", examId)
+            .in("student_id", studentIds),
+    ]);
+  if (examError || !exam) throw examError ?? new Error("Không tìm thấy đề.");
+  if (resultsError) throw resultsError;
+
+  const questions = (exam.questions as ExamQuestion[]) ?? [];
+
+  // Lấy lượt nộp gần nhất của mỗi học sinh — tránh đếm trùng khi có làm lại.
+  const latestByStudent = new Map<
+    string,
+    { created_at: string; responses: QuestionResponse[] }
+  >();
+  for (const r of (results as {
+    student_id: string;
+    created_at: string;
+    detail: { responses?: QuestionResponse[] } | null;
+  }[]) ?? []) {
+    const responses = r.detail?.responses;
+    if (!Array.isArray(responses)) continue;
+    const cur = latestByStudent.get(r.student_id);
+    if (!cur || r.created_at > cur.created_at) {
+      latestByStudent.set(r.student_id, { created_at: r.created_at, responses });
+    }
+  }
+  const attempts = [...latestByStudent.values()];
+
+  const stats: ReviewQuestionStat[] = questions.map((q) => {
+    const stat: ReviewQuestionStat = { attempted: 0, correctN: 0 };
+    if (q.type === "multiple_choice") stat.optionCounts = [0, 0, 0, 0];
+    if (q.type === "true_false") stat.statementCorrectN = [0, 0, 0, 0];
+    return stat;
+  });
+
+  for (const attempt of attempts) {
+    questions.forEach((q, i) => {
+      const response = attempt.responses[i];
+      const stat = stats[i];
+      if (response === undefined) return;
+      stat.attempted += 1;
+      const g = gradeQuestion(q, response);
+      if (g.max > 0 && g.earned === g.max) stat.correctN += 1;
+
+      if (q.type === "multiple_choice" && stat.optionCounts && typeof response === "number") {
+        if (response >= 0 && response < stat.optionCounts.length) stat.optionCounts[response] += 1;
+      }
+      if (q.type === "true_false" && stat.statementCorrectN && Array.isArray(response)) {
+        q.statements.forEach((s, si) => {
+          if (response[si] === s.answer) stat.statementCorrectN![si] += 1;
+        });
+      }
+    });
+  }
+
+  return {
+    examTitle: exam.title as string,
+    durationMinutes: exam.duration_minutes as number,
+    questions,
+    totalStudents: attempts.length,
+    stats,
+  };
+}

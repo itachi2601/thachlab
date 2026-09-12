@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BarChart3, ChevronDown } from "lucide-react";
+import { BarChart3, ChevronDown, Tv } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
@@ -163,6 +163,16 @@ export default function TeacherThptAnalysis({
               </option>
             ))}
           </select>
+        )}
+        {examId && (
+          <a
+            href={`/dashboard-thpt/chua-bai?exam=${examId}&class=${classId}`}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-auto inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+          >
+            <Tv size={16} /> Trình chiếu chữa bài
+          </a>
         )}
       </div>
 

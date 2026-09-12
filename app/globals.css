@@ -1044,3 +1044,155 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .cnc-embedded .cnc-rubric-notes textarea { border-color: rgba(255,255,255,.09); background: rgba(255,255,255,.03); color: #e2e8f0; }
 .cnc-embedded .cnc-rubric-notes textarea::placeholder { color: #64748b; }
 .cnc-embedded .cnc-rubric-notes textarea:disabled { background: rgba(255,255,255,.02); color: #64748b; }
+
+/* ============================================================
+   Bảng chữa bài — trình chiếu lên TV lớp học (/dashboard-thpt/chua-bai)
+   Kiosk 1 màn hình, không cuộn trang ngoài; toàn bộ scope dưới .review-board.
+   ============================================================ */
+.review-board {
+  --rb-ground: #05070f; --rb-stage: #0a0e1c; --rb-surface: #10172a; --rb-surface-2: #141d36;
+  --rb-ink: #f3f6fc; --rb-ink-soft: #c2cadf; --rb-muted: #7c88a3; --rb-faint: #4a5573;
+  --rb-line: rgba(255,255,255,.10); --rb-line-soft: rgba(255,255,255,.06);
+  --rb-accent: #4f8cff; --rb-accent-ink: #8fb4ff; --rb-accent-soft: rgba(79,140,255,.14);
+  --rb-ok: #34d399; --rb-ok-ink: #6ee7b8; --rb-ok-soft: rgba(52,211,153,.14); --rb-ok-line: rgba(52,211,153,.35);
+  --rb-warn: #f5b942; --rb-warn-ink: #ffce6b; --rb-warn-soft: rgba(245,185,66,.14); --rb-warn-line: rgba(245,185,66,.35);
+  --rb-bad: #fb5a72; --rb-bad-ink: #ff8c9c; --rb-bad-soft: rgba(251,90,114,.13); --rb-bad-line: rgba(251,90,114,.32);
+  position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column;
+  background: var(--rb-ground); color: var(--rb-ink); font-family: var(--font-body, ui-sans-serif), system-ui, sans-serif;
+}
+.review-board sup { font-size: .68em; }
+.review-board sub { font-size: .68em; }
+
+.review-board .rb-topbar {
+  display: flex; align-items: center; gap: 16px; padding: 12px 22px;
+  border-bottom: 1px solid var(--rb-line); background: var(--rb-stage); flex: none;
+}
+.review-board .rb-eyebrow {
+  font-family: monospace; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rb-accent-ink); display: block;
+}
+.review-board .rb-topbar h1 {
+  margin: 2px 0 0; font-size: 1.05rem; font-weight: 700; color: var(--rb-ink); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; max-width: 42vw;
+}
+.review-board .rb-spacer { flex: 1; }
+.review-board .rb-progress {
+  font-family: monospace; font-size: .85rem; color: var(--rb-ink-soft);
+  background: var(--rb-surface); border: 1px solid var(--rb-line); border-radius: 999px; padding: 7px 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.review-board .rb-progress b { color: var(--rb-ink); font-weight: 700; }
+.review-board .rb-progress-track { width: 120px; height: 4px; border-radius: 99px; background: var(--rb-line-soft); overflow: hidden; }
+.review-board .rb-progress-fill { height: 100%; background: var(--rb-accent); border-radius: 99px; }
+.review-board .rb-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 38px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--rb-line); background: var(--rb-surface);
+  color: var(--rb-ink-soft); font-size: .82rem; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.review-board .rb-btn:hover { border-color: var(--rb-accent); color: var(--rb-ink); }
+
+.review-board .rb-stage-wrap {
+  flex: 1; min-height: 0; overflow-y: auto;
+  background: radial-gradient(1200px 500px at 50% -8%, var(--rb-accent-soft), transparent 60%), var(--rb-stage);
+}
+.review-board .rb-stage { max-width: 1180px; margin: 0 auto; padding: clamp(20px,3.6vh,48px) clamp(20px,4vw,56px) 40px; }
+
+.review-board .rb-qmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 18px; }
+.review-board .rb-qnum {
+  font-family: monospace; font-weight: 700; font-size: 1rem; color: var(--rb-ink);
+  background: var(--rb-accent-soft); border: 1px solid var(--rb-line); border-radius: 10px; padding: 6px 14px;
+}
+.review-board .rb-tag {
+  font-size: .74rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--rb-line);
+  color: var(--rb-ink-soft); background: var(--rb-surface);
+}
+.review-board .rb-tag.topic { color: var(--rb-accent-ink); border-color: rgba(79,140,255,.3); }
+.review-board .rb-result {
+  margin-left: auto; display: none; align-items: center; gap: 8px;
+  font-family: monospace; font-size: .85rem; font-weight: 700; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid var(--rb-line);
+}
+.review-board .rb-result.show { display: inline-flex; }
+.review-board .rb-result .dot { width: 8px; height: 8px; border-radius: 50%; }
+.review-board .rb-r-easy { color: var(--rb-ok-ink); background: var(--rb-ok-soft); border-color: var(--rb-ok-line); }
+.review-board .rb-r-easy .dot { background: var(--rb-ok); }
+.review-board .rb-r-mid { color: var(--rb-warn-ink); background: var(--rb-warn-soft); border-color: var(--rb-warn-line); }
+.review-board .rb-r-mid .dot { background: var(--rb-warn); }
+.review-board .rb-r-hard { color: var(--rb-bad-ink); background: var(--rb-bad-soft); border-color: var(--rb-bad-line); }
+.review-board .rb-r-hard .dot { background: var(--rb-bad); }
+
+.review-board .rb-qtext {
+  font-size: clamp(1.3rem, 1.05rem + 1vw, 1.9rem); line-height: 1.5; font-weight: 600; color: var(--rb-ink);
+  margin-bottom: clamp(20px,3vh,34px);
+}
+.review-board .rb-qtext img.eq { filter: invert(0.9) hue-rotate(180deg); vertical-align: middle; }
+
+.review-board .rb-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .review-board .rb-options { grid-template-columns: 1fr; } }
+.review-board .rb-opt {
+  position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px;
+  border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface);
+  font-size: clamp(1.02rem,.9rem + .4vw,1.24rem); color: var(--rb-ink-soft);
+}
+.review-board .rb-opt .rb-letter {
+  flex: none; width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center;
+  font-family: monospace; font-weight: 700; font-size: .95rem;
+  background: var(--rb-surface-2); color: var(--rb-ink-soft); border: 1px solid var(--rb-line);
+}
+.review-board .rb-opt .rb-body { flex: 1; min-width: 0; }
+.review-board .rb-opt .rb-stat { margin-top: 8px; display: none; align-items: center; gap: 8px; font-family: monospace; font-size: .78rem; color: var(--rb-muted); }
+.review-board .rb-opt .rb-bar { flex: 1; max-width: 140px; height: 5px; border-radius: 99px; background: var(--rb-line-soft); overflow: hidden; }
+.review-board .rb-opt .rb-bar i { display: block; height: 100%; border-radius: 99px; background: var(--rb-bad); }
+.review-board.rb-revealed .rb-opt .rb-stat { display: flex; }
+.review-board .rb-opt.correct { border-color: var(--rb-ok-line); background: var(--rb-ok-soft); color: var(--rb-ink); }
+.review-board .rb-opt.correct .rb-letter { background: var(--rb-ok); color: #04140d; border-color: var(--rb-ok); }
+.review-board .rb-opt.correct .rb-bar i { background: var(--rb-ok); }
+.review-board.rb-revealed .rb-opt:not(.correct) { opacity: .6; }
+.review-board .rb-opt .rb-badge { display: none; margin-left: auto; flex: none; align-self: center; font-family: monospace; font-size: .72rem; font-weight: 700; color: var(--rb-ok-ink); }
+.review-board .rb-opt.correct .rb-badge { display: inline; }
+
+.review-board .rb-tf-list { display: grid; gap: 12px; }
+.review-board .rb-tf-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface); }
+.review-board .rb-tf-row .rb-letter { font-family: monospace; font-weight: 700; color: var(--rb-muted); flex: none; }
+.review-board .rb-tf-row .rb-body { flex: 1; font-size: clamp(1rem,.9rem + .3vw,1.14rem); color: var(--rb-ink-soft); }
+.review-board .rb-tf-row .rb-verdict {
+  flex: none; font-family: monospace; font-size: .8rem; font-weight: 700; padding: 6px 14px;
+  border-radius: 999px; border: 1px solid var(--rb-line); color: var(--rb-muted); background: var(--rb-surface-2); min-width: 64px; text-align: center;
+}
+.review-board .rb-tf-row .rb-pct { flex: none; width: 76px; text-align: right; font-family: monospace; font-size: .78rem; color: var(--rb-muted); visibility: hidden; }
+.review-board.rb-revealed .rb-tf-row .rb-pct { visibility: visible; }
+.review-board.rb-revealed .rb-tf-row.t .rb-verdict { background: var(--rb-ok-soft); border-color: var(--rb-ok-line); color: var(--rb-ok-ink); }
+.review-board.rb-revealed .rb-tf-row.f .rb-verdict { background: var(--rb-bad-soft); border-color: var(--rb-bad-line); color: var(--rb-bad-ink); }
+
+.review-board .rb-sa-box { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 38px 20px; border-radius: 18px; border: 1px dashed var(--rb-line); background: var(--rb-surface); }
+.review-board .rb-sa-box .rb-label { font-family: monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-muted); }
+.review-board .rb-sa-box .rb-value { font-family: monospace; font-size: clamp(2.4rem,1.6rem + 3vw,4rem); font-weight: 700; color: var(--rb-faint); }
+.review-board.rb-revealed .rb-sa-box .rb-value { color: var(--rb-ok-ink); }
+
+.review-board .rb-explain {
+  margin-top: 22px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s ease, opacity .3s ease;
+  border-radius: 14px; background: var(--rb-surface-2); border: 1px solid var(--rb-line);
+}
+.review-board .rb-explain.open { max-height: 700px; opacity: 1; }
+.review-board .rb-explain .rb-inner { padding: 18px 22px; font-size: 1rem; line-height: 1.65; color: var(--rb-ink-soft); }
+.review-board .rb-explain .rb-lbl { display: flex; align-items: center; gap: 8px; font-family: monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-accent-ink); margin-bottom: 8px; }
+
+.review-board .rb-hint { margin-top: 26px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: monospace; font-size: .76rem; color: var(--rb-faint); }
+.review-board .rb-hint kbd { background: var(--rb-surface); border: 1px solid var(--rb-line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 7px; color: var(--rb-ink-soft); font-family: inherit; }
+
+.review-board .rb-navbar { flex: none; border-top: 1px solid var(--rb-line); background: var(--rb-stage); padding: 10px 18px; }
+.review-board .rb-navtools { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.review-board .rb-filt { display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; color: var(--rb-ink-soft); background: var(--rb-surface); border: 1px solid var(--rb-line); border-radius: 999px; padding: 5px 12px; cursor: pointer; user-select: none; }
+.review-board .rb-filt input { accent-color: var(--rb-accent); }
+.review-board .rb-legend { display: flex; gap: 14px; margin-left: auto; font-size: .72rem; color: var(--rb-muted); font-family: monospace; flex-wrap: wrap; }
+.review-board .rb-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.review-board .rb-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.review-board .rb-strip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.review-board .rb-chip {
+  flex: none; width: 46px; height: 46px; border-radius: 11px; border: 1px solid var(--rb-line); background: var(--rb-surface);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;
+  font-family: monospace; color: var(--rb-ink-soft); gap: 2px;
+}
+.review-board .rb-chip b { font-size: .92rem; line-height: 1; }
+.review-board .rb-chip.active { border-color: var(--rb-accent); background: var(--rb-accent-soft); color: var(--rb-ink); box-shadow: 0 0 0 2px var(--rb-accent-soft); }
+.review-board .rb-chip.hidden { display: none; }
