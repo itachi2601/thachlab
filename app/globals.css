@@ -1062,6 +1062,12 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 }
 .review-board sup { font-size: .68em; }
 .review-board sub { font-size: .68em; }
+/* Nội dung câu hỏi/lời giải nhập từ đề (.exam-content) hay bọc <p class="text-base">
+   theo quy ước của skill nhập đề — cỡ chữ cố định đó đè mất cỡ chữ đã tăng của khung
+   chứa (rb-qtext/rb-inner...) vì đặt trực tiếp trên chính thẻ, không phải kế thừa. */
+.review-board .exam-content :where(p, li, h1, h2, h3, h4, span, strong, em, b, i) {
+  font-size: inherit; line-height: inherit;
+}
 
 .review-board .rb-topbar {
   display: flex; align-items: center; gap: 16px; padding: 12px 22px;
