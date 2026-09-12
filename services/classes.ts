@@ -239,17 +239,18 @@ export async function removeStudentFromClass(userId: string, classId: number): P
 }
 
 /**
- * Trong số danh sách học sinh này, ai đang có mặt bên CTTC (course_enrollments) —
- * dấu hiệu bị gán nhầm vào lớp THPT (CTTC không thuộc luồng lớp THPT).
+ * Trong số danh sách học sinh này, ai thuộc hệ CTTC (profiles.track = 'cttc') —
+ * dấu hiệu bị gán nhầm nếu xuất hiện trong roster lớp THPT.
  */
 export async function fetchCttcStudentIds(studentIds: string[]): Promise<Set<string>> {
   if (studentIds.length === 0) return new Set();
   const { data, error } = await getSupabase()
-    .from("course_enrollments")
-    .select("student_id")
-    .in("student_id", studentIds);
+    .from("profiles")
+    .select("id")
+    .in("id", studentIds)
+    .eq("track", "cttc");
   if (error) throw error;
-  return new Set((data ?? []).map((row) => row.student_id as string));
+  return new Set((data ?? []).map((row) => row.id as string));
 }
 
 export interface UnassignedStudent {
@@ -259,26 +260,26 @@ export interface UnassignedStudent {
 
 /**
  * Học sinh (role='student') chưa có yêu cầu hoặc chưa thuộc khối lớp THPT nào —
- * thường là tài khoản tự đăng ký ở /dang-ky. Loại các em đã ở bên CTTC
- * (course_enrollments — có mã khóa học riêng, không thuộc luồng lớp THPT) ra khỏi
- * danh sách này, tránh giáo viên/quản trị THPT lỡ gán nhầm học sinh CTTC vào lớp.
+ * thường là tài khoản tự đăng ký ở /dang-ky. Loại học sinh hệ CTTC
+ * (profiles.track = 'cttc') ra khỏi danh sách này, tránh giáo viên/quản trị THPT
+ * lỡ gán nhầm học sinh CTTC vào lớp.
  */
 export async function fetchUnassignedStudents(): Promise<UnassignedStudent[]> {
   const supabase = getSupabase();
   const [
     { data: students, error: studentsError },
     { data: classed, error: classedError },
-    { data: cttcRows, error: cttcError },
   ] = await Promise.all([
-    supabase.from("profiles").select("id, full_name").eq("role", "student"),
+    supabase
+      .from("profiles")
+      .select("id, full_name")
+      .eq("role", "student")
+      .or("track.is.null,track.eq.thpt"),
     supabase.from("user_classes").select("user_id").in("status", ["active", "pending"]),
-    supabase.from("course_enrollments").select("student_id"),
   ]);
   if (studentsError) throw studentsError;
   if (classedError) throw classedError;
-  if (cttcError) throw cttcError;
 
   const linked = new Set<string>((classed ?? []).map((row) => row.user_id as string));
-  const cttc = new Set<string>((cttcRows ?? []).map((row) => row.student_id as string));
-  return (students ?? []).filter((student) => !linked.has(student.id) && !cttc.has(student.id));
+  return (students ?? []).filter((student) => !linked.has(student.id));
 }

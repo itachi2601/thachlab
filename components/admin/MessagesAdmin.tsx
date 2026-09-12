@@ -50,6 +50,7 @@ export default function MessagesAdmin() {
       .from("profiles")
       .select("id, full_name, class_name")
       .eq("role", "student")
+      .or("track.is.null,track.eq.thpt") // loại học sinh CTTC — không thuộc luồng lớp THPT
       .order("class_name")
       .order("full_name")
       .then(({ data }) => setStudents((data as Student[]) ?? []));
