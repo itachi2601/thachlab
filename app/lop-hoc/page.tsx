@@ -14,6 +14,7 @@ import {
   displayClassesByGrade,
   expandClassIdsByGrade,
   fetchClasses,
+  fetchMyClassIds,
 } from "@/services/classes";
 import { fetchChapters, fetchLessonProgressSummaries, fetchLessons } from "@/services/lessons";
 import {
@@ -82,6 +83,9 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
   const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
+  // Lớp của chính học sinh — mở thẳng, khỏi bắt chọn lại khối mỗi lần vào.
+  const [myClassSlug, setMyClassSlug] = useState<string | null | undefined>(undefined);
+  const [browseAll, setBrowseAll] = useState(false);
   const [activeTab, setActiveTab] = useState<(typeof CLASS_TABS)[number]["id"]>(
     "secondary",
   );
@@ -127,19 +131,39 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
   }, [session]);
 
   useEffect(() => {
+    if (!session || classSlug || !classes) return;
+    fetchMyClassIds(session.user.id)
+      .then((ids) => {
+        const mine = classes.find((item) => ids.includes(item.id));
+        const grade = mine ? classGrade(mine.name) : null;
+        const representative = grade
+          ? displayClassesByGrade(classes).find((item) => classGrade(item.name) === grade)
+          : undefined;
+        setMyClassSlug(representative?.slug ?? mine?.slug ?? null);
+      })
+      .catch(() => setMyClassSlug(null));
+  }, [session, classSlug, classes]);
+
+  useEffect(() => {
     if (!session || !lessons?.length) return;
     fetchLessonProgressSummaries(session.user.id, lessons.map((lesson) => lesson.id))
       .then(setLessonProgress)
       .catch(() => setLessonProgress(new Map()));
   }, [session, lessons]);
 
-  const active = classes?.find((c) => c.id === activeId);
+  const autoSlug = session && !browseAll && !requestedChapterId ? myClassSlug ?? null : null;
+  const effectiveSlug = classSlug ?? autoSlug;
+  const resolvingMyClass =
+    Boolean(session) && !classSlug && !browseAll && !requestedChapterId && myClassSlug === undefined;
+
+  const active = classes?.find((c) =>
+    effectiveSlug ? c.slug === effectiveSlug : c.id === activeId,
+  );
   const activeDisplayName = active
     ? `${classGrade(active.name) === "9" ? "KHTN 9" : active.name} - ${academicSubject(activeSubjectCode).label}`
     : undefined;
   const displayClasses = classes ? displayClassesByGrade(classes) : [];
-  const visibleClassIds =
-    classes && activeId !== null ? expandClassIdsByGrade([activeId], classes) : null;
+  const visibleClassIds = classes && active ? expandClassIdsByGrade([active.id], classes) : null;
   const classChapters = (chapters ?? []).filter(
     (ch) => visibleTo(ch.classIds, visibleClassIds) && ch.subjectCode === activeSubjectCode,
   );
@@ -159,7 +183,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
       subject: activeSubjectCode,
       chapter: String(lesson.chapter_id),
     });
-    if (classSlug) params.set("class", classSlug);
+    if (effectiveSlug) params.set("class", effectiveSlug);
     return `/lop-hoc/bai?${params.toString()}`;
   }
 
@@ -203,19 +227,19 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-20 lg:px-8">
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
-          {classSlug && activeDisplayName ? (
+          {effectiveSlug && activeDisplayName ? (
             <>Lớp <span className="text-gradient">{activeDisplayName}</span></>
           ) : (
             <>Lớp <span className="text-gradient">học</span></>
           )}
         </h1>
         <p className="mt-3 mb-8 text-slate-400">
-          {classSlug
+          {effectiveSlug
             ? "Không gian học tập, bài giảng và đề thi dành riêng cho lớp này."
             : "Chọn lớp để mở không gian học tập và theo dõi tiến độ."}
         </p>
 
-        {!classSlug && <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
+        {!effectiveSlug && <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
           {CLASS_TABS.map((tab) => (
             <button
               key={tab.id}
@@ -236,7 +260,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
           ))}
         </div>}
 
-        {!classSlug && activeTab === "university" && (
+        {!effectiveSlug && activeTab === "university" && (
           <section aria-labelledby="cttc-course-heading">
             <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -302,7 +326,9 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                 )}
               </div>
 
-              {!classSlug && <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {!effectiveSlug && resolvingMyClass && <SkeletonGrid count={4} />}
+
+              {!effectiveSlug && !resolvingMyClass && <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {GRADE_ORDER.map((grade) => {
                   const gradeClasses = displayClasses.filter(
                     (c) => classGrade(c.name) === grade,
@@ -333,12 +359,25 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                 })}
               </div>}
 
-            {classSlug && active && (
+            {effectiveSlug && active && (
               <div className="mt-10 space-y-12">
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  <Link href="/lop-hoc" className="text-sm font-semibold text-slate-400 hover:text-white">
-                    ← Tất cả lớp học
-                  </Link>
+                  {classSlug ? (
+                    <Link href="/lop-hoc" className="text-sm font-semibold text-slate-400 hover:text-white">
+                      ← Tất cả lớp học
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setBrowseAll(true);
+                        setActiveId(null);
+                      }}
+                      className="text-sm font-semibold text-slate-400 hover:text-white"
+                    >
+                      ← Xem lớp khác
+                    </button>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {subjectsForGrade(classGrade(active.name) ?? "").map((subject) => (
                       <button
@@ -559,7 +598,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                 )}
               </div>
             )}
-            {classSlug && !active && (
+            {classSlug && !active && classes.length > 0 && (
               <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center">
                 <p className="text-slate-300">Không tìm thấy lớp học này.</p>
                 <Link href="/lop-hoc" className="mt-4 inline-block font-semibold text-primary hover:underline">

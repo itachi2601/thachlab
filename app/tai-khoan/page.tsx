@@ -3,7 +3,7 @@ import { useCallback,useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
 
@@ -96,10 +96,7 @@ function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()
     <p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã bị từ chối. Kiểm tra lại đúng khối lớp rồi gửi lại.</p>
     <ClassJoinPicker onSubmitted={onRetry}/>
   </section>;
-  return <section className="rounded-3xl border border-emerald-400/25 bg-emerald-500/10 p-6 text-center">
-    <p className="text-sm text-emerald-200">Bạn thuộc lớp <strong>{request.className}</strong>.</p>
-    <Link href="/lop-hoc" className="mt-3 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-bold text-white">Vào lớp học</Link>
-  </section>;
+  return null;
 }
 
 function Account(){
@@ -128,6 +125,7 @@ function Account(){
     return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
   }
 
+  if(classRequest?.status==="active")return <ThptStudentHome profile={profile} email={session.user.email} studentId={session.user.id} classId={classRequest.classId} className={classRequest.className} onSignOut={async()=>{await signOut();router.push("/")}}/>;
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
 }
