@@ -123,8 +123,8 @@ export default function RegisterPage() {
         options: {
           data: {
             full_name: fullName,
-            class_name: "",
-            requested_class_id: classId,
+            class_name: classes.find((item) => String(item.id) === classId)?.name ?? "",
+            class_id: classId,
             username,
             contact_email: email,
             phone,

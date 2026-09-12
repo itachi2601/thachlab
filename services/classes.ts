@@ -234,24 +234,20 @@ export interface UnassignedStudent {
 }
 
 /**
- * Học sinh (role='student') chưa thuộc lớp/khóa nào (không có yêu cầu đang chờ hoặc đã duyệt) —
- * thường là tài khoản tự đăng ký ở /dang-ky. Chỉ quản trị viên đọc được (RLS profiles).
+ * Học sinh (role='student') chưa có yêu cầu hoặc chưa thuộc khối lớp THPT nào —
+ * thường là tài khoản tự đăng ký ở /dang-ky. Việc đã tham gia một khóa học khác
+ * không làm học sinh biến mất khỏi danh sách phân lớp THPT.
  */
 export async function fetchUnassignedStudents(): Promise<UnassignedStudent[]> {
   const supabase = getSupabase();
-  const [{ data: students, error: studentsError }, { data: classed, error: classedError }, { data: enrolled, error: enrolledError }] =
+  const [{ data: students, error: studentsError }, { data: classed, error: classedError }] =
     await Promise.all([
       supabase.from("profiles").select("id, full_name").eq("role", "student"),
       supabase.from("user_classes").select("user_id").in("status", ["active", "pending"]),
-      supabase.from("course_enrollments").select("student_id").in("status", ["active", "pending"]),
     ]);
   if (studentsError) throw studentsError;
   if (classedError) throw classedError;
-  if (enrolledError) throw enrolledError;
 
-  const linked = new Set<string>([
-    ...(classed ?? []).map((row) => row.user_id as string),
-    ...(enrolled ?? []).map((row) => row.student_id as string),
-  ]);
+  const linked = new Set<string>((classed ?? []).map((row) => row.user_id as string));
   return (students ?? []).filter((student) => !linked.has(student.id));
 }
