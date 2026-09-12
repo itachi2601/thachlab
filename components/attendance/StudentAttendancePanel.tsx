@@ -23,9 +23,10 @@ function MachineDutyPanel({sessionId,machineCode,open,onMachineChosen}:{sessionI
   const[photos,setPhotos]=useState<AttendanceMachinePhoto[]>([]);
   const[machineDuty,setMachineDuty]=useState(false);
   const[machines,setMachines]=useState<Machine[]>([]);
+  const[machinesError,setMachinesError]=useState("");
   const load=useCallback(()=>fetchAttendanceMachinePhotos(sessionId).then(setPhotos).catch(()=>undefined),[sessionId]);
   useEffect(()=>{void load()},[load]);
-  useEffect(()=>{void fetchSessionMachines(sessionId).then(setMachines).catch(()=>undefined)},[sessionId]);
+  useEffect(()=>{let cancelled=false;void fetchSessionMachines(sessionId).then(data=>{if(!cancelled){setMachines(data);setMachinesError("")}}).catch(()=>{if(!cancelled){setMachines([]);setMachinesError("Không tải được danh sách máy. Vui lòng tải lại trang để thử lại.")}});return()=>{cancelled=true}},[sessionId]);
   useEffect(()=>{setPicked(machineCode??"")},[machineCode]);
   useEffect(()=>{if(!machineCode){setMachineDuty(false);return}void isPhotoDutyMachine(sessionId,machineCode).then(setMachineDuty).catch(()=>setMachineDuty(false))},[sessionId,machineCode]);
 
@@ -33,7 +34,7 @@ function MachineDutyPanel({sessionId,machineCode,open,onMachineChosen}:{sessionI
 
   if(!machineCode||editing)return <div className="mt-3 rounded-xl border border-orange-400/20 bg-orange-500/5 p-3">
     <div className="flex items-center gap-2 text-sm font-bold text-white"><Wrench size={15} className="text-orange-300"/>{machineCode?"Đổi máy đã chọn":"Chọn máy bạn đã dùng buổi này"}</div>
-    {!machines.length?<p className="mt-2 text-xs text-slate-500">Giáo viên chưa chọn máy cho buổi học này.</p>:open?<div className="mt-2 flex flex-wrap gap-2">
+    {machinesError?<p role="alert" className="mt-2 text-xs text-red-300">{machinesError}</p>:!machines.length?<p className="mt-2 text-xs text-slate-500">Giáo viên chưa chọn máy cho buổi học này.</p>:open?<div className="mt-2 flex flex-wrap gap-2">
       <select value={picked} onChange={e=>setPicked(e.target.value)} className="min-w-40 flex-1 rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white">
         <option value="">Chọn máy…</option>
         {groupMachinesByType(machines).map(group=><optgroup key={group.type} label={group.label}>{group.machines.map(m=><option key={m.code} value={m.code} title={m.label}>{m.code}</option>)}</optgroup>)}
