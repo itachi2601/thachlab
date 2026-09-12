@@ -197,6 +197,68 @@ export async function fetchMyWrongQuestions(
   return out;
 }
 
+export interface MyExamAttemptDetail {
+  examTitle: string;
+  questions: ExamQuestion[];
+  responses: QuestionResponse[];
+  score: number;
+  durationSeconds: number;
+  createdAt: string;
+}
+
+/** Toàn bộ 1 lượt làm bài của chính học sinh — để xem lại nguyên bài (không chỉ câu sai). */
+export async function fetchMyExamResultDetail(
+  resultId: number,
+): Promise<MyExamAttemptDetail | null> {
+  const { data, error } = await getSupabase()
+    .from("exam_results")
+    .select("score, duration_seconds, created_at, detail, exams(title, questions)")
+    .eq("id", resultId)
+    .single();
+  if (error || !data) return null;
+  const exam = Array.isArray(data.exams) ? data.exams[0] : data.exams;
+  const responses =
+    (data.detail as { responses?: QuestionResponse[] } | null)?.responses ?? [];
+  return {
+    examTitle: exam?.title ?? "(Đề đã xóa)",
+    questions: (exam?.questions as ExamQuestion[]) ?? [],
+    responses,
+    score: Number(data.score),
+    durationSeconds: data.duration_seconds as number,
+    createdAt: data.created_at as string,
+  };
+}
+
+export interface ExamRank {
+  rank: number;
+  total: number;
+}
+
+/** Hạng của học sinh trong 1 đề, so với các bạn cùng lớp đã làm đề đó. */
+export async function fetchExamRank(examId: number): Promise<ExamRank | null> {
+  const { data, error } = await getSupabase().rpc("get_exam_rank", { p_exam_id: examId });
+  const row = (data as { rnk: number; total: number }[] | null)?.[0];
+  if (error || !row) return null;
+  return { rank: row.rnk, total: row.total };
+}
+
+export interface PeriodicRank {
+  rank: number;
+  total: number;
+  myAvg: number;
+  classAvg: number;
+}
+
+/** Hạng của học sinh theo điểm TB các bài kiểm tra định kỳ của 1 lớp. */
+export async function fetchPeriodicRank(classId: number): Promise<PeriodicRank | null> {
+  const { data, error } = await getSupabase().rpc("get_periodic_rank", {
+    p_class_id: classId,
+  });
+  const row = (data as { rnk: number; total: number; my_avg: number; class_avg: number }[] | null)?.[0];
+  if (error || !row) return null;
+  return { rank: row.rnk, total: row.total, myAvg: Number(row.my_avg), classAvg: Number(row.class_avg) };
+}
+
 // ============================================================
 // GIÁO VIÊN — theo lớp (danh sách studentIds) / theo đề
 // ============================================================
