@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { PenLine, Sparkles } from "lucide-react";
+import { PenLine, Sparkles, Video } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import { formatHours, formatVnd, buildNextTierMessage } from "@/lib/tro-giang/format";
@@ -115,6 +115,14 @@ export default function TroGiangDashboard({ assistant }: { assistant: TaAssistan
       >
         <PenLine size={18} />
         Ghi buổi hôm nay
+      </Link>
+
+      <Link
+        href="/tro-giang/video"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
+      >
+        <Video size={16} />
+        Mảng video TikTok
       </Link>
 
       <section>

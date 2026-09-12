@@ -744,3 +744,79 @@ create policy "ta doc leads cua video minh" on public.ta_leads
 drop policy if exists "admin quan ly leads" on public.ta_leads;
 create policy "admin quan ly leads" on public.ta_leads
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
+
+-- ============================================================
+-- BƯỚC 5 — Phục vụ bảng điều khiển giáo viên
+-- ============================================================
+
+-- ---------- 18. ta_settings ----------
+-- Cấu hình chạy được sửa từ giao diện, không viết cứng trong code.
+-- course_hours_cap: trần tổng giờ quy đổi của cả đội trong khoá, dùng cho ô cảnh báo.
+create table if not exists public.ta_settings (
+  id boolean primary key default true check (id),
+  course_hours_cap integer not null default 1000,
+  updated_at timestamptz not null default now()
+);
+
+insert into public.ta_settings (id) values (true) on conflict (id) do nothing;
+
+alter table public.ta_settings enable row level security;
+
+drop policy if exists "doc cau hinh tro giang" on public.ta_settings;
+create policy "doc cau hinh tro giang" on public.ta_settings
+  for select to authenticated using (true);
+drop policy if exists "admin sua cau hinh tro giang" on public.ta_settings;
+create policy "admin sua cau hinh tro giang" on public.ta_settings
+  for all to authenticated using (public.is_admin()) with check (public.is_admin());
+
+-- ---------- 19. ta_team_monthly_hours — biểu đồ giờ theo tháng của cả đội ----------
+-- Dùng lại ta_converted_hours() để không lặp công thức quy đổi ở phía client.
+create or replace function public.ta_team_monthly_hours(p_months integer default 12)
+returns table (month date, converted_hours numeric, session_count integer)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_admin() then
+    raise exception 'chỉ giáo viên được xem số liệu toàn đội';
+  end if;
+
+  return query
+  select
+    date_trunc('month', s.work_date)::date as m,
+    round(sum(public.ta_converted_hours(s.session_type, s.hours)), 2),
+    count(*)::int
+  from public.ta_sessions s
+  where s.status = 'approved'
+    and s.work_date >= (date_trunc('month', current_date) - make_interval(months => p_months - 1))::date
+  group by 1
+  order by 1;
+end;
+$$;
+
+grant execute on function public.ta_team_monthly_hours(integer) to authenticated;
+
+-- ---------- 20. ta_course_total_hours — tổng giờ quy đổi cả khoá (đối chiếu trần) ----------
+create or replace function public.ta_course_total_hours()
+returns numeric
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_admin() then
+    raise exception 'chỉ giáo viên được xem số liệu toàn đội';
+  end if;
+
+  return coalesce((
+    select sum(public.ta_converted_hours(session_type, hours))
+    from public.ta_sessions
+    where status = 'approved'
+  ), 0);
+end;
+$$;
+
+grant execute on function public.ta_course_total_hours() to authenticated;

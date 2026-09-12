@@ -106,11 +106,43 @@ export interface TaTopicSuggestion {
   error_note: string;
 }
 
-export async function fetchTopicSuggestion(sessionId: string): Promise<TaTopicSuggestion | null> {
-  const { data, error } = await getSupabase().rpc("ta_video_topic_suggestions");
+/** Lỗi lớp trong p_days ngày gần nhất của chính mình mà chưa bạn nào làm video. */
+export async function fetchTopicSuggestions(days = 14): Promise<TaTopicSuggestion[]> {
+  const { data, error } = await getSupabase().rpc("ta_video_topic_suggestions", { p_days: days });
   if (error) throw error;
-  const rows = (data ?? []) as TaTopicSuggestion[];
+  return (data ?? []) as TaTopicSuggestion[];
+}
+
+export async function fetchTopicSuggestion(sessionId: string): Promise<TaTopicSuggestion | null> {
+  const rows = await fetchTopicSuggestions();
   return rows.find((r) => r.session_id === sessionId) ?? null;
+}
+
+export interface TaVideoRates {
+  effective_from: string;
+  price_don_gian: number;
+  price_dung_ky: number;
+  view_threshold_1: number;
+  view_bonus_1: number;
+  view_threshold_2: number;
+  view_bonus_2: number;
+  lead_bonus: number;
+  monthly_budget_cap: number;
+}
+
+/** Bảng giá đang hiệu lực tại tháng chỉ định — dùng để hiện mốc thưởng, không viết cứng số. */
+export async function fetchVideoRates(month: string): Promise<TaVideoRates | null> {
+  const { data, error } = await getSupabase()
+    .from("ta_video_rates")
+    .select(
+      "effective_from, price_don_gian, price_dung_ky, view_threshold_1, view_bonus_1, view_threshold_2, view_bonus_2, lead_bonus, monthly_budget_cap",
+    )
+    .lte("effective_from", month)
+    .order("effective_from", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return (data ?? null) as TaVideoRates | null;
 }
 
 /** 1 hàng trả về từ ta_monthly_score() — nguồn tính điểm/lương duy nhất, xem mục 4 của đề bài. */
@@ -181,4 +213,219 @@ export async function fetchRecentSessions(assistantId: string, limit = 10): Prom
     .limit(limit);
   if (error) throw error;
   return (data ?? []) as TaSessionListItem[];
+}
+
+// ============================================================
+// Khu quản trị (giáo viên) — mọi hàm dưới đây chỉ chạy được với tài khoản role='admin',
+// RLS và các hàm SECURITY DEFINER tự chặn phía DB.
+// ============================================================
+
+export async function fetchAssistants(): Promise<TaAssistant[]> {
+  const { data, error } = await getSupabase()
+    .from("ta_assistants")
+    .select("id, user_id, full_name, short_name, tier, retained_rate, active, started_at")
+    .order("short_name");
+  if (error) throw error;
+  return (data ?? []) as TaAssistant[];
+}
+
+export interface TaPendingSession extends TaSessionListItem {
+  assistant_id: string;
+  assistant_name: string;
+  touch_names: string[];
+  error_note: string | null;
+  homework_given: string | null;
+  student_recap_ok: boolean | null;
+  video_url: string | null;
+  video_tier: TaVideoTier | null;
+  note: string | null;
+}
+
+/** Hàng chờ duyệt của toàn đội, mới nhất trước. */
+export async function fetchPendingSessions(): Promise<TaPendingSession[]> {
+  const { data, error } = await getSupabase()
+    .from("ta_sessions")
+    .select(
+      "id, assistant_id, work_date, session_type, class_label, hours, student_touches, touch_names, error_note, homework_given, student_recap_ok, papers_graded, video_url, video_tier, note, status, reject_reason, ta_assistants(short_name)",
+    )
+    .eq("status", "submitted")
+    .order("work_date", { ascending: false });
+  if (error) throw error;
+  return (data ?? []).map((row) => {
+    const { ta_assistants: joined, ...rest } = row as Record<string, unknown> & {
+      ta_assistants: { short_name: string } | { short_name: string }[] | null;
+    };
+    const assistant = Array.isArray(joined) ? joined[0] : joined;
+    return { ...rest, assistant_name: assistant?.short_name ?? "—" } as TaPendingSession;
+  });
+}
+
+export async function approveSessions(ids: string[]): Promise<void> {
+  if (ids.length === 0) return;
+  const { error } = await getSupabase()
+    .from("ta_sessions")
+    .update({ status: "approved", approved_at: new Date().toISOString(), reject_reason: null })
+    .in("id", ids);
+  if (error) throw error;
+}
+
+export async function rejectSession(id: string, reason: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from("ta_sessions")
+    .update({ status: "rejected", reject_reason: reason })
+    .eq("id", id);
+  if (error) throw error;
+}
+
+/**
+ * Trung bình lượt chạm trên các buổi 'lop' ĐÃ DUYỆT của từng trợ giảng — dùng để đánh dấu
+ * buổi có số chạm bất thường cao so với chính bạn đó (đối chiếu ngẫu nhiên, không phải nghi ngờ).
+ */
+export async function fetchTouchBaselines(): Promise<Map<string, number>> {
+  const { data, error } = await getSupabase()
+    .from("ta_sessions")
+    .select("assistant_id, student_touches")
+    .eq("session_type", "lop")
+    .eq("status", "approved")
+    .not("student_touches", "is", null);
+  if (error) throw error;
+  const sums = new Map<string, { total: number; count: number }>();
+  for (const row of (data ?? []) as { assistant_id: string; student_touches: number }[]) {
+    const cur = sums.get(row.assistant_id) ?? { total: 0, count: 0 };
+    cur.total += row.student_touches;
+    cur.count += 1;
+    sums.set(row.assistant_id, cur);
+  }
+  return new Map([...sums].map(([id, { total, count }]) => [id, total / count]));
+}
+
+export async function createFlag(assistantId: string, note: string, flagDate: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from("ta_flags")
+    .insert({ assistant_id: assistantId, note: note || null, flag_date: flagDate });
+  if (error) throw error;
+}
+
+export interface TaTeamMonthlyHours {
+  month: string;
+  converted_hours: number;
+  session_count: number;
+}
+
+export async function fetchTeamMonthlyHours(months = 12): Promise<TaTeamMonthlyHours[]> {
+  const { data, error } = await getSupabase().rpc("ta_team_monthly_hours", { p_months: months });
+  if (error) throw error;
+  return (data ?? []) as TaTeamMonthlyHours[];
+}
+
+export async function fetchCourseTotalHours(): Promise<number> {
+  const { data, error } = await getSupabase().rpc("ta_course_total_hours");
+  if (error) throw error;
+  return (data ?? 0) as number;
+}
+
+export async function fetchHoursCap(): Promise<number> {
+  const { data, error } = await getSupabase()
+    .from("ta_settings")
+    .select("course_hours_cap")
+    .eq("id", true)
+    .maybeSingle();
+  if (error) throw error;
+  return (data?.course_hours_cap ?? 1000) as number;
+}
+
+export async function updateHoursCap(cap: number): Promise<void> {
+  const { error } = await getSupabase()
+    .from("ta_settings")
+    .update({ course_hours_cap: cap, updated_at: new Date().toISOString() })
+    .eq("id", true);
+  if (error) throw error;
+}
+
+// ---------- Mảng video (mục 8) ----------
+
+export interface TaVideoLedgerRow {
+  session_id: string;
+  assistant_id: string;
+  work_date: string;
+  video_tier: TaVideoTier | null;
+  video_url: string | null;
+  published_at: string | null;
+  status: TaSessionStatus;
+  reject_reason: string | null;
+  topic_source_id: string | null;
+  latest_checked_at: string | null;
+  latest_views: number;
+  latest_saves: number;
+  latest_comments: number;
+  view_bonus: number;
+  production_pay: number;
+  lead_count: number;
+  lead_bonus: number;
+  total_pay: number;
+}
+
+/** assistantId = null → toàn đội (chỉ giáo viên gọi được). */
+export async function fetchVideoLedger(assistantId: string | null = null): Promise<TaVideoLedgerRow[]> {
+  const { data, error } = await getSupabase().rpc("ta_video_ledger", { p_assistant_id: assistantId });
+  if (error) throw error;
+  return (data ?? []) as TaVideoLedgerRow[];
+}
+
+/** Ghi số liệu tuần cho 1 video — trùng (video, ngày) thì ghi đè. */
+export async function upsertVideoStats(input: {
+  session_id: string;
+  checked_at: string;
+  views: number;
+  saves: number;
+  comments: number;
+}): Promise<void> {
+  const { error } = await getSupabase()
+    .from("ta_video_stats")
+    .upsert(input, { onConflict: "session_id,checked_at" });
+  if (error) throw error;
+}
+
+export async function createLead(input: {
+  student_name: string;
+  source: string;
+  attributed_session_id: string | null;
+  registered_at: string;
+}): Promise<void> {
+  const { error } = await getSupabase().from("ta_leads").insert(input);
+  if (error) throw error;
+}
+
+export interface TaVideoAdminSummary {
+  month: string;
+  videos_published: number;
+  total_views: number;
+  total_saves: number;
+  total_comments: number;
+  leads_count: number;
+  production_spend: number;
+  view_bonus_spend: number;
+  lead_bonus_spend: number;
+  total_spend: number;
+  budget_cap: number;
+  over_budget: boolean;
+  cost_per_lead: number | null;
+}
+
+export async function fetchVideoAdminSummary(month: string): Promise<TaVideoAdminSummary> {
+  const { data, error } = await getSupabase().rpc("ta_video_admin_summary", { p_month: month });
+  if (error) throw error;
+  return ((data ?? []) as TaVideoAdminSummary[])[0];
+}
+
+export interface TaTopicExploitation {
+  eligible_count: number;
+  used_count: number;
+  rate: number;
+}
+
+export async function fetchTopicExploitationRate(days = 14): Promise<TaTopicExploitation> {
+  const { data, error } = await getSupabase().rpc("ta_topic_exploitation_rate", { p_days: days });
+  if (error) throw error;
+  return ((data ?? []) as TaTopicExploitation[])[0];
 }
