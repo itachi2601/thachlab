@@ -114,6 +114,10 @@ export default function StudentsAdmin() {
               students={students}
               selectedId={selectedStudentId}
               onSelect={setSelectedStudentId}
+              onRemoved={() => {
+                setSelectedStudentId(null);
+                setStudentsNonce((n) => n + 1);
+              }}
             />
           )}
           {tab === "pending" && (

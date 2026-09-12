@@ -228,6 +228,30 @@ export async function setUserClassStatus(userId: string, classId: number, status
   if (error) throw error;
 }
 
+/** Gỡ hẳn 1 học sinh khỏi khối lớp (xóa dòng user_classes) — dùng khi gán nhầm lớp. */
+export async function removeStudentFromClass(userId: string, classId: number): Promise<void> {
+  const { error } = await getSupabase()
+    .from("user_classes")
+    .delete()
+    .eq("user_id", userId)
+    .eq("class_id", classId);
+  if (error) throw error;
+}
+
+/**
+ * Trong số danh sách học sinh này, ai đang có mặt bên CTTC (course_enrollments) —
+ * dấu hiệu bị gán nhầm vào lớp THPT (CTTC không thuộc luồng lớp THPT).
+ */
+export async function fetchCttcStudentIds(studentIds: string[]): Promise<Set<string>> {
+  if (studentIds.length === 0) return new Set();
+  const { data, error } = await getSupabase()
+    .from("course_enrollments")
+    .select("student_id")
+    .in("student_id", studentIds);
+  if (error) throw error;
+  return new Set((data ?? []).map((row) => row.student_id as string));
+}
+
 export interface UnassignedStudent {
   id: string;
   full_name: string;
