@@ -54,6 +54,30 @@ export async function getMyAssistant(userId: string): Promise<TaAssistant | null
   return data as TaAssistant | null;
 }
 
+export interface TaAssistantClass {
+  class_id: number;
+  name: string;
+}
+
+/** Các lớp trợ giảng được phân công — nguồn cho ô chọn lớp ở form ghi buổi. */
+export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAssistantClass[]> {
+  const { data, error } = await getSupabase()
+    .from("ta_assistant_classes")
+    .select("class_id, classes(name)")
+    .eq("assistant_id", assistantId);
+  if (error) throw error;
+  return (data ?? [])
+    .map((row) => {
+      const { class_id, classes } = row as {
+        class_id: number;
+        classes: { name: string } | { name: string }[] | null;
+      };
+      const joined = Array.isArray(classes) ? classes[0] : classes;
+      return { class_id, name: joined?.name ?? `Lớp #${class_id}` };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name, "vi"));
+}
+
 export interface NewSessionInput {
   assistant_id: string;
   work_date: string; // yyyy-mm-dd

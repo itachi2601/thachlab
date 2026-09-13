@@ -7,8 +7,10 @@ import { useToast } from "@/components/ui/Toast";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import {
   createSession,
+  fetchMyAssistantClasses,
   fetchTopicSuggestion,
   type TaAssistant,
+  type TaAssistantClass,
   type TaSessionType,
   type TaTopicSuggestion,
   type TaVideoTier,
@@ -206,6 +208,7 @@ export default function GhiBuoiForm({
     if (initialTopicId) d.sessionType = "video";
     return d;
   });
+  const [myClasses, setMyClasses] = useState<TaAssistantClass[]>([]);
   const [topicSourceId, setTopicSourceId] = useState<string | null>(initialTopicId ?? null);
   const [topicInfo, setTopicInfo] = useState<TaTopicSuggestion | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -218,6 +221,12 @@ export default function GhiBuoiForm({
       .then((info) => setTopicInfo(info))
       .catch(() => {});
   }, [initialTopicId]);
+
+  useEffect(() => {
+    fetchMyAssistantClasses(assistant.id)
+      .then(setMyClasses)
+      .catch(() => {});
+  }, [assistant.id]);
 
   // Lưu nháp — bỏ qua lần render đầu (vừa load từ localStorage lên, khỏi ghi lại chính nó).
   useEffect(() => {
@@ -348,12 +357,29 @@ export default function GhiBuoiForm({
             <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
               {draft.sessionType === "phudao" ? "Tên học sinh" : "Lớp"}
             </label>
-            <input
-              value={draft.classLabel}
-              onChange={(e) => patch({ classLabel: e.target.value })}
-              placeholder={draft.sessionType === "phudao" ? "Nguyễn Văn A" : "12A2"}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
-            />
+            {/* Buổi lên lớp/chấm bài chọn trong danh sách lớp được phân công để tên lớp
+                không bị phân mảnh ("12A2" vs "12 A2"); chưa được gán lớp nào thì gõ tay. */}
+            {draft.sessionType !== "phudao" && myClasses.length > 0 ? (
+              <select
+                value={draft.classLabel}
+                onChange={(e) => patch({ classLabel: e.target.value })}
+                className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-3 text-white"
+              >
+                <option value="">Chọn lớp…</option>
+                {myClasses.map((item) => (
+                  <option key={item.class_id} value={item.name}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                value={draft.classLabel}
+                onChange={(e) => patch({ classLabel: e.target.value })}
+                placeholder={draft.sessionType === "phudao" ? "Nguyễn Văn A" : "12A2"}
+                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
+              />
+            )}
           </div>
         )}
 

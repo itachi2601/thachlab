@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { GraduationCap, Search, ShieldCheck, ShieldX, UserPlus, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import StaffInvitePanel from "@/components/admin/StaffInvitePanel";
 import { fetchCncCourses, type CourseOffering } from "@/services/course-enrollments";
 import { SUBJECTS } from "@/services/subjects";
 import { displayClassesByGrade, fetchClasses } from "@/services/classes";
@@ -72,6 +73,8 @@ export default function InstructorAssignmentManager() {
     {view === "thpt"
       ? <ThptInstructorPanel roster={roster} />
       : <CttcInstructorPanel roster={roster} />}
+
+    <StaffInvitePanel />
 
     <InstructorRoleSearch onChanged={reloadRoster} />
   </div>;
