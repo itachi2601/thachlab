@@ -82,17 +82,51 @@ export async function claimStaffInvite(code: string): Promise<ClaimResult> {
   return rows[0];
 }
 
-/** Đăng ký tài khoản mới kèm mã mời — trigger sẽ cấp quyền ngay khi tài khoản được tạo. */
+export interface SignUpWithInviteResult {
+  /** true khi dự án bật xác nhận email — chỉ khi đó Supabase mới gửi thư. */
+  needsEmailConfirm: boolean;
+  userId: string | null;
+}
+
+/**
+ * Đăng ký tài khoản mới kèm mã mời — trigger zz_claim_staff_invite cấp quyền ngay trong
+ * lệnh insert auth.users, không chờ xác nhận email.
+ *
+ * Dự án đang tắt xác nhận email (mailer_autoconfirm), nên signUp trả luôn session và
+ * KHÔNG có thư nào được gửi đi. Trả cờ needsEmailConfirm để trang gọi biết nên báo
+ * "vào dùng được ngay" hay "kiểm tra email", đừng đoán.
+ */
 export async function signUpWithInvite(input: {
   email: string;
   password: string;
   fullName: string;
   code: string;
-}): Promise<void> {
-  const { error } = await getSupabase().auth.signUp({
+}): Promise<SignUpWithInviteResult> {
+  const { data, error } = await getSupabase().auth.signUp({
     email: input.email.trim(),
     password: input.password,
     options: { data: { full_name: input.fullName.trim(), invite_code: input.code.trim() } },
   });
   if (error) throw error;
+  return { needsEmailConfirm: !data.session, userId: data.user?.id ?? null };
+}
+
+/**
+ * Đọc lại quyền thật của chính mình sau khi đăng ký, để báo đúng thay vì tin là trigger
+ * đã chạy: mã hết hạn hoặc đã có người dùng thì apply_staff_invite lặng lẽ bỏ qua.
+ */
+export async function fetchGrantedStaffRole(userId: string): Promise<ClaimResult | null> {
+  const [assistant, profile] = await Promise.all([
+    getSupabase().from("ta_assistants").select("tier").eq("user_id", userId).maybeSingle(),
+    getSupabase().from("profiles").select("role").eq("id", userId).maybeSingle(),
+  ]);
+  if (assistant.data)
+    return {
+      role: "tro_giang",
+      class_name: null,
+      tier: (assistant.data as { tier: ClaimResult["tier"] }).tier,
+    };
+  if ((profile.data as { role?: string } | null)?.role === "instructor")
+    return { role: "instructor", class_name: null, tier: null };
+  return null;
 }

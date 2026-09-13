@@ -8,7 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
-import { claimStaffInvite, signUpWithInvite } from "@/services/staff-invites";
+import { claimStaffInvite, fetchGrantedStaffRole, signUpWithInvite } from "@/services/staff-invites";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -34,6 +34,7 @@ function InviteContent() {
 
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState<string | null>(null);
+  const [failed, setFailed] = useState<string | null>(null);
   const [needConfirm, setNeedConfirm] = useState(false);
 
   const [fullName, setFullName] = useState("");
@@ -61,6 +62,21 @@ function InviteContent() {
           className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
         >
           Vào tài khoản
+        </Link>
+      </Card>
+    );
+
+  if (failed)
+    return (
+      <Card>
+        <Mail className="mx-auto text-amber-300" size={40} />
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Chưa nhận được lời mời</h1>
+        <p className="mt-2 text-center text-sm text-slate-400">{failed}</p>
+        <Link
+          href="/dang-nhap"
+          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+        >
+          Đăng nhập
         </Link>
       </Card>
     );
@@ -99,8 +115,22 @@ function InviteContent() {
     }
     setBusy(true);
     try {
-      await signUpWithInvite({ email, password, fullName, code });
-      setNeedConfirm(true);
+      const { needsEmailConfirm, userId } = await signUpWithInvite({ email, password, fullName, code });
+      // Dự án đang tắt xác nhận email: không có thư nào được gửi, tài khoản dùng được ngay.
+      // Chỉ hiện màn "kiểm tra email" khi Supabase thật sự bắt xác nhận (không trả session).
+      if (needsEmailConfirm) {
+        setNeedConfirm(true);
+        return;
+      }
+      const granted = userId ? await fetchGrantedStaffRole(userId) : null;
+      if (granted) {
+        setDone(`Tài khoản đã tạo xong và bạn được cấp quyền ${roleLabel(granted.role, granted.tier)}.`);
+      } else {
+        setFailed(
+          "Tài khoản đã được tạo nhưng mã mời không còn hiệu lực, nên chưa có quyền nào được cấp. " +
+            "Nhắn thầy cô gửi mã mới, đăng nhập rồi mở lại link mời để nhận quyền.",
+        );
+      }
     } catch (error) {
       toast("error", errorMessage(error, "Không tạo được tài khoản."));
     } finally {
