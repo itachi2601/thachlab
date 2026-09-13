@@ -249,6 +249,13 @@ export async function fetchCttcStudentIds(studentIds: string[]): Promise<Set<str
     .select("id")
     .in("id", studentIds)
     .eq("track", "cttc");
+  // Giữ tương thích với hosting chưa chạy migration profiles.track.
+  if (error?.code === "42703" && error.message.includes("track")) {
+    const { data: enrolled, error: enrollmentError } = await getSupabase()
+      .from("course_enrollments").select("student_id").in("student_id", studentIds);
+    if (enrollmentError) throw enrollmentError;
+    return new Set((enrolled ?? []).map((row) => row.student_id as string));
+  }
   if (error) throw error;
   return new Set((data ?? []).map((row) => row.id as string));
 }
@@ -277,9 +284,19 @@ export async function fetchUnassignedStudents(): Promise<UnassignedStudent[]> {
       .or("track.is.null,track.eq.thpt"),
     supabase.from("user_classes").select("user_id").in("status", ["active", "pending"]),
   ]);
-  if (studentsError) throw studentsError;
   if (classedError) throw classedError;
 
   const linked = new Set<string>((classed ?? []).map((row) => row.user_id as string));
+  if (studentsError?.code === "42703" && studentsError.message.includes("track")) {
+    const [{ data: allStudents, error: profileError }, { data: enrolled, error: enrollmentError }] = await Promise.all([
+      supabase.from("profiles").select("id, full_name").eq("role", "student"),
+      supabase.from("course_enrollments").select("student_id"),
+    ]);
+    if (profileError) throw profileError;
+    if (enrollmentError) throw enrollmentError;
+    const cttc = new Set((enrolled ?? []).map((row) => row.student_id as string));
+    return (allStudents ?? []).filter((student) => !linked.has(student.id) && !cttc.has(student.id));
+  }
+  if (studentsError) throw studentsError;
   return (students ?? []).filter((student) => !linked.has(student.id));
 }
