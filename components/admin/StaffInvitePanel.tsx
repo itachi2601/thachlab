@@ -77,7 +77,8 @@ export default function StaffInvitePanel() {
         email: email.trim() || null,
         role,
         adminArea: role === "instructor" && adminArea ? adminArea : null,
-        classId: classId ? Number(classId) : null,
+        // Trợ giảng không gán lớp cố định nữa — form ghi buổi cho chọn mọi lớp đang hoạt động.
+        classId: role === "instructor" && classId ? Number(classId) : null,
         tier: role === "tro_giang" ? tier : null,
       });
       setCreated(invite);
@@ -154,19 +155,39 @@ export default function StaffInvitePanel() {
 
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         {role === "instructor" ? (
-          <label className="text-sm text-slate-300">
-            Khu vực quản trị
-            <select
-              value={adminArea}
-              onChange={(e) => setAdminArea(e.target.value as "" | "thpt" | "cttc")}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
-            >
-              <option value="thpt">THPT</option>
-              <option value="cttc">CTTC</option>
-              <option value="">Không cấp khu vực</option>
-            </select>
-          </label>
+          <>
+            <label className="text-sm text-slate-300">
+              Khu vực quản trị
+              <select
+                value={adminArea}
+                onChange={(e) => setAdminArea(e.target.value as "" | "thpt" | "cttc")}
+                className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
+              >
+                <option value="thpt">THPT</option>
+                <option value="cttc">CTTC</option>
+                <option value="">Không cấp khu vực</option>
+              </select>
+            </label>
+
+            <label className="text-sm text-slate-300">
+              Lớp phụ trách (không bắt buộc)
+              <select
+                value={classId}
+                onChange={(e) => setClassId(e.target.value)}
+                className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
+              >
+                <option value="">Chưa gán lớp</option>
+                {classes.map((schoolClass) => (
+                  <option key={schoolClass.id} value={schoolClass.id}>
+                    {schoolClass.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </>
         ) : (
+          /* Trợ giảng không chọn lớp: form ghi buổi cho chọn mọi lớp đang hoạt động,
+             vì một em thường đi nhiều lớp. */
           <label className="text-sm text-slate-300">
             Bậc trợ giảng
             <select
@@ -180,22 +201,6 @@ export default function StaffInvitePanel() {
             </select>
           </label>
         )}
-
-        <label className="text-sm text-slate-300">
-          Lớp phụ trách {role === "instructor" ? "(không bắt buộc)" : ""}
-          <select
-            value={classId}
-            onChange={(e) => setClassId(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
-          >
-            <option value="">Chưa gán lớp</option>
-            {classes.map((schoolClass) => (
-              <option key={schoolClass.id} value={schoolClass.id}>
-                {schoolClass.name}
-              </option>
-            ))}
-          </select>
-        </label>
       </div>
 
       <button

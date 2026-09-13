@@ -7,12 +7,11 @@ import { useToast } from "@/components/ui/Toast";
 import { formatMultiplier, phudaoMultiplier } from "@/lib/tro-giang/format";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { demoClasses, demoTopic, isDemoAssistant } from "@/lib/tro-giang/demo";
+import { fetchClasses } from "@/services/classes";
 import {
   createSession,
-  fetchMyAssistantClasses,
   fetchTopicSuggestion,
   type TaAssistant,
-  type TaAssistantClass,
   type TaSessionType,
   type TaTopicSuggestion,
   type TaVideoTier,
@@ -29,6 +28,9 @@ const TYPE_OPTIONS = (Object.keys(SESSION_TYPE_META) as TaSessionType[]).map((va
 }));
 
 const TIME_CHIPS = ["16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
+
+/** Giá trị riêng của mục "Lớp khác…" trong ô chọn lớp — không phải tên lớp nào cả. */
+const CLASS_OTHER = "__lop-khac__";
 
 function todayStr() {
   return new Date().toLocaleDateString("sv-SE"); // yyyy-mm-dd theo giờ máy
@@ -235,7 +237,11 @@ export default function GhiBuoiForm({
     if (initialTopicId) d.sessionType = "video";
     return d;
   });
-  const [myClasses, setMyClasses] = useState<TaAssistantClass[]>(() => (demo ? demoClasses() : []));
+  // Mọi lớp đang hoạt động, không chỉ lớp được phân công: một em có thể đi nhiều lớp.
+  const [classOptions, setClassOptions] = useState<string[]>(() =>
+    demo ? demoClasses().map((item) => item.name) : [],
+  );
+  const [classOther, setClassOther] = useState(false);
   const [topicSourceId, setTopicSourceId] = useState<string | null>(initialTopicId ?? null);
   const [topicInfo, setTopicInfo] = useState<TaTopicSuggestion | null>(() =>
     demo && initialTopicId ? demoTopic(initialTopicId) : null,
@@ -253,10 +259,15 @@ export default function GhiBuoiForm({
 
   useEffect(() => {
     if (demo) return;
-    fetchMyAssistantClasses(assistant.id)
-      .then(setMyClasses)
+    fetchClasses()
+      .then((rows) => setClassOptions(rows.map((row) => row.name)))
       .catch(() => {});
-  }, [assistant.id, demo]);
+  }, [demo]);
+
+  // Nháp cũ (hoặc lớp gõ tay) không nằm trong danh sách -> mở sẵn ô gõ tay.
+  // Chờ danh sách lớp tải xong mới xét, khỏi nhấp nháy lúc mới vào trang.
+  const classIsOther =
+    classOther || (classOptions.length > 0 && !!draft.classLabel && !classOptions.includes(draft.classLabel));
 
   // Lưu nháp — bỏ qua lần render đầu (vừa load từ localStorage lên, khỏi ghi lại chính nó).
   useEffect(() => {
@@ -338,6 +349,7 @@ export default function GhiBuoiForm({
       } catch {}
       const type = draft.sessionType;
       setDraft({ ...emptyDraft(), sessionType: type });
+      setClassOther(false);
       setTopicSourceId(null);
       setTopicInfo(null);
     } catch (error) {
@@ -392,27 +404,35 @@ export default function GhiBuoiForm({
             <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
               Lớp
             </label>
-            {/* Buổi lên lớp/chấm bài chọn trong danh sách lớp được phân công để tên lớp
-                không bị phân mảnh ("12A2" vs "12 A2"); chưa được gán lớp nào thì gõ tay. */}
-            {myClasses.length > 0 ? (
-              <select
-                value={draft.classLabel}
-                onChange={(e) => patch({ classLabel: e.target.value })}
-                className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-3 text-white"
-              >
-                <option value="">Chọn lớp…</option>
-                {myClasses.map((item) => (
-                  <option key={item.class_id} value={item.name}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-            ) : (
+            {/* Chọn trong danh sách lớp đang hoạt động để tên lớp không bị phân mảnh
+                ("12A2" vs "12 A2"); em nào dạy lớp ngoài danh sách thì chọn "Lớp khác…" gõ tay. */}
+            <select
+              value={classIsOther ? CLASS_OTHER : draft.classLabel}
+              onChange={(e) => {
+                if (e.target.value === CLASS_OTHER) {
+                  setClassOther(true);
+                  patch({ classLabel: "" });
+                } else {
+                  setClassOther(false);
+                  patch({ classLabel: e.target.value });
+                }
+              }}
+              className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-3 text-white"
+            >
+              <option value="">Chọn lớp…</option>
+              {classOptions.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+              <option value={CLASS_OTHER}>Lớp khác…</option>
+            </select>
+            {classIsOther && (
               <input
                 value={draft.classLabel}
                 onChange={(e) => patch({ classLabel: e.target.value })}
                 placeholder="12A2"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
+                className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
               />
             )}
           </div>

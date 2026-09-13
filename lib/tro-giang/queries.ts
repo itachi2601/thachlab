@@ -61,7 +61,12 @@ export interface TaAssistantClass {
   name: string;
 }
 
-/** Các lớp trợ giảng được phân công — nguồn cho ô chọn lớp ở form ghi buổi. */
+/**
+ * Các lớp trợ giảng được phân công.
+ * Form ghi buổi KHÔNG dùng hàm này nữa: một em có thể đi nhiều lớp nên ô chọn lớp liệt kê
+ * mọi lớp đang hoạt động. Giữ lại bảng ta_assistant_classes và hàm này cho lúc muốn
+ * phân công lớp cố định cho trợ giảng.
+ */
 export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAssistantClass[]> {
   const { data, error } = await getSupabase()
     .from("ta_assistant_classes")
