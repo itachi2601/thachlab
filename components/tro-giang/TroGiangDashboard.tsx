@@ -152,7 +152,11 @@ export default function TroGiangDashboard({ assistant }: { assistant: TaAssistan
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-white">
                       {typeMeta.label}
-                      {s.class_label ? ` · ${s.class_label}` : ""}
+                      {s.phudao_students?.length
+                        ? ` · ${s.phudao_students.length} em: ${s.phudao_students.join(", ")}`
+                        : s.class_label
+                          ? ` · ${s.class_label}`
+                          : ""}
                     </p>
                     <p className="text-xs text-slate-400">
                       {new Date(s.work_date).toLocaleDateString("vi-VN")}

@@ -31,6 +31,8 @@ export interface TaSessionRow {
   error_note_at: string | null;
   homework_given: string | null;
   student_recap_ok: boolean | null;
+  /** Danh sách em được phụ đạo trong buổi — số em quyết định hệ số quy đổi giờ. */
+  phudao_students: string[];
   papers_graded: number | null;
   video_url: string | null;
   video_tier: TaVideoTier | null;
@@ -90,6 +92,7 @@ export interface NewSessionInput {
   error_note?: string | null;
   homework_given?: string | null;
   student_recap_ok?: boolean | null;
+  phudao_students?: string[];
   papers_graded?: number | null;
   video_url?: string | null;
   video_tier?: TaVideoTier | null;
@@ -112,6 +115,7 @@ export async function createSession(input: NewSessionInput): Promise<void> {
     error_note: input.error_note ?? null,
     homework_given: input.homework_given ?? null,
     student_recap_ok: input.student_recap_ok ?? null,
+    phudao_students: input.phudao_students ?? [],
     papers_graded: input.papers_graded ?? null,
     video_url: input.video_url ?? null,
     video_tier: input.video_tier ?? null,
@@ -220,6 +224,7 @@ export interface TaSessionListItem {
   work_date: string;
   session_type: TaSessionType;
   class_label: string | null;
+  phudao_students: string[];
   hours: number | null;
   student_touches: number | null;
   papers_graded: number | null;
@@ -230,7 +235,7 @@ export interface TaSessionListItem {
 export async function fetchRecentSessions(assistantId: string, limit = 10): Promise<TaSessionListItem[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
-    .select("id, work_date, session_type, class_label, hours, student_touches, papers_graded, status, reject_reason")
+    .select("id, work_date, session_type, class_label, phudao_students, hours, student_touches, papers_graded, status, reject_reason")
     .eq("assistant_id", assistantId)
     .order("work_date", { ascending: false })
     .order("created_at", { ascending: false })
@@ -260,6 +265,7 @@ export interface TaPendingSession extends TaSessionListItem {
   error_note: string | null;
   homework_given: string | null;
   student_recap_ok: boolean | null;
+  phudao_students: string[];
   video_url: string | null;
   video_tier: TaVideoTier | null;
   note: string | null;
@@ -270,7 +276,7 @@ export async function fetchPendingSessions(): Promise<TaPendingSession[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
     .select(
-      "id, assistant_id, work_date, session_type, class_label, hours, student_touches, touch_names, error_note, homework_given, student_recap_ok, papers_graded, video_url, video_tier, note, status, reject_reason, ta_assistants(short_name)",
+      "id, assistant_id, work_date, session_type, class_label, phudao_students, hours, student_touches, touch_names, error_note, homework_given, student_recap_ok, papers_graded, video_url, video_tier, note, status, reject_reason, ta_assistants(short_name)",
     )
     .eq("status", "submitted")
     .order("work_date", { ascending: false });

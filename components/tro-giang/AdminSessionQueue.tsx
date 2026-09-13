@@ -19,8 +19,12 @@ const ANOMALY_RATIO = 1.5;
 function detailLine(s: TaPendingSession): string {
   if (s.session_type === "lop")
     return `${s.student_touches ?? 0} lượt chạm${s.touch_names?.length ? ` · ${s.touch_names.join(", ")}` : ""}`;
-  if (s.session_type === "phudao")
-    return `${s.homework_given || "chưa ghi bài giao"} · ${s.student_recap_ok ? "HS trình bày lại được" : "HS chưa trình bày lại được"}`;
+  if (s.session_type === "phudao") {
+    const students = s.phudao_students?.length
+      ? `${s.phudao_students.length} em (${s.phudao_students.join(", ")})`
+      : "chưa ghi tên em nào";
+    return `${students} · ${s.homework_given || "chưa ghi bài giao"} · ${s.student_recap_ok ? "HS trình bày lại được" : "HS chưa trình bày lại được"}`;
+  }
   if (s.session_type === "chambai") return `${s.papers_graded ?? 0} bài đã chấm`;
   if (s.session_type === "video") return `${s.video_tier === "dung_ky" ? "Dựng kỹ" : "Đơn giản"} · ${s.video_url ?? "chưa có link"}`;
   return "";

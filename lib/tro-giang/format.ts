@@ -52,3 +52,16 @@ export function buildNextTierMessage(s: TaMonthlyScore): string {
   const detail = best ? ` — ${best.text}` : "";
   return `Còn ${gap} điểm nữa đạt mức thưởng ${targetLabel}${detail}.`;
 }
+
+/**
+ * Hệ số quy đổi giờ phụ đạo theo số em: 1,1 cho em đầu, +0,1 mỗi em kế tiếp.
+ * CHỈ dùng để hiển thị gợi ý trong form — tiền thật luôn do ta_converted_hours()
+ * trong SQL tính (xem docs/supabase-migration-tro-giang-phudao-nhieu-em.sql).
+ */
+export function phudaoMultiplier(studentCount: number): number {
+  return 1 + 0.1 * Math.max(1, studentCount);
+}
+
+export function formatMultiplier(n: number): string {
+  return n.toLocaleString("vi-VN", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+}

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { Check, Loader2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import { formatMultiplier, phudaoMultiplier } from "@/lib/tro-giang/format";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { demoClasses, demoTopic, isDemoAssistant } from "@/lib/tro-giang/demo";
 import {
@@ -41,6 +42,7 @@ interface Draft {
   endTime: string | null;
   touchNames: string[];
   errorNote: string;
+  phudaoStudents: string[];
   homeworkGiven: string;
   studentRecapOk: boolean;
   papersGraded: string;
@@ -59,6 +61,7 @@ function emptyDraft(): Draft {
     endTime: null,
     touchNames: [],
     errorNote: "",
+    phudaoStudents: [],
     homeworkGiven: "",
     studentRecapOk: false,
     papersGraded: "",
@@ -135,9 +138,25 @@ function TimeChips({
   );
 }
 
-function TouchNamesInput({ names, onChange }: { names: string[]; onChange: (n: string[]) => void }) {
+function NameChipsInput({
+  label,
+  names,
+  onChange,
+  target,
+  badge,
+  placeholder = "Gõ tên rồi Enter…",
+}: {
+  label: string;
+  names: string[];
+  onChange: (n: string[]) => void;
+  /** Có target thì hiện bộ đếm n/target và đổi màu khi đạt. */
+  target?: number;
+  /** Không có target thì hiện chữ này ở góc phải (ví dụ hệ số giờ phụ đạo). */
+  badge?: string;
+  placeholder?: string;
+}) {
   const [text, setText] = useState("");
-  const reachedTarget = names.length >= TOUCH_TARGET;
+  const reachedTarget = target !== undefined && names.length >= target;
 
   const commit = useCallback(() => {
     const v = text.trim();
@@ -149,15 +168,17 @@ function TouchNamesInput({ names, onChange }: { names: string[]; onChange: (n: s
   return (
     <div>
       <div className="mb-2 flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Học sinh đã gỡ bài</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{label}</p>
         <span
           className={`rounded-full px-2.5 py-1 font-mono text-xs font-bold tabular-nums transition-colors ${
             reachedTarget
               ? "bg-emerald-500/20 text-emerald-300"
-              : "bg-amber-500/15 text-amber-300"
+              : target !== undefined
+                ? "bg-amber-500/15 text-amber-300"
+                : "bg-blue-500/15 text-blue-200"
           }`}
         >
-          {names.length}/{TOUCH_TARGET}
+          {target !== undefined ? `${names.length}/${target}` : badge}
         </span>
       </div>
       <div className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -189,7 +210,7 @@ function TouchNamesInput({ names, onChange }: { names: string[]; onChange: (n: s
             }
           }}
           onBlur={commit}
-          placeholder="Gõ tên rồi Enter…"
+          placeholder={placeholder}
           className="min-w-[140px] flex-1 bg-transparent py-1.5 text-sm text-white outline-none placeholder:text-slate-500"
         />
       </div>
@@ -290,7 +311,7 @@ export default function GhiBuoiForm({
           assistant_id: assistant.id,
           work_date: draft.workDate,
           session_type: draft.sessionType,
-          class_label: draft.classLabel.trim() || null,
+          class_label: draft.sessionType === "phudao" ? null : draft.classLabel.trim() || null,
           start_time: needsTime ? draft.startTime : null,
           end_time: needsTime ? draft.endTime : null,
           student_touches: draft.sessionType === "lop" ? draft.touchNames.length : null,
@@ -298,6 +319,7 @@ export default function GhiBuoiForm({
           error_note: draft.sessionType === "lop" ? draft.errorNote.trim() : null,
           homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
           student_recap_ok: draft.sessionType === "phudao" ? draft.studentRecapOk : null,
+        phudao_students: draft.sessionType === "phudao" ? draft.phudaoStudents : [],
           papers_graded: draft.sessionType === "chambai" ? Number(draft.papersGraded) : null,
           video_url: draft.sessionType === "video" ? draft.videoUrl.trim() : null,
           video_tier: draft.sessionType === "video" ? draft.videoTier : null,
@@ -365,14 +387,14 @@ export default function GhiBuoiForm({
           />
         </div>
 
-        {draft.sessionType !== "video" && draft.sessionType !== "hanhchinh" && (
+        {draft.sessionType !== "video" && draft.sessionType !== "hanhchinh" && draft.sessionType !== "phudao" && (
           <div>
             <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
-              {draft.sessionType === "phudao" ? "Tên học sinh" : "Lớp"}
+              Lớp
             </label>
             {/* Buổi lên lớp/chấm bài chọn trong danh sách lớp được phân công để tên lớp
                 không bị phân mảnh ("12A2" vs "12 A2"); chưa được gán lớp nào thì gõ tay. */}
-            {draft.sessionType !== "phudao" && myClasses.length > 0 ? (
+            {myClasses.length > 0 ? (
               <select
                 value={draft.classLabel}
                 onChange={(e) => patch({ classLabel: e.target.value })}
@@ -389,7 +411,7 @@ export default function GhiBuoiForm({
               <input
                 value={draft.classLabel}
                 onChange={(e) => patch({ classLabel: e.target.value })}
-                placeholder={draft.sessionType === "phudao" ? "Nguyễn Văn A" : "12A2"}
+                placeholder="12A2"
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
               />
             )}
@@ -408,7 +430,12 @@ export default function GhiBuoiForm({
 
         {draft.sessionType === "lop" && (
           <>
-            <TouchNamesInput names={draft.touchNames} onChange={(n) => patch({ touchNames: n })} />
+            <NameChipsInput
+              label="Học sinh đã gỡ bài"
+              names={draft.touchNames}
+              onChange={(n) => patch({ touchNames: n })}
+              target={TOUCH_TARGET}
+            />
             <div>
               <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
                 Lỗi sai lặp lại của lớp <span className="text-red-400">*</span>
@@ -426,6 +453,13 @@ export default function GhiBuoiForm({
 
         {draft.sessionType === "phudao" && (
           <>
+            <NameChipsInput
+              label="Các em được phụ đạo"
+              names={draft.phudaoStudents}
+              onChange={(n) => patch({ phudaoStudents: n })}
+              badge={`hệ số ×${formatMultiplier(phudaoMultiplier(draft.phudaoStudents.length))}`}
+              placeholder="Gõ tên em rồi Enter…"
+            />
             <div>
               <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
                 Các câu đã giao
