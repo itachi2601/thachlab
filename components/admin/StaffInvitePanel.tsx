@@ -1,12 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Clock3, Check, Mail, X } from "lucide-react";
+import { Check, Clock3, Copy, Link2, UserPlus, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import { SITE_URL } from "@/lib/site";
 import { displayClassesByGrade, fetchClasses } from "@/services/classes";
 import {
+  createStaffInvite,
   fetchStaffInvites,
-  inviteStaff,
   revokeStaffInvite,
   type StaffInvite,
   type StaffInviteRole,
@@ -23,14 +24,19 @@ const ROLES: { id: StaffInviteRole; label: string }[] = [
   { id: "tro_giang", label: "Trợ giảng" },
 ];
 
+function inviteLink(code: string) {
+  return `${SITE_URL}/loi-moi?ma=${code}`;
+}
+
 export default function StaffInvitePanel() {
   const toast = useToast();
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [invites, setInvites] = useState<StaffInvite[] | null>(null);
   const [busy, setBusy] = useState(false);
+  const [created, setCreated] = useState<StaffInvite | null>(null);
 
-  const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [role, setRole] = useState<StaffInviteRole>("instructor");
   const [adminArea, setAdminArea] = useState<"" | "thpt" | "cttc">("thpt");
   const [classId, setClassId] = useState<string>("");
@@ -47,35 +53,40 @@ export default function StaffInvitePanel() {
     reload();
   }, [reload]);
 
+  const className = (id: number | null) =>
+    id ? (classes.find((c) => c.id === id)?.name ?? `Lớp #${id}`) : null;
+
+  async function copy(text: string, what: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast("success", `Đã chép ${what}.`);
+    } catch {
+      toast("error", "Trình duyệt không cho chép tự động — bôi đen rồi chép tay nhé.");
+    }
+  }
+
   async function submit() {
-    if (!email.trim() || !fullName.trim()) {
-      toast("error", "Nhập đủ email và họ tên.");
+    if (!fullName.trim()) {
+      toast("error", "Nhập họ tên người được mời.");
       return;
     }
     setBusy(true);
     try {
-      const result = await inviteStaff({
-        email: email.trim(),
+      const invite = await createStaffInvite({
         fullName: fullName.trim(),
+        email: email.trim() || null,
         role,
         adminArea: role === "instructor" && adminArea ? adminArea : null,
         classId: classId ? Number(classId) : null,
         tier: role === "tro_giang" ? tier : null,
       });
-      toast(
-        "success",
-        result.status === "invited"
-          ? "Đã gửi email mời đặt mật khẩu."
-          : "Email này đã có tài khoản — đã cấp quyền và phân công ngay.",
-      );
-      setEmail("");
+      setCreated(invite);
       setFullName("");
+      setEmail("");
       reload();
+      toast("success", "Đã tạo lời mời — gửi link cho người ta là xong.");
     } catch (error) {
-      toast(
-        "error",
-        errorMessage(error, "Chưa mời được — kiểm tra Edge Function invite-staff đã deploy chưa."),
-      );
+      toast("error", errorMessage(error, "Chưa tạo được lời mời."));
     } finally {
       setBusy(false);
     }
@@ -86,6 +97,7 @@ export default function StaffInvitePanel() {
     try {
       await revokeStaffInvite(id);
       toast("success", "Đã huỷ lời mời.");
+      if (created?.id === id) setCreated(null);
       reload();
     } catch (error) {
       toast("error", errorMessage(error, "Chưa huỷ được."));
@@ -94,31 +106,33 @@ export default function StaffInvitePanel() {
     }
   }
 
-  const className = (id: number | null) =>
-    id ? (classes.find((c) => c.id === id)?.name ?? `Lớp #${id}`) : null;
+  const message = created
+    ? `Chào ${created.full_name}, đây là link tham gia ThachLab: ${inviteLink(created.code)}\nMở link, tạo tài khoản là xong — quyền và lớp đã được cấp sẵn.`
+    : "";
 
   return (
     <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
       <h3 className="flex items-center gap-2 font-semibold text-white">
-        <Mail size={17} className="text-sky-300" />
-        Mời người mới qua email
+        <UserPlus size={17} className="text-sky-300" />
+        Mời người mới bằng link
       </h3>
       <p className="mt-1 text-sm text-slate-400">
-        Người chưa có tài khoản sẽ nhận email đặt mật khẩu; đăng nhập xong là có sẵn quyền và lớp được phân công.
+        Tạo lời mời rồi gửi link qua Zalo/Messenger. Người nhận mở link, tạo tài khoản bằng email bất kỳ là có sẵn
+        quyền và lớp được phân công — hệ thống không gửi email.
       </p>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="email@example.com"
-          className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500"
-        />
-        <input
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           placeholder="Họ và tên"
+          className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500"
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email (không bắt buộc — chỉ để ghi nhớ)"
           className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-slate-500"
         />
       </div>
@@ -190,16 +204,46 @@ export default function StaffInvitePanel() {
         onClick={submit}
         className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40"
       >
-        <Mail size={15} />
-        Gửi lời mời
+        <Link2 size={15} />
+        Tạo link mời
       </button>
+
+      {created && (
+        <div className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4">
+          <p className="text-sm font-bold text-emerald-100">
+            Link mời cho {created.full_name} — mã{" "}
+            <span className="font-mono">{created.code}</span>
+          </p>
+          <p className="mt-2 break-all rounded-xl bg-black/30 px-3 py-2 font-mono text-xs text-emerald-100">
+            {inviteLink(created.code)}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => void copy(inviteLink(created.code), "link mời")}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-3.5 py-2 text-xs font-bold text-white"
+            >
+              <Copy size={13} />
+              Chép link
+            </button>
+            <button
+              type="button"
+              onClick={() => void copy(message, "câu nhắn")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-400/30 px-3.5 py-2 text-xs font-bold text-emerald-100"
+            >
+              <Copy size={13} />
+              Chép câu nhắn sẵn
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="mt-5 border-t border-white/10 pt-4">
         <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Lời mời gần đây</p>
         {invites === null ? (
           <p className="mt-2 text-sm text-slate-400">Đang tải…</p>
         ) : invites.length === 0 ? (
-          <p className="mt-2 text-sm text-slate-400">Chưa mời ai qua email.</p>
+          <p className="mt-2 text-sm text-slate-400">Chưa mời ai.</p>
         ) : (
           <div className="mt-2 space-y-2">
             {invites.map((invite) => (
@@ -212,26 +256,35 @@ export default function StaffInvitePanel() {
                   {invite.claimed_at ? <Check size={15} /> : <Clock3 size={15} />}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <strong className="block truncate text-sm text-white">
-                    {invite.full_name || invite.email}
-                  </strong>
+                  <strong className="block truncate text-sm text-white">{invite.full_name}</strong>
                   <small className="text-slate-400">
-                    {invite.email} · {invite.role === "instructor" ? "Giảng viên" : `Trợ giảng ${invite.tier ?? ""}`}
+                    <span className="font-mono">{invite.code}</span> ·{" "}
+                    {invite.role === "instructor" ? "Giảng viên" : `Trợ giảng ${invite.tier ?? ""}`}
                     {className(invite.class_id) ? ` · ${className(invite.class_id)}` : ""}
+                    {invite.email ? ` · ${invite.email}` : ""}
                   </small>
                 </div>
                 <span className="shrink-0 text-xs font-semibold text-slate-400">
                   {invite.claimed_at ? "Đã nhận" : "Chờ nhận"}
                 </span>
                 {!invite.claimed_at && (
-                  <button
-                    type="button"
-                    disabled={busy}
-                    onClick={() => void revoke(invite.id)}
-                    className="shrink-0 rounded-full bg-red-500/15 px-3 py-1.5 text-xs font-bold text-red-200 disabled:opacity-40"
-                  >
-                    <X size={13} />
-                  </button>
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => void copy(inviteLink(invite.code), "link mời")}
+                      className="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-xs font-bold text-slate-300"
+                    >
+                      <Copy size={13} />
+                    </button>
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => void revoke(invite.id)}
+                      className="shrink-0 rounded-full bg-red-500/15 px-3 py-1.5 text-xs font-bold text-red-200 disabled:opacity-40"
+                    >
+                      <X size={13} />
+                    </button>
+                  </>
                 )}
               </article>
             ))}

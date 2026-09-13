@@ -1,13 +1,16 @@
 -- ============================================================
 -- Mời giảng viên / trợ giảng qua email từ trang Phân công giảng viên
 --
--- Site export tĩnh nên không gọi được auth.admin.inviteUserByEmail từ trình duyệt.
--- Luồng chính đi qua Edge Function `invite-staff` (xem supabase/functions/invite-staff).
--- Bảng staff_invites vừa là nhật ký lời mời, vừa là lưới an toàn: nếu email mời không
--- tới nơi mà người đó tự đăng ký đúng email, trigger bên dưới vẫn cấp quyền và gán lớp.
+-- Không gửi email và không cần Edge Function: admin tạo lời mời (sinh mã), tự gửi link
+--   https://thachlab.id.vn/loi-moi?ma=<code>
+-- qua Zalo/Messenger. Người nhận mở link:
+--   - chưa có tài khoản -> đăng ký ngay tại đó bằng email bất kỳ, mã đi kèm trong
+--     raw_user_meta_data.invite_code và trigger zz_claim_staff_invite áp dụng lời mời;
+--   - đã có tài khoản -> bấm "Nhận lời mời", gọi claim_staff_invite() cho chính mình.
 --
--- Toàn bộ việc "áp dụng 1 lời mời" gom trong public.apply_staff_invite() để Edge Function
--- và trigger dùng chung một logic, không viết hai bản.
+-- Toàn bộ việc "áp dụng 1 lời mời" gom trong public.apply_staff_invite() để cả hai lối
+-- vào dùng chung một logic, không viết hai bản. Khớp theo mã trước, không có mã thì thử
+-- khớp theo email đã ghi trong lời mời.
 -- ============================================================
 
 -- ---------- 1. Trợ giảng ↔ lớp ----------
@@ -35,7 +38,11 @@ create policy "tro giang doc lop cua minh" on public.ta_assistant_classes
 -- ---------- 2. Lời mời ----------
 create table if not exists public.staff_invites (
   id uuid primary key default gen_random_uuid(),
-  email text not null,
+  -- Mã mời: người được mời mở /loi-moi?ma=<code>, đăng ký bằng email bất kỳ.
+  -- Chữ số hex nên không lẫn 0/O hay 1/l khi đọc qua điện thoại.
+  code text not null unique default upper(substr(replace(gen_random_uuid()::text, '-', ''), 1, 8)),
+  -- Email chỉ để ghi nhớ mời ai, không bắt buộc và không dùng để gửi mail.
+  email text,
   full_name text not null default '',
   role text not null check (role in ('instructor', 'tro_giang')),
   admin_area text check (admin_area in ('thpt', 'cttc')),
@@ -48,9 +55,19 @@ create table if not exists public.staff_invites (
   claimed_user_id uuid references auth.users(id) on delete set null
 );
 
+-- Nâng cấp cho DB đã chạy bản trước (khi đó email bắt buộc và chưa có cột code).
+alter table public.staff_invites
+  add column if not exists code text default upper(substr(replace(gen_random_uuid()::text, '-', ''), 1, 8));
+update public.staff_invites
+  set code = upper(substr(replace(gen_random_uuid()::text, '-', ''), 1, 8)) where code is null;
+alter table public.staff_invites alter column code set not null;
+alter table public.staff_invites alter column email drop not null;
+create unique index if not exists staff_invites_code_idx on public.staff_invites (code);
+
 -- 1 email chỉ có 1 lời mời đang chờ; mời lại thì ghi đè lời mời cũ chưa nhận.
+-- (email null không tính — mời bằng mã thì không cần email.)
 create unique index if not exists staff_invites_pending_email_idx
-  on public.staff_invites (lower(email)) where claimed_at is null;
+  on public.staff_invites (lower(email)) where claimed_at is null and email is not null;
 
 create index if not exists staff_invites_email_idx on public.staff_invites (lower(email));
 
@@ -62,7 +79,9 @@ create policy "admin quan ly loi moi" on public.staff_invites
 
 -- ---------- 3. Áp dụng lời mời (dùng chung cho Edge Function và trigger) ----------
 -- Trả về id lời mời đã áp dụng, null nếu email không có lời mời nào đang chờ.
-create or replace function public.apply_staff_invite(p_user_id uuid, p_email text)
+drop function if exists public.apply_staff_invite(uuid, text);
+
+create or replace function public.apply_staff_invite(p_user_id uuid, p_email text, p_code text default null)
 returns uuid
 language plpgsql
 security definer
@@ -73,11 +92,18 @@ declare
   v_assistant_id uuid;
   v_short_name text;
 begin
-  select * into inv
-  from public.staff_invites
-  where lower(email) = lower(p_email) and claimed_at is null
-  order by invited_at desc
-  limit 1;
+  -- Ưu tiên mã mời; không có mã thì thử khớp theo email đã ghi trong lời mời.
+  if coalesce(trim(p_code), '') <> '' then
+    select * into inv
+    from public.staff_invites
+    where upper(code) = upper(trim(p_code)) and claimed_at is null;
+  else
+    select * into inv
+    from public.staff_invites
+    where email is not null and lower(email) = lower(coalesce(p_email, '')) and claimed_at is null
+    order by invited_at desc
+    limit 1;
+  end if;
 
   if inv.id is null then
     return null;
@@ -132,10 +158,53 @@ begin
 end;
 $$;
 
--- Chỉ Edge Function (service_role) và trigger gọi — không mở cho authenticated để tránh
--- người dùng tự gọi và tự cấp quyền cho mình.
-revoke all on function public.apply_staff_invite(uuid, text) from public, authenticated, anon;
-grant execute on function public.apply_staff_invite(uuid, text) to service_role;
+-- Không mở cho authenticated: người dùng không được tự chọn user_id để cấp quyền cho mình.
+-- Muốn tự nhận lời mời thì đi qua claim_staff_invite() bên dưới (luôn dùng auth.uid()).
+revoke all on function public.apply_staff_invite(uuid, text, text) from public, authenticated, anon;
+grant execute on function public.apply_staff_invite(uuid, text, text) to service_role;
+
+-- ---------- 3b. Người đã có tài khoản tự nhận lời mời bằng mã ----------
+-- Luôn áp cho chính người đang đăng nhập, không nhận user_id từ client.
+create or replace function public.claim_staff_invite(p_code text)
+returns table (role text, class_name text, tier text)
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_user uuid := auth.uid();
+  v_invite_id uuid;
+  inv public.staff_invites%rowtype;
+begin
+  if v_user is null then
+    raise exception 'Bạn cần đăng nhập trước khi nhận lời mời.';
+  end if;
+
+  select * into inv from public.staff_invites
+  where upper(code) = upper(trim(coalesce(p_code, ''))) and claimed_at is null;
+
+  if inv.id is null then
+    raise exception 'Mã mời không đúng hoặc đã được dùng.';
+  end if;
+
+  v_invite_id := public.apply_staff_invite(
+    v_user,
+    (select u.email from auth.users u where u.id = v_user),
+    p_code
+  );
+
+  if v_invite_id is null then
+    raise exception 'Không nhận được lời mời này.';
+  end if;
+
+  return query
+  select inv.role,
+         (select c.name from public.classes c where c.id = inv.class_id),
+         inv.tier;
+end;
+$$;
+
+grant execute on function public.claim_staff_invite(text) to authenticated;
 
 -- ---------- 4. Tự nhận lời mời khi người được mời tự đăng ký ----------
 -- Tên trigger xếp sau on_auth_user_created để chạy sau khi hồ sơ profiles đã được tạo.
@@ -145,9 +214,12 @@ language plpgsql
 security definer
 set search_path = public
 as $$
+declare
+  v_code text := nullif(trim(coalesce(new.raw_user_meta_data ->> 'invite_code', '')), '');
 begin
-  if new.email is not null then
-    perform public.apply_staff_invite(new.id, new.email);
+  -- Đăng ký từ /loi-moi?ma=<code> thì metadata mang sẵn mã; không có mã thì thử khớp email.
+  if v_code is not null or new.email is not null then
+    perform public.apply_staff_invite(new.id, new.email, v_code);
   end if;
   return new;
 end;
