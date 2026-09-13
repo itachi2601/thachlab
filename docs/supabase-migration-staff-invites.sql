@@ -109,6 +109,14 @@ begin
     return null;
   end if;
 
+  -- Quản trị viên bấm nhầm link mời sẽ tự hạ quyền chính mình (nhánh 'instructor' ghi đè
+  -- profiles.role) hoặc tự thành trợ giảng trong bảng lương. Chặn tại đây — nơi duy nhất
+  -- áp dụng lời mời — nên cả lối đăng ký mới lẫn lối tự nhận đều được bảo vệ; lời mời vẫn
+  -- còn nguyên cho đúng người. Khôi phục ca đã lỡ: docs/supabase-fix-restore-admin.sql.
+  if exists (select 1 from public.profiles where id = p_user_id and role = 'admin') then
+    raise exception 'Tài khoản quản trị không nhận lời mời được — gửi mã này cho đúng người được mời.';
+  end if;
+
   if inv.role = 'instructor' then
     update public.profiles
     set role = 'instructor',

@@ -29,7 +29,7 @@ function Card({ children }: { children: React.ReactNode }) {
 function InviteContent() {
   const searchParams = useSearchParams();
   const code = (searchParams.get("ma") ?? "").trim();
-  const { session, loading } = useAuth();
+  const { session, realProfile, loading } = useAuth();
   const toast = useToast();
 
   const [busy, setBusy] = useState(false);
@@ -109,6 +109,26 @@ function InviteContent() {
   }
 
   if (loading) return <Card><p className="text-center text-slate-400">Đang tải…</p></Card>;
+
+  // Thầy/cô chủ trang bấm nhầm link mời thì nhận lời mời sẽ tự hạ quyền chính mình
+  // (xem chặn ở apply_staff_invite). Nói rõ trước, đừng để chạm vào nút.
+  if (session && realProfile?.role === "admin")
+    return (
+      <Card>
+        <h1 className="font-display text-xl font-bold text-white">Không cần nhận lời mời</h1>
+        <p className="mt-2 text-sm text-slate-400">
+          <strong className="text-slate-200">{session.user.email}</strong> là tài khoản quản trị, đã có sẵn mọi quyền.
+          Mã <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong> vẫn còn nguyên — gửi link này
+          cho đúng người được mời.
+        </p>
+        <Link
+          href="/quan-tri/phan-cong-giang-vien"
+          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+        >
+          Về trang phân công
+        </Link>
+      </Card>
+    );
 
   if (session)
     return (
