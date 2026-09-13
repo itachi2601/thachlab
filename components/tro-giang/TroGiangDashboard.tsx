@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PenLine, Sparkles, Video } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
+import { demoAccruedHours, demoMonthlyScore, demoSessions, isDemoAssistant } from "@/lib/tro-giang/demo";
 import { formatHours, formatVnd, buildNextTierMessage } from "@/lib/tro-giang/format";
 import {
   fetchRecentSessions,
@@ -47,16 +48,19 @@ function StatTile({ label, value }: { label: string; value: string }) {
 }
 
 export default function TroGiangDashboard({ assistant }: { assistant: TaAssistant }) {
-  const [score, setScore] = useState<TaMonthlyScore | null>(null);
-  const [accruedHours, setAccruedHours] = useState<number | null>(null);
-  const [sessions, setSessions] = useState<TaSessionListItem[] | null>(null);
+  // Bản giả lập cho giáo viên xem trước — số liệu mẫu, không gọi Supabase (lib/tro-giang/demo.ts).
+  const demo = isDemoAssistant(assistant);
+  const [score, setScore] = useState<TaMonthlyScore | null>(() => (demo ? demoMonthlyScore(currentMonthStr()) : null));
+  const [accruedHours, setAccruedHours] = useState<number | null>(() => (demo ? demoAccruedHours() : null));
+  const [sessions, setSessions] = useState<TaSessionListItem[] | null>(() => (demo ? demoSessions() : null));
 
   useEffect(() => {
+    if (demo) return;
     const month = currentMonthStr();
     getMonthlyScore(assistant.id, month).then(setScore).catch(() => setScore(null));
     getAccruedHours(assistant.id).then(setAccruedHours).catch(() => setAccruedHours(null));
     fetchRecentSessions(assistant.id, 10).then(setSessions).catch(() => setSessions([]));
-  }, [assistant.id]);
+  }, [assistant.id, demo]);
 
   const hasActivity = !!score && (score.lop_sessions > 0 || score.phudao_sessions > 0 || score.converted_hours > 0 || score.papers_graded > 0);
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Bookmark, Lightbulb, PenLine } from "lucide-react";
 import { STATUS_META } from "@/lib/tro-giang/constants";
+import { demoTopics, demoVideoLedger, demoVideoRates, isDemoAssistant } from "@/lib/tro-giang/demo";
 import { formatVnd } from "@/lib/tro-giang/format";
 import {
   fetchTopicSuggestions,
@@ -35,16 +36,19 @@ function milestoneText(views: number, rates: TaVideoRates | null): string {
 }
 
 export default function TroGiangVideo({ assistant }: { assistant: TaAssistant }) {
-  const [ledger, setLedger] = useState<TaVideoLedgerRow[] | null>(null);
-  const [topics, setTopics] = useState<TaTopicSuggestion[] | null>(null);
-  const [rates, setRates] = useState<TaVideoRates | null>(null);
+  // Bản giả lập cho giáo viên xem trước — số liệu mẫu, không gọi Supabase (lib/tro-giang/demo.ts).
+  const demo = isDemoAssistant(assistant);
+  const [ledger, setLedger] = useState<TaVideoLedgerRow[] | null>(() => (demo ? demoVideoLedger() : null));
+  const [topics, setTopics] = useState<TaTopicSuggestion[] | null>(() => (demo ? demoTopics() : null));
+  const [rates, setRates] = useState<TaVideoRates | null>(() => (demo ? demoVideoRates() : null));
 
   useEffect(() => {
+    if (demo) return;
     const month = currentMonthStr();
     fetchVideoLedger(assistant.id).then(setLedger).catch(() => setLedger([]));
     fetchTopicSuggestions(14).then(setTopics).catch(() => setTopics([]));
     fetchVideoRates(month).then(setRates).catch(() => setRates(null));
-  }, [assistant.id]);
+  }, [assistant.id, demo]);
 
   const month = currentMonthStr();
   const thisMonth = (ledger ?? []).filter((v) => sameMonth(v.work_date, month));

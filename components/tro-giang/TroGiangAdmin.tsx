@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { Drama } from "lucide-react";
+import { setTaDemoMode } from "@/lib/tro-giang/demo";
 import AdminMonthlyTable from "./AdminMonthlyTable";
 import AdminSessionQueue from "./AdminSessionQueue";
 import AdminTeamHours from "./AdminTeamHours";
@@ -19,7 +22,7 @@ export default function TroGiangAdmin() {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         {TABS.map((t) => (
           <button
             key={t.id}
@@ -32,6 +35,16 @@ export default function TroGiangAdmin() {
             {t.label}
           </button>
         ))}
+
+        {/* Mở giao diện trợ giảng với một hồ sơ giả lập — không đọc/ghi dữ liệu thật. */}
+        <Link
+          href="/tro-giang?gialap=1"
+          onClick={() => setTaDemoMode(true)}
+          className="ml-auto flex items-center gap-2 rounded-xl border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-sm font-bold text-fuchsia-200 transition hover:border-fuchsia-400/60"
+        >
+          <Drama size={15} />
+          Xem trước giao diện trợ giảng
+        </Link>
       </div>
 
       {tab === "buoi" ? (

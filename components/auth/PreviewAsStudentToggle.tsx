@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Drama, LogOut } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { useTaDemoMode } from "@/lib/tro-giang/demo";
 
 /**
  * Nút nổi cho admin: "Xem như học sinh" -> AuthProvider ghi đè profile.role thành
@@ -13,8 +14,11 @@ import { useAuth } from "@/components/auth/AuthProvider";
  */
 export default function PreviewAsStudentToggle() {
   const { realProfile, previewAsStudent, setPreviewAsStudent } = useAuth();
+  const [taDemo] = useTaDemoMode();
 
   if (realProfile?.role !== "admin") return null;
+  // Đang xem giả lập trợ giảng — banner của chế độ đó chiếm chỗ này rồi.
+  if (taDemo) return null;
 
   if (!previewAsStudent) {
     return (

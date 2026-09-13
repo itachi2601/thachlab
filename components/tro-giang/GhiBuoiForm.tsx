@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, Loader2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
+import { demoClasses, demoTopic, isDemoAssistant } from "@/lib/tro-giang/demo";
 import {
   createSession,
   fetchMyAssistantClasses,
@@ -17,6 +18,8 @@ import {
 } from "@/lib/tro-giang/queries";
 
 const DRAFT_KEY = "tro-giang-ghi-draft-v1";
+/** Bản giả lập giữ nháp riêng, không đè lên nháp thật nếu máy này có trợ giảng dùng chung. */
+const DEMO_DRAFT_KEY = "tro-giang-ghi-draft-demo-v1";
 const TOUCH_TARGET = 12;
 
 const TYPE_OPTIONS = (Object.keys(SESSION_TYPE_META) as TaSessionType[]).map((value) => ({
@@ -66,10 +69,10 @@ function emptyDraft(): Draft {
   };
 }
 
-function loadDraft(): Draft {
+function loadDraft(key: string): Draft {
   if (typeof window === "undefined") return emptyDraft();
   try {
-    const raw = window.localStorage.getItem(DRAFT_KEY);
+    const raw = window.localStorage.getItem(key);
     if (!raw) return emptyDraft();
     return { ...emptyDraft(), ...JSON.parse(raw) };
   } catch {
@@ -202,31 +205,37 @@ export default function GhiBuoiForm({
   initialTopicId?: string | null;
 }) {
   const toast = useToast();
+  // Giáo viên đang xem trước: dùng lớp/đề tài mẫu và KHÔNG ghi gì vào database.
+  const demo = isDemoAssistant(assistant);
+  const draftKey = demo ? DEMO_DRAFT_KEY : DRAFT_KEY;
   const [draft, setDraft] = useState<Draft>(() => {
-    const d = loadDraft();
+    const d = loadDraft(demo ? DEMO_DRAFT_KEY : DRAFT_KEY);
     // Đến từ /tro-giang/video?topic=<id> — chuyển thẳng sang loại "video" kèm đề tài điền sẵn.
     if (initialTopicId) d.sessionType = "video";
     return d;
   });
-  const [myClasses, setMyClasses] = useState<TaAssistantClass[]>([]);
+  const [myClasses, setMyClasses] = useState<TaAssistantClass[]>(() => (demo ? demoClasses() : []));
   const [topicSourceId, setTopicSourceId] = useState<string | null>(initialTopicId ?? null);
-  const [topicInfo, setTopicInfo] = useState<TaTopicSuggestion | null>(null);
+  const [topicInfo, setTopicInfo] = useState<TaTopicSuggestion | null>(() =>
+    demo && initialTopicId ? demoTopic(initialTopicId) : null,
+  );
   const [submitting, setSubmitting] = useState(false);
   const [justSaved, setJustSaved] = useState(false);
   const hydrated = useRef(false);
 
   useEffect(() => {
-    if (!initialTopicId) return;
+    if (!initialTopicId || demo) return;
     fetchTopicSuggestion(initialTopicId)
       .then((info) => setTopicInfo(info))
       .catch(() => {});
-  }, [initialTopicId]);
+  }, [initialTopicId, demo]);
 
   useEffect(() => {
+    if (demo) return;
     fetchMyAssistantClasses(assistant.id)
       .then(setMyClasses)
       .catch(() => {});
-  }, [assistant.id]);
+  }, [assistant.id, demo]);
 
   // Lưu nháp — bỏ qua lần render đầu (vừa load từ localStorage lên, khỏi ghi lại chính nó).
   useEffect(() => {
@@ -236,11 +245,11 @@ export default function GhiBuoiForm({
     }
     if (justSaved) return;
     try {
-      window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      window.localStorage.setItem(draftKey, JSON.stringify(draft));
     } catch {
       // localStorage đầy/bị chặn — bỏ qua, không chặn việc nhập liệu.
     }
-  }, [draft, justSaved]);
+  }, [draft, justSaved, draftKey]);
 
   function patch(fields: Partial<Draft>) {
     setJustSaved(false);
@@ -274,32 +283,36 @@ export default function GhiBuoiForm({
     }
     setSubmitting(true);
     try {
-      await createSession({
-        assistant_id: assistant.id,
-        work_date: draft.workDate,
-        session_type: draft.sessionType,
-        class_label: draft.classLabel.trim() || null,
-        start_time: needsTime ? draft.startTime : null,
-        end_time: needsTime ? draft.endTime : null,
-        student_touches: draft.sessionType === "lop" ? draft.touchNames.length : null,
-        touch_names: draft.sessionType === "lop" ? draft.touchNames : [],
-        error_note: draft.sessionType === "lop" ? draft.errorNote.trim() : null,
-        homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
-        student_recap_ok: draft.sessionType === "phudao" ? draft.studentRecapOk : null,
-        papers_graded: draft.sessionType === "chambai" ? Number(draft.papersGraded) : null,
-        video_url: draft.sessionType === "video" ? draft.videoUrl.trim() : null,
-        video_tier: draft.sessionType === "video" ? draft.videoTier : null,
-        published_at:
-          draft.sessionType === "video" && draft.publishedAt
-            ? new Date(`${draft.publishedAt}T12:00:00`).toISOString()
-            : null,
-        topic_source_id: draft.sessionType === "video" ? topicSourceId : null,
-        note: draft.note.trim() || null,
-      });
-      toast("success", "Đã ghi buổi làm việc — chờ giáo viên duyệt.");
+      if (demo) {
+        toast("success", "Chế độ giả lập — form chạy đúng như thật nhưng không lưu gì vào hệ thống.");
+      } else {
+        await createSession({
+          assistant_id: assistant.id,
+          work_date: draft.workDate,
+          session_type: draft.sessionType,
+          class_label: draft.classLabel.trim() || null,
+          start_time: needsTime ? draft.startTime : null,
+          end_time: needsTime ? draft.endTime : null,
+          student_touches: draft.sessionType === "lop" ? draft.touchNames.length : null,
+          touch_names: draft.sessionType === "lop" ? draft.touchNames : [],
+          error_note: draft.sessionType === "lop" ? draft.errorNote.trim() : null,
+          homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
+          student_recap_ok: draft.sessionType === "phudao" ? draft.studentRecapOk : null,
+          papers_graded: draft.sessionType === "chambai" ? Number(draft.papersGraded) : null,
+          video_url: draft.sessionType === "video" ? draft.videoUrl.trim() : null,
+          video_tier: draft.sessionType === "video" ? draft.videoTier : null,
+          published_at:
+            draft.sessionType === "video" && draft.publishedAt
+              ? new Date(`${draft.publishedAt}T12:00:00`).toISOString()
+              : null,
+          topic_source_id: draft.sessionType === "video" ? topicSourceId : null,
+          note: draft.note.trim() || null,
+        });
+        toast("success", "Đã ghi buổi làm việc — chờ giáo viên duyệt.");
+      }
       setJustSaved(true);
       try {
-        window.localStorage.removeItem(DRAFT_KEY);
+        window.localStorage.removeItem(draftKey);
       } catch {}
       const type = draft.sessionType;
       setDraft({ ...emptyDraft(), sessionType: type });
