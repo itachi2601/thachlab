@@ -52,6 +52,13 @@ export type ExamQuestion =
   | ShortAnswerQuestion
   | EssayQuestion;
 
+export const QUESTION_TYPE_LABELS: Record<ExamQuestion["type"], string> = {
+  multiple_choice: "Trắc nghiệm nhiều phương án",
+  true_false: "Đúng – Sai",
+  short_answer: "Trả lời ngắn",
+  essay: "Tự luận",
+};
+
 export interface SchoolClass {
   id: number;
   name: string;
@@ -203,4 +210,79 @@ export function isAnswered(q: ExamQuestion, r: QuestionResponse): boolean {
   if (q.type === "true_false")
     return Array.isArray(r) && r.some((v) => v !== null);
   return typeof r === "string" && r.trim() !== "";
+}
+
+// ── Xem lại bài làm ────────────────────────────────────────────────────────────
+// Trạng thái một câu khi xem lại: "manual" là tự luận, thầy chấm tay.
+export type QuestionStatus =
+  | "correct"
+  | "partial"
+  | "wrong"
+  | "skipped"
+  | "manual";
+
+export const QUESTION_STATUS_LABELS: Record<QuestionStatus, string> = {
+  correct: "Đúng",
+  partial: "Đúng một phần",
+  wrong: "Sai",
+  skipped: "Bỏ qua",
+  manual: "Thầy chấm",
+};
+
+export function questionStatus(
+  q: ExamQuestion,
+  r: QuestionResponse,
+): QuestionStatus {
+  if (q.type === "essay") return "manual";
+  if (!isAnswered(q, r)) return "skipped";
+  const g = gradeQuestion(q, r);
+  if (g.max > 0 && g.earned >= g.max) return "correct";
+  return g.earned > 0 ? "partial" : "wrong";
+}
+
+/** Bảng thống kê theo từng dạng câu hỏi có trong đề. */
+export interface TypeStat {
+  type: ExamQuestion["type"];
+  label: string;
+  total: number;
+  correct: number;
+  partial: number;
+  wrong: number;
+  skipped: number;
+  earned: number;
+  max: number;
+}
+
+export function statsByType(
+  questions: ExamQuestion[],
+  responses: QuestionResponse[],
+): TypeStat[] {
+  const byType = new Map<ExamQuestion["type"], TypeStat>();
+  questions.forEach((q, i) => {
+    let stat = byType.get(q.type);
+    if (!stat) {
+      stat = {
+        type: q.type,
+        label: QUESTION_TYPE_LABELS[q.type],
+        total: 0,
+        correct: 0,
+        partial: 0,
+        wrong: 0,
+        skipped: 0,
+        earned: 0,
+        max: 0,
+      };
+      byType.set(q.type, stat);
+    }
+    const g = gradeQuestion(q, responses[i]);
+    const status = questionStatus(q, responses[i]);
+    stat.total += 1;
+    stat.earned += g.earned;
+    stat.max += g.max;
+    if (status === "correct") stat.correct += 1;
+    else if (status === "partial") stat.partial += 1;
+    else if (status === "wrong") stat.wrong += 1;
+    else if (status === "skipped") stat.skipped += 1;
+  });
+  return [...byType.values()];
 }
