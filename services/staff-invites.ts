@@ -1,5 +1,17 @@
 import { getSupabase } from "./supabase";
 
+/**
+ * Lỗi từ Supabase là object thuần ({ message, hint, code }), KHÔNG phải Error — mọi chỗ
+ * bắt lỗi trong app đều dùng `error instanceof Error` nên câu giải thích thật bị nuốt và
+ * người dùng chỉ thấy một câu chung chung. Gói lại thành Error ngay tại đây, một lần.
+ */
+function supabaseError(error: unknown, fallback: string): Error {
+  const raw = error as { message?: unknown; hint?: unknown } | null;
+  const message = typeof raw?.message === "string" && raw.message.trim() ? raw.message.trim() : fallback;
+  const hint = typeof raw?.hint === "string" && raw.hint.trim() ? ` ${raw.hint.trim()}` : "";
+  return new Error(`${message}${hint}`);
+}
+
 export type StaffInviteRole = "instructor" | "tro_giang";
 
 export interface StaffInvite {
@@ -43,7 +55,7 @@ export async function createStaffInvite(input: CreateStaffInviteInput): Promise<
     })
     .select("id, code, email, full_name, role, admin_area, class_id, tier, invited_at, claimed_at")
     .single();
-  if (error) throw error;
+  if (error) throw supabaseError(error, "Chưa tạo được lời mời.");
   return data as StaffInvite;
 }
 
@@ -53,7 +65,7 @@ export async function fetchStaffInvites(): Promise<StaffInvite[]> {
     .select("id, code, email, full_name, role, admin_area, class_id, tier, invited_at, claimed_at")
     .order("invited_at", { ascending: false })
     .limit(50);
-  if (error) throw error;
+  if (error) throw supabaseError(error, "Chưa đọc được danh sách lời mời.");
   return (data ?? []) as StaffInvite[];
 }
 
@@ -64,7 +76,7 @@ export async function revokeStaffInvite(id: string): Promise<void> {
     .delete()
     .eq("id", id)
     .is("claimed_at", null);
-  if (error) throw error;
+  if (error) throw supabaseError(error, "Chưa huỷ được lời mời.");
 }
 
 export interface ClaimResult {
@@ -76,7 +88,7 @@ export interface ClaimResult {
 /** Người đang đăng nhập tự nhận lời mời bằng mã. */
 export async function claimStaffInvite(code: string): Promise<ClaimResult> {
   const { data, error } = await getSupabase().rpc("claim_staff_invite", { p_code: code.trim() });
-  if (error) throw error;
+  if (error) throw supabaseError(error, "Không nhận được lời mời.");
   const rows = (data ?? []) as ClaimResult[];
   if (rows.length === 0) throw new Error("Mã mời không đúng hoặc đã được dùng.");
   return rows[0];
@@ -107,7 +119,7 @@ export async function signUpWithInvite(input: {
     password: input.password,
     options: { data: { full_name: input.fullName.trim(), invite_code: input.code.trim() } },
   });
-  if (error) throw error;
+  if (error) throw supabaseError(error, "Không tạo được tài khoản.");
   return { needsEmailConfirm: !data.session, userId: data.user?.id ?? null };
 }
 

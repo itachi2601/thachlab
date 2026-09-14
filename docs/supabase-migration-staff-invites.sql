@@ -173,6 +173,8 @@ grant execute on function public.apply_staff_invite(uuid, text, text) to service
 
 -- ---------- 3b. Người đã có tài khoản tự nhận lời mời bằng mã ----------
 -- Luôn áp cho chính người đang đăng nhập, không nhận user_id từ client.
+-- Đọc cả lời mời đã nhận để phân biệt ba trường hợp: mã sai, mã người khác đã nhận,
+-- và chính chủ bấm lại mã mình đã nhận (trả về quyền đang có, không báo lỗi).
 create or replace function public.claim_staff_invite(p_code text)
 returns table (role text, class_name text, tier text)
 language plpgsql
@@ -181,18 +183,37 @@ set search_path = public
 as $$
 declare
   v_user uuid := auth.uid();
+  v_code text := upper(trim(coalesce(p_code, '')));
   v_invite_id uuid;
   inv public.staff_invites%rowtype;
+  v_owner_email text;
 begin
   if v_user is null then
     raise exception 'Bạn cần đăng nhập trước khi nhận lời mời.';
   end if;
 
-  select * into inv from public.staff_invites
-  where upper(code) = upper(trim(coalesce(p_code, ''))) and claimed_at is null;
+  -- Lấy cả lời mời đã nhận để phân biệt "mã sai" với "mã đã dùng" — hai việc phải xử lý khác nhau.
+  select * into inv from public.staff_invites where upper(code) = v_code;
 
   if inv.id is null then
-    raise exception 'Mã mời không đúng hoặc đã được dùng.';
+    raise exception 'Không có lời mời nào mang mã %. Nhờ thầy cô gửi lại link mời mới.', v_code;
+  end if;
+
+  if inv.claimed_at is not null then
+    -- Chính chủ bấm lại (hay đăng ký xong quay lại link): quyền đã cấp từ lần trước, coi như xong.
+    if inv.claimed_user_id = v_user then
+      return query
+      select inv.role,
+             (select c.name from public.classes c where c.id = inv.class_id),
+             inv.tier;
+      return;
+    end if;
+
+    select u.email into v_owner_email from auth.users u where u.id = inv.claimed_user_id;
+    raise exception 'Mã % đã được % nhận lúc %. Nhờ thầy cô tạo mã mới cho bạn.',
+      v_code,
+      coalesce(v_owner_email, 'một tài khoản khác'),
+      to_char(inv.claimed_at at time zone 'Asia/Ho_Chi_Minh', 'HH24:MI "ngày" DD/MM/YYYY');
   end if;
 
   v_invite_id := public.apply_staff_invite(
@@ -202,7 +223,7 @@ begin
   );
 
   if v_invite_id is null then
-    raise exception 'Không nhận được lời mời này.';
+    raise exception 'Không nhận được lời mời này — nhờ thầy cô tạo lại mã mời.';
   end if;
 
   return query

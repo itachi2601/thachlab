@@ -72,11 +72,12 @@ function InviteContent() {
         <Mail className="mx-auto text-amber-300" size={40} />
         <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Chưa nhận được lời mời</h1>
         <p className="mt-2 text-center text-sm text-slate-400">{failed}</p>
+        {/* Đang đăng nhập rồi mà đẩy về trang đăng nhập thì chỉ làm người ta rối thêm. */}
         <Link
-          href="/dang-nhap"
+          href={session ? "/tai-khoan" : "/dang-nhap"}
           className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
         >
-          Đăng nhập
+          {session ? "Vào tài khoản" : "Đăng nhập"}
         </Link>
       </Card>
     );
@@ -101,7 +102,11 @@ function InviteContent() {
         `Bạn được cấp quyền ${roleLabel(result.role, result.tier)}${result.class_name ? ` · lớp ${result.class_name}` : ""}.`,
       );
     } catch (error) {
-      toast("error", errorMessage(error, "Không nhận được lời mời."));
+      // Giữ lý do thật trên màn hình: toast biến mất sau vài giây, người dùng ở xa
+      // không đọc kịp rồi lại nhắn "bấm mà không được" mà không biết vì sao.
+      const reason = errorMessage(error, "Không nhận được lời mời.");
+      toast("error", reason);
+      setFailed(reason);
     } finally {
       setBusy(false);
     }
