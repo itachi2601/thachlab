@@ -3,7 +3,7 @@ import { useCallback,useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHome";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
 
@@ -122,6 +122,8 @@ function Account(){
 
     const subject=getSubject(enrollment.subjectCode);
     if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;
+    // Lớp chủ nhiệm: thêm tab xem lại nội dung sinh hoạt tuần, và form điểm danh hàng ngày cho lớp trưởng.
+    if(enrollment.subjectCode===HOMEROOM_SUBJECT_CODE)return <HomeroomStudentHome courseId={enrollment.course.id} courseName={enrollment.course.name} schoolYear={enrollment.course.school_year} studentId={session.user.id}/>;
     return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
   }
 
