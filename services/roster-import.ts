@@ -106,6 +106,21 @@ export async function parseRosterFile(file: File): Promise<ParsedRoster> {
   throw new Error("Không tìm thấy cột \"Mã SV\" trong file — kiểm tra lại đúng file danh sách lớp.");
 }
 
+/**
+ * Lỗi gốc của supabase-js khi function chưa deploy chỉ là "Failed to send a request to the
+ * Edge Function" — không nói được phải làm gì. Dịch sang thông báo chỉ đúng việc cần làm.
+ */
+function rosterFunctionError(error: unknown): Error {
+  const message = error instanceof Error ? error.message : String(error);
+  if (/failed to send a request|failed to fetch|non-2xx/i.test(message)) {
+    return new Error(
+      "Chưa gọi được Edge Function \"import-roster\" trên Supabase — nhiều khả năng function " +
+        "chưa được deploy. Xem docs/deploy-edge-function.md (chỉ cần deploy 1 lần).",
+    );
+  }
+  return error instanceof Error ? error : new Error(message);
+}
+
 export interface ImportResultRow {
   studentCode: string;
   status: "created" | "linked" | "error";
@@ -119,7 +134,7 @@ export async function importRosterToCourse(
   const { data, error } = await getSupabase().functions.invoke("import-roster", {
     body: { courseId, students },
   });
-  if (error) throw error;
+  if (error) throw rosterFunctionError(error);
   return (data?.results ?? []) as ImportResultRow[];
 }
 
@@ -131,6 +146,6 @@ export async function importRosterToClass(
   const { data, error } = await getSupabase().functions.invoke("import-roster", {
     body: { classId, students },
   });
-  if (error) throw error;
+  if (error) throw rosterFunctionError(error);
   return (data?.results ?? []) as ImportResultRow[];
 }
