@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { GraduationCap, Search, ShieldCheck, ShieldX, UserPlus, X } from "lucide-react";
+import { GraduationCap, UserPlus, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import StaffInvitePanel from "@/components/admin/StaffInvitePanel";
+import AccountRolePanel from "@/components/admin/AccountRolePanel";
 import { fetchCncCourses, type CourseOffering } from "@/services/course-enrollments";
 import { SUBJECTS } from "@/services/subjects";
 import { displayClassesByGrade, fetchClasses } from "@/services/classes";
@@ -18,11 +19,7 @@ import {
   assignInstructor,
   fetchCourseInstructors,
   fetchInstructorRoster,
-  searchProfiles,
-  setInstructorAdminArea,
-  setInstructorRole,
   unassignInstructor,
-  type AssignableProfile,
   type CourseInstructor,
 } from "@/services/course-instructors";
 
@@ -76,7 +73,7 @@ export default function InstructorAssignmentManager() {
 
     <StaffInvitePanel />
 
-    <InstructorRoleSearch onChanged={reloadRoster} />
+    <AccountRolePanel onChanged={reloadRoster} />
   </div>;
 }
 
@@ -266,84 +263,4 @@ function CttcInstructorPanel({ roster }: { roster: { id: string; full_name: stri
       </> : <div className="rounded-2xl border border-dashed border-white/10 p-12 text-center text-slate-400">Chọn một khóa học.</div>}
     </main>
   </div>;
-}
-
-function InstructorRoleSearch({ onChanged }: { onChanged: () => void }) {
-  const toast = useToast();
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<AssignableProfile[]>([]);
-  const [busyId, setBusyId] = useState("");
-
-  useEffect(() => {
-    if (!query.trim()) return;
-    let cancelled = false;
-    const timer = window.setTimeout(() => {
-      void searchProfiles(query).then((rows) => { if (!cancelled) setResults(rows); }).catch(() => { if (!cancelled) setResults([]); });
-    }, 250);
-    return () => { cancelled = true; clearTimeout(timer); };
-  }, [query]);
-  const visibleResults = query.trim() ? results : [];
-
-  async function toggle(profile: AssignableProfile) {
-    setBusyId(profile.id);
-    try {
-      const willBeInstructor = profile.role !== "instructor";
-      await setInstructorRole(profile.id, willBeInstructor);
-      setResults((current) => current.map((item) => item.id === profile.id
-        ? { ...item, role: willBeInstructor ? "instructor" : "student", admin_area: willBeInstructor ? item.admin_area : null }
-        : item));
-      onChanged();
-      toast("success", profile.role === "instructor" ? "Đã thu hồi vai trò giảng viên." : "Đã cấp vai trò giảng viên.");
-    } catch (error) {
-      toast("error", error instanceof Error ? error.message : "Chưa cập nhật được vai trò.");
-    } finally { setBusyId(""); }
-  }
-
-  async function changeArea(profile: AssignableProfile, area: "thpt" | "cttc" | null) {
-    setBusyId(profile.id);
-    try {
-      await setInstructorAdminArea(profile.id, area);
-      setResults((current) => current.map((item) => item.id === profile.id ? { ...item, admin_area: area } : item));
-      toast("success", area ? `Đã phân công khu vực quản trị ${area === "thpt" ? "THPT" : "CTTC"}.` : "Đã thu hồi quyền vào khu vực quản trị.");
-    } catch (error) {
-      toast("error", error instanceof Error ? error.message : "Chưa cập nhật được khu vực quản trị.");
-    } finally { setBusyId(""); }
-  }
-
-  return <section className="rounded-2xl border border-violet-400/15 bg-violet-500/5 p-5">
-    <h3 className="font-semibold text-white">Cấp / thu hồi vai trò giảng viên</h3>
-    <p className="mt-1 text-xs text-slate-500">Tìm tài khoản theo tên, lớp hoặc MSSV để bật vai trò giảng viên — tài khoản đó sẽ có thể được phân công vào lớp/khóa ở trên. Với giảng viên đã bật, chọn thêm khu vực quản trị (THPT/CTTC) để họ vào được đúng 1 khu vực đó ở trang /quan-tri — mặc định &quot;Không quản trị&quot; nghĩa là chưa được vào trang quản trị.</p>
-    <div className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-black/15 px-3 py-2"><Search size={15} className="text-slate-500"/><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Tìm theo tên, lớp hoặc MSSV…" className="w-full bg-transparent text-sm text-white outline-none placeholder:text-slate-500"/></div>
-    <div className="mt-3 space-y-2">
-      {visibleResults.filter((item) => item.role !== "admin").map((item) => (
-        <article key={item.id} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/5 bg-black/15 p-3">
-          <div className="min-w-0 flex-1"><strong className="block text-sm text-white">{item.full_name}</strong><small className="text-slate-400">{item.class_name || "—"} {item.student_code ? `· ${item.student_code}` : ""}</small></div>
-          {item.role === "instructor" && (
-            <div className="flex items-center gap-1" title="Khu vực quản trị được phân công (/quan-tri)">
-              {([null, "thpt", "cttc"] as const).map((area) => (
-                <button
-                  key={area ?? "none"}
-                  disabled={busyId === item.id}
-                  onClick={() => void changeArea(item, area)}
-                  className={`rounded-full border px-2.5 py-1 text-[11px] font-bold disabled:opacity-40 ${
-                    item.admin_area === area
-                      ? "border-blue-400/50 bg-blue-500/15 text-blue-200"
-                      : "border-white/10 text-slate-400 hover:border-white/30"
-                  }`}
-                >
-                  {area === null ? "Không quản trị" : area === "thpt" ? "THPT" : "CTTC"}
-                </button>
-              ))}
-            </div>
-          )}
-          {item.role === "instructor" ? (
-            <button disabled={busyId === item.id} onClick={() => void toggle(item)} className="inline-flex items-center gap-1 rounded-full bg-red-500/15 px-3 py-1.5 text-xs font-bold text-red-200 disabled:opacity-40"><ShieldX size={14}/>Thu hồi</button>
-          ) : (
-            <button disabled={busyId === item.id} onClick={() => void toggle(item)} className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-200 disabled:opacity-40"><ShieldCheck size={14}/>Đặt làm giảng viên</button>
-          )}
-        </article>
-      ))}
-      {visibleResults.length === 0 && <p className="text-sm text-slate-400">Nhập từ khóa để tìm tài khoản.</p>}
-    </div>
-  </section>;
 }

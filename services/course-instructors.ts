@@ -1,32 +1,7 @@
 import { getSupabase } from "@/services/supabase";
 
-export interface AssignableProfile {
-  id: string;
-  full_name: string;
-  class_name: string;
-  student_code: string | null;
-  role: "student" | "admin" | "instructor";
-  admin_area: "thpt" | "cttc" | null;
-}
-
-export async function searchProfiles(query: string) {
-  const supabase = getSupabase();
-  let request = supabase.from("profiles").select("id, full_name, class_name, student_code, role, admin_area").order("full_name").limit(20);
-  const trimmed = query.trim();
-  if (trimmed) request = request.or(`full_name.ilike.%${trimmed}%,class_name.ilike.%${trimmed}%,student_code.ilike.%${trimmed}%`);
-  const { data, error } = await request;
-  if (error) throw error;
-  return (data ?? []) as AssignableProfile[];
-}
-
-export async function setInstructorRole(profileId: string, isInstructor: boolean) {
-  const { error } = await getSupabase().from("profiles").update({
-    role: isInstructor ? "instructor" : "student",
-    // Thu hồi vai trò giảng viên thì cũng thu hồi luôn quyền vào khu vực quản trị.
-    ...(isInstructor ? {} : { admin_area: null }),
-  }).eq("id", profileId);
-  if (error) throw error;
-}
+// Tìm tài khoản và cấp/thu hồi vai trò nay nằm ở services/account-roles.ts — một cửa cho
+// cả học sinh, trợ giảng lẫn giảng viên, và đọc được cả email để khỏi nhầm người trùng tên.
 
 /** Phân công (hoặc thu hồi, area = null) khu vực quản trị mà 1 giảng viên được vào /quan-tri. */
 export async function setInstructorAdminArea(profileId: string, area: "thpt" | "cttc" | null) {

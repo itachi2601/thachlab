@@ -49,7 +49,9 @@ export default function MessagesAdmin() {
     getSupabase()
       .from("profiles")
       .select("id, full_name, class_name")
-      .eq("role", "student")
+      // Trợ giảng thường vẫn là học sinh đang học — đừng để việc đổi vai trò làm họ biến mất
+      // khỏi danh sách người nhận tin nhắn.
+      .in("role", ["student", "tro_giang"])
       .or("track.is.null,track.eq.thpt") // loại học sinh CTTC — không thuộc luồng lớp THPT
       .order("class_name")
       .order("full_name")

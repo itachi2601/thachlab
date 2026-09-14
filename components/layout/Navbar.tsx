@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
@@ -110,6 +110,16 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
                     >
                       <LayoutDashboard size={16} /> Dashboard giáo viên · THPT
+                    </Link>
+                  )}
+                  {/* Trợ giảng trước đây phải tự gõ /tro-giang mới vào được khu làm việc của mình. */}
+                  {profile?.role === "tro_giang" && (
+                    <Link
+                      href="/tro-giang"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <ClipboardList size={16} /> Khu trợ giảng
                     </Link>
                   )}
                   {profile?.role === "admin" && (
