@@ -57,10 +57,11 @@ Nếu file thật trên máy thầy dùng tên khác, bổ sung vào `lib/shcn/t
 
 ## Còn thiếu / chờ chốt
 
-- **Danh sách mục con của 12 chủ đề GDĐĐ&PTNN.** `lib/shcn/gddd-topics.ts` mới có chủ đề 2 với
-  2/8 mục con (lấy từ biên bản tuần 03). Chủ đề nào chưa đủ mục con thì để `complete: false` —
-  giao diện sẽ **không** hiện dòng "Tự đọc thêm" thay vì liệt kê thiếu. Khi có tài liệu đủ: thêm
-  vào `items` rồi đổi `complete: true`.
+- **Mục con của 12 chủ đề GDĐĐ&PTNN.** `lib/shcn/gddd-topics.ts` đã có đủ tên 12 chủ đề (kèm
+  "Sinh hoạt đầu khóa"), nhưng MỤC CON thì mới có 2/8 mục của chủ đề 2 (lấy từ biên bản tuần
+  03). Chủ đề nào chưa đủ mục con thì để `complete: false` — giao diện sẽ **không** hiện dòng
+  "Tự đọc thêm" thay vì liệt kê thiếu. Khi có tài liệu đủ: thêm vào `items` rồi đổi
+  `complete: true`.
 - **Giờ chốt khóa điểm danh trong ngày.** Hiện chưa khóa theo giờ: lớp trưởng sửa được cả ngày
   hôm nay, sang ngày mới thì RLS chặn. Muốn chốt theo giờ thì siết trong policy
   `monitors update today attendance` (thêm điều kiện giờ vào `public.vn_today()`).

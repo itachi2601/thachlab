@@ -30,21 +30,39 @@ export const GDDD_DOCS_URL =
   "https://drive.google.com/drive/u/2/folders/1Tkf3m_yF-ztZADp3T_wcthabV0oc-PaM";
 
 /**
- * Mới có chủ đề 2, và mới 2/8 mục con của nó (lấy từ biên bản tuần 03). 11 chủ đề còn lại và 6
- * mục con còn lại của chủ đề 2 bổ sung dần khi có tài liệu — xem docs/SHCN-MODULE.md.
+ * 12 chủ đề của môn (theo bảng "Các chủ đề Môn học Giáo dục đạo đức và Phát triển nghề nghiệp").
+ * Tên chủ đề đã đủ; MỤC CON thì mới có 2/8 mục của chủ đề 2 (lấy từ biên bản tuần 03), nên mọi
+ * chủ đề còn để `complete: false` — xem ghi chú đầu file trước khi bổ sung.
  */
 export const GDDD_TOPICS: GdddTopic[] = [
+  { id: 0, title: "Sinh hoạt đầu khóa", items: [], complete: false },
+  { id: 1, title: "Chủ đề 1: Giới thiệu", items: [], complete: false },
   {
     id: 2,
     title: "Chủ đề 2: Kỹ năng sống",
     items: ["An toàn giao thông", "Những điều cần cảnh giác và số điện thoại khẩn cấp"],
     complete: false,
   },
+  { id: 3, title: "Chủ đề 3: 5S và tác phong công nghiệp", items: [], complete: false },
+  { id: 4, title: "Chủ đề 4: Điều kiện học tiếp và tốt nghiệp", items: [], complete: false },
+  { id: 5, title: "Chủ đề 5: Học tập hiệu quả", items: [], complete: false },
+  { id: 6, title: "Chủ đề 6: Kỹ năng làm việc nhóm", items: [], complete: false },
+  { id: 7, title: "Chủ đề 7: Kỹ năng lập kế hoạch", items: [], complete: false },
+  { id: 8, title: "Chủ đề 8: Kỹ năng giải quyết vấn đề", items: [], complete: false },
+  { id: 9, title: "Chủ đề 9: Đạo đức nghề nghiệp", items: [], complete: false },
+  { id: 10, title: "Chủ đề 10: Trường học và doanh nghiệp", items: [], complete: false },
+  { id: 11, title: "Chủ đề 11: Giao tiếp trong kỹ thuật", items: [], complete: false },
+  { id: 12, title: "Chủ đề 12: Kỹ năng tìm việc làm và ứng tuyển", items: [], complete: false },
 ];
 
 /** Bỏ dấu + hạ chữ thường để so khớp tên trọng tâm không phụ thuộc cách gõ. */
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+/** Bỏ phần "Chủ đề N:" để so tên thuần, vì biên bản có lúc chỉ ghi tên chủ đề. */
+function bareTitle(value: string) {
+  return normalize(value.replace(/^\s*ch[uủ]\s*đ[eề]\s*\d{1,2}\s*[:.\-–]?\s*/i, ""));
 }
 
 /** Tìm chủ đề theo nhãn tự do ghi trong biên bản, vd "Chủ đề 2: Kỹ năng sống" → chủ đề id 2. */
@@ -55,8 +73,8 @@ export function findGdddTopic(label: string): GdddTopic | null {
     const byNumber = GDDD_TOPICS.find((topic) => topic.id === number);
     if (byNumber) return byNumber;
   }
-  const key = normalize(label);
-  return GDDD_TOPICS.find((topic) => normalize(topic.title) === key || key.includes(normalize(topic.title))) ?? null;
+  const key = bareTitle(label);
+  return GDDD_TOPICS.find((topic) => bareTitle(topic.title) === key) ?? null;
 }
 
 /**
