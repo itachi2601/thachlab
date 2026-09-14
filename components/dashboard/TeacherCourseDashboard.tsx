@@ -13,6 +13,7 @@ import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGrad
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
 import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
 import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
+import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 import HomeroomAttendancePanel from "@/components/dashboard/HomeroomAttendancePanel";
 import HomeroomGradebook from "@/components/dashboard/HomeroomGradebook";
 import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
@@ -169,7 +170,7 @@ export default function TeacherCourseDashboard() {
         : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
     </div>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center text-sm text-slate-500">Chọn môn học và lớp bên trên để nhập danh sách.</div>)}
+    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<NoCourseYet subjectLabel={subject.label} hasCourses={courses.length>0} isAdmin={isAdmin} subjectCode={subjectCode} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>)}
 
     {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
       <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>
@@ -186,6 +187,18 @@ export default function TeacherCourseDashboard() {
       </div>
     </div>}
   </div>;
+}
+
+// Môn chưa có lớp nào thì tab Danh sách lớp phải tự mở được form tạo lớp,
+// nếu không admin không có đường nào tạo lớp đầu tiên (form nằm trong CourseRosterPanel).
+function NoCourseYet({ subjectLabel, hasCourses, isAdmin, subjectCode, onCourseCreated }: {
+  subjectLabel: string; hasCourses: boolean; isAdmin: boolean; subjectCode: string; onCourseCreated: () => void;
+}) {
+  return <section className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-6">
+    <p className="text-sm font-bold text-white">{hasCourses ? `Chọn lớp môn ${subjectLabel} ở bộ chọn phía trên để nhập danh sách.` : `Môn ${subjectLabel} chưa có lớp nào.`}</p>
+    <p className="mt-1 text-sm text-slate-500">{isAdmin ? "Tạo lớp học phần mới ngay bên dưới, sau đó chọn lớp vừa tạo ở bộ chọn phía trên để nhập danh sách từ file Excel." : "Nhờ quản trị viên mở lớp học phần cho môn này trước khi nhập danh sách."}</p>
+    {isAdmin && <CreateCourseForm subjectCode={subjectCode} defaultOpen onCreated={onCourseCreated} />}
+  </section>;
 }
 
 function CurriculumPending({ subjectLabel }: { subjectLabel: string }) {

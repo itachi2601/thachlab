@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { FileSpreadsheet, Plus, Upload, Download, UserCheck2, UserPlus2, UserRoundCheck, AlertCircle, Check, Copy, X } from "lucide-react";
+import { FileSpreadsheet, Upload, Download, UserCheck2, UserPlus2, UserRoundCheck, AlertCircle, Check, Copy, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
-import { createCncCourse, fetchCourseEnrollments, reviewEnrollment, type EnrollmentRow } from "@/services/course-enrollments";
+import { fetchCourseEnrollments, reviewEnrollment, type EnrollmentRow } from "@/services/course-enrollments";
 import { parseRosterFile, importRosterToCourse, type ParsedRoster, type ImportResultRow } from "@/services/roster-import";
 import { exportCourseRoster } from "@/services/roster-export";
 import { fetchStudentRosterInfo, type StudentRosterInfo } from "@/services/student-profile";
@@ -14,12 +14,8 @@ import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord 
 import { computeCncFinalGrade } from "@/services/cnc-final-grade";
 import { LT_GRADE_COLUMNS } from "@/services/roster-schema";
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
+import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 
-function schoolYear() {
-  const now = new Date();
-  const start = now.getMonth() >= 7 ? now.getFullYear() : now.getFullYear() - 1;
-  return `${start}-${start + 1}`;
-}
 function errorMessage(error: unknown, fallback: string) {
   if (error instanceof Error) return error.message;
   return fallback;
@@ -60,10 +56,6 @@ export default function CourseRosterPanel({
   isPracticum, isAdmin, joinCode, hideGradebook = false, onImported, onCourseCreated, onEnrollmentChange,
 }: CourseRosterPanelProps) {
   const toast = useToast();
-
-  const [showCreate, setShowCreate] = useState(false);
-  const [createForm, setCreateForm] = useState({ name: "", class_label: "", school_year: schoolYear() });
-  const [busy, setBusy] = useState(false);
 
   const [parsed, setParsed] = useState<ParsedRoster | null>(null);
   const [importing, setImporting] = useState(false);
@@ -124,22 +116,6 @@ export default function CourseRosterPanel({
       setImportResults(null);
     } catch (error) {
       toast("error", errorMessage(error, "Không đọc được file — kiểm tra lại đúng định dạng .xls/.xlsx."));
-    }
-  }
-
-  async function handleCreateCourse() {
-    if (!createForm.name.trim()) return;
-    setBusy(true);
-    try {
-      await createCncCourse({ ...createForm, enrollment_mode: "approval" }, subjectCode || "khac", "LOP");
-      setShowCreate(false);
-      setCreateForm({ name: "", class_label: "", school_year: schoolYear() });
-      toast("success", "Đã tạo lớp học phần. Chọn lớp vừa tạo ở bộ chọn phía trên để tiếp tục nhập.");
-      onCourseCreated?.();
-    } catch (error) {
-      toast("error", errorMessage(error, "Chưa tạo được lớp học phần."));
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -254,20 +230,8 @@ export default function CourseRosterPanel({
               ghi danh vào khóa. Cuối kỳ xuất lại đúng file mẫu kèm điểm.
             </p>
           </div>
-          {isAdmin && (
-            <button onClick={() => setShowCreate((v) => !v)} className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-bold text-white">
-              <Plus size={15} /> Tạo lớp học phần
-            </button>
-          )}
+          {isAdmin && <CreateCourseForm subjectCode={subjectCode} onCreated={() => onCourseCreated?.()} />}
         </div>
-        {isAdmin && showCreate && (
-          <div className="mt-4 grid gap-3 rounded-2xl border border-blue-400/20 bg-blue-500/5 p-4 md:grid-cols-2">
-            <input value={createForm.name} onChange={(e) => setCreateForm({ ...createForm, name: e.target.value })} placeholder="Tên: CĐ CK 21B-Tiếng Anh chuyên ngành" className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
-            <input value={createForm.class_label} onChange={(e) => setCreateForm({ ...createForm, class_label: e.target.value })} placeholder="Lớp: CĐ CK 21B" className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
-            <input value={createForm.school_year} onChange={(e) => setCreateForm({ ...createForm, school_year: e.target.value })} className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
-            <button disabled={busy || !createForm.name.trim()} onClick={handleCreateCourse} className="rounded-lg bg-blue-600 px-3 py-2 text-sm font-bold text-white disabled:opacity-40">Lưu lớp</button>
-          </div>
-        )}
       </section>
 
       <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
