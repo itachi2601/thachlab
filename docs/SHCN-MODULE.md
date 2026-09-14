@@ -57,11 +57,19 @@ Nếu file thật trên máy thầy dùng tên khác, bổ sung vào `lib/shcn/t
 
 ## Còn thiếu / chờ chốt
 
-- **Mục con của 12 chủ đề GDĐĐ&PTNN.** `lib/shcn/gddd-topics.ts` đã có đủ tên 12 chủ đề (kèm
-  "Sinh hoạt đầu khóa"), nhưng MỤC CON thì mới có 2/8 mục của chủ đề 2 (lấy từ biên bản tuần
-  03). Chủ đề nào chưa đủ mục con thì để `complete: false` — giao diện sẽ **không** hiện dòng
-  "Tự đọc thêm" thay vì liệt kê thiếu. Khi có tài liệu đủ: thêm vào `items` rồi đổi
-  `complete: true`.
+- **Mục con của 4 chủ đề còn lại.** `lib/shcn/gddd-topics.ts` đã có đủ tên 12 chủ đề và mục con
+  của 8 chủ đề (đọc từ các file PDF trong thư mục tài liệu chung). Còn thiếu: "Sinh hoạt đầu
+  khóa" và chủ đề 1 (thư mục chưa có tài liệu riêng — file "1. Tai lieu long ghep Ky nang
+  mem.pdf" là tài liệu tư vấn chung cho giáo viên), chủ đề 4 (chưa có file), chủ đề 7 (bản PDF
+  đọc được dừng giữa chừng nên chưa chắc đủ mục). Bốn chủ đề đó để `complete: false` — giao
+  diện **không** hiện dòng "Tự đọc thêm" thay vì liệt kê thiếu; có tài liệu đủ thì thêm vào
+  `items` rồi đổi `complete: true`.
+- **Cách ghi trọng tâm đã dạy.** Ghi trùng tên mục con trong `gddd-topics.ts` thì phần "Tự đọc
+  thêm" mới trừ đúng (so khớp bỏ dấu, chấp nhận một bên chứa bên kia). Ghi gộp hai mục vào một
+  dòng, vd "Những điều cần cảnh giác và số điện thoại khẩn cấp", thì chỉ mục khớp được trừ.
+- **Số chủ đề in trong PDF lệch số thứ tự.** Vài file tài liệu còn ghi số của bản chương trình
+  cũ (file "3. 5S va tac phong cong nghiep.pdf" ghi "CHỦ ĐỀ 8"). Số dùng trong code theo bảng
+  12 chủ đề hiện hành, cũng là số đầu tên file.
 - **Giờ chốt khóa điểm danh trong ngày.** Hiện chưa khóa theo giờ: lớp trưởng sửa được cả ngày
   hôm nay, sang ngày mới thì RLS chặn. Muốn chốt theo giờ thì siết trong policy
   `monitors update today attendance` (thêm điều kiện giờ vào `public.vn_today()`).
