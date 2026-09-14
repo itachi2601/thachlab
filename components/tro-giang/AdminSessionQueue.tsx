@@ -159,6 +159,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
                 </p>
                 <p className="mt-1 text-sm text-slate-300">{detailLine(s)}</p>
                 {s.error_note && <p className="mt-1 text-xs text-slate-400">Lỗi lớp: {s.error_note}</p>}
+                {s.policy && <div className="mt-2 space-y-1 text-xs text-blue-200"><p>Chữa bài: {s.policy.teaching_minutes || 0} phút · {s.policy.homework_checked ? "Đã kiểm tra bài tập" : "Chưa kiểm tra bài tập"}</p>{s.policy.teaching_note && <p>Nội dung chữa bài: {s.policy.teaching_note}</p>}{s.policy.attention_note && <p>Em cần chú ý: {s.policy.attention_note}</p>}{s.policy.followups?.map((f,i)=><p key={i}>{f.student} · {f.lesson || "Chưa ghi bài"} · {f.difficulty || "Chưa ghi nhận xét"}</p>)}</div>}
                 {s.note && <p className="mt-1 text-xs text-slate-500">Ghi chú: {s.note}</p>}
                 {anomaly && (
                   <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-semibold text-amber-300">

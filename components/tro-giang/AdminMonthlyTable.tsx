@@ -12,6 +12,8 @@ import {
   type TaMonthlyScore,
 } from "@/lib/tro-giang/queries";
 
+import PolicyMonthlyReview from "./PolicyMonthlyReview";
+
 interface Row {
   assistant: TaAssistant;
   score: TaMonthlyScore;
@@ -38,6 +40,7 @@ export default function AdminMonthlyTable({ reloadKey = 0 }: { reloadKey?: numbe
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
+    if (month >= "2026-10") return;
     let cancelled = false;
     fetchAssistants()
       .then(async (assistants) => {
@@ -103,8 +106,11 @@ export default function AdminMonthlyTable({ reloadKey = 0 }: { reloadKey?: numbe
     }
   }
 
+  if (month >= "2026-10") return <div className="space-y-4"><div className="flex flex-wrap items-center gap-3"><label className="text-sm text-slate-300">Tháng <input aria-label="Tháng tổng hợp" type="month" value={month} onChange={e=>setMonth(e.target.value)} className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white"/></label><span className="text-sm text-blue-200">Quy chế Phần A · từ 01/10/2026</span></div><PolicyMonthlyReview key={month} month={`${month}-01`} reloadKey={reloadKey}/></div>;
+
   return (
     <div className="space-y-4">
+      <button onClick={()=>setMonth("2026-10")} className="rounded-xl border border-blue-400/30 px-4 py-2 text-sm text-blue-200">Xem quy chế mới từ tháng 10/2026</button>
       <div className="flex flex-wrap items-center gap-3">
         <input
           type="month"

@@ -1,3 +1,4 @@
+import type { SessionPolicy } from "./policy";
 import { getSupabase } from "@/services/supabase";
 
 export type TaTier = "B1" | "B2" | "B3";
@@ -17,6 +18,7 @@ export interface TaAssistant {
 }
 
 export interface TaSessionRow {
+  policy?: SessionPolicy;
   id: string;
   assistant_id: string;
   work_date: string;
@@ -81,6 +83,7 @@ export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAs
 }
 
 export interface NewSessionInput {
+  policy?: SessionPolicy;
   assistant_id: string;
   work_date: string; // yyyy-mm-dd
   session_type: TaSessionType;
@@ -104,6 +107,7 @@ export interface NewSessionInput {
 /** Ghi 1 buổi làm việc — status luôn khởi tạo 'submitted' (mặc định ở DB), không cho client set. */
 export async function createSession(input: NewSessionInput): Promise<void> {
   const { error } = await getSupabase().from("ta_sessions").insert({
+    ...(input.policy ? { policy: input.policy } : {}),
     assistant_id: input.assistant_id,
     work_date: input.work_date,
     session_type: input.session_type,
@@ -259,6 +263,7 @@ export async function fetchAssistants(): Promise<TaAssistant[]> {
 }
 
 export interface TaPendingSession extends TaSessionListItem {
+  policy?: SessionPolicy;
   assistant_id: string;
   assistant_name: string;
   touch_names: string[];
@@ -276,7 +281,7 @@ export async function fetchPendingSessions(): Promise<TaPendingSession[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
     .select(
-      "id, assistant_id, work_date, session_type, class_label, phudao_students, hours, student_touches, touch_names, error_note, homework_given, student_recap_ok, papers_graded, video_url, video_tier, note, status, reject_reason, ta_assistants(short_name)",
+      "*, ta_assistants(short_name)",
     )
     .eq("status", "submitted")
     .order("work_date", { ascending: false });

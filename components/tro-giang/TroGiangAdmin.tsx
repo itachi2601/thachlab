@@ -22,6 +22,7 @@ export default function TroGiangAdmin() {
 
   return (
     <div className="space-y-6">
+      <Link href="/tro-giang/quy-che" className="block rounded-xl border border-blue-400/25 bg-blue-500/5 p-3 text-sm text-blue-200">Quy chế mới từ 01/10/2026 · tháng 10 chưa giảm lương · xem chi tiết</Link>
       <div className="flex flex-wrap items-center gap-2">
         {TABS.map((t) => (
           <button

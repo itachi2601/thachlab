@@ -18,6 +18,9 @@ import {
   type TaVideoTier,
 } from "@/lib/tro-giang/queries";
 
+import PolicySessionFields from "./PolicySessionFields";
+import { emptyPolicy, POLICY_START, tutoringFactor, type SessionPolicy } from "@/lib/tro-giang/policy";
+
 const DRAFT_KEY = "tro-giang-ghi-draft-v1";
 /** Bản giả lập giữ nháp riêng, không đè lên nháp thật nếu máy này có trợ giảng dùng chung. */
 const DEMO_DRAFT_KEY = "tro-giang-ghi-draft-demo-v1";
@@ -36,6 +39,8 @@ function todayStr() {
 
 interface Draft {
   sessionType: TaSessionType;
+  touchCount: string;
+  policy: SessionPolicy;
   workDate: string;
   classLabel: string;
   startTime: string | null;
@@ -55,6 +60,8 @@ interface Draft {
 function emptyDraft(): Draft {
   return {
     sessionType: "lop",
+    touchCount: "0",
+    policy: emptyPolicy(),
     workDate: todayStr(),
     classLabel: "",
     startTime: null,
@@ -221,18 +228,23 @@ function NameChipsInput({
 export default function GhiBuoiForm({
   assistant,
   initialTopicId,
+  initialWorkDate,
+  previewDraftScope,
 }: {
   assistant: TaAssistant;
   initialTopicId?: string | null;
+  initialWorkDate?: string;
+  previewDraftScope?: string;
 }) {
   const toast = useToast();
   // Giáo viên đang xem trước: dùng lớp/đề tài mẫu và KHÔNG ghi gì vào database.
   const demo = isDemoAssistant(assistant);
-  const draftKey = demo ? DEMO_DRAFT_KEY : DRAFT_KEY;
+  const draftKey = demo ? `${DEMO_DRAFT_KEY}${previewDraftScope ? `-${previewDraftScope}` : ""}` : DRAFT_KEY;
   const [draft, setDraft] = useState<Draft>(() => {
-    const d = loadDraft(demo ? DEMO_DRAFT_KEY : DRAFT_KEY);
+    const d = loadDraft(draftKey);
     // Đến từ /tro-giang/video?topic=<id> — chuyển thẳng sang loại "video" kèm đề tài điền sẵn.
     if (initialTopicId) d.sessionType = "video";
+    if (demo && initialWorkDate) d.workDate = initialWorkDate;
     return d;
   });
   const [myClasses, setMyClasses] = useState<TaAssistantClass[]>(() => (demo ? demoClasses() : []));
@@ -277,12 +289,25 @@ export default function GhiBuoiForm({
     setDraft((d) => ({ ...d, ...fields }));
   }
 
+  const newPolicy = draft.workDate >= POLICY_START;
   const needsTime = draft.sessionType !== "video";
   const timeValid =
     !needsTime || (draft.startTime && draft.endTime && draft.endTime > draft.startTime);
 
   const validationError = useMemo(() => {
     if (!draft.workDate) return "Chọn ngày làm việc.";
+    if (!demo && draft.workDate > todayStr()) return "Chỉ ghi buổi đã diễn ra.";
+    if (newPolicy && draft.sessionType === "hanhchinh") return "Từ tháng 10 không ghi công hành chính.";
+    if (newPolicy && ["lop", "phudao"].includes(draft.sessionType) && !draft.classLabel.trim()) return "Chọn lớp.";
+    if (newPolicy && draft.sessionType === "lop") {
+      if (!/^\d+$/.test(draft.touchCount)) return "Số lượt tiếp xúc phải là số nguyên không âm.";
+      const minutes = draft.policy.teaching_minutes;
+      const timeMinutes = (t: string) => Number(t.slice(0,2))*60+Number(t.slice(3,5));
+      if (!Number.isInteger(minutes) || minutes < 0 || (draft.startTime && draft.endTime && minutes > timeMinutes(draft.endTime)-timeMinutes(draft.startTime))) return "Phút chữa bài phải nằm trong thời lượng buổi.";
+      if (minutes > 0 && !draft.policy.teaching_note.trim()) return "Ghi nội dung chữa bài thay thầy.";
+      if (draft.policy.attendance.includes('absence') && (minutes > 0 || Number(draft.touchCount) > 0)) return "Buổi vắng không ghi lượt tiếp xúc hoặc chữa bài.";
+    }
+    if (newPolicy && draft.sessionType === "phudao" && tutoringFactor(draft.phudaoStudents.length) === null) return "Mỗi buổi phụ đạo có từ 1 đến 4 em.";
     if (needsTime && (!draft.startTime || !draft.endTime)) return "Chọn giờ bắt đầu và kết thúc.";
     if (needsTime && draft.startTime && draft.endTime && draft.endTime <= draft.startTime)
       return "Giờ kết thúc phải sau giờ bắt đầu.";
@@ -295,7 +320,7 @@ export default function GhiBuoiForm({
       if (!draft.videoTier) return "Chọn loại video: đơn giản hay dựng kỹ.";
     }
     return null;
-  }, [draft, needsTime]);
+  }, [draft, needsTime, newPolicy, demo]);
 
   async function submit() {
     if (validationError) {
@@ -308,13 +333,14 @@ export default function GhiBuoiForm({
         toast("success", "Chế độ giả lập — form chạy đúng như thật nhưng không lưu gì vào hệ thống.");
       } else {
         await createSession({
+          ...(newPolicy && ["lop", "phudao"].includes(draft.sessionType) ? { policy: { ...draft.policy, followups: draft.phudaoStudents.map(student => draft.policy.followups.find(f=>f.student===student) ?? {student,lesson:'',difficulty:''}) } } : {}),
           assistant_id: assistant.id,
           work_date: draft.workDate,
           session_type: draft.sessionType,
-          class_label: draft.sessionType === "phudao" ? null : draft.classLabel.trim() || null,
+          class_label: draft.classLabel.trim() || null,
           start_time: needsTime ? draft.startTime : null,
           end_time: needsTime ? draft.endTime : null,
-          student_touches: draft.sessionType === "lop" ? draft.touchNames.length : null,
+          student_touches: draft.sessionType === "lop" ? (newPolicy ? Number(draft.touchCount) : draft.touchNames.length) : null,
           touch_names: draft.sessionType === "lop" ? draft.touchNames : [],
           error_note: draft.sessionType === "lop" ? draft.errorNote.trim() : null,
           homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
@@ -350,7 +376,7 @@ export default function GhiBuoiForm({
   return (
     <div className="pb-28">
       <div className="mb-5 flex gap-2 overflow-x-auto pb-1">
-        {TYPE_OPTIONS.map(({ value, label, icon: Icon }) => (
+        {TYPE_OPTIONS.filter(o => o.value !== "hanhchinh").map(({ value, label, icon: Icon }) => (
           <button
             key={value}
             type="button"
@@ -387,7 +413,7 @@ export default function GhiBuoiForm({
           />
         </div>
 
-        {draft.sessionType !== "video" && draft.sessionType !== "hanhchinh" && draft.sessionType !== "phudao" && (
+        {draft.sessionType !== "video" && draft.sessionType !== "hanhchinh" && (
           <div>
             <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
               Lớp
@@ -430,11 +456,12 @@ export default function GhiBuoiForm({
 
         {draft.sessionType === "lop" && (
           <>
+            {newPolicy && <label className="block text-sm text-slate-300">Số lượt tiếp xúc (mục tiêu 12 lượt/buổi)<input type="number" min="0" step="1" value={draft.touchCount} onChange={e=>patch({touchCount:e.target.value})} className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white"/><span className="mt-1 block text-xs text-slate-400">Một em được giúp 3 lần tính 3 lượt. Danh sách tên bên dưới chỉ để đối chiếu.</span></label>}
             <NameChipsInput
-              label="Học sinh đã gỡ bài"
+              label="Học sinh đã hỗ trợ"
               names={draft.touchNames}
               onChange={(n) => patch({ touchNames: n })}
-              target={TOUCH_TARGET}
+              target={newPolicy ? undefined : TOUCH_TARGET}
             />
             <div>
               <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
@@ -457,7 +484,7 @@ export default function GhiBuoiForm({
               label="Các em được phụ đạo"
               names={draft.phudaoStudents}
               onChange={(n) => patch({ phudaoStudents: n })}
-              badge={`hệ số ×${formatMultiplier(phudaoMultiplier(draft.phudaoStudents.length))}`}
+              badge={`hệ số ×${formatMultiplier(newPolicy ? tutoringFactor(draft.phudaoStudents.length) ?? 0 : phudaoMultiplier(draft.phudaoStudents.length))}`}
               placeholder="Gõ tên em rồi Enter…"
             />
             <div>
@@ -492,6 +519,8 @@ export default function GhiBuoiForm({
             </button>
           </>
         )}
+
+        {newPolicy && ["lop", "phudao"].includes(draft.sessionType) && <PolicySessionFields type={draft.sessionType} value={draft.policy} onChange={policy=>patch({policy})} students={draft.phudaoStudents}/>}
 
         {draft.sessionType === "chambai" && (
           <div>
