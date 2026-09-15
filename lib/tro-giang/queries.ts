@@ -96,6 +96,9 @@ export interface NewSessionInput {
   homework_given?: string | null;
   student_recap_ok?: boolean | null;
   phudao_students?: string[];
+  /** Khớp thứ tự với phudao_students — buổi phụ đạo từ 01/10/2026 bắt buộc có. */
+  phudao_student_ids?: string[];
+  class_id?: number | null;
   papers_graded?: number | null;
   video_url?: string | null;
   video_tier?: TaVideoTier | null;
@@ -104,9 +107,12 @@ export interface NewSessionInput {
   note?: string | null;
 }
 
-/** Ghi 1 buổi làm việc — status luôn khởi tạo 'submitted' (mặc định ở DB), không cho client set. */
-export async function createSession(input: NewSessionInput): Promise<void> {
-  const { error } = await getSupabase().from("ta_sessions").insert({
+/**
+ * Ghi 1 buổi làm việc — status luôn khởi tạo 'submitted' (mặc định ở DB), không cho client set.
+ * Trả về id của buổi để ghi tiếp chủ đề đã phụ đạo (tutoring_session_topics).
+ */
+export async function createSession(input: NewSessionInput): Promise<string> {
+  const { data, error } = await getSupabase().from("ta_sessions").insert({
     ...(input.policy ? { policy: input.policy } : {}),
     assistant_id: input.assistant_id,
     work_date: input.work_date,
@@ -120,14 +126,17 @@ export async function createSession(input: NewSessionInput): Promise<void> {
     homework_given: input.homework_given ?? null,
     student_recap_ok: input.student_recap_ok ?? null,
     phudao_students: input.phudao_students ?? [],
+    phudao_student_ids: input.phudao_student_ids ?? [],
+    class_id: input.class_id ?? null,
     papers_graded: input.papers_graded ?? null,
     video_url: input.video_url ?? null,
     video_tier: input.video_tier ?? null,
     published_at: input.published_at ?? null,
     topic_source_id: input.topic_source_id ?? null,
     note: input.note ?? null,
-  });
+  }).select("id").single();
   if (error) throw error;
+  return (data as { id: string }).id;
 }
 
 /** 1 gợi ý đề tài video lấy từ ta_video_topic_suggestions() — xem mục 8.4. */

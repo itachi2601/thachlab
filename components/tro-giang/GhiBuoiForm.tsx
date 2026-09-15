@@ -19,6 +19,9 @@ import {
 } from "@/lib/tro-giang/queries";
 
 import PolicySessionFields from "./PolicySessionFields";
+import PhudaoPlanner, { type PickedStudent } from "./PhudaoPlanner";
+import { classGrade } from "@/services/classes";
+import { saveSessionCoverage, type CoverageInput } from "@/services/tutoring";
 import { emptyPolicy, POLICY_START, tutoringFactor, type SessionPolicy } from "@/lib/tro-giang/policy";
 
 const DRAFT_KEY = "tro-giang-ghi-draft-v1";
@@ -48,6 +51,10 @@ interface Draft {
   touchNames: string[];
   errorNote: string;
   phudaoStudents: string[];
+  /** id tài khoản của từng em, khớp thứ tự với phudaoStudents. */
+  phudaoStudentIds: string[];
+  /** studentId -> các chủ đề đã dạy trong buổi này. */
+  phudaoCoverage: Record<string, number[]>;
   homeworkGiven: string;
   studentRecapOk: boolean;
   papersGraded: string;
@@ -69,6 +76,8 @@ function emptyDraft(): Draft {
     touchNames: [],
     errorNote: "",
     phudaoStudents: [],
+    phudaoStudentIds: [],
+    phudaoCoverage: {},
     homeworkGiven: "",
     studentRecapOk: false,
     papersGraded: "",
@@ -84,7 +93,14 @@ function loadDraft(key: string): Draft {
   try {
     const raw = window.localStorage.getItem(key);
     if (!raw) return emptyDraft();
-    return { ...emptyDraft(), ...JSON.parse(raw) };
+    const draft = { ...emptyDraft(), ...JSON.parse(raw) } as Draft;
+    // Nháp cũ (thời còn gõ tay tên em) không có id -> bỏ danh sách em, chọn lại từ lớp.
+    if (draft.phudaoStudentIds.length !== draft.phudaoStudents.length) {
+      draft.phudaoStudents = [];
+      draft.phudaoStudentIds = [];
+      draft.phudaoCoverage = {};
+    }
+    return draft;
   } catch {
     return emptyDraft();
   }
@@ -289,6 +305,27 @@ export default function GhiBuoiForm({
     setDraft((d) => ({ ...d, ...fields }));
   }
 
+  // Lớp đang chọn -> nguồn danh sách em cho phiếu phụ đạo.
+  const selectedClassName = draft.classLabel;
+  const selectedClassId = useMemo(
+    () => myClasses.find((item) => item.name === draft.classLabel)?.class_id ?? null,
+    [myClasses, draft.classLabel],
+  );
+  const pickedStudents = useMemo<PickedStudent[]>(
+    () => draft.phudaoStudentIds.map((id, i) => ({ id, name: draft.phudaoStudents[i] ?? "" })),
+    [draft.phudaoStudentIds, draft.phudaoStudents],
+  );
+  const setPickedStudents = useCallback(
+    (list: PickedStudent[]) => {
+      patch({
+        phudaoStudents: list.map((s) => s.name),
+        phudaoStudentIds: list.map((s) => s.id),
+      });
+    },
+    // patch chỉ gọi setDraft nên giữ nguyên qua các lần render.
+    [],
+  );
+
   const newPolicy = draft.workDate >= POLICY_START;
   const needsTime = draft.sessionType !== "video";
   const timeValid =
@@ -308,6 +345,8 @@ export default function GhiBuoiForm({
       if (draft.policy.attendance.includes('absence') && (minutes > 0 || Number(draft.touchCount) > 0)) return "Buổi vắng không ghi lượt tiếp xúc hoặc chữa bài.";
     }
     if (newPolicy && draft.sessionType === "phudao" && tutoringFactor(draft.phudaoStudents.length) === null) return "Mỗi buổi phụ đạo có từ 1 đến 4 em.";
+    if (newPolicy && draft.sessionType === "phudao" && draft.phudaoStudentIds.length !== draft.phudaoStudents.length)
+      return "Chọn từng em trong danh sách lớp (em chưa có tài khoản thì đăng ký trước).";
     if (needsTime && (!draft.startTime || !draft.endTime)) return "Chọn giờ bắt đầu và kết thúc.";
     if (needsTime && draft.startTime && draft.endTime && draft.endTime <= draft.startTime)
       return "Giờ kết thúc phải sau giờ bắt đầu.";
@@ -332,7 +371,7 @@ export default function GhiBuoiForm({
       if (demo) {
         toast("success", "Chế độ giả lập — form chạy đúng như thật nhưng không lưu gì vào hệ thống.");
       } else {
-        await createSession({
+        const sessionId = await createSession({
           ...(newPolicy && ["lop", "phudao"].includes(draft.sessionType) ? { policy: { ...draft.policy, followups: draft.phudaoStudents.map(student => draft.policy.followups.find(f=>f.student===student) ?? {student,lesson:'',difficulty:''}) } } : {}),
           assistant_id: assistant.id,
           work_date: draft.workDate,
@@ -346,6 +385,8 @@ export default function GhiBuoiForm({
           homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
           student_recap_ok: draft.sessionType === "phudao" ? draft.studentRecapOk : null,
         phudao_students: draft.sessionType === "phudao" ? draft.phudaoStudents : [],
+          phudao_student_ids: draft.sessionType === "phudao" ? draft.phudaoStudentIds : [],
+          class_id: selectedClassId,
           papers_graded: draft.sessionType === "chambai" ? Number(draft.papersGraded) : null,
           video_url: draft.sessionType === "video" ? draft.videoUrl.trim() : null,
           video_tier: draft.sessionType === "video" ? draft.videoTier : null,
@@ -356,6 +397,18 @@ export default function GhiBuoiForm({
           topic_source_id: draft.sessionType === "video" ? topicSourceId : null,
           note: draft.note.trim() || null,
         });
+        if (draft.sessionType === "phudao") {
+          // Ghi "buổi này đã dạy phần nào cho em nào" -> mục cần phụ đạo chuyển sang
+          // "đã phụ đạo". Lỗi ở bước này không được làm mất buổi công vừa ghi.
+          const items: CoverageInput[] = draft.phudaoStudentIds.flatMap((studentId) =>
+            (draft.phudaoCoverage[studentId] ?? []).map((topicId) => ({ studentId, topicId })),
+          );
+          try {
+            await saveSessionCoverage(sessionId, items);
+          } catch {
+            toast("error", "Đã ghi buổi, nhưng chưa lưu được phần đã phụ đạo. Báo thầy giúp bạn.");
+          }
+        }
         toast("success", "Đã ghi buổi làm việc — chờ giáo viên duyệt.");
       }
       setJustSaved(true);
@@ -480,12 +533,15 @@ export default function GhiBuoiForm({
 
         {draft.sessionType === "phudao" && (
           <>
-            <NameChipsInput
-              label="Các em được phụ đạo"
-              names={draft.phudaoStudents}
-              onChange={(n) => patch({ phudaoStudents: n })}
+            <PhudaoPlanner
+              classId={selectedClassId}
+              grade={selectedClassName ? classGrade(selectedClassName) : null}
+              students={pickedStudents}
+              onChange={setPickedStudents}
+              coverage={draft.phudaoCoverage}
+              onCoverageChange={(phudaoCoverage) => patch({ phudaoCoverage })}
+              demo={demo}
               badge={`hệ số ×${formatMultiplier(newPolicy ? tutoringFactor(draft.phudaoStudents.length) ?? 0 : phudaoMultiplier(draft.phudaoStudents.length))}`}
-              placeholder="Gõ tên em rồi Enter…"
             />
             <div>
               <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
