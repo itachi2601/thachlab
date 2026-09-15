@@ -15,8 +15,15 @@ export interface Chapter {
   subjectCode: string;
 }
 
-// Bài học thường, hoặc một bài kiểm tra định kỳ đặt cuối chương tương ứng chương trình.
-export type LessonKind = "bai_hoc" | "kiem_tra_giua_ki" | "kiem_tra_cuoi_ki";
+// Bài học thường, hoặc một bài kiểm tra đặt cuối chương:
+//   kiem_tra_chuong   — kiểm tra hết một chương (chủ đề)
+//   kiem_tra_giua_ki  — kiểm tra giữa học kì
+//   kiem_tra_cuoi_ki  — kiểm tra cuối học kì
+export type LessonKind =
+  | "bai_hoc"
+  | "kiem_tra_chuong"
+  | "kiem_tra_giua_ki"
+  | "kiem_tra_cuoi_ki";
 
 export interface Lesson {
   id: number;
@@ -28,8 +35,9 @@ export interface Lesson {
   itemCount: number;
 }
 
-export function isPeriodicExam(kind: LessonKind): boolean {
-  return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki";
+/** Bài chỉ để làm đề (dùng duy nhất mục "Kiểm tra"), không phải bài học 5 mục. */
+export function isExamLesson(kind: LessonKind): boolean {
+  return kind !== "bai_hoc";
 }
 
 export interface LessonKindMeta {
@@ -41,6 +49,12 @@ export interface LessonKindMeta {
 
 export const LESSON_KIND_META: Record<LessonKind, LessonKindMeta> = {
   bai_hoc: { label: "Bài học", badge: "", icon: "📖", color: "#3B82F6" },
+  kiem_tra_chuong: {
+    label: "Kiểm tra chương",
+    badge: "KIỂM TRA CHƯƠNG",
+    icon: "🎯",
+    color: "#14B8A6",
+  },
   kiem_tra_giua_ki: {
     label: "Kiểm tra giữa học kì",
     badge: "GIỮA HỌC KÌ",
@@ -55,10 +69,15 @@ export const LESSON_KIND_META: Record<LessonKind, LessonKindMeta> = {
   },
 };
 
+const LESSON_KINDS: LessonKind[] = [
+  "bai_hoc",
+  "kiem_tra_chuong",
+  "kiem_tra_giua_ki",
+  "kiem_tra_cuoi_ki",
+];
+
 export function normalizeLessonKind(kind: unknown): LessonKind {
-  return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki"
-    ? kind
-    : "bai_hoc";
+  return LESSON_KINDS.includes(kind as LessonKind) ? (kind as LessonKind) : "bai_hoc";
 }
 
 // Một "dạng bài" trong mục Các dạng bài tập: đề + lời giải soạn tự do (LaTeX/HTML)

@@ -15,7 +15,7 @@ import {
   SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
-  isPeriodicExam,
+  isExamLesson,
   youTubeEmbed,
   youTubeThumb,
   type LessonItem,
@@ -338,7 +338,7 @@ function LessonLoader() {
     ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
     : "/lop-hoc";
 
-  if (isPeriodicExam(lessonKind)) {
+  if (isExamLesson(lessonKind)) {
     const kindMeta = LESSON_KIND_META[lessonKind];
     const examIds = items
       .filter((i) => i.kind === "kiem_tra")

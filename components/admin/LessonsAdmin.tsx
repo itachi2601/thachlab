@@ -8,7 +8,7 @@ import {
   LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
-  isPeriodicExam,
+  isExamLesson,
   type Chapter,
   type Lesson,
   type LessonItem,
@@ -19,6 +19,7 @@ import {
 
 const LESSON_KIND_OPTIONS: LessonKind[] = [
   "bai_hoc",
+  "kiem_tra_chuong",
   "kiem_tra_giua_ki",
   "kiem_tra_cuoi_ki",
 ];
@@ -426,7 +427,7 @@ function ChapterLessonsEditor({
     e.preventDefault();
     const finalTitle =
       title.trim() ||
-      (isPeriodicExam(lessonKind) ? LESSON_KIND_META[lessonKind].label : "");
+      (isExamLesson(lessonKind) ? LESSON_KIND_META[lessonKind].label : "");
     if (!finalTitle) return;
     const { error } = await getSupabase().from("lessons").insert({
       chapter_id: chapter.id,
@@ -499,7 +500,7 @@ function ChapterLessonsEditor({
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder={
-            isPeriodicExam(lessonKind)
+            isExamLesson(lessonKind)
               ? `Tên bài (bỏ trống = "${LESSON_KIND_META[lessonKind].label}")`
               : "Tên bài học, vd Giá trị lượng giác của góc lượng giác"
           }
@@ -512,10 +513,10 @@ function ChapterLessonsEditor({
           + Thêm bài
         </button>
       </form>
-      {isPeriodicExam(lessonKind) && (
+      {isExamLesson(lessonKind) && (
         <p className="-mt-1 text-xs text-slate-500">
-          Bài kiểm tra định kỳ: đặt ở cuối chương tương ứng chương trình, chỉ cần
-          soạn mục “Kiểm tra” và gắn đề — hệ thống chấm điểm tự động.
+          Bài kiểm tra: đặt ở cuối chương, chỉ cần soạn mục “Kiểm tra” và gắn đề
+          — hệ thống chấm điểm tự động.
         </p>
       )}
 
@@ -532,7 +533,7 @@ function ChapterLessonsEditor({
               className="min-w-0 flex-1 text-left"
             >
               <span className="flex items-center gap-2">
-                {isPeriodicExam(l.lesson_kind) && (
+                {isExamLesson(l.lesson_kind) && (
                   <span
                     className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
                     style={{
