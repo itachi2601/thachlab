@@ -61,9 +61,11 @@ export async function getMyAssistant(userId: string): Promise<TaAssistant | null
 export interface TaAssistantClass {
   class_id: number;
   name: string;
+  /** true = lớp thầy đã phân công; false = khối đang mở, ghi được nhưng không phải lớp của mình. */
+  assigned: boolean;
 }
 
-/** Các lớp trợ giảng được phân công — nguồn cho ô chọn lớp ở form ghi buổi. */
+/** Các lớp trợ giảng được phân công — phần đứng đầu danh sách chọn lớp ở form ghi buổi. */
 export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAssistantClass[]> {
   const { data, error } = await getSupabase()
     .from("ta_assistant_classes")
@@ -77,9 +79,40 @@ export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAs
         classes: { name: string } | { name: string }[] | null;
       };
       const joined = Array.isArray(classes) ? classes[0] : classes;
-      return { class_id, name: joined?.name ?? `Lớp #${class_id}` };
+      return { class_id, name: joined?.name ?? `Lớp #${class_id}`, assigned: true };
     })
     .sort((a, b) => a.name.localeCompare(b.name, "vi"));
+}
+
+/** Mọi khối đang mở (10, 11, 12…) theo thứ tự thầy xếp trong bảng classes. */
+async function fetchActiveClasses(): Promise<TaAssistantClass[]> {
+  const { data, error } = await getSupabase()
+    .from("classes")
+    .select("id, name")
+    .eq("active", true)
+    .order("sort_order")
+    .order("name");
+  if (error) throw error;
+  return (data ?? []).map((row) => {
+    const { id, name } = row as { id: number; name: string };
+    return { class_id: id, name, assigned: false };
+  });
+}
+
+/**
+ * Danh sách lớp cho ô chọn lớp ở form ghi buổi: lớp được phân công đứng trước, rồi tới các
+ * khối còn lại đang mở. Một buổi trợ giảng hay chạy qua cả 10, 11 lẫn 12 nên không khoá cứng
+ * theo phân công — khoá cứng chỉ khiến các em ghi đại vào lớp của mình, sai cả bảng công.
+ * Lớp nào đã có trong phân công thì giữ cờ assigned để hiện dấu riêng.
+ */
+export async function fetchSelectableClasses(assistantId: string): Promise<TaAssistantClass[]> {
+  const [mine, all] = await Promise.all([
+    fetchMyAssistantClasses(assistantId),
+    // Thiếu quyền đọc bảng classes thì vẫn còn lớp được phân công để ghi, không chặn form.
+    fetchActiveClasses().catch(() => [] as TaAssistantClass[]),
+  ]);
+  const seen = new Set(mine.map((item) => item.class_id));
+  return [...mine, ...all.filter((item) => !seen.has(item.class_id))];
 }
 
 export interface NewSessionInput {

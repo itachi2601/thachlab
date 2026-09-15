@@ -9,7 +9,7 @@ import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { demoClasses, demoTopic, isDemoAssistant } from "@/lib/tro-giang/demo";
 import {
   createSession,
-  fetchMyAssistantClasses,
+  fetchSelectableClasses,
   fetchTopicSuggestion,
   type TaAssistant,
   type TaAssistantClass,
@@ -18,6 +18,7 @@ import {
   type TaVideoTier,
 } from "@/lib/tro-giang/queries";
 
+import ClassPicker from "./ClassPicker";
 import PolicySessionFields from "./PolicySessionFields";
 import { emptyPolicy, POLICY_START, tutoringFactor, type SessionPolicy } from "@/lib/tro-giang/policy";
 
@@ -248,6 +249,7 @@ export default function GhiBuoiForm({
     return d;
   });
   const [myClasses, setMyClasses] = useState<TaAssistantClass[]>(() => (demo ? demoClasses() : []));
+  const [classesLoading, setClassesLoading] = useState(!demo);
   const [topicSourceId, setTopicSourceId] = useState<string | null>(initialTopicId ?? null);
   const [topicInfo, setTopicInfo] = useState<TaTopicSuggestion | null>(() =>
     demo && initialTopicId ? demoTopic(initialTopicId) : null,
@@ -265,9 +267,10 @@ export default function GhiBuoiForm({
 
   useEffect(() => {
     if (demo) return;
-    fetchMyAssistantClasses(assistant.id)
+    fetchSelectableClasses(assistant.id)
       .then(setMyClasses)
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setClassesLoading(false));
   }, [assistant.id, demo]);
 
   // Lưu nháp — bỏ qua lần render đầu (vừa load từ localStorage lên, khỏi ghi lại chính nó).
@@ -362,8 +365,10 @@ export default function GhiBuoiForm({
       try {
         window.localStorage.removeItem(draftKey);
       } catch {}
-      const type = draft.sessionType;
-      setDraft({ ...emptyDraft(), sessionType: type });
+      // Giữ lại loại buổi + lớp vừa ghi: các em thường ghi liền mấy buổi cùng khối,
+      // còn muốn đổi khối thì chạm 1 cái ở hàng chip lớp.
+      const { sessionType, classLabel } = draft;
+      setDraft({ ...emptyDraft(), sessionType, classLabel });
       setTopicSourceId(null);
       setTopicInfo(null);
     } catch (error) {
@@ -414,34 +419,15 @@ export default function GhiBuoiForm({
         </div>
 
         {draft.sessionType !== "video" && draft.sessionType !== "hanhchinh" && (
-          <div>
-            <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">
-              Lớp
-            </label>
-            {/* Buổi lên lớp/chấm bài chọn trong danh sách lớp được phân công để tên lớp
-                không bị phân mảnh ("12A2" vs "12 A2"); chưa được gán lớp nào thì gõ tay. */}
-            {myClasses.length > 0 ? (
-              <select
-                value={draft.classLabel}
-                onChange={(e) => patch({ classLabel: e.target.value })}
-                className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-3 text-white"
-              >
-                <option value="">Chọn lớp…</option>
-                {myClasses.map((item) => (
-                  <option key={item.class_id} value={item.name}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <input
-                value={draft.classLabel}
-                onChange={(e) => patch({ classLabel: e.target.value })}
-                placeholder="12A2"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
-              />
-            )}
-          </div>
+          /* Chọn trong danh sách để tên lớp không bị phân mảnh ("12A2" vs "12 A2"), nhưng danh
+             sách mở cho mọi khối đang học chứ không chỉ lớp được phân công: một buổi trợ giảng
+             chạy qua cả 10, 11 lẫn 12 nên phải đổi khối được ngay trong lúc ghi. */
+          <ClassPicker
+            classes={myClasses}
+            value={draft.classLabel}
+            onChange={(classLabel) => patch({ classLabel })}
+            loading={classesLoading}
+          />
         )}
 
         {needsTime && (

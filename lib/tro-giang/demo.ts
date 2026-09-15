@@ -213,10 +213,13 @@ export function demoSessions(): TaSessionListItem[] {
   ];
 }
 
+/** Lớp phân công (có dấu sao) đứng trước, rồi tới các khối còn lại — giống hệt dữ liệu thật. */
 export function demoClasses(): TaAssistantClass[] {
   return [
-    { class_id: -1, name: "11B2 (giả lập)" },
-    { class_id: -2, name: "12A1 (giả lập)" },
+    { class_id: -2, name: "11", assigned: true },
+    { class_id: -3, name: "12", assigned: true },
+    { class_id: -4, name: "KHTN 9", assigned: false },
+    { class_id: -1, name: "10", assigned: false },
   ];
 }
 
