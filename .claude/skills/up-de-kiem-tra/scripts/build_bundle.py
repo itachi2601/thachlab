@@ -6,7 +6,17 @@ build_bundle.py — Ghép "draft đề" (JSON do trợ lý soạn) thành gói
 mà trang admin sẽ chạy (validateBundle trong services/lesson-import.ts) để bắt lỗi
 TRƯỚC khi mở trình duyệt.
 
-    python3 build_bundle.py draft.json -o bundle.json
+    python3 build_bundle.py draft.json --grade 12 -o bundle.json
+
+`--grade` để script tải danh mục chủ đề của khối (REST anon-key, tự đọc .env.local) rồi
+**soát tên `topic` của từng câu**: sai chính tả / không có trong danh mục là LỖI, vì
+`ExamRunner` tra `topic_id` theo đúng tên — lệch một chữ là câu đó rơi khỏi phân tích chủ
+đề và cảnh báo phụ đạo mà không báo gì. Chủ đề thật sự mới thì khai báo có ý thức:
+
+    python3 build_bundle.py draft.json --grade 12 --new-topic "Hiệu suất động cơ nhiệt"
+
+Cờ khác: `--topics topics.json` (dùng danh mục tải sẵn, khỏi gọi mạng),
+`--allow-untagged` (hạ mọi lỗi nhãn xuống cảnh báo — chỉ khi thầy chấp nhận mất số liệu).
 
 ## draft.json — trợ lý soạn file này
 
@@ -50,9 +60,13 @@ TRƯỚC khi mở trình duyệt.
 thì để nguyên. `options` và `statements[].text` giữ nguyên chuỗi (KaTeX đọc $...$).
 """
 import argparse
+import difflib
 import json
+import os
 import re
 import sys
+import urllib.parse
+import urllib.request
 
 SCHEMA = "thachlab.lesson-bundle/v1"
 P_CLS = 'text-base leading-relaxed my-2'
@@ -64,6 +78,69 @@ LEFTOVER = [
     (r'\\\[|\\\]', r'\[ … \]'),
     (r'\\textbf\{|\\textit\{', r'\textbf{…}'),
 ]
+
+
+def clean_topic(s):
+    return re.sub(r'\s+', ' ', str(s or '')).strip()
+
+
+def topic_key(s):
+    return clean_topic(s).lower()
+
+
+def repo_root():
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), *(['..'] * 4)))
+
+
+def env_value(key):
+    v = os.environ.get(key)
+    if v:
+        return v
+    try:
+        with open(os.path.join(repo_root(), '.env.local'), encoding='utf-8') as f:
+            for line in f:
+                if line.startswith(key + '='):
+                    return line.split('=', 1)[1].strip()
+    except OSError:
+        pass
+    return None
+
+
+def fetch_topic_names(grade):
+    """Tên chủ đề của một khối, đọc bằng anon-key (chỉ SELECT). (names, err)"""
+    url = env_value('NEXT_PUBLIC_SUPABASE_URL')
+    key = env_value('NEXT_PUBLIC_SUPABASE_ANON_KEY')
+    if not url or not key:
+        return None, 'không tìm thấy NEXT_PUBLIC_SUPABASE_URL / _ANON_KEY (env hoặc .env.local)'
+    q = (url.rstrip('/') + '/rest/v1/question_topics?select=name,grade&grade=eq.'
+         + urllib.parse.quote(str(grade)))
+    req = urllib.request.Request(q, headers={'apikey': key, 'Authorization': 'Bearer ' + key})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            rows = json.load(r)
+    except Exception as e:
+        return None, f'gọi REST lỗi: {e}'
+    if not isinstance(rows, list):
+        return None, f'REST trả về không phải danh sách: {rows}'
+    return [str(r.get('name', '')) for r in rows if r.get('name')], None
+
+
+def topic_names_from_file(path, grade):
+    try:
+        data = json.load(open(path, encoding='utf-8'))
+    except Exception as e:
+        die(f'không đọc được {path}: {e}')
+    if isinstance(data, dict):
+        data = data.get('topics') or data.get('data') or []
+    names = []
+    for row in data:
+        if isinstance(row, str):
+            names.append(row)
+        elif isinstance(row, dict) and row.get('name'):
+            if grade and row.get('grade') and str(row['grade']) != str(grade):
+                continue
+            names.append(str(row['name']))
+    return names
 
 
 def die(msg):
@@ -103,7 +180,38 @@ def scan_html(html, label, errors):
         errors.append(f'{label}: HTML quá lớn ({n // 1024} KB > 1.5 MB).')
 
 
-def check_question(q, i, errors, warnings):
+def check_tags(q, label, ctx, errors, warnings):
+    """Nhãn chủ đề + loại. Chỉ có giá trị khi `topic` khớp ĐÚNG tên trong danh mục:
+    ExamRunner tra topic_id theo tên, mà tutoring_needs.topic_id là NOT NULL."""
+    bad = warnings if ctx['allow_untagged'] else errors
+    catalog = ctx['catalog']
+    name = clean_topic(q.get('topic', ''))
+    if not name:
+        bad.append(f'{label}: thiếu "topic" — mỗi câu cần tên chủ đề khớp danh mục của khối.')
+    elif catalog is None:
+        q['topic'] = name
+    else:
+        key = topic_key(name)
+        if key in catalog:
+            q['topic'] = catalog[key]          # chuẩn hoá chính tả theo danh mục
+        elif key in ctx['new_keys']:
+            q['topic'] = name
+            ctx['new_used'][key] = name
+        else:
+            # Hay gặp nhất là gọi tắt ("Nội năng" ↔ "Nội năng. Định luật 1 …") — so khớp
+            # chuỗi con trước, difflib chỉ bắt được lỗi chính tả.
+            near = [v for k, v in catalog.items() if key in k or k in key]
+            near += [m for m in difflib.get_close_matches(name, list(catalog.values()), n=3, cutoff=0.55)
+                     if m not in near]
+            hint = f' Gần nhất: {" | ".join(near[:3])}.' if near else ''
+            bad.append(
+                f'{label}: chủ đề "{name}" không có trong danh mục khối {ctx["grade"]}.{hint} '
+                f'Sửa đúng tên, hoặc khai báo chủ đề mới: --new-topic "{name}".')
+    if q.get('form') not in ('ly_thuyet', 'bai_tap'):
+        bad.append(f'{label}: "form" phải là "ly_thuyet" hoặc "bai_tap".')
+
+
+def check_question(q, i, errors, warnings, ctx):
     label = f'Câu {i + 1}'
     t = q.get('type')
     qtext = q.get('question', '')
@@ -116,11 +224,7 @@ def check_question(q, i, errors, warnings):
         if q.get(field):
             scan_html(str(q[field]), f'{label}.{field}', errors)
 
-    # Nhãn phân tích (không chặn — nhưng thiếu thì mất số liệu "chủ đề yếu")
-    if not str(q.get('topic', '')).strip():
-        warnings.append(f'{label}: thiếu "topic" (tên chủ đề con) — cần cho phân tích chủ đề.')
-    if q.get('form') not in ('ly_thuyet', 'bai_tap'):
-        warnings.append(f'{label}: "form" nên là "ly_thuyet" hoặc "bai_tap".')
+    check_tags(q, label, ctx, errors, warnings)
 
     if t == 'multiple_choice':
         opts = q.get('options')
@@ -162,6 +266,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('draft')
     ap.add_argument('-o', '--out', default='bundle.json')
+    ap.add_argument('--grade', help='khối của đề (9|10|11|12) — để tải & soát danh mục chủ đề')
+    ap.add_argument('--topics', help='file JSON danh mục chủ đề tải sẵn (thay cho gọi REST)')
+    ap.add_argument('--new-topic', action='append', default=[], metavar='TÊN',
+                    help='khai báo một chủ đề CHƯA có trong danh mục (lặp lại được)')
+    ap.add_argument('--allow-untagged', action='store_true',
+                    help='hạ lỗi nhãn xuống cảnh báo — đề sẽ không vào phân tích chủ đề')
     a = ap.parse_args()
 
     try:
@@ -190,14 +300,47 @@ def main():
         # Gói chỉ có đề vẫn hợp lệ: lúc đăng, mục Lý thuyết của bài được giữ nguyên.
         warnings.append('Gói không có theory_html — mục Lý thuyết của bài sẽ giữ nguyên.')
 
+    # Danh mục chủ đề của khối: --topics (file) > --grade (REST) > không soát tên
+    names, catalog_note = None, None
+    if a.topics:
+        names = topic_names_from_file(a.topics, a.grade)
+        if not names:
+            die(f'{a.topics} không có tên chủ đề nào.')
+    elif a.grade:
+        names, err = fetch_topic_names(a.grade)
+        if names is None:
+            die(f'không tải được danh mục chủ đề khối {a.grade} ({err}). '
+                f'Dùng --topics <file.json>, hoặc --allow-untagged nếu đành chịu.')
+        if not names:
+            catalog_note = (f'danh mục chủ đề khối {a.grade} đang TRỐNG — thêm ở '
+                            f'Quản trị → Chủ đề câu hỏi trước khi soát được tên.')
+            names = None
+    else:
+        catalog_note = ('chưa soát tên chủ đề (thiếu --grade hoặc --topics) — tên lệch một chữ '
+                        'là câu đó rơi khỏi phân tích chủ đề mà không báo lỗi.')
+    if catalog_note:
+        warnings.append(catalog_note)
+
+    ctx = {
+        'catalog': {topic_key(n): clean_topic(n) for n in names} if names else None,
+        'new_keys': {topic_key(n) for n in a.new_topic},
+        'new_used': {},
+        'grade': a.grade or '?',
+        'allow_untagged': a.allow_untagged,
+    }
+
     norm_q = []
     for i, q in enumerate(questions):
         q = dict(q)
         q['question'] = as_p(q.get('question', ''))
         if q.get('explanation'):
             q['explanation'] = as_p(q['explanation'])
-        check_question(q, i, errors, warnings)
+        check_question(q, i, errors, warnings, ctx)
         norm_q.append(q)
+
+    unused_new = [n for n in a.new_topic if topic_key(n) not in ctx['new_used']]
+    for n in unused_new:
+        warnings.append(f'--new-topic "{n}" khai báo nhưng không câu nào dùng — bỏ cờ này đi.')
 
     imgs = d.get('raster_images', []) or []
     declared = set()
@@ -233,6 +376,9 @@ def main():
             'duration_minutes': int(meta.get('duration_minutes', 20) or 20),
             'subject_code': meta.get('subject_code', 'vat-ly') or 'vat-ly',
             'questions': norm_q,
+            # Chủ đề chưa có trong danh mục — trang /quan-tri/nhap-bai sẽ tạo chúng
+            # cho đúng Chương → Bài đang chọn khi đăng.
+            'new_topics': sorted(ctx['new_used'].values()),
         },
         'raster_images': imgs,
     }
@@ -253,8 +399,16 @@ def main():
         sys.exit(1)
 
     json.dump(bundle, open(a.out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print(f'\n✓ {a.out} — {len(norm_q)} câu ({summary}), {len(imgs)} ảnh. '
-          f'Không có lỗi. Mở /quan-tri/nhap-bai và dán file này.')
+    tagged = sum(1 for q in norm_q
+                 if clean_topic(q.get('topic', '')) and q.get('form') in ('ly_thuyet', 'bai_tap'))
+    used = sorted({clean_topic(q.get('topic', '')) for q in norm_q if clean_topic(q.get('topic', ''))})
+    new_used = sorted(ctx['new_used'].values())
+    print(f'\n✓ {a.out} — {len(norm_q)} câu ({summary}), {len(imgs)} ảnh. Không có lỗi.')
+    print(f'  Nhãn: {tagged}/{len(norm_q)} câu · {len(used)} chủ đề'
+          + (f' ({len(new_used)} mới: {", ".join(new_used)})' if new_used else ''))
+    if new_used:
+        print('  Ở mục 3 trang nhập bài, để nguyên ô "Tạo chủ đề mới cho bài này".')
+    print('  Mở /quan-tri/nhap-bai và dán file này.')
 
 
 if __name__ == '__main__':

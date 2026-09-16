@@ -115,18 +115,18 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
 - **Lời giải:** đoạn "Lời giải"/"Giải"/"Hướng dẫn" ngay sau câu → `explanation`. **Câu nào
   thiếu lời giải thì tự viết ngắn gọn** (1–3 câu, đủ để học sinh hiểu vì sao). Với trả lời
   ngắn: **tự giải ra số hai lần** để chắc đáp án.
-- **`topic` + `form` cho từng câu** (cho tính năng phân tích chủ đề & cảnh báo phụ đạo):
+- **`topic` + `form` cho từng câu — bắt buộc** (phân tích chủ đề & cảnh báo phụ đạo sống nhờ
+  hai trường này; `build_bundle.py` chặn nếu thiếu):
   - `form`: `"ly_thuyet"` nếu câu hỏi lý thuyết / nhận biết / khái niệm; `"bai_tap"` nếu phải
     tính toán / vận dụng công thức. (Gần đúng: Phần I nhiều câu lý thuyết, Phần III toàn bài tập.)
-  - `topic`: **tên chủ đề con** ngắn gọn (vd `"Nội năng"`, `"Thang nhiệt độ"`, `"Sai số phép đo"`).
-    Đọc danh mục chuẩn của lớp trước rồi **dùng lại đúng tên** (tránh tạo trùng khác hoa/thường):
-    ```bash
-    source <(grep -E '^NEXT_PUBLIC_SUPABASE' .env.local | sed 's/^/export /')
-    curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/question_topics?select=name,grade&grade=eq.12" \
-      -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" -H "Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY"
-    ```
-    Chủ đề mới (chưa có trong danh mục) vẫn cứ đặt tên hợp lý — admin sẽ gắn nó vào bài học sau
-    ở trang **Quản trị → Chủ đề câu hỏi** để nút "Ôn lại" nhảy đúng chỗ.
+  - `topic`: **đúng tên chủ đề trong danh mục `question_topics` của khối** — không gọi tắt.
+    `ExamRunner` tra `topic_id` theo đúng tên, mà `tutoring_needs.topic_id` là NOT NULL: lệch một
+    chữ (`"Nội năng"` thay vì `"Nội năng. Định luật 1 của nhiệt động lực học"`) là câu đó rơi khỏi
+    mọi thống kê chủ đề mà **không báo lỗi ở đâu cả**. Không cần tra tay: chạy
+    `build_bundle.py --grade <9|10|11|12>`, script tự tải danh mục rồi báo lỗi kèm tên gần nhất.
+  - Chủ đề **thật sự mới** (danh mục chưa có): khai báo `--new-topic "Tên chủ đề"`. Trang nhập bài
+    sẽ tạo chủ đề đó gắn sẵn vào đúng Chương → Bài đang chọn, nên nút "Ôn lại" của học sinh nhảy
+    đúng chỗ ngay. Chỉ đặt tên mới khi chắc danh mục không có — đừng tạo bản gọi tắt của tên đã có.
 - `question`, `options`, `explanation`: giữ `$...$`. Đồ thị "như hình bên/hình vẽ" → vẽ
   `<svg>` chèn vào `question`.
 - `meta.title`: ưu tiên tiêu đề trong file; nếu chỉ là "Mã đề 0001" thì đặt theo chủ đề, vd
@@ -139,12 +139,17 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
 ### 3. Dựng gói + tự kiểm
 
 ```bash
-python3 .claude/skills/up-de-kiem-tra/scripts/build_bundle.py draft.json -o bundle.json
+python3 .claude/skills/up-de-kiem-tra/scripts/build_bundle.py draft.json --grade 12 -o bundle.json
 ```
 
 Script chạy đúng bộ kiểm tra của trang admin (4 phương án, `answer` 0–3, 4 ý đúng–sai, đáp số
-≤ 4 ký tự, `$` chẵn, không sót `\textbf{`/`\includegraphics{`, placeholder ảnh đã khai báo).
-Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duyệt khi còn lỗi.
+≤ 4 ký tự, `$` chẵn, không sót `\textbf{`/`\includegraphics{`, placeholder ảnh đã khai báo),
+**cộng thêm soát nhãn**: thiếu `topic`/`form`, hoặc `topic` không có trong danh mục khối →
+lỗi, kèm gợi ý tên gần nhất. Tên viết hoa/khoảng trắng lệch thì script tự chuẩn hoá theo danh
+mục. Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duyệt khi còn lỗi.
+
+Dòng cuối in `Nhãn: n/n câu · k chủ đề` — n/n mới được đi tiếp. `--grade` cần mạng (REST
+anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với danh mục tải sẵn.
 
 ### 4. Đăng qua trang admin
 
@@ -161,7 +166,13 @@ Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duy
    ```
 3. Mục 2: dán `bundle.json` → **Nạp gói**.
 4. Mục 3: xem preview — từng câu tô đáp án đúng + lời giải — và **bảng validate**. `errors` đỏ
-   chặn Đăng; sửa gói, dán lại.
+   chặn Đăng; sửa gói, dán lại. Đọc luôn khung **"Nhãn chủ đề"**:
+   - phải là **"đã gắn n/n câu"**, các chip chủ đề đều xanh (có trong danh mục khối);
+   - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn)
+     để trang tự tạo chủ đề gắn vào đúng bài này khi đăng;
+   - nút Đăng bị chặn khi nhãn chưa đủ. Ô **"Đăng dù nhãn chưa đủ"** chỉ tick khi người dùng
+     đồng ý bỏ số liệu phân tích cho những câu đó — nhãn được chốt lúc học sinh nộp bài, gắn
+     sau **không** cứu được các lượt đã nộp.
 5. Mục 4:
    - Tick **"Gắn vào Kiểm tra"** (mặc định cho skill này). Thêm **"Luyện tập"** nếu người dùng
      muốn học sinh luyện không tính điểm.

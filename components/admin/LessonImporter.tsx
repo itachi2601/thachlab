@@ -7,10 +7,20 @@ import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import QuestionCard from "@/components/exams/QuestionCard";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import { useToast } from "@/components/ui/Toast";
-import { emptyResponses } from "@/features/exams/types";
-import type { SchoolClass } from "@/features/exams/types";
+import {
+  auditQuestionTags,
+  canonicalizeQuestionTopics,
+  emptyResponses,
+  tagsComplete,
+} from "@/features/exams/types";
+import type { SchoolClass, TagAudit } from "@/features/exams/types";
 import type { Chapter, Lesson, LessonItem } from "@/features/lessons/types";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
+import {
+  createQuestionTopic,
+  fetchQuestionTopics,
+  type QuestionTopic,
+} from "@/services/analytics";
 import {
   classGrade,
   displayClassesByGrade,
@@ -74,6 +84,7 @@ export default function LessonImporter() {
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonId, setLessonId] = useState<number | null>(null);
   const [itemsCache, setItemsCache] = useState<{ lessonId: number; list: LessonItem[] } | null>(null);
+  const [topics, setTopics] = useState<QuestionTopic[]>([]);
 
   const [source, setSource] = useState<"docx" | "json">("docx");
   const [raw, setRaw] = useState("");
@@ -89,6 +100,8 @@ export default function LessonImporter() {
   const [theoryMode, setTheoryMode] = useState<SectionMode>("overwrite");
   const [workedMode, setWorkedMode] = useState<SectionMode>("overwrite");
   const [examMode, setExamMode] = useState<ExamMode>("replace");
+  const [createMissingTopics, setCreateMissingTopics] = useState(true);
+  const [tagOverride, setTagOverride] = useState(false);
 
   const [busy, setBusy] = useState(false);
   const [log, setLog] = useState<string[]>([]);
@@ -104,6 +117,15 @@ export default function LessonImporter() {
   }, []);
 
   const selectedClass = classes.find((c) => c.id === classId) ?? null;
+  const grade = selectedClass ? classGrade(selectedClass.name) : null;
+  // Danh mục chủ đề của khối — để soát nhãn của đề trước khi đăng.
+  const loadTopics = useCallback(() => {
+    if (!grade) return;
+    fetchQuestionTopics(grade)
+      .then(setTopics)
+      .catch(() => setTopics([]));
+  }, [grade]);
+  useEffect(loadTopics, [loadTopics]);
   const displayClasses = displayClassesByGrade(classes);
   const visibleClassIds = useMemo(
     () => (classId === null ? [] : expandClassIdsByGrade([classId], classes) ?? []),
@@ -141,8 +163,32 @@ export default function LessonImporter() {
   }, [selectedChapter, classId, classes]);
 
   const check = bundle ? validateBundle(bundle) : null;
+  // Lọc lại theo khối: danh sách trong state có thể là của lớp chọn trước đó.
+  const catalogNames = useMemo(
+    () => (grade ? topics.filter((t) => t.grade === grade).map((t) => t.name) : []),
+    [topics, grade],
+  );
+  const audit: TagAudit | null = useMemo(
+    () => (bundle ? auditQuestionTags(bundle.exam?.questions ?? [], catalogNames) : null),
+    [bundle, catalogNames],
+  );
+  // Đủ nhãn = mọi câu có chủ đề + loại, và mọi chủ đề đã có trong danh mục (hoặc sẽ được tạo).
+  const tagsReady =
+    !!audit &&
+    (tagsComplete(audit) ||
+      (audit.missingTopic.length === 0 &&
+        audit.missingForm.length === 0 &&
+        createMissingTopics &&
+        catalogNames.length > 0 &&
+        lessonId !== null &&
+        !!grade));
   const canPublish =
-    !!bundle && !!check?.ok && lessonId !== null && (targets.luyen_tap || targets.kiem_tra) && !busy;
+    !!bundle &&
+    !!check?.ok &&
+    lessonId !== null &&
+    (targets.luyen_tap || targets.kiem_tra) &&
+    (tagsReady || tagOverride) &&
+    !busy;
 
   function existing(kind: LessonItem["kind"]) {
     return existingItems?.find((it) => it.kind === kind) ?? null;
@@ -210,6 +256,36 @@ export default function LessonImporter() {
         resolved = applyMediaToBundle(bundle, media);
         push(`  ✓ đã tải ${media.length} ảnh lên lesson-media`);
       }
+
+      // 1b. Nhãn chủ đề: tạo chủ đề mới cho bài này, rồi chuẩn hoá chính tả tên
+      // theo danh mục để ExamRunner tra được topic_id lúc học sinh nộp bài.
+      const aud = auditQuestionTags(resolved.exam?.questions ?? [], catalogNames);
+      if (aud.unknown.length && createMissingTopics && grade && catalogNames.length > 0) {
+        push(`Tạo ${aud.unknown.length} chủ đề mới cho bài này…`);
+        for (const t of aud.unknown) {
+          try {
+            await createQuestionTopic({
+              grade,
+              name: t.name,
+              subjectCode,
+              chapterId,
+              lessonId,
+            });
+            push(`  ✓ chủ đề "${t.name}"`);
+          } catch (e) {
+            const msg = e instanceof Error ? e.message : String(e);
+            push(`  ! chưa tạo được chủ đề "${t.name}" (${msg}) — thêm tay ở Quản trị → Chủ đề câu hỏi.`);
+          }
+        }
+        loadTopics();
+      }
+      resolved = {
+        ...resolved,
+        exam: {
+          ...resolved.exam,
+          questions: canonicalizeQuestionTopics(resolved.exam?.questions ?? [], catalogNames),
+        },
+      };
 
       const rows = bundleToRows(resolved, lessonId);
 
@@ -542,6 +618,93 @@ export default function LessonImporter() {
             <p className="text-xs text-emerald-300">✓ Gói hợp lệ, sẵn sàng đăng.</p>
           )}
 
+          {audit && (
+            <div
+              className={`rounded-xl border p-4 text-xs ${
+                tagsReady ? "border-emerald-500/30 bg-emerald-500/5" : "border-amber-500/40 bg-amber-500/5"
+              }`}
+            >
+              <p className="text-sm font-semibold text-slate-200">
+                Nhãn chủ đề · đã gắn {audit.tagged}/{audit.total} câu
+              </p>
+              <p className="mt-0.5 text-[11px] text-slate-500">
+                Dùng cho Phân tích chủ đề &amp; cảnh báo phụ đạo. Nhãn được chốt lúc học sinh nộp
+                bài — gắn sau sẽ không cứu được các lượt đã nộp.
+              </p>
+
+              {!grade ? (
+                <p className="mt-2 text-amber-200">Chọn lớp ở mục 1 để soát nhãn theo danh mục khối.</p>
+              ) : catalogNames.length === 0 ? (
+                <p className="mt-2 text-amber-200">
+                  Danh mục chủ đề khối {grade} đang trống — thêm ở Quản trị → Chủ đề câu hỏi.
+                </p>
+              ) : null}
+
+              {audit.missingTopic.length > 0 && (
+                <p className="mt-2 text-amber-200">✕ Thiếu chủ đề ở câu: {audit.missingTopic.join(", ")}.</p>
+              )}
+              {audit.missingForm.length > 0 && (
+                <p className="mt-1 text-amber-200">
+                  ✕ Thiếu loại (lý thuyết / bài tập) ở câu: {audit.missingForm.join(", ")}.
+                </p>
+              )}
+
+              {(audit.known.length > 0 || audit.unknown.length > 0) && (
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {audit.known.map((t) => (
+                    <span
+                      key={t.name}
+                      className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-emerald-200"
+                    >
+                      {t.name} · {t.count} câu
+                    </span>
+                  ))}
+                  {audit.unknown.map((t) => (
+                    <span
+                      key={t.name}
+                      className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-amber-200"
+                    >
+                      {t.name} · {t.count} câu · chưa có trong danh mục
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {audit.unknown.length > 0 && (
+                <label className="mt-3 flex items-start gap-2 text-slate-300">
+                  <input
+                    type="checkbox"
+                    checked={createMissingTopics}
+                    onChange={(e) => setCreateMissingTopics(e.target.checked)}
+                    disabled={lessonId === null || !grade || catalogNames.length === 0}
+                    className="mt-0.5 accent-emerald-500"
+                  />
+                  <span>
+                    Tạo {audit.unknown.length} chủ đề mới cho{" "}
+                    <b className="text-slate-100">{selectedLessonTitle() || "bài đang chọn"}</b> khi đăng
+                    {lessonId === null && <span className="text-amber-300"> — chọn bài học ở mục 1 trước</span>}
+                    <span className="block text-[11px] text-slate-500">
+                      Chủ đề mới gắn sẵn vào đúng Chương → Bài này, nên nút “Ôn lại” của học sinh nhảy
+                      đúng chỗ ngay.
+                    </span>
+                  </span>
+                </label>
+              )}
+
+              {!tagsReady && (
+                <label className="mt-2 flex items-center gap-2 text-slate-400">
+                  <input
+                    type="checkbox"
+                    checked={tagOverride}
+                    onChange={(e) => setTagOverride(e.target.checked)}
+                    className="accent-amber-500"
+                  />
+                  Đăng dù nhãn chưa đủ (câu thiếu nhãn sẽ không vào phân tích)
+                </label>
+              )}
+            </div>
+          )}
+
           <div className="rounded-xl border border-white/10 bg-black/20 p-4">
             <p className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Lý thuyết</p>
             <ContentHtml html={bundle.theory_html ?? ""} className="block text-sm text-slate-300" />
@@ -661,7 +824,9 @@ export default function LessonImporter() {
                 ? "Chọn bài học ở mục 1."
                 : !targets.luyen_tap && !targets.kiem_tra
                   ? "Chọn ít nhất một mục để gắn đề."
-                  : ""}
+                  : !tagsReady && !tagOverride
+                    ? "Nhãn chủ đề ở mục 3 chưa đủ — sửa nhãn trong gói, hoặc tick ô cho phép đăng."
+                    : ""}
           </p>
         )}
         {log.length > 0 && (

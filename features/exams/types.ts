@@ -204,3 +204,91 @@ export function isAnswered(q: ExamQuestion, r: QuestionResponse): boolean {
     return Array.isArray(r) && r.some((v) => v !== null);
   return typeof r === "string" && r.trim() !== "";
 }
+
+// ---------- Nhãn chủ đề: so khớp với danh mục public.question_topics ----------
+// Nhãn chỉ có giá trị khi `topic` khớp ĐÚNG tên trong danh mục: buildQuestionResults
+// tra theo tên để lấy topic_id, mà tutoring_needs.topic_id là NOT NULL — lệch một chữ
+// là câu đó rơi khỏi mọi thống kê chủ đề, không báo lỗi ở đâu cả.
+
+/** Khoá so khớp tên chủ đề: gom khoảng trắng, không phân biệt hoa/thường. */
+export function topicKey(name: string): string {
+  return name.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function cleanTopic(name: string): string {
+  return name.trim().replace(/\s+/g, " ");
+}
+
+export interface TagAudit {
+  total: number;
+  tagged: number; // số câu có cả topic + form
+  missingTopic: number[]; // số câu (đếm từ 1) thiếu chủ đề
+  missingForm: number[]; // số câu thiếu/sai loại
+  known: { name: string; count: number }[]; // chủ đề có trong danh mục
+  unknown: { name: string; count: number }[]; // chủ đề chưa có trong danh mục
+}
+
+/** Soát nhãn của cả đề trước khi đăng. `catalog` là tên chủ đề của khối tương ứng. */
+export function auditQuestionTags(
+  questions: ExamQuestion[],
+  catalog: string[],
+): TagAudit {
+  const canon = new Map(catalog.map((n) => [topicKey(n), cleanTopic(n)]));
+  const counts = new Map<string, { name: string; count: number; known: boolean }>();
+  const audit: TagAudit = {
+    total: questions.length,
+    tagged: 0,
+    missingTopic: [],
+    missingForm: [],
+    known: [],
+    unknown: [],
+  };
+  questions.forEach((q, i) => {
+    const name = cleanTopic(q.topic ?? "");
+    const form = q.form ?? "";
+    const formOk = form === "ly_thuyet" || form === "bai_tap";
+    if (!name) audit.missingTopic.push(i + 1);
+    if (!formOk) audit.missingForm.push(i + 1);
+    if (name && formOk) audit.tagged += 1;
+    if (!name) return;
+    const key = topicKey(name);
+    const cur = counts.get(key) ?? {
+      name: canon.get(key) ?? name,
+      count: 0,
+      known: canon.has(key),
+    };
+    cur.count += 1;
+    counts.set(key, cur);
+  });
+  for (const v of counts.values())
+    (v.known ? audit.known : audit.unknown).push({ name: v.name, count: v.count });
+  const byCount = (a: { name: string; count: number }, b: { name: string; count: number }) =>
+    b.count - a.count || a.name.localeCompare(b.name, "vi");
+  audit.known.sort(byCount);
+  audit.unknown.sort(byCount);
+  return audit;
+}
+
+/** Đề đã gắn đủ nhãn và mọi chủ đề đều có trong danh mục? */
+export function tagsComplete(audit: TagAudit): boolean {
+  return (
+    audit.total > 0 &&
+    audit.missingTopic.length === 0 &&
+    audit.missingForm.length === 0 &&
+    audit.unknown.length === 0
+  );
+}
+
+/** Ghi lại tên chủ đề theo đúng chính tả trong danh mục (khớp bỏ qua hoa/thường). */
+export function canonicalizeQuestionTopics(
+  questions: ExamQuestion[],
+  catalog: string[],
+): ExamQuestion[] {
+  const canon = new Map(catalog.map((n) => [topicKey(n), cleanTopic(n)]));
+  return questions.map((q) => {
+    const raw = cleanTopic(q.topic ?? "");
+    if (!raw) return q;
+    const name = canon.get(topicKey(raw)) ?? raw;
+    return name === q.topic ? q : ({ ...q, topic: name } as ExamQuestion);
+  });
+}

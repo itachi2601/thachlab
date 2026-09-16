@@ -28,6 +28,8 @@ export interface LessonBundle {
     duration_minutes?: number;
     subject_code?: string;
     questions: ExamQuestion[];
+    /** Chủ đề chưa có trong danh mục, do build_bundle.py khai báo bằng --new-topic. */
+    new_topics?: string[];
   };
   raster_images?: RasterImageInput[];
 }
