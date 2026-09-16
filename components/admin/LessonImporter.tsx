@@ -164,13 +164,22 @@ export default function LessonImporter() {
 
   const check = bundle ? validateBundle(bundle) : null;
   // Lọc lại theo khối: danh sách trong state có thể là của lớp chọn trước đó.
-  const catalogNames = useMemo(
-    () => (grade ? topics.filter((t) => t.grade === grade).map((t) => t.name) : []),
+  const gradeTopics = useMemo(
+    () => (grade ? topics.filter((t) => t.grade === grade) : []),
     [topics, grade],
   );
+  const catalogNames = useMemo(() => gradeTopics.map((t) => t.name), [gradeTopics]);
+  // Chủ đề tầng bài đã tách yêu cầu cần đạt: gắn nhãn ở mức cả bài là còn thô.
+  const coarseNames = useMemo(() => {
+    const hasChild = new Set(
+      gradeTopics.map((t) => t.parentId).filter((id): id is number => id !== null),
+    );
+    return gradeTopics.filter((t) => t.parentId === null && hasChild.has(t.id)).map((t) => t.name);
+  }, [gradeTopics]);
   const audit: TagAudit | null = useMemo(
-    () => (bundle ? auditQuestionTags(bundle.exam?.questions ?? [], catalogNames) : null),
-    [bundle, catalogNames],
+    () =>
+      bundle ? auditQuestionTags(bundle.exam?.questions ?? [], catalogNames, coarseNames) : null,
+    [bundle, catalogNames, coarseNames],
   );
   // Đủ nhãn = mọi câu có chủ đề + loại, và mọi chủ đề đã có trong danh mục (hoặc sẽ được tạo).
   const tagsReady =
@@ -259,9 +268,15 @@ export default function LessonImporter() {
 
       // 1b. Nhãn chủ đề: tạo chủ đề mới cho bài này, rồi chuẩn hoá chính tả tên
       // theo danh mục để ExamRunner tra được topic_id lúc học sinh nộp bài.
-      const aud = auditQuestionTags(resolved.exam?.questions ?? [], catalogNames);
+      const aud = auditQuestionTags(resolved.exam?.questions ?? [], catalogNames, coarseNames);
       if (aud.unknown.length && createMissingTopics && grade && catalogNames.length > 0) {
-        push(`Tạo ${aud.unknown.length} chủ đề mới cho bài này…`);
+        // Bài này đã có chủ đề tầng bài thì chủ đề mới là yêu cầu cần đạt con của nó.
+        const parent = gradeTopics.find((t) => t.parentId === null && t.lessonId === lessonId);
+        push(
+          parent
+            ? `Tạo ${aud.unknown.length} yêu cầu cần đạt trong "${parent.name}"…`
+            : `Tạo ${aud.unknown.length} chủ đề mới cho bài này…`,
+        );
         for (const t of aud.unknown) {
           try {
             await createQuestionTopic({
@@ -270,6 +285,7 @@ export default function LessonImporter() {
               subjectCode,
               chapterId,
               lessonId,
+              parentId: parent?.id ?? null,
             });
             push(`  ✓ chủ đề "${t.name}"`);
           } catch (e) {
@@ -668,6 +684,15 @@ export default function LessonImporter() {
                     </span>
                   ))}
                 </div>
+              )}
+
+              {audit.coarse.length > 0 && (
+                <p className="mt-2 text-amber-200">
+                  ⚠ Còn gắn ở mức cả bài:{" "}
+                  {audit.coarse.map((t) => `${t.name} (${t.count} câu)`).join(", ")} — các bài này đã
+                  tách yêu cầu cần đạt, gắn vào đúng yêu cầu thì mới biết em hổng phần nào. Sửa ở
+                  Quản trị → Chủ đề câu hỏi sau khi đăng cũng được, nhưng nhãn chốt lúc nộp bài.
+                </p>
               )}
 
               {audit.unknown.length > 0 && (
