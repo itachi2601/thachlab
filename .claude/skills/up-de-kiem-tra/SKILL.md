@@ -74,7 +74,7 @@ Công thức MathType trong file Word là **OLE** (`word/embeddings/oleObject*.b
 python-docx **không đọc được**, chỉ thấy ảnh WMF. Phải nhìn công thức đã render.
 
 **Cách chính — thầy xuất PDF từ Word rồi thả file PDF.** Không cần LibreOffice, không đổi định
-dạng gì. Đọc thẳng `de.pdf` bằng Read (theo trang), hoặc tách ảnh cho nét:
+dạng gì. Tách trang thành ảnh cho nét:
 
 ```bash
 pdftoppm -png -r 130 "duong/dan/de.pdf" out/page       # -> out/page-1.png, …
@@ -89,7 +89,19 @@ pdftoppm -png -r 130 out/*.pdf out/page
 ```
 Chạy nền (`run_in_background: true`); đề nhiều đối tượng nhúng có thể mất vài phút.
 
-Đọc hết các trang: đề bài, công thức, phương án, **dấu `*` ở đáp án đúng**, dòng "Lời giải".
+**Đọc ảnh trang trong subagent, không đọc thẳng ở phiên chính.** Một trang PNG ≈ 1,5k token
+và nằm lại context đến hết phiên; đề 13 trang nhân với vài trăm request là hàng chục triệu
+token. Spawn một agent `general-purpose` (`run_in_background: false` — bước sau cần kết
+quả ngay), giao đúng việc chép đề:
+
+> Đọc `out/page-*.png` (đề Vật lí THPT đã render). Chép lại **nguyên văn, đủ tất cả các
+> trang**: số câu, đề bài, phương án A–D kèm **dấu `*` đánh dấu đáp án đúng**, phần
+> "Lời giải" nếu có, mô tả hình vẽ/đồ thị. Công thức gõ sang `$...$` (LaTeX). Không tóm
+> tắt, không bỏ câu nào. Trả về text thuần theo thứ tự câu.
+
+Ảnh chết theo subagent; phiên chính chỉ nhận text. Nếu đề ngắn (≤ 3 trang) thì đọc thẳng
+cũng được. Cùng lý do: đừng `Read` lại `de.pdf` sau khi đã có text.
+
 Gõ lại công thức sang `$...$` theo `references/docx-de-format.md` §"Công thức".
 
 Đối chiếu số câu (từ text thô nếu có `.docx`):
