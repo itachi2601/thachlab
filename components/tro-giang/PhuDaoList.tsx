@@ -6,6 +6,7 @@ import { Check, HandHeart, PenLine } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
+import { fetchOutcomeGaps, outcomeGapsByNeed, type OutcomeGap } from "@/services/analytics";
 import {
   ACTIVE_NEED_STATUSES,
   NEED_STATUS_LABEL,
@@ -46,6 +47,7 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
   const [students, setStudents] = useState<ClassStudent[]>([]);
   const [needs, setNeeds] = useState<TutoringNeed[] | null>(null);
   const [coverage, setCoverage] = useState<TutoringCoverage[]>([]);
+  const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [showDone, setShowDone] = useState(false);
 
   useEffect(() => {
@@ -76,6 +78,7 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
       .then(setNeeds)
       .catch(() => setNeeds([]));
     fetchCoverageForStudents(studentIds).then(setCoverage).catch(() => setCoverage([]));
+    fetchOutcomeGaps(studentIds).then(setOutcomes).catch(() => setOutcomes([]));
   }, [studentIds, showDone, demo]);
   useEffect(load, [load]);
 
@@ -87,6 +90,9 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
     }
     return map;
   }, [coverage]);
+
+  // Em còn sai đúng yêu cầu cần đạt nào trong phần đó — để buổi phụ đạo dạy trúng chỗ.
+  const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomes), [outcomes]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, TutoringNeed[]>();
@@ -168,8 +174,11 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
               <div className="mt-2 space-y-2">
                 {student.list.map((need) => {
                   const taught = taughtByKey.get(`${need.studentId}|${need.topicId}`);
+                  const detail =
+                    outcomesByNeed.get(`${need.studentId}|${need.topicId}|${need.form}`) ?? [];
                   return (
-                    <div key={need.id} className="flex flex-wrap items-center gap-2">
+                    <div key={need.id}>
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${TONE[need.status]}`}>
                         {needLabel(need)}
                       </span>
@@ -191,6 +200,16 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
                         >
                           <HandHeart size={12} /> Tôi nhận
                         </button>
+                      )}
+                    </div>
+                      {detail.length > 0 && (
+                        <p className="mt-1 pl-1 text-xs text-slate-400">
+                          Dạy trúng chỗ này:{" "}
+                          {detail
+                            .slice(0, 4)
+                            .map((o) => `${o.topicName} (sai ${o.wrong}/${o.total})`)
+                            .join(" · ")}
+                        </p>
                       )}
                     </div>
                   );

@@ -131,7 +131,11 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
   hai trường này; `build_bundle.py` chặn nếu thiếu):
   - `form`: `"ly_thuyet"` nếu câu hỏi lý thuyết / nhận biết / khái niệm; `"bai_tap"` nếu phải
     tính toán / vận dụng công thức. (Gần đúng: Phần I nhiều câu lý thuyết, Phần III toàn bài tập.)
-  - `topic`: **đúng tên chủ đề trong danh mục `question_topics` của khối** — không gọi tắt.
+  - `topic`: **đúng tên trong danh mục `question_topics` của khối** — không gọi tắt. Danh mục
+    hai tầng: **bài học → yêu cầu cần đạt**; gắn vào *yêu cầu cần đạt* (vd "Viết phương trình
+    dao động điều hoà") chứ đừng dừng ở tên bài ("Dao động điều hoà") — mục phụ đạo vẫn gom
+    lên tầng bài, còn nhãn mịn mới cho thầy biết em hổng phần nào. Gắn ở mức cả bài là cảnh
+    báo, không chặn.
     `ExamRunner` tra `topic_id` theo đúng tên, mà `tutoring_needs.topic_id` là NOT NULL: lệch một
     chữ (`"Nội năng"` thay vì `"Nội năng. Định luật 1 của nhiệt động lực học"`) là câu đó rơi khỏi
     mọi thống kê chủ đề mà **không báo lỗi ở đâu cả**. Không cần tra tay: chạy
@@ -160,7 +164,8 @@ Script chạy đúng bộ kiểm tra của trang admin (4 phương án, `answer`
 lỗi, kèm gợi ý tên gần nhất. Tên viết hoa/khoảng trắng lệch thì script tự chuẩn hoá theo danh
 mục. Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duyệt khi còn lỗi.
 
-Dòng cuối in `Nhãn: n/n câu · k chủ đề` — n/n mới được đi tiếp. `--grade` cần mạng (REST
+Dòng cuối in `Nhãn: n/n câu · k chủ đề` (kèm `· m câu còn ở mức cả bài` nếu có) — n/n mới
+được đi tiếp; có `m` thì xem lại, chọn đúng yêu cầu cần đạt script gợi ý. `--grade` cần mạng (REST
 anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với danh mục tải sẵn.
 
 ### 4. Đăng qua trang admin
@@ -180,8 +185,9 @@ anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với d
 4. Mục 3: xem preview — từng câu tô đáp án đúng + lời giải — và **bảng validate**. `errors` đỏ
    chặn Đăng; sửa gói, dán lại. Đọc luôn khung **"Nhãn chủ đề"**:
    - phải là **"đã gắn n/n câu"**, các chip chủ đề đều xanh (có trong danh mục khối);
-   - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn)
-     để trang tự tạo chủ đề gắn vào đúng bài này khi đăng;
+   - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn):
+     trang tạo chúng thành **yêu cầu cần đạt con** của chủ đề bài đang chọn;
+   - dòng vàng "⚠ Còn gắn ở mức cả bài" → nhãn còn thô, sửa `draft.json` cho mịn nếu kịp;
    - nút Đăng bị chặn khi nhãn chưa đủ. Ô **"Đăng dù nhãn chưa đủ"** chỉ tick khi người dùng
      đồng ý bỏ số liệu phân tích cho những câu đó — nhãn được chốt lúc học sinh nộp bài, gắn
      sau **không** cứu được các lượt đã nộp.

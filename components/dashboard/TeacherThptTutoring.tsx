@@ -5,6 +5,7 @@ import { BookOpen, Check, RefreshCw, Users } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
+import { fetchOutcomeGaps, outcomeGapsByNeed, type OutcomeGap } from "@/services/analytics";
 import {
   ACTIVE_NEED_STATUSES,
   NEED_STATUS_LABEL,
@@ -47,6 +48,7 @@ export default function TeacherThptTutoring({
   const toast = useToast();
   const [needs, setNeeds] = useState<TutoringNeed[] | null>(null);
   const [coverage, setCoverage] = useState<TutoringCoverage[]>([]);
+  const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [filter, setFilter] = useState<"active" | "all">("active");
   const [busy, setBusy] = useState(false);
 
@@ -59,8 +61,12 @@ export default function TeacherThptTutoring({
       .then(setNeeds)
       .catch(() => setNeeds([]));
     fetchCoverageForStudents(studentIds).then(setCoverage).catch(() => setCoverage([]));
+    fetchOutcomeGaps(studentIds).then(setOutcomes).catch(() => setOutcomes([]));
   }, [studentIds, filter]);
   useEffect(load, [load]);
+
+  // Em còn sai đúng yêu cầu cần đạt nào trong phần đó — để buổi phụ đạo dạy trúng chỗ.
+  const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomes), [outcomes]);
 
   // Lịch sử đã dạy, tra theo "em + chủ đề".
   const taughtByKey = useMemo(() => {
@@ -214,11 +220,14 @@ export default function TeacherThptTutoring({
               <div className="mt-3 space-y-2">
                 {student.list.map((need) => {
                   const taught = taughtByKey.get(`${need.studentId}|${need.topicId}`);
+                  const detail =
+                    outcomesByNeed.get(`${need.studentId}|${need.topicId}|${need.form}`) ?? [];
                   return (
                     <div
                       key={need.id}
-                      className="flex flex-wrap items-center gap-2 rounded-xl border border-white/10 px-3 py-2"
+                      className="rounded-xl border border-white/10 px-3 py-2"
                     >
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className="text-sm text-white">{needLabel(need)}</span>
                       <span className="text-xs text-slate-500">
                         sai {need.wrong}/{need.total}
@@ -254,6 +263,16 @@ export default function TeacherThptTutoring({
                           </button>
                         )}
                       </span>
+                    </div>
+                      {detail.length > 0 && (
+                        <p className="mt-1.5 text-xs text-slate-400">
+                          Hổng:{" "}
+                          {detail
+                            .slice(0, 4)
+                            .map((o) => `${o.topicName} (${o.wrong}/${o.total})`)
+                            .join(" · ")}
+                        </p>
+                      )}
                     </div>
                   );
                 })}

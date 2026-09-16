@@ -16,9 +16,12 @@ import {
   fetchMyScoreHistory,
   fetchMyTopicGaps,
   fetchMyWrongQuestions,
+  fetchOutcomeGaps,
   fetchPeriodicRank,
   fetchQuestionTopics,
+  outcomeGapsByNeed,
   type ExamRank,
+  type OutcomeGap,
   type MyExamAttemptDetail,
   type PeriodicRank,
   type ScorePoint,
@@ -329,9 +332,11 @@ const NEED_NOTE: Record<NeedStatus, string> = {
 function NeedRow({
   need,
   lessonHref,
+  outcomes,
 }: {
   need: TutoringNeed;
   lessonHref: (topicName: string, form: string) => string | null;
+  outcomes: OutcomeGap[];
 }) {
   const href = lessonHref(need.topicName, need.form);
   return (
@@ -350,6 +355,15 @@ function NeedRow({
           </Link>
         )}
       </div>
+      {outcomes.length > 0 && (
+        <ul className="mt-2 space-y-0.5 text-xs text-slate-300">
+          {outcomes.map((o) => (
+            <li key={o.topicId}>
+              · {o.topicName} — sai {o.wrong}/{o.total} câu
+            </li>
+          ))}
+        </ul>
+      )}
       <p className="mt-1 text-xs text-slate-400">{NEED_NOTE[need.status]}</p>
     </div>
   );
@@ -362,6 +376,7 @@ function Dashboard() {
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [needs, setNeeds] = useState<TutoringNeed[] | null>(null);
   const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
+  const [outcomeGaps, setOutcomeGaps] = useState<OutcomeGap[]>([]);
   const [periodicRank, setPeriodicRank] = useState<PeriodicRank | null>(null);
 
   useEffect(() => {
@@ -371,6 +386,7 @@ function Dashboard() {
     fetchMyTopicGaps(uid).then(setGaps).catch(() => setGaps([]));
     fetchMyAlert(uid).then(setAlert).catch(() => setAlert(null));
     fetchMyNeeds(uid).then(setNeeds).catch(() => setNeeds([]));
+    fetchOutcomeGaps(uid).then(setOutcomeGaps).catch(() => setOutcomeGaps([]));
     fetchQuestionTopics()
       .then((topics) => setLessonByTopic(new Map(topics.map((t) => [t.name, t.lessonId]))))
       .catch(() => undefined);
@@ -394,6 +410,9 @@ function Dashboard() {
     if (!points || points.length === 0) return null;
     return Math.round((points.reduce((a, p) => a + p.score, 0) / points.length) * 10) / 10;
   }, [points]);
+
+  // Chi tiết mịn: trong mỗi phần cần phụ đạo, em còn sai đúng yêu cầu cần đạt nào.
+  const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomeGaps), [outcomeGaps]);
 
   const priorityGaps = (gaps ?? []).filter((g) => g.wrong > 0);
   const attempts = useMemo(() => (points ? [...points].reverse() : null), [points]);
@@ -468,7 +487,12 @@ function Dashboard() {
           </p>
           <div className="space-y-2">
             {needs.map((need) => (
-              <NeedRow key={need.id} need={need} lessonHref={lessonHref} />
+              <NeedRow
+                key={need.id}
+                need={need}
+                lessonHref={lessonHref}
+                outcomes={outcomesByNeed.get(`${need.studentId}|${need.topicId}|${need.form}`) ?? []}
+              />
             ))}
           </div>
         </section>

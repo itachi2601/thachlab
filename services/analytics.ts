@@ -579,14 +579,28 @@ export interface QuestionTopic {
   grade: string;
   chapterId: number | null;
   lessonId: number | null;
+  /** null = chủ đề của cả bài; có giá trị = một yêu cầu cần đạt trong bài đó. */
+  parentId: number | null;
   name: string;
   sortOrder: number;
+}
+
+/** Chủ đề con của một bài (yêu cầu cần đạt), theo thứ tự trong danh mục. */
+export function outcomesOf(topics: QuestionTopic[], parentId: number): QuestionTopic[] {
+  return topics
+    .filter((t) => t.parentId === parentId)
+    .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name, "vi"));
+}
+
+/** Chủ đề tầng bài (không có cha). */
+export function lessonTopics(topics: QuestionTopic[]): QuestionTopic[] {
+  return topics.filter((t) => t.parentId === null);
 }
 
 export async function fetchQuestionTopics(grade?: string): Promise<QuestionTopic[]> {
   let query = getSupabase()
     .from("question_topics")
-    .select("id, subject_code, grade, chapter_id, lesson_id, name, sort_order")
+    .select("id, subject_code, grade, chapter_id, lesson_id, parent_id, name, sort_order")
     .order("grade")
     .order("sort_order")
     .order("name");
@@ -598,6 +612,7 @@ export async function fetchQuestionTopics(grade?: string): Promise<QuestionTopic
     grade: string;
     chapter_id: number | null;
     lesson_id: number | null;
+    parent_id: number | null;
     name: string;
     sort_order: number;
   }[]) ?? []).map((r) => ({
@@ -606,6 +621,7 @@ export async function fetchQuestionTopics(grade?: string): Promise<QuestionTopic
     grade: r.grade,
     chapterId: r.chapter_id,
     lessonId: r.lesson_id,
+    parentId: r.parent_id,
     name: r.name,
     sortOrder: r.sort_order,
   }));
@@ -617,6 +633,9 @@ export async function createQuestionTopic(input: {
   subjectCode?: string;
   chapterId?: number | null;
   lessonId?: number | null;
+  /** Chủ đề cha (tầng bài) nếu đây là một yêu cầu cần đạt. */
+  parentId?: number | null;
+  sortOrder?: number;
 }): Promise<QuestionTopic | null> {
   const { data, error } = await getSupabase()
     .from("question_topics")
@@ -626,8 +645,10 @@ export async function createQuestionTopic(input: {
       subject_code: input.subjectCode ?? "vat-ly",
       chapter_id: input.chapterId ?? null,
       lesson_id: input.lessonId ?? null,
+      parent_id: input.parentId ?? null,
+      ...(input.sortOrder !== undefined ? { sort_order: input.sortOrder } : {}),
     })
-    .select("id, subject_code, grade, chapter_id, lesson_id, name, sort_order")
+    .select("id, subject_code, grade, chapter_id, lesson_id, parent_id, name, sort_order")
     .single();
   if (error || !data) throw error ?? new Error("Không tạo được chủ đề.");
   return {
@@ -636,6 +657,7 @@ export async function createQuestionTopic(input: {
     grade: data.grade,
     chapterId: data.chapter_id,
     lessonId: data.lesson_id,
+    parentId: data.parent_id,
     name: data.name,
     sortOrder: data.sort_order,
   };
@@ -643,15 +665,81 @@ export async function createQuestionTopic(input: {
 
 export async function updateQuestionTopic(
   id: number,
-  patch: Partial<Pick<QuestionTopic, "name" | "chapterId" | "lessonId" | "sortOrder">>,
+  patch: Partial<Pick<QuestionTopic, "name" | "chapterId" | "lessonId" | "sortOrder" | "parentId">>,
 ): Promise<void> {
   const row: Record<string, unknown> = {};
+  if (patch.parentId !== undefined) row.parent_id = patch.parentId;
   if (patch.name !== undefined) row.name = patch.name.trim();
   if (patch.chapterId !== undefined) row.chapter_id = patch.chapterId;
   if (patch.lessonId !== undefined) row.lesson_id = patch.lessonId;
   if (patch.sortOrder !== undefined) row.sort_order = patch.sortOrder;
   const { error } = await getSupabase().from("question_topics").update(row).eq("id", id);
   if (error) throw error;
+}
+
+export async function deleteQuestionTopic(id: number): Promise<void> {
+  const { error } = await getSupabase().from("question_topics").delete().eq("id", id);
+  if (error) throw error;
+}
+
+// ============================================================
+// Chi tiết: em hổng đúng yêu cầu cần đạt nào
+// ============================================================
+// Mục phụ đạo mở ở tầng bài (đủ câu mới dám kết luận), còn đây là phần mịn:
+// trong 2 bài gần nhất, những yêu cầu cần đạt em còn làm sai.
+export interface OutcomeGap {
+  studentId: string;
+  parentTopicId: number;
+  topicId: number;
+  topicName: string;
+  form: string;
+  total: number;
+  wrong: number;
+}
+
+/** Chi tiết YCCĐ còn sai của một hoặc nhiều em (một lần gọi cho cả màn hình lớp). */
+export async function fetchOutcomeGaps(
+  studentIds: string | string[],
+  window = 2,
+): Promise<OutcomeGap[]> {
+  const ids = Array.isArray(studentIds) ? studentIds : [studentIds];
+  if (ids.length === 0) return [];
+  const { data, error } = await getSupabase().rpc("student_outcome_gaps", {
+    p_students: ids,
+    p_window: window,
+  });
+  if (error) return [];
+  return ((data as {
+    student_id: string;
+    parent_topic_id: number;
+    topic_id: number;
+    topic_name: string;
+    form: string;
+    total: number;
+    wrong: number;
+  }[]) ?? []).map((r) => ({
+    studentId: r.student_id,
+    parentTopicId: r.parent_topic_id,
+    topicId: r.topic_id,
+    topicName: r.topic_name,
+    form: r.form,
+    total: r.total,
+    wrong: r.wrong,
+  }));
+}
+
+/** Gom chi tiết theo (em, chủ đề bài, loại) — khớp đúng khoá của một mục phụ đạo. */
+export function outcomeGapsByNeed(gaps: OutcomeGap[]): Map<string, OutcomeGap[]> {
+  const m = new Map<string, OutcomeGap[]>();
+  for (const g of gaps) {
+    if (g.topicId === g.parentTopicId) continue; // câu gắn thẳng tầng bài, không thêm chi tiết
+    const key = `${g.studentId}|${g.parentTopicId}|${g.form}`;
+    const arr = m.get(key) ?? [];
+    arr.push(g);
+    m.set(key, arr);
+  }
+  for (const arr of m.values()) arr.sort((a, b) => b.wrong - a.wrong || b.total - a.total);
+  return m;
 }
 
 // ============================================================

@@ -3,7 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle, Check, Loader2, Search } from "lucide-react";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
-import { fetchQuestionTopics, type QuestionTopic } from "@/services/analytics";
+import {
+  fetchOutcomeGaps,
+  fetchQuestionTopics,
+  lessonTopics,
+  outcomeGapsByNeed,
+  type OutcomeGap,
+  type QuestionTopic,
+} from "@/services/analytics";
 import {
   ACTIVE_NEED_STATUSES,
   fetchNeedsForStudents,
@@ -57,6 +64,7 @@ export default function PhudaoPlanner({
   } | null>(demo ? { classId: null, list: DEMO_ROSTER, error: null } : null);
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
+  const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [query, setQuery] = useState("");
 
   const roster = demo ? DEMO_ROSTER : loaded && loaded.classId === classId ? loaded.list : null;
@@ -86,12 +94,18 @@ export default function PhudaoPlanner({
     fetchNeedsForStudents(roster.map((s) => s.id), ACTIVE_NEED_STATUSES)
       .then(setNeeds)
       .catch(() => setNeeds([]));
+    fetchOutcomeGaps(roster.map((s) => s.id))
+      .then(setOutcomes)
+      .catch(() => setOutcomes([]));
   }, [roster, demo]);
 
   useEffect(() => {
     if (demo || !grade) return;
     fetchQuestionTopics(grade).then(setTopics).catch(() => setTopics([]));
   }, [grade, demo]);
+
+  // Trong mỗi phần đang hổng, em sai đúng yêu cầu cần đạt nào — dạy cho trúng.
+  const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomes), [outcomes]);
 
   const needsByStudent = useMemo(() => {
     const map = new Map<string, TutoringNeed[]>();
@@ -155,7 +169,11 @@ export default function PhudaoPlanner({
             {students.map((student) => {
               const list = needsByStudent.get(student.id) ?? [];
               const ticked = coverage[student.id] ?? [];
-              const extraTopics = topics.filter((t) => !list.some((n) => n.topicId === t.id));
+              // Buổi phụ đạo ghi theo tầng bài (khớp khoá của mục cần phụ đạo), không
+              // liệt kê từng yêu cầu cần đạt cho khỏi rối.
+              const extraTopics = lessonTopics(topics).filter(
+                (t) => !list.some((n) => n.topicId === t.id),
+              );
               return (
                 <div key={student.id} className="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <div className="flex items-start justify-between gap-2">
@@ -200,6 +218,24 @@ export default function PhudaoPlanner({
                         );
                       })}
                     </div>
+                  )}
+                  {list.length > 0 && (
+                    <>
+                      {list.map((need) => {
+                        const detail =
+                          outcomesByNeed.get(`${need.studentId}|${need.topicId}|${need.form}`) ?? [];
+                        if (detail.length === 0) return null;
+                        return (
+                          <p key={`d-${need.id}`} className="mt-1.5 text-xs text-slate-400">
+                            <span className="text-slate-500">{needLabel(need)}:</span>{" "}
+                            {detail
+                              .slice(0, 4)
+                              .map((o) => `${o.topicName} (sai ${o.wrong}/${o.total})`)
+                              .join(" · ")}
+                          </p>
+                        );
+                      })}
+                    </>
                   )}
 
                   {extraTopics.length > 0 && (

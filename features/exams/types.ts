@@ -2,7 +2,9 @@
 // Các trường *html chứa văn bản + ảnh công thức (<img class="eq">) hoặc hình vẽ.
 
 // Nhãn phân tích, gắn khi soạn đề (skill up-de-kiem-tra hoặc trình soạn):
-//  topic  -> tên chủ đề con, khớp public.question_topics.name (chuẩn hoá theo lớp)
+//  topic  -> tên chủ đề, khớp public.question_topics.name (chuẩn hoá theo lớp).
+//            Nên trỏ đúng YÊU CẦU CẦN ĐẠT (chủ đề con của bài) chứ không dừng ở tên bài:
+//            mục phụ đạo vẫn gom lên tầng bài, còn nhãn mịn cho biết em hổng phần nào.
 //  form   -> "lý thuyết" hay "bài tập" — để tách chỗ hổng của học sinh
 export type QuestionForm = "ly_thuyet" | "bai_tap";
 
@@ -226,12 +228,20 @@ export interface TagAudit {
   missingForm: number[]; // số câu thiếu/sai loại
   known: { name: string; count: number }[]; // chủ đề có trong danh mục
   unknown: { name: string; count: number }[]; // chủ đề chưa có trong danh mục
+  // Gắn ở tầng bài trong khi bài đó đã có yêu cầu cần đạt con — vẫn thống kê được,
+  // chỉ là thầy sẽ không biết em hổng đúng phần nào. Nhắc, không chặn.
+  coarse: { name: string; count: number }[];
 }
 
-/** Soát nhãn của cả đề trước khi đăng. `catalog` là tên chủ đề của khối tương ứng. */
+/**
+ * Soát nhãn của cả đề trước khi đăng.
+ * `catalog` là tên mọi chủ đề của khối (cả tầng bài lẫn yêu cầu cần đạt);
+ * `coarseNames` là tên chủ đề tầng bài đã có yêu cầu cần đạt con.
+ */
 export function auditQuestionTags(
   questions: ExamQuestion[],
   catalog: string[],
+  coarseNames: string[] = [],
 ): TagAudit {
   const canon = new Map(catalog.map((n) => [topicKey(n), cleanTopic(n)]));
   const counts = new Map<string, { name: string; count: number; known: boolean }>();
@@ -242,7 +252,9 @@ export function auditQuestionTags(
     missingForm: [],
     known: [],
     unknown: [],
+    coarse: [],
   };
+  const coarse = new Set(coarseNames.map(topicKey));
   questions.forEach((q, i) => {
     const name = cleanTopic(q.topic ?? "");
     const form = q.form ?? "";
@@ -260,12 +272,16 @@ export function auditQuestionTags(
     cur.count += 1;
     counts.set(key, cur);
   });
-  for (const v of counts.values())
+  for (const v of counts.values()) {
     (v.known ? audit.known : audit.unknown).push({ name: v.name, count: v.count });
+    if (v.known && coarse.has(topicKey(v.name)))
+      audit.coarse.push({ name: v.name, count: v.count });
+  }
   const byCount = (a: { name: string; count: number }, b: { name: string; count: number }) =>
     b.count - a.count || a.name.localeCompare(b.name, "vi");
   audit.known.sort(byCount);
   audit.unknown.sort(byCount);
+  audit.coarse.sort(byCount);
   return audit;
 }
 
