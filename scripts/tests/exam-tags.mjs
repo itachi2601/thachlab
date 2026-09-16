@@ -64,4 +64,29 @@ assert.equal(fixed[0].topic, "Nội năng. Định luật 1 của nhiệt độn
 assert.equal(fixed[1].topic, "Chủ đề lạ");
 assert.equal(fixed[2].topic, "");
 
-console.log("✓ exam-tags: 14 phép kiểm đều đạt");
+// hai tầng: gắn ở mức cả bài trong khi bài đã có yêu cầu cần đạt -> nhắc, không chặn
+const twoLevel = [
+  "Nội năng. Định luật 1 của nhiệt động lực học",
+  "Vận dụng ΔU = A + Q",
+  "Thang nhiệt độ. Nhiệt kế",
+];
+const coarseNames = ["Nội năng. Định luật 1 của nhiệt động lực học"];
+const mixed = auditQuestionTags(
+  [
+    mc("Nội năng. Định luật 1 của nhiệt động lực học", "ly_thuyet"),
+    mc("Vận dụng ΔU = A + Q", "bai_tap"),
+    mc("Thang nhiệt độ. Nhiệt kế", "ly_thuyet"),
+  ],
+  twoLevel,
+  coarseNames,
+);
+assert.deepEqual(mixed.coarse, [
+  { name: "Nội năng. Định luật 1 của nhiệt động lực học", count: 1 },
+]);
+assert.equal(mixed.unknown.length, 0);
+assert.equal(tagsComplete(mixed), true); // nhãn thô vẫn đăng được
+
+// không truyền coarseNames -> không nhắc gì (tương thích ngược)
+assert.deepEqual(auditQuestionTags([mc("Thang nhiệt độ. Nhiệt kế", "ly_thuyet")], twoLevel).coarse, []);
+
+console.log("✓ exam-tags: 17 phép kiểm đều đạt");
