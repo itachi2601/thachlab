@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .claude/settings.local.json
+
+# thư mục tạm / sản phẩm trung gian
+/output/
+/tmp/
+/scratchpad/
