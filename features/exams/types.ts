@@ -308,3 +308,45 @@ export function canonicalizeQuestionTopics(
     return name === q.topic ? q : ({ ...q, topic: name } as ExamQuestion);
   });
 }
+
+// ---------- Luyện tập: thời lượng theo dạng câu ----------
+// Câu lý thuyết 15 giây, câu bài tập 45 giây. Câu chưa gắn nhãn `form` coi như bài tập
+// để không ép giờ quá tay. Tổng thời lượng của phiên = tổng thời lượng các câu.
+export const SECONDS_PER_FORM: Record<QuestionForm, number> = {
+  ly_thuyet: 15,
+  bai_tap: 45,
+};
+
+export function questionSeconds(q: ExamQuestion): number {
+  return q.form === "ly_thuyet"
+    ? SECONDS_PER_FORM.ly_thuyet
+    : SECONDS_PER_FORM.bai_tap;
+}
+
+export function totalSeconds(questions: ExamQuestion[]): number {
+  return questions.reduce((sum, q) => sum + questionSeconds(q), 0);
+}
+
+/** Thời lượng trung bình một câu của ngân hàng — để ước lượng trước khi bốc câu. */
+export function averageSeconds(questions: ExamQuestion[]): number {
+  if (questions.length === 0) return SECONDS_PER_FORM.bai_tap;
+  return totalSeconds(questions) / questions.length;
+}
+
+/** Bốc ngẫu nhiên n phần tử (Fisher–Yates trên bản sao, không đụng mảng gốc). */
+export function pickRandom<T>(items: T[], n: number): T[] {
+  const pool = [...items];
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, Math.max(0, Math.min(n, pool.length)));
+}
+
+/** mm:ss */
+export function formatClock(totalSec: number): string {
+  const safe = Math.max(0, Math.round(totalSec));
+  const m = Math.floor(safe / 60);
+  const s = safe % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}

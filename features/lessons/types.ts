@@ -1,10 +1,11 @@
-// Cấu trúc học liệu: Chương → Bài học → Mục (5 loại, thứ tự cố định §1–§5)
+// Cấu trúc học liệu: Chương → Bài học → Mục (6 loại, thứ tự cố định §1–§6)
 
 export type LessonItemKind =
   | "ly_thuyet"
   | "video"
   | "bai_tap_mau"
   | "luyen_tap"
+  | "bai_tap_ve_nha"
   | "kiem_tra";
 
 export interface Chapter {
@@ -61,7 +62,8 @@ export function normalizeLessonKind(kind: unknown): LessonKind {
     : "bai_hoc";
 }
 
-// Một "dạng bài" trong mục Các dạng bài tập: đề + lời giải soạn tự do (LaTeX/HTML)
+// Một "dạng bài" tự luận cũ của mục Bài tập mẫu: đề + lời giải soạn tự do (LaTeX/HTML).
+// Nội dung mới của mục này là đề gắn qua exam_ids — em chọn đáp án rồi mới mở lời giải.
 export interface LessonWorkedQuestion {
   label: string;
   body_html: string;
@@ -76,9 +78,27 @@ export interface LessonItem {
   body_html: string; // chỉ dùng cho ly_thuyet
   video_url: string;
   pdf_url: string;
-  questions: LessonWorkedQuestion[]; // bai_tap_mau
-  exam_ids: number[]; // luyen_tap / kiem_tra
+  questions: LessonWorkedQuestion[]; // bai_tap_mau: các dạng bài tự luận cũ
+  exam_ids: number[]; // bai_tap_mau / luyen_tap / bai_tap_ve_nha / kiem_tra
+  due_at: string | null; // bai_tap_ve_nha: hạn nộp (null = không đặt hạn)
   sort_order: number;
+}
+
+/** Mục gắn đề trắc nghiệm (dùng ExamPicker khi soạn). */
+export const EXAM_KINDS: LessonItemKind[] = [
+  "bai_tap_mau",
+  "luyen_tap",
+  "bai_tap_ve_nha",
+  "kiem_tra",
+];
+
+export function isExamKind(kind: LessonItemKind): boolean {
+  return EXAM_KINDS.includes(kind);
+}
+
+/** Mục làm bài trọn đề, chấm điểm và vào bảng điểm. */
+export function isGradedKind(kind: LessonItemKind): boolean {
+  return kind === "bai_tap_ve_nha" || kind === "kiem_tra";
 }
 
 export const SECTION_ORDER: LessonItemKind[] = [
@@ -86,6 +106,7 @@ export const SECTION_ORDER: LessonItemKind[] = [
   "video",
   "bai_tap_mau",
   "luyen_tap",
+  "bai_tap_ve_nha",
   "kiem_tra",
 ];
 
@@ -99,8 +120,9 @@ export interface SectionMeta {
 export const SECTION_META: Record<LessonItemKind, SectionMeta> = {
   ly_thuyet: { label: "Lý thuyết trọng tâm", icon: "📖", color: "#3B82F6", action: "Xem" },
   video: { label: "Video bài giảng", icon: "🎬", color: "#38BDF8", action: "Xem video" },
-  bai_tap_mau: { label: "Các dạng bài tập", icon: "✏️", color: "#8B5CF6", action: "Làm bài" },
-  luyen_tap: { label: "Luyện tập", icon: "📚", color: "#F59E0B", action: "Làm bài" },
+  bai_tap_mau: { label: "Bài tập mẫu", icon: "✏️", color: "#8B5CF6", action: "Làm bài" },
+  luyen_tap: { label: "Luyện tập", icon: "📚", color: "#F59E0B", action: "Luyện ngay" },
+  bai_tap_ve_nha: { label: "Bài tập về nhà", icon: "🏠", color: "#10B981", action: "Làm bài" },
   kiem_tra: { label: "Kiểm tra", icon: "📝", color: "#F43F5E", action: "Làm bài" },
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import ExamPicker from "@/components/admin/ExamPicker";
 import LaTexEditor from "@/components/admin/LaTexEditor";
 import { useToast } from "@/components/ui/Toast";
 import type { SchoolClass } from "@/features/exams/types";
@@ -8,6 +9,7 @@ import {
   LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
+  isExamKind,
   isPeriodicExam,
   type Chapter,
   type Lesson,
@@ -38,23 +40,25 @@ const inputCls =
 const chipBtn =
   "rounded-lg bg-white/5 px-2 py-1 text-xs text-slate-300 hover:bg-white/15";
 
-interface ExamOption {
-  id: number;
-  title: string;
+/** ISO -> "YYYY-MM-DDTHH:mm" theo giờ máy, cho <input type="datetime-local">. */
+function toLocalInput(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
 // ---------- Form thêm/sửa 1 mục trong bài học ----------
 function ItemForm({
   lessonId,
   item,
-  exams,
   nextSort,
   onSaved,
   onCancel,
 }: {
   lessonId: number;
   item: LessonItem | null;
-  exams: ExamOption[];
   nextSort: number;
   onSaved: () => void;
   onCancel: () => void;
@@ -70,19 +74,14 @@ function ItemForm({
   const [questions, setQuestions] = useState<LessonWorkedQuestion[]>(
     item?.questions ?? [],
   );
+  // datetime-local cần chuỗi "YYYY-MM-DDTHH:mm" theo giờ máy
+  const [dueAt, setDueAt] = useState(toLocalInput(item?.due_at ?? null));
   const [busy, setBusy] = useState(false);
 
-  const isExamKind = kind === "luyen_tap" || kind === "kiem_tra";
+  const examKind = isExamKind(kind);
   const isVideoKind = kind === "video";
   const isWorkedKind = kind === "bai_tap_mau";
-
-  function toggleExam(examOptionId: number) {
-    setExamIds((current) =>
-      current.includes(examOptionId)
-        ? current.filter((id) => id !== examOptionId)
-        : [...current, examOptionId],
-    );
-  }
+  const isHomework = kind === "bai_tap_ve_nha";
 
   function updateQuestion(idx: number, patch: Partial<LessonWorkedQuestion>) {
     setQuestions((current) =>
@@ -107,10 +106,13 @@ function ItemForm({
       subtitle: subtitle.trim(),
       body_html: kind === "ly_thuyet" ? bodyHtml : "",
       video_url: isVideoKind ? videoUrl.trim() : "",
-      pdf_url: isExamKind || isWorkedKind ? "" : pdfUrl.trim(),
-      exam_ids: isExamKind ? examIds : [],
+      pdf_url: examKind ? "" : pdfUrl.trim(),
+      exam_ids: examKind ? examIds : [],
       questions: isWorkedKind ? questions.filter((q) => q.body_html.trim() !== "") : [],
       sort_order: item?.sort_order ?? nextSort,
+      // Chỉ gửi due_at cho bài tập về nhà — mục kiểu cũ vẫn lưu được khi DB
+      // chưa chạy docs/supabase-migration-lesson-sections-v4.sql.
+      ...(isHomework ? { due_at: dueAt ? new Date(dueAt).toISOString() : null } : {}),
     };
     const supabase = getSupabase();
     const { error } = item
@@ -161,7 +163,7 @@ function ItemForm({
           className={`${inputCls} w-full`}
         />
       )}
-      {!isExamKind && !isWorkedKind && (
+      {!examKind && (
         <input
           value={pdfUrl}
           onChange={(e) => setPdfUrl(e.target.value)}
@@ -176,8 +178,28 @@ function ItemForm({
           placeholder="Nội dung (viết LaTeX hoặc HTML)"
         />
       )}
+      {isHomework && (
+        <label className="flex flex-wrap items-center gap-2 text-sm text-slate-300">
+          Hạn nộp
+          <input
+            type="datetime-local"
+            value={dueAt}
+            onChange={(e) => setDueAt(e.target.value)}
+            className={`${inputCls} bg-[#0B1020]`}
+          />
+          {dueAt && (
+            <button onClick={() => setDueAt("")} className={chipBtn}>
+              Bỏ hạn nộp
+            </button>
+          )}
+        </label>
+      )}
       {isWorkedKind && (
         <div className="space-y-3">
+          <p className="text-xs text-slate-400">
+            Dạng bài tự luận (kiểu cũ, chỉ hiện lời giải) — bài tập mẫu có chấm đáp án thì
+            gắn đề ở dưới.
+          </p>
           {questions.map((q, idx) => (
             <div key={idx} className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
               <div className="flex items-center gap-2">
@@ -209,35 +231,20 @@ function ItemForm({
           </button>
         </div>
       )}
-      {isExamKind && (
-        <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
-          <p className="text-xs text-slate-400">Chọn 1 hoặc nhiều đề đã soạn (tab Đề kiểm tra):</p>
-          <div className="flex flex-wrap gap-2">
-            {exams.map((e) => {
-              const checked = examIds.includes(e.id);
-              return (
-                <label
-                  key={e.id}
-                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-1.5 text-xs ${
-                    checked
-                      ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200"
-                      : "border-white/10 text-slate-300 hover:border-white/30"
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => toggleExam(e.id)}
-                    className="accent-emerald-500"
-                  />
-                  #{e.id} · {e.title}
-                </label>
-              );
-            })}
-            {exams.length === 0 && (
-              <span className="text-xs text-slate-500">Chưa có đề nào — soạn ở tab Đề kiểm tra.</span>
-            )}
-          </div>
+      {examKind && (
+        <div className="space-y-1">
+          {isWorkedKind && (
+            <p className="text-xs text-slate-400">
+              Đề gắn ở đây hiện thành từng bài mẫu: em chọn đáp án, bấm &quot;Kiểm tra&quot;
+              mới mở lời giải chi tiết.
+            </p>
+          )}
+          {kind === "luyen_tap" && (
+            <p className="text-xs text-slate-400">
+              Toàn bộ câu của các đề gắn ở đây gộp thành ngân hàng để bốc ngẫu nhiên.
+            </p>
+          )}
+          <ExamPicker value={examIds} onChange={setExamIds} />
         </div>
       )}
 
@@ -264,7 +271,6 @@ function ItemForm({
 function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => void }) {
   const toast = useToast();
   const [items, setItems] = useState<LessonItem[]>([]);
-  const [exams, setExams] = useState<ExamOption[]>([]);
   const [editing, setEditing] = useState<LessonItem | null>(null);
   const [adding, setAdding] = useState(false);
 
@@ -273,13 +279,6 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
   }, [lesson.id]);
   useEffect(reload, [reload]);
 
-  useEffect(() => {
-    getSupabase()
-      .from("exams")
-      .select("id, title")
-      .order("created_at", { ascending: false })
-      .then(({ data }) => setExams((data as ExamOption[]) ?? []));
-  }, []);
 
   async function move(idx: number, dir: -1 | 1) {
     const other = idx + dir;
@@ -313,7 +312,6 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
         <ItemForm
           lessonId={lesson.id}
           item={editing}
-          exams={exams}
           nextSort={items.length + 1}
           onSaved={() => {
             setAdding(false);

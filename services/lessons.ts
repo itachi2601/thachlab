@@ -7,7 +7,11 @@ import {
   type TypeCounts,
 } from "@/features/lessons/types";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
-import { gradeQuestion } from "@/features/exams/types";
+import {
+  buildQuestionResults,
+  gradeQuestion,
+  questionTopicNames,
+} from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
 interface ClassRef {
@@ -90,17 +94,23 @@ export async function fetchLesson(
   };
 }
 
+// Cột due_at là migration mới (docs/supabase-migration-lesson-sections-v4.sql):
+// chọn kèm khi có, tự lùi về danh sách cột cũ khi DB chưa chạy migration.
+const ITEM_COLUMNS =
+  "id, lesson_id, kind, title, subtitle, body_html, video_url, pdf_url, questions, exam_ids, sort_order";
+
 export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> {
-  const { data, error } = await getSupabase()
-    .from("lesson_items")
-    .select(
-      "id, lesson_id, kind, title, subtitle, body_html, video_url, pdf_url, questions, exam_ids, sort_order",
-    )
-    .eq("lesson_id", lessonId)
-    .order("sort_order")
-    .order("id");
-  if (error) throw error;
-  return (data ?? []).map((item) => ({
+  const query = (columns: string) =>
+    getSupabase()
+      .from("lesson_items")
+      .select(columns)
+      .eq("lesson_id", lessonId)
+      .order("sort_order")
+      .order("id");
+  const primary = await query(`${ITEM_COLUMNS}, due_at`);
+  const res = primary.error ? await query(ITEM_COLUMNS) : primary;
+  if (res.error) throw res.error;
+  return ((res.data ?? []) as unknown as Record<string, unknown>[]).map((item) => ({
     ...item,
     kind: normalizeLessonItemKind(item.kind),
     subtitle: item.subtitle ?? "",
@@ -109,7 +119,8 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
     pdf_url: item.pdf_url ?? "",
     questions: item.questions ?? [],
     exam_ids: item.exam_ids ?? [],
-  })) as LessonItem[];
+    due_at: (item.due_at as string | null) ?? null,
+  })) as unknown as LessonItem[];
 }
 
 // Thông tin đề gắn vào mục luyện tập/kiểm tra (cần đăng nhập vì RLS exams)
@@ -258,4 +269,78 @@ export async function fetchMyLatestMistakes(userId: string): Promise<MistakeRevi
     });
   }
   return mistakes;
+}
+
+// ---------- Phiên luyện tập ----------
+// Điểm luyện tập KHÔNG vào bảng điểm (không ghi exam_results); chỉ lưu ở
+// practice_sessions + practice_question_results để em tự theo dõi và để phần
+// Phân tích/Cảnh báo phụ đạo biết em hổng chủ đề nào.
+
+export interface PracticePick {
+  question: ExamQuestion;
+  examId: number;
+  sourceIndex: number;
+}
+
+export interface PracticeSessionInput {
+  studentId: string;
+  lessonId: number | null;
+  itemId: number | null;
+  picks: PracticePick[];
+  responses: QuestionResponse[];
+  score10: number;
+  correctCount: number;
+  durationSeconds: number;
+  timedOut: boolean;
+}
+
+/** Lưu kết quả một phiên luyện tập. Lỗi ở đây chỉ mất dữ liệu phân tích — không chặn em xem lời giải. */
+export async function savePracticeSession(input: PracticeSessionInput): Promise<boolean> {
+  const supabase = getSupabase();
+  try {
+    const { data, error } = await supabase
+      .from("practice_sessions")
+      .insert({
+        student_id: input.studentId,
+        lesson_id: input.lessonId,
+        item_id: input.itemId,
+        question_count: input.picks.length,
+        correct_count: input.correctCount,
+        score: input.score10,
+        duration_seconds: input.durationSeconds,
+        timed_out: input.timedOut,
+      })
+      .select("id")
+      .single();
+    if (error || !data) return false;
+
+    const questions = input.picks.map((p) => p.question);
+    const names = questionTopicNames(questions);
+    const idByName = new Map<string, number>();
+    if (names.length) {
+      const { data: topics } = await supabase
+        .from("question_topics")
+        .select("id, name")
+        .in("name", names);
+      for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
+    }
+    const rows = buildQuestionResults(questions, input.responses, idByName).map((r, i) => ({
+      session_id: data.id,
+      question_index: r.question_index,
+      student_id: input.studentId,
+      exam_id: input.picks[i].examId,
+      source_index: input.picks[i].sourceIndex,
+      topic_id: r.topic_id,
+      topic_name: r.topic_name,
+      form: r.form,
+      qtype: r.qtype,
+      earned: r.earned,
+      max: r.max,
+      is_correct: r.is_correct,
+    }));
+    await supabase.from("practice_question_results").insert(rows);
+    return true;
+  } catch {
+    return false;
+  }
 }
