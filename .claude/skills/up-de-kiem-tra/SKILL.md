@@ -40,8 +40,9 @@ Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất
    (dấu `*` hoặc dòng "Đáp án") + **lời giải** (dòng "Lời giải"/"Giải").
 3. Dựng gói `thachlab.lesson-bundle/v1` (khối `exam`; `theory_html` để rỗng nếu chỉ đăng đề —
    khi đó mục Lý thuyết của bài được giữ nguyên).
-4. Đăng qua `https://thachlab.id.vn/quan-tri/nhap-bai`: chọn Lớp→Chương→Bài, dán gói,
-   xem preview + bảng validate, tick **Kiểm tra** (mặc định) → **Đăng bài học**.
+4. Đăng qua `https://thachlab.id.vn/quan-tri/nhap-bai`: dán gói bằng relay (xem mục "Đăng qua
+   trang admin"), chọn Lớp→Chương→Bài, xem preview + bảng validate, tick **Kiểm tra**
+   (mặc định) → **Đăng bài học**.
 5. Báo link `/lop-hoc/bai/?id=<id>` để kiểm tra.
 
 Đây là thao tác lên **hệ thống sống** (DB + web học sinh đang dùng). Phần "An toàn" ở cuối
@@ -144,7 +145,29 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
     sẽ tạo chủ đề đó gắn sẵn vào đúng Chương → Bài đang chọn, nên nút "Ôn lại" của học sinh nhảy
     đúng chỗ ngay. Chỉ đặt tên mới khi chắc danh mục không có — đừng tạo bản gọi tắt của tên đã có.
 - `question`, `options`, `explanation`: giữ `$...$`. Đồ thị "như hình bên/hình vẽ" → vẽ
-  `<svg>` chèn vào `question`.
+  `<svg>` chèn vào `question`, **bằng `scripts/svglib.py`** — đừng viết tay từ đầu:
+
+  ```python
+  import sys, math; sys.path.insert(0, '.claude/skills/up-de-kiem-tra/scripts')
+  from svglib import Plot, txt, BLUE, GREEN, AMBER, AX
+
+  f = lambda t: 10 * math.sin(2 * math.pi * t)
+  p = Plot(w=370, h=215, ox=48, oy=105, sx=250, sy=6.5, tmax=1.06, ymax=11)
+  p.axes(); p.ytick(10, '10', dashed_to=0.25); p.ttick(0.5, '0,5')
+  p.curve(f, 0, 1.0)
+  html = p.svg('Đồ thị li độ – thời gian')
+  ```
+
+  Lớp này đã xử lý sẵn ba lỗi từng phải sửa lại cả loạt hình: mũi tên/nhãn trục **tràn
+  viewBox**, **đường cong cắt ngang chữ số** trên trục, và nhãn đường đặt xa đường của
+  nó. Đọc docstring đầu file trước khi dùng; `python3 svglib.py` sinh trang demo 3 hình.
+
+  Vẽ xong, soát theo hai bước — **đừng đảo thứ tự**:
+  1. `ok, lines = check_bounds(list(FIGS.values()))` — bắt tràn viewBox bằng số học, không
+     tốn ảnh. Còn `✗` thì nới `w`/`h` rồi chạy lại.
+  2. Chỉ khi đã sạch mới **xem bằng mắt** (chồng chữ, nhãn lạc đường, sai pha thì chỉ mắt
+     mới thấy): gom hình vào một trang HTML, mở trong Browser pane, đọc ảnh **trong
+     subagent** — một trang PNG ≈ 1,5k token và nằm lại context đến hết phiên.
 - `meta.title`: ưu tiên tiêu đề trong file; nếu chỉ là "Mã đề 0001" thì đặt theo chủ đề, vd
   `"Kiểm tra: Chuyển động biến đổi đều & Rơi tự do"`. `meta.duration_minutes`: theo đề, mặc
   định 45 cho đề kiểm tra 1 tiết, 15 cho đề 15 phút.
@@ -170,9 +193,26 @@ anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với d
 
 ### 4. Đăng qua trang admin
 
+Thao tác pane: **đừng `resize_window`** để emulate viewport — toạ độ click lệch khỏi ảnh
+chụp, bấm trượt nút mà không báo lỗi. Dùng `ref` từ `find`/`read_page`, và `form_input`
+cho `<select>`.
+
 1. Mở `https://thachlab.id.vn/quan-tri/nhap-bai` trong Browser pane (người dùng đã đăng nhập
    admin — nếu chưa, **dừng, nhờ người dùng tự đăng nhập**).
-2. Mục 1: chọn **Lớp → Môn → Chương → Bài**. Nếu người dùng chưa nói rõ bài nào: hỏi, hoặc tra
+2. **Dán gói trước, chọn bài sau.** Gói ~70 KB: không gõ tay vào textarea được, trang không
+   có ô upload, và `cmd+v` / `fetch` localhost / `window.open` đều bị Browser pane chặn.
+   Dùng relay:
+
+   ```bash
+   python3 .claude/skills/up-de-kiem-tra/scripts/paste_relay.py bundle.json &
+   ```
+
+   `navigate` tab tới URL relay script in ra → sau ~3 s tab tự quay về trang nhập bài với
+   payload trong `#b64=…` → chạy đoạn JS trong docstring của script để giải mã và gán vào
+   textarea (phải dùng **native setter** + `dispatchEvent('input')`, React bỏ qua `ta.value=`).
+   Relay làm tab điều hướng nên **mọi lựa chọn Lớp/Chương/Bài trước đó mất sạch** — vì vậy
+   làm bước này trước bước 3. Xong thì `pkill -f paste_relay.py`.
+3. Mục 1: chọn **Lớp → Môn → Chương → Bài**. Nếu người dùng chưa nói rõ bài nào: hỏi, hoặc tra
    bằng REST anon-key (chỉ đọc):
    ```bash
    source <(grep -E '^NEXT_PUBLIC_SUPABASE' .env.local | sed 's/^/export /')
@@ -181,8 +221,8 @@ anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với d
    curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/lessons?select=id,chapter_id,title&chapter_id=eq.<ID>" \
      -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" -H "Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY"
    ```
-3. Mục 2: dán `bundle.json` → **Nạp gói**.
-4. Mục 3: xem preview — từng câu tô đáp án đúng + lời giải — và **bảng validate**. `errors` đỏ
+4. Bấm **Nạp gói**.
+5. Mục 3: xem preview — từng câu tô đáp án đúng + lời giải — và **bảng validate**. `errors` đỏ
    chặn Đăng; sửa gói, dán lại. Đọc luôn khung **"Nhãn chủ đề"**:
    - phải là **"đã gắn n/n câu"**, các chip chủ đề đều xanh (có trong danh mục khối);
    - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn):
@@ -191,15 +231,15 @@ anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với d
    - nút Đăng bị chặn khi nhãn chưa đủ. Ô **"Đăng dù nhãn chưa đủ"** chỉ tick khi người dùng
      đồng ý bỏ số liệu phân tích cho những câu đó — nhãn được chốt lúc học sinh nộp bài, gắn
      sau **không** cứu được các lượt đã nộp.
-5. Mục 4:
+6. Mục 4:
    - Tick **"Gắn vào Kiểm tra"** (mặc định cho skill này). Thêm **"Luyện tập"** nếu người dùng
      muốn học sinh luyện không tính điểm.
    - **Lý thuyết**: gói không có `theory_html` thì trang tự giữ nguyên mục cũ. Nếu gói có mà bài
      cũng đã có lý thuyết thật → chọn **Bỏ qua**, đừng đè.
    - **Đề cũ ở mục đã chọn**: nếu mục Kiểm tra/Luyện tập đã có đề → chọn **Thay** (trang tự xóa
      đề cũ, tránh tồn đọng) trừ khi người dùng muốn giữ.
-6. **Đăng bài học**. Theo dõi log từng bước.
-7. Mở `https://thachlab.id.vn/lop-hoc/bai/?id=<lesson_id>`, kiểm mục Kiểm tra hiện đề, số câu
+7. **Đăng bài học**. Theo dõi log từng bước.
+8. Mở `https://thachlab.id.vn/lop-hoc/bai/?id=<lesson_id>`, kiểm mục Kiểm tra hiện đề, số câu
    đúng, bấm thử một câu. Báo link cho người dùng.
 
 ### Dự phòng: không mở được trang admin
