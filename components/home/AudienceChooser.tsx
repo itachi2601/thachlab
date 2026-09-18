@@ -9,8 +9,8 @@ export default function AudienceChooser() {
         <h2 className="mt-2 font-display text-xl font-bold text-white sm:text-2xl">Bạn đang học ở đâu?</h2>
       </div>
       <div className="relative mx-auto mt-6 grid max-w-4xl gap-4 sm:grid-cols-2">
-        <a
-          href="#thpt"
+        <Link
+          href="/lop-hoc"
           className="group flex items-center gap-4 rounded-2xl border border-blue-400/20 bg-blue-500/[0.06] p-5 transition hover:border-blue-400/40 hover:bg-blue-500/10"
         >
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-500/15 text-blue-300">
@@ -21,7 +21,7 @@ export default function AudienceChooser() {
             <span className="text-sm text-slate-400">Vật lý lớp 9–12 theo chương trình GDPT 2018</span>
           </div>
           <ArrowRight size={18} className="shrink-0 text-blue-300 opacity-0 transition group-hover:opacity-100" />
-        </a>
+        </Link>
         <Link
           href="/lop-hoc?tab=cttc"
           className="group flex items-center gap-4 rounded-2xl border border-orange-400/20 bg-orange-500/[0.06] p-5 transition hover:border-orange-400/40 hover:bg-orange-500/10"
