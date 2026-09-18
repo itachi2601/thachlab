@@ -21,6 +21,7 @@ import {
 
 const LESSON_KIND_OPTIONS: LessonKind[] = [
   "bai_hoc",
+  "kiem_tra_chuong",
   "kiem_tra_giua_ki",
   "kiem_tra_cuoi_ki",
 ];

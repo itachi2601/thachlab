@@ -378,7 +378,7 @@ function LessonLoader() {
           </span>
           <h1 className="mt-3 font-display text-2xl font-bold text-white">{title}</h1>
           <p className="mt-2 text-sm text-slate-400">
-            Bài kiểm tra định kỳ của {chapterTitle || "chương"} — làm bài trực tuyến,
+            {kindMeta.label} của {chapterTitle || "chương"} — làm bài trực tuyến,
             hệ thống chấm điểm tự động.
           </p>
         </div>
