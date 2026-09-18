@@ -34,6 +34,16 @@ export interface ExamParseResult {
   warnings: string[];
 }
 
+export interface ExamParseOptions {
+  /**
+   * Giữ lại cả câu còn thiếu (chưa đủ 4 phương án, chưa rõ đáp án) thay vì bỏ đi:
+   * câu thiếu vẫn hiện trong trình sửa để người dùng điền nốt, và số thứ tự các
+   * câu không bị lệch. Chỗ còn thiếu để `answer = -1` / phương án rỗng nên
+   * validateBundle vẫn chặn, không thể đăng nhầm một đáp án bịa.
+   */
+  lenient?: boolean;
+}
+
 type QuestionType = "multiple_choice" | "true_false" | "short_answer";
 
 /** Chuyển LaTeX inline nhẹ → HTML, giữ nguyên `$...$`. */
@@ -119,22 +129,23 @@ function parseMultipleChoice(
   explanation: string,
   n: number,
   warnings: string[],
+  lenient: boolean,
 ): MultipleChoiceQuestion | null {
   const { stem, options } = splitStemAndOptions(block, ["A", "B", "C", "D"]);
   if (options.length < 4) {
     warnings.push(`Câu ${n} (trắc nghiệm): cần đủ 4 phương án A–D (thấy ${options.length}).`);
-    return null;
+    if (!lenient) return null;
   }
   const letter = (answerRaw ?? "").trim().toUpperCase().match(/[A-D]/)?.[0];
   if (!letter) {
     warnings.push(`Câu ${n} (trắc nghiệm): thiếu đáp án đúng (A/B/C/D).`);
-    return null;
+    if (!lenient) return null;
   }
   return {
     type: "multiple_choice",
     question: stem,
-    options,
-    answer: letter.charCodeAt(0) - 65,
+    options: [0, 1, 2, 3].map((i) => options[i] ?? ""),
+    answer: letter ? letter.charCodeAt(0) - 65 : -1,
     explanation: inlineLatex(explanation),
   };
 }
@@ -145,13 +156,14 @@ function parseTrueFalse(
   explanation: string,
   n: number,
   warnings: string[],
+  lenient: boolean,
 ): TrueFalseQuestion | null {
   const { stem, options } = splitStemAndOptions(block, ["a", "b", "c", "d"]);
   // bỏ tiền tố Azota "[thứ tự, mức độ]"
   const items = options.map((t) => t.replace(/^\[[^\]]*\]\s*/, ""));
   if (items.length < 4) {
     warnings.push(`Câu ${n} (đúng/sai): cần đủ 4 ý a–d (thấy ${items.length}).`);
-    return null;
+    if (!lenient) return null;
   }
   const ans = (answerRaw ?? "").toLowerCase().trim();
   let flags: boolean[];
@@ -171,7 +183,7 @@ function parseTrueFalse(
   return {
     type: "true_false",
     question: stem,
-    statements: items.map((text, i) => ({ text, answer: flags[i] ?? false })),
+    statements: [0, 1, 2, 3].map((i) => ({ text: items[i] ?? "", answer: flags[i] ?? false })),
     explanation: inlineLatex(explanation),
   };
 }
@@ -208,12 +220,14 @@ function parseBlock(
   kind: QuestionType,
   n: number,
   warnings: string[],
+  lenient: boolean,
 ): ExamQuestion | null {
   const answerRaw = findField(block, "Đáp\\s*án\\s*đúng|Đáp\\s*án|Đáp\\s*số|answer");
   const explanation = findField(block, "Lời\\s*giải|Giải|Hướng\\s*dẫn|explanation") ?? "";
   if (kind === "multiple_choice")
-    return parseMultipleChoice(block, answerRaw, explanation, n, warnings);
-  if (kind === "true_false") return parseTrueFalse(block, answerRaw, explanation, n, warnings);
+    return parseMultipleChoice(block, answerRaw, explanation, n, warnings, lenient);
+  if (kind === "true_false")
+    return parseTrueFalse(block, answerRaw, explanation, n, warnings, lenient);
   return parseShortAnswer(block, answerRaw, explanation, n, warnings);
 }
 
@@ -226,7 +240,8 @@ function splitQuestions(section: string): string[] {
   return body.map((p) => p.trim()).filter(Boolean);
 }
 
-export function parseExamLatex(latex: string): ExamParseResult {
+export function parseExamLatex(latex: string, opts: ExamParseOptions = {}): ExamParseResult {
+  const lenient = opts.lenient === true;
   const warnings: string[] = [];
   const titleMatch = latex.match(/\\(?:sub)?section\*?\{([^}]+)\}/);
   const title =
@@ -245,7 +260,7 @@ export function parseExamLatex(latex: string): ExamParseResult {
         : /true_false|đúng\s*\/?\s*sai|4 ý/.test(typeStr)
           ? "true_false"
           : "short_answer";
-      const q = parseBlock(body, kind, questions.length + 1, warnings);
+      const q = parseBlock(body, kind, questions.length + 1, warnings, lenient);
       if (q) questions.push(q);
     }
     return { title, questions, warnings };
@@ -261,7 +276,7 @@ export function parseExamLatex(latex: string): ExamParseResult {
         continue;
       }
       for (const block of splitQuestions(partSplit[i + 1] ?? "")) {
-        const q = parseBlock(block, kind, questions.length + 1, warnings);
+        const q = parseBlock(block, kind, questions.length + 1, warnings, lenient);
         if (q) questions.push(q);
       }
     }

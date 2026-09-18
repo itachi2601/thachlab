@@ -18,7 +18,7 @@ TRƯỚC khi mở trình duyệt.
     "duration_minutes": 45,                                       // mặc định 20
     "subject_code": "vat-ly"                                      // mặc định "vat-ly"
   },
-  "theory_html": "<h2 ...>Công thức trọng tâm</h2>...",   // bắt buộc, non-empty (validator chặn nếu rỗng)
+  "theory_html": "<h2 ...>Công thức trọng tâm</h2>...",   // để "" nếu chỉ đăng đề (mục Lý thuyết của bài giữ nguyên)
   "questions": [
     { "type": "multiple_choice",
       "topic": "Chuyển động biến đổi đều",   // tên chủ đề con — khớp danh mục question_topics của lớp
@@ -178,16 +178,17 @@ def main():
         die(f'meta.difficulty không hợp lệ ("{diff}").')
 
     theory = str(d.get('theory_html', '')).strip()
-    if not theory:
-        die('theory_html trống — trang admin bắt buộc mục Lý thuyết. '
-            'Soạn một khối "Công thức trọng tâm" ngắn cho chủ đề của đề.')
 
     questions = d.get('questions')
     if not isinstance(questions, list) or not questions:
         die('questions trống.')
 
     errors, warnings = [], []
-    scan_html(theory, 'Lý thuyết', errors)
+    if theory:
+        scan_html(theory, 'Lý thuyết', errors)
+    else:
+        # Gói chỉ có đề vẫn hợp lệ: lúc đăng, mục Lý thuyết của bài được giữ nguyên.
+        warnings.append('Gói không có theory_html — mục Lý thuyết của bài sẽ giữ nguyên.')
 
     norm_q = []
     for i, q in enumerate(questions):

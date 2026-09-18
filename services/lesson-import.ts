@@ -122,7 +122,11 @@ export function validateBundle(input: unknown): BundleCheck {
     check.errors.push(`Sai schema (cần "${BUNDLE_SCHEMA}").`);
 
   const theory = typeof input.theory_html === "string" ? input.theory_html : "";
-  if (!theory.trim()) check.errors.push("Thiếu theory_html.");
+  if (typeof input.theory_html !== "string") check.errors.push("theory_html phải là chuỗi.");
+  else if (!theory.trim())
+    // Gói chỉ có đề (vd nhập thẳng từ file Word) là hợp lệ — lúc đăng, mục Lý
+    // thuyết của bài được giữ nguyên chứ không bị ghi đè bằng nội dung rỗng.
+    check.warnings.push("Gói không có phần Lý thuyết — mục Lý thuyết của bài sẽ giữ nguyên.");
   else {
     const bad = leftoverLatex(theory);
     if (bad.length) check.errors.push(`Lý thuyết còn sót LaTeX chưa chuyển: ${bad.join(", ")}.`);

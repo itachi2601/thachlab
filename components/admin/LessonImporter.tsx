@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
+import DocxExamImport from "@/components/admin/DocxExamImport";
+import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import QuestionCard from "@/components/exams/QuestionCard";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import { useToast } from "@/components/ui/Toast";
@@ -73,8 +75,10 @@ export default function LessonImporter() {
   const [lessonId, setLessonId] = useState<number | null>(null);
   const [itemsCache, setItemsCache] = useState<{ lessonId: number; list: LessonItem[] } | null>(null);
 
+  const [source, setSource] = useState<"docx" | "json">("docx");
   const [raw, setRaw] = useState("");
   const [tex, setTex] = useState("");
+  const [editing, setEditing] = useState(false);
   const [bundle, setBundle] = useState<LessonBundle | null>(null);
   const [parseErr, setParseErr] = useState<string[]>([]);
 
@@ -160,15 +164,21 @@ export default function LessonImporter() {
     else toast("success", "Gói hợp lệ.");
   }
 
+  /** Nhận nháp từ file Word / .tex: giữ JSON và bản đang sửa luôn khớp nhau. */
+  function applyDraft(draft: LessonBundle, notes: string[]) {
+    setBundle(draft);
+    setRaw(JSON.stringify(draft, null, 2));
+    setParseErr(notes.map((n) => `Ghi chú: ${n}`));
+    setEditing(true);
+  }
+
   function prefillFromTex() {
     if (!tex.trim()) return;
     const title = selectedLessonTitle()
       ? `Luyện tập – ${selectedLessonTitle()}`
       : "Luyện tập";
     const { bundle: draft, notes } = texToBundleDraft(tex, title);
-    setRaw(JSON.stringify(draft, null, 2));
-    setBundle(draft);
-    setParseErr(notes.map((n) => `Ghi chú: ${n}`));
+    applyDraft(draft, notes);
     toast("info", "Đã nạp nháp từ .tex — rà lại phần đề trước khi đăng.");
   }
 
@@ -223,7 +233,9 @@ export default function LessonImporter() {
 
       // 4. Lý thuyết
       const lt = existing("ly_thuyet");
-      if (theoryMode === "skip" && lt) push("Lý thuyết: bỏ qua (giữ nội dung cũ).");
+      if (!rows.lyThuyet.body_html.trim())
+        push("Lý thuyết: gói không có phần này — giữ nguyên nội dung cũ.");
+      else if (theoryMode === "skip" && lt) push("Lý thuyết: bỏ qua (giữ nội dung cũ).");
       else {
         const payload = { ...rows.lyThuyet, sort_order: lt?.sort_order ?? 1 };
         const r = lt
@@ -235,7 +247,9 @@ export default function LessonImporter() {
 
       // 5. Các dạng bài tập
       const bt = existing("bai_tap_mau");
-      if (workedMode === "skip" && bt) push("Các dạng bài tập: bỏ qua.");
+      if (rows.baiTapMau.questions.length === 0)
+        push("Các dạng bài tập: gói không có phần này — giữ nguyên nội dung cũ.");
+      else if (workedMode === "skip" && bt) push("Các dạng bài tập: bỏ qua.");
       else {
         const merged =
           workedMode === "merge" && bt
@@ -337,9 +351,10 @@ export default function LessonImporter() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="font-display text-2xl font-bold text-white">Nhập bài học từ LaTeX</h1>
+        <h1 className="font-display text-2xl font-bold text-white">Nhập bài học / đề kiểm tra</h1>
         <p className="mt-1 text-sm text-slate-400">
-          Dán gói bài học JSON (do trợ lý dựng sẵn), xem trước rồi Đăng thẳng vào bài học.
+          Thả file đề Word (.docx) là trang tự tách câu và đáp án — sửa lại chỗ nào chưa ưng rồi Đăng.
+          Hoặc dán gói bài học JSON như cũ.
         </p>
       </header>
 
@@ -430,9 +445,34 @@ export default function LessonImporter() {
         )}
       </section>
 
-      {/* 2. Gói JSON */}
+      {/* 2. Nguồn nội dung */}
       <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <p className="text-sm font-medium text-slate-300">2. Dán gói bài học (JSON)</p>
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="text-sm font-medium text-slate-300">2. Nội dung</p>
+          {([["docx", "Từ file Word (.docx)"], ["json", "Dán gói JSON"]] as const).map(([key, label]) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setSource(key)}
+              className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
+                source === key ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {source === "docx" && (
+          <DocxExamImport
+            fallbackTitle={selectedLessonTitle() ? `Kiểm tra – ${selectedLessonTitle()}` : ""}
+            subjectCode={subjectCode}
+            onDraft={applyDraft}
+          />
+        )}
+
+        {source === "json" && (
+        <>
         <textarea
           value={raw}
           onChange={(e) => setRaw(e.target.value)}
@@ -467,6 +507,8 @@ export default function LessonImporter() {
             Tạo nháp từ .tex
           </button>
         </details>
+        </>
+        )}
 
         {parseErr.length > 0 && (
           <ul className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
@@ -515,14 +557,36 @@ export default function LessonImporter() {
           )}
 
           <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-amber-300">
-              Đề: {bundle.exam?.title} — {typeCountSubtitle(bundle.exam?.questions ?? [], bundle.exam?.duration_minutes)}
-            </p>
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-bold uppercase tracking-wide text-amber-300">
+                Đề: {bundle.exam?.title} — {typeCountSubtitle(bundle.exam?.questions ?? [], bundle.exam?.duration_minutes)}
+              </p>
+              <button
+                type="button"
+                onClick={() => setEditing((v) => !v)}
+                className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20"
+              >
+                {editing ? "Xem như học sinh" : "Sửa từng câu"}
+              </button>
+            </div>
+
+            {editing && bundle.exam ? (
+              <ExamDraftEditor
+                bundle={bundle}
+                onChange={(next) => {
+                  setBundle(next);
+                  setRaw(JSON.stringify(next, null, 2));
+                }}
+              />
+            ) : (
+            <>
             <div className="space-y-3">
               {(bundle.exam?.questions ?? []).map((q, i) => (
                 <QuestionCard key={i} index={i + 1} question={q} response={previewResponses[i]} review selfCheck={false} />
               ))}
             </div>
+            </>
+            )}
           </div>
         </section>
       )}

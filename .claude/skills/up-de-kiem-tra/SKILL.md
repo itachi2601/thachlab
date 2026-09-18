@@ -15,6 +15,22 @@ description: >-
 
 # Up đề kiểm tra Word → mục Kiểm tra/Luyện tập trên thachlab
 
+## Trước tiên: hỏi xem người dùng có tự đăng được không
+
+Trang `/quan-tri/nhap-bai` đã có tab **"Từ file Word (.docx)"**: thả file là trang tự tách câu,
+lấy đáp án dấu `*`, đổi công thức Office Math sang `$…$`, gom ảnh — rồi sửa tay từng câu và Đăng,
+**không tốn token**. Xem `docs/DANG-DE-TU-WORD.md`.
+
+Chỉ dùng skill này khi đường đó không đi được:
+
+- File còn công thức **MathType dạng OLE** mà người dùng không muốn/không thể bấm
+  *Convert Equations → Microsoft Office Math* (trang sẽ báo "còn N công thức MathType").
+- Đề là **PDF** hoặc ảnh chụp/scan.
+- Cần **vẽ lại hình bằng SVG**, gắn `topic`/`form` cho từng câu, hoặc viết lời giải còn thiếu.
+
+Nếu chỉ là file Word gõ công thức bằng Word (Alt + =) và có dấu `*` ở đáp án: **chỉ cần chỉ cho
+người dùng tab đó**, đừng tự làm thay.
+
 ## Skill này làm gì
 
 Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất, khuyên dùng)** hoặc `.docx`. Skill:
@@ -22,8 +38,8 @@ Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất
 1. Đọc đề đã render, **phiên âm công thức sang `$...$`**. PDF → đọc thẳng; docx → phải render trước.
 2. Phân loại từng câu → `multiple_choice` / `true_false` / `short_answer`, lấy **đáp án**
    (dấu `*` hoặc dòng "Đáp án") + **lời giải** (dòng "Lời giải"/"Giải").
-3. Dựng gói `thachlab.lesson-bundle/v1` (chỉ khối `exam` + một khối "Công thức trọng tâm"
-   ngắn cho mục Lý thuyết — trang admin bắt buộc mục này không rỗng).
+3. Dựng gói `thachlab.lesson-bundle/v1` (khối `exam`; `theory_html` để rỗng nếu chỉ đăng đề —
+   khi đó mục Lý thuyết của bài được giữ nguyên).
 4. Đăng qua `https://thachlab.id.vn/quan-tri/nhap-bai`: chọn Lớp→Chương→Bài, dán gói,
    xem preview + bảng validate, tick **Kiểm tra** (mặc định) → **Đăng bài học**.
 5. Báo link `/lop-hoc/bai/?id=<id>` để kiểm tra.
@@ -116,10 +132,9 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
 - `meta.title`: ưu tiên tiêu đề trong file; nếu chỉ là "Mã đề 0001" thì đặt theo chủ đề, vd
   `"Kiểm tra: Chuyển động biến đổi đều & Rơi tự do"`. `meta.duration_minutes`: theo đề, mặc
   định 45 cho đề kiểm tra 1 tiết, 15 cho đề 15 phút.
-- **`theory_html`** (bắt buộc, không rỗng): soạn một khối "Công thức trọng tâm" ngắn cho chủ
-  đề của đề (các công thức chính, ~5–12 dòng, class Tailwind trong
-  `references/docx-de-format.md` §"HTML"). Đây vừa là nội dung ôn nhanh có ích, vừa để qua
-  validator.
+- **`theory_html`**: để `""` nếu chỉ đăng đề (mục Lý thuyết của bài giữ nguyên). Bài chưa có lý
+  thuyết và người dùng muốn có phần ôn nhanh → soạn khối "Công thức trọng tâm" ngắn cho chủ đề
+  của đề (~5–12 dòng, class Tailwind trong `references/docx-de-format.md` §"HTML").
 
 ### 3. Dựng gói + tự kiểm
 
@@ -150,8 +165,8 @@ Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duy
 5. Mục 4:
    - Tick **"Gắn vào Kiểm tra"** (mặc định cho skill này). Thêm **"Luyện tập"** nếu người dùng
      muốn học sinh luyện không tính điểm.
-   - **Lý thuyết**: nếu bài đã có nội dung Lý thuyết thật → chọn **Bỏ qua** (khối "Công thức
-     trọng tâm" chỉ để qua validator, đừng đè lý thuyết cũ). Bài mới trống → để **Ghi đè**.
+   - **Lý thuyết**: gói không có `theory_html` thì trang tự giữ nguyên mục cũ. Nếu gói có mà bài
+     cũng đã có lý thuyết thật → chọn **Bỏ qua**, đừng đè.
    - **Đề cũ ở mục đã chọn**: nếu mục Kiểm tra/Luyện tập đã có đề → chọn **Thay** (trang tự xóa
      đề cũ, tránh tồn đọng) trừ khi người dùng muốn giữ.
 6. **Đăng bài học**. Theo dõi log từng bước.
