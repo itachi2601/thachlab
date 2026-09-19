@@ -2,7 +2,9 @@
 // Các trường *html chứa văn bản + ảnh công thức (<img class="eq">) hoặc hình vẽ.
 
 // Nhãn phân tích, gắn khi soạn đề (skill up-de-kiem-tra hoặc trình soạn):
-//  topic  -> tên chủ đề con, khớp public.question_topics.name (chuẩn hoá theo lớp)
+//  topic  -> tên chủ đề, khớp public.question_topics.name (chuẩn hoá theo lớp).
+//            Nên trỏ đúng YÊU CẦU CẦN ĐẠT (chủ đề con của bài) chứ không dừng ở tên bài:
+//            mục phụ đạo vẫn gom lên tầng bài, còn nhãn mịn cho biết em hổng phần nào.
 //  form   -> "lý thuyết" hay "bài tập" — để tách chỗ hổng của học sinh
 export type QuestionForm = "ly_thuyet" | "bai_tap";
 
@@ -285,4 +287,148 @@ export function statsByType(
     else if (status === "skipped") stat.skipped += 1;
   });
   return [...byType.values()];
+}
+
+// ---------- Nhãn chủ đề: so khớp với danh mục public.question_topics ----------
+// Nhãn chỉ có giá trị khi `topic` khớp ĐÚNG tên trong danh mục: buildQuestionResults
+// tra theo tên để lấy topic_id, mà tutoring_needs.topic_id là NOT NULL — lệch một chữ
+// là câu đó rơi khỏi mọi thống kê chủ đề, không báo lỗi ở đâu cả.
+
+/** Khoá so khớp tên chủ đề: gom khoảng trắng, không phân biệt hoa/thường. */
+export function topicKey(name: string): string {
+  return name.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function cleanTopic(name: string): string {
+  return name.trim().replace(/\s+/g, " ");
+}
+
+export interface TagAudit {
+  total: number;
+  tagged: number; // số câu có cả topic + form
+  missingTopic: number[]; // số câu (đếm từ 1) thiếu chủ đề
+  missingForm: number[]; // số câu thiếu/sai loại
+  known: { name: string; count: number }[]; // chủ đề có trong danh mục
+  unknown: { name: string; count: number }[]; // chủ đề chưa có trong danh mục
+  // Gắn ở tầng bài trong khi bài đó đã có yêu cầu cần đạt con — vẫn thống kê được,
+  // chỉ là thầy sẽ không biết em hổng đúng phần nào. Nhắc, không chặn.
+  coarse: { name: string; count: number }[];
+}
+
+/**
+ * Soát nhãn của cả đề trước khi đăng.
+ * `catalog` là tên mọi chủ đề của khối (cả tầng bài lẫn yêu cầu cần đạt);
+ * `coarseNames` là tên chủ đề tầng bài đã có yêu cầu cần đạt con.
+ */
+export function auditQuestionTags(
+  questions: ExamQuestion[],
+  catalog: string[],
+  coarseNames: string[] = [],
+): TagAudit {
+  const canon = new Map(catalog.map((n) => [topicKey(n), cleanTopic(n)]));
+  const counts = new Map<string, { name: string; count: number; known: boolean }>();
+  const audit: TagAudit = {
+    total: questions.length,
+    tagged: 0,
+    missingTopic: [],
+    missingForm: [],
+    known: [],
+    unknown: [],
+    coarse: [],
+  };
+  const coarse = new Set(coarseNames.map(topicKey));
+  questions.forEach((q, i) => {
+    const name = cleanTopic(q.topic ?? "");
+    const form = q.form ?? "";
+    const formOk = form === "ly_thuyet" || form === "bai_tap";
+    if (!name) audit.missingTopic.push(i + 1);
+    if (!formOk) audit.missingForm.push(i + 1);
+    if (name && formOk) audit.tagged += 1;
+    if (!name) return;
+    const key = topicKey(name);
+    const cur = counts.get(key) ?? {
+      name: canon.get(key) ?? name,
+      count: 0,
+      known: canon.has(key),
+    };
+    cur.count += 1;
+    counts.set(key, cur);
+  });
+  for (const v of counts.values()) {
+    (v.known ? audit.known : audit.unknown).push({ name: v.name, count: v.count });
+    if (v.known && coarse.has(topicKey(v.name)))
+      audit.coarse.push({ name: v.name, count: v.count });
+  }
+  const byCount = (a: { name: string; count: number }, b: { name: string; count: number }) =>
+    b.count - a.count || a.name.localeCompare(b.name, "vi");
+  audit.known.sort(byCount);
+  audit.unknown.sort(byCount);
+  audit.coarse.sort(byCount);
+  return audit;
+}
+
+/** Đề đã gắn đủ nhãn và mọi chủ đề đều có trong danh mục? */
+export function tagsComplete(audit: TagAudit): boolean {
+  return (
+    audit.total > 0 &&
+    audit.missingTopic.length === 0 &&
+    audit.missingForm.length === 0 &&
+    audit.unknown.length === 0
+  );
+}
+
+/** Ghi lại tên chủ đề theo đúng chính tả trong danh mục (khớp bỏ qua hoa/thường). */
+export function canonicalizeQuestionTopics(
+  questions: ExamQuestion[],
+  catalog: string[],
+): ExamQuestion[] {
+  const canon = new Map(catalog.map((n) => [topicKey(n), cleanTopic(n)]));
+  return questions.map((q) => {
+    const raw = cleanTopic(q.topic ?? "");
+    if (!raw) return q;
+    const name = canon.get(topicKey(raw)) ?? raw;
+    return name === q.topic ? q : ({ ...q, topic: name } as ExamQuestion);
+  });
+}
+
+// ---------- Luyện tập: thời lượng theo dạng câu ----------
+// Câu lý thuyết 15 giây, câu bài tập 45 giây. Câu chưa gắn nhãn `form` coi như bài tập
+// để không ép giờ quá tay. Tổng thời lượng của phiên = tổng thời lượng các câu.
+export const SECONDS_PER_FORM: Record<QuestionForm, number> = {
+  ly_thuyet: 15,
+  bai_tap: 45,
+};
+
+export function questionSeconds(q: ExamQuestion): number {
+  return q.form === "ly_thuyet"
+    ? SECONDS_PER_FORM.ly_thuyet
+    : SECONDS_PER_FORM.bai_tap;
+}
+
+export function totalSeconds(questions: ExamQuestion[]): number {
+  return questions.reduce((sum, q) => sum + questionSeconds(q), 0);
+}
+
+/** Thời lượng trung bình một câu của ngân hàng — để ước lượng trước khi bốc câu. */
+export function averageSeconds(questions: ExamQuestion[]): number {
+  if (questions.length === 0) return SECONDS_PER_FORM.bai_tap;
+  return totalSeconds(questions) / questions.length;
+}
+
+/** Bốc ngẫu nhiên n phần tử (Fisher–Yates trên bản sao, không đụng mảng gốc). */
+export function pickRandom<T>(items: T[], n: number): T[] {
+  const pool = [...items];
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, Math.max(0, Math.min(n, pool.length)));
+}
+
+/** mm:ss */
+export function formatClock(totalSec: number): string {
+  const safe = Math.max(0, Math.round(totalSec));
+  const m = Math.floor(safe / 60);
+  const s = safe % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }

@@ -7,7 +7,10 @@ import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import ContentHtml from "@/components/exams/ContentHtml";
 import {
   createQuestionTopic,
+  deleteQuestionTopic,
   fetchQuestionTopics,
+  lessonTopics,
+  outcomesOf,
   updateQuestionTopic,
   type QuestionTopic,
 } from "@/services/analytics";
@@ -37,6 +40,9 @@ export default function QuestionTopicsAdmin() {
   }, []);
 
   const gradeTopics = topics.filter((t) => t.grade === grade);
+  const parents = lessonTopics(gradeTopics).sort(
+    (a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name, "vi"),
+  );
   const lessonsByChapter = useMemo(() => {
     const m = new Map<number, Lesson[]>();
     for (const l of lessons) {
@@ -67,13 +73,42 @@ export default function QuestionTopicsAdmin() {
     }
   }
 
+  async function addOutcome(parent: QuestionTopic, name: string) {
+    const siblings = outcomesOf(topics, parent.id);
+    try {
+      await createQuestionTopic({
+        grade,
+        name,
+        chapterId: parent.chapterId,
+        lessonId: parent.lessonId,
+        parentId: parent.id,
+        sortOrder: parent.sortOrder + siblings.length + 1,
+      });
+      reload();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Không thêm được yêu cầu cần đạt.");
+    }
+  }
+
+  async function remove(t: QuestionTopic) {
+    if (!confirm(`Xoá "${t.name}"? Các mục phụ đạo gắn với nó cũng mất.`)) return;
+    try {
+      await deleteQuestionTopic(t.id);
+      reload();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Không xoá được.");
+    }
+  }
+
   return (
     <div className="space-y-8">
       <header>
         <h1 className="font-display text-2xl font-bold text-white">Chủ đề câu hỏi</h1>
         <p className="mt-1 text-sm text-slate-400">
-          Danh mục chủ đề chuẩn hoá cho phần phân tích kết quả. Gắn mỗi chủ đề vào một bài học
-          để nút &ldquo;Ôn lại&rdquo; của học sinh nhảy đúng chỗ.
+          Hai tầng: <strong className="text-slate-200">bài học</strong> → các{" "}
+          <strong className="text-slate-200">yêu cầu cần đạt</strong> trong bài. Câu hỏi nên gắn
+          vào yêu cầu cần đạt cho mịn; mục phụ đạo vẫn gom lên tầng bài để đủ số câu mà kết luận.
+          Bài học chọn ở tầng cha quyết định nút &ldquo;Ôn lại&rdquo; của học sinh.
         </p>
       </header>
 
@@ -99,72 +134,157 @@ export default function QuestionTopicsAdmin() {
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addTopic()}
-            placeholder="Tên chủ đề mới, vd Nội năng"
+            placeholder="Tên chủ đề tầng bài, vd Nội năng. Định luật 1 nhiệt động lực học"
             className={`${input} min-w-64 flex-1`}
           />
           <button
             onClick={addTopic}
             className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
           >
-            + Thêm chủ đề
+            + Thêm chủ đề bài học
           </button>
         </div>
 
-        <div className="mt-4 space-y-2">
-          {gradeTopics.length === 0 && (
+        <div className="mt-4 space-y-3">
+          {parents.length === 0 && (
             <p className="text-sm text-slate-500">Lớp này chưa có chủ đề nào.</p>
           )}
-          {gradeTopics.map((t) => (
-            <div
+          {parents.map((t) => (
+            <TopicNode
               key={t.id}
-              className="flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-white/[.02] px-4 py-3"
-            >
-              <input
-                defaultValue={t.name}
-                onBlur={(e) =>
-                  e.target.value.trim() !== t.name && patch(t.id, { name: e.target.value })
-                }
-                className={`${input} min-w-48 flex-1`}
-              />
-              <select
-                value={t.chapterId ?? ""}
-                onChange={(e) =>
-                  patch(t.id, {
-                    chapterId: e.target.value ? Number(e.target.value) : null,
-                    lessonId: null,
-                  })
-                }
-                className={`${input} bg-[#0B1020]`}
-              >
-                <option value="">— Chương —</option>
-                {chapters
-                  .filter((c) => c.subjectCode === "vat-ly")
-                  .map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.title}
-                    </option>
-                  ))}
-              </select>
-              <select
-                value={t.lessonId ?? ""}
-                onChange={(e) =>
-                  patch(t.id, { lessonId: e.target.value ? Number(e.target.value) : null })
-                }
-                className={`${input} bg-[#0B1020]`}
-              >
-                <option value="">— Bài học (cho nút Ôn lại) —</option>
-                {(t.chapterId ? lessonsByChapter.get(t.chapterId) ?? [] : lessons).map((l) => (
-                  <option key={l.id} value={l.id}>
-                    {l.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+              topic={t}
+              outcomes={outcomesOf(gradeTopics, t.id)}
+              chapters={chapters}
+              lessons={lessons}
+              lessonsByChapter={lessonsByChapter}
+              onPatch={patch}
+              onAddOutcome={addOutcome}
+              onRemove={remove}
+            />
           ))}
         </div>
       </section>
 
       <ExamTagger grade={grade} topics={gradeTopics} onNeedTopic={reload} />
+    </div>
+  );
+}
+
+// ---------- Một bài học + các yêu cầu cần đạt của nó ----------
+function TopicNode({
+  topic,
+  outcomes,
+  chapters,
+  lessons,
+  lessonsByChapter,
+  onPatch,
+  onAddOutcome,
+  onRemove,
+}: {
+  topic: QuestionTopic;
+  outcomes: QuestionTopic[];
+  chapters: Chapter[];
+  lessons: Lesson[];
+  lessonsByChapter: Map<number, Lesson[]>;
+  onPatch: (id: number, p: Parameters<typeof updateQuestionTopic>[1]) => void;
+  onAddOutcome: (parent: QuestionTopic, name: string) => void;
+  onRemove: (t: QuestionTopic) => void;
+}) {
+  const [draft, setDraft] = useState("");
+
+  function submit() {
+    if (!draft.trim()) return;
+    onAddOutcome(topic, draft);
+    setDraft("");
+  }
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/[.02] p-4">
+      <div className="flex flex-wrap items-center gap-3">
+        <input
+          defaultValue={topic.name}
+          onBlur={(e) =>
+            e.target.value.trim() !== topic.name && onPatch(topic.id, { name: e.target.value })
+          }
+          className={`${input} min-w-48 flex-1 font-semibold`}
+        />
+        <select
+          value={topic.chapterId ?? ""}
+          onChange={(e) =>
+            onPatch(topic.id, {
+              chapterId: e.target.value ? Number(e.target.value) : null,
+              lessonId: null,
+            })
+          }
+          className={`${input} bg-[#0B1020]`}
+        >
+          <option value="">— Chương —</option>
+          {chapters
+            .filter((c) => c.subjectCode === "vat-ly")
+            .map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.title}
+              </option>
+            ))}
+        </select>
+        <select
+          value={topic.lessonId ?? ""}
+          onChange={(e) =>
+            onPatch(topic.id, { lessonId: e.target.value ? Number(e.target.value) : null })
+          }
+          className={`${input} bg-[#0B1020]`}
+        >
+          <option value="">— Bài học (cho nút Ôn lại) —</option>
+          {(topic.chapterId ? lessonsByChapter.get(topic.chapterId) ?? [] : lessons).map((l) => (
+            <option key={l.id} value={l.id}>
+              {l.title}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="mt-3 space-y-1.5 border-l border-white/10 pl-4">
+        {outcomes.length === 0 && (
+          <p className="text-xs text-slate-500">
+            Chưa tách yêu cầu cần đạt — câu hỏi của bài này chỉ gắn được nhãn ở mức cả bài.
+          </p>
+        )}
+        {outcomes.map((o) => (
+          <div key={o.id} className="flex items-center gap-2">
+            <span className="text-xs text-slate-600">└</span>
+            <input
+              defaultValue={o.name}
+              onBlur={(e) =>
+                e.target.value.trim() !== o.name && onPatch(o.id, { name: e.target.value })
+              }
+              className={`${input} flex-1 text-[13px]`}
+            />
+            <button
+              onClick={() => onRemove(o)}
+              title="Xoá yêu cầu cần đạt"
+              className="rounded-lg border border-white/10 px-2 py-1 text-xs text-slate-400 hover:border-rose-400/40 hover:text-rose-300"
+            >
+              Xoá
+            </button>
+          </div>
+        ))}
+        <div className="flex items-center gap-2 pt-1">
+          <span className="text-xs text-slate-600">+</span>
+          <input
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && submit()}
+            placeholder="Thêm yêu cầu cần đạt, vd Viết phương trình dao động điều hoà"
+            className={`${input} flex-1 text-[13px]`}
+          />
+          <button
+            onClick={submit}
+            className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-white/30"
+          >
+            Thêm
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -228,12 +348,27 @@ function ExamTagger({
   }
 
   const tagged = questions.filter((q) => (q.topic ?? "").trim() && q.form).length;
+  // Nhóm theo bài để chọn nhanh: mở một bài ra là thấy các yêu cầu cần đạt của bài đó.
+  const grouped = useMemo(
+    () =>
+      lessonTopics(topics)
+        .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name, "vi"))
+        .map((parent) => ({ parent, outcomes: outcomesOf(topics, parent.id) })),
+    [topics],
+  );
+  // Câu còn gắn ở mức cả bài trong khi bài đó đã tách yêu cầu cần đạt.
+  const coarseNames = new Set(
+    grouped.filter((g) => g.outcomes.length > 0).map((g) => g.parent.name),
+  );
+  const coarseCount = questions.filter((q) => coarseNames.has((q.topic ?? "").trim())).length;
 
   return (
     <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
       <h2 className="font-display font-semibold text-white">Gắn nhãn cho một đề</h2>
       <p className="mt-1 text-sm text-slate-400">
         Sửa chủ đề / loại cho từng câu (đề nhập bằng skill up-đề thường đã có sẵn nhãn).
+        Chọn đúng <strong className="text-slate-300">yêu cầu cần đạt</strong> trong bài thay vì
+        để ở mức cả bài — thầy mới biết em hổng phần nào.
       </p>
 
       <select
@@ -254,6 +389,12 @@ function ExamTagger({
           <div className="mt-4 flex items-center gap-3 text-sm">
             <span className="text-slate-400">
               Đã gắn {tagged}/{questions.length} câu
+              {coarseCount > 0 && (
+                <span className="text-amber-300">
+                  {" "}
+                  · {coarseCount} câu mới ở mức cả bài
+                </span>
+              )}
             </span>
             <button
               onClick={save}
@@ -283,10 +424,21 @@ function ExamTagger({
                   className={`${input} bg-[#0B1020]`}
                 >
                   <option value="">— Chủ đề —</option>
-                  {topics.map((t) => (
-                    <option key={t.id} value={t.name}>
-                      {t.name}
-                    </option>
+                  {grouped.map((g) => (
+                    <optgroup key={g.parent.id} label={g.parent.name}>
+                      {g.outcomes.length === 0 ? (
+                        <option value={g.parent.name}>{g.parent.name} (cả bài)</option>
+                      ) : (
+                        <>
+                          {g.outcomes.map((o) => (
+                            <option key={o.id} value={o.name}>
+                              {o.name}
+                            </option>
+                          ))}
+                          <option value={g.parent.name}>— cả bài —</option>
+                        </>
+                      )}
+                    </optgroup>
                   ))}
                   {(q.topic ?? "").trim() &&
                     !topics.some((t) => t.name === q.topic) && (

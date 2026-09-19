@@ -6,11 +6,13 @@ import { Check, ChevronDown, FileText, Play } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import PracticeQuestionsGrid from "@/components/lessons/PracticeQuestionsGrid";
+import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
+import PracticeSession from "@/components/lessons/PracticeSession";
 import {
   SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
+  isGradedKind,
   youTubeEmbed,
   type Lesson,
   type LessonItem,
@@ -93,7 +95,7 @@ export default function InlineLessonAccordion({
   useEffect(() => {
     if (!open || !session || !items) return;
     const examIds = items
-      .filter((item) => item.kind === "kiem_tra")
+      .filter((item) => isGradedKind(item.kind))
       .flatMap((item) => item.exam_ids);
     Promise.all([
       fetchExamMetas(examIds),
@@ -114,7 +116,7 @@ export default function InlineLessonAccordion({
   );
 
   function isItemDone(item: LessonItem) {
-    if (item.kind === "kiem_tra")
+    if (isGradedKind(item.kind))
       return item.exam_ids.length > 0 && item.exam_ids.every((id) => scores.has(id));
     return done.has(item.id);
   }
@@ -187,6 +189,11 @@ export default function InlineLessonAccordion({
                               <div className="min-w-0 flex-1">
                                 <h5 className="font-semibold text-white">{item.title}</h5>
                                 {item.subtitle && <p className="mt-1 text-sm text-slate-400">{item.subtitle}</p>}
+                                {item.due_at && (
+                                  <p className="mt-1 text-sm" style={{ color: meta.color }}>
+                                    Hạn nộp: {new Date(item.due_at).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit", year: "numeric" })}
+                                  </p>
+                                )}
                               </div>
                               {finished && <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-300"><Check size={14} /> Đã hoàn thành</span>}
                             </div>
@@ -207,16 +214,24 @@ export default function InlineLessonAccordion({
                               </div>
                             )}
                             {item.kind === "bai_tap_mau" && (
-                              <div className="mt-3">
+                              <div className="mt-3 space-y-3">
+                                {item.exam_ids.length > 0 && (
+                                  <SampleQuestionsGrid examIds={item.exam_ids} color={meta.color} />
+                                )}
                                 <WorkedQuestionsGrid questions={item.questions} color={meta.color} />
                               </div>
                             )}
                             {item.kind === "luyen_tap" && (
                               <div className="mt-3">
-                                <PracticeQuestionsGrid examIds={item.exam_ids} color={meta.color} />
+                                <PracticeSession
+                                  examIds={item.exam_ids}
+                                  lessonId={lesson.id}
+                                  itemId={item.id}
+                                  color={meta.color}
+                                />
                               </div>
                             )}
-                            {item.kind === "kiem_tra" && (
+                            {isGradedKind(item.kind) && (
                               <div className="mt-3 space-y-2">
                                 {item.exam_ids.length === 0 ? (
                                   <p className="text-sm text-slate-500">Chưa gắn đề</p>

@@ -1,20 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
-import { LESSON_KIND_META, isPeriodicExam, type Chapter, type Lesson } from "@/features/lessons/types";
+import {
+  LESSON_KIND_META,
+  isPeriodicExam,
+  isSemesterExam,
+  type Chapter,
+  type Lesson,
+} from "@/features/lessons/types";
 import {
   classGrade,
   displayClassesByGrade,
   expandClassIdsByGrade,
   fetchClasses,
-  fetchMyClassIds,
 } from "@/services/classes";
 import { fetchChapters, fetchLessonProgressSummaries, fetchLessons } from "@/services/lessons";
 import {
@@ -40,7 +45,13 @@ const GRADE_IMAGES: Record<string, string> = {
   "12": "/images/learning-path/vat-ly-12.jpg",
 };
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
-const GRADE_ORDER = ["9", "10", "11", "12"];
+const GRADE_ORDER = ["10", "11", "12", "9"];
+const GRADE_DETAILS: Record<string, { description: string; accent: string }> = {
+  "10": { description: "Xây nền tảng cơ học", accent: "text-blue-300 border-blue-400/30 hover:border-blue-300 bg-blue-500/10" },
+  "11": { description: "Dao động, sóng và điện", accent: "text-violet-300 border-violet-400/30 hover:border-violet-300 bg-violet-500/10" },
+  "12": { description: "Củng cố kiến thức, ôn thi", accent: "text-orange-300 border-orange-400/30 hover:border-orange-300 bg-orange-500/10" },
+  "9": { description: "Kiến thức nền tảng Khoa học tự nhiên", accent: "text-emerald-300 border-emerald-400/30 hover:border-emerald-300 bg-emerald-500/10" },
+};
 const CLASS_TABS = [
   { id: "secondary", label: "THPT – THCS" },
   { id: "university", label: "CTTC" },
@@ -79,16 +90,18 @@ const UNIVERSITY_CLASSES = [
 ];
 
 export default function ClassHubPage({ classSlug }: { classSlug?: string } = {}) {
+  return <Suspense fallback={<div className="mx-auto max-w-6xl px-6 pt-28"><SkeletonGrid count={3} /></div>}>
+    <ClassHubContent classSlug={classSlug} />
+  </Suspense>;
+}
+
+function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const { session } = useAuth();
+  const searchParams = useSearchParams();
+  const activeTab = searchParams.get("tab") === "cttc" ? "university" : "secondary";
   const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
-  // Lớp của chính học sinh — mở thẳng, khỏi bắt chọn lại khối mỗi lần vào.
-  const [myClassSlug, setMyClassSlug] = useState<string | null | undefined>(undefined);
-  const [browseAll, setBrowseAll] = useState(false);
-  const [activeTab, setActiveTab] = useState<(typeof CLASS_TABS)[number]["id"]>(
-    "secondary",
-  );
   const [activeSubjectCode, setActiveSubjectCode] = useState("vat-ly");
   const [requestedChapterId, setRequestedChapterId] = useState<number | null>(null);
   const [openChapterId, setOpenChapterId] = useState<number | null>(null);
@@ -102,8 +115,6 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
   useEffect(() => {
     const savedLessonId = Number(window.localStorage.getItem(LAST_LESSON_KEY));
     if (savedLessonId > 0) setLastLessonId(savedLessonId);
-    const requestedTab = new URLSearchParams(window.location.search).get("tab");
-    if (requestedTab === "cttc") setActiveTab("university");
     const requestedSubject = new URLSearchParams(window.location.search).get("subject");
     if (["vat-ly", "hoa-hoc", "sinh-hoc"].includes(requestedSubject ?? "")) {
       setActiveSubjectCode(requestedSubject!);
@@ -131,47 +142,32 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
   }, [session]);
 
   useEffect(() => {
-    if (!session || classSlug || !classes) return;
-    fetchMyClassIds(session.user.id)
-      .then((ids) => {
-        const mine = classes.find((item) => ids.includes(item.id));
-        const grade = mine ? classGrade(mine.name) : null;
-        const representative = grade
-          ? displayClassesByGrade(classes).find((item) => classGrade(item.name) === grade)
-          : undefined;
-        setMyClassSlug(representative?.slug ?? mine?.slug ?? null);
-      })
-      .catch(() => setMyClassSlug(null));
-  }, [session, classSlug, classes]);
-
-  useEffect(() => {
     if (!session || !lessons?.length) return;
     fetchLessonProgressSummaries(session.user.id, lessons.map((lesson) => lesson.id))
       .then(setLessonProgress)
       .catch(() => setLessonProgress(new Map()));
   }, [session, lessons]);
 
-  const autoSlug = session && !browseAll && !requestedChapterId ? myClassSlug ?? null : null;
-  const effectiveSlug = classSlug ?? autoSlug;
-  const resolvingMyClass =
-    Boolean(session) && !classSlug && !browseAll && !requestedChapterId && myClassSlug === undefined;
-
+  const effectiveSlug = classSlug;
   const active = classes?.find((c) =>
     effectiveSlug ? c.slug === effectiveSlug : c.id === activeId,
   );
+  const subjectCode = classGrade(active?.name ?? "") === "9" ? activeSubjectCode : "vat-ly";
   const activeDisplayName = active
-    ? `${classGrade(active.name) === "9" ? "KHTN 9" : active.name} - ${academicSubject(activeSubjectCode).label}`
+    ? classGrade(active.name) === "9"
+      ? `KHTN 9 · ${academicSubject(subjectCode).label}`
+      : `Vật lý ${classGrade(active.name) ?? active.name}`
     : undefined;
   const displayClasses = classes ? displayClassesByGrade(classes) : [];
   const visibleClassIds = classes && active ? expandClassIdsByGrade([active.id], classes) : null;
   const classChapters = (chapters ?? []).filter(
-    (ch) => visibleTo(ch.classIds, visibleClassIds) && ch.subjectCode === activeSubjectCode,
+    (ch) => visibleTo(ch.classIds, visibleClassIds) && ch.subjectCode === subjectCode,
   );
   const classPosts = (posts ?? []).filter(
-    (p) => visibleTo(p.classIds, visibleClassIds) && p.subjectCode === activeSubjectCode,
+    (p) => visibleTo(p.classIds, visibleClassIds) && p.subjectCode === subjectCode,
   );
   const classExams = (exams ?? []).filter(
-    (e) => visibleTo(e.classIds, visibleClassIds) && e.subjectCode === activeSubjectCode,
+    (e) => visibleTo(e.classIds, visibleClassIds) && e.subjectCode === subjectCode,
   );
   const visibleLessonIds = new Set(classChapters.map((chapter) => chapter.id));
   const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;
@@ -180,7 +176,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
       id: String(lesson.id),
-      subject: activeSubjectCode,
+      subject: subjectCode,
       chapter: String(lesson.chapter_id),
     });
     if (effectiveSlug) params.set("class", effectiveSlug);
@@ -228,7 +224,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
       <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-20 lg:px-8">
         <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
           {effectiveSlug && activeDisplayName ? (
-            <>Lớp <span className="text-gradient">{activeDisplayName}</span></>
+            <span className="text-gradient">{activeDisplayName}</span>
           ) : (
             <>Lớp <span className="text-gradient">học</span></>
           )}
@@ -244,7 +240,6 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
             <button
               key={tab.id}
               onClick={() => {
-                setActiveTab(tab.id);
                 const url = tab.id === "university" ? "/lop-hoc?tab=cttc" : "/lop-hoc";
                 window.history.replaceState(null, "", url);
               }}
@@ -313,10 +308,10 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
               <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
                 <div>
                   <h2 className="font-display text-xl font-semibold text-white">
-                    Chương trình phổ thông (THPT – THCS)
+                    Chọn lớp học
                   </h2>
                   <p className="mt-1 text-sm text-slate-400">
-                    Chọn lớp hoặc môn học để xem chương trình và mở từng bài học.
+                    Chọn khối lớp để vào chương trình học.
                   </p>
                 </div>
                 {activeDisplayName && (
@@ -326,34 +321,29 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                 )}
               </div>
 
-              {!effectiveSlug && resolvingMyClass && <SkeletonGrid count={4} />}
-
-              {!effectiveSlug && !resolvingMyClass && <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {!effectiveSlug && <div className="grid gap-4 md:grid-cols-3">
                 {GRADE_ORDER.map((grade) => {
-                  const gradeClasses = displayClasses.filter(
-                    (c) => classGrade(c.name) === grade,
-                  );
-                  if (gradeClasses.length === 0) return null;
+                  const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
+                  if (!schoolClass) return null;
+                  const details = GRADE_DETAILS[grade];
                   return (
                     <Link
                       key={grade}
-                      href={`/lop-hoc/${gradeClasses[0].slug}`}
-                      className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B1020]"
+                      href={`/lop-hoc/${schoolClass.slug}`}
+                      className={`group rounded-2xl border p-5 transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${details.accent} ${grade === "9" ? "md:col-span-3" : ""}`}
                     >
-                      <img
-                        src={GRADE_IMAGES[grade]}
-                        alt={GRADE_LABELS[grade] ?? `Vật lý lớp ${grade}`}
-                        className="aspect-[2/3] w-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="p-4">
-                        <span className="font-display text-lg font-bold text-white">
-                          {GRADE_LABELS[grade] ?? `Vật lý lớp ${grade}`}
-                        </span>
-                        <span className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 text-sm font-semibold text-[#60A5FA]">
-                          Mở lớp học <span aria-hidden="true">→</span>
-                        </span>
+                      <div className="flex items-center gap-5">
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-bold uppercase tracking-widest">{grade === "9" ? "THCS" : "THPT"} · Lớp</p>
+                          <p className="mt-1 font-display text-5xl font-bold sm:text-6xl">{grade}</p>
+                          <h3 className="mt-3 text-xl font-bold text-white">{GRADE_LABELS[grade] ?? `Vật lý ${grade}`}</h3>
+                          <p className="mt-1 text-sm text-slate-300">{details.description}</p>
+                        </div>
+                        <img src={GRADE_IMAGES[grade]} alt="" className="h-28 w-20 shrink-0 rounded-lg object-cover shadow-lg" loading="lazy" />
                       </div>
+                      <span className="mt-5 flex items-center justify-between border-t border-current/20 pt-4 text-sm font-bold">
+                        Vào học <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                      </span>
                     </Link>
                   );
                 })}
@@ -362,24 +352,11 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
             {effectiveSlug && active && (
               <div className="mt-10 space-y-12">
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  {classSlug ? (
-                    <Link href="/lop-hoc" className="text-sm font-semibold text-slate-400 hover:text-white">
-                      ← Tất cả lớp học
-                    </Link>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setBrowseAll(true);
-                        setActiveId(null);
-                      }}
-                      className="text-sm font-semibold text-slate-400 hover:text-white"
-                    >
-                      ← Xem lớp khác
-                    </button>
-                  )}
+                  <Link href="/lop-hoc" className="rounded-xl border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 hover:bg-white/10">
+                    ← Đổi lớp
+                  </Link>
                   <div className="flex flex-wrap gap-2">
-                    {subjectsForGrade(classGrade(active.name) ?? "").map((subject) => (
+                    {classGrade(active.name) === "9" && subjectsForGrade("9").map((subject) => (
                       <button
                         key={subject.code}
                         type="button"
@@ -400,7 +377,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                 </div>
                 <section>
                   <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                    Chương trình lớp {activeDisplayName}
+                    Chương trình {activeDisplayName}
                   </h2>
                   {!chapters || !lessons ? (
                     <SkeletonGrid count={2} />
@@ -420,109 +397,171 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
                       )}
                       <MistakeReviewPanel />
                       {classChapters.map((ch) => {
+                        // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
+                        // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
                         const chapterLessons = lessons.filter(
-                          (l) => l.chapter_id === ch.id,
+                          (l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind),
+                        );
+                        const semesterExams = lessons.filter(
+                          (l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind),
                         );
                         const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
                         const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
                         const chapterPercent = chapterTotal > 0 ? Math.round((chapterCompleted / chapterTotal) * 100) : 0;
                         return (
-                          <div
-                            key={ch.id}
-                            id={`chapter-${ch.id}`}
-                            className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
-                            style={{ scrollMarginTop: "104px" }}
-                          >
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setOpenChapterId((current) => current === ch.id ? null : ch.id);
-                              }}
-                              aria-expanded={openChapterId === ch.id}
-                              aria-controls={`chapter-lessons-${ch.id}`}
-                              className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
+                          <Fragment key={ch.id}>
+                            <div
+                              id={`chapter-${ch.id}`}
+                              className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
+                              style={{ scrollMarginTop: "104px" }}
                             >
-                              <span className="min-w-0 flex-1">
-                                <span className="block truncate">{ch.title}</span>
-                                <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
-                                  <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setOpenChapterId((current) => current === ch.id ? null : ch.id);
+                                }}
+                                aria-expanded={openChapterId === ch.id}
+                                aria-controls={`chapter-lessons-${ch.id}`}
+                                className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
+                              >
+                                <span className="min-w-0 flex-1">
+                                  <span className="block truncate">{ch.title}</span>
+                                  <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
+                                    <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
+                                  </span>
                                 </span>
-                              </span>
-                              <span className="flex shrink-0 items-center gap-3">
-                                <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
-                                <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
-                              </span>
-                            </button>
-                            {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
-                              {chapterLessons.length === 0 && (
-                                <p className="px-4 pb-3 text-sm text-slate-500">
-                                  Chưa có bài học trong chương này.
-                                </p>
-                              )}
-                              {chapterLessons.map((lesson) => {
-                                const progress = lessonProgress.get(lesson.id);
-                                const percent = progress?.total
-                                  ? Math.round((progress.completed / progress.total) * 100)
-                                  : 0;
-                                const periodic = isPeriodicExam(lesson.lesson_kind);
-                                const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
-                                return (
-                                  <Link
-                                    key={lesson.id}
-                                    href={lessonHref(lesson)}
-                                    onClick={() => {
-                                      setLastLessonId(lesson.id);
-                                      window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
-                                    }}
-                                    className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
-                                    style={{
-                                      borderColor: periodic ? `${kindMeta.color}33` : "transparent",
-                                    }}
-                                  >
-                                    <span
-                                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                <span className="flex shrink-0 items-center gap-3">
+                                  <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
+                                  <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
+                                </span>
+                              </button>
+                              {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
+                                {chapterLessons.length === 0 && (
+                                  <p className="px-4 pb-3 text-sm text-slate-500">
+                                    Chưa có bài học trong chương này.
+                                  </p>
+                                )}
+                                {chapterLessons.map((lesson) => {
+                                  const progress = lessonProgress.get(lesson.id);
+                                  const percent = progress?.total
+                                    ? Math.round((progress.completed / progress.total) * 100)
+                                    : 0;
+                                  const periodic = isPeriodicExam(lesson.lesson_kind);
+                                  const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
+                                  return (
+                                    <Link
+                                      key={lesson.id}
+                                      href={lessonHref(lesson)}
+                                      onClick={() => {
+                                        setLastLessonId(lesson.id);
+                                        window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
+                                      }}
+                                      className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
                                       style={{
-                                        backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
+                                        borderColor: periodic ? `${kindMeta.color}33` : "transparent",
                                       }}
                                     >
-                                      {periodic ? kindMeta.icon : "📖"}
-                                    </span>
-                                    <span className="min-w-0 flex-1">
-                                      <span className="flex flex-wrap items-center gap-2">
-                                        {periodic && (
-                                          <span
-                                            className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
-                                            style={{
-                                              color: kindMeta.color,
-                                              backgroundColor: `${kindMeta.color}22`,
-                                            }}
-                                          >
-                                            {kindMeta.badge}
+                                      <span
+                                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                        style={{
+                                          backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
+                                        }}
+                                      >
+                                        {periodic ? kindMeta.icon : "📖"}
+                                      </span>
+                                      <span className="min-w-0 flex-1">
+                                        <span className="flex flex-wrap items-center gap-2">
+                                          {periodic && (
+                                            <span
+                                              className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                                              style={{
+                                                color: kindMeta.color,
+                                                backgroundColor: `${kindMeta.color}22`,
+                                              }}
+                                            >
+                                              {kindMeta.badge}
+                                            </span>
+                                          )}
+                                          <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                            {lesson.title}
+                                          </span>
+                                        </span>
+                                        <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
+                                          {periodic
+                                            ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
+                                            : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
+                                        </span>
+                                        {!periodic && (
+                                          <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
+                                            <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
                                           </span>
                                         )}
-                                        <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                          {lesson.title}
-                                        </span>
                                       </span>
-                                      <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
-                                        {periodic
-                                          ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
-                                          : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
+                                      <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
+                                        {periodic ? "Làm bài →" : "Vào bài →"}
                                       </span>
-                                      {!periodic && (
-                                        <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
-                                          <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
-                                        </span>
-                                      )}
+                                    </Link>
+                                  );
+                                })}
+                              </div>}
+                            </div>
+                            {semesterExams.map((exam) => {
+                              const meta = LESSON_KIND_META[exam.lesson_kind];
+                              const examProgress = lessonProgress.get(exam.id);
+                              const done =
+                                !!examProgress?.total &&
+                                examProgress.completed >= examProgress.total;
+                              return (
+                                <Link
+                                  key={exam.id}
+                                  id={`lesson-${exam.id}`}
+                                  href={lessonHref(exam)}
+                                  onClick={() => {
+                                    setLastLessonId(exam.id);
+                                    window.localStorage.setItem(LAST_LESSON_KEY, String(exam.id));
+                                  }}
+                                  className="group flex items-center gap-4 rounded-2xl border px-4 py-4 transition-all hover:bg-white/5"
+                                  style={{
+                                    scrollMarginTop: "104px",
+                                    borderColor: `${meta.color}40`,
+                                    backgroundColor: `${meta.color}0F`,
+                                  }}
+                                >
+                                  <span
+                                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                    style={{ backgroundColor: `${meta.color}22` }}
+                                  >
+                                    {meta.icon}
+                                  </span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="flex flex-wrap items-center gap-2">
+                                      <span
+                                        className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                                        style={{
+                                          color: meta.color,
+                                          backgroundColor: `${meta.color}22`,
+                                        }}
+                                      >
+                                        {meta.badge}
+                                      </span>
+                                      <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                        {exam.title}
+                                      </span>
                                     </span>
-                                    <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
-                                      {periodic ? "Làm bài →" : "Vào bài →"}
+                                    <span
+                                      className="mt-1 block text-xs font-semibold tracking-wide uppercase"
+                                      style={{ color: meta.color }}
+                                    >
+                                      {done ? "Đã hoàn thành" : "Chưa làm"}
                                     </span>
-                                  </Link>
-                                );
-                              })}
-                            </div>}
-                          </div>
+                                  </span>
+                                  <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
+                                    Làm bài →
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                          </Fragment>
                         );
                       })}
                     </div>

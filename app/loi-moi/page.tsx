@@ -8,7 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
-import { claimStaffInvite, signUpWithInvite } from "@/services/staff-invites";
+import { claimStaffInvite, fetchGrantedStaffRole, signUpWithInvite } from "@/services/staff-invites";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -29,11 +29,12 @@ function Card({ children }: { children: React.ReactNode }) {
 function InviteContent() {
   const searchParams = useSearchParams();
   const code = (searchParams.get("ma") ?? "").trim();
-  const { session, loading } = useAuth();
+  const { session, realProfile, loading } = useAuth();
   const toast = useToast();
 
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState<string | null>(null);
+  const [failed, setFailed] = useState<string | null>(null);
   const [needConfirm, setNeedConfirm] = useState(false);
 
   const [fullName, setFullName] = useState("");
@@ -65,6 +66,22 @@ function InviteContent() {
       </Card>
     );
 
+  if (failed)
+    return (
+      <Card>
+        <Mail className="mx-auto text-amber-300" size={40} />
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Chưa nhận được lời mời</h1>
+        <p className="mt-2 text-center text-sm text-slate-400">{failed}</p>
+        {/* Đang đăng nhập rồi mà đẩy về trang đăng nhập thì chỉ làm người ta rối thêm. */}
+        <Link
+          href={session ? "/tai-khoan" : "/dang-nhap"}
+          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+        >
+          {session ? "Vào tài khoản" : "Đăng nhập"}
+        </Link>
+      </Card>
+    );
+
   if (needConfirm)
     return (
       <Card>
@@ -85,7 +102,11 @@ function InviteContent() {
         `Bạn được cấp quyền ${roleLabel(result.role, result.tier)}${result.class_name ? ` · lớp ${result.class_name}` : ""}.`,
       );
     } catch (error) {
-      toast("error", errorMessage(error, "Không nhận được lời mời."));
+      // Giữ lý do thật trên màn hình: toast biến mất sau vài giây, người dùng ở xa
+      // không đọc kịp rồi lại nhắn "bấm mà không được" mà không biết vì sao.
+      const reason = errorMessage(error, "Không nhận được lời mời.");
+      toast("error", reason);
+      setFailed(reason);
     } finally {
       setBusy(false);
     }
@@ -99,8 +120,22 @@ function InviteContent() {
     }
     setBusy(true);
     try {
-      await signUpWithInvite({ email, password, fullName, code });
-      setNeedConfirm(true);
+      const { needsEmailConfirm, userId } = await signUpWithInvite({ email, password, fullName, code });
+      // Dự án đang tắt xác nhận email: không có thư nào được gửi, tài khoản dùng được ngay.
+      // Chỉ hiện màn "kiểm tra email" khi Supabase thật sự bắt xác nhận (không trả session).
+      if (needsEmailConfirm) {
+        setNeedConfirm(true);
+        return;
+      }
+      const granted = userId ? await fetchGrantedStaffRole(userId) : null;
+      if (granted) {
+        setDone(`Tài khoản đã tạo xong và bạn được cấp quyền ${roleLabel(granted.role, granted.tier)}.`);
+      } else {
+        setFailed(
+          "Tài khoản đã được tạo nhưng mã mời không còn hiệu lực, nên chưa có quyền nào được cấp. " +
+            "Nhắn thầy cô gửi mã mới, đăng nhập rồi mở lại link mời để nhận quyền.",
+        );
+      }
     } catch (error) {
       toast("error", errorMessage(error, "Không tạo được tài khoản."));
     } finally {
@@ -109,6 +144,26 @@ function InviteContent() {
   }
 
   if (loading) return <Card><p className="text-center text-slate-400">Đang tải…</p></Card>;
+
+  // Thầy/cô chủ trang bấm nhầm link mời thì nhận lời mời sẽ tự hạ quyền chính mình
+  // (xem chặn ở apply_staff_invite). Nói rõ trước, đừng để chạm vào nút.
+  if (session && realProfile?.role === "admin")
+    return (
+      <Card>
+        <h1 className="font-display text-xl font-bold text-white">Không cần nhận lời mời</h1>
+        <p className="mt-2 text-sm text-slate-400">
+          <strong className="text-slate-200">{session.user.email}</strong> là tài khoản quản trị, đã có sẵn mọi quyền.
+          Mã <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong> vẫn còn nguyên — gửi link này
+          cho đúng người được mời.
+        </p>
+        <Link
+          href="/quan-tri/phan-cong-giang-vien"
+          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+        >
+          Về trang phân công
+        </Link>
+      </Card>
+    );
 
   if (session)
     return (

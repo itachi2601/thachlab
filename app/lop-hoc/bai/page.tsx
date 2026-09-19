@@ -9,12 +9,14 @@ import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import PracticeQuestionsGrid from "@/components/lessons/PracticeQuestionsGrid";
+import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
+import PracticeSession from "@/components/lessons/PracticeSession";
 import {
   LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
+  isGradedKind,
   isPeriodicExam,
   youTubeEmbed,
   youTubeThumb,
@@ -35,6 +37,13 @@ import { supabaseConfigured } from "@/services/supabase";
 
 function hexAlpha(hex: string, alpha: string) {
   return `${hex}${alpha}`;
+}
+
+/** Hạn nộp bài tập về nhà, vd "20:00 · 25/09/2026". */
+function formatDue(iso: string) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} · ${d.toLocaleDateString("vi-VN")}`;
 }
 
 /** Thẻ video YouTube: thumbnail + nút xem, bấm thì nhúng player. */
@@ -299,7 +308,7 @@ function LessonLoader() {
   useEffect(() => {
     if (!session || !items) return;
     const examIds = items
-      .filter((i) => i.kind === "kiem_tra")
+      .filter((i) => isGradedKind(i.kind))
       .flatMap((i) => i.exam_ids);
     fetchExamMetas(examIds).then(setExamMetas);
     fetchMyExamScores(session.user.id).then(setScores);
@@ -315,7 +324,7 @@ function LessonLoader() {
   }, [items]);
 
   function isDone(item: LessonItem) {
-    if (item.kind === "kiem_tra")
+    if (isGradedKind(item.kind))
       return item.exam_ids.length > 0 && item.exam_ids.every((id) => scores.has(id));
     return done.has(item.id);
   }
@@ -369,7 +378,7 @@ function LessonLoader() {
           </span>
           <h1 className="mt-3 font-display text-2xl font-bold text-white">{title}</h1>
           <p className="mt-2 text-sm text-slate-400">
-            Bài kiểm tra định kỳ của {chapterTitle || "chương"} — làm bài trực tuyến,
+            {kindMeta.label} của {chapterTitle || "chương"} — làm bài trực tuyến,
             hệ thống chấm điểm tự động.
           </p>
         </div>
@@ -421,7 +430,7 @@ function LessonLoader() {
               <h1>{title}</h1>
               <p>Học theo từng chặng, tự kiểm tra kiến thức và hoàn thành bài kiểm tra cuối bài.</p>
               <div className="cnc-stats">
-                <span>📚 5 chặng học</span>
+                <span>📚 {SECTION_ORDER.length} chặng học</span>
                 <span>📄 {items.length} nội dung</span>
                 <span>{session ? "✓ Đang lưu tiến độ" : "○ Đăng nhập để lưu"}</span>
               </div>
@@ -435,7 +444,7 @@ function LessonLoader() {
 
           <div className="cnc-lesson-progress-row">
             <div className="cnc-section-progress-ring">
-              <strong>{activeSection ? SECTION_ORDER.indexOf(activeSection) + 1 : 0}<small>/5</small></strong>
+              <strong>{activeSection ? SECTION_ORDER.indexOf(activeSection) + 1 : 0}<small>/{SECTION_ORDER.length}</small></strong>
             </div>
             <nav className="cnc-section-pills" aria-label="Đi nhanh đến phần bài học">
               {sections.map(({ kind, items: sectionItems }, index) => {
@@ -521,10 +530,15 @@ function LessonLoader() {
                               onOpen={() => markDone(item)}
                             />
                           );
-                        if (item.kind === "kiem_tra")
+                        if (isGradedKind(item.kind))
                           return (
                             <div key={item.id} className="space-y-3">
                               <p className="font-display font-bold text-white">{item.title}</p>
+                              {item.due_at && (
+                                <p className="text-sm" style={{ color: meta.color }}>
+                                  Hạn nộp: {formatDue(item.due_at)}
+                                </p>
+                              )}
                               {item.exam_ids.length === 0 ? (
                                 <p className="text-sm text-slate-500">Chưa gắn đề</p>
                               ) : (
@@ -556,9 +570,25 @@ function LessonLoader() {
                               )}
                             </div>
                             {item.kind === "bai_tap_mau" ? (
-                              <WorkedQuestionsGrid questions={item.questions} color={meta.color} />
+                              <>
+                                {item.exam_ids.length > 0 && (
+                                  <SampleQuestionsGrid
+                                    examIds={item.exam_ids}
+                                    color={meta.color}
+                                  />
+                                )}
+                                <WorkedQuestionsGrid
+                                  questions={item.questions}
+                                  color={meta.color}
+                                />
+                              </>
                             ) : (
-                              <PracticeQuestionsGrid examIds={item.exam_ids} color={meta.color} />
+                              <PracticeSession
+                                examIds={item.exam_ids}
+                                lessonId={id}
+                                itemId={item.id}
+                                color={meta.color}
+                              />
                             )}
                             {session && !done.has(item.id) && (
                               <button

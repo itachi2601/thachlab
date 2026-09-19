@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { PenLine, Sparkles, Video } from "lucide-react";
+import { PenLine, Sparkles, Video, LifeBuoy } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import { demoAccruedHours, demoMonthlyScore, demoSessions, isDemoAssistant } from "@/lib/tro-giang/demo";
@@ -15,6 +15,8 @@ import {
   type TaMonthlyScore,
   type TaSessionListItem,
 } from "@/lib/tro-giang/queries";
+
+import PolicyStudentMonth from "./PolicyStudentMonth";
 
 function currentMonthStr() {
   const d = new Date();
@@ -48,19 +50,23 @@ function StatTile({ label, value }: { label: string; value: string }) {
 }
 
 export default function TroGiangDashboard({ assistant }: { assistant: TaAssistant }) {
+  const [month,setMonth]=useState(currentMonthStr().slice(0,7));
+  return <div className="space-y-5"><div className="flex flex-wrap items-center gap-3"><label className="text-sm text-slate-300">Tháng <input aria-label="Tháng hiệu suất" type="month" value={month} onChange={e=>setMonth(e.target.value)} className="rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2 text-white"/></label><Link href="/tro-giang/quy-che" className="text-sm text-blue-300 underline">Quy chế từ 01/10/2026</Link></div>{month >= "2026-10" ? <PolicyStudentMonth key={month} assistant={assistant} month={`${month}-01`}/> : <LegacyDashboard key={month} assistant={assistant} month={`${month}-01`}/>}</div>;
+}
+function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: string }) {
   // Bản giả lập cho giáo viên xem trước — số liệu mẫu, không gọi Supabase (lib/tro-giang/demo.ts).
   const demo = isDemoAssistant(assistant);
-  const [score, setScore] = useState<TaMonthlyScore | null>(() => (demo ? demoMonthlyScore(currentMonthStr()) : null));
+  const [score, setScore] = useState<TaMonthlyScore | null>(() => (demo ? demoMonthlyScore(month) : null));
   const [accruedHours, setAccruedHours] = useState<number | null>(() => (demo ? demoAccruedHours() : null));
   const [sessions, setSessions] = useState<TaSessionListItem[] | null>(() => (demo ? demoSessions() : null));
 
   useEffect(() => {
     if (demo) return;
-    const month = currentMonthStr();
+    
     getMonthlyScore(assistant.id, month).then(setScore).catch(() => setScore(null));
     getAccruedHours(assistant.id).then(setAccruedHours).catch(() => setAccruedHours(null));
     fetchRecentSessions(assistant.id, 10).then(setSessions).catch(() => setSessions([]));
-  }, [assistant.id, demo]);
+  }, [assistant.id, demo, month]);
 
   const hasActivity = !!score && (score.lop_sessions > 0 || score.phudao_sessions > 0 || score.converted_hours > 0 || score.papers_graded > 0);
 
@@ -122,6 +128,14 @@ export default function TroGiangDashboard({ assistant }: { assistant: TaAssistan
       </Link>
 
       <Link
+        href="/tro-giang/phu-dao"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
+      >
+        <LifeBuoy size={16} />
+        Cần phụ đạo
+      </Link>
+
+      <Link
         href="/tro-giang/video"
         className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 py-3 text-sm font-bold text-slate-200"
       >
@@ -152,7 +166,11 @@ export default function TroGiangDashboard({ assistant }: { assistant: TaAssistan
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-white">
                       {typeMeta.label}
-                      {s.class_label ? ` · ${s.class_label}` : ""}
+                      {s.phudao_students?.length
+                        ? ` · ${s.phudao_students.length} em: ${s.phudao_students.join(", ")}`
+                        : s.class_label
+                          ? ` · ${s.class_label}`
+                          : ""}
                     </p>
                     <p className="text-xs text-slate-400">
                       {new Date(s.work_date).toLocaleDateString("vi-VN")}

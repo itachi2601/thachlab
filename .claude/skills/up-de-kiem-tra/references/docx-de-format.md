@@ -88,7 +88,13 @@ Không dùng `<h1>`. Không `<script>`/`<style>`/`on*=`.
 ### Đồ thị / hình vẽ → SVG nội tuyến
 
 "Như hình bên", đồ thị `v–t` / `x–t`, mặt phẳng nghiêng, sơ đồ lực → vẽ `<svg>` chèn thẳng vào
-`question`. Nền site tối `#0B1020`:
+`question`.
+
+**Đồ thị hàm số thì dùng `scripts/svglib.py`** (`Plot.axes/ytick/ttick/curve/marker/label`),
+đừng dựng tay — lớp đó đã chặn sẵn ba lỗi hay gặp: mũi tên/nhãn trục tràn viewBox, đường cong
+cắt ngang chữ số trên trục, nhãn đường đặt lạc khỏi đường của nó. Xem docstring đầu file.
+Phần dưới đây là quy ước chung, cần cho hình vẽ tay (sơ đồ lực, mặt phẳng nghiêng…).
+Nền site tối `#0B1020`:
 
 ```html
 <figure class="fig">

@@ -1,0 +1,8 @@
+html[data-theme="dark"] .ta-preview { color-scheme: dark; }
+html[data-theme="light"] .ta-preview { color-scheme: light; }
+html[data-theme="light"] .ta-preview [class~="bg-[#05070B]/95"] { background-color: rgb(248 250 252 / .97); }
+html[data-theme="light"] .ta-preview [class~="border-white/20"] { border-color: #cbd5e1; }
+html[data-theme="light"] .ta-preview [class~="bg-white/10"] { background-color: #e2e8f0; }
+html[data-theme="light"] .ta-preview [class~="bg-white/15"] { background-color: #cbd5e1; }
+html[data-theme="light"] .ta-preview [class~="text-fuchsia-200"] { color: #86198f; }
+html[data-theme="light"] .ta-preview [class~="bg-blue-600"][class~="text-white"] { color: #fff; }

@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import ExamResultSummary from "@/components/exams/ExamResultSummary";
-import type { Exam, QuestionResponse } from "@/features/exams/types";
+import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
   buildQuestionResults,
   emptyResponses,
@@ -19,6 +20,20 @@ import { fetchQuestionTopics } from "@/services/analytics";
 import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
+
+// Trạng thái một câu trên bảng câu hỏi. Câu đúng/sai có 4 ý nên còn nấc "làm dở":
+// em bấm được vài ý rồi bỏ qua, nhìn bảng phải thấy ngay chỗ còn thiếu.
+type AnswerState = "done" | "partial" | "empty";
+
+function answerState(q: ExamQuestion, r: QuestionResponse): AnswerState {
+  if (q.type === "true_false") {
+    const picks = Array.isArray(r) ? r : [];
+    const filled = q.statements.filter((_, i) => picks[i] != null).length;
+    if (filled === 0) return "empty";
+    return filled === q.statements.length ? "done" : "partial";
+  }
+  return isAnswered(q, r) ? "done" : "empty";
+}
 
 function formatClock(totalSeconds: number) {
   const m = Math.floor(totalSeconds / 60);
@@ -37,6 +52,10 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     "idle" | "saving" | "saved" | "failed"
   >("idle");
   const [usedSeconds, setUsedSeconds] = useState(0);
+  const [cur, setCur] = useState(0);
+  const [flags, setFlags] = useState<Set<number>>(new Set());
+  const [paletteOpen, setPaletteOpen] = useState(true);
+  const topRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(0);
   const submittedRef = useRef(false);
   const responsesRef = useRef(responses);
@@ -44,6 +63,22 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
   ).length;
+  const lastIndex = exam.questions.length - 1;
+
+  // Đổi câu thì kéo về đầu câu mới, đừng để em phải cuộn ngược lên
+  function goTo(idx: number) {
+    setCur(Math.min(lastIndex, Math.max(0, idx)));
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function toggleFlag(idx: number) {
+    setFlags((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  }
 
   // Chủ đề -> bài học để làm nút "Ôn ngay" ở phần "Xem lại bài làm"
   const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
@@ -168,55 +203,152 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   }
 
   if (phase === "running") {
+    const q = exam.questions[cur];
     return (
-      <div className="mx-auto max-w-3xl">
-        <div className="sticky top-16 z-40 mb-6 flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020]/95 px-5 py-3 backdrop-blur-md">
-          <span className="text-sm text-slate-400">
-            Đã làm{" "}
-            <span className="font-semibold text-white">
-              {answeredCount}/{exam.questions.length}
-            </span>{" "}
-            câu
-          </span>
-          <span
-            className={`font-mono text-lg font-semibold ${
-              secondsLeft <= 60 ? "text-red-400" : "text-cyan"
-            }`}
-          >
-            {formatClock(secondsLeft)}
-          </span>
-          <button
-            onClick={confirmSubmit}
-            className="rounded-full bg-[#2563EB] px-4 py-1.5 text-sm font-semibold text-white hover:bg-primary-dark"
-          >
-            Nộp bài
-          </button>
+      <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
+        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-[#0B1020]/95 px-5 py-3 backdrop-blur-md">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <span className="text-sm text-slate-400">
+              Câu <span className="font-semibold text-white">{cur + 1}</span>/
+              {exam.questions.length} · đã làm{" "}
+              <span className="font-semibold text-white">
+                {answeredCount}/{exam.questions.length}
+              </span>
+            </span>
+            <span
+              className={`font-mono text-lg font-semibold ${
+                secondsLeft <= 60 ? "text-red-400" : "text-cyan"
+              }`}
+            >
+              {formatClock(secondsLeft)}
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setPaletteOpen((v) => !v)}
+                className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-white/30"
+              >
+                {paletteOpen ? "Ẩn bảng câu" : "Bảng câu hỏi"}
+              </button>
+              <button
+                onClick={confirmSubmit}
+                className="rounded-full bg-[#2563EB] px-4 py-1.5 text-sm font-semibold text-white hover:bg-primary-dark"
+              >
+                Nộp bài
+              </button>
+            </div>
+          </div>
+
+          {paletteOpen && (
+            <>
+              <div className="mt-3 flex max-h-[30vh] flex-wrap gap-1.5 overflow-y-auto border-t border-white/10 pt-3">
+                {exam.questions.map((item, i) => {
+                  const state = answerState(item, responses[i]);
+                  const flagged = flags.has(i);
+                  const cls =
+                    state === "done"
+                      ? "border-primary bg-primary/25 text-white"
+                      : state === "partial"
+                        ? "border-primary/50 bg-primary/10 text-slate-200"
+                        : "border-white/15 text-slate-400 hover:border-white/30";
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => goTo(i)}
+                      title={`Câu ${i + 1}${
+                        state === "done"
+                          ? " · đã làm"
+                          : state === "partial"
+                            ? " · làm dở"
+                            : " · chưa làm"
+                      }${flagged ? " · đánh dấu xem lại" : ""}`}
+                      className={`relative h-8 w-8 rounded-lg border text-xs font-bold transition-colors sm:h-9 sm:w-9 ${cls} ${
+                        i === cur ? "ring-2 ring-white/70" : ""
+                      }`}
+                    >
+                      {i + 1}
+                      {flagged && (
+                        <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-amber-400" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
+                <span className="flex items-center gap-1.5">
+                  <span className="h-3 w-3 rounded border border-primary bg-primary/25" />
+                  Đã làm
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-3 w-3 rounded border border-primary/60 bg-[linear-gradient(to_top,rgba(37,99,235,0.55)_50%,transparent_50%)]" />
+                  Làm dở
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-3 w-3 rounded border border-white/15" />
+                  Chưa làm
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-amber-400" />
+                  Đánh dấu xem lại
+                </span>
+              </div>
+            </>
+          )}
         </div>
 
-        <ol className="space-y-6">
-          {exam.questions.map((q, qi) => (
-            <li key={qi}>
-              <QuestionCard
-                index={qi + 1}
-                question={q}
-                response={responses[qi]}
-                onChange={(r) => {
-                  const next = [...responsesRef.current];
-                  next[qi] = r;
-                  responsesRef.current = next;
-                  setResponses(next);
-                }}
-              />
-            </li>
-          ))}
-        </ol>
+        <QuestionCard
+          index={cur + 1}
+          question={q}
+          response={responses[cur]}
+          onChange={(r) => {
+            const next = [...responsesRef.current];
+            next[cur] = r;
+            responsesRef.current = next;
+            setResponses(next);
+          }}
+        />
 
-        <button
-          onClick={confirmSubmit}
-          className="mt-8 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
-        >
-          Nộp bài
-        </button>
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            disabled={cur === 0}
+            onClick={() => goTo(cur - 1)}
+            className="rounded-xl border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-40"
+          >
+            ← Câu trước
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleFlag(cur)}
+            className={`inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-sm font-semibold ${
+              flags.has(cur)
+                ? "border-amber-400/60 bg-amber-400/10 text-amber-300"
+                : "border-white/15 text-slate-300 hover:border-white/30"
+            }`}
+          >
+            <Flag size={14} />
+            {flags.has(cur) ? "Bỏ đánh dấu" : "Đánh dấu xem lại"}
+          </button>
+          {cur < lastIndex ? (
+            <button
+              type="button"
+              onClick={() => goTo(cur + 1)}
+              className="ml-auto rounded-xl bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            >
+              Câu sau →
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={confirmSubmit}
+              className="ml-auto rounded-xl bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            >
+              Nộp bài
+            </button>
+          )}
+        </div>
       </div>
     );
   }

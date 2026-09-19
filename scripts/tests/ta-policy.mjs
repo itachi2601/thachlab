@@ -1,0 +1,44 @@
+// Run with PGLITE_MODULE=/absolute/path/to/@electric-sql/pglite/dist/index.js node scripts/tests/ta-policy.mjs
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const {PGlite}=await import(process.env.PGLITE_MODULE || '@electric-sql/pglite');
+const db=new PGlite();
+const sql=async text=>db.exec(text);
+const one=async(text,args=[]) => (await db.query(text,args)).rows[0];
+const admin='00000000-0000-0000-0000-000000000001', user='00000000-0000-0000-0000-000000000002',other='00000000-0000-0000-0000-000000000003',ta='00000000-0000-0000-0000-000000000010';
+await sql(`create role authenticated; create role anon; create role service_role; create schema auth;
+ create table auth.users(id uuid primary key);
+ create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('test.user',true),'')::uuid $$;
+ create function public.is_admin() returns boolean language sql stable as $$ select coalesce(auth.uid()='${admin}',false) $$;
+ create table public.profiles(id uuid primary key);
+ grant usage on schema public,auth to authenticated,anon;
+ insert into auth.users values('${admin}'),('${user}'),('${other}');
+ select set_config('test.user','${admin}',false);`);
+await sql(fs.readFileSync('docs/supabase-migration-tro-giang.sql','utf8'));
+await sql(fs.readFileSync('docs/supabase-migration-tro-giang-phudao-nhieu-em.sql','utf8'));
+await sql(`insert into ta_assistants(id,user_id,full_name,short_name,tier,retained_rate) values('${ta}','${user}','Test','Test','B3',60000);
+ insert into ta_sessions(assistant_id,work_date,session_type,start_time,end_time,error_note,student_touches,status) values('${ta}','2026-09-10','lop','17:00','18:30','lỗi',12,'approved');`);
+const legacy=await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2026-09-01') t`);
+await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
+await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
+assert.deepEqual(await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2026-09-01') t`),legacy);
+await sql(`create or replace function public.ta_policy_today() returns date language sql stable as $$ select date '2026-12-31' $$; grant select,insert,update on ta_sessions to authenticated; grant select on ta_assistants to authenticated;`);
+const base={attendance:'on_time',arrived_early:true,homework_checked:true,homework_missing:0,walked_tables:true,reported_students:true,attention_note:'',teaching_minutes:45,teaching_note:'Chữa bài 1',prepared:true,recalled:true,asked_each:true,followups:[]};
+const setUser=async id=>sql(`select set_config('test.user','${id}',false)`);
+async function add(date,type='lop',patch={}){const fields={assistant_id:ta,work_date:date,session_type:type,class_label:'12A',start_time:'17:00',end_time:'18:30',student_touches:type==='lop'?12:null,error_note:'Lỗi lớp',policy:base,status:'approved',...patch};const keys=Object.keys(fields);return one(`insert into ta_sessions(${keys.join(',')}) values(${keys.map((_,i)=>'$'+(i+1)).join(',')}) returning id`,Object.values(fields));}
+const month=async m=>(await one('select ta_monthly_policy($1,$2) v',[ta,m])).v;
+const save=async(m,scores,close=false)=> (await one('select ta_save_month_review($1,$2,$3,$4,$5,$6) v',[ta,m,scores,60000,'Kiểm thử',close])).v;
+let count=0;async function test(name,fn){await fn();count++;console.log('PASS',name)}
+await test('October trial: 45 min teaching within 90 min; low score still 1.0',async()=>{await add('2026-10-01');let s=await save('2026-10-01',{touches:0,phudao:0,homework:0,attendance:0,observation:0});assert.equal(s.class_factor,1);assert.equal(s.class_pay,45000);assert.equal(s.teaching_pay,72000);assert.equal(s.total_pay,117000)});
+await test('November threshold 69.99 vs 70; teaching factor never stacked',async()=>{await add('2026-11-01');let s=await save('2026-11-01',{touches:30,phudao:20,homework:10,attendance:5,observation:4.99});assert.equal(s.class_factor,.9);assert.equal(s.class_pay,40500);assert.equal(s.teaching_pay,72000);s=await save('2026-11-01',{touches:30,phudao:20,homework:10,attendance:5,observation:5});assert.equal(s.class_factor,1)});
+await test('Tutoring 1–2 students x1.2, 3–4 x1.4, no class penalty',async()=>{for(let n=1;n<=4;n++){const names=Array.from({length:n},(_,i)=>'Em '+i);await add('2026-11-02','phudao',{phudao_students:names,policy:{...base,teaching_minutes:0,followups:names.map(student=>({student,lesson:'Bài 1',difficulty:'Đã làm được'}))}})}let s=await month('2026-11-01');assert.equal(s.tutoring_weighted_hours,7.8);assert.equal(s.tutoring_pay,468000);assert.equal(s.phudao,20)});
+await test('5 students rejected; too many teaching minutes rejected',async()=>{await assert.rejects(()=>add('2026-11-02','phudao',{phudao_students:['a','b','c','d','e']}));await assert.rejects(()=>add('2026-11-02','lop',{policy:{...base,teaching_minutes:91}}))});
+await test('No tutoring requires teacher score; observation mandatory',async()=>{await add('2026-12-01');const s=await month('2026-12-01');assert.equal(s.phudao,null);assert.equal(s.observation,null);await assert.rejects(()=>save('2026-12-01',{},true))});
+await test('No administrative work in October; pre-policy results unchanged',async()=>{await assert.rejects(()=>add('2026-10-02','hanhchinh'));assert.deepEqual(await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2026-09-01') t`),legacy)});
+await test('Other assistants cannot view payroll or close a month',async()=>{await setUser(other);await assert.rejects(()=>month('2026-10-01'));await setUser(user);await assert.rejects(()=>save('2026-10-01',{},true));await setUser(admin)});
+await test('Pending work blocks closure',async()=>{const r=await add('2026-10-03','lop',{status:'submitted'});await assert.rejects(()=>save('2026-10-01',{phudao:25,observation:10},true));await sql(`update ta_sessions set status='approved' where id='${r.id}'`)});
+await test('Close stores snapshot; student cannot insert or edit closed month',async()=>{const s=await save('2026-10-01',{phudao:25,observation:10},true);assert.ok(s.closed_at);await setUser(user);await sql('set role authenticated');await assert.rejects(()=>add('2026-10-04','lop',{status:'submitted'}));await sql('reset role');await setUser(admin)});
+await test('Admin edit reopens month; teacher can reclose; audit preserved',async()=>{const row=await one(`select id from ta_sessions where work_date='2026-10-01'`);await sql(`update ta_sessions set student_touches=6 where id='${row.id}'`);assert.equal((await month('2026-10-01')).closed_at,null);assert.ok((await save('2026-10-01',{phudao:25,observation:10},true)).closed_at);assert.ok(Number((await one(`select count(*) n from ta_policy_audit where action='reopen_after_session_edit'`)).n)>0)});
+await test('Per-session touches cap stops one busy session offsetting another',async()=>{await add('2026-12-02','lop',{student_touches:0,policy:{...base,teaching_minutes:0}});await add('2026-12-03','lop',{student_touches:24,policy:{...base,teaching_minutes:0}});const s=await save('2026-12-01',{phudao:25,observation:10});assert.equal(s.touches,20)});
+await test('Marks outside their ranges rejected; future month cannot close',async()=>{await assert.rejects(()=>save('2026-12-01',{observation:11}));await assert.rejects(()=>save('2027-01-01',{phudao:25,observation:10},true))});
+console.log(`${count} policy checks passed; migration applied twice; legacy payroll preserved.`);await db.close();

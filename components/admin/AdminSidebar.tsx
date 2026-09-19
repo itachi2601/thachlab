@@ -18,6 +18,8 @@ const AREA_ITEMS: Record<Area, { href: string; label: string }[]> = {
   ],
   cttc: [
     { href: "/quan-tri/lms-cnc", label: "Nội dung học phần CNC" },
+    // Mở lớp học phần mới + nhập danh sách sinh viên nằm ở tab "Danh sách lớp" của dashboard.
+    { href: "/dashboard", label: "Lớp học phần & sinh viên" },
     { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy" },
   ],
 };

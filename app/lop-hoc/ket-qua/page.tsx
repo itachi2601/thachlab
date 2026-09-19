@@ -17,15 +17,25 @@ import {
   fetchMyScoreHistory,
   fetchMyTopicGaps,
   fetchMyWrongQuestions,
+  fetchOutcomeGaps,
   fetchPeriodicRank,
   fetchQuestionTopics,
+  outcomeGapsByNeed,
   type ExamRank,
+  type OutcomeGap,
   type MyExamAttemptDetail,
   type PeriodicRank,
   type ScorePoint,
   type StudentAlert,
   type TopicGap,
 } from "@/services/analytics";
+import {
+  NEED_STATUS_LABEL,
+  fetchMyNeeds,
+  needLabel,
+  type NeedStatus,
+  type TutoringNeed,
+} from "@/services/tutoring";
 import { fetchMyClassIds } from "@/services/classes";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -337,12 +347,71 @@ function AlertBanner({ alert }: { alert: StudentAlert }) {
   );
 }
 
+const NEED_TONE: Record<NeedStatus, string> = {
+  open: "border-red-500/30 bg-red-500/[.06] text-red-200",
+  assigned: "border-amber-500/30 bg-amber-500/[.06] text-amber-200",
+  tutored: "border-blue-500/30 bg-blue-500/[.06] text-blue-200",
+  cleared: "border-emerald-500/30 bg-emerald-500/[.06] text-emerald-200",
+  dismissed: "border-white/10 bg-white/[.03] text-slate-400",
+};
+
+/** Cách nói với chính học sinh — không dùng chữ "cảnh báo" cho em. */
+const NEED_NOTE: Record<NeedStatus, string> = {
+  open: "Thầy đã ghi nhận, sẽ sắp buổi phụ đạo cho em.",
+  assigned: "Đã có trợ giảng nhận kèm em phần này.",
+  tutored: "Em đã được dạy lại phần này — làm bài sau để chốt.",
+  cleared: "Em đã làm đúng lại phần này. Giỏi!",
+  dismissed: "Phần này tạm gác lại.",
+};
+
+function NeedRow({
+  need,
+  lessonHref,
+  outcomes,
+}: {
+  need: TutoringNeed;
+  lessonHref: (topicName: string, form: string) => string | null;
+  outcomes: OutcomeGap[];
+}) {
+  const href = lessonHref(need.topicName, need.form);
+  return (
+    <div className={`rounded-2xl border p-4 ${NEED_TONE[need.status]}`}>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <span className="font-display font-semibold text-white">{needLabel(need)}</span>
+        <span className="rounded-full border border-current px-2.5 py-0.5 text-xs font-bold">
+          {NEED_STATUS_LABEL[need.status]}
+        </span>
+        {href && (
+          <Link
+            href={href}
+            className="ml-auto text-xs font-semibold text-blue-300 underline-offset-2 hover:underline"
+          >
+            Ôn lại bài
+          </Link>
+        )}
+      </div>
+      {outcomes.length > 0 && (
+        <ul className="mt-2 space-y-0.5 text-xs text-slate-300">
+          {outcomes.map((o) => (
+            <li key={o.topicId}>
+              · {o.topicName} — sai {o.wrong}/{o.total} câu
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className="mt-1 text-xs text-slate-400">{NEED_NOTE[need.status]}</p>
+    </div>
+  );
+}
+
 function Dashboard() {
   const { session } = useAuth();
   const [points, setPoints] = useState<ScorePoint[] | null>(null);
   const [gaps, setGaps] = useState<TopicGap[] | null>(null);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
+  const [needs, setNeeds] = useState<TutoringNeed[] | null>(null);
   const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
+  const [outcomeGaps, setOutcomeGaps] = useState<OutcomeGap[]>([]);
   const [periodicRank, setPeriodicRank] = useState<PeriodicRank | null>(null);
 
   useEffect(() => {
@@ -351,6 +420,8 @@ function Dashboard() {
     fetchMyScoreHistory(uid).then(setPoints).catch(() => setPoints([]));
     fetchMyTopicGaps(uid).then(setGaps).catch(() => setGaps([]));
     fetchMyAlert(uid).then(setAlert).catch(() => setAlert(null));
+    fetchMyNeeds(uid).then(setNeeds).catch(() => setNeeds([]));
+    fetchOutcomeGaps(uid).then(setOutcomeGaps).catch(() => setOutcomeGaps([]));
     fetchQuestionTopics()
       .then((topics) => setLessonByTopic(new Map(topics.map((t) => [t.name, t.lessonId]))))
       .catch(() => undefined);
@@ -374,6 +445,9 @@ function Dashboard() {
     if (!points || points.length === 0) return null;
     return Math.round((points.reduce((a, p) => a + p.score, 0) / points.length) * 10) / 10;
   }, [points]);
+
+  // Chi tiết mịn: trong mỗi phần cần phụ đạo, em còn sai đúng yêu cầu cần đạt nào.
+  const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomeGaps), [outcomeGaps]);
 
   const priorityGaps = (gaps ?? []).filter((g) => g.wrong > 0);
   const attempts = useMemo(() => (points ? [...points].reverse() : null), [points]);
@@ -439,6 +513,25 @@ function Dashboard() {
           </div>
         )}
       </section>
+
+      {needs !== null && needs.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-1 font-display font-semibold text-white">Phần em cần phụ đạo</h2>
+          <p className="mb-3 text-sm text-slate-400">
+            Phần nào thầy và trợ giảng đã dạy lại, phần nào em đã làm đúng trở lại.
+          </p>
+          <div className="space-y-2">
+            {needs.map((need) => (
+              <NeedRow
+                key={need.id}
+                need={need}
+                lessonHref={lessonHref}
+                outcomes={outcomesByNeed.get(`${need.studentId}|${need.topicId}|${need.form}`) ?? []}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mt-6">
         <h2 className="mb-3 font-display font-semibold text-white">Chủ đề cần ôn</h2>

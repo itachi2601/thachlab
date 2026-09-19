@@ -54,7 +54,7 @@ export default function AdminChooserPage() {
             </span>
             <div className="flex-1">
               <strong className="block text-lg text-white">Quản trị CTTC</strong>
-              <span className="text-sm text-slate-400">Nội dung học phần CNC, tình trạng máy</span>
+              <span className="text-sm text-slate-400">Nội dung học phần CNC, lớp học phần, tình trạng máy</span>
             </div>
             <ArrowRight size={18} className="shrink-0 text-orange-300 opacity-0 transition group-hover:opacity-100" />
           </Link>
