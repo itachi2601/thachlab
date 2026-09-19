@@ -99,7 +99,7 @@ export default function LessonImporter() {
   });
   const [theoryMode, setTheoryMode] = useState<SectionMode>("overwrite");
   const [workedMode, setWorkedMode] = useState<SectionMode>("overwrite");
-  const [examMode, setExamMode] = useState<ExamMode>("replace");
+  const [examMode, setExamMode] = useState<ExamMode>("keep");
   const [createMissingTopics, setCreateMissingTopics] = useState(true);
   const [tagOverride, setTagOverride] = useState(false);
 
@@ -372,13 +372,6 @@ export default function LessonImporter() {
         }
         const nextIds =
           hadExam && examMode === "keep" ? [...cur!.exam_ids, examId] : [examId];
-        if (hadExam && examMode === "replace") {
-          const stale = cur!.exam_ids.filter((id) => id !== examId);
-          if (stale.length) {
-            await supabase.from("exams").delete().in("id", stale);
-            push(`${kind}: đã xóa ${stale.length} đề cũ.`);
-          }
-        }
         const payload = {
           lesson_id: lessonId,
           kind,
@@ -801,6 +794,10 @@ export default function LessonImporter() {
             ))}
           </div>
 
+          <p className="text-xs text-slate-400">
+            Giữ + thêm: đăng thêm đề vào bài. Thay liên kết: chỉ gắn đề mới vào mục đã chọn; đề cũ vẫn được giữ trong kho và các bài khác.
+          </p>
+
           {existingItems && (
             <div className="grid gap-3 text-xs sm:grid-cols-3">
               <ModePicker
@@ -825,7 +822,7 @@ export default function LessonImporter() {
                 }
                 value={examMode}
                 onChange={setExamMode}
-                options={[["replace", "Thay"], ["keep", "Giữ + thêm"], ["skip", "Bỏ qua"]]}
+                options={[["keep", "Giữ + thêm"], ["replace", "Thay liên kết"], ["skip", "Bỏ qua"]]}
               />
             </div>
           )}
