@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -8,7 +8,13 @@ import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
-import { LESSON_KIND_META, isPeriodicExam, type Chapter, type Lesson } from "@/features/lessons/types";
+import {
+  LESSON_KIND_META,
+  isPeriodicExam,
+  isSemesterExam,
+  type Chapter,
+  type Lesson,
+} from "@/features/lessons/types";
 import {
   classGrade,
   displayClassesByGrade,
@@ -391,109 +397,171 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       )}
                       <MistakeReviewPanel />
                       {classChapters.map((ch) => {
+                        // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
+                        // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
                         const chapterLessons = lessons.filter(
-                          (l) => l.chapter_id === ch.id,
+                          (l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind),
+                        );
+                        const semesterExams = lessons.filter(
+                          (l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind),
                         );
                         const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
                         const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
                         const chapterPercent = chapterTotal > 0 ? Math.round((chapterCompleted / chapterTotal) * 100) : 0;
                         return (
-                          <div
-                            key={ch.id}
-                            id={`chapter-${ch.id}`}
-                            className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
-                            style={{ scrollMarginTop: "104px" }}
-                          >
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setOpenChapterId((current) => current === ch.id ? null : ch.id);
-                              }}
-                              aria-expanded={openChapterId === ch.id}
-                              aria-controls={`chapter-lessons-${ch.id}`}
-                              className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
+                          <Fragment key={ch.id}>
+                            <div
+                              id={`chapter-${ch.id}`}
+                              className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
+                              style={{ scrollMarginTop: "104px" }}
                             >
-                              <span className="min-w-0 flex-1">
-                                <span className="block truncate">{ch.title}</span>
-                                <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
-                                  <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setOpenChapterId((current) => current === ch.id ? null : ch.id);
+                                }}
+                                aria-expanded={openChapterId === ch.id}
+                                aria-controls={`chapter-lessons-${ch.id}`}
+                                className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
+                              >
+                                <span className="min-w-0 flex-1">
+                                  <span className="block truncate">{ch.title}</span>
+                                  <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
+                                    <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
+                                  </span>
                                 </span>
-                              </span>
-                              <span className="flex shrink-0 items-center gap-3">
-                                <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
-                                <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
-                              </span>
-                            </button>
-                            {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
-                              {chapterLessons.length === 0 && (
-                                <p className="px-4 pb-3 text-sm text-slate-500">
-                                  Chưa có bài học trong chương này.
-                                </p>
-                              )}
-                              {chapterLessons.map((lesson) => {
-                                const progress = lessonProgress.get(lesson.id);
-                                const percent = progress?.total
-                                  ? Math.round((progress.completed / progress.total) * 100)
-                                  : 0;
-                                const periodic = isPeriodicExam(lesson.lesson_kind);
-                                const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
-                                return (
-                                  <Link
-                                    key={lesson.id}
-                                    href={lessonHref(lesson)}
-                                    onClick={() => {
-                                      setLastLessonId(lesson.id);
-                                      window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
-                                    }}
-                                    className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
-                                    style={{
-                                      borderColor: periodic ? `${kindMeta.color}33` : "transparent",
-                                    }}
-                                  >
-                                    <span
-                                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                <span className="flex shrink-0 items-center gap-3">
+                                  <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
+                                  <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
+                                </span>
+                              </button>
+                              {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
+                                {chapterLessons.length === 0 && (
+                                  <p className="px-4 pb-3 text-sm text-slate-500">
+                                    Chưa có bài học trong chương này.
+                                  </p>
+                                )}
+                                {chapterLessons.map((lesson) => {
+                                  const progress = lessonProgress.get(lesson.id);
+                                  const percent = progress?.total
+                                    ? Math.round((progress.completed / progress.total) * 100)
+                                    : 0;
+                                  const periodic = isPeriodicExam(lesson.lesson_kind);
+                                  const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
+                                  return (
+                                    <Link
+                                      key={lesson.id}
+                                      href={lessonHref(lesson)}
+                                      onClick={() => {
+                                        setLastLessonId(lesson.id);
+                                        window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
+                                      }}
+                                      className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
                                       style={{
-                                        backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
+                                        borderColor: periodic ? `${kindMeta.color}33` : "transparent",
                                       }}
                                     >
-                                      {periodic ? kindMeta.icon : "📖"}
-                                    </span>
-                                    <span className="min-w-0 flex-1">
-                                      <span className="flex flex-wrap items-center gap-2">
-                                        {periodic && (
-                                          <span
-                                            className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
-                                            style={{
-                                              color: kindMeta.color,
-                                              backgroundColor: `${kindMeta.color}22`,
-                                            }}
-                                          >
-                                            {kindMeta.badge}
+                                      <span
+                                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                        style={{
+                                          backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
+                                        }}
+                                      >
+                                        {periodic ? kindMeta.icon : "📖"}
+                                      </span>
+                                      <span className="min-w-0 flex-1">
+                                        <span className="flex flex-wrap items-center gap-2">
+                                          {periodic && (
+                                            <span
+                                              className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                                              style={{
+                                                color: kindMeta.color,
+                                                backgroundColor: `${kindMeta.color}22`,
+                                              }}
+                                            >
+                                              {kindMeta.badge}
+                                            </span>
+                                          )}
+                                          <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                            {lesson.title}
+                                          </span>
+                                        </span>
+                                        <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
+                                          {periodic
+                                            ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
+                                            : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
+                                        </span>
+                                        {!periodic && (
+                                          <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
+                                            <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
                                           </span>
                                         )}
-                                        <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                          {lesson.title}
-                                        </span>
                                       </span>
-                                      <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
-                                        {periodic
-                                          ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
-                                          : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
+                                      <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
+                                        {periodic ? "Làm bài →" : "Vào bài →"}
                                       </span>
-                                      {!periodic && (
-                                        <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
-                                          <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
-                                        </span>
-                                      )}
+                                    </Link>
+                                  );
+                                })}
+                              </div>}
+                            </div>
+                            {semesterExams.map((exam) => {
+                              const meta = LESSON_KIND_META[exam.lesson_kind];
+                              const examProgress = lessonProgress.get(exam.id);
+                              const done =
+                                !!examProgress?.total &&
+                                examProgress.completed >= examProgress.total;
+                              return (
+                                <Link
+                                  key={exam.id}
+                                  id={`lesson-${exam.id}`}
+                                  href={lessonHref(exam)}
+                                  onClick={() => {
+                                    setLastLessonId(exam.id);
+                                    window.localStorage.setItem(LAST_LESSON_KEY, String(exam.id));
+                                  }}
+                                  className="group flex items-center gap-4 rounded-2xl border px-4 py-4 transition-all hover:bg-white/5"
+                                  style={{
+                                    scrollMarginTop: "104px",
+                                    borderColor: `${meta.color}40`,
+                                    backgroundColor: `${meta.color}0F`,
+                                  }}
+                                >
+                                  <span
+                                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
+                                    style={{ backgroundColor: `${meta.color}22` }}
+                                  >
+                                    {meta.icon}
+                                  </span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="flex flex-wrap items-center gap-2">
+                                      <span
+                                        className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                                        style={{
+                                          color: meta.color,
+                                          backgroundColor: `${meta.color}22`,
+                                        }}
+                                      >
+                                        {meta.badge}
+                                      </span>
+                                      <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
+                                        {exam.title}
+                                      </span>
                                     </span>
-                                    <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
-                                      {periodic ? "Làm bài →" : "Vào bài →"}
+                                    <span
+                                      className="mt-1 block text-xs font-semibold tracking-wide uppercase"
+                                      style={{ color: meta.color }}
+                                    >
+                                      {done ? "Đã hoàn thành" : "Chưa làm"}
                                     </span>
-                                  </Link>
-                                );
-                              })}
-                            </div>}
-                          </div>
+                                  </span>
+                                  <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
+                                    Làm bài →
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                          </Fragment>
                         );
                       })}
                     </div>

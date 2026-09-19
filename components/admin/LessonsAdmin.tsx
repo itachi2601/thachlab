@@ -514,7 +514,9 @@ function ChapterLessonsEditor({
       {isPeriodicExam(lessonKind) && (
         <p className="-mt-1 text-xs text-slate-500">
           Bài kiểm tra định kỳ: đặt ở cuối chương tương ứng chương trình, chỉ cần
-          soạn mục “Kiểm tra” và gắn đề — hệ thống chấm điểm tự động.
+          soạn mục “Kiểm tra” và gắn đề — hệ thống chấm điểm tự động. Riêng kiểm tra
+          giữa/cuối học kì sẽ tách khỏi chương, hiện thành mục riêng ngay sau chương
+          được gắn (vd gắn vào chương 1 lớp 12 để ra “Kiểm tra giữa học kì 1”).
         </p>
       )}
 

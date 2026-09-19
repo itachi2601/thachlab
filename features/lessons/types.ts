@@ -39,6 +39,14 @@ export function isPeriodicExam(kind: LessonKind): boolean {
   return kind !== "bai_hoc";
 }
 
+/**
+ * Kiểm tra giữa/cuối học kì: không thuộc nội dung chương nào, hiển thị thành
+ * mục riêng xen giữa các chương (chương gắn nó chỉ quyết định vị trí đứng sau).
+ */
+export function isSemesterExam(kind: LessonKind): boolean {
+  return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki";
+}
+
 export interface LessonKindMeta {
   label: string; // nhãn đầy đủ, cũng là tên bài mặc định
   badge: string; // nhãn ngắn hiển thị dạng chip ("" = không hiện)
