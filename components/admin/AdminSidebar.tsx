@@ -12,6 +12,7 @@ const AREA_ITEMS: Record<Area, { href: string; label: string }[]> = {
     { href: "/quan-tri/bai-hoc", label: "Bài học" },
     { href: "/quan-tri/dang-de", label: "Đăng đề kiểm tra" },
     { href: "/quan-tri/nhap-bai", label: "Nhập bài (LaTeX)" },
+    { href: "/quan-tri/ngan-hang-cau-hoi", label: "Ngân hàng câu hỏi" },
     { href: "/quan-tri/chu-de", label: "Chủ đề câu hỏi" },
     { href: "/quan-tri/lop-hoc", label: "Lớp học" },
     { href: "/quan-tri/hoc-sinh", label: "Học sinh" },

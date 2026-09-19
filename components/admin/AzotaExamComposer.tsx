@@ -38,6 +38,8 @@ import {
 } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia, type RasterImageInput } from "@/services/lesson-media";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
+import { BUNDLE_SCHEMA } from "@/services/lesson-import";
+import { takeHandoff } from "@/services/question-bank";
 import { getSupabase } from "@/services/supabase";
 
 const inputCls =
@@ -147,9 +149,28 @@ export default function AzotaExamComposer() {
   }, [text]);
 
   useEffect(() => {
+    // Giỏ câu từ Ngân hàng câu hỏi → mở sẵn ở chế độ sửa chi tiết, chọn đúng khối.
+    const h = takeHandoff();
+    if (h && h.questions.length > 0) {
+      queueMicrotask(() => {
+        setEdited({
+          schema: BUNDLE_SCHEMA,
+          theory_html: "",
+          worked_examples: [],
+          exam: { title: h.title || "Đề kiểm tra", duration_minutes: 45, subject_code: "vat-ly", questions: h.questions },
+        });
+        setFileNotes([
+          `Đã lấy ${h.questions.length} câu từ Ngân hàng câu hỏi. Sửa tiêu đề/thời gian bên phải rồi chọn lớp – bài và Đăng.`,
+        ]);
+      });
+    }
     fetchClasses().then((items) => {
       setClasses(items);
-      setClassId((c) => c ?? items[0]?.id ?? null);
+      setClassId((c) => {
+        if (c !== null) return c;
+        const byGrade = h?.grade ? items.find((it) => classGrade(it.name) === h.grade) : null;
+        return byGrade?.id ?? items[0]?.id ?? null;
+      });
     });
     fetchChapters().then(setChapters);
     fetchLessons(true).then(setAllLessons);
