@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
+import ExamResultSummary from "@/components/exams/ExamResultSummary";
 import { emptyResponses, QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
   fetchExamRank,
@@ -220,6 +221,53 @@ function RankSummary({ rank }: { rank: PeriodicRank }) {
   );
 }
 
+function AttemptReview({
+  point,
+  detail,
+  rank,
+}: {
+  point: ScorePoint;
+  detail: MyExamAttemptDetail;
+  rank: ExamRank | null;
+}) {
+  const prefix = `cau-${point.resultId}`;
+  const detailAnchor = `xem-lai-${point.resultId}`;
+  const responses = detail.questions.map(
+    (q, i) => detail.responses[i] ?? emptyResponses([q])[0],
+  );
+
+  return (
+    <>
+      <ExamResultSummary
+        questions={detail.questions}
+        responses={responses}
+        anchorPrefix={prefix}
+        detailAnchor={detailAnchor}
+        meta={
+          rank ? (
+            <>
+              Hạng <b className="text-white">{rank.rank}</b>/{rank.total} trong lớp ở đề này
+            </>
+          ) : undefined
+        }
+      />
+      <h3
+        id={detailAnchor}
+        className="scroll-mt-24 pt-2 font-display font-semibold text-white"
+      >
+        Xem lại từng câu
+      </h3>
+      <div className="space-y-5">
+        {detail.questions.map((q, i) => (
+          <div key={i} id={`${prefix}-${i + 1}`} className="scroll-mt-24">
+            <QuestionCard index={i + 1} question={q} response={responses[i]} review />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function AttemptRow({ point }: { point: ScorePoint }) {
   const [open, setOpen] = useState(false);
   const [detail, setDetail] = useState<MyExamAttemptDetail | null | undefined>(undefined);
@@ -266,26 +314,13 @@ function AttemptRow({ point }: { point: ScorePoint }) {
       </button>
 
       {open && (
-        <div className="space-y-4 border-t border-white/10 p-4">
-          {rank && (
-            <p className="text-sm text-slate-400">
-              Hạng <b className="text-white">{rank.rank}</b>/{rank.total} trong lớp ở đề này
-            </p>
-          )}
+        <div className="space-y-5 border-t border-white/10 p-4">
           {detail === undefined ? (
             <p className="text-sm text-slate-400">Đang tải bài làm…</p>
           ) : detail === null ? (
             <p className="text-sm text-slate-500">Không tải được bài làm.</p>
           ) : (
-            detail.questions.map((q, i) => (
-              <QuestionCard
-                key={i}
-                index={i + 1}
-                question={q}
-                response={detail.responses[i] ?? emptyResponses([q])[0]}
-                review
-              />
-            ))
+            <AttemptReview point={point} detail={detail} rank={rank} />
           )}
         </div>
       )}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
+import ExamResultSummary from "@/components/exams/ExamResultSummary";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
   buildQuestionResults,
@@ -352,36 +353,38 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     );
   }
 
-  const summary = gradeExam(exam.questions, responses);
   return (
     <div className="mx-auto max-w-3xl">
-      <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center">
-        <p className="text-sm text-slate-400">
-          {profile?.full_name}
-          {profile?.class_name && ` · Lớp ${profile.class_name}`}
-        </p>
-        <p className="mt-2 font-display text-5xl font-bold text-gradient">
-          {summary.score10.toLocaleString("vi-VN")}
-        </p>
-        <p className="mt-2 text-slate-300">
-          Đúng trọn vẹn {summary.correctCount}/{exam.questions.length} câu ·{" "}
-          {formatClock(usedSeconds)}
-        </p>
-        <p className="mt-3 text-xs text-slate-500">
-          {saveState === "saving" && "Đang lưu điểm…"}
-          {saveState === "saved" && "✓ Điểm đã được lưu"}
-          {saveState === "failed" &&
-            "Không lưu được điểm — hãy chụp màn hình kết quả gửi thầy"}
-        </p>
-        <Link
-          href="/lop-hoc"
-          className="mt-4 inline-block text-sm text-primary hover:underline"
-        >
+      <ExamResultSummary
+        questions={exam.questions}
+        responses={responses}
+        anchorPrefix="cau"
+        detailAnchor="xem-lai-bai-lam"
+        meta={
+          <>
+            {profile?.full_name}
+            {profile?.class_name && ` · Lớp ${profile.class_name}`}
+            {` · ${exam.title} · ${formatClock(usedSeconds)}`}
+          </>
+        }
+      />
+
+      <p className="mt-4 text-center text-xs text-slate-500">
+        {saveState === "saving" && "Đang lưu điểm…"}
+        {saveState === "saved" && "✓ Điểm đã được lưu"}
+        {saveState === "failed" &&
+          "Không lưu được điểm — hãy chụp màn hình kết quả gửi thầy"}
+      </p>
+      <p className="mt-2 text-center">
+        <Link href="/lop-hoc" className="text-sm text-primary hover:underline">
           ← Về danh sách đề
         </Link>
-      </div>
+      </p>
 
-      <h2 className="mt-10 mb-4 font-display text-xl font-semibold text-white">
+      <h2
+        id="xem-lai-bai-lam"
+        className="mt-10 mb-4 scroll-mt-24 font-display text-xl font-semibold text-white"
+      >
         Xem lại bài làm
       </h2>
       <ol className="space-y-6">
@@ -396,7 +399,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
               : "";
           const stage = q.form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
           return (
-            <li key={qi}>
+            <li key={qi} id={`cau-${qi + 1}`} className="scroll-mt-24">
               {wrong && (topicName || formLabel) && (
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
                   {topicName && (
