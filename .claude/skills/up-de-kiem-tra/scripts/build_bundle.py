@@ -52,7 +52,7 @@ Cờ khác: `--topics topics.json` (dùng danh mục tải sẵn, khỏi gọi m
       "answer": "3,4",                                         // chuỗi số, ≤ 4 ký tự, phẩy thập phân
       "explanation": "…" }
   ],
-  "raster_images": [                                            // chỉ ảnh chụp/scan thật; đồ thị -> SVG trong HTML
+  "raster_images": [                                            // ưu tiên: ảnh trích thẳng từ file gốc (docx media / pdfimages); chỉ vẽ SVG khi không trích được
     { "name": "do-thi-v-t.jpg", "dataUri": "data:image/jpeg;base64,…",
       "alt": "Đồ thị v-t", "placeholder": "media/do-thi-v-t.jpg" }
   ]

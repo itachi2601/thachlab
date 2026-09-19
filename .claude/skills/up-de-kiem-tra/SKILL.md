@@ -133,11 +133,17 @@ quan trọng ngang phần quy trình.
   nếu muốn cả hai.
 - Câu hỏi được chấm bằng `gradeExam` (`features/exams/types.ts`): mỗi câu cần `answer` đúng +
   `explanation`. Nội dung là **HTML thuần**, công thức để nguyên `$...$` / `$$...$$`.
-- Ảnh: đồ thị/sơ đồ **vẽ lại được** → `<svg>` nội tuyến trong HTML câu hỏi (quy tắc màu:
-  nền tối `#0B1020`, nét `stroke="currentColor"`, nhấn `#60A5FA`). Ảnh chụp/scan thật →
-  base64 vào `raster_images[]`, `placeholder` dạng `media/<ten>.jpg`, dùng đúng chuỗi đó làm
-  `src`. Trang tự upload lên Storage bucket `lesson-media`. **Không** commit ảnh, **không**
-  cần deploy.
+- Ảnh: **ưu tiên trích thẳng ảnh gốc**, đừng vẽ lại nếu không cần — đề đã có ảnh nhúng
+  (đồ thị vẽ bằng Excel/GeoGebra rồi chèn ảnh, ảnh chụp, sơ đồ scan) thì lấy đúng file đó
+  (`.docx` → `word/media/*`; PDF → `pdfimages`), không tốn token vẽ/soát lại. Base64 vào
+  `raster_images[]`, `placeholder` dạng `media/<ten>.jpg`, dùng đúng chuỗi đó làm `src`.
+  Bọc `<img>` trong khung nền sáng bo góc (xem `references/docx-de-format.md` §"Ảnh trích
+  từ file gốc") để không chỏi với nền tối `#0B1020` của site. Trang tự upload lên Storage
+  bucket `lesson-media`. **Không** commit ảnh, **không** cần deploy.
+  Chỉ khi hình là **Word tự vẽ bằng shape/canvas** (không có file ảnh nhúng để trích, không
+  cắt được vùng sạch từ trang PDF) mới vẽ lại bằng `<svg>` nội tuyến trong HTML câu hỏi (quy
+  tắc màu: nét `stroke="currentColor"`, nhấn `#60A5FA`) — xem mục "`topic` + `form`" bên
+  dưới về cách vẽ và soát hình SVG.
 
 ## Quy trình
 
@@ -216,8 +222,10 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
   - Chủ đề **thật sự mới** (danh mục chưa có): khai báo `--new-topic "Tên chủ đề"`. Trang nhập bài
     sẽ tạo chủ đề đó gắn sẵn vào đúng Chương → Bài đang chọn, nên nút "Ôn lại" của học sinh nhảy
     đúng chỗ ngay. Chỉ đặt tên mới khi chắc danh mục không có — đừng tạo bản gọi tắt của tên đã có.
-- `question`, `options`, `explanation`: giữ `$...$`. Đồ thị "như hình bên/hình vẽ" → vẽ
-  `<svg>` chèn vào `question`, **bằng `scripts/svglib.py`** — đừng viết tay từ đầu:
+- `question`, `options`, `explanation`: giữ `$...$`. Đồ thị "như hình bên/hình vẽ": **trước
+  tiên thử trích ảnh gốc** (xem mục "Cấu trúc dữ liệu cần biết" phía trên và
+  `references/docx-de-format.md` §"Ảnh trích từ file gốc") — chỉ khi không trích/cắt được
+  mới vẽ `<svg>` chèn vào `question`, **bằng `scripts/svglib.py`** — đừng viết tay từ đầu:
 
   ```python
   import sys, math; sys.path.insert(0, '.claude/skills/up-de-kiem-tra/scripts')

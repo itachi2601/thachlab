@@ -85,10 +85,52 @@ HTML, dùng đúng class (khớp bộ convert của trang admin):
 
 Không dùng `<h1>`. Không `<script>`/`<style>`/`on*=`.
 
-### Đồ thị / hình vẽ → SVG nội tuyến
+### Ảnh trích từ file gốc → `raster_images[]` (ưu tiên số 1)
 
-"Như hình bên", đồ thị `v–t` / `x–t`, mặt phẳng nghiêng, sơ đồ lực → vẽ `<svg>` chèn thẳng vào
-`question`.
+"Như hình bên", đồ thị `v–t` / `x–t`, mặt phẳng nghiêng, sơ đồ lực: **thử trích đúng ảnh
+trong file gốc trước** — rẻ gần như miễn phí (chạy lệnh, không cần LLM nhìn/vẽ/soát lại),
+và giữ đúng hình thầy cô đã làm thay vì một bản vẽ lại có thể lệch chi tiết.
+
+- **`.docx`**: ảnh nhúng nằm sẵn trong file zip.
+  ```bash
+  unzip -o de.docx "word/media/*" -d out/docx_media
+  ```
+  Đối chiếu thứ tự ảnh trong `out/docx_media/` với thứ tự xuất hiện trong văn bản (mở
+  `word/document.xml` hoặc chỉ nhìn đề đã render) để biết ảnh nào của câu nào.
+- **PDF xuất từ Word**: nếu hình gốc là ảnh chèn (đồ thị vẽ bằng Excel/GeoGebra rồi chụp/dán
+  vào Word, ảnh chụp, sơ đồ scan) thì PDF vẫn giữ nguyên ảnh đó dạng đối tượng nhúng, trích
+  bằng `pdfimages`:
+  ```bash
+  pdfimages -all -p de.pdf out/pdf_img   # ra out/pdf_img-<trang>-<số>.png/.jpg
+  ```
+  Tên file có kèm số trang → khớp thẳng với trang chứa câu hỏi đó, không cần đoán.
+- Nếu hình là **Word tự vẽ bằng shape/canvas** (đường thẳng/mũi tên vẽ trực tiếp, không phải
+  ảnh chèn) thì hai lệnh trên sẽ không ra gì — thử cắt đúng vùng hình từ ảnh trang đã render
+  (`out/page-N.png`, xem mục "Đọc đề đã render") bằng toạ độ (Pillow `Image.crop`), chỉ cần
+  nhìn một lần để lấy toạ độ, không phải vòng vẽ-soát lặp lại.
+- Không trích/cắt được sạch (ảnh vỡ, chữ trong hình bị mất nét, hình cần ghép nhiều chi tiết
+  rời) → mới rơi xuống vẽ SVG bên dưới.
+
+Ảnh trích ra nén ~1400px JPEG 0.8, base64 vào `raster_images[]`:
+
+```jsonc
+{ "name": "do-thi-v-t.jpg", "dataUri": "data:image/jpeg;base64,…",
+  "alt": "Đồ thị v-t", "placeholder": "media/do-thi-v-t.jpg" }
+```
+
+Dùng đúng `media/do-thi-v-t.jpg` làm `src` trong HTML — trang thay bằng URL Storage lúc
+Đăng — và bọc `<img>` trong khung nền sáng bo góc để không chỏi với nền tối `#0B1020`:
+
+```html
+<figure class="fig">
+  <div class="rounded-lg bg-white p-2">
+    <img src="media/do-thi-v-t.jpg" alt="Đồ thị v-t" class="w-full h-auto rounded" />
+  </div>
+  <figcaption>Đồ thị vận tốc – thời gian</figcaption>
+</figure>
+```
+
+### Đồ thị / hình vẽ → SVG nội tuyến (chỉ khi không trích được ảnh gốc)
 
 **Đồ thị hàm số thì dùng `scripts/svglib.py`** (`Plot.axes/ytick/ttick/curve/marker/label`),
 đừng dựng tay — lớp đó đã chặn sẵn ba lỗi hay gặp: mũi tên/nhãn trục tràn viewBox, đường cong
@@ -112,17 +154,6 @@ Nền site tối `#0B1020`:
 Nét/chữ `stroke="currentColor"` / `fill="currentColor"` — **không bao giờ** `#000`. Nhấn:
 `#60A5FA` xanh, `#34D399` lục, `#F59E0B` hổ phách. `viewBox`, không đặt `width`/`height`.
 KaTeX không chạy trong SVG → nhãn dùng `<text>` unicode (`v₀`, `Δt`) hoặc để ở `<figcaption>`.
-
-### Ảnh chụp / scan thật → `raster_images[]`
-
-Chỉ khi không vẽ lại được. Nén ~1400px JPEG 0.8, base64:
-
-```jsonc
-{ "name": "con-lac.jpg", "dataUri": "data:image/jpeg;base64,…",
-  "alt": "…", "placeholder": "media/con-lac.jpg" }
-```
-
-Dùng đúng `media/con-lac.jpg` làm `src` trong HTML — trang thay bằng URL Storage lúc Đăng.
 
 ## Ví dụ một câu mỗi loại (trong `draft.json`)
 
