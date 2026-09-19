@@ -862,6 +862,17 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
   filter: invert(0.88) hue-rotate(180deg);
 }
 
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
 .exam-content img.figure {
   display: block;
   max-width: min(100%, 360px);
