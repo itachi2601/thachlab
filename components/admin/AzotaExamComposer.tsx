@@ -6,7 +6,14 @@ import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Upload, Wand
 import ContentHtml from "@/components/exams/ContentHtml";
 import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import { useToast } from "@/components/ui/Toast";
-import { canonicalizeQuestionTopics, type ExamQuestion, type SchoolClass } from "@/features/exams/types";
+import {
+  QUESTION_FORM_LABELS,
+  auditQuestionTags,
+  canonicalizeQuestionTopics,
+  type ExamQuestion,
+  type QuestionForm,
+  type SchoolClass,
+} from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -18,12 +25,15 @@ import {
   type LessonItemKind,
 } from "@/features/lessons/types";
 import { subjectsForGrade } from "@/services/academic-subjects";
-import { fetchQuestionTopics, type QuestionTopic } from "@/services/analytics";
+import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
 import {
   SAMPLE_TEXT,
   setChoiceAnswer,
+  setQuestionTag,
+  setQuestionTagMany,
   setShortAnswer,
   toggleStatementAnswer,
+  type TagField,
 } from "@/services/azota-text";
 import { classGrade, displayClassesByGrade, expandClassIdsByGrade, fetchClasses, setItemClasses } from "@/services/classes";
 import { docxTextToBundle } from "@/services/docx-exam-parser";
@@ -188,6 +198,17 @@ export default function AzotaExamComposer() {
     () => topics.filter((t) => t.grade === grade).map((t) => t.name),
     [topics, grade],
   );
+  /** Yêu cầu cần đạt xếp theo bài; bài đang chọn (mục 3) đứng đầu. */
+  const topicGroups = useMemo<TopicGroup[]>(() => {
+    const parents = lessonTopics(topics.filter((t) => t.grade === grade));
+    const groups = parents
+      .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name, "vi"))
+      .map((p) => ({ parent: p, names: outcomesOf(topics, p.id).map((o) => o.name) }))
+      .filter((g) => g.names.length > 0 || g.parent.lessonId === lessonId);
+    const mine = groups.filter((g) => g.parent.lessonId === lessonId);
+    const rest = groups.filter((g) => g.parent.lessonId !== lessonId);
+    return [...mine, ...rest];
+  }, [topics, grade, lessonId]);
 
   const displayClasses = displayClassesByGrade(classes);
   const visibleClassIds = useMemo(
@@ -250,13 +271,14 @@ export default function AzotaExamComposer() {
       },
     };
   }, [edited, draft, title, duration, subjectCode]);
-  const questions = bundle?.exam.questions ?? [];
+  const questions = useMemo(() => bundle?.exam.questions ?? [], [bundle]);
   const check = bundle ? validateBundle(bundle) : null;
   const notes = useMemo(
     () => [...fileNotes, ...(draft?.notes ?? [])].filter((n) => !n.startsWith('Không thấy "PHẦN')),
     [fileNotes, draft],
   );
   const incompleteCount = questions.filter((q) => problems(q).length > 0).length;
+  const tagAudit = useMemo(() => auditQuestionTags(questions, catalogNames), [questions, catalogNames]);
   // Bảng đáp án ghi thẳng vào văn bản → chỉ bật khi số câu dựng được khớp số mốc "Câu n."
   const gridEnabled = !edited && !!draft && draft.markerCount === questions.length && questions.length > 0;
   const imageSrc = useMemo(() => {
@@ -417,6 +439,12 @@ export default function AzotaExamComposer() {
   function commitShort(i: number, value: string) {
     setText((t) => setShortAnswer(t, i, value));
   }
+  function commitTag(i: number, field: TagField, value: string) {
+    setText((t) => setQuestionTag(t, i, field, value));
+  }
+  function commitTagMany(indexes: number[], field: TagField, value: string) {
+    setText((t) => setQuestionTagMany(t, indexes, field, value));
+  }
 
   return (
     <div className="space-y-6">
@@ -547,6 +575,11 @@ export default function AzotaExamComposer() {
               <li>Có <code>PHẦN I / II / III</code> thì tự nhận loại câu; không có thì coi cả đề là trắc nghiệm A–D.</li>
               <li>Công thức gõ trong <code>$…$</code>. Công thức MathType trong Word: Convert Equations → Office Math trước khi tải.</li>
               <li>Lời giải: dòng <code>Lời giải:</code> sau các phương án.</li>
+              <li>
+                Phân loại (để thống kê chỗ hổng & ngân hàng câu hỏi): thêm dòng <code>Chủ đề: &lt;yêu cầu cần đạt&gt;</code> và{" "}
+                <code>Dạng: lý thuyết</code> / <code>Dạng: bài tập</code> vào cuối mỗi câu — hoặc chọn ở bảng “Phân loại câu” bên phải,
+                trang tự ghi hai dòng đó vào văn bản.
+              </li>
             </ul>
           </details>
         </div>
@@ -579,7 +612,7 @@ export default function AzotaExamComposer() {
           </div>
 
           {edited && bundle ? (
-            <ExamDraftEditor bundle={bundle} onChange={setEdited} />
+            <ExamDraftEditor bundle={bundle} onChange={setEdited} topicOptions={topicGroups.flatMap((g) => g.names)} />
           ) : questions.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
               Chưa có câu nào. Dán đề hoặc bấm “Đề mẫu” để xem cách trình bày.
@@ -598,6 +631,15 @@ export default function AzotaExamComposer() {
                   Số câu dựng được khác số mốc “Câu n.” nên bảng đáp án tạm khoá — sửa trong văn bản cho khớp trước.
                 </p>
               )}
+              <TagGrid
+                questions={questions}
+                enabled={gridEnabled}
+                groups={topicGroups}
+                lessonPicked={lessonId !== null}
+                audit={tagAudit}
+                onTag={commitTag}
+                onTagMany={commitTagMany}
+              />
               <div className="space-y-3">
                 {questions.map((q, i) => (
                   <PreviewCard key={i} index={i + 1} q={q} fix={imageSrc} />
@@ -888,6 +930,154 @@ function AnswerGrid({
   );
 }
 
+type TopicGroup = { parent: QuestionTopic; names: string[] };
+type TagAuditLite = ReturnType<typeof auditQuestionTags>;
+
+function TagGrid({
+  questions,
+  enabled,
+  groups,
+  lessonPicked,
+  audit,
+  onTag,
+  onTagMany,
+}: {
+  questions: ExamQuestion[];
+  enabled: boolean;
+  groups: TopicGroup[];
+  lessonPicked: boolean;
+  audit: TagAuditLite;
+  onTag: (i: number, field: TagField, value: string) => void;
+  onTagMany: (indexes: number[], field: TagField, value: string) => void;
+}) {
+  const [open, setOpen] = useState(true);
+  const known = useMemo(() => new Set(groups.flatMap((g) => g.names).map((n) => n.toLowerCase())), [groups]);
+  const untaggedTopic = questions.map((_, i) => i).filter((i) => !(questions[i].topic ?? "").trim());
+  const untaggedForm = questions.map((_, i) => i).filter((i) => !questions[i].form);
+  const selectCls =
+    "h-7 max-w-full rounded border border-white/10 bg-[#0B1020] px-1 text-[11px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
+
+  function renderOptions(current: string) {
+    const extra = current && !known.has(current.toLowerCase()) ? current : "";
+    return (
+      <>
+        <option value="">— chưa gắn —</option>
+        {extra && <option value={extra}>{extra} (không có trong danh mục)</option>}
+        {groups.map((g) => (
+          <optgroup key={g.parent.id} label={g.parent.name}>
+            {g.names.map((n) => (
+              <option key={n} value={n}>
+                {n}
+              </option>
+            ))}
+          </optgroup>
+        ))}
+      </>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+      <button type="button" onClick={() => setOpen((o) => !o)} className="flex w-full items-center gap-2 text-left text-xs">
+        <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt & dạng</span>
+        <span className={audit.tagged === audit.total ? "text-emerald-300" : "text-amber-300"}>
+          {audit.tagged}/{audit.total} câu đã gắn đủ
+        </span>
+        {audit.unknown.length > 0 && (
+          <span className="text-amber-300">· {audit.unknown.length} chủ đề không có trong danh mục</span>
+        )}
+        <span className="ml-auto text-slate-500">{open ? "thu gọn" : "mở"}</span>
+      </button>
+      {open && (
+        <div className="mt-2 space-y-2">
+          {groups.length === 0 ? (
+            <p className="text-[11px] text-slate-500">
+              {lessonPicked
+                ? "Khối này chưa có danh mục yêu cầu cần đạt — thêm ở trang Chủ đề câu hỏi, hoặc gõ dòng “Chủ đề: …” trong văn bản."
+                : "Chọn Lớp – Bài ở mục 3 để hiện danh sách yêu cầu cần đạt của bài."}
+            </p>
+          ) : (
+            !lessonPicked && (
+              <p className="text-[11px] text-slate-500">Chọn Bài ở mục 3 để yêu cầu cần đạt của bài đó lên đầu danh sách.</p>
+            )
+          )}
+          {enabled && questions.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+              {untaggedTopic.length > 0 && groups.length > 0 && (
+                <label className="inline-flex items-center gap-1">
+                  {untaggedTopic.length} câu chưa có chủ đề →
+                  <select
+                    value=""
+                    onChange={(e) => e.target.value && onTagMany(untaggedTopic, "topic", e.target.value)}
+                    className={selectCls}
+                  >
+                    {renderOptions("")}
+                  </select>
+                </label>
+              )}
+              {untaggedForm.length > 0 && (
+                <span className="inline-flex items-center gap-1">
+                  {untaggedForm.length} câu chưa có dạng →
+                  {(["ly_thuyet", "bai_tap"] as QuestionForm[]).map((f) => (
+                    <button
+                      key={f}
+                      type="button"
+                      onClick={() => onTagMany(untaggedForm, "form", QUESTION_FORM_LABELS[f].toLowerCase())}
+                      className="rounded bg-white/10 px-2 py-0.5 font-semibold text-slate-200 hover:bg-white/20"
+                    >
+                      {QUESTION_FORM_LABELS[f]}
+                    </button>
+                  ))}
+                </span>
+              )}
+            </div>
+          )}
+          <div className="grid gap-1">
+            {questions.map((q, i) => {
+              const topic = (q.topic ?? "").trim();
+              const unknown = !!topic && !known.has(topic.toLowerCase());
+              return (
+                <div key={i} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-center gap-1">
+                  <span className="text-right text-[11px] font-bold text-slate-400">{i + 1}</span>
+                  <select
+                    value={topic}
+                    disabled={!enabled}
+                    title={unknown ? "Tên này không có trong danh mục — sẽ lưu nguyên văn" : topic}
+                    onChange={(e) => onTag(i, "topic", e.target.value)}
+                    className={`${selectCls} w-full ${unknown ? "border-amber-500/50" : ""}`}
+                  >
+                    {renderOptions(topic)}
+                  </select>
+                  <div className="flex gap-0.5">
+                    {(["ly_thuyet", "bai_tap"] as QuestionForm[]).map((f) => (
+                      <button
+                        key={f}
+                        type="button"
+                        disabled={!enabled}
+                        onClick={() => onTag(i, "form", q.form === f ? "" : QUESTION_FORM_LABELS[f].toLowerCase())}
+                        className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
+                          q.form === f ? "bg-blue-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
+                        }`}
+                      >
+                        {f === "ly_thuyet" ? "LT" : "BT"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {!enabled && questions.length > 0 && (
+            <p className="text-[11px] text-slate-500">
+              Đang ở chế độ sửa chi tiết hoặc số câu chưa khớp — gắn nhãn trong từng thẻ câu bên dưới.
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function PreviewCard({ index, q, fix }: { index: number; q: ExamQuestion; fix: (html: string) => string }) {
   const issues = problems(q);
   return (
@@ -898,6 +1088,7 @@ function PreviewCard({ index, q, fix }: { index: number; q: ExamQuestion; fix: (
           {q.type === "multiple_choice" ? "Trắc nghiệm" : q.type === "true_false" ? "Đúng – Sai" : q.type === "short_answer" ? "Trả lời ngắn" : "Tự luận"}
         </span>
         {q.topic && <span className="rounded-full bg-white/10 px-2 py-0.5 text-slate-300">{q.topic}</span>}
+        {q.form && <span className="rounded-full bg-blue-500/15 px-2 py-0.5 text-blue-200">{QUESTION_FORM_LABELS[q.form]}</span>}
         {issues.length > 0 && <span className="ml-auto text-amber-300">{issues.join(" · ")}</span>}
       </div>
       <ContentHtml html={fix(q.question)} className="text-sm text-slate-200" />

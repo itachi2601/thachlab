@@ -24,6 +24,7 @@
 import type {
   ExamQuestion,
   MultipleChoiceQuestion,
+  QuestionForm,
   ShortAnswerQuestion,
   TrueFalseQuestion,
 } from "@/features/exams/types";
@@ -71,6 +72,48 @@ function detectPartType(header: string): QuestionType | null {
 
 const FIELD_LINE_RE =
   /^\\?(?:textbf\{)?\s*(?:Đáp\s*án|Đáp\s*số|Giải|Lời\s*giải|Hướng\s*dẫn|answer|explanation)/i;
+
+/**
+ * Dòng nhãn phân loại của một câu (đặt ở bất kỳ đâu trong khối câu, thường sau "Lời giải"):
+ *   Chủ đề: <tên yêu cầu cần đạt trong danh mục>     (cũng nhận YCCĐ: / Yêu cầu cần đạt: / Năng lực:)
+ *   Dạng: lý thuyết | bài tập                           (cũng nhận Loại:)
+ * Bắt buộc có dấu hai chấm để không cắt nhầm câu dẫn bắt đầu bằng "Dạng…".
+ */
+const TAG_LINE_RE =
+  /^\\?(?:textbf\{)?\s*(Chủ\s*đề|YCCĐ|Yêu\s*cầu\s*cần\s*đạt|Năng\s*lực|Dạng|Loại)\}?\s*[:：]\s*(.*?)\s*$/i;
+
+export function parseFormLabel(raw: string): QuestionForm | "" {
+  const v = raw.trim().toLowerCase();
+  if (!v) return "";
+  if (/^(l[ýi]\s*thuy[ếe]t|lt|ly_thuyet)$/.test(v)) return "ly_thuyet";
+  if (/^(b[àa]i\s*t[ậa]p|bt|bai_tap)$/.test(v)) return "bai_tap";
+  return "";
+}
+
+/** Rút dòng "Chủ đề:" / "Dạng:" ra khỏi khối câu; trả về khối đã bỏ các dòng đó. */
+function extractTags(
+  block: string,
+  n: number,
+  warnings: string[],
+): { block: string; topic: string; form: QuestionForm | "" } {
+  let topic = "";
+  let form: QuestionForm | "" = "";
+  const kept: string[] = [];
+  for (const line of block.split("\n")) {
+    const m = line.match(TAG_LINE_RE);
+    if (!m) {
+      kept.push(line);
+      continue;
+    }
+    const key = m[1].toLowerCase();
+    const value = m[2].replace(/\}$/, "").trim();
+    if (/^(d[ạa]ng|lo[ạa]i)$/.test(key)) {
+      form = parseFormLabel(value);
+      if (value && !form) warnings.push(`Câu ${n}: "Dạng: ${value}" không hiểu — chỉ nhận "lý thuyết" hoặc "bài tập".`);
+    } else topic = value.replace(/\s+/g, " ");
+  }
+  return { block: kept.join("\n"), topic, form };
+}
 
 /** Phần thân câu, cắt bỏ từ dòng "Đáp án" / "Lời giải" trở đi. */
 function bodyBeforeAnswer(block: string): string {
@@ -216,19 +259,25 @@ function parseShortAnswer(
 }
 
 function parseBlock(
-  block: string,
+  raw: string,
   kind: QuestionType,
   n: number,
   warnings: string[],
   lenient: boolean,
 ): ExamQuestion | null {
+  const { block, topic, form } = extractTags(raw, n, warnings);
   const answerRaw = findField(block, "Đáp\\s*án\\s*đúng|Đáp\\s*án|Đáp\\s*số|answer");
   const explanation = findField(block, "Lời\\s*giải|Giải|Hướng\\s*dẫn|explanation") ?? "";
-  if (kind === "multiple_choice")
-    return parseMultipleChoice(block, answerRaw, explanation, n, warnings, lenient);
-  if (kind === "true_false")
-    return parseTrueFalse(block, answerRaw, explanation, n, warnings, lenient);
-  return parseShortAnswer(block, answerRaw, explanation, n, warnings);
+  const q =
+    kind === "multiple_choice"
+      ? parseMultipleChoice(block, answerRaw, explanation, n, warnings, lenient)
+      : kind === "true_false"
+        ? parseTrueFalse(block, answerRaw, explanation, n, warnings, lenient)
+        : parseShortAnswer(block, answerRaw, explanation, n, warnings);
+  if (!q) return q;
+  if (topic) q.topic = topic;
+  if (form) q.form = form;
+  return q;
 }
 
 /** Cắt một vùng văn bản theo mốc "Câu n." thành từng khối câu. */

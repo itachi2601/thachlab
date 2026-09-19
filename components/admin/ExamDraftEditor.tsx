@@ -63,9 +63,12 @@ function problems(q: ExamQuestion): string[] {
 export default function ExamDraftEditor({
   bundle,
   onChange,
+  topicOptions = [],
 }: {
   bundle: LessonBundle;
   onChange: (next: LessonBundle) => void;
+  /** Tên yêu cầu cần đạt trong danh mục — gợi ý cho ô "Chủ đề câu này". */
+  topicOptions?: string[];
 }) {
   const questions = bundle.exam.questions;
 
@@ -151,6 +154,7 @@ export default function ExamDraftEditor({
             total={questions.length}
             q={q}
             onChange={(next) => update(i, next)}
+            topicOptions={topicOptions}
             onRemove={() => setQuestions(questions.filter((_, k) => k !== i))}
             onMove={(delta) => move(i, delta)}
           />
@@ -178,6 +182,7 @@ function QuestionCardEditor({
   index,
   total,
   onChange,
+  topicOptions,
   onRemove,
   onMove,
 }: {
@@ -185,6 +190,7 @@ function QuestionCardEditor({
   index: number;
   total: number;
   onChange: (next: ExamQuestion) => void;
+  topicOptions: string[];
   onRemove: () => void;
   onMove: (delta: number) => void;
 }) {
@@ -330,9 +336,17 @@ function QuestionCardEditor({
           <input
             value={q.topic ?? ""}
             onChange={(e) => onChange({ ...q, topic: e.target.value })}
-            placeholder="vd: Rơi tự do"
+            list={topicOptions.length ? "exam-draft-topic-options" : undefined}
+            placeholder="vd: Nêu được định nghĩa từ trường"
             className={`${inputCls} mt-1`}
           />
+          {topicOptions.length > 0 && index === 0 && (
+            <datalist id="exam-draft-topic-options">
+              {topicOptions.map((n) => (
+                <option key={n} value={n} />
+              ))}
+            </datalist>
+          )}
         </label>
         <label className="text-[11px] font-semibold text-slate-400">
           Dạng

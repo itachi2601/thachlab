@@ -127,6 +127,47 @@ export function setShortAnswer(text: string, index: number, value: string): stri
   return insertAnswerLine(lines, b, v);
 }
 
+/** Dòng nhãn phân loại — cùng mẫu với `extractTags` trong exam-latex-parser. */
+const TAG_LINES = {
+  topic: /^\s*(?:Chủ\s*đề|YCCĐ|Yêu\s*cầu\s*cần\s*đạt|Năng\s*lực)\s*[:：]/i,
+  form: /^\s*(?:Dạng|Loại)\s*[:：]/i,
+} as const;
+const TAG_LABEL = { topic: "Chủ đề", form: "Dạng" } as const;
+export type TagField = keyof typeof TAG_LINES;
+
+/**
+ * Ghi nhãn "Chủ đề: …" / "Dạng: …" cho câu thứ `index` thẳng vào văn bản:
+ * có dòng sẵn thì thay giá trị, chưa có thì thêm vào cuối khối câu; giá trị rỗng = bỏ dòng.
+ */
+export function setQuestionTag(text: string, index: number, field: TagField, value: string): string {
+  const lines = text.split("\n");
+  const b = questionBlocks(lines)[index];
+  if (!b) return text;
+  const v = value.trim().replace(/\s+/g, " ");
+  const re = TAG_LINES[field];
+  let at = -1;
+  for (let i = b.start + 1; i < b.end; i += 1)
+    if (re.test(lines[i])) {
+      at = i;
+      break;
+    }
+  if (at >= 0) {
+    if (v) lines[at] = `${TAG_LABEL[field]}: ${v}`;
+    else lines.splice(at, 1);
+    return lines.join("\n");
+  }
+  if (!v) return text;
+  let end = b.end;
+  while (end > b.start + 1 && lines[end - 1].trim() === "") end -= 1;
+  lines.splice(end, 0, `${TAG_LABEL[field]}: ${v}`);
+  return lines.join("\n");
+}
+
+/** Ghi cùng một nhãn cho nhiều câu (vd. cả đề là bài tập). */
+export function setQuestionTagMany(text: string, indexes: number[], field: TagField, value: string): string {
+  return indexes.reduce((t, i) => setQuestionTag(t, i, field, value), text);
+}
+
 function insertAnswerLine(lines: string[], b: QuestionBlock, value: string): string {
   // Chèn trước "Lời giải" nếu có, còn không thì đặt sau dòng có nội dung cuối cùng của khối.
   let at = b.end;
@@ -151,10 +192,14 @@ A. quãng đường nhân thời gian.
 C. thời gian chia quãng đường.
 D. quãng đường cộng thời gian.
 Lời giải: $v_{tb} = \\dfrac{s}{t}$.
+Chủ đề: Nêu được định nghĩa tốc độ trung bình
+Dạng: lý thuyết
 
 Câu 2. Một xe đi được 120 m trong 10 s. Tốc độ trung bình của xe là
 A. 6 m/s.   *B. 12 m/s.   C. 24 m/s.   D. 1200 m/s.
 Lời giải: $v = 120/10 = 12$ m/s.
+Chủ đề: Vận dụng công thức tốc độ trung bình
+Dạng: bài tập
 
 PHẦN II. Câu trắc nghiệm đúng sai
 Câu 3. Một vật chuyển động thẳng đều với tốc độ 5 m/s.
