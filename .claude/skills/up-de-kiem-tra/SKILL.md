@@ -10,28 +10,99 @@ description: >-
   hoặc chỉ thả file đề kèm ý muốn đưa lên web. KHÁC với dang-bai-hoc-thachlab (đăng
   trọn bài học từ .tex: lý thuyết + dạng bài + đề) — skill này chỉ lo phần ĐỀ.
   KHÁC với de-vat-ly-thpt (soạn/chuẩn hoá đề ra file Word Azota) — skill này ghi
-  vào database, không xuất Word.
+  vào database, không xuất Word. Từ 9/2026 đường chính là trang Đăng đề
+  (/quan-tri/dang-de): văn bản kiểu Azota kèm hai dòng "Chủ đề:" (yêu cầu cần đạt) và
+  "Dạng:" (lý thuyết/bài tập) cho từng câu; gói JSON qua /quan-tri/nhap-bai chỉ còn là
+  đường dự phòng khi cần vẽ hình SVG hoặc ảnh scan.
 ---
 
 # Up đề kiểm tra Word → mục Kiểm tra/Luyện tập trên thachlab
 
 ## Trước tiên: hỏi xem người dùng có tự đăng được không
 
-Trang `/quan-tri/nhap-bai` đã có tab **"Từ file Word (.docx)"**: thả file là trang tự tách câu,
-lấy đáp án dấu `*`, đổi công thức Office Math sang `$…$`, gom ảnh — rồi sửa tay từng câu và Đăng,
-**không tốn token**. Xem `docs/DANG-DE-TU-WORD.md`.
+Trang **Đăng đề** `/quan-tri/dang-de` đọc thẳng file `.docx` hoặc văn bản dán vào: tách câu,
+lấy đáp án dấu `*`, đổi công thức Office Math sang `$…$`, gom ảnh, và có bảng **Phân loại câu**
+để chọn yêu cầu cần đạt + dạng cho từng câu — rồi Đăng, **không tốn token**. Xem
+`docs/DANG-DE-TU-WORD.md`.
 
 Chỉ dùng skill này khi đường đó không đi được:
 
 - File còn công thức **MathType dạng OLE** mà người dùng không muốn/không thể bấm
   *Convert Equations → Microsoft Office Math* (trang sẽ báo "còn N công thức MathType").
 - Đề là **PDF** hoặc ảnh chụp/scan.
-- Cần **vẽ lại hình bằng SVG**, gắn `topic`/`form` cho từng câu, hoặc viết lời giải còn thiếu.
+- Cần **vẽ lại hình bằng SVG**, hoặc viết lời giải còn thiếu cho nhiều câu.
+- Người dùng muốn mình **gắn nhãn thay** (chủ đề + dạng) cho cả đề thay vì chọn tay trên trang.
 
 Nếu chỉ là file Word gõ công thức bằng Word (Alt + =) và có dấu `*` ở đáp án: **chỉ cần chỉ cho
-người dùng tab đó**, đừng tự làm thay.
+người dùng trang đó**, đừng tự làm thay. Đề đã ở mẫu Azota (đáp án trong bảng sau HẾT) thì
+skill `azota` bước 6 (`xuat_thachlab.py`) dựng sẵn file Word cho trang này, kèm nhãn.
 
-## Skill này làm gì
+## Đường chính — văn bản kiểu Azota vào /quan-tri/dang-de
+
+Trang Đăng đề nhận **văn bản** (không phải JSON): đúng cách trình bày Azota mà thầy cô vẫn gõ,
+cộng hai dòng nhãn cuối mỗi câu. Đây là đường đi cho PDF/MathType/đề cần viết lời giải:
+
+```
+PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn
+Câu 1. Tốc độ trung bình của một vật được tính bằng
+A. quãng đường nhân thời gian.   *B. quãng đường chia thời gian.
+C. thời gian chia quãng đường.   D. quãng đường cộng thời gian.
+Lời giải: $v_{tb} = \dfrac{s}{t}$.
+Chủ đề: Nêu được định nghĩa tốc độ trung bình
+Dạng: lý thuyết
+
+PHẦN II. Câu trắc nghiệm đúng sai
+Câu 2. Một vật chuyển động thẳng đều với tốc độ 5 m/s.
+*a) Quãng đường đi được trong 4 s là 20 m.
+b) Vận tốc của vật thay đổi theo thời gian.
+…
+Lời giải: …
+Chủ đề: Mô tả chuyển động thẳng đều
+Dạng: bài tập
+
+PHẦN III. Câu trắc nghiệm trả lời ngắn
+Câu 3. … (ghi số)
+Đáp án: 2
+Lời giải: dòng 1
+dòng 2 (lời giải nhiều dòng: từ "Lời giải:" tới hết câu)
+Chủ đề: …
+Dạng: bài tập
+```
+
+Quy tắc: `*` trước phương án đúng / ý Đúng; Phần III dòng `Đáp án:`; `Lời giải:` kéo dài
+tới hết câu (bỏ dòng nhãn); `Chủ đề:` = **tên yêu cầu cần đạt đúng như danh mục khối** (cũng
+nhận `YCCĐ:` / `Năng lực:`); `Dạng:` chỉ nhận `lý thuyết` | `bài tập`. Nhãn đặt ở đâu trong
+câu cũng được, trang tự bỏ khỏi đề dẫn. Công thức trong `$…$`. Số câu liên tục cả đề.
+
+1. **Đọc đề** như mục "1. Đọc đề đã render" bên dưới (PDF → ảnh → subagent chép text).
+2. **Soạn `de.txt`** theo mẫu trên: đáp án, lời giải (viết bù câu thiếu, giải lại Phần III),
+   và **nhãn cho từng câu** — chọn trong danh mục khối, đừng đặt theo trí nhớ (xem mục
+   "`topic` + `form`" bên dưới về hai tầng bài → yêu cầu cần đạt).
+3. **Soát nhãn** (REST anon-key, tự đọc `.env.local`):
+   ```bash
+   python3 .claude/skills/up-de-kiem-tra/scripts/soat_nhan.py de.txt --grade 12 --fix
+   ```
+   `✗` = tên không có trong danh mục (kèm tên gần nhất) hoặc câu thiếu nhãn → sửa `de.txt`,
+   chạy lại tới khi dòng cuối là `Nhãn: n/n câu đủ`. `--fix` tự chuẩn hoá hoa/thường theo
+   danh mục. Chủ đề thật sự mới: nói với người dùng, tạo ở trang Chủ đề câu hỏi trước.
+4. **Dán vào trang** `https://thachlab.id.vn/quan-tri/dang-de` (người dùng đã đăng nhập admin;
+   chưa thì dừng, nhờ họ đăng nhập). Văn bản dài không gõ tay được — dùng relay như mục
+   "4. Đăng qua trang admin", chỉ khác đích:
+   ```bash
+   python3 .claude/skills/up-de-kiem-tra/scripts/paste_relay.py de.txt --target https://thachlab.id.vn/quan-tri/dang-de/ &
+   ```
+   JS giải mã trong docstring của script gán vào `textarea` đầu tiên — ở trang này chính là ô
+   nội dung đề. Trang tách câu ngay khi có văn bản.
+5. Đọc cột phải: dòng `n/n câu dựng được`, ghi chú vàng (câu thiếu đáp án/phương án), bảng
+   đáp án, và bảng **Phân loại câu** phải là **n/n câu đã gắn đủ**, không ô nào viền vàng.
+6. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
+   BTVN; mục đã có đề thì "Giữ + thêm" hay "Thay" — hỏi người dùng nếu đề cũ là đề thật.
+   Bấm **Đăng đề**, theo dõi log, mở link bài học kiểm tra.
+
+Ảnh: trang chỉ nhận ảnh khi đọc từ `.docx`; văn bản dán không mang ảnh. Đề có hình cần vẽ
+SVG hoặc ảnh scan → đi đường dự phòng bên dưới.
+
+## Đường dự phòng — gói JSON qua /quan-tri/nhap-bai (khi cần hình SVG / ảnh scan)
 
 Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất, khuyên dùng)** hoặc `.docx`. Skill:
 
@@ -42,7 +113,8 @@ Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất
    khi đó mục Lý thuyết của bài được giữ nguyên).
 4. Đăng qua `https://thachlab.id.vn/quan-tri/nhap-bai`: dán gói bằng relay (xem mục "Đăng qua
    trang admin"), chọn Lớp→Chương→Bài, xem preview + bảng validate, tick **Kiểm tra**
-   (mặc định) → **Đăng bài học**.
+   (mặc định) → **Đăng bài học**. (Nhãn `topic`/`form` trong gói tương đương hai dòng
+   `Chủ đề:`/`Dạng:` của đường chính.)
 5. Báo link `/lop-hoc/bai/?id=<id>` để kiểm tra.
 
 Đây là thao tác lên **hệ thống sống** (DB + web học sinh đang dùng). Phần "An toàn" ở cuối

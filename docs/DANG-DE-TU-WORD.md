@@ -1,8 +1,10 @@
 # Tự đăng đề từ file Word — không cần trợ lý
 
-Trang **Quản trị → Nhập bài học** (`/quan-tri/nhap-bai`) đọc thẳng file `.docx` ngay trong trình
-duyệt: tách câu, lấy đáp án, đổi công thức sang LaTeX, gom ảnh. Không có gì gửi đi đâu cả —
-file chỉ nằm trong máy thầy cho tới lúc bấm **Đăng bài học**.
+Trang **Quản trị → Đăng đề** (`/quan-tri/dang-de`) đọc thẳng file `.docx` (hoặc văn bản dán từ
+Word) ngay trong trình duyệt: tách câu, lấy đáp án, đổi công thức sang LaTeX, gom ảnh, và có
+bảng phân loại câu theo yêu cầu cần đạt. Không có gì gửi đi đâu cả — file chỉ nằm trong máy
+thầy cho tới lúc bấm **Đăng đề**. (Trang **Nhập bài học** `/quan-tri/nhap-bai`, tab "Từ file
+Word", vẫn đọc được cùng định dạng — dùng khi đăng kèm lý thuyết/dạng bài.)
 
 ## Làm một lần trong Word
 
@@ -26,10 +28,36 @@ file chỉ nằm trong máy thầy cho tới lúc bấm **Đăng bài học**.
 4. **Hình vẽ để dạng PNG/JPG.** Ảnh WMF/EMF web không hiện được (chuột phải ảnh →
    *Save as Picture* → PNG → chèn lại).
 
+5. **Phân loại câu (nên có)** — hai dòng cuối mỗi câu, để thống kê chỗ hổng và gom vào ngân
+   hàng câu hỏi theo yêu cầu cần đạt:
+
+   ```
+   Chủ đề: Nêu được định nghĩa tốc độ trung bình     ← tên yêu cầu cần đạt, đúng như danh mục
+   Dạng: lý thuyết                                   ← hoặc: bài tập
+   ```
+
+   Không ghi trong Word cũng được: trên trang có bảng **Phân loại câu**, chọn xong trang tự
+   ghi hai dòng này vào văn bản. Dòng `Lời giải:` được lấy tới hết câu (nhiều dòng vẫn ăn).
+
 Có sẵn "PHẦN I / PHẦN II / PHẦN III" thì trang tự hiểu loại câu (trắc nghiệm · đúng–sai ·
 trả lời ngắn). Không có phần nào thì coi cả đề là trắc nghiệm A–D.
 
-## Trên web
+## Trên web — trang Đăng đề
+
+1. Vào `/quan-tri/dang-de`, kéo file `.docx` vào ô bên trái (hoặc dán văn bản từ Word). Cột
+   phải hiện ngay: số câu dựng được, bảng đáp án (bấm A/B/C/D để sửa, văn bản tự cập nhật),
+   bảng **Phân loại câu** (chọn yêu cầu cần đạt + Lý thuyết/Bài tập từng câu, hoặc gắn hàng
+   loạt cho các câu chưa có), và xem trước từng câu.
+2. Câu nào viền vàng là thiếu đáp án/phương án — sửa trong văn bản hoặc bấm **Sửa chi tiết
+   từng câu**.
+3. Mục **3**: tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** / **Luyện tập** /
+   **Bài tập về nhà**. Bài đã có đề thì chọn **Giữ + thêm** hoặc **Thay**.
+4. Bấm **Đăng đề**, rồi mở link bài học hiện ra để kiểm tra lại.
+
+Đề đã ở mẫu Azota (đáp án nằm trong bảng sau dòng HẾT) không đọc thẳng được — nhờ trợ lý
+chạy `xuat_thachlab.py` (skill azota) để dựng bản Word cho trang này.
+
+## Trên web — trang Nhập bài học (khi đăng kèm lý thuyết)
 
 1. Vào `/quan-tri/nhap-bai`, mục **1** chọn Lớp → Môn → Chương → Bài.
 2. Mục **2**, tab **Từ file Word (.docx)**, kéo file vào. Trang báo đọc được bao nhiêu câu trên

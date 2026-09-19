@@ -258,6 +258,29 @@ function parseShortAnswer(
   };
 }
 
+const EXPLANATION_LINE_RE =
+  /^\\?(?:textbf\{)?\s*(?:Lời\s*giải|Giải|Hướng\s*dẫn|explanation)\}?\s*[:：]?\s*(.*)$/i;
+const ANSWER_FIELD_RE = /^\\?(?:textbf\{)?\s*(?:Đáp\s*án|Đáp\s*số|answer)\b/i;
+
+/**
+ * Lời giải = từ dòng "Lời giải:" tới hết khối câu (nhiều đoạn — đề Word/Azota hay
+ * giải 3–5 dòng), bỏ dòng "Đáp án:" nếu nằm sau. Các đoạn nối bằng <br>.
+ * Dạng lệnh `\explanation{…}` cũ vẫn nhận.
+ */
+function explanationOf(block: string): string {
+  const cmd = block.match(/\\explanation\{([^}]*)\}/i);
+  if (cmd) return cmd[1].trim();
+  const lines = block.split("\n");
+  const at = lines.findIndex((l) => EXPLANATION_LINE_RE.test(l.trim()));
+  if (at === -1) return "";
+  const first = lines[at].trim().match(EXPLANATION_LINE_RE)?.[1].replace(/^\}/, "").trim() ?? "";
+  const rest = lines
+    .slice(at + 1)
+    .map((l) => l.trim())
+    .filter((l) => l && !ANSWER_FIELD_RE.test(l));
+  return [first, ...rest].filter(Boolean).join("<br>");
+}
+
 function parseBlock(
   raw: string,
   kind: QuestionType,
@@ -267,7 +290,7 @@ function parseBlock(
 ): ExamQuestion | null {
   const { block, topic, form } = extractTags(raw, n, warnings);
   const answerRaw = findField(block, "Đáp\\s*án\\s*đúng|Đáp\\s*án|Đáp\\s*số|answer");
-  const explanation = findField(block, "Lời\\s*giải|Giải|Hướng\\s*dẫn|explanation") ?? "";
+  const explanation = explanationOf(block);
   const q =
     kind === "multiple_choice"
       ? parseMultipleChoice(block, answerRaw, explanation, n, warnings, lenient)
