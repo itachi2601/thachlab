@@ -1,9 +1,8 @@
 "use client";
 
-import { ArrowRight, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 import {
   gradeExam,
-  gradeQuestion,
   questionStatus,
   statsByType,
   QUESTION_STATUS_LABELS,
@@ -45,12 +44,13 @@ function tone(pct: number) {
   };
 }
 
-const STATUS_PILL: Record<QuestionStatus, string> = {
-  correct: "bg-emerald-500/15 text-emerald-300",
-  partial: "bg-amber-500/15 text-amber-300",
-  wrong: "bg-red-500/15 text-red-300",
-  skipped: "bg-slate-500/20 text-slate-400",
-  manual: "bg-violet-500/15 text-violet-300",
+/** Ô số trong lưới điều hướng câu hỏi — cùng tông màu với bảng thống kê. */
+const NAV_DOT: Record<QuestionStatus, string> = {
+  correct: "border-emerald-500/60 bg-emerald-500/15 text-emerald-200 hover:border-emerald-400",
+  partial: "border-amber-500/60 bg-amber-500/15 text-amber-200 hover:border-amber-400",
+  wrong: "border-red-500/60 bg-red-500/15 text-red-200 hover:border-red-400",
+  skipped: "border-white/15 text-slate-400 hover:border-white/30",
+  manual: "border-violet-400/60 bg-violet-500/15 text-violet-200 hover:border-violet-300",
 };
 
 function Ring({ pct, color }: { pct: number; color: string }) {
@@ -209,47 +209,56 @@ export default function ExamResultSummary({
 
       <section>
         <h3 className="mb-3 font-display font-semibold text-white">
-          Đáp án chi tiết{" "}
+          Bảng câu hỏi{" "}
           <span className="text-sm font-normal text-slate-400">({questions.length} câu)</span>
         </h3>
-        <ul className="grid gap-2 sm:grid-cols-2">
+        <div className="flex flex-wrap gap-1.5">
           {questions.map((q, i) => {
-            const g = gradeQuestion(q, responses[i]);
             const status = questionStatus(q, responses[i]);
-            const row = (
-              <>
-                <span className="shrink-0 font-semibold text-white">Câu {i + 1}</span>
-                {g.max > 0 && (
-                  <span className="shrink-0 font-mono text-xs text-slate-400">
-                    {num(g.earned)}/{num(g.max)} đ
-                  </span>
-                )}
-                <span
-                  className={`ml-auto shrink-0 rounded-lg px-3 py-1 text-sm font-semibold ${STATUS_PILL[status]}`}
-                >
-                  {QUESTION_STATUS_LABELS[status]}
-                </span>
-              </>
-            );
-            return (
-              <li key={i}>
-                {anchorPrefix ? (
-                  <a
-                    href={`#${anchorPrefix}-${i + 1}`}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 hover:border-white/25"
-                  >
-                    {row}
-                    <ArrowRight size={16} className="shrink-0 text-slate-500" />
-                  </a>
-                ) : (
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5">
-                    {row}
-                  </div>
-                )}
-              </li>
+            const cls = NAV_DOT[status];
+            const title = `Câu ${i + 1} · ${QUESTION_STATUS_LABELS[status]}`;
+            return anchorPrefix ? (
+              <a
+                key={i}
+                href={`#${anchorPrefix}-${i + 1}`}
+                title={title}
+                className={`flex h-9 w-9 items-center justify-center rounded-lg border text-xs font-bold transition-colors ${cls}`}
+              >
+                {i + 1}
+              </a>
+            ) : (
+              <span
+                key={i}
+                title={title}
+                className={`flex h-9 w-9 items-center justify-center rounded-lg border text-xs font-bold ${cls}`}
+              >
+                {i + 1}
+              </span>
             );
           })}
-        </ul>
+        </div>
+        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded border border-emerald-500/60 bg-emerald-500/15" />
+            Đúng
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded border border-amber-500/60 bg-amber-500/15" />
+            Đúng một phần
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded border border-red-500/60 bg-red-500/15" />
+            Sai
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded border border-white/15" />
+            Bỏ qua
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded border border-violet-400/60 bg-violet-500/15" />
+            Thầy chấm
+          </span>
+        </div>
       </section>
     </div>
   );
