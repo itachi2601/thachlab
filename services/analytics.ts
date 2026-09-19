@@ -198,6 +198,7 @@ export async function fetchMyWrongQuestions(
 }
 
 export interface MyExamAttemptDetail {
+  examId: number;
   examTitle: string;
   questions: ExamQuestion[];
   responses: QuestionResponse[];
@@ -212,7 +213,7 @@ export async function fetchMyExamResultDetail(
 ): Promise<MyExamAttemptDetail | null> {
   const { data, error } = await getSupabase()
     .from("exam_results")
-    .select("score, duration_seconds, created_at, detail, exams(title, questions)")
+    .select("exam_id, score, duration_seconds, created_at, detail, exams(title, questions)")
     .eq("id", resultId)
     .single();
   if (error || !data) return null;
@@ -220,6 +221,7 @@ export async function fetchMyExamResultDetail(
   const responses =
     (data.detail as { responses?: QuestionResponse[] } | null)?.responses ?? [];
   return {
+    examId: data.exam_id as number,
     examTitle: exam?.title ?? "(Đề đã xóa)",
     questions: (exam?.questions as ExamQuestion[]) ?? [],
     responses,

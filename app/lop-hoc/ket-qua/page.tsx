@@ -2,18 +2,15 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ChevronDown, Target, Trophy } from "lucide-react";
+import { AlertTriangle, ArrowRight, ChevronDown, Target, Trophy } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
-import QuestionCard from "@/components/exams/QuestionCard";
-import ExamResultSummary from "@/components/exams/ExamResultSummary";
-import { emptyResponses, QUESTION_FORM_LABELS } from "@/features/exams/types";
+import Html from "@/components/exams/ContentHtml";
+import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
-  fetchExamRank,
   fetchMyAlert,
-  fetchMyExamResultDetail,
   fetchMyScoreHistory,
   fetchMyTopicGaps,
   fetchMyWrongQuestions,
@@ -21,9 +18,7 @@ import {
   fetchPeriodicRank,
   fetchQuestionTopics,
   outcomeGapsByNeed,
-  type ExamRank,
   type OutcomeGap,
-  type MyExamAttemptDetail,
   type PeriodicRank,
   type ScorePoint,
   type StudentAlert,
@@ -189,19 +184,26 @@ function GapRow({
           ) : items.length === 0 ? (
             <p className="text-sm text-slate-500">Không tìm được chi tiết câu sai.</p>
           ) : (
-            items.map((it) => (
-              <div key={`${it.ref.examResultId}-${it.ref.questionIndex}`}>
-                <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">
-                  {it.ref.examTitle}
-                </p>
-                <QuestionCard
-                  index={it.ref.questionIndex + 1}
-                  question={it.question}
-                  response={it.response}
-                  review
-                />
-              </div>
-            ))
+            <ul className="space-y-2">
+              {items.map((it) => (
+                <li key={`${it.ref.examResultId}-${it.ref.questionIndex}`}>
+                  <Link
+                    href={`/lop-hoc/ket-qua/chi-tiet/?id=${it.ref.examResultId}#cau-${it.ref.questionIndex + 1}`}
+                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/25"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-xs font-bold uppercase tracking-wide text-slate-500">
+                        {it.ref.examTitle} · Câu {it.ref.questionIndex + 1}
+                      </span>
+                      <span className="mt-1 line-clamp-2 block text-sm text-slate-300">
+                        <Html html={it.question.question} />
+                      </span>
+                    </span>
+                    <ArrowRight size={16} className="mt-1 shrink-0 text-slate-500" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       )}
@@ -221,64 +223,7 @@ function RankSummary({ rank }: { rank: PeriodicRank }) {
   );
 }
 
-function AttemptReview({
-  point,
-  detail,
-  rank,
-}: {
-  point: ScorePoint;
-  detail: MyExamAttemptDetail;
-  rank: ExamRank | null;
-}) {
-  const prefix = `cau-${point.resultId}`;
-  const detailAnchor = `xem-lai-${point.resultId}`;
-  const responses = detail.questions.map(
-    (q, i) => detail.responses[i] ?? emptyResponses([q])[0],
-  );
-
-  return (
-    <>
-      <ExamResultSummary
-        questions={detail.questions}
-        responses={responses}
-        anchorPrefix={prefix}
-        detailAnchor={detailAnchor}
-        meta={
-          rank ? (
-            <>
-              Hạng <b className="text-white">{rank.rank}</b>/{rank.total} trong lớp ở đề này
-            </>
-          ) : undefined
-        }
-      />
-      <h3
-        id={detailAnchor}
-        className="scroll-mt-24 pt-2 font-display font-semibold text-white"
-      >
-        Xem lại từng câu
-      </h3>
-      <div className="space-y-5">
-        {detail.questions.map((q, i) => (
-          <div key={i} id={`${prefix}-${i + 1}`} className="scroll-mt-24">
-            <QuestionCard index={i + 1} question={q} response={responses[i]} review />
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
 function AttemptRow({ point }: { point: ScorePoint }) {
-  const [open, setOpen] = useState(false);
-  const [detail, setDetail] = useState<MyExamAttemptDetail | null | undefined>(undefined);
-  const [rank, setRank] = useState<ExamRank | null>(null);
-
-  useEffect(() => {
-    if (!open || detail !== undefined) return;
-    fetchMyExamResultDetail(point.resultId).then(setDetail).catch(() => setDetail(null));
-    fetchExamRank(point.examId).then(setRank).catch(() => setRank(null));
-  }, [open, detail, point.resultId, point.examId]);
-
   const dateLabel = new Date(point.at).toLocaleDateString("vi-VN", {
     day: "2-digit",
     month: "2-digit",
@@ -286,45 +231,26 @@ function AttemptRow({ point }: { point: ScorePoint }) {
   });
 
   return (
-    <div className="rounded-2xl border border-white/10">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className="flex w-full items-center gap-4 p-4 text-left"
+    <Link
+      href={`/lop-hoc/ket-qua/chi-tiet/?id=${point.resultId}`}
+      className="flex items-center gap-4 rounded-2xl border border-white/10 p-4 hover:border-white/25"
+    >
+      <span className="min-w-0 flex-1">
+        <span className="block font-display font-semibold text-white">{point.examTitle}</span>
+        <span className="mt-0.5 block text-xs text-slate-400">
+          {dateLabel}
+          {point.periodic ? ` · ${point.kindLabel}` : ""}
+        </span>
+      </span>
+      <span
+        className={`shrink-0 font-mono text-lg font-bold ${
+          point.score >= PASS ? "text-emerald-300" : "text-red-300"
+        }`}
       >
-        <span className="min-w-0 flex-1">
-          <span className="block font-display font-semibold text-white">{point.examTitle}</span>
-          <span className="mt-0.5 block text-xs text-slate-400">
-            {dateLabel}
-            {point.periodic ? ` · ${point.kindLabel}` : ""}
-          </span>
-        </span>
-        <span
-          className={`shrink-0 font-mono text-lg font-bold ${
-            point.score >= PASS ? "text-emerald-300" : "text-red-300"
-          }`}
-        >
-          {point.score.toLocaleString("vi-VN")}
-        </span>
-        <ChevronDown
-          size={18}
-          className={`shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-
-      {open && (
-        <div className="space-y-5 border-t border-white/10 p-4">
-          {detail === undefined ? (
-            <p className="text-sm text-slate-400">Đang tải bài làm…</p>
-          ) : detail === null ? (
-            <p className="text-sm text-slate-500">Không tải được bài làm.</p>
-          ) : (
-            <AttemptReview point={point} detail={detail} rank={rank} />
-          )}
-        </div>
-      )}
-    </div>
+        {point.score.toLocaleString("vi-VN")}
+      </span>
+      <ArrowRight size={18} className="shrink-0 text-slate-500" />
+    </Link>
   );
 }
 
