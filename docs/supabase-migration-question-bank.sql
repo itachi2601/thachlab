@@ -5,7 +5,11 @@
 --   docs/supabase-migration-exam-analytics.sql   (question_topics)
 --   docs/supabase-migration-topic-outcomes.sql   (question_topics.parent_id — yêu cầu cần đạt)
 --   docs/supabase-migration-classes.sql          (exam_classes)
--- Idempotent — chạy lại được. Cuối file có bước NẠP LẠI toàn bộ đề đang có.
+-- Idempotent — chạy lại được. Chạy xong file này thì chạy tiếp
+--   docs/supabase-migration-question-bank-backfill.sql   (nạp lại toàn bộ đề đang có)
+-- Nếu báo "deadlock detected": transaction đã bị huỷ, chưa ghi gì — chạy lại là được.
+-- Trước khi chạy: đóng tab SQL Editor khác đang chạy dở, đóng trang admin đang mở
+-- (nhất là dev local đang mở /quan-tri/ngan-hang-cau-hoi), rồi bấm Run lại.
 --
 -- CÁCH HOẠT ĐỘNG
 -- Câu hỏi vẫn nằm trong exams.questions (jsonb) như trước — mọi trang làm bài,
@@ -297,5 +301,6 @@ grant select on public.question_bank_topic_counts to authenticated;
 
 
 -- ---------- 8. NẠP LẠI toàn bộ đề đang có ----------
-select count(*) as exams_synced, sum(public.sync_exam_to_bank(id)) as questions_synced
-from public.exams;
+-- Chạy RIÊNG, sau khi file này chạy xong: docs/supabase-migration-question-bank-backfill.sql
+-- (tách ra để bước nạp lại — đọc toàn bộ exams — không nằm chung transaction với
+-- các lệnh CREATE TRIGGER cần khoá độc quyền bảng exams → tránh deadlock với app đang chạy).
