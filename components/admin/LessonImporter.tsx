@@ -2,25 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
-import DocxExamImport from "@/components/admin/DocxExamImport";
-import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
-import QuestionCard from "@/components/exams/QuestionCard";
+import ExamSection, { type ExamSectionSeed, type TopicGroup, compressRasterInputs } from "@/components/admin/ExamSection";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import { useToast } from "@/components/ui/Toast";
-import {
-  auditQuestionTags,
-  canonicalizeQuestionTopics,
-  emptyResponses,
-  tagsComplete,
-} from "@/features/exams/types";
+import { auditQuestionTags, canonicalizeQuestionTopics, tagsComplete } from "@/features/exams/types";
 import type { SchoolClass, TagAudit } from "@/features/exams/types";
-import type { Chapter, Lesson, LessonItem } from "@/features/lessons/types";
+import type { Chapter, Lesson, LessonItem, LessonWorkedQuestion } from "@/features/lessons/types";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
-import {
-  createQuestionTopic,
-  fetchQuestionTopics,
-  type QuestionTopic,
-} from "@/services/analytics";
+import { createQuestionTopic, fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
 import {
   classGrade,
   displayClassesByGrade,
@@ -28,16 +17,16 @@ import {
   fetchClasses,
   setItemClasses,
 } from "@/services/classes";
-import { compressImageFile } from "@/services/image-compress";
 import {
+  BUNDLE_SCHEMA,
   applyMediaToBundle,
   bundleToRows,
+  parseLessonTex,
   typeCountSubtitle,
-  texToBundleDraft,
   validateBundle,
   type LessonBundle,
 } from "@/services/lesson-import";
-import { removeLessonMedia, uploadLessonMedia, type RasterImageInput } from "@/services/lesson-media";
+import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { getSupabase } from "@/services/supabase";
 
@@ -46,32 +35,7 @@ const inputCls =
 
 type SectionMode = "overwrite" | "merge" | "skip";
 type ExamMode = "replace" | "keep" | "skip";
-
-async function compressRasterInputs(images: RasterImageInput[]): Promise<RasterImageInput[]> {
-  const out: RasterImageInput[] = [];
-  for (const img of images) {
-    try {
-      const res = await fetch(img.dataUri);
-      const blob = await res.blob();
-      if (blob.type === "image/svg+xml" || blob.type === "image/gif") {
-        out.push(img);
-        continue;
-      }
-      const file = new File([blob], img.name, { type: blob.type });
-      const compressed = await compressImageFile(file, { maxDimension: 1400, quality: 0.8 });
-      const dataUri: string = await new Promise((resolve, reject) => {
-        const fr = new FileReader();
-        fr.onload = () => resolve(String(fr.result));
-        fr.onerror = () => reject(fr.error);
-        fr.readAsDataURL(compressed);
-      });
-      out.push({ ...img, name: compressed.name, dataUri });
-    } catch {
-      out.push(img);
-    }
-  }
-  return out;
-}
+type TheoryPart = { theory_html: string; worked_examples: LessonWorkedQuestion[] };
 
 export default function LessonImporter() {
   const toast = useToast();
@@ -86,12 +50,18 @@ export default function LessonImporter() {
   const [itemsCache, setItemsCache] = useState<{ lessonId: number; list: LessonItem[] } | null>(null);
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
 
-  const [source, setSource] = useState<"docx" | "json">("docx");
-  const [raw, setRaw] = useState("");
+  // ----- 2. Lý thuyết & dạng bài: dán .tex, tách lại mỗi lần gõ (giống ô đề bên dưới) -----
   const [tex, setTex] = useState("");
-  const [editing, setEditing] = useState(false);
-  const [bundle, setBundle] = useState<LessonBundle | null>(null);
-  const [parseErr, setParseErr] = useState<string[]>([]);
+  const [debouncedTex, setDebouncedTex] = useState("");
+  const [theoryOverride, setTheoryOverride] = useState<TheoryPart | null>(null);
+
+  // ----- 3. Đề: dùng chung ExamSection với trang Đăng đề -----
+  const [examBundle, setExamBundle] = useState<LessonBundle | null>(null);
+  const [examSeed, setExamSeed] = useState<ExamSectionSeed | null>(null);
+
+  // ----- Nâng cao: dán gói JSON có sẵn (đường dự phòng cho skill OCR đề PDF/scan) -----
+  const [jsonRaw, setJsonRaw] = useState("");
+  const [jsonErr, setJsonErr] = useState<string[]>([]);
 
   const [targets, setTargets] = useState<{ luyen_tap: boolean; kiem_tra: boolean }>({
     luyen_tap: true,
@@ -115,6 +85,11 @@ export default function LessonImporter() {
     fetchChapters().then(setChapters);
     fetchLessons(true).then(setAllLessons);
   }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedTex(tex), 250);
+    return () => clearTimeout(t);
+  }, [tex]);
 
   const selectedClass = classes.find((c) => c.id === classId) ?? null;
   const grade = selectedClass ? classGrade(selectedClass.name) : null;
@@ -162,7 +137,40 @@ export default function LessonImporter() {
     return expandClassIdsByGrade(base, classes) ?? base;
   }, [selectedChapter, classId, classes]);
 
-  const check = bundle ? validateBundle(bundle) : null;
+  /** Yêu cầu cần đạt xếp theo bài; bài đang chọn đứng đầu — cùng cách dựng với trang Đăng đề. */
+  const topicGroups = useMemo<TopicGroup[]>(() => {
+    const parents = lessonTopics(topics.filter((t) => t.grade === grade));
+    const groups = parents
+      .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name, "vi"))
+      .map((p) => ({ parent: p, names: outcomesOf(topics, p.id).map((o) => o.name) }))
+      .filter((g) => g.names.length > 0 || g.parent.lessonId === lessonId);
+    const mine = groups.filter((g) => g.parent.lessonId === lessonId);
+    const rest = groups.filter((g) => g.parent.lessonId !== lessonId);
+    return [...mine, ...rest];
+  }, [topics, grade, lessonId]);
+
+  const theoryDraft = useMemo(() => (debouncedTex.trim() ? parseLessonTex(debouncedTex) : null), [debouncedTex]);
+  const theoryPart: TheoryPart = useMemo(
+    () =>
+      theoryOverride ?? {
+        theory_html: theoryDraft?.theory_html ?? "",
+        worked_examples: theoryDraft?.worked_examples ?? [],
+      },
+    [theoryOverride, theoryDraft],
+  );
+
+  const fullBundle: LessonBundle | null = useMemo(() => {
+    if (!examBundle) return null;
+    return {
+      schema: BUNDLE_SCHEMA,
+      theory_html: theoryPart.theory_html,
+      worked_examples: theoryPart.worked_examples,
+      exam: examBundle.exam,
+      raster_images: examBundle.raster_images ?? [],
+    };
+  }, [examBundle, theoryPart]);
+
+  const check = fullBundle ? validateBundle(fullBundle) : null;
   // Lọc lại theo khối: danh sách trong state có thể là của lớp chọn trước đó.
   const gradeTopics = useMemo(
     () => (grade ? topics.filter((t) => t.grade === grade) : []),
@@ -178,8 +186,8 @@ export default function LessonImporter() {
   }, [gradeTopics]);
   const audit: TagAudit | null = useMemo(
     () =>
-      bundle ? auditQuestionTags(bundle.exam?.questions ?? [], catalogNames, coarseNames) : null,
-    [bundle, catalogNames, coarseNames],
+      fullBundle ? auditQuestionTags(fullBundle.exam?.questions ?? [], catalogNames, coarseNames) : null,
+    [fullBundle, catalogNames, coarseNames],
   );
   // Đủ nhãn = mọi câu có chủ đề + loại, và mọi chủ đề đã có trong danh mục (hoặc sẽ được tạo).
   const tagsReady =
@@ -192,7 +200,7 @@ export default function LessonImporter() {
         lessonId !== null &&
         !!grade));
   const canPublish =
-    !!bundle &&
+    !!fullBundle &&
     !!check?.ok &&
     lessonId !== null &&
     (targets.luyen_tap || targets.kiem_tra) &&
@@ -203,46 +211,38 @@ export default function LessonImporter() {
     return existingItems?.find((it) => it.kind === kind) ?? null;
   }
 
-  function loadBundle() {
-    setParseErr([]);
-    setBundle(null);
-    let parsed: unknown;
-    try {
-      parsed = JSON.parse(raw);
-    } catch (e) {
-      setParseErr([`JSON không hợp lệ: ${e instanceof Error ? e.message : e}`]);
-      return;
-    }
-    const v = validateBundle(parsed);
-    setBundle(parsed as LessonBundle);
-    if (!v.ok) toast("warning", `Gói có ${v.errors.length} lỗi cần sửa.`);
-    else toast("success", "Gói hợp lệ.");
-  }
-
-  /** Nhận nháp từ file Word / .tex: giữ JSON và bản đang sửa luôn khớp nhau. */
-  function applyDraft(draft: LessonBundle, notes: string[]) {
-    setBundle(draft);
-    setRaw(JSON.stringify(draft, null, 2));
-    setParseErr(notes.map((n) => `Ghi chú: ${n}`));
-    setEditing(true);
-  }
-
-  function prefillFromTex() {
-    if (!tex.trim()) return;
-    const title = selectedLessonTitle()
-      ? `Luyện tập – ${selectedLessonTitle()}`
-      : "Luyện tập";
-    const { bundle: draft, notes } = texToBundleDraft(tex, title);
-    applyDraft(draft, notes);
-    toast("info", "Đã nạp nháp từ .tex — rà lại phần đề trước khi đăng.");
-  }
-
   function selectedLessonTitle() {
     return lessons.find((l) => l.id === lessonId)?.title ?? "";
   }
 
+  /** Nạp gói JSON dán sẵn (skill OCR đề PDF/scan) vào cả 2 khối lý thuyết & đề. */
+  function applyJsonBundle(b: LessonBundle) {
+    setTheoryOverride({ theory_html: b.theory_html ?? "", worked_examples: b.worked_examples ?? [] });
+    setTex("");
+    setExamSeed({ token: Date.now(), bundle: b });
+  }
+
+  function loadJsonBundle() {
+    setJsonErr([]);
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(jsonRaw);
+    } catch (e) {
+      setJsonErr([`JSON không hợp lệ: ${e instanceof Error ? e.message : e}`]);
+      return;
+    }
+    const v = validateBundle(parsed);
+    applyJsonBundle(parsed as LessonBundle);
+    if (!v.ok) toast("warning", `Gói có ${v.errors.length} lỗi cần sửa — xem khối Đề/Lý thuyết bên dưới.`);
+    else toast("success", "Gói hợp lệ — đã nạp vào Lý thuyết và Đề.");
+  }
+
+  function clearTheoryOverride() {
+    setTheoryOverride(null);
+  }
+
   async function publish() {
-    if (!bundle || lessonId === null) return;
+    if (!fullBundle || lessonId === null) return;
     setBusy(true);
     setDoneLink(null);
     const steps: string[] = [];
@@ -255,14 +255,14 @@ export default function LessonImporter() {
     let createdExamId: number | null = null;
     try {
       // 1. Ảnh raster
-      let resolved = bundle;
-      const rasters = bundle.raster_images ?? [];
+      let resolved = fullBundle;
+      const rasters = fullBundle.raster_images ?? [];
       if (rasters.length) {
         push(`Nén & tải ${rasters.length} ảnh…`);
         const compressed = await compressRasterInputs(rasters);
         const media = await uploadLessonMedia(supabase, lessonId, compressed);
         uploadedPaths = media.map((m) => m.storagePath);
-        resolved = applyMediaToBundle(bundle, media);
+        resolved = applyMediaToBundle(fullBundle, media);
         push(`  ✓ đã tải ${media.length} ảnh lên lesson-media`);
       }
 
@@ -362,33 +362,32 @@ export default function LessonImporter() {
 
       // 6. luyen_tap / kiem_tra
       const subtitle = typeCountSubtitle(rows.exam.questions, rows.exam.duration_minutes);
-      for (const kind of ["luyen_tap", "kiem_tra"] as const) {
-        if (!targets[kind]) continue;
-        const cur = existing(kind);
+      for (const k of ["luyen_tap", "kiem_tra"] as const) {
+        if (!targets[k]) continue;
+        const cur = existing(k);
         const hadExam = (cur?.exam_ids ?? []).length > 0;
         if (hadExam && examMode === "skip") {
-          push(`${kind}: bỏ qua (giữ đề cũ).`);
+          push(`${k}: bỏ qua (giữ đề cũ).`);
           continue;
         }
-        const nextIds =
-          hadExam && examMode === "keep" ? [...cur!.exam_ids, examId] : [examId];
+        const nextIds = hadExam && examMode === "keep" ? [...cur!.exam_ids, examId] : [examId];
         const payload = {
           lesson_id: lessonId,
-          kind,
-          title: cur?.title || (kind === "luyen_tap" ? "Luyện tập" : "Kiểm tra"),
+          kind: k,
+          title: cur?.title || (k === "luyen_tap" ? "Luyện tập" : "Kiểm tra"),
           subtitle,
           body_html: "",
           video_url: "",
           pdf_url: "",
           questions: [],
           exam_ids: nextIds,
-          sort_order: cur?.sort_order ?? (kind === "luyen_tap" ? 4 : 5),
+          sort_order: cur?.sort_order ?? (k === "luyen_tap" ? 4 : 5),
         };
         const r = cur
           ? await supabase.from("lesson_items").update(payload).eq("id", cur.id)
           : await supabase.from("lesson_items").insert(payload);
-        if (r.error) throw new Error(`${kind} lỗi: ${r.error.message}`);
-        push(`${kind}: ${cur ? "đã cập nhật" : "đã thêm"} (gắn đề ${examId}).`);
+        if (r.error) throw new Error(`${k} lỗi: ${r.error.message}`);
+        push(`${k}: ${cur ? "đã cập nhật" : "đã thêm"} (gắn đề ${examId}).`);
       }
 
       push("Xong.");
@@ -402,7 +401,6 @@ export default function LessonImporter() {
       // Dọn sạch những gì đã tạo để lần thử sau không để lại đề/ảnh mồ côi.
       if (createdExamId !== null) {
         const staleId = createdExamId;
-        // Mục nào đã kịp gắn đề thì gỡ ra trước, tránh để lại exam_ids trỏ vào đề đã xóa.
         const { data: touched } = await supabase
           .from("lesson_items")
           .select("id, exam_ids")
@@ -431,17 +429,46 @@ export default function LessonImporter() {
     }
   }
 
-  const previewResponses = bundle ? emptyResponses(bundle.exam?.questions ?? []) : [];
-
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="font-display text-2xl font-bold text-white">Nhập bài học / đề kiểm tra</h1>
+        <h1 className="font-display text-2xl font-bold text-white">Đăng bài học</h1>
         <p className="mt-1 text-sm text-slate-400">
-          Thả file đề Word (.docx) là trang tự tách câu và đáp án — sửa lại chỗ nào chưa ưng rồi Đăng.
-          Hoặc dán gói bài học JSON như cũ.
+          Dán lý thuyết + dạng bài (LaTeX) ở mục 2, dán/thả đề kiểu Azota ở mục 3 — cả hai đều tách lại ngay khi gõ,
+          y như trang Đăng đề. Chọn lớp – bài rồi bấm Đăng.
         </p>
       </header>
+
+      <details className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-sm text-slate-300">
+        <summary className="cursor-pointer font-medium text-slate-200">
+          Nâng cao: dán gói JSON có sẵn (dành cho trợ lý AI hoặc đề PDF/ảnh scan)
+        </summary>
+        <p className="mt-2 text-xs text-slate-500">
+          Dùng khi không gõ trực tiếp được — vd trợ lý AI đã dựng sẵn gói <code>thachlab.lesson-bundle/v1</code> từ đề
+          PDF/scan. Nạp vào sẽ thay nội dung ở mục 2 và 3 bên dưới; vẫn rà/sửa lại như bình thường trước khi đăng.
+        </p>
+        <textarea
+          value={jsonRaw}
+          onChange={(e) => setJsonRaw(e.target.value)}
+          rows={6}
+          placeholder='{ "schema": "thachlab.lesson-bundle/v1", "theory_html": "…", "worked_examples": [...], "exam": { ... } }'
+          className={`${inputCls} mt-2 w-full font-mono text-xs`}
+        />
+        <button
+          onClick={loadJsonBundle}
+          disabled={!jsonRaw.trim()}
+          className="mt-2 rounded-lg bg-emerald-600/30 px-4 py-2 text-sm font-semibold text-emerald-200 hover:bg-emerald-600/50 disabled:opacity-40"
+        >
+          Nạp gói
+        </button>
+        {jsonErr.length > 0 && (
+          <ul className="mt-2 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
+            {jsonErr.map((e, i) => (
+              <li key={i}>• {e}</li>
+            ))}
+          </ul>
+        )}
+      </details>
 
       {/* 1. Chọn đích */}
       <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
@@ -530,252 +557,177 @@ export default function LessonImporter() {
         )}
       </section>
 
-      {/* 2. Nguồn nội dung */}
+      {/* 2. Lý thuyết & dạng bài */}
       <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <div className="flex flex-wrap items-center gap-2">
-          <p className="text-sm font-medium text-slate-300">2. Nội dung</p>
-          {([["docx", "Từ file Word (.docx)"], ["json", "Dán gói JSON"]] as const).map(([key, label]) => (
+        <p className="text-sm font-medium text-slate-300">2. Lý thuyết & dạng bài</p>
+        {theoryOverride ? (
+          <div className="flex flex-wrap items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 text-xs text-emerald-200">
+            <span>Đang dùng nội dung nạp từ gói JSON (khối “Nâng cao” ở trên).</span>
             <button
-              key={key}
               type="button"
-              onClick={() => setSource(key)}
-              className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
-                source === key ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
-              }`}
+              onClick={clearTheoryOverride}
+              className="rounded-lg bg-white/10 px-3 py-1.5 font-semibold text-slate-200 hover:bg-white/20"
             >
-              {label}
+              Quay lại dán trực tiếp
             </button>
-          ))}
-        </div>
-
-        {source === "docx" && (
-          <DocxExamImport
-            fallbackTitle={selectedLessonTitle() ? `Kiểm tra – ${selectedLessonTitle()}` : ""}
-            subjectCode={subjectCode}
-            onDraft={applyDraft}
-          />
+          </div>
+        ) : (
+          <>
+            <textarea
+              value={tex}
+              onChange={(e) => setTex(e.target.value)}
+              rows={10}
+              spellCheck={false}
+              placeholder={
+                "Dán LaTeX bài học vào đây — trang tách lại lý thuyết/dạng bài mỗi khi gõ.\n\n" +
+                "\\subsection{LÍ THUYẾT}\n...\n\\subsection{DẠNG 1: ...}\n...\n\n" +
+                "(Phần đề/luyện tập KHÔNG dán ở đây — dán ở mục 3 bên dưới, kiểu Azota.)"
+              }
+              className={`${inputCls} w-full min-h-[30vh] resize-y font-mono text-[13px] leading-relaxed`}
+            />
+            {theoryDraft && theoryDraft.notes.length > 0 && (
+              <ul className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
+                {theoryDraft.notes.map((n, i) => (
+                  <li key={i}>• {n}</li>
+                ))}
+              </ul>
+            )}
+          </>
         )}
 
-        {source === "json" && (
-        <>
-        <textarea
-          value={raw}
-          onChange={(e) => setRaw(e.target.value)}
-          rows={8}
-          placeholder='{ "schema": "thachlab.lesson-bundle/v1", "theory_html": "…", "worked_examples": [...], "exam": { ... } }'
-          className={`${inputCls} w-full font-mono text-xs`}
-        />
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={loadBundle}
-            disabled={!raw.trim()}
-            className="rounded-lg bg-emerald-600/30 px-4 py-2 text-sm font-semibold text-emerald-200 hover:bg-emerald-600/50 disabled:opacity-40"
-          >
-            Nạp gói
-          </button>
-        </div>
-
-        <details className="text-xs text-slate-400">
-          <summary className="cursor-pointer hover:text-slate-200">Hoặc dán .tex để tạo nháp (rà lại đề)</summary>
-          <textarea
-            value={tex}
-            onChange={(e) => setTex(e.target.value)}
-            rows={6}
-            placeholder="\section{...} \subsection{LÍ THUYẾT} ... \subsection{PHẦN I. ...}"
-            className={`${inputCls} mt-2 w-full font-mono text-xs`}
-          />
-          <button
-            onClick={prefillFromTex}
-            disabled={!tex.trim()}
-            className="mt-2 rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20 disabled:opacity-40"
-          >
-            Tạo nháp từ .tex
-          </button>
-        </details>
-        </>
+        {theoryPart.theory_html.trim() && (
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Xem trước Lý thuyết</p>
+            <ContentHtml html={theoryPart.theory_html} className="block text-sm text-slate-300" />
+          </div>
         )}
-
-        {parseErr.length > 0 && (
-          <ul className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
-            {parseErr.map((e, i) => (
-              <li key={i}>• {e}</li>
-            ))}
-          </ul>
+        {theoryPart.worked_examples.length > 0 && (
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-violet-300">
+              Các dạng bài tập ({theoryPart.worked_examples.length})
+            </p>
+            <WorkedQuestionsGrid questions={theoryPart.worked_examples} />
+          </div>
         )}
       </section>
 
-      {/* 3. Validate + preview */}
-      {bundle && check && (
+      {/* 3. Đề luyện tập / kiểm tra */}
+      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <p className="text-sm font-medium text-slate-300">3. Đề luyện tập / kiểm tra</p>
+        <ExamSection
+          subjectCode={subjectCode}
+          topicGroups={topicGroups}
+          catalogNames={catalogNames}
+          lessonPicked={lessonId !== null}
+          onChange={setExamBundle}
+          externalSeed={examSeed}
+        />
+      </section>
+
+      {/* 4. Nhãn chủ đề trước khi đăng */}
+      {audit && (
         <section className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-          <p className="text-sm font-medium text-slate-300">3. Kiểm tra & xem trước</p>
+          <p className="text-sm font-medium text-slate-300">4. Nhãn chủ đề trước khi đăng</p>
+          <div
+            className={`rounded-xl border p-4 text-xs ${
+              tagsReady ? "border-emerald-500/30 bg-emerald-500/5" : "border-amber-500/40 bg-amber-500/5"
+            }`}
+          >
+            <p className="text-sm font-semibold text-slate-200">
+              Nhãn chủ đề · đã gắn {audit.tagged}/{audit.total} câu
+            </p>
+            <p className="mt-0.5 text-[11px] text-slate-500">
+              Dùng cho Phân tích chủ đề &amp; cảnh báo phụ đạo. Nhãn được chốt lúc học sinh nộp
+              bài — gắn sau sẽ không cứu được các lượt đã nộp.
+            </p>
 
-          {check.errors.length > 0 && (
-            <ul className="rounded-lg border border-red-500/30 bg-red-500/5 p-3 text-xs text-red-200">
-              {check.errors.map((e, i) => (
-                <li key={i}>✕ {e}</li>
-              ))}
-            </ul>
-          )}
-          {check.warnings.length > 0 && (
-            <ul className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-200">
-              {check.warnings.map((e, i) => (
-                <li key={i}>! {e}</li>
-              ))}
-            </ul>
-          )}
-          {check.ok && check.warnings.length === 0 && (
-            <p className="text-xs text-emerald-300">✓ Gói hợp lệ, sẵn sàng đăng.</p>
-          )}
-
-          {audit && (
-            <div
-              className={`rounded-xl border p-4 text-xs ${
-                tagsReady ? "border-emerald-500/30 bg-emerald-500/5" : "border-amber-500/40 bg-amber-500/5"
-              }`}
-            >
-              <p className="text-sm font-semibold text-slate-200">
-                Nhãn chủ đề · đã gắn {audit.tagged}/{audit.total} câu
+            {!grade ? (
+              <p className="mt-2 text-amber-200">Chọn lớp ở mục 1 để soát nhãn theo danh mục khối.</p>
+            ) : catalogNames.length === 0 ? (
+              <p className="mt-2 text-amber-200">
+                Danh mục chủ đề khối {grade} đang trống — thêm ở Quản trị → Chủ đề câu hỏi.
               </p>
-              <p className="mt-0.5 text-[11px] text-slate-500">
-                Dùng cho Phân tích chủ đề &amp; cảnh báo phụ đạo. Nhãn được chốt lúc học sinh nộp
-                bài — gắn sau sẽ không cứu được các lượt đã nộp.
+            ) : null}
+
+            {audit.missingTopic.length > 0 && (
+              <p className="mt-2 text-amber-200">✕ Thiếu chủ đề ở câu: {audit.missingTopic.join(", ")}.</p>
+            )}
+            {audit.missingForm.length > 0 && (
+              <p className="mt-1 text-amber-200">
+                ✕ Thiếu loại (lý thuyết / bài tập) ở câu: {audit.missingForm.join(", ")}.
               </p>
+            )}
 
-              {!grade ? (
-                <p className="mt-2 text-amber-200">Chọn lớp ở mục 1 để soát nhãn theo danh mục khối.</p>
-              ) : catalogNames.length === 0 ? (
-                <p className="mt-2 text-amber-200">
-                  Danh mục chủ đề khối {grade} đang trống — thêm ở Quản trị → Chủ đề câu hỏi.
-                </p>
-              ) : null}
-
-              {audit.missingTopic.length > 0 && (
-                <p className="mt-2 text-amber-200">✕ Thiếu chủ đề ở câu: {audit.missingTopic.join(", ")}.</p>
-              )}
-              {audit.missingForm.length > 0 && (
-                <p className="mt-1 text-amber-200">
-                  ✕ Thiếu loại (lý thuyết / bài tập) ở câu: {audit.missingForm.join(", ")}.
-                </p>
-              )}
-
-              {(audit.known.length > 0 || audit.unknown.length > 0) && (
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {audit.known.map((t) => (
-                    <span
-                      key={t.name}
-                      className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-emerald-200"
-                    >
-                      {t.name} · {t.count} câu
-                    </span>
-                  ))}
-                  {audit.unknown.map((t) => (
-                    <span
-                      key={t.name}
-                      className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-amber-200"
-                    >
-                      {t.name} · {t.count} câu · chưa có trong danh mục
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {audit.coarse.length > 0 && (
-                <p className="mt-2 text-amber-200">
-                  ⚠ Còn gắn ở mức cả bài:{" "}
-                  {audit.coarse.map((t) => `${t.name} (${t.count} câu)`).join(", ")} — các bài này đã
-                  tách yêu cầu cần đạt, gắn vào đúng yêu cầu thì mới biết em hổng phần nào. Sửa ở
-                  Quản trị → Chủ đề câu hỏi sau khi đăng cũng được, nhưng nhãn chốt lúc nộp bài.
-                </p>
-              )}
-
-              {audit.unknown.length > 0 && (
-                <label className="mt-3 flex items-start gap-2 text-slate-300">
-                  <input
-                    type="checkbox"
-                    checked={createMissingTopics}
-                    onChange={(e) => setCreateMissingTopics(e.target.checked)}
-                    disabled={lessonId === null || !grade || catalogNames.length === 0}
-                    className="mt-0.5 accent-emerald-500"
-                  />
-                  <span>
-                    Tạo {audit.unknown.length} chủ đề mới cho{" "}
-                    <b className="text-slate-100">{selectedLessonTitle() || "bài đang chọn"}</b> khi đăng
-                    {lessonId === null && <span className="text-amber-300"> — chọn bài học ở mục 1 trước</span>}
-                    <span className="block text-[11px] text-slate-500">
-                      Chủ đề mới gắn sẵn vào đúng Chương → Bài này, nên nút “Ôn lại” của học sinh nhảy
-                      đúng chỗ ngay.
-                    </span>
+            {(audit.known.length > 0 || audit.unknown.length > 0) && (
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {audit.known.map((t) => (
+                  <span
+                    key={t.name}
+                    className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-emerald-200"
+                  >
+                    {t.name} · {t.count} câu
                   </span>
-                </label>
-              )}
+                ))}
+                {audit.unknown.map((t) => (
+                  <span
+                    key={t.name}
+                    className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-amber-200"
+                  >
+                    {t.name} · {t.count} câu · chưa có trong danh mục
+                  </span>
+                ))}
+              </div>
+            )}
 
-              {!tagsReady && (
-                <label className="mt-2 flex items-center gap-2 text-slate-400">
-                  <input
-                    type="checkbox"
-                    checked={tagOverride}
-                    onChange={(e) => setTagOverride(e.target.checked)}
-                    className="accent-amber-500"
-                  />
-                  Đăng dù nhãn chưa đủ (câu thiếu nhãn sẽ không vào phân tích)
-                </label>
-              )}
-            </div>
-          )}
-
-          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Lý thuyết</p>
-            <ContentHtml html={bundle.theory_html ?? ""} className="block text-sm text-slate-300" />
-          </div>
-
-          {(bundle.worked_examples?.length ?? 0) > 0 && (
-            <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-              <p className="mb-2 text-xs font-bold uppercase tracking-wide text-violet-300">
-                Các dạng bài tập ({bundle.worked_examples.length})
+            {audit.coarse.length > 0 && (
+              <p className="mt-2 text-amber-200">
+                ⚠ Còn gắn ở mức cả bài:{" "}
+                {audit.coarse.map((t) => `${t.name} (${t.count} câu)`).join(", ")} — các bài này đã
+                tách yêu cầu cần đạt, gắn vào đúng yêu cầu thì mới biết em hổng phần nào. Sửa ở
+                Quản trị → Chủ đề câu hỏi sau khi đăng cũng được, nhưng nhãn chốt lúc nộp bài.
               </p>
-              <WorkedQuestionsGrid questions={bundle.worked_examples} />
-            </div>
-          )}
+            )}
 
-          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <p className="text-xs font-bold uppercase tracking-wide text-amber-300">
-                Đề: {bundle.exam?.title} — {typeCountSubtitle(bundle.exam?.questions ?? [], bundle.exam?.duration_minutes)}
-              </p>
-              <button
-                type="button"
-                onClick={() => setEditing((v) => !v)}
-                className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20"
-              >
-                {editing ? "Xem như học sinh" : "Sửa từng câu"}
-              </button>
-            </div>
+            {audit.unknown.length > 0 && (
+              <label className="mt-3 flex items-start gap-2 text-slate-300">
+                <input
+                  type="checkbox"
+                  checked={createMissingTopics}
+                  onChange={(e) => setCreateMissingTopics(e.target.checked)}
+                  disabled={lessonId === null || !grade || catalogNames.length === 0}
+                  className="mt-0.5 accent-emerald-500"
+                />
+                <span>
+                  Tạo {audit.unknown.length} chủ đề mới cho{" "}
+                  <b className="text-slate-100">{selectedLessonTitle() || "bài đang chọn"}</b> khi đăng
+                  {lessonId === null && <span className="text-amber-300"> — chọn bài học ở mục 1 trước</span>}
+                  <span className="block text-[11px] text-slate-500">
+                    Chủ đề mới gắn sẵn vào đúng Chương → Bài này, nên nút “Ôn lại” của học sinh nhảy
+                    đúng chỗ ngay.
+                  </span>
+                </span>
+              </label>
+            )}
 
-            {editing && bundle.exam ? (
-              <ExamDraftEditor
-                bundle={bundle}
-                onChange={(next) => {
-                  setBundle(next);
-                  setRaw(JSON.stringify(next, null, 2));
-                }}
-              />
-            ) : (
-            <>
-            <div className="space-y-3">
-              {(bundle.exam?.questions ?? []).map((q, i) => (
-                <QuestionCard key={i} index={i + 1} question={q} response={previewResponses[i]} review selfCheck={false} />
-              ))}
-            </div>
-            </>
+            {!tagsReady && (
+              <label className="mt-2 flex items-center gap-2 text-slate-400">
+                <input
+                  type="checkbox"
+                  checked={tagOverride}
+                  onChange={(e) => setTagOverride(e.target.checked)}
+                  className="accent-amber-500"
+                />
+                Đăng dù nhãn chưa đủ (câu thiếu nhãn sẽ không vào phân tích)
+              </label>
             )}
           </div>
         </section>
       )}
 
-      {/* 4. Mục đề + xử lý nội dung cũ */}
-      {bundle && (
+      {/* 5. Gắn đề & xử lý nội dung cũ */}
+      {fullBundle && (
         <section className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-          <p className="text-sm font-medium text-slate-300">4. Gắn đề & xử lý nội dung đã có</p>
+          <p className="text-sm font-medium text-slate-300">5. Gắn đề & xử lý nội dung đã có</p>
 
           <div className="flex flex-wrap gap-4 text-sm text-slate-300">
             {(["luyen_tap", "kiem_tra"] as const).map((k) => (
@@ -829,8 +781,15 @@ export default function LessonImporter() {
         </section>
       )}
 
-      {/* 5. Đăng */}
+      {/* 6. Đăng */}
       <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        {check && !check.ok && (
+          <ul className="rounded-lg border border-red-500/30 bg-red-500/5 p-3 text-xs text-red-200">
+            {check.errors.map((e, i) => (
+              <li key={i}>✕ {e}</li>
+            ))}
+          </ul>
+        )}
         <button
           onClick={publish}
           disabled={!canPublish}
@@ -838,16 +797,16 @@ export default function LessonImporter() {
         >
           {busy ? "Đang đăng…" : "Đăng bài học"}
         </button>
-        {!canPublish && bundle && (
+        {!canPublish && fullBundle && (
           <p className="text-xs text-slate-500">
             {check && !check.ok
-              ? "Sửa hết lỗi ở mục 3 trước khi đăng."
+              ? "Sửa hết lỗi ở khung đỏ trên trước khi đăng."
               : lessonId === null
                 ? "Chọn bài học ở mục 1."
                 : !targets.luyen_tap && !targets.kiem_tra
-                  ? "Chọn ít nhất một mục để gắn đề."
+                  ? "Chọn ít nhất một mục để gắn đề ở mục 5."
                   : !tagsReady && !tagOverride
-                    ? "Nhãn chủ đề ở mục 3 chưa đủ — sửa nhãn trong gói, hoặc tick ô cho phép đăng."
+                    ? "Nhãn chủ đề ở mục 4 chưa đủ — sửa nhãn trong đề, hoặc tick ô cho phép đăng."
                     : ""}
           </p>
         )}

@@ -1,7 +1,7 @@
 /**
  * Thư viện thuần (không React, không getSupabase) để nhập một "gói bài học" JSON
  * vào LMS: validate, map sang payload hàng, và parse .tex thành nháp gói.
- * Dùng chung bởi trang `/quan-tri/nhap-bai` và script `scripts/upload-lesson.mjs`.
+ * Dùng chung bởi trang `/quan-tri/nhap-bai` và script `scripts/upload-lesson.mts`.
  */
 
 import type { ExamQuestion } from "@/features/exams/types";

@@ -36,8 +36,12 @@ thachlab kèm payload trong URL hash (hash không bao giờ gửi lên server).
 
   4. CHỌN Lớp → Môn → Chương → Bài SAU BƯỚC NÀY. Relay làm tab điều hướng nên mọi
      lựa chọn trước đó mất sạch.
-  5. Bấm "Nạp gói", đọc bảng validate + khung "Nhãn chủ đề", rồi Đăng.
-  6. Ctrl-C script (hoặc `pkill -f paste_relay.py`) khi xong.
+  5. Ô JSON nằm trong khối gập "Nâng cao: dán gói JSON…" ở đầu trang — script gán
+     `.value` thẳng vào DOM nên gập/mở không ảnh hưởng, nhưng phải BẤM MỞ khối đó
+     (bấm vào dòng tóm tắt) trước khi bấm "Nạp gói", vì nút đang ẩn lúc khối gập.
+  6. Bấm "Nạp gói", đọc bảng validate (khung đỏ cạnh nút "Đăng bài học" ở cuối trang)
+     + khung "Nhãn chủ đề trước khi đăng" (mục riêng, sau phần Đề), rồi Đăng.
+  7. Ctrl-C script (hoặc `pkill -f paste_relay.py`) khi xong.
 
 Lưu ý thao tác pane: ĐỪNG `resize_window` để emulate viewport — toạ độ click lệch
 khỏi ảnh chụp. Dùng `ref` từ `find`/`read_page` và `form_input` cho <select>.

@@ -290,8 +290,11 @@ cho `<select>`.
    `navigate` tab tới URL relay script in ra → sau ~3 s tab tự quay về trang nhập bài với
    payload trong `#b64=…` → chạy đoạn JS trong docstring của script để giải mã và gán vào
    textarea (phải dùng **native setter** + `dispatchEvent('input')`, React bỏ qua `ta.value=`).
-   Relay làm tab điều hướng nên **mọi lựa chọn Lớp/Chương/Bài trước đó mất sạch** — vì vậy
-   làm bước này trước bước 3. Xong thì `pkill -f paste_relay.py`.
+   Ô JSON nằm trong khối gập **"Nâng cao: dán gói JSON…"** ở đầu trang — script gán DOM thẳng
+   nên gập/mở không ảnh hưởng giá trị, nhưng khối phải **mở** (bấm dòng tóm tắt) thì nút
+   "Nạp gói" mới hiện ra bấm được (bước 4). Relay làm tab điều hướng nên **mọi lựa chọn
+   Lớp/Chương/Bài trước đó mất sạch** — vì vậy làm bước này trước bước 3. Xong thì
+   `pkill -f paste_relay.py`.
 3. Mục 1: chọn **Lớp → Môn → Chương → Bài**. Nếu người dùng chưa nói rõ bài nào: hỏi, hoặc tra
    bằng REST anon-key (chỉ đọc):
    ```bash
@@ -301,9 +304,11 @@ cho `<select>`.
    curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/lessons?select=id,chapter_id,title&chapter_id=eq.<ID>" \
      -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" -H "Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY"
    ```
-4. Bấm **Nạp gói**.
-5. Mục 3: xem preview — từng câu tô đáp án đúng + lời giải — và **bảng validate**. `errors` đỏ
-   chặn Đăng; sửa gói, dán lại. Đọc luôn khung **"Nhãn chủ đề"**:
+4. Mở khối **"Nâng cao"** (nếu relay chưa làm tab điều hướng qua bước khác khiến nó đóng lại),
+   rồi bấm **Nạp gói**. Trang nạp gói vào cả mục 2 (Lý thuyết & dạng bài) và mục 3 (Đề).
+5. Mục 3 (Đề luyện tập / kiểm tra): xem preview — từng câu tô đáp án đúng + lời giải. Lỗi
+   chặn đăng (nếu có) hiện ở khung đỏ ngay trên nút **"Đăng bài học"** ở cuối trang; có lỗi
+   thì sửa gói, dán lại. Mục 4 (**"Nhãn chủ đề trước khi đăng"**, ngay sau mục 3):
    - phải là **"đã gắn n/n câu"**, các chip chủ đề đều xanh (có trong danh mục khối);
    - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn):
      trang tạo chúng thành **yêu cầu cần đạt con** của chủ đề bài đang chọn;
@@ -311,7 +316,7 @@ cho `<select>`.
    - nút Đăng bị chặn khi nhãn chưa đủ. Ô **"Đăng dù nhãn chưa đủ"** chỉ tick khi người dùng
      đồng ý bỏ số liệu phân tích cho những câu đó — nhãn được chốt lúc học sinh nộp bài, gắn
      sau **không** cứu được các lượt đã nộp.
-6. Mục 4:
+6. Mục 5 (**"Gắn đề & xử lý nội dung đã có"**):
    - Tick **"Gắn vào Kiểm tra"** (mặc định cho skill này). Thêm **"Luyện tập"** nếu người dùng
      muốn học sinh luyện không tính điểm.
    - **Lý thuyết**: gói không có `theory_html` thì trang tự giữ nguyên mục cũ. Nếu gói có mà bài
@@ -325,7 +330,7 @@ cho `<select>`.
 ### Dự phòng: không mở được trang admin
 
 ```bash
-node scripts/upload-lesson.mjs bundle.json --lesson <id> --class <id> --target kiem_tra --mode replace
+npx tsx scripts/upload-lesson.mts bundle.json --lesson <id> --class <id> --target kiem_tra --mode replace
 ```
 
 Script hỏi `SUPABASE_SERVICE_ROLE_KEY` (nhập ẩn) — **chỉ dùng khi người dùng tự cung cấp key
