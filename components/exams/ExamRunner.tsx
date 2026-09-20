@@ -54,7 +54,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   const [usedSeconds, setUsedSeconds] = useState(0);
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
-  const [paletteOpen, setPaletteOpen] = useState(true);
+  const [paletteOpen, setPaletteOpen] = useState(false);
   const topRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(0);
   const submittedRef = useRef(false);
@@ -241,7 +241,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
 
           {paletteOpen && (
             <>
-              <div className="mt-3 flex max-h-[30vh] flex-wrap gap-1.5 overflow-y-auto border-t border-white/10 pt-3">
+              <div className="mt-3 flex max-h-40 flex-wrap gap-1.5 overflow-y-auto border-t border-white/10 pt-3">
                 {exam.questions.map((item, i) => {
                   const state = answerState(item, responses[i]);
                   const flagged = flags.has(i);
