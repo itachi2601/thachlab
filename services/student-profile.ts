@@ -27,6 +27,28 @@ export interface StudentRosterInfo {
   birthDate: string;
 }
 
+/**
+ * Đặt lại mật khẩu cho học sinh không tự dùng được /quen-mat-khau (tài khoản @thachlab.local,
+ * không có email thật). Chạy qua Edge Function vì cần service_role key — xem
+ * supabase/functions/reset-student-password/index.ts.
+ */
+export async function resetStudentPassword(studentId: string, classId: number, newPassword: string) {
+  const { data, error } = await getSupabase().functions.invoke("reset-student-password", {
+    body: { studentId, classId, newPassword },
+  });
+  if (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (/failed to send a request|failed to fetch|non-2xx/i.test(message)) {
+      throw new Error(
+        "Chưa gọi được Edge Function \"reset-student-password\" trên Supabase — nhiều khả năng " +
+          "function chưa được deploy. Xem docs/deploy-edge-function.md.",
+      );
+    }
+    throw error instanceof Error ? error : new Error(message);
+  }
+  if (data?.error) throw new Error(data.error as string);
+}
+
 export async function fetchStudentRosterInfo(studentIds: string[]) {
   if (!studentIds.length) return new Map<string, StudentRosterInfo>();
   const { data, error } = await getSupabase().from("profiles").select("id, student_code, birth_date").in("id", studentIds);

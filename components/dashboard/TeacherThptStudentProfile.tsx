@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
+import { resetStudentPassword } from "@/services/student-profile";
 
 const STATUS_LABEL: Record<string, string> = { present: "Có mặt", late: "Đi trễ", excused: "Vắng có phép", absent: "Vắng không phép" };
 
@@ -27,6 +28,7 @@ export default function TeacherThptStudentProfile({
   const [attendanceByStudent, setAttendanceByStudent] = useState<Map<string, Map<number, string>>>(new Map());
   const [cttcIds, setCttcIds] = useState<Set<string>>(new Set());
   const [removing, setRemoving] = useState(false);
+  const [resettingPassword, setResettingPassword] = useState(false);
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
 
@@ -68,6 +70,27 @@ export default function TeacherThptStudentProfile({
       window.alert(error instanceof Error ? error.message : "Không gỡ được học sinh khỏi lớp.");
     } finally {
       setRemoving(false);
+    }
+  }
+
+  async function handleResetPassword() {
+    if (!selected) return;
+    const newPassword = window.prompt(
+      `Nhập mật khẩu mới cho "${selected.full_name}" (tối thiểu 6 ký tự) — nhớ báo lại mật khẩu này cho học sinh:`,
+    );
+    if (!newPassword) return;
+    if (newPassword.length < 6) {
+      window.alert("Mật khẩu mới phải dài tối thiểu 6 ký tự.");
+      return;
+    }
+    setResettingPassword(true);
+    try {
+      await resetStudentPassword(selected.id, classId, newPassword);
+      window.alert("Đã đặt lại mật khẩu — báo mật khẩu mới cho học sinh để đăng nhập lại.");
+    } catch (error) {
+      window.alert(error instanceof Error ? error.message : "Không đặt lại được mật khẩu.");
+    } finally {
+      setResettingPassword(false);
     }
   }
 
@@ -124,14 +147,24 @@ export default function TeacherThptStudentProfile({
                 <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
                 <p className="mt-1 text-sm text-slate-400">Lớp: {selected.class_name || "Chưa cập nhật"}</p>
               </div>
-              <button
-                type="button"
-                onClick={handleRemove}
-                disabled={removing}
-                className="shrink-0 rounded-xl border border-red-500/30 px-3 py-2 text-xs font-bold text-red-300 hover:bg-red-500/10 disabled:opacity-50"
-              >
-                {removing ? "Đang gỡ…" : "Xóa khỏi lớp"}
-              </button>
+              <div className="flex shrink-0 gap-2">
+                <button
+                  type="button"
+                  onClick={handleResetPassword}
+                  disabled={resettingPassword}
+                  className="rounded-xl border border-blue-500/30 px-3 py-2 text-xs font-bold text-blue-300 hover:bg-blue-500/10 disabled:opacity-50"
+                >
+                  {resettingPassword ? "Đang đặt lại…" : "Đặt lại mật khẩu"}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleRemove}
+                  disabled={removing}
+                  className="rounded-xl border border-red-500/30 px-3 py-2 text-xs font-bold text-red-300 hover:bg-red-500/10 disabled:opacity-50"
+                >
+                  {removing ? "Đang gỡ…" : "Xóa khỏi lớp"}
+                </button>
+              </div>
             </div>
             {cttcIds.has(selected.id) && (
               <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] p-3 text-xs text-amber-200">
