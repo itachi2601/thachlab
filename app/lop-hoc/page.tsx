@@ -87,6 +87,12 @@ const UNIVERSITY_CLASSES = [
     description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và giao tiếp trong ngành cơ khí.",
     href: "",
   },
+  {
+    title: "Sinh hoạt chủ nhiệm",
+    icon: "🧭",
+    description: "Nội dung sinh hoạt tuần và việc cần làm — tick đã làm ngay trên lớp học.",
+    href: "/lop-hoc/sinh-hoat-chu-nhiem",
+  },
 ];
 
 export default function ClassHubPage({ classSlug }: { classSlug?: string } = {}) {
