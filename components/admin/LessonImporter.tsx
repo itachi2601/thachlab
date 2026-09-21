@@ -63,9 +63,10 @@ export default function LessonImporter() {
   const [jsonRaw, setJsonRaw] = useState("");
   const [jsonErr, setJsonErr] = useState<string[]>([]);
 
-  const [targets, setTargets] = useState<{ luyen_tap: boolean; kiem_tra: boolean }>({
+  const [targets, setTargets] = useState<{ luyen_tap: boolean; kiem_tra: boolean; bai_tap_mau: boolean }>({
     luyen_tap: true,
     kiem_tra: false,
+    bai_tap_mau: false,
   });
   const [theoryMode, setTheoryMode] = useState<SectionMode>("overwrite");
   const [workedMode, setWorkedMode] = useState<SectionMode>("overwrite");
@@ -203,7 +204,7 @@ export default function LessonImporter() {
     !!fullBundle &&
     !!check?.ok &&
     lessonId !== null &&
-    (targets.luyen_tap || targets.kiem_tra) &&
+    (targets.luyen_tap || targets.kiem_tra || targets.bai_tap_mau) &&
     (tagsReady || tagOverride) &&
     !busy;
 
@@ -337,27 +338,52 @@ export default function LessonImporter() {
         push(`Lý thuyết: ${lt ? "đã ghi đè" : "đã thêm"}.`);
       }
 
-      // 5. Các dạng bài tập
+      // 5. Bài tập mẫu: các dạng bài (đọc, không chấm) + đề tự chấm (tuỳ chọn, exam_ids)
       const bt = existing("bai_tap_mau");
-      if (rows.baiTapMau.questions.length === 0)
-        push("Các dạng bài tập: gói không có phần này — giữ nguyên nội dung cũ.");
-      else if (workedMode === "skip" && bt) push("Các dạng bài tập: bỏ qua.");
-      else {
+      const hasWorked = rows.baiTapMau.questions.length > 0;
+      // Gói không có dạng bài (vd publish riêng để gắn đề tự chấm) → không bao giờ xoá dạng bài cũ.
+      const shouldWriteBt = targets.bai_tap_mau || (hasWorked && workedMode !== "skip");
+      if (!shouldWriteBt) {
+        push(
+          hasWorked
+            ? "Các dạng bài tập: bỏ qua."
+            : "Bài tập mẫu: gói không có phần này — giữ nguyên nội dung cũ.",
+        );
+      } else {
         const merged =
-          workedMode === "merge" && bt
-            ? [...bt.questions, ...rows.baiTapMau.questions]
-            : rows.baiTapMau.questions;
+          hasWorked && workedMode === "overwrite"
+            ? rows.baiTapMau.questions
+            : hasWorked && workedMode === "merge"
+              ? [...(bt?.questions ?? []), ...rows.baiTapMau.questions]
+              : (bt?.questions ?? []);
+        const hadBtExam = (bt?.exam_ids ?? []).length > 0;
+        let btExamIds = bt?.exam_ids ?? [];
+        let examNote = "";
+        if (targets.bai_tap_mau) {
+          if (hadBtExam && examMode === "skip") {
+            examNote = " (giữ đề cũ)";
+          } else {
+            btExamIds = hadBtExam && examMode === "keep" ? [...btExamIds, examId] : [examId];
+            examNote = ` (gắn đề ${examId})`;
+          }
+        }
         const payload = {
           ...rows.baiTapMau,
           questions: merged,
+          exam_ids: btExamIds,
           subtitle: rows.baiTapMau.subtitle || bt?.subtitle || "",
           sort_order: bt?.sort_order ?? 3,
         };
         const r = bt
           ? await supabase.from("lesson_items").update(payload).eq("id", bt.id)
           : await supabase.from("lesson_items").insert(payload);
-        if (r.error) throw new Error(`Các dạng bài tập lỗi: ${r.error.message}`);
-        push(`Các dạng bài tập: ${bt ? (workedMode === "merge" ? "đã gộp thêm" : "đã ghi đè") : "đã thêm"} (${merged.length} dạng).`);
+        if (r.error) throw new Error(`Bài tập mẫu lỗi: ${r.error.message}`);
+        const workedNote = hasWorked
+          ? `${bt ? (workedMode === "merge" ? "đã gộp thêm" : "đã ghi đè") : "đã thêm"} (${merged.length} dạng)`
+          : bt
+            ? "đã cập nhật"
+            : "đã thêm";
+        push(`Bài tập mẫu: ${workedNote}${examNote}.`);
       }
 
       // 6. luyen_tap / kiem_tra
@@ -730,7 +756,7 @@ export default function LessonImporter() {
           <p className="text-sm font-medium text-slate-300">5. Gắn đề & xử lý nội dung đã có</p>
 
           <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-            {(["luyen_tap", "kiem_tra"] as const).map((k) => (
+            {(["bai_tap_mau", "luyen_tap", "kiem_tra"] as const).map((k) => (
               <label key={k} className="flex items-center gap-2">
                 <input
                   type="checkbox"
@@ -738,7 +764,11 @@ export default function LessonImporter() {
                   onChange={(e) => setTargets((t) => ({ ...t, [k]: e.target.checked }))}
                   className="accent-emerald-500"
                 />
-                {k === "luyen_tap" ? "Gắn vào Luyện tập" : "Gắn vào Kiểm tra"}
+                {k === "bai_tap_mau"
+                  ? "Gắn vào Bài tập mẫu (tự chấm)"
+                  : k === "luyen_tap"
+                    ? "Gắn vào Luyện tập"
+                    : "Gắn vào Kiểm tra"}
                 {(existing(k)?.exam_ids.length ?? 0) > 0 && (
                   <span className="text-xs text-amber-300">· đã có {existing(k)!.exam_ids.length} đề</span>
                 )}
@@ -770,7 +800,8 @@ export default function LessonImporter() {
                 label="Đề cũ ở mục đã chọn"
                 has={
                   (existing("luyen_tap")?.exam_ids.length ?? 0) > 0 ||
-                  (existing("kiem_tra")?.exam_ids.length ?? 0) > 0
+                  (existing("kiem_tra")?.exam_ids.length ?? 0) > 0 ||
+                  (existing("bai_tap_mau")?.exam_ids.length ?? 0) > 0
                 }
                 value={examMode}
                 onChange={setExamMode}
@@ -803,7 +834,7 @@ export default function LessonImporter() {
               ? "Sửa hết lỗi ở khung đỏ trên trước khi đăng."
               : lessonId === null
                 ? "Chọn bài học ở mục 1."
-                : !targets.luyen_tap && !targets.kiem_tra
+                : !targets.luyen_tap && !targets.kiem_tra && !targets.bai_tap_mau
                   ? "Chọn ít nhất một mục để gắn đề ở mục 5."
                   : !tagsReady && !tagOverride
                     ? "Nhãn chủ đề ở mục 4 chưa đủ — sửa nhãn trong đề, hoặc tick ô cho phép đăng."

@@ -27,9 +27,10 @@ const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const selectCls = `${inputCls} bg-[#0B1020]`;
 
-type TargetKind = Extract<LessonItemKind, "kiem_tra" | "luyen_tap" | "bai_tap_ve_nha">;
-const TARGET_KINDS: TargetKind[] = ["kiem_tra", "luyen_tap", "bai_tap_ve_nha"];
+type TargetKind = Extract<LessonItemKind, "kiem_tra" | "luyen_tap" | "bai_tap_ve_nha" | "bai_tap_mau">;
+const TARGET_KINDS: TargetKind[] = ["bai_tap_mau", "kiem_tra", "luyen_tap", "bai_tap_ve_nha"];
 const TARGET_HINT: Record<TargetKind, string> = {
+  bai_tap_mau: "Ghi đáp án, bấm Kiểm tra để biết đúng/sai, rồi mới xem lời giải — không vào điểm.",
   kiem_tra: "Tính giờ, nộp bài một lần, điểm vào bảng điểm.",
   luyen_tap: "Học sinh tự làm, xem đáp án ngay, không vào điểm.",
   bai_tap_ve_nha: "Có hạn nộp, điểm vào bảng điểm.",
@@ -207,7 +208,7 @@ export default function AzotaExamComposer() {
         body_html: "",
         video_url: "",
         pdf_url: "",
-        questions: [],
+        questions: cur?.questions ?? [],
         exam_ids: nextIds,
         sort_order: cur?.sort_order ?? SECTION_ORDER.indexOf(kind) + 1,
         ...(kind === "bai_tap_ve_nha" ? { due_at: dueAt ? new Date(dueAt).toISOString() : null } : {}),
@@ -347,7 +348,7 @@ export default function AzotaExamComposer() {
           </label>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {TARGET_KINDS.map((k) => {
             const meta = SECTION_META[k];
             const active = kind === k;
