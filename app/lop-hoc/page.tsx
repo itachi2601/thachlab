@@ -46,38 +46,6 @@ const GRADE_DESCRIPTIONS: Record<string, string> = {
   "12": "Củng cố kiến thức, ôn thi",
   "9": "Kiến thức nền tảng Khoa học tự nhiên",
 };
-const UNIVERSITY_CLASSES = [
-  {
-    title: "Vật lý đại cương",
-    icon: "⚙️",
-    description: "Nền tảng cơ học, nhiệt, điện từ và các mô hình vật lý ứng dụng.",
-    href: "",
-  },
-  {
-    title: "Gia công CNC",
-    icon: "🛠️",
-    description: "Quy trình, thông số cắt, lập trình và vận hành gia công CNC.",
-    href: "/lop-hoc/cnc",
-  },
-  {
-    title: "Tiện – Phay truyền thống",
-    icon: "🔧",
-    description: "Điểm danh, chọn máy và theo dõi 5S khi thực hành tại Xưởng C1.1.",
-    href: "/lop-hoc/tien-phay",
-  },
-  {
-    title: "Công nghệ chế tạo máy",
-    icon: "🏭",
-    description: "Kiến thức về phôi, dụng cụ, nguyên công và tổ chức sản xuất cơ khí.",
-    href: "",
-  },
-  {
-    title: "Anh văn chuyên ngành cơ khí",
-    icon: "📘",
-    description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và giao tiếp trong ngành cơ khí.",
-    href: "",
-  },
-];
 
 export default function ClassHubPage({ classSlug }: { classSlug?: string } = {}) {
   return <Suspense fallback={<div className="mx-auto max-w-6xl px-6 pt-28"><SkeletonGrid count={3} /></div>}>
@@ -88,7 +56,6 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
 function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const { session } = useAuth();
   const searchParams = useSearchParams();
-  const activeTab = searchParams.get("tab") === "cttc" ? "university" : "secondary";
   const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -101,6 +68,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [exams, setExams] = useState<ExamMeta[] | null>(null);
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
+
+  // link cũ /lop-hoc?tab=cttc → luồng CTTC riêng
+  useEffect(() => {
+    if (searchParams.get("tab") === "cttc") router.replace("/lop-hoc/cttc");
+  }, [searchParams, router]);
 
   useEffect(() => {
     const savedLessonId = Number(window.localStorage.getItem(LAST_LESSON_KEY));
@@ -447,57 +419,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     );
   }
 
-  const secondaryGroup = (
-    <section className="lesson-section" id="thpt">
-      <h2>Trung học</h2>
-      {!supabaseConfigured ? (
-        <p className="lesson-muted">Hệ thống đang được cấu hình.</p>
-      ) : !classes ? (
-        <SkeletonGrid count={2} />
-      ) : classes.length === 0 ? (
-        <p className="lesson-muted">Chưa có lớp nào.</p>
-      ) : (
-        <ol className="class-lessons class-lessons--flat">
-          {GRADE_ORDER.map((grade) => {
-            const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
-            if (!schoolClass) return null;
-            return (
-              <li key={grade}>
-                <Link href={`/lop-hoc/${schoolClass.slug}`} className="class-lesson class-lesson--hub">
-                  <span className="class-num">{grade}</span>
-                  <span className="class-lesson-title">
-                    {GRADE_LABELS[grade] ?? `Vật lý ${grade}`}
-                    <small>{GRADE_DESCRIPTIONS[grade]}</small>
-                  </span>
-                  <ArrowRight size={16} />
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
-      )}
-    </section>
-  );
-
-  const universityGroup = (
-    <section className="lesson-section" id="cttc">
-      <h2>Chương trình thực hành (CTTC)</h2>
-      <ol className="class-lessons class-lessons--flat">
-        {UNIVERSITY_CLASSES.filter((item) => item.href).map((item) => (
-          <li key={item.title}>
-            <Link href={item.href} className="class-lesson class-lesson--hub">
-              <span className="class-lesson-title">
-                {item.title}
-                <small>{item.description}</small>
-              </span>
-              <ArrowRight size={16} />
-            </Link>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-
   return (
     <>
       <Navbar />
@@ -505,14 +426,45 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         <div className="lesson-shell">
           <div className="lesson-main lesson-main--single">
             <header className="lesson-head">
-              <h1>Lớp học</h1>
-              <p className="lesson-lead">Chọn lớp để mở chương trình học và theo dõi tiến độ.</p>
+              <p className="lesson-eyebrow">Học sinh THPT · THCS</p>
+              <h1>
+                Chọn lớp để <span className="text-gradient">bắt đầu học.</span>
+              </h1>
+              <p className="lesson-lead">
+                Vật lý 10–12 và Khoa học tự nhiên 9 theo chương trình GDPT 2018. Mở lớp của bạn để xem
+                chương trình và lưu tiến độ.
+              </p>
             </header>
-            {activeTab === "university" ? (
-              <>{universityGroup}{secondaryGroup}</>
+            {!supabaseConfigured ? (
+              <p className="lesson-muted">Hệ thống đang được cấu hình.</p>
+            ) : !classes ? (
+              <SkeletonGrid count={2} />
+            ) : classes.length === 0 ? (
+              <p className="lesson-muted">Chưa có lớp nào.</p>
             ) : (
-              <>{secondaryGroup}{universityGroup}</>
+              <div className="hub-grid">
+                {GRADE_ORDER.map((grade) => {
+                  const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
+                  if (!schoolClass) return null;
+                  return (
+                    <Link key={grade} href={`/lop-hoc/${schoolClass.slug}`} className="hub-card">
+                      <span className="hub-tile">{grade}</span>
+                      <span className="hub-card-body">
+                        <span className="hub-card-title">{GRADE_LABELS[grade] ?? `Vật lý ${grade}`}</span>
+                        <span className="hub-card-desc">{GRADE_DESCRIPTIONS[grade]}</span>
+                      </span>
+                      <ArrowRight size={18} />
+                    </Link>
+                  );
+                })}
+              </div>
             )}
+            <p className="hub-switch">
+              Bạn là sinh viên CTTC?
+              <Link href="/lop-hoc/cttc" className="lesson-link">
+                Sang không gian CTTC <ArrowRight size={14} />
+              </Link>
+            </p>
           </div>
         </div>
       </main>

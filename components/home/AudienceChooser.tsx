@@ -23,7 +23,7 @@ export default function AudienceChooser() {
           <ArrowRight size={18} className="shrink-0 text-blue-300 opacity-0 transition group-hover:opacity-100" />
         </Link>
         <Link
-          href="/lop-hoc?tab=cttc"
+          href="/lop-hoc/cttc"
           className="group flex items-center gap-4 rounded-2xl border border-orange-400/20 bg-orange-500/[0.06] p-5 transition hover:border-orange-400/40 hover:bg-orange-500/10"
         >
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-orange-500/15 text-orange-300">

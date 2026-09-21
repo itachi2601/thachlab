@@ -7,9 +7,12 @@ import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
+// các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
+const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
+
 const links = [
   { label: "THPT – THCS", href: "/lop-hoc" },
-  { label: "CTTC", href: "/lop-hoc?tab=cttc" },
+  { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/#about" },
@@ -177,10 +180,13 @@ export default function Navbar() {
           >
             <ul className="grid gap-1">
               {links.map((link) => {
+                const inCttc = CTTC_PATHS.some((path) => pathname.startsWith(path));
                 const isActive =
                   link.href !== "/" &&
                   !link.href.startsWith("/#") &&
-                  pathname.startsWith(link.href);
+                  pathname.startsWith(link.href) &&
+                  // hai luồng riêng: /lop-hoc/cttc, /cnc, /tien-phay không tính cho mục THPT
+                  (link.href !== "/lop-hoc" || !inCttc);
 
                 return (
                   <li key={link.href}>

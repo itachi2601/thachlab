@@ -645,15 +645,19 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 }
 
 /* Bài học Trung học — bố cục đọc, một màu nhấn, thanh mục lục bên trái */
-.lesson-shell { --lesson-accent: #3b82f6; --lesson-line: rgba(148,163,184,.14); --lesson-surface: #0b1020; min-height: calc(100vh - 76px); background: #080d1a; color: #e2e8f0; }
+/* Cùng nền, quầng sáng và kiểu chữ với trang chủ; màu nhấn đổi theo luồng (THPT xanh · CTTC cam) */
+.lesson-shell { --lesson-accent: #3b82f6; --lesson-accent-hover: #2563eb; --lesson-accent-text: #93c5fd; --lesson-accent-soft: rgba(59,130,246,.1); --lesson-accent-line: rgba(59,130,246,.32); --lesson-glow: rgba(37,99,235,.3); --lesson-line: rgba(148,163,184,.14); --lesson-surface: rgba(255,255,255,.035); position: relative; overflow: clip; min-height: calc(100vh - 76px); background: var(--color-bg); color: #e2e8f0; }
+.lesson-shell::before { content: ""; position: absolute; z-index: 0; top: -160px; left: 50%; width: 720px; height: 420px; margin-left: -360px; border-radius: 9999px; background: var(--lesson-glow); filter: blur(110px); opacity: .55; pointer-events: none; }
+.lesson-shell > * { position: relative; z-index: 1; }
+.lesson-shell--cttc { --lesson-accent: #f97316; --lesson-accent-hover: #ea580c; --lesson-accent-text: #fdba74; --lesson-accent-soft: rgba(249,115,22,.1); --lesson-accent-line: rgba(249,115,22,.32); --lesson-glow: rgba(234,88,12,.26); }
 .lesson-layout { display: grid; max-width: 1080px; margin: 0 auto; padding: 32px 24px 72px; grid-template-columns: 220px minmax(0,1fr); gap: 48px; align-items: start; }
 .lesson-nav { position: sticky; top: 96px; }
 .lesson-nav ol { display: grid; gap: 2px; margin-top: 18px; list-style: none; padding: 0; }
 .lesson-nav a { display: flex; align-items: center; gap: 10px; border-radius: 8px; padding: 8px 10px; color: #94a3b8; font-size: 13.5px; line-height: 1.3; text-decoration: none; transition: background .15s, color .15s; }
 .lesson-nav a:hover { background: rgba(255,255,255,.04); color: #e2e8f0; }
 .lesson-nav a i { display: flex; width: 22px; height: 22px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; font-size: 11px; font-style: normal; font-weight: 700; }
-.lesson-nav a.is-active { background: rgba(59,130,246,.1); color: #fff; }
-.lesson-nav a.is-active i { border-color: var(--lesson-accent); color: #93c5fd; }
+.lesson-nav a.is-active { background: var(--lesson-accent-soft); color: #fff; }
+.lesson-nav a.is-active i { border-color: var(--lesson-accent); color: var(--lesson-accent-text); }
 .lesson-nav a.is-complete i { border-color: rgba(16,185,129,.5); background: rgba(16,185,129,.14); color: #6ee7b7; }
 .lesson-nav a.is-empty { opacity: .38; cursor: default; }
 .lesson-nav a.is-empty:hover { background: transparent; color: #94a3b8; }
@@ -665,7 +669,7 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .lesson-main { min-width: 0; max-width: 760px; }
 .lesson-main--single { margin: 0 auto; padding: 32px 24px 72px; }
 .lesson-head { margin: 22px 0 36px; }
-.lesson-eyebrow { color: #64748b; font-size: 13px; font-weight: 600; }
+.lesson-eyebrow { color: var(--lesson-accent-text); font-family: var(--font-mono), monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
 .lesson-head h1 { margin-top: 6px; color: #fff; font-family: var(--font-display), sans-serif; font-size: clamp(26px, 3.2vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 .lesson-lead { margin-top: 10px; color: #94a3b8; font-size: 15px; line-height: 1.6; }
 .lesson-section { scroll-margin-top: 96px; }
@@ -673,7 +677,7 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
 .lesson-section h2 span { display: flex; width: 26px; height: 26px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
 .lesson-stack { display: grid; gap: 12px; }
-.lesson-block { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--lesson-surface); padding: 18px 20px; }
+.lesson-block { border: 1px solid var(--lesson-line); border-radius: 16px; background: var(--lesson-surface); padding: 18px 20px; }
 .lesson-block .lesson-block { border: 0; padding: 0; background: transparent; }
 .lesson-block-head { display: block; }
 .lesson-block-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; background: none; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer; }
@@ -686,7 +690,7 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .lesson-block-foot:empty { display: none; }
 .lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; }
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
-.lesson-link { display: inline-flex; align-items: center; gap: 6px; color: #93c5fd; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+.lesson-link { display: inline-flex; align-items: center; gap: 6px; color: var(--lesson-accent-text); font-size: 13.5px; font-weight: 600; text-decoration: none; }
 .lesson-link:hover { text-decoration: underline; }
 .lesson-done { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 8px; background: transparent; padding: 6px 12px; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; }
 .lesson-done:hover:not(:disabled) { border-color: rgba(16,185,129,.5); color: #6ee7b7; }
@@ -704,7 +708,7 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .lesson-status-done { color: #6ee7b7; }
 .lesson-btn, .lesson-btn-ghost { flex: 0 0 auto; border-radius: 9px; padding: 9px 16px; font-size: 13.5px; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .lesson-btn { background: var(--lesson-accent); color: #fff; }
-.lesson-btn:hover { background: #2563eb; }
+.lesson-btn:hover { background: var(--lesson-accent-hover); }
 .lesson-btn-ghost { border: 1px solid rgba(148,163,184,.3); color: #e2e8f0; }
 .lesson-btn-ghost:hover { border-color: #94a3b8; }
 .lesson-muted { color: #64748b; font-size: 14px; }
@@ -713,11 +717,11 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 /* Trang lớp: mục lục chương → bài */
 .class-subjects { display: flex; gap: 6px; margin-top: 16px; }
 .class-subjects button { border: 1px solid var(--lesson-line); border-radius: 999px; background: transparent; padding: 6px 14px; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; }
-.class-subjects button.is-active { border-color: var(--lesson-accent); background: rgba(59,130,246,.12); color: #fff; }
+.class-subjects button.is-active { border-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: #fff; }
 .class-toc { display: grid; gap: 28px; }
-.class-continue { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid rgba(59,130,246,.3); border-radius: 14px; background: rgba(59,130,246,.07); padding: 16px 18px; }
+.class-continue { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--lesson-accent-line); border-radius: 16px; background: var(--lesson-accent-soft); padding: 16px 18px; }
 .class-continue > div { min-width: 0; }
-.class-continue .lesson-eyebrow { margin-bottom: 4px; color: #93c5fd; }
+.class-continue .lesson-eyebrow { margin-bottom: 4px; }
 .class-continue .lesson-btn { display: inline-flex; align-items: center; gap: 6px; }
 .class-chapter-head { display: flex; width: 100%; align-items: center; gap: 12px; border: 0; background: none; padding: 4px 0; color: #fff; text-align: left; cursor: pointer; }
 .class-chapter-head svg { flex: 0 0 auto; color: #64748b; transition: transform .2s; }
@@ -740,7 +744,32 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .class-login-hint { margin-top: 28px; }
 .class-lesson--hub { padding-block: 13px; }
 .class-lesson--hub > svg { flex: 0 0 auto; color: #475569; transition: transform .15s, color .15s; }
-.class-lesson--hub:hover > svg { color: #93c5fd; transform: translateX(2px); }
+.class-lesson--hub:hover > svg { color: var(--lesson-accent-text); transform: translateX(2px); }
+
+/* Hub chọn lớp — hai luồng riêng (THPT / CTTC), thẻ kính như AudienceChooser trang chủ */
+.hub-grid { display: grid; gap: 14px; }
+@media (min-width: 640px) { .hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.hub-card { display: flex; align-items: center; gap: 16px; border: 1px solid var(--lesson-line); border-radius: 18px; background: var(--lesson-surface); padding: 18px 20px; color: #e2e8f0; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .3s, background .3s, box-shadow .3s; }
+.hub-card:hover { transform: translateY(-3px); border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); box-shadow: 0 20px 50px -24px var(--lesson-glow); }
+.hub-card > svg { flex: 0 0 auto; color: var(--lesson-accent-text); opacity: 0; transition: opacity .2s, transform .2s; }
+.hub-card:hover > svg { opacity: 1; transform: translateX(2px); }
+.hub-card.is-soon { opacity: .5; pointer-events: none; }
+.hub-tile { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border-radius: 12px; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-family: var(--font-display), sans-serif; font-size: 18px; font-weight: 800; }
+.hub-card-body { min-width: 0; flex: 1; }
+.hub-card-title { display: block; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.3; }
+.hub-card-desc { display: block; margin-top: 3px; color: #94a3b8; font-size: 13.5px; line-height: 1.45; }
+.hub-tag { margin-left: 8px; border: 1px solid var(--lesson-line); border-radius: 999px; padding: 1px 8px; color: #94a3b8; font-size: 11px; font-weight: 600; vertical-align: middle; }
+.hub-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 44px; border-top: 1px solid var(--lesson-line); padding-top: 20px; color: #64748b; font-size: 14px; }
+.text-gradient--warm { background: linear-gradient(100deg, #fb923c 0%, #f43f5e 55%, #facc15 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Giao diện sáng cho các khối lesson, class, hub — cùng quy ước với phần light theme ở đầu file */
+html[data-theme="light"] .lesson-shell { --lesson-line: rgba(15,23,42,.11); --lesson-accent-text: #1d4ed8; --lesson-accent-soft: rgba(59,130,246,.08); --lesson-surface: rgba(255,255,255,.92); color: #0f172a; }
+html[data-theme="light"] .lesson-shell--cttc { --lesson-accent-text: #c2410c; --lesson-accent-soft: rgba(249,115,22,.08); }
+html[data-theme="light"] .lesson-shell::before { opacity: .22; }
+html[data-theme="light"] .lesson-shell :is(h1, h2, .lesson-block-title, .hub-card-title, .class-chapter-head, .class-lesson, .hub-card, .lesson-prose, .lesson-nav a.is-active, .class-subjects button.is-active, .lesson-btn-ghost) { color: #0f172a; }
+html[data-theme="light"] .lesson-shell :is(.lesson-lead, .lesson-nav a, .lesson-block-sub, .hub-card-desc, .class-num, .lesson-back, .lesson-done, .class-lesson-title small, .hub-tag) { color: #475569; }
+html[data-theme="light"] .lesson-shell :is(.class-lesson:hover, .lesson-nav a:hover) { background: rgba(15,23,42,.05); }
+html[data-theme="light"] .lesson-shell .lesson-btn { color: #fff; }
 .lesson-main--single .lesson-head + .lesson-section { margin-top: 0; border-top: 0; padding-top: 0; }
 
 @media (max-width: 900px) {

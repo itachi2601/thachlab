@@ -517,7 +517,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     <div className={`cnc-shell ${embedded ? "cnc-embedded" : ""}`}>
       <header className="cnc-course-header">
         <div className="cnc-breadcrumb">
-          <Link href="/lop-hoc?tab=cttc">Lớp học</Link><ChevronRight size={14} /><Link href="/lop-hoc?tab=cttc">CTTC</Link><ChevronRight size={14} />Gia công CNC
+          <Link href="/lop-hoc/cttc">Lớp học</Link><ChevronRight size={14} /><Link href="/lop-hoc/cttc">CTTC</Link><ChevronRight size={14} />Gia công CNC
         </div>
         <div className="cnc-header-grid">
           <div>
