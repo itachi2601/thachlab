@@ -21,6 +21,9 @@ import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
 
+type ViolationType = "tab_switch" | "fullscreen_exit";
+type Violation = { type: ViolationType; at: string; away_ms: number };
+
 // Trạng thái một câu trên bảng câu hỏi. Câu đúng/sai có 4 ý nên còn nấc "làm dở":
 // em bấm được vài ý rồi bỏ qua, nhìn bảng phải thấy ngay chỗ còn thiếu.
 type AnswerState = "done" | "partial" | "empty";
@@ -55,10 +58,17 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
   const [paletteOpen, setPaletteOpen] = useState(true);
+  const [violationBanner, setViolationBanner] = useState<{
+    type: ViolationType;
+    text: string;
+  } | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(0);
   const submittedRef = useRef(false);
   const responsesRef = useRef(responses);
+  const violationsRef = useRef<Violation[]>([]);
+  const hiddenAtRef = useRef<number | null>(null);
+  const everFullscreenRef = useRef(false);
 
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
@@ -99,6 +109,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     submittedRef.current = true;
     setUsedSeconds(Math.round((Date.now() - startedAt.current) / 1000));
     setPhase("done");
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => undefined);
     if (!session) return;
     setSaveState("saving");
     const finalResponses = responsesRef.current;
@@ -118,6 +129,8 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
             responses: finalResponses,
             correctCount: summary.correctCount,
           },
+          violation_count: violationsRef.current.length,
+          violations: violationsRef.current,
         })
         .select("id")
         .single();
@@ -172,6 +185,63 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     return () => clearInterval(timer);
   }, [phase, submit]);
 
+  // Ghi nhận rời tab / thoát fullscreen lúc đang làm bài — chỉ log + cảnh báo,
+  // không tự nộp bài, không chặn thao tác gì khác.
+  useEffect(() => {
+    if (phase !== "running") return;
+
+    function pushViolation(type: ViolationType, away_ms: number, text: string) {
+      violationsRef.current = [
+        ...violationsRef.current,
+        { type, at: new Date().toISOString(), away_ms },
+      ];
+      setViolationBanner({ type, text });
+    }
+
+    function onVisibilityChange() {
+      if (document.hidden) {
+        hiddenAtRef.current = Date.now();
+        return;
+      }
+      if (hiddenAtRef.current == null) return;
+      const away = Date.now() - hiddenAtRef.current;
+      hiddenAtRef.current = null;
+      const secs = Math.round(away / 1000);
+      pushViolation(
+        "tab_switch",
+        away,
+        `Đã ghi nhận em rời khỏi bài thi lúc ${new Date().toLocaleTimeString("vi-VN")} (rời ${secs}s)`,
+      );
+    }
+
+    function onFullscreenChange() {
+      if (document.fullscreenElement) {
+        everFullscreenRef.current = true;
+        return;
+      }
+      if (!everFullscreenRef.current) return;
+      everFullscreenRef.current = false;
+      pushViolation(
+        "fullscreen_exit",
+        0,
+        `Đã ghi nhận em thoát toàn màn hình lúc ${new Date().toLocaleTimeString("vi-VN")}`,
+      );
+    }
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      document.removeEventListener("fullscreenchange", onFullscreenChange);
+    };
+  }, [phase]);
+
+  useEffect(() => {
+    if (!violationBanner) return;
+    const timer = setTimeout(() => setViolationBanner(null), 8000);
+    return () => clearTimeout(timer);
+  }, [violationBanner]);
+
   if (phase === "intro") {
     return (
       <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0B1020] p-8">
@@ -193,11 +263,15 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           onClick={() => {
             startedAt.current = Date.now();
             setPhase("running");
+            document.documentElement.requestFullscreen().catch(() => undefined);
           }}
           className="mt-6 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
         >
           Bắt đầu làm bài
         </button>
+        <p className="mt-3 text-center text-xs text-slate-500">
+          Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.
+        </p>
       </div>
     );
   }
@@ -206,6 +280,31 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     const q = exam.questions[cur];
     return (
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
+        {violationBanner && (
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-amber-400/10 px-4 py-2.5 text-sm text-amber-200">
+            <span>{violationBanner.text}</span>
+            <div className="flex items-center gap-3">
+              {violationBanner.type === "fullscreen_exit" && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    document.documentElement.requestFullscreen().catch(() => undefined)
+                  }
+                  className="rounded-full border border-amber-400/50 px-3 py-1 text-xs font-semibold hover:bg-amber-400/10"
+                >
+                  Quay lại toàn màn hình
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => setViolationBanner(null)}
+                className="text-xs text-amber-300/80 hover:text-amber-200"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        )}
         <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-[#0B1020]/95 px-5 py-3 backdrop-blur-md">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-sm text-slate-400">

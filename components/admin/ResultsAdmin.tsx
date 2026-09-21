@@ -9,6 +9,7 @@ interface ResultRow {
   score: number;
   duration_seconds: number;
   exam_id: number;
+  violation_count: number;
   profiles: { full_name: string; class_name: string } | null;
   exams: { title: string } | null;
 }
@@ -22,7 +23,7 @@ export default function ResultsAdmin() {
     getSupabase()
       .from("exam_results")
       .select(
-        "id, created_at, score, duration_seconds, exam_id, profiles(full_name, class_name), exams(title)",
+        "id, created_at, score, duration_seconds, exam_id, violation_count, profiles(full_name, class_name), exams(title)",
       )
       .order("created_at", { ascending: false })
       .limit(1000)
@@ -50,7 +51,7 @@ export default function ResultsAdmin() {
   );
 
   function exportCsv() {
-    const header = "Họ tên,Lớp,Đề,Điểm,Thời gian (giây),Ngày nộp";
+    const header = "Họ tên,Lớp,Đề,Điểm,Thời gian (giây),Vi phạm,Ngày nộp";
     const lines = filtered.map((r) =>
       [
         r.profiles?.full_name ?? "",
@@ -58,6 +59,7 @@ export default function ResultsAdmin() {
         (r.exams?.title ?? "").replaceAll(",", ";"),
         r.score,
         r.duration_seconds,
+        r.violation_count ?? 0,
         new Date(r.created_at).toLocaleString("vi-VN"),
       ].join(","),
     );
@@ -123,6 +125,7 @@ export default function ResultsAdmin() {
                 <th className="px-4 py-3 font-medium">Lớp</th>
                 <th className="px-4 py-3 font-medium">Đề</th>
                 <th className="px-4 py-3 text-right font-medium">Điểm</th>
+                <th className="px-4 py-3 font-medium">Vi phạm</th>
                 <th className="px-4 py-3 font-medium">Ngày nộp</th>
               </tr>
             </thead>
@@ -136,6 +139,15 @@ export default function ResultsAdmin() {
                   <td className="px-4 py-3">{r.exams?.title}</td>
                   <td className="px-4 py-3 text-right font-mono font-semibold text-white">
                     {Number(r.score).toLocaleString("vi-VN")}
+                  </td>
+                  <td className="px-4 py-3">
+                    {r.violation_count > 0 ? (
+                      <span className="rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-semibold text-amber-300">
+                        ⚠ {r.violation_count} lần
+                      </span>
+                    ) : (
+                      <span className="text-slate-500">—</span>
+                    )}
                   </td>
                   <td className="px-4 py-3 text-slate-400">
                     {new Date(r.created_at).toLocaleString("vi-VN")}
