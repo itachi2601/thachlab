@@ -315,12 +315,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                     const periodic = isPeriodicExam(lesson.lesson_kind);
                                     if (!periodic) lessonNumber += 1;
                                     const complete = !!session && percent === 100;
+                                    const started = !!session && percent > 0 && !complete;
                                     return (
                                       <li key={lesson.id}>
                                         <Link
                                           href={lessonHref(lesson)}
                                           onClick={() => rememberLesson(lesson)}
-                                          className={`class-lesson ${complete ? "is-complete" : ""}`}
+                                          className={`class-lesson ${complete ? "is-complete" : started ? "is-started" : ""}`}
                                         >
                                           <span className={`class-num ${periodic ? "class-num--exam" : ""}`}>
                                             {complete ? <Check size={13} /> : periodic ? "KT" : lessonNumber}

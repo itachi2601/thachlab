@@ -714,17 +714,20 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .class-num { display: flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
 .class-num--exam { border-style: dashed; font-size: 10px; letter-spacing: .04em; }
 .class-meta { flex: 0 0 auto; color: #64748b; font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.class-lessons { display: grid; gap: 2px; margin: 10px 0 0; padding: 0; list-style: none; }
+.class-lessons { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
 .class-lessons--flat { margin-top: 0; }
-.class-lesson { display: flex; align-items: center; gap: 12px; border-radius: 10px; padding: 10px 10px 10px 8px; color: #e2e8f0; text-decoration: none; transition: background .15s; }
-.class-lesson:hover { background: rgba(255,255,255,.045); }
+.class-lesson { display: flex; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--lesson-surface); padding: 10px 12px; color: #e2e8f0; text-decoration: none; transition: border-color .2s, background .2s, box-shadow .3s; }
+.class-lesson:hover { border-color: var(--lesson-accent-line); background: rgba(255,255,255,.045); box-shadow: 0 16px 36px -22px var(--lesson-glow); }
 .class-lesson:hover .class-lesson-title { color: #fff; }
 .class-lesson-title { display: block; min-width: 0; flex: 1; font-size: 15px; font-weight: 500; line-height: 1.4; }
 .class-lesson-title small { display: block; margin-top: 2px; color: #64748b; font-size: 12.5px; font-weight: 400; }
+.class-lesson.is-started { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); }
+.class-lesson.is-started .class-num { border-color: var(--lesson-accent-line); color: var(--lesson-accent-text); }
+.class-lesson.is-complete { border-color: rgba(16,185,129,.35); background: rgba(16,185,129,.05); }
 .class-lesson.is-complete .class-num { border-color: rgba(16,185,129,.5); background: rgba(16,185,129,.14); color: #6ee7b7; }
 .class-lesson.is-complete .class-meta { color: #6ee7b7; }
-.class-lesson--semester { border: 1px dashed var(--lesson-line); padding: 12px 12px 12px 10px; }
-.class-lesson--semester:hover { border-color: rgba(148,163,184,.3); }
+.class-lesson--semester { border-style: dashed; padding: 12px 12px 12px 10px; }
+.class-lesson--semester:hover { border-color: rgba(148,163,184,.3); box-shadow: none; }
 .lesson-main--single .lesson-section:first-of-type { margin-top: 40px; border-top: 1px solid var(--lesson-line); padding-top: 32px; }
 .class-login-hint { margin-top: 28px; }
 .class-lesson--hub { padding-block: 13px; }
