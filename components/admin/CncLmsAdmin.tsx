@@ -359,22 +359,22 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
 
   return (
     <div className="space-y-6">
-      <section className="overflow-hidden rounded-3xl border border-blue-400/20 bg-[radial-gradient(circle_at_90%_0%,rgba(37,99,235,.2),transparent_38%),#0B1020] p-6">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-          <Link href="/quan-tri/lms-cnc" className="inline-flex items-center gap-2 text-sm font-bold text-blue-300 hover:text-blue-200"><ArrowLeft size={17}/> Danh sách bài học</Link>
-          <Link href={activeItem.id === "intro" ? "/lop-hoc/cnc" : `/lop-hoc/cnc/${activeItem.id}`} target="_blank" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold text-slate-200 hover:bg-white/10">Xem trang học <ExternalLink size={14}/></Link>
+      <section>
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-[var(--a-line)] pb-4">
+          <Link href="/quan-tri/lms-cnc" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--a-accent-ink)]"><ArrowLeft size={17}/> Danh sách bài học</Link>
+          <Link href={activeItem.id === "intro" ? "/lop-hoc/cnc" : `/lop-hoc/cnc/${activeItem.id}`} target="_blank" className="admin-chip">Xem trang học <ExternalLink size={14}/></Link>
         </div>
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-300"><Settings2 size={14}/> {activeItem.id === "intro" ? "Giới thiệu học phần" : `Bài ${activeIndex}`}</span>
-            <h1 className="mt-2 max-w-3xl font-display text-2xl font-bold text-white sm:text-3xl">{activeItem.title}</h1>
-            <p className="mt-2 text-sm text-slate-400">{activeItem.duration} · Trang soạn riêng của bài học</p>
+            <span className="admin-eyebrow inline-flex items-center gap-2"><Settings2 size={14}/> {activeItem.id === "intro" ? "Giới thiệu học phần" : `Bài ${activeIndex}`}</span>
+            <h2 className="mt-2 max-w-3xl text-2xl font-bold">{activeItem.title}</h2>
+            <p className="admin-lead">{activeItem.duration} · Trang soạn riêng của bài học</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => toast("success", "Đã lưu bản nháp LMS CNC trên giao diện.")}
-              className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+              className="admin-btn admin-btn--primary"
             >
               Lưu thay đổi
             </button>
@@ -396,8 +396,8 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
       </section>
 
       <section className="grid gap-4 lg:grid-cols-3">
-        <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-          <h3 className="font-display font-semibold text-white">Rule khóa</h3>
+        <div className="admin-card">
+          <h3 className="admin-h2">Rule khóa</h3>
           <div className="mt-4 grid gap-3">
             <label className="text-sm text-slate-300">
               Điểm Quiz Bài 2
@@ -444,8 +444,8 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 lg:col-span-2">
-          <h3 className="font-display font-semibold text-white">Xem trước khóa/mở</h3>
+        <div className="admin-card lg:col-span-2">
+          <h3 className="admin-h2">Xem trước khóa/mở</h3>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {lockPreview.map((item) => (
               <div
@@ -474,7 +474,7 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
       </section>
 
       <section id="thong-tin" className="scroll-mt-28">
-        <div className="space-y-5 rounded-3xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+        <div className="admin-card space-y-5">
           <div className="border-b border-white/10 pb-4"><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Nội dung bài học</p><h2 className="mt-1 font-display text-xl font-semibold text-white">Thông tin và tài nguyên</h2><p className="mt-1 text-xs text-slate-500">Các thay đổi tại đây chỉ áp dụng cho {activeItem.shortTitle}.</p></div>
           <div id="hoc-lieu" className="scroll-mt-28">
           <CncFilesAdmin
@@ -579,7 +579,7 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <div className="admin-card">
               <label className="flex items-center gap-3 text-sm text-slate-300">
                 <input
                   type="checkbox"
@@ -599,7 +599,7 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
               </label>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <div className="admin-card">
               <label className="flex items-center gap-3 text-sm text-slate-300">
                 <input
                   type="checkbox"
@@ -648,9 +648,9 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card">
         <div id="cau-hoi" className="scroll-mt-28" />
-        <h3 className="font-display text-lg font-semibold text-white">
+        <h3 className="admin-h2">
           Ngân hàng câu hỏi CNC
         </h3>
         <p className="mt-2 text-sm leading-6 text-slate-400">
@@ -690,8 +690,8 @@ export default function CncLmsAdmin({ initialLessonId }: { initialLessonId?: str
       </section>
 
       <nav className="grid gap-3 sm:grid-cols-2" aria-label="Chuyển bài học quản trị">
-        {previousItem ? <Link href={`/quan-tri/lms-cnc/${previousItem.id}`} className="group rounded-2xl border border-white/10 bg-[#0B1020] p-4 hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500"><ArrowLeft size={15}/> Bài trước</span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{previousItem.shortTitle}</strong></Link> : <span/>}
-        {nextItem && <Link href={`/quan-tri/lms-cnc/${nextItem.id}`} className="group rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-right hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500">Bài tiếp theo <ArrowRight size={15}/></span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{nextItem.shortTitle}</strong></Link>}
+        {previousItem ? <Link href={`/quan-tri/lms-cnc/${previousItem.id}`} className="group admin-card hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500"><ArrowLeft size={15}/> Bài trước</span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{previousItem.shortTitle}</strong></Link> : <span/>}
+        {nextItem && <Link href={`/quan-tri/lms-cnc/${nextItem.id}`} className="group admin-card text-right hover:border-blue-400/40"><span className="inline-flex items-center gap-2 text-xs font-bold text-slate-500">Bài tiếp theo <ArrowRight size={15}/></span><strong className="mt-2 block text-sm text-white group-hover:text-blue-200">{nextItem.shortTitle}</strong></Link>}
       </nav>
     </div>
   );
@@ -733,14 +733,14 @@ function CncVideosAdmin({
           <p className="text-xs font-bold tracking-wide text-red-300 uppercase">
             Video bài giảng
           </p>
-          <h3 className="mt-1 font-display text-lg font-bold text-white">
+          <h3 className="mt-1 admin-h2">
             YouTube · {lessonTitle}
           </h3>
           <p className="mt-1 text-xs leading-5 text-slate-400">
             Có thể thêm nhiều video. Mỗi video sẽ xuất hiện trong mục Video bài giảng của bài đang chọn.
           </p>
         </div>
-        <span className="w-fit rounded-full bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-200">
+        <span className="admin-badge admin-badge--danger w-fit">
           {videos.length} video
         </span>
       </div>
@@ -776,7 +776,7 @@ function CncVideosAdmin({
             type="button"
             disabled={adding || !title.trim() || !previewId}
             onClick={onAdd}
-            className="rounded-xl bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-50"
+            className="admin-btn admin-btn--danger"
           >
             {adding ? "Đang thêm video…" : "+ Thêm video vào bài học"}
           </button>
@@ -801,7 +801,7 @@ function CncVideosAdmin({
         {loading ? (
           <p className="text-xs text-slate-400">Đang tải danh sách video…</p>
         ) : videos.length === 0 ? (
-          <p className="rounded-xl border border-dashed border-white/10 px-4 py-5 text-center text-xs text-slate-500 md:col-span-2">
+          <p className="admin-empty md:col-span-2">
             Bài học này chưa có video YouTube.
           </p>
         ) : videos.map((video, index) => (
@@ -854,14 +854,14 @@ function CncFilesAdmin({
           <p className="text-xs font-bold tracking-wide text-[#93C5FD] uppercase">
             Tệp của bài học
           </p>
-          <h3 className="mt-1 font-display text-lg font-bold text-white">
+          <h3 className="mt-1 admin-h2">
             {lessonTitle}
           </h3>
           <p className="mt-1 text-xs leading-5 text-slate-400">
             PowerPoint xuất hiện ở Nội dung bài học; các tệp khác xuất hiện trong mục Tài liệu.
           </p>
         </div>
-        <span className="w-fit rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300">
+        <span className="admin-badge w-fit">
           Tối đa 50 MB/tệp
         </span>
       </div>
@@ -919,7 +919,7 @@ function FileUploadPanel({
   onDelete: (file: CncLessonFile) => void;
 }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-[#080D1A] p-4">
+    <div className="admin-card">
       <div className="flex items-center gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2563EB]/15 text-xs font-black text-[#93C5FD]">
           {icon}

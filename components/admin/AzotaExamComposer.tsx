@@ -244,8 +244,7 @@ export default function AzotaExamComposer() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-white">Đăng đề kiểm tra</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <p className="admin-lead" style={{ marginTop: 0 }}>
           Dán đề từ Word hoặc thả file .docx — trang tách câu và đáp án ngay khi gõ, y như Azota. Xem trước bên phải,
           chọn lớp – bài rồi bấm Đăng.
         </p>
@@ -266,7 +265,7 @@ export default function AzotaExamComposer() {
       {/* ===== 3. Cấu hình & đăng ===== */}
       <section className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-4">
         <div className="flex items-center gap-2">
-          <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">3</span>
+          <span className="admin-badge admin-badge--accent">3</span>
           <span className="text-sm font-semibold text-white">Cấu hình & đăng</span>
         </div>
 

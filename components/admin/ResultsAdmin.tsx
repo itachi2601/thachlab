@@ -117,9 +117,9 @@ export default function ResultsAdmin() {
       {filtered.length === 0 ? (
         <p className="text-sm text-slate-400">Chưa có lượt làm bài nào.</p>
       ) : (
-        <div className="overflow-x-auto rounded-2xl border border-white/10">
-          <table className="w-full min-w-150 text-left text-sm">
-            <thead className="bg-white/5 text-slate-400">
+        <div className="admin-table-wrap">
+          <table className="min-w-150">
+            <thead>
               <tr>
                 <th className="px-4 py-3 font-medium">Học sinh</th>
                 <th className="px-4 py-3 font-medium">Lớp</th>

@@ -111,7 +111,7 @@ export default function StaffInvitePanel() {
     : "";
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="admin-card">
       <h3 className="flex items-center gap-2 font-semibold text-white">
         <UserPlus size={17} className="text-sky-300" />
         Mời người mới bằng link
@@ -272,7 +272,7 @@ export default function StaffInvitePanel() {
                     <button
                       type="button"
                       onClick={() => void copy(inviteLink(invite.code), "link mời")}
-                      className="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-xs font-bold text-slate-300"
+                      className="admin-badge shrink-0"
                     >
                       <Copy size={13} />
                     </button>
@@ -280,7 +280,7 @@ export default function StaffInvitePanel() {
                       type="button"
                       disabled={busy}
                       onClick={() => void revoke(invite.id)}
-                      className="shrink-0 rounded-full bg-red-500/15 px-3 py-1.5 text-xs font-bold text-red-200 disabled:opacity-40"
+                      className="admin-chip admin-chip--danger shrink-0"
                     >
                       <X size={13} />
                     </button>

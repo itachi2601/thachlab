@@ -218,7 +218,7 @@ export default function ExamDraftEditor({
             key={type}
             type="button"
             onClick={() => setQuestions([...questions, newQuestion(type)])}
-            className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-white/30"
+            className="admin-chip"
           >
             + {TYPE_LABELS[type]}
           </button>

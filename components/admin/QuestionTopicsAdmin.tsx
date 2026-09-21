@@ -103,8 +103,7 @@ export default function QuestionTopicsAdmin() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="font-display text-2xl font-bold text-white">Chủ đề câu hỏi</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <p className="admin-lead" style={{ marginTop: 0 }}>
           Hai tầng: <strong className="text-slate-200">bài học</strong> → các{" "}
           <strong className="text-slate-200">yêu cầu cần đạt</strong> trong bài. Câu hỏi nên gắn
           vào yêu cầu cần đạt cho mịn; mục phụ đạo vẫn gom lên tầng bài để đủ số câu mà kết luận.
@@ -128,7 +127,7 @@ export default function QuestionTopicsAdmin() {
         ))}
       </div>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card">
         <div className="flex flex-wrap gap-3">
           <input
             value={newName}
@@ -139,7 +138,7 @@ export default function QuestionTopicsAdmin() {
           />
           <button
             onClick={addTopic}
-            className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="admin-btn admin-btn--primary"
           >
             + Thêm chủ đề bài học
           </button>
@@ -199,7 +198,7 @@ function TopicNode({
   }
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[.02] p-4">
+    <div className="admin-card">
       <div className="flex flex-wrap items-center gap-3">
         <input
           defaultValue={topic.name}
@@ -279,7 +278,7 @@ function TopicNode({
           />
           <button
             onClick={submit}
-            className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-white/30"
+            className="admin-chip"
           >
             Thêm
           </button>
@@ -363,8 +362,8 @@ function ExamTagger({
   const coarseCount = questions.filter((q) => coarseNames.has((q.topic ?? "").trim())).length;
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-      <h2 className="font-display font-semibold text-white">Gắn nhãn cho một đề</h2>
+    <section className="admin-card">
+      <h2 className="admin-h2">Gắn nhãn cho một đề</h2>
       <p className="mt-1 text-sm text-slate-400">
         Sửa chủ đề / loại cho từng câu (đề nhập bằng skill up-đề thường đã có sẵn nhãn).
         Chọn đúng <strong className="text-slate-300">yêu cầu cần đạt</strong> trong bài thay vì
@@ -409,7 +408,7 @@ function ExamTagger({
             {questions.map((q, i) => (
               <div
                 key={i}
-                className="grid gap-2 rounded-xl border border-white/10 bg-white/[.02] p-3 sm:grid-cols-[1fr_200px_150px]"
+                className="grid gap-2 admin-card sm:grid-cols-[1fr_200px_150px]"
               >
                 <div className="min-w-0 text-sm text-slate-300">
                   <span className="mr-1 font-semibold text-primary">Câu {i + 1}.</span>

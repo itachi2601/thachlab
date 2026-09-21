@@ -60,9 +60,8 @@ export default function StudentsAdmin() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <h2 className="font-display text-lg font-semibold text-white">Học sinh</h2>
-        <p className="mt-2 text-sm text-slate-400">
+      <section className="admin-card">
+        <p className="admin-lead" style={{ marginTop: 0 }}>
           Xem hồ sơ, lịch sử làm bài, điểm danh của học sinh theo khối lớp — hoặc nhập danh sách
           học sinh từ file Excel để tự tạo tài khoản và thêm vào lớp.
         </p>
@@ -86,7 +85,7 @@ export default function StudentsAdmin() {
       </section>
 
       {!selectedClassId ? (
-        <p className="rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-slate-500">
+        <p className="admin-empty">
           Chưa có lớp nào để hiển thị — thêm ở mục Lớp học.
         </p>
       ) : (

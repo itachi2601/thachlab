@@ -277,14 +277,14 @@ export default function ExamSection({
     <section className="grid gap-4 lg:grid-cols-2">
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">{numberOffset}</span>
+          <span className="admin-badge admin-badge--accent">{numberOffset}</span>
           <span className="text-sm font-semibold text-white">Nội dung đề</span>
           <div className="ml-auto flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={reading || !!edited}
-              className="inline-flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20 disabled:opacity-50"
+              className="admin-chip"
             >
               <Upload size={14} /> {reading ? "Đang đọc…" : "Tải file Word"}
             </button>
@@ -297,7 +297,7 @@ export default function ExamSection({
                 setDurationInput(null);
               }}
               disabled={!!edited}
-              className="inline-flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20 disabled:opacity-50"
+              className="admin-chip"
             >
               <WandSparkles size={14} /> Đề mẫu
             </button>
@@ -426,7 +426,7 @@ export default function ExamSection({
 
       <div className="space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">{numberOffset + 1}</span>
+          <span className="admin-badge admin-badge--accent">{numberOffset + 1}</span>
           <span className="text-sm font-semibold text-white">Xem trước & đáp án</span>
           <div className="ml-auto">
             {edited ? (
@@ -442,7 +442,7 @@ export default function ExamSection({
                 type="button"
                 onClick={startEditing}
                 disabled={questions.length === 0}
-                className="inline-flex items-center gap-1 rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/20 disabled:opacity-50"
+                className="admin-chip"
               >
                 <PencilLine size={14} /> Sửa chi tiết từng câu
               </button>
@@ -512,7 +512,7 @@ function AnswerGrid({
   onShort: (i: number, value: string) => void;
 }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+    <div className="admin-card">
       <div className="mb-2 text-xs font-semibold text-slate-400">
         Bảng đáp án {enabled ? "— bấm để đổi, văn bản bên trái tự cập nhật" : ""}
       </div>
@@ -656,7 +656,7 @@ function TagGrid({
   }
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+    <div className="admin-card">
       <div className="flex w-full items-center gap-2 text-xs">
         <button type="button" onClick={() => setOpen((o) => !o)} className="flex items-center gap-2 text-left">
           <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt & dạng</span>

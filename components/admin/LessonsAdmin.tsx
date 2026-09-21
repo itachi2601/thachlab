@@ -39,7 +39,7 @@ import { academicSubject, subjectsForGrade } from "@/services/academic-subjects"
 const inputCls =
   "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const chipBtn =
-  "rounded-lg bg-white/5 px-2 py-1 text-xs text-slate-300 hover:bg-white/15";
+  "admin-chip";
 
 /** ISO -> "YYYY-MM-DDTHH:mm" theo giờ máy, cho <input type="datetime-local">. */
 function toLocalInput(iso: string | null): string {
@@ -129,7 +129,7 @@ function ItemForm({
   }
 
   return (
-    <div className="space-y-3 rounded-2xl border border-primary/40 bg-[#0B1020] p-5">
+    <div className="admin-card admin-card--accent space-y-3">
       <div className="flex flex-wrap items-center gap-3">
         <select
           value={kind}
@@ -212,7 +212,7 @@ function ItemForm({
                 />
                 <button
                   onClick={() => removeQuestion(idx)}
-                  className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                  className="admin-chip admin-chip--danger"
                 >
                   Xóa
                 </button>
@@ -253,7 +253,7 @@ function ItemForm({
         <button
           onClick={save}
           disabled={busy}
-          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+          className="admin-btn admin-btn--primary disabled:opacity-50"
         >
           {item ? "Lưu mục" : "+ Thêm mục"}
         </button>
@@ -298,11 +298,11 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
         <button onClick={onBack} className={chipBtn}>
           ← Quay lại
         </button>
-        <h3 className="font-display font-semibold text-white">{lesson.title}</h3>
+        <h3 className="admin-h2">{lesson.title}</h3>
         {!adding && !editing && (
           <button
             onClick={() => setAdding(true)}
-            className="ml-auto rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="ml-auto admin-btn admin-btn--primary"
           >
             + Thêm mục
           </button>
@@ -332,7 +332,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
           return (
             <div
               key={it.id}
-              className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
+              className="admin-card admin-card--row"
             >
               <span title={meta.label}>{meta.icon}</span>
               <span className="min-w-0 flex-1">
@@ -359,7 +359,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
                     setAdding(false);
                     setEditing(it);
                   }}
-                  className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                  className="admin-chip"
                 >
                   Sửa
                 </button>
@@ -377,7 +377,7 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
                     toast("success", "Đã xóa mục.");
                     reload();
                   }}
-                  className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                  className="admin-chip admin-chip--danger"
                 >
                   Xóa
                 </button>
@@ -476,7 +476,7 @@ function ChapterLessonsEditor({
           <p className="text-xs font-semibold uppercase tracking-wide text-[#60A5FA]">
             {schoolClass ? `Lớp ${schoolClass.name}` : "Toàn trường"}
           </p>
-          <h3 className="truncate font-display font-semibold text-white">
+          <h3 className="truncate admin-h2">
             {chapter.title}
           </h3>
         </div>
@@ -506,7 +506,7 @@ function ChapterLessonsEditor({
         />
         <button
           type="submit"
-          className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+          className="admin-btn admin-btn--primary"
         >
           + Thêm bài
         </button>
@@ -524,7 +524,7 @@ function ChapterLessonsEditor({
         {lessons.map((l, idx) => (
           <div
             key={l.id}
-            className={`flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3 ${
+            className={`admin-card admin-card--row ${
               l.published ? "" : "opacity-50"
             }`}
           >
@@ -577,13 +577,13 @@ function ChapterLessonsEditor({
                     .eq("id", l.id);
                   reload();
                 }}
-                className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 {l.published ? "Ẩn" : "Hiện"}
               </button>
               <button
                 onClick={() => setOpenLesson(l)}
-                className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 Soạn mục
               </button>
@@ -601,7 +601,7 @@ function ChapterLessonsEditor({
                   toast("success", "Đã xóa bài học.");
                   reload();
                 }}
-                className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                className="admin-chip admin-chip--danger"
               >
                 Xóa
               </button>
@@ -703,7 +703,7 @@ export default function LessonsAdmin() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card">
         <p className="mb-3 text-sm font-medium text-slate-300">
           1. Chọn lớp
         </p>
@@ -744,7 +744,7 @@ export default function LessonsAdmin() {
       </section>
 
       {selectedClass && (
-        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <section className="admin-card">
           <p className="mb-3 text-sm font-medium text-slate-300">2. Chọn môn học</p>
           <div className="flex flex-wrap gap-2">
             {subjectsForGrade(classGrade(selectedClass.name) ?? "").map((subject) => (
@@ -767,7 +767,7 @@ export default function LessonsAdmin() {
 
       <form
         onSubmit={addChapter}
-        className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5"
+        className="admin-card space-y-4"
       >
         <div>
           <p className="text-sm font-medium text-slate-300">
@@ -788,7 +788,7 @@ export default function LessonsAdmin() {
           <button
             type="submit"
             disabled={!selectedClassId}
-            className="rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="admin-btn admin-btn--primary"
           >
             + Thêm chương
           </button>
@@ -809,7 +809,7 @@ export default function LessonsAdmin() {
         {subjectChapters.map((ch, idx) => (
           <div
             key={ch.id}
-            className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
+            className="admin-card admin-card--row"
           >
             <button
               onClick={() => setOpenChapter(ch)}
@@ -862,7 +862,7 @@ export default function LessonsAdmin() {
               </button>
               <button
                 onClick={() => setOpenChapter(ch)}
-                className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 Soạn bài
               </button>
@@ -881,7 +881,7 @@ export default function LessonsAdmin() {
                   toast("success", "Đã xóa chương.");
                   reload();
                 }}
-                className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                className="admin-chip admin-chip--danger"
               >
                 Xóa
               </button>

@@ -45,12 +45,12 @@ export default function UnassignedStudents({
 
   return (
     <div className="space-y-4">
-      <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-sm text-slate-400">
+      <p className="admin-card text-sm text-slate-400">
         Học sinh tự đăng ký ở trang <strong className="text-white">/dang-ky</strong> nhưng chưa được gán vào lớp hoặc
         khóa học nào. Đối chiếu đúng tên rồi gán vào khối lớp phù hợp.
       </p>
       {!students.length ? (
-        <p className="rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-slate-500">
+        <p className="admin-empty">
           Không có học sinh nào chưa phân lớp.
         </p>
       ) : (
@@ -58,7 +58,7 @@ export default function UnassignedStudents({
           {students.map((student) => (
             <div
               key={student.id}
-              className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
+              className="admin-card admin-card--row"
             >
               <span className="font-medium text-white">{student.full_name || "(chưa có tên)"}</span>
               <span className="ml-auto flex items-center gap-2">

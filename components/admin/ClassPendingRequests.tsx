@@ -41,7 +41,7 @@ export default function ClassPendingRequests({
 
   if (!requests.length) {
     return (
-      <p className="rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-slate-500">
+      <p className="admin-empty">
         Không có yêu cầu nào đang chờ duyệt vào lớp {className}.
       </p>
     );
@@ -52,7 +52,7 @@ export default function ClassPendingRequests({
       {requests.map((request) => (
         <div
           key={request.userId}
-          className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3"
+          className="admin-card admin-card--row"
         >
           <Clock3 size={16} className="text-amber-300" />
           <span className="font-medium text-white">{request.fullName}</span>

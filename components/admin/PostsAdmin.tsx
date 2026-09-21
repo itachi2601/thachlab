@@ -191,10 +191,10 @@ export default function PostsAdmin() {
     <div className="space-y-8">
       <form
         onSubmit={submitPost}
-        className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-6"
+        className="admin-card space-y-4"
       >
         <div className="flex items-center justify-between">
-          <h2 className="font-display text-lg font-semibold text-white">
+          <h2 className="admin-h2">
             {editingId !== null ? "Sửa bài đăng" : "Đăng thông báo hoặc học liệu"}
           </h2>
           {editingId !== null && (
@@ -271,7 +271,7 @@ export default function PostsAdmin() {
         <button
           type="submit"
           disabled={busy}
-          className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+          className="admin-btn admin-btn--primary"
         >
           {busy ? "Đang lưu…" : editingId !== null ? "Lưu thay đổi" : "Đăng bài"}
         </button>
@@ -306,13 +306,13 @@ export default function PostsAdmin() {
             <div className="flex gap-2">
               <button
                 onClick={() => startEdit(p)}
-                className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 Sửa
               </button>
               <button
                 onClick={() => togglePublished(p)}
-                className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 {p.published ? "Ẩn" : "Hiện"}
               </button>

@@ -111,7 +111,7 @@ D) F = a/m
         </button>
 
         {result && (
-          <div className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-6">
+          <div className="admin-card space-y-4">
             <div>
               <p className="font-medium text-white">
                 <span className="text-cyan">{result.title}</span>
@@ -130,7 +130,7 @@ D) F = a/m
             {result.questions.length > 0 && (
               <button
                 onClick={() => setEditing(true)}
-                className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
+                className="admin-btn admin-btn--primary"
               >
                 Xem trước &amp; chỉnh sửa →
               </button>

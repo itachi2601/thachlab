@@ -56,8 +56,8 @@ export default function ClassesAdmin() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-        <h2 className="font-display text-lg font-semibold text-white">
+      <section className="admin-card">
+        <h2 className="admin-h2">
           Hệ lớp theo khối
         </h2>
         <p className="mt-2 text-sm text-slate-400">
@@ -68,7 +68,7 @@ export default function ClassesAdmin() {
           type="button"
           onClick={syncManagedClasses}
           disabled={busy}
-          className="mt-4 rounded-full bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+          className="mt-4 admin-btn admin-btn--primary disabled:opacity-50"
         >
           {busy ? "Đang chuẩn hóa..." : "Tạo/cập nhật 4 lớp khối"}
         </button>
@@ -78,7 +78,7 @@ export default function ClassesAdmin() {
         {classes.map((c, idx) => (
           <div
             key={c.id}
-            className={`flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-4 py-3 ${
+            className={`admin-card admin-card--row ${
               c.active ? "" : "opacity-50"
             }`}
           >
@@ -100,20 +100,20 @@ export default function ClassesAdmin() {
               <button
                 onClick={() => move(idx, -1)}
                 title="Lên"
-                className="rounded-lg bg-white/5 px-2 py-1 text-xs text-slate-300 hover:bg-white/15"
+                className="admin-chip"
               >
                 ↑
               </button>
               <button
                 onClick={() => move(idx, 1)}
                 title="Xuống"
-                className="rounded-lg bg-white/5 px-2 py-1 text-xs text-slate-300 hover:bg-white/15"
+                className="admin-chip"
               >
                 ↓
               </button>
               <button
                 onClick={() => update(c.id, { active: !c.active })}
-                className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300 hover:border-white/30"
+                className="admin-chip"
               >
                 {c.active ? "Ẩn" : "Hiện"}
               </button>
@@ -124,7 +124,7 @@ export default function ClassesAdmin() {
                   toast("success", `Đã xóa lớp ${c.name}`);
                   reload();
                 }}
-                className="rounded-full border border-red-500/30 px-3 py-1 text-xs text-red-300 hover:border-red-500/60"
+                className="admin-chip admin-chip--danger"
               >
                 Xóa
               </button>

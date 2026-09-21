@@ -94,9 +94,9 @@ export default function MessagesAdmin() {
     <div className="space-y-8">
       <form
         onSubmit={send}
-        className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-6"
+        className="admin-card space-y-4"
       >
-        <h2 className="font-display text-lg font-semibold text-white">
+        <h2 className="admin-h2">
           Gửi tin nhắn
         </h2>
         <select
@@ -135,14 +135,14 @@ export default function MessagesAdmin() {
         <button
           type="submit"
           disabled={busy}
-          className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+          className="admin-btn admin-btn--primary"
         >
           {busy ? "Đang gửi…" : "Gửi"}
         </button>
       </form>
 
       <div className="space-y-3">
-        <h3 className="font-display text-lg font-semibold text-white">
+        <h3 className="admin-h2">
           Đã gửi gần đây
         </h3>
         {sent.map((m) => (

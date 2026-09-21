@@ -458,14 +458,13 @@ export default function LessonImporter() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="font-display text-2xl font-bold text-white">Đăng bài học</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <p className="admin-lead" style={{ marginTop: 0 }}>
           Dán lý thuyết + dạng bài (LaTeX) ở mục 2, dán/thả đề kiểu Azota ở mục 3 — cả hai đều tách lại ngay khi gõ,
           y như trang Đăng đề. Chọn lớp – bài rồi bấm Đăng.
         </p>
       </header>
 
-      <details className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-sm text-slate-300">
+      <details className="admin-card text-sm text-slate-300">
         <summary className="cursor-pointer font-medium text-slate-200">
           Nâng cao: dán gói JSON có sẵn (dành cho trợ lý AI hoặc đề PDF/ảnh scan)
         </summary>
@@ -497,7 +496,7 @@ export default function LessonImporter() {
       </details>
 
       {/* 1. Chọn đích */}
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card space-y-3">
         <p className="text-sm font-medium text-slate-300">1. Chọn Lớp → Môn → Chương → Bài</p>
         <div className="flex flex-wrap gap-2">
           {displayClasses.map((c) => (
@@ -584,7 +583,7 @@ export default function LessonImporter() {
       </section>
 
       {/* 2. Lý thuyết & dạng bài */}
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card space-y-3">
         <p className="text-sm font-medium text-slate-300">2. Lý thuyết & dạng bài</p>
         {theoryOverride ? (
           <div className="flex flex-wrap items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 text-xs text-emerald-200">
@@ -622,13 +621,13 @@ export default function LessonImporter() {
         )}
 
         {theoryPart.theory_html.trim() && (
-          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+          <div className="admin-card">
             <p className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Xem trước Lý thuyết</p>
             <ContentHtml html={theoryPart.theory_html} className="block text-sm text-slate-300" />
           </div>
         )}
         {theoryPart.worked_examples.length > 0 && (
-          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+          <div className="admin-card">
             <p className="mb-2 text-xs font-bold uppercase tracking-wide text-violet-300">
               Các dạng bài tập ({theoryPart.worked_examples.length})
             </p>
@@ -638,7 +637,7 @@ export default function LessonImporter() {
       </section>
 
       {/* 3. Đề luyện tập / kiểm tra */}
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card space-y-3">
         <p className="text-sm font-medium text-slate-300">3. Đề luyện tập / kiểm tra</p>
         <ExamSection
           subjectCode={subjectCode}
@@ -652,7 +651,7 @@ export default function LessonImporter() {
 
       {/* 4. Nhãn chủ đề trước khi đăng */}
       {audit && (
-        <section className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <section className="admin-card space-y-4">
           <p className="text-sm font-medium text-slate-300">4. Nhãn chủ đề trước khi đăng</p>
           <div
             className={`rounded-xl border p-4 text-xs ${
@@ -752,7 +751,7 @@ export default function LessonImporter() {
 
       {/* 5. Gắn đề & xử lý nội dung cũ */}
       {fullBundle && (
-        <section className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <section className="admin-card space-y-4">
           <p className="text-sm font-medium text-slate-300">5. Gắn đề & xử lý nội dung đã có</p>
 
           <div className="flex flex-wrap gap-4 text-sm text-slate-300">
@@ -813,7 +812,7 @@ export default function LessonImporter() {
       )}
 
       {/* 6. Đăng */}
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="admin-card space-y-3">
         {check && !check.ok && (
           <ul className="rounded-lg border border-red-500/30 bg-red-500/5 p-3 text-xs text-red-200">
             {check.errors.map((e, i) => (

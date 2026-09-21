@@ -80,12 +80,11 @@ export default function MachineStatusOverview() {
 
   return (
     <div className="space-y-5">
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] to-[#071426] p-6">
+      <section>
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[.16em] text-sky-300">Cơ khí chế tạo</p>
-            <h2 className="mt-2 font-display text-2xl font-bold text-white">Tổng quan tình trạng máy</h2>
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="admin-eyebrow">Cơ khí chế tạo</p>
+            <p className="admin-lead">
               {machines.length} thiết bị · {workshops.length} xưởng thực tập
               {totalBroken > 0 && <span className="ml-1 font-bold text-red-300">· {totalBroken} đang hỏng</span>}
               {" · "}Click vào 1 máy để xem/sửa lịch sử tình trạng.
@@ -167,7 +166,7 @@ function AddMachineForm({ onDone, onCancel }: { onDone: () => void; onCancel: ()
       <input value={workshop} onChange={(e) => setWorkshop(e.target.value)} placeholder="Mã xưởng (VD: C1.2)" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
       <div className="flex gap-2 sm:col-span-2 lg:col-span-4">
         <button disabled={busy || missing.length > 0} onClick={submit} className="rounded-xl bg-cyan-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40">{busy ? "Đang lưu…" : "Thêm máy"}</button>
-        <button onClick={onCancel} className="rounded-xl border border-white/10 px-5 py-2.5 text-sm font-bold text-slate-300">Hủy</button>
+        <button onClick={onCancel} className="admin-btn admin-btn--ghost">Hủy</button>
       </div>
       {error && <p className="text-sm text-red-300 sm:col-span-2 lg:col-span-4">{error}</p>}
       {!busy && missing.length > 0 && <p className="text-xs text-amber-300 sm:col-span-2 lg:col-span-4">Cần nhập: {missing.join(", ")}.</p>}
@@ -176,7 +175,7 @@ function AddMachineForm({ onDone, onCancel }: { onDone: () => void; onCancel: ()
 }
 
 function OpenBreakdownsBoard({ reports, loading, error, machines, onOpenMachine }: { reports: EquipmentBreakdownReportWithCourse[]; loading: boolean; error: string; machines: Machine[]; onOpenMachine: (machineCode: string) => void }) {
-  if (loading) return <section className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500"><Loader2 size={14} className="animate-spin" />Đang tải danh sách máy đang hư…</section>;
+  if (loading) return <section className="flex items-center gap-2 admin-card text-sm text-slate-500"><Loader2 size={14} className="animate-spin" />Đang tải danh sách máy đang hư…</section>;
   if (error) return <p className="rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>;
   const openCount = reports.filter((r) => r.status === "open").length;
   const inProgressCount = reports.filter((r) => r.status === "in_progress").length;
@@ -185,7 +184,7 @@ function OpenBreakdownsBoard({ reports, loading, error, machines, onOpenMachine 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <AlertOctagon size={18} className={reports.length ? "text-red-300" : "text-emerald-300"} />
-          <h3 className="font-display text-lg font-bold text-white">Máy đang hư / chờ sửa</h3>
+          <h3 className="admin-h2">Máy đang hư / chờ sửa</h3>
         </div>
         {reports.length > 0 && (
           <div className="flex gap-2 text-xs font-bold">
@@ -197,10 +196,10 @@ function OpenBreakdownsBoard({ reports, loading, error, machines, onOpenMachine 
       {reports.length === 0 ? (
         <p className="mt-3 flex items-center gap-2 text-sm text-emerald-300"><Check size={15} />Không có máy nào đang chờ xử lý — toàn bộ thiết bị đang hoạt động bình thường.</p>
       ) : (
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[900px] text-left text-xs">
+        <div className="admin-table-wrap mt-4">
+          <table className="min-w-[900px] text-xs">
             <thead>
-              <tr className="border-b border-white/10 text-[10px] uppercase text-slate-500">
+              <tr>
                 <th className="p-2">Máy / xưởng</th>
                 <th className="p-2">Trạng thái</th>
                 <th className="p-2">Hư đã</th>
@@ -240,7 +239,7 @@ function WorkshopSection({ workshop, machines, onSelect }: { workshop: string; m
   const broken = machines.filter((m) => m.status === "broken").length;
   const groups = groupMachinesByType(machines);
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+    <section className="admin-card sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Wrench size={18} className="text-orange-300" />
@@ -360,11 +359,11 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4" onClick={onClose}>
-      <div className="max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0B1020] p-5" onClick={(e) => e.stopPropagation()}>
+      <div className="max-h-[85vh] w-full max-w-xl overflow-y-auto admin-card" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="font-mono text-sm text-cyan-300">{machine.code}</p>
-            <h3 className="font-display text-lg font-bold text-white">{shortLabel(machine.label)}</h3>
+            <h3 className="admin-h2">{shortLabel(machine.label)}</h3>
           </div>
           <button onClick={onClose} className="rounded-lg p-1.5 text-slate-400 hover:bg-white/5 hover:text-white"><X size={18} /></button>
         </div>
@@ -387,7 +386,7 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
         </div>
 
         {tab === "status" && <>
-        <div className="mt-4 rounded-xl border border-white/10 bg-white/[.02] p-3">
+        <div className="mt-4 admin-card">
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Thông tin cơ bản</p>
             {!editingInfo && <button type="button" onClick={() => setEditingInfo(true)} className="flex items-center gap-1 text-xs font-bold text-cyan-300 hover:text-cyan-200"><Pencil size={12} />Sửa</button>}
@@ -412,7 +411,7 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
           </div> : <p className="mt-1 text-sm text-slate-300">{shortLabel(machine.label)} · {MACHINE_TYPE_LABELS[machine.machine_type]} · {WORKSHOP_LABELS[machine.workshop] ?? machine.workshop}{!machine.is_active && <span className="ml-1 font-bold text-amber-300">· Ngừng sử dụng</span>}</p>}
         </div>
 
-        <div className="mt-4 rounded-xl border border-white/10 bg-white/[.02] p-3">
+        <div className="mt-4 admin-card">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Cập nhật tình trạng</p>
           <div className="mt-2 flex gap-2">
             <button type="button" onClick={() => setStatus("ok")} className={`flex-1 rounded-lg border py-2 text-xs font-bold ${status === "ok" ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200" : "border-white/10 text-slate-400"}`}>Bình thường</button>
