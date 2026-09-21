@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Eye, Trash2 } from "lucide-react";
+import { ChevronDown, ChevronUp, Eye, Sparkles, Trash2 } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
+import { useToast } from "@/components/ui/Toast";
 import type {
   ExamQuestion,
   MultipleChoiceQuestion,
@@ -10,6 +11,8 @@ import type {
   ShortAnswerQuestion,
   TrueFalseQuestion,
 } from "@/features/exams/types";
+import { classifyQuestionTags } from "@/services/ai-classify";
+import { questionTextForAi } from "@/services/exam-question-text";
 import type { Difficulty, LessonBundle } from "@/services/lesson-import";
 
 const inputCls =
@@ -64,12 +67,17 @@ export default function ExamDraftEditor({
   bundle,
   onChange,
   topicOptions = [],
+  aiTopicCandidates = [],
 }: {
   bundle: LessonBundle;
   onChange: (next: LessonBundle) => void;
   /** Tên yêu cầu cần đạt trong danh mục — gợi ý cho ô "Chủ đề câu này". */
   topicOptions?: string[];
+  /** YCCĐ của đúng bài đang chọn — danh mục đóng cho AI gắn nhãn (hẹp hơn topicOptions). */
+  aiTopicCandidates?: string[];
 }) {
+  const toast = useToast();
+  const [aiBusy, setAiBusy] = useState(false);
   const questions = bundle.exam.questions;
 
   function setExam(patch: Partial<LessonBundle["exam"]>) {
@@ -87,6 +95,37 @@ export default function ExamDraftEditor({
     const next = [...questions];
     [next[index], next[target]] = [next[target], next[index]];
     setQuestions(next);
+  }
+
+  const aiTargets = questions
+    .map((_, i) => i)
+    .filter((i) => !(questions[i].topic ?? "").trim() || !questions[i].form);
+  const aiAvailable = aiTopicCandidates.length > 0 && aiTargets.length > 0;
+
+  async function runAutoTag() {
+    if (!aiAvailable || aiBusy) return;
+    setAiBusy(true);
+    try {
+      const items = aiTargets.map((i) => ({ index: i, text: questionTextForAi(questions[i]) }));
+      const results = await classifyQuestionTags(aiTopicCandidates, items);
+      let next = questions;
+      for (const r of results) {
+        next = next.map((q, i) =>
+          i === r.index ? { ...q, topic: r.topic ?? q.topic, form: r.form ?? q.form } : q,
+        );
+      }
+      setQuestions(next);
+      toast(
+        results.length > 0 ? "success" : "error",
+        results.length > 0
+          ? `AI đã gắn nhãn cho ${results.length}/${aiTargets.length} câu.`
+          : "AI không gắn được nhãn nào — thử lại hoặc gắn tay.",
+      );
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setAiBusy(false);
+    }
   }
 
   const incomplete = questions.filter((q) => problems(q).length > 0).length;
@@ -137,14 +176,26 @@ export default function ExamDraftEditor({
         </label>
       </div>
 
-      <p className="text-xs text-slate-400">
-        {questions.length} câu
-        {incomplete > 0 ? (
-          <span className="text-amber-300"> · {incomplete} câu còn thiếu, xem viền vàng bên dưới</span>
-        ) : (
-          <span className="text-emerald-300"> · đã đủ đáp án và lời giải</span>
+      <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
+        <span>
+          {questions.length} câu
+          {incomplete > 0 ? (
+            <span className="text-amber-300"> · {incomplete} câu còn thiếu, xem viền vàng bên dưới</span>
+          ) : (
+            <span className="text-emerald-300"> · đã đủ đáp án và lời giải</span>
+          )}
+        </span>
+        {aiAvailable && (
+          <button
+            type="button"
+            onClick={runAutoTag}
+            disabled={aiBusy}
+            className="ml-auto inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[11px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
+          >
+            <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
+          </button>
         )}
-      </p>
+      </div>
 
       <div className="space-y-3">
         {questions.map((q, i) => (

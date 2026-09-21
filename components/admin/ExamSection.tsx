@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Upload, WandSparkles } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Sparkles, Upload, WandSparkles } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import { useToast } from "@/components/ui/Toast";
 import { QUESTION_FORM_LABELS, auditQuestionTags, type ExamQuestion, type QuestionForm } from "@/features/exams/types";
+import { classifyQuestionTags } from "@/services/ai-classify";
 import type { QuestionTopic } from "@/services/analytics";
+import { questionTextForAi } from "@/services/exam-question-text";
 import {
   SAMPLE_TEXT,
   setChoiceAnswer,
@@ -95,6 +97,7 @@ function problems(q: ExamQuestion): string[] {
   if (!q.explanation.trim()) out.push("chưa có lời giải");
   return out;
 }
+
 
 /**
  * Khối "dán/thả đề kiểu Azota → xem trước, đáp án và nhãn bấm-để-sửa" — dùng chung
@@ -448,7 +451,12 @@ export default function ExamSection({
         </div>
 
         {edited ? (
-          <ExamDraftEditor bundle={bundle} onChange={setEdited} topicOptions={topicGroups.flatMap((g) => g.names)} />
+          <ExamDraftEditor
+            bundle={bundle}
+            onChange={setEdited}
+            topicOptions={topicGroups.flatMap((g) => g.names)}
+            aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
+          />
         ) : questions.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
             Chưa có câu nào. Dán đề hoặc bấm “Đề mẫu” để xem cách trình bày.
@@ -589,10 +597,42 @@ function TagGrid({
   onTag: (i: number, field: TagField, value: string) => void;
   onTagMany: (indexes: number[], field: TagField, value: string) => void;
 }) {
+  const toast = useToast();
   const [open, setOpen] = useState(true);
+  const [aiBusy, setAiBusy] = useState(false);
   const known = useMemo(() => new Set(groups.flatMap((g) => g.names).map((n) => n.toLowerCase())), [groups]);
   const untaggedTopic = questions.map((_, i) => i).filter((i) => !(questions[i].topic ?? "").trim());
   const untaggedForm = questions.map((_, i) => i).filter((i) => !questions[i].form);
+  // Bài đang chọn luôn đứng đầu `groups` (composer xếp "mine" trước — xem AzotaExamComposer/LessonImporter),
+  // nên khi đã chọn bài, groups[0] chính là danh mục YCCĐ đúng của bài đó.
+  const aiCandidates = lessonPicked ? (groups[0]?.names ?? []) : [];
+  const aiTargets = useMemo(
+    () => Array.from(new Set([...untaggedTopic, ...untaggedForm])).sort((a, b) => a - b),
+    [untaggedTopic, untaggedForm],
+  );
+  const aiAvailable = enabled && aiCandidates.length > 0 && aiTargets.length > 0;
+
+  async function runAutoTag() {
+    if (!aiAvailable || aiBusy) return;
+    setAiBusy(true);
+    try {
+      const items = aiTargets.map((i) => ({ index: i, text: questionTextForAi(questions[i]) }));
+      const results = await classifyQuestionTags(aiCandidates, items);
+      for (const r of results) {
+        if (r.topic) onTag(r.index, "topic", r.topic);
+        if (r.form) onTag(r.index, "form", QUESTION_FORM_LABELS[r.form].toLowerCase());
+      }
+      toast(
+        results.length > 0 ? "success" : "error",
+        results.length > 0 ? `AI đã gắn nhãn cho ${results.length}/${aiTargets.length} câu.` : "AI không gắn được nhãn nào — thử lại hoặc gắn tay.",
+      );
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setAiBusy(false);
+    }
+  }
+
   const selectCls =
     "h-7 max-w-full rounded border border-white/10 bg-[#0B1020] px-1 text-[11px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
 
@@ -617,16 +657,32 @@ function TagGrid({
 
   return (
     <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-      <button type="button" onClick={() => setOpen((o) => !o)} className="flex w-full items-center gap-2 text-left text-xs">
-        <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt & dạng</span>
-        <span className={audit.tagged === audit.total ? "text-emerald-300" : "text-amber-300"}>
-          {audit.tagged}/{audit.total} câu đã gắn đủ
-        </span>
-        {audit.unknown.length > 0 && (
-          <span className="text-amber-300">· {audit.unknown.length} chủ đề không có trong danh mục</span>
-        )}
-        <span className="ml-auto text-slate-500">{open ? "thu gọn" : "mở"}</span>
-      </button>
+      <div className="flex w-full items-center gap-2 text-xs">
+        <button type="button" onClick={() => setOpen((o) => !o)} className="flex items-center gap-2 text-left">
+          <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt & dạng</span>
+          <span className={audit.tagged === audit.total ? "text-emerald-300" : "text-amber-300"}>
+            {audit.tagged}/{audit.total} câu đã gắn đủ
+          </span>
+          {audit.unknown.length > 0 && (
+            <span className="text-amber-300">· {audit.unknown.length} chủ đề không có trong danh mục</span>
+          )}
+        </button>
+        <div className="ml-auto flex items-center gap-2">
+          {aiAvailable && (
+            <button
+              type="button"
+              onClick={runAutoTag}
+              disabled={aiBusy}
+              className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[11px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
+            >
+              <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
+            </button>
+          )}
+          <button type="button" onClick={() => setOpen((o) => !o)} className="text-slate-500 hover:text-slate-300">
+            {open ? "thu gọn" : "mở"}
+          </button>
+        </div>
+      </div>
       {open && (
         <div className="mt-2 space-y-2">
           {groups.length === 0 ? (
