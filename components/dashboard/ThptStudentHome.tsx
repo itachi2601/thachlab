@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, ChevronRight, LogOut, Target, Trophy } from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import type { SchoolClass } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { visibleTo } from "@/services/content";
+import { useToast } from "@/components/ui/Toast";
 import {
   fetchChapters,
   fetchLessonProgressSummaries,
@@ -18,16 +19,41 @@ import {
   fetchClassAssessments,
   fetchMyAlert,
   fetchMyScoreHistory,
-  fetchMyTopicGaps,
   fetchPeriodicRank,
   type ClassAssessment,
   type PeriodicRank,
   type ScorePoint,
   type StudentAlert,
-  type TopicGap,
 } from "@/services/analytics";
+import {
+  fetchLatestAnnouncements,
+  fetchRecentAnnouncements,
+  type AnnouncementKind,
+  type ClassAnnouncement,
+} from "@/services/announcements";
+import {
+  ACTIVE_NEED_STATUSES,
+  NEED_STATUS_LABEL,
+  cancelRegistration,
+  fetchMyNeeds,
+  fetchMyRegistrations,
+  fetchUpcomingSlots,
+  needLabel,
+  registerForSlot,
+  type NeedStatus,
+  type TutoringNeed,
+  type TutoringSlot,
+} from "@/services/tutoring";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
+
+const NEED_TONE: Record<NeedStatus, string> = {
+  open: "border-red-500/40 bg-red-500/10 text-red-200",
+  assigned: "border-amber-500/40 bg-amber-500/10 text-amber-200",
+  tutored: "border-blue-500/40 bg-blue-500/10 text-blue-200",
+  cleared: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
+  dismissed: "border-white/15 bg-white/5 text-slate-400",
+};
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
@@ -35,6 +61,43 @@ function Stat({ value, label }: { value: string; label: string }) {
       <strong className="text-xl text-white sm:text-3xl">{value}</strong>
       <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
         {label}
+      </p>
+    </div>
+  );
+}
+
+function Section({
+  icon: Icon,
+  title,
+  action,
+  children,
+}: {
+  icon: typeof Megaphone;
+  title: string;
+  action?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <Icon size={18} className="text-blue-300" />
+          <h2 className="font-display font-bold text-white">{title}</h2>
+        </div>
+        {action}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
+  return (
+    <div className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
+      <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
+      <p className="mt-1.5 text-[11px] text-slate-500">
+        {item.createdByName || "Giáo viên"} ·{" "}
+        {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
       </p>
     </div>
   );
@@ -55,6 +118,7 @@ export default function ThptStudentHome({
   className: string;
   onSignOut: () => void;
 }) {
+  const toast = useToast();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
@@ -62,9 +126,15 @@ export default function ThptStudentHome({
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<PeriodicRank | null>(null);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
-  const [gaps, setGaps] = useState<TopicGap[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [lastLessonId, setLastLessonId] = useState(0);
+
+  const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
+  const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
+  const [needs, setNeeds] = useState<TutoringNeed[]>([]);
+  const [slots, setSlots] = useState<TutoringSlot[]>([]);
+  const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
+  const [busySlotId, setBusySlotId] = useState<number | null>(null);
 
   useEffect(() => {
     Promise.all([fetchClasses(), fetchChapters(), fetchLessons()])
@@ -79,11 +149,29 @@ export default function ThptStudentHome({
 
   useEffect(() => {
     fetchMyScoreHistory(studentId).then(setScores).catch(() => setScores([]));
-    fetchMyTopicGaps(studentId).then(setGaps).catch(() => setGaps([]));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchPeriodicRank(classId).then(setRank).catch(() => setRank(null));
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
   }, [studentId, classId]);
+
+  function reloadAnnouncements() {
+    fetchLatestAnnouncements(classId)
+      .then((byKind) => setTodayNote(byKind.today_task))
+      .catch(() => setTodayNote(null));
+    fetchRecentAnnouncements(classId, "homework" as AnnouncementKind, 5)
+      .then(setHomeworkNotes)
+      .catch(() => setHomeworkNotes([]));
+  }
+  useEffect(reloadAnnouncements, [classId]);
+
+  function reloadTutoring() {
+    fetchMyNeeds(studentId)
+      .then((rows) => setNeeds(rows.filter((n) => ACTIVE_NEED_STATUSES.includes(n.status))))
+      .catch(() => setNeeds([]));
+    fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
+    fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
+  }
+  useEffect(reloadTutoring, [studentId, classId]);
 
   const classChapters = useMemo(() => {
     if (!classes || !chapters) return null;
@@ -142,7 +230,26 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
-  const topGaps = gaps.filter((gap) => gap.wrong > 0).slice(0, 3);
+
+  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+
+  async function toggleRegistration(slot: TutoringSlot) {
+    setBusySlotId(slot.id);
+    try {
+      if (myRegistrations.has(slot.id)) {
+        await cancelRegistration(slot.id, studentId);
+        toast("info", "Đã huỷ đăng ký.");
+      } else {
+        await registerForSlot(slot.id, studentId);
+        toast("success", "Đã đăng ký buổi phụ đạo.");
+      }
+      reloadTutoring();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa thực hiện được, thử lại nhé.");
+    } finally {
+      setBusySlotId(null);
+    }
+  }
 
   return (
     <div className="space-y-4 sm:space-y-5">
@@ -204,75 +311,121 @@ export default function ThptStudentHome({
         <Stat value={rank ? `${rank.rank}/${rank.total}` : "—"} label="Hạng lớp" />
       </section>
 
-      {nextLesson && (
-        <Link
-          href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
-          className="flex items-center justify-between gap-3 rounded-2xl border border-blue-400/20 bg-gradient-to-r from-blue-500/10 to-transparent p-4 sm:p-5"
-        >
-          <div className="min-w-0">
-            <small className="text-[10px] font-bold uppercase tracking-wider text-blue-300 sm:text-xs">
-              Học tiếp theo
-            </small>
-            <h2 className="mt-1 truncate font-display text-lg font-bold text-white sm:text-xl">
-              {nextLesson.title}
-            </h2>
-            {nextChapter && <p className="mt-1 truncate text-xs text-slate-400 sm:text-sm">{nextChapter.title}</p>}
-          </div>
-          <ChevronRight className="shrink-0 text-blue-300" />
-        </Link>
-      )}
+      {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
+      <Section icon={Megaphone} title="Việc cần làm hôm nay">
+        <div className="mt-3 space-y-2.5">
+          {todayNote && <AnnouncementNote item={todayNote} />}
 
-      {todoExams.length > 0 && (
-        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
-          <div className="flex items-center gap-2">
-            <Trophy size={18} className="text-amber-300" />
-            <h2 className="font-display font-bold text-white">Bài kiểm tra cần làm</h2>
-          </div>
-          <div className="mt-3 space-y-2">
-            {todoExams.map((item) => (
-              <Link
-                key={item.id}
-                href={`/kiem-tra/lam?id=${item.examId}`}
-                className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 hover:bg-white/5"
-              >
+          {nextLesson && (
+            <Link
+              href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
+              className="flex items-center justify-between gap-3 rounded-xl border border-blue-400/20 bg-blue-500/5 p-3 hover:bg-blue-500/10"
+            >
+              <div className="min-w-0">
+                <small className="text-[10px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
+                <p className="mt-0.5 truncate text-sm font-bold text-white">{nextLesson.title}</p>
+                {nextChapter && <p className="truncate text-xs text-slate-400">{nextChapter.title}</p>}
+              </div>
+              <ChevronRight className="shrink-0 text-blue-300" size={18} />
+            </Link>
+          )}
+
+          {todoExams.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 hover:bg-white/5"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <Trophy size={14} className="shrink-0 text-amber-300" />
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
-                  <small className="text-xs text-slate-500">Chưa làm</small>
+                  <small className="text-xs text-slate-500">Bài kiểm tra chưa làm</small>
                 </span>
-                <ChevronRight size={16} className="shrink-0 text-slate-500" />
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {topGaps.length > 0 && (
-        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
-              <Target size={18} className="text-blue-300" />
-              <h2 className="font-display font-bold text-white">Chủ đề cần ôn</h2>
-            </div>
-            <Link href="/lop-hoc/ket-qua" className="text-xs font-semibold text-[#60A5FA] hover:underline">
-              Xem tất cả →
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
             </Link>
-          </div>
-          <div className="mt-3 space-y-2">
-            {topGaps.map((gap) => (
-              <div key={gap.key} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3">
-                <span className="min-w-0 truncate text-sm text-slate-200">{gap.topic}</span>
+          ))}
+
+          {!hasTodayContent && <p className="text-sm text-slate-500">Chưa có việc gì mới — cứ ôn lại bài cũ nhé.</p>}
+        </div>
+      </Section>
+
+      {/* Mục 2 — Bài tập về nhà */}
+      <Section icon={CalendarClock} title="Bài tập về nhà">
+        <div className="mt-3 space-y-2">
+          {homeworkNotes.length === 0 ? (
+            <p className="text-sm text-slate-500">Chưa có bài tập về nhà mới.</p>
+          ) : (
+            homeworkNotes.map((item) => <AnnouncementNote key={item.id} item={item} />)
+          )}
+        </div>
+      </Section>
+
+      {/* Mục 3 — Chủ đề cần phụ đạo */}
+      <Section icon={Users} title="Chủ đề cần phụ đạo">
+        <div className="mt-3 space-y-4">
+          {needs.length === 0 ? (
+            <p className="text-sm text-slate-500">Hiện chưa có chủ đề nào cần phụ đạo — cứ tiếp tục học nhé!</p>
+          ) : (
+            <div className="flex flex-wrap gap-1.5">
+              {needs.map((need) => (
                 <span
-                  className={`shrink-0 font-mono text-sm font-bold ${
-                    gap.pct >= 60 ? "text-red-300" : gap.pct >= 30 ? "text-amber-300" : "text-slate-400"
-                  }`}
+                  key={need.id}
+                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}
                 >
-                  sai {gap.pct}%
+                  {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
                 </span>
+              ))}
+            </div>
+          )}
+
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>
+            {slots.length === 0 ? (
+              <p className="text-sm text-slate-500">Chưa có buổi phụ đạo nào được đăng cho lớp em.</p>
+            ) : (
+              <div className="space-y-2">
+                {slots.map((slot) => {
+                  const registered = myRegistrations.has(slot.id);
+                  const full = slot.registeredCount >= slot.capacity && !registered;
+                  return (
+                    <div key={slot.id} className="rounded-xl border border-white/10 bg-white/[.02] p-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <strong className="text-sm text-white">
+                          {new Date(`${slot.workDate}T00:00:00`).toLocaleDateString("vi-VN", {
+                            weekday: "short",
+                            day: "2-digit",
+                            month: "2-digit",
+                          })}{" "}
+                          · {slot.startTime.slice(0, 5)}–{slot.endTime.slice(0, 5)}
+                        </strong>
+                        <span className="text-xs text-slate-500">{slot.assistantName}</span>
+                        <span className="ml-auto text-xs text-slate-500">
+                          {slot.registeredCount}/{slot.capacity}
+                        </span>
+                      </div>
+                      {slot.note && <p className="mt-1 text-xs text-slate-400">{slot.note}</p>}
+                      <button
+                        type="button"
+                        onClick={() => toggleRegistration(slot)}
+                        disabled={busySlotId === slot.id || full}
+                        className={`mt-2 w-full rounded-lg py-2 text-xs font-bold disabled:opacity-40 ${
+                          registered
+                            ? "border border-white/15 text-slate-300"
+                            : "bg-blue-600 text-white"
+                        }`}
+                      >
+                        {registered ? "Huỷ đăng ký" : full ? "Đã đủ số lượng" : "Đăng ký"}
+                      </button>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+            )}
           </div>
-        </section>
-      )}
+        </div>
+      </Section>
 
       <Link
         href="/lop-hoc"

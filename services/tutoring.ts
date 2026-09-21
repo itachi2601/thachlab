@@ -256,3 +256,176 @@ export async function saveSessionCoverage(sessionId: string, items: CoverageInpu
   );
   if (error) throw error;
 }
+
+// ============================================================
+// Lịch phụ đạo trong tuần — trợ giảng đăng buổi sắp tới, học sinh tự đăng ký.
+// Xem docs/supabase-migration-tutoring-slots.sql.
+// ============================================================
+
+export interface TutoringSlot {
+  id: number;
+  assistantId: string;
+  assistantName: string;
+  classId: number;
+  workDate: string; // yyyy-mm-dd
+  startTime: string; // HH:mm[:ss]
+  endTime: string;
+  topicIds: number[];
+  capacity: number;
+  registeredCount: number;
+  note: string;
+  status: "open" | "cancelled";
+  createdAt: string;
+}
+
+interface SlotRow {
+  id: number;
+  assistant_id: string;
+  class_id: number;
+  work_date: string;
+  start_time: string;
+  end_time: string;
+  topic_ids: number[];
+  capacity: number;
+  registered_count: number;
+  note: string;
+  status: "open" | "cancelled";
+  created_at: string;
+  ta_assistants: { short_name: string } | { short_name: string }[] | null;
+}
+
+const SLOT_SELECT =
+  "id, assistant_id, class_id, work_date, start_time, end_time, topic_ids, capacity, registered_count, note, status, created_at, ta_assistants(short_name)";
+
+function toSlot(row: SlotRow): TutoringSlot {
+  return {
+    id: row.id,
+    assistantId: row.assistant_id,
+    assistantName: one(row.ta_assistants)?.short_name ?? "",
+    classId: row.class_id,
+    workDate: row.work_date,
+    startTime: row.start_time,
+    endTime: row.end_time,
+    topicIds: row.topic_ids ?? [],
+    capacity: row.capacity,
+    registeredCount: row.registered_count,
+    note: row.note,
+    status: row.status,
+    createdAt: row.created_at,
+  };
+}
+
+/** Buổi phụ đạo sắp tới của một lớp (đang mở, từ hôm nay trở đi) — trang học sinh + trợ giảng. */
+export async function fetchUpcomingSlots(classId: number): Promise<TutoringSlot[]> {
+  const today = new Date().toISOString().slice(0, 10);
+  const { data, error } = await getSupabase()
+    .from("tutoring_slots")
+    .select(SLOT_SELECT)
+    .eq("class_id", classId)
+    .eq("status", "open")
+    .gte("work_date", today)
+    .order("work_date")
+    .order("start_time");
+  if (error) throw error;
+  return ((data ?? []) as unknown as SlotRow[]).map(toSlot);
+}
+
+/** Toàn bộ buổi (kể cả đã huỷ, đã qua) do một trợ giảng đăng cho một lớp — trang trợ giảng quản lý. */
+export async function fetchSlotsForAssistant(assistantId: string, classId: number): Promise<TutoringSlot[]> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_slots")
+    .select(SLOT_SELECT)
+    .eq("assistant_id", assistantId)
+    .eq("class_id", classId)
+    .order("work_date", { ascending: false })
+    .order("start_time", { ascending: false });
+  if (error) throw error;
+  return ((data ?? []) as unknown as SlotRow[]).map(toSlot);
+}
+
+export async function createSlot(input: {
+  assistantId: string;
+  classId: number;
+  workDate: string;
+  startTime: string;
+  endTime: string;
+  topicIds: number[];
+  capacity: number;
+  note?: string;
+}): Promise<void> {
+  const { error } = await getSupabase().from("tutoring_slots").insert({
+    assistant_id: input.assistantId,
+    class_id: input.classId,
+    work_date: input.workDate,
+    start_time: input.startTime,
+    end_time: input.endTime,
+    topic_ids: input.topicIds,
+    capacity: input.capacity,
+    note: input.note ?? "",
+  });
+  if (error) throw error;
+}
+
+export async function cancelSlot(id: number): Promise<void> {
+  const { error } = await getSupabase().from("tutoring_slots").update({ status: "cancelled" }).eq("id", id);
+  if (error) throw error;
+}
+
+export interface SlotRegistration {
+  id: number;
+  slotId: number;
+  studentId: string;
+  studentName: string;
+  createdAt: string;
+}
+
+interface RegistrationRow {
+  id: number;
+  slot_id: number;
+  student_id: string;
+  created_at: string;
+  profiles: { full_name: string } | { full_name: string }[] | null;
+}
+
+/** Danh sách em đã đăng ký của các buổi cho trước — trợ giảng xem trước khi tới buổi. */
+export async function fetchRegistrationsForSlots(slotIds: number[]): Promise<SlotRegistration[]> {
+  if (slotIds.length === 0) return [];
+  const { data, error } = await getSupabase()
+    .from("tutoring_registrations")
+    .select("id, slot_id, student_id, created_at, profiles(full_name)")
+    .in("slot_id", slotIds);
+  if (error) throw error;
+  return ((data ?? []) as unknown as RegistrationRow[]).map((row) => ({
+    id: row.id,
+    slotId: row.slot_id,
+    studentId: row.student_id,
+    studentName: one(row.profiles)?.full_name ?? "",
+    createdAt: row.created_at,
+  }));
+}
+
+/** Buổi mà chính học sinh đang đăng nhập đã đăng ký — để tô trạng thái nút "Đăng ký". */
+export async function fetchMyRegistrations(studentId: string): Promise<number[]> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_registrations")
+    .select("slot_id")
+    .eq("student_id", studentId);
+  if (error) throw error;
+  return (data ?? []).map((row) => row.slot_id as number);
+}
+
+export async function registerForSlot(slotId: number, studentId: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from("tutoring_registrations")
+    .insert({ slot_id: slotId, student_id: studentId });
+  if (error) throw error;
+}
+
+export async function cancelRegistration(slotId: number, studentId: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from("tutoring_registrations")
+    .delete()
+    .eq("slot_id", slotId)
+    .eq("student_id", studentId);
+  if (error) throw error;
+}
