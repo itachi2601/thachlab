@@ -13,7 +13,7 @@ export default function TienPhayCoursePage() {
   return (
     <>
       <Navbar />
-      <main className="pt-[76px]">
+      <main className="min-h-screen w-full pt-[76px]">
         <TienPhayEnrollmentGate />
       </main>
       <Footer />

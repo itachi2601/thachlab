@@ -20,5 +20,5 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
 export default async function CncLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!CNC_COURSE_ITEMS.some((item) => item.id === lessonId && item.id !== "intro")) notFound();
-  return <><Navbar /><main className="cnc-page pt-[76px]"><CncEnrollmentGate lessonId={lessonId} /></main><Footer /></>;
+  return <><Navbar /><main className="min-h-screen w-full pt-[76px]"><CncEnrollmentGate lessonId={lessonId} /></main><Footer /></>;
 }

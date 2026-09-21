@@ -13,7 +13,7 @@ export default function CncCoursePage() {
   return (
     <>
       <Navbar />
-      <main className="cnc-page pt-[76px]">
+      <main className="min-h-screen w-full pt-[76px]">
         <CncEnrollmentGate />
       </main>
       <Footer />
