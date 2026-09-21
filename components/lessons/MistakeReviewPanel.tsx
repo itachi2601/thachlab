@@ -19,21 +19,21 @@ export default function MistakeReviewPanel() {
 
   if (!session || !mistakes?.length) return null;
   return (
-    <section className="rounded-2xl border border-amber-400/20 bg-amber-500/5">
+    <section className="rounded-xl border border-white/10 bg-[#0B1020]">
       <button type="button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mistake-review-list" className="flex w-full items-center gap-4 p-5 text-left">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-300"><AlertCircle size={20} /></span>
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-400"><AlertCircle size={20} /></span>
         <span className="min-w-0 flex-1">
           <strong className="block font-display text-white">Ôn lại lỗi sai</strong>
           <small className="mt-1 block text-slate-400">{mistakes.length} câu cần xem lại từ lần làm gần nhất</small>
         </span>
-        <span className="text-sm font-semibold text-amber-300">{open ? "Thu gọn" : "Bắt đầu ôn"}</span>
-        <ChevronDown size={18} className={`text-amber-300 transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className="text-sm font-semibold text-slate-300">{open ? "Thu gọn" : "Bắt đầu ôn"}</span>
+        <ChevronDown size={18} className={`text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <div id="mistake-review-list" className="space-y-5 border-t border-amber-400/10 p-5">
+        <div id="mistake-review-list" className="space-y-5 border-t border-white/10 p-5">
           {mistakes.slice(0, visibleCount).map((item) => (
             <div key={`${item.examId}-${item.questionIndex}`}>
-              <p className="mb-2 text-xs font-bold uppercase tracking-wide text-amber-300">{item.examTitle}</p>
+              <p className="mb-2 text-xs font-semibold text-slate-400">{item.examTitle}</p>
               <QuestionCard index={item.questionIndex + 1} question={item.question} response={item.response} review />
             </div>
           ))}

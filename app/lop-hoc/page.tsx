@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, Suspense, useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -33,7 +34,6 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
-import ContinueLearningCard from "@/components/lessons/ContinueLearningCard";
 import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
@@ -104,7 +104,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [activeSubjectCode, setActiveSubjectCode] = useState("vat-ly");
   const [requestedChapterId, setRequestedChapterId] = useState<number | null>(null);
-  const [openChapterId, setOpenChapterId] = useState<number | null>(null);
+  const [collapsedChapters, setCollapsedChapters] = useState<Set<number>>(new Set());
   const [lastLessonId, setLastLessonId] = useState<number | null>(null);
   const [lessonProgress, setLessonProgress] = useState<Map<number, InlineLessonProgress>>(new Map());
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
@@ -192,7 +192,12 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   useEffect(() => {
     if (!requestedChapterId || !classes || !chapters) return;
     if (classSlug) {
-      setOpenChapterId(requestedChapterId);
+      setCollapsedChapters((prev) => {
+        if (!prev.has(requestedChapterId)) return prev;
+        const next = new Set(prev);
+        next.delete(requestedChapterId);
+        return next;
+      });
       return;
     }
     const requestedChapter = chapters.find((chapter) => chapter.id === requestedChapterId);
@@ -205,7 +210,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
           )
         : undefined;
       setActiveId(representative?.id ?? targetClassId);
-      setOpenChapterId(requestedChapterId);
     }
   }, [chapters, classSlug, classes, requestedChapterId]);
 
@@ -218,6 +222,241 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     }, 80);
     return () => window.clearTimeout(timer);
   }, [activeId, lessons, requestedChapterId]);
+  function toggleChapter(chapterId: number) {
+    setCollapsedChapters((prev) => {
+      const next = new Set(prev);
+      if (next.has(chapterId)) next.delete(chapterId);
+      else next.add(chapterId);
+      return next;
+    });
+  }
+
+  function rememberLesson(lesson: Lesson) {
+    setLastLessonId(lesson.id);
+    window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
+  }
+
+  // Trang của một lớp: mục lục chương → bài, cùng ngôn ngữ với trang bài học.
+  if (effectiveSlug) {
+    const grade = active ? classGrade(active.name) : null;
+    const lastPercent = lastLesson
+      ? (() => {
+          const p = lessonProgress.get(lastLesson.id);
+          return p?.total ? Math.round((p.completed / p.total) * 100) : null;
+        })()
+      : null;
+    return (
+      <>
+        <Navbar />
+        <main className="min-h-screen w-full pt-[76px]">
+          <div className="lesson-shell">
+            <div className="lesson-main lesson-main--single">
+              <Link href="/lop-hoc" className="lesson-back">
+                <ArrowLeft size={15} /> Lớp học
+              </Link>
+
+              {!supabaseConfigured ? (
+                <p className="lesson-notice">Hệ thống đang được cấu hình.</p>
+              ) : !classes ? (
+                <div className="pt-8"><SkeletonGrid count={2} /></div>
+              ) : !active ? (
+                <p className="lesson-notice">Không tìm thấy lớp học này.</p>
+              ) : (
+                <>
+                  <header className="lesson-head">
+                    <p className="lesson-eyebrow">{grade === "9" ? "Trung học cơ sở" : "Trung học phổ thông"}</p>
+                    <h1>{activeDisplayName}</h1>
+                    {grade === "9" && (
+                      <div className="class-subjects" role="tablist" aria-label="Môn học">
+                        {subjectsForGrade("9").map((subject) => (
+                          <button
+                            key={subject.code}
+                            type="button"
+                            role="tab"
+                            aria-selected={activeSubjectCode === subject.code}
+                            onClick={() => {
+                              setActiveSubjectCode(subject.code);
+                              setCollapsedChapters(new Set());
+                            }}
+                            className={activeSubjectCode === subject.code ? "is-active" : ""}
+                          >
+                            {subject.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </header>
+
+                  {!chapters || !lessons ? (
+                    <SkeletonGrid count={2} />
+                  ) : classChapters.length === 0 ? (
+                    <p className="lesson-muted">Chưa có chương trình học cho lớp này.</p>
+                  ) : (
+                    <div className="class-toc">
+                      {lastLesson && lastLessonChapter && (
+                        <div className="class-continue">
+                          <div>
+                            <p className="lesson-eyebrow">Tiếp tục học</p>
+                            <p className="lesson-block-title">{lastLesson.title}</p>
+                            <p className="lesson-block-sub">
+                              {lastLessonChapter.title}
+                              {lastPercent !== null && ` · ${lastPercent}%`}
+                            </p>
+                          </div>
+                          <button type="button" className="lesson-btn" onClick={() => continueLesson(lastLesson)}>
+                            Tiếp tục <ArrowRight size={15} />
+                          </button>
+                        </div>
+                      )}
+                      <MistakeReviewPanel />
+
+                      {classChapters.map((ch, chapterIndex) => {
+                        // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
+                        // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
+                        const chapterLessons = lessons.filter(
+                          (l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind),
+                        );
+                        const semesterExams = lessons.filter(
+                          (l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind),
+                        );
+                        const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
+                        const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
+                        const collapsed = collapsedChapters.has(ch.id);
+                        let lessonNumber = 0;
+                        return (
+                          <Fragment key={ch.id}>
+                            <section id={`chapter-${ch.id}`} className="class-chapter">
+                              <button
+                                type="button"
+                                className="class-chapter-head"
+                                onClick={() => toggleChapter(ch.id)}
+                                aria-expanded={!collapsed}
+                                aria-controls={`chapter-lessons-${ch.id}`}
+                              >
+                                <span className="class-num">{chapterIndex + 1}</span>
+                                <span className="class-chapter-title">{ch.title}</span>
+                                {session && chapterTotal > 0 && (
+                                  <span className="class-meta">{chapterCompleted}/{chapterTotal}</span>
+                                )}
+                                <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
+                              </button>
+                              {!collapsed && (
+                                <ol id={`chapter-lessons-${ch.id}`} className="class-lessons">
+                                  {chapterLessons.length === 0 && (
+                                    <li className="lesson-muted">Chưa có bài học trong chương này.</li>
+                                  )}
+                                  {chapterLessons.map((lesson) => {
+                                    const progress = lessonProgress.get(lesson.id);
+                                    const percent = progress?.total
+                                      ? Math.round((progress.completed / progress.total) * 100)
+                                      : 0;
+                                    const periodic = isPeriodicExam(lesson.lesson_kind);
+                                    if (!periodic) lessonNumber += 1;
+                                    const complete = !!session && percent === 100;
+                                    return (
+                                      <li key={lesson.id}>
+                                        <Link
+                                          href={lessonHref(lesson)}
+                                          onClick={() => rememberLesson(lesson)}
+                                          className={`class-lesson ${complete ? "is-complete" : ""}`}
+                                        >
+                                          <span className={`class-num ${periodic ? "class-num--exam" : ""}`}>
+                                            {complete ? <Check size={13} /> : periodic ? "KT" : lessonNumber}
+                                          </span>
+                                          <span className="class-lesson-title">{lesson.title}</span>
+                                          <span className="class-meta">
+                                            {periodic
+                                              ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
+                                              : session ? `${percent}%` : `${lesson.itemCount} mục`}
+                                          </span>
+                                        </Link>
+                                      </li>
+                                    );
+                                  })}
+                                </ol>
+                              )}
+                            </section>
+                            {semesterExams.map((exam) => {
+                              const meta = LESSON_KIND_META[exam.lesson_kind];
+                              const examProgress = lessonProgress.get(exam.id);
+                              const done = !!examProgress?.total && examProgress.completed >= examProgress.total;
+                              return (
+                                <Link
+                                  key={exam.id}
+                                  id={`lesson-${exam.id}`}
+                                  href={lessonHref(exam)}
+                                  onClick={() => rememberLesson(exam)}
+                                  className={`class-lesson class-lesson--semester ${done ? "is-complete" : ""}`}
+                                >
+                                  <span className="class-num class-num--exam">{done ? <Check size={13} /> : "KT"}</span>
+                                  <span className="class-lesson-title">
+                                    {exam.title}
+                                    <small>{meta.label}</small>
+                                  </span>
+                                  <span className="class-meta">{session ? (done ? "Đã làm" : "Chưa làm") : "Kiểm tra"}</span>
+                                </Link>
+                              );
+                            })}
+                          </Fragment>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {classExams.length > 0 && (
+                    <section className="lesson-section">
+                      <h2>Đề thi</h2>
+                      <ol className="class-lessons class-lessons--flat">
+                        {classExams.map((exam) => (
+                          <li key={exam.id}>
+                            <Link href={`/kiem-tra/lam?id=${exam.id}`} className="class-lesson">
+                              <span className="class-lesson-title">{exam.title}</span>
+                              <span className="class-meta">
+                                {exam.question_count} câu · {exam.duration_minutes} phút
+                                {exam.difficulty && ` · ${DIFFICULTY_LABELS[exam.difficulty]}`}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ol>
+                    </section>
+                  )}
+
+                  {!session && (
+                    <p className="lesson-muted class-login-hint">
+                      <Link href="/dang-nhap" className="lesson-link">Đăng nhập</Link> để xem đề thi và lưu tiến độ học.
+                    </p>
+                  )}
+
+                  {classPosts.length > 0 && (
+                    <section className="lesson-section">
+                      <h2>Thông báo và học liệu</h2>
+                      <ol className="class-lessons class-lessons--flat">
+                        {classPosts.map((p) => (
+                          <li key={p.id}>
+                            <Link href={`/tin-tuc#post-${p.id}`} className="class-lesson">
+                              <span className="class-lesson-title">
+                                {p.title}
+                                {(p.body || p.video_url) && (
+                                  <small className="line-clamp-1">{p.body || "Video bài giảng"}</small>
+                                )}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ol>
+                    </section>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -314,11 +553,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     Chọn khối lớp để vào chương trình học.
                   </p>
                 </div>
-                {activeDisplayName && (
-                  <span className="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1.5 text-xs font-semibold text-blue-300">
-                    Đang chọn: {activeDisplayName}
-                  </span>
-                )}
               </div>
 
               {!effectiveSlug && <div className="grid gap-4 md:grid-cols-3">
@@ -349,302 +583,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 })}
               </div>}
 
-            {effectiveSlug && active && (
-              <div className="mt-10 space-y-12">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <Link href="/lop-hoc" className="rounded-xl border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 hover:bg-white/10">
-                    ← Đổi lớp
-                  </Link>
-                  <div className="flex flex-wrap gap-2">
-                    {classGrade(active.name) === "9" && subjectsForGrade("9").map((subject) => (
-                      <button
-                        key={subject.code}
-                        type="button"
-                        onClick={() => {
-                          setActiveSubjectCode(subject.code);
-                          setOpenChapterId(null);
-                        }}
-                        className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                          activeSubjectCode === subject.code
-                            ? "bg-primary text-white"
-                            : "bg-white/5 text-slate-300 hover:bg-white/10"
-                        }`}
-                      >
-                        {subject.icon} {subject.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <section>
-                  <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                    Chương trình {activeDisplayName}
-                  </h2>
-                  {!chapters || !lessons ? (
-                    <SkeletonGrid count={2} />
-                  ) : classChapters.length === 0 ? (
-                    <p className="text-sm text-slate-400">
-                      Chưa có chương trình học cho lớp này.
-                    </p>
-                  ) : (
-                    <div className="space-y-6">
-                      {lastLesson && lastLessonChapter && (
-                        <ContinueLearningCard
-                          chapterTitle={lastLessonChapter.title}
-                          lessonTitle={lastLesson.title}
-                          progress={lessonProgress.get(lastLesson.id)}
-                          onContinue={() => continueLesson(lastLesson)}
-                        />
-                      )}
-                      <MistakeReviewPanel />
-                      {classChapters.map((ch) => {
-                        // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
-                        // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
-                        const chapterLessons = lessons.filter(
-                          (l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind),
-                        );
-                        const semesterExams = lessons.filter(
-                          (l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind),
-                        );
-                        const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
-                        const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
-                        const chapterPercent = chapterTotal > 0 ? Math.round((chapterCompleted / chapterTotal) * 100) : 0;
-                        return (
-                          <Fragment key={ch.id}>
-                            <div
-                              id={`chapter-${ch.id}`}
-                              className="rounded-2xl border border-white/10 bg-[#080D1A] p-2"
-                              style={{ scrollMarginTop: "104px" }}
-                            >
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  setOpenChapterId((current) => current === ch.id ? null : ch.id);
-                                }}
-                                aria-expanded={openChapterId === ch.id}
-                                aria-controls={`chapter-lessons-${ch.id}`}
-                                className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3 text-left text-sm font-bold tracking-wide text-slate-200 uppercase hover:bg-white/5 hover:text-white"
-                              >
-                                <span className="min-w-0 flex-1">
-                                  <span className="block truncate">{ch.title}</span>
-                                  <span className="mt-1 block h-1 max-w-48 overflow-hidden rounded-full bg-white/10">
-                                    <span className="block h-full rounded-full bg-blue-500 transition-[width]" style={{ width: `${chapterPercent}%` }} />
-                                  </span>
-                                </span>
-                                <span className="flex shrink-0 items-center gap-3">
-                                  <span className="text-xs font-semibold normal-case tracking-normal text-slate-500">{chapterPercent}%</span>
-                                  <span className={`text-lg text-slate-500 transition-transform ${openChapterId === ch.id ? "rotate-180" : ""}`} aria-hidden="true">⌄</span>
-                                </span>
-                              </button>
-                              {openChapterId === ch.id && <div id={`chapter-lessons-${ch.id}`} className="space-y-2 px-1 pb-1">
-                                {chapterLessons.length === 0 && (
-                                  <p className="px-4 pb-3 text-sm text-slate-500">
-                                    Chưa có bài học trong chương này.
-                                  </p>
-                                )}
-                                {chapterLessons.map((lesson) => {
-                                  const progress = lessonProgress.get(lesson.id);
-                                  const percent = progress?.total
-                                    ? Math.round((progress.completed / progress.total) * 100)
-                                    : 0;
-                                  const periodic = isPeriodicExam(lesson.lesson_kind);
-                                  const kindMeta = LESSON_KIND_META[lesson.lesson_kind];
-                                  return (
-                                    <Link
-                                      key={lesson.id}
-                                      href={lessonHref(lesson)}
-                                      onClick={() => {
-                                        setLastLessonId(lesson.id);
-                                        window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
-                                      }}
-                                      className="group flex items-center gap-4 rounded-xl border px-4 py-4 transition-all hover:bg-white/5"
-                                      style={{
-                                        borderColor: periodic ? `${kindMeta.color}33` : "transparent",
-                                      }}
-                                    >
-                                      <span
-                                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
-                                        style={{
-                                          backgroundColor: periodic ? `${kindMeta.color}22` : "#1D3461",
-                                        }}
-                                      >
-                                        {periodic ? kindMeta.icon : "📖"}
-                                      </span>
-                                      <span className="min-w-0 flex-1">
-                                        <span className="flex flex-wrap items-center gap-2">
-                                          {periodic && (
-                                            <span
-                                              className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
-                                              style={{
-                                                color: kindMeta.color,
-                                                backgroundColor: `${kindMeta.color}22`,
-                                              }}
-                                            >
-                                              {kindMeta.badge}
-                                            </span>
-                                          )}
-                                          <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                            {lesson.title}
-                                          </span>
-                                        </span>
-                                        <span className="mt-1 block text-xs font-semibold tracking-wide text-[#60A5FA] uppercase">
-                                          {periodic
-                                            ? `${percent === 100 ? "Đã hoàn thành" : "Chưa làm"}`
-                                            : `${lesson.itemCount} mục · ${percent}% hoàn thành`}
-                                        </span>
-                                        {!periodic && (
-                                          <span className="mt-2 block h-1.5 max-w-64 overflow-hidden rounded-full bg-white/10">
-                                            <span className="block h-full rounded-full bg-blue-500" style={{ width: `${percent}%` }} />
-                                          </span>
-                                        )}
-                                      </span>
-                                      <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
-                                        {periodic ? "Làm bài →" : "Vào bài →"}
-                                      </span>
-                                    </Link>
-                                  );
-                                })}
-                              </div>}
-                            </div>
-                            {semesterExams.map((exam) => {
-                              const meta = LESSON_KIND_META[exam.lesson_kind];
-                              const examProgress = lessonProgress.get(exam.id);
-                              const done =
-                                !!examProgress?.total &&
-                                examProgress.completed >= examProgress.total;
-                              return (
-                                <Link
-                                  key={exam.id}
-                                  id={`lesson-${exam.id}`}
-                                  href={lessonHref(exam)}
-                                  onClick={() => {
-                                    setLastLessonId(exam.id);
-                                    window.localStorage.setItem(LAST_LESSON_KEY, String(exam.id));
-                                  }}
-                                  className="group flex items-center gap-4 rounded-2xl border px-4 py-4 transition-all hover:bg-white/5"
-                                  style={{
-                                    scrollMarginTop: "104px",
-                                    borderColor: `${meta.color}40`,
-                                    backgroundColor: `${meta.color}0F`,
-                                  }}
-                                >
-                                  <span
-                                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl"
-                                    style={{ backgroundColor: `${meta.color}22` }}
-                                  >
-                                    {meta.icon}
-                                  </span>
-                                  <span className="min-w-0 flex-1">
-                                    <span className="flex flex-wrap items-center gap-2">
-                                      <span
-                                        className="rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
-                                        style={{
-                                          color: meta.color,
-                                          backgroundColor: `${meta.color}22`,
-                                        }}
-                                      >
-                                        {meta.badge}
-                                      </span>
-                                      <span className="font-display text-sm font-bold tracking-wide text-white uppercase group-hover:text-primary">
-                                        {exam.title}
-                                      </span>
-                                    </span>
-                                    <span
-                                      className="mt-1 block text-xs font-semibold tracking-wide uppercase"
-                                      style={{ color: meta.color }}
-                                    >
-                                      {done ? "Đã hoàn thành" : "Chưa làm"}
-                                    </span>
-                                  </span>
-                                  <span className="shrink-0 text-sm font-semibold text-slate-500 transition-all group-hover:translate-x-1 group-hover:text-primary">
-                                    Làm bài →
-                                  </span>
-                                </Link>
-                              );
-                            })}
-                          </Fragment>
-                        );
-                      })}
-                    </div>
-                  )}
-                </section>
-
-                {classExams.length > 0 && (
-                  <section>
-                    <h2 className="mb-4 font-display text-xl font-semibold text-white">
-                      Đề thi lớp {activeDisplayName}
-                    </h2>
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                      {classExams.map((exam) => (
-                        <Link
-                          key={exam.id}
-                          href={`/kiem-tra/lam?id=${exam.id}`}
-                          className="group rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
-                        >
-                          <h3 className="font-display font-semibold text-white group-hover:text-primary">
-                            {exam.title}
-                          </h3>
-                          <p className="mt-2 text-sm text-slate-400">
-                            {exam.question_count} câu · {exam.duration_minutes}{" "}
-                            phút
-                            {exam.difficulty &&
-                              ` · ${DIFFICULTY_LABELS[exam.difficulty]}`}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </section>
-                )}
-
-                {!session && (
-                  <p className="text-sm text-slate-400">
-                    <Link
-                      href="/dang-nhap"
-                      className="text-primary hover:underline"
-                    >
-                      Đăng nhập
-                    </Link>{" "}
-                    để xem đề thi và lưu tiến độ học của em.
-                  </p>
-                )}
-
-                {classPosts.length > 0 && (
-                  <section>
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                      <h2 className="font-display text-xl font-semibold text-white">
-                        Thông báo và học liệu lớp {activeDisplayName}
-                      </h2>
-                      <Link href="/blog" className="text-sm font-semibold text-primary hover:underline">
-                        Xem blog kiến thức →
-                      </Link>
-                    </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      {classPosts.map((p) => (
-                        <Link
-                          key={p.id}
-                          href={`/tin-tuc#post-${p.id}`}
-                          className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
-                        >
-                          <h3 className="font-display font-semibold text-white">
-                            {p.title}
-                          </h3>
-                          <p className="mt-2 line-clamp-2 text-sm text-slate-400">
-                            {p.body || (p.video_url && "🎬 Video bài giảng")}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </section>
-                )}
-              </div>
-            )}
-            {classSlug && !active && classes.length > 0 && (
-              <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center">
-                <p className="text-slate-300">Không tìm thấy lớp học này.</p>
-                <Link href="/lop-hoc" className="mt-4 inline-block font-semibold text-primary hover:underline">
-                  Quay lại danh sách lớp học
-                </Link>
-              </div>
-            )}
           </>
         ))}
       </main>
