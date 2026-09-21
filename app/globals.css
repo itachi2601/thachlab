@@ -738,6 +738,10 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 .class-lesson--semester:hover { border-color: rgba(148,163,184,.3); }
 .lesson-main--single .lesson-section:first-of-type { margin-top: 40px; border-top: 1px solid var(--lesson-line); padding-top: 32px; }
 .class-login-hint { margin-top: 28px; }
+.class-lesson--hub { padding-block: 13px; }
+.class-lesson--hub > svg { flex: 0 0 auto; color: #475569; transition: transform .15s, color .15s; }
+.class-lesson--hub:hover > svg { color: #93c5fd; transform: translateX(2px); }
+.lesson-main--single .lesson-head + .lesson-section { margin-top: 0; border-top: 0; padding-top: 0; }
 
 @media (max-width: 900px) {
   .class-continue { flex-direction: column; align-items: stretch; }

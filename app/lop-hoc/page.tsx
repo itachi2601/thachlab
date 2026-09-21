@@ -38,24 +38,14 @@ import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
-const GRADE_IMAGES: Record<string, string> = {
-  "9": "/images/learning-path/khtn-9.jpg",
-  "10": "/images/learning-path/vat-ly-10.jpg",
-  "11": "/images/learning-path/vat-ly-11.jpg",
-  "12": "/images/learning-path/vat-ly-12.jpg",
-};
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
 const GRADE_ORDER = ["10", "11", "12", "9"];
-const GRADE_DETAILS: Record<string, { description: string; accent: string }> = {
-  "10": { description: "Xây nền tảng cơ học", accent: "text-blue-300 border-blue-400/30 hover:border-blue-300 bg-blue-500/10" },
-  "11": { description: "Dao động, sóng và điện", accent: "text-violet-300 border-violet-400/30 hover:border-violet-300 bg-violet-500/10" },
-  "12": { description: "Củng cố kiến thức, ôn thi", accent: "text-orange-300 border-orange-400/30 hover:border-orange-300 bg-orange-500/10" },
-  "9": { description: "Kiến thức nền tảng Khoa học tự nhiên", accent: "text-emerald-300 border-emerald-400/30 hover:border-emerald-300 bg-emerald-500/10" },
+const GRADE_DESCRIPTIONS: Record<string, string> = {
+  "10": "Xây nền tảng cơ học",
+  "11": "Dao động, sóng và điện",
+  "12": "Củng cố kiến thức, ôn thi",
+  "9": "Kiến thức nền tảng Khoa học tự nhiên",
 };
-const CLASS_TABS = [
-  { id: "secondary", label: "THPT – THCS" },
-  { id: "university", label: "CTTC" },
-] as const;
 const UNIVERSITY_CLASSES = [
   {
     title: "Vật lý đại cương",
@@ -457,134 +447,74 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     );
   }
 
+  const secondaryGroup = (
+    <section className="lesson-section" id="thpt">
+      <h2>Trung học</h2>
+      {!supabaseConfigured ? (
+        <p className="lesson-muted">Hệ thống đang được cấu hình.</p>
+      ) : !classes ? (
+        <SkeletonGrid count={2} />
+      ) : classes.length === 0 ? (
+        <p className="lesson-muted">Chưa có lớp nào.</p>
+      ) : (
+        <ol className="class-lessons class-lessons--flat">
+          {GRADE_ORDER.map((grade) => {
+            const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
+            if (!schoolClass) return null;
+            return (
+              <li key={grade}>
+                <Link href={`/lop-hoc/${schoolClass.slug}`} className="class-lesson class-lesson--hub">
+                  <span className="class-num">{grade}</span>
+                  <span className="class-lesson-title">
+                    {GRADE_LABELS[grade] ?? `Vật lý ${grade}`}
+                    <small>{GRADE_DESCRIPTIONS[grade]}</small>
+                  </span>
+                  <ArrowRight size={16} />
+                </Link>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </section>
+  );
+
+  const universityGroup = (
+    <section className="lesson-section" id="cttc">
+      <h2>Chương trình thực hành (CTTC)</h2>
+      <ol className="class-lessons class-lessons--flat">
+        {UNIVERSITY_CLASSES.filter((item) => item.href).map((item) => (
+          <li key={item.title}>
+            <Link href={item.href} className="class-lesson class-lesson--hub">
+              <span className="class-lesson-title">
+                {item.title}
+                <small>{item.description}</small>
+              </span>
+              <ArrowRight size={16} />
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+
   return (
     <>
       <Navbar />
-      <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-20 lg:px-8">
-        <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
-          {effectiveSlug && activeDisplayName ? (
-            <span className="text-gradient">{activeDisplayName}</span>
-          ) : (
-            <>Lớp <span className="text-gradient">học</span></>
-          )}
-        </h1>
-        <p className="mt-3 mb-8 text-slate-400">
-          {effectiveSlug
-            ? "Không gian học tập, bài giảng và đề thi dành riêng cho lớp này."
-            : "Chọn lớp để mở không gian học tập và theo dõi tiến độ."}
-        </p>
-
-        {!effectiveSlug && <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
-          {CLASS_TABS.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                const url = tab.id === "university" ? "/lop-hoc?tab=cttc" : "/lop-hoc";
-                window.history.replaceState(null, "", url);
-              }}
-              aria-pressed={activeTab === tab.id}
-              className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
-                activeTab === tab.id
-                  ? "bg-primary text-white"
-                  : "text-slate-300 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>}
-
-        {!effectiveSlug && activeTab === "university" && (
-          <section aria-labelledby="cttc-course-heading">
-            <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <h2 id="cttc-course-heading" className="font-display text-xl font-semibold text-white">
-                  Chương trình thực hành (CTTC)
-                </h2>
-                <p className="mt-1 text-sm text-slate-400">
-                  Chọn môn học để mở không gian học tập và theo dõi tiến độ.
-                </p>
-              </div>
-              <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold text-emerald-300">
-                {UNIVERSITY_CLASSES.filter((item) => item.href).length} môn đang hoạt động
-              </span>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {UNIVERSITY_CLASSES.filter((universityClass) => universityClass.href).map((universityClass) => (
-                <Link
-                  key={universityClass.title}
-                  href={universityClass.href}
-                  className="group rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left transition-all hover:-translate-y-1 hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl">
-                    {universityClass.icon}
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-bold text-white">
-                    {universityClass.title}
-                  </h3>
-                  <p className="mt-3 min-h-18 text-sm leading-6 text-slate-400">
-                    {universityClass.description}
-                  </p>
-                  <span className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-semibold text-[#60A5FA]">
-                    Mở môn học
-                    <span aria-hidden="true">→</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {activeTab === "secondary" && (!supabaseConfigured ? (
-          <p className="text-slate-400">Hệ thống đang được cấu hình.</p>
-        ) : !classes ? (
-          <SkeletonGrid count={3} />
-        ) : classes.length === 0 ? (
-          <p className="text-slate-400">Chưa có lớp nào.</p>
-        ) : (
-          <>
-              <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-                <div>
-                  <h2 className="font-display text-xl font-semibold text-white">
-                    Chọn lớp học
-                  </h2>
-                  <p className="mt-1 text-sm text-slate-400">
-                    Chọn khối lớp để vào chương trình học.
-                  </p>
-                </div>
-              </div>
-
-              {!effectiveSlug && <div className="grid gap-4 md:grid-cols-3">
-                {GRADE_ORDER.map((grade) => {
-                  const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
-                  if (!schoolClass) return null;
-                  const details = GRADE_DETAILS[grade];
-                  return (
-                    <Link
-                      key={grade}
-                      href={`/lop-hoc/${schoolClass.slug}`}
-                      className={`group rounded-2xl border p-5 transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${details.accent} ${grade === "9" ? "md:col-span-3" : ""}`}
-                    >
-                      <div className="flex items-center gap-5">
-                        <div className="min-w-0 flex-1">
-                          <p className="text-xs font-bold uppercase tracking-widest">{grade === "9" ? "THCS" : "THPT"} · Lớp</p>
-                          <p className="mt-1 font-display text-5xl font-bold sm:text-6xl">{grade}</p>
-                          <h3 className="mt-3 text-xl font-bold text-white">{GRADE_LABELS[grade] ?? `Vật lý ${grade}`}</h3>
-                          <p className="mt-1 text-sm text-slate-300">{details.description}</p>
-                        </div>
-                        <img src={GRADE_IMAGES[grade]} alt="" className="h-28 w-20 shrink-0 rounded-lg object-cover shadow-lg" loading="lazy" />
-                      </div>
-                      <span className="mt-5 flex items-center justify-between border-t border-current/20 pt-4 text-sm font-bold">
-                        Vào học <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>}
-
-          </>
-        ))}
+      <main className="min-h-screen w-full pt-[76px]">
+        <div className="lesson-shell">
+          <div className="lesson-main lesson-main--single">
+            <header className="lesson-head">
+              <h1>Lớp học</h1>
+              <p className="lesson-lead">Chọn lớp để mở chương trình học và theo dõi tiến độ.</p>
+            </header>
+            {activeTab === "university" ? (
+              <>{universityGroup}{secondaryGroup}</>
+            ) : (
+              <>{secondaryGroup}{universityGroup}</>
+            )}
+          </div>
+        </div>
       </main>
       <Footer />
     </>
