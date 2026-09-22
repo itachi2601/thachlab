@@ -110,6 +110,9 @@ export interface LessonItem {
   exam_ids: number[]; // bai_tap_mau / luyen_tap / bai_tap_ve_nha / kiem_tra
   due_at: string | null; // bai_tap_ve_nha: hạn nộp (null = không đặt hạn)
   sort_order: number;
+  required: boolean; // có tính vào tiến độ bắt buộc không (mặc định true)
+  quiz_min_correct: number | null; // ly_thuyet có quiz: số câu đúng tối thiểu để đạt
+  practice_pass_score: number | null; // luyen_tap: điểm đạt thang 10 (áp cho phiên cao nhất)
 }
 
 /** Mục gắn đề trắc nghiệm (dùng ExamPicker khi soạn). */

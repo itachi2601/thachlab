@@ -19,6 +19,7 @@ import {
   type QuestionResponse,
 } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
+import { derivePracticeStatus } from "@/features/progress/types";
 import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
 
 type Phase = "setup" | "running" | "done";
@@ -36,11 +37,14 @@ export default function PracticeSession({
   examIds,
   lessonId,
   itemId,
+  passScore = null,
   color = "#F59E0B",
 }: {
   examIds: number[];
   lessonId: number | null;
   itemId: number | null;
+  /** Điểm đạt thang 10 do giáo viên cấu hình cho mục luyện tập này — null = không đánh giá đạt. */
+  passScore?: number | null;
   color?: string;
 }) {
   const { session } = useAuth();
@@ -60,6 +64,8 @@ export default function PracticeSession({
   const submittedRef = useRef(false);
   const responsesRef = useRef<QuestionResponse[]>([]);
   const picksRef = useRef<PracticePick[]>([]);
+  const clientTokenRef = useRef<string>("");
+  const timedOutRef = useRef(false);
 
   useEffect(() => {
     if (!session || examIds.length === 0) return;
@@ -93,13 +99,8 @@ export default function PracticeSession({
 
   const questions = useMemo(() => picks.map((p) => p.question), [picks]);
 
-  const submit = useCallback(
-    (timedOut = false) => {
-      if (submittedRef.current) return;
-      submittedRef.current = true;
-      const used = Math.round((Date.now() - startedAt.current) / 1000);
-      setUsedSeconds(used);
-      setPhase("done");
+  const save = useCallback(
+    (used: number, timedOut: boolean) => {
       if (!session) return;
       const finalPicks = picksRef.current;
       const finalResponses = responsesRef.current;
@@ -118,10 +119,25 @@ export default function PracticeSession({
         correctCount: summary.correctCount,
         durationSeconds: used,
         timedOut,
+        clientToken: clientTokenRef.current,
       }).then((ok) => setSaveState(ok ? "saved" : "failed"));
     },
     [session, lessonId, itemId],
   );
+
+  const submit = useCallback(
+    (timedOut = false) => {
+      if (submittedRef.current) return;
+      submittedRef.current = true;
+      const used = Math.round((Date.now() - startedAt.current) / 1000);
+      timedOutRef.current = timedOut;
+      setUsedSeconds(used);
+      setPhase("done");
+      save(used, timedOut);
+    },
+    [save],
+  );
+  const retry = useCallback(() => save(usedSeconds, timedOutRef.current), [save, usedSeconds]);
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -144,6 +160,7 @@ export default function PracticeSession({
     picksRef.current = chosen;
     responsesRef.current = blanks;
     submittedRef.current = false;
+    clientTokenRef.current = crypto.randomUUID();
     startedAt.current = Date.now();
     setPicks(chosen);
     setResponses(blanks);
@@ -356,6 +373,10 @@ export default function PracticeSession({
 
   // ---------- Đã nộp ----------
   const summary = gradeExam(questions, responses);
+  const practiceStatus =
+    saveState === "saved"
+      ? derivePracticeStatus({ sessionCount: 1, bestScore10: summary.score10, passScore })
+      : null;
   return (
     <div className="space-y-4">
       <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-center">
@@ -365,12 +386,34 @@ export default function PracticeSession({
         <p className="mt-2 text-sm text-slate-300">
           Đúng trọn vẹn {summary.correctCount}/{questions.length} câu · {formatClock(usedSeconds)}
         </p>
+        {practiceStatus && passScore !== null && (
+          <p
+            className={`mt-2 inline-block rounded-full border px-3 py-1 text-xs font-bold ${
+              practiceStatus.status === "passed"
+                ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-300"
+                : "border-red-500/40 bg-red-500/15 text-red-300"
+            }`}
+          >
+            {practiceStatus.label}
+          </p>
+        )}
         <p className="mt-2 text-xs text-slate-500">
           {saveState === "saving" && "Đang lưu…"}
           {saveState === "saved" && "✓ Đã ghi lại để thầy biết em cần ôn phần nào"}
-          {saveState === "failed" && "Không lưu được kết quả luyện tập"}
           {saveState === "idle" && "Điểm luyện tập không tính vào bảng điểm"}
         </p>
+        {saveState === "failed" && (
+          <p className="mt-2 flex flex-col items-center gap-2 text-xs text-red-300">
+            <span>Chưa lưu được kết quả luyện tập — kiểm tra mạng rồi thử lại.</span>
+            <button
+              type="button"
+              onClick={retry}
+              className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+            >
+              Thử lại
+            </button>
+          </p>
+        )}
         <button
           type="button"
           onClick={() => setPhase("setup")}

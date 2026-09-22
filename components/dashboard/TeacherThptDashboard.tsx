@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, BarChart3, CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, LifeBuoy, Megaphone, UserRound } from "lucide-react";
+import { AlertTriangle, BarChart3, CalendarCheck, FileSpreadsheet, GraduationCap, LayoutDashboard, LifeBuoy, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
@@ -12,12 +12,14 @@ import TeacherThptAnalysis from "@/components/dashboard/TeacherThptAnalysis";
 import TeacherThptAlerts from "@/components/dashboard/TeacherThptAlerts";
 import TeacherThptTutoring from "@/components/dashboard/TeacherThptTutoring";
 import TeacherThptStudentProfile from "@/components/dashboard/TeacherThptStudentProfile";
+import TeacherThptProgress from "@/components/dashboard/TeacherThptProgress";
 import TeacherThptAttendancePanel from "@/components/attendance/TeacherThptAttendancePanel";
 import ClassRosterImportPanel from "@/components/dashboard/ClassRosterImportPanel";
 import ClassAnnouncementsPanel from "@/components/dashboard/ClassAnnouncementsPanel";
 
 type DashboardTab =
   | "overview"
+  | "progress"
   | "analysis"
   | "alerts"
   | "tutoring"
@@ -29,6 +31,7 @@ type DashboardTab =
 
 const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] = [
   { id: "overview", label: "Tổng quan", icon: LayoutDashboard },
+  { id: "progress", label: "Quá trình học tập", icon: ListChecks },
   { id: "analysis", label: "Phân tích", icon: BarChart3 },
   { id: "alerts", label: "Cảnh báo phụ đạo", icon: AlertTriangle },
   { id: "tutoring", label: "Phụ đạo", icon: LifeBuoy },
@@ -145,6 +148,7 @@ export default function TeacherThptDashboard() {
       ) : (
         <>
           {activeTab === "overview" && <TeacherThptOverview classId={selectedClassId} students={students} onOpenTab={setActiveTab} onOpenStudent={(id) => { setSelectedStudentId(id); setActiveTab("profile"); }} />}
+          {activeTab === "progress" && <TeacherThptProgress classId={selectedClassId} students={students} />}
           {activeTab === "analysis" && <TeacherThptAnalysis classId={selectedClassId} students={students} />}
           {activeTab === "alerts" && <TeacherThptAlerts classId={selectedClassId} students={students} />}
           {activeTab === "tutoring" && <TeacherThptTutoring classId={selectedClassId} students={students} />}

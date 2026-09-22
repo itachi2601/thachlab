@@ -96,10 +96,14 @@ export async function fetchLesson(
   };
 }
 
-// Cột due_at là migration mới (docs/supabase-migration-lesson-sections-v4.sql):
-// chọn kèm khi có, tự lùi về danh sách cột cũ khi DB chưa chạy migration.
+// Cột due_at là migration mới (docs/supabase-migration-lesson-sections-v4.sql);
+// required/quiz_min_correct/practice_pass_score là migration mới hơn nữa
+// (docs/supabase-migration-learning-progress.sql) — chọn kèm khi có, tự lùi về
+// danh sách cột cũ khi DB chưa chạy migration tương ứng.
 const ITEM_COLUMNS =
   "id, lesson_id, kind, title, subtitle, body_html, video_url, pdf_url, questions, exam_ids, sort_order";
+const ITEM_COLUMNS_V2 = `${ITEM_COLUMNS}, due_at`;
+const ITEM_COLUMNS_V3 = `${ITEM_COLUMNS_V2}, required, quiz_min_correct, practice_pass_score`;
 
 export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> {
   const query = (columns: string) =>
@@ -109,8 +113,9 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
       .eq("lesson_id", lessonId)
       .order("sort_order")
       .order("id");
-  const primary = await query(`${ITEM_COLUMNS}, due_at`);
-  const res = primary.error ? await query(ITEM_COLUMNS) : primary;
+  let res = await query(ITEM_COLUMNS_V3);
+  if (res.error) res = await query(ITEM_COLUMNS_V2);
+  if (res.error) res = await query(ITEM_COLUMNS);
   if (res.error) throw res.error;
   return ((res.data ?? []) as unknown as Record<string, unknown>[]).map((item) => ({
     ...item,
@@ -122,6 +127,9 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
     questions: item.questions ?? [],
     exam_ids: item.exam_ids ?? [],
     due_at: (item.due_at as string | null) ?? null,
+    required: (item.required as boolean | undefined) ?? true,
+    quiz_min_correct: (item.quiz_min_correct as number | null | undefined) ?? null,
+    practice_pass_score: (item.practice_pass_score as number | null | undefined) ?? null,
   })) as unknown as LessonItem[];
 }
 
@@ -132,15 +140,27 @@ export interface LessonExamMeta {
   duration_minutes: number;
   question_count: number;
   type_counts: TypeCounts;
+  pass_score: number | null;
 }
 
 export async function fetchExamMetas(examIds: number[]): Promise<Map<number, LessonExamMeta>> {
   if (examIds.length === 0) return new Map();
-  const { data } = await getSupabase()
+  const withPassScore = await getSupabase()
     .from("exams")
-    .select("id, title, duration_minutes, question_count, type_counts")
+    .select("id, title, duration_minutes, question_count, type_counts, pass_score")
     .in("id", examIds);
-  return new Map(((data as LessonExamMeta[]) ?? []).map((e) => [e.id, e]));
+  const res = withPassScore.error
+    ? await getSupabase()
+        .from("exams")
+        .select("id, title, duration_minutes, question_count, type_counts")
+        .in("id", examIds)
+    : withPassScore;
+  return new Map(
+    ((res.data as (LessonExamMeta & { pass_score?: number | null })[]) ?? []).map((e) => [
+      e.id,
+      { ...e, pass_score: e.pass_score ?? null },
+    ]),
+  );
 }
 
 /** Đề đầy đủ (kèm câu hỏi) — dùng cho lưới tự chấm của mục Luyện tập. */
@@ -294,15 +314,22 @@ export interface PracticeSessionInput {
   correctCount: number;
   durationSeconds: number;
   timedOut: boolean;
+  /** Sinh 1 lần/phiên, giữ nguyên khi bấm lại — chống lưu trùng khi mạng lỗi rồi thử lại. */
+  clientToken: string;
 }
 
 /** Lưu kết quả một phiên luyện tập. Lỗi ở đây chỉ mất dữ liệu phân tích — không chặn em xem lời giải. */
 export async function savePracticeSession(input: PracticeSessionInput): Promise<boolean> {
   const supabase = getSupabase();
   try {
-    const { data, error } = await supabase
+    const existing = await supabase
       .from("practice_sessions")
-      .insert({
+      .select("id")
+      .eq("client_token", input.clientToken)
+      .maybeSingle();
+    let sessionId = existing.data?.id as number | undefined;
+    if (!sessionId) {
+      const base = {
         student_id: input.studentId,
         lesson_id: input.lessonId,
         item_id: input.itemId,
@@ -311,10 +338,18 @@ export async function savePracticeSession(input: PracticeSessionInput): Promise<
         score: input.score10,
         duration_seconds: input.durationSeconds,
         timed_out: input.timedOut,
-      })
-      .select("id")
-      .single();
-    if (error || !data) return false;
+      };
+      let res = await supabase
+        .from("practice_sessions")
+        .insert({ ...base, client_token: input.clientToken })
+        .select("id")
+        .single();
+      // client_token là cột mới (migration chưa chạy) — lùi về insert không có token.
+      if (res.error) res = await supabase.from("practice_sessions").insert(base).select("id").single();
+      if (res.error || !res.data) return false;
+      sessionId = res.data.id as number;
+    }
+    const data = { id: sessionId };
 
     const questions = input.picks.map((p) => p.question);
     const names = questionTopicNames(questions);

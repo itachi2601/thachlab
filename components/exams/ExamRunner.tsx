@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
-import ExamResultSummary from "@/components/exams/ExamResultSummary";
+import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
   buildQuestionResults,
@@ -16,7 +16,13 @@ import {
   QUESTION_FORM_LABELS,
   questionTopicNames,
 } from "@/features/exams/types";
+import { deriveTheoryStatus, STATUS_LABELS } from "@/features/progress/types";
 import { fetchQuestionTopics } from "@/services/analytics";
+import {
+  finishExamAttempt,
+  findExistingExamResultId,
+  startExamAttempt,
+} from "@/services/progress";
 import { getSupabase } from "@/services/supabase";
 
 type Phase = "intro" | "running" | "done";
@@ -44,7 +50,17 @@ function formatClock(totalSeconds: number) {
   return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
-export default function ExamRunner({ exam }: { exam: Exam }) {
+export default function ExamRunner({
+  exam,
+  itemId = null,
+  minCorrect = null,
+}: {
+  exam: Exam;
+  /** Mục bài học đang gắn đề này (nếu có) — dùng để ghi nhận exam_attempts. */
+  itemId?: number | null;
+  /** Chỉ có khi đây là quiz kiểm tra nhanh cuối lý thuyết: số câu đúng tối thiểu để đạt. */
+  minCorrect?: number | null;
+}) {
   const { session, profile } = useAuth();
   const [phase, setPhase] = useState<Phase>("intro");
   const [responses, setResponses] = useState<QuestionResponse[]>(() =>
@@ -64,11 +80,14 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
   } | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef(0);
-  const submittedRef = useRef(false);
+  const submittedRef = useRef(false); // chặn nộp 2 lần (nút + hết giờ), KHÔNG chặn thử lưu lại
   const responsesRef = useRef(responses);
   const violationsRef = useRef<Violation[]>([]);
   const hiddenAtRef = useRef<number | null>(null);
   const everFullscreenRef = useRef(false);
+  // Sinh 1 lần/lượt làm, giữ nguyên khi bấm "Thử lại" — chống lưu trùng nếu mạng lỗi giữa chừng.
+  const clientTokenRef = useRef<string>(crypto.randomUUID());
+  const savedResultIdRef = useRef<number | null>(null);
 
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
@@ -103,24 +122,21 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
       .catch(() => undefined);
   }, [phase, exam.questions]);
 
-  // submit được gọi từ nút bấm và từ interval hết giờ — chấm và lưu ngay tại đây
-  const submit = useCallback(() => {
-    if (submittedRef.current) return;
-    submittedRef.current = true;
-    setUsedSeconds(Math.round((Date.now() - startedAt.current) / 1000));
-    setPhase("done");
-    if (document.fullscreenElement) document.exitFullscreen().catch(() => undefined);
+  // Lưu điểm — retry-an-toàn: kiểm tra client_token đã có chưa trước khi insert,
+  // để bấm "Thử lại" sau lỗi mạng không tạo thêm một lượt làm mới.
+  const save = useCallback(() => {
     if (!session) return;
     setSaveState("saving");
     const finalResponses = responsesRef.current;
     const summary = gradeExam(exam.questions, finalResponses);
     const studentId = session.user.id;
+    const token = clientTokenRef.current;
 
     void (async () => {
       const supabase = getSupabase();
-      const { data, error } = await supabase
-        .from("exam_results")
-        .insert({
+      let resultId = savedResultIdRef.current ?? (await findExistingExamResultId(token).catch(() => null));
+      if (!resultId) {
+        const base = {
           student_id: studentId,
           exam_id: exam.id,
           score: summary.score10,
@@ -131,16 +147,23 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           },
           violation_count: violationsRef.current.length,
           violations: violationsRef.current,
-        })
-        .select("id")
-        .single();
-      if (error || !data) {
-        setSaveState("failed");
-        return;
+        };
+        let res = await supabase.from("exam_results").insert({ ...base, client_token: token }).select("id").single();
+        // client_token là cột mới (migration chưa chạy) — lùi về insert không có token,
+        // chấp nhận mất khả năng chống trùng khi thử lại trên DB cũ.
+        if (res.error) res = await supabase.from("exam_results").insert(base).select("id").single();
+        if (res.error || !res.data) {
+          setSaveState("failed");
+          return;
+        }
+        resultId = res.data.id as number;
       }
+      savedResultIdRef.current = resultId;
       setSaveState("saved");
+      void finishExamAttempt(token, resultId);
       // Chốt đúng/sai + nhãn từng câu để phân tích chủ đề. Không chặn — lỗi ở
-      // đây chỉ mất dữ liệu phân tích, điểm vẫn được lưu ở trên.
+      // đây chỉ mất dữ liệu phân tích, điểm vẫn được lưu ở trên. Nếu lượt lưu
+      // trước đã tạo các dòng này rồi thì insert lại chỉ va khóa chính, bỏ qua.
       try {
         const names = questionTopicNames(exam.questions);
         const idByName = new Map<string, number>();
@@ -152,14 +175,24 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
         }
         const rows = buildQuestionResults(exam.questions, finalResponses, idByName).map(
-          (r) => ({ ...r, exam_result_id: data.id, student_id: studentId, exam_id: exam.id }),
+          (r) => ({ ...r, exam_result_id: resultId, student_id: studentId, exam_id: exam.id }),
         );
         await supabase.from("exam_question_results").insert(rows);
       } catch {
-        /* bảng phân tích chưa có / lỗi mạng — bỏ qua */
+        /* bảng phân tích chưa có / lỗi mạng / đã có từ lượt lưu trước — bỏ qua */
       }
     })();
   }, [exam, session]);
+
+  // submit được gọi từ nút bấm và từ interval hết giờ — chuyển màn hình 1 lần rồi lưu
+  const submit = useCallback(() => {
+    if (submittedRef.current) return;
+    submittedRef.current = true;
+    setUsedSeconds(Math.round((Date.now() - startedAt.current) / 1000));
+    setPhase("done");
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => undefined);
+    save();
+  }, [save]);
 
   const confirmSubmit = () => {
     if (
@@ -264,6 +297,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
             startedAt.current = Date.now();
             setPhase("running");
             document.documentElement.requestFullscreen().catch(() => undefined);
+            if (session) void startExamAttempt(session.user.id, clientTokenRef.current, exam.id, itemId);
           }}
           className="mt-6 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
         >
@@ -452,6 +486,28 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
     );
   }
 
+  const finalSummary = gradeExam(exam.questions, responses);
+  const hasEssay = exam.questions.some((q) => q.type === "essay");
+  let badge: ResultBadge | null = null;
+  if (hasEssay) {
+    badge = { label: STATUS_LABELS.pending_grading, tone: "pending" };
+  } else if (minCorrect !== null) {
+    const t = deriveTheoryStatus({
+      confirmedRead: true,
+      quizAttempts: [{ createdAt: new Date().toISOString(), correctCount: finalSummary.correctCount }],
+      minCorrect,
+    });
+    badge =
+      t.status === "passed"
+        ? { label: STATUS_LABELS.passed, tone: "pass" }
+        : { label: STATUS_LABELS.completed_not_passed, tone: "fail" };
+  } else if (exam.pass_score != null) {
+    badge =
+      finalSummary.score10 >= exam.pass_score
+        ? { label: STATUS_LABELS.passed, tone: "pass" }
+        : { label: STATUS_LABELS.completed_not_passed, tone: "fail" };
+  }
+
   return (
     <div className="mx-auto max-w-3xl">
       <ExamResultSummary
@@ -459,6 +515,7 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
         responses={responses}
         anchorPrefix="cau"
         detailAnchor="xem-lai-bai-lam"
+        badge={badge}
         meta={
           <>
             {profile?.full_name}
@@ -467,13 +524,29 @@ export default function ExamRunner({ exam }: { exam: Exam }) {
           </>
         }
       />
+      {hasEssay && (
+        <p className="mt-3 text-center text-xs text-violet-300">
+          Đề có {exam.questions.filter((q) => q.type === "essay").length} câu tự luận — thầy/cô chấm xong,
+          điểm sẽ được cập nhật.
+        </p>
+      )}
 
-      <p className="mt-4 text-center text-xs text-slate-500">
-        {saveState === "saving" && "Đang lưu điểm…"}
-        {saveState === "saved" && "✓ Điểm đã được lưu"}
-        {saveState === "failed" &&
-          "Không lưu được điểm — hãy chụp màn hình kết quả gửi thầy"}
-      </p>
+      <div className="mt-4 flex flex-col items-center gap-2 text-center text-xs text-slate-500">
+        {saveState === "saving" && <span>Đang lưu điểm…</span>}
+        {saveState === "saved" && <span>✓ Đã ghi nhận</span>}
+        {saveState === "failed" && (
+          <>
+            <span className="text-red-300">Chưa lưu được điểm — kiểm tra mạng rồi thử lại, đừng tắt trang này.</span>
+            <button
+              type="button"
+              onClick={save}
+              className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+            >
+              Thử lại
+            </button>
+          </>
+        )}
+      </div>
       <p className="mt-2 text-center">
         <Link href="/lop-hoc" className="text-sm text-primary hover:underline">
           ← Về danh sách đề

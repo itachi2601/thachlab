@@ -21,15 +21,20 @@ import { classGrade, displayClassesByGrade, expandClassIdsByGrade, fetchClasses,
 import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle, type LessonBundle } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
+import { suggestedMinCorrect } from "@/features/progress/types";
 import { getSupabase } from "@/services/supabase";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const selectCls = `${inputCls} bg-[#0B1020]`;
 
-type TargetKind = Extract<LessonItemKind, "kiem_tra" | "luyen_tap" | "bai_tap_ve_nha" | "bai_tap_mau">;
-const TARGET_KINDS: TargetKind[] = ["bai_tap_mau", "kiem_tra", "luyen_tap", "bai_tap_ve_nha"];
+type TargetKind = Extract<
+  LessonItemKind,
+  "ly_thuyet" | "kiem_tra" | "luyen_tap" | "bai_tap_ve_nha" | "bai_tap_mau"
+>;
+const TARGET_KINDS: TargetKind[] = ["ly_thuyet", "bai_tap_mau", "kiem_tra", "luyen_tap", "bai_tap_ve_nha"];
 const TARGET_HINT: Record<TargetKind, string> = {
+  ly_thuyet: "Kiểm tra nhanh cuối lý thuyết — vài câu, đạt khi đúng đủ số câu quy định, làm lại được.",
   bai_tap_mau: "Ghi đáp án, bấm Kiểm tra để biết đúng/sai, rồi mới xem lời giải — không vào điểm.",
   kiem_tra: "Tính giờ, nộp bài một lần, điểm vào bảng điểm.",
   luyen_tap: "Học sinh tự làm, xem đáp án ngay, không vào điểm.",
@@ -55,6 +60,9 @@ export default function AzotaExamComposer() {
   const [lessonId, setLessonId] = useState<number | null>(null);
   const [kind, setKind] = useState<TargetKind>("kiem_tra");
   const [dueAtInput, setDueAtInput] = useState<string | null>(null);
+  const [minCorrectInput, setMinCorrectInput] = useState<string | null>(null);
+  const [passScoreInput, setPassScoreInput] = useState<string | null>(null);
+  const [practicePassScoreInput, setPracticePassScoreInput] = useState<string | null>(null);
   const [examMode, setExamMode] = useState<"keep" | "replace">("keep");
   const [itemsCache, setItemsCache] = useState<{ lessonId: number; list: LessonItem[] } | null>(null);
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
@@ -136,6 +144,21 @@ export default function AzotaExamComposer() {
   const existingItems = itemsCache?.lessonId === lessonId ? itemsCache.list : null;
   const existingItem = existingItems?.find((it) => it.kind === kind) ?? null;
   const dueAt = dueAtInput ?? toLocalInput(existingItem?.due_at ?? null);
+  const minCorrect =
+    minCorrectInput ?? (existingItem?.quiz_min_correct != null ? String(existingItem.quiz_min_correct) : "");
+  const practicePassScore =
+    practicePassScoreInput ?? (existingItem?.practice_pass_score != null ? String(existingItem.practice_pass_score) : "");
+  const [existingExamPassScore, setExistingExamPassScore] = useState<number | null>(null);
+  useEffect(() => {
+    void (async () => {
+      setExistingExamPassScore(null);
+      const eid = existingItem?.exam_ids?.[0];
+      if (!eid || (kind !== "kiem_tra" && kind !== "bai_tap_ve_nha")) return;
+      const { data } = await getSupabase().from("exams").select("pass_score").eq("id", eid).single();
+      setExistingExamPassScore((data?.pass_score as number | null) ?? null);
+    })();
+  }, [existingItem, kind]);
+  const passScore = passScoreInput ?? (existingExamPassScore != null ? String(existingExamPassScore) : "");
 
   const targetClassIds = useMemo(() => {
     const base =
@@ -182,11 +205,16 @@ export default function AzotaExamComposer() {
       const rows = bundleToRows(resolved, lessonId);
 
       push(`Tạo đề "${rows.exam.title}" (${rows.exam.questions.length} câu, ${rows.exam.duration_minutes} phút)…`);
-      const { data: examRow, error: examErr } = await supabase
+      const passScoreValue =
+        (kind === "kiem_tra" || kind === "bai_tap_ve_nha") && passScore.trim() !== "" ? Number(passScore) : null;
+      let examRes = await supabase
         .from("exams")
-        .insert(rows.exam)
+        .insert({ ...rows.exam, pass_score: passScoreValue })
         .select("id")
         .single();
+      // pass_score là cột mới (migration chưa chạy) — lùi về đăng đề không có ngưỡng.
+      if (examRes.error) examRes = await supabase.from("exams").insert(rows.exam).select("id").single();
+      const { data: examRow, error: examErr } = examRes;
       if (examErr || !examRow) throw new Error(`Tạo đề lỗi: ${examErr?.message}`);
       const examId = examRow.id as number;
       createdExamId = examId;
@@ -200,22 +228,36 @@ export default function AzotaExamComposer() {
       const cur = existingItem;
       const hadExam = (cur?.exam_ids ?? []).length > 0;
       const nextIds = hadExam && examMode === "keep" ? [...cur!.exam_ids, examId] : [examId];
+      // ly_thuyet: mục đã có sẵn nội dung (đăng qua /quan-tri/bai-hoc hoặc nhap-bai) —
+      // ở đây chỉ gắn thêm quiz, TUYỆT ĐỐI không được ghi đè body_html/pdf_url/subtitle cũ.
       const payload = {
         lesson_id: lessonId,
         kind,
         title: cur?.title || SECTION_META[kind].label,
-        subtitle: typeCountSubtitle(rows.exam.questions, rows.exam.duration_minutes),
-        body_html: "",
-        video_url: "",
-        pdf_url: "",
+        subtitle: kind === "ly_thuyet" ? (cur?.subtitle ?? "") : typeCountSubtitle(rows.exam.questions, rows.exam.duration_minutes),
+        body_html: cur?.body_html ?? "",
+        video_url: cur?.video_url ?? "",
+        pdf_url: cur?.pdf_url ?? "",
         questions: cur?.questions ?? [],
         exam_ids: nextIds,
         sort_order: cur?.sort_order ?? SECTION_ORDER.indexOf(kind) + 1,
         ...(kind === "bai_tap_ve_nha" ? { due_at: dueAt ? new Date(dueAt).toISOString() : null } : {}),
       };
-      const r = cur
-        ? await supabase.from("lesson_items").update(payload).eq("id", cur.id)
-        : await supabase.from("lesson_items").insert(payload);
+      const extra = {
+        ...(kind === "ly_thuyet"
+          ? { quiz_min_correct: minCorrect.trim() ? Number(minCorrect) : suggestedMinCorrect(questions.length) }
+          : {}),
+        ...(kind === "luyen_tap" ? { practice_pass_score: practicePassScore.trim() ? Number(practicePassScore) : null } : {}),
+      };
+      let r = cur
+        ? await supabase.from("lesson_items").update({ ...payload, ...extra }).eq("id", cur.id)
+        : await supabase.from("lesson_items").insert({ ...payload, ...extra });
+      // quiz_min_correct/practice_pass_score là cột mới (migration chưa chạy) — lùi về không có ngưỡng.
+      if (r.error && Object.keys(extra).length > 0) {
+        r = cur
+          ? await supabase.from("lesson_items").update(payload).eq("id", cur.id)
+          : await supabase.from("lesson_items").insert(payload);
+      }
       if (r.error) throw new Error(`Mục ${SECTION_META[kind].label} lỗi: ${r.error.message}`);
       push(`${SECTION_META[kind].label}: ${cur ? "đã cập nhật" : "đã thêm"} (gắn đề ${examId}).`);
 
@@ -373,6 +415,51 @@ export default function AzotaExamComposer() {
           <label className="block text-xs font-semibold text-slate-400 sm:max-w-xs">
             Hạn nộp (để trống = không đặt hạn)
             <input type="datetime-local" value={dueAt} onChange={(e) => setDueAtInput(e.target.value)} className={`${inputCls} mt-1`} />
+          </label>
+        )}
+
+        {kind === "ly_thuyet" && (
+          <label className="block text-xs font-semibold text-slate-400 sm:max-w-xs">
+            Số câu cần đúng để đạt (để trống = tự gợi ý ~2/3 số câu)
+            <input
+              type="number"
+              min={1}
+              max={questions.length || undefined}
+              placeholder={questions.length ? String(suggestedMinCorrect(questions.length)) : "—"}
+              value={minCorrect}
+              onChange={(e) => setMinCorrectInput(e.target.value)}
+              className={`${inputCls} mt-1`}
+            />
+          </label>
+        )}
+
+        {(kind === "kiem_tra" || kind === "bai_tap_ve_nha") && (
+          <label className="block text-xs font-semibold text-slate-400 sm:max-w-xs">
+            Điểm đạt, thang 10 (để trống = chưa đánh giá đạt, chỉ tính đã nộp)
+            <input
+              type="number"
+              min={0}
+              max={10}
+              step={0.25}
+              value={passScore}
+              onChange={(e) => setPassScoreInput(e.target.value)}
+              className={`${inputCls} mt-1`}
+            />
+          </label>
+        )}
+
+        {kind === "luyen_tap" && (
+          <label className="block text-xs font-semibold text-slate-400 sm:max-w-xs">
+            Điểm đạt luyện tập, thang 10 (để trống = chỉ tính hoàn thành, không đánh giá đạt)
+            <input
+              type="number"
+              min={0}
+              max={10}
+              step={0.25}
+              value={practicePassScore}
+              onChange={(e) => setPracticePassScoreInput(e.target.value)}
+              className={`${inputCls} mt-1`}
+            />
           </label>
         )}
 

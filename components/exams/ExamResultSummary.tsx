@@ -95,6 +95,17 @@ function Ring({ pct, color }: { pct: number; color: string }) {
   );
 }
 
+export interface ResultBadge {
+  label: string;
+  tone: "pass" | "fail" | "pending";
+}
+
+const BADGE_CLS: Record<ResultBadge["tone"], string> = {
+  pass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
+  fail: "bg-red-500/15 text-red-300 border-red-500/40",
+  pending: "bg-violet-500/15 text-violet-300 border-violet-500/40",
+};
+
 interface Props {
   questions: ExamQuestion[];
   responses: QuestionResponse[];
@@ -104,6 +115,8 @@ interface Props {
   anchorPrefix?: string;
   /** Neo của khối "Xem lại bài làm" — có thì hiện nút CTA. */
   detailAnchor?: string;
+  /** Đạt/Chưa đạt/Chờ chấm — chỉ hiện khi giáo viên đã cấu hình ngưỡng cho đề này. */
+  badge?: ResultBadge | null;
 }
 
 export default function ExamResultSummary({
@@ -112,6 +125,7 @@ export default function ExamResultSummary({
   meta,
   anchorPrefix,
   detailAnchor,
+  badge,
 }: Props) {
   const summary = gradeExam(questions, responses);
   const pct = Math.round(summary.max > 0 ? (summary.earned / summary.max) * 100 : 0);
@@ -121,7 +135,14 @@ export default function ExamResultSummary({
   return (
     <div className="space-y-6">
       <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
-        <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
+          {badge && (
+            <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${BADGE_CLS[badge.tone]}`}>
+              {badge.label}
+            </span>
+          )}
+        </div>
         {meta && <p className="mt-1 text-sm text-slate-400">{meta}</p>}
 
         <div className="mt-5 flex flex-wrap items-center gap-6">

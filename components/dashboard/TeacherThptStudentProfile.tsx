@@ -5,6 +5,13 @@ import { Search } from "lucide-react";
 import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
+import { fetchStudentLearningHistory, type LearningHistoryEntry } from "@/services/progress";
+
+const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
+  theory: "Lý thuyết",
+  practice: "Luyện tập",
+  exam: "Đề kiểm tra",
+};
 
 const STATUS_LABEL: Record<string, string> = { present: "Có mặt", late: "Đi trễ", excused: "Vắng có phép", absent: "Vắng không phép" };
 
@@ -27,6 +34,7 @@ export default function TeacherThptStudentProfile({
   const [attendanceByStudent, setAttendanceByStudent] = useState<Map<string, Map<number, string>>>(new Map());
   const [cttcIds, setCttcIds] = useState<Set<string>>(new Set());
   const [removing, setRemoving] = useState(false);
+  const [history, setHistory] = useState<LearningHistoryEntry[]>([]);
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
 
@@ -37,6 +45,20 @@ export default function TeacherThptStudentProfile({
   useEffect(() => {
     fetchCttcStudentIds(studentIds).then(setCttcIds).catch(() => setCttcIds(new Set()));
   }, [studentIds]);
+
+  useEffect(() => {
+    void (async () => {
+      if (!selectedId) {
+        setHistory([]);
+        return;
+      }
+      try {
+        setHistory(await fetchStudentLearningHistory(selectedId));
+      } catch {
+        setHistory([]);
+      }
+    })();
+  }, [selectedId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -138,6 +160,29 @@ export default function TeacherThptStudentProfile({
                 Học sinh này cũng có tài khoản CTTC (học CNC/tiện phay) — có thể đã bị gán nhầm
                 vào lớp THPT này. Bấm &quot;Xóa khỏi lớp&quot; nếu đúng vậy.
               </p>
+            )}
+          </section>
+
+          <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+            <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>
+            {history.length ? (
+              <div className="mt-3 max-h-96 space-y-2 overflow-y-auto">
+                {history.map((entry, i) => (
+                  <div key={i} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 text-sm">
+                    <div className="min-w-0">
+                      <span className="mr-2 rounded-full border border-white/10 px-2 py-0.5 text-[10px] font-bold uppercase text-slate-400">
+                        {ACTIVITY_LABEL[entry.activity]}
+                      </span>
+                      <strong className="text-white">{entry.title}</strong>
+                      <small className="mt-1 block text-slate-500">
+                        {entry.detail} · {new Date(entry.at).toLocaleString("vi-VN")}
+                      </small>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-3 text-sm text-slate-500">Chưa có hoạt động học tập nào được ghi nhận.</p>
             )}
           </section>
 

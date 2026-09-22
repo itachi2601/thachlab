@@ -39,6 +39,8 @@ import {
   markItemDone,
   type LessonExamMeta,
 } from "@/services/lessons";
+import { fetchMyLearningProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
+import type { TheoryStatusResult } from "@/features/progress/types";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
@@ -161,7 +163,7 @@ function TheoryBlock({
         )}
         {loggedIn && open && (
           <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
-            <Check size={14} /> {done ? "Đã đọc" : "Đánh dấu đã đọc"}
+            <Check size={14} /> {done ? "Đã tự xác nhận đọc" : "Tôi đã đọc xong"}
           </button>
         )}
       </div>
@@ -169,20 +171,58 @@ function TheoryBlock({
   );
 }
 
+/** Quiz kiểm tra nhanh cuối lý thuyết: badge trạng thái + nút vào làm/làm lại, giữ lịch sử từng lần. */
+function TheoryQuizBlock({
+  examId,
+  itemId,
+  status,
+}: {
+  examId: number;
+  itemId: number;
+  status: TheoryStatusResult | undefined;
+}) {
+  const attempted = !!status && status.attemptCount > 0;
+  const tone =
+    status?.status === "passed" ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status";
+  return (
+    <div className="lesson-exam">
+      <div>
+        <p className="lesson-block-title">Kiểm tra nhanh</p>
+        <p className="lesson-block-sub">
+          {status?.status === "passed" && `Đúng ${status.bestCorrect} câu — `}
+          {status?.status === "completed_not_passed" &&
+            `Đúng ${status.bestCorrect} câu, chưa đạt (lần ${status.attemptCount}) — `}
+          <span className={tone}>{status?.label ?? "Chưa bắt đầu"}</span>
+        </p>
+      </div>
+      <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
+        {attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
+      </Link>
+    </div>
+  );
+}
+
 /** Một đề: tên, thời gian + số câu, trạng thái, nút làm bài. */
 function ExamRow({
   examId,
+  itemId,
   exam,
   score,
   loggedIn,
   metaStatus,
+  statusLabel,
+  passed,
 }: {
   examId: number;
+  itemId?: number | null;
   exam: LessonExamMeta | undefined;
   score: number | undefined;
   loggedIn: boolean;
   /** Trạng thái tải thông tin đề (chỉ có ý nghĩa khi đã đăng nhập) — phân biệt đang tải/lỗi/không thấy đề với chưa đăng nhập. */
   metaStatus: "loading" | "error" | "ready";
+  /** Nhãn Đạt/Chưa đạt/Chờ chấm/Đã nộp — chỉ có khi mục này đã tính được trạng thái. */
+  statusLabel?: string;
+  passed?: boolean;
 }) {
   if (!exam) {
     const notice = !loggedIn
@@ -217,12 +257,15 @@ function ExamRow({
         <p className="lesson-block-title">{exam.title}</p>
         <p className="lesson-block-sub">
           {exam.duration_minutes} phút · {counts || `${exam.question_count} câu`}
-          <span className={attempted ? "lesson-status-done" : "lesson-status"}>
-            {attempted ? `Đã làm · ${score} điểm` : "Chưa làm"}
+          <span className={attempted && passed !== false ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status"}>
+            {attempted ? `${statusLabel ?? "Đã làm"} · ${score} điểm` : "Chưa làm"}
           </span>
         </p>
       </div>
-      <Link href={`/kiem-tra/lam?id=${examId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
+      <Link
+        href={`/kiem-tra/lam?id=${examId}${itemId ? `&item=${itemId}` : ""}`}
+        className={attempted ? "lesson-btn-ghost" : "lesson-btn"}
+      >
         {attempted ? "Làm lại" : "Làm bài"}
       </Link>
     </div>
@@ -245,6 +288,7 @@ function LessonLoader() {
   const [examMetaStatus, setExamMetaStatus] = useState<"loading" | "error" | "ready">("loading");
   const [scores, setScores] = useState<Map<number, number>>(new Map());
   const [done, setDone] = useState<Set<number>>(new Set());
+  const [progress, setProgress] = useState<Map<number, ItemProgress>>(new Map());
   const [error, setError] = useState("");
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
@@ -294,7 +338,13 @@ function LessonLoader() {
     })();
     fetchMyExamScores(session.user.id).then(setScores);
     fetchMyProgress(session.user.id).then(setDone);
+    fetchMyLearningProgress(session.user.id, items).then(setProgress).catch(() => setProgress(new Map()));
   }, [session, items]);
+
+  const progressSummary = useMemo(
+    () => summarizeItemProgress(progress, items ?? []),
+    [progress, items],
+  );
 
   const sections = useMemo(() => {
     if (!items) return [];
@@ -419,7 +469,9 @@ function LessonLoader() {
 
   if (isPeriodicExam(lessonKind)) {
     const kindMeta = LESSON_KIND_META[lessonKind];
-    const examIds = items.filter((i) => i.kind === "kiem_tra").flatMap((i) => i.exam_ids);
+    const kiemTraItems = items.filter((i) => i.kind === "kiem_tra");
+    const examIds = kiemTraItems.flatMap((i) => i.exam_ids);
+    const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
       <div className="lesson-shell">
         <div className="lesson-main lesson-main--single">
@@ -433,16 +485,23 @@ function LessonLoader() {
             {examIds.length === 0 ? (
               <p className="lesson-muted">Đề kiểm tra đang được giảng viên cập nhật.</p>
             ) : (
-              examIds.map((examId) => (
-                <ExamRow
-                  key={examId}
-                  examId={examId}
-                  exam={examMetas.get(examId)}
-                  score={scores.get(examId)}
-                  loggedIn={!!session}
-                  metaStatus={examMetaStatus}
-                />
-              ))
+              examIds.map((examId) => {
+                const owningItem = itemByExamId.get(examId);
+                const graded = owningItem ? progress.get(owningItem.id)?.graded : undefined;
+                return (
+                  <ExamRow
+                    key={examId}
+                    examId={examId}
+                    itemId={owningItem?.id ?? null}
+                    exam={examMetas.get(examId)}
+                    score={scores.get(examId)}
+                    loggedIn={!!session}
+                    metaStatus={examMetaStatus}
+                    statusLabel={graded?.label}
+                    passed={graded ? graded.status === "passed" : undefined}
+                  />
+                );
+              })
             )}
           </div>
           {pager}
@@ -451,7 +510,6 @@ function LessonLoader() {
     );
   }
 
-  const completedItems = items.filter(isDone).length;
   const visibleSections = sections.filter((s) => s.items.length > 0);
 
   return (
@@ -483,12 +541,36 @@ function LessonLoader() {
               );
             })}
           </ol>
-          {session && items.length > 0 && (
-            <div className="lesson-progress" aria-label={`Đã hoàn thành ${completedItems} trên ${items.length} nội dung`}>
-              <span style={{ width: `${Math.round((completedItems / items.length) * 100)}%` }} />
-              <small>
-                {completedItems}/{items.length} nội dung
-              </small>
+          {session && items.length > 0 && progressSummary.totalRequired > 0 && (
+            <div style={{ marginTop: 8 }}>
+              <div
+                className="lesson-progress"
+                aria-label={`Hoàn thành ${progressSummary.completedRequired} trên ${progressSummary.totalRequired} mục bắt buộc`}
+              >
+                <span
+                  style={{
+                    width: `${Math.round((progressSummary.completedRequired / progressSummary.totalRequired) * 100)}%`,
+                  }}
+                />
+                <small>
+                  Hoàn thành {progressSummary.completedRequired}/{progressSummary.totalRequired}
+                </small>
+              </div>
+              <div
+                className="lesson-progress"
+                style={{ marginTop: 22 }}
+                aria-label={`Đạt ${progressSummary.passedRequired} trên ${progressSummary.totalRequired} mục bắt buộc`}
+              >
+                <span
+                  style={{
+                    width: `${Math.round((progressSummary.passedRequired / progressSummary.totalRequired) * 100)}%`,
+                    background: "#10B981",
+                  }}
+                />
+                <small>
+                  Đạt {progressSummary.passedRequired}/{progressSummary.totalRequired}
+                </small>
+              </div>
             </div>
           )}
         </aside>
@@ -536,15 +618,23 @@ function LessonLoader() {
 
                     if (item.kind === "ly_thuyet")
                       return (
-                        <TheoryBlock
-                          key={item.id}
-                          item={item}
-                          defaultOpen={itemIndex === 0}
-                          hideTitle={plain}
-                          done={done.has(item.id)}
-                          loggedIn={!!session}
-                          onDone={() => markDone(item)}
-                        />
+                        <div key={item.id} className="lesson-stack">
+                          <TheoryBlock
+                            item={item}
+                            defaultOpen={itemIndex === 0}
+                            hideTitle={plain}
+                            done={done.has(item.id)}
+                            loggedIn={!!session}
+                            onDone={() => markDone(item)}
+                          />
+                          {session && item.exam_ids.length > 0 && (
+                            <TheoryQuizBlock
+                              examId={item.exam_ids[0]}
+                              itemId={item.id}
+                              status={progress.get(item.id)?.theory}
+                            />
+                          )}
+                        </div>
                       );
 
                     if (isGradedKind(item.kind))
@@ -562,16 +652,22 @@ function LessonLoader() {
                             <p className="lesson-muted">Chưa gắn đề</p>
                           ) : (
                             <div className="lesson-stack">
-                              {item.exam_ids.map((examId) => (
-                                <ExamRow
-                                  key={examId}
-                                  examId={examId}
-                                  exam={examMetas.get(examId)}
-                                  score={scores.get(examId)}
-                                  loggedIn={!!session}
-                                  metaStatus={examMetaStatus}
-                                />
-                              ))}
+                              {item.exam_ids.map((examId) => {
+                                const graded = progress.get(item.id)?.graded;
+                                return (
+                                  <ExamRow
+                                    key={examId}
+                                    examId={examId}
+                                    itemId={item.id}
+                                    exam={examMetas.get(examId)}
+                                    score={scores.get(examId)}
+                                    loggedIn={!!session}
+                                    metaStatus={examMetaStatus}
+                                    statusLabel={graded?.label}
+                                    passed={graded ? graded.status === "passed" : undefined}
+                                  />
+                                );
+                              })}
                             </div>
                           )}
                         </div>
@@ -598,6 +694,7 @@ function LessonLoader() {
                             examIds={item.exam_ids}
                             lessonId={id}
                             itemId={item.id}
+                            passScore={item.practice_pass_score}
                             color={ACCENT}
                           />
                         )}

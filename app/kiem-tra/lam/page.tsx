@@ -14,27 +14,52 @@ function ExamLoader() {
   const { session } = useAuth();
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
+  const itemIdParam = searchParams.get("item");
+  const itemId = itemIdParam ? Number(itemIdParam) : null;
   const [exam, setExam] = useState<Exam | null>(null);
+  const [minCorrect, setMinCorrect] = useState<number | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
     if (!session || !id) return;
-    getSupabase()
-      .from("exams")
-      .select("id, title, duration_minutes, published, questions")
-      .eq("id", id)
-      .single()
-      .then(({ data, error }) => {
-        if (error || !data) setError("Không tìm thấy đề này.");
-        else setExam(data as Exam);
-      });
+    void (async () => {
+      const supabase = getSupabase();
+      let res = await supabase
+        .from("exams")
+        .select("id, title, duration_minutes, published, questions, pass_score")
+        .eq("id", id)
+        .single();
+      // pass_score là cột mới (docs/supabase-migration-learning-progress.sql) — lùi
+      // về danh sách cột cũ khi DB chưa chạy migration.
+      if (res.error) {
+        res = await supabase
+          .from("exams")
+          .select("id, title, duration_minutes, published, questions")
+          .eq("id", id)
+          .single();
+      }
+      if (res.error || !res.data) setError("Không tìm thấy đề này.");
+      else setExam(res.data as Exam);
+    })();
   }, [session, id]);
+
+  useEffect(() => {
+    if (!session || !itemId) return;
+    getSupabase()
+      .from("lesson_items")
+      .select("kind, quiz_min_correct")
+      .eq("id", itemId)
+      .single()
+      .then(({ data }) => {
+        if (data?.kind === "ly_thuyet") setMinCorrect((data.quiz_min_correct as number | null) ?? null);
+      });
+  }, [session, itemId]);
 
   if (!id)
     return <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
   if (error) return <p className="text-center text-red-400">{error}</p>;
   if (!exam) return <p className="text-center text-slate-400">Đang tải đề…</p>;
-  return <ExamRunner exam={exam} />;
+  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} />;
 }
 
 export default function TakeExamPage() {

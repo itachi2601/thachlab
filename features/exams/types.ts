@@ -90,6 +90,7 @@ export interface Exam {
   difficulty?: Difficulty;
   created_at?: string;
   cnc_key?: string | null;
+  pass_score?: number | null; // điểm đạt thang 10, null = giáo viên chưa cấu hình
 }
 
 // Bài làm của học sinh: song song với mảng questions
