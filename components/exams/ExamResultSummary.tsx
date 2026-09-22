@@ -3,12 +3,9 @@
 import { Eye } from "lucide-react";
 import {
   gradeExam,
-  questionStatus,
   statsByType,
-  QUESTION_STATUS_LABELS,
   type ExamQuestion,
   type QuestionResponse,
-  type QuestionStatus,
 } from "@/features/exams/types";
 
 const num = (v: number) => v.toLocaleString("vi-VN", { maximumFractionDigits: 2 });
@@ -43,15 +40,6 @@ function tone(pct: number) {
     message: "🌱 Em đang bắt đầu, luyện thêm sẽ tiến bộ rất nhanh!",
   };
 }
-
-/** Ô số trong lưới điều hướng câu hỏi — cùng tông màu với bảng thống kê. */
-const NAV_DOT: Record<QuestionStatus, string> = {
-  correct: "border-emerald-500/60 bg-emerald-500/15 text-emerald-200 hover:border-emerald-400",
-  partial: "border-amber-500/60 bg-amber-500/15 text-amber-200 hover:border-amber-400",
-  wrong: "border-red-500/60 bg-red-500/15 text-red-200 hover:border-red-400",
-  skipped: "border-white/15 text-slate-400 hover:border-white/30",
-  manual: "border-violet-400/60 bg-violet-500/15 text-violet-200 hover:border-violet-300",
-};
 
 function Ring({ pct, color }: { pct: number; color: string }) {
   const r = 52;
@@ -111,8 +99,6 @@ interface Props {
   responses: QuestionResponse[];
   /** Dòng phụ dưới lời động viên: tên học sinh, thời gian làm bài, hạng… */
   meta?: React.ReactNode;
-  /** Tiền tố id của từng câu trong phần xem lại, để bấm là nhảy tới câu đó. */
-  anchorPrefix?: string;
   /** Neo của khối "Xem lại bài làm" — có thì hiện nút CTA. */
   detailAnchor?: string;
   /** Đạt/Chưa đạt/Chờ chấm — chỉ hiện khi giáo viên đã cấu hình ngưỡng cho đề này. */
@@ -123,7 +109,6 @@ export default function ExamResultSummary({
   questions,
   responses,
   meta,
-  anchorPrefix,
   detailAnchor,
   badge,
 }: Props) {
@@ -225,60 +210,6 @@ export default function ExamResultSummary({
               )}
             </div>
           ))}
-        </div>
-      </section>
-
-      <section>
-        <h3 className="mb-3 font-display font-semibold text-white">
-          Bảng câu hỏi{" "}
-          <span className="text-sm font-normal text-slate-400">({questions.length} câu)</span>
-        </h3>
-        <div className="flex flex-wrap gap-1.5">
-          {questions.map((q, i) => {
-            const status = questionStatus(q, responses[i]);
-            const cls = NAV_DOT[status];
-            const title = `Câu ${i + 1} · ${QUESTION_STATUS_LABELS[status]}`;
-            return anchorPrefix ? (
-              <a
-                key={i}
-                href={`#${anchorPrefix}-${i + 1}`}
-                title={title}
-                className={`flex h-9 w-9 items-center justify-center rounded-lg border text-xs font-bold transition-colors ${cls}`}
-              >
-                {i + 1}
-              </a>
-            ) : (
-              <span
-                key={i}
-                title={title}
-                className={`flex h-9 w-9 items-center justify-center rounded-lg border text-xs font-bold ${cls}`}
-              >
-                {i + 1}
-              </span>
-            );
-          })}
-        </div>
-        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-emerald-500/60 bg-emerald-500/15" />
-            Đúng
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-amber-500/60 bg-amber-500/15" />
-            Đúng một phần
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-red-500/60 bg-red-500/15" />
-            Sai
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-white/15" />
-            Bỏ qua
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded border border-violet-400/60 bg-violet-500/15" />
-            Thầy chấm
-          </span>
         </div>
       </section>
     </div>

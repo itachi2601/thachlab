@@ -3,17 +3,12 @@
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ChevronDown, ChevronLeft, Trophy } from "lucide-react";
+import { ChevronLeft, Trophy } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
-import QuestionCard from "@/components/exams/QuestionCard";
 import ExamResultSummary from "@/components/exams/ExamResultSummary";
-import {
-  QUESTION_STATUS_LABELS,
-  questionStatus,
-  type QuestionStatus,
-} from "@/features/exams/types";
+import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import {
   fetchExamRank,
   fetchMyExamResultDetail,
@@ -21,14 +16,6 @@ import {
   type MyExamAttemptDetail,
 } from "@/services/analytics";
 import { supabaseConfigured } from "@/services/supabase";
-
-const STATUS_PILL: Record<QuestionStatus, string> = {
-  correct: "bg-emerald-500/15 text-emerald-300",
-  partial: "bg-amber-500/15 text-amber-300",
-  wrong: "bg-red-500/15 text-red-300",
-  skipped: "bg-slate-500/20 text-slate-400",
-  manual: "bg-violet-500/15 text-violet-300",
-};
 
 function AttemptDetail({ resultId }: { resultId: number }) {
   const [detail, setDetail] = useState<MyExamAttemptDetail | null | undefined>(undefined);
@@ -70,7 +57,6 @@ function AttemptDetail({ resultId }: { resultId: number }) {
       <ExamResultSummary
         questions={detail.questions}
         responses={detail.responses}
-        anchorPrefix="cau"
         detailAnchor="xem-lai-tung-cau"
         meta={
           rank ? (
@@ -89,34 +75,9 @@ function AttemptDetail({ resultId }: { resultId: number }) {
         Xem lại từng câu
       </h2>
       <p className="mb-4 text-sm text-slate-500">
-        Bấm vào số câu ở bảng phía trên để nhảy nhanh tới câu đó. Câu sai/làm dở tự mở sẵn.
+        Bấm số câu ở bảng bên dưới để xem nhanh — bảng luôn ghim trên đầu khi em cuộn trang.
       </p>
-      <ol className="space-y-3">
-        {detail.questions.map((q, i) => {
-          const status = questionStatus(q, detail.responses[i]);
-          return (
-            <li key={i}>
-              <details id={`cau-${i + 1}`} open={status !== "correct"} className="scroll-mt-24 group">
-                <summary className="flex cursor-pointer list-none items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-3.5 hover:border-white/25">
-                  <span className="font-display font-semibold text-white">Câu {i + 1}</span>
-                  <span
-                    className={`ml-auto rounded-lg px-2.5 py-1 text-xs font-semibold ${STATUS_PILL[status]}`}
-                  >
-                    {QUESTION_STATUS_LABELS[status]}
-                  </span>
-                  <ChevronDown
-                    size={18}
-                    className="shrink-0 text-slate-500 transition-transform group-open:rotate-180"
-                  />
-                </summary>
-                <div className="mt-3">
-                  <QuestionCard index={i + 1} question={q} response={detail.responses[i]} review />
-                </div>
-              </details>
-            </li>
-          );
-        })}
-      </ol>
+      <ExamReviewPager questions={detail.questions} responses={detail.responses} />
     </>
   );
 }

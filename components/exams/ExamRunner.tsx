@@ -6,6 +6,7 @@ import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
+import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
   buildQuestionResults,
@@ -513,7 +514,6 @@ export default function ExamRunner({
       <ExamResultSummary
         questions={exam.questions}
         responses={responses}
-        anchorPrefix="cau"
         detailAnchor="xem-lai-bai-lam"
         badge={badge}
         meta={
@@ -559,8 +559,14 @@ export default function ExamRunner({
       >
         Xem lại bài làm
       </h2>
-      <ol className="space-y-6">
-        {exam.questions.map((q, qi) => {
+      <p className="mb-4 text-sm text-slate-500">
+        Bấm số câu ở bảng bên dưới để xem nhanh — bảng luôn ghim trên đầu khi em cuộn trang.
+      </p>
+      <ExamReviewPager
+        questions={exam.questions}
+        responses={responses}
+        renderAbove={(qi) => {
+          const q = exam.questions[qi];
           const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
           const wrong = g ? g.earned < g.max : false;
           const topicName = (q.topic ?? "").trim();
@@ -570,40 +576,31 @@ export default function ExamRunner({
               ? QUESTION_FORM_LABELS[q.form]
               : "";
           const stage = q.form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
+          if (!wrong || (!topicName && !formLabel)) return null;
           return (
-            <li key={qi} id={`cau-${qi + 1}`} className="scroll-mt-24">
-              {wrong && (topicName || formLabel) && (
-                <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
-                  {topicName && (
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-1 font-semibold text-amber-300">
-                      {topicName}
-                    </span>
-                  )}
-                  {formLabel && (
-                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
-                      {formLabel}
-                    </span>
-                  )}
-                  {lessonId && (
-                    <Link
-                      href={`/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}`}
-                      className="font-semibold text-primary hover:underline"
-                    >
-                      Ôn ngay →
-                    </Link>
-                  )}
-                </div>
+            <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
+              {topicName && (
+                <span className="rounded-full bg-amber-500/15 px-2.5 py-1 font-semibold text-amber-300">
+                  {topicName}
+                </span>
               )}
-              <QuestionCard
-                index={qi + 1}
-                question={q}
-                response={responses[qi]}
-                review
-              />
-            </li>
+              {formLabel && (
+                <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
+                  {formLabel}
+                </span>
+              )}
+              {lessonId && (
+                <Link
+                  href={`/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}`}
+                  className="font-semibold text-primary hover:underline"
+                >
+                  Ôn ngay →
+                </Link>
+              )}
+            </div>
           );
-        })}
-      </ol>
+        }}
+      />
     </div>
   );
 }
