@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AuthProvider from "@/components/auth/AuthProvider";
 import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
 import PreviewAsTaToggle from "@/components/tro-giang/PreviewAsTaToggle";
+import BugReportWidget from "@/components/BugReportWidget";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -94,6 +95,7 @@ export default function RootLayout({
             {children}
             <PreviewAsStudentToggle />
             <PreviewAsTaToggle />
+            <BugReportWidget />
           </ToastProvider>
         </AuthProvider>
       </body>

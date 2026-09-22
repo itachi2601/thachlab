@@ -1,5 +1,6 @@
 import {
   BookOpen,
+  Bug,
   ClipboardList,
   Database,
   FileUp,
@@ -62,6 +63,7 @@ export const SHARED_ITEMS: AdminNavItem[] = [
   { href: "/quan-tri/phan-cong-giang-vien", label: "Phân công giảng viên", desc: "Gán khu vực quản trị cho giảng viên", icon: UserCog },
   { href: "/quan-tri/tin-nhan", label: "Tin nhắn", desc: "Gửi và đọc tin nhắn với học sinh", icon: MessageSquare },
   { href: "/quan-tri/bai-dang", label: "Thông báo / học liệu", desc: "Bài đăng hiển thị cho học sinh", icon: Megaphone },
+  { href: "/quan-tri/bao-loi", label: "Báo lỗi", desc: "Lỗi người dùng gửi từ nút nổi trên web", icon: Bug },
 ];
 
 export const OVERVIEW_ITEM: AdminNavItem = {
