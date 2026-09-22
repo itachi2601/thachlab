@@ -60,8 +60,35 @@ làm mọi thứ với khoá và đăng ký của khối; người đăng ký ch
 - `components/dashboard/TeacherThptEnrollment.tsx` — tab Ghi danh.
 - `app/phu-huynh/page.tsx` — mục "Đăng ký học" + nút đăng ký cho con.
 
-## Bước 3 (chưa làm) — vào lớp trễ
+## Vào lớp trễ — bù bài trước khi vào lớp chính thức
 
-Đăng ký khi `joined_late`: chọn chương đã học nơi khác; phần còn lại thành
-`catchup_topic_ids`; đăng ký ca trong lịch tuần của trợ giảng khối (`tutoring_slots`), chương
-gần nhất trước rồi lùi dần; trợ giảng ghi đủ buổi → `status` `catchup` → `active`.
+Migration: `docs/supabase-migration-bu-bai.sql` (chạy sau file khoá học).
+
+1. Giáo viên đặt mốc **Lớp đang dạy tới bài** cho từng lớp (tab Ghi danh, chọn trong chủ đề
+   tầng bài của khối). Cập nhật mỗi khi qua bài mới. Chưa đặt mốc thì không tính được phần bù.
+2. Đăng ký sau khai giảng: form hiện phần lớp đã học (bài gần nhất trước) để em / phụ huynh
+   tick **bài đã học ở nơi khác**. Bài chưa tick thành danh sách cần bù. Chưa học ở đâu thì
+   không tick gì, bù toàn bộ.
+3. Thứ tự bù: **bài lớp vừa học trước**, rồi lùi dần về các bài trước — buổi đầu bù đúng phần
+   lớp đang học để em theo kịp ngay.
+4. Giáo viên duyệt ("Duyệt · bù bài trước") → em vào khối (`user_classes` active, đọc được bài,
+   đăng ký được ca phụ đạo) nhưng trạng thái ghi danh là **Đang bù bài**.
+5. Trang tài khoản của em và trang phụ huynh hiện thẻ **Bù bài**: danh sách bài theo thứ tự,
+   bài đã bù gạch đi, và các ca trong lịch tuần của trợ giảng khối (`tutoring_slots`). Ca dạy
+   đúng bài kế tiếp được gợi ý lên đầu; ca không đúng bài xếp ở mục "Ca khác". Phụ huynh đăng
+   ký ca cho con được (policy `parent registers child`).
+6. Trợ giảng ghi buổi phụ đạo như bình thường (`/tro-giang/ghi`, tick bài đã dạy). Trigger
+   `trg_catchup_progress` gạch bài đó khỏi danh sách; hết danh sách → **Đã vào lớp**. Giáo
+   viên cũng bấm "Xong bù bài · vào lớp" được.
+
+| Tên | Vai trò |
+|---|---|
+| `thpt_courses.current_topic_id` | Mốc lớp đang dạy tới (chủ đề tầng bài) |
+| `thpt_registrations.known_topic_ids` | Bài em đã học nơi khác |
+| `thpt_registrations.catchup_topic_ids` | Bài cần bù, phần tử đầu là bài kế tiếp |
+| `thpt_registrations.catchup_done_topic_ids` | Bài đã bù |
+| `thpt_taught_topics(course)` | Phần lớp đã học, gần nhất trước (anon đọc được) |
+| `thpt_set_catchup(reg, known[])` | Chốt danh sách bù; đang catchup mà trống → active |
+| `trg_catchup_progress` | Buổi phụ đạo ghi xong → gạch bài, hết → active |
+
+`components/results/CatchupCard.tsx` dùng chung cho `ThptStudentHome` và `/phu-huynh`.

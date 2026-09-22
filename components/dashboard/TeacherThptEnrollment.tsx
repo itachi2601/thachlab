@@ -5,7 +5,8 @@ import { CalendarDays, Check, ChevronDown, Eye, EyeOff, Link2, Plus, Trash2, Use
 import { useToast } from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import { currentSchoolYear } from "@/components/dashboard/CreateCourseForm";
-import { fetchUnassignedStudents, type ClassStudent, type UnassignedStudent } from "@/services/classes";
+import { classGrade, fetchUnassignedStudents, type ClassStudent, type UnassignedStudent } from "@/services/classes";
+import { fetchQuestionTopics, lessonTopics, type QuestionTopic } from "@/services/analytics";
 import {
   attachStudent,
   createCourse,
@@ -173,8 +174,19 @@ function AttachPicker({ registration, students, onDone }: { registration: Regist
 }
 
 // ---------- Một khoá + danh sách đăng ký ----------
-function CourseBlock({ course, students, onChanged }: { course: ThptCourse; students: ClassStudent[]; onChanged: () => void }) {
+function CourseBlock({ course, students, topics, onChanged }: { course: ThptCourse; students: ClassStudent[]; topics: QuestionTopic[]; onChanged: () => void }) {
   const toast = useToast();
+  const topicName = useMemo(() => new Map(topics.map((t) => [t.id, t.name])), [topics]);
+
+  async function setCurrentTopic(id: number | null) {
+    try {
+      await updateCourse(course.id, { current_topic_id: id });
+      toast("success", id ? "Đã ghi mốc lớp đang dạy tới." : "Đã bỏ mốc.");
+      onChanged();
+    } catch (error) {
+      toast("error", errorMessage(error, "Chưa lưu được."));
+    }
+  }
   const [open, setOpen] = useState(true);
   const [regs, setRegs] = useState<Registration[] | null>(null);
   const [editingSchedule, setEditingSchedule] = useState(false);
@@ -263,7 +275,8 @@ function CourseBlock({ course, students, onChanged }: { course: ThptCourse; stud
     return out.sort((a, b) => a.full_name.localeCompare(b.full_name, "vi"));
   }, [unassigned, students]);
 
-  const pending = (regs ?? []).filter((r) => r.status === "pending" || r.status === "catchup");
+  const pending = (regs ?? []).filter((r) => r.status === "pending");
+  const catchup = (regs ?? []).filter((r) => r.status === "catchup");
   const active = (regs ?? []).filter((r) => r.status === "active");
   const others = (regs ?? []).filter((r) => r.status === "rejected" || r.status === "left");
   const publicLink = `${SITE_URL}/khoa-hoc/dang-ky/?id=${course.id}`;
@@ -330,6 +343,23 @@ function CourseBlock({ course, students, onChanged }: { course: ThptCourse; stud
             )}
           </div>
 
+          <div className="rounded-xl bg-white/[.02] p-3">
+            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Lớp đang dạy tới bài</p>
+            <select
+              value={course.current_topic_id ?? ""}
+              onChange={(e) => setCurrentTopic(e.target.value ? Number(e.target.value) : null)}
+              className={`${inputCls} mt-2 w-full max-w-md`}
+            >
+              <option value="">— chưa đặt (em vào trễ sẽ không có danh sách bù) —</option>
+              {topics.map((t) => (
+                <option key={t.id} value={t.id}>{t.name}</option>
+              ))}
+            </select>
+            <p className="mt-1 text-xs text-slate-500">
+              Mọi bài từ đầu tới mốc này là phần em vào trễ phải bù (trừ bài em đã học nơi khác). Cập nhật mỗi khi qua bài mới.
+            </p>
+          </div>
+
           {regs === null ? (
             <p className="text-sm text-slate-500">Đang tải đăng ký…</p>
           ) : regs.length === 0 ? (
@@ -354,14 +384,48 @@ function CourseBlock({ course, students, onChanged }: { course: ThptCourse; stud
                           {r.contact ? ` · ${r.contact}` : ""}
                           {r.note ? ` · "${r.note}"` : ""}
                         </p>
+                        {r.joined_late && (
+                          <p className="mt-1 text-xs text-slate-400">
+                            {r.catchup_topic_ids.length > 0
+                              ? `Cần bù ${r.catchup_topic_ids.length} bài: ${r.catchup_topic_ids.map((id) => topicName.get(id) ?? `#${id}`).join(" → ")}`
+                              : course.current_topic_id
+                                ? "Không còn bài phải bù (đã học hết ở nơi khác) — duyệt là vào lớp."
+                                : "Chưa đặt mốc “Lớp đang dạy tới bài” nên chưa tính được phần bù — đặt mốc rồi duyệt."}
+                          </p>
+                        )}
                         {r.student_id === null ? (
                           <AttachPicker registration={r} students={attachable} onDone={reload} />
                         ) : (
                           <div className="mt-2 flex flex-wrap gap-2">
-                            <button type="button" onClick={() => review(r, "active")} className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white"><UserCheck size={13} /> Duyệt vào lớp</button>
+                            <button type="button" onClick={() => review(r, "active")} className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white"><UserCheck size={13} /> {r.joined_late && r.catchup_topic_ids.length > 0 ? "Duyệt · bù bài trước" : "Duyệt vào lớp"}</button>
                             <button type="button" onClick={() => review(r, "rejected")} className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-bold text-red-300"><UserX size={13} /> Từ chối</button>
                           </div>
                         )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {catchup.length > 0 && (
+                <div>
+                  <h4 className="mb-2 text-xs font-bold uppercase tracking-wide text-blue-300">Đang bù bài · {catchup.length}</h4>
+                  <ul className="space-y-2">
+                    {catchup.map((r) => (
+                      <li key={r.id} className="rounded-xl border border-blue-500/20 bg-blue-500/[.04] p-3 text-sm">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <strong className="text-white">{r.studentName}</strong>
+                          <span className="text-xs text-slate-400">
+                            đã bù {r.catchup_done_topic_ids.length} · còn {r.catchup_topic_ids.length}
+                          </span>
+                          <button type="button" onClick={() => review(r, "active")} className="ml-auto inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white"><Check size={13} /> Xong bù bài · vào lớp</button>
+                        </div>
+                        <p className="mt-1 text-xs text-slate-400">
+                          Kế tiếp: {r.catchup_topic_ids.map((id) => topicName.get(id) ?? `#${id}`).join(" → ") || "—"}
+                        </p>
+                        <p className="mt-0.5 text-xs text-slate-500">
+                          Trợ giảng ghi buổi phụ đạo đúng bài là tự gạch; hết danh sách tự chuyển sang “Đã vào lớp”.
+                        </p>
                       </li>
                     ))}
                   </ul>
@@ -423,6 +487,13 @@ export default function TeacherThptEnrollment({ classId, className, students, on
 }) {
   const [courses, setCourses] = useState<ThptCourse[] | null>(null);
   const [error, setError] = useState("");
+  const [topics, setTopics] = useState<QuestionTopic[]>([]);
+
+  useEffect(() => {
+    const grade = classGrade(className);
+    const load = grade ? fetchQuestionTopics(grade).then(lessonTopics) : Promise.resolve([] as QuestionTopic[]);
+    load.then(setTopics).catch(() => setTopics([]));
+  }, [className]);
 
   const reload = useCallback(() => {
     fetchCoursesForClass(classId)
@@ -452,7 +523,7 @@ export default function TeacherThptEnrollment({ classId, className, students, on
         <p className="rounded-2xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500">Khối này chưa có lớp nào. Mở lớp mới ở trên.</p>
       ) : (
         courses.map((course) => (
-          <CourseBlock key={`${course.id}-${course.taken}-${course.is_public}-${course.status}`} course={course} students={students} onChanged={() => { reload(); onStudentsChanged?.(); }} />
+          <CourseBlock key={`${course.id}-${course.taken}-${course.is_public}-${course.status}-${course.current_topic_id ?? 0}`} course={course} students={students} topics={topics} onChanged={() => { reload(); onStudentsChanged?.(); }} />
         ))
       )}
     </div>

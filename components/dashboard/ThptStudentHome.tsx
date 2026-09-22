@@ -9,6 +9,7 @@ import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
+import CatchupCard from "@/components/results/CatchupCard";
 import {
   fetchChapters,
   fetchLessonProgressSummaries,
@@ -363,6 +364,8 @@ export default function ThptStudentHome({
       </Section>
 
       {/* Mục 3 — Chủ đề cần phụ đạo */}
+      <CatchupCard studentId={studentId} classId={classId} viewer="student" />
+
       <Section icon={Users} title="Chủ đề cần phụ đạo">
         <div className="mt-3 space-y-4">
           {needs.length === 0 ? (

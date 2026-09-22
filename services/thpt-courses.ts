@@ -50,18 +50,20 @@ export interface ThptCourse {
   fee_note: string;
   is_public: boolean;
   status: CourseStatus;
+  /** Chủ đề tầng bài (question_topics) lớp đang dạy tới — để tính phần cần bù cho em vào trễ. */
+  current_topic_id: number | null;
   schedules: CourseSchedule[];
   /** Số chỗ đã lấy (pending + catchup + active). */
   taken: number;
 }
 
 const COURSE_SELECT =
-  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
+  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
 
 type CourseRow = {
   id: number; class_id: number; name: string; description: string; school_year: string;
   starts_at: string | null; ends_at: string | null; capacity: number | null; fee_note: string;
-  is_public: boolean; status: CourseStatus;
+  is_public: boolean; status: CourseStatus; current_topic_id: number | null;
   classes: { name: string } | { name: string }[] | null;
   thpt_course_schedules: { id: number; weekday: number; start_time: string; end_time: string; location: string }[] | null;
 };
@@ -78,7 +80,8 @@ function toCourse(row: CourseRow, taken: number): ThptCourse {
   return {
     id: row.id, class_id: row.class_id, className: cls?.name ?? "", name: row.name, description: row.description,
     school_year: row.school_year, starts_at: row.starts_at, ends_at: row.ends_at, capacity: row.capacity,
-    fee_note: row.fee_note, is_public: row.is_public, status: row.status, schedules, taken,
+    fee_note: row.fee_note, is_public: row.is_public, status: row.status, current_topic_id: row.current_topic_id ?? null,
+    schedules, taken,
   };
 }
 
@@ -134,6 +137,7 @@ export interface CourseInput {
   fee_note: string;
   is_public: boolean;
   status: CourseStatus;
+  current_topic_id?: number | null;
 }
 
 export async function createCourse(input: CourseInput, schedules: CourseSchedule[]): Promise<number> {
@@ -216,6 +220,9 @@ export interface Registration {
   payment_status: PaymentStatus;
   payment_note: string;
   created_at: string;
+  known_topic_ids: number[];
+  catchup_topic_ids: number[];
+  catchup_done_topic_ids: number[];
   studentName: string;
   studentClass: string;
   registrantName: string;
@@ -223,6 +230,7 @@ export interface Registration {
 
 const REG_SELECT =
   "id, course_id, student_id, registered_by, child_name, contact, note, status, joined_late, payment_status, payment_note, created_at, " +
+  "known_topic_ids, catchup_topic_ids, catchup_done_topic_ids, " +
   "student:profiles!thpt_registrations_student_id_fkey(full_name, class_name), " +
   "registrant:profiles!thpt_registrations_registered_by_fkey(full_name)";
 
@@ -238,6 +246,9 @@ function toRegistration(row: RegRow): Registration {
   void _s; void _r;
   return {
     ...rest,
+    known_topic_ids: rest.known_topic_ids ?? [],
+    catchup_topic_ids: rest.catchup_topic_ids ?? [],
+    catchup_done_topic_ids: rest.catchup_done_topic_ids ?? [],
     studentName: student?.full_name ?? row.child_name,
     studentClass: student?.class_name ?? "",
     registrantName: registrant?.full_name ?? "",
@@ -301,4 +312,40 @@ export function formatDate(d: string | null): string {
   if (!d) return "";
   const [y, m, day] = d.split("-");
   return `${day}/${m}/${y}`;
+}
+
+// ============================================================
+// BÙ BÀI — em vào trễ (supabase-migration-bu-bai.sql)
+// ============================================================
+export interface TaughtTopic {
+  id: number;
+  name: string;
+  chapterId: number | null;
+  chapterTitle: string;
+  sortOrder: number;
+}
+
+/** Phần lớp đã học (tới current_topic_id), bài gần nhất trước. Rỗng khi giáo viên chưa đặt mốc. */
+export async function fetchTaughtTopics(courseId: number): Promise<TaughtTopic[]> {
+  const { data, error } = await getSupabase().rpc("thpt_taught_topics", { p_course_id: courseId });
+  if (error) throw supabaseError(error, "Chưa đọc được phần lớp đã học.");
+  return ((data ?? []) as { id: number; name: string; chapter_id: number | null; chapter_title: string | null; sort_order: number }[]).map(
+    (r) => ({ id: r.id, name: r.name, chapterId: r.chapter_id, chapterTitle: r.chapter_title ?? "Chương khác", sortOrder: r.sort_order }),
+  );
+}
+
+/** Chốt bài đã học nơi khác; RPC tính phần cần bù (gần nhất trước) và trả về danh sách đó. */
+export async function setCatchup(registrationId: number, knownTopicIds: number[]): Promise<number[]> {
+  const { data, error } = await getSupabase().rpc("thpt_set_catchup", {
+    p_registration_id: registrationId,
+    p_known_topic_ids: knownTopicIds,
+  });
+  if (error) throw supabaseError(error, "Chưa lưu được phần cần bù.");
+  return (data ?? []) as number[];
+}
+
+/** Đăng ký đang bù bài của một em (mỗi em một khoá đang catchup là đủ). */
+export async function fetchCatchupForStudent(studentId: string): Promise<MyRegistration | null> {
+  const rows = await fetchMyRegistrations();
+  return rows.find((r) => r.student_id === studentId && r.status === "catchup") ?? null;
 }

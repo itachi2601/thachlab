@@ -12,10 +12,13 @@ import { useToast } from "@/components/ui/Toast";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import {
   fetchCourse,
+  fetchTaughtTopics,
   formatDate,
   formatSchedule,
   registerCourse,
+  setCatchup,
   type RegisterResult,
+  type TaughtTopic,
   type ThptCourse,
 } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
@@ -59,6 +62,16 @@ function RegisterForm({ course }: { course: ThptCourse }) {
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<RegisterResult | null>(null);
+  // Lớp đã khai giảng: phần lớp đã học (bài gần nhất trước) để em tick bài đã học nơi khác.
+  const [taught, setTaught] = useState<TaughtTopic[]>([]);
+  const [known, setKnown] = useState<Set<number>>(new Set());
+  const [catchupCount, setCatchupCount] = useState<number | null>(null);
+
+  const started = course.starts_at ? new Date(course.starts_at) < new Date(new Date().toDateString()) : false;
+  useEffect(() => {
+    if (!started) return;
+    fetchTaughtTopics(course.id).then(setTaught).catch(() => setTaught([]));
+  }, [started, course.id]);
 
   useEffect(() => {
     if (!session || !isParent) return;
@@ -99,7 +112,11 @@ function RegisterForm({ course }: { course: ThptCourse }) {
         </p>
         {result.joined_late && (
           <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] p-3 text-sm text-amber-100/90">
-            Lớp đã học được một phần. Giáo viên sẽ xếp buổi phụ đạo bù bài với trợ giảng trước khi vào lớp chính thức.
+            {catchupCount === null
+              ? "Lớp đã học được một phần. Giáo viên sẽ xếp buổi phụ đạo bù bài với trợ giảng trước khi vào lớp chính thức."
+              : catchupCount === 0
+                ? "Lớp đã học được một phần nhưng các bài đó đã học ở nơi khác — giáo viên duyệt là vào lớp luôn."
+                : `Cần bù ${catchupCount} bài trước khi vào lớp chính thức. Sau khi giáo viên duyệt, mục "Bù bài" ở trang ${isParent ? "phụ huynh" : "tài khoản"} sẽ hiện các ca phụ đạo để đăng ký, bài lớp vừa học trước.`}
           </p>
         )}
         <Link
@@ -122,6 +139,14 @@ function RegisterForm({ course }: { course: ThptCourse }) {
     setBusy(true);
     try {
       const res = await registerCourse({ courseId: course.id, studentId, childName, contact, note });
+      if (res.joined_late && taught.length > 0) {
+        try {
+          const remaining = await setCatchup(res.registration_id, [...known]);
+          setCatchupCount(remaining.length);
+        } catch {
+          // Không chặn: giáo viên vẫn sửa được danh sách bù trong tab Ghi danh.
+        }
+      }
       setResult(res);
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Chưa đăng ký được.");
@@ -169,6 +194,47 @@ function RegisterForm({ course }: { course: ThptCourse }) {
           <p className="text-sm text-slate-300">
             Đăng ký cho <strong className="text-white">{profile?.full_name || session.user.email}</strong>.
           </p>
+        )}
+        {started && taught.length > 0 && (
+          <div className="rounded-2xl border border-amber-500/25 bg-amber-500/[.05] p-4">
+            <p className="text-sm font-semibold text-white">Lớp đã học tới bài dưới đây. {isParent ? "Con" : "Em"} đã học bài nào ở nơi khác rồi?</p>
+            <p className="mt-1 text-xs text-slate-400">
+              Bài chưa tick sẽ được phụ đạo bù trước khi vào lớp chính thức, bài lớp vừa học trước. Chưa học ở đâu thì bỏ qua.
+            </p>
+            <div className="mt-3 space-y-3">
+              {[...new Map(taught.map((t) => [t.chapterTitle, taught.filter((x) => x.chapterTitle === t.chapterTitle)])).entries()].map(
+                ([chapter, items]) => (
+                  <div key={chapter}>
+                    <p className="text-xs font-bold uppercase tracking-wide text-slate-500">{chapter}</p>
+                    <ul className="mt-1 space-y-1">
+                      {items.map((t) => (
+                        <li key={t.id}>
+                          <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-300">
+                            <input
+                              type="checkbox"
+                              checked={known.has(t.id)}
+                              onChange={(e) =>
+                                setKnown((prev) => {
+                                  const next = new Set(prev);
+                                  if (e.target.checked) next.add(t.id);
+                                  else next.delete(t.id);
+                                  return next;
+                                })
+                              }
+                            />
+                            {t.name}
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ),
+              )}
+            </div>
+            <p className="mt-3 text-xs text-amber-200/90">
+              Cần bù: <strong>{taught.length - known.size}</strong>/{taught.length} bài.
+            </p>
+          </div>
         )}
         <textarea
           value={note}

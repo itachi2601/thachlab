@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
+import CatchupCard from "@/components/results/CatchupCard";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
@@ -141,6 +142,9 @@ function ParentHome() {
           {selected.fullName} chưa được duyệt vào khối lớp nào trên thachlab, nên chưa có hạng trong lớp.
         </p>
       )}
+      <div className="mb-6">
+        <CatchupCard key={`catchup-${selected.studentId}`} studentId={selected.studentId} classId={selected.classId} viewer="parent" />
+      </div>
       <StudentResultsDashboard
         key={selected.studentId}
         studentId={selected.studentId}
