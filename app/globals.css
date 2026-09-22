@@ -213,6 +213,7 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 
 /* Thông báo đã ghi danh (nằm ngoài shell, phía trên workspace) */
 .cnc-enrolled-note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border: 1px solid rgba(16,185,129,.35); border-radius: 12px; background: rgba(16,185,129,.1); padding: 10px 14px; color: #6ee7b7; font-size: 13.5px; }
+html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-enrolled-note strong { font-weight: 600; }
 .cnc-enrolled-note--page { width: calc(100% - 48px); max-width: 1032px; margin: 20px auto 0; }
 
@@ -813,6 +814,7 @@ html[data-theme="light"] .lesson-shell :is(.lesson-lead, .lesson-nav a, .lesson-
 html[data-theme="light"] .lesson-shell :is(.class-lesson:hover, .lesson-nav a:hover, .lesson-pager-link:hover) { background: rgba(15,23,42,.05); }
 html[data-theme="light"] .lesson-shell .class-lesson:hover .class-lesson-title { color: #0f172a; }
 html[data-theme="light"] .lesson-shell :is(.lesson-nav a:hover, .lesson-back:hover) { color: #0f172a; }
+html[data-theme="light"] .lesson-shell :is(.lesson-nav a.is-complete i, .lesson-done:hover:not(:disabled), .lesson-done.is-done, .lesson-status-done, .class-lesson.is-complete .class-num, .class-lesson.is-complete .class-meta) { color: #047857; }
 html[data-theme="light"] .lesson-shell .lesson-btn { color: #fff; }
 html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background: rgba(15,23,42,.1); }
 .lesson-main--single .lesson-head + .lesson-section { margin-top: 0; border-top: 0; padding-top: 0; }
