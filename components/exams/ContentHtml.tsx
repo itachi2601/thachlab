@@ -3,6 +3,27 @@
 import { useMemo } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
+import imageDimensions from "@/features/lessons/image-dimensions.json";
+
+const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
+
+/**
+ * Ảnh tĩnh (hình vẽ, công thức quét) không có width/height trong HTML lưu —
+ * trình duyệt không biết trước tỉ lệ nên chừa 0px chỗ rồi "nhảy" layout khi
+ * ảnh tải xong, dễ thấy nhất khi đang cuộn trên điện thoại (chữ bị đè/lệch
+ * trong khoảnh khắc ảnh vừa hiện). Gắn sẵn width/height thật (đọc lúc build,
+ * xem scripts/gen-image-dimensions.mjs) để trình duyệt trừ chỗ đúng ngay từ đầu.
+ */
+function withImageDimensions(html: string): string {
+  if (!html.includes("<img")) return html;
+  return html.replace(/<img\b([^>]*)>/g, (tag, attrs: string) => {
+    if (/\bwidth=/.test(attrs)) return tag;
+    const src = attrs.match(/\bsrc="([^"]+)"/)?.[1];
+    const dims = src ? IMAGE_DIMENSIONS[src] : undefined;
+    if (!dims) return tag;
+    return `<img${attrs} width="${dims[0]}" height="${dims[1]}">`;
+  });
+}
 
 /**
  * Dấu vết định dạng Word còn sót lại khi dán qua: dòng chấm dẫn của mục lục
@@ -34,7 +55,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const rendered = useMemo(() => {
-    const clean = stripWordArtifacts(html);
+    const clean = withImageDimensions(stripWordArtifacts(html));
     if (!clean.includes("$")) return clean;
     return clean.replace(
       /\$\$([^$]+)\$\$|\$([^$]+)\$/g,
