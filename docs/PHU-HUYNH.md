@@ -56,10 +56,9 @@ Edge Function, không cần gửi email.
 - `components/dashboard/ParentLinkCard.tsx` — thẻ Phụ huynh trong hồ sơ học sinh.
 - `app/phu-huynh/page.tsx`, `app/loi-moi/page.tsx` (nhánh mã PH).
 
-## Bước sau (đã thống nhất, chưa làm)
+## Bước sau
 
-1. Trang khoá học công khai + lịch học tuần + ghi danh (`course_offerings`, bảng
-   `course_schedules`, `payment_status` unpaid / paid_center / paid_transfer).
+1. ~~Trang khoá học công khai + lịch tuần + ghi danh~~ — xem `docs/KHOA-HOC.md`.
 2. Vào lớp trễ: chọn chương đã học nơi khác, phần còn lại thành `catchup_topic_ids`, đăng
    ký ca trong lịch tuần của trợ giảng khối (`tutoring_slots`), chương gần nhất trước rồi
    lùi dần; đủ buổi thì enrollment sang `active`.

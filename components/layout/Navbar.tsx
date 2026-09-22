@@ -13,6 +13,7 @@ const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
 const links = [
   { label: "THPT – THCS", href: "/lop-hoc" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
+  { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/#about" },

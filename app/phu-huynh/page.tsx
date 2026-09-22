@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Users } from "lucide-react";
+import { CalendarPlus, ChevronDown, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
+import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
 
 function Notice({ children }: { children: React.ReactNode }) {
@@ -16,6 +17,39 @@ function Notice({ children }: { children: React.ReactNode }) {
     <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center text-slate-300">
       {children}
     </div>
+  );
+}
+
+const REG_TONE: Record<MyRegistration["status"], string> = {
+  pending: "text-amber-300",
+  catchup: "text-amber-300",
+  active: "text-emerald-300",
+  rejected: "text-red-300",
+  left: "text-slate-500",
+};
+
+/** Các đăng ký học (của con đã nối, hoặc con chưa có tài khoản) và trạng thái duyệt. */
+function RegistrationList({ items }: { items: MyRegistration[] }) {
+  if (items.length === 0) return null;
+  return (
+    <section className="mb-6 rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left">
+      <h2 className="font-display font-semibold text-white">Đăng ký học</h2>
+      <ul className="mt-3 space-y-2">
+        {items.map((r) => (
+          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2 text-sm">
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold text-white">{r.courseName}</span>
+              <span className="block text-xs text-slate-400">
+                {r.student_id === null ? `${r.child_name} (chưa có tài khoản)` : r.studentName}
+                {r.className ? ` · khối ${r.className}` : ""}
+                {r.joined_late ? " · vào trễ, sẽ bù bài" : ""}
+              </span>
+            </span>
+            <span className={`text-xs font-bold ${REG_TONE[r.status]}`}>{REGISTRATION_STATUS_LABEL[r.status]}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -27,9 +61,11 @@ function ParentHome() {
   const { session } = useAuth();
   const [children, setChildren] = useState<LinkedChild[] | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [registrations, setRegistrations] = useState<MyRegistration[]>([]);
 
   useEffect(() => {
     if (!session) return;
+    fetchMyRegistrations().then(setRegistrations).catch(() => setRegistrations([]));
     fetchMyChildren(session.user.id)
       .then((rows) => {
         setChildren(rows);
@@ -50,19 +86,36 @@ function ParentHome() {
           (dạng <code className="text-slate-300">PH1A2B3C</code>) rồi mở link{" "}
           <code className="text-slate-300">/loi-moi?ma=PH…</code> để nối.
         </p>
-        <Link
-          href="/tai-khoan"
-          className="mt-6 inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200"
-        >
-          Về tài khoản
-        </Link>
+        <RegistrationList items={registrations} />
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/khoa-hoc"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white"
+          >
+            <CalendarPlus size={16} /> Đăng ký học cho con
+          </Link>
+          <Link
+            href="/tai-khoan"
+            className="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200"
+          >
+            Về tài khoản
+          </Link>
+        </div>
       </Notice>
     );
 
   const selected = children.find((c) => c.studentId === selectedId) ?? children[0];
+  const selectedRegistrations = registrations.filter((r) => r.student_id === selected.studentId || r.student_id === null);
 
   return (
     <div className="mx-auto w-full max-w-4xl">
+      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-3">
+        <span className="text-sm text-slate-300">Muốn con học thêm lớp khác hoặc đăng ký cho em nhỏ?</span>
+        <Link href="/khoa-hoc" className="ml-auto inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-4 py-2 text-sm font-bold text-white">
+          <CalendarPlus size={15} /> Đăng ký học
+        </Link>
+      </div>
+      <RegistrationList items={selectedRegistrations} />
       {children.length > 1 && (
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <span className="text-sm text-slate-400">Đang xem:</span>
