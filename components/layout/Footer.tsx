@@ -1,19 +1,20 @@
 const columns = [
   {
-    title: "Khóa học",
+    title: "Lớp học",
     links: [
-      { label: "Vật lý 10", href: "#learning-path" },
-      { label: "Vật lý 11", href: "#learning-path" },
-      { label: "Vật lý 12", href: "#learning-path" },
-      { label: "Luyện đề THPT", href: "#learning-path" },
+      { label: "KHTN 9", href: "/lop-hoc/khtn-9" },
+      { label: "Vật lý 10", href: "/lop-hoc/lop-10" },
+      { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
+      { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
+      { label: "Sinh viên CTTC", href: "/lop-hoc/cttc" },
     ],
   },
   {
     title: "ThachLab",
     links: [
-      { label: "Về chúng tôi", href: "#about" },
-      { label: "Phương pháp giảng dạy", href: "#features" },
-      { label: "Câu hỏi thường gặp", href: "#" },
+      { label: "Về thầy Thạch", href: "/#about" },
+      { label: "Cách học trên ThachLab", href: "/#features" },
+      { label: "Blog", href: "/blog" },
     ],
   },
   {

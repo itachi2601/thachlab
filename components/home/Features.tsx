@@ -1,75 +1,61 @@
-import { BrainCircuit, Sparkles, BarChart3, BookOpenCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
-const features = [
+const steps = [
   {
-    label: "01",
-    icon: BrainCircuit,
-    tint: "bg-blue-500/15 text-blue-400",
-    title: "Hiểu bản chất, không học vẹt",
-    desc: "Mỗi bài học bắt đầu bằng một câu hỏi thực tế, dẫn dắt học sinh tự suy luận ra công thức thay vì ghi nhớ máy móc.",
+    title: "Lý thuyết trọng tâm",
+    desc: "Ngắn gọn, đúng yêu cầu cần đạt của chương trình 2018, có công thức và hình minh họa đi kèm.",
   },
   {
-    label: "02",
-    icon: Sparkles,
-    tint: "bg-violet-500/15 text-violet-400",
-    title: "Trực quan hoá mọi hiện tượng",
-    desc: "Mô phỏng chuyển động, dao động, điện trường... được minh hoạ sinh động, giúp khái niệm trừu tượng trở nên dễ hình dung.",
+    title: "Bài tập mẫu",
+    desc: "Làm thử vài câu ngay sau phần lý thuyết, chấm tại chỗ để biết mình đã hiểu chưa.",
   },
   {
-    label: "03",
-    icon: BarChart3,
-    tint: "bg-emerald-500/15 text-emerald-400",
-    title: "Phân hoá theo năng lực",
-    desc: "Bài tập trải dài từ nhận biết, thông hiểu đến vận dụng cao, phù hợp với từng học sinh trong mọi giai đoạn ôn luyện.",
+    title: "Luyện tập và bài tập về nhà",
+    desc: "Mỗi câu hỏi được gắn nhãn theo chủ đề và dạng bài. Làm sai câu nào, em biết ngay cần ôn lại phần nào.",
   },
   {
-    label: "04",
-    icon: BookOpenCheck,
-    tint: "bg-amber-500/15 text-amber-400",
-    title: "Bám sát chương trình mới",
-    desc: "Nội dung được xây dựng theo đúng Chương trình GDPT 2018, tương thích Cánh Diều, Kết nối tri thức và Chân trời sáng tạo.",
+    title: "Kiểm tra",
+    desc: "Bài kiểm tra chương, giữa kì và cuối kì chấm tự động, kèm phân tích kết quả và chủ đề cần phụ đạo.",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="relative overflow-hidden py-24 lg:py-32">
-      <div
-        aria-hidden
-        className="glow-blob left-[30%] top-[40%] h-[340px] w-[340px] bg-cyan-600/20"
-      />
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <Reveal className="max-w-xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-widest text-cyan-300">
-            Vì sao ThachLab
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Được thiết kế cho cách học sinh{" "}
-            <span className="text-gradient">thực sự hiểu Vật lý.</span>
+    <section id="features" className="border-t border-line py-20 lg:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+        <Reveal className="lg:col-span-5">
+          <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Cách học</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            Một bài học trên ThachLab diễn ra thế nào
           </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted">
+            Mỗi bài bắt đầu bằng một câu hỏi từ đời thường — như con lắc lò xo ở đầu
+            trang — rồi mới đến lý thuyết. Phần còn lại em làm ngay trên web: bài tập
+            mẫu, luyện tập, bài về nhà và kiểm tra đều được chấm tự động.
+          </p>
+          <Link
+            href="/lop-hoc"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
+          >
+            Xem các lớp đang mở <ArrowRight size={16} />
+          </Link>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {features.map((f, i) => (
-            <Reveal key={f.label} delay={i * 0.08}>
-              <div className="glass glass-hover flex h-full flex-col gap-4 rounded-3xl p-8 lg:p-10">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${f.tint}`}
-                  >
-                    <f.icon size={22} />
-                  </span>
-                  <span className="font-mono text-sm text-accent">{f.label}</span>
+        <Reveal delay={0.1} className="lg:col-span-7">
+          <ol className="divide-y divide-line border-y border-line">
+            {steps.map((s, i) => (
+              <li key={s.title} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_1fr] sm:gap-6">
+                <span className="font-mono text-sm text-cyan-300">0{i + 1}</span>
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-ink">{s.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">{s.desc}</p>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-ink">
-                  {f.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted">{f.desc}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );
