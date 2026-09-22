@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, Check, ChevronDown, FileText, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -11,6 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import type { SchoolClass } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -18,21 +19,28 @@ import {
   formatTypeCounts,
   isGradedKind,
   isPeriodicExam,
+  isSemesterExam,
   youTubeEmbed,
   youTubeThumb,
+  type Chapter,
+  type Lesson,
   type LessonItem,
   type LessonItemKind,
   type LessonKind,
 } from "@/features/lessons/types";
 import {
   fetchExamMetas,
+  fetchChapters,
   fetchLesson,
   fetchLessonItems,
+  fetchLessons,
   fetchMyExamScores,
   fetchMyProgress,
   markItemDone,
   type LessonExamMeta,
 } from "@/services/lessons";
+import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 
 /** Một màu nhấn duy nhất cho cả trang — tránh mỗi mục một màu gây phân tâm. */
@@ -45,8 +53,18 @@ function formatDue(iso: string) {
   return `${d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} · ${d.toLocaleDateString("vi-VN")}`;
 }
 
-/** Video YouTube: ảnh bìa, bấm thì nhúng player ngay tại chỗ. */
-function VideoBlock({ item, onOpen }: { item: LessonItem; onOpen: () => void }) {
+/** Video YouTube: ảnh bìa, bấm thì nhúng player ngay tại chỗ. Xem xong tự bấm "Đánh dấu đã xem". */
+function VideoBlock({
+  item,
+  done,
+  loggedIn,
+  onDone,
+}: {
+  item: LessonItem;
+  done: boolean;
+  loggedIn: boolean;
+  onDone: () => void;
+}) {
   const [playing, setPlaying] = useState(false);
   const embed = youTubeEmbed(item.video_url);
   const thumb = youTubeThumb(item.video_url);
@@ -67,14 +85,7 @@ function VideoBlock({ item, onOpen }: { item: LessonItem; onOpen: () => void }) 
               allowFullScreen
             />
           ) : (
-            <button
-              type="button"
-              onClick={() => {
-                setPlaying(true);
-                onOpen();
-              }}
-              aria-label={`Xem video ${item.title}`}
-            >
+            <button type="button" onClick={() => setPlaying(true)} aria-label={`Xem video ${item.title}`}>
               {thumb && (
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img src={thumb} alt="" />
@@ -86,11 +97,18 @@ function VideoBlock({ item, onOpen }: { item: LessonItem; onOpen: () => void }) 
           )}
         </div>
       )}
-      {item.pdf_url && (
-        <a href={item.pdf_url} target="_blank" rel="noreferrer" onClick={onOpen} className="lesson-link">
-          <FileText size={15} /> Tài liệu PDF
-        </a>
-      )}
+      <div className="lesson-block-foot">
+        {item.pdf_url && (
+          <a href={item.pdf_url} target="_blank" rel="noreferrer" className="lesson-link">
+            <FileText size={15} /> Tài liệu PDF
+          </a>
+        )}
+        {loggedIn && (
+          <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
+            <Check size={14} /> {done ? "Đã xem" : "Đánh dấu đã xem"}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -157,37 +175,56 @@ function ExamRow({
   exam,
   score,
   loggedIn,
+  metaStatus,
 }: {
   examId: number;
   exam: LessonExamMeta | undefined;
   score: number | undefined;
   loggedIn: boolean;
+  /** Trạng thái tải thông tin đề (chỉ có ý nghĩa khi đã đăng nhập) — phân biệt đang tải/lỗi/không thấy đề với chưa đăng nhập. */
+  metaStatus: "loading" | "error" | "ready";
 }) {
-  const counts = exam ? formatTypeCounts(exam.type_counts) : "";
+  if (!exam) {
+    const notice = !loggedIn
+      ? "Đăng nhập để xem đề"
+      : metaStatus === "loading"
+        ? "Đang tải…"
+        : metaStatus === "error"
+          ? "Không tải được, thử tải lại trang"
+          : "Đề không khả dụng";
+    return (
+      <div className="lesson-exam">
+        <div>
+          <p className="lesson-block-title">Đề kiểm tra</p>
+        </div>
+        {loggedIn ? (
+          <span className="lesson-muted">{notice}</span>
+        ) : (
+          <Link href="/dang-nhap" className="lesson-btn-ghost">
+            {notice}
+          </Link>
+        )}
+      </div>
+    );
+  }
+
+  const counts = formatTypeCounts(exam.type_counts);
   const attempted = score !== undefined;
 
   return (
     <div className="lesson-exam">
       <div>
-        <p className="lesson-block-title">{exam?.title ?? `Đề #${examId}`}</p>
+        <p className="lesson-block-title">{exam.title}</p>
         <p className="lesson-block-sub">
-          {exam && `${exam.duration_minutes} phút · ${counts || `${exam.question_count} câu`}`}
-          {loggedIn && (
-            <span className={attempted ? "lesson-status-done" : "lesson-status"}>
-              {attempted ? `Đã làm · ${score} điểm` : "Chưa làm"}
-            </span>
-          )}
+          {exam.duration_minutes} phút · {counts || `${exam.question_count} câu`}
+          <span className={attempted ? "lesson-status-done" : "lesson-status"}>
+            {attempted ? `Đã làm · ${score} điểm` : "Chưa làm"}
+          </span>
         </p>
       </div>
-      {loggedIn ? (
-        <Link href={`/kiem-tra/lam?id=${examId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
-          {attempted ? "Làm lại" : "Làm bài"}
-        </Link>
-      ) : (
-        <Link href="/dang-nhap" className="lesson-btn-ghost">
-          Đăng nhập để làm
-        </Link>
-      )}
+      <Link href={`/kiem-tra/lam?id=${examId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
+        {attempted ? "Làm lại" : "Làm bài"}
+      </Link>
     </div>
   );
 }
@@ -205,11 +242,17 @@ function LessonLoader() {
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
   const [items, setItems] = useState<LessonItem[] | null>(null);
   const [examMetas, setExamMetas] = useState<Map<number, LessonExamMeta>>(new Map());
+  const [examMetaStatus, setExamMetaStatus] = useState<"loading" | "error" | "ready">("loading");
   const [scores, setScores] = useState<Map<number, number>>(new Map());
   const [done, setDone] = useState<Set<number>>(new Set());
   const [error, setError] = useState("");
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+
+  // Chương trình lớp+môn đầy đủ, chỉ để tính Bài trước/Bài tiếp theo (không phải nội dung bài học).
+  const [siblingClasses, setSiblingClasses] = useState<SchoolClass[] | null>(null);
+  const [siblingChapters, setSiblingChapters] = useState<Chapter[] | null>(null);
+  const [siblingLessons, setSiblingLessons] = useState<Lesson[] | null>(null);
 
   useEffect(() => {
     if (!supabaseConfigured || !id) return;
@@ -225,11 +268,30 @@ function LessonLoader() {
     fetchLessonItems(id).then(setItems);
   }, [id]);
 
+  useEffect(() => {
+    if (!supabaseConfigured) return;
+    fetchClasses().then(setSiblingClasses);
+    fetchChapters().then(setSiblingChapters);
+    fetchLessons().then(setSiblingLessons);
+  }, []);
+
   // dữ liệu cần đăng nhập: thông tin đề kiểm tra (RLS), điểm, tiến độ
   useEffect(() => {
     if (!session || !items) return;
     const examIds = items.filter((i) => isGradedKind(i.kind)).flatMap((i) => i.exam_ids);
-    fetchExamMetas(examIds).then(setExamMetas);
+    void (async () => {
+      if (examIds.length === 0) {
+        setExamMetaStatus("ready");
+        return;
+      }
+      setExamMetaStatus("loading");
+      try {
+        setExamMetas(await fetchExamMetas(examIds));
+        setExamMetaStatus("ready");
+      } catch {
+        setExamMetaStatus("error");
+      }
+    })();
     fetchMyExamScores(session.user.id).then(setScores);
     fetchMyProgress(session.user.id).then(setDone);
   }, [session, items]);
@@ -271,6 +333,76 @@ function LessonLoader() {
     markItemDone(session.user.id, item.id);
   }
 
+  // Đến từ "Tiếp tục học" (resume=1): cuộn tới mục đầu tiên chưa hoàn thành nếu xác định được,
+  // nếu không (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
+  useEffect(() => {
+    if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
+    const firstIncomplete = items.find((item) => !isDone(item));
+    if (!firstIncomplete) return;
+    const timer = window.setTimeout(() => {
+      document.getElementById(`secondary-stage-${firstIncomplete.kind}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams, items, session, done, scores]);
+
+  // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp (theo lớp đang xem qua ?class=) và môn,
+  // dùng lại đúng luật hiển thị chương của trang lớp — không tự suy luận lớp khác khi chưa chắc.
+  const { prevLesson, nextLesson } = useMemo((): { prevLesson: Lesson | null; nextLesson: Lesson | null } => {
+    if (!siblingChapters || !siblingLessons || !siblingClasses || chapterId == null) {
+      return { prevLesson: null, nextLesson: null };
+    }
+    const currentChapter = siblingChapters.find((c) => c.id === chapterId);
+    if (!currentChapter) return { prevLesson: null, nextLesson: null };
+    const activeClass = classSlug ? siblingClasses.find((c) => c.slug === classSlug) : undefined;
+    const scopeClassId = activeClass?.id ?? currentChapter.classIds[0];
+    const visibleClassIds = scopeClassId !== undefined ? expandClassIdsByGrade([scopeClassId], siblingClasses) : null;
+    const chaptersInScope = siblingChapters.filter(
+      (ch) => ch.subjectCode === currentChapter.subjectCode && visibleTo(ch.classIds, visibleClassIds),
+    );
+    const flat: Lesson[] = [];
+    for (const ch of chaptersInScope) {
+      flat.push(...siblingLessons.filter((l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind)));
+      flat.push(...siblingLessons.filter((l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind)));
+    }
+    const idx = flat.findIndex((l) => l.id === id);
+    if (idx === -1) return { prevLesson: null, nextLesson: null };
+    return { prevLesson: idx > 0 ? flat[idx - 1] : null, nextLesson: idx < flat.length - 1 ? flat[idx + 1] : null };
+  }, [siblingChapters, siblingLessons, siblingClasses, chapterId, classSlug, id]);
+
+  function siblingHref(lesson: Lesson) {
+    const params = new URLSearchParams({ id: String(lesson.id), subject: subjectCode, chapter: String(lesson.chapter_id) });
+    if (classSlug) params.set("class", classSlug);
+    return `/lop-hoc/bai?${params.toString()}`;
+  }
+
+  const pager = (prevLesson || nextLesson) && (
+    <nav className="lesson-pager" aria-label="Điều hướng bài học">
+      {prevLesson ? (
+        <Link href={siblingHref(prevLesson)} className="lesson-pager-link lesson-pager-prev">
+          <ArrowLeft size={16} />
+          <span>
+            <small>Bài trước</small>
+            <strong>{prevLesson.title}</strong>
+          </span>
+        </Link>
+      ) : (
+        <span aria-hidden="true" />
+      )}
+      {nextLesson ? (
+        <Link href={siblingHref(nextLesson)} className="lesson-pager-link lesson-pager-next">
+          <span>
+            <small>Bài tiếp theo</small>
+            <strong>{nextLesson.title}</strong>
+          </span>
+          <ArrowRight size={16} />
+        </Link>
+      ) : (
+        <span aria-hidden="true" />
+      )}
+    </nav>
+  );
+
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
   if (!items) return <p className="lesson-notice">Đang tải bài học…</p>;
@@ -308,10 +440,12 @@ function LessonLoader() {
                   exam={examMetas.get(examId)}
                   score={scores.get(examId)}
                   loggedIn={!!session}
+                  metaStatus={examMetaStatus}
                 />
               ))
             )}
           </div>
+          {pager}
         </div>
       </div>
     );
@@ -326,25 +460,23 @@ function LessonLoader() {
         <aside className="lesson-nav" aria-label="Các phần của bài học">
           {backLink}
           <ol>
-            {sections.map(({ kind, items: sectionItems }, index) => {
+            {visibleSections.map(({ kind, items: sectionItems }) => {
               const meta = SECTION_META[kind];
-              const empty = sectionItems.length === 0;
-              const complete = !empty && !!session && sectionItems.every(isDone);
+              const number = SECTION_ORDER.indexOf(kind) + 1;
+              const complete = !!session && sectionItems.every(isDone);
               return (
                 <li key={kind}>
                   <a
                     href={`#secondary-stage-${kind}`}
-                    className={`${activeSection === kind ? "is-active" : ""} ${empty ? "is-empty" : ""} ${complete ? "is-complete" : ""}`}
-                    aria-disabled={empty}
+                    className={`${activeSection === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      if (empty) return;
                       document
                         .getElementById(`secondary-stage-${kind}`)
                         ?.scrollIntoView({ behavior: "smooth", block: "start" });
                     }}
                   >
-                    <i>{complete ? <Check size={12} /> : index + 1}</i>
+                    <i>{complete ? <Check size={12} /> : number}</i>
                     <span>{meta.label}</span>
                   </a>
                 </li>
@@ -387,12 +519,20 @@ function LessonLoader() {
                 </h2>
                 <div className="lesson-stack">
                   {section.items.map((item, itemIndex) => {
-                    // tên mục trùng tên phần và là mục duy nhất → khỏi lặp tiêu đề
-                    const plain =
-                      section.items.length === 1 &&
-                      item.title.trim().toLowerCase() === meta.label.toLowerCase();
+                    // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
+                    // chỉ lặp lại ý tiêu đề phần "N. <Tên phần>" ngay trên, ẩn cho đỡ trùng.
+                    // Phụ đề (hạn nộp, số câu…) vẫn hiện bình thường.
+                    const plain = section.items.length === 1;
                     if (item.kind === "video")
-                      return <VideoBlock key={item.id} item={item} onOpen={() => markDone(item)} />;
+                      return (
+                        <VideoBlock
+                          key={item.id}
+                          item={item}
+                          done={done.has(item.id)}
+                          loggedIn={!!session}
+                          onDone={() => markDone(item)}
+                        />
+                      );
 
                     if (item.kind === "ly_thuyet")
                       return (
@@ -429,6 +569,7 @@ function LessonLoader() {
                                   exam={examMetas.get(examId)}
                                   score={scores.get(examId)}
                                   loggedIn={!!session}
+                                  metaStatus={examMetaStatus}
                                 />
                               ))}
                             </div>
@@ -479,6 +620,7 @@ function LessonLoader() {
               </section>
             );
           })}
+          {pager}
         </div>
       </div>
     </div>

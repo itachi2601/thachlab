@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
@@ -43,7 +44,8 @@ export default function PracticeSession({
   color?: string;
 }) {
   const { session } = useAuth();
-  const [bank, setBank] = useState<PracticePick[] | null>(null);
+  const [bank, setBank] = useState<PracticePick[]>([]);
+  const [bankState, setBankState] = useState<"loading" | "loaded" | "error">("loading");
   const [count, setCount] = useState(DEFAULT_COUNT);
   const [phase, setPhase] = useState<Phase>("setup");
   const [picks, setPicks] = useState<PracticePick[]>([]);
@@ -60,26 +62,34 @@ export default function PracticeSession({
   const picksRef = useRef<PracticePick[]>([]);
 
   useEffect(() => {
+    if (!session || examIds.length === 0) return;
     let alive = true;
-    fetchExamsFull(examIds).then((metas) => {
-      if (!alive) return;
-      const flat: PracticePick[] = [];
-      for (const id of examIds) {
-        const exam = metas.get(id) as Exam | undefined;
-        if (!exam) continue;
-        exam.questions.forEach((question, qi) => {
-          // Câu tự luận không chấm tự động được — để dành cho mục Kiểm tra.
-          if (question.type === "essay") return;
-          flat.push({ question, examId: exam.id, sourceIndex: qi });
-        });
+    void (async () => {
+      setBankState("loading");
+      try {
+        const metas = await fetchExamsFull(examIds);
+        if (!alive) return;
+        const flat: PracticePick[] = [];
+        for (const id of examIds) {
+          const exam = metas.get(id) as Exam | undefined;
+          if (!exam) continue;
+          exam.questions.forEach((question, qi) => {
+            // Câu tự luận không chấm tự động được — để dành cho mục Kiểm tra.
+            if (question.type === "essay") return;
+            flat.push({ question, examId: exam.id, sourceIndex: qi });
+          });
+        }
+        setBank(flat);
+        setBankState("loaded");
+        setCount((c) => Math.min(c, flat.length) || Math.min(DEFAULT_COUNT, flat.length));
+      } catch {
+        if (alive) setBankState("error");
       }
-      setBank(flat);
-      setCount((c) => Math.min(c, flat.length) || Math.min(DEFAULT_COUNT, flat.length));
-    });
+    })();
     return () => {
       alive = false;
     };
-  }, [examIds]);
+  }, [examIds, session]);
 
   const questions = useMemo(() => picks.map((p) => p.question), [picks]);
 
@@ -128,7 +138,7 @@ export default function PracticeSession({
   }, [phase, submit]);
 
   function start() {
-    if (!bank || bank.length === 0) return;
+    if (bank.length === 0) return;
     const chosen = pickRandom(bank, count);
     const blanks = emptyResponses(chosen.map((p) => p.question));
     picksRef.current = chosen;
@@ -169,9 +179,26 @@ export default function PracticeSession({
 
   // ---------- Màn hình mở phiên ----------
   if (phase === "setup") {
-    if (!bank) return <p className="text-sm text-slate-400">Đang tải ngân hàng câu hỏi…</p>;
+    if (examIds.length === 0)
+      return <p className="text-sm text-slate-400">Mục này chưa được gắn đề.</p>;
+    if (!session)
+      return (
+        <p className="text-sm text-slate-400">
+          <Link href="/dang-nhap" className="font-semibold text-slate-200 underline underline-offset-2">
+            Đăng nhập
+          </Link>{" "}
+          để xem ngân hàng câu hỏi và luyện tập.
+        </p>
+      );
+    if (bankState === "loading") return <p className="text-sm text-slate-400">Đang tải ngân hàng câu hỏi…</p>;
+    if (bankState === "error")
+      return <p className="text-sm text-slate-400">Không tải được ngân hàng câu hỏi. Thử tải lại trang.</p>;
     if (bank.length === 0)
-      return <p className="text-sm text-slate-400">Chưa có câu hỏi để luyện tập.</p>;
+      return (
+        <p className="text-sm text-slate-400">
+          Đề đã gắn chưa có câu trắc nghiệm/đúng–sai để luyện tập tự động.
+        </p>
+      );
 
     const choices = [...new Set([...COUNT_CHOICES.filter((c) => c < bank.length), bank.length])];
     const estimate = Math.round(count * averageSeconds(bank.map((p) => p.question)));

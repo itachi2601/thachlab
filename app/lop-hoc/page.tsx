@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, Suspense, useEffect, useState } from "react";
+import { Fragment, Suspense, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -38,6 +38,12 @@ import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
+// Tiêu đề chương trong CSDL thường đã có sẵn "Chương N: …" — bỏ tiền tố đó để tự ghép lại
+// thành "Chương N · Tên chương" thống nhất, tránh lặp "Chương 1 · Chương 1: …".
+function chapterDisplayTitle(title: string): string {
+  return title.replace(/^chương\s*\d+\s*[:.\-–]?\s*/i, "").trim() || title;
+}
+
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
 const GRADE_ORDER = ["10", "11", "12", "9"];
 const GRADE_DESCRIPTIONS: Record<string, string> = {
@@ -62,6 +68,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [activeSubjectCode, setActiveSubjectCode] = useState("vat-ly");
   const [requestedChapterId, setRequestedChapterId] = useState<number | null>(null);
   const [collapsedChapters, setCollapsedChapters] = useState<Set<number>>(new Set());
+  const defaultChapterAppliedRef = useRef(false);
   const [lastLessonId, setLastLessonId] = useState<number | null>(null);
   const [lessonProgress, setLessonProgress] = useState<Map<number, InlineLessonProgress>>(new Map());
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
@@ -135,6 +142,17 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;
   const lastLessonChapter = lastLesson ? classChapters.find((chapter) => chapter.id === lastLesson.chapter_id) ?? null : null;
 
+  // Mở sẵn đúng 1 chương khi vào trang: chương đang học (có lịch sử) hoặc chương đầu tiên.
+  // Chỉ áp dụng một lần — sau đó người dùng tự mở/thu theo ý mình.
+  useEffect(() => {
+    if (defaultChapterAppliedRef.current) return;
+    if (!classes || !chapters || !lessons) return;
+    if (classChapters.length === 0) return;
+    defaultChapterAppliedRef.current = true;
+    const targetId = requestedChapterId ?? lastLessonChapter?.id ?? classChapters[0].id;
+    setCollapsedChapters(new Set(classChapters.filter((c) => c.id !== targetId).map((c) => c.id)));
+  }, [classes, chapters, lessons, classChapters, lastLessonChapter, requestedChapterId]);
+
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
       id: String(lesson.id),
@@ -148,7 +166,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   function continueLesson(lesson: Lesson) {
     setLastLessonId(lesson.id);
     window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
-    router.push(lessonHref(lesson));
+    // resume=1: trang bài học sẽ tự cuộn tới mục đầu tiên chưa hoàn thành nếu xác định được.
+    router.push(`${lessonHref(lesson)}&resume=1`);
   }
 
   useEffect(() => {
@@ -191,6 +210,10 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       else next.add(chapterId);
       return next;
     });
+  }
+
+  function toggleAllChapters() {
+    setCollapsedChapters((prev) => (prev.size > 0 ? new Set() : new Set(classChapters.map((c) => c.id))));
   }
 
   function rememberLesson(lesson: Lesson) {
@@ -275,6 +298,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       )}
                       <MistakeReviewPanel />
 
+                      {classChapters.length > 1 && (
+                        <div className="class-toc-toolbar">
+                          <button type="button" className="lesson-link" onClick={toggleAllChapters}>
+                            {collapsedChapters.size > 0 ? "Mở tất cả" : "Thu gọn"}
+                          </button>
+                        </div>
+                      )}
+
                       {classChapters.map((ch, chapterIndex) => {
                         // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
                         // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
@@ -298,13 +329,19 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                 aria-expanded={!collapsed}
                                 aria-controls={`chapter-lessons-${ch.id}`}
                               >
-                                <span className="class-num">{chapterIndex + 1}</span>
-                                <span className="class-chapter-title">{ch.title}</span>
-                                {session && chapterTotal > 0 && (
-                                  <span className="class-meta">{chapterCompleted}/{chapterTotal}</span>
-                                )}
+                                <span className="class-chapter-title">
+                                  <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
+                                </span>
                                 <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
                               </button>
+                              {session && chapterTotal > 0 && (
+                                <div className="class-chapter-progress">
+                                  <span className="class-chapter-progress-bar">
+                                    <i style={{ width: `${Math.round((chapterCompleted / chapterTotal) * 100)}%` }} />
+                                  </span>
+                                  <small>{chapterCompleted}/{chapterTotal} nội dung hoàn thành</small>
+                                </div>
+                              )}
                               {!collapsed && (
                                 <ol id={`chapter-lessons-${ch.id}`} className="class-lessons">
                                   {chapterLessons.length === 0 && (
@@ -336,7 +373,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                           <span className="class-meta">
                                             {periodic
                                               ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
-                                              : session ? `${percent}%` : `${lesson.itemCount} mục`}
+                                              : session
+                                                ? complete
+                                                  ? "Hoàn thành"
+                                                  : started
+                                                    ? `Đang học · ${percent}%`
+                                                    : "Chưa học"
+                                                : `${lesson.itemCount} mục`}
                                           </span>
                                         </Link>
                                       </li>
