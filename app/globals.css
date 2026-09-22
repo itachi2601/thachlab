@@ -662,6 +662,9 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
 .lesson-section h2 span { display: flex; width: 26px; height: 26px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
 .lesson-stack { display: grid; gap: 12px; }
+/* Item lưới mặc định có min-width:auto — nội dung rộng cố định (bảng dán từ Word)
+   sẽ đẩy tràn cả lưới thay vì tự co lại. */
+.lesson-stack > * { min-width: 0; }
 .lesson-block { border: 1px solid var(--lesson-line); border-radius: 16px; background: var(--lesson-surface); padding: 18px 20px; }
 .lesson-block .lesson-block { border: 0; padding: 0; background: transparent; }
 .lesson-block-head { display: block; }
