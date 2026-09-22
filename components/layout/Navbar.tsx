@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import NotificationBell from "@/components/layout/NotificationBell";
 
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
 const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
@@ -65,6 +66,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
+          <NotificationBell />
           {session ? (
             <div className="relative" ref={accountMenuRef}>
               <button

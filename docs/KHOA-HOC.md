@@ -92,3 +92,7 @@ Migration: `docs/supabase-migration-bu-bai.sql` (chạy sau file khoá học).
 | `trg_catchup_progress` | Buổi phụ đạo ghi xong → gạch bài, hết → active |
 
 `components/results/CatchupCard.tsx` dùng chung cho `ThptStudentHome` và `/phu-huynh`.
+
+## Thông báo
+
+Đăng ký mới, duyệt, bù bài, ca phụ đạo phù hợp… tự báo qua chuông — xem `docs/THONG-BAO.md`.
