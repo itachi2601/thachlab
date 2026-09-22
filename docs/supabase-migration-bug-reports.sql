@@ -38,6 +38,11 @@ create policy "admin updates bug reports" on public.bug_reports
   using (public.is_admin())
   with check (public.is_admin());
 
+drop policy if exists "admin deletes bug reports" on public.bug_reports;
+create policy "admin deletes bug reports" on public.bug_reports
+  for delete to authenticated
+  using (public.is_admin());
+
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('bug-report-screenshots', 'bug-report-screenshots', false, 5242880, array['image/png', 'image/jpeg', 'image/webp'])
 on conflict (id) do update set
@@ -51,4 +56,9 @@ create policy "anyone uploads bug report screenshots" on storage.objects
 drop policy if exists "admin reads bug report screenshots" on storage.objects;
 create policy "admin reads bug report screenshots" on storage.objects
   for select to authenticated
+  using (bucket_id = 'bug-report-screenshots' and public.is_admin());
+
+drop policy if exists "admin deletes bug report screenshots" on storage.objects;
+create policy "admin deletes bug report screenshots" on storage.objects
+  for delete to authenticated
   using (bucket_id = 'bug-report-screenshots' and public.is_admin());

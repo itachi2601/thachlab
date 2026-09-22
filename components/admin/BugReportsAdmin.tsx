@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Bug, Image as ImageIcon, Loader2, RefreshCw, X } from "lucide-react";
+import { Bug, Image as ImageIcon, Loader2, RefreshCw, Trash2, X } from "lucide-react";
+import { useToast } from "@/components/ui/Toast";
 import {
   fetchBugReports,
   updateBugReportStatus,
+  deleteBugReport,
   createBugReportScreenshotUrl,
   BUG_CATEGORY_LABELS,
   BUG_STATUS_LABELS,
@@ -135,9 +137,11 @@ export default function BugReportsAdmin() {
 }
 
 function BugReportDetailModal({ report, onClose, onChanged }: { report: BugReport; onClose: () => void; onChanged: () => void }) {
+  const toast = useToast();
   const [status, setStatus] = useState<BugStatus>(report.status);
   const [note, setNote] = useState(report.admin_note);
   const [busy, setBusy] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState("");
   const [screenshotUrl, setScreenshotUrl] = useState<string | null>(null);
   const [screenshotLoading, setScreenshotLoading] = useState(false);
@@ -162,6 +166,22 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
       setError(cause instanceof Error ? cause.message : "Không lưu được.");
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function remove() {
+    if (!confirm("Xoá mục này? Không thể hoàn tác.")) return;
+    setDeleting(true);
+    setError("");
+    try {
+      await deleteBugReport(report.id, report.screenshot_path);
+      toast("success", "Đã xoá.");
+      onChanged();
+      onClose();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Không xoá được.");
+    } finally {
+      setDeleting(false);
     }
   }
 
@@ -236,9 +256,15 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none"
           />
           {error && <p className="text-sm text-red-400">{error}</p>}
-          <button type="button" onClick={save} disabled={busy} className="admin-btn admin-btn--primary w-full">
-            {busy ? "Đang lưu…" : "Lưu"}
-          </button>
+          <div className="flex gap-3">
+            <button type="button" onClick={save} disabled={busy || deleting} className="admin-btn admin-btn--primary flex-1">
+              {busy ? "Đang lưu…" : "Lưu"}
+            </button>
+            <button type="button" onClick={remove} disabled={busy || deleting} className="admin-btn admin-btn--danger inline-flex items-center gap-2">
+              <Trash2 size={15} />
+              {deleting ? "Đang xoá…" : "Xoá"}
+            </button>
+          </div>
         </div>
       </section>
     </div>

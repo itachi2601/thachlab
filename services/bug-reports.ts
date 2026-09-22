@@ -116,3 +116,10 @@ export async function createBugReportScreenshotUrl(storagePath: string) {
   if (error) throw error;
   return data.signedUrl;
 }
+
+export async function deleteBugReport(id: number, screenshotPath: string | null) {
+  const supabase = getSupabase();
+  const { error } = await supabase.from("bug_reports").delete().eq("id", id);
+  if (error) throw error;
+  if (screenshotPath) await supabase.storage.from(BUCKET).remove([screenshotPath]);
+}
