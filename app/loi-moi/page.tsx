@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { claimStaffInvite, fetchGrantedStaffRole, signUpWithInvite } from "@/services/staff-invites";
+import { claimParentLink, fetchClaimedChild, isParentCode, signUpParentWithCode } from "@/services/parent-links";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -41,6 +42,9 @@ function InviteContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Mã PHxxxxxx là mã phụ huynh (supabase-migration-phu-huynh.sql) — cùng trang, khác RPC.
+  const parent = isParentCode(code);
+
   if (!code)
     return (
       <Card>
@@ -55,13 +59,13 @@ function InviteContent() {
     return (
       <Card>
         <Check className="mx-auto text-emerald-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Đã nhận lời mời</h1>
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">{parent ? "Đã nối với con" : "Đã nhận lời mời"}</h1>
         <p className="mt-2 text-center text-sm text-slate-400">{done}</p>
         <Link
-          href="/tai-khoan"
+          href={parent ? "/phu-huynh" : "/tai-khoan"}
           className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
         >
-          Vào tài khoản
+          {parent ? "Xem kết quả của con" : "Vào tài khoản"}
         </Link>
       </Card>
     );
@@ -70,7 +74,7 @@ function InviteContent() {
     return (
       <Card>
         <Mail className="mx-auto text-amber-300" size={40} />
-        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Chưa nhận được lời mời</h1>
+        <h1 className="mt-4 text-center font-display text-xl font-bold text-white">{parent ? "Chưa nối được với con" : "Chưa nhận được lời mời"}</h1>
         <p className="mt-2 text-center text-sm text-slate-400">{failed}</p>
         {/* Đang đăng nhập rồi mà đẩy về trang đăng nhập thì chỉ làm người ta rối thêm. */}
         <Link
@@ -97,6 +101,11 @@ function InviteContent() {
   async function claim() {
     setBusy(true);
     try {
+      if (parent) {
+        const child = await claimParentLink(code);
+        setDone(`Đã nối với ${child.student_name}${child.class_name ? ` · lớp ${child.class_name}` : ""}. Mở "Kết quả của con" trong menu tài khoản để xem.`);
+        return;
+      }
       const result = await claimStaffInvite(code);
       setDone(
         `Bạn được cấp quyền ${roleLabel(result.role, result.tier)}${result.class_name ? ` · lớp ${result.class_name}` : ""}.`,
@@ -120,6 +129,23 @@ function InviteContent() {
     }
     setBusy(true);
     try {
+      if (parent) {
+        const { needsEmailConfirm, userId } = await signUpParentWithCode({ email, password, fullName, code });
+        if (needsEmailConfirm) {
+          setNeedConfirm(true);
+          return;
+        }
+        const child = userId ? await fetchClaimedChild(userId) : null;
+        if (child) {
+          setDone(`Tài khoản đã tạo xong và đã nối với ${child.student_name}${child.class_name ? ` · lớp ${child.class_name}` : ""}.`);
+        } else {
+          setFailed(
+            "Tài khoản đã được tạo nhưng mã phụ huynh không còn hiệu lực, nên chưa nối được với con. " +
+              "Nhắn giáo viên tạo mã mới, đăng nhập rồi mở lại link để nối.",
+          );
+        }
+        return;
+      }
       const { needsEmailConfirm, userId } = await signUpWithInvite({ email, password, fullName, code });
       // Dự án đang tắt xác nhận email: không có thư nào được gửi, tài khoản dùng được ngay.
       // Chỉ hiện màn "kiểm tra email" khi Supabase thật sự bắt xác nhận (không trả session).
@@ -150,7 +176,7 @@ function InviteContent() {
   if (session && realProfile?.role === "admin")
     return (
       <Card>
-        <h1 className="font-display text-xl font-bold text-white">Không cần nhận lời mời</h1>
+        <h1 className="font-display text-xl font-bold text-white">{parent ? "Không cần mã phụ huynh" : "Không cần nhận lời mời"}</h1>
         <p className="mt-2 text-sm text-slate-400">
           <strong className="text-slate-200">{session.user.email}</strong> là tài khoản quản trị, đã có sẵn mọi quyền.
           Mã <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong> vẫn còn nguyên — gửi link này
@@ -168,10 +194,11 @@ function InviteContent() {
   if (session)
     return (
       <Card>
-        <h1 className="font-display text-xl font-bold text-white">Nhận lời mời</h1>
+        <h1 className="font-display text-xl font-bold text-white">{parent ? "Nối với con" : "Nhận lời mời"}</h1>
         <p className="mt-2 text-sm text-slate-400">
           Bạn đang đăng nhập bằng <strong className="text-slate-200">{session.user.email}</strong>. Bấm nút dưới để
-          nhận quyền theo mã <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong>.
+          {parent ? " nối tài khoản này với con theo mã " : " nhận quyền theo mã "}
+          <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong>.
         </p>
         <button
           type="button"
@@ -179,17 +206,20 @@ function InviteContent() {
           onClick={claim}
           className="mt-6 w-full rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white disabled:opacity-40"
         >
-          {busy ? "Đang nhận…" : "Nhận lời mời"}
+          {busy ? "Đang nhận…" : parent ? "Nối với con" : "Nhận lời mời"}
         </button>
       </Card>
     );
 
   return (
     <Card>
-      <h1 className="font-display text-xl font-bold text-white">Tạo tài khoản</h1>
+      <h1 className="font-display text-xl font-bold text-white">{parent ? "Tạo tài khoản phụ huynh" : "Tạo tài khoản"}</h1>
       <p className="mt-2 text-sm text-slate-400">
-        Mã mời <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong> — tạo tài khoản xong là có
-        ngay quyền được cấp.
+        {parent ? "Mã phụ huynh " : "Mã mời "}
+        <strong className="font-mono text-slate-200">{code.toUpperCase()}</strong>
+        {parent
+          ? " — tạo tài khoản xong là xem được ngay kết quả học tập của con."
+          : " — tạo tài khoản xong là có ngay quyền được cấp."}
       </p>
       <form onSubmit={register} className="mt-5 space-y-3">
         <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Họ và tên" className={inputCls} />

@@ -124,6 +124,8 @@ function AttemptDetail({ resultId }: { resultId: number }) {
 function DetailLoader() {
   const searchParams = useSearchParams();
   const resultId = Number(searchParams.get("id"));
+  // Phụ huynh mở từ /phu-huynh (link mang ?ph=1) — quay về đúng chỗ.
+  const fromParent = searchParams.get("ph") === "1";
 
   if (!resultId || Number.isNaN(resultId)) {
     return (
@@ -134,9 +136,17 @@ function DetailLoader() {
   }
 
   return (
-    <RequireAuth>
-      <AttemptDetail key={resultId} resultId={resultId} />
-    </RequireAuth>
+    <>
+      <Link
+        href={fromParent ? "/phu-huynh/" : "/lop-hoc/ket-qua/"}
+        className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white"
+      >
+        <ChevronLeft size={16} /> {fromParent ? "Về Kết quả của con" : "Về Kết quả học tập"}
+      </Link>
+      <RequireAuth>
+        <AttemptDetail key={resultId} resultId={resultId} />
+      </RequireAuth>
+    </>
   );
 }
 
@@ -146,12 +156,6 @@ export default function KetQuaChiTietPage() {
       <Navbar />
       <main className="min-h-screen w-full">
         <div className="mx-auto w-full max-w-3xl px-6 pb-20 pt-28">
-          <Link
-            href="/lop-hoc/ket-qua/"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white"
-          >
-            <ChevronLeft size={16} /> Về Kết quả học tập
-          </Link>
           {!supabaseConfigured ? (
             <p className="text-center text-slate-400">Hệ thống đang được cấu hình.</p>
           ) : (

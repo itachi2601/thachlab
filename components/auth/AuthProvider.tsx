@@ -15,7 +15,7 @@ export interface Profile {
   id: string;
   full_name: string;
   class_name: string;
-  role: "student" | "admin" | "instructor" | "tro_giang";
+  role: "student" | "admin" | "instructor" | "tro_giang" | "parent";
   // Khu vực quản trị được phân công cho giảng viên (null = chưa được cấp vào /quan-tri).
   // Chỉ áp dụng cho role "instructor" — role "admin" luôn thấy cả 2 khu vực.
   admin_area: "thpt" | "cttc" | null;

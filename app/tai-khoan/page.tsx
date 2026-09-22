@@ -2,7 +2,7 @@
 import { useCallback,useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Wrench } from "lucide-react";
+import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
@@ -22,6 +22,24 @@ function StaffAccountCard(){
     <div className="mt-6 flex flex-wrap gap-3">
       <Link href="/dashboard" className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white"><LayoutDashboard size={16}/>Vào Dashboard giáo viên</Link>
       {profile?.role==="admin"&&<Link href="/quan-tri" className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-cyan-200"><ShieldCheck size={16}/>Vào Quản trị</Link>}
+      <button onClick={async()=>{await signOut();router.push("/")}} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-bold text-slate-300"><LogOut size={16}/>Đăng xuất</button>
+    </div>
+  </section>;
+}
+
+function ParentAccountCard(){
+  const router=useRouter();const{session,profile,signOut}=useAuth();
+  return <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-8">
+    <div className="flex flex-wrap items-center gap-4">
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/15 text-xl font-bold text-[#3B82F6]">{(profile?.full_name??"?").charAt(0).toUpperCase()}</span>
+      <div>
+        <h1 className="font-display text-2xl font-bold text-white">{profile?.full_name??"Tài khoản"}</h1>
+        <p className="mt-1 text-sm text-slate-400">{session?.user.email}</p>
+        <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300"><Users size={13}/>Phụ huynh</span>
+      </div>
+    </div>
+    <div className="mt-6 flex flex-wrap gap-3">
+      <Link href="/phu-huynh" className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white"><Users size={16}/>Xem kết quả của con</Link>
       <button onClick={async()=>{await signOut();router.push("/")}} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-bold text-slate-300"><LogOut size={16}/>Đăng xuất</button>
     </div>
   </section>;
@@ -105,15 +123,17 @@ function Account(){
   const [classRequest,setClassRequest]=useState<MyClassRequest|null|undefined>(undefined);
   const [records,setRecords]=useState<CncLearningRecord[]>([]);
   const isStaff=profile?.role==="admin"||profile?.role==="instructor";
+  const isParent=profile?.role==="parent";
   const reload=useCallback(()=>{
-    if(!session||isStaff)return;
+    if(!session||isStaff||isParent)return;
     fetchMyEnrollment(session.user.id).then(async result=>{const own=result?.status==="active"?await fetchCncLearningRecords(result.course.id,session.user.id).catch(()=>[]):[];return{result,own};}).then(({result,own})=>{setEnrollment(result);setRecords(own);}).catch(()=>setEnrollment(null));
     fetchMyClassRequest(session.user.id).then(setClassRequest).catch(()=>setClassRequest(null));
-  },[session,isStaff]);
+  },[session,isStaff,isParent]);
   useEffect(()=>{reload();},[reload]);
 
   if(!session)return <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-slate-400">Đang tải không gian học tập…</p>;
   if(isStaff)return <StaffAccountCard/>;
+  if(isParent)return <ParentAccountCard/>;
   if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-slate-400">Đang tải không gian học tập…</p>;
 
   if(enrollment){
