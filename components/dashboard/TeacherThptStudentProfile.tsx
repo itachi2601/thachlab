@@ -6,6 +6,7 @@ import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
 import { fetchStudentLearningHistory, type LearningHistoryEntry } from "@/services/progress";
+import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
   theory: "Lý thuyết",
@@ -162,6 +163,8 @@ export default function TeacherThptStudentProfile({
               </p>
             )}
           </section>
+
+          <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
 
           <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>

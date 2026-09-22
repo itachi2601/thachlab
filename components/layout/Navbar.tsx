@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
@@ -88,7 +88,16 @@ export default function Navbar() {
                   >
                     <User size={16} /> Tài khoản của tôi
                   </Link>
-                  {!isStaff && (
+                  {profile?.role === "parent" && (
+                    <Link
+                      href="/phu-huynh"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <Users size={16} /> Kết quả của con
+                    </Link>
+                  )}
+                  {!isStaff && profile?.role !== "parent" && (
                     <Link
                       href="/lop-hoc/ket-qua"
                       onClick={() => setAccountMenuOpen(false)}
