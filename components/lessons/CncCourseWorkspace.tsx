@@ -32,7 +32,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
 import CncCourseAnnouncements from "@/components/lessons/CncCourseAnnouncements";
-import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
+import ContentHtml from "@/components/exams/ContentHtml";
+import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
 
 const CNC_ACTIVE_QUIZ_BANK_KEYS = [
@@ -64,7 +65,6 @@ import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
 import { fetchOpenCncLessons } from "@/services/course-lesson-release";
 
-const lessons = CNC_COURSE_ITEMS.filter((item) => item.id !== "intro");
 const lessonMeta: Record<string, { theory: number; practice: number; test: number; operation?: boolean; safetyGate?: boolean }> = {
   "lesson-1": { theory: 2, practice: 0, test: 0 },
   "lesson-2": { theory: 2, practice: 6, test: 1 },
@@ -362,6 +362,18 @@ export const cncChecklistConfig: Record<
 
 export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId }: { embedded?: boolean; courseId?: number; initialLessonId?: string }) {
   const { profile: viewerProfile, session } = useAuth();
+  const [lessons, setLessons] = useState<CncLesson[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchCncLessons()
+      .then((rows) => {
+        if (!cancelled) setLessons(rows.filter((row) => row.id !== "intro"));
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const validInitialLessonId = initialLessonId && lessons.some((item) => item.id === initialLessonId) ? initialLessonId : undefined;
   const [lessonId, setLessonId] = useState(validInitialLessonId ?? "lesson-1");
   const [expandedLessonId, setExpandedLessonId] = useState<string | null>(validInitialLessonId ?? null);
@@ -394,7 +406,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   const lesson = lessons.find((item) => item.id === lessonId) ?? lessons[0];
-  const meta = lessonMeta[lesson.id];
   const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
   const matchingLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
@@ -438,7 +449,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       setTab("outcomes");
     }, 0);
     return () => window.clearTimeout(timer);
-  }, [validInitialLessonId]);
+  }, [validInitialLessonId, lessons]);
 
   useEffect(() => {
     let cancelled = false;
@@ -467,6 +478,15 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       cancelled = true;
     };
   }, [lessonId]);
+
+  if (!lesson) {
+    return (
+      <div className={`cnc-shell lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
+        <p style={{ padding: 24 }}>Đang tải bài học…</p>
+      </div>
+    );
+  }
+  const meta = lessonMeta[lesson.id] ?? { theory: 0, practice: 0, test: 0 };
 
   const selectLesson = (id: string) => {
     if (expandedLessonId === id) {
@@ -578,7 +598,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                     </span>
                     <ChevronDown className="cnc-accordion-chevron" size={18} />
                   </button> : <Link
-                    href={locked ? "/lop-hoc/cnc" : `/lop-hoc/cnc/${item.id}`}
+                    href={locked ? "/lop-hoc/cnc" : `/lop-hoc/cnc/?bai=${item.id}`}
                     aria-disabled={locked}
                     className="cnc-lesson-toggle"
                   >
@@ -757,14 +777,12 @@ function DrawingSubmissionTest({ lessonId, lessonTitle, courseId, onApproved }: 
   </>;
 }
 
-function Outcomes({ lesson, meta }: { lesson: (typeof lessons)[number]; meta: (typeof lessonMeta)[string] }) {
-  const outcomes = "overview" in lesson && lesson.overview
-    ? [lesson.overview.outcome, lesson.overview.purpose]
-    : [
-        `Trình bày đúng quy trình và nguyên tắc của ${lesson.shortTitle.toLowerCase()}.`,
-        "Thực hiện nhiệm vụ theo bản vẽ, thông số công nghệ và tiêu chuẩn an toàn xưởng.",
-        "Tự kiểm tra kết quả, phát hiện sai hỏng và đề xuất biện pháp khắc phục.",
-      ];
+function Outcomes({ lesson, meta }: { lesson: CncLesson; meta: (typeof lessonMeta)[string] }) {
+  const outcomes = [
+    `Trình bày đúng quy trình và nguyên tắc của ${lesson.shortTitle.toLowerCase()}.`,
+    "Thực hiện nhiệm vụ theo bản vẽ, thông số công nghệ và tiêu chuẩn an toàn xưởng.",
+    "Tự kiểm tra kết quả, phát hiện sai hỏng và đề xuất biện pháp khắc phục.",
+  ];
   return <>
     <SectionHeading icon={GraduationCap} kicker="MỤC 01" title="Chuẩn đầu ra bài học" description="Sau khi hoàn thành bài học, sinh viên có thể:" />
     <div className="cnc-outcomes">
@@ -777,9 +795,7 @@ function Outcomes({ lesson, meta }: { lesson: (typeof lessons)[number]; meta: (t
   </>;
 }
 
-function Slides({ lesson, files }: { lesson: (typeof lessons)[number]; files: CncLessonFile[] }) {
-  const topics = "topics" in lesson && lesson.topics ? lesson.topics : [];
-  const detailedContent = "lessonContent" in lesson ? lesson.lessonContent : undefined;
+function Slides({ lesson, files }: { lesson: CncLesson; files: CncLessonFile[] }) {
   return <>
     <SectionHeading icon={Presentation} kicker="MỤC 02" title="Nội dung bài học" description="Bài giảng PowerPoint và các nội dung trọng tâm của bài." />
     {files.length === 0 ? (
@@ -800,23 +816,14 @@ function Slides({ lesson, files }: { lesson: (typeof lessons)[number]; files: Cn
         </div>
       </article>
     ))}
-    {detailedContent ? <>
+    {lesson.bodyHtml && <>
       <h3 className="cnc-subheading">Giáo trình nội dung chi tiết</h3>
-      <div className="cnc-detailed-content">
-        {detailedContent.map((section) => <article key={section.title}>
-          <h4>{section.title}</h4>
-          {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
-        </article>)}
-      </div>
-    </> : <>
-      <h3 className="cnc-subheading">Nội dung chính</h3>
-      <div className="cnc-topic-list">{topics.map((topic, i) => <div key={topic}><span>{String(i + 1).padStart(2, "0")}</span><p>{topic}</p></div>)}</div>
+      <ContentHtml html={lesson.bodyHtml} className="cnc-detailed-content" />
     </>}
   </>;
 }
 
-function Video({ lesson, videos }: { lesson: (typeof lessons)[number]; videos: CncLessonVideo[] }) {
+function Video({ lesson, videos }: { lesson: CncLesson; videos: CncLessonVideo[] }) {
   return <>
     <SectionHeading icon={MonitorPlay} kicker="MỤC 03" title="Video bài giảng" description={`${videos.length || "Chưa có"} video YouTube · Giảng viên Nguyễn Văn Toàn`} />
     {videos.length === 0 ? (
@@ -1366,8 +1373,8 @@ function OperationChecklist({ lessonId, machine, enabled, lockedMessage, onPasse
   </>;
 }
 
-function Resources({ lesson, files }: { lesson: (typeof lessons)[number]; files: CncLessonFile[] }) {
-  const resources = "resources" in lesson && lesson.resources ? lesson.resources : ["Giáo trình Gia công CNC", "Phiếu hướng dẫn thực hành", "Bản vẽ và dữ liệu bài tập"];
+function Resources({ lesson, files }: { lesson: CncLesson; files: CncLessonFile[] }) {
+  const resources = lesson.resources.length ? lesson.resources : ["Giáo trình Gia công CNC", "Phiếu hướng dẫn thực hành", "Bản vẽ và dữ liệu bài tập"];
   return <>
     <SectionHeading icon={FileText} kicker="MỤC 05" title="Tài liệu học tập" description="Tài liệu bắt buộc và tài nguyên hỗ trợ cho bài học." />
     <div className="cnc-resources">

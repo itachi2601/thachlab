@@ -1,7 +1,6 @@
 import {
   BookOpen,
   ClipboardList,
-  Cpu,
   Database,
   FileUp,
   Gauge,
@@ -15,6 +14,7 @@ import {
   UserCheck,
   UserCog,
   Users,
+  Video,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,7 +23,7 @@ export type AdminArea = "thpt" | "cttc";
 export const AREA_LABEL: Record<AdminArea, string> = { thpt: "THPT – THCS", cttc: "CTTC" };
 export const AREA_ENTRY: Record<AdminArea, string> = {
   thpt: "/quan-tri/bai-hoc",
-  cttc: "/quan-tri/lms-cnc",
+  cttc: "/quan-tri/cnc-bai-hoc",
 };
 
 export interface AdminNavItem {
@@ -48,7 +48,9 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
     { href: "/quan-tri/bang-diem", label: "Bảng điểm", desc: "Kết quả bài kiểm tra đã nộp", icon: ClipboardList },
   ],
   cttc: [
-    { href: "/quan-tri/lms-cnc", label: "Nội dung học phần CNC", desc: "Bài giảng, tài nguyên, checklist", icon: Cpu },
+    { href: "/quan-tri/cnc-bai-hoc", label: "Bài học", desc: "Nội dung, tài nguyên và điều kiện mở bài", icon: BookOpen },
+    { href: "/quan-tri/cnc-video", label: "Video bài giảng", desc: "Đăng video YouTube cho từng bài", icon: Video },
+    { href: "/quan-tri/cnc-dang-de", label: "Đăng đề kiểm tra", desc: "Dán đề kiểu Azota rồi đăng vào ngân hàng CNC", icon: SquarePen },
     // Mở lớp học phần mới + nhập danh sách sinh viên nằm ở tab "Danh sách lớp" của dashboard.
     { href: "/dashboard", label: "Lớp học phần & sinh viên", desc: "Mở lớp, nhập danh sách sinh viên", icon: Users, external: true },
     { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy", desc: "Máy hư, người sửa, thời gian chờ", icon: Gauge },
@@ -73,7 +75,7 @@ const ALL_ITEMS = [OVERVIEW_ITEM, ...AREA_ITEMS.thpt, ...AREA_ITEMS.cttc, ...SHA
 /** Khu vực mà một đường dẫn thuộc về — quyết định tông màu của shell. */
 export function areaOfPath(pathname: string): AdminArea | null {
   if (AREA_ITEMS.thpt.some((item) => pathname.startsWith(item.href) && item.href !== "/dashboard")) return "thpt";
-  if (pathname.startsWith("/quan-tri/lms-cnc") || pathname.startsWith("/quan-tri/tinh-trang-may")) return "cttc";
+  if (pathname.startsWith("/quan-tri/cnc-") || pathname.startsWith("/quan-tri/tinh-trang-may")) return "cttc";
   return null;
 }
 

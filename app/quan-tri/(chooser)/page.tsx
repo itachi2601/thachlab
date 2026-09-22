@@ -31,7 +31,7 @@ const QUICK_HREFS = [
   "/quan-tri/dang-de",
   "/quan-tri/bai-hoc",
   "/quan-tri/bang-diem",
-  "/quan-tri/lms-cnc",
+  "/quan-tri/cnc-bai-hoc",
   "/quan-tri/tinh-trang-may",
   "/quan-tri/tin-nhan",
 ];

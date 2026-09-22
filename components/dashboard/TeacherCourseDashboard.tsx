@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, Users2, X } from "lucide-react";
-import { CNC_COURSE_ITEMS } from "@/services/cnc-lms";
+import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
 import TeacherAttendancePanel from "@/components/attendance/TeacherAttendancePanel";
@@ -25,8 +25,7 @@ type DashboardStudent = {
   status: string; color: "blue" | "amber"; last: string; steps: boolean[]; records: CncLearningRecord[];
 };
 
-const roadmap = CNC_COURSE_ITEMS.filter((item)=>item.id!=="intro").map((item)=>({id:item.id,title:item.title,duration:item.duration}));
-function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[]): DashboardStudent {
+function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[], roadmap: CncLesson[]): DashboardStudent {
   const pending = row.status === "pending";
   const own = records.filter((record)=>record.student_id===row.student_id);
   const completed = completedCncLessons(own);
@@ -70,6 +69,10 @@ export default function TeacherCourseDashboard() {
   const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
   const [students, setStudents] = useState<DashboardStudent[]>([]);
   const [courseError, setCourseError] = useState("");
+  const [roadmap, setRoadmap] = useState<CncLesson[]>([]);
+  useEffect(() => {
+    fetchCncLessons().then((rows) => setRoadmap(rows.filter((row) => row.id !== "intro"))).catch(() => undefined);
+  }, []);
   const student = students[activeStudent] ?? null;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
   const subject = getSubject(subjectCode);
@@ -111,7 +114,7 @@ export default function TeacherCourseDashboard() {
     const reload = () => Promise.all([fetchCourseEnrollments(selectedCourseId), fetchCncLearningRecords(selectedCourseId).catch(()=>[])])
       .then(([rows,records]) => {
         if (cancelled) return;
-        setStudents(rows.filter((row) => row.status === "active" || row.status === "pending").map((row)=>toDashboardStudent(row,records)));
+        setStudents(rows.filter((row) => row.status === "active" || row.status === "pending").map((row)=>toDashboardStudent(row,records,roadmap)));
         setActiveStudent(0);
         setCourseError("");
       })
@@ -123,7 +126,7 @@ export default function TeacherCourseDashboard() {
     void reload();
     const channel=subscribeToCncLearningRecords(selectedCourseId,()=>void reload());
     return () => { cancelled = true; void unsubscribeFromCncLearningRecords(channel); };
-  }, [selectedCourseId, studentsNonce]);
+  }, [selectedCourseId, studentsNonce, roadmap]);
 
   return <div className="teacher-dashboard space-y-6">
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-6 sm:p-8">
