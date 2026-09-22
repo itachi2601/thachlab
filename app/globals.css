@@ -812,6 +812,7 @@ html[data-theme="light"] .lesson-shell :is(h1, h2, .lesson-block-title, .hub-car
 html[data-theme="light"] .lesson-shell :is(.lesson-lead, .lesson-nav a, .lesson-block-sub, .hub-card-desc, .class-num, .lesson-back, .lesson-done, .class-lesson-title small, .hub-tag, .class-chapter-progress small, .lesson-pager-link small) { color: #475569; }
 html[data-theme="light"] .lesson-shell :is(.class-lesson:hover, .lesson-nav a:hover, .lesson-pager-link:hover) { background: rgba(15,23,42,.05); }
 html[data-theme="light"] .lesson-shell .class-lesson:hover .class-lesson-title { color: #0f172a; }
+html[data-theme="light"] .lesson-shell :is(.lesson-nav a:hover, .lesson-back:hover) { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .lesson-btn { color: #fff; }
 html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background: rgba(15,23,42,.1); }
 .lesson-main--single .lesson-head + .lesson-section { margin-top: 0; border-top: 0; padding-top: 0; }
