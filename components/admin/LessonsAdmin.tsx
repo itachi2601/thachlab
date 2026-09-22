@@ -395,6 +395,44 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
   );
 }
 
+// ---------- Mô tả ngắn (yêu cầu cần đạt) của 1 bài học, hiện dưới tên bài ----------
+function LessonDescriptionField({ lesson, onSaved }: { lesson: Lesson; onSaved: () => void }) {
+  const toast = useToast();
+  const [value, setValue] = useState(lesson.description);
+  const [busy, setBusy] = useState(false);
+  const dirty = value !== lesson.description;
+
+  async function save() {
+    setBusy(true);
+    const { error } = await getSupabase()
+      .from("lessons")
+      .update({ description: value.trim() })
+      .eq("id", lesson.id);
+    setBusy(false);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
+    onSaved();
+  }
+
+  return (
+    <div className="flex items-center gap-2 pl-8">
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Yêu cầu cần đạt (hiện ngắn gọn dưới tên bài)"
+        className={`${inputCls} flex-1 text-xs`}
+      />
+      {dirty && (
+        <button onClick={save} disabled={busy} className="admin-chip disabled:opacity-50">
+          Lưu
+        </button>
+      )}
+    </div>
+  );
+}
+
 // ---------- Quản lý bài học của 1 chương ----------
 function ChapterLessonsEditor({
   chapter,
@@ -524,88 +562,89 @@ function ChapterLessonsEditor({
         {lessons.map((l, idx) => (
           <div
             key={l.id}
-            className={`admin-card admin-card--row ${
-              l.published ? "" : "opacity-50"
-            }`}
+            className={`admin-card space-y-2 ${l.published ? "" : "opacity-50"}`}
           >
-            <button
-              onClick={() => setOpenLesson(l)}
-              className="min-w-0 flex-1 text-left"
-            >
-              <span className="flex items-center gap-2">
-                {isPeriodicExam(l.lesson_kind) && (
-                  <span
-                    className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
-                    style={{
-                      color: LESSON_KIND_META[l.lesson_kind].color,
-                      backgroundColor: `${LESSON_KIND_META[l.lesson_kind].color}22`,
-                    }}
-                  >
-                    {LESSON_KIND_META[l.lesson_kind].badge}
-                  </span>
-                )}
-                <span className="truncate font-medium text-white hover:text-primary">
-                  {l.title}
-                </span>
-              </span>
-              <span className="text-xs text-slate-500">{l.itemCount} mục</span>
-            </button>
-            <span className="flex flex-wrap items-center gap-1">
-              <select
-                value={l.lesson_kind}
-                onChange={(e) => setKind(l, e.target.value as LessonKind)}
-                title="Loại bài"
-                className="rounded-lg border border-white/10 bg-[#0B1020] px-2 py-1 text-xs text-slate-300"
-              >
-                {LESSON_KIND_OPTIONS.map((k) => (
-                  <option key={k} value={k}>
-                    {LESSON_KIND_META[k].icon} {LESSON_KIND_META[k].label}
-                  </option>
-                ))}
-              </select>
-              <button onClick={() => move(idx, -1)} title="Lên" className={chipBtn}>
-                ↑
-              </button>
-              <button onClick={() => move(idx, 1)} title="Xuống" className={chipBtn}>
-                ↓
-              </button>
-              <button
-                onClick={async () => {
-                  await getSupabase()
-                    .from("lessons")
-                    .update({ published: !l.published })
-                    .eq("id", l.id);
-                  reload();
-                }}
-                className="admin-chip"
-              >
-                {l.published ? "Ẩn" : "Hiện"}
-              </button>
+            <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => setOpenLesson(l)}
-                className="admin-chip"
+                className="min-w-0 flex-1 text-left"
               >
-                Soạn mục
+                <span className="flex items-center gap-2">
+                  {isPeriodicExam(l.lesson_kind) && (
+                    <span
+                      className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                      style={{
+                        color: LESSON_KIND_META[l.lesson_kind].color,
+                        backgroundColor: `${LESSON_KIND_META[l.lesson_kind].color}22`,
+                      }}
+                    >
+                      {LESSON_KIND_META[l.lesson_kind].badge}
+                    </span>
+                  )}
+                  <span className="truncate font-medium text-white hover:text-primary">
+                    {l.title}
+                  </span>
+                </span>
+                <span className="text-xs text-slate-500">{l.itemCount} mục</span>
               </button>
-              <button
-                onClick={async () => {
-                  if (!confirm(`Xóa bài "${l.title}" và toàn bộ mục bên trong?`)) return;
-                  const { error } = await getSupabase()
-                    .from("lessons")
-                    .delete()
-                    .eq("id", l.id);
-                  if (error) {
-                    toast("error", error.message);
-                    return;
-                  }
-                  toast("success", "Đã xóa bài học.");
-                  reload();
-                }}
-                className="admin-chip admin-chip--danger"
-              >
-                Xóa
-              </button>
-            </span>
+              <span className="flex flex-wrap items-center gap-1">
+                <select
+                  value={l.lesson_kind}
+                  onChange={(e) => setKind(l, e.target.value as LessonKind)}
+                  title="Loại bài"
+                  className="rounded-lg border border-white/10 bg-[#0B1020] px-2 py-1 text-xs text-slate-300"
+                >
+                  {LESSON_KIND_OPTIONS.map((k) => (
+                    <option key={k} value={k}>
+                      {LESSON_KIND_META[k].icon} {LESSON_KIND_META[k].label}
+                    </option>
+                  ))}
+                </select>
+                <button onClick={() => move(idx, -1)} title="Lên" className={chipBtn}>
+                  ↑
+                </button>
+                <button onClick={() => move(idx, 1)} title="Xuống" className={chipBtn}>
+                  ↓
+                </button>
+                <button
+                  onClick={async () => {
+                    await getSupabase()
+                      .from("lessons")
+                      .update({ published: !l.published })
+                      .eq("id", l.id);
+                    reload();
+                  }}
+                  className="admin-chip"
+                >
+                  {l.published ? "Ẩn" : "Hiện"}
+                </button>
+                <button
+                  onClick={() => setOpenLesson(l)}
+                  className="admin-chip"
+                >
+                  Soạn mục
+                </button>
+                <button
+                  onClick={async () => {
+                    if (!confirm(`Xóa bài "${l.title}" và toàn bộ mục bên trong?`)) return;
+                    const { error } = await getSupabase()
+                      .from("lessons")
+                      .delete()
+                      .eq("id", l.id);
+                    if (error) {
+                      toast("error", error.message);
+                      return;
+                    }
+                    toast("success", "Đã xóa bài học.");
+                    reload();
+                  }}
+                  className="admin-chip admin-chip--danger"
+                >
+                  Xóa
+                </button>
+              </span>
+            </div>
+            <LessonDescriptionField lesson={l} onSaved={reload} />
           </div>
         ))}
         {lessons.length === 0 && (

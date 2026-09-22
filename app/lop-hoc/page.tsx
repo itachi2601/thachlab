@@ -228,6 +228,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   <header className="lesson-head">
                     <p className="lesson-eyebrow">{grade === "9" ? "Trung học cơ sở" : "Trung học phổ thông"}</p>
                     <h1>{activeDisplayName}</h1>
+                    {grade && GRADE_DESCRIPTIONS[grade] && (
+                      <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
+                    )}
                     {grade === "9" && (
                       <div className="class-subjects" role="tablist" aria-label="Môn học">
                         {subjectsForGrade("9").map((subject) => (
@@ -326,7 +329,10 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                           <span className={`class-num ${periodic ? "class-num--exam" : ""}`}>
                                             {complete ? <Check size={13} /> : periodic ? "KT" : lessonNumber}
                                           </span>
-                                          <span className="class-lesson-title">{lesson.title}</span>
+                                          <span className="class-lesson-title">
+                                            {lesson.title}
+                                            {lesson.description && <small>{lesson.description}</small>}
+                                          </span>
                                           <span className="class-meta">
                                             {periodic
                                               ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"

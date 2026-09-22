@@ -32,6 +32,7 @@ export interface Lesson {
   published: boolean;
   lesson_kind: LessonKind;
   itemCount: number;
+  description: string; // yêu cầu cần đạt, hiện ngắn gọn dưới tên bài
 }
 
 /** Bài chỉ gồm đề (kiểm tra chương / giữa kì / cuối kì) — không có các mục học liệu. */

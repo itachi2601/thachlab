@@ -40,7 +40,7 @@ type LessonRow = Record<string, unknown> & { lesson_items?: { count: number }[] 
 export async function fetchLessons(includeDrafts = false): Promise<Lesson[]> {
   const withKind = getSupabase()
     .from("lessons")
-    .select("id, chapter_id, title, sort_order, published, lesson_kind, lesson_items(count)")
+    .select("id, chapter_id, title, sort_order, published, lesson_kind, description, lesson_items(count)")
     .order("sort_order")
     .order("id");
   const legacy = getSupabase()
@@ -60,6 +60,7 @@ export async function fetchLessons(includeDrafts = false): Promise<Lesson[]> {
     published: l.published as boolean,
     lesson_kind: normalizeLessonKind(l.lesson_kind),
     itemCount: l.lesson_items?.[0]?.count ?? 0,
+    description: (l.description as string) ?? "",
   }));
 }
 
@@ -68,7 +69,7 @@ export async function fetchLesson(
 ): Promise<{ lesson: Lesson; chapterTitle: string } | null> {
   const withKind = getSupabase()
     .from("lessons")
-    .select("id, chapter_id, title, sort_order, published, lesson_kind, chapters(title)")
+    .select("id, chapter_id, title, sort_order, published, lesson_kind, description, chapters(title)")
     .eq("id", id)
     .single();
   const legacy = getSupabase()
@@ -89,6 +90,7 @@ export async function fetchLesson(
       published: data.published,
       lesson_kind: normalizeLessonKind(data.lesson_kind),
       itemCount: 0,
+      description: (data.description as string) ?? "",
     } as unknown as Lesson,
     chapterTitle: (data.chapters as unknown as { title: string })?.title ?? "",
   };
