@@ -987,6 +987,14 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   line-height: 1.65;
 }
 
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
 .exam-content img.eq {
   display: inline-block;

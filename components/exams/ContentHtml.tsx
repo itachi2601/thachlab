@@ -9,12 +9,16 @@ import "katex/dist/katex.min.css";
  * ("I. TÓM TẮT.........."), ký tự thay thế khi font/encoding lỗi, và các
  * đoạn liệt kê gõ tay bằng "-"/"•" ở đầu dòng thay vì thẻ <ul><li> thật —
  * đánh dấu lại bằng data-bullet để CSS vẽ chấm đầu dòng thụt lề nhất quán.
+ * Bảng dán từ Word có sẵn min-width cố định, tràn màn hình điện thoại nếu
+ * để nguyên — bọc riêng một lớp cuộn ngang cho bảng, không đẩy tràn cả trang.
  */
 function stripWordArtifacts(html: string): string {
   return html
     .replace(/[�￼]/g, "")
     .replace(/\.{4,}/g, "")
-    .replace(/(<p\b[^>]*)>(\s*)[-•●▪][ \t ]+/g, '$1 data-bullet="1">');
+    .replace(/(<p\b[^>]*)>(\s*)[-•●▪][ \t ]+/g, '$1 data-bullet="1">')
+    .replace(/<table\b/g, '<div class="table-scroll"><table')
+    .replace(/<\/table>/g, "</table></div>");
 }
 
 /**
