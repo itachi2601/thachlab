@@ -37,7 +37,7 @@ function List() {
   }
 
   if (reports.length === 0) {
-    return <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Bạn chưa gửi báo lỗi nào.</p>;
+    return <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Bạn chưa gửi báo lỗi hay đề xuất nào.</p>;
   }
 
   return (
@@ -72,9 +72,9 @@ export default function MyBugReportsPage() {
         <RequireAuth>
           <h1 className="flex items-center gap-2 font-display text-2xl font-bold text-white">
             <Bug size={22} className="text-amber-300" />
-            Báo lỗi của tôi
+            Báo lỗi &amp; góp ý của tôi
           </h1>
-          <p className="mt-1 text-sm text-slate-400">Danh sách các lỗi bạn đã gửi và trạng thái xử lý.</p>
+          <p className="mt-1 text-sm text-slate-400">Danh sách các báo lỗi, đề xuất bạn đã gửi và trạng thái xử lý.</p>
           <div className="mt-6">
             <List />
           </div>

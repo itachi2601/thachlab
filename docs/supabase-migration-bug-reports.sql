@@ -9,7 +9,7 @@ create table if not exists public.bug_reports (
   reporter_name text not null default '',
   reporter_email text not null default '',
   page_url text not null default '',
-  category text not null default 'khac' check (category in ('hien_thi', 'diem', 'dang_nhap', 'khac')),
+  category text not null default 'khac' check (category in ('hien_thi', 'diem', 'dang_nhap', 'de_xuat', 'khac')),
   description text not null,
   screenshot_path text,
   status text not null default 'moi' check (status in ('moi', 'dang_xu_ly', 'da_xu_ly')),

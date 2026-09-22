@@ -40,7 +40,7 @@ export default function BugReportsAdmin() {
     setLoading(true);
     fetchBugReports(tab === "all" ? undefined : tab)
       .then(setReports)
-      .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được danh sách báo lỗi."))
+      .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được danh sách."))
       .finally(() => setLoading(false));
   }, [tab]);
   useEffect(() => {
@@ -53,9 +53,9 @@ export default function BugReportsAdmin() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="admin-eyebrow">Báo lỗi từ người dùng</p>
+          <p className="admin-eyebrow">Báo lỗi & góp ý từ người dùng</p>
           <p className="admin-lead">
-            {reports.length} báo lỗi{tab === "all" && moiCount > 0 && <span className="ml-1 font-bold text-red-300">· {moiCount} mới</span>}
+            {reports.length} mục{tab === "all" && moiCount > 0 && <span className="ml-1 font-bold text-red-300">· {moiCount} mới</span>}
           </p>
         </div>
         <button onClick={load} disabled={loading} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 disabled:opacity-40">
@@ -87,7 +87,7 @@ export default function BugReportsAdmin() {
           Đang tải…
         </p>
       ) : reports.length === 0 ? (
-        <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Không có báo lỗi nào.</p>
+        <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có mục nào.</p>
       ) : (
         <div className="admin-table-wrap">
           <table className="min-w-[900px] text-xs">
@@ -95,7 +95,7 @@ export default function BugReportsAdmin() {
               <tr>
                 <th className="p-2">Thời gian</th>
                 <th className="p-2">Người báo</th>
-                <th className="p-2">Loại lỗi</th>
+                <th className="p-2">Loại</th>
                 <th className="p-2">Mô tả</th>
                 <th className="p-2">Trang</th>
                 <th className="p-2">Trạng thái</th>
@@ -167,11 +167,11 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4" onClick={onClose}>
-      <section role="dialog" aria-modal="true" aria-label="Chi tiết báo lỗi" className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#0B1020] p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+      <section role="dialog" aria-modal="true" aria-label="Chi tiết" className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#0B1020] p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-lg font-bold text-white">
             <Bug size={18} className="text-amber-300" />
-            Chi tiết báo lỗi
+            Chi tiết
           </h2>
           <button type="button" onClick={onClose} className="text-slate-400 hover:text-white">
             <X size={20} />
@@ -187,7 +187,7 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
             </dd>
           </div>
           <div className="flex justify-between gap-3">
-            <dt className="text-slate-500">Loại lỗi</dt>
+            <dt className="text-slate-500">Loại</dt>
             <dd className="text-slate-200">{BUG_CATEGORY_LABELS[report.category]}</dd>
           </div>
           <div className="flex justify-between gap-3">

@@ -48,7 +48,7 @@ export default function BugReportWidget() {
         reporterEmail: session ? "" : reporterEmail,
         file,
       });
-      toast("success", "Đã gửi báo lỗi, cảm ơn bạn!");
+      toast("success", "Đã gửi, cảm ơn bạn!");
       close();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không gửi được, thử lại sau.");
@@ -66,7 +66,7 @@ export default function BugReportWidget() {
       >
         <Bug size={16} className="text-amber-300" />
         <span className="text-[11px] font-bold text-slate-200" style={{ writingMode: "vertical-rl" }}>
-          Báo lỗi
+          Báo lỗi / Góp ý
         </span>
       </button>
 
@@ -75,14 +75,14 @@ export default function BugReportWidget() {
           <section
             role="dialog"
             aria-modal="true"
-            aria-label="Báo lỗi"
+            aria-label="Báo lỗi và góp ý"
             className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0B1020] p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
               <h2 className="flex items-center gap-2 text-lg font-bold text-white">
                 <Bug size={18} className="text-amber-300" />
-                Báo lỗi
+                Báo lỗi &amp; góp ý
               </h2>
               <button type="button" onClick={close} className="text-slate-400 hover:text-white">
                 <X size={20} />
@@ -90,7 +90,7 @@ export default function BugReportWidget() {
             </div>
             {session && (
               <Link href="/bao-loi-cua-toi" className="mt-2 inline-block text-xs font-semibold text-cyan-300 hover:text-cyan-200">
-                Xem các báo lỗi đã gửi của tôi →
+                Xem các báo lỗi &amp; đề xuất đã gửi của tôi →
               </Link>
             )}
 
@@ -106,7 +106,7 @@ export default function BugReportWidget() {
                 required
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Mô tả lỗi bạn gặp phải: đang làm gì, mong đợi thấy gì, thực tế thấy gì…"
+                placeholder="Mô tả lỗi bạn gặp phải, hoặc tính năng bạn muốn đề xuất…"
                 rows={4}
                 className={inputCls}
               />
@@ -123,7 +123,7 @@ export default function BugReportWidget() {
               </label>
               {error && <p className="text-sm text-red-400">{error}</p>}
               <button type="submit" disabled={busy || !description.trim()} className="w-full rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-50">
-                {busy ? "Đang gửi…" : "Gửi báo lỗi"}
+                {busy ? "Đang gửi…" : "Gửi"}
               </button>
             </form>
           </section>

@@ -1,13 +1,14 @@
 import { getSupabase } from "@/services/supabase";
 import { compressImageFile } from "@/services/image-compress";
 
-export type BugCategory = "hien_thi" | "diem" | "dang_nhap" | "khac";
+export type BugCategory = "hien_thi" | "diem" | "dang_nhap" | "de_xuat" | "khac";
 export type BugStatus = "moi" | "dang_xu_ly" | "da_xu_ly";
 
 export const BUG_CATEGORY_LABELS: Record<BugCategory, string> = {
   hien_thi: "Lỗi hiển thị / giao diện",
   diem: "Lỗi điểm / bài kiểm tra",
   dang_nhap: "Lỗi đăng nhập / tài khoản",
+  de_xuat: "Đề xuất tính năng mới",
   khac: "Khác",
 };
 
