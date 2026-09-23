@@ -54,7 +54,7 @@ export default function TeacherLiveLearningPanel({
   }
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-5">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-2"><Activity size={19} className="text-emerald-300" /><h3 className="font-display text-lg font-bold text-white">Hoạt động học tập trực tiếp</h3></div>

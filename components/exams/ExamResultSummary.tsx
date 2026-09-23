@@ -1,12 +1,14 @@
 "use client";
 
 import { Eye } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   gradeExam,
   statsByType,
   type ExamQuestion,
   type QuestionResponse,
 } from "@/features/exams/types";
+import ResultSticker, { resultTier } from "@/components/exams/ResultSticker";
 
 const num = (v: number) => v.toLocaleString("vi-VN", { maximumFractionDigits: 2 });
 
@@ -116,19 +118,31 @@ export default function ExamResultSummary({
   const pct = Math.round(summary.max > 0 ? (summary.earned / summary.max) * 100 : 0);
   const t = tone(pct);
   const stats = statsByType(questions, responses);
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
-          {badge && (
-            <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${BADGE_CLS[badge.tone]}`}>
-              {badge.label}
-            </span>
-          )}
+      <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
+        <div className="flex flex-wrap items-center gap-4">
+          <motion.div
+            initial={{ scale: reduceMotion ? 1 : 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: reduceMotion ? 0 : 0.4, ease: "backOut" }}
+          >
+            <ResultSticker tier={resultTier(pct)} />
+          </motion.div>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-3">
+              <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
+              {badge && (
+                <span className={`shrink-0 rounded-full border px-3 py-1 text-xs font-bold ${BADGE_CLS[badge.tone]}`}>
+                  {badge.label}
+                </span>
+              )}
+            </div>
+            {meta && <p className="mt-1 text-sm text-slate-400">{meta}</p>}
+          </div>
         </div>
-        {meta && <p className="mt-1 text-sm text-slate-400">{meta}</p>}
 
         <div className="mt-5 flex flex-wrap items-center gap-6">
           <Ring pct={pct} color={t.stroke} />
@@ -158,7 +172,7 @@ export default function ExamResultSummary({
         {detailAnchor && (
           <a
             href={`#${detailAnchor}`}
-            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             <Eye size={18} /> Xem bài làm chi tiết
           </a>
@@ -171,7 +185,7 @@ export default function ExamResultSummary({
           {stats.map((s) => (
             <div
               key={s.type}
-              className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-[#0B1020] p-4"
+              className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-panel p-4"
             >
               <div className="min-w-[180px] flex-1">
                 <p className="font-semibold text-white">

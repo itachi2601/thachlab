@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import type { ExamQuestion, QuestionResponse, QuestionStatus } from "@/features/exams/types";
 import {
   gradeQuestion,
@@ -8,6 +9,7 @@ import {
   QUESTION_STATUS_LABELS,
 } from "@/features/exams/types";
 import Html from "@/components/exams/ContentHtml";
+import Badge from "@/components/ui/Badge";
 
 const LETTERS = ["A", "B", "C", "D"];
 const TF_LABELS = ["a)", "b)", "c)", "d)"];
@@ -28,12 +30,6 @@ const CARD_TONE: Record<QuestionStatus, string> = {
   skipped: "border-white/10",
   manual: "border-violet-400/30",
 };
-
-function Badge({ tone, children }: { tone: string; children: React.ReactNode }) {
-  return (
-    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${tone}`}>{children}</span>
-  );
-}
 
 interface Props {
   index: number; // số thứ tự hiển thị (1-based)
@@ -59,7 +55,7 @@ export default function QuestionCard({
   const border = status ? CARD_TONE[status] : "border-white/10";
 
   return (
-    <div className={`rounded-2xl border bg-[#0B1020] p-5 ${border}`}>
+    <div className={`rounded-2xl border bg-panel p-5 ${border}`}>
       <div className="flex items-start gap-3">
         <p className="exam-content min-w-0 flex-1 font-medium text-white">
           <span className="mr-1 font-semibold text-primary">Câu {index}.</span>
@@ -105,10 +101,13 @@ export default function QuestionCard({
               dot = "bg-primary text-white";
             }
             return (
-              <button
+              <motion.button
                 key={oi}
                 type="button"
                 disabled={review}
+                whileTap={review ? undefined : { scale: 0.98 }}
+                animate={picked && !review ? { scale: [1, 1.015, 1] } : undefined}
+                transition={{ duration: 0.16 }}
                 onClick={() => onChange?.(picked ? null : oi)}
                 className={`flex items-start gap-3 rounded-xl border px-3 py-2.5 text-left text-base transition-colors ${cls}`}
               >
@@ -121,22 +120,16 @@ export default function QuestionCard({
                   <Html html={opt} />
                   {review && (isAnswer || showPick) && (
                     <span className="mt-1.5 flex flex-wrap gap-1.5">
-                      {isAnswer && (
-                        <Badge tone="bg-emerald-500 text-white">✓ Đáp án đúng</Badge>
-                      )}
+                      {isAnswer && <Badge tone="success">✓ Đáp án đúng</Badge>}
                       {showPick && (
-                        <Badge
-                          tone={
-                            isAnswer ? "bg-emerald-500/20 text-emerald-200" : "bg-red-500/20 text-red-200"
-                          }
-                        >
+                        <Badge tone={isAnswer ? "success" : "error"}>
                           {isAnswer ? "✓ Bạn chọn" : "✗ Bạn chọn"}
                         </Badge>
                       )}
                     </span>
                   )}
                 </span>
-              </button>
+              </motion.button>
             );
           })}
           {review && !selfCheck && r === null && (
@@ -180,10 +173,11 @@ export default function QuestionCard({
                       else cls = "bg-slate-500/20 text-slate-500";
                     }
                     return (
-                      <button
+                      <motion.button
                         key={String(val)}
                         type="button"
                         disabled={review}
+                        whileTap={review ? undefined : { scale: 0.94 }}
                         onClick={() => {
                           const next = [
                             ...(Array.isArray(r) ? r : [null, null, null, null]),
@@ -195,13 +189,11 @@ export default function QuestionCard({
                       >
                         {review && chosen && !selfCheck ? "✓ " : ""}
                         {val ? "Đúng" : "Sai"}
-                      </button>
+                      </motion.button>
                     );
                   })}
                 </span>
-                {review && !selfCheck && pick === null && (
-                  <Badge tone="bg-slate-500/20 text-slate-400">Bỏ qua</Badge>
-                )}
+                {review && !selfCheck && pick === null && <Badge tone="neutral">Bỏ qua</Badge>}
               </div>
             );
           })}

@@ -213,7 +213,7 @@ export default function PostsAdmin() {
             <select
               value={form.subjectCode}
               onChange={(e) => setForm((f) => ({ ...f, subjectCode: e.target.value }))}
-              className={`${inputCls} bg-[#0B1020]`}
+              className={`${inputCls} bg-panel`}
             >
               {ACADEMIC_SUBJECTS.map((subject) => (
                 <option key={subject.code} value={subject.code}>
@@ -229,7 +229,7 @@ export default function PostsAdmin() {
               onChange={(e) =>
                 setForm((f) => ({ ...f, contentType: e.target.value as PostContentType }))
               }
-              className={`${inputCls} bg-[#0B1020]`}
+              className={`${inputCls} bg-panel`}
             >
               {CONTENT_TYPES.map((t) => (
                 <option key={t.value} value={t.value}>
@@ -281,7 +281,7 @@ export default function PostsAdmin() {
         {posts.map((p) => (
           <div
             key={p.id}
-            className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-4"
+            className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-4"
           >
             <div className="min-w-0">
               <p className="font-medium text-white">{p.title}</p>

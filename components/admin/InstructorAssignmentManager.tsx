@@ -215,7 +215,7 @@ function CttcInstructorPanel({ roster }: { roster: { id: string; full_name: stri
 
   return <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
     <aside className="admin-card">
-      <select aria-label="Môn học" value={subjectCode} onChange={(e) => setSubjectCode(e.target.value)} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white">
+      <select aria-label="Môn học" value={subjectCode} onChange={(e) => setSubjectCode(e.target.value)} className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-2.5 text-sm text-white">
         {CTTC_SUBJECTS.map((item) => <option key={item.code} value={item.code}>{item.label}</option>)}
       </select>
       <h3 className="mt-4 font-semibold text-white">Các khóa · {subject?.label}</h3>

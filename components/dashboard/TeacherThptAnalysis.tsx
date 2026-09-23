@@ -138,7 +138,7 @@ export default function TeacherThptAnalysis({
         <select
           value={examId ?? ""}
           onChange={(e) => setExamId(Number(e.target.value))}
-          className="min-w-60 rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          className="min-w-60 rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           {exams.map((e) => (
             <option key={e.id} value={e.id}>
@@ -154,7 +154,7 @@ export default function TeacherThptAnalysis({
           <select
             defaultValue=""
             onChange={(e) => e.target.value && markAssessment(e.target.value)}
-            className="rounded-full border border-white/15 bg-[#0B1020] px-3 py-1.5 text-xs text-slate-300"
+            className="rounded-full border border-white/15 bg-panel px-3 py-1.5 text-xs text-slate-300"
           >
             <option value="">+ Đánh dấu bài KT định kỳ…</option>
             {KIND_OPTIONS.map((k) => (
@@ -169,7 +169,7 @@ export default function TeacherThptAnalysis({
             href={`/dashboard-thpt/chua-bai?exam=${examId}&class=${classId}`}
             target="_blank"
             rel="noreferrer"
-            className="ml-auto inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="ml-auto inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             <Tv size={16} /> Trình chiếu chữa bài
           </a>
@@ -195,7 +195,7 @@ export default function TeacherThptAnalysis({
       </section>
 
       {overview && overview.attempts > 0 && (
-        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+        <section className="rounded-2xl border border-white/10 bg-panel p-5">
           <p className="mb-3 text-sm font-semibold text-white">Phân bố điểm</p>
           <div className="flex items-end gap-1.5" style={{ height: 90 }}>
             {overview.distribution.map((n, i) => {
@@ -221,13 +221,13 @@ export default function TeacherThptAnalysis({
         {wrongest === null ? (
           <p className="text-sm text-slate-400">Đang tải…</p>
         ) : wrongest.length === 0 ? (
-          <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500">
+          <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-500">
             Chưa có dữ liệu chi tiết từng câu (cần học sinh làm bài sau khi bật tính năng).
           </p>
         ) : (
           <div className="space-y-2">
             {wrongest.slice(0, 12).map((q) => (
-              <div key={q.questionIndex} className="rounded-2xl border border-white/10 bg-[#0B1020]">
+              <div key={q.questionIndex} className="rounded-2xl border border-white/10 bg-panel">
                 <button
                   type="button"
                   onClick={() =>
@@ -297,7 +297,7 @@ export default function TeacherThptAnalysis({
         {matrix === null ? (
           <p className="text-sm text-slate-400">Đang tải…</p>
         ) : topics.length === 0 ? (
-          <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500">
+          <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-500">
             Chưa có dữ liệu chủ đề.
           </p>
         ) : (
@@ -341,7 +341,7 @@ export default function TeacherThptAnalysis({
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
+    <div className="rounded-2xl border border-white/10 bg-panel p-4">
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{label}</p>
       <p className="mt-2 font-display text-2xl font-bold text-white">{value}</p>
     </div>

@@ -82,7 +82,7 @@ export default function ParentLinkCard({ studentId, studentName }: { studentId: 
   const pending = (links ?? []).filter((l) => !l.claimed_at);
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h4 className="font-display text-lg font-bold text-white">Phụ huynh</h4>
         <span className="text-xs text-slate-500">
@@ -105,7 +105,7 @@ export default function ParentLinkCard({ studentId, studentName }: { studentId: 
           type="button"
           onClick={create}
           disabled={busy}
-          className="inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
         >
           <UserPlus size={15} /> {busy ? "Đang tạo…" : "Tạo mã & chép link"}
         </button>

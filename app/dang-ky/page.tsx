@@ -180,7 +180,7 @@ export default function RegisterPage() {
             Xác <span className="text-gradient">nhận</span>
           </h1>
 
-          <div className="mt-8 space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-6">
+          <div className="mt-8 space-y-4 rounded-2xl border border-white/10 bg-panel p-6">
             <p className="text-sm text-slate-300">
               <strong className="text-white">Họ và tên:</strong> {fullName}
             </p>
@@ -220,7 +220,7 @@ export default function RegisterPage() {
             <button
               onClick={handleConfirm}
               disabled={busy}
-              className="flex-1 rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+              className="flex-1 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
             >
               {busy ? "Đang xử lý…" : "Xác nhận đăng ký"}
             </button>
@@ -381,7 +381,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
+            className="w-full rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
           >
             {busy ? "Đang xử lý…" : "Tiếp tục"}
           </button>

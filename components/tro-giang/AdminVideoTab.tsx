@@ -178,7 +178,7 @@ export default function AdminVideoTab({ reloadKey = 0 }: { reloadKey?: number })
             <select
               value={lead.attributed_session_id}
               onChange={(e) => setLead({ ...lead, attributed_session_id: e.target.value })}
-              className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white"
+              className="rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white"
             >
               <option value="">Không gắn video nào</option>
               {(ledger ?? []).map((v) => (

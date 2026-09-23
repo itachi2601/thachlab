@@ -3,7 +3,7 @@ import { AlertTriangle } from "lucide-react";
 /** Màn hình cho tài khoản đã đăng nhập nhưng không có hàng trong ta_assistants. */
 export default function NotRegistered({ note }: { note?: string }) {
   return (
-    <div className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center">
+    <div className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
       <AlertTriangle className="mx-auto text-amber-300" size={36} />
       <h1 className="mt-4 font-display text-xl font-bold text-white">
         Tài khoản này chưa được đăng ký làm trợ giảng

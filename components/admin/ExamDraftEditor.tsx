@@ -166,7 +166,7 @@ export default function ExamDraftEditor({
           <select
             value={bundle.exam.difficulty ?? ""}
             onChange={(e) => setExam({ difficulty: e.target.value as Difficulty })}
-            className={`${inputCls} mt-1 bg-[#0B1020]`}
+            className={`${inputCls} mt-1 bg-panel`}
           >
             <option value="">Chưa phân loại</option>
             <option value="de">Dễ</option>
@@ -261,7 +261,7 @@ function QuestionCardEditor({
           <select
             value={type}
             onChange={(e) => onChange(changeType(q, e.target.value as EditableType))}
-            className="rounded-lg border border-white/10 bg-[#0B1020] px-2 py-1 text-xs text-slate-300"
+            className="rounded-lg border border-white/10 bg-panel px-2 py-1 text-xs text-slate-300"
           >
             {(Object.keys(TYPE_LABELS) as EditableType[]).map((t) => (
               <option key={t} value={t}>
@@ -404,7 +404,7 @@ function QuestionCardEditor({
           <select
             value={q.form ?? ""}
             onChange={(e) => onChange({ ...q, form: e.target.value as QuestionForm | "" })}
-            className={`${inputCls} mt-1 bg-[#0B1020]`}
+            className={`${inputCls} mt-1 bg-panel`}
           >
             <option value="">Chưa phân loại</option>
             <option value="ly_thuyet">Lý thuyết</option>

@@ -51,9 +51,9 @@ export default function CreateCourseForm({ subjectCode, defaultOpen = false, onC
       )}
       {open && (
         <div className="mt-4 w-full grid gap-3 rounded-2xl border border-blue-400/20 bg-blue-500/5 p-4 md:grid-cols-2">
-          <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tên: CĐ CK 21B-Tiếng Anh chuyên ngành" className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
-          <input value={form.class_label} onChange={(e) => setForm({ ...form, class_label: e.target.value })} placeholder="Lớp: CĐ CK 21B" className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
-          <input value={form.school_year} onChange={(e) => setForm({ ...form, school_year: e.target.value })} aria-label="Năm học" className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
+          <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tên: CĐ CK 21B-Tiếng Anh chuyên ngành" className="rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white" />
+          <input value={form.class_label} onChange={(e) => setForm({ ...form, class_label: e.target.value })} placeholder="Lớp: CĐ CK 21B" className="rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white" />
+          <input value={form.school_year} onChange={(e) => setForm({ ...form, school_year: e.target.value })} aria-label="Năm học" className="rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white" />
           <button disabled={busy || !form.name.trim()} onClick={submit} className="rounded-lg bg-blue-600 px-3 py-2 text-sm font-bold text-white disabled:opacity-40">
             {busy ? "Đang tạo…" : "Lưu lớp"}
           </button>

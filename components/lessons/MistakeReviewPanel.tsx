@@ -19,7 +19,7 @@ export default function MistakeReviewPanel() {
 
   if (!session || !mistakes?.length) return null;
   return (
-    <section className="rounded-xl border border-white/10 bg-[#0B1020]">
+    <section className="rounded-xl border border-white/10 bg-panel">
       <button type="button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mistake-review-list" className="flex w-full items-center gap-4 p-5 text-left">
         <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-400"><AlertCircle size={20} /></span>
         <span className="min-w-0 flex-1">

@@ -108,7 +108,7 @@ export default function TeacherThptDashboard() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
         <label className="block">
           <span className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-400">
             Lớp đang dạy{classes.length > 0 && ` · ${classes.length} lớp`}
@@ -117,7 +117,7 @@ export default function TeacherThptDashboard() {
             aria-label="Lớp đang dạy"
             value={selectedClassId ?? ""}
             onChange={(event) => setSelectedClassId(Number(event.target.value))}
-            className="w-full max-w-sm rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white"
+            className="w-full max-w-sm rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white"
           >
             <option value="" disabled>{classes.length ? "Chọn khối lớp" : "Chưa được phân công lớp nào"}</option>
             {classes.map((item) => (
@@ -127,7 +127,7 @@ export default function TeacherThptDashboard() {
         </label>
       </section>
 
-      <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">
+      <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">
         {TABS.map((tab) => {
           const Icon = tab.icon;
           return (

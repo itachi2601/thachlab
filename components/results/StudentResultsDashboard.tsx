@@ -216,7 +216,7 @@ function GapRow({
           {href && (
             <Link
               href={href}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
             >
               Ôn lại {formLabel(gap.form).toLowerCase()} phần này →
             </Link>
@@ -255,7 +255,7 @@ function GapRow({
 
 function RankSummary({ rank }: { rank: PeriodicRank }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0B1020] px-4 py-2 text-sm text-slate-300">
+    <span className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-panel px-4 py-2 text-sm text-slate-300">
       <Trophy size={16} className="text-amber-300" />
       Hạng <b className="text-white">{rank.rank}</b>/{rank.total} trong lớp
       <span className="text-slate-500">
@@ -468,7 +468,7 @@ export default function StudentResultsDashboard({
         </div>
       )}
 
-      <section className="mt-6 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
         <div className="mb-3 flex items-baseline justify-between">
           <h2 className="font-display font-semibold text-white">Điểm theo thời gian</h2>
           {avg !== null && (
@@ -493,7 +493,7 @@ export default function StudentResultsDashboard({
         {attempts === null ? (
           <p className="text-sm text-slate-400">Đang tải…</p>
         ) : attempts.length === 0 ? (
-          <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500">
+          <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-500">
             {copy.noExam}
           </p>
         ) : (
@@ -528,7 +528,7 @@ export default function StudentResultsDashboard({
         {gaps === null ? (
           <p className="text-sm text-slate-400">Đang tải…</p>
         ) : priorityGaps.length === 0 ? (
-          <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500">
+          <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-500">
             {copy.noGap}
           </p>
         ) : (

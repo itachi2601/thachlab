@@ -71,7 +71,7 @@ export default function TeacherFinalGradebook({ courseId, students }: { courseId
       {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
     </section>
 
-    <section className="overflow-auto rounded-2xl border border-white/10 bg-[#0B1020]">
+    <section className="overflow-auto rounded-2xl border border-white/10 bg-panel">
       <table className="min-w-[1450px] border-collapse text-sm">
         <thead className="sticky top-0 z-20 bg-[#111a2e] text-xs text-slate-300"><tr>
           <th className="sticky left-0 z-30 min-w-56 border-b border-r border-white/10 bg-[#111a2e] p-3 text-left">Sinh viên</th>
@@ -84,7 +84,7 @@ export default function TeacherFinalGradebook({ courseId, students }: { courseId
           <th className="border-b border-l border-white/10 p-3 text-center text-cyan-200">Tổng kết</th>
         </tr></thead>
         <tbody>{rows.map((student) => <tr key={student.id} className="hover:bg-white/[.02]">
-          <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-[#0B1020] p-3"><strong className="block text-white">{student.name}</strong><small className="text-slate-500">{student.className}</small></td>
+          <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3"><strong className="block text-white">{student.name}</strong><small className="text-slate-500">{student.className}</small></td>
           <td className="border-b border-white/5 p-3 text-center font-mono text-slate-300">{student.studentCode||"—"}</td>
           <CountCell value={student.process} strong/><EditableGradeCell key={`ts:${student.turnSelf}`} value={student.turnSelf} busy={saving===`${student.id}:rubric:tien:self`} onSave={(value)=>save(student.id,"rubric:tien:self",value)}/><EditableGradeCell key={`tt:${student.turnTeacher}`} value={student.turnTeacher} official busy={saving===`${student.id}:rubric:tien:teacher`} onSave={(value)=>save(student.id,"rubric:tien:teacher",value)}/><EditableGradeCell key={`ms:${student.millSelf}`} value={student.millSelf} busy={saving===`${student.id}:rubric:phay:self`} onSave={(value)=>save(student.id,"rubric:phay:self",value)}/><EditableGradeCell key={`mt:${student.millTeacher}`} value={student.millTeacher} official busy={saving===`${student.id}:rubric:phay:teacher`} onSave={(value)=>save(student.id,"rubric:phay:teacher",value)}/><EditableGradeCell key={`a:${student.attendanceScore}`} value={sessionCount ? student.attendanceScore : null} attendance busy={saving===`${student.id}:attendance`} onSave={(value)=>save(student.id,"attendance",value)}/><EditableGradeCell key={`b:${student.bonus}`} value={student.bonus} bonus busy={saving===`${student.id}:bonus`} onSave={(value)=>save(student.id,"bonus",value)}/><GradeCell value={student.total} total/>
         </tr>)}{!rows.length && <tr><td colSpan={10} className="p-10 text-center text-slate-500">Không có sinh viên phù hợp.</td></tr>}</tbody>

@@ -27,7 +27,7 @@ const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto max-w-lg rounded-3xl border border-white/10 bg-[#0B1020] p-8">{children}</div>;
+  return <div className="mx-auto max-w-lg rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
 }
 
 function CourseSummary({ course }: { course: ThptCourse }) {
@@ -95,7 +95,7 @@ function RegisterForm({ course }: { course: ThptCourse }) {
         <p className="mt-2 text-sm text-slate-400">
           Trang này dành cho phụ huynh và học sinh. Giáo viên xem và duyệt đăng ký trong Dashboard THPT → tab Ghi danh.
         </p>
-        <Link href="/dashboard-thpt" className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white">
+        <Link href="/dashboard-thpt" className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white">
           Mở Dashboard THPT
         </Link>
       </Card>
@@ -121,7 +121,7 @@ function RegisterForm({ course }: { course: ThptCourse }) {
         )}
         <Link
           href={isParent ? "/phu-huynh" : "/tai-khoan"}
-          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+          className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
         >
           {isParent ? "Về trang phụ huynh" : "Về tài khoản"}
         </Link>
@@ -246,7 +246,7 @@ function RegisterForm({ course }: { course: ThptCourse }) {
         <button
           type="submit"
           disabled={busy || (isParent && children === null)}
-          className="w-full rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white disabled:opacity-40"
+          className="w-full rounded-xl bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
         >
           {busy ? "Đang gửi…" : "Gửi đăng ký"}
         </button>
@@ -272,7 +272,7 @@ function Loader() {
       <Card>
         <h1 className="font-display text-xl font-bold text-white">Không tìm thấy khoá học</h1>
         <p className="mt-2 text-sm text-slate-400">Khoá có thể đã đóng đăng ký. Xem các lớp đang mở ở trang Đăng ký học.</p>
-        <Link href="/khoa-hoc" className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white">
+        <Link href="/khoa-hoc" className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white">
           Xem lớp đang mở
         </Link>
       </Card>

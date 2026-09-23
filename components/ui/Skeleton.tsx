@@ -1,6 +1,6 @@
 export function SkeletonCard() {
   return (
-    <div className="animate-pulse rounded-2xl border border-white/10 bg-[#0B1020] p-6">
+    <div className="animate-pulse rounded-2xl border border-white/10 bg-panel p-6">
       <div className="h-5 w-3/4 rounded bg-white/10" />
       <div className="mt-3 h-4 w-1/2 rounded bg-white/5" />
       <div className="mt-5 h-8 w-28 rounded-full bg-white/5" />

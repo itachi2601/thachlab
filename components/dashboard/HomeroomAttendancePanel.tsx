@@ -215,7 +215,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
       </div>
 
       {view === "live" && (
-        <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+        <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-[.16em] text-blue-300">Lớp chủ nhiệm</p>
@@ -229,15 +229,15 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
 
           {creating && (
             <div className="mt-5 grid gap-3 rounded-2xl border border-blue-400/20 bg-blue-500/5 p-4 sm:grid-cols-[1fr_1fr_auto]">
-              <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Nội dung buổi học" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
-              <input type="date" value={sessionDate} onChange={(e) => setSessionDate(e.target.value)} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+              <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Nội dung buổi học" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
+              <input type="date" value={sessionDate} onChange={(e) => setSessionDate(e.target.value)} className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
               <button disabled={busy || !title.trim()} onClick={createSession} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-40">Mở buổi</button>
             </div>
           )}
           {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <select aria-label="Chọn buổi điểm danh" value={selectedId ?? ""} onChange={(e) => setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white sm:flex-none">
+            <select aria-label="Chọn buổi điểm danh" value={selectedId ?? ""} onChange={(e) => setSelectedId(Number(e.target.value))} className="min-w-64 flex-1 rounded-xl border border-white/10 bg-panel-deep px-4 py-2.5 text-sm text-white sm:flex-none">
               <option value="" disabled>Chọn buổi điểm danh…</option>
               {sessions.map((item) => (
                 <option key={item.id} value={item.id}>{item.title} · {new Date(item.starts_at).toLocaleDateString("vi-VN")} · {item.status === "open" ? "Đang mở" : "Đã khóa"}</option>
@@ -284,11 +284,11 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/[.02] p-5">
                   <div className="flex items-center gap-2 text-sm font-bold text-white"><NotebookPen size={16} className="text-violet-300" />Sổ đầu bài / ghi chú buổi</div>
-                  <textarea value={noteDraft} onChange={(e) => setNoteDraft(e.target.value)} onBlur={saveNote} rows={4} placeholder="Nội dung dạy, xếp loại tiết, học sinh vi phạm / tuyên dương, HS xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none" />
+                  <textarea value={noteDraft} onChange={(e) => setNoteDraft(e.target.value)} onBlur={saveNote} rows={4} placeholder="Nội dung dạy, xếp loại tiết, học sinh vi phạm / tuyên dương, HS xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-panel-deep px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none" />
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2">
+              <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-panel-deep px-3 py-2">
                 <Search size={15} className="text-slate-500" />
                 <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Tìm học sinh theo tên hoặc lớp…" className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none" />
               </div>
@@ -314,7 +314,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                           <td className="p-3"><strong className="text-white">{student.name}</strong><small className="block text-slate-500">{student.className}</small></td>
                           <td className="p-3 text-slate-400">{record?.checked_in_at ? new Date(record.checked_in_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" }) : "—"}</td>
                           <td className="p-3">
-                            <select disabled={busy} value={record?.status ?? ""} onChange={(e) => void mark(student.id, e.target.value as AttendanceStatus)} className={`rounded-lg border bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 border-white/10 ${record ? statusMeta[record.status].style : "text-slate-500"}`}>
+                            <select disabled={busy} value={record?.status ?? ""} onChange={(e) => void mark(student.id, e.target.value as AttendanceStatus)} className={`rounded-lg border bg-panel-deep px-2.5 py-1.5 text-xs font-bold disabled:opacity-40 border-white/10 ${record ? statusMeta[record.status].style : "text-slate-500"}`}>
                               <option value="" disabled>Chọn</option>
                               {Object.entries(statusMeta).map(([value, meta]) => (
                                 <option key={value} value={value}>{meta.label}</option>
@@ -330,7 +330,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                               value={bonusValue}
                               onChange={(e) => setBonusDrafts((current) => ({ ...current, [student.id]: e.target.value }))}
                               onBlur={() => void saveStudentBonus(student.id)}
-                              className={`w-20 rounded-lg border bg-[#080d1d] px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum > 0 ? "border-emerald-400/30 text-emerald-300" : bonusNum < 0 ? "border-red-400/30 text-red-300" : "border-white/10 text-slate-300"}`}
+                              className={`w-20 rounded-lg border bg-panel-deep px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum > 0 ? "border-emerald-400/30 text-emerald-300" : bonusNum < 0 ? "border-red-400/30 text-red-300" : "border-white/10 text-slate-300"}`}
                             />
                           </td>
                           <td className="p-3">
@@ -342,7 +342,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                               onChange={(e) => setRecordNoteDrafts((current) => ({ ...current, [student.id]: e.target.value }))}
                               onBlur={() => void saveStudentNote(student.id)}
                               placeholder={record ? "Lý do vắng, vi phạm…" : "—"}
-                              className="w-44 rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                              className="w-44 rounded-lg border border-white/10 bg-panel-deep px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
                             />
                           </td>
                         </tr>
@@ -388,7 +388,7 @@ function AttendanceMatrixSummary({ students, sessions, allRecords }: { students:
   const concern = rows.filter((row) => row.absent >= 2 || row.late >= 3 || (orderedSessions.length >= 3 && row.rate < 75)).length;
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-5">
       <div className="flex items-center gap-2"><Grid3x3 size={19} className="text-blue-300" /><h3 className="font-display text-xl font-bold text-white">Tổng hợp chuyên cần & nề nếp</h3></div>
       <p className="mt-1 text-xs text-slate-500">Ký hiệu: <b className="text-emerald-300">C</b> Có mặt · <b className="text-amber-300">T</b> Đi trễ · <b className="text-blue-300">VP</b> Vắng có phép · <b className="text-red-300">V</b> Vắng không phép. Cột nề nếp là tổng điểm cộng/trừ rèn luyện các buổi.</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -418,7 +418,7 @@ function AttendanceMatrixSummary({ students, sessions, allRecords }: { students:
             <tbody>
               {rows.map((row) => (
                 <tr key={row.id} className="group">
-                  <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-[#0B1020] p-3 group-hover:bg-[#10192a]">
+                  <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3 group-hover:bg-[#10192a]">
                     <strong className="block text-sm text-white">{row.name}</strong>
                     <small className="text-slate-500">{row.className}</small>
                   </td>

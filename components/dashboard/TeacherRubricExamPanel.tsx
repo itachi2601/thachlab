@@ -107,7 +107,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
   function studentName(id: string) { return students.find((item) => item.id === id)?.name ?? "Học sinh"; }
   const allLevelsChosen = rubric.groups.every((group) => group.criteria.every((criterion) => levels[criterion.id]));
 
-  return <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+  return <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
     <div>
       <p className="text-xs font-bold uppercase tracking-[.16em] text-violet-300">Rubric thi thực hành tổng hợp</p>
       <h3 className="mt-1 font-display text-2xl font-bold text-white">Lập trình → Mô phỏng → Cài đặt → Gia công</h3>
@@ -118,7 +118,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
 
     <label className="mt-4 flex flex-col gap-1.5 text-sm text-slate-300">
       <span className="flex items-center gap-1.5 font-bold"><UserRound size={16} /> Chọn học sinh</span>
-      <select value={studentId} onChange={(event) => chooseStudent(event.target.value)} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white">
+      <select value={studentId} onChange={(event) => chooseStudent(event.target.value)} className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white">
         <option value="">— Chọn học sinh —</option>
         {students.map((item) => <option key={item.id} value={item.id}>{item.name} · {item.className}</option>)}
       </select>

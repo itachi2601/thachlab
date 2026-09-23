@@ -6,7 +6,7 @@ import { getSupabase } from "@/services/supabase";
 type ExamOption = { id: number; title: string; published: boolean; duration_minutes: number };
 const columns = "id, title, published, duration_minutes";
 const pageSize = 12;
-const control = "rounded-lg border border-white/15 bg-[#0B1020] px-3 py-2 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500";
+const control = "rounded-lg border border-white/15 bg-panel px-3 py-2 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500";
 const button = "rounded-lg border border-white/15 px-3 py-1.5 text-xs text-slate-300 hover:bg-white/10 disabled:opacity-40";
 
 export default function ExamPicker({ value, onChange }: {
@@ -130,7 +130,7 @@ export default function ExamPicker({ value, onChange }: {
           {selectionError && <p role="alert" className="mt-2 text-xs text-amber-300">{selectionError} <button type="button" className={button} onClick={() => setRetry((n) => n + 1)}>Thử lại</button></p>}
           {value.length === 0 && <p className="py-8 text-center text-sm text-slate-500">Chưa chọn đề nào.</p>}
           <ol className="mt-3 max-h-96 space-y-2 overflow-y-auto">
-            {value.map((id, index) => <li key={id} className="rounded-lg border border-white/10 bg-[#0B1020] p-3">
+            {value.map((id, index) => <li key={id} className="rounded-lg border border-white/10 bg-panel p-3">
               <p className="break-words text-sm text-slate-200">{index + 1}. {cache[id]?.title ?? `Đề #${id} (chưa tải được thông tin)`}</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 <span className="mr-auto text-xs text-slate-400">#{id}{cache[id] && !cache[id].published ? " · Bản nháp" : ""}</span>

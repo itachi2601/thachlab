@@ -166,7 +166,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={busy}
-                className={`${btnCls} bg-[#2563EB] text-white hover:bg-primary-dark`}
+                className={`${btnCls} bg-primary text-white hover:bg-primary-dark`}
               >
                 {busy ? "Đang đăng nhập…" : "Đăng nhập"}
               </button>

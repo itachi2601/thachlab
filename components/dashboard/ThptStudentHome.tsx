@@ -79,7 +79,7 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Icon size={18} className="text-blue-300" />
@@ -432,7 +432,7 @@ export default function ThptStudentHome({
 
       <Link
         href="/lop-hoc"
-        className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[#0B1020] p-4 text-sm font-semibold text-slate-200 hover:bg-white/5 sm:p-5"
+        className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-panel p-4 text-sm font-semibold text-slate-200 hover:bg-white/5 sm:p-5"
       >
         Xem toàn bộ chương trình lớp {className}
         <ChevronRight size={16} className="shrink-0 text-slate-500" />

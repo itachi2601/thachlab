@@ -62,7 +62,7 @@ export default function BugReportWidget() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed right-0 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-1.5 rounded-l-2xl border border-r-0 border-white/15 bg-[#0B1020]/95 px-2.5 py-4 shadow-xl backdrop-blur-md hover:border-white/30"
+        className="fixed right-0 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-1.5 rounded-l-2xl border border-r-0 border-white/15 bg-panel/95 px-2.5 py-4 shadow-xl backdrop-blur-md hover:border-white/30"
       >
         <Bug size={16} className="text-amber-300" />
         <span className="text-[11px] font-bold text-slate-200" style={{ writingMode: "vertical-rl" }}>
@@ -76,7 +76,7 @@ export default function BugReportWidget() {
             role="dialog"
             aria-modal="true"
             aria-label="Báo lỗi và góp ý"
-            className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0B1020] p-6 shadow-2xl"
+            className="w-full max-w-md rounded-2xl border border-white/10 bg-panel p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">

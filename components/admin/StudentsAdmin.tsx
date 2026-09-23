@@ -73,7 +73,7 @@ export default function StudentsAdmin() {
             aria-label="Khối lớp"
             value={selectedClassId ?? ""}
             onChange={(event) => setSelectedClassId(Number(event.target.value))}
-            className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white"
+            className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white"
           >
             <option value="" disabled>{classes.length ? "Chọn khối lớp" : "Chưa có lớp nào"}</option>
             {classes.map((item) => (
@@ -90,7 +90,7 @@ export default function StudentsAdmin() {
         </p>
       ) : (
         <>
-          <nav className="flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2">
+          <nav className="flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2">
             {tabs.map((item) => {
               const Icon = item.icon;
               return (

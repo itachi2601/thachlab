@@ -33,7 +33,7 @@ function errorMessage(error: unknown, fallback: string) {
 }
 
 const inputCls =
-  "rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
+  "rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
 const EMPTY_SLOT: CourseSchedule = { weekday: 1, start_time: "18:00", end_time: "19:30", location: "" };
 
@@ -282,7 +282,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
   const publicLink = `${SITE_URL}/khoa-hoc/dang-ky/?id=${course.id}`;
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-5">
       <div className="flex flex-wrap items-start gap-3">
         <button type="button" onClick={() => setOpen((v) => !v)} className="flex min-w-0 flex-1 items-start gap-3 text-left">
           <ChevronDown size={18} className={`mt-1 shrink-0 text-slate-500 transition-transform ${open ? "" : "-rotate-90"}`} />
@@ -505,7 +505,7 @@ export default function TeacherThptEnrollment({ classId, className, students, on
 
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5">
         <h3 className="font-display text-lg font-bold text-white">Ghi danh · khối {className}</h3>
         <p className="mt-1 text-sm text-slate-400">
           Mở lớp kèm lịch tuần, phụ huynh và học sinh tự đăng ký ở trang <span className="text-slate-200">/khoa-hoc</span>. Duyệt xong là em vào khối

@@ -24,7 +24,7 @@ export default function PreviewAsTaToggle() {
     <Link
       href="/tro-giang?gialap=1"
       onClick={() => setTaDemoMode(true)}
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full border border-white/15 bg-[#0B1020]/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
+      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full border border-white/15 bg-panel/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
     >
       <Drama size={15} className="text-fuchsia-300" />
       Xem như trợ giảng

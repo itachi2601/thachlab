@@ -477,7 +477,7 @@ export default function GhiBuoiForm({
               <select
                 value={draft.classLabel}
                 onChange={(e) => patch({ classLabel: e.target.value })}
-                className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-3 text-white"
+                className="w-full rounded-xl border border-white/10 bg-panel px-4 py-3 text-white"
               >
                 <option value="">Chọn lớp…</option>
                 {myClasses.map((item) => (

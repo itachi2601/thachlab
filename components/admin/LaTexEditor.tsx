@@ -76,7 +76,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
             onClick={() => setMode("latex")}
             className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
               mode === "latex"
-                ? "bg-[#2563EB] text-white"
+                ? "bg-primary text-white"
                 : "bg-white/5 text-slate-400 hover:bg-white/10"
             }`}
           >
@@ -86,7 +86,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
             onClick={() => setMode("azota")}
             className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
               mode === "azota"
-                ? "bg-[#2563EB] text-white"
+                ? "bg-primary text-white"
                 : "bg-white/5 text-slate-400 hover:bg-white/10"
             }`}
           >
@@ -96,7 +96,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
             onClick={() => setMode("html")}
             className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
               mode === "html"
-                ? "bg-[#2563EB] text-white"
+                ? "bg-primary text-white"
                 : "bg-white/5 text-slate-400 hover:bg-white/10"
             }`}
           >

@@ -101,8 +101,8 @@ export default function TeacherThptStudentProfile({
 
   return (
     <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
-      <aside className="rounded-2xl border border-white/10 bg-[#0B1020] p-3">
-        <div className="mb-3 flex items-center gap-2 rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2">
+      <aside className="rounded-2xl border border-white/10 bg-panel p-3">
+        <div className="mb-3 flex items-center gap-2 rounded-xl border border-white/10 bg-panel-deep px-3 py-2">
           <Search size={15} className="text-slate-500" />
           <input
             value={search}
@@ -141,7 +141,7 @@ export default function TeacherThptStudentProfile({
         </div>
       ) : (
         <div className="space-y-4">
-          <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
@@ -166,7 +166,7 @@ export default function TeacherThptStudentProfile({
 
           <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
 
-          <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>
             {history.length ? (
               <div className="mt-3 max-h-96 space-y-2 overflow-y-auto">
@@ -189,7 +189,7 @@ export default function TeacherThptStudentProfile({
             )}
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử làm bài kiểm tra</h4>
             {selectedResults.length ? (
               <div className="mt-3 space-y-2">
@@ -208,7 +208,7 @@ export default function TeacherThptStudentProfile({
             )}
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+          <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Điểm danh</h4>
             {sessions.length ? (
               <div className="mt-3 space-y-2">

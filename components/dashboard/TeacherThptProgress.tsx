@@ -92,7 +92,7 @@ function EssayGradingQueue({ studentIds, onGraded }: { studentIds: string[]; onG
         {pending.map((item) => {
           const key = `${item.examResultId}-${item.questionIndex}`;
           return (
-            <div key={key} className="rounded-xl border border-white/10 bg-[#0B1020] p-3">
+            <div key={key} className="rounded-xl border border-white/10 bg-panel p-3">
               <p className="text-xs text-slate-400">
                 <b className="text-white">{item.studentName}</b> · {item.examTitle} · câu {item.questionIndex + 1} ·{" "}
                 {new Date(item.submittedAt).toLocaleString("vi-VN")}
@@ -223,7 +223,7 @@ export default function TeacherThptProgress({ classId, students }: { classId: nu
         <select
           value={lessonId ?? ""}
           onChange={(e) => setLessonId(e.target.value ? Number(e.target.value) : null)}
-          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          className="rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           {lessons.length === 0 && <option value="">Chưa có bài học nào</option>}
           {lessons.map((l) => (
@@ -235,7 +235,7 @@ export default function TeacherThptProgress({ classId, students }: { classId: nu
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value as ActivityStatus | "all")}
-          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          className="rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           {FILTER_OPTIONS.map((o) => (
             <option key={o.value} value={o.value}>

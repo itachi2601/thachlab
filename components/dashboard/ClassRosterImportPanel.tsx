@@ -61,7 +61,7 @@ export default function ClassRosterImportPanel({ classId, className, onImported 
         </p>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5">
         <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-white/20 bg-white/[.03] px-4 py-3 text-sm text-slate-300 hover:border-blue-400/40">
           <Upload size={16} />
           Chọn file Excel danh sách (.xls, .xlsx)

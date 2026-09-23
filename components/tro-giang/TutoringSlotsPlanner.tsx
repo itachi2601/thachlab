@@ -188,7 +188,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
         </div>
       )}
 
-      <section className="space-y-3 rounded-2xl border border-white/10 bg-[#0B1020] p-4">
+      <section className="space-y-3 rounded-2xl border border-white/10 bg-panel p-4">
         <h2 className="font-semibold text-white">Đăng buổi mới</h2>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <label className="col-span-2 sm:col-span-1">
@@ -198,7 +198,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
               value={workDate}
               min={todayStr()}
               onChange={(e) => setWorkDate(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white"
+              className="w-full rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white"
             />
           </label>
           <label>
@@ -207,7 +207,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
               type="time"
               value={startTime}
               onChange={(e) => setStartTime(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white"
+              className="w-full rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white"
             />
           </label>
           <label>
@@ -216,7 +216,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
               type="time"
               value={endTime}
               onChange={(e) => setEndTime(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white"
+              className="w-full rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white"
             />
           </label>
           <label>
@@ -226,7 +226,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
               min={1}
               value={capacity}
               onChange={(e) => setCapacity(Math.max(1, Number(e.target.value) || 1))}
-              className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white"
+              className="w-full rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white"
             />
           </label>
         </div>
@@ -260,7 +260,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="VD: Phòng B203"
-            className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white placeholder:text-slate-600"
+            className="w-full rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white placeholder:text-slate-600"
           />
         </label>
 
@@ -290,7 +290,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
                 <article
                   key={slot.id}
                   className={`rounded-2xl border p-4 ${
-                    slot.status === "cancelled" ? "border-white/5 bg-white/[.02] opacity-60" : "border-white/10 bg-[#0B1020]"
+                    slot.status === "cancelled" ? "border-white/5 bg-white/[.02] opacity-60" : "border-white/10 bg-panel"
                   }`}
                 >
                   <div className="flex flex-wrap items-center gap-2">

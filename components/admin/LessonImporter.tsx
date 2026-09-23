@@ -547,7 +547,7 @@ export default function LessonImporter() {
               setChapterId(e.target.value ? Number(e.target.value) : null);
               setLessonId(null);
             }}
-            className={`${inputCls} bg-[#0B1020]`}
+            className={`${inputCls} bg-panel`}
           >
             <option value="">— Chọn chương —</option>
             {chapterOptions.map((ch) => (
@@ -559,7 +559,7 @@ export default function LessonImporter() {
           <select
             value={lessonId ?? ""}
             onChange={(e) => setLessonId(e.target.value ? Number(e.target.value) : null)}
-            className={`${inputCls} bg-[#0B1020]`}
+            className={`${inputCls} bg-panel`}
             disabled={chapterId === null}
           >
             <option value="">— Chọn bài học —</option>
@@ -823,7 +823,7 @@ export default function LessonImporter() {
         <button
           onClick={publish}
           disabled={!canPublish}
-          className="rounded-full bg-[#2563EB] px-6 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
+          className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
         >
           {busy ? "Đang đăng…" : "Đăng bài học"}
         </button>
@@ -880,7 +880,7 @@ function ModePicker<T extends string>({
               type="button"
               onClick={() => onChange(v)}
               className={`rounded-md px-2 py-1 text-[11px] font-semibold ${
-                value === v ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
+                value === v ? "bg-primary text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
               }`}
             >
               {l}

@@ -58,7 +58,7 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
   const meta = KIND_META[kind];
 
   return (
-    <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
       <h3 className="font-display font-bold text-white">{meta.label}</h3>
       <div className="mt-3 flex flex-col gap-2 sm:flex-row">
         <textarea
@@ -66,7 +66,7 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
           onChange={(event) => setDraft(event.target.value)}
           placeholder={meta.placeholder}
           rows={2}
-          className="flex-1 rounded-xl border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white placeholder:text-slate-600"
+          className="flex-1 rounded-xl border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white placeholder:text-slate-600"
         />
         <button
           type="button"

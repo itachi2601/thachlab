@@ -144,7 +144,7 @@ export default function StaffInvitePanel() {
             type="button"
             onClick={() => setRole(item.id)}
             className={`rounded-xl px-4 py-2 text-sm font-bold transition ${
-              role === item.id ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-300 hover:bg-white/10"
+              role === item.id ? "bg-primary text-white" : "bg-white/5 text-slate-300 hover:bg-white/10"
             }`}
           >
             {item.label}
@@ -159,7 +159,7 @@ export default function StaffInvitePanel() {
             <select
               value={adminArea}
               onChange={(e) => setAdminArea(e.target.value as "" | "thpt" | "cttc")}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2.5 text-sm text-white"
             >
               <option value="thpt">THPT</option>
               <option value="cttc">CTTC</option>
@@ -172,7 +172,7 @@ export default function StaffInvitePanel() {
             <select
               value={tier}
               onChange={(e) => setTier(e.target.value as "B1" | "B2" | "B3")}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2.5 text-sm text-white"
             >
               <option value="B1">B1</option>
               <option value="B2">B2</option>
@@ -186,7 +186,7 @@ export default function StaffInvitePanel() {
           <select
             value={classId}
             onChange={(e) => setClassId(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2.5 text-sm text-white"
+            className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2.5 text-sm text-white"
           >
             <option value="">Chưa gán lớp</option>
             {classes.map((schoolClass) => (
@@ -202,7 +202,7 @@ export default function StaffInvitePanel() {
         type="button"
         disabled={busy}
         onClick={submit}
-        className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40"
+        className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40"
       >
         <Link2 size={15} />
         Tạo link mời

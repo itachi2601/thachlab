@@ -35,5 +35,11 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "ios_saf >= 12",
+    "safari >= 12",
+    "chrome >= 70",
+    "not dead"
+  ]
 }

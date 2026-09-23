@@ -23,7 +23,7 @@ export default function LocalAssistantPreview({embedded=false,theme='dark',initi
  }}>
   <header className="rounded-2xl border border-fuchsia-400/30 bg-fuchsia-500/10 p-4"><p className="font-semibold text-fuchsia-200">{tab==='ghi'?'Ghi buổi làm việc':'Bản mẫu trợ giảng'}</p><p className="mt-1 text-sm text-slate-300">Dữ liệu giả lập, không ghi công hoặc thay đổi tiền thật.</p></header>
   <nav className="flex min-w-0 gap-2" aria-label="Trang trợ giảng">{tabs.map(([key,label])=><button key={key} onClick={()=>setTab(key)} className={`min-w-0 flex-1 rounded-xl px-2 py-3 text-xs font-semibold ${tab===key?'bg-blue-600 text-white':'border border-white/15 text-slate-300'}`}>{label}</button>)}</nav>
-  {tab==='tong-quan'&&<><label className="block text-sm text-slate-300">Tháng xem mẫu<select className="ml-3 rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2 text-white" value={month} onChange={e=>setMonth(e.target.value)}><option value="2026-10">Tháng 10/2026 · chạy thử</option><option value="2026-11">Tháng 11/2026 · áp dụng hệ số</option></select></label><PolicyStudentMonth key={month} assistant={assistant} month={`${month}-01`}/></>}
+  {tab==='tong-quan'&&<><label className="block text-sm text-slate-300">Tháng xem mẫu<select className="ml-3 rounded-xl border border-white/15 bg-panel px-3 py-2 text-white" value={month} onChange={e=>setMonth(e.target.value)}><option value="2026-10">Tháng 10/2026 · chạy thử</option><option value="2026-11">Tháng 11/2026 · áp dụng hệ số</option></select></label><PolicyStudentMonth key={month} assistant={assistant} month={`${month}-01`}/></>}
   {tab==='ghi'&&<GhiBuoiForm assistant={assistant} initialWorkDate="2026-10-01" previewDraftScope={theme}/>}
   {tab==='video'&&<TroGiangVideo assistant={assistant}/>}
  </main>;

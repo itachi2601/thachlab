@@ -4,7 +4,7 @@ import type { TaSessionRow } from '@/lib/tro-giang/queries';
 import { emptyPolicy, updatePolicySession } from '@/lib/tro-giang/policy';
 import PolicySessionFields from './PolicySessionFields';
 import { useToast } from '@/components/ui/Toast';
-const cls='mt-1 w-full rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2 text-white';
+const cls='mt-1 w-full rounded-xl border border-white/15 bg-panel px-3 py-2 text-white';
 export default function PolicySessionEditor({ session, onSaved, onCancel }: { session: TaSessionRow; onSaved:()=>void; onCancel:()=>void }) {
  const [draft,setDraft]=useState({...session,policy:{...emptyPolicy(),...session.policy}});const [reason,setReason]=useState('');const [busy,setBusy]=useState(false);const toast=useToast();
  async function save(){if(!reason.trim()){toast('error','Ghi lý do điều chỉnh.');return}setBusy(true);try{await updatePolicySession(session.id,{work_date:draft.work_date,class_label:draft.class_label,start_time:draft.start_time,end_time:draft.end_time,student_touches:draft.student_touches,papers_graded:draft.papers_graded,policy:draft.policy,status:draft.status,phudao_students:draft.phudao_students,note:`${session.note??''}\nĐiều chỉnh: ${reason.trim()}`.trim()});toast('success','Đã sửa buổi. Nếu tháng đã chốt, cần chốt lại.');onSaved()}catch(e){toast('error',e instanceof Error?e.message:'Không lưu được')}finally{setBusy(false)}}

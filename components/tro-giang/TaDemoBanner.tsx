@@ -13,7 +13,7 @@ import { setTaDemoMode } from "@/lib/tro-giang/demo";
 export default function TaDemoBanner({ raised = false }: { raised?: boolean }) {
   return (
     <div
-      className={`fixed inset-x-0 z-50 flex flex-wrap items-center justify-center gap-2 border-t border-fuchsia-400/30 bg-[#0B1020]/95 px-4 py-2.5 text-xs font-bold text-fuchsia-200 backdrop-blur-md ${
+      className={`fixed inset-x-0 z-50 flex flex-wrap items-center justify-center gap-2 border-t border-fuchsia-400/30 bg-panel/95 px-4 py-2.5 text-xs font-bold text-fuchsia-200 backdrop-blur-md ${
         raised ? "bottom-[88px]" : "bottom-0"
       }`}
     >

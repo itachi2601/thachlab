@@ -140,7 +140,7 @@ export default function TeacherThptTutoring({
 
   return (
     <div className="space-y-5">
-      <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-6">
+      <section className="rounded-3xl border border-white/10 bg-panel p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <h2 className="font-display text-xl font-bold text-white">Phụ đạo theo chủ đề</h2>
@@ -169,7 +169,7 @@ export default function TeacherThptTutoring({
       </section>
 
       {hotTopics.length > 0 && (
-        <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-6">
+        <section className="rounded-3xl border border-white/10 bg-panel p-6">
           <h3 className="flex items-center gap-2 font-semibold text-white">
             <BookOpen size={16} className="text-sky-300" /> Nên phụ đạo chung phần nào
           </h3>
@@ -215,7 +215,7 @@ export default function TeacherThptTutoring({
       ) : (
         <div className="space-y-3">
           {byStudent.map((student) => (
-            <article key={student.id} className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
+            <article key={student.id} className="rounded-2xl border border-white/10 bg-panel p-4">
               <h3 className="font-semibold text-white">{student.name}</h3>
               <div className="mt-3 space-y-2">
                 {student.list.map((need) => {

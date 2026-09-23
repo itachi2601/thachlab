@@ -41,7 +41,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove }: P
 
   return (
     <div>
-      <div className="sticky top-16 z-30 mb-6 rounded-2xl border border-white/10 bg-[#0B1020]/95 px-5 py-3 backdrop-blur-md">
+      <div className="sticky top-16 z-30 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-5 py-3 backdrop-blur-md">
         <span className="text-sm text-slate-400">
           Câu <span className="font-semibold text-white">{cur + 1}</span>/{questions.length}
         </span>
@@ -106,7 +106,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove }: P
           type="button"
           disabled={cur === lastIndex}
           onClick={() => goTo(cur + 1)}
-          className="ml-auto rounded-xl bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
+          className="ml-auto rounded-xl bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-40"
         >
           Câu sau →
         </button>

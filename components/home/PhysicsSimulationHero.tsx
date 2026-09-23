@@ -77,7 +77,7 @@ export function PhysicsSimulationHero() {
           </p>
         </div>
 
-        <div className="relative rounded-2xl border border-line bg-[#0B1020] p-5 shadow-xl shadow-black/30 sm:p-6">
+        <div className="relative rounded-2xl border border-line bg-panel p-5 shadow-xl shadow-black/30 sm:p-6">
           <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-muted">
             Mô phỏng: Dao động con lắc lò xo
           </p>

@@ -43,7 +43,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2563EB] text-sm font-bold text-white font-display">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
             T
           </span>
           <span className="font-display text-lg font-semibold tracking-tight text-white">
@@ -74,7 +74,7 @@ export default function Navbar() {
                 aria-expanded={accountMenuOpen}
                 aria-haspopup="menu"
                 onClick={() => setAccountMenuOpen((open) => !open)}
-                className="flex items-center gap-1.5 rounded-full bg-[#2563EB]/15 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-[#2563EB]/25"
+                className="flex items-center gap-1.5 rounded-full bg-primary/15 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-primary/25"
               >
                 {profile?.full_name?.split(" ").pop() ?? "Tài khoản"}
                 <ChevronDown size={15} className={`transition-transform ${accountMenuOpen ? "rotate-180" : ""}`} />
@@ -166,7 +166,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/dang-ky"
-                className="hidden rounded-full bg-[#2563EB] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-[#1D4ED8] sm:inline-block sm:px-5"
+                className="hidden rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-block sm:px-5"
               >
                 Đăng ký
               </Link>
@@ -208,7 +208,7 @@ export default function Navbar() {
                       aria-current={isActive ? "page" : undefined}
                       className={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors ${
                         isActive
-                          ? "bg-[#2563EB]/20 text-[#60A5FA]"
+                          ? "bg-primary/20 text-[#60A5FA]"
                           : "text-slate-200 hover:bg-white/[0.07] hover:text-white"
                       }`}
                     >

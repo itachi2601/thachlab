@@ -49,7 +49,7 @@ export default function TeacherThptGradebook({ students }: { students: ClassStud
         <select
           value={String(examFilter)}
           onChange={(e) => setExamFilter(e.target.value === "all" ? "all" : Number(e.target.value))}
-          className="rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
+          className="rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
         >
           <option value="all">Tất cả đề</option>
           {examOptions.map(([id, title]) => (

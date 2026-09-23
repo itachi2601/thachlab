@@ -190,7 +190,7 @@ export default function HomeroomGradebook({ courseId, students, className, schoo
         {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
       </section>
 
-      <section className="overflow-auto rounded-2xl border border-white/10 bg-[#0B1020]">
+      <section className="overflow-auto rounded-2xl border border-white/10 bg-panel">
         <table className="min-w-[1000px] border-collapse text-sm">
           <thead className="sticky top-0 z-10 bg-[#111a2e] text-xs text-slate-300">
             <tr>
@@ -210,7 +210,7 @@ export default function HomeroomGradebook({ courseId, students, className, schoo
               const lowRate = attendanceRate !== null && attendanceRate < ELIGIBILITY_RATE;
               return (
                 <tr key={student.id} className="hover:bg-white/[.02]">
-                  <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-[#0B1020] p-3">
+                  <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3">
                     <strong className="block text-white">{student.name}</strong><small className="text-slate-500">{student.className}</small>
                   </td>
                   <td className="border-b border-white/5 p-3 text-center font-mono text-slate-300">{code || "—"}</td>
@@ -287,7 +287,7 @@ function ConductCell({ studentId, term, value, busy, onSave }: {
         disabled={busy}
         value={value ?? ""}
         onChange={(e) => onSave(studentId, term, e.target.value)}
-        className="rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-xs font-bold text-slate-200 outline-none focus:border-cyan-400/60 disabled:opacity-50"
+        className="rounded-lg border border-white/10 bg-panel-deep px-2 py-1.5 text-xs font-bold text-slate-200 outline-none focus:border-cyan-400/60 disabled:opacity-50"
       >
         <option value="">—</option>
         {CONDUCT_OPTIONS.map((option) => (

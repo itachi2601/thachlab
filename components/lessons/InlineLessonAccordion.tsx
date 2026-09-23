@@ -139,7 +139,7 @@ export default function InlineLessonAccordion({
   }
 
   return (
-    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-blue-400/40 bg-[#0B1324]" : "border-white/10 bg-[#0B1020]"}`}>
+    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-blue-400/40 bg-[#0B1324]" : "border-white/10 bg-panel"}`}>
       <button
         type="button"
         onClick={onToggle}

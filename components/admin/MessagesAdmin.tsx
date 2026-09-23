@@ -102,7 +102,7 @@ export default function MessagesAdmin() {
         <select
           value={target}
           onChange={(e) => setTarget(e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-[#0B1020] px-4 py-2.5 text-white focus:border-primary focus:outline-none"
+          className="w-full rounded-xl border border-white/10 bg-panel px-4 py-2.5 text-white focus:border-primary focus:outline-none"
         >
           <option value="all">📢 Toàn bộ học sinh</option>
           {classes.map((c) => (
@@ -148,7 +148,7 @@ export default function MessagesAdmin() {
         {sent.map((m) => (
           <div
             key={m.id}
-            className="rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-4"
+            className="rounded-2xl border border-white/10 bg-panel px-5 py-4"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <p className="font-medium text-white">

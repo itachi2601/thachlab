@@ -234,7 +234,7 @@ export default function CourseRosterPanel({
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5">
         <h3 className="text-xl font-bold text-white">{courseName}</h3>
         <p className="mt-1 text-sm text-slate-400">
           {subjectLabel} · {courseYear}{classLabel ? ` · ${classLabel}` : ""} · {enrollments.length} sinh viên
@@ -294,7 +294,7 @@ export default function CourseRosterPanel({
         )}
       </section>
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5">
         <div className="flex items-center gap-2">
           <UserRoundCheck size={18} className="text-amber-300" />
           <h3 className="font-display text-lg font-bold text-white">Chờ duyệt ghi danh{pending.length > 0 ? ` · ${pending.length}` : ""}</h3>
@@ -379,7 +379,7 @@ function LtGradebook({ courseId, rows, overrides, onSaved }: {
   }
 
   return (
-    <div className="overflow-auto rounded-2xl border border-white/10 bg-[#0B1020]">
+    <div className="overflow-auto rounded-2xl border border-white/10 bg-panel">
       <table className="min-w-[1200px] border-collapse text-sm">
         <thead className="sticky top-0 z-10 bg-[#111a2e] text-xs text-slate-300">
           <tr>
@@ -391,7 +391,7 @@ function LtGradebook({ courseId, rows, overrides, onSaved }: {
         <tbody>
           {rows.map((row) => (
             <tr key={row.id} className="hover:bg-white/[.02]">
-              <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-[#0B1020] p-3">
+              <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3">
                 <strong className="block text-white">{row.name}</strong><small className="text-slate-500">{row.className}</small>
               </td>
               <td className="border-b border-white/5 p-3 text-center font-mono text-slate-300">{row.studentCode || "—"}</td>

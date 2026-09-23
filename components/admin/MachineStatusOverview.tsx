@@ -158,12 +158,12 @@ function AddMachineForm({ onDone, onCancel }: { onDone: () => void; onCancel: ()
   }
   return (
     <div className="mt-4 grid gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-4 sm:grid-cols-2 lg:grid-cols-4">
-      <input value={code} onChange={(e) => setCode(e.target.value)} placeholder="Mã máy (VD: T9)" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
-      <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Tên máy" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
-      <select value={machineType} onChange={(e) => setMachineType(e.target.value as MachineType)} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white">
+      <input value={code} onChange={(e) => setCode(e.target.value)} placeholder="Mã máy (VD: T9)" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
+      <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Tên máy" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
+      <select value={machineType} onChange={(e) => setMachineType(e.target.value as MachineType)} className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white">
         {MACHINE_TYPE_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
       </select>
-      <input value={workshop} onChange={(e) => setWorkshop(e.target.value)} placeholder="Mã xưởng (VD: C1.2)" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+      <input value={workshop} onChange={(e) => setWorkshop(e.target.value)} placeholder="Mã xưởng (VD: C1.2)" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
       <div className="flex gap-2 sm:col-span-2 lg:col-span-4">
         <button disabled={busy || missing.length > 0} onClick={submit} className="rounded-xl bg-cyan-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40">{busy ? "Đang lưu…" : "Thêm máy"}</button>
         <button onClick={onCancel} className="admin-btn admin-btn--ghost">Hủy</button>
@@ -392,12 +392,12 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
             {!editingInfo && <button type="button" onClick={() => setEditingInfo(true)} className="flex items-center gap-1 text-xs font-bold text-cyan-300 hover:text-cyan-200"><Pencil size={12} />Sửa</button>}
           </div>
           {editingInfo ? <div className="mt-2 space-y-2">
-            <input value={infoLabel} onChange={(e) => setInfoLabel(e.target.value)} placeholder="Tên máy" className="w-full rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
+            <input value={infoLabel} onChange={(e) => setInfoLabel(e.target.value)} placeholder="Tên máy" className="w-full rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white" />
             <div className="flex gap-2">
-              <select value={infoType} onChange={(e) => setInfoType(e.target.value as MachineType)} className="flex-1 rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white">
+              <select value={infoType} onChange={(e) => setInfoType(e.target.value as MachineType)} className="flex-1 rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white">
                 {MACHINE_TYPE_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
               </select>
-              <input value={infoWorkshop} onChange={(e) => setInfoWorkshop(e.target.value)} placeholder="Xưởng" className="w-28 rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white" />
+              <input value={infoWorkshop} onChange={(e) => setInfoWorkshop(e.target.value)} placeholder="Xưởng" className="w-28 rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white" />
             </div>
             <label className="flex items-center gap-2 text-xs font-bold text-slate-300">
               <input type="checkbox" checked={infoActive} onChange={(e) => setInfoActive(e.target.checked)} />
@@ -417,7 +417,7 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
             <button type="button" onClick={() => setStatus("ok")} className={`flex-1 rounded-lg border py-2 text-xs font-bold ${status === "ok" ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200" : "border-white/10 text-slate-400"}`}>Bình thường</button>
             <button type="button" onClick={() => setStatus("broken")} className={`flex-1 rounded-lg border py-2 text-xs font-bold ${status === "broken" ? "border-red-400/40 bg-red-500/10 text-red-200" : "border-white/10 text-slate-400"}`}>Đang hỏng</button>
           </div>
-          <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Ghi chú tình trạng…" className="mt-2 w-full resize-none rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-sm text-white placeholder:text-slate-600" />
+          <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Ghi chú tình trạng…" className="mt-2 w-full resize-none rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-sm text-white placeholder:text-slate-600" />
           <button type="button" disabled={saving} onClick={saveNew} className="mt-2 rounded-lg bg-cyan-600 px-4 py-2 text-xs font-bold text-white disabled:opacity-40">
             {saving ? "Đang lưu…" : "Lưu, thêm vào lịch sử"}
           </button>
@@ -436,8 +436,8 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
                       <button type="button" onClick={() => setEditStatus("ok")} className={`flex-1 rounded-md border py-1.5 font-bold ${editStatus === "ok" ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200" : "border-white/10 text-slate-400"}`}>Bình thường</button>
                       <button type="button" onClick={() => setEditStatus("broken")} className={`flex-1 rounded-md border py-1.5 font-bold ${editStatus === "broken" ? "border-red-400/40 bg-red-500/10 text-red-200" : "border-white/10 text-slate-400"}`}>Đang hỏng</button>
                     </div>
-                    <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)} rows={2} className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-white" />
-                    <input type="datetime-local" value={editDate} onChange={(e) => setEditDate(e.target.value)} className="mt-1.5 w-full rounded-md border border-white/10 bg-[#080d1d] px-2 py-1 text-white [color-scheme:dark]" />
+                    <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)} rows={2} className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-white" />
+                    <input type="datetime-local" value={editDate} onChange={(e) => setEditDate(e.target.value)} className="mt-1.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-white [color-scheme:dark]" />
                     <div className="mt-1.5 flex gap-1.5">
                       <button type="button" disabled={editSaving} onClick={() => void saveEdit(entry.id)} className="rounded-md bg-cyan-600 px-2.5 py-1 font-bold text-white disabled:opacity-40">Lưu</button>
                       <button type="button" onClick={() => setEditingId(null)} className="rounded-md border border-white/10 px-2.5 py-1 font-bold text-slate-300">Hủy</button>
@@ -501,7 +501,7 @@ function BreakdownSection({ reports, loading, error, lecturers, currentUserId, o
 
 function LecturerSelect({ lecturers, value, onChange, placeholder }: { lecturers: AdminProfile[]; value: string; onChange: (id: string) => void; placeholder: string }) {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full rounded-lg border border-white/10 bg-[#080d1d] px-3 py-2 text-xs text-white">
+    <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-1 w-full rounded-lg border border-white/10 bg-panel-deep px-3 py-2 text-xs text-white">
       <option value="" disabled>{placeholder}</option>
       {lecturers.map((l) => <option key={l.id} value={l.id}>{l.full_name}</option>)}
     </select>
@@ -571,7 +571,7 @@ function ResolveBreakdownForm({ report, lecturers, currentUserId, onDone }: { re
       <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} className="mt-0.5 block w-full text-slate-400" />
       <label className="mt-1.5 block text-slate-500">Giảng viên sửa chữa</label>
       <LecturerSelect lecturers={lecturers} value={resolvedBy} onChange={setResolvedBy} placeholder="Chọn giảng viên…" />
-      <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-lg border border-white/10 bg-[#080d1d] px-2 py-1.5 text-white placeholder:text-slate-600" />
+      <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-lg border border-white/10 bg-panel-deep px-2 py-1.5 text-white placeholder:text-slate-600" />
       {error && <p className="mt-1 text-red-300">{error}</p>}
       <button type="button" disabled={busy || missing.length > 0} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-3 py-1.5 font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
       {!busy && missing.length > 0 && <p className="mt-1 text-amber-300">Cần nhập: {missing.join(", ")}.</p>}

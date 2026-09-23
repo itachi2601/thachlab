@@ -39,7 +39,7 @@ function Inbox() {
       {messages.map((m) => (
         <article
           key={m.id}
-          className="rounded-2xl border border-white/10 bg-[#0B1020] p-5"
+          className="rounded-2xl border border-white/10 bg-panel p-5"
         >
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h2 className="font-semibold text-white">
