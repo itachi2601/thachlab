@@ -7,6 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
+import EmptyState from "@/components/ui/EmptyState";
 import {
   deleteNotification,
   fetchNotifications,
@@ -56,7 +57,11 @@ function Inbox() {
       </div>
 
       {items.length === 0 ? (
-        <p className="mt-8 rounded-2xl border border-dashed border-white/10 p-8 text-center text-slate-500">Chưa có thông báo nào.</p>
+        <EmptyState
+          className="mt-8"
+          title="Chưa có thông báo nào"
+          description="Khi có bài mới, kết quả chấm hay tin từ thầy cô, em sẽ thấy ở đây."
+        />
       ) : (
         <ul className="mt-6 space-y-2">
           {items.map((item) => (

@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
+import EmptyState from "@/components/ui/EmptyState";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
@@ -490,7 +491,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             ) : !classes ? (
               <SkeletonGrid count={2} />
             ) : classes.length === 0 ? (
-              <p className="lesson-muted">Chưa có lớp nào.</p>
+              <EmptyState title="Chưa có lớp nào" description="Lớp học sẽ hiện ở đây khi hệ thống mở." />
             ) : (
               <div className="hub-grid">
                 {GRADE_ORDER.map((grade) => {
