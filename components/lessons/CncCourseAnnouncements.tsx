@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchPublishedPosts, visibleToCourse, type PostMeta } from "@/services/content";
+import ContentHtml from "@/components/exams/ContentHtml";
 
 const CONTENT_TYPE_LABELS: Record<string, string> = {
   thong_bao: "Thông báo",
@@ -42,7 +43,12 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
               </span>
             </div>
             <p className="mt-2 font-medium text-white">{p.title}</p>
-            {p.body && <p className="mt-1 whitespace-pre-line text-sm text-slate-400">{p.body}</p>}
+            {p.body && (
+              <ContentHtml
+                html={p.body}
+                className="mt-1 block whitespace-pre-line text-sm text-slate-400"
+              />
+            )}
             {p.video_url && (
               <a
                 href={p.video_url}

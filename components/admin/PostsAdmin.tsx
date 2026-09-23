@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import CoursePicker from "@/components/admin/CoursePicker";
+import ContentHtml from "@/components/exams/ContentHtml";
 import {
   createPostWithTargets,
   updatePostWithTargets,
@@ -252,13 +253,38 @@ export default function PostsAdmin() {
           placeholder="Link YouTube (không bắt buộc)"
           className={inputCls}
         />
-        <textarea
-          value={form.body}
-          onChange={(e) => setForm((f) => ({ ...f, body: e.target.value }))}
-          placeholder="Nội dung / mô tả (không bắt buộc)"
-          rows={4}
-          className={inputCls}
-        />
+        <div className="grid gap-4 lg:grid-cols-2">
+          <label className="block">
+            <span className="mb-2 block text-sm font-medium text-slate-300">
+              Nội dung (không bắt buộc — hỗ trợ công thức LaTeX $...$)
+            </span>
+            <textarea
+              value={form.body}
+              onChange={(e) => setForm((f) => ({ ...f, body: e.target.value }))}
+              placeholder={`Nội dung / mô tả…\nCó thể chèn công thức: $x^2 + y^2 = z^2$`}
+              rows={10}
+              className={`${inputCls} font-mono text-sm`}
+            />
+          </label>
+          <div>
+            <span className="mb-2 block text-sm font-medium text-slate-300">
+              Xem trước trên web
+            </span>
+            <div className="rounded-2xl border border-white/10 bg-panel p-6">
+              <p className="font-display text-xl font-semibold text-white">
+                {form.title || "Tiêu đề bài đăng"}
+              </p>
+              {form.body ? (
+                <ContentHtml
+                  html={form.body}
+                  className="mt-4 block whitespace-pre-wrap text-sm leading-relaxed text-slate-300"
+                />
+              ) : (
+                <p className="mt-4 text-sm text-slate-500">Chưa có nội dung…</p>
+              )}
+            </div>
+          </div>
+        </div>
         <ClassPicker
           selected={form.classIds}
           onChange={(classIds) => setForm((f) => ({ ...f, classIds }))}

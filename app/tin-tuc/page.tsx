@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
+import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchMyClassIds } from "@/services/classes";
 import {
@@ -58,9 +59,10 @@ function PostCard({ post }: { post: PostMeta }) {
         </a>
       )}
       {post.body && (
-        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-slate-300">
-          {post.body}
-        </p>
+        <ContentHtml
+          html={post.body}
+          className="mt-4 block whitespace-pre-wrap text-sm leading-relaxed text-slate-300"
+        />
       )}
     </article>
   );
