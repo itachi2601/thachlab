@@ -215,7 +215,7 @@ function TopicNode({
               lessonId: null,
             })
           }
-          className={`${input} bg-[#0B1020]`}
+          className={`${input} bg-panel`}
         >
           <option value="">— Chương —</option>
           {chapters
@@ -231,7 +231,7 @@ function TopicNode({
           onChange={(e) =>
             onPatch(topic.id, { lessonId: e.target.value ? Number(e.target.value) : null })
           }
-          className={`${input} bg-[#0B1020]`}
+          className={`${input} bg-panel`}
         >
           <option value="">— Bài học (cho nút Ôn lại) —</option>
           {(topic.chapterId ? lessonsByChapter.get(topic.chapterId) ?? [] : lessons).map((l) => (
@@ -373,7 +373,7 @@ function ExamTagger({
       <select
         value={examId ?? ""}
         onChange={(e) => setExamId(Number(e.target.value))}
-        className={`${input} mt-4 min-w-72 bg-[#0B1020]`}
+        className={`${input} mt-4 min-w-72 bg-panel`}
       >
         <option value="">— Chọn đề —</option>
         {exams.map((e) => (
@@ -398,7 +398,7 @@ function ExamTagger({
             <button
               onClick={save}
               disabled={!dirty || busy}
-              className="rounded-full bg-[#2563EB] px-5 py-1.5 text-sm font-semibold text-white disabled:opacity-40"
+              className="rounded-full bg-primary px-5 py-1.5 text-sm font-semibold text-white disabled:opacity-40"
             >
               {busy ? "Đang lưu…" : "Lưu nhãn"}
             </button>
@@ -420,7 +420,7 @@ function ExamTagger({
                 <select
                   value={q.topic ?? ""}
                   onChange={(e) => setQ(i, { topic: e.target.value } as Partial<ExamQuestion>)}
-                  className={`${input} bg-[#0B1020]`}
+                  className={`${input} bg-panel`}
                 >
                   <option value="">— Chủ đề —</option>
                   {grouped.map((g) => (
@@ -449,7 +449,7 @@ function ExamTagger({
                   onChange={(e) =>
                     setQ(i, { form: e.target.value } as Partial<ExamQuestion>)
                   }
-                  className={`${input} bg-[#0B1020]`}
+                  className={`${input} bg-panel`}
                 >
                   <option value="">— Loại —</option>
                   <option value="ly_thuyet">{QUESTION_FORM_LABELS.ly_thuyet}</option>

@@ -7,7 +7,7 @@ import { SESSION_TYPE_META, STATUS_META } from '@/lib/tro-giang/constants';
 import PolicyMonthSummary from './PolicyMonthSummary';
 import PolicySessionEditor from './PolicySessionEditor';
 import { useToast } from '@/components/ui/Toast';
-const cls='mt-1 w-full rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2 text-white';
+const cls='mt-1 w-full rounded-xl border border-white/15 bg-panel px-3 py-2 text-white';
 export default function PolicyMonthlyReview({month,reloadKey=0}:{month:string;reloadKey?:number}){
  const [assistants,setAssistants]=useState<TaAssistant[]>([]);const [selected,setSelected]=useState('');const [error,setError]=useState('');
  useEffect(()=>{let active=true;fetchAssistants().then(a=>{if(active){setAssistants(a);setSelected(a[0]?.id??'')}}).catch(e=>{if(active)setError(e.message)});return()=>{active=false}},[]);

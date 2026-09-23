@@ -23,7 +23,7 @@ function CourseCard({ course }: { course: ThptCourse }) {
   const full = course.capacity !== null && course.taken >= course.capacity;
   const started = course.starts_at ? new Date(course.starts_at) < new Date(new Date().toDateString()) : false;
   return (
-    <article className="flex flex-col rounded-3xl border border-white/10 bg-[#0B1020] p-6">
+    <article className="flex flex-col rounded-3xl border border-white/10 bg-panel p-6">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {course.className}</p>
@@ -87,7 +87,7 @@ function CourseCard({ course }: { course: ThptCourse }) {
         href={full ? "#" : `/khoa-hoc/dang-ky/?id=${course.id}`}
         aria-disabled={full}
         className={`mt-2 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold ${
-          full ? "pointer-events-none bg-white/5 text-slate-500" : "bg-[#2563EB] text-white hover:bg-primary-dark"
+          full ? "pointer-events-none bg-white/5 text-slate-500" : "bg-primary text-white hover:bg-primary-dark"
         }`}
       >
         <Users size={16} /> {full ? "Đã đủ chỗ" : "Đăng ký học"}

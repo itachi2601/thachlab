@@ -139,23 +139,23 @@ export default function TeacherCourseDashboard() {
       </div>
     </section>
 
-    <section className="grid gap-3 rounded-2xl border border-white/10 bg-[#0B1020] p-4 sm:grid-cols-2 sm:p-5">
+    <section className="grid gap-3 rounded-2xl border border-white/10 bg-panel p-4 sm:grid-cols-2 sm:p-5">
       <label className="block">
         <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><GraduationCap size={14}/> Môn học</span>
-        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white">
+        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white">
           {availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}
         </select>
       </label>
       <label className="block">
         <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-slate-400"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courses.length} lớp`}</span>
-        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm font-semibold text-white">
+        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm font-semibold text-white">
           <option value="" disabled>{courses.length ? "Chọn lớp đang dạy" : "Chưa có lớp nào"}</option>
           {courses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
         </select>
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-[#080d1d]/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>!isHomeroom||["attendance","grades","roster"].includes(item.id)).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>!isHomeroom||["attendance","grades","roster"].includes(item.id)).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&(isHomeroom
       ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
@@ -177,7 +177,7 @@ export default function TeacherCourseDashboard() {
 
     {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
       <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>
-      <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-white/10 bg-[#080d1d] p-5 shadow-2xl">
+      <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-white/10 bg-panel-deep p-5 shadow-2xl">
         <div className="mb-4 flex justify-end"><button onClick={()=>setProfileOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"><X size={14}/>Đóng</button></div>
         <TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={openProfile} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0);setProfileOpen(false)}}/>
       </aside>
@@ -197,7 +197,7 @@ export default function TeacherCourseDashboard() {
 function NoCourseYet({ subjectLabel, hasCourses, isAdmin, subjectCode, onCourseCreated }: {
   subjectLabel: string; hasCourses: boolean; isAdmin: boolean; subjectCode: string; onCourseCreated: () => void;
 }) {
-  return <section className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-6">
+  return <section className="rounded-2xl border border-dashed border-white/10 bg-panel p-6">
     <p className="text-sm font-bold text-white">{hasCourses ? `Chọn lớp môn ${subjectLabel} ở bộ chọn phía trên để nhập danh sách.` : `Môn ${subjectLabel} chưa có lớp nào.`}</p>
     <p className="mt-1 text-sm text-slate-500">{isAdmin ? "Tạo lớp học phần mới ngay bên dưới, sau đó chọn lớp vừa tạo ở bộ chọn phía trên để nhập danh sách từ file Excel." : "Nhờ quản trị viên mở lớp học phần cho môn này trước khi nhập danh sách."}</p>
     {isAdmin && <CreateCourseForm subjectCode={subjectCode} defaultOpen onCreated={onCourseCreated} />}
@@ -205,7 +205,7 @@ function NoCourseYet({ subjectLabel, hasCourses, isAdmin, subjectCode, onCourseC
 }
 
 function CurriculumPending({ subjectLabel }: { subjectLabel: string }) {
-  return <div className="rounded-2xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center">
+  return <div className="rounded-2xl border border-dashed border-white/10 bg-panel p-10 text-center">
     <Construction size={28} className="mx-auto text-amber-300" />
     <p className="mt-3 text-sm font-bold text-white">Nội dung cho môn {subjectLabel} đang được xây dựng</p>
     <p className="mt-1 text-sm text-slate-500">Tab này cần dữ liệu chương trình học (bài giảng, năng lực, thang điểm) riêng cho môn. Trong lúc chờ, hãy dùng tab Điểm danh để theo dõi lớp.</p>

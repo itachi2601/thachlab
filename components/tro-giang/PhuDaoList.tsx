@@ -169,7 +169,7 @@ export default function PhuDaoList({ assistant }: { assistant: TaAssistant }) {
       ) : (
         <div className="space-y-3">
           {grouped.map((student) => (
-            <article key={student.id} className="rounded-2xl border border-white/10 bg-[#0B1020] p-4">
+            <article key={student.id} className="rounded-2xl border border-white/10 bg-panel p-4">
               <h2 className="font-semibold text-white">{student.name}</h2>
               <div className="mt-2 space-y-2">
                 {student.list.map((need) => {

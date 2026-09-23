@@ -28,7 +28,7 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
   if (posts.length === 0) return null;
 
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
       <h2 className="font-display text-base font-semibold text-white">Thông báo</h2>
       <div className="mt-3 space-y-3">
         {posts.slice(0, 5).map((p) => (

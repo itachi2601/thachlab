@@ -135,7 +135,7 @@ export default function TeacherThptAlerts({
           {shown.map((a) => (
             <div
               key={a.id}
-              className="rounded-2xl border border-white/10 bg-[#0B1020] p-4"
+              className="rounded-2xl border border-white/10 bg-panel p-4"
             >
               <div className="flex flex-wrap items-start gap-3">
                 <div className="min-w-0 flex-1">

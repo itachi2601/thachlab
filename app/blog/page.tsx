@@ -54,7 +54,7 @@ export default function BlogIndexPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-2xl border border-white/10 bg-[#0B1020] p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
+                className="group block rounded-2xl border border-white/10 bg-panel p-6 transition-all hover:-translate-y-1 hover:border-primary/50"
               >
                 <p className="text-xs text-slate-500">
                   <time dateTime={post.date}>{formatDate(post.date)}</time> ·{" "}

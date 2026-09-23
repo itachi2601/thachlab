@@ -10,9 +10,9 @@ type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
 function StaffAccountCard(){
   const router=useRouter();const{session,profile,signOut}=useAuth();
   const roleLabel=profile?.role==="admin"?"Quản trị viên":"Giảng viên";
-  return <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-8">
+  return <section className="rounded-3xl border border-white/10 bg-panel p-8">
     <div className="flex flex-wrap items-center gap-4">
-      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/15 text-xl font-bold text-[#3B82F6]">{(profile?.full_name??"?").charAt(0).toUpperCase()}</span>
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xl font-bold text-[#3B82F6]">{(profile?.full_name??"?").charAt(0).toUpperCase()}</span>
       <div>
         <h1 className="font-display text-2xl font-bold text-white">{profile?.full_name??"Tài khoản"}</h1>
         <p className="mt-1 text-sm text-slate-400">{session?.user.email}</p>
@@ -29,9 +29,9 @@ function StaffAccountCard(){
 
 function ParentAccountCard(){
   const router=useRouter();const{session,profile,signOut}=useAuth();
-  return <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-8">
+  return <section className="rounded-3xl border border-white/10 bg-panel p-8">
     <div className="flex flex-wrap items-center gap-4">
-      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/15 text-xl font-bold text-[#3B82F6]">{(profile?.full_name??"?").charAt(0).toUpperCase()}</span>
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xl font-bold text-[#3B82F6]">{(profile?.full_name??"?").charAt(0).toUpperCase()}</span>
       <div>
         <h1 className="font-display text-2xl font-bold text-white">{profile?.full_name??"Tài khoản"}</h1>
         <p className="mt-1 text-sm text-slate-400">{session?.user.email}</p>
@@ -48,7 +48,7 @@ function ParentAccountCard(){
 function JoinCourseForm(){
   const [code,setCode]=useState("");const [busy,setBusy]=useState(false);const [message,setMessage]=useState("");
   async function submit(event:React.FormEvent){event.preventDefault();if(!code.trim())return;setBusy(true);setMessage("");try{await requestEnrollment(code);window.location.reload();}catch(error){setMessage(error instanceof Error?error.message:"Mã khóa không hợp lệ.");}finally{setBusy(false);}}
-  return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center">
+  return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
     <KeyRound className="mx-auto text-blue-300" size={36}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Chưa có khóa đang học</h1>
     <p className="mt-2 text-slate-400">Nhập mã khóa do giáo viên cung cấp để gửi yêu cầu tham gia lớp.</p>
@@ -81,14 +81,14 @@ function ClassJoinPicker({onSubmitted}:{onSubmitted:()=>void}){
 function StudentTrackChooser({onSubmitted}:{onSubmitted:()=>void}){
   const [track,setTrack]=useState<"thpt"|"cttc"|null>(null);
   if(track==="cttc")return <JoinCourseForm/>;
-  if(track==="thpt")return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center">
+  if(track==="thpt")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
     <GraduationCap className="mx-auto text-blue-300" size={36}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Chọn khối lớp</h1>
     <p className="mt-2 text-slate-400">Gửi yêu cầu vào khối lớp — giáo viên sẽ duyệt trước khi bạn xem được nội dung của lớp.</p>
     <ClassJoinPicker onSubmitted={onSubmitted}/>
     <button onClick={()=>setTrack(null)} className="mt-4 text-xs text-slate-500 hover:text-slate-300">← Chọn lại luồng học</button>
   </section>;
-  return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center">
+  return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
     <h1 className="font-display text-2xl font-bold text-white">Bạn đang học ở đâu?</h1>
     <p className="mt-2 text-slate-400">Chọn đúng luồng học để vào đúng lớp / khóa của mình.</p>
     <div className="mx-auto mt-6 grid max-w-md gap-3 sm:grid-cols-2">
@@ -107,8 +107,8 @@ function StudentTrackChooser({onSubmitted}:{onSubmitted:()=>void}){
 }
 
 function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()=>void}){
-  if(request.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã được gửi.</p><button onClick={onRetry} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
-  if(request.status==="rejected")return <section className="rounded-3xl border border-dashed border-red-500/20 bg-[#0B1020] p-10 text-center">
+  if(request.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã được gửi.</p><button onClick={onRetry} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
+  if(request.status==="rejected")return <section className="rounded-3xl border border-dashed border-red-500/20 bg-panel p-10 text-center">
     <ShieldCheck className="mx-auto text-red-300" size={38}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Yêu cầu chưa được duyệt</h1>
     <p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã bị từ chối. Kiểm tra lại đúng khối lớp rồi gửi lại.</p>
@@ -131,14 +131,14 @@ function Account(){
   },[session,isStaff,isParent]);
   useEffect(()=>{reload();},[reload]);
 
-  if(!session)return <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-slate-400">Đang tải không gian học tập…</p>;
+  if(!session)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
   if(isStaff)return <StaffAccountCard/>;
   if(isParent)return <ParentAccountCard/>;
-  if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-slate-400">Đang tải không gian học tập…</p>;
+  if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
 
   if(enrollment){
-    if(enrollment.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu tham gia <strong className="text-white">{enrollment.course.name}</strong> đã được gửi.</p><button onClick={reload} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
-    if(enrollment.status==="suspended")return <section className="rounded-3xl border border-dashed border-white/10 bg-[#0B1020] p-10 text-center"><ShieldCheck className="mx-auto text-red-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Quyền truy cập đang tạm khóa</h1><p className="mt-2 text-slate-400">Hãy liên hệ giáo viên phụ trách khóa học.</p></section>;
+    if(enrollment.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu tham gia <strong className="text-white">{enrollment.course.name}</strong> đã được gửi.</p><button onClick={reload} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
+    if(enrollment.status==="suspended")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><ShieldCheck className="mx-auto text-red-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Quyền truy cập đang tạm khóa</h1><p className="mt-2 text-slate-400">Hãy liên hệ giáo viên phụ trách khóa học.</p></section>;
 
     const subject=getSubject(enrollment.subjectCode);
     if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;

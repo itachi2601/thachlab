@@ -634,7 +634,7 @@ function TagGrid({
   }
 
   const selectCls =
-    "h-7 max-w-full rounded border border-white/10 bg-[#0B1020] px-1 text-[11px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
+    "h-7 max-w-full rounded border border-white/10 bg-panel px-1 text-[11px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
 
   function renderOptions(current: string) {
     const extra = current && !known.has(current.toLowerCase()) ? current : "";
@@ -776,7 +776,7 @@ function TagGrid({
 function PreviewCard({ index, q, fix }: { index: number; q: ExamQuestion; fix: (html: string) => string }) {
   const issues = problems(q);
   return (
-    <div className={`rounded-2xl border bg-[#0B1020] p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
+    <div className={`rounded-2xl border bg-panel p-4 ${issues.length ? "border-amber-500/40" : "border-white/10"}`}>
       <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
         <span className="font-bold text-primary">Câu {index}</span>
         <span className="text-slate-500">

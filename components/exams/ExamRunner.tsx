@@ -3,7 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Flag } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useAuth } from "@/components/auth/AuthProvider";
+import ConfirmDialog from "@/components/ui/ConfirmDialog";
+import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
@@ -63,6 +66,7 @@ export default function ExamRunner({
   minCorrect?: number | null;
 }) {
   const { session, profile } = useAuth();
+  const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("intro");
   const [responses, setResponses] = useState<QuestionResponse[]>(() =>
     emptyResponses(exam.questions),
@@ -75,6 +79,7 @@ export default function ExamRunner({
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
   const [paletteOpen, setPaletteOpen] = useState(true);
+  const [confirmOpen, setConfirmOpen] = useState(false);
   const [violationBanner, setViolationBanner] = useState<{
     type: ViolationType;
     text: string;
@@ -196,13 +201,8 @@ export default function ExamRunner({
   }, [save]);
 
   const confirmSubmit = () => {
-    if (
-      answeredCount === exam.questions.length ||
-      confirm(
-        `Còn ${exam.questions.length - answeredCount} câu chưa làm. Nộp bài luôn?`,
-      )
-    )
-      submit();
+    if (answeredCount === exam.questions.length) submit();
+    else setConfirmOpen(true);
   };
 
   useEffect(() => {
@@ -278,7 +278,7 @@ export default function ExamRunner({
 
   if (phase === "intro") {
     return (
-      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0B1020] p-8">
+      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8">
         <h1 className="font-display text-2xl font-bold text-white">
           {exam.title}
         </h1>
@@ -293,17 +293,17 @@ export default function ExamRunner({
           </span>
           {profile?.class_name && ` · Lớp ${profile.class_name}`}
         </p>
-        <button
+        <Button
           onClick={() => {
             startedAt.current = Date.now();
             setPhase("running");
             document.documentElement.requestFullscreen().catch(() => undefined);
             if (session) void startExamAttempt(session.user.id, clientTokenRef.current, exam.id, itemId);
           }}
-          className="mt-6 w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
+          className="mt-6 w-full py-3 transition-transform hover:-translate-y-0.5"
         >
           Bắt đầu làm bài
-        </button>
+        </Button>
         <p className="mt-3 text-center text-xs text-slate-500">
           Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.
         </p>
@@ -315,6 +315,18 @@ export default function ExamRunner({
     const q = exam.questions[cur];
     return (
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
+        <ConfirmDialog
+          open={confirmOpen}
+          title="Nộp bài luôn?"
+          description={`Còn ${exam.questions.length - answeredCount} câu chưa làm.`}
+          confirmLabel="Nộp bài"
+          cancelLabel="Làm tiếp"
+          onConfirm={() => {
+            setConfirmOpen(false);
+            submit();
+          }}
+          onCancel={() => setConfirmOpen(false)}
+        />
         {violationBanner && (
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-amber-400/10 px-4 py-2.5 text-sm text-amber-200">
             <span>{violationBanner.text}</span>
@@ -340,7 +352,7 @@ export default function ExamRunner({
             </div>
           </div>
         )}
-        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-[#0B1020]/95 px-5 py-3 backdrop-blur-md">
+        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-5 py-3 backdrop-blur-md">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="text-sm text-slate-400">
               Câu <span className="font-semibold text-white">{cur + 1}</span>/
@@ -357,19 +369,12 @@ export default function ExamRunner({
               {formatClock(secondsLeft)}
             </span>
             <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setPaletteOpen((v) => !v)}
-                className="rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-white/30"
-              >
+              <Button variant="outline" size="sm" onClick={() => setPaletteOpen((v) => !v)}>
                 {paletteOpen ? "Ẩn bảng câu" : "Bảng câu hỏi"}
-              </button>
-              <button
-                onClick={confirmSubmit}
-                className="rounded-full bg-[#2563EB] px-4 py-1.5 text-sm font-semibold text-white hover:bg-primary-dark"
-              >
+              </Button>
+              <Button size="sm" onClick={confirmSubmit}>
                 Nộp bài
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -432,55 +437,50 @@ export default function ExamRunner({
           )}
         </div>
 
-        <QuestionCard
-          index={cur + 1}
-          question={q}
-          response={responses[cur]}
-          onChange={(r) => {
-            const next = [...responsesRef.current];
-            next[cur] = r;
-            responsesRef.current = next;
-            setResponses(next);
-          }}
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={cur}
+            initial={{ opacity: 0, x: reduceMotion ? 0 : 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: reduceMotion ? 0 : -12 }}
+            transition={{ duration: reduceMotion ? 0 : 0.18, ease: "easeOut" }}
+          >
+            <QuestionCard
+              index={cur + 1}
+              question={q}
+              response={responses[cur]}
+              onChange={(r) => {
+                const next = [...responsesRef.current];
+                next[cur] = r;
+                responsesRef.current = next;
+                setResponses(next);
+              }}
+            />
+          </motion.div>
+        </AnimatePresence>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            disabled={cur === 0}
-            onClick={() => goTo(cur - 1)}
-            className="rounded-xl border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-40"
-          >
+          <Button variant="outline" disabled={cur === 0} onClick={() => goTo(cur - 1)}>
             ← Câu trước
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
+            variant="outline"
             onClick={() => toggleFlag(cur)}
-            className={`inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-sm font-semibold ${
-              flags.has(cur)
-                ? "border-amber-400/60 bg-amber-400/10 text-amber-300"
-                : "border-white/15 text-slate-300 hover:border-white/30"
-            }`}
+            className={
+              flags.has(cur) ? "border-amber-400/60 bg-amber-400/10 text-amber-300" : ""
+            }
           >
             <Flag size={14} />
             {flags.has(cur) ? "Bỏ đánh dấu" : "Đánh dấu xem lại"}
-          </button>
+          </Button>
           {cur < lastIndex ? (
-            <button
-              type="button"
-              onClick={() => goTo(cur + 1)}
-              className="ml-auto rounded-xl bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
-            >
+            <Button className="ml-auto" onClick={() => goTo(cur + 1)}>
               Câu sau →
-            </button>
+            </Button>
           ) : (
-            <button
-              type="button"
-              onClick={confirmSubmit}
-              className="ml-auto rounded-xl bg-[#2563EB] px-5 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
-            >
+            <Button className="ml-auto" onClick={confirmSubmit}>
               Nộp bài
-            </button>
+            </Button>
           )}
         </div>
       </div>
@@ -537,13 +537,9 @@ export default function ExamRunner({
         {saveState === "failed" && (
           <>
             <span className="text-red-300">Chưa lưu được điểm — kiểm tra mạng rồi thử lại, đừng tắt trang này.</span>
-            <button
-              type="button"
-              onClick={save}
-              className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
-            >
+            <Button variant="outline" size="sm" onClick={save}>
               Thử lại
-            </button>
+            </Button>
           </>
         )}
       </div>

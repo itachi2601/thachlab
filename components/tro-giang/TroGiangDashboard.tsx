@@ -51,7 +51,7 @@ function StatTile({ label, value }: { label: string; value: string }) {
 
 export default function TroGiangDashboard({ assistant }: { assistant: TaAssistant }) {
   const [month,setMonth]=useState(currentMonthStr().slice(0,7));
-  return <div className="space-y-5"><div className="flex flex-wrap items-center gap-3"><label className="text-sm text-slate-300">Tháng <input aria-label="Tháng hiệu suất" type="month" value={month} onChange={e=>setMonth(e.target.value)} className="rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2 text-white"/></label><Link href="/tro-giang/quy-che" className="text-sm text-blue-300 underline">Quy chế từ 01/10/2026</Link></div>{month >= "2026-10" ? <PolicyStudentMonth key={month} assistant={assistant} month={`${month}-01`}/> : <LegacyDashboard key={month} assistant={assistant} month={`${month}-01`}/>}</div>;
+  return <div className="space-y-5"><div className="flex flex-wrap items-center gap-3"><label className="text-sm text-slate-300">Tháng <input aria-label="Tháng hiệu suất" type="month" value={month} onChange={e=>setMonth(e.target.value)} className="rounded-xl border border-white/15 bg-panel px-3 py-2 text-white"/></label><Link href="/tro-giang/quy-che" className="text-sm text-blue-300 underline">Quy chế từ 01/10/2026</Link></div>{month >= "2026-10" ? <PolicyStudentMonth key={month} assistant={assistant} month={`${month}-01`}/> : <LegacyDashboard key={month} assistant={assistant} month={`${month}-01`}/>}</div>;
 }
 function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: string }) {
   // Bản giả lập cho giáo viên xem trước — số liệu mẫu, không gọi Supabase (lib/tro-giang/demo.ts).
@@ -77,7 +77,7 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
         <p className="mt-1 text-sm text-slate-400">Bậc {assistant.tier} · Hiệu suất tháng này</p>
       </div>
 
-      <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-6">
+      <section className="rounded-3xl border border-white/10 bg-panel p-6">
         {!score ? (
           <p className="text-slate-500">Đang tải điểm hiệu suất…</p>
         ) : !hasActivity ? (

@@ -221,7 +221,7 @@ export default function PracticeSession({
     const estimate = Math.round(count * averageSeconds(bank.map((p) => p.question)));
 
     return (
-      <div className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <div className="space-y-4 rounded-2xl border border-white/10 bg-panel p-5">
         <p className="text-sm text-slate-300">
           Ngân hàng của bài này có{" "}
           <span className="font-bold text-white">{bank.length} câu</span>. Chọn số câu
@@ -265,7 +265,7 @@ export default function PracticeSession({
   if (phase === "running") {
     const q = questions[cur];
     return (
-      <div className="space-y-4 rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <div className="space-y-4 rounded-2xl border border-white/10 bg-panel p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm text-slate-400">
             Câu <span className="font-semibold text-white">{cur + 1}</span>/{questions.length} ·
@@ -379,7 +379,7 @@ export default function PracticeSession({
       : null;
   return (
     <div className="space-y-4">
-      <div className="rounded-2xl border border-white/10 bg-[#0B1020] p-6 text-center">
+      <div className="rounded-2xl border border-white/10 bg-panel p-6 text-center">
         <p className="font-display text-4xl font-bold text-gradient">
           {summary.score10.toLocaleString("vi-VN")}
         </p>

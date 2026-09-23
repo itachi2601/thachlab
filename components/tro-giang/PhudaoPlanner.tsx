@@ -247,7 +247,7 @@ export default function PhudaoPlanner({
                           const id = Number(e.target.value);
                           if (id) toggleTopic(student.id, id);
                         }}
-                        className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-sm text-white"
+                        className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white"
                       >
                         <option value="">Chọn chủ đề…</option>
                         {extraTopics.map((topic) => (
@@ -286,7 +286,7 @@ export default function PhudaoPlanner({
           {/* Chọn thêm em */}
           {students.length < MAX_STUDENTS && (
             <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2">
+              <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-panel px-3 py-2">
                 <Search size={14} className="text-slate-500" />
                 <input
                   value={query}

@@ -61,7 +61,7 @@ export default function ToastProvider({
         {items.map((t) => (
           <div
             key={t.id}
-            className={`pointer-events-auto rounded-xl border bg-[#0B1020]/95 px-4 py-3 text-sm shadow-lg backdrop-blur-md ${COLORS[t.kind]}`}
+            className={`pointer-events-auto rounded-xl border bg-panel/95 px-4 py-3 text-sm shadow-lg backdrop-blur-md ${COLORS[t.kind]}`}
           >
             <span className="mr-2 font-semibold">{ICONS[t.kind]}</span>
             {t.text}

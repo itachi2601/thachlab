@@ -67,7 +67,7 @@ export default function TroGiangVideo({ assistant }: { assistant: TaAssistant })
         </p>
       </div>
 
-      <section className="rounded-3xl border border-white/10 bg-[#0B1020] p-6">
+      <section className="rounded-3xl border border-white/10 bg-panel p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Thu nhập mảng video tháng này</p>
         <p className="mt-1.5 font-mono text-3xl font-bold tabular-nums text-white">
           {formatVnd(sum((v) => v.total_pay))}

@@ -119,7 +119,7 @@ export default function ExamResultSummary({
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>
           {badge && (
@@ -158,7 +158,7 @@ export default function ExamResultSummary({
         {detailAnchor && (
           <a
             href={`#${detailAnchor}`}
-            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             <Eye size={18} /> Xem bài làm chi tiết
           </a>
@@ -171,7 +171,7 @@ export default function ExamResultSummary({
           {stats.map((s) => (
             <div
               key={s.type}
-              className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-[#0B1020] p-4"
+              className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-panel p-4"
             >
               <div className="min-w-[180px] flex-1">
                 <p className="font-semibold text-white">

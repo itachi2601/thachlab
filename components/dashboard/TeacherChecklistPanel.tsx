@@ -54,7 +54,7 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
 
   function studentName(id: string) { return students.find((item) => item.id === id)?.name ?? "Học sinh"; }
 
-  return <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 sm:p-6">
+  return <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
     <div className="flex flex-wrap items-start justify-between gap-4">
       <div>
         <p className="text-xs font-bold uppercase tracking-[.16em] text-violet-300">Chấm chéo checklist thực hành</p>
@@ -67,8 +67,8 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
     <div className="mt-4 flex gap-2">{machines.map((item) => <button key={item.id} onClick={() => setLessonId(item.id)} className={`rounded-xl border px-4 py-2 text-sm font-bold ${lessonId === item.id ? "border-blue-400/40 bg-blue-500/10 text-blue-200" : "border-white/10 text-slate-400"}`}>{item.label}</button>)}</div>
 
     {creating && <div className="mt-5 grid gap-3 rounded-2xl border border-orange-400/20 bg-orange-500/5 p-4 sm:grid-cols-[1fr_1fr_auto]">
-      <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Tên ca chấm" className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
-      <input type="datetime-local" value={startsAt} onChange={(event) => setStartsAt(event.target.value)} className="rounded-xl border border-white/10 bg-[#080d1d] px-4 py-3 text-sm text-white" />
+      <input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Tên ca chấm" className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
+      <input type="datetime-local" value={startsAt} onChange={(event) => setStartsAt(event.target.value)} className="rounded-xl border border-white/10 bg-panel-deep px-4 py-3 text-sm text-white" />
       <button disabled={busy || !title.trim()} onClick={createSession} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-40">Mở phiên</button>
     </div>}
     {error && <p className="mt-3 rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}

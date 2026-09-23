@@ -1,6 +1,6 @@
 'use client';
 import type { SessionPolicy } from '@/lib/tro-giang/policy';
-const input = 'mt-1 w-full rounded-xl border border-white/15 bg-[#0B1020] px-3 py-2.5 text-white';
+const input = 'mt-1 w-full rounded-xl border border-white/15 bg-panel px-3 py-2.5 text-white';
 export default function PolicySessionFields({ value, onChange, type, students = [] }: {
  value: SessionPolicy; onChange: (v: SessionPolicy) => void; type: string; students?: string[];
 }) {

@@ -23,10 +23,10 @@ export interface ControlPanelProps {
 const sliderClass =
   "h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#2563EB] " +
   "[&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none " +
-  "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#2563EB] " +
+  "[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary " +
   "[&::-webkit-slider-thumb]:shadow-[0_0_0_3px_rgba(37,99,235,0.25)] " +
   "[&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full " +
-  "[&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-[#2563EB]";
+  "[&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-primary";
 
 export function ControlPanel({
   amplitude,
@@ -83,7 +83,7 @@ export function ControlPanel({
       <div className="flex items-center gap-2">
         <button
           onClick={onToggle}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#2563EB] px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-dark active:scale-[0.98]"
+          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-dark active:scale-[0.98]"
         >
           {isPlaying ? <Pause size={15} /> : <Play size={15} />}
           {isPlaying ? "Tạm dừng" : "Phát"}

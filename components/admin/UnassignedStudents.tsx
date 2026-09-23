@@ -66,7 +66,7 @@ export default function UnassignedStudents({
                   aria-label="Gán vào khối lớp"
                   value={targetClass[student.id] ?? defaultClassId ?? ""}
                   onChange={(event) => setTargetClass((current) => ({ ...current, [student.id]: Number(event.target.value) }))}
-                  className="rounded-lg border border-white/10 bg-[#080d1d] px-3 py-1.5 text-xs font-semibold text-white"
+                  className="rounded-lg border border-white/10 bg-panel-deep px-3 py-1.5 text-xs font-semibold text-white"
                 >
                   <option value="" disabled>Chọn khối lớp</option>
                   {classes.map((c) => (

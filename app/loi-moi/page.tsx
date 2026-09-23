@@ -24,7 +24,7 @@ function roleLabel(role: string, tier: string | null) {
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-[#0B1020] p-8">{children}</div>;
+  return <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
 }
 
 function InviteContent() {
@@ -63,7 +63,7 @@ function InviteContent() {
         <p className="mt-2 text-center text-sm text-slate-400">{done}</p>
         <Link
           href={parent ? "/phu-huynh" : "/tai-khoan"}
-          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+          className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
         >
           {parent ? "Xem kết quả của con" : "Vào tài khoản"}
         </Link>
@@ -79,7 +79,7 @@ function InviteContent() {
         {/* Đang đăng nhập rồi mà đẩy về trang đăng nhập thì chỉ làm người ta rối thêm. */}
         <Link
           href={session ? "/tai-khoan" : "/dang-nhap"}
-          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+          className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
         >
           {session ? "Vào tài khoản" : "Đăng nhập"}
         </Link>
@@ -184,7 +184,7 @@ function InviteContent() {
         </p>
         <Link
           href="/quan-tri/phan-cong-giang-vien"
-          className="mt-6 flex items-center justify-center rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white"
+          className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
         >
           Về trang phân công
         </Link>
@@ -204,7 +204,7 @@ function InviteContent() {
           type="button"
           disabled={busy}
           onClick={claim}
-          className="mt-6 w-full rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white disabled:opacity-40"
+          className="mt-6 w-full rounded-xl bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
         >
           {busy ? "Đang nhận…" : parent ? "Nối với con" : "Nhận lời mời"}
         </button>
@@ -234,7 +234,7 @@ function InviteContent() {
         <button
           type="submit"
           disabled={busy}
-          className="w-full rounded-xl bg-[#2563EB] py-3 text-sm font-bold text-white disabled:opacity-40"
+          className="w-full rounded-xl bg-primary py-3 text-sm font-bold text-white disabled:opacity-40"
         >
           {busy ? "Đang tạo…" : "Tạo tài khoản"}
         </button>

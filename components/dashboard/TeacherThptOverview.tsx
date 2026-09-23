@@ -117,7 +117,7 @@ export default function TeacherThptOverview({
 
       <TeacherLiveLearningPanel classId={classId} studentCount={students.length} onOpenStudent={onOpenStudent} />
 
-      <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
+      <section className="rounded-2xl border border-white/10 bg-panel p-5">
         <div className="mb-4 flex items-center gap-2 text-amber-300">
           <AlertTriangle size={18} />
           <h3 className="font-display text-lg font-bold text-white">Học sinh cần quan tâm</h3>
@@ -146,7 +146,7 @@ export default function TeacherThptOverview({
       <section className="grid gap-3 sm:grid-cols-2">
         <button
           onClick={() => onOpenTab("alerts")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left hover:border-white/30"
+          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
         >
           <span>
             <strong className="block text-lg text-white">Cảnh báo phụ đạo</strong>
@@ -158,7 +158,7 @@ export default function TeacherThptOverview({
         </button>
         <button
           onClick={() => onOpenTab("gradebook")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left hover:border-white/30"
+          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
         >
           <span>
             <strong className="block text-lg text-white">Xem bảng điểm</strong>
@@ -168,7 +168,7 @@ export default function TeacherThptOverview({
         </button>
         <button
           onClick={() => onOpenTab("attendance")}
-          className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left hover:border-white/30"
+          className="flex items-center justify-between rounded-2xl border border-white/10 bg-panel p-5 text-left hover:border-white/30"
         >
           <span>
             <strong className="block text-lg text-white">Điểm danh buổi học</strong>

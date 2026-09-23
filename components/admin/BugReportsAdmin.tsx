@@ -187,7 +187,7 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4" onClick={onClose}>
-      <section role="dialog" aria-modal="true" aria-label="Chi tiết" className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#0B1020] p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+      <section role="dialog" aria-modal="true" aria-label="Chi tiết" className="w-full max-w-lg rounded-2xl border border-white/10 bg-panel p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-lg font-bold text-white">
             <Bug size={18} className="text-amber-300" />

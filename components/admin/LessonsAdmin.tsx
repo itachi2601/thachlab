@@ -134,7 +134,7 @@ function ItemForm({
         <select
           value={kind}
           onChange={(e) => setKind(e.target.value as LessonItemKind)}
-          className={`${inputCls} bg-[#0B1020]`}
+          className={`${inputCls} bg-panel`}
         >
           {SECTION_ORDER.map((k) => (
             <option key={k} value={k}>
@@ -186,7 +186,7 @@ function ItemForm({
             type="datetime-local"
             value={dueAt}
             onChange={(e) => setDueAt(e.target.value)}
-            className={`${inputCls} bg-[#0B1020]`}
+            className={`${inputCls} bg-panel`}
           />
           {dueAt && (
             <button onClick={() => setDueAt("")} className={chipBtn}>
@@ -524,7 +524,7 @@ function ChapterLessonsEditor({
         <select
           value={lessonKind}
           onChange={(e) => setLessonKind(e.target.value as LessonKind)}
-          className={`${inputCls} bg-[#0B1020]`}
+          className={`${inputCls} bg-panel`}
         >
           {LESSON_KIND_OPTIONS.map((k) => (
             <option key={k} value={k}>
@@ -592,7 +592,7 @@ function ChapterLessonsEditor({
                   value={l.lesson_kind}
                   onChange={(e) => setKind(l, e.target.value as LessonKind)}
                   title="Loại bài"
-                  className="rounded-lg border border-white/10 bg-[#0B1020] px-2 py-1 text-xs text-slate-300"
+                  className="rounded-lg border border-white/10 bg-panel px-2 py-1 text-xs text-slate-300"
                 >
                   {LESSON_KIND_OPTIONS.map((k) => (
                     <option key={k} value={k}>

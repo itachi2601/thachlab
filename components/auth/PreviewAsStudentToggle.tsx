@@ -25,7 +25,7 @@ export default function PreviewAsStudentToggle() {
       <button
         type="button"
         onClick={() => setPreviewAsStudent(true)}
-        className="fixed bottom-5 left-5 z-50 flex items-center gap-2 rounded-full border border-white/15 bg-[#0B1020]/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
+        className="fixed bottom-5 left-5 z-50 flex items-center gap-2 rounded-full border border-white/15 bg-panel/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
       >
         <Drama size={15} className="text-fuchsia-300" />
         Xem như học sinh
@@ -34,7 +34,7 @@ export default function PreviewAsStudentToggle() {
   }
 
   return (
-    <div className="fixed bottom-5 left-5 z-50 flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-[#0B1020]/95 px-4 py-2.5 text-xs font-bold text-fuchsia-200 shadow-xl backdrop-blur-md">
+    <div className="fixed bottom-5 left-5 z-50 flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-panel/95 px-4 py-2.5 text-xs font-bold text-fuchsia-200 shadow-xl backdrop-blur-md">
       <Drama size={15} />
       Đang xem giao diện học sinh (giả lập)
       <Link

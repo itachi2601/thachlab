@@ -26,7 +26,7 @@ import { getSupabase } from "@/services/supabase";
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
-const selectCls = `${inputCls} bg-[#0B1020]`;
+const selectCls = `${inputCls} bg-panel`;
 
 type TargetKind = Extract<
   LessonItemKind,

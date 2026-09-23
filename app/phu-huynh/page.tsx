@@ -15,7 +15,7 @@ import { supabaseConfigured } from "@/services/supabase";
 
 function Notice({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center text-slate-300">
+    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8 text-center text-slate-300">
       {children}
     </div>
   );
@@ -33,7 +33,7 @@ const REG_TONE: Record<MyRegistration["status"], string> = {
 function RegistrationList({ items }: { items: MyRegistration[] }) {
   if (items.length === 0) return null;
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-left">
+    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5 text-left">
       <h2 className="font-display font-semibold text-white">Đăng ký học</h2>
       <ul className="mt-3 space-y-2">
         {items.map((r) => (
@@ -91,7 +91,7 @@ function ParentHome() {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href="/khoa-hoc"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-bold text-white"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white"
           >
             <CalendarPlus size={16} /> Đăng ký học cho con
           </Link>
@@ -110,9 +110,9 @@ function ParentHome() {
 
   return (
     <div className="mx-auto w-full max-w-4xl">
-      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-3">
+      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-3">
         <span className="text-sm text-slate-300">Muốn con học thêm lớp khác hoặc đăng ký cho em nhỏ?</span>
-        <Link href="/khoa-hoc" className="ml-auto inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-4 py-2 text-sm font-bold text-white">
+        <Link href="/khoa-hoc" className="ml-auto inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white">
           <CalendarPlus size={15} /> Đăng ký học
         </Link>
       </div>
@@ -124,7 +124,7 @@ function ParentHome() {
             <select
               value={selected.studentId}
               onChange={(e) => setSelectedId(e.target.value)}
-              className="appearance-none rounded-xl border border-white/10 bg-[#0B1020] py-2 pl-4 pr-10 text-sm font-semibold text-white focus:border-primary focus:outline-none"
+              className="appearance-none rounded-xl border border-white/10 bg-panel py-2 pl-4 pr-10 text-sm font-semibold text-white focus:border-primary focus:outline-none"
             >
               {children.map((c) => (
                 <option key={c.studentId} value={c.studentId}>

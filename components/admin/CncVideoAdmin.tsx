@@ -110,7 +110,7 @@ export default function CncVideoAdmin() {
         <select
           value={lessonId ?? ""}
           onChange={(e) => setLessonId(e.target.value || null)}
-          className="mt-1 w-full rounded-xl border border-white/10 bg-[#0B1020] px-3 py-2 text-white sm:max-w-md"
+          className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-white sm:max-w-md"
         >
           {lessons.map((l) => (
             <option key={l.id} value={l.id}>

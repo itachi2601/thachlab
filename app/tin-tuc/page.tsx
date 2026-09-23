@@ -27,7 +27,7 @@ function PostCard({ post }: { post: PostMeta }) {
   return (
     <article
       id={`post-${post.id}`}
-      className="rounded-2xl border border-white/10 bg-[#0B1020] p-6"
+      className="rounded-2xl border border-white/10 bg-panel p-6"
     >
       <h2 className="font-display text-xl font-semibold text-white">
         {post.title}

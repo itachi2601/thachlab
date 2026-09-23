@@ -43,7 +43,7 @@ function List() {
   return (
     <div className="space-y-3">
       {reports.map((r) => (
-        <div key={r.id} className="rounded-2xl border border-white/10 bg-[#0B1020] px-5 py-4">
+        <div key={r.id} className="rounded-2xl border border-white/10 bg-panel px-5 py-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs font-bold text-slate-400">{BUG_CATEGORY_LABELS[r.category]}</span>
             <div className="flex items-center gap-2">

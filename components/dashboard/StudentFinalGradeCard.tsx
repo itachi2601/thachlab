@@ -55,7 +55,7 @@ export default function StudentFinalGradeCard({ courseId, studentId, records }: 
     return { turnSelf, turnTeacher, millSelf, millTeacher, attendanceScore, bonus, total, processCount: activityCount(records) };
   }, [attempts, attendance, overrides, records]);
 
-  if (loading) return <section className="rounded-2xl border border-white/10 bg-[#0B1020] p-5 text-sm text-slate-500">Đang tải điểm tổng kết…</section>;
+  if (loading) return <section className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-500">Đang tải điểm tổng kết…</section>;
   const classification = grade.total === null ? "Chưa đủ dữ liệu" : grade.total >= 8.5 ? "Xuất sắc" : grade.total >= 7 ? "Khá" : grade.total >= 5 ? "Đạt" : "Chưa đạt";
   const tone = grade.total === null ? "border-slate-400/15 from-slate-500/10" : grade.total >= 8.5 ? "border-emerald-400/25 from-emerald-500/15" : grade.total >= 7 ? "border-blue-400/25 from-blue-500/15" : grade.total >= 5 ? "border-amber-400/25 from-amber-500/15" : "border-red-400/25 from-red-500/15";
 

@@ -229,7 +229,7 @@ function FileUploadPanel({
   return (
     <div className="admin-card">
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2563EB]/15 text-xs font-black text-[#93C5FD]">
+        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-xs font-black text-[#93C5FD]">
           {icon}
         </span>
         <div>

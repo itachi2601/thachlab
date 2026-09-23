@@ -6,7 +6,7 @@ import { supabaseConfigured } from "@/services/supabase";
 
 function Notice({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0B1020] p-8 text-center text-slate-300">
+    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8 text-center text-slate-300">
       {children}
     </div>
   );
@@ -54,7 +54,7 @@ export default function RequireAuth({
         <div className="mt-5 flex justify-center gap-3">
           <Link
             href="/dang-nhap"
-            className="rounded-full bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             Đăng nhập
           </Link>

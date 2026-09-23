@@ -46,7 +46,7 @@ const GRADES = ["10", "11", "12", "9"];
 const LETTERS = ["A", "B", "C", "D"];
 const inputCls =
   "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
-const selectCls = `${inputCls} bg-[#0B1020]`;
+const selectCls = `${inputCls} bg-panel`;
 const btnCls =
   "admin-chip";
 
@@ -409,7 +409,7 @@ export default function QuestionBankAdmin() {
       </div>
 
       {/* ===== Giỏ câu ===== */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-white/10 bg-[#0B1020]/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-white/10 bg-panel/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3">
           <button type="button" onClick={() => setBasketOpen((o) => !o)} className={`${btnCls} bg-white/5`}>
             <ListChecks size={14} /> Giỏ: <b className="text-white">{basket.length}</b> câu {basketOpen ? "▾" : "▴"}
@@ -536,7 +536,7 @@ function QuestionRow({
 
   return (
     <article
-      className={`rounded-2xl border p-4 ${picked ? "border-primary/60 bg-primary/5" : "border-white/10 bg-[#0B1020]"} ${q.archived ? "opacity-60" : ""}`}
+      className={`rounded-2xl border p-4 ${picked ? "border-primary/60 bg-primary/5" : "border-white/10 bg-panel"} ${q.archived ? "opacity-60" : ""}`}
     >
       <div className="flex flex-wrap items-center gap-2">
         <label className="flex cursor-pointer items-center gap-2">

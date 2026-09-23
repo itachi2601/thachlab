@@ -60,7 +60,7 @@ function Inbox() {
       ) : (
         <ul className="mt-6 space-y-2">
           {items.map((item) => (
-            <li key={item.id} className={`flex items-start gap-3 rounded-2xl border p-4 ${item.read_at ? "border-white/10 bg-[#0B1020]" : "border-blue-400/25 bg-blue-500/[.06]"}`}>
+            <li key={item.id} className={`flex items-start gap-3 rounded-2xl border p-4 ${item.read_at ? "border-white/10 bg-panel" : "border-blue-400/25 bg-blue-500/[.06]"}`}>
               <Link
                 href={item.href || "#"}
                 onClick={() => {
