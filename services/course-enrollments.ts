@@ -2,6 +2,7 @@ import { getSupabase } from "@/services/supabase";
 
 export type EnrollmentStatus = "pending" | "active" | "rejected" | "suspended" | "completed" | "left";
 export type EnrollmentMode = "approval" | "automatic" | "closed";
+export type ClassRole = "member" | "lop_truong" | "lop_pho_1" | "lop_pho_2";
 
 export interface CourseOffering {
   id: number; name: string; class_label: string; school_year: string; join_code: string;
@@ -10,7 +11,7 @@ export interface CourseOffering {
 }
 
 export interface EnrollmentRow {
-  course_id: number; student_id: string; status: EnrollmentStatus; enrolled_at: string;
+  course_id: number; student_id: string; status: EnrollmentStatus; enrolled_at: string; class_role: ClassRole;
   profiles: { id: string; full_name: string; class_name: string } | null;
 }
 
@@ -59,7 +60,7 @@ export async function createCncCourse(input: Pick<CourseOffering, "name" | "clas
 
 export async function fetchCourseEnrollments(courseId: number) {
   const { data, error } = await getSupabase().from("course_enrollments")
-    .select("course_id, student_id, status, enrolled_at, profiles!course_enrollments_student_id_fkey(id, full_name, class_name)")
+    .select("course_id, student_id, status, enrolled_at, class_role, profiles!course_enrollments_student_id_fkey(id, full_name, class_name)")
     .eq("course_id", courseId).order("enrolled_at");
   if (error) throw error;
   return (data ?? []).map((row) => ({ ...row, profiles: Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles })) as EnrollmentRow[];
@@ -72,6 +73,21 @@ export async function reviewEnrollment(courseId: number, studentId: string, stat
     status, approved_by: auth.user?.id ?? null, approved_at: status === "active" ? new Date().toISOString() : null,
   }).eq("course_id", courseId).eq("student_id", studentId);
   if (error) throw error;
+}
+
+// Gán/bỏ vai trò cán bộ lớp — lớp trưởng và 2 lớp phó có thể tự mở điểm danh cho cả lớp
+// (xem policy "class officers open attendance sessions" trong migration class-role).
+export async function setEnrollmentClassRole(courseId: number, studentId: string, classRole: ClassRole) {
+  const { error } = await getSupabase().from("course_enrollments")
+    .update({ class_role: classRole }).eq("course_id", courseId).eq("student_id", studentId);
+  if (error) throw error;
+}
+
+export async function fetchMyClassRole(courseId: number, studentId: string) {
+  const { data, error } = await getSupabase().from("course_enrollments")
+    .select("class_role").eq("course_id", courseId).eq("student_id", studentId).maybeSingle();
+  if (error) throw error;
+  return (data?.class_role ?? "member") as ClassRole;
 }
 
 export async function requestEnrollment(joinCode: string) {

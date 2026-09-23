@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FileSpreadsheet, Upload, Download, UserCheck2, UserPlus2, UserRoundCheck, AlertCircle, Check, Copy, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
-import { fetchCourseEnrollments, reviewEnrollment, type EnrollmentRow } from "@/services/course-enrollments";
+import { fetchCourseEnrollments, reviewEnrollment, setEnrollmentClassRole, type ClassRole, type EnrollmentRow } from "@/services/course-enrollments";
 import { parseRosterFile, importRosterToCourse, type ParsedRoster, type ImportResultRow } from "@/services/roster-import";
 import { exportCourseRoster } from "@/services/roster-export";
 import { fetchStudentRosterInfo, type StudentRosterInfo } from "@/services/student-profile";
@@ -15,6 +15,13 @@ import { computeCncFinalGrade } from "@/services/cnc-final-grade";
 import { LT_GRADE_COLUMNS } from "@/services/roster-schema";
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
 import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
+
+const CLASS_ROLE_LABELS: Record<ClassRole, string> = {
+  member: "Thành viên",
+  lop_truong: "Lớp trưởng",
+  lop_pho_1: "Lớp phó 1",
+  lop_pho_2: "Lớp phó 2",
+};
 
 function errorMessage(error: unknown, fallback: string) {
   if (error instanceof Error) return error.message;
@@ -64,6 +71,7 @@ export default function CourseRosterPanel({
   const [enrollments, setEnrollments] = useState<EnrollmentRow[]>([]);
   const [pending, setPending] = useState<EnrollmentRow[]>([]);
   const [deciding, setDeciding] = useState("");
+  const [changingRole, setChangingRole] = useState("");
   const [rosterInfo, setRosterInfo] = useState<Map<string, StudentRosterInfo>>(new Map());
   const [ltOverrides, setLtOverrides] = useState<CourseGradeOverride[]>([]);
   const [cncRecords, setCncRecords] = useState<CncLearningRecord[]>([]);
@@ -130,6 +138,19 @@ export default function CourseRosterPanel({
       toast("error", errorMessage(error, "Chưa cập nhật được trạng thái ghi danh."));
     } finally {
       setDeciding("");
+    }
+  }
+
+  async function changeClassRole(row: EnrollmentRow, classRole: ClassRole) {
+    setChangingRole(row.student_id);
+    try {
+      await setEnrollmentClassRole(courseId, row.student_id, classRole);
+      await reloadCourseData(courseId, isPracticum);
+      toast("success", classRole === "member" ? "Đã bỏ vai trò cán bộ lớp." : `Đã gán ${CLASS_ROLE_LABELS[classRole]}.`);
+    } catch (error) {
+      toast("error", errorMessage(error, "Chưa gán được vai trò cán bộ lớp."));
+    } finally {
+      setChangingRole("");
     }
   }
 
@@ -327,6 +348,17 @@ export default function CourseRosterPanel({
                     <strong className="block text-sm text-white">{row.profiles?.full_name || "Học sinh"}</strong>
                     <small className="text-slate-400">{row.profiles?.class_name || "Chưa có lớp"}</small>
                   </div>
+                  <select
+                    aria-label="Vai trò cán bộ lớp"
+                    disabled={changingRole === row.student_id}
+                    value={row.class_role}
+                    onChange={(e) => void changeClassRole(row, e.target.value as ClassRole)}
+                    className="rounded-lg border border-white/10 bg-[#080d1d] px-2.5 py-1.5 text-xs font-bold text-slate-300 disabled:opacity-40"
+                  >
+                    {(Object.keys(CLASS_ROLE_LABELS) as ClassRole[]).map((role) => (
+                      <option key={role} value={role}>{CLASS_ROLE_LABELS[role]}</option>
+                    ))}
+                  </select>
                   <button disabled={!!deciding} onClick={() => void decide(row, "suspended")} className="rounded-full border border-amber-500/30 px-3 py-1.5 text-xs font-bold text-amber-300 disabled:opacity-40">
                     Tạm khóa
                   </button>
