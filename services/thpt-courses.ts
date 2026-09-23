@@ -55,15 +55,20 @@ export interface ThptCourse {
   schedules: CourseSchedule[];
   /** Số chỗ đã lấy (pending + catchup + active). */
   taken: number;
+  /** Lớp học nhiều buổi/tuần (vd 12L1): các khoá cùng pair_key là các buổi của CÙNG một lớp,
+   *  pair_slot ('A'/'B'…) phân nhóm buổi — chọn 1 khoá mỗi nhóm. null = lớp học 1 buổi/tuần bình thường. */
+  pair_key: string | null;
+  pair_slot: string | null;
 }
 
 const COURSE_SELECT =
-  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
+  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, pair_key, pair_slot, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
 
 type CourseRow = {
   id: number; class_id: number; name: string; description: string; school_year: string;
   starts_at: string | null; ends_at: string | null; capacity: number | null; fee_note: string;
   is_public: boolean; status: CourseStatus; current_topic_id: number | null;
+  pair_key: string | null; pair_slot: string | null;
   classes: { name: string } | { name: string }[] | null;
   thpt_course_schedules: { id: number; weekday: number; start_time: string; end_time: string; location: string }[] | null;
 };
@@ -81,7 +86,7 @@ function toCourse(row: CourseRow, taken: number): ThptCourse {
     id: row.id, class_id: row.class_id, className: cls?.name ?? "", name: row.name, description: row.description,
     school_year: row.school_year, starts_at: row.starts_at, ends_at: row.ends_at, capacity: row.capacity,
     fee_note: row.fee_note, is_public: row.is_public, status: row.status, current_topic_id: row.current_topic_id ?? null,
-    schedules, taken,
+    schedules, taken, pair_key: row.pair_key ?? null, pair_slot: row.pair_slot ?? null,
   };
 }
 

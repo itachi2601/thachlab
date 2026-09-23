@@ -13,14 +13,37 @@ import {
   type ThptCourse,
 } from "@/services/thpt-courses";
 
-function seatsLabel(course: ThptCourse) {
-  if (course.capacity === null) return `${course.taken} đã đăng ký`;
-  const left = Math.max(course.capacity - course.taken, 0);
-  return left === 0 ? "Đã đủ chỗ" : `Còn ${left}/${course.capacity} chỗ`;
+function isFull(course: ThptCourse) {
+  return course.capacity !== null && course.taken >= course.capacity;
+}
+
+function ScheduleList({ course }: { course: ThptCourse }) {
+  return (
+    <ul className="mt-3 space-y-1.5 text-sm text-slate-300">
+      {course.schedules.length === 0 ? (
+        <li className="text-slate-500">Lịch học sẽ thông báo sau.</li>
+      ) : (
+        course.schedules.map((s) => (
+          <li key={`${s.weekday}-${s.start_time}`} className="flex items-center gap-2">
+            <CalendarDays size={15} className="shrink-0 text-blue-300" />
+            <span className="font-semibold text-white">{WEEKDAY_LABEL[s.weekday]}</span>
+            <span>
+              {s.start_time}–{s.end_time}
+            </span>
+            {s.location && (
+              <span className="flex items-center gap-1 text-slate-400">
+                <MapPin size={13} /> {s.location}
+              </span>
+            )}
+          </li>
+        ))
+      )}
+    </ul>
+  );
 }
 
 function CourseCard({ course }: { course: ThptCourse }) {
-  const full = course.capacity !== null && course.taken >= course.capacity;
+  const full = isFull(course);
   const started = course.starts_at ? new Date(course.starts_at) < new Date(new Date().toDateString()) : false;
   return (
     <article className="flex flex-col rounded-3xl border border-white/10 bg-panel p-6">
@@ -30,37 +53,16 @@ function CourseCard({ course }: { course: ThptCourse }) {
           <h2 className="mt-1 font-display text-xl font-bold text-white">{course.name}</h2>
           <p className="text-xs text-slate-500">Năm học {course.school_year}</p>
         </div>
-        <span
-          className={`shrink-0 rounded-full px-3 py-1 text-xs font-bold ${
-            full ? "bg-red-500/15 text-red-300" : "bg-emerald-500/15 text-emerald-300"
-          }`}
-        >
-          {seatsLabel(course)}
-        </span>
+        {full && (
+          <span className="shrink-0 rounded-full bg-red-500/15 px-3 py-1 text-xs font-bold text-red-300">
+            Đã đủ chỗ
+          </span>
+        )}
       </div>
 
       {course.description && <p className="mt-3 text-sm text-slate-300">{course.description}</p>}
 
-      <ul className="mt-4 space-y-1.5 text-sm text-slate-300">
-        {course.schedules.length === 0 ? (
-          <li className="text-slate-500">Lịch học sẽ thông báo sau.</li>
-        ) : (
-          course.schedules.map((s) => (
-            <li key={`${s.weekday}-${s.start_time}`} className="flex items-center gap-2">
-              <CalendarDays size={15} className="shrink-0 text-blue-300" />
-              <span className="font-semibold text-white">{WEEKDAY_LABEL[s.weekday]}</span>
-              <span>
-                {s.start_time}–{s.end_time}
-              </span>
-              {s.location && (
-                <span className="flex items-center gap-1 text-slate-400">
-                  <MapPin size={13} /> {s.location}
-                </span>
-              )}
-            </li>
-          ))
-        )}
-      </ul>
+      <ScheduleList course={course} />
 
       <div className="mt-4 space-y-1 text-xs text-slate-400">
         {course.starts_at && (
@@ -96,6 +98,73 @@ function CourseCard({ course }: { course: ThptCourse }) {
   );
 }
 
+/** Lớp học nhiều buổi/tuần (vd 12L1: 1 buổi A + 1 buổi B) — gộp các khoá cùng pair_key
+ * vào MỘT thẻ, chia rõ theo buổi, để khỏi nhầm thành nhiều lớp riêng biệt. */
+function PairedCourseCard({ pairKey, className, slots }: { pairKey: string; className: string; slots: [string, ThptCourse[]][] }) {
+  return (
+    <article className="flex flex-col rounded-3xl border border-blue-400/25 bg-panel p-6 md:col-span-2">
+      <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {className} · học nhiều buổi/tuần</p>
+      <h2 className="mt-1 font-display text-xl font-bold text-white">Vật lí {pairKey}</h2>
+      <p className="mt-2 text-sm text-slate-400">
+        Chọn 1 khung giờ ở mỗi buổi bên dưới — đăng ký 2 lần (1 lần ở buổi này, 1 lần ở buổi kia) để đủ lịch tuần.
+      </p>
+
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        {slots.map(([slot, options]) => (
+          <div key={slot} className="rounded-2xl border border-white/10 bg-white/[.03] p-4">
+            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">Buổi {slot}</p>
+            <ul className="mt-2 space-y-3">
+              {options.map((course) => {
+                const full = isFull(course);
+                return (
+                  <li key={course.id} className="rounded-xl border border-white/10 p-3">
+                    <ScheduleList course={course} />
+                    <Link
+                      href={full ? "#" : `/khoa-hoc/dang-ky/?id=${course.id}`}
+                      aria-disabled={full}
+                      className={`mt-3 flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-bold ${
+                        full ? "pointer-events-none bg-white/5 text-slate-500" : "bg-primary text-white hover:bg-primary-dark"
+                      }`}
+                    >
+                      <Users size={13} /> {full ? "Đã đủ chỗ" : `Đăng ký buổi ${slot}`}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+type DisplayItem =
+  | { kind: "single"; course: ThptCourse }
+  | { kind: "paired"; pairKey: string; className: string; slots: [string, ThptCourse[]][] };
+
+function groupForDisplay(list: ThptCourse[]): DisplayItem[] {
+  const paired = new Map<string, ThptCourse[]>();
+  const items: DisplayItem[] = [];
+  for (const course of list) {
+    if (course.pair_key) {
+      paired.set(course.pair_key, [...(paired.get(course.pair_key) ?? []), course]);
+    } else {
+      items.push({ kind: "single", course });
+    }
+  }
+  for (const [pairKey, courses] of paired) {
+    const bySlot = new Map<string, ThptCourse[]>();
+    for (const c of courses) {
+      const slot = c.pair_slot ?? "?";
+      bySlot.set(slot, [...(bySlot.get(slot) ?? []), c]);
+    }
+    const slots = [...bySlot.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    items.push({ kind: "paired", pairKey, className: courses[0].className, slots });
+  }
+  return items;
+}
+
 export default function KhoaHocPage() {
   const [courses, setCourses] = useState<ThptCourse[] | null>(null);
   const [error, setError] = useState("");
@@ -117,7 +186,7 @@ export default function KhoaHocPage() {
       list.push(c);
       m.set(c.className, list);
     }
-    return [...m.entries()];
+    return [...m.entries()].map(([className, list]) => [className, groupForDisplay(list)] as const);
   }, [courses]);
 
   return (
@@ -145,13 +214,17 @@ export default function KhoaHocPage() {
           </p>
         ) : (
           <div className="mt-10 space-y-10">
-            {byClass.map(([className, list]) => (
+            {byClass.map(([className, items]) => (
               <section key={className}>
                 <h2 className="mb-4 font-display text-lg font-bold text-slate-200">Khối {className}</h2>
                 <div className="grid gap-5 md:grid-cols-2">
-                  {list.map((course) => (
-                    <CourseCard key={course.id} course={course} />
-                  ))}
+                  {items.map((item) =>
+                    item.kind === "single" ? (
+                      <CourseCard key={item.course.id} course={item.course} />
+                    ) : (
+                      <PairedCourseCard key={item.pairKey} pairKey={item.pairKey} className={item.className} slots={item.slots} />
+                    ),
+                  )}
                 </div>
               </section>
             ))}
