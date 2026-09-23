@@ -20,7 +20,7 @@ function nextRequirement(t: RankTitle): string {
   if (t.kind === "achievement") return t.description;
   if (t.kind === "collection") {
     const p = t.progress as CollectionProgress | null;
-    if (!p) return t.description;
+    if (!p) return "Mở khi đã có đủ mọi danh hiệu bộ sưu tập đang khả dụng";
     return `${p.met}/${p.required} danh hiệu đạt ${LEVEL_LABELS[p.level]}`;
   }
   const p = t.progress;
