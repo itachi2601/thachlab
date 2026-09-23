@@ -10,9 +10,10 @@ description: >-
   hoặc chỉ thả file đề kèm ý muốn đưa lên web. KHÁC với dang-bai-hoc-thachlab (đăng
   trọn bài học từ .tex: lý thuyết + dạng bài + đề) — skill này chỉ lo phần ĐỀ.
   KHÁC với de-vat-ly-thpt (soạn/chuẩn hoá đề ra file Word Azota) — skill này ghi
-  vào database, không xuất Word. Từ 9/2026 đường chính là trang Đăng đề
-  (/quan-tri/dang-de): văn bản kiểu Azota kèm hai dòng "Chủ đề:" (yêu cầu cần đạt) và
-  "Dạng:" (lý thuyết/bài tập) cho từng câu; gói JSON qua /quan-tri/nhap-bai chỉ còn là
+  vào database, không xuất Word. Trợ lý đăng bằng SCRIPT QUA TERMINAL
+  (scripts/text-to-bundle.mts + scripts/upload-lesson.mts), KHÔNG mở trang admin trong
+  trình duyệt. Đường chính: văn bản kiểu Azota kèm hai dòng "Chủ đề:" (yêu cầu cần đạt)
+  và "Dạng:" (lý thuyết/bài tập) cho từng câu. Gói JSON qua build_bundle.py chỉ còn là
   đường dự phòng khi cần vẽ hình SVG hoặc ảnh scan.
 ---
 
@@ -37,10 +38,14 @@ Nếu chỉ là file Word gõ công thức bằng Word (Alt + =) và có dấu `
 người dùng trang đó**, đừng tự làm thay. Đề đã ở mẫu Azota (đáp án trong bảng sau HẾT) thì
 skill `azota` bước 6 (`xuat_thachlab.py`) dựng sẵn file Word cho trang này, kèm nhãn.
 
-## Đường chính — văn bản kiểu Azota vào /quan-tri/dang-de
+## Đường chính — văn bản kiểu Azota, dựng gói + đăng bằng script qua terminal
 
-Trang Đăng đề nhận **văn bản** (không phải JSON): đúng cách trình bày Azota mà thầy cô vẫn gõ,
-cộng hai dòng nhãn cuối mỗi câu. Đây là đường đi cho PDF/MathType/đề cần viết lời giải:
+Không mở trình duyệt / trang admin để đăng — trợ lý soạn một file `de.txt` **văn bản**
+(không phải JSON): đúng cách trình bày Azota mà thầy cô vẫn gõ, cộng hai dòng nhãn cuối
+mỗi câu, rồi hai script terminal (`text-to-bundle.mts` → `upload-lesson.mts`) lo hết phần
+dựng gói + ghi database, dùng đúng bộ đọc/kiểm của trang `/quan-tri/dang-de`
+(`docxTextToBundle`, `validateBundle`) nên không lệch quy tắc. Đây là đường đi cho
+PDF/MathType/đề cần viết lời giải:
 
 ```
 PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn
@@ -85,24 +90,23 @@ câu cũng được, trang tự bỏ khỏi đề dẫn. Công thức trong `$�
    `✗` = tên không có trong danh mục (kèm tên gần nhất) hoặc câu thiếu nhãn → sửa `de.txt`,
    chạy lại tới khi dòng cuối là `Nhãn: n/n câu đủ`. `--fix` tự chuẩn hoá hoa/thường theo
    danh mục. Chủ đề thật sự mới: nói với người dùng, tạo ở trang Chủ đề câu hỏi trước.
-4. **Dán vào trang** `https://thachlab.id.vn/quan-tri/dang-de` (người dùng đã đăng nhập admin;
-   chưa thì dừng, nhờ họ đăng nhập). Văn bản dài không gõ tay được — dùng relay như mục
-   "4. Đăng qua trang admin", chỉ khác đích:
+4. **Dựng gói + đăng bằng script**, không mở trình duyệt:
    ```bash
-   python3 .claude/skills/up-de-kiem-tra/scripts/paste_relay.py de.txt --target https://thachlab.id.vn/quan-tri/dang-de/ &
+   npx tsx scripts/text-to-bundle.mts de.txt --title "Kiểm tra: ..." --duration 45 -o bundle.json
+   npx tsx scripts/upload-lesson.mts bundle.json --lesson <id> --class <id> --target kiem_tra --mode replace
    ```
-   JS giải mã trong docstring của script gán vào `textarea` đầu tiên — ở trang này chính là ô
-   nội dung đề. Trang tách câu ngay khi có văn bản.
-5. Đọc cột phải: dòng `n/n câu dựng được`, ghi chú vàng (câu thiếu đáp án/phương án), bảng
-   đáp án, và bảng **Phân loại câu** phải là **n/n câu đã gắn đủ**, không ô nào viền vàng.
-6. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
-   BTVN; mục đã có đề thì "Giữ + thêm" hay "Thay" — hỏi người dùng nếu đề cũ là đề thật.
-   Bấm **Đăng đề**, theo dõi log, mở link bài học kiểm tra.
+   `text-to-bundle.mts` dùng đúng `docxTextToBundle`/`validateBundle` của trang Đăng đề: in
+   ghi chú câu thiếu đáp án/phương án, **chặn** nếu còn câu thiếu `Chủ đề:`/`Dạng:` hoặc lỗi
+   khác, dòng cuối in `n câu · k chủ đề` khi qua. `upload-lesson.mts` hỏi
+   `SUPABASE_SERVICE_ROLE_KEY` (nhập ẩn) — xem "An toàn" ở cuối. Cách tra `<id>` Lớp/Bài ở mục
+   "4. Đăng — chạy script" trong phần Quy trình bên dưới.
+5. Đọc log của `upload-lesson.mts` (exam id, mục đã gắn), mở link `/lop-hoc/bai/?id=<id>` in ở
+   dòng cuối, kiểm mục Kiểm tra hiện đề, số câu đúng, bấm thử một câu. Báo link cho người dùng.
 
-Ảnh: trang chỉ nhận ảnh khi đọc từ `.docx`; văn bản dán không mang ảnh. Đề có hình cần vẽ
+Ảnh: đường văn bản này không mang ảnh (giống văn bản dán trên trang). Đề có hình cần vẽ
 SVG hoặc ảnh scan → đi đường dự phòng bên dưới.
 
-## Đường dự phòng — gói JSON qua /quan-tri/nhap-bai (khi cần hình SVG / ảnh scan)
+## Đường dự phòng — gói JSON build_bundle.py (khi cần hình SVG / ảnh scan)
 
 Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất, khuyên dùng)** hoặc `.docx`. Skill:
 
@@ -110,11 +114,11 @@ Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất
 2. Phân loại từng câu → `multiple_choice` / `true_false` / `short_answer`, lấy **đáp án**
    (dấu `*` hoặc dòng "Đáp án") + **lời giải** (dòng "Lời giải"/"Giải").
 3. Dựng gói `thachlab.lesson-bundle/v1` (khối `exam`; `theory_html` để rỗng nếu chỉ đăng đề —
-   khi đó mục Lý thuyết của bài được giữ nguyên).
-4. Đăng qua `https://thachlab.id.vn/quan-tri/nhap-bai`: dán gói bằng relay (xem mục "Đăng qua
-   trang admin"), chọn Lớp→Chương→Bài, xem preview + bảng validate, tick **Kiểm tra**
-   (mặc định) → **Đăng bài học**. (Nhãn `topic`/`form` trong gói tương đương hai dòng
-   `Chủ đề:`/`Dạng:` của đường chính.)
+   khi đó mục Lý thuyết của bài được giữ nguyên) — xem mục "3. Dựng gói + tự kiểm" trong
+   Quy trình bên dưới (`build_bundle.py`).
+4. Đăng bằng `npx tsx scripts/upload-lesson.mts bundle.json --lesson <id> --class <id> --target
+   kiem_tra --mode replace` — không mở trình duyệt. (Nhãn `topic`/`form` trong gói tương đương
+   hai dòng `Chủ đề:`/`Dạng:` của đường chính.)
 5. Báo link `/lop-hoc/bai/?id=<id>` để kiểm tra.
 
 Đây là thao tác lên **hệ thống sống** (DB + web học sinh đang dùng). Phần "An toàn" ở cuối
@@ -261,42 +265,25 @@ Theo mẫu trong đầu `scripts/build_bundle.py` và `references/docx-de-format
 python3 .claude/skills/up-de-kiem-tra/scripts/build_bundle.py draft.json --grade 12 -o bundle.json
 ```
 
-Script chạy đúng bộ kiểm tra của trang admin (4 phương án, `answer` 0–3, 4 ý đúng–sai, đáp số
-≤ 4 ký tự, `$` chẵn, không sót `\textbf{`/`\includegraphics{`, placeholder ảnh đã khai báo),
-**cộng thêm soát nhãn**: thiếu `topic`/`form`, hoặc `topic` không có trong danh mục khối →
-lỗi, kèm gợi ý tên gần nhất. Tên viết hoa/khoảng trắng lệch thì script tự chuẩn hoá theo danh
-mục. Có `✕` thì sửa `draft.json` rồi chạy lại — đừng mở trình duyệt khi còn lỗi.
+Script chạy đúng bộ kiểm tra `validateBundle` mà `upload-lesson.mts`/trang admin dùng (4 phương
+án, `answer` 0–3, 4 ý đúng–sai, đáp số ≤ 4 ký tự, `$` chẵn, không sót `\textbf{`/
+`\includegraphics{`, placeholder ảnh đã khai báo), **cộng thêm soát nhãn**: thiếu `topic`/`form`,
+hoặc `topic` không có trong danh mục khối → lỗi, kèm gợi ý tên gần nhất. Tên viết hoa/khoảng
+trắng lệch thì script tự chuẩn hoá theo danh mục. Có `✕` thì sửa `draft.json` rồi chạy lại —
+đừng chạy `upload-lesson.mts` khi còn lỗi.
 
 Dòng cuối in `Nhãn: n/n câu · k chủ đề` (kèm `· m câu còn ở mức cả bài` nếu có) — n/n mới
 được đi tiếp; có `m` thì xem lại, chọn đúng yêu cầu cần đạt script gợi ý. `--grade` cần mạng (REST
 anon-key, tự đọc `.env.local`); offline thì `--topics topics.json` với danh mục tải sẵn.
 
-### 4. Đăng qua trang admin
+### 4. Đăng — chạy script, không mở trình duyệt
 
-Thao tác pane: **đừng `resize_window`** để emulate viewport — toạ độ click lệch khỏi ảnh
-chụp, bấm trượt nút mà không báo lỗi. Dùng `ref` từ `find`/`read_page`, và `form_input`
-cho `<select>`.
+Không mở Browser pane, không có trang admin nào trong bước này — `upload-lesson.mts` ghi
+thẳng vào Supabase bằng service-role key, đúng cùng hai hàm (`validateBundle`/`bundleToRows`
+trong `services/lesson-import.ts`) mà trang `/quan-tri/nhap-bai` dùng, nên không lệch quy tắc.
 
-1. Mở `https://thachlab.id.vn/quan-tri/nhap-bai` trong Browser pane (người dùng đã đăng nhập
-   admin — nếu chưa, **dừng, nhờ người dùng tự đăng nhập**).
-2. **Dán gói trước, chọn bài sau.** Gói ~70 KB: không gõ tay vào textarea được, trang không
-   có ô upload, và `cmd+v` / `fetch` localhost / `window.open` đều bị Browser pane chặn.
-   Dùng relay:
-
-   ```bash
-   python3 .claude/skills/up-de-kiem-tra/scripts/paste_relay.py bundle.json &
-   ```
-
-   `navigate` tab tới URL relay script in ra → sau ~3 s tab tự quay về trang nhập bài với
-   payload trong `#b64=…` → chạy đoạn JS trong docstring của script để giải mã và gán vào
-   textarea (phải dùng **native setter** + `dispatchEvent('input')`, React bỏ qua `ta.value=`).
-   Ô JSON nằm trong khối gập **"Nâng cao: dán gói JSON…"** ở đầu trang — script gán DOM thẳng
-   nên gập/mở không ảnh hưởng giá trị, nhưng khối phải **mở** (bấm dòng tóm tắt) thì nút
-   "Nạp gói" mới hiện ra bấm được (bước 4). Relay làm tab điều hướng nên **mọi lựa chọn
-   Lớp/Chương/Bài trước đó mất sạch** — vì vậy làm bước này trước bước 3. Xong thì
-   `pkill -f paste_relay.py`.
-3. Mục 1: chọn **Lớp → Môn → Chương → Bài**. Nếu người dùng chưa nói rõ bài nào: hỏi, hoặc tra
-   bằng REST anon-key (chỉ đọc):
+1. Tra `<id>` Lớp → Chương → Bài (nếu người dùng chưa nói rõ bài nào — hỏi, hoặc REST
+   anon-key, chỉ đọc):
    ```bash
    source <(grep -E '^NEXT_PUBLIC_SUPABASE' .env.local | sed 's/^/export /')
    curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/chapters?select=id,title,subject_code,chapter_classes(class_id)&order=sort_order" \
@@ -304,37 +291,25 @@ cho `<select>`.
    curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/lessons?select=id,chapter_id,title&chapter_id=eq.<ID>" \
      -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" -H "Authorization: Bearer $NEXT_PUBLIC_SUPABASE_ANON_KEY"
    ```
-4. Mở khối **"Nâng cao"** (nếu relay chưa làm tab điều hướng qua bước khác khiến nó đóng lại),
-   rồi bấm **Nạp gói**. Trang nạp gói vào cả mục 2 (Lý thuyết & dạng bài) và mục 3 (Đề).
-5. Mục 3 (Đề luyện tập / kiểm tra): xem preview — từng câu tô đáp án đúng + lời giải. Lỗi
-   chặn đăng (nếu có) hiện ở khung đỏ ngay trên nút **"Đăng bài học"** ở cuối trang; có lỗi
-   thì sửa gói, dán lại. Mục 4 (**"Nhãn chủ đề trước khi đăng"**, ngay sau mục 3):
-   - phải là **"đã gắn n/n câu"**, các chip chủ đề đều xanh (có trong danh mục khối);
-   - chip vàng "chưa có trong danh mục" → để nguyên ô **"Tạo … chủ đề mới cho <bài>"** (tick sẵn):
-     trang tạo chúng thành **yêu cầu cần đạt con** của chủ đề bài đang chọn;
-   - dòng vàng "⚠ Còn gắn ở mức cả bài" → nhãn còn thô, sửa `draft.json` cho mịn nếu kịp;
-   - nút Đăng bị chặn khi nhãn chưa đủ. Ô **"Đăng dù nhãn chưa đủ"** chỉ tick khi người dùng
-     đồng ý bỏ số liệu phân tích cho những câu đó — nhãn được chốt lúc học sinh nộp bài, gắn
-     sau **không** cứu được các lượt đã nộp.
-6. Mục 5 (**"Gắn đề & xử lý nội dung đã có"**):
-   - Tick **"Gắn vào Kiểm tra"** (mặc định cho skill này). Thêm **"Luyện tập"** nếu người dùng
-     muốn học sinh luyện không tính điểm.
-   - **Lý thuyết**: gói không có `theory_html` thì trang tự giữ nguyên mục cũ. Nếu gói có mà bài
-     cũng đã có lý thuyết thật → chọn **Bỏ qua**, đừng đè.
-   - **Đề cũ ở mục đã chọn**: nếu mục Kiểm tra/Luyện tập đã có đề → chọn **Thay** (trang tự xóa
-     đề cũ, tránh tồn đọng) trừ khi người dùng muốn giữ.
-7. **Đăng bài học**. Theo dõi log từng bước.
-8. Mở `https://thachlab.id.vn/lop-hoc/bai/?id=<lesson_id>`, kiểm mục Kiểm tra hiện đề, số câu
-   đúng, bấm thử một câu. Báo link cho người dùng.
+2. Chạy:
+   ```bash
+   npx tsx scripts/upload-lesson.mts bundle.json --lesson <id> --class <id> --target kiem_tra --mode replace
+   ```
+   `--target luyen_tap|kiem_tra|both` (thêm cả hai nếu người dùng muốn học sinh luyện không
+   tính điểm ngoài mục Kiểm tra). `--mode replace` xoá đề cũ ở mục đó trước khi gắn đề mới
+   (mặc định cho skill này — dùng `--mode skip` nếu người dùng muốn giữ đề cũ, hỏi trước nếu
+   đề cũ là đề thật). Script hỏi `SUPABASE_SERVICE_ROLE_KEY` (nhập ẩn) — **chỉ dùng khi người
+   dùng tự cung cấp key ngay lúc đó**, không lấy từ memory phiên trước. Ảnh raster (nếu có,
+   đường build_bundle.py) phải nén sẵn — script không có canvas để nén.
+3. Đọc log từng bước in ra (tải ảnh, tạo đề, gán lớp, gắn mục Kiểm tra/Luyện tập). Có lỗi
+   Postgres (cột thiếu, ràng buộc) thì sửa `bundle.json` hoặc tham số rồi chạy lại — script
+   không tự lùi bước đã chạy (đề đã tạo phải xoá tay qua REST nếu bỏ giữa đường).
+4. Dòng cuối in `Xong. Kiểm tra: /lop-hoc/bai/?id=<lesson_id>` — mở link đó, kiểm mục Kiểm tra
+   hiện đề, số câu đúng, bấm thử một câu. Báo link cho người dùng.
 
-### Dự phòng: không mở được trang admin
-
-```bash
-npx tsx scripts/upload-lesson.mts bundle.json --lesson <id> --class <id> --target kiem_tra --mode replace
-```
-
-Script hỏi `SUPABASE_SERVICE_ROLE_KEY` (nhập ẩn) — **chỉ dùng khi người dùng tự cung cấp key
-ngay lúc đó**, không lấy từ memory phiên trước. Ảnh raster phải nén sẵn.
+Chủ đề thật sự mới (không có trong danh mục khối) không tự tạo được từ hai script này —
+`soat_nhan.py`/`build_bundle.py` đã chặn ở bước dựng gói; nói với người dùng để tạo ở trang
+**Chủ đề câu hỏi** trước, rồi chạy lại từ bước soát nhãn.
 
 ### Deploy — hầu như không cần
 
@@ -344,10 +319,13 @@ Nội dung + ảnh Storage **không cần deploy**. Chỉ chạy `./scripts/depl
 
 ## An toàn — không thương lượng
 
-- **Không bao giờ tự nhập mật khẩu** (đăng nhập admin, mật khẩu DB, service-role key) dù người
-  dùng dán trong chat. Không có phiên admin trong Browser pane → dừng, nhờ người dùng đăng nhập.
-- **Luôn xem preview + bảng validate** trước khi bấm Đăng. Không bỏ qua `errors`.
-- Nếu mục Kiểm tra/Luyện tập của bài đã có đề thật → **hỏi** trước khi chọn "Thay".
-- Mỗi lần Đăng tạo một dòng `exams` mới (không có khóa tự nhiên). Up lại cùng đề → chọn "Thay".
+- **Không bao giờ tự nhập mật khẩu** (mật khẩu DB, service-role key) dù người dùng dán trong
+  chat với ý "dùng luôn cho lần sau" — chỉ dùng key khi người dùng tự cung cấp ngay lúc đó,
+  không lấy từ memory phiên trước; không có key → dừng, nhờ người dùng dán.
+- **Luôn đọc log + dòng `✕`/lỗi của `text-to-bundle.mts` và `upload-lesson.mts`** trước khi
+  báo đã xong. Không bỏ qua cảnh báo/lỗi validate.
+- Nếu mục Kiểm tra/Luyện tập của bài đã có đề thật → **hỏi** trước khi chạy `--mode replace`.
+- Mỗi lần đăng tạo một dòng `exams` mới (không có khóa tự nhiên). Up lại cùng đề → giữ
+  `--mode replace` (script tự xoá đề cũ ở mục đó).
 - Không `git push` / deploy khi working tree có thay đổi không liên quan chưa được xác nhận.
 - Chỉ commit/deploy đúng phần vừa làm nếu buộc phải đụng tới code.
