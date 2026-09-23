@@ -1242,9 +1242,16 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board sub { font-size: .68em; }
 /* Nội dung câu hỏi/lời giải nhập từ đề (.exam-content) hay bọc <p class="text-base">
    theo quy ước của skill nhập đề — cỡ chữ cố định đó đè mất cỡ chữ đã tăng của khung
-   chứa (rb-qtext/rb-inner...) vì đặt trực tiếp trên chính thẻ, không phải kế thừa. */
+   chứa (rb-qtext/rb-inner...) vì đặt trực tiếp trên chính thẻ, không phải kế thừa.
+   .exam-content (span do ContentHtml render) có font-size: 1.125rem cố định ở rule
+   dùng chung phía trên (~L992) — phải đè lại chính nó, không chỉ con bên trong.
+   Nhiều câu hỏi dán từ Word còn mang cả style="font-size:…" ngay trên <p> — inline
+   style đó thắng mọi selector thường, nên phải !important mới đè lại được. */
+.review-board .exam-content {
+  font-size: inherit !important; line-height: inherit !important;
+}
 .review-board .exam-content :where(p, li, h1, h2, h3, h4, span, strong, em, b, i) {
-  font-size: inherit; line-height: inherit;
+  font-size: inherit !important; line-height: inherit !important;
 }
 
 .review-board .rb-topbar {
@@ -1274,6 +1281,12 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   color: var(--rb-ink-soft); font-size: .82rem; font-weight: 600; cursor: pointer; font-family: inherit;
 }
 .review-board .rb-btn:hover { border-color: var(--rb-accent); color: var(--rb-ink); }
+.review-board .rb-btn:disabled { opacity: .4; cursor: default; }
+.review-board .rb-btn:disabled:hover { border-color: var(--rb-line); color: var(--rb-ink-soft); }
+
+.review-board .rb-zoom { display: flex; align-items: center; gap: 6px; }
+.review-board .rb-btn-icon { width: 38px; padding: 0; }
+.review-board .rb-zoom-pct { width: 58px; font-family: monospace; }
 
 .review-board .rb-stage-wrap {
   flex: 1; min-height: 0; overflow-y: auto;
@@ -1306,7 +1319,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board .rb-r-hard .dot { background: var(--rb-bad); }
 
 .review-board .rb-qtext {
-  font-size: clamp(2.6rem, 2.1rem + 2vw, 3.8rem); line-height: 1.4; font-weight: 600; color: var(--rb-ink);
+  font-size: calc(clamp(2.6rem, 2.1rem + 2vw, 3.8rem) * var(--rb-zoom, 1)); line-height: 1.4; font-weight: 600; color: var(--rb-ink);
   margin-bottom: clamp(16px,2.5vh,26px);
 }
 .review-board .rb-qtext img.eq { filter: invert(0.9) hue-rotate(180deg); vertical-align: middle; }
@@ -1315,7 +1328,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board .rb-opt {
   position: relative; display: flex; gap: 12px; align-items: flex-start; padding: 15px 18px;
   border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface);
-  font-size: clamp(2.04rem,1.8rem + .8vw,2.48rem); color: var(--rb-ink-soft);
+  font-size: calc(clamp(2.04rem,1.8rem + .8vw,2.48rem) * var(--rb-zoom, 1)); color: var(--rb-ink-soft);
 }
 .review-board .rb-opt .rb-letter {
   flex: none; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
@@ -1337,7 +1350,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board .rb-tf-list { display: grid; gap: 11px; }
 .review-board .rb-tf-row { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--rb-line); background: var(--rb-surface); }
 .review-board .rb-tf-row .rb-letter { font-family: monospace; font-weight: 700; font-size: 1.25rem; color: var(--rb-muted); flex: none; }
-.review-board .rb-tf-row .rb-body { flex: 1; font-size: clamp(2rem,1.8rem + .6vw,2.28rem); color: var(--rb-ink-soft); }
+.review-board .rb-tf-row .rb-body { flex: 1; font-size: calc(clamp(2rem,1.8rem + .6vw,2.28rem) * var(--rb-zoom, 1)); color: var(--rb-ink-soft); }
 .review-board .rb-tf-row .rb-verdict {
   flex: none; font-family: monospace; font-size: .88rem; font-weight: 700; padding: 7px 14px;
   border-radius: 999px; border: 1px solid var(--rb-line); color: var(--rb-muted); background: var(--rb-surface-2); min-width: 68px; text-align: center;
@@ -1349,7 +1362,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 
 .review-board .rb-sa-box { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 26px 16px; border-radius: 16px; border: 1px dashed var(--rb-line); background: var(--rb-surface); }
 .review-board .rb-sa-box .rb-label { font-family: monospace; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-muted); }
-.review-board .rb-sa-box .rb-value { font-family: monospace; font-size: clamp(4.8rem,3.2rem + 6vw,8rem); font-weight: 700; color: var(--rb-faint); }
+.review-board .rb-sa-box .rb-value { font-family: monospace; font-size: calc(clamp(4.8rem,3.2rem + 6vw,8rem) * var(--rb-zoom, 1)); font-weight: 700; color: var(--rb-faint); }
 .review-board.rb-revealed .rb-sa-box .rb-value { color: var(--rb-ok-ink); }
 
 .review-board .rb-explain {
@@ -1357,7 +1370,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   border-radius: 14px; background: var(--rb-surface-2); border: 1px solid var(--rb-line);
 }
 .review-board .rb-explain.open { max-height: 1200px; opacity: 1; }
-.review-board .rb-explain .rb-inner { padding: 16px 19px; font-size: 1.3rem; line-height: 1.6; color: var(--rb-ink-soft); }
+.review-board .rb-explain .rb-inner { padding: 16px 19px; font-size: calc(1.3rem * var(--rb-zoom, 1)); line-height: 1.6; color: var(--rb-ink-soft); }
 .review-board .rb-explain .rb-lbl { display: flex; align-items: center; gap: 7px; font-family: monospace; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rb-accent-ink); margin-bottom: 7px; }
 
 .review-board .rb-hint { margin-top: 26px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; font-family: monospace; font-size: .76rem; color: var(--rb-faint); }

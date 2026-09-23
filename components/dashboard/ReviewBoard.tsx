@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
-import { Maximize, X } from "lucide-react";
+import { Maximize, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { QUESTION_FORM_LABELS, type ExamQuestion } from "@/features/exams/types";
 import type { ExamReviewData, ReviewQuestionStat } from "@/services/analytics";
+
+const ZOOM_MIN = 0.4;
+const ZOOM_MAX = 2;
+const ZOOM_STEP = 0.1;
 
 const LETTERS = ["A", "B", "C", "D"];
 const TYPE_LABEL: Record<ExamQuestion["type"], string> = {
@@ -28,10 +32,28 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
   const [idx, setIdx] = useState(0);
   const [reveal, setReveal] = useState(0); // 0 none, 1 answer, 2 explanation
   const [onlyHard, setOnlyHard] = useState(false);
+  const [zoom, setZoom] = useState(1);
 
   const { questions, stats } = data;
   const q = questions[idx];
   const stat = stats[idx];
+
+  useEffect(() => {
+    const saved = Number(localStorage.getItem("rb-zoom"));
+    if (saved >= ZOOM_MIN && saved <= ZOOM_MAX) setZoom(saved);
+  }, []);
+
+  const zoomBy = (delta: number) => {
+    setZoom((z) => {
+      const next = Math.round(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z + delta)) * 100) / 100;
+      localStorage.setItem("rb-zoom", String(next));
+      return next;
+    });
+  };
+  const resetZoom = () => {
+    setZoom(1);
+    localStorage.setItem("rb-zoom", "1");
+  };
 
   const go = (i: number) => {
     setIdx(Math.max(0, Math.min(questions.length - 1, i)));
@@ -48,6 +70,9 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
         cycleReveal();
       } else if (e.key === "r" || e.key === "R") setReveal(0);
       else if (e.key === "f" || e.key === "F") toggleFullscreen();
+      else if (e.key === "+" || e.key === "=") zoomBy(ZOOM_STEP);
+      else if (e.key === "-" || e.key === "_") zoomBy(-ZOOM_STEP);
+      else if (e.key === "0") resetZoom();
       else if (e.key === "Escape" && !document.fullscreenElement) router.back();
     }
     window.addEventListener("keydown", onKey);
@@ -60,20 +85,27 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
     else document.exitFullscreen();
   }
 
-  const chips = useMemo(
-    () =>
-      questions.map((_, i) => {
-        const p = pctOf(stats[i]);
-        return { i, p, b: band(p) };
-      }),
-    [questions, stats],
-  );
+  const chips = useMemo(() => {
+    const list = questions.map((_, i) => {
+      const p = pctOf(stats[i]);
+      return { i, p, b: band(p) };
+    });
+    // Câu sai nhiều nhất (tỉ lệ đúng thấp nhất) lên trước, câu chưa có lượt làm xuống cuối.
+    return [...list].sort((a, b) => {
+      const wrongA = a.p === null ? -1 : 100 - a.p;
+      const wrongB = b.p === null ? -1 : 100 - b.p;
+      return wrongB - wrongA;
+    });
+  }, [questions, stats]);
 
   const p = pctOf(stat);
   const b = band(p);
 
   return (
-    <div className={`review-board${reveal >= 1 ? " rb-revealed" : ""}`}>
+    <div
+      className={`review-board${reveal >= 1 ? " rb-revealed" : ""}`}
+      style={{ "--rb-zoom": zoom } as CSSProperties}
+    >
       <div className="rb-topbar">
         <div>
           <span className="rb-eyebrow">Bảng chữa bài · ThachLab</span>
@@ -90,6 +122,27 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
               style={{ width: `${Math.round(((idx + 1) / questions.length) * 100)}%` }}
             />
           </span>
+        </div>
+        <div className="rb-zoom">
+          <button
+            className="rb-btn rb-btn-icon"
+            onClick={() => zoomBy(-ZOOM_STEP)}
+            disabled={zoom <= ZOOM_MIN}
+            title="Chữ nhỏ hơn (-)"
+          >
+            <ZoomOut size={16} />
+          </button>
+          <button className="rb-btn rb-zoom-pct" onClick={resetZoom} title="Về 100% (0)">
+            {Math.round(zoom * 100)}%
+          </button>
+          <button
+            className="rb-btn rb-btn-icon"
+            onClick={() => zoomBy(ZOOM_STEP)}
+            disabled={zoom >= ZOOM_MAX}
+            title="Chữ to hơn (+)"
+          >
+            <ZoomIn size={16} />
+          </button>
         </div>
         <button className="rb-btn" onClick={toggleFullscreen} title="Toàn màn hình (F)">
           <Maximize size={16} /> Toàn màn hình
@@ -200,6 +253,9 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
             </span>
             <span>
               <kbd>R</kbd> ẩn lại
+            </span>
+            <span>
+              <kbd>+</kbd> <kbd>-</kbd> phóng to / thu nhỏ chữ
             </span>
           </div>
         </div>
