@@ -24,12 +24,6 @@ interface DaySlot {
   end: string;
 }
 
-function seatsNote(course: ThptCourse): string | null {
-  if (course.capacity === null) return null;
-  const left = Math.max(course.capacity - course.taken, 0);
-  return left === 0 ? "Đã đủ chỗ" : `Còn ${left} chỗ`;
-}
-
 export default function TeachingSchedule() {
   const [courses, setCourses] = useState<ThptCourse[] | null>(null);
 
@@ -92,7 +86,6 @@ export default function TeachingSchedule() {
                             <CalendarDays size={11} className="shrink-0 text-cyan-300" />
                             {start}–{end}
                           </span>
-                          {seatsNote(course) && <span className="mt-0.5 block text-muted">{seatsNote(course)}</span>}
                         </Link>
                       ))
                     )}
