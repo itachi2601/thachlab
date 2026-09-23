@@ -231,50 +231,6 @@ export async function fetchMyExamResultDetail(
   };
 }
 
-export interface ExamRank {
-  rank: number;
-  total: number;
-}
-
-/** Hạng của học sinh trong 1 đề, so với các bạn cùng lớp đã làm đề đó. */
-export async function fetchExamRank(examId: number): Promise<ExamRank | null> {
-  const { data, error } = await getSupabase().rpc("get_exam_rank", { p_exam_id: examId });
-  const row = (data as { rnk: number; total: number }[] | null)?.[0];
-  if (error || !row) return null;
-  return { rank: row.rnk, total: row.total };
-}
-
-export interface PeriodicRank {
-  rank: number;
-  total: number;
-  myAvg: number;
-  classAvg: number;
-}
-
-/** Hạng của học sinh theo điểm TB các bài kiểm tra định kỳ của 1 lớp. */
-export async function fetchPeriodicRank(classId: number): Promise<PeriodicRank | null> {
-  const { data, error } = await getSupabase().rpc("get_periodic_rank", {
-    p_class_id: classId,
-  });
-  const row = (data as { rnk: number; total: number; my_avg: number; class_avg: number }[] | null)?.[0];
-  if (error || !row) return null;
-  return { rank: row.rnk, total: row.total, myAvg: Number(row.my_avg), classAvg: Number(row.class_avg) };
-}
-
-/**
- * Hạng của MỘT em cụ thể — cho phụ huynh (và giáo viên) xem thay em. RPC tự kiểm quyền:
- * chỉ trả dòng khi người gọi là chính em, giáo viên của em, hoặc phụ huynh đã nối.
- */
-export async function fetchPeriodicRankOf(studentId: string, classId: number): Promise<PeriodicRank | null> {
-  const { data, error } = await getSupabase().rpc("get_periodic_rank_of", {
-    p_student: studentId,
-    p_class_id: classId,
-  });
-  const row = (data as { rnk: number; total: number; my_avg: number; class_avg: number }[] | null)?.[0];
-  if (error || !row) return null;
-  return { rank: row.rnk, total: row.total, myAvg: Number(row.my_avg), classAvg: Number(row.class_avg) };
-}
-
 // ============================================================
 // GIÁO VIÊN — theo lớp (danh sách studentIds) / theo đề
 // ============================================================

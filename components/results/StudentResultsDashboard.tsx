@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, ChevronDown, Target, Trophy } from "lucide-react";
+import { AlertTriangle, ArrowRight, ChevronDown, Target } from "lucide-react";
 import Html from "@/components/exams/ContentHtml";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
@@ -11,12 +11,9 @@ import {
   fetchMyTopicGaps,
   fetchMyWrongQuestions,
   fetchOutcomeGaps,
-  fetchPeriodicRank,
-  fetchPeriodicRankOf,
   fetchQuestionTopics,
   outcomeGapsByNeed,
   type OutcomeGap,
-  type PeriodicRank,
   type ScorePoint,
   type StudentAlert,
   type TopicGap,
@@ -28,7 +25,9 @@ import {
   type NeedStatus,
   type TutoringNeed,
 } from "@/services/tutoring";
-import { fetchMyClassIds } from "@/services/classes";
+import RankCard from "@/components/rank/RankCard";
+import type { RankStatus } from "@/features/rank/types";
+import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 
 /**
  * Bảng kết quả học tập của MỘT học sinh. Dùng ở hai chỗ:
@@ -253,18 +252,6 @@ function GapRow({
   );
 }
 
-function RankSummary({ rank }: { rank: PeriodicRank }) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-panel px-4 py-2 text-sm text-slate-300">
-      <Trophy size={16} className="text-amber-300" />
-      Hạng <b className="text-white">{rank.rank}</b>/{rank.total} trong lớp
-      <span className="text-slate-500">
-        · TB {rank.myAvg.toLocaleString("vi-VN", { maximumFractionDigits: 1 })}
-      </span>
-    </span>
-  );
-}
-
 function AttemptRow({ point, viewer }: { point: ScorePoint; viewer: ResultsViewer }) {
   const dateLabel = new Date(point.at).toLocaleDateString("vi-VN", {
     day: "2-digit",
@@ -398,7 +385,7 @@ export default function StudentResultsDashboard({
   const [needs, setNeeds] = useState<TutoringNeed[] | null>(null);
   const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
   const [outcomeGaps, setOutcomeGaps] = useState<OutcomeGap[]>([]);
-  const [periodicRank, setPeriodicRank] = useState<PeriodicRank | null>(null);
+  const [rankStatus, setRankStatus] = useState<RankStatus | null | undefined>(undefined);
 
   useEffect(() => {
     const uid = studentId;
@@ -410,16 +397,9 @@ export default function StudentResultsDashboard({
     fetchQuestionTopics()
       .then((topics) => setLessonByTopic(new Map(topics.map((t) => [t.name, t.lessonId]))))
       .catch(() => undefined);
-    fetchMyClassIds(uid)
-      .then((classIds) =>
-        classIds.length > 0
-          ? viewer === "student"
-            ? fetchPeriodicRank(classIds[0])
-            : fetchPeriodicRankOf(uid, classIds[0])
-          : null,
-      )
-      .then(setPeriodicRank)
-      .catch(() => setPeriodicRank(null));
+    (viewer === "student" ? fetchMyRankStatus() : fetchRankStatusOf(uid))
+      .then(setRankStatus)
+      .catch(() => setRankStatus(null));
   }, [studentId, viewer]);
 
   const lessonHref = useMemo(
@@ -455,11 +435,10 @@ export default function StudentResultsDashboard({
           <h1 className="font-display text-2xl font-bold text-white">{title}</h1>
           <p className="text-sm text-slate-400">{copy.subtitle}</p>
         </div>
-        {periodicRank && (
-          <div className="ml-auto">
-            <RankSummary rank={periodicRank} />
-          </div>
-        )}
+      </div>
+
+      <div className="mt-5">
+        <RankCard status={rankStatus} href={viewer === "student" ? "/lop-hoc/xep-hang/" : null} />
       </div>
 
       {alert && (

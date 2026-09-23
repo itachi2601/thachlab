@@ -36,6 +36,7 @@ import { supabaseConfigured } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
 import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
+import ClassRankGroups from "@/components/rank/ClassRankGroups";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -415,6 +416,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       })}
                     </div>
                   )}
+
+                  {session && activeId !== null && <ClassRankGroups classId={activeId} />}
 
                   {classExams.length > 0 && (
                     <section className="lesson-section">

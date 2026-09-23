@@ -20,12 +20,14 @@ import {
   fetchClassAssessments,
   fetchMyAlert,
   fetchMyScoreHistory,
-  fetchPeriodicRank,
   type ClassAssessment,
-  type PeriodicRank,
   type ScorePoint,
   type StudentAlert,
 } from "@/services/analytics";
+import RankBadge from "@/components/rank/RankBadge";
+import RankCard from "@/components/rank/RankCard";
+import { tierLabel, type RankStatus } from "@/features/rank/types";
+import { fetchMyRankStatus } from "@/services/rank";
 import {
   fetchLatestAnnouncements,
   fetchRecentAnnouncements,
@@ -125,7 +127,7 @@ export default function ThptStudentHome({
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [progress, setProgress] = useState<Map<number, LessonProgressSummary>>(new Map());
   const [scores, setScores] = useState<ScorePoint[]>([]);
-  const [rank, setRank] = useState<PeriodicRank | null>(null);
+  const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [lastLessonId, setLastLessonId] = useState(0);
@@ -151,7 +153,7 @@ export default function ThptStudentHome({
   useEffect(() => {
     fetchMyScoreHistory(studentId).then(setScores).catch(() => setScores([]));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
-    fetchPeriodicRank(classId).then(setRank).catch(() => setRank(null));
+    fetchMyRankStatus().then(setRank).catch(() => setRank(null));
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
   }, [studentId, classId]);
 
@@ -309,8 +311,24 @@ export default function ThptStudentHome({
       <section className="grid grid-cols-3 gap-2 sm:gap-3">
         <Stat value={totals ? `${totals.pct}%` : "—"} label="Tiến độ" />
         <Stat value={avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"} label="Điểm TB" />
-        <Stat value={rank ? `${rank.rank}/${rank.total}` : "—"} label="Hạng lớp" />
+        <Link
+          href="/lop-hoc/xep-hang/"
+          className="flex items-center gap-2 rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:rounded-2xl sm:p-5"
+        >
+          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={30} className="shrink-0 sm:hidden" />
+          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={44} className="hidden shrink-0 sm:block" />
+          <span className="min-w-0">
+            <strong className="block truncate text-sm text-white sm:text-lg">
+              {rank?.season ? tierLabel(rank.tier?.code, rank.tier?.division) : "—"}
+            </strong>
+            <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
+              Xếp hạng
+            </p>
+          </span>
+        </Link>
       </section>
+
+      <RankCard status={rank} name={profile?.full_name} />
 
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
       <Section icon={Megaphone} title="Việc cần làm hôm nay">
