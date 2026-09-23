@@ -698,6 +698,49 @@ export async function deleteQuestionTopic(id: number): Promise<void> {
   if (error) throw error;
 }
 
+/**
+ * Tên các yêu cầu cần đạt của một bài, theo thứ tự danh mục — dùng để điền
+ * Lesson.description thay vì gõ tay riêng. Bài chưa tách YCCĐ thì trả về tên
+ * chủ đề cả bài (nếu có).
+ */
+export async function fetchLessonOutcomeNames(lessonId: number): Promise<string[]> {
+  const { data } = await getSupabase()
+    .from("question_topics")
+    .select("parent_id, name, sort_order")
+    .eq("lesson_id", lessonId)
+    .order("sort_order")
+    .order("name");
+  const rows = (data as { parent_id: number | null; name: string }[]) ?? [];
+  const outcomes = rows.filter((r) => r.parent_id !== null).map((r) => r.name);
+  if (outcomes.length > 0) return outcomes;
+  return rows.filter((r) => r.parent_id === null).map((r) => r.name);
+}
+
+export interface LessonOutcomeCoverage {
+  hasTopic: boolean;
+  outcomeCount: number;
+}
+
+/** Tình trạng gắn chủ đề/YCCĐ của nhiều bài — dùng để cảnh báo bài chưa gắn nhãn nào. */
+export async function fetchLessonOutcomeCoverage(
+  lessonIds: number[],
+): Promise<Map<number, LessonOutcomeCoverage>> {
+  const map = new Map<number, LessonOutcomeCoverage>();
+  if (lessonIds.length === 0) return map;
+  const { data } = await getSupabase()
+    .from("question_topics")
+    .select("lesson_id, parent_id")
+    .in("lesson_id", lessonIds);
+  for (const row of (data as { lesson_id: number | null; parent_id: number | null }[]) ?? []) {
+    if (row.lesson_id === null) continue;
+    const cur = map.get(row.lesson_id) ?? { hasTopic: false, outcomeCount: 0 };
+    cur.hasTopic = true;
+    if (row.parent_id !== null) cur.outcomeCount += 1;
+    map.set(row.lesson_id, cur);
+  }
+  return map;
+}
+
 // ============================================================
 // Chi tiết: em hổng đúng yêu cầu cần đạt nào
 // ============================================================

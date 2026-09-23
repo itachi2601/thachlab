@@ -33,6 +33,11 @@ import {
   setItemClasses,
 } from "@/services/classes";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
+import {
+  fetchLessonOutcomeCoverage,
+  fetchLessonOutcomeNames,
+  type LessonOutcomeCoverage,
+} from "@/services/analytics";
 import { getSupabase } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 
@@ -400,6 +405,7 @@ function LessonDescriptionField({ lesson, onSaved }: { lesson: Lesson; onSaved: 
   const toast = useToast();
   const [value, setValue] = useState(lesson.description);
   const [busy, setBusy] = useState(false);
+  const [filling, setFilling] = useState(false);
   const dirty = value !== lesson.description;
 
   async function save() {
@@ -416,6 +422,20 @@ function LessonDescriptionField({ lesson, onSaved }: { lesson: Lesson; onSaved: 
     onSaved();
   }
 
+  async function fillFromOutcomes() {
+    setFilling(true);
+    try {
+      const names = await fetchLessonOutcomeNames(lesson.id);
+      if (names.length === 0) {
+        toast("error", "Bài này chưa gắn yêu cầu cần đạt nào ở /quan-tri/chu-de.");
+        return;
+      }
+      setValue(names.join("; "));
+    } finally {
+      setFilling(false);
+    }
+  }
+
   return (
     <div className="flex items-center gap-2 pl-8">
       <input
@@ -424,6 +444,14 @@ function LessonDescriptionField({ lesson, onSaved }: { lesson: Lesson; onSaved: 
         placeholder="Yêu cầu cần đạt (hiện ngắn gọn dưới tên bài)"
         className={`${inputCls} flex-1 text-xs`}
       />
+      <button
+        onClick={fillFromOutcomes}
+        disabled={filling}
+        title="Điền từ danh mục yêu cầu cần đạt của bài (/quan-tri/chu-de)"
+        className="admin-chip disabled:opacity-50"
+      >
+        {filling ? "Đang lấy…" : "Điền từ YCCĐ"}
+      </button>
       {dirty && (
         <button onClick={save} disabled={busy} className="admin-chip disabled:opacity-50">
           Lưu
@@ -448,6 +476,9 @@ function ChapterLessonsEditor({
   const [openLesson, setOpenLesson] = useState<Lesson | null>(null);
   const [title, setTitle] = useState("");
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
+  const [coverage, setCoverage] = useState<Map<number, LessonOutcomeCoverage>>(new Map());
+  const [chapterDueAt, setChapterDueAt] = useState("");
+  const [assigning, setAssigning] = useState(false);
 
   const reload = useCallback(() => {
     fetchLessons(true).then((ls) =>
@@ -455,6 +486,46 @@ function ChapterLessonsEditor({
     );
   }, [chapter.id]);
   useEffect(reload, [reload]);
+
+  useEffect(() => {
+    const ids = lessons.map((l) => l.id);
+    if (ids.length === 0) {
+      setCoverage(new Map());
+      return;
+    }
+    fetchLessonOutcomeCoverage(ids).then(setCoverage).catch(() => undefined);
+  }, [lessons]);
+
+  // Giao bài về nhà cho cả chương: đặt cùng một hạn nộp cho mọi mục "Bài tập về nhà"
+  // của các bài trong chương, thay vì mở từng bài để sửa từng mục.
+  async function assignChapterHomeworkDueAt() {
+    if (!chapterDueAt || lessons.length === 0) return;
+    const count = lessons.reduce((n, l) => n + (l.itemCount > 0 ? 1 : 0), 0);
+    if (
+      !confirm(
+        `Đặt hạn nộp ${chapterDueAt.replace("T", " ")} cho MỌI mục "Bài tập về nhà" trong` +
+          ` chương "${chapter.title}" (tối đa ${count} bài)? Hạn cũ của từng mục sẽ bị ghi đè.`,
+      )
+    )
+      return;
+    setAssigning(true);
+    const { data, error } = await getSupabase()
+      .from("lesson_items")
+      .update({ due_at: new Date(chapterDueAt).toISOString() })
+      .eq("kind", "bai_tap_ve_nha")
+      .in(
+        "lesson_id",
+        lessons.map((l) => l.id),
+      )
+      .select("id");
+    setAssigning(false);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
+    const n = data?.length ?? 0;
+    toast(n > 0 ? "success" : "error", n > 0 ? `Đã đặt hạn nộp cho ${n} mục bài tập về nhà.` : "Chương này chưa có mục bài tập về nhà nào.");
+  }
 
   if (openLesson)
     return <LessonItemsEditor lesson={openLesson} onBack={() => setOpenLesson(null)} />;
@@ -558,6 +629,29 @@ function ChapterLessonsEditor({
         </p>
       )}
 
+      <div className="admin-card flex flex-wrap items-center gap-3">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-white">Giao bài về nhà cho cả chương</p>
+          <p className="text-xs text-slate-500">
+            Đặt chung một hạn nộp cho mọi mục “Bài tập về nhà” trong chương, khỏi mở
+            từng bài để sửa từng mục.
+          </p>
+        </div>
+        <input
+          type="datetime-local"
+          value={chapterDueAt}
+          onChange={(e) => setChapterDueAt(e.target.value)}
+          className={`${inputCls} bg-[#0B1020]`}
+        />
+        <button
+          onClick={assignChapterHomeworkDueAt}
+          disabled={!chapterDueAt || assigning}
+          className="admin-btn admin-btn--primary disabled:opacity-40"
+        >
+          {assigning ? "Đang áp dụng…" : "Áp dụng cho cả chương"}
+        </button>
+      </div>
+
       <div className="space-y-2">
         {lessons.map((l, idx) => (
           <div
@@ -584,6 +678,28 @@ function ChapterLessonsEditor({
                   <span className="truncate font-medium text-white hover:text-primary">
                     {l.title}
                   </span>
+                  {l.lesson_kind === "bai_hoc" && (() => {
+                    const cov = coverage.get(l.id);
+                    if (!cov || !cov.hasTopic)
+                      return (
+                        <span
+                          title="Chưa gắn ở /quan-tri/chu-de nên câu hỏi của bài này không tự gắn được nhãn"
+                          className="shrink-0 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-300"
+                        >
+                          Chưa gắn chủ đề
+                        </span>
+                      );
+                    if (cov.outcomeCount === 0)
+                      return (
+                        <span
+                          title="Có chủ đề nhưng chưa tách yêu cầu cần đạt — câu hỏi chỉ gắn được ở mức cả bài"
+                          className="shrink-0 rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300"
+                        >
+                          Chưa tách YCCĐ
+                        </span>
+                      );
+                    return null;
+                  })()}
                 </span>
                 <span className="text-xs text-slate-500">{l.itemCount} mục</span>
               </button>
