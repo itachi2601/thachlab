@@ -10,9 +10,11 @@
 -- một lịch cố định, nên tách thành 4 khoá công khai riêng — phụ huynh/
 -- học sinh đăng ký 2 lần: một lần ở nhóm buổi A, một lần ở nhóm buổi B.
 --
--- Cần chạy SAU: supabase-migration-khoa-hoc-thpt.sql, và sau khi đã bấm
--- "Tạo/cập nhật 4 lớp khối" ở /quan-tri (mục Hệ lớp) để có sẵn classes
--- '10' / '11' / '12'.
+-- Cần chạy SAU: supabase-migration-khoa-hoc-thpt.sql và
+-- supabase-migration-thpt-course-pairing.sql (thêm cột pair_key/pair_slot +
+-- chặn đăng ký 2 khoá cùng buổi — 4 khoá 12L1 dưới đây được gắn 2 cột này),
+-- và sau khi đã bấm "Tạo/cập nhật 4 lớp khối" ở /quan-tri (mục Hệ lớp) để
+-- có sẵn classes '10' / '11' / '12'.
 --
 -- location để trống — thầy Thạch điền phòng/địa chỉ trung tâm sau, ở
 -- Dashboard THPT → tab Ghi danh → "Sửa lịch" (không cần chạy lại script).
@@ -85,11 +87,11 @@ begin
   select id into v_course_id from public.thpt_courses
     where class_id = v_class12 and name = 'Vật lí 12L1 — buổi A · Thứ 4 (A4)' and school_year = v_school_year;
   if v_course_id is null then
-    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status)
+    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status, pair_key, pair_slot)
     values (
       v_class12, 'Vật lí 12L1 — buổi A · Thứ 4 (A4)',
       'Lớp 12L1 học 2 buổi/tuần: 1 buổi A + 1 buổi B. Đây là buổi A khung Thứ 4 — đăng ký thêm 1 khoá buổi B (12L1B7 hoặc 12L1B8) nữa để đủ lịch tuần.',
-      v_school_year, true, 'active'
+      v_school_year, true, 'active', '12L1', 'A'
     )
     returning id into v_course_id;
     insert into public.thpt_course_schedules (course_id, weekday, start_time, end_time)
@@ -100,11 +102,11 @@ begin
   select id into v_course_id from public.thpt_courses
     where class_id = v_class12 and name = 'Vật lí 12L1 — buổi A · Thứ 5 (A5)' and school_year = v_school_year;
   if v_course_id is null then
-    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status)
+    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status, pair_key, pair_slot)
     values (
       v_class12, 'Vật lí 12L1 — buổi A · Thứ 5 (A5)',
       'Lớp 12L1 học 2 buổi/tuần: 1 buổi A + 1 buổi B. Đây là buổi A khung Thứ 5 — đăng ký thêm 1 khoá buổi B (12L1B7 hoặc 12L1B8) nữa để đủ lịch tuần.',
-      v_school_year, true, 'active'
+      v_school_year, true, 'active', '12L1', 'A'
     )
     returning id into v_course_id;
     insert into public.thpt_course_schedules (course_id, weekday, start_time, end_time)
@@ -115,11 +117,11 @@ begin
   select id into v_course_id from public.thpt_courses
     where class_id = v_class12 and name = 'Vật lí 12L1 — buổi B · Thứ 7 (B7)' and school_year = v_school_year;
   if v_course_id is null then
-    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status)
+    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status, pair_key, pair_slot)
     values (
       v_class12, 'Vật lí 12L1 — buổi B · Thứ 7 (B7)',
       'Lớp 12L1 học 2 buổi/tuần: 1 buổi A + 1 buổi B. Đây là buổi B khung Thứ 7 — đăng ký thêm 1 khoá buổi A (12L1A4 hoặc 12L1A5) nữa để đủ lịch tuần.',
-      v_school_year, true, 'active'
+      v_school_year, true, 'active', '12L1', 'B'
     )
     returning id into v_course_id;
     insert into public.thpt_course_schedules (course_id, weekday, start_time, end_time)
@@ -130,11 +132,11 @@ begin
   select id into v_course_id from public.thpt_courses
     where class_id = v_class12 and name = 'Vật lí 12L1 — buổi B · CN (B8)' and school_year = v_school_year;
   if v_course_id is null then
-    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status)
+    insert into public.thpt_courses (class_id, name, description, school_year, is_public, status, pair_key, pair_slot)
     values (
       v_class12, 'Vật lí 12L1 — buổi B · CN (B8)',
       'Lớp 12L1 học 2 buổi/tuần: 1 buổi A + 1 buổi B. Đây là buổi B khung Chủ nhật — đăng ký thêm 1 khoá buổi A (12L1A4 hoặc 12L1A5) nữa để đủ lịch tuần.',
-      v_school_year, true, 'active'
+      v_school_year, true, 'active', '12L1', 'B'
     )
     returning id into v_course_id;
     insert into public.thpt_course_schedules (course_id, weekday, start_time, end_time)
