@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import AudienceChooser from "@/components/home/AudienceChooser";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
+import TeachingSchedule from "@/components/home/TeachingSchedule";
 import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
 import LearningPath from "@/components/home/LearningPath";
 import AboutFounder from "@/components/home/AboutFounder";
@@ -16,6 +17,7 @@ export default function Home() {
         <AudienceChooser />
         <PhysicsSimulationHero />
         <Features />
+        <TeachingSchedule />
         <PhysicsEverywhere />
         <LearningPath />
         <AboutFounder />
