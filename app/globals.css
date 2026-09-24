@@ -24,6 +24,7 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: hidden;
 }
 
 body {
@@ -31,6 +32,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   transition: background-color 180ms ease, color 180ms ease;
+  overflow-x: hidden;
 }
 
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
@@ -1002,6 +1004,17 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   border-radius: 10px;
   background: rgba(148, 163, 184, 0.06);
   padding: 12px 16px;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
 }
 
 /* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
