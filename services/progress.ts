@@ -51,6 +51,8 @@ interface RawProgressData {
   openAttemptExamIds: Set<number>;
   practiceByItem: Map<number, { count: number; best: number | null; lastAt: string | null }>;
   examPassScoreById: Map<number, number | null>;
+  /** Điểm cao nhất từng đề (trong các đề đã truy vấn) — thay cho fetchMyExamScores ở trang bài học. */
+  bestScoreByExam: Map<number, number>;
 }
 
 function emptyRaw(): RawProgressData {
@@ -62,34 +64,75 @@ function emptyRaw(): RawProgressData {
     openAttemptExamIds: new Set(),
     practiceByItem: new Map(),
     examPassScoreById: new Map(),
+    bestScoreByExam: new Map(),
   };
 }
 
-/** Gộp 1 lượt cho nhiều học sinh cùng lúc (bảng giáo viên) hoặc 1 học sinh (trang bài học). */
+interface ResultRow {
+  id: number;
+  student_id: string;
+  exam_id: number;
+  created_at: string;
+  score: number;
+  detail: unknown;
+  exam_result_scores?: ScoreRow | ScoreRow[] | null;
+}
+interface ScoreRow {
+  exam_result_id?: number;
+  final_score10: number | null;
+  pending_essay_count: number;
+}
+
+// exam_result_scores là view gộp exam_question_results; PostgREST nhận quan hệ qua FK
+// exam_question_results.exam_result_id → nhúng được vào exam_results (1 truy vấn thay vì 2 tầng).
+// Nếu server không nhận quan hệ (schema cũ) thì nhớ lại và dùng đường 2 bước cho các lần sau.
+let scoresEmbedSupported = true;
+
+/**
+ * Gộp 1 lượt cho nhiều học sinh cùng lúc (bảng giáo viên) hoặc 1 học sinh (trang bài học).
+ * `extraExamIds`: đề cần lấy thêm điểm cao nhất (bestScoreByExam) dù không thuộc mục có chấm — trang bài học
+ * dùng để thay fetchMyExamScores; không ảnh hưởng trạng thái mục.
+ */
 async function fetchRawProgressBatch(
   studentIds: string[],
   items: LessonItem[],
+  extraExamIds: number[] = [],
 ): Promise<Map<string, RawProgressData>> {
   const out = new Map<string, RawProgressData>(studentIds.map((id) => [id, emptyRaw()]));
   if (studentIds.length === 0) return out;
   const supabase = getSupabase();
   const itemIds = items.map((i) => i.id);
   const examIds = [...new Set(items.filter((i) => isExamKind(i.kind) || i.kind === "ly_thuyet").flatMap((i) => i.exam_ids))];
+  const resultExamIds = [...new Set([...examIds, ...extraExamIds])];
   const practiceItemIds = items.filter((i) => i.kind === "luyen_tap").map((i) => i.id);
+
+  const resultCols = "id, student_id, exam_id, created_at, score, detail";
+  const fetchResults = async (): Promise<{ data: ResultRow[] | null }> => {
+    if (!resultExamIds.length) return { data: [] };
+    if (scoresEmbedSupported) {
+      const res = await supabase
+        .from("exam_results")
+        .select(`${resultCols}, exam_result_scores(final_score10, pending_essay_count)`)
+        .in("student_id", studentIds)
+        .in("exam_id", resultExamIds);
+      if (!res.error) return { data: (res.data ?? []) as unknown as ResultRow[] };
+      scoresEmbedSupported = false;
+    }
+    const res = await supabase.from("exam_results").select(resultCols).in("student_id", studentIds).in("exam_id", resultExamIds);
+    const rows = ((res.data ?? []) as unknown as ResultRow[]);
+    const resultIds = rows.map((r) => r.id);
+    const scoresRes = resultIds.length
+      ? await supabase.from("exam_result_scores").select("exam_result_id, final_score10, pending_essay_count").in("exam_result_id", resultIds)
+      : { data: [] as ScoreRow[] };
+    const scoreByResultId = new Map(((scoresRes.data ?? []) as ScoreRow[]).map((s) => [s.exam_result_id, s]));
+    return { data: rows.map((r) => ({ ...r, exam_result_scores: scoreByResultId.get(r.id) ?? null })) };
+  };
 
   const [progressRes, resultsRes, attemptsRes, practiceRes, examsRes] = await Promise.all([
     itemIds.length
       ? supabase.from("lesson_progress").select("user_id, item_id, done_at").in("user_id", studentIds).in("item_id", itemIds)
       : Promise.resolve({ data: [] as { user_id: string; item_id: number; done_at: string }[] }),
-    examIds.length
-      ? supabase
-          .from("exam_results")
-          .select("id, student_id, exam_id, created_at, score, detail")
-          .in("student_id", studentIds)
-          .in("exam_id", examIds)
-      : Promise.resolve({
-          data: [] as { id: number; student_id: string; exam_id: number; created_at: string; score: number; detail: unknown }[],
-        }),
+    fetchResults(),
     examIds.length
       ? supabase
           .from("exam_attempts")
@@ -110,11 +153,6 @@ async function fetchRawProgressBatch(
       : Promise.resolve({ data: [] as { id: number; pass_score: number | null }[] }),
   ]);
 
-  const resultIds = (resultsRes.data ?? []).map((r) => r.id);
-  const scoresRes = resultIds.length
-    ? await supabase.from("exam_result_scores").select("exam_result_id, final_score10, pending_essay_count").in("exam_result_id", resultIds)
-    : { data: [] as { exam_result_id: number; final_score10: number | null; pending_essay_count: number }[] };
-  const scoreByResultId = new Map((scoresRes.data ?? []).map((s) => [s.exam_result_id, s]));
   const examPassScoreById = new Map((examsRes.data ?? []).map((e) => [e.id, e.pass_score ?? null]));
 
   for (const row of progressRes.data ?? []) {
@@ -127,13 +165,16 @@ async function fetchRawProgressBatch(
   for (const row of resultsRes.data ?? []) {
     const raw = out.get(row.student_id);
     if (!raw) continue;
+    const prevBest = raw.bestScoreByExam.get(row.exam_id);
+    if (prevBest === undefined || row.score > prevBest) raw.bestScoreByExam.set(row.exam_id, Number(row.score));
     const detail = (row.detail as { correctCount?: number } | null) ?? null;
     const correctCount = typeof detail?.correctCount === "number" ? detail.correctCount : 0;
     const quiz = raw.quizAttemptsByExam.get(row.exam_id) ?? [];
     quiz.push({ createdAt: row.created_at, correctCount });
     raw.quizAttemptsByExam.set(row.exam_id, quiz);
 
-    const scoreRow = scoreByResultId.get(row.id);
+    const embedded = row.exam_result_scores;
+    const scoreRow = (Array.isArray(embedded) ? embedded[0] : embedded) ?? undefined;
     const graded = raw.gradedResultsByExam.get(row.exam_id) ?? [];
     graded.push({
       createdAt: row.created_at,
@@ -241,6 +282,24 @@ export async function fetchMyLearningProgress(
 ): Promise<Map<number, ItemProgress>> {
   const raw = (await fetchRawProgressBatch([studentId], items)).get(studentId) ?? emptyRaw();
   return buildItemProgress(items, raw);
+}
+
+/**
+ * Trang bài học: trạng thái từng mục + điểm cao nhất từng đề + mục đã đánh dấu của học sinh —
+ * cùng một lượt truy vấn song song (thay cho fetchMyLearningProgress + fetchMyExamScores + fetchMyProgress).
+ * `scores`/`done` chỉ gồm đề/mục của bài này — đủ cho isDone() của trang.
+ */
+export async function fetchMyLessonPageProgress(
+  studentId: string,
+  items: LessonItem[],
+): Promise<{ progress: Map<number, ItemProgress>; scores: Map<number, number>; done: Set<number> }> {
+  const allExamIds = items.flatMap((i) => i.exam_ids);
+  const raw = (await fetchRawProgressBatch([studentId], items, allExamIds)).get(studentId) ?? emptyRaw();
+  return {
+    progress: buildItemProgress(items, raw),
+    scores: raw.bestScoreByExam,
+    done: raw.confirmedItemIds,
+  };
 }
 
 /** Trạng thái từng mục của MỘT bài học cho CẢ LỚP — dùng ở bảng "Quá trình học tập" của giáo viên. */

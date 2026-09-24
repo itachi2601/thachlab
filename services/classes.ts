@@ -93,7 +93,7 @@ export function expandClassIdsByGrade(
 export async function fetchClasses(includeHidden = false) {
   let q = getSupabase()
     .from("classes")
-    .select("*")
+    .select("id, name, slug, color, icon, sort_order, active")
     .order("sort_order")
     .order("name");
   if (!includeHidden) q = q.eq("active", true);
