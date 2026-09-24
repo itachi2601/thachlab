@@ -293,6 +293,12 @@ function LessonLoader() {
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
 
+  // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
+  // ẩn khỏi danh sách hiển thị (đang tải thì cứ giữ nguyên, tránh nhấp nháy).
+  function visibleExamIds(ids: number[]) {
+    return examMetaStatus === "ready" ? ids.filter((id) => examMetas.has(id)) : ids;
+  }
+
   // Chương trình lớp+môn đầy đủ, chỉ để tính Bài trước/Bài tiếp theo (không phải nội dung bài học).
   const [siblingClasses, setSiblingClasses] = useState<SchoolClass[] | null>(null);
   const [siblingChapters, setSiblingChapters] = useState<Chapter[] | null>(null);
@@ -372,8 +378,10 @@ function LessonLoader() {
   }, [items]);
 
   function isDone(item: LessonItem) {
-    if (isGradedKind(item.kind))
-      return item.exam_ids.length > 0 && item.exam_ids.every((id) => scores.has(id));
+    if (isGradedKind(item.kind)) {
+      const ids = visibleExamIds(item.exam_ids);
+      return ids.length > 0 && ids.every((id) => scores.has(id));
+    }
     return done.has(item.id);
   }
 
@@ -470,7 +478,7 @@ function LessonLoader() {
   if (isPeriodicExam(lessonKind)) {
     const kindMeta = LESSON_KIND_META[lessonKind];
     const kiemTraItems = items.filter((i) => i.kind === "kiem_tra");
-    const examIds = kiemTraItems.flatMap((i) => i.exam_ids);
+    const examIds = visibleExamIds(kiemTraItems.flatMap((i) => i.exam_ids));
     const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
       <div className="lesson-shell">
@@ -637,7 +645,8 @@ function LessonLoader() {
                         </div>
                       );
 
-                    if (isGradedKind(item.kind))
+                    if (isGradedKind(item.kind)) {
+                      const gradedExamIds = visibleExamIds(item.exam_ids);
                       return (
                         <div key={item.id} className="lesson-block">
                           {(!plain || item.due_at) && (
@@ -648,11 +657,11 @@ function LessonLoader() {
                               )}
                             </div>
                           )}
-                          {item.exam_ids.length === 0 ? (
+                          {gradedExamIds.length === 0 ? (
                             <p className="lesson-muted">Chưa gắn đề</p>
                           ) : (
                             <div className="lesson-stack">
-                              {item.exam_ids.map((examId) => {
+                              {gradedExamIds.map((examId) => {
                                 const graded = progress.get(item.id)?.graded;
                                 return (
                                   <ExamRow
@@ -672,6 +681,7 @@ function LessonLoader() {
                           )}
                         </div>
                       );
+                    }
 
                     // bai_tap_mau / luyen_tap: lưới từng câu
                     return (

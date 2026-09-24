@@ -143,16 +143,19 @@ export interface LessonExamMeta {
   pass_score: number | null;
 }
 
+// Đề "ẩn" (published = false) không trả về ở đây — phía học sinh coi như chưa gắn đề.
 export async function fetchExamMetas(examIds: number[]): Promise<Map<number, LessonExamMeta>> {
   if (examIds.length === 0) return new Map();
   const withPassScore = await getSupabase()
     .from("exams")
     .select("id, title, duration_minutes, question_count, type_counts, pass_score")
+    .eq("published", true)
     .in("id", examIds);
   const res = withPassScore.error
     ? await getSupabase()
         .from("exams")
         .select("id, title, duration_minutes, question_count, type_counts")
+        .eq("published", true)
         .in("id", examIds)
     : withPassScore;
   return new Map(
@@ -163,12 +166,13 @@ export async function fetchExamMetas(examIds: number[]): Promise<Map<number, Les
   );
 }
 
-/** Đề đầy đủ (kèm câu hỏi) — dùng cho lưới tự chấm của mục Luyện tập. */
+/** Đề đầy đủ (kèm câu hỏi) — dùng cho lưới tự chấm của mục Luyện tập. Đề ẩn cũng không trả về. */
 export async function fetchExamsFull(examIds: number[]): Promise<Map<number, Exam>> {
   if (examIds.length === 0) return new Map();
   const { data } = await getSupabase()
     .from("exams")
     .select("id, title, duration_minutes, published, questions")
+    .eq("published", true)
     .in("id", examIds);
   return new Map(((data as Exam[]) ?? []).map((e) => [e.id, e]));
 }

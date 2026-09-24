@@ -58,6 +58,12 @@ export default function InlineLessonAccordion({
   const [done, setDone] = useState<Set<number>>(new Set());
   const [userProgressLoaded, setUserProgressLoaded] = useState(false);
 
+  // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
+  // ẩn khỏi danh sách hiển thị (đang tải hoặc chưa đăng nhập thì cứ giữ nguyên).
+  function visibleExamIds(ids: number[]) {
+    return session && userProgressLoaded ? ids.filter((id) => examMetas.has(id)) : ids;
+  }
+
   useEffect(() => {
     if (!open || items) return;
     fetchLessonItems(lesson.id).then((rows) => {
@@ -116,8 +122,10 @@ export default function InlineLessonAccordion({
   );
 
   function isItemDone(item: LessonItem) {
-    if (isGradedKind(item.kind))
-      return item.exam_ids.length > 0 && item.exam_ids.every((id) => scores.has(id));
+    if (isGradedKind(item.kind)) {
+      const ids = visibleExamIds(item.exam_ids);
+      return ids.length > 0 && ids.every((id) => scores.has(id));
+    }
     return done.has(item.id);
   }
 
@@ -233,10 +241,10 @@ export default function InlineLessonAccordion({
                             )}
                             {isGradedKind(item.kind) && (
                               <div className="mt-3 space-y-2">
-                                {item.exam_ids.length === 0 ? (
+                                {visibleExamIds(item.exam_ids).length === 0 ? (
                                   <p className="text-sm text-slate-500">Chưa gắn đề</p>
                                 ) : (
-                                  item.exam_ids.map((examId) => {
+                                  visibleExamIds(item.exam_ids).map((examId) => {
                                     const exam = examMetas.get(examId);
                                     const score = scores.get(examId);
                                     return (

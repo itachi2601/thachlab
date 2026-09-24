@@ -57,6 +57,7 @@ function ExamLoader() {
           .single();
       }
       if (res.error || !res.data) setError("Không tìm thấy đề này.");
+      else if (!res.data.published) setError("Đề này đang ẩn, chưa thể làm bài.");
       else setExam(res.data as Exam);
     })();
   }, [session, id]);

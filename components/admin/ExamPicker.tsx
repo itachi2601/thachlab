@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useToast } from "@/components/ui/Toast";
 import { getSupabase } from "@/services/supabase";
 
 type ExamOption = { id: number; title: string; published: boolean; duration_minutes: number };
@@ -21,6 +22,8 @@ export default function ExamPicker({ value, onChange }: {
   const [cache, setCache] = useState<Record<number, ExamOption>>({});
   const [failure, setFailure] = useState<{ key: string; message: string } | null>(null);
   const [selectionError, setSelectionError] = useState("");
+  const [togglingId, setTogglingId] = useState<number | null>(null);
+  const toast = useToast();
   const requestKey = JSON.stringify([search, status, page, retry]);
   const selectedKey = value.join(",");
 
@@ -91,6 +94,18 @@ export default function ExamPicker({ value, onChange }: {
     [next[index], next[index + direction]] = [next[index + direction], next[index]];
     onChange(next);
   }
+  async function togglePublished(exam: ExamOption) {
+    setTogglingId(exam.id);
+    const { error } = await getSupabase().from("exams").update({ published: !exam.published }).eq("id", exam.id);
+    setTogglingId(null);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
+    const next = { ...exam, published: !exam.published };
+    setCache((old) => ({ ...old, [exam.id]: next }));
+    setResult((old) => (old ? { ...old, rows: old.rows.map((r) => (r.id === exam.id ? next : r)) } : old));
+  }
 
   return (
     <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.03]">
@@ -113,9 +128,18 @@ export default function ExamPicker({ value, onChange }: {
           <div className="max-h-96 space-y-2 overflow-y-auto">
             {rows.map((exam) => <label key={exam.id} className={`flex cursor-pointer items-start gap-3 rounded-lg border p-3 ${value.includes(exam.id) ? "border-emerald-400/40 bg-emerald-500/10" : "border-white/10 hover:bg-white/5"}`}>
               <input type="checkbox" checked={value.includes(exam.id)} onChange={() => toggle(exam.id)} className="mt-1 accent-emerald-500" />
-              <span className="min-w-0"><span className="block break-words text-sm text-slate-100">{exam.title}</span>
+              <span className="min-w-0 flex-1"><span className="block break-words text-sm text-slate-100">{exam.title}</span>
                 <span className="mt-1 block text-xs text-slate-400">#{exam.id} · {exam.duration_minutes} phút · {exam.published ? "Đã xuất bản" : "Bản nháp"}</span>
               </span>
+              <button
+                type="button"
+                aria-label={`${exam.published ? "Ẩn" : "Hiện"} đề #${exam.id}`}
+                disabled={togglingId === exam.id}
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); void togglePublished(exam); }}
+                className={`${button} shrink-0`}
+              >
+                {togglingId === exam.id ? "…" : exam.published ? "Ẩn" : "Hiện"}
+              </button>
             </label>)}
           </div>
           <div className="mt-3 flex items-center justify-between gap-2">
@@ -134,6 +158,17 @@ export default function ExamPicker({ value, onChange }: {
               <p className="break-words text-sm text-slate-200">{index + 1}. {cache[id]?.title ?? `Đề #${id} (chưa tải được thông tin)`}</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 <span className="mr-auto text-xs text-slate-400">#{id}{cache[id] && !cache[id].published ? " · Bản nháp" : ""}</span>
+                {cache[id] && (
+                  <button
+                    type="button"
+                    aria-label={`${cache[id].published ? "Ẩn" : "Hiện"} đề #${id}`}
+                    disabled={togglingId === id}
+                    onClick={() => void togglePublished(cache[id])}
+                    className={button}
+                  >
+                    {togglingId === id ? "…" : cache[id].published ? "Ẩn" : "Hiện"}
+                  </button>
+                )}
                 <button type="button" aria-label={`Đưa đề #${id} lên`} disabled={index === 0} onClick={() => move(index, -1)} className={button}>↑</button>
                 <button type="button" aria-label={`Đưa đề #${id} xuống`} disabled={index === value.length - 1} onClick={() => move(index, 1)} className={button}>↓</button>
                 <button type="button" aria-label={`Bỏ chọn đề #${id}`} onClick={() => toggle(id)} className={button}>Bỏ chọn</button>
