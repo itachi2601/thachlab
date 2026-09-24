@@ -5,19 +5,24 @@ import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, Lay
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
-import TeacherAttendancePanel from "@/components/attendance/TeacherAttendancePanel";
+import dynamic from "next/dynamic";
 import { cncAssessmentProgress, completedCncLessons } from "@/services/cnc-progress";
-import TeacherCompetencyHub from "@/components/dashboard/TeacherCompetencyHub";
-import TeacherOverview from "@/components/dashboard/TeacherOverview";
-import TeacherProgressGradebook from "@/components/dashboard/TeacherProgressGradebook";
-import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
-import TeacherStudentProfile from "@/components/dashboard/TeacherStudentProfile";
-import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
 import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
-import HomeroomAttendancePanel from "@/components/dashboard/HomeroomAttendancePanel";
-import HomeroomGradebook from "@/components/dashboard/HomeroomGradebook";
-import HomeroomShcnPanel from "@/components/dashboard/HomeroomShcnPanel";
-import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
+
+// Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
+// chỉ còn khung + tab mở sẵn. Khung chờ giữ chiều cao tương đương một tab.
+const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />;
+const TeacherAttendancePanel = dynamic(() => import("@/components/attendance/TeacherAttendancePanel"), { loading: TabSkeleton });
+const TeacherCompetencyHub = dynamic(() => import("@/components/dashboard/TeacherCompetencyHub"), { loading: TabSkeleton });
+const TeacherOverview = dynamic(() => import("@/components/dashboard/TeacherOverview"), { loading: TabSkeleton });
+const TeacherProgressGradebook = dynamic(() => import("@/components/dashboard/TeacherProgressGradebook"), { loading: TabSkeleton });
+const TeacherFinalGradebook = dynamic(() => import("@/components/dashboard/TeacherFinalGradebook"), { loading: TabSkeleton });
+const TeacherStudentProfile = dynamic(() => import("@/components/dashboard/TeacherStudentProfile"), { loading: TabSkeleton });
+const CourseRosterPanel = dynamic(() => import("@/components/dashboard/CourseRosterPanel"), { loading: TabSkeleton });
+const HomeroomAttendancePanel = dynamic(() => import("@/components/dashboard/HomeroomAttendancePanel"), { loading: TabSkeleton });
+const HomeroomGradebook = dynamic(() => import("@/components/dashboard/HomeroomGradebook"), { loading: TabSkeleton });
+const HomeroomShcnPanel = dynamic(() => import("@/components/dashboard/HomeroomShcnPanel"), { loading: TabSkeleton });
+const CncMillingLiveMonitor = dynamic(() => import("@/components/admin/CncMillingLiveMonitor"), { ssr: false, loading: TabSkeleton });
 import { SUBJECTS, getSubject, HOMEROOM_SUBJECT_CODE } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
 
