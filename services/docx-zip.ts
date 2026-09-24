@@ -71,3 +71,106 @@ export async function unzip(bytes: Uint8Array): Promise<ZipEntries> {
 
   return entries;
 }
+
+// ---------- Ghi zip (chiều ngược — dựng .docx để tải xuống) ----------
+// Zip tối thiểu cho .docx: local header + central directory + EOCD, không zip64
+// (file bài học nhỏ, không cần). Nén deflate-raw qua CompressionStream có sẵn
+// của trình duyệt khi có; không có thì lưu "store" (method 0) — Word đọc được cả hai.
+
+const CRC_TABLE = (() => {
+  const table = new Uint32Array(256);
+  for (let n = 0; n < 256; n++) {
+    let c = n;
+    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    table[n] = c >>> 0;
+  }
+  return table;
+})();
+
+function crc32(data: Uint8Array): number {
+  let c = 0xffffffff;
+  for (let i = 0; i < data.length; i++) c = CRC_TABLE[(c ^ data[i]) & 0xff] ^ (c >>> 8);
+  return (c ^ 0xffffffff) >>> 0;
+}
+
+async function deflateRaw(data: Uint8Array): Promise<Uint8Array | null> {
+  if (typeof CompressionStream === "undefined") return null;
+  const stream = new Blob([data as BlobPart]).stream().pipeThrough(new CompressionStream("deflate-raw"));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
+export interface ZipInputEntry {
+  name: string;
+  data: Uint8Array;
+}
+
+export async function zip(entries: ZipInputEntry[]): Promise<Uint8Array> {
+  const encoder = new TextEncoder();
+  const chunks: Uint8Array[] = [];
+  const central: Uint8Array[] = [];
+  let offset = 0;
+
+  for (const entry of entries) {
+    const nameBytes = encoder.encode(entry.name);
+    const crc = crc32(entry.data);
+    const compressed = await deflateRaw(entry.data);
+    const method = compressed ? 8 : 0;
+    const payload = compressed ?? entry.data;
+
+    const local = new DataView(new ArrayBuffer(30));
+    local.setUint32(0, 0x04034b50, true);
+    local.setUint16(4, 20, true);
+    local.setUint16(6, 0, true);
+    local.setUint16(8, method, true);
+    local.setUint16(10, 0, true);
+    local.setUint16(12, 0, true);
+    local.setUint32(14, crc, true);
+    local.setUint32(18, payload.length, true);
+    local.setUint32(22, entry.data.length, true);
+    local.setUint16(26, nameBytes.length, true);
+    local.setUint16(28, 0, true);
+    chunks.push(new Uint8Array(local.buffer), nameBytes, payload);
+
+    const centralHeader = new DataView(new ArrayBuffer(46));
+    centralHeader.setUint32(0, 0x02014b50, true);
+    centralHeader.setUint16(4, 20, true);
+    centralHeader.setUint16(6, 20, true);
+    centralHeader.setUint16(8, 0, true);
+    centralHeader.setUint16(10, method, true);
+    centralHeader.setUint16(12, 0, true);
+    centralHeader.setUint16(14, 0, true);
+    centralHeader.setUint32(16, crc, true);
+    centralHeader.setUint32(20, payload.length, true);
+    centralHeader.setUint32(24, entry.data.length, true);
+    centralHeader.setUint16(28, nameBytes.length, true);
+    centralHeader.setUint16(30, 0, true);
+    centralHeader.setUint16(32, 0, true);
+    centralHeader.setUint16(34, 0, true);
+    centralHeader.setUint16(36, 0, true);
+    centralHeader.setUint32(38, 0, true);
+    centralHeader.setUint32(42, offset, true);
+    central.push(new Uint8Array(centralHeader.buffer), nameBytes);
+
+    offset += 30 + nameBytes.length + payload.length;
+  }
+
+  const centralStart = offset;
+  const centralSize = central.reduce((n, c) => n + c.length, 0);
+
+  const eocd = new DataView(new ArrayBuffer(22));
+  eocd.setUint32(0, 0x06054b50, true);
+  eocd.setUint16(8, entries.length, true);
+  eocd.setUint16(10, entries.length, true);
+  eocd.setUint32(12, centralSize, true);
+  eocd.setUint32(16, centralStart, true);
+
+  const all = [...chunks, ...central, new Uint8Array(eocd.buffer)];
+  const total = all.reduce((n, p) => n + p.length, 0);
+  const out = new Uint8Array(total);
+  let p = 0;
+  for (const part of all) {
+    out.set(part, p);
+    p += part.length;
+  }
+  return out;
+}

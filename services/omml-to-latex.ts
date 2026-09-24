@@ -6,34 +6,39 @@
  * không đọc được ở trình duyệt; `docx-reader` sẽ đếm và báo riêng.
  */
 
-const FUNCS = new Set([
+// export: dùng lại ở latex-to-omml.ts (chiều ngược) để hai bên khớp nhau, khỏi lệch bảng.
+export const FUNCS = new Set([
   "sin", "cos", "tan", "cot", "sec", "csc", "sinh", "cosh", "tanh", "coth",
   "arcsin", "arccos", "arctan", "log", "ln", "lg", "exp", "lim", "max", "min",
   "det", "deg", "gcd", "sup", "inf",
 ]);
 
-const NARY: Record<string, string> = {
+export const NARY: Record<string, string> = {
   "∑": "\\sum", "∏": "\\prod", "∐": "\\coprod",
   "∫": "\\int", "∬": "\\iint", "∭": "\\iiint",
   "∮": "\\oint", "⋃": "\\bigcup", "⋂": "\\bigcap",
 };
 
-const ACCENTS: Record<string, string> = {
+export const ACCENTS: Record<string, string> = {
   "⃗": "\\vec", "⃑": "\\vec", "→": "\\vec",
   "̂": "\\hat", "̃": "\\tilde", "̄": "\\bar", "̅": "\\overline",
   "̇": "\\dot", "̈": "\\ddot", "̌": "\\check",
   "́": "\\acute", "̀": "\\grave",
 };
 
-const DELIMS: Record<string, string> = {
+export const DELIMS: Record<string, string> = {
   "": ".", "(": "(", ")": ")", "[": "[", "]": "]",
   "{": "\\{", "}": "\\}", "|": "|", "‖": "\\|",
   "⟨": "\\langle", "⟩": "\\rangle", "⌊": "\\lfloor", "⌋": "\\rfloor",
   "⌈": "\\lceil", "⌉": "\\rceil",
 };
 
-/** Ký hiệu Unicode Word hay chèn → lệnh LaTeX tương ứng. */
-const SYMBOLS: [RegExp, string][] = Object.entries({
+/**
+ * Ký hiệu Unicode Word hay chèn → lệnh LaTeX tương ứng.
+ * Giữ dạng cặp thô (export) để latex-to-omml.ts dùng lại theo chiều ngược;
+ * SYMBOLS bên dưới là bản đã biên dịch regex, chỉ dùng nội bộ file này.
+ */
+export const SYMBOL_ENTRIES: [string, string][] = Object.entries({
   "α": "\\alpha ", "β": "\\beta ", "γ": "\\gamma ", "δ": "\\delta ", "ε": "\\varepsilon ",
   "ζ": "\\zeta ", "η": "\\eta ", "θ": "\\theta ", "ι": "\\iota ", "κ": "\\kappa ",
   "λ": "\\lambda ", "μ": "\\mu ", "ν": "\\nu ", "ξ": "\\xi ", "π": "\\pi ",
@@ -49,7 +54,8 @@ const SYMBOLS: [RegExp, string][] = Object.entries({
   "√": "\\sqrt ", "°": "^{\\circ}", "∥": "\\parallel ", "⊥": "\\perp ", "∠": "\\angle ",
   "′": "'", "″": "''", "…": "\\dots ", "ℏ": "\\hbar ", "∅": "\\varnothing ",
   " ": " ",
-}).map(([k, v]) => [new RegExp(k, "g"), v]);
+});
+const SYMBOLS: [RegExp, string][] = SYMBOL_ENTRIES.map(([k, v]) => [new RegExp(k, "g"), v]);
 
 /** Văn bản trong công thức → LaTeX an toàn. */
 export function mathText(raw: string): string {

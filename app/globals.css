@@ -652,6 +652,14 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-eyebrow { color: var(--lesson-accent-text); font-family: var(--font-mono), monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
 .lesson-head h1 { margin-top: 6px; color: #fff; font-family: var(--font-display), sans-serif; font-size: clamp(26px, 3.2vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 .lesson-lead { margin-top: 10px; color: #94a3b8; font-size: 15px; line-height: 1.6; }
+.lesson-download { position: relative; display: inline-block; margin-top: 14px; }
+.lesson-download-toggle { display: inline-flex; align-items: center; gap: 7px; }
+.lesson-download-menu { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; display: grid; min-width: 190px; overflow: hidden; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: #0f172a; box-shadow: 0 12px 32px rgba(0,0,0,.35); }
+.lesson-download-menu button { display: flex; align-items: center; gap: 8px; border: 0; background: none; padding: 10px 14px; color: #e2e8f0; font-size: 13.5px; text-align: left; cursor: pointer; }
+.lesson-download-menu button:hover { background: rgba(148,163,184,.12); }
+.lesson-download-menu button:disabled { cursor: wait; opacity: .6; }
+.lesson-download-error { margin-top: 8px; color: #f87171; font-size: 12.5px; }
+.lesson-print-only { display: none; }
 .lesson-section { scroll-margin-top: 96px; }
 .lesson-section + .lesson-section { margin-top: 48px; border-top: 1px solid var(--lesson-line); padding-top: 36px; }
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
@@ -1957,3 +1965,16 @@ body:has(.admin-shell) .fixed.bottom-5.left-5 { left: 268px; }
 }
 /* Ngăn kéo quản trị đang mở thì ẩn nút nổi để không che mục Đăng xuất. */
 body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
+
+/* In bài học (nút "In / Lưu PDF"): chỉ hiện bản Lý thuyết + Bài tập mẫu đã gộp
+   sẵn (.lesson-print-only), ẩn navbar/sidebar/nút bấm — công thức KaTeX đã
+   render sẵn trên trang nên in ra đúng như trên web, khỏi dựng PDF riêng. */
+@media print {
+  nav, footer, .lesson-nav, .lesson-head, .lesson-section, .lesson-pager { display: none !important; }
+  .lesson-shell, .lesson-layout, .lesson-main { display: block !important; width: 100% !important; max-width: none !important; }
+  .lesson-print-only { display: block !important; color: #0f172a; background: #fff; }
+  .lesson-print-only h1 { font-size: 22px; margin-bottom: 4px; }
+  .lesson-print-sub { color: #475569; font-size: 13px; margin-bottom: 16px; }
+  .lesson-print-only img { max-width: 100% !important; }
+  .lesson-print-only table { page-break-inside: avoid; }
+}

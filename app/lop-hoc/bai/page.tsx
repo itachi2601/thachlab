@@ -11,6 +11,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import LessonDownloadMenu from "@/components/lessons/LessonDownloadMenu";
+import { buildLessonArticleHtml } from "@/services/lesson-export";
 import type { SchoolClass } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
@@ -351,6 +353,9 @@ function LessonLoader() {
     return SECTION_ORDER.map((kind) => ({ kind, items: items.filter((i) => i.kind === kind) }));
   }, [items]);
 
+  // Lý thuyết + Bài tập mẫu gộp lại — dùng cho bản in (PDF) và làm nguồn cho nút Tải bài học.
+  const articleHtml = useMemo(() => buildLessonArticleHtml(items ?? []), [items]);
+
   // Đánh dấu mục đang đọc trên thanh điều hướng theo vị trí cuộn.
   useEffect(() => {
     const root = mainRef.current;
@@ -579,7 +584,18 @@ function LessonLoader() {
           <header className="lesson-head">
             <p className="lesson-eyebrow">{chapterTitle}</p>
             <h1>{title}</h1>
+            <LessonDownloadMenu
+              lessonTitle={title}
+              chapterTitle={chapterTitle}
+              items={items}
+              onPrint={() => window.print()}
+            />
           </header>
+          <div className="lesson-print-only">
+            <h1>{title}</h1>
+            {chapterTitle && <p className="lesson-print-sub">{chapterTitle}</p>}
+            <ContentHtml html={articleHtml} className="block" />
+          </div>
 
           {visibleSections.length === 0 && (
             <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>
