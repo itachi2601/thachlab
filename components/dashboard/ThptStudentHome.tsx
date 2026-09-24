@@ -27,6 +27,7 @@ import {
 } from "@/services/analytics";
 import RankBadge from "@/components/rank/RankBadge";
 import RankCard from "@/components/rank/RankCard";
+import ClassRankBoard from "@/components/rank/ClassRankBoard";
 import { tierLabel, type RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus } from "@/services/rank";
 import {
@@ -333,6 +334,7 @@ export default function ThptStudentHome({
       </section>
 
       <RankCard status={rank} name={profile?.full_name} />
+      <ClassRankBoard classId={classId} />
 
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
       <Section icon={Megaphone} title="Việc cần làm hôm nay">

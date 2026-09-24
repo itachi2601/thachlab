@@ -3,6 +3,7 @@
 
 import type { ExamQuestion } from "@/features/exams/types";
 import type {
+  ClassRankBoard,
   ClassRankGroups,
   FixQuizResult,
   FixQuizStart,
@@ -68,6 +69,12 @@ export async function fetchClassRankGroups(classId: number): Promise<ClassRankGr
   const { data, error } = await getSupabase().rpc("rank_class_groups", { p_class_id: classId });
   if (error) throw error;
   return (data as ClassRankGroups | null) ?? null;
+}
+
+export async function fetchClassRankBoard(classId: number): Promise<ClassRankBoard | null> {
+  const { data, error } = await getSupabase().rpc("rank_class_board", { p_class_id: classId });
+  if (error) throw error;
+  return (data as ClassRankBoard | null) ?? null;
 }
 
 // ============================================================

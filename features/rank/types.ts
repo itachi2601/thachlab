@@ -258,6 +258,28 @@ export interface ClassRankGroups {
   week_start: string;
 }
 
+export interface ClassRankBoardMember {
+  name: string;
+  avatar: string | null;
+  rp_week: number;
+}
+
+export interface ClassRankBoard {
+  season: { id: number; name: string; starts_on: string; ends_on: string } | null;
+  week_start: string;
+  total: number;
+  top_week: (ClassRankBoardMember & { pos: number; tier_code: TierCode | null; division: number | null; is_me: boolean })[];
+  me: {
+    pos: number;
+    rp_week: number;
+    tied: number;
+    above: ClassRankBoardMember | null;
+    below: ClassRankBoardMember | null;
+  } | null;
+  improved: (ClassRankBoardMember & { delta: number }) | null;
+  weekly: { name: string; kind: "weekly_goal" | "tier_up" | "title"; label: string; at: string }[];
+}
+
 // ---------- sửa sai ----------
 export interface FixQuizStart {
   attemptId: number;
