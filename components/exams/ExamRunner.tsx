@@ -25,7 +25,10 @@ import { fetchQuestionTopics } from "@/services/analytics";
 import {
   finishExamAttempt,
   findExistingExamResultId,
+  findOpenExamAttempt,
+  saveExamAttemptProgress,
   startExamAttempt,
+  type OpenExamAttempt,
 } from "@/services/progress";
 import { getSupabase } from "@/services/supabase";
 
@@ -92,8 +95,24 @@ export default function ExamRunner({
   const hiddenAtRef = useRef<number | null>(null);
   const everFullscreenRef = useRef(false);
   // Sinh 1 lần/lượt làm, giữ nguyên khi bấm "Thử lại" — chống lưu trùng nếu mạng lỗi giữa chừng.
+  // Nếu khôi phục bài đang làm dở thì thay bằng client_token của lượt cũ (xem beginExam).
   const clientTokenRef = useRef<string>(crypto.randomUUID());
   const savedResultIdRef = useRef<number | null>(null);
+  const secondsLeftRef = useRef(secondsLeft);
+
+  // Bài đang làm dở của học sinh này cho đúng đề này (nếu có) — dò 1 lần khi vào
+  // màn hình giới thiệu, undefined = đang dò, null = không có.
+  const [resumable, setResumable] = useState<OpenExamAttempt | null | undefined>(undefined);
+  useEffect(() => {
+    if (!session || phase !== "intro") return;
+    let cancelled = false;
+    findOpenExamAttempt(session.user.id, exam.id).then((a) => {
+      if (!cancelled) setResumable(a);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [session, exam.id, phase]);
 
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
@@ -209,15 +228,24 @@ export default function ExamRunner({
     if (phase !== "running") return;
     const timer = setInterval(() => {
       setSecondsLeft((s) => {
-        if (s <= 1) {
-          submit();
-          return 0;
-        }
-        return s - 1;
+        const next = s <= 1 ? 0 : s - 1;
+        secondsLeftRef.current = next;
+        if (s <= 1) submit();
+        return next;
       });
     }, 1000);
     return () => clearInterval(timer);
   }, [phase, submit]);
+
+  // Tự lưu tiến độ (đáp án + thời gian còn lại) vào exam_attempts mỗi 15s, để
+  // lỡ thoát ra/mất mạng/sập máy thì vào lại vẫn khôi phục được, không phải làm lại.
+  useEffect(() => {
+    if (phase !== "running") return;
+    const timer = setInterval(() => {
+      void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
+    }, 15000);
+    return () => clearInterval(timer);
+  }, [phase]);
 
   // Ghi nhận rời tab / thoát fullscreen lúc đang làm bài — chỉ log + cảnh báo,
   // không tự nộp bài, không chặn thao tác gì khác.
@@ -235,6 +263,7 @@ export default function ExamRunner({
     function onVisibilityChange() {
       if (document.hidden) {
         hiddenAtRef.current = Date.now();
+        void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
         return;
       }
       if (hiddenAtRef.current == null) return;
@@ -277,6 +306,31 @@ export default function ExamRunner({
   }, [violationBanner]);
 
   if (phase === "intro") {
+    const fullSeconds = exam.duration_minutes * 60;
+    // responses lưu lại có thể lệch số câu nếu đề đã bị sửa từ lúc bắt đầu — bỏ qua cho an toàn.
+    const savedResponses =
+      resumable?.responses && resumable.responses.length === exam.questions.length ? resumable.responses : null;
+    const savedSecondsLeft = resumable ? Math.min(fullSeconds, resumable.secondsLeft ?? fullSeconds) : null;
+
+    function beginExam() {
+      if (resumable) {
+        clientTokenRef.current = resumable.clientToken;
+        if (savedResponses) {
+          responsesRef.current = savedResponses;
+          setResponses(savedResponses);
+        }
+      } else if (session) {
+        void startExamAttempt(session.user.id, clientTokenRef.current, exam.id, itemId);
+      }
+      const startSecondsLeft = savedSecondsLeft ?? fullSeconds;
+      secondsLeftRef.current = startSecondsLeft;
+      setSecondsLeft(startSecondsLeft);
+      // Giữ nguyên mốc thời gian đã dùng trước đó — coi như tạm dừng lúc thoát ra.
+      startedAt.current = Date.now() - (fullSeconds - startSecondsLeft) * 1000;
+      setPhase("running");
+      document.documentElement.requestFullscreen().catch(() => undefined);
+    }
+
     return (
       <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8">
         <h1 className="font-display text-2xl font-bold text-white">
@@ -293,16 +347,16 @@ export default function ExamRunner({
           </span>
           {profile?.class_name && ` · Lớp ${profile.class_name}`}
         </p>
+        {resumable && (
+          <p className="mt-3 rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-2.5 text-sm text-amber-200">
+            Em có một lượt làm dở còn {formatClock(savedSecondsLeft ?? fullSeconds)} — bấm bên dưới để làm tiếp, không mất bài.
+          </p>
+        )}
         <Button
-          onClick={() => {
-            startedAt.current = Date.now();
-            setPhase("running");
-            document.documentElement.requestFullscreen().catch(() => undefined);
-            if (session) void startExamAttempt(session.user.id, clientTokenRef.current, exam.id, itemId);
-          }}
+          onClick={beginExam}
           className="mt-6 w-full py-3 transition-transform hover:-translate-y-0.5"
         >
-          Bắt đầu làm bài
+          {resumable ? "Làm tiếp bài đang dở" : "Bắt đầu làm bài"}
         </Button>
         <p className="mt-3 text-center text-xs text-slate-500">
           Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.

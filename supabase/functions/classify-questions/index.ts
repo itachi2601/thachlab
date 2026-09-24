@@ -21,6 +21,8 @@ const MODEL = "claude-haiku-4-5";
 const MAX_ITEMS = 60;
 const FORMS = ["ly_thuyet", "bai_tap"] as const;
 type Form = (typeof FORMS)[number];
+const DIFFICULTIES = ["de", "trung-binh", "kho"] as const;
+type Difficulty = (typeof DIFFICULTIES)[number];
 
 interface Item {
   index: number;
@@ -30,6 +32,7 @@ interface ResultRow {
   index: number;
   topic?: string;
   form?: Form;
+  difficulty?: Difficulty;
 }
 
 function jsonResponse(body: unknown, status = 200) {
@@ -46,8 +49,11 @@ function buildPrompt(topics: string[], items: Item[]): string {
     `Danh mục yêu cầu cần đạt (chỉ được chọn NGUYÊN VĂN một mục trong danh sách này cho mỗi câu, ` +
     `không tự đặt tên mới, không sửa chính tả):\n${topicList}\n\n` +
     `Phân loại từng câu hỏi Vật lý THPT dưới đây: chọn đúng 1 yêu cầu cần đạt phù hợp nhất trong ` +
-    `danh mục trên, và xác định "form" là "ly_thuyet" (câu hỏi lý thuyết/khái niệm/định nghĩa, ` +
-    `không cần tính toán) hoặc "bai_tap" (câu có số liệu/công thức/tính toán để ra đáp số).\n\n${itemList}`
+    `danh mục trên, xác định "form" là "ly_thuyet" (câu hỏi lý thuyết/khái niệm/định nghĩa, ` +
+    `không cần tính toán) hoặc "bai_tap" (câu có số liệu/công thức/tính toán để ra đáp số), và xác định ` +
+    `"difficulty" — độ khó với học sinh THPT trung bình — là "de" (nhận biết/áp dụng công thức trực ` +
+    `tiếp, 1 bước tính), "trung-binh" (cần 2-3 bước biến đổi hoặc kết hợp 2 khái niệm), hoặc "kho" ` +
+    `(nhiều bước, đồ thị/tình huống phức tạp, hoặc dễ nhầm lẫn).\n\n${itemList}`
   );
 }
 
@@ -101,7 +107,8 @@ Deno.serve(async (req) => {
       max_tokens: 4096,
       system:
         "Bạn là trợ lý phân loại câu hỏi trắc nghiệm Vật lý THPT theo yêu cầu cần đạt (YCCĐ). " +
-        'Chỉ trả về DUY NHẤT một JSON hợp lệ đúng dạng {"results":[{"index":0,"topic":"...","form":"ly_thuyet"}]}, ' +
+        'Chỉ trả về DUY NHẤT một JSON hợp lệ đúng dạng ' +
+        '{"results":[{"index":0,"topic":"...","form":"ly_thuyet","difficulty":"de"}]}, ' +
         "không kèm lời giải thích, không bọc trong markdown code fence.",
       messages: [{ role: "user", content: buildPrompt(topics, items) }],
     });
@@ -125,7 +132,9 @@ Deno.serve(async (req) => {
       const out: ResultRow = { index };
       if (typeof r.topic === "string" && topicSet.has(r.topic)) out.topic = r.topic;
       if (typeof r.form === "string" && (FORMS as readonly string[]).includes(r.form)) out.form = r.form as Form;
-      if (out.topic || out.form) results.push(out);
+      if (typeof r.difficulty === "string" && (DIFFICULTIES as readonly string[]).includes(r.difficulty))
+        out.difficulty = r.difficulty as Difficulty;
+      if (out.topic || out.form || out.difficulty) results.push(out);
     }
     return jsonResponse({ results });
   } catch (cause) {

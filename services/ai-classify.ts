@@ -3,7 +3,7 @@
  * hỏi còn thiếu nhãn ở trang Đăng đề — giới hạn trong đúng danh mục YCCĐ của bài đang soạn,
  * không tự bịa nhãn ngoài danh mục (server đã lọc, nhưng vẫn coi kết quả là gợi ý cần đối chiếu).
  */
-import type { QuestionForm } from "@/features/exams/types";
+import type { Difficulty, QuestionForm } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
 export interface AiClassifyItem {
@@ -15,6 +15,7 @@ export interface AiClassifyResult {
   index: number;
   topic?: string;
   form?: QuestionForm;
+  difficulty?: Exclude<Difficulty, "">;
 }
 
 export async function classifyQuestionTags(

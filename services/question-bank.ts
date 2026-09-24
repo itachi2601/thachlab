@@ -149,6 +149,27 @@ export async function fetchBankUnknownGradeCount(): Promise<number> {
   return count ?? 0;
 }
 
+export interface SimilarPair {
+  topicId: number | null;
+  topicName: string;
+  id1: number;
+  id2: number;
+  similarity: number;
+}
+
+/** Cặp câu nghi giống nhau trong cùng chủ đề (trigram trên nội dung câu, bỏ thẻ HTML) — chỉ để
+ * cảnh báo, thầy tự xem và lưu trữ câu thừa. Xem docs/supabase-migration-question-bank-similarity.sql. */
+export async function fetchSimilarBankQuestions(grade: string, threshold = 0.5): Promise<SimilarPair[]> {
+  const { data, error } = await getSupabase().rpc("find_similar_bank_questions", {
+    p_grade: grade,
+    p_threshold: threshold,
+  });
+  if (error) throw new Error(error.message);
+  return ((data as { topic_id: number | null; topic_name: string; id1: number; id2: number; similarity: number }[]) ?? []).map(
+    (r) => ({ topicId: r.topic_id, topicName: r.topic_name, id1: r.id1, id2: r.id2, similarity: r.similarity }),
+  );
+}
+
 export interface BankPatch {
   topicName?: string; // '' = bỏ nhãn; trigger DB tự tra topic_id + khối theo tên
   form?: QuestionForm | "";
@@ -180,6 +201,64 @@ export async function updateBankQuestions(ids: number[], patch: BankPatch): Prom
   if (patch.grade !== undefined) payload.grade = patch.grade;
   const { error } = await getSupabase().from("question_bank").update(payload).in("id", ids);
   if (error) throw new Error(error.message);
+}
+
+export interface SourceLabelPatch {
+  sourceExamId: number;
+  sourceIndex: number;
+  topicName?: string;
+  form?: QuestionForm | "";
+}
+
+/**
+ * Ghi nhãn ngược vào đúng câu trong `exams.questions` của đề gốc (source_exam_id/source_index),
+ * để đề đã đăng cũng có nhãn — không chỉ bản sao trong ngân hàng — phục vụ phân tích/cảnh báo
+ * phụ đạo (đọc `topic` thẳng từ exams.questions, không đọc từ question_bank). Giới hạn đã biết:
+ * nếu câu trùng content_hash với một đề khác có trước, source_exam_id trỏ về đề CŨ đó (trigger
+ * DB không cập nhật lại khi trùng) — lượt vá này sẽ không chạm tới đề đang xem.
+ */
+export async function syncLabelsToSourceExams(
+  patches: SourceLabelPatch[],
+): Promise<{ examsUpdated: number; failed: number }> {
+  const byExam = new Map<number, SourceLabelPatch[]>();
+  for (const p of patches) {
+    const arr = byExam.get(p.sourceExamId) ?? [];
+    arr.push(p);
+    byExam.set(p.sourceExamId, arr);
+  }
+  const sb = getSupabase();
+  let examsUpdated = 0;
+  let failed = 0;
+  for (const [examId, list] of byExam) {
+    try {
+      const { data, error } = await sb.from("exams").select("questions").eq("id", examId).single();
+      if (error || !data || !Array.isArray(data.questions)) {
+        failed++;
+        continue;
+      }
+      const questions = [...(data.questions as ExamQuestion[])];
+      let changed = false;
+      for (const p of list) {
+        const q = questions[p.sourceIndex];
+        if (!q || typeof q !== "object") continue;
+        const next = { ...q } as ExamQuestion;
+        if (p.topicName !== undefined) next.topic = p.topicName;
+        if (p.form !== undefined) next.form = p.form;
+        questions[p.sourceIndex] = next;
+        changed = true;
+      }
+      if (!changed) continue;
+      const { error: updErr } = await sb.from("exams").update({ questions }).eq("id", examId);
+      if (updErr) {
+        failed++;
+        continue;
+      }
+      examsUpdated++;
+    } catch {
+      failed++;
+    }
+  }
+  return { examsUpdated, failed };
 }
 
 // ---------- Giỏ câu (chọn từ ngân hàng → mang sang trang Đăng đề) ----------

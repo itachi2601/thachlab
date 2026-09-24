@@ -22,6 +22,7 @@
  */
 
 import type {
+  Difficulty,
   ExamQuestion,
   MultipleChoiceQuestion,
   QuestionForm,
@@ -77,10 +78,11 @@ const FIELD_LINE_RE =
  * Dòng nhãn phân loại của một câu (đặt ở bất kỳ đâu trong khối câu, thường sau "Lời giải"):
  *   Chủ đề: <tên yêu cầu cần đạt trong danh mục>     (cũng nhận YCCĐ: / Yêu cầu cần đạt: / Năng lực:)
  *   Dạng: lý thuyết | bài tập                           (cũng nhận Loại:)
+ *   Mức độ: dễ | trung bình | khó                       (cũng nhận Độ khó:)
  * Bắt buộc có dấu hai chấm để không cắt nhầm câu dẫn bắt đầu bằng "Dạng…".
  */
 const TAG_LINE_RE =
-  /^\\?(?:textbf\{)?\s*(Chủ\s*đề|YCCĐ|Yêu\s*cầu\s*cần\s*đạt|Năng\s*lực|Dạng|Loại)\}?\s*[:：]\s*(.*?)\s*$/i;
+  /^\\?(?:textbf\{)?\s*(Chủ\s*đề|YCCĐ|Yêu\s*cầu\s*cần\s*đạt|Năng\s*lực|Dạng|Loại|Mức\s*độ|Độ\s*khó)\}?\s*[:：]\s*(.*?)\s*$/i;
 
 export function parseFormLabel(raw: string): QuestionForm | "" {
   const v = raw.trim().toLowerCase();
@@ -90,14 +92,24 @@ export function parseFormLabel(raw: string): QuestionForm | "" {
   return "";
 }
 
-/** Rút dòng "Chủ đề:" / "Dạng:" ra khỏi khối câu; trả về khối đã bỏ các dòng đó. */
+export function parseDifficultyLabel(raw: string): Difficulty {
+  const v = raw.trim().toLowerCase();
+  if (!v) return "";
+  if (/^(d[ễe]|de)$/.test(v)) return "de";
+  if (/^(trung\s*b[ìi]nh|tb|trung-binh)$/.test(v)) return "trung-binh";
+  if (/^(kh[óo]|kho)$/.test(v)) return "kho";
+  return "";
+}
+
+/** Rút dòng "Chủ đề:" / "Dạng:" / "Mức độ:" ra khỏi khối câu; trả về khối đã bỏ các dòng đó. */
 function extractTags(
   block: string,
   n: number,
   warnings: string[],
-): { block: string; topic: string; form: QuestionForm | "" } {
+): { block: string; topic: string; form: QuestionForm | ""; difficulty: Difficulty } {
   let topic = "";
   let form: QuestionForm | "" = "";
+  let difficulty: Difficulty = "";
   const kept: string[] = [];
   for (const line of block.split("\n")) {
     const m = line.match(TAG_LINE_RE);
@@ -110,9 +122,12 @@ function extractTags(
     if (/^(d[ạa]ng|lo[ạa]i)$/.test(key)) {
       form = parseFormLabel(value);
       if (value && !form) warnings.push(`Câu ${n}: "Dạng: ${value}" không hiểu — chỉ nhận "lý thuyết" hoặc "bài tập".`);
+    } else if (/^(m[ứu]c\s*độ|độ\s*kh[óo])$/.test(key)) {
+      difficulty = parseDifficultyLabel(value);
+      if (value && !difficulty) warnings.push(`Câu ${n}: "Mức độ: ${value}" không hiểu — chỉ nhận "dễ", "trung bình" hoặc "khó".`);
     } else topic = value.replace(/\s+/g, " ");
   }
-  return { block: kept.join("\n"), topic, form };
+  return { block: kept.join("\n"), topic, form, difficulty };
 }
 
 /** Phần thân câu, cắt bỏ từ dòng "Đáp án" / "Lời giải" trở đi. */
@@ -288,7 +303,7 @@ function parseBlock(
   warnings: string[],
   lenient: boolean,
 ): ExamQuestion | null {
-  const { block, topic, form } = extractTags(raw, n, warnings);
+  const { block, topic, form, difficulty } = extractTags(raw, n, warnings);
   const answerRaw = findField(block, "Đáp\\s*án\\s*đúng|Đáp\\s*án|Đáp\\s*số|answer");
   const explanation = explanationOf(block);
   const q =
@@ -300,6 +315,7 @@ function parseBlock(
   if (!q) return q;
   if (topic) q.topic = topic;
   if (form) q.form = form;
+  if (difficulty) q.difficulty = difficulty;
   return q;
 }
 

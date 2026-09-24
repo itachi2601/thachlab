@@ -131,8 +131,9 @@ export function setShortAnswer(text: string, index: number, value: string): stri
 const TAG_LINES = {
   topic: /^\s*(?:Chủ\s*đề|YCCĐ|Yêu\s*cầu\s*cần\s*đạt|Năng\s*lực)\s*[:：]/i,
   form: /^\s*(?:Dạng|Loại)\s*[:：]/i,
+  difficulty: /^\s*(?:Mức\s*độ|Độ\s*khó)\s*[:：]/i,
 } as const;
-const TAG_LABEL = { topic: "Chủ đề", form: "Dạng" } as const;
+const TAG_LABEL = { topic: "Chủ đề", form: "Dạng", difficulty: "Mức độ" } as const;
 export type TagField = keyof typeof TAG_LINES;
 
 /**

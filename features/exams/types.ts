@@ -16,6 +16,7 @@ export const QUESTION_FORM_LABELS: Record<QuestionForm, string> = {
 interface QuestionTags {
   topic?: string;
   form?: QuestionForm | "";
+  difficulty?: Difficulty;
 }
 
 export interface MultipleChoiceQuestion extends QuestionTags {
@@ -309,6 +310,7 @@ export interface TagAudit {
   tagged: number; // số câu có cả topic + form
   missingTopic: number[]; // số câu (đếm từ 1) thiếu chủ đề
   missingForm: number[]; // số câu thiếu/sai loại
+  missingDifficulty: number[]; // số câu chưa gắn mức độ — không chặn Đăng, chỉ nhắc
   known: { name: string; count: number }[]; // chủ đề có trong danh mục
   unknown: { name: string; count: number }[]; // chủ đề chưa có trong danh mục
   // Gắn ở tầng bài trong khi bài đó đã có yêu cầu cần đạt con — vẫn thống kê được,
@@ -333,6 +335,7 @@ export function auditQuestionTags(
     tagged: 0,
     missingTopic: [],
     missingForm: [],
+    missingDifficulty: [],
     known: [],
     unknown: [],
     coarse: [],
@@ -344,6 +347,7 @@ export function auditQuestionTags(
     const formOk = form === "ly_thuyet" || form === "bai_tap";
     if (!name) audit.missingTopic.push(i + 1);
     if (!formOk) audit.missingForm.push(i + 1);
+    if (!q.difficulty) audit.missingDifficulty.push(i + 1);
     if (name && formOk) audit.tagged += 1;
     if (!name) return;
     const key = topicKey(name);

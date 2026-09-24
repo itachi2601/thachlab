@@ -5,7 +5,14 @@ import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Sparkles, Up
 import ContentHtml from "@/components/exams/ContentHtml";
 import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import { useToast } from "@/components/ui/Toast";
-import { QUESTION_FORM_LABELS, auditQuestionTags, type ExamQuestion, type QuestionForm } from "@/features/exams/types";
+import {
+  DIFFICULTY_LABELS,
+  QUESTION_FORM_LABELS,
+  auditQuestionTags,
+  type Difficulty,
+  type ExamQuestion,
+  type QuestionForm,
+} from "@/features/exams/types";
 import { classifyQuestionTags } from "@/services/ai-classify";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
@@ -603,12 +610,13 @@ function TagGrid({
   const known = useMemo(() => new Set(groups.flatMap((g) => g.names).map((n) => n.toLowerCase())), [groups]);
   const untaggedTopic = questions.map((_, i) => i).filter((i) => !(questions[i].topic ?? "").trim());
   const untaggedForm = questions.map((_, i) => i).filter((i) => !questions[i].form);
+  const untaggedDifficulty = questions.map((_, i) => i).filter((i) => !questions[i].difficulty);
   // Bài đang chọn luôn đứng đầu `groups` (composer xếp "mine" trước — xem AzotaExamComposer/LessonImporter),
   // nên khi đã chọn bài, groups[0] chính là danh mục YCCĐ đúng của bài đó.
   const aiCandidates = lessonPicked ? (groups[0]?.names ?? []) : [];
   const aiTargets = useMemo(
-    () => Array.from(new Set([...untaggedTopic, ...untaggedForm])).sort((a, b) => a - b),
-    [untaggedTopic, untaggedForm],
+    () => Array.from(new Set([...untaggedTopic, ...untaggedForm, ...untaggedDifficulty])).sort((a, b) => a - b),
+    [untaggedTopic, untaggedForm, untaggedDifficulty],
   );
   const aiAvailable = enabled && aiCandidates.length > 0 && aiTargets.length > 0;
 
@@ -621,6 +629,7 @@ function TagGrid({
       for (const r of results) {
         if (r.topic) onTag(r.index, "topic", r.topic);
         if (r.form) onTag(r.index, "form", QUESTION_FORM_LABELS[r.form].toLowerCase());
+        if (r.difficulty) onTag(r.index, "difficulty", DIFFICULTY_LABELS[r.difficulty].toLowerCase());
       }
       toast(
         results.length > 0 ? "success" : "error",
@@ -659,12 +668,15 @@ function TagGrid({
     <div className="admin-card">
       <div className="flex w-full items-center gap-2 text-xs">
         <button type="button" onClick={() => setOpen((o) => !o)} className="flex items-center gap-2 text-left">
-          <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt & dạng</span>
+          <span className="font-semibold text-slate-400">Phân loại câu — yêu cầu cần đạt, dạng & mức độ</span>
           <span className={audit.tagged === audit.total ? "text-emerald-300" : "text-amber-300"}>
             {audit.tagged}/{audit.total} câu đã gắn đủ
           </span>
           {audit.unknown.length > 0 && (
             <span className="text-amber-300">· {audit.unknown.length} chủ đề không có trong danh mục</span>
+          )}
+          {audit.missingDifficulty.length > 0 && (
+            <span className="text-slate-500">· {audit.missingDifficulty.length} câu chưa gắn mức độ</span>
           )}
         </button>
         <div className="ml-auto flex items-center gap-2">
@@ -725,14 +737,30 @@ function TagGrid({
                   ))}
                 </span>
               )}
+              {untaggedDifficulty.length > 0 && (
+                <span className="inline-flex items-center gap-1">
+                  {untaggedDifficulty.length} câu chưa có mức độ →
+                  {(["de", "trung-binh", "kho"] as Exclude<Difficulty, "">[]).map((d) => (
+                    <button
+                      key={d}
+                      type="button"
+                      onClick={() => onTagMany(untaggedDifficulty, "difficulty", DIFFICULTY_LABELS[d].toLowerCase())}
+                      className="rounded bg-white/10 px-2 py-0.5 font-semibold text-slate-200 hover:bg-white/20"
+                    >
+                      {DIFFICULTY_LABELS[d]}
+                    </button>
+                  ))}
+                </span>
+              )}
             </div>
           )}
           <div className="grid gap-1">
             {questions.map((q, i) => {
               const topic = (q.topic ?? "").trim();
               const unknown = !!topic && !known.has(topic.toLowerCase());
+              const DIFFICULTY_SHORT: Record<Exclude<Difficulty, "">, string> = { de: "Dễ", "trung-binh": "TB", kho: "Khó" };
               return (
-                <div key={i} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-center gap-1">
+                <div key={i} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto_auto] items-center gap-1">
                   <span className="text-right text-[11px] font-bold text-slate-400">{i + 1}</span>
                   <select
                     value={topic}
@@ -755,6 +783,22 @@ function TagGrid({
                         }`}
                       >
                         {f === "ly_thuyet" ? "LT" : "BT"}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex gap-0.5">
+                    {(["de", "trung-binh", "kho"] as Exclude<Difficulty, "">[]).map((d) => (
+                      <button
+                        key={d}
+                        type="button"
+                        disabled={!enabled}
+                        title={DIFFICULTY_LABELS[d]}
+                        onClick={() => onTag(i, "difficulty", q.difficulty === d ? "" : DIFFICULTY_LABELS[d].toLowerCase())}
+                        className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
+                          q.difficulty === d ? "bg-emerald-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
+                        }`}
+                      >
+                        {DIFFICULTY_SHORT[d]}
                       </button>
                     ))}
                   </div>

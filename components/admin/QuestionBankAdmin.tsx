@@ -13,6 +13,7 @@ import {
   ListChecks,
   RefreshCw,
   Search,
+  Sparkles,
   Trash2,
 } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -26,13 +27,17 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { TYPE_SHORT } from "@/features/lessons/types";
+import { classifyQuestionTags } from "@/services/ai-classify";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
+import { questionTextForAi } from "@/services/exam-question-text";
 import {
   fetchBankQuestions,
   fetchBankQuestionsByIds,
   fetchBankTopicCounts,
   fetchBankUnknownGradeCount,
+  fetchSimilarBankQuestions,
   readBasket,
+  syncLabelsToSourceExams,
   toExamQuestion,
   updateBankQuestion,
   updateBankQuestions,
@@ -40,7 +45,11 @@ import {
   writeHandoff,
   type BankQuestion,
   type BankTopicCount,
+  type SimilarPair,
+  type SourceLabelPatch,
 } from "@/services/question-bank";
+
+const AI_BATCH_LIMIT = 60;
 
 const GRADES = ["10", "11", "12", "9"];
 const LETTERS = ["A", "B", "C", "D"];
@@ -54,6 +63,7 @@ type Node =
   | { kind: "all" }
   | { kind: "untagged" }
   | { kind: "unknown-grade" }
+  | { kind: "duplicates" }
   | { kind: "topic"; id: number; parent: boolean };
 
 const QTYPE_OPTIONS: { value: ExamQuestion["type"] | ""; label: string }[] = [
@@ -88,6 +98,7 @@ export default function QuestionBankAdmin() {
   const [basketOpen, setBasketOpen] = useState(false);
   const [randomN, setRandomN] = useState(10);
   const [bulkTopic, setBulkTopic] = useState("");
+  const [aiBusy, setAiBusy] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setDebounced(search), 300);
@@ -128,15 +139,54 @@ export default function QuestionBankAdmin() {
     () => parents.map((p) => ({ parent: p, outcomes: outcomesOf(topics, p.id) })),
     [parents, topics],
   );
+  // Danh mục cho AI: cả khối (rộng hơn danh mục 1 bài ở trang Đăng đề, vì ở đây không có "bài đang chọn").
+  const aiCandidateNames = useMemo(
+    () => topicGroups.flatMap(({ parent, outcomes }) => [parent.name, ...outcomes.map((o) => o.name)]),
+    [topicGroups],
+  );
+  const aiTargets = useMemo(
+    () => items.filter((q) => !q.archived && (!q.topicName.trim() || !q.form)),
+    [items],
+  );
 
   const topicIdsFilter = useMemo<(number | null)[] | undefined>(() => {
-    if (node.kind === "all" || node.kind === "unknown-grade") return undefined;
+    if (node.kind === "all" || node.kind === "unknown-grade" || node.kind === "duplicates") return undefined;
     if (node.kind === "untagged") return [null];
     if (!node.parent) return [node.id];
     return [node.id, ...outcomesOf(topics, node.id).map((o) => o.id)];
   }, [node, topics]);
 
+  const [dupThreshold, setDupThreshold] = useState(0.5);
+  const [dupPairs, setDupPairs] = useState<SimilarPair[]>([]);
+  const [dupQuestions, setDupQuestions] = useState<Map<number, BankQuestion>>(new Map());
+  const [dupDismissed, setDupDismissed] = useState<Set<string>>(new Set());
+  const [dupBusy, setDupBusy] = useState(false);
+
+  const scanDuplicates = useCallback(async () => {
+    setDupBusy(true);
+    try {
+      const pairs = await fetchSimilarBankQuestions(grade, dupThreshold);
+      setDupPairs(pairs);
+      setDupDismissed(new Set());
+      const ids = [...new Set(pairs.flatMap((p) => [p.id1, p.id2]))];
+      const qs = await fetchBankQuestionsByIds(ids);
+      setDupQuestions(new Map(qs.map((q) => [q.id, q])));
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setDupBusy(false);
+    }
+  }, [grade, dupThreshold, toast]);
+
+  useEffect(() => {
+    if (node.kind !== "duplicates") return;
+    scanDuplicates();
+    // Chỉ tự quét lại khi đổi khối/chuyển vào mục này — đổi ngưỡng giống nhau thì bấm nút "Quét câu trùng".
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [node.kind, grade]);
+
   const reloadItems = useCallback(() => {
+    if (node.kind === "duplicates") return setItems([]);
     const req = fetchBankQuestions({
       grade: node.kind === "unknown-grade" ? "" : grade,
       topicIds: topicIdsFilter,
@@ -210,6 +260,54 @@ export default function QuestionBankAdmin() {
     }
   }
 
+  async function runAutoTag() {
+    if (aiBusy || aiTargets.length === 0 || aiCandidateNames.length === 0) return;
+    setAiBusy(true);
+    try {
+      const batch = aiTargets.slice(0, AI_BATCH_LIMIT);
+      const aiItems = batch.map((q, i) => ({ index: i, text: questionTextForAi(q.question) }));
+      const results = await classifyQuestionTags(aiCandidateNames, aiItems);
+      const sourcePatches: SourceLabelPatch[] = [];
+      let applied = 0;
+      for (const r of results) {
+        const q = batch[r.index];
+        if (!q || (!r.topic && !r.form)) continue;
+        const bankPatch: Parameters<typeof updateBankQuestion>[1] = { grade };
+        if (r.topic) bankPatch.topicName = r.topic;
+        if (r.form) bankPatch.form = r.form;
+        try {
+          await updateBankQuestion(q.id, bankPatch);
+        } catch {
+          continue;
+        }
+        applied++;
+        if (q.sourceExamId !== null && q.sourceIndex !== null) {
+          sourcePatches.push({ sourceExamId: q.sourceExamId, sourceIndex: q.sourceIndex, topicName: r.topic, form: r.form });
+        }
+      }
+      let syncNote = "";
+      if (sourcePatches.length) {
+        const { examsUpdated, failed } = await syncLabelsToSourceExams(sourcePatches);
+        syncNote = ` Đã vá lại ${examsUpdated} đề gốc${failed ? `, ${failed} đề lỗi (kiểm tra tay)` : ""}.`;
+      }
+      reloadTree();
+      reloadItems();
+      toast(
+        applied > 0 ? "success" : "error",
+        applied > 0
+          ? `AI đã gắn nhãn ${applied}/${batch.length} câu.${syncNote}`
+          : "AI không gắn được nhãn nào — thử lại hoặc gắn tay.",
+      );
+      if (aiTargets.length > batch.length) {
+        toast("info", `Còn ${aiTargets.length - batch.length} câu chưa xử lý (giới hạn ${AI_BATCH_LIMIT} câu/lượt) — bấm lại để tiếp tục.`);
+      }
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setAiBusy(false);
+    }
+  }
+
   async function composeExam() {
     if (!basket.length) return;
     try {
@@ -227,6 +325,7 @@ export default function QuestionBankAdmin() {
     if (node.kind === "all") return `Tất cả câu khối ${grade}`;
     if (node.kind === "untagged") return "Câu chưa gắn năng lực";
     if (node.kind === "unknown-grade") return "Câu chưa rõ khối";
+    if (node.kind === "duplicates") return "Nghi trùng lặp";
     return topics.find((t) => t.id === node.id)?.name ?? "";
   })();
 
@@ -276,6 +375,13 @@ export default function QuestionBankAdmin() {
               warn
             />
           )}
+          <TreeRow
+            active={node.kind === "duplicates"}
+            onClick={() => setNode({ kind: "duplicates" })}
+            label="Nghi trùng lặp"
+            count={dupPairs.length}
+            warn={dupPairs.length > 0}
+          />
           <div className="my-2 border-t border-white/10" />
           {parents.length === 0 && (
             <p className="px-2 py-3 text-xs text-slate-500">
@@ -334,76 +440,111 @@ export default function QuestionBankAdmin() {
             <h2 className="mr-auto text-base font-semibold text-white">
               {nodeTitle} <span className="text-sm font-normal text-slate-500">· {items.length} câu</span>
             </h2>
-            <button type="button" onClick={reloadItems} className={btnCls} title="Tải lại">
+            {node.kind !== "duplicates" && aiTargets.length > 0 && aiCandidateNames.length > 0 && (
+              <button
+                type="button"
+                onClick={runAutoTag}
+                disabled={aiBusy}
+                className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1.5 text-xs font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
+                title="Gắn topic/form còn thiếu bằng AI, đồng thời vá lại đề gốc nếu câu có nguồn từ một đề đã đăng"
+              >
+                <Sparkles size={14} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${Math.min(aiTargets.length, AI_BATCH_LIMIT)}/${aiTargets.length} câu)`}
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={node.kind === "duplicates" ? scanDuplicates : reloadItems}
+              className={btnCls}
+              title="Tải lại"
+            >
               <RefreshCw size={14} />
             </button>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 admin-card">
-            <div className="relative min-w-[200px] flex-1">
-              <Search size={14} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Tìm trong nội dung câu hỏi…"
-                className={`${inputCls} w-full pl-8`}
-              />
-            </div>
-            <select value={qtype} onChange={(e) => setQtype(e.target.value as ExamQuestion["type"] | "")} className={selectCls}>
-              {QTYPE_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-            <select value={form} onChange={(e) => setForm(e.target.value as QuestionForm | "")} className={selectCls}>
-              <option value="">Lý thuyết + bài tập</option>
-              <option value="ly_thuyet">Lý thuyết</option>
-              <option value="bai_tap">Bài tập</option>
-            </select>
-            <select value={difficulty} onChange={(e) => setDifficulty(e.target.value as Difficulty | "all")} className={selectCls}>
-              <option value="all">Mọi độ khó</option>
-              {(Object.keys(DIFFICULTY_LABELS) as Difficulty[]).map((d) => (
-                <option key={d} value={d}>
-                  {DIFFICULTY_LABELS[d]}
-                </option>
-              ))}
-            </select>
-            <label className="flex items-center gap-1.5 text-xs text-slate-400">
-              <input type="checkbox" checked={showArchived} onChange={(e) => setShowArchived(e.target.checked)} />
-              Hiện câu đã lưu trữ
-            </label>
-            <div className="ml-auto flex items-center gap-1">
-              <input
-                type="number"
-                min={1}
-                max={100}
-                value={randomN}
-                onChange={(e) => setRandomN(Math.max(1, Number(e.target.value) || 1))}
-                className={`${inputCls} w-16 text-center`}
-              />
-              <button type="button" onClick={addRandom} disabled={items.length === 0} className={btnCls}>
-                <Dices size={14} /> Bốc ngẫu nhiên vào giỏ
-              </button>
-            </div>
-          </div>
-
-          {items.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-slate-500">
-              Chưa có câu nào ở mục này.
-            </div>
+          {node.kind === "duplicates" ? (
+            <DuplicatesPanel
+              pairs={dupPairs}
+              questions={dupQuestions}
+              dismissed={dupDismissed}
+              busy={dupBusy}
+              threshold={dupThreshold}
+              onThresholdChange={setDupThreshold}
+              onScan={scanDuplicates}
+              onDismiss={(key) => setDupDismissed((s) => new Set(s).add(key))}
+              onArchive={(id) => {
+                patch(id, { archived: true });
+                setDupPairs((ps) => ps.filter((p) => p.id1 !== id && p.id2 !== id));
+              }}
+            />
           ) : (
-            items.map((q, i) => (
-              <QuestionRow
-                key={q.id}
-                index={i + 1}
-                q={q}
-                picked={inBasket.has(q.id)}
-                onPick={() => toggleBasket(q.id)}
-                topicGroups={topicGroups}
-                onPatch={(p) => patch(q.id, p)}
-              />
-            ))
+            <>
+              <div className="flex flex-wrap items-center gap-2 admin-card">
+                <div className="relative min-w-[200px] flex-1">
+                  <Search size={14} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                  <input
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="Tìm trong nội dung câu hỏi…"
+                    className={`${inputCls} w-full pl-8`}
+                  />
+                </div>
+                <select value={qtype} onChange={(e) => setQtype(e.target.value as ExamQuestion["type"] | "")} className={selectCls}>
+                  {QTYPE_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+                <select value={form} onChange={(e) => setForm(e.target.value as QuestionForm | "")} className={selectCls}>
+                  <option value="">Lý thuyết + bài tập</option>
+                  <option value="ly_thuyet">Lý thuyết</option>
+                  <option value="bai_tap">Bài tập</option>
+                </select>
+                <select value={difficulty} onChange={(e) => setDifficulty(e.target.value as Difficulty | "all")} className={selectCls}>
+                  <option value="all">Mọi độ khó</option>
+                  {(Object.keys(DIFFICULTY_LABELS) as Difficulty[]).map((d) => (
+                    <option key={d} value={d}>
+                      {DIFFICULTY_LABELS[d]}
+                    </option>
+                  ))}
+                </select>
+                <label className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <input type="checkbox" checked={showArchived} onChange={(e) => setShowArchived(e.target.checked)} />
+                  Hiện câu đã lưu trữ
+                </label>
+                <div className="ml-auto flex items-center gap-1">
+                  <input
+                    type="number"
+                    min={1}
+                    max={100}
+                    value={randomN}
+                    onChange={(e) => setRandomN(Math.max(1, Number(e.target.value) || 1))}
+                    className={`${inputCls} w-16 text-center`}
+                  />
+                  <button type="button" onClick={addRandom} disabled={items.length === 0} className={btnCls}>
+                    <Dices size={14} /> Bốc ngẫu nhiên vào giỏ
+                  </button>
+                </div>
+              </div>
+
+              {items.length === 0 ? (
+                <div className="rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-slate-500">
+                  Chưa có câu nào ở mục này.
+                </div>
+              ) : (
+                items.map((q, i) => (
+                  <QuestionRow
+                    key={q.id}
+                    index={i + 1}
+                    q={q}
+                    picked={inBasket.has(q.id)}
+                    onPick={() => toggleBasket(q.id)}
+                    topicGroups={topicGroups}
+                    onPatch={(p) => patch(q.id, p)}
+                  />
+                ))
+              )}
+            </>
           )}
         </section>
       </div>
@@ -504,6 +645,98 @@ function TreeRow({
         {count}
       </span>
     </button>
+  );
+}
+
+function DuplicatesPanel({
+  pairs,
+  questions,
+  dismissed,
+  busy,
+  threshold,
+  onThresholdChange,
+  onScan,
+  onDismiss,
+  onArchive,
+}: {
+  pairs: SimilarPair[];
+  questions: Map<number, BankQuestion>;
+  dismissed: Set<string>;
+  busy: boolean;
+  threshold: number;
+  onThresholdChange: (v: number) => void;
+  onScan: () => void;
+  onDismiss: (key: string) => void;
+  onArchive: (id: number) => void;
+}) {
+  const visible = pairs.filter((p) => !dismissed.has(`${p.id1}-${p.id2}`));
+  return (
+    <div className="space-y-3">
+      <p className="admin-lead max-w-2xl" style={{ marginTop: 0 }}>
+        So các câu còn hoạt động trong cùng một chủ đề bằng độ giống văn bản — không tự gộp hay xoá,
+        chỉ gợi ý để thầy xem và lưu trữ bớt câu thừa.
+      </p>
+      <div className="flex flex-wrap items-center gap-3 admin-card">
+        <label className="flex items-center gap-2 text-xs text-slate-400">
+          Ngưỡng giống nhau
+          <input
+            type="range"
+            min={0.3}
+            max={0.9}
+            step={0.05}
+            value={threshold}
+            onChange={(e) => onThresholdChange(Number(e.target.value))}
+            className="w-32"
+          />
+          <span className="w-10 text-right text-slate-300">{Math.round(threshold * 100)}%</span>
+        </label>
+        <button type="button" onClick={onScan} disabled={busy} className={`${btnCls} ml-auto`}>
+          <RefreshCw size={14} /> {busy ? "Đang quét…" : "Quét câu trùng"}
+        </button>
+      </div>
+
+      {visible.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-slate-500">
+          {busy ? "Đang quét…" : 'Chưa thấy cặp câu nào giống nhau ở ngưỡng này. Bấm "Quét câu trùng".'}
+        </div>
+      ) : (
+        visible.map((p) => {
+          const q1 = questions.get(p.id1);
+          const q2 = questions.get(p.id2);
+          if (!q1 || !q2) return null;
+          const key = `${p.id1}-${p.id2}`;
+          return (
+            <article key={key} className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs">
+                <span className="font-semibold text-amber-200">{Math.round(p.similarity * 100)}% giống nhau</span>
+                <span className="text-slate-400">· {p.topicName || "chưa gắn năng lực"}</span>
+                <button type="button" onClick={() => onDismiss(key)} className="ml-auto text-slate-500 hover:text-white">
+                  Bỏ qua cặp này
+                </button>
+              </div>
+              <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                {[q1, q2].map((q) => (
+                  <div key={q.id} className="min-w-0 rounded-xl border border-white/10 bg-panel p-3">
+                    <div className="mb-1 flex items-center gap-2 text-[11px] text-slate-500">
+                      <span>#{q.id}</span>
+                      {q.sourceExamId !== null && (
+                        <Link href={`/kiem-tra/lam/?id=${q.sourceExamId}`} className="text-primary hover:underline">
+                          từ đề #{q.sourceExamId}
+                        </Link>
+                      )}
+                    </div>
+                    <ContentHtml html={q.question.question} className="prose prose-invert max-w-none text-sm text-slate-200" />
+                    <button type="button" onClick={() => onArchive(q.id)} className={`${btnCls} mt-2`}>
+                      <Archive size={14} /> Lưu trữ câu này
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </article>
+          );
+        })
+      )}
+    </div>
   );
 }
 

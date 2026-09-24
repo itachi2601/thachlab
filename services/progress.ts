@@ -6,6 +6,7 @@
 
 import type { LessonItem, LessonItemKind } from "@/features/lessons/types";
 import { isExamKind } from "@/features/lessons/types";
+import type { QuestionResponse } from "@/features/exams/types";
 import {
   deriveGradedStatus,
   derivePracticeStatus,
@@ -287,6 +288,54 @@ export async function finishExamAttempt(clientToken: string, examResultId: numbe
       .eq("client_token", clientToken);
   } catch {
     /* không ảnh hưởng điểm đã lưu */
+  }
+}
+
+// ---------- Khôi phục bài đang làm dở — lưu định kỳ vào exam_attempts trong
+// lúc làm, đọc lại khi mở lại đề trước khi nộp (submitted_at is null). ----------
+export interface OpenExamAttempt {
+  clientToken: string;
+  responses: QuestionResponse[] | null;
+  secondsLeft: number | null;
+}
+
+export async function findOpenExamAttempt(
+  studentId: string,
+  examId: number,
+): Promise<OpenExamAttempt | null> {
+  try {
+    const { data } = await getSupabase()
+      .from("exam_attempts")
+      .select("client_token, responses, seconds_left")
+      .eq("student_id", studentId)
+      .eq("exam_id", examId)
+      .is("submitted_at", null)
+      .order("started_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (!data) return null;
+    return {
+      clientToken: data.client_token as string,
+      responses: (data.responses as QuestionResponse[] | null) ?? null,
+      secondsLeft: (data.seconds_left as number | null) ?? null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export async function saveExamAttemptProgress(
+  clientToken: string,
+  responses: QuestionResponse[],
+  secondsLeft: number,
+): Promise<void> {
+  try {
+    await getSupabase()
+      .from("exam_attempts")
+      .update({ responses, seconds_left: secondsLeft, saved_at: new Date().toISOString() })
+      .eq("client_token", clientToken);
+  } catch {
+    /* chỉ mất tiến độ tạm — không chặn làm bài, lần lưu sau sẽ ghi đè lại */
   }
 }
 
