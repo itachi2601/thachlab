@@ -143,28 +143,40 @@ export async function fetchMyWrongQuestions(
 ): Promise<
   { ref: WrongQuestionRef; question: ExamQuestion; response: QuestionResponse }[]
 > {
-  const rows = (await fetchMyEqr(userId)).filter(
-    (r) => !r.is_correct && (r.topic_name || "Chưa gắn chủ đề") === topic && r.form === form,
-  );
-  if (rows.length === 0) return [];
-
-  const resultIds = [...new Set(rows.map((r) => r.exam_result_id))];
-  const { data: results } = await getSupabase()
+  // 1 truy vấn: lượt làm (kèm đề) + chỉ những câu sai đúng (chủ đề, loại) qua nhúng !inner — lọc ở server
+  // thay vì kéo toàn bộ exam_question_results của em rồi lọc ở client và tải exam_results ở tầng 2.
+  const UNTAGGED = "Chưa gắn chủ đề";
+  const eqrCols = "exam_result_id, exam_id, question_index, topic_name, form, is_correct";
+  let query = getSupabase()
     .from("exam_results")
-    .select("id, exam_id, detail, exams(title, questions)")
-    .in("id", resultIds);
+    .select(`id, exam_id, detail, exams(title, questions), exam_question_results!inner(${eqrCols})`)
+    .eq("student_id", userId)
+    .eq("exam_question_results.is_correct", false)
+    .eq("exam_question_results.form", form)
+    .order("id")
+    .order("question_index", { referencedTable: "exam_question_results" });
+  query =
+    topic === UNTAGGED
+      ? query.or(`topic_name.is.null,topic_name.eq."",topic_name.eq."${UNTAGGED}"`, { referencedTable: "exam_question_results" })
+      : query.eq("exam_question_results.topic_name", topic);
+  const { data: results } = await query;
 
+  type ResultRow = {
+    id: number;
+    exam_id: number;
+    detail: { responses?: QuestionResponse[] } | null;
+    exams: { title: string; questions: ExamQuestion[] } | { title: string; questions: ExamQuestion[] }[] | null;
+    exam_question_results: EqrRow[] | null;
+  };
+  const rows: EqrRow[] = [];
   const byResult = new Map(
-    ((results as {
-      id: number;
-      exam_id: number;
-      detail: { responses?: QuestionResponse[] } | null;
-      exams: { title: string; questions: ExamQuestion[] } | { title: string; questions: ExamQuestion[] }[] | null;
-    }[]) ?? []).map((r) => {
+    ((results as unknown as ResultRow[]) ?? []).map((r) => {
       const exam = Array.isArray(r.exams) ? r.exams[0] : r.exams;
+      rows.push(...(r.exam_question_results ?? []));
       return [r.id, { exam, detail: r.detail }];
     }),
   );
+  if (rows.length === 0) return [];
 
   const out: {
     ref: WrongQuestionRef;

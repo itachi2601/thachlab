@@ -115,23 +115,39 @@ export async function submitFixQuiz(attemptId: number, correct: number): Promise
 }
 
 /** Các chủ đề (tầng bài) em làm sai trong một bài — kèm số lượt sửa sai đã dùng. */
+interface TopicRef {
+  id: number;
+  parent_id: number | null;
+  name: string;
+}
+type TopicEmbed = (TopicRef & { parent?: TopicRef | TopicRef[] | null }) | (TopicRef & { parent?: TopicRef | TopicRef[] | null })[] | null;
+
+function firstOf<T>(v: T | T[] | null | undefined): T | undefined {
+  return Array.isArray(v) ? v[0] : (v ?? undefined);
+}
+
 export async function fetchFixableTopics(resultId: number): Promise<FixableTopic[]> {
   const supabase = getSupabase();
-  const { data: rows, error } = await supabase
-    .from("exam_question_results")
-    .select("topic_id, is_correct")
-    .eq("exam_result_id", resultId);
+  // Chủ đề + chủ đề cha nhúng thẳng vào từng câu (FK topic_id → question_topics, parent_id tự tham chiếu)
+  // và bảng lượt sửa sai chạy song song: 1 tầng thay vì 4 tầng nối tiếp.
+  const [{ data: rows, error }, { data: attempts }] = await Promise.all([
+    supabase
+      .from("exam_question_results")
+      .select("topic_id, is_correct, topic:topic_id(id, parent_id, name, parent:parent_id(id, parent_id, name))")
+      .eq("exam_result_id", resultId),
+    supabase.from("rank_fix_attempts").select("topic_id, status, passed").eq("exam_result_id", resultId),
+  ]);
   if (error) throw error;
   const ids = Array.from(new Set((rows ?? []).map((r) => r.topic_id as number | null).filter((x): x is number => x !== null)));
   if (ids.length === 0) return [];
 
-  const { data: topics } = await supabase.from("question_topics").select("id, parent_id, name").in("id", ids);
-  const byId = new Map<number, { id: number; parent_id: number | null; name: string }>();
-  for (const t of topics ?? []) byId.set(t.id as number, t as { id: number; parent_id: number | null; name: string });
-  const parentIds = Array.from(new Set(Array.from(byId.values()).map((t) => t.parent_id).filter((p): p is number => p !== null && !byId.has(p))));
-  if (parentIds.length) {
-    const { data: parents } = await supabase.from("question_topics").select("id, parent_id, name").in("id", parentIds);
-    for (const t of parents ?? []) byId.set(t.id as number, t as { id: number; parent_id: number | null; name: string });
+  const byId = new Map<number, TopicRef>();
+  for (const r of rows ?? []) {
+    const t = firstOf(r.topic as unknown as TopicEmbed);
+    if (!t) continue;
+    byId.set(t.id, { id: t.id, parent_id: t.parent_id, name: t.name });
+    const parent = firstOf(t.parent);
+    if (parent && !byId.has(parent.id)) byId.set(parent.id, { id: parent.id, parent_id: parent.parent_id, name: parent.name });
   }
 
   const agg = new Map<number, { wrong: number; total: number }>();
@@ -145,10 +161,6 @@ export async function fetchFixableTopics(resultId: number): Promise<FixableTopic
     agg.set(lessonId, cur);
   }
 
-  const { data: attempts } = await supabase
-    .from("rank_fix_attempts")
-    .select("topic_id, status, passed")
-    .eq("exam_result_id", resultId);
   const done = new Map<number, { count: number; passed: boolean }>();
   for (const a of attempts ?? []) {
     const cur = done.get(a.topic_id as number) ?? { count: 0, passed: false };
@@ -180,9 +192,16 @@ export interface ResultRpContext {
   fixRp: number;
 }
 
-/** RP đã nhận từ một bài làm (bài luyện tập + sửa sai) trong mùa hiện tại; null = chưa mở mùa. */
-export async function fetchResultRpContext(resultId: number, examId: number): Promise<ResultRpContext | null> {
-  const status = await fetchMyRankStatus();
+/**
+ * RP đã nhận từ một bài làm (bài luyện tập + sửa sai) trong mùa hiện tại; null = chưa mở mùa.
+ * `status`: trạng thái rank đã tải sẵn (fetchMyRankStatus) — truyền vào để khỏi gọi RPC lại; bỏ trống thì tự tải.
+ */
+export async function fetchResultRpContext(
+  resultId: number,
+  examId: number,
+  status?: RankStatus | null,
+): Promise<ResultRpContext | null> {
+  if (status === undefined) status = await fetchMyRankStatus();
   if (!status?.season) return null;
   const supabase = getSupabase();
   const [{ data: src }, { data: awards }, { data: season }] = await Promise.all([
@@ -268,7 +287,11 @@ export interface RankTierRow {
 }
 
 export async function fetchTiers(seasonId: number): Promise<RankTierRow[]> {
-  const { data, error } = await getSupabase().from("rank_tiers").select("*").eq("season_id", seasonId).order("sort");
+  const { data, error } = await getSupabase()
+    .from("rank_tiers")
+    .select("season_id, code, sort, name, min_rp, has_divisions, required_title_count, required_title_level, challenge_exam_id, challenge_pass_score")
+    .eq("season_id", seasonId)
+    .order("sort");
   if (error) throw error;
   return (data ?? []) as RankTierRow[];
 }
@@ -287,7 +310,10 @@ export interface RankSourceRow {
 }
 
 export async function fetchSources(seasonId: number): Promise<RankSourceRow[]> {
-  const { data, error } = await getSupabase().from("rank_sources").select("*").eq("season_id", seasonId);
+  const { data, error } = await getSupabase()
+    .from("rank_sources")
+    .select("season_id, source_kind, source_id, max_rp, enabled")
+    .eq("season_id", seasonId);
   if (error) throw error;
   return (data ?? []) as RankSourceRow[];
 }
@@ -384,7 +410,12 @@ export interface RankTitleRow {
 }
 
 export async function fetchTitleRows(): Promise<RankTitleRow[]> {
-  const { data, error } = await getSupabase().from("rank_titles").select("*").order("sort");
+  const { data, error } = await getSupabase()
+    .from("rank_titles")
+    .select(
+      "code, group_code, kind, name, description, sort, min_questions, awaken_accuracy, master_accuracy, legend_challenge_exam_id, legend_accuracy, requires, enabled",
+    )
+    .order("sort");
   if (error) throw error;
   return (data ?? []) as RankTitleRow[];
 }

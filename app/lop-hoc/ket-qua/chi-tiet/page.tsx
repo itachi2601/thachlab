@@ -11,9 +11,9 @@ import Button from "@/components/ui/Button";
 import ExamResultSummary from "@/components/exams/ExamResultSummary";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import FixQuizModal from "@/components/rank/FixQuizModal";
-import type { FixableTopic } from "@/features/rank/types";
+import type { FixableTopic, RankStatus } from "@/features/rank/types";
 import { fetchMyExamResultDetail, type MyExamAttemptDetail } from "@/services/analytics";
-import { fetchFixableTopics, fetchResultRpContext, type ResultRpContext } from "@/services/rank";
+import { fetchFixableTopics, fetchMyRankStatus, fetchResultRpContext, type ResultRpContext } from "@/services/rank";
 import { supabaseConfigured } from "@/services/supabase";
 
 function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent: boolean }) {
@@ -21,18 +21,28 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
   const [rp, setRp] = useState<ResultRpContext | null | undefined>(undefined);
   const [topics, setTopics] = useState<FixableTopic[]>([]);
   const [fixing, setFixing] = useState<FixableTopic | null>(null);
+  const [rankStatus, setRankStatus] = useState<RankStatus | null | undefined>(undefined);
 
+  // Bài làm, trạng thái rank và chủ đề sửa sai không phụ thuộc nhau → tải song song ngay từ đầu;
+  // chỉ RP của bài (cần examId + mùa) mới chờ.
   useEffect(() => {
     fetchMyExamResultDetail(resultId).then(setDetail).catch(() => setDetail(null));
-  }, [resultId]);
+    if (fromParent) return;
+    fetchMyRankStatus().then(setRankStatus).catch(() => setRankStatus(null));
+    fetchFixableTopics(resultId).then(setTopics).catch(() => setTopics([]));
+  }, [resultId, fromParent]);
 
   const loadRp = useCallback(() => {
-    if (!detail || fromParent) return;
-    fetchResultRpContext(resultId, detail.examId).then(setRp).catch(() => setRp(null));
-    fetchFixableTopics(resultId).then(setTopics).catch(() => setTopics([]));
-  }, [detail, resultId, fromParent]);
+    if (!detail || fromParent || rankStatus === undefined) return;
+    fetchResultRpContext(resultId, detail.examId, rankStatus).then(setRp).catch(() => setRp(null));
+  }, [detail, resultId, fromParent, rankStatus]);
 
   useEffect(loadRp, [loadRp]);
+
+  function reloadAfterFix() {
+    loadRp();
+    fetchFixableTopics(resultId).then(setTopics).catch(() => setTopics([]));
+  }
 
   if (detail === undefined) {
     return <p className="mt-10 text-center text-sm text-slate-400">Đang tải bài làm…</p>;
@@ -127,7 +137,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
           resultId={resultId}
           topic={fixing}
           onClose={() => setFixing(null)}
-          onDone={() => loadRp()}
+          onDone={reloadAfterFix}
         />
       )}
     </>
