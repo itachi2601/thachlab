@@ -21,6 +21,7 @@ export interface Profile {
   admin_area: "thpt" | "cttc" | null;
   // Hệ học của học sinh/sinh viên — nguồn sự thật duy nhất để chọn giao diện CTTC hay THPT.
   track: "thpt" | "cttc" | null;
+  avatar_url: string | null;
 }
 
 interface AuthState {
@@ -33,6 +34,8 @@ interface AuthState {
   signOut: () => Promise<void>;
   previewAsStudent: boolean;
   setPreviewAsStudent: (value: boolean) => void;
+  /** Đọc lại hồ sơ từ DB — dùng sau khi tự sửa avatar/tên để cập nhật ngay khắp app. */
+  refreshProfile: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthState>({
@@ -43,6 +46,7 @@ const AuthContext = createContext<AuthState>({
   signOut: async () => {},
   previewAsStudent: false,
   setPreviewAsStudent: () => {},
+  refreshProfile: async () => {},
 });
 
 export function useAuth() {
@@ -113,40 +117,43 @@ export default function AuthProvider({
     return () => sub.subscription.unsubscribe();
   }, []);
 
+  const loadProfile = useCallback(async (userId: string) => {
+    const { data, error } = await getSupabase()
+      .from("profiles")
+      .select("id, full_name, class_name, role, admin_area, track, avatar_url")
+      .eq("id", userId)
+      .single();
+    // Fallback nếu chưa chạy migration thêm cột admin_area/track/avatar_url (tránh khoá luôn tài khoản admin).
+    if (error) {
+      const { data: fallbackData } = await getSupabase()
+        .from("profiles")
+        .select("id, full_name, class_name, role")
+        .eq("id", userId)
+        .single();
+      return fallbackData ? ({ ...fallbackData, admin_area: null, track: null, avatar_url: null } as Profile) : null;
+    }
+    return (data as Profile) ?? null;
+  }, []);
+
   useEffect(() => {
     if (!session) return;
     let cancelled = false;
-    getSupabase()
-      .from("profiles")
-      .select("id, full_name, class_name, role, admin_area, track")
-      .eq("id", session.user.id)
-      .single()
-      .then(({ data, error }) => {
-        if (cancelled) return;
-        // Fallback nếu chưa chạy migration thêm cột admin_area/track (tránh khoá luôn tài khoản admin).
-        if (error) {
-          getSupabase()
-            .from("profiles")
-            .select("id, full_name, class_name, role")
-            .eq("id", session.user.id)
-            .single()
-            .then(({ data: fallbackData }) => {
-              if (!cancelled) {
-                setProfile(fallbackData ? ({ ...fallbackData, admin_area: null, track: null } as Profile) : null);
-                setLoadedProfileUserId(session.user.id);
-                setLoading(false);
-              }
-            });
-          return;
-        }
-        setProfile((data as Profile) ?? null);
-        setLoadedProfileUserId(session.user.id);
-        setLoading(false);
-      });
+    loadProfile(session.user.id).then((result) => {
+      if (cancelled) return;
+      setProfile(result);
+      setLoadedProfileUserId(session.user.id);
+      setLoading(false);
+    });
     return () => {
       cancelled = true;
     };
-  }, [session]);
+  }, [session, loadProfile]);
+
+  const refreshProfile = useCallback(async () => {
+    if (!session) return;
+    const result = await loadProfile(session.user.id);
+    setProfile(result);
+  }, [session, loadProfile]);
 
   const signOut = useCallback(async () => {
     await getSupabase().auth.signOut();
@@ -169,6 +176,7 @@ export default function AuthProvider({
         signOut,
         previewAsStudent,
         setPreviewAsStudent,
+        refreshProfile,
       }}
     >
       {children}
