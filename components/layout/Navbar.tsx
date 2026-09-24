@@ -7,6 +7,7 @@ import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu
 import { useAuth } from "@/components/auth/AuthProvider";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
+import Avatar from "@/components/ui/Avatar";
 
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
 const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
@@ -74,8 +75,9 @@ export default function Navbar() {
                 aria-expanded={accountMenuOpen}
                 aria-haspopup="menu"
                 onClick={() => setAccountMenuOpen((open) => !open)}
-                className="flex items-center gap-1.5 rounded-full bg-primary/15 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-primary/25"
+                className="flex items-center gap-2 rounded-full bg-primary/15 py-1.5 pl-1.5 pr-3.5 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-primary/25 sm:pr-4"
               >
+                <Avatar url={profile?.avatar_url} name={profile?.full_name} size={26} />
                 {profile?.full_name?.split(" ").pop() ?? "Tài khoản"}
                 <ChevronDown size={15} className={`transition-transform ${accountMenuOpen ? "rotate-180" : ""}`} />
               </button>

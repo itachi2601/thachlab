@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Sparkles, TrendingUp } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
+import Avatar from "@/components/ui/Avatar";
 import { divisionLabel, tierMeta, titleDisplay, type ClassRankGroups as Groups } from "@/features/rank/types";
 import { fetchClassRankGroups } from "@/services/rank";
 
@@ -48,7 +49,8 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
                 </div>
                 <ul className="flex flex-wrap gap-2">
                   {t.members.map((m, i) => (
-                    <li key={`${m.name}-${i}`} className="rounded-full border border-white/10 bg-panel px-3 py-1 text-xs text-slate-200">
+                    <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-white/10 bg-panel py-1 pl-1 pr-3 text-xs text-slate-200">
+                      <Avatar url={m.avatar} name={m.name} size={18} />
                       {m.name}
                       {m.division && <span className="ml-1 text-slate-500">{divisionLabel(m.division)}</span>}
                       {m.title && (
@@ -68,7 +70,8 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Chưa nhận RP · {data.unranked.length} bạn</p>
               <ul className="flex flex-wrap gap-2">
                 {data.unranked.map((m, i) => (
-                  <li key={`${m.name}-${i}`} className="rounded-full border border-white/5 px-3 py-1 text-xs text-slate-500">
+                  <li key={`${m.name}-${i}`} className="flex items-center gap-1.5 rounded-full border border-white/5 py-1 pl-1 pr-3 text-xs text-slate-500">
+                    <Avatar url={m.avatar} name={m.name} size={18} />
                     {m.name}
                   </li>
                 ))}

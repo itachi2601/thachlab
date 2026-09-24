@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
+import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
@@ -259,15 +260,18 @@ export default function ThptStudentHome({
       <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-8">
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
         <div className="relative flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-300 sm:text-xs sm:tracking-[.16em]">
-              Không gian học tập của tôi
-            </p>
-            <h1 className="mt-1.5 truncate font-display text-2xl font-bold text-white sm:mt-2 sm:text-3xl">
-              Chào {profile?.full_name || "bạn"} 👋
-            </h1>
-            <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">Lớp {className}</p>
-            {email && <p className="mt-1 hidden text-xs text-slate-600 sm:block">{email}</p>}
+          <div className="flex min-w-0 items-start gap-3 sm:gap-4">
+            <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-300 sm:text-xs sm:tracking-[.16em]">
+                Không gian học tập của tôi
+              </p>
+              <h1 className="mt-1.5 truncate font-display text-2xl font-bold text-white sm:mt-2 sm:text-3xl">
+                Chào {profile?.full_name || "bạn"} 👋
+              </h1>
+              <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">Lớp {className}</p>
+              {email && <p className="mt-1 hidden text-xs text-slate-600 sm:block">{email}</p>}
+            </div>
           </div>
           <button
             onClick={onSignOut}

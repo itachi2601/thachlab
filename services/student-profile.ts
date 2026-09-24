@@ -1,4 +1,28 @@
 import { getSupabase } from "@/services/supabase";
+import { compressImageFile } from "@/services/image-compress";
+
+const AVATAR_BUCKET = "avatars";
+const AVATAR_MAX_DIMENSION = 480;
+
+export async function updateMyAvatar(studentId: string, file: File) {
+  if (!file.type.startsWith("image/")) throw new Error("Chỉ nhận file ảnh (PNG, JPEG, WEBP).");
+  const supabase = getSupabase();
+  const compressed = await compressImageFile(file, { maxDimension: AVATAR_MAX_DIMENSION });
+  const safeName = compressed.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
+  const path = `${studentId}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeName}`;
+  const { error: uploadError } = await supabase.storage
+    .from(AVATAR_BUCKET)
+    .upload(path, compressed, { contentType: compressed.type || "image/jpeg", upsert: false });
+  if (uploadError) throw uploadError;
+
+  const { data } = supabase.storage.from(AVATAR_BUCKET).getPublicUrl(path);
+  const { error } = await supabase.from("profiles").update({ avatar_url: data.publicUrl }).eq("id", studentId);
+  if (error) {
+    await supabase.storage.from(AVATAR_BUCKET).remove([path]);
+    throw error;
+  }
+  return data.publicUrl;
+}
 
 export async function fetchMyStudentCode(studentId: string) {
   const { data, error } = await getSupabase().from("profiles").select("student_code").eq("id", studentId).single();
