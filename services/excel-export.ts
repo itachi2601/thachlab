@@ -1,4 +1,3 @@
-import ExcelJS from "exceljs";
 
 export interface StudentExportData {
   stt: number;
@@ -17,6 +16,8 @@ export interface StudentExportData {
 export async function exportStudentToExcel(
   students: StudentExportData[]
 ): Promise<Blob> {
+  // exceljs (~1 MB) chỉ tải khi bấm xuất file, không nằm trong JS ban đầu của trang.
+  const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet("Học sinh");
 

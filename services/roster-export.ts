@@ -1,4 +1,3 @@
-import ExcelJS from "exceljs";
 import { LT_GRADE_COLUMNS, TH_GRADE_COLUMNS } from "@/services/roster-schema";
 
 export interface ExportStudentRow {
@@ -26,6 +25,8 @@ function splitName(fullName: string) {
 
 export async function exportCourseRoster(opts: ExportRosterOptions): Promise<Blob> {
   const columns = opts.template === "lt" ? LT_GRADE_COLUMNS : TH_GRADE_COLUMNS;
+  // exceljs (~1 MB) chỉ tải khi bấm xuất file, không nằm trong JS ban đầu của trang.
+  const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
   const sheet = workbook.addWorksheet("DSSV");
 

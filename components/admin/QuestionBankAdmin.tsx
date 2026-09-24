@@ -16,7 +16,7 @@ import {
   Sparkles,
   Trash2,
 } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
 import {
   DIFFICULTY_LABELS,

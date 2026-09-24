@@ -5,7 +5,7 @@ import { BarChart3, ChevronDown, Tv } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassExamResults } from "@/services/class-results";
 import { getSupabase } from "@/services/supabase";

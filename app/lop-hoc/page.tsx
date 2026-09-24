@@ -35,7 +35,10 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
-import MistakeReviewPanel from "@/components/lessons/MistakeReviewPanel";
+import dynamic from "next/dynamic";
+// Bảng ôn lỗi sai kéo theo QuestionCard + framer-motion (~140 KB); tách chunk riêng.
+// Panel vốn trả null khi chưa có dữ liệu nên lúc chờ cũng không hiện gì — không nhảy layout.
+const MistakeReviewPanel = dynamic(() => import("@/components/lessons/MistakeReviewPanel"), { ssr: false, loading: () => null });
 import ClassRankGroups from "@/components/rank/ClassRankGroups";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import CoursePicker from "@/components/admin/CoursePicker";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import {
   createPostWithTargets,
   updatePostWithTargets,
