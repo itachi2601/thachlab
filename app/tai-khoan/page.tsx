@@ -48,15 +48,26 @@ function ParentAccountCard(){
 function JoinCourseForm(){
   const [code,setCode]=useState("");const [busy,setBusy]=useState(false);const [message,setMessage]=useState("");
   async function submit(event:React.FormEvent){event.preventDefault();if(!code.trim())return;setBusy(true);setMessage("");try{await requestEnrollment(code);window.location.reload();}catch(error){setMessage(error instanceof Error?error.message:"Mã khóa không hợp lệ.");}finally{setBusy(false);}}
-  return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
-    <KeyRound className="mx-auto text-blue-300" size={36}/>
+  return <section className="rounded-3xl border border-dashed border-orange-400/20 bg-panel p-10 text-center">
+    <KeyRound className="mx-auto text-orange-300" size={36}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Chưa có khóa đang học</h1>
-    <p className="mt-2 text-slate-400">Nhập mã khóa do giáo viên cung cấp để gửi yêu cầu tham gia lớp.</p>
+    <p className="mt-2 text-slate-400">Sinh viên CTTC — nhập mã khóa do giảng viên cung cấp để gửi yêu cầu tham gia lớp.</p>
     <form onSubmit={submit} className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
       <input value={code} onChange={(e)=>setCode(e.target.value.toUpperCase())} placeholder="CNC-A1B2C3 hoặc TP-A1B2C3" className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center font-mono uppercase text-white"/>
-      <button disabled={busy} className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-50">{busy?"Đang gửi…":"Gửi yêu cầu"}</button>
+      <button disabled={busy} className="rounded-xl bg-orange-600 px-5 py-3 text-sm font-bold text-white disabled:opacity-50">{busy?"Đang gửi…":"Gửi yêu cầu"}</button>
     </form>
     {message&&<p className="mt-4 text-sm text-amber-200">{message}</p>}
+  </section>;
+}
+
+function TrackStatusCard({track,icon:Icon,title,desc,action}:{track:"thpt"|"cttc";icon:typeof Clock3;title:string;desc:React.ReactNode;action?:React.ReactNode}){
+  const accent=track==="cttc"?"border-orange-400/25 text-orange-300":"border-blue-400/25 text-blue-300";
+  const [borderClass,textClass]=accent.split(" ");
+  return <section className={`rounded-3xl border border-dashed ${borderClass} bg-panel p-10 text-center`}>
+    <Icon className={`mx-auto ${textClass}`} size={38}/>
+    <h1 className="mt-4 font-display text-2xl font-bold text-white">{title}</h1>
+    <p className="mt-2 text-slate-400">{desc}</p>
+    {action}
   </section>;
 }
 
@@ -107,7 +118,7 @@ function StudentTrackChooser({onSubmitted}:{onSubmitted:()=>void}){
 }
 
 function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()=>void}){
-  if(request.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã được gửi.</p><button onClick={onRetry} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
+  if(request.status==="pending")return <TrackStatusCard track="thpt" icon={Clock3} title="Đang chờ giáo viên duyệt" desc={<>Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã được gửi.</>} action={<button onClick={onRetry} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button>}/>;
   if(request.status==="rejected")return <section className="rounded-3xl border border-dashed border-red-500/20 bg-panel p-10 text-center">
     <ShieldCheck className="mx-auto text-red-300" size={38}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Yêu cầu chưa được duyệt</h1>
@@ -136,9 +147,36 @@ function Account(){
   if(isParent)return <ParentAccountCard/>;
   if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
 
+  const track=profile?.track??null;
+
+  // Hệ CTTC (profiles.track='cttc') — chỉ nhìn vào course_enrollments, bỏ qua mọi user_classes cũ/lẫn.
+  if(track==="cttc"){
+    if(!enrollment)return <JoinCourseForm/>;
+    if(enrollment.status==="pending")return <TrackStatusCard track="cttc" icon={Clock3} title="Đang chờ giảng viên duyệt" desc={<>Yêu cầu tham gia <strong className="text-white">{enrollment.course.name}</strong> đã được gửi.</>} action={<button onClick={reload} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button>}/>;
+    if(enrollment.status==="suspended")return <TrackStatusCard track="cttc" icon={ShieldCheck} title="Quyền truy cập đang tạm khóa" desc="Hãy liên hệ giảng viên phụ trách khóa học."/>;
+    if(enrollment.status==="rejected"||enrollment.status==="left"||enrollment.status==="completed")return <JoinCourseForm/>;
+
+    const subject=getSubject(enrollment.subjectCode);
+    if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;
+    return <><div className="mb-5 flex items-center gap-2 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200"><strong>{enrollment.course.name}</strong><span>· {enrollment.course.school_year}</span></div><StudentAttendancePanel courseId={enrollment.course.id} studentId={session.user.id}/></>;
+  }
+
+  // Hệ THPT (profiles.track='thpt') — chỉ nhìn vào user_classes, bỏ qua mọi course_enrollments cũ/lẫn.
+  if(track==="thpt"){
+    if(classRequest?.status==="active")return <ThptStudentHome profile={profile} email={session.user.email} studentId={session.user.id} classId={classRequest.classId} className={classRequest.className} onSignOut={async()=>{await signOut();router.push("/")}}/>;
+    if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
+    return <section className="rounded-3xl border border-dashed border-blue-400/20 bg-panel p-10 text-center">
+      <GraduationCap className="mx-auto text-blue-300" size={36}/>
+      <h1 className="mt-4 font-display text-2xl font-bold text-white">Chọn khối lớp</h1>
+      <p className="mt-2 text-slate-400">Gửi yêu cầu vào khối lớp — giáo viên sẽ duyệt trước khi bạn xem được nội dung của lớp.</p>
+      <ClassJoinPicker onSubmitted={reload}/>
+    </section>;
+  }
+
+  // Track chưa xác định (tài khoản mới, chưa từng gửi yêu cầu nào ở cả 2 hệ) — dùng logic gộp cũ để không khoá nhầm ai.
   if(enrollment){
-    if(enrollment.status==="pending")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><Clock3 className="mx-auto text-amber-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Đang chờ giáo viên duyệt</h1><p className="mt-2 text-slate-400">Yêu cầu tham gia <strong className="text-white">{enrollment.course.name}</strong> đã được gửi.</p><button onClick={reload} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button></section>;
-    if(enrollment.status==="suspended")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center"><ShieldCheck className="mx-auto text-red-300" size={38}/><h1 className="mt-4 font-display text-2xl font-bold text-white">Quyền truy cập đang tạm khóa</h1><p className="mt-2 text-slate-400">Hãy liên hệ giáo viên phụ trách khóa học.</p></section>;
+    if(enrollment.status==="pending")return <TrackStatusCard track="cttc" icon={Clock3} title="Đang chờ giáo viên duyệt" desc={<>Yêu cầu tham gia <strong className="text-white">{enrollment.course.name}</strong> đã được gửi.</>} action={<button onClick={reload} className="mt-5 rounded-full border border-white/15 px-5 py-2 text-sm text-slate-200">Kiểm tra lại</button>}/>;
+    if(enrollment.status==="suspended")return <TrackStatusCard track="cttc" icon={ShieldCheck} title="Quyền truy cập đang tạm khóa" desc="Hãy liên hệ giáo viên phụ trách khóa học."/>;
 
     const subject=getSubject(enrollment.subjectCode);
     if(subject.hasCurriculum)return <StudentLearningDashboard profile={profile} email={session.user.email} studentId={session.user.id} enrollment={{status:"active",enrolled_at:new Date().toISOString(),course:enrollment.course}} records={records} onSignOut={async()=>{await signOut();router.push("/")}}/>;
