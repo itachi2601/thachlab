@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, Users2, X } from "lucide-react";
+import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, NotebookPen, Users2, X } from "lucide-react";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
@@ -16,6 +16,7 @@ import CourseRosterPanel from "@/components/dashboard/CourseRosterPanel";
 import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 import HomeroomAttendancePanel from "@/components/dashboard/HomeroomAttendancePanel";
 import HomeroomGradebook from "@/components/dashboard/HomeroomGradebook";
+import HomeroomShcnPanel from "@/components/dashboard/HomeroomShcnPanel";
 import CncMillingLiveMonitor from "@/components/admin/CncMillingLiveMonitor";
 import { SUBJECTS, getSubject, HOMEROOM_SUBJECT_CODE } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -54,7 +55,7 @@ export default function TeacherCourseDashboard() {
   const isAdmin = profile?.role === "admin";
   // Giảng viên không quen công nghệ: vào là thấy ngay điểm danh + gán máy + báo hỏng,
   // thay vì tab Tổng quan nhiều biểu đồ/chỉ số họ chưa cần đến.
-  const [activeTab,setActiveTab]=useState<"overview"|"grades"|"competencies"|"attendance"|"roster">(isInstructor?"attendance":"overview");
+  const [activeTab,setActiveTab]=useState<"overview"|"grades"|"competencies"|"attendance"|"shcn"|"roster">(isInstructor?"attendance":"overview");
   // Gộp "Điểm & tiến độ" + "Tổng kết điểm" thành 1 tab Bảng điểm với 2 chế độ xem.
   const [gradeView,setGradeView]=useState<"process"|"final">("process");
   // Hồ sơ học sinh mở dạng drawer thay vì tab riêng.
@@ -78,9 +79,9 @@ export default function TeacherCourseDashboard() {
   const subject = getSubject(subjectCode);
   const isHomeroom = subjectCode === HOMEROOM_SUBJECT_CODE;
 
-  // Lớp chủ nhiệm chỉ dùng 3 tab: Điểm danh · Bảng điểm · Danh sách lớp.
+  // Lớp chủ nhiệm chỉ dùng 4 tab: Điểm danh · Sinh hoạt lớp · Bảng điểm · Danh sách lớp.
   useEffect(() => {
-    if (isHomeroom && !["attendance", "grades", "roster"].includes(activeTab)) setActiveTab("attendance");
+    if (isHomeroom && !["attendance", "shcn", "grades", "roster"].includes(activeTab)) setActiveTab("attendance");
   }, [isHomeroom, activeTab]);
 
   const openProfile = (id: string) => {
@@ -155,11 +156,12 @@ export default function TeacherCourseDashboard() {
       </label>
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>!isHomeroom||["attendance","grades","roster"].includes(item.id)).map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-white/10 bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-slate-400 hover:bg-white/5 hover:text-white"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {activeTab==="attendance"&&selectedCourseId&&(isHomeroom
       ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
       : <TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>)}
+    {activeTab==="shcn"&&selectedCourseId&&<HomeroomShcnPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
     {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
     {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:<CurriculumPending subjectLabel={subject.label}/>)}
