@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Maximize, X, ZoomIn, ZoomOut } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { QUESTION_FORM_LABELS, type ExamQuestion } from "@/features/exams/types";
 import type { ExamReviewData, ReviewQuestionStat } from "@/services/analytics";
 

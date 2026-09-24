@@ -1,9 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import ExamSection, { type ExamSectionSeed, type TopicGroup, compressRasterInputs } from "@/components/admin/ExamSection";
-import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
+import dynamic from "next/dynamic";
+// Xem trước ví dụ có lời giải kéo theo ContentHtml đồng bộ + KaTeX (~290 KB); chỉ tải khi có bài để xem.
+const WorkedQuestionsGrid = dynamic(() => import("@/components/lessons/WorkedQuestionsGrid"), {
+  ssr: false,
+  loading: () => <div className="min-h-[12rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />,
+});
 import { useToast } from "@/components/ui/Toast";
 import { auditQuestionTags, canonicalizeQuestionTopics, tagsComplete } from "@/features/exams/types";
 import type { SchoolClass, TagAudit } from "@/features/exams/types";

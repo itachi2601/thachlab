@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Sparkles, Upload, WandSparkles } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import { useToast } from "@/components/ui/Toast";
 import {
