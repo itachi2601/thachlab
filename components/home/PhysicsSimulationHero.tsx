@@ -7,7 +7,9 @@ import { useHarmonicMotion } from "@/hooks/useHarmonicMotion";
 import { SpringSimulation } from "@/components/physics/SpringSimulation";
 import { DisplacementChart } from "@/components/physics/DisplacementChart";
 import { ControlPanel } from "@/components/physics/ControlPanel";
-import { FormulaPanel } from "@/components/physics/FormulaPanel";
+import dynamic from "next/dynamic";
+// Bảng công thức dùng framer-motion (~140 KB) và chỉ hiện khi bấm nút — tải chậm, lúc đóng vốn không render gì.
+const FormulaPanel = dynamic(() => import("@/components/physics/FormulaPanel").then((m) => m.FormulaPanel), { ssr: false, loading: () => null });
 
 const FORMULAS = [
   "x = A·cos(ωt + φ)",
