@@ -245,6 +245,7 @@ export interface RankSeasonSummary {
 // ---------- trang lớp ----------
 export interface ClassRankMember {
   name: string;
+  avatar: string | null;
   division: number | null;
   title: { name: string; level: TitleLevel | null } | null;
 }
@@ -252,7 +253,7 @@ export interface ClassRankMember {
 export interface ClassRankGroups {
   season: { id: number; name: string; starts_on: string; ends_on: string } | null;
   tiers: { code: TierCode; name: string; sort: number; members: ClassRankMember[] }[];
-  unranked: { name: string }[];
+  unranked: { name: string; avatar: string | null }[];
   weekly: { name: string; kind: "weekly_goal" | "tier_up" | "title"; label: string; at: string }[];
   week_start: string;
 }
