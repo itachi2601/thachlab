@@ -291,7 +291,11 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
             <span className="block text-xs text-slate-400">
               {course.school_year}
               {course.starts_at ? ` · khai giảng ${formatDate(course.starts_at)}` : ""}
-              {course.capacity !== null ? ` · ${course.taken}/${course.capacity} chỗ` : ` · ${course.taken} đăng ký`}
+              {course.capacity !== null
+                ? ` · ${course.taken}/${course.capacity} chỗ`
+                : course.taken > 0
+                  ? ` · ${course.taken} đăng ký`
+                  : ""}
               {" · "}
               <span className={course.status === "active" ? "text-emerald-300" : "text-slate-500"}>
                 {course.status === "active" ? "đang mở" : course.status === "draft" ? "nháp" : course.status === "completed" ? "đã kết thúc" : "lưu trữ"}
