@@ -5,7 +5,8 @@ import { Search } from "lucide-react";
 import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
-import { fetchStudentLearningHistory, type LearningHistoryEntry } from "@/services/progress";
+import type { LearningHistoryEntry } from "@/services/progress";
+import { fetchStudentLearningHistoryFast } from "@/services/student-profile";
 import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
@@ -54,7 +55,7 @@ export default function TeacherThptStudentProfile({
         return;
       }
       try {
-        setHistory(await fetchStudentLearningHistory(selectedId));
+        setHistory(await fetchStudentLearningHistoryFast(selectedId));
       } catch {
         setHistory([]);
       }
