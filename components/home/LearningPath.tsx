@@ -12,7 +12,7 @@ const stages = [
       "Học chắc kiến thức cốt lõi phần Vật lý của KHTN 9, biết liên hệ hiện tượng thực tế và làm quen với bài tổng hợp.",
     topics: ["Vật lý", "Hóa học", "Sinh học", "Ôn tập KHTN"],
     checkpoints: ["Nắm kiến thức trọng tâm", "Biết liên hệ thực tế", "Làm được bài tổng hợp KHTN"],
-    image: "/images/learning-path/khtn-9-vat-ly.png",
+    image: "/images/learning-path/khtn-9-vat-ly.webp",
   },
   {
     grade: "Lớp 10",
