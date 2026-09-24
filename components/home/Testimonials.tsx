@@ -92,7 +92,7 @@ export default function Testimonials() {
             <Reveal key={m.src} delay={i < INITIAL_COUNT ? (i % 3) * 0.06 : 0} className="mb-5 break-inside-avoid">
               <figure className="overflow-hidden rounded-xl border border-line transition-colors hover:border-cyan-400/40">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.src} alt={m.alt} loading="lazy" className="w-full" />
+                <img src={m.src} alt={m.alt} loading="lazy" decoding="async" className="w-full" />
               </figure>
             </Reveal>
           ))}

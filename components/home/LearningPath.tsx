@@ -84,6 +84,7 @@ export default function LearningPath() {
                     src={s.image}
                     alt={`Sơ đồ tóm tắt chương trình ${s.grade}`}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover object-top"
                   />
                 </Link>
