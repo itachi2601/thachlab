@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Calculator, CalendarCheck, Search } from "lucide-react";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
 import { fetchRubricExamAttemptsByCourse, type RubricExamAttempt } from "@/services/cnc-rubric-exam";
 import { fetchCourseGradeOverrides, setCourseGradeOverride, type CourseGradeOverride } from "@/services/course-grade-overrides";
 import { CNC_ASSESSMENT_PLAN } from "@/services/cnc-progress";
@@ -32,7 +32,7 @@ export default function TeacherFinalGradebook({ courseId, students }: { courseId
     let cancelled = false;
     Promise.all([
       Promise.all([fetchRubricExamAttemptsByCourse(courseId, "tien"), fetchRubricExamAttemptsByCourse(courseId, "phay")]).then((rows) => rows.flat()),
-      fetchAttendanceSessions(courseId).then(async (sessions) => ({ sessions, records: (await Promise.all(sessions.map((session) => fetchAttendanceRecords(session.id)))).flat() })),
+      fetchAttendanceSessions(courseId).then(async (sessions) => ({ sessions, records: await fetchAttendanceRecordsForSessions(sessions.map((session) => session.id)) })),
       fetchCourseGradeOverrides(courseId).catch(() => []),
     ]).then(([rubricRows, attendanceData, overrideRows]) => {
       if (cancelled) return;

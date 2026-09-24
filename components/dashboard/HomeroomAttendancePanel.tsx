@@ -23,6 +23,7 @@ import {
   createAttendanceSession,
   deleteAttendanceSession,
   fetchAttendanceRecords,
+  fetchAttendanceRecordsForSessions,
   fetchAttendanceSessions,
   setAttendanceRecord,
   setAttendanceRecordBonus,
@@ -75,8 +76,8 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all(sessions.map((session) => fetchAttendanceRecords(session.id).catch(() => []))).then((rows) => {
-      if (!cancelled) setAllRecords(rows.flat());
+    fetchAttendanceRecordsForSessions(sessions.map((session) => session.id)).catch(() => []).then((rows) => {
+      if (!cancelled) setAllRecords(rows);
     });
     return () => { cancelled = true; };
   }, [sessions]);
