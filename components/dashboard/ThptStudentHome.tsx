@@ -13,9 +13,12 @@ import { useToast } from "@/components/ui/Toast";
 import CatchupCard from "@/components/results/CatchupCard";
 import {
   fetchChapters,
-  fetchLessonProgressSummaries,
   fetchLessons,
+  fetchMyProgressMarks,
+  summarizeLessonProgress,
   type LessonProgressSummary,
+  type LessonWithItemRefs,
+  type MyProgressMarks,
 } from "@/services/lessons";
 import {
   fetchClassAssessments,
@@ -126,8 +129,8 @@ export default function ThptStudentHome({
   const toast = useToast();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
-  const [lessons, setLessons] = useState<Lesson[] | null>(null);
-  const [progress, setProgress] = useState<Map<number, LessonProgressSummary>>(new Map());
+  const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
+  const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
@@ -154,6 +157,8 @@ export default function ThptStudentHome({
 
   useEffect(() => {
     fetchMyScoreHistory(studentId).then(setScores).catch(() => setScores([]));
+    // dấu "đã học" không phụ thuộc lớp/chương/bài → tải ngay, tiến độ tính ở client khi đủ dữ liệu
+    fetchMyProgressMarks(studentId).then(setProgressMarks).catch(() => setProgressMarks(null));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
@@ -196,12 +201,11 @@ export default function ThptStudentHome({
       );
   }, [classChapters, lessons]);
 
-  useEffect(() => {
-    if (!classLessons) return;
-    fetchLessonProgressSummaries(studentId, classLessons.map((lesson) => lesson.id))
-      .then(setProgress)
-      .catch(() => setProgress(new Map()));
-  }, [classLessons, studentId]);
+  const progress = useMemo(
+    (): Map<number, LessonProgressSummary> =>
+      classLessons && progressMarks ? summarizeLessonProgress(classLessons, progressMarks) : new Map(),
+    [classLessons, progressMarks],
+  );
 
   const totals = useMemo(() => {
     if (!classLessons) return null;
