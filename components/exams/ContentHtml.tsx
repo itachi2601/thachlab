@@ -13,15 +13,20 @@ const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
  * ảnh tải xong, dễ thấy nhất khi đang cuộn trên điện thoại (chữ bị đè/lệch
  * trong khoảnh khắc ảnh vừa hiện). Gắn sẵn width/height thật (đọc lúc build,
  * xem scripts/gen-image-dimensions.mjs) để trình duyệt trừ chỗ đúng ngay từ đầu.
+ * Ảnh trong bài học hầu hết nằm dưới màn hình đầu → gắn thêm decoding="async" cho
+ * mọi ảnh, và loading="lazy" cho ảnh đã có width/height (ảnh chưa biết kích thước
+ * mà lazy thì layout sẽ nhảy lúc cuộn tới, nên vẫn để tải sớm như cũ).
  */
 function withImageDimensions(html: string): string {
   if (!html.includes("<img")) return html;
   return html.replace(/<img\b([^>]*)>/g, (tag, attrs: string) => {
-    if (/\bwidth=/.test(attrs)) return tag;
+    const decoding = /\bdecoding=/.test(attrs) ? "" : ' decoding="async"';
+    const lazy = /\bloading=/.test(attrs) ? "" : ' loading="lazy"';
+    if (/\bwidth=/.test(attrs)) return `<img${attrs}${lazy}${decoding}>`;
     const src = attrs.match(/\bsrc="([^"]+)"/)?.[1];
     const dims = src ? IMAGE_DIMENSIONS[src] : undefined;
-    if (!dims) return tag;
-    return `<img${attrs} width="${dims[0]}" height="${dims[1]}">`;
+    if (!dims) return decoding ? `<img${attrs}${decoding}>` : tag;
+    return `<img${attrs} width="${dims[0]}" height="${dims[1]}"${lazy}${decoding}>`;
   });
 }
 

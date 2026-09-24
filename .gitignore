@@ -48,3 +48,6 @@ next-env.d.ts
 
 # supabase CLI (trạng thái link cục bộ trên máy, không phải cấu hình chung)
 /supabase/.temp/
+
+# bản gốc ảnh trước khi nén (scripts/optimize-images.mjs)
+/public/_originals/

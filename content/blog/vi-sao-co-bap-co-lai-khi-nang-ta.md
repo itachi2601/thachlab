@@ -17,7 +17,7 @@ keywords:
   - "ThachLab"
 ---
 
-![Học sinh nâng tạ và cơ chế cơ bắp co lại](/images/blog/co-bap-co-lai-khi-nang-ta-cover.png)
+![Học sinh nâng tạ và cơ chế cơ bắp co lại](/images/blog/co-bap-co-lai-khi-nang-ta-cover.webp)
 
 *Khi nâng tạ, não gửi tín hiệu thần kinh đến cơ. Bên trong sợi cơ, actin và myosin trượt vào nhau, giúp cơ co lại và tạo lực.*
 
@@ -57,7 +57,7 @@ Hiểu ba kiểu co cơ này giúp em tập thông minh hơn: không chỉ nâng
 
 ## Cơ bắp không làm việc một mình
 
-![Xương là đòn bẩy, khớp là điểm xoay, cơ tạo lực kéo khi nâng tạ](/images/blog/co-bap-xuong-khop-don-bay.png)
+![Xương là đòn bẩy, khớp là điểm xoay, cơ tạo lực kéo khi nâng tạ](/images/blog/co-bap-xuong-khop-don-bay.webp)
 
 *Khi nâng tạ, xương hoạt động như đòn bẩy, khớp là điểm xoay, còn cơ bắp tạo lực kéo. Vì vậy tư thế, góc khớp và biên độ chuyển động đều ảnh hưởng trực tiếp đến hiệu quả tập luyện.*
 

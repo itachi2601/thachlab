@@ -5,6 +5,7 @@ import PreviewAsTaToggle from "@/components/tro-giang/PreviewAsTaToggle";
 import BugReportWidget from "@/components/BugReportWidget";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
+import { fontClassName } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -77,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className="h-full antialiased" data-theme="dark" suppressHydrationWarning>
+    <html lang="vi" className={`h-full antialiased ${fontClassName}`} data-theme="dark" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

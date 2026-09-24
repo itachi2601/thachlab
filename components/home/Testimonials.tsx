@@ -17,7 +17,7 @@ const messages = [
     alt: "Tin nhắn học trò khoe đạt 8,75 điểm Vật lý và cảm ơn thầy",
   },
   {
-    src: "/images/testimonials/thu-tay.jpg",
+    src: "/images/testimonials/thu-tay.webp",
     alt: "Bức thư dài của học trò: từ chỗ chọn đại thầy để học, sau ba năm đã dám mơ ước trở thành giáo viên Vật lý",
   },
   {
@@ -25,27 +25,27 @@ const messages = [
     alt: "Tin nhắn học trò báo được học bổng, điểm trung bình Lý trên 9.0 — và lời đáp của thầy: giúp được các con yêu thích môn học là điều hạnh phúc nhất trong cuộc đời đi dạy",
   },
   {
-    src: "/images/testimonials/tuan-anh.jpg",
+    src: "/images/testimonials/tuan-anh.webp",
     alt: "Tin nhắn học trò: từ một người rất sợ Lý giờ đã dám mơ ước học ngành Vật lý học",
   },
   {
-    src: "/images/testimonials/diem-9-ly.jpg",
+    src: "/images/testimonials/diem-9-ly.webp",
     alt: "Tin nhắn học trò báo đạt 9 điểm Vật lý và trân trọng kỷ niệm lớp học",
   },
   {
-    src: "/images/testimonials/hoc-bong-uc.jpg",
+    src: "/images/testimonials/hoc-bong-uc.webp",
     alt: "Tin nhắn học trò báo trúng tuyển đại học hàng đầu ở Úc với học bổng cao",
   },
   {
-    src: "/images/testimonials/nguoi-cha-thu-hai.jpg",
+    src: "/images/testimonials/nguoi-cha-thu-hai.webp",
     alt: "Tin nhắn học trò: thầy là nguồn cảm hứng thay đổi cả định hướng cuộc đời",
   },
   {
-    src: "/images/testimonials/thu-phong-bi-xanh.jpg",
+    src: "/images/testimonials/thu-phong-bi-xanh.webp",
     alt: "Thư tay của học trò viết trên giấy trắng, kèm phong bì xanh",
   },
   {
-    src: "/images/testimonials/thu-gui-thay-thach.jpg",
+    src: "/images/testimonials/thu-gui-thay-thach.webp",
     alt: "Thư tay 'Gửi thầy Thạch' viết trên giấy kem của học trò lớp NP",
   },
   {
@@ -53,15 +53,15 @@ const messages = [
     alt: "Thiệp tri ân màu vàng từ bộ ba học trò lớp 12CL2",
   },
   {
-    src: "/images/testimonials/thu-giay-ke.jpg",
+    src: "/images/testimonials/thu-giay-ke.webp",
     alt: "Thư tay của học trò viết kín một trang giấy kẻ ngang",
   },
   {
-    src: "/images/testimonials/loi-tri-an-ca-lop.jpg",
+    src: "/images/testimonials/loi-tri-an-ca-lop.webp",
     alt: "Trang 'Lời tri ân' với lời nhắn nhiều màu mực của cả lớp gửi thầy",
   },
   {
-    src: "/images/testimonials/thu-xuan-quynh-khanh-long.jpg",
+    src: "/images/testimonials/thu-xuan-quynh-khanh-long.webp",
     alt: "Thư tay có chữ ký của hai học trò Xuân Quỳnh và Khánh Long",
   },
 ];
@@ -92,7 +92,7 @@ export default function Testimonials() {
             <Reveal key={m.src} delay={i < INITIAL_COUNT ? (i % 3) * 0.06 : 0} className="mb-5 break-inside-avoid">
               <figure className="overflow-hidden rounded-xl border border-line transition-colors hover:border-cyan-400/40">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.src} alt={m.alt} loading="lazy" className="w-full" />
+                <img src={m.src} alt={m.alt} loading="lazy" decoding="async" className="w-full" />
               </figure>
             </Reveal>
           ))}

@@ -90,7 +90,7 @@ function VideoBlock({
             <button type="button" onClick={() => setPlaying(true)} aria-label={`Xem video ${item.title}`}>
               {thumb && (
                 /* eslint-disable-next-line @next/next/no-img-element */
-                <img src={thumb} alt="" />
+                <img src={thumb} alt="" loading="lazy" decoding="async" />
               )}
               <span>
                 <Play size={22} fill="currentColor" />
