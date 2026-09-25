@@ -21,16 +21,14 @@ import {
   classGrade,
   displayClassesByGrade,
   expandClassIdsByGrade,
-  fetchClasses,
 } from "@/services/classes";
 import {
-  fetchChapters,
-  fetchLessons,
   fetchMyProgressMarks,
   summarizeLessonProgress,
   type LessonWithItemRefs,
   type MyProgressMarks,
 } from "@/services/lessons";
+import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
@@ -104,15 +102,18 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     if (chapterParam > 0) setRequestedChapterId(chapterParam);
 
     if (!supabaseConfigured) return;
-    fetchClasses().then((cs) => {
+    // Lớp/chương/bài: ưu tiên file tĩnh /data/catalog.json (cùng origin); Supabase đối chiếu
+    // ngầm phía sau, có khác thì thay (setter được gọi lần nữa với bản mới).
+    const applyClasses = (cs: SchoolClass[]) => {
       setClasses(cs);
       if (classSlug) {
         const selectedClass = cs.find((item) => item.slug === classSlug);
         setActiveId(selectedClass?.id ?? null);
       }
-    });
-    fetchChapters().then(setChapters);
-    fetchLessons().then(setLessons);
+    };
+    fetchClassesStatic(applyClasses).then(applyClasses);
+    fetchChaptersStatic(setChapters).then(setChapters);
+    fetchLessonsStatic(setLessons).then(setLessons);
     fetchPublishedPosts().then(setPosts);
   }, [classSlug]);
 

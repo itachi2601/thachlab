@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ThachLab
 
-## Getting Started
+Trang học Vật lí THPT + LMS (Next.js 16 App Router, `output: "export"`, mọi dữ liệu đọc từ trình duyệt qua Supabase anon key + RLS). Bản build là site tĩnh, deploy lên shared hosting LiteSpeed `thachlab.id.vn`.
 
-First, run the development server:
+## Chạy cục bộ
 
 ```bash
+npm install
+cp .env.example .env.local   # hoặc tự tạo, xem biến môi trường bên dưới
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Biến môi trường trong `.env.local`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Biến | Dùng cho |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL project Supabase (bắt buộc) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon key — trình duyệt và `scripts/build-content.mjs` (bắt buộc) |
+| `NEXT_PUBLIC_SITE_URL` | URL công khai của site |
+| `SUPABASE_SERVICE_ROLE_KEY` | chỉ vài script quản trị trong `scripts/`; KHÔNG commit, KHÔNG dùng trong app |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build và deploy
 
-## Learn More
+```bash
+npm run build          # prebuild tự chạy: build-content (học liệu tĩnh) + gen-image-dimensions
+scripts/deploy.sh      # build rồi force-push thư mục out/ lên nhánh `deploy`; hosting kéo về mỗi 10 phút
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Học liệu tĩnh (`public/data/`) — **sau khi đăng/sửa bài phải build lại**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run build` chạy `scripts/build-content.mjs` trước: đọc Supabase bằng **anon key** (đúng những gì khách chưa đăng nhập xem được) và ghi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `public/data/catalog.json` — lớp → chương → bài (kèm mô tả/YCCĐ) + tham chiếu mục (id, đề gắn);
+- `public/data/lessons/<id>.json` — mỗi bài: lý thuyết/video có nội dung, các mục khác chỉ metadata;
+- `public/data/manifest.json` — `generatedAt` + số lượng.
 
-## Deploy on Vercel
+Trang học sinh (`/lop-hoc`, `/lop-hoc/bai`, trang chủ HS) đọc các file này trước (cùng origin, host cache 10 phút qua `out/data/.htaccess`), rồi gọi Supabase một truy vấn nhẹ để đối chiếu: danh sách bài, tên, mô tả, mục, đề gắn khác đi → tự tải bản mới. **Riêng nội dung lý thuyết sửa tại chỗ** (cùng tên, cùng mục) chỉ lên web sau khi chạy lại `scripts/deploy.sh` — các bảng chưa có cột `updated_at` để phát hiện.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+File tĩnh không chứa đề thi, đáp án hay lời giải bài tập mẫu (những thứ đó vẫn lấy từ Supabase như cũ). Thư mục `public/data/` không commit (`.gitignore`); thiếu env hoặc Supabase lỗi thì script chỉ cảnh báo, giữ file cũ (không có thì ghi manifest rỗng) và trang tự lùi về gọi Supabase như trước. Khu quản trị/giáo viên không dùng lớp tĩnh.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Cấu trúc
+
+- `app/` — route; `components/`, `features/`, `services/` (truy vấn Supabase), `lib/`.
+- `docs/supabase-*.sql` — schema và các migration (chạy bằng `supabase db query --linked -f <file>`).
+- `scripts/` — script build/quản trị; `perf/` — mốc đo tốc độ.
+- Quy ước cho AI agent: xem `AGENTS.md`.

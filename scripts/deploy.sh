@@ -23,6 +23,16 @@ RedirectMatch 404 /\.git
 </IfModule>
 EOF
 
+# Học liệu tĩnh (public/data → /data/*.json, sinh bởi scripts/build-content.mjs) không có hash
+# trong tên file → chỉ cache ngắn để bản build mới lên là học sinh thấy sau tối đa 10 phút.
+mkdir -p data
+cat > data/.htaccess <<'EOF'
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 10 minutes"
+</IfModule>
+EOF
+
 rm -rf .git
 git init -q -b deploy
 git add -A

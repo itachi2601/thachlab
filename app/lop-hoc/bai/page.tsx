@@ -28,17 +28,17 @@ import {
   type LessonItemKind,
   type LessonKind,
 } from "@/features/lessons/types";
+import { fetchExamMetas, markItemDone, type LessonExamMeta } from "@/services/lessons";
 import {
-  fetchExamMetas,
-  fetchChapters,
-  fetchLessonWithItems,
-  fetchLessons,
-  markItemDone,
-  type LessonExamMeta,
-} from "@/services/lessons";
+  fetchChaptersStatic,
+  fetchClassesStatic,
+  fetchLessonWithItemsStatic,
+  fetchLessonsStatic,
+  type LessonBundle,
+} from "@/services/static-content";
 import { fetchMyLessonPageProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
-import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -334,10 +334,13 @@ function LessonLoader() {
   const [siblingChapters, setSiblingChapters] = useState<Chapter[] | null>(null);
   const [siblingLessons, setSiblingLessons] = useState<Lesson[] | null>(null);
 
-  // Bài + chương + mục trong 1 truy vấn (select lồng); chương trình lớp (cho Bài trước/sau) tải song song.
+  // Bài + chương + mục: ưu tiên file tĩnh /data/lessons/<id>.json (cùng origin), Supabase đối chiếu
+  // ngầm phía sau và thay nội dung nếu đã khác; chương trình lớp (cho Bài trước/sau) tải song song.
   useEffect(() => {
     if (!supabaseConfigured || !id) return;
-    fetchLessonWithItems(id).then((res) => {
+    let stale = false;
+    const apply = (res: LessonBundle | null) => {
+      if (stale) return;
       if (!res) {
         setError("Không tìm thấy bài học này.");
         setItems([]);
@@ -348,14 +351,18 @@ function LessonLoader() {
       setChapterId(res.lesson.chapter_id);
       setLessonKind(res.lesson.lesson_kind);
       setItems(res.items);
-    });
+    };
+    fetchLessonWithItemsStatic(id, apply).then(apply);
+    return () => {
+      stale = true;
+    };
   }, [id]);
 
   useEffect(() => {
     if (!supabaseConfigured) return;
-    fetchClasses().then(setSiblingClasses);
-    fetchChapters().then(setSiblingChapters);
-    fetchLessons().then(setSiblingLessons);
+    fetchClassesStatic(setSiblingClasses).then(setSiblingClasses);
+    fetchChaptersStatic(setSiblingChapters).then(setSiblingChapters);
+    fetchLessonsStatic(setSiblingLessons).then(setSiblingLessons);
   }, []);
 
   // dữ liệu cần đăng nhập: thông tin đề kiểm tra (RLS), điểm, tiến độ

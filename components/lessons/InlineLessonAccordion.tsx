@@ -19,13 +19,13 @@ import {
 } from "@/features/lessons/types";
 import {
   fetchExamMetas,
-  fetchLessonItems,
   fetchMyExamScores,
   fetchMyProgress,
   markItemDone,
   type LessonExamMeta,
 } from "@/services/lessons";
 import { heartbeatLearningPresence } from "@/services/learning-presence";
+import { fetchLessonItemsStatic } from "@/services/static-content";
 
 const lessonItemsCache = new Map<number, LessonItem[]>();
 
@@ -66,10 +66,13 @@ export default function InlineLessonAccordion({
 
   useEffect(() => {
     if (!open || items) return;
-    fetchLessonItems(lesson.id).then((rows) => {
+    // Ưu tiên file tĩnh /data/lessons/<id>.json; Supabase đối chiếu ngầm và bổ sung lời giải
+    // bài tập mẫu (không nằm trong file tĩnh) — apply được gọi lần nữa khi có bản cần thay.
+    const apply = (rows: LessonItem[]) => {
       lessonItemsCache.set(lesson.id, rows);
       setItems(rows);
-    });
+    };
+    fetchLessonItemsStatic(lesson.id, apply).then(apply);
   }, [open, items, lesson.id]);
 
   useEffect(() => {

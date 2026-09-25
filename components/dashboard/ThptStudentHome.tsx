@@ -7,19 +7,18 @@ import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import CatchupCard from "@/components/results/CatchupCard";
 import {
-  fetchChapters,
-  fetchLessons,
   fetchMyProgressMarks,
   summarizeLessonProgress,
   type LessonProgressSummary,
   type LessonWithItemRefs,
   type MyProgressMarks,
 } from "@/services/lessons";
+import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import {
   fetchClassAssessments,
   fetchMyAlert,
@@ -145,7 +144,8 @@ export default function ThptStudentHome({
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
 
   useEffect(() => {
-    Promise.all([fetchClasses(), fetchChapters(), fetchLessons()])
+    // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
+    Promise.all([fetchClassesStatic(setClasses), fetchChaptersStatic(setChapters), fetchLessonsStatic(setLessons)])
       .then(([cs, chs, ls]) => {
         setLastLessonId(Number(window.localStorage.getItem(LAST_LESSON_KEY)) || 0);
         setClasses(cs);
