@@ -9,6 +9,12 @@
 alter table public.question_bank add column if not exists figure_not_needed boolean not null default false;
 comment on column public.question_bank.figure_not_needed is 'Thầy xác nhận câu không cần hình dù câu dẫn nhắc đồ thị/hình vẽ.';
 
+-- Hình AI vẽ đang chờ duyệt: {svg, summary, freeform, reason, created_at}. Lưu ở DB để chạy
+-- "AI vẽ cả danh sách" một lần rồi thầy duyệt dần trên bất kì máy nào. Duyệt xong (RPC bên dưới)
+-- hoặc bấm Bỏ thì xoá (null).
+alter table public.question_bank add column if not exists ai_figure jsonb;
+comment on column public.question_bank.ai_figure is 'Hình AI vẽ chờ duyệt (svg/summary/reason); null khi đã duyệt hoặc bỏ.';
+
 -- Cho phép p_img_html là <svg …> inline (AI vẽ) bên cạnh <img>.
 create or replace function public.bank_set_question_figure(p_bank_id bigint, p_img_html text)
 returns jsonb
@@ -67,7 +73,7 @@ begin
     raise exception 'Ngân hàng đã có câu y hệt kèm ảnh này (#%). Lưu trữ một trong hai câu rồi thử lại.', v_dup;
   end if;
 
-  update public.question_bank set question = v_new_q, figure_not_needed = false where id = p_bank_id;
+  update public.question_bank set question = v_new_q, figure_not_needed = false, ai_figure = null where id = p_bank_id;
   update public.question_bank
     set content_hash = coalesce(v_target_hash, public.question_content_hash(question))
     where id = p_bank_id;

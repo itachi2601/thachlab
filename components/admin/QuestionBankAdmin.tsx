@@ -47,6 +47,7 @@ import {
   fetchBankQuestionsByIds,
   fetchBankTopicCounts,
   fetchBankUnknownGradeCount,
+  saveBankAiFigure,
   fetchSimilarBankQuestions,
   readBasket,
   syncLabelsToSourceExams,
@@ -258,20 +259,37 @@ export default function QuestionBankAdmin() {
     });
   async function drawFigure(q: BankQuestion) {
     setAi(q.id, { busy: true });
+    let st: AiFigState;
     try {
       const r = await drawFigureWithAi(q.question);
-      setAi(q.id, r.status === "ok" ? { svg: r.svg, summary: r.summary, freeform: r.freeform } : { reason: r.reason });
+      st = r.status === "ok" ? { svg: r.svg, summary: r.summary, freeform: r.freeform } : { reason: r.reason };
     } catch (e) {
-      setAi(q.id, { reason: e instanceof Error ? e.message : String(e) });
+      st = { reason: e instanceof Error ? e.message : String(e) };
+    }
+    setAi(q.id, st);
+    // Lưu vào DB để thầy duyệt sau, trên máy khác cũng thấy.
+    const persisted = { svg: st.svg, summary: st.summary, freeform: st.freeform, reason: st.reason };
+    saveBankAiFigure(q.id, persisted)
+      .then(() => setItems((list) => list.map((x) => (x.id === q.id ? { ...x, aiFigure: persisted } : x))))
+      .catch(() => {});
+  }
+  function dismissAiFigure(q: BankQuestion) {
+    setAi(q.id, null);
+    if (q.aiFigure) {
+      saveBankAiFigure(q.id, null)
+        .then(() => setItems((list) => list.map((x) => (x.id === q.id ? { ...x, aiFigure: null } : x))))
+        .catch((e) => toast("error", e instanceof Error ? e.message : String(e)));
     }
   }
   async function acceptAiFigure(q: BankQuestion) {
-    const svg = aiFig.get(q.id)?.svg;
+    const svg = aiFig.get(q.id)?.svg ?? q.aiFigure?.svg;
     if (!svg) return;
     try {
       const r = await attachSvgToBankQuestion(q.id, svg);
       setItems((list) =>
-        list.map((x) => (x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash, figureNotNeeded: false } : x)),
+        list.map((x) =>
+          x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash, figureNotNeeded: false, aiFigure: null } : x,
+        ),
       );
       setAi(q.id, null);
       toast(
@@ -286,8 +304,15 @@ export default function QuestionBankAdmin() {
       toast("error", e instanceof Error ? e.message : String(e));
     }
   }
+  // Chưa có hình AI (kể cả bản đã lưu ở DB) và AI chưa từng báo "không đủ dữ kiện" cho câu này.
   const drawTargets = items.filter(
-    (q) => !q.archived && !q.figureNotNeeded && isMissingFigure(q.question) && !aiFig.get(q.id)?.svg,
+    (q) =>
+      !q.archived &&
+      !q.figureNotNeeded &&
+      isMissingFigure(q.question) &&
+      !aiFig.get(q.id) &&
+      !q.aiFigure?.svg &&
+      !q.aiFigure?.reason,
   );
   async function drawAll() {
     const targets = drawTargets;
@@ -675,7 +700,7 @@ export default function QuestionBankAdmin() {
                     ai={aiFig.get(q.id)}
                     onDraw={() => drawFigure(q)}
                     onAcceptAi={() => acceptAiFigure(q)}
-                    onDismissAi={() => setAi(q.id, null)}
+                    onDismissAi={() => dismissAiFigure(q)}
                   />
                 ))
               )}
@@ -913,6 +938,9 @@ function QuestionRow({
   const fileRef = useRef<HTMLInputElement>(null);
   const body = q.question;
   const missingFigure = isMissingFigure(body) && !q.figureNotNeeded;
+  // Hình AI: ưu tiên trạng thái đang vẽ trong phiên, không có thì lấy bản đã lưu ở DB.
+  const aiState: AiFigState | undefined =
+    ai ?? (q.aiFigure && (q.aiFigure.svg || q.aiFigure.reason) && missingFigure ? { ...q.aiFigure } : undefined);
   const topicKnown = topicGroups.some(({ parent, outcomes }) => parent.name === q.topicName || outcomes.some((o) => o.name === q.topicName));
 
   return (
@@ -942,10 +970,10 @@ function QuestionRow({
       {q.figureNotNeeded && (
         <p className="mt-1 text-[11px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
       )}
-      {ai?.busy && <p className="mt-2 text-xs text-primary">AI đang dựng lại hình từ câu dẫn và lời giải…</p>}
-      {ai?.reason && !ai.busy && (
+      {aiState?.busy && <p className="mt-2 text-xs text-primary">AI đang dựng lại hình từ câu dẫn và lời giải…</p>}
+      {aiState?.reason && !aiState.busy && (
         <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 p-2 text-xs text-amber-200">
-          <span>AI không vẽ được: {ai.reason}</span>
+          <span>AI không vẽ được: {aiState.reason}</span>
           <button type="button" onClick={onDraw} className={`${btnCls} ml-auto`}>
             <RefreshCw size={12} /> Vẽ lại
           </button>
@@ -954,13 +982,13 @@ function QuestionRow({
           </button>
         </div>
       )}
-      {ai?.svg && !ai.busy && (
+      {aiState?.svg && !aiState.busy && (
         <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
           <p className="mb-1 text-[11px] font-semibold text-primary">
-            {ai.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
+            {aiState.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
           </p>
-          <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: ai.svg }} />
-          {ai.summary && <p className="mt-2 text-xs text-slate-300">{ai.summary}</p>}
+          <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: aiState.svg }} />
+          {aiState.summary && <p className="mt-2 text-xs text-slate-300">{aiState.summary}</p>}
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <button type="button" onClick={onAcceptAi} className={`${btnCls} border-emerald-500/50 text-emerald-200`}>
               <Check size={14} /> Dùng hình này
@@ -1071,11 +1099,11 @@ function QuestionRow({
               <button
                 type="button"
                 onClick={onDraw}
-                disabled={!!ai?.busy}
+                disabled={!!aiState?.busy}
                 className={`${btnCls} border-primary/40 text-primary`}
                 title="AI dựng lại đồ thị/hình từ câu dẫn + lời giải; chỉ xem trước, bấm Dùng hình này mới lưu"
               >
-                <Wand2 size={14} /> {ai?.busy ? "Đang vẽ…" : "AI vẽ hình"}
+                <Wand2 size={14} /> {aiState?.busy ? "Đang vẽ…" : "AI vẽ hình"}
               </button>
               <button
                 type="button"

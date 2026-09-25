@@ -26,6 +26,16 @@ export interface BankQuestion {
   note: string;
   /** Thầy xác nhận câu không cần hình dù câu dẫn nhắc đồ thị/hình vẽ. */
   figureNotNeeded: boolean;
+  /** Hình AI vẽ đang chờ duyệt (null = không có). */
+  aiFigure: BankAiFigure | null;
+}
+
+export interface BankAiFigure {
+  svg?: string;
+  summary?: string;
+  freeform?: boolean;
+  reason?: string;
+  created_at?: string;
 }
 
 interface BankRow {
@@ -46,10 +56,11 @@ interface BankRow {
   archived: boolean;
   note: string;
   figure_not_needed: boolean | null;
+  ai_figure: BankAiFigure | null;
 }
 
 const COLS =
-  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note, figure_not_needed";
+  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note, figure_not_needed, ai_figure";
 
 function fromRow(r: BankRow): BankQuestion {
   return {
@@ -70,7 +81,17 @@ function fromRow(r: BankRow): BankQuestion {
     archived: r.archived,
     note: r.note ?? "",
     figureNotNeeded: r.figure_not_needed === true,
+    aiFigure: r.ai_figure && typeof r.ai_figure === "object" ? r.ai_figure : null,
   };
+}
+
+/** Lưu / xoá hình AI chờ duyệt của một câu (null = bỏ). */
+export async function saveBankAiFigure(id: number, fig: BankAiFigure | null): Promise<void> {
+  const { error } = await getSupabase()
+    .from("question_bank")
+    .update({ ai_figure: fig ? { ...fig, created_at: new Date().toISOString() } : null })
+    .eq("id", id);
+  if (error) throw new Error(error.message);
 }
 
 export interface BankFilter {
