@@ -26,6 +26,53 @@ function fileToDataUri(file: File): Promise<string> {
   });
 }
 
+function parseSetFigure(data: unknown): SetFigureResult {
+  const r = data as { question: ExamQuestion; content_hash: string; exams_updated: number };
+  return { question: r.question, contentHash: r.content_hash, examsUpdated: r.exams_updated ?? 0 };
+}
+
+/** Kiểm tra SVG (từ AI) trước khi hiện xem trước / lưu: đúng một thẻ <svg>, không script/sự kiện/link ngoài. */
+export function isSafeSvg(svg: string): boolean {
+  const s = svg.trim();
+  return (
+    /^<svg[\s>]/i.test(s) &&
+    /<\/svg>\s*$/i.test(s) &&
+    !/<script|javascript:|\son[a-z]+\s*=|<foreignObject|<image|href\s*=\s*"(?!#)/i.test(s)
+  );
+}
+
+export interface AiFigure {
+  status: "ok" | "insufficient";
+  svg?: string;
+  summary?: string;
+  reason?: string;
+}
+
+/** Gọi Edge Function draw-figure: AI dựng lại đồ thị/hình từ câu dẫn + phương án + lời giải. Chỉ xem trước, chưa lưu. */
+export async function drawFigureWithAi(q: ExamQuestion): Promise<AiFigure> {
+  const body = {
+    question: q.question,
+    options: "options" in q && Array.isArray(q.options) ? q.options : undefined,
+    statements: "statements" in q && Array.isArray(q.statements) ? q.statements.map((s) => s.text) : undefined,
+    explanation: q.explanation ?? "",
+  };
+  const { data, error } = await getSupabase().functions.invoke("draw-figure", { body });
+  if (error) throw new Error(error.message || "Gọi AI vẽ hình lỗi.");
+  const r = (data ?? {}) as { status?: string; svg?: string; summary?: string; reason?: string; error?: string };
+  if (r.error) throw new Error(r.error);
+  if (r.status === "ok" && typeof r.svg === "string" && isSafeSvg(r.svg))
+    return { status: "ok", svg: r.svg.trim(), summary: r.summary ?? "" };
+  return { status: "insufficient", reason: r.reason || "AI không đủ dữ kiện để vẽ." };
+}
+
+/** Lưu SVG (đã được thầy duyệt) vào câu dẫn: cùng RPC với ảnh tải lên. */
+export async function attachSvgToBankQuestion(bankId: number, svg: string): Promise<SetFigureResult> {
+  if (!isSafeSvg(svg)) throw new Error("SVG không hợp lệ.");
+  const { data, error } = await getSupabase().rpc("bank_set_question_figure", { p_bank_id: bankId, p_img_html: svg.trim() });
+  if (error) throw new Error(error.message);
+  return parseSetFigure(data);
+}
+
 export async function attachFigureToBankQuestion(bankId: number, file: File): Promise<SetFigureResult> {
   if (!/^image\//.test(file.type)) throw new Error("Chỉ nhận file ảnh (PNG/JPG/WebP/GIF/SVG).");
   const sb = getSupabase();
@@ -43,6 +90,5 @@ export async function attachFigureToBankQuestion(bankId: number, file: File): Pr
     await removeLessonMedia(sb, media.map((m) => m.storagePath)).catch(() => {});
     throw new Error(error.message);
   }
-  const r = data as { question: ExamQuestion; content_hash: string; exams_updated: number };
-  return { question: r.question, contentHash: r.content_hash, examsUpdated: r.exams_updated ?? 0 };
+  return parseSetFigure(data);
 }

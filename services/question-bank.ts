@@ -24,6 +24,8 @@ export interface BankQuestion {
   sourceIndex: number | null;
   archived: boolean;
   note: string;
+  /** Thầy xác nhận câu không cần hình dù câu dẫn nhắc đồ thị/hình vẽ. */
+  figureNotNeeded: boolean;
 }
 
 interface BankRow {
@@ -43,10 +45,11 @@ interface BankRow {
   source_index: number | null;
   archived: boolean;
   note: string;
+  figure_not_needed: boolean | null;
 }
 
 const COLS =
-  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note";
+  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note, figure_not_needed";
 
 function fromRow(r: BankRow): BankQuestion {
   return {
@@ -66,6 +69,7 @@ function fromRow(r: BankRow): BankQuestion {
     sourceIndex: r.source_index,
     archived: r.archived,
     note: r.note ?? "",
+    figureNotNeeded: r.figure_not_needed === true,
   };
 }
 
@@ -92,6 +96,7 @@ export interface BankFilter {
 function applyMissingFigureFilter<T extends { or: (f: string) => T; filter: (c: string, op: string, v: string) => T }>(q: T): T {
   return q
     .or(`question->>question.imatch.${FIGURE_WORDS_PG},question->>question.imatch.${FIGURE_MARK_PG}`)
+    .filter("figure_not_needed", "eq", "false")
     .filter("question->>question", "not.imatch", HAS_IMAGE_PG)
     .or(`question->>options.is.null,question->>options.not.imatch.${HAS_IMAGE_PG}`);
 }
@@ -203,10 +208,12 @@ export interface BankPatch {
   archived?: boolean;
   note?: string;
   grade?: string;
+  figureNotNeeded?: boolean;
 }
 
 export async function updateBankQuestion(id: number, patch: BankPatch): Promise<void> {
   const payload: Record<string, unknown> = {};
+  if (patch.figureNotNeeded !== undefined) payload.figure_not_needed = patch.figureNotNeeded;
   if (patch.topicName !== undefined) payload.topic_name = patch.topicName;
   if (patch.form !== undefined) payload.form = patch.form;
   if (patch.difficulty !== undefined) payload.difficulty = patch.difficulty;

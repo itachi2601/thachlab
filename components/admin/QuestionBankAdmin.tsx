@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import {
   Archive,
   ArchiveRestore,
+  Check,
   ChevronDown,
   ChevronRight,
   Dices,
@@ -16,6 +17,7 @@ import {
   Search,
   Sparkles,
   Trash2,
+  Wand2,
 } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
@@ -31,7 +33,12 @@ import {
 import { TYPE_SHORT } from "@/features/lessons/types";
 import { classifyQuestionTags } from "@/services/ai-classify";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
-import { attachFigureToBankQuestion } from "@/services/question-bank-figure";
+import {
+  attachFigureToBankQuestion,
+  attachSvgToBankQuestion,
+  drawFigureWithAi,
+
+} from "@/services/question-bank-figure";
 import { isMissingFigure } from "@/services/question-figures";
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
@@ -63,6 +70,13 @@ const inputCls =
 const selectCls = `${inputCls} bg-panel`;
 const btnCls =
   "admin-chip";
+
+interface AiFigState {
+  busy?: boolean;
+  svg?: string;
+  summary?: string;
+  reason?: string;
+}
 
 type Node =
   | { kind: "all" }
@@ -230,6 +244,67 @@ export default function QuestionBankAdmin() {
     toast("success", `Đã thêm ${picked.length} câu vào giỏ.`);
   }
 
+  // ----- AI vẽ hình cho câu thiếu ảnh: xem trước, thầy duyệt mới lưu -----
+  const [aiFig, setAiFig] = useState<Map<number, AiFigState>>(new Map());
+  const [drawAllBusy, setDrawAllBusy] = useState(false);
+  const setAi = (id: number, st: AiFigState | null) =>
+    setAiFig((m) => {
+      const next = new Map(m);
+      if (st) next.set(id, st);
+      else next.delete(id);
+      return next;
+    });
+  async function drawFigure(q: BankQuestion) {
+    setAi(q.id, { busy: true });
+    try {
+      const r = await drawFigureWithAi(q.question);
+      setAi(q.id, r.status === "ok" ? { svg: r.svg, summary: r.summary } : { reason: r.reason });
+    } catch (e) {
+      setAi(q.id, { reason: e instanceof Error ? e.message : String(e) });
+    }
+  }
+  async function acceptAiFigure(q: BankQuestion) {
+    const svg = aiFig.get(q.id)?.svg;
+    if (!svg) return;
+    try {
+      const r = await attachSvgToBankQuestion(q.id, svg);
+      setItems((list) =>
+        list.map((x) => (x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash, figureNotNeeded: false } : x)),
+      );
+      setAi(q.id, null);
+      toast(
+        "success",
+        r.examsUpdated > 0
+          ? `Đã lưu hình AI vào câu #${q.id} và ${r.examsUpdated} đề đang dùng câu này.`
+          : `Đã lưu hình AI vào câu #${q.id}.`,
+      );
+      reloadTree();
+    } catch (e) {
+      console.error("acceptAiFigure", e);
+      toast("error", e instanceof Error ? e.message : String(e));
+    }
+  }
+  const drawTargets = items.filter(
+    (q) => !q.archived && !q.figureNotNeeded && isMissingFigure(q.question) && !aiFig.get(q.id)?.svg,
+  );
+  async function drawAll() {
+    const targets = drawTargets;
+    if (!targets.length) return;
+    setDrawAllBusy(true);
+    let ok = 0;
+    let idx = 0;
+    const worker = async () => {
+      while (idx < targets.length) {
+        const q = targets[idx++];
+        await drawFigure(q);
+        ok++;
+      }
+    };
+    await Promise.all([worker(), worker()]);
+    setDrawAllBusy(false);
+    toast("success", `AI đã xử lý ${ok} câu — duyệt từng hình bên dưới (Dùng hình này / Bỏ).`);
+  }
+
   // Gắn ảnh cho câu thiếu hình: ảnh vào cả dòng ngân hàng lẫn mọi đề đang dùng câu đó.
   async function attachFigure(q: BankQuestion, file: File) {
     try {
@@ -264,11 +339,13 @@ export default function QuestionBankAdmin() {
                 difficulty: p.difficulty ?? q.difficulty,
                 archived: p.archived ?? q.archived,
                 grade: p.grade ?? q.grade,
+                figureNotNeeded: p.figureNotNeeded ?? q.figureNotNeeded,
               }
             : q,
         ),
       );
-      if (p.topicName !== undefined || p.archived !== undefined || p.grade !== undefined) reloadTree();
+      if (p.topicName !== undefined || p.archived !== undefined || p.grade !== undefined || p.figureNotNeeded !== undefined)
+        reloadTree();
       if (p.topicName !== undefined || p.grade !== undefined) reloadItems();
     } catch (e) {
       toast("error", e instanceof Error ? e.message : String(e));
@@ -491,6 +568,17 @@ export default function QuestionBankAdmin() {
                 <Sparkles size={14} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${Math.min(aiTargets.length, AI_BATCH_LIMIT)}/${aiTargets.length} câu)`}
               </button>
             )}
+            {node.kind === "missing-figure" && drawTargets.length > 0 && (
+              <button
+                type="button"
+                onClick={drawAll}
+                disabled={drawAllBusy}
+                className={`${btnCls} border-primary/40 text-primary`}
+                title="AI dựng lại đồ thị/hình từ câu dẫn + lời giải cho mọi câu đang thiếu; chỉ xem trước, thầy duyệt từng hình mới lưu"
+              >
+                <Wand2 size={14} /> {drawAllBusy ? "AI đang vẽ…" : `AI vẽ cả danh sách (${drawTargets.length})`}
+              </button>
+            )}
             <button
               type="button"
               onClick={node.kind === "duplicates" ? scanDuplicates : reloadItems}
@@ -582,6 +670,10 @@ export default function QuestionBankAdmin() {
                     topicGroups={topicGroups}
                     onPatch={(p) => patch(q.id, p)}
                     onFigure={(file) => attachFigure(q, file)}
+                    ai={aiFig.get(q.id)}
+                    onDraw={() => drawFigure(q)}
+                    onAcceptAi={() => acceptAiFigure(q)}
+                    onDismissAi={() => setAi(q.id, null)}
                   />
                 ))
               )}
@@ -797,6 +889,10 @@ function QuestionRow({
   topicGroups,
   onPatch,
   onFigure,
+  ai,
+  onDraw,
+  onAcceptAi,
+  onDismissAi,
 }: {
   index: number;
   q: BankQuestion;
@@ -805,12 +901,16 @@ function QuestionRow({
   topicGroups: { parent: QuestionTopic; outcomes: QuestionTopic[] }[];
   onPatch: (p: Parameters<typeof updateBankQuestion>[1]) => void;
   onFigure: (file: File) => Promise<void>;
+  ai?: AiFigState;
+  onDraw: () => void;
+  onAcceptAi: () => void;
+  onDismissAi: () => void;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [figureBusy, setFigureBusy] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const body = q.question;
-  const missingFigure = isMissingFigure(body);
+  const missingFigure = isMissingFigure(body) && !q.figureNotNeeded;
   const topicKnown = topicGroups.some(({ parent, outcomes }) => parent.name === q.topicName || outcomes.some((o) => o.name === q.topicName));
 
   return (
@@ -837,6 +937,39 @@ function QuestionRow({
       </div>
 
       <ContentHtml html={body.question} className="prose prose-invert mt-2 max-w-none text-sm text-slate-200" />
+      {q.figureNotNeeded && (
+        <p className="mt-1 text-[11px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
+      )}
+      {ai?.busy && <p className="mt-2 text-xs text-primary">AI đang dựng lại hình từ câu dẫn và lời giải…</p>}
+      {ai?.reason && !ai.busy && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 p-2 text-xs text-amber-200">
+          <span>AI không vẽ được: {ai.reason}</span>
+          <button type="button" onClick={onDraw} className={`${btnCls} ml-auto`}>
+            <RefreshCw size={12} /> Vẽ lại
+          </button>
+          <button type="button" onClick={onDismissAi} className={btnCls}>
+            Bỏ
+          </button>
+        </div>
+      )}
+      {ai?.svg && !ai.busy && (
+        <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
+          <p className="mb-1 text-[11px] font-semibold text-primary">Hình AI vẽ — xem kĩ rồi mới lưu</p>
+          <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: ai.svg }} />
+          {ai.summary && <p className="mt-2 text-xs text-slate-300">{ai.summary}</p>}
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <button type="button" onClick={onAcceptAi} className={`${btnCls} border-emerald-500/50 text-emerald-200`}>
+              <Check size={14} /> Dùng hình này
+            </button>
+            <button type="button" onClick={onDraw} className={btnCls}>
+              <RefreshCw size={14} /> Vẽ lại
+            </button>
+            <button type="button" onClick={onDismissAi} className={btnCls}>
+              Bỏ
+            </button>
+          </div>
+        </div>
+      )}
 
       {body.type === "multiple_choice" && (
         <ol className="mt-2 grid gap-1 sm:grid-cols-2">
@@ -929,6 +1062,37 @@ function QuestionRow({
               }
             }}
           />
+          {missingFigure && (
+            <>
+              <button
+                type="button"
+                onClick={onDraw}
+                disabled={!!ai?.busy}
+                className={`${btnCls} border-primary/40 text-primary`}
+                title="AI dựng lại đồ thị/hình từ câu dẫn + lời giải; chỉ xem trước, bấm Dùng hình này mới lưu"
+              >
+                <Wand2 size={14} /> {ai?.busy ? "Đang vẽ…" : "AI vẽ hình"}
+              </button>
+              <button
+                type="button"
+                onClick={() => onPatch({ figureNotNeeded: true })}
+                className={btnCls}
+                title="Câu lý thuyết, không cần hình — bỏ khỏi mục Nhắc hình, thiếu ảnh"
+              >
+                Không cần hình
+              </button>
+            </>
+          )}
+          {q.figureNotNeeded && (
+            <button
+              type="button"
+              onClick={() => onPatch({ figureNotNeeded: false })}
+              className={btnCls}
+              title="Bỏ đánh dấu không cần hình"
+            >
+              Cần hình
+            </button>
+          )}
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
