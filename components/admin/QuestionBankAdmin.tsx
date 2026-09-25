@@ -76,6 +76,8 @@ interface AiFigState {
   svg?: string;
   summary?: string;
   reason?: string;
+  /** SVG do AI vẽ tự do (không qua bộ vẽ đồ thị của trang) — cần xem kĩ hơn. */
+  freeform?: boolean;
 }
 
 type Node =
@@ -258,7 +260,7 @@ export default function QuestionBankAdmin() {
     setAi(q.id, { busy: true });
     try {
       const r = await drawFigureWithAi(q.question);
-      setAi(q.id, r.status === "ok" ? { svg: r.svg, summary: r.summary } : { reason: r.reason });
+      setAi(q.id, r.status === "ok" ? { svg: r.svg, summary: r.summary, freeform: r.freeform } : { reason: r.reason });
     } catch (e) {
       setAi(q.id, { reason: e instanceof Error ? e.message : String(e) });
     }
@@ -954,7 +956,9 @@ function QuestionRow({
       )}
       {ai?.svg && !ai.busy && (
         <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
-          <p className="mb-1 text-[11px] font-semibold text-primary">Hình AI vẽ — xem kĩ rồi mới lưu</p>
+          <p className="mb-1 text-[11px] font-semibold text-primary">
+            {ai.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
+          </p>
           <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: ai.svg }} />
           {ai.summary && <p className="mt-2 text-xs text-slate-300">{ai.summary}</p>}
           <div className="mt-2 flex flex-wrap items-center gap-2">

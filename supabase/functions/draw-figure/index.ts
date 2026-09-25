@@ -37,24 +37,33 @@ function stripHtml(s: string): string {
     .trim();
 }
 
-const SYSTEM = `Bạn là giáo viên Vật lý THPT kiêm người vẽ hình minh hoạ cho đề trắc nghiệm. Một câu hỏi bị mất hình
-(đồ thị / hình vẽ) khi số hoá. Nhiệm vụ: dựng lại ĐÚNG hình đó bằng SVG, dựa trên câu dẫn, các phương án và lời giải.
+const SYSTEM = `Bạn là giáo viên Vật lý THPT. Một câu trắc nghiệm bị mất hình (đồ thị / hình vẽ) khi số hoá. Nhiệm vụ: dựng lại
+ĐÚNG hình đó dựa trên câu dẫn, các phương án và lời giải, rồi nộp bằng công cụ submit_figure.
+
+CÁCH NỘP — ưu tiên theo thứ tự:
+A) "figure" (ĐẶC TẢ ĐỒ THỊ, dùng cho mọi đồ thị hàm số: x–t, v–t, a–t, d–t, p–V, p–T, V–T, nhiệt độ–thời gian,
+   phóng xạ N–t, i–t, u–t, đồ thị hai đường…). Bạn CHỈ nêu thông số, mã của trang sẽ vẽ chính xác:
+   - xLabel/yLabel: "t (s)", "x (cm)"…; xRange/yRange: khoảng vẽ [min, max] (bao trọn đồ thị, chừa lề ~10%).
+   - xTicks/yTicks: các vạch chia CÓ GHI SỐ trên đồ thị gốc, dạng [{v: 0.2, label: "0,2"}]; nhãn ghi kiểu Việt Nam
+     (dấu phẩy thập phân). Chỉ ghi các giá trị đủ để học sinh giải, KHÔNG ghi kết quả câu hỏi.
+   - series: các đường. Loại:
+       {type:"sinusoid", A, T, phi, y0, domain:[t0,t1]} với y = A·cos(2π·x/T + phi) + y0, phi tính bằng rad
+         (đi qua gốc theo chiều dương ⇒ phi = −π/2 ≈ −1.5708; xuất phát ở biên dương ⇒ phi = 0; ở biên âm ⇒ phi = π;
+         qua gốc theo chiều âm ⇒ phi = π/2). Kiểm tra lại: tại x = 0, y = A·cos(phi) + y0 phải đúng với lời giải.
+       {type:"polyline", points:[[x,y],…]} cho đồ thị đoạn thẳng / gấp khúc (v–t đều, d–t, nhiệt độ–thời gian…).
+       {type:"hyperbola", k, domain:[x0,x1]} cho y = k/x (đẳng nhiệt).
+       {type:"exponential", y0, tau, yInf, domain} cho y = y0·e^(−x/tau) + yInf (phóng xạ, phóng điện).
+     Mỗi đường có thể kèm label (chú thích khi ≥ 2 đường) và color (#2563eb, #dc2626, #16a34a).
+   - points: các điểm được đánh dấu trên đồ thị gốc [{x, y, label?}]; guides: đường gióng nét đứt [{x?} | {y?}].
+B) "svg" chỉ khi hình KHÔNG phải đồ thị hàm số (sơ đồ mạch điện đơn giản, hình vẽ vật – lò xo, tia sáng…):
+   một thẻ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="100%">, chữ font-size 12–13,
+   nét stroke-width 2, dùng currentColor cho nét và chữ; KHÔNG <script>, <foreignObject>, on*, link ngoài, ảnh nhúng.
 
 NGUYÊN TẮC
-1. Chỉ vẽ khi văn bản đủ dữ kiện để hình khớp với lời giải (biên độ, chu kì, giá trị ban đầu, chiều, dạng đường,
-   số liệu trên trục…). Thiếu dữ kiện, hoặc hình là ảnh chụp thí nghiệm / sơ đồ thiết bị thực / hình phức tạp không
-   suy ra được → trả status "insufficient" và nói rõ thiếu gì. KHÔNG bịa số liệu.
-2. Hình phải để học sinh GIẢI ĐƯỢC nhưng KHÔNG lộ đáp án: chỉ ghi lên trục các giá trị mà đồ thị gốc chắc chắn có
-   (giá trị cực đại, thời điểm cắt trục, toạ độ điểm đặc biệt…), không ghi kết quả câu hỏi (ví dụ câu hỏi chu kì thì
-   không ghi "T = 2 s", chỉ đánh dấu các mốc thời gian đủ để tính).
-3. Đồ thị phải đúng toán học: dùng <path>/<polyline> với ít nhất 80 điểm tính từ hàm (ví dụ x = A cos(ωt + φ)),
-   đúng pha ban đầu và chiều theo lời giải. Trục có mũi tên, nhãn đại lượng và đơn vị (x (cm), t (s), v (cm/s), p, V…).
-   Gốc O, vạch chia có số. Đường lưới mờ nếu giúp đọc. Nhiều đồ thị trên cùng hệ trục thì khác màu và có chú thích.
-4. Kĩ thuật SVG: một thẻ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 W H" width="100%" style="max-width:440px;height:auto;display:block;margin:8px auto">
-   với W trong 360–480, H trong 200–320. Chữ font-size 12–13, font-family sans-serif. Nét chính stroke-width 2.
-   Nền trong suốt; màu chữ/trục dùng "currentColor" để hiện được cả nền tối và nền sáng; đường đồ thị dùng màu
-   #2563eb, #dc2626, #16a34a. KHÔNG dùng <script>, <foreignObject>, sự kiện on*, liên kết ngoài, ảnh nhúng.
-5. Chỉ dùng công cụ submit_figure để trả lời.`;
+1. Chỉ vẽ khi văn bản đủ dữ kiện để hình khớp với lời giải. Thiếu dữ kiện, hoặc hình là ảnh chụp thí nghiệm / sơ đồ
+   thiết bị thực / hình phức tạp không suy ra được → status "insufficient", nói rõ thiếu gì. KHÔNG bịa số liệu.
+2. Hình để học sinh GIẢI ĐƯỢC nhưng KHÔNG lộ đáp án: chỉ ghi các giá trị đồ thị gốc chắc chắn có.
+3. summary: 1–2 câu nêu hình vẽ gì và số liệu lấy từ đâu (câu dẫn hay lời giải) để giáo viên đối chiếu.`;
 
 interface Body {
   question?: unknown;
@@ -135,11 +144,45 @@ Deno.serve(async (req) => {
             type: "object",
             properties: {
               status: { type: "string", enum: ["ok", "insufficient"] },
-              svg: { type: "string", description: "Mã SVG hoàn chỉnh khi status = ok." },
-              summary: {
-                type: "string",
-                description: "1–2 câu mô tả hình đã vẽ và các số liệu lấy từ đâu (để giáo viên đối chiếu).",
+              figure: {
+                type: "object",
+                description: "Đặc tả đồ thị hàm số (ưu tiên). Chỉ dùng khi status = ok.",
+                properties: {
+                  xLabel: { type: "string" },
+                  yLabel: { type: "string" },
+                  xRange: { type: "array", items: { type: "number" }, minItems: 2, maxItems: 2 },
+                  yRange: { type: "array", items: { type: "number" }, minItems: 2, maxItems: 2 },
+                  xTicks: { type: "array", items: { type: "object", properties: { v: { type: "number" }, label: { type: "string" } }, required: ["v"] } },
+                  yTicks: { type: "array", items: { type: "object", properties: { v: { type: "number" }, label: { type: "string" } }, required: ["v"] } },
+                  series: {
+                    type: "array",
+                    items: {
+                      type: "object",
+                      properties: {
+                        type: { type: "string", enum: ["sinusoid", "polyline", "hyperbola", "exponential"] },
+                        A: { type: "number" },
+                        T: { type: "number" },
+                        phi: { type: "number" },
+                        y0: { type: "number" },
+                        tau: { type: "number" },
+                        yInf: { type: "number" },
+                        k: { type: "number" },
+                        domain: { type: "array", items: { type: "number" } },
+                        points: { type: "array", items: { type: "array", items: { type: "number" } } },
+                        label: { type: "string" },
+                        color: { type: "string" },
+                        dashed: { type: "boolean" },
+                      },
+                      required: ["type"],
+                    },
+                  },
+                  points: { type: "array", items: { type: "object", properties: { x: { type: "number" }, y: { type: "number" }, label: { type: "string" } }, required: ["x", "y"] } },
+                  guides: { type: "array", items: { type: "object", properties: { x: { type: "number" }, y: { type: "number" }, label: { type: "string" } } } },
+                },
+                required: ["xLabel", "yLabel", "xRange", "yRange", "series"],
               },
+              svg: { type: "string", description: "Mã SVG hoàn chỉnh — chỉ khi hình không phải đồ thị hàm số." },
+              summary: { type: "string", description: "1–2 câu: hình vẽ gì, số liệu lấy từ đâu." },
               reason: { type: "string", description: "Khi status = insufficient: thiếu dữ kiện gì." },
             },
             required: ["status"],
@@ -153,16 +196,32 @@ Deno.serve(async (req) => {
     const tool = response.content.find((b) => b.type === "tool_use") as
       | { type: "tool_use"; input: Record<string, unknown> }
       | undefined;
-    const input = tool?.input ?? {};
+    let input: Record<string, unknown> = tool?.input ?? {};
+    // Đôi khi model bọc toàn bộ kết quả vào trong một khoá (vd { figure: { status, figure } }) — mở ra.
+    if (typeof input.status !== "string") {
+      for (const v of Object.values(input)) {
+        if (v && typeof v === "object" && typeof (v as Record<string, unknown>).status === "string") {
+          input = v as Record<string, unknown>;
+          break;
+        }
+      }
+    }
     if (input.status !== "ok") {
+      const textBlock = response.content.find((b) => b.type === "text") as { type: "text"; text: string } | undefined;
       return jsonResponse({
         status: "insufficient",
-        reason: typeof input.reason === "string" && input.reason ? input.reason : "AI không đủ dữ kiện để vẽ.",
+        reason:
+          typeof input.reason === "string" && input.reason
+            ? input.reason
+            : `AI không trả lời đúng định dạng (stop_reason=${response.stop_reason}, blocks=${response.content.map((b) => b.type).join(",")}${textBlock ? `, text=${textBlock.text.slice(0, 200)}` : ""}, input=${JSON.stringify(input).slice(0, 400)}).`,
       });
     }
+    const summary = typeof input.summary === "string" ? input.summary : "";
+    if (input.figure && typeof input.figure === "object" && Array.isArray((input.figure as { series?: unknown }).series))
+      return jsonResponse({ status: "ok", figure: input.figure, summary });
     const svg = typeof input.svg === "string" ? sanitizeSvg(input.svg) : null;
-    if (!svg) return jsonResponse({ status: "insufficient", reason: "AI trả về SVG không hợp lệ." });
-    return jsonResponse({ status: "ok", svg, summary: typeof input.summary === "string" ? input.summary : "" });
+    if (!svg) return jsonResponse({ status: "insufficient", reason: "AI trả về hình không hợp lệ." });
+    return jsonResponse({ status: "ok", svg, summary });
   } catch (cause) {
     return jsonResponse({ error: cause instanceof Error ? cause.message : String(cause) }, 500);
   }

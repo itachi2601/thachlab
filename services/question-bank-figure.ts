@@ -7,6 +7,7 @@
  * Upload xong mà RPC lỗi thì gỡ ảnh vừa tải để Storage không rác.
  */
 import type { ExamQuestion } from "@/features/exams/types";
+import { type FigureSpec, normalizeFigureSpec, renderFigureSpec } from "@/services/figure-spec";
 import { compressImageFile } from "@/services/image-compress";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
 import { getSupabase } from "@/services/supabase";
@@ -46,6 +47,10 @@ export interface AiFigure {
   svg?: string;
   summary?: string;
   reason?: string;
+  /** Đặc tả đồ thị (khi AI trả thông số, mã tự vẽ). */
+  spec?: FigureSpec;
+  /** SVG do AI vẽ tự do (không phải đồ thị hàm số) — cần xem kĩ hơn. */
+  freeform?: boolean;
 }
 
 /** Gọi Edge Function draw-figure: AI dựng lại đồ thị/hình từ câu dẫn + phương án + lời giải. Chỉ xem trước, chưa lưu. */
@@ -58,10 +63,23 @@ export async function drawFigureWithAi(q: ExamQuestion): Promise<AiFigure> {
   };
   const { data, error } = await getSupabase().functions.invoke("draw-figure", { body });
   if (error) throw new Error(error.message || "Gọi AI vẽ hình lỗi.");
-  const r = (data ?? {}) as { status?: string; svg?: string; summary?: string; reason?: string; error?: string };
+  const r = (data ?? {}) as {
+    status?: string;
+    figure?: unknown;
+    svg?: string;
+    summary?: string;
+    reason?: string;
+    error?: string;
+  };
   if (r.error) throw new Error(r.error);
+  if (r.status === "ok" && r.figure) {
+    // Đặc tả đồ thị → mã tự vẽ (đường cong luôn đúng toán học, khớp vạch chia).
+    const spec = normalizeFigureSpec(r.figure);
+    if (spec) return { status: "ok", svg: renderFigureSpec(spec), summary: r.summary ?? "", spec };
+    return { status: "insufficient", reason: "AI trả về đặc tả đồ thị không hợp lệ — bấm Vẽ lại." };
+  }
   if (r.status === "ok" && typeof r.svg === "string" && isSafeSvg(r.svg))
-    return { status: "ok", svg: r.svg.trim(), summary: r.summary ?? "" };
+    return { status: "ok", svg: r.svg.trim(), summary: r.summary ?? "", freeform: true };
   return { status: "insufficient", reason: r.reason || "AI không đủ dữ kiện để vẽ." };
 }
 
