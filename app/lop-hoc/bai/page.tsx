@@ -345,6 +345,10 @@ function LessonLoader() {
     const ctxs = consumeTheoryReviewContext();
     return ctxs && ctxs[0]?.itemId === hashTargetItemId ? ctxs : null;
   });
+  // Mặc định THU GỌN — bản đầy đủ che mất đúng đoạn vừa tô vàng bên dưới, nhất là trên điện
+  // thoại (màn hẹp, danh sách nhiều câu dễ chiếm hết màn hình). Thu gọn chỉ còn 1 dòng, bấm để
+  // mở/đóng khi cần đọc lại đề.
+  const [reviewBannerOpen, setReviewBannerOpen] = useState(false);
 
   // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
   // ẩn khỏi danh sách hiển thị (đang tải thì cứ giữ nguyên, tránh nhấp nháy).
@@ -722,24 +726,39 @@ function LessonLoader() {
           </header>
 
           {reviewContexts && reviewContexts.length > 0 && (
-            <div className="lesson-review-banner" role="note">
+            <div className={`lesson-review-banner ${reviewBannerOpen ? "is-open" : ""}`} role="note">
               <div className="lesson-review-banner-head">
-                <span>
-                  {reviewContexts.length === 1
-                    ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
-                    : `${reviewContexts.length} câu em làm sai`}{" "}
-                  — đọc lại (các) đoạn tô vàng bên dưới nhé
-                </span>
+                <button
+                  type="button"
+                  className="lesson-review-banner-toggle"
+                  onClick={() => setReviewBannerOpen((o) => !o)}
+                  aria-expanded={reviewBannerOpen}
+                >
+                  <span>
+                    {reviewContexts.length === 1
+                      ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
+                      : `${reviewContexts.length} câu em làm sai`}{" "}
+                    — {reviewBannerOpen ? "bấm để thu gọn" : "bấm để xem lại đề"}
+                  </span>
+                  <ChevronDown size={15} className={reviewBannerOpen ? "rotate-180" : ""} />
+                </button>
                 <button type="button" onClick={() => setReviewContexts(null)} aria-label="Đóng">
                   <X size={15} />
                 </button>
               </div>
+              {reviewBannerOpen && (
               <div className="lesson-review-banner-list">
                 {reviewContexts.map((ctx, i) => (
                   <div key={i} className="lesson-review-banner-item">
                     <div className="lesson-review-banner-item-head">
                       <span>Câu {ctx.questionIndex}</span>
-                      <button type="button" onClick={() => jumpToTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`)}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setReviewBannerOpen(false);
+                          window.setTimeout(() => jumpToTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 50);
+                        }}
+                      >
                         ↑ Xem đoạn này
                       </button>
                     </div>
@@ -761,6 +780,7 @@ function LessonLoader() {
                   </div>
                 ))}
               </div>
+              )}
             </div>
           )}
 

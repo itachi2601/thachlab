@@ -678,7 +678,9 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
 /* Khối <h3> lý thuyết (features/lessons/theory-sections.ts) — tô vàng tạm khi quay lại từ
    "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
-.theory-section { transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
+/* Chừa chỗ cho thẻ nhắc câu sai (position: fixed, nổi trên đầu) khi scrollIntoView căn "start" —
+   không thì đoạn vừa tô nằm ngay dưới thẻ, bị che mất phần trên. */
+.theory-section { scroll-margin-top: 132px; transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
 .theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
@@ -689,11 +691,17 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
    "visible" tự chuyển thành "auto", vẫn tạo vùng có thể cuộn). Dùng fixed để không phụ thuộc
    overflow của tổ tiên — nổi giữa màn hình dưới thanh điều hướng, không nằm trong luồng bố cục
    2 cột như .lesson-nav nữa. */
-.lesson-review-banner { position: fixed; top: 84px; left: 50%; transform: translateX(-50%); width: min(720px, calc(100vw - 32px)); z-index: 40; border: 1px solid rgba(250, 204, 21, .35); border-radius: 14px; background: rgba(15, 23, 42, .94); backdrop-filter: blur(8px); padding: 14px 16px; box-shadow: 0 12px 32px rgba(0,0,0,.4); }
-.lesson-review-banner-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; color: #fbbf24; }
-.lesson-review-banner-head button { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 2px; }
-.lesson-review-banner-head button:hover { color: #e2e8f0; }
-.lesson-review-banner-list { max-height: min(50vh, 420px); overflow-y: auto; }
+/* Thu gọn mặc định (chỉ 1 dòng tóm tắt) — bản đầy đủ che mất đúng đoạn vừa tô vàng bên dưới,
+   nhất là trên điện thoại (màn hẹp, cao có hạn). Mở ra khi bấm, đọc xong tự thu gọn lại khi
+   bấm "Xem đoạn này" để không che nội dung. */
+.lesson-review-banner { position: fixed; top: 78px; left: 50%; transform: translateX(-50%); width: min(640px, calc(100vw - 20px)); z-index: 40; border: 1px solid rgba(250, 204, 21, .35); border-radius: 12px; background: rgba(15, 23, 42, .96); backdrop-filter: blur(8px); box-shadow: 0 12px 32px rgba(0,0,0,.4); overflow: hidden; }
+.lesson-review-banner-head { display: flex; align-items: stretch; }
+.lesson-review-banner-toggle { flex: 1 1 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-width: 0; border: 0; background: none; padding: 10px 8px 10px 14px; font-size: 12.5px; font-weight: 700; color: #fbbf24; text-align: left; cursor: pointer; }
+.lesson-review-banner-toggle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lesson-review-banner-toggle svg { flex: 0 0 auto; transition: transform .15s; }
+.lesson-review-banner-head > button:last-child { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 10px 12px; }
+.lesson-review-banner-head > button:last-child:hover { color: #e2e8f0; }
+.lesson-review-banner-list { padding: 0 16px 14px; max-height: min(46vh, 380px); overflow-y: auto; }
 .lesson-review-banner-item { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(250, 204, 21, .18); }
 .lesson-review-banner-item:first-child { margin-top: 8px; padding-top: 0; border-top: 0; }
 .lesson-review-banner-item-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
@@ -871,6 +879,10 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-block { padding: 14px 14px; border-radius: 12px; }
   .lesson-exam { flex-direction: column; align-items: stretch; }
   .lesson-btn, .lesson-btn-ghost { text-align: center; }
+  .lesson-review-banner { top: 66px; width: calc(100vw - 16px); border-radius: 10px; }
+  .lesson-review-banner-toggle { padding: 8px 6px 8px 12px; font-size: 12px; }
+  .lesson-review-banner-list { padding: 0 12px 12px; max-height: 42vh; }
+  .theory-section { scroll-margin-top: 110px; }
 }
 
 /* Phòng thi trực tiếp CNC — giao diện trò chơi lớp học */
@@ -1053,6 +1065,16 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   margin: 0.75em 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
