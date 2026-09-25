@@ -40,6 +40,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
+import MasteryBadge from "@/components/mastery/MasteryBadge";
+import { fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
 import dynamic from "next/dynamic";
 // Bảng ôn lỗi sai kéo theo QuestionCard + framer-motion (~140 KB); tách chunk riêng.
 // Panel vốn trả null khi chưa có dữ liệu nên lúc chờ cũng không hiện gì — không nhảy layout.
@@ -85,6 +87,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [exams, setExams] = useState<ExamMeta[] | null>(null);
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
+  // Nhãn ✅🟡🔴⚪ cạnh tên bài, theo chương: chapterId -> (lessonId -> nhãn). Chỉ tải cho chương
+  // đang MỞ (get_chapter_mastery) — mặc định trang chỉ mở sẵn đúng 1 chương nên vẫn đúng quy ước
+  // "1 RPC là đủ, không lặp query"; chương khác chỉ tải khi người dùng tự mở.
+  const [chapterMastery, setChapterMastery] = useState<Map<number, Map<number, MasteryLevel>>>(new Map());
+  const chapterMasteryFetching = useRef<Set<number>>(new Set());
 
   // link cũ /lop-hoc?tab=cttc → luồng CTTC riêng
   useEffect(() => {
@@ -132,6 +139,20 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     [session, lessons, progressMarks],
   );
 
+  // Tải nhãn mastery của một chương khi nó được mở ra (mặc định 1 chương/khi thầy tự mở thêm) —
+  // cache theo chapterId để mở/đóng lại không gọi lại RPC.
+  function ensureChapterMastery(chapterId: number) {
+    if (!session) return;
+    if (chapterMastery.has(chapterId) || chapterMasteryFetching.current.has(chapterId)) return;
+    chapterMasteryFetching.current.add(chapterId);
+    fetchChapterMastery(chapterId)
+      .then((m) => setChapterMastery((prev) => new Map(prev).set(chapterId, m)))
+      .catch(() => {
+        /* RPC chưa chạy/lỗi mạng — bỏ qua lặng lẽ, icon mastery chỉ là trang trí. */
+      })
+      .finally(() => chapterMasteryFetching.current.delete(chapterId));
+  }
+
   const effectiveSlug = classSlug;
   const active = classes?.find((c) =>
     effectiveSlug ? c.slug === effectiveSlug : c.id === activeId,
@@ -167,6 +188,16 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const targetId = requestedChapterId ?? lastLessonChapter?.id ?? classChapters[0].id;
     setCollapsedChapters(new Set(classChapters.filter((c) => c.id !== targetId).map((c) => c.id)));
   }, [classes, chapters, lessons, classChapters, lastLessonChapter, requestedChapterId]);
+
+  // Nhãn mastery cho các chương ĐANG MỞ — chạy lại mỗi khi mở thêm chương hoặc session tới sau
+  // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
+  useEffect(() => {
+    if (!session) return;
+    for (const ch of classChapters) {
+      if (!collapsedChapters.has(ch.id)) ensureChapterMastery(ch.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session, collapsedChapters, classChapters]);
 
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
@@ -383,6 +414,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                           </span>
                                           <span className="class-lesson-title">
                                             {lesson.title}
+                                            {!periodic && <MasteryBadge level={chapterMastery.get(ch.id)?.get(lesson.id)} />}
                                             {lesson.description && <small>{lesson.description}</small>}
                                           </span>
                                           <span className="class-meta">
