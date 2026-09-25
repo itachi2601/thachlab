@@ -22,7 +22,7 @@ as $$
 declare
   b public.question_bank%rowtype;
   v_old_hash text;
-  v_new_hash text;
+  v_target_hash text;
   v_stem text;
   v_new_q jsonb;
   v_dup bigint;
@@ -53,15 +53,30 @@ begin
     v_stem := rtrim(v_stem) || ' ' || p_img_html;
   end if;
   v_new_q := b.question || jsonb_build_object('question', v_stem);
-  v_new_hash := public.question_content_hash(v_new_q);
 
-  select id into v_dup from public.question_bank where content_hash = v_new_hash and id <> p_bank_id;
+  -- Hash đích = hash của câu ĐÃ SỬA theo bản nằm trong đề (nếu có đề đang dùng): trigger
+  -- trg_exams_sync_bank sau đó upsert đúng vào dòng này. Lưu ý bản trong ngân hàng có thể
+  -- mang thêm khoá "difficulty" (trg_bank_touch chèn vào) nên hash tính từ bản ngân hàng
+  -- có thể lệch với bản trong đề — vì vậy ưu tiên hash theo đề.
+  select public.question_content_hash(q.value || jsonb_build_object('question', v_stem))
+    into v_target_hash
+  from public.exams ex,
+       jsonb_array_elements(ex.questions) with ordinality as q(value, ordinality)
+  where jsonb_typeof(ex.questions) = 'array'
+    and public.question_content_hash(q.value) = v_old_hash
+  order by ex.id
+  limit 1;
+
+  select id into v_dup from public.question_bank
+    where content_hash = coalesce(v_target_hash, public.question_content_hash(v_new_q)) and id <> p_bank_id;
   if found then
     raise exception 'Ngân hàng đã có câu y hệt kèm ảnh này (#%). Lưu trữ một trong hai câu rồi thử lại.', v_dup;
   end if;
 
+  update public.question_bank set question = v_new_q where id = p_bank_id;
+  -- Tính hash sau khi trigger trg_bank_touch đã chèn topic/form/difficulty vào question.
   update public.question_bank
-    set question = v_new_q, content_hash = v_new_hash
+    set content_hash = coalesce(v_target_hash, public.question_content_hash(question))
     where id = p_bank_id;
 
   for e in
