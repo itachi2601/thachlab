@@ -2,12 +2,13 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
+import ClassPicker from "@/components/admin/ClassPicker";
 import ExamSection, { type ExamSectionSeed, type TopicGroup } from "@/components/admin/ExamSection";
 import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
 import { useToast } from "@/components/ui/Toast";
 import { canonicalizeQuestionTopics, type Difficulty, type ExamQuestion, type SchoolClass } from "@/features/exams/types";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
-import { classGrade, fetchClasses } from "@/services/classes";
+import { classGrade, fetchClasses, setItemClasses } from "@/services/classes";
 import { BUNDLE_SCHEMA, validateBundle, type LessonBundle } from "@/services/lesson-import";
 import { questionsMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
@@ -131,6 +132,7 @@ export default function ExamLibraryAdmin() {
   const [gradeOverride, setGradeOverride] = useState<string | null>(null);
   const [publishedInput, setPublishedInput] = useState(false);
   const [passScoreInput, setPassScoreInput] = useState("");
+  const [classIdsInput, setClassIdsInput] = useState<number[]>([]);
   const [examBundle, setExamBundle] = useState<LessonBundle | null>(null);
   const [saving, setSaving] = useState(false);
   const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
@@ -166,6 +168,7 @@ export default function ExamLibraryAdmin() {
       setFull(row);
       setPublishedInput(row.published);
       setPassScoreInput(row.pass_score != null ? String(row.pass_score) : "");
+      setClassIdsInput(row.classIds);
       setGradeOverride(null);
       const bundle: LessonBundle = {
         schema: BUNDLE_SCHEMA,
@@ -249,15 +252,23 @@ export default function ExamLibraryAdmin() {
         res = await supabase.from("exams").update(rest).eq("id", full.id);
       }
       if (res.error) throw new Error(res.error.message);
+      await setItemClasses("exam_classes", "exam_id", full.id, classIdsInput);
       toast("success", "Đã lưu thay đổi.");
-      setFull({ ...full, ...payload, pass_score: passScoreValue });
+      setFull({ ...full, ...payload, pass_score: passScoreValue, classIds: classIdsInput });
       setResult((old) =>
         old
           ? {
               ...old,
               rows: old.rows.map((r) =>
                 r.id === full.id
-                  ? { ...r, title: payload.title, duration_minutes: payload.duration_minutes, published: payload.published, question_count: payload.questions.length }
+                  ? {
+                      ...r,
+                      title: payload.title,
+                      duration_minutes: payload.duration_minutes,
+                      published: payload.published,
+                      question_count: payload.questions.length,
+                      classIds: classIdsInput,
+                    }
                   : r,
               ),
             }
@@ -368,7 +379,6 @@ export default function ExamLibraryAdmin() {
                   <h2 className="admin-h2">Đề #{full.id}</h2>
                   <p className="mt-1 text-xs text-slate-400">
                     Tạo lúc {fmtDate(full.created_at)}
-                    {full.classIds.length > 0 && ` · Gán cho: ${classNames(full.classIds)}`}
                     {full.cnc_key && " · Ngân hàng CNC"}
                   </p>
                 </div>
@@ -403,6 +413,8 @@ export default function ExamLibraryAdmin() {
                   </select>
                 </label>
               </div>
+
+              <ClassPicker selected={classIdsInput} onChange={setClassIdsInput} />
 
               <ExamSection
                 subjectCode={full.subject_code}
