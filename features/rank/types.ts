@@ -148,6 +148,14 @@ export interface RankWeekly {
   achieved: boolean;
 }
 
+export interface RankDaily {
+  date: string;
+  streak: number;
+  min_score: number;
+  rp: number;
+  today_done: boolean;
+}
+
 export interface RankStatus {
   season: RankSeasonInfo | null;
   rp: number;
@@ -158,6 +166,7 @@ export interface RankStatus {
   display_title: DisplayTitle | null;
   titles_count: number;
   weekly: RankWeekly | null;
+  daily: RankDaily | null;
 }
 
 // ---------- rank_my_titles / rank_titles_of ----------
