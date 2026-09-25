@@ -17,6 +17,10 @@ interface QuestionTags {
   topic?: string;
   form?: QuestionForm | "";
   difficulty?: Difficulty;
+  /** Nguồn của nhãn `difficulty`: "gv" = giáo viên tự bấm chọn, "ai" = AI gợi ý (chưa được
+   *  giáo viên xác nhận lại) — chỉ có ý nghĩa khi `difficulty` khác rỗng. Thiếu key này (đề cũ
+   *  gắn từ trước khi có tính năng phân biệt nguồn) nghĩa là không rõ nguồn. */
+  difficultySource?: DifficultySource;
   /** Chỉ có ý nghĩa khi đề này là quiz "Kiểm tra nhanh" gắn cho đúng 1 bài (item.exam_ids[0]):
    *  vị trí (0-based) của khối <h3> lý thuyết liên quan trong body_html mục lý thuyết của
    *  CHÍNH bài đó — dùng để "Ôn ngay" nhảy thẳng + tô màu đúng đoạn thay vì cả mục lý thuyết.
@@ -105,6 +109,10 @@ export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   "trung-binh": "Trung bình",
   kho: "Khó",
 };
+
+/** Nguồn gắn nhãn mức độ: "gv" = giáo viên tự bấm chọn tay, "ai" = AI gợi ý chưa qua tay giáo
+ *  viên xác nhận lại (nút "AI gắn nhãn" ở trang Đăng đề / script backfill ngân hàng câu hỏi). */
+export type DifficultySource = "gv" | "ai";
 
 export interface Exam {
   id: number;
