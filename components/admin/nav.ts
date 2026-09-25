@@ -3,6 +3,7 @@ import {
   Bug,
   ClipboardList,
   Database,
+  FileEdit,
   FileUp,
   Gauge,
   GraduationCap,
@@ -42,6 +43,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
   thpt: [
     { href: "/quan-tri/bai-hoc", label: "Bài học", desc: "Chương, bài và các mục trong bài", icon: BookOpen },
     { href: "/quan-tri/dang-de", label: "Đăng đề kiểm tra", desc: "Dán đề kiểu Azota rồi đăng thẳng vào bài", icon: SquarePen },
+    { href: "/quan-tri/sua-de", label: "Sửa đề đã đăng", desc: "Tìm và chỉnh sửa nội dung, đáp án của đề đã có", icon: FileEdit },
     { href: "/quan-tri/nhap-bai", label: "Nhập bài (LaTeX)", desc: "Đăng trọn bài học từ gói JSON", icon: FileUp },
     { href: "/quan-tri/ngan-hang-cau-hoi", label: "Ngân hàng câu hỏi", desc: "Tra cứu và tái sử dụng câu hỏi", icon: Database },
     { href: "/quan-tri/chu-de", label: "Chủ đề câu hỏi", desc: "Yêu cầu cần đạt và nhãn phân loại", icon: Tags },

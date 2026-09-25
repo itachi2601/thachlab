@@ -57,6 +57,9 @@ export interface ExamSectionProps {
   onHandoffGrade?: (grade: string) => void;
   /** Gói ngoài muốn nạp thẳng vào chế độ sửa chi tiết (vd JSON dán ở khối "Nâng cao"). */
   externalSeed?: ExamSectionSeed | null;
+  /** Ẩn khối "dán/thả đề" bên trái — dùng khi trang chỉ sửa một đề có sẵn câu hỏi (đã nạp qua externalSeed),
+   * không cần dán/thả hay quay lại văn bản (không có văn bản gốc để quay lại). */
+  hideRawText?: boolean;
 }
 
 async function compressRasterInputs(images: RasterImageInput[]): Promise<RasterImageInput[]> {
@@ -121,6 +124,7 @@ export default function ExamSection({
   enableQuestionBankHandoff = false,
   onHandoffGrade,
   externalSeed = null,
+  hideRawText = false,
 }: ExamSectionProps) {
   const toast = useToast();
   const fileRef = useRef<HTMLInputElement>(null);
@@ -285,7 +289,8 @@ export default function ExamSection({
   }
 
   return (
-    <section className="grid gap-4 lg:grid-cols-2">
+    <section className={`grid gap-4 ${hideRawText ? "" : "lg:grid-cols-2"}`}>
+      {!hideRawText && (
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset}</span>
@@ -434,8 +439,10 @@ export default function ExamSection({
           </ul>
         </details>
       </div>
+      )}
 
-      <div className="space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1">
+      <div className={hideRawText ? "space-y-3" : "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1"}>
+        {!hideRawText && (
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset + 1}</span>
           <span className="text-sm font-semibold text-white">Xem trước & đáp án</span>
@@ -460,6 +467,7 @@ export default function ExamSection({
             )}
           </div>
         </div>
+        )}
 
         {edited ? (
           <ExamDraftEditor
