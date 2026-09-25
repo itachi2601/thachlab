@@ -62,6 +62,26 @@ export const QUESTION_TYPE_LABELS: Record<ExamQuestion["type"], string> = {
   essay: "Tự luận",
 };
 
+/** Thứ tự chuẩn TN 4 đáp án → Đúng–Sai → Trả lời ngắn → Tự luận (cấu trúc đề thi 2025),
+ * dùng để nhóm "bảng câu hỏi" lúc học sinh làm bài và sắp lại câu lấy từ ngân hàng câu hỏi. */
+export const QUESTION_TYPE_ORDER: ExamQuestion["type"][] = [
+  "multiple_choice",
+  "true_false",
+  "short_answer",
+  "essay",
+];
+
+/** Gom chỉ số câu (0-based) theo QUESTION_TYPE_ORDER — dùng để vẽ "bảng câu hỏi" chia theo mục
+ * mà không đổi số thứ tự câu gốc (giữ nguyên `index+1` để khớp với QuestionCard/chấm điểm). */
+export function groupQuestionIndexesByType(
+  questions: ExamQuestion[],
+): { type: ExamQuestion["type"]; indices: number[] }[] {
+  return QUESTION_TYPE_ORDER.map((type) => ({
+    type,
+    indices: questions.map((_, i) => i).filter((i) => questions[i].type === type),
+  })).filter((s) => s.indices.length > 0);
+}
+
 export interface SchoolClass {
   id: number;
   name: string;
