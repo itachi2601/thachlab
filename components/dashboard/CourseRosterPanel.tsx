@@ -10,7 +10,7 @@ import { fetchStudentRosterInfo, type StudentRosterInfo } from "@/services/stude
 import { fetchCourseGradeOverrides, setCourseGradeOverride, type CourseGradeOverride } from "@/services/course-grade-overrides";
 import { fetchCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
 import { fetchRubricExamAttemptsByCourse, type RubricExamAttempt } from "@/services/cnc-rubric-exam";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
 import { computeCncFinalGrade } from "@/services/cnc-final-grade";
 import { LT_GRADE_COLUMNS } from "@/services/roster-schema";
 import TeacherFinalGradebook from "@/components/dashboard/TeacherFinalGradebook";
@@ -78,22 +78,29 @@ export default function CourseRosterPanel({
       const active = rows.filter((row) => row.status === "active");
       setEnrollments(active);
       setPending(rows.filter((row) => row.status === "pending"));
-      const info = await fetchStudentRosterInfo(active.map((row) => row.student_id));
-      setRosterInfo(info);
+      // Các nhánh dưới độc lập với nhau → tải song song thay vì 5 tầng nối tiếp
+      // (thông tin hồ sơ, rubric, buổi điểm danh → bản ghi, điểm ghi đè, phiếu học CNC).
       if (practicum) {
-        const [attempts, sessions, overrides] = await Promise.all([
+        const [info, attempts, attendanceData, overrides, cncRecords] = await Promise.all([
+          fetchStudentRosterInfo(active.map((row) => row.student_id)),
           Promise.all([fetchRubricExamAttemptsByCourse(id, "tien"), fetchRubricExamAttemptsByCourse(id, "phay")]).then((r) => r.flat()),
-          fetchAttendanceSessions(id),
+          fetchAttendanceSessions(id).then(async (sessions) => ({ sessions, records: await fetchAttendanceRecordsForSessions(sessions.map((s) => s.id)) })),
+          fetchCourseGradeOverrides(id).catch(() => []),
+          fetchCncLearningRecords(id).catch(() => []),
+        ]);
+        setRosterInfo(info);
+        setCncAttempts(attempts);
+        setCncAttendance(attendanceData.records);
+        setCncSessionCount(attendanceData.sessions.length);
+        setLtOverrides(overrides);
+        setCncRecords(cncRecords);
+      } else {
+        const [info, overrides] = await Promise.all([
+          fetchStudentRosterInfo(active.map((row) => row.student_id)),
           fetchCourseGradeOverrides(id).catch(() => []),
         ]);
-        const allRecords = (await Promise.all(sessions.map((s) => fetchAttendanceRecords(s.id)))).flat();
-        setCncAttempts(attempts);
-        setCncAttendance(allRecords);
-        setCncSessionCount(sessions.length);
+        setRosterInfo(info);
         setLtOverrides(overrides);
-        setCncRecords(await fetchCncLearningRecords(id).catch(() => []));
-      } else {
-        setLtOverrides(await fetchCourseGradeOverrides(id).catch(() => []));
       }
     } catch (error) {
       toast("error", errorMessage(error, "Chưa tải được dữ liệu khóa học."));

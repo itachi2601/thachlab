@@ -1,4 +1,5 @@
 import { getSupabase } from "@/services/supabase";
+import { callClassRpc } from "@/services/class-rpc";
 import {
   gradeQuestion,
   type ExamQuestion,
@@ -255,28 +256,17 @@ export interface ExamOverview {
   distribution: number[]; // 10 khoảng [0-1) … [9-10]
 }
 
-export async function fetchExamOverview(
-  examId: number,
-  studentIds: string[],
-): Promise<ExamOverview> {
-  if (studentIds.length === 0)
-    return { attempts: 0, average: 0, passRate: 0, avgSeconds: 0, distribution: Array(10).fill(0) };
-  const { data } = await getSupabase()
-    .from("exam_results")
-    .select("student_id, score, duration_seconds")
-    .eq("exam_id", examId)
-    .in("student_id", studentIds);
+const EMPTY_OVERVIEW = (): ExamOverview => ({ attempts: 0, average: 0, passRate: 0, avgSeconds: 0, distribution: Array(10).fill(0) });
 
-  // điểm cao nhất mỗi học sinh
-  const best = new Map<string, { score: number; secs: number }>();
-  for (const r of (data as { student_id: string; score: number; duration_seconds: number }[]) ?? []) {
-    const cur = best.get(r.student_id);
-    if (!cur || Number(r.score) > cur.score)
-      best.set(r.student_id, { score: Number(r.score), secs: r.duration_seconds });
-  }
-  const scores = [...best.values()];
-  if (scores.length === 0)
-    return { attempts: 0, average: 0, passRate: 0, avgSeconds: 0, distribution: Array(10).fill(0) };
+interface ExamBestRow {
+  student_id: string;
+  score: number;
+  duration_seconds: number;
+}
+
+/** Tổng hợp điểm cao nhất mỗi học sinh thành thẻ tổng quan — dùng chung cho cả 2 đường. */
+function summarizeExamOverview(scores: { score: number; secs: number }[]): ExamOverview {
+  if (scores.length === 0) return EMPTY_OVERVIEW();
 
   const distribution = Array(10).fill(0);
   for (const s of scores) distribution[Math.min(9, Math.floor(s.score))] += 1;
@@ -290,6 +280,46 @@ export async function fetchExamOverview(
   };
 }
 
+/** Đường cũ: tải mọi lượt làm của lớp trên đề rồi lấy max ở client. */
+export async function fetchExamOverviewDirect(
+  examId: number,
+  studentIds: string[],
+): Promise<ExamOverview> {
+  if (studentIds.length === 0) return EMPTY_OVERVIEW();
+  const { data } = await getSupabase()
+    .from("exam_results")
+    .select("student_id, score, duration_seconds")
+    .eq("exam_id", examId)
+    .in("student_id", studentIds);
+
+  // điểm cao nhất mỗi học sinh
+  const best = new Map<string, { score: number; secs: number }>();
+  for (const r of (data as ExamBestRow[]) ?? []) {
+    const cur = best.get(r.student_id);
+    if (!cur || Number(r.score) > cur.score)
+      best.set(r.student_id, { score: Number(r.score), secs: r.duration_seconds });
+  }
+  return summarizeExamOverview([...best.values()]);
+}
+
+/** Đường mới: rpc get_class_exam_best trả ≤ 1 dòng / học sinh. null = rpc chưa có. */
+export async function fetchExamOverviewRpc(
+  examId: number,
+  studentIds: string[],
+): Promise<ExamOverview | null> {
+  if (studentIds.length === 0) return EMPTY_OVERVIEW();
+  const rows = await callClassRpc<ExamBestRow[]>("get_class_exam_best", { p_exam: examId, p_students: studentIds });
+  if (!rows) return null;
+  return summarizeExamOverview(rows.map((r) => ({ score: Number(r.score), secs: r.duration_seconds })));
+}
+
+export async function fetchExamOverview(
+  examId: number,
+  studentIds: string[],
+): Promise<ExamOverview> {
+  return (await fetchExamOverviewRpc(examId, studentIds)) ?? fetchExamOverviewDirect(examId, studentIds);
+}
+
 export interface WrongestQuestion {
   questionIndex: number;
   topic: string;
@@ -300,8 +330,44 @@ export interface WrongestQuestion {
   pct: number;
 }
 
+function sortWrongest(list: WrongestQuestion[]): WrongestQuestion[] {
+  return list
+    .map((q) => ({ ...q, pct: pct(q.wrong, q.total) }))
+    .sort((a, b) => b.pct - a.pct || b.wrong - a.wrong);
+}
+
+/** Đường mới: rpc get_class_exam_question_stats đã group theo câu trên server. null = rpc chưa có. */
+export async function fetchWrongestQuestionsRpc(
+  examId: number,
+  studentIds: string[],
+): Promise<WrongestQuestion[] | null> {
+  if (studentIds.length === 0) return [];
+  const rows = await callClassRpc<{ question_index: number; topic_name: string | null; form: string; qtype: string; total: number; wrong: number }[]>(
+    "get_class_exam_question_stats",
+    { p_exam: examId, p_students: studentIds },
+  );
+  if (!rows) return null;
+  return sortWrongest(rows.map((r) => ({
+    questionIndex: r.question_index,
+    topic: r.topic_name || "Chưa gắn chủ đề",
+    form: r.form,
+    qtype: r.qtype,
+    wrong: r.wrong,
+    total: r.total,
+    pct: 0,
+  })));
+}
+
 /** Câu sai nhiều nhất của một đề (chỉ tính học sinh trong lớp). */
 export async function fetchWrongestQuestions(
+  examId: number,
+  studentIds: string[],
+): Promise<WrongestQuestion[]> {
+  return (await fetchWrongestQuestionsRpc(examId, studentIds)) ?? fetchWrongestQuestionsDirect(examId, studentIds);
+}
+
+/** Đường cũ: tải từng dòng exam_question_results của lớp trên đề rồi group ở client. */
+export async function fetchWrongestQuestionsDirect(
   examId: number,
   studentIds: string[],
 ): Promise<WrongestQuestion[]> {
@@ -336,13 +402,47 @@ export async function fetchWrongestQuestions(
     if (!r.is_correct) q.wrong += 1;
     map.set(r.question_index, q);
   }
-  return [...map.values()]
-    .map((q) => ({ ...q, pct: pct(q.wrong, q.total) }))
-    .sort((a, b) => b.pct - a.pct || b.wrong - a.wrong);
+  return sortWrongest([...map.values()]);
+}
+
+function sortTopicGaps(list: TopicGap[]): TopicGap[] {
+  return list
+    .map((g) => ({ ...g, pct: pct(g.wrong, g.total) }))
+    .sort((a, b) => b.pct - a.pct);
+}
+
+/** Đường mới: rpc get_class_topic_matrix đã group theo (chủ đề, dạng) trên server. null = rpc chưa có. */
+export async function fetchClassTopicMatrixRpc(
+  studentIds: string[],
+  examId?: number,
+): Promise<TopicGap[] | null> {
+  if (studentIds.length === 0) return [];
+  const rows = await callClassRpc<{ topic_id: number | null; topic_name: string; form: string; total: number; wrong: number }[]>(
+    "get_class_topic_matrix",
+    { p_students: studentIds, p_exam: examId ?? null },
+  );
+  if (!rows) return null;
+  return sortTopicGaps(rows.map((r) => ({
+    key: `${r.topic_name}|${r.form}`,
+    topicId: r.topic_id,
+    topic: r.topic_name,
+    form: r.form,
+    total: r.total,
+    wrong: r.wrong,
+    pct: 0,
+  })));
 }
 
 /** Ma trận chủ đề yếu của lớp: Chủ đề × Loại → % sai. */
 export async function fetchClassTopicMatrix(
+  studentIds: string[],
+  examId?: number,
+): Promise<TopicGap[]> {
+  return (await fetchClassTopicMatrixRpc(studentIds, examId)) ?? fetchClassTopicMatrixDirect(studentIds, examId);
+}
+
+/** Đường cũ: tải từng dòng exam_question_results của lớp rồi group ở client. */
+export async function fetchClassTopicMatrixDirect(
   studentIds: string[],
   examId?: number,
 ): Promise<TopicGap[]> {
@@ -366,9 +466,7 @@ export async function fetchClassTopicMatrix(
     if (r.topic_id) g.topicId = r.topic_id;
     map.set(key, g);
   }
-  return [...map.values()]
-    .map((g) => ({ ...g, pct: pct(g.wrong, g.total) }))
-    .sort((a, b) => b.pct - a.pct);
+  return sortTopicGaps([...map.values()]);
 }
 
 // ============================================================

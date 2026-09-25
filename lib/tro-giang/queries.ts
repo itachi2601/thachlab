@@ -223,6 +223,24 @@ export async function getMonthlyScore(assistantId: string, month: string): Promi
   return rows[0];
 }
 
+/**
+ * Điểm tháng của nhiều trợ giảng — 1 rpc ta_monthly_scores (migration perf_rpc_gv) thay vì
+ * N rpc ta_monthly_score. Khi hàm chưa có trên DB (PGRST202/42883) hoặc rpc lỗi thì
+ * quay về Promise.all từng người y như trước. Kết quả giữ đúng thứ tự assistantIds.
+ */
+export async function getMonthlyScores(assistantIds: string[], month: string): Promise<TaMonthlyScore[]> {
+  if (assistantIds.length === 0) return [];
+  const { data, error } = await getSupabase().rpc("ta_monthly_scores", {
+    p_assistant_ids: assistantIds,
+    p_month: month,
+  });
+  if (!error && data) {
+    const byId = new Map((data as TaMonthlyScore[]).map((row) => [row.assistant_id, row]));
+    if (assistantIds.every((id) => byId.has(id))) return assistantIds.map((id) => byId.get(id)!);
+  }
+  return Promise.all(assistantIds.map((id) => getMonthlyScore(id, month)));
+}
+
 /** Giờ tích lũy trọn đời (lop+phudao đã duyệt) — dùng để xét lên bậc. */
 export async function getAccruedHours(assistantId: string): Promise<number> {
   const { data, error } = await getSupabase().rpc("ta_accrued_hours", {

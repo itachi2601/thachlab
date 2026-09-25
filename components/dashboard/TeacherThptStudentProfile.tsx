@@ -4,8 +4,9 @@ import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
-import { fetchStudentLearningHistory, type LearningHistoryEntry } from "@/services/progress";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
+import type { LearningHistoryEntry } from "@/services/progress";
+import { fetchStudentLearningHistoryFast } from "@/services/student-profile";
 import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
@@ -54,7 +55,7 @@ export default function TeacherThptStudentProfile({
         return;
       }
       try {
-        setHistory(await fetchStudentLearningHistory(selectedId));
+        setHistory(await fetchStudentLearningHistoryFast(selectedId));
       } catch {
         setHistory([]);
       }
@@ -65,11 +66,11 @@ export default function TeacherThptStudentProfile({
     let cancelled = false;
     fetchAttendanceSessions(classId)
       .then(async (rows) => {
-        const records = await Promise.all(rows.map((session) => fetchAttendanceRecords(session.id).catch(() => [])));
+        const records = await fetchAttendanceRecordsForSessions(rows.map((session) => session.id)).catch(() => []);
         if (cancelled) return;
         setSessions(rows);
         const map = new Map<string, Map<number, string>>();
-        records.flat().forEach((record) => {
+        records.forEach((record) => {
           const inner = map.get(record.student_id) ?? new Map<number, string>();
           inner.set(record.session_id, record.status);
           map.set(record.student_id, inner);
