@@ -80,7 +80,11 @@ function inlineLatex(input: string): string {
   s = s.replace(/\\emph\{([^{}]*)\}/g, "<em>$1</em>");
   s = s.replace(/\\%/g, "%").replace(/\\&/g, "&").replace(/\\_/g, "_");
   s = s.replace(/\\\\\s*/g, "<br>");
-  s = s.replace(/[ \t]*\n[ \t]*/g, " ").trim();
+  // Văn bản Azota gõ tay (không phải LaTeX thật): mỗi Enter là chủ ý xuống dòng
+  // (liệt kê bước thí nghiệm, ý a)/b)...), không phải chỗ wrap tự động — giữ lại
+  // bằng <br> thay vì gộp thành khoảng trắng như trước, kẻo các ý dính liền một câu.
+  s = s.replace(/\n{2,}/g, "\n");
+  s = s.replace(/[ \t]*\n[ \t]*/g, "<br>").trim();
   return s;
 }
 
