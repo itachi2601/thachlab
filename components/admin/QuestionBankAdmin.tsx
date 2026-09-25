@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Dices,
   FilePlus2,
+  ImagePlus,
   ListChecks,
   RefreshCw,
   Search,
@@ -30,6 +31,8 @@ import {
 import { TYPE_SHORT } from "@/features/lessons/types";
 import { classifyQuestionTags } from "@/services/ai-classify";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
+import { attachFigureToBankQuestion } from "@/services/question-bank-figure";
+import { isMissingFigure } from "@/services/question-figures";
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
   fetchBankQuestions,
@@ -225,6 +228,25 @@ export default function QuestionBankAdmin() {
     if (!picked.length) return toast("warning", "Không còn câu nào để bốc trong danh sách này.");
     setBasket((b) => [...b, ...picked]);
     toast("success", `Đã thêm ${picked.length} câu vào giỏ.`);
+  }
+
+  // Gắn ảnh cho câu thiếu hình: ảnh vào cả dòng ngân hàng lẫn mọi đề đang dùng câu đó.
+  async function attachFigure(q: BankQuestion, file: File) {
+    try {
+      const r = await attachFigureToBankQuestion(q.id, file);
+      setItems((list) =>
+        list.map((x) => (x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash } : x)),
+      );
+      toast(
+        "success",
+        r.examsUpdated > 0
+          ? `Đã gắn ảnh vào câu #${q.id} và ${r.examsUpdated} đề đang dùng câu này.`
+          : `Đã gắn ảnh vào câu #${q.id} (chưa đề nào đang dùng câu này).`,
+      );
+      reloadTree();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    }
   }
 
   async function patch(id: number, patchIn: Parameters<typeof updateBankQuestion>[1]) {
@@ -559,6 +581,7 @@ export default function QuestionBankAdmin() {
                     onPick={() => toggleBasket(q.id)}
                     topicGroups={topicGroups}
                     onPatch={(p) => patch(q.id, p)}
+                    onFigure={(file) => attachFigure(q, file)}
                   />
                 ))
               )}
@@ -773,6 +796,7 @@ function QuestionRow({
   onPick,
   topicGroups,
   onPatch,
+  onFigure,
 }: {
   index: number;
   q: BankQuestion;
@@ -780,9 +804,13 @@ function QuestionRow({
   onPick: () => void;
   topicGroups: { parent: QuestionTopic; outcomes: QuestionTopic[] }[];
   onPatch: (p: Parameters<typeof updateBankQuestion>[1]) => void;
+  onFigure: (file: File) => Promise<void>;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [figureBusy, setFigureBusy] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
   const body = q.question;
+  const missingFigure = isMissingFigure(body);
   const topicKnown = topicGroups.some(({ parent, outcomes }) => parent.name === q.topicName || outcomes.some((o) => o.name === q.topicName));
 
   return (
@@ -884,6 +912,36 @@ function QuestionRow({
           ))}
         </select>
         <div className="ml-auto flex items-center gap-2">
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (!file) return;
+              setFigureBusy(true);
+              try {
+                await onFigure(file);
+              } finally {
+                setFigureBusy(false);
+              }
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            disabled={figureBusy}
+            className={`${btnCls} ${missingFigure ? "border-red-500/50 text-red-200" : ""}`}
+            title={
+              missingFigure
+                ? "Câu nhắc đồ thị/hình vẽ nhưng chưa có ảnh — tải ảnh lên, ảnh sẽ vào cả các đề đang dùng câu này"
+                : "Thêm ảnh vào câu dẫn (vào cả các đề đang dùng câu này)"
+            }
+          >
+            <ImagePlus size={14} /> {figureBusy ? "Đang tải…" : missingFigure ? "Tải ảnh (thiếu hình)" : "Tải ảnh"}
+          </button>
           <button type="button" onClick={() => setShowAnswer((s) => !s)} className={btnCls}>
             {showAnswer ? "Ẩn đáp án" : "Đáp án & lời giải"}
           </button>

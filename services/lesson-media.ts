@@ -61,7 +61,8 @@ function dataUriToBytes(dataUri: string): { bytes: Uint8Array; mime: string } {
  */
 export async function uploadLessonMedia(
   client: SupabaseClient,
-  lessonId: number,
+  /** id bài học, hoặc một thư mục con khác trong bucket (vd "bank/123" cho ảnh gắn từ ngân hàng câu hỏi). */
+  lessonId: number | string,
   images: RasterImageInput[],
 ): Promise<UploadedMedia[]> {
   const done: UploadedMedia[] = [];
