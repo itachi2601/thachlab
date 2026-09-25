@@ -336,12 +336,14 @@ function LessonLoader() {
   const [hashTargetItemId] = useState<number | null>(() =>
     typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
   );
-  // Câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi sessionStorage) —
-  // hiện thành thẻ dán cố định cạnh đoạn lý thuyết vừa tô, để không quên đang ôn vì sai câu nào.
-  const [reviewContext, setReviewContext] = useState<TheoryReviewContext | null>(() => {
+  // (Tất cả) câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi
+  // sessionStorage) — hiện thành thẻ dán cố định liệt kê đủ, tô vàng đủ mọi đoạn liên quan,
+  // để không quên đang ôn vì sai (những) câu nào — sai nhiều câu ở nhiều đoạn khác nhau vẫn
+  // thấy đủ, không chỉ đoạn của câu vừa bấm "Ôn ngay".
+  const [reviewContexts, setReviewContexts] = useState<TheoryReviewContext[] | null>(() => {
     if (typeof window === "undefined") return null;
-    const ctx = consumeTheoryReviewContext();
-    return ctx && ctx.itemId === hashTargetItemId ? ctx : null;
+    const ctxs = consumeTheoryReviewContext();
+    return ctxs && ctxs[0]?.itemId === hashTargetItemId ? ctxs : null;
   });
 
   // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
@@ -475,6 +477,41 @@ function LessonLoader() {
   // của ContentHtml — nếu đổi, dangerouslySetInnerHTML thay cả node đang cuộn tới, huỷ luôn
   // animation scrollIntoView giữa chừng (đã tự kiểm khi làm pilot, xem lịch sử sửa).
   //
+  // reviewContexts (đọc snapshot 1 lần qua ref, KHÔNG qua state trong deps của effect dưới) —
+  // đóng thẻ nhắc không được kích lại hiệu ứng cuộn/tô, chỉ đóng UI.
+  const reviewContextsRef = useRef(reviewContexts);
+
+  // Cuộn hẳn tới + tô vàng "chính" 1 đoạn — có animation cuộn + tô lại đều đặn trong ~1s đầu vì
+  // 1 lần không đủ: có 1 re-render nào đó ngay sau scrollIntoView (nghi do chính scrollIntoView
+  // làm IntersectionObserver dò "mục đang đọc" đổi activeSection, xem effect scroll-spy ở trên)
+  // dựng lại đúng khối nội dung này — xoá mất class vừa tô VÀ cắt ngang animation cuộn đang
+  // chạy dở, dù `items` không đổi. Tự kiểm bằng MutationObserver thấy đúng vậy, nhưng chưa lần
+  // ra được nguyên nhân gốc trong React/ContentHtml.
+  function jumpToTheorySection(hashId: string) {
+    const el = document.getElementById(hashId);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.add("theory-section--highlight");
+    let reapplyCount = 0;
+    const reapply = window.setInterval(() => {
+      const target = document.getElementById(hashId);
+      target?.classList.add("theory-section--highlight");
+      reapplyCount += 1;
+      if (reapplyCount <= 6) target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+    window.setTimeout(() => {
+      window.clearInterval(reapply);
+      document.getElementById(hashId)?.classList.remove("theory-section--highlight");
+    }, 2600);
+  }
+
+  // Chỉ tô vàng (không giành quyền cuộn với đoạn "chính") — dùng cho các đoạn PHỤ khi sai
+  // nhiều câu ở nhiều đoạn khác nhau cùng lúc.
+  function highlightTheorySectionOnly(hashId: string) {
+    document.getElementById(hashId)?.classList.add("theory-section--highlight");
+    window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
+  }
+
   // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
   // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
   // mới nếu khác (revalidateLesson trong services/static-content.ts) — nếu chỉ tô màu 1 lần
@@ -486,30 +523,15 @@ function LessonLoader() {
   useEffect(() => {
     if (!items || items.length === 0) return;
     const hash = window.location.hash.replace(/^#/, "");
-    if (!hash.startsWith("theory-sec-")) return;
+    const contexts = reviewContextsRef.current;
     const timer = window.setTimeout(() => {
-      const el = document.getElementById(hash);
-      if (!el) return;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      el.classList.add("theory-section--highlight");
-      // 1 lần không đủ: có 1 re-render nào đó ngay sau scrollIntoView (nghi do chính
-      // scrollIntoView làm IntersectionObserver dò "mục đang đọc" đổi activeSection, xem
-      // effect scroll-spy ở trên) dựng lại đúng khối nội dung này — xoá mất class vừa tô
-      // VÀ cắt ngang animation cuộn đang chạy dở, dù `items` không đổi. Tự kiểm bằng
-      // MutationObserver thấy đúng vậy, nhưng chưa lần ra được nguyên nhân gốc trong
-      // React/ContentHtml. Bù bằng cách tô lại + cuộn lại đều đặn trong ~1s đầu thay vì
-      // làm 1 lần — cả hai lệnh gọi lặp lại đều vô hại (browser bỏ qua nếu đã ở đúng chỗ).
-      let reapplyCount = 0;
-      const reapply = window.setInterval(() => {
-        const target = document.getElementById(hash);
-        target?.classList.add("theory-section--highlight");
-        reapplyCount += 1;
-        if (reapplyCount <= 6) target?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 150);
-      window.setTimeout(() => {
-        window.clearInterval(reapply);
-        document.getElementById(hash)?.classList.remove("theory-section--highlight");
-      }, 2600);
+      if (contexts && contexts.length > 0) {
+        const ids = contexts.map((ctx) => `theory-sec-${ctx.itemId}-${ctx.sectionIndex}`);
+        const primaryId = hash.startsWith("theory-sec-") && ids.includes(hash) ? hash : ids[0];
+        ids.forEach((id) => (id === primaryId ? jumpToTheorySection(id) : highlightTheorySectionOnly(id)));
+      } else if (hash.startsWith("theory-sec-")) {
+        jumpToTheorySection(hash);
+      }
     }, 200);
     return () => window.clearTimeout(timer);
   }, [items]);
@@ -699,29 +721,46 @@ function LessonLoader() {
             <h1>{title}</h1>
           </header>
 
-          {reviewContext && (
+          {reviewContexts && reviewContexts.length > 0 && (
             <div className="lesson-review-banner" role="note">
               <div className="lesson-review-banner-head">
-                <span>Câu {reviewContext.questionIndex} em làm sai — đọc lại đoạn tô vàng bên dưới nhé</span>
-                <button type="button" onClick={() => setReviewContext(null)} aria-label="Đóng">
+                <span>
+                  {reviewContexts.length === 1
+                    ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
+                    : `${reviewContexts.length} câu em làm sai`}{" "}
+                  — đọc lại (các) đoạn tô vàng bên dưới nhé
+                </span>
+                <button type="button" onClick={() => setReviewContexts(null)} aria-label="Đóng">
                   <X size={15} />
                 </button>
               </div>
-              <p className="lesson-review-banner-q">
-                <ContentHtml html={reviewContext.questionHtml} />
-              </p>
-              {reviewContext.correctHtml && (
-                <p className="lesson-review-banner-answer is-correct">
-                  <span>Đáp án đúng: </span>
-                  <ContentHtml html={reviewContext.correctHtml} />
-                </p>
-              )}
-              {reviewContext.pickedHtml && (
-                <p className="lesson-review-banner-answer is-wrong">
-                  <span>Em đã chọn: </span>
-                  <ContentHtml html={reviewContext.pickedHtml} />
-                </p>
-              )}
+              <div className="lesson-review-banner-list">
+                {reviewContexts.map((ctx, i) => (
+                  <div key={i} className="lesson-review-banner-item">
+                    <div className="lesson-review-banner-item-head">
+                      <span>Câu {ctx.questionIndex}</span>
+                      <button type="button" onClick={() => jumpToTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`)}>
+                        ↑ Xem đoạn này
+                      </button>
+                    </div>
+                    <p className="lesson-review-banner-q">
+                      <ContentHtml html={ctx.questionHtml} />
+                    </p>
+                    {ctx.correctHtml && (
+                      <p className="lesson-review-banner-answer is-correct">
+                        <span>Đáp án đúng: </span>
+                        <ContentHtml html={ctx.correctHtml} />
+                      </p>
+                    )}
+                    {ctx.pickedHtml && (
+                      <p className="lesson-review-banner-answer is-wrong">
+                        <span>Em đã chọn: </span>
+                        <ContentHtml html={ctx.pickedHtml} />
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

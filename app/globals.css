@@ -693,7 +693,14 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-review-banner-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; color: #fbbf24; }
 .lesson-review-banner-head button { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 2px; }
 .lesson-review-banner-head button:hover { color: #e2e8f0; }
-.lesson-review-banner-q { margin-top: 8px; color: #e2e8f0; font-size: 14.5px; line-height: 1.6; }
+.lesson-review-banner-list { max-height: min(50vh, 420px); overflow-y: auto; }
+.lesson-review-banner-item { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(250, 204, 21, .18); }
+.lesson-review-banner-item:first-child { margin-top: 8px; padding-top: 0; border-top: 0; }
+.lesson-review-banner-item-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lesson-review-banner-item-head > span { font-size: 12px; font-weight: 700; color: #fbbf24; }
+.lesson-review-banner-item-head button { flex: 0 0 auto; border: 0; background: none; padding: 0; font-size: 12px; font-weight: 600; color: #22d3ee; cursor: pointer; }
+.lesson-review-banner-item-head button:hover { text-decoration: underline; }
+.lesson-review-banner-q { margin-top: 6px; color: #e2e8f0; font-size: 14.5px; line-height: 1.6; }
 .lesson-review-banner-answer { margin-top: 6px; font-size: 13.5px; }
 .lesson-review-banner-answer span:first-child { font-weight: 600; color: #94a3b8; }
 .lesson-review-banner-answer.is-correct { color: #6ee7b7; }

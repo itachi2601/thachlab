@@ -629,7 +629,31 @@ export default function ExamRunner({
       <p className="mb-4 text-sm text-slate-500">
         Bấm số câu ở bảng bên dưới để xem nhanh — bảng luôn ghim trên đầu khi em cuộn trang.
       </p>
-      <ExamReviewPager
+      {(() => {
+        // Gom TẤT CẢ câu sai có gắn theorySection trong lượt này — bấm "Ôn ngay" ở BẤT KỲ câu
+        // nào cũng mang theo đủ cả bộ, để trang bài học tô đúng MỌI đoạn liên quan cùng lúc
+        // thay vì chỉ đoạn của câu vừa bấm (sai nhiều câu ở nhiều đoạn khác nhau thì đoạn cũ
+        // sẽ mất dấu nếu chỉ mang theo 1 câu).
+        const allTheoryReviewContexts: TheoryReviewContext[] =
+          itemId && theoryLessonId
+            ? exam.questions
+                .map((q, qi): TheoryReviewContext | null => {
+                  if (q.theorySection === undefined) return null;
+                  const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
+                  if (!g || g.earned >= g.max) return null;
+                  return {
+                    itemId,
+                    sectionIndex: q.theorySection,
+                    questionIndex: qi + 1,
+                    questionHtml: q.question,
+                    pickedHtml: q.type === "multiple_choice" && typeof responses[qi] === "number" ? q.options[responses[qi] as number] : null,
+                    correctHtml: q.type === "multiple_choice" ? q.options[q.answer] : null,
+                  };
+                })
+                .filter((c): c is TheoryReviewContext => c !== null)
+            : [];
+        return (
+          <ExamReviewPager
         questions={exam.questions}
         responses={responses}
         renderAbove={(qi) => {
@@ -651,20 +675,6 @@ export default function ExamRunner({
               : null;
           const lessonId = topicName ? lessonByTopic.get(topicName) : undefined;
           const reviewHref = preciseHref ?? (lessonId ? `/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}` : null);
-          // Mang theo đề bài + đáp án qua trang bài học (xem features/lessons/theory-sections.ts)
-          // để hiện thành thẻ dán cố định cạnh đoạn vừa tô — chỉ tô vàng thì cuộn tới nơi xong
-          // học sinh dễ quên mất mình đang tìm hiểu vì sai câu nào.
-          const reviewContext: TheoryReviewContext | null =
-            preciseHref && itemId
-              ? {
-                  itemId,
-                  sectionIndex: q.theorySection as number,
-                  questionIndex: qi + 1,
-                  questionHtml: q.question,
-                  pickedHtml: q.type === "multiple_choice" && typeof responses[qi] === "number" ? q.options[responses[qi] as number] : null,
-                  correctHtml: q.type === "multiple_choice" ? q.options[q.answer] : null,
-                }
-              : null;
           if (!wrong || (!topicName && !formLabel)) return null;
           return (
             <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
@@ -681,7 +691,7 @@ export default function ExamRunner({
               {reviewHref && (
                 <Link
                   href={reviewHref}
-                  onClick={() => reviewContext && saveTheoryReviewContext(reviewContext)}
+                  onClick={() => preciseHref && allTheoryReviewContexts.length > 0 && saveTheoryReviewContext(allTheoryReviewContexts)}
                   className="font-semibold text-primary hover:underline"
                 >
                   Ôn ngay →
@@ -690,7 +700,9 @@ export default function ExamRunner({
             </div>
           );
         }}
-      />
+          />
+        );
+      })()}
     </div>
   );
 }

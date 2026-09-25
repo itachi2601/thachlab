@@ -56,12 +56,14 @@ export function theorySectionItemId(hash: string): number | null {
   return m ? Number(m[1]) : null;
 }
 
-// ---------- Mang theo câu vừa làm sai khi quay lại xem lý thuyết ----------
+// ---------- Mang theo (TẤT CẢ) câu vừa làm sai khi quay lại xem lý thuyết ----------
 // Chỉ tô vàng đúng đoạn thì học sinh cuộn tới nơi rồi... quên mất mình đang tìm hiểu vì sai
-// câu nào. Mang đề bài + đáp án đã chọn/đáp án đúng qua sessionStorage (không qua URL vì HTML
-// câu hỏi có thể dài, không qua React context vì hai trang không cùng cây component) để trang
-// bài học hiện lại thành 1 thẻ dán cố định ngay trên đoạn vừa tô — đọc xong thì xoá luôn, tránh
-// hiện lại thẻ cũ nếu học sinh quay lại trang này sau, không qua "Ôn ngay" nữa.
+// câu nào — và nếu sai nhiều câu ở nhiều đoạn khác nhau, bấm "Ôn ngay" ở 1 câu thì các câu sai
+// khác sẽ mất dấu nếu chỉ mang theo đúng câu vừa bấm. Mang CẢ BỘ đề bài + đáp án đã chọn/đáp án
+// đúng của mọi câu sai (cùng thuộc 1 lượt làm) qua sessionStorage (không qua URL vì HTML câu hỏi
+// có thể dài, không qua React context vì hai trang không cùng cây component) để trang bài học
+// hiện lại thành thẻ dán cố định liệt kê đủ, tô vàng đủ MỌI đoạn liên quan — đọc xong thì xoá
+// luôn, tránh hiện lại bộ cũ nếu học sinh quay lại trang này sau, không qua "Ôn ngay" nữa.
 const REVIEW_CONTEXT_KEY = "thachlab:theory-review-context";
 
 export interface TheoryReviewContext {
@@ -73,21 +75,22 @@ export interface TheoryReviewContext {
   correctHtml: string | null; // null nếu không phải trắc nghiệm 4 đáp án (chưa hỗ trợ tóm tắt các dạng câu khác)
 }
 
-export function saveTheoryReviewContext(ctx: TheoryReviewContext): void {
+export function saveTheoryReviewContext(contexts: TheoryReviewContext[]): void {
   try {
-    sessionStorage.setItem(REVIEW_CONTEXT_KEY, JSON.stringify(ctx));
+    sessionStorage.setItem(REVIEW_CONTEXT_KEY, JSON.stringify(contexts));
   } catch {
     // Riêng tư trình duyệt chặn sessionStorage — bỏ qua, "Ôn ngay" vẫn cuộn+tô đúng đoạn như thường.
   }
 }
 
 /** Đọc rồi xoá luôn (dùng 1 lần) — gọi khi trang bài học vừa tải xong. */
-export function consumeTheoryReviewContext(): TheoryReviewContext | null {
+export function consumeTheoryReviewContext(): TheoryReviewContext[] | null {
   try {
     const raw = sessionStorage.getItem(REVIEW_CONTEXT_KEY);
     if (!raw) return null;
     sessionStorage.removeItem(REVIEW_CONTEXT_KEY);
-    return JSON.parse(raw) as TheoryReviewContext;
+    const parsed = JSON.parse(raw) as TheoryReviewContext[];
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : null;
   } catch {
     return null;
   }
