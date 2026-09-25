@@ -139,7 +139,10 @@ Deno.serve(async (req) => {
       tools: [
         {
           name: "submit_figure",
-          description: "Nộp hình đã vẽ, hoặc báo không đủ dữ kiện.",
+          description:
+            "Nộp kết quả. Vẽ được: status = \"ok\" kèm ĐÚNG MỘT trong hai — figure (đặc tả đồ thị hàm số, ưu tiên) " +
+            "hoặc svg (mã SVG cho hình không phải đồ thị hàm số: sơ đồ mạch, vật–lò xo, tia sáng…). " +
+            "Không vẽ được: status = \"insufficient\" kèm reason.",
           input_schema: {
             type: "object",
             properties: {
@@ -196,32 +199,41 @@ Deno.serve(async (req) => {
     const tool = response.content.find((b) => b.type === "tool_use") as
       | { type: "tool_use"; input: Record<string, unknown> }
       | undefined;
-    let input: Record<string, unknown> = tool?.input ?? {};
-    // Đôi khi model bọc toàn bộ kết quả vào trong một khoá (vd { figure: { status, figure } }) — mở ra.
-    if (typeof input.status !== "string") {
-      for (const v of Object.values(input)) {
-        if (v && typeof v === "object" && typeof (v as Record<string, unknown>).status === "string") {
-          input = v as Record<string, unknown>;
-          break;
-        }
+    const rawInput: Record<string, unknown> = tool?.input ?? {};
+    const usage = { input_tokens: response.usage.input_tokens, output_tokens: response.usage.output_tokens };
+    // Model đôi khi bọc/lồng kết quả khác schema — tìm đặc tả đồ thị / svg / status ở mọi tầng (≤ 3).
+    const findObj = (
+      o: unknown,
+      pred: (x: Record<string, unknown>) => boolean,
+      depth = 0,
+    ): Record<string, unknown> | null => {
+      if (!o || typeof o !== "object" || Array.isArray(o) || depth > 3) return null;
+      const r = o as Record<string, unknown>;
+      if (pred(r)) return r;
+      for (const v of Object.values(r)) {
+        const f = findObj(v, pred, depth + 1);
+        if (f) return f;
       }
-    }
-    if (input.status !== "ok") {
-      const textBlock = response.content.find((b) => b.type === "text") as { type: "text"; text: string } | undefined;
-      return jsonResponse({
-        status: "insufficient",
-        reason:
-          typeof input.reason === "string" && input.reason
-            ? input.reason
-            : `AI không trả lời đúng định dạng (stop_reason=${response.stop_reason}, blocks=${response.content.map((b) => b.type).join(",")}${textBlock ? `, text=${textBlock.text.slice(0, 200)}` : ""}, input=${JSON.stringify(input).slice(0, 400)}).`,
-      });
-    }
-    const summary = typeof input.summary === "string" ? input.summary : "";
-    if (input.figure && typeof input.figure === "object" && Array.isArray((input.figure as { series?: unknown }).series))
-      return jsonResponse({ status: "ok", figure: input.figure, summary });
-    const svg = typeof input.svg === "string" ? sanitizeSvg(input.svg) : null;
-    if (!svg) return jsonResponse({ status: "insufficient", reason: "AI trả về hình không hợp lệ." });
-    return jsonResponse({ status: "ok", svg, summary });
+      return null;
+    };
+    const figure = findObj(rawInput, (x) => Array.isArray(x.series) && Array.isArray(x.xRange));
+    const svgHolder = findObj(rawInput, (x) => typeof x.svg === "string" && (x.svg as string).includes("<svg"));
+    const meta = findObj(rawInput, (x) => typeof x.status === "string") ?? rawInput;
+    const summary = typeof meta.summary === "string" ? meta.summary : "";
+
+    if (figure) return jsonResponse({ status: "ok", figure, summary, usage });
+    const svg = svgHolder ? sanitizeSvg(svgHolder.svg as string) : null;
+    if (svg) return jsonResponse({ status: "ok", svg, summary, usage });
+    if (svgHolder) return jsonResponse({ status: "insufficient", reason: "AI trả về SVG không hợp lệ.", usage });
+    const textBlock = response.content.find((b) => b.type === "text") as { type: "text"; text: string } | undefined;
+    return jsonResponse({
+      status: "insufficient",
+      usage,
+      reason:
+        typeof meta.reason === "string" && meta.reason
+          ? meta.reason
+          : `AI không trả lời đúng định dạng (stop_reason=${response.stop_reason}, blocks=${response.content.map((b) => b.type).join(",")}${textBlock ? `, text=${textBlock.text.slice(0, 200)}` : ""}, input=${JSON.stringify(rawInput).slice(0, 400)}).`,
+    });
   } catch (cause) {
     return jsonResponse({ error: cause instanceof Error ? cause.message : String(cause) }, 500);
   }
