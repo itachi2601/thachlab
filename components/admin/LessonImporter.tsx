@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import ExamSection, { type ExamSectionSeed, type TopicGroup, compressRasterInputs } from "@/components/admin/ExamSection";
+import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
+import { questionsMissingFigure } from "@/services/question-figures";
 import dynamic from "next/dynamic";
 // Xem trước ví dụ có lời giải kéo theo ContentHtml đồng bộ + KaTeX (~290 KB); chỉ tải khi có bài để xem.
 const WorkedQuestionsGrid = dynamic(() => import("@/components/lessons/WorkedQuestionsGrid"), {
@@ -177,6 +179,11 @@ export default function LessonImporter() {
   }, [examBundle, theoryPart]);
 
   const check = fullBundle ? validateBundle(fullBundle) : null;
+  // Câu nhắc đồ thị/hình vẽ mà không có ảnh: chặn Đăng cho tới khi thầy xác nhận đã xem.
+  const missingFigure = useMemo(() => questionsMissingFigure(fullBundle?.exam?.questions ?? []), [fullBundle]);
+  const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
+  const figureAck = figureAckFor !== null && figureAckFor === fullBundle;
+  const setFigureAck = (v: boolean) => setFigureAckFor(v ? fullBundle : null);
   // Lọc lại theo khối: danh sách trong state có thể là của lớp chọn trước đó.
   const gradeTopics = useMemo(
     () => (grade ? topics.filter((t) => t.grade === grade) : []),
@@ -211,6 +218,7 @@ export default function LessonImporter() {
     lessonId !== null &&
     (targets.luyen_tap || targets.kiem_tra || targets.bai_tap_mau) &&
     (tagsReady || tagOverride) &&
+    (missingFigure.length === 0 || figureAck) &&
     !busy;
 
   function existing(kind: LessonItem["kind"]) {
@@ -825,6 +833,9 @@ export default function LessonImporter() {
             ))}
           </ul>
         )}
+        {missingFigure.length > 0 && (
+          <MissingFigureNotice nums={missingFigure} ack={figureAck} onAck={setFigureAck} />
+        )}
         <button
           onClick={publish}
           disabled={!canPublish}
@@ -842,7 +853,9 @@ export default function LessonImporter() {
                   ? "Chọn ít nhất một mục để gắn đề ở mục 5."
                   : !tagsReady && !tagOverride
                     ? "Nhãn chủ đề ở mục 4 chưa đủ — sửa nhãn trong đề, hoặc tick ô cho phép đăng."
-                    : ""}
+                    : missingFigure.length > 0 && !figureAck
+                      ? "Có câu nhắc hình mà không có ảnh — chèn lại hình, hoặc tick ô xác nhận ở khung đỏ trên."
+                      : ""}
           </p>
         )}
         {log.length > 0 && (

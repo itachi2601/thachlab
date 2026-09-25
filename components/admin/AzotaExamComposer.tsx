@@ -20,6 +20,8 @@ import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } fro
 import { classGrade, displayClassesByGrade, expandClassIdsByGrade, fetchClasses, setItemClasses } from "@/services/classes";
 import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle, type LessonBundle } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
+import { questionsMissingFigure } from "@/services/question-figures";
+import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { suggestedMinCorrect } from "@/features/progress/types";
 import { getSupabase } from "@/services/supabase";
@@ -172,8 +174,20 @@ export default function AzotaExamComposer() {
 
   const questions = examBundle?.exam.questions ?? [];
   const check = examBundle ? validateBundle(examBundle) : null;
+  // Câu nhắc đồ thị/hình vẽ mà không có ảnh: chặn Đăng cho tới khi thầy xác nhận đã xem.
+  // Xác nhận gắn với đúng bundle đang xem: đổi file/sửa đề là phải tick lại.
+  const missingFigure = questionsMissingFigure(questions);
+  const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
+  const figureAck = figureAckFor !== null && figureAckFor === examBundle;
+  const setFigureAck = (v: boolean) => setFigureAckFor(v ? examBundle : null);
   const canPublish =
-    !!examBundle && !!check?.ok && questions.length > 0 && lessonId !== null && !busy && !!examBundle.exam.title.trim();
+    !!examBundle &&
+    !!check?.ok &&
+    questions.length > 0 &&
+    lessonId !== null &&
+    !busy &&
+    !!examBundle.exam.title.trim() &&
+    (missingFigure.length === 0 || figureAck);
 
   // ----- Đăng -----
   async function publish() {
@@ -494,6 +508,10 @@ export default function AzotaExamComposer() {
               <li key={i}>• {e}</li>
             ))}
           </ul>
+        )}
+
+        {missingFigure.length > 0 && (
+          <MissingFigureNotice nums={missingFigure} ack={figureAck} onAck={setFigureAck} />
         )}
 
         <div className="flex flex-wrap items-center gap-3">

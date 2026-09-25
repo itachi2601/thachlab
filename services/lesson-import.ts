@@ -181,7 +181,13 @@ export function validateBundle(input: unknown): BundleCheck {
   });
 
   // placeholder chưa thay hết
-  const allHtml = [theory, ...worked.map((w) => (isRecord(w) ? String(w.body_html ?? "") : ""))].join("\n");
+  const examQs = isRecord(exam) && Array.isArray(exam.questions) ? exam.questions : [];
+  const allHtml = [
+    theory,
+    ...worked.map((w) => (isRecord(w) ? String(w.body_html ?? "") : "")),
+    // Ảnh trong câu hỏi (\includegraphics trong đề .tex, ảnh Word) cũng phải được khai báo.
+    JSON.stringify(examQs),
+  ].join("\n");
   const declared = new Set(imgs.map((i) => (isRecord(i) ? String(i.placeholder) : "")));
   for (const m of allHtml.matchAll(/\bmedia\/[\w./-]+/g)) {
     if (!declared.has(m[0]))

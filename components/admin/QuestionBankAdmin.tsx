@@ -21,6 +21,7 @@ import { useToast } from "@/components/ui/Toast";
 import {
   DIFFICULTY_LABELS,
   QUESTION_FORM_LABELS,
+  QUESTION_TYPE_ORDER,
   pickRandom,
   type Difficulty,
   type ExamQuestion,
@@ -32,6 +33,7 @@ import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } fro
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
   fetchBankQuestions,
+  fetchBankMissingFigureCount,
   fetchBankQuestionsByIds,
   fetchBankTopicCounts,
   fetchBankUnknownGradeCount,
@@ -64,6 +66,7 @@ type Node =
   | { kind: "untagged" }
   | { kind: "unknown-grade" }
   | { kind: "duplicates" }
+  | { kind: "missing-figure" }
   | { kind: "topic"; id: number; parent: boolean };
 
 const QTYPE_OPTIONS: { value: ExamQuestion["type"] | ""; label: string }[] = [
@@ -82,6 +85,7 @@ export default function QuestionBankAdmin() {
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [counts, setCounts] = useState<BankTopicCount[]>([]);
   const [unknownGrade, setUnknownGrade] = useState(0);
+  const [missingFigureCount, setMissingFigureCount] = useState(0);
   const [node, setNode] = useState<Node>({ kind: "all" });
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
@@ -109,6 +113,7 @@ export default function QuestionBankAdmin() {
     fetchQuestionTopics(grade).then(setTopics).catch(() => setTopics([]));
     fetchBankTopicCounts(grade).then(setCounts).catch(() => setCounts([]));
     fetchBankUnknownGradeCount().then(setUnknownGrade).catch(() => setUnknownGrade(0));
+    fetchBankMissingFigureCount(grade).then(setMissingFigureCount).catch(() => setMissingFigureCount(0));
   }, [grade]);
   useEffect(reloadTree, [reloadTree]);
 
@@ -150,7 +155,8 @@ export default function QuestionBankAdmin() {
   );
 
   const topicIdsFilter = useMemo<(number | null)[] | undefined>(() => {
-    if (node.kind === "all" || node.kind === "unknown-grade" || node.kind === "duplicates") return undefined;
+    if (node.kind === "all" || node.kind === "unknown-grade" || node.kind === "duplicates" || node.kind === "missing-figure")
+      return undefined;
     if (node.kind === "untagged") return [null];
     if (!node.parent) return [node.id];
     return [node.id, ...outcomesOf(topics, node.id).map((o) => o.id)];
@@ -195,6 +201,7 @@ export default function QuestionBankAdmin() {
       difficulty,
       includeArchived: showArchived,
       search: debounced,
+      missingFigure: node.kind === "missing-figure",
     });
     req
       .then((list) => setItems(node.kind === "unknown-grade" ? list.filter((q) => q.grade === "") : list))
@@ -312,6 +319,9 @@ export default function QuestionBankAdmin() {
     if (!basket.length) return;
     try {
       const list = await fetchBankQuestionsByIds(basket);
+      // Sắp theo đúng cấu trúc đề thi: TN 4 đáp án → Đúng–Sai → Trả lời ngắn → Tự luận,
+      // bất kể thứ tự em bấm chọn trong ngân hàng.
+      list.sort((a, b) => QUESTION_TYPE_ORDER.indexOf(a.qtype) - QUESTION_TYPE_ORDER.indexOf(b.qtype));
       const questions = list.map(toExamQuestion);
       writeHandoff({ title: "", grade, questions, bankIds: list.map((q) => q.id) });
       setBasket([]);
@@ -326,6 +336,7 @@ export default function QuestionBankAdmin() {
     if (node.kind === "untagged") return "Câu chưa gắn năng lực";
     if (node.kind === "unknown-grade") return "Câu chưa rõ khối";
     if (node.kind === "duplicates") return "Nghi trùng lặp";
+    if (node.kind === "missing-figure") return "Nhắc hình nhưng thiếu ảnh";
     return topics.find((t) => t.id === node.id)?.name ?? "";
   })();
 
@@ -381,6 +392,13 @@ export default function QuestionBankAdmin() {
             label="Nghi trùng lặp"
             count={dupPairs.length}
             warn={dupPairs.length > 0}
+          />
+          <TreeRow
+            active={node.kind === "missing-figure"}
+            onClick={() => setNode({ kind: "missing-figure" })}
+            label="Nhắc hình, thiếu ảnh"
+            count={missingFigureCount}
+            warn={missingFigureCount > 0}
           />
           <div className="my-2 border-t border-white/10" />
           {parents.length === 0 && (

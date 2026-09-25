@@ -4,6 +4,7 @@
 // gắn nhãn và lấy câu ra soạn đề. Xem docs/supabase-migration-question-bank.sql.
 
 import type { Difficulty, ExamQuestion, QuestionForm } from "@/features/exams/types";
+import { FIGURE_MARK_PG, FIGURE_WORDS_PG, HAS_IMAGE_PG, isMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
 
 export interface BankQuestion {
@@ -78,7 +79,21 @@ export interface BankFilter {
   includeArchived?: boolean;
   /** Tìm trong nội dung câu hỏi (ilike). */
   search?: string;
+  /** Chỉ lấy câu nhắc đồ thị/hình vẽ mà câu dẫn + phương án không có ảnh, hoặc còn mốc ⟦…⟧ thay hình. */
+  missingFigure?: boolean;
   limit?: number;
+}
+
+/**
+ * Điều kiện "thiếu hình" đẩy xuống PostgREST (regex `imatch` = ~*). Cùng nghĩa với
+ * isMissingFigure() ở services/question-figures.ts; sau khi tải về vẫn lọc lại bằng hàm đó
+ * (xét thêm statements của câu đúng–sai) nên kết quả không rộng hơn helper.
+ */
+function applyMissingFigureFilter<T extends { or: (f: string) => T; filter: (c: string, op: string, v: string) => T }>(q: T): T {
+  return q
+    .or(`question->>question.imatch.${FIGURE_WORDS_PG},question->>question.imatch.${FIGURE_MARK_PG}`)
+    .filter("question->>question", "not.imatch", HAS_IMAGE_PG)
+    .or(`question->>options.is.null,question->>options.not.imatch.${HAS_IMAGE_PG}`);
 }
 
 export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQuestion[]> {
@@ -102,9 +117,20 @@ export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQ
   if (filter.difficulty !== undefined && filter.difficulty !== "all") q = q.eq("difficulty", filter.difficulty);
   if (!filter.includeArchived) q = q.eq("archived", false);
   if (filter.search?.trim()) q = q.ilike("question->>question", `%${filter.search.trim()}%`);
+  if (filter.missingFigure) q = applyMissingFigureFilter(q);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
-  return ((data as BankRow[]) ?? []).map(fromRow);
+  const rows = ((data as BankRow[]) ?? []).map(fromRow);
+  return filter.missingFigure ? rows.filter((r) => isMissingFigure(r.question)) : rows;
+}
+
+/** Số câu nhắc hình mà thiếu ảnh của một khối (đếm thô theo điều kiện PostgREST). */
+export async function fetchBankMissingFigureCount(grade: string): Promise<number> {
+  let q = getSupabase().from("question_bank").select("id", { count: "exact", head: true }).eq("archived", false);
+  if (grade) q = q.eq("grade", grade);
+  const { count, error } = await applyMissingFigureFilter(q);
+  if (error) throw new Error(error.message);
+  return count ?? 0;
 }
 
 export async function fetchBankQuestionsByIds(ids: number[]): Promise<BankQuestion[]> {

@@ -205,7 +205,11 @@ export default function ExamSection({
 
   const questions = bundle.exam.questions;
   const notes = useMemo(
-    () => [...fileNotes, ...(draft?.notes ?? [])].filter((n) => !n.startsWith('Không thấy "PHẦN')),
+    // Cảnh báo "nhắc hình mà thiếu ảnh" của parser đã có khung đỏ riêng (MissingFigureNotice) — không lặp ở đây.
+    () =>
+      [...fileNotes, ...(draft?.notes ?? [])].filter(
+        (n) => !n.startsWith('Không thấy "PHẦN') && !/nhắc tới đồ thị\/hình vẽ nhưng không có ảnh/.test(n),
+      ),
     [fileNotes, draft],
   );
   const incompleteCount = questions.filter((q) => problems(q).length > 0).length;
