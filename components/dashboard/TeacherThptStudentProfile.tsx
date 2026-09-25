@@ -8,6 +8,7 @@ import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAt
 import type { LearningHistoryEntry } from "@/services/progress";
 import { fetchStudentLearningHistoryFast } from "@/services/student-profile";
 import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
+import PasswordResetCard from "@/components/dashboard/PasswordResetCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
   theory: "Lý thuyết",
@@ -164,6 +165,8 @@ export default function TeacherThptStudentProfile({
               </p>
             )}
           </section>
+
+          <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
 
           <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
 
