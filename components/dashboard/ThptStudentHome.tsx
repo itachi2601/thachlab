@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Sparkles, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -39,10 +39,13 @@ import {
   type AnnouncementKind,
   type ClassAnnouncement,
 } from "@/services/announcements";
+import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 import {
   ACTIVE_NEED_STATUSES,
+  MAX_EXIT_ATTEMPTS,
   NEED_STATUS_LABEL,
   cancelRegistration,
+  fetchMyExitAttempts,
   fetchMyNeeds,
   fetchMyRegistrations,
   fetchUpcomingSlots,
@@ -52,6 +55,7 @@ import {
   type TutoringNeed,
   type TutoringSlot,
 } from "@/services/tutoring";
+import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -139,10 +143,13 @@ export default function ThptStudentHome({
 
   const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
   const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
+  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
+  const [exitAttemptCounts, setExitAttemptCounts] = useState<Map<number, number>>(new Map());
+  const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
 
   useEffect(() => {
     // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
@@ -175,9 +182,23 @@ export default function ThptStudentHome({
   }
   useEffect(reloadAnnouncements, [classId]);
 
+  useEffect(() => {
+    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
+  }, [classId]);
+
   function reloadTutoring() {
     fetchMyNeeds(studentId)
-      .then((rows) => setNeeds(rows.filter((n) => ACTIVE_NEED_STATUSES.includes(n.status))))
+      .then((rows) => {
+        const active = rows.filter((n) => ACTIVE_NEED_STATUSES.includes(n.status));
+        setNeeds(active);
+        fetchMyExitAttempts(studentId, active.map((n) => n.id))
+          .then((attempts) => {
+            const counts = new Map<number, number>();
+            for (const a of attempts) counts.set(a.tutoringNeedId, (counts.get(a.tutoringNeedId) ?? 0) + 1);
+            setExitAttemptCounts(counts);
+          })
+          .catch(() => setExitAttemptCounts(new Map()));
+      })
       .catch(() => setNeeds([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
     fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
@@ -240,16 +261,19 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  const openHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId));
 
-  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || openHomework.length > 0;
 
   const dailySuggestion = todoExams.length > 0
     ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
-    : nextLesson
-      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
-      : needs.length > 0
-        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
-        : null;
+    : openHomework.length > 0
+      ? `Gợi ý: làm "${openHomework[0].title}" để ôn lại và giữ chuỗi.`
+      : nextLesson
+        ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+        : needs.length > 0
+          ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
+          : null;
 
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
@@ -386,6 +410,25 @@ export default function ThptStudentHome({
             </Link>
           ))}
 
+          {openHomework.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl border border-cyan-400/15 bg-cyan-500/5 p-3 hover:bg-cyan-500/10"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <Sparkles size={14} className="shrink-0 text-cyan-300" />
+                <span className="min-w-0">
+                  <strong className="block truncate text-sm text-white">{item.title}</strong>
+                  <small className="text-xs text-slate-500">
+                    {item.wrongCount} câu sai lớp + {item.bankCount} câu ôn tập · +RP khi làm xong
+                  </small>
+                </span>
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
+            </Link>
+          ))}
+
           {!hasTodayContent && <p className="text-sm text-slate-500">Chưa có việc gì mới — cứ ôn lại bài cũ nhé.</p>}
         </div>
       </Section>
@@ -409,16 +452,35 @@ export default function ThptStudentHome({
           {needs.length === 0 ? (
             <p className="text-sm text-slate-500">Hiện chưa có chủ đề nào cần phụ đạo — cứ tiếp tục học nhé!</p>
           ) : (
-            <div className="flex flex-wrap gap-1.5">
-              {needs.map((need) => (
-                <span
-                  key={need.id}
-                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}
-                >
-                  {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
-                </span>
-              ))}
-            </div>
+            <>
+              <p className="text-xs text-slate-400">
+                Để bỏ một chủ đề khỏi danh sách này: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
+                bên dưới rồi trả bài lại cho trợ giảng, hoặc <strong className="text-slate-200">tự ôn và làm bài
+                kiểm tra thoát phụ đạo</strong> (câu hỏi ngẫu nhiên đúng chủ đề em đang hổng) — đạt từ 80% là xong,
+                tối đa {MAX_EXIT_ATTEMPTS} lượt/chủ đề.
+              </p>
+              <div className="space-y-1.5">
+                {needs.map((need) => {
+                  const used = exitAttemptCounts.get(need.id) ?? 0;
+                  const left = MAX_EXIT_ATTEMPTS - used;
+                  return (
+                    <div key={need.id} className="flex flex-wrap items-center gap-1.5">
+                      <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}>
+                        {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setQuizNeed(need)}
+                        disabled={left <= 0}
+                        className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        {left > 0 ? `Tự kiểm tra (còn ${left} lượt)` : "Đã hết lượt tự kiểm tra"}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
           )}
 
           <div>
@@ -475,6 +537,19 @@ export default function ThptStudentHome({
         Xem toàn bộ chương trình lớp {className}
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
+
+      {quizNeed && (
+        <TutoringExitQuiz
+          need={quizNeed}
+          studentId={studentId}
+          attemptsUsed={exitAttemptCounts.get(quizNeed.id) ?? 0}
+          onClose={() => setQuizNeed(null)}
+          onCleared={() => {
+            setQuizNeed(null);
+            reloadTutoring();
+          }}
+        />
+      )}
     </div>
   );
 }

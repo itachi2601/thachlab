@@ -429,3 +429,114 @@ export async function cancelRegistration(slotId: number, studentId: string): Pro
     .eq("student_id", studentId);
   if (error) throw error;
 }
+
+// ============================================================
+// Thoát phụ đạo bằng tự kiểm tra — cách 2 bên cạnh đăng ký buổi học ở trên.
+// Xem docs/supabase-migration-tutoring-exit-quiz.sql.
+// ============================================================
+
+export const MAX_EXIT_ATTEMPTS = 3;
+export const EXIT_QUIZ_PASS_PCT = 80;
+export const EXIT_QUIZ_QUESTION_COUNT = 20;
+
+export interface ExitAttempt {
+  id: number;
+  tutoringNeedId: number;
+  total: number;
+  correct: number;
+  pct: number;
+  passed: boolean;
+  createdAt: string;
+}
+
+interface ExitAttemptRow {
+  id: number;
+  tutoring_need_id: number;
+  total: number;
+  correct: number;
+  pct: number;
+  passed: boolean;
+  created_at: string;
+}
+
+const EXIT_ATTEMPT_SELECT = "id, tutoring_need_id, total, correct, pct, passed, created_at";
+
+function toExitAttempt(row: ExitAttemptRow): ExitAttempt {
+  return {
+    id: row.id,
+    tutoringNeedId: row.tutoring_need_id,
+    total: row.total,
+    correct: row.correct,
+    pct: row.pct,
+    passed: row.passed,
+    createdAt: row.created_at,
+  };
+}
+
+/** Các lượt tự kiểm tra đã làm của chính học sinh, cho một nhóm mục cần phụ đạo. */
+export async function fetchMyExitAttempts(studentId: string, needIds: number[]): Promise<ExitAttempt[]> {
+  if (needIds.length === 0) return [];
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_attempts")
+    .select(EXIT_ATTEMPT_SELECT)
+    .eq("student_id", studentId)
+    .in("tutoring_need_id", needIds)
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+  return ((data ?? []) as unknown as ExitAttemptRow[]).map(toExitAttempt);
+}
+
+/** Ghi một lượt tự kiểm tra — trigger DB tính pct/passed và tự đóng mục nếu đạt. */
+export async function logExitAttempt(input: {
+  tutoringNeedId: number;
+  studentId: string;
+  questionIds: number[];
+  total: number;
+  correct: number;
+}): Promise<ExitAttempt> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_attempts")
+    .insert({
+      tutoring_need_id: input.tutoringNeedId,
+      student_id: input.studentId,
+      question_ids: input.questionIds,
+      total: input.total,
+      correct: input.correct,
+    })
+    .select(EXIT_ATTEMPT_SELECT)
+    .single();
+  if (error) throw error;
+  return toExitAttempt(data as unknown as ExitAttemptRow);
+}
+
+export interface TodayExitAttempt {
+  studentId: string;
+  topicId: number;
+  pct: number;
+  passed: boolean;
+  createdAt: string;
+}
+
+/**
+ * Lượt tự kiểm tra hôm nay của một nhóm học sinh — trợ giảng dùng để xác nhận ngay tại
+ * buổi phụ đạo (bằng chứng khách quan, thay cho tick tay "học sinh trình bày lại được").
+ */
+export async function fetchTodayExitAttempts(studentIds: string[]): Promise<TodayExitAttempt[]> {
+  if (studentIds.length === 0) return [];
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_attempts")
+    .select("student_id, topic_id, pct, passed, created_at")
+    .in("student_id", studentIds)
+    .gte("created_at", startOfToday.toISOString())
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+  return (data ?? []).map((row) => ({
+    studentId: row.student_id as string,
+    topicId: row.topic_id as number,
+    pct: row.pct as number,
+    passed: row.passed as boolean,
+    createdAt: row.created_at as string,
+  }));
+}

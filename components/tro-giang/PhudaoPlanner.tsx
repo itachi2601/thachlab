@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { AlertTriangle, Check, Loader2, Search } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { AlertTriangle, Check, Loader2, RefreshCw, Search } from "lucide-react";
 import { fetchClassStudents, type ClassStudent } from "@/services/classes";
 import {
   fetchOutcomeGaps,
@@ -14,7 +14,9 @@ import {
 import {
   ACTIVE_NEED_STATUSES,
   fetchNeedsForStudents,
+  fetchTodayExitAttempts,
   needLabel,
+  type TodayExitAttempt,
   type TutoringNeed,
 } from "@/services/tutoring";
 
@@ -66,6 +68,7 @@ export default function PhudaoPlanner({
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [query, setQuery] = useState("");
+  const [attempts, setAttempts] = useState<TodayExitAttempt[]>([]);
 
   const roster = demo ? DEMO_ROSTER : loaded && loaded.classId === classId ? loaded.list : null;
   const error = loaded && loaded.classId === classId ? loaded.error : null;
@@ -103,6 +106,18 @@ export default function PhudaoPlanner({
     if (demo || !grade) return;
     fetchQuestionTopics(grade).then(setTopics).catch(() => setTopics([]));
   }, [grade, demo]);
+
+  const studentIds = useMemo(() => students.map((s) => s.id), [students]);
+
+  const loadAttempts = useCallback(() => {
+    if (demo || studentIds.length === 0) return;
+    fetchTodayExitAttempts(studentIds).then(setAttempts).catch(() => setAttempts([]));
+  }, [studentIds, demo]);
+  useEffect(loadAttempts, [loadAttempts]);
+
+  function attemptFor(studentId: string, topicId: number) {
+    return attempts.find((a) => a.studentId === studentId && a.topicId === topicId) ?? null;
+  }
 
   // Trong mỗi phần đang hổng, em sai đúng yêu cầu cần đạt nào — dạy cho trúng.
   const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomes), [outcomes]);
@@ -157,6 +172,23 @@ export default function PhudaoPlanner({
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Các em được phụ đạo</p>
         {badge && <span className="text-xs font-bold text-amber-300">{badge}</span>}
       </div>
+
+      {students.length > 0 && (
+        <div className="mb-3 flex items-start justify-between gap-2 rounded-2xl border border-sky-400/25 bg-sky-500/10 px-3.5 py-3 text-xs text-sky-100">
+          <p>
+            Chủ đề nào vừa tick “đã dạy”: đưa lại điện thoại của em, bảo em tự đăng nhập tài
+            khoản của em rồi bấm “Tự kiểm tra” ngay bây giờ — đạt mới tính là hoàn thành, không
+            tính theo lời trợ giảng khai nữa.
+          </p>
+          <button
+            type="button"
+            onClick={loadAttempts}
+            className="flex shrink-0 items-center gap-1 rounded-full border border-sky-400/40 px-2.5 py-1 font-semibold text-sky-200"
+          >
+            <RefreshCw size={12} /> Làm mới
+          </button>
+        </div>
+      )}
 
       {!classId && !demo ? (
         <p className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-400">
@@ -217,6 +249,33 @@ export default function PhudaoPlanner({
                           </button>
                         );
                       })}
+                    </div>
+                  )}
+                  {ticked.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {list
+                        .filter((need) => ticked.includes(need.topicId))
+                        .map((need) => {
+                          const attempt = attemptFor(student.id, need.topicId);
+                          const tone = attempt?.passed
+                            ? "border-emerald-400/50 bg-emerald-500/15 text-emerald-200"
+                            : attempt
+                              ? "border-amber-400/40 bg-amber-500/10 text-amber-200"
+                              : "border-white/15 bg-white/5 text-slate-400";
+                          const text = attempt?.passed
+                            ? `Đã tự kiểm tra đạt ${attempt.pct}% — ${needLabel(need)}`
+                            : attempt
+                              ? `Đã làm nhưng chưa đạt (${attempt.pct}%) — ${needLabel(need)}, cho em làm lại`
+                              : `Chưa làm bài xác nhận — ${needLabel(need)}`;
+                          return (
+                            <span
+                              key={`attempt-${need.id}`}
+                              className={`rounded-full border px-3 py-1 text-xs font-semibold ${tone}`}
+                            >
+                              {text}
+                            </span>
+                          );
+                        })}
                     </div>
                   )}
                   {list.length > 0 && (

@@ -22,6 +22,13 @@ const legacy=await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2
 await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
 await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
 assert.deepEqual(await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2026-09-01') t`),legacy);
+// Stub tối giản của 2 bảng thoát-phụ-đạo (docs/supabase-migration-tutoring-needs.sql +
+// -tutoring-exit-quiz.sql) — chỉ đủ cột cho ta_monthly_policy join, không kéo cả migration
+// thật vào (kéo theo question_topics/exam_question_results không có trong DB test này).
+await sql(`create table public.tutoring_session_topics(id bigint generated always as identity primary key, session_id uuid not null, student_id uuid not null, topic_id bigint not null, created_at timestamptz not null default now());
+ create table public.tutoring_exit_attempts(id bigint generated always as identity primary key, student_id uuid not null, topic_id bigint not null, passed boolean not null default false, pct int not null default 0, created_at timestamptz not null default now());`);
+await sql(fs.readFileSync('docs/supabase-migration-ta-policy-phudao-exit-quiz.sql','utf8'));
+await sql(fs.readFileSync('docs/supabase-migration-ta-policy-phudao-exit-quiz.sql','utf8'));
 await sql(`create or replace function public.ta_policy_today() returns date language sql stable as $$ select date '2026-12-31' $$; grant select,insert,update on ta_sessions to authenticated; grant select on ta_assistants to authenticated;`);
 const base={attendance:'on_time',arrived_early:true,homework_checked:true,homework_missing:0,walked_tables:true,reported_students:true,attention_note:'',teaching_minutes:45,teaching_note:'Chữa bài 1',prepared:true,recalled:true,asked_each:true,followups:[]};
 const setUser=async id=>sql(`select set_config('test.user','${id}',false)`);
@@ -41,4 +48,20 @@ await test('Close stores snapshot; student cannot insert or edit closed month',a
 await test('Admin edit reopens month; teacher can reclose; audit preserved',async()=>{const row=await one(`select id from ta_sessions where work_date='2026-10-01'`);await sql(`update ta_sessions set student_touches=6 where id='${row.id}'`);assert.equal((await month('2026-10-01')).closed_at,null);assert.ok((await save('2026-10-01',{phudao:25,observation:10},true)).closed_at);assert.ok(Number((await one(`select count(*) n from ta_policy_audit where action='reopen_after_session_edit'`)).n)>0)});
 await test('Per-session touches cap stops one busy session offsetting another',async()=>{await add('2026-12-02','lop',{student_touches:0,policy:{...base,teaching_minutes:0}});await add('2026-12-03','lop',{student_touches:24,policy:{...base,teaching_minutes:0}});const s=await save('2026-12-01',{phudao:25,observation:10});assert.equal(s.touches,20)});
 await test('Marks outside their ranges rejected; future month cannot close',async()=>{await assert.rejects(()=>save('2026-12-01',{observation:11}));await assert.rejects(()=>save('2027-01-01',{phudao:25,observation:10},true))});
+await sql(`create or replace function public.ta_policy_today() returns date language sql stable as $$ select date '2027-01-31' $$;`);
+await test('Phụ đạo 25đ cần bằng chứng tự kiểm tra đạt cùng ngày, không chỉ tick tay',async()=>{
+ const topic=999, emA='00000000-0000-0000-0000-0000000000a1', emB='00000000-0000-0000-0000-0000000000b1';
+ const followup=student=>[{student,lesson:'Bài 1',difficulty:'Đã làm được'}];
+ const s1=await add('2027-01-05','phudao',{phudao_students:['Em A'],policy:{...base,teaching_minutes:0,followups:followup('Em A')}});
+ assert.equal((await month('2027-01-01')).phudao,0); // đủ tick tay, chưa có bằng chứng -> 0đ
+ await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s1.id}','${emA}',${topic})`);
+ await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emA}',${topic},false,60,'2027-01-05T10:00:00Z')`);
+ assert.equal((await month('2027-01-01')).phudao,0); // đã làm nhưng chưa đạt -> vẫn 0đ
+ await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emA}',${topic},true,85,'2027-01-05T10:30:00Z')`);
+ assert.equal((await month('2027-01-01')).phudao,25); // đạt trong đúng ngày ghi buổi -> đủ 25đ
+ const s2=await add('2027-01-06','phudao',{phudao_students:['Em B'],policy:{...base,teaching_minutes:0,followups:followup('Em B')}});
+ await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s2.id}','${emB}',${topic})`);
+ await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emB}',${topic},true,90,'2027-01-05T10:30:00Z')`); // đạt nhưng khác ngày buổi (05, buổi ghi 06)
+ assert.equal((await month('2027-01-01')).phudao,12.5); // trung bình (25 + 0)/2 — buổi sau không tính vì lượt đạt sai ngày
+});
 console.log(`${count} policy checks passed; migration applied twice; legacy payroll preserved.`);await db.close();
