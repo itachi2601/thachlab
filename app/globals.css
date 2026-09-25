@@ -682,7 +682,14 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
-.lesson-review-banner { position: sticky; top: 96px; z-index: 5; margin-bottom: 18px; border: 1px solid rgba(250, 204, 21, .35); border-radius: 14px; background: rgba(250, 204, 21, .08); backdrop-filter: blur(6px); padding: 14px 16px; }
+/* position: fixed (không phải sticky) — .lesson-shell có overflow: clip (chặn tràn ngang trên
+   di động) nên mọi position: sticky của con cháu bị vô hiệu hoá, kể cả .lesson-nav sẵn có; đã
+   tự kiểm bằng getBoundingClientRect thấy rõ, thử tách overflow-x/overflow-y riêng cũng không
+   ăn thua (nghi do quy tắc CSS: 1 trục "visible" cạnh trục kia không "visible" thì trục
+   "visible" tự chuyển thành "auto", vẫn tạo vùng có thể cuộn). Dùng fixed để không phụ thuộc
+   overflow của tổ tiên — nổi giữa màn hình dưới thanh điều hướng, không nằm trong luồng bố cục
+   2 cột như .lesson-nav nữa. */
+.lesson-review-banner { position: fixed; top: 84px; left: 50%; transform: translateX(-50%); width: min(720px, calc(100vw - 32px)); z-index: 40; border: 1px solid rgba(250, 204, 21, .35); border-radius: 14px; background: rgba(15, 23, 42, .94); backdrop-filter: blur(8px); padding: 14px 16px; box-shadow: 0 12px 32px rgba(0,0,0,.4); }
 .lesson-review-banner-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; color: #fbbf24; }
 .lesson-review-banner-head button { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 2px; }
 .lesson-review-banner-head button:hover { color: #e2e8f0; }
