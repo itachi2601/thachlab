@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/gen-image-dimensions.mjs",
+    "prebuild": "node scripts/build-content.mjs && node scripts/gen-image-dimensions.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

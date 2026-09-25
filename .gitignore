@@ -51,3 +51,6 @@ next-env.d.ts
 
 # bản gốc ảnh trước khi nén (scripts/optimize-images.mjs)
 /public/_originals/
+
+# học liệu tĩnh sinh lúc build (scripts/build-content.mjs) — không commit
+/public/data/
