@@ -282,8 +282,11 @@ export function renderFigureSpec(spec: FigureSpec): string {
     for (const seg of segs)
       out.push(`<polyline points="${seg}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"${dash}/>`);
     if (s.label) {
-      const last = pts.filter(([x, y]) => inX(x) && inY(y)).at(-1);
-      if (last) out.push(`<text x="${(px(last[0]) - 2).toFixed(1)}" y="${(py(last[1]) - 6).toFixed(1)}" font-size="12" font-family="sans-serif" fill="${color}" text-anchor="end">${esc(s.label)}</text>`);
+      // Nhãn đặt ở điểm 1/3 (đường lẻ) hay 2/3 (đường chẵn) chiều dài để hai đường gặp nhau ở cuối không đè nhãn lên nhau.
+      const vis = pts.filter(([x, y]) => Number.isFinite(y) && inX(x) && inY(y));
+      const at = vis[Math.min(vis.length - 1, Math.floor(vis.length * (i % 2 === 0 ? 0.33 : 0.66)))];
+      if (at)
+        out.push(`<text x="${(px(at[0]) + 4).toFixed(1)}" y="${(py(at[1]) - 7).toFixed(1)}" font-size="12" font-family="sans-serif" fill="${color}">${esc(s.label)}</text>`);
     }
   });
 
@@ -291,7 +294,7 @@ export function renderFigureSpec(spec: FigureSpec): string {
   for (const p of spec.points ?? []) {
     if (!inX(p.x) || !inY(p.y)) continue;
     out.push(`<circle cx="${px(p.x).toFixed(1)}" cy="${py(p.y).toFixed(1)}" r="3.2" fill="#dc2626"/>`);
-    if (p.label) text(px(p.x) + 5, py(p.y) - 5, p.label);
+    if (p.label) text(px(p.x) + 6, py(p.y) - 6, p.label);
   }
 
   return (
