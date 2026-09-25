@@ -16,8 +16,10 @@ import {
   emptyResponses,
   gradeExam,
   gradeQuestion,
+  groupQuestionIndexesByType,
   isAnswered,
   QUESTION_FORM_LABELS,
+  QUESTION_TYPE_LABELS,
   questionTopicNames,
 } from "@/features/exams/types";
 import { deriveTheoryStatus, STATUS_LABELS } from "@/features/progress/types";
@@ -61,12 +63,16 @@ export default function ExamRunner({
   exam,
   itemId = null,
   minCorrect = null,
+  theoryLessonId = null,
 }: {
   exam: Exam;
   /** Mục bài học đang gắn đề này (nếu có) — dùng để ghi nhận exam_attempts. */
   itemId?: number | null;
   /** Chỉ có khi đây là quiz kiểm tra nhanh cuối lý thuyết: số câu đúng tối thiểu để đạt. */
   minCorrect?: number | null;
+  /** Chỉ có khi đây là quiz kiểm tra nhanh cuối lý thuyết: bài học SỞ HỮU mục lý thuyết đó —
+   *  dùng để "Ôn ngay" nhảy đúng đoạn (q.theorySection) thay vì tra theo topic chung chung. */
+  theoryLessonId?: number | null;
 }) {
   const { session, profile } = useAuth();
   const reduceMotion = useReducedMotion();
@@ -434,39 +440,49 @@ export default function ExamRunner({
 
           {paletteOpen && (
             <>
-              <div className="mt-3 flex max-h-[30vh] flex-wrap gap-1.5 overflow-y-auto border-t border-white/10 pt-3">
-                {exam.questions.map((item, i) => {
-                  const state = answerState(item, responses[i]);
-                  const flagged = flags.has(i);
-                  const cls =
-                    state === "done"
-                      ? "border-primary bg-primary/25 text-white"
-                      : state === "partial"
-                        ? "border-primary/50 bg-primary/10 text-slate-200"
-                        : "border-white/15 text-slate-400 hover:border-white/30";
-                  return (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => goTo(i)}
-                      title={`Câu ${i + 1}${
-                        state === "done"
-                          ? " · đã làm"
-                          : state === "partial"
-                            ? " · làm dở"
-                            : " · chưa làm"
-                      }${flagged ? " · đánh dấu xem lại" : ""}`}
-                      className={`relative h-8 w-8 rounded-lg border text-xs font-bold transition-colors sm:h-9 sm:w-9 ${cls} ${
-                        i === cur ? "ring-2 ring-white/70" : ""
-                      }`}
-                    >
-                      {i + 1}
-                      {flagged && (
-                        <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-amber-400" />
-                      )}
-                    </button>
-                  );
-                })}
+              <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-white/10 pt-3">
+                {groupQuestionIndexesByType(exam.questions).map((section) => (
+                  <div key={section.type}>
+                    <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                      {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {section.indices.map((i) => {
+                        const item = exam.questions[i];
+                        const state = answerState(item, responses[i]);
+                        const flagged = flags.has(i);
+                        const cls =
+                          state === "done"
+                            ? "border-primary bg-primary/25 text-white"
+                            : state === "partial"
+                              ? "border-primary/50 bg-primary/10 text-slate-200"
+                              : "border-white/15 text-slate-400 hover:border-white/30";
+                        return (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => goTo(i)}
+                            title={`Câu ${i + 1}${
+                              state === "done"
+                                ? " · đã làm"
+                                : state === "partial"
+                                  ? " · làm dở"
+                                  : " · chưa làm"
+                            }${flagged ? " · đánh dấu xem lại" : ""}`}
+                            className={`relative h-8 w-8 rounded-lg border text-xs font-bold transition-colors sm:h-9 sm:w-9 ${cls} ${
+                              i === cur ? "ring-2 ring-white/70" : ""
+                            }`}
+                          >
+                            {i + 1}
+                            {flagged && (
+                              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-amber-400" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
@@ -620,12 +636,20 @@ export default function ExamRunner({
           const g = q.type !== "essay" ? gradeQuestion(q, responses[qi]) : null;
           const wrong = g ? g.earned < g.max : false;
           const topicName = (q.topic ?? "").trim();
-          const lessonId = topicName ? lessonByTopic.get(topicName) : undefined;
           const formLabel =
             q.form === "ly_thuyet" || q.form === "bai_tap"
               ? QUESTION_FORM_LABELS[q.form]
               : "";
           const stage = q.form === "ly_thuyet" ? "ly_thuyet" : "bai_tap_mau";
+          // Câu có gắn theorySection VÀ đây đúng là quiz kiểm tra nhanh của chính bài đó (có
+          // theoryLessonId + itemId) → nhảy thẳng + tô màu đúng đoạn lý thuyết liên quan, chính
+          // xác hơn hẳn so với tra theo tên chủ đề (chỉ đưa được tới đầu cả mục lý thuyết).
+          const preciseHref =
+            q.theorySection !== undefined && theoryLessonId && itemId
+              ? `/lop-hoc/bai/?id=${theoryLessonId}&item=${itemId}#theory-sec-${itemId}-${q.theorySection}`
+              : null;
+          const lessonId = topicName ? lessonByTopic.get(topicName) : undefined;
+          const reviewHref = preciseHref ?? (lessonId ? `/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}` : null);
           if (!wrong || (!topicName && !formLabel)) return null;
           return (
             <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
@@ -639,11 +663,8 @@ export default function ExamRunner({
                   {formLabel}
                 </span>
               )}
-              {lessonId && (
-                <Link
-                  href={`/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}`}
-                  className="font-semibold text-primary hover:underline"
-                >
+              {reviewHref && (
+                <Link href={reviewHref} className="font-semibold text-primary hover:underline">
                   Ôn ngay →
                 </Link>
               )}

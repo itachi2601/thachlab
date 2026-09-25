@@ -676,6 +676,10 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-block-foot:empty { display: none; }
 .lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; }
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
+/* Khối <h3> lý thuyết (features/lessons/theory-sections.ts) — tô vàng tạm khi quay lại từ
+   "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
+.theory-section { transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
+.theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
 /* Đoạn gõ tay "- "/"•" ở đầu dòng (thay vì <ul><li> thật) — vẽ lại chấm đầu dòng, thụt lề nhất quán.
    Áp dụng cho mọi nơi ContentHtml render (.exam-content), không riêng lý thuyết. */
 .exam-content p[data-bullet] { position: relative; margin-left: 1.3em; }

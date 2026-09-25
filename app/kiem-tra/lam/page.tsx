@@ -36,6 +36,7 @@ function ExamLoader() {
   const itemId = itemIdParam ? Number(itemIdParam) : null;
   const [exam, setExam] = useState<Exam | null>(null);
   const [minCorrect, setMinCorrect] = useState<number | null>(null);
+  const [theoryLessonId, setTheoryLessonId] = useState<number | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -66,11 +67,14 @@ function ExamLoader() {
     if (!session || !itemId) return;
     getSupabase()
       .from("lesson_items")
-      .select("kind, quiz_min_correct")
+      .select("kind, quiz_min_correct, lesson_id")
       .eq("id", itemId)
       .single()
       .then(({ data }) => {
-        if (data?.kind === "ly_thuyet") setMinCorrect((data.quiz_min_correct as number | null) ?? null);
+        if (data?.kind === "ly_thuyet") {
+          setMinCorrect((data.quiz_min_correct as number | null) ?? null);
+          setTheoryLessonId((data.lesson_id as number | null) ?? null);
+        }
       });
   }, [session, itemId]);
 
@@ -78,7 +82,7 @@ function ExamLoader() {
     return <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
   if (error) return <p className="text-center text-red-400">{error}</p>;
   if (!exam) return <p className="text-center text-slate-400">Đang tải đề…</p>;
-  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} />;
+  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} theoryLessonId={theoryLessonId} />;
 }
 
 export default function TakeExamPage() {

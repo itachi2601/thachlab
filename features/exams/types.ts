@@ -17,6 +17,11 @@ interface QuestionTags {
   topic?: string;
   form?: QuestionForm | "";
   difficulty?: Difficulty;
+  /** Chỉ có ý nghĩa khi đề này là quiz "Kiểm tra nhanh" gắn cho đúng 1 bài (item.exam_ids[0]):
+   *  vị trí (0-based) của khối <h3> lý thuyết liên quan trong body_html mục lý thuyết của
+   *  CHÍNH bài đó — dùng để "Ôn ngay" nhảy thẳng + tô màu đúng đoạn thay vì cả mục lý thuyết.
+   *  Xem features/lessons/theory-sections.ts (wrapTheorySections sinh id "theory-sec-<itemId>-<n>"). */
+  theorySection?: number;
 }
 
 export interface MultipleChoiceQuestion extends QuestionTags {

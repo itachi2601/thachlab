@@ -12,6 +12,7 @@ import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
 import PracticeSession from "@/components/lessons/PracticeSession";
 import type { SchoolClass } from "@/features/exams/types";
+import { theorySectionItemId, wrapTheorySections } from "@/features/lessons/theory-sections";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -131,6 +132,9 @@ function TheoryBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
+  // Gắn id theo từng khối <h3> để quiz "Kiểm tra nhanh" cuộn + tô màu đúng đoạn khi trả lời
+  // sai (xem "Ôn ngay" trong ExamRunner) — chỉ tính lại khi nội dung mục thật sự đổi.
+  const sectionedHtml = useMemo(() => wrapTheorySections(item.body_html, item.id).html, [item.body_html, item.id]);
 
   return (
     <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`}>
@@ -149,7 +153,7 @@ function TheoryBlock({
       </button>}
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
-          <ContentHtml html={item.body_html} className="block leading-relaxed" />
+          <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
         </div>
       )}
       <div className="lesson-block-foot">
@@ -322,6 +326,11 @@ function LessonLoader() {
   const [error, setError] = useState("");
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
+  // mở (mặc định các mục từ thứ hai trở đi đang thu gọn) trước khi cuộn + tô màu tới đúng đoạn.
+  const [hashTargetItemId] = useState<number | null>(() =>
+    typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
+  );
 
   // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
   // ẩn khỏi danh sách hiển thị (đang tải thì cứ giữ nguyên, tránh nhấp nháy).
@@ -448,6 +457,33 @@ function LessonLoader() {
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, items, session, done, scores]);
+
+  // Quay lại từ "Ôn ngay" (#theory-sec-<itemId>-<n>): cuộn + tô vàng tạm đúng đoạn lý thuyết
+  // liên quan tới câu vừa làm sai. Tô màu bằng classList trực tiếp, KHÔNG qua state đổi html
+  // của ContentHtml — nếu đổi, dangerouslySetInnerHTML thay cả node đang cuộn tới, huỷ luôn
+  // animation scrollIntoView giữa chừng (đã tự kiểm khi làm pilot, xem lịch sử sửa).
+  //
+  // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
+  // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
+  // mới nếu khác (revalidateLesson trong services/static-content.ts) — nếu chỉ tô màu 1 lần
+  // ngay khi có `items` đầu tiên (bản tĩnh, có thể đã cũ), khối vừa tô sẽ bị bản mới thay mất
+  // (dangerouslySetInnerHTML dựng lại DOM) mà không tô lại. Tự kiểm bằng epoch timestamp thấy
+  // đúng vậy: tô lúc t, mất trước 6s dù hẹn giờ tắt là 30s → do bản mới đè lên, không phải do
+  // hẹn giờ. Nên bỏ cờ "đã làm 1 lần", chạy lại mỗi khi `items` đổi — vô hại vì lần cuối cùng
+  // (ứng với bản dữ liệu ổn định) sẽ luôn thắng.
+  useEffect(() => {
+    if (!items || items.length === 0) return;
+    const hash = window.location.hash.replace(/^#/, "");
+    if (!hash.startsWith("theory-sec-")) return;
+    const timer = window.setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.classList.add("theory-section--highlight");
+      window.setTimeout(() => el.classList.remove("theory-section--highlight"), 2600);
+    }, 200);
+    return () => window.clearTimeout(timer);
+  }, [items]);
 
   // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp (theo lớp đang xem qua ?class=) và môn,
   // dùng lại đúng luật hiển thị chương của trang lớp — không tự suy luận lớp khác khi chưa chắc.
@@ -674,7 +710,7 @@ function LessonLoader() {
                         <div key={item.id} className="lesson-stack">
                           <TheoryBlock
                             item={item}
-                            defaultOpen={itemIndex === 0}
+                            defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
                             hideTitle={plain}
                             done={done.has(item.id)}
                             loggedIn={!!session}
