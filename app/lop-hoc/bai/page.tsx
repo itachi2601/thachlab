@@ -31,15 +31,12 @@ import {
 import {
   fetchExamMetas,
   fetchChapters,
-  fetchLesson,
-  fetchLessonItems,
+  fetchLessonWithItems,
   fetchLessons,
-  fetchMyExamScores,
-  fetchMyProgress,
   markItemDone,
   type LessonExamMeta,
 } from "@/services/lessons";
-import { fetchMyLearningProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
+import { fetchMyLessonPageProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { visibleTo } from "@/services/content";
@@ -272,6 +269,39 @@ function ExamRow({
   );
 }
 
+/** Khung xương trong lúc chờ bài học — cùng lớp bố cục (lesson-shell/lesson-layout) để nội dung về không nhảy. */
+function LessonSkeleton() {
+  return (
+    <div className="lesson-shell" aria-busy="true" aria-label="Đang tải bài học">
+      <div className="lesson-layout animate-pulse">
+        <aside className="lesson-nav" aria-hidden="true">
+          <div className="h-4 w-28 rounded bg-white/10" />
+          <div className="mt-6 space-y-3">
+            {Array.from({ length: 4 }, (_, i) => (
+              <div key={i} className="h-4 w-full rounded bg-white/5" />
+            ))}
+          </div>
+        </aside>
+        <div className="lesson-main">
+          <div className="h-3 w-24 rounded bg-white/10" />
+          <div className="mt-4 h-8 w-3/4 rounded bg-white/10" />
+          <div className="mt-3 h-4 w-1/2 rounded bg-white/5" />
+          <div className="mt-8 space-y-5">
+            {Array.from({ length: 3 }, (_, i) => (
+              <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <div className="h-5 w-1/3 rounded bg-white/10" />
+                <div className="mt-4 h-4 w-full rounded bg-white/5" />
+                <div className="mt-2 h-4 w-5/6 rounded bg-white/5" />
+                <div className="mt-2 h-4 w-2/3 rounded bg-white/5" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LessonLoader() {
   const { session } = useAuth();
   const searchParams = useSearchParams();
@@ -304,18 +334,21 @@ function LessonLoader() {
   const [siblingChapters, setSiblingChapters] = useState<Chapter[] | null>(null);
   const [siblingLessons, setSiblingLessons] = useState<Lesson[] | null>(null);
 
+  // Bài + chương + mục trong 1 truy vấn (select lồng); chương trình lớp (cho Bài trước/sau) tải song song.
   useEffect(() => {
     if (!supabaseConfigured || !id) return;
-    fetchLesson(id).then((res) => {
-      if (!res) setError("Không tìm thấy bài học này.");
-      else {
-        setTitle(res.lesson.title);
-        setChapterTitle(res.chapterTitle);
-        setChapterId(res.lesson.chapter_id);
-        setLessonKind(res.lesson.lesson_kind);
+    fetchLessonWithItems(id).then((res) => {
+      if (!res) {
+        setError("Không tìm thấy bài học này.");
+        setItems([]);
+        return;
       }
+      setTitle(res.lesson.title);
+      setChapterTitle(res.chapterTitle);
+      setChapterId(res.lesson.chapter_id);
+      setLessonKind(res.lesson.lesson_kind);
+      setItems(res.items);
     });
-    fetchLessonItems(id).then(setItems);
   }, [id]);
 
   useEffect(() => {
@@ -342,9 +375,14 @@ function LessonLoader() {
         setExamMetaStatus("error");
       }
     })();
-    fetchMyExamScores(session.user.id).then(setScores);
-    fetchMyProgress(session.user.id).then(setDone);
-    fetchMyLearningProgress(session.user.id, items).then(setProgress).catch(() => setProgress(new Map()));
+    // điểm cao nhất, mục đã đánh dấu và trạng thái từng mục: cùng 1 lượt truy vấn song song
+    fetchMyLessonPageProgress(session.user.id, items)
+      .then(({ progress: nextProgress, scores: nextScores, done: nextDone }) => {
+        setProgress(nextProgress);
+        setScores(nextScores);
+        setDone(nextDone);
+      })
+      .catch(() => setProgress(new Map()));
   }, [session, items]);
 
   const progressSummary = useMemo(
@@ -463,7 +501,7 @@ function LessonLoader() {
 
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
-  if (!items) return <p className="lesson-notice">Đang tải bài học…</p>;
+  if (!items) return <LessonSkeleton />;
 
   const classHref = classSlug
     ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`

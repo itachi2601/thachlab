@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, Suspense, useEffect, useRef, useState } from "react";
+import { Fragment, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -23,7 +23,14 @@ import {
   expandClassIdsByGrade,
   fetchClasses,
 } from "@/services/classes";
-import { fetchChapters, fetchLessonProgressSummaries, fetchLessons } from "@/services/lessons";
+import {
+  fetchChapters,
+  fetchLessons,
+  fetchMyProgressMarks,
+  summarizeLessonProgress,
+  type LessonWithItemRefs,
+  type MyProgressMarks,
+} from "@/services/lessons";
 import {
   fetchPublishedExams,
   fetchPublishedPosts,
@@ -75,9 +82,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [collapsedChapters, setCollapsedChapters] = useState<Set<number>>(new Set());
   const defaultChapterAppliedRef = useRef(false);
   const [lastLessonId, setLastLessonId] = useState<number | null>(null);
-  const [lessonProgress, setLessonProgress] = useState<Map<number, InlineLessonProgress>>(new Map());
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
-  const [lessons, setLessons] = useState<Lesson[] | null>(null);
+  const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
+  const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [exams, setExams] = useState<ExamMeta[] | null>(null);
   const [posts, setPosts] = useState<PostMeta[] | null>(null);
 
@@ -110,17 +117,19 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   }, [classSlug]);
 
   // đề thi yêu cầu đăng nhập (RLS) — chỉ tải khi có session
+  // đề thi yêu cầu đăng nhập (RLS) — chỉ tải khi có session; dấu "đã học" tải cùng lúc,
+  // không chờ danh sách bài (tiến độ tính từ itemRefs của fetchLessons, không truy vấn thêm).
   useEffect(() => {
     if (!supabaseConfigured || !session) return;
     fetchPublishedExams().then(setExams);
+    fetchMyProgressMarks(session.user.id).then(setProgressMarks).catch(() => setProgressMarks(null));
   }, [session]);
 
-  useEffect(() => {
-    if (!session || !lessons?.length) return;
-    fetchLessonProgressSummaries(session.user.id, lessons.map((lesson) => lesson.id))
-      .then(setLessonProgress)
-      .catch(() => setLessonProgress(new Map()));
-  }, [session, lessons]);
+  const lessonProgress = useMemo(
+    (): Map<number, InlineLessonProgress> =>
+      session && lessons?.length && progressMarks ? summarizeLessonProgress(lessons, progressMarks) : new Map(),
+    [session, lessons, progressMarks],
+  );
 
   const effectiveSlug = classSlug;
   const active = classes?.find((c) =>
