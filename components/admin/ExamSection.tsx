@@ -641,7 +641,8 @@ function TagGrid({
       for (const r of results) {
         if (r.topic) onTag(r.index, "topic", r.topic);
         if (r.form) onTag(r.index, "form", QUESTION_FORM_LABELS[r.form].toLowerCase());
-        if (r.difficulty) onTag(r.index, "difficulty", DIFFICULTY_LABELS[r.difficulty].toLowerCase());
+        // Hậu tố "(AI)" đánh dấu nguồn — gắn tay đè lên sẽ ghi "(GV)" và ẩn huy hiệu gợi ý.
+        if (r.difficulty) onTag(r.index, "difficulty", `${DIFFICULTY_LABELS[r.difficulty].toLowerCase()} (AI)`);
       }
       toast(
         results.length > 0 ? "success" : "error",
@@ -756,7 +757,7 @@ function TagGrid({
                     <button
                       key={d}
                       type="button"
-                      onClick={() => onTagMany(untaggedDifficulty, "difficulty", DIFFICULTY_LABELS[d].toLowerCase())}
+                      onClick={() => onTagMany(untaggedDifficulty, "difficulty", `${DIFFICULTY_LABELS[d].toLowerCase()} (GV)`)}
                       className="rounded bg-white/10 px-2 py-0.5 font-semibold text-slate-200 hover:bg-white/20"
                     >
                       {DIFFICULTY_LABELS[d]}
@@ -798,14 +799,18 @@ function TagGrid({
                       </button>
                     ))}
                   </div>
-                  <div className="flex gap-0.5">
+                  <div className="flex items-center gap-0.5">
                     {(["de", "trung-binh", "kho"] as Exclude<Difficulty, "">[]).map((d) => (
                       <button
                         key={d}
                         type="button"
                         disabled={!enabled}
                         title={DIFFICULTY_LABELS[d]}
-                        onClick={() => onTag(i, "difficulty", q.difficulty === d ? "" : DIFFICULTY_LABELS[d].toLowerCase())}
+                        onClick={() =>
+                          // Gắn tay luôn ghi nguồn "gv" (kể cả khi bấm lại đúng mức AI đã gợi ý) — chỉ
+                          // GV mới xác nhận xong mới coi là chốt, ẩn huy hiệu "AI gợi ý".
+                          onTag(i, "difficulty", q.difficulty === d ? "" : `${DIFFICULTY_LABELS[d].toLowerCase()} (GV)`)
+                        }
                         className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
                           q.difficulty === d ? "bg-emerald-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
                         }`}
@@ -813,6 +818,14 @@ function TagGrid({
                         {DIFFICULTY_SHORT[d]}
                       </button>
                     ))}
+                    {q.difficulty && q.difficultySource === "ai" && (
+                      <span
+                        title="AI gợi ý — bấm lại một mức để giáo viên xác nhận"
+                        className="admin-badge admin-badge--accent px-1 py-0 text-[9px] leading-4"
+                      >
+                        AI
+                      </span>
+                    )}
                   </div>
                 </div>
               );
