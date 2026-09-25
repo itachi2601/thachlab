@@ -29,6 +29,7 @@ import {
 } from "@/services/analytics";
 import RankBadge from "@/components/rank/RankBadge";
 import RankCard from "@/components/rank/RankCard";
+import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import ClassRankBoard from "@/components/rank/ClassRankBoard";
 import { tierLabel, type RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus } from "@/services/rank";
@@ -242,6 +243,14 @@ export default function ThptStudentHome({
 
   const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
 
+  const dailySuggestion = todoExams.length > 0
+    ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
+    : nextLesson
+      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+      : needs.length > 0
+        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
+        : null;
+
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
     try {
@@ -338,6 +347,7 @@ export default function ThptStudentHome({
       </section>
 
       <RankCard status={rank} name={profile?.full_name} />
+      <DailyStreakCard status={rank} suggestion={dailySuggestion} />
       <ClassRankBoard classId={classId} />
 
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
