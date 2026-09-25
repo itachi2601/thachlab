@@ -23,6 +23,7 @@ import {
   questionTopicNames,
 } from "@/features/exams/types";
 import { deriveTheoryStatus, STATUS_LABELS } from "@/features/progress/types";
+import { saveTheoryReviewContext, type TheoryReviewContext } from "@/features/lessons/theory-sections";
 import { fetchQuestionTopics } from "@/services/analytics";
 import {
   finishExamAttempt,
@@ -650,6 +651,20 @@ export default function ExamRunner({
               : null;
           const lessonId = topicName ? lessonByTopic.get(topicName) : undefined;
           const reviewHref = preciseHref ?? (lessonId ? `/lop-hoc/bai/?id=${lessonId}#secondary-stage-${stage}` : null);
+          // Mang theo đề bài + đáp án qua trang bài học (xem features/lessons/theory-sections.ts)
+          // để hiện thành thẻ dán cố định cạnh đoạn vừa tô — chỉ tô vàng thì cuộn tới nơi xong
+          // học sinh dễ quên mất mình đang tìm hiểu vì sai câu nào.
+          const reviewContext: TheoryReviewContext | null =
+            preciseHref && itemId
+              ? {
+                  itemId,
+                  sectionIndex: q.theorySection as number,
+                  questionIndex: qi + 1,
+                  questionHtml: q.question,
+                  pickedHtml: q.type === "multiple_choice" && typeof responses[qi] === "number" ? q.options[responses[qi] as number] : null,
+                  correctHtml: q.type === "multiple_choice" ? q.options[q.answer] : null,
+                }
+              : null;
           if (!wrong || (!topicName && !formLabel)) return null;
           return (
             <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
@@ -664,7 +679,11 @@ export default function ExamRunner({
                 </span>
               )}
               {reviewHref && (
-                <Link href={reviewHref} className="font-semibold text-primary hover:underline">
+                <Link
+                  href={reviewHref}
+                  onClick={() => reviewContext && saveTheoryReviewContext(reviewContext)}
+                  className="font-semibold text-primary hover:underline"
+                >
                   Ôn ngay →
                 </Link>
               )}

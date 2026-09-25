@@ -680,6 +680,17 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
    "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
 .theory-section { transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
 .theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
+/* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
+   từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
+.lesson-review-banner { position: sticky; top: 96px; z-index: 5; margin-bottom: 18px; border: 1px solid rgba(250, 204, 21, .35); border-radius: 14px; background: rgba(250, 204, 21, .08); backdrop-filter: blur(6px); padding: 14px 16px; }
+.lesson-review-banner-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; color: #fbbf24; }
+.lesson-review-banner-head button { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 2px; }
+.lesson-review-banner-head button:hover { color: #e2e8f0; }
+.lesson-review-banner-q { margin-top: 8px; color: #e2e8f0; font-size: 14.5px; line-height: 1.6; }
+.lesson-review-banner-answer { margin-top: 6px; font-size: 13.5px; }
+.lesson-review-banner-answer span:first-child { font-weight: 600; color: #94a3b8; }
+.lesson-review-banner-answer.is-correct { color: #6ee7b7; }
+.lesson-review-banner-answer.is-wrong { color: #fca5a5; }
 /* Đoạn gõ tay "- "/"•" ở đầu dòng (thay vì <ul><li> thật) — vẽ lại chấm đầu dòng, thụt lề nhất quán.
    Áp dụng cho mọi nơi ContentHtml render (.exam-content), không riêng lý thuyết. */
 .exam-content p[data-bullet] { position: relative; margin-left: 1.3em; }

@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -12,7 +12,12 @@ import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
 import PracticeSession from "@/components/lessons/PracticeSession";
 import type { SchoolClass } from "@/features/exams/types";
-import { theorySectionItemId, wrapTheorySections } from "@/features/lessons/theory-sections";
+import {
+  consumeTheoryReviewContext,
+  theorySectionItemId,
+  wrapTheorySections,
+  type TheoryReviewContext,
+} from "@/features/lessons/theory-sections";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -331,6 +336,13 @@ function LessonLoader() {
   const [hashTargetItemId] = useState<number | null>(() =>
     typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
   );
+  // Câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi sessionStorage) —
+  // hiện thành thẻ dán cố định cạnh đoạn lý thuyết vừa tô, để không quên đang ôn vì sai câu nào.
+  const [reviewContext, setReviewContext] = useState<TheoryReviewContext | null>(() => {
+    if (typeof window === "undefined") return null;
+    const ctx = consumeTheoryReviewContext();
+    return ctx && ctx.itemId === hashTargetItemId ? ctx : null;
+  });
 
   // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
   // ẩn khỏi danh sách hiển thị (đang tải thì cứ giữ nguyên, tránh nhấp nháy).
@@ -480,7 +492,24 @@ function LessonLoader() {
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       el.classList.add("theory-section--highlight");
-      window.setTimeout(() => el.classList.remove("theory-section--highlight"), 2600);
+      // 1 lần không đủ: có 1 re-render nào đó ngay sau scrollIntoView (nghi do chính
+      // scrollIntoView làm IntersectionObserver dò "mục đang đọc" đổi activeSection, xem
+      // effect scroll-spy ở trên) dựng lại đúng khối nội dung này — xoá mất class vừa tô
+      // VÀ cắt ngang animation cuộn đang chạy dở, dù `items` không đổi. Tự kiểm bằng
+      // MutationObserver thấy đúng vậy, nhưng chưa lần ra được nguyên nhân gốc trong
+      // React/ContentHtml. Bù bằng cách tô lại + cuộn lại đều đặn trong ~1s đầu thay vì
+      // làm 1 lần — cả hai lệnh gọi lặp lại đều vô hại (browser bỏ qua nếu đã ở đúng chỗ).
+      let reapplyCount = 0;
+      const reapply = window.setInterval(() => {
+        const target = document.getElementById(hash);
+        target?.classList.add("theory-section--highlight");
+        reapplyCount += 1;
+        if (reapplyCount <= 6) target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
+      window.setTimeout(() => {
+        window.clearInterval(reapply);
+        document.getElementById(hash)?.classList.remove("theory-section--highlight");
+      }, 2600);
     }, 200);
     return () => window.clearTimeout(timer);
   }, [items]);
@@ -669,6 +698,32 @@ function LessonLoader() {
             <p className="lesson-eyebrow">{chapterTitle}</p>
             <h1>{title}</h1>
           </header>
+
+          {reviewContext && (
+            <div className="lesson-review-banner" role="note">
+              <div className="lesson-review-banner-head">
+                <span>Câu {reviewContext.questionIndex} em làm sai — đọc lại đoạn tô vàng bên dưới nhé</span>
+                <button type="button" onClick={() => setReviewContext(null)} aria-label="Đóng">
+                  <X size={15} />
+                </button>
+              </div>
+              <p className="lesson-review-banner-q">
+                <ContentHtml html={reviewContext.questionHtml} />
+              </p>
+              {reviewContext.correctHtml && (
+                <p className="lesson-review-banner-answer is-correct">
+                  <span>Đáp án đúng: </span>
+                  <ContentHtml html={reviewContext.correctHtml} />
+                </p>
+              )}
+              {reviewContext.pickedHtml && (
+                <p className="lesson-review-banner-answer is-wrong">
+                  <span>Em đã chọn: </span>
+                  <ContentHtml html={reviewContext.pickedHtml} />
+                </p>
+              )}
+            </div>
+          )}
 
           {visibleSections.length === 0 && (
             <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>

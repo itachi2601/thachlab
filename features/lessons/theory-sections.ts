@@ -11,10 +11,21 @@ export interface TheorySection {
 }
 
 const H3_RE = /<h3\b[^>]*>(.*?)<\/h3>/gi;
+// Một số bài (đặc biệt lớp 12) không dùng <h3> mà đánh số mục lớn bằng <strong> riêng một
+// <p> ("1. Mô hình động học…", "2. Cấu trúc…"). Chỉ khớp <p> mà TOÀN BỘ nội dung là một
+// <strong> bắt đầu bằng số + dấu chấm, để không nhầm với nhãn phụ giữa đoạn văn kiểu
+// "a. …", "Chú ý:", "- Giải thích …:" (không có số ở đầu, hoặc không đứng riêng 1 <p>).
+const BOLD_NUMBERED_RE = /<p\b[^>]*>\s*<strong\b[^>]*>(\d+\.\s*[^<]*)<\/strong>\s*<\/p>/gi;
 
-/** Bọc mỗi đoạn từ một <h3> tới trước <h3> kế tiếp trong <div id="…">, để có thể scrollIntoView. */
+function headingMatches(html: string): RegExpMatchArray[] {
+  const h3 = [...html.matchAll(H3_RE)];
+  if (h3.length > 0) return h3;
+  return [...html.matchAll(BOLD_NUMBERED_RE)];
+}
+
+/** Bọc mỗi đoạn từ một mốc tiêu đề tới trước mốc kế tiếp trong <div id="…">, để có thể scrollIntoView. */
 export function wrapTheorySections(html: string, itemId: number | string): { html: string; sections: TheorySection[] } {
-  const matches = [...html.matchAll(H3_RE)];
+  const matches = headingMatches(html);
   if (matches.length === 0) return { html, sections: [] };
 
   const sections: TheorySection[] = [];
@@ -43,4 +54,41 @@ export function wrapTheorySections(html: string, itemId: number | string): { htm
 export function theorySectionItemId(hash: string): number | null {
   const m = /^#?theory-sec-(\d+)-\d+$/.exec(hash);
   return m ? Number(m[1]) : null;
+}
+
+// ---------- Mang theo câu vừa làm sai khi quay lại xem lý thuyết ----------
+// Chỉ tô vàng đúng đoạn thì học sinh cuộn tới nơi rồi... quên mất mình đang tìm hiểu vì sai
+// câu nào. Mang đề bài + đáp án đã chọn/đáp án đúng qua sessionStorage (không qua URL vì HTML
+// câu hỏi có thể dài, không qua React context vì hai trang không cùng cây component) để trang
+// bài học hiện lại thành 1 thẻ dán cố định ngay trên đoạn vừa tô — đọc xong thì xoá luôn, tránh
+// hiện lại thẻ cũ nếu học sinh quay lại trang này sau, không qua "Ôn ngay" nữa.
+const REVIEW_CONTEXT_KEY = "thachlab:theory-review-context";
+
+export interface TheoryReviewContext {
+  itemId: number;
+  sectionIndex: number;
+  questionIndex: number; // 1-based, để hiện "Câu N"
+  questionHtml: string;
+  pickedHtml: string | null; // null nếu bỏ qua câu, không chọn gì
+  correctHtml: string | null; // null nếu không phải trắc nghiệm 4 đáp án (chưa hỗ trợ tóm tắt các dạng câu khác)
+}
+
+export function saveTheoryReviewContext(ctx: TheoryReviewContext): void {
+  try {
+    sessionStorage.setItem(REVIEW_CONTEXT_KEY, JSON.stringify(ctx));
+  } catch {
+    // Riêng tư trình duyệt chặn sessionStorage — bỏ qua, "Ôn ngay" vẫn cuộn+tô đúng đoạn như thường.
+  }
+}
+
+/** Đọc rồi xoá luôn (dùng 1 lần) — gọi khi trang bài học vừa tải xong. */
+export function consumeTheoryReviewContext(): TheoryReviewContext | null {
+  try {
+    const raw = sessionStorage.getItem(REVIEW_CONTEXT_KEY);
+    if (!raw) return null;
+    sessionStorage.removeItem(REVIEW_CONTEXT_KEY);
+    return JSON.parse(raw) as TheoryReviewContext;
+  } catch {
+    return null;
+  }
 }
