@@ -11,6 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
 import { theorySectionItemId, wrapTheorySections } from "@/features/lessons/theory-sections";
 import {
@@ -404,6 +405,14 @@ function LessonLoader() {
   const progressSummary = useMemo(
     () => summarizeItemProgress(progress, items ?? []),
     [progress, items],
+  );
+
+  // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
+  // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
+  // thêm truy vấn Supabase mới.
+  const lessonExamIds = useMemo(
+    () => Array.from(new Set((items ?? []).flatMap((i) => i.exam_ids))),
+    [items],
   );
 
   const sections = useMemo(() => {
@@ -808,6 +817,10 @@ function LessonLoader() {
               </section>
             );
           })}
+          {items && items.length > 0 && (
+            <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+          )}
+
           {pager}
         </div>
       </div>
