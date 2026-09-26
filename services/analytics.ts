@@ -405,6 +405,77 @@ export async function fetchWrongestQuestionsDirect(
   return sortWrongest([...map.values()]);
 }
 
+export interface LessonPracticeWrongQuestion {
+  examId: number;
+  examTitle: string;
+  /** Vị trí câu trong đề gốc (khác question_index — thứ tự bốc ngẫu nhiên trong phiên). */
+  sourceIndex: number;
+  topic: string;
+  form: string;
+  qtype: string;
+  wrong: number;
+  total: number;
+  pct: number;
+}
+
+/**
+ * Câu hay sai trong ngân hàng của một mục Luyện tập — gộp mọi phiên luyện tập
+ * (mọi lớp, mọi lần bốc ngẫu nhiên) đã làm trên mục này. Luyện tập ghi vào
+ * practice_question_results (không phải exam_question_results — bảng đó chỉ
+ * dành cho Kiểm tra/BTVN đi qua ExamRunner).
+ */
+export async function fetchLessonPracticeWrongest(
+  itemId: number,
+): Promise<LessonPracticeWrongQuestion[]> {
+  const { data: pqrRows } = await getSupabase()
+    .from("practice_question_results")
+    .select("exam_id, source_index, topic_name, form, qtype, is_correct, practice_sessions!inner(item_id)")
+    .eq("practice_sessions.item_id", itemId);
+
+  const rows = (pqrRows as {
+    exam_id: number | null;
+    source_index: number;
+    topic_name: string | null;
+    form: string;
+    qtype: string;
+    is_correct: boolean;
+  }[]) ?? [];
+  const examIds = [...new Set(rows.map((r) => r.exam_id).filter((id): id is number => id !== null))];
+  const { data: examRows } = examIds.length
+    ? await getSupabase().from("exams").select("id, title").in("id", examIds)
+    : { data: [] };
+
+  const titleById = new Map<number, string>();
+  for (const e of (examRows as { id: number; title: string }[]) ?? []) {
+    titleById.set(e.id, e.title);
+  }
+
+  const map = new Map<string, LessonPracticeWrongQuestion>();
+  for (const r of rows) {
+    if (r.exam_id === null) continue;
+    const key = `${r.exam_id}|${r.source_index}`;
+    const q =
+      map.get(key) ??
+      {
+        examId: r.exam_id,
+        examTitle: titleById.get(r.exam_id) ?? `Đề #${r.exam_id}`,
+        sourceIndex: r.source_index,
+        topic: r.topic_name || "Chưa gắn chủ đề",
+        form: r.form,
+        qtype: r.qtype,
+        wrong: 0,
+        total: 0,
+        pct: 0,
+      };
+    q.total += 1;
+    if (!r.is_correct) q.wrong += 1;
+    map.set(key, q);
+  }
+  return [...map.values()]
+    .map((q) => ({ ...q, pct: pct(q.wrong, q.total) }))
+    .sort((a, b) => b.pct - a.pct || b.wrong - a.wrong);
+}
+
 function sortTopicGaps(list: TopicGap[]): TopicGap[] {
   return list
     .map((g) => ({ ...g, pct: pct(g.wrong, g.total) }))

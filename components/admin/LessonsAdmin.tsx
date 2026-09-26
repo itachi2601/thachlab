@@ -1,10 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import ExamPicker from "@/components/admin/ExamPicker";
 import LaTexEditor from "@/components/admin/LaTexEditor";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
-import type { SchoolClass } from "@/features/exams/types";
+import type { ExamQuestion, SchoolClass } from "@/features/exams/types";
+import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -35,6 +38,10 @@ import {
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { getSupabase } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
+import {
+  fetchLessonPracticeWrongest,
+  type LessonPracticeWrongQuestion,
+} from "@/services/analytics";
 
 const inputCls =
   "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -248,6 +255,9 @@ function ItemForm({
           <ExamPicker value={examIds} onChange={setExamIds} />
         </div>
       )}
+      {kind === "luyen_tap" && item && (
+        <PracticeWrongestPanel itemId={item.id} />
+      )}
 
       <div className="flex gap-2">
         <button
@@ -264,6 +274,124 @@ function ItemForm({
           Hủy
         </button>
       </div>
+    </div>
+  );
+}
+
+function practiceFormLabel(form: string) {
+  return form === "ly_thuyet" || form === "bai_tap"
+    ? QUESTION_FORM_LABELS[form]
+    : "—";
+}
+
+/** Tổng hợp câu học sinh hay sai trong ngân hàng của một mục Luyện tập — gộp mọi lớp đã làm. */
+function PracticeWrongestPanel({ itemId }: { itemId: number }) {
+  const [rows, setRows] = useState<LessonPracticeWrongQuestion[] | null>(null);
+  const [openKey, setOpenKey] = useState<string | null>(null);
+  const [questionsByExam, setQuestionsByExam] = useState<Record<number, ExamQuestion[]>>({});
+
+  useEffect(() => {
+    setRows(null);
+    setOpenKey(null);
+    fetchLessonPracticeWrongest(itemId)
+      .then(setRows)
+      .catch(() => setRows([]));
+  }, [itemId]);
+
+  async function toggle(row: LessonPracticeWrongQuestion) {
+    const key = `${row.examId}|${row.sourceIndex}`;
+    if (openKey === key) {
+      setOpenKey(null);
+      return;
+    }
+    setOpenKey(key);
+    if (!questionsByExam[row.examId]) {
+      const { data } = await getSupabase()
+        .from("exams")
+        .select("questions")
+        .eq("id", row.examId)
+        .single();
+      setQuestionsByExam((cur) => ({
+        ...cur,
+        [row.examId]: (data?.questions as ExamQuestion[]) ?? [],
+      }));
+    }
+  }
+
+  return (
+    <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
+      <p className="text-sm font-semibold text-white">Câu học sinh hay sai</p>
+      <p className="text-xs text-slate-400">
+        Gộp mọi lượt làm của mọi lớp trên các đề gắn ở trên — dùng để biết câu nào trong
+        ngân hàng cần xem lại đề bài hoặc dạy lại.
+      </p>
+      {rows === null ? (
+        <p className="text-xs text-slate-500">Đang tải…</p>
+      ) : rows.length === 0 ? (
+        <p className="text-xs text-slate-500">Chưa có dữ liệu (chưa có học sinh nào làm).</p>
+      ) : (
+        <div className="space-y-1.5">
+          {rows.slice(0, 10).map((row) => {
+            const key = `${row.examId}|${row.sourceIndex}`;
+            const question = questionsByExam[row.examId]?.[row.sourceIndex];
+            return (
+              <div key={key} className="rounded-lg border border-white/10 bg-panel">
+                <button
+                  type="button"
+                  onClick={() => toggle(row)}
+                  className="flex w-full items-center gap-3 p-3 text-left"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm text-white">
+                      {row.examTitle} · Câu {row.sourceIndex + 1}
+                      <span className="ml-2 font-normal text-slate-400">
+                        {row.topic} · {practiceFormLabel(row.form)}
+                      </span>
+                    </span>
+                  </span>
+                  <span className="shrink-0 text-right">
+                    <span
+                      className={`font-mono text-sm font-bold ${row.pct >= 60 ? "text-red-300" : row.pct >= 30 ? "text-amber-300" : "text-slate-300"}`}
+                    >
+                      {row.pct}%
+                    </span>
+                    <span className="ml-2 text-xs text-slate-500">
+                      {row.wrong}/{row.total}
+                    </span>
+                  </span>
+                  <ChevronDown
+                    size={14}
+                    className={`shrink-0 text-slate-500 transition-transform ${openKey === key ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {openKey === key && question && (
+                  <div className="border-t border-white/10 p-3 text-sm text-slate-300">
+                    <ContentHtml html={question.question} className="exam-content block" />
+                    {question.type === "multiple_choice" && (
+                      <ul className="mt-2 space-y-1 text-xs">
+                        {(question as { options: string[]; answer: number }).options.map(
+                          (opt, oi) => (
+                            <li
+                              key={oi}
+                              className={
+                                oi === (question as { answer: number }).answer
+                                  ? "text-emerald-300"
+                                  : "text-slate-500"
+                              }
+                            >
+                              {"ABCD"[oi]}. <ContentHtml html={opt} />
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
