@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { ChevronRight, Sparkles } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
-import { formatRp, tierLabel, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
+import TierName from "@/components/rank/TierName";
+import { formatRp, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
 
 /**
  * Thẻ rank dùng ở nhiều chỗ (trang học sinh, trang kết quả, phụ huynh):
@@ -62,10 +63,8 @@ export default function RankCard({
             </>
           ) : (
             <>
-              <p className="truncate font-display text-base font-bold uppercase tracking-wide text-white sm:text-lg">
-                {name ? `${name} · ` : ""}
-                <span style={{ color: meta.light }}>{tierLabel(status.tier?.code, status.tier?.division)}</span>
-              </p>
+              {name && <p className="truncate text-xs font-bold uppercase tracking-widest text-slate-400">{name}</p>}
+              <TierName code={status.tier?.code} division={status.tier?.division} size="md" />
               <p className="mt-0.5 truncate text-sm text-slate-300">
                 {status.display_title ? (
                   <>

@@ -7,6 +7,7 @@ import ExamPicker from "@/components/admin/ExamPicker";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import { useToast } from "@/components/ui/Toast";
 import RankBadge from "@/components/rank/RankBadge";
+import TierName from "@/components/rank/TierName";
 import type { SchoolClass } from "@/features/exams/types";
 import {
   GROUP_LABELS,
@@ -423,7 +424,7 @@ function TiersTab({ season }: { season: RankSeason }) {
               <div key={t.code} className="rounded-xl border border-white/10 p-3">
                 <div className="flex flex-wrap items-center gap-3">
                   <RankBadge code={t.code} size={32} />
-                  <b className="w-28 text-white">{t.name}</b>
+                  <TierName code={t.code} size="sm" className="w-32" />
                   <label className="admin-label flex items-center gap-2">
                     Từ RP
                     <input className={numCls} type="number" min={0} disabled={readOnly} value={val(t, "min_rp")} onChange={(e) => set(t.code, { min_rp: Number(e.target.value) })} />

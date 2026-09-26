@@ -7,6 +7,7 @@ import { CalendarCheck, ChevronRight, Flag, History, Medal, Target, Trophy } fro
 import EmptyState from "@/components/ui/EmptyState";
 import { useToast } from "@/components/ui/Toast";
 import RankBadge from "@/components/rank/RankBadge";
+import TierName from "@/components/rank/TierName";
 import TitleCollection from "@/components/rank/TitleCollection";
 import {
   LEDGER_KIND_LABELS,
@@ -151,8 +152,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">{studentName}</p>
             {status?.season ? (
               <>
-                <h1 className="font-display text-3xl font-bold uppercase tracking-wide" style={{ color: meta.light }}>
-                  {tierLabel(status.tier?.code, status.tier?.division)}
+                <h1 className="mt-1">
+                  <TierName code={status.tier?.code} division={status.tier?.division} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
                 </h1>
                 <p className="mt-1 text-sm text-slate-300">
                   {status.display_title ? titleDisplay(status.display_title.name, status.display_title.level) : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}

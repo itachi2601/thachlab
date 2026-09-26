@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Sparkles, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -28,10 +28,11 @@ import {
   type StudentAlert,
 } from "@/services/analytics";
 import RankBadge from "@/components/rank/RankBadge";
+import TierName from "@/components/rank/TierName";
 import RankCard from "@/components/rank/RankCard";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import ClassRankBoard from "@/components/rank/ClassRankBoard";
-import { tierLabel, type RankStatus } from "@/features/rank/types";
+import type { RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus } from "@/services/rank";
 import {
   fetchLatestAnnouncements,
@@ -55,6 +56,7 @@ import {
   type TutoringSlot,
 } from "@/services/tutoring";
 import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
+import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -148,6 +150,7 @@ export default function ThptStudentHome({
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [exitAttemptCounts, setExitAttemptCounts] = useState<Map<number, number>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
+  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
 
   useEffect(() => {
     // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
@@ -179,6 +182,10 @@ export default function ThptStudentHome({
       .catch(() => setHomeworkNotes([]));
   }
   useEffect(reloadAnnouncements, [classId]);
+
+  useEffect(() => {
+    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
+  }, [classId]);
 
   function reloadTutoring() {
     fetchMyNeeds(studentId)
@@ -255,16 +262,19 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  const openHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId));
 
-  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || openHomework.length > 0;
 
   const dailySuggestion = todoExams.length > 0
     ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
-    : nextLesson
-      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
-      : needs.length > 0
-        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
-        : null;
+    : openHomework.length > 0
+      ? `Gợi ý: làm "${openHomework[0].title}" để ôn lại và giữ chuỗi.`
+      : nextLesson
+        ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+        : needs.length > 0
+          ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
+          : null;
 
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
@@ -351,9 +361,11 @@ export default function ThptStudentHome({
           <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={30} className="shrink-0 sm:hidden" />
           <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={44} className="hidden shrink-0 sm:block" />
           <span className="min-w-0">
-            <strong className="block truncate text-sm text-white sm:text-lg">
-              {rank?.season ? tierLabel(rank.tier?.code, rank.tier?.division) : "—"}
-            </strong>
+            {rank?.season ? (
+              <TierName code={rank.tier?.code} division={rank.tier?.division} size="sm" />
+            ) : (
+              <strong className="block truncate text-sm text-white sm:text-lg">—</strong>
+            )}
             <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
               Xếp hạng
             </p>
@@ -395,6 +407,25 @@ export default function ThptStudentHome({
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
                   <small className="text-xs text-slate-500">Bài kiểm tra chưa làm</small>
+                </span>
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
+            </Link>
+          ))}
+
+          {openHomework.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl border border-cyan-400/15 bg-cyan-500/5 p-3 hover:bg-cyan-500/10"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <Sparkles size={14} className="shrink-0 text-cyan-300" />
+                <span className="min-w-0">
+                  <strong className="block truncate text-sm text-white">{item.title}</strong>
+                  <small className="text-xs text-slate-500">
+                    {item.wrongCount} câu sai lớp + {item.bankCount} câu ôn tập · +RP khi làm xong
+                  </small>
                 </span>
               </span>
               <ChevronRight size={16} className="shrink-0 text-slate-500" />

@@ -22,7 +22,10 @@ export const TIER_ORDER: TierCode[] = [
 ];
 
 export interface TierMeta {
+  /** Tên tiếng Việt. */
   name: string;
+  /** Tên tiếng Anh in lớn trên huy hiệu. */
+  en: string;
   /** Màu chủ đạo của huy hiệu. */
   color: string;
   /** Màu sáng hơn cho gradient/viền. */
@@ -32,13 +35,13 @@ export interface TierMeta {
 }
 
 export const TIER_META: Record<TierCode, TierMeta> = {
-  tan_binh: { name: "Tinh Quang", color: "#3b6fd4", light: "#9fc3ff", tone: "bg-blue-500/15 text-blue-200" },
-  chien_binh: { name: "Tiên Phong", color: "#4f7a3a", light: "#c9d6a3", tone: "bg-lime-600/15 text-lime-200" },
-  tinh_anh: { name: "Nhật Hoa", color: "#d9701e", light: "#ffd27a", tone: "bg-orange-500/15 text-orange-200" },
-  tinh_nhue: { name: "Vương Lễ", color: "#c1122a", light: "#ffb3c0", tone: "bg-rose-600/15 text-rose-200" },
-  dai_su: { name: "Vương Triều", color: "#2952c8", light: "#a9c4ff", tone: "bg-indigo-500/15 text-indigo-200" },
-  cao_thu: { name: "Thiên Thể", color: "#6d3fc7", light: "#d3b0ff", tone: "bg-violet-500/15 text-violet-200" },
-  thach_dau: { name: "Chí Tôn", color: "#d4a836", light: "#fff0c2", tone: "bg-amber-400/15 text-amber-100" },
+  tan_binh: { name: "Tinh Quang", en: "Starlight", color: "#3b6fd4", light: "#9fc3ff", tone: "bg-blue-500/15 text-blue-200" },
+  chien_binh: { name: "Tiên Phong", en: "Vanguard", color: "#4f7a3a", light: "#c9d6a3", tone: "bg-lime-600/15 text-lime-200" },
+  tinh_anh: { name: "Nhật Hoa", en: "Corona", color: "#d9701e", light: "#ffd27a", tone: "bg-orange-500/15 text-orange-200" },
+  tinh_nhue: { name: "Vương Lễ", en: "Regalia", color: "#c1122a", light: "#ffb3c0", tone: "bg-rose-600/15 text-rose-200" },
+  dai_su: { name: "Vương Triều", en: "Dynasty", color: "#2952c8", light: "#a9c4ff", tone: "bg-indigo-500/15 text-indigo-200" },
+  cao_thu: { name: "Thiên Thể", en: "Celestial", color: "#6d3fc7", light: "#d3b0ff", tone: "bg-violet-500/15 text-violet-200" },
+  thach_dau: { name: "Chí Tôn", en: "Sovereign", color: "#d4a836", light: "#fff0c2", tone: "bg-amber-400/15 text-amber-100" },
 };
 
 export function tierMeta(code: string | null | undefined): TierMeta {
@@ -49,9 +52,11 @@ export function divisionLabel(division: number | null | undefined): string {
   return division === 1 ? "I" : division === 2 ? "II" : division === 3 ? "III" : "";
 }
 
+/** "Starlight III · Tinh Quang" — dùng cho chỗ chỉ có một dòng chữ. */
 export function tierLabel(code: string | null | undefined, division?: number | null): string {
+  const m = tierMeta(code);
   const d = divisionLabel(division);
-  return d ? `${tierMeta(code).name} ${d}` : tierMeta(code).name;
+  return `${m.en}${d ? ` ${d}` : ""} · ${m.name}`;
 }
 
 export function formatRp(n: number | null | undefined): string {
