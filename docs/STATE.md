@@ -32,11 +32,25 @@ chạy trước đó trong ngày. Rollback từng file ở `perf/rollback/`.
   Script **ghi thật ngay, không có dry-run**; tham số chỉ giới hạn số câu:
   `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (thử nhỏ, xem lại
   `/quan-tri/ngan-hang-cau-hoi`, rồi chạy không giới hạn). Tốn API Anthropic (~90 lô × 40 câu).
-- [ ] **Kiểm hồi quy bằng tài khoản thật** — cả 2 đợt tối ưu đều chưa làm được (agent không đăng
-  nhập được). Đợt 2 có động vào `AuthProvider` nên cần kiểm kỹ: HS làm một đề, GV xem gradebook +
-  phụ đạo, admin vào đăng đề, trang Rank, một trang CNC.
-- [ ] **Đo lại Lighthouse trên máy thật** — Agent D đo trong sandbox dùng chung nên số không so
-  được với mốc ban đầu. Chạy PageSpeed Insights trên site thật sau khi deploy.
+- [x] **Kiểm hồi quy bằng tài khoản thật** (26/9/2026) — tạo 3 tài khoản test throwaway (student/
+  instructor/admin, gán lớp 12) trên local dev server cô lập (git worktree riêng, port 3010, không
+  đụng dev server phiên khác), 3 agent song song đăng nhập 3 vai + tự kiểm tay lại vai HS 1 lần
+  riêng lẻ. Kết quả: HS làm đề 96 (nộp + chấm điểm đúng) + trang Rank, GV xem gradebook (208 lượt
+  làm lớp 12) + phụ đạo (46 HS cần phụ đạo) + phân tích/cảnh báo, admin vào `/quan-tri/dang-de`
+  (dropdown Lớp→Chương nạp đúng dữ liệu) + trang CNC `/quan-tri/cnc-bai-hoc` — **tất cả PASS, không
+  phát hiện lỗi do AuthProvider mới**. Tài khoản test + dữ liệu liên quan đã xoá sạch sau khi xong.
+  Ghi chú phụ (không phải lỗi AuthProvider): 3 agent chạy song song trên cùng origin bị đá phiên
+  chéo nhau do Supabase dùng chung `localStorage` theo origin — xác nhận lại bằng cách chạy 1 mình
+  thì không xảy ra. Phát hiện thêm (đã tách việc riêng): nút đáp án trong ExamRunner có thể re-render
+  quá thường xuyên do đồng hồ đếm ngược, đáng xem lại hiệu năng (không phải lỗi chức năng).
+- [x] **Đo lại PageSpeed trên site thật** (26/9/2026) — desktop **100**; mobile **74**; CrUX field
+  (người dùng thật, 28 ngày) **LCP 2,7s → Core Web Vitals Failed** (ngưỡng đạt 2,5s, thiếu 0,2s),
+  INP 172ms, CLS 0,07, TTFB 0,7s. Lighthouse lab mobile: LCP 5,5s, FCP 2,4s, **TBT chỉ 40ms**.
+  Chẩn đoán (đo bằng Chrome trên production): brotli ĐÃ bật và chạy đúng; nghẽn nằm ở **font** —
+  trang chủ tải **20 file woff2 = 323 KB**, và woff2 nén sẵn nên brotli không giúp gì. 15 file font
+  được preload nằm ở request #2–#16, hai file CSS mãi #17–#18, tức font giành băng thông của CSS
+  trước lúc vẽ trang. So sánh: JS 856 KB → ~250 KB sau brotli, CSS 280 KB → ~45 KB.
+  → Đợt xử lý: `docs/prompt-toi-uu-font.md` (chưa chạy).
 
 ## CHƯA làm (đợt kế tiếp — prompt `prompt-giai-doan-1-2.md`)
 - `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó (route chưa tồn tại).
