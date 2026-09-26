@@ -14,8 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  # Trống — không có migration nào đang chờ (cập nhật 26/9/2026 17:28).
-  # Thêm dòng mới theo mẫu: "<đường dẫn>|<mô tả ngắn>|<thời điểm nên chạy>"
+  "supabase/migrations/20260926140000_fix_rls_tautology.sql|Va tautology e.course_id=e.course_id (attendance_sessions, equipment_breakdown_reports) + class_assessments using(true)|Chay duoc bat ky luc nao, chi doi 3 policy, khong khoa bang nang"
 )
 # ĐÃ CHẠY 26/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql

@@ -23,8 +23,11 @@ Cả 7 file trong `supabase/migrations/` đã chạy lên production qua `bash s
 mastery, lesson_item_draft_publish, exam_violation_alert. Cộng rank_paragon và rank_exclude_staff
 chạy trước đó trong ngày. Rollback từng file ở `perf/rollback/`.
 
-**Không còn migration nào chờ.** Khi có file mới, agent cập nhật mảng `FILES` trong
-`scripts/run-migrations.sh` theo quy tắc ở `AGENTS.md`.
+## Migration — ĐANG CHỜ (cập nhật 26/09/2026)
+- `supabase/migrations/20260926140000_fix_rls_tautology.sql` — vá 2 lỗ hổng RLS ở mục
+  "Lỗ hổng bảo mật cần vá sớm" bên dưới. Chạy bằng `bash scripts/run-migrations.sh`.
+  Rollback: `perf/rollback/20260926140000_fix_rls_tautology.down.sql` (quay lại đúng
+  policy có bug hiện tại — chỉ dùng nếu migration gây lỗi thật).
 
 ## Việc tay còn lại
 - [ ] **Backfill mức độ câu hỏi** — còn ~3541/7223 câu `question_bank.difficulty` rỗng.
@@ -36,8 +39,8 @@ chạy trước đó trong ngày. Rollback từng file ở `perf/rollback/`.
   phụ đạo, admin vào đăng đề, trang Rank, một trang CNC.
 - [ ] **Đo lại Lighthouse trên máy thật** — Agent D đo trong sandbox dùng chung nên số không so
   được với mốc ban đầu. Chạy PageSpeed Insights trên site thật sau khi deploy.
-- [ ] **Vá 2 lỗ hổng RLS** (perf/RESULT.md §9): policy tautology `e.course_id = e.course_id` trên
-  `attendance_sessions` và `equipment_breakdown_reports`; `class_assessments` đang `using (true)`.
+- [ ] **Vá 2 lỗ hổng RLS** (perf/RESULT.md §9) — **đã viết migration, đang CHỜ CHẠY**:
+  xem mục "Migration — ĐANG CHỜ" ở trên.
 
 ## CHƯA làm (đợt kế tiếp — prompt `prompt-giai-doan-1-2.md`)
 - `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó (route chưa tồn tại).
@@ -45,9 +48,11 @@ chạy trước đó trong ngày. Rollback từng file ở `perf/rollback/`.
 - Bổ sung câu hỏi chương Động học 10 cho đủ ≥30 câu/bài.
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
 
-## Lỗ hổng bảo mật cần vá sớm (perf/RESULT.md §9)
+## Lỗ hổng bảo mật cần vá sớm (perf/RESULT.md §9) — ĐÃ VIẾT MIGRATION, CHỜ CHẠY
 1. 2 policy tautology `e.course_id = e.course_id` trên `attendance_sessions` và `equipment_breakdown_reports` → SV đọc chéo được mọi khoá.
 2. `class_assessments` policy `using (true)` — mọi tài khoản đăng nhập đọc được toàn bảng.
+
+→ `supabase/migrations/20260926140000_fix_rls_tautology.sql` (xem mục "Migration — ĐANG CHỜ").
 
 ## Việc ngoài roadmap đang treo
 - Chuyển Supabase sang Singapore (lợi ~3–4× độ trễ).
