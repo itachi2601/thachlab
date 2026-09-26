@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Sparkles, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -27,8 +27,7 @@ import {
   type ScorePoint,
   type StudentAlert,
 } from "@/services/analytics";
-import RankBadge from "@/components/rank/RankBadge";
-import TierName from "@/components/rank/TierName";
+import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import RankCard from "@/components/rank/RankCard";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import ClassRankBoard from "@/components/rank/ClassRankBoard";
@@ -56,6 +55,7 @@ import {
   type TutoringSlot,
 } from "@/services/tutoring";
 import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
+import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -66,17 +66,6 @@ const NEED_TONE: Record<NeedStatus, string> = {
   cleared: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
   dismissed: "border-white/15 bg-white/5 text-slate-400",
 };
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:rounded-2xl sm:p-5">
-      <strong className="text-xl text-white sm:text-3xl">{value}</strong>
-      <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
-        {label}
-      </p>
-    </div>
-  );
-}
 
 function Section({
   icon: Icon,
@@ -117,7 +106,6 @@ function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
 
 export default function ThptStudentHome({
   profile,
-  email,
   studentId,
   classId,
   className,
@@ -149,6 +137,7 @@ export default function ThptStudentHome({
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [exitAttemptCounts, setExitAttemptCounts] = useState<Map<number, number>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
+  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
 
   useEffect(() => {
     // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
@@ -180,6 +169,10 @@ export default function ThptStudentHome({
       .catch(() => setHomeworkNotes([]));
   }
   useEffect(reloadAnnouncements, [classId]);
+
+  useEffect(() => {
+    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
+  }, [classId]);
 
   function reloadTutoring() {
     fetchMyNeeds(studentId)
@@ -256,16 +249,19 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  const openHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId));
 
-  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || openHomework.length > 0;
 
   const dailySuggestion = todoExams.length > 0
     ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
-    : nextLesson
-      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
-      : needs.length > 0
-        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
-        : null;
+    : openHomework.length > 0
+      ? `Gợi ý: làm "${openHomework[0].title}" để ôn lại và giữ chuỗi.`
+      : nextLesson
+        ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+        : needs.length > 0
+          ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
+          : null;
 
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
@@ -287,20 +283,18 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-8">
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-7">
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
         <div className="relative flex items-start justify-between gap-3">
-          <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-            <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+            <RankAvatarFrame status={rank} size={56}>
+              <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
+            </RankAvatarFrame>
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-300 sm:text-xs sm:tracking-[.16em]">
-                Không gian học tập của tôi
-              </p>
-              <h1 className="mt-1.5 truncate font-display text-2xl font-bold text-white sm:mt-2 sm:text-3xl">
+              <h1 className="font-display text-xl font-bold leading-tight text-white sm:text-3xl">
                 Chào {profile?.full_name || "bạn"} 👋
               </h1>
-              <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">Lớp {className}</p>
-              {email && <p className="mt-1 hidden text-xs text-slate-600 sm:block">{email}</p>}
+              <p className="mt-1 text-xs text-slate-400 sm:text-sm">Lớp {className}</p>
             </div>
           </div>
           <button
@@ -312,18 +306,26 @@ export default function ThptStudentHome({
             <span className="hidden sm:inline">Đăng xuất</span>
           </button>
         </div>
-        <div className="relative mt-5 sm:mt-6">
-          <div className="mb-2 flex items-end justify-between gap-3 text-xs">
-            <b className="text-blue-200">Năng lượng học tập</b>
-            <span className="whitespace-nowrap font-mono text-[11px] text-slate-400 sm:text-xs">
-              {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
-            </span>
+        <div className="relative mt-4 flex items-end gap-3 sm:mt-5 sm:gap-5">
+          <div className="min-w-0 flex-1">
+            <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
+              <b className="text-blue-200">Năng lượng học tập</b>
+              <span className="whitespace-nowrap font-mono text-[11px] text-slate-400 sm:text-xs">
+                {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
+              </span>
+            </div>
+            <div className="h-3 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-3.5">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_18px_rgba(56,189,248,.45)] transition-[width]"
+                style={{ width: `${totals?.pct ?? 0}%` }}
+              />
+            </div>
           </div>
-          <div className="h-3.5 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-4">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_18px_rgba(56,189,248,.45)] transition-[width]"
-              style={{ width: `${totals?.pct ?? 0}%` }}
-            />
+          <div className="shrink-0 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-right">
+            <strong className="block font-display text-lg leading-none text-white sm:text-xl">
+              {avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"}
+            </strong>
+            <span className="text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-[10px]">Điểm TB</span>
           </div>
         </div>
       </section>
@@ -342,29 +344,7 @@ export default function ThptStudentHome({
         </section>
       )}
 
-      <section className="grid grid-cols-3 gap-2 sm:gap-3">
-        <Stat value={totals ? `${totals.pct}%` : "—"} label="Tiến độ" />
-        <Stat value={avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"} label="Điểm TB" />
-        <Link
-          href="/lop-hoc/xep-hang/"
-          className="flex flex-col items-start gap-1.5 rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:flex-row sm:items-center sm:gap-2 sm:rounded-2xl sm:p-5"
-        >
-          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={30} className="shrink-0 sm:hidden" />
-          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={44} className="hidden shrink-0 sm:block" />
-          <span className="w-full min-w-0">
-            {rank?.season ? (
-              <TierName code={rank.tier?.code} division={rank.tier?.division} size="sm" />
-            ) : (
-              <strong className="block truncate text-sm text-white sm:text-lg">—</strong>
-            )}
-            <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
-              Xếp hạng
-            </p>
-          </span>
-        </Link>
-      </section>
-
-      <RankCard status={rank} name={profile?.full_name} />
+      <RankCard status={rank} />
       <DailyStreakCard status={rank} suggestion={dailySuggestion} />
       <ClassRankBoard classId={classId} />
 
@@ -398,6 +378,25 @@ export default function ThptStudentHome({
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
                   <small className="text-xs text-slate-500">Bài kiểm tra chưa làm</small>
+                </span>
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
+            </Link>
+          ))}
+
+          {openHomework.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl border border-cyan-400/15 bg-cyan-500/5 p-3 hover:bg-cyan-500/10"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <Sparkles size={14} className="shrink-0 text-cyan-300" />
+                <span className="min-w-0">
+                  <strong className="block truncate text-sm text-white">{item.title}</strong>
+                  <small className="text-xs text-slate-500">
+                    {item.wrongCount} câu sai lớp + {item.bankCount} câu ôn tập · +RP khi làm xong
+                  </small>
                 </span>
               </span>
               <ChevronRight size={16} className="shrink-0 text-slate-500" />
