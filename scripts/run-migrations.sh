@@ -14,16 +14,19 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20260925120000_perf_indexes.sql|7 index cho truy vấn nóng|Ngoài giờ HS làm bài"
-  "supabase/migrations/20260925130000_perf_rpc_gv.sql|5 hàm RPC tổng hợp cho trang GV|Bất kỳ lúc nào (client tự fallback)"
-  "supabase/migrations/20260925140000_perf_rls.sql|85 policy: auth.uid() -> (select auth.uid())|Ngoài giờ HS làm bài"
-  "supabase/migrations/20260925150000_difficulty_source.sql|cột question_bank.difficulty_source + vá 3 hàm|Bất kỳ lúc nào"
-  "supabase/migrations/20260925160000_mastery.sql|2 hàm get_lesson_mastery / get_chapter_mastery|Bất kỳ lúc nào (UI fail-safe)"
-  "supabase/migrations/20260926120000_lesson_item_draft_publish.sql|nháp -> đăng chính thức từng mục bài học|Bất kỳ lúc nào (tính năng /quan-tri/bai-hoc chờ file này)"
+  # Trống — không có migration nào đang chờ (cập nhật 26/9/2026 17:28).
+  # Thêm dòng mới theo mẫu: "<đường dẫn>|<mô tả ngắn>|<thời điểm nên chạy>"
 )
 # ĐÃ CHẠY 26/9/2026, không đưa vào danh sách nữa:
+#   20260925120000_perf_indexes.sql
+#   20260925130000_perf_rpc_gv.sql
+#   20260925140000_perf_rls.sql
+#   20260925150000_difficulty_source.sql
+#   20260925160000_mastery.sql
 #   20260926100000_rank_paragon.sql
 #   20260926110000_rank_exclude_staff.sql
+#   20260926120000_lesson_item_draft_publish.sql
+#   20260926130000_exam_violation_alert.sql
 
 AUTO=0; ONLY=""; LIST=0
 while [[ $# -gt 0 ]]; do
@@ -48,6 +51,7 @@ command -v supabase >/dev/null || { echo "Chua cai supabase CLI"; exit 1; }
 [[ -f supabase/.temp/project-ref ]] || { echo "Chua 'supabase link' project"; exit 1; }
 echo "Project: $(cat supabase/.temp/project-ref)"
 echo "Tong: ${#FILES[@]} file."
+[[ ${#FILES[@]} -eq 0 ]] && { echo "Khong co migration nao dang cho."; exit 0; }
 
 mkdir -p scripts/logs
 STAMP=$(date +%Y%m%d-%H%M%S)

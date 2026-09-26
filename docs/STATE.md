@@ -17,20 +17,27 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Danh vị Vô Song (Paragon) trên Chí Tôn: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
 - Loại GV/admin khỏi rank RP: migration `20260926110000_rank_exclude_staff.sql` ĐÃ chạy 26/9/2026 — chặn tận gốc (3 hàm) việc tài khoản không phải role='student' bị cộng RP/lọt bảng xếp hạng khi tự test bài, đã dọn sạch dữ liệu rác (rollback `perf/rollback/20260926110000_rank_exclude_staff.down.sql`).
 
-## ĐANG CHỜ — 6 migration CHƯA chạy trên production
-Chạy bằng `bash scripts/run-migrations.sh` (xem trước danh sách: `--list`). **Không dùng `supabase db push`** (thư mục `supabase/migrations/` mới, CLI không biết 99 migration cũ).
+## Migration — ĐÃ CHẠY XONG (26/09/2026, 17:28)
+Cả 7 file trong `supabase/migrations/` đã chạy lên production qua `bash scripts/run-migrations.sh`
+(log ở `scripts/logs/20260926-170957-*`): perf_indexes, perf_rpc_gv, perf_rls, difficulty_source,
+mastery, lesson_item_draft_publish, exam_violation_alert. Cộng rank_paragon và rank_exclude_staff
+chạy trước đó trong ngày. Rollback từng file ở `perf/rollback/`.
 
-| # | File | Nội dung |
-|---|---|---|
-| 1 | `20260925120000_perf_indexes.sql` | 7 index cho truy vấn nóng |
-| 2 | `20260925130000_perf_rpc_gv.sql` | 5 hàm RPC tổng hợp cho trang GV |
-| 3 | `20260925140000_perf_rls.sql` | 85 policy: `auth.uid()` → `(select auth.uid())`; rollback ở `perf/rollback/` |
-| 4 | `20260925150000_difficulty_source.sql` | cột `question_bank.difficulty_source` + vá 3 hàm |
-| 5 | `20260925160000_mastery.sql` | 2 hàm mastery |
-| 6 | `20260926120000_lesson_item_draft_publish.sql` | `lesson_items`: cột `published_at`/`draft_payload`/`draft_saved_at` — nháp → đăng chính thức từng mục ở `/quan-tri/bai-hoc`; rollback ở `perf/rollback/` |
+**Không còn migration nào chờ.** Khi có file mới, agent cập nhật mảng `FILES` trong
+`scripts/run-migrations.sh` theo quy tắc ở `AGENTS.md`.
 
-Sau đó chạy backfill: `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (thử nhỏ trước — script **ghi thật ngay, không có dry-run**), rồi chạy không giới hạn cho ~3541 câu còn thiếu mức độ.
-
+## Việc tay còn lại
+- [ ] **Backfill mức độ câu hỏi** — còn ~3541/7223 câu `question_bank.difficulty` rỗng.
+  Script **ghi thật ngay, không có dry-run**; tham số chỉ giới hạn số câu:
+  `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (thử nhỏ, xem lại
+  `/quan-tri/ngan-hang-cau-hoi`, rồi chạy không giới hạn). Tốn API Anthropic (~90 lô × 40 câu).
+- [ ] **Kiểm hồi quy bằng tài khoản thật** — cả 2 đợt tối ưu đều chưa làm được (agent không đăng
+  nhập được). Đợt 2 có động vào `AuthProvider` nên cần kiểm kỹ: HS làm một đề, GV xem gradebook +
+  phụ đạo, admin vào đăng đề, trang Rank, một trang CNC.
+- [ ] **Đo lại Lighthouse trên máy thật** — Agent D đo trong sandbox dùng chung nên số không so
+  được với mốc ban đầu. Chạy PageSpeed Insights trên site thật sau khi deploy.
+- [ ] **Vá 2 lỗ hổng RLS** (perf/RESULT.md §9): policy tautology `e.course_id = e.course_id` trên
+  `attendance_sessions` và `equipment_breakdown_reports`; `class_assessments` đang `using (true)`.
 
 ## CHƯA làm (đợt kế tiếp — prompt `prompt-giai-doan-1-2.md`)
 - `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó (route chưa tồn tại).
