@@ -356,11 +356,11 @@ export default function ThptStudentHome({
         <Stat value={avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"} label="Điểm TB" />
         <Link
           href="/lop-hoc/xep-hang/"
-          className="flex items-center gap-2 rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:rounded-2xl sm:p-5"
+          className="flex flex-col items-start gap-1.5 rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:flex-row sm:items-center sm:gap-2 sm:rounded-2xl sm:p-5"
         >
           <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={30} className="shrink-0 sm:hidden" />
           <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={44} className="hidden shrink-0 sm:block" />
-          <span className="min-w-0">
+          <span className="w-full min-w-0">
             {rank?.season ? (
               <TierName code={rank.tier?.code} division={rank.tier?.division} size="sm" />
             ) : (
