@@ -15,8 +15,9 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
 - Hệ thống Rank/RP 7 bậc (Tinh Quang → Chí Tôn), nhiệm vụ hằng ngày, chuỗi ngày.
 - Danh vị Vô Song (Paragon) trên Chí Tôn: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
+- Loại GV/admin khỏi rank RP: migration `20260926110000_rank_exclude_staff.sql` ĐÃ chạy 26/9/2026 — chặn tận gốc (3 hàm) việc tài khoản không phải role='student' bị cộng RP/lọt bảng xếp hạng khi tự test bài, đã dọn sạch dữ liệu rác (rollback `perf/rollback/20260926110000_rank_exclude_staff.down.sql`).
 
-## ĐANG CHỜ — 5 migration CHƯA chạy trên production
+## ĐANG CHỜ — 6 migration CHƯA chạy trên production
 Chạy bằng SQL Editor hoặc `supabase db query --linked -f <file>`. **Không dùng `supabase db push`** (thư mục `supabase/migrations/` mới, CLI không biết 99 migration cũ).
 
 | # | File | Nội dung |
@@ -26,8 +27,10 @@ Chạy bằng SQL Editor hoặc `supabase db query --linked -f <file>`. **Không
 | 3 | `20260925140000_perf_rls.sql` | 85 policy: `auth.uid()` → `(select auth.uid())`; rollback ở `perf/rollback/` |
 | 4 | `20260925150000_difficulty_source.sql` | cột `question_bank.difficulty_source` + vá 3 hàm |
 | 5 | `20260925160000_mastery.sql` | 2 hàm mastery |
+| 6 | `20260926120000_lesson_item_draft_publish.sql` | `lesson_items`: cột `published_at`/`draft_payload`/`draft_saved_at` — nháp → đăng chính thức từng mục ở `/quan-tri/bai-hoc`; rollback ở `perf/rollback/` |
 
 Sau đó chạy backfill: `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (thử nhỏ trước — script **ghi thật ngay, không có dry-run**), rồi chạy không giới hạn cho ~3541 câu còn thiếu mức độ.
+
 
 ## CHƯA làm (đợt kế tiếp — prompt `prompt-giai-doan-1-2.md`)
 - `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó (route chưa tồn tại).

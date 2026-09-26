@@ -25,6 +25,7 @@ import {
   SECTION_ORDER,
   formatTypeCounts,
   isGradedKind,
+  isItemLive,
   isPeriodicExam,
   isSemesterExam,
   youTubeEmbed,
@@ -378,7 +379,7 @@ function LessonLoader() {
       setChapterTitle(res.chapterTitle);
       setChapterId(res.lesson.chapter_id);
       setLessonKind(res.lesson.lesson_kind);
-      setItems(res.items);
+      setItems(res.items.filter(isItemLive));
     };
     fetchLessonWithItemsStatic(id, apply).then(apply);
     return () => {

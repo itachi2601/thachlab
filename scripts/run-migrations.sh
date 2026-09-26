@@ -17,6 +17,8 @@ FILES=(
   "supabase/migrations/20260925150000_difficulty_source.sql"
   "supabase/migrations/20260925160000_mastery.sql"
   "supabase/migrations/20260926100000_rank_paragon.sql"
+  "supabase/migrations/20260926110000_rank_exclude_staff.sql"
+  "supabase/migrations/20260926120000_lesson_item_draft_publish.sql"
 )
 
 AUTO=0; ONLY=""

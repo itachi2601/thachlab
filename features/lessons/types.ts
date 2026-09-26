@@ -113,6 +113,27 @@ export interface LessonItem {
   required: boolean; // có tính vào tiến độ bắt buộc không (mặc định true)
   quiz_min_correct: number | null; // ly_thuyet có quiz: số câu đúng tối thiểu để đạt
   practice_pass_score: number | null; // luyen_tap: điểm đạt thang 10 (áp cho phiên cao nhất)
+  published_at: string | null; // null = chưa đăng, học sinh chưa thấy mục này
+  draft_payload: LessonItemDraftPayload | null; // bản nháp đang sửa dở, chưa ghi đè bản đã đăng
+  draft_saved_at: string | null;
+}
+
+/** Các trường nội dung soạn trong ItemForm — lưu tạm vào lesson_items.draft_payload khi "Lưu nháp". */
+export interface LessonItemDraftPayload {
+  kind: LessonItemKind;
+  title: string;
+  subtitle: string;
+  body_html: string;
+  video_url: string;
+  pdf_url: string;
+  questions: LessonWorkedQuestion[];
+  exam_ids: number[];
+  due_at: string | null;
+}
+
+/** Mục học sinh xem được: đã đăng chính thức ít nhất 1 lần (published_at khác null). */
+export function isItemLive(item: LessonItem): boolean {
+  return item.published_at !== null;
 }
 
 /** Mục gắn đề trắc nghiệm (dùng ExamPicker khi soạn). */

@@ -5,7 +5,7 @@ import type { ClassStudent } from "@/services/classes";
 import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
-import type { Lesson, LessonItem } from "@/features/lessons/types";
+import { isItemLive, type Lesson, type LessonItem } from "@/features/lessons/types";
 import { dominantStatus, STATUS_LABELS, type ActivityStatus } from "@/features/progress/types";
 import {
   fetchClassLearningProgress,
@@ -161,7 +161,7 @@ export default function TeacherThptProgress({ classId, students }: { classId: nu
         return;
       }
       try {
-        setItems(await fetchLessonItems(lessonId));
+        setItems((await fetchLessonItems(lessonId)).filter(isItemLive));
       } catch {
         setItems([]);
       }

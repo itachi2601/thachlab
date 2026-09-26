@@ -117,6 +117,10 @@ const ITEM_COLUMNS =
   "id, lesson_id, kind, title, subtitle, body_html, video_url, pdf_url, questions, exam_ids, sort_order";
 const ITEM_COLUMNS_V2 = `${ITEM_COLUMNS}, due_at`;
 const ITEM_COLUMNS_V3 = `${ITEM_COLUMNS_V2}, required, quiz_min_correct, practice_pass_score`;
+// Cột published_at/draft_payload/draft_saved_at là migration mới (nháp → đăng chính thức
+// từng mục, docs/supabase-migration-lesson-item-draft-publish.sql) — chọn kèm khi có, tự
+// lùi về V3 khi DB chưa chạy migration (coi như mọi mục đã đăng, giữ hành vi cũ).
+const ITEM_COLUMNS_V4 = `${ITEM_COLUMNS_V3}, published_at, draft_payload, draft_saved_at`;
 
 function toLessonItem(item: Record<string, unknown>): LessonItem {
   return {
@@ -132,6 +136,11 @@ function toLessonItem(item: Record<string, unknown>): LessonItem {
     required: (item.required as boolean | undefined) ?? true,
     quiz_min_correct: (item.quiz_min_correct as number | null | undefined) ?? null,
     practice_pass_score: (item.practice_pass_score as number | null | undefined) ?? null,
+    // "published_at" in item: cột có được chọn không (đã chạy migration) — không có thì
+    // coi như đã đăng từ trước (giữ hành vi cũ, tránh ẩn nhầm nội dung cũ trước khi migrate).
+    published_at: "published_at" in item ? (item.published_at as string | null) : "1970-01-01T00:00:00.000Z",
+    draft_payload: (item.draft_payload as LessonItem["draft_payload"] | undefined) ?? null,
+    draft_saved_at: (item.draft_saved_at as string | null | undefined) ?? null,
   } as unknown as LessonItem;
 }
 
@@ -146,7 +155,7 @@ export async function fetchLessonWithItems(
   const res = await getSupabase()
     .from("lessons")
     .select(
-      `id, chapter_id, title, sort_order, published, lesson_kind, description, chapters(title), lesson_items(${ITEM_COLUMNS_V3})`,
+      `id, chapter_id, title, sort_order, published, lesson_kind, description, chapters(title), lesson_items(${ITEM_COLUMNS_V4})`,
     )
     .eq("id", id)
     .order("sort_order", { referencedTable: "lesson_items" })
@@ -184,7 +193,8 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
       .eq("lesson_id", lessonId)
       .order("sort_order")
       .order("id");
-  let res = await query(ITEM_COLUMNS_V3);
+  let res = await query(ITEM_COLUMNS_V4);
+  if (res.error) res = await query(ITEM_COLUMNS_V3);
   if (res.error) res = await query(ITEM_COLUMNS_V2);
   if (res.error) res = await query(ITEM_COLUMNS);
   if (res.error) throw res.error;

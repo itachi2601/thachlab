@@ -28,6 +28,10 @@ const ENV_FILE = join(ROOT, ".env.local");
 const ITEM_META_V1 = "id, lesson_id, kind, title, subtitle, video_url, pdf_url, exam_ids, sort_order";
 const ITEM_META_V2 = `${ITEM_META_V1}, due_at`;
 const ITEM_META_V3 = `${ITEM_META_V2}, required, quiz_min_correct, practice_pass_score`;
+// published_at là migration mới (nháp → đăng chính thức từng mục, cột
+// docs/supabase-migration-lesson-item-draft-publish.sql) — mục null (chưa từng đăng)
+// TUYỆT ĐỐI không được vào file tĩnh, dù trang admin có thể vẫn đang sửa dở.
+const ITEM_META_V4 = `${ITEM_META_V3}, published_at`;
 // Loại mục được đưa body_html vào file tĩnh (không có lời giải/đáp án).
 const BODY_KINDS = new Set(["ly_thuyet", "video"]);
 
@@ -145,7 +149,7 @@ async function main() {
         .order("sort_order")
         .order("id");
     itemRows = null;
-    for (const columns of [ITEM_META_V3, ITEM_META_V2, ITEM_META_V1]) {
+    for (const columns of [ITEM_META_V4, ITEM_META_V3, ITEM_META_V2, ITEM_META_V1]) {
       try {
         itemRows = lessonIds.length ? await fetchAll(itemSelect(columns)) : [];
         itemColumns = columns;
@@ -155,6 +159,11 @@ async function main() {
       }
     }
     if (!itemRows) throw new Error("không đọc được lesson_items với bất kỳ danh sách cột nào");
+    // Chưa chạy migration published_at → coi như mọi mục đã đăng (giữ hành vi cũ).
+    // Đã có cột thì lọc thẳng mục published_at = null (chưa đăng) khỏi file tĩnh.
+    if (itemColumns === ITEM_META_V4) {
+      itemRows = itemRows.filter((r) => r.published_at !== null);
+    }
   } catch (e) {
     return bail(`không lấy được dữ liệu từ Supabase: ${e?.message ?? e}`);
   }
