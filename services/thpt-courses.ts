@@ -1,4 +1,25 @@
 import { getSupabase } from "./supabase";
+// Types + hàm thuần (không đụng supabase-js) sống ở thpt-courses-public.ts, dùng chung
+// với trang công khai /khoa-hoc — import lại ở đây để khỏi định nghĩa 2 lần, và re-export
+// để các file đang import từ "@/services/thpt-courses" không phải sửa gì.
+import {
+  COURSE_SELECT,
+  toCourse,
+  type CourseStatus,
+  type CourseSchedule,
+  type ThptCourse,
+  type CourseRow,
+} from "./thpt-courses-public";
+export {
+  WEEKDAY_LABEL,
+  COURSE_SELECT,
+  fetchPublicCourses,
+  formatDate,
+  formatSchedule,
+  type CourseStatus,
+  type CourseSchedule,
+  type ThptCourse,
+} from "./thpt-courses-public";
 
 function supabaseError(error: unknown, fallback: string): Error {
   const raw = error as { message?: unknown; hint?: unknown } | null;
@@ -7,13 +28,8 @@ function supabaseError(error: unknown, fallback: string): Error {
   return new Error(`${message}${hint}`);
 }
 
-export type CourseStatus = "draft" | "active" | "completed" | "archived";
 export type RegistrationStatus = "pending" | "catchup" | "active" | "rejected" | "left";
 export type PaymentStatus = "unpaid" | "paid_center" | "paid_transfer";
-
-export const WEEKDAY_LABEL: Record<number, string> = {
-  1: "Thứ 2", 2: "Thứ 3", 3: "Thứ 4", 4: "Thứ 5", 5: "Thứ 6", 6: "Thứ 7", 7: "Chủ nhật",
-};
 
 export const REGISTRATION_STATUS_LABEL: Record<RegistrationStatus, string> = {
   pending: "Chờ duyệt",
@@ -29,81 +45,12 @@ export const PAYMENT_STATUS_LABEL: Record<PaymentStatus, string> = {
   paid_transfer: "Đã chuyển khoản",
 };
 
-export interface CourseSchedule {
-  id?: number;
-  weekday: number;
-  start_time: string; // "18:00"
-  end_time: string;
-  location: string;
-}
-
-export interface ThptCourse {
-  id: number;
-  class_id: number;
-  className: string;
-  name: string;
-  description: string;
-  school_year: string;
-  starts_at: string | null;
-  ends_at: string | null;
-  capacity: number | null;
-  fee_note: string;
-  is_public: boolean;
-  status: CourseStatus;
-  /** Chủ đề tầng bài (question_topics) lớp đang dạy tới — để tính phần cần bù cho em vào trễ. */
-  current_topic_id: number | null;
-  schedules: CourseSchedule[];
-  /** Số chỗ đã lấy (pending + catchup + active). */
-  taken: number;
-}
-
-const COURSE_SELECT =
-  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
-
-type CourseRow = {
-  id: number; class_id: number; name: string; description: string; school_year: string;
-  starts_at: string | null; ends_at: string | null; capacity: number | null; fee_note: string;
-  is_public: boolean; status: CourseStatus; current_topic_id: number | null;
-  classes: { name: string } | { name: string }[] | null;
-  thpt_course_schedules: { id: number; weekday: number; start_time: string; end_time: string; location: string }[] | null;
-};
-
-function hhmm(t: string) {
-  return t.slice(0, 5);
-}
-
-function toCourse(row: CourseRow, taken: number): ThptCourse {
-  const cls = Array.isArray(row.classes) ? row.classes[0] : row.classes;
-  const schedules = (row.thpt_course_schedules ?? [])
-    .map((s) => ({ id: s.id, weekday: s.weekday, start_time: hhmm(s.start_time), end_time: hhmm(s.end_time), location: s.location }))
-    .sort((a, b) => a.weekday - b.weekday || a.start_time.localeCompare(b.start_time));
-  return {
-    id: row.id, class_id: row.class_id, className: cls?.name ?? "", name: row.name, description: row.description,
-    school_year: row.school_year, starts_at: row.starts_at, ends_at: row.ends_at, capacity: row.capacity,
-    fee_note: row.fee_note, is_public: row.is_public, status: row.status, current_topic_id: row.current_topic_id ?? null,
-    schedules, taken,
-  };
-}
-
 async function attachSeats(rows: CourseRow[]): Promise<ThptCourse[]> {
   if (rows.length === 0) return [];
   const { data } = await getSupabase().rpc("thpt_course_seats", { p_course_ids: rows.map((r) => r.id) });
   const taken = new Map<number, number>();
   for (const r of (data ?? []) as { course_id: number; taken: number }[]) taken.set(r.course_id, r.taken);
   return rows.map((r) => toCourse(r, taken.get(r.id) ?? 0));
-}
-
-/** Khoá đang mở, ai cũng xem được (trang /khoa-hoc) — RLS chỉ trả khoá is_public + active. */
-export async function fetchPublicCourses(): Promise<ThptCourse[]> {
-  const { data, error } = await getSupabase()
-    .from("thpt_courses")
-    .select(COURSE_SELECT)
-    .eq("is_public", true)
-    .eq("status", "active")
-    .order("class_id")
-    .order("starts_at", { ascending: true, nullsFirst: false });
-  if (error) throw supabaseError(error, "Chưa đọc được danh sách khoá học.");
-  return attachSeats((data ?? []) as unknown as CourseRow[]);
 }
 
 export async function fetchCourse(id: number): Promise<ThptCourse | null> {
@@ -304,15 +251,7 @@ export async function attachStudent(id: number, studentId: string): Promise<void
   if (error) throw supabaseError(error, "Chưa gắn được tài khoản.");
 }
 
-export function formatSchedule(s: CourseSchedule): string {
-  return `${WEEKDAY_LABEL[s.weekday] ?? ""} ${s.start_time}–${s.end_time}${s.location ? ` · ${s.location}` : ""}`;
-}
-
-export function formatDate(d: string | null): string {
-  if (!d) return "";
-  const [y, m, day] = d.split("-");
-  return `${day}/${m}/${y}`;
-}
+// formatSchedule/formatDate: xem đầu file (re-export từ ./thpt-courses-public).
 
 // ============================================================
 // BÙ BÀI — em vào trễ (supabase-migration-bu-bai.sql)

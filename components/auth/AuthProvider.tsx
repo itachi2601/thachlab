@@ -1,67 +1,20 @@
 "use client";
 
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useState,
   useSyncExternalStore,
 } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
+import { AuthContext, type Profile, type PreviewMode } from "./auth-context";
 
-export interface Profile {
-  id: string;
-  full_name: string;
-  class_name: string;
-  role: "student" | "admin" | "instructor" | "tro_giang" | "parent";
-  // Khu vực quản trị được phân công cho giảng viên (null = chưa được cấp vào /quan-tri).
-  // Chỉ áp dụng cho role "instructor" — role "admin" luôn thấy cả 2 khu vực.
-  admin_area: "thpt" | "cttc" | null;
-  // Hệ học của học sinh/sinh viên — nguồn sự thật duy nhất để chọn giao diện CTTC hay THPT.
-  track: "thpt" | "cttc" | null;
-  avatar_url: string | null;
-}
-
-export type PreviewMode = "student" | "cttc" | null;
-
-interface AuthState {
-  session: Session | null;
-  /** Hồ sơ đang hiển thị cho phần còn lại của app — bị ghi đè khi admin bật "Xem như học sinh". */
-  profile: Profile | null;
-  /** Hồ sơ thật, không bị ghi đè — dùng để hiện nút bật preview (chỉ role thật = admin mới thấy). */
-  realProfile: Profile | null;
-  loading: boolean;
-  signOut: () => Promise<void>;
-  previewAsStudent: boolean;
-  setPreviewAsStudent: (value: boolean) => void;
-  /**
-   * Chế độ xem thử đang bật: "student" = học sinh chung (dùng track thật của admin),
-   * "cttc" = sinh viên CTTC đã ghi danh 3 môn (track bị ghi đè thành "cttc"), null = tắt.
-   */
-  previewMode: PreviewMode;
-  setPreviewMode: (mode: PreviewMode) => void;
-  /** Đọc lại hồ sơ từ DB — dùng sau khi tự sửa avatar/tên để cập nhật ngay khắp app. */
-  refreshProfile: () => Promise<void>;
-}
-
-const AuthContext = createContext<AuthState>({
-  session: null,
-  profile: null,
-  realProfile: null,
-  loading: true,
-  signOut: async () => {},
-  previewAsStudent: false,
-  setPreviewAsStudent: () => {},
-  previewMode: null,
-  setPreviewMode: () => {},
-  refreshProfile: async () => {},
-});
-
-export function useAuth() {
-  return useContext(AuthContext);
-}
+// Types + context + hook useAuth giờ sống ở auth-context.tsx (không import supabase-js) —
+// re-export ở đây để các file đang import từ "@/components/auth/AuthProvider" không phải
+// sửa gì. Xem auth-context.tsx để biết lý do tách.
+export { useAuth } from "./auth-context";
+export type { Profile, PreviewMode } from "./auth-context";
 
 const PREVIEW_STORAGE_KEY = "thachlab_preview_as_student";
 const PREVIEW_EVENT = "thachlab-preview-change";

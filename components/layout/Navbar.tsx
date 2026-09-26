@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/auth/auth-context";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
 import Avatar from "@/components/ui/Avatar";

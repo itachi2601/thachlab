@@ -5,13 +5,20 @@ import Link from "next/link";
 import { CalendarDays, MapPin, Users, Wallet } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { supabaseConfigured } from "@/services/supabase";
+// Import từ lib/supabase-env (không phải @/services/supabase) — trang này công khai,
+// ẩn danh, không có AuthProvider ở trên; import supabaseConfigured từ services/supabase
+// sẽ vô tình kéo theo cả @supabase/supabase-js (~211KB) vì file đó import SDK ở đầu file.
+import { supabaseConfigured } from "@/lib/supabase-env";
+// Import từ thpt-courses-public.ts (không phải services/thpt-courses.ts) — trang này
+// công khai, ẩn danh; thpt-courses.ts import getSupabase (supabase-js) ở đầu file cho các
+// hàm quản trị (createCourse, updateCourse...) dùng ở nơi khác, nên import bất cứ gì từ đó
+// (kể cả chỉ formatDate) vẫn kéo theo cả SDK.
 import {
   fetchPublicCourses,
   formatDate,
   WEEKDAY_LABEL,
   type ThptCourse,
-} from "@/services/thpt-courses";
+} from "@/services/thpt-courses-public";
 
 function seatsLabel(course: ThptCourse) {
   if (course.capacity === null) return `${course.taken} đã đăng ký`;
