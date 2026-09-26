@@ -411,7 +411,7 @@ function TiersTab({ season }: { season: RankSeason }) {
     <section className="admin-card">
       <h2 className="admin-h2">Ngưỡng RP và điều kiện lên hạng</h2>
       <p className="admin-lead">
-        Phân bậc III → II → I tự chia đều trong dải RP của bậc (không hở, không chồng). Từ Tinh Anh trở lên cần danh hiệu chuyên môn; Cao Thủ và Thách Đấu bắt buộc có đề thử thách — chưa gán thì học sinh không thể lên bậc đó.
+        Phân bậc III → II → I tự chia đều trong dải RP của bậc (không hở, không chồng). Từ Nhật Hoa trở lên cần danh hiệu chuyên môn; Thiên Thể và Chí Tôn bắt buộc có đề thử thách — chưa gán thì học sinh không thể lên bậc đó.
       </p>
       {!tiers ? (
         <p className="admin-muted">Đang tải…</p>

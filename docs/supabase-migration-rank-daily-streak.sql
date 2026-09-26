@@ -219,7 +219,7 @@ begin
     end if;
   end if;
 
-  -- Huyền Thoại Đấu Trường: Thách Đấu ở >= 2 mùa đã đóng.
+  -- Huyền Thoại Đấu Trường: Chí Tôn ở >= 2 mùa đã đóng.
   select count(*) into v_n from public.rank_season_results where student_id = p_student and tier_code = 'thach_dau';
   if v_n >= 2 then
     perform public.rank_grant_title(p_student, 'huyen_thoai_dau_truong', 'don', p_season, jsonb_build_object('seasons', v_n));

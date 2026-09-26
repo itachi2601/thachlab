@@ -126,13 +126,13 @@ language sql security definer set search_path = public
 as $$
   insert into public.rank_tiers (season_id, code, sort, name, min_rp, has_divisions, required_title_count, required_title_level)
   values
-    (p_season, 'tan_binh',   1, 'Tân Binh',   0,    true,  0, null),
-    (p_season, 'chien_binh', 2, 'Chiến Binh', 200,  true,  0, null),
-    (p_season, 'tinh_anh',   3, 'Tinh Anh',   500,  true,  1, 'thuc_tinh'),
-    (p_season, 'tinh_nhue',  4, 'Tinh Nhuệ',  900,  true,  2, 'thuc_tinh'),
-    (p_season, 'dai_su',     5, 'Đại Sư',     1400, true,  1, 'lam_chu'),
-    (p_season, 'cao_thu',    6, 'Cao Thủ',    2000, false, 2, 'lam_chu'),
-    (p_season, 'thach_dau',  7, 'Thách Đấu',  2600, false, 3, 'lam_chu')
+    (p_season, 'tan_binh',   1, 'Tinh Quang',   0,    true,  0, null),
+    (p_season, 'chien_binh', 2, 'Tiên Phong', 200,  true,  0, null),
+    (p_season, 'tinh_anh',   3, 'Nhật Hoa',   500,  true,  1, 'thuc_tinh'),
+    (p_season, 'tinh_nhue',  4, 'Vương Lễ',  900,  true,  2, 'thuc_tinh'),
+    (p_season, 'dai_su',     5, 'Vương Triều',     1400, true,  1, 'lam_chu'),
+    (p_season, 'cao_thu',    6, 'Thiên Thể',    2000, false, 2, 'lam_chu'),
+    (p_season, 'thach_dau',  7, 'Chí Tôn',  2600, false, 3, 'lam_chu')
   on conflict (season_id, code) do nothing;
 $$;
 
@@ -738,7 +738,7 @@ begin
     v_titles_ok := v_titles >= t.required_title_count;
 
     if t.challenge_exam_id is null then
-      -- Cao Thủ / Thách Đấu bắt buộc có thử thách; chưa gán -> chưa thể vượt.
+      -- Thiên Thể / Chí Tôn bắt buộc có thử thách; chưa gán -> chưa thể vượt.
       v_chal_ok := t.code not in ('cao_thu', 'thach_dau');
       v_pct := null;
     else
@@ -877,7 +877,7 @@ begin
     end if;
   end if;
 
-  -- Huyền Thoại Đấu Trường: Thách Đấu ở >= 2 mùa đã đóng.
+  -- Huyền Thoại Đấu Trường: Chí Tôn ở >= 2 mùa đã đóng.
   select count(*) into v_n from public.rank_season_results where student_id = p_student and tier_code = 'thach_dau';
   if v_n >= 2 then
     perform public.rank_grant_title(p_student, 'huyen_thoai_dau_truong', 'don', p_season, jsonb_build_object('seasons', v_n));
@@ -1613,7 +1613,7 @@ insert into public.rank_titles (code, group_code, kind, name, description, sort)
   ('vu_cong_quy_dao',         'co_hoc', 'specialist', 'Vũ Công Quỹ Đạo',         'Chuyển động tròn', 70),
   ('bac_thay_nhip_dao_dong',  'dao_dong_song', 'specialist', 'Bậc Thầy Nhịp Dao Động',  'Dao động điều hoà', 10),
   ('ke_dieu_khien_cong_huong','dao_dong_song', 'specialist', 'Kẻ Điều Khiển Cộng Hưởng','Dao động cưỡng bức, cộng hưởng', 20),
-  ('chua_te_song',            'dao_dong_song', 'specialist', 'Chúa Tể Sóng',            'Sự truyền sóng', 30),
+  ('chua_te_song',            'dao_dong_song', 'specialist', 'Chúa Tể Của Những Loại Sóng', 'Sự truyền sóng', 30),
   ('phap_su_giao_thoa',       'dao_dong_song', 'specialist', 'Pháp Sư Giao Thoa',       'Giao thoa sóng', 40),
   ('nguoi_giu_nut_song',      'dao_dong_song', 'specialist', 'Người Giữ Nút Sóng',      'Sóng dừng', 50),
   ('tho_san_tan_so',          'dao_dong_song', 'specialist', 'Thợ Săn Tần Số',          'Sóng âm', 60),
@@ -1642,7 +1642,7 @@ insert into public.rank_titles (code, group_code, kind, name, description, sort)
   ('lat_keo_ngoan_muc',       'thanh_tich', 'achievement', 'Lật Kèo Ngoạn Mục',       'Một chủ đề từng dưới 50% nay đạt từ 80%, hoặc tự thoát phụ đạo bằng bài kiểm tra', 40),
   ('pha_dao_chuyen_de',       'thanh_tich', 'achievement', 'Phá Đảo Chuyên Đề',       'Mọi chủ đề của một chương đạt từ 85%, cả lý thuyết lẫn bài tập', 50),
   ('trum_cuoi',               'thanh_tich', 'achievement', 'Trùm Cuối',               'Vượt đề khó nhất mùa', 60),
-  ('huyen_thoai_dau_truong',  'thanh_tich', 'achievement', 'Huyền Thoại Đấu Trường',  'Đạt Thách Đấu ở hai mùa trở lên', 70)
+  ('huyen_thoai_dau_truong',  'thanh_tich', 'achievement', 'Huyền Thoại Đấu Trường',  'Đạt Chí Tôn ở hai mùa trở lên', 70)
 on conflict (code) do update set group_code = excluded.group_code, kind = excluded.kind, name = excluded.name,
   description = excluded.description, sort = excluded.sort;
 
