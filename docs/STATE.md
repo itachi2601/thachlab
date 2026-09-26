@@ -14,6 +14,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - **Đợt tối ưu tốc độ (perf, 24–25/09)**: Lighthouse trang chủ 68→91, trang bài 78→83; `out/` 41→34 MB; ảnh 4,6 MB→0,6 MB; bỏ Google Fonts; Supabase request trang bài 10→4. Chi tiết: `perf/RESULT.md`.
 - **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
 - Hệ thống Rank/RP 7 bậc (Tinh Quang → Chí Tôn), nhiệm vụ hằng ngày, chuỗi ngày.
+- Danh vị Vô Song (Paragon) trên Chí Tôn: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
 
 ## ĐANG CHỜ — 5 migration CHƯA chạy trên production
 Chạy bằng SQL Editor hoặc `supabase db query --linked -f <file>`. **Không dùng `supabase db push`** (thư mục `supabase/migrations/` mới, CLI không biết 99 migration cũ).

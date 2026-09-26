@@ -44,7 +44,14 @@ export const TIER_META: Record<TierCode, TierMeta> = {
   thach_dau: { name: "Chí Tôn", en: "Sovereign", color: "#d4a836", light: "#fff0c2", tone: "bg-amber-400/15 text-amber-100" },
 };
 
-export function tierMeta(code: string | null | undefined): TierMeta {
+/**
+ * Danh vị Vô Song (Paragon) — trên cả Chí Tôn, không nằm trên thang RP và không có phân bậc.
+ * Không phải bậc thứ tám: `tier.code` vẫn là "thach_dau", chỉ thêm cờ `tier.paragon`.
+ */
+export const PARAGON_META: TierMeta = { name: "Vô Song", en: "Paragon", color: "#7c4dff", light: "#fff0bf", tone: "bg-violet-500/15 text-amber-100" };
+
+export function tierMeta(code: string | null | undefined, paragon?: boolean | null): TierMeta {
+  if (paragon) return PARAGON_META;
   return TIER_META[(code ?? "tan_binh") as TierCode] ?? TIER_META.tan_binh;
 }
 
@@ -53,9 +60,9 @@ export function divisionLabel(division: number | null | undefined): string {
 }
 
 /** "Starlight III · Tinh Quang" — dùng cho chỗ chỉ có một dòng chữ. */
-export function tierLabel(code: string | null | undefined, division?: number | null): string {
-  const m = tierMeta(code);
-  const d = divisionLabel(division);
+export function tierLabel(code: string | null | undefined, division?: number | null, paragon?: boolean | null): string {
+  const m = tierMeta(code, paragon);
+  const d = paragon ? "" : divisionLabel(division);
   return `${m.en}${d ? ` ${d}` : ""} · ${m.name}`;
 }
 
@@ -115,6 +122,8 @@ export interface RankTierInfo {
   division: number | null;
   div_min: number;
   div_max: number | null;
+  /** Danh vị Vô Song: đang Chí Tôn + đủ mọi danh hiệu mức cao nhất (rank_is_paragon). */
+  paragon?: boolean;
 }
 
 export interface RankGate {
@@ -254,6 +263,7 @@ export interface RankSeasonSummary {
   tier_code: TierCode;
   division: number | null;
   titles_count: number;
+  paragon?: boolean;
 }
 
 // ---------- trang lớp ----------
@@ -282,7 +292,7 @@ export interface ClassRankBoard {
   season: { id: number; name: string; starts_on: string; ends_on: string } | null;
   week_start: string;
   total: number;
-  top_week: (ClassRankBoardMember & { pos: number; tier_code: TierCode | null; division: number | null; is_me: boolean })[];
+  top_week: (ClassRankBoardMember & { pos: number; tier_code: TierCode | null; division: number | null; is_me: boolean; paragon?: boolean })[];
   me: {
     pos: number;
     rp_week: number;

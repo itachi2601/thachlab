@@ -16,6 +16,7 @@ import type {
   TitleLevel,
 } from "@/features/rank/types";
 import { getSupabase } from "@/services/supabase";
+import { isStudentPreview, unlockBoard, unlockSeasons, unlockStatus, unlockTitles } from "@/features/rank/preview";
 
 // ============================================================
 // Học sinh / phụ huynh / giáo viên xem
@@ -23,7 +24,9 @@ import { getSupabase } from "@/services/supabase";
 export async function fetchMyRankStatus(): Promise<RankStatus | null> {
   const { data, error } = await getSupabase().rpc("rank_my_status");
   if (error) throw error;
-  return (data as RankStatus | null) ?? null;
+  const status = (data as RankStatus | null) ?? null;
+  // Admin đang "Xem như học sinh" → mở khoá hết (Vô Song, 45 danh hiệu, chuỗi ngày…), xem features/rank/preview.ts.
+  return isStudentPreview() ? unlockStatus(status) : status;
 }
 
 export async function fetchRankStatusOf(studentId: string): Promise<RankStatus | null> {
@@ -35,7 +38,8 @@ export async function fetchRankStatusOf(studentId: string): Promise<RankStatus |
 export async function fetchMyTitles(): Promise<RankTitle[]> {
   const { data, error } = await getSupabase().rpc("rank_my_titles");
   if (error) throw error;
-  return (data as RankTitle[] | null) ?? [];
+  const titles = (data as RankTitle[] | null) ?? [];
+  return isStudentPreview() ? unlockTitles(titles) : titles;
 }
 
 export async function fetchTitlesOf(studentId: string): Promise<RankTitle[]> {
@@ -57,7 +61,8 @@ export async function fetchLedgerOf(studentId: string, seasonId: number | null =
 export async function fetchSeasonsOf(studentId: string): Promise<RankSeasonSummary[]> {
   const { data, error } = await getSupabase().rpc("rank_seasons_of", { p_student: studentId });
   if (error) throw error;
-  return (data as RankSeasonSummary[] | null) ?? [];
+  const seasons = (data as RankSeasonSummary[] | null) ?? [];
+  return isStudentPreview() ? unlockSeasons(seasons) : seasons;
 }
 
 export async function setDisplayTitle(code: string | null, level: TitleLevel | null): Promise<void> {
@@ -72,9 +77,16 @@ export async function fetchClassRankGroups(classId: number): Promise<ClassRankGr
 }
 
 export async function fetchClassRankBoard(classId: number): Promise<ClassRankBoard | null> {
-  const { data, error } = await getSupabase().rpc("rank_class_board", { p_class_id: classId });
+  const sb = getSupabase();
+  const { data, error } = await sb.rpc("rank_class_board", { p_class_id: classId });
   if (error) throw error;
-  return (data as ClassRankBoard | null) ?? null;
+  const board = (data as ClassRankBoard | null) ?? null;
+  if (!isStudentPreview()) return board;
+  const { data: u } = await sb.auth.getUser();
+  const { data: p } = u?.user
+    ? await sb.from("profiles").select("full_name, avatar_url").eq("id", u.user.id).maybeSingle()
+    : { data: null };
+  return unlockBoard(board, p?.full_name ?? "Em", p?.avatar_url ?? null);
 }
 
 // ============================================================

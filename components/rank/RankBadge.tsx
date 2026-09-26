@@ -1,12 +1,14 @@
 "use client";
 
 import { useId } from "react";
+import ParagonBadge from "@/components/rank/ParagonBadge";
 import { divisionLabel, tierMeta, type TierCode } from "@/features/rank/types";
 
 /**
  * Huy chương kiểu quân đội theo bậc.
  * Thân huy chương + màu ruy-băng = bậc; kim loại = phân bậc (III đồng · II bạc · I vàng).
  * Thiên Thể / Chí Tôn không có phân bậc → luôn vàng.
+ * `paragon` = danh vị Vô Song (trên Chí Tôn) → vẽ huy hiệu độc quyền ParagonBadge thay cho huy chương bậc.
  */
 
 type Metal = "bronze" | "silver" | "gold";
@@ -55,15 +57,18 @@ export default function RankBadge({
   division,
   size = 64,
   className = "",
+  paragon = false,
 }: {
   code: string | null | undefined;
   division?: number | null;
   size?: number;
   className?: string;
+  paragon?: boolean | null;
 }) {
   const meta = tierMeta(code);
   const tier = (code && code in RIBBONS ? code : "tan_binh") as TierCode;
   const uid = useId().replace(/:/g, "");
+  if (paragon) return <ParagonBadge size={size} className={className} />;
   const id = (n: string) => `${uid}-${n}`;
   const url = (n: string) => `url(#${id(n)})`;
   const div = divisionLabel(division);

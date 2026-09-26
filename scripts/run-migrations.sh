@@ -16,6 +16,7 @@ FILES=(
   "supabase/migrations/20260925140000_perf_rls.sql"
   "supabase/migrations/20260925150000_difficulty_source.sql"
   "supabase/migrations/20260925160000_mastery.sql"
+  "supabase/migrations/20260926100000_rank_paragon.sql"
 )
 
 AUTO=0; ONLY=""
@@ -40,7 +41,7 @@ for i in "${!FILES[@]}"; do
   [[ -f "$f" ]] || { echo "Thieu file: $f"; exit 1; }
 
   echo
-  echo "=== [$n/5] $(basename "$f") ==="
+  echo "=== [$n/${#FILES[@]}] $(basename "$f") ==="
   if [[ $AUTO -eq 0 ]]; then
     read -r -p "Chay file nay? [y/N] " ans
     [[ "$ans" =~ ^[yY]$ ]] || { echo "Bo qua."; continue; }

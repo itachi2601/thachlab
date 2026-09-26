@@ -27,7 +27,8 @@ export default function RankCard({
   compact?: boolean;
   className?: string;
 }) {
-  const meta = tierMeta(status?.tier?.code);
+  const paragon = !!status?.tier?.paragon;
+  const meta = tierMeta(status?.tier?.code, paragon);
   const inner = (
     <div
       className={`relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${className}`}
@@ -40,7 +41,7 @@ export default function RankCard({
         {status === undefined ? (
           <div className="h-16 w-14 animate-pulse rounded-xl bg-white/5" />
         ) : (
-          <RankBadge code={status?.tier?.code} division={status?.tier?.division} size={compact ? 52 : 64} />
+          <RankBadge code={status?.tier?.code} division={status?.tier?.division} paragon={paragon} size={compact ? 52 : 64} />
         )}
         <div className="min-w-0 flex-1">
           {status === undefined ? (
@@ -64,7 +65,7 @@ export default function RankCard({
           ) : (
             <>
               {name && <p className="truncate text-xs font-bold uppercase tracking-widest text-slate-400">{name}</p>}
-              <TierName code={status.tier?.code} division={status.tier?.division} size="md" />
+              <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="md" />
               <p className="mt-0.5 truncate text-sm text-slate-300">
                 {status.display_title ? (
                   <>
@@ -78,6 +79,7 @@ export default function RankCard({
               {!compact && (
                 <p className="mt-1 text-sm text-slate-400">
                   <b className="text-white">{formatRp(status.rp)} RP</b>
+                  {paragon && " · Danh vị độc quyền — trên cả Chí Tôn"}
                   {status.next && (
                     <>
                       {" · "}

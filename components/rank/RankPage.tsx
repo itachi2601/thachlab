@@ -81,7 +81,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
           const key = `${TIER_SORT_KEY}:${s?.season?.id ?? 0}`;
           const prev = Number(window.localStorage.getItem(key) ?? "0");
           const cur = s?.tier?.sort ?? 0;
-          if (prev > 0 && cur > prev) setCelebrate(tierLabel(s?.tier?.code, s?.tier?.division));
+          if (prev > 0 && cur > prev) setCelebrate(tierLabel(s?.tier?.code, s?.tier?.division, s?.tier?.paragon));
           if (cur > 0) window.localStorage.setItem(key, String(cur));
         } catch {
           /* localStorage không sẵn — bỏ qua */
@@ -105,7 +105,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
     }
   }
 
-  const meta = tierMeta(status?.tier?.code);
+  const paragon = !!status?.tier?.paragon;
+  const meta = tierMeta(status?.tier?.code, paragon);
   const bar = useMemo(() => {
     const t = status?.tier;
     if (!t || !status) return 0;
@@ -148,13 +149,13 @@ export default function RankPage({ studentId, studentName }: { studentId: string
         style={{ borderColor: `${meta.color}55`, background: `radial-gradient(120% 120% at 0% 0%, ${meta.color}33 0%, rgba(11,16,32,0.6) 55%)` }}
       >
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <RankBadge code={status?.tier?.code} division={status?.tier?.division} size={96} className="mx-auto sm:mx-0" />
+          <RankBadge code={status?.tier?.code} division={status?.tier?.division} paragon={paragon} size={96} className="mx-auto sm:mx-0" />
           <div className="min-w-0 flex-1 text-center sm:text-left">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">{studentName}</p>
             {status?.season ? (
               <>
                 <h1 className="mt-1">
-                  <TierName code={status.tier?.code} division={status.tier?.division} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
+                  <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
                 </h1>
                 <p className="mt-1 text-sm text-slate-300">
                   {status.display_title ? titleDisplay(status.display_title.name, status.display_title.level) : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}
@@ -166,9 +167,11 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                   <div className="h-full rounded-full transition-[width] motion-reduce:transition-none" style={{ width: `${bar}%`, background: `linear-gradient(90deg, ${meta.color}, ${meta.light})` }} />
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
-                  {status.tier?.div_max !== null && status.tier
-                    ? `Phân bậc hiện tại: ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
-                    : "Bậc cao nhất — không còn phân bậc"}
+                  {paragon
+                    ? "Danh vị Vô Song — trên cả Chí Tôn, chỉ dành cho người đã sưu tập trọn bộ danh hiệu"
+                    : status.tier?.div_max !== null && status.tier
+                      ? `Phân bậc hiện tại: ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
+                      : "Bậc cao nhất — không còn phân bậc"}
                   {" · "}Mùa {status.season.name} ({new Date(status.season.starts_on).toLocaleDateString("vi-VN")} – {new Date(status.season.ends_on).toLocaleDateString("vi-VN")})
                 </p>
               </>
@@ -222,7 +225,11 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                 {status.next.gate?.passed && <Condition done>Đã vượt điều kiện lên {status.next.name}</Condition>}
               </ul>
             ) : (
-              <p className="text-sm text-slate-300">Em đang ở bậc cao nhất của mùa này. Giữ vững phong độ!</p>
+              <p className="text-sm text-slate-300">
+                {paragon
+                  ? "Em đã đạt danh vị Vô Song — không còn điều kiện nào phía trước. Giữ trọn bộ danh hiệu tới hết mùa để danh vị được ghi vào thành tích mùa."
+                  : "Em đang ở bậc cao nhất của mùa này. Giữ vững phong độ!"}
+              </p>
             )}
           </Section>
 
@@ -298,13 +305,13 @@ export default function RankPage({ studentId, studentName }: { studentId: string
             <ul className="space-y-2">
               {seasons.map((s) => (
                 <li key={s.season_id} className="flex items-center gap-3 rounded-xl border border-white/10 p-3">
-                  <RankBadge code={s.tier_code} division={s.division} size={36} />
+                  <RankBadge code={s.tier_code} division={s.division} paragon={s.paragon} size={36} />
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-semibold text-white">
                       {s.name} {s.status === "active" && <span className="text-xs font-normal text-emerald-300">· đang diễn ra</span>}
                     </span>
                     <span className="text-xs text-slate-500">
-                      {tierLabel(s.tier_code, s.division)} · {formatRp(s.rp)} RP
+                      {tierLabel(s.tier_code, s.division, s.paragon)} · {formatRp(s.rp)} RP
                       {s.status === "closed" && ` · ${s.titles_count} danh hiệu`}
                     </span>
                   </span>

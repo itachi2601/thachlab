@@ -8,6 +8,7 @@ import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import {
   LEVEL_LABELS,
+  PARAGON_META,
   TIER_ORDER,
   divisionLabel,
   formatRp,
@@ -21,7 +22,11 @@ import { fetchTierLadder, type TierLadderStep } from "@/services/rank";
  * Lộ trình các bậc: em xem trước toàn bộ huy hiệu (kể cả phân bậc III/II/I) và điều kiện lên từng bậc.
  * Ngưỡng RP + điều kiện lấy từ rank_tiers của mùa đang mở (giáo viên chỉnh được), không hardcode.
  * Bấm một huy hiệu trên dải để xem chi tiết bậc đó; mặc định mở bậc hiện tại của em.
+ * Ô thứ tám tách riêng là danh vị Vô Song (Paragon): không phải bậc, không nằm trên thang RP —
+ * chỉ hiện điều kiện; `status.tier.paragon` = em đang giữ danh vị này.
  */
+
+const PARAGON_KEY = "vo_song" as const;
 
 interface Division {
   division: 1 | 2 | 3;
@@ -67,7 +72,11 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
   const seasonId = status?.season?.id ?? null;
   const currentSort = status?.tier?.sort ?? 0;
   const [steps, setSteps] = useState<TierLadderStep[] | null | undefined>(seasonId ? undefined : null);
-  const [selected, setSelected] = useState<TierCode>((status?.tier?.code as TierCode | undefined) ?? "tan_binh");
+  const paragon = !!status?.tier?.paragon;
+  const [selected, setSelected] = useState<TierCode | typeof PARAGON_KEY>(
+    paragon ? PARAGON_KEY : ((status?.tier?.code as TierCode | undefined) ?? "tan_binh"),
+  );
+  const showParagon = selected === PARAGON_KEY;
 
   useEffect(() => {
     if (!seasonId) return;
@@ -108,7 +117,8 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
   const isNext = !!status?.next && status.next.code === step.code;
   const gate = isNext ? status?.next?.gate ?? null : null;
   const rp = status?.rp ?? 0;
-  const fillPct = list.length > 1 ? ((Math.max(1, currentSort) - 1) / (list.length - 1)) * 100 : 0;
+  const fillPct = paragon ? 100 : list.length > 1 ? ((Math.max(1, currentSort) - 1) / (list.length - 1)) * 100 : 0;
+  const panelMeta = showParagon ? PARAGON_META : meta;
 
   const rpState: CondState = reached || isCurrent ? "done" : isNext ? (status!.next!.rp_needed === 0 ? "done" : "todo") : "neutral";
   const titleState: CondState = reached || isCurrent ? "done" : gate ? (gate.titles_have >= gate.required_title_count ? "done" : "todo") : "neutral";
@@ -179,20 +189,94 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               </button>
             );
           })}
+
+          {/* Danh vị Vô Song — tách khỏi thang bậc bằng một vạch đứng */}
+          <span className="mt-3 h-4 w-px shrink-0 bg-white/15 sm:mt-4 sm:h-6" aria-hidden />
+          <button
+            type="button"
+            onClick={() => setSelected(PARAGON_KEY)}
+            aria-pressed={showParagon}
+            aria-label={`${PARAGON_META.en} · ${PARAGON_META.name} (danh vị đặc biệt)${paragon ? " — em đang giữ" : ""}`}
+            className="group relative flex w-10 flex-col items-center gap-1 outline-none sm:w-20"
+          >
+            <span
+              className={`relative flex h-10 w-10 items-center justify-center rounded-full transition sm:h-14 sm:w-14 ${
+                showParagon ? "ring-2 ring-offset-2 ring-offset-[#0b1020]" : "group-hover:scale-105 group-focus-visible:ring-2"
+              } ${!paragon && !showParagon ? "opacity-55 saturate-50" : ""}`}
+              style={{
+                background: showParagon ? `${PARAGON_META.color}33` : "rgba(11,16,32,0.9)",
+                ["--tw-ring-color" as string]: PARAGON_META.light,
+              }}
+            >
+              <RankBadge code="thach_dau" paragon size={40} className="hidden sm:block" />
+              <RankBadge code="thach_dau" paragon size={30} className="sm:hidden" />
+              {paragon ? (
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-[#0b1020]">
+                  <Check size={10} strokeWidth={3} />
+                </span>
+              ) : (
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-700 text-slate-300 ring-2 ring-[#0b1020]">
+                  <Lock size={9} />
+                </span>
+              )}
+            </span>
+            <span
+              className={`hidden w-full truncate text-center text-[10px] font-bold uppercase tracking-wide sm:block ${showParagon ? "" : "text-slate-500"}`}
+              style={{ fontFamily: "var(--font-cinzel), Cinzel, serif", color: showParagon ? PARAGON_META.light : undefined }}
+            >
+              {PARAGON_META.en}
+            </span>
+            {paragon && <span className="h-1 w-1 rounded-full sm:-mt-0.5" style={{ background: PARAGON_META.light }} aria-hidden />}
+          </button>
         </div>
       </div>
 
       {/* Chi tiết bậc đang chọn */}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
-          key={step.code}
+          key={showParagon ? PARAGON_KEY : step.code}
           initial={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduceMotion ? 0 : 0.2 }}
           className="mt-4 rounded-2xl border p-4 sm:p-5"
-          style={{ borderColor: `${meta.color}55`, background: `linear-gradient(135deg, ${meta.color}22 0%, rgba(11,16,32,0) 65%)` }}
+          style={{ borderColor: `${panelMeta.color}55`, background: `linear-gradient(135deg, ${panelMeta.color}22 0%, rgba(11,16,32,0) 65%)` }}
         >
+          {showParagon ? (
+            <>
+              <div className="flex items-center gap-3 sm:gap-4">
+                <RankBadge code="thach_dau" paragon size={72} className="shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <TierName code="thach_dau" paragon size="md" />
+                  <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+                    {paragon ? (
+                      <span className="rounded-full px-2 py-0.5 font-bold uppercase tracking-wider" style={{ background: `${PARAGON_META.color}44`, color: PARAGON_META.light }}>
+                        Danh vị của em
+                      </span>
+                    ) : (
+                      <span className="rounded-full bg-white/10 px-2 py-0.5 font-bold uppercase tracking-wider text-slate-200">Danh vị đặc biệt</span>
+                    )}
+                    <span className="text-slate-400">Trên cả Chí Tôn · không tính bằng RP</span>
+                  </p>
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-slate-500">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Chí Tôn và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
+              <div className="mt-4">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
+                <ul className="mt-2 space-y-2">
+                  <Cond state={paragon || currentSort >= list.length ? "done" : status?.season ? "todo" : "neutral"}>
+                    Đang ở bậc <b className="text-white">Chí Tôn</b> của mùa hiện tại
+                  </Cond>
+                  <Cond state={paragon ? "done" : status?.season ? "todo" : "neutral"}>
+                    Sưu tập <b className="text-white">đủ mọi danh hiệu</b> đang khả dụng, mỗi danh hiệu ở mức cao nhất
+                    {status ? ` (đang có ${status.titles_count})` : ""}
+                  </Cond>
+                  <Cond state={paragon ? "done" : "neutral"}>Giữ trọn bộ tới hết mùa để danh vị được ghi vào thành tích mùa</Cond>
+                </ul>
+              </div>
+            </>
+          ) : (
+          <>
           <div className="flex items-center gap-3 sm:gap-4">
             <RankBadge code={step.code} division={step.has_divisions ? (isCurrent ? status?.tier?.division : 1) : null} size={72} className="shrink-0" />
             <div className="min-w-0 flex-1">
@@ -289,6 +373,8 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               </ul>
             )}
           </div>
+          </>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
