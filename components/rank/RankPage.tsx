@@ -3,12 +3,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { CalendarCheck, ChevronRight, Flag, History, Medal, Target, Trophy } from "lucide-react";
+import { CalendarCheck, ChevronRight, Flag, History, Medal, Route, Target, Trophy } from "lucide-react";
 import EmptyState from "@/components/ui/EmptyState";
 import { useToast } from "@/components/ui/Toast";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import TitleCollection from "@/components/rank/TitleCollection";
+import TierLadder from "@/components/rank/TierLadder";
 import {
   LEDGER_KIND_LABELS,
   LEVEL_LABELS,
@@ -182,6 +183,10 @@ export default function RankPage({ studentId, studentName }: { studentId: string
           </div>
         </div>
       </section>
+
+      <Section icon={Route} title="Lộ trình các bậc" aside={<span className="hidden sm:inline">Chạm huy hiệu để xem điều kiện</span>}>
+        <TierLadder status={status} />
+      </Section>
 
       {status?.season && (
         <div className="grid gap-4 sm:grid-cols-2">

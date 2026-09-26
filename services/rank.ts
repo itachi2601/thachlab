@@ -492,3 +492,26 @@ export async function recomputeStudent(seasonId: number, studentId: string): Pro
   const { error } = await getSupabase().rpc("rank_recompute_student", { p_season: seasonId, p_student: studentId });
   if (error) throw new Error(error.message);
 }
+
+// ---------- Lộ trình bậc (học sinh xem trước toàn bộ huy hiệu + điều kiện) ----------
+export interface TierLadderStep extends RankTierRow {
+  /** Ngưỡng RP của bậc kế trên; null = bậc cao nhất. */
+  next_min: number | null;
+  challenge_title: string | null;
+}
+
+/** Toàn bộ bậc của một mùa kèm tên đề thử thách — policy "anyone reads rank_tiers" cho phép học sinh đọc. */
+export async function fetchTierLadder(seasonId: number): Promise<TierLadderStep[]> {
+  const tiers = await fetchTiers(seasonId);
+  const examIds = tiers.map((t) => t.challenge_exam_id).filter((id): id is number => id !== null);
+  const titles = new Map<number, string>();
+  if (examIds.length > 0) {
+    const { data } = await getSupabase().from("exams").select("id, title").in("id", examIds);
+    for (const e of data ?? []) titles.set(e.id as number, e.title as string);
+  }
+  return tiers.map((t, i) => ({
+    ...t,
+    next_min: tiers[i + 1]?.min_rp ?? null,
+    challenge_title: t.challenge_exam_id !== null ? (titles.get(t.challenge_exam_id) ?? null) : null,
+  }));
+}
