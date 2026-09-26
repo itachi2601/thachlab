@@ -18,7 +18,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Loại GV/admin khỏi rank RP: migration `20260926110000_rank_exclude_staff.sql` ĐÃ chạy 26/9/2026 — chặn tận gốc (3 hàm) việc tài khoản không phải role='student' bị cộng RP/lọt bảng xếp hạng khi tự test bài, đã dọn sạch dữ liệu rác (rollback `perf/rollback/20260926110000_rank_exclude_staff.down.sql`).
 
 ## ĐANG CHỜ — 6 migration CHƯA chạy trên production
-Chạy bằng SQL Editor hoặc `supabase db query --linked -f <file>`. **Không dùng `supabase db push`** (thư mục `supabase/migrations/` mới, CLI không biết 99 migration cũ).
+Chạy bằng `bash scripts/run-migrations.sh` (xem trước danh sách: `--list`). **Không dùng `supabase db push`** (thư mục `supabase/migrations/` mới, CLI không biết 99 migration cũ).
 
 | # | File | Nội dung |
 |---|---|---|
