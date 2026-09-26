@@ -38,6 +38,19 @@ Trang học sinh (`/lop-hoc`, `/lop-hoc/bai`, trang chủ HS) đọc các file n
 
 File tĩnh không chứa đề thi, đáp án hay lời giải bài tập mẫu (những thứ đó vẫn lấy từ Supabase như cũ). Thư mục `public/data/` không commit (`.gitignore`); thiếu env hoặc Supabase lỗi thì script chỉ cảnh báo, giữ file cũ (không có thì ghi manifest rỗng) và trang tự lùi về gọi Supabase như trước. Khu quản trị/giáo viên không dùng lớp tĩnh.
 
+### Cache & nén trên hosting (`.htaccess` sinh bởi `scripts/deploy.sh`)
+
+`scripts/deploy.sh` tự sinh `out/.htaccess` sau mỗi lần build:
+
+- `js|css|woff2?` — cache 1 năm (tên file có hash, đổi nội dung là đổi tên).
+- `png|jpe?g|webp|svg|gif` — cache **30 ngày**. Ảnh KHÔNG có hash trong tên file, nên **sửa một
+  ảnh đã đăng (bài học, đề thi...) phải upload với TÊN FILE MỚI, không được ghi đè file cũ** — nếu
+  ghi đè, trình duyệt học sinh vẫn hiển thị ảnh cache cũ tối đa 30 ngày dù server đã có bản mới.
+- Nén `html|css|js|json|svg`: `mod_brotli` nếu hosting LiteSpeed có bật, fallback `mod_deflate`
+  (gzip) nếu không — cả hai khối đặt trong `<IfModule>` nên không hỏng nếu module không tồn tại.
+- Riêng `out/data/*.json` (học liệu tĩnh, xem mục trên) có `.htaccess` **cache 10 phút riêng**,
+  tách biệt với khối cache ảnh 30 ngày ở trên — đừng gộp hai khối này lại.
+
 ## Cấu trúc
 
 - `app/` — route; `components/`, `features/`, `services/` (truy vấn Supabase), `lib/`.
