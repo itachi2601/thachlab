@@ -18,9 +18,32 @@
  * cuối (opacity:1, không dịch), bỏ qua hiệu ứng, còn hơn ẩn mất nội dung.
  */
 
-import { Component, lazy, Suspense, type ReactNode } from "react";
+import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 
 const RevealMotion = lazy(() => import("@/components/ui/RevealMotion"));
+
+// Chờ chunk RevealMotion tối đa ngần này rồi tự hiện nội dung dù chunk chưa về —
+// phòng trường hợp lỗi tải chunk không nổi lên thành exception bắt được bởi
+// ErrorBoundary (đã quan sát thấy: Suspense có thể kẹt mãi ở fallback thay vì
+// chuyển sang trạng thái lỗi khi chunk 404/mất mạng), khiến nội dung ẩn vĩnh viễn.
+const CHUNK_TIMEOUT_MS = 4000;
+
+function PendingFallback({ children, className }: { children: ReactNode; className?: string }) {
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setTimedOut(true), CHUNK_TIMEOUT_MS);
+    return () => clearTimeout(t);
+  }, []);
+
+  return timedOut ? (
+    <div className={className}>{children}</div>
+  ) : (
+    <div className={className} style={{ opacity: 0, transform: "translateY(28px)" }}>
+      {children}
+    </div>
+  );
+}
 
 class RevealErrorBoundary extends Component<
   { fallback: ReactNode; children: ReactNode },
@@ -56,13 +79,7 @@ export function Reveal({
 
   return (
     <RevealErrorBoundary fallback={shownFallback}>
-      <Suspense
-        fallback={
-          <div className={className} style={{ opacity: 0, transform: "translateY(28px)" }}>
-            {children}
-          </div>
-        }
-      >
+      <Suspense fallback={<PendingFallback className={className}>{children}</PendingFallback>}>
         <RevealMotion delay={delay} className={className}>
           {children}
         </RevealMotion>

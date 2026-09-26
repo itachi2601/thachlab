@@ -174,6 +174,34 @@ vendor chunk) — không phải nguyên nhân của phần "dư" ở §3 (không
 tiêu), nhưng là lãng phí ~139 KB có thể gộp lại nếu cả `Reveal` và `QuestionSlide` dùng chung 1
 chunk framer-motion.
 
+### 6.1 Đã vá trên `perf2/integration` (orchestrator, sau khi đọc báo cáo này)
+
+Tái hiện lại đúng kịch bản trên (xoá `1wdh1lu7tm9r1.js`, chunk chứa `RevealMotion` ở lần build này —
+tên hash đổi giữa các lần build nhưng cùng 1 file), xác nhận crash trắng y hệt Agent D mô tả. Đọc
+kỹ HTML tĩnh xuất ra (`out/index.html`) thấy Suspense fallback (`opacity:0`) mới là phần được
+prerender — nghĩa là không phải hydration-mismatch giữa nội dung đã resolve và fallback; nguyên
+nhân thật là **`ChunkLoadError` của `RevealMotion` không làm promise nội bộ của `React.lazy`
+chuyển sang trạng thái rejected theo cách `Suspense`/`ErrorBoundary` nhận ra** — Suspense kẹt vĩnh
+viễn ở fallback (`opacity:0`) thay vì chuyển sang lỗi, nên `RevealErrorBoundary` không có gì để bắt
+(không phải nó "không bắt được lỗi", mà là lỗi chưa từng tới tay nó).
+
+**Cách vá:** không dựa vào việc lỗi phải nổi lên đúng cách nữa. Thêm `PendingFallback` — cùng một
+nội dung ẩn (`opacity:0`) như cũ, nhưng có `setTimeout` 4 giây: hết 4 giây mà `Suspense` vẫn chưa
+resolve (dù vì lỗi hay vì mạng chậm bất thường) thì tự chuyển sang hiện đủ (`opacity:1`), độc lập
+với việc lỗi có được React nhận diện hay không. Giữ nguyên `RevealErrorBoundary` làm lớp phòng thủ
+thứ 2 (trường hợp lỗi có nổi lên đúng cách thì hiện ngay, không cần chờ 4 giây).
+
+Đã kiểm lại bằng Browser pane: xoá chunk → đợi 5s → nội dung hiện đủ ở mọi phần (`AboutFounder`,
+`Features`, `LearningPath`...), không còn màn trắng. Phục hồi chunk → tải lại tab sạch → animation
+hoạt động bình thường như trước, không lỗi console. `npm run build`, `tsc --noEmit`, `npm run lint`
+(63 problems, không tăng) đều qua sau khi vá. Đánh đổi: nếu mạng thực sự chậm nhưng cuối cùng vẫn
+tải được (>4s), học sinh sẽ thấy nội dung hiện ra không có animation thay vì animation muộn — chấp
+nhận được, vì mục tiêu là không bao giờ hiện màn trắng, không phải animation bằng mọi giá.
+
+Chưa áp dụng cách vá tương tự cho `QuestionSlide.tsx` (`/kiem-tra/lam`) vì không cần: fallback của
+nó vốn đã là `<div>{children}</div>` không ẩn (xem `components/exams/QuestionSlide.tsx`) — chunk
+lỗi thì câu hỏi vẫn hiện, chỉ mất hiệu ứng trượt, không có nguy cơ màn trắng.
+
 ## 7. Trang công khai không tải GoTrue
 
 Xác nhận qua Browser pane (`read_network_requests`, lọc `chunks`):
