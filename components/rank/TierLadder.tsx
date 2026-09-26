@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check, Lock } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
+import { cinzel } from "@/components/rank/rank-fonts";
 import TierName from "@/components/rank/TierName";
 import {
   LEVEL_LABELS,
@@ -133,7 +134,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
   const passPct = Math.round((step.challenge_pass_score ?? 8) * 10);
 
   return (
-    <div>
+    <div className={cinzel.variable}>
       {/* Dải 7 huy hiệu — cuộn ngang trên máy nhỏ */}
       <div className="relative -mx-1 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="relative flex items-start justify-between gap-0.5 sm:gap-2">

@@ -6,11 +6,12 @@
 //   Inter (font-body): 400/500/600 — giữ đúng như cũ, font-bold trên chữ thân bài vẫn
 //     hiển thị bằng 600 (không nạp 700 để giao diện không đổi).
 //   JetBrains Mono (font-mono): dùng rải rác khắp nơi (trang chủ, đề, dashboard, admin)
-//     nên nạp ở root, 1 weight 400.
+//     nên nạp ở root, 1 weight 400, preload: false — chữ mono là chi tiết nhỏ, không cần
+//     giành băng thông với CSS/font tiêu đề trước lúc vẽ trang (display: swap đã lo hiển thị tạm).
 // Biến CSS được trỏ vào --font-display/--font-body/--font-mono trong @theme (globals.css).
-//   Cinzel (--font-cinzel, 700) + Playfair Display (--font-playfair, 600/700): riêng cho tên bậc rank
-//     (tên tiếng Anh lớn / tiếng Việt nhỏ) — khớp thiết kế huy chương.
-import { Be_Vietnam_Pro, Cinzel, Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
+// Cinzel + Playfair Display (tên bậc huy hiệu rank) đã chuyển sang components/rank/rank-fonts.ts —
+//   chỉ trang có render component rank mới tải, trang chủ không còn dính.
+import { Be_Vietnam_Pro, Inter, JetBrains_Mono } from "next/font/google";
 
 export const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["vietnamese", "latin"],
@@ -30,21 +31,8 @@ export const jetbrainsMono = JetBrains_Mono({
   subsets: ["vietnamese", "latin"],
   weight: "400",
   display: "swap",
+  preload: false,
   variable: "--font-jetbrains-mono",
 });
 
-export const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "700",
-  display: "swap",
-  variable: "--font-cinzel",
-});
-
-export const playfair = Playfair_Display({
-  subsets: ["vietnamese", "latin"],
-  weight: ["600", "700"],
-  display: "swap",
-  variable: "--font-playfair",
-});
-
-export const fontClassName = `${beVietnamPro.variable} ${inter.variable} ${jetbrainsMono.variable} ${cinzel.variable} ${playfair.variable}`;
+export const fontClassName = `${beVietnamPro.variable} ${inter.variable} ${jetbrainsMono.variable}`;
