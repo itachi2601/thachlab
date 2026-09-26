@@ -747,7 +747,7 @@ function LessonLoader() {
                     {reviewContexts.length === 1
                       ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
                       : `${reviewContexts.length} câu em làm sai`}{" "}
-                    — {reviewBannerOpen ? "bấm để thu gọn" : "bấm để xem lại đề"}
+                    — {reviewBannerOpen ? "bấm để thu gọn" : "bấm vào đây để xem danh sách"}
                   </span>
                   <ChevronDown size={15} className={reviewBannerOpen ? "rotate-180" : ""} />
                 </button>

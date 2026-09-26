@@ -698,7 +698,14 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-review-banner-head { display: flex; align-items: stretch; }
 .lesson-review-banner-toggle { flex: 1 1 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-width: 0; border: 0; background: none; padding: 10px 8px 10px 14px; font-size: 12.5px; font-weight: 700; color: #fbbf24; text-align: left; cursor: pointer; }
 .lesson-review-banner-toggle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lesson-review-banner-toggle svg { flex: 0 0 auto; transition: transform .15s; }
+/* Nhấp nháy vài lần lúc mới hiện — thẻ thu gọn chỉ 1 dòng nhỏ, dễ bị lướt qua không để ý là
+   bấm được để mở ra xem hết danh sách câu sai (đã có thầy phản hồi bỏ lỡ chỗ này). */
+.lesson-review-banner-toggle svg { flex: 0 0 auto; transition: transform .15s; animation: lesson-review-hint 0.9s ease-in-out 3; }
+.lesson-review-banner.is-open .lesson-review-banner-toggle svg { animation: none; }
+@keyframes lesson-review-hint {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(3px); opacity: .6; }
+}
 .lesson-review-banner-head > button:last-child { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 10px 12px; }
 .lesson-review-banner-head > button:last-child:hover { color: #e2e8f0; }
 .lesson-review-banner-list { padding: 0 16px 14px; max-height: min(46vh, 380px); overflow-y: auto; }
