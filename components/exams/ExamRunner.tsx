@@ -3,11 +3,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Flag } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
+import QuestionSlide from "@/components/exams/QuestionSlide";
 import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
@@ -76,7 +76,6 @@ export default function ExamRunner({
   theoryLessonId?: number | null;
 }) {
   const { session, profile } = useAuth();
-  const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("intro");
   const [responses, setResponses] = useState<QuestionResponse[]>(() =>
     emptyResponses(exam.questions),
@@ -508,27 +507,19 @@ export default function ExamRunner({
           )}
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={cur}
-            initial={{ opacity: 0, x: reduceMotion ? 0 : 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: reduceMotion ? 0 : -12 }}
-            transition={{ duration: reduceMotion ? 0 : 0.18, ease: "easeOut" }}
-          >
-            <QuestionCard
-              index={cur + 1}
-              question={q}
-              response={responses[cur]}
-              onChange={(r) => {
-                const next = [...responsesRef.current];
-                next[cur] = r;
-                responsesRef.current = next;
-                setResponses(next);
-              }}
-            />
-          </motion.div>
-        </AnimatePresence>
+        <QuestionSlide slideKey={cur}>
+          <QuestionCard
+            index={cur + 1}
+            question={q}
+            response={responses[cur]}
+            onChange={(r) => {
+              const next = [...responsesRef.current];
+              next[cur] = r;
+              responsesRef.current = next;
+              setResponses(next);
+            }}
+          />
+        </QuestionSlide>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
           <Button variant="outline" disabled={cur === 0} onClick={() => goTo(cur - 1)}>

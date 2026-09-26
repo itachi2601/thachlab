@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import AuthProvider from "@/components/auth/AuthProvider";
-import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
-import PreviewAsTaToggle from "@/components/tro-giang/PreviewAsTaToggle";
-import BugReportWidget from "@/components/BugReportWidget";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
+import { SUPABASE_URL } from "@/lib/supabase-env";
 import { fontClassName } from "./fonts";
 import "./globals.css";
+
+// AuthProvider (kéo theo @supabase/supabase-js + GoTrue, ~211KB) không còn bọc ở đây
+// nữa — trước đây layout gốc này áp dụng cho MỌI trang, kể cả trang công khai chưa đăng
+// nhập (/, /blog, /khoa-hoc), buộc các trang đó tải cả GoTrue dù không cần. Giờ mỗi
+// nhóm route tự quyết: nhóm cần đăng nhập dùng components/auth/AuthedShell.tsx (có
+// AuthProvider) trong layout.tsx riêng của nó; nhóm công khai dùng
+// components/auth/PublicShell.tsx (không có AuthProvider) trong app/(public)/layout.tsx.
+// ToastProvider ở lại đây vì dùng chung cả 2 phía và không phụ thuộc supabase-js.
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -80,6 +85,9 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`h-full antialiased ${fontClassName}`} data-theme="dark" suppressHydrationWarning>
       <head>
+        {/* Bắt tay TCP+TLS với Supabase (Sydney) song song lúc tải trang, thay vì chờ
+            tới request đầu tiên — ước tính tiết kiệm ~50-150ms round-trip đầu tiên từ VN. */}
+        {SUPABASE_URL && <link rel="preconnect" href={SUPABASE_URL} crossOrigin="anonymous" />}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
@@ -91,14 +99,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-        <AuthProvider>
-          <ToastProvider>
-            {children}
-            <PreviewAsStudentToggle />
-            <PreviewAsTaToggle />
-            <BugReportWidget />
-          </ToastProvider>
-        </AuthProvider>
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );

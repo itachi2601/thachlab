@@ -724,6 +724,25 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
    Áp dụng cho mọi nơi ContentHtml render (.exam-content), không riêng lý thuyết. */
 .exam-content p[data-bullet] { position: relative; margin-left: 1.3em; }
 .exam-content p[data-bullet]::before { content: "•"; position: absolute; left: -1.1em; color: var(--lesson-accent-text, #94a3b8); font-weight: 700; }
+/* ContentHtml: trong lúc chờ KaTeX tải chunk (~290 KB, chỉ tải khi nội dung có công thức),
+   công thức thô "$...$" hiện tạm trong <code> — đọc được ngay, không skeleton/khoảng trắng. */
+.exam-content-raw-tex { display: inline; padding: 0 3px; border-radius: 3px; background: rgba(255,255,255,.06); color: #cbd5e1; font-size: .92em; white-space: pre-wrap; word-break: break-word; }
+/* QuestionCard: nảy nhẹ khi vừa chọn phương án — trước dùng framer-motion, nay CSS thuần. */
+@keyframes pick-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
+.animate-pick-pulse { animation: pick-pulse .16s ease; }
+@media (prefers-reduced-motion: reduce) { .animate-pick-pulse { animation: none; } }
+/* ExamResultSummary: sticker "nảy" vào khi hiện kết quả — trước dùng framer-motion transition
+   ease "backOut", nay cubic-bezier xấp xỉ cùng đường cong (hơi vọt quá rồi lùi lại đúng cỡ). */
+@keyframes result-pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.animate-result-pop { animation: result-pop .4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@media (prefers-reduced-motion: reduce) { .animate-result-pop { animation: none; } }
+/* TopicPracticeModal: mở modal luyện theo YCCĐ — trước dùng framer-motion, nay CSS thuần
+   (modal này do component cha mount/unmount thẳng nên không cần animation lúc đóng). */
+@keyframes modal-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-panel-in { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.animate-modal-backdrop-in { animation: modal-backdrop-in .15s ease; }
+.animate-modal-panel-in { animation: modal-panel-in .18s ease-out; }
+@media (prefers-reduced-motion: reduce) { .animate-modal-backdrop-in, .animate-modal-panel-in { animation: none; } }
 .lesson-link { display: inline-flex; align-items: center; gap: 6px; color: var(--lesson-accent-text); font-size: 13.5px; font-weight: 600; text-decoration: none; }
 .lesson-link:hover { text-decoration: underline; }
 .lesson-done { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 8px; background: transparent; padding: 6px 12px; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; }

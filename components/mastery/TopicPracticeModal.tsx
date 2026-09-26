@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
@@ -51,7 +50,6 @@ export default function TopicPracticeModal({
 }) {
   const { session } = useAuth();
   const toast = useToast();
-  const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("loading");
   const [picks, setPicks] = useState<PracticePick[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
@@ -130,28 +128,19 @@ export default function TopicPracticeModal({
   const wide = phase === "running";
 
   return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.15 }}
-        onClick={onClose}
-        role="presentation"
+    <div
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm animate-modal-backdrop-in"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-white/10 bg-panel p-5 shadow-2xl sm:p-6 animate-modal-panel-in ${
+          wide ? "max-w-2xl" : "max-w-sm"
+        }`}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
       >
-        <motion.div
-          className={`max-h-[90vh] w-full overflow-y-auto rounded-2xl border border-white/10 bg-panel p-5 shadow-2xl sm:p-6 ${
-            wide ? "max-w-2xl" : "max-w-sm"
-          }`}
-          initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: reduceMotion ? 1 : 0.96, y: reduceMotion ? 0 : 8 }}
-          transition={{ duration: reduceMotion ? 0 : 0.18, ease: "easeOut" }}
-          onClick={(e) => e.stopPropagation()}
-          role="dialog"
-          aria-modal="true"
-        >
           <div className="mb-3 flex items-start justify-between gap-3">
             <h2 className="font-display text-lg font-semibold text-white">Luyện thêm: {topicName}</h2>
             <button type="button" onClick={onClose} aria-label="Đóng" className="text-slate-400 hover:text-white">
@@ -230,8 +219,7 @@ export default function TopicPracticeModal({
               </Button>
             </div>
           )}
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }
