@@ -1,0 +1,206 @@
+Báo cáo dry-run: ảnh > 150 KB trong Supabase Storage
+Sinh bằng: node scripts/optimize-storage-images.mjs (2026-09-26, KHÔNG upload/xoá/sửa gì)
+
+TỔNG QUAN THEO BUCKET
+---------------------
+bucket exam-images (public): 80 file, 1.51 MB · ảnh: 80 file, 1.51 MB
+bucket cnc-lessons (public): 5 file, 0.35 MB · ảnh: 0 file, 0.00 MB
+bucket cnc-drawings: 34 file, 21.59 MB · ảnh: 33 file, 21.04 MB
+bucket attendance-machine-photos: 12 file, 15.65 MB · ảnh: 12 file, 15.65 MB
+bucket equipment-breakdown-photos: 0 file, 0.00 MB · ảnh: 0 file, 0.00 MB
+bucket lesson-media (public): 2944 file, 92.16 MB · ảnh: 2944 file, 92.16 MB
+bucket bug-report-screenshots: 6 file, 1.26 MB · ảnh: 6 file, 1.26 MB
+bucket avatars (public): 1 file, 0.02 MB · ảnh: 1 file, 0.02 MB
+
+Tổng Storage: 3082 file, 132.53 MB
+Ảnh > 150 KB: 139 file, 71.03 MB (~53% tổng dung lượng ảnh toàn bucket)
+
+10 FILE NẶNG NHẤT
+-----------------
+  4252 KB  attendance-machine-photos/6/P6-end-1786939253227.jpg
+  4144 KB  cnc-drawings/f37d03a4-4690-4880-b69a-373e65600fcc/lesson-2-simulation/1786926463233-pxl_20260817_001721200.jpg
+  3274 KB  cnc-drawings/370a40cb-2dd0-4252-8129-34ec2e2721f6/lesson-2-simulation/1786765717700-img_3293.jpeg
+  3103 KB  attendance-machine-photos/6/P6-start-1786927666338.jpg
+  2779 KB  cnc-drawings/728c5a1c-88ce-4425-bfc4-14df84581521/lesson-2-simulation/1786925784412-17869257739276739440460934909224.jpg
+  2668 KB  attendance-machine-photos/6/P4-end-1786938117992.jpg
+  2560 KB  attendance-machine-photos/6/RAC-end-1786938138783.jpg
+  2347 KB  cnc-drawings/eb3cee11-054d-46ba-a7df-088d4d19e518/lesson-2-simulation/1786841954578-img_7782.jpeg
+  2345 KB  lesson-media/7/1790169503227-fig06.gif
+  1916 KB  lesson-media/7/1790169500770-fig05.gif
+
+ĐỀ XUẤT — GIF nặng nên đổi sang WebP hoặc video (KHÔNG tự động chuyển)
+-----------------------------------------------------------------------
+Cả 3 GIF nặng nhất trong toàn bucket đều nằm ở lesson-media/7/ (Bài 7):
+  2345 KB  lesson-media/7/1790169503227-fig06.gif
+  1916 KB  lesson-media/7/1790169500770-fig05.gif
+  1397 KB  lesson-media/7/1790169513499-fig09.gif
+  (còn 1790169509953-d12.png 272 KB cùng thư mục, không phải GIF)
+Tổng 3 file: 5.66 MB. Nếu là hoạt hình mô phỏng (khả năng cao vì tên fig0x kiểu hình vẽ vật lý):
+  - Đổi sang WebP animate (giữ hoạt hình, thường giảm 30-70% dung lượng so với GIF), hoặc
+  - Đổi sang video MP4/WebM ngắn kèm thẻ <video autoplay muted loop playsinline> nếu chỉ minh hoạ
+    chuyển động (nén tốt hơn GIF rất nhiều, thường giảm >80%).
+  Lưu ý theo AGENTS.md: SỬA ảnh đã đăng phải đổi TÊN FILE MỚI, không ghi đè — nếu đổi định dạng,
+  cũng phải cập nhật tham chiếu trong lesson content (bảng lesson_items / content JSON) trỏ sang
+  file mới. Việc này ngoài phạm vi đợt tối ưu hosting (scripts/deploy.sh, optimize-storage-images.mjs,
+  README.md) nên KHÔNG tự làm ở đây — chỉ đề xuất.
+
+NHÓM ẢNH TRÙNG LẶP ĐÁNG CHÚ Ý (cùng ảnh, nhiều bản sao ở nhiều lesson_id)
+-------------------------------------------------------------------------
+Nhiều ảnh trong lesson-media/125/, /126/, /132/, /13/ xuất hiện 2-3 lần với tên gần giống
+(ví dụ mba-fig05.png / fig05.png / fig05.png ở 3 timestamp khác nhau, cùng kích thước byte
+chính xác — ví dụ 535 KB x3, 479 KB x3, 284 KB x3, 617 KB x3, 216 KB x3, 239 KB x3, 182 KB x3,
+193 KB x5). Đây nhiều khả năng là ảnh bị tải lên lặp lại (mỗi lần sửa bài lại upload lại thay vì
+tái sử dụng). Không tự xoá (ngoài phạm vi + rủi ro), chỉ ghi nhận: nếu dọn được các bản trùng
+không còn được tham chiếu, có thể tiết kiệm hàng chục MB. Cần agent khác kiểm tra bảng
+lesson_items/content xem còn tham chiếu file cũ không trước khi xoá.
+
+DANH SÁCH ĐẦY ĐỦ 139 FILE > 150 KB (sắp xếp giảm dần theo dung lượng)
+-----------------------------------------------------------------------
+  4252 KB  attendance-machine-photos/6/P6-end-1786939253227.jpg
+  4144 KB  cnc-drawings/f37d03a4-4690-4880-b69a-373e65600fcc/lesson-2-simulation/1786926463233-pxl_20260817_001721200.jpg
+  3274 KB  cnc-drawings/370a40cb-2dd0-4252-8129-34ec2e2721f6/lesson-2-simulation/1786765717700-img_3293.jpeg
+  3103 KB  attendance-machine-photos/6/P6-start-1786927666338.jpg
+  2779 KB  cnc-drawings/728c5a1c-88ce-4425-bfc4-14df84581521/lesson-2-simulation/1786925784412-17869257739276739440460934909224.jpg
+  2668 KB  attendance-machine-photos/6/P4-end-1786938117992.jpg
+  2560 KB  attendance-machine-photos/6/RAC-end-1786938138783.jpg
+  2347 KB  cnc-drawings/eb3cee11-054d-46ba-a7df-088d4d19e518/lesson-2-simulation/1786841954578-img_7782.jpeg
+  2345 KB  lesson-media/7/1790169503227-fig06.gif                                    <- đề xuất đổi WebP/video
+  1916 KB  lesson-media/7/1790169500770-fig05.gif                                    <- đề xuất đổi WebP/video
+  1397 KB  lesson-media/7/1790169513499-fig09.gif                                    <- đề xuất đổi WebP/video
+   684 KB  cnc-drawings/707290ed-e9ec-4fde-81b7-29abcfc71833/lesson-2-simulation/1786932217008-screenshot_20260817-085541_gallery.jpg
+   672 KB  lesson-media/84/1790269046727-fig01.jpeg
+   663 KB  attendance-machine-photos/8/P6-end-1787099929284.jpg
+   622 KB  attendance-machine-photos/7/P6-end-1787112508866.jpg
+   617 KB  lesson-media/125/1790138760290-mpd-fig33.png
+   617 KB  lesson-media/125/1790351871624-fig33.png
+   617 KB  lesson-media/125/1790353318837-fig33.png
+   597 KB  lesson-media/132/1790259992269-hinh-2.png
+   592 KB  cnc-drawings/8eabfdc4-cef7-4ada-941c-e77807c4d369/lesson-2-simulation/1786798254815-n-m-quan-0301241066.png
+   579 KB  cnc-drawings/b2bbf0c4-8406-4750-a8fe-88b19f9c9e1f/lesson-3-simulation/1787104429893-img_4274.jpg
+   577 KB  cnc-drawings/b2bbf0c4-8406-4750-a8fe-88b19f9c9e1f/lesson-2-simulation/1786931810275-img_4216.jpg
+   569 KB  cnc-drawings/853eac14-eacd-46f5-8c3d-a033755ad13f/lesson-3-simulation/1787190002564-image.jpg
+   552 KB  cnc-drawings/9ce4c46a-4203-478c-a14a-75c06d3688fc/lesson-2-simulation/1786931423673-img_6607.jpg
+   545 KB  lesson-media/132/1790260000040-hinh-9.png
+   545 KB  lesson-media/132/1790260111881-hinh-8.png
+   542 KB  lesson-media/132/1790260239424-hinh-3.png
+   541 KB  cnc-drawings/e3f86f69-6c5b-42b4-a1f2-97538710b799/lesson-3-simulation/1787197926183-img_8286.jpg
+   538 KB  cnc-drawings/eb3cee11-054d-46ba-a7df-088d4d19e518/lesson-3-simulation/1787269002943-img_7945.jpg
+   535 KB  lesson-media/125/1790138773493-mba-fig06.png
+   535 KB  lesson-media/125/1790352173034-fig06.png
+   535 KB  lesson-media/125/1790353490712-fig06.png
+   527 KB  cnc-drawings/f3471314-7d03-4a9d-8689-02729c04a015/lesson-3-simulation/1787190692368-img_8745.jpg
+   513 KB  lesson-media/3/1790155165386-cd5-d04.png
+   506 KB  lesson-media/127/1790155283636-fig01.png
+   506 KB  lesson-media/127/1790352390197-fig01.png
+   506 KB  lesson-media/127/1790353642770-fig01.png
+   504 KB  lesson-media/125/1790352037688-fig38.png
+   504 KB  lesson-media/125/1790353398807-fig38.png
+   495 KB  attendance-machine-photos/8/P6-start-1787099919901.jpg
+   492 KB  attendance-machine-photos/8/P2-start-1787184284389.jpg
+   480 KB  bug-report-screenshots/1790171423157-kab4rw-1000017696.jpg
+   479 KB  lesson-media/132/1790259888459-hinh-3.png
+   479 KB  lesson-media/125/1790138771808-mba-fig05.png
+   479 KB  lesson-media/125/1790352132206-fig05.png
+   479 KB  lesson-media/125/1790353460495-fig05.png
+   466 KB  attendance-machine-photos/7/XUONG-end-1787112390201.jpg
+   459 KB  cnc-drawings/ea1dedee-dfca-4522-a363-29ebdd71fb01/lesson-2-simulation/1787189963765-img_0409.jpg
+   437 KB  cnc-drawings/9ce4c46a-4203-478c-a14a-75c06d3688fc/lesson-3-simulation/1787190004710-img_6710.jpg
+   422 KB  lesson-media/126/1790138784917-cd11-fig06.png
+   422 KB  lesson-media/126/1790352277322-fig06.png
+   422 KB  lesson-media/126/1790353613828-fig06.png
+   415 KB  lesson-media/19/1790216158364-fig37.png
+   409 KB  lesson-media/132/1790259894033-hinh-7.png
+   403 KB  cnc-drawings/c6569ac3-aaf6-4497-9e8d-a2efb9ffd3f5/lesson-2-simulation/1786932163815-img_0242.jpg
+   379 KB  attendance-machine-photos/8/XUONG-end-1787112404391.jpg
+   358 KB  lesson-media/125/1790138766171-mpd-fig38.png
+   352 KB  lesson-media/132/1790259712358-hinh-2.png
+   352 KB  lesson-media/132/1790260207359-hinh-2.png
+   352 KB  lesson-media/125/1790138764278-mpd-fig36.png
+   352 KB  lesson-media/125/1790351987891-fig36.png
+   352 KB  lesson-media/125/1790353368497-fig36.png
+   345 KB  lesson-media/132/1790259733852-hinh-1.png
+   345 KB  lesson-media/132/1790260223502-hinh-1.png
+   328 KB  cnc-drawings/e3f86f69-6c5b-42b4-a1f2-97538710b799/lesson-2-simulation/1787356003734-img_8317.jpeg
+   325 KB  lesson-media/132/1790259891616-hinh-5.png
+   310 KB  lesson-media/132/1790259619587-hinh-5.png
+   303 KB  lesson-media/132/1790259967682-hinh-10.png
+   286 KB  lesson-media/132/1790259902998-hinh-3.png
+   284 KB  lesson-media/125/1790138767429-mpd-fig39.png
+   284 KB  lesson-media/125/1790352077530-fig39.png
+   284 KB  lesson-media/125/1790353424320-fig39.png
+   274 KB  lesson-media/132/1790259848511-hinh-2.png
+   272 KB  lesson-media/7/1790169509953-d12.png
+   255 KB  lesson-media/132/1790259911436-hinh-12.png
+   249 KB  lesson-media/4/1790155189243-cd4-d03.png
+   245 KB  lesson-media/132/1790259618376-hinh-4.png
+   244 KB  cnc-drawings/e3fa1ae7-48b0-4cd2-be95-732ac7ed7c58/lesson-2-simulation/1786973322004-1786973213844_41240725367710759_4980771451462495402_5edd14ff3c12bec3b5954b287a0c0780.jpg
+   243 KB  lesson-media/132/1790259664207-hinh-7.png
+   243 KB  lesson-media/132/1790260169238-hinh-7.png
+   239 KB  lesson-media/126/1790138788733-cd12-fig07.png
+   239 KB  lesson-media/126/1790352341421-fig07.png
+   239 KB  lesson-media/126/1790353632976-fig07.png
+   230 KB  lesson-media/132/1790259794120-hinh-3.png
+   224 KB  lesson-media/132/1790259698513-hinh-10.jpg
+   224 KB  lesson-media/132/1790260192840-hinh-10.jpg
+   218 KB  lesson-media/63/1790094284579-fig99.png
+   217 KB  lesson-media/83/1790256519737-fig43.png
+   216 KB  lesson-media/126/1790138783868-cd11-fig05.png
+   216 KB  lesson-media/126/1790352262607-fig05.png
+   216 KB  lesson-media/126/1790353609559-fig05.png
+   214 KB  lesson-media/132/1790259667497-hinh-10.png
+   214 KB  lesson-media/132/1790260172621-hinh-10.png
+   213 KB  lesson-media/132/1790259899048-hinh-1.png
+   206 KB  lesson-media/132/1790259666405-hinh-9.png
+   206 KB  lesson-media/132/1790260171190-hinh-9.png
+   205 KB  bug-report-screenshots/1790313307500-y0uw2k-IMG_0373.jpg
+   205 KB  bug-report-screenshots/1790313014095-mnvpfs-IMG_0372.jpg
+   201 KB  bug-report-screenshots/1790312773449-hsnonk-IMG_0371.jpg
+   201 KB  lesson-media/132/1790259613557-hinh-7.png
+   197 KB  lesson-media/132/1790259708111-hinh-6.png
+   197 KB  lesson-media/132/1790260201971-hinh-6.png
+   195 KB  cnc-drawings/9b9b7d38-5a67-4fa1-96ab-a19e8adb46d9/lesson-2-simulation/1787129671707-att-5unkp43sddzz7chbts7l-qbcuf6rfxqkxybuabr5btg.jpeg
+   193 KB  exam-images/word-import/1783498485115-1.png
+   193 KB  lesson-media/13/1790138206998-bai12-cam-ung-dien-tu-fig07.png
+   193 KB  lesson-media/13/1790350797813-fig07.png
+   193 KB  lesson-media/13/1790351191847-fig07.png
+   193 KB  lesson-media/13/1790351415875-fig07.png
+   193 KB  lesson-media/13/1790353064787-fig07.png
+   191 KB  cnc-drawings/52c5561a-9428-49c4-b28e-85407709b2eb/lesson-2-simulation/1786765629349-mo-phong.jpg
+   190 KB  lesson-media/132/1790259966466-hinh-8.png
+   188 KB  lesson-media/132/1790259668438-hinh-11.png
+   188 KB  lesson-media/132/1790260174130-hinh-11.png
+   187 KB  cnc-drawings/03cbf0d1-f5ba-4319-8993-d6943c5e2090/lesson-3-simulation/1787190056407-mvimg_20260820_084040.jpg
+   186 KB  lesson-media/63/1790094235980-fig100.png
+   186 KB  cnc-drawings/f37d03a4-4690-4880-b69a-373e65600fcc/lesson-3-simulation/1787188792117-17871887806876059666237707972316.jpg
+   185 KB  lesson-media/75/1790223463905-fig02.png
+   182 KB  lesson-media/125/1790138770044-mba-fig03.png
+   182 KB  lesson-media/125/1790352117656-fig03.png
+   182 KB  lesson-media/125/1790353452391-fig03.png
+   180 KB  lesson-media/75/1790223467095-fig03.png
+   176 KB  lesson-media/132/1790259696646-hinh-8.png
+   176 KB  lesson-media/132/1790260191585-hinh-8.png
+   169 KB  attendance-machine-photos/8/P5-end-1787112540290.jpg
+   167 KB  lesson-media/126/1790138787682-cd12-fig06.png
+   167 KB  lesson-media/126/1790352323939-fig06.png
+   167 KB  lesson-media/126/1790353628160-fig06.png
+   166 KB  lesson-media/132/1790259700440-hinh-11.png
+   166 KB  lesson-media/132/1790260194061-hinh-11.png
+   165 KB  lesson-media/132/1790259988210-hinh-6.png
+   164 KB  lesson-media/132/1790260242546-hinh-7.png
+   163 KB  lesson-media/58/1790094136998-fig19.png
+   160 KB  cnc-drawings/8eabfdc4-cef7-4ada-941c-e77807c4d369/lesson-3-simulation/1787190121885-17871901000376432576718957096458.jpg
+   160 KB  lesson-media/132/1790259787810-hinh-14.png
+   159 KB  attendance-machine-photos/11/T5-start-1787356229887.jpg
+   158 KB  lesson-media/19/1790148168420-fig16.jpg
+   157 KB  lesson-media/75/1790223460712-fig01.jpeg
+   151 KB  lesson-media/132/1790260241329-hinh-5.png
+   151 KB  cnc-drawings/853eac14-eacd-46f5-8c3d-a033755ad13f/lesson-2-simulation/1787064251005-a7b0878d-2773-4c86-8410-25a1ab94bc35.jpg
+
+GHI CHÚ
+-------
+- attendance-machine-photos/* và cnc-drawings/* là ảnh chấm công/mô phỏng CNC, không phục vụ qua
+  trang tĩnh out/ (đọc trực tiếp từ Supabase Storage khi cần) — cache 30 ngày ở .htaccess của
+  scripts/deploy.sh KHÔNG áp dụng cho các ảnh này (chúng không nằm trong out/, mà ở Supabase CDN
+  riêng). Việc nén/resize các ảnh này (nếu cần) là việc khác, ngoài phạm vi đợt tối ưu hosting này.
+- lesson-media/* là ảnh bài học, hiển thị trên trang tĩnh cho học sinh — đây là nhóm hưởng lợi
+  trực tiếp từ cache 30 ngày mới thêm ở .htaccess.
