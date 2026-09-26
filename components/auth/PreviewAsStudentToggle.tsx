@@ -4,9 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Drama, LogOut, Wrench } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/auth/auth-context";
 import { useTaDemoMode } from "@/lib/tro-giang/demo";
-import { previewCttcEnroll, previewCttcUnenroll } from "@/services/preview-cttc";
+// previewCttcEnroll/previewCttcUnenroll (services/preview-cttc.ts) gọi supabase — import
+// ĐỘNG trong enterCttc/exitCttc bên dưới, vì component này render ở MỌI trang kể cả
+// trang công khai (qua PublicShell.tsx); import thẳng ở đây sẽ luôn kéo theo
+// @supabase/supabase-js dù component return null ngay (không phải admin) trên các trang đó.
 
 /**
  * Nút nổi cho admin, hai chế độ:
@@ -36,6 +39,7 @@ export default function PreviewAsStudentToggle() {
     setBusy(true);
     setError("");
     try {
+      const { previewCttcEnroll } = await import("@/services/preview-cttc");
       const courses = await previewCttcEnroll();
       const missing = courses.filter((c) => !c.course_id).map((c) => c.subject);
       if (missing.length) setError(`Chưa có khóa đang mở cho: ${missing.join(", ")}`);
@@ -52,6 +56,7 @@ export default function PreviewAsStudentToggle() {
     setBusy(true);
     setError("");
     try {
+      const { previewCttcUnenroll } = await import("@/services/preview-cttc");
       await previewCttcUnenroll();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Không gỡ ghi danh thử được.");

@@ -3,9 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Bug, Paperclip, X } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/auth/auth-context";
 import { useToast } from "@/components/ui/Toast";
-import { submitBugReport, BUG_CATEGORY_LABELS, type BugCategory } from "@/services/bug-reports";
+import { BUG_CATEGORY_LABELS, type BugCategory } from "@/lib/bug-report-labels";
+// submitBugReport (services/bug-reports.ts, gọi supabase + services/image-compress) import
+// ĐỘNG trong submit() bên dưới — widget này render ở MỌI trang kể cả trang công khai (qua
+// PublicShell.tsx); import thẳng ở đây sẽ luôn kéo theo @supabase/supabase-js dù đa số
+// người xem chỉ thấy nút nổi, không bao giờ mở form/gửi báo lỗi.
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -39,6 +43,7 @@ export default function BugReportWidget() {
     setBusy(true);
     setError("");
     try {
+      const { submitBugReport } = await import("@/services/bug-reports");
       await submitBugReport({
         description,
         category,

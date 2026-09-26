@@ -3,15 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Bell, CheckCheck } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
-import {
-  fetchNotifications,
-  fetchUnreadCount,
-  markAllRead,
-  markRead,
-  timeAgo,
-  type Notification,
-} from "@/services/notifications";
+import { useAuth } from "@/components/auth/auth-context";
+import { timeAgo } from "@/lib/time-ago";
+import type { Notification } from "@/services/notifications";
 
 const POLL_MS = 60_000;
 
@@ -19,6 +13,12 @@ const POLL_MS = 60_000;
  * Chuông thông báo trên thanh điều hướng: đếm chưa đọc (RPC, rẻ), mở ra thì tải 10 dòng
  * mới nhất. Mọi thông báo do trigger trong DB sinh ra (supabase-migration-thong-bao.sql).
  * Poll mỗi phút + khi quay lại tab — không dùng realtime để khỏi tốn kết nối.
+ *
+ * NotificationBell nằm trong Navbar (render ở MỌI trang, kể cả trang công khai chưa đăng
+ * nhập) nên các hàm gọi supabase (fetchNotifications...) được import ĐỘNG (dynamic
+ * import) thay vì import thẳng ở đầu file — nếu import thẳng, mọi trang công khai sẽ
+ * phải tải cả @supabase/supabase-js dù component luôn return null khi chưa đăng nhập
+ * (session === null, xem dòng "if (!session) return null" bên dưới).
  */
 export default function NotificationBell() {
   const { session } = useAuth();
@@ -29,7 +29,9 @@ export default function NotificationBell() {
 
   const refreshCount = useCallback(() => {
     if (!session) return;
-    fetchUnreadCount().then(setCount).catch(() => undefined);
+    import("@/services/notifications").then(({ fetchUnreadCount }) =>
+      fetchUnreadCount().then(setCount).catch(() => undefined),
+    );
   }, [session]);
 
   useEffect(() => {
@@ -46,7 +48,9 @@ export default function NotificationBell() {
 
   useEffect(() => {
     if (!open) return;
-    fetchNotifications(10).then(setItems).catch(() => setItems([]));
+    import("@/services/notifications").then(({ fetchNotifications }) =>
+      fetchNotifications(10).then(setItems).catch(() => setItems([])),
+    );
     function onClickOutside(event: MouseEvent) {
       if (ref.current && !ref.current.contains(event.target as Node)) setOpen(false);
     }
@@ -58,6 +62,7 @@ export default function NotificationBell() {
 
   async function openItem(item: Notification) {
     if (!item.read_at) {
+      const { markRead } = await import("@/services/notifications");
       await markRead([item.id]).catch(() => undefined);
       setCount((c) => Math.max(0, c - 1));
     }
@@ -65,6 +70,7 @@ export default function NotificationBell() {
   }
 
   async function readAll() {
+    const { markAllRead } = await import("@/services/notifications");
     await markAllRead().catch(() => undefined);
     setCount(0);
     setItems((rows) => rows?.map((r) => ({ ...r, read_at: r.read_at ?? new Date().toISOString() })) ?? null);
