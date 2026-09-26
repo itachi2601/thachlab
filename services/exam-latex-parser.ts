@@ -378,7 +378,7 @@ function parseBlock(
 
 /** Cắt một vùng văn bản theo mốc "Câu n." thành từng khối câu. */
 function splitQuestions(section: string): string[] {
-  const marker = /(?:^|\n)\s*(?:\\textbf\{)?\s*C[âa]u\s*\d+\s*[.:)]?\s*\}?/i;
+  const marker = /(?:^|\n)\s*(?:\\textbf\{)?\s*C[âa]u\s*\d+\s*[.:)]\s*\}?/i;
   const hasMarker = marker.test(section);
   const parts = section.split(new RegExp(marker.source, "gi"));
   const body = hasMarker ? parts.slice(1) : parts;
