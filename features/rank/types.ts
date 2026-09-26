@@ -32,13 +32,13 @@ export interface TierMeta {
 }
 
 export const TIER_META: Record<TierCode, TierMeta> = {
-  tan_binh: { name: "Tân Binh", color: "#64748b", light: "#cbd5e1", tone: "bg-slate-500/15 text-slate-200" },
-  chien_binh: { name: "Chiến Binh", color: "#059669", light: "#6ee7b7", tone: "bg-emerald-500/15 text-emerald-200" },
-  tinh_anh: { name: "Tinh Anh", color: "#0891b2", light: "#67e8f9", tone: "bg-cyan-500/15 text-cyan-200" },
-  tinh_nhue: { name: "Tinh Nhuệ", color: "#2563eb", light: "#93c5fd", tone: "bg-blue-500/15 text-blue-200" },
-  dai_su: { name: "Đại Sư", color: "#7c3aed", light: "#c4b5fd", tone: "bg-violet-500/15 text-violet-200" },
-  cao_thu: { name: "Cao Thủ", color: "#d97706", light: "#fde68a", tone: "bg-amber-500/15 text-amber-200" },
-  thach_dau: { name: "Thách Đấu", color: "#e11d48", light: "#fda4af", tone: "bg-rose-500/15 text-rose-200" },
+  tan_binh: { name: "Tân Binh", color: "#3b6fd4", light: "#9fc3ff", tone: "bg-blue-500/15 text-blue-200" },
+  chien_binh: { name: "Chiến Binh", color: "#4f7a3a", light: "#c9d6a3", tone: "bg-lime-600/15 text-lime-200" },
+  tinh_anh: { name: "Tinh Anh", color: "#d9701e", light: "#ffd27a", tone: "bg-orange-500/15 text-orange-200" },
+  tinh_nhue: { name: "Tinh Nhuệ", color: "#c1122a", light: "#ffb3c0", tone: "bg-rose-600/15 text-rose-200" },
+  dai_su: { name: "Đại Sư", color: "#2952c8", light: "#a9c4ff", tone: "bg-indigo-500/15 text-indigo-200" },
+  cao_thu: { name: "Cao Thủ", color: "#6d3fc7", light: "#d3b0ff", tone: "bg-violet-500/15 text-violet-200" },
+  thach_dau: { name: "Thách Đấu", color: "#d4a836", light: "#fff0c2", tone: "bg-amber-400/15 text-amber-100" },
 };
 
 export function tierMeta(code: string | null | undefined): TierMeta {
