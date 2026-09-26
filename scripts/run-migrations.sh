@@ -14,7 +14,8 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20260926140000_fix_rls_tautology.sql|Va tautology e.course_id=e.course_id (attendance_sessions, equipment_breakdown_reports) + class_assessments using(true)|Chay duoc bat ky luc nao, chi doi 3 policy, khong khoa bang nang"
+  # Trống — không có migration nào đang chờ (cập nhật 26/9/2026).
+  # Thêm dòng mới theo mẫu: "<đường dẫn>|<mô tả ngắn>|<thời điểm nên chạy>"
 )
 # ĐÃ CHẠY 26/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql
@@ -26,6 +27,7 @@ FILES=(
 #   20260926110000_rank_exclude_staff.sql
 #   20260926120000_lesson_item_draft_publish.sql
 #   20260926130000_exam_violation_alert.sql
+#   20260926140000_fix_rls_tautology.sql
 
 AUTO=0; ONLY=""; LIST=0
 while [[ $# -gt 0 ]]; do
