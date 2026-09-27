@@ -33,7 +33,7 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
 - Cột `exam_id` trên `class_announcements` (gắn đề vào "Việc cần làm hôm nay", nút "Làm bài" ở
   trang chủ HS): migration `20260927100000_class_announcement_exam.sql` ĐÃ chạy 27/9/2026 (log
   `scripts/logs/20260927-084117-*`, rollback `perf/rollback/20260927100000_class_announcement_exam.down.sql`).
-  Code (services/announcements.ts, ClassAnnouncementsPanel, ThptStudentHome) đã viết xong, **chưa deploy**.
+  Code (services/announcements.ts, ClassAnnouncementsPanel, ThptStudentHome) đã deploy 27/9/2026.
 
 - **Báo lỗi gắn vào đúng câu hỏi**: cột `exam_id`/`question_index` trên `bug_reports` + nhãn
   `category='cau_hoi'` — migration `20260927110000_bug_report_question_link.sql` ĐÃ chạy 27/9/2026
@@ -43,17 +43,17 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
   admin ở `/quan-tri/bao-loi` bấm link "Đề #… · Câu N →" nhảy thẳng vào `/quan-tri/sua-de?exam=&q=`,
   tự mở đúng đề + tô khung vàng đúng câu. Tiện thể vá luôn 1 lỗi nhỏ: nút "Báo lỗi / Góp ý" chung
   (mọi trang) trước làm rớt mất `#hash` của URL nên link báo lỗi lý thuyết chỉ mở tới đầu trang, mất
-  luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Build local pass (tsc + next build
-  69 trang) — **chưa deploy, chưa test UI thật bằng tài khoản có login**.
+  luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Đã deploy 27/9/2026 — **chưa test
+  UI thật bằng tài khoản có login**.
 
 **Không còn migration nào chờ.** Cột `lesson_items.summary_html` (Tóm tắt ý
 chính cần thuộc) ĐÃ chạy 27/9/2026 (`20260927120000_lesson_item_summary.sql`,
 log `scripts/logs/20260927-173722-*`, rollback
-`perf/rollback/20260927120000_lesson_item_summary.down.sql`). **Còn thiếu**:
+`perf/rollback/20260927120000_lesson_item_summary.down.sql`). Code + UI đã deploy 27/9/2026 nhưng
+cột `summary_html` chưa có dữ liệu nên khối "📌 Tóm tắt ý chính" chưa hiện ở đâu cả. **Còn thiếu**:
 backfill nội dung bằng `npx tsx scripts/backfill-lesson-summary.mts [số bài tối
 đa]` (AI tự trích từ lý thuyết có sẵn, ghi thật ngay không dry-run — thử nhỏ
-trước), rồi `bash scripts/deploy.sh` (site export tĩnh, sửa Supabase không tự
-lên web).
+trước), rồi `bash scripts/deploy.sh` lại để file tĩnh (`public/data/`) có nội dung mới.
 
 ## Việc tay còn lại
 - [ ] **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — CODE ĐÃ
@@ -75,8 +75,8 @@ lên web).
   (mặc định đóng hết, trừ khi có link "Ôn ngay" hoặc "Tiếp tục học" trỏ thẳng vào 1
   mục thì tự mở mục đó). Mỗi mục lý thuyết có thêm khối "📌 Tóm tắt ý chính cần
   thuộc" (nếu có `summary_html`) — tự thu gọn riêng, độc lập với nội dung đầy đủ.
-  Code xong, build local đã pass (27/9) — **chờ backfill nội dung rồi deploy mới lên
-  web thật** (cột `summary_html` đã có migration, chưa có dữ liệu).
+  Code đã deploy 27/9 (thu gọn danh sách đã lên web thật) — khối "📌 Tóm tắt ý chính" **chưa hiện
+  ở đâu cả vì `summary_html` chưa có dữ liệu**, chờ backfill (mục trên) rồi deploy lại.
 - [x] **Backfill RP cho Kiểm tra lớp 10/11/12** (27/9/2026) — thầy đã chạy
   `docs/supabase-recompute-rank-backfill-20260927.sql`. exam 224/12/205/206/219 đã lên RP đầy đủ (trong
   khung mùa). exam 23 (lớp 10) và exam 9 (lớp 12) vẫn 0 RP vì toàn bộ lượt làm nằm TRƯỚC ngày mở mùa
