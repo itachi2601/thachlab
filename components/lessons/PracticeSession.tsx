@@ -1,26 +1,34 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Flag } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
-import QuestionCard from "@/components/exams/QuestionCard";
 import {
   averageSeconds,
   emptyResponses,
   formatClock,
   gradeExam,
-  gradeQuestion,
   isAnswered,
   pickRandom,
-  questionSeconds,
   totalSeconds,
   type Exam,
   type QuestionResponse,
 } from "@/features/exams/types";
-import { QUESTION_FORM_LABELS } from "@/features/exams/types";
-import { derivePracticeStatus } from "@/features/progress/types";
 import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
+
+// Màn "đang làm" + "sau khi nộp" của 1 phiên luyện tập (PracticeRunningView.tsx,
+// PracticeDoneView.tsx) — học sinh KHÔNG thấy 2 màn này lúc mới mở bài học (chỉ hiện sau khi bấm
+// "Bắt đầu luyện N câu" ở màn chọn số câu), tách chunk riêng để không nằm trong JS ban đầu của
+// /lop-hoc/bai (đợt tối ưu tốc độ lần 4, perf4/RESULT.md). Cả 2 đều kéo theo QuestionCard.
+const PracticeRunningView = dynamic(() => import("@/components/lessons/PracticeRunningView"), {
+  ssr: false,
+  loading: () => <p className="text-sm text-slate-400">Đang tải câu hỏi…</p>,
+});
+const PracticeDoneView = dynamic(() => import("@/components/lessons/PracticeDoneView"), {
+  ssr: false,
+  loading: () => <p className="text-sm text-slate-400">Đang tính điểm…</p>,
+});
 
 type Phase = "setup" | "running" | "done";
 
@@ -263,195 +271,33 @@ export default function PracticeSession({
 
   // ---------- Đang làm ----------
   if (phase === "running") {
-    const q = questions[cur];
     return (
-      <div className="space-y-4 rounded-2xl border border-white/10 bg-panel p-5">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-sm text-slate-400">
-            Câu <span className="font-semibold text-white">{cur + 1}</span>/{questions.length} ·
-            đã làm{" "}
-            <span className="font-semibold text-white">
-              {answeredCount}/{questions.length}
-            </span>
-          </span>
-          <span
-            className={`font-mono text-lg font-semibold ${
-              secondsLeft <= 30 ? "text-red-400" : "text-cyan"
-            }`}
-          >
-            {formatClock(secondsLeft)}
-          </span>
-          <button
-            type="button"
-            onClick={confirmSubmit}
-            className="rounded-full px-4 py-1.5 text-sm font-bold text-white"
-            style={{ backgroundColor: color }}
-          >
-            Nộp bài
-          </button>
-        </div>
-
-        <div className="flex flex-wrap gap-1.5">
-          {questions.map((item, i) => {
-            const done = isAnswered(item, responses[i]);
-            const flagged = flags.has(i);
-            return (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setCur(i)}
-                title={`Câu ${i + 1}${flagged ? " · đã đánh dấu" : ""}`}
-                className={`h-9 w-9 rounded-lg border text-xs font-bold transition-colors ${
-                  i === cur ? "ring-2 ring-white/70" : ""
-                }`}
-                style={{
-                  borderColor: flagged ? "#FBBF24" : done ? color : "rgba(255,255,255,0.12)",
-                  backgroundColor: done ? `${color}33` : "transparent",
-                  color: done ? "#FFFFFF" : flagged ? "#FBBF24" : "#94A3B8",
-                }}
-              >
-                {i + 1}
-              </button>
-            );
-          })}
-        </div>
-
-        <QuestionCard
-          index={cur + 1}
-          question={q}
-          response={responses[cur]}
-          onChange={answer}
-        />
-
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            disabled={cur === 0}
-            onClick={() => setCur((i) => Math.max(0, i - 1))}
-            className="rounded-xl border border-white/15 px-4 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-40"
-          >
-            ← Câu trước
-          </button>
-          <button
-            type="button"
-            onClick={() => toggleFlag(cur)}
-            className={`inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-sm font-semibold ${
-              flags.has(cur)
-                ? "border-amber-400/60 bg-amber-400/10 text-amber-300"
-                : "border-white/15 text-slate-300 hover:border-white/30"
-            }`}
-          >
-            <Flag size={14} />
-            {flags.has(cur) ? "Bỏ đánh dấu" : "Đánh dấu xem lại"}
-          </button>
-          {cur < questions.length - 1 ? (
-            <button
-              type="button"
-              onClick={() => setCur((i) => Math.min(questions.length - 1, i + 1))}
-              className="rounded-xl px-4 py-2 text-sm font-bold text-white"
-              style={{ backgroundColor: color }}
-            >
-              Câu sau →
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={confirmSubmit}
-              className="rounded-xl px-4 py-2 text-sm font-bold text-white"
-              style={{ backgroundColor: color }}
-            >
-              Nộp bài
-            </button>
-          )}
-          <span className="text-xs text-slate-500">
-            Câu này {questionSeconds(q)} giây trong tổng thời lượng
-          </span>
-        </div>
-      </div>
+      <PracticeRunningView
+        questions={questions}
+        responses={responses}
+        cur={cur}
+        flags={flags}
+        secondsLeft={secondsLeft}
+        color={color}
+        onAnswer={answer}
+        onSetCur={setCur}
+        onToggleFlag={toggleFlag}
+        onConfirmSubmit={confirmSubmit}
+      />
     );
   }
 
   // ---------- Đã nộp ----------
-  const summary = gradeExam(questions, responses);
-  const practiceStatus =
-    saveState === "saved"
-      ? derivePracticeStatus({ sessionCount: 1, bestScore10: summary.score10, passScore })
-      : null;
   return (
-    <div className="space-y-4">
-      <div className="rounded-2xl border border-white/10 bg-panel p-6 text-center">
-        <p className="font-display text-4xl font-bold text-gradient">
-          {summary.score10.toLocaleString("vi-VN")}
-        </p>
-        <p className="mt-2 text-sm text-slate-300">
-          Đúng trọn vẹn {summary.correctCount}/{questions.length} câu · {formatClock(usedSeconds)}
-        </p>
-        {practiceStatus && passScore !== null && (
-          <p
-            className={`mt-2 inline-block rounded-full border px-3 py-1 text-xs font-bold ${
-              practiceStatus.status === "passed"
-                ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-300"
-                : "border-red-500/40 bg-red-500/15 text-red-300"
-            }`}
-          >
-            {practiceStatus.label}
-          </p>
-        )}
-        <p className="mt-2 text-xs text-slate-500">
-          {saveState === "saving" && "Đang lưu…"}
-          {saveState === "saved" && "✓ Đã ghi lại để thầy biết em cần ôn phần nào"}
-          {saveState === "idle" && "Điểm luyện tập không tính vào bảng điểm"}
-        </p>
-        {saveState === "failed" && (
-          <p className="mt-2 flex flex-col items-center gap-2 text-xs text-red-300">
-            <span>Chưa lưu được kết quả luyện tập — kiểm tra mạng rồi thử lại.</span>
-            <button
-              type="button"
-              onClick={retry}
-              className="rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
-            >
-              Thử lại
-            </button>
-          </p>
-        )}
-        <button
-          type="button"
-          onClick={() => setPhase("setup")}
-          className="mt-4 rounded-full px-5 py-2 text-sm font-bold text-white"
-          style={{ backgroundColor: color }}
-        >
-          Luyện phiên mới
-        </button>
-      </div>
-
-      <ol className="space-y-4">
-        {questions.map((q, i) => {
-          const g = gradeQuestion(q, responses[i]);
-          const wrong = g.earned < g.max;
-          const topicName = (q.topic ?? "").trim();
-          const formLabel =
-            q.form === "ly_thuyet" || q.form === "bai_tap" ? QUESTION_FORM_LABELS[q.form] : "";
-          return (
-            <li key={i}>
-              {wrong && (topicName || formLabel) && (
-                <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
-                  {topicName && (
-                    <span className="rounded-full bg-amber-500/15 px-2.5 py-1 font-semibold text-amber-300">
-                      {topicName}
-                    </span>
-                  )}
-                  {formLabel && (
-                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-slate-400">
-                      {formLabel}
-                    </span>
-                  )}
-                </div>
-              )}
-              <QuestionCard index={i + 1} question={q} response={responses[i]} review />
-            </li>
-          );
-        })}
-      </ol>
-    </div>
+    <PracticeDoneView
+      questions={questions}
+      responses={responses}
+      usedSeconds={usedSeconds}
+      saveState={saveState}
+      passScore={passScore}
+      onRetry={retry}
+      onNewSession={() => setPhase("setup")}
+      color={color}
+    />
   );
 }

@@ -20,6 +20,10 @@ cd out
 #
 # Nén nội dung text (html/css/js/json/svg): ưu tiên brotli (mod_brotli) nếu hosting LiteSpeed có
 # bật, fallback mod_deflate (gzip) — hỗ trợ rộng rãi hơn trên Apache/LiteSpeed nên chắc ăn hơn.
+#
+# Ảnh: thêm luôn Cache-Control tường minh qua mod_headers (cùng 30 ngày với ExpiresDefault ở
+# trên) — một số CDN/hosting ưu tiên đọc Cache-Control hơn Expires; có cả hai chắc ăn hơn, không
+# xung đột (cùng giá trị).
 cat > .htaccess <<'EOF'
 RedirectMatch 404 /\.git
 <IfModule mod_expires.c>
@@ -29,6 +33,12 @@ RedirectMatch 404 /\.git
   </FilesMatch>
   <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
     ExpiresDefault "access plus 30 days"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
+    Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 </IfModule>
 
