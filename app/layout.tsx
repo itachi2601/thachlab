@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ChunkErrorGuard from "@/components/system/ChunkErrorGuard";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import { SUPABASE_URL } from "@/lib/supabase-env";
@@ -99,6 +100,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
+        <ChunkErrorGuard />
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
