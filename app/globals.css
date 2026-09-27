@@ -887,7 +887,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 }
 
 @media (max-width: 900px) {
-  .lesson-layout { grid-template-columns: 1fr; gap: 0; padding: 16px 16px 56px; }
+  .lesson-layout { grid-template-columns: minmax(0,1fr); gap: 0; padding: 16px 16px 56px; }
   .lesson-nav { position: sticky; top: 76px; z-index: 5; margin: 0 -16px; background: rgba(8,13,26,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lesson-line); padding: 10px 16px 8px; }
   html[data-theme="light"] .lesson-nav { background: rgba(255,255,255,.92); }
   .lesson-nav ol { position: relative; display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
