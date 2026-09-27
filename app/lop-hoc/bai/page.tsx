@@ -9,7 +9,7 @@ import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
+import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";

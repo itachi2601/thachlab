@@ -6,7 +6,7 @@ import { Check, ChevronDown, FileText, Play } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
+import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
 import {
   SECTION_META,
