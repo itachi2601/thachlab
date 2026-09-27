@@ -95,7 +95,14 @@ câu cũng được, trang tự bỏ khỏi đề dẫn. Công thức trong `$�
    nội dung đề. Trang tách câu ngay khi có văn bản.
 5. Đọc cột phải: dòng `n/n câu dựng được`, ghi chú vàng (câu thiếu đáp án/phương án), bảng
    đáp án, và bảng **Phân loại câu** phải là **n/n câu đã gắn đủ**, không ô nào viền vàng.
-6. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
+6. **Bấm nút "AI gắn nhãn"** (biểu tượng Sparkles, cạnh bảng Phân loại câu) đúng 1 lần trước
+   khi đăng — nút này gắn cả `topic`/`form` CÒN THIẾU lẫn **độ khó (Dễ/Trung bình/Khó)**, kể cả
+   khi câu đã có sẵn `Chủ đề:`/`Dạng:` từ văn bản dán vào (định dạng dán không có dòng cho độ
+   khó, nên câu nào cũng cần qua bước này để không phải chạy backfill riêng sau — xem
+   `scripts/backfill-question-bank-difficulty.mts`, chỉ nên dùng cho đề CŨ đã lỡ đăng thiếu).
+   Đợi toast "AI đã gắn nhãn cho n/n câu", xem lại vài câu trong bảng Phân loại nếu nghi ngờ mức
+   độ AI chọn chưa hợp lý (sửa tay được, đổi nguồn từ "(AI)" sang "(GV)").
+7. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
    BTVN; mục đã có đề thì "Giữ + thêm" hay "Thay" — hỏi người dùng nếu đề cũ là đề thật.
    Bấm **Đăng đề**, theo dõi log, mở link bài học kiểm tra.
 
@@ -135,8 +142,9 @@ input.files = dt.files;
 input.dispatchEvent(new Event('change', { bubbles: true }));
 ```
 
-Trang tự đọc file, hiện `n/n câu dựng được · N ảnh`. Sau đó set Lớp/Chương/Bài/Tên đề/Thời
-gian và bấm Đăng như bình thường — các `<select>` phải gán bằng **native setter + `change`**
+Trang tự đọc file, hiện `n/n câu dựng được · N ảnh`. Bấm **"AI gắn nhãn"** một lần (xem
+mục "Đăng qua trang admin" bước 6 — gắn cả độ khó, kể cả khi file `.docx` đã có sẵn
+`Chủ đề:`/`Dạng:`) trước khi set Lớp/Chương/Bài/Tên đề/Thời gian và bấm Đăng như bình thường — các `<select>` phải gán bằng **native setter + `change`**
 (giống textarea, React bỏ qua gán trực tiếp):
 
 ```js

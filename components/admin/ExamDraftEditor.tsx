@@ -109,7 +109,10 @@ export default function ExamDraftEditor({
 
   const aiTargets = questions
     .map((_, i) => i)
-    .filter((i) => !(questions[i].topic ?? "").trim() || !questions[i].form);
+    .filter(
+      (i) =>
+        !(questions[i].topic ?? "").trim() || !questions[i].form || !questions[i].difficulty,
+    );
   const aiAvailable = aiTopicCandidates.length > 0 && aiTargets.length > 0;
 
   async function runAutoTag() {
@@ -121,7 +124,17 @@ export default function ExamDraftEditor({
       let next = questions;
       for (const r of results) {
         next = next.map((q, i) =>
-          i === r.index ? { ...q, topic: r.topic ?? q.topic, form: r.form ?? q.form } : q,
+          i === r.index
+            ? {
+                ...q,
+                topic: r.topic ?? q.topic,
+                form: r.form ?? q.form,
+                // AI gợi ý độ khó khi câu chưa có — gắn tay đè lên (difficultySource: "gv")
+                // sẽ không bị AI ghi đè lại lần sau vì aiTargets chỉ nhắm câu còn thiếu.
+                difficulty: q.difficulty ? q.difficulty : (r.difficulty ?? q.difficulty),
+                difficultySource: q.difficulty ? q.difficultySource : r.difficulty ? "ai" : q.difficultySource,
+              }
+            : q,
         );
       }
       setQuestions(next);
