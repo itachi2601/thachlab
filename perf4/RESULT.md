@@ -1,5 +1,29 @@
 # RESULT4 — đợt tối ưu tốc độ lần 4 (27/9/2026)
 
+## ⚠ CẬP NHẬT SAU KHI VIẾT BÁO CÁO — Việc 1 ĐÃ REVERT, KHÔNG deploy
+
+Một phiên Claude Code khác chạy song song (`perf/round4-katex-framer-split`, commit `7193ebc6`)
+làm đúng đợt 4 này độc lập, và khi tự kiểm bằng cách xoá thử 1 file chunk phát hiện:
+`next/dynamic()`/`React.lazy()` không có error boundary bọc quanh có thể **crash TOÀN TRANG**
+nếu chunk tải lỗi (mạng chập chờn, hoặc kịch bản thực tế: học sinh đang mở đề/bài học đúng lúc
+site vừa deploy bản mới → chunk cũ theo hash bị xoá → tải lỗi) — rơi đúng vào màn "sau khi nộp
+bài", đúng luồng yêu cầu gốc cấm rủi ro tuyệt đối. Phiên đó đã revert phần tách JS, chỉ giữ cache
+header. Phiên viết báo cáo này (agent) **không phát hiện ra rủi ro trên** vì chỉ test crash-chunk
+trên trang chủ (RevealMotion, xem §6), không test lại đúng `ExamDoneView`/`PracticeDoneView` mới
+thêm — thiếu sót cần rút kinh nghiệm.
+
+Sau khi thầy xem xét, quyết định: **revert toàn bộ Việc 1** (3 file mới `ExamDoneView.tsx`,
+`PracticeRunningView.tsx`, `PracticeDoneView.tsx` đã xoá; `ExamRunner.tsx`/`PracticeSession.tsx`/
+`LessonMasteryCard.tsx` khôi phục về bản trước đợt 4 — commit `5ab19390`), **giữ nguyên Việc 2**
+(cache header ảnh). `/lop-hoc/bai` và `/kiem-tra/lam` quay lại đúng KB như trước đợt 4 (xem
+`perf4/BASELINE.md`), CHƯA đạt mục tiêu <1000 KB — để đợt sau làm lại có kèm error boundary đúng
+cách (xem việc cần thầy quyết #1 mới bên dưới).
+
+Toàn bộ nội dung bên dưới (§1–§8) là **báo cáo gốc của lần thử đã bị revert**, giữ lại để tham
+khảo cách đo/kỹ thuật tách — KHÔNG phản ánh trạng thái code hiện tại trên `main`.
+
+---
+
 Gộp 2 việc còn treo trong `docs/STATE.md` mục "Việc ngoài roadmap đang treo": (1) tách phần
 JS riêng của trang (không phải KaTeX/framer — 2 thứ đó đã lazy đúng từ đợt 2) khỏi
 `/lop-hoc/bai` và `/kiem-tra/lam`; (2) thêm cache header `Cache-Control` tường minh cho ảnh trong

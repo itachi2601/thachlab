@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 import { RefreshCw } from "lucide-react";
 import Badge from "@/components/ui/Badge";
+import TopicPracticeModal from "@/components/mastery/TopicPracticeModal";
 import {
   MASTERY_ICON,
   MASTERY_LABEL,
@@ -14,14 +14,6 @@ import {
   type LessonMastery,
   type TopicMastery,
 } from "@/services/mastery";
-
-// Modal "Luyện 10 câu phần này" kéo theo QuestionCard + logic chấm/lưu phiên luyện tập; chỉ hiện
-// khi bấm nút bên dưới (practiceTopic khác null) — tách chunk riêng, không nằm trong JS ban đầu
-// của trang bài học (đợt tối ưu tốc độ lần 4, perf4/RESULT.md).
-const TopicPracticeModal = dynamic(() => import("@/components/mastery/TopicPracticeModal"), {
-  ssr: false,
-  loading: () => null,
-});
 
 /**
  * Thẻ nhãn mastery từng YCCĐ của bài — hiện cuối trang bài học (app/lop-hoc/bai/page.tsx), gần
