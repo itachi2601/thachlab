@@ -158,6 +158,27 @@ dùng chung trong phiên, agent nọ điều hướng tab đè lên agent kia �
 `de_thachlab.docx` đã soát sạch, rồi **phiên chính tự đăng tuần tự** bằng kỹ thuật relay ở
 trên cho từng file một — vừa an toàn vừa không cần agent nào chạm service-role key.
 
+**`paste_relay.py` chiếm cứng cổng 8791 — có phiên khác đang chạy song song (rất hay gặp,
+xem `project_thachlab_concurrent_sessions`) thì bị `OSError: Address already in use`.** Đừng
+`kill` tiến trình đang chiếm cổng (có thể là việc dở của phiên khác) — thêm `--port <số khác>`
+và `navigate` tab tới đúng `http://127.0.0.1:<port>/relay.html`.
+
+**Browser pane bị "hidden" giữa phiên** (người dùng chuyển sang xem pane khác trong app) làm
+mọi lệnh dựa trên ảnh chụp màn hình (`computer`: click theo toạ độ, `type`, `screenshot`) báo
+lỗi "the Browser pane is not displayed". `find` (lấy `ref`), `read_page`, `javascript_tool`
+vẫn chạy bình thường vì không cần khung hình — và bất ngờ là **`form_input` cũng chạy được cả
+khi pane ẩn** (test 27/9/2026: gán được cả `<input type=text>`/`type=number` lẫn `<select>`
+khi pane hidden). Gặp lỗi "not displayed": chuyển hẳn sang `find` lấy `ref` rồi `form_input`
+để điền field, và `btn.click()` qua `javascript_tool` để bấm nút — không cần đợi pane hiện lại.
+
+**Sửa nội dung một câu ngay trên trang (ô nhỏ trong bảng preview, vd đáp án Phần III) bằng
+`javascript_tool` gán trực tiếp `input.value` qua native setter + `dispatchEvent('input')`
+KHÔNG chắc cập nhật state React của trang này** — DOM property đổi thật (đọc lại thấy giá trị
+mới), nhưng khung cảnh báo lỗi tổng hợp phía dưới (vd "đáp án dài quá 4 ký tự") vẫn giữ nguyên
+văn bản cũ, không tính lại (test 27/9/2026, đề "Trấn Biên Đồng Nai"). Đáng tin hơn: sửa thẳng
+file `.docx` nguồn (`python-docx`, tìm đúng paragraph "Đáp án: …") rồi `paste_relay.py` lại từ
+đầu — chậm hơn một nhịp nhưng chắc ăn, và đằng nào cũng cần giữ file nguồn đúng để lưu log.
+
 ## Đường dự phòng — gói JSON qua /quan-tri/nhap-bai (khi cần hình SVG / ảnh scan)
 
 Người dùng thả một file đề trắc nghiệm — **`.pdf` (nhanh nhất, khuyên dùng)** hoặc `.docx`. Skill:

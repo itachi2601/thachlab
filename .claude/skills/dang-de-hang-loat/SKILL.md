@@ -106,6 +106,21 @@ dưới bài đích (ở `/quan-tri/chu-de`, chọn đúng khối đang đăng �
 cần đạt") thay vì cố ép vào một mục có sẵn không đúng nghĩa — nhãn sẽ hơi thô (không nằm
 đúng cây yêu cầu-cần-đạt gốc của bài lớp dưới) nhưng nhanh, an toàn, không đụng danh mục cũ.
 
+**Sửa 27/9/2026 — cách trên CHỈ áp dụng cho tên thật sự mới (chưa có ở đâu trong khối).**
+Phổ biến hơn nhiều là trường hợp câu hỏi thuộc ĐÚNG chương trình khối đang đăng (vd lớp 12
+"Nội năng và hai cách làm biến đổi nội năng") nhưng khác BÀI so với bài đích ("Đề thi thử…" là
+một bài/chương riêng, không có yêu cầu-cần-đạt nào của chính nó) — nhãn vẫn hiện
+"(không có trong danh mục)" ở trang Đăng đề y hệt trường hợp cross-khối, dễ tưởng cùng một lỗi.
+Đừng thêm tay ở `/quan-tri/chu-de`: tạo một tên ĐÃ TỒN TẠI ở bài khác trong cùng khối sẽ báo
+lỗi `409` (ràng buộc unique theo tên trong `question_topics`, không phân biệt theo bài) — tốn
+công vô ích. Kiểm tra trước bằng REST xem tên đó có nằm ở lesson_id khác trong cùng khối
+không (`question_topics?select=id,name,lesson_id&name=eq.<tên>`); có thì đây là trường hợp
+này. Cách xử lý đã dùng cho các đề thi thử up trước đó trong đúng mục này (vd đề #220/225–227):
+**để nguyên "không có trong danh mục"**, trang tự lưu nguyên văn (không chặn Đăng) — chấp nhận
+câu đó không vào thống kê phân tích theo yêu cầu-cần-đạt mịn (chỉ mất độ chi tiết phân tích,
+không mất dữ liệu). Chỉ dùng cách "+ Thêm yêu cầu cần đạt" ở trên khi tên đó KHÔNG tồn tại ở
+bất kỳ bài nào khác trong khối (thật sự cross-khối, vd kiến thức lớp 10/11 xen trong đề lớp 12).
+
 ## Bước 4 — Thử một batch nhỏ trước khi chạy hết thư mục
 
 **Luôn thử 4–8 file trước** (đủ đa dạng: có file `answer_table`, có file `hasRealImages`,
@@ -226,6 +241,19 @@ JSON (tên file ↔ `examId` — lấy từ dòng log "✓ đề số N" khi Đ�
 động coi chúng là `already_uploaded`, không giao lại. File nào bị bỏ qua vì trùng nội dung
 với đề đã đăng trước đó (Bước 5 điểm 4) cũng nên ghi vào log, trỏ tới `examId` đã có sẵn —
 không chỉ ghi cho file thật sự vừa đăng mới.
+
+Không phải lúc nào cũng thấy được dòng "✓ đề số N" (vd đọc trạng thái nút bằng `javascript_tool`
+khi pane đang ẩn, không đọc được log console/toast) — lấy `examId` chắc ăn hơn bằng cách mở
+`/quan-tri/sua-de`, gõ đúng tên đề vừa đăng (nguyên văn ô "Tên đề"), đọc số `#N` ở kết quả.
+
+**27/9/2026 — đừng hoảng nếu `exam_ids` của mục không tăng đúng bằng số đề vừa thêm.** Ghi
+"Giữ + thêm" có vẻ tự dọn (không rõ chủ động hay hệ quả phụ) các `examId` cũ không còn trỏ tới
+dòng `exams` nào (tham chiếu hỏng từ trước, không phải do đợt đăng này) — quan sát được khi
+đăng 3 đề, mảng tăng đúng 3 ID mới nhưng có đúng 1 ID cũ rất lâu (không tồn tại, gõ vào
+`/quan-tri/sua-de` ra "Không có đề phù hợp") biến mất khỏi mảng. Trước khi nghi ngờ mất dữ liệu:
+so `exam_ids` trước/sau, với mỗi ID lệch (mất hoặc thừa ngoài dự kiến) tra `#ID` ở `/quan-tri/
+sua-de` — ID đó *thật sự không tồn tại* thì không có gì phải cứu; ID đó *có tồn tại* mới là sự
+cố thật (báo ngay cho người dùng, đừng tự ý ghi đè lại `exam_ids` bằng SQL).
 
 ## An toàn — kế thừa từ skill up-de-kiem-tra
 
