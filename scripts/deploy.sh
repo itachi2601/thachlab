@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
-# Build trang tĩnh và force-push lên nhánh `deploy` — Cron Job trên hosting
-# (chạy `git fetch && git reset --hard origin/deploy` mỗi 10 phút) sẽ tự kéo về.
+# Build trang tĩnh và force-push lên nhánh `deploy` — Cron Job trên hosting sẽ tự kéo về.
 # Nhánh deploy luôn chỉ có đúng 1 commit để repo không phình theo thời gian.
+#
+# BẢO MẬT — lệnh Cron Job trên DirectAdmin PHẢI là (không phải chỉ reset --hard):
+#   git fetch && git reset --hard origin/deploy && git clean -fdx
+# `git clean -fdx` là phần bắt buộc: nó xoá mọi file KHÔNG nằm trong git (kể cả file ẩn/gitignore).
+# Nếu thiếu dòng này, một file lạ bị ai đó upload thẳng vào thư mục web (qua FTP/cPanel lộ mật
+# khẩu, hosting bị dò lỗ hổng...) — ví dụ trang chèn từ khoá cờ bạc/cá độ để SEO bẩn — sẽ tồn tại
+# VĨNH VIỄN vì `reset --hard` chỉ ghi đè file git đang quản lý, không đụng tới file ngoài git.
 set -euo pipefail
 
 REPO_URL="https://github.com/itachi2601/thachlab.git"
@@ -48,6 +54,19 @@ RedirectMatch 404 /\.git
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
+
+# Site 100% tĩnh (output: "export"), không có trang nào cần PHP chạy. Chặn hẳn thực thi PHP
+# trong toàn bộ web root: nếu có file .php lạ bị chèn vào (qua FTP/cPanel lộ mật khẩu, ví dụ
+# shell chèn trang cờ bạc/spam SEO), file đó vẫn nằm đó nhưng KHÔNG chạy được, chỉ trả về lỗi.
+<FilesMatch "\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
 EOF
 
 # Học liệu tĩnh (public/data → /data/*.json, sinh bởi scripts/build-content.mjs) không có hash

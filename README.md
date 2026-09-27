@@ -50,6 +50,24 @@ File tĩnh không chứa đề thi, đáp án hay lời giải bài tập mẫu 
   (gzip) nếu không — cả hai khối đặt trong `<IfModule>` nên không hỏng nếu module không tồn tại.
 - Riêng `out/data/*.json` (học liệu tĩnh, xem mục trên) có `.htaccess` **cache 10 phút riêng**,
   tách biệt với khối cache ảnh 30 ngày ở trên — đừng gộp hai khối này lại.
+- Chặn thực thi `.php` trong toàn bộ web root (site 100% tĩnh, không cần PHP) — phòng trường hợp
+  có file lạ bị chèn vào (upload trái phép, hosting lộ lỗ hổng).
+
+### Bảo mật — Cron Job trên hosting
+
+Lệnh Cron Job trên DirectAdmin (chạy mỗi 10 phút để kéo bản build mới) **phải** là:
+
+```
+git fetch && git reset --hard origin/deploy && git clean -fdx
+```
+
+**Không được thiếu `git clean -fdx`.** `reset --hard` chỉ ghi đè file mà git đang quản lý; một
+file lạ bị ai đó upload thẳng vào thư mục web (FTP/cPanel lộ mật khẩu, hosting bị dò lỗ hổng...) —
+ví dụ trang chèn từ khoá cờ bạc/cá độ để SEO bẩn, kiểu tấn công phổ biến nhất với site .vn dùng
+shared hosting — sẽ tồn tại **vĩnh viễn** nếu cron không có `clean -fdx`. Nên kiểm tra định kỳ:
+đăng nhập DirectAdmin xem đúng lệnh cron này, đổi mật khẩu hosting/FTP định kỳ, bật 2FA nếu có,
+và đăng ký domain với Google Search Console để được cảnh báo tự động nếu Google phát hiện site bị
+chèn spam ("Security Issues").
 
 ## Cấu trúc
 

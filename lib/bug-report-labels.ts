@@ -2,7 +2,7 @@
 // supabase — để components/BugReportWidget.tsx (render ở MỌI trang kể cả trang công
 // khai) dùng BUG_CATEGORY_LABELS lúc render (đồng bộ, cho <select>) mà không phải tải
 // cả @supabase/supabase-js chỉ vì nằm chung file với các hàm gọi DB.
-export type BugCategory = "hien_thi" | "diem" | "dang_nhap" | "de_xuat" | "khac";
+export type BugCategory = "hien_thi" | "diem" | "dang_nhap" | "de_xuat" | "cau_hoi" | "khac";
 export type BugStatus = "moi" | "dang_xu_ly" | "da_xu_ly";
 
 export const BUG_CATEGORY_LABELS: Record<BugCategory, string> = {
@@ -10,6 +10,7 @@ export const BUG_CATEGORY_LABELS: Record<BugCategory, string> = {
   diem: "Lỗi điểm / bài kiểm tra",
   dang_nhap: "Lỗi đăng nhập / tài khoản",
   de_xuat: "Đề xuất tính năng mới",
+  cau_hoi: "Câu hỏi sai / lỗi (báo từ một câu cụ thể)",
   khac: "Khác",
 };
 

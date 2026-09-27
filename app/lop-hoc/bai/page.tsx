@@ -120,6 +120,19 @@ function VideoBlock({
   );
 }
 
+/** Ý chính/công thức cần thuộc của 1 mục lý thuyết — hiện luôn (không thu gọn thêm lần
+ *  nữa), độc lập với việc mục lý thuyết đầy đủ bên dưới đang mở hay đóng, để học sinh
+ *  xem nhanh mà không cần mở hết bài dài. Rỗng (chưa backfill) thì không hiện gì. */
+function TheorySummary({ html }: { html: string }) {
+  if (!html.trim()) return null;
+  return (
+    <div className="lesson-summary">
+      <p className="lesson-summary-label">📌 Tóm tắt ý chính cần thuộc</p>
+      <ContentHtml html={html} className="block leading-relaxed" />
+    </div>
+  );
+}
+
 /** Lý thuyết: hiện thẳng nội dung; mục thứ hai trở đi thu gọn để trang không quá dài. */
 function TheoryBlock({
   item,
@@ -158,6 +171,7 @@ function TheoryBlock({
         </span>
         {hasBody && <ChevronDown size={18} className={open ? "rotate-180" : ""} />}
       </button>}
+      <TheorySummary html={item.summary_html} />
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
           <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
@@ -333,11 +347,32 @@ function LessonLoader() {
   const [error, setError] = useState("");
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  // Trang bài học hiện thành danh sách 6 mục thu gọn — mặc định đóng hết, học sinh bấm
+  // mục nào thì mục đó mới xổ ra (đỡ phải cuộn một trang dài). Chỉ tự mở khi có đường
+  // dẫn thẳng vào 1 mục cụ thể (xem 2 effect openSectionOfItem/resume bên dưới).
+  const [openSections, setOpenSections] = useState<Set<LessonItemKind>>(new Set());
+  function openSection(kind: LessonItemKind) {
+    setOpenSections((prev) => (prev.has(kind) ? prev : new Set(prev).add(kind)));
+  }
+  function toggleSection(kind: LessonItemKind) {
+    setOpenSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(kind)) next.delete(kind);
+      else next.add(kind);
+      return next;
+    });
+  }
   // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
   // mở (mặc định các mục từ thứ hai trở đi đang thu gọn) trước khi cuộn + tô màu tới đúng đoạn.
   const [hashTargetItemId] = useState<number | null>(() =>
     typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
   );
+  // Có đường dẫn thẳng vào 1 đoạn lý thuyết → mục "Lý thuyết trọng tâm" phải tự mở trước
+  // khi jumpToTheorySection cuộn + tô màu tới đúng đoạn (xem effect dưới).
+  useEffect(() => {
+    if (hashTargetItemId != null) openSection("ly_thuyet");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hashTargetItemId]);
   // (Tất cả) câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi
   // sessionStorage) — hiện thành thẻ dán cố định liệt kê đủ, tô vàng đủ mọi đoạn liên quan,
   // để không quên đang ôn vì sai (những) câu nào — sai nhiều câu ở nhiều đoạn khác nhau vẫn
@@ -479,9 +514,10 @@ function LessonLoader() {
     if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
     const firstIncomplete = items.find((item) => !isDone(item));
     if (!firstIncomplete) return;
+    openSection(firstIncomplete.kind);
     const timer = window.setTimeout(() => {
       document.getElementById(`secondary-stage-${firstIncomplete.kind}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 150);
+    }, 220);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, items, session, done, scores]);
@@ -683,9 +719,12 @@ function LessonLoader() {
                     className={`${activeSection === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      document
-                        .getElementById(`secondary-stage-${kind}`)
-                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      openSection(kind);
+                      window.setTimeout(() => {
+                        document
+                          .getElementById(`secondary-stage-${kind}`)
+                          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 60);
                     }}
                   >
                     <i>{complete ? <Check size={12} /> : number}</i>
@@ -801,6 +840,8 @@ function LessonLoader() {
           {visibleSections.map((section) => {
             const meta = SECTION_META[section.kind];
             const number = SECTION_ORDER.indexOf(section.kind) + 1;
+            const isOpen = openSections.has(section.kind);
+            const complete = !!session && section.items.every(isDone);
             return (
               <section
                 key={section.kind}
@@ -808,10 +849,19 @@ function LessonLoader() {
                 data-kind={section.kind}
                 className="lesson-section"
               >
-                <h2>
-                  <span>{number}</span>
-                  {meta.label}
-                </h2>
+                <button
+                  type="button"
+                  className="lesson-section-toggle"
+                  onClick={() => toggleSection(section.kind)}
+                  aria-expanded={isOpen}
+                >
+                  <h2>
+                    <span>{complete ? <Check size={13} /> : number}</span>
+                    {meta.label}
+                  </h2>
+                  <ChevronDown size={18} className={isOpen ? "rotate-180" : ""} />
+                </button>
+                {isOpen && (
                 <div className="lesson-stack">
                   {section.items.map((item, itemIndex) => {
                     // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
@@ -929,6 +979,7 @@ function LessonLoader() {
                     );
                   })}
                 </div>
+                )}
               </section>
             );
           })}

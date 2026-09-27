@@ -121,6 +121,10 @@ const ITEM_COLUMNS_V3 = `${ITEM_COLUMNS_V2}, required, quiz_min_correct, practic
 // từng mục, docs/supabase-migration-lesson-item-draft-publish.sql) — chọn kèm khi có, tự
 // lùi về V3 khi DB chưa chạy migration (coi như mọi mục đã đăng, giữ hành vi cũ).
 const ITEM_COLUMNS_V4 = `${ITEM_COLUMNS_V3}, published_at, draft_payload, draft_saved_at`;
+// Cột summary_html là migration mới nhất ("Tóm tắt ý chính cần thuộc",
+// supabase/migrations/20260927120000_lesson_item_summary.sql) — chọn kèm khi có,
+// tự lùi về V4 khi DB chưa chạy migration (coi như chưa có tóm tắt nào).
+const ITEM_COLUMNS_V5 = `${ITEM_COLUMNS_V4}, summary_html`;
 
 function toLessonItem(item: Record<string, unknown>): LessonItem {
   return {
@@ -128,6 +132,7 @@ function toLessonItem(item: Record<string, unknown>): LessonItem {
     kind: normalizeLessonItemKind(item.kind),
     subtitle: item.subtitle ?? "",
     body_html: item.body_html ?? "",
+    summary_html: item.summary_html ?? "",
     video_url: item.video_url ?? "",
     pdf_url: item.pdf_url ?? "",
     questions: item.questions ?? [],
@@ -155,7 +160,7 @@ export async function fetchLessonWithItems(
   const res = await getSupabase()
     .from("lessons")
     .select(
-      `id, chapter_id, title, sort_order, published, lesson_kind, description, chapters(title), lesson_items(${ITEM_COLUMNS_V4})`,
+      `id, chapter_id, title, sort_order, published, lesson_kind, description, chapters(title), lesson_items(${ITEM_COLUMNS_V5})`,
     )
     .eq("id", id)
     .order("sort_order", { referencedTable: "lesson_items" })
@@ -193,7 +198,8 @@ export async function fetchLessonItems(lessonId: number): Promise<LessonItem[]> 
       .eq("lesson_id", lessonId)
       .order("sort_order")
       .order("id");
-  let res = await query(ITEM_COLUMNS_V4);
+  let res = await query(ITEM_COLUMNS_V5);
+  if (res.error) res = await query(ITEM_COLUMNS_V4);
   if (res.error) res = await query(ITEM_COLUMNS_V3);
   if (res.error) res = await query(ITEM_COLUMNS_V2);
   if (res.error) res = await query(ITEM_COLUMNS);

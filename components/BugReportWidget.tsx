@@ -47,7 +47,9 @@ export default function BugReportWidget() {
       await submitBugReport({
         description,
         category,
-        pageUrl: window.location.pathname + window.location.search,
+        // Kèm hash: trang lý thuyết dùng #theory-sec-<itemId>-<n> để nhảy đúng đoạn,
+        // thiếu hash thì link trong báo lỗi chỉ mở tới đầu trang.
+        pageUrl: window.location.pathname + window.location.search + window.location.hash,
         userId: session?.user.id ?? null,
         reporterName: session ? "" : reporterName,
         reporterEmail: session ? "" : reporterEmail,

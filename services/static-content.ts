@@ -173,6 +173,7 @@ function normalizeItem(raw: Record<string, unknown>): StaticItem {
     kind: normalizeLessonItemKind(raw.kind),
     subtitle: raw.subtitle ?? "",
     body_html: raw.body_html ?? "",
+    summary_html: raw.summary_html ?? "",
     video_url: raw.video_url ?? "",
     pdf_url: raw.pdf_url ?? "",
     questions: raw.questions ?? [],

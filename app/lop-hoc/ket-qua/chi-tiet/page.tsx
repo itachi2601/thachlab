@@ -130,7 +130,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
       <p className="mb-4 text-sm text-slate-500">
         Bấm số câu ở bảng bên dưới để xem nhanh — bảng luôn ghim trên đầu khi em cuộn trang.
       </p>
-      <ExamReviewPager questions={detail.questions} responses={detail.responses} />
+      <ExamReviewPager questions={detail.questions} responses={detail.responses} examId={detail.examId} />
 
       {fixing && (
         <FixQuizModal

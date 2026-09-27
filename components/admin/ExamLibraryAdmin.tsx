@@ -49,8 +49,17 @@ function fmtDate(iso: string): string {
 
 /** Trang "Sửa đề đã đăng" — tìm một đề có sẵn trong `exams`, sửa trực tiếp nội dung/đáp án/nhãn
  * rồi lưu đè lên đúng id đó, nên mọi bài học / mục đã gắn đề này không cần đổi gì. */
-export default function ExamLibraryAdmin() {
+export default function ExamLibraryAdmin({
+  initialExamId = null,
+  initialQuestionIndex = null,
+}: {
+  /** Mở sẵn đúng đề này (link từ mục "Báo lỗi & góp ý" của một câu cụ thể). */
+  initialExamId?: number | null;
+  /** Tô đậm + cuộn tới đúng câu này (0-based) sau khi đề đã tải xong. */
+  initialQuestionIndex?: number | null;
+}) {
   const toast = useToast();
+  const [highlightIndex, setHighlightIndex] = useState<number | null>(initialQuestionIndex);
 
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   useEffect(() => {
@@ -141,6 +150,7 @@ export default function ExamLibraryAdmin() {
   async function selectExam(id: number) {
     if (loadingFull) return;
     setSelectedId(id);
+    setHighlightIndex(id === initialExamId ? initialQuestionIndex : null);
     setLoadingFull(true);
     setFull(null);
     setExamBundle(null);
@@ -193,6 +203,12 @@ export default function ExamLibraryAdmin() {
       setLoadingFull(false);
     }
   }
+
+  // Mở sẵn đề từ link báo lỗi — chỉ 1 lần lúc vào trang.
+  useEffect(() => {
+    if (initialExamId) void selectExam(initialExamId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const grade = gradeOverride ?? (full ? classGrade(classById.get(full.classIds[0] ?? -1)?.name ?? "") : null);
 
@@ -424,6 +440,7 @@ export default function ExamLibraryAdmin() {
                 onChange={setExamBundle}
                 externalSeed={seed}
                 hideRawText
+                highlightIndex={highlightIndex}
               />
 
               {check && !check.ok && (

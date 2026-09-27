@@ -547,7 +547,7 @@ export interface StudentAlert {
   id: number;
   studentId: string;
   classId: number | null;
-  kind: "low_score_streak" | "missed_assessment";
+  kind: "low_score_streak" | "missed_assessment" | "exam_violation";
   severity: "warning" | "urgent";
   reason: string;
   status: "open" | "contacted" | "tutoring" | "resolved" | "dismissed";

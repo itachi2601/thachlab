@@ -659,6 +659,17 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-section + .lesson-section { margin-top: 48px; border-top: 1px solid var(--lesson-line); padding-top: 36px; }
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
 .lesson-section h2 span { display: flex; width: 26px; height: 26px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
+/* Cả 6 mục giờ là danh sách thu gọn — bấm tiêu đề mới xổ nội dung ra (xem app/lop-hoc/bai/page.tsx). */
+.lesson-section-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; background: none; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer; }
+.lesson-section-toggle:hover h2 { color: var(--lesson-accent-text); }
+.lesson-section-toggle svg { flex: 0 0 auto; color: #64748b; transition: transform .2s; }
+/* Ý chính/công thức cần thuộc — hiện luôn, tách màu khỏi phần nội dung dài để dễ nhận ra. */
+.lesson-summary { margin-top: 14px; border: 1px solid rgba(250,204,21,.28); border-radius: 12px; background: rgba(250,204,21,.07); padding: 14px 16px; }
+.lesson-summary-label { margin: 0 0 8px; color: #fbbf24; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; }
+.lesson-summary :is(ul, ol) { display: grid; gap: 6px; margin: 0; padding-left: 20px; list-style: disc; }
+.lesson-summary li::marker { color: #fbbf24; }
+html[data-theme="light"] .lesson-shell .lesson-summary { border-color: rgba(180,83,9,.32); background: rgba(217,119,6,.08); }
+html[data-theme="light"] .lesson-shell .lesson-summary-label { color: #b45309; }
 .lesson-stack { display: grid; gap: 12px; }
 /* Item lưới mặc định có min-width:auto — nội dung rộng cố định (bảng dán từ Word)
    sẽ đẩy tràn cả lưới thay vì tự co lại. */
@@ -674,8 +685,11 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-block > .lesson-block-head + * { margin-top: 14px; }
 .lesson-block-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
 .lesson-block-foot:empty { display: none; }
-.lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; }
+.lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; overflow-wrap: break-word; word-break: break-word; }
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
+/* Dàn đều 2 biên (justify) để lề phải không lởm chởm — kèm break-word ở trên
+   để chữ/công thức dài không tràn ra ngoài khung khi dàn đều. */
+.lesson-prose p { text-align: justify; text-justify: inter-word; }
 /* Khối <h3> lý thuyết (features/lessons/theory-sections.ts) — tô vàng tạm khi quay lại từ
    "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
 /* Chừa chỗ cho thẻ nhắc câu sai (position: fixed, nổi trên đầu) khi scrollIntoView căn "start" —

@@ -32,6 +32,11 @@ const ITEM_META_V3 = `${ITEM_META_V2}, required, quiz_min_correct, practice_pass
 // docs/supabase-migration-lesson-item-draft-publish.sql) — mục null (chưa từng đăng)
 // TUYỆT ĐỐI không được vào file tĩnh, dù trang admin có thể vẫn đang sửa dở.
 const ITEM_META_V4 = `${ITEM_META_V3}, published_at`;
+// summary_html là migration mới nhất ("Tóm tắt ý chính cần thuộc",
+// supabase/migrations/20260927120000_lesson_item_summary.sql) — cùng nhóm với
+// body_html (chỉ mục ly_thuyet/video mới cần), nhưng cần lùi phiên bản riêng vì
+// có thể migration đó chưa chạy dù published_at đã có từ trước.
+const ITEM_META_V5 = `${ITEM_META_V4}, summary_html`;
 // Loại mục được đưa body_html vào file tĩnh (không có lời giải/đáp án).
 const BODY_KINDS = new Set(["ly_thuyet", "video"]);
 
@@ -149,7 +154,7 @@ async function main() {
         .order("sort_order")
         .order("id");
     itemRows = null;
-    for (const columns of [ITEM_META_V4, ITEM_META_V3, ITEM_META_V2, ITEM_META_V1]) {
+    for (const columns of [ITEM_META_V5, ITEM_META_V4, ITEM_META_V3, ITEM_META_V2, ITEM_META_V1]) {
       try {
         itemRows = lessonIds.length ? await fetchAll(itemSelect(columns)) : [];
         itemColumns = columns;
@@ -161,7 +166,7 @@ async function main() {
     if (!itemRows) throw new Error("không đọc được lesson_items với bất kỳ danh sách cột nào");
     // Chưa chạy migration published_at → coi như mọi mục đã đăng (giữ hành vi cũ).
     // Đã có cột thì lọc thẳng mục published_at = null (chưa đăng) khỏi file tĩnh.
-    if (itemColumns === ITEM_META_V4) {
+    if (itemColumns === ITEM_META_V4 || itemColumns === ITEM_META_V5) {
       itemRows = itemRows.filter((r) => r.published_at !== null);
     }
   } catch (e) {
@@ -173,7 +178,7 @@ async function main() {
   const itemsByLesson = new Map();
   let strippedBodies = 0;
   for (const raw of itemRows) {
-    const { body_html, questions, ...meta } = raw;
+    const { body_html, summary_html, questions, ...meta } = raw;
     const keepBody = BODY_KINDS.has(raw.kind);
     if (!keepBody && (body_html ?? "").trim()) strippedBodies += 1;
     const item = {
@@ -183,6 +188,7 @@ async function main() {
       pdf_url: meta.pdf_url ?? "",
       exam_ids: meta.exam_ids ?? [],
       body_html: keepBody ? body_html ?? "" : "",
+      summary_html: keepBody ? summary_html ?? "" : "",
       // Lời giải bài tập mẫu (questions) không vào file tĩnh — chỉ ghi số lượng để
       // client biết cần tải thêm từ Supabase.
       questions: [],

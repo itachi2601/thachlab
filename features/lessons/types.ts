@@ -104,6 +104,7 @@ export interface LessonItem {
   title: string;
   subtitle: string;
   body_html: string; // chỉ dùng cho ly_thuyet
+  summary_html: string; // ly_thuyet: "Tóm tắt ý chính cần thuộc" — rỗng = chưa có, ẩn khối này
   video_url: string;
   pdf_url: string;
   questions: LessonWorkedQuestion[]; // bai_tap_mau: các dạng bài tự luận cũ

@@ -196,18 +196,28 @@ export default function TeacherThptAnalysis({
 
       {overview && overview.attempts > 0 && (
         <section className="rounded-2xl border border-white/10 bg-panel p-5">
-          <p className="mb-3 text-sm font-semibold text-white">Phân bố điểm</p>
-          <div className="flex items-end gap-1.5" style={{ height: 90 }}>
+          <p className="mb-4 text-sm font-semibold text-white">Phổ điểm</p>
+          <div className="flex items-end gap-2" style={{ height: 180 }}>
             {overview.distribution.map((n, i) => {
               const maxN = Math.max(...overview.distribution, 1);
+              const barHeight = n ? Math.max((n / maxN) * 138, 8) : 0;
+              const isPass = i >= 5;
               return (
-                <div key={i} className="flex flex-1 flex-col items-center gap-1">
-                  <span className="text-[10px] text-slate-500">{n || ""}</span>
+                <div
+                  key={i}
+                  className="flex h-full flex-1 flex-col items-center justify-end gap-2"
+                  title={`${n} bài · điểm ${i}–${i + 1}`}
+                >
+                  <span className="text-[11px] font-medium tabular-nums text-slate-400">{n || ""}</span>
                   <div
-                    className={`w-full rounded-t ${i < 5 ? "bg-red-400/60" : "bg-blue-400/70"}`}
-                    style={{ height: `${(n / maxN) * 64 + (n ? 4 : 0)}px` }}
+                    className={`w-2.5 rounded-full transition-[height] duration-300 sm:w-3 ${
+                      isPass
+                        ? "bg-gradient-to-t from-sky-600 via-sky-400 to-cyan-300 shadow-[0_0_10px_rgba(56,189,248,0.4)]"
+                        : "bg-gradient-to-t from-rose-600 via-rose-500 to-rose-400 shadow-[0_0_10px_rgba(244,63,94,0.35)]"
+                    }`}
+                    style={{ height: `${barHeight}px` }}
                   />
-                  <span className="text-[10px] text-slate-500">{i}</span>
+                  <span className="text-[11px] font-medium text-slate-500">{i}</span>
                 </div>
               );
             })}

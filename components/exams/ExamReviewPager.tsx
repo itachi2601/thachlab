@@ -11,6 +11,7 @@ import {
   type QuestionStatus,
 } from "@/features/exams/types";
 import QuestionCard from "@/components/exams/QuestionCard";
+import ReportQuestionButton from "@/components/exams/ReportQuestionButton";
 
 /** Ô số trong bảng câu hỏi — cùng tông màu với thẻ trạng thái của QuestionCard. */
 const NAV_DOT: Record<QuestionStatus, string> = {
@@ -26,13 +27,15 @@ interface Props {
   responses: QuestionResponse[];
   /** Nội dung phụ hiện phía trên câu hỏi đang xem (nhãn chủ đề, nút "Ôn ngay"…). */
   renderAbove?: (index: number) => ReactNode;
+  /** Có thì hiện nút "Báo lỗi câu này" (thiếu = không rõ đề nào, ẩn nút). */
+  examId?: number | null;
 }
 
 /**
  * Xem lại bài làm giống lúc làm bài: bảng câu hỏi ghim trên đầu, mỗi lần chỉ
  * hiện 1 câu — dễ lần theo câu sai hơn là cuộn qua một danh sách dài.
  */
-export default function ExamReviewPager({ questions, responses, renderAbove }: Props) {
+export default function ExamReviewPager({ questions, responses, renderAbove, examId }: Props) {
   const firstWrong = questions.findIndex((q, i) => questionStatus(q, responses[i]) !== "correct");
   const [cur, setCur] = useState(firstWrong >= 0 ? firstWrong : 0);
   const [paletteOpen, setPaletteOpen] = useState(true);
@@ -115,6 +118,12 @@ export default function ExamReviewPager({ questions, responses, renderAbove }: P
 
       {renderAbove?.(cur)}
       <QuestionCard index={cur + 1} question={questions[cur]} response={responses[cur]} review />
+
+      {examId != null && (
+        <div className="mt-3 flex justify-end">
+          <ReportQuestionButton examId={examId} questionIndex={cur} />
+        </div>
+      )}
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
         <button

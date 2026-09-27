@@ -316,6 +316,7 @@ export default function AzotaExamComposer() {
         onHandoffGrade={(g) => {
           handoffGradeRef.current = g;
         }}
+        grade={grade}
       />
 
       {/* ===== 3. Cấu hình & đăng ===== */}

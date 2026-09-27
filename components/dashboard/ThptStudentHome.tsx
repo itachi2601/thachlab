@@ -99,6 +99,18 @@ function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
         {item.createdByName || "Giáo viên"} ·{" "}
         {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
       </p>
+      {item.examId && (
+        <Link
+          href={`/kiem-tra/lam?id=${item.examId}`}
+          className="mt-2.5 flex items-center justify-between gap-2 rounded-lg bg-blue-500/15 px-3 py-2 text-sm font-bold text-blue-100 hover:bg-blue-500/25"
+        >
+          <span className="flex min-w-0 items-center gap-2">
+            <Trophy size={14} className="shrink-0 text-amber-300" />
+            <span className="truncate">{item.examTitle ?? "Làm bài"}</span>
+          </span>
+          <ChevronRight size={16} className="shrink-0" />
+        </Link>
+      )}
     </div>
   );
 }
@@ -330,7 +342,9 @@ export default function ThptStudentHome({
           <p className="mt-2 text-sm text-amber-100/80">
             {alert.kind === "missed_assessment"
               ? "Em còn bài kiểm tra chưa làm — hãy hoàn thành sớm."
-              : "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo."}
+              : alert.kind === "exam_violation"
+                ? "Bài kiểm tra gần đây của em bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình — trợ giảng sẽ kiểm tra lại kiến thức của em."
+                : "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo."}
           </p>
         </section>
       )}

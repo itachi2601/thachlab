@@ -14,10 +14,10 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  # Trống — không có migration nào đang chờ (cập nhật 26/9/2026).
+  # Trống — không có migration nào đang chờ (cập nhật 27/9/2026).
   # Thêm dòng mới theo mẫu: "<đường dẫn>|<mô tả ngắn>|<thời điểm nên chạy>"
 )
-# ĐÃ CHẠY 26/9/2026, không đưa vào danh sách nữa:
+# ĐÃ CHẠY 26–27/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql
 #   20260925130000_perf_rpc_gv.sql
 #   20260925140000_perf_rls.sql
@@ -28,6 +28,10 @@ FILES=(
 #   20260926120000_lesson_item_draft_publish.sql
 #   20260926130000_exam_violation_alert.sql
 #   20260926140000_fix_rls_tautology.sql
+#   20260926150000_fix_question_bank_similarity_timeout.sql
+#   20260927100000_class_announcement_exam.sql
+#   20260927110000_bug_report_question_link.sql
+#   20260927120000_lesson_item_summary.sql
 
 AUTO=0; ONLY=""; LIST=0
 while [[ $# -gt 0 ]]; do

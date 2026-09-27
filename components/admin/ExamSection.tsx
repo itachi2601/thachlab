@@ -55,11 +55,15 @@ export interface ExamSectionProps {
   /** Lấy sẵn câu từ Ngân hàng câu hỏi khi mở trang (chỉ trang Đăng đề dùng). */
   enableQuestionBankHandoff?: boolean;
   onHandoffGrade?: (grade: string) => void;
+  /** Khối đang chọn (mục 3 của trang) — để lọc Ngân hàng câu hỏi khi "Thêm câu"/"Đổi câu khác". */
+  grade?: string | null;
   /** Gói ngoài muốn nạp thẳng vào chế độ sửa chi tiết (vd JSON dán ở khối "Nâng cao"). */
   externalSeed?: ExamSectionSeed | null;
   /** Ẩn khối "dán/thả đề" bên trái — dùng khi trang chỉ sửa một đề có sẵn câu hỏi (đã nạp qua externalSeed),
    * không cần dán/thả hay quay lại văn bản (không có văn bản gốc để quay lại). */
   hideRawText?: boolean;
+  /** Câu (0-based) cần tô đậm + cuộn tới trong "Xem trước & đáp án" — link từ báo lỗi một câu cụ thể. */
+  highlightIndex?: number | null;
 }
 
 async function compressRasterInputs(images: RasterImageInput[]): Promise<RasterImageInput[]> {
@@ -123,11 +127,14 @@ export default function ExamSection({
   numberOffset = 1,
   enableQuestionBankHandoff = false,
   onHandoffGrade,
+  grade = null,
   externalSeed = null,
   hideRawText = false,
+  highlightIndex = null,
 }: ExamSectionProps) {
   const toast = useToast();
   const fileRef = useRef<HTMLInputElement>(null);
+  const highlightRef = useRef<HTMLDivElement>(null);
 
   const [text, setText] = useState("");
   const [debounced, setDebounced] = useState("");
@@ -208,6 +215,14 @@ export default function ExamSection({
   }, [bundle]);
 
   const questions = bundle.exam.questions;
+
+  // Câu bị báo lỗi (link từ /quan-tri/sua-de?exam=&q=) — cuộn tới + tô đậm ngay khi
+  // đề đã tải xong và dựng được câu đó, không cần admin tự dò trong danh sách.
+  useEffect(() => {
+    if (highlightIndex == null || highlightIndex >= questions.length) return;
+    highlightRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [highlightIndex, questions.length]);
+
   const notes = useMemo(
     // Cảnh báo "nhắc hình mà thiếu ảnh" của parser đã có khung đỏ riêng (MissingFigureNotice) — không lặp ở đây.
     () =>
@@ -446,6 +461,11 @@ export default function ExamSection({
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset + 1}</span>
           <span className="text-sm font-semibold text-white">Xem trước & đáp án</span>
+          {questions.length > 0 && (
+            <span className="text-xs text-slate-400">
+              Đã chọn <b className="text-white">{questions.length}</b> câu
+            </span>
+          )}
           <div className="ml-auto">
             {edited ? (
               <button
@@ -475,6 +495,7 @@ export default function ExamSection({
             onChange={setEdited}
             topicOptions={topicGroups.flatMap((g) => g.names)}
             aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
+            grade={enableQuestionBankHandoff ? grade : null}
           />
         ) : questions.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
@@ -505,7 +526,22 @@ export default function ExamSection({
             />
             <div className="space-y-3">
               {questions.map((q, i) => (
-                <PreviewCard key={i} index={i + 1} q={q} fix={imageSrc} />
+                <div
+                  key={i}
+                  ref={i === highlightIndex ? highlightRef : undefined}
+                  className={
+                    i === highlightIndex
+                      ? "rounded-2xl ring-2 ring-amber-400 ring-offset-2 ring-offset-[#080D1A]"
+                      : undefined
+                  }
+                >
+                  {i === highlightIndex && (
+                    <p className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-bold text-amber-300">
+                      Câu học sinh báo lỗi
+                    </p>
+                  )}
+                  <PreviewCard index={i + 1} q={q} fix={imageSrc} />
+                </div>
               ))}
             </div>
           </>
