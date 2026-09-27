@@ -42,7 +42,7 @@ function ReviewLoader() {
   if (data.questions.length === 0)
     return <p className="p-10 text-center text-slate-400">Đề này chưa có câu hỏi.</p>;
 
-  return <ReviewBoard data={data} />;
+  return <ReviewBoard data={data} examId={examId} classId={classId} />;
 }
 
 export default function ChuaBaiPage() {

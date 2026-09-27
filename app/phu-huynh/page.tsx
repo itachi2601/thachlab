@@ -9,6 +9,7 @@ import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
 import CatchupCard from "@/components/results/CatchupCard";
+import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
@@ -141,6 +142,9 @@ function ParentHome() {
         <p className="mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-sm text-amber-100/90">
           {selected.fullName} chưa được duyệt vào khối lớp nào trên thachlab, nên chưa có hạng trong lớp.
         </p>
+      )}
+      {selected.classId !== null && (
+        <ParentHomeworkNotes key={`homework-${selected.studentId}`} classId={selected.classId} studentId={selected.studentId} />
       )}
       <div className="mb-6">
         <CatchupCard key={`catchup-${selected.studentId}`} studentId={selected.studentId} classId={selected.classId} viewer="parent" />

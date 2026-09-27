@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Trash2, X } from "lucide-react";
+import { ClipboardCheck, Trash2, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { getSupabase } from "@/services/supabase";
@@ -12,6 +12,7 @@ import {
   type AnnouncementKind,
   type ClassAnnouncement,
 } from "@/services/announcements";
+import HomeworkCheckPanel from "@/components/dashboard/HomeworkCheckPanel";
 
 interface ExamOption {
   id: number;
@@ -97,6 +98,7 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
   const [draft, setDraft] = useState("");
   const [exam, setExam] = useState<ExamOption | null>(null);
   const [busy, setBusy] = useState(false);
+  const [checkingId, setCheckingId] = useState<number | null>(null);
 
   const load = useCallback(() => {
     fetchRecentAnnouncements(classId, kind)
@@ -180,6 +182,17 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
                   </p>
                 </div>
                 <div className="flex shrink-0 items-center gap-2">
+                  {kind === "homework" && (
+                    <button
+                      type="button"
+                      onClick={() => setCheckingId((current) => (current === item.id ? null : item.id))}
+                      aria-label="Chấm BTVN"
+                      title="Chấm % học sinh đã làm"
+                      className={checkingId === item.id ? "text-cyan-300" : "text-slate-500 hover:text-cyan-300"}
+                    >
+                      <ClipboardCheck size={14} />
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => remove(item.id)}
@@ -190,6 +203,11 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
                   </button>
                 </div>
               </div>
+              {kind === "homework" && checkingId === item.id && (
+                <div className="mt-3">
+                  <HomeworkCheckPanel announcementId={item.id} classId={classId} />
+                </div>
+              )}
             </div>
           ))
         )}

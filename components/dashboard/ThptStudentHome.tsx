@@ -55,6 +55,7 @@ import {
   type TutoringSlot,
 } from "@/services/tutoring";
 import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
+import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -142,6 +143,7 @@ export default function ThptStudentHome({
 
   const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
   const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
+  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
@@ -177,6 +179,7 @@ export default function ThptStudentHome({
     fetchRecentAnnouncements(classId, "homework" as AnnouncementKind, 5)
       .then(setHomeworkNotes)
       .catch(() => setHomeworkNotes([]));
+    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
   }
   useEffect(reloadAnnouncements, [classId]);
 
@@ -255,8 +258,10 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  const todoReviewHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
 
-  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+  const hasTodayContent =
+    Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || todoReviewHomework.length > 0;
 
   const dailySuggestion = todoExams.length > 0
     ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
@@ -383,6 +388,25 @@ export default function ThptStudentHome({
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
                   <small className="text-xs text-slate-500">Bài kiểm tra chưa làm</small>
+                </span>
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
+            </Link>
+          ))}
+
+          {todoReviewHomework.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 hover:bg-white/5"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <CalendarClock size={14} className="shrink-0 text-cyan-300" />
+                <span className="min-w-0">
+                  <strong className="block truncate text-sm text-white">{item.title}</strong>
+                  <small className="text-xs text-slate-500">
+                    BTVN ôn tập · {item.wrongCount} câu cả lớp hay sai + {item.bankCount} câu ôn lại
+                  </small>
                 </span>
               </span>
               <ChevronRight size={16} className="shrink-0 text-slate-500" />

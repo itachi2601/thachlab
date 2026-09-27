@@ -2,10 +2,16 @@
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
-import { Maximize, X, ZoomIn, ZoomOut } from "lucide-react";
+import { Maximize, NotebookPen, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
+import { useAuth } from "@/components/auth/AuthProvider";
+import { useToast } from "@/components/ui/Toast";
 import { QUESTION_FORM_LABELS, type ExamQuestion } from "@/features/exams/types";
+import type { Chapter } from "@/features/lessons/types";
 import type { ExamReviewData, ReviewQuestionStat } from "@/services/analytics";
+import { classGrade, fetchClasses } from "@/services/classes";
+import { createReviewHomework, findLessonBoundary, lessonIdsBefore, outcomeTopicIdsForLessons } from "@/services/homework";
+import { fetchChapters, fetchLessons, type LessonWithItemRefs } from "@/services/lessons";
 
 const ZOOM_MIN = 0.4;
 const ZOOM_MAX = 2;
@@ -27,12 +33,26 @@ function band(p: number | null) {
   return p >= 75 ? "easy" : p >= 50 ? "mid" : "hard";
 }
 
-export default function ReviewBoard({ data }: { data: ExamReviewData }) {
+export default function ReviewBoard({ data, examId, classId }: { data: ExamReviewData; examId: number; classId: number }) {
   const router = useRouter();
+  const { profile } = useAuth();
+  const toast = useToast();
   const [idx, setIdx] = useState(0);
   const [reveal, setReveal] = useState(0); // 0 none, 1 answer, 2 explanation
   const [onlyHard, setOnlyHard] = useState(false);
   const [zoom, setZoom] = useState(1);
+  const [catalog, setCatalog] = useState<{ grade: string | null; chapters: Chapter[]; lessons: LessonWithItemRefs[] } | null>(null);
+  const [creatingReview, setCreatingReview] = useState(false);
+  const [reviewCreated, setReviewCreated] = useState(false);
+
+  useEffect(() => {
+    Promise.all([fetchClasses(), fetchChapters(), fetchLessons()])
+      .then(([classes, chapters, lessons]) => {
+        const grade = classGrade(classes.find((c) => c.id === classId)?.name ?? "");
+        setCatalog({ grade, chapters, lessons });
+      })
+      .catch(() => setCatalog({ grade: null, chapters: [], lessons: [] }));
+  }, [classId]);
 
   const { questions, stats } = data;
   const q = questions[idx];
@@ -101,6 +121,40 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
   const p = pctOf(stat);
   const b = band(p);
 
+  async function createReview() {
+    if (!profile || !catalog) return;
+    const wrongQuestions = chips
+      .filter((c) => c.p !== null)
+      .slice(0, 10)
+      .map((c) => questions[c.i]);
+    if (wrongQuestions.length === 0) {
+      toast("error", "Chưa có lượt làm nào trong lớp để chọn câu sai nhiều nhất.");
+      return;
+    }
+    setCreatingReview(true);
+    try {
+      const boundary = findLessonBoundary(examId, catalog.lessons, catalog.chapters);
+      const lessonIds = boundary ? lessonIdsBefore(boundary.lessonId, catalog.lessons, catalog.chapters) : [];
+      const topicIds = catalog.grade ? await outcomeTopicIdsForLessons(catalog.grade, lessonIds) : [];
+      const result = await createReviewHomework({
+        classId,
+        sourceExamId: examId,
+        subjectCode: "vat-ly",
+        title: `BTVN ôn tập · ${data.examTitle}`,
+        wrongQuestions,
+        grade: catalog.grade ?? "",
+        topicIds,
+        createdBy: profile.id,
+      });
+      setReviewCreated(true);
+      toast("success", `Đã tạo BTVN ôn tập: ${wrongQuestions.length} câu sai + ${result.bankCount} câu ngân hàng.`);
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa tạo được BTVN ôn tập.");
+    } finally {
+      setCreatingReview(false);
+    }
+  }
+
   return (
     <div
       className={`review-board${reveal >= 1 ? " rb-revealed" : ""}`}
@@ -144,6 +198,14 @@ export default function ReviewBoard({ data }: { data: ExamReviewData }) {
             <ZoomIn size={16} />
           </button>
         </div>
+        <button
+          className="rb-btn"
+          onClick={createReview}
+          disabled={creatingReview || reviewCreated || !catalog}
+          title="Tạo đề BTVN từ 10 câu sai nhiều nhất + 20 câu ngân hàng"
+        >
+          <NotebookPen size={16} /> {reviewCreated ? "Đã tạo BTVN ôn tập" : creatingReview ? "Đang tạo…" : "Tạo BTVN ôn tập"}
+        </button>
         <button className="rb-btn" onClick={toggleFullscreen} title="Toàn màn hình (F)">
           <Maximize size={16} /> Toàn màn hình
         </button>
