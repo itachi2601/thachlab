@@ -46,26 +46,27 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
   luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Đã deploy 27/9/2026 — **chưa test
   UI thật bằng tài khoản có login**.
 
-## ĐANG CHỜ (chưa chạy production)
+**Không còn migration nào chờ.**
+
 - **Vá lỗ hổng phân quyền `/kiem-tra/lam`** (27/9/2026, phát hiện lúc test `perf5/test-exam-flow`)
   — học sinh đã đăng nhập có thể làm và NỘP bất kỳ đề `published` nào qua
   `/kiem-tra/lam?id=<id>` dù không thuộc lớp mình (URL chia sẻ / đoán id tăng dần), vì
   `RequireAuth` ở trang đó không kiểm tra lớp, và RLS `exams`/`exam_results`/
   `exam_question_results` cũ chỉ yêu cầu `published`/`student_id = auth.uid()`, không đối
   chiếu `exam_classes` ↔ `user_classes`. Đã sửa UI (`app/kiem-tra/lam/page.tsx`, chặn sớm +
-  báo "Đề này không thuộc lớp của em") và soạn migration
-  `supabase/migrations/20260927150000_exam_class_access.sql` — thêm 3 policy RLS
-  **restrictive** (AND với policy cũ, không đổi hành vi admin/instructor/tro_giang, không đổi
-  đề "toàn trường" không gán lớp — đúng logic `services/content.ts#visibleTo` đang dùng).
-  Chạy giờ nào cũng được, **không cần** ngoài giờ học sinh làm bài (chỉ siết thêm quyền, học
-  sinh đang làm đúng đề lớp mình không bị ảnh hưởng). Rollback:
+  báo "Đề này không thuộc lớp của em") + migration
+  `20260927150000_exam_class_access.sql` — thêm 3 policy RLS **restrictive** trên
+  `exams`/`exam_results`/`exam_question_results` (AND với policy cũ, không đổi hành vi
+  admin/instructor/tro_giang, không đổi đề "toàn trường" không gán lớp — đúng logic
+  `services/content.ts#visibleTo` đang dùng). **ĐÃ CHẠY production 27/9/2026** qua
+  `supabase db query --linked -f` (worktree không có `supabase link` nên chạy trực tiếp bằng
+  đường dẫn tuyệt đối tới file trong worktree, không qua `scripts/run-migrations.sh`) — đã soi
+  lại `pg_policies` xác nhận 3 policy restrictive lên đúng, không đụng 2 policy "parent reads…"
+  mới hơn (khác lệnh SELECT/INSERT nên không xung đột). Rollback nếu cần:
   `supabase db query --linked -f perf/rollback/20260927150000_exam_class_access.down.sql`.
-  Lệnh cho Thạch:
-  ```
-  bash scripts/run-migrations.sh
-  ```
-  Sau khi chạy: tự thử bằng 1 tài khoản học sinh — mở `/kiem-tra/lam?id=<id đề lớp khác>` phải
-  báo "không thuộc lớp", mở đúng đề lớp mình phải làm/nộp bình thường.
+  Code UI đã commit (nhánh `claude/cranky-colden-989171`, chưa merge/deploy) — **chưa tự kiểm
+  bằng tài khoản học sinh thật** (mở đề lớp khác phải báo "không thuộc lớp", mở đúng đề lớp mình
+  phải làm/nộp bình thường); merge + deploy để lên web thật.
 
 - **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — 2 migration
   `20260927130000_homework_check.sql` (bảng `class_homework_checks` + RPC
