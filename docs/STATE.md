@@ -49,11 +49,11 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
 **Không còn migration nào chờ.** Cột `lesson_items.summary_html` (Tóm tắt ý
 chính cần thuộc) ĐÃ chạy 27/9/2026 (`20260927120000_lesson_item_summary.sql`,
 log `scripts/logs/20260927-173722-*`, rollback
-`perf/rollback/20260927120000_lesson_item_summary.down.sql`). Code + UI đã deploy 27/9/2026 nhưng
-cột `summary_html` chưa có dữ liệu nên khối "📌 Tóm tắt ý chính" chưa hiện ở đâu cả. **Còn thiếu**:
-backfill nội dung bằng `npx tsx scripts/backfill-lesson-summary.mts [số bài tối
-đa]` (AI tự trích từ lý thuyết có sẵn, ghi thật ngay không dry-run — thử nhỏ
-trước), rồi `bash scripts/deploy.sh` lại để file tĩnh (`public/data/`) có nội dung mới.
+`perf/rollback/20260927120000_lesson_item_summary.down.sql`). Backfill đã xong: cả 81/81 mục
+`ly_thuyet` có `summary_html` (script `scripts/backfill-lesson-summary.mts` — không rõ ai chạy,
+kiểm tra thấy đã có dữ liệu sẵn khi thầy chạy lại 27/9 tối). Đã `bash scripts/deploy.sh` lại
+(file tĩnh `public/data/` đã có nội dung mới, 81/81 file có `summary_html`) — khối "📌 Tóm tắt ý
+chính" giờ lên web thật.
 
 ## Việc tay còn lại
 - [ ] **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — CODE ĐÃ
@@ -69,13 +69,14 @@ trước), rồi `bash scripts/deploy.sh` lại để file tĩnh (`public/data/`
   build/deploy các tính năng khác không bị vỡ do bảng chưa tồn tại. Việc còn lại: soạn 2
   file trên thành migration thật trong `supabase/migrations/`, chạy theo quy tắc
   AGENTS.md, rồi nối lại dây vào 4 file trên.
-- [ ] **Trang bài học: 6 mục thu gọn thành danh sách + Tóm tắt ý chính cần thuộc**
+- [x] **Trang bài học: 6 mục thu gọn thành danh sách + Tóm tắt ý chính cần thuộc**
   (27/9/2026) — `app/lop-hoc/bai/page.tsx`: cả 6 mục (Lý thuyết/Video/Bài tập mẫu/
   Luyện tập/BTVN/Kiểm tra) giờ hiện dạng danh sách thu gọn, bấm mục nào xổ mục đó
   (mặc định đóng hết, trừ khi có link "Ôn ngay" hoặc "Tiếp tục học" trỏ thẳng vào 1
   mục thì tự mở mục đó). Mỗi mục lý thuyết có thêm khối "📌 Tóm tắt ý chính cần
   thuộc" (nếu có `summary_html`) — tự thu gọn riêng, độc lập với nội dung đầy đủ.
-  Code đã deploy 27/9 (thu gọn danh sách đã lên web thật) — khối "📌 Tóm tắt ý chính" **chưa hiện
+  Code đã deploy 27/9, backfill 81/81 mục xong, đã deploy lại — **đã lên web thật**,
+  chưa tự kiểm bằng mắt trên trình duyệt thật.
   ở đâu cả vì `summary_html` chưa có dữ liệu**, chờ backfill (mục trên) rồi deploy lại.
 - [x] **Backfill RP cho Kiểm tra lớp 10/11/12** (27/9/2026) — thầy đã chạy
   `docs/supabase-recompute-rank-backfill-20260927.sql`. exam 224/12/205/206/219 đã lên RP đầy đủ (trong
