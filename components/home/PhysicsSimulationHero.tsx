@@ -8,8 +8,18 @@ import { SpringSimulation } from "@/components/physics/SpringSimulation";
 import { DisplacementChart } from "@/components/physics/DisplacementChart";
 import { ControlPanel } from "@/components/physics/ControlPanel";
 import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
+import type { ComponentProps } from "react";
 // Bảng công thức dùng framer-motion (~140 KB) và chỉ hiện khi bấm nút — tải chậm, lúc đóng vốn không render gì.
-const FormulaPanel = dynamic(() => import("@/components/physics/FormulaPanel").then((m) => m.FormulaPanel), { ssr: false, loading: () => null });
+const FormulaPanelLazy = dynamic(() => import("@/components/physics/FormulaPanel").then((m) => m.FormulaPanel), { ssr: false, loading: () => null });
+// Panel phụ, vốn đã trả null khi đóng — lỗi render thì cũng chỉ ẩn đi, không cần thông báo.
+function FormulaPanel(props: ComponentProps<typeof FormulaPanelLazy>) {
+  return (
+    <LazyErrorBoundary>
+      <FormulaPanelLazy {...props} />
+    </LazyErrorBoundary>
+  );
+}
 
 const FORMULAS = [
   "x = A·cos(ωt + φ)",

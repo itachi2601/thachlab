@@ -6,11 +6,21 @@ import ExamSection, { type ExamSectionSeed, type TopicGroup, compressRasterInput
 import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
 import { questionsMissingFigure } from "@/services/question-figures";
 import dynamic from "next/dynamic";
+import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
+import type { ComponentProps } from "react";
 // Xem trước ví dụ có lời giải kéo theo ContentHtml đồng bộ + KaTeX (~290 KB); chỉ tải khi có bài để xem.
-const WorkedQuestionsGrid = dynamic(() => import("@/components/lessons/WorkedQuestionsGrid"), {
+const WorkedQuestionsGridLazy = dynamic(() => import("@/components/lessons/WorkedQuestionsGrid"), {
   ssr: false,
   loading: () => <div className="min-h-[12rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />,
 });
+// Công cụ soạn bài của thầy — báo rõ khi lỗi thay vì im lặng ẩn phần xem trước.
+function WorkedQuestionsGrid(props: ComponentProps<typeof WorkedQuestionsGridLazy>) {
+  return (
+    <LazyErrorBoundary fallback={<LazyPanelFallback message="Không tải được phần xem trước bài tập mẫu." className="min-h-[12rem]" />}>
+      <WorkedQuestionsGridLazy {...props} />
+    </LazyErrorBoundary>
+  );
+}
 import { useToast } from "@/components/ui/Toast";
 import { auditQuestionTags, canonicalizeQuestionTopics, tagsComplete } from "@/features/exams/types";
 import type { SchoolClass, TagAudit } from "@/features/exams/types";

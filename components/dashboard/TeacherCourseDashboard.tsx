@@ -6,23 +6,41 @@ import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
 import { fetchCncLearningRecords, subscribeToCncLearningRecords, unsubscribeFromCncLearningRecords, type CncLearningRecord } from "@/services/cnc-learning-records";
 import dynamic from "next/dynamic";
+import type { ComponentProps, ComponentType } from "react";
+import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
 import { cncAssessmentProgress, completedCncLessons } from "@/services/cnc-progress";
 import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
 // chỉ còn khung + tab mở sẵn. Khung chờ giữ chiều cao tương đương một tab.
 const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />;
-const TeacherAttendancePanel = dynamic(() => import("@/components/attendance/TeacherAttendancePanel"), { loading: TabSkeleton });
-const TeacherCompetencyHub = dynamic(() => import("@/components/dashboard/TeacherCompetencyHub"), { loading: TabSkeleton });
-const TeacherOverview = dynamic(() => import("@/components/dashboard/TeacherOverview"), { loading: TabSkeleton });
-const TeacherProgressGradebook = dynamic(() => import("@/components/dashboard/TeacherProgressGradebook"), { loading: TabSkeleton });
-const TeacherFinalGradebook = dynamic(() => import("@/components/dashboard/TeacherFinalGradebook"), { loading: TabSkeleton });
-const TeacherStudentProfile = dynamic(() => import("@/components/dashboard/TeacherStudentProfile"), { loading: TabSkeleton });
-const CourseRosterPanel = dynamic(() => import("@/components/dashboard/CourseRosterPanel"), { loading: TabSkeleton });
-const HomeroomAttendancePanel = dynamic(() => import("@/components/dashboard/HomeroomAttendancePanel"), { loading: TabSkeleton });
-const HomeroomGradebook = dynamic(() => import("@/components/dashboard/HomeroomGradebook"), { loading: TabSkeleton });
-const HomeroomShcnPanel = dynamic(() => import("@/components/dashboard/HomeroomShcnPanel"), { loading: TabSkeleton });
-const CncMillingLiveMonitor = dynamic(() => import("@/components/admin/CncMillingLiveMonitor"), { ssr: false, loading: TabSkeleton });
+const TabError = () => <LazyPanelFallback />;
+
+// Mỗi tab bọc LazyErrorBoundary: lỗi render bên trong 1 tab (props bất ngờ, bug
+// component con...) chỉ hỏng đúng tab đó, không kéo sập cả dashboard đang mở dở
+// của giáo viên. Tên export giữ nguyên như cũ để không phải sửa chỗ dùng bên dưới.
+function lazyTab<P extends object>(loader: () => Promise<{ default: ComponentType<P> }>, ssr = true) {
+  const Inner = dynamic(loader, { loading: TabSkeleton, ssr });
+  return function LazyTab(props: ComponentProps<typeof Inner>) {
+    return (
+      <LazyErrorBoundary fallback={<TabError />}>
+        <Inner {...(props as P)} />
+      </LazyErrorBoundary>
+    );
+  };
+}
+
+const TeacherAttendancePanel = lazyTab(() => import("@/components/attendance/TeacherAttendancePanel"));
+const TeacherCompetencyHub = lazyTab(() => import("@/components/dashboard/TeacherCompetencyHub"));
+const TeacherOverview = lazyTab(() => import("@/components/dashboard/TeacherOverview"));
+const TeacherProgressGradebook = lazyTab(() => import("@/components/dashboard/TeacherProgressGradebook"));
+const TeacherFinalGradebook = lazyTab(() => import("@/components/dashboard/TeacherFinalGradebook"));
+const TeacherStudentProfile = lazyTab(() => import("@/components/dashboard/TeacherStudentProfile"));
+const CourseRosterPanel = lazyTab(() => import("@/components/dashboard/CourseRosterPanel"));
+const HomeroomAttendancePanel = lazyTab(() => import("@/components/dashboard/HomeroomAttendancePanel"));
+const HomeroomGradebook = lazyTab(() => import("@/components/dashboard/HomeroomGradebook"));
+const HomeroomShcnPanel = lazyTab(() => import("@/components/dashboard/HomeroomShcnPanel"));
+const CncMillingLiveMonitor = lazyTab(() => import("@/components/admin/CncMillingLiveMonitor"), false);
 import { SUBJECTS, getSubject, HOMEROOM_SUBJECT_CODE } from "@/services/subjects";
 import { useAuth } from "@/components/auth/AuthProvider";
 

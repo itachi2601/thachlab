@@ -7,21 +7,39 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
 import { fetchInstructorClasses } from "@/services/class-instructors";
 import dynamic from "next/dynamic";
+import type { ComponentProps, ComponentType } from "react";
+import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
 
 // Mỗi tab là một chunk riêng, chỉ tải khi thầy bấm vào — JS ban đầu của trang
 // chỉ còn khung + tab Tổng quan. Khung chờ giữ chiều cao tương đương một tab.
 const TabSkeleton = () => <div className="min-h-[24rem] animate-pulse rounded-2xl bg-white/5" aria-hidden />;
-const TeacherThptOverview = dynamic(() => import("@/components/dashboard/TeacherThptOverview"), { loading: TabSkeleton });
-const TeacherThptGradebook = dynamic(() => import("@/components/dashboard/TeacherThptGradebook"), { loading: TabSkeleton });
-const TeacherThptAnalysis = dynamic(() => import("@/components/dashboard/TeacherThptAnalysis"), { loading: TabSkeleton });
-const TeacherThptAlerts = dynamic(() => import("@/components/dashboard/TeacherThptAlerts"), { loading: TabSkeleton });
-const TeacherThptTutoring = dynamic(() => import("@/components/dashboard/TeacherThptTutoring"), { loading: TabSkeleton });
-const TeacherThptStudentProfile = dynamic(() => import("@/components/dashboard/TeacherThptStudentProfile"), { loading: TabSkeleton });
-const TeacherThptProgress = dynamic(() => import("@/components/dashboard/TeacherThptProgress"), { loading: TabSkeleton });
-const TeacherThptAttendancePanel = dynamic(() => import("@/components/attendance/TeacherThptAttendancePanel"), { loading: TabSkeleton });
-const ClassRosterImportPanel = dynamic(() => import("@/components/dashboard/ClassRosterImportPanel"), { loading: TabSkeleton });
-const ClassAnnouncementsPanel = dynamic(() => import("@/components/dashboard/ClassAnnouncementsPanel"), { loading: TabSkeleton });
-const TeacherThptEnrollment = dynamic(() => import("@/components/dashboard/TeacherThptEnrollment"), { loading: TabSkeleton });
+const TabError = () => <LazyPanelFallback />;
+
+// Mỗi tab bọc LazyErrorBoundary: lỗi render bên trong 1 tab chỉ hỏng đúng tab
+// đó, không kéo sập cả dashboard đang mở dở của giáo viên. Tên export giữ
+// nguyên như cũ để không phải sửa chỗ dùng bên dưới.
+function lazyTab<P extends object>(loader: () => Promise<{ default: ComponentType<P> }>) {
+  const Inner = dynamic(loader, { loading: TabSkeleton });
+  return function LazyTab(props: ComponentProps<typeof Inner>) {
+    return (
+      <LazyErrorBoundary fallback={<TabError />}>
+        <Inner {...(props as P)} />
+      </LazyErrorBoundary>
+    );
+  };
+}
+
+const TeacherThptOverview = lazyTab(() => import("@/components/dashboard/TeacherThptOverview"));
+const TeacherThptGradebook = lazyTab(() => import("@/components/dashboard/TeacherThptGradebook"));
+const TeacherThptAnalysis = lazyTab(() => import("@/components/dashboard/TeacherThptAnalysis"));
+const TeacherThptAlerts = lazyTab(() => import("@/components/dashboard/TeacherThptAlerts"));
+const TeacherThptTutoring = lazyTab(() => import("@/components/dashboard/TeacherThptTutoring"));
+const TeacherThptStudentProfile = lazyTab(() => import("@/components/dashboard/TeacherThptStudentProfile"));
+const TeacherThptProgress = lazyTab(() => import("@/components/dashboard/TeacherThptProgress"));
+const TeacherThptAttendancePanel = lazyTab(() => import("@/components/attendance/TeacherThptAttendancePanel"));
+const ClassRosterImportPanel = lazyTab(() => import("@/components/dashboard/ClassRosterImportPanel"));
+const ClassAnnouncementsPanel = lazyTab(() => import("@/components/dashboard/ClassAnnouncementsPanel"));
+const TeacherThptEnrollment = lazyTab(() => import("@/components/dashboard/TeacherThptEnrollment"));
 
 type DashboardTab =
   | "overview"

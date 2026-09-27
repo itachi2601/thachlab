@@ -43,9 +43,19 @@ import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAcco
 import MasteryBadge from "@/components/mastery/MasteryBadge";
 import { fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
 import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
+import type { ComponentProps } from "react";
 // Bảng ôn lỗi sai kéo theo QuestionCard + framer-motion (~140 KB); tách chunk riêng.
 // Panel vốn trả null khi chưa có dữ liệu nên lúc chờ cũng không hiện gì — không nhảy layout.
-const MistakeReviewPanel = dynamic(() => import("@/components/lessons/MistakeReviewPanel"), { ssr: false, loading: () => null });
+const MistakeReviewPanelLazy = dynamic(() => import("@/components/lessons/MistakeReviewPanel"), { ssr: false, loading: () => null });
+// Panel phụ, vốn đã trả null khi không có lỗi sai nào — lỗi render thì cũng chỉ ẩn đi.
+function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>) {
+  return (
+    <LazyErrorBoundary>
+      <MistakeReviewPanelLazy {...props} />
+    </LazyErrorBoundary>
+  );
+}
 import ClassRankGroups from "@/components/rank/ClassRankGroups";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";

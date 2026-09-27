@@ -1,6 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
+import type { ComponentProps } from "react";
 
 /**
  * Bản tải-chậm của ContentHtml cho khu quản trị / giáo viên / tin tức — nơi
@@ -11,7 +13,7 @@ import dynamic from "next/dynamic";
  * Trang bài học / làm đề / kết quả của học sinh vẫn dùng ContentHtml đồng bộ
  * để công thức hiện ngay cùng nội dung, không nhảy layout.
  */
-const ContentHtmlLazy = dynamic(() => import("@/components/exams/ContentHtml"), {
+const ContentHtmlLazyInner = dynamic(() => import("@/components/exams/ContentHtml"), {
   ssr: false,
   loading: () => (
     <span
@@ -20,5 +22,15 @@ const ContentHtmlLazy = dynamic(() => import("@/components/exams/ContentHtml"), 
     />
   ),
 });
+
+// Nội dung này chỉ là MỘT đoạn trong bài viết/câu hỏi lớn hơn — lỗi render thì
+// ẩn đúng đoạn đó (fallback null), không kéo sập cả bài viết/trang admin đang mở.
+function ContentHtmlLazy(props: ComponentProps<typeof ContentHtmlLazyInner>) {
+  return (
+    <LazyErrorBoundary>
+      <ContentHtmlLazyInner {...props} />
+    </LazyErrorBoundary>
+  );
+}
 
 export default ContentHtmlLazy;

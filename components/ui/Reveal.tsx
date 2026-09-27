@@ -12,13 +12,15 @@
  * nên không có nháy nội dung, không nhảy layout; khi chunk về, phần tử đang
  * trong khung nhìn sẽ hiện dần như trước.
  *
- * ErrorBoundary: nếu việc tải chunk RevealMotion lỗi (mất mạng, chunk 404…),
- * KHÔNG được kẹt ở fallback opacity:0 vĩnh viễn — học sinh sẽ tưởng nhầm
- * trang trắng/thiếu nội dung. Bắt lỗi rồi hiện thẳng nội dung ở trạng thái
- * cuối (opacity:1, không dịch), bỏ qua hiệu ứng, còn hơn ẩn mất nội dung.
+ * ErrorBoundary (LazyErrorBoundary, dùng chung — xem components/ui/LazyErrorBoundary.tsx):
+ * nếu việc tải chunk RevealMotion lỗi (mất mạng, chunk 404…), KHÔNG được kẹt ở
+ * fallback opacity:0 vĩnh viễn — học sinh sẽ tưởng nhầm trang trắng/thiếu nội
+ * dung. Bắt lỗi rồi hiện thẳng nội dung ở trạng thái cuối (opacity:1, không
+ * dịch), bỏ qua hiệu ứng, còn hơn ẩn mất nội dung.
  */
 
-import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 
 const RevealMotion = lazy(() => import("@/components/ui/RevealMotion"));
 
@@ -45,25 +47,6 @@ function PendingFallback({ children, className }: { children: ReactNode; classNa
   );
 }
 
-class RevealErrorBoundary extends Component<
-  { fallback: ReactNode; children: ReactNode },
-  { hasError: boolean }
-> {
-  state = { hasError: false };
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch() {
-    // Chunk tải lỗi (mất mạng, 404…) — không cần log gì thêm, fallback đã lo hiện nội dung.
-  }
-
-  render() {
-    return this.state.hasError ? this.props.fallback : this.props.children;
-  }
-}
-
 export function Reveal({
   children,
   delay = 0,
@@ -78,12 +61,12 @@ export function Reveal({
   const shownFallback = <div className={className}>{children}</div>;
 
   return (
-    <RevealErrorBoundary fallback={shownFallback}>
+    <LazyErrorBoundary fallback={shownFallback}>
       <Suspense fallback={<PendingFallback className={className}>{children}</PendingFallback>}>
         <RevealMotion delay={delay} className={className}>
           {children}
         </RevealMotion>
       </Suspense>
-    </RevealErrorBoundary>
+    </LazyErrorBoundary>
   );
 }
