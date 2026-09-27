@@ -96,3 +96,21 @@ export async function claimPasswordReset(code: string, newPassword: string): Pro
   if (error) throw await functionError(error, "Chưa đặt lại được mật khẩu.");
   return { studentName: (data as { studentName?: string } | null)?.studentName ?? "" };
 }
+
+/**
+ * Người dùng đã đăng nhập tự đổi mật khẩu — không cần Edge Function/service role vì
+ * auth.updateUser() chạy trên session hiện tại. Xác thực lại mật khẩu cũ bằng
+ * signInWithPassword trước (Supabase không có API "kiểm tra mật khẩu" riêng).
+ */
+export async function changeMyPassword(currentPassword: string, newPassword: string): Promise<void> {
+  const supabase = getSupabase();
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  const email = userData.user?.email;
+  if (userError || !email) throw new Error("Không xác định được tài khoản đang đăng nhập.");
+
+  const { error: signInError } = await supabase.auth.signInWithPassword({ email, password: currentPassword });
+  if (signInError) throw new Error("Mật khẩu hiện tại không đúng.");
+
+  const { error: updateError } = await supabase.auth.updateUser({ password: newPassword });
+  if (updateError) throw supabaseError(updateError, "Chưa đổi được mật khẩu.");
+}

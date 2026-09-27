@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, KeyRound, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
@@ -148,6 +148,13 @@ export default function Navbar() {
                       <ShieldCheck size={16} /> Quản trị
                     </Link>
                   )}
+                  <Link
+                    href="/tai-khoan/doi-mat-khau"
+                    onClick={() => setAccountMenuOpen(false)}
+                    className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                  >
+                    <KeyRound size={16} /> Đổi mật khẩu
+                  </Link>
                   <button
                     type="button"
                     onClick={() => { setAccountMenuOpen(false); void signOut().then(() => router.push("/")); }}
