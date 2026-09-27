@@ -14,8 +14,6 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20260927130000_homework_check.sql|Bảng class_homework_checks + RPC chấm % BTVN trên lớp, cộng RP|Chạy giờ nào cũng được, chưa có UI dùng tới"
-  "supabase/migrations/20260927140000_class_review_homework.sql|Bảng class_review_homework — gói BTVN ôn tập tự động sau chữa bài|Chạy giờ nào cũng được, chưa có UI dùng tới"
 )
 # ĐÃ CHẠY 26–27/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql
@@ -32,6 +30,10 @@ FILES=(
 #   20260927100000_class_announcement_exam.sql
 #   20260927110000_bug_report_question_link.sql
 #   20260927120000_lesson_item_summary.sql
+#   20260927130000_homework_check.sql
+#   20260927140000_class_review_homework.sql
+#   20260927150000_exam_class_access.sql (chạy trực tiếp bằng đường dẫn tuyệt đối,
+#     không qua script này vì worktree không có supabase link)
 
 AUTO=0; ONLY=""; LIST=0
 while [[ $# -gt 0 ]]; do
