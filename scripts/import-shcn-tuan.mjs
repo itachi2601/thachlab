@@ -54,8 +54,16 @@ const toDate = (value) => {
   const vn = value.trim().match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$/);
   return vn ? `${vn[3]}-${vn[2].padStart(2, "0")}-${vn[1].padStart(2, "0")}` : null;
 };
+// Vài file tuần ghi ngày/tháng/năm ở 3 field rời (ngay/thang/nam) thay vì 1 chuỗi ngày đầy đủ.
+const toDateParts = (ngay, thang, nam) => {
+  const d = toInt(ngay);
+  const m = toInt(thang);
+  const y = toInt(nam);
+  if (!d || !m || !y) return null;
+  return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+};
 const toStringList = (value) => {
-  if (Array.isArray(value)) return value.map((item) => (typeof item === "string" ? item : String(item?.tieu_de ?? ""))).map((item) => item.trim()).filter(Boolean);
+  if (Array.isArray(value)) return value.map((item) => (typeof item === "string" ? item : String(item?.tieu_de ?? item?.tieuDe ?? ""))).map((item) => item.trim()).filter(Boolean);
   if (typeof value === "string") return value.split(/[;\n]/).map((item) => item.trim()).filter(Boolean);
   return [];
 };
@@ -64,8 +72,11 @@ const toAnnouncements = (value) => {
   return value
     .map((item) => {
       if (typeof item === "string") return { tieu_de: item.trim() };
-      const title = String(pick(item, ["tieu_de", "tieu_de_ngan", "noi_dung", "ten", "title"]) ?? "").trim();
-      const note = String(pick(item, ["ghi_chu", "chi_tiet", "note"]) ?? "").trim();
+      const title = String(pick(item, ["tieu_de", "tieu_de_ngan", "noi_dung", "ten", "title", "tieuDe"]) ?? "").trim();
+      const noteRaw = pick(item, ["ghi_chu", "chi_tiet", "note", "y"]);
+      const note = Array.isArray(noteRaw)
+        ? noteRaw.map((entry) => String(entry).trim()).filter(Boolean).join("; ")
+        : String(noteRaw ?? "").trim();
       return note ? { tieu_de: title, ghi_chu: note } : { tieu_de: title };
     })
     .filter((item) => item.tieu_de)
@@ -78,12 +89,12 @@ function parseTuan(raw) {
   return {
     lopId: String(pick(raw, ["lop_id", "lop", "ma_lop", "class_label"]) ?? "").trim(),
     week_no: weekNo,
-    met_on: toDate(pick(raw, ["ngay_sinh_hoat", "ngay", "ngay_shcn", "date"])),
-    announcements: toAnnouncements(pick(raw, ["noi_dung_pho_bien", "noi_dung", "pho_bien", "muc"])),
-    ethics_topic: String(pick(raw, ["gdnn_chu_de", "chu_de", "gddd_chu_de"]) ?? "").trim(),
-    ethics_taught: toStringList(pick(raw, ["gdnn_da_day", "da_day", "gddd_da_day", "trong_tam"])),
-    headcount: toInt(pick(raw, ["si_so", "siso", "tong_so"])),
-    present_count: toInt(pick(raw, ["co_mat", "comat", "hien_dien"])),
+    met_on: toDateParts(raw.ngay, raw.thang, raw.nam) ?? toDate(pick(raw, ["ngay_sinh_hoat", "ngay", "ngay_shcn", "date"])),
+    announcements: toAnnouncements(pick(raw, ["noi_dung_pho_bien", "noi_dung", "noiDung", "pho_bien", "muc"])),
+    ethics_topic: String(pick(raw, ["gdnn_chu_de", "chu_de", "gddd_chu_de", "chuDe"]) ?? "").trim(),
+    ethics_taught: toStringList(pick(raw, ["gdnn_da_day", "da_day", "gddd_da_day", "trong_tam", "gdddNoiDung"])),
+    headcount: toInt(pick(raw, ["si_so", "siso", "siSo", "tong_so"])),
+    present_count: toInt(pick(raw, ["co_mat", "comat", "coMat", "hien_dien"])),
   };
 }
 
