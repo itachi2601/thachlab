@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type ComponentProps } from "react";
+import dynamic from "next/dynamic";
 import { RefreshCw } from "lucide-react";
 import Badge from "@/components/ui/Badge";
-import TopicPracticeModal from "@/components/mastery/TopicPracticeModal";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import {
   MASTERY_ICON,
   MASTERY_LABEL,
@@ -14,6 +15,43 @@ import {
   type LessonMastery,
   type TopicMastery,
 } from "@/services/mastery";
+
+// Modal "Luyện 10 câu phần này" kéo theo QuestionCard + logic chấm/lưu phiên luyện tập; chỉ hiện
+// khi bấm nút bên dưới (practiceTopic khác null) — tách chunk riêng, không nằm trong JS ban đầu
+// của trang bài học (đợt tối ưu tốc độ lần 4, perf4/RESULT.md).
+const TopicPracticeModalLazy = dynamic(() => import("@/components/mastery/TopicPracticeModal"), {
+  ssr: false,
+  loading: () => null,
+});
+
+// LazyErrorBoundary: modal luyện thêm, không phải luồng nộp bài chính — nếu chunk lỗi, hiện một
+// thông báo nhỏ có nút "Đóng" (dùng onClose sẵn có) thay vì im lặng không phản hồi khi học sinh
+// vừa bấm nút, hoặc để lỗi thoát lên tới app/error.tsx làm hỏng cả trang bài học đang xem dở.
+function TopicPracticeModal(props: ComponentProps<typeof TopicPracticeModalLazy>) {
+  return (
+    <LazyErrorBoundary
+      fallback={
+        <div
+          role="alertdialog"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+        >
+          <div className="max-w-sm rounded-2xl border border-white/10 bg-panel p-5 text-center text-sm text-slate-300">
+            <p>Không tải được phần luyện tập (có thể do mạng chập chờn). Thử tải lại trang.</p>
+            <button
+              type="button"
+              onClick={props.onClose}
+              className="mt-3 rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white hover:border-white/30"
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      }
+    >
+      <TopicPracticeModalLazy {...props} />
+    </LazyErrorBoundary>
+  );
+}
 
 /**
  * Thẻ nhãn mastery từng YCCĐ của bài — hiện cuối trang bài học (app/lop-hoc/bai/page.tsx), gần

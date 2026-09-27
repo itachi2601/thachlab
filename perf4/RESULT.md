@@ -1,5 +1,159 @@
 # RESULT4 — đợt tối ưu tốc độ lần 4 (27/9/2026)
 
+## ĐỢT SAU (27/9/2026, cùng ngày) — Đưa cơ chế chống crash lên main + redo Việc 1 an toàn, có boundary
+
+Tiếp nối phần "⚠ CẬP NHẬT" ngay bên dưới: 2 phiên Claude Code khác (worktree
+`quizzical-gauss-065911` và `angry-curie-528414`) đã độc lập dựng một cơ chế chống crash trắng
+chung cho toàn app (`components/ui/LazyErrorBoundary.tsx` + `app/error.tsx` — route-level error
+boundary của Next App Router) và áp nó vào các chỗ `next/dynamic`/`React.lazy` có sẵn
+(`Reveal.tsx`, `QuestionSlide.tsx`, `PhysicsSimulationHero.tsx`, `ContentHtmlLazy.tsx`,
+`app/lop-hoc/page.tsx`, `LessonImporter.tsx`, `TeacherCourseDashboard.tsx`,
+`TeacherThptDashboard.tsx`). Đợt này (phiên thứ 3) mang cơ chế đó lên `main`, rồi redo lại đúng
+Việc 1 đã bị revert ở trên — lần này MỖI chunk mới tách đều bọc thêm `LazyErrorBoundary` cục bộ.
+
+### Đưa cơ chế chống crash lên main
+
+- Copy nguyên văn `components/ui/LazyErrorBoundary.tsx` (dùng bản của `angry-curie-528414` —
+  superset, có thêm `LazyPanelFallback` và `fallback` optional, cần cho các file
+  `LessonImporter.tsx`/`TeacherCourseDashboard.tsx`/`TeacherThptDashboard.tsx`) và `app/error.tsx`
+  (từ `quizzical-gauss-065911`).
+- Áp diff `Reveal.tsx`, `QuestionSlide.tsx` (từ `quizzical-gauss-065911`) và
+  `PhysicsSimulationHero.tsx`, `ContentHtmlLazy.tsx`, `app/lop-hoc/page.tsx`,
+  `LessonImporter.tsx`, `TeacherCourseDashboard.tsx` (từ `angry-curie-528414`) — cả 2 worktree
+  sửa `PhysicsSimulationHero.tsx` khác nhau (1 bên bọc trực tiếp tại nơi dùng, 1 bên tách hàm
+  wrapper riêng), dùng đúng bản `angry-curie-528414` theo đúng chỉ dẫn (mới hơn, cùng gốc
+  `063a97a4`).
+- **Lệch so với danh sách gốc được giao**: `angry-curie-528414` còn sửa thêm
+  `components/dashboard/TeacherThptDashboard.tsx` theo đúng khuôn `lazyTab` helper — file này
+  KHÔNG có trong danh sách 5 file được liệt kê ban đầu, nhưng cùng rủi ro (tab dashboard giáo
+  viên dùng `next/dynamic` không bọc boundary) và là code thật có sẵn trong worktree, không phải
+  tự viết thêm — đã áp luôn cho nhất quán, báo cáo rõ ở đây để thầy xác nhận/undo nếu không muốn.
+- Bỏ qua hunk `ExamDoneView.tsx`/`QuestionSlide.tsx` (phần liên quan `examId`) đúng theo chỉ dẫn:
+  `ExamDoneView.tsx` không tồn tại trên `main` (đã xoá khi revert `063a97a4`), tạo lại từ đầu ở
+  phần Việc 2 bên dưới, dựa trên nội dung THẬT trên `main` (không phải bản cũ trong worktree, vì
+  `ExamReviewPager.tsx` trên `main` hiện có thêm `examId`/`ReportQuestionButton` — WIP của một
+  phiên khác — nhưng `ExamRunner.tsx` hiện tại CHƯA truyền `examId` vào lời gọi đó, nên
+  `ExamDoneView.tsx` mới tạo cũng KHÔNG thêm `examId` để giữ đúng hành vi hiện tại, không tự ý
+  đổi thêm).
+
+### Hồi quy bắt buộc (Việc 1 bước 6) — xoá thử chunk RevealMotion
+
+Build sạch, `npx serve out` (cổng riêng `48173` qua `.claude/launch.json` tạm, không commit), xác
+định đúng 2 bản chunk RevealMotion (`grep "prefers-reduced-motion"`, khớp `module 69790` — đúng
+số hiệu `perf2/RESULT.md`/`perf4/RESULT.md` §6 đã ghi từ trước) — trang chủ dùng nhiều `<Reveal>`
+nên có 2 bản chunk trùng nội dung (Turbopack không dedupe chunk `next/dynamic`/`React.lazy` giữa
+các "async boundary" khác nhau). Xoá cả 2, mở tab HOÀN TOÀN MỚI, vào `/`:
+
+**Kết quả: KHÔNG crash trắng, KHÔNG cần tới `app/error.tsx`** — `LazyErrorBoundary` cục bộ trong
+`Reveal.tsx` bắt được `ChunkLoadError` (console: `Failed to load chunk ... from module 69790` +
+bản còn lại `module 12036`, đúng cặp chunk vừa xoá), toàn trang hiện đầy đủ nội dung ở trạng thái
+cuối (không hiệu ứng, đúng thiết kế `shownFallback` của `Reveal.tsx`) — về mặt hình ảnh không
+phân biệt được với lúc chunk tải thành công. Xác nhận lại bằng `get_page_text`: không có dòng
+"Có lỗi xảy ra"/"Trang tải chưa xong" nào của `app/error.tsx`.
+
+**Lưu ý khác với ghi chú trong chính `components/ui/LazyErrorBoundary.tsx`** (mục "GIỚI HẠN", viết
+bởi phiên `angry-curie-528414`): file đó ghi rằng RevealMotion là "một trường hợp KHÔNG bắt được"
+cục bộ (phải rơi xuống `app/error.tsx`) vì dùng `React.lazy()` + render ngay trong lần hydrate
+đầu. Thực nghiệm của phiên này (build sạch riêng, xoá đúng 2 file chunk, tab mới) lại cho kết quả
+NGƯỢC LẠI — bắt được cục bộ, không cần `app/error.tsx`. Không sửa lại comment đó (file được yêu
+cầu copy nguyên văn, không tự ý đổi), chỉ ghi nhận lệch pha ở đây — có thể do khác biệt thời điểm
+build/thời điểm lỗi xảy ra trong tiến trình hydrate giữa 2 lần thử; DÙ SAO kết quả thực tế vẫn là
+điều tốt hơn mong đợi (không crash, không cần lưới cuối), không phải vấn đề cần sửa gấp, nhưng
+thầy nên biết ghi chú "GIỚI HẠN" đó chưa chắc còn đúng 100%.
+
+Build sạch: OK · `npx tsc --noEmit`: 0 lỗi · `npm run lint` (đo cô lập, stash đúng 13 file Việc 1
++ file mới, so với gốc `063a97a4`): **8025 problems (175 errors, 7850 warnings)** cả trước lẫn
+sau — không tăng.
+
+### Việc 2 — redo tách JS có boundary
+
+Dựa đúng cách tách của commit cũ `6e9d07b3` (`git show 6e9d07b3 -- <file>` để lấy diff/nội dung
+tham khảo — đã xác nhận áp `git apply` sạch lên `main` hiện tại nhờ 3 file nguồn
+(`ExamRunner.tsx`, `PracticeSession.tsx`, `LessonMasteryCard.tsx`) chưa bị phiên nào khác đụng
+tới kể từ đó), rồi bọc thêm `LazyErrorBoundary` quanh mỗi chunk mới (khác biệt so với đợt cũ):
+
+| File mới | Bọc boundary | Fallback |
+|---|---|---|
+| `components/exams/ExamDoneView.tsx` | Trong `ExamRunner.tsx`, hàm `ExamDoneView` bọc `ExamDoneViewLazy` | "Điểm của em đã được lưu, nhưng trang không hiện được phần xem lại..." + nút Tải lại trang |
+| `components/lessons/PracticeRunningView.tsx` | Trong `PracticeSession.tsx` | "Không tải được phần làm bài... Thử tải lại trang." (chưa nộp, chưa có gì để mất) |
+| `components/lessons/PracticeDoneView.tsx` | Trong `PracticeSession.tsx` | "Kết quả luyện tập của em đã được lưu, nhưng trang không hiện được phần xem lại..." |
+| — (đổi `TopicPracticeModal` sang `next/dynamic`) | Trong `LessonMasteryCard.tsx` | Modal nhỏ có nút "Đóng" (dùng lại `onClose` sẵn có) |
+
+**Xác nhận an toàn dữ liệu (đọc code, không đoán)**:
+- `ExamRunner.tsx`: `submit()` (dòng ~209) gọi `setPhase("done")` RỒI `save()` ngay trong CÙNG một
+  callback — `save()` (ghi `exam_results`/`exam_question_results`, `finishExamAttempt`) chạy
+  ĐỘC LẬP hoàn toàn với việc chunk `ExamDoneView` tải được hay không. An toàn để fallback báo
+  "điểm đã lưu".
+- `PracticeSession.tsx`: `submit()` cùng cấu trúc — `setPhase("done")` rồi `save(used, timedOut)`
+  ngay trong cùng callback, độc lập với `PracticeDoneView`. An toàn để fallback báo "kết quả đã
+  lưu". `PracticeRunningView` thì ngược lại — bài này KHÔNG có autosave định kỳ như
+  `ExamRunner.tsx` (không có `exam_attempts`-style interval), nên nếu chunk này lỗi thì đúng là
+  chưa có gì được lưu — fallback KHÔNG khẳng định gì về dữ liệu, đúng thực tế.
+
+**Đo KB** (`perf/chunks-report.mjs` + script liệt kê chunk theo trang, đo TRÊN CHÍNH working tree
+hiện tại — trước/sau đều có sẵn Việc 1 + toàn bộ WIP khác trong repo, để so sánh công bằng thay vì
+dùng số liệu `BASELINE.md` cũ đã lệch pha do WIP song song từ 27/9 tới nay):
+
+| Trang | Trước Việc 2 (KB) | Sau Việc 2 (KB) | Đạt <1000 KB? |
+|---|---:|---:|---|
+| `/kiem-tra/lam` | 1029,1 (15 chunk) | **999,8** (15 chunk) | **ĐẠT** (giảm 29,3 KB) |
+| `/lop-hoc/bai` | 1041,1 (16 chunk) | **1036,8–1037,5** (16 chunk, dao động nhẹ theo hash build) | **KHÔNG** (giảm ~4 KB) |
+
+Kết luận `/lop-hoc/bai` giống hệt đợt cũ đã revert: phần dư là `QuestionCard.tsx` qua
+`SampleQuestionsGrid.tsx` (mục "Bài tập mẫu", nội dung chính hiển thị ngay) — KHÔNG động tới theo
+đúng phạm vi. Số liệu tuyệt đối cao hơn khoảng 2–3 KB so với `perf4/BASELINE.md` gốc (27/9 sáng)
+do (a) mã `LazyErrorBoundary` mới thêm vào mỗi chunk, và (b) WIP khác của các phiên song song
+trong cùng working tree ảnh hưởng nhẹ tới các chunk nền dùng chung.
+
+Build sạch + `npx tsc --noEmit` (0 lỗi) + `npm run lint` sau khi thêm cả Việc 2: **8025 problems
+(175 errors, 7850 warnings)** — không tăng so với gốc, đo ngay sau khi tạo xong 3 file mới, trước
+khi phiên khác kịp sửa gì thêm. (Lần đo `npm run lint` cuối cùng trước khi commit cho ra
+8028 — nhưng đối chiếu từng file xác nhận +3 đó đến từ `app/lop-hoc/bai/page.tsx`, một file
+KHÔNG nằm trong bất kỳ thay đổi nào của phiên này, bị một phiên song song khác sửa ngay TRONG
+LÚC phiên này đang chạy — đúng rủi ro "repo dùng chung" đã được cảnh báo trước; không phải lỗi
+do Việc 1/Việc 2.)
+
+### Test xoá-chunk cho từng chunk mới (Việc 2) — bắt buộc, đây là phần đợt trước thiếu
+
+Không tạo tài khoản học sinh thật trong production (đúng tiền lệ các đợt trước) nên không lái
+được luồng thật (đăng nhập → làm bài → nộp) để chạm đúng 4 màn hình này. Thay vào đó dựng một
+trang test TẠM (`app/test-chunk-boundary/page.tsx`, đã XOÁ trước khi commit, không có trong diff)
+gọi ĐÚNG nguyên văn `next/dynamic(() => import("@/components/..."))` + `LazyErrorBoundary` y hệt
+cách các file thật đang dùng, với props giả tối thiểu hợp lệ (không gọi mạng — `examIds: []`,
+`topic: ""` để tránh side-effect Supabase) — cùng cơ chế, khác chunk file (Turbopack tạo chunk
+riêng theo route nên chunk qua trang test có hash khác chunk thật của `/kiem-tra/lam`, nhưng cùng
+bytecode/cùng cách bọc). Baseline (chunk còn nguyên) cho cả 4 đều render đúng, 0 lỗi console. Sau
+đó xoá từng chunk một, mở tab HOÀN TOÀN MỚI mỗi lần:
+
+| Chunk mới | Kết quả xoá | Console |
+|---|---|---|
+| `ExamDoneView` | **Bắt cục bộ** — hiện đúng fallback "Điểm của em đã được lưu...", trang vẫn dùng được (test click nút khác vẫn phản hồi) | `ChunkLoadError ... from module 27992` |
+| `PracticeRunningView` | **Bắt cục bộ** — fallback "Không tải được phần làm bài..." | `ChunkLoadError ... from module 18409` |
+| `PracticeDoneView` | **Bắt cục bộ** — fallback "Kết quả luyện tập... đã được lưu..." | `ChunkLoadError ... from module 61210` |
+| `TopicPracticeModal` | **Bắt cục bộ** — fallback modal nhỏ có nút Đóng | `ChunkLoadError ... from module 33036` |
+
+Cả 4/4 đều bắt được CỤC BỘ (tốt hơn mức tối thiểu yêu cầu — không chunk nào phải rơi xuống
+`app/error.tsx`), không có trường hợp nào crash trắng.
+
+### Smoke test + dọn dẹp
+
+`npx serve out` (cổng `48173`) + tab mới: `/lop-hoc/bai/?id=49` (hiện đúng bài học, lý thuyết +
+hình vẽ, 0 lỗi console), `/kiem-tra/lam/?id=118` (đúng màn "Em cần đăng nhập...", 0 lỗi console).
+`.claude/launch.json` (thêm tạm config `thachlab-serve-out` để test) đã `git checkout` phục hồi
+nguyên trạng, KHÔNG nằm trong commit. `scripts/deploy.sh`/khối `.htaccess` cache ảnh: không đụng
+tới trong đợt này.
+
+### Việc cần thầy quyết / lưu ý thêm
+
+1. Đã tự ý áp thêm diff `TeacherThptDashboard.tsx` (ngoài danh sách gốc) — xem mục "Lệch so với
+   danh sách gốc" ở trên, cần thầy xác nhận giữ hay revert riêng file này.
+2. Ghi chú "GIỚI HẠN" trong `components/ui/LazyErrorBoundary.tsx` (RevealMotion không bắt được
+   cục bộ) có thể đã lỗi thời — thực nghiệm đợt này cho kết quả ngược lại (bắt được). Không tự
+   sửa comment (file được yêu cầu copy nguyên văn của phiên khác), nhưng nên có phiên sau kiểm
+   lại kỹ hơn (nhiều lần, nhiều điều kiện mạng) trước khi khẳng định chắc chắn.
+3. `/lop-hoc/bai` vẫn CHƯA đạt <1000 KB — giống hệt kết luận đợt trước, cần quyết định có tách
+   `SampleQuestionsGrid` (đổi UX, có thể chớp nháy loading) hay chấp nhận ~1037 KB.
+
 ## ⚠ CẬP NHẬT SAU KHI VIẾT BÁO CÁO — Việc 1 ĐÃ REVERT, KHÔNG deploy
 
 Một phiên Claude Code khác chạy song song (`perf/round4-katex-framer-split`, commit `7193ebc6`)
