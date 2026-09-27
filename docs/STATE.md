@@ -46,22 +46,19 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
   luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Đã deploy 27/9/2026 — **chưa test
   UI thật bằng tài khoản có login**.
 
-## ĐANG CHỜ
-- [ ] **2 migration BTVN** (27/9/2026) — `supabase/migrations/20260927130000_homework_check.sql`
-  (bảng `class_homework_checks` + RPC `homework_check_set`, cộng RP) và
-  `supabase/migrations/20260927140000_class_review_homework.sql` (bảng
-  `class_review_homework`). Đã nối dây lại đủ 4 chỗ: `ClassAnnouncementsPanel.tsx`
-  (nút chấm BTVN cạnh mỗi thông báo), `app/phu-huynh/page.tsx` (ParentHomeworkNotes),
-  `ThptStudentHome.tsx` (mục "Việc cần làm hôm nay"), `ReviewBoard.tsx` (nút "Tạo BTVN
-  ôn tập"). `npm run build` + `tsc --noEmit` sạch, đã tự kiểm 2 trang /phu-huynh và
-  /dashboard-thpt/chua-bai trên trình duyệt (chưa đăng nhập) không lỗi console — CHƯA
-  test đăng nhập thật vì bảng chưa tồn tại trên production. Lệnh chạy:
-  `bash scripts/run-migrations.sh`. Chạy giờ nào cũng được (không đụng bảng nóng của
-  học sinh đang học). Sau khi chạy xong, `bash scripts/deploy.sh` để đưa UI đã nối dây
-  lên web thật — **đừng deploy trước khi migration chạy xong**, vì 4 chỗ trên sẽ gọi
-  bảng chưa tồn tại.
+**Không còn migration nào chờ.**
 
-**Không còn migration nào chờ khác.** Cột `lesson_items.summary_html` (Tóm tắt ý
+- **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — 2 migration
+  `20260927130000_homework_check.sql` (bảng `class_homework_checks` + RPC
+  `homework_check_set`, cộng RP) và `20260927140000_class_review_homework.sql` (bảng
+  `class_review_homework`) ĐÃ CHẠY (log `scripts/logs/20260927-182457-*`, rollback ở
+  `perf/rollback/`). Đã nối dây đủ 4 chỗ: `ClassAnnouncementsPanel.tsx` (nút chấm BTVN
+  cạnh mỗi thông báo), `app/phu-huynh/page.tsx` (ParentHomeworkNotes), `ThptStudentHome.tsx`
+  (mục "Việc cần làm hôm nay"), `ReviewBoard.tsx` (nút "Tạo BTVN ôn tập"). Đã
+  `bash scripts/deploy.sh` — **đã lên web thật** (commit dd9bd74e). Chưa tự kiểm bằng
+  tài khoản đăng nhập thật (chấm 1 BTVN, xem trang phụ huynh, bấm "Tạo BTVN ôn tập").
+
+Cột `lesson_items.summary_html` (Tóm tắt ý
 chính cần thuộc) ĐÃ chạy 27/9/2026 (`20260927120000_lesson_item_summary.sql`,
 log `scripts/logs/20260927-173722-*`, rollback
 `perf/rollback/20260927120000_lesson_item_summary.down.sql`). Backfill đã xong: cả 81/81 mục
@@ -71,8 +68,6 @@ kiểm tra thấy đã có dữ liệu sẵn khi thầy chạy lại 27/9 tối)
 chính" giờ lên web thật.
 
 ## Việc tay còn lại
-- [x] **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — đã nối dây
-  lại đủ 4 chỗ, xem mục "ĐANG CHỜ" ở trên — chỉ còn thiếu bước chạy migration + deploy.
 - [x] **Trang bài học: 6 mục thu gọn thành danh sách + Tóm tắt ý chính cần thuộc**
   (27/9/2026) — `app/lop-hoc/bai/page.tsx`: cả 6 mục (Lý thuyết/Video/Bài tập mẫu/
   Luyện tập/BTVN/Kiểm tra) giờ hiện dạng danh sách thu gọn, bấm mục nào xổ mục đó
