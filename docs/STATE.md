@@ -25,12 +25,11 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
-- **Mã danh hiệu đang đeo trong RPC lớp** (28/9/2026, tính năng "đeo danh hiệu dưới tên + khung sưu tập
-  huy hiệu", xem `docs/rank-title-showcase-design.md`): `rank_class_groups` trả thêm `title.code`,
-  `rank_class_board` trả thêm `top_week[].title` → chip bạn cùng lớp và top tuần hiện logo huy hiệu.
-  Client chấp nhận cả dạng cũ (chưa chạy migration thì chỉ thiếu logo ở 2 chỗ này). Migration:
-  `supabase/migrations/20260928130000_rank_title_code_in_class_rpcs.sql`
-  (rollback `perf/rollback/20260928130000_rank_title_code_in_class_rpcs.down.sql`).
+- **Xoá bảng backup tạm `question_bank_backup_20260925`** (28/9/2026, đợt rà hạn mức Supabase Free):
+  bảng chụp trước khi gộp câu trùng 25/9, không code nào đọc, chiếm ~13 MB (≈12% hạn mức 500 MB).
+  Migration: `supabase/migrations/20260928150000_drop_question_bank_backup.sql`
+  (rollback `perf/rollback/20260928150000_drop_question_bank_backup.down.sql` — chỉ tạo bản chụp mới,
+  không khôi phục được dữ liệu cũ). Chạy giờ nào cũng được.
 
 ## Migration — ĐÃ CHẠY XONG (27/09/2026, 07:32)
 Cả 8 file trong `supabase/migrations/` đã chạy lên production qua `bash scripts/run-migrations.sh`:
@@ -54,7 +53,25 @@ fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/
   luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Đã deploy 27/9/2026 — **chưa test
   UI thật bằng tài khoản có login**.
 
-**Không còn migration nào chờ.**
+## Migration — ĐÃ CHẠY 28/9/2026 10:42 (thầy chạy qua scripts/run-migrations.sh, log scripts/logs/20260928-104205-*)
+- **Mã danh hiệu đang đeo trong RPC lớp** (28/9/2026, tính năng "đeo danh hiệu dưới tên + khung sưu tập
+  huy hiệu", xem `docs/rank-title-showcase-design.md`): `rank_class_groups` trả thêm `title.code`,
+  `rank_class_board` trả thêm `top_week[].title` → chip bạn cùng lớp và top tuần hiện logo huy hiệu.
+  Client chấp nhận cả dạng cũ. ĐÃ CHẠY 28/9 10:42. Migration:
+  `supabase/migrations/20260928130000_rank_title_code_in_class_rpcs.sql`
+  (rollback `perf/rollback/20260928130000_rank_title_code_in_class_rpcs.down.sql`).
+
+- **3 mức danh hiệu chuyên môn khớp độ khó câu hỏi** (28/9/2026, theo yêu cầu thầy): Thức Tỉnh cần
+  đủ số câu Dễ giải đúng, Làm Chủ cần đủ số câu Trung bình, Huyền Thoại cần đủ số câu Khó (bỏ điều
+  kiện % chính xác + đề thử thách riêng cũ), tính trên mọi lượt làm đề + luyện tập. Thêm cột
+  `difficulty` vào `exam_question_results`/`practice_question_results` (backfill dữ liệu cũ từ
+  `exams.questions`), cột `min_de`/`min_tb`/`min_kho` vào `rank_titles`. Code (services/rank.ts,
+  features/rank/types.ts, components/rank/TitleCollection.tsx, components/admin/RankAdmin.tsx,
+  features/rank/preview.ts, services/lessons.ts, features/exams/types.ts) đã commit + deploy 28/9/2026.
+  Migration: `supabase/migrations/20260928100000_rank_specialist_difficulty.sql`
+  (rollback `perf/rollback/20260928100000_rank_specialist_difficulty.down.sql`). Chạy xong thì chạy
+  tiếp `docs/supabase-recompute-rank-titles-20260928.sql` để xét lại danh hiệu cho HS đã đủ điều
+  kiện theo logic mới. → ĐÃ CHẠY 28/9 ~10:50 (rank_recompute_season(4) + (5); CLI chỉ in kết quả lệnh cuối: 42 HS mùa 5).
 
 - **Vá lỗ hổng phân quyền `/kiem-tra/lam`** (27/9/2026, phát hiện lúc test `perf5/test-exam-flow`)
   — học sinh đã đăng nhập có thể làm và NỘP bất kỳ đề `published` nào qua

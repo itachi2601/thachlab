@@ -85,14 +85,14 @@ export function unlockTitles(real: RankTitle[]): RankTitle[] {
         ? { don: daysAgo(20 - (i % 15)) }
         : { thuc_tinh: daysAgo(24 - (i % 10)), lam_chu: daysAgo(14 - (i % 8)), huyen_thoai: daysAgo(4 - (i % 4)) };
     let progress = t.progress;
-    if (progress && "min_questions" in progress) {
+    if (progress && "de_need" in progress) {
       progress = {
         ...progress,
-        n: Math.max(progress.n, progress.min_questions * 2),
-        correct: Math.max(progress.correct, progress.min_questions * 2),
-        acc: 100,
-        covered: progress.total_topics,
-        legend_best: 100,
+        n: Math.max(progress.n, progress.kho_need * 2),
+        correct: Math.max(progress.correct, progress.kho_need * 2),
+        de_correct: Math.max(progress.de_correct, progress.de_need),
+        tb_correct: Math.max(progress.tb_correct, progress.tb_need),
+        kho_correct: Math.max(progress.kho_correct, progress.kho_need),
       };
     } else if (progress && "required" in progress) {
       progress = { ...progress, met: progress.required };

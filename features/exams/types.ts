@@ -202,6 +202,7 @@ export interface QuestionResultRow {
   earned: number;
   max: number;
   is_correct: boolean;
+  difficulty: Difficulty;
 }
 
 export function buildQuestionResults(
@@ -221,6 +222,7 @@ export function buildQuestionResults(
       earned: g.earned,
       max: g.max,
       is_correct: g.max > 0 && g.earned === g.max,
+      difficulty: q.difficulty ?? "",
     };
   });
 }

@@ -483,6 +483,7 @@ export async function savePracticeSession(input: PracticeSessionInput): Promise<
       earned: r.earned,
       max: r.max,
       is_correct: r.is_correct,
+      difficulty: r.difficulty,
     }));
     await supabase.from("practice_question_results").insert(rows);
     return true;

@@ -680,7 +680,7 @@ function TitlesTab() {
       <section className="admin-card">
         <h2 className="admin-h2">Danh hiệu chuyên môn</h2>
         <p className="admin-lead">
-          Mỗi danh hiệu gắn với các chủ đề tầng bài. Thức Tỉnh: đủ số câu tối thiểu, chạm ≥ ½ chủ đề, đúng ≥ ngưỡng. Làm Chủ: gấp đôi số câu, đủ mọi chủ đề, đúng ≥ ngưỡng cao hơn. Huyền Thoại: Làm Chủ + đề thử thách. Danh hiệu chưa gắn chủ đề sẽ không active.
+          Mỗi danh hiệu gắn với các chủ đề tầng bài. Ba mức mở độc lập theo đúng độ khó câu hỏi đã giải đúng (Dễ/Trung bình/Khó, tính trên mọi lượt làm đề + luyện tập có gắn các chủ đề này): Thức Tỉnh cần đủ số câu Dễ, Làm Chủ cần đủ số câu Trung bình, Huyền Thoại cần đủ số câu Khó. Danh hiệu chưa gắn chủ đề sẽ không active.
         </p>
         {!titles ? (
           <p className="admin-muted">Đang tải…</p>
@@ -719,11 +719,10 @@ function TitlesTab() {
                         </div>
                         {specialist && isOpen && (
                           <div className="mt-3 space-y-3 border-t border-white/5 pt-3">
-                            <div className="grid gap-3 sm:grid-cols-4">
-                              <label className="admin-label">Số câu tối thiểu<input className={`${numCls} mt-1 block`} type="number" min={1} value={val(t, "min_questions")} onChange={(e) => set(t.code, { min_questions: Number(e.target.value) })} /></label>
-                              <label className="admin-label">% Thức Tỉnh<input className={`${numCls} mt-1 block`} type="number" min={0} max={100} value={val(t, "awaken_accuracy")} onChange={(e) => set(t.code, { awaken_accuracy: Number(e.target.value) })} /></label>
-                              <label className="admin-label">% Làm Chủ<input className={`${numCls} mt-1 block`} type="number" min={0} max={100} value={val(t, "master_accuracy")} onChange={(e) => set(t.code, { master_accuracy: Number(e.target.value) })} /></label>
-                              <label className="admin-label">% đề Huyền Thoại<input className={`${numCls} mt-1 block`} type="number" min={0} max={100} value={val(t, "legend_accuracy")} onChange={(e) => set(t.code, { legend_accuracy: Number(e.target.value) })} /></label>
+                            <div className="grid gap-3 sm:grid-cols-3">
+                              <label className="admin-label">Số câu Dễ (Thức Tỉnh)<input className={`${numCls} mt-1 block`} type="number" min={1} value={val(t, "min_de")} onChange={(e) => set(t.code, { min_de: Number(e.target.value) })} /></label>
+                              <label className="admin-label">Số câu TB (Làm Chủ)<input className={`${numCls} mt-1 block`} type="number" min={1} value={val(t, "min_tb")} onChange={(e) => set(t.code, { min_tb: Number(e.target.value) })} /></label>
+                              <label className="admin-label">Số câu Khó (Huyền Thoại)<input className={`${numCls} mt-1 block`} type="number" min={1} value={val(t, "min_kho")} onChange={(e) => set(t.code, { min_kho: Number(e.target.value) })} /></label>
                             </div>
                             <div>
                               <p className="admin-label mb-1">Chủ đề (tầng bài):</p>
@@ -745,7 +744,7 @@ function TitlesTab() {
                             </div>
                             <details>
                               <summary className="cursor-pointer text-xs text-slate-400">
-                                Đề thử thách Huyền Thoại {val(t, "legend_challenge_exam_id") ? `· #${val(t, "legend_challenge_exam_id")}` : "· chưa gán"}
+                                Đề thử thách (chỉ tính vào danh hiệu Bách Phát Bách Trúng, không ảnh hưởng mức Huyền Thoại) {val(t, "legend_challenge_exam_id") ? `· #${val(t, "legend_challenge_exam_id")}` : "· chưa gán"}
                               </summary>
                               <div className="mt-2">
                                 <ExamPicker value={val(t, "legend_challenge_exam_id") ? [val(t, "legend_challenge_exam_id")!] : []} onChange={(x) => set(t.code, { legend_challenge_exam_id: x.length ? x[x.length - 1] : null })} />

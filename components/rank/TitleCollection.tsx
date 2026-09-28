@@ -30,15 +30,13 @@ function nextRequirement(t: RankTitle): string {
   if (!t.active) return "Chưa gắn chủ đề — chờ giáo viên";
   const r = levelRank(t.level);
   if (r === 0) {
-    return `Thức Tỉnh: ≥ ${p.min_questions} câu (đã ${p.n}), chạm ≥ ½ chủ đề (${p.covered}/${p.total_topics}), đúng ≥ ${p.awaken_accuracy}% (đang ${p.acc}%)`;
+    return `Thức Tỉnh: giải đúng ≥ ${p.de_need} câu Dễ (đã ${p.de_correct})`;
   }
   if (r === 1) {
-    return `Làm Chủ: ≥ ${p.min_questions * 2} câu (đã ${p.n}), đủ ${p.total_topics} chủ đề (${p.covered}), đúng ≥ ${p.master_accuracy}% (đang ${p.acc}%)`;
+    return `Làm Chủ: giải đúng ≥ ${p.tb_need} câu Trung bình (đã ${p.tb_correct})`;
   }
   if (r === 2) {
-    return p.legend_exam_id
-      ? `Huyền Thoại: đề thử thách ≥ ${p.legend_accuracy}% (tốt nhất: ${p.legend_best === null ? "chưa làm" : `${p.legend_best}%`})`
-      : "Huyền Thoại: chờ giáo viên giao đề thử thách";
+    return `Huyền Thoại: giải đúng ≥ ${p.kho_need} câu Khó (đã ${p.kho_correct})`;
   }
   return "Đã đạt mức cao nhất";
 }
@@ -52,12 +50,8 @@ function progressPct(t: RankTitle): number {
   if (!p || !t.active) return 0;
   const r = levelRank(t.level);
   if (r >= 3) return 100;
-  const need = r === 0 ? p.min_questions : p.min_questions * 2;
-  const acc = r === 0 ? p.awaken_accuracy : p.master_accuracy;
-  const qPart = Math.min(1, p.n / Math.max(1, need));
-  const aPart = Math.min(1, p.acc / Math.max(1, acc));
-  const cPart = p.total_topics > 0 ? Math.min(1, p.covered / (r === 0 ? Math.max(1, Math.ceil(p.total_topics / 2)) : p.total_topics)) : 0;
-  return Math.round(((qPart + aPart + cPart) / 3) * 100);
+  const [have, need] = r === 0 ? [p.de_correct, p.de_need] : r === 1 ? [p.tb_correct, p.tb_need] : [p.kho_correct, p.kho_need];
+  return Math.round(Math.min(1, have / Math.max(1, need)) * 100);
 }
 
 export default function TitleCollection({

@@ -412,11 +412,10 @@ export interface RankTitleRow {
   name: string;
   description: string;
   sort: number;
-  min_questions: number;
-  awaken_accuracy: number;
-  master_accuracy: number;
+  min_de: number;
+  min_tb: number;
+  min_kho: number;
   legend_challenge_exam_id: number | null;
-  legend_accuracy: number;
   requires: Record<string, unknown>;
   enabled: boolean;
 }
@@ -425,7 +424,7 @@ export async function fetchTitleRows(): Promise<RankTitleRow[]> {
   const { data, error } = await getSupabase()
     .from("rank_titles")
     .select(
-      "code, group_code, kind, name, description, sort, min_questions, awaken_accuracy, master_accuracy, legend_challenge_exam_id, legend_accuracy, requires, enabled",
+      "code, group_code, kind, name, description, sort, min_de, min_tb, min_kho, legend_challenge_exam_id, requires, enabled",
     )
     .order("sort");
   if (error) throw error;

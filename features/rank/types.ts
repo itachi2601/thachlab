@@ -193,15 +193,12 @@ export interface TitleTopicRef {
 export interface SpecialistProgress {
   n: number;
   correct: number;
-  acc: number;
-  covered: number;
-  total_topics: number;
-  min_questions: number;
-  awaken_accuracy: number;
-  master_accuracy: number;
-  legend_exam_id: number | null;
-  legend_accuracy: number;
-  legend_best: number | null;
+  de_correct: number;
+  de_need: number;
+  tb_correct: number;
+  tb_need: number;
+  kho_correct: number;
+  kho_need: number;
   topics: TitleTopicRef[];
 }
 
@@ -230,7 +227,7 @@ export interface RankTitle {
 }
 
 export function isSpecialistProgress(p: RankTitle["progress"]): p is SpecialistProgress {
-  return !!p && "min_questions" in p;
+  return !!p && "de_need" in p;
 }
 
 // ---------- lịch sử ----------
