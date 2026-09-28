@@ -142,6 +142,11 @@ function Podium({ g }: { g: PublicHonorGrade }) {
           })}
         </ul>
       )}
+      {(g.top_more ?? 0) > 0 && (
+        <p className="mt-3 text-xs text-slate-400">
+          và {g.top_more} bạn khác cùng hạng với các bạn trên — bục chỉ hiện được 5 bạn, xếp theo tên.
+        </p>
+      )}
 
       {notes.length > 0 && (
         <div className="mt-6 rounded-2xl border border-line bg-panel/60 px-4 py-2">

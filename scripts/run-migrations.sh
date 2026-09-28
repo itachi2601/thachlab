@@ -14,8 +14,9 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20260928160000_rank_public_honor.sql|Vinh danh tuần trang chủ: cột profiles.honor_visibility + RPC anon rank_public_honor + rank_set_honor_visibility|chạy giờ nào cũng được, chỉ thêm cột có default + 3 hàm"
+  "supabase/migrations/20260928180000_rank_public_honor_v2.sql|Vinh danh tuần v2: làm sạch tên HS tự nhập (bỏ ngoặc/chữ số/ký tự lạ) + trả top_more khi >5 bạn đồng hạng|chạy giờ nào cũng được, chỉ thay 2 hàm đọc"
 )
+# ĐÃ CHẠY 28/9/2026 (11:39): 20260928160000_rank_public_honor.sql
 # ĐÃ CHẠY 28/9/2026 (10:42): 20260928130000_rank_title_code_in_class_rpcs.sql
 # ĐÃ CHẠY 26–27/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql
