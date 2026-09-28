@@ -81,9 +81,15 @@ EOF
 
 rm -rf .git
 git init -q -b deploy
+# Tải commit deploy hiện tại về trước (nông, ~30MB tải xuống) để git chỉ GỬI phần khác biệt
+# (thường vài trăm KB) thay vì cả bản build ~30MB mỗi lần — 28/9/2026 push full bị GitHub ngắt
+# (HTTP 408) khi mạng yếu (hotspot điện thoại). Không tải được thì vẫn push full như cũ.
+git fetch -q --depth=1 "$REPO_URL" deploy 2>/dev/null || echo "(không tải được bản deploy cũ — push full)"
 git add -A
-git -c user.name="ThachLab Deploy" -c user.email="deploy@thachlab.id.vn" \
-  commit -qm "deploy: $(date '+%Y-%m-%d %H:%M')"
+# Commit mồ côi (không parent) → nhánh deploy vẫn chỉ có đúng 1 commit.
+NEW_COMMIT=$(git -c user.name="ThachLab Deploy" -c user.email="deploy@thachlab.id.vn" \
+  commit-tree "$(git write-tree)" -m "deploy: $(date '+%Y-%m-%d %H:%M')")
+git update-ref refs/heads/deploy "$NEW_COMMIT"
 # Bản build ~40MB — bộ đệm HTTP mặc định 1MB làm push đứt giữa chừng (curl 55).
 git -c http.postBuffer=524288000 push -f "$REPO_URL" deploy
 rm -rf .git
