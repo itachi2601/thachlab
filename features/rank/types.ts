@@ -271,7 +271,8 @@ export interface ClassRankMember {
   name: string;
   avatar: string | null;
   division: number | null;
-  title: { name: string; level: TitleLevel | null } | null;
+  /** `code` có từ migration 20260928130000 (để lấy logo); RPC cũ chỉ trả name/level. */
+  title: { code?: string | null; name: string; level: TitleLevel | null } | null;
 }
 
 export interface ClassRankGroups {
@@ -286,6 +287,8 @@ export interface ClassRankBoardMember {
   name: string;
   avatar: string | null;
   rp_week: number;
+  /** Danh hiệu đang đeo — có từ migration 20260928130000; RPC cũ không trả. */
+  title?: { code: string; name: string; level: TitleLevel | null } | null;
 }
 
 export interface ClassRankBoard {

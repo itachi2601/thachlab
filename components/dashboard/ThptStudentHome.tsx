@@ -29,10 +29,12 @@ import {
 } from "@/services/analytics";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import RankCard from "@/components/rank/RankCard";
+import WornTitle from "@/components/rank/WornTitle";
+import TitleShowcase from "@/components/rank/TitleShowcase";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import ClassRankBoard from "@/components/rank/ClassRankBoard";
-import type { RankStatus } from "@/features/rank/types";
-import { fetchMyRankStatus } from "@/services/rank";
+import type { RankStatus, RankTitle } from "@/features/rank/types";
+import { fetchMyRankStatus, fetchMyTitles } from "@/services/rank";
 import {
   fetchLatestAnnouncements,
   fetchRecentAnnouncements,
@@ -137,6 +139,7 @@ export default function ThptStudentHome({
   const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
+  const [titles, setTitles] = useState<RankTitle[] | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [lastLessonId, setLastLessonId] = useState(0);
@@ -169,6 +172,7 @@ export default function ThptStudentHome({
     fetchMyProgressMarks(studentId).then(setProgressMarks).catch(() => setProgressMarks(null));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
+    fetchMyTitles().then(setTitles).catch(() => setTitles(null));
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
   }, [studentId, classId]);
 
@@ -302,6 +306,7 @@ export default function ThptStudentHome({
               <h1 className="font-display text-xl font-bold leading-tight text-white sm:text-3xl">
                 Chào {profile?.full_name || "bạn"} 👋
               </h1>
+              {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
               <p className="mt-1 text-xs text-slate-400 sm:text-sm">Lớp {className}</p>
             </div>
           </div>
@@ -354,7 +359,10 @@ export default function ThptStudentHome({
         </section>
       )}
 
-      <RankCard status={rank} />
+      <div className="grid gap-4 sm:grid-cols-[1.15fr_1fr] sm:items-start">
+        <RankCard status={rank} />
+        <TitleShowcase titles={titles} displayCode={rank?.display_title?.code ?? null} className="h-full" />
+      </div>
       <DailyStreakCard status={rank} suggestion={dailySuggestion} />
       <ClassRankBoard classId={classId} />
 

@@ -10,13 +10,13 @@ import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import TitleCollection from "@/components/rank/TitleCollection";
 import TierLadder from "@/components/rank/TierLadder";
+import WornTitle from "@/components/rank/WornTitle";
 import {
   LEDGER_KIND_LABELS,
   LEVEL_LABELS,
   formatRp,
   tierLabel,
   tierMeta,
-  titleDisplay,
   type RankLedgerEntry,
   type RankSeasonSummary,
   type RankStatus,
@@ -157,8 +157,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                 <h1 className="mt-1">
                   <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="lg" className="sm:[&>span]:text-left [&>span]:text-center" />
                 </h1>
-                <p className="mt-1 text-sm text-slate-300">
-                  {status.display_title ? titleDisplay(status.display_title.name, status.display_title.level) : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}
+                <p className="mt-1 flex justify-center text-sm text-slate-300 sm:justify-start">
+                  {status.display_title ? <WornTitle title={status.display_title} size="md" /> : "Chưa đeo danh hiệu — chọn ở bộ sưu tập bên dưới"}
                 </p>
                 <p className="mt-3 font-display text-2xl font-bold text-white">
                   {formatRp(status.rp)} <span className="text-base font-semibold text-slate-400">RP</span>

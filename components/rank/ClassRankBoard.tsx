@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUp, Flame, Sparkles, Trophy } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankBadge from "@/components/rank/RankBadge";
+import WornTitle from "@/components/rank/WornTitle";
 import type { ClassRankBoard as Board } from "@/features/rank/types";
 import { fetchClassRankBoard } from "@/services/rank";
 
@@ -80,6 +81,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
                       {m.name}
                       {m.is_me && <span className="ml-1 text-xs font-normal text-cyan-300">(em)</span>}
                     </span>
+                    {m.title && <WornTitle title={m.title} className="block" />}
                     <span className="flex items-center gap-1 text-xs text-slate-400">
                       <RankBadge code={m.tier_code ?? undefined} division={m.division} paragon={m.paragon} size={14} />
                       <b className="text-emerald-300">+{m.rp_week} RP</b> tuần này

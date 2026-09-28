@@ -24,6 +24,14 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `perf/rollback/20260926150000_fix_question_bank_similarity_timeout.down.sql`). Chưa xác nhận lại
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
+## Migration — ĐANG CHỜ
+- **Mã danh hiệu đang đeo trong RPC lớp** (28/9/2026, tính năng "đeo danh hiệu dưới tên + khung sưu tập
+  huy hiệu", xem `docs/rank-title-showcase-design.md`): `rank_class_groups` trả thêm `title.code`,
+  `rank_class_board` trả thêm `top_week[].title` → chip bạn cùng lớp và top tuần hiện logo huy hiệu.
+  Client chấp nhận cả dạng cũ (chưa chạy migration thì chỉ thiếu logo ở 2 chỗ này). Migration:
+  `supabase/migrations/20260928130000_rank_title_code_in_class_rpcs.sql`
+  (rollback `perf/rollback/20260928130000_rank_title_code_in_class_rpcs.down.sql`).
+
 ## Migration — ĐÃ CHẠY XONG (27/09/2026, 07:32)
 Cả 8 file trong `supabase/migrations/` đã chạy lên production qua `bash scripts/run-migrations.sh`:
 perf_indexes, perf_rpc_gv, perf_rls, difficulty_source, mastery, lesson_item_draft_publish,
