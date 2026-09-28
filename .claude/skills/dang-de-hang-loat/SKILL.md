@@ -263,6 +263,21 @@ file đó có gì bất thường hay không. Ba việc giảm số agent song s
    khi lô không quá phức tạp giúp chia đều chi phí này. Không gộp quá 2-3 file/agent — mất
    lợi ích song song và agent dễ lẫn file nọ với file kia trong báo cáo.
 
+## Đăng bằng script khi không có phiên đăng nhập trình duyệt (29/9/2026)
+
+`npx tsx scripts/upload-exam-docx.mts <de_thachlab.docx> --title "<Tên đề>" --lesson <id> --item <lesson_item_id>
+[--duration 50] [--dry] [--drop-vector-marks] [--log scripts/data/bulk-de-thi-thu-log.json --src "<tên file gốc>"]`
+— dùng chung `readDocx → docxTextToBundle → bundleToRows` với trang Đăng đề, tải ảnh lên `lesson-media`,
+append `exam_ids` kiểu "Giữ + thêm", tự rollback khi lỗi. Luôn chạy `--dry` trước: nó in số câu dựng
+được, câu thiếu đáp án/thiếu hình, dạng câu. KHÔNG gắn nhãn AI được (Edge Function cần phiên người
+dùng) — câu để trống Chủ đề, chấp nhận với đề thi thử tổng hợp ở mục 277. `--drop-vector-marks` bỏ mốc
+⟦ảnh WMF⟧/⟦hình vẽ Word⟧ khi đã xem chắc đó là ảnh trang trí. Ảnh phải nén trước (script không có canvas).
+
+**Bài học 29/9:** `mtef_to_omml` ghi đè thẳng `de_goc.docx` trong thư mục agent → không còn khớp MD5/kích
+cỡ với file nguồn; muốn biết thư mục agent nào ứng với file nguồn nào thì dò một câu chữ đặc trưng trong
+các file nguồn (unzip `word/document.xml` + tìm chuỗi), đừng tin MD5. Đợt này 11 thư mục agent để lại
+từ các phiên trước hoá ra 8 là đề đã đăng (220, 225–230, 176, 227) — kiểm trước bằng cách này rồi mới đăng.
+
 ## Bước 6 — Cập nhật log, lặp lại
 
 Sau khi phiên chính đăng xong cả lô (Bước 5 điểm 3), thêm các file vừa đăng vào file log
