@@ -4,6 +4,15 @@ Lịch sử các đợt migration đã chạy xong trên production, chuyển sa
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
 ## Migration — đợt 28/09/2026 (đã chạy hết)
+- **Đổi tên 7 bậc rank theo Liên Quân Mobile** (28/9/2026) → ĐÃ CHẠY 28/9 23:47 (log
+  `scripts/logs/20260928-234708-*`), kiểm tra `rank_tiers` cả 2 mùa đã mang tên mới: Tinh Quang…Chí Tôn → Đồng, Bạc, Vàng,
+  Bạch Kim, Kim Cương, Tinh Anh, Cao Thủ (đúng thứ tự thấp → cao của LQM); danh vị Vô Song/Paragon
+  đổi tên hiển thị thành "Thách Đấu" (bậc thứ 8 của LQM, chỉ ở frontend — không thêm dòng vào
+  `rank_tiers`). Chỉ đổi cột `name` + hàm `rank_seed_tiers` (tên mùa mới), không đổi `code`/min_rp/
+  điều kiện lên bậc nên không ảnh hưởng RP đã tính. Phần frontend (features/rank/types.ts,
+  components/rank/*, components/admin/RankAdmin.tsx) đã đổi tên xong, chỉ còn phần DB.
+  Migration: `supabase/migrations/20260928190000_rank_tier_names_lien_quan.sql`
+  (rollback `perf/rollback/20260928190000_rank_tier_names_lien_quan.down.sql`).
 - **Vinh danh tuần v2** (28/9/2026): CẢ HAI ĐÃ CHẠY — 20260928160000 lúc 11:39, 20260928180000 lúc 13:46 (log `scripts/logs/20260928-134634-*`), RPC thật kiểm OK. Ghi lại để tham khảo: bản 160000 ĐÃ chạy 11:39 (log `scripts/logs/20260928-113911-*`),
   RPC trả dữ liệu thật OK. Bản v2 sửa 2 điểm thấy từ dữ liệu thật: `rank_honor_name` bỏ phần trong ngoặc,
   từ có chữ số, ký tự lạ (tên HS tự nhập bẩn: "đỗ đăng duy(oguri cap...)" → "Duy Đ."); `rank_public_honor`

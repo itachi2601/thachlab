@@ -1,19 +1,13 @@
 ---
 name: up-de-kiem-tra
 description: >-
-  Nhận MỘT file đề trắc nghiệm — PDF hoặc Word (.docx) kiểu Azota: "Câu 1.", phương
-  án A–D, đáp án đánh dấu bằng "*", có/không kèm PHẦN I/II/III, công thức MathType — rồi
-  đăng thẳng đề đó vào một bài học trên LMS thachlab: gắn vào mục "Kiểm tra"
-  (và/hoặc "Luyện tập") của đúng Lớp → Chương → Bài, chấm điểm tự động. Dùng skill
-  này khi người dùng đính kèm một file đề thi/đề kiểm tra (.pdf hoặc .docx) và nói
-  "up đề này", "đăng đề kiểm tra", "đưa đề này lên thachlab", "up đề lên lớp X bài Y",
-  hoặc chỉ thả file đề kèm ý muốn đưa lên web. KHÁC với dang-bai-hoc-thachlab (đăng
-  trọn bài học từ .tex: lý thuyết + dạng bài + đề) — skill này chỉ lo phần ĐỀ.
-  KHÁC với de-vat-ly-thpt (soạn/chuẩn hoá đề ra file Word Azota) — skill này ghi
-  vào database, không xuất Word. Từ 9/2026 đường chính là trang Đăng đề
-  (/quan-tri/dang-de): văn bản kiểu Azota kèm hai dòng "Chủ đề:" (yêu cầu cần đạt) và
-  "Dạng:" (lý thuyết/bài tập) cho từng câu; gói JSON qua /quan-tri/nhap-bai chỉ còn là
-  đường dự phòng khi cần vẽ hình SVG hoặc ảnh scan.
+  Nhận MỘT file đề trắc nghiệm PDF/Word kiểu Azota ("Câu 1.", A–D, đáp án đánh dấu "*",
+  có/không PHẦN I/II/III, MathType) và đăng vào mục Kiểm tra/Luyện tập của đúng Lớp →
+  Chương → Bài trên LMS thachlab, chấm tự động. Dùng khi đính kèm file đề và nói "up đề
+  này", "đăng đề kiểm tra", "đưa đề lên thachlab", "up đề lên lớp X bài Y". Đường chính:
+  trang /quan-tri/dang-de với dòng "Chủ đề:"/"Dạng:" mỗi câu; JSON qua /quan-tri/nhap-bai
+  chỉ khi cần vẽ SVG/ảnh scan. KHÁC dang-bai-hoc-thachlab (trọn bài từ .tex) và
+  de-vat-ly-thpt (xuất Word, không ghi DB).
 ---
 
 # Up đề kiểm tra Word → mục Kiểm tra/Luyện tập trên thachlab
@@ -220,7 +214,10 @@ quan trọng ngang phần quy trình.
   `explanation`. Nội dung là **HTML thuần**, công thức để nguyên `$...$` / `$$...$$`.
 - Ảnh: **ưu tiên trích thẳng ảnh gốc**, đừng vẽ lại nếu không cần — đề đã có ảnh nhúng
   (đồ thị vẽ bằng Excel/GeoGebra rồi chèn ảnh, ảnh chụp, sơ đồ scan) thì lấy đúng file đó
-  (`.docx` → `word/media/*`; PDF → `pdfimages`), không tốn token vẽ/soát lại. Base64 vào
+  (`.docx` → `word/media/*`; PDF → `pdfimages`), không tốn token vẽ/soát lại. **Nén trước
+  khi encode base64** (rộng tối đa ~1200px, ví dụ `sharp` hoặc `magick <in> -resize 1200x -quality
+  80 <out>`) — ảnh trích thẳng từ Word/PDF scan thường 2–5 MB, trang không tự nén khi upload lên
+  Storage (xem quy tắc "Đăng nội dung — luôn tối ưu tốc độ tải" ở `AGENTS.md`). Base64 vào
   `raster_images[]`, `placeholder` dạng `media/<ten>.jpg`, dùng đúng chuỗi đó làm `src`.
   Bọc `<img>` trong khung nền sáng bo góc (xem `references/docx-de-format.md` §"Ảnh trích
   từ file gốc") để không chỏi với nền tối `#0B1020` của site. Trang tự upload lên Storage

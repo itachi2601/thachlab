@@ -1,21 +1,50 @@
 ---
 name: dang-de-hang-loat
 description: >-
-  Xử lý MỘT THƯ MỤC chứa NHIỀU file đề (.docx, hàng chục–hàng trăm file) cùng lúc —
-  lọc trước bằng script rẻ (không tốn token AI) để loại đề thiếu đáp án ra khỏi thư
-  mục, bỏ qua đề đã đăng, và phân loại đề còn lại (có ảnh nhúng thật? có OLE MathType?
-  kiểu đáp án gì? đã có nhãn Chủ đề/Dạng chưa?) — rồi mới chia việc cho agent đăng
-  từng file bằng skill up-de-kiem-tra, với thông tin phân loại đã có sẵn trong tay để
-  agent không phải tự dò từ đầu. Dùng skill này khi người dùng có một THƯ MỤC lớn chứa
-  nhiều file đề cần đăng lên thachlab, nói "đăng cả thư mục", "up hết mấy trăm đề này",
-  "kiểm tra đề nào thiếu đáp án trong thư mục X thì loại ra", "chạy batch đăng đề",
-  hoặc muốn gọi nhiều agent song song để đăng đề. KHÁC với up-de-kiem-tra (xử lý MỘT
-  file đơn lẻ, không quan tâm các file khác trong thư mục) — skill này là lớp điều phối
-  bên trên, tự gọi lại up-de-kiem-tra (và azota nếu cần) cho từng file sau khi đã
-  lọc/phân loại xong.
+  Đăng MỘT THƯ MỤC nhiều file đề .docx (hàng chục–hàng trăm) lên thachlab: lọc bằng
+  script rẻ trước (loại đề thiếu đáp án, bỏ đề đã đăng, phân loại ảnh/OLE MathType/kiểu
+  đáp án/nhãn Chủ đề-Dạng), file sạch đăng thẳng, chỉ file bẩn mới giao agent theo
+  up-de-kiem-tra. Dùng khi nói "đăng cả thư mục", "up hết mấy trăm đề này", "kiểm tra
+  đề nào thiếu đáp án trong thư mục X", "chạy batch đăng đề", hoặc muốn nhiều agent
+  song song. KHÁC up-de-kiem-tra (một file đơn lẻ) — skill này là lớp điều phối bên trên.
 ---
 
 # Đăng đề hàng loạt từ một thư mục
+
+## QUY TẮC BẮT BUỘC (thầy chốt 28/9/2026) — đọc trước mọi bước bên dưới
+
+Mặc định là **đường script**: máy lọc trước, agent chỉ vào file bị lọc bắt. KHÔNG giao cả
+thư mục (hay cả lô) cho agent "tự xem rồi đăng" — đợt 26/9 làm vậy tốn 1,2 triệu token cho 5
+file, không lặp lại.
+
+Bốn lưới lọc, chạy theo thứ tự, lưới nào bắt được thì mới tốn suy luận ở lưới đó:
+
+| Lưới | Chạy bằng | Bắt được | Tốn token AI |
+|---|---|---|---|
+| 1. Phân loại thư mục | `scripts/classify-exam-folder.mts` (Bước 1–2) | không có đáp án, đã đăng, cờ ảnh/OLE/shape/nhãn/kiểu đáp án | 0 |
+| 2. `convert.log` | vòng lặp shell mtef + `convert_docx.py` cho CẢ ĐỢT ở phiên chính | thiếu đáp án / thiếu lời giải / dòng `[lưu ý]` từng câu | 0 |
+| 3. Trang Đăng đề | khung đỏ "Thiếu hình ở N câu", cảnh báo câu trùng ngân hàng | câu nhắc hình mà không có ảnh, câu trùng | 0 |
+| 4. Sau khi lên web | HS bấm "Báo lỗi câu này" → `/quan-tri/bao-loi` → nhảy đúng câu ở `/quan-tri/sua-de` | đáp án sai nội dung, lời giải lệch, thiếu dữ kiện | 0 |
+
+Quy tắc xử lý theo kết quả lọc:
+
+1. **File sạch** = bucket `needs_review` với `answerFormat` là `star` hoặc `dap_an_line`,
+   `convert.log` không có dòng thiếu/lệch/`[lưu ý]` → **đăng thẳng ở phiên chính, không
+   giao agent**. Mức soát tối thiểu: giải nhanh 2 câu Phần III bất kỳ + liếc bảng đáp án
+   xem có ô trống. Không giải lại cả đề, không đối chiếu từng ô 3 bảng đáp án.
+2. **File bẩn** = `convert.log` báo thiếu/lệch, `answerFormat` là `answer_table`/`unclear`,
+   `hasVectorOrShape` cần vẽ lại, hoặc lưới 3 chặn mà xem không rõ → mới giao agent. Gộp
+   2 file cùng loại/agent, prompt kèm sẵn kết quả phân loại + `convert.log` (Bước 5), báo
+   cáo cuối chỉ nêu phần khác biệt (câu sửa, câu cần thầy quyết, chủ đề đề xuất).
+3. **Ba loại lỗi máy không bắt được** (đáp án đúng định dạng nhưng sai nội dung; MTEF giải
+   mã hỏng ra ký tự hợp lệ như số mũ đứng cạnh số thường không dấu phép tính; câu dùng
+   chung đề dẫn bị tách rời) → chấp nhận để lưới 4 hứng, KHÔNG bắt agent giải lại cả lô để
+   phòng. Chỉ nâng độ sâu soát cho đúng file thấy dấu hiệu lạ khi soát nhanh ở điểm 1.
+4. Đề nào nghi ngờ mà chưa kịp xem → đăng ở trạng thái **Bản nháp** (ô "Xuất bản" ở
+   `/quan-tri/sua-de`), không chặn cả lô vì một file.
+5. Kỳ vọng tỉ lệ: ~60–70% file sạch đi thẳng điểm 1; chỉ 30–40% còn lại tới agent. Nếu
+   một đợt thấy tỉ lệ file bẩn cao bất thường, dừng lại xem script lọc/convert có bug
+   (xem lịch sử vá ở skill `azota`) trước khi đổ thêm agent.
 
 ## Vì sao cần bước lọc trước (đừng giao thẳng cả thư mục cho agent)
 
@@ -259,6 +288,9 @@ cố thật (báo ngay cho người dùng, đừng tự ý ghi đè lại `exam_
 
 - Đây là thao tác lên **hệ thống sống** (DB + web học sinh đang dùng) — áp dụng nguyên
   mục "An toàn — không thương lượng" của skill `up-de-kiem-tra` cho từng file.
+- Cũng kế thừa quy tắc "Đăng nội dung — luôn tối ưu tốc độ tải" ở `AGENTS.md`: file nào có
+  ảnh nhúng thật (không phải công thức MathType) phải nén trước khi giao agent đăng — nhắc
+  rõ trong prompt chia việc ở Bước 5, đừng để agent tự quên.
 - Bước lọc (Bước 1–2) chỉ ĐỌC file và (nếu `--apply-missing`) DI CHUYỂN file trong thư
   mục nguồn cục bộ — không đụng Supabase, an toàn chạy lại nhiều lần.
 - Không tự ý xoá file — `--apply-missing` chỉ di chuyển vào thư mục con, không xoá.
