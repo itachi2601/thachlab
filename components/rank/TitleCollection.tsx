@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Check, Lock, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import {
@@ -15,6 +16,7 @@ import {
   type SpecialistProgress,
   type TitleLevel,
 } from "@/features/rank/types";
+import { titleBadgeLockedSrc, titleBadgeSrc } from "@/features/rank/badge-assets";
 
 function nextRequirement(t: RankTitle): string {
   if (t.kind === "achievement") return t.description;
@@ -95,6 +97,8 @@ export default function TitleCollection({
                 const wearing = displayCode === t.code;
                 const pct = progressPct(t);
                 const wearLevel = (t.level ?? null) as TitleLevel | null;
+                // Ảnh huy hiệu: đã mở → cấp cao nhất; chưa mở → ảnh Thức Tỉnh làm xám. Không có ảnh → icon cũ.
+                const badgeSrc = unlocked ? titleBadgeSrc(t.code, wearLevel) : titleBadgeLockedSrc(t.code);
                 return (
                   <article
                     key={t.code}
@@ -103,13 +107,23 @@ export default function TitleCollection({
                     } ${!t.active && t.kind === "specialist" ? "opacity-60" : ""}`}
                   >
                     <div className="flex items-start gap-3">
-                      <span
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                          unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
-                        }`}
-                      >
-                        {unlocked ? <Sparkles size={18} /> : <Lock size={16} />}
-                      </span>
+                      {badgeSrc ? (
+                        <Image
+                          src={badgeSrc}
+                          alt=""
+                          width={48}
+                          height={48}
+                          className={`h-12 w-12 shrink-0 ${unlocked ? "" : "opacity-40 grayscale"}`}
+                        />
+                      ) : (
+                        <span
+                          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+                            unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
+                          }`}
+                        >
+                          {unlocked ? <Sparkles size={18} /> : <Lock size={16} />}
+                        </span>
+                      )}
                       <div className="min-w-0 flex-1">
                         <p className={`font-display font-semibold ${unlocked ? "text-white" : "text-slate-300"}`}>{t.name}</p>
                         <p className="text-xs text-slate-500">{t.description}</p>
