@@ -33,6 +33,7 @@ import WornTitle from "@/components/rank/WornTitle";
 import TitleShowcase from "@/components/rank/TitleShowcase";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import ClassRankBoard from "@/components/rank/ClassRankBoard";
+import HonorVisibilityPicker from "@/components/rank/HonorVisibilityPicker";
 import type { RankStatus, RankTitle } from "@/features/rank/types";
 import { fetchMyRankStatus, fetchMyTitles } from "@/services/rank";
 import {
@@ -365,6 +366,7 @@ export default function ThptStudentHome({
       </div>
       <DailyStreakCard status={rank} suggestion={dailySuggestion} />
       <ClassRankBoard classId={classId} />
+      <HonorVisibilityPicker />
 
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
       <Section icon={Megaphone} title="Việc cần làm hôm nay">

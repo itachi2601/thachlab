@@ -8,6 +8,8 @@ import type {
   FixQuizResult,
   FixQuizStart,
   FixableTopic,
+  HonorVisibility,
+  PublicHonorBoard,
   RankLedgerEntry,
   RankSeasonSummary,
   RankStatus,
@@ -525,4 +527,55 @@ export async function fetchTierLadder(seasonId: number): Promise<TierLadderStep[
     next_min: tiers[i + 1]?.min_rp ?? null,
     challenge_title: t.challenge_exam_id !== null ? (titles.get(t.challenge_exam_id) ?? null) : null,
   }));
+}
+
+// ============================================================
+// Trang chủ công khai — Vinh danh tuần theo khối (RPC anon, migration 20260928160000)
+// ============================================================
+const HONOR_CACHE_KEY = "thachlab.honor.v1";
+
+/**
+ * Một RPC duy nhất cho cả 3 khối; kết quả cache sessionStorage 1 giờ để học sinh quay lại
+ * trang chủ nhiều lần trong phiên không gọi lại (giảm log ingestion Supabase).
+ * RPC chưa tồn tại / lỗi → trả null, mục trên trang chủ tự ẩn.
+ */
+export async function fetchPublicHonor(): Promise<PublicHonorBoard | null> {
+  try {
+    const raw = sessionStorage.getItem(HONOR_CACHE_KEY);
+    if (raw) {
+      const cached = JSON.parse(raw) as { at: number; data: PublicHonorBoard };
+      if (Date.now() - cached.at < 60 * 60 * 1000) return cached.data;
+    }
+  } catch {
+    /* sessionStorage bị chặn (private mode) — bỏ qua cache */
+  }
+  const { data, error } = await getSupabase().rpc("rank_public_honor");
+  if (error || !data) return null;
+  const board = data as PublicHonorBoard;
+  try {
+    sessionStorage.setItem(HONOR_CACHE_KEY, JSON.stringify({ at: Date.now(), data: board }));
+  } catch {
+    /* bỏ qua */
+  }
+  return board;
+}
+
+/** Mức lộ tên hiện tại của chính mình; null khi cột chưa có (migration chưa chạy) hoặc chưa đăng nhập. */
+export async function fetchMyHonorVisibility(): Promise<HonorVisibility | null> {
+  const sb = getSupabase();
+  const { data: u } = await sb.auth.getUser();
+  if (!u.user) return null;
+  const { data, error } = await sb.from("profiles").select("honor_visibility").eq("id", u.user.id).maybeSingle();
+  if (error || !data) return null;
+  return (data as { honor_visibility: HonorVisibility | null }).honor_visibility ?? null;
+}
+
+export async function setMyHonorVisibility(value: HonorVisibility): Promise<void> {
+  const { error } = await getSupabase().rpc("rank_set_honor_visibility", { p_value: value });
+  if (error) throw error;
+  try {
+    sessionStorage.removeItem(HONOR_CACHE_KEY);
+  } catch {
+    /* bỏ qua */
+  }
 }

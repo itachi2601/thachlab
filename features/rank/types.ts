@@ -330,3 +330,42 @@ export interface FixableTopic {
   attemptsDone: number;
   passed: boolean;
 }
+
+// ---------- rank_public_honor (trang chủ công khai, anon) ----------
+/** Mức lộ tên của học sinh trên mục Vinh danh tuần ở trang chủ (profiles.honor_visibility). */
+export type HonorVisibility = "hidden" | "short" | "full";
+
+export const HONOR_VISIBILITY_LABELS: Record<HonorVisibility, string> = {
+  short: "Tên rút gọn + ảnh",
+  full: "Tên đầy đủ + ảnh",
+  hidden: "Không hiện",
+};
+
+export interface PublicHonorMember {
+  pos: number;
+  /** Đã rút gọn/ẩn theo mức của em đó ngay trong RPC — client không bao giờ nhận tên đầy đủ khi em chọn rút gọn. */
+  name: string;
+  avatar: string | null;
+  rp_week: number;
+  tier_code: TierCode | null;
+  division: number | null;
+  paragon: boolean;
+  title: { code: string; name: string; level: TitleLevel | null } | null;
+}
+
+export interface PublicHonorGrade {
+  grade: string;
+  /** Tuần này chưa ai có RP → số liệu là của tuần trước. */
+  use_prev: boolean;
+  season: { id: number; name: string; ends_on: string } | null;
+  total: number;
+  top: PublicHonorMember[];
+  improved: { name: string; avatar: string | null; delta: number; rp_week: number } | null;
+  tier_ups: { name: string; tier_code: TierCode; division: number | null }[];
+  streak: { name: string; days: number } | null;
+}
+
+export interface PublicHonorBoard {
+  week_start: string;
+  grades: PublicHonorGrade[];
+}

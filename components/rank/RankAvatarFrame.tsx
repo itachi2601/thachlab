@@ -1,7 +1,7 @@
 "use client";
 
 import RankBadge from "@/components/rank/RankBadge";
-import { tierMeta, type RankStatus } from "@/features/rank/types";
+import { tierMeta, type RankStatus, type TierCode } from "@/features/rank/types";
 
 /**
  * Khung ảnh đại diện theo bậc rank: vành ngoài bằng kim loại của phân bậc
@@ -19,17 +19,20 @@ const AURORA = "conic-gradient(from 210deg, #26c6da, #7c4dff 25%, #ff8fd8 50%, #
 
 export default function RankAvatarFrame({
   status,
+  tier: tierProp,
   size,
   children,
   className = "",
 }: {
-  status: RankStatus | null | undefined;
+  status?: RankStatus | null | undefined;
+  /** Dùng thay `status` khi chỉ có mã bậc (bảng vinh danh trang chủ, RPC công khai). */
+  tier?: { code: TierCode | null | undefined; division: number | null | undefined; paragon?: boolean | null } | null;
   /** Kích thước ảnh bên trong (px) — khung tự cộng thêm viền. */
   size: number;
   children: React.ReactNode;
   className?: string;
 }) {
-  const tier = status?.season ? status.tier : null;
+  const tier = tierProp?.code ? tierProp : status?.season ? status.tier : null;
   if (!tier) return <span className={`inline-block shrink-0 ${className}`}>{children}</span>;
 
   const paragon = !!tier.paragon;

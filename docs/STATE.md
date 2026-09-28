@@ -25,6 +25,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
+- **Vinh danh tuần theo khối trên trang chủ công khai** (28/9/2026): cột `profiles.honor_visibility`
+  (hidden/short/full, mặc định short = tên rút gọn "Minh N." + ảnh), RPC anon `rank_public_honor()`
+  (top 3 RP tuần + tiến bộ nhất + lên bậc + chuỗi ngày, theo khối suy từ chữ số trong `classes.name`),
+  RPC `rank_set_honor_visibility(text)` cho học sinh tự chọn ở /tai-khoan.
+  Migration: `supabase/migrations/20260928160000_rank_public_honor.sql`
+  (rollback `perf/rollback/20260928160000_rank_public_honor.down.sql`). Chạy giờ nào cũng được;
+  code đã deploy tự ẩn mục khi RPC chưa có, nên chạy trước/sau deploy đều được.
 - **Xoá bảng backup tạm `question_bank_backup_20260925`** (28/9/2026, đợt rà hạn mức Supabase Free):
   bảng chụp trước khi gộp câu trùng 25/9, không code nào đọc, chiếm ~13 MB (≈12% hạn mức 500 MB).
   Migration: `supabase/migrations/20260928150000_drop_question_bank_backup.sql`
