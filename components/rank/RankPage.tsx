@@ -9,6 +9,7 @@ import { useToast } from "@/components/ui/Toast";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import TitleCollection from "@/components/rank/TitleCollection";
+import TitleGradeRoadmap from "@/components/rank/TitleGradeRoadmap";
 import TierLadder from "@/components/rank/TierLadder";
 import WornTitle from "@/components/rank/WornTitle";
 import {
@@ -69,6 +70,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
   const reduceMotion = useReducedMotion();
   const [status, setStatus] = useState<RankStatus | null | undefined>(undefined);
   const [titles, setTitles] = useState<RankTitle[]>([]);
+  const [titleView, setTitleView] = useState<"chu_de" | "lop">("chu_de");
   const [ledger, setLedger] = useState<RankLedgerEntry[]>([]);
   const [seasons, setSeasons] = useState<RankSeasonSummary[]>([]);
   const [celebrate, setCelebrate] = useState<string | null>(null);
@@ -273,13 +275,39 @@ export default function RankPage({ studentId, studentName }: { studentId: string
         {titles.length === 0 ? (
           <EmptyState title="Chưa có dữ liệu danh hiệu" description="Danh hiệu tính từ các bài kiểm tra em đã làm." />
         ) : (
-          <TitleCollection
-            titles={titles}
-            displayCode={status?.display_title?.code ?? null}
-            displayLevel={status?.display_title?.level ?? null}
-            canWear
-            onWear={wear}
-          />
+          <>
+            <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.02] p-1 text-xs">
+              <button
+                type="button"
+                onClick={() => setTitleView("chu_de")}
+                className={`rounded-full px-3 py-1.5 font-semibold transition ${
+                  titleView === "chu_de" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300"
+                }`}
+              >
+                Theo chủ đề
+              </button>
+              <button
+                type="button"
+                onClick={() => setTitleView("lop")}
+                className={`rounded-full px-3 py-1.5 font-semibold transition ${
+                  titleView === "lop" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300"
+                }`}
+              >
+                Theo lớp
+              </button>
+            </div>
+            {titleView === "chu_de" ? (
+              <TitleCollection
+                titles={titles}
+                displayCode={status?.display_title?.code ?? null}
+                displayLevel={status?.display_title?.level ?? null}
+                canWear
+                onWear={wear}
+              />
+            ) : (
+              <TitleGradeRoadmap titles={titles} />
+            )}
+          </>
         )}
       </Section>
 
