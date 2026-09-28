@@ -1,4 +1,4 @@
-# STATE — Hiện trạng ThachLab (cập nhật 26/09/2026)
+# STATE — Hiện trạng ThachLab (cập nhật 28/09/2026)
 
 File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude. Cập nhật sau mỗi đợt lớn.
 
@@ -33,98 +33,9 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   components/rank/*, components/admin/RankAdmin.tsx) đã đổi tên xong, chỉ còn phần DB.
   Migration: `supabase/migrations/20260928190000_rank_tier_names_lien_quan.sql`
   (rollback `perf/rollback/20260928190000_rank_tier_names_lien_quan.down.sql`). Chạy giờ nào cũng được.
-- **Vinh danh tuần v2** (28/9/2026): bản 20260928160000 ĐÃ chạy 11:39 (log `scripts/logs/20260928-113911-*`),
-  RPC trả dữ liệu thật OK. Bản v2 sửa 2 điểm thấy từ dữ liệu thật: `rank_honor_name` bỏ phần trong ngoặc,
-  từ có chữ số, ký tự lạ (tên HS tự nhập bẩn: "đỗ đăng duy(oguri cap...)" → "Duy Đ."); `rank_public_honor`
-  trả thêm `top_more` (số bạn đồng hạng bị cắt khỏi bục 5 ô). Chỉ thay 2 hàm.
-  Migration: `supabase/migrations/20260928180000_rank_public_honor_v2.sql`
-  (rollback `perf/rollback/20260928180000_rank_public_honor_v2.down.sql`). Chạy giờ nào cũng được.
-- **Xoá bảng backup tạm `question_bank_backup_20260925`** (28/9/2026, đợt rà hạn mức Supabase Free):
-  bảng chụp trước khi gộp câu trùng 25/9, không code nào đọc, chiếm ~13 MB (≈12% hạn mức 500 MB).
-  Migration: `supabase/migrations/20260928150000_drop_question_bank_backup.sql`
-  (rollback `perf/rollback/20260928150000_drop_question_bank_backup.down.sql` — chỉ tạo bản chụp mới,
-  không khôi phục được dữ liệu cũ). Chạy giờ nào cũng được.
-
-## Migration — ĐÃ CHẠY XONG (27/09/2026, 07:32)
-Cả 8 file trong `supabase/migrations/` đã chạy lên production qua `bash scripts/run-migrations.sh`:
-perf_indexes, perf_rpc_gv, perf_rls, difficulty_source, mastery, lesson_item_draft_publish,
-exam_violation_alert, fix_question_bank_similarity_timeout. Cộng rank_paragon, rank_exclude_staff,
-fix_rls_tautology chạy trước đó. Rollback từng file ở `perf/rollback/`.
-
-- Cột `exam_id` trên `class_announcements` (gắn đề vào "Việc cần làm hôm nay", nút "Làm bài" ở
-  trang chủ HS): migration `20260927100000_class_announcement_exam.sql` ĐÃ chạy 27/9/2026 (log
-  `scripts/logs/20260927-084117-*`, rollback `perf/rollback/20260927100000_class_announcement_exam.down.sql`).
-  Code (services/announcements.ts, ClassAnnouncementsPanel, ThptStudentHome) đã deploy 27/9/2026.
-
-- **Báo lỗi gắn vào đúng câu hỏi**: cột `exam_id`/`question_index` trên `bug_reports` + nhãn
-  `category='cau_hoi'` — migration `20260927110000_bug_report_question_link.sql` ĐÃ chạy 27/9/2026
-  (log `scripts/logs/20260927-104450-*`, rollback
-  `perf/rollback/20260927110000_bug_report_question_link.down.sql`). Học sinh bấm "Báo lỗi câu này"
-  ở màn Xem lại bài làm ([ReportQuestionButton.tsx](../components/exams/ReportQuestionButton.tsx));
-  admin ở `/quan-tri/bao-loi` bấm link "Đề #… · Câu N →" nhảy thẳng vào `/quan-tri/sua-de?exam=&q=`,
-  tự mở đúng đề + tô khung vàng đúng câu. Tiện thể vá luôn 1 lỗi nhỏ: nút "Báo lỗi / Góp ý" chung
-  (mọi trang) trước làm rớt mất `#hash` của URL nên link báo lỗi lý thuyết chỉ mở tới đầu trang, mất
-  luôn đoạn `#theory-sec-…` — đã sửa trong `BugReportWidget.tsx`. Đã deploy 27/9/2026 — **chưa test
-  UI thật bằng tài khoản có login**.
-
-## Migration — ĐÃ CHẠY 28/9/2026 10:42 (thầy chạy qua scripts/run-migrations.sh, log scripts/logs/20260928-104205-*)
-- **Mã danh hiệu đang đeo trong RPC lớp** (28/9/2026, tính năng "đeo danh hiệu dưới tên + khung sưu tập
-  huy hiệu", xem `docs/rank-title-showcase-design.md`): `rank_class_groups` trả thêm `title.code`,
-  `rank_class_board` trả thêm `top_week[].title` → chip bạn cùng lớp và top tuần hiện logo huy hiệu.
-  Client chấp nhận cả dạng cũ. ĐÃ CHẠY 28/9 10:42. Migration:
-  `supabase/migrations/20260928130000_rank_title_code_in_class_rpcs.sql`
-  (rollback `perf/rollback/20260928130000_rank_title_code_in_class_rpcs.down.sql`).
-
-- **3 mức danh hiệu chuyên môn khớp độ khó câu hỏi** (28/9/2026, theo yêu cầu thầy): Thức Tỉnh cần
-  đủ số câu Dễ giải đúng, Làm Chủ cần đủ số câu Trung bình, Huyền Thoại cần đủ số câu Khó (bỏ điều
-  kiện % chính xác + đề thử thách riêng cũ), tính trên mọi lượt làm đề + luyện tập. Thêm cột
-  `difficulty` vào `exam_question_results`/`practice_question_results` (backfill dữ liệu cũ từ
-  `exams.questions`), cột `min_de`/`min_tb`/`min_kho` vào `rank_titles`. Code (services/rank.ts,
-  features/rank/types.ts, components/rank/TitleCollection.tsx, components/admin/RankAdmin.tsx,
-  features/rank/preview.ts, services/lessons.ts, features/exams/types.ts) đã commit + deploy 28/9/2026.
-  Migration: `supabase/migrations/20260928100000_rank_specialist_difficulty.sql`
-  (rollback `perf/rollback/20260928100000_rank_specialist_difficulty.down.sql`). Chạy xong thì chạy
-  tiếp `docs/supabase-recompute-rank-titles-20260928.sql` để xét lại danh hiệu cho HS đã đủ điều
-  kiện theo logic mới. → ĐÃ CHẠY 28/9 ~10:50 (rank_recompute_season(4) + (5); CLI chỉ in kết quả lệnh cuối: 42 HS mùa 5).
-
-- **Vá lỗ hổng phân quyền `/kiem-tra/lam`** (27/9/2026, phát hiện lúc test `perf5/test-exam-flow`)
-  — học sinh đã đăng nhập có thể làm và NỘP bất kỳ đề `published` nào qua
-  `/kiem-tra/lam?id=<id>` dù không thuộc lớp mình (URL chia sẻ / đoán id tăng dần), vì
-  `RequireAuth` ở trang đó không kiểm tra lớp, và RLS `exams`/`exam_results`/
-  `exam_question_results` cũ chỉ yêu cầu `published`/`student_id = auth.uid()`, không đối
-  chiếu `exam_classes` ↔ `user_classes`. Đã sửa UI (`app/kiem-tra/lam/page.tsx`, chặn sớm +
-  báo "Đề này không thuộc lớp của em") + migration
-  `20260927150000_exam_class_access.sql` — thêm 3 policy RLS **restrictive** trên
-  `exams`/`exam_results`/`exam_question_results` (AND với policy cũ, không đổi hành vi
-  admin/instructor/tro_giang, không đổi đề "toàn trường" không gán lớp — đúng logic
-  `services/content.ts#visibleTo` đang dùng). **ĐÃ CHẠY production 27/9/2026** qua
-  `supabase db query --linked -f` (worktree không có `supabase link` nên chạy trực tiếp bằng
-  đường dẫn tuyệt đối tới file trong worktree, không qua `scripts/run-migrations.sh`) — đã soi
-  lại `pg_policies` xác nhận 3 policy restrictive lên đúng, không đụng 2 policy "parent reads…"
-  mới hơn (khác lệnh SELECT/INSERT nên không xung đột). Rollback nếu cần:
-  `supabase db query --linked -f perf/rollback/20260927150000_exam_class_access.down.sql`.
-  Code UI đã commit (nhánh `claude/cranky-colden-989171`, chưa merge/deploy) — **chưa tự kiểm
-  bằng tài khoản học sinh thật** (mở đề lớp khác phải báo "không thuộc lớp", mở đúng đề lớp mình
-  phải làm/nộp bình thường); merge + deploy để lên web thật.
-
-- **Chấm BTVN trên lớp + BTVN ôn tập tự động sau chữa bài** (27/9/2026) — 2 migration
-  `20260927130000_homework_check.sql` (bảng `class_homework_checks` + RPC
-  `homework_check_set`, cộng RP) và `20260927140000_class_review_homework.sql` (bảng
-  `class_review_homework`) ĐÃ CHẠY (log `scripts/logs/20260927-182457-*`, rollback ở
-  `perf/rollback/`). Đã nối dây đủ 4 chỗ: `ClassAnnouncementsPanel.tsx` (nút chấm BTVN
-  cạnh mỗi thông báo), `app/phu-huynh/page.tsx` (ParentHomeworkNotes), `ThptStudentHome.tsx`
-  (mục "Việc cần làm hôm nay"), `ReviewBoard.tsx` (nút "Tạo BTVN ôn tập"). Đã
-  `bash scripts/deploy.sh` — **đã lên web thật** (commit dd9bd74e). Chưa tự kiểm bằng
-  tài khoản đăng nhập thật (chấm 1 BTVN, xem trang phụ huynh, bấm "Tạo BTVN ôn tập").
-
-Cột `lesson_items.summary_html` (Tóm tắt ý
-chính cần thuộc) ĐÃ chạy 27/9/2026 (`20260927120000_lesson_item_summary.sql`,
-log `scripts/logs/20260927-173722-*`, rollback
-`perf/rollback/20260927120000_lesson_item_summary.down.sql`). Backfill đã xong: cả 81/81 mục
-`ly_thuyet` có `summary_html` (script `scripts/backfill-lesson-summary.mts` — không rõ ai chạy,
-kiểm tra thấy đã có dữ liệu sẵn khi thầy chạy lại 27/9 tối). Đã `bash scripts/deploy.sh` lại
-(file tĩnh `public/data/` đã có nội dung mới, 81/81 file có `summary_html`) — khối "📌 Tóm tắt ý
-chính" giờ lên web thật.
+Mọi file khác trong `supabase/migrations/` tính tới 28/09/2026 đã chạy trên production.
+Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
+(sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
 
 ## Việc tay còn lại
 - [x] **Trang bài học: 6 mục thu gọn thành danh sách + Tóm tắt ý chính cần thuộc**
