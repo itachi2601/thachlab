@@ -91,7 +91,7 @@ export function titleBadgeLockedSrc(code: string): string | null {
 /**
  * Danh hiệu bộ sưu tập / thành tích (không phân mức) → slug file `titles/<slug>.webp`.
  * Spec vẽ ở design system "ThachLab Huy Hiệu" (mục "Danh hiệu bộ sưu tập" / "Danh hiệu thành tích").
- * Ảnh CHƯA vẽ (28/9/2026) — thêm file webp vào public/images/rank/titles/ rồi thêm mã vào SINGLE_AVAILABLE.
+ * Đủ 13/13 ảnh từ 28/9/2026.
  */
 export const SINGLE_SLUG: Record<string, string> = {
   hau_due_newton: "bst-newton",
@@ -109,8 +109,8 @@ export const SINGLE_SLUG: Record<string, string> = {
   huyen_thoai_dau_truong: "tt-huyen-thoai-dau-truong",
 };
 
-/** Mã danh hiệu bộ sưu tập/thành tích ĐÃ có file ảnh. Trống cho tới khi vẽ xong 13 PNG. */
-const SINGLE_AVAILABLE = new Set<string>([]);
+/** Mã danh hiệu bộ sưu tập/thành tích ĐÃ có file ảnh (đủ 13/13 từ 28/9/2026). */
+const SINGLE_AVAILABLE = new Set<string>(Object.keys(SINGLE_SLUG));
 
 /**
  * Ảnh để HIỂN THỊ một danh hiệu ở bất kỳ trạng thái nào (dùng cho logo cạnh tên, khung sưu tập):

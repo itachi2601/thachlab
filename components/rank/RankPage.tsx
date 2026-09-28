@@ -30,6 +30,7 @@ import {
   fetchSeasonsOf,
   setDisplayTitle,
 } from "@/services/rank";
+import { isStudentPreview } from "@/features/rank/preview";
 
 const TIER_SORT_KEY = "thachlab-rank-tier-sort";
 
@@ -96,6 +97,15 @@ export default function RankPage({ studentId, studentName }: { studentId: string
   useEffect(load, [load]);
 
   async function wear(code: string | null, level: TitleLevel | null) {
+    // Chế độ "Xem như học sinh": danh hiệu đã mở là giả lập (features/rank/preview.ts), tài khoản
+    // thật (admin/GV) không sở hữu trong rank_title_awards nên RPC luôn từ chối — chỉ đổi tại
+    // client, không đụng dữ liệu thật.
+    if (isStudentPreview()) {
+      const t = code ? titles.find((x) => x.code === code) : null;
+      setStatus((s) => (s ? { ...s, display_title: code && t ? { code: t.code, name: t.name, level, group: t.group } : null } : s));
+      toast("success", code ? "Đã đeo danh hiệu (xem thử)" : "Đã bỏ danh hiệu (xem thử)");
+      return;
+    }
     try {
       await setDisplayTitle(code, level);
       toast("success", code ? "Đã đeo danh hiệu" : "Đã bỏ danh hiệu");
