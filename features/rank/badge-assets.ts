@@ -76,11 +76,13 @@ export function tierBadgeSrc(code: TierCode): string {
  * Đường dẫn ảnh danh hiệu chuyên môn theo mã danh hiệu + cấp.
  * Trả về null nếu không phải danh hiệu chuyên môn (collection/achievement chưa có ảnh)
  * hoặc cấp là "don".
+ * Hậu tố `-v2`: bản 28/9/2026 thêm vòng nguyệt quế, đổi tên file (không ghi đè) để tránh
+ * cache ảnh cũ 30 ngày ở học sinh đã từng xem — xem "Cache ảnh" trong scripts/deploy.sh.
  */
 export function titleBadgeSrc(code: string, level: TitleLevel | null | undefined): string | null {
   const slug = SPECIALIST_SLUG[code];
   if (!slug || !level || level === "don") return null;
-  return `${BASE}/titles/cm-${slug}-${LEVEL_FILE[level]}.webp`;
+  return `${BASE}/titles/cm-${slug}-${LEVEL_FILE[level]}-v2.webp`;
 }
 
 /** Ảnh dùng cho ô "chưa mở": cấp Thức Tỉnh, hiển thị mờ/xám ở nơi gọi. */
