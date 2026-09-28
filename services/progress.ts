@@ -343,7 +343,8 @@ export async function finishExamAttempt(clientToken: string, examResultId: numbe
   try {
     await getSupabase()
       .from("exam_attempts")
-      .update({ submitted_at: new Date().toISOString(), exam_result_id: examResultId })
+      // Xoá đáp án JSON tạm khi nộp: bản chính đã nằm ở exam_results.detail, giữ thêm chỉ tốn chỗ.
+      .update({ submitted_at: new Date().toISOString(), exam_result_id: examResultId, responses: null, seconds_left: null })
       .eq("client_token", clientToken);
   } catch {
     /* không ảnh hưởng điểm đã lưu */
