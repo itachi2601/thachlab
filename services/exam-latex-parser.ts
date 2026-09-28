@@ -100,8 +100,10 @@ function detectPartType(header: string): QuestionType | null {
   return null;
 }
 
+// "Đáp án"/"Đáp số" chỉ là dòng khai báo khi có dấu hai chấm ngay sau (hoặc dạng "Chọn đáp án D"
+// của xuat_thachlab.py) — không thì câu dẫn "Đáp án nào sau đây…"/"Đáp số là…" bị cắt mất.
 const FIELD_LINE_RE =
-  /^\\?(?:textbf\{)?\s*(?:Đáp\s*án|Đáp\s*số|Giải|Lời\s*giải|Hướng\s*dẫn|answer|explanation)/i;
+  /^\\?(?:textbf\{)?\s*(?:(?:Đáp\s*án\s*đúng|Đáp\s*án|Đáp\s*số)\}?\s*[:：]|Chọn\s+đáp\s*án\s+[A-D]\b|Giải|Lời\s*giải|Hướng\s*dẫn|answer|explanation)/i;
 
 /**
  * Dòng nhãn phân loại của một câu (đặt ở bất kỳ đâu trong khối câu, thường sau "Lời giải"):
@@ -227,7 +229,12 @@ function findField(block: string, names: string): string | null {
   // dòng khai báo đáp án thật, nuốt mất chữ cái đúng nằm ở dòng "Đáp án: B" thật sự phía sau.
   // Cho phép tiền tố "Chọn " (quy ước lời giải của xuat_thachlab.py: dòng đầu lời giải là
   // "Chọn đáp án D", không có dấu hai chấm) — vẫn phải là ĐẦU DÒNG, không khớp giữa câu dẫn.
-  const re = new RegExp(`^\\\\?(?:textbf\\{)?\\s*(?:Chọn\\s+)?(?:${names})\\}?\\s*[:：]?\\s*([^\\n]*)`, "i");
+  // Không có "Chọn " thì BẮT BUỘC dấu hai chấm — câu dẫn "Đáp án nào sau đây…" mới không bị
+  // nhận nhầm là dòng khai báo (khớp FIELD_LINE_RE).
+  const re = new RegExp(
+    `^\\\\?(?:textbf\\{)?\\s*(?:Chọn\\s+(?:${names})\\}?\\s*[:：]?|(?:${names})\\}?\\s*[:：])\\s*([^\\n]*)`,
+    "i",
+  );
   for (const line of block.split("\n")) {
     const m = line.match(re);
     if (m) return m[1].replace(/^\}/, "").trim();
