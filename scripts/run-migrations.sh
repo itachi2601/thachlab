@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260928130000_rank_title_code_in_class_rpcs.sql|rank_class_groups/rank_class_board trả thêm mã danh hiệu đang đeo để hiện logo huy hiệu|chạy giờ nào cũng được, chỉ thay 2 hàm đọc"
 )
 # ĐÃ CHẠY 26–27/9/2026, không đưa vào danh sách nữa:
 #   20260925120000_perf_indexes.sql

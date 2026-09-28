@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
+import WornTitle from "@/components/rank/WornTitle";
 import { formatRp, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
 
 /**
@@ -66,15 +67,8 @@ export default function RankCard({
             <>
               {name && <p className="truncate text-xs font-bold uppercase tracking-widest text-slate-400">{name}</p>}
               <TierName code={status.tier?.code} division={status.tier?.division} paragon={paragon} size="md" />
-              <p className="mt-0.5 truncate text-sm text-slate-300">
-                {status.display_title ? (
-                  <>
-                    <Sparkles size={13} className="mr-1 inline text-amber-300" />
-                    {titleDisplay(status.display_title.name, status.display_title.level)}
-                  </>
-                ) : (
-                  <span className="text-slate-500">Chưa đeo danh hiệu</span>
-                )}
+              <p className="mt-0.5 flex min-w-0 text-sm">
+                {status.display_title ? <WornTitle title={status.display_title} size="md" /> : <span className="text-slate-500">Chưa đeo danh hiệu</span>}
               </p>
               {!compact && (
                 <p className="mt-1 text-sm text-slate-400">

@@ -87,3 +87,53 @@ export function titleBadgeSrc(code: string, level: TitleLevel | null | undefined
 export function titleBadgeLockedSrc(code: string): string | null {
   return titleBadgeSrc(code, "thuc_tinh");
 }
+
+/**
+ * Danh hiệu bộ sưu tập / thành tích (không phân mức) → slug file `titles/<slug>.webp`.
+ * Spec vẽ ở design system "ThachLab Huy Hiệu" (mục "Danh hiệu bộ sưu tập" / "Danh hiệu thành tích").
+ * Ảnh CHƯA vẽ (28/9/2026) — thêm file webp vào public/images/rank/titles/ rồi thêm mã vào SINGLE_AVAILABLE.
+ */
+export const SINGLE_SLUG: Record<string, string> = {
+  hau_due_newton: "bst-newton",
+  nhac_truong_vu_tru: "bst-nhac-truong",
+  loi_than_maxwell: "bst-maxwell",
+  nguoi_giu_lua_vinh_hang: "bst-lua-vinh-hang",
+  lu_khach_luong_tu: "bst-lu-khach-luong-tu",
+  ke_giai_ma_vu_tru: "bst-vu-tru",
+  but_pha_than_toc: "tt-but-pha",
+  chien_binh_bat_diet: "tt-bat-diet",
+  bach_phat_bach_trung: "tt-bach-phat",
+  lat_keo_ngoan_muc: "tt-lat-keo",
+  pha_dao_chuyen_de: "tt-pha-dao",
+  trum_cuoi: "tt-trum-cuoi",
+  huyen_thoai_dau_truong: "tt-huyen-thoai-dau-truong",
+};
+
+/** Mã danh hiệu bộ sưu tập/thành tích ĐÃ có file ảnh. Trống cho tới khi vẽ xong 13 PNG. */
+const SINGLE_AVAILABLE = new Set<string>([]);
+
+/**
+ * Ảnh để HIỂN THỊ một danh hiệu ở bất kỳ trạng thái nào (dùng cho logo cạnh tên, khung sưu tập):
+ * chuyên môn đã mở → ảnh mức đó; chuyên môn chưa mở → ảnh Thức Tỉnh (nơi gọi tự làm xám);
+ * bộ sưu tập/thành tích → ảnh riêng nếu đã vẽ, không thì null (nơi gọi vẽ ô dự phòng).
+ */
+export function titleBadgeDisplaySrc(code: string, level: TitleLevel | string | null | undefined): string | null {
+  if (SPECIALIST_SLUG[code]) {
+    const lv = level && level !== "don" ? (level as TitleLevel) : "thuc_tinh";
+    return titleBadgeSrc(code, lv);
+  }
+  const single = SINGLE_SLUG[code];
+  return single && SINGLE_AVAILABLE.has(code) ? `${BASE}/titles/${single}.webp` : null;
+}
+
+/** Màu chữ theo mức danh hiệu, khớp tông bộ ảnh: Thức Tỉnh lam · Làm Chủ bạc · Huyền Thoại tím · không mức (bộ sưu tập/thành tích) vàng. */
+export const LEVEL_TEXT_COLOR: Record<TitleLevel, string> = {
+  thuc_tinh: "#bff3f9",
+  lam_chu: "#d8e3f7",
+  huyen_thoai: "#d9c4ff",
+  don: "#fff3cf",
+};
+
+export function levelTextColor(level: TitleLevel | string | null | undefined): string {
+  return LEVEL_TEXT_COLOR[(level ?? "don") as TitleLevel] ?? LEVEL_TEXT_COLOR.don;
+}
