@@ -93,7 +93,8 @@ export default function InlineLessonAccordion({
       }).catch(() => undefined);
     };
     beat();
-    const timer = window.setInterval(beat, 60_000);
+    // 2 phút/lần (trước 60s) — giảm log Supabase; bảng GV lọc last_seen_at trong 15 phút nên vẫn đủ.
+    const timer = window.setInterval(beat, 120_000);
     document.addEventListener("visibilitychange", beat);
     return () => {
       window.clearInterval(timer);

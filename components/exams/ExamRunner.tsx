@@ -132,6 +132,8 @@ export default function ExamRunner({
   // Sinh 1 lần/lượt làm, giữ nguyên khi bấm "Thử lại" — chống lưu trùng nếu mạng lỗi giữa chừng.
   // Nếu khôi phục bài đang làm dở thì thay bằng client_token của lượt cũ (xem beginExam).
   const clientTokenRef = useRef<string>(crypto.randomUUID());
+  const lastSavedResponsesRef = useRef<QuestionResponse[] | null>(null);
+  const lastSavedAtRef = useRef(0);
   const savedResultIdRef = useRef<number | null>(null);
   const secondsLeftRef = useRef(secondsLeft);
 
@@ -259,15 +261,27 @@ export default function ExamRunner({
     return () => clearInterval(timer);
   }, [phase, submit]);
 
-  // Tự lưu tiến độ (đáp án + thời gian còn lại) vào exam_attempts mỗi 15s, để
-  // lỡ thoát ra/mất mạng/sập máy thì vào lại vẫn khôi phục được, không phải làm lại.
+  // Tự lưu tiến độ (đáp án + thời gian còn lại) vào exam_attempts, để lỡ thoát ra/mất
+  // mạng/sập máy thì vào lại vẫn khôi phục được, không phải làm lại.
+  // Tiết kiệm log Supabase (28/9/2026): kiểm mỗi 30s nhưng chỉ ghi khi đáp án có đổi so với
+  // lần ghi trước; ngoài ra cứ tối đa 2 phút ghi một lần dù không đổi để đồng hồ còn lại
+  // (seconds_left) không lệch quá 2 phút khi khôi phục. Trước đây ghi vô điều kiện mỗi 15s.
+  const flushProgress = useCallback((force: boolean) => {
+    const dirty = responsesRef.current !== lastSavedResponsesRef.current;
+    const stale = Date.now() - lastSavedAtRef.current >= 120_000;
+    if (!force && !dirty && !stale) return;
+    lastSavedResponsesRef.current = responsesRef.current;
+    lastSavedAtRef.current = Date.now();
+    void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
+  }, []);
+
   useEffect(() => {
     if (phase !== "running") return;
-    const timer = setInterval(() => {
-      void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
-    }, 15000);
+    lastSavedResponsesRef.current = responsesRef.current;
+    lastSavedAtRef.current = Date.now();
+    const timer = setInterval(() => flushProgress(false), 30_000);
     return () => clearInterval(timer);
-  }, [phase]);
+  }, [phase, flushProgress]);
 
   // Ghi nhận rời tab / thoát fullscreen lúc đang làm bài — chỉ log + cảnh báo,
   // không tự nộp bài, không chặn thao tác gì khác.
@@ -285,7 +299,7 @@ export default function ExamRunner({
     function onVisibilityChange() {
       if (document.hidden) {
         hiddenAtRef.current = Date.now();
-        void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
+        flushProgress(true);
         return;
       }
       if (hiddenAtRef.current == null) return;
@@ -319,7 +333,7 @@ export default function ExamRunner({
       document.removeEventListener("visibilitychange", onVisibilityChange);
       document.removeEventListener("fullscreenchange", onFullscreenChange);
     };
-  }, [phase]);
+  }, [phase, flushProgress]);
 
   useEffect(() => {
     if (!violationBanner) return;

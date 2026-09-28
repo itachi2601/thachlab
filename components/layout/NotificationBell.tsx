@@ -7,7 +7,8 @@ import { useAuth } from "@/components/auth/auth-context";
 import { timeAgo } from "@/lib/time-ago";
 import type { Notification } from "@/services/notifications";
 
-const POLL_MS = 60_000;
+// 2 phút/lần (trước 60s), bỏ qua khi tab ẩn — giảm log Supabase; quay lại tab thì tải ngay.
+const POLL_MS = 120_000;
 
 /**
  * Chuông thông báo trên thanh điều hướng: đếm chưa đọc (RPC, rẻ), mở ra thì tải 10 dòng
@@ -28,7 +29,7 @@ export default function NotificationBell() {
   const ref = useRef<HTMLDivElement>(null);
 
   const refreshCount = useCallback(() => {
-    if (!session) return;
+    if (!session || document.visibilityState === "hidden") return;
     import("@/services/notifications").then(({ fetchUnreadCount }) =>
       fetchUnreadCount().then(setCount).catch(() => undefined),
     );
@@ -39,10 +40,15 @@ export default function NotificationBell() {
     refreshCount();
     const timer = window.setInterval(refreshCount, POLL_MS);
     const onFocus = () => refreshCount();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") refreshCount();
+    };
     window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVisible);
     return () => {
       window.clearInterval(timer);
       window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVisible);
     };
   }, [session, refreshCount]);
 
