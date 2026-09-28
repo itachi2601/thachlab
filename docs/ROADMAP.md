@@ -125,6 +125,26 @@ thức nền và hệ danh hiệu giữ miễn phí (danh hiệu là bằng ch�
 ## Ngoài roadmap Vật lý (giữ, không mở rộng)
 CNC/CTTC, SHCN, trợ giảng: chỉ sửa lỗi.
 
+## Skill Claude cần xây (công cụ của thầy, không phải tính năng web) — đề xuất 29/09/2026, chờ duyệt
+Bản đồ quy trình + bằng chứng khâu trống + dữ liệu cần cung cấp: `docs/DE-XUAT-SKILL-2026-09-29.md`.
+Thứ tự = tần suất dùng. Chưa tạo skill nào khi thầy chưa duyệt.
+- [ ] **Đ1 `khbd-5512`** (mới): kế hoạch bài dạy CV 5512, 4 hoạt động, bám YCCĐ TT32; tái dùng
+      `lesson_items` + đề đã đăng; 2 reference Vật lí THPT / CNC cao đẳng. Cần: PDF TT32 môn Vật lí,
+      1–2 KHBD mẫu tổ đã duyệt, mẫu giáo án LT/TH/tích hợp Cao Thắng.
+- [ ] **Đ2 `phan-tich-ket-qua`** (mới): đọc RPC phân tích ThachLab hoặc file kết quả Azota → báo cáo
+      Word/Excel sau kiểm tra + nhận xét HS. Cần: 1 file Azota xuất mẫu, mẫu báo cáo tổ.
+- [ ] **Đ3 bổ sung `de-vat-ly-thpt`**: bản đặc tả, rút đề từ `question_bank` theo ma trận YCCĐ ×
+      Dễ–TB–Khó (chồng với mục GĐ 5 "Tạo đề theo ma trận" — làm ở skill trước, web sau), cổng kiểm
+      định sau khi ghi file. Cần: mẫu bản đặc tả, chốt ánh xạ NB/TH/VD ↔ Dễ/TB/Khó.
+- [ ] **Đ4 rubric eval CSV** cho 12 skill nghiệp vụ (bucket P/R/O/M, cột Conditional/Source theo
+      k12-teacher-skills), chạy bằng harness `skill-creator` sẵn có. Cần: 3–5 file thật/skill.
+- [ ] **Đ5 `chuan-dau-ra-abet`** (mới): ma trận CLO ↔ PLO ↔ ETAC outcomes, performance indicators,
+      đề cương học phần CNC. Cần: bộ tiêu chí ETAC đang áp dụng, PLO CĐ CNCTM, đề cương hiện có.
+- [ ] **Đ6 `phan-hoa-day-lai`** (bước cuối Đ2 hoặc skill riêng): gói 3 mức + kế hoạch tiết chữa bài.
+- [ ] **Đ7 bổ sung `up-de-kiem-tra`** nhánh đích CNC (`cnc_key`, `/quan-tri/cnc-dang-de`).
+- [ ] **Đ8 `mo-phong-bai-hoc`**: hoãn tới GĐ 3 (Q1/2027); `lib/Physics/*` đã xoá 29/09 vì là code
+      chết — khi làm thì viết lại theo mô hình cần, lấy lại từ git nếu cần tham khảo.
+
 ---
 
 ## Việc bắt đầu ngay

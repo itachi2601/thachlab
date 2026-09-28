@@ -26,6 +26,7 @@ hàm/tham số). Log migration đã chạy ở `docs/STATE-archive.md`. Các fil
 | LaTeX Editor | `docs/LATEX-EDITOR-GUIDE.md` |
 | Deploy Edge Function `import-roster` | `docs/deploy-edge-function.md` |
 | Roadmap / định hướng sản phẩm | `docs/ROADMAP.md`, `docs/MANIFESTO.md`, `docs/PROJECT.md` |
+| Skill Claude còn thiếu (bản đồ quy trình, đề xuất chờ duyệt) | `docs/DE-XUAT-SKILL-2026-09-29.md` |
 
 Còn lại (`BRAND.md`, `UI.md`, `THONG-BAO.md`, `BAN-GIAO-*.md`, `prompt-toc-do-*.md`,
 `prompt-toi-uu-font.md`, `rank-title-showcase-design.md`, `bai-viet-lo-trinh-*.md`) là log/prompt

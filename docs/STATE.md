@@ -4,7 +4,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Hạ tầng
 - Next.js App Router + TypeScript + Tailwind v4, `output: "export"` (xuất tĩnh), deploy bằng `scripts/deploy.sh` → nhánh `deploy`.
-- Supabase project `fxnqgmfqdbvnjawgnsfi`, **region Sydney (ap-southeast-2)** → mỗi round-trip từ VN ~100–150 ms.
+- Supabase project `jgvbdbpvjdntdgzthumv`, **region Singapore (ap-southeast-1)** — migrate từ project Sydney `fxnqgmfqdbvnjawgnsfi` ngày 28/09/2026 (project Sydney cũ còn treo việc Pause/Delete). URL/key lấy ở `.env.local`.
 - Công thức: **KaTeX 0.17** (không phải MathJax).
 - Font tự host qua `next/font` (Be Vietnam Pro 400/600/700/800, Inter 400/500/600, JetBrains Mono 400).
 - 56 route `page.tsx`, 69 trang tĩnh khi build.
