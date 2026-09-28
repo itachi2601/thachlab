@@ -15,6 +15,7 @@ cd "$(dirname "$0")/.."
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
   "supabase/migrations/20260928180000_rank_public_honor_v2.sql|Vinh danh tuần v2: làm sạch tên HS tự nhập (bỏ ngoặc/chữ số/ký tự lạ) + trả top_more khi >5 bạn đồng hạng|chạy giờ nào cũng được, chỉ thay 2 hàm đọc"
+  "supabase/migrations/20260928190000_rank_tier_names_lien_quan.sql|Đổi tên 7 bậc rank theo bậc Liên Quân Mobile (Đồng…Cao Thủ) — chỉ đổi cột name, không đổi code/min_rp/điều kiện|chạy giờ nào cũng được, chỉ đổi nhãn hiển thị"
 )
 # ĐÃ CHẠY 28/9/2026 (11:39): 20260928160000_rank_public_honor.sql
 # ĐÃ CHẠY 28/9/2026 (10:42): 20260928130000_rank_title_code_in_class_rpcs.sql

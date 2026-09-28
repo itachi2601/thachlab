@@ -13,8 +13,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 ## Đã hoàn thành
 - **Đợt tối ưu tốc độ (perf, 24–25/09)**: Lighthouse trang chủ 68→91, trang bài 78→83; `out/` 41→34 MB; ảnh 4,6 MB→0,6 MB; bỏ Google Fonts; Supabase request trang bài 10→4. Chi tiết: `perf/RESULT.md`.
 - **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
-- Hệ thống Rank/RP 7 bậc (Tinh Quang → Chí Tôn), nhiệm vụ hằng ngày, chuỗi ngày.
-- Danh vị Vô Song (Paragon) trên Chí Tôn: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
+- Hệ thống Rank/RP 7 bậc (Đồng → Cao Thủ, đổi theo bậc Liên Quân Mobile 28/9/2026 — xem mục Migration ĐANG CHỜ), nhiệm vụ hằng ngày, chuỗi ngày.
+- Danh vị Thách Đấu (Vô Song/Paragon) trên Cao Thủ: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
 - Loại GV/admin khỏi rank RP: migration `20260926110000_rank_exclude_staff.sql` ĐÃ chạy 26/9/2026 — chặn tận gốc (3 hàm) việc tài khoản không phải role='student' bị cộng RP/lọt bảng xếp hạng khi tự test bài, đã dọn sạch dữ liệu rác (rollback `perf/rollback/20260926110000_rank_exclude_staff.down.sql`).
 - Vá 2 lỗ hổng RLS tautology + `class_assessments using(true)`: migration `20260926140000_fix_rls_tautology.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/20260926140000_fix_rls_tautology.down.sql`).
 - Sửa `find_similar_bank_questions` (quét câu trùng ở `/quan-tri/ngan-hang-cau-hoi`) bị `statement
@@ -25,6 +25,14 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
+- **Đổi tên 7 bậc rank theo Liên Quân Mobile** (28/9/2026): Tinh Quang…Chí Tôn → Đồng, Bạc, Vàng,
+  Bạch Kim, Kim Cương, Tinh Anh, Cao Thủ (đúng thứ tự thấp → cao của LQM); danh vị Vô Song/Paragon
+  đổi tên hiển thị thành "Thách Đấu" (bậc thứ 8 của LQM, chỉ ở frontend — không thêm dòng vào
+  `rank_tiers`). Chỉ đổi cột `name` + hàm `rank_seed_tiers` (tên mùa mới), không đổi `code`/min_rp/
+  điều kiện lên bậc nên không ảnh hưởng RP đã tính. Phần frontend (features/rank/types.ts,
+  components/rank/*, components/admin/RankAdmin.tsx) đã đổi tên xong, chỉ còn phần DB.
+  Migration: `supabase/migrations/20260928190000_rank_tier_names_lien_quan.sql`
+  (rollback `perf/rollback/20260928190000_rank_tier_names_lien_quan.down.sql`). Chạy giờ nào cũng được.
 - **Vinh danh tuần v2** (28/9/2026): bản 20260928160000 ĐÃ chạy 11:39 (log `scripts/logs/20260928-113911-*`),
   RPC trả dữ liệu thật OK. Bản v2 sửa 2 điểm thấy từ dữ liệu thật: `rank_honor_name` bỏ phần trong ngoặc,
   từ có chữ số, ký tự lạ (tên HS tự nhập bẩn: "đỗ đăng duy(oguri cap...)" → "Duy Đ."); `rank_public_honor`

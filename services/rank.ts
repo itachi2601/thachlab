@@ -27,7 +27,7 @@ export async function fetchMyRankStatus(): Promise<RankStatus | null> {
   const { data, error } = await getSupabase().rpc("rank_my_status");
   if (error) throw error;
   const status = (data as RankStatus | null) ?? null;
-  // Admin đang "Xem như học sinh" → mở khoá hết (Vô Song, 45 danh hiệu, chuỗi ngày…), xem features/rank/preview.ts.
+  // Admin đang "Xem như học sinh" → mở khoá hết (Thách Đấu, 45 danh hiệu, chuỗi ngày…), xem features/rank/preview.ts.
   return isStudentPreview() ? unlockStatus(status) : status;
 }
 

@@ -667,7 +667,7 @@ export default function QuestionBankAdmin() {
                   <input type="checkbox" checked={showArchived} onChange={(e) => setShowArchived(e.target.checked)} />
                   Hiện câu đã lưu trữ
                 </label>
-                <div className="ml-auto flex items-center gap-1">
+                <div className="ml-auto flex flex-wrap items-center gap-1">
                   <input
                     type="number"
                     min={1}
@@ -720,10 +720,14 @@ export default function QuestionBankAdmin() {
               <Trash2 size={14} /> Bỏ hết
             </button>
           )}
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex flex-wrap items-center gap-2">
             {basket.length > 0 && (
               <>
-                <select value={bulkTopic} onChange={(e) => setBulkTopic(e.target.value)} className={`${selectCls} max-w-[260px]`}>
+                <select
+                  value={bulkTopic}
+                  onChange={(e) => setBulkTopic(e.target.value)}
+                  className={`${selectCls} max-w-[200px] sm:max-w-[260px]`}
+                >
                   <option value="">— gắn năng lực cho cả giỏ —</option>
                   {topicGroups.map(({ parent, outcomes }) => (
                     <optgroup key={parent.id} label={parent.name}>
