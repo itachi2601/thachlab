@@ -28,8 +28,8 @@ export interface PickedStudent {
 const MAX_STUDENTS = 4;
 
 const DEMO_ROSTER: ClassStudent[] = [
-  { id: "demo-1", full_name: "Nguyễn Văn A (mẫu)", class_name: "12" },
-  { id: "demo-2", full_name: "Trần Thị B (mẫu)", class_name: "12" },
+  { id: "demo-1", full_name: "Nguyễn Văn A (mẫu)", class_name: "12", student_code: null },
+  { id: "demo-2", full_name: "Trần Thị B (mẫu)", class_name: "12", student_code: null },
 ];
 
 /**

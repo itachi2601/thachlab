@@ -33,6 +33,7 @@ export default function PasswordResetCard({ studentId, studentName }: { studentI
   const [now, setNow] = useState(() => Date.now());
   const [busyDirect, setBusyDirect] = useState(false);
   const [busyCode, setBusyCode] = useState(false);
+  const [revealedPassword, setRevealedPassword] = useState<string | null>(null);
 
   const reload = useCallback(() => {
     fetchPasswordResetCodesForStudent(studentId)
@@ -60,7 +61,8 @@ export default function PasswordResetCard({ studentId, studentName }: { studentI
     try {
       const password = await adminResetPasswordToStudentCode(studentId);
       reload();
-      toast("success", `Đã đặt lại — mật khẩu mới là "${password}".`);
+      setRevealedPassword(password);
+      toast("success", "Đã đặt lại mật khẩu.");
     } catch (error) {
       toast("error", errorMessage(error, "Chưa đặt lại được mật khẩu."));
     } finally {
@@ -99,8 +101,32 @@ export default function PasswordResetCard({ studentId, studentName }: { studentI
       <h4 className="font-display text-lg font-bold text-white">Mật khẩu</h4>
       <p className="mt-1 text-sm text-slate-400">
         Gặp trực tiếp thì đặt thẳng về mã số HS; không gặp mặt thì tạo mã, gửi link qua Zalo để
-        em tự đặt mật khẩu mới. Mã chỉ dùng được 1 lần và hết hạn sau 24 giờ.
+        em tự đặt mật khẩu mới. Mã chỉ dùng được 1 lần và hết hạn sau 24 giờ. Vì mật khẩu được mã
+        hoá khi lưu, hệ thống không thể hiện lại mật khẩu đang dùng — chỉ đặt lại về mã số HS rồi
+        hiện mật khẩu mới ở đây.
       </p>
+
+      {revealedPassword && (
+        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/[.06] px-3 py-2.5 text-sm">
+          <span className="text-emerald-200">Mật khẩu mới:</span>
+          <span className="font-mono text-base font-bold text-white">{revealedPassword}</span>
+          <button
+            type="button"
+            onClick={() => copy(revealedPassword, "mật khẩu")}
+            title="Chép mật khẩu"
+            className="rounded-lg border border-white/10 p-1.5 text-slate-300 hover:border-white/30"
+          >
+            <Copy size={14} />
+          </button>
+          <button
+            type="button"
+            onClick={() => setRevealedPassword(null)}
+            className="ml-auto text-xs font-semibold text-slate-400 hover:text-white"
+          >
+            Ẩn
+          </button>
+        </div>
+      )}
 
       <div className="mt-4 flex flex-wrap gap-2">
         <button

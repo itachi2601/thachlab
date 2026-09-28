@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Copy, Search } from "lucide-react";
 import { fetchCttcStudentIds, removeStudentFromClass, type ClassStudent } from "@/services/classes";
+import { useToast } from "@/components/ui/Toast";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceSession } from "@/services/class-attendance";
 import type { LearningHistoryEntry } from "@/services/progress";
@@ -38,6 +39,7 @@ export default function TeacherThptStudentProfile({
   const [cttcIds, setCttcIds] = useState<Set<string>>(new Set());
   const [removing, setRemoving] = useState(false);
   const [history, setHistory] = useState<LearningHistoryEntry[]>([]);
+  const toast = useToast();
 
   const studentIds = useMemo(() => students.map((item) => item.id), [students]);
 
@@ -148,6 +150,24 @@ export default function TeacherThptStudentProfile({
               <div>
                 <h3 className="font-display text-xl font-bold text-white">{selected.full_name}</h3>
                 <p className="mt-1 text-sm text-slate-400">Lớp: {selected.class_name || "Chưa cập nhật"}</p>
+                {selected.student_code && (
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(selected.student_code ?? "");
+                        toast("success", "Đã chép tài khoản đăng nhập.");
+                      } catch {
+                        toast("error", "Trình duyệt không cho chép tự động — bôi đen rồi chép tay nhé.");
+                      }
+                    }}
+                    title="Chép tài khoản đăng nhập"
+                    className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-white/10 px-2.5 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 hover:text-white"
+                  >
+                    Tài khoản: <span className="font-mono text-white">{selected.student_code}</span>
+                    <Copy size={12} />
+                  </button>
+                )}
               </div>
               <button
                 type="button"
