@@ -34,21 +34,25 @@ export interface TierMeta {
   tone: string;
 }
 
+// Tên bậc theo bậc rank Liên Quân Mobile (Đồng → Cao Thủ, thấp lên cao); `code` nội bộ
+// giữ nguyên (khớp cột rank_tiers.code trong DB — xem
+// supabase/migrations/20260928190000_rank_tier_names_lien_quan.sql), chỉ đổi nhãn hiển thị.
 export const TIER_META: Record<TierCode, TierMeta> = {
-  tan_binh: { name: "Tinh Quang", en: "Starlight", color: "#3b6fd4", light: "#9fc3ff", tone: "bg-blue-500/15 text-blue-200" },
-  chien_binh: { name: "Tiên Phong", en: "Vanguard", color: "#4f7a3a", light: "#c9d6a3", tone: "bg-lime-600/15 text-lime-200" },
-  tinh_anh: { name: "Nhật Hoa", en: "Corona", color: "#d9701e", light: "#ffd27a", tone: "bg-orange-500/15 text-orange-200" },
-  tinh_nhue: { name: "Vương Lễ", en: "Regalia", color: "#c1122a", light: "#ffb3c0", tone: "bg-rose-600/15 text-rose-200" },
-  dai_su: { name: "Vương Triều", en: "Dynasty", color: "#2952c8", light: "#a9c4ff", tone: "bg-indigo-500/15 text-indigo-200" },
-  cao_thu: { name: "Thiên Thể", en: "Celestial", color: "#6d3fc7", light: "#d3b0ff", tone: "bg-violet-500/15 text-violet-200" },
-  thach_dau: { name: "Chí Tôn", en: "Sovereign", color: "#d4a836", light: "#fff0c2", tone: "bg-amber-400/15 text-amber-100" },
+  tan_binh: { name: "Đồng", en: "Bronze", color: "#8a5a3b", light: "#d9a97a", tone: "bg-amber-700/15 text-amber-200" },
+  chien_binh: { name: "Bạc", en: "Silver", color: "#8a97a8", light: "#e2e8f0", tone: "bg-slate-400/15 text-slate-200" },
+  tinh_anh: { name: "Vàng", en: "Gold", color: "#d4a836", light: "#ffe08a", tone: "bg-yellow-500/15 text-yellow-200" },
+  tinh_nhue: { name: "Bạch Kim", en: "Platinum", color: "#2fb6a6", light: "#a6f0e4", tone: "bg-teal-500/15 text-teal-200" },
+  dai_su: { name: "Kim Cương", en: "Diamond", color: "#2952c8", light: "#a9c4ff", tone: "bg-indigo-500/15 text-indigo-200" },
+  cao_thu: { name: "Tinh Anh", en: "Elite", color: "#6d3fc7", light: "#d3b0ff", tone: "bg-violet-500/15 text-violet-200" },
+  thach_dau: { name: "Cao Thủ", en: "Master", color: "#c1122a", light: "#ffb3c0", tone: "bg-rose-600/15 text-rose-200" },
 };
 
 /**
- * Danh vị Vô Song (Paragon) — trên cả Chí Tôn, không nằm trên thang RP và không có phân bậc.
+ * Danh vị Vô Song (Paragon) — trên cả Cao Thủ, không nằm trên thang RP và không có phân bậc,
+ * đặt tên "Thách Đấu" theo bậc cao nhất của Liên Quân Mobile.
  * Không phải bậc thứ tám: `tier.code` vẫn là "thach_dau", chỉ thêm cờ `tier.paragon`.
  */
-export const PARAGON_META: TierMeta = { name: "Vô Song", en: "Paragon", color: "#7c4dff", light: "#fff0bf", tone: "bg-violet-500/15 text-amber-100" };
+export const PARAGON_META: TierMeta = { name: "Thách Đấu", en: "Challenger", color: "#7c4dff", light: "#fff0bf", tone: "bg-violet-500/15 text-amber-100" };
 
 export function tierMeta(code: string | null | undefined, paragon?: boolean | null): TierMeta {
   if (paragon) return PARAGON_META;
@@ -122,7 +126,7 @@ export interface RankTierInfo {
   division: number | null;
   div_min: number;
   div_max: number | null;
-  /** Danh vị Vô Song: đang Chí Tôn + đủ mọi danh hiệu mức cao nhất (rank_is_paragon). */
+  /** Danh vị Thách Đấu (Vô Song): đang Cao Thủ + đủ mọi danh hiệu mức cao nhất (rank_is_paragon). */
   paragon?: boolean;
 }
 

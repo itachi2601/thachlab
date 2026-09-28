@@ -3,7 +3,7 @@
 import { useId } from "react";
 
 /**
- * Huy hiệu độc quyền "Vô Song" (Paragon) — trên cả Chí Tôn, chỉ dành cho học sinh
+ * Huy hiệu độc quyền "Thách Đấu" (Vô Song/Paragon) — trên cả Cao Thủ, chỉ dành cho học sinh
  * đã đạt trọn bộ danh hiệu và vượt mọi bậc của mùa.
  *
  * Cùng hệ toạ độ với RankBadge (viewBox 240×280, crop 28..212) để dùng chung mọi chỗ.
@@ -207,7 +207,7 @@ export default function ParagonBadge({
       height={Math.round((size * 280) / 184)}
       className={className}
       role="img"
-      aria-label="Huy chương Vô Song"
+      aria-label="Huy chương Thách Đấu"
     >
       <defs>
         {grad("p-diag", PLAT.diag, false)}

@@ -73,7 +73,7 @@ export default function RankCard({
               {!compact && (
                 <p className="mt-1 text-sm text-slate-400">
                   <b className="text-white">{formatRp(status.rp)} RP</b>
-                  {paragon && " · Danh vị độc quyền — trên cả Chí Tôn"}
+                  {paragon && " · Danh vị độc quyền — trên cả Cao Thủ"}
                   {status.next && (
                     <>
                       {" · "}

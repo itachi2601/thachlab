@@ -7,7 +7,7 @@ import { tierMeta, type RankStatus, type TierCode } from "@/features/rank/types"
  * Khung ảnh đại diện theo bậc rank: vành ngoài bằng kim loại của phân bậc
  * (III đồng · II bạc · I vàng; bậc không phân bậc → vàng), vành trong màu ruy-băng của bậc,
  * huy chương nhỏ ghim góc dưới phải. Chưa mở mùa → không khung, chỉ trả về ảnh.
- * Danh vị Vô Song → vành ngoài ánh cực quang (teal–tím–hồng–vàng) thay kim loại, huy hiệu Paragon ở góc.
+ * Danh vị Thách Đấu (Vô Song) → vành ngoài ánh cực quang (teal–tím–hồng–vàng) thay kim loại, huy hiệu Paragon ở góc.
  */
 
 const METAL: Record<"bronze" | "silver" | "gold", string> = {

@@ -1,5 +1,5 @@
 // Chế độ "Xem như học sinh" của admin: mở khoá HẾT năng lực rank để thầy xem trước
-// mọi trạng thái cao nhất (danh vị Vô Song, 45/45 danh hiệu Huyền Thoại, chuỗi ngày,
+// mọi trạng thái cao nhất (danh vị Thách Đấu/Vô Song, 45/45 danh hiệu Huyền Thoại, chuỗi ngày,
 // mục tiêu tuần, đứng đầu bảng tuần) mà không đụng vào dữ liệu thật.
 //
 // Chỉ bật khi sessionStorage "thachlab_preview_as_student" = "1" (đúng khoá AuthProvider dùng),
@@ -44,7 +44,7 @@ export function unlockStatus(real: RankStatus | null): RankStatus {
     rp: Math.max(real?.rp ?? 0, PREVIEW_RP),
     tier: {
       code: "thach_dau",
-      name: "Chí Tôn",
+      name: "Cao Thủ",
       sort: 7,
       tier_min: real?.tier?.code === "thach_dau" ? real.tier.tier_min : 420,
       next_min: null,
@@ -101,7 +101,7 @@ export function unlockTitles(real: RankTitle[]): RankTitle[] {
   });
 }
 
-/** Em đứng đầu bảng tuần của lớp với danh vị Vô Song; các bạn khác giữ nguyên. */
+/** Em đứng đầu bảng tuần của lớp với danh vị Thách Đấu/Vô Song; các bạn khác giữ nguyên. */
 export function unlockBoard(real: ClassRankBoard | null, myName: string, myAvatar: string | null): ClassRankBoard | null {
   if (!real || !real.season) return real;
   const top = Math.max(0, ...real.top_week.map((m) => m.rp_week));

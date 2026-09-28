@@ -168,7 +168,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
                   {paragon
-                    ? "Danh vị Vô Song — trên cả Chí Tôn, chỉ dành cho người đã sưu tập trọn bộ danh hiệu"
+                    ? "Danh vị Thách Đấu — trên cả Cao Thủ, chỉ dành cho người đã sưu tập trọn bộ danh hiệu"
                     : status.tier?.div_max !== null && status.tier
                       ? `Phân bậc hiện tại: ${formatRp(status.tier.div_min)}–${formatRp(status.tier.div_max)} RP`
                       : "Bậc cao nhất — không còn phân bậc"}
@@ -227,7 +227,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
             ) : (
               <p className="text-sm text-slate-300">
                 {paragon
-                  ? "Em đã đạt danh vị Vô Song — không còn điều kiện nào phía trước. Giữ trọn bộ danh hiệu tới hết mùa để danh vị được ghi vào thành tích mùa."
+                  ? "Em đã đạt danh vị Thách Đấu — không còn điều kiện nào phía trước. Giữ trọn bộ danh hiệu tới hết mùa để danh vị được ghi vào thành tích mùa."
                   : "Em đang ở bậc cao nhất của mùa này. Giữ vững phong độ!"}
               </p>
             )}

@@ -7,8 +7,8 @@ import { divisionLabel, tierMeta, type TierCode } from "@/features/rank/types";
 /**
  * Huy chương kiểu quân đội theo bậc.
  * Thân huy chương + màu ruy-băng = bậc; kim loại = phân bậc (III đồng · II bạc · I vàng).
- * Thiên Thể / Chí Tôn không có phân bậc → luôn vàng.
- * `paragon` = danh vị Vô Song (trên Chí Tôn) → vẽ huy hiệu độc quyền ParagonBadge thay cho huy chương bậc.
+ * Tinh Anh / Cao Thủ không có phân bậc → luôn vàng.
+ * `paragon` = danh vị Thách Đấu (trên Cao Thủ) → vẽ huy hiệu độc quyền ParagonBadge thay cho huy chương bậc.
  */
 
 type Metal = "bronze" | "silver" | "gold";

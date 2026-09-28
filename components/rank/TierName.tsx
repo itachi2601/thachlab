@@ -1,7 +1,7 @@
 import { divisionLabel, tierMeta } from "@/features/rank/types";
 import { cinzel, playfair } from "@/components/rank/rank-fonts";
 
-/** Tên bậc theo thiết kế huy chương: tiếng Anh lớn (Cinzel) trên, tiếng Việt nhỏ (Playfair) dưới; cỡ sm đưa phân bậc xuống dòng dưới cho vừa ô hẹp. `paragon` → "Paragon · Vô Song", không phân bậc. */
+/** Tên bậc theo thiết kế huy chương: tiếng Anh lớn (Cinzel) trên, tiếng Việt nhỏ (Playfair) dưới; cỡ sm đưa phân bậc xuống dòng dưới cho vừa ô hẹp. `paragon` → "Challenger · Thách Đấu", không phân bậc. */
 export default function TierName({
   code,
   division,

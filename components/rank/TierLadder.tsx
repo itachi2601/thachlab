@@ -23,7 +23,7 @@ import { fetchTierLadder, type TierLadderStep } from "@/services/rank";
  * Lộ trình các bậc: em xem trước toàn bộ huy hiệu (kể cả phân bậc III/II/I) và điều kiện lên từng bậc.
  * Ngưỡng RP + điều kiện lấy từ rank_tiers của mùa đang mở (giáo viên chỉnh được), không hardcode.
  * Bấm một huy hiệu trên dải để xem chi tiết bậc đó; mặc định mở bậc hiện tại của em.
- * Ô thứ tám tách riêng là danh vị Vô Song (Paragon): không phải bậc, không nằm trên thang RP —
+ * Ô thứ tám tách riêng là danh vị Thách Đấu (Vô Song/Paragon): không phải bậc, không nằm trên thang RP —
  * chỉ hiện điều kiện; `status.tier.paragon` = em đang giữ danh vị này.
  */
 
@@ -191,7 +191,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
             );
           })}
 
-          {/* Danh vị Vô Song — tách khỏi thang bậc bằng một vạch đứng */}
+          {/* Danh vị Thách Đấu — tách khỏi thang bậc bằng một vạch đứng */}
           <span className="mt-3 h-4 w-px shrink-0 bg-white/15 sm:mt-4 sm:h-6" aria-hidden />
           <button
             type="button"
@@ -257,16 +257,16 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                     ) : (
                       <span className="rounded-full bg-white/10 px-2 py-0.5 font-bold uppercase tracking-wider text-slate-200">Danh vị đặc biệt</span>
                     )}
-                    <span className="text-slate-400">Trên cả Chí Tôn · không tính bằng RP</span>
+                    <span className="text-slate-400">Trên cả Cao Thủ · không tính bằng RP</span>
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-slate-500">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Chí Tôn và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
+              <p className="mt-3 text-xs text-slate-500">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Cao Thủ và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
               <div className="mt-4">
                 <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
                 <ul className="mt-2 space-y-2">
                   <Cond state={paragon || currentSort >= list.length ? "done" : status?.season ? "todo" : "neutral"}>
-                    Đang ở bậc <b className="text-white">Chí Tôn</b> của mùa hiện tại
+                    Đang ở bậc <b className="text-white">Cao Thủ</b> của mùa hiện tại
                   </Cond>
                   <Cond state={paragon ? "done" : status?.season ? "todo" : "neutral"}>
                     Sưu tập <b className="text-white">đủ mọi danh hiệu</b> đang khả dụng, mỗi danh hiệu ở mức cao nhất
