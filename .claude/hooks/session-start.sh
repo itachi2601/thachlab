@@ -9,8 +9,13 @@ cd "${CLAUDE_PROJECT_DIR:-.}"
 
 # --- 1. Phụ thuộc ---------------------------------------------------------
 if [ -f package.json ]; then
-  npm install --no-audit --no-fund --loglevel=error >/dev/null 2>&1 \
-    || echo "⚠ npm install lỗi — chạy tay: npm install"
+  # npm ci: cài đúng package-lock.json, không ghi đè lockfile (npm install trên Linux làm bẩn
+  # lock do Mac tạo). Bỏ qua nếu node_modules đã có (container đã cache).
+  if [ ! -d node_modules ]; then
+    if [ -f package-lock.json ]; then cmd="npm ci"; else cmd="npm install"; fi
+    $cmd --no-audit --no-fund --loglevel=error >/dev/null 2>&1 \
+      || echo "⚠ $cmd lỗi — chạy tay: $cmd"
+  fi
 fi
 
 # --- 2. Tình hình đồng bộ ------------------------------------------------
