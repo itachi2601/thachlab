@@ -297,11 +297,14 @@ export interface ClassRankBoardMember {
 export interface ClassRankBoard {
   season: { id: number; name: string; starts_on: string; ends_on: string } | null;
   week_start: string;
-  total: number;
   top_week: (ClassRankBoardMember & { pos: number; tier_code: TierCode | null; division: number | null; is_me: boolean; paragon?: boolean })[];
   me: {
-    pos: number;
     rp_week: number;
+    /** Bậc của em + số bạn cùng bậc (gồm em) — chỉ so với bạn cùng bậc, không có thứ tự tuyệt đối. */
+    tier_code: TierCode | null;
+    division: number | null;
+    tier_size: number;
+    in_top: boolean;
     tied: number;
     above: ClassRankBoardMember | null;
     below: ClassRankBoardMember | null;

@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260930110000_rank_board_by_tier.sql|Bang tuan lop: vi tri cua em chi so voi ban cung bac (create or replace 1 ham)|bat ky luc nao; rollback: perf/rollback/20260930110000_rank_board_by_tier.down.sql"
 )
 # ĐÃ CHẠY 30/9/2026: 20260930100000_tutoring_exit_cooldown.sql
 # ĐÃ CHẠY 29/9/2026 (17:43): 20260929130000_rank_weekly_goal_adaptive.sql
