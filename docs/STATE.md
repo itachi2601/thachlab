@@ -1,4 +1,4 @@
-# STATE — Hiện trạng ThachLab (cập nhật 28/09/2026)
+# STATE — Hiện trạng ThachLab (cập nhật 29/09/2026)
 
 File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude. Cập nhật sau mỗi đợt lớn.
 
@@ -23,6 +23,32 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   27/9/2026 (log `scripts/logs/20260927-073246-*`, rollback
   `perf/rollback/20260926150000_fix_question_bank_similarity_timeout.down.sql`). Chưa xác nhận lại
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
+
+## Nhật ký đã hoàn thành theo ngày (bổ sung đối chiếu git 29/09/2026)
+Tất cả đã commit + merge `main`; migration kèm theo đã chạy (xem `STATE-archive.md`). Chưa có bằng chứng dùng thật ở mục "Động lực".
+
+**19–24/09 — nền tảng THPT + giao diện**
+- Giao diện: trang chủ thiết kế lại (cyan, ít hiệu ứng); lớp học/bài học tối giản (mục lục chương→bài, 2 luồng THPT/CTTC riêng); app shell quản trị `admin-*`; CNC chuyển bài học vào DB (tách bài học/video/đăng đề); đồng bộ modal/component/micro-interaction/token màu; illustration SVG cho kết quả/trạng thái trống; sửa bảng Word tràn mobile, giao diện sáng mất chữ, layout nhảy do ảnh (width/height thật).
+- Học sinh: trang chủ HS 3 mục + lịch phụ đạo tuần; tự đổi ảnh đại diện (THPT); ghi nhận quá trình học (tách hoàn thành vs đạt yêu cầu); mô tả chương trình + YCCĐ từng bài; xem lại bài như lúc làm (bảng câu ghim, 1 câu/lần); khôi phục bài làm dở; theo dõi rời tab + ép fullscreen khi thi; sửa lỗi "thiếu mã đề" iOS cũ.
+- Phụ huynh xem kết quả qua mã liên kết; đăng lịch lớp THPT công khai + tự ghi danh; bù bài cho em vào lớp trễ; chuông thông báo tự động (ghi danh, bù bài, phụ đạo, phụ huynh).
+- Báo lỗi & đề xuất tính năng toàn web (+ nút xoá admin); SHCN khôi phục cho lớp CTTC; soạn thông báo có xem trước LaTeX song song; nút phóng/thu chữ khi trình chiếu chữa bài.
+- Đăng đề: Nhập bài dùng chung UI kiểu Azota; mục tiêu "Bài tập mẫu (tự chấm)"; AI tự gắn Chủ đề/Dạng/mức độ; gắn mức độ Dễ/TB/Khó cho câu; nút ẩn/hiện đề khi gắn vào bài.
+- Nội dung: thêm ảnh lý thuyết lớp 10 (bài 4), lớp 12 (từ trường, lực từ, vật lí nhiệt ch.1, phụ lục bài 4 ch.1).
+- Rank RP theo mùa + bộ sưu tập danh hiệu Vật lý (23/9); avatar bạn cùng lớp ở "Bậc trong lớp" (24/9).
+
+**26–27/09 — hệ thống, bảo mật, tính năng GV**
+- Rank: Vô Song/Thách Đấu; loại GV/admin khỏi rank; backfill RP đề lớp 10/11/12.
+- Báo lỗi gắn câu hỏi; gắn đề vào việc cần làm (thông báo lớp); Tóm tắt ý chính (81/81 mục); picker Ngân hàng câu hỏi; **Chấm BTVN + BTVN ôn tập sau chữa bài** (migration đã chạy 27/9); bản nháp → đăng chính thức từng mục bài học + xem trước song song LaTeX/HTML; tổng hợp câu HS hay sai ở Luyện tập (GV); cảnh báo vi phạm khi thi.
+- **Bảo mật**: chặn HS làm/nộp đề không thuộc lớp (UI + 3 RLS `exam_class_access`, chạy production 27/9); vá RLS tautology; vá timeout quét câu trùng; vá deploy.
+- Hiệu năng: ChunkErrorGuard bắt `ChunkLoadError` (xử lý lỗi crash trắng ghi ở đợt 4, mục 2 bên dưới); tách `SampleQuestionsGrid` khỏi bundle ban đầu `/lop-hoc/bai` (xử lý mục 1 đợt 4); test luồng làm đề bằng tài khoản throwaway (mục 3 đợt 4 — PASS, `perf5`).
+- Đổi mật khẩu cho HS (`/tai-khoan/doi-mat-khau`, có trong dropdown mọi vai); sửa key camelCase nhập nội dung tuần SHCN; thu gọn thẻ tuần SHCN.
+
+**28–29/09 — động lực + vận hành**
+- Rank: danh hiệu chuyên môn 3 mức Dễ/TB/Khó; bộ 103 ảnh huy hiệu (96 chuyên môn có vòng nguyệt quế + 13 bộ sưu tập/thành tích; đổi tên `-v2` chống cache); đeo danh hiệu dưới tên + khung sưu tập; vinh danh tuần theo khối trên trang chủ công khai (v2 làm sạch tên); lộ trình huy hiệu gợi ý theo lớp 10/11/12 (tab "Theo lớp"); đổi tên 7 bậc theo Liên Quân Mobile.
+- Vận hành DB: giảm log ingestion (autosave/heartbeat/poll), rollup + xoá kết quả từng câu > 12 tháng, xoá bảng backup `question_bank` (chi tiết ở archive).
+- Deploy: fetch nông bản deploy cũ trước khi push (tránh 408 khi mạng yếu). Docs: `.claudeignore`, `DATABASE.md` tự sinh, quy tắc perf khi đăng nội dung, quy tắc 4 lưới lọc đăng đề hàng loạt.
+- GV: hồ sơ HS THPT hiện tài khoản (mã HS) + nút chép; thẻ đặt lại mật khẩu hiện mật khẩu mới trong khung riêng.
+- Đăng đề: sửa parser `exam-latex-parser` (câu dẫn "Đáp án nào…"/"Đáp số là…"); script `scripts/upload-exam-docx.mts` đăng đề .docx đã chuẩn bằng service key (`--dry`, rollback khi lỗi); `scripts/data/bulk-de-thi-thu-log.json` (tên file gốc ↔ examId) đã vào git — hiện 19 đề thi thử đã đăng qua đường này.
 
 ## Migration — ĐANG CHỜ
 - (không có — tất cả đã chạy, xem `STATE-archive.md`)
@@ -82,7 +108,7 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
   `LazyErrorBoundary` cục bộ. Cộng thêm: cache header `Cache-Control` tường minh cho ảnh trong
   `scripts/deploy.sh` (đã kiểm cú pháp Apache `httpd -t` OK). Verify độc lập xác nhận: build/tsc
   sạch, không lỗi console 2 trang mục tiêu, KaTeX/framer-motion vẫn ngoài JS ban đầu (đúng từ
-  đợt 2, không phải việc mới). **3 việc cần quyết (xem `perf4/RESULT.md` §6–7)**:
+  đợt 2, không phải việc mới). **3 việc cần quyết (xem `perf4/RESULT.md` §6–7) — CẢ 3 ĐÃ XỬ LÝ 27/9** (tách SampleQuestionsGrid `ffa5e2c`, ChunkErrorGuard `d275112`, test luồng thi `169a494`):
   1. `/lop-hoc/bai` còn dư ~34 KB so với mục tiêu <1000 KB (1033,7 KB) — toàn bộ phần dư là
      `QuestionCard`/`SampleQuestionsGrid` (mục "Bài tập mẫu", nội dung chính hiện ngay khi mở
      bài) — đợt 4 **không động tới** theo đúng phạm vi được giao. Muốn đạt <1000 KB thì phải

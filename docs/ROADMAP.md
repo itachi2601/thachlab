@@ -1,4 +1,4 @@
-# ROADMAP ThachLab (cập nhật 28/09/2026 — bản đối chiếu mã nguồn + hệ động lực)
+# ROADMAP ThachLab (cập nhật 29/09/2026 — bản đối chiếu mã nguồn + hệ động lực)
 
 Triết lý: **"Cho hết kiến thức. Bán sự đồng hành."**
 Khác biệt: *Hệ thống biết học sinh đang yếu ở đâu và biết đưa học sinh đi đâu tiếp theo.*
@@ -28,8 +28,15 @@ Học bài → làm đề / luyện tập → chấm từng câu theo YCCĐ + m�
 Đã có (21–28/09): rank RP 7 bậc theo mùa; 32 danh hiệu chuyên môn × 3 mức (96 huy hiệu) + 13
 bộ sưu tập/thành tích; Vô Song trên Chí Tôn; nhiệm vụ ngày + chuỗi ngày; bảng tuần của lớp;
 vinh danh tuần trang chủ; danh hiệu đeo + khung sưu tập; lộ trình huy hiệu gợi ý theo lớp
-10/11/12 (đang hoàn thiện ở phiên song song); nhãn Nắm vững / Cần luyện thêm / Chưa đạt theo
+10/11/12 (tab "Theo lớp", xong 28/09); nhãn Nắm vững / Cần luyện thêm / Chưa đạt theo
 YCCĐ; thoát phụ đạo bằng tự kiểm tra; chấm BTVN.
+
+Đã có thêm ngoài vòng lặp (19/09–29/09, chi tiết `docs/STATE.md` mục "Nhật ký"): phụ huynh xem
+kết quả qua mã liên kết; ghi danh công khai + bù bài + chuông thông báo; chống gian lận khi thi
+(rời tab, fullscreen, cảnh báo vi phạm) và **chặn HS làm đề ngoài lớp (RLS)**; bản nháp → đăng từng
+mục bài học; Tóm tắt ý chính 81/81 bài; báo lỗi/đề xuất gắn câu hỏi; đổi mật khẩu HS; hồ sơ HS cho
+GV hiện mã đăng nhập; giữ DB gọn (rollup >12 tháng, giảm log); 5 đợt tối ưu tốc độ (Lighthouse
+trang chủ 68→91, mobile field còn CWV Failed do font — đã xử lý 26/9, chờ đo lại).
 
 **Chưa có: bằng chứng.** Toàn bộ hệ động lực chưa được test bằng tài khoản học sinh thật và
 chưa đo được có làm các em học nhiều hơn không. Đây là việc số 1.
@@ -37,13 +44,14 @@ chưa đo được có làm các em học nhiều hơn không. Đây là việc 
 ---
 
 ## Giai đoạn 0 — Nền dữ liệu ✅ (xong 25/09/2026)
+(cộng nền đã xong 19–24/09: 2 luồng THPT/CTTC, giao diện lớp/bài học mới, YCCĐ từng bài, ghi nhận quá trình học, phụ huynh, ghi danh, thông báo — xem `STATE.md`)
 Khung kỹ năng `question_topics` + YCCĐ con; câu hỏi gắn Chủ đề + Dạng + mức độ khi đăng đề;
 dữ liệu làm bài từng câu; native quiz 3 dạng; retention gộp kết quả > 12 tháng.
 
 ## Giai đoạn 1 — Đo và chỉnh vòng lặp động lực (10/2026, hết mùa thử nghiệm 25/10)
 Nguyên tắc: **không thêm lớp động lực mới** (danh hiệu, thành tích, bảng) cho tới khi có số
 liệu mùa 1. Chỉ sửa cái đang có.
-- [ ] Test toàn bộ luồng bằng 2–3 tài khoản HS thật (mobile 375px): nhận danh hiệu, đeo, khung
+- [ ] (đã test luồng làm đề bằng tài khoản throwaway 26–27/09 — PASS; còn lại luồng động lực) Test toàn bộ luồng bằng 2–3 tài khoản HS thật (mobile 375px): nhận danh hiệu, đeo, khung
       sưu tập, bảng tuần, rơi vào phụ đạo, thoát phụ đạo.
 - [ ] Đo mùa 1 (21/09–25/10) so với 4 tuần trước 21/09: số HS làm bài mỗi tuần, số bài/HS,
       % HS nhận ≥1 danh hiệu trong 2 tuần đầu, % HS còn làm bài ở tuần 4–5 (độ rơi), số HS
@@ -53,10 +61,13 @@ liệu mùa 1. Chỉ sửa cái đang có.
       không để HS đuổi theo mục tiêu rỗng.
 - [ ] Chống cày: điều kiện danh hiệu đếm **câu khác nhau** giải đúng, không đếm lượt làm lại
       cùng câu; RP mỗi bài chỉ tính lượt đầu hoặc lượt tốt nhất.
-- [ ] Trang Luyện tập lọc theo lớp / chương / bài / YCCĐ / mức độ — đây là đường để HS chủ động
+- [ ] (route `/luyen-tap` và `/lo-trinh` vẫn chưa tồn tại tính tới 29/09; GV đã có "câu HS hay sai" ở Luyện tập) Trang Luyện tập lọc theo lớp / chương / bài / YCCĐ / mức độ — đây là đường để HS chủ động
       "săn" danh hiệu còn thiếu, hiện chưa có.
 - [ ] Mở "3 kỹ năng yếu nhất" cho HS (dữ liệu đã có ở tab Phụ đạo GV).
 - [ ] Đăng nốt ~300 đề thi thử theo quy tắc script-trước-agent-sau (skill `dang-de-hang-loat`).
+      Đã xong một phần: 19 đề (log `scripts/data/bulk-de-thi-thu-log.json`), có script
+      `upload-exam-docx.mts` đăng thẳng bằng service key, quy tắc perf + 4 lưới lọc đã chốt.
+- [x] Chặn HS làm đề ngoài lớp, giữ DB không phình, giảm log ingestion (làm ngoài kế hoạch, xong 27–28/09).
 
 ## Giai đoạn 1b — Để TẤT CẢ cùng tiến bộ (thầy chốt 28/09/2026, làm ngay khi có hạn mức — dự kiến từ 02/10)
 Căn cứ: thuyết tự quyết (Deci & Ryan), mục tiêu gần (Bandura & Schunk), mastery learning (Bloom),
