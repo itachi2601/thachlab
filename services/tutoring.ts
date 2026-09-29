@@ -16,6 +16,18 @@ export const NEED_STATUS_LABEL: Record<NeedStatus, string> = {
   dismissed: "Bỏ qua",
 };
 
+/**
+ * Nhãn nói với HỌC SINH/PHỤ HUYNH (GĐ 1b #3): kênh phụ đạo là "đang mở khoá", không phải "hụt".
+ * Nhãn gốc NEED_STATUS_LABEL ("Cần phụ đạo"...) chỉ dành cho GV/trợ giảng.
+ */
+export const NEED_STATUS_LABEL_STUDENT: Record<NeedStatus, string> = {
+  open: "Đang mở khoá",
+  assigned: "Đang được kèm",
+  tutored: "Sắp mở khoá",
+  cleared: "Đã phục hồi",
+  dismissed: "Tạm gác",
+};
+
 /** Trạng thái còn phải làm gì đó — dùng để lọc danh sách mặc định. */
 export const ACTIVE_NEED_STATUSES: NeedStatus[] = ["open", "assigned", "tutored"];
 
@@ -435,7 +447,20 @@ export async function cancelRegistration(slotId: number, studentId: string): Pro
 // Xem docs/supabase-migration-tutoring-exit-quiz.sql.
 // ============================================================
 
-export const MAX_EXIT_ATTEMPTS = 3;
+/** Giữa hai lượt tự kiểm tra cùng một chủ đề phải cách nhau ít nhất chừng này (khớp trigger DB) — thay cho giới hạn 3 lượt. */
+export const EXIT_COOLDOWN_HOURS = 24;
+
+/** Thời điểm được làm lượt tiếp theo, hoặc null nếu làm được ngay. */
+export function nextExitAttemptAt(lastAttemptIso: string | undefined, now = Date.now()): Date | null {
+  if (!lastAttemptIso) return null;
+  const at = new Date(new Date(lastAttemptIso).getTime() + EXIT_COOLDOWN_HOURS * 3600_000);
+  return at.getTime() > now ? at : null;
+}
+
+export function formatExitWait(at: Date): string {
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${p(at.getHours())}:${p(at.getMinutes())} ngày ${p(at.getDate())}/${p(at.getMonth() + 1)}`;
+}
 export const EXIT_QUIZ_PASS_PCT = 80;
 export const EXIT_QUIZ_QUESTION_COUNT = 20;
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUp, Flame, Sparkles, Trophy } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankBadge from "@/components/rank/RankBadge";
+import TierName from "@/components/rank/TierName";
 import WornTitle from "@/components/rank/WornTitle";
 import type { ClassRankBoard as Board } from "@/features/rank/types";
 import { fetchClassRankBoard } from "@/services/rank";
@@ -22,7 +23,7 @@ function daysLeft(endsOn: string): number {
 
 /**
  * Trang chủ HS: bảng tuần của lớp — top 3 theo RP KIẾM ĐƯỢC TRONG TUẦN (reset Thứ Hai),
- * vị trí của em + 1 bạn ngay trên/dưới, và ghi nhận tuần này. Không hiện RP tổng, không hiện cả bảng.
+ * vị trí của em + 1 bạn ngay trên/dưới, và ghi nhận tuần này. Vị trí của em chỉ so với bạn CÙNG BẬC, không hiện thứ tự tuyệt đối.
  */
 export default function ClassRankBoard({ classId }: { classId: number }) {
   const [data, setData] = useState<Board | null | undefined>(undefined);
@@ -104,9 +105,11 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
               </>
             ) : (
               <>
-                Em đang <b>thứ {me.pos}/{data.total}</b> tuần này với <b className="text-emerald-300">+{me.rp_week} RP</b>
-                {me.tied > 0 && <span className="text-slate-400"> · đồng hạng với {me.tied} bạn</span>}
-                {me.pos === 1 && <span className="ml-1 text-amber-300">· Em đang dẫn đầu!</span>}
+                Trong nhóm {me.tier_code ? <TierName code={me.tier_code} size="sm" /> : "chưa xếp bậc"}
+                {me.tier_size > 1 ? <> ({me.tier_size} bạn)</> : null}, tuần này em có <b className="text-emerald-300">+{me.rp_week} RP</b>
+                {me.tied > 0 && <span className="text-slate-400"> · ngang với {me.tied} bạn cùng bậc</span>}
+                {me.in_top && <span className="ml-1 text-amber-300">· Em đang trong top 3 lớp!</span>}
+                {!me.above && !me.in_top && <span className="ml-1 text-amber-300">· Em đang dẫn đầu bậc!</span>}
               </>
             )}
           </p>
@@ -115,7 +118,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
               <p className="flex items-center gap-1.5">
                 <ArrowUp size={12} className="text-cyan-300" />
                 <Avatar url={me.above.avatar} name={me.above.name} size={16} />
-                Còn <b className="text-white">{me.above.rp_week - me.rp_week + 1} RP</b> nữa để vượt {me.above.name}
+                Còn <b className="text-white">{me.above.rp_week - me.rp_week + 1} RP</b> nữa để vượt {me.above.name} (cùng bậc)
               </p>
             )}
             {me.below && (

@@ -66,7 +66,21 @@ const CONFIG_FIELDS: { key: string; label: string; def: number }[] = [
   { key: "fix_max_rp", label: "RP tối đa sửa sai / bài", def: 10 },
   { key: "weekly_goal_rp", label: "RP mục tiêu tuần", def: 30 },
   { key: "weekly_goal_count", label: "Số bài cần đạt trong tuần", def: 3 },
-  { key: "weekly_goal_min_score", label: "Điểm tối thiểu (thang 10) để tính bài tuần", def: 7 },
+  { key: "weekly_goal_min_score", label: "Điểm tối thiểu (thang 10) để tính bài tuần (mục tiêu chung, dùng khi chưa đủ lịch sử)", def: 7 },
+  { key: "weekly_goal_personal", label: "Mục tiêu tuần riêng từng em theo 2 tuần trước (1 = bật, 0 = dùng mục tiêu chung)", def: 1 },
+  { key: "weekly_goal_min_history", label: "Mục tiêu riêng: số bài tối thiểu trong 2 tuần trước mới đặt riêng", def: 3 },
+  { key: "weekly_goal_pace_pct", label: "Mục tiêu riêng: số bài = nhịp 2 tuần trước x (%)", def: 75 },
+  { key: "weekly_goal_success_pct", label: "Mục tiêu riêng: % bài gần đây của em phải đạt ngưỡng điểm (50–95)", def: 80 },
+  { key: "weekly_goal_count_min", label: "Mục tiêu riêng: số bài tối thiểu", def: 1 },
+  { key: "weekly_goal_count_max", label: "Mục tiêu riêng: số bài tối đa", def: 5 },
+  { key: "weekly_goal_score_floor", label: "Mục tiêu riêng: ngưỡng điểm thấp nhất", def: 4 },
+  { key: "weekly_goal_score_cap", label: "Mục tiêu riêng: ngưỡng điểm cao nhất", def: 8.5 },
+  { key: "progress_min_gain_pct", label: "Tiến bộ tuần: tỉ lệ đúng phải tăng tối thiểu (điểm %) so với 2 tuần trước", def: 5 },
+  { key: "progress_rp", label: "Tiến bộ tuần: RP khi đạt ngưỡng", def: 15 },
+  { key: "progress_step_pct", label: "Tiến bộ tuần: cứ tăng thêm (điểm %) thì cộng thêm", def: 5 },
+  { key: "progress_step_rp", label: "Tiến bộ tuần: RP cộng thêm mỗi bậc tăng", def: 5 },
+  { key: "progress_rp_max", label: "Tiến bộ tuần: RP tối đa", def: 25 },
+  { key: "progress_min_questions", label: "Tiến bộ tuần: số câu tối thiểu mỗi tuần và mốc 2 tuần trước", def: 15 },
   { key: "fix_pass_pct", label: "% đạt bài sửa sai", def: 80 },
   { key: "fix_min_pool", label: "Số câu tương đương tối thiểu trong ngân hàng", def: 5 },
   { key: "fix_quiz_count", label: "Số câu mỗi bài sửa sai", def: 10 },
@@ -344,7 +358,7 @@ function SeasonConfigForm({ season, onSaved }: { season: RankSeason; onSaved: ()
         {CONFIG_FIELDS.map((f) => (
           <label key={f.key} className="admin-label flex items-center justify-between gap-3">
             <span>{f.label}</span>
-            <input className={numCls} type="number" min={0} value={config[f.key] ?? ""} onChange={(e) => setConfig((c) => ({ ...c, [f.key]: e.target.value }))} />
+            <input className={numCls} type="number" min={0} step="any" value={config[f.key] ?? ""} onChange={(e) => setConfig((c) => ({ ...c, [f.key]: e.target.value }))} />
           </label>
         ))}
       </div>

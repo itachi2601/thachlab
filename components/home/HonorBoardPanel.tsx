@@ -80,13 +80,21 @@ function Podium({ g }: { g: PublicHonorGrade }) {
   // Desktop: hạng 1 đứng giữa (2 · 1 · 3); mobile: danh sách 1 · 2 · 3 theo thứ tự tự nhiên.
   const ORDER = ["sm:order-2", "sm:order-1", "sm:order-3"];
   const notes = [
-    g.improved && {
-      key: "improved",
-      Icon: TrendingUp,
-      label: "Tiến bộ nhất",
-      who: g.improved.name,
-      detail: `+${g.improved.delta} RP so với tuần trước`,
-    },
+    g.improved_acc
+      ? {
+          key: "improved",
+          Icon: TrendingUp,
+          label: "Tiến bộ nhất",
+          who: g.improved_acc.name,
+          detail: `Tỉ lệ đúng +${String(g.improved_acc.gain).replace(".", ",")} điểm % so với 2 tuần trước (đạt ${Math.round(g.improved_acc.acc)}%)`,
+        }
+      : g.improved && {
+          key: "improved",
+          Icon: TrendingUp,
+          label: "Tiến bộ nhất",
+          who: g.improved.name,
+          detail: `+${g.improved.delta} RP so với tuần trước`,
+        },
     g.tier_ups.length > 0 && {
       key: "tier",
       Icon: ArrowUpCircle,

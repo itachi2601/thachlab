@@ -86,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`h-full antialiased ${fontClassName}`} data-theme="dark" suppressHydrationWarning>
       <head>
-        {/* Bắt tay TCP+TLS với Supabase (Sydney) song song lúc tải trang, thay vì chờ
+        {/* Bắt tay TCP+TLS với Supabase (Singapore) song song lúc tải trang, thay vì chờ
             tới request đầu tiên — ước tính tiết kiệm ~50-150ms round-trip đầu tiên từ VN. */}
         {SUPABASE_URL && <link rel="preconnect" href={SUPABASE_URL} crossOrigin="anonymous" />}
         <script
