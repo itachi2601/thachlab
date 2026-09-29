@@ -1,0 +1,43 @@
+# Archive — memory đã xong / không còn treo (KHÔNG nạp vào context; grep khi cần tra)
+Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiên. File memory vẫn còn nguyên.
+
+- [ThachLab vision](project_thachlab_vision.md) — brand-first roadmap, then LMS (500+ students, Supabase candidate, YouTube videos)
+- [ThachLab LMS](project_thachlab_lms.md) — Supabase schema sẵn sàng, chờ user gửi URL/anon key; pipeline nhập đề Azota
+- [Migrate Supabase Sydney→Singapore](project_thachlab_supabase_region_migration.md) — HOÀN TẤT + cutover production 28/9/2026; chỉ còn treo quyết định Pause/Delete project Sydney cũ
+- [CTTC roster import](project_thachlab_cttc_roster_import.md) — Excel→tài khoản+bảng điểm, project's first Edge Function; đã deploy (xác nhận lại 21/9/2026)
+- [Lesson importer](project_thachlab_lesson_importer.md) — "upload bài bằng LaTeX" pipeline: JSON bundle → trang /quan-tri/nhap-bai → Supabase
+- [Lớp chủ nhiệm CTTC](project_thachlab_homeroom.md) — môn gddd-ptnn: điểm danh + bảng điểm thang 10 + hạnh kiểm; đã deploy 21/9/2026
+- [Phân tích & cảnh báo phụ đạo](project_thachlab_exam_analytics.md) — exam_question_results, student_alerts, tab Phân tích; đã deploy 21/9/2026
+- [Track CTTC/THPT + trang HS](project_thachlab_track_student_home.md) — profiles.track tách 2 hệ; đã deploy 21/9/2026
+- [Khôi phục bài đăng](project_thachlab_restore_posts.md) — posts bị xóa; thầy bỏ qua 21/9/2026, đừng chủ động nhắc lại
+- [6 mục bài học](project_thachlab_lesson_sections.md) — bài tập mẫu tự chấm + phiên luyện tập + BTVN; đã deploy (7bb1fa06)
+- [Bài 8 Mô tả sóng](project_thachlab_bai8_mo_ta_song.md) — đã đăng; 6 câu nhãn thô + lời giải Câu 38 lệch, chờ thầy quyết
+- [Bài 9 Khái niệm từ trường](project_thachlab_bai9_tu_truong.md) — Luyện tập (đề 19) + BTVN (đề 20) 19/9/2026; vài câu chờ thầy chốt
+- [Bài 13 Điện xoay chiều](project_thachlab_bai13_dien_xoay_chieu.md) — 2 đề BTVN (21, 22) 19/9/2026; vài câu lỗi đề gốc chờ thầy chốt
+- [Đăng đề kiểu Azota](project_thachlab_dang_de_azota.md) — trang /quan-tri/dang-de, đã deploy 19/9/2026; nhap-bai dùng chung UI (5ee6a43c)
+- [Đăng đề có nhãn YCCĐ](project_thachlab_dang_de_tags.md) — dòng "Chủ đề:"/"Dạng:" + bảng Phân loại câu; đã deploy 19/9/2026
+- [Chống gian lận làm bài](project_thachlab_exam_proctoring.md) — theo dõi rời tab + ép fullscreen; đã deploy 21/9/2026
+- [Trang HS 3 mục](project_thachlab_student_home_3muc.md) — việc cần làm · BTVN · chủ đề cần phụ đạo; đã deploy 21/9/2026
+- [Thiết kế lại UI bài học](project_thachlab_lesson_ui_redesign.md) — đợt 4 22/9/2026 (fb0ecbb8) xong; kết quả, làm bài chưa làm
+- [Thiết kế lại trang quản trị](project_thachlab_admin_redesign.md) — app shell + class admin-*; deploy 21/9/2026 (9ffde8f9); chưa test GV giới hạn khu vực
+- [Mô tả bài học](project_thachlab_lesson_description.md) — 118/118 bài THPT có YCCĐ từ PDF Bộ GD 22/9/2026; đã deploy
+- [Trang chủ redesign](project_thachlab_home_redesign.md) — 22/9/2026 (06866fcb); thiếu ảnh thầy + ảnh 3 câu hỏi phụ
+- [CNC kiểm tra redesign](project_thachlab_cnc_kiem_tra_redesign.md) — bài học CNC hardcode→DB; f75023fe + 2 migration; đã push
+- [4 chương HK2 lớp 10](project_thachlab_hk2_lop10_4chuong.md) — 12/12 bài đăng 24/9/2026 (exam 102-113); vài lưu ý cần rà
+- [Chương 4 hạt nhân lớp 12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — thay lý thuyết Bài 14-18; Supabase 24/9/2026; bundle JSON gốc repo lỗi thời
+- [Khôi phục bài làm dở](project_thachlab_exam_resume.md) — ExamRunner tự lưu 15s; deploy 24/9/2026, chưa test thoát giữa chừng
+- [Bài tập mẫu lẫn lý thuyết](project_thachlab_mixed_worked_examples_audit.md) — sửa xong 2 bài (83, 131) 25/9/2026
+- [Vá lỗ hổng /kiem-tra/lam](project_thachlab_exam_class_access_fix.md) — XONG 27/9/2026, không còn treo
+- [Bảng câu hỏi chia mục TN/ĐS/TLN](project_thachlab_exam_question_order.md) — commit+push 26/9/2026, chưa test UI thật
+- [Chấm BTVN + BTVN ôn tập](project_thachlab_homework_check.md) — XONG 27/9/2026; chưa test tài khoản thật
+- [Xem như SV CTTC 3 môn](project_thachlab_preview_cttc_student.md) — nút admin ghi danh thật rồi giả lập; deploy 25/9/2026
+- [Huy chương rank](project_thachlab_rank_badge_medal.md) — RankBadge huy chương + TierLadder; deploy 26/9
+- [Huy hiệu Vô Song (Paragon)](project_thachlab_paragon_badge.md) — trên Chí Tôn; aaf7e464 deploy 26/9; thầy chưa xác nhận
+- [Chuỗi ngày (streak)](project_thachlab_daily_streak.md) — nhiệm vụ hằng ngày gắn rank; deploy 25/9/2026; chưa test HS thật
+- [Kiểm hồi quy AuthProvider](project_thachlab_auth_regression_test.md) — 3 tài khoản test + worktree riêng, PASS 26/9/2026
+- [Skill bien-ban-shcn](project_thachlab_bien_ban_shcn_skill.md) — 27/9: đăng nội dung tuần lên tab Sinh hoạt lớp; chưa xác nhận migration shcn prod
+- [Quy tắc perf khi đăng](project_thachlab_perf_publish_rule.md) — 28/9: rule vào AGENTS.md + 6 skill
+- [Supabase log ingestion](project_thachlab_supabase_log_ingestion.md) — 0,83/1 GB 28/9/2026, đã giảm autosave/heartbeat (af656f0a)
+- [Vinh danh tuần trang chủ](project_thachlab_public_honor_board.md) — v2 (20260928180000) deploy + chạy 28/9; còn treo tài khoản test + thầy xem web
+- [Lộ trình huy hiệu theo lớp](project_thachlab_title_grade_roadmap.md) — tab "Theo lớp" trang Rank; deploy 28/9/2026, chưa test UI
+- [Lớp 12 Từ trường/Điện từ](project_thachlab_l12_tu_truong_dien_tu.md) — 12 chủ đề GV gộp 6 lesson_items, dọn quiz trùng + 24 câu ẩn 26/9; bài học rút ra → feedback_content_images_eyeball

@@ -1,0 +1,50 @@
+- [Archive](ARCHIVE.md) — 40 memory đã xong/không còn treo (bài đã đăng, feature đã deploy xong); grep khi cần, KHÔNG đọc cả file
+## Cách làm việc (feedback)
+- [Token discipline](feedback_token_discipline.md) — clear sớm, ảnh đọc trong subagent, đọc file có chọn lọc
+- [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, docs/DATABASE.md tự sinh (đọc thay vì dò schema), STATE-archive, dọn worktree; treo: tắt MCP thừa, 2 skill đề xuất
+- [Phiên song song](project_thachlab_concurrent_sessions.md) — commit bằng `git commit -- <path>` một lệnh; build/deploy sạch trong deploy-tree; không tin báo cáo chưa tự verify
+- [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
+- [Deploy autonomy](feedback_deploy_autonomy.md) — test local xong tự deploy prod, không hỏi từng lần
+- [Deploy scope](feedback_thachlab_deploy_scope.md) — chỉ commit/deploy đúng feature vừa làm; working tree luôn đầy WIP
+- [Small content edits](feedback_small_content_edits.md) — sửa chữ/copy nhỏ theo quy trình tiết kiệm token
+- [Sửa mục lẻ qua REST](feedback_lesson_item_edit_via_rest.md) — PATCH thẳng lesson_items, không lái trình duyệt admin
+- [Mobile-first UI](feedback_mobile_first_ui.md) — chụp thử 375px trước khi báo xong; thu gọn phần tử nổi
+- [Tra memory trước khi tự dựng lại](feedback_check_memory_before_reconstructing.md) — thầy nhắc số/danh sách cụ thể → đọc memory trước
+- [Tra trùng đề trước khi giao agent](feedback_dedup_check_before_agent.md) — REST anon không đọc exams (RLS); tra bằng phiên trình duyệt TRƯỚC dispatch
+- [Đăng đề hàng loạt](feedback_batch_agent_upload_efficiency.md) — QUY TẮC 28/9: 4 lưới lọc máy, file sạch không agent; chi tiết đầu skill dang-de-hang-loat
+- [Skill có 2 bản](feedback_skill_two_copies.md) — Library plugin + ~/.codex (+ repo .claude/skills): diff trước, sửa cả hai
+- [Rà ảnh phải xem mắt](feedback_content_images_eyeball.md) — MD5 hash-list không bắt hết ảnh trang trí trong bài đã đăng
+- [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md) — tự schedule wakeup + resume
+## Hạ tầng & tra cứu
+- [Supabase](project_supabase_configured.md) — project Singapore (migrate 28/9); URL/key ở .env.local; còn treo Pause project Sydney cũ
+- [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f file.sql`, không cần mật khẩu DB
+- [Hosting](project_thachlab_hosting.md) — DirectAdmin, Thachlab.id.vn
+- [Cache text SGK PDF](reference_sgk_pdf_text_cache.md) — SGK là scan ảnh; đọc xong chép .md cạnh PDF
+- [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron đã bật 28/9; treo bỏ topic_name
+- [Tối ưu tốc độ 9/2026](project_thachlab_perf_optimization.md) — 5 đợt xong 27/9; treo: perf-compare-rpc, /lop-hoc/bai >1000KB, xoá data test
+## Skill đăng nội dung
+- [Up đề](project_thachlab_up_de_skill.md) — đường chính Azota + Chủ đề/Dạng → /quan-tri/dang-de; ⚠ bug tự gắn thêm Luyện tập, soát exam_ids
+- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word cho trang Đăng đề kèm nhãn YCCĐ
+- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py → /quan-tri/dang-de
+- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
+- [Skill latex](project_thachlab_latex_skill.md) — bản codex: cache công thức + sinh HTML bằng script
+- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — _CongCu/mtef_to_omml_v2.py; kiểm công cụ có sẵn trước khi cho agent viết lại
+- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
+- [Đề thi thử trường/sở](project_thachlab_de_thi_thu_truong_so.md) — 93 đề mục 277; 29/9 vá lỗi parser sinh câu ma (PR #14); ~300 file chờ rà lại
+- [Chống đề mất hình](project_thachlab_missing_figures.md) — xong 25/9; treo: thầy duyệt 80 hình AI, 43 câu cần ảnh thật
+- [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — /quan-tri/sua-de; deploy 25/9, chưa test sửa+lưu web thật
+- [Ngân hàng câu hỏi](project_thachlab_question_bank.md) — question_bank + Dễ/TB/Khó + cảnh báo trùng; chưa test UI
+- [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, CHƯA làm gì
+## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap GĐ 1–1b ở docs/ROADMAP.md
+- [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc theo mùa (28/9 đổi tên theo LQM, migration 20260928190000 chờ chạy); mùa thử nghiệm 21/9–25/10/2026
+- [Danh hiệu đeo + khung sưu tập](project_thachlab_title_showcase.md) — 28/9 xong + 3 mức theo độ khó; chưa test HS thật
+- [Thiết kế huy hiệu](project_thachlab_specialist_badge_design.md) — design system Cowork; 96/96 + 13 BST đã có
+- [Bảng tuần của lớp](project_thachlab_class_rank_board.md) — top tuần / vị trí em; khối phân bố bậc chưa làm
+- [Mastery theo YCCĐ](project_thachlab_mastery_yccd.md) — Nắm vững/Cần luyện/Chưa đạt ở /lop-hoc; chưa test UI
+- [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%, tối đa 3 lượt; gộp lương TA; chưa test UI
+- [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ + sửa nhãn tay
+- [Quy chế trợ giảng 10/2026](project_thachlab_ta_policy.md) — chấm tháng + hệ số lương; đã deploy
+- [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
+- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — phát hiện 25/9, trạng thái sửa CHƯA RÕ
+- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục đang ẩn, chờ gắn đề
+- [GĐ 1b rank – gộp main + deploy](project_thachlab_gd1b_rank.md) — #1–5 đã vào main, còn kiểm deploy + dọn docs/stash
