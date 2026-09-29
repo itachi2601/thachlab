@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260929130000_rank_weekly_goal_adaptive.sql|Mục tiêu tuần thích ứng theo từng em (2 tuần trước); sửa rank_eval_weekly_goal + rank_status_of|Giờ nào cũng được (thêm 1 hàm, định nghĩa lại 2 hàm); tắt được bằng config weekly_goal_personal=0"
 )
 # ĐÃ CHẠY 29/9/2026 (14:04): 20260929100000_rank_restore_daily_streak.sql, 20260929110000_rank_progress_week.sql,
 #   20260929120000_rank_honor_progress.sql (file 3 từng bị rollback rồi chạy lại; thứ tự 1 → 2 → 3)

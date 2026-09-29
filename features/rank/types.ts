@@ -164,6 +164,8 @@ export interface RankWeekly {
   min_score: number;
   rp: number;
   achieved: boolean;
+  /** true = mục tiêu đặt riêng từ 2 tuần trước của em (migration 20260929130000); RPC cũ không trả. */
+  personal?: boolean;
 }
 
 export interface RankDaily {

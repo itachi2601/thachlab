@@ -25,7 +25,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
-(không có — cả 3 file 29/09/2026 đã chạy, file 3 chạy lại lúc 14:04 VN sau khi Thạch rollback; xem `STATE-archive.md`)
+- `20260929130000_rank_weekly_goal_adaptive.sql` — GĐ 1b việc 2, mục tiêu tuần THÍCH ỨNG: mỗi em có mục tiêu riêng từ 2 tuần trước
+  của chính em (số bài = nhịp x 75%, tối đa 5; ngưỡng điểm = mức ~80% bài gần đây của em đạt, làm tròn 0,5, trong 4–8,5).
+  Chưa đủ lịch sử (<3 bài/2 tuần) thì dùng mục tiêu chung của mùa như cũ. Định nghĩa lại đúng 2 hàm
+  (`rank_eval_weekly_goal`, `rank_status_of`) + thêm `rank_weekly_goal_of`; trạng thái thêm khoá `personal`. Tắt tức thì bằng
+  `weekly_goal_personal = 0` trong cấu hình mùa (trang quản trị mùa, không cần rollback); mọi số chỉnh ở cùng chỗ. Đã kiểm trên
+  Postgres 16 cục bộ (6 kiểu học sinh, chấm tuần không cộng đôi, công tắc, chỉnh độ khó, rollback + áp dụng lại), CHƯA chạy trên dữ liệu thật.
+  Lưu ý: ROADMAP viết "ngưỡng nhỉnh hơn trung bình" nhưng cũng "nhắm ~80–85% thành công"; đã ưu tiên tỉ lệ thành công. Chuỗi ngày vẫn dùng ngưỡng chung.
 Mọi file khác trong `supabase/migrations/` tính tới 29/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).

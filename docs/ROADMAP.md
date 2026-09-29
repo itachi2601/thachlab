@@ -67,7 +67,7 @@ Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
       tăng → cộng RP + thành tích "Tiến bộ tuần"; mục "Tiến bộ nhất tuần" lên bảng vinh danh công
       khai cạnh top RP. (Dữ liệu: exam/practice_question_results đã có; thêm 1 RPC gộp, không thêm
       query rời ở trang chủ HS.)
-- [ ] **Mục tiêu tuần thích ứng**: bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
+- [~] **Mục tiêu tuần thích ứng** (29/09: code + migration xong, chờ chạy — xem STATE.md; số liệu là tham chiếu, chỉnh qua cấu hình mùa): bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
       nhất của chính em (số bài + ngưỡng điểm nhỉnh hơn trung bình của em), nhắm ~80–85% lượt thử
       thành công.
 - [ ] **Đổi khung kênh phụ đạo**: trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
