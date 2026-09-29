@@ -17,6 +17,17 @@ import {
   type QuestionResponse,
 } from "@/features/exams/types";
 import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
+import {
+  hasLabelledQuestions,
+  LADDER_MIN_QUESTIONS,
+  LADDER_PASS_RATIO,
+  nextLadderLevel,
+  pickForLevel,
+  readLadderLevel,
+  writeLadderLevel,
+  type LadderLevel,
+} from "@/features/lessons/practice-ladder";
+import { DIFFICULTY_LABELS } from "@/features/exams/types";
 
 // Màn "đang làm" + "sau khi nộp" của 1 phiên luyện tập (PracticeRunningView.tsx,
 // PracticeDoneView.tsx) — học sinh KHÔNG thấy 2 màn này lúc mới mở bài học (chỉ hiện sau khi bấm
@@ -102,8 +113,13 @@ export default function PracticeSession({
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [usedSeconds, setUsedSeconds] = useState(0);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
+  // Thang độ khó: level = mức hiện tại của em ở mục này; free = tắt thang, bốc ngẫu nhiên như cũ.
+  const [level, setLevel] = useState<LadderLevel>("de");
+  const [free, setFree] = useState(false);
+  const [ladderNote, setLadderNote] = useState<string | null>(null);
 
   const startedAt = useRef(0);
+  const sessionLevelRef = useRef<LadderLevel | null>(null);
   const submittedRef = useRef(false);
   const responsesRef = useRef<QuestionResponse[]>([]);
   const picksRef = useRef<PracticePick[]>([]);
@@ -140,6 +156,13 @@ export default function PracticeSession({
     };
   }, [examIds, session]);
 
+  const ladderScope = itemId ?? lessonId;
+  const studentId = session?.user.id;
+  useEffect(() => {
+    if (studentId) setLevel(readLadderLevel(studentId, ladderScope));
+  }, [studentId, ladderScope]);
+  const ladderOn = !free && hasLabelledQuestions(bank);
+
   const questions = useMemo(() => picks.map((p) => p.question), [picks]);
 
   const save = useCallback(
@@ -163,9 +186,26 @@ export default function PracticeSession({
         durationSeconds: used,
         timedOut,
         clientToken: clientTokenRef.current,
-      }).then((ok) => setSaveState(ok ? "saved" : "failed"));
+      }).then((ok) => {
+        setSaveState(ok ? "saved" : "failed");
+        const played = sessionLevelRef.current;
+        if (!ok || !played) return;
+        const ratio = summary.max > 0 ? summary.earned / summary.max : 0;
+        const next = nextLadderLevel(played, ratio, finalPicks.length);
+        if (next.moved) {
+          writeLadderLevel(session.user.id, ladderScope, next.level);
+          setLevel(next.level);
+          setLadderNote(`🎉 Đạt ${Math.round(ratio * 100)}% — em được lên mức ${DIFFICULTY_LABELS[next.level]}!`);
+        } else if (next.atTop) {
+          setLadderNote(`🏆 Đạt ${Math.round(ratio * 100)}% ở mức cao nhất (Khó) — em đã leo hết thang.`);
+        } else if (finalPicks.length < LADDER_MIN_QUESTIONS) {
+          setLadderNote(`Phiên dưới ${LADDER_MIN_QUESTIONS} câu chưa tính để lên mức. Mức hiện tại: ${DIFFICULTY_LABELS[played]}.`);
+        } else {
+          setLadderNote(`Đạt ${Math.round(LADDER_PASS_RATIO * 100)}% mới lên mức tiếp — em ở mức ${DIFFICULTY_LABELS[played]}, luyện thêm một phiên nữa nhé.`);
+        }
+      });
     },
-    [session, lessonId, itemId],
+    [session, lessonId, itemId, ladderScope],
   );
 
   const submit = useCallback(
@@ -198,7 +238,9 @@ export default function PracticeSession({
 
   function start() {
     if (bank.length === 0) return;
-    const chosen = pickRandom(bank, count);
+    const chosen = ladderOn ? pickForLevel(bank, level, count) : pickRandom(bank, count);
+    sessionLevelRef.current = ladderOn ? level : null;
+    setLadderNote(null);
     const blanks = emptyResponses(chosen.map((p) => p.question));
     picksRef.current = chosen;
     responsesRef.current = blanks;
@@ -270,6 +312,28 @@ export default function PracticeSession({
           <span className="font-bold text-white">{bank.length} câu</span>. Chọn số câu
           muốn luyện — hệ thống bốc ngẫu nhiên mỗi lần một khác.
         </p>
+        {hasLabelledQuestions(bank) && (
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-300">
+            {ladderOn ? (
+              <p>
+                Mức hiện tại của em:{" "}
+                <span className="font-bold" style={{ color }}>
+                  {DIFFICULTY_LABELS[level]}
+                </span>{" "}
+                (Dễ → Trung bình → Khó). Đạt {Math.round(LADDER_PASS_RATIO * 100)}% trở lên thì lên mức tiếp.
+              </p>
+            ) : (
+              <p>Đang luyện tự do — câu bốc ngẫu nhiên mọi mức, không tính lên mức.</p>
+            )}
+            <button
+              type="button"
+              onClick={() => setFree((f) => !f)}
+              className="mt-1 text-xs font-semibold text-slate-400 underline underline-offset-2 hover:text-slate-200"
+            >
+              {ladderOn ? "Luyện tự do (bỏ thang mức)" : "Quay lại luyện theo mức"}
+            </button>
+          </div>
+        )}
         <div className="flex flex-wrap gap-2">
           {choices.map((c) => (
             <button
@@ -330,6 +394,7 @@ export default function PracticeSession({
       usedSeconds={usedSeconds}
       saveState={saveState}
       passScore={passScore}
+      ladderNote={ladderNote}
       onRetry={retry}
       onNewSession={() => setPhase("setup")}
       color={color}

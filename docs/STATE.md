@@ -25,8 +25,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
-- `20260930100000_tutoring_exit_cooldown.sql` — GĐ 1b #3, chờ 24 giờ thay giới hạn 3 lượt (rollback `perf/rollback/20260930100000_tutoring_exit_cooldown.down.sql`). Chưa chạy.
-Mọi file khác trong `supabase/migrations/` tính tới 29/09/2026 đã chạy trên production.
+- (trống) — `20260930100000_tutoring_exit_cooldown.sql` đã chạy 30/9/2026 (xem STATE-archive.md).
+Mọi file trong `supabase/migrations/` tính tới 30/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
 

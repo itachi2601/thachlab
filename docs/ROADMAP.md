@@ -73,7 +73,7 @@ Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
 - [~] **Đổi khung kênh phụ đạo** (30/9: code + migration xong, chờ chạy — nhãn HS/PH "đang mở khoá", chờ 24 giờ thay 3 lượt, gợi ý đoạn lý thuyết sau lượt trượt; thành tích "Phục hồi" = "Lật Kèo Ngoạn Mục" đã có sẵn; còn thiếu: tách lý thuyết theo đúng YCCĐ trượt): trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
       "Phục hồi" khi thoát; thay giới hạn 3 lượt tổng bằng thời gian chờ 1–2 ngày giữa các lượt +
       gợi ý đúng đoạn lý thuyết trước lượt sau. Nhãn phụ đạo chỉ GV/TA thấy.
-- [ ] **Luyện tập tăng dần độ khó**: phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
+- [x] **Luyện tập tăng dần độ khó** (30/9: xong, chỉ code phía client — mức lưu localStorage theo HS+mục luyện, không migration/round-trip mới; có nút "Luyện tự do"; `features/lessons/practice-ladder.ts`, `PracticeSession.tsx`): phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
       mức danh hiệu, không thêm khái niệm mới).
 - [ ] **Bảng xếp hạng chia giải theo bậc**: chỉ so với em cùng bậc; bảng lớp giữ top 3, "vị trí
       của em" hiện 2 bạn ngay trên/dưới, không hiện số thứ tự tuyệt đối.

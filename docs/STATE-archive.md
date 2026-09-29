@@ -154,3 +154,5 @@ kiểm tra thấy đã có dữ liệu sẵn khi thầy chạy lại 27/9 tối)
 (file tĩnh `public/data/` đã có nội dung mới, 81/81 file có `summary_html`) — khối "📌 Tóm tắt ý
 chính" giờ lên web thật.
 
+
+- 30/9/2026: `20260930100000_tutoring_exit_cooldown.sql` đã chạy (GĐ 1b #3 — chờ 24 giờ thay giới hạn 3 lượt; rollback `perf/rollback/20260930100000_tutoring_exit_cooldown.down.sql`).
