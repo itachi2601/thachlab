@@ -164,6 +164,8 @@ export interface RankWeekly {
   min_score: number;
   rp: number;
   achieved: boolean;
+  /** true = mục tiêu đặt riêng từ 2 tuần trước của em (migration 20260929130000); RPC cũ không trả. */
+  personal?: boolean;
 }
 
 export interface RankDaily {
@@ -295,11 +297,14 @@ export interface ClassRankBoardMember {
 export interface ClassRankBoard {
   season: { id: number; name: string; starts_on: string; ends_on: string } | null;
   week_start: string;
-  total: number;
   top_week: (ClassRankBoardMember & { pos: number; tier_code: TierCode | null; division: number | null; is_me: boolean; paragon?: boolean })[];
   me: {
-    pos: number;
     rp_week: number;
+    /** Bậc của em + số bạn cùng bậc (gồm em) — chỉ so với bạn cùng bậc, không có thứ tự tuyệt đối. */
+    tier_code: TierCode | null;
+    division: number | null;
+    tier_size: number;
+    in_top: boolean;
     tied: number;
     above: ClassRankBoardMember | null;
     below: ClassRankBoardMember | null;
@@ -367,6 +372,8 @@ export interface PublicHonorGrade {
   /** Số bạn cùng top 3 nhưng không hiện vì bục tối đa 5 ô (migration 20260928180000; RPC cũ không trả). */
   top_more?: number;
   improved: { name: string; avatar: string | null; delta: number; rp_week: number } | null;
+  /** Tiến bộ theo tỉ lệ đúng so với 2 tuần trước (migration 20260929120000; RPC cũ không trả). Ưu tiên hơn `improved`. */
+  improved_acc?: { name: string; avatar: string | null; gain: number; acc: number } | null;
   tier_ups: { name: string; tier_code: TierCode; division: number | null }[];
   streak: { name: string; days: number } | null;
 }

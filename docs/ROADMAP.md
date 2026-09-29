@@ -63,19 +63,19 @@ Căn cứ: thuyết tự quyết (Deci & Ryan), mục tiêu gần (Bandura & Sch
 giãn cách + ôn truy hồi (Cepeda, Roediger), tư duy phát triển (Dweck), nhạy cảm địa vị tuổi vị thành
 niên (Steinberg, Blakemore). Nhắm vào **nhóm 25% thấp nhất** — nhóm trên tiến bộ với mọi hệ thống.
 Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
-- [ ] **Trục "tiến bộ so với chính em"**: mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
+- [~] **Trục "tiến bộ so với chính em"** (29/09: code + migration xong, chờ chạy — xem STATE.md; còn thiếu thành tích "Tiến bộ tuần"; số liệu là tham chiếu, chỉnh sau mùa 1 qua `rank_seasons.config`): mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
       tăng → cộng RP + thành tích "Tiến bộ tuần"; mục "Tiến bộ nhất tuần" lên bảng vinh danh công
       khai cạnh top RP. (Dữ liệu: exam/practice_question_results đã có; thêm 1 RPC gộp, không thêm
       query rời ở trang chủ HS.)
-- [ ] **Mục tiêu tuần thích ứng**: bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
+- [~] **Mục tiêu tuần thích ứng** (29/09: code + migration xong, chờ chạy — xem STATE.md; số liệu là tham chiếu, chỉnh qua cấu hình mùa): bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
       nhất của chính em (số bài + ngưỡng điểm nhỉnh hơn trung bình của em), nhắm ~80–85% lượt thử
       thành công.
-- [ ] **Đổi khung kênh phụ đạo**: trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
+- [~] **Đổi khung kênh phụ đạo** (30/9: code + migration xong, chờ chạy — nhãn HS/PH "đang mở khoá", chờ 24 giờ thay 3 lượt, gợi ý đoạn lý thuyết sau lượt trượt; thành tích "Phục hồi" = "Lật Kèo Ngoạn Mục" đã có sẵn; còn thiếu: tách lý thuyết theo đúng YCCĐ trượt): trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
       "Phục hồi" khi thoát; thay giới hạn 3 lượt tổng bằng thời gian chờ 1–2 ngày giữa các lượt +
       gợi ý đúng đoạn lý thuyết trước lượt sau. Nhãn phụ đạo chỉ GV/TA thấy.
-- [ ] **Luyện tập tăng dần độ khó**: phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
+- [x] **Luyện tập tăng dần độ khó** (30/9: xong, chỉ code phía client — mức lưu localStorage theo HS+mục luyện, không migration/round-trip mới; có nút "Luyện tự do"; `features/lessons/practice-ladder.ts`, `PracticeSession.tsx`): phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
       mức danh hiệu, không thêm khái niệm mới).
-- [ ] **Bảng xếp hạng chia giải theo bậc**: chỉ so với em cùng bậc; bảng lớp giữ top 3, "vị trí
+- [~] **Bảng xếp hạng chia giải theo bậc** (30/9: code + migration xong, chờ chạy — `rank_class_board` so sánh chỉ trong cùng bậc, bỏ pos/total tuyệt đối; top 3 lớp giữ): chỉ so với em cùng bậc; bảng lớp giữ top 3, "vị trí
       của em" hiện 2 bạn ngay trên/dưới, không hiện số thứ tự tuyệt đối.
 - [ ] **Mục tiêu chung của lớp**: "cả lớp đạt N huy hiệu tuần này" + phần thưởng chung (cấu trúc
       hợp tác, em giỏi có lý do giúp em yếu).

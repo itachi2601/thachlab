@@ -3,6 +3,45 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — đợt 29/09/2026 (đã chạy hết)
+**File thứ 4 `20260929130000_rank_weekly_goal_adaptive.sql` (mục tiêu tuần thích ứng) đã chạy 29/9 17:43 VN** (log `scripts/logs/20260929-174330-*`, OK).
+Xác nhận trên Singapore: `rank_weekly_goal_of` có mặt, gọi được bằng service_role, anon bị chặn (401), `rank_public_honor` vẫn 200.
+Số liệu thật ngay sau khi chạy (chỉ đọc): mùa 4 tuần 28/9 có 59/164 em đủ lịch sử để có mục tiêu riêng, 49 em ra 1 bài và 10 em ra 2 bài,
+ngưỡng 4,0–8,5; mục tiêu chung của mùa 4 là 2 bài ≥7. Mùa 5 (Alpha test) chỉ bật 2 nguồn `rank_sources` nên cả 42 em dùng mục tiêu chung
+(mục tiêu riêng chỉ đếm bài thuộc nguồn tính RP của mùa). Lịch sử trung vị chỉ 3 bài/2 tuần vì mùa mới mở, nên đa số được mục tiêu 1 bài/tuần.
+Chưa có lượt làm bài mới từ 14:04 VN nên chưa thấy RP mục tiêu tuần cộng theo luật mới.
+Chi tiết thiết kế: `20260929130000_rank_weekly_goal_adaptive.sql` — GĐ 1b việc 2, mục tiêu tuần THÍCH ỨNG: mỗi em có mục tiêu riêng từ 2 tuần trước
+  của chính em (số bài = nhịp x 75%, tối đa 5; ngưỡng điểm = mức ~80% bài gần đây của em đạt, làm tròn 0,5, trong 4–8,5).
+  Chưa đủ lịch sử (<3 bài/2 tuần) thì dùng mục tiêu chung của mùa như cũ. Định nghĩa lại đúng 2 hàm
+  (`rank_eval_weekly_goal`, `rank_status_of`) + thêm `rank_weekly_goal_of`; trạng thái thêm khoá `personal`. Tắt tức thì bằng
+  `weekly_goal_personal = 0` trong cấu hình mùa (trang quản trị mùa, không cần rollback); mọi số chỉnh ở cùng chỗ. Đã kiểm trên
+  Postgres 16 cục bộ (6 kiểu học sinh, chấm tuần không cộng đôi, công tắc, chỉnh độ khó, rollback + áp dụng lại), CHƯA chạy trên dữ liệu thật.
+  Lưu ý: ROADMAP viết "ngưỡng nhỉnh hơn trung bình" nhưng cũng "nhắm ~80–85% thành công"; đã ưu tiên tỉ lệ thành công. Chuỗi ngày vẫn dùng ngưỡng chung.
+
+**Cập nhật: file 3 (`rank_honor_progress`) bị Thạch rollback ~14:00 VN rồi cả 3 file được chạy lại đủ 14:04 VN (log `scripts/logs/20260929-140443-*`, đều OK). Đã xác nhận: `rank_public_honor` trả 200 cho anon, có khoá `improved_acc`.**
+**Trạng thái xác nhận 29/09/2026 (project Singapore `jgvbdbpvjdntdgzthumv`)**: file 1 chạy OK (log máy Thạch); file 2 lần đầu
+lỗi `TransportError` ở bước đăng nhập của CLI (chưa chạy câu SQL nào), chạy lại `--only 2` thì xong; file 3 lỡ chạy TRƯỚC
+file 2 nên `rank_public_honor` báo lỗi 42883 (thiếu `rank_progress_calc`) trong một khoảng ngắn cho tới khi file 2 xong. Đã thêm chốt
+chặn thứ tự vào file 3 (commit 517fa23). Còn phải làm: `node scripts/gen-database-doc.mjs` trên máy Thạch (cần supabase CLI
+link), và cộng bù chuỗi ngày 26–29/9 (`select rank_recompute_season(4);` `(5)`) nếu thầy quyết. Chưa xác nhận chuỗi ngày và
+tiến bộ tuần cộng RP thật: cần có lượt làm bài mới (ledger chưa có dòng nào từ 00:49 29/9 VN).
+
+Ba file viết 29/09/2026, chạy trên máy Thạch bằng `bash scripts/run-migrations.sh`, theo thứ tự:
+1. `20260929100000_rank_restore_daily_streak.sql` — **sửa lỗi**: chuỗi ngày ngừng cộng RP từ 26/9 00:03 (VN)
+   vì migration `20260926110000_rank_exclude_staff` định nghĩa lại `rank_on_result` từ bản cũ, làm rơi dòng
+   `rank_eval_daily_streak`. Bằng chứng: ledger có 29 dòng `daily_streak` ngày 25/9, sau đó 0 dòng dù >230 lượt
+   luyện tập được cộng RP. Cộng bù 26–29/9 là tuỳ chọn: `select rank_recompute_season(4);` và `(5)` (RP các em tăng ngay).
+2. `20260929110000_rank_progress_week.sql` — GĐ 1b việc 1, "tiến bộ so với chính em": tỉ lệ đúng tuần này so với 2 tuần
+   trước; tăng ≥5 điểm % (và ≥15 câu mỗi bên) thì +15 RP, +5 RP mỗi 5 điểm % tăng thêm, tối đa 25. Mọi số
+   chỉnh qua `rank_seasons.config` (`progress_min_gain_pct`, `progress_rp`, `progress_rp_max`,
+   `progress_step_pct`, `progress_step_rp`, `progress_min_questions`), không cần sửa code — điều chỉnh sau mùa 1.
+3. `20260929120000_rank_honor_progress.sql` — bảng vinh danh tuần trang chủ thêm "Tiến bộ nhất" theo tỉ lệ đúng
+   (`improved_acc`); client đã sửa sẵn (`HonorBoardPanel`), client cũ vẫn chạy.
+Đã kiểm trên Postgres 16 cục bộ (bảng giả + hàm `rank_award` thật): 7 ca (đúng ngưỡng, gần 100%, thiếu dữ liệu,
+tự luận, luyện tập, giáo viên, lặp lại không cộng đôi), quyền anon, rollback + áp dụng lại — đều đạt. Đã xác nhận trên Singapore sau khi chạy (hàm có mặt, RPC vinh danh trả 200 cho anon, quyền đúng); CHƯA thấy
+hoạt động thật vì chưa có lượt làm bài mới từ lúc chạy. Chưa có: thành tích/huy hiệu "Tiến bộ tuần" (để đợt sau). Tiến bộ chỉ tính khi có lượt làm bài mới,
+không cộng bù tuần đã qua.
+
 ## Migration — đợt 28/09/2026 (đã chạy hết)
 - **Đổi tên 7 bậc rank theo Liên Quân Mobile** (28/9/2026) → ĐÃ CHẠY 28/9 23:47 (log
   `scripts/logs/20260928-234708-*`), kiểm tra `rank_tiers` cả 2 mùa đã mang tên mới: Tinh Quang…Chí Tôn → Đồng, Bạc, Vàng,
@@ -115,3 +154,5 @@ kiểm tra thấy đã có dữ liệu sẵn khi thầy chạy lại 27/9 tối)
 (file tĩnh `public/data/` đã có nội dung mới, 81/81 file có `summary_html`) — khối "📌 Tóm tắt ý
 chính" giờ lên web thật.
 
+
+- 30/9/2026: `20260930100000_tutoring_exit_cooldown.sql` đã chạy (GĐ 1b #3 — chờ 24 giờ thay giới hạn 3 lượt; rollback `perf/rollback/20260930100000_tutoring_exit_cooldown.down.sql`).
