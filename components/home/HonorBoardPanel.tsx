@@ -80,7 +80,14 @@ function Podium({ g }: { g: PublicHonorGrade }) {
   // Desktop: hạng 1 đứng giữa (2 · 1 · 3); mobile: danh sách 1 · 2 · 3 theo thứ tự tự nhiên.
   const ORDER = ["sm:order-2", "sm:order-1", "sm:order-3"];
   const notes = [
-    g.improved && {
+    g.progress && {
+      key: "progress",
+      Icon: TrendingUp,
+      label: "Tiến bộ nhất tuần",
+      who: g.progress.name,
+      detail: `tỉ lệ đúng ${g.progress.from_pct}% → ${g.progress.to_pct}% so với chính em 2 tuần trước`,
+    },
+    !g.progress && g.improved && {
       key: "improved",
       Icon: TrendingUp,
       label: "Tiến bộ nhất",

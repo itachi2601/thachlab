@@ -51,7 +51,7 @@ Tất cả đã commit + merge `main`; migration kèm theo đã chạy (xem `STA
 - Đăng đề: sửa parser `exam-latex-parser` (câu dẫn "Đáp án nào…"/"Đáp số là…"); script `scripts/upload-exam-docx.mts` đăng đề .docx đã chuẩn bằng service key (`--dry`, rollback khi lỗi); `scripts/data/bulk-de-thi-thu-log.json` (tên file gốc ↔ examId) đã vào git — hiện 19 đề thi thử đã đăng qua đường này.
 
 ## Migration — ĐANG CHỜ
-- (không có — tất cả đã chạy, xem `STATE-archive.md`)
+- `20260930100000_rank_weekly_progress.sql` — GĐ 1b #1 tiến bộ tuần (rollback `perf/rollback/20260930100000_rank_weekly_progress.down.sql`). Chưa chạy.
 Mọi file khác trong `supabase/migrations/` tính tới 28/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).

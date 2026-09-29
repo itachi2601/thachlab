@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260930100000_rank_weekly_progress.sql|Tiến bộ tuần: RPC + cộng RP + khoá progress ở vinh danh|ngoài giờ HS làm bài (thay 3 hàm rank)"
 )
 # ĐÃ CHẠY 28/9/2026 (23:47): 20260928190000_rank_tier_names_lien_quan.sql
 # ĐÃ CHẠY 28/9/2026 (11:39):

@@ -74,7 +74,7 @@ Căn cứ: thuyết tự quyết (Deci & Ryan), mục tiêu gần (Bandura & Sch
 giãn cách + ôn truy hồi (Cepeda, Roediger), tư duy phát triển (Dweck), nhạy cảm địa vị tuổi vị thành
 niên (Steinberg, Blakemore). Nhắm vào **nhóm 25% thấp nhất** — nhóm trên tiến bộ với mọi hệ thống.
 Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
-- [ ] **Trục "tiến bộ so với chính em"**: mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
+- [~] **Trục "tiến bộ so với chính em"** (30/9: đã viết migration + UI vinh danh, chờ chạy; còn thiếu thành tích "Tiến bộ tuần"): mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
       tăng → cộng RP + thành tích "Tiến bộ tuần"; mục "Tiến bộ nhất tuần" lên bảng vinh danh công
       khai cạnh top RP. (Dữ liệu: exam/practice_question_results đã có; thêm 1 RPC gộp, không thêm
       query rời ở trang chủ HS.)
