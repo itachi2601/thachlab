@@ -7,16 +7,18 @@ import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import CatchupCard from "@/components/results/CatchupCard";
 import {
-  fetchChapters,
-  fetchLessonProgressSummaries,
-  fetchLessons,
+  fetchMyProgressMarks,
+  summarizeLessonProgress,
   type LessonProgressSummary,
+  type LessonWithItemRefs,
+  type MyProgressMarks,
 } from "@/services/lessons";
+import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import {
   fetchClassAssessments,
   fetchMyAlert,
@@ -25,10 +27,15 @@ import {
   type ScorePoint,
   type StudentAlert,
 } from "@/services/analytics";
-import RankBadge from "@/components/rank/RankBadge";
+import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import RankCard from "@/components/rank/RankCard";
-import { tierLabel, type RankStatus } from "@/features/rank/types";
-import { fetchMyRankStatus } from "@/services/rank";
+import WornTitle from "@/components/rank/WornTitle";
+import TitleShowcase from "@/components/rank/TitleShowcase";
+import DailyStreakCard from "@/components/rank/DailyStreakCard";
+import ClassRankBoard from "@/components/rank/ClassRankBoard";
+import HonorVisibilityPicker from "@/components/rank/HonorVisibilityPicker";
+import type { RankStatus, RankTitle } from "@/features/rank/types";
+import { fetchMyRankStatus, fetchMyTitles } from "@/services/rank";
 import {
   fetchLatestAnnouncements,
   fetchRecentAnnouncements,
@@ -37,8 +44,10 @@ import {
 } from "@/services/announcements";
 import {
   ACTIVE_NEED_STATUSES,
+  MAX_EXIT_ATTEMPTS,
   NEED_STATUS_LABEL,
   cancelRegistration,
+  fetchMyExitAttempts,
   fetchMyNeeds,
   fetchMyRegistrations,
   fetchUpcomingSlots,
@@ -48,6 +57,8 @@ import {
   type TutoringNeed,
   type TutoringSlot,
 } from "@/services/tutoring";
+import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
+import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -58,17 +69,6 @@ const NEED_TONE: Record<NeedStatus, string> = {
   cleared: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
   dismissed: "border-white/15 bg-white/5 text-slate-400",
 };
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:rounded-2xl sm:p-5">
-      <strong className="text-xl text-white sm:text-3xl">{value}</strong>
-      <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
-        {label}
-      </p>
-    </div>
-  );
-}
 
 function Section({
   icon: Icon,
@@ -103,13 +103,24 @@ function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
         {item.createdByName || "Giáo viên"} ·{" "}
         {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
       </p>
+      {item.examId && (
+        <Link
+          href={`/kiem-tra/lam?id=${item.examId}`}
+          className="mt-2.5 flex items-center justify-between gap-2 rounded-lg bg-blue-500/15 px-3 py-2 text-sm font-bold text-blue-100 hover:bg-blue-500/25"
+        >
+          <span className="flex min-w-0 items-center gap-2">
+            <Trophy size={14} className="shrink-0 text-amber-300" />
+            <span className="truncate">{item.examTitle ?? "Làm bài"}</span>
+          </span>
+          <ChevronRight size={16} className="shrink-0" />
+        </Link>
+      )}
     </div>
   );
 }
 
 export default function ThptStudentHome({
   profile,
-  email,
   studentId,
   classId,
   className,
@@ -125,23 +136,28 @@ export default function ThptStudentHome({
   const toast = useToast();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
-  const [lessons, setLessons] = useState<Lesson[] | null>(null);
-  const [progress, setProgress] = useState<Map<number, LessonProgressSummary>>(new Map());
+  const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
+  const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
+  const [titles, setTitles] = useState<RankTitle[] | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [lastLessonId, setLastLessonId] = useState(0);
 
   const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
   const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
+  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
+  const [exitAttemptCounts, setExitAttemptCounts] = useState<Map<number, number>>(new Map());
+  const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
 
   useEffect(() => {
-    Promise.all([fetchClasses(), fetchChapters(), fetchLessons()])
+    // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
+    Promise.all([fetchClassesStatic(setClasses), fetchChaptersStatic(setChapters), fetchLessonsStatic(setLessons)])
       .then(([cs, chs, ls]) => {
         setLastLessonId(Number(window.localStorage.getItem(LAST_LESSON_KEY)) || 0);
         setClasses(cs);
@@ -153,8 +169,11 @@ export default function ThptStudentHome({
 
   useEffect(() => {
     fetchMyScoreHistory(studentId).then(setScores).catch(() => setScores([]));
+    // dấu "đã học" không phụ thuộc lớp/chương/bài → tải ngay, tiến độ tính ở client khi đủ dữ liệu
+    fetchMyProgressMarks(studentId).then(setProgressMarks).catch(() => setProgressMarks(null));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
+    fetchMyTitles().then(setTitles).catch(() => setTitles(null));
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
   }, [studentId, classId]);
 
@@ -165,12 +184,23 @@ export default function ThptStudentHome({
     fetchRecentAnnouncements(classId, "homework" as AnnouncementKind, 5)
       .then(setHomeworkNotes)
       .catch(() => setHomeworkNotes([]));
+    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
   }
   useEffect(reloadAnnouncements, [classId]);
 
   function reloadTutoring() {
     fetchMyNeeds(studentId)
-      .then((rows) => setNeeds(rows.filter((n) => ACTIVE_NEED_STATUSES.includes(n.status))))
+      .then((rows) => {
+        const active = rows.filter((n) => ACTIVE_NEED_STATUSES.includes(n.status));
+        setNeeds(active);
+        fetchMyExitAttempts(studentId, active.map((n) => n.id))
+          .then((attempts) => {
+            const counts = new Map<number, number>();
+            for (const a of attempts) counts.set(a.tutoringNeedId, (counts.get(a.tutoringNeedId) ?? 0) + 1);
+            setExitAttemptCounts(counts);
+          })
+          .catch(() => setExitAttemptCounts(new Map()));
+      })
       .catch(() => setNeeds([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
     fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
@@ -195,12 +225,11 @@ export default function ThptStudentHome({
       );
   }, [classChapters, lessons]);
 
-  useEffect(() => {
-    if (!classLessons) return;
-    fetchLessonProgressSummaries(studentId, classLessons.map((lesson) => lesson.id))
-      .then(setProgress)
-      .catch(() => setProgress(new Map()));
-  }, [classLessons, studentId]);
+  const progress = useMemo(
+    (): Map<number, LessonProgressSummary> =>
+      classLessons && progressMarks ? summarizeLessonProgress(classLessons, progressMarks) : new Map(),
+    [classLessons, progressMarks],
+  );
 
   const totals = useMemo(() => {
     if (!classLessons) return null;
@@ -234,8 +263,18 @@ export default function ThptStudentHome({
     : null;
   const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
   const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  const todoReviewHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
 
-  const hasTodayContent = Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0;
+  const hasTodayContent =
+    Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || todoReviewHomework.length > 0;
+
+  const dailySuggestion = todoExams.length > 0
+    ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
+    : nextLesson
+      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+      : needs.length > 0
+        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
+        : null;
 
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
@@ -257,20 +296,19 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-8">
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-7">
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
         <div className="relative flex items-start justify-between gap-3">
-          <div className="flex min-w-0 items-start gap-3 sm:gap-4">
-            <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+            <RankAvatarFrame status={rank} size={56}>
+              <AvatarUploader studentId={studentId} url={profile?.avatar_url} name={profile?.full_name} size={56} />
+            </RankAvatarFrame>
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-300 sm:text-xs sm:tracking-[.16em]">
-                Không gian học tập của tôi
-              </p>
-              <h1 className="mt-1.5 truncate font-display text-2xl font-bold text-white sm:mt-2 sm:text-3xl">
+              <h1 className="font-display text-xl font-bold leading-tight text-white sm:text-3xl">
                 Chào {profile?.full_name || "bạn"} 👋
               </h1>
-              <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">Lớp {className}</p>
-              {email && <p className="mt-1 hidden text-xs text-slate-600 sm:block">{email}</p>}
+              {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
+              <p className="mt-1 text-xs text-slate-400 sm:text-sm">Lớp {className}</p>
             </div>
           </div>
           <button
@@ -282,18 +320,26 @@ export default function ThptStudentHome({
             <span className="hidden sm:inline">Đăng xuất</span>
           </button>
         </div>
-        <div className="relative mt-5 sm:mt-6">
-          <div className="mb-2 flex items-end justify-between gap-3 text-xs">
-            <b className="text-blue-200">Năng lượng học tập</b>
-            <span className="whitespace-nowrap font-mono text-[11px] text-slate-400 sm:text-xs">
-              {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
-            </span>
+        <div className="relative mt-4 flex items-end gap-3 sm:mt-5 sm:gap-5">
+          <div className="min-w-0 flex-1">
+            <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
+              <b className="text-blue-200">Năng lượng học tập</b>
+              <span className="whitespace-nowrap font-mono text-[11px] text-slate-400 sm:text-xs">
+                {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
+              </span>
+            </div>
+            <div className="h-3 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-3.5">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_18px_rgba(56,189,248,.45)] transition-[width]"
+                style={{ width: `${totals?.pct ?? 0}%` }}
+              />
+            </div>
           </div>
-          <div className="h-3.5 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-4">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_18px_rgba(56,189,248,.45)] transition-[width]"
-              style={{ width: `${totals?.pct ?? 0}%` }}
-            />
+          <div className="shrink-0 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-right">
+            <strong className="block font-display text-lg leading-none text-white sm:text-xl">
+              {avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"}
+            </strong>
+            <span className="text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-[10px]">Điểm TB</span>
           </div>
         </div>
       </section>
@@ -307,32 +353,20 @@ export default function ThptStudentHome({
           <p className="mt-2 text-sm text-amber-100/80">
             {alert.kind === "missed_assessment"
               ? "Em còn bài kiểm tra chưa làm — hãy hoàn thành sớm."
-              : "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo."}
+              : alert.kind === "exam_violation"
+                ? "Bài kiểm tra gần đây của em bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình — trợ giảng sẽ kiểm tra lại kiến thức của em."
+                : "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo."}
           </p>
         </section>
       )}
 
-      <section className="grid grid-cols-3 gap-2 sm:gap-3">
-        <Stat value={totals ? `${totals.pct}%` : "—"} label="Tiến độ" />
-        <Stat value={avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"} label="Điểm TB" />
-        <Link
-          href="/lop-hoc/xep-hang/"
-          className="flex items-center gap-2 rounded-xl border border-blue-500/15 bg-blue-500/5 p-3 sm:rounded-2xl sm:p-5"
-        >
-          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={30} className="shrink-0 sm:hidden" />
-          <RankBadge code={rank?.tier?.code} division={rank?.tier?.division} size={44} className="hidden shrink-0 sm:block" />
-          <span className="min-w-0">
-            <strong className="block truncate text-sm text-white sm:text-lg">
-              {rank?.season ? tierLabel(rank.tier?.code, rank.tier?.division) : "—"}
-            </strong>
-            <p className="mt-1 truncate text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-xs sm:tracking-wider">
-              Xếp hạng
-            </p>
-          </span>
-        </Link>
-      </section>
-
-      <RankCard status={rank} name={profile?.full_name} />
+      <div className="grid gap-4 sm:grid-cols-[1.15fr_1fr] sm:items-start">
+        <RankCard status={rank} />
+        <TitleShowcase titles={titles} displayCode={rank?.display_title?.code ?? null} className="h-full" />
+      </div>
+      <DailyStreakCard status={rank} suggestion={dailySuggestion} />
+      <ClassRankBoard classId={classId} />
+      <HonorVisibilityPicker />
 
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
       <Section icon={Megaphone} title="Việc cần làm hôm nay">
@@ -370,6 +404,25 @@ export default function ThptStudentHome({
             </Link>
           ))}
 
+          {todoReviewHomework.map((item) => (
+            <Link
+              key={item.id}
+              href={`/kiem-tra/lam?id=${item.examId}`}
+              className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 hover:bg-white/5"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <CalendarClock size={14} className="shrink-0 text-cyan-300" />
+                <span className="min-w-0">
+                  <strong className="block truncate text-sm text-white">{item.title}</strong>
+                  <small className="text-xs text-slate-500">
+                    BTVN ôn tập · {item.wrongCount} câu cả lớp hay sai + {item.bankCount} câu ôn lại
+                  </small>
+                </span>
+              </span>
+              <ChevronRight size={16} className="shrink-0 text-slate-500" />
+            </Link>
+          ))}
+
           {!hasTodayContent && <p className="text-sm text-slate-500">Chưa có việc gì mới — cứ ôn lại bài cũ nhé.</p>}
         </div>
       </Section>
@@ -393,16 +446,35 @@ export default function ThptStudentHome({
           {needs.length === 0 ? (
             <p className="text-sm text-slate-500">Hiện chưa có chủ đề nào cần phụ đạo — cứ tiếp tục học nhé!</p>
           ) : (
-            <div className="flex flex-wrap gap-1.5">
-              {needs.map((need) => (
-                <span
-                  key={need.id}
-                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}
-                >
-                  {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
-                </span>
-              ))}
-            </div>
+            <>
+              <p className="text-xs text-slate-400">
+                Để bỏ một chủ đề khỏi danh sách này: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
+                bên dưới rồi trả bài lại cho trợ giảng, hoặc <strong className="text-slate-200">tự ôn và làm bài
+                kiểm tra thoát phụ đạo</strong> (câu hỏi ngẫu nhiên đúng chủ đề em đang hổng) — đạt từ 80% là xong,
+                tối đa {MAX_EXIT_ATTEMPTS} lượt/chủ đề.
+              </p>
+              <div className="space-y-1.5">
+                {needs.map((need) => {
+                  const used = exitAttemptCounts.get(need.id) ?? 0;
+                  const left = MAX_EXIT_ATTEMPTS - used;
+                  return (
+                    <div key={need.id} className="flex flex-wrap items-center gap-1.5">
+                      <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}>
+                        {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setQuizNeed(need)}
+                        disabled={left <= 0}
+                        className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
+                      >
+                        {left > 0 ? `Tự kiểm tra (còn ${left} lượt)` : "Đã hết lượt tự kiểm tra"}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
           )}
 
           <div>
@@ -459,6 +531,19 @@ export default function ThptStudentHome({
         Xem toàn bộ chương trình lớp {className}
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
+
+      {quizNeed && (
+        <TutoringExitQuiz
+          need={quizNeed}
+          studentId={studentId}
+          attemptsUsed={exitAttemptCounts.get(quizNeed.id) ?? 0}
+          onClose={() => setQuizNeed(null)}
+          onCleared={() => {
+            setQuizNeed(null);
+            reloadTutoring();
+          }}
+        />
+      )}
     </div>
   );
 }

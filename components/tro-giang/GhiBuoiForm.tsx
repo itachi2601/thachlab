@@ -383,7 +383,7 @@ export default function GhiBuoiForm({
           touch_names: draft.sessionType === "lop" ? draft.touchNames : [],
           error_note: draft.sessionType === "lop" ? draft.errorNote.trim() : null,
           homework_given: draft.sessionType === "phudao" ? draft.homeworkGiven.trim() || null : null,
-          student_recap_ok: draft.sessionType === "phudao" ? draft.studentRecapOk : null,
+          student_recap_ok: draft.sessionType === "phudao" && !newPolicy ? draft.studentRecapOk : null,
         phudao_students: draft.sessionType === "phudao" ? draft.phudaoStudents : [],
           phudao_student_ids: draft.sessionType === "phudao" ? draft.phudaoStudentIds : [],
           class_id: selectedClassId,
@@ -555,24 +555,26 @@ export default function GhiBuoiForm({
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500"
               />
             </div>
-            <button
-              type="button"
-              onClick={() => patch({ studentRecapOk: !draft.studentRecapOk })}
-              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5"
-            >
-              <span className="text-sm font-medium text-white">Học sinh tự trình bày lại được</span>
-              <span
-                className={`relative h-7 w-12 shrink-0 rounded-full transition-colors ${
-                  draft.studentRecapOk ? "bg-emerald-500" : "bg-white/15"
-                }`}
+            {!newPolicy && (
+              <button
+                type="button"
+                onClick={() => patch({ studentRecapOk: !draft.studentRecapOk })}
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5"
               >
+                <span className="text-sm font-medium text-white">Học sinh tự trình bày lại được</span>
                 <span
-                  className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform ${
-                    draft.studentRecapOk ? "translate-x-5" : "translate-x-0.5"
+                  className={`relative h-7 w-12 shrink-0 rounded-full transition-colors ${
+                    draft.studentRecapOk ? "bg-emerald-500" : "bg-white/15"
                   }`}
-                />
-              </span>
-            </button>
+                >
+                  <span
+                    className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform ${
+                      draft.studentRecapOk ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  />
+                </span>
+              </button>
+            )}
           </>
         )}
 

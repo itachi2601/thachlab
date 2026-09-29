@@ -4,6 +4,7 @@
 // gắn nhãn và lấy câu ra soạn đề. Xem docs/supabase-migration-question-bank.sql.
 
 import type { Difficulty, ExamQuestion, QuestionForm } from "@/features/exams/types";
+import { FIGURE_MARK_PG, FIGURE_WORDS_PG, HAS_IMAGE_PG, isMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
 
 export interface BankQuestion {
@@ -23,6 +24,18 @@ export interface BankQuestion {
   sourceIndex: number | null;
   archived: boolean;
   note: string;
+  /** Thầy xác nhận câu không cần hình dù câu dẫn nhắc đồ thị/hình vẽ. */
+  figureNotNeeded: boolean;
+  /** Hình AI vẽ đang chờ duyệt (null = không có). */
+  aiFigure: BankAiFigure | null;
+}
+
+export interface BankAiFigure {
+  svg?: string;
+  summary?: string;
+  freeform?: boolean;
+  reason?: string;
+  created_at?: string;
 }
 
 interface BankRow {
@@ -42,10 +55,12 @@ interface BankRow {
   source_index: number | null;
   archived: boolean;
   note: string;
+  figure_not_needed: boolean | null;
+  ai_figure: BankAiFigure | null;
 }
 
 const COLS =
-  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note";
+  "id, created_at, updated_at, subject_code, grade, topic_id, topic_name, form, qtype, difficulty, question, content_hash, source_exam_id, source_index, archived, note, figure_not_needed, ai_figure";
 
 function fromRow(r: BankRow): BankQuestion {
   return {
@@ -65,7 +80,18 @@ function fromRow(r: BankRow): BankQuestion {
     sourceIndex: r.source_index,
     archived: r.archived,
     note: r.note ?? "",
+    figureNotNeeded: r.figure_not_needed === true,
+    aiFigure: r.ai_figure && typeof r.ai_figure === "object" ? r.ai_figure : null,
   };
+}
+
+/** Lưu / xoá hình AI chờ duyệt của một câu (null = bỏ). */
+export async function saveBankAiFigure(id: number, fig: BankAiFigure | null): Promise<void> {
+  const { error } = await getSupabase()
+    .from("question_bank")
+    .update({ ai_figure: fig ? { ...fig, created_at: new Date().toISOString() } : null })
+    .eq("id", id);
+  if (error) throw new Error(error.message);
 }
 
 export interface BankFilter {
@@ -78,7 +104,22 @@ export interface BankFilter {
   includeArchived?: boolean;
   /** Tìm trong nội dung câu hỏi (ilike). */
   search?: string;
+  /** Chỉ lấy câu nhắc đồ thị/hình vẽ mà câu dẫn + phương án không có ảnh, hoặc còn mốc ⟦…⟧ thay hình. */
+  missingFigure?: boolean;
   limit?: number;
+}
+
+/**
+ * Điều kiện "thiếu hình" đẩy xuống PostgREST (regex `imatch` = ~*). Cùng nghĩa với
+ * isMissingFigure() ở services/question-figures.ts; sau khi tải về vẫn lọc lại bằng hàm đó
+ * (xét thêm statements của câu đúng–sai) nên kết quả không rộng hơn helper.
+ */
+function applyMissingFigureFilter<T extends { or: (f: string) => T; filter: (c: string, op: string, v: string) => T }>(q: T): T {
+  return q
+    .or(`question->>question.imatch.${FIGURE_WORDS_PG},question->>question.imatch.${FIGURE_MARK_PG}`)
+    .filter("figure_not_needed", "eq", "false")
+    .filter("question->>question", "not.imatch", HAS_IMAGE_PG)
+    .or(`question->>options.is.null,question->>options.not.imatch.${HAS_IMAGE_PG}`);
 }
 
 export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQuestion[]> {
@@ -102,9 +143,20 @@ export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQ
   if (filter.difficulty !== undefined && filter.difficulty !== "all") q = q.eq("difficulty", filter.difficulty);
   if (!filter.includeArchived) q = q.eq("archived", false);
   if (filter.search?.trim()) q = q.ilike("question->>question", `%${filter.search.trim()}%`);
+  if (filter.missingFigure) q = applyMissingFigureFilter(q);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
-  return ((data as BankRow[]) ?? []).map(fromRow);
+  const rows = ((data as BankRow[]) ?? []).map(fromRow);
+  return filter.missingFigure ? rows.filter((r) => isMissingFigure(r.question)) : rows;
+}
+
+/** Số câu nhắc hình mà thiếu ảnh của một khối (đếm thô theo điều kiện PostgREST). */
+export async function fetchBankMissingFigureCount(grade: string): Promise<number> {
+  let q = getSupabase().from("question_bank").select("id", { count: "exact", head: true }).eq("archived", false);
+  if (grade) q = q.eq("grade", grade);
+  const { count, error } = await applyMissingFigureFilter(q);
+  if (error) throw new Error(error.message);
+  return count ?? 0;
 }
 
 export async function fetchBankQuestionsByIds(ids: number[]): Promise<BankQuestion[]> {
@@ -177,10 +229,12 @@ export interface BankPatch {
   archived?: boolean;
   note?: string;
   grade?: string;
+  figureNotNeeded?: boolean;
 }
 
 export async function updateBankQuestion(id: number, patch: BankPatch): Promise<void> {
   const payload: Record<string, unknown> = {};
+  if (patch.figureNotNeeded !== undefined) payload.figure_not_needed = patch.figureNotNeeded;
   if (patch.topicName !== undefined) payload.topic_name = patch.topicName;
   if (patch.form !== undefined) payload.form = patch.form;
   if (patch.difficulty !== undefined) payload.difficulty = patch.difficulty;

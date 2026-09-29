@@ -1,26 +1,30 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Archive,
   ArchiveRestore,
+  Check,
   ChevronDown,
   ChevronRight,
   Dices,
   FilePlus2,
+  ImagePlus,
   ListChecks,
   RefreshCw,
   Search,
   Sparkles,
   Trash2,
+  Wand2,
 } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
 import {
   DIFFICULTY_LABELS,
   QUESTION_FORM_LABELS,
+  QUESTION_TYPE_ORDER,
   pickRandom,
   type Difficulty,
   type ExamQuestion,
@@ -29,12 +33,21 @@ import {
 import { TYPE_SHORT } from "@/features/lessons/types";
 import { classifyQuestionTags } from "@/services/ai-classify";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
+import {
+  attachFigureToBankQuestion,
+  attachSvgToBankQuestion,
+  drawFigureWithAi,
+
+} from "@/services/question-bank-figure";
+import { isMissingFigure } from "@/services/question-figures";
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
   fetchBankQuestions,
+  fetchBankMissingFigureCount,
   fetchBankQuestionsByIds,
   fetchBankTopicCounts,
   fetchBankUnknownGradeCount,
+  saveBankAiFigure,
   fetchSimilarBankQuestions,
   readBasket,
   syncLabelsToSourceExams,
@@ -59,11 +72,21 @@ const selectCls = `${inputCls} bg-panel`;
 const btnCls =
   "admin-chip";
 
+interface AiFigState {
+  busy?: boolean;
+  svg?: string;
+  summary?: string;
+  reason?: string;
+  /** SVG do AI vẽ tự do (không qua bộ vẽ đồ thị của trang) — cần xem kĩ hơn. */
+  freeform?: boolean;
+}
+
 type Node =
   | { kind: "all" }
   | { kind: "untagged" }
   | { kind: "unknown-grade" }
   | { kind: "duplicates" }
+  | { kind: "missing-figure" }
   | { kind: "topic"; id: number; parent: boolean };
 
 const QTYPE_OPTIONS: { value: ExamQuestion["type"] | ""; label: string }[] = [
@@ -82,6 +105,7 @@ export default function QuestionBankAdmin() {
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [counts, setCounts] = useState<BankTopicCount[]>([]);
   const [unknownGrade, setUnknownGrade] = useState(0);
+  const [missingFigureCount, setMissingFigureCount] = useState(0);
   const [node, setNode] = useState<Node>({ kind: "all" });
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
@@ -109,6 +133,7 @@ export default function QuestionBankAdmin() {
     fetchQuestionTopics(grade).then(setTopics).catch(() => setTopics([]));
     fetchBankTopicCounts(grade).then(setCounts).catch(() => setCounts([]));
     fetchBankUnknownGradeCount().then(setUnknownGrade).catch(() => setUnknownGrade(0));
+    fetchBankMissingFigureCount(grade).then(setMissingFigureCount).catch(() => setMissingFigureCount(0));
   }, [grade]);
   useEffect(reloadTree, [reloadTree]);
 
@@ -150,7 +175,8 @@ export default function QuestionBankAdmin() {
   );
 
   const topicIdsFilter = useMemo<(number | null)[] | undefined>(() => {
-    if (node.kind === "all" || node.kind === "unknown-grade" || node.kind === "duplicates") return undefined;
+    if (node.kind === "all" || node.kind === "unknown-grade" || node.kind === "duplicates" || node.kind === "missing-figure")
+      return undefined;
     if (node.kind === "untagged") return [null];
     if (!node.parent) return [node.id];
     return [node.id, ...outcomesOf(topics, node.id).map((o) => o.id)];
@@ -195,6 +221,7 @@ export default function QuestionBankAdmin() {
       difficulty,
       includeArchived: showArchived,
       search: debounced,
+      missingFigure: node.kind === "missing-figure",
     });
     req
       .then((list) => setItems(node.kind === "unknown-grade" ? list.filter((q) => q.grade === "") : list))
@@ -220,6 +247,110 @@ export default function QuestionBankAdmin() {
     toast("success", `Đã thêm ${picked.length} câu vào giỏ.`);
   }
 
+  // ----- AI vẽ hình cho câu thiếu ảnh: xem trước, thầy duyệt mới lưu -----
+  const [aiFig, setAiFig] = useState<Map<number, AiFigState>>(new Map());
+  const [drawAllBusy, setDrawAllBusy] = useState(false);
+  const setAi = (id: number, st: AiFigState | null) =>
+    setAiFig((m) => {
+      const next = new Map(m);
+      if (st) next.set(id, st);
+      else next.delete(id);
+      return next;
+    });
+  async function drawFigure(q: BankQuestion) {
+    setAi(q.id, { busy: true });
+    let st: AiFigState;
+    try {
+      const r = await drawFigureWithAi(q.question);
+      st = r.status === "ok" ? { svg: r.svg, summary: r.summary, freeform: r.freeform } : { reason: r.reason };
+    } catch (e) {
+      st = { reason: e instanceof Error ? e.message : String(e) };
+    }
+    setAi(q.id, st);
+    // Lưu vào DB để thầy duyệt sau, trên máy khác cũng thấy.
+    const persisted = { svg: st.svg, summary: st.summary, freeform: st.freeform, reason: st.reason };
+    saveBankAiFigure(q.id, persisted)
+      .then(() => setItems((list) => list.map((x) => (x.id === q.id ? { ...x, aiFigure: persisted } : x))))
+      .catch(() => {});
+  }
+  function dismissAiFigure(q: BankQuestion) {
+    setAi(q.id, null);
+    if (q.aiFigure) {
+      saveBankAiFigure(q.id, null)
+        .then(() => setItems((list) => list.map((x) => (x.id === q.id ? { ...x, aiFigure: null } : x))))
+        .catch((e) => toast("error", e instanceof Error ? e.message : String(e)));
+    }
+  }
+  async function acceptAiFigure(q: BankQuestion) {
+    const svg = aiFig.get(q.id)?.svg ?? q.aiFigure?.svg;
+    if (!svg) return;
+    try {
+      const r = await attachSvgToBankQuestion(q.id, svg);
+      setItems((list) =>
+        list.map((x) =>
+          x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash, figureNotNeeded: false, aiFigure: null } : x,
+        ),
+      );
+      setAi(q.id, null);
+      toast(
+        "success",
+        r.examsUpdated > 0
+          ? `Đã lưu hình AI vào câu #${q.id} và ${r.examsUpdated} đề đang dùng câu này.`
+          : `Đã lưu hình AI vào câu #${q.id}.`,
+      );
+      reloadTree();
+    } catch (e) {
+      console.error("acceptAiFigure", e);
+      toast("error", e instanceof Error ? e.message : String(e));
+    }
+  }
+  // Chưa có hình AI (kể cả bản đã lưu ở DB) và AI chưa từng báo "không đủ dữ kiện" cho câu này.
+  const drawTargets = items.filter(
+    (q) =>
+      !q.archived &&
+      !q.figureNotNeeded &&
+      isMissingFigure(q.question) &&
+      !aiFig.get(q.id) &&
+      !q.aiFigure?.svg &&
+      !q.aiFigure?.reason,
+  );
+  async function drawAll() {
+    const targets = drawTargets;
+    if (!targets.length) return;
+    setDrawAllBusy(true);
+    let ok = 0;
+    let idx = 0;
+    const worker = async () => {
+      while (idx < targets.length) {
+        const q = targets[idx++];
+        await drawFigure(q);
+        ok++;
+      }
+    };
+    await Promise.all([worker(), worker()]);
+    setDrawAllBusy(false);
+    toast("success", `AI đã xử lý ${ok} câu — duyệt từng hình bên dưới (Dùng hình này / Bỏ).`);
+  }
+
+  // Gắn ảnh cho câu thiếu hình: ảnh vào cả dòng ngân hàng lẫn mọi đề đang dùng câu đó.
+  async function attachFigure(q: BankQuestion, file: File) {
+    try {
+      const r = await attachFigureToBankQuestion(q.id, file);
+      setItems((list) =>
+        list.map((x) => (x.id === q.id ? { ...x, question: r.question, contentHash: r.contentHash } : x)),
+      );
+      toast(
+        "success",
+        r.examsUpdated > 0
+          ? `Đã gắn ảnh vào câu #${q.id} và ${r.examsUpdated} đề đang dùng câu này.`
+          : `Đã gắn ảnh vào câu #${q.id} (chưa đề nào đang dùng câu này).`,
+      );
+      reloadTree();
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    }
+  }
+
   async function patch(id: number, patchIn: Parameters<typeof updateBankQuestion>[1]) {
     // Gắn năng lực thì kèm khối đang xem: tên chủ đề chỉ duy nhất trong một khối.
     const p = patchIn.topicName !== undefined && patchIn.grade === undefined ? { ...patchIn, grade } : patchIn;
@@ -235,11 +366,13 @@ export default function QuestionBankAdmin() {
                 difficulty: p.difficulty ?? q.difficulty,
                 archived: p.archived ?? q.archived,
                 grade: p.grade ?? q.grade,
+                figureNotNeeded: p.figureNotNeeded ?? q.figureNotNeeded,
               }
             : q,
         ),
       );
-      if (p.topicName !== undefined || p.archived !== undefined || p.grade !== undefined) reloadTree();
+      if (p.topicName !== undefined || p.archived !== undefined || p.grade !== undefined || p.figureNotNeeded !== undefined)
+        reloadTree();
       if (p.topicName !== undefined || p.grade !== undefined) reloadItems();
     } catch (e) {
       toast("error", e instanceof Error ? e.message : String(e));
@@ -312,6 +445,9 @@ export default function QuestionBankAdmin() {
     if (!basket.length) return;
     try {
       const list = await fetchBankQuestionsByIds(basket);
+      // Sắp theo đúng cấu trúc đề thi: TN 4 đáp án → Đúng–Sai → Trả lời ngắn → Tự luận,
+      // bất kể thứ tự em bấm chọn trong ngân hàng.
+      list.sort((a, b) => QUESTION_TYPE_ORDER.indexOf(a.qtype) - QUESTION_TYPE_ORDER.indexOf(b.qtype));
       const questions = list.map(toExamQuestion);
       writeHandoff({ title: "", grade, questions, bankIds: list.map((q) => q.id) });
       setBasket([]);
@@ -326,6 +462,7 @@ export default function QuestionBankAdmin() {
     if (node.kind === "untagged") return "Câu chưa gắn năng lực";
     if (node.kind === "unknown-grade") return "Câu chưa rõ khối";
     if (node.kind === "duplicates") return "Nghi trùng lặp";
+    if (node.kind === "missing-figure") return "Nhắc hình nhưng thiếu ảnh";
     return topics.find((t) => t.id === node.id)?.name ?? "";
   })();
 
@@ -381,6 +518,13 @@ export default function QuestionBankAdmin() {
             label="Nghi trùng lặp"
             count={dupPairs.length}
             warn={dupPairs.length > 0}
+          />
+          <TreeRow
+            active={node.kind === "missing-figure"}
+            onClick={() => setNode({ kind: "missing-figure" })}
+            label="Nhắc hình, thiếu ảnh"
+            count={missingFigureCount}
+            warn={missingFigureCount > 0}
           />
           <div className="my-2 border-t border-white/10" />
           {parents.length === 0 && (
@@ -451,6 +595,17 @@ export default function QuestionBankAdmin() {
                 <Sparkles size={14} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${Math.min(aiTargets.length, AI_BATCH_LIMIT)}/${aiTargets.length} câu)`}
               </button>
             )}
+            {node.kind === "missing-figure" && drawTargets.length > 0 && (
+              <button
+                type="button"
+                onClick={drawAll}
+                disabled={drawAllBusy}
+                className={`${btnCls} border-primary/40 text-primary`}
+                title="AI dựng lại đồ thị/hình từ câu dẫn + lời giải cho mọi câu đang thiếu; chỉ xem trước, thầy duyệt từng hình mới lưu"
+              >
+                <Wand2 size={14} /> {drawAllBusy ? "AI đang vẽ…" : `AI vẽ cả danh sách (${drawTargets.length})`}
+              </button>
+            )}
             <button
               type="button"
               onClick={node.kind === "duplicates" ? scanDuplicates : reloadItems}
@@ -512,7 +667,7 @@ export default function QuestionBankAdmin() {
                   <input type="checkbox" checked={showArchived} onChange={(e) => setShowArchived(e.target.checked)} />
                   Hiện câu đã lưu trữ
                 </label>
-                <div className="ml-auto flex items-center gap-1">
+                <div className="ml-auto flex flex-wrap items-center gap-1">
                   <input
                     type="number"
                     min={1}
@@ -541,6 +696,11 @@ export default function QuestionBankAdmin() {
                     onPick={() => toggleBasket(q.id)}
                     topicGroups={topicGroups}
                     onPatch={(p) => patch(q.id, p)}
+                    onFigure={(file) => attachFigure(q, file)}
+                    ai={aiFig.get(q.id)}
+                    onDraw={() => drawFigure(q)}
+                    onAcceptAi={() => acceptAiFigure(q)}
+                    onDismissAi={() => dismissAiFigure(q)}
                   />
                 ))
               )}
@@ -560,10 +720,14 @@ export default function QuestionBankAdmin() {
               <Trash2 size={14} /> Bỏ hết
             </button>
           )}
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex flex-wrap items-center gap-2">
             {basket.length > 0 && (
               <>
-                <select value={bulkTopic} onChange={(e) => setBulkTopic(e.target.value)} className={`${selectCls} max-w-[260px]`}>
+                <select
+                  value={bulkTopic}
+                  onChange={(e) => setBulkTopic(e.target.value)}
+                  className={`${selectCls} max-w-[200px] sm:max-w-[260px]`}
+                >
                   <option value="">— gắn năng lực cho cả giỏ —</option>
                   {topicGroups.map(({ parent, outcomes }) => (
                     <optgroup key={parent.id} label={parent.name}>
@@ -755,6 +919,11 @@ function QuestionRow({
   onPick,
   topicGroups,
   onPatch,
+  onFigure,
+  ai,
+  onDraw,
+  onAcceptAi,
+  onDismissAi,
 }: {
   index: number;
   q: BankQuestion;
@@ -762,9 +931,20 @@ function QuestionRow({
   onPick: () => void;
   topicGroups: { parent: QuestionTopic; outcomes: QuestionTopic[] }[];
   onPatch: (p: Parameters<typeof updateBankQuestion>[1]) => void;
+  onFigure: (file: File) => Promise<void>;
+  ai?: AiFigState;
+  onDraw: () => void;
+  onAcceptAi: () => void;
+  onDismissAi: () => void;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [figureBusy, setFigureBusy] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
   const body = q.question;
+  const missingFigure = isMissingFigure(body) && !q.figureNotNeeded;
+  // Hình AI: ưu tiên trạng thái đang vẽ trong phiên, không có thì lấy bản đã lưu ở DB.
+  const aiState: AiFigState | undefined =
+    ai ?? (q.aiFigure && (q.aiFigure.svg || q.aiFigure.reason) && missingFigure ? { ...q.aiFigure } : undefined);
   const topicKnown = topicGroups.some(({ parent, outcomes }) => parent.name === q.topicName || outcomes.some((o) => o.name === q.topicName));
 
   return (
@@ -791,6 +971,41 @@ function QuestionRow({
       </div>
 
       <ContentHtml html={body.question} className="prose prose-invert mt-2 max-w-none text-sm text-slate-200" />
+      {q.figureNotNeeded && (
+        <p className="mt-1 text-[11px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
+      )}
+      {aiState?.busy && <p className="mt-2 text-xs text-primary">AI đang dựng lại hình từ câu dẫn và lời giải…</p>}
+      {aiState?.reason && !aiState.busy && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl border border-amber-500/30 bg-amber-500/10 p-2 text-xs text-amber-200">
+          <span>AI không vẽ được: {aiState.reason}</span>
+          <button type="button" onClick={onDraw} className={`${btnCls} ml-auto`}>
+            <RefreshCw size={12} /> Vẽ lại
+          </button>
+          <button type="button" onClick={onDismissAi} className={btnCls}>
+            Bỏ
+          </button>
+        </div>
+      )}
+      {aiState?.svg && !aiState.busy && (
+        <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
+          <p className="mb-1 text-[11px] font-semibold text-primary">
+            {aiState.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
+          </p>
+          <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: aiState.svg }} />
+          {aiState.summary && <p className="mt-2 text-xs text-slate-300">{aiState.summary}</p>}
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <button type="button" onClick={onAcceptAi} className={`${btnCls} border-emerald-500/50 text-emerald-200`}>
+              <Check size={14} /> Dùng hình này
+            </button>
+            <button type="button" onClick={onDraw} className={btnCls}>
+              <RefreshCw size={14} /> Vẽ lại
+            </button>
+            <button type="button" onClick={onDismissAi} className={btnCls}>
+              Bỏ
+            </button>
+          </div>
+        </div>
+      )}
 
       {body.type === "multiple_choice" && (
         <ol className="mt-2 grid gap-1 sm:grid-cols-2">
@@ -866,6 +1081,67 @@ function QuestionRow({
           ))}
         </select>
         <div className="ml-auto flex items-center gap-2">
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (!file) return;
+              setFigureBusy(true);
+              try {
+                await onFigure(file);
+              } finally {
+                setFigureBusy(false);
+              }
+            }}
+          />
+          {missingFigure && (
+            <>
+              <button
+                type="button"
+                onClick={onDraw}
+                disabled={!!aiState?.busy}
+                className={`${btnCls} border-primary/40 text-primary`}
+                title="AI dựng lại đồ thị/hình từ câu dẫn + lời giải; chỉ xem trước, bấm Dùng hình này mới lưu"
+              >
+                <Wand2 size={14} /> {aiState?.busy ? "Đang vẽ…" : "AI vẽ hình"}
+              </button>
+              <button
+                type="button"
+                onClick={() => onPatch({ figureNotNeeded: true })}
+                className={btnCls}
+                title="Câu lý thuyết, không cần hình — bỏ khỏi mục Nhắc hình, thiếu ảnh"
+              >
+                Không cần hình
+              </button>
+            </>
+          )}
+          {q.figureNotNeeded && (
+            <button
+              type="button"
+              onClick={() => onPatch({ figureNotNeeded: false })}
+              className={btnCls}
+              title="Bỏ đánh dấu không cần hình"
+            >
+              Cần hình
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            disabled={figureBusy}
+            className={`${btnCls} ${missingFigure ? "border-red-500/50 text-red-200" : ""}`}
+            title={
+              missingFigure
+                ? "Câu nhắc đồ thị/hình vẽ nhưng chưa có ảnh — tải ảnh lên, ảnh sẽ vào cả các đề đang dùng câu này"
+                : "Thêm ảnh vào câu dẫn (vào cả các đề đang dùng câu này)"
+            }
+          >
+            <ImagePlus size={14} /> {figureBusy ? "Đang tải…" : missingFigure ? "Tải ảnh (thiếu hình)" : "Tải ảnh"}
+          </button>
           <button type="button" onClick={() => setShowAnswer((s) => !s)} className={btnCls}>
             {showAnswer ? "Ẩn đáp án" : "Đáp án & lời giải"}
           </button>

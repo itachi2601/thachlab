@@ -52,12 +52,6 @@ export async function deleteNotification(id: number): Promise<void> {
   if (error) throw error;
 }
 
-/** "5 phút trước", "hôm qua"… cho danh sách ngắn. */
-export function timeAgo(iso: string): string {
-  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
-  if (diff < 60) return "vừa xong";
-  if (diff < 3600) return `${Math.floor(diff / 60)} phút trước`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)} giờ trước`;
-  if (diff < 172800) return "hôm qua";
-  return new Date(iso).toLocaleDateString("vi-VN");
-}
+// timeAgo chuyển sang lib/time-ago.ts (hàm thuần, không đụng supabase) — re-export ở đây
+// để app/thong-bao/page.tsx (đang import từ đây) không phải sửa gì.
+export { timeAgo } from "@/lib/time-ago";

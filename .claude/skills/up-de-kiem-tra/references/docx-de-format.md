@@ -10,6 +10,16 @@
 | `PHẦN II. Câu trắc nghiệm đúng sai` | `true_false` | mỗi câu 4 ý a/b/c/d, mỗi ý Đ hoặc S |
 | `PHẦN III. Câu trắc nghiệm trả lời ngắn` | `short_answer` | đáp án là **một số**, ≤ 4 ký tự |
 
+`≤ 4 ký tự` là chặn cứng ở trang (`components/admin/ExamSection.tsx`: `a.length > 4` → không
+Đăng được). Đề gốc hay ghi cả đơn vị/ký hiệu trong đáp án ("≈9,4 cm", "x = 3,34", "100 J",
+"273°C") — bỏ hết, chỉ giữ số (dấu phẩy thập phân tính là 1 ký tự). Số vẫn dài hơn 4 ký tự (vd
+làm tròn 2 chữ số thập phân mà phần nguyên có 2 chữ số, kiểu "11,95") thì phải RÚT BỚT SỐ CHỮ
+SỐ THẬP PHÂN — đây là đổi giá trị thật, không phải chỉ bỏ đơn vị, nên sửa luôn câu hỏi
+("làm tròn đến phần trăm" → "làm tròn đến 1 chữ số thập phân") cho khớp, và báo lại cho người
+dùng câu nào bị rút. `scripts/xuat_thachlab.py` (skill `azota`, cả hai bản) đã tự làm việc này
+từ 27/9/2026 (`norm_short_answer`, in cảnh báo ra `convert.log`) — khi soạn `de.txt` tay theo
+đường chính thì tự áp quy tắc trên, đừng chép nguyên văn đáp án có đơn vị từ đề gốc.
+
 Nhiều đề (đặc biệt đề 15 phút / đề chương) **không có tiêu đề phần** — chỉ một mạch
 `Câu 1.` … `Câu n.`, tất cả 4 phương án A–D → coi hết là `multiple_choice`.
 

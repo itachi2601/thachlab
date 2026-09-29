@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle, ArrowRight, BookOpen, CalendarCheck, CheckCircle2, Clock3, LockKeyhole, Radio, Route, ShieldAlert, Users } from "lucide-react";
 import { CNC_COMPETENCIES, cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
 import type { CncLearningRecord } from "@/services/cnc-learning-records";
 import { CNC_ASSESSMENT_PLAN } from "@/services/cnc-progress";
 import { CNC_LESSON_RELEASES,fetchOpenCncLessons,updateOpenCncLessons } from "@/services/course-lesson-release";
@@ -14,7 +14,7 @@ type QualityId="excellent"|"on-track"|"support"|"inactive";
 
 export default function TeacherOverview({courseId,students,onOpenTab,onOpenStudent,onOpenLiveExam}:{courseId:number;students:OverviewStudent[];onOpenTab:(tab:DashboardTab)=>void;onOpenStudent:(id:string)=>void;onOpenLiveExam?:()=>void}){
   const[permissions,setPermissions]=useState<CompetencyPermission[]>([]);const[attendance,setAttendance]=useState<AttendanceRecord[]>([]);const[sessionCount,setSessionCount]=useState(0);const[selectedQuality,setSelectedQuality]=useState<QualityId>("support");const[openLessons,setOpenLessons]=useState<string[]>([]);const[releaseBusy,setReleaseBusy]=useState(false);const[releaseError,setReleaseError]=useState("");
-  useEffect(()=>{let cancelled=false;Promise.all([fetchAttendanceSessions(courseId),fetchCourseCompetencyPermissions(courseId),fetchOpenCncLessons(courseId).catch(()=>["lesson-1"])]).then(async([sessions,permissionRows,released])=>{const rows=(await Promise.all(sessions.map(item=>fetchAttendanceRecords(item.id).catch(()=>[])))).flat();if(cancelled)return;setPermissions(permissionRows);setSessionCount(sessions.length);setAttendance(rows);setOpenLessons(released.length?released:["lesson-1"])}).catch(()=>{/* Tổng quan vẫn hoạt động khi migration chưa chạy. */});return()=>{cancelled=true}},[courseId]);
+  useEffect(()=>{let cancelled=false;Promise.all([fetchAttendanceSessions(courseId),fetchCourseCompetencyPermissions(courseId),fetchOpenCncLessons(courseId).catch(()=>["lesson-1"])]).then(async([sessions,permissionRows,released])=>{const rows=await fetchAttendanceRecordsForSessions(sessions.map(item=>item.id)).catch(()=>[]);if(cancelled)return;setPermissions(permissionRows);setSessionCount(sessions.length);setAttendance(rows);setOpenLessons(released.length?released:["lesson-1"])}).catch(()=>{/* Tổng quan vẫn hoạt động khi migration chưa chạy. */});return()=>{cancelled=true}},[courseId]);
   const competencyStates=CNC_COMPETENCIES.map(item=>{let approved=0,waiting=0,notPassed=0;students.forEach(student=>{const state=cncCompetencyStates(student.records,permissions.filter(row=>row.student_id===student.id))[item.id];if(state.approved)approved++;else if(state.eligible&&item.approvalRequired)waiting++;else notPassed++});return{...item,approved,waiting,notPassed}});
   const attendanceRate=sessionCount&&students.length?Math.round(attendance.filter(row=>row.status==="present"||row.status==="late").length/(sessionCount*students.length)*100):0;
   const waitingPermissions=competencyStates.reduce((sum,item)=>sum+item.waiting,0);

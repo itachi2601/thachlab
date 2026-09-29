@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle, Calculator, Download, Search } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type AttendanceRecord } from "@/services/course-attendance";
 import { fetchStudentRosterInfo, type StudentRosterInfo } from "@/services/student-profile";
 import {
   CONDUCT_LABEL,
@@ -59,7 +59,7 @@ export default function HomeroomGradebook({ courseId, students, className, schoo
       fetchHomeroomTermRecords(courseId),
       fetchAttendanceSessions(courseId).then(async (sessions) => ({
         count: sessions.length,
-        records: (await Promise.all(sessions.map((session) => fetchAttendanceRecords(session.id).catch(() => [])))).flat(),
+        records: await fetchAttendanceRecordsForSessions(sessions.map((session) => session.id)).catch(() => []),
       })),
     ])
       .then(([termRows, attendanceData]) => {

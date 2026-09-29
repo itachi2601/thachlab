@@ -1,0 +1,222 @@
+# Hàm SQL / RPC (schema public) — 216 hàm, sinh tự động 2026-09-28
+
+Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
+Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
+repo — xem trên Supabase Dashboard).
+
+- `add_machine_status_log(p_machine_code text, p_status text, p_note text)` → bigint
+- `admin_search_accounts(p_query text, p_role text)` → TABLE(id uuid, full_name text, class_name text, student_code text, role text, admin_area text, track text, email text, ta_tier text, ta_active boolean)
+- `admin_set_account_role(p_user_id uuid, p_role text, p_tier text)` → text
+- `apply_parent_link(p_user_id uuid, p_code text)` → uuid
+- `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
+- `assists_class(p_class bigint)` → boolean
+- `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
+- `can_manage_class(p_class_id bigint)` → boolean
+- `can_manage_course(p_course_id bigint)` → boolean
+- `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
+- `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
+- `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
+- `count_question_types(qs jsonb)` → jsonb
+- `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
+- `evaluate_exam_violation_alert(p_result_id bigint)` → void
+- `evaluate_student_alerts(p_student uuid)` → void
+- `exam_open_to_student(p_exam_id bigint, p_user_id uuid)` → boolean
+- `find_similar_bank_questions(p_grade text, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
+- `get_chapter_mastery(p_chapter bigint)` → TABLE(lesson_id bigint, lesson_title text, sort_order integer, level text)
+- `get_class_exam_best(p_exam bigint, p_students uuid[])` → TABLE(student_id uuid, score numeric, duration_seconds integer)
+- `get_class_exam_question_stats(p_exam bigint, p_students uuid[])` → TABLE(question_index integer, topic_name text, form text, qtype text, total integer, wrong integer)
+- `get_class_topic_matrix(p_students uuid[], p_exam bigint)` → TABLE(topic_id bigint, topic_name text, form text, total integer, wrong integer)
+- `get_exam_rank(p_exam_id bigint)` → TABLE(rnk integer, total integer, my_best numeric)
+- `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
+- `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
+- `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
+- `get_student_learning_history(p_student uuid)` → TABLE(activity text, at timestamp with time zone, lesson_title text, item_title text, score numeric, correct_count integer, question_count integer, detail_correct_count jsonb, has_essay boolean)
+- `gin_extract_query_trgm(text, internal, smallint, internal, internal, internal, internal)` → internal
+- `gin_extract_value_trgm(text, internal)` → internal
+- `gin_trgm_consistent(internal, smallint, text, integer, internal, internal, internal, internal)` → boolean
+- `gin_trgm_triconsistent(internal, smallint, text, integer, internal, internal, internal)` → "char"
+- `grade_essay_answer(p_exam_result_id bigint, p_question_index integer, p_earned numeric, p_max numeric)` → void
+- `gtrgm_compress(internal)` → internal
+- `gtrgm_consistent(internal, text, smallint, oid, internal)` → boolean
+- `gtrgm_decompress(internal)` → internal
+- `gtrgm_distance(internal, text, smallint, oid, internal)` → double precision
+- `gtrgm_in(cstring)` → gtrgm
+- `gtrgm_options(internal)` → void
+- `gtrgm_out(gtrgm)` → cstring
+- `gtrgm_penalty(internal, internal, internal)` → internal
+- `gtrgm_picksplit(internal, internal)` → internal
+- `gtrgm_same(gtrgm, gtrgm, internal)` → internal
+- `gtrgm_union(internal, internal)` → gtrgm
+- `handle_new_user()` → trigger
+- `homework_check_set(p_announcement_id bigint, p_student_id uuid, p_percent integer, p_season bigint)` → void
+- `is_admin()` → boolean
+- `is_course_member(p_course_id bigint)` → boolean
+- `is_first_on_machine(p_session_id bigint, p_machine_code text)` → boolean
+- `is_homeroom_classmate(p_profile_id uuid)` → boolean
+- `is_homeroom_monitor(p_course_id bigint)` → boolean
+- `is_parent_of(p_student uuid)` → boolean
+- `is_photo_duty_machine(p_session_id bigint, p_machine_code text)` → boolean
+- `is_photo_duty_workshop(p_session_id bigint)` → boolean
+- `is_staff()` → boolean
+- `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
+- `manages_class(p_class bigint)` → boolean
+- `notify_class_staff(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
+- `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
+- `notify_user(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
+- `preview_cttc_enroll()` → jsonb
+- `preview_cttc_unenroll()` → integer
+- `question_bank_plain_text(q jsonb)` → text
+- `question_content_hash(q jsonb)` → text
+- `question_topic_sync_children()` → trigger
+- `question_topic_tree_guard()` → trigger
+- `rank_adjust_rp(p_season bigint, p_student uuid, p_delta integer, p_reason text)` → void
+- `rank_award(p_season bigint, p_student uuid, p_kind text, p_ref text, p_value integer, p_reason text, p_result_ref bigint)` → integer
+- `rank_best_pct(p_student uuid, p_exam bigint, p_from timestamp with time zone, p_to timestamp with time zone)` → integer
+- `rank_can_view(p_student uuid)` → boolean
+- `rank_cfg(p_season bigint, p_key text, p_default numeric)` → numeric
+- `rank_class_board(p_class_id bigint)` → jsonb
+- `rank_class_groups(p_class_id bigint)` → jsonb
+- `rank_close_season(p_season bigint)` → integer
+- `rank_create_season(p_name text, p_starts date, p_ends date, p_class_ids bigint[], p_activate boolean)` → bigint
+- `rank_daily_streak_len(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
+- `rank_display_title_guard()` → trigger
+- `rank_ensure_member(p_season bigint, p_student uuid)` → void
+- `rank_eval_achievements(p_season bigint, p_student uuid, p_at timestamp with time zone)` → void
+- `rank_eval_daily_streak(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
+- `rank_eval_gates(p_season bigint, p_student uuid)` → void
+- `rank_eval_titles(p_student uuid, p_season bigint)` → void
+- `rank_eval_weekly_goal(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
+- `rank_fix_quiz_start(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
+- `rank_fix_quiz_submit(p_attempt_id bigint, p_correct integer)` → jsonb
+- `rank_grant_title(p_student uuid, p_title text, p_level text, p_season bigint, p_evidence jsonb)` → boolean
+- `rank_honor_name(p_name text, p_vis text)` → text
+- `rank_is_paragon(p_student uuid)` → boolean
+- `rank_is_staff()` → boolean
+- `rank_is_student(p_student uuid)` → boolean
+- `rank_ledger_of(p_student uuid, p_season bigint, p_limit integer)` → TABLE(id bigint, season_id bigint, source_kind text, source_ref text, amount integer, reason text, ref_result_id bigint, actor_name text, created_at timestamp with time zone)
+- `rank_level_rank(p_level text)` → integer
+- `rank_my_status()` → jsonb
+- `rank_my_titles()` → jsonb
+- `rank_on_result(p_student uuid, p_kind text, p_source_id bigint, p_score numeric, p_at timestamp with time zone, p_result_ref bigint)` → void
+- `rank_public_honor()` → jsonb
+- `rank_recompute_season(p_season bigint)` → integer
+- `rank_recompute_student(p_season bigint, p_student uuid)` → void
+- `rank_refresh_student(p_season bigint, p_student uuid)` → void
+- `rank_score_to_rp(p_score numeric, p_max integer)` → integer
+- `rank_season_for_at(p_student uuid, p_at timestamp with time zone)` → bigint
+- `rank_season_overview(p_season bigint)` → TABLE(student_id uuid, full_name text, class_names text, rp integer, tier_code text, tier_sort integer, division integer, titles_count integer, last_award_at timestamp with time zone, pending_gate text)
+- `rank_seasons_guard()` → trigger
+- `rank_seasons_of(p_student uuid)` → TABLE(season_id bigint, name text, starts_on date, ends_on date, status text, rp integer, tier_code text, division integer, titles_count integer)
+- `rank_seed_tiers(p_season bigint)` → void
+- `rank_set_display_title(p_code text, p_level text)` → void
+- `rank_set_honor_visibility(p_value text)` → void
+- `rank_status_of(p_student uuid)` → jsonb
+- `rank_tier_code_by_rp(p_season bigint, p_rp integer)` → text
+- `rank_tier_info(p_season bigint, p_code text, p_rp integer)` → TABLE(code text, name text, sort integer, tier_min integer, next_min integer, division integer, div_min integer, div_max integer)
+- `rank_tier_needs_gate(t rank_tiers)` → boolean
+- `rank_tiers_guard()` → trigger
+- `rank_title_is_active(p_title text)` → boolean
+- `rank_title_stats(p_student uuid, p_title text)` → TABLE(n integer, correct integer, covered integer, total_topics integer, acc integer, de_correct integer, tb_correct integer, kho_correct integer)
+- `rank_titles_at_level(p_student uuid, p_level text)` → integer
+- `rank_titles_of(p_student uuid)` → jsonb
+- `rank_vn_date(p_at timestamp with time zone)` → date
+- `rank_week_start(p_at timestamp with time zone)` → date
+- `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
+- `refresh_class_tutoring_needs(p_class bigint)` → integer
+- `refresh_tutoring_needs(p_student uuid)` → void
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `request_course_enrollment(p_join_code text)` → jsonb
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `review_thpt_registration(p_request_id bigint, p_status text)` → void
+- `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
+- `seed_absent_attendance_for_enrollment()` → trigger
+- `seed_absent_attendance_for_session()` → trigger
+- `select_attendance_machine(p_session_id bigint, p_machine_code text)` → void
+- `set_limit(real)` → real
+- `set_profile_track_cttc()` → trigger
+- `set_profile_track_thpt()` → trigger
+- `show_limit()` → real
+- `show_trgm(text)` → text[]
+- `similarity(text, text)` → real
+- `similarity_dist(text, text)` → real
+- `similarity_op(text, text)` → boolean
+- `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
+- `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `strict_word_similarity(text, text)` → real
+- `strict_word_similarity_commutator_op(text, text)` → boolean
+- `strict_word_similarity_dist_commutator_op(text, text)` → real
+- `strict_word_similarity_dist_op(text, text)` → real
+- `strict_word_similarity_op(text, text)` → boolean
+- `student_outcome_gaps(p_students uuid[], p_window integer)` → TABLE(student_id uuid, parent_topic_id bigint, topic_id bigint, topic_name text, form text, total integer, wrong integer)
+- `submit_attendance_code(p_course_id bigint, p_code text)` → jsonb
+- `submit_attendance_machine_photo(p_session_id bigint, p_machine_code text, p_checkpoint text, p_storage_path text, p_note text)` → void
+- `submit_checklist_result(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text, p_item_results jsonb, p_score numeric, p_critical_ok boolean, p_zero_tolerance_ok boolean, p_passed boolean)` → jsonb
+- `sweep_missed_assessments(p_class bigint, p_days integer)` → integer
+- `sync_exam_to_bank(p_exam_id bigint)` → integer
+- `ta_accrued_hours(p_assistant_id uuid)` → numeric
+- `ta_converted_hours(p_session_type text, p_hours numeric, p_student_count integer)` → numeric
+- `ta_course_total_hours()` → numeric
+- `ta_current_assistant_id()` → uuid
+- `ta_monthly_policy(p_assistant_id uuid, p_month date)` → jsonb
+- `ta_monthly_score(p_assistant_id uuid, p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
+- `ta_monthly_scores(p_assistant_ids uuid[], p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
+- `ta_policy_session_guard()` → trigger
+- `ta_policy_today()` → date
+- `ta_save_month_review(p_assistant_id uuid, p_month date, p_scores jsonb, p_rate integer, p_note text, p_close boolean)` → jsonb
+- `ta_session_student_count(p_students text[])` → integer
+- `ta_session_student_link_guard()` → trigger
+- `ta_team_monthly_hours(p_months integer)` → TABLE(month date, converted_hours numeric, session_count integer)
+- `ta_topic_exploitation_rate(p_days integer)` → TABLE(eligible_count integer, used_count integer, rate numeric)
+- `ta_video_admin_summary(p_month date)` → TABLE(month date, videos_published integer, total_views numeric, total_saves numeric, total_comments numeric, leads_count integer, production_spend numeric, view_bonus_spend numeric, lead_bonus_spend numeric, total_spend numeric, budget_cap integer, over_budget boolean, cost_per_lead numeric)
+- `ta_video_ledger(p_assistant_id uuid)` → TABLE(session_id uuid, assistant_id uuid, work_date date, video_tier text, video_url text, published_at timestamp with time zone, status text, reject_reason text, topic_source_id uuid, latest_checked_at date, latest_views integer, latest_saves integer, latest_comments integer, view_bonus numeric, production_pay numeric, lead_count integer, lead_bonus numeric, total_pay numeric)
+- `ta_video_topic_suggestions(p_days integer)` → TABLE(session_id uuid, work_date date, class_label text, error_note text)
+- `teaches_student(p_student uuid)` → boolean
+- `thpt_attach_student(p_id bigint, p_student_id uuid)` → void
+- `thpt_course_grade(p_course_id bigint)` → text
+- `thpt_course_seats(p_course_ids bigint[])` → TABLE(course_id bigint, taken integer)
+- `thpt_has_registration(p_course_id bigint)` → boolean
+- `thpt_register(p_course_id bigint, p_student_id uuid, p_child_name text, p_contact text, p_note text)` → jsonb
+- `thpt_registration_display_name(p_reg thpt_registrations)` → text
+- `thpt_review_registration(p_id bigint, p_status text)` → void
+- `thpt_set_catchup(p_registration_id bigint, p_known_topic_ids bigint[])` → bigint[]
+- `thpt_taught_topics(p_course_id bigint)` → TABLE(id bigint, name text, chapter_id bigint, chapter_title text, sort_order integer)
+- `touch_student_alert()` → trigger
+- `touch_tutoring_need()` → trigger
+- `trg_bank_tags_to_exams()` → trigger
+- `trg_bank_touch()` → trigger
+- `trg_catchup_progress()` → trigger
+- `trg_claim_parent_link()` → trigger
+- `trg_claim_staff_invite()` → trigger
+- `trg_eqr_tutoring_needs()` → trigger
+- `trg_exam_classes_sync_bank()` → trigger
+- `trg_exam_result_alert()` → trigger
+- `trg_exams_sync_bank()` → trigger
+- `trg_notify_homework_announcement()` → trigger
+- `trg_notify_parent_linked()` → trigger
+- `trg_notify_registration()` → trigger
+- `trg_notify_slot_for_catchup()` → trigger
+- `trg_question_topics_rename_bank()` → trigger
+- `trg_rank_exam_result()` → trigger
+- `trg_rank_practice_session()` → trigger
+- `trg_rank_question_results()` → trigger
+- `trg_sync_thpt_registration()` → trigger
+- `trg_ta_assistant_role()` → trigger
+- `trg_ta_sessions_error_note_at()` → trigger
+- `trg_ta_sessions_video_topic_check()` → trigger
+- `trg_tutoring_covered()` → trigger
+- `trg_tutoring_exit_attempt_clear()` → trigger
+- `tutoring_exit_attempt_guard()` → trigger
+- `tutoring_slot_register()` → trigger
+- `tutoring_slot_unregister()` → trigger
+- `unread_notification_count()` → integer
+- `update_machine_status_log(p_id bigint, p_status text, p_note text, p_created_at timestamp with time zone)` → void
+- `update_post_with_targets(p_post_id bigint, p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → void
+- `vn_today()` → date
+- `word_similarity(text, text)` → real
+- `word_similarity_commutator_op(text, text)` → boolean
+- `word_similarity_dist_commutator_op(text, text)` → real
+- `word_similarity_dist_op(text, text)` → real
+- `word_similarity_op(text, text)` → boolean

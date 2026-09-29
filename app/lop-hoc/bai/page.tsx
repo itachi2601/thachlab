@@ -3,21 +3,29 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGrid";
+import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
+import {
+  consumeTheoryReviewContext,
+  theorySectionItemId,
+  wrapTheorySections,
+  type TheoryReviewContext,
+} from "@/features/lessons/theory-sections";
 import {
   LESSON_KIND_META,
   SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
   isGradedKind,
+  isItemLive,
   isPeriodicExam,
   isSemesterExam,
   youTubeEmbed,
@@ -28,20 +36,17 @@ import {
   type LessonItemKind,
   type LessonKind,
 } from "@/features/lessons/types";
+import { fetchExamMetas, markItemDone, type LessonExamMeta } from "@/services/lessons";
 import {
-  fetchExamMetas,
-  fetchChapters,
-  fetchLesson,
-  fetchLessonItems,
-  fetchLessons,
-  fetchMyExamScores,
-  fetchMyProgress,
-  markItemDone,
-  type LessonExamMeta,
-} from "@/services/lessons";
-import { fetchMyLearningProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
+  fetchChaptersStatic,
+  fetchClassesStatic,
+  fetchLessonWithItemsStatic,
+  fetchLessonsStatic,
+  type LessonBundle,
+} from "@/services/static-content";
+import { fetchMyLessonPageProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
-import { expandClassIdsByGrade, fetchClasses } from "@/services/classes";
+import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -90,7 +95,7 @@ function VideoBlock({
             <button type="button" onClick={() => setPlaying(true)} aria-label={`Xem video ${item.title}`}>
               {thumb && (
                 /* eslint-disable-next-line @next/next/no-img-element */
-                <img src={thumb} alt="" />
+                <img src={thumb} alt="" loading="lazy" decoding="async" />
               )}
               <span>
                 <Play size={22} fill="currentColor" />
@@ -115,6 +120,19 @@ function VideoBlock({
   );
 }
 
+/** Ý chính/công thức cần thuộc của 1 mục lý thuyết — hiện luôn (không thu gọn thêm lần
+ *  nữa), độc lập với việc mục lý thuyết đầy đủ bên dưới đang mở hay đóng, để học sinh
+ *  xem nhanh mà không cần mở hết bài dài. Rỗng (chưa backfill) thì không hiện gì. */
+function TheorySummary({ html }: { html: string }) {
+  if (!html.trim()) return null;
+  return (
+    <div className="lesson-summary">
+      <p className="lesson-summary-label">📌 Tóm tắt ý chính cần thuộc</p>
+      <ContentHtml html={html} className="block leading-relaxed" />
+    </div>
+  );
+}
+
 /** Lý thuyết: hiện thẳng nội dung; mục thứ hai trở đi thu gọn để trang không quá dài. */
 function TheoryBlock({
   item,
@@ -134,6 +152,9 @@ function TheoryBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
+  // Gắn id theo từng khối <h3> để quiz "Kiểm tra nhanh" cuộn + tô màu đúng đoạn khi trả lời
+  // sai (xem "Ôn ngay" trong ExamRunner) — chỉ tính lại khi nội dung mục thật sự đổi.
+  const sectionedHtml = useMemo(() => wrapTheorySections(item.body_html, item.id).html, [item.body_html, item.id]);
 
   return (
     <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`}>
@@ -150,9 +171,10 @@ function TheoryBlock({
         </span>
         {hasBody && <ChevronDown size={18} className={open ? "rotate-180" : ""} />}
       </button>}
+      <TheorySummary html={item.summary_html} />
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
-          <ContentHtml html={item.body_html} className="block leading-relaxed" />
+          <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
         </div>
       )}
       <div className="lesson-block-foot">
@@ -272,6 +294,39 @@ function ExamRow({
   );
 }
 
+/** Khung xương trong lúc chờ bài học — cùng lớp bố cục (lesson-shell/lesson-layout) để nội dung về không nhảy. */
+function LessonSkeleton() {
+  return (
+    <div className="lesson-shell" aria-busy="true" aria-label="Đang tải bài học">
+      <div className="lesson-layout animate-pulse">
+        <aside className="lesson-nav" aria-hidden="true">
+          <div className="h-4 w-28 rounded bg-white/10" />
+          <div className="mt-6 space-y-3">
+            {Array.from({ length: 4 }, (_, i) => (
+              <div key={i} className="h-4 w-full rounded bg-white/5" />
+            ))}
+          </div>
+        </aside>
+        <div className="lesson-main">
+          <div className="h-3 w-24 rounded bg-white/10" />
+          <div className="mt-4 h-8 w-3/4 rounded bg-white/10" />
+          <div className="mt-3 h-4 w-1/2 rounded bg-white/5" />
+          <div className="mt-8 space-y-5">
+            {Array.from({ length: 3 }, (_, i) => (
+              <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <div className="h-5 w-1/3 rounded bg-white/10" />
+                <div className="mt-4 h-4 w-full rounded bg-white/5" />
+                <div className="mt-2 h-4 w-5/6 rounded bg-white/5" />
+                <div className="mt-2 h-4 w-2/3 rounded bg-white/5" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LessonLoader() {
   const { session } = useAuth();
   const searchParams = useSearchParams();
@@ -292,6 +347,45 @@ function LessonLoader() {
   const [error, setError] = useState("");
   const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  // Trang bài học hiện thành danh sách 6 mục thu gọn — mặc định đóng hết, học sinh bấm
+  // mục nào thì mục đó mới xổ ra (đỡ phải cuộn một trang dài). Chỉ tự mở khi có đường
+  // dẫn thẳng vào 1 mục cụ thể (xem 2 effect openSectionOfItem/resume bên dưới).
+  const [openSections, setOpenSections] = useState<Set<LessonItemKind>>(new Set());
+  function openSection(kind: LessonItemKind) {
+    setOpenSections((prev) => (prev.has(kind) ? prev : new Set(prev).add(kind)));
+  }
+  function toggleSection(kind: LessonItemKind) {
+    setOpenSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(kind)) next.delete(kind);
+      else next.add(kind);
+      return next;
+    });
+  }
+  // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
+  // mở (mặc định các mục từ thứ hai trở đi đang thu gọn) trước khi cuộn + tô màu tới đúng đoạn.
+  const [hashTargetItemId] = useState<number | null>(() =>
+    typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
+  );
+  // Có đường dẫn thẳng vào 1 đoạn lý thuyết → mục "Lý thuyết trọng tâm" phải tự mở trước
+  // khi jumpToTheorySection cuộn + tô màu tới đúng đoạn (xem effect dưới).
+  useEffect(() => {
+    if (hashTargetItemId != null) openSection("ly_thuyet");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hashTargetItemId]);
+  // (Tất cả) câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi
+  // sessionStorage) — hiện thành thẻ dán cố định liệt kê đủ, tô vàng đủ mọi đoạn liên quan,
+  // để không quên đang ôn vì sai (những) câu nào — sai nhiều câu ở nhiều đoạn khác nhau vẫn
+  // thấy đủ, không chỉ đoạn của câu vừa bấm "Ôn ngay".
+  const [reviewContexts, setReviewContexts] = useState<TheoryReviewContext[] | null>(() => {
+    if (typeof window === "undefined") return null;
+    const ctxs = consumeTheoryReviewContext();
+    return ctxs && ctxs[0]?.itemId === hashTargetItemId ? ctxs : null;
+  });
+  // Mặc định THU GỌN — bản đầy đủ che mất đúng đoạn vừa tô vàng bên dưới, nhất là trên điện
+  // thoại (màn hẹp, danh sách nhiều câu dễ chiếm hết màn hình). Thu gọn chỉ còn 1 dòng, bấm để
+  // mở/đóng khi cần đọc lại đề.
+  const [reviewBannerOpen, setReviewBannerOpen] = useState(false);
 
   // fetchExamMetas() không trả về đề đang ẩn — sau khi tải xong, bỏ luôn các mã đề
   // ẩn khỏi danh sách hiển thị (đang tải thì cứ giữ nguyên, tránh nhấp nháy).
@@ -304,25 +398,35 @@ function LessonLoader() {
   const [siblingChapters, setSiblingChapters] = useState<Chapter[] | null>(null);
   const [siblingLessons, setSiblingLessons] = useState<Lesson[] | null>(null);
 
+  // Bài + chương + mục: ưu tiên file tĩnh /data/lessons/<id>.json (cùng origin), Supabase đối chiếu
+  // ngầm phía sau và thay nội dung nếu đã khác; chương trình lớp (cho Bài trước/sau) tải song song.
   useEffect(() => {
     if (!supabaseConfigured || !id) return;
-    fetchLesson(id).then((res) => {
-      if (!res) setError("Không tìm thấy bài học này.");
-      else {
-        setTitle(res.lesson.title);
-        setChapterTitle(res.chapterTitle);
-        setChapterId(res.lesson.chapter_id);
-        setLessonKind(res.lesson.lesson_kind);
+    let stale = false;
+    const apply = (res: LessonBundle | null) => {
+      if (stale) return;
+      if (!res) {
+        setError("Không tìm thấy bài học này.");
+        setItems([]);
+        return;
       }
-    });
-    fetchLessonItems(id).then(setItems);
+      setTitle(res.lesson.title);
+      setChapterTitle(res.chapterTitle);
+      setChapterId(res.lesson.chapter_id);
+      setLessonKind(res.lesson.lesson_kind);
+      setItems(res.items.filter(isItemLive));
+    };
+    fetchLessonWithItemsStatic(id, apply).then(apply);
+    return () => {
+      stale = true;
+    };
   }, [id]);
 
   useEffect(() => {
     if (!supabaseConfigured) return;
-    fetchClasses().then(setSiblingClasses);
-    fetchChapters().then(setSiblingChapters);
-    fetchLessons().then(setSiblingLessons);
+    fetchClassesStatic(setSiblingClasses).then(setSiblingClasses);
+    fetchChaptersStatic(setSiblingChapters).then(setSiblingChapters);
+    fetchLessonsStatic(setSiblingLessons).then(setSiblingLessons);
   }, []);
 
   // dữ liệu cần đăng nhập: thông tin đề kiểm tra (RLS), điểm, tiến độ
@@ -342,14 +446,27 @@ function LessonLoader() {
         setExamMetaStatus("error");
       }
     })();
-    fetchMyExamScores(session.user.id).then(setScores);
-    fetchMyProgress(session.user.id).then(setDone);
-    fetchMyLearningProgress(session.user.id, items).then(setProgress).catch(() => setProgress(new Map()));
+    // điểm cao nhất, mục đã đánh dấu và trạng thái từng mục: cùng 1 lượt truy vấn song song
+    fetchMyLessonPageProgress(session.user.id, items)
+      .then(({ progress: nextProgress, scores: nextScores, done: nextDone }) => {
+        setProgress(nextProgress);
+        setScores(nextScores);
+        setDone(nextDone);
+      })
+      .catch(() => setProgress(new Map()));
   }, [session, items]);
 
   const progressSummary = useMemo(
     () => summarizeItemProgress(progress, items ?? []),
     [progress, items],
+  );
+
+  // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
+  // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
+  // thêm truy vấn Supabase mới.
+  const lessonExamIds = useMemo(
+    () => Array.from(new Set((items ?? []).flatMap((i) => i.exam_ids))),
+    [items],
   );
 
   const sections = useMemo(() => {
@@ -397,12 +514,77 @@ function LessonLoader() {
     if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
     const firstIncomplete = items.find((item) => !isDone(item));
     if (!firstIncomplete) return;
+    openSection(firstIncomplete.kind);
     const timer = window.setTimeout(() => {
       document.getElementById(`secondary-stage-${firstIncomplete.kind}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 150);
+    }, 220);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, items, session, done, scores]);
+
+  // Quay lại từ "Ôn ngay" (#theory-sec-<itemId>-<n>): cuộn + tô vàng tạm đúng đoạn lý thuyết
+  // liên quan tới câu vừa làm sai. Tô màu bằng classList trực tiếp, KHÔNG qua state đổi html
+  // của ContentHtml — nếu đổi, dangerouslySetInnerHTML thay cả node đang cuộn tới, huỷ luôn
+  // animation scrollIntoView giữa chừng (đã tự kiểm khi làm pilot, xem lịch sử sửa).
+  //
+  // reviewContexts (đọc snapshot 1 lần qua ref, KHÔNG qua state trong deps của effect dưới) —
+  // đóng thẻ nhắc không được kích lại hiệu ứng cuộn/tô, chỉ đóng UI.
+  const reviewContextsRef = useRef(reviewContexts);
+
+  // Cuộn hẳn tới + tô vàng "chính" 1 đoạn — có animation cuộn + tô lại đều đặn trong ~1s đầu vì
+  // 1 lần không đủ: có 1 re-render nào đó ngay sau scrollIntoView (nghi do chính scrollIntoView
+  // làm IntersectionObserver dò "mục đang đọc" đổi activeSection, xem effect scroll-spy ở trên)
+  // dựng lại đúng khối nội dung này — xoá mất class vừa tô VÀ cắt ngang animation cuộn đang
+  // chạy dở, dù `items` không đổi. Tự kiểm bằng MutationObserver thấy đúng vậy, nhưng chưa lần
+  // ra được nguyên nhân gốc trong React/ContentHtml.
+  function jumpToTheorySection(hashId: string) {
+    const el = document.getElementById(hashId);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.add("theory-section--highlight");
+    let reapplyCount = 0;
+    const reapply = window.setInterval(() => {
+      const target = document.getElementById(hashId);
+      target?.classList.add("theory-section--highlight");
+      reapplyCount += 1;
+      if (reapplyCount <= 6) target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+    window.setTimeout(() => {
+      window.clearInterval(reapply);
+      document.getElementById(hashId)?.classList.remove("theory-section--highlight");
+    }, 2600);
+  }
+
+  // Chỉ tô vàng (không giành quyền cuộn với đoạn "chính") — dùng cho các đoạn PHỤ khi sai
+  // nhiều câu ở nhiều đoạn khác nhau cùng lúc.
+  function highlightTheorySectionOnly(hashId: string) {
+    document.getElementById(hashId)?.classList.add("theory-section--highlight");
+    window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
+  }
+
+  // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
+  // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
+  // mới nếu khác (revalidateLesson trong services/static-content.ts) — nếu chỉ tô màu 1 lần
+  // ngay khi có `items` đầu tiên (bản tĩnh, có thể đã cũ), khối vừa tô sẽ bị bản mới thay mất
+  // (dangerouslySetInnerHTML dựng lại DOM) mà không tô lại. Tự kiểm bằng epoch timestamp thấy
+  // đúng vậy: tô lúc t, mất trước 6s dù hẹn giờ tắt là 30s → do bản mới đè lên, không phải do
+  // hẹn giờ. Nên bỏ cờ "đã làm 1 lần", chạy lại mỗi khi `items` đổi — vô hại vì lần cuối cùng
+  // (ứng với bản dữ liệu ổn định) sẽ luôn thắng.
+  useEffect(() => {
+    if (!items || items.length === 0) return;
+    const hash = window.location.hash.replace(/^#/, "");
+    const contexts = reviewContextsRef.current;
+    const timer = window.setTimeout(() => {
+      if (contexts && contexts.length > 0) {
+        const ids = contexts.map((ctx) => `theory-sec-${ctx.itemId}-${ctx.sectionIndex}`);
+        const primaryId = hash.startsWith("theory-sec-") && ids.includes(hash) ? hash : ids[0];
+        ids.forEach((id) => (id === primaryId ? jumpToTheorySection(id) : highlightTheorySectionOnly(id)));
+      } else if (hash.startsWith("theory-sec-")) {
+        jumpToTheorySection(hash);
+      }
+    }, 200);
+    return () => window.clearTimeout(timer);
+  }, [items]);
 
   // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp (theo lớp đang xem qua ?class=) và môn,
   // dùng lại đúng luật hiển thị chương của trang lớp — không tự suy luận lớp khác khi chưa chắc.
@@ -463,7 +645,7 @@ function LessonLoader() {
 
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
-  if (!items) return <p className="lesson-notice">Đang tải bài học…</p>;
+  if (!items) return <LessonSkeleton />;
 
   const classHref = classSlug
     ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
@@ -537,9 +719,12 @@ function LessonLoader() {
                     className={`${activeSection === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      document
-                        .getElementById(`secondary-stage-${kind}`)
-                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      openSection(kind);
+                      window.setTimeout(() => {
+                        document
+                          .getElementById(`secondary-stage-${kind}`)
+                          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 60);
                     }}
                   >
                     <i>{complete ? <Check size={12} /> : number}</i>
@@ -589,6 +774,65 @@ function LessonLoader() {
             <h1>{title}</h1>
           </header>
 
+          {reviewContexts && reviewContexts.length > 0 && (
+            <div className={`lesson-review-banner ${reviewBannerOpen ? "is-open" : ""}`} role="note">
+              <div className="lesson-review-banner-head">
+                <button
+                  type="button"
+                  className="lesson-review-banner-toggle"
+                  onClick={() => setReviewBannerOpen((o) => !o)}
+                  aria-expanded={reviewBannerOpen}
+                >
+                  <span>
+                    {reviewContexts.length === 1
+                      ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
+                      : `${reviewContexts.length} câu em làm sai`}{" "}
+                    — {reviewBannerOpen ? "bấm để thu gọn" : "bấm vào đây để xem danh sách"}
+                  </span>
+                  <ChevronDown size={15} className={reviewBannerOpen ? "rotate-180" : ""} />
+                </button>
+                <button type="button" onClick={() => setReviewContexts(null)} aria-label="Đóng">
+                  <X size={15} />
+                </button>
+              </div>
+              {reviewBannerOpen && (
+              <div className="lesson-review-banner-list">
+                {reviewContexts.map((ctx, i) => (
+                  <div key={i} className="lesson-review-banner-item">
+                    <div className="lesson-review-banner-item-head">
+                      <span>Câu {ctx.questionIndex}</span>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setReviewBannerOpen(false);
+                          window.setTimeout(() => jumpToTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 50);
+                        }}
+                      >
+                        ↑ Xem đoạn này
+                      </button>
+                    </div>
+                    <p className="lesson-review-banner-q">
+                      <ContentHtml html={ctx.questionHtml} />
+                    </p>
+                    {ctx.correctHtml && (
+                      <p className="lesson-review-banner-answer is-correct">
+                        <span>Đáp án đúng: </span>
+                        <ContentHtml html={ctx.correctHtml} />
+                      </p>
+                    )}
+                    {ctx.pickedHtml && (
+                      <p className="lesson-review-banner-answer is-wrong">
+                        <span>Em đã chọn: </span>
+                        <ContentHtml html={ctx.pickedHtml} />
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              )}
+            </div>
+          )}
+
           {visibleSections.length === 0 && (
             <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>
           )}
@@ -596,6 +840,8 @@ function LessonLoader() {
           {visibleSections.map((section) => {
             const meta = SECTION_META[section.kind];
             const number = SECTION_ORDER.indexOf(section.kind) + 1;
+            const isOpen = openSections.has(section.kind);
+            const complete = !!session && section.items.every(isDone);
             return (
               <section
                 key={section.kind}
@@ -603,10 +849,19 @@ function LessonLoader() {
                 data-kind={section.kind}
                 className="lesson-section"
               >
-                <h2>
-                  <span>{number}</span>
-                  {meta.label}
-                </h2>
+                <button
+                  type="button"
+                  className="lesson-section-toggle"
+                  onClick={() => toggleSection(section.kind)}
+                  aria-expanded={isOpen}
+                >
+                  <h2>
+                    <span>{complete ? <Check size={13} /> : number}</span>
+                    {meta.label}
+                  </h2>
+                  <ChevronDown size={18} className={isOpen ? "rotate-180" : ""} />
+                </button>
+                {isOpen && (
                 <div className="lesson-stack">
                   {section.items.map((item, itemIndex) => {
                     // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
@@ -629,7 +884,7 @@ function LessonLoader() {
                         <div key={item.id} className="lesson-stack">
                           <TheoryBlock
                             item={item}
-                            defaultOpen={itemIndex === 0}
+                            defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
                             hideTitle={plain}
                             done={done.has(item.id)}
                             loggedIn={!!session}
@@ -724,9 +979,14 @@ function LessonLoader() {
                     );
                   })}
                 </div>
+                )}
               </section>
             );
           })}
+          {items && items.length > 0 && (
+            <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+          )}
+
           {pager}
         </div>
       </div>

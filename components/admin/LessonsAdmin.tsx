@@ -1,10 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import ExamPicker from "@/components/admin/ExamPicker";
 import LaTexEditor from "@/components/admin/LaTexEditor";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useToast } from "@/components/ui/Toast";
-import type { SchoolClass } from "@/features/exams/types";
+import type { ExamQuestion, SchoolClass } from "@/features/exams/types";
+import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   SECTION_META,
@@ -35,11 +38,21 @@ import {
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { getSupabase } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
+import {
+  fetchLessonPracticeWrongest,
+  type LessonPracticeWrongQuestion,
+} from "@/services/analytics";
 
 const inputCls =
   "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 const chipBtn =
   "admin-chip";
+
+// PostgREST báo lỗi này khi cột chưa tồn tại (migration nháp/đăng chưa chạy) — dùng để
+// lùi về lưu thẳng cột sống thay vì chặn admin soạn bài trong lúc chờ Thạch chạy migration.
+function isMissingColumnError(error: { message: string } | null): boolean {
+  return !!error && error.message.toLowerCase().includes("schema cache");
+}
 
 /** ISO -> "YYYY-MM-DDTHH:mm" theo giờ máy, cho <input type="datetime-local">. */
 function toLocalInput(iso: string | null): string {
@@ -65,24 +78,29 @@ function ItemForm({
   onCancel: () => void;
 }) {
   const toast = useToast();
-  const [kind, setKind] = useState<LessonItemKind>(item?.kind ?? "ly_thuyet");
-  const [title, setTitle] = useState(item?.title ?? "");
-  const [subtitle, setSubtitle] = useState(item?.subtitle ?? "");
-  const [videoUrl, setVideoUrl] = useState(item?.video_url ?? "");
-  const [pdfUrl, setPdfUrl] = useState(item?.pdf_url ?? "");
-  const [bodyHtml, setBodyHtml] = useState(item?.body_html ?? "");
-  const [examIds, setExamIds] = useState<number[]>(item?.exam_ids ?? []);
+  // Đang sửa 1 mục đã đăng mà còn nháp dở → soạn tiếp từ nháp, không phải từ bản đã đăng.
+  const draft = item?.draft_payload ?? null;
+  const initial = draft ?? item;
+  const [kind, setKind] = useState<LessonItemKind>(initial?.kind ?? "ly_thuyet");
+  const [title, setTitle] = useState(initial?.title ?? "");
+  const [subtitle, setSubtitle] = useState(initial?.subtitle ?? "");
+  const [videoUrl, setVideoUrl] = useState(initial?.video_url ?? "");
+  const [pdfUrl, setPdfUrl] = useState(initial?.pdf_url ?? "");
+  const [bodyHtml, setBodyHtml] = useState(initial?.body_html ?? "");
+  const [examIds, setExamIds] = useState<number[]>(initial?.exam_ids ?? []);
   const [questions, setQuestions] = useState<LessonWorkedQuestion[]>(
-    item?.questions ?? [],
+    initial?.questions ?? [],
   );
   // datetime-local cần chuỗi "YYYY-MM-DDTHH:mm" theo giờ máy
-  const [dueAt, setDueAt] = useState(toLocalInput(item?.due_at ?? null));
+  const [dueAt, setDueAt] = useState(toLocalInput(initial?.due_at ?? null));
   const [busy, setBusy] = useState(false);
 
   const examKind = isExamKind(kind);
   const isVideoKind = kind === "video";
   const isWorkedKind = kind === "bai_tap_mau";
   const isHomework = kind === "bai_tap_ve_nha";
+  const hasDraft = draft !== null;
+  const neverPublished = item !== null && item.published_at === null;
 
   function updateQuestion(idx: number, patch: Partial<LessonWorkedQuestion>) {
     setQuestions((current) =>
@@ -94,14 +112,10 @@ function ItemForm({
     setQuestions((current) => current.filter((_, i) => i !== idx));
   }
 
-  async function save() {
-    if (!title.trim()) {
-      toast("error", "Mục cần có tiêu đề.");
-      return;
-    }
-    setBusy(true);
-    const payload = {
-      lesson_id: lessonId,
+  // Nội dung đang soạn — dùng chung cho cả "Lưu nháp" (ghi vào draft_payload, jsonb nên
+  // due_at luôn gửi được) lẫn "Đăng chính thức" (ghi thẳng vào các cột sống).
+  function buildContent() {
+    return {
       kind,
       title: title.trim(),
       subtitle: subtitle.trim(),
@@ -110,26 +124,135 @@ function ItemForm({
       pdf_url: examKind ? "" : pdfUrl.trim(),
       exam_ids: examKind ? examIds : [],
       questions: isWorkedKind ? questions.filter((q) => q.body_html.trim() !== "") : [],
-      sort_order: item?.sort_order ?? nextSort,
-      // Chỉ gửi due_at cho bài tập về nhà — mục kiểu cũ vẫn lưu được khi DB
-      // chưa chạy docs/supabase-migration-lesson-sections-v4.sql.
-      ...(isHomework ? { due_at: dueAt ? new Date(dueAt).toISOString() : null } : {}),
+      due_at: isHomework ? (dueAt ? new Date(dueAt).toISOString() : null) : null,
     };
+  }
+
+  // Cùng nội dung trên nhưng cho các cột sống của lesson_items — chỉ gửi due_at khi là
+  // bài tập về nhà, để mục kiểu cũ vẫn lưu được khi DB chưa chạy migration v4 (cột due_at).
+  function buildLivePayload() {
+    const content = buildContent();
+    return {
+      kind: content.kind,
+      title: content.title,
+      subtitle: content.subtitle,
+      body_html: content.body_html,
+      video_url: content.video_url,
+      pdf_url: content.pdf_url,
+      exam_ids: content.exam_ids,
+      questions: content.questions,
+      lesson_id: lessonId,
+      sort_order: item?.sort_order ?? nextSort,
+      ...(isHomework ? { due_at: content.due_at } : {}),
+    };
+  }
+
+  async function saveDraft() {
+    if (!title.trim()) {
+      toast("error", "Mục cần có tiêu đề.");
+      return;
+    }
+    setBusy(true);
     const supabase = getSupabase();
-    const { error } = item
-      ? await supabase.from("lesson_items").update(payload).eq("id", item.id)
-      : await supabase.from("lesson_items").insert(payload);
+    const attempt = item
+      ? await supabase
+          .from("lesson_items")
+          .update({ draft_payload: buildContent(), draft_saved_at: new Date().toISOString() })
+          .eq("id", item.id)
+      : await supabase.from("lesson_items").insert({ ...buildLivePayload(), published_at: null });
+    // DB chưa chạy migration nháp/đăng (docs/supabase-migration-lesson-item-draft-publish.sql,
+    // xem cột published_at/draft_payload) → lùi về lưu thẳng vào cột sống như "Lưu mục" cũ,
+    // để soạn bài không bị chặn hoàn toàn trong lúc chờ Thạch chạy migration.
+    const error = isMissingColumnError(attempt.error)
+      ? (item
+          ? await supabase.from("lesson_items").update(buildLivePayload()).eq("id", item.id)
+          : await supabase.from("lesson_items").insert(buildLivePayload())
+        ).error
+      : attempt.error;
     setBusy(false);
     if (error) {
       toast("error", error.message);
       return;
     }
-    toast("success", item ? "Đã cập nhật mục." : "Đã thêm mục.");
+    toast(
+      "success",
+      isMissingColumnError(attempt.error)
+        ? "DB chưa có cột nháp — đã lưu thẳng, học sinh thấy ngay."
+        : "Đã lưu nháp — học sinh chưa thấy thay đổi này.",
+    );
+    onSaved();
+  }
+
+  async function publish() {
+    if (!title.trim()) {
+      toast("error", "Mục cần có tiêu đề.");
+      return;
+    }
+    if (item && !neverPublished && !confirm("Đăng nội dung này cho học sinh xem ngay?")) return;
+    setBusy(true);
+    const supabase = getSupabase();
+    const attempt = item
+      ? await supabase
+          .from("lesson_items")
+          .update({
+            ...buildLivePayload(),
+            published_at: item.published_at ?? new Date().toISOString(),
+            draft_payload: null,
+            draft_saved_at: null,
+          })
+          .eq("id", item.id)
+      : await supabase
+          .from("lesson_items")
+          .insert({ ...buildLivePayload(), published_at: new Date().toISOString() });
+    const error = isMissingColumnError(attempt.error)
+      ? (item
+          ? await supabase.from("lesson_items").update(buildLivePayload()).eq("id", item.id)
+          : await supabase.from("lesson_items").insert(buildLivePayload())
+        ).error
+      : attempt.error;
+    setBusy(false);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
+    toast("success", "Đã đăng chính thức.");
+    onSaved();
+  }
+
+  async function discardDraft() {
+    if (!item || !confirm("Bỏ bản nháp đang sửa, quay về bản đã đăng?")) return;
+    setBusy(true);
+    const { error } = await getSupabase()
+      .from("lesson_items")
+      .update({ draft_payload: null, draft_saved_at: null })
+      .eq("id", item.id);
+    setBusy(false);
+    if (error) {
+      toast("error", error.message);
+      return;
+    }
+    toast("success", "Đã hủy bản nháp.");
     onSaved();
   }
 
   return (
     <div className="admin-card admin-card--accent space-y-3">
+      {!item && (
+        <p className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-2 text-xs text-amber-200">
+          🕓 Mục mới — bấm &quot;Lưu nháp&quot; để lưu tạm (học sinh chưa thấy), hoặc &quot;Đăng chính thức&quot; để hiện ngay.
+        </p>
+      )}
+      {item && neverPublished && (
+        <p className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-2 text-xs text-amber-200">
+          🕓 Mục này chưa từng đăng — học sinh chưa thấy.
+        </p>
+      )}
+      {item && !neverPublished && hasDraft && (
+        <p className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-2 text-xs text-blue-200">
+          📝 Đang sửa bản nháp (lưu lúc {item.draft_saved_at ? new Date(item.draft_saved_at).toLocaleString("vi-VN") : "?"}) —
+          học sinh vẫn thấy bản cũ cho tới khi bấm &quot;Đăng chính thức&quot;.
+        </p>
+      )}
       <div className="flex flex-wrap items-center gap-3">
         <select
           value={kind}
@@ -248,15 +371,34 @@ function ItemForm({
           <ExamPicker value={examIds} onChange={setExamIds} />
         </div>
       )}
+      {kind === "luyen_tap" && item && (
+        <PracticeWrongestPanel itemId={item.id} />
+      )}
 
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <button
-          onClick={save}
+          onClick={publish}
           disabled={busy}
           className="admin-btn admin-btn--primary disabled:opacity-50"
         >
-          {item ? "Lưu mục" : "+ Thêm mục"}
+          🚀 Đăng chính thức
         </button>
+        <button
+          onClick={saveDraft}
+          disabled={busy}
+          className="rounded-full border border-white/15 px-5 py-2 text-sm text-slate-300 hover:border-white/30 disabled:opacity-50"
+        >
+          💾 Lưu nháp
+        </button>
+        {hasDraft && (
+          <button
+            onClick={discardDraft}
+            disabled={busy}
+            className="admin-chip admin-chip--danger disabled:opacity-50"
+          >
+            Hủy nháp
+          </button>
+        )}
         <button
           onClick={onCancel}
           className="rounded-full border border-white/15 px-5 py-2 text-sm text-slate-300 hover:border-white/30"
@@ -264,6 +406,124 @@ function ItemForm({
           Hủy
         </button>
       </div>
+    </div>
+  );
+}
+
+function practiceFormLabel(form: string) {
+  return form === "ly_thuyet" || form === "bai_tap"
+    ? QUESTION_FORM_LABELS[form]
+    : "—";
+}
+
+/** Tổng hợp câu học sinh hay sai trong ngân hàng của một mục Luyện tập — gộp mọi lớp đã làm. */
+function PracticeWrongestPanel({ itemId }: { itemId: number }) {
+  const [rows, setRows] = useState<LessonPracticeWrongQuestion[] | null>(null);
+  const [openKey, setOpenKey] = useState<string | null>(null);
+  const [questionsByExam, setQuestionsByExam] = useState<Record<number, ExamQuestion[]>>({});
+
+  useEffect(() => {
+    setRows(null);
+    setOpenKey(null);
+    fetchLessonPracticeWrongest(itemId)
+      .then(setRows)
+      .catch(() => setRows([]));
+  }, [itemId]);
+
+  async function toggle(row: LessonPracticeWrongQuestion) {
+    const key = `${row.examId}|${row.sourceIndex}`;
+    if (openKey === key) {
+      setOpenKey(null);
+      return;
+    }
+    setOpenKey(key);
+    if (!questionsByExam[row.examId]) {
+      const { data } = await getSupabase()
+        .from("exams")
+        .select("questions")
+        .eq("id", row.examId)
+        .single();
+      setQuestionsByExam((cur) => ({
+        ...cur,
+        [row.examId]: (data?.questions as ExamQuestion[]) ?? [],
+      }));
+    }
+  }
+
+  return (
+    <div className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-3">
+      <p className="text-sm font-semibold text-white">Câu học sinh hay sai</p>
+      <p className="text-xs text-slate-400">
+        Gộp mọi lượt làm của mọi lớp trên các đề gắn ở trên — dùng để biết câu nào trong
+        ngân hàng cần xem lại đề bài hoặc dạy lại.
+      </p>
+      {rows === null ? (
+        <p className="text-xs text-slate-500">Đang tải…</p>
+      ) : rows.length === 0 ? (
+        <p className="text-xs text-slate-500">Chưa có dữ liệu (chưa có học sinh nào làm).</p>
+      ) : (
+        <div className="space-y-1.5">
+          {rows.slice(0, 10).map((row) => {
+            const key = `${row.examId}|${row.sourceIndex}`;
+            const question = questionsByExam[row.examId]?.[row.sourceIndex];
+            return (
+              <div key={key} className="rounded-lg border border-white/10 bg-panel">
+                <button
+                  type="button"
+                  onClick={() => toggle(row)}
+                  className="flex w-full items-center gap-3 p-3 text-left"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm text-white">
+                      {row.examTitle} · Câu {row.sourceIndex + 1}
+                      <span className="ml-2 font-normal text-slate-400">
+                        {row.topic} · {practiceFormLabel(row.form)}
+                      </span>
+                    </span>
+                  </span>
+                  <span className="shrink-0 text-right">
+                    <span
+                      className={`font-mono text-sm font-bold ${row.pct >= 60 ? "text-red-300" : row.pct >= 30 ? "text-amber-300" : "text-slate-300"}`}
+                    >
+                      {row.pct}%
+                    </span>
+                    <span className="ml-2 text-xs text-slate-500">
+                      {row.wrong}/{row.total}
+                    </span>
+                  </span>
+                  <ChevronDown
+                    size={14}
+                    className={`shrink-0 text-slate-500 transition-transform ${openKey === key ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {openKey === key && question && (
+                  <div className="border-t border-white/10 p-3 text-sm text-slate-300">
+                    <ContentHtml html={question.question} className="exam-content block" />
+                    {question.type === "multiple_choice" && (
+                      <ul className="mt-2 space-y-1 text-xs">
+                        {(question as { options: string[]; answer: number }).options.map(
+                          (opt, oi) => (
+                            <li
+                              key={oi}
+                              className={
+                                oi === (question as { answer: number }).answer
+                                  ? "text-emerald-300"
+                                  : "text-slate-500"
+                              }
+                            >
+                              {"ABCD"[oi]}. <ContentHtml html={opt} />
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -329,10 +589,11 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
       <div className="space-y-2">
         {items.map((it, idx) => {
           const meta = SECTION_META[it.kind];
+          const neverPublished = it.published_at === null;
           return (
             <div
               key={it.id}
-              className="admin-card admin-card--row"
+              className={`admin-card admin-card--row ${neverPublished ? "opacity-50" : ""}`}
             >
               <span title={meta.label}>{meta.icon}</span>
               <span className="min-w-0 flex-1">
@@ -345,6 +606,8 @@ function LessonItemsEditor({ lesson, onBack }: { lesson: Lesson; onBack: () => v
                   {it.questions.length > 0 && ` · ${it.questions.length} dạng bài`}
                   {it.video_url && " · video"}
                   {it.pdf_url && " · PDF"}
+                  {neverPublished && " · 🕓 chưa đăng"}
+                  {!neverPublished && it.draft_payload && " · 📝 có nháp chưa đăng"}
                 </span>
               </span>
               <span className="flex items-center gap-1">

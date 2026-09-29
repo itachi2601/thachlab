@@ -46,6 +46,7 @@ const COPY: Record<ResultsViewer, {
   needsTitle: string;
   missed: string;
   low: string;
+  violation: string;
 }> = {
   student: {
     subtitle: "Điểm kiểm tra và những chủ đề em cần ôn lại.",
@@ -55,6 +56,7 @@ const COPY: Record<ResultsViewer, {
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào em đã làm đúng trở lại.",
     missed: "Em còn bài kiểm tra chưa làm — hãy hoàn thành sớm.",
     low: "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo. Cố gắng ôn lại các chủ đề dưới đây nhé.",
+    violation: "Bài kiểm tra gần đây của em bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình. Trợ giảng sẽ kiểm tra lại kiến thức thực tế của em.",
   },
   parent: {
     subtitle: "Điểm kiểm tra của con và những chủ đề con cần ôn lại.",
@@ -64,6 +66,7 @@ const COPY: Record<ResultsViewer, {
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào con đã làm đúng trở lại.",
     missed: "Con còn bài kiểm tra chưa làm — phụ huynh nhắc con hoàn thành sớm.",
     low: "Điểm kiểm tra của con đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo.",
+    violation: "Bài kiểm tra gần đây của con bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình. Trợ giảng sẽ kiểm tra lại kiến thức của con.",
   },
 };
 
@@ -291,7 +294,11 @@ function AlertBanner({ alert, copy }: { alert: StudentAlert; copy: (typeof COPY)
         <h2 className="font-display font-bold text-white">Cần chú ý</h2>
       </div>
       <p className="mt-2 text-sm text-amber-100/80">
-        {alert.kind === "missed_assessment" ? copy.missed : copy.low}
+        {alert.kind === "missed_assessment"
+          ? copy.missed
+          : alert.kind === "exam_violation"
+            ? copy.violation
+            : copy.low}
       </p>
       {alert.handledNote && (
         <p className="mt-1 text-xs text-slate-400">Ghi chú: {alert.handledNote}</p>

@@ -1,0 +1,30 @@
+# Loại khỏi ngữ cảnh đọc file/grep mặc định của Claude Code — không ảnh hưởng git.
+# Mục tiêu: đỡ quét nhầm vào thư mục nặng/nhị phân khi tìm kiếm rộng.
+
+node_modules/
+.next/
+out/
+dist/
+.git/
+
+# 21 worktree cũ = 21 bản sao repo (9 GB) — grep không ignore sẽ ra kết quả trùng ×21
+.claude/worktrees/
+
+# ảnh/học liệu tĩnh — nội dung nhị phân, không cần đọc để sửa code
+public/lessons/
+public/exams/
+public/_originals/
+public/images/
+public/data/
+assets/
+
+# thư mục tạm / dump trung gian (đã gitignore, nhưng có thể còn trên máy)
+output/
+tmp/
+scratchpad/
+
+# log chạy migration
+scripts/logs/
+
+# dữ liệu batch đăng đề (raw, không phải code)
+scripts/data/

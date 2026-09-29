@@ -23,12 +23,14 @@
 
 import type {
   Difficulty,
+  DifficultySource,
   ExamQuestion,
   MultipleChoiceQuestion,
   QuestionForm,
   ShortAnswerQuestion,
   TrueFalseQuestion,
 } from "@/features/exams/types";
+import { missingFigureWarning, questionsMissingFigure } from "@/services/question-figures";
 
 export interface ExamParseResult {
   title: string;
@@ -48,15 +50,42 @@ export interface ExamParseOptions {
 
 type QuestionType = "multiple_choice" | "true_false" | "short_answer";
 
+/** Mốc thay cho hình TikZ — web không vẽ được, phải render ra SVG/PNG trước rồi \includegraphics. */
+export const TIKZ_MARK = "⟦hình TikZ⟧";
+
+/**
+ * `\includegraphics[...]{duong/dan/hinh.png}` → thẻ <img> trỏ placeholder `media/hinh.png`
+ * (cùng quy ước với ảnh trong lý thuyết: bundle khai báo trong raster_images, lúc đăng
+ * uploadLessonMedia thay placeholder bằng URL Storage). Bỏ vỏ figure/center/caption.
+ */
+function figuresToHtml(input: string): string {
+  let s = input;
+  s = s.replace(/\\begin\{(?:figure|center|wrapfigure)\*?\}(?:\[[^\]]*\])?(?:\{[^{}]*\})*/g, "");
+  s = s.replace(/\\end\{(?:figure|center|wrapfigure)\*?\}/g, "");
+  s = s.replace(/\\centering\b/g, "");
+  s = s.replace(/\\caption\{([^{}]*)\}/g, "<em>$1</em>");
+  s = s.replace(/\\includegraphics\s*(?:\[[^\]]*\])?\s*\{([^{}]+)\}/g, (_m, path: string) => {
+    const base = path.trim().replace(/\\/g, "/").split("/").pop() ?? "";
+    if (!base) return "";
+    const name = /\.[a-z0-9]+$/i.test(base) ? base : `${base}.png`;
+    return `<img src="media/${name}" alt="Hình" class="mx-auto my-2 max-w-full rounded-lg" />`;
+  });
+  return s;
+}
+
 /** Chuyển LaTeX inline nhẹ → HTML, giữ nguyên `$...$`. */
 function inlineLatex(input: string): string {
-  let s = input.trim();
+  let s = figuresToHtml(input.trim());
   s = s.replace(/\\textbf\{([^{}]*)\}/g, "<strong>$1</strong>");
   s = s.replace(/\\textit\{([^{}]*)\}/g, "<em>$1</em>");
   s = s.replace(/\\emph\{([^{}]*)\}/g, "<em>$1</em>");
   s = s.replace(/\\%/g, "%").replace(/\\&/g, "&").replace(/\\_/g, "_");
   s = s.replace(/\\\\\s*/g, "<br>");
-  s = s.replace(/[ \t]*\n[ \t]*/g, " ").trim();
+  // Văn bản Azota gõ tay (không phải LaTeX thật): mỗi Enter là chủ ý xuống dòng
+  // (liệt kê bước thí nghiệm, ý a)/b)...), không phải chỗ wrap tự động — giữ lại
+  // bằng <br> thay vì gộp thành khoảng trắng như trước, kẻo các ý dính liền một câu.
+  s = s.replace(/\n{2,}/g, "\n");
+  s = s.replace(/[ \t]*\n[ \t]*/g, "<br>").trim();
   return s;
 }
 
@@ -71,8 +100,10 @@ function detectPartType(header: string): QuestionType | null {
   return null;
 }
 
+// "Đáp án"/"Đáp số" chỉ là dòng khai báo khi có dấu hai chấm ngay sau (hoặc dạng "Chọn đáp án D"
+// của xuat_thachlab.py) — không thì câu dẫn "Đáp án nào sau đây…"/"Đáp số là…" bị cắt mất.
 const FIELD_LINE_RE =
-  /^\\?(?:textbf\{)?\s*(?:Đáp\s*án|Đáp\s*số|Giải|Lời\s*giải|Hướng\s*dẫn|answer|explanation)/i;
+  /^\\?(?:textbf\{)?\s*(?:(?:Đáp\s*án\s*đúng|Đáp\s*án|Đáp\s*số)\}?\s*[:：]|Chọn\s+đáp\s*án\s+[A-D]\b|Giải|Lời\s*giải|Hướng\s*dẫn|answer|explanation)/i;
 
 /**
  * Dòng nhãn phân loại của một câu (đặt ở bất kỳ đâu trong khối câu, thường sau "Lời giải"):
@@ -92,8 +123,11 @@ export function parseFormLabel(raw: string): QuestionForm | "" {
   return "";
 }
 
+/** Hậu tố nguồn gắn kèm giá trị "Mức độ: …" — vd "dễ (AI)" / "dễ (GV)" (xem `DifficultySource`). */
+const DIFFICULTY_SOURCE_SUFFIX_RE = /\s*\((AI|GV)\)\s*$/i;
+
 export function parseDifficultyLabel(raw: string): Difficulty {
-  const v = raw.trim().toLowerCase();
+  const v = raw.trim().replace(DIFFICULTY_SOURCE_SUFFIX_RE, "").toLowerCase();
   if (!v) return "";
   if (/^(d[ễe]|de)$/.test(v)) return "de";
   if (/^(trung\s*b[ìi]nh|tb|trung-binh)$/.test(v)) return "trung-binh";
@@ -101,15 +135,29 @@ export function parseDifficultyLabel(raw: string): Difficulty {
   return "";
 }
 
+/** Nguồn kèm theo giá trị "Mức độ: …", nếu có ghi (vd "dễ (AI)"). Không có hậu tố → không rõ
+ *  nguồn (đề gắn từ trước khi có tính năng phân biệt gv/ai, hoặc soạn tay ngoài luồng UI). */
+export function parseDifficultySourceSuffix(raw: string): DifficultySource | undefined {
+  const m = raw.trim().match(DIFFICULTY_SOURCE_SUFFIX_RE);
+  return m ? (m[1].toLowerCase() as DifficultySource) : undefined;
+}
+
 /** Rút dòng "Chủ đề:" / "Dạng:" / "Mức độ:" ra khỏi khối câu; trả về khối đã bỏ các dòng đó. */
 function extractTags(
   block: string,
   n: number,
   warnings: string[],
-): { block: string; topic: string; form: QuestionForm | ""; difficulty: Difficulty } {
+): {
+  block: string;
+  topic: string;
+  form: QuestionForm | "";
+  difficulty: Difficulty;
+  difficultySource: DifficultySource | undefined;
+} {
   let topic = "";
   let form: QuestionForm | "" = "";
   let difficulty: Difficulty = "";
+  let difficultySource: DifficultySource | undefined;
   const kept: string[] = [];
   for (const line of block.split("\n")) {
     const m = line.match(TAG_LINE_RE);
@@ -124,10 +172,11 @@ function extractTags(
       if (value && !form) warnings.push(`Câu ${n}: "Dạng: ${value}" không hiểu — chỉ nhận "lý thuyết" hoặc "bài tập".`);
     } else if (/^(m[ứu]c\s*độ|độ\s*kh[óo])$/.test(key)) {
       difficulty = parseDifficultyLabel(value);
+      difficultySource = parseDifficultySourceSuffix(value);
       if (value && !difficulty) warnings.push(`Câu ${n}: "Mức độ: ${value}" không hiểu — chỉ nhận "dễ", "trung bình" hoặc "khó".`);
     } else topic = value.replace(/\s+/g, " ");
   }
-  return { block: kept.join("\n"), topic, form, difficulty };
+  return { block: kept.join("\n"), topic, form, difficulty, difficultySource };
 }
 
 /** Phần thân câu, cắt bỏ từ dòng "Đáp án" / "Lời giải" trở đi. */
@@ -175,10 +224,22 @@ function splitStemAndOptions(
 function findField(block: string, names: string): string | null {
   const cmd = block.match(new RegExp(`\\\\(?:${names})\\{([^}]*)\\}`, "i"));
   if (cmd) return cmd[1].trim();
-  const label = block.match(
-    new RegExp(`\\\\?(?:textbf\\{)?\\s*(?:${names})\\}?\\s*[:：]?\\s*([^\\n]*)`, "i"),
+  // Neo vào ĐẦU DÒNG (xét từng dòng, giống bodyBeforeAnswer/explanationOf) — không thì cụm
+  // "đáp án" xuất hiện tự nhiên giữa đề dẫn (vd "Chọn đáp án không đúng") bị bắt nhầm thành
+  // dòng khai báo đáp án thật, nuốt mất chữ cái đúng nằm ở dòng "Đáp án: B" thật sự phía sau.
+  // Cho phép tiền tố "Chọn " (quy ước lời giải của xuat_thachlab.py: dòng đầu lời giải là
+  // "Chọn đáp án D", không có dấu hai chấm) — vẫn phải là ĐẦU DÒNG, không khớp giữa câu dẫn.
+  // Không có "Chọn " thì BẮT BUỘC dấu hai chấm — câu dẫn "Đáp án nào sau đây…" mới không bị
+  // nhận nhầm là dòng khai báo (khớp FIELD_LINE_RE).
+  const re = new RegExp(
+    `^\\\\?(?:textbf\\{)?\\s*(?:Chọn\\s+(?:${names})\\}?\\s*[:：]?|(?:${names})\\}?\\s*[:：])\\s*([^\\n]*)`,
+    "i",
   );
-  return label ? label[1].replace(/^\}/, "").trim() : null;
+  for (const line of block.split("\n")) {
+    const m = line.match(re);
+    if (m) return m[1].replace(/^\}/, "").trim();
+  }
+  return null;
 }
 
 function parseMultipleChoice(
@@ -303,7 +364,7 @@ function parseBlock(
   warnings: string[],
   lenient: boolean,
 ): ExamQuestion | null {
-  const { block, topic, form, difficulty } = extractTags(raw, n, warnings);
+  const { block, topic, form, difficulty, difficultySource } = extractTags(raw, n, warnings);
   const answerRaw = findField(block, "Đáp\\s*án\\s*đúng|Đáp\\s*án|Đáp\\s*số|answer");
   const explanation = explanationOf(block);
   const q =
@@ -315,7 +376,10 @@ function parseBlock(
   if (!q) return q;
   if (topic) q.topic = topic;
   if (form) q.form = form;
-  if (difficulty) q.difficulty = difficulty;
+  if (difficulty) {
+    q.difficulty = difficulty;
+    if (difficultySource) q.difficultySource = difficultySource;
+  }
   return q;
 }
 
@@ -328,9 +392,21 @@ function splitQuestions(section: string): string[] {
   return body.map((p) => p.trim()).filter(Boolean);
 }
 
-export function parseExamLatex(latex: string, opts: ExamParseOptions = {}): ExamParseResult {
+export function parseExamLatex(latexInput: string, opts: ExamParseOptions = {}): ExamParseResult {
   const lenient = opts.lenient === true;
   const warnings: string[] = [];
+
+  // Hình TikZ: web không vẽ được — thay bằng mốc để câu vẫn dựng được, và cảnh báo rõ.
+  let tikzCount = 0;
+  const latex = latexInput.replace(/\\begin\{tikzpicture\}[\s\S]*?\\end\{tikzpicture\}/g, () => {
+    tikzCount += 1;
+    return ` ${TIKZ_MARK} `;
+  });
+  if (tikzCount > 0)
+    warnings.push(
+      `Có ${tikzCount} hình TikZ — web không vẽ được, chỗ đó hiện là "${TIKZ_MARK}". ` +
+        "Render TikZ ra PNG/SVG rồi thay bằng \\includegraphics{...} trước khi đăng.",
+    );
   const titleMatch = latex.match(/\\(?:sub)?section\*?\{([^}]+)\}/);
   const title =
     titleMatch && !/PH[ẦA]N/i.test(titleMatch[1]) ? titleMatch[1].trim() : "Đề mới";
@@ -351,11 +427,17 @@ export function parseExamLatex(latex: string, opts: ExamParseOptions = {}): Exam
       const q = parseBlock(body, kind, questions.length + 1, warnings, lenient);
       if (q) questions.push(q);
     }
+    const missingFigOld = missingFigureWarning(questionsMissingFigure(questions));
+    if (missingFigOld) warnings.push(missingFigOld);
     return { title, questions, warnings };
   }
 
-  // Định dạng chuẩn: tách theo PHẦN I/II/III
-  const partSplit = latex.split(/(?:^|\n)\s*(?:\\(?:sub)?section\*?\{)?\s*(PH[ẦA]N[^\n}]*)\}?/i);
+  // Định dạng chuẩn: tách theo PHẦN I/II/III — bắt buộc ngay sau "PHẦN" phải là số La Mã/số
+  // thường (I/II/III/1/2/3…) mới coi là mốc tiêu đề thật. Không có điều kiện này thì một câu
+  // dẫn bình thường bắt đầu đoạn văn bằng "Phần trăm…"/"Phần công…"/"Phần ứng…" cũng bị nhận
+  // nhầm thành ranh giới PHẦN mới, cắt đôi đề và làm sai loại câu (trắc nghiệm/đúng-sai/ngắn)
+  // của mọi câu phía sau mốc giả đó.
+  const partSplit = latex.split(/(?:^|\n)\s*(?:\\(?:sub)?section\*?\{)?\s*(PH[ẦA]N\s+(?:[IVXivx]+|\d+)\b[^\n}]*)\}?/i);
   if (partSplit.length >= 3) {
     for (let i = 1; i < partSplit.length; i += 2) {
       const kind = detectPartType(partSplit[i]);
@@ -373,5 +455,7 @@ export function parseExamLatex(latex: string, opts: ExamParseOptions = {}): Exam
   }
 
   if (questions.length === 0) warnings.push("Không parse được câu hỏi nào.");
+  const missingFig = missingFigureWarning(questionsMissingFigure(questions));
+  if (missingFig) warnings.push(missingFig);
   return { title, questions, warnings };
 }

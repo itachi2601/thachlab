@@ -1,8 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { Bug, Image as ImageIcon, Loader2, RefreshCw, Trash2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import { SITE_URL } from "@/lib/site";
 import {
   fetchBugReports,
   updateBugReportStatus,
@@ -13,6 +15,11 @@ import {
   type BugReport,
   type BugStatus,
 } from "@/services/bug-reports";
+
+/** Trang "Sửa đề đã đăng" đọc ?exam=&q= để tự mở đúng đề + tô đậm đúng câu. */
+function fixExamHref(examId: number, questionIndex: number | null): string {
+  return questionIndex != null ? `/quan-tri/sua-de?exam=${examId}&q=${questionIndex}` : `/quan-tri/sua-de?exam=${examId}`;
+}
 
 const STATUS_STYLES: Record<BugStatus, string> = {
   moi: "bg-red-500/15 text-red-300",
@@ -109,12 +116,25 @@ export default function BugReportsAdmin() {
                 <tr key={r.id} className="border-b border-white/5">
                   <td className="p-2 text-slate-400">{fmt(r.created_at)}</td>
                   <td className="p-2 text-slate-300">{r.profiles?.full_name ?? (r.reporter_name || "Khách")}</td>
-                  <td className="p-2 text-slate-300">{BUG_CATEGORY_LABELS[r.category]}</td>
+                  <td className="p-2 text-slate-300">
+                    {BUG_CATEGORY_LABELS[r.category]}
+                    {r.exam_id != null && (
+                      <Link href={fixExamHref(r.exam_id, r.question_index)} className="mt-0.5 block text-[11px] font-bold text-cyan-300 hover:text-cyan-200">
+                        Đề #{r.exam_id}{r.question_index != null && ` · Câu ${r.question_index + 1}`} →
+                      </Link>
+                    )}
+                  </td>
                   <td className="max-w-[260px] truncate p-2 text-slate-400" title={r.description}>
                     {r.description}
                   </td>
                   <td className="max-w-[160px] truncate p-2 font-mono text-slate-500" title={r.page_url}>
-                    {r.page_url || "—"}
+                    {r.page_url ? (
+                      <a href={`${SITE_URL}${r.page_url}`} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">
+                        {r.page_url}
+                      </a>
+                    ) : (
+                      "—"
+                    )}
                   </td>
                   <td className="p-2">
                     <span className={`rounded-full px-2 py-0.5 font-bold ${STATUS_STYLES[r.status]}`}>{BUG_STATUS_LABELS[r.status]}</span>
@@ -210,10 +230,26 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
             <dt className="text-slate-500">Loại</dt>
             <dd className="text-slate-200">{BUG_CATEGORY_LABELS[report.category]}</dd>
           </div>
+          {report.exam_id != null && (
+            <div className="flex justify-between gap-3">
+              <dt className="text-slate-500">Câu báo lỗi</dt>
+              <dd className="text-slate-200">
+                <Link href={fixExamHref(report.exam_id, report.question_index)} className="font-bold text-cyan-300 hover:text-cyan-200">
+                  Mở đề #{report.exam_id}{report.question_index != null && ` · Câu ${report.question_index + 1}`} →
+                </Link>
+              </dd>
+            </div>
+          )}
           <div className="flex justify-between gap-3">
             <dt className="text-slate-500">Trang</dt>
             <dd className="max-w-[260px] truncate font-mono text-xs text-slate-400" title={report.page_url}>
-              {report.page_url || "—"}
+              {report.page_url ? (
+                <a href={`${SITE_URL}${report.page_url}`} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">
+                  {report.page_url}
+                </a>
+              ) : (
+                "—"
+              )}
             </dd>
           </div>
           <div className="flex justify-between gap-3">

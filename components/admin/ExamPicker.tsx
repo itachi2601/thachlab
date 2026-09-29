@@ -63,12 +63,13 @@ export default function ExamPicker({ value, onChange }: {
     async function loadSelected() {
       try {
         // Chunk requests so selections remain independent of the catalogue page / row limit.
-        const rows: ExamOption[] = [];
-        for (let start = 0; start < ids.length; start += 100) {
-          const { data, error } = await getSupabase().from("exams").select(columns).in("id", ids.slice(start, start + 100));
+        const chunks: number[][] = [];
+        for (let start = 0; start < ids.length; start += 100) chunks.push(ids.slice(start, start + 100));
+        const rows = (await Promise.all(chunks.map(async (chunk) => {
+          const { data, error } = await getSupabase().from("exams").select(columns).in("id", chunk);
           if (error) throw error;
-          rows.push(...(data ?? []) as ExamOption[]);
-        }
+          return (data ?? []) as ExamOption[];
+        }))).flat();
         if (!cancelled) {
           setCache((old) => ({ ...old, ...Object.fromEntries(rows.map((exam) => [exam.id, exam])) }));
           setSelectionError("");

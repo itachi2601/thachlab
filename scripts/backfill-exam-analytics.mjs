@@ -55,6 +55,9 @@ const questionsByExam = new Map((exams ?? []).map((e) => [e.id, e.questions ?? [
 const { data: results, error } = await supabase
   .from("exam_results")
   .select("id, exam_id, student_id, detail")
+  // Lượt đã gộp vào question_result_rollups (rollup_question_results) thì KHÔNG dựng lại,
+  // nếu không sẽ đếm đôi so với bảng gộp.
+  .is("results_rolled_up_at", null)
   .order("id");
 if (error) {
   console.error(error.message);

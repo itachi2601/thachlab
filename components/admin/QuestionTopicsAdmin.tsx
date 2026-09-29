@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useToast } from "@/components/ui/Toast";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import {
   createQuestionTopic,
   deleteQuestionTopic,

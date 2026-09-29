@@ -16,6 +16,8 @@ import type { RasterImageInput } from "@/services/lesson-media";
 export const MATH_MARK = "⟦CT⟧";
 /** Mốc đánh dấu ảnh định dạng WMF/EMF (trình duyệt không hiển thị được). */
 export const VECTOR_IMAGE_MARK = "⟦ảnh WMF⟧";
+/** Hình vẽ bằng shape / chart / group của Word (không phải ảnh) — trang không dựng lại được. */
+export const SHAPE_MARK = "⟦hình vẽ Word⟧";
 
 export interface DocxReadResult {
   /** Văn bản thuần: mỗi đoạn một dòng, ô bảng ngăn bằng tab, công thức ở dạng $...$ */
@@ -47,6 +49,7 @@ interface Ctx {
   vectorImages: number;
   autoNumbered: number;
   missingMedia: number;
+  shapeDrawings: number;
 }
 
 function els(parent: Element): Element[] {
@@ -125,6 +128,14 @@ function imageTag(ctx: Ctx, relId: string): string {
   return tag;
 }
 
+/** drawing/pict chứa shape (wps:wsp), chart (c:chart), group (wpg:wgp) hay VML shape/group. */
+function isWordShape(el: Element): boolean {
+  for (const name of ["wsp", "chart", "wgp", "shape", "group", "roundrect", "oval", "rect", "line", "polyline", "curve"]) {
+    if (descendant(el, name)) return true;
+  }
+  return false;
+}
+
 function objectText(el: Element, ctx: Ctx): string {
   const ole = descendant(el, "OLEObject");
   const progId = ole ? (attr(ole, "ProgID") ?? "") : "";
@@ -166,7 +177,17 @@ function inlineText(node: Element, ctx: Ctx): string {
           out += imageTag(ctx, relId);
           break;
         }
-        out += objectText(el, ctx);
+        const viaObject = objectText(el, ctx);
+        if (viaObject) {
+          out += viaObject;
+          break;
+        }
+        // Không có ảnh, không có OLE: là shape/chart/group vẽ trực tiếp trong Word
+        // (đồ thị vẽ bằng Insert → Shapes/Chart). Không bỏ lặng lẽ — để mốc + cảnh báo.
+        if (!descendant(el, "OLEObject") && !descendant(el, "imagedata") && isWordShape(el)) {
+          ctx.shapeDrawings += 1;
+          out += ` ${SHAPE_MARK} `;
+        }
         break;
       }
       case "AlternateContent": {
@@ -256,6 +277,7 @@ export async function readDocx(input: ArrayBuffer | Uint8Array): Promise<DocxRea
     vectorImages: 0,
     autoNumbered: 0,
     missingMedia: 0,
+    shapeDrawings: 0,
   };
 
   const doc = parseXml(documentXml, "nội dung");
@@ -288,6 +310,11 @@ export async function readDocx(input: ArrayBuffer | Uint8Array): Promise<DocxRea
         `Nếu thiếu câu, bôi đen cả đề → chuột phải → Bullets and Numbering → bỏ đánh số tự động (gõ số bằng tay).`,
     );
   if (ctx.missingMedia > 0) warnings.push(`Có ${ctx.missingMedia} ảnh liên kết ngoài file — đã bỏ qua.`);
+  if (ctx.shapeDrawings > 0)
+    warnings.push(
+      `Có ${ctx.shapeDrawings} hình vẽ bằng shape/chart của Word (đồ thị, sơ đồ vẽ trực tiếp) — trang không lấy được, chỗ đó là "${SHAPE_MARK}". ` +
+        `Trong Word: chọn cả hình → Cut → Paste Special → Picture (PNG) (hoặc chụp màn hình dán vào) rồi tải lên lần nữa.`,
+    );
 
   return {
     text,

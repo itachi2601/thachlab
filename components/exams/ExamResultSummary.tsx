@@ -1,7 +1,6 @@
 "use client";
 
 import { Eye } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
 import {
   gradeExam,
   statsByType,
@@ -118,19 +117,14 @@ export default function ExamResultSummary({
   const pct = Math.round(summary.max > 0 ? (summary.earned / summary.max) * 100 : 0);
   const t = tone(pct);
   const stats = statsByType(questions, responses);
-  const reduceMotion = useReducedMotion();
 
   return (
     <div className="space-y-6">
       <section className="rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-4">
-          <motion.div
-            initial={{ scale: reduceMotion ? 1 : 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: reduceMotion ? 0 : 0.4, ease: "backOut" }}
-          >
+          <div className="animate-result-pop">
             <ResultSticker tier={resultTier(pct)} />
-          </motion.div>
+          </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-3">
               <h2 className="font-display text-xl font-bold leading-snug text-white">{t.message}</h2>

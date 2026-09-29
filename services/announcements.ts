@@ -15,6 +15,8 @@ export interface ClassAnnouncement {
   createdBy: string;
   createdByName: string;
   createdAt: string;
+  examId: number | null;
+  examTitle: string | null;
 }
 
 interface AnnouncementRow {
@@ -24,13 +26,16 @@ interface AnnouncementRow {
   body: string;
   created_by: string;
   created_at: string;
+  exam_id: number | null;
   profiles: { full_name: string } | { full_name: string }[] | null;
+  exams: { title: string } | { title: string }[] | null;
 }
 
-const SELECT = "id, class_id, kind, body, created_by, created_at, profiles(full_name)";
+const SELECT = "id, class_id, kind, body, created_by, created_at, exam_id, profiles(full_name), exams(title)";
 
 function toAnnouncement(row: AnnouncementRow): ClassAnnouncement {
   const author = Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles;
+  const exam = Array.isArray(row.exams) ? row.exams[0] ?? null : row.exams;
   return {
     id: row.id,
     classId: row.class_id,
@@ -39,6 +44,8 @@ function toAnnouncement(row: AnnouncementRow): ClassAnnouncement {
     createdBy: row.created_by,
     createdByName: author?.full_name ?? "",
     createdAt: row.created_at,
+    examId: row.exam_id,
+    examTitle: exam?.title ?? null,
   };
 }
 
@@ -80,12 +87,14 @@ export async function postAnnouncement(input: {
   kind: AnnouncementKind;
   body: string;
   createdBy: string;
+  examId?: number | null;
 }): Promise<void> {
   const { error } = await getSupabase().from("class_announcements").insert({
     class_id: input.classId,
     kind: input.kind,
     body: input.body.trim(),
     created_by: input.createdBy,
+    exam_id: input.examId ?? null,
   });
   if (error) throw error;
 }

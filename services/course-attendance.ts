@@ -92,6 +92,21 @@ export async function fetchAttendanceRecords(sessionId: number) {
   return (data ?? []).map((row) => ({ ...row, profiles: Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles })) as AttendanceRecord[];
 }
 
+/** Bản ghi điểm danh của NHIỀU buổi trong 1 truy vấn (thay vòng lặp N+1 theo từng buổi). Trả về danh sách phẳng, chưa nhóm. */
+export async function fetchAttendanceRecordsForSessions(sessionIds: number[]) {
+  const ids = [...new Set(sessionIds)];
+  if (ids.length === 0) return [] as AttendanceRecord[];
+  const out: AttendanceRecord[] = [];
+  for (let start = 0; start < ids.length; start += 200) {
+    const { data, error } = await getSupabase().from("attendance_records")
+      .select("session_id, student_id, status, checked_in_at, note, bonus_points, machine_code, profiles!attendance_records_student_id_fkey(full_name, class_name)")
+      .in("session_id", ids.slice(start, start + 200));
+    if (error) throw error;
+    out.push(...(data ?? []).map((row) => ({ ...row, profiles: Array.isArray(row.profiles) ? row.profiles[0] ?? null : row.profiles })) as AttendanceRecord[]);
+  }
+  return out;
+}
+
 export async function setAttendanceRecord(sessionId: number, studentId: string, status: AttendanceStatus, note?: string) {
   const supabase = getSupabase();
   const { data: auth } = await supabase.auth.getUser();

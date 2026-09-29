@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BookOpenCheck, ClipboardList, ExternalLink, Target, Users } from "lucide-react";
+import { BookOpenCheck, ChevronDown, ClipboardList, ExternalLink, Target, Users } from "lucide-react";
 import { fetchWeeklySessions, weekRange, type WeeklySession } from "@/services/homeroom-shcn";
 import { GDDD_DOCS_URL, selfStudyItems } from "@/lib/shcn/gddd-topics";
 
@@ -34,29 +34,39 @@ export default function ShcnWeekList({ courseId }: { courseId: number }) {
           Chưa có tuần sinh hoạt nào được đăng. Nội dung sẽ xuất hiện ở đây sau tiết sinh hoạt chủ nhiệm.
         </p>
       )}
-      {weeks.map((week) => <WeekCard key={week.id} week={week} />)}
+      {weeks.map((week, index) => <WeekCard key={week.id} week={week} defaultOpen={index === 0} />)}
     </div>
   );
 }
 
-function WeekCard({ week }: { week: WeeklySession }) {
+function WeekCard({ week, defaultOpen }: { week: WeeklySession; defaultOpen: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
   const range = week.met_on ? weekRange(week.met_on) : null;
   const selfStudy = selfStudyItems(week.ethics_topic, week.ethics_taught);
 
   return (
     <article className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
-      <header className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        className={`flex w-full flex-wrap items-center justify-between gap-2 text-left ${open ? "border-b border-white/10 pb-3" : ""}`}
+      >
         <h3 className="font-display text-lg font-bold text-white">
           Tuần {week.week_no}
           {range && <span className="ml-2 text-sm font-medium text-slate-500">({formatDate(range.from)} – {formatDate(range.to)})</span>}
         </h3>
-        {week.met_on && (
-          <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300">
-            Đã sinh hoạt: {formatDate(week.met_on)}
-          </span>
-        )}
-      </header>
+        <span className="flex items-center gap-2">
+          {week.met_on && (
+            <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300">
+              Đã sinh hoạt: {formatDate(week.met_on)}
+            </span>
+          )}
+          <ChevronDown size={18} className={`text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
+        </span>
+      </button>
 
+      {open && (
+      <>
       {week.announcements.length > 0 && (
         <section className="mt-4">
           <div className="flex items-center gap-2 text-sm font-bold text-white"><ClipboardList size={16} className="text-blue-300" />Nội dung phổ biến</div>
@@ -100,6 +110,8 @@ function WeekCard({ week }: { week: WeeklySession }) {
           <Users size={14} />
           Sĩ số: {week.headcount ?? "—"} · Có mặt: {week.present_count ?? "—"}
         </footer>
+      )}
+      </>
       )}
     </article>
   );

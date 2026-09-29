@@ -17,6 +17,15 @@ interface QuestionTags {
   topic?: string;
   form?: QuestionForm | "";
   difficulty?: Difficulty;
+  /** Nguồn của nhãn `difficulty`: "gv" = giáo viên tự bấm chọn, "ai" = AI gợi ý (chưa được
+   *  giáo viên xác nhận lại) — chỉ có ý nghĩa khi `difficulty` khác rỗng. Thiếu key này (đề cũ
+   *  gắn từ trước khi có tính năng phân biệt nguồn) nghĩa là không rõ nguồn. */
+  difficultySource?: DifficultySource;
+  /** Chỉ có ý nghĩa khi đề này là quiz "Kiểm tra nhanh" gắn cho đúng 1 bài (item.exam_ids[0]):
+   *  vị trí (0-based) của khối <h3> lý thuyết liên quan trong body_html mục lý thuyết của
+   *  CHÍNH bài đó — dùng để "Ôn ngay" nhảy thẳng + tô màu đúng đoạn thay vì cả mục lý thuyết.
+   *  Xem features/lessons/theory-sections.ts (wrapTheorySections sinh id "theory-sec-<itemId>-<n>"). */
+  theorySection?: number;
 }
 
 export interface MultipleChoiceQuestion extends QuestionTags {
@@ -62,6 +71,26 @@ export const QUESTION_TYPE_LABELS: Record<ExamQuestion["type"], string> = {
   essay: "Tự luận",
 };
 
+/** Thứ tự chuẩn TN 4 đáp án → Đúng–Sai → Trả lời ngắn → Tự luận (cấu trúc đề thi 2025),
+ * dùng để nhóm "bảng câu hỏi" lúc học sinh làm bài và sắp lại câu lấy từ ngân hàng câu hỏi. */
+export const QUESTION_TYPE_ORDER: ExamQuestion["type"][] = [
+  "multiple_choice",
+  "true_false",
+  "short_answer",
+  "essay",
+];
+
+/** Gom chỉ số câu (0-based) theo QUESTION_TYPE_ORDER — dùng để vẽ "bảng câu hỏi" chia theo mục
+ * mà không đổi số thứ tự câu gốc (giữ nguyên `index+1` để khớp với QuestionCard/chấm điểm). */
+export function groupQuestionIndexesByType(
+  questions: ExamQuestion[],
+): { type: ExamQuestion["type"]; indices: number[] }[] {
+  return QUESTION_TYPE_ORDER.map((type) => ({
+    type,
+    indices: questions.map((_, i) => i).filter((i) => questions[i].type === type),
+  })).filter((s) => s.indices.length > 0);
+}
+
 export interface SchoolClass {
   id: number;
   name: string;
@@ -80,6 +109,10 @@ export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   "trung-binh": "Trung bình",
   kho: "Khó",
 };
+
+/** Nguồn gắn nhãn mức độ: "gv" = giáo viên tự bấm chọn tay, "ai" = AI gợi ý chưa qua tay giáo
+ *  viên xác nhận lại (nút "AI gắn nhãn" ở trang Đăng đề / script backfill ngân hàng câu hỏi). */
+export type DifficultySource = "gv" | "ai";
 
 export interface Exam {
   id: number;
@@ -169,6 +202,7 @@ export interface QuestionResultRow {
   earned: number;
   max: number;
   is_correct: boolean;
+  difficulty: Difficulty;
 }
 
 export function buildQuestionResults(
@@ -188,6 +222,7 @@ export function buildQuestionResults(
       earned: g.earned,
       max: g.max,
       is_correct: g.max > 0 && g.earned === g.max,
+      difficulty: q.difficulty ?? "",
     };
   });
 }

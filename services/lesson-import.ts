@@ -181,9 +181,18 @@ export function validateBundle(input: unknown): BundleCheck {
   });
 
   // placeholder chưa thay hết
-  const allHtml = [theory, ...worked.map((w) => (isRecord(w) ? String(w.body_html ?? "") : ""))].join("\n");
+  const examQs = isRecord(exam) && Array.isArray(exam.questions) ? exam.questions : [];
+  const allHtml = [
+    theory,
+    ...worked.map((w) => (isRecord(w) ? String(w.body_html ?? "") : "")),
+    // Ảnh trong câu hỏi (\includegraphics trong đề .tex, ảnh Word) cũng phải được khai báo.
+    JSON.stringify(examQs),
+  ].join("\n");
   const declared = new Set(imgs.map((i) => (isRecord(i) ? String(i.placeholder) : "")));
-  for (const m of allHtml.matchAll(/\bmedia\/[\w./-]+/g)) {
+  // (?<!lesson-) loại chuỗi con "media/…" nằm trong URL đã tải lên thật (bucket "lesson-media",
+  // vd ".../lesson-media/132/....png") — chỉ những đề vừa dán/sửa (chưa qua Đăng) mới còn placeholder
+  // trần "media/…" thật sự chưa khai báo trong raster_images.
+  for (const m of allHtml.matchAll(/(?<!lesson-)\bmedia\/[\w./-]+/g)) {
     if (!declared.has(m[0]))
       check.errors.push(`Còn placeholder ảnh chưa khai báo trong raster_images: "${m[0]}".`);
   }

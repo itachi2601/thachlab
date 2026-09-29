@@ -1,4 +1,3 @@
-import ExcelJS from "exceljs";
 import { getSupabase } from "@/services/supabase";
 
 export type HomeroomTerm = "hk1" | "hk2" | "ca_nam";
@@ -78,6 +77,8 @@ export interface HomeroomExportRow {
 }
 
 export async function exportHomeroomGradebook(opts: { className: string; schoolYear: string; rows: HomeroomExportRow[] }): Promise<Blob> {
+  // exceljs (~1 MB) chỉ tải khi bấm xuất file, không nằm trong JS ban đầu của trang.
+  const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
   const sheet = workbook.addWorksheet("Bảng điểm");
   const headers = ["STT", "Mã SV", "Họ và tên", "Ngày sinh", "Điểm KT HK1", "Hạnh kiểm HK1", "Điểm KT HK2", "Hạnh kiểm HK2", "TB cả năm", "Chuyên cần (%)", "Ghi chú"];

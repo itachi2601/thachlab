@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown, ChevronUp, Eye, Sparkles, Trash2 } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import { useMemo, useState } from "react";
+import { ChevronDown, ChevronUp, Database, Eye, Repeat, Sparkles, Trash2 } from "lucide-react";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
+import QuestionBankPickerModal, { normalizeQuestionText } from "@/components/admin/QuestionBankPickerModal";
 import { useToast } from "@/components/ui/Toast";
 import type {
   ExamQuestion,
@@ -68,6 +69,7 @@ export default function ExamDraftEditor({
   onChange,
   topicOptions = [],
   aiTopicCandidates = [],
+  grade = null,
 }: {
   bundle: LessonBundle;
   onChange: (next: LessonBundle) => void;
@@ -75,10 +77,18 @@ export default function ExamDraftEditor({
   topicOptions?: string[];
   /** YCCĐ của đúng bài đang chọn — danh mục đóng cho AI gắn nhãn (hẹp hơn topicOptions). */
   aiTopicCandidates?: string[];
+  /** Khối để lọc Ngân hàng câu hỏi khi "Thêm câu"/"Đổi câu khác" — null thì ẩn 2 nút đó. */
+  grade?: string | null;
 }) {
   const toast = useToast();
   const [aiBusy, setAiBusy] = useState(false);
   const questions = bundle.exam.questions;
+  // "add": mở bảng chọn nhiều câu để thêm cuối đề. { index }: đang thay đúng 1 câu tại vị trí đó.
+  const [bankPicker, setBankPicker] = useState<{ mode: "add" } | { mode: "swap"; index: number } | null>(null);
+  const excludeTexts = useMemo(
+    () => new Set(questions.map((q) => normalizeQuestionText(q.question))),
+    [questions],
+  );
 
   function setExam(patch: Partial<LessonBundle["exam"]>) {
     onChange({ ...bundle, exam: { ...bundle.exam, ...patch } });
@@ -99,7 +109,10 @@ export default function ExamDraftEditor({
 
   const aiTargets = questions
     .map((_, i) => i)
-    .filter((i) => !(questions[i].topic ?? "").trim() || !questions[i].form);
+    .filter(
+      (i) =>
+        !(questions[i].topic ?? "").trim() || !questions[i].form || !questions[i].difficulty,
+    );
   const aiAvailable = aiTopicCandidates.length > 0 && aiTargets.length > 0;
 
   async function runAutoTag() {
@@ -111,7 +124,17 @@ export default function ExamDraftEditor({
       let next = questions;
       for (const r of results) {
         next = next.map((q, i) =>
-          i === r.index ? { ...q, topic: r.topic ?? q.topic, form: r.form ?? q.form } : q,
+          i === r.index
+            ? {
+                ...q,
+                topic: r.topic ?? q.topic,
+                form: r.form ?? q.form,
+                // AI gợi ý độ khó khi câu chưa có — gắn tay đè lên (difficultySource: "gv")
+                // sẽ không bị AI ghi đè lại lần sau vì aiTargets chỉ nhắm câu còn thiếu.
+                difficulty: q.difficulty ? q.difficulty : (r.difficulty ?? q.difficulty),
+                difficultySource: q.difficulty ? q.difficultySource : r.difficulty ? "ai" : q.difficultySource,
+              }
+            : q,
         );
       }
       setQuestions(next);
@@ -178,7 +201,7 @@ export default function ExamDraftEditor({
 
       <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
         <span>
-          {questions.length} câu
+          Đã chọn <b className="text-white">{questions.length}</b> câu
           {incomplete > 0 ? (
             <span className="text-amber-300"> · {incomplete} câu còn thiếu, xem viền vàng bên dưới</span>
           ) : (
@@ -208,6 +231,7 @@ export default function ExamDraftEditor({
             topicOptions={topicOptions}
             onRemove={() => setQuestions(questions.filter((_, k) => k !== i))}
             onMove={(delta) => move(i, delta)}
+            onSwap={grade ? () => setBankPicker({ mode: "swap", index: i }) : undefined}
           />
         ))}
       </div>
@@ -223,7 +247,31 @@ export default function ExamDraftEditor({
             + {TYPE_LABELS[type]}
           </button>
         ))}
+        {grade && (
+          <button type="button" onClick={() => setBankPicker({ mode: "add" })} className="admin-chip">
+            <Database size={14} /> + Thêm từ ngân hàng câu hỏi
+          </button>
+        )}
       </div>
+
+      <QuestionBankPickerModal
+        open={bankPicker !== null}
+        onClose={() => setBankPicker(null)}
+        grade={grade}
+        excludeTexts={excludeTexts}
+        mode={bankPicker?.mode ?? "add"}
+        initialQtype={bankPicker?.mode === "swap" ? questions[bankPicker.index]?.type : undefined}
+        onConfirm={(picked) => {
+          if (bankPicker?.mode === "swap") {
+            update(bankPicker.index, picked[0]);
+            toast("success", "Đã đổi câu.");
+          } else {
+            setQuestions([...questions, ...picked]);
+            toast("success", `Đã thêm ${picked.length} câu.`);
+          }
+          setBankPicker(null);
+        }}
+      />
     </div>
   );
 }
@@ -236,6 +284,7 @@ function QuestionCardEditor({
   topicOptions,
   onRemove,
   onMove,
+  onSwap,
 }: {
   q: ExamQuestion;
   index: number;
@@ -244,6 +293,8 @@ function QuestionCardEditor({
   topicOptions: string[];
   onRemove: () => void;
   onMove: (delta: number) => void;
+  /** Mở bảng Ngân hàng câu hỏi để thay câu này bằng câu khác — undefined khi chưa rõ khối. */
+  onSwap?: () => void;
 }) {
   const [preview, setPreview] = useState(false);
   const issues = problems(q);
@@ -274,6 +325,11 @@ function QuestionCardEditor({
           <button type="button" onClick={() => setPreview((v) => !v)} title="Xem như học sinh thấy" className="rounded p-1 hover:text-white">
             <Eye size={14} />
           </button>
+          {onSwap && (
+            <button type="button" onClick={onSwap} title="Đổi câu khác từ ngân hàng câu hỏi" className="rounded p-1 hover:text-white">
+              <Repeat size={14} />
+            </button>
+          )}
           <button type="button" onClick={() => onMove(-1)} disabled={index === 0} className="rounded p-1 hover:text-white disabled:opacity-30">
             <ChevronUp size={14} />
           </button>

@@ -7,7 +7,7 @@ const featured = {
   title: "Vì sao cơ bắp co lại khi nâng tạ?",
   desc: "Tín hiệu thần kinh, sợi actin – myosin, lực kéo của cơ, xương làm đòn bẩy và khớp làm điểm xoay — một buổi tập là một bài cơ học.",
   href: "/blog/vi-sao-co-bap-co-lai-khi-nang-ta",
-  cover: "/images/blog/co-bap-co-lai-khi-nang-ta-cover.png",
+  cover: "/images/blog/co-bap-co-lai-khi-nang-ta-cover.webp",
 };
 
 const others = [
@@ -44,6 +44,7 @@ export default function PhysicsEverywhere() {
                   src={featured.cover}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>

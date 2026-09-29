@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle, ArrowRight, CalendarCheck, GraduationCap, Users } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
-import { fetchAttendanceRecords, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
+import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
 import { fetchClassAlerts, type StudentAlert } from "@/services/analytics";
 import TeacherLiveLearningPanel from "@/components/dashboard/TeacherLiveLearningPanel";
 
@@ -37,7 +37,7 @@ export default function TeacherThptOverview({
     let cancelled = false;
     fetchAttendanceSessions(classId)
       .then(async (sessions) => {
-        const rows = (await Promise.all(sessions.map((session) => fetchAttendanceRecords(session.id).catch(() => [])))).flat();
+        const rows = await fetchAttendanceRecordsForSessions(sessions.map((session) => session.id)).catch(() => []);
         if (cancelled) return;
         setSessionCount(sessions.length);
         setAttendance(rows);

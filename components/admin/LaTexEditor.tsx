@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { latexToHtml, validateLatexSyntax } from "@/services/latex-converter";
 import { parseAzotaIframe, formatAzotaEmbed } from "@/services/azota-formatter";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 
 interface Props {
   value: string;
@@ -14,9 +15,10 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
   const initialMode = value.includes("<") && value.includes(">") ? "html" : "latex";
   const [mode, setMode] = useState<"latex" | "azota" | "html">(initialMode);
   const [latexText, setLatexText] = useState(value);
-  const [htmlPreview, setHtmlPreview] = useState("");
+  const [htmlPreview, setHtmlPreview] = useState(() =>
+    initialMode === "latex" && validateLatexSyntax(value).valid ? latexToHtml(value, "").html : "",
+  );
   const [errors, setErrors] = useState<string[]>([]);
-  const [showPreview, setShowPreview] = useState(false);
   const [imageSlug, setImageSlug] = useState("");
 
   const imageBase = imageSlug.trim() ? `/lessons/${imageSlug.trim().replace(/^\/+|\/+$/g, "")}/media` : "";
@@ -70,47 +72,37 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
   return (
     <div className="space-y-3">
       {/* Mode Toggle */}
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setMode("latex")}
-            className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
-              mode === "latex"
-                ? "bg-primary text-white"
-                : "bg-white/5 text-slate-400 hover:bg-white/10"
-            }`}
-          >
-            📐 LaTeX
-          </button>
-          <button
-            onClick={() => setMode("azota")}
-            className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
-              mode === "azota"
-                ? "bg-primary text-white"
-                : "bg-white/5 text-slate-400 hover:bg-white/10"
-            }`}
-          >
-            🔗 AZOTA
-          </button>
-          <button
-            onClick={() => setMode("html")}
-            className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
-              mode === "html"
-                ? "bg-primary text-white"
-                : "bg-white/5 text-slate-400 hover:bg-white/10"
-            }`}
-          >
-            ♯ HTML
-          </button>
-        </div>
-        {mode === "latex" && (
-          <button
-            onClick={() => setShowPreview(!showPreview)}
-            className="text-xs text-slate-400 hover:text-slate-200 transition-colors"
-          >
-            {showPreview ? "✓ Preview On" : "Preview Off"}
-          </button>
-        )}
+      <div className="flex flex-wrap gap-2">
+        <button
+          onClick={() => setMode("latex")}
+          className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
+            mode === "latex"
+              ? "bg-primary text-white"
+              : "bg-white/5 text-slate-400 hover:bg-white/10"
+          }`}
+        >
+          📐 LaTeX
+        </button>
+        <button
+          onClick={() => setMode("azota")}
+          className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
+            mode === "azota"
+              ? "bg-primary text-white"
+              : "bg-white/5 text-slate-400 hover:bg-white/10"
+          }`}
+        >
+          🔗 AZOTA
+        </button>
+        <button
+          onClick={() => setMode("html")}
+          className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
+            mode === "html"
+              ? "bg-primary text-white"
+              : "bg-white/5 text-slate-400 hover:bg-white/10"
+          }`}
+        >
+          ♯ HTML
+        </button>
       </div>
 
       {/* LaTeX Mode */}
@@ -131,12 +123,14 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
                 : "Ảnh phải nằm ở public/lessons/<slug>/media/ trong repo"}
             </span>
           </label>
-          <textarea
-            value={latexText}
-            onChange={(e) => handleLatexChange(e.target.value)}
-            placeholder={
-              placeholder ||
-              `Viết LaTeX content ở đây…
+
+          <div className="grid gap-3 lg:grid-cols-2">
+            <textarea
+              value={latexText}
+              onChange={(e) => handleLatexChange(e.target.value)}
+              placeholder={
+                placeholder ||
+                `Viết LaTeX content ở đây…
 
 \\section{Tiêu đề chính}
 Nội dung bài học…
@@ -150,10 +144,25 @@ Giải thích thêm…
 \\item Điểm 1
 \\item Điểm 2
 \\end{itemize}`
-            }
-            rows={8}
-            className={`${inputCls} w-full font-mono`}
-          />
+              }
+              rows={14}
+              className={`${inputCls} w-full font-mono`}
+            />
+            <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+              <p className="mb-2 text-xs font-semibold text-blue-300">👁️ Xem trước (song song):</p>
+              {errors.length > 0 ? (
+                <p className="text-xs text-red-300">Sửa lỗi cú pháp bên trái để xem lại bản render.</p>
+              ) : htmlPreview ? (
+                <div
+                  className="prose prose-invert max-w-none overflow-y-auto text-sm text-slate-300"
+                  style={{ maxHeight: "22rem" }}
+                  dangerouslySetInnerHTML={{ __html: htmlPreview }}
+                />
+              ) : (
+                <p className="text-xs text-slate-500">Gõ nội dung bên trái để xem bản render ở đây.</p>
+              )}
+            </div>
+          </div>
 
           {/* Errors */}
           {errors.length > 0 && (
@@ -166,17 +175,6 @@ Giải thích thêm…
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
-
-          {/* Preview */}
-          {showPreview && errors.length === 0 && htmlPreview && (
-            <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
-              <p className="mb-2 text-xs font-semibold text-blue-300">👁️ Preview:</p>
-              <div
-                className="prose prose-invert max-w-none text-sm text-slate-300"
-                dangerouslySetInnerHTML={{ __html: htmlPreview }}
-              />
             </div>
           )}
 
@@ -296,13 +294,25 @@ Giải thích thêm…
 
       {/* HTML Mode */}
       {mode === "html" && (
-        <textarea
-          value={latexText}
-          onChange={(e) => handleHtmlChange(e.target.value)}
-          placeholder={placeholder || "Nội dung HTML + công thức math (dùng $...$ hoặc $$...$$ cho LaTeX math)"}
-          rows={8}
-          className={`${inputCls} w-full font-mono`}
-        />
+        <div className="grid gap-3 lg:grid-cols-2">
+          <textarea
+            value={latexText}
+            onChange={(e) => handleHtmlChange(e.target.value)}
+            placeholder={placeholder || "Nội dung HTML + công thức math (dùng $...$ hoặc $$...$$ cho LaTeX math)"}
+            rows={14}
+            className={`${inputCls} w-full font-mono`}
+          />
+          <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+            <p className="mb-2 text-xs font-semibold text-blue-300">👁️ Xem trước (song song, giống trang học sinh):</p>
+            {latexText.trim() ? (
+              <div className="overflow-y-auto text-sm text-slate-300" style={{ maxHeight: "22rem" }}>
+                <ContentHtml html={latexText} className="exam-content block" />
+              </div>
+            ) : (
+              <p className="text-xs text-slate-500">Gõ HTML bên trái để xem bản render ở đây.</p>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

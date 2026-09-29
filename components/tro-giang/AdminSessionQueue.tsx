@@ -23,7 +23,13 @@ function detailLine(s: TaPendingSession): string {
     const students = s.phudao_students?.length
       ? `${s.phudao_students.length} em (${s.phudao_students.join(", ")})`
       : "chưa ghi tên em nào";
-    return `${students} · ${s.homework_given || "chưa ghi bài giao"} · ${s.student_recap_ok ? "HS trình bày lại được" : "HS chưa trình bày lại được"}`;
+    const recap =
+      s.student_recap_ok === null
+        ? "xác nhận bằng bài tự kiểm tra (quy chế mới)"
+        : s.student_recap_ok
+          ? "HS trình bày lại được"
+          : "HS chưa trình bày lại được";
+    return `${students} · ${s.homework_given || "chưa ghi bài giao"} · ${recap}`;
   }
   if (s.session_type === "chambai") return `${s.papers_graded ?? 0} bài đã chấm`;
   if (s.session_type === "video") return `${s.video_tier === "dung_ky" ? "Dựng kỹ" : "Đơn giản"} · ${s.video_url ?? "chưa có link"}`;

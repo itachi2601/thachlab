@@ -7,7 +7,7 @@ import { formatHours, formatVnd } from "@/lib/tro-giang/format";
 import {
   createFlag,
   fetchAssistants,
-  getMonthlyScore,
+  getMonthlyScores,
   type TaAssistant,
   type TaMonthlyScore,
 } from "@/lib/tro-giang/queries";
@@ -44,9 +44,7 @@ export default function AdminMonthlyTable({ reloadKey = 0 }: { reloadKey?: numbe
     let cancelled = false;
     fetchAssistants()
       .then(async (assistants) => {
-        const scores = await Promise.all(
-          assistants.map((a) => getMonthlyScore(a.id, `${month}-01`)),
-        );
+        const scores = await getMonthlyScores(assistants.map((a) => a.id), `${month}-01`);
         if (!cancelled) setRows(assistants.map((assistant, i) => ({ assistant, score: scores[i] })));
       })
       .catch(() => {

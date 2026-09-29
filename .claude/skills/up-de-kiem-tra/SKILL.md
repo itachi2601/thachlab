@@ -1,19 +1,13 @@
 ---
 name: up-de-kiem-tra
 description: >-
-  Nhận MỘT file đề trắc nghiệm — PDF hoặc Word (.docx) kiểu Azota: "Câu 1.", phương
-  án A–D, đáp án đánh dấu bằng "*", có/không kèm PHẦN I/II/III, công thức MathType — rồi
-  đăng thẳng đề đó vào một bài học trên LMS thachlab: gắn vào mục "Kiểm tra"
-  (và/hoặc "Luyện tập") của đúng Lớp → Chương → Bài, chấm điểm tự động. Dùng skill
-  này khi người dùng đính kèm một file đề thi/đề kiểm tra (.pdf hoặc .docx) và nói
-  "up đề này", "đăng đề kiểm tra", "đưa đề này lên thachlab", "up đề lên lớp X bài Y",
-  hoặc chỉ thả file đề kèm ý muốn đưa lên web. KHÁC với dang-bai-hoc-thachlab (đăng
-  trọn bài học từ .tex: lý thuyết + dạng bài + đề) — skill này chỉ lo phần ĐỀ.
-  KHÁC với de-vat-ly-thpt (soạn/chuẩn hoá đề ra file Word Azota) — skill này ghi
-  vào database, không xuất Word. Từ 9/2026 đường chính là trang Đăng đề
-  (/quan-tri/dang-de): văn bản kiểu Azota kèm hai dòng "Chủ đề:" (yêu cầu cần đạt) và
-  "Dạng:" (lý thuyết/bài tập) cho từng câu; gói JSON qua /quan-tri/nhap-bai chỉ còn là
-  đường dự phòng khi cần vẽ hình SVG hoặc ảnh scan.
+  Nhận MỘT file đề trắc nghiệm PDF/Word kiểu Azota ("Câu 1.", A–D, đáp án đánh dấu "*",
+  có/không PHẦN I/II/III, MathType) và đăng vào mục Kiểm tra/Luyện tập của đúng Lớp →
+  Chương → Bài trên LMS thachlab, chấm tự động. Dùng khi đính kèm file đề và nói "up đề
+  này", "đăng đề kiểm tra", "đưa đề lên thachlab", "up đề lên lớp X bài Y". Đường chính:
+  trang /quan-tri/dang-de với dòng "Chủ đề:"/"Dạng:" mỗi câu; JSON qua /quan-tri/nhap-bai
+  chỉ khi cần vẽ SVG/ảnh scan. KHÁC dang-bai-hoc-thachlab (trọn bài từ .tex) và
+  de-vat-ly-thpt (xuất Word, không ghi DB).
 ---
 
 # Up đề kiểm tra Word → mục Kiểm tra/Luyện tập trên thachlab
@@ -95,12 +89,97 @@ câu cũng được, trang tự bỏ khỏi đề dẫn. Công thức trong `$�
    nội dung đề. Trang tách câu ngay khi có văn bản.
 5. Đọc cột phải: dòng `n/n câu dựng được`, ghi chú vàng (câu thiếu đáp án/phương án), bảng
    đáp án, và bảng **Phân loại câu** phải là **n/n câu đã gắn đủ**, không ô nào viền vàng.
-6. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
+6. **Bấm nút "AI gắn nhãn"** (biểu tượng Sparkles, cạnh bảng Phân loại câu) đúng 1 lần trước
+   khi đăng — nút này gắn cả `topic`/`form` CÒN THIẾU lẫn **độ khó (Dễ/Trung bình/Khó)**, kể cả
+   khi câu đã có sẵn `Chủ đề:`/`Dạng:` từ văn bản dán vào (định dạng dán không có dòng cho độ
+   khó, nên câu nào cũng cần qua bước này để không phải chạy backfill riêng sau — xem
+   `scripts/backfill-question-bank-difficulty.mts`, chỉ nên dùng cho đề CŨ đã lỡ đăng thiếu).
+   Đợi toast "AI đã gắn nhãn cho n/n câu", xem lại vài câu trong bảng Phân loại nếu nghi ngờ mức
+   độ AI chọn chưa hợp lý (sửa tay được, đổi nguồn từ "(AI)" sang "(GV)").
+7. Mục 3: Tên đề, thời gian, Lớp → Chương → Bài, chọn **Kiểm tra** (mặc định) / Luyện tập /
    BTVN; mục đã có đề thì "Giữ + thêm" hay "Thay" — hỏi người dùng nếu đề cũ là đề thật.
    Bấm **Đăng đề**, theo dõi log, mở link bài học kiểm tra.
 
 Ảnh: trang chỉ nhận ảnh khi đọc từ `.docx`; văn bản dán không mang ảnh. Đề có hình cần vẽ
 SVG hoặc ảnh scan → đi đường dự phòng bên dưới.
+
+### Có sẵn file `.docx` đã chuẩn (từ skill `azota`) — kéo-thả bằng relay, không gõ lại thành văn bản
+
+Nếu đề đã qua `xuat_thachlab.py` (skill `azota`) — tức đã có `*` trước đáp án, `Lời giải:`,
+`Chủ đề:`/`Dạng:` sẵn trong file — **đừng đọc lại rồi gõ thành `de.txt`**, phí token và dễ gõ
+sai công thức. Trang Đăng đề có nút "Tải file Word" (một `<input type="file">` ẩn) nhận
+thẳng `.docx`, tự trích câu/đáp án/ảnh — nhưng Browser pane không kéo-thả file thật từ Finder
+được và không gán `input.value` bằng JS (trình duyệt chặn vì lý do bảo mật). Cách chạy được:
+dùng `paste_relay.py` y hệt bước dán văn bản, nhưng bên phía trang đích tạo một `File` từ
+byte giải mã rồi gán vào `input.files` (được phép, khác `.value`):
+
+```bash
+python3 .claude/skills/up-de-kiem-tra/scripts/paste_relay.py de_thachlab.docx \
+  --target https://thachlab.id.vn/quan-tri/dang-de/ &
+```
+
+`navigate` tab tới URL relay in ra, đợi ~3s quay lại trang đích kèm `#b64=…`, rồi chạy JS này
+(khác đoạn giải mã textarea ở "Đăng qua trang admin" — đây tạo file, không gán text):
+
+```js
+const b64 = location.hash.replace(/^#b64=/, '');
+const bin = atob(b64);
+const u8 = new Uint8Array(bin.length);
+for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+history.replaceState(null, '', location.pathname);
+const file = new File([u8], 'de_thachlab.docx',
+  { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+const dt = new DataTransfer();
+dt.items.add(file);
+const input = document.querySelector('input[type=file]');
+input.files = dt.files;
+input.dispatchEvent(new Event('change', { bubbles: true }));
+```
+
+Trang tự đọc file, hiện `n/n câu dựng được · N ảnh`. Bấm **"AI gắn nhãn"** một lần (xem
+mục "Đăng qua trang admin" bước 6 — gắn cả độ khó, kể cả khi file `.docx` đã có sẵn
+`Chủ đề:`/`Dạng:`) trước khi set Lớp/Chương/Bài/Tên đề/Thời gian và bấm Đăng như bình thường — các `<select>` phải gán bằng **native setter + `change`**
+(giống textarea, React bỏ qua gán trực tiếp):
+
+```js
+function setSelect(sel, value) {
+  const setter = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(sel), 'value').set;
+  setter.call(sel, value);
+  sel.dispatchEvent(new Event('change', { bubbles: true }));
+}
+```
+
+Nút Đăng đề bị `disabled` khi còn nhãn "(không có trong danh mục)" hoặc còn cảnh báo đỏ
+"Thiếu hình ở N câu" (site tự dò câu nhắc "hình vẽ/đồ thị" mà không thấy ảnh — xem skill
+`dang-de-hang-loat` mục "Thiếu hình" về cách xử lý). Muốn biết vì sao nút đang khoá, đọc
+`btn.disabled` bằng `javascript_tool` thay vì đoán qua ảnh chụp màn hình.
+
+**Nhiều agent chạy song song → KHÔNG để mỗi agent tự làm bước Đăng này** (một Browser pane
+dùng chung trong phiên, agent nọ điều hướng tab đè lên agent kia — xem
+`feedback_batch_agent_upload_efficiency`). Để từng agent dừng lại ở việc tạo ra file
+`de_thachlab.docx` đã soát sạch, rồi **phiên chính tự đăng tuần tự** bằng kỹ thuật relay ở
+trên cho từng file một — vừa an toàn vừa không cần agent nào chạm service-role key.
+
+**`paste_relay.py` chiếm cứng cổng 8791 — có phiên khác đang chạy song song (rất hay gặp,
+xem `project_thachlab_concurrent_sessions`) thì bị `OSError: Address already in use`.** Đừng
+`kill` tiến trình đang chiếm cổng (có thể là việc dở của phiên khác) — thêm `--port <số khác>`
+và `navigate` tab tới đúng `http://127.0.0.1:<port>/relay.html`.
+
+**Browser pane bị "hidden" giữa phiên** (người dùng chuyển sang xem pane khác trong app) làm
+mọi lệnh dựa trên ảnh chụp màn hình (`computer`: click theo toạ độ, `type`, `screenshot`) báo
+lỗi "the Browser pane is not displayed". `find` (lấy `ref`), `read_page`, `javascript_tool`
+vẫn chạy bình thường vì không cần khung hình — và bất ngờ là **`form_input` cũng chạy được cả
+khi pane ẩn** (test 27/9/2026: gán được cả `<input type=text>`/`type=number` lẫn `<select>`
+khi pane hidden). Gặp lỗi "not displayed": chuyển hẳn sang `find` lấy `ref` rồi `form_input`
+để điền field, và `btn.click()` qua `javascript_tool` để bấm nút — không cần đợi pane hiện lại.
+
+**Sửa nội dung một câu ngay trên trang (ô nhỏ trong bảng preview, vd đáp án Phần III) bằng
+`javascript_tool` gán trực tiếp `input.value` qua native setter + `dispatchEvent('input')`
+KHÔNG chắc cập nhật state React của trang này** — DOM property đổi thật (đọc lại thấy giá trị
+mới), nhưng khung cảnh báo lỗi tổng hợp phía dưới (vd "đáp án dài quá 4 ký tự") vẫn giữ nguyên
+văn bản cũ, không tính lại (test 27/9/2026, đề "Trấn Biên Đồng Nai"). Đáng tin hơn: sửa thẳng
+file `.docx` nguồn (`python-docx`, tìm đúng paragraph "Đáp án: …") rồi `paste_relay.py` lại từ
+đầu — chậm hơn một nhịp nhưng chắc ăn, và đằng nào cũng cần giữ file nguồn đúng để lưu log.
 
 ## Đường dự phòng — gói JSON qua /quan-tri/nhap-bai (khi cần hình SVG / ảnh scan)
 
@@ -135,7 +214,10 @@ quan trọng ngang phần quy trình.
   `explanation`. Nội dung là **HTML thuần**, công thức để nguyên `$...$` / `$$...$$`.
 - Ảnh: **ưu tiên trích thẳng ảnh gốc**, đừng vẽ lại nếu không cần — đề đã có ảnh nhúng
   (đồ thị vẽ bằng Excel/GeoGebra rồi chèn ảnh, ảnh chụp, sơ đồ scan) thì lấy đúng file đó
-  (`.docx` → `word/media/*`; PDF → `pdfimages`), không tốn token vẽ/soát lại. Base64 vào
+  (`.docx` → `word/media/*`; PDF → `pdfimages`), không tốn token vẽ/soát lại. **Nén trước
+  khi encode base64** (rộng tối đa ~1200px, ví dụ `sharp` hoặc `magick <in> -resize 1200x -quality
+  80 <out>`) — ảnh trích thẳng từ Word/PDF scan thường 2–5 MB, trang không tự nén khi upload lên
+  Storage (xem quy tắc "Đăng nội dung — luôn tối ưu tốc độ tải" ở `AGENTS.md`). Base64 vào
   `raster_images[]`, `placeholder` dạng `media/<ten>.jpg`, dùng đúng chuỗi đó làm `src`.
   Bọc `<img>` trong khung nền sáng bo góc (xem `references/docx-de-format.md` §"Ảnh trích
   từ file gốc") để không chỏi với nền tối `#0B1020` của site. Trang tự upload lên Storage
@@ -347,7 +429,19 @@ Nội dung + ảnh Storage **không cần deploy**. Chỉ chạy `./scripts/depl
 - **Không bao giờ tự nhập mật khẩu** (đăng nhập admin, mật khẩu DB, service-role key) dù người
   dùng dán trong chat. Không có phiên admin trong Browser pane → dừng, nhờ người dùng đăng nhập.
 - **Luôn xem preview + bảng validate** trước khi bấm Đăng. Không bỏ qua `errors`.
-- Nếu mục Kiểm tra/Luyện tập của bài đã có đề thật → **hỏi** trước khi chọn "Thay".
-- Mỗi lần Đăng tạo một dòng `exams` mới (không có khóa tự nhiên). Up lại cùng đề → chọn "Thay".
+- Nếu mục Kiểm tra/Luyện tập của bài đã có đề thật → **hỏi** trước khi chọn "Thay". Riêng khi
+  mục đó đang gom NHIỀU đề cùng lúc (kiểu "Đề thi thử các trường, sở…" chứa hàng chục đề) thì
+  **luôn chọn "Giữ + thêm"** — "Thay" ở đây xoá sạch toàn bộ đề cũ trong mục, không chỉ đề vừa
+  đăng lại.
+- Mỗi lần Đăng tạo một dòng `exams` mới (không có khóa tự nhiên). Up lại cùng đề → chọn "Thay"
+  (mục đơn-đề) hoặc đăng thêm bản đã sửa rồi tắt xuất bản bản lỗi (xem mục sửa/gỡ bên dưới).
+- **Trước khi đăng, kiểm tra đề đã có sẵn chưa** nếu ngờ trùng nguồn (ví dụ xử lý từ nhiều thư
+  mục khác nhau của cùng một bộ đề thi thử) — gõ tên đề vào ô tìm ở `/quan-tri/sua-de`; có kết
+  quả thì bỏ qua, đừng đăng trùng (xem bài học "trùng thư mục nguồn" ở skill `dang-de-hang-loat`).
+- **Sửa/gỡ một đề đã lỡ đăng sai** (ví dụ phát hiện thiếu ảnh sau khi Đăng): sửa file, đăng lại
+  bằng "Giữ + thêm" để tạo bản mới đúng, rồi vào `/quan-tri/sua-de`, tìm bản CŨ theo mã `#N`,
+  bấm vào, bỏ tick **"Xuất bản (học sinh thấy được)"**, bấm Lưu — chuyển thành "Bản nháp", ẩn
+  khỏi học sinh mà không đụng tới `exam_ids` hay xoá dữ liệu. Không tự chạy SQL `UPDATE`/
+  `DELETE` lên `lesson_items`/`exams` qua `supabase db query --linked` (xem `AGENTS.md`).
 - Không `git push` / deploy khi working tree có thay đổi không liên quan chưa được xác nhận.
 - Chỉ commit/deploy đúng phần vừa làm nếu buộc phải đụng tới code.

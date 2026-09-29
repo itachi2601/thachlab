@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AlertOctagon, AlertTriangle, Check, CalendarCheck, CheckCheck, Clock3, Copy, Grid3x3, History, LockKeyhole, NotebookPen, Plus, RefreshCw, Save, Search, ShieldCheck, Unlock, UserCheck, Users, Wrench, X, XCircle } from "lucide-react";
-import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, setMachineSelectionOpen, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
+import { closeAttendanceSession, createAttendanceSession, fetchAttendanceRecords, fetchAttendanceRecordsForSessions, fetchAttendanceSessions, setAttendanceRecord, setAttendanceRecordBonus, setAttendanceRecordMachine, setAttendanceRecordNote, setMachineSelectionOpen, updateAttendanceSessionNote, type AttendanceRecord, type AttendanceSession, type AttendanceStatus } from "@/services/course-attendance";
 import { createAttendanceMachinePhotoUrl, fetchAllMachines, fetchAttendanceMachinePhotos, fetchAttendanceMachineScores, fetchSessionMachines, groupMachinesByType, groupMachinesByWorkshop, setSessionMachines, updateAttendanceMachineScore, type AttendanceMachinePhoto, type AttendanceMachineScore, type Machine, type MachineCheckpoint } from "@/services/attendance-machine";
 import { createEquipmentBreakdownPhotoUrl, fetchAdminProfiles, fetchEquipmentBreakdownReports, reportEquipmentBreakdown, resolveEquipmentBreakdown, startEquipmentRepair, type AdminProfile, type EquipmentBreakdownReport } from "@/services/equipment-breakdown";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -31,7 +31,7 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
   const selected=sessions.find(item=>item.id===selectedId)??null;
   const loadSessions=useCallback(()=>fetchAttendanceSessions(courseId).then(rows=>{setSessions(rows);setSelectedId(current=>rows.some(item=>item.id===current)?current:rows[0]?.id??null)}).catch(cause=>setError(cause instanceof Error?cause.message:"Không tải được phiên điểm danh.")),[courseId]);
   useEffect(()=>{void loadSessions()},[loadSessions]);
-  useEffect(()=>{let cancelled=false;Promise.all(sessions.map(session=>fetchAttendanceRecords(session.id).catch(()=>[]))).then(rows=>{if(!cancelled)setAllRecords(rows.flat())});return()=>{cancelled=true}},[sessions]);
+  useEffect(()=>{let cancelled=false;fetchAttendanceRecordsForSessions(sessions.map(session=>session.id)).catch(()=>[]).then(rows=>{if(!cancelled)setAllRecords(rows)});return()=>{cancelled=true}},[sessions]);
   useEffect(()=>{if(!selectedId)return;void fetchAttendanceRecords(selectedId).then(setRecords).catch(cause=>setError(cause instanceof Error?cause.message:"Không tải được kết quả điểm danh."))},[selectedId]);
   const loadMachineData=useCallback(()=>{if(!selectedId)return;void fetchAttendanceMachinePhotos(selectedId).then(setMachinePhotos).catch(()=>undefined);void fetchAttendanceMachineScores(selectedId).then(setMachineScores).catch(()=>undefined)},[selectedId]);
   useEffect(()=>{loadMachineData()},[loadMachineData]);

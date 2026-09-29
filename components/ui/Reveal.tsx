@@ -4,11 +4,48 @@
  * components/ui/Reveal.tsx
  *
  * Bọc nội dung để hiện dần + trượt lên khi cuộn tới (một lần duy nhất).
- * Dùng framer-motion whileInView — tôn trọng prefers-reduced-motion.
+ * Phần framer-motion nằm ở RevealMotion.tsx và được nạp chậm (React.lazy)
+ * để trang chủ không tải framer-motion (~140 KB) trong JS ban đầu.
+ *
+ * Trong lúc chờ chunk, fallback render đúng trạng thái ban đầu của hiệu ứng
+ * (ẩn + dịch xuống 28px) — giống hệt HTML mà motion.div vốn prerender —
+ * nên không có nháy nội dung, không nhảy layout; khi chunk về, phần tử đang
+ * trong khung nhìn sẽ hiện dần như trước.
+ *
+ * ErrorBoundary (LazyErrorBoundary, dùng chung — xem components/ui/LazyErrorBoundary.tsx):
+ * nếu việc tải chunk RevealMotion lỗi (mất mạng, chunk 404…), KHÔNG được kẹt ở
+ * fallback opacity:0 vĩnh viễn — học sinh sẽ tưởng nhầm trang trắng/thiếu nội
+ * dung. Bắt lỗi rồi hiện thẳng nội dung ở trạng thái cuối (opacity:1, không
+ * dịch), bỏ qua hiệu ứng, còn hơn ẩn mất nội dung.
  */
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
+
+const RevealMotion = lazy(() => import("@/components/ui/RevealMotion"));
+
+// Chờ chunk RevealMotion tối đa ngần này rồi tự hiện nội dung dù chunk chưa về —
+// phòng trường hợp lỗi tải chunk không nổi lên thành exception bắt được bởi
+// ErrorBoundary (đã quan sát thấy: Suspense có thể kẹt mãi ở fallback thay vì
+// chuyển sang trạng thái lỗi khi chunk 404/mất mạng), khiến nội dung ẩn vĩnh viễn.
+const CHUNK_TIMEOUT_MS = 4000;
+
+function PendingFallback({ children, className }: { children: ReactNode; className?: string }) {
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setTimedOut(true), CHUNK_TIMEOUT_MS);
+    return () => clearTimeout(t);
+  }, []);
+
+  return timedOut ? (
+    <div className={className}>{children}</div>
+  ) : (
+    <div className={className} style={{ opacity: 0, transform: "translateY(28px)" }}>
+      {children}
+    </div>
+  );
+}
 
 export function Reveal({
   children,
@@ -19,19 +56,17 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
-
-  if (reduced) return <div className={className}>{children}</div>;
+  // Hiện đúng trạng thái CUỐI (đã hiện hẳn) khi tải chunk lỗi — không phải trạng thái
+  // đầu ẩn/opacity:0 như lúc đang chờ, tránh học sinh tưởng trang trắng/mất nội dung.
+  const shownFallback = <div className={className}>{children}</div>;
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
-    >
-      {children}
-    </motion.div>
+    <LazyErrorBoundary fallback={shownFallback}>
+      <Suspense fallback={<PendingFallback className={className}>{children}</PendingFallback>}>
+        <RevealMotion delay={delay} className={className}>
+          {children}
+        </RevealMotion>
+      </Suspense>
+    </LazyErrorBoundary>
   );
 }

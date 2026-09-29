@@ -202,6 +202,23 @@ export function latexToHtml(latexText: string, imageBase = ""): ConversionResult
   html = html.replace(/\\textcolor\{[^}]+\}/g, "");
   html = html.replace(/\\\\\s*/g, "<br />");
 
+  // --- Bước 11.5: dòng liệt kê kiểu "Bước 1:", "- ", "a)", "1)" gõ mỗi ý một Enter
+  // mà không bọc trong itemize/+ (Bước 9-10) — nguồn của bug "các bước thí nghiệm/
+  // ý dính liền một câu": HTML mặc định gộp \n đơn thành khoảng trắng, không xuống
+  // hàng. Chỉ chèn <br /> trước dòng NHẬN RA được là một ý mới, giữ nguyên văn xuôi
+  // thường (xuống dòng tuỳ ý lúc soạn .tex vẫn gộp lại đúng quy ước LaTeX như cũ).
+  const STEP_LINE_RE =
+    /^[ \t]*(?:Bước\s*\d+|B\d+)\s*[:.)]|^[ \t]*[-•]\s+\S|^[ \t]*\(?[a-dA-D]\)\s+\S|^[ \t]*\(?\d{1,2}\)\s+\S/;
+  html = html
+    .split(/\n\n+/)
+    .map((para) =>
+      para
+        .split("\n")
+        .map((line, i) => (i > 0 && STEP_LINE_RE.test(line) ? "<br />" + line : line))
+        .join("\n"),
+    )
+    .join("\n\n");
+
   // --- Bước 12: đoạn văn ---
   html = html.replace(/\n\n+/g, "</p><p>");
   html = "<p>" + html + "</p>";

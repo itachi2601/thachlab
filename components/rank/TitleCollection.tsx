@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Check, Lock, Sparkles } from "lucide-react";
 import Button from "@/components/ui/Button";
 import {
@@ -15,6 +16,7 @@ import {
   type SpecialistProgress,
   type TitleLevel,
 } from "@/features/rank/types";
+import { titleBadgeLockedSrc, titleBadgeSrc } from "@/features/rank/badge-assets";
 
 function nextRequirement(t: RankTitle): string {
   if (t.kind === "achievement") return t.description;
@@ -28,15 +30,13 @@ function nextRequirement(t: RankTitle): string {
   if (!t.active) return "Chưa gắn chủ đề — chờ giáo viên";
   const r = levelRank(t.level);
   if (r === 0) {
-    return `Thức Tỉnh: ≥ ${p.min_questions} câu (đã ${p.n}), chạm ≥ ½ chủ đề (${p.covered}/${p.total_topics}), đúng ≥ ${p.awaken_accuracy}% (đang ${p.acc}%)`;
+    return `Thức Tỉnh: giải đúng ≥ ${p.de_need} câu Dễ (đã ${p.de_correct})`;
   }
   if (r === 1) {
-    return `Làm Chủ: ≥ ${p.min_questions * 2} câu (đã ${p.n}), đủ ${p.total_topics} chủ đề (${p.covered}), đúng ≥ ${p.master_accuracy}% (đang ${p.acc}%)`;
+    return `Làm Chủ: giải đúng ≥ ${p.tb_need} câu Trung bình (đã ${p.tb_correct})`;
   }
   if (r === 2) {
-    return p.legend_exam_id
-      ? `Huyền Thoại: đề thử thách ≥ ${p.legend_accuracy}% (tốt nhất: ${p.legend_best === null ? "chưa làm" : `${p.legend_best}%`})`
-      : "Huyền Thoại: chờ giáo viên giao đề thử thách";
+    return `Huyền Thoại: giải đúng ≥ ${p.kho_need} câu Khó (đã ${p.kho_correct})`;
   }
   return "Đã đạt mức cao nhất";
 }
@@ -50,12 +50,8 @@ function progressPct(t: RankTitle): number {
   if (!p || !t.active) return 0;
   const r = levelRank(t.level);
   if (r >= 3) return 100;
-  const need = r === 0 ? p.min_questions : p.min_questions * 2;
-  const acc = r === 0 ? p.awaken_accuracy : p.master_accuracy;
-  const qPart = Math.min(1, p.n / Math.max(1, need));
-  const aPart = Math.min(1, p.acc / Math.max(1, acc));
-  const cPart = p.total_topics > 0 ? Math.min(1, p.covered / (r === 0 ? Math.max(1, Math.ceil(p.total_topics / 2)) : p.total_topics)) : 0;
-  return Math.round(((qPart + aPart + cPart) / 3) * 100);
+  const [have, need] = r === 0 ? [p.de_correct, p.de_need] : r === 1 ? [p.tb_correct, p.tb_need] : [p.kho_correct, p.kho_need];
+  return Math.round(Math.min(1, have / Math.max(1, need)) * 100);
 }
 
 export default function TitleCollection({
@@ -95,6 +91,8 @@ export default function TitleCollection({
                 const wearing = displayCode === t.code;
                 const pct = progressPct(t);
                 const wearLevel = (t.level ?? null) as TitleLevel | null;
+                // Ảnh huy hiệu: đã mở → cấp cao nhất; chưa mở → ảnh Thức Tỉnh làm xám. Không có ảnh → icon cũ.
+                const badgeSrc = unlocked ? titleBadgeSrc(t.code, wearLevel) : titleBadgeLockedSrc(t.code);
                 return (
                   <article
                     key={t.code}
@@ -103,13 +101,23 @@ export default function TitleCollection({
                     } ${!t.active && t.kind === "specialist" ? "opacity-60" : ""}`}
                   >
                     <div className="flex items-start gap-3">
-                      <span
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
-                          unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
-                        }`}
-                      >
-                        {unlocked ? <Sparkles size={18} /> : <Lock size={16} />}
-                      </span>
+                      {badgeSrc ? (
+                        <Image
+                          src={badgeSrc}
+                          alt=""
+                          width={48}
+                          height={48}
+                          className={`h-12 w-12 shrink-0 ${unlocked ? "" : "opacity-40 grayscale"}`}
+                        />
+                      ) : (
+                        <span
+                          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+                            unlocked ? "bg-amber-400/20 text-amber-200" : "bg-white/5 text-slate-500"
+                          }`}
+                        >
+                          {unlocked ? <Sparkles size={18} /> : <Lock size={16} />}
+                        </span>
+                      )}
                       <div className="min-w-0 flex-1">
                         <p className={`font-display font-semibold ${unlocked ? "text-white" : "text-slate-300"}`}>{t.name}</p>
                         <p className="text-xs text-slate-500">{t.description}</p>

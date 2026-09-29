@@ -1,7 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
 import type { ExamQuestion, QuestionResponse, QuestionStatus } from "@/features/exams/types";
 import {
   gradeQuestion,
@@ -30,6 +30,56 @@ const CARD_TONE: Record<QuestionStatus, string> = {
   skipped: "border-white/10",
   manual: "border-violet-400/30",
 };
+
+/**
+ * Hiệu ứng "nảy" nhẹ (scale 1 → 1.015 → 1, 0.16s) mỗi khi phương án VỪA được
+ * chọn — trước dùng framer-motion `animate={{ scale: [1,1.015,1] }}`, nay đổi
+ * sang CSS thuần: bật class `.is-pulsing` trong 160ms rồi tự tắt.
+ */
+function usePickPulse(active: boolean): boolean {
+  const [pulsing, setPulsing] = useState(false);
+  const wasActive = useRef(active);
+
+  useEffect(() => {
+    if (active && !wasActive.current) {
+      setPulsing(true);
+      const timer = window.setTimeout(() => setPulsing(false), 160);
+      wasActive.current = active;
+      return () => window.clearTimeout(timer);
+    }
+    wasActive.current = active;
+  }, [active]);
+
+  return pulsing;
+}
+
+function OptionButton({
+  picked,
+  review,
+  className,
+  onClick,
+  children,
+}: {
+  picked: boolean;
+  review: boolean;
+  className: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const pulsing = usePickPulse(picked && !review);
+  return (
+    <button
+      type="button"
+      disabled={review}
+      onClick={onClick}
+      className={`${className} ${review ? "" : "active:scale-[0.98] motion-reduce:active:scale-100"} ${
+        pulsing ? "animate-pick-pulse" : ""
+      } transition-transform duration-150`}
+    >
+      {children}
+    </button>
+  );
+}
 
 interface Props {
   index: number; // số thứ tự hiển thị (1-based)
@@ -101,13 +151,10 @@ export default function QuestionCard({
               dot = "bg-primary text-white";
             }
             return (
-              <motion.button
+              <OptionButton
                 key={oi}
-                type="button"
-                disabled={review}
-                whileTap={review ? undefined : { scale: 0.98 }}
-                animate={picked && !review ? { scale: [1, 1.015, 1] } : undefined}
-                transition={{ duration: 0.16 }}
+                picked={picked}
+                review={review}
                 onClick={() => onChange?.(picked ? null : oi)}
                 className={`flex items-start gap-3 rounded-xl border px-3 py-2.5 text-left text-base transition-colors ${cls}`}
               >
@@ -129,7 +176,7 @@ export default function QuestionCard({
                     </span>
                   )}
                 </span>
-              </motion.button>
+              </OptionButton>
             );
           })}
           {review && !selfCheck && r === null && (
@@ -173,11 +220,10 @@ export default function QuestionCard({
                       else cls = "bg-slate-500/20 text-slate-500";
                     }
                     return (
-                      <motion.button
+                      <button
                         key={String(val)}
                         type="button"
                         disabled={review}
-                        whileTap={review ? undefined : { scale: 0.94 }}
                         onClick={() => {
                           const next = [
                             ...(Array.isArray(r) ? r : [null, null, null, null]),
@@ -185,11 +231,13 @@ export default function QuestionCard({
                           next[si] = chosen ? null : val;
                           onChange?.(next);
                         }}
-                        className={`rounded-lg px-3 py-1 text-sm font-semibold transition-colors ${cls}`}
+                        className={`rounded-lg px-3 py-1 text-sm font-semibold transition-transform transition-colors duration-150 ${
+                          review ? "" : "active:scale-[0.94] motion-reduce:active:scale-100"
+                        } ${cls}`}
                       >
                         {review && chosen && !selfCheck ? "✓ " : ""}
                         {val ? "Đúng" : "Sai"}
-                      </motion.button>
+                      </button>
                     );
                   })}
                 </span>

@@ -9,6 +9,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import ExamRunner from "@/components/exams/ExamRunner";
 import type { Exam } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
+import { fetchMyClassIds } from "@/services/classes";
+import { visibleTo } from "@/services/content";
 
 // Một số iOS/Safari đời cũ không cập nhật useSearchParams() đúng lúc khi trang
 // được phục hồi từ bfcache (nút Back) hoặc mở thẳng từ link ngoài (Zalo/Messenger) —
@@ -21,7 +23,7 @@ function readIdFromLocation(): number | null {
 }
 
 function ExamLoader() {
-  const { session } = useAuth();
+  const { session, realProfile } = useAuth();
   const searchParams = useSearchParams();
   const [fallbackId, setFallbackId] = useState<number | null>(() => readIdFromLocation());
 
@@ -36,6 +38,7 @@ function ExamLoader() {
   const itemId = itemIdParam ? Number(itemIdParam) : null;
   const [exam, setExam] = useState<Exam | null>(null);
   const [minCorrect, setMinCorrect] = useState<number | null>(null);
+  const [theoryLessonId, setTheoryLessonId] = useState<number | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -56,21 +59,48 @@ function ExamLoader() {
           .eq("id", id)
           .single();
       }
-      if (res.error || !res.data) setError("Không tìm thấy đề này.");
-      else if (!res.data.published) setError("Đề này đang ẩn, chưa thể làm bài.");
-      else setExam(res.data as Exam);
+      if (res.error || !res.data) {
+        setError("Không tìm thấy đề này.");
+        return;
+      }
+      if (!res.data.published) {
+        setError("Đề này đang ẩn, chưa thể làm bài.");
+        return;
+      }
+      // Chặn học sinh làm đề không thuộc lớp của mình (đoán/chia sẻ id đề) —
+      // staff (admin/instructor/tro_giang) không bị chặn, khớp RLS phía DB
+      // (migration 20260927150000_exam_class_access.sql).
+      const isStaff =
+        realProfile?.role === "admin" ||
+        realProfile?.role === "instructor" ||
+        realProfile?.role === "tro_giang";
+      if (!isStaff) {
+        const [{ data: examClasses }, myClassIds] = await Promise.all([
+          supabase.from("exam_classes").select("class_id").eq("exam_id", id),
+          fetchMyClassIds(session.user.id),
+        ]);
+        const examClassIds = (examClasses ?? []).map((r) => r.class_id as number);
+        if (!visibleTo(examClassIds, myClassIds)) {
+          setError("Đề này không thuộc lớp của em, không thể làm bài.");
+          return;
+        }
+      }
+      setExam(res.data as Exam);
     })();
-  }, [session, id]);
+  }, [session, id, realProfile]);
 
   useEffect(() => {
     if (!session || !itemId) return;
     getSupabase()
       .from("lesson_items")
-      .select("kind, quiz_min_correct")
+      .select("kind, quiz_min_correct, lesson_id")
       .eq("id", itemId)
       .single()
       .then(({ data }) => {
-        if (data?.kind === "ly_thuyet") setMinCorrect((data.quiz_min_correct as number | null) ?? null);
+        if (data?.kind === "ly_thuyet") {
+          setMinCorrect((data.quiz_min_correct as number | null) ?? null);
+          setTheoryLessonId((data.lesson_id as number | null) ?? null);
+        }
       });
   }, [session, itemId]);
 
@@ -78,7 +108,7 @@ function ExamLoader() {
     return <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
   if (error) return <p className="text-center text-red-400">{error}</p>;
   if (!exam) return <p className="text-center text-slate-400">Đang tải đề…</p>;
-  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} />;
+  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} theoryLessonId={theoryLessonId} />;
 }
 
 export default function TakeExamPage() {

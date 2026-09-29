@@ -44,13 +44,13 @@ begin
   perform public.rank_seed_tiers(v_season);
 
   select division into v_div from public.rank_tier_info(v_season, 'tan_binh', 0);
-  if v_div <> 3 then raise exception 'c1: 0 RP phải là Tân Binh III, được %', v_div; end if;
+  if v_div <> 3 then raise exception 'c1: 0 RP phải là Tinh Quang III, được %', v_div; end if;
   select division into v_div from public.rank_tier_info(v_season, 'tan_binh', 199);
-  if v_div <> 1 then raise exception 'c2: 199 RP phải là Tân Binh I, được %', v_div; end if;
-  if public.rank_tier_code_by_rp(v_season, 199) <> 'tan_binh' then raise exception 'c3: 199 RP vẫn là Tân Binh'; end if;
-  if public.rank_tier_code_by_rp(v_season, 200) <> 'chien_binh' then raise exception 'c4: 200 RP phải là Chiến Binh'; end if;
+  if v_div <> 1 then raise exception 'c2: 199 RP phải là Tinh Quang I, được %', v_div; end if;
+  if public.rank_tier_code_by_rp(v_season, 199) <> 'tan_binh' then raise exception 'c3: 199 RP vẫn là Tinh Quang'; end if;
+  if public.rank_tier_code_by_rp(v_season, 200) <> 'chien_binh' then raise exception 'c4: 200 RP phải là Tiên Phong'; end if;
   select division into v_div from public.rank_tier_info(v_season, 'chien_binh', 200);
-  if v_div <> 3 then raise exception 'c5: 200 RP phải là Chiến Binh III'; end if;
+  if v_div <> 3 then raise exception 'c5: 200 RP phải là Tiên Phong III'; end if;
   -- không hở/chồng: mọi RP 0..2599 rơi vào đúng 1 phân bậc, biên liền nhau
   for v_n in 0..2599 loop
     if not exists (select 1 from public.rank_tier_info(v_season, public.rank_tier_code_by_rp(v_season, v_n), v_n) i
@@ -61,7 +61,7 @@ begin
   -- ngưỡng sai thứ tự bị chặn
   begin
     update public.rank_tiers set min_rp = 100 where season_id = v_season and code = 'tinh_anh';
-    raise exception 'c7: phải chặn ngưỡng Tinh Anh < Chiến Binh';
+    raise exception 'c7: phải chặn ngưỡng Nhật Hoa < Tiên Phong';
   exception when others then
     if sqlerrm like 'c7%' then raise; end if;
   end;
@@ -109,25 +109,25 @@ begin
   select tier_code, division into v_tier, v_div from public.rank_student_seasons where season_id = v_season and student_id = v_student;
   v_status := public.rank_status_of(v_student);
   if v_n = 0 then
-    if v_tier <> 'chien_binh' then raise exception 'c8: 618 RP chưa có danh hiệu phải kẹt ở Chiến Binh, được %', v_tier; end if;
+    if v_tier <> 'chien_binh' then raise exception 'c8: 618 RP chưa có danh hiệu phải kẹt ở Tiên Phong, được %', v_tier; end if;
     if v_div <> 1 then raise exception 'c9: kẹt điều kiện thì đứng ở phân bậc I, được %', v_div; end if;
-    if (v_status -> 'next' ->> 'code') <> 'tinh_anh' then raise exception 'c10: bậc tiếp theo phải là Tinh Anh: %', v_status -> 'next'; end if;
+    if (v_status -> 'next' ->> 'code') <> 'tinh_anh' then raise exception 'c10: bậc tiếp theo phải là Nhật Hoa: %', v_status -> 'next'; end if;
     if (v_status -> 'next' -> 'gate' ->> 'required_title_count')::int <> 1 then raise exception 'c11: phải báo cần 1 danh hiệu'; end if;
     if (v_status -> 'next' -> 'gate' ->> 'passed')::boolean then raise exception 'c12: chưa được vượt điều kiện'; end if;
   else
-    raise notice 'c8–c12: em đã có % danh hiệu Thức Tỉnh từ dữ liệu thật -> kiểm ngược lại (phải lên Tinh Anh)', v_n;
-    if v_tier <> 'tinh_anh' then raise exception 'c8b: có danh hiệu rồi thì 618 RP phải là Tinh Anh, được %', v_tier; end if;
-    if (v_status -> 'next' ->> 'code') <> 'tinh_nhue' then raise exception 'c10b: bậc tiếp theo phải là Tinh Nhuệ: %', v_status -> 'next'; end if;
+    raise notice 'c8–c12: em đã có % danh hiệu Thức Tỉnh từ dữ liệu thật -> kiểm ngược lại (phải lên Nhật Hoa)', v_n;
+    if v_tier <> 'tinh_anh' then raise exception 'c8b: có danh hiệu rồi thì 618 RP phải là Nhật Hoa, được %', v_tier; end if;
+    if (v_status -> 'next' ->> 'code') <> 'tinh_nhue' then raise exception 'c10b: bậc tiếp theo phải là Vương Lễ: %', v_status -> 'next'; end if;
   end if;
 
-  -- cấp một danh hiệu Thức Tỉnh (giả lập) -> vượt điều kiện Tinh Anh
+  -- cấp một danh hiệu Thức Tỉnh (giả lập) -> vượt điều kiện Nhật Hoa
   perform public.rank_grant_title(v_student, 'ke_san_quy_dao', 'thuc_tinh', v_season, '{"test":true}');
   perform public.rank_eval_gates(v_season, v_student);
   perform public.rank_refresh_student(v_season, v_student);
   select tier_code into v_tier from public.rank_student_seasons where season_id = v_season and student_id = v_student;
-  if v_tier <> 'tinh_anh' then raise exception 'c13: có danh hiệu rồi phải lên Tinh Anh, được %', v_tier; end if;
+  if v_tier <> 'tinh_anh' then raise exception 'c13: có danh hiệu rồi phải lên Nhật Hoa, được %', v_tier; end if;
 
-  -- Cao Thủ cần thử thách: đẩy tới 2100 RP, cấp đủ danh hiệu Làm Chủ nhưng chưa gán đề -> kẹt Đại Sư
+  -- Thiên Thể cần thử thách: đẩy tới 2100 RP, cấp đủ danh hiệu Làm Chủ nhưng chưa gán đề -> kẹt Vương Triều
   perform public.rank_adjust_rp(v_season, v_student, 1500, 'test: đẩy RP');
   perform public.rank_grant_title(v_student, 'ke_san_quy_dao', 'lam_chu', v_season, '{}');
   perform public.rank_grant_title(v_student, 'bac_thay_gia_toc', 'thuc_tinh', v_season, '{}');
@@ -135,13 +135,13 @@ begin
   perform public.rank_eval_gates(v_season, v_student);
   perform public.rank_refresh_student(v_season, v_student);
   select tier_code into v_tier from public.rank_student_seasons where season_id = v_season and student_id = v_student;
-  if v_tier <> 'dai_su' then raise exception 'c14: chưa có đề thử thách thì kẹt Đại Sư, được %', v_tier; end if;
-  -- gán đề thử thách và làm đạt -> Cao Thủ
+  if v_tier <> 'dai_su' then raise exception 'c14: chưa có đề thử thách thì kẹt Vương Triều, được %', v_tier; end if;
+  -- gán đề thử thách và làm đạt -> Thiên Thể
   update public.rank_tiers set challenge_exam_id = v_exam, challenge_pass_score = 8 where season_id = v_season and code = 'cao_thu';
   perform public.rank_eval_gates(v_season, v_student);   -- điểm tốt nhất trên v_exam là 9 (đã nộp ở trên)
   perform public.rank_refresh_student(v_season, v_student);
   select tier_code into v_tier from public.rank_student_seasons where season_id = v_season and student_id = v_student;
-  if v_tier <> 'cao_thu' then raise exception 'c15: vượt thử thách phải lên Cao Thủ, được %', v_tier; end if;
+  if v_tier <> 'cao_thu' then raise exception 'c15: vượt thử thách phải lên Thiên Thể, được %', v_tier; end if;
 
   -- ---------- (e) đeo danh hiệu (giả lập chính em sửa hồ sơ — admin thì được bỏ qua kiểm tra) ----------
   perform set_config('request.jwt.claims', json_build_object('sub', v_student, 'role', 'authenticated')::text, true);
@@ -158,7 +158,7 @@ begin
   v_n := public.rank_close_season(v_season);
   if v_n < 1 then raise exception 'd1: đóng mùa phải lưu ít nhất 1 học sinh'; end if;
   if not exists (select 1 from public.rank_season_results where season_id = v_season and student_id = v_student and tier_code = 'cao_thu') then
-    raise exception 'd2: kết quả mùa phải ghi Cao Thủ';
+    raise exception 'd2: kết quả mùa phải ghi Thiên Thể';
   end if;
   if (select count(*) from public.rank_rp_ledger where season_id = v_season and student_id = v_student) < 4 then
     raise exception 'd3: ledger mùa cũ phải còn nguyên';

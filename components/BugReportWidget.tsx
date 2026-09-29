@@ -3,9 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Bug, Paperclip, X } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/auth/auth-context";
 import { useToast } from "@/components/ui/Toast";
-import { submitBugReport, BUG_CATEGORY_LABELS, type BugCategory } from "@/services/bug-reports";
+import { BUG_CATEGORY_LABELS, type BugCategory } from "@/lib/bug-report-labels";
+// submitBugReport (services/bug-reports.ts, gọi supabase + services/image-compress) import
+// ĐỘNG trong submit() bên dưới — widget này render ở MỌI trang kể cả trang công khai (qua
+// PublicShell.tsx); import thẳng ở đây sẽ luôn kéo theo @supabase/supabase-js dù đa số
+// người xem chỉ thấy nút nổi, không bao giờ mở form/gửi báo lỗi.
 
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -39,10 +43,13 @@ export default function BugReportWidget() {
     setBusy(true);
     setError("");
     try {
+      const { submitBugReport } = await import("@/services/bug-reports");
       await submitBugReport({
         description,
         category,
-        pageUrl: window.location.pathname + window.location.search,
+        // Kèm hash: trang lý thuyết dùng #theory-sec-<itemId>-<n> để nhảy đúng đoạn,
+        // thiếu hash thì link trong báo lỗi chỉ mở tới đầu trang.
+        pageUrl: window.location.pathname + window.location.search + window.location.hash,
         userId: session?.user.id ?? null,
         reporterName: session ? "" : reporterName,
         reporterEmail: session ? "" : reporterEmail,
@@ -62,12 +69,10 @@ export default function BugReportWidget() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed right-0 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-1.5 rounded-l-2xl border border-r-0 border-white/15 bg-panel/95 px-2.5 py-4 shadow-xl backdrop-blur-md hover:border-white/30"
+        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full border border-white/15 bg-panel/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
       >
         <Bug size={16} className="text-amber-300" />
-        <span className="text-[11px] font-bold text-slate-200" style={{ writingMode: "vertical-rl" }}>
-          Báo lỗi / Góp ý
-        </span>
+        Báo lỗi / Góp ý
       </button>
 
       {open && (

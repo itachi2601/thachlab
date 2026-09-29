@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Sparkles, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
+import TierName from "@/components/rank/TierName";
+import WornTitle from "@/components/rank/WornTitle";
 import Avatar from "@/components/ui/Avatar";
-import { divisionLabel, tierMeta, titleDisplay, type ClassRankGroups as Groups } from "@/features/rank/types";
+import { divisionLabel, tierMeta, type ClassRankGroups as Groups } from "@/features/rank/types";
 import { fetchClassRankGroups } from "@/services/rank";
 
 /**
@@ -42,9 +44,7 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
               <div key={t.code} className="rounded-2xl border p-3 sm:p-4" style={{ borderColor: `${meta.color}44`, background: `${meta.color}0f` }}>
                 <div className="mb-2 flex items-center gap-2">
                   <RankBadge code={t.code} size={28} />
-                  <span className="font-display text-sm font-bold uppercase tracking-wide" style={{ color: meta.light }}>
-                    {t.name}
-                  </span>
+                  <TierName code={t.code} size="sm" />
                   <span className="text-xs text-slate-500">· {t.members.length} bạn</span>
                 </div>
                 <ul className="flex flex-wrap gap-2">
@@ -53,12 +53,7 @@ export default function ClassRankGroups({ classId }: { classId: number }) {
                       <Avatar url={m.avatar} name={m.name} size={18} />
                       {m.name}
                       {m.division && <span className="ml-1 text-slate-500">{divisionLabel(m.division)}</span>}
-                      {m.title && (
-                        <span className="ml-1 text-amber-200/80">
-                          <Sparkles size={10} className="mr-0.5 inline" />
-                          {titleDisplay(m.title.name, m.title.level)}
-                        </span>
-                      )}
+                      {m.title && <WornTitle title={m.title} className="ml-1" />}
                     </li>
                   ))}
                 </ul>

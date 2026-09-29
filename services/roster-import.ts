@@ -1,4 +1,3 @@
-import * as XLSX from "xlsx";
 import { getSupabase } from "@/services/supabase";
 import { classifyGradeHeader } from "@/services/roster-schema";
 
@@ -38,6 +37,8 @@ function findHeaderValue(rows: string[][], label: string): string {
 
 export async function parseRosterFile(file: File): Promise<ParsedRoster> {
   const buffer = await file.arrayBuffer();
+  // SheetJS (~350 KB) chỉ tải khi thầy thật sự chọn file — không nằm trong JS ban đầu của trang.
+  const XLSX = await import("xlsx");
   const workbook = XLSX.read(buffer, { type: "array", cellDates: true });
 
   for (const sheetName of workbook.SheetNames) {

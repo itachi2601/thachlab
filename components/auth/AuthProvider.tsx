@@ -1,57 +1,20 @@
 "use client";
 
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useState,
   useSyncExternalStore,
 } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
+import { AuthContext, type Profile, type PreviewMode } from "./auth-context";
 
-export interface Profile {
-  id: string;
-  full_name: string;
-  class_name: string;
-  role: "student" | "admin" | "instructor" | "tro_giang" | "parent";
-  // Khu vực quản trị được phân công cho giảng viên (null = chưa được cấp vào /quan-tri).
-  // Chỉ áp dụng cho role "instructor" — role "admin" luôn thấy cả 2 khu vực.
-  admin_area: "thpt" | "cttc" | null;
-  // Hệ học của học sinh/sinh viên — nguồn sự thật duy nhất để chọn giao diện CTTC hay THPT.
-  track: "thpt" | "cttc" | null;
-  avatar_url: string | null;
-}
-
-interface AuthState {
-  session: Session | null;
-  /** Hồ sơ đang hiển thị cho phần còn lại của app — bị ghi đè khi admin bật "Xem như học sinh". */
-  profile: Profile | null;
-  /** Hồ sơ thật, không bị ghi đè — dùng để hiện nút bật preview (chỉ role thật = admin mới thấy). */
-  realProfile: Profile | null;
-  loading: boolean;
-  signOut: () => Promise<void>;
-  previewAsStudent: boolean;
-  setPreviewAsStudent: (value: boolean) => void;
-  /** Đọc lại hồ sơ từ DB — dùng sau khi tự sửa avatar/tên để cập nhật ngay khắp app. */
-  refreshProfile: () => Promise<void>;
-}
-
-const AuthContext = createContext<AuthState>({
-  session: null,
-  profile: null,
-  realProfile: null,
-  loading: true,
-  signOut: async () => {},
-  previewAsStudent: false,
-  setPreviewAsStudent: () => {},
-  refreshProfile: async () => {},
-});
-
-export function useAuth() {
-  return useContext(AuthContext);
-}
+// Types + context + hook useAuth giờ sống ở auth-context.tsx (không import supabase-js) —
+// re-export ở đây để các file đang import từ "@/components/auth/AuthProvider" không phải
+// sửa gì. Xem auth-context.tsx để biết lý do tách.
+export { useAuth } from "./auth-context";
+export type { Profile, PreviewMode } from "./auth-context";
 
 const PREVIEW_STORAGE_KEY = "thachlab_preview_as_student";
 const PREVIEW_EVENT = "thachlab-preview-change";
@@ -65,11 +28,14 @@ function subscribePreview(onChange: () => void) {
   };
 }
 
-function readPreview() {
+function readPreview(): PreviewMode {
   try {
-    return sessionStorage.getItem(PREVIEW_STORAGE_KEY) === "1";
+    const raw = sessionStorage.getItem(PREVIEW_STORAGE_KEY);
+    if (raw === "1") return "student";
+    if (raw === "cttc") return "cttc";
+    return null;
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -82,20 +48,27 @@ export default function AuthProvider({
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loadedProfileUserId, setLoadedProfileUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(supabaseConfigured);
-  const storedPreview = useSyncExternalStore(subscribePreview, readPreview, () => false);
-  const [previewOverride, setPreviewAsStudentState] = useState<boolean | null>(null);
-  const previewAsStudent = previewOverride ?? storedPreview;
+  const storedPreview = useSyncExternalStore(subscribePreview, readPreview, () => null);
+  const [previewOverride, setPreviewOverride] = useState<PreviewMode | undefined>(undefined);
+  const previewMode: PreviewMode = previewOverride === undefined ? storedPreview : previewOverride;
+  const previewAsStudent = previewMode !== null;
 
-  const setPreviewAsStudent = useCallback((value: boolean) => {
-    setPreviewAsStudentState(value);
+  const setPreviewMode = useCallback((mode: PreviewMode) => {
+    setPreviewOverride(mode);
     try {
-      if (value) sessionStorage.setItem(PREVIEW_STORAGE_KEY, "1");
+      if (mode === "student") sessionStorage.setItem(PREVIEW_STORAGE_KEY, "1");
+      else if (mode === "cttc") sessionStorage.setItem(PREVIEW_STORAGE_KEY, "cttc");
       else sessionStorage.removeItem(PREVIEW_STORAGE_KEY);
       window.dispatchEvent(new Event(PREVIEW_EVENT));
     } catch {
       // bỏ qua nếu không lưu được — preview vẫn hoạt động trong phiên hiện tại.
     }
   }, []);
+
+  const setPreviewAsStudent = useCallback(
+    (value: boolean) => setPreviewMode(value ? "student" : null),
+    [setPreviewMode],
+  );
 
   useEffect(() => {
     if (!supabaseConfigured) return;
@@ -161,9 +134,11 @@ export default function AuthProvider({
 
   // Chỉ ghi đè khi role thật là admin — phòng trường hợp giá trị cũ còn sót trong
   // sessionStorage sau khi đăng xuất/đăng nhập tài khoản khác không phải admin.
+  // Chế độ "cttc" ghi đè luôn track để /tai-khoan đi đúng nhánh sinh viên CTTC
+  // (RPC preview_cttc_enroll đã ghi danh admin vào 3 môn, còn track thật thì giữ nguyên).
   const effectiveProfile: Profile | null =
-    previewAsStudent && profile?.role === "admin"
-      ? { ...profile, role: "student", admin_area: null }
+    previewMode && profile?.role === "admin"
+      ? { ...profile, role: "student", admin_area: null, track: previewMode === "cttc" ? "cttc" : profile.track }
       : profile;
 
   return (
@@ -176,6 +151,8 @@ export default function AuthProvider({
         signOut,
         previewAsStudent,
         setPreviewAsStudent,
+        previewMode,
+        setPreviewMode,
         refreshProfile,
       }}
     >

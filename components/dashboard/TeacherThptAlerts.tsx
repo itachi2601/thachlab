@@ -154,7 +154,11 @@ export default function TeacherThptAlerts({
                       {ALERT_STATUS_LABEL[a.status]}
                     </span>
                     <span className="text-[11px] text-slate-500">
-                      {a.kind === "missed_assessment" ? "Bỏ bài KT" : "Điểm thấp liên tiếp"}
+                      {a.kind === "missed_assessment"
+                        ? "Bỏ bài KT"
+                        : a.kind === "exam_violation"
+                          ? "Vi phạm khi thi"
+                          : "Điểm thấp liên tiếp"}
                     </span>
                   </div>
                   <p className="mt-1 text-sm text-slate-300">{a.reason}</p>

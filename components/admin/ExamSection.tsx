@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertTriangle, CheckCircle2, Eraser, FileText, PencilLine, Sparkles, Upload, WandSparkles } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import ExamDraftEditor from "@/components/admin/ExamDraftEditor";
 import { useToast } from "@/components/ui/Toast";
 import {
@@ -55,8 +55,15 @@ export interface ExamSectionProps {
   /** Lấy sẵn câu từ Ngân hàng câu hỏi khi mở trang (chỉ trang Đăng đề dùng). */
   enableQuestionBankHandoff?: boolean;
   onHandoffGrade?: (grade: string) => void;
+  /** Khối đang chọn (mục 3 của trang) — để lọc Ngân hàng câu hỏi khi "Thêm câu"/"Đổi câu khác". */
+  grade?: string | null;
   /** Gói ngoài muốn nạp thẳng vào chế độ sửa chi tiết (vd JSON dán ở khối "Nâng cao"). */
   externalSeed?: ExamSectionSeed | null;
+  /** Ẩn khối "dán/thả đề" bên trái — dùng khi trang chỉ sửa một đề có sẵn câu hỏi (đã nạp qua externalSeed),
+   * không cần dán/thả hay quay lại văn bản (không có văn bản gốc để quay lại). */
+  hideRawText?: boolean;
+  /** Câu (0-based) cần tô đậm + cuộn tới trong "Xem trước & đáp án" — link từ báo lỗi một câu cụ thể. */
+  highlightIndex?: number | null;
 }
 
 async function compressRasterInputs(images: RasterImageInput[]): Promise<RasterImageInput[]> {
@@ -120,10 +127,14 @@ export default function ExamSection({
   numberOffset = 1,
   enableQuestionBankHandoff = false,
   onHandoffGrade,
+  grade = null,
   externalSeed = null,
+  hideRawText = false,
+  highlightIndex = null,
 }: ExamSectionProps) {
   const toast = useToast();
   const fileRef = useRef<HTMLInputElement>(null);
+  const highlightRef = useRef<HTMLDivElement>(null);
 
   const [text, setText] = useState("");
   const [debounced, setDebounced] = useState("");
@@ -204,8 +215,20 @@ export default function ExamSection({
   }, [bundle]);
 
   const questions = bundle.exam.questions;
+
+  // Câu bị báo lỗi (link từ /quan-tri/sua-de?exam=&q=) — cuộn tới + tô đậm ngay khi
+  // đề đã tải xong và dựng được câu đó, không cần admin tự dò trong danh sách.
+  useEffect(() => {
+    if (highlightIndex == null || highlightIndex >= questions.length) return;
+    highlightRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [highlightIndex, questions.length]);
+
   const notes = useMemo(
-    () => [...fileNotes, ...(draft?.notes ?? [])].filter((n) => !n.startsWith('Không thấy "PHẦN')),
+    // Cảnh báo "nhắc hình mà thiếu ảnh" của parser đã có khung đỏ riêng (MissingFigureNotice) — không lặp ở đây.
+    () =>
+      [...fileNotes, ...(draft?.notes ?? [])].filter(
+        (n) => !n.startsWith('Không thấy "PHẦN') && !/nhắc tới đồ thị\/hình vẽ nhưng không có ảnh/.test(n),
+      ),
     [fileNotes, draft],
   );
   const incompleteCount = questions.filter((q) => problems(q).length > 0).length;
@@ -281,7 +304,8 @@ export default function ExamSection({
   }
 
   return (
-    <section className="grid gap-4 lg:grid-cols-2">
+    <section className={`grid gap-4 ${hideRawText ? "" : "lg:grid-cols-2"}`}>
+      {!hideRawText && (
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset}</span>
@@ -430,11 +454,18 @@ export default function ExamSection({
           </ul>
         </details>
       </div>
+      )}
 
-      <div className="space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1">
+      <div className={hideRawText ? "space-y-3" : "space-y-3 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto lg:pr-1"}>
+        {!hideRawText && (
         <div className="flex flex-wrap items-center gap-2">
           <span className="admin-badge admin-badge--accent">{numberOffset + 1}</span>
           <span className="text-sm font-semibold text-white">Xem trước & đáp án</span>
+          {questions.length > 0 && (
+            <span className="text-xs text-slate-400">
+              Đã chọn <b className="text-white">{questions.length}</b> câu
+            </span>
+          )}
           <div className="ml-auto">
             {edited ? (
               <button
@@ -456,6 +487,7 @@ export default function ExamSection({
             )}
           </div>
         </div>
+        )}
 
         {edited ? (
           <ExamDraftEditor
@@ -463,6 +495,7 @@ export default function ExamSection({
             onChange={setEdited}
             topicOptions={topicGroups.flatMap((g) => g.names)}
             aiTopicCandidates={lessonPicked ? (topicGroups[0]?.names ?? []) : []}
+            grade={enableQuestionBankHandoff ? grade : null}
           />
         ) : questions.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center text-sm text-slate-500">
@@ -493,7 +526,22 @@ export default function ExamSection({
             />
             <div className="space-y-3">
               {questions.map((q, i) => (
-                <PreviewCard key={i} index={i + 1} q={q} fix={imageSrc} />
+                <div
+                  key={i}
+                  ref={i === highlightIndex ? highlightRef : undefined}
+                  className={
+                    i === highlightIndex
+                      ? "rounded-2xl ring-2 ring-amber-400 ring-offset-2 ring-offset-[#080D1A]"
+                      : undefined
+                  }
+                >
+                  {i === highlightIndex && (
+                    <p className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-bold text-amber-300">
+                      Câu học sinh báo lỗi
+                    </p>
+                  )}
+                  <PreviewCard index={i + 1} q={q} fix={imageSrc} />
+                </div>
               ))}
             </div>
           </>
@@ -629,7 +677,8 @@ function TagGrid({
       for (const r of results) {
         if (r.topic) onTag(r.index, "topic", r.topic);
         if (r.form) onTag(r.index, "form", QUESTION_FORM_LABELS[r.form].toLowerCase());
-        if (r.difficulty) onTag(r.index, "difficulty", DIFFICULTY_LABELS[r.difficulty].toLowerCase());
+        // Hậu tố "(AI)" đánh dấu nguồn — gắn tay đè lên sẽ ghi "(GV)" và ẩn huy hiệu gợi ý.
+        if (r.difficulty) onTag(r.index, "difficulty", `${DIFFICULTY_LABELS[r.difficulty].toLowerCase()} (AI)`);
       }
       toast(
         results.length > 0 ? "success" : "error",
@@ -744,7 +793,7 @@ function TagGrid({
                     <button
                       key={d}
                       type="button"
-                      onClick={() => onTagMany(untaggedDifficulty, "difficulty", DIFFICULTY_LABELS[d].toLowerCase())}
+                      onClick={() => onTagMany(untaggedDifficulty, "difficulty", `${DIFFICULTY_LABELS[d].toLowerCase()} (GV)`)}
                       className="rounded bg-white/10 px-2 py-0.5 font-semibold text-slate-200 hover:bg-white/20"
                     >
                       {DIFFICULTY_LABELS[d]}
@@ -786,14 +835,18 @@ function TagGrid({
                       </button>
                     ))}
                   </div>
-                  <div className="flex gap-0.5">
+                  <div className="flex items-center gap-0.5">
                     {(["de", "trung-binh", "kho"] as Exclude<Difficulty, "">[]).map((d) => (
                       <button
                         key={d}
                         type="button"
                         disabled={!enabled}
                         title={DIFFICULTY_LABELS[d]}
-                        onClick={() => onTag(i, "difficulty", q.difficulty === d ? "" : DIFFICULTY_LABELS[d].toLowerCase())}
+                        onClick={() =>
+                          // Gắn tay luôn ghi nguồn "gv" (kể cả khi bấm lại đúng mức AI đã gợi ý) — chỉ
+                          // GV mới xác nhận xong mới coi là chốt, ẩn huy hiệu "AI gợi ý".
+                          onTag(i, "difficulty", q.difficulty === d ? "" : `${DIFFICULTY_LABELS[d].toLowerCase()} (GV)`)
+                        }
                         className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
                           q.difficulty === d ? "bg-emerald-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
                         }`}
@@ -801,6 +854,14 @@ function TagGrid({
                         {DIFFICULTY_SHORT[d]}
                       </button>
                     ))}
+                    {q.difficulty && q.difficultySource === "ai" && (
+                      <span
+                        title="AI gợi ý — bấm lại một mức để giáo viên xác nhận"
+                        className="admin-badge admin-badge--accent px-1 py-0 text-[9px] leading-4"
+                      >
+                        AI
+                      </span>
+                    )}
                   </div>
                 </div>
               );

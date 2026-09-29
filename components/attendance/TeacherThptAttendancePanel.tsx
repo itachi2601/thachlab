@@ -6,6 +6,7 @@ import {
   createAttendanceSession,
   deleteAttendanceSession,
   fetchAttendanceRecords,
+  fetchAttendanceRecordsForSessions,
   fetchAttendanceSessions,
   setAttendanceRecord,
   updateAttendanceSessionNote,
@@ -52,8 +53,8 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
 
   useEffect(() => {
     let cancelled = false;
-    Promise.all(sessions.map((session) => fetchAttendanceRecords(session.id).catch(() => []))).then((rows) => {
-      if (!cancelled) setAllRecords(rows.flat());
+    fetchAttendanceRecordsForSessions(sessions.map((session) => session.id)).catch(() => []).then((rows) => {
+      if (!cancelled) setAllRecords(rows);
     });
     return () => { cancelled = true; };
   }, [sessions]);

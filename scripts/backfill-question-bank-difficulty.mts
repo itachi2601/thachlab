@@ -1,10 +1,16 @@
 // Gợi ý mức độ (Dễ/Trung bình/Khó) bằng AI cho các câu trong ngân hàng câu hỏi đang
 // difficulty = '' (chưa gắn) — sau khi docs/supabase-migration-question-bank-difficulty.sql
-// đã chạy (nếu chưa chạy, cập nhật ở đây sẽ không đồng bộ ngược về đề gốc).
+// VÀ supabase/migrations/20260925150000_difficulty_source.sql đã chạy (nếu chưa chạy, cập
+// nhật ở đây sẽ không đồng bộ ngược về đề gốc / lỗi cột difficulty_source không tồn tại).
 //
-// Ghi thẳng vào question_bank.difficulty (không qua duyệt riêng) — trigger sẽ tự đồng bộ
-// ngược vào exams.questions của mọi đề đang chứa đúng câu đó. Chạy lại an toàn: chỉ xử lý
-// các câu còn difficulty = '', không đụng câu đã có mức độ (kể cả do thầy tự gắn tay).
+// Ghi thẳng vào question_bank.difficulty + difficulty_source = 'ai' (không qua duyệt riêng)
+// — trigger sẽ tự đồng bộ ngược vào exams.questions của mọi đề đang chứa đúng câu đó (kèm
+// key difficultySource). Chạy lại an toàn: chỉ xử lý các câu còn difficulty = '', không đụng
+// câu đã có mức độ (kể cả do thầy tự gắn tay).
+//
+// LƯU Ý: script này KHÔNG có chế độ dry-run — mỗi lần chạy ghi thẳng vào DB thật ngay (tốn
+// lượt gọi Anthropic API + tiền). Muốn thử trước, truyền [số câu tối đa] nhỏ (vd 20) rồi tự
+// xem lại vài dòng trong /quan-tri/ngan-hang-cau-hoi trước khi chạy không giới hạn.
 //
 //   npx tsx scripts/backfill-question-bank-difficulty.mts [số câu tối đa]
 //
@@ -200,7 +206,10 @@ async function main() {
         }
         try {
           await withRetry(async () => {
-            const { error: updErr } = await supabase.from("question_bank").update({ difficulty }).eq("id", batch[i].id);
+            const { error: updErr } = await supabase
+              .from("question_bank")
+              .update({ difficulty, difficulty_source: "ai" })
+              .eq("id", batch[i].id);
             if (updErr) throw new Error(updErr.message);
           }, `Ghi câu #${batch[i].id}`);
         } catch (e) {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Drama } from "lucide-react";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/auth/auth-context";
 import { setTaDemoMode, useTaDemoMode } from "@/lib/tro-giang/demo";
 
 /**

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -15,14 +14,17 @@
   --color-muted: #94a3b8;
   --color-line: rgba(255, 255, 255, 0.08);
 
-  --font-display: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  /* Font tự host qua next/font (app/fonts.ts) — biến --font-be-vietnam/--font-inter/
+     --font-jetbrains-mono được gắn lên <html> trong app/layout.tsx. */
+  --font-display: var(--font-be-vietnam), "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +32,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   transition: background-color 180ms ease, color 180ms ease;
+  overflow-x: hidden;
 }
 
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
@@ -656,6 +659,17 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-section + .lesson-section { margin-top: 48px; border-top: 1px solid var(--lesson-line); padding-top: 36px; }
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
 .lesson-section h2 span { display: flex; width: 26px; height: 26px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: #94a3b8; font-size: 12px; font-weight: 700; }
+/* Cả 6 mục giờ là danh sách thu gọn — bấm tiêu đề mới xổ nội dung ra (xem app/lop-hoc/bai/page.tsx). */
+.lesson-section-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; background: none; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer; }
+.lesson-section-toggle:hover h2 { color: var(--lesson-accent-text); }
+.lesson-section-toggle svg { flex: 0 0 auto; color: #64748b; transition: transform .2s; }
+/* Ý chính/công thức cần thuộc — hiện luôn, tách màu khỏi phần nội dung dài để dễ nhận ra. */
+.lesson-summary { margin-top: 14px; border: 1px solid rgba(250,204,21,.28); border-radius: 12px; background: rgba(250,204,21,.07); padding: 14px 16px; }
+.lesson-summary-label { margin: 0 0 8px; color: #fbbf24; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; }
+.lesson-summary :is(ul, ol) { display: grid; gap: 6px; margin: 0; padding-left: 20px; list-style: disc; }
+.lesson-summary li::marker { color: #fbbf24; }
+html[data-theme="light"] .lesson-shell .lesson-summary { border-color: rgba(180,83,9,.32); background: rgba(217,119,6,.08); }
+html[data-theme="light"] .lesson-shell .lesson-summary-label { color: #b45309; }
 .lesson-stack { display: grid; gap: 12px; }
 /* Item lưới mặc định có min-width:auto — nội dung rộng cố định (bảng dán từ Word)
    sẽ đẩy tràn cả lưới thay vì tự co lại. */
@@ -671,12 +685,78 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-block > .lesson-block-head + * { margin-top: 14px; }
 .lesson-block-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
 .lesson-block-foot:empty { display: none; }
-.lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; }
+.lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; overflow-wrap: break-word; word-break: break-word; }
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
+/* Dàn đều 2 biên (justify) để lề phải không lởm chởm — kèm break-word ở trên
+   để chữ/công thức dài không tràn ra ngoài khung khi dàn đều. */
+.lesson-prose p { text-align: justify; text-justify: inter-word; }
+/* Khối <h3> lý thuyết (features/lessons/theory-sections.ts) — tô vàng tạm khi quay lại từ
+   "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
+/* Chừa chỗ cho thẻ nhắc câu sai (position: fixed, nổi trên đầu) khi scrollIntoView căn "start" —
+   không thì đoạn vừa tô nằm ngay dưới thẻ, bị che mất phần trên. */
+.theory-section { scroll-margin-top: 132px; transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
+.theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
+/* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
+   từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
+/* position: fixed (không phải sticky) — .lesson-shell có overflow: clip (chặn tràn ngang trên
+   di động) nên mọi position: sticky của con cháu bị vô hiệu hoá, kể cả .lesson-nav sẵn có; đã
+   tự kiểm bằng getBoundingClientRect thấy rõ, thử tách overflow-x/overflow-y riêng cũng không
+   ăn thua (nghi do quy tắc CSS: 1 trục "visible" cạnh trục kia không "visible" thì trục
+   "visible" tự chuyển thành "auto", vẫn tạo vùng có thể cuộn). Dùng fixed để không phụ thuộc
+   overflow của tổ tiên — nổi giữa màn hình dưới thanh điều hướng, không nằm trong luồng bố cục
+   2 cột như .lesson-nav nữa. */
+/* Thu gọn mặc định (chỉ 1 dòng tóm tắt) — bản đầy đủ che mất đúng đoạn vừa tô vàng bên dưới,
+   nhất là trên điện thoại (màn hẹp, cao có hạn). Mở ra khi bấm, đọc xong tự thu gọn lại khi
+   bấm "Xem đoạn này" để không che nội dung. */
+.lesson-review-banner { position: fixed; top: 78px; left: 50%; transform: translateX(-50%); width: min(640px, calc(100vw - 20px)); z-index: 40; border: 1px solid rgba(250, 204, 21, .35); border-radius: 12px; background: rgba(15, 23, 42, .96); backdrop-filter: blur(8px); box-shadow: 0 12px 32px rgba(0,0,0,.4); overflow: hidden; }
+.lesson-review-banner-head { display: flex; align-items: stretch; }
+.lesson-review-banner-toggle { flex: 1 1 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-width: 0; border: 0; background: none; padding: 10px 8px 10px 14px; font-size: 12.5px; font-weight: 700; color: #fbbf24; text-align: left; cursor: pointer; }
+.lesson-review-banner-toggle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Nhấp nháy vài lần lúc mới hiện — thẻ thu gọn chỉ 1 dòng nhỏ, dễ bị lướt qua không để ý là
+   bấm được để mở ra xem hết danh sách câu sai (đã có thầy phản hồi bỏ lỡ chỗ này). */
+.lesson-review-banner-toggle svg { flex: 0 0 auto; transition: transform .15s; animation: lesson-review-hint 0.9s ease-in-out 3; }
+.lesson-review-banner.is-open .lesson-review-banner-toggle svg { animation: none; }
+@keyframes lesson-review-hint {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(3px); opacity: .6; }
+}
+.lesson-review-banner-head > button:last-child { flex: 0 0 auto; color: #94a3b8; background: none; border: 0; cursor: pointer; padding: 10px 12px; }
+.lesson-review-banner-head > button:last-child:hover { color: #e2e8f0; }
+.lesson-review-banner-list { padding: 0 16px 14px; max-height: min(46vh, 380px); overflow-y: auto; }
+.lesson-review-banner-item { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(250, 204, 21, .18); }
+.lesson-review-banner-item:first-child { margin-top: 8px; padding-top: 0; border-top: 0; }
+.lesson-review-banner-item-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lesson-review-banner-item-head > span { font-size: 12px; font-weight: 700; color: #fbbf24; }
+.lesson-review-banner-item-head button { flex: 0 0 auto; border: 0; background: none; padding: 0; font-size: 12px; font-weight: 600; color: #22d3ee; cursor: pointer; }
+.lesson-review-banner-item-head button:hover { text-decoration: underline; }
+.lesson-review-banner-q { margin-top: 6px; color: #e2e8f0; font-size: 14.5px; line-height: 1.6; }
+.lesson-review-banner-answer { margin-top: 6px; font-size: 13.5px; }
+.lesson-review-banner-answer span:first-child { font-weight: 600; color: #94a3b8; }
+.lesson-review-banner-answer.is-correct { color: #6ee7b7; }
+.lesson-review-banner-answer.is-wrong { color: #fca5a5; }
 /* Đoạn gõ tay "- "/"•" ở đầu dòng (thay vì <ul><li> thật) — vẽ lại chấm đầu dòng, thụt lề nhất quán.
    Áp dụng cho mọi nơi ContentHtml render (.exam-content), không riêng lý thuyết. */
 .exam-content p[data-bullet] { position: relative; margin-left: 1.3em; }
 .exam-content p[data-bullet]::before { content: "•"; position: absolute; left: -1.1em; color: var(--lesson-accent-text, #94a3b8); font-weight: 700; }
+/* ContentHtml: trong lúc chờ KaTeX tải chunk (~290 KB, chỉ tải khi nội dung có công thức),
+   công thức thô "$...$" hiện tạm trong <code> — đọc được ngay, không skeleton/khoảng trắng. */
+.exam-content-raw-tex { display: inline; padding: 0 3px; border-radius: 3px; background: rgba(255,255,255,.06); color: #cbd5e1; font-size: .92em; white-space: pre-wrap; word-break: break-word; }
+/* QuestionCard: nảy nhẹ khi vừa chọn phương án — trước dùng framer-motion, nay CSS thuần. */
+@keyframes pick-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
+.animate-pick-pulse { animation: pick-pulse .16s ease; }
+@media (prefers-reduced-motion: reduce) { .animate-pick-pulse { animation: none; } }
+/* ExamResultSummary: sticker "nảy" vào khi hiện kết quả — trước dùng framer-motion transition
+   ease "backOut", nay cubic-bezier xấp xỉ cùng đường cong (hơi vọt quá rồi lùi lại đúng cỡ). */
+@keyframes result-pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.animate-result-pop { animation: result-pop .4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@media (prefers-reduced-motion: reduce) { .animate-result-pop { animation: none; } }
+/* TopicPracticeModal: mở modal luyện theo YCCĐ — trước dùng framer-motion, nay CSS thuần
+   (modal này do component cha mount/unmount thẳng nên không cần animation lúc đóng). */
+@keyframes modal-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-panel-in { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.animate-modal-backdrop-in { animation: modal-backdrop-in .15s ease; }
+.animate-modal-panel-in { animation: modal-panel-in .18s ease-out; }
+@media (prefers-reduced-motion: reduce) { .animate-modal-backdrop-in, .animate-modal-panel-in { animation: none; } }
 .lesson-link { display: inline-flex; align-items: center; gap: 6px; color: var(--lesson-accent-text); font-size: 13.5px; font-weight: 600; text-decoration: none; }
 .lesson-link:hover { text-decoration: underline; }
 .lesson-done { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 8px; background: transparent; padding: 6px 12px; color: #94a3b8; font-size: 13px; font-weight: 600; cursor: pointer; }
@@ -821,7 +901,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 }
 
 @media (max-width: 900px) {
-  .lesson-layout { grid-template-columns: 1fr; gap: 0; padding: 16px 16px 56px; }
+  .lesson-layout { grid-template-columns: minmax(0,1fr); gap: 0; padding: 16px 16px 56px; }
   .lesson-nav { position: sticky; top: 76px; z-index: 5; margin: 0 -16px; background: rgba(8,13,26,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lesson-line); padding: 10px 16px 8px; }
   html[data-theme="light"] .lesson-nav { background: rgba(255,255,255,.92); }
   .lesson-nav ol { position: relative; display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
@@ -839,6 +919,10 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-block { padding: 14px 14px; border-radius: 12px; }
   .lesson-exam { flex-direction: column; align-items: stretch; }
   .lesson-btn, .lesson-btn-ghost { text-align: center; }
+  .lesson-review-banner { top: 66px; width: calc(100vw - 16px); border-radius: 10px; }
+  .lesson-review-banner-toggle { padding: 8px 6px 8px 12px; font-size: 12px; }
+  .lesson-review-banner-list { padding: 0 12px 12px; max-height: 42vh; }
+  .theory-section { scroll-margin-top: 110px; }
 }
 
 /* Phòng thi trực tiếp CNC — giao diện trò chơi lớp học */
@@ -1003,6 +1087,17 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   padding: 12px 16px;
 }
 
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
 /* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
    trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
 .table-scroll {
@@ -1010,6 +1105,16 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   margin: 0.75em 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
@@ -1041,6 +1146,15 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   border-radius: 0.5rem;
   background: #f8fafc;
   padding: 0.5rem;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */

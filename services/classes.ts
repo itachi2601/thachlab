@@ -93,7 +93,7 @@ export function expandClassIdsByGrade(
 export async function fetchClasses(includeHidden = false) {
   let q = getSupabase()
     .from("classes")
-    .select("*")
+    .select("id, name, slug, color, icon, sort_order, active")
     .order("sort_order")
     .order("name");
   if (!includeHidden) q = q.eq("active", true);
@@ -131,13 +131,14 @@ export interface ClassStudent {
   id: string;
   full_name: string;
   class_name: string;
+  student_code: string | null;
 }
 
 /** Học sinh đã được duyệt vào 1 khối lớp — dùng cho dashboard giáo viên THPT. */
 export async function fetchClassStudents(classId: number): Promise<ClassStudent[]> {
   const { data, error } = await getSupabase()
     .from("user_classes")
-    .select("profiles!user_classes_user_id_fkey(id, full_name, class_name)")
+    .select("profiles!user_classes_user_id_fkey(id, full_name, class_name, student_code)")
     .eq("class_id", classId)
     .eq("status", "active");
   if (error) throw error;

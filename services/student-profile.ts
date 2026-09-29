@@ -1,4 +1,6 @@
 import { getSupabase } from "@/services/supabase";
+import { callClassRpc } from "@/services/class-rpc";
+import { fetchStudentLearningHistory, type LearningHistoryEntry } from "@/services/progress";
 import { compressImageFile } from "@/services/image-compress";
 
 const AVATAR_BUCKET = "avatars";
@@ -63,4 +65,55 @@ export async function fetchStudentRosterInfo(studentIds: string[]) {
       birthDate: match ? `${match[3]}/${match[2]}/${match[1]}` : "",
     }];
   }));
+}
+
+// ---------- Lịch sử học tập (hồ sơ học sinh phía giáo viên) qua RPC ----------
+interface LearningHistoryRow {
+  activity: LearningHistoryEntry["activity"];
+  at: string;
+  lesson_title: string | null;
+  item_title: string | null;
+  score: number | null;
+  correct_count: number | null;
+  question_count: number | null;
+  detail_correct_count: unknown;
+  has_essay: boolean | null;
+}
+
+/** Ghép chuỗi hiển thị y hệt services/progress.ts fetchStudentLearningHistory từ dòng thô của rpc. */
+function toHistoryEntry(row: LearningHistoryRow): LearningHistoryEntry {
+  if (row.activity === "theory") {
+    return {
+      at: row.at,
+      activity: "theory",
+      title: `${row.lesson_title ?? ""} — ${row.item_title ?? ""}`,
+      detail: "Đã tự xác nhận đọc",
+    };
+  }
+  if (row.activity === "practice") {
+    return {
+      at: row.at,
+      activity: "practice",
+      title: row.lesson_title ?? "Luyện tập",
+      detail: `${row.score} điểm · đúng ${row.correct_count}/${row.question_count} câu`,
+    };
+  }
+  return {
+    at: row.at,
+    activity: "exam",
+    title: row.lesson_title ?? "Đề kiểm tra",
+    detail: `${row.score} điểm${row.detail_correct_count != null ? ` · đúng ${row.detail_correct_count} câu` : ""}${row.has_essay ? " · có câu tự luận" : ""}`,
+  };
+}
+
+/** Đường mới: rpc get_student_learning_history (1 truy vấn, không kéo exams.questions). null = rpc chưa có. */
+export async function fetchStudentLearningHistoryRpc(studentId: string): Promise<LearningHistoryEntry[] | null> {
+  const rows = await callClassRpc<LearningHistoryRow[]>("get_student_learning_history", { p_student: studentId });
+  if (!rows) return null;
+  return rows.map(toHistoryEntry).sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
+}
+
+/** Lịch sử học tập: rpc nếu có, không thì đường cũ 3 truy vấn của services/progress.ts. */
+export async function fetchStudentLearningHistoryFast(studentId: string): Promise<LearningHistoryEntry[]> {
+  return (await fetchStudentLearningHistoryRpc(studentId)) ?? fetchStudentLearningHistory(studentId);
 }
