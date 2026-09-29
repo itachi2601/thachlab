@@ -13,7 +13,7 @@ Chốt lại phiên này để phiên sau nắm được việc. KHÔNG commit, 
 
 ## 2. Cập nhật memory
 
-Thư mục memory: `~/.claude/projects/-Users-MAC-Projects-thachlab/memory/`
+Thư mục memory: `docs/memory/` (trong repo; trên Mac là symlink của thư mục memory Claude Code — xem `scripts/memory-to-git.sh`)
 
 Với mỗi mảng việc đang dở:
 - Tìm file `project_*.md` đã có về mảng đó (đọc `MEMORY.md` để biết có gì) — **sửa file đó**, đừng tạo file trùng
