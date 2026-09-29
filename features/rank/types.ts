@@ -164,6 +164,8 @@ export interface RankWeekly {
   min_score: number;
   rp: number;
   achieved: boolean;
+  /** true = mục tiêu đặt riêng từ 2 tuần trước của em (migration 20260929130000); RPC cũ không trả. */
+  personal?: boolean;
 }
 
 export interface RankDaily {
@@ -367,8 +369,8 @@ export interface PublicHonorGrade {
   /** Số bạn cùng top 3 nhưng không hiện vì bục tối đa 5 ô (migration 20260928180000; RPC cũ không trả). */
   top_more?: number;
   improved: { name: string; avatar: string | null; delta: number; rp_week: number } | null;
-  /** GĐ 1b: tiến bộ so với chính em (tỉ lệ đúng tuần này vs 2 tuần trước). Migration 20260930100000; RPC cũ không trả. */
-  progress?: { name: string; avatar: string | null; gain: number; from_pct: number; to_pct: number } | null;
+  /** Tiến bộ theo tỉ lệ đúng so với 2 tuần trước (migration 20260929120000; RPC cũ không trả). Ưu tiên hơn `improved`. */
+  improved_acc?: { name: string; avatar: string | null; gain: number; acc: number } | null;
   tier_ups: { name: string; tier_code: TierCode; division: number | null }[];
   streak: { name: string; days: number } | null;
 }

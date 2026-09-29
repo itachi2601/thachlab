@@ -1,70 +1,27 @@
--- Rollback cho supabase/migrations/20260930100000_rank_weekly_progress.sql
--- Chạy: supabase db query --linked -f perf/rollback/20260930100000_rank_weekly_progress.down.sql
--- Lưu ý: RP 'progress_week' đã cộng vẫn nằm trong rank_rp_ledger; xoá tay nếu muốn: delete từ rank_rp_awards/ledger where source_kind='progress_week', rồi rank_recompute_season.
+-- ============================================================================
+-- feat(rank): vinh danh tuần thêm "Tiến bộ nhất" theo TỈ LỆ ĐÚNG (29/9/2026)
+-- Giai đoạn 1b, việc 1. Cần 20260929110000_rank_progress_week.sql chạy trước
+-- (dùng rank_progress_calc và nguồn RP 'progress_week').
+--
+-- Thêm khoá 'improved_acc' vào mỗi khối trong rank_public_honor():
+--   { name, avatar, gain (điểm % tăng so với 2 tuần trước), acc (tỉ lệ đúng tuần này) }
+-- Chỉ xét em đã được cộng RP tiến bộ tuần đó, ngoài top 3 RP (nhóm trên đã có vinh danh riêng),
+-- tôn trọng honor_visibility như mọi mục khác. Khoá 'improved' cũ (RP tăng) giữ nguyên để client
+-- cũ vẫn chạy; client mới ưu tiên 'improved_acc'. Không thêm round-trip: nằm trong RPC hiện có.
+-- Hiệu năng: chỉ tính tỉ lệ đúng cho các em có RP tiến bộ tuần đó, không quét cả lớp.
+--
+-- Cách chạy: bash scripts/run-migrations.sh
+-- Rollback:  supabase db query --linked -f perf/rollback/20260929120000_rank_honor_progress.down.sql
+-- ============================================================================
 
-create or replace function public.rank_on_result(
-  p_student uuid, p_kind text, p_source_id bigint, p_score numeric, p_at timestamptz, p_result_ref bigint
-)
-returns void
-language plpgsql security definer set search_path = public
-as $$
-declare
-  v_season bigint;
-  v_src public.rank_sources%rowtype;
-  v_title text;
+-- Chốt chặn: file này gọi rank_progress_calc do 20260929110000 tạo. Chạy sai thứ tự sẽ làm
+-- rank_public_honor (trang chủ, anon) báo lỗi ngay, nên dừng lại thay vì ghi hàm hỏng.
+do $$
 begin
-  if not public.rank_is_student(p_student) then return; end if;
-
-  v_season := public.rank_season_for_at(p_student, p_at);
-  if v_season is null then return; end if;
-
-  select * into v_src from public.rank_sources
-  where season_id = v_season and source_kind = p_kind and source_id = p_source_id and enabled;
-
-  perform public.rank_ensure_member(v_season, p_student);
-
-  if v_src.season_id is not null then
-    if p_kind = 'exam' then
-      select title into v_title from public.exams where id = p_source_id;
-    else
-      select li.title into v_title from public.lesson_items li where li.id = p_source_id;
-    end if;
-    perform public.rank_award(v_season, p_student, 'practice', p_kind || ':' || p_source_id,
-      public.rank_score_to_rp(p_score, v_src.max_rp),
-      'Bài luyện tập: ' || coalesce(v_title, '#' || p_source_id) || ' (' || replace(to_char(p_score, 'FM990.0'), '.', ',') || ' điểm)',
-      p_result_ref);
-    perform public.rank_eval_weekly_goal(v_season, p_student, p_at);
+  if to_regprocedure('public.rank_progress_calc(uuid,date)') is null then
+    raise exception 'Thiếu rank_progress_calc: chạy 20260929110000_rank_progress_week.sql trước file này';
   end if;
-
-  perform public.rank_eval_gates(v_season, p_student);
-  perform public.rank_eval_achievements(v_season, p_student, p_at);
-  perform public.rank_refresh_student(v_season, p_student);
-end; $$;
-
--- Xét danh hiệu theo câu hỏi cũng phải bỏ qua tài khoản không phải học sinh.
-create or replace function public.trg_rank_question_results()
-returns trigger language plpgsql security definer set search_path = public
-as $$
-declare
-  r record;
-  v_season bigint;
-begin
-  for r in select distinct student_id from inserted loop
-    if not public.rank_is_student(r.student_id) then continue; end if;
-    begin
-      v_season := public.rank_season_for_at(r.student_id, now());
-      perform public.rank_eval_titles(r.student_id, v_season);
-      if v_season is not null then
-        perform public.rank_eval_gates(v_season, r.student_id);
-        perform public.rank_eval_achievements(v_season, r.student_id, now());
-        perform public.rank_refresh_student(v_season, r.student_id);
-      end if;
-    exception when others then
-      raise warning 'rank: bỏ qua lỗi khi xét danh hiệu cho %: %', r.student_id, sqlerrm;
-    end;
-  end loop;
-  return null;
-end; $$;
+end $$;
 
 create or replace function public.rank_public_honor()
 returns jsonb
@@ -152,6 +109,18 @@ begin
                    from ranked t
                    where t.grade = g.grade and not g.use_prev and t.pos > 3 and t.rp_week > 0 and t.rp_week - t.rp_before > 0
                    order by (t.rp_week - t.rp_before) desc, t.full_name limit 1),
+      'improved_acc', (select jsonb_build_object(
+                         'name', public.rank_honor_name(z.full_name, z.honor_visibility),
+                         'avatar', z.avatar_url, 'gain', z.gain, 'acc', z.acc_now)
+                       from (select t.full_name, t.honor_visibility, t.avatar_url, c.gain, c.acc_now
+                             from ranked t
+                             join public.rank_rp_awards a
+                               on a.season_id = t.season_id and a.student_id = t.user_id
+                              and a.source_kind = 'progress_week' and a.awarded > 0
+                              and a.source_ref = (case when g.use_prev then v_week - 7 else v_week end)::text
+                             cross join lateral public.rank_progress_calc(t.user_id, case when g.use_prev then v_week - 7 else v_week end) c
+                             where t.grade = g.grade and t.pos > 3 and c.gain > 0
+                             order by c.gain desc, t.full_name limit 1) z),
       'tier_ups', (select coalesce(jsonb_agg(jsonb_build_object(
                      'name', public.rank_honor_name(t.full_name, t.honor_visibility),
                      'tier_code', t.tier_code, 'division', t.division) order by t.tier_reached_at desc), '[]'::jsonb)
@@ -177,7 +146,3 @@ begin
   return jsonb_build_object('week_start', v_week, 'grades', v_grades);
 end; $$;
 grant execute on function public.rank_public_honor() to anon, authenticated;
-
-drop function if exists public.rank_progress_top(text);
-drop function if exists public.rank_eval_progress(bigint, uuid, timestamptz);
-drop function if exists public.rank_progress_stats(uuid, date);
