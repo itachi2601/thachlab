@@ -14,6 +14,15 @@
 -- Rollback:  supabase db query --linked -f perf/rollback/20260929120000_rank_honor_progress.down.sql
 -- ============================================================================
 
+-- Chốt chặn: file này gọi rank_progress_calc do 20260929110000 tạo. Chạy sai thứ tự sẽ làm
+-- rank_public_honor (trang chủ, anon) báo lỗi ngay, nên dừng lại thay vì ghi hàm hỏng.
+do $$
+begin
+  if to_regprocedure('public.rank_progress_calc(uuid,date)') is null then
+    raise exception 'Thiếu rank_progress_calc: chạy 20260929110000_rank_progress_week.sql trước file này';
+  end if;
+end $$;
+
 create or replace function public.rank_public_honor()
 returns jsonb
 language plpgsql security definer stable set search_path = public
