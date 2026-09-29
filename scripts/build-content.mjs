@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Sinh bản tĩnh của học liệu công khai vào public/data/ để trang học sinh
 // (/lop-hoc, /lop-hoc/bai, trang chủ HS) đọc từ cùng origin thay vì gọi Supabase
-// (Sydney, ~100–150 ms mỗi round-trip) trước khi có nội dung. Chạy tự động trước
+// (~100–150 ms mỗi round-trip lúc còn ở Sydney; nay Singapore) trước khi có nội dung. Chạy tự động trước
 // mỗi lần build (prebuild trong package.json) — SAU KHI ĐĂNG/SỬA BÀI PHẢI BUILD LẠI.
 //
 //   public/data/manifest.json        — generatedAt + số lượng (rỗng nếu không lấy được dữ liệu)

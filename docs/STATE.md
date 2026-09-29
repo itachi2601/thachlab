@@ -4,7 +4,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Hạ tầng
 - Next.js App Router + TypeScript + Tailwind v4, `output: "export"` (xuất tĩnh), deploy bằng `scripts/deploy.sh` → nhánh `deploy`.
-- Supabase project `fxnqgmfqdbvnjawgnsfi`, **region Sydney (ap-southeast-2)** → mỗi round-trip từ VN ~100–150 ms.
+- Supabase project `jgvbdbpvjdntdgzthumv`, **region Singapore (ap-southeast-1)** — đã chuyển từ Sydney (project cũ `fxnqgmfqdbvnjawgnsfi`), thầy xác nhận xong 29/09/2026. Độ trễ round-trip từ VN chưa đo lại (số ~100–150 ms trong `perf*/` là của Sydney). Ảnh cũ trong `body_html` có thể còn URL Storage của project cũ — chưa kiểm.
 - Công thức: **KaTeX 0.17** (không phải MathJax).
 - Font tự host qua `next/font` (Be Vietnam Pro 400/600/700/800, Inter 400/500/600, JetBrains Mono 400).
 - 56 route `page.tsx`, 69 trang tĩnh khi build.
@@ -104,7 +104,7 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
 
 ## Việc ngoài roadmap đang treo
-- Chuyển Supabase sang Singapore (lợi ~3–4× độ trễ).
+- Đo lại độ trễ Supabase sau khi chuyển Singapore và cập nhật số liệu nền; rà URL Storage cũ trong `body_html`.
 - Cột `updated_at` cho `lessons`/`lesson_items` để lớp tĩnh biết lý thuyết đã sửa.
 
 (KaTeX/framer-motion đã xác nhận ngoài JS ban đầu từ đợt 2; cache header ảnh đã làm ở đợt 4 —
