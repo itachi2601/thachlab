@@ -4,7 +4,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Hạ tầng
 - Next.js App Router + TypeScript + Tailwind v4, `output: "export"` (xuất tĩnh), deploy bằng `scripts/deploy.sh` → nhánh `deploy`.
-- Supabase project `jgvbdbpvjdntdgzthumv`, **region Singapore (ap-southeast-1)** — đã chuyển từ Sydney (project cũ `fxnqgmfqdbvnjawgnsfi`), thầy xác nhận xong 29/09/2026. Độ trễ round-trip từ VN chưa đo lại (số ~100–150 ms trong `perf*/` là của Sydney). Ảnh cũ trong `body_html` có thể còn URL Storage của project cũ — chưa kiểm.
+- Supabase project `jgvbdbpvjdntdgzthumv`, **region Singapore (ap-southeast-1)** — đã chuyển từ Sydney (project cũ `fxnqgmfqdbvnjawgnsfi`), thầy xác nhận xong 29/09/2026. Đã kiểm 29/09/2026 từ sandbox cloud (chỉ đọc): build học liệu tĩnh ra 4 lớp · 22 chương · 116 bài · 256 mục; dữ liệu bài không còn URL Storage của project cũ (0), 306 URL ảnh/tệp của project mới đều trả 200. Độ trễ round-trip từ VN chưa đo lại (số ~100–150 ms trong `perf*/` là của Sydney; sandbox không ở VN nên không dùng để đo).
 - Công thức: **KaTeX 0.17** (không phải MathJax).
 - Font tự host qua `next/font` (Be Vietnam Pro 400/600/700/800, Inter 400/500/600, JetBrains Mono 400).
 - 56 route `page.tsx`, 69 trang tĩnh khi build.
@@ -104,7 +104,7 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
 
 ## Việc ngoài roadmap đang treo
-- Đo lại độ trễ Supabase sau khi chuyển Singapore và cập nhật số liệu nền; rà URL Storage cũ trong `body_html`.
+- Đo lại độ trễ Supabase từ VN sau khi chuyển Singapore (PageSpeed/CrUX hoặc đo tay từ máy ở VN) và cập nhật số liệu nền. Rà URL Storage cũ trong `body_html` đã xong (0 URL cũ trong dữ liệu bài); chưa rà các bảng khác (đề, ngân hàng câu hỏi).
 - Cột `updated_at` cho `lessons`/`lesson_items` để lớp tĩnh biết lý thuyết đã sửa.
 
 (KaTeX/framer-motion đã xác nhận ngoài JS ban đầu từ đợt 2; cache header ảnh đã làm ở đợt 4 —
