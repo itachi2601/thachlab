@@ -12,7 +12,7 @@ import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/service
 import {
   EXIT_QUIZ_PASS_PCT,
   EXIT_QUIZ_QUESTION_COUNT,
-  MAX_EXIT_ATTEMPTS,
+  EXIT_COOLDOWN_HOURS,
   logExitAttempt,
   needLabel,
   type TutoringNeed,
@@ -28,13 +28,11 @@ type Phase = "loading" | "empty" | "intro" | "running" | "result";
 export default function TutoringExitQuiz({
   need,
   studentId,
-  attemptsUsed,
   onClose,
   onCleared,
 }: {
   need: TutoringNeed;
   studentId: string;
-  attemptsUsed: number;
   onClose: () => void;
   onCleared: () => void;
 }) {
@@ -48,7 +46,7 @@ export default function TutoringExitQuiz({
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ pct: number; passed: boolean; correct: number; total: number } | null>(null);
 
-  const attemptsLeft = Math.max(0, MAX_EXIT_ATTEMPTS - attemptsUsed);
+  const theoryHref = need.lessonId ? `/lop-hoc/bai/?id=${need.lessonId}#secondary-stage-ly_thuyet` : null;
 
   useEffect(() => {
     let cancelled = false;
@@ -157,7 +155,7 @@ export default function TutoringExitQuiz({
             <div className="space-y-4">
               <p className="text-sm text-slate-300">
                 <strong className="text-white">{needLabel(need)}</strong> · {questions.length} câu · cần đạt từ{" "}
-                {EXIT_QUIZ_PASS_PCT}% · còn {attemptsLeft} lượt.
+                {EXIT_QUIZ_PASS_PCT}%.
               </p>
               <p className="text-xs text-slate-500">Câu hỏi lấy ngẫu nhiên từ ngân hàng, mỗi lượt một bộ khác nhau.</p>
               <Button onClick={() => setPhase("running")} className="w-full">
@@ -212,13 +210,19 @@ export default function TutoringExitQuiz({
                 </p>
               </div>
               {result.passed ? (
-                <p className="text-sm text-emerald-200">Đạt yêu cầu — chủ đề này đã được gỡ khỏi danh sách cần phụ đạo.</p>
+                <p className="text-sm text-emerald-200">Đạt yêu cầu — chủ đề này đã được mở khoá. Em đã phục hồi!</p>
               ) : (
-                <p className="text-sm text-amber-200">
-                  {attemptsLeft - 1 > 0
-                    ? `Chưa đạt ${EXIT_QUIZ_PASS_PCT}% — em còn ${attemptsLeft - 1} lượt, ôn lại rồi thử tiếp nhé.`
-                    : "Đã hết lượt tự kiểm tra cho chủ đề này — em đăng ký buổi phụ đạo bên dưới nhé."}
-                </p>
+                <div className="space-y-2 text-sm text-amber-200">
+                  <p>
+                    Chưa đạt {EXIT_QUIZ_PASS_PCT}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau{" "}
+                    {EXIT_COOLDOWN_HOURS} giờ em thử lượt mới nhé.
+                  </p>
+                  {theoryHref && (
+                    <a href={theoryHref} className="inline-block font-semibold text-sky-300 underline-offset-2 hover:underline">
+                      Ôn lại đoạn lý thuyết →
+                    </a>
+                  )}
+                </div>
               )}
               <Button variant="outline" onClick={onClose} className="w-full">
                 Đóng

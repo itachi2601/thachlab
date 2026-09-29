@@ -44,8 +44,10 @@ import {
 } from "@/services/announcements";
 import {
   ACTIVE_NEED_STATUSES,
-  MAX_EXIT_ATTEMPTS,
-  NEED_STATUS_LABEL,
+  formatExitWait,
+  nextExitAttemptAt,
+  NEED_STATUS_LABEL_STUDENT,
+  EXIT_COOLDOWN_HOURS,
   cancelRegistration,
   fetchMyExitAttempts,
   fetchMyNeeds,
@@ -63,8 +65,8 @@ import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/servic
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
 const NEED_TONE: Record<NeedStatus, string> = {
-  open: "border-red-500/40 bg-red-500/10 text-red-200",
-  assigned: "border-amber-500/40 bg-amber-500/10 text-amber-200",
+  open: "border-sky-500/40 bg-sky-500/10 text-sky-200",
+  assigned: "border-indigo-500/40 bg-indigo-500/10 text-indigo-200",
   tutored: "border-blue-500/40 bg-blue-500/10 text-blue-200",
   cleared: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
   dismissed: "border-white/15 bg-white/5 text-slate-400",
@@ -152,7 +154,7 @@ export default function ThptStudentHome({
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
-  const [exitAttemptCounts, setExitAttemptCounts] = useState<Map<number, number>>(new Map());
+  const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
 
   useEffect(() => {
@@ -195,11 +197,14 @@ export default function ThptStudentHome({
         setNeeds(active);
         fetchMyExitAttempts(studentId, active.map((n) => n.id))
           .then((attempts) => {
-            const counts = new Map<number, number>();
-            for (const a of attempts) counts.set(a.tutoringNeedId, (counts.get(a.tutoringNeedId) ?? 0) + 1);
-            setExitAttemptCounts(counts);
+            const last = new Map<number, string>();
+            for (const a of attempts) {
+              const prev = last.get(a.tutoringNeedId);
+              if (!prev || a.createdAt > prev) last.set(a.tutoringNeedId, a.createdAt);
+            }
+            setLastExitAttempt(last);
           })
-          .catch(() => setExitAttemptCounts(new Map()));
+          .catch(() => setLastExitAttempt(new Map()));
       })
       .catch(() => setNeeds([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
@@ -441,34 +446,33 @@ export default function ThptStudentHome({
       {/* Mục 3 — Chủ đề cần phụ đạo */}
       <CatchupCard studentId={studentId} classId={classId} viewer="student" />
 
-      <Section icon={Users} title="Chủ đề cần phụ đạo">
+      <Section icon={Users} title="Chủ đề đang mở khoá">
         <div className="mt-3 space-y-4">
           {needs.length === 0 ? (
-            <p className="text-sm text-slate-500">Hiện chưa có chủ đề nào cần phụ đạo — cứ tiếp tục học nhé!</p>
+            <p className="text-sm text-slate-500">Chưa có chủ đề nào đang chờ mở khoá — cứ tiếp tục học nhé!</p>
           ) : (
             <>
               <p className="text-xs text-slate-400">
-                Để bỏ một chủ đề khỏi danh sách này: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
+                Để mở khoá một chủ đề: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
                 bên dưới rồi trả bài lại cho trợ giảng, hoặc <strong className="text-slate-200">tự ôn và làm bài
-                kiểm tra thoát phụ đạo</strong> (câu hỏi ngẫu nhiên đúng chủ đề em đang hổng) — đạt từ 80% là xong,
-                tối đa {MAX_EXIT_ATTEMPTS} lượt/chủ đề.
+                tự kiểm tra</strong> (câu hỏi ngẫu nhiên đúng chủ đề này) — đạt từ 80% là mở khoá. Mỗi chủ đề
+                cách nhau {EXIT_COOLDOWN_HOURS} giờ giữa hai lượt để kịp ôn lại đoạn lý thuyết.
               </p>
               <div className="space-y-1.5">
                 {needs.map((need) => {
-                  const used = exitAttemptCounts.get(need.id) ?? 0;
-                  const left = MAX_EXIT_ATTEMPTS - used;
+                  const wait = nextExitAttemptAt(lastExitAttempt.get(need.id));
                   return (
                     <div key={need.id} className="flex flex-wrap items-center gap-1.5">
                       <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}>
-                        {needLabel(need)} · {NEED_STATUS_LABEL[need.status]}
+                        {needLabel(need)} · {NEED_STATUS_LABEL_STUDENT[need.status]}
                       </span>
                       <button
                         type="button"
                         onClick={() => setQuizNeed(need)}
-                        disabled={left <= 0}
+                        disabled={wait !== null}
                         className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
                       >
-                        {left > 0 ? `Tự kiểm tra (còn ${left} lượt)` : "Đã hết lượt tự kiểm tra"}
+                        {wait ? `Lượt tiếp theo mở lúc ${formatExitWait(wait)}` : "Tự kiểm tra"}
                       </button>
                     </div>
                   );
@@ -536,7 +540,6 @@ export default function ThptStudentHome({
         <TutoringExitQuiz
           need={quizNeed}
           studentId={studentId}
-          attemptsUsed={exitAttemptCounts.get(quizNeed.id) ?? 0}
           onClose={() => setQuizNeed(null)}
           onCleared={() => {
             setQuizNeed(null);

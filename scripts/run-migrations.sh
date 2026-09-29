@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260930100000_tutoring_exit_cooldown.sql|Thay giới hạn 3 lượt tự kiểm tra bằng chờ 24 giờ giữa 2 lượt|bất kỳ lúc nào (chỉ thay 1 hàm trigger)"
 )
 # ĐÃ CHẠY 29/9/2026 (17:43): 20260929130000_rank_weekly_goal_adaptive.sql
 # ĐÃ CHẠY 29/9/2026 (14:04): 20260929100000_rank_restore_daily_streak.sql, 20260929110000_rank_progress_week.sql,
