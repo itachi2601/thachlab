@@ -4,6 +4,7 @@ Lịch sử các đợt migration đã chạy xong trên production, chuyển sa
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
 ## Migration — đợt 29/09/2026 (đã chạy hết)
+**Cập nhật: file 3 (`rank_honor_progress`) đã bị rollback ngày 29/9 ~07:00 UTC, xem mục ĐANG CHỜ trong STATE.md.**
 **Trạng thái xác nhận 29/09/2026 (project Singapore `jgvbdbpvjdntdgzthumv`)**: file 1 chạy OK (log máy Thạch); file 2 lần đầu
 lỗi `TransportError` ở bước đăng nhập của CLI (chưa chạy câu SQL nào), chạy lại `--only 2` thì xong; file 3 lỡ chạy TRƯỚC
 file 2 nên `rank_public_honor` báo lỗi 42883 (thiếu `rank_progress_calc`) trong một khoảng ngắn cho tới khi file 2 xong. Đã thêm chốt

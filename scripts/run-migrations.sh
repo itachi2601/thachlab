@@ -14,9 +14,10 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260929120000_rank_honor_progress.sql|Vinh danh tuần thêm mục Tiến bộ nhất theo tỉ lệ đúng (rank_public_honor)|Giờ nào cũng được; cần file 20260929110000 đã chạy (đã chạy) — có chốt chặn"
 )
-# ĐÃ CHẠY 29/9/2026: 20260929100000_rank_restore_daily_streak.sql, 20260929110000_rank_progress_week.sql,
-#   20260929120000_rank_honor_progress.sql (file 2 chạy lại sau TransportError; thứ tự đúng 1 → 2 → 3)
+# ĐÃ CHẠY 29/9/2026: 20260929100000_rank_restore_daily_streak.sql, 20260929110000_rank_progress_week.sql
+#   (file 2 chạy lại sau TransportError). 20260929120000 đã chạy rồi bị rollback, nên đang chờ chạy lại.
 # ĐÃ CHẠY 28/9/2026 (23:47): 20260928190000_rank_tier_names_lien_quan.sql
 # ĐÃ CHẠY 28/9/2026 (11:39):
 #   20260928170000_question_results_retention.sql (pg_cron đã bật, job question-results-rollup 0 20 1 * *)

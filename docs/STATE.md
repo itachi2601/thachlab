@@ -25,7 +25,10 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
 
 ## Migration — ĐANG CHỜ
-(không có — cả 3 file 29/09/2026 đã chạy, xem `STATE-archive.md`)
+- `20260929120000_rank_honor_progress.sql` — mục "Tiến bộ nhất" theo tỉ lệ đúng trên bảng vinh danh tuần. Đã chạy rồi
+  bị Thạch rollback (`perf/rollback/20260929120000_rank_honor_progress.down.sql`) ngày 29/9 khoảng 07:00 UTC; hiện `rank_public_honor`
+  là bản cũ (hoạt động bình thường, không có `improved_acc`). Chạy lại khi thầy muốn: file 1 và 2 cùng ngày đã chạy xong nên không còn
+  rủi ro thứ tự (file có chốt chặn). Chi tiết 2 file kia: `STATE-archive.md`.
 Mọi file khác trong `supabase/migrations/` tính tới 29/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
