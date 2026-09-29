@@ -14,6 +14,9 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260929100000_rank_restore_daily_streak.sql|Khôi phục cộng RP chuỗi ngày bị rơi từ 26/9 (rank_on_result)|Giờ nào cũng được, chỉ định nghĩa lại 1 hàm"
+  "supabase/migrations/20260929110000_rank_progress_week.sql|Tiến bộ so với chính em: RP theo tỉ lệ đúng tuần vs 2 tuần trước|Giờ nào cũng được (thêm hàm/trigger/2 chỉ mục nhỏ); nên ngoài giờ HS đang nộp bài"
+  "supabase/migrations/20260929120000_rank_honor_progress.sql|Vinh danh tuần thêm mục Tiến bộ nhất theo tỉ lệ đúng (rank_public_honor)|Chạy SAU file 110000; giờ nào cũng được"
 )
 # ĐÃ CHẠY 28/9/2026 (23:47): 20260928190000_rank_tier_names_lien_quan.sql
 # ĐÃ CHẠY 28/9/2026 (11:39):
