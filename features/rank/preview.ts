@@ -113,7 +113,7 @@ export function unlockBoard(real: ClassRankBoard | null, myName: string, myAvata
   return {
     ...real,
     top_week,
-    me: { pos: 1, rp_week: rpWeek, tied: 0, above: null, below },
+    me: { rp_week: rpWeek, tier_code: "thach_dau" as const, division: null, tier_size: others.length + 1, in_top: true, tied: 0, above: null, below },
   };
 }
 
