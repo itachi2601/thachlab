@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { AlertTriangle, ArrowRight, CalendarCheck, GraduationCap, Users } from "lucide-react";
+import { AlertTriangle, ArrowRight, CalendarCheck, CheckCircle2, GraduationCap, ListChecks, Users } from "lucide-react";
 import type { ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
@@ -106,8 +106,43 @@ export default function TeacherThptOverview({
       .slice(0, 10);
   }, [students, scoreByStudent, attendanceRateByStudent, openAlertBy]);
 
+  // Gợi ý việc nên làm trước — chỉ tính từ dữ liệu đã tải ở trên (không thêm truy vấn).
+  const todo = useMemo(() => {
+    const items: { text: string; onClick: () => void }[] = [];
+    const urgent = [...openAlertBy.values()].filter((a) => a.severity === "urgent").length;
+    if (urgent > 0) items.push({ text: `${urgent} học sinh cảnh báo khẩn — xử lý phụ đạo trước`, onClick: () => onOpenTab("alerts") });
+    else if (openAlertBy.size > 0) items.push({ text: `${openAlertBy.size} học sinh cần phụ đạo — liên hệ hoặc xếp lịch`, onClick: () => onOpenTab("alerts") });
+    if (students.length > 0 && results.length > 0) {
+      const none = students.filter((s) => !scoreByStudent.has(s.id)).length;
+      if (none > 0) items.push({ text: `${none} học sinh chưa làm bài kiểm tra nào — nhắc làm bài`, onClick: () => onOpenTab("gradebook") });
+    }
+    if (students.length > 0 && sessionCount === 0) items.push({ text: "Lớp chưa có buổi điểm danh nào — mở phiên đầu tiên", onClick: () => onOpenTab("attendance") });
+    return items.slice(0, 3);
+  }, [openAlertBy, students, results.length, scoreByStudent, sessionCount, onOpenTab]);
+
   return (
     <div className="space-y-5">
+      <section className="rounded-2xl border border-blue-400/20 bg-blue-500/[.06] p-5">
+        <div className="mb-3 flex items-center gap-2 text-blue-300">
+          <ListChecks size={18} />
+          <h3 className="font-display text-lg font-bold text-white">Nên làm trước</h3>
+        </div>
+        {todo.length ? (
+          <ul className="space-y-2">
+            {todo.map((item) => (
+              <li key={item.text}>
+                <button onClick={item.onClick} className="flex w-full items-center justify-between gap-3 rounded-xl bg-white/[.04] px-4 py-3 text-left text-sm text-slate-200 hover:bg-white/10">
+                  <span>{item.text}</span>
+                  <ArrowRight size={16} className="shrink-0 text-blue-300" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="flex items-center gap-2 text-sm text-emerald-300"><CheckCircle2 size={16} />Không có việc gấp — có thể đăng đề hoặc bài học mới.</p>
+        )}
+      </section>
+
       <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <Metric icon={<Users size={18} />} value={String(students.length)} label="Học sinh" tone="blue" />
         <Metric icon={<GraduationCap size={18} />} value={results.length ? classAverage.toFixed(1) : "—"} label="Điểm trung bình lớp" tone="violet" />
