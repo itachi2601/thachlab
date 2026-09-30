@@ -464,6 +464,16 @@ export function formatExitWait(at: Date): string {
 export const EXIT_QUIZ_PASS_PCT = 80;
 export const EXIT_QUIZ_QUESTION_COUNT = 20;
 
+/**
+ * Mục phụ đạo mở ở tầng bài, còn câu hỏi thường gắn ở tầng yêu cầu cần đạt con (parent_id = bài)
+ * — trả về id bài cùng mọi id con để bốc câu cho bài tự kiểm tra.
+ */
+export async function fetchTopicFamilyIds(topicId: number): Promise<number[]> {
+  const { data, error } = await getSupabase().from("question_topics").select("id").eq("parent_id", topicId);
+  if (error) throw new Error(error.message);
+  return [topicId, ...((data as { id: number }[]) ?? []).map((r) => r.id)];
+}
+
 export interface ExitAttempt {
   id: number;
   tutoringNeedId: number;
