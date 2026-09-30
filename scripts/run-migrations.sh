@@ -15,6 +15,10 @@ cd "$(dirname "$0")/.."
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
   "supabase/migrations/20260930110000_rank_board_by_tier.sql|Bang tuan lop: vi tri cua em chi so voi ban cung bac (create or replace 1 ham)|bat ky luc nao; rollback: perf/rollback/20260930110000_rank_board_by_tier.down.sql"
+  "supabase/migrations/20260930120000_rank_gd1b_spacing_progress.sql|Thanh tich Tien Bo Tuan + Huyen Thoai can cau Kho rai >=2 tuan (dinh nghia lai 3 ham, them 1 ham)|bat ky luc nao; rollback: perf/rollback/20260930120000_rank_gd1b_spacing_progress.down.sql"
+  "supabase/migrations/20260930130000_rank_streak_freeze.sql|Chuoi ngay: dong bang 1 ngay/tuan + moc reset 3h sang (them 3 ham, dinh nghia lai 3 ham)|bat ky luc nao; rollback: perf/rollback/20260930130000_rank_streak_freeze.down.sql"
+  "supabase/migrations/20260930140000_rank_class_goal.sql|Muc tieu chung cua lop: N huy hieu/tuan, dat thi ca lop +RP (sua rang buoc source_kind, them trigger tren rank_title_awards, dinh nghia lai rank_class_board)|chay SAU file 1; rollback: perf/rollback/20260930140000_rank_class_goal.down.sql"
+  "supabase/migrations/20260930150000_rank_teacher_reports.sql|Danh sach thu Hai + do nhom 25% thap nhat (chi them 2 ham doc)|bat ky luc nao; rollback: perf/rollback/20260930150000_rank_teacher_reports.down.sql"
 )
 # ĐÃ CHẠY 30/9/2026: 20260930100000_tutoring_exit_cooldown.sql
 # ĐÃ CHẠY 29/9/2026 (17:43): 20260929130000_rank_weekly_goal_adaptive.sql

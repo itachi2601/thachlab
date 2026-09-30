@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame } from "lucide-react";
+import { Flame, Snowflake } from "lucide-react";
 import { type RankStatus } from "@/features/rank/types";
 
 /**
@@ -24,7 +24,8 @@ export default function DailyStreakCard({
   }
   if (!status?.season || !status.daily) return null;
 
-  const { streak, today_done, min_score, rp } = status.daily;
+  const { streak, today_done, min_score, rp, reset_hour, freeze_per_week = 0, freeze_used_week = 0, freeze_saved_recent } = status.daily;
+  const freezeLeft = Math.max(0, freeze_per_week - freeze_used_week);
 
   return (
     <div
@@ -51,6 +52,19 @@ export default function DailyStreakCard({
             ? `+${rp} RP hôm nay — quay lại ngày mai để chuỗi không gãy.`
             : suggestion || `Làm 1 bài đạt từ ${String(min_score).replace(".", ",")} điểm hôm nay để giữ chuỗi (+${rp} RP).`}
         </p>
+        {freeze_per_week > 0 && streak > 0 && (
+          <p className="mt-1 flex items-center gap-1 text-xs text-sky-300">
+            <Snowflake size={12} />
+            {freeze_saved_recent
+              ? "Chuỗi vừa được đóng băng cứu một ngày trống — tuần này hết lượt."
+              : freezeLeft > 0
+                ? `Có ${freezeLeft} lượt đóng băng tuần này: lỡ 1 ngày chuỗi vẫn không gãy.`
+                : "Tuần này đã dùng lượt đóng băng, đừng bỏ ngày nữa nhé."}
+            {typeof reset_hour === "number" && reset_hour > 0 && (
+              <span className="text-slate-500"> · Ngày mới tính từ {reset_hour}h sáng.</span>
+            )}
+          </p>
+        )}
       </div>
     </div>
   );

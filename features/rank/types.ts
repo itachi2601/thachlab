@@ -174,6 +174,13 @@ export interface RankDaily {
   min_score: number;
   rp: number;
   today_done: boolean;
+  /** Giờ (giờ VN) ngày mới của chuỗi bắt đầu — 3 nghĩa là 3h sáng (migration 20260930130000). */
+  reset_hour?: number;
+  /** Số ngày bỏ lỡ được đóng băng mỗi tuần (0 = tắt) và số đã dùng trong tuần này. */
+  freeze_per_week?: number;
+  freeze_used_week?: number;
+  /** Có ngày trống hôm qua/hôm nay vừa được đóng băng giữ chuỗi. */
+  freeze_saved_recent?: boolean;
 }
 
 export interface RankStatus {
@@ -205,6 +212,9 @@ export interface SpecialistProgress {
   tb_need: number;
   kho_correct: number;
   kho_need: number;
+  /** Số tuần khác nhau đã giải đúng câu Khó / số tuần cần (Huyền Thoại cần rải ≥ 2 tuần; migration 20260930120000). */
+  kho_weeks?: number;
+  kho_weeks_need?: number;
   topics: TitleTopicRef[];
 }
 
@@ -240,7 +250,7 @@ export function isSpecialistProgress(p: RankTitle["progress"]): p is SpecialistP
 export interface RankLedgerEntry {
   id: number;
   season_id: number;
-  source_kind: "practice" | "fix" | "weekly_goal" | "manual";
+  source_kind: "practice" | "fix" | "weekly_goal" | "daily_streak" | "progress_week" | "homework_check" | "class_goal" | "manual";
   source_ref: string;
   amount: number;
   reason: string;
@@ -253,6 +263,10 @@ export const LEDGER_KIND_LABELS: Record<RankLedgerEntry["source_kind"], string> 
   practice: "Bài luyện tập",
   fix: "Sửa sai",
   weekly_goal: "Mục tiêu tuần",
+  daily_streak: "Chuỗi ngày",
+  progress_week: "Tiến bộ tuần",
+  homework_check: "Bài tập về nhà",
+  class_goal: "Mục tiêu chung của lớp",
   manual: "Giáo viên điều chỉnh",
 };
 
@@ -311,6 +325,45 @@ export interface ClassRankBoard {
   } | null;
   improved: (ClassRankBoardMember & { delta: number }) | null;
   weekly: { name: string; kind: "weekly_goal" | "tier_up" | "title"; label: string; at: string }[];
+  /** Mục tiêu chung của lớp trong tuần (migration 20260930140000; RPC cũ không trả). */
+  class_goal?: ClassGoal | null;
+}
+
+/** "Cả lớp đạt N huy hiệu tuần này" — mọi huy hiệu của bất kỳ ai trong lớp đều tính. */
+export interface ClassGoal {
+  week_start: string;
+  target: number;
+  done: number;
+  members: number;
+  my_contrib: number;
+  rp: number;
+  reached: boolean;
+}
+
+// ---------- Báo cáo cho thầy (migration 20260930150000) ----------
+export interface MondayList {
+  week_start: string;
+  week_end: string;
+  level_ups: { student_id: string; name: string; count: number; items: string[] }[];
+  improved: { student_id: string; name: string; acc_now: number; acc_base: number; gain: number }[];
+}
+
+export interface QuartileGroup {
+  n: number;
+  active_season: number;
+  /** null khi chưa tới tuần 4 của mùa. */
+  active_w45: number | null;
+  with_badge: number;
+  cleared: number;
+}
+
+export interface QuartileMetrics {
+  season_id: number;
+  starts_on: string;
+  ends_on: string;
+  w45_ready: boolean;
+  baseline: string;
+  groups: { bottom?: QuartileGroup; rest?: QuartileGroup; no_baseline?: QuartileGroup };
 }
 
 // ---------- sửa sai ----------

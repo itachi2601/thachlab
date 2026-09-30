@@ -32,7 +32,17 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
 
 ## Migration — ĐANG CHỜ
-- `20260930110000_rank_board_by_tier.sql` (GĐ 1b #5, chờ chạy; rollback `perf/rollback/20260930110000_rank_board_by_tier.down.sql`).
+- Đợt GĐ 1b hoàn tất (30/9/2026) — 5 file, chạy đúng thứ tự bằng `bash scripts/run-migrations.sh` (mỗi file có rollback trong `perf/rollback/`):
+  1. `20260930110000_rank_board_by_tier.sql` (#5 bảng lớp chia giải theo bậc).
+  2. `20260930120000_rank_gd1b_spacing_progress.sql` (#1 thành tích "Tiến Bộ Tuần" + #7 Huyền Thoại cần câu Khó rải ≥ 2 tuần).
+  3. `20260930130000_rank_streak_freeze.sql` (#8 đóng băng chuỗi 1 ngày/tuần + ngày mới tính từ 3h sáng).
+  4. `20260930140000_rank_class_goal.sql` (#6 mục tiêu chung lớp; chạy SAU file 1 vì định nghĩa lại `rank_class_board`).
+  5. `20260930150000_rank_teacher_reports.sql` (#9 Danh sách thứ Hai + #10 đo nhóm 25% thấp; chỉ thêm 2 hàm đọc).
+  Chưa chạy trên DB thật; đã thử cú pháp + logic chuỗi/kho_weeks trên pglite. Code client (`ClassRankBoard`, `DailyStreakCard`,
+  `TitleCollection`, `MondayListPanel`, tab "Đo nhóm thấp" ở `/quan-tri/xep-hang`) tự ẩn khi RPC chưa có khoá mới, nên deploy trước/sau đều an toàn.
+  Cấu hình mùa mới (rank_seasons.config, đều tuỳ chọn): `legend_min_weeks` (2), `streak_day_offset_hours` (3), `streak_freeze_per_week` (1),
+  `class_goal_badges` (0=tự tính), `class_goal_min` (3), `class_goal_ratio` (0.25), `class_goal_rp` (10).
+  Sau khi chạy file 2: cấp bù "Tiến Bộ Tuần" cho em đã nhận RP tiến bộ (câu SQL ở cuối file).
 - (còn lại trống) — `20260930100000_tutoring_exit_cooldown.sql` đã chạy 30/9/2026 (xem STATE-archive.md).
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
   `scripts/data/theory-quiz/{3,6,10}.json` (lớp 12: Bài 2, Bài 5, Bài 9). Thầy chạy trên Mac, theo thứ tự:
