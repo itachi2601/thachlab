@@ -9,7 +9,9 @@ import type {
   FixQuizStart,
   FixableTopic,
   HonorVisibility,
+  MondayList,
   PublicHonorBoard,
+  QuartileMetrics,
   RankLedgerEntry,
   RankSeasonSummary,
   RankStatus,
@@ -578,4 +580,21 @@ export async function setMyHonorVisibility(value: HonorVisibility): Promise<void
   } catch {
     /* bỏ qua */
   }
+}
+
+// ============================================================
+// Báo cáo cho thầy (GĐ 1b #9, #10)
+// ============================================================
+/** Danh sách thứ Hai: 5 em lên mức + 5 em tiến bộ nhất tuần vừa qua của lớp. null = không có quyền. */
+export async function fetchMondayList(classId: number): Promise<MondayList | null> {
+  const { data, error } = await getSupabase().rpc("rank_monday_list", { p_class_id: classId });
+  if (error) throw error;
+  return (data as MondayList | null) ?? null;
+}
+
+/** Đo nhóm 25% thấp nhất của mùa (chỉ admin/giảng viên). */
+export async function fetchQuartileMetrics(seasonId: number): Promise<QuartileMetrics | null> {
+  const { data, error } = await getSupabase().rpc("rank_quartile_metrics", { p_season: seasonId });
+  if (error) throw error;
+  return (data as QuartileMetrics | null) ?? null;
 }

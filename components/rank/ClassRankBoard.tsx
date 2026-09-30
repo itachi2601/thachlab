@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUp, Flame, Sparkles, Trophy } from "lucide-react";
+import { ArrowUp, Flame, Sparkles, Trophy, Users } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import WornTitle from "@/components/rank/WornTitle";
-import type { ClassRankBoard as Board } from "@/features/rank/types";
+import type { ClassGoal, ClassRankBoard as Board } from "@/features/rank/types";
 import { fetchClassRankBoard } from "@/services/rank";
 
 const MEDAL = [
@@ -52,6 +52,9 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
       <p className="mt-1 text-xs text-slate-500">
         Tính RP kiếm được từ Thứ Hai {weekStart} · chốt Chủ Nhật 23:59 rồi làm lại từ đầu. Ai chăm tuần này đều lên được top.
       </p>
+
+      {/* Mục tiêu chung của lớp — hợp tác: huy hiệu của bất kỳ bạn nào cũng tính */}
+      {data.class_goal && data.class_goal.target > 0 && <ClassGoalBar goal={data.class_goal} />}
 
       {/* Khối 1 — Top tuần */}
       <div className="mt-4">
@@ -164,5 +167,37 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
         {data.season.name} còn <b className="text-slate-300">{left} ngày</b>.
       </p>
     </section>
+  );
+}
+
+function ClassGoalBar({ goal }: { goal: ClassGoal }) {
+  const pct = Math.min(100, Math.round((goal.done / Math.max(1, goal.target)) * 100));
+  return (
+    <div
+      className="mt-3 rounded-xl border p-3"
+      style={{ borderColor: goal.reached ? "rgba(52,211,153,.45)" : "rgba(255,255,255,.1)", background: goal.reached ? "rgba(52,211,153,.08)" : undefined }}
+    >
+      <p className="flex items-center gap-1.5 text-sm font-semibold text-white">
+        <Users size={15} className={goal.reached ? "text-emerald-300" : "text-cyan-300"} />
+        Mục tiêu chung: cả lớp đạt {goal.target} huy hiệu tuần này
+        <span className="ml-auto text-xs font-normal text-slate-400">
+          {Math.min(goal.done, goal.target)}/{goal.target}
+        </span>
+      </p>
+      <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/10">
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: goal.reached ? "#34d399" : "#22d3ee" }} />
+      </div>
+      <p className="mt-1.5 text-xs text-slate-400">
+        {goal.reached ? (
+          <>Cả lớp đã đạt mục tiêu{goal.rp > 0 ? <> — mỗi bạn được <b className="text-emerald-300">+{goal.rp} RP</b></> : null}. Cảm ơn mọi người!</>
+        ) : (
+          <>
+            Huy hiệu của <b className="text-slate-200">bất kỳ bạn nào</b> trong lớp đều tính
+            {goal.rp > 0 ? <>; đạt mục tiêu, mỗi bạn nhận <b className="text-emerald-300">+{goal.rp} RP</b></> : null}. Rủ nhau cùng học nhé.
+          </>
+        )}
+        {goal.my_contrib > 0 && <span className="ml-1 text-cyan-300">Em đã góp {goal.my_contrib} huy hiệu.</span>}
+      </p>
+    </div>
   );
 }

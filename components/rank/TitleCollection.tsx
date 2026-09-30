@@ -36,7 +36,10 @@ function nextRequirement(t: RankTitle): string {
     return `Làm Chủ: giải đúng ≥ ${p.tb_need} câu Trung bình (đã ${p.tb_correct})`;
   }
   if (r === 2) {
-    return `Huyền Thoại: giải đúng ≥ ${p.kho_need} câu Khó (đã ${p.kho_correct})`;
+    const weeksNeed = p.kho_weeks_need ?? 0;
+    const weeks = p.kho_weeks ?? 0;
+    const spread = weeksNeed > 1 ? ` · rải ở ≥ ${weeksNeed} tuần khác nhau (đã ${weeks})` : "";
+    return `Huyền Thoại: giải đúng ≥ ${p.kho_need} câu Khó (đã ${p.kho_correct})${spread}`;
   }
   return "Đã đạt mức cao nhất";
 }
@@ -51,7 +54,10 @@ function progressPct(t: RankTitle): number {
   const r = levelRank(t.level);
   if (r >= 3) return 100;
   const [have, need] = r === 0 ? [p.de_correct, p.de_need] : r === 1 ? [p.tb_correct, p.tb_need] : [p.kho_correct, p.kho_need];
-  return Math.round(Math.min(1, have / Math.max(1, need)) * 100);
+  const pct = Math.round(Math.min(1, have / Math.max(1, need)) * 100);
+  // Huyền Thoại cần rải câu Khó ở nhiều tuần: đủ số câu mà thiếu tuần thì chưa tới 100%.
+  if (r === 2 && pct >= 100 && (p.kho_weeks ?? 0) < (p.kho_weeks_need ?? 0)) return 99;
+  return pct;
 }
 
 export default function TitleCollection({

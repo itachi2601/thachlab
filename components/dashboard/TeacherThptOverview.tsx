@@ -6,6 +6,7 @@ import type { ClassStudent } from "@/services/classes";
 import { fetchClassExamResults, type ClassExamResult } from "@/services/class-results";
 import { fetchAttendanceRecordsForSessions, fetchAttendanceSessions, type ThptAttendanceRecord } from "@/services/class-attendance";
 import { fetchClassAlerts, type StudentAlert } from "@/services/analytics";
+import MondayListPanel from "@/components/rank/MondayListPanel";
 import TeacherLiveLearningPanel from "@/components/dashboard/TeacherLiveLearningPanel";
 
 export default function TeacherThptOverview({
@@ -142,6 +143,8 @@ export default function TeacherThptOverview({
           <p className="flex items-center gap-2 text-sm text-emerald-300"><CheckCircle2 size={16} />Không có việc gấp — có thể đăng đề hoặc bài học mới.</p>
         )}
       </section>
+
+      <MondayListPanel key={classId} classId={classId} />
 
       <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <Metric icon={<Users size={18} />} value={String(students.length)} label="Học sinh" tone="blue" />

@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Award, CalendarRange, ListChecks, Medal, RefreshCw, Users } from "lucide-react";
+import { Award, CalendarRange, Gauge, ListChecks, Medal, RefreshCw, Users } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import ExamPicker from "@/components/admin/ExamPicker";
+import RankQuartilePanel from "@/components/admin/RankQuartilePanel";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import { useToast } from "@/components/ui/Toast";
 import RankBadge from "@/components/rank/RankBadge";
@@ -47,7 +48,7 @@ import {
   type SourceCandidate,
 } from "@/services/rank";
 
-type Tab = "seasons" | "tiers" | "sources" | "titles" | "students";
+type Tab = "seasons" | "tiers" | "sources" | "titles" | "students" | "measure";
 
 const TABS: { id: Tab; label: string; icon: typeof Award }[] = [
   { id: "seasons", label: "Mùa", icon: CalendarRange },
@@ -55,6 +56,7 @@ const TABS: { id: Tab; label: string; icon: typeof Award }[] = [
   { id: "sources", label: "Bài tính RP", icon: ListChecks },
   { id: "titles", label: "Danh hiệu", icon: Medal },
   { id: "students", label: "Học sinh", icon: Users },
+  { id: "measure", label: "Đo nhóm thấp", icon: Gauge },
 ];
 
 const inputCls = "rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -147,6 +149,7 @@ export default function RankAdmin() {
       {tab === "sources" && (season ? <SourcesTab season={season} /> : <NoSeason />)}
       {tab === "titles" && <TitlesTab />}
       {tab === "students" && (season ? <StudentsTab season={season} /> : <NoSeason />)}
+      {tab === "measure" && (season ? <RankQuartilePanel key={season.id} season={season} /> : <NoSeason />)}
     </div>
   );
 }
