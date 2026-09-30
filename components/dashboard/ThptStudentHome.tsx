@@ -273,10 +273,13 @@ export default function ThptStudentHome({
   const hasTodayContent =
     Boolean(todayNote) || Boolean(nextLesson) || todoExams.length > 0 || todoReviewHomework.length > 0;
 
+  const nearTier = rank?.next && rank.next.rp_needed > 0 && rank.next.rp_needed <= 50
+    ? `Còn ${rank.next.rp_needed} RP là lên ${rank.next.name}`
+    : null;
   const dailySuggestion = todoExams.length > 0
-    ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".`
+    ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".${nearTier ? ` ${nearTier}!` : ""}`
     : nextLesson
-      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.`
+      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.${nearTier ? ` ${nearTier}!` : ""}`
       : needs.length > 0
         ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
         : null;
