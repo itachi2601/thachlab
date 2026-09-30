@@ -32,7 +32,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 3 --lesson 6 --lesson 10`
   (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên 3 mục lý thuyết (171/219/42) chưa có `exam_ids`.
   Rollback: gỡ `exam_ids`/`quiz_min_correct` của mục đó + xoá exam mới tạo. Skill `soan-quiz-ly-thuyet`
-  (`.claude/skills/soan-quiz-ly-thuyet/`) cần **đồng bộ tay sang 2 bản còn lại** (Library plugin + `~/.codex`) trên Mac.
+  (`.claude/skills/soan-quiz-ly-thuyet/`) cần đồng bộ sang 2 bản còn lại (Library plugin + `~/.codex`) trên Mac: `bash scripts/sync-skill.sh`.
 Mọi file trong `supabase/migrations/` tính tới 30/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
