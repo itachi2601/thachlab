@@ -6,7 +6,7 @@ allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git diff:*), Read, Glob
 Nắm tình hình trước khi làm. Chỉ đọc, chưa sửa gì cả.
 
 1. `git status --short`, `git log --oneline -10`, `git diff --stat`
-2. Đọc các file `project_*.md` trong `~/.claude/projects/-Users-MAC-Projects-thachlab/memory/` mà `MEMORY.md` cho thấy có liên quan tới đám file đang sửa dở — chỉ đọc file liên quan, đừng đọc hết.
+2. Đọc các file `project_*.md` trong `docs/memory/` (trong repo; trên Mac là symlink của thư mục memory Claude Code — xem `scripts/memory-to-git.sh`) mà `MEMORY.md` cho thấy có liên quan tới đám file đang sửa dở — chỉ đọc file liên quan, đừng đọc hết.
 3. Nếu working tree có file lạ không memory nào nhắc tới, mở xem đủ để đoán ý đồ.
 
 Rồi tóm tắt cho tôi, tối đa 10 dòng:
