@@ -1,5 +1,5 @@
 // "Kiểm tra hiểu bài": chia body_html của mục lý thuyết thành từng khối theo mốc <h3>
-// (I., II., III…) sẵn có trong nội dung, gắn id để quiz "Kiểm tra nhanh" (ExamRunner,
+// (I., II., III…; lùi về mốc in đậm đánh số rồi <h2> nếu bài không có <h3>) sẵn có trong nội dung, gắn id để quiz "Kiểm tra nhanh" (ExamRunner,
 // xem "Ôn ngay" trong components/exams/ExamRunner.tsx) có thể cuộn + tô màu đúng đoạn
 // liên quan khi học sinh trả lời sai, thay vì chỉ nhảy tới đầu cả mục lý thuyết. Biến
 // đổi chuỗi HTML thô — cùng cách làm với components/exams/ContentHtml.tsx — không đụng
@@ -17,10 +17,24 @@ const H3_RE = /<h3\b[^>]*>(.*?)<\/h3>/gi;
 // "a. …", "Chú ý:", "- Giải thích …:" (không có số ở đầu, hoặc không đứng riêng 1 <p>).
 const BOLD_NUMBERED_RE = /<p\b[^>]*>\s*<strong\b[^>]*>(\d+\.\s*[^<]*)<\/strong>\s*<\/p>/gi;
 
+// Bậc dự phòng thứ ba: một số bài chỉ dùng <h2> ("I. Nam châm", "II. …") làm mốc. Bỏ qua
+// <h2> chỉ ghi "LÝ THUYẾT"/"LÍ THUYẾT" — đó là tiêu đề chung cả mục, không phải một đoạn.
+const H2_RE = /<h2\b[^>]*>(.*?)<\/h2>/gi;
+const H2_GENERIC_RE = /^l[ýí]thuy[ếe]t$/i;
+
+function h2Matches(html: string): RegExpMatchArray[] {
+  return [...html.matchAll(H2_RE)].filter((m) => {
+    const text = m[1].replace(/<[^>]+>/g, "").replace(/&nbsp;/gi, " ").replace(/\s+/g, "");
+    return text !== "" && !H2_GENERIC_RE.test(text);
+  });
+}
+
 function headingMatches(html: string): RegExpMatchArray[] {
   const h3 = [...html.matchAll(H3_RE)];
   if (h3.length > 0) return h3;
-  return [...html.matchAll(BOLD_NUMBERED_RE)];
+  const bold = [...html.matchAll(BOLD_NUMBERED_RE)];
+  if (bold.length > 0) return bold;
+  return h2Matches(html);
 }
 
 /** Bọc mỗi đoạn từ một mốc tiêu đề tới trước mốc kế tiếp trong <div id="…">, để có thể scrollIntoView. */

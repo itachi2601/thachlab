@@ -27,6 +27,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 ## Migration — ĐANG CHỜ
 - `20260930110000_rank_board_by_tier.sql` (GĐ 1b #5, chờ chạy; rollback `perf/rollback/20260930110000_rank_board_by_tier.down.sql`).
 - (còn lại trống) — `20260930100000_tutoring_exit_cooldown.sql` đã chạy 30/9/2026 (xem STATE-archive.md).
+- **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
+  `scripts/data/theory-quiz/{3,6,10}.json` (lớp 12: Bài 2, Bài 5, Bài 9). Thầy chạy trên Mac, theo thứ tự:
+  `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 3 --lesson 6 --lesson 10`
+  (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên 3 mục lý thuyết (171/219/42) chưa có `exam_ids`.
+  Rollback: gỡ `exam_ids`/`quiz_min_correct` của mục đó + xoá exam mới tạo. Skill `soan-quiz-ly-thuyet`
+  (`.claude/skills/soan-quiz-ly-thuyet/`) cần đồng bộ sang 2 bản còn lại (Library plugin + `~/.codex`) trên Mac: `bash scripts/sync-skill.sh`.
 Mọi file trong `supabase/migrations/` tính tới 30/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
