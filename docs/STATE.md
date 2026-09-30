@@ -31,6 +31,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   mắt trên web thật** từng vai. Còn lại: gợi ý số liệu cho phụ huynh/admin/CTTC (cần RPC gộp = migration mới);
   số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
 
+- **Rà phần Báo lỗi & Góp ý (30/9/2026, chỉ đọc code — sandbox không truy cập được bảng `bug_reports` thật)**: đã sửa 4 điểm
+  không cần quyết định: (1) form chung không còn cho chọn loại `cau_hoi` (chỉ dành cho nút "Báo lỗi câu này" có gắn
+  đề/câu); (2) ô chọn ảnh chỉ nhận png/jpeg/webp/heic (bucket từ chối gif/svg → trước đó báo lỗi khó hiểu); (3) ô ghi
+  chú xử lý trước ghi "chỉ admin thấy" nhưng `/bao-loi-cua-toi` hiển thị cho học sinh → đổi lại nhãn cho đúng;
+  (4) `BugReportsAdmin` chống kết quả tab cũ ghi đè tab mới + xoá lỗi cũ khi tải lại. Chưa deploy. Còn chờ thầy quyết:
+  chống spam khách (không giới hạn), báo cho admin khi có báo lỗi mới, báo cho học sinh khi được phản hồi, đọc ~15 báo lỗi thật.
+
 ## Migration — ĐANG CHỜ
 - (trống) — đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
