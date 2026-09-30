@@ -48,3 +48,6 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — phát hiện 25/9, trạng thái sửa CHƯA RÕ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục đang ẩn, chờ gắn đề
 - [GĐ 1b rank – gộp main + deploy](project_thachlab_gd1b_rank.md) — #1–5 đã vào main, còn kiểm deploy + dọn docs/stash
+## Việc mới 30/9
+- [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
+- [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu, soạn khi có token
