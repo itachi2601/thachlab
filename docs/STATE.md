@@ -23,6 +23,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   27/9/2026 (log `scripts/logs/20260927-073246-*`, rollback
   `perf/rollback/20260926150000_fix_question_bank_similarity_timeout.down.sql`). Chưa xác nhận lại
   trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
+- **Bảng chào mừng theo vai (30/9/2026, PR #17, đã merge main + deploy)**: `components/account/WelcomePanel.tsx`
+  gắn ở `Account()` (`app/tai-khoan/page.tsx`) — 11 tình huống (HS THPT/CTTC theo trạng thái ghi danh, GV,
+  admin, trợ giảng, phụ huynh); đóng được, nhớ localStorage `thachlab_welcome_off_<userId>_<variant>`.
+  Kèm gợi ý theo số liệu thật: HS THPT "Còn X RP là lên {bậc}" (X≤50) ở `ThptStudentHome.tsx`; GV THPT khối
+  "Nên làm trước" ở `TeacherThptOverview.tsx`. KHÔNG thêm truy vấn Supabase, không migration. **Chưa kiểm bằng
+  mắt trên web thật** từng vai. Còn lại: gợi ý số liệu cho phụ huynh/admin/CTTC (cần RPC gộp = migration mới);
+  số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
 
 ## Migration — ĐANG CHỜ
 - `20260930110000_rank_board_by_tier.sql` (GĐ 1b #5, chờ chạy; rollback `perf/rollback/20260930110000_rank_board_by_tier.down.sql`).
