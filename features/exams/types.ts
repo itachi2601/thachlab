@@ -432,11 +432,11 @@ export function canonicalizeQuestionTopics(
 }
 
 // ---------- Luyện tập: thời lượng theo dạng câu ----------
-// Câu lý thuyết 15 giây, câu bài tập 45 giây. Câu chưa gắn nhãn `form` coi như bài tập
+// Câu lý thuyết 30 giây, câu bài tập 90 giây (1' 30s; nâng từ 15s/45s ngày 30/9/2026 theo góp ý học sinh). Câu chưa gắn nhãn `form` coi như bài tập
 // để không ép giờ quá tay. Tổng thời lượng của phiên = tổng thời lượng các câu.
 export const SECONDS_PER_FORM: Record<QuestionForm, number> = {
-  ly_thuyet: 15,
-  bai_tap: 45,
+  ly_thuyet: 30,
+  bai_tap: 90,
 };
 
 export function questionSeconds(q: ExamQuestion): number {
