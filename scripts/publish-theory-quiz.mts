@@ -134,11 +134,10 @@ for (const qz of quizzes) {
     topic: qz.lesson_title,
     difficulty: "de",
     questions: stripKind(qz.questions),
-    question_count: n,
-    type_counts: typeCounts(qz.questions),
+    // question_count / type_counts là cột GENERATED trong DB — không ghi (ghi sẽ lỗi), chỉ in số dự kiến.
     pass_score: Math.round((qz.quiz_min_correct / n) * 10 * 100) / 100,
   };
-  console.log(`  exams ← "${title}" · ${n} câu ${JSON.stringify(row.type_counts)} · ${row.duration_minutes} phút · pass_score ${row.pass_score} · ${row.subject_code}`);
+  console.log(`  exams ← "${title}" · ${n} câu ${JSON.stringify(typeCounts(qz.questions))} (dự kiến, DB tự sinh) · ${row.duration_minutes} phút · pass_score ${row.pass_score} · ${row.subject_code}`);
   console.log(`  lesson_items #${itemId} ← exam_ids=[<id mới>], quiz_min_correct=${qz.quiz_min_correct}`);
   if (oldExamIds.length) console.log(`  (--replace) đề cũ [${oldExamIds.join(", ")}] GIỮ NGUYÊN (có thể có exam_results) — thầy tự dọn.`);
 
