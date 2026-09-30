@@ -3,7 +3,7 @@ import { useCallback,useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHome";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHome";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
 
@@ -143,11 +143,21 @@ function Account(){
   useEffect(()=>{reload();},[reload]);
 
   if(!session)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
-  if(isStaff)return <StaffAccountCard/>;
-  if(isParent)return <ParentAccountCard/>;
+  const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name}/>;
+  if(isStaff)return <>{welcome(profile?.role==="admin"?"admin":"instructor")}<StaffAccountCard/></>;
+  if(isParent)return <>{welcome("parent")}<ParentAccountCard/></>;
   if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
 
   const track=profile?.track??null;
+  const cttcStatus=enrollment?.status;
+  const thptStatus=classRequest?.status;
+  const variant:WelcomeVariant=profile?.role==="tro_giang"?"tro_giang"
+    :track==="cttc"||(track!=="thpt"&&cttcStatus&&!thptStatus)
+      ?(cttcStatus==="active"?"cttc_active":cttcStatus==="pending"?"cttc_pending":"cttc_join")
+    :thptStatus==="active"?"thpt_active"
+    :thptStatus==="pending"?"thpt_pending"
+    :track==="thpt"?"thpt_pick_class":"student_new";
+  const body=(()=>{
 
   // Hệ CTTC (profiles.track='cttc') — chỉ nhìn vào course_enrollments, bỏ qua mọi user_classes cũ/lẫn.
   if(track==="cttc"){
@@ -189,6 +199,8 @@ function Account(){
   if(classRequest?.status==="active")return <ThptStudentHome profile={profile} email={session.user.email} studentId={session.user.id} classId={classRequest.classId} className={classRequest.className} onSignOut={async()=>{await signOut();router.push("/")}}/>;
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
+  })();
+  return <>{welcome(variant)}{body}</>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer/></>}
