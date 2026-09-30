@@ -156,3 +156,7 @@ chính" giờ lên web thật.
 
 
 - 30/9/2026: `20260930100000_tutoring_exit_cooldown.sql` đã chạy (GĐ 1b #3 — chờ 24 giờ thay giới hạn 3 lượt; rollback `perf/rollback/20260930100000_tutoring_exit_cooldown.down.sql`).
+- 30/9/2026 16:07: đợt GĐ 1b — 5 file đã chạy OK (log `scripts/logs/20260930-160718-*`), rollback ở `perf/rollback/`:
+  `20260930110000_rank_board_by_tier` (bảng lớp theo bậc), `20260930120000_rank_gd1b_spacing_progress` (thành tích Tiến Bộ Tuần + Huyền Thoại rải ≥ 2 tuần),
+  `20260930130000_rank_streak_freeze` (đóng băng chuỗi 1 ngày/tuần, ngày mới từ 3h sáng), `20260930140000_rank_class_goal` (mục tiêu chung lớp, trigger trên `rank_title_awards`),
+  `20260930150000_rank_teacher_reports` (`rank_monday_list`, `rank_quartile_metrics`). Cấu hình mùa mới: `legend_min_weeks`, `streak_day_offset_hours`, `streak_freeze_per_week`, `class_goal_*`.
