@@ -105,10 +105,6 @@ function Content() {
   // Nạp câu của bài đã chọn để biết bài có những YCCĐ / mức nào (1 truy vấn `exams`, cùng
   // nguồn với "Luyện 10 câu phần này" ở trang bài học).
   useEffect(() => {
-    setTopic("");
-    setLevel("");
-    setPool(null);
-    setPoolError(false);
     if (examIds.length === 0) return;
     let cancelled = false;
     fetchExamsFull(examIds)
@@ -129,11 +125,21 @@ function Content() {
     };
   }, [examIds]);
 
+  // Đổi bài -> xoá lựa chọn cũ ngay trong handler (không setState trong effect).
+  function pickLesson(id: number | null) {
+    setLessonId(id);
+    setTopic("");
+    setLevel("");
+    setPool(null);
+    setPoolError(false);
+  }
+
   const stats = useMemo<PoolStats | null>(() => {
-    if (!pool) return null;
+    const rows = examIds.length === 0 ? [] : pool;
+    if (!rows) return null;
     const topicCount = new Map<string, number>();
-    for (const r of pool) if (r.topic) topicCount.set(r.topic, (topicCount.get(r.topic) ?? 0) + 1);
-    const inTopic = pool.filter((r) => !topic || r.topic === topic);
+    for (const r of rows) if (r.topic) topicCount.set(r.topic, (topicCount.get(r.topic) ?? 0) + 1);
+    const inTopic = rows.filter((r) => !topic || r.topic === topic);
     const byLevel = { de: 0, "trung-binh": 0, kho: 0 };
     for (const r of inTopic) if (r.difficulty in byLevel) byLevel[r.difficulty as keyof typeof byLevel] += 1;
     return {
@@ -141,7 +147,7 @@ function Content() {
       byLevel,
       total: inTopic.length,
     };
-  }, [pool, topic]);
+  }, [examIds, pool, topic]);
 
   const available = !stats ? 0 : level ? stats.byLevel[level as keyof PoolStats["byLevel"]] : stats.total;
 
@@ -165,7 +171,7 @@ function Content() {
             onChange={(e) => {
               setClassId(Number(e.target.value));
               setChapterId(null);
-              setLessonId(null);
+              pickLesson(null);
             }}
           >
             {displayClasses.map((c) => (
@@ -182,7 +188,7 @@ function Content() {
             value={chapterId ?? ""}
             onChange={(e) => {
               setChapterId(e.target.value ? Number(e.target.value) : null);
-              setLessonId(null);
+              pickLesson(null);
             }}
           >
             <option value="">— Chọn chương —</option>
@@ -199,7 +205,7 @@ function Content() {
             className={selectCls}
             value={lessonId ?? ""}
             disabled={!chapterId}
-            onChange={(e) => setLessonId(e.target.value ? Number(e.target.value) : null)}
+            onChange={(e) => pickLesson(e.target.value ? Number(e.target.value) : null)}
           >
             <option value="">— Chọn bài —</option>
             {chapterLessons.map((l) => (
