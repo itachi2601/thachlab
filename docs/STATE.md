@@ -32,8 +32,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
 
 ## Migration — ĐANG CHỜ
-- `20260930160000_exit_quiz_bank_children.sql` — policy `question_bank` cho HS đọc cả câu ở YCCĐ con của bài phụ đạo (sửa lỗi "Ngân hàng chưa có câu nào": 11/25 cặp bài×dạng bị rỗng). Rollback: `perf/rollback/20260930160000_exit_quiz_bank_children.down.sql`. Client (`fetchTopicFamilyIds`) đã sửa cùng đợt.
-- Đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
+- (trống) — `20260930160000_exit_quiz_bank_children.sql` đã chạy 30/9/2026 17:15 (xem STATE-archive.md). Đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
   `scripts/data/theory-quiz/{3,6,10}.json` (lớp 12: Bài 2, Bài 5, Bài 9). Thầy chạy trên Mac, theo thứ tự:
   `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 3 --lesson 6 --lesson 10`

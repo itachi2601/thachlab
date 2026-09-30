@@ -3,6 +3,12 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 30/09/2026 17:15 (đã chạy)
+`20260930160000_exit_quiz_bank_children.sql` — policy `student reads exit-quiz bank questions` trên `question_bank` mở cho HS đọc cả câu ở
+YCCĐ con của bài đang cần phụ đạo (trước đó 11/25 cặp bài×dạng hiện "chưa có câu nào"). Log `scripts/logs/20260930-171530-*` OK.
+Rollback: `perf/rollback/20260930160000_exit_quiz_bank_children.down.sql`. Client `fetchTopicFamilyIds` (services/tutoring.ts) sửa cùng đợt.
+Chưa kiểm bằng tài khoản HS thật.
+
 ## Migration — đợt 29/09/2026 (đã chạy hết)
 **File thứ 4 `20260929130000_rank_weekly_goal_adaptive.sql` (mục tiêu tuần thích ứng) đã chạy 29/9 17:43 VN** (log `scripts/logs/20260929-174330-*`, OK).
 Xác nhận trên Singapore: `rank_weekly_goal_of` có mặt, gọi được bằng service_role, anon bị chặn (401), `rank_public_honor` vẫn 200.
