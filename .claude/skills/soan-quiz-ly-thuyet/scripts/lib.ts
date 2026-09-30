@@ -102,7 +102,7 @@ export function validateQuiz(data: any, opts: { topics?: Map<number, string[]> |
     if (q.type === "multiple_choice") {
       if (!Array.isArray(q.options) || q.options.length !== 4) at("cần đúng 4 options");
       else {
-        if (new Set(q.options.map((o: string) => KEY(String(o)))).size !== 4) at("4 options phải khác nhau");
+        if (new Set(q.options.map((o: string) => String(o).trim().replace(/\s+/g, " "))).size !== 4) at("4 options phải khác nhau");
         if (q.options.some((o: unknown) => typeof o !== "string" || !(o as string).trim())) at("option rỗng");
         texts.push(...q.options.map(String));
       }
