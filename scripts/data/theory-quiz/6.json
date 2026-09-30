@@ -1,0 +1,239 @@
+{
+ "lesson_id": 6,
+ "lesson_title": "Bài 5. Thuyết động học phân tử chất khí",
+ "item_id": 219,
+ "generated_at": "2026-09-30",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 9,
+ "review": {
+  "checked": true,
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Chuyển động Brown trong chất khí cho biết điều gì về các phân tử khí?",
+   "options": [
+    "Chúng đứng yên tại những vị trí cố định",
+    "Chúng chuyển động hỗn loạn, không ngừng",
+    "Chúng chỉ chuyển động theo một hướng xác định",
+    "Chúng chỉ chuyển động khi nhiệt độ cao hơn 0 °C"
+   ],
+   "answer": 1,
+   "explanation": "Chất khí được cấu tạo từ các phân tử chuyển động hỗn loạn, không ngừng; chuyển động này nhanh hơn khi nhiệt độ cao hơn.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 0
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Theo mô hình động học phân tử chất khí, áp suất chất khí lên thành bình do nguyên nhân nào?",
+   "options": [
+    "Trọng lượng của khối khí đè lên đáy bình",
+    "Các phân tử khí đẩy nhau bằng lực đẩy rất lớn",
+    "Các phân tử khí va chạm vào thành bình và tác dụng lực lên thành bình",
+    "Các phân tử khí hút thành bình bằng lực hút phân tử"
+   ],
+   "answer": 2,
+   "explanation": "Khi chuyển động hỗn loạn, các phân tử khí va chạm vào thành bình, tác dụng lực lên thành bình và gây ra áp suất.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_luat",
+   "theorySection": 1
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Đặc điểm nào sau đây thuộc mô hình khí lí tưởng?",
+   "options": [
+    "Giữa hai va chạm liên tiếp, phân tử khí đứng yên",
+    "Bỏ qua kích thước của các phân tử khí và lực tương tác giữa chúng khi chưa va chạm",
+    "Va chạm giữa các phân tử khí là va chạm mềm, mất hết động năng",
+    "Lực hút giữa các phân tử khí rất lớn nên khí dễ hoá lỏng"
+   ],
+   "answer": 1,
+   "explanation": "Khí lí tưởng: bỏ qua kích thước phân tử và lực tương tác khi chưa va chạm; giữa hai va chạm phân tử chuyển động thẳng đều; va chạm hoàn toàn đàn hồi.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Trung bình",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 2
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Công thức nào đúng để tính lượng chất $n$ (mol) của một mẫu có khối lượng $m$, chứa $N$ phân tử, khối lượng mol $M$?",
+   "options": [
+    "$n = N\\cdot N_A = \\dfrac{M}{m}$",
+    "$n = \\dfrac{N_A}{N} = m\\cdot M$",
+    "$n = \\dfrac{N}{N_A} = \\dfrac{M}{m}$",
+    "$n = \\dfrac{N}{N_A} = \\dfrac{m}{M}$"
+   ],
+   "answer": 3,
+   "explanation": "$n = \\dfrac{N}{N_A} = \\dfrac{m}{M}$: số mol bằng số phân tử chia số Avogadro, cũng bằng khối lượng chia khối lượng mol.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "cong_thuc",
+   "theorySection": 3
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Số Avogadro $N_A$ có giá trị và đơn vị nào sau đây?",
+   "options": [
+    "$6{,}02\\times10^{23}\\ \\mathrm{mol}^{-1}$",
+    "$6{,}02\\times10^{23}\\ \\mathrm{mol}$",
+    "$6{,}02\\times10^{-23}\\ \\mathrm{mol}^{-1}$",
+    "$6{,}02\\times10^{23}\\ \\mathrm{kg}^{-1}$"
+   ],
+   "answer": 0,
+   "explanation": "$N_A \\approx 6{,}02\\times10^{23}\\ \\mathrm{mol}^{-1}$: số phân tử (hoặc nguyên tử) trong 1 mol chất.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "don_vi",
+   "theorySection": 3
+  },
+  {
+   "type": "true_false",
+   "question": "Xét chuyển động và tương tác của các phân tử khí. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Chuyển động Brown xảy ra cả trong chất khí.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt độ của khí càng cao thì tốc độ chuyển động hỗn loạn của các phân tử khí càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Ở điều kiện tiêu chuẩn (T = 273 K, p = 1 atm), tốc độ trung bình của các phân tử khí khoảng 400 m/s.",
+     "answer": true
+    },
+    {
+     "text": "Lực liên kết giữa các phân tử khí mạnh hơn so với thể lỏng và thể rắn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Khoảng cách giữa các phân tử khí rất lớn nên lực liên kết giữa chúng rất yếu so với thể lỏng và thể rắn.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "hien_tuong",
+   "theorySection": 0
+  },
+  {
+   "type": "true_false",
+   "question": "Xét mô hình khí lí tưởng. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Giữa hai va chạm liên tiếp, phân tử khí lí tưởng chuyển động thẳng đều.",
+     "answer": true
+    },
+    {
+     "text": "Va chạm của các phân tử khí với nhau và với thành bình là va chạm hoàn toàn đàn hồi.",
+     "answer": true
+    },
+    {
+     "text": "Khi va chạm vào thành bình, phân tử khí dính lại trên thành bình.",
+     "answer": false
+    },
+    {
+     "text": "Chất khí ở nhiệt độ và áp suất khí quyển bình thường gần đúng là khí lí tưởng.",
+     "answer": true
+    }
+   ],
+   "explanation": "Khi va chạm, phân tử khí truyền động lượng cho thành bình rồi bị bật ngược trở lại, không dính lại.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 2
+  },
+  {
+   "type": "true_false",
+   "question": "Xét lượng chất và mol. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Mol là lượng chất chứa số phân tử (hoặc nguyên tử) bằng số Avogadro.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng mol của một chất là khối lượng của 1 mol chất đó.",
+     "answer": true
+    },
+    {
+     "text": "Ở điều kiện tiêu chuẩn, thể tích mol của các chất khí khác nhau thì khác nhau.",
+     "answer": false
+    },
+    {
+     "text": "Ở điều kiện tiêu chuẩn (0 °C, 1 atm), thể tích mol của chất khí là 22,4 lít.",
+     "answer": true
+    }
+   ],
+   "explanation": "Thể tích mol của mọi chất khí đều bằng nhau và bằng 22,4 lít (0,0224 m³) ở điều kiện tiêu chuẩn.",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 3
+  },
+  {
+   "type": "short_answer",
+   "question": "Khối lượng mol của nước là 18 g/mol. Lượng nước có khối lượng 36 g ứng với bao nhiêu mol?",
+   "answer": "2",
+   "explanation": "$n = \\dfrac{m}{M} = \\dfrac{36}{18} = 2$ (mol).",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 3
+  },
+  {
+   "type": "short_answer",
+   "question": "Một mẫu khí chứa $3{,}01\\times10^{23}$ phân tử. Lấy $N_A = 6{,}02\\times10^{23}\\ \\mathrm{mol}^{-1}$. Số mol của mẫu khí là bao nhiêu?",
+   "answer": "0,5",
+   "explanation": "$n = \\dfrac{N}{N_A} = \\dfrac{3{,}01\\times10^{23}}{6{,}02\\times10^{23}} = 0{,}5$ (mol).",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Trung bình",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 3
+  },
+  {
+   "type": "short_answer",
+   "question": "Ở điều kiện tiêu chuẩn, 2 mol khí chiếm thể tích bao nhiêu lít? (Thể tích mol khí là 22,4 lít.)",
+   "answer": "44,8",
+   "explanation": "$V = 2\\times 22{,}4 = 44{,}8$ (lít).",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 3
+  },
+  {
+   "type": "short_answer",
+   "question": "Một mẫu chất có khối lượng $m = 64$ g và lượng chất $n = 2$ mol. Khối lượng mol $M$ của chất là bao nhiêu g/mol?",
+   "answer": "32",
+   "explanation": "$M = \\dfrac{m}{n} = \\dfrac{64}{2} = 32$ (g/mol).",
+   "topic": "Bài 5. Thuyết động học phân tử chất khí",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 3
+  }
+ ]
+}

@@ -1,0 +1,239 @@
+{
+ "lesson_id": 3,
+ "lesson_title": "Bài 2. Thang nhiệt độ",
+ "item_id": 171,
+ "generated_at": "2026-09-30",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 9,
+ "review": {
+  "checked": true,
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Hai vật có nhiệt độ khác nhau tiếp xúc với nhau. Nhiệt năng được truyền như thế nào?",
+   "options": [
+    "Từ vật có nhiệt độ thấp hơn sang vật có nhiệt độ cao hơn",
+    "Từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn",
+    "Từ vật có khối lượng lớn hơn sang vật có khối lượng nhỏ hơn",
+    "Không có sự truyền nhiệt năng nào giữa hai vật"
+   ],
+   "answer": 1,
+   "explanation": "Nhiệt năng truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn; chỉ khi nhiệt độ bằng nhau mới không còn truyền nhiệt.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 0
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Thang nhiệt độ Celsius được xây dựng với hai mốc và cách chia nào?",
+   "options": [
+    "0 °C là nhiệt độ nóng chảy của nước đá tinh khiết, 100 °C là nhiệt độ sôi của nước tinh khiết, chia thành 100 khoảng bằng nhau",
+    "0 °C là nhiệt độ sôi của nước tinh khiết, 100 °C là nhiệt độ nóng chảy của nước đá tinh khiết, chia thành 100 khoảng bằng nhau",
+    "32 °C là nhiệt độ nóng chảy của nước đá, 212 °C là nhiệt độ sôi của nước, chia thành 180 khoảng bằng nhau",
+    "0 °C là độ không tuyệt đối, 100 °C là nhiệt độ sôi của nước tinh khiết, chia thành 100 khoảng bằng nhau"
+   ],
+   "answer": 0,
+   "explanation": "Thang Celsius: 0 °C là nước đá tinh khiết đang tan, 100 °C là nước tinh khiết sôi, khoảng giữa chia 100 phần bằng nhau.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 1
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Công thức nào đúng để đổi nhiệt độ từ thang Celsius ($t$, °C) sang thang Kelvin ($T$, K) (làm tròn)?",
+   "options": [
+    "$T = t - 273$",
+    "$T = t + 32$",
+    "$T = t + 273$",
+    "$T = 1{,}8t + 273$"
+   ],
+   "answer": 2,
+   "explanation": "Sau khi làm tròn: $T(\\mathrm K) = t(^\\circ\\mathrm C) + 273$. Trừ 273 là công thức đổi ngược từ K sang °C; 32 và 1,8 thuộc thang Fahrenheit.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "cong_thuc",
+   "theorySection": 1
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Công thức nào đúng để đổi nhiệt độ từ thang Celsius ($t$, °C) sang thang Fahrenheit ($T$, °F)?",
+   "options": [
+    "$T = 1{,}8(t + 32)$",
+    "$T = \\dfrac{t}{1{,}8} + 32$",
+    "$T = 1{,}8t + 273$",
+    "$T = 1{,}8t + 32$"
+   ],
+   "answer": 3,
+   "explanation": "$T(^\\circ\\mathrm F) = 1{,}8\\,t(^\\circ\\mathrm C) + 32$: nhân hệ số 1,8 với $t$ trước rồi mới cộng 32.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Trung bình",
+   "difficultySource": "ai",
+   "kind": "cong_thuc",
+   "theorySection": 1
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Nhiệt độ trong thang Kelvin được kí hiệu và đo bằng đơn vị nào?",
+   "options": [
+    "Kí hiệu $t$, đơn vị °C",
+    "Kí hiệu $T$, đơn vị K",
+    "Kí hiệu $T$, đơn vị °F",
+    "Kí hiệu $t$, đơn vị K"
+   ],
+   "answer": 1,
+   "explanation": "Thang Kelvin dùng kí hiệu $T$ và đơn vị kelvin (K); kí hiệu $t$ với °C dùng cho thang Celsius.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "don_vi",
+   "theorySection": 1
+  },
+  {
+   "type": "true_false",
+   "question": "Xét sự truyền nhiệt năng giữa hai vật tiếp xúc nhau. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Khi hai vật tiếp xúc nhau có nhiệt độ bằng nhau thì không có sự truyền nhiệt năng giữa chúng.",
+     "answer": true
+    },
+    {
+     "text": "Vật có khối lượng lớn hơn luôn truyền nhiệt năng cho vật có khối lượng nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ cho biết chiều truyền nhiệt năng giữa các vật tiếp xúc nhau.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt năng truyền từ vật có nhiệt độ thấp hơn sang vật có nhiệt độ cao hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chiều truyền nhiệt năng chỉ phụ thuộc nhiệt độ (cao → thấp), không phụ thuộc khối lượng; nhiệt độ bằng nhau là cân bằng nhiệt.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "hien_tuong",
+   "theorySection": 0
+  },
+  {
+   "type": "true_false",
+   "question": "Xét thang nhiệt độ Kelvin. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Thang Kelvin còn được gọi là thang đo nhiệt động.",
+     "answer": true
+    },
+    {
+     "text": "Độ không tuyệt đối được định nghĩa là 0 K.",
+     "answer": true
+    },
+    {
+     "text": "Có thể có vật ở nhiệt độ thấp hơn 0 K.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ điểm ba của nước là 273,15 K, tương đương 100 °C.",
+     "answer": false
+    }
+   ],
+   "explanation": "0 K là nhiệt độ thấp nhất mà vật có thể có, không vật nào thấp hơn. Điểm ba của nước là 273,15 K tương đương 0,01 °C (không phải 100 °C).",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "dinh_nghia",
+   "theorySection": 1
+  },
+  {
+   "type": "true_false",
+   "question": "Xét các loại nhiệt kế. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Nhiệt kế là thiết bị dùng để đo nhiệt độ.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt kế rượu, nhiệt kế thuỷ ngân dựa trên sự nở dài của cột chất lỏng trong ống thuỷ tinh.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt kế khí dựa trên sự nở vì nhiệt của thể tích một lượng khí xác định ở áp suất không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt kế hồng ngoại chỉ đo được vật có nhiệt độ trên 0 °C.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mọi vật có nhiệt độ trên −273 °C đều phát bức xạ điện từ nên nhiệt kế hồng ngoại đo được, không giới hạn ở trên 0 °C.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Trung bình",
+   "difficultySource": "ai",
+   "kind": "hien_tuong",
+   "theorySection": 2
+  },
+  {
+   "type": "short_answer",
+   "question": "Đổi nhiệt độ 27 °C sang thang Kelvin (làm tròn hằng số 273). Kết quả (K) là bao nhiêu?",
+   "answer": "300",
+   "explanation": "$T = t + 273 = 27 + 273 = 300$ (K).",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 1
+  },
+  {
+   "type": "short_answer",
+   "question": "Một vật có nhiệt độ 250 K. Nhiệt độ của vật trong thang Celsius là bao nhiêu °C (làm tròn hằng số 273)?",
+   "answer": "-23",
+   "explanation": "$t = T - 273 = 250 - 273 = -23$ (°C).",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Trung bình",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 1
+  },
+  {
+   "type": "short_answer",
+   "question": "Nhiệt độ 20 °C ứng với bao nhiêu độ Fahrenheit (°F)?",
+   "answer": "68",
+   "explanation": "$T = 1{,}8t + 32 = 1{,}8\\cdot 20 + 32 = 68$ (°F).",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 1
+  },
+  {
+   "type": "short_answer",
+   "question": "Trong thang Fahrenheit, khoảng giữa hai mốc 32 °F và 212 °F được chia thành bao nhiêu khoảng bằng nhau?",
+   "answer": "180",
+   "explanation": "$212 - 32 = 180$: khoảng giữa hai mốc được chia thành 180 khoảng bằng nhau, mỗi khoảng ứng với 1 °F.",
+   "topic": "Bài 2. Thang nhiệt độ",
+   "form": "ly_thuyet",
+   "difficulty": "Dễ",
+   "difficultySource": "ai",
+   "kind": "tinh_nhanh",
+   "theorySection": 1
+  }
+ ]
+}
