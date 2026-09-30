@@ -32,7 +32,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
 
 ## Migration — ĐANG CHỜ
-- (trống) — đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
+- `20260930160000_rank_title_distinct_questions.sql` — chống cày: `rank_title_stats` đếm số CÂU KHÁC NHAU giải đúng (không đếm lượt). 1 hàm, chạy giờ nào cũng được; rollback `perf/rollback/20260930160000_rank_title_distinct_questions.down.sql`. Danh hiệu đã có không bị thu hồi. (Đợt GĐ 1b 5 file đã chạy 30/9 16:07, xem STATE-archive.md.)
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
   `scripts/data/theory-quiz/{3,6,10}.json` (lớp 12: Bài 2, Bài 5, Bài 9). Thầy chạy trên Mac, theo thứ tự:
   `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 3 --lesson 6 --lesson 10`
@@ -111,7 +111,7 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
      thật, ngoài phạm vi phiên verify).
 
 ## CHƯA làm (đợt kế tiếp — prompt `prompt-giai-doan-1-2.md`)
-- `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó (route chưa tồn tại).
+- `/luyen-tap` (30/9: code xong `app/luyen-tap/`, chưa kiểm trên web thật; nguồn câu = đề gắn vào bài, không RPC/RLS mới; chưa có link vào từ dashboard HS; chưa lọc "câu chưa đúng"). Còn lại: rà độ phủ ngân hàng bằng `scripts/sql/title-bank-coverage.sql` (chỉ đọc).
 - Thẻ "3 kỹ năng yếu nhất" trên dashboard học sinh + trọng số mức độ trong mastery.
 - Bổ sung câu hỏi chương Động học 10 cho đủ ≥30 câu/bài.
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
