@@ -252,6 +252,9 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                   Hoàn thành <b className="text-white">{status.weekly.target}</b> bài tính RP đạt từ{" "}
                   <b className="text-white">{String(status.weekly.min_score).replace(".", ",")}</b> điểm trong tuần (Thứ Hai – Chủ Nhật).
                 </p>
+                {status.weekly.personal && (
+                  <p className="mt-1 text-xs text-cyan-300/80">Mục tiêu đặt riêng cho em, dựa trên nhịp học 2 tuần gần nhất của chính em.</p>
+                )}
                 <div className="mt-3 flex items-center gap-2">
                   {Array.from({ length: status.weekly.target }).map((_, i) => (
                     <span

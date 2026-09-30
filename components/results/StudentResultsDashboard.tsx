@@ -19,7 +19,7 @@ import {
   type TopicGap,
 } from "@/services/analytics";
 import {
-  NEED_STATUS_LABEL,
+  NEED_STATUS_LABEL_STUDENT,
   fetchMyNeeds,
   needLabel,
   type NeedStatus,
@@ -52,7 +52,7 @@ const COPY: Record<ResultsViewer, {
     subtitle: "Điểm kiểm tra và những chủ đề em cần ôn lại.",
     noExam: "Em chưa làm bài kiểm tra nào.",
     noGap: "Chưa có dữ liệu — hoặc em chưa sai câu nào. Giữ phong độ nhé!",
-    needsTitle: "Phần em cần phụ đạo",
+    needsTitle: "Phần em đang mở khoá",
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào em đã làm đúng trở lại.",
     missed: "Em còn bài kiểm tra chưa làm — hãy hoàn thành sớm.",
     low: "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo. Cố gắng ôn lại các chủ đề dưới đây nhé.",
@@ -62,7 +62,7 @@ const COPY: Record<ResultsViewer, {
     subtitle: "Điểm kiểm tra của con và những chủ đề con cần ôn lại.",
     noExam: "Con chưa làm bài kiểm tra nào trên thachlab.",
     noGap: "Chưa có dữ liệu — hoặc con chưa sai câu nào.",
-    needsTitle: "Phần con đang được phụ đạo",
+    needsTitle: "Phần con đang mở khoá",
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào con đã làm đúng trở lại.",
     missed: "Con còn bài kiểm tra chưa làm — phụ huynh nhắc con hoàn thành sớm.",
     low: "Điểm kiểm tra của con đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo.",
@@ -308,8 +308,8 @@ function AlertBanner({ alert, copy }: { alert: StudentAlert; copy: (typeof COPY)
 }
 
 const NEED_TONE: Record<NeedStatus, string> = {
-  open: "border-red-500/30 bg-red-500/[.06] text-red-200",
-  assigned: "border-amber-500/30 bg-amber-500/[.06] text-amber-200",
+  open: "border-sky-500/30 bg-sky-500/[.06] text-sky-200",
+  assigned: "border-indigo-500/30 bg-indigo-500/[.06] text-indigo-200",
   tutored: "border-blue-500/30 bg-blue-500/[.06] text-blue-200",
   cleared: "border-emerald-500/30 bg-emerald-500/[.06] text-emerald-200",
   dismissed: "border-white/10 bg-white/[.03] text-slate-400",
@@ -318,10 +318,10 @@ const NEED_TONE: Record<NeedStatus, string> = {
 /** Cách nói với chính học sinh — không dùng chữ "cảnh báo" cho em. */
 const NEED_NOTE: Record<ResultsViewer, Record<NeedStatus, string>> = {
   student: {
-    open: "Thầy đã ghi nhận, sẽ sắp buổi phụ đạo cho em.",
+    open: "Phần này đang chờ em mở khoá — ôn lại rồi tự kiểm tra, hoặc thầy sẽ sắp buổi kèm.",
     assigned: "Đã có trợ giảng nhận kèm em phần này.",
     tutored: "Em đã được dạy lại phần này — làm bài sau để chốt.",
-    cleared: "Em đã làm đúng lại phần này. Giỏi!",
+    cleared: "Em đã phục hồi phần này. Giỏi!",
     dismissed: "Phần này tạm gác lại.",
   },
   parent: {
@@ -350,7 +350,7 @@ function NeedRow({
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <span className="font-display font-semibold text-white">{needLabel(need)}</span>
         <span className="rounded-full border border-current px-2.5 py-0.5 text-xs font-bold">
-          {NEED_STATUS_LABEL[need.status]}
+          {NEED_STATUS_LABEL_STUDENT[need.status]}
         </span>
         {href && (
           <Link

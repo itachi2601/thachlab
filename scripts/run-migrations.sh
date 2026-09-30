@@ -14,7 +14,12 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20260930110000_rank_board_by_tier.sql|Bang tuan lop: vi tri cua em chi so voi ban cung bac (create or replace 1 ham)|bat ky luc nao; rollback: perf/rollback/20260930110000_rank_board_by_tier.down.sql"
 )
+# ĐÃ CHẠY 30/9/2026: 20260930100000_tutoring_exit_cooldown.sql
+# ĐÃ CHẠY 29/9/2026 (17:43): 20260929130000_rank_weekly_goal_adaptive.sql
+# ĐÃ CHẠY 29/9/2026 (14:04): 20260929100000_rank_restore_daily_streak.sql, 20260929110000_rank_progress_week.sql,
+#   20260929120000_rank_honor_progress.sql (file 3 từng bị rollback rồi chạy lại; thứ tự 1 → 2 → 3)
 # ĐÃ CHẠY 28/9/2026 (23:47): 20260928190000_rank_tier_names_lien_quan.sql
 # ĐÃ CHẠY 28/9/2026 (11:39):
 #   20260928170000_question_results_retention.sql (pg_cron đã bật, job question-results-rollup 0 20 1 * *)

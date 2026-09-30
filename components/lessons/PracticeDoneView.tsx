@@ -24,6 +24,7 @@ export default function PracticeDoneView({
   usedSeconds,
   saveState,
   passScore,
+  ladderNote = null,
   onRetry,
   onNewSession,
   color,
@@ -33,6 +34,7 @@ export default function PracticeDoneView({
   usedSeconds: number;
   saveState: "idle" | "saving" | "saved" | "failed";
   passScore: number | null;
+  ladderNote?: string | null;
   onRetry: () => void;
   onNewSession: () => void;
   color: string;
@@ -60,6 +62,11 @@ export default function PracticeDoneView({
             }`}
           >
             {practiceStatus.label}
+          </p>
+        )}
+        {ladderNote && (
+          <p className="mt-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-200">
+            {ladderNote}
           </p>
         )}
         <p className="mt-2 text-xs text-slate-500">

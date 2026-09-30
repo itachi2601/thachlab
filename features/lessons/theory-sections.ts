@@ -1,5 +1,5 @@
 // "Kiểm tra hiểu bài": chia body_html của mục lý thuyết thành từng khối theo mốc <h3>
-// (I., II., III…) sẵn có trong nội dung, gắn id để quiz "Kiểm tra nhanh" (ExamRunner,
+// (I., II., III…; lùi về mốc in đậm đánh số rồi <h2> nếu bài không có <h3>) sẵn có trong nội dung, gắn id để quiz "Kiểm tra nhanh" (ExamRunner,
 // xem "Ôn ngay" trong components/exams/ExamRunner.tsx) có thể cuộn + tô màu đúng đoạn
 // liên quan khi học sinh trả lời sai, thay vì chỉ nhảy tới đầu cả mục lý thuyết. Biến
 // đổi chuỗi HTML thô — cùng cách làm với components/exams/ContentHtml.tsx — không đụng

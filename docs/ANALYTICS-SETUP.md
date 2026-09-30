@@ -1,164 +1,43 @@
-# Hướng dẫn thiết lập Phân tích điểm số và Chủ đề hay sai
+# Phân tích điểm số & chủ đề hay sai — hiện trạng (cập nhật 29/09/2026)
 
-## 📋 Tổng quan
+Bản cũ của file này (viết khi mới tạo bảng `exam_question_results`) mô tả quy trình **nhập tay** từng
+câu sai và trường `topic` dạng text. Cả hai đã lỗi thời. Dưới đây là cách hệ thống đang chạy thật;
+cột bảng lấy từ `docs/DATABASE.md` (sinh tự động), không tự dò schema.
 
-Tính năng phân tích giúp học sinh:
-- Xem xu hướng điểm qua các bài kiểm tra
-- Xác định chủ đề/kiến thức em hay sai
-- Nhận lời khuyên ôn tập lại
+## Dữ liệu được ghi tự động
 
-## 🔧 Bước 1: Chạy Migration Supabase
+- **Khi HS nộp bài** (`components/exams/ExamRunner.tsx`, khoảng dòng 180–229): chấm từng câu bằng
+  `gradeQuestion()` (`features/exams/types.ts`) rồi ghi một dòng `exam_results` và **mỗi câu một
+  dòng** `exam_question_results`. Không còn bước nhập tay.
+- Cột chính của `exam_question_results`: `exam_result_id`, `question_index`, `student_id`, `exam_id`,
+  `topic_id → question_topics` (YCCĐ 2 tầng Bài → yêu cầu cần đạt), `topic_name`, `form`
+  (lý thuyết / bài tập), `qtype`, `earned`, `max`, `is_correct`, `difficulty` (Dễ/TB/Khó),
+  `manual_earned` / `manual_max` / `graded_by` / `graded_at` (tự luận chấm tay qua RPC
+  `grade_essay_answer`).
+- Phiên luyện tập tự bốc câu ghi vào `practice_sessions` + `practice_question_results` (cùng cấu
+  trúc earned/max/topic_id/difficulty).
+- Nhãn `topic_id`/`form`/`difficulty` của câu đến từ lúc **đăng đề** (dòng `Chủ đề:`/`Dạng:` ở
+  `/quan-tri/dang-de`, nút "AI gắn nhãn") — xem `docs/DANG-DE-TU-WORD.md`. Câu không có nhãn thì
+  không vào thống kê theo YCCĐ.
+- Bài làm cũ trước khi có cơ chế tự ghi: dựng lại bằng `node scripts/backfill-exam-analytics.mjs`.
+- Kết quả quá 12 tháng được gộp vào `question_result_rollups` (pg_cron, xem
+  `docs/STATE-archive.md`), thống kê vẫn đọc được.
 
-1. Mở **Supabase Dashboard → SQL Editor**
-2. Chạy toàn bộ file: `docs/supabase-migration-topics.sql`
-3. Điều này sẽ tạo bảng `exam_question_results`
+## Nơi hiển thị
 
-```sql
--- Kết quả: Tạo bảng exam_question_results với các field:
--- - id (PK)
--- - exam_result_id (FK → exam_results)
--- - question_index (vị trí câu hỏi: 0, 1, 2...)
--- - topic (tên chủ đề: "Lực & chuyển động", "Năng lượng", ...)
--- - is_correct (true/false)
-```
-
-## 📝 Bước 2: Cấu trúc Câu hỏi với Topic
-
-Khi tạo đề thi trong Supabase, **mỗi question phải có field `topic`**:
-
-### Ví dụ: Multiple Choice
-```json
-{
-  "type": "multiple_choice",
-  "topic": "Lực & chuyển động",
-  "question": "<p>Định luật II Newton phát biểu rằng?</p>",
-  "options": [
-    "<p>F = ma</p>",
-    "<p>F = mv</p>",
-    "<p>F = m/a</p>",
-    "<p>F = a/m</p>"
-  ],
-  "answer": 0,
-  "explanation": "<p>Theo định luật II Newton, lực tác dụng bằng khối lượng nhân gia tốc...</p>"
-}
-```
-
-### Ví dụ: True/False
-```json
-{
-  "type": "true_false",
-  "topic": "Năng lượng",
-  "question": "<p>Năng lượng không bao giờ bị mất?</p>",
-  "statements": [
-    {
-      "text": "<p>Đúng, năng lượng chỉ chuyển hóa</p>",
-      "answer": true
-    },
-    {
-      "text": "<p>Sai, năng lượng có thể bị mất</p>",
-      "answer": false
-    },
-    {
-      "text": "<p>Phụ thuộc vào loại năng lượng</p>",
-      "answer": false
-    },
-    {
-      "text": "<p>Chỉ đúng với năng lượng cơ học</p>",
-      "answer": false
-    }
-  ],
-  "explanation": "<p>Theo định luật bảo toàn năng lượng...</p>"
-}
-```
-
-### Ví dụ: Short Answer
-```json
-{
-  "type": "short_answer",
-  "topic": "Chuyển động thẳng",
-  "question": "<p>Một xe chuyển động với vận tốc 20 m/s. Quãng đường xe đi được trong 5 giây là bao nhiêu mét?</p>",
-  "answer": "100",
-  "explanation": "<p>S = v × t = 20 × 5 = 100 mét</p>"
-}
-```
-
-## 📊 Bước 3: Nhập Chi tiết Câu Sai
-
-Sau khi học sinh làm bài thi, admin cần nhập chi tiết kết quả từng câu vào bảng `exam_question_results`:
-
-1. Mở **Supabase Dashboard → Table Editor**
-2. Chọn bảng **exam_question_results**
-3. Nhập dữ liệu cho mỗi câu hỏi:
-
-| Field | Giá trị | Mô tả |
+| Ai | Trang / component | Nguồn |
 |---|---|---|
-| `exam_result_id` | 123 | ID của kết quả bài làm (từ exam_results) |
-| `question_index` | 0, 1, 2... | Vị trí câu hỏi trong đề (bắt đầu từ 0) |
-| `topic` | "Lực & chuyển động" | Chủ đề của câu hỏi |
-| `is_correct` | true/false | Câu đúng hay sai |
+| Học sinh | `/lop-hoc/ket-qua` (`StudentResultsDashboard`): xu hướng điểm, chủ đề sai nhiều, nút "Ôn lại bài"; thẻ mastery trong bài học ("Luyện 10 câu phần này") | RPC `get_lesson_mastery`, `get_chapter_mastery` — quy tắc ở `docs/mastery-rules.md` |
+| Giáo viên | `/dashboard-thpt` tab **Phân tích** (`TeacherThptAnalysis.tsx`): phổ điểm, câu sai nhiều nhất, chủ đề yếu của lớp; tab **Cảnh báo phụ đạo**, **Phụ đạo**; trình chiếu chữa bài `/dashboard-thpt/chua-bai` | RPC `get_class_exam_question_stats`, `get_class_topic_matrix`, `student_outcome_gaps`; `services/analytics.ts` |
+| Phụ huynh | `/phu-huynh` (cùng `StudentResultsDashboard`, viewer `parent`) | như HS, chỉ đọc — `docs/PHU-HUYNH.md` |
+| Trợ giảng | `/tro-giang/phu-dao` | `tutoring_needs` (trigger tự mở/đóng, `docs/PHU-DAO.md`) |
 
-### Ví dụ dữ liệu:
-```
-exam_result_id | question_index | topic                | is_correct
-123            | 0              | Lực & chuyển động    | true
-123            | 1              | Lực & chuyển động    | false
-123            | 2              | Năng lượng           | true
-123            | 3              | Năng lượng           | false
-123            | 4              | Chuyển động thẳng    | false
-```
+Ngưỡng màu: đỏ khi sai > 50 %, vàng 30–50 %; mastery: ≥ 80 % Nắm vững, 50–80 % Cần luyện thêm,
+< 50 % Chưa đạt (chi tiết và TODO trọng số độ khó ở `docs/mastery-rules.md`).
 
-## 🎯 Danh sách Topics Đề xuất
+## Chưa có (tính đến 29/09/2026)
 
-Sử dụng những topic này trong câu hỏi để phân loại nhất quán:
-
-**Vật Lý 10:**
-- Lực & chuyển động
-- Năng lượng
-- Chuyển động thẳng
-- Chuyển động tròn
-- Điện tĩnh học
-- Từ trường
-
-**Vật Lý 11:**
-- Dao động điều hòa
-- Sóng cơ
-- Sóng ánh sáng
-- Quang học
-- Nhiệt học
-- Động lực học
-
-**Vật Lý 12:**
-- Điện từ học
-- Vật lý hiện đại
-- Nguyên tử & hạt nhân
-- Lượng tử
-- Vũ trụ học
-
-## 📈 Kết quả
-
-Sau khi có dữ liệu:
-
-1. **Biểu đồ điểm số** sẽ hiển thị xu hướng điểm qua các bài thi
-2. **Bảng chủ đề hay sai** sẽ hiển thị:
-   - Chủ đề
-   - Tổng số câu
-   - Số câu sai
-   - % câu sai (color-coded: 🔴 đỏ nếu > 50%, 🟡 vàng nếu 30-50%, 🔵 xanh nếu < 30%)
-3. Học sinh có thể click "Ôn tập" để nhận lời khuyên ôn tập lại chủ đề đó
-
-## 🤖 Tự động hóa (Tương lai)
-
-Hiện tại, chi tiết câu sai phải nhập thủ công. Trong tương lai, có thể:
-- Sau khi học sinh submit bài thi, tự động lưu kết quả từng câu
-- Tạo bảng điểm tự động trên trang làm bài
-
-## 📞 Câu hỏi thường gặp
-
-**Q: Nếu thêm topic sau khi tạo đề thi?**
-A: Có thể cập nhật field `questions` trong bảng `exams`. Dùng Supabase Dashboard hoặc PostgreSQL UPDATE statement.
-
-**Q: Topic có phải duy nhất không?**
-A: Không, một câu hỏi chỉ thuộc một topic, nhưng có thể có nhiều câu cùng một topic.
-
-**Q: Nếu học sinh chưa làm bài nào?**
-A: Biểu đồ sẽ trống, bảng chủ đề sẽ hiển thị "Tuyệt vời! 🎉" message.
+- Xuất báo cáo phân tích ra Word/PDF/Excel cho tổ chuyên môn (THPT chỉ có CSV bảng điểm thô).
+- Nhập kết quả làm trên Azota về LMS — toàn bộ tích hợp Azota hiện chỉ là chiều đề → LMS hoặc nhúng
+  iframe (`docs/AZOTA-INTEGRATION.md`).
+- Hai việc trên nằm trong đề xuất skill `phan-tich-ket-qua` ở `docs/DE-XUAT-SKILL-2026-09-29.md`.

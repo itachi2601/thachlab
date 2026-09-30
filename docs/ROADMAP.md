@@ -63,19 +63,19 @@ Căn cứ: thuyết tự quyết (Deci & Ryan), mục tiêu gần (Bandura & Sch
 giãn cách + ôn truy hồi (Cepeda, Roediger), tư duy phát triển (Dweck), nhạy cảm địa vị tuổi vị thành
 niên (Steinberg, Blakemore). Nhắm vào **nhóm 25% thấp nhất** — nhóm trên tiến bộ với mọi hệ thống.
 Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
-- [ ] **Trục "tiến bộ so với chính em"**: mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
+- [~] **Trục "tiến bộ so với chính em"** (29/09: code + migration xong, chờ chạy — xem STATE.md; còn thiếu thành tích "Tiến bộ tuần"; số liệu là tham chiếu, chỉnh sau mùa 1 qua `rank_seasons.config`): mỗi tuần tính tỉ lệ đúng theo YCCĐ so với 2 tuần trước;
       tăng → cộng RP + thành tích "Tiến bộ tuần"; mục "Tiến bộ nhất tuần" lên bảng vinh danh công
       khai cạnh top RP. (Dữ liệu: exam/practice_question_results đã có; thêm 1 RPC gộp, không thêm
       query rời ở trang chủ HS.)
-- [ ] **Mục tiêu tuần thích ứng**: bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
+- [~] **Mục tiêu tuần thích ứng** (29/09: code + migration xong, chờ chạy — xem STATE.md; số liệu là tham chiếu, chỉnh qua cấu hình mùa): bỏ "3 bài ≥7,0" chung cho cả lớp; đặt từ dữ liệu 2 tuần gần
       nhất của chính em (số bài + ngưỡng điểm nhỉnh hơn trung bình của em), nhắm ~80–85% lượt thử
       thành công.
-- [ ] **Đổi khung kênh phụ đạo**: trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
+- [~] **Đổi khung kênh phụ đạo** (30/9: code + migration xong, chờ chạy — nhãn HS/PH "đang mở khoá", chờ 24 giờ thay 3 lượt, gợi ý đoạn lý thuyết sau lượt trượt; thành tích "Phục hồi" = "Lật Kèo Ngoạn Mục" đã có sẵn; còn thiếu: tách lý thuyết theo đúng YCCĐ trượt): trên màn hình HS đổi "cần phụ đạo" → "đang mở khoá"; thành tích
       "Phục hồi" khi thoát; thay giới hạn 3 lượt tổng bằng thời gian chờ 1–2 ngày giữa các lượt +
       gợi ý đúng đoạn lý thuyết trước lượt sau. Nhãn phụ đạo chỉ GV/TA thấy.
-- [ ] **Luyện tập tăng dần độ khó**: phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
+- [x] **Luyện tập tăng dần độ khó** (30/9: xong, chỉ code phía client — mức lưu localStorage theo HS+mục luyện, không migration/round-trip mới; có nút "Luyện tự do"; `features/lessons/practice-ladder.ts`, `PracticeSession.tsx`): phiên luyện bắt đầu Dễ, đạt 80% mới lên TB rồi Khó (trùng 3
       mức danh hiệu, không thêm khái niệm mới).
-- [ ] **Bảng xếp hạng chia giải theo bậc**: chỉ so với em cùng bậc; bảng lớp giữ top 3, "vị trí
+- [~] **Bảng xếp hạng chia giải theo bậc** (30/9: code + migration xong, chờ chạy — `rank_class_board` so sánh chỉ trong cùng bậc, bỏ pos/total tuyệt đối; top 3 lớp giữ): chỉ so với em cùng bậc; bảng lớp giữ top 3, "vị trí
       của em" hiện 2 bạn ngay trên/dưới, không hiện số thứ tự tuyệt đối.
 - [ ] **Mục tiêu chung của lớp**: "cả lớp đạt N huy hiệu tuần này" + phần thưởng chung (cấu trúc
       hợp tác, em giỏi có lý do giúp em yếu).
@@ -124,6 +124,26 @@ thức nền và hệ danh hiệu giữ miễn phí (danh hiệu là bằng ch�
 
 ## Ngoài roadmap Vật lý (giữ, không mở rộng)
 CNC/CTTC, SHCN, trợ giảng: chỉ sửa lỗi.
+
+## Skill Claude cần xây (công cụ của thầy, không phải tính năng web) — đề xuất 29/09/2026, chờ duyệt
+Bản đồ quy trình + bằng chứng khâu trống + dữ liệu cần cung cấp: `docs/DE-XUAT-SKILL-2026-09-29.md`.
+Thứ tự = tần suất dùng. Chưa tạo skill nào khi thầy chưa duyệt.
+- [ ] **Đ1 `khbd-5512`** (mới): kế hoạch bài dạy CV 5512, 4 hoạt động, bám YCCĐ TT32; tái dùng
+      `lesson_items` + đề đã đăng; 2 reference Vật lí THPT / CNC cao đẳng. Cần: PDF TT32 môn Vật lí,
+      1–2 KHBD mẫu tổ đã duyệt, mẫu giáo án LT/TH/tích hợp Cao Thắng.
+- [ ] **Đ2 `phan-tich-ket-qua`** (mới): đọc RPC phân tích ThachLab hoặc file kết quả Azota → báo cáo
+      Word/Excel sau kiểm tra + nhận xét HS. Cần: 1 file Azota xuất mẫu, mẫu báo cáo tổ.
+- [ ] **Đ3 bổ sung `de-vat-ly-thpt`**: bản đặc tả, rút đề từ `question_bank` theo ma trận YCCĐ ×
+      Dễ–TB–Khó (chồng với mục GĐ 5 "Tạo đề theo ma trận" — làm ở skill trước, web sau), cổng kiểm
+      định sau khi ghi file. Cần: mẫu bản đặc tả, chốt ánh xạ NB/TH/VD ↔ Dễ/TB/Khó.
+- [ ] **Đ4 rubric eval CSV** cho 12 skill nghiệp vụ (bucket P/R/O/M, cột Conditional/Source theo
+      k12-teacher-skills), chạy bằng harness `skill-creator` sẵn có. Cần: 3–5 file thật/skill.
+- [ ] **Đ5 `chuan-dau-ra-abet`** (mới): ma trận CLO ↔ PLO ↔ ETAC outcomes, performance indicators,
+      đề cương học phần CNC. Cần: bộ tiêu chí ETAC đang áp dụng, PLO CĐ CNCTM, đề cương hiện có.
+- [ ] **Đ6 `phan-hoa-day-lai`** (bước cuối Đ2 hoặc skill riêng): gói 3 mức + kế hoạch tiết chữa bài.
+- [ ] **Đ7 bổ sung `up-de-kiem-tra`** nhánh đích CNC (`cnc_key`, `/quan-tri/cnc-dang-de`).
+- [ ] **Đ8 `mo-phong-bai-hoc`**: hoãn tới GĐ 3 (Q1/2027); `lib/Physics/*` đã xoá 29/09 vì là code
+      chết — khi làm thì viết lại theo mô hình cần, lấy lại từ git nếu cần tham khảo.
 
 ---
 
