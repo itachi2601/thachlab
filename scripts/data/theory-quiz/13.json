@@ -1,0 +1,379 @@
+{
+  "lesson_id": 13,
+  "lesson_title": "Bài 12. Hiện tượng cảm ứng điện từ",
+  "item_id": 66,
+  "generated_at": "2026-09-30",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 10
+    },
+    "removed": [
+      {
+        "question": "Theo $\\Phi=BS\\cos\\alpha$, từ thông thay đổi khi chỉ thay đổi một trong các đại lượng nào? Hỏi có bao nhiêu đại lượng (gồm $B$, $S$, $\\alpha$)?",
+        "reason": "Nghi ngờ: đề mơ hồ (hỏi 'đại lượng nào' rồi hỏi đếm), bài còn nêu thêm cách 'thay đổi B, S, α hợp lí' nên số 3 không chắc là đáp án duy nhất."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Từ thông qua một vòng dây dẫn kín là gì?",
+      "options": [
+        "Thông lượng từ trường gửi qua diện tích giới hạn bởi vòng dây kín",
+        "Lực từ tác dụng lên vòng dây kín",
+        "Dòng điện chạy trong vòng dây kín",
+        "Điện trở của vòng dây kín"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa từ thông là thông lượng từ trường gửi qua diện tích S giới hạn bởi vòng dây kín."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nội dung định luật Lenz là:",
+      "options": [
+        "Dòng điện cảm ứng có chiều sao cho từ trường do nó sinh ra chống lại sự biến thiên từ thông qua mạch",
+        "Dòng điện cảm ứng luôn cùng chiều với dòng điện ban đầu",
+        "Dòng điện cảm ứng có chiều sao cho từ trường do nó sinh ra làm tăng sự biến thiên từ thông",
+        "Dòng điện cảm ứng luôn có cường độ không đổi"
+      ],
+      "answer": 0,
+      "explanation": "Định luật Lenz: từ trường của dòng cảm ứng có tác dụng chống lại sự biến thiên từ thông của mạch kín."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong mạch kín, dòng điện cảm ứng xuất hiện khi nào?",
+      "options": [
+        "Khi từ thông qua mạch biến thiên",
+        "Khi từ thông qua mạch không đổi",
+        "Khi mạch hở",
+        "Khi mạch đặt xa nam châm"
+      ],
+      "answer": 0,
+      "explanation": "Khi từ thông qua cuộn dây dẫn kín biến thiên thì trong cuộn dây xuất hiện dòng điện cảm ứng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong thí nghiệm với nam châm điện và cuộn dây, khi đóng hoặc ngắt khoá K thì kim điện kế lệch khỏi vạch 0 vì:",
+      "options": [
+        "Dòng điện qua nam châm điện thay đổi làm từ thông qua cuộn dây thay đổi",
+        "Cuộn dây bị nhiễm điện",
+        "Điện trở cuộn dây thay đổi",
+        "Nam châm điện bị mất từ tính vĩnh viễn"
+      ],
+      "answer": 0,
+      "explanation": "Bài giải thích: dòng qua nam châm điện thay đổi kéo theo từ thông qua cuộn dây thay đổi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trong biểu thức $e_c=-\\frac{\\Delta\\Phi}{\\Delta t}$, dấu trừ biểu diễn điều gì?",
+      "options": [
+        "Định luật Lenz",
+        "Định luật Ôm",
+        "Sự tiêu hao năng lượng",
+        "Chiều chuyển động của khung dây"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu dấu trừ biểu diễn định luật Lenz."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét định luật Lenz và dòng điện cảm ứng. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Từ trường do dòng điện cảm ứng sinh ra chống lại sự biến thiên từ thông qua mạch kín.",
+          "answer": true
+        },
+        {
+          "text": "Dòng điện cảm ứng chỉ tồn tại trong khoảng thời gian từ thông qua mạch kín biến thiên.",
+          "answer": true
+        },
+        {
+          "text": "Khi từ thông qua mạch không đổi thì vẫn có dòng điện cảm ứng ổn định.",
+          "answer": false
+        },
+        {
+          "text": "Định luật Lenz dùng để xác định độ lớn suất điện động cảm ứng.",
+          "answer": false
+        }
+      ],
+      "explanation": "Định luật Lenz xác định chiều dòng cảm ứng; dòng chỉ tồn tại khi từ thông biến thiên."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Khung dây phẳng đặt trong từ trường đều, $\\alpha$ là góc giữa $\\vec{B}$ và pháp tuyến $\\vec{n}$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi $\\alpha=0^\\circ$ thì từ thông cực đại $\\Phi=NBS$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha=90^\\circ$ thì từ thông bằng 0.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha$ nhọn thì $\\Phi<0$.",
+          "answer": false
+        },
+        {
+          "text": "Khi $\\alpha$ tù thì $\\Phi>0$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Theo bảng trong bài: $\\alpha$ nhọn thì $\\Phi>0$, $\\alpha$ tù thì $\\Phi<0$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "1 Wb = 1 T·m$^n$. Tìm $n$.",
+      "answer": "2",
+      "explanation": "Bài nêu 1 Weber = 1 Tm$^2$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Khi $\\alpha=90^\\circ$ (vector $\\vec{B}$ vuông góc pháp tuyến) thì từ thông $\\Phi$ bằng bao nhiêu Wb?",
+      "answer": "0",
+      "explanation": "Theo bảng: $\\alpha=90^\\circ$ thì $\\Phi=\\Phi_{min}=0$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Từ thông qua cuộn dây có $N$ vòng, diện tích mỗi vòng $S$, đặt trong từ trường đều $B$ với góc $\\alpha$ là:",
+      "options": [
+        "$\\Phi=NBS\\cos\\alpha$",
+        "$\\Phi=NBS\\sin\\alpha$",
+        "$\\Phi=BS\\cos\\alpha$",
+        "$\\Phi=\\frac{NB}{S}\\cos\\alpha$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $\\Phi=NBS\\cos\\alpha$ cho cuộn dây N vòng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Suất điện động cảm ứng trong cuộn dây có $N$ vòng dây là:",
+      "options": [
+        "$e_c=-N\\dfrac{\\Delta\\Phi}{\\Delta t}$",
+        "$e_c=-\\dfrac{\\Delta\\Phi}{N\\Delta t}$",
+        "$e_c=-N\\dfrac{\\Delta t}{\\Delta\\Phi}$",
+        "$e_c=N\\Delta\\Phi\\Delta t$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $e_c=-N\\frac{\\Delta\\Phi}{\\Delta t}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Tốc độ biến thiên từ thông $\\left|\\frac{\\Delta\\Phi}{\\Delta t}\\right|$ có đơn vị là:",
+      "options": [
+        "Wb/s",
+        "Wb.s",
+        "T",
+        "V.s"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu tốc độ biến thiên từ thông có đơn vị Wb/s hay Wb.s$^{-1}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Dòng cảm ứng chạy trong dây dẫn có điện trở $R$ được tính bằng:",
+      "options": [
+        "$i_c=\\dfrac{|e_c|}{R}$",
+        "$i_c=|e_c|R$",
+        "$i_c=\\dfrac{R}{|e_c|}$",
+        "$i_c=\\dfrac{|e_c|}{R^2}$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $i_c=\\frac{|e_c|}{R}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Đoạn dây dài $\\ell$ chuyển động với vận tốc $\\vec{v}$ hợp với $\\vec{B}$ góc $\\theta$ (cả hai cùng vuông góc với đoạn dây). Độ lớn suất điện động cảm ứng là:",
+      "options": [
+        "$|e_c|=Bv\\ell\\sin\\theta$",
+        "$|e_c|=Bv\\ell\\cos\\theta$",
+        "$|e_c|=\\dfrac{Bv\\sin\\theta}{\\ell}$",
+        "$|e_c|=Bv\\ell\\sin^2\\theta$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $|e_c|=Bv\\ell\\sin\\theta$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về định luật Faraday, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Độ lớn suất điện động cảm ứng trong một vòng dây là $|e_c|=\\left|\\frac{\\Delta\\Phi}{\\Delta t}\\right|$.",
+          "answer": true
+        },
+        {
+          "text": "$\\Delta\\Phi=\\Phi_2-\\Phi_1$ là độ biến thiên từ thông.",
+          "answer": true
+        },
+        {
+          "text": "Suất điện động cảm ứng có đơn vị là Wb.",
+          "answer": false
+        },
+        {
+          "text": "Tốc độ biến thiên từ thông càng lớn thì độ lớn suất điện động cảm ứng càng nhỏ.",
+          "answer": false
+        }
+      ],
+      "explanation": "$|e_c|$ tỉ lệ thuận với tốc độ biến thiên từ thông và có đơn vị V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Khung dây 1 vòng, diện tích $S=0{,}5\\ m^2$, đặt trong từ trường đều $B=2\\ T$, vector $\\vec{B}$ song song với pháp tuyến ($\\alpha=0^\\circ$). Tính từ thông (Wb).",
+      "answer": "1",
+      "explanation": "$\\Phi=NBS\\cos0^\\circ=1\\cdot2\\cdot0{,}5\\cdot1=1$ Wb."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Từ thông qua một vòng dây tăng đều thêm $0{,}6\\ Wb$ trong $0{,}2\\ s$. Độ lớn suất điện động cảm ứng bằng bao nhiêu V?",
+      "answer": "3",
+      "explanation": "$|e_c|=\\frac{0{,}6}{0{,}2}=3$ V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Suất điện động cảm ứng có độ lớn $6\\ V$ trong mạch kín có điện trở $R=3\\ \\Omega$. Tính cường độ dòng cảm ứng (A).",
+      "answer": "2",
+      "explanation": "$i_c=\\frac{|e_c|}{R}=\\frac{6}{3}=2$ A."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 12. Hiện tượng cảm ứng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Đoạn dây $\\ell=0{,}5\\ m$ chuyển động với $v=4\\ m/s$ vuông góc với $\\vec{B}$ ($B=0{,}5\\ T$; $\\vec{v},\\vec{B}$ cùng vuông góc với đoạn dây). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Độ lớn suất điện động cảm ứng là $1\\ V$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\vec{v}$ hợp $\\vec{B}$ góc $30^\\circ$ (các đại lượng khác giữ nguyên) thì $|e_c|=0{,}5\\ V$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\vec{v}$ song song $\\vec{B}$ thì $|e_c|=1\\ V$.",
+          "answer": false
+        },
+        {
+          "text": "Nếu tăng $v$ gấp đôi thì $|e_c|$ giảm một nửa.",
+          "answer": false
+        }
+      ],
+      "explanation": "$|e_c|=Bv\\ell\\sin\\theta$: $\\theta=90^\\circ$ cho 1 V; $30^\\circ$ cho 0,5 V; $\\theta=0$ cho 0; tỉ lệ thuận với $v$."
+    }
+  ]
+}

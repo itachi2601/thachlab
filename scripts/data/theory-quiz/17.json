@@ -1,0 +1,368 @@
+{
+  "lesson_id": 17,
+  "lesson_title": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "item_id": 181,
+  "generated_at": "2026-09-30",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 14,
+      "cong_thuc": 6
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Phản ứng phân hạch là quá trình trong đó:",
+      "options": [
+        "một hạt nhân nặng vỡ thành các hạt nhân nhẹ hơn",
+        "hai hay nhiều hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn",
+        "một hạt nhân không bền tự phân ra thành hạt nhân mới mà không có tương tác",
+        "hạt nhân nhẹ hấp thụ electron thành hạt nhân nặng hơn"
+      ],
+      "answer": 0,
+      "explanation": "Theo bài, phản ứng phân hạch là quá trình một hạt nhân nặng vỡ thành các hạt nhân nhẹ hơn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phương pháp pyroprocessing được nêu trong bài có thể giúp:",
+      "options": [
+        "giảm lượng chất thải hạt nhân cần lưu trữ",
+        "tăng nhiệt độ của lò phản ứng",
+        "tăng hệ số nhân neutron k lên trên 1",
+        "giảm chu kì bán rã của các đồng vị"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu ví dụ: pyroprocessing có thể giúp giảm lượng chất thải hạt nhân cần lưu trữ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong phản ứng hạt nhân $^{A_1}_{Z_1}A + \\,^{A_2}_{Z_2}B \\to \\,^{A_3}_{Z_3}C + \\,^{A_4}_{Z_4}D$, biểu thức bảo toàn điện tích là:",
+      "options": [
+        "$Z_1 + Z_2 = Z_3 + Z_4$",
+        "$A_1 + A_2 = A_3 + A_4$",
+        "$Z_1 - Z_2 = Z_3 - Z_4$",
+        "$Z_1 \\cdot Z_2 = Z_3 \\cdot Z_4$"
+      ],
+      "answer": 0,
+      "explanation": "Tổng điện tích (số $Z$) trước phản ứng bằng tổng sau phản ứng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Biểu thức bảo toàn số nucleon trong phản ứng hạt nhân $A + B \\to C + D$ là:",
+      "options": [
+        "$A_1 + A_2 = A_3 + A_4$",
+        "$Z_1 + Z_2 = Z_3 + Z_4$",
+        "$A_1 + A_2 = A_3 - A_4$",
+        "$A_1 - A_2 = A_3 - A_4$"
+      ],
+      "answer": 0,
+      "explanation": "Tổng số nucleon (số khối $A$) trước và sau phản ứng bằng nhau."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Khi hệ số nhân neutron $k = 1$ thì phản ứng dây chuyền:",
+      "options": [
+        "tự duy trì và điều khiển được",
+        "tắt nhanh",
+        "tự duy trì nhưng không điều khiển được",
+        "không xảy ra phản ứng phân hạch nào"
+      ],
+      "answer": 0,
+      "explanation": "Bảng trong bài: $k = 1$ là tự duy trì, điều khiển được, công suất phát ra không đổi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Khi hệ số nhân neutron $k > 1$ thì công suất phát ra của phản ứng dây chuyền:",
+      "options": [
+        "tăng nhanh, không điều khiển được",
+        "không đổi",
+        "giảm dần rồi tắt",
+        "luôn bằng không"
+      ],
+      "answer": 0,
+      "explanation": "Bảng trong bài: $k > 1$ là tự duy trì, không điều khiển được, công suất tăng nhanh."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong nhà máy điện hạt nhân, bộ phận chính là:",
+      "options": [
+        "lò phản ứng hạt nhân",
+        "máy biến áp",
+        "pin mặt trời",
+        "tháp làm mát bằng gió"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu: bộ phận chính của nhà máy điện hạt nhân là lò phản ứng hạt nhân."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Điều nào sau đây KHÔNG phải điều kiện để tạo ra phản ứng nhiệt hạch?",
+      "options": [
+        "Áp suất thấp gần như chân không",
+        "Hỗn hợp có mật độ hạt nhân đủ lớn",
+        "Nhiệt độ rất cao, cỡ $10^8$ K đến $10^9$ K",
+        "Duy trì trạng thái này đủ dài"
+      ],
+      "answer": 0,
+      "explanation": "Ba điều kiện gồm mật độ đủ lớn, nhiệt độ rất cao và duy trì đủ lâu; không có điều kiện áp suất thấp."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Từ định luật bảo toàn số nucleon $A_1 + A_2 = A_3 + A_4$, số khối $A_4$ được tính bằng:",
+      "options": [
+        "$A_1 + A_2 - A_3$",
+        "$A_1 + A_2 + A_3$",
+        "$A_3 - A_1 - A_2$",
+        "$A_1 - A_2 - A_3$"
+      ],
+      "answer": 0,
+      "explanation": "Chuyển vế $A_3$ sang vế trái: $A_4 = A_1 + A_2 - A_3$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Các lò phản ứng hạt nhân thế hệ IV được nêu trong bài là ví dụ của hướng phát triển:",
+      "options": [
+        "công nghệ hạt nhân an toàn hơn",
+        "nhà máy chạy bằng nhiên liệu hóa thạch",
+        "tăng lượng khí thải CO2",
+        "giảm hiệu suất chuyển đổi năng lượng"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu ví dụ: lò thế hệ IV được thiết kế với nhiều tính năng an toàn hơn."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Nhận định nào sau đây về phân loại phản ứng hạt nhân là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Phản ứng hạt nhân kích thích là quá trình các hạt nhân tương tác với nhau tạo thành hạt nhân mới.",
+          "answer": true
+        },
+        {
+          "text": "Phản ứng phân hạch và phản ứng tổng hợp hạt nhân là các ví dụ của phản ứng hạt nhân kích thích.",
+          "answer": true
+        },
+        {
+          "text": "Phân rã của hạt nhân $^{238}_{92}U$ là ví dụ của phản ứng hạt nhân tự phát.",
+          "answer": true
+        },
+        {
+          "text": "Phản ứng hạt nhân tự phát cần có hạt nhân khác bắn vào mới xảy ra.",
+          "answer": false
+        }
+      ],
+      "explanation": "Phản ứng tự phát là quá trình hạt nhân không bền tự phân ra, không cần tương tác với hạt nhân khác."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Nhận định nào sau đây về hệ số nhân neutron $k$ là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi $k < 1$, phản ứng dây chuyền tắt nhanh.",
+          "answer": true
+        },
+        {
+          "text": "Khi $k = 1$, công suất phát ra không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Khi $k > 1$, phản ứng tự duy trì và điều khiển được.",
+          "answer": false
+        },
+        {
+          "text": "Khi $k > 1$, công suất phát ra tăng nhanh.",
+          "answer": true
+        }
+      ],
+      "explanation": "$k > 1$ là tự duy trì nhưng không điều khiển được, công suất tăng nhanh."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Nhận định nào sau đây về phản ứng nhiệt hạch là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Là quá trình hai hay nhiều hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn.",
+          "answer": true
+        },
+        {
+          "text": "Cần nhiệt độ rất cao, cỡ $10^8$ K đến $10^9$ K.",
+          "answer": true
+        },
+        {
+          "text": "Cần hỗn hợp có mật độ hạt nhân đủ lớn.",
+          "answer": true
+        },
+        {
+          "text": "Chỉ cần xảy ra trong thời gian rất ngắn, không cần duy trì trạng thái đó.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài yêu cầu duy trì trạng thái nhiệt độ cao và mật độ lớn đủ dài."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Nhận định nào sau đây về các định luật bảo toàn trong phản ứng hạt nhân là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Bảo toàn điện tích.",
+          "answer": true
+        },
+        {
+          "text": "Bảo toàn số nucleon.",
+          "answer": true
+        },
+        {
+          "text": "Bảo toàn năng lượng toàn phần và bảo toàn động lượng.",
+          "answer": true
+        },
+        {
+          "text": "Tổng số proton của các hạt luôn tăng sau phản ứng.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài nêu bốn định luật bảo toàn: điện tích, số nucleon, năng lượng toàn phần, động lượng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong một phản ứng hạt nhân có $Z_1 = 92$, $Z_2 = 0$, $Z_3 = 56$. Tìm $Z_4$.",
+      "answer": "36",
+      "explanation": "Bảo toàn điện tích: $Z_4 = Z_1 + Z_2 - Z_3 = 92 + 0 - 56 = 36$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong một phản ứng hạt nhân có $A_1 = 235$, $A_2 = 1$, $A_3 = 141$. Tìm $A_4$.",
+      "answer": "95",
+      "explanation": "Bảo toàn số nucleon: $A_4 = 235 + 1 - 141 = 95$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Nhiệt độ cần cho phản ứng nhiệt hạch cỡ $10^{x}$ K đến $10^{9}$ K. Tìm $x$.",
+      "answer": "8",
+      "explanation": "Bài nêu nhiệt độ rất cao cỡ $10^8$ K đến $10^9$ K."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "So với nhà máy điện than, nhà máy điện hạt nhân có thể giảm lượng khí thải CO2 tới bao nhiêu phần trăm?",
+      "answer": "80",
+      "explanation": "Bài nêu giảm lượng khí thải CO2 lên tới 80%."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Theo bài, hiệu suất nhà máy điện hạt nhân có thể đạt tới bao nhiêu phần trăm (ví dụ so với 30% của nhà máy điện than)?",
+      "answer": "33",
+      "explanation": "Ví dụ trong bài: hiệu suất nhà máy điện hạt nhân đạt tới 33%, nhà máy điện than chỉ 30%."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Chu kì bán rã của $^{90}Sr$ và $^{137}Cs$ khoảng bao nhiêu năm?",
+      "answer": "30",
+      "explanation": "Bài nêu chu kì bán rã của $^{90}Sr$, $^{137}Cs$ khoảng 30 năm."
+    }
+  ]
+}

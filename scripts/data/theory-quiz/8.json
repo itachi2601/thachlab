@@ -1,0 +1,354 @@
+{
+ "lesson_id": 8,
+ "lesson_title": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+ "item_id": 221,
+ "generated_at": "2026-09-30",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 14,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 9
+  },
+  "removed": [
+   {
+    "question": "Nhiệt độ ở điều kiện tiêu chuẩn (và điều kiện chuẩn) trong bài là bao nhiêu kelvin?",
+    "reason": "nghi ngờ: bài ghi T=273 K cho cả điều kiện chuẩn (1 bar) nhưng 24,79 L ứng với 298 K; câu dựa trên chỗ sai/lệch vật lí của bài"
+   },
+   {
+    "question": "Với một lượng khí xác định, xét phương trình trạng thái $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$:",
+    "reason": "sai: mệnh đề 'Tích pT không đổi' đánh dấu đúng, trong khi bài chỉ có pV/T không đổi; pT không bất biến"
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hệ thức liên hệ chung giữa ba thông số trạng thái $p$, $V$, $T$ của một lượng khí xác định còn được gọi là gì?",
+   "options": [
+    "Phương trình Clapeyron",
+    "Định luật Boyle",
+    "Định luật Charles",
+    "Định luật Gay-Lussac"
+   ],
+   "answer": 0,
+   "explanation": "Bài gọi hệ thức $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ là phương trình trạng thái của khí lí tưởng (phương trình Clapeyron)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Từ phương trình trạng thái, nếu nhiệt độ $T$ không đổi (đẳng nhiệt) thì ta thu được định luật nào?",
+   "options": [
+    "Định luật Boyle",
+    "Định luật Charles",
+    "Định luật Gay-Lussac",
+    "Định luật Clapeyron"
+   ],
+   "answer": 0,
+   "explanation": "Khi $T$ không đổi, $p_1V_1=p_2V_2$ là định luật Boyle."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quá trình đẳng tích là quá trình biến đổi trạng thái khi đại lượng nào không đổi?",
+   "options": [
+    "Thể tích",
+    "Áp suất",
+    "Nhiệt độ",
+    "Khối lượng riêng"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa: quá trình đẳng tích là quá trình biến đổi trạng thái khi thể tích không đổi."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong quá trình đẳng tích của một lượng khí nhất định, áp suất $p$ và nhiệt độ tuyệt đối $T$ có quan hệ nào?",
+   "options": [
+    "$p$ tỉ lệ thuận với $T$",
+    "$p$ tỉ lệ nghịch với $T$",
+    "$p$ tỉ lệ thuận với $T^2$",
+    "$p$ không phụ thuộc $T$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: trong quá trình đẳng tích, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ví dụ nào sau đây trong bài minh hoạ quá trình đẳng tích?",
+   "options": [
+    "Khí đun nóng trong bình kín",
+    "Khí trong xilanh có pit-tông tự do dãn nở",
+    "Khí trong bóng bay bị thổi phồng thêm",
+    "Khí bị nén chậm ở nhiệt độ không đổi"
+   ],
+   "answer": 0,
+   "explanation": "Bài lấy ví dụ khí trơ trong bóng đèn dây tóc và khí đun nóng trong bình kín, thể tích không đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Từ phương trình trạng thái của khí lí tưởng, ta suy ra lại ba định luật ứng với ba đẳng quá trình. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Nếu $T$ không đổi thì $p_1V_1=p_2V_2$ (định luật Boyle).",
+     "answer": true
+    },
+    {
+     "text": "Nếu $p$ không đổi thì $\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$ (định luật Charles).",
+     "answer": true
+    },
+    {
+     "text": "Nếu $V$ không đổi thì $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ (định luật Gay-Lussac).",
+     "answer": true
+    },
+    {
+     "text": "Nếu $V$ không đổi thì $p_1V_1=p_2V_2$ (định luật Boyle).",
+     "answer": false
+    }
+   ],
+   "explanation": "Đẳng nhiệt: Boyle; đẳng áp: Charles; đẳng tích: Gay-Lussac. Khi $V$ không đổi thì hệ thức đúng là $p/T$ không đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về quá trình đẳng tích của một lượng khí nhất định, xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Thể tích của khí không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất tỉ lệ thuận với nhiệt độ tuyệt đối.",
+     "answer": true
+    },
+    {
+     "text": "Độ lớn của hằng số $p/T$ phụ thuộc vào lượng khí và thể tích của nó.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất tỉ lệ nghịch với nhiệt độ tuyệt đối.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu $p/T=\\text{const}$, hằng số phụ thuộc lượng khí và thể tích; áp suất tỉ lệ thuận, không phải tỉ lệ nghịch với $T$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở điều kiện tiêu chuẩn, 1 mol khí có thể tích bao nhiêu lít? (Nhập số, dùng dấu phẩy thập phân)",
+   "answer": "22,4",
+   "explanation": "Bài nêu: ở điều kiện tiêu chuẩn 1 mol khí có $V=22{,}4$ lít."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở điều kiện chuẩn, áp suất là $10^{n}$ Pa. Tìm $n$.",
+   "answer": "5",
+   "explanation": "Bài nêu điều kiện chuẩn: $p=1\\text{ bar}=10^5$ Pa nên $n=5$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Phương trình trạng thái của khí lí tưởng (một lượng khí xác định) là:",
+   "options": [
+    "$\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$",
+    "$\\dfrac{p_1T_1}{V_1}=\\dfrac{p_2T_2}{V_2}$",
+    "$\\dfrac{p_1V_1}{T_2}=\\dfrac{p_2V_2}{T_1}$",
+    "$p_1V_1T_1=p_2V_2T_2$"
+   ],
+   "answer": 0,
+   "explanation": "Bài: $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}=\\text{hằng số}$; các phương án còn lại đảo vị trí đại lượng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hệ thức của quá trình đẳng nhiệt (định luật Boyle) là:",
+   "options": [
+    "$p_1V_1=p_2V_2$",
+    "$\\dfrac{p_1}{V_1}=\\dfrac{p_2}{V_2}$",
+    "$\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$",
+    "$\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$"
+   ],
+   "answer": 0,
+   "explanation": "Khi $T$ không đổi, phương trình trạng thái cho $p_1V_1=p_2V_2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hệ thức của quá trình đẳng áp (định luật Charles) là:",
+   "options": [
+    "$\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$",
+    "$V_1T_1=V_2T_2$",
+    "$\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$",
+    "$p_1V_1=p_2V_2$"
+   ],
+   "answer": 0,
+   "explanation": "Khi $p$ không đổi, phương trình trạng thái cho $\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ (đẳng tích), áp suất $p_2$ được tính bằng:",
+   "options": [
+    "$p_2=\\dfrac{p_1T_2}{T_1}$",
+    "$p_2=\\dfrac{p_1T_1}{T_2}$",
+    "$p_2=p_1T_1T_2$",
+    "$p_2=\\dfrac{T_2}{p_1T_1}$"
+   ],
+   "answer": 0,
+   "explanation": "Nhân hai vế với $T_2$: $p_2=p_1\\dfrac{T_2}{T_1}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong phương trình trạng thái $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$, $T_1$ và $T_2$ là:",
+   "options": [
+    "Nhiệt độ tuyệt đối (kelvin)",
+    "Nhiệt độ theo độ C",
+    "Nhiệt độ theo độ F",
+    "Chênh lệch nhiệt độ so với 0 °C"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $T_1$, $T_2$ là nhiệt độ tuyệt đối của khí ở trạng thái 1 và 2."
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét quá trình đẳng tích của một lượng khí: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$ hay $\\dfrac{p}{T}=\\text{const}$:",
+   "statements": [
+    {
+     "text": "Nếu $T_2=2T_1$ thì $p_2=2p_1$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $T$ giảm thì $p$ giảm.",
+     "answer": true
+    },
+    {
+     "text": "Tích $pT$ không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $p_2=p_1$ thì $T_2=T_1$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Vì $p/T$ không đổi nên $p$ tỉ lệ thuận với $T$; tích $pT$ thì không không đổi."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khí ở nhiệt độ không đổi có $p_1=2$ bar, $V_1=6$ lít. Nén đến $V_2=3$ lít thì $p_2$ bằng bao nhiêu bar?",
+   "answer": "4",
+   "explanation": "Đẳng nhiệt: $p_2=\\dfrac{p_1V_1}{V_2}=\\dfrac{2\\cdot6}{3}=4$ bar."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khí trong bình kín có $p_1=1$ atm ở $T_1=300$ K. Đun nóng đến $T_2=600$ K thì $p_2$ bằng bao nhiêu atm?",
+   "answer": "2",
+   "explanation": "Đẳng tích: $p_2=p_1\\dfrac{T_2}{T_1}=1\\cdot\\dfrac{600}{300}=2$ atm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khí ở áp suất không đổi có $V_1=2$ lít, $T_1=100$ K. Nung đến $T_2=300$ K thì $V_2$ bằng bao nhiêu lít?",
+   "answer": "6",
+   "explanation": "Đẳng áp: $V_2=V_1\\dfrac{T_2}{T_1}=2\\cdot\\dfrac{300}{100}=6$ lít."
+  }
+ ]
+}
