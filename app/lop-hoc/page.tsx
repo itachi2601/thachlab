@@ -188,16 +188,16 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const lastLesson = (lessons ?? []).find((lesson) => lesson.id === lastLessonId && visibleLessonIds.has(lesson.chapter_id)) ?? null;
   const lastLessonChapter = lastLesson ? classChapters.find((chapter) => chapter.id === lastLesson.chapter_id) ?? null : null;
 
-  // Mở sẵn đúng 1 chương khi vào trang: chương đang học (có lịch sử) hoặc chương đầu tiên.
+  // Mặc định thu gọn tất cả các chương khi vào trang (trừ chương được yêu cầu mở qua đường dẫn).
   // Chỉ áp dụng một lần — sau đó người dùng tự mở/thu theo ý mình.
   useEffect(() => {
     if (defaultChapterAppliedRef.current) return;
     if (!classes || !chapters || !lessons) return;
     if (classChapters.length === 0) return;
     defaultChapterAppliedRef.current = true;
-    const targetId = requestedChapterId ?? lastLessonChapter?.id ?? classChapters[0].id;
+    const targetId = requestedChapterId;
     setCollapsedChapters(new Set(classChapters.filter((c) => c.id !== targetId).map((c) => c.id)));
-  }, [classes, chapters, lessons, classChapters, lastLessonChapter, requestedChapterId]);
+  }, [classes, chapters, lessons, classChapters, requestedChapterId]);
 
   // Nhãn mastery cho các chương ĐANG MỞ — chạy lại mỗi khi mở thêm chương hoặc session tới sau
   // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
