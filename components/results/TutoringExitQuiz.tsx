@@ -13,6 +13,7 @@ import {
   EXIT_QUIZ_PASS_PCT,
   EXIT_QUIZ_QUESTION_COUNT,
   EXIT_COOLDOWN_HOURS,
+  fetchTopicFamilyIds,
   logExitAttempt,
   needLabel,
   type TutoringNeed,
@@ -51,7 +52,8 @@ export default function TutoringExitQuiz({
   useEffect(() => {
     let cancelled = false;
     const form = need.form === "ly_thuyet" || need.form === "bai_tap" ? need.form : undefined;
-    fetchBankQuestions({ topicIds: [need.topicId], form, includeArchived: false })
+    fetchTopicFamilyIds(need.topicId)
+      .then((topicIds) => fetchBankQuestions({ topicIds, form, includeArchived: false }))
       .then((rows) => {
         if (cancelled) return;
         const pool = rows.filter((r) => r.qtype !== "essay");
