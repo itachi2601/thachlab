@@ -38,6 +38,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   (4) `BugReportsAdmin` chống kết quả tab cũ ghi đè tab mới + xoá lỗi cũ khi tải lại. Chưa deploy. Còn chờ thầy quyết:
   chống spam khách (không giới hạn), báo cho admin khi có báo lỗi mới, báo cho học sinh khi được phản hồi, đọc ~15 báo lỗi thật.
 
+- **Đọc 31 báo lỗi thật (30/9/2026, sau khi có env)** — 22 mục còn "Mới". Phát hiện: (a) **đăng nhập Google đang TẮT** trên
+  Supabase project mới (`/auth/v1/settings` → `external.google=false`; 3 báo lỗi #22/#27/#30) — khả năng mất cấu hình khi
+  chuyển Singapore, thầy phải bật lại ở Dashboard; (b) **watermark "thukhoadaihoc.vn" rác trong lời giải** ~409 chỗ / 34 đề
+  (chỉ trong `explanation`) — script `scripts/clean-exam-watermark.mjs` (dry-run mặc định, `--apply` có backup), CHƯA chạy;
+  (c) báo lỗi #23/#24/#26/#28 chọn loại "câu hỏi" ở form chung nên không gắn được câu (đã ẩn loại này khỏi form chung);
+  (d) đề 237 câu 3 mở đầu "(Tiếp câu trên)" — hỏng ngữ cảnh khi đảo thứ tự câu.
+
 ## Migration — ĐANG CHỜ
 - (trống) — đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
