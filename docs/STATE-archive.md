@@ -3,6 +3,11 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — đợt 30/09/2026 (đã chạy hết)
+- `20260930100000_tutoring_exit_cooldown.sql` — GĐ 1b việc 3: phụ đạo chờ 24 giờ thay giới hạn 3 lượt. Rollback `perf/rollback/20260930100000_tutoring_exit_cooldown.down.sql`.
+- `20260930110000_rank_board_by_tier.sql` — GĐ 1b việc 5: bảng tuần lớp chỉ so với bạn cùng bậc (create or replace 1 hàm, chạy bất kỳ lúc nào). Rollback `perf/rollback/20260930110000_rank_board_by_tier.down.sql`.
+Code kèm theo (`ClassRankBoard`, `features/rank/types.ts`, `preview.ts`) đã merge vào `main` (cd4b80e, sửa kiểu 8859e49). Chưa kiểm bằng mắt trên web thật sau deploy.
+
 ## Migration — đợt 29/09/2026 (đã chạy hết)
 **File thứ 4 `20260929130000_rank_weekly_goal_adaptive.sql` (mục tiêu tuần thích ứng) đã chạy 29/9 17:43 VN** (log `scripts/logs/20260929-174330-*`, OK).
 Xác nhận trên Singapore: `rank_weekly_goal_of` có mặt, gọi được bằng service_role, anon bị chặn (401), `rank_public_honor` vẫn 200.
