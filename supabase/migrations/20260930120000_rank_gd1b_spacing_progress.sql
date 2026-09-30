@@ -215,8 +215,11 @@ begin
 end; $$;
 revoke all on function public.rank_eval_progress_week(bigint, uuid, timestamptz) from public, anon, authenticated;
 
--- Sau khi chạy (tuỳ chọn): cấp bù thành tích cho em từng được thưởng tiến bộ tuần:
+-- Sau khi chạy (tuỳ chọn): cấp bù thành tích cho em từng được thưởng tiến bộ tuần
+-- (dùng not exists vì chưa xác nhận có unique index trên student_id,title_code,level).
+-- Đã chạy 30/9/2026: cấp cho 7 em. Rollback: delete from public.rank_title_awards where title_code='tien_bo_tuan' and evidence='{}'::jsonb;
 --   insert into public.rank_title_awards (student_id, title_code, level, season_id, evidence)
---   select distinct a.student_id, 'tien_bo_tuan', 'don', a.season_id, '{}'::jsonb
+--   select distinct on (a.student_id) a.student_id, 'tien_bo_tuan', 'don', a.season_id, '{}'::jsonb
 --   from public.rank_rp_awards a where a.source_kind = 'progress_week' and a.awarded > 0
---   on conflict (student_id, title_code, level) do nothing;
+--     and not exists (select 1 from public.rank_title_awards t where t.student_id = a.student_id and t.title_code = 'tien_bo_tuan' and t.level = 'don')
+--   order by a.student_id, a.season_id;
