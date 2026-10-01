@@ -51,6 +51,15 @@ pend=$(git diff --name-only "$base"...HEAD -- supabase/migrations 2>/dev/null)
 echo "Mục ĐANG CHỜ trong docs/STATE.md:"
 sed -n '/^## Migration — ĐANG CHỜ/,/^## /p' docs/STATE.md | sed '1d;$d' | head -12 | sed 's/^/  /'
 
-echo "Nhắc: cloud KHÔNG chạy được migration/đăng đề/backfill (Supabase bị chặn) — viết file + lệnh rồi dừng."
+# Kiểm khả năng ghi DB từ cloud: cần (1) mạng cho phép *.supabase.co, (2) secret SUPABASE_SERVICE_ROLE_KEY.
+url="${NEXT_PUBLIC_SUPABASE_URL:-https://jgvbdbpvjdntdgzthumv.supabase.co}"
+code=$(curl -s -o /dev/null -m 6 -w '%{http_code}' "$url/rest/v1/" 2>/dev/null || echo 000)
+if [ "$code" = "000" ] || [ "$code" = "403" ]; then net=chặn; else net=thông; fi
+if [ -n "${SUPABASE_SERVICE_ROLE_KEY:-}" ]; then key=có; else key=thiếu; fi
+if [ "$net" = "thông" ] && [ "$key" = "có" ]; then
+  echo "Supabase: mạng $net, service key $key → ĐĂNG/SỬA BÀI ĐƯỢC từ cloud (upload-lesson.mts, update-*.mts). Migration vẫn chỉ chạy trên Mac."
+else
+  echo "Supabase: mạng $net (HTTP $code), service key $key → cloud CHƯA đăng/sửa được; viết file + lệnh rồi dừng. Cách bật: docs/CLOUD-GHI-DB.md"
+fi
 echo "Memory dự án: docs/memory/MEMORY.md. Cuối phiên: /ban-giao."
 exit 0
