@@ -1052,6 +1052,11 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
    vẫn chỉ cao bằng nội dung — dính trực tiếp vào .lesson-layout thì bị giới hạn bởi chiều cao
    của chính phần tử, tab sẽ trôi mất sau vài chục pixel cuộn (đã thấy đúng như vậy khi thử). */
 .lesson-content { min-width: 0; }
+/* Cỡ chữ đọc (A− / A / A+): chỉ nhân cỡ chữ gốc của khối nội dung, không nhân từng phần tử —
+   vì vậy công thức KaTeX (đơn vị em) cũng to lên theo. --lesson-read-scale do trang bài đặt. */
+.lesson-body { font-size: calc(1rem * var(--lesson-read-scale, 1)); }
+.lesson-body .lesson-prose, .lesson-body .lesson-prose p, .lesson-body .lesson-summary { font-size: 1em; }
+.lesson-body .lesson-block-sub, .lesson-body .lesson-muted { font-size: .84em; }
 /* Nút ☰ và ngăn kéo chỉ có ở điện thoại (mở ở @media max-width 639px). */
 .lesson-drawer-toggle { display: none; width: 38px; height: 34px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; color: var(--color-ink); cursor: pointer; }
 .lesson-drawer { display: none; }
@@ -1161,7 +1166,8 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-page .lesson-back { display: none; }
   .lesson-head h1 { font-size: 20px; }
   .lesson-breadcrumb { flex-wrap: nowrap; overflow: hidden; }
-  .lesson-crumb-class, .lesson-crumb-chapter, .lesson-crumb-sep { display: none; }
+  /* Ẩn hết phần đầu breadcrumb, chỉ còn tên bài — tránh lặp lại y h1 ngay dưới. */
+  .lesson-crumb-class, .lesson-crumb-chapter, .lesson-crumb-sep { display: none !important; }
   .lesson-block { padding: 14px; border-radius: 12px; }
   .lesson-exam { flex-direction: column; align-items: stretch; }
   .lesson-btn, .lesson-btn-ghost { text-align: center; }
@@ -1173,12 +1179,10 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
   .lesson-page { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
   /* Thanh đáy 3 nút, vùng chạm >= 44px, chừa vùng an toàn iPhone. */
-  .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr); align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
   .lesson-bottombar--mobile { min-height: 62px; }
-  .lesson-bottombar--mobile .lesson-bottom-prev { display: none; }
   .lesson-bottom-done-text--short { display: none; }
   .lesson-bottom-done-text--long { display: inline; }
-  .lesson-bottombar--mobile .lesson-bottom-step { display: none; }
   .lesson-bottom-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 5px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; color: var(--color-ink); font-size: 12.5px; font-weight: 700; text-decoration: none; cursor: pointer; }
   .lesson-bottom-link.is-empty { opacity: .35; }
   .lesson-bottom-link--next { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
@@ -1202,6 +1206,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   /* Cây chương trong ngăn kéo: cùng kiểu với cột trái máy tính. */
   .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
   .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 36px; align-items: center; gap: 6px; margin-top: 10px; border-radius: 9px; background: var(--lesson-accent); padding: 8px 12px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
   .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
   .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
   .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
@@ -1220,7 +1225,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   /* Ngăn kéo mở thì ẩn thanh đáy (không thì hai thanh chồng nhau, rất chật). */
   .lesson-page.is-drawer-open .lesson-bottombar { display: none; }
   /* Công cụ đọc thu thành một nút Aa mở bảng nhỏ. */
-  .lesson-tools { grid-column: 3; grid-row: 1; display: flex; position: absolute; top: 46px; right: 16px; z-index: 7; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(0,0,0,.6); }
+  .lesson-tools { grid-column: 3; grid-row: 1; display: flex; position: absolute; top: 88px; right: 16px; z-index: 20; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(0,0,0,.6); }
   .lesson-tools:not(.is-open) { display: none; }
   .lesson-tools .lesson-tool { justify-content: flex-start; }
   .lesson-tool-text, .lesson-tool span { font-size: 13px; }

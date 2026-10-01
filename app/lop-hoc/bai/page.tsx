@@ -1,9 +1,9 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Play, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, Play, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -491,6 +491,10 @@ function LessonLoader() {
   const [tocQuery, setTocQuery] = useState("");
   /** Ghi chú của em — chỉ lưu trên máy, khoá thachlab-note-<lessonId>. */
   const [note, setNote] = useState("");
+  /** Ngăn kéo "Nội dung khoá" trên điện thoại: gộp cột trái + cột phải vào một bottom sheet. */
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const drawerDragRef = useRef<number | null>(null);
   const [openChapters, setOpenChapters] = useState<Set<number>>(new Set());
   const reviewBannerRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -620,8 +624,16 @@ function LessonLoader() {
      không có cách đọc khi SSR, và mỗi nhánh đã so sánh trước khi set nên không sinh vòng render thừa. */
   useEffect(() => {
     try {
-      const savedFont = Number(window.localStorage.getItem(FONT_STORE));
-      if (Number.isInteger(savedFont) && savedFont >= 0 && savedFont < FONT_SCALES.length && savedFont !== fontLevel) {
+      // Number(null) === 0 ⇒ chưa có gì đã lưu thì phải giữ mức mặc định, không rơi về A−.
+      const rawFont = window.localStorage.getItem(FONT_STORE);
+      const savedFont = rawFont === null ? null : Number(rawFont);
+      if (
+        savedFont !== null &&
+        Number.isInteger(savedFont) &&
+        savedFont >= 0 &&
+        savedFont < FONT_SCALES.length &&
+        savedFont !== fontLevel
+      ) {
         setFontLevel(savedFont);
       }
       const savedDim = window.localStorage.getItem(DIM_STORE) === "1";
@@ -637,18 +649,20 @@ function LessonLoader() {
   }, [id]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
-  // Đổi cỡ chữ thì đổi luôn cỡ chữ gốc của khối nội dung (--lesson-read-size), không nhân
-  // từng phần tử — công thức KaTeX cũng to lên theo.
+  // Đổi cỡ chữ thì đổi cỡ chữ gốc của khối nội dung (--lesson-read-scale), không nhân từng
+  // phần tử — công thức KaTeX (đơn vị em) cũng to lên theo.
   useEffect(() => {
-    bodyRef.current?.style.setProperty("--lesson-read-size", `${FONT_SCALES[fontLevel]}rem`);
+    bodyRef.current?.style.setProperty("--lesson-read-scale", String(FONT_SCALES[fontLevel]));
   }, [fontLevel, items, activeTab]);
 
   // Chỉ ghi lại sau khi đã khôi phục xong — nếu không, lần render đầu (mức mặc định) sẽ ghi đè
   // lựa chọn đã lưu của học sinh trước khi effect khôi phục kịp chạy.
-  const settingsLoadedRef = useRef(false);
+  // Bỏ qua lần chạy đầu (giá trị mặc định) — nếu không, lần render đầu sẽ ghi 1rem/mặc định
+  // đè lên lựa chọn đã lưu TRƯỚC KHI effect khôi phục kịp đọc lại.
+  const skipFirstPersistRef = useRef(true);
   useEffect(() => {
-    if (!settingsLoadedRef.current) {
-      settingsLoadedRef.current = true;
+    if (skipFirstPersistRef.current) {
+      skipFirstPersistRef.current = false;
       return;
     }
     try {
@@ -656,13 +670,51 @@ function LessonLoader() {
     } catch {}
   }, [fontLevel]);
 
+  const skipFirstDimRef = useRef(true);
   useEffect(() => {
-    if (!settingsLoadedRef.current) return;
+    if (skipFirstDimRef.current) {
+      skipFirstDimRef.current = false;
+      return;
+    }
     try {
       if (dim) window.localStorage.setItem(DIM_STORE, "1");
       else window.localStorage.removeItem(DIM_STORE);
     } catch {}
   }, [dim]);
+
+  // Ngăn kéo: Esc để đóng, và khoá cuộn trang nền khi đang mở (không thì cuộn ngăn kéo lại
+  // kéo theo cả bài phía sau).
+  useEffect(() => {
+    if (!drawerOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setDrawerOpen(false);
+    }
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [drawerOpen]);
+
+  /** Vuốt xuống ở đầu ngăn kéo để đóng (ngưỡng 90px). */
+  function onDrawerTouchStart(e: TouchEvent) {
+    drawerDragRef.current = e.touches[0]?.clientY ?? null;
+  }
+  function onDrawerTouchMove(e: TouchEvent) {
+    const start = drawerDragRef.current;
+    const current = e.touches[0]?.clientY;
+    if (start == null || current == null) return;
+    drawerRef.current?.style.setProperty("--lesson-drawer-drag", `${Math.max(0, current - start)}px`);
+  }
+  function onDrawerTouchEnd() {
+    const sheet = drawerRef.current;
+    const moved = Number((sheet?.style.getPropertyValue("--lesson-drawer-drag") ?? "0px").replace("px", "")) || 0;
+    sheet?.style.removeProperty("--lesson-drawer-drag");
+    drawerDragRef.current = null;
+    if (moved > 90) setDrawerOpen(false);
+  }
 
   // Trạng thái toàn màn hình (học sinh thoát bằng Esc thì nút phải trở lại bình thường).
   useEffect(() => {
@@ -828,8 +880,12 @@ function LessonLoader() {
 
   // Ghi chú: chỉ lưu trên máy, ghi sau khi học sinh ngừng gõ 400ms để không ghi localStorage
   // liên tục theo từng ký tự.
+  const skipFirstNoteRef = useRef(true);
   useEffect(() => {
-    if (!settingsLoadedRef.current) return;
+    if (skipFirstNoteRef.current) {
+      skipFirstNoteRef.current = false;
+      return;
+    }
     const timer = window.setTimeout(() => {
       try {
         if (note) window.localStorage.setItem(`${NOTE_STORE}${id}`, note);
@@ -956,7 +1012,17 @@ function LessonLoader() {
           </div>
         </div>
 
-        <nav className="lesson-bottombar" aria-label="Điều hướng bài học">
+        <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
+        <button
+          type="button"
+          className="lesson-bottom-link"
+          onClick={() => setDrawerOpen(true)}
+          aria-expanded={drawerOpen}
+          aria-controls="lesson-drawer"
+        >
+          <Menu size={16} aria-hidden />
+          <span>Mục lục</span>
+        </button>
           {prevLesson ? (
             <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
               <ArrowLeft size={16} aria-hidden />
@@ -1205,6 +1271,214 @@ function LessonLoader() {
     </>
   );
 
+  /** Cây chương — dùng chung cho cột trái (máy tính) và ngăn kéo (điện thoại). */
+  function renderChapterTree() {
+    return (
+      <>
+        <div className="lesson-tree">
+          {courseChapters.map(({ chapter, lessons }, chapterIndex) => {
+            const shown = matchingLessonIds ? lessons.filter((l) => matchingLessonIds.has(l.id)) : lessons;
+            if (shown.length === 0) return null;
+            const open = isChapterOpen(chapter.id, lessons);
+            const doneInChapter = lessons.filter(lessonComplete).length;
+            return (
+              <div key={chapter.id}>
+                <button
+                  type="button"
+                  className="lesson-tree-chapter"
+                  onClick={() => toggleChapter(chapter.id)}
+                  aria-expanded={open}
+                >
+                  <em>{chapterIndex + 1}</em>
+                  <span>{chapter.title}</span>
+                  <small>
+                    {doneInChapter}/{lessons.length}
+                  </small>
+                  <ChevronDown size={15} className={open ? "is-open" : ""} aria-hidden />
+                </button>
+                {open && (
+                  <ol>
+                    {shown.map((lesson) => {
+                      const current = lesson.id === id;
+                      const done = lessonComplete(lesson);
+                      return (
+                        <li key={lesson.id}>
+                          {current ? (
+                            <span className="lesson-tree-current is-current" aria-current="page">
+                              <i aria-hidden>{done ? <Check size={11} /> : "●"}</i>
+                              <span>{lesson.title}</span>
+                            </span>
+                          ) : (
+                            <Link href={siblingHref(lesson)} className={done ? "is-done" : ""}>
+                              <i aria-hidden>{done ? <Check size={11} /> : "○"}</i>
+                              <span>{lesson.title}</span>
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                )}
+              </div>
+            );
+          })}
+          {matchingLessonIds?.size === 0 && <p className="lesson-panel-empty">Không thấy bài nào khớp.</p>}
+        </div>
+      </>
+    );
+  }
+
+  /** Thẻ tiến độ khoá + ô tìm bài — dùng chung cho cột trái (máy tính) và ngăn kéo. */
+  /** Nút "Học tiếp" của thẻ tiến độ khoá — dùng chung cột trái (máy tính) và ngăn kéo. */
+  function renderContinueLink() {
+    if (!nextInCourse) return null;
+    return (
+      <Link href={siblingHref(nextInCourse)} className="lesson-continue-btn">
+        Học tiếp <ArrowRight size={14} aria-hidden />
+      </Link>
+    );
+  }
+
+  function renderCourseInfo() {
+    return (
+      <>
+        {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Học tiếp. */}
+        {courseLessons.length > 0 && (
+          <div className="lesson-progress-summary">
+            <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
+            <div>
+              <p>
+                {courseDone}/{courseLessons.length} bài
+              </p>
+              <small>
+                Em đã học {courseDone}/{courseLessons.length} bài
+                {session && !!items ? ` · ${doneTabs}/${totalTabs} phần đã xong` : ""}
+              </small>
+              {renderContinueLink()}
+            </div>
+          </div>
+        )}
+        {/* Ô tìm bài trong khoá — lọc ngay trên siblingLessons đã tải sẵn, không gọi mạng. */}
+        {courseLessons.length > 0 && (
+          <label className="lesson-nav-search">
+            <Search size={15} aria-hidden />
+            <input
+              type="search"
+              value={treeQuery}
+              onChange={(e) => setTreeQuery(e.target.value)}
+              placeholder="Tìm bài trong khoá"
+              aria-label="Tìm bài trong khoá"
+            />
+          </label>
+        )}
+      </>
+    );
+  }
+
+  /** Hộp dụng cụ cột phải — dùng chung cho cột phải (máy tính) và ngăn kéo (điện thoại). */
+  function renderSidePanels() {
+    return (
+      <>
+        {/* Mục lục bài này — scroll-spy trên các h2/h3 của tab đang mở, 0 request. */}
+        <div className="lesson-panel lesson-toc">
+          <p className="lesson-panel-title">Mục lục bài này</p>
+          {tocEntries.length === 0 ? (
+            <p className="lesson-panel-empty">Mục này chưa có đề mục nhỏ.</p>
+          ) : (
+            <>
+              {tocEntries.length > 6 && (
+                <label className="lesson-nav-search lesson-toc-search">
+                  <Search size={14} aria-hidden />
+                  <input
+                    type="search"
+                    value={tocQuery}
+                    onChange={(e) => setTocQuery(e.target.value)}
+                    placeholder="Tìm trong mục lục"
+                    aria-label="Tìm trong mục lục"
+                  />
+                </label>
+              )}
+              <ol>
+                {shownToc.map((entry) => (
+                  <li key={entry.id}>
+                    <a
+                      href={`#${entry.id}`}
+                      className={activeHeading === entry.id ? "is-active" : ""}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        flashTheorySection(entry.id, 2);
+                      }}
+                    >
+                      {entry.heading && entry.heading !== entry.itemTitle && (
+                        <small className="lesson-toc-item">{entry.itemTitle}</small>
+                      )}
+                      <span>{entry.heading || entry.itemTitle}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+              {shownToc.length === 0 && <p className="lesson-panel-empty">Không thấy đề mục nào khớp.</p>}
+            </>
+          )}
+        </div>
+
+        {/* Mức độ nắm vững — chuyển từ cuối bài sang đây, giữ nguyên props và nút "Luyện thêm". */}
+        {items && items.length > 0 && (
+          <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+        )}
+
+        {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request. */}
+        <div className="lesson-panel lesson-controls">
+          <p className="lesson-panel-title">Câu sai liên quan</p>
+          {reviewContexts && reviewContexts.length > 0 ? (
+            <>
+              <p className="lesson-panel-note">
+                {reviewContexts.length === 1
+                  ? `Câu ${reviewContexts[0].questionIndex} em vừa làm sai thuộc bài này.`
+                  : `${reviewContexts.length} câu em vừa làm sai thuộc bài này.`}
+              </p>
+              <ul>
+                {reviewContexts.map((ctx, i) => (
+                  <li key={i}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        selectTab("ly_thuyet");
+                        window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
+                      }}
+                    >
+                      Câu {ctx.questionIndex} — xem đoạn lý thuyết
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="lesson-panel-empty">
+              Chưa có câu sai nào của bài này trong phiên đang học. Em làm bài ở mục Luyện tập, câu sai sẽ hiện ở đây.
+            </p>
+          )}
+          <Link href="/lop-hoc" className="lesson-panel-link">
+            Xem sổ câu sai đầy đủ ›
+          </Link>
+        </div>
+
+        {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. */}
+        <div className="lesson-panel lesson-controls">
+          <p className="lesson-panel-title">Ghi chú của em</p>
+          <textarea
+            className="lesson-note"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            placeholder="Chỗ này em chưa hiểu…"
+            aria-label="Ghi chú của em cho bài này"
+          />
+          <p className="lesson-panel-note">Chỉ lưu trên máy em.</p>
+        </div>
+      </>
+    );
+  }
+
   const reviewBanner = reviewContexts && reviewContexts.length > 0 && (
     <div ref={reviewBannerRef} className={`lesson-review-banner ${reviewBannerOpen ? "is-open" : ""}`} role="note">
       <div className="lesson-review-banner-head">
@@ -1277,95 +1551,11 @@ function LessonLoader() {
   if (!nextInCourse) nextInCourse = nextLesson;
 
   return (
-    <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""}`}>
+    <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
       <div className="lesson-layout">
         <aside className="lesson-nav" aria-label="Nội dung khoá học">
-          {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Học tiếp. */}
-          {courseLessons.length > 0 && (
-            <div className="lesson-progress-summary">
-              <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
-              <div>
-                <p>
-                  {courseDone}/{courseLessons.length} bài
-                </p>
-                <small>
-                  Em đã học {courseDone}/{courseLessons.length} bài
-                  {session && items.length > 0 ? ` · ${doneTabs}/${totalTabs} phần đã xong` : ""}
-                </small>
-                {nextInCourse && (
-                  <Link href={siblingHref(nextInCourse)} className="lesson-btn lesson-continue-btn">
-                    Học tiếp <ArrowRight size={14} aria-hidden />
-                  </Link>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Ô tìm bài trong khoá — lọc ngay trên siblingLessons đã tải sẵn, không gọi mạng. */}
-          {courseLessons.length > 0 && (
-            <label className="lesson-nav-search">
-              <Search size={15} aria-hidden />
-              <input
-                type="search"
-                value={treeQuery}
-                onChange={(e) => setTreeQuery(e.target.value)}
-                placeholder="Tìm bài trong khoá"
-                aria-label="Tìm bài trong khoá"
-              />
-            </label>
-          )}
-
-          {/* Cây chương: số · tên · đã xong/tổng; chỉ chương đang học mở sẵn. */}
-          <div className="lesson-tree">
-            {courseChapters.map(({ chapter, lessons }, chapterIndex) => {
-              const shown = matchingLessonIds ? lessons.filter((l) => matchingLessonIds.has(l.id)) : lessons;
-              if (shown.length === 0) return null;
-              const open = isChapterOpen(chapter.id, lessons);
-              const doneInChapter = lessons.filter(lessonComplete).length;
-              return (
-                <div key={chapter.id}>
-                  <button
-                    type="button"
-                    className="lesson-tree-chapter"
-                    onClick={() => toggleChapter(chapter.id)}
-                    aria-expanded={open}
-                  >
-                    <em>{chapterIndex + 1}</em>
-                    <span>{chapter.title}</span>
-                    <small>
-                      {doneInChapter}/{lessons.length}
-                    </small>
-                    <ChevronDown size={15} className={open ? "is-open" : ""} aria-hidden />
-                  </button>
-                  {open && (
-                    <ol>
-                      {shown.map((lesson) => {
-                        const current = lesson.id === id;
-                        const done = lessonComplete(lesson);
-                        return (
-                          <li key={lesson.id}>
-                            {current ? (
-                              <span className="lesson-tree-current is-current" aria-current="page">
-                                <i aria-hidden>{done ? <Check size={11} /> : "●"}</i>
-                                <span>{lesson.title}</span>
-                              </span>
-                            ) : (
-                              <Link href={siblingHref(lesson)} className={done ? "is-done" : ""}>
-                                <i aria-hidden>{done ? <Check size={11} /> : "○"}</i>
-                                <span>{lesson.title}</span>
-                              </Link>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ol>
-                  )}
-                </div>
-              );
-            })}
-            {matchingLessonIds?.size === 0 && <p className="lesson-panel-empty">Không thấy bài nào khớp.</p>}
-          </div>
-
+          {renderCourseInfo()}
+          {renderChapterTree()}
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
@@ -1400,6 +1590,16 @@ function LessonLoader() {
               </div>
             </div>
             {readToolButton}
+            <button
+              type="button"
+              className="lesson-drawer-toggle"
+              onClick={() => setDrawerOpen(true)}
+              aria-expanded={drawerOpen}
+              aria-controls="lesson-drawer"
+              aria-label="Mở mục lục khoá học"
+            >
+              <Menu size={17} aria-hidden />
+            </button>
             <div className={`lesson-tools ${toolsOpen ? "is-open" : ""}`}>{readTools}</div>
           </header>
 
@@ -1450,118 +1650,21 @@ function LessonLoader() {
         </div>
 
         <aside className="lesson-side" aria-label="Dụng cụ học bài">
-          {/* Mục lục bài này — scroll-spy trên các h2/h3 của tab đang mở, 0 request. */}
-          <div className="lesson-panel lesson-toc">
-            <p className="lesson-panel-title">Mục lục bài này</p>
-            {tocEntries.length === 0 ? (
-              <p className="lesson-panel-empty">Mục này chưa có đề mục nhỏ.</p>
-            ) : (
-              <>
-                {tocEntries.length > 6 && (
-                  <label className="lesson-nav-search lesson-toc-search">
-                    <Search size={14} aria-hidden />
-                    <input
-                      type="search"
-                      value={tocQuery}
-                      onChange={(e) => setTocQuery(e.target.value)}
-                      placeholder="Tìm trong mục lục"
-                      aria-label="Tìm trong mục lục"
-                    />
-                  </label>
-                )}
-                <ol>
-                  {shownToc.map((entry) => (
-                    <li key={entry.id}>
-                      <a
-                        href={`#${entry.id}`}
-                        className={activeHeading === entry.id ? "is-active" : ""}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          flashTheorySection(entry.id, 2);
-                        }}
-                      >
-                        {entry.heading && entry.heading !== entry.itemTitle && (
-                          <small className="lesson-toc-item">{entry.itemTitle}</small>
-                        )}
-                        <span>{entry.heading || entry.itemTitle}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-                {shownToc.length === 0 && <p className="lesson-panel-empty">Không thấy đề mục nào khớp.</p>}
-              </>
-            )}
-          </div>
-
-          {/* Mức độ nắm vững — chuyển từ cuối bài sang đây, giữ nguyên props và nút "Luyện thêm". */}
-          {items && items.length > 0 && (
-            <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
-          )}
-
-          {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request. */}
-          <div className="lesson-panel lesson-controls">
-            <p className="lesson-panel-title">Câu sai liên quan</p>
-            {reviewContexts && reviewContexts.length > 0 ? (
-              <>
-                <p className="lesson-panel-note">
-                  {reviewContexts.length === 1
-                    ? `Câu ${reviewContexts[0].questionIndex} em vừa làm sai thuộc bài này.`
-                    : `${reviewContexts.length} câu em vừa làm sai thuộc bài này.`}
-                </p>
-                <ul>
-                  {reviewContexts.map((ctx, i) => (
-                    <li key={i}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          selectTab("ly_thuyet");
-                          window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
-                        }}
-                      >
-                        Câu {ctx.questionIndex} — xem đoạn lý thuyết
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <p className="lesson-panel-empty">
-                Chưa có câu sai nào của bài này trong phiên đang học. Em làm bài ở mục Luyện tập, câu sai sẽ hiện ở đây.
-              </p>
-            )}
-            <Link href="/lop-hoc" className="lesson-panel-link">
-              Xem sổ câu sai đầy đủ ›
-            </Link>
-          </div>
-
-          {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. */}
-          <div className="lesson-panel lesson-controls">
-            <p className="lesson-panel-title">Ghi chú của em</p>
-            <textarea
-              className="lesson-note"
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              placeholder="Chỗ này em chưa hiểu…"
-              aria-label="Ghi chú của em cho bài này"
-            />
-            <p className="lesson-panel-note">Chỉ lưu trên máy em.</p>
-          </div>
+          {renderSidePanels()}
         </aside>
       </div>
 
-      <nav className="lesson-bottombar" aria-label="Điều hướng bài học">
-        {prevLesson ? (
-          <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
-            <ArrowLeft size={16} aria-hidden />
-            <span>Bài trước</span>
-          </Link>
-        ) : (
-          <span className="lesson-bottom-link is-empty" aria-hidden>
-            <ArrowLeft size={16} />
-            <span>Bài trước</span>
-          </span>
-        )}
-
+      <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
+        <button
+          type="button"
+          className="lesson-bottom-link"
+          onClick={() => setDrawerOpen(true)}
+          aria-expanded={drawerOpen}
+          aria-controls="lesson-drawer"
+        >
+          <Menu size={16} aria-hidden />
+          <span>Mục lục</span>
+        </button>
         <button
           type="button"
           className={`lesson-bottom-done ${lessonMarked ? "is-done" : ""}`}
@@ -1570,7 +1673,12 @@ function LessonLoader() {
           aria-pressed={lessonMarked}
         >
           {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
-          <span>{lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong"}</span>
+          <span className="lesson-bottom-done-text--short">
+            {lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong"}
+          </span>
+          <span className="lesson-bottom-done-text--long">
+            {lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong bài này"}
+          </span>
         </button>
 
         <span className="lesson-bottom-step" aria-live="polite">
@@ -1579,7 +1687,7 @@ function LessonLoader() {
 
         {nextLesson ? (
           <Link href={siblingHref(nextLesson)} className="lesson-bottom-link lesson-bottom-link--next" title={nextLesson.title}>
-            <span>Bài sau</span>
+            <span>Bài sau ›</span>
             <ArrowRight size={16} aria-hidden />
           </Link>
         ) : (
@@ -1589,6 +1697,40 @@ function LessonLoader() {
           </span>
         )}
       </nav>
+
+      {/* Ngăn kéo "Nội dung khoá" (chỉ hiện dưới 640px): gộp cột trái + cột phải vào một
+          bottom sheet, trượt từ đáy, đóng bằng ✕ / vuốt xuống / Esc. Chỉ render khi đang mở
+          nên nội dung bên trong không tốn gì lúc tải trang. */}
+      {drawerOpen && (
+        <div className="lesson-drawer" role="dialog" aria-modal="true" aria-label={`Nội dung khoá ${chapterTitle}`}>
+          <button type="button" className="lesson-drawer-scrim" aria-label="Đóng mục lục" onClick={() => setDrawerOpen(false)} />
+          <div
+            id="lesson-drawer"
+            className="lesson-drawer-sheet"
+            ref={drawerRef}
+            onTouchStart={onDrawerTouchStart}
+            onTouchMove={onDrawerTouchMove}
+            onTouchEnd={onDrawerTouchEnd}
+          >
+            <div className="lesson-drawer-head">
+              <div>
+                <p className="lesson-drawer-title">Nội dung khoá {chapterTitle || ""}</p>
+                <small>
+                  Đã học {progressDone}/{totalTabs} mục
+                </small>
+              </div>
+              <button type="button" onClick={() => setDrawerOpen(false)} aria-label="Đóng mục lục">
+                <X size={17} aria-hidden />
+              </button>
+            </div>
+            <div className="lesson-drawer-body">
+              {renderCourseInfo()}
+              {renderChapterTree()}
+              {renderSidePanels()}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
