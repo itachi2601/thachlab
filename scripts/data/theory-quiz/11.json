@@ -1,0 +1,366 @@
+{
+  "lesson_id": 11,
+  "lesson_title": "Bài 10. Lực từ. Cảm ứng từ",
+  "item_id": 52,
+  "generated_at": "2026-09-30",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Lực từ tác dụng lên đoạn dây dẫn mang dòng điện đặt trong từ trường có điểm đặt tại đâu?",
+      "options": [
+        "Đầu đoạn dây gần cực Bắc của nam châm",
+        "Trung điểm của đoạn dây",
+        "Đầu đoạn dây mà dòng điện đi vào",
+        "Mọi điểm trên đoạn dây như nhau (không có điểm đặt xác định)"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu lực từ có điểm đặt tại trung điểm của đoạn dây dẫn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Lực từ $\\vec{F}$ tác dụng lên đoạn dây mang dòng điện có phương như thế nào?",
+      "options": [
+        "Song song với đường sức từ",
+        "Song song với đoạn dây dẫn",
+        "Vuông góc với mặt phẳng chứa đoạn dòng điện và cảm ứng từ",
+        "Trùng với phương của dòng điện"
+      ],
+      "answer": 2,
+      "explanation": "Lực từ vuông góc với đoạn dây và vuông góc với đường sức từ, tức vuông góc với mặt phẳng chứa đoạn dòng điện và cảm ứng từ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong trường hợp nào lực từ tác dụng lên đoạn dây dẫn mang dòng điện bằng 0?",
+      "options": [
+        "Dòng điện vuông góc với đường sức từ",
+        "Dòng điện song song với từ trường",
+        "Dòng điện có cường độ rất lớn",
+        "Đoạn dây rất dài"
+      ],
+      "answer": 1,
+      "explanation": "Nếu dòng điện song song với từ trường thì $\\alpha=0$ nên $F=0$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Cảm ứng từ là đại lượng",
+      "options": [
+        "vô hướng, đặc trưng cho từ trường về mặt năng lượng",
+        "vectơ, đặc trưng cho từ trường về mặt tác dụng lực",
+        "vô hướng, đặc trưng cho độ lớn của dòng điện",
+        "vectơ, đặc trưng cho dòng điện trong dây dẫn"
+      ],
+      "answer": 1,
+      "explanation": "Cảm ứng từ $\\vec{B}$ là đại lượng vectơ đặc trưng cho từ trường về mặt tác dụng lực."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Chiều của vectơ cảm ứng từ $\\vec{B}$ tại một điểm là chiều",
+      "options": [
+        "từ cực Bắc sang cực Nam của nam châm thử nằm cân bằng tại điểm đó",
+        "từ cực Nam sang cực Bắc của nam châm thử nằm cân bằng tại điểm đó",
+        "của dòng điện chạy trong dây dẫn đặt tại điểm đó",
+        "của lực từ tác dụng lên dây dẫn đặt tại điểm đó"
+      ],
+      "answer": 1,
+      "explanation": "Chiều của $\\vec{B}$ là chiều từ cực Nam sang cực Bắc của nam châm thử."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Về quy tắc bàn tay trái xác định chiều lực từ, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đặt bàn tay trái duỗi thẳng để các đường cảm ứng từ xuyên vào lòng bàn tay.",
+          "answer": true
+        },
+        {
+          "text": "Chiều từ cổ tay đến ngón tay trùng với chiều dòng điện.",
+          "answer": true
+        },
+        {
+          "text": "Ngón tay cái choãi ra 90° chỉ chiều của lực từ tác dụng lên đoạn dây.",
+          "answer": true
+        },
+        {
+          "text": "Ngón tay cái choãi ra 90° chỉ chiều của cảm ứng từ.",
+          "answer": false
+        }
+      ],
+      "explanation": "Ngón tay cái choãi 90° chỉ chiều lực từ, không phải chiều cảm ứng từ."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Xét đoạn dây dẫn mang dòng điện đặt trong từ trường, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Lực từ có điểm đặt tại trung điểm của đoạn dây.",
+          "answer": true
+        },
+        {
+          "text": "Lực từ vuông góc với đoạn dây dẫn và vuông góc với đường sức từ.",
+          "answer": true
+        },
+        {
+          "text": "Trước khi dùng quy tắc bàn tay trái cần kiểm tra dòng điện và cảm ứng từ có song song hay không.",
+          "answer": true
+        },
+        {
+          "text": "Khi dòng điện song song với cảm ứng từ, lực từ có độ lớn cực đại.",
+          "answer": false
+        }
+      ],
+      "explanation": "Khi dòng điện song song với cảm ứng từ thì $F=0$, không phải cực đại."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Theo quy tắc bàn tay trái, ngón tay cái choãi ra một góc bao nhiêu độ so với các ngón tay còn lại? (chỉ ghi số)",
+      "answer": "90",
+      "explanation": "Bài nêu ngón tay cái choãi ra $90^\\circ$ chỉ chiều lực từ."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Khi dòng điện song song với từ trường thì lực từ tác dụng lên đoạn dây bằng bao nhiêu niutơn? (chỉ ghi số)",
+      "answer": "0",
+      "explanation": "Dòng điện song song với từ trường thì $F=0$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Phương của vectơ cảm ứng từ $\\vec{B}$ tại một điểm trong từ trường là phương của",
+      "options": [
+        "dây dẫn mang dòng điện đặt tại điểm đó",
+        "lực từ tác dụng lên dây dẫn đặt tại điểm đó",
+        "nam châm thử nằm cân bằng tại điểm đó",
+        "đường thẳng nối hai cực của nam châm chữ U"
+      ],
+      "answer": 2,
+      "explanation": "Phương của $\\vec{B}$ là phương của nam châm thử nằm cân bằng tại điểm đó."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Độ lớn lực từ tác dụng lên đoạn dây dẫn mang dòng điện được tính bằng biểu thức nào?",
+      "options": [
+        "$F=BIL\\cos\\alpha$",
+        "$F=\\dfrac{BI}{L\\sin\\alpha}$",
+        "$F=BIL\\sin\\alpha$",
+        "$F=BI^2L\\sin\\alpha$"
+      ],
+      "answer": 2,
+      "explanation": "Biểu thức định luật Ampe: $F=BIL\\sin\\alpha$, với $\\alpha$ là góc giữa $\\vec{L}$ và $\\vec{B}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong hệ SI, đơn vị của cảm ứng từ là",
+      "options": [
+        "tesla (T)",
+        "ampe (A)",
+        "niutơn (N)",
+        "vêbe (Wb)"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu trong hệ SI cảm ứng từ có đơn vị là tesla, kí hiệu T."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Độ lớn cảm ứng từ được xác định bởi biểu thức nào?",
+      "options": [
+        "$B=\\dfrac{F\\sin\\alpha}{IL}$",
+        "$B=\\dfrac{IL\\sin\\alpha}{F}$",
+        "$B=\\dfrac{F}{IL\\cos\\alpha}$",
+        "$B=\\dfrac{F}{IL\\sin\\alpha}$"
+      ],
+      "answer": 3,
+      "explanation": "Từ $F=BIL\\sin\\alpha$ suy ra $B=\\dfrac{F}{IL\\sin\\alpha}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Từ $F=BIL\\sin\\alpha$, cường độ dòng điện được tính bằng",
+      "options": [
+        "$I=\\dfrac{F}{BL\\sin\\alpha}$",
+        "$I=\\dfrac{BL\\sin\\alpha}{F}$",
+        "$I=F\\,BL\\sin\\alpha$",
+        "$I=\\dfrac{FL}{B\\sin\\alpha}$"
+      ],
+      "answer": 0,
+      "explanation": "Chia hai vế cho $BL\\sin\\alpha$ được $I=\\dfrac{F}{BL\\sin\\alpha}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong biểu thức $F=BIL\\sin\\alpha$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$B$ là độ lớn cảm ứng từ, đơn vị tesla (T).",
+          "answer": true
+        },
+        {
+          "text": "$I$ là cường độ dòng điện chạy trong dây dẫn, đơn vị ampe (A).",
+          "answer": true
+        },
+        {
+          "text": "$L$ là chiều dài đoạn dây dẫn, đơn vị mét (m).",
+          "answer": true
+        },
+        {
+          "text": "$\\alpha$ là góc hợp bởi $\\vec{I}$ và $\\vec{F}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$\\alpha$ là góc hợp bởi $(\\vec{L};\\vec{B})$, không phải góc giữa dòng điện và lực từ."
+    },
+    {
+      "type": "true_false",
+      "kind": "bien_doi",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Xét cảm ứng từ $B=\\dfrac{F}{IL\\sin\\alpha}$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Với $I$, $L$, $\\alpha$ không đổi, $F$ tăng thì $B$ đo được tăng.",
+          "answer": true
+        },
+        {
+          "text": "Với $F$, $L$, $\\alpha$ không đổi, $I$ tăng gấp đôi thì $B$ tính được giảm một nửa.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha=90^\\circ$ thì $\\sin\\alpha=1$ và $B=\\dfrac{F}{IL}$.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\alpha=0$ thì $B=\\dfrac{F}{IL}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Khi $\\alpha=0$ thì $\\sin\\alpha=0$ nên biểu thức không dùng để tính $B$; $B=\\dfrac{F}{IL}$ chỉ đúng khi $\\alpha=90^\\circ$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Đoạn dây dài $0{,}5\\ \\text{m}$ mang dòng điện $3\\ \\text{A}$ đặt vuông góc với từ trường đều $B=2\\ \\text{T}$. Tính lực từ (N). (chỉ ghi số)",
+      "answer": "3",
+      "explanation": "$F=BIL\\sin90^\\circ=2\\cdot3\\cdot0{,}5\\cdot1=3$ N."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Cảm ứng từ và đơn vị tesla",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Đoạn dây dài $0{,}5\\ \\text{m}$, dòng điện $2\\ \\text{A}$ đặt vuông góc với từ trường, lực từ $F=0{,}6\\ \\text{N}$. Tính $B$ (T). (chỉ ghi số)",
+      "answer": "0,6",
+      "explanation": "$B=\\dfrac{F}{IL\\sin\\alpha}=\\dfrac{0{,}6}{2\\cdot0{,}5\\cdot1}=0{,}6$ T."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Dây dài $2\\ \\text{m}$ đặt vuông góc với từ trường $B=0{,}5\\ \\text{T}$, lực từ $F=1{,}5\\ \\text{N}$. Tính cường độ dòng điện (A). (chỉ ghi số)",
+      "answer": "1,5",
+      "explanation": "$I=\\dfrac{F}{BL\\sin\\alpha}=\\dfrac{1{,}5}{0{,}5\\cdot2\\cdot1}=1{,}5$ A."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Tính lực từ F = BIl·sinθ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Dây mang dòng điện $5\\ \\text{A}$ đặt vuông góc với từ trường $B=0{,}4\\ \\text{T}$, lực từ $F=0{,}8\\ \\text{N}$. Tính chiều dài dây (m). (chỉ ghi số)",
+      "answer": "0,4",
+      "explanation": "$L=\\dfrac{F}{BI\\sin\\alpha}=\\dfrac{0{,}8}{0{,}4\\cdot5\\cdot1}=0{,}4$ m."
+    }
+  ]
+}

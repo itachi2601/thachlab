@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 216 hàm, sinh tự động 2026-09-28
+# Hàm SQL / RPC (schema public) — 229 hàm, sinh tự động 2026-09-30
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -75,15 +75,19 @@ repo — xem trên Supabase Dashboard).
 - `rank_can_view(p_student uuid)` → boolean
 - `rank_cfg(p_season bigint, p_key text, p_default numeric)` → numeric
 - `rank_class_board(p_class_id bigint)` → jsonb
+- `rank_class_goal_of(p_season bigint, p_class bigint, p_week date)` → jsonb
 - `rank_class_groups(p_class_id bigint)` → jsonb
 - `rank_close_season(p_season bigint)` → integer
 - `rank_create_season(p_name text, p_starts date, p_ends date, p_class_ids bigint[], p_activate boolean)` → bigint
+- `rank_daily_streak_calc(p_season bigint, p_student uuid, p_at timestamp with time zone)` → TABLE(len integer, frozen date[])
 - `rank_daily_streak_len(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_display_title_guard()` → trigger
 - `rank_ensure_member(p_season bigint, p_student uuid)` → void
 - `rank_eval_achievements(p_season bigint, p_student uuid, p_at timestamp with time zone)` → void
+- `rank_eval_class_goal(p_student uuid)` → void
 - `rank_eval_daily_streak(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_eval_gates(p_season bigint, p_student uuid)` → void
+- `rank_eval_progress_week(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_eval_titles(p_student uuid, p_season bigint)` → void
 - `rank_eval_weekly_goal(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_fix_quiz_start(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
@@ -95,10 +99,13 @@ repo — xem trên Supabase Dashboard).
 - `rank_is_student(p_student uuid)` → boolean
 - `rank_ledger_of(p_student uuid, p_season bigint, p_limit integer)` → TABLE(id bigint, season_id bigint, source_kind text, source_ref text, amount integer, reason text, ref_result_id bigint, actor_name text, created_at timestamp with time zone)
 - `rank_level_rank(p_level text)` → integer
+- `rank_monday_list(p_class_id bigint)` → jsonb
 - `rank_my_status()` → jsonb
 - `rank_my_titles()` → jsonb
 - `rank_on_result(p_student uuid, p_kind text, p_source_id bigint, p_score numeric, p_at timestamp with time zone, p_result_ref bigint)` → void
+- `rank_progress_calc(p_student uuid, p_week date)` → TABLE(q_now integer, acc_now numeric, q_base integer, acc_base numeric, gain numeric)
 - `rank_public_honor()` → jsonb
+- `rank_quartile_metrics(p_season bigint)` → jsonb
 - `rank_recompute_season(p_season bigint)` → integer
 - `rank_recompute_student(p_season bigint, p_student uuid)` → void
 - `rank_refresh_student(p_season bigint, p_student uuid)` → void
@@ -111,16 +118,20 @@ repo — xem trên Supabase Dashboard).
 - `rank_set_display_title(p_code text, p_level text)` → void
 - `rank_set_honor_visibility(p_value text)` → void
 - `rank_status_of(p_student uuid)` → jsonb
+- `rank_streak_day(p_season bigint, p_at timestamp with time zone)` → date
+- `rank_streak_offset(p_season bigint)` → integer
 - `rank_tier_code_by_rp(p_season bigint, p_rp integer)` → text
 - `rank_tier_info(p_season bigint, p_code text, p_rp integer)` → TABLE(code text, name text, sort integer, tier_min integer, next_min integer, division integer, div_min integer, div_max integer)
 - `rank_tier_needs_gate(t rank_tiers)` → boolean
 - `rank_tiers_guard()` → trigger
 - `rank_title_is_active(p_title text)` → boolean
+- `rank_title_kho_weeks(p_student uuid, p_title text)` → integer
 - `rank_title_stats(p_student uuid, p_title text)` → TABLE(n integer, correct integer, covered integer, total_topics integer, acc integer, de_correct integer, tb_correct integer, kho_correct integer)
 - `rank_titles_at_level(p_student uuid, p_level text)` → integer
 - `rank_titles_of(p_student uuid)` → jsonb
 - `rank_vn_date(p_at timestamp with time zone)` → date
 - `rank_week_start(p_at timestamp with time zone)` → date
+- `rank_weekly_goal_of(p_season bigint, p_student uuid, p_week date)` → TABLE(target integer, min_score numeric, personal boolean, n_items integer, avg_items numeric)
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
@@ -143,8 +154,8 @@ repo — xem trên Supabase Dashboard).
 - `similarity_dist(text, text)` → real
 - `similarity_op(text, text)` → boolean
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -199,8 +210,10 @@ repo — xem trên Supabase Dashboard).
 - `trg_notify_registration()` → trigger
 - `trg_notify_slot_for_catchup()` → trigger
 - `trg_question_topics_rename_bank()` → trigger
+- `trg_rank_class_goal()` → trigger
 - `trg_rank_exam_result()` → trigger
 - `trg_rank_practice_session()` → trigger
+- `trg_rank_progress_practice()` → trigger
 - `trg_rank_question_results()` → trigger
 - `trg_sync_thpt_registration()` → trigger
 - `trg_ta_assistant_role()` → trigger

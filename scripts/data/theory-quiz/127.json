@@ -1,0 +1,366 @@
+{
+  "lesson_id": 127,
+  "lesson_title": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "item_id": 183,
+  "generated_at": "2026-09-30",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Điện trường xoáy là điện trường có đường sức như thế nào?",
+      "explanation": "Theo bài, điện trường xoáy có đường sức là đường cong kín bao quanh các đường cảm ứng từ, không có điểm đầu và điểm cuối.",
+      "options": [
+        "Là các đường thẳng song song",
+        "Là các đường cong kín, bao quanh các đường cảm ứng từ",
+        "Là các đường không khép kín, đi từ điện tích dương đến điện tích âm",
+        "Là các đường tròn có tâm là điện tích điểm"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Nội dung nào sau đây đúng với kết luận của Maxwell?",
+      "explanation": "Maxwell kết luận: từ trường biến thiên sinh ra điện trường biến thiên, và điện trường biến thiên cũng sinh ra từ trường biến thiên.",
+      "options": [
+        "Chỉ từ trường biến thiên mới sinh ra điện trường biến thiên",
+        "Chỉ điện trường biến thiên mới sinh ra từ trường biến thiên",
+        "Từ trường biến thiên sinh ra điện trường biến thiên và ngược lại",
+        "Điện trường và từ trường không thể sinh ra nhau"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Khi điện tích của tụ điện thay đổi (đang tích hoặc phóng điện) thì giữa hai bản tụ có điện trường biến thiên, tương đương với",
+      "explanation": "Bài nêu: điện trường biến thiên giữa hai bản tụ tương đương một dòng điện gọi là dòng điện dịch.",
+      "options": [
+        "dòng điện dịch",
+        "dòng điện không đổi",
+        "dòng điện cảm ứng trong dây dẫn",
+        "dòng điện Fu-cô"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ là sóng ngang vì",
+      "explanation": "Tại mỗi điểm, E vuông góc với B và cả hai vuông góc với phương truyền sóng nên là sóng ngang.",
+      "options": [
+        "E và B cùng phương với phương truyền sóng",
+        "E và B đều vuông góc với phương truyền sóng",
+        "chỉ E vuông góc với phương truyền, B song song phương truyền",
+        "sóng điện từ truyền được trong chân không"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Điện từ trường là",
+      "explanation": "Điện trường biến thiên và từ trường biến thiên là hai mặt của một trường thống nhất là điện từ trường, chuyển hóa qua lại lẫn nhau.",
+      "options": [
+        "trường chỉ gồm điện trường tĩnh",
+        "trường thống nhất gồm điện trường biến thiên và từ trường biến thiên, có thể chuyển hóa qua lại",
+        "trường chỉ gồm từ trường không đổi",
+        "trường do điện tích đứng yên gây ra"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Khi có sét đánh gần nhà thì tivi trong nhà bị chập chờn. Hiện tượng này cho thấy",
+      "explanation": "Bài liệt kê sét đánh gần nhà làm tivi chập chờn là ví dụ về nguồn tạo điện từ trường biến thiên phát sóng điện từ.",
+      "options": [
+        "sét là nguồn phát sóng điện từ",
+        "sóng điện từ không truyền qua không khí",
+        "sóng điện từ là sóng dọc",
+        "tivi phát ra sóng điện từ lúc có sét"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Bước sóng của sóng điện từ trong chân không được tính bằng công thức nào (c là tốc độ ánh sáng, T chu kì, f tần số)?",
+      "explanation": "Bài cho $\\lambda = cT = \\dfrac{c}{f}$.",
+      "options": [
+        "$\\lambda = cT = \\dfrac{c}{f}$",
+        "$\\lambda = \\dfrac{c}{T} = cf$",
+        "$\\lambda = \\dfrac{f}{c}$",
+        "$\\lambda = \\dfrac{T}{c}$"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong công thức $\\lambda = \\dfrac{c}{f}$, đơn vị của tần số $f$ là",
+      "explanation": "Bài ghi f (Hz) là tần số của sóng điện từ.",
+      "options": [
+        "giây (s)",
+        "héc (Hz)",
+        "mét (m)",
+        "mét trên giây (m/s)"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Từ $\\lambda = \\dfrac{c}{f}$, biểu thức tính tần số là",
+      "explanation": "Chuyển vế $\\lambda = c/f$ được $f = c/\\lambda$.",
+      "options": [
+        "$f = \\dfrac{\\lambda}{c}$",
+        "$f = c\\lambda$",
+        "$f = \\dfrac{c}{\\lambda}$",
+        "$f = \\dfrac{1}{c\\lambda}$"
+      ],
+      "answer": 2
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ có tần số $f = 1{,}5\\times10^8$ Hz truyền trong chân không ($c = 3\\times10^8$ m/s) có bước sóng bằng",
+      "explanation": "$\\lambda = c/f = 3\\times10^8 / 1{,}5\\times10^8 = 2$ m.",
+      "options": [
+        "0,5 m",
+        "2 m",
+        "4,5 m",
+        "20 m"
+      ],
+      "answer": 1
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Xét sự giống và khác nhau giữa điện trường tĩnh và điện trường xoáy. Các phát biểu sau đúng hay sai?",
+      "explanation": "Điện trường tĩnh có đường sức không khép kín; đường sức của mọi điện trường không cắt nhau.",
+      "statements": [
+        {
+          "text": "Đường sức của điện trường xoáy là đường cong kín, không có điểm đầu và điểm cuối.",
+          "answer": true
+        },
+        {
+          "text": "Đường sức của điện trường tĩnh là đường cong kín.",
+          "answer": false
+        },
+        {
+          "text": "Điện trường tĩnh do điện tích đứng yên gây ra.",
+          "answer": true
+        },
+        {
+          "text": "Đường sức của các loại điện trường này đều có thể cắt nhau.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Về sóng điện từ, các phát biểu sau đúng hay sai?",
+      "explanation": "Bài nêu sóng điện từ là sóng ngang, E và B cùng pha, truyền được trong chân không và mang năng lượng.",
+      "statements": [
+        {
+          "text": "Sóng điện từ là sóng ngang.",
+          "answer": true
+        },
+        {
+          "text": "E và B tại mỗi điểm biến thiên điều hòa và luôn cùng pha nhau.",
+          "answer": true
+        },
+        {
+          "text": "Sóng điện từ không truyền được trong chân không.",
+          "answer": false
+        },
+        {
+          "text": "Sóng điện từ mang năng lượng.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Cho công thức $\\lambda = cT = \\dfrac{c}{f}$ của sóng điện từ trong chân không. Các phát biểu sau đúng hay sai?",
+      "explanation": "$\\lambda = c/f$ nên f tăng thì λ giảm; $\\lambda = cT$ nên T tăng thì λ tăng.",
+      "statements": [
+        {
+          "text": "$c = 3\\times10^8$ m/s là tốc độ ánh sáng trong chân không.",
+          "answer": true
+        },
+        {
+          "text": "Chu kì $T$ tính bằng giây (s).",
+          "answer": true
+        },
+        {
+          "text": "Khi tần số $f$ tăng thì bước sóng $\\lambda$ tăng theo.",
+          "answer": false
+        },
+        {
+          "text": "$\\lambda = cT$ nên $T$ tăng thì $\\lambda$ tăng.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ trong chân không có tần số $f = 100$ MHz $= 10^8$ Hz ($c = 3\\times10^8$ m/s). Các phát biểu sau đúng hay sai?",
+      "explanation": "$\\lambda = c/f = 3$ m; $T = 1/f = 10^{-8}$ s; λ tỉ lệ nghịch với f.",
+      "statements": [
+        {
+          "text": "Bước sóng là 3 m.",
+          "answer": true
+        },
+        {
+          "text": "Chu kì là $10^{-8}$ s.",
+          "answer": true
+        },
+        {
+          "text": "Bước sóng là 30 m.",
+          "answer": false
+        },
+        {
+          "text": "Nếu tần số tăng gấp đôi thì bước sóng giảm một nửa.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Tại mỗi điểm có sóng điện từ, vector $E$ và vector $B$ hợp với nhau một góc bao nhiêu độ?",
+      "explanation": "E và B luôn vuông góc với nhau, tức góc $90^\\circ$.",
+      "answer": "90"
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ tuân theo bao nhiêu quy luật sau: truyền thẳng, phản xạ, khúc xạ, giao thoa, nhiễu xạ?",
+      "explanation": "Bài liệt kê 5 quy luật giống sóng cơ.",
+      "answer": "5"
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Tốc độ ánh sáng trong chân không $c = a\\times10^8$ m/s. Tìm $a$.",
+      "explanation": "Bài cho $c = 3\\times10^8$ m/s.",
+      "answer": "3"
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ có tần số 100 MHz ($10^8$ Hz) truyền trong chân không. Bước sóng bằng bao nhiêu mét?",
+      "explanation": "$\\lambda = c/f = 3\\times10^8/10^8 = 3$ m.",
+      "answer": "3"
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Sóng điện từ trong chân không có bước sóng 6 m. Tần số bằng bao nhiêu MHz?",
+      "explanation": "$f = c/\\lambda = 3\\times10^8/6 = 5\\times10^7$ Hz = 50 MHz.",
+      "answer": "50"
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện từ trường và sóng điện từ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Dao động điện từ có chu kì $T = 4\\times10^{-8}$ s. Bước sóng của sóng điện từ trong chân không bằng bao nhiêu mét?",
+      "explanation": "$\\lambda = cT = 3\\times10^8\\times4\\times10^{-8} = 12$ m.",
+      "answer": "12"
+    }
+  ]
+}

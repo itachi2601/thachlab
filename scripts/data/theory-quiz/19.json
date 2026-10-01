@@ -1,0 +1,371 @@
+{
+  "lesson_id": 19,
+  "lesson_title": "Bài 18. An toàn phóng xạ",
+  "item_id": 150,
+  "generated_at": "2026-09-30",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 14,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 16,
+      "cong_thuc": 2
+    },
+    "removed": [
+      {
+        "question": "Bài nêu mấy yếu tố ảnh hưởng của tia phóng xạ lên cơ thể (cường độ, khả năng ion hóa, khả năng đâm xuyên, thời gian chiếu)?",
+        "reason": "Nghi ngờ: bài liệt kê các yếu tố kèm dấu '...' (danh sách mở) nên đáp án '4' không chắc chắn theo nội dung bài."
+      },
+      {
+        "question": "Đồng vị $^{32}_{15}P$ có bao nhiêu neutron?",
+        "reason": "Nghi ngờ: cần công thức N = A − Z, không có trong mục lý thuyết này (kiến thức bài khác)."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Tia phóng xạ có đặc điểm nào sau đây?",
+      "options": [
+        "Nhìn thấy được bằng mắt thường",
+        "Không nhìn thấy được nhưng có tính chất ion hóa",
+        "Không có khả năng xuyên qua vật chất",
+        "Không tác dụng lên tế bào sống"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu tia phóng xạ là tia không nhìn thấy được nhưng có tính ion hóa, xuyên thấu, phá hủy tế bào."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Tính chất nào sau đây KHÔNG được nêu là tính chất của tia phóng xạ?",
+      "options": [
+        "Ion hóa",
+        "Làm đen kính ảnh",
+        "Phá hủy tế bào",
+        "Bị mắt thường nhìn thấy rõ"
+      ],
+      "answer": 3,
+      "explanation": "Tia phóng xạ không nhìn thấy được; các tính chất còn lại đều được nêu trong bài."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Yếu tố nào sau đây KHÔNG được nêu là yếu tố quyết định ảnh hưởng của tia phóng xạ lên cơ thể người?",
+      "options": [
+        "Cường độ của tia",
+        "Khả năng ion hóa",
+        "Màu da của người bị chiếu",
+        "Thời gian chiếu"
+      ],
+      "answer": 2,
+      "explanation": "Bài nêu các yếu tố: cường độ, khả năng ion hóa, khả năng đâm xuyên, thời gian chiếu."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Biển cảnh báo phóng xạ được đặt ở đâu?",
+      "options": [
+        "Chỉ ở cổng bệnh viện",
+        "Khu vực có thiết bị phát tia phóng xạ hoặc trên thiết bị, vật chứa nguồn phóng xạ",
+        "Chỉ ở trường học",
+        "Chỉ trong nhà bếp"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu biển đặt tại khu vực có thiết bị phát tia phóng xạ hoặc trên chính thiết bị và vật chứa nguồn phóng xạ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Mục đích của biển cảnh báo phóng xạ là gì?",
+      "options": [
+        "Trang trí khu vực",
+        "Cảnh báo mọi người không nên tiếp cận hoặc làm hỏng thiết bị",
+        "Chỉ đường cho bệnh nhân",
+        "Quảng cáo dịch vụ y tế"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu mục đích: cảnh báo mọi người không nên tiếp cận hoặc làm hỏng thiết bị."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Nguyên tắc nào sau đây đúng khi làm việc với nguồn phóng xạ?",
+      "options": [
+        "Lại gần nguồn để quan sát kĩ",
+        "Không cần tấm chắn nếu làm việc nhanh",
+        "Giảm thiểu thời gian phơi nhiễm phóng xạ",
+        "Tăng thời gian tiếp xúc để quen dần"
+      ],
+      "answer": 2,
+      "explanation": "Bài nêu ba nguyên tắc: giữ khoảng cách đủ xa, dùng tấm chắn đủ tốt, giảm thiểu thời gian phơi nhiễm."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Phương pháp theo dõi vết phóng xạ trong chẩn đoán y học dựa trên việc nào?",
+      "options": [
+        "Đưa đồng vị phóng xạ vào cơ thể qua dược chất và theo dõi bằng thiết bị phát hiện tia phóng xạ",
+        "Chiếu tia từ ngoài để đốt tế bào",
+        "Làm lạnh cơ thể bệnh nhân",
+        "Đo nhiệt độ da bệnh nhân"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu: đưa đồng vị phóng xạ vào cơ thể qua dược chất, theo dõi sự dịch chuyển bằng thiết bị phát hiện tia phóng xạ và máy vi tính."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Trong điều trị ung thư, máy xạ trị hoạt động theo cách nào?",
+      "options": [
+        "Chiếu tia phóng xạ từ bên ngoài cơ thể vào tế bào ung thư để tiêu diệt",
+        "Đưa thuốc qua đường ăn uống",
+        "Làm nóng cơ thể bệnh nhân",
+        "Chỉ dùng để chụp ảnh gan mật"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu: dùng máy xạ trị chiếu tia phóng xạ từ bên ngoài cơ thể vào tế bào ung thư để tiêu diệt chúng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Trong công nghệ sinh học, tia phóng xạ được dùng để làm gì?",
+      "options": [
+        "Hỗ trợ gây đột biến gene tạo giống cây trồng mới",
+        "Làm cây không cần nước",
+        "Thay thế ánh sáng quang hợp",
+        "Làm đất màu mỡ hơn ngay lập tức"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu tia phóng xạ hỗ trợ nghiên cứu gây đột biến gene để tạo giống cây trồng mới."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Chiếu tia phóng xạ vào thực phẩm có tác dụng nào sau đây?",
+      "options": [
+        "Diệt vi trùng có hại, kéo dài thời hạn sử dụng",
+        "Làm thực phẩm mọc mầm nhanh hơn",
+        "Làm thực phẩm phân hủy nhanh",
+        "Làm thực phẩm rẻ hơn chắc chắn"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu chiếu xạ diệt vi trùng, kéo dài thời hạn sử dụng, tránh mọc mầm và phân hủy."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Xét các phát biểu về tia phóng xạ:",
+      "statements": [
+        {
+          "text": "Tia phóng xạ là tia không nhìn thấy được.",
+          "answer": true
+        },
+        {
+          "text": "Tia phóng xạ có khả năng ion hóa.",
+          "answer": true
+        },
+        {
+          "text": "Tia phóng xạ không thể làm đen kính ảnh.",
+          "answer": false
+        },
+        {
+          "text": "Tia phóng xạ có thể phá hủy tế bào.",
+          "answer": true
+        }
+      ],
+      "explanation": "Bài nêu tia phóng xạ không nhìn thấy, ion hóa, làm đen kính ảnh, phá hủy tế bào."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Xét các nguyên tắc an toàn khi làm việc với nguồn phóng xạ:",
+      "statements": [
+        {
+          "text": "Giữ khoảng cách đủ xa với nguồn.",
+          "answer": true
+        },
+        {
+          "text": "Sử dụng tấm chắn nguồn phóng xạ đủ tốt.",
+          "answer": true
+        },
+        {
+          "text": "Càng tiếp xúc lâu càng an toàn.",
+          "answer": false
+        },
+        {
+          "text": "Cần giảm thiểu thời gian phơi nhiễm.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ba nguyên tắc: khoảng cách xa, tấm chắn tốt, thời gian phơi nhiễm ngắn."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Xét việc sử dụng tia phóng xạ để điều trị ung thư:",
+      "statements": [
+        {
+          "text": "Có thể dùng dược chất phóng xạ uống hoặc tiêm.",
+          "answer": true
+        },
+        {
+          "text": "Thuốc Xofigo chứa đồng vị phóng xạ radium.",
+          "answer": true
+        },
+        {
+          "text": "Máy xạ trị chỉ chiếu tia từ bên trong cơ thể.",
+          "answer": false
+        },
+        {
+          "text": "Tế bào ung thư chết do hấp thụ tia phóng xạ.",
+          "answer": true
+        }
+      ],
+      "explanation": "Máy xạ trị chiếu tia từ bên ngoài cơ thể; các ý còn lại đúng theo bài."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Xét việc chiếu xạ bảo quản thực phẩm:",
+      "statements": [
+        {
+          "text": "Diệt được vi trùng có hại.",
+          "answer": true
+        },
+        {
+          "text": "Giúp thực phẩm tránh bị mọc mầm, phân hủy.",
+          "answer": true
+        },
+        {
+          "text": "Không có nhược điểm nào.",
+          "answer": false
+        },
+        {
+          "text": "Thực phẩm chiếu xạ có thể có giá thành cao.",
+          "answer": true
+        }
+      ],
+      "explanation": "Bài nêu cả ưu điểm lẫn nhược điểm (đổi màu, hương vị, giá thành cao)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_luat",
+      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Có bao nhiêu nguyên tắc an toàn phóng xạ được nêu trong bài (khoảng cách, tấm chắn, thời gian)?",
+      "answer": "3",
+      "explanation": "Bài nêu 3 nguyên tắc: khoảng cách, tấm chắn, thời gian phơi nhiễm."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Hình vải thiều chiếu xạ và vải thiều thường được so sánh sau bao nhiêu ngày kể từ khi thu hoạch?",
+      "answer": "7",
+      "explanation": "Chú thích hình nêu sau 7 ngày kể từ khi thu hoạch."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Đồng vị $^{32}_{15}P$ dùng đánh dấu phóng xạ có số khối bằng bao nhiêu?",
+      "answer": "32",
+      "explanation": "Kí hiệu $^{A}_{Z}X$ có A là số khối, ở đây A = 32."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "An toàn phóng xạ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Đồng vị $^{32}_{15}P$ có bao nhiêu proton?",
+      "answer": "15",
+      "explanation": "Số hiệu nguyên tử Z = 15 chính là số proton."
+    }
+  ]
+}
