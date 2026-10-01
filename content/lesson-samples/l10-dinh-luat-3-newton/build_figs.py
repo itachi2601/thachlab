@@ -68,7 +68,7 @@ b += text(246, 160, "N và N′: cặp lực – phản lực", "currentColor", 
 b += text(10, 22, "● Cam: lực đặt lên SÁCH (cân bằng nhau)", ORG, 12)
 b += text(10, 40, "● Xanh: lực đặt lên BÀN", BLUE, 12)
 fig2 = wrap("0 0 420 270", "Sách trên bàn: P và N cân bằng cùng đặt lên sách; N và N' là cặp lực phản lực",
-            b, "Hình 2. P và N cùng đặt lên sách (<em>cân bằng</em>). N (lên sách) và N′ (lên bàn) mới là <em>lực – phản lực</em>.")
+            b, "Hình 3. P và N cùng đặt lên sách (<em>cân bằng</em>). N (lên sách) và N′ (lên bàn) mới là <em>lực – phản lực</em>.")
 
 # ---- Hình 3: hai bạn đẩy nhau
 b = defs("f3")
@@ -81,7 +81,20 @@ b += arrow("f3", "r", 320, 150, 376, 150) + text(340, 138, "F = 120 N", RED, 12)
 b += arrow("f3", "g", 200, 52, 80, 52) + text(140, 42, "a<tspan dy=\"4\" font-size=\"9\">A</tspan><tspan dy=\"-4\"> = 3 m/s²</tspan>", GRN, 12, "middle")
 b += arrow("f3", "g", 215, 52, 290, 52) + text(255, 42, "a<tspan dy=\"4\" font-size=\"9\">B</tspan><tspan dy=\"-4\"> = 2 m/s²</tspan>", GRN, 12, "middle")
 fig3 = wrap("0 0 440 215", "Hai bạn đẩy nhau trên giày trượt: lực bằng nhau, gia tốc của bạn nhẹ hơn lớn hơn",
-            b, "Hình 3. Lực (đỏ) bằng nhau; gia tốc (xanh) của bạn A nhẹ hơn <em>dài hơn</em>.")
+            b, "Hình 4. Lực (đỏ) bằng nhau; gia tốc (xanh) của bạn A nhẹ hơn <em>dài hơn</em>.")
+
+
+# ---- Hình 4: hai lực kế móc nhau
+b = defs("f4")
+b += '<rect x="30" y="70" width="110" height="36" rx="5" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/>'
+b += '<rect x="280" y="70" width="110" height="36" rx="5" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/>'
+b += '<line x1="140" y1="88" x2="280" y2="88" stroke="currentColor" stroke-width="2.5"/><circle cx="210" cy="88" r="5" fill="none" stroke="currentColor" stroke-width="2"/>'
+b += text(85, 94, "5 N", "currentColor", 15, "middle", "700") + text(335, 94, "5 N", "currentColor", 15, "middle", "700")
+b += text(85, 128, "Lực kế 1", "currentColor", 12, "middle") + text(335, 128, "Lực kế 2", "currentColor", 12, "middle")
+b += arrow("f4", "r", 196, 56, 150, 56) + text(196, 46, "lực kế 2 kéo 1", RED, 12, "end")
+b += arrow("f4", "b", 224, 56, 270, 56) + text(224, 46, "lực kế 1 kéo 2", BLUE, 12, "start")
+fig4 = wrap("0 0 430 140", "Hai lực kế móc vào nhau luôn chỉ cùng một số",
+            b, "Hình 2. Kéo mạnh hay nhẹ, hai lực kế vẫn chỉ <strong>bằng nhau</strong> và đổi cùng lúc.")
 
 def ins(html, anchor, fig, before=True):
     html = re.sub(r'<figure class="fig" data-tl="1">.*?</figure>\n?', lambda m: m.group(0) if fig[:0] else m.group(0), html, flags=re.S)
@@ -89,10 +102,11 @@ def ins(html, anchor, fig, before=True):
 
 h = open("theory.html").read()
 h = re.sub(r'<figure class="fig" data-tl="1">.*?</figure>\n', "", h, flags=re.S)
+a0 = '<div class="tl-box tl-box--exp">'
 a1 = '<p>Muốn nhớ nhanh, em nhớ 4 chữ'
 a2 = '<div class="tl-box tl-box--think">\n<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)'
-a3 = '<p>Bây giờ em tự áp dụng cho một tình huống khác.</p>'
-for a, f in ((a1, fig1), (a2, fig2), (a3, fig3)):
+a3 = '<div class="tl-box tl-box--think">\n<p class="tl-label">✍️ Thử sức, tự kiểm tra ngay</p>'
+for a, f in ((a0, fig4), (a1, fig1), (a2, fig2), (a3, fig3)):
     assert a in h, a
     h = h.replace(a, f + "\n" + a, 1)
 open("theory.html", "w").write(h)

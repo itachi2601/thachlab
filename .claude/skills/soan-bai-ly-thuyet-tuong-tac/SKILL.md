@@ -5,6 +5,15 @@ description: Soạn một bài LÝ THUYẾT có tương tác cho thachlab theo p
 
 # Soạn bài lý thuyết tương tác
 
+## Mục đích (thầy xác nhận 1/10/2026)
+
+Không phải video bài giảng. Đây là **bài đọc lý thuyết có tương tác**, dùng được cả hai cách: (1) thầy **chiếu và giảng trực tiếp** trên lớp, mỗi lần bấm `<details>`/chọn đáp án là một nhịp giảng; (2) học sinh **tự xem lại** ở nhà, nên mọi lời giảng quan trọng phải nằm trong bài chứ không chỉ trong lời thầy nói.
+
+Ba thói quen dạy của thầy, bài nào cũng phải có đủ:
+1. **Mỗi kiến thức cần nhớ đi kèm một ví dụ hoặc thí nghiệm thực tế.** Không có gạch đầu dòng kiến thức nào đứng trơ. Thí nghiệm viết theo ba bước Làm – Quan sát – Rút ra (`.tl-box--exp`); ví dụ ngắn thì viết ngay trong gạch đầu dòng.
+2. **Trả bài trước khi giải bài tập.** Một mục `<h3>` "Trả bài" gồm 4–6 câu hỏi nhớ lại (phát biểu, công thức + ký hiệu, đặc điểm, điểm dễ nhầm, công thức suy ra từ đâu), mỗi câu một `<details>` để học sinh tự đọc to rồi mới bấm xem đáp án. Mục này đứng **trước** bài toán mẫu.
+3. **Bài toán mẫu: đọc đề đến đâu, nêu dữ liệu và kiến thức đến đó.** Chép đề trong hộp "Đề bài", rồi bảng ba cột **Câu trong đề | Dữ liệu | Kiến thức liên quan** (`.tl-table--data`), mỗi hàng một câu/cụm của đề. Sau bảng mới đến lời giải (ẩn trong `<details>`, các bước đánh số bằng `.tl-steps`), cuối cùng bước kiểm tra kết quả.
+
 Bài mẫu chuẩn (đã làm, đọc để bắt chước nhịp): `content/lesson-samples/l10-dinh-luat-3-newton/` (`theory.html`, `bundle.json`, `build_figs.py`).
 Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — mọi quy ước dưới đây rút từ lần làm đó, sẽ chỉnh khi thầy phản hồi (xem mục cuối).
 
@@ -30,10 +39,11 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 | Phần | Nội dung | Linh kiện |
 |---|---|---|
 | I. Mở bài | Tình huống đời thường gần học sinh (sân băng, xưởng CNC, xe đạp, bếp...), kể bằng giọng thầy, kết bằng câu hỏi "tại sao?" | hộp **dự đoán** (radio) |
-| II. Kiến thức | Phát biểu + công thức + ký hiệu; 3–4 gạch đầu dòng ngắn | hộp **định nghĩa** + hình 1 + `<details>` "xem thêm" |
-| III. Bẫy | Hiểu lầm kinh điển, vì sao sai; bảng so sánh đúng/sai | bảng + hình 2 + **tự kiểm tra** |
-| IV. Tính toán | Ví dụ số nhỏ, số đẹp; lời giải ẩn trong `<details>` | hình 3 + 1–2 câu tự kiểm tra |
-| V. Đời sống + tổng kết | 3–4 ứng dụng; 1 thử thách ẩn gợi ý; khung "Mang về sau bài học" 3 ý | `<details>` + hộp định nghĩa |
+| II. Kiến thức | Phát biểu + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
+| III. Bẫy | Hiểu lầm kinh điển, vì sao sai; bảng so sánh đúng/sai | bảng + hình + **tự kiểm tra** |
+| IV. Trả bài | 4–6 câu nhớ lại lý thuyết/công thức, chưa giải bài | `<details>` trong hộp `tl-box--think` |
+| V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả; sau đó 1–2 câu "Thử sức" đổi số | `.tl-table--data` + `.tl-steps` + hình + quiz |
+| VI. Đời sống + tổng kết | 3–4 ứng dụng; 1 thử thách ẩn gợi ý; khung "Mang về sau bài học" 3–4 ý (có ý về cách đọc đề) | `<details>` + hộp định nghĩa |
 
 ## Giọng văn thầy Thạch
 

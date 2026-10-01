@@ -11,3 +11,5 @@ metadata:
 
 **Why:** HTML lưu DB cấm script/style/on* nên tương tác chỉ bằng details + radio:checked; hình sách Halliday có bản quyền nên vẽ lại SVG.
 **How to apply:** soạn bài lý thuyết mới → đọc SKILL.md trước; sau khi thầy xem được bài mẫu, cập nhật mục kiểm tra + bài học rút ra.
+
+**Cập nhật 1/10 (sau khi thầy nêu cách dạy):** mục đích = bài đọc để thầy chiếu giảng trực tiếp VÀ học sinh tự học lại (không phải video). 3 thói quen bắt buộc: (1) mỗi kiến thức có ví dụ/thí nghiệm (`.tl-box--exp`: Làm–Quan sát–Rút ra), (2) "Trả bài" lý thuyết/công thức trước khi giải bài tập, (3) mỗi bài toán mẫu: bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* (`.tl-table--data`) rồi mới lời giải. Đã sửa bài mẫu (6 mục, 4 hình, 8 details), SKILL.md, linh kiện, lint cảnh báo thiếu 3 thứ đó. Bài mẫu đích đăng: lesson_id 61 (Lớp 10, chương 12) — thầy chọn xoá bài cũ đăng thay, chưa thấy lên web (cần upload-lesson + deploy từ nhánh có CSS).
