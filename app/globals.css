@@ -183,6 +183,40 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
   body { transition: none; }
 }
 
+/* ---------- Thanh đáy kiểu app toàn site (điện thoại/tablet < 1024px) ----------
+   Do components/layout/MobileTabBar.tsx render; component tự bỏ qua khi > 1023px nên
+   phần hiển thị chỉ cần đúng một nơi. */
+.mobile-tabbar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--color-line);
+  background: var(--color-panel);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.mobile-tabbar a {
+  display: flex;
+  min-height: 56px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 2px;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mobile-tabbar a.is-active { color: var(--color-primary); }
+.mobile-tabbar a.is-active svg { color: var(--color-primary); }
+
+@media (max-width: 1023px) {
+  /* Chừa chỗ để thanh đáy không che nội dung cuối trang (trang bài học tự chừa riêng). */
+  body:has(.mobile-tabbar) { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
+}
+
 /* ---------- Không gian học tập Gia công CNC ---------- */
 /* Cùng ngôn ngữ lesson-shell (luồng CTTC): nền tối, nhấn cam qua biến, thẻ kính, eyebrow mono. */
 /* Một bộ rule duy nhất; .cnc-embedded chỉ còn là móc cho các khối rubric và bài lập trình ở dưới. */
@@ -1018,7 +1052,11 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
    vẫn chỉ cao bằng nội dung — dính trực tiếp vào .lesson-layout thì bị giới hạn bởi chiều cao
    của chính phần tử, tab sẽ trôi mất sau vài chục pixel cuộn (đã thấy đúng như vậy khi thử). */
 .lesson-content { min-width: 0; }
+/* Nút ☰ và ngăn kéo chỉ có ở điện thoại (mở ở @media max-width 639px). */
+.lesson-drawer-toggle { display: none; width: 38px; height: 34px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; color: var(--color-ink); cursor: pointer; }
+.lesson-drawer { display: none; }
 .lesson-bottombar { display: none; }
+.lesson-bottom-done-text--long { display: none; }
 .lesson-head { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: start; column-gap: 10px; row-gap: 10px; margin: 0; }
 .lesson-head-back { margin-top: 1px; border-color: transparent; }
 .lesson-head-text { grid-column: 1 / -1; grid-row: 2; }
@@ -1070,9 +1108,10 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 
   /* Cây chương: nhóm theo chương, chỉ chương đang học mở sẵn. */
   .lesson-progress-summary { display: flex; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-progress-summary > div { min-width: 0; }
   .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 13px; font-weight: 700; }
   .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
-  .lesson-continue-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; background: var(--lesson-accent); color: #fff; }
+  .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 34px; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; border-radius: 9px; padding: 8px 12px; white-space: nowrap; background: var(--lesson-accent); color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
   .lesson-continue-btn:hover { background: var(--lesson-accent-hover); }
   .lesson-nav-search { position: relative; display: flex; align-items: center; gap: 8px; margin: 14px 0 10px; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
   .lesson-nav-search:focus-within { border-color: var(--lesson-accent-line); }
@@ -1108,7 +1147,8 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 /* ---------- < 640px: điện thoại ============ */
 @media (max-width: 639px) {
   .lesson-layout { grid-template-columns: minmax(0,1fr); gap: 0; max-width: none; padding: 12px 16px 8px; }
-  .lesson-nav { display: none; }
+  /* Cột trái + cột phải gộp vào ngăn kéo — chỉ hiện trong ngăn kéo, không nhồi xuống dưới bài. */
+  .lesson-nav, .lesson-side { display: none; }
   .lesson-head { margin: 0 -16px; background: var(--color-bg); padding: 12px 16px 0; }
   .lesson-content { position: sticky; top: 76px; z-index: 6; margin: 0 -16px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); padding: 0 16px; }
   .lesson-progressbar { margin-top: 12px; }
@@ -1132,10 +1172,46 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   /* Thanh đáy 3 nút cao 62px + vùng an toàn iPhone; body chừa chỗ để không che nội dung cuối. */
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
   .lesson-page { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
-  .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 56px minmax(0,1fr) 56px; align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
-  .lesson-bottom-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 4px; border: 1px solid var(--lesson-line); border-radius: 10px; color: var(--color-ink); font-size: 12px; font-weight: 700; text-decoration: none; }
-  .lesson-bottom-link span { display: none; }
+  /* Thanh đáy 3 nút, vùng chạm >= 44px, chừa vùng an toàn iPhone. */
+  .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr); align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-bottombar--mobile { min-height: 62px; }
+  .lesson-bottombar--mobile .lesson-bottom-prev { display: none; }
+  .lesson-bottom-done-text--short { display: none; }
+  .lesson-bottom-done-text--long { display: inline; }
+  .lesson-bottombar--mobile .lesson-bottom-step { display: none; }
+  .lesson-bottom-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 5px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; color: var(--color-ink); font-size: 12.5px; font-weight: 700; text-decoration: none; cursor: pointer; }
   .lesson-bottom-link.is-empty { opacity: .35; }
+  .lesson-bottom-link--next { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-drawer-toggle { display: inline-flex; }
+  /* Ngăn kéo trượt từ đáy: gộp cây chương + hộp dụng cụ, chỉ render khi mở. */
+  .lesson-drawer { display: block; position: fixed; inset: 0; z-index: 60; }
+  .lesson-drawer-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(2, 6, 15, .55); cursor: pointer; }
+  .lesson-drawer-sheet { position: absolute; inset: auto 0 0; display: flex; max-height: 88dvh; flex-direction: column; border-radius: 16px 16px 0 0; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding-bottom: env(safe-area-inset-bottom, 0px); transform: translateY(var(--lesson-drawer-drag, 0px)); animation: lesson-drawer-in .22s ease-out; }
+  @keyframes lesson-drawer-in { from { transform: translateY(14px); opacity: .4; } to { transform: translateY(0); opacity: 1; } }
+  .lesson-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--lesson-line); padding: 14px 16px 12px; touch-action: none; }
+  .lesson-drawer-title { margin: 0; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 15px; font-weight: 700; }
+  .lesson-drawer-head small { display: block; margin-top: 3px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
+  .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 14px 16px 20px; }
+  .lesson-drawer-body .lesson-tree { margin-bottom: 16px; }
+  .lesson-drawer-body .lesson-side { position: static; display: grid; gap: 14px; }
+  .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
+  .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
+  .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
+  .lesson-drawer-body .lesson-toc a { font-size: 13.5px; }
+  /* Cây chương trong ngăn kéo: cùng kiểu với cột trái máy tính. */
+  .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
+  .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
+  .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 11px; font-style: normal; font-weight: 700; }
+  .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
+  .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
+  .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
+  .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
   .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--lesson-accent-line); border-radius: 10px; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-size: 13px; font-weight: 700; cursor: pointer; }
   .lesson-bottom-done.is-done { border-color: rgba(16,185,129,.45); background: rgba(16,185,129,.12); color: #34d399; }
   html[data-theme="light"] .lesson-bottom-done.is-done { color: #047857; }

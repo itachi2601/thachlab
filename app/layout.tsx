@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import ChunkErrorGuard from "@/components/system/ChunkErrorGuard";
+import MobileTabBar from "@/components/layout/MobileTabBar";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import { SUPABASE_URL } from "@/lib/supabase-env";
@@ -111,6 +112,10 @@ export default function RootLayout({
         />
         <ChunkErrorGuard />
         <ToastProvider>{children}</ToastProvider>
+        {/* Thanh đáy kiểu app cho điện thoại (< 1024px) — tự ẩn ở /quan-tri/**, /kiem-tra/lam
+            và /lop-hoc/bai (trang bài học đã có thanh đáy riêng). Dùng useAuth nên chỉ chạy
+            trong cây có AuthProvider; nhóm trang công khai không có AuthProvider sẽ tự bỏ qua. */}
+        <MobileTabBar />
       </body>
     </html>
   );
