@@ -56,6 +56,23 @@ export default function LoginPage() {
     toast("success", "Đăng nhập thành công!");
   }
 
+  async function handleGoogleLogin() {
+    setError("");
+    setBusy(true);
+
+    const { error } = await getSupabase().auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback?type=${userType}`,
+      },
+    });
+
+    if (error) {
+      setError(error.message);
+      setBusy(false);
+    }
+  }
+
   const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none";
   const btnCls = "w-full rounded-full px-5 py-3 text-sm font-semibold transition-all disabled:opacity-50";
 
@@ -101,7 +118,21 @@ export default function LoginPage() {
               </button>
             </div>
 
-            {/* Đăng nhập Google tạm ẩn: provider Google đang tắt trên Supabase (bấm vào sẽ lỗi 400). */}
+            {/* Google Login */}
+            <button
+              onClick={handleGoogleLogin}
+              disabled={busy}
+              className={`${btnCls} mb-4 border border-white/10 bg-white/5 text-white hover:bg-white/10`}
+            >
+              {busy ? "Đang xử lý…" : "🔐 Đăng nhập với Google"}
+            </button>
+
+            {/* Divider */}
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex-1 border-t border-white/10" />
+              <span className="text-xs text-slate-500">Hoặc</span>
+              <div className="flex-1 border-t border-white/10" />
+            </div>
 
             {/* Email/Password Form */}
             <form onSubmit={handleEmailLogin} className="space-y-4">
