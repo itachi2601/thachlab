@@ -37,8 +37,19 @@ function headingMatches(html: string): RegExpMatchArray[] {
   return h2Matches(html);
 }
 
-/** Bọc mỗi đoạn từ một mốc tiêu đề tới trước mốc kế tiếp trong <div id="…">, để có thể scrollIntoView. */
-export function wrapTheorySections(html: string, itemId: number | string): { html: string; sections: TheorySection[] } {
+/**
+ * Bọc mỗi đoạn từ một mốc tiêu đề tới trước mốc kế tiếp trong <div id="…">, để có thể scrollIntoView.
+ *
+ * `startIndex` (mặc định 0) dùng khi nội dung bị cắt thành nhiều mảnh (khối tương tác chen giữa —
+ * xem components/lessons/TheoryContent.tsx): mỗi mảnh gọi hàm này riêng nhưng phải đánh số đoạn
+ * TIẾP NỐI mảnh trước, nếu không id `theory-sec-<item>-<i>` sẽ trùng nhau và lệch với
+ * `theorySection` mà quiz lý thuyết (scripts/data/theory-quiz) đã ghi.
+ */
+export function wrapTheorySections(
+  html: string,
+  itemId: number | string,
+  startIndex = 0,
+): { html: string; sections: TheorySection[] } {
   const matches = headingMatches(html);
   if (matches.length === 0) return { html, sections: [] };
 
@@ -51,7 +62,7 @@ export function wrapTheorySections(html: string, itemId: number | string): { htm
     if (i === 0 && start > 0) out += html.slice(0, start); // mở bài trước <h3> đầu tiên, không bọc
 
     const end = i + 1 < matches.length ? (matches[i + 1].index ?? html.length) : html.length;
-    const id = `theory-sec-${itemId}-${i}`;
+    const id = `theory-sec-${itemId}-${startIndex + i}`;
     const heading = m[1].replace(/<[^>]+>/g, "").trim();
     sections.push({ id, heading });
     out += `<div class="theory-section" id="${id}">${html.slice(start, end)}</div>`;
@@ -68,6 +79,38 @@ export function wrapTheorySections(html: string, itemId: number | string): { htm
 export function theorySectionItemId(hash: string): number | null {
   const m = /^#?theory-sec-(\d+)-\d+$/.exec(hash);
   return m ? Number(m[1]) : null;
+}
+
+// ---------- Khối tương tác (widget React) nhúng giữa lý thuyết ----------
+// Trong body_html của mục lý thuyết, tác giả đặt một thẻ rỗng:
+//   <div class="tl-widget" data-tl-widget="dao-dong-dieu-hoa"></div>
+// ContentHtml render HTML thô nên thẻ này chỉ là một div rỗng (không thấy gì) ở mọi nơi chưa
+// hỗ trợ widget; components/lessons/TheoryContent.tsx cắt chuỗi tại đây rồi mount component
+// React tương ứng. Cắt TRƯỚC khi bọc đoạn (không phải sau) để mỗi mảnh vẫn đóng/mở thẻ đầy đủ —
+// xem chú thích `startIndex` ở wrapTheorySections.
+export const THEORY_WIDGET_ATTR = "data-tl-widget";
+
+const THEORY_WIDGET_RE = new RegExp(
+  `<div\\b[^>]*\\b${THEORY_WIDGET_ATTR}="([^"]+)"[^>]*>\\s*</div>`,
+  "gi",
+);
+
+export type TheorySegment =
+  | { kind: "html"; html: string }
+  | { kind: "widget"; name: string };
+
+/** Cắt body_html thành các mảnh HTML và các vị trí widget, giữ nguyên thứ tự xuất hiện. */
+export function splitTheoryWidgets(html: string): TheorySegment[] {
+  const segments: TheorySegment[] = [];
+  let cursor = 0;
+  for (const m of html.matchAll(THEORY_WIDGET_RE)) {
+    const at = m.index ?? 0;
+    if (at > cursor) segments.push({ kind: "html", html: html.slice(cursor, at) });
+    segments.push({ kind: "widget", name: m[1] });
+    cursor = at + m[0].length;
+  }
+  if (cursor < html.length) segments.push({ kind: "html", html: html.slice(cursor) });
+  return segments.length > 0 ? segments : [{ kind: "html", html }];
 }
 
 // ---------- Mang theo (TẤT CẢ) câu vừa làm sai khi quay lại xem lý thuyết ----------
