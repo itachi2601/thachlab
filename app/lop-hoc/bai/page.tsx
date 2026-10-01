@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Play, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Play, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -21,7 +21,6 @@ import {
 } from "@/features/lessons/theory-sections";
 import {
   LESSON_KIND_META,
-  SECTION_META,
   SECTION_ORDER,
   formatTypeCounts,
   isGradedKind,
@@ -44,7 +43,7 @@ import {
   fetchLessonsStatic,
   type LessonBundle,
 } from "@/services/static-content";
-import { fetchMyLessonPageProgress, summarizeItemProgress, type ItemProgress } from "@/services/progress";
+import { fetchMyLessonPageProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
 import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
@@ -148,6 +147,32 @@ function flashTheorySection(hashId: string, times = 6) {
 function highlightTheorySectionOnly(hashId: string) {
   document.getElementById(hashId)?.classList.add("theory-section--highlight");
   window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
+}
+
+/** Vòng tiến độ bằng SVG thuần — không thêm thư viện, không request. */
+function ProgressRing({ percent, size = 52 }: { percent: number; size?: number }) {
+  const r = (size - 6) / 2;
+  const c = 2 * Math.PI * r;
+  const value = Math.max(0, Math.min(100, percent));
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--lesson-line)" strokeWidth="5" />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        stroke="var(--lesson-accent)"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeDasharray={`${(c * value) / 100} ${c}`}
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+      <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fill="var(--color-ink)" fontSize={size * 0.27} fontWeight="700">
+        {Math.round(value)}%
+      </text>
+    </svg>
+  );
 }
 
 /** Hạn nộp bài tập về nhà, vd "20:00 · 25/09/2026". */
@@ -456,6 +481,10 @@ function LessonLoader() {
   // "Đánh dấu đã học xong bài này" ở thanh đáy: không có API lưu cấp-bài (chỉ có API cấp-mục),
   // nên ghi trên máy — nút vẫn phản hồi ngay, tiến độ "x/y mục" cộng thêm 1 khi đã đánh dấu.
   const [lessonMarked, setLessonMarked] = useState(false);
+  // Cây chương ở cột trái: chỉ chương đang học mở sẵn, chương khác gấp lại (khoá có thể dài
+  // hơn 100 bài nên không xổ hết), và một ô tìm bài lọc ngay trên siblingLessons — không gọi mạng.
+  const [treeQuery, setTreeQuery] = useState("");
+  const [openChapters, setOpenChapters] = useState<Set<number>>(new Set());
   const reviewBannerRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
@@ -545,11 +574,6 @@ function LessonLoader() {
       })
       .catch(() => setProgress(new Map()));
   }, [session, items]);
-
-  const progressSummary = useMemo(
-    () => summarizeItemProgress(progress, items ?? []),
-    [progress, items],
-  );
 
   // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
   // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
@@ -719,29 +743,71 @@ function LessonLoader() {
     return () => window.clearTimeout(timer);
   }, [items]);
 
-  // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp (theo lớp đang xem qua ?class=) và môn,
-  // dùng lại đúng luật hiển thị chương của trang lớp — không tự suy luận lớp khác khi chưa chắc.
-  const { prevLesson, nextLesson } = useMemo((): { prevLesson: Lesson | null; nextLesson: Lesson | null } => {
-    if (!siblingChapters || !siblingLessons || !siblingClasses || chapterId == null) {
-      return { prevLesson: null, nextLesson: null };
-    }
+  // Phạm vi "khoá đang học": chương cùng môn và cùng khối lớp đang xem (theo ?class= — dùng lại
+  // đúng luật hiển thị chương của trang lớp, không tự suy luận lớp khác khi chưa chắc). Vừa dùng
+  // cho cây chương cột trái, vừa là nguồn tính Bài trước/Bài sau — không thêm request nào.
+  const courseChapters = useMemo((): { chapter: Chapter; lessons: Lesson[] }[] => {
+    if (!siblingChapters || !siblingLessons || !siblingClasses || chapterId == null) return [];
     const currentChapter = siblingChapters.find((c) => c.id === chapterId);
-    if (!currentChapter) return { prevLesson: null, nextLesson: null };
+    if (!currentChapter) return [];
     const activeClass = classSlug ? siblingClasses.find((c) => c.slug === classSlug) : undefined;
     const scopeClassId = activeClass?.id ?? currentChapter.classIds[0];
     const visibleClassIds = scopeClassId !== undefined ? expandClassIdsByGrade([scopeClassId], siblingClasses) : null;
-    const chaptersInScope = siblingChapters.filter(
-      (ch) => ch.subjectCode === currentChapter.subjectCode && visibleTo(ch.classIds, visibleClassIds),
-    );
-    const flat: Lesson[] = [];
-    for (const ch of chaptersInScope) {
-      flat.push(...siblingLessons.filter((l) => l.chapter_id === ch.id && !isSemesterExam(l.lesson_kind)));
-      flat.push(...siblingLessons.filter((l) => l.chapter_id === ch.id && isSemesterExam(l.lesson_kind)));
-    }
-    const idx = flat.findIndex((l) => l.id === id);
+    return siblingChapters
+      .filter((ch) => ch.subjectCode === currentChapter.subjectCode && visibleTo(ch.classIds, visibleClassIds))
+      .sort((a, b) => a.sort_order - b.sort_order || a.id - b.id)
+      .map((chapter) => {
+        const inChapter = siblingLessons.filter((l) => l.chapter_id === chapter.id);
+        return {
+          chapter,
+          lessons: [
+            ...inChapter.filter((l) => !isSemesterExam(l.lesson_kind)),
+            ...inChapter.filter((l) => isSemesterExam(l.lesson_kind)),
+          ],
+        };
+      })
+      .filter((entry) => entry.lessons.length > 0);
+  }, [siblingChapters, siblingLessons, siblingClasses, chapterId, classSlug]);
+
+  const courseLessons = useMemo(() => courseChapters.flatMap((entry) => entry.lessons), [courseChapters]);
+
+  // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp và môn (xem courseChapters ở trên).
+  const { prevLesson, nextLesson } = useMemo((): { prevLesson: Lesson | null; nextLesson: Lesson | null } => {
+    const idx = courseLessons.findIndex((l) => l.id === id);
     if (idx === -1) return { prevLesson: null, nextLesson: null };
-    return { prevLesson: idx > 0 ? flat[idx - 1] : null, nextLesson: idx < flat.length - 1 ? flat[idx + 1] : null };
-  }, [siblingChapters, siblingLessons, siblingClasses, chapterId, classSlug, id]);
+    return {
+      prevLesson: idx > 0 ? courseLessons[idx - 1] : null,
+      nextLesson: idx < courseLessons.length - 1 ? courseLessons[idx + 1] : null,
+    };
+  }, [courseLessons, id]);
+
+  /** Bài đã học xong = mọi mục học liệu của bài đều đã đánh dấu/đã làm đề. */
+  function lessonComplete(lesson: Lesson): boolean {
+    if (!session || !items || lesson.id !== id) return false;
+    return items.length > 0 && items.every(isDone);
+  }
+
+  // Chương đang học mở sẵn; đang tìm bài thì mở luôn chương có kết quả khớp.
+  const matchingLessonIds = useMemo(() => {
+    const q = treeQuery.trim().toLowerCase();
+    if (!q) return null;
+    return new Set(courseLessons.filter((l) => l.title.toLowerCase().includes(q)).map((l) => l.id));
+  }, [courseLessons, treeQuery]);
+
+  function isChapterOpen(chapterIdInTree: number, lessons: Lesson[]) {
+    if (openChapters.has(chapterIdInTree)) return true;
+    if (matchingLessonIds) return lessons.some((l) => matchingLessonIds.has(l.id));
+    return chapterIdInTree === chapterId;
+  }
+
+  function toggleChapter(chapterIdInTree: number) {
+    setOpenChapters((prev) => {
+      const next = new Set(prev);
+      if (next.has(chapterIdInTree)) next.delete(chapterIdInTree);
+      else next.add(chapterIdInTree);
+      return next;
+    });
+  }
 
   function siblingHref(lesson: Lesson) {
     const params = new URLSearchParams({ id: String(lesson.id), subject: subjectCode, chapter: String(lesson.chapter_id) });
@@ -1126,65 +1192,107 @@ function LessonLoader() {
     </div>
   );
 
+  // Tiến độ cả khoá (chỉ tính được bài đang mở vì dữ liệu từng bài tải riêng) + bài "Học tiếp".
+  const courseDone = courseLessons.filter(lessonComplete).length;
+  let nextInCourse: Lesson | null = null;
+  for (const lesson of courseLessons) {
+    if (lesson.id !== id && !lessonComplete(lesson)) {
+      nextInCourse = lesson;
+      break;
+    }
+  }
+  if (!nextInCourse) nextInCourse = nextLesson;
+
   return (
     <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""}`}>
       <div className="lesson-layout">
-        <aside className="lesson-nav" aria-label="Các phần của bài học">
-          {backLink}
-          <ol>
-            {visibleSections.map(({ kind, items: sectionItems }) => {
-              const meta = SECTION_META[kind];
-              const number = SECTION_ORDER.indexOf(kind) + 1;
-              const complete = !!session && sectionItems.every(isDone);
-              return (
-                <li key={kind}>
-                  <a
-                    href={`#muc=${TAB_SLUG[kind]}`}
-                    className={`${activeTab === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      selectTabAndScroll(kind);
-                    }}
-                  >
-                    <i>{complete ? <Check size={12} /> : number}</i>
-                    <span>{meta.label}</span>
-                  </a>
-                </li>
-              );
-            })}
-          </ol>
-          {session && items.length > 0 && progressSummary.totalRequired > 0 && (
-            <div style={{ marginTop: 8 }}>
-              <div
-                className="lesson-progress"
-                aria-label={`Hoàn thành ${progressSummary.completedRequired} trên ${progressSummary.totalRequired} mục bắt buộc`}
-              >
-                <span
-                  style={{
-                    width: `${Math.round((progressSummary.completedRequired / progressSummary.totalRequired) * 100)}%`,
-                  }}
-                />
+        <aside className="lesson-nav" aria-label="Nội dung khoá học">
+          {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Học tiếp. */}
+          {courseLessons.length > 0 && (
+            <div className="lesson-progress-summary">
+              <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
+              <div>
+                <p>
+                  {courseDone}/{courseLessons.length} bài
+                </p>
                 <small>
-                  Hoàn thành {progressSummary.completedRequired}/{progressSummary.totalRequired}
+                  Em đã học {courseDone}/{courseLessons.length} bài
+                  {session && items.length > 0 ? ` · ${doneTabs}/${totalTabs} phần đã xong` : ""}
                 </small>
-              </div>
-              <div
-                className="lesson-progress"
-                style={{ marginTop: 22 }}
-                aria-label={`Đạt ${progressSummary.passedRequired} trên ${progressSummary.totalRequired} mục bắt buộc`}
-              >
-                <span
-                  style={{
-                    width: `${Math.round((progressSummary.passedRequired / progressSummary.totalRequired) * 100)}%`,
-                    background: "#10B981",
-                  }}
-                />
-                <small>
-                  Đạt {progressSummary.passedRequired}/{progressSummary.totalRequired}
-                </small>
+                {nextInCourse && (
+                  <Link href={siblingHref(nextInCourse)} className="lesson-btn lesson-continue-btn">
+                    Học tiếp <ArrowRight size={14} aria-hidden />
+                  </Link>
+                )}
               </div>
             </div>
           )}
+
+          {/* Ô tìm bài trong khoá — lọc ngay trên siblingLessons đã tải sẵn, không gọi mạng. */}
+          {courseLessons.length > 0 && (
+            <label className="lesson-nav-search">
+              <Search size={15} aria-hidden />
+              <input
+                type="search"
+                value={treeQuery}
+                onChange={(e) => setTreeQuery(e.target.value)}
+                placeholder="Tìm bài trong khoá"
+                aria-label="Tìm bài trong khoá"
+              />
+            </label>
+          )}
+
+          {/* Cây chương: số · tên · đã xong/tổng; chỉ chương đang học mở sẵn. */}
+          <div className="lesson-tree">
+            {courseChapters.map(({ chapter, lessons }, chapterIndex) => {
+              const shown = matchingLessonIds ? lessons.filter((l) => matchingLessonIds.has(l.id)) : lessons;
+              if (shown.length === 0) return null;
+              const open = isChapterOpen(chapter.id, lessons);
+              const doneInChapter = lessons.filter(lessonComplete).length;
+              return (
+                <div key={chapter.id}>
+                  <button
+                    type="button"
+                    className="lesson-tree-chapter"
+                    onClick={() => toggleChapter(chapter.id)}
+                    aria-expanded={open}
+                  >
+                    <em>{chapterIndex + 1}</em>
+                    <span>{chapter.title}</span>
+                    <small>
+                      {doneInChapter}/{lessons.length}
+                    </small>
+                    <ChevronDown size={15} className={open ? "is-open" : ""} aria-hidden />
+                  </button>
+                  {open && (
+                    <ol>
+                      {shown.map((lesson) => {
+                        const current = lesson.id === id;
+                        const done = lessonComplete(lesson);
+                        return (
+                          <li key={lesson.id}>
+                            {current ? (
+                              <span className="lesson-tree-current is-current" aria-current="page">
+                                <i aria-hidden>{done ? <Check size={11} /> : "●"}</i>
+                                <span>{lesson.title}</span>
+                              </span>
+                            ) : (
+                              <Link href={siblingHref(lesson)} className={done ? "is-done" : ""}>
+                                <i aria-hidden>{done ? <Check size={11} /> : "○"}</i>
+                                <span>{lesson.title}</span>
+                              </Link>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  )}
+                </div>
+              );
+            })}
+            {matchingLessonIds?.size === 0 && <p className="lesson-panel-empty">Không thấy bài nào khớp.</p>}
+          </div>
+
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
