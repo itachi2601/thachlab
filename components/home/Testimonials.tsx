@@ -66,7 +66,8 @@ const messages = [
   },
 ];
 
-const INITIAL_COUNT = 5;
+// Mặc định 4 ảnh (2 hàng trên mobile/tablet) để lần tải đầu nhẹ; còn lại mở bằng nút "Xem thêm".
+const INITIAL_COUNT = 4;
 
 export default function Testimonials() {
   const [expanded, setExpanded] = useState(false);

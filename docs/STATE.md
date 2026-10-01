@@ -30,6 +30,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   "Nên làm trước" ở `TeacherThptOverview.tsx`. KHÔNG thêm truy vấn Supabase, không migration. **Chưa kiểm bằng
   mắt trên web thật** từng vai. Còn lại: gợi ý số liệu cho phụ huynh/admin/CTTC (cần RPC gộp = migration mới);
   số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
+- **Trang chủ ghép 4 ý từ bản DeepSeek (1/10/2026, nhánh `claude/gracious-mayer-53030i`)**: thanh vào nhanh dưới Navbar
+  (`components/home/PublicSubNav.tsx`: KHTN 9 · Lý 10/11/12 · CTTC · Xếp hạng · Phụ huynh, chỉ ở `/`); lưới 4 lớp
+  kèm số chương · bài · mục + dải tổng "4 lớp · 22 chương · 116 bài · 257 mục" (`OpenClasses.tsx`, thay
+  `AudienceChooser.tsx`); số đọc LÚC BUILD từ `public/data/home-stats.json` (sinh thêm trong
+  `scripts/build-content.mjs`, đọc bằng `home-stats.server.ts`) — KHÔNG thêm truy vấn Supabase khi tải `/`;
+  Testimonials mặc định 4 ảnh. Giữ nguyên nền tối/cyan, hero mô phỏng, HonorBoard, AboutFounder. Số liệu chỉ
+  cập nhật khi deploy lại (prebuild chạy build-content).
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
