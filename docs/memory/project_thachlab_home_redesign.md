@@ -20,3 +20,6 @@ tổng, số đọc lúc build từ `public/data/home-stats.json` do `build-cont
 Testimonials mặc định 4 ảnh. Không lấy: sidebar 2 cột, hộp đăng ký cạnh hero, light theme toàn trang, bỏ HonorBoard.
 Thứ tự section: SubNav → OpenClasses → Hero mô phỏng → Features → PhysicsEverywhere → LearningPath → HonorBoard →
 AboutFounder → Testimonials. Số liệu trang chủ chỉ mới sau mỗi lần deploy (prebuild).
+Sửa tiếp 1/10/2026: PublicSubNav đã XOÁ (thầy chê 2 dòng nav) → vào nhanh lớp nằm trong Navbar: dropdown
+"THPT – THCS" (desktop, CSS group-hover/focus-within) + hàng chip trong menu mobile (`THPT_QUICK_LINKS`). Link
+Phụ huynh chuyển xuống Footer; `/phu-huynh` khách thấy lời nhắc riêng (RequireAuth `guestNotice`), không xưng "em".

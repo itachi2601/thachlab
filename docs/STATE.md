@@ -37,6 +37,10 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `scripts/build-content.mjs`, đọc bằng `home-stats.server.ts`) — KHÔNG thêm truy vấn Supabase khi tải `/`;
   Testimonials mặc định 4 ảnh. Giữ nguyên nền tối/cyan, hero mô phỏng, HonorBoard, AboutFounder. Số liệu chỉ
   cập nhật khi deploy lại (prebuild chạy build-content).
+  Sửa tiếp cùng ngày: bỏ thanh phụ (2 dòng nav xấu) → menu thả xuống dưới "THPT – THCS" ở Navbar (desktop hover/focus,
+  mobile hàng chip) `components/layout/Navbar.tsx`; `/phu-huynh` khách thấy lời nhắc riêng cho phụ huynh (prop
+  `guestNotice`/`loginHref`/`showSignUp` của `RequireAuth`), `/dang-nhap?next=/duong-dan` quay lại trang vừa chặn,
+  phụ huynh đăng nhập mặc định về `/phu-huynh`; Footer thêm link "Phụ huynh xem kết quả của con".
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.

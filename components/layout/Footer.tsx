@@ -15,6 +15,7 @@ const columns = [
       { label: "Về thầy Thạch", href: "/#about" },
       { label: "Cách học trên ThachLab", href: "/#features" },
       { label: "Blog", href: "/blog" },
+      { label: "Phụ huynh xem kết quả của con", href: "/phu-huynh" },
     ],
   },
   {

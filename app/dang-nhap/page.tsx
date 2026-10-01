@@ -22,9 +22,18 @@ export default function LoginPage() {
   const [busy, setBusy] = useState(false);
 
   // Đã đăng nhập rồi (vd bấm Back, hoặc mở lại tab cũ) -> đưa thẳng vào đúng không gian, không hiện lại form.
+  // ?next=/duong-dan (chỉ nhận đường dẫn nội bộ bắt đầu bằng 1 dấu "/") để quay lại trang vừa bị chặn,
+  // vd /phu-huynh; phụ huynh không có next thì về thẳng trang kết quả của con.
   useEffect(() => {
     if (authLoading || !session) return;
-    router.replace(profile?.role === "admin" || profile?.role === "instructor" ? "/quan-tri" : "/tai-khoan");
+    const next = new URLSearchParams(window.location.search).get("next");
+    if (next && /^\/(?!\/)/.test(next)) {
+      router.replace(next);
+      return;
+    }
+    if (profile?.role === "admin" || profile?.role === "instructor") router.replace("/quan-tri");
+    else if (profile?.role === "parent") router.replace("/phu-huynh");
+    else router.replace("/tai-khoan");
   }, [authLoading, session, profile, router]);
 
   async function handleEmailLogin(e: React.FormEvent) {
