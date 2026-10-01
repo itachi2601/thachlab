@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Định luật III Newton",
+ "lesson_id": 61,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-3-newton/theory.html",
+ "id": "tn-l10-newton3-03",
+ "ten": "Sách trên bàn: lực cân bằng và cặp lực–phản lực",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton3.khac_vat",
+  "can_bang.cung_vat",
+  "newton1.luc_can_bang"
+ ],
+ "muc_tieu": "Phân biệt hai lực cân bằng (cùng đặt lên một vật) với cặp lực–phản lực (đặt lên hai vật khác nhau).",
+ "dung_cu": [
+  {
+   "ten": "Quyển sách 0,5 kg",
+   "so_luong": 1,
+   "ghi_chu": ""
+  },
+  {
+   "ten": "Mặt bàn",
+   "so_luong": 1,
+   "ghi_chu": ""
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt quyển sách nằm yên trên mặt bàn.",
+   "Liệt kê lực đặt lên sách, rồi lực đặt lên bàn."
+  ],
+  "quan_sat": [
+   "Lên sách: trọng lực P (xuống) và lực nâng N (lên), bằng nhau.",
+   "Lên bàn: áp lực N' (xuống) từ sách."
+  ],
+  "rut_ra": [
+   "P và N cùng đặt lên sách nên cân bằng, không phải cặp lực–phản lực.",
+   "N (lên sách) và N' (lên bàn) mới là cặp lực–phản lực."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng sách",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 3,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lực lên sách",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Lực nâng của bàn lên sách",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N'",
+   "ten": "Áp lực sách lên bàn",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = m·g",
+   "N = P (sách nằm yên: định luật I/II)",
+   "N' = N (định luật III)"
+  ],
+  "gia_thiet": [
+   "sách và bàn đứng yên",
+   "bàn nằm ngang"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "P (N)",
+   "N (N)",
+   "N' (N)"
+  ],
+  "hang": [
+   [
+    0.5,
+    4.9,
+    4.9,
+    4.9
+   ],
+   [
+    1.0,
+    9.8,
+    9.8,
+    9.8
+   ],
+   [
+    2.0,
+    19.6,
+    19.6,
+    19.6
+   ]
+  ],
+  "ghi_chu": "g = 9,8 m/s²."
+ },
+ "ket_qua_ky_vong": "Với m = 0,5 kg: P = N = N' = 4,9 N. P và N cân bằng (một vật); N và N' là cặp (hai vật).",
+ "hien_tuong_hay_sai": [
+  "Cho P và N là cặp lực–phản lực vì bằng nhau, ngược chiều.",
+  "Quên rằng phản lực của trọng lực đặt lên Trái Đất."
+ ],
+ "sai_so_thuong_gap": [],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "dieu_khien": [
+   "m",
+   "nút 'gắn nhãn lực theo vật' (tô cam lực lên sách, xanh lực lên bàn)"
+  ],
+  "dau_ra": [
+   "bốn mũi tên P, N, N', P'",
+   "bộ chọn: bấm một lực, mô phỏng sáng lên lực cân bằng với nó (cùng vật) và phản lực của nó (khác vật)"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Trò chơi ghép cặp: chọn một lực, hỏi 'phản lực của nó đặt lên vật nào?'."
+ },
+ "an_toan": ""
+}
