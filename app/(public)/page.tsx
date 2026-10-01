@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import PublicSubNav from "@/components/home/PublicSubNav";
 import OpenClasses from "@/components/home/OpenClasses";
 import { readHomeStats } from "@/components/home/home-stats.server";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
@@ -18,7 +17,6 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <PublicSubNav />
         <OpenClasses stats={stats} />
         <PhysicsSimulationHero />
         <Features />

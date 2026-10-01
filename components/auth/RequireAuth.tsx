@@ -18,17 +18,27 @@ function Notice({ children }: { children: React.ReactNode }) {
  * - area: thêm điều kiện phải đúng khu vực được phân công (admin luôn qua được).
  * - restrictToAdmin: chỉ role "admin" — giảng viên được phân công khu vực cũng không vào được
  *   (dùng cho các trang dùng chung/nhạy cảm như phân công giảng viên).
+ * - guestNotice: nội dung thay cho câu mặc định "Em cần đăng nhập…" khi chưa đăng nhập — dùng ở
+ *   trang không dành cho học sinh (vd /phu-huynh xưng "em" với phụ huynh là sai).
+ * - loginHref: đích nút Đăng nhập (mặc định /dang-nhap).
+ * - showSignUp: ẩn nút Đăng ký khi form /dang-ky không hợp với người xem (phụ huynh tạo tài khoản qua link mời).
  */
 export default function RequireAuth({
   children,
   adminOnly = false,
   area,
   restrictToAdmin = false,
+  guestNotice,
+  loginHref = "/dang-nhap",
+  showSignUp = true,
 }: {
   children: React.ReactNode;
   adminOnly?: boolean;
   area?: "thpt" | "cttc";
   restrictToAdmin?: boolean;
+  guestNotice?: React.ReactNode;
+  loginHref?: string;
+  showSignUp?: boolean;
 }) {
   const { session, profile, loading } = useAuth();
 
@@ -50,20 +60,22 @@ export default function RequireAuth({
   if (!session) {
     return (
       <Notice>
-        <p>Em cần đăng nhập để sử dụng tính năng này.</p>
+        {guestNotice ?? <p>Em cần đăng nhập để sử dụng tính năng này.</p>}
         <div className="mt-5 flex justify-center gap-3">
           <Link
-            href="/dang-nhap"
+            href={loginHref}
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             Đăng nhập
           </Link>
-          <Link
-            href="/dang-ky"
-            className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
-          >
-            Đăng ký
-          </Link>
+          {showSignUp && (
+            <Link
+              href="/dang-ky"
+              className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
+            >
+              Đăng ký
+            </Link>
+          )}
         </div>
       </Notice>
     );

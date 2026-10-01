@@ -22,6 +22,16 @@ const links = [
   { label: "Liên hệ", href: "/#contact" },
 ];
 
+// Vào nhanh từng lớp (menu thả xuống dưới "THPT – THCS" trên desktop, hàng chip trong menu mobile) —
+// học sinh quay lại hằng ngày vào thẳng lớp mình từ mọi trang, không qua /lop-hoc.
+const THPT_QUICK_LINKS = [
+  { label: "KHTN 9", href: "/lop-hoc/khtn-9" },
+  { label: "Vật lý 10", href: "/lop-hoc/lop-10" },
+  { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
+  { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
+  { label: "Bảng xếp hạng", href: "/lop-hoc/xep-hang" },
+];
+
 export default function Navbar() {
   const { session, profile, signOut } = useAuth();
   const pathname = usePathname();
@@ -53,16 +63,40 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {links.map((link) => {
+            const hasQuick = link.href === "/lop-hoc";
+            return (
+              <li key={link.href} className={hasQuick ? "group relative" : undefined}>
+                <Link
+                  href={link.href}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                >
+                  {link.label}
+                  {hasQuick && (
+                    <ChevronDown size={14} className="text-slate-500 transition-transform group-hover:rotate-180" />
+                  )}
+                </Link>
+                {hasQuick && (
+                  // pt-3 làm "cầu" để chuột đi từ chữ xuống menu không bị đóng; hiện khi hover hoặc focus (bàn phím).
+                  <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <ul className="w-52 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50">
+                      {THPT_QUICK_LINKS.map((q) => (
+                        <li key={q.href}>
+                          <Link
+                            href={q.href}
+                            className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                          >
+                            {q.label}
+                            <ChevronRight size={15} className="text-slate-500" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -224,6 +258,20 @@ export default function Navbar() {
                       {link.label}
                       <ChevronRight size={18} className="text-slate-500" />
                     </Link>
+                    {link.href === "/lop-hoc" && (
+                      <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
+                        {THPT_QUICK_LINKS.map((q) => (
+                          <Link
+                            key={q.href}
+                            href={q.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/[0.07] hover:text-white"
+                          >
+                            {q.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </li>
                 );
               })}

@@ -167,7 +167,25 @@ export default function PhuHuynhPage() {
         {!supabaseConfigured ? (
           <p className="text-center text-slate-400">Hệ thống đang được cấu hình.</p>
         ) : (
-          <RequireAuth>
+          <RequireAuth
+            loginHref="/dang-nhap?next=/phu-huynh"
+            showSignUp={false}
+            guestNotice={
+              <>
+                <Users className="mx-auto text-slate-500" size={36} />
+                <h1 className="mt-4 font-display text-xl font-bold text-white">Dành cho phụ huynh</h1>
+                <p className="mt-2 text-sm text-slate-400">
+                  Đăng nhập bằng tài khoản phụ huynh để xem kết quả học tập của con: điểm theo thời gian,
+                  bài đã làm, phần đang được phụ đạo và chủ đề còn sai nhiều.
+                </p>
+                <p className="mt-3 text-sm text-slate-400">
+                  Chưa có tài khoản? Nhờ giáo viên gửi link mời dạng{" "}
+                  <code className="text-slate-300">/loi-moi?ma=PH…</code> — tạo tài khoản ngay tại đó là đã nối
+                  với con, không cần mượn tài khoản của con.
+                </p>
+              </>
+            }
+          >
             <ParentHome />
           </RequireAuth>
         )}
