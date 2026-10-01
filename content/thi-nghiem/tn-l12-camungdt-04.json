@@ -1,0 +1,165 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Hiện tượng cảm ứng điện từ",
+ "lesson_id": 13,
+ "nguon_trong_bai": "content/lesson-samples/l12-cam-ung-dien-tu/theory.html",
+ "id": "tn-l12-camungdt-04",
+ "ten": "Bài toán mẫu: khung dây khi B tăng đều",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "camungdt.faraday_toc_do",
+  "camungdt.ohm_mach_kin"
+ ],
+ "muc_tieu": "Tính suất điện động và dòng cảm ứng khi B tăng đều trong khung phẳng vuông góc đường sức.",
+ "dung_cu": [
+  {
+   "ten": "Khung dây phẳng kín 200 cm², R = 0,5 Ω",
+   "so_luong": 1,
+   "ghi_chu": "tình huống tính toán"
+  },
+  {
+   "ten": "Nguồn từ trường biến thiên đều",
+   "so_luong": 1,
+   "ghi_chu": "nam châm điện"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổi diện tích 200 cm² = 0,02 m².",
+   "Tính ΔΦ = (B2 - B1)·S.",
+   "Tính e_c = ΔΦ/Δt rồi i = e_c/R."
+  ],
+  "quan_sat": [
+   "e_c = 0,04 V, i = 0,08 A với Δt = 0,2 s.",
+   "Δt = 0,1 s thì i = 0,16 A."
+  ],
+  "rut_ra": [
+   "e_c tỉ lệ nghịch với Δt khi ΔΦ không đổi.",
+   "Dòng tỉ lệ thuận với e_c khi R không đổi."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "B1",
+   "ten": "Cảm ứng từ đầu",
+   "don_vi": "T",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "B2",
+   "ten": "Cảm ứng từ cuối",
+   "don_vi": "T",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian biến thiên",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 1,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích khung",
+   "don_vi": "m2",
+   "kieu": "co_dinh",
+   "gia_tri": 0.02
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở khung",
+   "don_vi": "ohm",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Suất điện động cảm ứng",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Cường độ dòng cảm ứng",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "dPhi = (B2 - B1)·S",
+   "e = dPhi / dt",
+   "i = e / R"
+  ],
+  "gia_thiet": [
+   "alpha = 0",
+   "B tăng đều",
+   "khung đứng yên"
+  ],
+  "ghi_chu": ""
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "dt (s)",
+   "e (V)",
+   "i (A)"
+  ],
+  "hang": [
+   [
+    0.4,
+    0.02,
+    0.04
+   ],
+   [
+    0.2,
+    0.04,
+    0.08
+   ],
+   [
+    0.1,
+    0.08,
+    0.16
+   ],
+   [
+    0.05,
+    0.16,
+    0.32
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với B1 = 0,1 T, B2 = 0,5 T."
+ },
+ "ket_qua_ky_vong": "e và i tỉ lệ nghịch với dt.",
+ "hien_tuong_hay_sai": [
+  "Quên đổi cm² sang m².",
+  "Nhân thay vì chia cho Δt.",
+  "Cho rằng ΔΦ không đổi thì dòng cũng không đổi dù đổi Δt."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "B1",
+   "B2",
+   "dt"
+  ],
+  "dau_ra": [
+   "e",
+   "i",
+   "đồ thị i theo 1/dt"
+  ],
+  "hinh_trong_bai": "Bài toán mẫu",
+  "y_tuong": "Học sinh nhập dự đoán i trước khi bấm tính."
+ }
+}
