@@ -33,11 +33,16 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 - `20260930160000_rank_title_distinct_questions.sql` (chống cày danh hiệu: đếm số câu khác nhau; `create or replace rank_title_stats`; chạy lúc nào cũng được; rollback `perf/rollback/20260930160000_rank_title_distinct_questions.down.sql`) — ĐANG CHỜ.
+- `20260930170000_question_bank_hash_ignore_image_ts.sql` (gộp ~4,7k câu trùng, ngoài giờ HS) và
+  `20260930180000_bank_similarity_per_topic.sql` (sửa trang "Nghi trùng lặp" luôn lỗi timeout: quét theo từng chủ đề).
+  Code client đã sửa cùng lúc (`services/question-bank.ts`) — cần chạy migration TRƯỚC khi deploy.
 - Đã chạy: `20260930160000_exit_quiz_bank_children.sql` 30/9/2026 17:15 (xem STATE-archive.md). Đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
-- **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 3 file JSON chờ đăng:
-  `scripts/data/theory-quiz/{3,6,10}.json` (lớp 12: Bài 2, Bài 5, Bài 9). Thầy chạy trên Mac, theo thứ tự:
-  `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 3 --lesson 6 --lesson 10`
-  (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên 3 mục lý thuyết (171/219/42) chưa có `exam_ids`.
+  Đã cấp bù thành tích `tien_bo_tuan` cho 7 em từng nhận RP tiến bộ (30/9/2026, chạy tay, kiểm lại = 0 em thiếu).
+- **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 20 file JSON lớp 12 chờ đăng
+  (đã kiểm chéo + validate, đã gắn YCCĐ + mức độ 1/10/2026 — sẵn sàng đăng): `scripts/data/theory-quiz/{2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,125,126,127}.json`.
+  Thầy chạy trên Mac, theo thứ tự:
+  `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 2 --lesson 3 … --lesson 127` (liệt kê đủ 20 id)
+  (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên các mục lý thuyết này chưa có `exam_ids`.
   Rollback: gỡ `exam_ids`/`quiz_min_correct` của mục đó + xoá exam mới tạo. Skill `soan-quiz-ly-thuyet`
   (`.claude/skills/soan-quiz-ly-thuyet/`) cần đồng bộ sang 2 bản còn lại (Library plugin + `~/.codex`) trên Mac: `bash scripts/sync-skill.sh`.
 Mọi file trong `supabase/migrations/` tính tới 30/09/2026 đã chạy trên production.
@@ -116,6 +121,18 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 - Thẻ "3 kỹ năng yếu nhất" trên dashboard học sinh + trọng số mức độ trong mastery.
 - Bổ sung câu hỏi chương Động học 10 cho đủ ≥30 câu/bài.
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
+
+## LÀM NGAY KHI CÓ TOKEN (thầy ghi 30/09/2026)
+**Bài tập mẫu → ngân hàng câu hỏi → tìm bài tương đương để rèn luyện.**
+1. Bài tập mẫu (các dạng bài có lời giải trong `lesson_items`, mục bài tập của bài học đã đăng) phải
+   lưu được vào ngân hàng câu hỏi (`/quan-tri/ngan-hang-cau-hoi`), giữ nguyên lời giải, kèm nhãn
+   Lớp/Chương/Bài/YCCĐ/Dạng/mức độ. Cần: kiểm tra hiện chưa có đường nào đưa bài mẫu vào ngân hàng
+   (đọc `docs/DATABASE.md` trước), viết nút/script "lưu vào ngân hàng" + chống trùng.
+2. "Tìm bài tương đương": từ một bài mẫu, gợi ý các câu trong ngân hàng cùng Dạng/YCCĐ và mức độ tương
+   đương (ưu tiên khớp nhãn, sau đó mới độ tương tự nội dung) để học sinh rèn luyện. Gắn vào
+   `/luyen-tap` (đang ở mục "CHƯA làm" phía trên) và nút "Bài tương đương" dưới mỗi bài mẫu.
+3. Lưu ý: không thêm round-trip Supabase cho trang học sinh đã tối ưu — dùng RPC gộp; migration chỉ
+   viết file, Thạch chạy (xem AGENTS.md).
 
 ## Việc ngoài roadmap đang treo
 - Đo lại độ trễ Supabase từ VN sau khi chuyển Singapore (PageSpeed/CrUX hoặc đo tay từ máy ở VN) và cập nhật số liệu nền. Rà URL Storage cũ đã xong ở cả 99 bảng (29/09/2026, chỉ đọc): 0 dòng còn ref project cũ; 2334 URL Storage của project mới đều tải được; 14 tệp bucket riêng (ảnh báo lỗi, tệp CNC) đều có. Chỉ còn việc đo độ trễ từ VN trước khi xoá/tạm dừng project Sydney.

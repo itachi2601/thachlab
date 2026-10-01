@@ -44,3 +44,21 @@ Quy ước `difficulty`: dùng **mã** của `features/exams/types.ts` — `"de"
 - ✗ Nhiễu là công thức bịa vô nghĩa (đơn vị không cùng thứ nguyên) → loại.
 - ✓ Đúng–sai 4 ý cùng xoay quanh 1 định luật, có ý sai tinh vi (đổi "tỉ lệ thuận" ↔ "tỉ lệ nghịch").
 - ✗ Câu cần kiến thức bài khác / số liệu không có trong mục lý thuyết → loại (kể cả khi đúng về vật lí).
+
+## Kinh nghiệm từ đợt lớp 12 (30/9/2026) — đọc trước khi làm cả lớp/cả chương
+
+**Môi trường cloud.** `public/data/` không nằm trong git. Nếu thiếu: `npm ci && node scripts/build-content.mjs` (cần mạng tới Supabase; sandbox cũ bị chặn → manifest rỗng, thì dừng và báo thầy thay vì soạn từ trí nhớ). Sau khi thầy đổi môi trường, chạy lại lệnh này trước khi kết luận "bị chặn".
+
+**Quy trình song song đã chạy tốt:** mỗi bài 1 agent soạn (ghi `review.checked=false`) → mỗi bài 1 agent KHÁC kiểm chéo, tự sửa thẳng file (xoá câu sai, ghi `review.removed`, đặt `checked=true`, chạy validate). Agent kiểm chéo không sinh bù; bài còn <18 câu thì báo lại. 17 bài ≈ 6 phút. Validate **từng file** (`validate-quiz.mts` chỉ nhận 1 file/lần; đừng tin dòng "1/1 file đạt" khi truyền glob).
+
+**Lỗi thường gặp ở câu bị loại:** đáp án không duy nhất (danh sách mở "…", "bao nhiêu đại lượng"); nhiễu là công thức bịa sai thứ nguyên; câu cần kiến thức ngoài mục lý thuyết (vd N = A − Z khi bài chưa nêu); lỗi ở chính nội dung bài (bài 8: 273 K cho điều kiện chuẩn; bài 14: ω=100 rad/s thay vì 100π) → báo thầy sửa nguồn, không đưa vào câu.
+
+**Bài đặc biệt:** bài không có công thức (2, 126) → 20 câu kiến thức, `counts.cong_thuc=0`. `wrapTheorySections` chỉ bọc từ thẻ h3 đầu tiên, phần mở bài nằm ngoài mọi đoạn → bỏ `theorySection` (bài 15, 17), đừng gán bừa 0.
+
+**Mã file ≠ tên bài.** `lesson_id` là id DB (vd lesson 16 = "Bài 15. Năng lượng liên kết hạt nhân"); luôn dùng `lesson.title` khi báo cáo.
+
+**Gắn YCCĐ (`topic`) cần `scripts/data/question-topics.json`** — file này chỉ sinh được trên Mac (`export-question-topics.mts`) và KHÔNG có trong git. Cloud chỉ gắn được khi thầy commit file đó vào nhánh. Có file → giao agent gắn `topic` (mỗi agent 2 bài; copy nguyên văn tên YCCĐ **con**, `parent_id`≠null; chủ đề cha chỉ làm phương án cuối) và rà `difficulty`; agent chỉ được sửa 2 trường này và phải giữ nguyên kiểu thụt lề JSON (tránh diff cả file). Bài mới không có dòng riêng trong file (lớp 12: 125–127 — YCCĐ nằm dưới lesson 14/13) → chỉ định danh sách YCCĐ gần nhất trong prompt. Không có file → `topic` = `lesson.title`; khi đăng, `sync_exam_to_bank` (trigger khi insert exam) khớp topic theo TÊN với `question_topics` nên topic = tên bài sẽ vào ngân hàng với `topic_id` null/sai → phải gắn YCCĐ trước khi đăng.
+
+**Ngân hàng câu hỏi tự cập nhật khi đăng:** `publish-theory-quiz.mts` tạo exam → trigger `sync_exam_to_bank` đưa từng câu vào `question_bank` (đọc `topic`, `form`, `difficulty`, `difficultySource`). Không cần bước ghi ngân hàng riêng; chỉ cần `topic` khớp chính xác tên YCCĐ và `difficulty` ∈ {de, trung-binh}.
+
+**Giao nhận:** file quiz nằm ở nhánh cloud, chưa vào `main` → Mac phải `git fetch` + checkout nhánh (hoặc merge PR) trước khi `publish` (lỗi "không thấy scripts/data/theory-quiz/<id>.json" = chưa có nhánh). Nói rõ tên nhánh cho thầy ngay khi push.

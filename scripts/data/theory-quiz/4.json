@@ -1,0 +1,386 @@
+{
+ "lesson_id": 4,
+ "lesson_title": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+ "item_id": 173,
+ "generated_at": "2026-09-30",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nội năng của một vật là",
+   "options": [
+    "tổng động năng và thế năng của các phân tử cấu tạo nên vật",
+    "tổng động năng của vật chuyển động tịnh tiến",
+    "thế năng của vật trong trường trọng lực",
+    "tổng nhiệt lượng vật đã nhận được"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa nội năng là tổng động năng và thế năng của các phân tử cấu tạo nên vật."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nội năng của một vật phụ thuộc vào",
+   "options": [
+    "nhiệt độ và thể tích của vật",
+    "khối lượng riêng và màu sắc của vật",
+    "vận tốc chuyển động của cả vật",
+    "độ cao của vật so với mặt đất"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, nội năng của một vật phụ thuộc vào nhiệt độ và thể tích của vật."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng tay ấn mạnh và nhanh pit-tông của xilanh chứa khí, khí nóng lên. Nội năng của khí tăng là do",
+   "options": [
+    "khí nhận công",
+    "khí truyền nhiệt cho môi trường",
+    "khí thực hiện công",
+    "khí bị giảm khối lượng"
+   ],
+   "answer": 0,
+   "explanation": "Ví dụ trong bài: pit-tông nén khí, khí nhận công nên nội năng tăng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhiệt dung riêng của một chất có giá trị bằng",
+   "options": [
+    "nhiệt lượng để làm tăng nhiệt độ của 1 kg chất đó lên 1 K",
+    "nhiệt lượng để làm nóng chảy 1 kg chất đó",
+    "nhiệt lượng vật toả ra khi nguội đi 1 K",
+    "tổng động năng của các phân tử chất đó"
+   ],
+   "answer": 0,
+   "explanation": "Nhiệt dung riêng là nhiệt lượng làm tăng nhiệt độ của 1 kg chất lên 1 K."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi hai vật có nhiệt độ khác nhau tiếp xúc với nhau thì",
+   "options": [
+    "xảy ra quá trình truyền nhiệt, làm thay đổi nội năng của các vật",
+    "nội năng của hai vật không thay đổi",
+    "chỉ có công được truyền giữa hai vật",
+    "hai vật đều nhận công"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: hai vật nhiệt độ khác nhau tiếp xúc thì xảy ra truyền nhiệt và nội năng thay đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhận định nào sau đây về cách làm thay đổi nội năng là đúng hay sai?",
+   "statements": [
+    {
+     "text": "Vật nhận công thì nội năng của vật tăng.",
+     "answer": true
+    },
+    {
+     "text": "Hệ thực hiện công cho vật khác thì nội năng của hệ giảm.",
+     "answer": true
+    },
+    {
+     "text": "Truyền nhiệt không làm thay đổi nội năng của vật.",
+     "answer": false
+    },
+    {
+     "text": "Chỉ có thực hiện công mới làm thay đổi được nội năng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nội năng thay đổi bằng cả thực hiện công và truyền nhiệt."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Quy ước dấu của $Q$ và $A$ trong định luật I nhiệt động lực học, nhận định nào đúng hay sai?",
+   "statements": [
+    {
+     "text": "$Q>0$ khi vật nhận nhiệt lượng.",
+     "answer": true
+    },
+    {
+     "text": "$Q<0$ khi vật truyền nhiệt lượng cho vật khác.",
+     "answer": true
+    },
+    {
+     "text": "$A>0$ khi vật nhận công.",
+     "answer": true
+    },
+    {
+     "text": "$A>0$ khi vật thực hiện công.",
+     "answer": false
+    }
+   ],
+   "explanation": "$A>0$: vật nhận công; $A<0$: vật thực hiện công."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Các ví dụ sau, nhận định nào đúng hay sai?",
+   "statements": [
+    {
+     "text": "Chà sát miếng kim loại lên sàn nhà làm nội năng của nó tăng.",
+     "answer": true
+    },
+    {
+     "text": "Hơ ống nghiệm chứa khí trên ngọn lửa đèn cồn làm nội năng của khí tăng.",
+     "answer": true
+    },
+    {
+     "text": "Thanh thép nguội dần trên giá đỡ có nội năng giảm dần.",
+     "answer": true
+    },
+    {
+     "text": "Chà sát miếng kim loại lên sàn làm nội năng của nó giảm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chà sát là thực hiện công lên vật nên nội năng tăng; thép nguội thì nội năng giảm dần."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Có bao nhiêu cách làm thay đổi nội năng của vật được nêu trong bài (thực hiện công, truyền nhiệt)?",
+   "answer": "2",
+   "explanation": "Bài nêu hai cách: thực hiện công và truyền nhiệt."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhiệt dung riêng của một chất là nhiệt lượng làm tăng nhiệt độ của bao nhiêu kg chất đó lên 1 K?",
+   "answer": "1",
+   "explanation": "Theo định nghĩa, khối lượng là 1 kg."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhiệt lượng vật khối lượng $m$, nhiệt dung riêng $c$ trao đổi khi nhiệt độ đổi từ $T_1$ đến $T_2$ là",
+   "options": [
+    "$Q = mc(T_2 - T_1)$",
+    "$Q = \\frac{mc}{T_2 - T_1}$",
+    "$Q = m(T_2 - T_1)$",
+    "$Q = mc(T_2 + T_1)$"
+   ],
+   "answer": 0,
+   "explanation": "Công thức trong bài: $Q = mc(T_2 - T_1)$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Biểu thức của định luật I nhiệt động lực học là",
+   "options": [
+    "$\\Delta U = A + Q$",
+    "$\\Delta U = A - Q$",
+    "$\\Delta U = \\frac{A}{Q}$",
+    "$\\Delta U = Q - A^2$"
+   ],
+   "answer": 0,
+   "explanation": "Độ biến thiên nội năng bằng tổng công và nhiệt lượng hệ nhận được: $\\Delta U = A + Q$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đơn vị của nhiệt dung riêng $c$ trong công thức $Q = mc\\Delta T$ là",
+   "options": [
+    "J/kg.K",
+    "J.kg/K",
+    "J.K/kg",
+    "kg/J.K"
+   ],
+   "answer": 0,
+   "explanation": "$c = \\frac{Q}{m\\Delta T}$ nên đơn vị là J/(kg.K)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Từ $Q = mc(T_2 - T_1)$, nhiệt dung riêng $c$ được tính bằng",
+   "options": [
+    "$c = \\frac{Q}{m(T_2 - T_1)}$",
+    "$c = Qm(T_2 - T_1)$",
+    "$c = \\frac{m(T_2 - T_1)}{Q}$",
+    "$c = \\frac{Qm}{T_2 - T_1}$"
+   ],
+   "answer": 0,
+   "explanation": "Chia hai vế cho $m(T_2 - T_1)$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật nhận công $100\\ \\text{J}$ và truyền nhiệt lượng $40\\ \\text{J}$. Độ biến thiên nội năng của vật là",
+   "options": [
+    "$60\\ \\text{J}$",
+    "$140\\ \\text{J}$",
+    "$-60\\ \\text{J}$",
+    "$-140\\ \\text{J}$"
+   ],
+   "answer": 0,
+   "explanation": "$A = +100$ J, $Q = -40$ J nên $\\Delta U = 100 - 40 = 60$ J."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Về biểu thức $\\Delta U = A + Q$, nhận định nào đúng hay sai?",
+   "statements": [
+    {
+     "text": "$A$ và $Q$ là các giá trị đại số.",
+     "answer": true
+    },
+    {
+     "text": "Vật truyền nhiệt lượng thì $Q<0$.",
+     "answer": true
+    },
+    {
+     "text": "Vật thực hiện công thì $A>0$.",
+     "answer": false
+    },
+    {
+     "text": "Độ biến thiên nội năng bằng hiệu của công và nhiệt lượng ($\\Delta U = A - Q$).",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\Delta U = A + Q$ với $A, Q$ đại số; vật thực hiện công thì $A<0$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật có $m = 2\\ \\text{kg}$, $c = 100\\ \\text{J/kg.K}$ tăng nhiệt độ từ $300\\ \\text{K}$ lên $310\\ \\text{K}$. Nhiệt lượng vật nhận (J) là bao nhiêu?",
+   "answer": "2000",
+   "explanation": "$Q = 2\\cdot100\\cdot(310-300) = 2000$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật nhận công $50\\ \\text{J}$ và nhận nhiệt lượng $30\\ \\text{J}$. Độ biến thiên nội năng (J) là bao nhiêu?",
+   "answer": "80",
+   "explanation": "$\\Delta U = 50 + 30 = 80$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật thực hiện công $20\\ \\text{J}$ và nhận nhiệt lượng $5\\ \\text{J}$. Độ biến thiên nội năng (J) là bao nhiêu?",
+   "answer": "-15",
+   "explanation": "$A = -20$ J, $Q = +5$ J nên $\\Delta U = -15$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật có $\\Delta U = 40\\ \\text{J}$ khi nhận nhiệt lượng $100\\ \\text{J}$. Giá trị đại số của công $A$ (J) là bao nhiêu?",
+   "answer": "-60",
+   "explanation": "$A = \\Delta U - Q = 40 - 100 = -60$ J (vật thực hiện công)."
+  }
+ ]
+}
