@@ -209,17 +209,37 @@ export interface SimilarPair {
   similarity: number;
 }
 
+type SimilarRow = { topic_id: number | null; topic_name: string; id1: number; id2: number; similarity: number };
+
 /** Cặp câu nghi giống nhau trong cùng chủ đề (trigram trên nội dung câu, bỏ thẻ HTML) — chỉ để
- * cảnh báo, thầy tự xem và lưu trữ câu thừa. Xem docs/supabase-migration-question-bank-similarity.sql. */
-export async function fetchSimilarBankQuestions(grade: string, threshold = 0.5): Promise<SimilarPair[]> {
-  const { data, error } = await getSupabase().rpc("find_similar_bank_questions", {
-    p_grade: grade,
-    p_threshold: threshold,
-  });
-  if (error) throw new Error(error.message);
-  return ((data as { topic_id: number | null; topic_name: string; id1: number; id2: number; similarity: number }[]) ?? []).map(
-    (r) => ({ topicId: r.topic_id, topicName: r.topic_name, id1: r.id1, id2: r.id2, similarity: r.similarity }),
-  );
+ * cảnh báo, thầy tự xem và lưu trữ câu thừa. Quét TỪNG chủ đề (quét cả khối một lần bị statement_timeout
+ * với khối 12 ~8 000 câu); 3 chủ đề chạy song song. */
+export async function fetchSimilarBankQuestions(
+  grade: string,
+  threshold = 0.5,
+): Promise<SimilarPair[]> {
+  const sb = getSupabase();
+  const { data: tops, error: e1 } = await sb.rpc("bank_dup_topic_ids", { p_grade: grade });
+  if (e1) throw new Error(e1.message);
+  const topicIds = ((tops as { topic_id: number }[]) ?? []).map((t) => t.topic_id);
+  const all: SimilarPair[] = [];
+  let firstError: string | null = null;
+  const queue = [...topicIds];
+  const worker = async () => {
+    for (let id = queue.shift(); id !== undefined; id = queue.shift()) {
+      const { data, error } = await sb.rpc("find_similar_bank_questions_in_topic", {
+        p_grade: grade,
+        p_topic_id: id,
+        p_threshold: threshold,
+      });
+      if (error) firstError ??= error.message;
+      for (const r of (data as SimilarRow[]) ?? [])
+        all.push({ topicId: r.topic_id, topicName: r.topic_name, id1: r.id1, id2: r.id2, similarity: r.similarity });
+    }
+  };
+  await Promise.all([worker(), worker(), worker()]);
+  if (firstError && all.length === 0) throw new Error(firstError);
+  return all.sort((x, y) => y.similarity - x.similarity).slice(0, 300);
 }
 
 export interface BankPatch {

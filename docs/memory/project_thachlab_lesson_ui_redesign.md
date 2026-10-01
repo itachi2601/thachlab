@@ -1,0 +1,142 @@
+---
+name: project_thachlab_lesson_ui_redesign
+description: "UI học sinh tối giản theo tông trang chủ: 2 luồng riêng /lop-hoc (THPT, xanh) và /lop-hoc/cttc (CTTC, cam) + trang lớp + trang bài học — đợt 4 (22/9/2026, fb0ecbb8) hoàn thiện trải nghiệm học: dedup tiêu đề, hàng thu/mở bài tập mẫu, trạng thái đăng nhập/tải/lỗi, bảng+công thức+ảnh không tràn/nhảy layout"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: ee582589-5020-43e8-a1a9-cc22f84b9c05
+  modified: 2026-09-22T03:04:53.822Z
+---
+
+**Mục tiêu:** thầy thấy giao diện bài học "dễ phân tâm quá" → làm lại theo hướng
+đọc-là-chính, một màu nhấn, ít khối/ít nút. Đã xong và deploy 2026-09-21 cho
+3 trang, mỗi trang một commit trên `main` (bản deploy = build sạch từ commit):
+
+| Trang | File | Commit |
+|---|---|---|
+| Bài học `/lop-hoc/bai?id=` | `app/lop-hoc/bai/page.tsx` | 1302ee86 |
+| Lớp `/lop-hoc/<slug>` (mục lục chương→bài) | `app/lop-hoc/page.tsx` (nhánh `if (effectiveSlug)`) | 830fb9be |
+| Chọn lớp `/lop-hoc` | `app/lop-hoc/page.tsx` (render cuối) | b5bf82df |
+
+CSS chung nằm ở `app/globals.css`, khối "Bài học Trung học — bố cục đọc"
+(`.lesson-shell .lesson-layout .lesson-nav .lesson-main .lesson-section .lesson-block
+.lesson-exam .lesson-btn …`) và khối "Trang lớp" (`.class-chapter .class-lesson
+.class-num .class-meta …`). Khối `.secondary-lesson-*` cũ đã xoá; các `.cnc-*` vẫn
+còn vì CncCourseWorkspace (CTTC) dùng — **CTTC chưa làm lại**.
+
+**Quyết định thiết kế đã chốt (đọc code không tự suy ra):**
+- Một màu nhấn `#3B82F6` cho mọi mục; 6 màu trong `SECTION_META` (features/lessons/types.ts)
+  vẫn còn nhưng trang bài học không dùng nữa (chỉ dùng label). Emoji bỏ.
+- Trang bài học: 6 phần xếp dọc trong cột 760px, mục lục sticky trái (mobile: dải tab
+  sticky), scroll-spy bằng IntersectionObserver. Lý thuyết hiện thẳng, mục thứ 2 trở đi
+  thu gọn. Nếu tên mục trùng tên phần và là mục duy nhất → ẩn tiêu đề (`plain`/`hideTitle`).
+  Phần rỗng ẩn khỏi cột chính, mờ trong mục lục.
+- Giữ nguyên id `secondary-stage-<kind>` vì `/lop-hoc/ket-qua` link tới; giữ `chapter-<id>`
+  và param `chapter=` để cuộn tới chương.
+- Tiến độ lý thuyết: không còn tự đánh dấu khi bấm "Xem"; có nút nhỏ "Đánh dấu đã đọc".
+- Trang lớp: chương mở sẵn, bấm để thu (state `collapsedChapters` thay `openChapterId`).
+  Kiểm tra chương/giữa kì = dòng "KT" viền đứt. `ContinueLearningCard` không dùng nữa
+  (file còn, chưa xoá). `MistakeReviewPanel` đổi sang tông trung tính.
+- Chọn lớp: bỏ tab; `?tab=cttc` chỉ đổi thứ tự (CTTC lên trước) để link Navbar/AudienceChooser
+  vẫn đúng. Ảnh `public/images/learning-path/*` không còn dùng ở trang này.
+
+**Còn treo / gợi ý tiếp:**
+- Các trang khác vẫn giao diện cũ, nếu thầy muốn "gọn tương tự": trang chủ học sinh THPT
+  (`components/dashboard/ThptStudentHome.tsx` — đang là WIP của phiên khác, đừng đụng khi chưa
+  hỏi), `/lop-hoc/ket-qua`, trang làm bài `/kiem-tra/lam`, CNC workspace.
+- `PracticeSession`, `SampleQuestionsGrid`, `WorkedQuestionsGrid` chỉ mới nhận `color` một màu,
+  bên trong vẫn nhiều nút/viền — chưa tối giản.
+- Console có 1 lỗi 400 khi tải `/lop-hoc` và trang lớp, có từ trước redesign, chưa tìm ra
+  nguồn (không hiện trong danh sách network). Nghi là truy vấn từ code WIP phiên khác.
+- Chưa test với tài khoản học sinh thật (chỉ test bằng tài khoản thầy "Thạch" đang đăng nhập
+  ở browser pane) và chưa test trang bài học có video/BTVN có hạn nộp.
+
+Liên quan: [[feedback_thachlab_deploy_scope]] (cách deploy sạch bằng worktree khi tree có WIP),
+[[project_thachlab_lesson_sections]], [[project_thachlab_periodic_exam]].
+
+**Đợt 2 (21/9/2026, commit 376982d3, đã deploy):** thầy yêu cầu "THPT và CTTC để ở 2 luồng
+riêng, tối giản nhưng thiết kế vẫn mang hướng của trang chủ, đồng bộ giao diện".
+- `/lop-hoc` = hub THPT·THCS riêng (thẻ 10/11/12/9); `app/lop-hoc/cttc/page.tsx` = hub CTTC
+  riêng (CNC, Tiện–Phay; 3 học phần "Sắp mở" mờ). Link cũ `?tab=cttc` → `router.replace`
+  sang `/lop-hoc/cttc`; Navbar/AudienceChooser/breadcrumb CncCourseWorkspace trỏ thẳng hub mới.
+  Navbar có `CTTC_PATHS` để mục "THPT – THCS" không sáng khi đang ở luồng CTTC.
+- Ngôn ngữ trang chủ đưa vào `.lesson-shell`: nền `var(--color-bg)` (#05070b), quầng sáng
+  `::before` (blur, `overflow: clip` — KHÔNG dùng hidden vì phá sticky mục lục), eyebrow mono
+  viết hoa tracking như Features.tsx, thẻ kính rgba(255,255,255,.035) bo 16–18px, tiêu đề có
+  `span.text-gradient` (CTTC: `.text-gradient--warm` cam). Màu nhấn chỉ qua biến
+  `--lesson-accent / -hover / -text / -soft / -line / --lesson-glow`; `.lesson-shell--cttc`
+  đổi cả bộ sang cam. Đã có override `html[data-theme="light"] .lesson-shell` cho cả khối.
+- Đã soi: 2 hub (dark + light), trang lớp 12, trang bài học trên bản build tĩnh (serve `out/`
+  cổng 3005) — vì dev server :3000 của phiên khác bị stale ("require is not defined" ở route
+  `[classSlug]`, không phải lỗi code; build sạch qua hết). Vẫn chưa test tài khoản HS thật.
+- **Đợt 3 (cùng ngày, commit sau 9ffde8f9, đã deploy):** CNC workspace + cổng ghi danh CNC/Tiện–Phay
+  về cùng ngôn ngữ. Cách làm: GIỮ tên lớp `.cnc-*` trong TSX (1.382 dòng, chỉ đổi className),
+  viết lại trọn khối CSS "Không gian học tập Gia công CNC" trong globals.css thành một bộ tối duy
+  nhất, màu qua biến `--cnc-title/text/muted/faint/surface/line` + `--lesson-accent-*`; root
+  workspace có `lesson-shell lesson-shell--cttc cnc-shell cnc-embedded` (giữ `.cnc-embedded` vì
+  rubric ~dòng 1108 key theo nó). Bỏ hẳn nền sáng `.cnc-page` #f4f6f8. Đã soi bản build tĩnh
+  (serve `out/` trên localhost:3000 khi dev server phiên kia tắt → dùng lại session admin của
+  origin đó): danh sách bài, bài 2, bài 4 (mục Kiểm tra), light theme. Việc do subagent làm
+  (~260k token) — đọc CSS 60KB trong subagent, phiên chính chỉ soi ảnh.
+- **Vẫn chưa làm:** `/lop-hoc/ket-qua`, `/kiem-tra/lam`, trang chủ HS (`ThptStudentHome`,
+  phiên khác commit 114537d4); footer vẫn tối trong light theme (có từ trước).
+- Dev server :3000 của phiên khác hay stale (CSS không cập nhật, `require is not defined` ở
+  route SSG) → kiểm chứng bằng build tĩnh trong worktree đáng tin hơn.
+
+**Đợt 4 (22/9/2026, đã deploy) — hoàn thiện trải nghiệm học trên `/lop-hoc/bai`, theo
+yêu cầu "giữ phong cách hiện tại, đừng thiết kế lại toàn bộ".** 6 commit trên `main`
+(mỗi commit một bản deploy riêng qua worktree sạch, xem [[feedback_thachlab_deploy_scope]]):
+
+| Việc | File chính | Commit |
+|---|---|---|
+| Dedup tiêu đề lý thuyết + mọi mục đơn lẻ khác, mục lục chỉ hiện phần có học liệu, tách 4 trạng thái đăng nhập/tải/lỗi/rỗng cho ExamRow/PracticeSession/SampleQuestionsGrid, đổi lưới nút "BÀI n" → hàng thu/mở | `app/lop-hoc/bai/page.tsx`, `components/lessons/{Sample,Worked}QuestionsGrid.tsx`, `PracticeSession.tsx`, `ContentHtml.tsx` | `ce8e983f` |
+| Bảng dán từ Word tràn màn hình điện thoại → bọc `.table-scroll` | `ContentHtml.tsx` | `ae2aba88` |
+| `.table-scroll` thiếu `max-width:100%` nên không co được | `globals.css` | `8bd7161f` |
+| `.lesson-stack` là grid, item con mặc định `min-width:auto` → bảng đẩy tràn cả khối; thêm `.lesson-stack > * { min-width:0 }` | `globals.css` | `65fede62` |
+| Công thức khối `$$...$$` có khung viền bo tròn riêng + `overflow-wrap/word-break` chống chữ bị `.lesson-shell{overflow:clip}` cắt mất | `globals.css` | `f8352eff` |
+| Ảnh hình vẽ không có width/height → layout nhảy khi ảnh tải (rõ nhất lúc đang cuộn trên điện thoại) → script đọc kích thước thật từ header PNG/JPEG, gắn `width`/`height` vào `<img>` | `scripts/gen-image-dimensions.mjs` (mới) → `features/lessons/image-dimensions.json` (502 ảnh, tự sinh) → `ContentHtml.tsx` | `fb0ecbb8` |
+
+**Cơ chế ảnh (đọc code không tự suy ra):** `scripts/gen-image-dimensions.mjs` quét
+`public/lessons` + `public/exams`, đọc header PNG/JPEG (không cần thư viện ảnh), ghi
+`features/lessons/image-dimensions.json` (map `/lessons/.../fig01.png` → `[w,h]`).
+Chạy tự động qua `npm run prebuild` (hook chuẩn của npm, xem `package.json`) trước
+**mỗi lần** `npm run build`/`deploy.sh` — ảnh đăng sau tự có, không cần chạy tay. File
+JSON **có commit vào git** (không gitignore) vì `next dev` import tĩnh lúc chưa build
+lần nào cũng cần nó tồn tại sẵn.
+
+**Quyết định thiết kế thêm (đợt 4):**
+- `plain`/`hideTitle` (ẩn tiêu đề mục khi trùng ý phần) giờ áp dụng cho **mọi mục đơn lẻ**
+  trong phần (`section.items.length === 1`), không riêng lý thuyết và không cần khớp chữ
+  chính xác như bản gốc.
+- `SampleQuestionsGrid`/`WorkedQuestionsGrid`/`PracticeSession` vẫn giữ prop `color` (không
+  đổi sang biến `--lesson-accent`) vì 3 component này còn dùng lại ở `InlineLessonAccordion`
+  (trang lớp) và `LessonImporter`/`AzotaExamComposer` (khu quản trị) — nơi không có
+  `.lesson-shell` bao ngoài. CSS mới (`.lesson-sample-*`, `.lesson-worked-*`, `.table-scroll`)
+  cố ý tự chứa màu (rgba trung tính), không phụ thuộc biến `--lesson-*`.
+- `ExamRow` không còn hiện "Đề #<id>" — chưa đăng nhập/đang tải/lỗi/không tìm thấy đều có
+  chữ riêng, tên đề thật chỉ hiện khi đã tải xong.
+
+**Đã kiểm tra:** build sạch + `tsc`/`eslint` từng bước; soi thật trên production
+(thachlab.id.vn) bằng khung điện thoại giả lập lẫn ảnh chụp máy thật của thầy (bài
+"Bài 12 – Cảm ứng điện từ" lớp 12, bài "Lực từ. Cảm ứng từ"); test riêng
+`SampleQuestionsGrid` với đề thật (exam id 18) qua route tạm `app/tmp-verify-sample`
+rồi xoá ngay (không đụng dữ liệu DB thật — thử PATCH thẳng DB bị permission chặn "Modify
+Shared Resources", không cố lách).
+
+**Còn treo:**
+- Vẫn chưa test tài khoản học sinh thật (chỉ test tài khoản thầy "Thạch").
+- Trang lớp `/lop-hoc/[slug]` cũng được thầy (hoặc phiên khác) làm thêm cùng lúc: mở sẵn
+  1 chương, nút thu/mở tất cả, thanh tiến độ chương, nhãn trạng thái rõ nghĩa hơn, "Tiếp
+  tục học" thêm `resume=1` tự cuộn tới mục chưa xong, bài học thêm thanh Bài trước/Bài tiếp
+  theo — đi vào cùng các commit `ce8e983f`..`65fede62` ở trên (đã review + build sạch trước
+  khi gộp, không phải việc tự làm trong phiên polish này nhưng cùng đợt deploy).
+- `/lop-hoc/ket-qua`, `/kiem-tra/lam`, CNC workspace vẫn chưa "gọn tương tự" (như đợt 1 đã ghi).
+- Ảnh chụp máy thật của thầy còn 1 điểm ngờ (dòng chữ ghost/đè ở mép trên khi vừa cuộn) —
+  nghi là compositing lúc chụp màn hình lúc đang cuộn (không tái hiện được qua kiểm tra kỹ
+  thuật: `document.documentElement.scrollWidth` luôn khớp viewport, không overflow thật) chứ
+  không phải bug tràn chữ như 2 lần trước — sau khi vá layout-shift ảnh (đợt 4 dòng cuối) nếu
+  thầy vẫn thấy lại đúng kiểu này thì báo tiếp, khả năng còn nguyên nhân khác.
+
+Liên quan thêm: [[project_thachlab_concurrent_sessions]] (đợt này có tới 2-3 phiên khác
+cùng sửa `app/lop-hoc/bai/page.tsx`/`app/globals.css` song song — phải soát git diff kỹ
+trước mỗi commit).
