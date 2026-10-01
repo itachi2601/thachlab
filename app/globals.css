@@ -174,6 +174,9 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 
 @media (max-width: 639px) {
   .theme-toggle { width: 2.75rem; height: 2.75rem; }
+  /* iOS tự phóng to cả trang khi bấm vào ô nhập có cỡ chữ < 16px, rồi không tự thu lại —
+     bốn ô dưới đây đang là 14px. Ép 16px trên điện thoại để Safari không zoom. */
+  .cnc-lesson-search input, .cnc-quiz-join input, .cnc-answer-input, .cnc-gate-input { font-size: 16px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -185,6 +188,9 @@ html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:
 /* Một bộ rule duy nhất; .cnc-embedded chỉ còn là móc cho các khối rubric và bài lập trình ở dưới. */
 .cnc-shell, .cnc-page { --cnc-title: #fff; --cnc-text: #e2e8f0; --cnc-muted: #94a3b8; --cnc-faint: #64748b; --cnc-surface: var(--lesson-surface, rgba(255,255,255,.035)); --cnc-line: var(--lesson-line, rgba(148,163,184,.14)); --cnc-hover: rgba(255,255,255,.03); --cnc-field: rgba(255,255,255,.04); --cnc-ok: #6ee7b7; --cnc-ok-soft: rgba(16,185,129,.14); --cnc-ok-line: rgba(16,185,129,.5); --cnc-bad: #fca5a5; --cnc-bad-soft: rgba(239,68,68,.12); --cnc-bad-line: rgba(239,68,68,.45); --cnc-warn: #fcd34d; --cnc-warn-soft: rgba(245,158,11,.12); --cnc-warn-line: rgba(245,158,11,.4); background: var(--color-bg); color: var(--cnc-text); font-family: var(--font-body), sans-serif; }
 .cnc-page { min-height: 100vh; }
+/* dvh khi trình duyệt hỗ trợ: Safari iOS ẩn/hiện thanh địa chỉ không còn làm trang nhảy.
+   Giữ 100vh ở dòng trên làm bản dự phòng cho Safari 12–14 (browserslist). */
+@supports (min-height: 100dvh) { .cnc-page { min-height: 100dvh; } }
 .cnc-shell.cnc-embedded { padding-top: 0; }
 
 /* Chữ eyebrow dùng chung: mono, viết hoa, màu nhấn */
@@ -629,7 +635,9 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 
 /* Bài học Trung học — bố cục đọc, một màu nhấn, thanh mục lục bên trái */
 /* Cùng nền, quầng sáng và kiểu chữ với trang chủ; màu nhấn đổi theo luồng (THPT xanh · CTTC cam) */
-.lesson-shell { --lesson-accent: #3b82f6; --lesson-accent-hover: #2563eb; --lesson-accent-text: #93c5fd; --lesson-accent-soft: rgba(59,130,246,.1); --lesson-accent-line: rgba(59,130,246,.32); --lesson-glow: rgba(37,99,235,.3); --lesson-line: rgba(148,163,184,.14); --lesson-surface: rgba(255,255,255,.035); position: relative; overflow: clip; min-height: calc(100vh - 76px); background: var(--color-bg); color: #e2e8f0; }
+.lesson-shell { --lesson-accent: #3b82f6; --lesson-accent-hover: #2563eb; --lesson-accent-text: #93c5fd; --lesson-accent-soft: rgba(59,130,246,.1); --lesson-accent-line: rgba(59,130,246,.32); --lesson-glow: rgba(37,99,235,.3); --lesson-line: rgba(148,163,184,.14); --lesson-surface: rgba(255,255,255,.035); --lesson-panel: rgba(255,255,255,.035); position: relative; overflow: clip; min-height: calc(100vh - 76px); background: var(--color-bg); color: #e2e8f0; }
+/* dvh khi trình duyệt hỗ trợ — thanh địa chỉ Safari iOS ẩn/hiện không làm trang nhảy. */
+@supports (min-height: 100dvh) { .lesson-shell { min-height: calc(100dvh - 76px); } }
 .lesson-shell::before { content: ""; position: absolute; z-index: 0; top: -160px; left: 50%; width: 720px; height: 420px; margin-left: -360px; border-radius: 9999px; background: var(--lesson-glow); filter: blur(110px); opacity: .55; pointer-events: none; }
 .lesson-shell > * { position: relative; z-index: 1; }
 .lesson-shell--cttc { --lesson-accent: #f97316; --lesson-accent-hover: #ea580c; --lesson-accent-text: #fdba74; --lesson-accent-soft: rgba(249,115,22,.1); --lesson-accent-line: rgba(249,115,22,.32); --lesson-glow: rgba(234,88,12,.26); }
@@ -1080,11 +1088,21 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 .exam-content .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   margin: 0.9em 0;
   border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 10px;
   background: rgba(148, 163, 184, 0.06);
   padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn

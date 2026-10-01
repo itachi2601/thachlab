@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import ChunkErrorGuard from "@/components/system/ChunkErrorGuard";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
@@ -63,6 +63,15 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+};
+
+// Khai báo viewport cho điện thoại: viewportFit "cover" là điều kiện để env(safe-area-inset-*)
+// khác 0 — thiếu nó thì thanh đáy (MobileTabBar, thanh đáy trang bài) bị tai thỏ và thanh home
+// của iPhone che mất. Next 16 đọc export `viewport` này và tự sinh <meta name="viewport">.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 // Structured data toàn site — giúp Google nhận diện thương hiệu.
