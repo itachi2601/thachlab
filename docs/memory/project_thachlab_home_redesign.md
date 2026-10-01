@@ -13,3 +13,10 @@ Trang chủ (7 section trong components/home + link Footer) đã viết lại ng
 **Why:** Thầy muốn trang chủ bớt cảm giác "web do AI tạo" nhưng giữ nền tối + bản sắc Vật lý.
 
 **How to apply:** Tài nguyên còn thiếu: ảnh thật thầy Thạch (mục "Một chút về thầy Thạch" đang thuần chữ), ảnh + bài viết cho 3 câu hỏi phụ ở "Vật lý quanh ta" (đang hiện dạng danh sách không link). Không bịa tiểu sử/thành tích.
+
+**Cập nhật 1/10/2026 — so với bản DeepSeek đề xuất (nền sáng, 2 cột + sidebar):** không đổi theme, chỉ ghép 4 ý:
+PublicSubNav (vào nhanh lớp, chỉ trang chủ), OpenClasses thay AudienceChooser (4 thẻ lớp + số chương/bài/mục + dải
+tổng, số đọc lúc build từ `public/data/home-stats.json` do `build-content.mjs` sinh — không gọi Supabase khi tải),
+Testimonials mặc định 4 ảnh. Không lấy: sidebar 2 cột, hộp đăng ký cạnh hero, light theme toàn trang, bỏ HonorBoard.
+Thứ tự section: SubNav → OpenClasses → Hero mô phỏng → Features → PhysicsEverywhere → LearningPath → HonorBoard →
+AboutFounder → Testimonials. Số liệu trang chủ chỉ mới sau mỗi lần deploy (prebuild).

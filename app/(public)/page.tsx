@@ -1,6 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import AudienceChooser from "@/components/home/AudienceChooser";
+import PublicSubNav from "@/components/home/PublicSubNav";
+import OpenClasses from "@/components/home/OpenClasses";
+import { readHomeStats } from "@/components/home/home-stats.server";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
 import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
@@ -10,11 +12,14 @@ import AboutFounder from "@/components/home/AboutFounder";
 import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
+  // Số chương/bài/mục đọc từ file tĩnh lúc build (xem home-stats.server.ts) — không gọi Supabase khi tải.
+  const stats = readHomeStats();
   return (
     <>
       <Navbar />
       <main>
-        <AudienceChooser />
+        <PublicSubNav />
+        <OpenClasses stats={stats} />
         <PhysicsSimulationHero />
         <Features />
         <PhysicsEverywhere />

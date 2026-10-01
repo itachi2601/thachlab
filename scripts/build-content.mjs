@@ -8,6 +8,8 @@
 //   public/data/catalog.json         — lớp → chương → bài (kèm mô tả/YCCĐ) + tham chiếu mục (id, exam_ids)
 //   public/data/lessons/<id>.json    — 1 bài: lesson + tên chương + các mục; chỉ mục lý thuyết/video
 //                                      có body_html; mục khác chỉ metadata (KHÔNG questions, KHÔNG đề)
+//   public/data/home-stats.json      — số chương/bài/mục toàn site + theo từng lớp, cho trang chủ
+//                                      (đọc LÚC BUILD trong app/(public)/page.tsx — không gọi Supabase khi tải)
 //
 // Chỉ dùng ANON key (đúng RLS của khách chưa đăng nhập) — file tĩnh không bao giờ
 // chứa thứ mà người chưa đăng nhập không xem được. Đề thi (exams.questions, có đáp án)
@@ -88,6 +90,45 @@ async function fetchAll(makeQuery) {
     rows.push(...(data ?? []));
     if (!data || data.length < PAGE) return rows;
   }
+}
+
+/**
+ * Số liệu cho trang chủ (mục "Em đang học ở đâu?" + dải tổng): mỗi lớp đếm chương gắn với lớp
+ * (chapter_classes), bài đã công bố trong các chương đó và mục đã đăng trong các bài đó.
+ * Một chương gắn nhiều lớp được đếm cho từng lớp (tổng toàn site vẫn đếm mỗi chương 1 lần).
+ */
+function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson) {
+  const lessonsByChapter = new Map();
+  for (const l of lessons) {
+    const list = lessonsByChapter.get(l.chapter_id) ?? [];
+    list.push(l);
+    lessonsByChapter.set(l.chapter_id, list);
+  }
+  const itemCount = (lessonId) => (itemsByLesson.get(lessonId) ?? []).length;
+  const perClass = classes.map((c) => {
+    const ownChapters = chapters.filter((ch) => ch.classIds.includes(c.id));
+    const ownLessons = ownChapters.flatMap((ch) => lessonsByChapter.get(ch.id) ?? []);
+    return {
+      id: c.id,
+      slug: c.slug,
+      name: c.name,
+      color: c.color,
+      icon: c.icon,
+      chapters: ownChapters.length,
+      lessons: ownLessons.length,
+      items: ownLessons.reduce((sum, l) => sum + itemCount(l.id), 0),
+    };
+  });
+  return {
+    generatedAt,
+    totals: {
+      classes: classes.length,
+      chapters: chapters.length,
+      lessons: lessons.length,
+      items: lessons.reduce((sum, l) => sum + itemCount(l.id), 0),
+    },
+    classes: perClass,
+  };
 }
 
 async function main() {
@@ -243,6 +284,7 @@ async function main() {
     writeFileSync(join(LESSONS_DIR, `${l.id}.json`), json);
   }
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
+  writeJson(join(OUT_DIR, "home-stats.json"), buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson));
   writeJson(join(OUT_DIR, "manifest.json"), {
     generatedAt,
     itemColumns,
