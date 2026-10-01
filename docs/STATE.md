@@ -39,7 +39,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Đã chạy: `20260930160000_exit_quiz_bank_children.sql` 30/9/2026 17:15 (xem STATE-archive.md). Đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
   Đã cấp bù thành tích `tien_bo_tuan` cho 7 em từng nhận RP tiến bộ (30/9/2026, chạy tay, kiểm lại = 0 em thiếu).
 - **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 20 file JSON lớp 12 chờ đăng
-  (đã kiểm chéo + validate 30/9/2026): `scripts/data/theory-quiz/{2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,125,126,127}.json`.
+  (đã kiểm chéo + validate, đã gắn YCCĐ + mức độ 1/10/2026 — sẵn sàng đăng): `scripts/data/theory-quiz/{2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,125,126,127}.json`.
   Thầy chạy trên Mac, theo thứ tự:
   `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 2 --lesson 3 … --lesson 127` (liệt kê đủ 20 id)
   (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên các mục lý thuyết này chưa có `exam_ids`.
