@@ -111,3 +111,34 @@ Kiểm nhanh: ảnh mới > 150 KB đã nén chưa; nếu có sửa code trang, 
 `perf/chunks-report.mjs` nếu còn) hoặc chạy Lighthouse thủ công. Bỏ qua bước này khi chỉ đăng nội dung
 text thuần (không ảnh, không đụng code).
 <!-- END:thachlab-perf-publish -->
+
+# Đồng bộ giữa các phiên (cloud + Mac) — không giẫm chân nhau
+
+Mỗi phiên cloud chạy trên nhánh `claude/<tên>` riêng, tách từ `main` lúc mở. Chỉ thứ đã **commit và vào `main`** mới tới
+được phiên khác và máy Thạch. Việc nằm trên nhánh mà chưa merge coi như chưa tồn tại với phần còn lại.
+
+## Đầu phiên
+- `git fetch origin` rồi `git merge origin/main` vào nhánh phiên (không rebase nhánh đã push, không force-push).
+- Chạy `/tinh-hinh`; xem `git branch -r --sort=-committerdate | head` để biết phiên khác đang đụng tới đâu.
+
+## Trong phiên — giữ đúng phạm vi
+- Chỉ sửa file thuộc việc được giao. Không "tiện tay" dọn/đổi tên/format file ngoài phạm vi.
+- File dùng chung (`docs/STATE.md`, `docs/memory/MEMORY.md`, `scripts/run-migrations.sh`, `AGENTS.md`, `package.json`): chỉ
+  **thêm dòng/mục mới**, không viết lại hay sắp xếp lại phần có sẵn — để hai phiên cùng thêm vẫn merge sạch.
+- Migration: tên file theo timestamp, không sửa/xoá migration của phiên khác; chỉ nối thêm vào mảng `FILES`.
+- Không xoá, reset, force-push nhánh hay worktree của phiên khác. Thấy lạ thì ghi vào `STATE.md`, đừng tự dọn.
+- Skill mới/sửa: chỉ ở `.claude/skills/<tên>/` trong repo (nguồn duy nhất). Không chép tay sang `~/.codex`, Library plugin.
+
+## Cuối phiên — việc "xong" nghĩa là đã tới `main`
+1. Commit đúng file của mình (`git commit -- <path>`), push nhánh.
+2. Mở PR vào `main` (nhỏ, một việc; không push thẳng `main`). Mô tả nêu: đổi gì, file chung nào đã đụng, bước Thạch cần làm trên Mac.
+3. Phiên cloud không merge được thì **báo rõ "chưa vào main, cần merge PR #…"** — không báo "xong".
+4. Có skill mới/sửa → in kèm lệnh cho Thạch trên Mac, sau khi PR đã merge:
+```
+git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
+```
+5. Có migration → theo mục "Migration Supabase" ở trên. Ghi mục "ĐANG CHỜ" trong `docs/STATE.md`, rồi `/ban-giao`.
+
+## Xung đột
+Hai phiên cùng sửa một file riêng (không phải file dùng chung) → phiên merge sau tự gộp và kiểm lại; nếu ý định mâu thuẫn
+thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
