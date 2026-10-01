@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Play, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -52,6 +52,103 @@ import { supabaseConfigured } from "@/services/supabase";
 
 /** Một màu nhấn duy nhất cho cả trang — tránh mỗi mục một màu gây phân tâm. */
 const ACCENT = "#3B82F6";
+
+/** Nhãn ngắn cho tab — tên đầy đủ (SECTION_META) quá dài để nằm cạnh nhau trên một hàng tab. */
+const TAB_LABEL: Record<LessonItemKind, string> = {
+  ly_thuyet: "Lý thuyết",
+  video: "Video",
+  bai_tap_mau: "Bài tập mẫu",
+  luyen_tap: "Luyện tập",
+  bai_tap_ve_nha: "BTVN",
+  kiem_tra: "Kiểm tra",
+};
+
+/** Slug trên URL hash cho từng tab — `#muc=luyen-tap` để chia sẻ link đúng tab đang mở. */
+const TAB_SLUG: Record<LessonItemKind, string> = {
+  ly_thuyet: "ly-thuyet",
+  video: "video",
+  bai_tap_mau: "bai-tap-mau",
+  luyen_tap: "luyen-tap",
+  bai_tap_ve_nha: "btvn",
+  kiem_tra: "kiem-tra",
+};
+
+const SLUG_TAB = Object.fromEntries(
+  Object.entries(TAB_SLUG).map(([kind, slug]) => [slug, kind as LessonItemKind]),
+) as Record<string, LessonItemKind>;
+
+/** 3 mức cỡ chữ đọc (A− / A / A+) — nhân vào cỡ chữ gốc của khối nội dung. */
+const FONT_SCALES = [0.94, 1, 1.08];
+const FONT_STORE = "thachlab-read-font";
+const DIM_STORE = "thachlab-read-dim";
+const LESSON_DONE_STORE = "thachlab-lesson-done-";
+
+/**
+ * Đọc tab muốn mở từ hash của URL. Nhận cả 2 kiểu:
+ *  - `#muc=luyen-tap` — link chia sẻ tab (trang này tự sinh khi bấm tab)
+ *  - `#theory-sec-<itemId>-<n>` — link từ trang làm đề / "Ôn ngay" nhảy tới đúng đoạn lý thuyết
+ */
+function parseTabHash(hash: string): { kind: LessonItemKind | null; theoryId: string | null } {
+  const raw = hash.replace(/^#/, "");
+  if (raw.startsWith("theory-sec-")) return { kind: "ly_thuyet", theoryId: raw };
+  for (const part of raw.split("&")) {
+    const value = part.startsWith("muc=") ? part.slice(4) : "";
+    if (value && SLUG_TAB[value]) return { kind: SLUG_TAB[value], theoryId: null };
+  }
+  return { kind: null, theoryId: null };
+}
+
+function currentHash() {
+  return typeof window === "undefined" ? "" : window.location.hash;
+}
+
+/** Cao thêm mà thanh dính (navbar + header bài) che mất khi cuộn tới một đoạn — đo bằng DOM. */
+function stickyOffset() {
+  const head = document.querySelector<HTMLElement>(".lesson-head");
+  return (head?.offsetHeight ?? 0) + 92;
+}
+
+/** Cuộn tới một phần tử với chừa chỗ cho thanh dính; không có id thì cuộn về đầu bài. */
+function scrollToPart(id: string | null) {
+  const target = id ? document.getElementById(id) : null;
+  if (target) {
+    const y = target.getBoundingClientRect().top + window.scrollY - stickyOffset();
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+/** Đổi hash không thêm vào lịch sử duyệt (bấm tab không làm nút "Quay lại" nhảy lung tung). */
+function writeTabHash(hash: string) {
+  if (typeof window === "undefined") return;
+  window.history.replaceState(null, "", hash || window.location.pathname + window.location.search);
+}
+
+/** Cuộn tới + tô vàng một đoạn lý thuyết, tô lại vài nhịp vì bản tĩnh có thể bị bản mới thay thế. */
+function flashTheorySection(hashId: string, times = 6) {
+  const el = document.getElementById(hashId);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  el.classList.add("theory-section--highlight");
+  let count = 0;
+  const reapply = window.setInterval(() => {
+    const target = document.getElementById(hashId);
+    target?.classList.add("theory-section--highlight");
+    count += 1;
+    if (count <= times) target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 150);
+  window.setTimeout(() => {
+    window.clearInterval(reapply);
+    document.getElementById(hashId)?.classList.remove("theory-section--highlight");
+  }, 2600);
+}
+
+/** Tô vàng (không giành quyền cuộn) — dùng cho các đoạn phụ khi sai nhiều câu một lúc. */
+function highlightTheorySectionOnly(hashId: string) {
+  document.getElementById(hashId)?.classList.add("theory-section--highlight");
+  window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
+}
 
 /** Hạn nộp bài tập về nhà, vd "20:00 · 25/09/2026". */
 function formatDue(iso: string) {
@@ -345,34 +442,27 @@ function LessonLoader() {
   const [done, setDone] = useState<Set<number>>(new Set());
   const [progress, setProgress] = useState<Map<number, ItemProgress>>(new Map());
   const [error, setError] = useState("");
-  const [activeSection, setActiveSection] = useState<LessonItemKind | null>(null);
   const mainRef = useRef<HTMLDivElement>(null);
-  // Trang bài học hiện thành danh sách 6 mục thu gọn — mặc định đóng hết, học sinh bấm
-  // mục nào thì mục đó mới xổ ra (đỡ phải cuộn một trang dài). Chỉ tự mở khi có đường
-  // dẫn thẳng vào 1 mục cụ thể (xem 2 effect openSectionOfItem/resume bên dưới).
-  const [openSections, setOpenSections] = useState<Set<LessonItemKind>>(new Set());
-  function openSection(kind: LessonItemKind) {
-    setOpenSections((prev) => (prev.has(kind) ? prev : new Set(prev).add(kind)));
-  }
-  function toggleSection(kind: LessonItemKind) {
-    setOpenSections((prev) => {
-      const next = new Set(prev);
-      if (next.has(kind)) next.delete(kind);
-      else next.add(kind);
-      return next;
-    });
-  }
+  // Sáu mục của bài giờ là 6 TAB ngang (trước đây là accordion dọc): một thời điểm chỉ mở một
+  // mục, tab đang mở lấy từ hash `#muc=<slug>` để chia sẻ link đúng tab. Tab mặc định là
+  // "Lý thuyết" — đúng bằng số công thức KaTeX phải render lúc tải đầu như bản accordion cũ
+  // (mục đầu tiên vốn mở sẵn), các tab khác chỉ render khi học sinh bấm.
+  const [activeTab, setActiveTab] = useState<LessonItemKind>(() => parseTabHash(currentHash()).kind ?? "ly_thuyet");
+  // Công cụ đọc: cỡ chữ 3 mức (A− / A / A+) và chế độ dịu mắt — lưu trên máy, không gửi lên máy chủ.
+  const [fontLevel, setFontLevel] = useState(1);
+  const [dim, setDim] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
+  // "Đánh dấu đã học xong bài này" ở thanh đáy: không có API lưu cấp-bài (chỉ có API cấp-mục),
+  // nên ghi trên máy — nút vẫn phản hồi ngay, tiến độ "x/y mục" cộng thêm 1 khi đã đánh dấu.
+  const [lessonMarked, setLessonMarked] = useState(false);
+  const reviewBannerRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
   // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
   // mở (mặc định các mục từ thứ hai trở đi đang thu gọn) trước khi cuộn + tô màu tới đúng đoạn.
-  const [hashTargetItemId] = useState<number | null>(() =>
+  const [hashTargetItemId, setHashTargetItemId] = useState<number | null>(() =>
     typeof window !== "undefined" ? theorySectionItemId(window.location.hash) : null,
   );
-  // Có đường dẫn thẳng vào 1 đoạn lý thuyết → mục "Lý thuyết trọng tâm" phải tự mở trước
-  // khi jumpToTheorySection cuộn + tô màu tới đúng đoạn (xem effect dưới).
-  useEffect(() => {
-    if (hashTargetItemId != null) openSection("ly_thuyet");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hashTargetItemId]);
   // (Tất cả) câu vừa làm sai mang theo từ "Ôn ngay" (đọc 1 lần, service tự xoá khỏi
   // sessionStorage) — hiện thành thẻ dán cố định liệt kê đủ, tô vàng đủ mọi đoạn liên quan,
   // để không quên đang ôn vì sai (những) câu nào — sai nhiều câu ở nhiều đoạn khác nhau vẫn
@@ -474,25 +564,95 @@ function LessonLoader() {
     return SECTION_ORDER.map((kind) => ({ kind, items: items.filter((i) => i.kind === kind) }));
   }, [items]);
 
-  // Đánh dấu mục đang đọc trên thanh điều hướng theo vị trí cuộn.
+  // Học sinh bấm tab → đổi nội dung + ghi hash để link chia sẻ mở đúng tab đó.
+  function selectTab(kind: LessonItemKind) {
+    setActiveTab(kind);
+    writeTabHash(`#muc=${TAB_SLUG[kind]}`);
+  }
+  // Mở tab theo hash: tự mở (không cuộn) khi hash là link từ trang làm đề / "Ôn ngay".
+  // KHÔNG phụ thuộc `items` — dữ liệu tĩnh về sau cũng phải giữ đúng tab đang mở.
   useEffect(() => {
-    const root = mainRef.current;
-    if (!root || !items) return;
-    const targets = Array.from(root.querySelectorAll<HTMLElement>("section[data-kind]"));
-    if (targets.length === 0) return;
-    setActiveSection(targets[0].dataset.kind as LessonItemKind);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActiveSection(visible[0].target.getAttribute("data-kind") as LessonItemKind);
-      },
-      { rootMargin: "-120px 0px -60% 0px", threshold: 0 },
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
-  }, [items]);
+    function applyHash() {
+      const hash = currentHash();
+      setReviewBannerOpen(false);
+      setHashTargetItemId(theorySectionItemId(hash));
+      const parsed = parseTabHash(hash);
+      if (parsed.kind) selectTab(parsed.kind);
+    }
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
+
+  // Khôi phục công cụ đọc đã lưu trên máy + trạng thái "đã học xong bài này". So sánh trước khi
+  // set để không tạo thêm vòng render (và không vi phạm react-hooks/set-state-in-effect).
+  /* eslint-disable react-hooks/set-state-in-effect -- đọc localStorage đúng 1 lần lúc mở bài:
+     không có cách đọc khi SSR, và mỗi nhánh đã so sánh trước khi set nên không sinh vòng render thừa. */
+  useEffect(() => {
+    try {
+      const savedFont = Number(window.localStorage.getItem(FONT_STORE));
+      if (Number.isInteger(savedFont) && savedFont >= 0 && savedFont < FONT_SCALES.length && savedFont !== fontLevel) {
+        setFontLevel(savedFont);
+      }
+      const savedDim = window.localStorage.getItem(DIM_STORE) === "1";
+      if (savedDim !== dim) setDim(savedDim);
+      const savedDone = window.localStorage.getItem(`${LESSON_DONE_STORE}${id}`) === "1";
+      if (savedDone !== lessonMarked) setLessonMarked(savedDone);
+    } catch {}
+    // Chỉ khôi phục 1 lần khi mở bài (theo id) — thêm dim/fontLevel/lessonMarked vào deps sẽ
+    // làm effect chạy lại sau mỗi lần đổi cỡ chữ và ghi đè lựa chọn vừa bấm.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Đổi cỡ chữ thì đổi luôn cỡ chữ gốc của khối nội dung (--lesson-read-size), không nhân
+  // từng phần tử — công thức KaTeX cũng to lên theo.
+  useEffect(() => {
+    bodyRef.current?.style.setProperty("--lesson-read-size", `${FONT_SCALES[fontLevel]}rem`);
+  }, [fontLevel, items, activeTab]);
+
+  // Chỉ ghi lại sau khi đã khôi phục xong — nếu không, lần render đầu (mức mặc định) sẽ ghi đè
+  // lựa chọn đã lưu của học sinh trước khi effect khôi phục kịp chạy.
+  const settingsLoadedRef = useRef(false);
+  useEffect(() => {
+    if (!settingsLoadedRef.current) {
+      settingsLoadedRef.current = true;
+      return;
+    }
+    try {
+      window.localStorage.setItem(FONT_STORE, String(fontLevel));
+    } catch {}
+  }, [fontLevel]);
+
+  useEffect(() => {
+    if (!settingsLoadedRef.current) return;
+    try {
+      if (dim) window.localStorage.setItem(DIM_STORE, "1");
+      else window.localStorage.removeItem(DIM_STORE);
+    } catch {}
+  }, [dim]);
+
+  // Trạng thái toàn màn hình (học sinh thoát bằng Esc thì nút phải trở lại bình thường).
+  useEffect(() => {
+    function onChange() {
+      setFullscreen(document.fullscreenElement === mainRef.current && mainRef.current != null);
+    }
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
+
+  function toggleFullscreen() {
+    const el = mainRef.current;
+    if (!el) return;
+    if (document.fullscreenElement) void document.exitFullscreen();
+    else void el.requestFullscreen?.().catch(() => setFullscreen(false));
+  }
+
+  function markLessonDone() {
+    setLessonMarked(true);
+    try {
+      window.localStorage.setItem(`${LESSON_DONE_STORE}${id}`, "1");
+    } catch {}
+  }
 
   function isDone(item: LessonItem) {
     if (isGradedKind(item.kind)) {
@@ -508,15 +668,15 @@ function LessonLoader() {
     markItemDone(session.user.id, item.id);
   }
 
-  // Đến từ "Tiếp tục học" (resume=1): cuộn tới mục đầu tiên chưa hoàn thành nếu xác định được,
-  // nếu không (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
+  // Đến từ "Tiếp tục học" (resume=1): mở tab chứa mục đầu tiên chưa hoàn thành rồi cuộn tới đó;
+  // không xác định được (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
   useEffect(() => {
     if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
     const firstIncomplete = items.find((item) => !isDone(item));
     if (!firstIncomplete) return;
-    openSection(firstIncomplete.kind);
     const timer = window.setTimeout(() => {
-      document.getElementById(`secondary-stage-${firstIncomplete.kind}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      selectTab(firstIncomplete.kind);
+      scrollToPart(`secondary-stage-${firstIncomplete.kind}`);
     }, 220);
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -530,37 +690,6 @@ function LessonLoader() {
   // reviewContexts (đọc snapshot 1 lần qua ref, KHÔNG qua state trong deps của effect dưới) —
   // đóng thẻ nhắc không được kích lại hiệu ứng cuộn/tô, chỉ đóng UI.
   const reviewContextsRef = useRef(reviewContexts);
-
-  // Cuộn hẳn tới + tô vàng "chính" 1 đoạn — có animation cuộn + tô lại đều đặn trong ~1s đầu vì
-  // 1 lần không đủ: có 1 re-render nào đó ngay sau scrollIntoView (nghi do chính scrollIntoView
-  // làm IntersectionObserver dò "mục đang đọc" đổi activeSection, xem effect scroll-spy ở trên)
-  // dựng lại đúng khối nội dung này — xoá mất class vừa tô VÀ cắt ngang animation cuộn đang
-  // chạy dở, dù `items` không đổi. Tự kiểm bằng MutationObserver thấy đúng vậy, nhưng chưa lần
-  // ra được nguyên nhân gốc trong React/ContentHtml.
-  function jumpToTheorySection(hashId: string) {
-    const el = document.getElementById(hashId);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    el.classList.add("theory-section--highlight");
-    let reapplyCount = 0;
-    const reapply = window.setInterval(() => {
-      const target = document.getElementById(hashId);
-      target?.classList.add("theory-section--highlight");
-      reapplyCount += 1;
-      if (reapplyCount <= 6) target?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 150);
-    window.setTimeout(() => {
-      window.clearInterval(reapply);
-      document.getElementById(hashId)?.classList.remove("theory-section--highlight");
-    }, 2600);
-  }
-
-  // Chỉ tô vàng (không giành quyền cuộn với đoạn "chính") — dùng cho các đoạn PHỤ khi sai
-  // nhiều câu ở nhiều đoạn khác nhau cùng lúc.
-  function highlightTheorySectionOnly(hashId: string) {
-    document.getElementById(hashId)?.classList.add("theory-section--highlight");
-    window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
-  }
 
   // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
   // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
@@ -577,10 +706,14 @@ function LessonLoader() {
     const timer = window.setTimeout(() => {
       if (contexts && contexts.length > 0) {
         const ids = contexts.map((ctx) => `theory-sec-${ctx.itemId}-${ctx.sectionIndex}`);
-        const primaryId = hash.startsWith("theory-sec-") && ids.includes(hash) ? hash : ids[0];
-        ids.forEach((id) => (id === primaryId ? jumpToTheorySection(id) : highlightTheorySectionOnly(id)));
+        let primaryId = ids[0];
+        if (hash.startsWith("theory-sec-") && ids.includes(hash)) primaryId = hash;
+        ids.forEach((hid) => {
+          if (hid === primaryId) flashTheorySection(hid);
+          else highlightTheorySectionOnly(hid);
+        });
       } else if (hash.startsWith("theory-sec-")) {
-        jumpToTheorySection(hash);
+        flashTheorySection(hash);
       }
     }, 200);
     return () => window.clearTimeout(timer);
@@ -616,33 +749,6 @@ function LessonLoader() {
     return `/lop-hoc/bai?${params.toString()}`;
   }
 
-  const pager = (prevLesson || nextLesson) && (
-    <nav className="lesson-pager" aria-label="Điều hướng bài học">
-      {prevLesson ? (
-        <Link href={siblingHref(prevLesson)} className="lesson-pager-link lesson-pager-prev">
-          <ArrowLeft size={16} />
-          <span>
-            <small>Bài trước</small>
-            <strong>{prevLesson.title}</strong>
-          </span>
-        </Link>
-      ) : (
-        <span aria-hidden="true" />
-      )}
-      {nextLesson ? (
-        <Link href={siblingHref(nextLesson)} className="lesson-pager-link lesson-pager-next">
-          <span>
-            <small>Bài tiếp theo</small>
-            <strong>{nextLesson.title}</strong>
-          </span>
-          <ArrowRight size={16} />
-        </Link>
-      ) : (
-        <span aria-hidden="true" />
-      )}
-    </nav>
-  );
-
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
   if (!items) return <LessonSkeleton />;
@@ -663,47 +769,365 @@ function LessonLoader() {
     const examIds = visibleExamIds(kiemTraItems.flatMap((i) => i.exam_ids));
     const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
-      <div className="lesson-shell">
-        <div className="lesson-main lesson-main--single">
-          {backLink}
-          <header className="lesson-head">
-            <p className="lesson-eyebrow">{kindMeta.label}</p>
-            <h1>{title}</h1>
+      <div className="lesson-shell lesson-page">
+        <div className="lesson-layout">
+          <div className="lesson-main lesson-main--single">
+            {backLink}
+            <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
+              <Link href="/lop-hoc">Lớp học</Link>
+              <span aria-hidden>›</span>
+              <Link href={classHref}>{chapterTitle || "Chương"}</Link>
+              <span aria-hidden>›</span>
+              <span className="lesson-breadcrumb-current">{title}</span>
+            </nav>
+            <header className="lesson-head lesson-head--single">
+              <div className="lesson-head-text">
+                <h1>{title}</h1>
+                <div className="lesson-meta">
+                  <span className="lesson-meta-chip">{kindMeta.label}</span>
+                  <span>{examIds.length} đề</span>
+                </div>
+              </div>
+            </header>
             <p className="lesson-lead">Làm bài trực tuyến, hệ thống chấm điểm tự động.</p>
-          </header>
-          <div className="lesson-stack">
-            {examIds.length === 0 ? (
-              <p className="lesson-muted">Đề kiểm tra đang được giảng viên cập nhật.</p>
-            ) : (
-              examIds.map((examId) => {
-                const owningItem = itemByExamId.get(examId);
-                const graded = owningItem ? progress.get(owningItem.id)?.graded : undefined;
-                return (
-                  <ExamRow
-                    key={examId}
-                    examId={examId}
-                    itemId={owningItem?.id ?? null}
-                    exam={examMetas.get(examId)}
-                    score={scores.get(examId)}
-                    loggedIn={!!session}
-                    metaStatus={examMetaStatus}
-                    statusLabel={graded?.label}
-                    passed={graded ? graded.status === "passed" : undefined}
-                  />
-                );
-              })
-            )}
+            <div className="lesson-stack">
+              {examIds.length === 0 ? (
+                <p className="lesson-muted">Đề kiểm tra đang được giảng viên cập nhật.</p>
+              ) : (
+                examIds.map((examId) => {
+                  const owningItem = itemByExamId.get(examId);
+                  const graded = owningItem ? progress.get(owningItem.id)?.graded : undefined;
+                  return (
+                    <ExamRow
+                      key={examId}
+                      examId={examId}
+                      itemId={owningItem?.id ?? null}
+                      exam={examMetas.get(examId)}
+                      score={scores.get(examId)}
+                      loggedIn={!!session}
+                      metaStatus={examMetaStatus}
+                      statusLabel={graded?.label}
+                      passed={graded ? graded.status === "passed" : undefined}
+                    />
+                  );
+                })
+              )}
+            </div>
           </div>
-          {pager}
         </div>
+
+        <nav className="lesson-bottombar" aria-label="Điều hướng bài học">
+          {prevLesson ? (
+            <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
+              <ArrowLeft size={16} aria-hidden />
+              <span>Bài trước</span>
+            </Link>
+          ) : (
+            <span className="lesson-bottom-link is-empty" aria-hidden>
+              <ArrowLeft size={16} />
+              <span>Bài trước</span>
+            </span>
+          )}
+          <span className="lesson-bottom-step">Đề kiểm tra</span>
+          {nextLesson ? (
+            <Link href={siblingHref(nextLesson)} className="lesson-bottom-link lesson-bottom-link--next" title={nextLesson.title}>
+              <span>Bài sau</span>
+              <ArrowRight size={16} aria-hidden />
+            </Link>
+          ) : (
+            <span className="lesson-bottom-link lesson-bottom-link--next is-empty" aria-hidden>
+              <span>Bài sau</span>
+              <ArrowRight size={16} />
+            </span>
+          )}
+        </nav>
       </div>
     );
   }
 
   const visibleSections = sections.filter((s) => s.items.length > 0);
+  const activeSection = visibleSections.find((s) => s.kind === activeTab) ?? visibleSections[0];
+  const activeIndex = activeSection ? visibleSections.findIndex((s) => s.kind === activeSection.kind) : -1;
+  const nextSection = activeIndex >= 0 ? visibleSections[activeIndex + 1] : undefined;
+  const totalTabs = visibleSections.length;
+  const doneTabs = visibleSections.filter((s) => !!session && s.items.every(isDone)).length;
+  const progressDone = Math.min(totalTabs, doneTabs + (lessonMarked ? 1 : 0));
+
+  const assignmentItem = items.find((i) => i.kind === "bai_tap_ve_nha" && i.due_at);
+  const itemCount = items.length;
+  const lessonTypeLabel = LESSON_KIND_META[lessonKind]?.label ?? "Bài học";
+  const stepLabel = lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
+
+  // Mục lục bài này = các h2/h3 có id trong TAB đang mở (heading do nội dung soạn sẵn sinh ra).
+  // Cột phải dùng; ở bước này chỉ cần activeHeading được cập nhật.
+
+  function selectTabAndScroll(kind: LessonItemKind) {
+    const target = kind === activeTab ? bodyRef.current : null;
+    const firstItemId = target?.querySelector<HTMLElement>("[data-item]")?.dataset.item ?? null;
+    selectTab(kind);
+    window.setTimeout(() => scrollToPart(firstItemId), 60);
+  }
+
+  /** Nội dung của đúng tab đang mở — tách riêng vì commit sau còn dùng lại ở ngăn kéo. */
+  function renderSectionItems(section: { kind: LessonItemKind; items: LessonItem[] }) {
+    const plain = section.items.length === 1;
+    return section.items.map((item, itemIndex) => {
+      // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
+      // chỉ lặp lại ý tiêu đề phần "N. <Tên phần>" ngay trên, ẩn cho đỡ trùng.
+      // Phụ đề (hạn nộp, số câu…) vẫn hiện bình thường.
+      if (item.kind === "video")
+        return (
+          <VideoBlock
+            key={item.id}
+            item={item}
+            done={done.has(item.id)}
+            loggedIn={!!session}
+            onDone={() => markDone(item)}
+          />
+        );
+
+      if (item.kind === "ly_thuyet")
+        return (
+          <div key={item.id} className="lesson-stack" data-item={item.id}>
+            <TheoryBlock
+              item={item}
+              defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
+              hideTitle={plain}
+              done={done.has(item.id)}
+              loggedIn={!!session}
+              onDone={() => markDone(item)}
+            />
+            {session && item.exam_ids.length > 0 && (
+              <TheoryQuizBlock
+                examId={item.exam_ids[0]}
+                itemId={item.id}
+                status={progress.get(item.id)?.theory}
+              />
+            )}
+          </div>
+        );
+
+      if (isGradedKind(item.kind)) {
+        const gradedExamIds = visibleExamIds(item.exam_ids);
+        return (
+          <div key={item.id} className="lesson-block" data-item={item.id}>
+            {(!plain || item.due_at) && (
+              <div className="lesson-block-head">
+                {!plain && <p className="lesson-block-title">{item.title}</p>}
+                {item.due_at && <p className="lesson-block-sub">Hạn nộp: {formatDue(item.due_at)}</p>}
+              </div>
+            )}
+            {gradedExamIds.length === 0 ? (
+              <p className="lesson-muted">Chưa gắn đề</p>
+            ) : (
+              <div className="lesson-stack">
+                {gradedExamIds.map((examId) => {
+                  const graded = progress.get(item.id)?.graded;
+                  return (
+                    <ExamRow
+                      key={examId}
+                      examId={examId}
+                      itemId={item.id}
+                      exam={examMetas.get(examId)}
+                      score={scores.get(examId)}
+                      loggedIn={!!session}
+                      metaStatus={examMetaStatus}
+                      statusLabel={graded?.label}
+                      passed={graded ? graded.status === "passed" : undefined}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      }
+
+      // bai_tap_mau / luyen_tap: lưới từng câu
+      return (
+        <div key={item.id} className="lesson-block" data-item={item.id}>
+          {(!plain || item.subtitle) && (
+            <div className="lesson-block-head">
+              {!plain && <p className="lesson-block-title">{item.title}</p>}
+              {item.subtitle && <p className="lesson-block-sub">{item.subtitle}</p>}
+            </div>
+          )}
+          {item.kind === "bai_tap_mau" ? (
+            <>
+              {item.exam_ids.length > 0 && <SampleQuestionsGrid examIds={item.exam_ids} color={ACCENT} />}
+              <WorkedQuestionsGrid questions={item.questions} color={ACCENT} />
+            </>
+          ) : (
+            <PracticeSession
+              examIds={item.exam_ids}
+              lessonId={id}
+              itemId={item.id}
+              passScore={item.practice_pass_score}
+              color={ACCENT}
+            />
+          )}
+          {session && (
+            <div className="lesson-block-foot">
+              <button
+                type="button"
+                className={`lesson-done ${done.has(item.id) ? "is-done" : ""}`}
+                onClick={() => markDone(item)}
+                disabled={done.has(item.id)}
+              >
+                <Check size={14} /> {done.has(item.id) ? "Đã làm" : "Đánh dấu đã làm"}
+              </button>
+            </div>
+          )}
+        </div>
+      );
+    });
+  }
+
+  /** 6 tab ngang: badge số mục, dấu ✓ khi xong, tab đang mở gạch chân màu nhấn. */
+  const tabNav = (extraClass: string) => (
+    <nav className={`lesson-tabs ${extraClass}`} aria-label="Các mục của bài học">
+      <ol role="tablist">
+        {visibleSections.map((section) => {
+          const complete = !!session && section.items.every(isDone);
+          return (
+            <li key={section.kind}>
+              <button
+                type="button"
+                role="tab"
+                id={`lesson-tab-${section.kind}`}
+                className={`${section.kind === activeTab ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
+                aria-selected={section.kind === activeTab}
+                aria-controls={`secondary-stage-${section.kind}`}
+                onClick={() => selectTabAndScroll(section.kind)}
+              >
+                {complete && <Check size={13} aria-hidden />}
+                <span>{TAB_LABEL[section.kind]}</span>
+                <i>{section.items.length}</i>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+
+  const readToolButton = (
+    <button
+      type="button"
+      className={`lesson-tool-toggle ${dim ? "is-on" : ""}`}
+      onClick={() => setToolsOpen((o) => !o)}
+      aria-expanded={toolsOpen}
+      aria-label="Công cụ đọc: cỡ chữ và chế độ dịu mắt"
+    >
+      Aa
+    </button>
+  );
+
+  const readTools = (
+    <>
+      <button
+        type="button"
+        className={`lesson-tool ${dim ? "is-on" : ""}`}
+        onClick={() => setDim((d) => !d)}
+        aria-pressed={dim}
+        title="Nền dịu mắt, chữ đậm hơn — đọc lâu đỡ mỏi"
+      >
+        <Eye size={14} aria-hidden />
+        <span>Dịu mắt</span>
+      </button>
+      <div className="lesson-fonttools">
+        <button
+          type="button"
+          onClick={() => setFontLevel((v) => Math.max(0, v - 1))}
+          disabled={fontLevel === 0}
+          aria-label="Cỡ chữ nhỏ hơn"
+        >
+          A−
+        </button>
+        <button
+          type="button"
+          onClick={() => setFontLevel((v) => Math.min(FONT_SCALES.length - 1, v + 1))}
+          disabled={fontLevel === FONT_SCALES.length - 1}
+          aria-label="Cỡ chữ lớn hơn"
+        >
+          A+
+        </button>
+      </div>
+      <button
+        type="button"
+        className={`lesson-tool ${fullscreen ? "is-on" : ""}`}
+        onClick={toggleFullscreen}
+        aria-pressed={fullscreen}
+        title="Toàn màn hình"
+      >
+        <Maximize2 size={14} aria-hidden />
+        <span className="lesson-tool-text">Toàn màn hình</span>
+      </button>
+    </>
+  );
+
+  const reviewBanner = reviewContexts && reviewContexts.length > 0 && (
+    <div ref={reviewBannerRef} className={`lesson-review-banner ${reviewBannerOpen ? "is-open" : ""}`} role="note">
+      <div className="lesson-review-banner-head">
+        <button
+          type="button"
+          className="lesson-review-banner-toggle"
+          onClick={() => setReviewBannerOpen((o) => !o)}
+          aria-expanded={reviewBannerOpen}
+        >
+          <span>
+            {reviewContexts.length === 1
+              ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
+              : `${reviewContexts.length} câu em làm sai`}{" "}
+            — {reviewBannerOpen ? "bấm để thu gọn" : "bấm vào đây để xem danh sách"}
+          </span>
+          <ChevronDown size={15} className={reviewBannerOpen ? "rotate-180" : ""} />
+        </button>
+        <button type="button" onClick={() => setReviewContexts(null)} aria-label="Đóng">
+          <X size={15} />
+        </button>
+      </div>
+      {reviewBannerOpen && (
+        <div className="lesson-review-banner-list">
+          {reviewContexts.map((ctx, i) => (
+            <div key={i} className="lesson-review-banner-item">
+              <div className="lesson-review-banner-item-head">
+                <span>Câu {ctx.questionIndex}</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setReviewBannerOpen(false);
+                    selectTab("ly_thuyet");
+                    window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
+                  }}
+                >
+                  ↑ Xem đoạn này
+                </button>
+              </div>
+              <p className="lesson-review-banner-q">
+                <ContentHtml html={ctx.questionHtml} />
+              </p>
+              {ctx.correctHtml && (
+                <p className="lesson-review-banner-answer is-correct">
+                  <span>Đáp án đúng: </span>
+                  <ContentHtml html={ctx.correctHtml} />
+                </p>
+              )}
+              {ctx.pickedHtml && (
+                <p className="lesson-review-banner-answer is-wrong">
+                  <span>Em đã chọn: </span>
+                  <ContentHtml html={ctx.pickedHtml} />
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
-    <div className="lesson-shell">
+    <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""}`}>
       <div className="lesson-layout">
         <aside className="lesson-nav" aria-label="Các phần của bài học">
           {backLink}
@@ -715,16 +1139,11 @@ function LessonLoader() {
               return (
                 <li key={kind}>
                   <a
-                    href={`#secondary-stage-${kind}`}
-                    className={`${activeSection === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
+                    href={`#muc=${TAB_SLUG[kind]}`}
+                    className={`${activeTab === kind ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      openSection(kind);
-                      window.setTimeout(() => {
-                        document
-                          .getElementById(`secondary-stage-${kind}`)
-                          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }, 60);
+                      selectTabAndScroll(kind);
                     }}
                   >
                     <i>{complete ? <Check size={12} /> : number}</i>
@@ -770,226 +1189,131 @@ function LessonLoader() {
 
         <div className="lesson-main" ref={mainRef}>
           <header className="lesson-head">
-            <p className="lesson-eyebrow">{chapterTitle}</p>
-            <h1>{title}</h1>
+            <button type="button" className="lesson-head-back" onClick={() => window.history.back()} aria-label="Quay lại">
+              <ArrowLeft size={16} aria-hidden />
+            </button>
+            <div className="lesson-head-text">
+              <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
+                <span className="lesson-crumb-class">
+                  {classSlug ? <Link href="/lop-hoc">Lớp học</Link> : <span>Lớp học</span>}
+                  <span aria-hidden className="lesson-crumb-sep">›</span>
+                </span>
+                <Link href={classHref} className="lesson-crumb-chapter">
+                  {chapterTitle || "Chương"}
+                </Link>
+                <span aria-hidden className="lesson-crumb-sep">›</span>
+                <span className="lesson-breadcrumb-current">{title}</span>
+              </nav>
+              <h1>{title}</h1>
+              <div className="lesson-meta">
+                <span className="lesson-meta-chip">{lessonTypeLabel}</span>
+                <span>
+                  {itemCount} mục{totalTabs > 0 ? ` · ${totalTabs} phần` : ""}
+                </span>
+                {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
+                {session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed" && (
+                  <span className="lesson-meta-ok">
+                    <Check size={13} aria-hidden /> Đã xem lý thuyết
+                  </span>
+                )}
+              </div>
+            </div>
+            {readToolButton}
+            <div className={`lesson-tools ${toolsOpen ? "is-open" : ""}`}>{readTools}</div>
           </header>
 
-          {reviewContexts && reviewContexts.length > 0 && (
-            <div className={`lesson-review-banner ${reviewBannerOpen ? "is-open" : ""}`} role="note">
-              <div className="lesson-review-banner-head">
-                <button
-                  type="button"
-                  className="lesson-review-banner-toggle"
-                  onClick={() => setReviewBannerOpen((o) => !o)}
-                  aria-expanded={reviewBannerOpen}
-                >
-                  <span>
-                    {reviewContexts.length === 1
-                      ? `Câu ${reviewContexts[0].questionIndex} em làm sai`
-                      : `${reviewContexts.length} câu em làm sai`}{" "}
-                    — {reviewBannerOpen ? "bấm để thu gọn" : "bấm vào đây để xem danh sách"}
-                  </span>
-                  <ChevronDown size={15} className={reviewBannerOpen ? "rotate-180" : ""} />
-                </button>
-                <button type="button" onClick={() => setReviewContexts(null)} aria-label="Đóng">
-                  <X size={15} />
-                </button>
-              </div>
-              {reviewBannerOpen && (
-              <div className="lesson-review-banner-list">
-                {reviewContexts.map((ctx, i) => (
-                  <div key={i} className="lesson-review-banner-item">
-                    <div className="lesson-review-banner-item-head">
-                      <span>Câu {ctx.questionIndex}</span>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setReviewBannerOpen(false);
-                          window.setTimeout(() => jumpToTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 50);
-                        }}
-                      >
-                        ↑ Xem đoạn này
-                      </button>
-                    </div>
-                    <p className="lesson-review-banner-q">
-                      <ContentHtml html={ctx.questionHtml} />
-                    </p>
-                    {ctx.correctHtml && (
-                      <p className="lesson-review-banner-answer is-correct">
-                        <span>Đáp án đúng: </span>
-                        <ContentHtml html={ctx.correctHtml} />
-                      </p>
-                    )}
-                    {ctx.pickedHtml && (
-                      <p className="lesson-review-banner-answer is-wrong">
-                        <span>Em đã chọn: </span>
-                        <ContentHtml html={ctx.pickedHtml} />
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-              )}
+          {/* Header + thanh tiến độ + 6 tab nằm chung một khối: cả khối dính dưới navbar, mà
+              header vẫn chỉ cao bằng nội dung (không phình ra che bài). */}
+          <div className="lesson-content">
+            <div className="lesson-progressbar" aria-label={`Đã học ${progressDone} trên ${totalTabs} mục`}>
+              <span style={{ width: `${totalTabs ? Math.round((progressDone / totalTabs) * 100) : 0}%` }} />
+              <small>
+                Đã học {progressDone}/{totalTabs} mục
+              </small>
             </div>
-          )}
 
-          {visibleSections.length === 0 && (
-            <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>
-          )}
+            {tabNav("lesson-tabs--mobile")}
+            {tabNav("lesson-tabs--desktop")}
 
-          {visibleSections.map((section) => {
-            const meta = SECTION_META[section.kind];
-            const number = SECTION_ORDER.indexOf(section.kind) + 1;
-            const isOpen = openSections.has(section.kind);
-            const complete = !!session && section.items.every(isDone);
-            return (
+            <div className="lesson-body" ref={bodyRef}>
+            {reviewBanner}
+
+            {visibleSections.length === 0 && <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>}
+
+            {activeSection && (
               <section
-                key={section.kind}
-                id={`secondary-stage-${section.kind}`}
-                data-kind={section.kind}
+                key={activeSection.kind}
+                id={`secondary-stage-${activeSection.kind}`}
+                data-kind={activeSection.kind}
                 className="lesson-section"
+                role="tabpanel"
+                aria-labelledby={`lesson-tab-${activeSection.kind}`}
               >
-                <button
-                  type="button"
-                  className="lesson-section-toggle"
-                  onClick={() => toggleSection(section.kind)}
-                  aria-expanded={isOpen}
-                >
-                  <h2>
-                    <span>{complete ? <Check size={13} /> : number}</span>
-                    {meta.label}
-                  </h2>
-                  <ChevronDown size={18} className={isOpen ? "rotate-180" : ""} />
-                </button>
-                {isOpen && (
-                <div className="lesson-stack">
-                  {section.items.map((item, itemIndex) => {
-                    // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
-                    // chỉ lặp lại ý tiêu đề phần "N. <Tên phần>" ngay trên, ẩn cho đỡ trùng.
-                    // Phụ đề (hạn nộp, số câu…) vẫn hiện bình thường.
-                    const plain = section.items.length === 1;
-                    if (item.kind === "video")
-                      return (
-                        <VideoBlock
-                          key={item.id}
-                          item={item}
-                          done={done.has(item.id)}
-                          loggedIn={!!session}
-                          onDone={() => markDone(item)}
-                        />
-                      );
-
-                    if (item.kind === "ly_thuyet")
-                      return (
-                        <div key={item.id} className="lesson-stack">
-                          <TheoryBlock
-                            item={item}
-                            defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
-                            hideTitle={plain}
-                            done={done.has(item.id)}
-                            loggedIn={!!session}
-                            onDone={() => markDone(item)}
-                          />
-                          {session && item.exam_ids.length > 0 && (
-                            <TheoryQuizBlock
-                              examId={item.exam_ids[0]}
-                              itemId={item.id}
-                              status={progress.get(item.id)?.theory}
-                            />
-                          )}
-                        </div>
-                      );
-
-                    if (isGradedKind(item.kind)) {
-                      const gradedExamIds = visibleExamIds(item.exam_ids);
-                      return (
-                        <div key={item.id} className="lesson-block">
-                          {(!plain || item.due_at) && (
-                            <div className="lesson-block-head">
-                              {!plain && <p className="lesson-block-title">{item.title}</p>}
-                              {item.due_at && (
-                                <p className="lesson-block-sub">Hạn nộp: {formatDue(item.due_at)}</p>
-                              )}
-                            </div>
-                          )}
-                          {gradedExamIds.length === 0 ? (
-                            <p className="lesson-muted">Chưa gắn đề</p>
-                          ) : (
-                            <div className="lesson-stack">
-                              {gradedExamIds.map((examId) => {
-                                const graded = progress.get(item.id)?.graded;
-                                return (
-                                  <ExamRow
-                                    key={examId}
-                                    examId={examId}
-                                    itemId={item.id}
-                                    exam={examMetas.get(examId)}
-                                    score={scores.get(examId)}
-                                    loggedIn={!!session}
-                                    metaStatus={examMetaStatus}
-                                    statusLabel={graded?.label}
-                                    passed={graded ? graded.status === "passed" : undefined}
-                                  />
-                                );
-                              })}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    }
-
-                    // bai_tap_mau / luyen_tap: lưới từng câu
-                    return (
-                      <div key={item.id} className="lesson-block">
-                        {(!plain || item.subtitle) && (
-                          <div className="lesson-block-head">
-                            {!plain && <p className="lesson-block-title">{item.title}</p>}
-                            {item.subtitle && <p className="lesson-block-sub">{item.subtitle}</p>}
-                          </div>
-                        )}
-                        {item.kind === "bai_tap_mau" ? (
-                          <>
-                            {item.exam_ids.length > 0 && (
-                              <SampleQuestionsGrid examIds={item.exam_ids} color={ACCENT} />
-                            )}
-                            <WorkedQuestionsGrid questions={item.questions} color={ACCENT} />
-                          </>
-                        ) : (
-                          <PracticeSession
-                            examIds={item.exam_ids}
-                            lessonId={id}
-                            itemId={item.id}
-                            passScore={item.practice_pass_score}
-                            color={ACCENT}
-                          />
-                        )}
-                        {session && (
-                          <div className="lesson-block-foot">
-                            <button
-                              type="button"
-                              className={`lesson-done ${done.has(item.id) ? "is-done" : ""}`}
-                              onClick={() => markDone(item)}
-                              disabled={done.has(item.id)}
-                            >
-                              <Check size={14} /> {done.has(item.id) ? "Đã làm" : "Đánh dấu đã làm"}
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                <div className="lesson-stack">{renderSectionItems(activeSection)}</div>
+                <div className="lesson-tabfoot">
+                  {nextSection ? (
+                    <button type="button" className="lesson-next" onClick={() => selectTabAndScroll(nextSection.kind)}>
+                      Mục tiếp theo: {TAB_LABEL[nextSection.kind]} <ArrowRight size={15} aria-hidden />
+                    </button>
+                  ) : (
+                    <span className="lesson-tabfoot-end">
+                      <Check size={15} aria-hidden /> Đây là mục cuối của bài
+                    </span>
+                  )}
                 </div>
-                )}
               </section>
-            );
-          })}
-          {items && items.length > 0 && (
-            <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
-          )}
+            )}
 
-          {pager}
+            {items && items.length > 0 && (
+              <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+            )}
+            </div>
+          </div>
         </div>
+
+        <aside className="lesson-side" aria-label="Dụng cụ học bài" />
       </div>
+
+      <nav className="lesson-bottombar" aria-label="Điều hướng bài học">
+        {prevLesson ? (
+          <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
+            <ArrowLeft size={16} aria-hidden />
+            <span>Bài trước</span>
+          </Link>
+        ) : (
+          <span className="lesson-bottom-link is-empty" aria-hidden>
+            <ArrowLeft size={16} />
+            <span>Bài trước</span>
+          </span>
+        )}
+
+        <button
+          type="button"
+          className={`lesson-bottom-done ${lessonMarked ? "is-done" : ""}`}
+          onClick={markLessonDone}
+          disabled={lessonMarked}
+          aria-pressed={lessonMarked}
+        >
+          {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
+          <span>{lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong"}</span>
+        </button>
+
+        <span className="lesson-bottom-step" aria-live="polite">
+          {stepLabel}
+        </span>
+
+        {nextLesson ? (
+          <Link href={siblingHref(nextLesson)} className="lesson-bottom-link lesson-bottom-link--next" title={nextLesson.title}>
+            <span>Bài sau</span>
+            <ArrowRight size={16} aria-hidden />
+          </Link>
+        ) : (
+          <span className="lesson-bottom-link lesson-bottom-link--next is-empty" aria-hidden>
+            <span>Bài sau</span>
+            <ArrowRight size={16} />
+          </span>
+        )}
+      </nav>
     </div>
   );
 }
