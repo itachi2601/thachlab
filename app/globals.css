@@ -738,6 +738,7 @@ html[data-theme="light"] .lesson-meta-ok { color: #047857; }
 .lesson-page.is-dim .lesson-body :is(h1, h2, h3, h4, .lesson-block-title, .lesson-prose, .lesson-prose strong) { color: #33291a !important; }
 .lesson-page.is-dim .lesson-body :is(p, li, td, .lesson-block-sub, .lesson-muted) { color: #6b5a3e; }
 
+.lesson-body-loading { margin: 0; color: var(--color-muted); font-size: 13.5px; }
 /* Thanh tiến độ 3px "đã học x/6 mục" — dính ngay dưới header trên điện thoại. */
 .lesson-progressbar { position: relative; height: 3px; margin: 14px 0 0; border-radius: 3px; background: var(--lesson-line); }
 .lesson-progressbar > span { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--lesson-accent); transition: width .3s; }

@@ -491,6 +491,15 @@ function LessonLoader() {
   const [tocQuery, setTocQuery] = useState("");
   /** Ghi chú của em — chỉ lưu trên máy, khoá thachlab-note-<lessonId>. */
   const [note, setNote] = useState("");
+  /**
+   * Nội dung của tab đang mở chỉ render SAU lần vẽ đầu (1 frame + requestIdleCallback), không
+   * nằm trong lần render đầu tiên. Bối cảnh: bản accordion cũ để tất cả 6 mục ĐÓNG nên lúc tải
+   * đầu không render công thức nào; tab mặc định "Lý thuyết" thì render 19 nút KaTeX ngay lúc
+   * tải (đo được FCP 2,4s → 3,6s, LCP 11,8s → 14,0s, Lighthouse mobile 72 → 67 trên máy local).
+   * Hoãn sang sau lần vẽ đầu giữ được FCP/LCP của khung trang; KaTeX vẫn nạp ĐỒNG BỘ (không
+   * lazy, không chunk mới) — chỉ thời điểm render nội dung đổi. Đổi tab sau đó hiện ngay.
+   */
+  const [bodyReady, setBodyReady] = useState(false);
   /** Ngăn kéo "Nội dung khoá" trên điện thoại: gộp cột trái + cột phải vào một bottom sheet. */
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -648,6 +657,23 @@ function LessonLoader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   /* eslint-enable react-hooks/set-state-in-effect */
+
+  useEffect(() => {
+    let idle: number | undefined;
+    const timer = window.setTimeout(() => {
+      if (typeof window.requestIdleCallback === "function") {
+        idle = window.requestIdleCallback(() => setBodyReady(true), { timeout: 300 });
+      } else {
+        setBodyReady(true);
+      }
+    }, 0);
+    return () => {
+      window.clearTimeout(timer);
+      if (idle !== undefined) window.cancelIdleCallback(idle);
+    };
+    // Chỉ 1 lần cho mỗi bộ dữ liệu: sau lần vẽ đầu thì đổi tab hiện nội dung ngay (đúng cảm giác
+  // "một cú bấm là thấy"), không phải chờ thêm nhịp nào nữa.
+  }, [items]);
 
   // Đổi cỡ chữ thì đổi cỡ chữ gốc của khối nội dung (--lesson-read-scale), không nhân từng
   // phần tử — công thức KaTeX (đơn vị em) cũng to lên theo.
@@ -1621,7 +1647,9 @@ function LessonLoader() {
 
             {visibleSections.length === 0 && <p className="lesson-muted">Học liệu đang được giảng viên cập nhật.</p>}
 
-            {activeSection && (
+            {!bodyReady && <p className="lesson-body-loading">Đang mở nội dung…</p>}
+
+            {bodyReady && activeSection && (
               <section
                 key={activeSection.kind}
                 id={`secondary-stage-${activeSection.kind}`}
