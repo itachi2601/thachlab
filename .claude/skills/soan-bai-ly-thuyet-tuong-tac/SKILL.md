@@ -1,6 +1,6 @@
 ---
 name: soan-bai-ly-thuyet-tuong-tac
-description: Soạn một bài LÝ THUYẾT có tương tác cho thachlab theo phong cách thầy Thạch — luôn mở bằng ví dụ đời thường, có câu dự đoán, mục bấm-mở, trắc nghiệm tự chấm ngay trong bài, hình SVG tự vẽ (không ảnh nặng) — rồi đóng gói thành theory.html + bundle.json để đăng. Dùng khi thầy nói "soạn bài lý thuyết tương tác", "tạo bài lý thuyết có ví dụ thực tế", "làm bài học mới cho chương X", "vẽ hình cho bài lý thuyết". Khác dang-bai-hoc-thachlab (đăng .tex có sẵn) và soan-quiz-ly-thuyet (bộ 20 câu Kiểm tra nhanh cuối bài). Soạn + vẽ + kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
+description: Soạn một bài LÝ THUYẾT có tương tác cho thachlab theo cách dạy của thầy Thạch, dùng để thầy chiếu giảng trực tiếp và học sinh tự học lại — mở bằng ví dụ đời thường và câu dự đoán; mỗi kiến thức kèm ví dụ/thí nghiệm; có mục "Trả bài" lý thuyết/công thức trước bài tập; bài toán mẫu đọc đề từng câu (dữ liệu và kiến thức liên quan); trắc nghiệm tự chấm ngay trong bài; hình SVG tự vẽ — rồi ghi thí nghiệm vào kho dữ liệu cho giai đoạn mô phỏng và đóng gói theory.html + bundle.json. Dùng khi thầy nói "soạn bài lý thuyết tương tác", "tạo bài lý thuyết có ví dụ thực tế", "làm bài học mới cho chương X", "vẽ hình cho bài lý thuyết", "ghi thí nghiệm của bài". Khác dang-bai-hoc-thachlab (đăng .tex có sẵn) và soan-quiz-ly-thuyet (bộ 20 câu Kiểm tra nhanh cuối bài). Soạn, vẽ, kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
 ---
 
 # Soạn bài lý thuyết tương tác
@@ -14,8 +14,15 @@ Ba thói quen dạy của thầy, bài nào cũng phải có đủ:
 2. **Trả bài trước khi giải bài tập.** Một mục `<h3>` "Trả bài" gồm 4–6 câu hỏi nhớ lại (phát biểu, công thức + ký hiệu, đặc điểm, điểm dễ nhầm, công thức suy ra từ đâu), mỗi câu một `<details>` để học sinh tự đọc to rồi mới bấm xem đáp án. Mục này đứng **trước** bài toán mẫu.
 3. **Bài toán mẫu: đọc đề đến đâu, nêu dữ liệu và kiến thức đến đó.** Chép đề trong hộp "Đề bài", rồi bảng ba cột **Câu trong đề | Dữ liệu | Kiến thức liên quan** (`.tl-table--data`), mỗi hàng một câu/cụm của đề. Sau bảng mới đến lời giải (ẩn trong `<details>`, các bước đánh số bằng `.tl-steps`), cuối cùng bước kiểm tra kết quả.
 
-Bài mẫu chuẩn (đã làm, đọc để bắt chước nhịp): `content/lesson-samples/l10-dinh-luat-3-newton/` (`theory.html`, `bundle.json`, `build_figs.py`).
+Bài mẫu chuẩn (đọc để bắt chước nhịp): `assets/mau-bai-dl3-newton/` trong skill, bản đầy đủ ở `content/lesson-samples/l10-dinh-luat-3-newton/` của repo.
 Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — mọi quy ước dưới đây rút từ lần làm đó, sẽ chỉnh khi thầy phản hồi (xem mục cuối).
+
+## Đóng gói và phụ thuộc
+
+- Skill sống trong repo `thachlab` tại `.claude/skills/soan-bai-ly-thuyet-tuong-tac/` và có file cài đặt `dist-skills/soan-bai-ly-thuyet-tuong-tac.skill` (zip, mở bằng skill-creator hoặc kéo vào Library). Đồng bộ ra Library plugin + `~/.codex` trên Mac: `bash scripts/sync-skill.sh soan-bai-ly-thuyet-tuong-tac`.
+- Đi kèm: `assets/tl-components.css` (bản sao CSS linh kiện `.tl-*`; bản chuẩn ở cuối `app/globals.css`), `assets/mau-bai-dl3-newton/` (bài mẫu đầy đủ + 2 mục dữ liệu thí nghiệm), `references/`, `scripts/`.
+- Cần chạy từ **gốc repo thachlab**: `validate_bundle.mts` import `services/lesson-import.ts`; `thi_nghiem.py` ghi vào `content/thi-nghiem/`; `preview.mjs` cần `node_modules/katex` và Chromium (`/opt/pw-browsers`). Ngoài repo chỉ đọc được SKILL.md, references, assets và `svg_lib.py`/`lint_theory.py`.
+- Đăng DB không làm được trên cloud (Supabase bị chặn): luôn dừng ở `bundle.json` rồi đưa lệnh cho thầy chạy trên Mac.
 
 ## Quy trình
 
@@ -25,7 +32,7 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
 4. **Vẽ hình** 2–4 hình SVG theo `references/hinh-svg.md`, dùng `scripts/svg_lib.py` (sinh bằng script, chèn idempotent như `build_figs.py` của bài mẫu).
 4b. **Ghi thí nghiệm vào kho dữ liệu** `content/thi-nghiem/` (một file JSON cho mỗi thí nghiệm hoặc ví dụ: dụng cụ, các bước, tham số + khoảng giá trị, phương trình, số liệu mẫu, hiểu lầm hay gặp, gợi ý mô phỏng). Đây là dữ liệu nguồn cho giai đoạn **làm mô phỏng** tiếp theo, nên không để thí nghiệm chỉ nằm trong HTML. Gắn `data-exp="<id>"` lên hộp `.tl-box--exp` / `<figure>` tương ứng. Quy ước đầy đủ: `content/thi-nghiem/README.md`.
 5. **Kiểm.** `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_theory.py <theory.html>` (lỗi cấu trúc) → `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py <theory.html>` (kiểm kho thí nghiệm + liên kết `data-exp`, sinh `index.json`) → `node .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/preview.mjs <theory.html> <thư-mục-ra>` (chụp 375px từng hình + tự bấm mọi đáp án kiểm phản hồi). **Phải xem ảnh bằng mắt** — nhãn chồng chữ/cắt biên không script nào bắt được.
-6. **Đóng gói `bundle.json`** (schema `thachlab.lesson-bundle/v1`): `theory_html` + `worked_examples: []` + `exam` gồm các câu tự kiểm tra trong bài (validate bắt buộc ≥1 câu). Chạy `validateBundle` (mẫu: `scripts/_v.mts` trong lịch sử — import `validateBundle` từ `@/services/lesson-import`, đọc bundle, in kết quả; xoá file tạm sau khi chạy). Phải `ok: true`.
+6. **Đóng gói `bundle.json`** (schema `thachlab.lesson-bundle/v1`): `theory_html` + `worked_examples: []` + `exam` gồm các câu tự kiểm tra trong bài (validate bắt buộc ≥1 câu). Kiểm: `npx tsx .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/validate_bundle.mts <bundle.json>` (dùng đúng `validateBundle` của trang nhập bài). Phải `ok: true`.
 7. **Báo thầy** (ngắn): bài gì, hình nào ở đâu, đã kiểm gì. Nhắc lệnh trên Mac:
    ```
    npx tsx scripts/upload-lesson.mts <bundle.json> --lesson <id>   # hoặc dán theory.html vào /quan-tri/bai-hoc → Soạn mục

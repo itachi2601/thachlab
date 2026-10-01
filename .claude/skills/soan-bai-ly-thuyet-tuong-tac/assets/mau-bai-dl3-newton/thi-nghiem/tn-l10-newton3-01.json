@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Định luật III Newton",
+ "lesson_id": 61,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-3-newton/theory.html",
+ "id": "tn-l10-newton3-01",
+ "ten": "Hai lực kế kéo nhau",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton3.cung_luc",
+  "newton3.bang_nhau_nguoc_chieu",
+  "newton3.khac_vat"
+ ],
+ "muc_tieu": "Chứng tỏ lực và phản lực luôn bằng nhau và đổi cùng lúc, dù kéo nhẹ hay mạnh, nhanh hay chậm.",
+ "dung_cu": [
+  {
+   "ten": "Lực kế lò xo 5 N",
+   "so_luong": 2,
+   "ghi_chu": "cùng loại, đã chỉnh số 0 khi nằm ngang"
+  },
+  {
+   "ten": "Dây móc hoặc khuyên",
+   "so_luong": 1,
+   "ghi_chu": "nối hai đầu móc"
+  },
+  {
+   "ten": "Mặt bàn phẳng",
+   "so_luong": 1,
+   "ghi_chu": "đặt lực kế nằm ngang"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Móc hai lực kế vào nhau, đặt nằm ngang trên bàn.",
+   "Một bạn giữ cố định đầu lực kế 1.",
+   "Bạn kia kéo đầu lực kế 2 nhẹ, rồi mạnh hơn, rồi kéo nhanh/chậm."
+  ],
+  "quan_sat": [
+   "Số chỉ hai lực kế luôn bằng nhau ở mọi lần kéo.",
+   "Hai số chỉ đổi cùng một lúc."
+  ],
+  "rut_ra": [
+   "Lực và phản lực bằng nhau về độ lớn, xuất hiện đồng thời.",
+   "Mỗi lực kế chỉ đo lực đặt lên chính nó (hai lực đặt vào hai vật khác nhau)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F_keo",
+   "ten": "Lực người kéo (điều chỉnh)",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "F1",
+   "ten": "Số chỉ lực kế 1",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "F2",
+   "ten": "Số chỉ lực kế 2",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F1 = F2 = F_keo"
+  ],
+  "gia_thiet": [
+   "bỏ qua khối lượng lực kế",
+   "kéo chậm, hệ cân bằng tĩnh",
+   "ma sát bàn không đáng kể"
+  ],
+  "ghi_chu": "Khi kéo giật, lực kế chỉ dao động quanh giá trị cân bằng; mô phỏng nên có chế độ kéo chậm."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F_keo (N)",
+   "F1 (N)",
+   "F2 (N)"
+  ],
+  "hang": [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    2.0,
+    2.0,
+    2.0
+   ],
+   [
+    3.0,
+    3.0,
+    3.1
+   ],
+   [
+    4.0,
+    4.1,
+    4.0
+   ],
+   [
+    5.0,
+    5.0,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, sai khác 0,1 N do đọc số."
+ },
+ "ket_qua_ky_vong": "F1 = F2 trong sai số đọc ±0,1 N ở mọi giá trị F_keo.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng người kéo mạnh hơn thì lực kế phía người kéo chỉ lớn hơn.",
+  "Cho rằng đầu bị giữ cố định thì không có lực tác dụng."
+ ],
+ "sai_so_thuong_gap": [
+  "Lực kế chưa chỉnh số 0.",
+  "Đọc số lệch góc (sai số thị sai).",
+  "Kéo giật làm kim dao động."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "dieu_khien": [
+   "F_keo (thanh trượt 0–5 N)",
+   "chế độ kéo: chậm/giật"
+  ],
+  "dau_ra": [
+   "hai kim lực kế",
+   "hai mũi tên lực ngược chiều, dài bằng nhau",
+   "bảng ghi số liệu từng lần kéo"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Học sinh dự đoán số chỉ lực kế 2 trước khi kéo, mô phỏng hiển thị kết quả để đối chiếu."
+ },
+ "an_toan": "Không kéo vượt giới hạn 5 N của lực kế."
+}

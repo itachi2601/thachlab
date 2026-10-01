@@ -8,8 +8,15 @@ const [, , src, out = "preview-out"] = process.argv;
 if (!src) { console.error("thiếu <theory.html>"); process.exit(1); }
 fs.mkdirSync(out, { recursive: true });
 const root = process.cwd();
-const g = fs.readFileSync(path.join(root, "app/globals.css"), "utf8");
-const css = g.slice(g.indexOf("/* Hình vẽ SVG nội tuyến"), g.indexOf("/* ---------- Nội dung bài viết blog")) + g.slice(g.indexOf("/* Bài lý thuyết tương tác"));
+const globals = path.join(root, "app/globals.css");
+const skillCss = path.join(path.dirname(new URL(import.meta.url).pathname), "../assets/tl-components.css");
+let css;
+if (fs.existsSync(globals)) {
+  const g = fs.readFileSync(globals, "utf8");
+  css = g.slice(g.indexOf("/* Hình vẽ SVG nội tuyến"), g.indexOf("/* ---------- Nội dung bài viết blog")) + g.slice(g.indexOf("/* Bài lý thuyết tương tác"));
+} else {
+  css = fs.readFileSync(skillCss, "utf8") + "\n.exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}.exam-content figure.fig svg{display:block;width:100%;height:auto}.exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}";
+}
 const katex = path.join(root, "node_modules/katex/dist");
 const html = `<!doctype html><meta charset=utf8><meta name=viewport content="width=device-width"><link rel=stylesheet href="file://${katex}/katex.min.css"><style>body{background:#0f172a;color:#e2e8f0;font:16px/1.75 sans-serif;max-width:720px;margin:auto;padding:16px}${css}</style><span class="exam-content">${fs.readFileSync(src, "utf8")}</span><script src="file://${katex}/katex.min.js"></script><script src="file://${katex}/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>`;
 const page_path = path.resolve(out, "page.html");

@@ -1,0 +1,2 @@
+Bài mẫu hoàn chỉnh (Vật lí 10, Định luật III Newton): `theory.html` (6 mục, 4 hình, 4 quiz, 8 mục bấm-mở), `build_figs.py` (sinh hình SVG bằng `scripts/svg_lib.py`, chép vào cùng thư mục với `theory.html` rồi chạy), `bundle.json` (gói đăng), `thi-nghiem/` (2 trong 6 mục dữ liệu thí nghiệm làm mẫu; đủ bộ ở `content/thi-nghiem/` của repo).
+Đọc để bắt chước nhịp và cách đặt linh kiện; không chép nguyên nội dung sang bài khác.

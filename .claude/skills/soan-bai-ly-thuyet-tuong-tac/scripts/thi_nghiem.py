@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Kiểm kho thí nghiệm content/thi-nghiem/*.json, sinh index.json, và kiểm liên kết từ bài lý thuyết.
-Dùng (từ gốc repo):  python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py [theory.html ...]
+Dùng (từ gốc repo thachlab, nơi có content/thi-nghiem/):  python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py [theory.html ...]
 Mã thoát 1 nếu có lỗi. Chỉ dùng thư viện chuẩn."""
 import json, re, sys, pathlib
-ROOT = pathlib.Path(__file__).resolve().parents[4]
+_cwd = pathlib.Path.cwd()
+ROOT = _cwd if (_cwd / "content" / "thi-nghiem").exists() else pathlib.Path(__file__).resolve().parents[4]
 DIR = ROOT / "content" / "thi-nghiem"
 LOAI = {"thi_nghiem", "vi_du"}
 MUC_DO = {"co_ban", "trung_binh", "nang_cao"}
