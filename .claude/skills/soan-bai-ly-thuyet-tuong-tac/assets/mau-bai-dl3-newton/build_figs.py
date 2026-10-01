@@ -103,11 +103,13 @@ def ins(html, anchor, fig, before=True):
 
 h = open("theory.html").read()
 h = re.sub(r'<figure class="fig" data-tl="1"[^>]*>.*?</figure>\n', "", h, flags=re.S)
+h = h.replace('<div class="tl-sim" data-sim="tn-l10-newton3-04"></div>\n', "")
 a0 = '<div class="tl-box tl-box--exp" data-exp="tn-l10-newton3-01">'
 a1 = '<p>Muốn nhớ nhanh, em nhớ 4 chữ'
 a2 = '<div class="tl-box tl-box--think">\n<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)'
 a3 = '<div class="tl-box tl-box--think">\n<p class="tl-label">✍️ Thử sức, tự kiểm tra ngay</p>'
-for a, f in ((a0, fig4), (a1, fig1), (a2, fig2), (a3, fig3)):
+SIM = '<div class="tl-sim" data-sim="tn-l10-newton3-04"></div>'
+for a, f in ((a0, fig4), (a1, fig1), (a2, fig2), (a3, fig3 + "\n" + SIM)):
     assert a in h, a
     h = h.replace(a, f + "\n" + a, 1)
 open("theory.html", "w").write(h)

@@ -45,11 +45,17 @@ for f in sorted(DIR.glob("tn-*.json")):
     if d.get("goi_y_mo_phong", {}).get("loai", "").split("+")[0] not in SIM: w("goi_y_mo_phong.loai không hợp lệ")
     index.append({"id": d["id"], "ten": d["ten"], "loai": d["loai"], "muc_do": d["muc_do"], "lop": d["lop"], "bai": d["bai"],
                   "lesson_id": d.get("lesson_id"), "kien_thuc": d["kien_thuc"], "mo_phong": d["goi_y_mo_phong"]["loai"],
-                  "tham_so_dieu_chinh": [t["ky_hieu"] for t in d["tham_so"] if t.get("kieu") == "dieu_chinh"]})
+                  "co_mo_phong": "mo_phong_da_lam" in d, "tham_so_dieu_chinh": [t["ky_hieu"] for t in d["tham_so"] if t.get("kieu") == "dieu_chinh"]})
 ids = {i["id"] for i in index}
 for th in sys.argv[1:]:
     for m in re.findall(r'data-exp="([^"]+)"', pathlib.Path(th).read_text(encoding="utf8")):
         if m not in ids: err.append(f"{th}: data-exp '{m}' không có trong content/thi-nghiem/")
+reg = ROOT / "components" / "simulations" / "registry.tsx"
+reg_txt = reg.read_text(encoding="utf8") if reg.exists() else ""
+for th in sys.argv[1:]:
+    for m in re.findall(r'data-sim="([^"]+)"', pathlib.Path(th).read_text(encoding="utf8")):
+        if m not in ids: err.append(f"{th}: data-sim '{m}' không có trong content/thi-nghiem/")
+        if f'"{m}"' not in reg_txt: err.append(f"{th}: data-sim '{m}' chưa đăng ký trong components/simulations/registry.tsx")
 (DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
 print(f"{len(index)} thí nghiệm/ví dụ → content/thi-nghiem/index.json")
 for e in err: print("✗", e)

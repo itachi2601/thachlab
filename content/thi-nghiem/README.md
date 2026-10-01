@@ -24,5 +24,8 @@ Trong `theory.html`, đặt `data-exp="<id>"` lên hộp thí nghiệm (`.tl-box
 python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py <theory.html>
 ```
 
+## Mô phỏng đã làm (tuỳ chọn `mo_phong_da_lam`)
+Thí nghiệm nào đã có mô phỏng thì file có trường `mo_phong_da_lam {data_sim, component, mo_hinh, ngay}` và `index.json` ghi `co_mo_phong: true`. Mô phỏng KHÔNG nằm trong HTML bài học (HTML lưu DB cấm `<script>`): bài chỉ chứa thẻ giữ chỗ `<div class="tl-sim" data-sim="<id>"></div>`; trang bài học (`components/simulations/SimPortals.tsx`) thấy thẻ thì dựng component React tương ứng (đăng ký trong `components/simulations/registry.tsx`, chunk riêng, tải khi thẻ gần màn hình). Thanh trượt đọc `min/max/buoc` thẳng từ `tham_so[]` của file này. Hiện có: `tn-l10-newton3-04`.
+
 ## Danh sách hiện có
-Xem `index.json` (6 mục từ bài Định luật III Newton, lớp 10). Mỗi bài lý thuyết mới phải thêm mục vào đây, không để thí nghiệm chỉ nằm trong HTML.
+Xem `index.json` (6 mục từ bài Định luật III Newton, lớp 10; 1 mục đã có mô phỏng). Mỗi bài lý thuyết mới phải thêm mục vào đây, không để thí nghiệm chỉ nằm trong HTML.

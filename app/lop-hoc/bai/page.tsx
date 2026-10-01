@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, FileText, Play, X } from "lu
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import SimPortals from "@/components/simulations/SimPortals";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
@@ -155,6 +156,9 @@ function TheoryBlock({
   // Gắn id theo từng khối <h3> để quiz "Kiểm tra nhanh" cuộn + tô màu đúng đoạn khi trả lời
   // sai (xem "Ôn ngay" trong ExamRunner) — chỉ tính lại khi nội dung mục thật sự đổi.
   const sectionedHtml = useMemo(() => wrapTheorySections(item.body_html, item.id).html, [item.body_html, item.id]);
+  // Mô phỏng gắn bằng thẻ giữ chỗ data-sim (components/simulations/); bài không có thẻ thì không tải gì thêm.
+  const hasSim = item.body_html.includes("data-sim=");
+  const proseRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`}>
@@ -173,8 +177,9 @@ function TheoryBlock({
       </button>}
       <TheorySummary html={item.summary_html} />
       {open && hasBody && (
-        <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
+        <div ref={proseRef} className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
           <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
+          {hasSim && <SimPortals rootRef={proseRef} htmlKey={sectionedHtml} />}
         </div>
       )}
       <div className="lesson-block-foot">

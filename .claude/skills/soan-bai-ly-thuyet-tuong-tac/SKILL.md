@@ -70,7 +70,9 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 6. **Hình SVG tự vẽ, không ảnh raster** (quy tắc tốc độ trong `AGENTS.md`): vài KB, không request thêm, nét theo `currentColor` nên tối/sáng đều đọc. Nếu thật sự cần ảnh: `.webp` ≤1200px, ≤150 KB, qua Storage — không base64 trong HTML.
 7. **Bundle bắt buộc có `exam` ≥1 câu**; dùng chính các câu tự kiểm tra trong bài làm đề Luyện tập nhỏ (3–5 câu, kèm `explanation`).
 8. **Kiểm bằng mắt ở 375px** (thầy học sinh dùng điện thoại): bài mẫu bị cắt nhãn "Thành sân" và chồng chữ "mặt băng"/"em trượt lùi" cho tới khi chụp ảnh mới thấy.
-9. **Chưa test trong app thật** (Next.js tĩnh): preview chỉ dùng CSS + KaTeX rời. Khi có trình duyệt xem được `/lop-hoc/bai`, kiểm lại bài đăng thật trước khi nhân rộng.
+9. **Mô phỏng = component React + thẻ giữ chỗ, không phải script.** Làm mô phỏng cho một thí nghiệm đã có trong `content/thi-nghiem/`: (a) mô hình vật lí là hàm thuần `components/simulations/<ten>-model.ts` có kiểm bằng `tsx`; (b) giao diện `components/simulations/<Ten>Sim.tsx` đọc min/max/bước từ chính file JSON thí nghiệm; (c) đăng ký id ở `registry.tsx` (next/dynamic, ssr:false); (d) đặt `<div class="tl-sim" data-sim="<id>"></div>` trong `theory.html`; (e) thêm `mo_phong_da_lam` vào file JSON. Luồng dạy cố định: **dự đoán → thả → đối chiếu số liệu**, có chế độ quay chậm cho thầy giảng. Mẫu: `tn-l10-newton3-04` (`TwoBodyPushSim.tsx`).
+10. **Mô phỏng + `ContentHtml`:** `ContentHtml` thay cả khối DOM khi KaTeX tải xong, nên `SimPortals` quét lại thẻ bằng MutationObserver và gắn lại portal; thẻ rỗng bị `display:none` thì IntersectionObserver không bao giờ báo "gần màn hình" (đã gặp lỗi này) — không đặt `display:none` cho `.tl-sim:empty`.
+11. **Chưa test trong app thật** (Next.js tĩnh): preview chỉ dùng CSS + KaTeX rời. Khi có trình duyệt xem được `/lop-hoc/bai`, kiểm lại bài đăng thật trước khi nhân rộng.
 
 ## Cần kiểm tra khi thầy xem được bài mẫu (điền tiếp)
 
