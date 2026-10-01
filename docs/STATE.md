@@ -51,6 +51,11 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
 
 ## Việc tay còn lại
+- [ ] **Trang bài học: "📌 Tóm tắt ý chính cần thuộc" chuyển xuống đầu phần Luyện tập**
+  (1/10/2026, nhánh `claude/elegant-ride-ilvhzh`) — `app/lop-hoc/bai/page.tsx`: khối tóm tắt
+  (gộp `summary_html` của mọi mục lý thuyết) hiện ở đầu phần 4. Luyện tập để HS xem lại
+  rồi mới làm; bài không có phần Luyện tập thì vẫn hiện trong mục Lý thuyết như cũ.
+  Cần merge PR → `bash scripts/deploy.sh` trên Mac. Chưa kiểm bằng mắt trên web thật.
 - [x] **Trang bài học: 6 mục thu gọn thành danh sách + Tóm tắt ý chính cần thuộc**
   (27/9/2026) — `app/lop-hoc/bai/page.tsx`: cả 6 mục (Lý thuyết/Video/Bài tập mẫu/
   Luyện tập/BTVN/Kiểm tra) giờ hiện dạng danh sách thu gọn, bấm mục nào xổ mục đó

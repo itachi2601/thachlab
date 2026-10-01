@@ -120,15 +120,19 @@ function VideoBlock({
   );
 }
 
-/** Ý chính/công thức cần thuộc của 1 mục lý thuyết — hiện luôn (không thu gọn thêm lần
- *  nữa), độc lập với việc mục lý thuyết đầy đủ bên dưới đang mở hay đóng, để học sinh
- *  xem nhanh mà không cần mở hết bài dài. Rỗng (chưa backfill) thì không hiện gì. */
-function TheorySummary({ html }: { html: string }) {
-  if (!html.trim()) return null;
+/** Ý chính/công thức cần thuộc (summary_html của các mục lý thuyết) — đặt ở ĐẦU phần
+ *  Luyện tập để học sinh xem lại rồi mới làm bài (1/10/2026, trước đó nằm trong mục Lý
+ *  thuyết). Bài không có phần Luyện tập thì vẫn hiện trong mục Lý thuyết như cũ. Nhận
+ *  nhiều đoạn (bài có nhiều mục lý thuyết) — rỗng hết thì không hiện gì. */
+function TheorySummary({ htmls }: { htmls: string[] }) {
+  const parts = htmls.filter((h) => h.trim() !== "");
+  if (parts.length === 0) return null;
   return (
     <div className="lesson-summary">
-      <p className="lesson-summary-label">📌 Tóm tắt ý chính cần thuộc</p>
-      <ContentHtml html={html} className="block leading-relaxed" />
+      <p className="lesson-summary-label">📌 Tóm tắt ý chính cần thuộc — xem lại trước khi làm bài</p>
+      {parts.map((html, i) => (
+        <ContentHtml key={i} html={html} className="block leading-relaxed" />
+      ))}
     </div>
   );
 }
@@ -138,6 +142,7 @@ function TheoryBlock({
   item,
   defaultOpen,
   hideTitle,
+  showSummary,
   done,
   loggedIn,
   onDone,
@@ -145,7 +150,7 @@ function TheoryBlock({
   item: LessonItem;
   defaultOpen: boolean;
   hideTitle: boolean; // tên mục trùng tên phần → khỏi lặp
-
+  showSummary: boolean; // bài không có phần Luyện tập → tóm tắt vẫn hiện tại đây
   done: boolean;
   loggedIn: boolean;
   onDone: () => void;
@@ -171,7 +176,7 @@ function TheoryBlock({
         </span>
         {hasBody && <ChevronDown size={18} className={open ? "rotate-180" : ""} />}
       </button>}
-      <TheorySummary html={item.summary_html} />
+      {showSummary && <TheorySummary htmls={[item.summary_html]} />}
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
           <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
@@ -473,6 +478,14 @@ function LessonLoader() {
     if (!items) return [];
     return SECTION_ORDER.map((kind) => ({ kind, items: items.filter((i) => i.kind === kind) }));
   }, [items]);
+
+  // Tóm tắt ý chính của mọi mục lý thuyết trong bài — hiện ở đầu phần Luyện tập (xem lại
+  // rồi mới làm). Bài chưa có phần Luyện tập thì hiện tại từng mục lý thuyết như cũ.
+  const theorySummaries = useMemo(
+    () => (items ?? []).filter((i) => i.kind === "ly_thuyet").map((i) => i.summary_html),
+    [items],
+  );
+  const hasPracticeSection = useMemo(() => (items ?? []).some((i) => i.kind === "luyen_tap"), [items]);
 
   // Đánh dấu mục đang đọc trên thanh điều hướng theo vị trí cuộn.
   useEffect(() => {
@@ -863,6 +876,7 @@ function LessonLoader() {
                 </button>
                 {isOpen && (
                 <div className="lesson-stack">
+                  {section.kind === "luyen_tap" && <TheorySummary htmls={theorySummaries} />}
                   {section.items.map((item, itemIndex) => {
                     // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
                     // chỉ lặp lại ý tiêu đề phần "N. <Tên phần>" ngay trên, ẩn cho đỡ trùng.
@@ -886,6 +900,7 @@ function LessonLoader() {
                             item={item}
                             defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
                             hideTitle={plain}
+                            showSummary={!hasPracticeSection}
                             done={done.has(item.id)}
                             loggedIn={!!session}
                             onDone={() => markDone(item)}
