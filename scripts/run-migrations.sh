@@ -17,6 +17,7 @@ FILES=(
   "supabase/migrations/20260930160000_rank_title_distinct_questions.sql|Chong cay danh hieu: dem so CAU KHAC NHAU giai dung thay vi so luot (create or replace rank_title_stats)|bat ky luc nao; rollback: perf/rollback/20260930160000_rank_title_distinct_questions.down.sql"
   "supabase/migrations/20260930170000_question_bank_hash_ignore_image_ts.sql|Ngan hang cau hoi: ham bam bo tien to thoi gian cua ten anh + gop ~4.7k dong trung (co backup)|NGOAI GIO hoc sinh lam bai; rollback: perf/rollback/20260930170000_question_bank_hash_ignore_image_ts.down.sql"
   "supabase/migrations/20260930180000_bank_similarity_per_topic.sql|Nghi trung lap: 2 ham quet theo tung chu de (ham cu qua 60s o khoi 12, trang luon loi)|bat ky luc nao; rollback: perf/rollback/20260930180000_bank_similarity_per_topic.down.sql"
+  "supabase/migrations/20261001100000_resolve_login_email.sql|Ham resolve_login_email: dang nhap bang username cho tai khoan dang ky kem email that|bat ky luc nao; rollback: perf/rollback/20261001100000_resolve_login_email.down.sql"
 )
 # ĐÃ CHẠY 30/9/2026 (17:15): 20260930160000_exit_quiz_bank_children.sql
 # ĐÃ CHẠY 30/9/2026 (16:07): 20260930110000_rank_board_by_tier.sql, 20260930120000_rank_gd1b_spacing_progress.sql,

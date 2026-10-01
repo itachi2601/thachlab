@@ -33,7 +33,12 @@ export default function LoginPage() {
     setBusy(true);
 
     const typed = email.trim().toLowerCase();
-    const loginEmail = typed.includes("@") ? typed : `${typed}@thachlab.local`;
+    let loginEmail = typed;
+    if (!typed.includes("@")) {
+      // Em đăng ký kèm email thật thì tài khoản auth dùng email đó — tra theo username; chưa có hàm/không khớp thì dùng email nội bộ.
+      const { data: resolved } = await getSupabase().rpc("resolve_login_email", { p_login: typed });
+      loginEmail = typeof resolved === "string" && resolved ? resolved : `${typed}@thachlab.local`;
+    }
     const { error } = await getSupabase().auth.signInWithPassword({
       email: loginEmail,
       password,
