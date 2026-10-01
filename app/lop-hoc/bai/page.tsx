@@ -81,6 +81,7 @@ const FONT_SCALES = [0.94, 1, 1.08];
 const FONT_STORE = "thachlab-read-font";
 const DIM_STORE = "thachlab-read-dim";
 const LESSON_DONE_STORE = "thachlab-lesson-done-";
+const NOTE_STORE = "thachlab-note-";
 
 /**
  * Đọc tab muốn mở từ hash của URL. Nhận cả 2 kiểu:
@@ -484,6 +485,12 @@ function LessonLoader() {
   // Cây chương ở cột trái: chỉ chương đang học mở sẵn, chương khác gấp lại (khoá có thể dài
   // hơn 100 bài nên không xổ hết), và một ô tìm bài lọc ngay trên siblingLessons — không gọi mạng.
   const [treeQuery, setTreeQuery] = useState("");
+  /** id của đề mục (h2/h3) đang trong tầm mắt — tô đậm ở "Mục lục bài này". */
+  const [activeHeading, setActiveHeading] = useState<string | null>(null);
+  /** Tìm trong mục lục: khớp theo itemId trong nội dung bài (không phải tiêu đề đề mục). */
+  const [tocQuery, setTocQuery] = useState("");
+  /** Ghi chú của em — chỉ lưu trên máy, khoá thachlab-note-<lessonId>. */
+  const [note, setNote] = useState("");
   const [openChapters, setOpenChapters] = useState<Set<number>>(new Set());
   const reviewBannerRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -621,6 +628,8 @@ function LessonLoader() {
       if (savedDim !== dim) setDim(savedDim);
       const savedDone = window.localStorage.getItem(`${LESSON_DONE_STORE}${id}`) === "1";
       if (savedDone !== lessonMarked) setLessonMarked(savedDone);
+      const savedNote = window.localStorage.getItem(`${NOTE_STORE}${id}`) ?? "";
+      if (savedNote !== note) setNote(savedNote);
     } catch {}
     // Chỉ khôi phục 1 lần khi mở bài (theo id) — thêm dim/fontLevel/lessonMarked vào deps sẽ
     // làm effect chạy lại sau mỗi lần đổi cỡ chữ và ghi đè lựa chọn vừa bấm.
@@ -678,6 +687,26 @@ function LessonLoader() {
     } catch {}
   }
 
+  // Mục lục bài này: theo dõi h2/h3 của TAB ĐANG MỞ (nội dung soạn sẵn sinh ra id), không gọi
+  // mạng. Quan sát lại mỗi khi đổi tab / có dữ liệu mới vì panel được dựng lại.
+  useEffect(() => {
+    const root = bodyRef.current;
+    if (!root) return;
+    const targets = Array.from(root.querySelectorAll<HTMLElement>("h2[id], h3[id]"));
+    if (targets.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActiveHeading(visible[0].target.id);
+      },
+      { rootMargin: "-130px 0px -65% 0px", threshold: 0 },
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, [activeTab, items]);
+
   function isDone(item: LessonItem) {
     if (isGradedKind(item.kind)) {
       const ids = visibleExamIds(item.exam_ids);
@@ -691,57 +720,6 @@ function LessonLoader() {
     setDone((prev) => new Set(prev).add(item.id));
     markItemDone(session.user.id, item.id);
   }
-
-  // Đến từ "Tiếp tục học" (resume=1): mở tab chứa mục đầu tiên chưa hoàn thành rồi cuộn tới đó;
-  // không xác định được (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
-  useEffect(() => {
-    if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
-    const firstIncomplete = items.find((item) => !isDone(item));
-    if (!firstIncomplete) return;
-    const timer = window.setTimeout(() => {
-      selectTab(firstIncomplete.kind);
-      scrollToPart(`secondary-stage-${firstIncomplete.kind}`);
-    }, 220);
-    return () => window.clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams, items, session, done, scores]);
-
-  // Quay lại từ "Ôn ngay" (#theory-sec-<itemId>-<n>): cuộn + tô vàng tạm đúng đoạn lý thuyết
-  // liên quan tới câu vừa làm sai. Tô màu bằng classList trực tiếp, KHÔNG qua state đổi html
-  // của ContentHtml — nếu đổi, dangerouslySetInnerHTML thay cả node đang cuộn tới, huỷ luôn
-  // animation scrollIntoView giữa chừng (đã tự kiểm khi làm pilot, xem lịch sử sửa).
-  //
-  // reviewContexts (đọc snapshot 1 lần qua ref, KHÔNG qua state trong deps của effect dưới) —
-  // đóng thẻ nhắc không được kích lại hiệu ứng cuộn/tô, chỉ đóng UI.
-  const reviewContextsRef = useRef(reviewContexts);
-
-  // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
-  // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
-  // mới nếu khác (revalidateLesson trong services/static-content.ts) — nếu chỉ tô màu 1 lần
-  // ngay khi có `items` đầu tiên (bản tĩnh, có thể đã cũ), khối vừa tô sẽ bị bản mới thay mất
-  // (dangerouslySetInnerHTML dựng lại DOM) mà không tô lại. Tự kiểm bằng epoch timestamp thấy
-  // đúng vậy: tô lúc t, mất trước 6s dù hẹn giờ tắt là 30s → do bản mới đè lên, không phải do
-  // hẹn giờ. Nên bỏ cờ "đã làm 1 lần", chạy lại mỗi khi `items` đổi — vô hại vì lần cuối cùng
-  // (ứng với bản dữ liệu ổn định) sẽ luôn thắng.
-  useEffect(() => {
-    if (!items || items.length === 0) return;
-    const hash = window.location.hash.replace(/^#/, "");
-    const contexts = reviewContextsRef.current;
-    const timer = window.setTimeout(() => {
-      if (contexts && contexts.length > 0) {
-        const ids = contexts.map((ctx) => `theory-sec-${ctx.itemId}-${ctx.sectionIndex}`);
-        let primaryId = ids[0];
-        if (hash.startsWith("theory-sec-") && ids.includes(hash)) primaryId = hash;
-        ids.forEach((hid) => {
-          if (hid === primaryId) flashTheorySection(hid);
-          else highlightTheorySectionOnly(hid);
-        });
-      } else if (hash.startsWith("theory-sec-")) {
-        flashTheorySection(hash);
-      }
-    }, 200);
-    return () => window.clearTimeout(timer);
-  }, [items]);
 
   // Phạm vi "khoá đang học": chương cùng môn và cùng khối lớp đang xem (theo ?class= — dùng lại
   // đúng luật hiển thị chương của trang lớp, không tự suy luận lớp khác khi chưa chắc). Vừa dùng
@@ -814,6 +792,102 @@ function LessonLoader() {
     if (classSlug) params.set("class", classSlug);
     return `/lop-hoc/bai?${params.toString()}`;
   }
+
+  const visibleSections = sections.filter((s) => s.items.length > 0);
+  const activeKind: LessonItemKind | undefined = visibleSections.some((s) => s.kind === activeTab)
+    ? activeTab
+    : visibleSections[0]?.kind;
+  const activeSection = visibleSections.find((s) => s.kind === activeKind);
+  // Mục lục của TAB đang mở: các h2/h3 có id trong nội dung soạn sẵn. Lấy từ items (không đọc
+  // DOM, không gọi mạng) nên hiện được ngay, kể cả trước khi panel kịp paint.
+  const tocEntries = useMemo(() => {
+    const out: { id: string; itemTitle: string; heading: string }[] = [];
+    for (const item of items ?? []) {
+      if (item.kind !== activeTab) continue;
+      // Dùng lại đúng hàm sinh id mà TheoryContent dùng khi render (theory-sec-<itemId>-<i>) —
+      // không đoán id bằng tay, và không đọc DOM.
+      const { sections: parts } = wrapTheorySections(item.body_html, item.id);
+      if (parts.length > 0) {
+        for (const part of parts) out.push({ id: part.id, itemTitle: item.title, heading: part.heading });
+      } else {
+        // Không có đề mục nhỏ (tab video/luyện tập/BTVN/kiểm tra) → mục lục là chính các mục.
+        out.push({ id: `lesson-item-${item.id}`, itemTitle: item.title, heading: "" });
+      }
+    }
+    return out;
+  }, [items, activeTab]);
+
+  const shownToc = useMemo(() => {
+    const q = tocQuery.trim().toLowerCase();
+    if (!q) return tocEntries;
+    return tocEntries.filter(
+      (entry) => entry.heading.toLowerCase().includes(q) || entry.itemTitle.toLowerCase().includes(q),
+    );
+  }, [tocEntries, tocQuery]);
+
+
+  // Ghi chú: chỉ lưu trên máy, ghi sau khi học sinh ngừng gõ 400ms để không ghi localStorage
+  // liên tục theo từng ký tự.
+  useEffect(() => {
+    if (!settingsLoadedRef.current) return;
+    const timer = window.setTimeout(() => {
+      try {
+        if (note) window.localStorage.setItem(`${NOTE_STORE}${id}`, note);
+        else window.localStorage.removeItem(`${NOTE_STORE}${id}`);
+      } catch {}
+    }, 400);
+    return () => window.clearTimeout(timer);
+  }, [note, id]);
+  // Đến từ "Tiếp tục học" (resume=1): mở tab chứa mục đầu tiên chưa hoàn thành rồi cuộn tới đó;
+  // không xác định được (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
+  useEffect(() => {
+    if (searchParams.get("resume") !== "1" || !session || !items || items.length === 0) return;
+    const firstIncomplete = items.find((item) => !isDone(item));
+    if (!firstIncomplete) return;
+    const timer = window.setTimeout(() => {
+      selectTab(firstIncomplete.kind);
+      scrollToPart(`secondary-stage-${firstIncomplete.kind}`);
+    }, 220);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams, items, session, done, scores]);
+
+  // Quay lại từ "Ôn ngay" (#theory-sec-<itemId>-<n>): cuộn + tô vàng tạm đúng đoạn lý thuyết
+  // liên quan tới câu vừa làm sai. Tô màu bằng classList trực tiếp, KHÔNG qua state đổi html
+  // của ContentHtml — nếu đổi, dangerouslySetInnerHTML thay cả node đang cuộn tới, huỷ luôn
+  // animation scrollIntoView giữa chừng (đã tự kiểm khi làm pilot, xem lịch sử sửa).
+  //
+  // reviewContexts (đọc snapshot 1 lần qua ref, KHÔNG qua state trong deps của effect dưới) —
+  // đóng thẻ nhắc không được kích lại hiệu ứng cuộn/tô, chỉ đóng UI.
+  const reviewContextsRef = useRef(reviewContexts);
+
+  // KHÔNG được chỉ chạy 1 lần: trang này ưu tiên hiển thị bản tĩnh build sẵn trước
+  // (fetchLessonWithItemsStatic), rồi âm thầm đối chiếu với Supabase và render lại bằng bản
+  // mới nếu khác (revalidateLesson trong services/static-content.ts) — nếu chỉ tô màu 1 lần
+  // ngay khi có `items` đầu tiên (bản tĩnh, có thể đã cũ), khối vừa tô sẽ bị bản mới thay mất
+  // (dangerouslySetInnerHTML dựng lại DOM) mà không tô lại. Tự kiểm bằng epoch timestamp thấy
+  // đúng vậy: tô lúc t, mất trước 6s dù hẹn giờ tắt là 30s → do bản mới đè lên, không phải do
+  // hẹn giờ. Nên bỏ cờ "đã làm 1 lần", chạy lại mỗi khi `items` đổi — vô hại vì lần cuối cùng
+  // (ứng với bản dữ liệu ổn định) sẽ luôn thắng.
+  useEffect(() => {
+    if (!items || items.length === 0) return;
+    const hash = window.location.hash.replace(/^#/, "");
+    const contexts = reviewContextsRef.current;
+    const timer = window.setTimeout(() => {
+      if (contexts && contexts.length > 0) {
+        const ids = contexts.map((ctx) => `theory-sec-${ctx.itemId}-${ctx.sectionIndex}`);
+        let primaryId = ids[0];
+        if (hash.startsWith("theory-sec-") && ids.includes(hash)) primaryId = hash;
+        ids.forEach((hid) => {
+          if (hid === primaryId) flashTheorySection(hid);
+          else highlightTheorySectionOnly(hid);
+        });
+      } else if (hash.startsWith("theory-sec-")) {
+        flashTheorySection(hash);
+      }
+    }, 200);
+    return () => window.clearTimeout(timer);
+  }, [items]);
 
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
@@ -911,8 +985,7 @@ function LessonLoader() {
     );
   }
 
-  const visibleSections = sections.filter((s) => s.items.length > 0);
-  const activeSection = visibleSections.find((s) => s.kind === activeTab) ?? visibleSections[0];
+
   const activeIndex = activeSection ? visibleSections.findIndex((s) => s.kind === activeSection.kind) : -1;
   const nextSection = activeIndex >= 0 ? visibleSections[activeIndex + 1] : undefined;
   const totalTabs = visibleSections.length;
@@ -954,7 +1027,7 @@ function LessonLoader() {
 
       if (item.kind === "ly_thuyet")
         return (
-          <div key={item.id} className="lesson-stack" data-item={item.id}>
+          <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-stack" data-item={item.id}>
             <TheoryBlock
               item={item}
               defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
@@ -976,7 +1049,7 @@ function LessonLoader() {
       if (isGradedKind(item.kind)) {
         const gradedExamIds = visibleExamIds(item.exam_ids);
         return (
-          <div key={item.id} className="lesson-block" data-item={item.id}>
+          <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
             {(!plain || item.due_at) && (
               <div className="lesson-block-head">
                 {!plain && <p className="lesson-block-title">{item.title}</p>}
@@ -1011,7 +1084,7 @@ function LessonLoader() {
 
       // bai_tap_mau / luyen_tap: lưới từng câu
       return (
-        <div key={item.id} className="lesson-block" data-item={item.id}>
+        <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
           {(!plain || item.subtitle) && (
             <div className="lesson-block-head">
               {!plain && <p className="lesson-block-title">{item.title}</p>}
@@ -1372,14 +1445,108 @@ function LessonLoader() {
               </section>
             )}
 
-            {items && items.length > 0 && (
-              <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
-            )}
             </div>
           </div>
         </div>
 
-        <aside className="lesson-side" aria-label="Dụng cụ học bài" />
+        <aside className="lesson-side" aria-label="Dụng cụ học bài">
+          {/* Mục lục bài này — scroll-spy trên các h2/h3 của tab đang mở, 0 request. */}
+          <div className="lesson-panel lesson-toc">
+            <p className="lesson-panel-title">Mục lục bài này</p>
+            {tocEntries.length === 0 ? (
+              <p className="lesson-panel-empty">Mục này chưa có đề mục nhỏ.</p>
+            ) : (
+              <>
+                {tocEntries.length > 6 && (
+                  <label className="lesson-nav-search lesson-toc-search">
+                    <Search size={14} aria-hidden />
+                    <input
+                      type="search"
+                      value={tocQuery}
+                      onChange={(e) => setTocQuery(e.target.value)}
+                      placeholder="Tìm trong mục lục"
+                      aria-label="Tìm trong mục lục"
+                    />
+                  </label>
+                )}
+                <ol>
+                  {shownToc.map((entry) => (
+                    <li key={entry.id}>
+                      <a
+                        href={`#${entry.id}`}
+                        className={activeHeading === entry.id ? "is-active" : ""}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          flashTheorySection(entry.id, 2);
+                        }}
+                      >
+                        {entry.heading && entry.heading !== entry.itemTitle && (
+                          <small className="lesson-toc-item">{entry.itemTitle}</small>
+                        )}
+                        <span>{entry.heading || entry.itemTitle}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                {shownToc.length === 0 && <p className="lesson-panel-empty">Không thấy đề mục nào khớp.</p>}
+              </>
+            )}
+          </div>
+
+          {/* Mức độ nắm vững — chuyển từ cuối bài sang đây, giữ nguyên props và nút "Luyện thêm". */}
+          {items && items.length > 0 && (
+            <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+          )}
+
+          {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request. */}
+          <div className="lesson-panel lesson-controls">
+            <p className="lesson-panel-title">Câu sai liên quan</p>
+            {reviewContexts && reviewContexts.length > 0 ? (
+              <>
+                <p className="lesson-panel-note">
+                  {reviewContexts.length === 1
+                    ? `Câu ${reviewContexts[0].questionIndex} em vừa làm sai thuộc bài này.`
+                    : `${reviewContexts.length} câu em vừa làm sai thuộc bài này.`}
+                </p>
+                <ul>
+                  {reviewContexts.map((ctx, i) => (
+                    <li key={i}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          selectTab("ly_thuyet");
+                          window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
+                        }}
+                      >
+                        Câu {ctx.questionIndex} — xem đoạn lý thuyết
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className="lesson-panel-empty">
+                Chưa có câu sai nào của bài này trong phiên đang học. Em làm bài ở mục Luyện tập, câu sai sẽ hiện ở đây.
+              </p>
+            )}
+            <Link href="/lop-hoc" className="lesson-panel-link">
+              Xem sổ câu sai đầy đủ ›
+            </Link>
+          </div>
+
+          {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. */}
+          <div className="lesson-panel lesson-controls">
+            <p className="lesson-panel-title">Ghi chú của em</p>
+            <textarea
+              className="lesson-note"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Chỗ này em chưa hiểu…"
+              aria-label="Ghi chú của em cho bài này"
+            />
+            <p className="lesson-panel-note">Chỉ lưu trên máy em.</p>
+          </div>
+        </aside>
       </div>
 
       <nav className="lesson-bottombar" aria-label="Điều hướng bài học">
