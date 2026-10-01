@@ -1,0 +1,182 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Định luật III Newton",
+ "lesson_id": 61,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-3-newton/theory.html",
+ "id": "tn-l10-newton3-02",
+ "ten": "Đẩy thành sân băng, trượt lùi",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton3.cung_luc",
+  "newton3.bang_nhau_nguoc_chieu",
+  "newton2.a_bang_f_chia_m",
+  "ma_sat.nho_tren_bang"
+ ],
+ "muc_tieu": "Giải thích vì sao người đẩy thành sân lại trượt lùi trong khi thành đứng yên.",
+ "dung_cu": [
+  {
+   "ten": "Sân băng có thành chắn",
+   "so_luong": 1,
+   "ghi_chu": "thành gắn chặt xuống nền"
+  },
+  {
+   "ten": "Giày trượt băng",
+   "so_luong": 1,
+   "ghi_chu": "người thử"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đứng sát thành, hai tay đặt lên thành.",
+   "Đẩy thành ra phía trước rồi thả tay."
+  ],
+  "quan_sat": [
+   "Người trượt lùi ra xa thành.",
+   "Thành sân không chuyển động nhìn thấy được."
+  ],
+  "rut_ra": [
+   "Thành đẩy lại người với lực bằng lực người đẩy thành, ngược chiều (định luật III).",
+   "Người nhẹ, ma sát nhỏ nên gia tốc lớn; thành gắn với Trái Đất nên gia tốc coi như bằng 0."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng người",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 90,
+   "mac_dinh": 60,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực đẩy thành (bằng lực thành đẩy người)",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 300,
+   "mac_dinh": 150,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "t_c",
+   "ten": "Thời gian tay còn chạm thành",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.4,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát lưỡi giày–băng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.0,
+   "max": 0.3,
+   "mac_dinh": 0.03,
+   "buoc": 0.01,
+   "ghi_chu": "băng khoảng 0,02–0,05; sàn gỗ khoảng 0,3"
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc người khi còn chạm thành",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc người khi rời thành",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a = (F − mu·m·g)/m  khi tay còn chạm thành (0 ≤ t ≤ t_c)",
+   "v = a·t_c",
+   "sau đó a' = −mu·g (chậm dần do ma sát), dừng sau t' = v/(mu·g)",
+   "thành sân: a_thanh = F/M_TraiDat ≈ 0"
+  ],
+  "gia_thiet": [
+   "lực đẩy không đổi trong thời gian chạm",
+   "chuyển động theo một phương ngang",
+   "bỏ qua lực cản không khí"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "F (N)",
+   "t_c (s)",
+   "mu",
+   "a (m/s²)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    60,
+    150,
+    0.4,
+    0.03,
+    2.206,
+    0.882
+   ],
+   [
+    40,
+    150,
+    0.4,
+    0.03,
+    3.456,
+    1.382
+   ],
+   [
+    60,
+    150,
+    0.4,
+    0.3,
+    -0.44,
+    -0.176
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình ở trên (g = 9,8). Hàng 3: trên sàn nhám, người lùi chậm hơn nhiều."
+ },
+ "ket_qua_ky_vong": "Với m = 60 kg, F = 150 N, mu = 0,03, t_c = 0,4 s: a ≈ 2,21 m/s², v ≈ 0,88 m/s. Giảm khối lượng hoặc ma sát thì lùi nhanh hơn.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng thành đứng yên thì không tác dụng lực lên người.",
+  "Cho rằng lực và phản lực triệt tiêu nên người phải đứng yên."
+ ],
+ "sai_so_thuong_gap": [
+  "Lực đẩy thực tế không đều theo thời gian.",
+  "Ma sát băng thay đổi theo nhiệt độ và lưỡi giày."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "m",
+   "F",
+   "t_c",
+   "mu"
+  ],
+  "dau_ra": [
+   "người lùi theo thời gian",
+   "mũi tên F1 đặt lên thành, F2 đặt lên người",
+   "đồ thị v–t"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Có nút 'đổi sàn' (băng/gỗ) để thấy tác dụng của ma sát. Mũi tên F1 và F2 luôn dài bằng nhau."
+ },
+ "an_toan": "Thử ở sân băng có người hướng dẫn, đội mũ bảo hiểm khi người mới tập."
+}

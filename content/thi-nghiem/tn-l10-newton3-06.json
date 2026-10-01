@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Định luật III Newton",
+ "lesson_id": 61,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-3-newton/theory.html",
+ "id": "tn-l10-newton3-06",
+ "ten": "Xe tải đâm xe con",
+ "loai": "vi_du",
+ "muc_do": "nang_cao",
+ "kien_thuc": [
+  "newton3.bang_nhau_nguoc_chieu",
+  "newton2.a_bang_f_chia_m",
+  "newton3.hu_hong_do_khoi_luong"
+ ],
+ "muc_tieu": "Hiểu xe nhẹ bị hư hại nhiều hơn vì gia tốc lớn hơn, không phải vì lực lớn hơn.",
+ "dung_cu": [
+  {
+   "ten": "Hai xe đồ chơi nặng nhẹ khác nhau (thay cho xe thật)",
+   "so_luong": 2,
+   "ghi_chu": "nếu muốn làm thật trên bàn"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho xe nặng đâm vào xe nhẹ đứng yên (hoặc phân tích trên giấy).",
+   "So sánh lực va chạm hai bên, rồi gia tốc hai xe."
+  ],
+  "quan_sat": [
+   "Xe nhẹ bị bắn đi hoặc biến dạng nhiều hơn."
+  ],
+  "rut_ra": [
+   "Lực hai bên bằng nhau.",
+   "Xe nhẹ có gia tốc lớn hơn nên hư hại nặng hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m_t",
+   "ten": "Khối lượng xe tải",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 2000,
+   "max": 15000,
+   "mac_dinh": 8000,
+   "buoc": 500
+  },
+  {
+   "ky_hieu": "m_c",
+   "ten": "Khối lượng xe con",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 600,
+   "max": 2000,
+   "mac_dinh": 1000,
+   "buoc": 100
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực va chạm trung bình",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 10000,
+   "max": 100000,
+   "mac_dinh": 40000,
+   "buoc": 5000
+  },
+  {
+   "ky_hieu": "t_c",
+   "ten": "Thời gian va chạm",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "a_t",
+   "ten": "Gia tốc xe tải",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "a_c",
+   "ten": "Gia tốc xe con",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_tai→con = F_con→tai = F",
+   "a_t = F/m_t, a_c = F/m_c",
+   "Δv = a·t_c"
+  ],
+  "gia_thiet": [
+   "lực trung bình không đổi trong 0,1 s",
+   "chỉ xét một phương"
+  ],
+  "ghi_chu": "Số liệu minh hoạ, không phải đo thực."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m_t (kg)",
+   "m_c (kg)",
+   "F (N)",
+   "a_t (m/s²)",
+   "a_c (m/s²)",
+   "Δv_t (m/s)",
+   "Δv_c (m/s)"
+  ],
+  "hang": [
+   [
+    8000,
+    1000,
+    40000,
+    5.0,
+    40.0,
+    0.5,
+    4.0
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ; xe con có gia tốc khoảng 4g."
+ },
+ "ket_qua_ky_vong": "Cùng F = 40 000 N: a_t = 5 m/s², a_c = 40 m/s², gấp 8 lần.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng xe nặng tác dụng lực lớn hơn lên xe nhẹ."
+ ],
+ "sai_so_thuong_gap": [
+  "Lực va chạm thật không đều theo thời gian."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "m_t",
+   "m_c",
+   "F"
+  ],
+  "dau_ra": [
+   "hai mũi tên lực bằng nhau",
+   "hai thanh gia tốc, xe con dài hơn",
+   "mức biến dạng theo gia tốc"
+  ],
+  "hinh_trong_bai": "(chưa có hình)",
+  "y_tuong": "Thanh trượt m_t cho thấy lực không đổi, chỉ gia tốc xe con đổi theo m_c."
+ },
+ "an_toan": ""
+}

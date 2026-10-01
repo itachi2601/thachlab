@@ -1,0 +1,208 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Định luật III Newton",
+ "lesson_id": 61,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-3-newton/theory.html",
+ "id": "tn-l10-newton3-04",
+ "ten": "Hai bạn đẩy nhau trên giày trượt",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "newton3.bang_nhau_nguoc_chieu",
+  "newton2.a_bang_f_chia_m",
+  "newton3.m1a1_bang_m2a2"
+ ],
+ "muc_tieu": "Thấy lực hai bên bằng nhau nhưng gia tốc tỉ lệ nghịch với khối lượng.",
+ "dung_cu": [
+  {
+   "ten": "Giày trượt patin hoặc hai ghế xoay",
+   "so_luong": 2,
+   "ghi_chu": "nền phẳng, nhẵn"
+  },
+  {
+   "ten": "Thước cuộn hoặc băng keo đánh dấu",
+   "so_luong": 1,
+   "ghi_chu": "đo quãng đường sau cùng một thời gian"
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1,
+   "ghi_chu": ""
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Hai bạn nặng khác nhau đứng đối diện, tay chạm nhau.",
+   "Một bạn đẩy bạn kia rồi cả hai buông tay.",
+   "Đo quãng đường mỗi bạn đi được trong cùng khoảng thời gian."
+  ],
+  "quan_sat": [
+   "Hai bạn trượt ngược chiều nhau.",
+   "Bạn nhẹ hơn đi xa hơn."
+  ],
+  "rut_ra": [
+   "Lực đẩy hai bên bằng nhau (định luật III).",
+   "Gia tốc tỉ lệ nghịch khối lượng: m_A·a_A = m_B·a_B."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m_A",
+   "ten": "Khối lượng bạn A",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 90,
+   "mac_dinh": 40,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "m_B",
+   "ten": "Khối lượng bạn B",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 90,
+   "mac_dinh": 60,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực đẩy (mỗi bên)",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 20,
+   "max": 300,
+   "mac_dinh": 120,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "t_c",
+   "ten": "Thời gian hai tay còn chạm nhau",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "a_A",
+   "ten": "Gia tốc bạn A",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "a_B",
+   "ten": "Gia tốc bạn B",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v_A",
+   "ten": "Vận tốc A khi rời tay",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v_B",
+   "ten": "Vận tốc B khi rời tay",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_AB = F_BA = F",
+   "a_A = F/m_A, a_B = F/m_B",
+   "v_A = a_A·t_c, v_B = a_B·t_c",
+   "m_A·a_A = m_B·a_B",
+   "x_A/x_B = v_A/v_B = m_B/m_A  (sau cùng thời gian, bỏ qua ma sát)"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát",
+   "lực đẩy không đổi trong lúc chạm",
+   "chuyển động trên một đường thẳng, hai bạn ban đầu đứng yên"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m_A (kg)",
+   "m_B (kg)",
+   "F (N)",
+   "a_A (m/s²)",
+   "a_B (m/s²)",
+   "v_A (m/s)",
+   "v_B (m/s)"
+  ],
+  "hang": [
+   [
+    40,
+    60,
+    120,
+    3.0,
+    2.0,
+    1.5,
+    1.0
+   ],
+   [
+    40,
+    40,
+    120,
+    3.0,
+    3.0,
+    1.5,
+    1.5
+   ],
+   [
+    40,
+    80,
+    120,
+    3.0,
+    1.5,
+    1.5,
+    0.75
+   ],
+   [
+    60,
+    60,
+    180,
+    3.0,
+    3.0,
+    1.5,
+    1.5
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, t_c = 0,5 s. Bài toán mẫu trong lesson là hàng 1."
+ },
+ "ket_qua_ky_vong": "m_A = 40 kg, m_B = 60 kg, F = 120 N: a_A = 3 m/s², a_B = 2 m/s²; m_A·a_A = m_B·a_B = 120 N.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng người đẩy tác dụng lực lớn hơn người bị đẩy.",
+  "Cho rằng người nặng hơn phải chịu lực lớn hơn."
+ ],
+ "sai_so_thuong_gap": [
+  "Ma sát giày–sàn khác nhau giữa hai bạn.",
+  "Thời gian hai tay còn chạm không đồng nhất giữa các lần.",
+  "Đo thời gian bằng tay sai số 0,2 s."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "m_A",
+   "m_B",
+   "F",
+   "t_c",
+   "bật/tắt ma sát"
+  ],
+  "dau_ra": [
+   "hai người trượt ngược chiều",
+   "mũi tên F bằng nhau, mũi tên a khác nhau",
+   "đồ thị x–t của cả hai",
+   "hiển thị m_A·a_A và m_B·a_B"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Kéo thanh trượt m_B và xem a_B thay đổi trong khi F không đổi; có nút 'dự đoán trước' giống mục Thử sức."
+ },
+ "an_toan": "Chỉ thử trên sân nhẵn, có người đỡ; không đẩy mạnh khi chưa có bảo hộ. Có thể thay bằng hai xe đẩy."
+}
