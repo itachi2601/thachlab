@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import ChunkErrorGuard from "@/components/system/ChunkErrorGuard";
+import MobileTabBar from "@/components/layout/MobileTabBar";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import { SUPABASE_URL } from "@/lib/supabase-env";
@@ -65,6 +66,15 @@ export const metadata: Metadata = {
   },
 };
 
+// Khai báo viewport cho điện thoại: viewportFit "cover" là điều kiện để env(safe-area-inset-*)
+// khác 0 — thiếu nó thì thanh đáy (MobileTabBar, thanh đáy trang bài) bị tai thỏ và thanh home
+// của iPhone che mất. Next 16 đọc export `viewport` này và tự sinh <meta name="viewport">.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 // Structured data toàn site — giúp Google nhận diện thương hiệu.
 const orgJsonLd = {
   "@context": "https://schema.org",
@@ -102,6 +112,10 @@ export default function RootLayout({
         />
         <ChunkErrorGuard />
         <ToastProvider>{children}</ToastProvider>
+        {/* Thanh đáy kiểu app cho điện thoại (< 1024px) — tự ẩn ở /quan-tri/**, /kiem-tra/lam
+            và /lop-hoc/bai (trang bài học đã có thanh đáy riêng). Dùng useAuth nên chỉ chạy
+            trong cây có AuthProvider; nhóm trang công khai không có AuthProvider sẽ tự bỏ qua. */}
+        <MobileTabBar />
       </body>
     </html>
   );
