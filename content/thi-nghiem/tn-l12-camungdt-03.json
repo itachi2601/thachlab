@@ -1,0 +1,149 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Hiện tượng cảm ứng điện từ",
+ "lesson_id": 13,
+ "nguon_trong_bai": "content/lesson-samples/l12-cam-ung-dien-tu/theory.html",
+ "id": "tn-l12-camungdt-03",
+ "ten": "Từ thông qua khung quay trong từ trường đều",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "camungdt.tu_thong_cong_thuc",
+  "camungdt.goc_phap_tuyen"
+ ],
+ "muc_tieu": "Thấy từ thông Φ = BS cosα thay đổi theo góc α dù B và S không đổi, từ đó hiểu nguyên tắc máy phát điện.",
+ "dung_cu": [
+  {
+   "ten": "Nam châm chữ U hoặc cặp cuộn Helmholtz",
+   "so_luong": 1,
+   "ghi_chu": "tạo từ trường gần đều"
+  },
+  {
+   "ten": "Khung dây có trục quay và thước đo góc",
+   "so_luong": 1,
+   "ghi_chu": "nối điện kế"
+  },
+  {
+   "ten": "Điện kế",
+   "so_luong": 1,
+   "ghi_chu": ""
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt khung giữa hai cực nam châm, mặt khung vuông góc đường sức (α = 0).",
+   "Quay từ từ khung tới vị trí mặt song song đường sức (α = 90°).",
+   "Đọc điện kế trong lúc quay."
+  ],
+  "quan_sat": [
+   "Số đường sức xuyên qua khung giảm dần khi α tăng.",
+   "Khi quay có dòng trong điện kế; đứng yên thì không."
+  ],
+  "rut_ra": [
+   "Φ = BS cosα biến thiên khi α đổi.",
+   "Quay đều thì Φ tuần hoàn: nguyên tắc máy phát điện xoay chiều."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "B",
+   "ten": "Cảm ứng từ",
+   "don_vi": "T",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.5,
+   "mac_dinh": 0.2,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích khung",
+   "don_vi": "m2",
+   "kieu": "dieu_chinh",
+   "min": 0.01,
+   "max": 0.1,
+   "mac_dinh": 0.05,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc giữa pháp tuyến và B",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 180,
+   "mac_dinh": 0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "Phi",
+   "ten": "Từ thông",
+   "don_vi": "Wb",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Phi = B·S·cos(alpha)"
+  ],
+  "gia_thiet": [
+   "từ trường đều",
+   "khung phẳng, kín"
+  ],
+  "ghi_chu": "Mô phỏng nên vẽ đồ thị Phi theo alpha và cho kéo khung bằng chuột."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "alpha (độ)",
+   "Phi (Wb)"
+  ],
+  "hang": [
+   [
+    0,
+    0.01
+   ],
+   [
+    30,
+    0.00866
+   ],
+   [
+    60,
+    0.005
+   ],
+   [
+    90,
+    0.0
+   ],
+   [
+    120,
+    -0.005
+   ]
+  ],
+  "ghi_chu": "Tính với B = 0,2 T, S = 0,05 m²; số liệu minh hoạ từ mô hình."
+ },
+ "ket_qua_ky_vong": "Phi = 0,01 cosα (Wb): lớn nhất ở 0°, bằng 0 ở 90°, đổi dấu sau 90°.",
+ "hien_tuong_hay_sai": [
+  "Lấy góc α là góc giữa mặt khung và B thay vì góc giữa pháp tuyến và B.",
+  "Cho rằng Φ phụ thuộc vào hình dạng khung chứ không chỉ diện tích."
+ ],
+ "sai_so_thuong_gap": [
+  "Từ trường không đều ở mép nam châm.",
+  "Đọc góc sai vì thước lệch."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "dieu_khien": [
+   "kéo khung quay",
+   "B",
+   "S"
+  ],
+  "dau_ra": [
+   "pháp tuyến n và vectơ B",
+   "đồ thị Phi theo alpha"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Học sinh dự đoán dạng đồ thị Phi(alpha) trước khi mô phỏng vẽ."
+ },
+ "an_toan": "Không có nguy cơ đáng kể."
+}

@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Hiện tượng cảm ứng điện từ",
+ "lesson_id": 13,
+ "nguon_trong_bai": "content/lesson-samples/l12-cam-ung-dien-tu/theory.html",
+ "id": "tn-l12-camungdt-02",
+ "ten": "Nam châm rơi chậm trong ống nhôm",
+ "loai": "thi_nghiem",
+ "muc_do": "nang_cao",
+ "kien_thuc": [
+  "camungdt.lenz",
+  "camungdt.dong_xoay",
+  "camungdt.bao_toan_nang_luong"
+ ],
+ "muc_tieu": "Cho thấy dòng cảm ứng luôn sinh lực cản chuyển động (định luật Lenz, bảo toàn năng lượng).",
+ "dung_cu": [
+  {
+   "ten": "Ống nhôm hoặc ống đồng dài 50 cm, thành dày vừa",
+   "so_luong": 1,
+   "ghi_chu": "đặt thẳng đứng"
+  },
+  {
+   "ten": "Nam châm neodymium nhỏ hình trụ",
+   "so_luong": 1,
+   "ghi_chu": "đường kính nhỏ hơn lòng ống"
+  },
+  {
+   "ten": "Vật kim loại không từ tính cùng kích cỡ (nhôm)",
+   "so_luong": 1,
+   "ghi_chu": "làm đối chứng"
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1,
+   "ghi_chu": "đo thời gian rơi"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Giữ ống thẳng đứng.",
+   "Thả cục nhôm từ miệng ống, đo thời gian rơi.",
+   "Thả nam châm từ miệng ống, đo thời gian rơi."
+  ],
+  "quan_sat": [
+   "Cục nhôm rơi gần như tự do.",
+   "Nam châm rơi chậm hơn nhiều, với tốc độ gần không đổi sau một đoạn."
+  ],
+  "rut_ra": [
+   "Nam châm rơi làm từ thông qua thành ống biến thiên, sinh dòng xoáy cảm ứng.",
+   "Theo Lenz, dòng này sinh lực cản; thế năng chuyển thành nhiệt trong thành ống."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Chiều dài ống",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "t_Al",
+   "ten": "Thời gian rơi của cục nhôm",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  },
+  {
+   "ky_hieu": "t_nc",
+   "ten": "Thời gian rơi của nam châm",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "d_ong",
+   "ten": "Độ dày thành ống",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "rơi tự do: t = sqrt(2h/g)",
+   "khi có lực cản từ F_c = k·v: v_gh = m·g/k"
+  ],
+  "gia_thiet": [
+   "lực cản tỉ lệ thuận với tốc độ",
+   "bỏ qua sức cản không khí",
+   "thành ống đồng nhất"
+  ],
+  "ghi_chu": "Hệ số k tăng khi thành ống dày hơn hoặc nam châm mạnh hơn."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vật",
+   "t (s)"
+  ],
+  "hang": [
+   [
+    "cục nhôm",
+    0.32
+   ],
+   [
+    "nam châm, ống mỏng 1 mm",
+    1.8
+   ],
+   [
+    "nam châm, ống dày 3 mm",
+    4.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ gần đúng, phụ thuộc nam châm và ống cụ thể."
+ },
+ "ket_qua_ky_vong": "t_nc lớn hơn nhiều so với t_Al; ống dày hơn thì nam châm rơi chậm hơn.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng ống nhôm không từ tính nên không tác dụng lên nam châm.",
+  "Cho rằng nam châm bị 'hút' vào thành ống."
+ ],
+ "sai_so_thuong_gap": [
+  "Ống không thẳng đứng làm nam châm chạm thành.",
+  "Nam châm quá nhỏ hoặc yếu nên chênh lệch thời gian không rõ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "độ dày thành ống",
+   "độ mạnh nam châm"
+  ],
+  "dau_ra": [
+   "vị trí nam châm theo t",
+   "đồ thị v theo t tiến tới tốc độ giới hạn"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "So sánh hai vật rơi song song, một vật có lực cản từ."
+ },
+ "an_toan": "Nam châm neodymium mạnh, dễ kẹp tay và vỡ; giữ xa thiết bị điện tử."
+}

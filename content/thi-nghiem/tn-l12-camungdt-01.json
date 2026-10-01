@@ -1,0 +1,168 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Hiện tượng cảm ứng điện từ",
+ "lesson_id": 13,
+ "nguon_trong_bai": "content/lesson-samples/l12-cam-ung-dien-tu/theory.html",
+ "id": "tn-l12-camungdt-01",
+ "ten": "Nam châm và cuộn dây nối điện kế",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "camungdt.tu_thong_bien_thien",
+  "camungdt.dieu_kien_dong_cam_ung",
+  "camungdt.faraday_toc_do"
+ ],
+ "muc_tieu": "Chứng tỏ chỉ khi từ thông biến thiên mới có dòng cảm ứng; biến thiên càng nhanh, dòng càng lớn; đổi chiều chuyển động hoặc đổi cực thì đổi chiều dòng.",
+ "dung_cu": [
+  {
+   "ten": "Cuộn dây nhiều vòng (vd 600 vòng)",
+   "so_luong": 1,
+   "ghi_chu": "nối hai đầu với điện kế"
+  },
+  {
+   "ten": "Điện kế nhạy (số 0 ở giữa)",
+   "so_luong": 1,
+   "ghi_chu": "đọc cả hai chiều"
+  },
+  {
+   "ten": "Thanh nam châm thẳng",
+   "so_luong": 1,
+   "ghi_chu": "biết rõ cực Bắc/Nam"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối cuộn dây với điện kế.",
+   "Đưa cực Bắc vào cuộn dây nhanh, rồi chậm; giữ yên; rồi rút ra.",
+   "Lặp lại với cực Nam."
+  ],
+  "quan_sat": [
+   "Kim lệch khi đưa vào và khi rút ra, về hai phía ngược nhau.",
+   "Đưa nhanh kim lệch nhiều hơn đưa chậm.",
+   "Giữ yên kim về 0.",
+   "Đổi cực thì chiều lệch đổi."
+  ],
+  "rut_ra": [
+   "Dòng cảm ứng chỉ có khi từ thông biến thiên.",
+   "Độ lớn dòng phụ thuộc tốc độ biến thiên từ thông.",
+   "Chiều dòng phụ thuộc từ thông tăng hay giảm và cực nam châm (định luật Lenz)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ đưa nam châm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "cuc",
+   "ten": "Cực đưa vào (Bắc=+1, Nam=-1)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": -1,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Số vòng dây",
+   "don_vi": "vòng",
+   "kieu": "co_dinh",
+   "gia_tri": 600
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Dòng cảm ứng (số chỉ điện kế)",
+   "don_vi": "mA",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "i_do",
+   "ten": "Số chỉ điện kế đọc được",
+   "don_vi": "mA",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "e_c = -N·dΦ/dt",
+   "i = e_c / R",
+   "dΦ/dt tỉ lệ thuận với v (nam châm tiến lại gần với tốc độ v)"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện cảm của cuộn dây",
+   "từ trường nam châm biến đổi mượt khi tiến lại gần",
+   "điện trở mạch không đổi"
+  ],
+  "ghi_chu": "Mô phỏng nên cho bấm 'giữ yên' để thấy i = 0 dù B lớn."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "Chiều di chuyển",
+   "Số chỉ điện kế (mA)"
+  ],
+  "hang": [
+   [
+    0.0,
+    "đứng yên",
+    0.0
+   ],
+   [
+    0.1,
+    "đưa vào",
+    1.0
+   ],
+   [
+    0.2,
+    "đưa vào",
+    2.1
+   ],
+   [
+    0.4,
+    "đưa vào",
+    3.9
+   ],
+   [
+    0.2,
+    "rút ra",
+    -2.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính theo tỉ lệ thuận với v, không phải đo thật; dấu âm là kim lệch ngược chiều."
+ },
+ "ket_qua_ky_vong": "i tỉ lệ thuận với v, i = 0 khi v = 0, và đổi dấu khi đổi chiều di chuyển hoặc đổi cực.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng nam châm nằm trong cuộn dây thì kim vẫn lệch vì có từ trường.",
+  "Cho rằng đưa vào và rút ra cho dòng cùng chiều.",
+  "Cho rằng cuộn dây không có nguồn thì không thể có dòng."
+ ],
+ "sai_so_thuong_gap": [
+  "Điện kế chưa chỉnh số 0.",
+  "Cầm nam châm rung tay làm kim dao động."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc+do_thi",
+  "dieu_khien": [
+   "kéo nam châm bằng chuột/thanh trượt",
+   "đổi cực nam châm",
+   "số vòng dây"
+  ],
+  "dau_ra": [
+   "kim điện kế",
+   "đồ thị i theo t",
+   "mũi tên từ trường cảm ứng"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Học sinh dự đoán chiều lệch trước khi kéo; mô phỏng hiện kết quả và đồ thị."
+ },
+ "an_toan": "Không có nguy cơ; không dùng nam châm quá mạnh gần thiết bị điện tử."
+}
