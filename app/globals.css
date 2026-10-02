@@ -2,7 +2,12 @@
 
 @theme {
   /* Dark "deep space" palette — toàn trang tối, neon xanh–tím–cyan */
-  --color-primary: #3b82f6;
+  /* --color-primary là màu NỀN NÚT đặc (bg-primary, 54 chỗ) nên phải đạt 4,5:1 với chữ
+     trắng: #3b82f6 chỉ được 3,68:1 — trượt AA cho chữ thường (nút 14px đậm không tính là
+     "large text", phải ≥18,66px đậm mới hạ được xuống 3:1). #2563eb được 5,17:1.
+     Chữ/viền xanh trên nền tối lại cần tông SÁNG hơn, tách riêng ở khối
+     html[data-theme="dark"] phía dưới — xem mục "P0 tương phản". */
+  --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
   --color-violet: #8b5cf6;
   --color-cyan: #22d3ee;
@@ -13,6 +18,10 @@
   --color-ink: #f1f5f9;
   --color-muted: #94a3b8;
   --color-line: rgba(255, 255, 255, 0.08);
+  /* Chữ phụ trên nền tối: slate-500 gốc #64748b chỉ 3,98:1 (trượt AA 4,5:1) — 543 chỗ dùng
+     text-slate-500 (mốc thời gian, dòng phụ, placeholder). #7c8ba1 = 5,47:1 trên panel.
+     Theme sáng không bị ảnh hưởng: rule .text-slate-500 ở khối light ép lại #64748b (4,76:1). */
+  --color-slate-500: #7c8ba1;
 
   /* Font tự host qua next/font (app/fonts.ts) — biến --font-be-vietnam/--font-inter/
      --font-jetbrains-mono được gắn lên <html> trong app/layout.tsx. */
@@ -38,6 +47,12 @@ body {
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
 html[data-theme="light"] {
   color-scheme: light;
+  /* Chữ/viền xanh trên nền sáng cần tông ĐẬM: #2563eb trên #f8fafc = 4,94:1 (vừa đủ), còn
+     #3b82f6 chỉ 3,52:1. #1d4ed8 cho 6,41:1 trên nền trang và 6,70:1 trên trắng, đồng thời
+     đủ đậm cho nền nút. --color-primary-dark phải tối hơn --color-primary, nếu không nút
+     mất phản hồi hover (trước đây #3b82f6 → #1d4ed8 nên còn thấy đổi). */
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e40af;
   --color-bg: #f8fafc;
   --color-panel: #ffffff;
   --color-panel-deep: #ffffff;
@@ -171,6 +186,25 @@ html[data-theme="light"] .competency-path a > div:last-child {
 html[data-theme="light"] .competency-path a > div:first-child:has(> span) ~ div:last-child {
   background: linear-gradient(90deg, #0ea5e9, #10b981);
 }
+
+/* ---------- P0 tương phản (đo lại 02/10/2026, WCAG 2.1 AA) ----------
+   Nút đặc đã sửa bằng token --color-primary (#2563eb, 5,17:1 với chữ trắng). Còn lại là
+   chữ/viền xanh — thứ cần tông khác nhau ở mỗi theme, nên phải tách theo data-theme thay vì
+   dùng chung một mã. Các giá trị dưới đây là số đo thật, đừng đổi mà không đo lại. */
+
+/* Chữ xanh trên nền TỐI. --color-primary #2563eb chỉ 3,66:1 trên panel, và tệ hơn nữa khi
+   nằm trên nền nhấn có alpha: bg-primary/30 → 3,43:1, /25 → 3,69:1, /20 → 4,01:1,
+   /15 → 4,33:1 (Badge "info", chip lọc ngân hàng câu hỏi, nút 11px ở ExamDraftEditor).
+   #60a5fa cho 7,45:1 trên panel và 4,96–7,08:1 trên đúng các nền nhấn đó.
+   Dùng [class*="…"] (khớp cả chuỗi con) để phủ luôn hover:text-primary (7 chỗ) — kiểu khớp
+   này đã có sẵn ở khối light phía trên. */
+html[data-theme="dark"] [class*="text-primary"] { color: #60a5fa; }
+
+/* Hex xanh còn hard-code trong JSX — logo "Lab" ở Navbar (text-lg, 18px), chip tài khoản
+   (text-sm), initials avatar. Trên nền sáng #3B82F6 chỉ 3,68:1 → #1d4ed8 = 6,70:1.
+   Chỉ khớp đúng token class "text-[#3B82F6]", không đụng ring-[#3B82F6] (vòng focus, chỉ
+   cần 3:1) hay stroke/accent trong chart. */
+html[data-theme="light"] [class~="text-[#3B82F6]"] { color: #1d4ed8 !important; }
 
 @media (max-width: 639px) {
   .theme-toggle { width: 2.75rem; height: 2.75rem; }
