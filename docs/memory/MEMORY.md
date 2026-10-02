@@ -52,3 +52,4 @@
 - [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu, soạn khi có token
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
+- [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — script cap-nhat-ly-thuyet.sh; bài Giao thoa sóng L11 chờ đăng
