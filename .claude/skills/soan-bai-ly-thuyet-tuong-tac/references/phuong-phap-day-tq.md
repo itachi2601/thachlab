@@ -53,8 +53,34 @@ VI.  Đời sống + Thử thách phân tầng ⭐ + "✅ Mang về sau bài h�
 
 Hai thứ **không** thêm: quá 8 quiz một bài (quá tải, bài đã ~50 KB) và chữ Hán/tên phương pháp trong bài cho học sinh đọc.
 
-## Tỉ lệ vàng đã kiểm chứng (bài Mô tả sóng)
+## Hạn mức độ dài (chốt 2/10/2026 — thay cho "tỉ lệ vàng" cũ)
 
-- ~51 KB HTML trong đó ~25 KB là SVG; 4 hình SVG; 7 quiz; 13 `<details>`; 6 phần.
-- 2 thí nghiệm có số liệu; 1 bài toán mẫu 4 câu; 2 biến thể; 3 mức thử thách.
-- Thời gian soạn trọn gói (soạn + hình + thí nghiệm + xem thử) trong một lượt là hợp lý; đừng phình thêm phần chữ.
+Mục "Tỉ lệ vàng đã kiểm chứng" trước đây lấy bài Mô tả sóng (~51 KB, 4.190 từ) làm chuẩn. **Số đo lại
+2/10/2026 cho thấy đó chính là bài dài nhất và không nên lấy làm khuôn**: 3.506 từ hiện ngay (~25 phút),
+mục II dài 1.273 từ trong một `<h3>`, có đoạn 516 từ liền không có gì để làm. Ba bài ngắn (ĐL III
+Newton 1.682 từ, Dao động điều hoà 1.265 từ, Giao thoa sóng 1.746 từ) mới là mức đọc thoải mái.
+
+Hạn mức **bắt buộc**, đo bằng `scripts/lint_do_dai.py` (chạy ở bước 5, cùng `lint_theory.py` và
+`check_quizzes.py`):
+
+| Chỉ số | ⚠ | ✗ |
+|---|---|---|
+| Tổng từ hiện ngay cả bài | > 2.000 (~14 phút) | > 2.500 (~18 phút) |
+| Một mục `<h3>` | > 400 | > 600 |
+| Mục "Bài toán mẫu" | > 600 | > 900 |
+| Đoạn liền không có nhịp nào | > 300 | > 400 |
+| Số quiz | < 4 | > 8 |
+
+- "Từ hiện ngay" = bỏ nội dung trong `<details>`, **giữ `<summary>`**. "Nhịp" = `<details>` · `.tl-quiz`
+  · `<figure>`. Phút tính ở 140 từ/phút (ước lượng).
+- Mục vượt 600 từ thì **tách thành mục con** (`II.1`, `II.2`…), mỗi mục con có 🔑 + ví dụ + quiz riêng —
+  không viết một mục II khổng lồ.
+- Vẫn phải giữ **một đoạn buộc đọc liền có chủ đích** (bài toán mẫu): đừng cắt mọi thứ thành mảnh vụn,
+  năng lực đọc liền 10–20 phút vẫn là thứ đề thi đòi.
+- Lý do, bằng chứng, cách kiểm chứng và nợ kỹ thuật: `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`.
+
+Lệnh:
+
+```bash
+python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py <theory.html>
+```
