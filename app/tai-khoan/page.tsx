@@ -3,7 +3,7 @@ import { useCallback,useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Clock3, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHome";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
+import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboard";import ThptStudentHome from "@/components/dashboard/ThptStudentHome";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanel";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHome";import {fetchMyEnrollment,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import {getSubject,HOMEROOM_SUBJECT_CODE} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 type Enrollment=Awaited<ReturnType<typeof fetchMyEnrollment>>;
 
@@ -200,7 +200,7 @@ function Account(){
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
   })();
-  return <>{welcome(variant)}{body}</>;
+  return <>{welcome(variant)}{body}<ProfileEditCard/></>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer/></>}
