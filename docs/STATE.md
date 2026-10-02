@@ -148,7 +148,7 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
      bài) — đợt 4 **không động tới** theo đúng phạm vi được giao. Muốn đạt <1000 KB thì phải
      tách `SampleQuestionsGrid` bằng `next/dynamic({ssr:false})` — đổi UX (chớp loading ngắn lúc
      đầu), cần quyết trước khi làm.
-  2. **Lỗi nghiêm trọng phát hiện ngoài phạm vi đợt này**: xoá thử chunk `RevealMotion` (mô
+  2. **[ĐÃ VÁ 29/9/2026 — `ChunkErrorGuard` (d275112) + script inline sớm trong `<head>` của `app/layout.tsx`, reload 1 lần/phiên tab; chưa tái kiểm trên build thật]** Lỗi nghiêm trọng phát hiện ngoài phạm vi đợt này**: xoá thử chunk `RevealMotion` (mô
      phỏng lỗi tải mạng/CDN) → trang chủ **crash trắng `Uncaught ChunkLoadError`** trong <2s,
      KHÔNG bị `RevealErrorBoundary`/`PendingFallback` bắt được (lỗi nằm trong
      `Promise.all` của runtime nạp chunk Turbopack, ngoài tầm với của ErrorBoundary React
