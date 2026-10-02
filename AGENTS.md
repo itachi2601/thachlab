@@ -62,6 +62,14 @@ bash scripts/run-migrations.sh
 Script đã lo: hỏi xác nhận từng file, ghi log `scripts/logs/`, dừng ngay khi lỗi,
 nhắc lệnh rollback. `--yes` chạy thẳng, `--only N` chạy riêng một file.
 
+## Script/migration viết trên cloud phải VÀO `main` trước khi giao lệnh cho Thạch
+Mac của Thạch chỉ chạy được file có trong `main` (thường còn thay đổi chưa commit nên không checkout nhánh khác được).
+Khi giao lệnh chạy (`run-migrations.sh`, file `.sql`, script `.mts`):
+1. Đảm bảo file đã nằm trong `main` — cloud chỉ đẩy nhánh `claude/...`, nên mở PR vào `main` (hỏi Thạch duyệt/merge) rồi mới in lệnh chạy. Không in lệnh chạy khi file mới chỉ ở nhánh.
+2. Lệnh đầu tiên luôn là `cd /Users/MAC/Projects/thachlab && git pull origin main`.
+3. Nếu Mac báo "local changes would be overwritten": KHÔNG bảo bỏ thay đổi; hướng dẫn `git stash` → `git pull origin main` → `git stash pop`, hoặc `git diff --stat <file>` để xem trước.
+4. Sau khi merge, kiểm lại `FILES` trong `scripts/run-migrations.sh` (bản trên `main`) khớp danh sách đang chờ.
+
 ## Vì sao phải là máy của Thạch
 Sandbox đám mây và sandbox gắn thiết bị đều bị proxy chặn `*.supabase.co` (403 CONNECT),
 và cũng không có `SUPABASE_SERVICE_ROLE_KEY` / mật khẩu DB. Khóa service role không được
