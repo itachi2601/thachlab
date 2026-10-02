@@ -795,6 +795,14 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 /* Đề mục trong nội dung soạn sẵn có id ổn định — chừa chỗ để thanh dính không che khi nhảy tới. */
 .lesson-body :is(h2[id], h3[id], [id^="lesson-item-"]) { scroll-margin-top: 140px; }
 .lesson-lead { margin-top: 10px; color: #94a3b8; font-size: 15px; line-height: 1.6; }
+.lesson-download { position: relative; display: inline-block; margin-top: 14px; }
+.lesson-download-toggle { display: inline-flex; align-items: center; gap: 7px; }
+.lesson-download-menu { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; display: grid; min-width: 190px; overflow: hidden; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: #0f172a; box-shadow: 0 12px 32px rgba(0,0,0,.35); }
+.lesson-download-menu button { display: flex; align-items: center; gap: 8px; border: 0; background: none; padding: 10px 14px; color: #e2e8f0; font-size: 13.5px; text-align: left; cursor: pointer; }
+.lesson-download-menu button:hover { background: rgba(148,163,184,.12); }
+.lesson-download-menu button:disabled { cursor: wait; opacity: .6; }
+.lesson-download-error { margin-top: 8px; color: #f87171; font-size: 12.5px; }
+.lesson-print-only { display: none; }
 .lesson-section { scroll-margin-top: 96px; }
 .lesson-section + .lesson-section { margin-top: 48px; border-top: 1px solid var(--lesson-line); padding-top: 36px; }
 .lesson-section h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: #fff; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
@@ -2438,8 +2446,7 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
 html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
 
-/* ============================================================
-   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+/* =====================================================   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
      < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
@@ -2469,6 +2476,18 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+=======
+/* In bài học (nút "In / Lưu PDF"): chỉ hiện bản Lý thuyết + Bài tập mẫu đã gộp
+   sẵn (.lesson-print-only), ẩn navbar/sidebar/nút bấm — công thức KaTeX đã
+   render sẵn trên trang nên in ra đúng như trên web, khỏi dựng PDF riêng. */
+@media print {
+  nav, footer, .lesson-nav, .lesson-head, .lesson-section, .lesson-pager { display: none !important; }
+  .lesson-shell, .lesson-layout, .lesson-main { display: block !important; width: 100% !important; max-width: none !important; }
+  .lesson-print-only { display: block !important; color: #0f172a; background: #fff; }
+  .lesson-print-only h1 { font-size: 22px; margin-bottom: 4px; }
+  .lesson-print-sub { color: #475569; font-size: 13px; margin-bottom: 16px; }
+  .lesson-print-only img { max-width: 100% !important; }
+  .lesson-print-only table { page-break-inside: avoid; }
 }
 
 /* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
