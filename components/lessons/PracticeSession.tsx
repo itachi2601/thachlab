@@ -1,5 +1,6 @@
 "use client";
 
+import { dependsOnOtherQuestion } from "@/services/question-context";
 import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -141,6 +142,8 @@ export default function PracticeSession({
           exam.questions.forEach((question, qi) => {
             // Câu tự luận không chấm tự động được — để dành cho mục Kiểm tra.
             if (question.type === "essay") return;
+            // Câu "tiếp câu trên" mất ngữ cảnh khi bốc ngẫu nhiên — bỏ khỏi ngân hàng luyện tập.
+            if (dependsOnOtherQuestion(question)) return;
             flat.push({ question, examId: exam.id, sourceIndex: qi });
           });
         }
