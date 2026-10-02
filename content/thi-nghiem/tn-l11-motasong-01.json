@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 8. Mô tả sóng",
+ "lesson_id": 27,
+ "nguon_trong_bai": "content/lesson-samples/l11-mo-ta-song/theory.html",
+ "id": "tn-l11-motasong-01",
+ "ten": "Khay nước: sóng lan ra xa, miếng xốp chỉ nhấp nhô tại chỗ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "song.truyen_pha",
+  "song.moi_truong_truyen_song"
+ ],
+ "muc_tieu": "Thấy bằng mắt rằng sóng truyền pha và năng lượng ra xa, còn phần tử môi trường (miếng xốp) chỉ dao động tại chỗ quanh vị trí cân bằng.",
+ "dung_cu": [
+  {
+   "ten": "Khay nhựa trong suốt (hoặc khay thuỷ tinh) dài ≥ 30 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nước sạch, mực nước ~1 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Miếng xốp nhỏ (hoặc nút bấc, mẩu lá nhẹ)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Que nhọn / đầu bút chì gắn vào cần rung tay",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm (tuỳ chọn, để đo chu kì)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ nước vào khay, mực nước khoảng 1 cm, để mặt nước đứng yên.",
+   "Thả miếng xốp nhỏ C lên mặt nước, cách đầu khay khoảng 8 cm.",
+   "Dùng que nhọn O chấm xuống mặt nước theo nhịp đều tay (khoảng 2 lần mỗi giây), giữ nguyên một điểm chấm.",
+   "Sau khoảng 10 giây thì ngừng chấm và quan sát thêm 5 giây."
+  ],
+  "quan_sat": [
+   "Các gợn tròn lan ra từ O; càng xa O gợn càng thấp.",
+   "Miếng xốp C nhấp nhô lên xuống tại chỗ, không trôi ra xa và không trôi vào bờ khay.",
+   "Ngừng chấm, các gợn vẫn tiếp tục lan rồi yếu dần; C vẫn nhấp nhô thêm vài nhịp rồi đứng yên."
+  ],
+  "rut_ra": [
+   "O là nguồn sóng, nước là môi trường truyền sóng: thứ lan ra xa là pha dao động và năng lượng.",
+   "Phần tử môi trường chỉ dao động quanh vị trí cân bằng — sóng không mang vật chất đi theo.",
+   "Sóng tắt dần vì năng lượng trải ra trên đường tròn ngày càng lớn và một phần mất do ma sát."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số chấm của que O (nhịp tay)",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ chấm (độ sâu nhúng que)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1.5,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ sâu lớp nước",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên mặt nước",
+   "don_vi": "cm/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lambda",
+   "ten": "Bước sóng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "yC",
+   "ten": "Độ cao của miếng xốp C so với mặt nước tĩnh",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v ≈ sqrt(g·h) với nước nông (h là độ sâu lớp nước)",
+   "λ = v/f",
+   "yC = A·cos(2π·f·t − 2π·d/λ), d là khoảng cách từ O tới C"
+  ],
+  "gia_thiet": [
+   "nước nông, bỏ qua ma sát nhớt và phản xạ ở thành khay",
+   "miếng xốp nhẹ, bám mặt nước nên dao động cùng pha với mặt nước tại chỗ",
+   "g = 9,8 m/s²; h tính bằng mét"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (cm)",
+   "v (cm/s)",
+   "f (Hz)",
+   "λ (cm)"
+  ],
+  "hang": [
+   [1, 31, 2, 15.7],
+   [1, 31, 3, 10.4],
+   [1, 31, 4, 7.8],
+   [2, 44, 2, 22.1],
+   [2, 44, 4, 11.1]
+  ],
+  "ghi_chu": "Tính từ mô hình nước nông v = sqrt(g·h), không phải số đo thật. Khay dài 30 cm nên chỉ nên chọn f ≥ 2 Hz để thấy được vài bước sóng."
+ },
+ "ket_qua_ky_vong": "Miếng xốp nhấp nhô đúng tần số chấm tay nhưng gần như không dịch chuyển theo phương truyền; các gợn tròn lan ra xa rồi yếu dần.",
+ "hien_tuong_hay_sai": [
+  "Tưởng miếng xốp sẽ trôi ra xa theo sóng (thực tế chỉ nhấp nhô tại chỗ).",
+  "Tưởng ngừng chấm là sóng dừng ngay lập tức (thực tế gợn vẫn lan tiếp rồi tắt dần).",
+  "Tưởng nước ở chỗ miếng xốp chảy ra xa (nếu vậy cả khay sẽ dồn nước về một phía)."
+ ],
+ "sai_so_thuong_gap": "Nhịp tay không đều làm tần số thay đổi; phản xạ ở thành khay tạo gợn giao thoa gây rối hình ảnh — nên quan sát ở giữa khay, xa thành.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Nhìn từ trên: các vòng tròn đồng tâm lan ra từ O, một chấm C đổi màu theo pha; thanh trượt f và A; một ô nhỏ hiện đồ thị y_C(t) để so với nhịp chấm tay.",
+  "diem_nhan": "Làm nổi bật việc C không đổi toạ độ ngang, chỉ đổi toạ độ dọc."
+ }
+}

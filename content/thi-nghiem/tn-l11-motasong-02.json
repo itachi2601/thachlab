@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 8. Mô tả sóng",
+ "lesson_id": 27,
+ "nguon_trong_bai": "content/lesson-samples/l11-mo-ta-song/theory.html",
+ "id": "tn-l11-motasong-02",
+ "ten": "Dây lò xo / dây thun: đo bước sóng, chu kì rồi tính tốc độ truyền sóng",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "song.buoc_song",
+  "song.toc_do_truyen_song",
+  "song.chu_ki_tan_so"
+ ],
+ "muc_tieu": "Đo được λ và T của sóng trên dây rồi tính v = λ/T; thấy rằng đổi sức căng làm v và λ đổi nhưng T do nhịp tay gảy quyết định thì gần như không đổi.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo mềm (slinky) hoặc dây thun dài 3 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dây 3 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế lò xo 10 N (hoặc quả cân đã biết khối lượng)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm 120–240 fps",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ / móc cố định đầu dây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cố định một đầu dây, đầu kia móc lực kế và kéo căng với lực F xác định (ví dụ 8 N), giữ nguyên suốt thí nghiệm.",
+   "Một bạn gảy nhẹ đầu dây theo nhịp đều tay, bạn kia quay chậm toàn bộ đoạn dây.",
+   "Đo khoảng cách giữa hai đỉnh sóng liên tiếp trên dây bằng thước dây.",
+   "Đếm số khung hình giữa hai lần một điểm trên dây đạt đỉnh liên tiếp, chia cho tốc độ khung hình để suy ra T.",
+   "Lặp lại với nhịp gảy khác, rồi với lực căng F khác."
+  ],
+  "quan_sat": [
+   "Sóng chạy từ đầu gảy sang đầu cố định, biên độ giảm dần.",
+   "Cùng một lực căng: gảy nhanh hơn (f lớn hơn) thì λ ngắn lại, còn T đúng bằng khoảng thời gian giữa hai lần gảy.",
+   "Tăng lực căng: λ dài ra rõ rệt dù vẫn gảy cùng nhịp."
+  ],
+  "rut_ra": [
+   "Tính được v = λ/T cho từng lần đo; các giá trị xấp xỉ nhau nếu cùng lực căng.",
+   "Tần số (và chu kì) do tay gảy quyết định; tốc độ truyền sóng do môi trường (sức căng, khối lượng trên một mét dây) quyết định.",
+   "Đổi lực căng: v đổi nên λ = v/f đổi theo, đúng hệ thức λ = vT = v/f."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực căng dây",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 36,
+   "mac_dinh": 8,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số gảy của tay",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Khối lượng trên một mét dây",
+   "don_vi": "kg/m",
+   "kieu": "co_dinh",
+   "gia_tri": 2
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên dây",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lambda",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì sóng",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v = sqrt(F/μ)",
+   "λ = v/f",
+   "T = 1/f"
+  ],
+  "gia_thiet": [
+   "dây đồng chất, khối lượng trên một mét μ không đổi",
+   "bỏ qua ma sát với sàn và phản xạ ở đầu cố định",
+   "biên độ nhỏ so với bước sóng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F (N)",
+   "v (m/s)",
+   "f (Hz)",
+   "λ (m)",
+   "T (s)"
+  ],
+  "hang": [
+   [8, 2.0, 2, 1.0, 0.5],
+   [8, 2.0, 3, 0.67, 0.33],
+   [18, 3.0, 2, 1.5, 0.5],
+   [18, 3.0, 3, 1.0, 0.33],
+   [32, 4.0, 2, 2.0, 0.5]
+  ],
+  "ghi_chu": "Tính từ mô hình v = sqrt(F/μ) với μ = 2 kg/m, không phải số đo thật. Dây 3 m nên giữ λ ≤ 1,5 m để thấy được ít nhất hai bước sóng."
+ },
+ "ket_qua_ky_vong": "Với mỗi lực căng, tỉ số λ/T cho cùng một giá trị v; tăng F thì v và λ tăng, còn T vẫn đúng bằng khoảng thời gian giữa hai lần gảy.",
+ "hien_tuong_hay_sai": [
+  "Tưởng gảy mạnh hơn (biên độ lớn hơn) là sóng truyền nhanh hơn — thực tế v chỉ phụ thuộc sức căng và dây.",
+  "Tưởng tăng lực căng làm chu kì thay đổi — thực tế T do nhịp tay gảy quyết định.",
+  "Đo λ bằng khoảng cách hai đỉnh bất kì thay vì hai đỉnh liên tiếp."
+ ],
+ "sai_so_thuong_gap": "Sai số đọc khung hình (±1 khung ở 120 fps là ±0,008 s); dây chùng làm sóng phản xạ chồng lên sóng tới.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Dây vẽ dạng sóng sin chạy; thanh trượt F và f; hiện đồng thời u–x (dạng dây) và u–t (một điểm), kèm số đo λ, T, v.",
+  "diem_nhan": "Cho thấy tăng F thì dạng dây giãn ra (λ tăng) nhưng nhịp rung tại một điểm không đổi."
+ }
+}
