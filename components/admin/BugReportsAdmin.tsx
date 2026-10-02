@@ -21,6 +21,15 @@ function fixExamHref(examId: number, questionIndex: number | null): string {
   return questionIndex != null ? `/quan-tri/sua-de?exam=${examId}&q=${questionIndex}` : `/quan-tri/sua-de?exam=${examId}`;
 }
 
+/** Báo lỗi từ nút nổi chung không gắn exam_id — suy đề từ link trang làm bài, số câu từ chữ "Câu N" trong mô tả (nếu có). */
+function targetOf(r: { exam_id: number | null; question_index: number | null; page_url?: string | null; description?: string | null }): { examId: number; questionIndex: number | null } | null {
+  if (r.exam_id != null) return { examId: r.exam_id, questionIndex: r.question_index };
+  const m = /^\/kiem-tra\/lam\/?\?(?:[^#]*&)?id=(\d+)/.exec(r.page_url ?? "");
+  if (!m) return null;
+  const q = /câu\s*(\d{1,3})/i.exec(r.description ?? "");
+  return { examId: Number(m[1]), questionIndex: q ? Number(q[1]) - 1 : null };
+}
+
 const STATUS_STYLES: Record<BugStatus, string> = {
   moi: "bg-red-500/15 text-red-300",
   dang_xu_ly: "bg-amber-500/15 text-amber-300",
@@ -123,11 +132,14 @@ export default function BugReportsAdmin() {
                   <td className="p-2 text-slate-300">{r.profiles?.full_name ?? (r.reporter_name || "Khách")}</td>
                   <td className="p-2 text-slate-300">
                     {BUG_CATEGORY_LABELS[r.category]}
-                    {r.exam_id != null && (
-                      <Link href={fixExamHref(r.exam_id, r.question_index)} className="mt-0.5 block text-[12px] font-bold text-cyan-300 hover:text-cyan-200">
-                        Đề #{r.exam_id}{r.question_index != null && ` · Câu ${r.question_index + 1}`} →
-                      </Link>
-                    )}
+                    {(() => {
+                      const t = targetOf(r);
+                      return t && (
+                        <Link href={fixExamHref(t.examId, t.questionIndex)} className="mt-0.5 block text-[12px] font-bold text-cyan-300 hover:text-cyan-200">
+                          Đề #{t.examId}{t.questionIndex != null && ` · Câu ${t.questionIndex + 1}`} →
+                        </Link>
+                      );
+                    })()}
                   </td>
                   <td className="max-w-[260px] truncate p-2 text-slate-400" title={r.description}>
                     {r.description}
@@ -235,16 +247,19 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
             <dt className="text-slate-500">Loại</dt>
             <dd className="text-slate-200">{BUG_CATEGORY_LABELS[report.category]}</dd>
           </div>
-          {report.exam_id != null && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-slate-500">Câu báo lỗi</dt>
-              <dd className="text-slate-200">
-                <Link href={fixExamHref(report.exam_id, report.question_index)} className="font-bold text-cyan-300 hover:text-cyan-200">
-                  Mở đề #{report.exam_id}{report.question_index != null && ` · Câu ${report.question_index + 1}`} →
-                </Link>
-              </dd>
-            </div>
-          )}
+          {(() => {
+            const t = targetOf(report);
+            return t && (
+              <div className="flex justify-between gap-3">
+                <dt className="text-slate-500">Câu báo lỗi</dt>
+                <dd className="text-slate-200">
+                  <Link href={fixExamHref(t.examId, t.questionIndex)} className="font-bold text-cyan-300 hover:text-cyan-200">
+                    Mở đề #{t.examId}{t.questionIndex != null && ` · Câu ${t.questionIndex + 1}`} →
+                  </Link>
+                </dd>
+              </div>
+            );
+          })()}
           <div className="flex justify-between gap-3">
             <dt className="text-slate-500">Trang</dt>
             <dd className="max-w-[260px] truncate font-mono text-xs text-slate-400" title={report.page_url}>
