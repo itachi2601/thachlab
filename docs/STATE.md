@@ -41,6 +41,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   mobile hàng chip) `components/layout/Navbar.tsx`; `/phu-huynh` khách thấy lời nhắc riêng cho phụ huynh (prop
   `guestNotice`/`loginHref`/`showSignUp` của `RequireAuth`), `/dang-nhap?next=/duong-dan` quay lại trang vừa chặn,
   phụ huynh đăng nhập mặc định về `/phu-huynh`; Footer thêm link "Phụ huynh xem kết quả của con".
+- **Đồng bộ trang chương ↔ trang bài, đợt 1 (2/10/2026, PR #33, chưa merge)**: `chapterDisplayTitle` dời sang
+  `features/lessons/types.ts` + thêm `chapterLabel`; cây chương trang bài hết lặp số chương và có đơn vị "bài";
+  breadcrumb/link quay lại/tiêu đề ngăn kéo dùng "Chương N · Tên" (`chapterFullLabel`); trang chương đổi thanh
+  tiến độ thành "x/y mục", hai nút "Tiếp tục học". Không đổi bố cục, không thêm request Supabase, không migration.
+  Ảnh: `docs/anh/trang-chuong-2026-10/`. Đợt 2–4 chỉ bắt đầu sau khi PR này merge (prompt
+  `docs/prompt-dong-bo-trang-chuong-2026-10.md`, prompt này chưa có trên `main`).
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
