@@ -136,14 +136,21 @@ export default function LessonMasteryCard({
                   justifyContent: "space-between",
                   gap: 10,
                   flexWrap: "wrap",
+                  // Item lưới mặc định có min-width:auto → tên yêu cầu cần đạt dài (nowrap) đẩy cả
+                  // hàng rộng 324px trong cột phải 292px, chữ tràn ra ngoài panel. Cùng cách chặn
+                  // như .lesson-stack > * (globals.css).
+                  minWidth: 0,
                   padding: "8px 10px",
                   borderRadius: 10,
                   border: "1px solid var(--color-line)",
                 }}
               >
-                <span style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
+                {/* min-width:0 + flex:1 1 auto ở CẢ HAI lớp: tên yêu cầu cần đạt dài phải co lại và
+                    cắt bằng "…" trong cột phải 292px, không được đẩy tràn ra ngoài panel (flex con
+                    có white-space:nowrap mà thiếu min-width:0 thì không co được — đúng lỗi này). */}
+                <span style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0, flex: "1 1 auto" }}>
                   <span aria-hidden>{MASTERY_ICON[t.level]}</span>
-                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{t.topicName}</span>
+                  <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{t.topicName}</span>
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
                   <Badge tone={MASTERY_TONE[t.level]}>

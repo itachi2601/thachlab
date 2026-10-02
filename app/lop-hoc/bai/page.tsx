@@ -1418,23 +1418,31 @@ function LessonLoader() {
                 </label>
               )}
               <ol>
-                {shownToc.map((entry) => (
-                  <li key={entry.id}>
-                    <a
-                      href={`#${entry.id}`}
-                      className={activeHeading === entry.id ? "is-active" : ""}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        flashTheorySection(entry.id, 2);
-                      }}
-                    >
-                      {entry.heading && entry.heading !== entry.itemTitle && (
-                        <small className="lesson-toc-item">{entry.itemTitle}</small>
-                      )}
-                      <span>{entry.heading || entry.itemTitle}</span>
-                    </a>
-                  </li>
-                ))}
+                {shownToc.map((entry, index) => {
+                  // Nhãn mục (vd "Lý thuyết trọng tâm") chỉ hiện ở dòng ĐẦU của nhóm: một mục có
+                  // nhiều đề mục con mà lặp nhãn ở mọi dòng thì rất rối. Lọc theo ô tìm kiếm vẫn
+                  // hiện nhãn cho dòng khớp đầu tiên của mục đó (so với dòng liền trước trong danh
+                  // sách đang hiện, không phải trong danh sách gốc).
+                  const showItemLabel =
+                    !!entry.heading &&
+                    entry.heading !== entry.itemTitle &&
+                    shownToc[index - 1]?.itemTitle !== entry.itemTitle;
+                  return (
+                    <li key={entry.id}>
+                      <a
+                        href={`#${entry.id}`}
+                        className={activeHeading === entry.id ? "is-active" : ""}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          flashTheorySection(entry.id, 2);
+                        }}
+                      >
+                        {showItemLabel && <small className="lesson-toc-item">{entry.itemTitle}</small>}
+                        <span>{entry.heading || entry.itemTitle}</span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ol>
               {shownToc.length === 0 && <p className="lesson-panel-empty">Không thấy đề mục nào khớp.</p>}
             </>
