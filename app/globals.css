@@ -2479,3 +2479,176 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
   body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
+
+/* ==================================================================
+   CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
+   (components/lessons/LessonPresenter.tsx, mở từ nút ở tab Lý thuyết của /lop-hoc/bai)
+
+   Nguyên tắc thiết kế:
+   - Nội dung là nhân vật chính: không navbar, không cây chương, không nút thường
+     trực — thanh điều khiển tự ẩn sau ~3 giây, đụng chuột/chạm là hiện lại.
+   - Nền mặc định SÁNG (chữ đậm trên nền sáng) vì phòng học bật đèn; nút "Nền tối"
+     dành cho phòng tối cho đỡ chói. Nền SÁNG cũng là lý do phải tắt đảo màu ảnh
+     công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
+   - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
+     trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
+     vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
+   ================================================================== */
+
+/* Nút mở chế độ trình chiếu ở đầu tab Lý thuyết. Nói rõ công dụng ngay trên nút để
+   lần đầu thầy phân biệt được với nút "Toàn màn hình" của trình duyệt. */
+.lesson-present { display: flex; width: 100%; align-items: center; gap: 14px; margin-bottom: 18px; border: 1px solid var(--lesson-accent-line); border-radius: 14px; background: var(--lesson-accent-soft); padding: 13px 16px; color: var(--color-ink); text-align: left; cursor: pointer; transition: border-color .15s, background-color .15s, transform .15s; }
+.lesson-present:hover { border-color: var(--lesson-accent); transform: translateY(-1px); }
+.lesson-present > svg { flex: 0 0 auto; color: var(--lesson-accent-text); }
+.lesson-present > span:not(.lesson-present-go) { display: grid; gap: 2px; min-width: 0; }
+.lesson-present strong { font-size: 15px; font-weight: 700; }
+.lesson-present small { color: var(--color-muted); font-size: 12.5px; line-height: 1.45; }
+.lesson-present-go { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; margin-left: auto; color: var(--lesson-accent-text); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+@media (max-width: 639px) {
+  .lesson-present { align-items: flex-start; gap: 11px; }
+  .lesson-present-go { display: none; }
+}
+
+/* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
+.lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
+.lesson-presenter-loading.is-error { color: #fca5a5; }
+
+.lesson-presenter {
+  --pres-text: #e8eefc;
+  --pres-muted: #9fb0cc;
+  --pres-heading: #fff;
+  --pres-accent: #60a5fa;
+  --pres-line: rgba(148,163,184,.24);
+  --pres-surface: rgba(15,23,42,.86);
+  --pres-panel: #101a2e;
+  position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
+  background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
+}
+.lesson-presenter[data-bg="light"] {
+  --pres-text: #17233a;
+  --pres-muted: #59678a;
+  --pres-heading: #0b1220;
+  --pres-accent: #1d4ed8;
+  --pres-line: rgba(15,23,42,.16);
+  --pres-surface: rgba(255,255,255,.92);
+  --pres-panel: #fff;
+  background: #f4f6fb;
+}
+
+/* Khung vẽ tay: luôn hiện (nét cũ còn nguyên khi tắt bút), chỉ nhận chuột khi đang bật bút. */
+.presenter-canvas { position: absolute; inset: 0; z-index: 15; width: 100%; height: 100%; pointer-events: none; touch-action: none; }
+.presenter-canvas.is-active { pointer-events: auto; cursor: crosshair; }
+
+/* Thanh trên/dưới: tự ẩn, và khi ẩn thì không chặn cả nét vẽ lẫn cú bấm. */
+.presenter-top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.presenter-bar { position: absolute; z-index: 20; bottom: clamp(14px, 3vh, 28px); left: 50%; display: flex; width: max-content; max-width: min(96vw, 1120px); align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 7px 9px; box-shadow: 0 18px 40px -22px rgba(2,6,23,.6); opacity: 0; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.presenter-top, .presenter-bar { pointer-events: none; }
+.lesson-presenter.is-chrome .presenter-top { opacity: 1; }
+.lesson-presenter.is-chrome .presenter-bar { opacity: 1; transform: translate(-50%, 0); }
+.lesson-presenter.is-chrome .presenter-top > *, .lesson-presenter.is-chrome .presenter-bar > * { pointer-events: auto; }
+
+.presenter-info { display: grid; gap: 3px; min-width: 0; max-width: 46vw; border: 1px solid var(--pres-line); border-radius: 12px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 8px 14px; }
+.presenter-info strong { overflow: hidden; font-size: 13.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-info span { color: var(--pres-muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+
+.presenter-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.presenter-actions button, .presenter-bar button { display: inline-flex; min-height: 36px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 10px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: border-color .15s, color .15s, background-color .15s; }
+.presenter-bar button { border-radius: 999px; }
+.presenter-actions button:hover, .presenter-bar button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-actions button:disabled, .presenter-bar button:disabled { opacity: .35; cursor: default; }
+.presenter-actions .presenter-close:hover { border-color: #f87171; color: #f87171; }
+.presenter-bar button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.lesson-presenter[data-bg="light"] .presenter-bar button.is-on { background: rgba(29,78,216,.12); }
+.presenter-bar .presenter-page { font-variant-numeric: tabular-nums; }
+.presenter-bar-sep { flex: 0 0 auto; width: 1px; align-self: stretch; margin: 0 4px; background: var(--pres-line); }
+.presenter-zoom { min-width: 46px; color: var(--pres-muted); font-size: 11.5px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.presenter-colors { display: inline-flex; align-items: center; gap: 5px; padding: 0 3px; }
+.presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
+.presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
+
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(20px, 4vw, 72px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+.presenter-stage::-webkit-scrollbar { width: 10px; }
+.presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
+
+.presenter-slide { max-width: 1180px; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+@keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
+
+.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
+
+/* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
+   khung công thức khối) vì ở đây chữ phải to theo --presenter-zoom và phẳng như slide. */
+.presenter-prose.exam-content { display: block; color: var(--pres-text); font-family: var(--font-body), sans-serif; font-size: 1em; line-height: 1.68; }
+.presenter-prose p { margin: 0 0 .85em; }
+.presenter-prose > :last-child { margin-bottom: 0; }
+.presenter-prose :is(ul, ol) { margin: 0 0 .85em; padding-left: 1.45em; }
+.presenter-prose li { margin-bottom: .3em; }
+.presenter-prose :is(h3, h4) { margin: 1.05em 0 .45em; color: var(--pres-heading); font-size: 1.1em; font-weight: 700; line-height: 1.3; }
+.presenter-prose :is(strong, b) { color: var(--pres-heading); }
+.presenter-prose :is(img, svg, table, .table-scroll) { max-width: 100%; }
+.presenter-prose .katex-display { margin: .85em 0; border: 0; border-radius: 0; background: none; padding: 0; text-align: center; }
+.presenter-prose .katex { vertical-align: baseline; }
+.presenter-prose .exam-content-raw-tex { background: rgba(148,163,184,.18); color: inherit; }
+/* Ảnh công thức trong bài là nét đen trên nền trắng: nền tối thì đảo màu, nền sáng để nguyên. */
+.lesson-presenter[data-bg="dark"] .presenter-prose img.eq { filter: invert(.88) hue-rotate(180deg); }
+.lesson-presenter[data-bg="light"] .presenter-prose img.eq { filter: none; }
+/* Khối "tl-*" soạn cho nền tối (nhãn cyan/vàng trên nền mờ) — đổi sang bảng màu đọc được trên nền sáng. */
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-box, .tl-details) { border-color: rgba(15,23,42,.18); background: rgba(15,23,42,.045); }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-label { color: #0e7490; }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-box--rule .tl-label { color: #b45309; }
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-table th, .tl-table td, .tl-opt) { border-color: rgba(15,23,42,.22); }
+
+.presenter-cover { display: grid; justify-items: center; gap: 16px; padding: clamp(20px, 7vh, 80px) 0; text-align: center; }
+.presenter-cover-kicker { margin: 0; color: var(--pres-accent); font-family: var(--font-mono), monospace; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+.presenter-cover h1 { max-width: 18em; margin: 0; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 2.3em; font-weight: 700; letter-spacing: -.02em; line-height: 1.16; }
+.presenter-cover-sub { margin: 0; color: var(--pres-muted); font-size: .95em; }
+.presenter-cover-start { display: inline-flex; min-height: 52px; align-items: center; gap: 8px; margin-top: 4px; border: 0; border-radius: 999px; background: #3b82f6; padding: 0 26px; color: #fff; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; }
+.presenter-cover-start:hover { background: #2563eb; }
+.presenter-cover kbd, .presenter-draw-hint kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 1px 6px; font-family: var(--font-mono), monospace; font-size: .84em; }
+
+.presenter-panel { position: absolute; z-index: 30; top: 50%; left: 50%; display: flex; max-height: min(82vh, 760px); flex-direction: column; overflow: hidden; border: 1px solid var(--pres-line); border-radius: 16px; background: var(--pres-panel); box-shadow: 0 30px 70px -30px rgba(2,6,23,.7); transform: translate(-50%, -50%); }
+.presenter-panel--menu { width: min(92vw, 560px); }
+.presenter-panel--help { width: min(92vw, 640px); }
+.presenter-panel-head { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--pres-line); padding: 12px 14px; }
+.presenter-panel-head p { display: inline-flex; align-items: center; gap: 7px; margin: 0; color: var(--pres-heading); font-size: 13.5px; font-weight: 700; }
+.presenter-panel-head button { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--pres-line); border-radius: 8px; background: none; color: var(--pres-muted); cursor: pointer; }
+.presenter-panel-head button:hover { border-color: #f87171; color: #f87171; }
+.presenter-panel-body { overflow-y: auto; padding: 12px 14px 16px; }
+.presenter-menu-group + .presenter-menu-group { margin-top: 14px; }
+.presenter-menu-title { margin: 0 0 6px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.presenter-menu-group ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.presenter-menu-group button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; border-radius: 8px; background: none; padding: 7px 9px; color: var(--pres-text); font-family: inherit; font-size: 13.5px; line-height: 1.45; text-align: left; cursor: pointer; }
+.presenter-menu-group button:hover { background: rgba(148,163,184,.16); }
+.presenter-menu-group button.is-current { background: rgba(59,130,246,.18); color: var(--pres-accent); font-weight: 700; }
+.presenter-menu-group button > span { flex: 0 0 auto; min-width: 24px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.presenter-menu-group button.is-current > span { color: inherit; }
+.presenter-keys { display: grid; gap: 9px; margin: 0; }
+.presenter-keys > div { display: grid; grid-template-columns: minmax(132px, auto) 1fr; align-items: baseline; gap: 14px; }
+.presenter-keys dt { margin: 0; white-space: nowrap; }
+.presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
+.presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 11.5px; }
+.presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+.presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
+.presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
+
+.presenter-draw-hint { position: absolute; z-index: 22; bottom: clamp(76px, 11vh, 100px); left: 50%; margin: 0; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 6px 14px; color: var(--pres-muted); font-size: 11.5px; white-space: nowrap; transform: translateX(-50%); }
+
+@media (max-width: 900px) {
+  .presenter-btn-text { display: none; }
+  .presenter-info { max-width: 40vw; padding: 6px 11px; }
+  .presenter-info span { display: none; }
+}
+@media (max-width: 639px) {
+  .presenter-top { padding: 12px; }
+  /* Điện thoại: thanh điều khiển xuống 2 hàng — cuộn ngang thì các nút cỡ chữ nằm ngoài tầm
+     mắt, không biết là có; và chừa thêm chỗ đáy để hàng chữ cuối không bị thanh che. */
+  .presenter-bar { flex-wrap: wrap; justify-content: center; row-gap: 5px; max-width: min(94vw, 460px); border-radius: 18px; overflow: visible; }
+  .presenter-bar-sep { display: none; }
+  .presenter-zoom { min-width: 38px; }
+  .presenter-stage { padding-left: 14px; padding-right: 14px; padding-bottom: 172px; }
+  .presenter-keys > div { grid-template-columns: 1fr; gap: 3px; }
+  .presenter-draw-hint { display: none; }
+}

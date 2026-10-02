@@ -29,37 +29,87 @@ function h2Matches(html: string): RegExpMatchArray[] {
   });
 }
 
-function headingMatches(html: string): RegExpMatchArray[] {
+function headingMatches(html: string, mode: TheorySplitMode): RegExpMatchArray[] {
   const h3 = [...html.matchAll(H3_RE)];
-  if (h3.length > 0) return h3;
   const bold = [...html.matchAll(BOLD_NUMBERED_RE)];
+  const h2 = h2Matches(html);
+
+  // Trình chiếu: mốc LỚN trước. Trang chiếu cần mỗi trang là một mục I., II., III.; nếu chia
+  // theo mốc nhỏ, mọi mục lớn đứng TRƯỚC mốc nhỏ đầu tiên bị dồn hết vào "phần mở bài" và nằm
+  // chung một trang (đã thấy thật ở bài "Khái niệm từ trường": I, II, III + hình nằm chung một
+  // trang, còn 5 trang sau chỉ là các mục con "1. Định nghĩa", "2. Hướng…" mất ngữ cảnh).
+  if (mode === "chieu") {
+    if (h2.length > 0) return h2;
+    if (h3.length > 0) return h3;
+    return bold;
+  }
+
+  if (h3.length > 0) return h3;
   if (bold.length > 0) return bold;
-  return h2Matches(html);
+  return h2;
+}
+
+/** Cách chọn mốc chia đoạn lý thuyết — xem `headingMatches`. */
+export type TheorySplitMode = "doc" | "chieu";
+
+/** Một đoạn lý thuyết đã tách rời (không bọc <div>) — dùng chung cho trang đọc và chế độ trình chiếu. */
+export interface TheorySectionPart extends TheorySection {
+  /** Cả đoạn, GỒM thẻ tiêu đề ở đầu — đúng thứ tự trong body_html gốc. */
+  html: string;
+  /** Đoạn đã bỏ thẻ tiêu đề ở đầu, để chế độ trình chiếu render tiêu đề bằng kiểu chữ riêng
+   *  (mốc tiêu đề có thể là <h3>, <h2> hoặc <p><strong> — trình chiếu cần một kiểu chữ duy nhất). */
+  bodyHtml: string;
+}
+
+/**
+ * Tách body_html của một mục lý thuyết thành từng đoạn theo mốc tiêu đề có sẵn trong nội dung,
+ * KHÔNG bọc thêm gì — `wrapTheorySections` (trang đọc) và chế độ trình chiếu (LessonPresenter)
+ * cùng dùng hàm này nên hai nơi không bao giờ chia đoạn lệch nhau về vị trí cắt.
+ *
+ * `mode` chỉ đổi THỨ TỰ ƯU TIÊN mốc chia (trang đọc ưu tiên mốc nhỏ, trình chiếu ưu tiên mốc
+ * lớn — xem `headingMatches`), không đổi nội dung.
+ *
+ * `introHtml` là phần mở bài nằm trước mốc tiêu đề đầu tiên (thường là rỗng).
+ */
+export function splitTheorySections(
+  html: string,
+  itemId: number | string,
+  mode: TheorySplitMode = "doc",
+): { introHtml: string; sections: TheorySectionPart[] } {
+  const matches = headingMatches(html, mode);
+  if (matches.length === 0) return { introHtml: html, sections: [] };
+
+  const sections: TheorySectionPart[] = [];
+  let introHtml = "";
+
+  matches.forEach((m, i) => {
+    const start = m.index ?? 0;
+    if (i === 0 && start > 0) introHtml = html.slice(0, start); // mở bài trước mốc đầu tiên, không bọc
+
+    const end = i + 1 < matches.length ? (matches[i + 1].index ?? html.length) : html.length;
+    const slice = html.slice(start, end);
+    sections.push({
+      id: `theory-sec-${itemId}-${i}`,
+      heading: m[1].replace(/<[^>]+>/g, "").trim(),
+      html: slice,
+      // m[0] là đúng thẻ tiêu đề nằm ở đầu `slice` (mọi regex mốc đều bắt đầu bằng thẻ mở),
+      // nên cắt bỏ đúng độ dài chuỗi khớp là ra phần thân mà không đụng nội dung.
+      bodyHtml: slice.slice(m[0].length).replace(/^\s+/, ""),
+    });
+  });
+
+  return { introHtml, sections };
 }
 
 /** Bọc mỗi đoạn từ một mốc tiêu đề tới trước mốc kế tiếp trong <div id="…">, để có thể scrollIntoView. */
 export function wrapTheorySections(html: string, itemId: number | string): { html: string; sections: TheorySection[] } {
-  const matches = headingMatches(html);
-  if (matches.length === 0) return { html, sections: [] };
+  const { introHtml, sections } = splitTheorySections(html, itemId);
+  if (sections.length === 0) return { html, sections: [] };
 
-  const sections: TheorySection[] = [];
-  let out = "";
-  let cursor = 0;
-
-  matches.forEach((m, i) => {
-    const start = m.index ?? 0;
-    if (i === 0 && start > 0) out += html.slice(0, start); // mở bài trước <h3> đầu tiên, không bọc
-
-    const end = i + 1 < matches.length ? (matches[i + 1].index ?? html.length) : html.length;
-    const id = `theory-sec-${itemId}-${i}`;
-    const heading = m[1].replace(/<[^>]+>/g, "").trim();
-    sections.push({ id, heading });
-    out += `<div class="theory-section" id="${id}">${html.slice(start, end)}</div>`;
-    cursor = end;
-  });
-
-  out += html.slice(cursor);
-  return { html: out, sections };
+  const out =
+    introHtml +
+    sections.map((section) => `<div class="theory-section" id="${section.id}">${section.html}</div>`).join("");
+  return { html: out, sections: sections.map(({ id, heading }) => ({ id, heading })) };
 }
 
 /** "#theory-sec-278-2" -> 278 — đọc lesson_items.id đích từ hash khi quay lại trang bài học

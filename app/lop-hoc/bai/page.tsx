@@ -3,13 +3,14 @@
 import { Suspense, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, Play, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronRight, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
+import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
 import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
@@ -493,6 +494,25 @@ function LessonLoader() {
   const [dim, setDim] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
+  // Chế độ TRÌNH CHIẾU bài giảng — dạy lý thuyết trên lớp, chiếu lên tivi/máy chiếu: lớp phủ
+  // toàn màn hình lật từng đoạn lý thuyết theo mốc LỚN I., II., III. (chia khác trang đọc một
+  // chút — xem `splitTheorySections` mode "chieu"). Chỉ mount khi bấm nút, và cả component
+  // được tải chậm (LessonPresenterLazy) nên phần vẽ tay/điều hướng không nằm trong JS ban đầu.
+  const [presenting, setPresenting] = useState(false);
+  // "#chieu" trên URL → mở thẳng chế độ trình chiếu (thầy lưu sẵn link cho tiết dạy). Đọc
+  // trong effect chứ không phải giá trị khởi tạo của useState: trang này được prerender lúc
+  // build (lúc đó chưa có hash), khởi tạo bằng hash sẽ lệch cây DOM khi hydrate. Đẩy sang
+  // setTimeout 0 để không setState ngay trong thân effect (gây render chồng).
+  useEffect(() => {
+    if (currentHash().replace(/^#/, "").toLowerCase() !== "chieu") return;
+    const timer = window.setTimeout(() => setPresenting(true), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+  // Mục lý thuyết đã đăng và có nội dung — nguồn duy nhất cho bộ trang chiếu, không gọi mạng.
+  const theoryItems = useMemo(
+    () => (items ?? []).filter((item) => item.kind === "ly_thuyet" && item.body_html.trim() !== ""),
+    [items],
+  );
   // "Đánh dấu đã học xong bài này" ở thanh đáy: không có API lưu cấp-bài (chỉ có API cấp-mục),
   // nên ghi trên máy — nút vẫn phản hồi ngay, tiến độ "x/y mục" cộng thêm 1 khi đã đánh dấu.
   const [lessonMarked, setLessonMarked] = useState(false);
@@ -1681,6 +1701,22 @@ function LessonLoader() {
                 role="tabpanel"
                 aria-labelledby={`lesson-tab-${activeSection.kind}`}
               >
+                {/* Nút Trình chiếu chỉ có ở tab Lý thuyết — đúng nhu cầu dạy lý thuyết trên
+                    lớp; các tab bài tập/đề giữ nguyên giao diện làm bài của học sinh. */}
+                {activeSection.kind === "ly_thuyet" && theoryItems.length > 0 && (
+                  <button type="button" className="lesson-present" onClick={() => setPresenting(true)}>
+                    <MonitorPlay size={22} aria-hidden />
+                    <span>
+                      <strong>Trình chiếu bài giảng</strong>
+                      <small>
+                        Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ.
+                      </small>
+                    </span>
+                    <span className="lesson-present-go">
+                      Mở <ChevronRight size={15} aria-hidden />
+                    </span>
+                  </button>
+                )}
                 <div className="lesson-stack">{renderSectionItems(activeSection)}</div>
                 <div className="lesson-tabfoot">
                   {nextSection ? (
@@ -1790,6 +1826,17 @@ function LessonLoader() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Chế độ trình chiếu bài giảng — lớp phủ toàn màn hình, tải chậm, chỉ mount khi bấm nút
+          (hoặc mở link có #chieu). Dựng từ theoryItems đã tải sẵn nên không thêm request nào. */}
+      {presenting && (
+        <LessonPresenter
+          lessonTitle={title}
+          chapterLabel={chapterFullLabel}
+          items={theoryItems}
+          onClose={() => setPresenting(false)}
+        />
       )}
     </div>
   );
