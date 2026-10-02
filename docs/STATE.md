@@ -70,7 +70,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - **Luyện tập: thời gian mỗi câu tăng 15s/45s → 30s/90s** (30/9/2026, theo góp ý #21 của học sinh, thầy duyệt): `SECONDS_PER_FORM`
   ở `features/exams/types.ts` + dòng mô tả ở `PracticeSession.tsx`. Chỉ tính phía client, không đổi DB. **Chưa deploy** (`bash scripts/deploy.sh`).
   Phiên đang dở đã lưu vẫn giữ tổng giờ cũ.
-- **Đồng bộ trang chương ↔ trang bài, đợt 3 (2/10/2026, PR #40, chưa merge)**: trang chương dưới 640px có thanh đáy
+- **Đồng bộ trang chương ↔ trang bài, đợt 3 (2/10/2026, PR #41, chưa merge)**: trang chương dưới 640px có thanh đáy
   3 nút (‹ Lớp học · Tiếp tục học · Mở tất cả/Thu gọn) dùng lại CSS `.lesson-bottombar--mobile` của trang bài; thanh này
   **thay** tabbar toàn site (2 rule `:has()` ở cuối `globals.css`), chừa đáy đúng 62px như trang bài. Đợt 4 (cột giữa giàu
   thông tin + rail phải) chờ `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` vào `main`.
