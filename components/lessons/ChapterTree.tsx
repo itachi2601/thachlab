@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Check, ChevronDown } from "lucide-react";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { chapterDisplayTitle, isPeriodicExam } from "@/features/lessons/types";
+import { chapterDisplayTitle, chapterNumber, isPeriodicExam } from "@/features/lessons/types";
 
 export interface ChapterTreeEntry {
   chapter: Chapter;
@@ -25,6 +25,12 @@ interface Props {
   onLessonClick?: (lesson: Lesson) => void;
   /** Kết quả ô "Tìm bài trong khoá"; null = không lọc. */
   filterLessonIds?: Set<number> | null;
+  /**
+   * false = trang KHÔNG có dấu hoàn thành của cả khoá (trang bài chỉ tải tiến độ bài đang mở;
+   * khách/phụ huynh/GV cũng không có). Khi đó không hiện "x/y bài" và không vẽ ○ cho bài khác —
+   * ○ là lời khẳng định "chưa học" mà trang không có dữ liệu để nói.
+   */
+  progressKnown?: boolean;
 }
 
 /**
@@ -32,9 +38,10 @@ interface Props {
  * Component thuần hiển thị: chương nào đang mở, chương/bài nào đang chọn đều do trang quyết và truyền xuống.
  */
 export default function ChapterTree(p: Props) {
+  const progressKnown = p.progressKnown !== false;
   return (
     <div className="lesson-tree">
-      {p.entries.map(({ chapter, lessons }, chapterIndex) => {
+      {p.entries.map(({ chapter, lessons }) => {
         const filter = p.filterLessonIds;
         const shown = filter ? lessons.filter((l) => filter.has(l.id)) : lessons;
         if (shown.length === 0) return null;
@@ -52,9 +59,9 @@ export default function ChapterTree(p: Props) {
               aria-expanded={open}
               aria-current={picked ? "true" : undefined}
             >
-              <em>{chapterIndex + 1}</em>
+              <em>{chapterNumber(chapter.title) ?? "•"}</em>
               <span>{chapterDisplayTitle(chapter.title)}</span>
-              <small>{done}/{lessons.length} bài</small>
+              <small>{progressKnown ? `${done}/${lessons.length} bài` : `${lessons.length} bài`}</small>
               <ChevronDown
                 size={15}
                 className={open ? "is-open" : ""}
@@ -73,7 +80,7 @@ export default function ChapterTree(p: Props) {
                   const current = p.mode === "learn" && lesson.id === p.currentLessonId;
                   const isDone = p.isLessonDone(lesson);
                   const exam = isPeriodicExam(lesson.lesson_kind);
-                  const icon = isDone ? <Check size={11} /> : exam ? "KT" : current ? "●" : "○";
+                  const icon = isDone ? <Check size={11} /> : exam ? "KT" : current ? "●" : progressKnown ? "○" : "";
                   const cls = `${isDone ? "is-done" : ""} ${exam ? "is-exam" : ""}`.trim();
                   return (
                     <li key={lesson.id}>

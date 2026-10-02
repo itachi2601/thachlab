@@ -23,7 +23,6 @@ import {
 import {
   LESSON_KIND_META,
   SECTION_ORDER,
-  chapterDisplayTitle,
   chapterLabel,
   formatTypeCounts,
   isGradedKind,
@@ -453,7 +452,7 @@ function LessonSkeleton() {
 }
 
 function LessonLoader() {
-  const { session } = useAuth();
+  const { session, profile } = useAuth();
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
   const classSlug = searchParams.get("class");
@@ -482,7 +481,7 @@ function LessonLoader() {
   const [fullscreen, setFullscreen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
   // "Đánh dấu đã học xong bài này" ở thanh đáy: không có API lưu cấp-bài (chỉ có API cấp-mục),
-  // nên ghi trên máy — nút vẫn phản hồi ngay, tiến độ "x/y mục" cộng thêm 1 khi đã đánh dấu.
+  // nên ghi trên máy — nút phản hồi ngay và nhãn nút đổi, KHÔNG cộng vào thanh tiến độ phần.
   const [lessonMarked, setLessonMarked] = useState(false);
   // Cây chương ở cột trái: chỉ chương đang học mở sẵn, chương khác gấp lại (khoá có thể dài
   // hơn 100 bài nên không xổ hết), và một ô tìm bài lọc ngay trên siblingLessons — không gọi mạng.
@@ -551,6 +550,9 @@ function LessonLoader() {
         setItems([]);
         return;
       }
+      // Xoá lỗi của lần tải trước: đi từ bài không tồn tại sang bài hợp lệ (Back của trình duyệt)
+      // không remount component, không xoá thì trang vẫn hiện "Không tìm thấy bài học này."
+      setError("");
       setTitle(res.lesson.title);
       setChapterTitle(res.chapterTitle);
       setChapterId(res.lesson.chapter_id);
@@ -783,6 +785,9 @@ function LessonLoader() {
   }
 
   function markLessonDone() {
+    // Chỉ ghi trên máy, nhưng vẫn phải có tài khoản: khách bấm thì dấu "đã học xong" nằm lại
+    // trong localStorage dùng chung máy và hiện cho người đăng nhập sau.
+    if (!session) return;
     setLessonMarked(true);
     try {
       window.localStorage.setItem(`${LESSON_DONE_STORE}${id}`, "1");
@@ -807,7 +812,10 @@ function LessonLoader() {
     );
     targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, [activeTab, items]);
+    // bodyReady: nội dung tab chỉ render sau lần vẽ đầu (xem effect setBodyReady) nên lần chạy
+    // đầu chưa có h2/h3 nào để theo dõi — thiếu dep này thì "Mục lục bài này" không tô đậm gì
+    // cho tới khi học sinh đổi tab.
+  }, [activeTab, items, bodyReady]);
 
   function isDone(item: LessonItem) {
     if (isGradedKind(item.kind)) {
@@ -820,7 +828,15 @@ function LessonLoader() {
   function markDone(item: LessonItem) {
     if (!session || done.has(item.id)) return;
     setDone((prev) => new Set(prev).add(item.id));
-    markItemDone(session.user.id, item.id);
+    // Ghi lạc quan: mất mạng thì trả dấu lại để học sinh bấm lại được, không kẹt ở "Đã làm"
+    // trong khi máy chủ không có gì (tải lại là mất).
+    markItemDone(session.user.id, item.id).catch(() => {
+      setDone((prev) => {
+        const next = new Set(prev);
+        next.delete(item.id);
+        return next;
+      });
+    });
   }
 
   // Phạm vi "khoá đang học": chương cùng môn và cùng khối lớp đang xem (theo ?class= — dùng lại
@@ -851,12 +867,12 @@ function LessonLoader() {
 
   const courseLessons = useMemo(() => courseChapters.flatMap((entry) => entry.lessons), [courseChapters]);
 
-  // "Chương N · Tên" — nhãn dùng chung cho breadcrumb, link quay lại và tiêu đề ngăn kéo, để
-  // trang bài nói cùng một thứ tiếng với trang chương (số chương lấy theo vị trí trong khoá).
+  // "Chương N · Tên" — nhãn dùng chung cho breadcrumb, link quay lại và tiêu đề ngăn kéo. Số
+  // chương đọc từ chính tiêu đề CSDL (xem chapterNumber) để không lệch với sách: lớp 9 có khối
+  // "Mở đầu" đứng trước "Chương 1", lớp 12 có khối "Đề thi thử…" không phải chương.
   const chapterFullLabel = useMemo(() => {
-    const idx = courseChapters.findIndex((e) => e.chapter.id === chapterId);
-    if (idx < 0) return chapterDisplayTitle(chapterTitle);
-    return chapterLabel(idx, courseChapters[idx].chapter.title);
+    const entry = courseChapters.find((e) => e.chapter.id === chapterId);
+    return chapterLabel(entry?.chapter.title ?? chapterTitle);
   }, [courseChapters, chapterId, chapterTitle]);
 
   // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp và môn (xem courseChapters ở trên).
@@ -1011,6 +1027,7 @@ function LessonLoader() {
     return () => window.clearTimeout(timer);
   }, [items]);
 
+  if (!supabaseConfigured) return <p className="lesson-notice">Hệ thống đang được cấu hình.</p>;
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
   if (!items) return <LessonSkeleton />;
@@ -1078,17 +1095,10 @@ function LessonLoader() {
           </div>
         </div>
 
+        {/* Nhánh bài kiểm tra định kì KHÔNG render ngăn kéo (khối ngăn kéo nằm trong nhánh return
+            chính), nên ở đây không có nút "Mục lục": bấm vào chỉ bật cờ drawerOpen mà không có
+            scrim/nút đóng nào → effect khoá cuộn ở trên giữ body.overflow = hidden vĩnh viễn. */}
         <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
-        <button
-          type="button"
-          className="lesson-bottom-link"
-          onClick={() => setDrawerOpen(true)}
-          aria-expanded={drawerOpen}
-          aria-controls="lesson-drawer"
-        >
-          <Menu size={16} aria-hidden />
-          <span>Mục lục</span>
-        </button>
           {prevLesson ? (
             <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
               <ArrowLeft size={16} aria-hidden />
@@ -1121,10 +1131,20 @@ function LessonLoader() {
   const activeIndex = activeSection ? visibleSections.findIndex((s) => s.kind === activeSection.kind) : -1;
   const nextSection = activeIndex >= 0 ? visibleSections[activeIndex + 1] : undefined;
   const totalTabs = visibleSections.length;
-  const doneTabs = visibleSections.filter((s) => !!session && s.items.every(isDone)).length;
-  const progressDone = Math.min(totalTabs, doneTabs + (lessonMarked ? 1 : 0));
+  // Tiến độ ở đây là CỦA CHÍNH NGƯỜI ĐANG XEM (lesson_progress/exam_results lọc auth.uid()).
+  // Phụ huynh/GV cũng có session nhưng không có tiến độ học sinh — hiện "0/6 phần" cho họ là
+  // nói sai; thà không hiện thanh tiến độ (khác với ẩn nút, phần nội dung bài vẫn nguyên).
+  const isStudent = !!session && profile?.role === "student";
+  const doneTabs = visibleSections.filter((s) => isStudent && s.items.every(isDone)).length;
+  // Thanh tiến độ đếm PHẦN đã xong thật (doneTabs). Không cộng cờ "đã đánh dấu học xong" của
+  // thanh đáy vào đây: cộng thì học sinh còn thiếu 1 phần vẫn thấy "Đã học 6/6 mục".
+  const progressDone = doneTabs;
 
   const assignmentItem = items.find((i) => i.kind === "bai_tap_ve_nha" && i.due_at);
+  // Mục lý thuyết đầu tiên của bài — chip "Đã xem lý thuyết" ở header phải hỏi tiến độ của MỤC
+  // NÀY; bản cũ hỏi mục BTVN, mà buildItemProgress không bao giờ tạo nhánh `theory` cho BTVN,
+  // nên chip không bao giờ hiện.
+  const theoryItem = items.find((i) => i.kind === "ly_thuyet");
   const itemCount = items.length;
   const lessonTypeLabel = LESSON_KIND_META[lessonKind]?.label ?? "Bài học";
   const stepLabel = lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
@@ -1265,7 +1285,9 @@ function LessonLoader() {
   }
 
   /** 6 tab ngang: badge số mục, dấu ✓ khi xong, tab đang mở gạch chân màu nhấn. */
-  const tabNav = (extraClass: string) => (
+  // Hai bản tab bar cùng nằm trong DOM (CSS ẩn một bản) nên id phải khác nhau — trước đây cả
+  // hai dùng `lesson-tab-<kind>` → id trùng, HTML không hợp lệ và getElementById lấy nhầm bản.
+  const tabNav = (extraClass: string, idPrefix = "") => (
     <nav className={`lesson-tabs ${extraClass}`} aria-label="Các mục của bài học">
       <ol role="tablist">
         {visibleSections.map((section) => {
@@ -1275,7 +1297,7 @@ function LessonLoader() {
               <button
                 type="button"
                 role="tab"
-                id={`lesson-tab-${section.kind}`}
+                id={`${idPrefix}lesson-tab-${section.kind}`}
                 className={`${section.kind === activeTab ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
                 aria-selected={section.kind === activeTab}
                 aria-controls={`secondary-stage-${section.kind}`}
@@ -1352,7 +1374,9 @@ function LessonLoader() {
   function renderContinueLink() {
     if (!nextInCourse) return null;
     return (
-      <Link href={siblingHref(nextInCourse)} className="lesson-continue-btn">
+      // onClick đóng ngăn kéo: nút này cũng nằm trong ngăn kéo điện thoại, không đóng thì ngăn kéo
+      // vẫn phủ kín và body vẫn bị khoá cuộn sau khi đã sang bài khác (trông như bấm không ăn).
+      <Link href={siblingHref(nextInCourse)} className="lesson-continue-btn" onClick={() => setDrawerOpen(false)}>
         Tiếp tục học <ArrowRight size={14} aria-hidden />
       </Link>
     );
@@ -1361,17 +1385,22 @@ function LessonLoader() {
   function renderCourseInfo() {
     return (
       <>
-        {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Tiếp tục học. */}
+        {/* Thẻ tiến độ: chỉ dám nói về BÀI ĐANG MỞ (trang chỉ tải tiến độ một bài), kèm số bài
+            của cả khoá lấy từ catalog. Bản cũ hiện "Em đã học x/N bài" cho cả khoá nhưng
+            lessonComplete() chỉ đúng với bài đang mở nên số đó luôn bằng 0 hoặc 1. */}
         {courseLessons.length > 0 && (
           <div className="lesson-progress-summary">
-            <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
+            <ProgressRing percent={isStudent && totalTabs ? (progressDone / totalTabs) * 100 : 0} />
             <div>
               <p>
-                {courseDone}/{courseLessons.length} bài
+                {isStudent ? `${progressDone}/${totalTabs} phần` : `Khoá ${courseLessons.length} bài`}
               </p>
               <small>
-                Em đã học {courseDone}/{courseLessons.length} bài
-                {session && !!items ? ` · ${doneTabs}/${totalTabs} phần đã xong` : ""}
+                {isStudent
+                  ? `Bài đang mở · khoá có ${courseLessons.length} bài`
+                  : profile?.role === "parent"
+                    ? "Phụ huynh xem nội dung, không có tiến độ riêng"
+                    : "Đăng nhập để lưu tiến độ học"}
               </small>
               {renderContinueLink()}
             </div>
@@ -1558,16 +1587,10 @@ function LessonLoader() {
     </div>
   );
 
-  // Tiến độ cả khoá (chỉ tính được bài đang mở vì dữ liệu từng bài tải riêng) + bài "Tiếp tục học".
-  const courseDone = courseLessons.filter(lessonComplete).length;
-  let nextInCourse: Lesson | null = null;
-  for (const lesson of courseLessons) {
-    if (lesson.id !== id && !lessonComplete(lesson)) {
-      nextInCourse = lesson;
-      break;
-    }
-  }
-  if (!nextInCourse) nextInCourse = nextLesson;
+  // "Tiếp tục học" = bài kế tiếp trong khoá. KHÔNG suy ra "bài chưa xong" từ lessonComplete():
+  // trang chỉ tải tiến độ của bài đang mở nên hàm đó trả false cho MỌI bài khác, và vòng lặp cũ
+  // vì thế luôn chọn bài đầu khoá (học sinh đang ở bài 7 bấm "Tiếp tục học" lại về bài 1).
+  const nextInCourse: Lesson | null = nextLesson;
 
   return (
     <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
@@ -1583,6 +1606,7 @@ function LessonLoader() {
             lessonHref={siblingHref}
             isLessonDone={lessonComplete}
             filterLessonIds={matchingLessonIds}
+            progressKnown={false}
           />
         </aside>
 
@@ -1610,7 +1634,7 @@ function LessonLoader() {
                   {itemCount} mục{totalTabs > 0 ? ` · ${totalTabs} phần` : ""}
                 </span>
                 {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
-                {session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed" && (
+                {session && theoryItem && progress.get(theoryItem.id)?.theory?.status === "passed" && (
                   <span className="lesson-meta-ok">
                     <Check size={13} aria-hidden /> Đã xem lý thuyết
                   </span>
@@ -1634,14 +1658,16 @@ function LessonLoader() {
           {/* Header + thanh tiến độ + 6 tab nằm chung một khối: cả khối dính dưới navbar, mà
               header vẫn chỉ cao bằng nội dung (không phình ra che bài). */}
           <div className="lesson-content">
-            <div className="lesson-progressbar" aria-label={`Đã học ${progressDone} trên ${totalTabs} mục`}>
-              <span style={{ width: `${totalTabs ? Math.round((progressDone / totalTabs) * 100) : 0}%` }} />
-              <small>
-                Đã học {progressDone}/{totalTabs} mục
-              </small>
-            </div>
+            {isStudent && (
+              <div className="lesson-progressbar" aria-label={`Đã học ${progressDone} trên ${totalTabs} phần`}>
+                <span style={{ width: `${totalTabs ? Math.round((progressDone / totalTabs) * 100) : 0}%` }} />
+                <small>
+                  Đã học {progressDone}/{totalTabs} phần
+                </small>
+              </div>
+            )}
 
-            {tabNav("lesson-tabs--mobile")}
+            {tabNav("lesson-tabs--mobile", "mobile-")}
             {tabNav("lesson-tabs--desktop")}
 
             <div className="lesson-body" ref={bodyRef}>
@@ -1699,8 +1725,9 @@ function LessonLoader() {
           type="button"
           className={`lesson-bottom-done ${lessonMarked ? "is-done" : ""}`}
           onClick={markLessonDone}
-          disabled={lessonMarked}
+          disabled={!session || lessonMarked}
           aria-pressed={lessonMarked}
+          title={session ? undefined : "Đăng nhập để lưu tiến độ học"}
         >
           {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
           <span className="lesson-bottom-done-text--short">
@@ -1746,7 +1773,7 @@ function LessonLoader() {
               <div>
                 <p className="lesson-drawer-title">Nội dung khoá {chapterFullLabel || ""}</p>
                 <small>
-                  Đã học {progressDone}/{totalTabs} mục
+                  {isStudent ? `Đã học ${progressDone}/${totalTabs} phần` : `Khoá ${courseLessons.length} bài`}
                 </small>
               </div>
               <button type="button" onClick={() => setDrawerOpen(false)} aria-label="Đóng mục lục">
@@ -1764,6 +1791,8 @@ function LessonLoader() {
                 lessonHref={siblingHref}
                 isLessonDone={lessonComplete}
                 filterLessonIds={matchingLessonIds}
+                progressKnown={false}
+                onLessonClick={() => setDrawerOpen(false)}
               />
               {renderSidePanels()}
             </div>

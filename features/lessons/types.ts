@@ -56,9 +56,24 @@ export function chapterDisplayTitle(title: string): string {
   return title.replace(/^chương\s*\d+\s*[:.\-–]?\s*/i, "").trim() || title;
 }
 
-/** "Chương N · Tên" — nhãn đầy đủ dùng cho breadcrumb, link quay lại, tiêu đề thẻ chương. */
-export function chapterLabel(index: number, title: string): string {
-  return `Chương ${index + 1} · ${chapterDisplayTitle(title)}`;
+/**
+ * Số chương đọc từ chính tiêu đề CSDL ("Chương 3: Từ trường" → 3); null khi khối không được
+ * đánh số trong chương trình.
+ *
+ * KHÔNG suy số chương từ vị trí trong mảng: KHTN 9 có khối "Mở đầu" đứng trước "Chương 1:
+ * Năng lượng cơ học" nên vị trí lệch +1 so với số trong sách (trang hiện "Chương 2 · Năng lượng
+ * cơ học" cho chương 1), còn lớp 12 có khối "Đề thi thử các trường, sở GD&ĐT 2026" bị gọi
+ * thành "Chương 5". Khối không đánh số thì hiển thị đúng tiêu đề của nó, không bịa số.
+ */
+export function chapterNumber(title: string): number | null {
+  const match = /^chương\s*(\d+)\s*[:.\-–]?/i.exec(title.trim());
+  return match ? Number(match[1]) : null;
+}
+
+/** "Chương N · Tên" khi tiêu đề có số chương; khối không đánh số thì giữ nguyên tiêu đề. */
+export function chapterLabel(title: string): string {
+  const n = chapterNumber(title);
+  return n === null ? title.trim() : `Chương ${n} · ${chapterDisplayTitle(title)}`;
 }
 
 export interface LessonKindMeta {
