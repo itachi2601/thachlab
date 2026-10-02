@@ -1,0 +1,173 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Giao thoa sóng",
+ "lesson_id": 31,
+ "nguon_trong_bai": "content/lesson-samples/l11-giao-thoa-song/theory.html",
+ "id": "tn-l11-giaothoa-02",
+ "ten": "Hai loa cùng một máy phát: nghe to nhỏ xen kẽ",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "giaothoa.nguon_ket_hop",
+  "giaothoa.cuc_tieu_co_song_toi",
+  "giaothoa.khoang_van"
+ ],
+ "muc_tieu": "Thấy giao thoa sóng âm và hiểu cực tiểu là do hai sóng triệt tiêu, không phải không có sóng.",
+ "dung_cu": [
+  {
+   "ten": "Máy phát âm tần số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Loa",
+   "so_luong": 2,
+   "ghi_chu": "nối chung một máy phát để cùng pha"
+  },
+  {
+   "ten": "Miếng xốp hoặc nắp để bịt loa",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hai loa cách nhau 1 m, cùng phát âm 680 Hz.",
+   "Đi chậm trên đường song song cách loa 3 m, nghe to nhỏ.",
+   "Đứng ở điểm nghe nhỏ, nhờ bạn bịt một loa."
+  ],
+  "quan_sat": [
+   "To nhỏ xen kẽ, các vị trí cố định, cách nhau cỡ 1,5 m.",
+   "Bịt một loa: tiếng to lên ngay."
+  ],
+  "rut_ra": [
+   "Hai sóng âm giao thoa.",
+   "Điểm nhỏ là do hai sóng ngược pha triệt tiêu; bịt một loa thì hết triệt tiêu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số âm",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 1500,
+   "mac_dinh": 680,
+   "buoc": 20
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Khoảng cách hai loa",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Khoảng cách tới đường đi",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 8,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ âm trong không khí",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 340
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Khoảng cách giữa hai chỗ nghe to liên tiếp",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lam = v/f",
+   "i = lam·D/a (D lớn hơn nhiều so với a)"
+  ],
+  "gia_thiet": [
+   "hai loa cùng pha",
+   "nghe trên đường song song với đường nối hai loa, D >> a",
+   "bỏ qua phản xạ từ tường"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f (Hz)",
+   "a (m)",
+   "D (m)",
+   "lam (m)",
+   "i (m)"
+  ],
+  "hang": [
+   [
+    680,
+    1.0,
+    3.0,
+    0.5,
+    1.5
+   ],
+   [
+    680,
+    2.0,
+    3.0,
+    0.5,
+    0.75
+   ],
+   [
+    340,
+    1.0,
+    3.0,
+    1.0,
+    3.0
+   ],
+   [
+    680,
+    1.0,
+    5.0,
+    0.5,
+    2.5
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; thực tế phòng có phản xạ nên lệch."
+ },
+ "ket_qua_ky_vong": "f = 680 Hz, a = 1 m, D = 3 m: lam = 0,5 m, i = 1,5 m.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ chỗ nghe nhỏ là chỗ loa không phát tới.",
+  "Nghĩ thêm một loa thì chỗ nào cũng to hơn."
+ ],
+ "sai_so_thuong_gap": [
+  "Phản xạ trên tường, trần làm rối vân.",
+  "Hai loa không cùng pha nếu dây dài ngắn khác nhau nhiều."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "f",
+   "a",
+   "D"
+  ],
+  "dau_ra": [
+   "đồ thị cường độ âm theo vị trí đi",
+   "nút bịt loa"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Người đi dọc đường; thanh cường độ lên xuống. Nút 'bịt loa 2' để thấy dao động mất."
+ },
+ "an_toan": "Đừng bật âm lượng lớn, tránh hại tai."
+}
