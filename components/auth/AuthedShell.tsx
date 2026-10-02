@@ -1,6 +1,7 @@
 import AuthProvider from "@/components/auth/AuthProvider";
 import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
 import PreviewAsTaToggle from "@/components/tro-giang/PreviewAsTaToggle";
+import RankCelebrationWatcher from "@/components/rank/RankCelebrationWatcher";
 import BugReportWidget from "@/components/BugReportWidget";
 
 /**
@@ -22,6 +23,7 @@ export default function AuthedShell({ children }: { children: React.ReactNode })
       <PreviewAsStudentToggle />
       <PreviewAsTaToggle />
       <BugReportWidget />
+      <RankCelebrationWatcher />
     </AuthProvider>
   );
 }

@@ -15,6 +15,7 @@ export default function TitleBadge({
   locked = false,
   className = "",
   title,
+  priority = false,
 }: {
   code: string;
   level: TitleLevel | string | null | undefined;
@@ -22,6 +23,8 @@ export default function TitleBadge({
   locked?: boolean;
   className?: string;
   title?: string;
+  /** Tải ngay (pop-up chúc mừng) thay vì lazy. */
+  priority?: boolean;
 }) {
   const src = titleBadgeDisplaySrc(code, level);
   const lockCls = locked ? "opacity-30 grayscale" : "";
@@ -34,6 +37,7 @@ export default function TitleBadge({
         width={size}
         height={size}
         draggable={false}
+        priority={priority}
         className={`inline-block shrink-0 select-none ${lockCls} ${className}`}
         style={{ width: size, height: size }}
       />
