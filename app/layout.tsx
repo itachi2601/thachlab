@@ -99,9 +99,12 @@ export default function RootLayout({
         {/* Bắt tay TCP+TLS với Supabase (Singapore) song song lúc tải trang, thay vì chờ
             tới request đầu tiên — ước tính tiết kiệm ~50-150ms round-trip đầu tiên từ VN. */}
         {SUPABASE_URL && <link rel="preconnect" href={SUPABASE_URL} crossOrigin="anonymous" />}
+        {/* Theme: lựa chọn đã lưu > /phu-huynh mặc định SÁNG (phụ huynh lớn tuổi đọc chữ sẫm trên nền
+            sáng nhanh hơn — Piepenbrock 2013; chữ xanh nhỏ trên nền đen là tổ hợp tệ nhất cho 45+)
+            > theo hệ điều hành. Cùng logic với components/ui/ReadingZone.tsx (defaultTheme). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=(location.pathname==="/phu-huynh"||location.pathname.indexOf("/phu-huynh/")===0)?"light":(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
           }}
         />
         {/* Lưới an toàn SỚM cho ChunkLoadError: chạy trước hydrate (ChunkErrorGuard chỉ đăng ký

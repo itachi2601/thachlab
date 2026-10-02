@@ -142,7 +142,7 @@ export default function CatchupCard({
           <li key={id} className={`flex items-center gap-2 text-sm ${i === 0 ? "font-semibold text-white" : "text-slate-300"}`}>
             {i === 0 ? <ChevronRight size={14} className="text-amber-300" /> : <span className="w-3.5 text-center text-xs text-slate-500">{i + 1}</span>}
             {topicName.get(id) ?? `Bài #${id}`}
-            {i === 0 && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-200">kế tiếp</span>}
+            {i === 0 && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-200">kế tiếp</span>}
           </li>
         ))}
       </ol>

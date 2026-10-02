@@ -124,7 +124,7 @@ export default function BugReportsAdmin() {
                   <td className="p-2 text-slate-300">
                     {BUG_CATEGORY_LABELS[r.category]}
                     {r.exam_id != null && (
-                      <Link href={fixExamHref(r.exam_id, r.question_index)} className="mt-0.5 block text-[11px] font-bold text-cyan-300 hover:text-cyan-200">
+                      <Link href={fixExamHref(r.exam_id, r.question_index)} className="mt-0.5 block text-[12px] font-bold text-cyan-300 hover:text-cyan-200">
                         Đề #{r.exam_id}{r.question_index != null && ` · Câu ${r.question_index + 1}`} →
                       </Link>
                     )}

@@ -65,7 +65,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-white/10 pt-3">
             {groupQuestionIndexesByType(questions).map((section) => (
               <div key={section.type}>
-                <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                <div className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-slate-500">
                   {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
                 </div>
                 <div className="flex flex-wrap gap-1.5">
@@ -92,7 +92,7 @@ export default function ExamReviewPager({ questions, responses, renderAbove, exa
           </div>
         )}
 
-        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
+        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] text-slate-500">
           <span className="flex items-center gap-1.5">
             <span className="h-3 w-3 rounded border border-emerald-500/60 bg-emerald-500/15" />
             Đúng

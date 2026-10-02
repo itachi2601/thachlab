@@ -169,9 +169,9 @@ function AnnouncementColumn({ classId, kind }: { classId: number; kind: Announce
                 <div className="min-w-0">
                   <p className="whitespace-pre-wrap text-sm text-slate-200">{item.body}</p>
                   {item.examTitle && (
-                    <p className="mt-1 truncate text-[11px] font-semibold text-cyan-300">Đề: {item.examTitle}</p>
+                    <p className="mt-1 truncate text-[12px] font-semibold text-cyan-300">Đề: {item.examTitle}</p>
                   )}
-                  <p className="mt-1 text-[11px] text-slate-500">
+                  <p className="mt-1 text-[12px] text-slate-500">
                     {item.createdByName || "—"} ·{" "}
                     {new Date(item.createdAt).toLocaleString("vi-VN", {
                       day: "2-digit",

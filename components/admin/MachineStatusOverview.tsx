@@ -124,8 +124,8 @@ export default function MachineStatusOverview() {
                 }`}
               >
                 {WORKSHOP_LABELS[ws.workshop] ?? (ws.workshop || "Chưa gán xưởng")}
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-bold text-slate-300">{ws.machines.length}</span>
-                {broken > 0 && <span className="rounded-full bg-red-500/20 px-2 py-0.5 text-[11px] font-bold text-red-300">{broken}</span>}
+                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[12px] font-bold text-slate-300">{ws.machines.length}</span>
+                {broken > 0 && <span className="rounded-full bg-red-500/20 px-2 py-0.5 text-[12px] font-bold text-red-300">{broken}</span>}
               </button>
             );
           })}
@@ -274,11 +274,11 @@ function MachineTile({ machine, onClick }: { machine: Machine; onClick: () => vo
         <span className="truncate text-sm font-bold text-white" title={shortLabel(machine.label)}>
           <span className="font-mono text-cyan-300">{machine.code}</span> <span className="font-normal text-slate-300">({shortLabel(machine.label)})</span>
         </span>
-        <span className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${broken ? "bg-red-500/15 text-red-300" : "bg-emerald-500/15 text-emerald-300"}`}>
+        <span className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-bold ${broken ? "bg-red-500/15 text-red-300" : "bg-emerald-500/15 text-emerald-300"}`}>
           {broken ? <AlertOctagon size={10} /> : <Check size={10} />}{broken ? "NG" : "OK"}
         </span>
       </div>
-      {broken && machine.note && <p className="mt-1 text-[11px] text-red-200/80">{machine.note}</p>}
+      {broken && machine.note && <p className="mt-1 text-[12px] text-red-200/80">{machine.note}</p>}
     </button>
   );
 }
@@ -448,7 +448,7 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
                       <span className="text-slate-500">{fmtDateTime(entry.created_at)}</span>
                     </div>
                     {entry.note && <p className="mt-1 text-slate-300">{entry.note}</p>}
-                    <div className="mt-1.5 flex items-center justify-between gap-2 text-[11px] text-slate-500">
+                    <div className="mt-1.5 flex items-center justify-between gap-2 text-[12px] text-slate-500">
                       <span>{entry.profiles?.full_name ?? "—"}</span>
                       <button type="button" onClick={() => startEdit(entry)} className="flex items-center gap-1 font-bold text-cyan-300 hover:text-cyan-200"><Pencil size={11} />Sửa</button>
                     </div>

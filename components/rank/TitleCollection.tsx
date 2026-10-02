@@ -134,7 +134,7 @@ export default function TitleCollection({
                               return (
                                 <span
                                   key={lv}
-                                  className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                                  className={`rounded-full px-2 py-0.5 text-[12px] font-semibold ${
                                     has ? "bg-amber-400/25 text-amber-100" : "bg-white/5 text-slate-500"
                                   }`}
                                   title={has ? `Nhận ${new Date(t.levels[lv]!).toLocaleDateString("vi-VN")}` : undefined}

@@ -74,19 +74,19 @@ export default function TroGiangVideo({ assistant }: { assistant: TaAssistant })
         </p>
         <div className="mt-4 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-xl bg-white/5 p-3">
-            <p className="text-[11px] font-semibold uppercase text-slate-400">Sản xuất</p>
+            <p className="text-[12px] font-semibold uppercase text-slate-400">Sản xuất</p>
             <p className="mt-1 font-mono text-sm font-bold tabular-nums text-slate-200">
               {formatVnd(sum((v) => v.production_pay))}
             </p>
           </div>
           <div className="rounded-xl bg-white/5 p-3">
-            <p className="text-[11px] font-semibold uppercase text-slate-400">Lượt xem</p>
+            <p className="text-[12px] font-semibold uppercase text-slate-400">Lượt xem</p>
             <p className="mt-1 font-mono text-sm font-bold tabular-nums text-slate-200">
               {formatVnd(sum((v) => v.view_bonus))}
             </p>
           </div>
           <div className="rounded-xl bg-emerald-500/10 p-3">
-            <p className="text-[11px] font-semibold uppercase text-emerald-300/80">Đăng ký</p>
+            <p className="text-[12px] font-semibold uppercase text-emerald-300/80">Đăng ký</p>
             <p className="mt-1 font-mono text-sm font-bold tabular-nums text-emerald-300">
               {formatVnd(sum((v) => v.lead_bonus))}
             </p>
@@ -180,14 +180,14 @@ export default function TroGiangVideo({ assistant }: { assistant: TaAssistant })
                     </div>
                     <div className="text-right">
                       <p className="font-mono font-bold tabular-nums text-white">{formatVnd(v.total_pay)}</p>
-                      <p className="font-mono text-[11px] tabular-nums text-slate-400">
+                      <p className="font-mono text-[12px] tabular-nums text-slate-400">
                         SX {formatVnd(v.production_pay)} · view {formatVnd(v.view_bonus)}
                         {v.lead_count > 0 && (
                           <span className="text-emerald-300"> · {v.lead_count} HS {formatVnd(v.lead_bonus)}</span>
                         )}
                       </p>
                       <span
-                        className={`mt-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${statusMeta.className}`}
+                        className={`mt-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-bold ${statusMeta.className}`}
                       >
                         <StatusIcon size={11} />
                         {statusMeta.label}

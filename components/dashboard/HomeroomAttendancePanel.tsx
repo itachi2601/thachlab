@@ -407,7 +407,7 @@ function AttendanceMatrixSummary({ students, sessions, allRecords }: { students:
               <tr>
                 <th className="sticky left-0 z-30 min-w-48 border-b border-r border-white/10 bg-[#10192a] p-3 text-left text-xs uppercase text-slate-400">Học sinh</th>
                 {orderedSessions.map((session) => (
-                  <th key={session.id} className="min-w-14 border-b border-white/10 p-2 text-center text-[11px] font-bold text-slate-400" title={session.title}>
+                  <th key={session.id} className="min-w-14 border-b border-white/10 p-2 text-center text-[12px] font-bold text-slate-400" title={session.title}>
                     {new Date(session.starts_at).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" })}
                   </th>
                 ))}
@@ -425,7 +425,7 @@ function AttendanceMatrixSummary({ students, sessions, allRecords }: { students:
                   </td>
                   {row.cells.map((status, index) => (
                     <td key={index} className="border-b border-white/5 p-1.5 text-center">
-                      {status ? <span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[11px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span> : <span className="text-slate-700">–</span>}
+                      {status ? <span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[12px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span> : <span className="text-slate-700">–</span>}
                     </td>
                   ))}
                   <td className="border-b border-white/5 p-2 text-center text-xs font-bold text-slate-300">{row.absent + row.excused > 0 ? `${row.absent}${row.excused ? ` (+${row.excused}P)` : ""}` : "0"}</td>

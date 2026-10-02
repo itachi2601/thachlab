@@ -144,16 +144,16 @@ export default function TeacherThptAlerts({
                       {nameById.get(a.studentId) ?? "(đã rời lớp)"}
                     </strong>
                     {a.severity === "urgent" && (
-                      <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[10px] font-bold text-red-300">
+                      <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[12px] font-bold text-red-300">
                         KHẨN
                       </span>
                     )}
                     <span
-                      className={`rounded-full border px-2 py-0.5 text-[11px] font-semibold ${STATUS_TONE[a.status]}`}
+                      className={`rounded-full border px-2 py-0.5 text-[12px] font-semibold ${STATUS_TONE[a.status]}`}
                     >
                       {ALERT_STATUS_LABEL[a.status]}
                     </span>
-                    <span className="text-[11px] text-slate-500">
+                    <span className="text-[12px] text-slate-500">
                       {a.kind === "missed_assessment"
                         ? "Bỏ bài KT"
                         : a.kind === "exam_violation"

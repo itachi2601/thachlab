@@ -130,7 +130,7 @@ function Podium({ g }: { g: PublicHonorGrade }) {
                 }`}
               >
                 <div className="flex shrink-0 flex-col items-center gap-2">
-                  <span className={`font-mono text-[11px] uppercase tracking-widest ${first ? "text-cyan-300" : "text-slate-500"}`}>
+                  <span className={`font-mono text-[12px] uppercase tracking-widest ${first ? "text-cyan-300" : "text-slate-500"}`}>
                     Hạng {m.pos}
                   </span>
                   <RankAvatarFrame tier={{ code: m.tier_code, division: m.division, paragon: m.paragon }} size={first ? 72 : 56}>

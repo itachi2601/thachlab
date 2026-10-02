@@ -26,7 +26,7 @@ export default function WornTitle({
   const icon = size === "md" ? 20 : 14;
   return (
     <span
-      className={`inline-flex min-w-0 max-w-full items-center gap-1 font-semibold ${size === "md" ? "text-sm" : "text-[11px]"} ${className}`}
+      className={`inline-flex min-w-0 max-w-full items-center gap-1 font-semibold ${size === "md" ? "text-sm" : "text-[12px]"} ${className}`}
       style={{ color }}
     >
       {title.code ? <TitleBadge code={title.code} level={lv} size={icon} /> : <Sparkles size={icon - 2} className="shrink-0 opacity-80" />}

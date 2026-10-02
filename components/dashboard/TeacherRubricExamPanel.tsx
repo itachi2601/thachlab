@@ -151,7 +151,7 @@ export default function TeacherRubricExamPanel({ courseId, students }: { courseI
       <div className="overflow-x-auto"><table className="w-full min-w-[520px] text-left text-sm"><thead><tr className="border-b border-white/10 text-xs uppercase text-slate-500"><th className="p-3">Học sinh</th><th className="p-3">Vai trò</th><th className="p-3">Điểm</th><th className="p-3">Xếp loại</th></tr></thead><tbody>
         {courseAttempts.map((item) => <tr key={item.id} className="border-b border-white/5">
           <td className="p-3"><strong className="text-white">{studentName(item.student_id)}</strong></td>
-          <td className="p-3"><span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${item.role === "teacher" ? "bg-blue-500/10 text-blue-300" : "bg-violet-500/10 text-violet-300"}`}>{item.role === "teacher" ? "Chính thức" : "SV tự đánh giá"}</span></td>
+          <td className="p-3"><span className={`rounded-full px-2 py-0.5 text-[12px] font-bold ${item.role === "teacher" ? "bg-blue-500/10 text-blue-300" : "bg-violet-500/10 text-violet-300"}`}>{item.role === "teacher" ? "Chính thức" : "SV tự đánh giá"}</span></td>
           <td className="p-3 font-mono text-slate-300">{item.total_score.toFixed(2)}/10</td>
           <td className={`p-3 font-bold ${item.xep_loai.startsWith("Không đạt") ? "text-red-300" : "text-emerald-300"}`}>{item.xep_loai}</td>
         </tr>)}

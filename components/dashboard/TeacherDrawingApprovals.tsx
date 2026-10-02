@@ -84,12 +84,12 @@ export default function TeacherDrawingApprovals({ courseId, onPendingCountChange
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <strong className="text-sm text-white">{submission.profiles?.full_name || "Sinh viên"}</strong>
-                <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] text-slate-400">{submission.profiles?.class_name || "Chưa có lớp"}</span>
-                <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-bold text-blue-200">{machine}</span>
-                <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${submission.status === "approved" ? "bg-emerald-500/15 text-emerald-200" : submission.status === "rejected" ? "bg-red-500/15 text-red-200" : "bg-amber-500/15 text-amber-200"}`}>{submission.status === "approved" ? "Đã duyệt" : submission.status === "rejected" ? "Yêu cầu nộp lại" : "Chờ duyệt"}</span>
+                <span className="rounded-full bg-white/5 px-2 py-0.5 text-[12px] text-slate-400">{submission.profiles?.class_name || "Chưa có lớp"}</span>
+                <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[12px] font-bold text-blue-200">{machine}</span>
+                <span className={`rounded-full px-2 py-0.5 text-[12px] font-bold ${submission.status === "approved" ? "bg-emerald-500/15 text-emerald-200" : submission.status === "rejected" ? "bg-red-500/15 text-red-200" : "bg-amber-500/15 text-amber-200"}`}>{submission.status === "approved" ? "Đã duyệt" : submission.status === "rejected" ? "Yêu cầu nộp lại" : "Chờ duyệt"}</span>
               </div>
               <button type="button" onClick={() => openDrawing(submission)} className="mt-2 block max-w-full truncate text-left text-xs font-semibold text-[#60A5FA] hover:text-[#93C5FD]">Mở bản vẽ: {submission.file_name}</button>
-              <p className="mt-1 text-[10px] text-slate-500">Cập nhật {new Date(submission.updated_at).toLocaleString("vi-VN")}</p>
+              <p className="mt-1 text-[12px] text-slate-500">Cập nhật {new Date(submission.updated_at).toLocaleString("vi-VN")}</p>
             </div>
             <div className="flex gap-2">
               <button type="button" disabled={reviewingId === submission.id} onClick={() => review(submission, "approved")} className="rounded-lg bg-emerald-600 px-3 py-2 text-xs font-bold text-white hover:bg-emerald-500 disabled:opacity-50">Duyệt & mở khóa</button>

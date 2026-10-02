@@ -374,9 +374,9 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
                       <li key={r.id} className="rounded-xl border border-amber-500/20 bg-amber-500/[.04] p-3 text-sm">
                         <div className="flex flex-wrap items-center gap-2">
                           <strong className="text-white">{r.studentName}</strong>
-                          {r.student_id === null && <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-slate-300">chưa có tài khoản</span>}
-                          {r.joined_late && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-200">vào trễ · cần bù bài</span>}
-                          <span className="rounded-full border border-current px-2 py-0.5 text-[10px] font-bold text-amber-200">{REGISTRATION_STATUS_LABEL[r.status]}</span>
+                          {r.student_id === null && <span className="rounded-full bg-white/10 px-2 py-0.5 text-[12px] font-bold text-slate-300">chưa có tài khoản</span>}
+                          {r.joined_late && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-200">vào trễ · cần bù bài</span>}
+                          <span className="rounded-full border border-current px-2 py-0.5 text-[12px] font-bold text-amber-200">{REGISTRATION_STATUS_LABEL[r.status]}</span>
                           <span className="ml-auto text-xs text-slate-500">{new Date(r.created_at).toLocaleDateString("vi-VN")}</span>
                         </div>
                         <p className="mt-1 text-xs text-slate-400">
@@ -440,7 +440,7 @@ function CourseBlock({ course, students, topics, onChanged }: { course: ThptCour
                       <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2 text-sm">
                         <Check size={14} className="text-emerald-300" />
                         <strong className="text-white">{r.studentName}</strong>
-                        {r.joined_late && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-200">vào trễ</span>}
+                        {r.joined_late && <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[12px] font-bold text-amber-200">vào trễ</span>}
                         <select
                           value={r.payment_status}
                           onChange={(e) => pay(r, e.target.value as PaymentStatus)}

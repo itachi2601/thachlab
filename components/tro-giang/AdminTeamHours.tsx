@@ -111,13 +111,13 @@ export default function AdminTeamHours({ reloadKey = 0 }: { reloadKey?: number }
           <div className="mt-4 flex h-44 items-end gap-2">
             {months.map((m) => (
               <div key={m.month} className="flex min-w-0 flex-1 flex-col items-center gap-1.5">
-                <span className="font-mono text-[10px] tabular-nums text-slate-400">{formatHours(m.converted_hours)}</span>
+                <span className="font-mono text-[12px] tabular-nums text-slate-400">{formatHours(m.converted_hours)}</span>
                 <div
                   className="w-full rounded-t bg-blue-500/80"
                   style={{ height: `${peak > 0 ? Math.max(4, (m.converted_hours / peak) * 100) : 4}%` }}
                   title={`${m.session_count} buổi`}
                 />
-                <span className="text-[10px] text-slate-500">{monthLabel(m.month)}</span>
+                <span className="text-[12px] text-slate-500">{monthLabel(m.month)}</span>
               </div>
             ))}
           </div>

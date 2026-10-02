@@ -56,7 +56,7 @@ export function PhysicsSimulationHero() {
             Tại sao mọi thứ
             <br />
             lại{" "}
-            <span className="bg-gradient-to-r from-cyan-300 to-sky-400 bg-clip-text text-transparent">
+            <span className="text-cyan-300">
               dao động?
             </span>
           </h1>
@@ -93,7 +93,7 @@ export function PhysicsSimulationHero() {
         </div>
 
         <div className="relative rounded-2xl border border-line bg-panel p-5 shadow-xl shadow-black/30 sm:p-6">
-          <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-muted">
+          <p className="mb-3 font-mono text-[12px] uppercase tracking-widest text-muted">
             Mô phỏng: Dao động con lắc lò xo
           </p>
 

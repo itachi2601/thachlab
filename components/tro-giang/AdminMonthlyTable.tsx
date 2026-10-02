@@ -156,7 +156,7 @@ export default function AdminMonthlyTable({ reloadKey = 0 }: { reloadKey?: numbe
                 <tr key={assistant.id}>
                   <td className="px-4 py-3">
                     <span className="font-semibold text-white">{assistant.short_name}</span>
-                    <span className="ml-2 rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-bold text-slate-300">
+                    <span className="ml-2 rounded-full bg-white/10 px-2 py-0.5 text-[12px] font-bold text-slate-300">
                       {assistant.tier}
                       {assistant.retained_rate ? " · bảo lưu" : ""}
                     </span>

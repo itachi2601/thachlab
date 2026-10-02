@@ -65,7 +65,7 @@ export default function TitleGradeRoadmap({ titles }: { titles: RankTitle[] }) {
                     )}
                     <div className="min-w-0 flex-1">
                       <p className={`truncate text-sm font-semibold ${unlocked ? "text-white" : "text-slate-300"}`}>{t.name}</p>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-[12px] text-slate-500">
                         {unlocked ? LEVEL_LABELS[LEVEL_ORDER[Math.max(0, levelRank(t.level) - 1)]] : "Chưa mở"}
                       </p>
                     </div>

@@ -35,7 +35,7 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
         {posts.slice(0, 5).map((p) => (
           <article key={p.id} className="rounded-xl border border-white/5 bg-white/[.03] p-4">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[11px] font-semibold text-primary">
+              <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[12px] font-semibold text-primary">
                 {CONTENT_TYPE_LABELS[p.content_type] ?? p.content_type}
               </span>
               <span className="text-xs text-slate-500">

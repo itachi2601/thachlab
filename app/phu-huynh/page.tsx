@@ -7,6 +7,7 @@ import { CalendarPlus, ChevronDown, MessageCircle, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
+import ReadingZone from "@/components/ui/ReadingZone";
 import { useAuth } from "@/components/auth/AuthProvider";
 import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
 import CatchupCard from "@/components/results/CatchupCard";
@@ -217,7 +218,9 @@ export default function PhuHuynhPage() {
               </>
             }
           >
-            <ParentHome />
+            <ReadingZone>
+              <ParentHome />
+            </ReadingZone>
           </RequireAuth>
         )}
       </main>

@@ -100,7 +100,7 @@ export default function TitleShowcase({
                     <TitleBadge code={t.code} level={t.level} size={size} />
                   </button>
                   {wearing && (
-                    <span className="pointer-events-none absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-1.5 text-[9px] font-bold leading-[13px] text-[#2a1f05]">
+                    <span className="pointer-events-none absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-1.5 text-[12px] font-bold leading-[13px] text-[#2a1f05]">
                       đeo
                     </span>
                   )}

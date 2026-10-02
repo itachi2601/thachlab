@@ -57,7 +57,7 @@ function Cond({ state, children }: { state: CondState; children: React.ReactNode
   return (
     <li className="flex items-start gap-2 text-sm">
       <span
-        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
+        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-bold ${
           state === "done" ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-slate-500"
         }`}
       >
@@ -181,7 +181,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                   )}
                 </span>
                 <span
-                  className={`hidden w-full truncate text-center text-[10px] font-bold uppercase tracking-wide sm:block ${active ? "" : "text-slate-500"}`}
+                  className={`hidden w-full truncate text-center text-[12px] font-bold uppercase tracking-wide sm:block ${active ? "" : "text-slate-500"}`}
                   style={{ fontFamily: "var(--font-cinzel), Cinzel, serif", color: active ? m.light : undefined }}
                 >
                   {m.en}
@@ -222,7 +222,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               )}
             </span>
             <span
-              className={`hidden w-full truncate text-center text-[10px] font-bold uppercase tracking-wide sm:block ${showParagon ? "" : "text-slate-500"}`}
+              className={`hidden w-full truncate text-center text-[12px] font-bold uppercase tracking-wide sm:block ${showParagon ? "" : "text-slate-500"}`}
               style={{ fontFamily: "var(--font-cinzel), Cinzel, serif", color: showParagon ? PARAGON_META.light : undefined }}
             >
               {PARAGON_META.en}
@@ -263,7 +263,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
               </div>
               <p className="mt-3 text-xs text-slate-500">Không phải bậc thứ tám: huy hiệu độc quyền gắn thêm khi em đã ở Cao Thủ và sưu tập trọn bộ danh hiệu. Không có phân bậc.</p>
               <div className="mt-4">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
+                <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt danh vị</p>
                 <ul className="mt-2 space-y-2">
                   <Cond state={paragon || currentSort >= list.length ? "done" : status?.season ? "todo" : "neutral"}>
                     Đang ở bậc <b className="text-white">Cao Thủ</b> của mùa hiện tại
@@ -303,7 +303,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
 
           {divisions && (
             <div className="mt-4">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Phân bậc · III đồng → II bạc → I vàng</p>
+              <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Phân bậc · III đồng → II bạc → I vàng</p>
               <div className="mt-2 grid grid-cols-3 gap-2">
                 {divisions.map((d) => {
                   const here = isCurrent && status?.tier?.division === d.division;
@@ -318,7 +318,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                         <span className="block text-xs font-bold text-white" style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}>
                           {meta.en} {divisionLabel(d.division)}
                         </span>
-                        <span className={`block truncate text-[11px] ${passed ? "text-emerald-300" : "text-slate-400"}`}>
+                        <span className={`block truncate text-[12px] ${passed ? "text-emerald-300" : "text-slate-400"}`}>
                           {formatRp(d.min)}–{formatRp(d.max)} RP
                         </span>
                       </span>
@@ -334,7 +334,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
           {!step.has_divisions && <p className="mt-3 text-xs text-slate-500">Bậc này không chia phân bậc — huy hiệu luôn bằng vàng.</p>}
 
           <div className="mt-4">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt bậc</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-slate-500">Điều kiện đạt bậc</p>
             {step.sort === 1 ? (
               <p className="mt-2 text-sm text-slate-300">Bậc khởi đầu — mọi học sinh tham gia mùa đều bắt đầu từ đây.</p>
             ) : !hasNumbers ? (

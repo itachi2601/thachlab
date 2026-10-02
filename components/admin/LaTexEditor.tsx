@@ -117,7 +117,7 @@ export default function LaTexEditor({ value, onChange, placeholder }: Props) {
               placeholder="12-cd01-su-chuyen-the"
               className={`${inputCls} mt-1 w-full font-mono`}
             />
-            <span className="mt-1 block text-[11px] text-slate-500">
+            <span className="mt-1 block text-[12px] text-slate-500">
               {imageBase
                 ? `\\includegraphics{images/fig01.png} → ${imageBase}/fig01.png`
                 : "Ảnh phải nằm ở public/lessons/<slug>/media/ trong repo"}

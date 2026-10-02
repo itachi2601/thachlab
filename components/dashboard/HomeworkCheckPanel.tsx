@@ -62,7 +62,7 @@ export default function HomeworkCheckPanel({ announcementId, classId }: { announ
   return (
     <div className="space-y-2 rounded-xl border border-white/10 bg-panel-deep p-3">
       {!seasonId && (
-        <p className="text-[11px] text-amber-300/80">Lớp chưa có mùa rank đang mở — vẫn chấm được, chỉ chưa cộng RP.</p>
+        <p className="text-[12px] text-amber-300/80">Lớp chưa có mùa rank đang mở — vẫn chấm được, chỉ chưa cộng RP.</p>
       )}
       {students.map((s) => {
         const current = checks[s.id]?.percent;
@@ -76,7 +76,7 @@ export default function HomeworkCheckPanel({ announcementId, classId }: { announ
                   type="button"
                   disabled={busyId === s.id}
                   onClick={() => pick(s.id, p)}
-                  className={`rounded-lg px-2 py-1 text-[11px] font-bold ${
+                  className={`rounded-lg px-2 py-1 text-[12px] font-bold ${
                     current === p
                       ? "bg-cyan-500/25 text-cyan-200"
                       : "bg-white/[.04] text-slate-400 hover:bg-white/[.08]"
@@ -87,7 +87,7 @@ export default function HomeworkCheckPanel({ announcementId, classId }: { announ
               ))}
             </div>
             {current !== undefined && (
-              <span className="text-[10px] text-slate-500">+{rpFor(current)} RP</span>
+              <span className="text-[12px] text-slate-500">+{rpFor(current)} RP</span>
             )}
           </div>
         );

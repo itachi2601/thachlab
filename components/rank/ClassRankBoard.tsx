@@ -163,7 +163,7 @@ export default function ClassRankBoard({ classId }: { classId: number }) {
         )}
       </div>
 
-      <p className="mt-3 text-[11px] text-slate-500">
+      <p className="mt-3 text-[12px] text-slate-500">
         {data.season.name} còn <b className="text-slate-300">{left} ngày</b>.
       </p>
     </section>

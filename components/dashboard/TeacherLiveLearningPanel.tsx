@@ -82,10 +82,10 @@ export default function TeacherLiveLearningPanel({
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <strong className="text-sm text-white">{row.fullName}</strong>
-                    {row.needsAttention && <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-300"><AlertTriangle size={11} /> Có thể đang mắc</span>}
+                    {row.needsAttention && <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[12px] font-bold text-amber-300"><AlertTriangle size={11} /> Có thể đang mắc</span>}
                   </div>
                   <p className="mt-1 truncate text-xs text-slate-400">{row.chapterTitle ? `${row.chapterTitle} · ` : ""}{row.lessonTitle}</p>
-                  <p className="mt-1 flex items-center gap-1 text-[11px] text-slate-500"><Clock3 size={11} />{row.active ? `Đang học khoảng ${row.studyingMinutes} phút` : "Vừa dừng hoặc chuyển sang trang khác"}</p>
+                  <p className="mt-1 flex items-center gap-1 text-[12px] text-slate-500"><Clock3 size={11} />{row.active ? `Đang học khoảng ${row.studyingMinutes} phút` : "Vừa dừng hoặc chuyển sang trang khác"}</p>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   <button type="button" onClick={() => onOpenStudent(row.studentId)} className="inline-flex items-center gap-1 rounded-lg border border-white/10 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:border-blue-400/30 hover:text-blue-300"><UserRound size={13} /> Hồ sơ</button>

@@ -362,7 +362,7 @@ export default function ExamLibraryAdmin({
                 </span>
               </span>
               <span
-                className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                className={`shrink-0 rounded-full px-2 py-0.5 text-[12px] font-semibold ${
                   r.published ? "bg-emerald-500/15 text-emerald-300" : "bg-white/10 text-slate-400"
                 }`}
               >

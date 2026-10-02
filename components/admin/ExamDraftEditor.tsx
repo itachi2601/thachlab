@@ -213,7 +213,7 @@ export default function ExamDraftEditor({
             type="button"
             onClick={runAutoTag}
             disabled={aiBusy}
-            className="ml-auto inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[11px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
+            className="ml-auto inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[12px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
           >
             <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
           </button>
@@ -342,7 +342,7 @@ function QuestionCardEditor({
         </div>
       </div>
 
-      {issues.length > 0 && <p className="text-[11px] text-amber-300">Còn thiếu: {issues.join(" · ")}</p>}
+      {issues.length > 0 && <p className="text-[12px] text-amber-300">Còn thiếu: {issues.join(" · ")}</p>}
 
       <textarea
         value={q.question}
@@ -438,7 +438,7 @@ function QuestionCardEditor({
       />
 
       <div className="grid gap-2 sm:grid-cols-2">
-        <label className="text-[11px] font-semibold text-slate-400">
+        <label className="text-[12px] font-semibold text-slate-400">
           Chủ đề câu này (để thống kê chỗ hổng)
           <input
             value={q.topic ?? ""}
@@ -455,7 +455,7 @@ function QuestionCardEditor({
             </datalist>
           )}
         </label>
-        <label className="text-[11px] font-semibold text-slate-400">
+        <label className="text-[12px] font-semibold text-slate-400">
           Dạng
           <select
             value={q.form ?? ""}

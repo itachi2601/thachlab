@@ -312,7 +312,7 @@ export default function AdminVideoTab({ reloadKey = 0 }: { reloadKey?: number })
                   </div>
                   <div className="text-right">
                     <p className="font-mono font-bold tabular-nums text-white">{formatVnd(v.total_pay)}</p>
-                    <p className="font-mono text-[11px] tabular-nums text-slate-400">
+                    <p className="font-mono text-[12px] tabular-nums text-slate-400">
                       SX {formatVnd(v.production_pay)} · view {formatVnd(v.view_bonus)}
                       {v.lead_count > 0 && <span className="text-emerald-300"> · {v.lead_count} HS {formatVnd(v.lead_bonus)}</span>}
                     </p>

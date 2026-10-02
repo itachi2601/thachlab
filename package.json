@@ -7,7 +7,8 @@
     "prebuild": "node scripts/build-content.mjs && node scripts/gen-image-dimensions.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:a11y": "node scripts/check-a11y.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.0",

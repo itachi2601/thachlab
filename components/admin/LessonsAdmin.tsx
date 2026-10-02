@@ -929,7 +929,7 @@ function ChapterLessonsEditor({
                 <span className="flex items-center gap-2">
                   {isPeriodicExam(l.lesson_kind) && (
                     <span
-                      className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide"
+                      className="shrink-0 rounded-full px-2 py-0.5 text-[12px] font-bold tracking-wide"
                       style={{
                         color: LESSON_KIND_META[l.lesson_kind].color,
                         backgroundColor: `${LESSON_KIND_META[l.lesson_kind].color}22`,
@@ -947,7 +947,7 @@ function ChapterLessonsEditor({
                       return (
                         <span
                           title="Chưa gắn ở /quan-tri/chu-de nên câu hỏi của bài này không tự gắn được nhãn"
-                          className="shrink-0 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-300"
+                          className="shrink-0 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-[12px] font-semibold text-rose-300"
                         >
                           Chưa gắn chủ đề
                         </span>
@@ -956,7 +956,7 @@ function ChapterLessonsEditor({
                       return (
                         <span
                           title="Có chủ đề nhưng chưa tách yêu cầu cần đạt — câu hỏi chỉ gắn được ở mức cả bài"
-                          className="shrink-0 rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300"
+                          className="shrink-0 rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[12px] font-semibold text-amber-300"
                         >
                           Chưa tách YCCĐ
                         </span>

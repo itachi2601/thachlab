@@ -49,7 +49,7 @@ export default function ParentHomeworkNotes({ classId, studentId }: { classId: n
           return (
             <div key={item.id} className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
               <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
-              <p className="mt-1.5 text-[11px] text-slate-500">
+              <p className="mt-1.5 text-[12px] text-slate-500">
                 {item.createdByName || "Giáo viên"} ·{" "}
                 {new Date(item.createdAt).toLocaleString("vi-VN", {
                   day: "2-digit",
@@ -59,11 +59,11 @@ export default function ParentHomeworkNotes({ classId, studentId }: { classId: n
                 })}
               </p>
               {percent !== undefined ? (
-                <p className="mt-1.5 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-300">
+                <p className="mt-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-emerald-300">
                   <CheckCircle2 size={12} /> Trợ giảng đã chấm trên lớp: {percent}% đã làm
                 </p>
               ) : (
-                <p className="mt-1.5 text-[11px] text-slate-600">Chưa được chấm trên lớp.</p>
+                <p className="mt-1.5 text-[12px] text-slate-600">Chưa được chấm trên lớp.</p>
               )}
             </div>
           );

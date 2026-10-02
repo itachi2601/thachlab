@@ -745,7 +745,7 @@ function TitlesTab() {
                               <p className="admin-label mb-1">Chủ đề (tầng bài):</p>
                               {topicsByGrade.map(([grade, list2]) => (
                                 <div key={grade} className="mb-2">
-                                  <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Lớp {grade}</p>
+                                  <p className="text-[12px] font-semibold uppercase tracking-wide text-slate-500">Lớp {grade}</p>
                                   <div className="mt-1 flex flex-wrap gap-1.5">
                                     {list2.map((q) => {
                                       const on = ids.includes(q.id);

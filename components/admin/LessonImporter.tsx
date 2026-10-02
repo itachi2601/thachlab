@@ -684,7 +684,7 @@ export default function LessonImporter() {
             <p className="text-sm font-semibold text-slate-200">
               Nhãn chủ đề · đã gắn {audit.tagged}/{audit.total} câu
             </p>
-            <p className="mt-0.5 text-[11px] text-slate-500">
+            <p className="mt-0.5 text-[12px] text-slate-500">
               Dùng cho Phân tích chủ đề &amp; cảnh báo phụ đạo. Nhãn được chốt lúc học sinh nộp
               bài — gắn sau sẽ không cứu được các lượt đã nộp.
             </p>
@@ -749,7 +749,7 @@ export default function LessonImporter() {
                   Tạo {audit.unknown.length} chủ đề mới cho{" "}
                   <b className="text-slate-100">{selectedLessonTitle() || "bài đang chọn"}</b> khi đăng
                   {lessonId === null && <span className="text-amber-300"> — chọn bài học ở mục 1 trước</span>}
-                  <span className="block text-[11px] text-slate-500">
+                  <span className="block text-[12px] text-slate-500">
                     Chủ đề mới gắn sẵn vào đúng Chương → Bài này, nên nút “Ôn lại” của học sinh nhảy
                     đúng chỗ ngay.
                   </span>
@@ -899,7 +899,7 @@ function ModePicker<T extends string>({
   return (
     <div className={`rounded-lg border p-3 ${has ? "border-amber-500/30 bg-amber-500/5" : "border-white/10"}`}>
       <p className="font-semibold text-slate-200">{label}</p>
-      <p className="mt-0.5 text-[11px] text-slate-500">{has ? "Bài đã có nội dung này" : "Chưa có — sẽ thêm mới"}</p>
+      <p className="mt-0.5 text-[12px] text-slate-500">{has ? "Bài đã có nội dung này" : "Chưa có — sẽ thêm mới"}</p>
       {has && (
         <div className="mt-2 flex flex-wrap gap-1.5">
           {options.map(([v, l]) => (
@@ -907,7 +907,7 @@ function ModePicker<T extends string>({
               key={v}
               type="button"
               onClick={() => onChange(v)}
-              className={`rounded-md px-2 py-1 text-[11px] font-semibold ${
+              className={`rounded-md px-2 py-1 text-[12px] font-semibold ${
                 value === v ? "bg-primary text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"
               }`}
             >

@@ -127,7 +127,7 @@ export default function TeacherThptStudentProfile({
               <strong className="block">
                 {student.full_name}
                 {cttcIds.has(student.id) && (
-                  <span className="ml-1.5 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-bold text-amber-300">
+                  <span className="ml-1.5 rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[12px] font-bold text-amber-300">
                     CTTC
                   </span>
                 )}
@@ -197,7 +197,7 @@ export default function TeacherThptStudentProfile({
                 {history.map((entry, i) => (
                   <div key={i} className="flex items-center justify-between gap-3 rounded-xl bg-white/[.02] p-3 text-sm">
                     <div className="min-w-0">
-                      <span className="mr-2 rounded-full border border-white/10 px-2 py-0.5 text-[10px] font-bold uppercase text-slate-400">
+                      <span className="mr-2 rounded-full border border-white/10 px-2 py-0.5 text-[12px] font-bold uppercase text-slate-400">
                         {ACTIVITY_LABEL[entry.activity]}
                       </span>
                       <strong className="text-white">{entry.title}</strong>

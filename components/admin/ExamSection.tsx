@@ -579,7 +579,7 @@ function AnswerGrid({
               problems(q).some((p) => p.includes("đáp án")) ? "border-amber-500/40" : "border-white/10"
             }`}
           >
-            <span className="w-5 text-right text-[11px] font-bold text-slate-400">{i + 1}</span>
+            <span className="w-5 text-right text-[12px] font-bold text-slate-400">{i + 1}</span>
             {q.type === "multiple_choice" &&
               LETTERS.map((L, j) => (
                 <button
@@ -587,7 +587,7 @@ function AnswerGrid({
                   type="button"
                   disabled={!enabled}
                   onClick={() => onChoice(i, L)}
-                  className={`h-6 w-6 rounded text-[11px] font-bold transition ${
+                  className={`h-6 w-6 rounded text-[12px] font-bold transition ${
                     q.answer === j ? "bg-emerald-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
                   } disabled:cursor-default`}
                 >
@@ -602,7 +602,7 @@ function AnswerGrid({
                   disabled={!enabled}
                   onClick={() => onToggle(i, l)}
                   title={q.statements[j]?.answer ? "Đúng" : "Sai"}
-                  className={`h-6 w-6 rounded text-[11px] font-bold transition ${
+                  className={`h-6 w-6 rounded text-[12px] font-bold transition ${
                     q.statements[j]?.answer ? "bg-emerald-500 text-white" : "bg-red-500/20 text-red-200 hover:bg-red-500/40"
                   } disabled:cursor-default`}
                 >
@@ -622,10 +622,10 @@ function AnswerGrid({
                   if (e.key === "Enter") (e.target as HTMLInputElement).blur();
                 }}
                 placeholder="?"
-                className="h-6 w-14 rounded border border-white/10 bg-white/5 px-1 text-center text-[11px] font-bold text-emerald-300 focus:border-primary focus:outline-none"
+                className="h-6 w-14 rounded border border-white/10 bg-white/5 px-1 text-center text-[12px] font-bold text-emerald-300 focus:border-primary focus:outline-none"
               />
             )}
-            {q.type === "essay" && <span className="text-[11px] text-slate-500">tự luận</span>}
+            {q.type === "essay" && <span className="text-[12px] text-slate-500">tự luận</span>}
           </div>
         ))}
       </div>
@@ -692,7 +692,7 @@ function TagGrid({
   }
 
   const selectCls =
-    "h-7 max-w-full rounded border border-white/10 bg-panel px-1 text-[11px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
+    "h-7 max-w-full rounded border border-white/10 bg-panel px-1 text-[12px] text-slate-200 focus:border-primary focus:outline-none disabled:cursor-default disabled:opacity-60";
 
   function renderOptions(current: string) {
     const extra = current && !known.has(current.toLowerCase()) ? current : "";
@@ -734,7 +734,7 @@ function TagGrid({
               type="button"
               onClick={runAutoTag}
               disabled={aiBusy}
-              className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[11px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
+              className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[12px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
             >
               <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
             </button>
@@ -747,18 +747,18 @@ function TagGrid({
       {open && (
         <div className="mt-2 space-y-2">
           {groups.length === 0 ? (
-            <p className="text-[11px] text-slate-500">
+            <p className="text-[12px] text-slate-500">
               {lessonPicked
                 ? "Khối này chưa có danh mục yêu cầu cần đạt — thêm ở trang Chủ đề câu hỏi, hoặc gõ dòng “Chủ đề: …” trong văn bản."
                 : "Chọn Lớp – Bài để hiện danh sách yêu cầu cần đạt của bài."}
             </p>
           ) : (
             !lessonPicked && (
-              <p className="text-[11px] text-slate-500">Chọn Bài để yêu cầu cần đạt của bài đó lên đầu danh sách.</p>
+              <p className="text-[12px] text-slate-500">Chọn Bài để yêu cầu cần đạt của bài đó lên đầu danh sách.</p>
             )
           )}
           {enabled && questions.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+            <div className="flex flex-wrap items-center gap-2 text-[12px] text-slate-400">
               {untaggedTopic.length > 0 && groups.length > 0 && (
                 <label className="inline-flex items-center gap-1">
                   {untaggedTopic.length} câu chưa có chủ đề →
@@ -810,7 +810,7 @@ function TagGrid({
               const DIFFICULTY_SHORT: Record<Exclude<Difficulty, "">, string> = { de: "Dễ", "trung-binh": "TB", kho: "Khó" };
               return (
                 <div key={i} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto_auto] items-center gap-1">
-                  <span className="text-right text-[11px] font-bold text-slate-400">{i + 1}</span>
+                  <span className="text-right text-[12px] font-bold text-slate-400">{i + 1}</span>
                   <select
                     value={topic}
                     disabled={!enabled}
@@ -827,7 +827,7 @@ function TagGrid({
                         type="button"
                         disabled={!enabled}
                         onClick={() => onTag(i, "form", q.form === f ? "" : QUESTION_FORM_LABELS[f].toLowerCase())}
-                        className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
+                        className={`h-7 rounded px-1.5 text-[12px] font-bold transition disabled:cursor-default ${
                           q.form === f ? "bg-blue-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
                         }`}
                       >
@@ -847,7 +847,7 @@ function TagGrid({
                           // GV mới xác nhận xong mới coi là chốt, ẩn huy hiệu "AI gợi ý".
                           onTag(i, "difficulty", q.difficulty === d ? "" : `${DIFFICULTY_LABELS[d].toLowerCase()} (GV)`)
                         }
-                        className={`h-7 rounded px-1.5 text-[11px] font-bold transition disabled:cursor-default ${
+                        className={`h-7 rounded px-1.5 text-[12px] font-bold transition disabled:cursor-default ${
                           q.difficulty === d ? "bg-emerald-500 text-white" : "bg-white/5 text-slate-300 hover:bg-white/15"
                         }`}
                       >
@@ -857,7 +857,7 @@ function TagGrid({
                     {q.difficulty && q.difficultySource === "ai" && (
                       <span
                         title="AI gợi ý — bấm lại một mức để giáo viên xác nhận"
-                        className="admin-badge admin-badge--accent px-1 py-0 text-[9px] leading-4"
+                        className="admin-badge admin-badge--accent px-1 py-0 text-[12px] leading-4"
                       >
                         AI
                       </span>
@@ -868,7 +868,7 @@ function TagGrid({
             })}
           </div>
           {!enabled && questions.length > 0 && (
-            <p className="text-[11px] text-slate-500">
+            <p className="text-[12px] text-slate-500">
               Đang ở chế độ sửa chi tiết hoặc số câu chưa khớp — gắn nhãn trong từng thẻ câu bên dưới.
             </p>
           )}

@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
+import ReadingZone from "@/components/ui/ReadingZone";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ExamRunner from "@/components/exams/ExamRunner";
 import type { Exam } from "@/features/exams/types";
@@ -117,11 +118,13 @@ export default function TakeExamPage() {
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-20 lg:px-8">
         <RequireAuth>
-          <Suspense
-            fallback={<p className="text-center text-slate-400">Đang tải…</p>}
-          >
-            <ExamLoader />
-          </Suspense>
+          <ReadingZone>
+            <Suspense
+              fallback={<p className="text-center text-slate-400">Đang tải…</p>}
+            >
+              <ExamLoader />
+            </Suspense>
+          </ReadingZone>
         </RequireAuth>
       </main>
       <Footer />

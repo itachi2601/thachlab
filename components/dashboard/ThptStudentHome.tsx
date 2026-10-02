@@ -101,7 +101,7 @@ function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
   return (
     <div className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
       <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
-      <p className="mt-1.5 text-[11px] text-slate-500">
+      <p className="mt-1.5 text-[12px] text-slate-500">
         {item.createdByName || "Giáo viên"} ·{" "}
         {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
       </p>
@@ -332,7 +332,7 @@ export default function ThptStudentHome({
           <div className="min-w-0 flex-1">
             <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
               <b className="text-blue-200">Năng lượng học tập</b>
-              <span className="whitespace-nowrap font-mono text-[11px] text-slate-400 sm:text-xs">
+              <span className="whitespace-nowrap font-mono text-[12px] text-slate-400 sm:text-xs">
                 {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
               </span>
             </div>
@@ -347,7 +347,7 @@ export default function ThptStudentHome({
             <strong className="block font-display text-lg leading-none text-white sm:text-xl">
               {avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"}
             </strong>
-            <span className="text-[9px] font-bold uppercase tracking-wide text-blue-300 sm:text-[10px]">Điểm TB</span>
+            <span className="text-[12px] font-bold uppercase tracking-wide text-blue-300 sm:text-[12px]">Điểm TB</span>
           </div>
         </div>
       </section>
@@ -387,7 +387,7 @@ export default function ThptStudentHome({
               className="flex items-center justify-between gap-3 rounded-xl border border-blue-400/20 bg-blue-500/5 p-3 hover:bg-blue-500/10"
             >
               <div className="min-w-0">
-                <small className="text-[10px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
+                <small className="text-[12px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
                 <p className="mt-0.5 truncate text-sm font-bold text-white">{nextLesson.title}</p>
                 {nextChapter && <p className="truncate text-xs text-slate-400">{nextChapter.title}</p>}
               </div>

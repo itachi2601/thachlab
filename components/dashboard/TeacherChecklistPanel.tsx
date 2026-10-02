@@ -96,7 +96,7 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
           <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[560px] text-left text-sm"><thead><tr className="border-b border-white/10 text-xs uppercase text-slate-500"><th className="p-3">Học sinh</th><th className="p-3">Người chấm</th><th className="p-3">Điểm</th><th className="p-3">Kết quả</th></tr></thead><tbody>
             {attempts.map((item) => <tr key={item.id} className="border-b border-white/5">
               <td className="p-3"><strong className="text-white">{studentName(item.student_id)}</strong></td>
-              <td className="p-3 text-slate-400">{item.grader_id ? studentName(item.grader_id) : "—"} <span className={`ml-1.5 rounded-full px-2 py-0.5 text-[10px] font-bold ${item.grader_role === "teacher" ? "bg-blue-500/10 text-blue-300" : "bg-violet-500/10 text-violet-300"}`}>{item.grader_role === "teacher" ? "GV" : "Bạn học"}</span></td>
+              <td className="p-3 text-slate-400">{item.grader_id ? studentName(item.grader_id) : "—"} <span className={`ml-1.5 rounded-full px-2 py-0.5 text-[12px] font-bold ${item.grader_role === "teacher" ? "bg-blue-500/10 text-blue-300" : "bg-violet-500/10 text-violet-300"}`}>{item.grader_role === "teacher" ? "GV" : "Bạn học"}</span></td>
               <td className="p-3 font-mono text-slate-300">{item.score.toFixed(1)}/{item.total}</td>
               <td className={`p-3 font-bold ${item.passed ? "text-emerald-300" : "text-amber-300"}`}>{item.passed ? "Đạt" : "Chưa đạt"}{!item.critical_ok || !item.zero_tolerance_ok ? <span className="ml-1.5 inline-flex items-center gap-1 text-red-300"><AlertTriangle size={12} />vi phạm mốc chặn</span> : null}</td>
             </tr>)}

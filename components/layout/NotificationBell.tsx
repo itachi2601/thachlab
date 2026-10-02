@@ -93,7 +93,7 @@ export default function NotificationBell() {
       >
         <Bell size={19} />
         {count > 0 && (
-          <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+          <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[12px] font-bold text-white">
             {count > 99 ? "99+" : count}
           </span>
         )}
@@ -128,7 +128,7 @@ export default function NotificationBell() {
                         <span className="min-w-0">
                           <span className={`block text-sm ${item.read_at ? "text-slate-300" : "font-semibold text-white"}`}>{item.title}</span>
                           {item.body && <span className="mt-0.5 line-clamp-2 block text-xs text-slate-400">{item.body}</span>}
-                          <span className="mt-1 block text-[11px] text-slate-500">{timeAgo(item.created_at)}</span>
+                          <span className="mt-1 block text-[12px] text-slate-500">{timeAgo(item.created_at)}</span>
                         </span>
                       </span>
                     </Link>

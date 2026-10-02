@@ -60,7 +60,7 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
                   </span>
                   <span className="text-sm leading-snug text-muted">{copy.desc}</span>
                   {s && (
-                    <span className="mt-auto pt-1 font-mono text-[11px] text-muted sm:text-xs">
+                    <span className="mt-auto pt-1 font-mono text-[12px] text-muted sm:text-xs">
                       {s.chapters} chương · {s.lessons} bài · {s.items} mục
                     </span>
                   )}

@@ -155,14 +155,14 @@ function AttendanceMatrixSummary({students,sessions,allRecords}:{students:Studen
         <thead className="sticky top-0 z-20 bg-[#10192a]">
           <tr>
             <th className="sticky left-0 z-30 min-w-48 border-b border-r border-white/10 bg-[#10192a] p-3 text-left text-xs uppercase text-slate-400">Sinh viên</th>
-            {orderedSessions.map(session=><th key={session.id} className="min-w-14 border-b border-white/10 p-2 text-center text-[11px] font-bold text-slate-400" title={session.title}>{new Date(session.starts_at).toLocaleDateString("vi-VN",{day:"2-digit",month:"2-digit"})}</th>)}
+            {orderedSessions.map(session=><th key={session.id} className="min-w-14 border-b border-white/10 p-2 text-center text-[12px] font-bold text-slate-400" title={session.title}>{new Date(session.starts_at).toLocaleDateString("vi-VN",{day:"2-digit",month:"2-digit"})}</th>)}
             <th className="min-w-16 border-b border-white/10 p-2 text-center text-xs uppercase text-slate-400">Tỷ lệ</th>
           </tr>
         </thead>
         <tbody>
           {rows.map(row=><tr key={row.id} className="group">
             <td className="sticky left-0 z-10 border-b border-r border-white/5 bg-panel p-3 group-hover:bg-[#10192a]"><strong className="block text-sm text-white">{row.name}</strong><small className="text-slate-500">{row.className}</small></td>
-            {row.cells.map((status,index)=><td key={index} className="border-b border-white/5 p-1.5 text-center">{status?<span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[11px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span>:<span className="text-slate-700">–</span>}</td>)}
+            {row.cells.map((status,index)=><td key={index} className="border-b border-white/5 p-1.5 text-center">{status?<span className={`inline-flex h-6 w-9 items-center justify-center rounded-md text-[12px] font-bold ${statusMeta[status].active}`}>{statusMeta[status].code}</span>:<span className="text-slate-700">–</span>}</td>)}
             <td className="border-b border-white/5 p-2 text-center"><span className={`rounded-full px-2.5 py-1 text-xs font-bold ${row.rate>=90?"bg-emerald-500/10 text-emerald-300":row.rate>=75?"bg-amber-500/10 text-amber-300":"bg-red-500/10 text-red-300"}`}>{orderedSessions.length?`${row.rate}%`:"—"}</span></td>
           </tr>)}
           {!rows.length&&<tr><td colSpan={orderedSessions.length+2} className="p-8 text-center text-slate-500">Chưa có sinh viên.</td></tr>}
@@ -174,7 +174,7 @@ function AttendanceMatrixSummary({students,sessions,allRecords}:{students:Studen
 function SummaryMetric({icon,value,label,danger=false}:{icon:React.ReactNode;value:string;label:string;danger?:boolean}){return <div className={`rounded-xl border p-4 ${danger?"border-red-400/15 bg-red-500/5 text-red-300":"border-cyan-400/10 bg-cyan-500/5 text-cyan-300"}`}><div className="flex items-center gap-2 text-xs font-bold uppercase">{icon}{label}</div><strong className="mt-2 block text-2xl text-white">{value}</strong></div>}
 
 function LecturerSelect({lecturers,value,onChange,placeholder}:{lecturers:AdminProfile[];value:string;onChange:(id:string)=>void;placeholder:string}){
-  return <select value={value} onChange={e=>onChange(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[11px] text-white">
+  return <select value={value} onChange={e=>onChange(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white">
     <option value="" disabled>{placeholder}</option>
     {lecturers.map(l=><option key={l.id} value={l.id}>{l.full_name}</option>)}
   </select>;
@@ -212,11 +212,11 @@ function SessionMachineSetup({session,savedMachines,defaultWorkshop,onSaved}:{se
         return <div key={group.type}>
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{group.label} · {group.machines.length}</p>
-            <button type="button" onClick={toggleGroup} className="text-[11px] font-bold text-cyan-300 hover:text-cyan-200">{allChecked?"Bỏ chọn nhóm":"Chọn cả nhóm"}</button>
+            <button type="button" onClick={toggleGroup} className="text-[12px] font-bold text-cyan-300 hover:text-cyan-200">{allChecked?"Bỏ chọn nhóm":"Chọn cả nhóm"}</button>
           </div>
           <div className="mt-2 grid gap-2 sm:grid-cols-3 lg:grid-cols-4">
             {group.machines.map(m=>{const broken=m.status==="broken";return <label key={m.code} title={m.label} className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-bold ${broken?"cursor-not-allowed border-white/5 text-slate-600 opacity-50":checked.has(m.code)?"cursor-pointer border-emerald-400/40 bg-emerald-500/10 text-emerald-200":"cursor-pointer border-white/10 text-slate-300"}`}>
-              <input type="checkbox" disabled={broken} checked={checked.has(m.code)} onChange={()=>toggle(m.code)}/>{m.code}{broken&&<span className="text-[10px] font-normal text-red-300">(hỏng)</span>}
+              <input type="checkbox" disabled={broken} checked={checked.has(m.code)} onChange={()=>toggle(m.code)}/>{m.code}{broken&&<span className="text-[12px] font-normal text-red-300">(hỏng)</span>}
             </label>})}
           </div>
         </div>;
@@ -238,7 +238,7 @@ function MachineGroupCard({courseId,sessionId,code,label,icon:Icon=Wrench,member
     <div className="flex items-center justify-between gap-2">
       <span className="flex items-center gap-1.5 text-sm font-bold text-white"><Icon size={14} className="text-orange-300"/>{label??`Máy ${code}`}</span>
     </div>
-    {members.length>0&&<p className="mt-1 truncate text-[11px] text-slate-500" title={members.map(m=>m.name).join(", ")}>{members.map(m=>m.name).join(", ")}</p>}
+    {members.length>0&&<p className="mt-1 truncate text-[12px] text-slate-500" title={members.map(m=>m.name).join(", ")}>{members.map(m=>m.name).join(", ")}</p>}
     <div className={`mt-2 grid gap-1.5 ${singlePhoto?"grid-cols-1":"grid-cols-2"}`}>
       {singlePhoto?<PhotoCheckpointCell label="Ảnh" code={code} checkpoint="end" photos={photos}/>:<>
         <PhotoCheckpointCell label="Đầu ca" code={code} checkpoint="start" photos={photos}/>
@@ -269,7 +269,7 @@ function BreakdownModal({courseId,sessionId,code,reports,currentIssue,onReported
       {currentIssue
         ? <div className="mt-3"><CurrentBreakdownCard report={currentIssue} onReported={onReported} onView={view} lecturers={lecturers} currentUserId={currentUserId}/></div>
         : <ReportBreakdownForm courseId={courseId} sessionId={sessionId} code={code} lecturers={lecturers} currentUserId={currentUserId} onReported={()=>{onReported();onClose()}}/>}
-      {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-3 flex items-center gap-1 text-[11px] font-bold text-slate-400 hover:text-slate-200"><History size={12}/>Lịch sử hỏng ({history.length})</button>}
+      {history.length>0&&<button type="button" onClick={()=>setShowHistory(v=>!v)} className="mt-3 flex items-center gap-1 text-[12px] font-bold text-slate-400 hover:text-slate-200"><History size={12}/>Lịch sử hỏng ({history.length})</button>}
       {showHistory&&<div className="mt-1.5 space-y-1">{history.map(r=><BreakdownHistoryRow key={r.id} report={r} onView={view}/>)}</div>}
     </div>
   </div>;
@@ -285,16 +285,16 @@ function ReportBreakdownForm({courseId,sessionId,code,lecturers,currentUserId,on
   const missing=[!file&&"ảnh",!description.trim()&&"mô tả",!reportedBy&&"giảng viên báo hỏng"].filter((v):v is string=>Boolean(v));
   async function submit(){if(missing.length)return;setBusy(true);setError("");try{await reportEquipmentBreakdown({courseId,sessionId,machineCode:code,description,brokenAt:new Date(brokenAt).toISOString(),file:file!,reportedBy});onReported()}catch(cause){setError(cause instanceof Error?cause.message:"Không báo hỏng được.")}finally{setBusy(false)}}
   return <div className="mt-3 rounded-lg border border-white/10 bg-black/15 p-2">
-    <label className="block text-[10px] text-slate-500">Ảnh lúc phát hiện hỏng</label>
-    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[10px] text-slate-400"/>
-    <label className="mt-1.5 block text-[10px] text-slate-500">Giờ hư (ước lượng)</label>
-    <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[11px] text-white"/>
-    <label className="mt-1.5 block text-[10px] text-slate-500">Giảng viên báo hỏng</label>
+    <label className="block text-[12px] text-slate-500">Ảnh lúc phát hiện hỏng</label>
+    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-slate-400"/>
+    <label className="mt-1.5 block text-[12px] text-slate-500">Giờ hư (ước lượng)</label>
+    <input type="datetime-local" value={brokenAt} onChange={e=>setBrokenAt(e.target.value)} className="mt-0.5 w-full rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white"/>
+    <label className="mt-1.5 block text-[12px] text-slate-500">Giảng viên báo hỏng</label>
     <LecturerSelect lecturers={lecturers} value={reportedBy} onChange={setReportedBy} placeholder="Chọn giảng viên…"/>
-    <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
-    {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
-    <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 w-full rounded-md bg-red-600 px-2.5 py-1.5 text-[11px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
-    {!busy&&missing.length>0&&<p className="mt-1 text-[10px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
+    <textarea value={description} onChange={e=>setDescription(e.target.value)} rows={2} placeholder="Mô tả tình trạng hỏng…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white placeholder:text-slate-600"/>
+    {error&&<p className="mt-1 text-[12px] text-red-300">{error}</p>}
+    <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 w-full rounded-md bg-red-600 px-2.5 py-1.5 text-[12px] font-bold text-white disabled:opacity-40">Gửi báo hỏng</button>
+    {!busy&&missing.length>0&&<p className="mt-1 text-[12px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
   </div>;
 }
 
@@ -306,22 +306,22 @@ function CurrentBreakdownCard({report,onReported,onView,lecturers,currentUserId}
   async function start(){if(!assignedTo)return;setBusy(true);try{await startEquipmentRepair(report.id,assignedTo);onReported()}catch{/* silent */}finally{setBusy(false)}}
   return <div className="mb-1.5 rounded-lg border border-red-400/20 bg-red-500/10 p-2">
     <div className="flex items-center justify-between gap-2">
-      <div className="flex items-center gap-1.5 text-[11px] font-bold text-red-200"><AlertOctagon size={12}/>{report.status==="in_progress"?"Đang sửa":"Báo hỏng"}</div>
-      <small className="text-[10px] text-red-200/70">{fmtDateTime(report.broken_at)}</small>
+      <div className="flex items-center gap-1.5 text-[12px] font-bold text-red-200"><AlertOctagon size={12}/>{report.status==="in_progress"?"Đang sửa":"Báo hỏng"}</div>
+      <small className="text-[12px] text-red-200/70">{fmtDateTime(report.broken_at)}</small>
     </div>
-    <p className="mt-0.5 text-[11px] text-red-100/80">{report.description}</p>
-    <p className="mt-0.5 text-[10px] text-red-200/70">GV báo hỏng: {report.profiles?.full_name??"—"}{report.status==="in_progress"&&<> · GV phụ trách sửa: {report.assigned_profile?.full_name??"—"}</>}</p>
+    <p className="mt-0.5 text-[12px] text-red-100/80">{report.description}</p>
+    <p className="mt-0.5 text-[12px] text-red-200/70">GV báo hỏng: {report.profiles?.full_name??"—"}{report.status==="in_progress"&&<> · GV phụ trách sửa: {report.assigned_profile?.full_name??"—"}</>}</p>
     <div className="mt-1.5 flex items-center gap-2">
-      <button type="button" onClick={()=>onView(report.broken_photo_path)} className="text-[10px] font-bold text-red-200 underline">Xem ảnh hỏng</button>
-      {report.status==="open"&&!assigning&&<button type="button" onClick={()=>setAssigning(true)} className="text-[10px] font-bold text-amber-300">Bắt đầu sửa</button>}
-      {!resolving&&<button type="button" onClick={()=>setResolving(true)} className="text-[10px] font-bold text-emerald-300">Đã sửa xong</button>}
+      <button type="button" onClick={()=>onView(report.broken_photo_path)} className="text-[12px] font-bold text-red-200 underline">Xem ảnh hỏng</button>
+      {report.status==="open"&&!assigning&&<button type="button" onClick={()=>setAssigning(true)} className="text-[12px] font-bold text-amber-300">Bắt đầu sửa</button>}
+      {!resolving&&<button type="button" onClick={()=>setResolving(true)} className="text-[12px] font-bold text-emerald-300">Đã sửa xong</button>}
     </div>
     {assigning&&<div className="mt-1.5 rounded-md border border-amber-400/20 bg-amber-500/5 p-2">
-      <label className="block text-[10px] text-slate-500">Giảng viên phụ trách sửa</label>
+      <label className="block text-[12px] text-slate-500">Giảng viên phụ trách sửa</label>
       <LecturerSelect lecturers={lecturers} value={assignedTo} onChange={setAssignedTo} placeholder="Chọn giảng viên…"/>
       <div className="mt-1.5 flex gap-1.5">
-        <button type="button" disabled={busy||!assignedTo} onClick={()=>void start()} className="rounded-md bg-amber-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Xác nhận</button>
-        <button type="button" onClick={()=>setAssigning(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[10px] font-bold text-slate-300">Hủy</button>
+        <button type="button" disabled={busy||!assignedTo} onClick={()=>void start()} className="rounded-md bg-amber-600 px-2.5 py-1 text-[12px] font-bold text-white disabled:opacity-40">Xác nhận</button>
+        <button type="button" onClick={()=>setAssigning(false)} className="rounded-md border border-white/10 px-2.5 py-1 text-[12px] font-bold text-slate-300">Hủy</button>
       </div>
     </div>}
     {resolving&&<ResolveBreakdownForm report={report} onDone={()=>{setResolving(false);onReported()}} lecturers={lecturers} currentUserId={currentUserId}/>}
@@ -337,19 +337,19 @@ function ResolveBreakdownForm({report,onDone,lecturers,currentUserId}:{report:Eq
   const missing=[!file&&"ảnh",!resolvedBy&&"giảng viên sửa chữa"].filter((v):v is string=>Boolean(v));
   async function submit(){if(missing.length)return;setBusy(true);setError("");try{await resolveEquipmentBreakdown({id:report.id,courseId:report.course_id,machineCode:report.machine_code,note,file:file!,resolvedBy});onDone()}catch(cause){setError(cause instanceof Error?cause.message:"Không lưu được.")}finally{setBusy(false)}}
   return <div className="mt-1.5 rounded-md border border-emerald-400/20 bg-emerald-500/5 p-2">
-    <label className="block text-[10px] text-slate-500">Ảnh sau khi khắc phục</label>
-    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[10px] text-slate-400"/>
-    <label className="mt-1.5 block text-[10px] text-slate-500">Giảng viên sửa chữa</label>
+    <label className="block text-[12px] text-slate-500">Ảnh sau khi khắc phục</label>
+    <input type="file" accept="image/*" onChange={e=>setFile(e.target.files?.[0]??null)} className="mt-0.5 block w-full text-[12px] text-slate-400"/>
+    <label className="mt-1.5 block text-[12px] text-slate-500">Giảng viên sửa chữa</label>
     <LecturerSelect lecturers={lecturers} value={resolvedBy} onChange={setResolvedBy} placeholder="Chọn giảng viên…"/>
-    <textarea value={note} onChange={e=>setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[11px] text-white placeholder:text-slate-600"/>
-    {error&&<p className="mt-1 text-[10px] text-red-300">{error}</p>}
-    <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-2.5 py-1 text-[10px] font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
-    {!busy&&missing.length>0&&<p className="mt-1 text-[10px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
+    <textarea value={note} onChange={e=>setNote(e.target.value)} rows={2} placeholder="Tình trạng khắc phục…" className="mt-1.5 w-full resize-none rounded-md border border-white/10 bg-panel-deep px-2 py-1 text-[12px] text-white placeholder:text-slate-600"/>
+    {error&&<p className="mt-1 text-[12px] text-red-300">{error}</p>}
+    <button type="button" disabled={busy||missing.length>0} onClick={submit} className="mt-1.5 rounded-md bg-emerald-600 px-2.5 py-1 text-[12px] font-bold text-white disabled:opacity-40">Nộp ảnh, hoàn tất</button>
+    {!busy&&missing.length>0&&<p className="mt-1 text-[12px] text-amber-300">Cần nhập: {missing.join(", ")}.</p>}
   </div>;
 }
 
 function BreakdownHistoryRow({report,onView}:{report:EquipmentBreakdownReport;onView:(path:string)=>void}){
-  return <div className="rounded-md border border-white/5 bg-black/10 p-1.5 text-[10px] text-slate-400">
+  return <div className="rounded-md border border-white/5 bg-black/10 p-1.5 text-[12px] text-slate-400">
     <div className="flex items-center justify-between gap-2"><span>{fmtDateTime(report.broken_at)}</span><span className="font-bold text-emerald-400">Đã khắc phục</span></div>
     <p className="mt-0.5 truncate text-slate-500" title={report.description}>{report.description}</p>
     <div className="mt-1 flex gap-2">
@@ -362,7 +362,7 @@ function BreakdownHistoryRow({report,onView}:{report:EquipmentBreakdownReport;on
 function PhotoCheckpointCell({label,code,checkpoint,photos}:{label:string;code:string;checkpoint:MachineCheckpoint;photos:AttendanceMachinePhoto[]}){
   const photo=photos.find(item=>item.machine_code===code&&item.checkpoint===checkpoint);
   async function view(){if(!photo)return;const win=window.open("","_blank","noopener,noreferrer");try{const signed=await createAttendanceMachinePhotoUrl(photo.storage_path);if(win)win.location.href=signed}catch{win?.close()}}
-  return <button type="button" disabled={!photo} onClick={view} className={`rounded-lg border px-2 py-1.5 text-left text-[10px] font-bold disabled:cursor-not-allowed ${photo?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-white/10 bg-white/[.01] text-slate-600"}`}>
+  return <button type="button" disabled={!photo} onClick={view} className={`rounded-lg border px-2 py-1.5 text-left text-[12px] font-bold disabled:cursor-not-allowed ${photo?"border-emerald-400/30 bg-emerald-500/10 text-emerald-200":"border-white/10 bg-white/[.01] text-slate-600"}`}>
     <span className="flex items-center gap-1">{photo?<Check size={10}/>:null}{label}</span>
     <small className="block font-normal opacity-70">{photo?(photo.profiles?.full_name??"Đã nộp"):"Chưa nộp"}</small>
   </button>;

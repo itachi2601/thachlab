@@ -208,7 +208,7 @@ export default function TeacherThptAnalysis({
                   className="flex h-full flex-1 flex-col items-center justify-end gap-2"
                   title={`${n} bài · điểm ${i}–${i + 1}`}
                 >
-                  <span className="text-[11px] font-medium tabular-nums text-slate-400">{n || ""}</span>
+                  <span className="text-[12px] font-medium tabular-nums text-slate-400">{n || ""}</span>
                   <div
                     className={`w-2.5 rounded-full transition-[height] duration-300 sm:w-3 ${
                       isPass
@@ -217,7 +217,7 @@ export default function TeacherThptAnalysis({
                     }`}
                     style={{ height: `${barHeight}px` }}
                   />
-                  <span className="text-[11px] font-medium text-slate-500">{i}</span>
+                  <span className="text-[12px] font-medium text-slate-500">{i}</span>
                 </div>
               );
             })}

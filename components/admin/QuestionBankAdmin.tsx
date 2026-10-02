@@ -761,7 +761,7 @@ export default function QuestionBankAdmin() {
               {basketItems.map((q, i) => (
                 <li key={q.id} className="flex items-start gap-2 rounded-lg px-2 py-1 hover:bg-white/5">
                   <span className="w-6 shrink-0 text-right text-xs text-slate-500">{i + 1}.</span>
-                  <span className="rounded bg-white/10 px-1.5 text-[11px] text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
+                  <span className="rounded bg-white/10 px-1.5 text-[12px] text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
                   <span className="min-w-0 flex-1 truncate text-slate-200">{stripHtml(q.question.question)}</span>
                   <span className="hidden max-w-[200px] truncate text-xs text-slate-500 sm:inline">{q.topicName || "chưa gắn"}</span>
                   <button type="button" onClick={() => toggleBasket(q.id)} className="text-slate-500 hover:text-rose-300" aria-label="Bỏ khỏi giỏ">
@@ -802,7 +802,7 @@ function TreeRow({
     >
       <span className={`min-w-0 flex-1 truncate ${bold ? "font-semibold" : ""}`}>{label}</span>
       <span
-        className={`shrink-0 rounded-full px-1.5 text-[11px] ${
+        className={`shrink-0 rounded-full px-1.5 text-[12px] ${
           count === 0 ? "text-slate-600" : warn ? "bg-amber-500/20 text-amber-200" : "bg-white/10 text-slate-300"
         }`}
       >
@@ -881,7 +881,7 @@ function DuplicatesPanel({
               <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {[q1, q2].map((q) => (
                   <div key={q.id} className="min-w-0 rounded-xl border border-white/10 bg-panel p-3">
-                    <div className="mb-1 flex items-center gap-2 text-[11px] text-slate-500">
+                    <div className="mb-1 flex items-center gap-2 text-[12px] text-slate-500">
                       <span>#{q.id}</span>
                       {q.sourceExamId !== null && (
                         <Link href={`/kiem-tra/lam/?id=${q.sourceExamId}`} className="text-primary hover:underline">
@@ -956,9 +956,9 @@ function QuestionRow({
           <input type="checkbox" checked={picked} onChange={onPick} className="h-4 w-4" />
           <span className="text-sm font-semibold text-white">Câu {index}</span>
         </label>
-        <span className="rounded bg-white/10 px-1.5 py-0.5 text-[11px] text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
-        {q.archived && <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[11px] text-amber-200">đã lưu trữ</span>}
-        <span className="ml-auto text-[11px] text-slate-500">
+        <span className="rounded bg-white/10 px-1.5 py-0.5 text-[12px] text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
+        {q.archived && <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[12px] text-amber-200">đã lưu trữ</span>}
+        <span className="ml-auto text-[12px] text-slate-500">
           {q.sourceExamId !== null ? (
             <>
               từ đề <Link href={`/kiem-tra/lam/?id=${q.sourceExamId}`} className="text-primary hover:underline">#{q.sourceExamId}</Link>
@@ -972,7 +972,7 @@ function QuestionRow({
 
       <ContentHtml html={body.question} className="prose prose-invert mt-2 max-w-none text-sm text-slate-200" />
       {q.figureNotNeeded && (
-        <p className="mt-1 text-[11px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
+        <p className="mt-1 text-[12px] text-slate-500">Đã đánh dấu: câu này không cần hình.</p>
       )}
       {aiState?.busy && <p className="mt-2 text-xs text-primary">AI đang dựng lại hình từ câu dẫn và lời giải…</p>}
       {aiState?.reason && !aiState.busy && (
@@ -988,7 +988,7 @@ function QuestionRow({
       )}
       {aiState?.svg && !aiState.busy && (
         <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
-          <p className="mb-1 text-[11px] font-semibold text-primary">
+          <p className="mb-1 text-[12px] font-semibold text-primary">
             {aiState.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
           </p>
           <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: aiState.svg }} />

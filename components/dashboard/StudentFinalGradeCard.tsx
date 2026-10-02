@@ -66,7 +66,7 @@ export default function StudentFinalGradeCard({ courseId, studentId, records }: 
       <GradePart label="Thi Phay GV" value={grade.millTeacher} contribution={grade.millTeacher === null ? null : grade.millTeacher * .45}/>
       <GradePart label="Chuyên cần" value={grade.attendanceScore} contribution={grade.attendanceScore === null ? null : grade.attendanceScore * .1} icon={<CalendarCheck size={13}/>}/>
       <GradePart label="Cộng / trừ" value={grade.bonus} signed/>
-      <div className="rounded-xl border border-white/10 bg-black/15 p-3"><span className="flex items-center gap-1 text-[10px] font-bold uppercase text-slate-500"><ClipboardCheck size={13}/>Quá trình</span><strong className="mt-1 block text-lg text-white">{grade.processCount} lượt</strong><small className="text-slate-500">Đạt bài / checklist tự chấm</small></div>
+      <div className="rounded-xl border border-white/10 bg-black/15 p-3"><span className="flex items-center gap-1 text-[12px] font-bold uppercase text-slate-500"><ClipboardCheck size={13}/>Quá trình</span><strong className="mt-1 block text-lg text-white">{grade.processCount} lượt</strong><small className="text-slate-500">Đạt bài / checklist tự chấm</small></div>
     </div>
     <div className="mt-3 flex items-start gap-2 rounded-xl bg-black/15 p-3 text-xs text-slate-400"><Info size={14} className="mt-0.5 shrink-0 text-cyan-300"/><p>{grade.total === null ? "Điểm tổng kết sẽ hiển thị khi đã có đủ điểm giáo viên chấm cho cả phần thi Tiện, phần thi Phay và dữ liệu chuyên cần." : `Điểm tự chấm để tham khảo: Tiện ${grade.turnSelf?.toFixed(2) ?? "—"} · Phay ${grade.millSelf?.toFixed(2) ?? "—"}. Điểm chính thức do giáo viên chấm.`}</p></div>
   </section>;
@@ -74,5 +74,5 @@ export default function StudentFinalGradeCard({ courseId, studentId, records }: 
 
 function GradePart({ label, value, contribution, icon, signed }: { label: string; value: number | null; contribution?: number | null; icon?: React.ReactNode; signed?: boolean }) {
   const shown = value === null ? "—" : signed && value > 0 ? `+${value.toFixed(2)}` : value.toFixed(2);
-  return <div className="rounded-xl border border-white/10 bg-black/15 p-3"><span className="flex items-center gap-1 text-[10px] font-bold uppercase text-slate-500">{icon}{label}</span><strong className={`mt-1 block text-lg ${signed ? "text-amber-300" : "text-white"}`}>{shown}</strong>{contribution !== undefined && <small className="text-slate-500">Đóng góp {contribution === null ? "—" : contribution.toFixed(2)}</small>}</div>;
+  return <div className="rounded-xl border border-white/10 bg-black/15 p-3"><span className="flex items-center gap-1 text-[12px] font-bold uppercase text-slate-500">{icon}{label}</span><strong className={`mt-1 block text-lg ${signed ? "text-amber-300" : "text-white"}`}>{shown}</strong>{contribution !== undefined && <small className="text-slate-500">Đóng góp {contribution === null ? "—" : contribution.toFixed(2)}</small>}</div>;
 }

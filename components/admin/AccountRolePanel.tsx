@@ -173,7 +173,7 @@ export default function AccountRolePanel({ onChanged }: { onChanged?: () => void
 
               {account.role === "tro_giang" && (
                 <div className="mt-2 flex items-center gap-2 border-t border-white/5 pt-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Bậc</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wide text-slate-500">Bậc</span>
                   {TIERS.map((tier) => (
                     <button
                       key={tier}
@@ -190,7 +190,7 @@ export default function AccountRolePanel({ onChanged }: { onChanged?: () => void
 
               {account.role === "instructor" && (
                 <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-white/5 pt-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wide text-slate-500">Khu vực quản trị</span>
+                  <span className="text-[12px] font-bold uppercase tracking-wide text-slate-500">Khu vực quản trị</span>
                   {([null, "thpt", "cttc"] as const).map((area) => (
                     <button
                       key={area ?? "none"}

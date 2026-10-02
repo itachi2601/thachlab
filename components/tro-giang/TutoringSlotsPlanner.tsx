@@ -301,7 +301,7 @@ export default function TutoringSlotsPlanner({ assistant }: { assistant: TaAssis
                       <Users size={12} /> {slot.registeredCount}/{slot.capacity}
                     </span>
                     {slot.status === "cancelled" && (
-                      <span className="rounded-full border border-white/15 px-2 py-0.5 text-[11px] font-semibold text-slate-400">
+                      <span className="rounded-full border border-white/15 px-2 py-0.5 text-[12px] font-semibold text-slate-400">
                         Đã huỷ
                       </span>
                     )}

@@ -120,11 +120,11 @@ export function CncVideosAdmin({
               className="h-16 w-28 rounded-lg object-cover"
             />
             <div className="min-w-0 flex-1">
-              <span className="text-[10px] font-bold text-red-300">VIDEO {index + 1}</span>
+              <span className="text-[12px] font-bold text-red-300">VIDEO {index + 1}</span>
               <a href={video.youtube_url} target="_blank" rel="noreferrer" className="mt-0.5 block truncate text-sm font-semibold text-white hover:text-red-300">
                 {video.title}
               </a>
-              <button type="button" onClick={() => onDelete(video)} className="mt-2 text-[10px] font-bold text-red-300 hover:text-red-200">
+              <button type="button" onClick={() => onDelete(video)} className="mt-2 text-[12px] font-bold text-red-300 hover:text-red-200">
                 Xóa video
               </button>
             </div>
@@ -269,14 +269,14 @@ function FileUploadPanel({
                 >
                   {file.title}
                 </a>
-                <p className="mt-0.5 truncate text-[10px] text-slate-500">
+                <p className="mt-0.5 truncate text-[12px] text-slate-500">
                   {file.file_name} · {formatFileSize(file.size_bytes)}
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => onDelete(file)}
-                className="rounded-lg px-2 py-1 text-[10px] font-bold text-red-300 hover:bg-red-500/10"
+                className="rounded-lg px-2 py-1 text-[12px] font-bold text-red-300 hover:bg-red-500/10"
               >
                 Xóa
               </button>

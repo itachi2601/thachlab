@@ -54,7 +54,7 @@ function Condition({ done, children }: { done: boolean; children: React.ReactNod
   return (
     <li className="flex items-start gap-2 text-sm">
       <span
-        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
+        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[12px] font-bold ${
           done ? "bg-emerald-500/20 text-emerald-300" : "bg-white/5 text-slate-500"
         }`}
       >

@@ -233,7 +233,7 @@ export default function QuestionBankPickerModal({
                         picked.has(q.id) ? "border-primary bg-primary/10" : "border-white/10 hover:border-white/25"
                       }`}
                     >
-                      <div className="mb-1 flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+                      <div className="mb-1 flex flex-wrap items-center gap-2 text-[12px] text-slate-400">
                         <span className="rounded bg-white/10 px-1.5 text-slate-300">{TYPE_SHORT[q.qtype] ?? q.qtype}</span>
                         {q.topicName && <span className="rounded-full bg-white/10 px-2 py-0.5">{q.topicName}</span>}
                         {q.difficulty && <span>{DIFFICULTY_LABELS[q.difficulty]}</span>}

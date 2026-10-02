@@ -19,8 +19,8 @@ export default function TierName({
 }) {
   const meta = tierMeta(code, paragon);
   const div = paragon ? "" : divisionLabel(division);
-  const en = size === "lg" ? "text-3xl tracking-[0.18em] sm:text-4xl" : size === "md" ? "text-base tracking-[0.14em] sm:text-lg" : "text-[10px] tracking-[0.02em] sm:text-[13px] sm:tracking-[0.06em]";
-  const vi = size === "lg" ? "text-base tracking-[0.2em]" : size === "md" ? "text-xs tracking-[0.18em]" : "text-[8px] tracking-[0.04em] sm:text-[10px] sm:tracking-[0.12em]";
+  const en = size === "lg" ? "text-3xl tracking-[0.18em] sm:text-4xl" : size === "md" ? "text-base tracking-[0.14em] sm:text-lg" : "text-[12px] tracking-[0.02em] sm:text-[13px] sm:tracking-[0.06em]";
+  const vi = size === "lg" ? "text-base tracking-[0.2em]" : size === "md" ? "text-xs tracking-[0.18em]" : "text-[12px] tracking-[0.04em] sm:text-[12px] sm:tracking-[0.12em]";
   return (
     <span className={`block leading-none ${cinzel.variable} ${playfair.variable} ${align === "center" ? "text-center" : "text-left"} ${className}`}>
       <span
