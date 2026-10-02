@@ -1125,6 +1125,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-tree { display: grid; gap: 2px; margin-top: 4px; }
   .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 9px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 13px; font-weight: 600; text-align: left; cursor: pointer; border-radius: 8px; }
   .lesson-tree-chapter:hover { background: var(--lesson-accent-soft); }
+  .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
   .lesson-tree-chapter em { display: flex; width: 20px; height: 20px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 10.5px; font-style: normal; font-weight: 700; }
   .lesson-tree-chapter small { color: var(--color-muted); font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .lesson-tree-chapter svg { grid-column: 3; color: var(--color-muted); transition: transform .2s; }
@@ -1135,6 +1136,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-tree a i, .lesson-tree .lesson-tree-current i { color: var(--color-muted); font-size: 12px; font-style: normal; }
   .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
   .lesson-tree .is-done i { color: #34d399; }
+  .lesson-tree .is-exam i { font-size: 9px; font-weight: 700; letter-spacing: .02em; }
   .lesson-tree a small, .lesson-tree .lesson-tree-current small { color: var(--color-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
   html[data-theme="light"] .lesson-tree .is-done i { color: #047857; }
   .lesson-nav .lesson-back { display: inline-flex; }
@@ -1213,10 +1215,12 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
   .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 11px; font-style: normal; font-weight: 700; }
   .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
   .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
   .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
   .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
   .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-tree .is-exam i { font-size: 9px; font-weight: 700; letter-spacing: .02em; }
   .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
   .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--lesson-accent-line); border-radius: 10px; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-size: 13px; font-weight: 700; cursor: pointer; }
   .lesson-bottom-done.is-done { border-color: rgba(16,185,129,.45); background: rgba(16,185,129,.12); color: #34d399; }
@@ -2433,3 +2437,36 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 .exam-content .tl-box .tl-details { background: transparent; }
 html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
 html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
+
+/* ============================================================
+   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+     < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
+     >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
+   ============================================================ */
+.class-pick-desktop { display: none; }
+.class-pick-mobile { display: grid; gap: 28px; }
+
+@media (max-width: 1023px) {
+  /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
+  .lesson-layout--pick { display: block; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-nav { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
+  .lesson-layout--pick .class-continue--main { display: none; }
+  /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
+  .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
+  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
+  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
+  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+}
+
+/* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
+@media (min-width: 1320px) {
+  .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+}
