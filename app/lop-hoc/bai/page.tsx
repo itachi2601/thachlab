@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
@@ -17,6 +17,7 @@ import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
 import {
   consumeTheoryReviewContext,
+  splitTheorySections,
   theorySectionItemId,
   wrapTheorySections,
   type TheoryReviewContext,
@@ -86,6 +87,15 @@ const FONT_STORE = "thachlab-read-font";
 const DIM_STORE = "thachlab-read-dim";
 const LESSON_DONE_STORE = "thachlab-lesson-done-";
 const NOTE_STORE = "thachlab-note-";
+/** Mục <h3> lý thuyết đọc dở lần trước, theo lesson_items.id — để "Tiếp tục" trỏ đúng chỗ (L5). */
+const THEORY_POS_STORE = "thachlab-theory-pos-";
+/** Sự kiện nội bộ: yêu cầu TheoryBlock mở một mục <h3> đang thu gọn trước khi cuộn/tô tới nó
+ *  (mục lục, "Ôn ngay", thẻ câu sai) — detail là id `theory-sec-<itemId>-<n>`. */
+const OPEN_SECTION_EVENT = "thachlab:open-theory-section";
+
+function requestOpenTheorySection(hashId: string) {
+  window.dispatchEvent(new CustomEvent<string>(OPEN_SECTION_EVENT, { detail: hashId }));
+}
 
 /**
  * Đọc tab muốn mở từ hash của URL. Nhận cả 2 kiểu:
@@ -131,6 +141,7 @@ function writeTabHash(hash: string) {
 
 /** Cuộn tới + tô vàng một đoạn lý thuyết, tô lại vài nhịp vì bản tĩnh có thể bị bản mới thay thế. */
 function flashTheorySection(hashId: string, times = 6) {
+  requestOpenTheorySection(hashId); // mục đang thu gọn thì mở ra trước; các nhịp cuộn lại bên dưới sẽ tới đúng chỗ sau khi React dựng xong
   const el = document.getElementById(hashId);
   if (!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -150,6 +161,7 @@ function flashTheorySection(hashId: string, times = 6) {
 
 /** Tô vàng (không giành quyền cuộn) — dùng cho các đoạn phụ khi sai nhiều câu một lúc. */
 function highlightTheorySectionOnly(hashId: string) {
+  requestOpenTheorySection(hashId);
   document.getElementById(hashId)?.classList.add("theory-section--highlight");
   window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
 }
@@ -272,7 +284,14 @@ function TheorySummary({ html, title }: { html: string; title?: string }) {
   );
 }
 
-/** Lý thuyết: hiện thẳng nội dung; mục thứ hai trở đi thu gọn để trang không quá dài. */
+/**
+ * Lý thuyết: mục bài thứ hai trở đi thu gọn để trang không quá dài. BÊN TRONG một mục, các đoạn
+ * <h3> (I., II., III…) cũng chỉ mở đoạn đầu; đoạn sau mở bằng nút "Tiếp" cuối đoạn trước hoặc chạm
+ * tiêu đề (N5 segmenting: học sinh bấm "tiếp" chứ không cuộn vô tận — xem
+ * docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md mục 2, "toàn bộ <h3> render một mạch"). Đoạn đang đọc
+ * được ghi vào localStorage để lần mở sau có nút "Tiếp tục ở mục N" (L5), không tự cuộn (B4).
+ * Mục lục / "Ôn ngay" / thẻ câu sai trỏ vào đoạn đang thu gọn thì đoạn tự mở (OPEN_SECTION_EVENT).
+ */
 function TheoryBlock({
   item,
   defaultOpen,
@@ -291,12 +310,89 @@ function TheoryBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
-  // Gắn id theo từng khối <h3> để quiz "Kiểm tra nhanh" cuộn + tô màu đúng đoạn khi trả lời
-  // sai (xem "Ôn ngay" trong ExamRunner) — chỉ tính lại khi nội dung mục thật sự đổi.
-  const sectionedHtml = useMemo(() => wrapTheorySections(item.body_html, item.id).html, [item.body_html, item.id]);
+  // Tách theo từng mốc <h3> — cùng hàm với mục lục (tocEntries) và "Ôn ngay" nên id
+  // `theory-sec-<itemId>-<n>` khớp nhau; chỉ tính lại khi nội dung mục thật sự đổi.
+  const { introHtml, sections } = useMemo(
+    () => splitTheorySections(item.body_html, item.id),
+    [item.body_html, item.id],
+  );
+  const total = sections.length;
+  const [openSections, setOpenSections] = useState<Set<number>>(() => new Set([0]));
+  const [allOpen, setAllOpen] = useState(false);
+  const [resumeIndex, setResumeIndex] = useState<number | null>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const isOpen = (i: number) => allOpen || openSections.has(i);
+
+  const openSection = useCallback((index: number) => {
+    setOpen(true);
+    setOpenSections((prev) => (prev.has(index) ? prev : new Set(prev).add(index)));
+  }, []);
+
+  function savePos(index: number) {
+    try {
+      window.localStorage.setItem(`${THEORY_POS_STORE}${item.id}`, String(index));
+    } catch {}
+  }
+
+  /** Mở đoạn `index` do học sinh bấm (nút Tiếp / tiêu đề / Tiếp tục) rồi cuộn tới nếu cần. */
+  function goTo(index: number, scroll: boolean) {
+    openSection(index);
+    savePos(index);
+    setResumeIndex(null);
+    if (scroll) window.setTimeout(() => scrollToPart(sections[index]?.id ?? null), 60);
+  }
+
+  // Mục lục / "Ôn ngay" / thẻ câu sai muốn cuộn tới một đoạn đang thu gọn → mở đoạn đó trước.
+  useEffect(() => {
+    const prefix = `theory-sec-${item.id}-`;
+    const onOpen = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail;
+      if (typeof id !== "string" || !id.startsWith(prefix)) return;
+      const index = Number(id.slice(prefix.length));
+      if (Number.isInteger(index) && index >= 0) openSection(index);
+    };
+    window.addEventListener(OPEN_SECTION_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_SECTION_EVENT, onOpen);
+  }, [item.id, openSection]);
+
+  /* eslint-disable react-hooks/set-state-in-effect -- đọc localStorage đúng 1 lần lúc có nội dung:
+     giá trị khởi tạo useState không đọc được vì trang được prerender tĩnh (window chưa có). */
+  useEffect(() => {
+    if (total < 2 || done) return;
+    try {
+      const raw = window.localStorage.getItem(`${THEORY_POS_STORE}${item.id}`);
+      const idx = raw == null ? NaN : Number(raw);
+      if (Number.isInteger(idx) && idx > 0 && idx < total) setResumeIndex(idx);
+    } catch {}
+  }, [item.id, total, done]);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Ghi đoạn đang đọc: đoạn ĐÃ MỞ nào vừa đi vào 40% phía trên màn hình (cùng vùng với mục lục).
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || total < 2 || !open) return;
+    const targets = Array.from(root.querySelectorAll<HTMLElement>('.theory-section[data-open="1"]'));
+    if (targets.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        const idx = Number((visible[0]?.target as HTMLElement | undefined)?.dataset.index);
+        if (Number.isInteger(idx)) savePos(idx);
+      },
+      { rootMargin: "-130px 0px -60% 0px", threshold: 0 },
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+    // savePos chỉ dùng item.id — đã nằm trong deps qua `total`/`open`; openSections/allOpen đổi → danh sách đoạn mở đổi.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.id, total, open, openSections, allOpen]);
+
+  const resume = resumeIndex !== null && !isOpen(resumeIndex) ? sections[resumeIndex] : null;
 
   return (
-    <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`}>
+    <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`} ref={rootRef}>
       {!hideTitle && <button
         type="button"
         className="lesson-block-head lesson-block-toggle"
@@ -312,7 +408,68 @@ function TheoryBlock({
       </button>}
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
-          <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
+          {total === 0 ? (
+            <ContentHtml html={item.body_html} className="block leading-relaxed" />
+          ) : (
+            <>
+              {total > 1 && (
+                <div className="theory-nav">
+                  {resume ? (
+                    <button type="button" className="theory-next theory-resume" onClick={() => goTo(resumeIndex!, true)}>
+                      <small>Tiếp tục · {resumeIndex! + 1}/{total}</small>
+                      <strong>{resume.heading}</strong>
+                      <Play size={14} fill="currentColor" aria-hidden />
+                    </button>
+                  ) : (
+                    <span>{total} mục</span>
+                  )}
+                  <button type="button" className="theory-nav-all" onClick={() => setAllOpen((a) => !a)}>
+                    {allOpen ? "Thu gọn" : "Mở tất cả"}
+                  </button>
+                </div>
+              )}
+              {introHtml.trim() !== "" && <ContentHtml html={introHtml} className="block leading-relaxed" />}
+              {sections.map((section, i) => {
+                const opened = isOpen(i);
+                const next = sections[i + 1];
+                // Đoạn thu gọn ngay sau một đoạn đang mở đã có nút "Tiếp" ở cuối đoạn đó → không
+                // hiện thêm dòng tiêu đề (N4 không lặp); vẫn giữ <div id> để mục lục/"Ôn ngay" cuộn tới.
+                const coveredByNext = !opened && i > 0 && isOpen(i - 1);
+                return (
+                  <div
+                    key={section.id}
+                    id={section.id}
+                    className={`theory-section ${opened ? "" : "theory-section--closed"}`}
+                    data-index={i}
+                    data-open={opened ? "1" : "0"}
+                  >
+                    {opened ? (
+                      <>
+                        <ContentHtml html={section.html} className="block leading-relaxed" />
+                        {next && !isOpen(i + 1) && (
+                          <button type="button" className="theory-next" onClick={() => goTo(i + 1, true)}>
+                            <small>Tiếp · {i + 2}/{total}</small>
+                            <strong>{next.heading}</strong>
+                            <ArrowRight size={16} aria-hidden />
+                          </button>
+                        )}
+                      </>
+                    ) : coveredByNext ? null : (
+                      <button
+                        type="button"
+                        className="theory-section-toggle"
+                        aria-expanded={false}
+                        onClick={() => goTo(i, false)}
+                      >
+                        <span>{section.heading}</span>
+                        <ChevronDown size={18} aria-hidden />
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
+            </>
+          )}
         </div>
       )}
       <div className="lesson-block-foot">

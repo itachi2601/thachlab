@@ -85,6 +85,12 @@ khi có công thức phải dừng nghĩ (ước lượng, không phải số đ
 (`TheoryBlock` trong `app/lop-hoc/bai/page.tsx` chỉ thu gọn ở cấp *mục bài*, không thu gọn từng `<h3>`).
 Nên "bài dài" = học sinh nhận đúng ngần ấy chữ khi mở tab Lý thuyết, không có accordion nào đỡ.
 
+> **Đã đổi 3/10/2026**: `TheoryBlock` giờ chỉ mở đoạn `<h3>` đầu; đoạn sau mở bằng nút "Tiếp · n/N" cuối đoạn
+> trước hoặc chạm tiêu đề (N5), có "Mở tất cả"; đoạn đang đọc lưu `localStorage` (`thachlab-theory-pos-<item>`)
+> để lần sau có nút "Tiếp tục · n/N" (L5, không tự cuộn — B4). Mục lục / "Ôn ngay" / thẻ câu sai trỏ vào đoạn
+> đang thu gọn thì đoạn tự mở. Hạn mức **tổng** ở mục 3 vì thế bớt căng với *bỏ cuộc*, nhưng hạn mức **từng
+> mục** và **đoạn liền** vẫn nguyên giá trị — đó là thứ học sinh nhận một lần khi mở một đoạn.
+
 ---
 
 ## 3. Hạn mức (dùng luôn, không bàn lại)
@@ -95,6 +101,7 @@ Nên "bài dài" = học sinh nhận đúng ngần ấy chữ khi mở tab Lý t
 | Một mục (`<h3>`/`<h4>`) | > 350 | > 480 | ~2,5 phút / ~3,4 phút |
 | Mục "Bài toán mẫu" | > 500 | > 700 | đây là đoạn **buộc đọc liền** nên nới |
 | Đoạn liền không có nhịp nào | > 300 | > 400 | ~2 phút / ~2,9 phút |
+| **Tới việc đầu** — từ mốc `<h3>` đầu (bỏ khối mục tiêu) tới quiz/câu dự đoán đầu tiên | > 150 | > 250 | ~1 phút / ~1,8 phút — đo trực tiếp cơ chế "phần thưởng bị trì hoãn" (hàng 1 bảng mục 1); thêm 3/10/2026 |
 | Số quiz | < 4 | > 8 | 4–8 (nét 14 của skill) |
 | Số mục `<h3>` | ngoài 6–8 | — | |
 | Mỗi mục | không có nhịp nào | — | nhịp = `<details>` · `.tl-quiz` · `<figure>` |
@@ -109,6 +116,11 @@ python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py <theo
 Script in bảng từng mục (hiện ngay / tổng / số nhịp / đoạn liền dài nhất) rồi liệt kê lỗi; **exit 1 nếu
 có lỗi cứng** nên cắm được vào quy trình soạn bài. Chạy cùng `lint_theory.py` (cấu trúc) và
 `check_quizzes.py` (logic tự chấm) ở bước 5 của skill.
+
+Số đo "tới việc đầu" của 5 bài (3/10/2026): Định luật III Newton 127 · Dao động điều hoà 79 · Giao thoa sóng
+127 · Cảm ứng điện từ 130 · **Mô tả sóng 165 (⚠)** — bốn bài đọc thoải mái đều dưới 130 từ, bài phình là bài
+duy nhất vượt ngưỡng, cùng chiều với bảng mục 2. Chỉ `.tl-quiz` được tính là "việc"; `<details>` và hình là nhịp
+thụ động (chỉ một cú bấm hoặc không cần làm gì) nên không tính.
 
 Vì sao có hai mức ⚠/✗ thay vì một: các ngưỡng này rút từ số đo 5 bài trên, sao cho **bài đã làm tốt
 không bị báo động giả** (3 bài ngắn chỉ ⚠ hoặc sạch) mà **bài phình vẫn bị chặn**. Một ngưỡng cứng
@@ -185,6 +197,8 @@ mục lục và nút "Ôn ngay"), nên link `#theory-sec-61-2` mở thẳng mụ
 5. Hợp đồng đầu bài có mặt (mục tiêu + số câu Trả bài + thời gian ước tính).
 6. Có **ít nhất một** đoạn buộc đọc liền có chủ đích (bài toán mẫu) — không cắt hết.
 7. Xem ảnh 375px bằng mắt trước khi báo xong (checklist mục 8 của `docs/QUY-TAC-THIET-KE.md`).
+8. "Tới việc đầu" ≤ 150 từ: câu dự đoán (先猜后学) đứng ngay sau tình huống mở bài, không để sau cả mục lý
+   thuyết đầu tiên.
 
 ---
 
@@ -195,7 +209,8 @@ mục lục và nút "Ôn ngay"), nên link `#theory-sec-61-2` mở thẳng mụ
 | ~~Cắt lại bài Mô tả sóng (l11)~~ — **đã làm 2/10/2026** | 3.021 từ, mục con 489 từ, đoạn liền 478 từ | còn 2.457 từ (0 lỗi cứng, 1 ⚠ tổng): tách mục con + chuyển 3 khối tra cứu/thí nghiệm vào `<details>`; 3 bảng 3 cột bị bóp chữ ở 375px đã đưa về 2 cột (H2, C4) |
 | Tách bớt bài Cảm ứng điện từ (l12) | 2.316 từ (~16,5 phút) + 3 mục 371–461 từ | gộp mục hoặc chuyển phần mở rộng vào `<details>` |
 | Thêm nhịp cho 2 mục con bài Dao động điều hoà | "Dao động tuần hoàn" và "Phương trình dao động điều hoà" không có details/quiz/hình | ⚠ nhẹ, thêm 1 quiz hoặc 1 `<details>` mỗi mục |
-| Ghi độ sâu cuộn theo mục | chưa có phép đo nào trong app | cần khi muốn kiểm chứng mục 5 |
+| Ghi độ sâu cuộn theo mục | chưa có phép đo nào trong app | cần khi muốn kiểm chứng mục 5; 3/10 đã có `localStorage` `thachlab-theory-pos-<item>` ghi đoạn đang đọc trên máy HS — chưa gửi về DB |
+| ~~Thu gọn từng `<h3>` + "Tiếp tục" đúng chỗ dở~~ — **đã làm 3/10/2026** | mục 2: toàn bộ `<h3>` render một mạch | `TheoryBlock` (`app/lop-hoc/bai/page.tsx`), CSS `.theory-next/.theory-section-toggle` |
 | Viết bảng số liệu thật cho thí nghiệm đo | nét "数据分析" của skill đòi ≥1 thí nghiệm có bảng 3–5 lần đo + câu hỏi sai số; bài Mô tả sóng chưa có | bổ sung khi soạn lại lần sau |
 
 ---

@@ -878,6 +878,29 @@ html[data-theme="light"] .lesson-shell .lesson-summary-title { color: #1e293b; }
    không thì đoạn vừa tô nằm ngay dưới thẻ, bị che mất phần trên. */
 .theory-section { scroll-margin-top: 132px; transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
 .theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
+/* Đoạn <h3> lý thuyết thu gọn (TheoryBlock, app/lop-hoc/bai/page.tsx) — N5 chia nhỏ theo nhịp HS kiểm
+   soát, L5 "Tiếp tục" trỏ đúng chỗ dở, D2 đích chạm ≥ 44pt, D3 nút "Tiếp" nằm cuối đoạn (vùng ngón cái),
+   B2 mỗi màn một điểm nổi (nút Tiếp dùng viền + nền nhạt, không phải nút đặc). */
+.theory-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; margin-bottom: 10px; color: #94a3b8; font-size: 13.5px; }
+.theory-nav-all { min-height: 44px; border: 0; background: none; padding: 0 4px; color: #94a3b8; font-size: 13.5px; font-weight: 600; cursor: pointer; }
+.theory-nav-all:hover { color: #e2e8f0; }
+.theory-next.theory-resume { flex: 1 1 0; width: auto; min-width: 0; margin: 0; min-height: 44px; padding: 6px 12px; }
+.theory-next.theory-resume strong { -webkit-line-clamp: 1; white-space: nowrap; text-overflow: ellipsis; }
+.theory-section--closed:empty { display: none; }
+.theory-section--closed { margin: 8px 0; }
+.theory-section-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; border: 1px solid var(--lesson-line); border-radius: 12px; background: transparent; padding: 10px 14px; color: #cbd5e1; font-size: 16px; font-weight: 600; line-height: 1.4; text-align: left; cursor: pointer; }
+.theory-section-toggle:hover { border-color: #64748b; color: #f1f5f9; }
+.theory-section-toggle svg { flex: 0 0 auto; color: #64748b; }
+.theory-next { display: flex; width: 100%; align-items: center; gap: 10px; min-height: 48px; margin: 18px 0 6px; border: 1px solid rgba(34,211,238,.35); border-radius: 12px; background: rgba(34,211,238,.08); padding: 10px 14px; color: #e2e8f0; font-size: 15px; line-height: 1.4; text-align: left; cursor: pointer; }
+.theory-next:hover { border-color: rgba(34,211,238,.6); }
+.theory-next small { flex: 0 0 auto; color: #22d3ee; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.lesson-prose .theory-next strong { flex: 1 1 auto; min-width: 0; font-weight: 600; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.theory-next svg { flex: 0 0 auto; color: #22d3ee; }
+.lesson-page.is-dim .lesson-body :is(.theory-section-toggle, .theory-next, .theory-nav, .theory-nav-all) { color: #33291a; }
+.lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #6b5a3e; }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { color: #0f172a; }
+html[data-theme="light"] .lesson-shell :is(.theory-nav, .theory-nav-all) { color: #475569; }
+html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg) { color: #0e7490; }
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
 /* position: fixed (không phải sticky) — .lesson-shell có overflow: clip (chặn tràn ngang trên

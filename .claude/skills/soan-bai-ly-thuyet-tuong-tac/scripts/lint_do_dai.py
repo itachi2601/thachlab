@@ -12,6 +12,10 @@ Không cần trình duyệt. Đo trên **chữ học sinh thật sự nhìn th�
     hạn mức — vì người đọc thấy tiêu đề con ngắt đoạn.
   - Nhịp = `<details>` · `.tl-quiz` · `<figure>`. "Đoạn liền" = số từ hiện ngay giữa hai nhịp liên
     tiếp; tiêu đề KHÔNG tính là nhịp (tiêu đề không cho học sinh làm gì).
+  - "Tới việc đầu" = số từ hiện ngay từ mốc `<h3>` ĐẦU TIÊN (bỏ khối mục tiêu/"hợp đồng đầu bài"
+    đứng trước nó — đó là bảng quét, không phải đoạn đọc) tới quiz/câu dự đoán ĐẦU TIÊN (`.tl-quiz`)
+    — đo cơ chế "phần thưởng bị trì hoãn" (học sinh phải đọc bao nhiêu mới được làm gì). Chỉ quiz
+    tính là việc: `<details>`/hình là nhịp thụ động, không phải việc. Không có quiz → None.
 
 Thoát 1 nếu có lỗi cứng (✗); cảnh báo (⚠) không đổi exit code.
 Vì sao các ngưỡng này: xem bảng "Hạn mức" trong tài liệu trên (số đo 5 bài mẫu 2/10/2026).
@@ -24,6 +28,7 @@ TONG_WARN, TONG_ERR = 2000, 2500      # từ hiện ngay cả bài     (~14 phú
 MUC_WARN, MUC_ERR = 350, 480          # từ hiện ngay một mục    (~2,5 phút / ~3,4 phút)
 BTM_WARN, BTM_ERR = 500, 700          # mục "Bài toán mẫu" — đoạn BUỘC đọc liền có chủ đích nên nới
 LIEN_WARN, LIEN_ERR = 300, 400        # từ liền không có nhịp   (~2 phút / ~2,9 phút)
+DAU_WARN, DAU_ERR = 150, 250          # từ hiện ngay trước quiz đầu tiên (~1 phút / ~1,8 phút)
 QUIZ_MIN, QUIZ_MAX = 4, 8
 MUC_MIN, MUC_MAX = 6, 8               # đếm theo <h3>
 DETAILS_MIN, HINH_MIN = 4, 2
@@ -35,6 +40,7 @@ SUMMARY = re.compile(r"<summary\b[^>]*>(.*?)</summary>", re.S | re.I)
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 NHIP = re.compile(r'<details\b|class="tl-quiz|<figure\b', re.I)
 HEAD = re.compile(r"<h([34])\b[^>]*>(.*?)</h\1>", re.S | re.I)
+QUIZ = re.compile(r'class="tl-quiz', re.I)
 
 
 def _text(s):
@@ -79,6 +85,16 @@ def doan_liem(than):
     return dem_tu(hien_ngay(than)), nhip, (max(doan) if doan else 0)
 
 
+def toi_viec_dau(t):
+    """Số từ hiện ngay từ mốc <h3> đầu tiên (hoặc đầu file nếu không có) tới quiz đầu tiên; None nếu không có quiz."""
+    m = QUIZ.search(t)
+    if not m:
+        return None
+    h = HEAD.search(t)
+    bat_dau = h.start() if h and h.start() < m.start() else 0
+    return dem_tu(hien_ngay(t[bat_dau:m.start()]))
+
+
 def tach_muc(t):
     """Danh sách (cấp, tiêu đề, html) theo thứ tự tài liệu, chia ở mọi <h3>/<h4>."""
     ra, moc = [], list(HEAD.finditer(t))
@@ -91,6 +107,7 @@ def tach_muc(t):
 def kiem(path):
     t = open(path, encoding="utf8").read()
     hien = dem_tu(hien_ngay(t))
+    dau = toi_viec_dau(t)
     muc = tach_muc(t)
     so_h3 = len([1 for cap, _, _ in muc if cap == 3])
     quiz = len(re.findall(r"tl-quiz", t))
@@ -135,6 +152,13 @@ def kiem(path):
         loi.append(f"tổng {hien} từ hiện ngay > {TONG_ERR} (~{hien / WPM:.0f} phút) — cắt hoặc tách bài")
     elif hien > TONG_WARN:
         canh_bao.append(f"tổng {hien} từ hiện ngay > {TONG_WARN} (~{hien / WPM:.0f} phút) — gần trần")
+    if dau is None:
+        pass  # đã có cảnh báo "chỉ 0 quiz" bên dưới
+    elif dau > DAU_ERR:
+        loi.append(f"{dau} từ hiện ngay trước quiz đầu tiên > {DAU_ERR} (~{dau / WPM:.1f} phút chưa được làm gì) — "
+                   "đưa câu dự đoán/quiz lên ngay sau tình huống mở bài")
+    elif dau > DAU_WARN:
+        canh_bao.append(f"{dau} từ hiện ngay trước quiz đầu tiên > {DAU_WARN} — kéo câu dự đoán lên sớm hơn")
     if quiz > QUIZ_MAX:
         loi.append(f"{quiz} quiz > {QUIZ_MAX} — quá tải, bỏ bớt")
     elif quiz < QUIZ_MIN:
@@ -146,8 +170,8 @@ def kiem(path):
     if hinh < HINH_MIN:
         canh_bao.append(f"chỉ {hinh} hình < {HINH_MIN}")
 
-    return dict(file=path, hien=hien, tong=dem_tu(t), so_h3=so_h3, so_muc=len(muc), quiz=quiz,
-                hinh=hinh, details=details, phut=hien / WPM, hang=hang, loi=loi, canh_bao=canh_bao)
+    return dict(file=path, hien=hien, tong=dem_tu(t), toi_viec_dau=dau, so_h3=so_h3, so_muc=len(muc),
+                quiz=quiz, hinh=hinh, details=details, phut=hien / WPM, hang=hang, loi=loi, canh_bao=canh_bao)
 
 
 def nghin(n):
@@ -158,6 +182,8 @@ def in_nguoi(kq, chi_loi=False):
     print(f"\n{kq['file']}")
     print(f"  {nghin(kq['hien'])} từ hiện ngay / {nghin(kq['tong'])} từ cả file · ~{kq['phut']:.1f} phút "
           f"· {kq['so_h3']} mục lớn + mục con · {kq['quiz']} quiz · {kq['hinh']} hình · {kq['details']} details")
+    dau = kq["toi_viec_dau"]
+    print(f"  tới việc đầu (quiz đầu tiên): {'không có quiz' if dau is None else f'{dau} từ (~{dau / WPM:.1f} phút)'}")
     print(f"  {'mục':<58} {'hiện':>6} {'nhịp':>5} {'liền':>5}")
     for cap, ten, h, nhip, lien in kq["hang"]:
         nhan = ("  " if cap == 4 else "") + ten
