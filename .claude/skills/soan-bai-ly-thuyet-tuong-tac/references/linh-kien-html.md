@@ -67,3 +67,9 @@ Hộp `tl-box tl-box--think`, nhãn "🎤 Trả bài", bên trong 4–6 `<detail
 </table></div>
 ```
 Mỗi hàng một câu/cụm của đề, theo đúng thứ tự đề. Cột Dữ liệu tự tô vàng. Dữ kiện "ngầm" (bỏ qua ma sát, bắt đầu từ nghỉ) cũng có một hàng riêng.
+
+## Mô phỏng nhúng (`.tl-sim`, thẻ giữ chỗ)
+```html
+<div class="tl-sim" data-sim="tn-l10-newton3-04"></div>
+```
+Thẻ **rỗng**, đặt giữa các đoạn của mục lý thuyết, sau hình/bảng liên quan. Mô phỏng thật là component React trong `components/simulations/` (đăng ký ở `registry.tsx`), không phải mã trong HTML. `data-sim` phải trùng id thí nghiệm trong `content/thi-nghiem/` và có trong registry (`thi_nghiem.py <theory.html>` kiểm cả hai). Thẻ chưa có component thì trang bỏ qua (không hiện gì).

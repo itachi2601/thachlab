@@ -204,5 +204,12 @@
   "hinh_trong_bai": "Hình 4",
   "y_tuong": "Kéo thanh trượt m_B và xem a_B thay đổi trong khi F không đổi; có nút 'dự đoán trước' giống mục Thử sức."
  },
- "an_toan": "Chỉ thử trên sân nhẵn, có người đỡ; không đẩy mạnh khi chưa có bảo hộ. Có thể thay bằng hai xe đẩy."
+ "an_toan": "Chỉ thử trên sân nhẵn, có người đỡ; không đẩy mạnh khi chưa có bảo hộ. Có thể thay bằng hai xe đẩy.",
+ "mo_phong_da_lam": {
+  "data_sim": "tn-l10-newton3-04",
+  "component": "components/simulations/TwoBodyPushSim.tsx",
+  "mo_hinh": "components/simulations/two-body-push-model.ts",
+  "ngay": "2026-10-01",
+  "ghi_chu": "Dự đoán → Thả → bảng số liệu; thanh trượt đọc min/max/bước từ file này; có chế độ quay chậm ×0,25."
+ }
 }
