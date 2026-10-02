@@ -29,6 +29,7 @@ hàm/tham số). Log migration đã chạy ở `docs/STATE-archive.md`. Các fil
 | Deploy Edge Function `import-roster` | `docs/deploy-edge-function.md` |
 | Roadmap / định hướng sản phẩm | `docs/ROADMAP.md`, `docs/MANIFESTO.md`, `docs/PROJECT.md` |
 | Skill Claude còn thiếu (bản đồ quy trình, đề xuất chờ duyệt) | `docs/DE-XUAT-SKILL-2026-09-29.md` |
+| **Mọi UI học sinh nhìn thấy** (quy tắc thiết kế có dẫn nghiên cứu tâm lý/thị giác, checklist) | `docs/QUY-TAC-THIET-KE.md` |
 
 Còn lại (`BRAND.md`, `UI.md`, `THONG-BAO.md`, `BAN-GIAO-*.md`, `prompt-toc-do-*.md`,
 `prompt-toi-uu-font.md`, `rank-title-showcase-design.md`, `bai-viet-lo-trinh-*.md`) là log/prompt
@@ -156,3 +157,11 @@ thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
 Sửa/đăng lại nội dung lý thuyết của bài có sẵn: dùng `bash scripts/cap-nhat-ly-thuyet.sh <theory.html|bundle.json> <lesson_id>`
 (chỉ ghi cột `body_html` của mục `ly_thuyet`, tự sao lưu ra `scripts/logs/`; hoàn tác bằng `scripts/khoi-phuc-ly-thuyet.mts`).
 Không dùng `upload-lesson.mts` cho việc này — nó tạo/ghi cả đề Luyện tập. Công thức có `<`/`>` trong `$…$` phải viết `\lt`/`\gt`.
+
+# Thiết kế UI học sinh — đọc `docs/QUY-TAC-THIET-KE.md` trước, không chờ nhắc
+
+Mọi UI học sinh nhìn thấy (`/lop-hoc/**`, `/kiem-tra/**`, trang chủ HS, xếp hạng, phụ đạo, thông báo) phải theo
+`docs/QUY-TAC-THIET-KE.md` — quy tắc rút từ nghiên cứu tâm lý nhận thức & thị giác của học sinh 14–18 tuổi
+(tải nhận thức, đa phương tiện Mayer, não vị thành niên, F-pattern, độ dài dòng, cực tính nền, đích chạm…).
+Khi đề xuất hay sửa UI: **nêu mã quy tắc** (N1, C2, M5…), chạy checklist mục 8 (chụp 375px trước), và ghi mã vào
+mô tả commit; cố ý phá quy tắc thì ghi lý do. Phụ lục A của file là bản rà trang bài học 2/10/2026 còn chờ sửa.
