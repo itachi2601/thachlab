@@ -869,9 +869,9 @@ html[data-theme="light"] .lesson-shell .lesson-summary-title { color: #1e293b; }
 .lesson-block-foot:empty { display: none; }
 .lesson-prose { margin-top: 16px; border-top: 1px solid var(--lesson-line); padding-top: 16px; color: #e2e8f0; font-size: 16px; line-height: 1.75; overflow-wrap: break-word; word-break: break-word; }
 .lesson-prose--plain { margin-top: 0; border-top: 0; padding-top: 0; }
-/* Dàn đều 2 biên (justify) để lề phải không lởm chởm — kèm break-word ở trên
-   để chữ/công thức dài không tràn ra ngoài khung khi dàn đều. */
-.lesson-prose p { text-align: justify; text-justify: inter-word; }
+/* Căn trái (QUY-TAC-THIET-KE C6): justify tạo "sông" trắng giữa chữ, nhất là trên điện thoại
+   với cột hẹp và tiếng Việt nhiều từ ngắn. Break-word ở trên giữ chữ/công thức dài không tràn. */
+.lesson-prose p { text-align: left; }
 /* Khối <h3> lý thuyết (features/lessons/theory-sections.ts) — tô vàng tạm khi quay lại từ
    "Ôn ngay" (câu làm sai trong quiz "Kiểm tra nhanh"), tắt bằng classList sau vài giây. */
 /* Chừa chỗ cho thẻ nhắc câu sai (position: fixed, nổi trên đầu) khi scrollIntoView căn "start" —
