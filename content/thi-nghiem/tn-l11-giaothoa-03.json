@@ -1,0 +1,171 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Giao thoa sóng",
+ "lesson_id": 31,
+ "nguon_trong_bai": "content/lesson-samples/l11-giao-thoa-song/theory.html",
+ "id": "tn-l11-giaothoa-03",
+ "ten": "Khe Young với laser: đo khoảng vân",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "giaothoa.khe_young",
+  "giaothoa.khoang_van"
+ ],
+ "muc_tieu": "Quan sát vân sáng tối của ánh sáng và kiểm công thức i = λD/a.",
+ "dung_cu": [
+  {
+   "ten": "Laser đỏ",
+   "so_luong": 1,
+   "ghi_chu": "công suất nhỏ, đúng loại dùng trong lớp"
+  },
+  {
+   "ten": "Tấm hai khe hẹp a = 0,2 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn trắng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước cuộn",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chiếu laser qua hai khe lên màn đặt cách 2 m.",
+   "Đo khoảng cách giữa nhiều vân sáng liên tiếp rồi chia ra i.",
+   "Thử dời màn xa hơn hoặc đổi tấm khe hẹp hơn."
+  ],
+  "quan_sat": [
+   "Các vạch sáng tối cách đều nhau, cỡ vài mm.",
+   "Màn xa hơn hoặc a nhỏ hơn thì vân thưa hơn."
+  ],
+  "rut_ra": [
+   "i = λD/a.",
+   "Ánh sáng giao thoa được nên có tính chất sóng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "µm",
+   "kieu": "dieu_chinh",
+   "min": 0.4,
+   "max": 0.76,
+   "mac_dinh": 0.65,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Khoảng cách hai khe",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Khoảng cách khe – màn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Khoảng vân",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "x_s",
+   "ten": "Vị trí vân sáng bậc k",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "x_t",
+   "ten": "Vị trí vân tối",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "i = lam·D/a",
+   "x_s = k·i",
+   "x_t = (k + 1/2)·i"
+  ],
+  "gia_thiet": [
+   "a << D",
+   "ánh sáng đơn sắc",
+   "hai khe cùng pha"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "lam (µm)",
+   "a (mm)",
+   "D (m)",
+   "i (mm)"
+  ],
+  "hang": [
+   [
+    0.65,
+    0.2,
+    2.0,
+    6.5
+   ],
+   [
+    0.65,
+    0.2,
+    3.0,
+    9.75
+   ],
+   [
+    0.65,
+    0.4,
+    2.0,
+    3.25
+   ],
+   [
+    0.45,
+    0.2,
+    2.0,
+    4.5
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "lam = 0,65 µm, a = 0,2 mm, D = 2 m: i = 6,5 mm.",
+ "hien_tuong_hay_sai": [
+  "Nhầm vân sáng ứng với k nguyên + 1/2.",
+  "Cho rằng vân giãn ra khi tăng a (thực tế thu lại)."
+ ],
+ "sai_so_thuong_gap": [
+  "Đo từ vân bậc cao sai vì mắt khó xác định giữa vân.",
+  "Màn không vuông góc với tia."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "lam",
+   "a",
+   "D"
+  ],
+  "dau_ra": [
+   "màn vân sáng tối với màu theo lam",
+   "bảng i, x_s, x_t"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Thanh trượt đổi màu ánh sáng; hiện nhãn vân sáng k và vân tối k + 1/2."
+ },
+ "an_toan": "Không rọi laser vào mắt, kể cả tia phản xạ; dùng laser lớp học công suất thấp."
+}
