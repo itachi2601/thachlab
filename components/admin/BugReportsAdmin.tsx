@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Bug, Image as ImageIcon, Loader2, RefreshCw, Trash2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
@@ -45,12 +45,17 @@ export default function BugReportsAdmin() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<BugReport | null>(null);
 
+  // reqId: bỏ kết quả của lần tải cũ nếu thầy đã đổi tab/bấm làm mới trong lúc chờ
+  // (tránh danh sách tab trước ghi đè lên tab hiện tại).
+  const reqId = useRef(0);
   const load = useCallback(() => {
+    const id = ++reqId.current;
     setLoading(true);
+    setError("");
     fetchBugReports(tab === "all" ? undefined : tab)
-      .then(setReports)
-      .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được danh sách."))
-      .finally(() => setLoading(false));
+      .then((rows) => id === reqId.current && setReports(rows))
+      .catch((cause) => id === reqId.current && setError(cause instanceof Error ? cause.message : "Không tải được danh sách."))
+      .finally(() => id === reqId.current && setLoading(false));
   }, [tab]);
   useEffect(() => {
     load();
@@ -287,7 +292,7 @@ function BugReportDetailModal({ report, onClose, onChanged }: { report: BugRepor
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            placeholder="Ghi chú xử lý (chỉ admin thấy)"
+            placeholder="Phản hồi cho người báo (họ sẽ thấy ở trang “Báo lỗi & góp ý của tôi”)"
             rows={3}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none"
           />
