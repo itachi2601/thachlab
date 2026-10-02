@@ -81,6 +81,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   Skill `soan-bai-ly-thuyet-tuong-tac` đã cập nhật: **bỏ vai "thầy" trong bài**, checklist 14 nét dạy học Trung Quốc
   (`references/phuong-phap-day-tq.md`), thêm `scripts/build_preview.py` + `chup_anh.py` (xem thử **đúng 375 px** bằng Chrome qua CDP,
   Mac không có Playwright) + cờ `--kiem-tran` soát tràn ngang/công thức phải cuộn + `check_quizzes.py` (kiểm tự chấm không cần trình duyệt); đã sync Library plugin + `~/.codex`.
+- **Độ dài bài lý thuyết — hạn mức + bộ đo (2/10/2026)**: `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` (cơ chế bỏ cuộc,
+  hạn mức, cách kiểm chứng bằng mastery) + `scripts/lint_do_dai.py` trong skill soạn bài (exit 1 khi vượt trần).
+  Đo 5 bài: bài Mô tả sóng là bài dài nhất (3.021 từ hiện ngay, mục con 489 từ, đoạn liền 478 từ) → **đã cắt còn
+  2.457 từ**, 3 bảng 3 cột bị bóp chữ ở 375px đưa về 2 cột. Dòng ở mục trên ("CHƯA ghi DB") là **đã cũ**: log
+  `scripts/logs/ly-thuyet-bai27-backup-*.json` (22:51) cho thấy bản Mô tả sóng **đã ghi DB**; bản cắt này
+  **chưa ghi DB, chưa deploy** — chờ thầy duyệt rồi chạy `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` + deploy.
 
 ## Migration — ĐANG CHỜ
 - `20261002110000_staff_student_account.sql` (hàm `staff_student_account`: thẻ "Thông tin tài khoản" trong hồ sơ HS cho admin/GV — username, email, SĐT, SĐT phụ huynh, ngày sinh; chạy lúc nào cũng được; rollback `perf/rollback/20261002110000_staff_student_account.down.sql`) — ĐANG CHỜ.

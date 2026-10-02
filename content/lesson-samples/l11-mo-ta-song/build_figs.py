@@ -43,8 +43,7 @@ for i in range(9):
 b += poly([(x, base - 40 - AMP * env(x)) for x in range(18, 423, 6)], RED, 2.2)
 b += arrow("f1", "g", 30, 208, 410, 208, 3) + text(220, 200, "chiều làn sóng", GRN, 12, "middle", "700")
 fig1 = wrap("0 0 440 224", "Khán đài: làn sóng người chạy qua, mỗi người chỉ đứng lên rồi ngồi xuống tại chỗ",
-            b, "Hình 1. Làn sóng người trên khán đài. Đường đỏ là “trạng thái đứng lên” đang chạy qua; "
-               "không ai rời khỏi ghế của mình.")
+            b, "Hình 1. Làn sóng người: đường đỏ là “trạng thái đứng lên” đang chạy qua; không ai rời ghế.")
 
 # ---- Hình 2: khay nước, mặt cắt hình sin, miếng xốp C nhấp nhô tại chỗ
 Lp, mean, bot = 128.0, 138.0, 182.0
@@ -67,8 +66,8 @@ for cx in (72.0, 200.0):
     b += line(cx, surf(cx) - 6, cx, 218, GRN, 1.2, "3 3", .8)
 b += dbl_h(72, 200, 214, GRN, 1.8) + text(136, 238, "λ", GRN, 13, "middle", "700")
 fig2 = wrap("0 0 440 250", "Mặt cắt nước trong khay có dạng hình sin; nguồn O dao động, miếng xốp C chỉ nhấp nhô tại chỗ",
-            b, "Hình 2. Quan sát qua thành kênh: mặt cắt nước có dạng hình sin. Sóng (pha) lan ra xa, "
-               "còn miếng xốp C chỉ nhấp nhô tại chỗ. λ là khoảng cách hai đỉnh liên tiếp.")
+            b, "Hình 2. Mặt cắt nước dạng hình sin: sóng lan ra xa, miếng xốp C chỉ nhấp nhô tại chỗ; "
+               "λ là khoảng cách hai đỉnh liên tiếp.")
 
 # ---- Hình 3: trễ pha — O và M, đồ thị u(t) lệch nhau
 b = line(30, 70, 410, 70, "currentColor", 1.6, "", .7)
@@ -85,8 +84,7 @@ b += dbl_h(60, 90, 166, GRN, 1.6) + text(75, 152, "Δφ", GRN, 12, "middle", "70
 b += text(36, 122, "O (nguồn)", RED, 11, "start", "700") + text(120, 122, "M (trễ pha hơn)", BLUE, 11, "start", "700")
 b += text(36, 240, "Δφ = 2πd/λ: sóng tới M chậm hơn O một khoảng thời gian d/v", "currentColor", 11, "start", "500")
 fig3 = wrap("0 0 440 248", "Điểm M cách nguồn O đoạn d: dao động tại M trễ pha hơn O đúng Δφ = 2πd/λ",
-            b, "Hình 3. Sóng phải đi thêm đoạn d mới tới M, nên đồ thị u(t) tại M bị đẩy sang phải đúng "
-               "Δφ = 2πd/λ so với O.")
+            b, "Hình 3. Sóng đi thêm đoạn d mới tới M, nên u(t) tại M trễ pha hơn O đúng Δφ = 2πd/λ.")
 
 # ---- Hình 4: hai loại đồ thị u–t và u–x
 b = line(220, 10, 220, 244, "currentColor", 1.2, "4 4", .35)
@@ -102,8 +100,7 @@ for xL, col, t1, t2, lab, axlab in ((30, RED, "Tại MỘT điểm,", "theo th�
     b += dbl_h(a, c, 214, GRN, 1.8) + text((a + c) / 2, 240, lab, GRN, 13, "middle", "700")
     b += text(xL + 4, 197, axlab, "currentColor", 12, "start", "600")
 fig4 = wrap("0 0 440 250", "Hai loại đồ thị sóng: bên trái u theo thời gian (một bước là T), bên phải u theo không gian (một bước là λ)",
-            b, "Hình 4. Cùng một sóng hình sin nhưng khác trục hoành: đồ thị u–t (một điểm) có một bước là T; "
-               "đồ thị u–x (một lúc) có một bước là λ.")
+            b, "Hình 4. Cùng một sóng, khác trục hoành: u–t (một điểm) một bước là T; u–x (một lúc) một bước là λ.")
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):

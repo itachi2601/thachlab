@@ -53,27 +53,33 @@ bao giờ** phải chịu 10 phút liền, trường học đang bỏ luôn bài
 
 ## 2. Số đo 5 bài lý thuyết đang có (2/10/2026)
 
-Đo bằng `lint_do_dai.py`. "Từ hiện ngay" = chữ học sinh thật sự nhìn thấy (bỏ nội dung trong
-`<details>`, giữ `<summary>` vì câu hỏi/hộp "xem thêm" vẫn hiện). Thời gian tính ở 140 từ/phút — tốc độ
-đọc chữ Việt trên điện thoại khi có công thức phải dừng nghĩ (là ước lượng, không phải số đo).
+Đo bằng `lint_do_dai.py`. "Từ hiện ngay" = chữ học sinh thật sự nhìn thấy khi mở trang: bỏ nội dung
+trong `<details>` (giữ `<summary>`) và bỏ **phản hồi quiz** (`.tl-fb` — CSS ẩn cho tới khi chọn đáp án).
+Mục được chia theo cả `<h3>` lẫn `<h4>` (mục con), vì người đọc thấy tiêu đề con ngắt đoạn — mục lục
+trong app vẫn chỉ liệt kê `<h3>`. Thời gian tính ở 140 từ/phút — tốc độ đọc chữ Việt trên điện thoại
+khi có công thức phải dừng nghĩ (ước lượng, không phải số đo).
 
-| Bài | Từ hiện ngay | Tổng từ | ~phút | Mục | Quiz | Đoạn liền dài nhất | Kết quả lint |
-|---|---|---|---|---|---|---|---|
-| Định luật III Newton (l10) | 1.682 | 2.018 | 12,0 | 6 | 4 | 198 | ✓ sạch |
-| Dao động điều hoà (l11) | 1.265 | 1.452 | 9,0 | 6 | 4 | 240 | ⚠ mục II 535 từ |
-| Giao thoa sóng (l11) | 1.746 | 2.023 | 12,5 | 6 | 5 | 202 | ⚠ mục II 592 từ |
-| Cảm ứng điện từ (l12) | 2.675 | 3.059 | 19,1 | 8 | 6 | 241 | ✗ tổng vượt trần |
-| **Mô tả sóng (l11)** — bài được chốt làm chuẩn | **3.506** | **4.190** | **25,0** | 6 | 7 | **516** | ✗ tổng · ✗ mục II **1.273 từ** · ✗ đoạn liền 516 |
+> Bản đầu của `lint_do_dai.py` (2/10/2026) tính cả phản hồi quiz vào "từ hiện ngay" (11–13% số từ của
+> mỗi bài) và chỉ chia mục theo `<h3>`. Số dưới đây là bản đã sửa; số cũ cao hơn khoảng 12%.
+
+| Bài | Từ hiện ngay | Tổng từ | ~phút | Mục dài nhất | Đoạn liền dài nhất | Kết quả lint |
+|---|---|---|---|---|---|---|
+| Định luật III Newton (l10) | 1.408 | 2.018 | 10,1 | 350 | 211 | ✓ sạch |
+| Dao động điều hoà (l11) | 1.103 | 1.452 | 7,9 | 130 | 143 | ✓ (2 mục con thiếu nhịp) |
+| Giao thoa sóng (l11) | 1.537 | 2.023 | 11,0 | 350 | 215 | ✓ sạch |
+| Cảm ứng điện từ (l12) | 2.316 | 3.059 | 16,5 | 461 | 253 | ⚠ tổng + 3 mục 371–461 từ |
+| **Mô tả sóng (l11)** — trước khi cắt 2/10 | **3.021** | **4.190** | **21,6** | **489** | **478** | ✗ tổng · ✗ đoạn liền 478 · ⚠ 2 mục |
+| Mô tả sóng — **sau khi cắt 2/10** | **2.457** | 3.870 | 17,6 | 274 | 194 | ✓ 0 lỗi cứng · ⚠ tổng gần trần |
 
 Đọc bảng này ra ba điều:
 
-1. **Ba bài ngắn thì ổn** (9–12,5 phút) — hạn mức dưới đây không phải lý thuyết suông, nó đang mô tả
-   đúng những bài đã làm tốt.
-2. **Bài được chốt làm chuẩn lại là bài dài nhất.** Mục II của Mô tả sóng dài 1.273 từ (~9 phút) trong
-   *một* `<h3>` — tức là "chia mục" hình thức mà không chia thật (N5). Và có một đoạn **516 từ liền
-   không có `<details>`, quiz hay hình nào** (~3,7 phút đọc suông). Nếu lấy bài này làm khuôn để nhân
-   rộng thì các bài sau sẽ phình theo.
-3. **Cảm ứng điện từ (8 mục, 2.675 từ) là dấu hiệu đã phình** — không bài nào cần quá 6–7 mục.
+1. **Ba bài ngắn thì ổn** (8–11 phút) — hạn mức dưới đây không phải lý thuyết suông, nó đang mô tả
+   đúng những bài đã làm tốt. (Chia theo `<h4>` cho thấy "mục II 535 từ" của bài Dao động thực ra là
+   5 mục con 61–130 từ — không phải vấn đề.)
+2. **Bài được chốt làm chuẩn lại là bài dài nhất.** Mục con "Năm đại lượng đặc trưng" dài 489 từ trong
+   *một* `<h4>`, và có một đoạn **478 từ liền không có `<details>`, quiz hay hình nào** (~3,4 phút đọc
+   suông). Nếu lấy bài này làm khuôn để nhân rộng thì các bài sau sẽ phình theo.
+3. **Cảm ứng điện từ (8 mục lớn, 2.316 từ) là dấu hiệu đã phình** — không bài nào cần quá 6–7 mục.
 
 Điểm quan trọng về mặt kỹ thuật: trong một mục `ly_thuyet`, **toàn bộ các `<h3>` render thẳng một mạch**
 (`TheoryBlock` trong `app/lop-hoc/bai/page.tsx` chỉ thu gọn ở cấp *mục bài*, không thu gọn từng `<h3>`).
@@ -86,8 +92,8 @@ Nên "bài dài" = học sinh nhận đúng ngần ấy chữ khi mở tab Lý t
 | Chỉ số | Ngưỡng cảnh báo ⚠ | Ngưỡng lỗi ✗ | Tương đương |
 |---|---|---|---|
 | Tổng từ hiện ngay cả bài | > 2.000 | > 2.500 | ~14 phút / ~18 phút |
-| Một mục `<h3>` | > 400 | > 600 | ~3 phút / ~4,3 phút |
-| Mục "Bài toán mẫu" | > 600 | > 900 | đây là đoạn **buộc đọc liền** nên nới |
+| Một mục (`<h3>`/`<h4>`) | > 350 | > 480 | ~2,5 phút / ~3,4 phút |
+| Mục "Bài toán mẫu" | > 500 | > 700 | đây là đoạn **buộc đọc liền** nên nới |
 | Đoạn liền không có nhịp nào | > 300 | > 400 | ~2 phút / ~2,9 phút |
 | Số quiz | < 4 | > 8 | 4–8 (nét 14 của skill) |
 | Số mục `<h3>` | ngoài 6–8 | — | |
@@ -186,10 +192,11 @@ mục lục và nút "Ôn ngay"), nên link `#theory-sec-61-2` mở thẳng mụ
 
 | Việc | Vì sao | Ghi chú |
 |---|---|---|
-| Cắt lại bài Mô tả sóng (l11) | 3.506 từ, mục II 1.273 từ, đoạn liền 516 từ — bài chuẩn đang dạy sai khuôn | dùng `scripts/cap-nhat-ly-thuyet.sh` + sao lưu; nên tách II thành II.1/II.2 và chèn quiz vào giữa đoạn 516 từ |
-| Tách bớt bài Cảm ứng điện từ (l12) | 2.675 từ / 8 mục, vượt trần | cân nhắc gộp mục hoặc chuyển phần mở rộng vào `<details>` |
-| Bổ sung ngưỡng độ dài vào `references/phuong-phap-day-tq.md` | đã làm 2/10/2026 — thay mục "Tỉ lệ vàng" cũ (lấy 4.190 từ làm chuẩn) | — |
+| ~~Cắt lại bài Mô tả sóng (l11)~~ — **đã làm 2/10/2026** | 3.021 từ, mục con 489 từ, đoạn liền 478 từ | còn 2.457 từ (0 lỗi cứng, 1 ⚠ tổng): tách mục con + chuyển 3 khối tra cứu/thí nghiệm vào `<details>`; 3 bảng 3 cột bị bóp chữ ở 375px đã đưa về 2 cột (H2, C4) |
+| Tách bớt bài Cảm ứng điện từ (l12) | 2.316 từ (~16,5 phút) + 3 mục 371–461 từ | gộp mục hoặc chuyển phần mở rộng vào `<details>` |
+| Thêm nhịp cho 2 mục con bài Dao động điều hoà | "Dao động tuần hoàn" và "Phương trình dao động điều hoà" không có details/quiz/hình | ⚠ nhẹ, thêm 1 quiz hoặc 1 `<details>` mỗi mục |
 | Ghi độ sâu cuộn theo mục | chưa có phép đo nào trong app | cần khi muốn kiểm chứng mục 5 |
+| Viết bảng số liệu thật cho thí nghiệm đo | nét "数据分析" của skill đòi ≥1 thí nghiệm có bảng 3–5 lần đo + câu hỏi sai số; bài Mô tả sóng chưa có | bổ sung khi soạn lại lần sau |
 
 ---
 
