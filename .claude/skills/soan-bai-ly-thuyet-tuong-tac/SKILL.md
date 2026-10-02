@@ -28,7 +28,7 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
 
 ## Quy trình
 
-1. **Chọn bài + nguồn.** Lớp → Chương → Bài (xem `public/data/catalog.json`). Nội dung lấy từ chương trình/SGK làm ý tưởng và số liệu; **không chép nguyên văn, không dùng ảnh của sách có bản quyền** (Halliday, SGK...) trên trang công khai — vẽ lại bằng SVG.
+1. **Chọn bài + nguồn.** Lớp → Chương → Bài (xem `public/data/catalog.json`). **Soạn lại bài đã đăng thì đọc trước bài đang có trên web (`lesson_items` mục `ly_thuyet`) và mô tả bài/YCCĐ của nó**, liệt kê các ý bắt buộc để bản mới không bỏ sót (bài Mô tả sóng cũ thiếu hẳn phương trình sóng và trễ pha dù mô tả bài có ghi). Nội dung lấy từ chương trình/SGK làm ý tưởng và số liệu; **không chép nguyên văn, không dùng ảnh của sách có bản quyền** (Halliday, SGK...) trên trang công khai — vẽ lại bằng SVG.
 2. **Phiếu bài** (trong đầu/scratchpad): 1 ví dụ đời thường mở bài · khái niệm/định luật + phát biểu chuẩn · công thức + ký hiệu + đơn vị · 1–2 **hiểu lầm kinh điển** của học sinh · 1 ví dụ số · 3–4 ứng dụng đời sống. Hiểu lầm kinh điển là xương sống của bài — chọn đúng chỗ học sinh hay sai.
 3. **Viết `theory.html`** theo dàn ý dưới + linh kiện trong `references/linh-kien-html.md`.
 4. **Vẽ hình** 2–4 hình SVG theo `references/hinh-svg.md`, dùng `scripts/svg_lib.py` (sinh bằng script, chèn idempotent như `build_figs.py` của bài mẫu).
@@ -56,10 +56,10 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 | Phần | Nội dung | Linh kiện |
 |---|---|---|
 | I. Mở bài | Tình huống đời thường gần học sinh (sân băng, xưởng CNC, xe đạp, bếp...), kể bằng người dẫn chuyện trung tính (**KHÔNG** dùng vai "thầy"), kết bằng câu hỏi "tại sao?" | hộp **dự đoán** (radio) |
-| II. Kiến thức | **Từ khoá để nhớ** (xem mục "Ít chữ") + phát biểu dạng gạch đầu dòng + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
+| II. Kiến thức | **Từ khoá để nhớ** (xem mục "Ít chữ") + phát biểu dạng gạch đầu dòng + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra, trong đó **ít nhất một thí nghiệm đo có bảng số liệu thật + câu hỏi về sai số** (học sinh đọc bảng, không cần tự đo) | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
 | III. Bẫy | 2–3 "cái bẫy" của riêng bài, vì sao sai; mỗi bẫy một **bảng đối chiếu hai khái niệm dễ lẫn** + tự kiểm tra | bảng + hình + **tự kiểm tra** |
-| IV. Trả bài | 5–6 câu nhớ lại lý thuyết/công thức, chưa giải bài | `<details>` trong hộp `tl-box--think` |
-| V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả; sau đó **biến thể** (đổi số, đổi chiều, đổi vị trí điểm) | `.tl-table--data` + `.tl-steps` + hình + quiz |
+| IV. Trả bài | 5–6 câu nhớ lại lý thuyết/công thức, chưa giải bài; mỗi câu nhắc "nói bằng lời của em rồi mới bấm xem" | `<details>` trong hộp `tl-box--think` |
+| V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả → **một bài để trống 1–2 bước cho học sinh điền** → **biến thể** (đổi số, đổi chiều, đổi vị trí điểm) | `.tl-table--data` + `.tl-steps` + hình + quiz |
 | VI. Đời sống + tổng kết | 3–4 ứng dụng; **thử thách phân tầng ⭐ ⭐⭐ ⭐⭐⭐**; khung "Mang về sau bài học" dạng chuỗi từ khoá (có ý về cách đọc đề) | `<details>` + hộp định nghĩa |
 
 ## Giọng văn (thầy chốt lại 2/10/2026)
@@ -88,6 +88,7 @@ nhịp dưới đây là chuẩn, lượt sau không hỏi lại:
 7. **变式训练 + 分层练习** — sau bài toán mẫu có "Thử sức đổi số / đổi chiều" và thử thách ⭐ ⭐⭐ ⭐⭐⭐.
 8. **归纳小结** — khung "✅ Mang về sau bài học" toàn từ khoá, có một dòng về cách đọc đề.
 9. Mẹo/口诀 riêng cho từng công thức khó nhớ; `<details>` cho phần mở rộng (không giấu kiến thức bắt buộc).
+10. **Ba nét từ nghiên cứu tự học** (chi tiết + lý do ở `references/phuong-phap-day-tq.md`): tự giải thích trước khi xem đáp án (mục Trả bài); bài giải **để trống 1–2 bước** giữa bài mẫu và biến thể; dòng "Em chắc bao nhiêu?" trước 2–3 quiz quan trọng.
 
 ## Ít chữ — nhớ bằng từ khoá (thầy yêu cầu 2/10/2026, áp dụng cho MỌI bài sau)
 
@@ -113,7 +114,7 @@ Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định
 9. **Chưa test trong app thật** (Next.js tĩnh): preview chỉ dùng CSS + KaTeX rời. Khi có trình duyệt xem được `/lop-hoc/bai`, kiểm lại bài đăng thật trước khi nhân rộng.
 10. **Không viết vai "thầy" vào bài** (thầy nhắc 2/10/2026 khi đọc bài Mô tả sóng): "thầy cho cả lớp…", "Thầy hỏi: …", "thầy tự hỏi: …" đều phải bỏ. Đây là lỗi giọng văn dễ tái phát nhất vì bài mẫu cũ (`l10-dinh-luat-3-newton`) còn dùng.
 11. **Trang xem thử phải có `.wrap` (lề 16px + max-width 720px)** cho cả trang từng mục: thiếu nó, chữ chạm mép phải ở 375px mà đọc ảnh mới thấy.
-12. **Cửa sổ chụp `fig-*.html` phải cao ≥ 500 CSS px** và **≥ 375px cho mục**: quá thấp là mất `figcaption` (đã dính với fig-2/fig-4 vì `.wrap` đẩy nội dung xuống).
+12. **Chụp ảnh phải ép đúng 375 CSS px qua CDP** (`chup_anh.py` bản hiện tại dùng `Emulation.setDeviceMetricsOverride` + `captureBeyondViewport`): Chrome macOS ép cửa sổ tối thiểu 500px nên bản cũ `--window-size` cho ảnh "375px" thực chất là layout 500px, duyệt nhầm bố cục. Bản CDP chụp trọn trang nên không còn lo cửa sổ thấp làm mất `figcaption`. Chép script từ thư mục bài sang skill **cả hai chiều** mỗi khi sửa (đã lệch một lần 2/10/2026).
 13. **Bảng ở 375px: tối đa 3 cột.** Bảng 4 cột (Đại lượng | Ký hiệu | Nghĩa | Hệ thức) phải gộp lại thành 3 cột *Đại lượng | Ký hiệu (đơn vị) | Nghĩa ngắn và hệ thức*; bảng rộng hơn thì `.table-scroll` cho cuộn ngang chứ đừng để chữ bị bóp.
 14. **Trang bài thật (`.lesson-page`) bỏ khung viền của `.katex-display`** và đặt `.katex` nội dòng thành `display:inline; overflow:visible` → **công thức nội dòng không tự cuộn được**, dài quá ~300px là đẩy tràn trang. Công thức khối vẫn là scroll container: rộng hơn ~343px thì học sinh phải vuốt mới thấy hết → **chẻ thành 2 dòng `$$…$$`**. `--kiem-tran` báo cả hai loại (`cong thuc khoi phai cuon: 343px khung / 390px noi dung`).
 15. **Chrome trên macOS ép cửa sổ tối thiểu 500px**: `--window-size=375` cho ra layout **500px**, ảnh "375px" là giả (dính 2/10/2026, chỉ lộ ra khi in `innerWidth`). Phải dùng CDP `Emulation.setDeviceMetricsOverride` + `captureBeyondViewport` — `scripts/chup_anh.py` làm sẵn (tự viết WebSocket client bằng thư viện chuẩn; không cần Playwright, không cần gói `ws`).

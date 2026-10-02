@@ -54,8 +54,9 @@ Người học được gọi là "em". Được phép trích lời học sinh, 
 
 ```
 cd /Users/MAC/Projects/thachlab && git pull origin main
-bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27
-# rồi deploy (site tĩnh đọc DB lúc build)
+bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27 --yes
+# BẮT BUỘC deploy ngay sau (site tĩnh đọc DB lúc build):
+git -C .claude/worktrees/deploy-tree checkout --detach origin/main && (cd .claude/worktrees/deploy-tree && bash scripts/deploy.sh)
 ```
 Script chỉ ghi cột `body_html` của mục lý thuyết (tự lint + sao lưu + hỏi xác nhận), không đụng đề Luyện tập,
 bài tập mẫu hay tiêu đề bài. Hoàn tác: `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`.

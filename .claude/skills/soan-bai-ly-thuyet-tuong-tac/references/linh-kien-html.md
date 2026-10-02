@@ -59,6 +59,36 @@ Dụng cụ phải có sẵn ở phòng thí nghiệm/nhà (lực kế, xe đẩ
 ## Trả bài (nhớ lại trước khi giải)
 Hộp `tl-box tl-box--think`, nhãn "🎤 Trả bài", bên trong 4–6 `<details class="tl-details">`, `<summary>` là câu hỏi, nội dung là đáp án chuẩn.
 
+## Ba linh kiện tự học (thêm 2/10/2026)
+
+**Tự giải thích trước khi xem** — trong mục Trả bài, `<summary>` kết bằng dòng nhỏ:
+```html
+<details class="tl-details"><summary>Phát biểu định luật… <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đáp án từ khoá…</p></details>
+```
+
+**Bài giải để trống bước** — đặt sau lời giải bài toán mẫu, trước "Thử sức". Dùng `.tl-steps`, bước trống ghi `…?` và đáp án trong `<details>`:
+```html
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, chỉ đổi $v = 2$ m/s.</p>
+<ol class="tl-steps">
+<li>$\lambda = v/f = 2/0{,}5 = 4$ m</li>
+<li><strong>Bước 2 (em điền):</strong> $\Delta\varphi = \;?$ — gợi ý: bao nhiêu bước sóng?</li>
+<li>Kết luận: …?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary><p>$\Delta\varphi = 2\pi d/\lambda = \dots$</p></details></div>
+```
+
+**Hiệu chuẩn tự tin** — một `<p>` radio thường đặt **ngay trước** `.tl-quiz` (không đặt bên trong, vì `check_quizzes.py` và CSS `:has()` đòi mọi input trong `.tl-quiz` phải đi với `.tl-opt`). `name` riêng, không `tl-ok/tl-no`:
+```html
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl8-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl8-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">… như thường …
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> …lỗi cụ thể… Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+```
+Chỉ dùng cho 2–3 quiz quan trọng (bẫy, bài toán mẫu). Radio này không có CSS riêng trong `globals.css`, trình duyệt vẽ mặc định — chấp nhận được.
+
 ## Bảng "đề → dữ liệu → kiến thức"
 ```html
 <div class="table-scroll"><table class="tl-table tl-table--data">
