@@ -56,3 +56,4 @@
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — script cap-nhat-ly-thuyet.sh; bài Giao thoa sóng L11 chờ đăng
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết tương tác: duyệt là đăng, không PR, ít token
+- [Khả năng đọc WCAG 2/10](project_thachlab_kha_nang_doc.md) — P0+P1/P2 đã vào main; chuẩn docs/UI.md, `npm run check:a11y`; treo: xem ReadingZone khi đăng nhập, text-violet theme sáng
