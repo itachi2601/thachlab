@@ -79,8 +79,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `content/thi-nghiem/` + ảnh xem thử `xem-thu/`) — **CHƯA ghi DB, chưa deploy**, chờ thầy duyệt
   (`bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` rồi deploy).
   Skill `soan-bai-ly-thuyet-tuong-tac` đã cập nhật: **bỏ vai "thầy" trong bài**, checklist 14 nét dạy học Trung Quốc
-  (`references/phuong-phap-day-tq.md`), thêm `scripts/build_preview.py` + `chup_anh.py` (xem thử bằng Chrome headless,
-  Mac không có Playwright) + `check_quizzes.py` (kiểm tự chấm không cần trình duyệt); đã sync Library plugin + `~/.codex`.
+  (`references/phuong-phap-day-tq.md`), thêm `scripts/build_preview.py` + `chup_anh.py` (xem thử **đúng 375 px** bằng Chrome qua CDP,
+  Mac không có Playwright) + cờ `--kiem-tran` soát tràn ngang/công thức phải cuộn + `check_quizzes.py` (kiểm tự chấm không cần trình duyệt); đã sync Library plugin + `~/.codex`.
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.

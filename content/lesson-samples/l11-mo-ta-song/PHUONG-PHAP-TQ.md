@@ -42,10 +42,13 @@ Người học được gọi là "em". Được phép trích lời học sinh, 
 ## Cách xem thử
 
 - `xem-thu/xem-thu.html` — mở bằng Chrome: bấm được đáp án, mở được ô "bấm xem", có nút **Mở tất cả đáp án**.
-- `xem-thu/sec-*.png` — ảnh từng mục ở bề ngang 375 px (điện thoại), đã mở sẵn đáp án đúng.
-- `xem-thu/mau-tra-loi-sai.png` — ảnh chụp trạng thái chọn đáp án sai (phản hồi đỏ).
-- `xem-thu/fig-*.png` — 4 hình SVG chụp riêng để soi nhãn.
+- `xem-thu/sec-*.webp` — ảnh từng mục ở **đúng 375 px** (điện thoại), đã mở sẵn đáp án đúng.
+- `xem-thu/mau-tra-loi-sai.webp` — ảnh chụp trạng thái chọn đáp án sai (phản hồi đỏ).
+- `xem-thu/fig-*.webp` — 4 hình SVG chụp riêng để soi nhãn.
+- `xem-thu/xem-thu-desktop.webp` — ảnh trang xem thử ở bề ngang máy tính.
 - `python3 check_quizzes.py theory.html` — kiểm logic tự chấm của cả 7 quiz (không cần trình duyệt).
+- `python3 chup_anh.py xem-thu --kiem-tran` — soát tràn ngang và công thức phải cuộn ở 375 px (dùng Chrome qua CDP;
+  Chrome trên Mac ép cửa sổ tối thiểu 500 px nên không dùng được `--window-size`).
 
 ## Khi thầy duyệt thì đăng
 

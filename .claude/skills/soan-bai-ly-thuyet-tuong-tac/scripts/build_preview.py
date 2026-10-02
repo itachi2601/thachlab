@@ -12,13 +12,14 @@ Sinh ra (mặc định trong <thư-mục-bài>/xem-thu/):
   sec-sai.html    — quiz đầu tiên với đáp án SAI được chọn (để chụp phản hồi đỏ)
   fig-<n>.html    — từng hình SVG
 
-CSS lấy đúng từ app/globals.css (khối hình vẽ + khối .tl-*), KaTeX lấy từ node_modules.
+CSS lấy đúng từ app/globals.css (khối .exam-content + KaTeX + hình vẽ + .tl-* + .lesson-page),
+KaTeX lấy từ node_modules; bọc trong .lesson-page để giống trang bài thật (katex-display không còn khung riêng).
 Sau bước này chụp ảnh bằng: python3 chup_anh.py <thư-mục-ra>
 """
 import pathlib, re, sys
 
 SKILL_SCRIPTS = pathlib.Path(__file__).resolve().parent
-CSS_MARK_A = "/* Hình vẽ SVG nội tuyến"
+CSS_MARK_A = "/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */"
 CSS_MARK_B = "/* ---------- Nội dung bài viết blog"
 CSS_MARK_C = "/* Bài lý thuyết tương tác"
 
@@ -133,7 +134,7 @@ def main(argv):
 
     def page(body, script=""):
         head = (f'<h1>{title}</h1><p class="sub">{sub}</p>' if title else "") + f'<span class="exam-content">{body}</span>'
-        html = BASE.format(katex=katex, css=css, body=f'<div class="wrap">{head}</div>')
+        html = BASE.format(katex=katex, css=css, body=f'<div class="lesson-page"><div class="wrap">{head}</div></div>')
         return html.replace("</html>", f"<script>{script}</script></html>") if script else html
 
     (out / "xem-thu.html").write_text(page(theory, BAR), encoding="utf8")

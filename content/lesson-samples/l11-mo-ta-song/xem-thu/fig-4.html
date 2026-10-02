@@ -7,6 +7,108 @@ body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-s
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
 h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
+   nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
+   vì .exam-content còn dùng ở khu quản trị/kết quả không có khung đó. */
+.exam-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.06);
+  padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  max-width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
+.exam-content img.eq {
+  display: inline-block;
+  /* chiều cao thật đặt inline theo kích thước gốc trong Word */
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 0 0.15em;
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+.exam-content img.figure {
+  display: block;
+  max-width: min(100%, 360px);
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 0.5rem;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */
 .exam-content figure.fig {
   max-width: min(100%, 420px);
@@ -319,7 +421,7 @@ html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="wrap"><h1>Bài 8. Mô tả sóng (Vật lí 11 — Chương 2: Sóng)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web. Bấm được đáp án và mở được ô “bấm xem”.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Hai loại đồ thị sóng: bên trái u theo thời gian (một bước là T), bên phải u theo không gian (một bước là λ)"><line x1="220" y1="10" x2="220" y2="244" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/><text x="117" y="20" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT điểm,</text><text x="117" y="36" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">theo thời gian t</text><line x1="30" y1="180" x2="210" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="30" y1="140" x2="30" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#f87171" stroke-width="2.4" points="30.0,180.0 31.0,178.2 32.0,176.4 33.0,174.6 34.0,172.8 35.0,171.1 36.0,169.4 37.0,167.8 38.0,166.2 39.0,164.7 40.0,163.3 41.0,161.9 42.0,160.7 43.0,159.5 44.0,158.4 45.0,157.5 46.0,156.6 47.0,155.9 48.0,155.3 49.0,154.8 50.0,154.4 51.0,154.1 52.0,154.0 53.0,154.0 54.0,154.1 55.0,154.4 56.0,154.8 57.0,155.3 58.0,155.9 59.0,156.6 60.0,157.5 61.0,158.4 62.0,159.5 63.0,160.7 64.0,161.9 65.0,163.3 66.0,164.7 67.0,166.2 68.0,167.8 69.0,169.4 70.0,171.1 71.0,172.8 72.0,174.6 73.0,176.4 74.0,178.2 75.0,180.0 76.0,181.8 77.0,183.6 78.0,185.4 79.0,187.2 80.0,188.9 81.0,190.6 82.0,192.2 83.0,193.8 84.0,195.3 85.0,196.7 86.0,198.1 87.0,199.3 88.0,200.5 89.0,201.6 90.0,202.5 91.0,203.4 92.0,204.1 93.0,204.7 94.0,205.2 95.0,205.6 96.0,205.9 97.0,206.0 98.0,206.0 99.0,205.9 100.0,205.6 101.0,205.2 102.0,204.7 103.0,204.1 104.0,203.4 105.0,202.5 106.0,201.6 107.0,200.5 108.0,199.3 109.0,198.1 110.0,196.7 111.0,195.3 112.0,193.8 113.0,192.2 114.0,190.6 115.0,188.9 116.0,187.2 117.0,185.4 118.0,183.6 119.0,181.8 120.0,180.0 121.0,178.2 122.0,176.4 123.0,174.6 124.0,172.8 125.0,171.1 126.0,169.4 127.0,167.8 128.0,166.2 129.0,164.7 130.0,163.3 131.0,161.9 132.0,160.7 133.0,159.5 134.0,158.4 135.0,157.5 136.0,156.6 137.0,155.9 138.0,155.3 139.0,154.8 140.0,154.4 141.0,154.1 142.0,154.0 143.0,154.0 144.0,154.1 145.0,154.4 146.0,154.8 147.0,155.3 148.0,155.9 149.0,156.6 150.0,157.5 151.0,158.4 152.0,159.5 153.0,160.7 154.0,161.9 155.0,163.3 156.0,164.7 157.0,166.2 158.0,167.8 159.0,169.4 160.0,171.1 161.0,172.8 162.0,174.6 163.0,176.4 164.0,178.2 165.0,180.0 166.0,181.8 167.0,183.6 168.0,185.4 169.0,187.2 170.0,188.9 171.0,190.6 172.0,192.2 173.0,193.8 174.0,195.3 175.0,196.7 176.0,198.1 177.0,199.3 178.0,200.5 179.0,201.6 180.0,202.5 181.0,203.4 182.0,204.1 183.0,204.7 184.0,205.2 185.0,205.6 186.0,205.9 187.0,206.0 188.0,206.0 189.0,205.9 190.0,205.6 191.0,205.2 192.0,204.7 193.0,204.1 194.0,203.4 195.0,202.5 196.0,201.6 197.0,200.5 198.0,199.3 199.0,198.1 200.0,196.7 201.0,195.3 202.0,193.8 203.0,192.2 204.0,190.6 205.0,188.9"/><line x1="52.5" y1="200" x2="52.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="142.5" y1="200" x2="142.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="52.5" y1="214" x2="142.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M59.5,210 L52.5,214 L59.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M135.5,210 L142.5,214 L135.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="97.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">T</text><text x="34" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (s)</text><text x="327" y="20" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT lúc,</text><text x="327" y="36" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">theo không gian x</text><line x1="240" y1="180" x2="420" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="240" y1="140" x2="240" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="240.0,180.0 241.0,178.2 242.0,176.4 243.0,174.6 244.0,172.8 245.0,171.1 246.0,169.4 247.0,167.8 248.0,166.2 249.0,164.7 250.0,163.3 251.0,161.9 252.0,160.7 253.0,159.5 254.0,158.4 255.0,157.5 256.0,156.6 257.0,155.9 258.0,155.3 259.0,154.8 260.0,154.4 261.0,154.1 262.0,154.0 263.0,154.0 264.0,154.1 265.0,154.4 266.0,154.8 267.0,155.3 268.0,155.9 269.0,156.6 270.0,157.5 271.0,158.4 272.0,159.5 273.0,160.7 274.0,161.9 275.0,163.3 276.0,164.7 277.0,166.2 278.0,167.8 279.0,169.4 280.0,171.1 281.0,172.8 282.0,174.6 283.0,176.4 284.0,178.2 285.0,180.0 286.0,181.8 287.0,183.6 288.0,185.4 289.0,187.2 290.0,188.9 291.0,190.6 292.0,192.2 293.0,193.8 294.0,195.3 295.0,196.7 296.0,198.1 297.0,199.3 298.0,200.5 299.0,201.6 300.0,202.5 301.0,203.4 302.0,204.1 303.0,204.7 304.0,205.2 305.0,205.6 306.0,205.9 307.0,206.0 308.0,206.0 309.0,205.9 310.0,205.6 311.0,205.2 312.0,204.7 313.0,204.1 314.0,203.4 315.0,202.5 316.0,201.6 317.0,200.5 318.0,199.3 319.0,198.1 320.0,196.7 321.0,195.3 322.0,193.8 323.0,192.2 324.0,190.6 325.0,188.9 326.0,187.2 327.0,185.4 328.0,183.6 329.0,181.8 330.0,180.0 331.0,178.2 332.0,176.4 333.0,174.6 334.0,172.8 335.0,171.1 336.0,169.4 337.0,167.8 338.0,166.2 339.0,164.7 340.0,163.3 341.0,161.9 342.0,160.7 343.0,159.5 344.0,158.4 345.0,157.5 346.0,156.6 347.0,155.9 348.0,155.3 349.0,154.8 350.0,154.4 351.0,154.1 352.0,154.0 353.0,154.0 354.0,154.1 355.0,154.4 356.0,154.8 357.0,155.3 358.0,155.9 359.0,156.6 360.0,157.5 361.0,158.4 362.0,159.5 363.0,160.7 364.0,161.9 365.0,163.3 366.0,164.7 367.0,166.2 368.0,167.8 369.0,169.4 370.0,171.1 371.0,172.8 372.0,174.6 373.0,176.4 374.0,178.2 375.0,180.0 376.0,181.8 377.0,183.6 378.0,185.4 379.0,187.2 380.0,188.9 381.0,190.6 382.0,192.2 383.0,193.8 384.0,195.3 385.0,196.7 386.0,198.1 387.0,199.3 388.0,200.5 389.0,201.6 390.0,202.5 391.0,203.4 392.0,204.1 393.0,204.7 394.0,205.2 395.0,205.6 396.0,205.9 397.0,206.0 398.0,206.0 399.0,205.9 400.0,205.6 401.0,205.2 402.0,204.7 403.0,204.1 404.0,203.4 405.0,202.5 406.0,201.6 407.0,200.5 408.0,199.3 409.0,198.1 410.0,196.7 411.0,195.3 412.0,193.8 413.0,192.2 414.0,190.6 415.0,188.9"/><line x1="262.5" y1="200" x2="262.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="352.5" y1="200" x2="352.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="262.5" y1="214" x2="352.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M269.5,210 L262.5,214 L269.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M345.5,210 L352.5,214 L345.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="307.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">λ</text><text x="244" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">x (cm)</text></svg><figcaption>Hình 4. Cùng một sóng hình sin nhưng khác trục hoành: đồ thị u–t (một điểm) có một bước là T; đồ thị u–x (một lúc) có một bước là λ.</figcaption></figure></span></div>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Hai loại đồ thị sóng: bên trái u theo thời gian (một bước là T), bên phải u theo không gian (một bước là λ)"><line x1="220" y1="10" x2="220" y2="244" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/><text x="117" y="20" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT điểm,</text><text x="117" y="36" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">theo thời gian t</text><line x1="30" y1="180" x2="210" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="30" y1="140" x2="30" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#f87171" stroke-width="2.4" points="30.0,180.0 31.0,178.2 32.0,176.4 33.0,174.6 34.0,172.8 35.0,171.1 36.0,169.4 37.0,167.8 38.0,166.2 39.0,164.7 40.0,163.3 41.0,161.9 42.0,160.7 43.0,159.5 44.0,158.4 45.0,157.5 46.0,156.6 47.0,155.9 48.0,155.3 49.0,154.8 50.0,154.4 51.0,154.1 52.0,154.0 53.0,154.0 54.0,154.1 55.0,154.4 56.0,154.8 57.0,155.3 58.0,155.9 59.0,156.6 60.0,157.5 61.0,158.4 62.0,159.5 63.0,160.7 64.0,161.9 65.0,163.3 66.0,164.7 67.0,166.2 68.0,167.8 69.0,169.4 70.0,171.1 71.0,172.8 72.0,174.6 73.0,176.4 74.0,178.2 75.0,180.0 76.0,181.8 77.0,183.6 78.0,185.4 79.0,187.2 80.0,188.9 81.0,190.6 82.0,192.2 83.0,193.8 84.0,195.3 85.0,196.7 86.0,198.1 87.0,199.3 88.0,200.5 89.0,201.6 90.0,202.5 91.0,203.4 92.0,204.1 93.0,204.7 94.0,205.2 95.0,205.6 96.0,205.9 97.0,206.0 98.0,206.0 99.0,205.9 100.0,205.6 101.0,205.2 102.0,204.7 103.0,204.1 104.0,203.4 105.0,202.5 106.0,201.6 107.0,200.5 108.0,199.3 109.0,198.1 110.0,196.7 111.0,195.3 112.0,193.8 113.0,192.2 114.0,190.6 115.0,188.9 116.0,187.2 117.0,185.4 118.0,183.6 119.0,181.8 120.0,180.0 121.0,178.2 122.0,176.4 123.0,174.6 124.0,172.8 125.0,171.1 126.0,169.4 127.0,167.8 128.0,166.2 129.0,164.7 130.0,163.3 131.0,161.9 132.0,160.7 133.0,159.5 134.0,158.4 135.0,157.5 136.0,156.6 137.0,155.9 138.0,155.3 139.0,154.8 140.0,154.4 141.0,154.1 142.0,154.0 143.0,154.0 144.0,154.1 145.0,154.4 146.0,154.8 147.0,155.3 148.0,155.9 149.0,156.6 150.0,157.5 151.0,158.4 152.0,159.5 153.0,160.7 154.0,161.9 155.0,163.3 156.0,164.7 157.0,166.2 158.0,167.8 159.0,169.4 160.0,171.1 161.0,172.8 162.0,174.6 163.0,176.4 164.0,178.2 165.0,180.0 166.0,181.8 167.0,183.6 168.0,185.4 169.0,187.2 170.0,188.9 171.0,190.6 172.0,192.2 173.0,193.8 174.0,195.3 175.0,196.7 176.0,198.1 177.0,199.3 178.0,200.5 179.0,201.6 180.0,202.5 181.0,203.4 182.0,204.1 183.0,204.7 184.0,205.2 185.0,205.6 186.0,205.9 187.0,206.0 188.0,206.0 189.0,205.9 190.0,205.6 191.0,205.2 192.0,204.7 193.0,204.1 194.0,203.4 195.0,202.5 196.0,201.6 197.0,200.5 198.0,199.3 199.0,198.1 200.0,196.7 201.0,195.3 202.0,193.8 203.0,192.2 204.0,190.6 205.0,188.9"/><line x1="52.5" y1="200" x2="52.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="142.5" y1="200" x2="142.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="52.5" y1="214" x2="142.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M59.5,210 L52.5,214 L59.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M135.5,210 L142.5,214 L135.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="97.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">T</text><text x="34" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (s)</text><text x="327" y="20" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT lúc,</text><text x="327" y="36" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">theo không gian x</text><line x1="240" y1="180" x2="420" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="240" y1="140" x2="240" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="240.0,180.0 241.0,178.2 242.0,176.4 243.0,174.6 244.0,172.8 245.0,171.1 246.0,169.4 247.0,167.8 248.0,166.2 249.0,164.7 250.0,163.3 251.0,161.9 252.0,160.7 253.0,159.5 254.0,158.4 255.0,157.5 256.0,156.6 257.0,155.9 258.0,155.3 259.0,154.8 260.0,154.4 261.0,154.1 262.0,154.0 263.0,154.0 264.0,154.1 265.0,154.4 266.0,154.8 267.0,155.3 268.0,155.9 269.0,156.6 270.0,157.5 271.0,158.4 272.0,159.5 273.0,160.7 274.0,161.9 275.0,163.3 276.0,164.7 277.0,166.2 278.0,167.8 279.0,169.4 280.0,171.1 281.0,172.8 282.0,174.6 283.0,176.4 284.0,178.2 285.0,180.0 286.0,181.8 287.0,183.6 288.0,185.4 289.0,187.2 290.0,188.9 291.0,190.6 292.0,192.2 293.0,193.8 294.0,195.3 295.0,196.7 296.0,198.1 297.0,199.3 298.0,200.5 299.0,201.6 300.0,202.5 301.0,203.4 302.0,204.1 303.0,204.7 304.0,205.2 305.0,205.6 306.0,205.9 307.0,206.0 308.0,206.0 309.0,205.9 310.0,205.6 311.0,205.2 312.0,204.7 313.0,204.1 314.0,203.4 315.0,202.5 316.0,201.6 317.0,200.5 318.0,199.3 319.0,198.1 320.0,196.7 321.0,195.3 322.0,193.8 323.0,192.2 324.0,190.6 325.0,188.9 326.0,187.2 327.0,185.4 328.0,183.6 329.0,181.8 330.0,180.0 331.0,178.2 332.0,176.4 333.0,174.6 334.0,172.8 335.0,171.1 336.0,169.4 337.0,167.8 338.0,166.2 339.0,164.7 340.0,163.3 341.0,161.9 342.0,160.7 343.0,159.5 344.0,158.4 345.0,157.5 346.0,156.6 347.0,155.9 348.0,155.3 349.0,154.8 350.0,154.4 351.0,154.1 352.0,154.0 353.0,154.0 354.0,154.1 355.0,154.4 356.0,154.8 357.0,155.3 358.0,155.9 359.0,156.6 360.0,157.5 361.0,158.4 362.0,159.5 363.0,160.7 364.0,161.9 365.0,163.3 366.0,164.7 367.0,166.2 368.0,167.8 369.0,169.4 370.0,171.1 371.0,172.8 372.0,174.6 373.0,176.4 374.0,178.2 375.0,180.0 376.0,181.8 377.0,183.6 378.0,185.4 379.0,187.2 380.0,188.9 381.0,190.6 382.0,192.2 383.0,193.8 384.0,195.3 385.0,196.7 386.0,198.1 387.0,199.3 388.0,200.5 389.0,201.6 390.0,202.5 391.0,203.4 392.0,204.1 393.0,204.7 394.0,205.2 395.0,205.6 396.0,205.9 397.0,206.0 398.0,206.0 399.0,205.9 400.0,205.6 401.0,205.2 402.0,204.7 403.0,204.1 404.0,203.4 405.0,202.5 406.0,201.6 407.0,200.5 408.0,199.3 409.0,198.1 410.0,196.7 411.0,195.3 412.0,193.8 413.0,192.2 414.0,190.6 415.0,188.9"/><line x1="262.5" y1="200" x2="262.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="352.5" y1="200" x2="352.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="262.5" y1="214" x2="352.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M269.5,210 L262.5,214 L269.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M345.5,210 L352.5,214 L345.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="307.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">λ</text><text x="244" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">x (cm)</text></svg><figcaption>Hình 4. Cùng một sóng hình sin nhưng khác trục hoành: đồ thị u–t (một điểm) có một bước là T; đồ thị u–x (một lúc) có một bước là λ.</figcaption></figure></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
