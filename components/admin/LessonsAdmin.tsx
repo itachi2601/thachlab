@@ -753,7 +753,7 @@ function ChapterLessonsEditor({
   useEffect(() => {
     const ids = lessons.map((l) => l.id);
     if (ids.length === 0) {
-      setCoverage(new Map());
+      Promise.resolve().then(() => setCoverage(new Map()));
       return;
     }
     fetchLessonOutcomeCoverage(ids).then(setCoverage).catch(() => undefined);
