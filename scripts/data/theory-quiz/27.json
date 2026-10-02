@@ -1,0 +1,386 @@
+{
+  "lesson_id": 27,
+  "lesson_title": "Bài 8. Mô tả sóng",
+  "item_id": 45,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Sóng cơ là gì?",
+      "explanation": "Theo bài, sóng cơ là dao động cơ lan truyền trong một môi trường.",
+      "options": [
+        "Dao động cơ lan truyền trong một môi trường",
+        "Chuyển động của các phần tử vật chất từ nguồn ra xa",
+        "Dao động của nguồn tại một điểm cố định",
+        "Sự lan truyền của vật chất trong chân không"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào về môi trường truyền sóng cơ là đúng?",
+      "explanation": "Bài nêu rõ sóng cơ không truyền được trong chân không.",
+      "options": [
+        "Sóng cơ không truyền được trong chân không",
+        "Sóng cơ chỉ truyền được trong chất khí",
+        "Sóng cơ truyền tốt nhất trong chân không",
+        "Sóng cơ chỉ truyền được trong chất rắn"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét sự tạo thành sóng trên mặt nước. Các phát biểu sau đúng hay sai?",
+      "explanation": "Miếng xốp chỉ dao động tại chỗ; chỉ pha dao động lan truyền, vật chất không bị cuốn ra xa.",
+      "statements": [
+        {
+          "text": "Sóng hình thành nhờ nguồn dao động bên ngoài và lực liên kết giữa các phần tử môi trường.",
+          "answer": true
+        },
+        {
+          "text": "Miếng xốp trên mặt nước dao động quanh một vị trí cân bằng xác định khi có sóng truyền qua.",
+          "answer": true
+        },
+        {
+          "text": "Khi sóng truyền đi, các phần tử vật chất bị cuốn theo sóng ra xa nguồn.",
+          "answer": false
+        },
+        {
+          "text": "Khi sóng truyền đi, chỉ có pha dao động được lan truyền.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Theo định nghĩa thứ hai, bước sóng là khoảng cách giữa hai điểm nào trên cùng phương truyền sóng?",
+      "explanation": "Bước sóng là khoảng cách giữa hai điểm dao động cùng pha gần nhau nhất trên cùng phương truyền sóng.",
+      "options": [
+        "Dao động cùng pha và gần nhau nhất",
+        "Dao động ngược pha và gần nhau nhất",
+        "Dao động vuông pha và gần nhau nhất",
+        "Dao động cùng pha và xa nhau nhất"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Biên độ sóng $A$ là gì?",
+      "explanation": "Biên độ sóng là độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng.",
+      "options": [
+        "Độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng",
+        "Quãng đường sóng truyền được trong một chu kì",
+        "Số dao động của phần tử sóng trong một giây",
+        "Khoảng cách giữa hai ngọn sóng liên tiếp"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Hai điểm gần nhau nhất trên phương truyền sóng mà dao động ngược pha cách nhau $d=k\\lambda$. Tìm $k$ (viết dạng số thập phân).",
+      "explanation": "Hai điểm gần nhau nhất dao động ngược pha cách nhau $d=\\dfrac{\\lambda}{2}$, nên $k=0{,}5$.",
+      "answer": "0,5"
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Khi sóng truyền từ môi trường này sang môi trường khác, đại lượng nào sau đây không thay đổi?",
+      "explanation": "Chu kì và tần số không đổi; tốc độ và bước sóng thay đổi theo môi trường.",
+      "options": [
+        "Tần số sóng",
+        "Tốc độ truyền sóng",
+        "Bước sóng",
+        "Tốc độ truyền sóng và bước sóng"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Xét tốc độ truyền sóng $v$. Các phát biểu sau đúng hay sai?",
+      "explanation": "Tốc độ truyền sóng khác tốc độ dao động của phần tử sóng.",
+      "statements": [
+        {
+          "text": "Trong môi trường đồng chất, tốc độ truyền sóng không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ truyền sóng phụ thuộc nhiệt độ, tính đàn hồi và mật độ phân tử của môi trường.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ truyền sóng luôn bằng tốc độ dao động của phần tử sóng.",
+          "answer": false
+        },
+        {
+          "text": "Tốc độ truyền sóng là tốc độ lan truyền dao động trong không gian.",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Tốc độ truyền sóng phụ thuộc vào bao nhiêu yếu tố (nhiệt độ, tính đàn hồi của môi trường, mật độ phân tử)?",
+      "explanation": "Bài nêu tốc độ truyền sóng phụ thuộc vào 3 yếu tố: nhiệt độ, đặc tính đàn hồi và mật độ phân tử.",
+      "answer": "3"
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Cường độ sóng là gì?",
+      "explanation": "Cường độ sóng là năng lượng truyền qua đơn vị diện tích vuông góc phương truyền trong đơn vị thời gian.",
+      "options": [
+        "Năng lượng sóng truyền qua một đơn vị diện tích vuông góc với phương truyền trong một đơn vị thời gian",
+        "Năng lượng sóng truyền qua một đơn vị diện tích bất kì trong một chu kì",
+        "Quãng đường sóng truyền trong một đơn vị thời gian",
+        "Độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Công thức nào đúng cho bước sóng $\\lambda$ theo tốc độ $v$, chu kì $T$ và tần số $f$?",
+      "explanation": "Bước sóng là quãng đường truyền trong một chu kì: $\\lambda=vT=\\dfrac{v}{f}$.",
+      "options": [
+        "$\\lambda=vT=\\dfrac{v}{f}$",
+        "$\\lambda=vf=\\dfrac{v}{T}$",
+        "$\\lambda=\\dfrac{T}{v}=\\dfrac{f}{v}$",
+        "$\\lambda=\\dfrac{vT}{2}=\\dfrac{v}{2f}$"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Đơn vị của cường độ sóng $I$ trong hệ SI là gì?",
+      "explanation": "$I=\\dfrac{P}{S}$ có đơn vị W/m$^2$.",
+      "options": [
+        "W/m$^2$",
+        "W/m",
+        "J/m$^2$",
+        "W$\\cdot$m$^2$"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Công thức tính cường độ sóng $I$ theo công suất $P$ và diện tích $S$ vuông góc phương truyền là?",
+      "explanation": "Theo bài $I=\\dfrac{E}{S\\Delta t}=\\dfrac{P}{S}$.",
+      "options": [
+        "$I=\\dfrac{P}{S}$",
+        "$I=PS$",
+        "$I=\\dfrac{S}{P}$",
+        "$I=\\dfrac{P}{S^2}$"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Từ $v=\\lambda f$, tần số sóng được tính bằng?",
+      "explanation": "Chia hai vế của $v=\\lambda f$ cho $\\lambda$ được $f=\\dfrac{v}{\\lambda}$.",
+      "options": [
+        "$f=\\dfrac{v}{\\lambda}$",
+        "$f=v\\lambda$",
+        "$f=\\dfrac{\\lambda}{v}$",
+        "$f=\\dfrac{v}{\\lambda^2}$"
+      ],
+      "answer": 0
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Xét liên hệ giữa độ lệch pha và khoảng cách $d$ giữa hai điểm trên phương truyền sóng. Các phát biểu sau đúng hay sai?",
+      "explanation": "Giữa $n$ ngọn sóng liên tiếp dao động cùng pha thì $d=(n-1)\\lambda$.",
+      "statements": [
+        {
+          "text": "Hai phần tử cách nhau $d=\\lambda$ dao động cùng pha.",
+          "answer": true
+        },
+        {
+          "text": "Hai điểm gần nhau nhất dao động ngược pha cách nhau $d=\\dfrac{\\lambda}{2}$.",
+          "answer": true
+        },
+        {
+          "text": "Hai điểm gần nhau nhất dao động vuông pha cách nhau $d=\\dfrac{\\lambda}{4}$.",
+          "answer": true
+        },
+        {
+          "text": "Giữa $n$ ngọn sóng liên tiếp, khoảng cách là $d=n\\lambda$.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Một sóng truyền từ môi trường này sang môi trường khác. Các phát biểu sau đúng hay sai?",
+      "explanation": "$\\lambda=vT$ với $T$ không đổi nên $v$ đổi thì $\\lambda$ đổi.",
+      "statements": [
+        {
+          "text": "Tần số sóng không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Chu kì sóng không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ truyền sóng thay đổi nên bước sóng thay đổi.",
+          "answer": true
+        },
+        {
+          "text": "Bước sóng không đổi vì $\\lambda=\\dfrac{f}{v}$.",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Sóng có tốc độ $v=3$ m/s và tần số $f=2$ Hz. Tìm bước sóng $\\lambda$ (đơn vị m).",
+      "explanation": "$\\lambda=\\dfrac{v}{f}=\\dfrac{3}{2}=1{,}5$ m.",
+      "answer": "1,5"
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Sóng có bước sóng $\\lambda=2$ cm. Khoảng cách giữa ngọn sóng thứ nhất và ngọn sóng thứ 5 (5 ngọn liên tiếp) là bao nhiêu cm?",
+      "explanation": "$d=(n-1)\\lambda=4\\cdot2=8$ cm.",
+      "answer": "8"
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Sóng có bước sóng $\\lambda=0{,}5$ m và tần số $f=10$ Hz. Tìm tốc độ truyền sóng (đơn vị m/s).",
+      "explanation": "$v=\\lambda f=0{,}5\\cdot10=5$ m/s.",
+      "answer": "5"
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 7,
+      "question": "Một sóng có công suất $P=20$ W truyền qua diện tích $S=4$ m$^2$ vuông góc phương truyền. Tìm cường độ sóng (đơn vị W/m$^2$).",
+      "explanation": "$I=\\dfrac{P}{S}=\\dfrac{20}{4}=5$ W/m$^2$.",
+      "answer": "5"
+    }
+  ]
+}

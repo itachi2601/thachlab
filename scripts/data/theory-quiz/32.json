@@ -1,0 +1,386 @@
+{
+  "lesson_id": 32,
+  "lesson_title": "Bài 13. Sóng dừng",
+  "item_id": 163,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Sóng dừng là sóng tổng hợp tạo thành khi nào?",
+      "options": [
+        "Hai sóng cùng biên độ, cùng bước sóng truyền ngược chiều nhau giao thoa với nhau",
+        "Hai sóng cùng chiều truyền, có cùng tần số",
+        "Một sóng truyền qua hai môi trường khác nhau",
+        "Hai sóng khác bước sóng truyền cùng chiều"
+      ],
+      "answer": 0,
+      "explanation": "Theo bài, sóng dừng là sóng tổng hợp của hai sóng cùng biên độ, cùng bước sóng truyền theo hai hướng ngược nhau."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Khi phản xạ trên vật cản cố định, sóng phản xạ so với sóng tới tại điểm phản xạ có đặc điểm nào?",
+      "options": [
+        "Cùng pha",
+        "Ngược pha",
+        "Vuông pha",
+        "Khác tần số"
+      ],
+      "answer": 1,
+      "explanation": "Phản xạ trên vật cản cố định: sóng phản xạ cùng tần số, cùng bước sóng nhưng ngược pha với sóng tới."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nút sóng là những điểm mà hai sóng thành phần",
+      "options": [
+        "đồng pha nhau, biên độ dao động cực đại",
+        "ngược pha nhau, không dao động",
+        "vuông pha nhau, dao động với biên độ $A$",
+        "đồng pha nhau, đứng yên"
+      ],
+      "answer": 1,
+      "explanation": "Điểm mà hai sóng thành phần ngược pha thì không dao động (biên độ 0), gọi là nút sóng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong sóng dừng, đầu tự do của dây luôn là",
+      "options": [
+        "nút sóng",
+        "bụng sóng",
+        "điểm có biên độ bằng $A$",
+        "điểm có biên độ bằng $\\dfrac{A}{2}$"
+      ],
+      "answer": 1,
+      "explanation": "Đầu cố định luôn là nút sóng, còn đầu tự do luôn là bụng sóng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét sóng dừng trên dây đàn hồi, bước sóng $\\lambda$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khoảng cách giữa hai nút liên tiếp bằng $\\dfrac{\\lambda}{2}$.",
+          "answer": true
+        },
+        {
+          "text": "Khoảng cách giữa hai bụng liên tiếp bằng $\\lambda$.",
+          "answer": false
+        },
+        {
+          "text": "Khoảng cách giữa một nút và một bụng liền kề bằng $\\dfrac{\\lambda}{4}$.",
+          "answer": true
+        },
+        {
+          "text": "Biên độ của bụng sóng bằng $2A$ với $A$ là biên độ sóng tới.",
+          "answer": true
+        }
+      ],
+      "explanation": "Hai nút (hoặc hai bụng) liên tiếp cách $\\lambda/2$, nút và bụng liền kề cách $\\lambda/4$; bụng có biên độ $2A$."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Về sự phản xạ sóng và đầu dây, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Phản xạ trên vật cản cố định: sóng phản xạ ngược pha với sóng tới.",
+          "answer": true
+        },
+        {
+          "text": "Phản xạ trên vật cản tự do: sóng phản xạ ngược pha với sóng tới.",
+          "answer": false
+        },
+        {
+          "text": "Sóng phản xạ có cùng tần số và cùng bước sóng với sóng tới.",
+          "answer": true
+        },
+        {
+          "text": "Đầu cố định của dây là bụng sóng.",
+          "answer": false
+        }
+      ],
+      "explanation": "Vật cản cố định cho sóng phản xạ ngược pha, vật cản tự do cho sóng phản xạ cùng pha; đầu cố định là nút."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Các điểm trên dây có sóng dừng dao động như thế nào? Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Các điểm trong cùng một bó sóng dao động cùng pha.",
+          "answer": true
+        },
+        {
+          "text": "Hai bó sóng kề nhau dao động ngược pha nhau.",
+          "answer": true
+        },
+        {
+          "text": "Mọi điểm trên dây đều dao động với cùng biên độ.",
+          "answer": false
+        },
+        {
+          "text": "Bề rộng của bụng sóng bằng $4A$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Cùng bó dao động cùng pha, hai bó kề nhau ngược pha; biên độ các điểm khác nhau; bề rộng bụng bằng $4A$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Sóng tới có biên độ $A=2\\ \\text{cm}$ tạo sóng dừng trên dây. Biên độ dao động của một điểm nút là bao nhiêu cm?",
+      "answer": "0",
+      "explanation": "Điểm nút không dao động nên biên độ bằng 0."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Ứng dụng của sóng dừng trên dây cho phép xác định đại lượng nào sau đây (từ chiều dài dây, số bó sóng và tần số)?",
+      "options": [
+        "Khối lượng của dây",
+        "Tốc độ truyền sóng trên dây",
+        "Nhiệt độ của dây",
+        "Lực ma sát tác dụng lên dây"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu ứng dụng: xác định tốc độ truyền sóng trên dây từ chiều dài dây, số bó sóng và tần số."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Ở đàn ghi-ta (hai đầu dây cố định), khi bấm phím làm thay đổi chiều dài dây thì thay đổi",
+      "options": [
+        "độ cao của âm",
+        "tốc độ truyền âm trong không khí",
+        "màu sắc của dây",
+        "số đầu cố định của dây"
+      ],
+      "answer": 0,
+      "explanation": "Thay đổi chiều dài dây (bấm phím) làm thay đổi độ cao của âm phát ra."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Điều kiện về chiều dài $l$ của dây có hai đầu cố định để có sóng dừng là",
+      "options": [
+        "$l=k\\dfrac{\\lambda}{2}$ với $k\\in \\mathbb{N}^*$",
+        "$l=(2k+1)\\dfrac{\\lambda}{4}$ với $k\\in \\mathbb{N}$",
+        "$l=k\\lambda$ với $k\\in \\mathbb{N}^*$",
+        "$l=k\\dfrac{\\lambda}{4}$ với $k\\in \\mathbb{N}^*$"
+      ],
+      "answer": 0,
+      "explanation": "Hai đầu cố định đều là nút nên chiều dài dây bằng số nguyên lần nửa bước sóng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Điều kiện về chiều dài $l$ của dây có một đầu cố định, một đầu tự do để có sóng dừng là",
+      "options": [
+        "$l=k\\dfrac{\\lambda}{2}$ với $k\\in \\mathbb{N}^*$",
+        "$l=(2k+1)\\dfrac{\\lambda}{2}$ với $k\\in \\mathbb{N}$",
+        "$l=(2k+1)\\dfrac{\\lambda}{4}$ với $k\\in \\mathbb{N}$",
+        "$l=k\\lambda$ với $k\\in \\mathbb{N}$"
+      ],
+      "answer": 2,
+      "explanation": "Một nút một bụng: chiều dài dây bằng số lẻ lần một phần tư bước sóng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Điểm M trên dây có sóng dừng cách nút gần nhất một đoạn $x$; sóng tới có biên độ $A$. Biên độ của M là",
+      "options": [
+        "$2A\\left|\\sin\\left(2\\pi\\dfrac{x}{\\lambda}\\right)\\right|$",
+        "$2A\\left|\\cos\\left(2\\pi\\dfrac{x}{\\lambda}\\right)\\right|$",
+        "$A\\left|\\sin\\left(2\\pi\\dfrac{x}{\\lambda}\\right)\\right|$",
+        "$2A\\left|\\sin\\left(\\pi\\dfrac{x}{\\lambda}\\right)\\right|$"
+      ],
+      "answer": 0,
+      "explanation": "Với $x$ tính từ nút gần nhất thì $A_M=2A|\\sin(2\\pi x/\\lambda)|$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Tần số cơ bản của sóng dừng trên dây hai đầu cố định, chiều dài $l$, tốc độ truyền sóng $v$ là",
+      "options": [
+        "$f_0=\\dfrac{v}{2l}$",
+        "$f_0=\\dfrac{v}{4l}$",
+        "$f_0=\\dfrac{2v}{l}$",
+        "$f_0=\\dfrac{l}{2v}$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $l=\\dfrac{\\lambda}{2}$ và $\\lambda=\\dfrac{v}{f}$ suy ra $f_0=\\dfrac{v}{2l}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về tần số sóng dừng trên dây, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Dây hai đầu cố định: các tần số là $f_0, 2f_0, 3f_0,\\ldots$ với $f_0=\\dfrac{v}{2l}$.",
+          "answer": true
+        },
+        {
+          "text": "Dây một đầu cố định, một đầu tự do: các tần số là $f_0, 2f_0, 3f_0,\\ldots$",
+          "answer": false
+        },
+        {
+          "text": "Dây một đầu cố định, một đầu tự do: $f_0=\\dfrac{v}{4l}$.",
+          "answer": true
+        },
+        {
+          "text": "Dây hai đầu cố định có $k$ bó sóng thì có $k+1$ nút.",
+          "answer": true
+        }
+      ],
+      "explanation": "Hai đầu cố định: số nguyên lần $f_0=v/2l$; một đầu tự do: số lẻ lần $f_0=v/4l$; hai đầu cố định có $k+1$ nút."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Dây hai đầu cố định dài $l=0{,}6\\ \\text{m}$ có sóng dừng với bước sóng $\\lambda=0{,}4\\ \\text{m}$. Số bó sóng trên dây là bao nhiêu?",
+      "answer": "3",
+      "explanation": "$l=k\\dfrac{\\lambda}{2}$ nên $k=\\dfrac{2l}{\\lambda}=\\dfrac{1{,}2}{0{,}4}=3$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Sóng dừng trên dây hai đầu cố định có 5 bụng sóng. Số nút sóng trên dây (kể cả hai đầu) là bao nhiêu?",
+      "answer": "6",
+      "explanation": "Hai đầu cố định: số bụng $=k=5$ nên số nút $=k+1=6$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "cong_thuc",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Sóng dừng trên dây một đầu cố định, một đầu tự do có 4 nút sóng. Số bụng sóng trên dây là bao nhiêu?",
+      "answer": "4",
+      "explanation": "Một đầu cố định, một đầu tự do: số bụng bằng số nút $=k+1$ nên có 4 bụng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Dây hai đầu cố định dài $0{,}5\\ \\text{m}$, tốc độ truyền sóng $20\\ \\text{m/s}$. Tần số cơ bản $f_0$ là bao nhiêu Hz?",
+      "answer": "20",
+      "explanation": "$f_0=\\dfrac{v}{2l}=\\dfrac{20}{2\\cdot 0{,}5}=20$ Hz."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Sóng tới có biên độ $A=1{,}5\\ \\text{cm}$ tạo sóng dừng. Bề rộng của bụng sóng $4A$ bằng bao nhiêu cm?",
+      "answer": "6",
+      "explanation": "Bề rộng bụng sóng bằng $4A=4\\cdot 1{,}5=6$ cm."
+    }
+  ]
+}

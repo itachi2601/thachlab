@@ -1,0 +1,373 @@
+{
+  "lesson_id": 40,
+  "lesson_title": "Bài 21. Tụ điện",
+  "item_id": 201,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 10
+    },
+    "removed": [
+      {
+        "question": "Khi ngắt tụ điện đã tích điện ra khỏi nguồn thì đại lượng nào được coi là không đổi?",
+        "reason": "Mơ hồ: ngoài Q, các phương án E (và W) cũng có thể coi là không đổi khi ngắt nguồn mà không thay đổi cấu tạo tụ; bài chỉ nêu Q = const."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Tụ điện là một hệ gồm",
+      "options": [
+        "hai vật dẫn đặt gần nhau, ngăn cách bằng một lớp điện môi",
+        "hai vật cách điện đặt gần nhau, ngăn cách bằng lớp kim loại",
+        "hai vật dẫn tiếp xúc trực tiếp với nhau",
+        "một vật dẫn duy nhất đặt trong chân không"
+      ],
+      "answer": 0,
+      "explanation": "Theo bài, tụ điện gồm hai vật dẫn đặt gần nhau và ngăn cách bằng lớp điện môi (chất cách điện)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Khi nối hai bản của tụ điện với hai cực của nguồn điện thì",
+      "options": [
+        "bản nối cực dương tích điện dương, bản nối cực âm tích điện âm",
+        "cả hai bản đều tích điện dương",
+        "cả hai bản đều tích điện âm",
+        "bản nối cực dương tích điện âm, bản nối cực âm tích điện dương"
+      ],
+      "answer": 0,
+      "explanation": "Bản nối với cực dương tích điện dương, bản nối với cực âm tích điện âm."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Điện dung của một tụ điện chỉ phụ thuộc vào",
+      "options": [
+        "cấu tạo của tụ (hình dạng, kích thước, lớp điện môi)",
+        "hiệu điện thế đặt vào hai bản tụ",
+        "điện tích mà tụ đang tích",
+        "cả hiệu điện thế lẫn điện tích của tụ"
+      ],
+      "answer": 0,
+      "explanation": "Điện dung chỉ phụ thuộc cấu tạo của tụ, không phụ thuộc hiệu điện thế hay điện tích."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Fara (F) là điện dung của một tụ điện mà nếu đặt giữa hai bản của nó",
+      "options": [
+        "hiệu điện thế 1 V thì tích được điện tích 1 C",
+        "hiệu điện thế 1 C thì tích được điện tích 1 V",
+        "hiệu điện thế 1 V thì tích được năng lượng 1 J",
+        "điện tích 1 C thì hiệu điện thế giữa hai bản là 1 J"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa: đặt 1 V vào hai bản thì tụ tích được 1 C ứng với điện dung 1 F."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Tụ điện không cho dòng điện một chiều đi qua vì",
+      "options": [
+        "giữa hai bản tụ là môi trường cách điện nên không có hạt tải điện đi qua được",
+        "hai bản tụ luôn mang điện cùng dấu",
+        "tụ điện có điện dung quá nhỏ",
+        "tụ điện chỉ chứa điện tích dương"
+      ],
+      "answer": 0,
+      "explanation": "Ở giữa hai bản là môi trường cách điện nên không có hạt tải điện di chuyển qua."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Xét việc ghép các tụ điện (ban đầu chưa tích điện). Các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Ghép nối tiếp thì các tụ có cùng điện tích.",
+          "answer": true
+        },
+        {
+          "text": "Ghép song song thì các tụ có cùng hiệu điện thế.",
+          "answer": true
+        },
+        {
+          "text": "Điện dung bộ tụ ghép nối tiếp nhỏ hơn điện dung của mỗi tụ thành phần.",
+          "answer": true
+        },
+        {
+          "text": "Hiệu điện thế tối đa đặt vào bộ tụ ghép song song bằng giá trị lớn nhất trong các tụ thành phần.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bộ song song bị giới hạn bởi hiệu điện thế giới hạn nhỏ nhất của các tụ, không phải lớn nhất."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Xét tụ điện phẳng có hằng số điện môi ε, diện tích đối diện S, khoảng cách hai bản d. Các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Điện dung tỉ lệ thuận với diện tích đối diện S.",
+          "answer": true
+        },
+        {
+          "text": "Điện dung tỉ lệ nghịch với khoảng cách d giữa hai bản.",
+          "answer": true
+        },
+        {
+          "text": "Tăng diện tích mỗi bản nhưng phần đối diện S không đổi thì điện dung tăng.",
+          "answer": false
+        },
+        {
+          "text": "Với không khí, hằng số điện môi ε = 1.",
+          "answer": true
+        }
+      ],
+      "explanation": "Điện dung phụ thuộc phần diện tích đối diện S; nếu S không đổi thì C không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về điện dung của tụ điện, các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Điện dung đặc trưng cho khả năng tích điện của tụ.",
+          "answer": true
+        },
+        {
+          "text": "Điện dung được tính bằng tỉ số giữa điện tích Q và hiệu điện thế U của tụ.",
+          "answer": true
+        },
+        {
+          "text": "Nếu tăng hiệu điện thế đặt vào thì điện dung của tụ tăng theo.",
+          "answer": false
+        },
+        {
+          "text": "Trên vỏ tụ thường ghi điện dung và hiệu điện thế tối đa được phép dùng.",
+          "answer": true
+        }
+      ],
+      "explanation": "C = Q/U chỉ là cách tính; điện dung không phụ thuộc U hay Q mà chỉ phụ thuộc cấu tạo."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hằng số điện môi $\\varepsilon$ của không khí (theo bài) bằng bao nhiêu?",
+      "answer": "1",
+      "explanation": "Bài nêu không khí: ε = 1."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Điện dung của tụ điện phẳng được tính bằng công thức nào?",
+      "options": [
+        "$C=\\dfrac{\\varepsilon S}{9.10^{9}.4\\pi d}$",
+        "$C=\\dfrac{\\varepsilon d}{9.10^{9}.4\\pi S}$",
+        "$C=\\dfrac{9.10^{9}.4\\pi d}{\\varepsilon S}$",
+        "$C=\\dfrac{S}{9.10^{9}.4\\pi \\varepsilon d}$"
+      ],
+      "answer": 0,
+      "explanation": "Theo bài, C tỉ lệ thuận với ε và S, tỉ lệ nghịch với d."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Năng lượng của tụ điện",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Năng lượng điện trường của tụ điện KHÔNG được tính bằng biểu thức nào sau đây?",
+      "options": [
+        "$W=\\dfrac{1}{2}Q^{2}C$",
+        "$W=\\dfrac{1}{2}QU$",
+        "$W=\\dfrac{1}{2}\\dfrac{Q^{2}}{C}$",
+        "$W=\\dfrac{1}{2}CU^{2}$"
+      ],
+      "answer": 0,
+      "explanation": "Công thức đúng là W = ½QU = ½Q²/C = ½CU²; không có ½Q²C."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Công thức tính điện dung của bộ hai tụ $C_1$, $C_2$ ghép nối tiếp là",
+      "options": [
+        "$\\dfrac{1}{C_b}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}$",
+        "$C_b=C_1+C_2$",
+        "$C_b=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}$",
+        "$\\dfrac{1}{C_b}=C_1+C_2$"
+      ],
+      "answer": 0,
+      "explanation": "Ghép nối tiếp: 1/Cb = 1/C1 + 1/C2; ghép song song mới cộng trực tiếp."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Điện trường giữa hai bản tụ có $E=\\dfrac{U}{d}$ và điện môi chịu được điện trường tối đa $E_{\\max}$. Hiệu điện thế tối đa đặt vào tụ là",
+      "options": [
+        "$U_{\\max}=E_{\\max}.d$",
+        "$U_{\\max}=\\dfrac{E_{\\max}}{d}$",
+        "$U_{\\max}=\\dfrac{d}{E_{\\max}}$",
+        "$U_{\\max}=E_{\\max}.d^{2}$"
+      ],
+      "answer": 0,
+      "explanation": "Từ E = U/d suy ra U = E·d nên Umax = Emax·d."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Năng lượng của tụ điện",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Về năng lượng điện trường của tụ điện, các biểu thức sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$W=\\dfrac{1}{2}QU$",
+          "answer": true
+        },
+        {
+          "text": "$W=\\dfrac{1}{2}CU^{2}$",
+          "answer": true
+        },
+        {
+          "text": "$W=\\dfrac{1}{2}\\dfrac{Q^{2}}{C}$",
+          "answer": true
+        },
+        {
+          "text": "$W=QU$",
+          "answer": false
+        }
+      ],
+      "explanation": "Công thức đúng đều có hệ số ½; W = QU thiếu hệ số ½."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tụ điện có điện dung $5\\,\\mu\\mathrm{F}$ đặt vào hiệu điện thế $4\\,\\mathrm{V}$. Điện tích của tụ bằng bao nhiêu $\\mu\\mathrm{C}$?",
+      "answer": "20",
+      "explanation": "Q = CU = 5 μF × 4 V = 20 μC."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "$1\\,\\mu\\mathrm{F}=10^{-x}\\,\\mathrm{F}$. Tìm $x$.",
+      "answer": "6",
+      "explanation": "Theo bảng ước số: 1 μF = 1,0.10^-6 F."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Ghép nối tiếp hai tụ có điện dung $6\\,\\mu\\mathrm{F}$ và $3\\,\\mu\\mathrm{F}$. Điện dung bộ tụ bằng bao nhiêu $\\mu\\mathrm{F}$?",
+      "answer": "2",
+      "explanation": "1/Cb = 1/6 + 1/3 = 1/2 nên Cb = 2 μF."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Ghép song song hai tụ có điện dung $2\\,\\mu\\mathrm{F}$ và $3\\,\\mu\\mathrm{F}$. Điện dung bộ tụ bằng bao nhiêu $\\mu\\mathrm{F}$?",
+      "answer": "5",
+      "explanation": "Ghép song song: Cb = C1 + C2 = 5 μF."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện dung, ghép tụ nối tiếp và song song",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Điện môi giữa hai bản tụ chịu được điện trường tối đa $2.10^{6}\\,\\mathrm{V/m}$, khoảng cách hai bản $d=2\\,\\mathrm{mm}$. Hiệu điện thế tối đa đặt vào tụ bằng bao nhiêu V?",
+      "answer": "4000",
+      "explanation": "Umax = Emax·d = 2.10^6 × 2.10^-3 = 4000 V."
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+ "lesson_id": 22,
+ "lesson_title": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+ "item_id": 134,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Vận tốc tức thời của vật dao động điều hoà là:",
+   "options": [
+    "đạo hàm bậc nhất của li độ theo thời gian",
+    "đạo hàm bậc hai của li độ theo thời gian",
+    "nguyên hàm của li độ theo thời gian",
+    "tích của li độ và tần số góc"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu vận tốc tức thời là đạo hàm bậc nhất của li độ $x$ theo thời gian."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Tốc độ của vật dao động điều hoà đạt giá trị cực đại khi vật:",
+   "options": [
+    "ở vị trí biên",
+    "qua vị trí cân bằng",
+    "ở vị trí có li độ $\\frac{A}{2}$",
+    "ở vị trí có gia tốc cực đại"
+   ],
+   "answer": 1,
+   "explanation": "Tốc độ cực đại $|v|_{max}=A\\omega$ khi vật qua vị trí cân bằng; ở biên tốc độ bằng 0."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Độ lớn gia tốc của vật dao động điều hoà đạt cực đại khi vật:",
+   "options": [
+    "qua vị trí cân bằng",
+    "ở vị trí có tốc độ cực đại",
+    "ở vị trí biên",
+    "ở vị trí có li độ bằng 0"
+   ],
+   "answer": 2,
+   "explanation": "$|a|_{max}=\\omega^{2}A$ khi vật ở vị trí biên (li độ $\\pm A$)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Quan hệ pha giữa x, v, a",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong dao động điều hoà, vận tốc so với li độ:",
+   "options": [
+    "trễ pha $\\frac{\\pi}{2}$",
+    "cùng pha",
+    "ngược pha",
+    "sớm pha $\\frac{\\pi}{2}$"
+   ],
+   "answer": 3,
+   "explanation": "Vận tốc biến thiên điều hoà cùng tần số nhưng sớm pha $\\frac{\\pi}{2}$ so với li độ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật dao động điều hoà chuyển động nhanh dần khi vật đi:",
+   "options": [
+    "từ biên về vị trí cân bằng",
+    "từ vị trí cân bằng ra biên",
+    "từ biên âm sang biên dương",
+    "từ biên dương sang biên âm qua mọi vị trí"
+   ],
+   "answer": 0,
+   "explanation": "Từ biên về vị trí cân bằng thì $\\vec v$ và $\\vec a$ cùng chiều nên vật chuyển động nhanh dần."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Quan hệ pha giữa x, v, a",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Xét quan hệ pha giữa li độ $x$, vận tốc $v$ và gia tốc $a$ của dao động điều hoà. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$x$ và $v$ vuông pha.",
+     "answer": true
+    },
+    {
+     "text": "$x$ và $a$ ngược pha.",
+     "answer": true
+    },
+    {
+     "text": "$v$ và $a$ cùng pha.",
+     "answer": false
+    },
+    {
+     "text": "$a$ trễ pha $\\frac{\\pi}{2}$ so với $v$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$x$–$v$ vuông pha, $v$–$a$ vuông pha ($a$ sớm pha $\\frac{\\pi}{2}$ so với $v$), $x$–$a$ ngược pha."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về vận tốc và gia tốc của vật dao động điều hoà, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Ở vị trí biên vận tốc bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Ở vị trí cân bằng gia tốc bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Véc-tơ gia tốc luôn hướng ra xa vị trí cân bằng.",
+     "answer": false
+    },
+    {
+     "text": "Vận tốc đổi chiều khi vật qua vị trí cân bằng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Gia tốc luôn hướng về vị trí cân bằng; vận tốc đổi chiều khi vật qua hai biên."
+  },
+  {
+   "type": "short_answer",
+   "kind": "hien_tuong",
+   "topic": "Quan hệ pha giữa x, v, a",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong một chu kì, khoảng thời gian mà $v$ và $a$ cùng dấu bằng bao nhiêu lần chu kì $T$? (nhập số thập phân)",
+   "answer": "0,5",
+   "explanation": "Bài nêu trong một chu kì $v$ và $a$ cùng dấu trong khoảng $\\Delta t=\\frac{T}{2}$, tức $0,5T$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong một chu kì, vận tốc của vật dao động điều hoà đổi chiều bao nhiêu lần?",
+   "answer": "2",
+   "explanation": "Vận tốc đổi chiều khi vật đi qua hai biên, nên đổi chiều 2 lần trong một chu kì."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Về đồ thị liên hệ giữa các đại lượng $x$, $v$, $a$ của dao động điều hoà, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Đồ thị $v$ theo $x$ là một đường elip.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $a$ theo $v$ là một đường elip.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $a$ theo $x$ là một đường elip.",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị $a$ theo $x$ là đoạn thẳng qua gốc toạ độ.",
+     "answer": true
+    }
+   ],
+   "explanation": "$x$–$v$ và $v$–$a$ vuông pha nên đồ thị là elip; $x$–$a$ ngược pha nên là đoạn thẳng qua gốc toạ độ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Nếu $x=A\\cos(\\omega t+\\varphi)$ thì phương trình vận tốc là:",
+   "options": [
+    "$v=A\\omega\\sin(\\omega t+\\varphi)$",
+    "$v=-A\\omega^{2}\\sin(\\omega t+\\varphi)$",
+    "$v=-A\\omega\\cos(\\omega t+\\varphi)$",
+    "$v=-A\\omega\\sin(\\omega t+\\varphi)$"
+   ],
+   "answer": 3,
+   "explanation": "$v=x'=-A\\omega\\sin(\\omega t+\\varphi)$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hệ thức giữa gia tốc và li độ của dao động điều hoà là:",
+   "options": [
+    "$a=\\omega^{2}x$",
+    "$a=-\\omega^{2}x$",
+    "$a=-\\omega x$",
+    "$a=-\\dfrac{x}{\\omega^{2}}$"
+   ],
+   "answer": 1,
+   "explanation": "Hai đại lượng ngược pha nên $a=-\\omega^{2}x$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Biên độ $A$ tính bằng cm, tần số góc $\\omega$ tính bằng rad/s. Đơn vị của gia tốc cực đại $A\\omega^{2}$ là:",
+   "options": [
+    "cm/s",
+    "cm/s$^{2}$",
+    "cm$\\cdot$s",
+    "rad/s$^{2}$"
+   ],
+   "answer": 1,
+   "explanation": "Gia tốc cực đại $a_{max}=A\\omega^{2}$ có đơn vị cm/s$^{2}$ (bài ghi gia tốc bằng cm/s$^{2}$)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ hệ thức $A^{2}=x^{2}+\\dfrac{v^{2}}{\\omega^{2}}$, tần số góc được tính bằng:",
+   "options": [
+    "$\\omega=\\dfrac{|v|}{\\sqrt{A^{2}+x^{2}}}$",
+    "$\\omega=|v|\\sqrt{A^{2}-x^{2}}$",
+    "$\\omega=\\dfrac{\\sqrt{A^{2}-x^{2}}}{|v|}$",
+    "$\\omega=\\dfrac{|v|}{\\sqrt{A^{2}-x^{2}}}$"
+   ],
+   "answer": 3,
+   "explanation": "$\\frac{v^{2}}{\\omega^{2}}=A^{2}-x^{2}$ suy ra $\\omega=\\frac{|v|}{\\sqrt{A^{2}-x^{2}}}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hệ thức độc lập với thời gian giữa vận tốc và gia tốc là:",
+   "options": [
+    "$A^{2}=\\dfrac{v^{2}}{\\omega^{2}}+\\dfrac{a^{2}}{\\omega^{4}}$",
+    "$A^{2}=\\dfrac{v^{2}}{\\omega^{2}}+\\dfrac{a^{2}}{\\omega^{2}}$",
+    "$A^{2}=\\dfrac{v^{2}}{\\omega^{4}}+\\dfrac{a^{2}}{\\omega^{2}}$",
+    "$A^{2}=v^{2}\\omega^{2}+a^{2}\\omega^{4}$"
+   ],
+   "answer": 0,
+   "explanation": "$v$ và $a$ vuông pha: $(\\frac{v}{\\omega A})^{2}+(\\frac{a}{\\omega^{2}A})^{2}=1$ suy ra $A^{2}=\\frac{v^{2}}{\\omega^{2}}+\\frac{a^{2}}{\\omega^{4}}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Về các công thức của dao động điều hoà, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$|v|_{max}=A\\omega$.",
+     "answer": true
+    },
+    {
+     "text": "$|a|_{max}=A\\omega^{2}$.",
+     "answer": true
+    },
+    {
+     "text": "$A^{2}=x^{2}+\\dfrac{v^{2}}{\\omega^{2}}$.",
+     "answer": true
+    },
+    {
+     "text": "$A^{2}=x^{2}+v^{2}\\omega^{2}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hệ thức đúng là $A^{2}=x^{2}+\\frac{v^{2}}{\\omega^{2}}$ (x và v vuông pha)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật dao động điều hoà có $A=5$ cm, $\\omega=10$ rad/s. Tốc độ cực đại (cm/s) là bao nhiêu?",
+   "answer": "50",
+   "explanation": "$|v|_{max}=A\\omega=5\\cdot10=50$ cm/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật dao động điều hoà có $A=5$ cm, $\\omega=10$ rad/s. Độ lớn gia tốc cực đại (cm/s$^{2}$) là bao nhiêu?",
+   "answer": "500",
+   "explanation": "$|a|_{max}=\\omega^{2}A=100\\cdot5=500$ cm/s$^{2}$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Hệ thức độc lập với thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Chu kì dao động là $T=24$ s. Thời gian ngắn nhất (s) để vật đi từ vị trí cân bằng đến vị trí $x=\\frac{A\\sqrt{2}}{2}$ là bao nhiêu?",
+   "answer": "3",
+   "explanation": "Theo bảng quy đổi, thời gian từ $x=0$ đến $\\frac{A\\sqrt2}{2}$ là $\\frac{T}{8}=3$ s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật dao động điều hoà có $\\omega=10$ rad/s. Khi li độ $x=3$ cm thì gia tốc (cm/s$^{2}$) bằng bao nhiêu?",
+   "answer": "-300",
+   "explanation": "$a=-\\omega^{2}x=-100\\cdot3=-300$ cm/s$^{2}$."
+  }
+ ]
+}

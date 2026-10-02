@@ -1,0 +1,386 @@
+{
+ "lesson_id": 24,
+ "lesson_title": "Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà",
+ "item_id": 152,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khi xét năng lượng của vật dao động điều hoà, mốc thế năng được chọn tại:",
+   "options": [
+    "vị trí biên dương",
+    "vị trí cân bằng",
+    "vị trí biên âm",
+    "vị trí bất kì tuỳ ý"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu rõ mốc thế năng chọn tại vị trí cân bằng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Động năng của vật dao động điều hoà đạt giá trị cực đại khi vật ở:",
+   "options": [
+    "vị trí biên",
+    "vị trí cân bằng",
+    "vị trí có li độ $x=\\frac{A}{2}$",
+    "vị trí có li độ $x=\\frac{A}{\\sqrt2}$"
+   ],
+   "answer": 1,
+   "explanation": "Bảng mục 1: $E_{d\\,max}$ đạt tại vị trí cân bằng ($x=0$)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khi vật dao động điều hoà đi từ vị trí biên về vị trí cân bằng thì:",
+   "options": [
+    "động năng tăng, thế năng giảm",
+    "động năng giảm, thế năng tăng",
+    "động năng và thế năng cùng tăng",
+    "động năng và thế năng cùng giảm"
+   ],
+   "answer": 0,
+   "explanation": "Bảng mục 1: từ biên về VTCB động năng tăng dần, thế năng giảm dần; hai đại lượng không bao giờ cùng tăng hay cùng giảm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bỏ qua ma sát, cơ năng của con lắc lò xo phụ thuộc vào:",
+   "options": [
+    "độ cứng $k$ và biên độ $A$",
+    "khối lượng $m$ và biên độ $A$",
+    "khối lượng $m$ và độ cứng $k$",
+    "chỉ khối lượng $m$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu cơ năng phụ thuộc độ cứng $k$ và biên độ $A$, không phụ thuộc khối lượng vật nặng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi bỏ qua ma sát, cơ năng của vật dao động điều hoà:",
+   "options": [
+    "không đổi theo thời gian",
+    "biến thiên tuần hoàn theo thời gian",
+    "luôn tăng dần theo thời gian",
+    "luôn giảm dần theo thời gian"
+   ],
+   "answer": 0,
+   "explanation": "Cơ năng là hằng số theo thời gian (khi bỏ qua ma sát)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Chu kì biến thiên của động năng so với chu kì $T$ của li độ là:",
+   "options": [
+    "$T$",
+    "$\\frac{T}{2}$",
+    "$2T$",
+    "$\\frac{T}{4}$"
+   ],
+   "answer": 1,
+   "explanation": "Động năng và thế năng biến thiên với chu kì $\\dfrac{T}{2}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Xét sự biến thiên của động năng $E_d$ và thế năng $E_t$ của vật dao động điều hoà. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$E_d$ và $E_t$ biến thiên ngược pha nhau.",
+     "answer": true
+    },
+    {
+     "text": "$E_d$ và $E_t$ biến thiên với tần số góc $\\omega$, bằng tần số góc của li độ.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng bằng 0 khi vật ở vị trí cân bằng.",
+     "answer": true
+    },
+    {
+     "text": "Có lúc động năng và thế năng cùng tăng.",
+     "answer": false
+    }
+   ],
+   "explanation": "$E_d$, $E_t$ biến thiên ngược pha với tần số góc $2\\omega$; $E_t=0$ tại VTCB; hai đại lượng không bao giờ cùng tăng."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét cơ năng $W$ của con lắc lò xo dao động điều hoà (bỏ qua ma sát). Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$W$ tỉ lệ với bình phương biên độ.",
+     "answer": true
+    },
+    {
+     "text": "$W$ phụ thuộc vào khối lượng vật nặng.",
+     "answer": false
+    },
+    {
+     "text": "$W$ là hằng số theo thời gian.",
+     "answer": true
+    },
+    {
+     "text": "$E_d$ và $E_t$ đều không đổi theo thời gian.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài mục 2: $W$ tỉ lệ $A^2$, không phụ thuộc $m$, không đổi theo thời gian, còn $E_d$, $E_t$ biến thiên tuần hoàn."
+  },
+  {
+   "type": "short_answer",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Tần số biến thiên của động năng gấp bao nhiêu lần tần số $f$ của li độ?",
+   "answer": "2",
+   "explanation": "Bảng mục 1: động năng biến thiên với tần số $2f$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "hien_tuong",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong một chu kì dao động điều hoà, có bao nhiêu lần động năng bằng thế năng?",
+   "answer": "4",
+   "explanation": "Bảng mục 3: trường hợp $E_d=E_t$ xảy ra 4 lần mỗi chu kì."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Động năng của vật dao động điều hoà theo li độ $x$ được tính bằng:",
+   "options": [
+    "$\\dfrac{1}{2}m\\omega^2(A^2-x^2)$",
+    "$\\dfrac{1}{2}m\\omega^2(A^2+x^2)$",
+    "$\\dfrac{1}{2}m\\omega^2x^2$",
+    "$\\dfrac{1}{2}m\\omega A^2$"
+   ],
+   "answer": 0,
+   "explanation": "Bảng mục 1: $E_d=\\dfrac{1}{2}m\\omega^2(A^2-x^2)$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cơ năng của con lắc lò xo dao động điều hoà với biên độ $A$ là:",
+   "options": [
+    "$\\dfrac{1}{2}kA^2$",
+    "$\\dfrac{1}{2}kA$",
+    "$kA^2$",
+    "$\\dfrac{1}{2}m\\omega A$"
+   ],
+   "answer": 0,
+   "explanation": "Mục 2: $W=\\dfrac{1}{2}kA^2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi động năng bằng thế năng ($E_d=E_t$), li độ của vật là:",
+   "options": [
+    "$x=\\pm\\dfrac{A}{\\sqrt2}$",
+    "$x=\\pm\\dfrac{A}{2}$",
+    "$x=\\pm\\dfrac{A\\sqrt3}{2}$",
+    "$x=\\pm A$"
+   ],
+   "answer": 0,
+   "explanation": "Bảng mục 3: $E_d=E_t$ thì $x=\\pm\\dfrac{A}{\\sqrt2}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi $E_d=nE_t$ ($n>0$) thì li độ của vật là:",
+   "options": [
+    "$x=\\pm\\dfrac{A}{\\sqrt{n+1}}$",
+    "$x=\\pm\\dfrac{A}{\\sqrt{n}}$",
+    "$x=\\pm\\dfrac{A}{n+1}$",
+    "$x=\\pm A\\sqrt{n+1}$"
+   ],
+   "answer": 0,
+   "explanation": "Mục 3 (tổng quát): $x=\\pm\\dfrac{A}{\\sqrt{n+1}}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xét thời điểm động năng gấp 3 lần thế năng ($E_d=3E_t$). Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Li độ của vật là $x=\\pm\\dfrac{A}{2}$.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc của vật là $v=\\pm\\dfrac{v_{max}\\sqrt3}{2}$.",
+     "answer": true
+    },
+    {
+     "text": "Li độ của vật là $x=\\pm\\dfrac{A\\sqrt3}{2}$.",
+     "answer": false
+    },
+    {
+     "text": "Trường hợp này xảy ra 2 lần trong một chu kì.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bảng mục 3: $E_d=3E_t$ thì $x=\\pm\\dfrac{A}{2}$, $v=\\pm\\dfrac{v_{max}\\sqrt3}{2}$, xảy ra 4 lần mỗi chu kì."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Xét con lắc lò xo nằm ngang gồm lò xo độ cứng $k$ và vật khối lượng $m$ (bỏ qua ma sát). Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Tần số góc $\\omega=\\sqrt{\\dfrac{k}{m}}$.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì $T=2\\pi\\sqrt{\\dfrac{k}{m}}$.",
+     "answer": false
+    },
+    {
+     "text": "Tần số $f=\\dfrac{1}{2\\pi}\\sqrt{\\dfrac{k}{m}}$.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì dao động phụ thuộc vào biên độ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục 4: $\\omega=\\sqrt{k/m}$, $T=2\\pi\\sqrt{m/k}$, $f=\\dfrac{1}{2\\pi}\\sqrt{k/m}$; chu kì chỉ phụ thuộc $m$, $k$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc lò xo có $k=100$ N/m dao động với biên độ $A=0{,}1$ m. Cơ năng của con lắc bằng bao nhiêu J?",
+   "answer": "0,5",
+   "explanation": "$W=\\dfrac{1}{2}kA^2=\\dfrac{1}{2}\\cdot100\\cdot0{,}1^2=0{,}5$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật dao động điều hoà với biên độ $A=8$ cm. Khi $E_d=3E_t$, độ lớn li độ của vật bằng bao nhiêu cm?",
+   "answer": "4",
+   "explanation": "$|x|=\\dfrac{A}{2}=4$ cm (bảng mục 3)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bảo toàn cơ năng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà có cơ năng 0,5 J. Tại một vị trí động năng là 0,3 J thì thế năng bằng bao nhiêu J?",
+   "answer": "0,2",
+   "explanation": "$E_t=W-E_d=0{,}5-0{,}3=0{,}2$ J vì $W=E_t+E_d$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Động năng, thế năng của vật dao động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Con lắc lò xo có $k=100$ N/m, $m=0{,}25$ kg. Tần số góc bằng bao nhiêu rad/s?",
+   "answer": "20",
+   "explanation": "$\\omega=\\sqrt{k/m}=\\sqrt{400}=20$ rad/s."
+  }
+ ]
+}

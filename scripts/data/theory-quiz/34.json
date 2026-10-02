@@ -1,0 +1,381 @@
+{
+  "lesson_id": 34,
+  "lesson_title": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+  "item_id": 168,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Trong thí nghiệm đo tốc độ truyền âm bằng ống khí một đầu kín, một đầu hở, cộng hưởng xảy ra khi pít-tông ở vị trí nào?",
+      "options": [
+        "Âm phát ra từ loa nghe được to nhất",
+        "Âm phát ra từ loa nghe được nhỏ nhất",
+        "Pít-tông sát miệng ống",
+        "Pít-tông ở cuối ống"
+      ],
+      "answer": 0,
+      "explanation": "Điều kiện cộng hưởng: pít-tông ở vị trí mà âm từ loa nghe được to nhất."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Khi kéo dần pít-tông lên để xác định $l_1$, ta dừng ở vị trí nào?",
+      "options": [
+        "Vị trí thứ nhất khi âm nghe được to nhất",
+        "Vị trí khi không còn nghe thấy âm",
+        "Vị trí khi âm nghe được nhỏ nhất",
+        "Vị trí pít-tông chạm loa"
+      ],
+      "answer": 0,
+      "explanation": "Bước 4: xác định vị trí thứ nhất của pít-tông khi âm nghe được to nhất, từ đó đo chiều dài cột khí $l_1$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tín hiệu do máy phát tần số trong bộ thí nghiệm phát ra có dạng nào?",
+      "options": [
+        "Dạng sin",
+        "Dạng xung vuông",
+        "Dạng răng cưa",
+        "Dạng không đổi (một chiều)"
+      ],
+      "answer": 0,
+      "explanation": "Mục dụng cụ: máy phát tần số phát ra tín hiệu có dạng sin."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Nguyên nhân nào sau đây thuộc loại sai số do dụng cụ thí nghiệm?",
+      "options": [
+        "Tiếng gió bên ngoài làm nhiễu tín hiệu",
+        "Đọc số đo trên thước không vuông góc",
+        "Giữa pít-tông và ống trụ có khe hở",
+        "Người làm thí nghiệm nói chuyện lớn tiếng"
+      ],
+      "answer": 2,
+      "explanation": "Theo bài, khe hở giữa pít-tông và ống trụ, máy phát tần số không ổn định là sai số do dụng cụ; các ý còn lại do ngoại cảnh hoặc thao tác."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Để đọc chính xác độ cao pít-tông trên thước, cần làm gì?",
+      "options": [
+        "Đặt mắt thẳng và vuông góc với mặt thước",
+        "Đặt mắt thấp hơn mặt thước",
+        "Đặt mắt nhìn chếch từ phía trên",
+        "Dùng tay đỡ pít-tông khi đọc"
+      ],
+      "answer": 0,
+      "explanation": "Cách khắc phục trong bài: khi đọc giá trị độ cao pít-tông cần đặt mắt thẳng và vuông góc với mặt thước."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Thang đo trên máy phát tần số được điều chỉnh sang vị trí nào trong thí nghiệm?",
+      "options": [
+        "100 Hz – 1 kHz",
+        "1 Hz – 10 Hz",
+        "10 kHz – 100 kHz",
+        "1 MHz – 10 MHz"
+      ],
+      "answer": 0,
+      "explanation": "Bước 2 của phần tiến hành: chỉnh thang đo sang vị trí 100 Hz – 1 kHz."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về các bước tiến hành thí nghiệm đo tốc độ truyền âm, xét các phát biểu sau.",
+      "statements": [
+        {
+          "text": "Loa điện động được đặt gần sát đầu hở của ống trụ.",
+          "answer": true
+        },
+        {
+          "text": "Biên độ được chỉnh để nghe được âm phát ra từ loa vừa đủ to.",
+          "answer": true
+        },
+        {
+          "text": "Vị trí thứ hai của pít-tông ứng với lần âm nghe được to nhất tiếp theo và cho chiều dài cột khí $l_2$.",
+          "answer": true
+        },
+        {
+          "text": "Chỉ cần đo $l_1$ và $l_2$ đúng một lần là đủ, không cần lặp lại.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài yêu cầu đo $l_1$, $l_2$ rồi lặp lại thêm hai lần nữa (tổng 3 lần) và ghi vào Bảng 1."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Về sai số trong thí nghiệm đo tốc độ truyền âm, xét các phát biểu sau.",
+      "statements": [
+        {
+          "text": "Tiếng gió, tiếng máy móc có thể làm nhiễu tín hiệu đầu vào.",
+          "answer": true
+        },
+        {
+          "text": "Máy phát tần số không ổn định là một nguồn sai số do dụng cụ.",
+          "answer": true
+        },
+        {
+          "text": "Khi điều chỉnh pít-tông nên thao tác nhanh và mạnh để tìm vị trí cộng hưởng.",
+          "answer": false
+        },
+        {
+          "text": "Nên kiểm tra dụng cụ trước khi đo để các dụng cụ hoạt động tốt.",
+          "answer": true
+        }
+      ],
+      "explanation": "Cách khắc phục: hạn chế âm nhiễu, kiểm tra dụng cụ trước khi đo, thao tác pít-tông chậm và nhẹ nhàng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Mỗi giá trị $l_1$, $l_2$ được đo tổng cộng bao nhiêu lần trong thí nghiệm (kể cả lần đo đầu tiên)?",
+      "answer": "3",
+      "explanation": "Đo lần đầu rồi lặp lại các bước 4 và 5 thêm hai lần nữa, tổng cộng 3 lần (Lần 1, 2, 3 ở Bảng 1)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ống trụ trong suốt của bộ dụng cụ dài bao nhiêu milimét?",
+      "answer": "670",
+      "explanation": "Mục dụng cụ: ống trụ trong suốt có đường kính trong 40 mm, dài 670 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Chênh lệch chiều dài cột khí giữa hai lần liên tiếp nghe được âm cộng hưởng bằng bao nhiêu?",
+      "options": [
+        "$\\Delta l=\\dfrac{\\lambda}{2}$",
+        "$\\Delta l=\\lambda$",
+        "$\\Delta l=\\dfrac{\\lambda}{4}$",
+        "$\\Delta l=2\\lambda$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $\\Delta l=l_2-l_1=\\dfrac{\\lambda}{2}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Tốc độ truyền âm trong không khí được tính theo $\\Delta l$ và tần số $f$ bằng công thức nào?",
+      "options": [
+        "$v=2\\Delta l\\cdot f$",
+        "$v=\\Delta l\\cdot f$",
+        "$v=\\dfrac{\\Delta l}{2f}$",
+        "$v=\\dfrac{2f}{\\Delta l}$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $v=\\lambda f$ và $\\lambda=2\\Delta l$ suy ra $v=2\\Delta l\\cdot f$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Giá trị trung bình của bước sóng được tính theo $\\bar l_1$, $\\bar l_2$ bằng công thức nào?",
+      "options": [
+        "$\\bar\\lambda=2(\\bar l_2-\\bar l_1)$",
+        "$\\bar\\lambda=\\dfrac{\\bar l_2-\\bar l_1}{2}$",
+        "$\\bar\\lambda=2(\\bar l_2+\\bar l_1)$",
+        "$\\bar\\lambda=\\bar l_2-\\bar l_1$"
+      ],
+      "answer": 0,
+      "explanation": "Bài xử lí kết quả: $\\bar\\lambda=2(\\bar l_2-\\bar l_1)$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Hệ thức nào liên hệ sai số tương đối của tốc độ truyền âm với sai số của bước sóng và tần số?",
+      "options": [
+        "$\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}+\\dfrac{\\Delta f}{\\bar f}$",
+        "$\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}-\\dfrac{\\Delta f}{\\bar f}$",
+        "$\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}\\cdot\\dfrac{\\Delta f}{\\bar f}$",
+        "$\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\bar\\lambda}{\\Delta\\lambda}+\\dfrac{\\bar f}{\\Delta f}$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}+\\dfrac{\\Delta f}{\\bar f}$ (các sai số tương đối cộng lại)."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Về xử lí kết quả thí nghiệm đo tốc độ truyền âm, xét các phát biểu sau.",
+      "statements": [
+        {
+          "text": "Sai số bước sóng được tính bằng $\\Delta\\lambda=2(\\Delta l_1+\\Delta l_2)$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số bước sóng được tính bằng $\\Delta\\lambda=2(\\Delta l_1-\\Delta l_2)$.",
+          "answer": false
+        },
+        {
+          "text": "Có $\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}+\\dfrac{\\Delta f}{\\bar f}$.",
+          "answer": true
+        },
+        {
+          "text": "Kết quả được trình bày dưới dạng $v=\\bar v\\pm\\Delta v$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Bài nêu $\\Delta\\lambda=2(\\Delta l_1+\\Delta l_2)$, hệ thức sai số tương đối và cách trình bày $v=\\bar v\\pm\\Delta v$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Với ống khí một đầu kín, một đầu hở có âm cộng hưởng khi $l=\\left(k+\\dfrac12\\right)\\dfrac{\\lambda}{2}$ ($k=0,1,2,\\dots$), xét các phát biểu sau.",
+      "statements": [
+        {
+          "text": "Với $k=0$ thì $l=\\dfrac{\\lambda}{4}$.",
+          "answer": true
+        },
+        {
+          "text": "Hai lần cộng hưởng liên tiếp cách nhau $\\Delta l=\\dfrac{\\lambda}{2}$.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ truyền âm là $v=\\lambda f$.",
+          "answer": true
+        },
+        {
+          "text": "Cộng hưởng xảy ra khi $l=k\\dfrac{\\lambda}{2}$ với $k$ nguyên.",
+          "answer": false
+        }
+      ],
+      "explanation": "Thay $k=0$ được $\\lambda/4$; hiệu hai giá trị $k$ liên tiếp là $\\lambda/2$; $l=k\\lambda/2$ không phải điều kiện của bài."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "question": "Hai vị trí cộng hưởng liên tiếp cách nhau $\\Delta l=20$ cm, tần số $f=850$ Hz. Tính tốc độ truyền âm (đơn vị m/s).",
+      "answer": "340",
+      "explanation": "$v=2\\Delta l\\cdot f=2\\cdot0{,}2\\cdot850=340$ m/s."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Đo được $\\bar l_1=10$ cm và $\\bar l_2=30$ cm. Tính $\\bar\\lambda$ (đơn vị cm).",
+      "answer": "40",
+      "explanation": "$\\bar\\lambda=2(\\bar l_2-\\bar l_1)=2\\cdot(30-10)=40$ cm."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Biết $\\Delta l_1=0{,}2$ cm và $\\Delta l_2=0{,}3$ cm. Tính $\\Delta\\lambda$ (đơn vị cm).",
+      "answer": "1",
+      "explanation": "$\\Delta\\lambda=2(\\Delta l_1+\\Delta l_2)=2\\cdot0{,}5=1$ cm."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Đo tốc độ truyền âm bằng ống cộng hưởng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Biết $\\dfrac{\\Delta\\lambda}{\\bar\\lambda}=2\\%$, $\\dfrac{\\Delta f}{\\bar f}=1\\%$ và $\\bar v=300$ m/s. Tính $\\Delta v$ (đơn vị m/s).",
+      "answer": "9",
+      "explanation": "$\\dfrac{\\Delta v}{\\bar v}=2\\%+1\\%=3\\%$ nên $\\Delta v=0{,}03\\cdot300=9$ m/s."
+    }
+  ]
+}

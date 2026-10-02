@@ -1,0 +1,379 @@
+{
+  "lesson_id": 43,
+  "lesson_title": "Bài 24. Nguồn điện",
+  "item_id": 210,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 10
+    },
+    "removed": [
+      {
+        "question": "Bài này xét bao nhiêu cách ghép nguồn điện (nối tiếp, song song, xung đối, hỗn hợp đối xứng)?",
+        "reason": "Nghi ngờ: đáp án 4 phải đếm từ các mục a–d (đoạn 2–5), theorySection 5 không chứa đáp án; câu đếm mục lục, không kiểm kiến thức"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Nguồn điện là thiết bị",
+      "options": [
+        "tạo ra và duy trì sự chênh lệch điện thế để duy trì dòng điện trong mạch kín",
+        "chỉ tiêu thụ điện năng của mạch ngoài",
+        "làm cho các điện tích tự biến mất khỏi mạch",
+        "chỉ cho phép dòng điện chạy một lần rồi dừng"
+      ],
+      "answer": 0,
+      "explanation": "Bài định nghĩa nguồn điện là thiết bị tạo ra và duy trì sự chênh lệch điện thế, nhằm duy trì dòng điện trong mạch kín."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Suất điện động của nguồn điện là đại lượng đặc trưng cho",
+      "options": [
+        "khả năng thực hiện công của nguồn điện",
+        "khả năng cản trở dòng điện của mạch ngoài",
+        "số electron có trong nguồn điện",
+        "nhiệt lượng tỏa ra ở điện trở ngoài"
+      ],
+      "answer": 0,
+      "explanation": "Suất điện động đặc trưng cho khả năng thực hiện công của nguồn điện (công của lực lạ)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Hai quả cầu kim loại tích điện trái dấu được nối bằng dây dẫn thì sau một thời gian dòng điện ngừng chảy vì",
+      "options": [
+        "hai quả cầu trung hòa về điện nên $V_A=V_B$",
+        "dây dẫn bị đứt",
+        "các electron tự do biến mất",
+        "điện trở của dây dẫn tăng vô hạn"
+      ],
+      "answer": 0,
+      "explanation": "Sau một khoảng thời gian hai quả cầu trung hòa ($V_A=V_B$) nên không còn chênh lệch điện thế để duy trì dòng điện."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Điện trở trong $r$ của nguồn điện là đại lượng đặc trưng cho",
+      "options": [
+        "sự cản trở dịch chuyển của các điện tích bên trong nguồn",
+        "sự cản trở dòng điện ở mạch ngoài",
+        "công của lực điện ở mạch ngoài",
+        "số cực của nguồn điện"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu điện trở trong là đại lượng đặc trưng cho sự cản trở dịch chuyển điện tích bên trong nguồn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bên trong nguồn điện, các hạt tải điện dương dịch chuyển từ cực âm sang cực dương dưới tác dụng của",
+      "options": [
+        "lực lạ",
+        "lực điện trường tĩnh",
+        "lực hấp dẫn",
+        "lực ma sát nghỉ"
+      ],
+      "answer": 0,
+      "explanation": "Bên trong nguồn, hạt tải điện dương chịu tác dụng của lực lạ, dịch chuyển ngược chiều điện trường từ cực âm sang cực dương."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Định luật Ohm cho toàn mạch",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi đo hiệu điện thế giữa hai cực của nguồn trong mạch kín, ta luôn thu được giá trị nhỏ hơn suất điện động vì",
+      "options": [
+        "nguồn có điện trở trong",
+        "dây nối không có điện trở",
+        "suất điện động thay đổi theo thời gian",
+        "lực lạ bên trong nguồn bằng 0"
+      ],
+      "answer": 0,
+      "explanation": "Do nguồn có điện trở trong nên $U=\\xi-Ir<\\xi$ khi có dòng điện."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét suất điện động và hiệu điện thế. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Suất điện động đặc trưng cho khả năng thực hiện công của lực lạ trong nguồn.",
+          "answer": true
+        },
+        {
+          "text": "Hiệu điện thế đặc trưng cho khả năng thực hiện công của điện trường tạo ra bởi nguồn điện.",
+          "answer": true
+        },
+        {
+          "text": "Hiệu điện thế đặc trưng cho công của lực lạ trong nguồn.",
+          "answer": false
+        },
+        {
+          "text": "Suất điện động và hiệu điện thế hoàn toàn không liên quan đến việc thực hiện công.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bảng so sánh trong bài: suất điện động liên quan đến công của lực lạ, hiệu điện thế liên quan đến công của lực điện; cả hai đều đặc trưng cho khả năng thực hiện công."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Về cách ghép nguồn điện, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Ghép nối tiếp: cực âm của nguồn trước nối với cực dương của nguồn sau.",
+          "answer": true
+        },
+        {
+          "text": "Ghép xung đối: các cực cùng dấu của hai nguồn được nối với nhau.",
+          "answer": true
+        },
+        {
+          "text": "Công thức $\\xi_b=\\xi_1-\\xi_2$ của ghép xung đối áp dụng với $\\xi_1>\\xi_2$.",
+          "answer": true
+        },
+        {
+          "text": "Ghép xung đối là ghép các cực trái dấu nối với nhau.",
+          "answer": false
+        }
+      ],
+      "explanation": "Theo bài, ghép xung đối nối các cực cùng dấu và $\\xi_b=\\xi_1-\\xi_2$ với $\\xi_1>\\xi_2$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Hai quả cầu A, B sau khi trung hòa về điện có $V_A=V_B$. Hiệu điện thế $U_{AB}$ khi đó bằng bao nhiêu volt?",
+      "answer": "0",
+      "explanation": "Khi $V_A=V_B$ thì $U_{AB}=V_A-V_B=0$, dòng điện ngừng chảy."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Định luật Ohm cho toàn mạch",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Biểu thức hiệu điện thế mạch ngoài $U$ theo suất điện động $\\xi$, cường độ dòng điện $I$ và điện trở trong $r$ là",
+      "options": [
+        "$U=\\xi-Ir$",
+        "$U=\\xi+Ir$",
+        "$U=Ir-\\xi$",
+        "$U=\\xi-I^2r$"
+      ],
+      "answer": 0,
+      "explanation": "Từ bảo toàn năng lượng $\\xi=I(R+r)$ suy ra $U=IR=\\xi-Ir$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Ghép $n$ nguồn giống nhau (suất điện động $\\xi$, điện trở trong $r$) song song thì điện trở trong của bộ nguồn là",
+      "options": [
+        "$r_b=\\dfrac{r}{n}$",
+        "$r_b=nr$",
+        "$r_b=\\dfrac{r}{n^2}$",
+        "$r_b=\\dfrac{n}{r}$"
+      ],
+      "answer": 0,
+      "explanation": "Với ghép song song, $\\dfrac{1}{r_b}=\\dfrac{n}{r}$ nên $r_b=\\dfrac{r}{n}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Ghép hỗn hợp đối xứng $n$ dãy song song, mỗi dãy có $m$ nguồn giống nhau $(\\xi; r)$ nối tiếp thì điện trở trong của bộ nguồn là",
+      "options": [
+        "$r_b=\\dfrac{mr}{n}$",
+        "$r_b=\\dfrac{nr}{m}$",
+        "$r_b=mnr$",
+        "$r_b=\\dfrac{r}{mn}$"
+      ],
+      "answer": 0,
+      "explanation": "Bài cho $\\xi_b=m\\xi$ và $r_b=\\dfrac{mr}{n}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Suất điện động $\\xi=\\dfrac{A}{q}$ có đơn vị là",
+      "options": [
+        "V",
+        "A",
+        "$\\Omega$",
+        "C"
+      ],
+      "answer": 0,
+      "explanation": "Bài ghi suất điện động có đơn vị volt (V), với $A$ đo bằng J và $q$ đo bằng C."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về ghép nối tiếp $n$ nguồn điện, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$\\xi_b=\\xi_1+\\xi_2+...+\\xi_n$.",
+          "answer": true
+        },
+        {
+          "text": "$r_b=r_1+r_2+...+r_n$.",
+          "answer": true
+        },
+        {
+          "text": "$r_b=\\dfrac{r}{n}$ với $n$ nguồn giống nhau ghép nối tiếp.",
+          "answer": false
+        },
+        {
+          "text": "$\\xi_b=\\xi_1-\\xi_2$ khi ghép nối tiếp.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài nêu ghép nối tiếp: suất điện động và điện trở trong của bộ nguồn đều bằng tổng; $r/n$ dành cho ghép song song."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về biểu thức $\\xi=\\dfrac{A}{q}$, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$A$ là công của lực lạ (J).",
+          "answer": true
+        },
+        {
+          "text": "$q$ là điện tích dương dịch chuyển (C).",
+          "answer": true
+        },
+        {
+          "text": "$A$ là công của lực điện ở mạch ngoài.",
+          "answer": false
+        },
+        {
+          "text": "$\\xi$ có đơn vị là ampe.",
+          "answer": false
+        }
+      ],
+      "explanation": "Bài nêu $A$ là công của lực lạ (J), $q$ là điện tích dương dịch chuyển (C) và $\\xi$ đo bằng V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực lạ thực hiện công $A=12$ J để dịch chuyển điện tích $q=4$ C trong nguồn. Suất điện động của nguồn bằng bao nhiêu volt?",
+      "answer": "3",
+      "explanation": "$\\xi=\\dfrac{A}{q}=\\dfrac{12}{4}=3$ V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Ohm cho toàn mạch",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nguồn có $\\xi=12$ V, $r=1\\ \\Omega$, dòng điện $I=2$ A. Hiệu điện thế mạch ngoài bằng bao nhiêu volt?",
+      "answer": "10",
+      "explanation": "$U=\\xi-Ir=12-2\\cdot1=10$ V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Ghép song song 4 nguồn giống nhau, mỗi nguồn có $r=2\\ \\Omega$. Điện trở trong của bộ nguồn bằng bao nhiêu ôm?",
+      "answer": "0,5",
+      "explanation": "$r_b=\\dfrac{r}{n}=\\dfrac{2}{4}=0{,}5\\ \\Omega$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Suất điện động và điện trở trong của nguồn",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Hai nguồn ghép xung đối có $\\xi_1=9$ V, $\\xi_2=5$ V. Suất điện động của bộ nguồn bằng bao nhiêu volt?",
+      "answer": "4",
+      "explanation": "$\\xi_b=\\xi_1-\\xi_2=9-5=4$ V."
+    }
+  ]
+}

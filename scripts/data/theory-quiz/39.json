@@ -1,0 +1,386 @@
+{
+ "lesson_id": 39,
+ "lesson_title": "Bài 20. Điện thế",
+ "item_id": 198,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Điện thế tại điểm M trong điện trường được xác định bằng đại lượng nào?",
+   "options": [
+    "Thương số của công của lực điện khi điện tích $q$ di chuyển từ M ra vô cực và độ lớn của $q$",
+    "Tích của công của lực điện khi $q$ di chuyển từ M ra vô cực và độ lớn của $q$",
+    "Thương số của độ lớn $q$ và công của lực điện khi $q$ di chuyển từ M ra vô cực",
+    "Công của lực điện khi $q$ di chuyển giữa hai bản của tụ điện"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa điện thế là thương số của công của lực điện khi di chuyển $q$ từ M ra vô cực và độ lớn của $q$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Đơn vị của điện thế trong hệ SI là gì?",
+   "options": [
+    "Vôn (V)",
+    "Jun (J)",
+    "Culông (C)",
+    "Vôn trên mét (V/m)"
+   ],
+   "answer": 0,
+   "explanation": "Đơn vị của điện thế là vôn, kí hiệu V."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Theo bài, điểm nào sau đây thường được chọn làm mốc có điện thế bằng 0?",
+   "options": [
+    "Trái Đất và điểm ở vô cực",
+    "Điểm đặt điện tích dương",
+    "Bản âm của tụ điện",
+    "Mọi điểm nằm trên đường sức"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu điện thế của Trái Đất và của một điểm ở vô cực thường được chọn làm mốc (bằng 0)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dọc theo chiều của đường sức điện trường, điện thế thay đổi như thế nào?",
+   "options": [
+    "Giảm dần",
+    "Tăng dần",
+    "Không đổi",
+    "Lúc tăng lúc giảm"
+   ],
+   "answer": 0,
+   "explanation": "Bài kết luận điện thế giảm dần theo chiều của đường sức điện trường."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu điện thế $U_{MN}$ giữa hai điểm M, N được xác định bằng thương số nào?",
+   "options": [
+    "Công của lực điện khi $q$ di chuyển từ M đến N chia cho độ lớn $q$",
+    "Công của lực điện khi $q$ di chuyển từ M ra vô cực chia cho độ lớn $q$",
+    "Độ lớn $q$ chia cho công của lực điện khi $q$ di chuyển từ M đến N",
+    "Cường độ điện trường chia cho khoảng cách MN"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, $U_{MN}=V_M-V_N=\\frac{A_{MN}}{q}$, tức công của lực điện từ M đến N chia cho $q$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong điện trường đều, vectơ $\\vec E$ hướng từ M đến N. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$V_M>V_N$.",
+     "answer": true
+    },
+    {
+     "text": "Điện tích dương dịch chuyển từ M đến N thì lực điện sinh công dương.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tăng dần theo chiều của $\\vec E$.",
+     "answer": false
+    },
+    {
+     "text": "$U_{MN}<0$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\vec E$ hướng từ M đến N nên $A_{MN}>0$, $U_{MN}>0$, $V_M>V_N$; điện thế giảm dần theo chiều đường sức."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xét hệ thức $E=\\frac{U}{d}$ trong điện trường đều. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$d$ là khoảng cách giữa hai điểm đo dọc theo đường sức.",
+     "answer": true
+    },
+    {
+     "text": "$d$ là hình chiếu của MN lên phương của $\\vec E$.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ điện trường tại M và N bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "$d$ luôn bằng độ dài đoạn MN dù MN nghiêng bất kì so với đường sức.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu $d$ đo dọc theo đường sức (hình chiếu của MN lên phương $\\vec E$) và $E_M=E_N=E$ trong điện trường đều."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Xét điện thế tại một điểm trong điện trường. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Điện thế có đơn vị là vôn.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế của Trái Đất thường được chọn làm mốc bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại một điểm đặc trưng cho điện trường tại điểm đó về mặt thế năng của điện tích đặt ở đó.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại M bằng tích của công $A_{M\\infty}$ và điện tích $q$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Điện thế là thương số $V_M=\\frac{A_{M\\infty}}{q}$, không phải tích; các ý còn lại đúng theo bài."
+  },
+  {
+   "type": "short_answer",
+   "kind": "hien_tuong",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khi chọn mốc ở vô cực thì điện thế tại điểm ở vô cực bằng bao nhiêu vôn?",
+   "answer": "0",
+   "explanation": "Bài chọn điện thế tại điểm ở vô cực làm mốc, bằng 0."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_luat",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích dương $q$ dịch chuyển cùng chiều $\\vec E$ từ M đến N. Nhập 1 nếu $U_{MN}>0$, nhập 0 nếu $U_{MN}<0$.",
+   "answer": "1",
+   "explanation": "Dịch chuyển cùng chiều $\\vec E$ nên $A_{MN}>0$, suy ra $U_{MN}>0$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công thức nào sau đây tính điện thế $V_M$ tại M?",
+   "options": [
+    "$V_M=\\frac{A_{M\\infty}}{q}$",
+    "$V_M=\\frac{q}{A_{M\\infty}}$",
+    "$V_M=A_{M\\infty}\\cdot q$",
+    "$V_M=-\\frac{A_{M\\infty}}{q}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $V_M=\\frac{W_M}{q}=\\frac{A_{M\\infty}}{q}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực điện và thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công của lực điện khi điện tích $q$ di chuyển từ M đến N được tính bằng công thức nào?",
+   "options": [
+    "$A_{MN}=q\\cdot U_{MN}$",
+    "$A_{MN}=\\frac{U_{MN}}{q}$",
+    "$A_{MN}=\\frac{q}{U_{MN}}$",
+    "$A_{MN}=q\\,(V_N-V_M)$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $U_{MN}=\\frac{A_{MN}}{q}$ suy ra $A_{MN}=q\\cdot U_{MN}=q(V_M-V_N)$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Biết điện thế $V$ tại một điểm và công $A$ để dịch chuyển điện tích $q$ từ vô cực về điểm đó. Độ lớn điện tích $q$ được tính bằng?",
+   "options": [
+    "$q=\\frac{A}{V}$",
+    "$q=\\frac{V}{A}$",
+    "$q=A\\cdot V$",
+    "$q=-\\frac{A}{V}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $V=\\frac{A}{q}$ suy ra $q=\\frac{A}{V}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong điện trường đều, liên hệ giữa cường độ điện trường $E$ và hiệu điện thế $U$ giữa hai điểm cách nhau $d$ dọc theo đường sức là?",
+   "options": [
+    "$E=\\frac{U}{d}$",
+    "$E=U\\cdot d$",
+    "$E=\\frac{d}{U}$",
+    "$E=\\frac{U}{d^2}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $E=\\frac{U}{d}=\\frac{V_M-V_N}{MN}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực điện và thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thế năng điện của điện tích $q$ tại điểm M có điện thế $V_M$ là?",
+   "options": [
+    "$W_M=V_M\\cdot q$",
+    "$W_M=\\frac{V_M}{q}$",
+    "$W_M=\\frac{q}{V_M}$",
+    "$W_M=-V_M\\cdot q$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu thế năng điện và điện thế liên hệ bởi $W_M=V_M\\cdot q$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét hiệu điện thế giữa hai điểm M, N. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$U_{MN}=V_M-V_N$.",
+     "answer": true
+    },
+    {
+     "text": "$A_{MN}=q\\cdot U_{MN}$.",
+     "answer": true
+    },
+    {
+     "text": "$U_{MN}=\\frac{A_{MN}}{q}$.",
+     "answer": true
+    },
+    {
+     "text": "$U_{MN}=V_N-V_M$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài định nghĩa $U_{MN}=V_M-V_N=\\frac{A_{MN}}{q}$ và $A_{MN}=q\\cdot U_{MN}$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Công của lực điện và thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q=0{,}5$ C dịch chuyển từ M đến N có $U_{MN}=8$ V. Tính công $A_{MN}$ của lực điện (đơn vị J).",
+   "answer": "4",
+   "explanation": "$A_{MN}=q\\cdot U_{MN}=0{,}5\\cdot 8=4$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công của lực điện khi dịch chuyển điện tích $q=3$ C từ M ra vô cực là $A_{M\\infty}=12$ J. Tính điện thế $V_M$ (đơn vị V).",
+   "answer": "4",
+   "explanation": "$V_M=\\frac{A_{M\\infty}}{q}=\\frac{12}{3}=4$ V."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong điện trường đều, hai điểm trên cùng một đường sức cách nhau $d=0{,}2$ m có hiệu điện thế $U=60$ V. Tính $E$ (đơn vị V/m).",
+   "answer": "300",
+   "explanation": "$E=\\frac{U}{d}=\\frac{60}{0{,}2}=300$ V/m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điện trường đều có $E=500$ V/m. Hai điểm trên cùng đường sức cách nhau $d=0{,}04$ m. Tính hiệu điện thế $U$ giữa chúng (đơn vị V).",
+   "answer": "20",
+   "explanation": "$U=E\\cdot d=500\\cdot 0{,}04=20$ V."
+  }
+ ]
+}

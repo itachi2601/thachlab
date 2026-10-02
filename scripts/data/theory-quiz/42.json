@@ -1,0 +1,380 @@
+{
+  "lesson_id": 42,
+  "lesson_title": "Bài 23. Điện trở. Định luật Ohm",
+  "item_id": 207,
+  "generated_at": "2026-10-02",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
+  },
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Điện trở $R$ của vật dẫn là đại lượng đặc trưng cho",
+      "options": [
+        "khả năng sinh công của dòng điện",
+        "mức độ cản trở dòng điện của vật dẫn",
+        "số electron tự do trong vật dẫn",
+        "khả năng tích điện của vật dẫn"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu: điện trở là đại lượng đặc trưng cho mức độ cản trở dòng điện của vật dẫn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Phát biểu nào đúng với định luật Ohm cho vật dẫn?",
+      "options": [
+        "Cường độ dòng điện tỉ lệ thuận với hiệu điện thế và tỉ lệ nghịch với điện trở",
+        "Cường độ dòng điện tỉ lệ nghịch với hiệu điện thế và tỉ lệ thuận với điện trở",
+        "Cường độ dòng điện tỉ lệ thuận với cả hiệu điện thế và điện trở",
+        "Cường độ dòng điện không phụ thuộc hiệu điện thế"
+      ],
+      "answer": 0,
+      "explanation": "$I=\\dfrac{U}{R}$: $I$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $R$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Nguyên nhân chính gây ra điện trở của vật dẫn kim loại là",
+      "options": [
+        "các electron tự do va chạm với nhau",
+        "dao động nhiệt của các ion dương trong mạng tinh thể cản trở chuyển động của electron tự do",
+        "các ion dương chuyển động có hướng ngược chiều dòng điện",
+        "electron tự do bị mất dần khi có dòng điện"
+      ],
+      "answer": 1,
+      "explanation": "Dao động nhiệt của ion dương trong mạng tinh thể cản trở electron tự do là nguyên nhân chính gây điện trở kim loại."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Đường đặc trưng vôn – ampe của một điện trở có dạng",
+      "options": [
+        "đường cong đi lên",
+        "đường thẳng song song trục $U$",
+        "đường thẳng đi qua gốc toạ độ",
+        "đường parabol"
+      ],
+      "answer": 2,
+      "explanation": "Với điện trở, $I=kU$ nên đồ thị là đường thẳng qua gốc toạ độ."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hiện tượng siêu dẫn xảy ra khi",
+      "options": [
+        "nhiệt độ cao hơn nhiệt độ tới hạn $T_c$ và điện trở tăng vọt",
+        "nhiệt độ thấp hơn nhiệt độ tới hạn $T_c$ và điện trở đột ngột giảm xuống bằng 0",
+        "hiệu điện thế đặt vào vượt quá giá trị tới hạn",
+        "dòng điện qua vật dẫn bằng 0"
+      ],
+      "answer": 1,
+      "explanation": "Khi $T<T_c$, một số kim loại và hợp kim có điện trở đột ngột giảm về 0."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Suất điện động nhiệt điện xuất hiện trong mạch kín khi",
+      "options": [
+        "hai vật dẫn giống nhau có hai mối hàn cùng nhiệt độ",
+        "hai vật dẫn khác nhau có hai mối hàn ở nhiệt độ khác nhau",
+        "một vật dẫn duy nhất được đặt trong từ trường",
+        "hai mối hàn cùng nhiệt độ cao"
+      ],
+      "answer": 1,
+      "explanation": "Hiện tượng nhiệt điện: mạch kín gồm hai vật dẫn khác nhau, hai mối hàn giữ ở nhiệt độ khác nhau."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Xét đường đặc trưng vôn – ampe (trục ngang $U$, trục dọc $I$) và định luật Ohm. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đường đặc trưng của điện trở là đường thẳng qua gốc toạ độ",
+          "answer": true
+        },
+        {
+          "text": "Đồ thị có độ dốc càng lớn thì điện trở $R$ càng nhỏ",
+          "answer": true
+        },
+        {
+          "text": "Theo định luật Ohm, $I$ tỉ lệ nghịch với $U$ khi $R$ không đổi",
+          "answer": false
+        },
+        {
+          "text": "Đơn vị của điện trở là ôm ($\\Omega$)",
+          "answer": true
+        }
+      ],
+      "explanation": "$I=kU$ với $k=1/R$; độ dốc lớn nghĩa là $R$ nhỏ; $I$ tỉ lệ thuận với $U$ nên ý thứ ba sai."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về ảnh hưởng của nhiệt độ lên điện trở, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi hiệu điện thế nhỏ, đường đặc trưng của dây tóc bóng đèn gần giống đường thẳng",
+          "answer": true
+        },
+        {
+          "text": "Khi đèn sáng, điện trở của dây tóc tăng lên",
+          "answer": true
+        },
+        {
+          "text": "Điện trở nhiệt NTC có điện trở giảm khi nhiệt độ tăng",
+          "answer": true
+        },
+        {
+          "text": "Điện trở nhiệt PTC có điện trở giảm khi nhiệt độ tăng",
+          "answer": false
+        }
+      ],
+      "explanation": "NTC giảm, PTC tăng khi nhiệt độ tăng; dây tóc nóng lên thì điện trở tăng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về hiện tượng siêu dẫn, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khi $T<T_c$ điện trở của vật liệu siêu dẫn bằng 0",
+          "answer": true
+        },
+        {
+          "text": "Dòng điện trong vòng dây siêu dẫn có thể duy trì rất lâu sau khi ngắt nguồn",
+          "answer": true
+        },
+        {
+          "text": "Nhiệt độ tới hạn của chì lớn hơn của $\\text{Nb}_3\\text{Ge}$",
+          "answer": false
+        },
+        {
+          "text": "Nam châm điện dùng dây siêu dẫn tạo từ trường mạnh mà không hao phí năng lượng do toả nhiệt",
+          "answer": true
+        }
+      ],
+      "explanation": "Theo bảng: chì 7,19 K, $\\text{Nb}_3\\text{Ge}$ 23 K nên ý thứ ba sai."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Theo bảng trong bài, nhiệt độ tới hạn $T_c$ của chì là bao nhiêu kelvin?",
+      "answer": "7,19",
+      "explanation": "Bảng nhiệt độ tới hạn ghi chì có $T_c=7{,}19$ K."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Điện trở của đoạn dây dẫn đồng chất, tiết diện đều có chiều dài $l$, tiết diện $S$, điện trở suất $\\rho$ là",
+      "options": [
+        "$R=\\rho\\dfrac{l}{S}$",
+        "$R=\\rho\\dfrac{S}{l}$",
+        "$R=\\dfrac{l}{\\rho S}$",
+        "$R=\\rho l S$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $R=\\rho\\dfrac{l}{S}$: tỉ lệ thuận với chiều dài, tỉ lệ nghịch với tiết diện."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Trong công thức $R=\\rho\\dfrac{l}{S}$, đơn vị SI của điện trở suất $\\rho$ là",
+      "options": [
+        "$\\Omega$",
+        "$\\Omega\\cdot\\text{m}$",
+        "$\\Omega/\\text{m}$",
+        "$\\text{m}^2/\\Omega$"
+      ],
+      "answer": 1,
+      "explanation": "Từ $\\rho=RS/l$ có đơn vị $\\Omega\\cdot\\text{m}^2/\\text{m}=\\Omega\\cdot\\text{m}$, đúng như bài nêu."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Điện trở suất của kim loại theo nhiệt độ gần đúng được viết là",
+      "options": [
+        "$\\rho=\\rho_0[1+\\alpha(t-t_0)]$",
+        "$\\rho=\\rho_0[1-\\alpha(t-t_0)]$",
+        "$\\rho=\\rho_0\\alpha(t-t_0)$",
+        "$\\rho=\\rho_0[1+\\alpha(t-t_0)]^2$"
+      ],
+      "answer": 0,
+      "explanation": "Điện trở suất tăng theo nhiệt độ gần đúng hàm bậc nhất: $\\rho=\\rho_0[1+\\alpha(t-t_0)]$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Với các điện trở ghép song song, điện trở tương đương $R$ thoả mãn",
+      "options": [
+        "$R=R_1+R_2+\\dots$",
+        "$\\dfrac{1}{R}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dots$",
+        "$R=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dots$",
+        "$\\dfrac{1}{R}=R_1+R_2+\\dots$"
+      ],
+      "answer": 1,
+      "explanation": "Ghép song song: $\\dfrac{1}{R}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dots$"
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Với các điện trở ghép nối tiếp hoặc song song, các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Ghép nối tiếp: $I=I_1=I_2=\\dots$",
+          "answer": true
+        },
+        {
+          "text": "Ghép nối tiếp: $U=U_1+U_2+\\dots$",
+          "answer": true
+        },
+        {
+          "text": "Ghép song song: $U=U_1=U_2=\\dots$",
+          "answer": true
+        },
+        {
+          "text": "Ghép song song: $R=R_1+R_2+\\dots$",
+          "answer": false
+        }
+      ],
+      "explanation": "Song song thì $\\dfrac{1}{R}=\\sum\\dfrac{1}{R_i}$, không phải cộng trực tiếp các $R_i$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Đặt hiệu điện thế $12$ V vào hai đầu điện trở $4\\ \\Omega$. Cường độ dòng điện chạy qua là bao nhiêu ampe?",
+      "answer": "3",
+      "explanation": "$I=\\dfrac{U}{R}=\\dfrac{12}{4}=3$ A."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Hai điện trở $20\\ \\Omega$ và $30\\ \\Omega$ ghép nối tiếp. Điện trở tương đương bằng bao nhiêu ôm?",
+      "answer": "50",
+      "explanation": "Nối tiếp: $R=R_1+R_2=20+30=50\\ \\Omega$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Hai điện trở $30\\ \\Omega$ và $60\\ \\Omega$ ghép song song. Điện trở tương đương bằng bao nhiêu ôm?",
+      "answer": "20",
+      "explanation": "$\\dfrac{1}{R}=\\dfrac{1}{30}+\\dfrac{1}{60}=\\dfrac{1}{20}$ nên $R=20\\ \\Omega$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Đường đặc trưng vôn – ampe",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "question": "Đổi $2{,}5\\ \\text{k}\\Omega$ ra ôm.",
+      "answer": "2500",
+      "explanation": "$1\\text{k}\\Omega=1000\\ \\Omega$ nên $2{,}5\\text{k}\\Omega=2500\\ \\Omega$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Điện trở phụ thuộc nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Cặp nhiệt điện có $\\alpha_T=40\\ \\mu\\text{V/K}$, hai mối hàn chênh nhau $50$ K. Suất điện động nhiệt điện bằng bao nhiêu $\\mu\\text{V}$?",
+      "answer": "2000",
+      "explanation": "$E=\\alpha_T(T_1-T_2)=40\\cdot50=2000\\ \\mu\\text{V}$."
+    }
+  ]
+}

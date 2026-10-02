@@ -1,0 +1,359 @@
+{
+ "lesson_id": 20,
+ "lesson_title": "Bài 1. Dao động điều hoà",
+ "item_id": 2,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 14,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 8
+  },
+  "removed": [
+   {
+    "question": "Phương trình của dao động điều hoà là:",
+    "reason": "Phương án nhiễu là biểu thức bịa, sai thứ nguyên (A+ωt+φ cộng đại lượng khác loại, Aω cosφ...), không phản ánh lỗi học sinh thực tế."
+   },
+   {
+    "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, đại lượng $\\varphi$ chính là pha của dao động tại thời điểm nào?",
+    "reason": "Phương án nhiễu vô nghĩa/sai thứ nguyên (t=ω, t=A); thêm nữa phát biểu 'φ là pha tại t=0' chỉ có ở phần tóm tắt, thân bài chỉ ghi 'φ là pha ban đầu'."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Dao động cơ là chuyển động của vật như thế nào?",
+   "options": [
+    "Chuyển động qua lại quanh một vị trí cân bằng",
+    "Chuyển động thẳng đều theo một hướng",
+    "Chuyển động tròn đều quanh một điểm cố định",
+    "Chuyển động rơi tự do xuống mặt đất"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa: vật chuyển động qua lại quanh một vị trí cân bằng gọi là dao động cơ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Dao động của một vật là tuần hoàn khi:",
+   "options": [
+    "Sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ",
+    "Vật chỉ chuyển động theo một chiều nhất định",
+    "Vật luôn chuyển động với tốc độ không đổi",
+    "Vật dừng lại sau mỗi lần đi qua vị trí cân bằng"
+   ],
+   "answer": 0,
+   "explanation": "Dao động tuần hoàn: sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong các dao động sau, dao động nào là dao động tuần hoàn?",
+   "options": [
+    "Dao động của con lắc đồng hồ",
+    "Dao động của cành cây đu đưa khi gió thổi",
+    "Dao động của lá cây rơi trong gió",
+    "Dao động của mặt nước khi ném viên sỏi xuống"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu con lắc đồng hồ dao động tuần hoàn, còn cành cây đu đưa khi gió thổi là không tuần hoàn."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Xét các phát biểu về dao động cơ và dao động tuần hoàn:",
+   "statements": [
+    {
+     "text": "Dây đàn ghi-ta rung động là một ví dụ về dao động cơ.",
+     "answer": true
+    },
+    {
+     "text": "Dao động cơ của một vật luôn là dao động tuần hoàn.",
+     "answer": false
+    },
+    {
+     "text": "Dao động của cành cây đu đưa khi gió thổi là dao động không tuần hoàn.",
+     "answer": true
+    },
+    {
+     "text": "Dao động tuần hoàn là dao động mà vật không bao giờ quay về vị trí cũ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Dao động cơ có thể tuần hoàn hoặc không tuần hoàn; tuần hoàn thì vật trở lại vị trí cũ theo hướng cũ sau những khoảng thời gian bằng nhau."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị li độ – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị li độ – thời gian của con lắc lò xo dao động có dạng:",
+   "options": [
+    "Đường cong hình sin",
+    "Đường thẳng đi qua gốc toạ độ",
+    "Đường parabol",
+    "Đường thẳng song song với trục thời gian"
+   ],
+   "answer": 0,
+   "explanation": "Theo dõi vị trí quả cầu theo thời gian ta được đường cong có dạng hình sin."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Dao động điều hoà là dao động tuần hoàn:",
+   "options": [
+    "Đơn giản nhất",
+    "Có biên độ thay đổi theo thời gian",
+    "Có chu kì thay đổi theo thời gian",
+    "Phức tạp nhất"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: dao động tuần hoàn đơn giản nhất là dao động điều hoà."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị li độ – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét đồ thị li độ – thời gian của con lắc lò xo trong bài (gốc toạ độ $x=0$ tại vị trí cân bằng):",
+   "statements": [
+    {
+     "text": "Đồ thị có dạng đường cong hình sin.",
+     "answer": true
+    },
+    {
+     "text": "Gốc toạ độ $x=0$ được chọn tại vị trí cân bằng của quả cầu.",
+     "answer": true
+    },
+    {
+     "text": "Gốc thời gian $t=0$ bắt buộc phải là lúc vật ở vị trí biên.",
+     "answer": false
+    },
+    {
+     "text": "Li độ của vật chỉ nhận giá trị dương.",
+     "answer": false
+    }
+   ],
+   "explanation": "Gốc thời gian được chọn là lúc bắt đầu quan sát; đồ thị hình sin nên li độ nhận cả giá trị dương và âm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Điểm M chuyển động tròn đều trên đường tròn tâm O. Hình chiếu Q của M lên một trục Ox nằm trong mặt phẳng quỹ đạo sẽ:",
+   "options": [
+    "Dao động điều hoà quanh O",
+    "Chuyển động thẳng đều",
+    "Đứng yên tại O",
+    "Chuyển động tròn đều quanh O"
+   ],
+   "answer": 0,
+   "explanation": "Khi M chuyển động tròn đều thì điểm Q dao động điều hoà quanh O."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Điểm M chuyển động tròn đều trên đường tròn tâm O bán kính $OM=A$. Biên độ dao động điều hoà của hình chiếu Q của M bằng:",
+   "options": [
+    "Bán kính $OM$ của đường tròn",
+    "Hai lần bán kính đường tròn",
+    "Một nửa bán kính đường tròn",
+    "Chu vi của đường tròn"
+   ],
+   "answer": 0,
+   "explanation": "Phương trình của Q là $x=OM\\cos(\\omega t+\\varphi)$ nên biên độ bằng $OM$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, có bao nhiêu đại lượng ($A$, $\\omega$, $\\varphi$) là hằng số?",
+   "answer": "3",
+   "explanation": "Bài nêu $A$, $\\omega$, $\\varphi$ đều là các hằng số, nên có 3 đại lượng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, đại lượng $(\\omega t+\\varphi)$ được gọi là:",
+   "options": [
+    "Pha của dao động ở thời điểm $t$",
+    "Biên độ dao động",
+    "Li độ dao động",
+    "Pha ban đầu"
+   ],
+   "answer": 0,
+   "explanation": "$(\\omega t+\\varphi)$ là pha của dao động ở thời điểm $t$; $\\varphi$ mới là pha ban đầu."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xét phương trình $x=A\\cos(\\omega t+\\varphi)$ của dao động điều hoà:",
+   "statements": [
+    {
+     "text": "$x$ là li độ của vật tại thời điểm $t$.",
+     "answer": true
+    },
+    {
+     "text": "$A$ là biên độ dao động.",
+     "answer": true
+    },
+    {
+     "text": "$\\varphi$ là pha của dao động ở thời điểm $t$.",
+     "answer": false
+    },
+    {
+     "text": "$A$, $\\omega$, $\\varphi$ là các hằng số.",
+     "answer": true
+    }
+   ],
+   "explanation": "$\\varphi$ là pha ban đầu; pha ở thời điểm $t$ là $(\\omega t+\\varphi)$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Điểm M chuyển động tròn đều với tốc độ góc $\\omega$ trên đường tròn tâm O bán kính $OM=A$; Q là hình chiếu của M lên trục Ox. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Q dao động điều hoà quanh O.",
+     "answer": true
+    },
+    {
+     "text": "Li độ của Q có dạng $x=OM\\cos(\\omega t+\\varphi)$.",
+     "answer": true
+    },
+    {
+     "text": "Biên độ dao động của Q bằng $OM$.",
+     "answer": true
+    },
+    {
+     "text": "Biên độ dao động của Q bằng $2\\,OM$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Q có $x=OM\\cos(\\omega t+\\varphi)$ nên biên độ bằng $OM=A$, không phải $2\\,OM$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Điểm M chuyển động tròn đều trên đường tròn bán kính $7$ cm. Hình chiếu Q của M dao động điều hoà với biên độ bao nhiêu cm?",
+   "answer": "7",
+   "explanation": "Biên độ của Q bằng bán kính $OM=7$ cm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật dao động điều hoà theo phương trình $x=8\\cos(2t+0{,}5)$ (cm). Biên độ dao động bằng bao nhiêu cm?",
+   "answer": "8",
+   "explanation": "So sánh với $x=A\\cos(\\omega t+\\varphi)$ được $A=8$ cm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật dao động điều hoà theo phương trình $x=6\\cos(4t)$ (cm). Li độ của vật tại $t=0$ bằng bao nhiêu cm?",
+   "answer": "6",
+   "explanation": "Tại $t=0$: $x=6\\cos 0=6$ cm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật dao động điều hoà theo phương trình $x=2\\cos(3t+1)$. Pha của dao động tại thời điểm $t=2$ s bằng bao nhiêu rad?",
+   "answer": "7",
+   "explanation": "Pha $=\\omega t+\\varphi=3\\cdot 2+1=7$ rad."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật dao động điều hoà theo phương trình $x=4\\cos(5t+2)$. Pha ban đầu $\\varphi$ bằng bao nhiêu rad?",
+   "answer": "2",
+   "explanation": "So sánh với $x=A\\cos(\\omega t+\\varphi)$ được $\\varphi=2$ rad."
+  }
+ ]
+}

@@ -1,0 +1,356 @@
+{
+ "lesson_id": 25,
+ "lesson_title": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+ "item_id": 136,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
+  },
+  "removed": [
+   {
+    "question": "Điều kiện cộng hưởng viết theo chu kì ($T$ là chu kì lực cưỡng bức, $T_0$ là chu kì riêng của hệ) là",
+    "reason": "Phương án nhiễu 'T·T0 = 1' sai thứ nguyên (s² = 1), là biểu thức bịa vô nghĩa."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Dao động tắt dần và nguyên nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Dao động tắt dần là dao động có",
+   "options": [
+    "biên độ và năng lượng giảm dần theo thời gian",
+    "tần số giảm dần theo thời gian",
+    "biên độ không đổi theo thời gian",
+    "chu kì tăng dần theo thời gian"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa dao động tắt dần là dao động có biên độ và năng lượng giảm dần theo thời gian."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Dao động tắt dần và nguyên nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Nguyên nhân làm cho dao động tắt dần là",
+   "options": [
+    "lực ma sát và lực cản của môi trường sinh công âm, làm tiêu hao cơ năng",
+    "ngoại lực tuần hoàn tác dụng lên vật",
+    "tần số riêng của hệ giảm dần",
+    "khối lượng của vật tăng dần theo thời gian"
+   ],
+   "answer": 0,
+   "explanation": "Lực ma sát và lực cản của môi trường sinh công âm, làm cơ năng chuyển hoá dần thành nhiệt năng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Dao động tắt dần và nguyên nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Dao động duy trì là dao động tắt dần được duy trì mà",
+   "options": [
+    "không làm thay đổi chu kì riêng của hệ",
+    "làm tăng chu kì riêng của hệ",
+    "làm giảm chu kì riêng của hệ",
+    "làm chu kì bằng chu kì của ngoại lực bất kì"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa dao động duy trì là dao động tắt dần được duy trì mà không làm thay đổi chu kì riêng của hệ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Dao động cưỡng bức là dao động của vật chịu tác dụng của",
+   "options": [
+    "ngoại lực biến thiên tuần hoàn theo thời gian",
+    "lực ma sát không đổi",
+    "lực cản của môi trường",
+    "nội lực của hệ"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa dao động cưỡng bức là dao động của vật chịu tác dụng của ngoại lực biến thiên tuần hoàn theo thời gian."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Biên độ của dao động cưỡng bức phụ thuộc vào bao nhiêu yếu tố nêu trong bài (biên độ lực cưỡng bức, lực cản, độ chênh giữa $f$ và $f_0$)? Nhập số.",
+   "answer": "3",
+   "explanation": "Bài nêu 3 yếu tố: biên độ lực cưỡng bức, lực cản trong hệ và độ chênh lệch giữa tần số cưỡng bức $f$ và tần số riêng $f_0$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Dao động tắt dần và nguyên nhân",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Xét dao động tắt dần. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Biên độ và năng lượng của dao động giảm dần theo thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Không có chu kì hoặc tần số xác định vì dao động không còn tuần hoàn.",
+     "answer": true
+    },
+    {
+     "text": "Nếu ma sát quá lớn, vật có thể dừng ngay mà không kịp dao động.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng của vật được bảo toàn trong quá trình dao động.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cơ năng giảm dần vì lực ma sát, lực cản sinh công âm; ba ý còn lại đúng theo bài."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "So sánh dao động duy trì và dao động cưỡng bức. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Dao động duy trì có chu kì bằng chu kì riêng của hệ.",
+     "answer": true
+    },
+    {
+     "text": "Dao động cưỡng bức có chu kì bằng chu kì của ngoại lực cưỡng bức.",
+     "answer": true
+    },
+    {
+     "text": "Ngoại lực trong dao động cưỡng bức tác dụng liên tục trong suốt quá trình.",
+     "answer": true
+    },
+    {
+     "text": "Dao động cưỡng bức có chu kì luôn bằng chu kì riêng của hệ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bảng so sánh trong bài: duy trì có chu kì riêng của hệ; cưỡng bức có chu kì của ngoại lực và có thể khác chu kì riêng."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Xét ứng dụng và tác hại của cộng hưởng. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Hộp đàn ghi-ta, vi-ô-lông là hộp cộng hưởng làm tiếng đàn to, rõ hơn.",
+     "answer": true
+    },
+    {
+     "text": "Cầu Tacoma Narrows sập năm 1940 là ví dụ tác hại của cộng hưởng với gió.",
+     "answer": true
+    },
+    {
+     "text": "Máy thu sóng vô tuyến dùng cộng hưởng điện để chọn sóng có tần số thích hợp.",
+     "answer": true
+    },
+    {
+     "text": "Cộng hưởng không bao giờ gây hại cho các công trình.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu cộng hưởng vừa có ứng dụng (hộp đàn, máy thu sóng) vừa có tác hại (gây gãy, đổ công trình như cầu Tacoma Narrows)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Đồ thị cộng hưởng có đỉnh càng cao và càng nhọn khi",
+   "options": [
+    "lực cản của môi trường càng nhỏ",
+    "lực cản của môi trường càng lớn",
+    "tần số riêng của hệ càng nhỏ",
+    "khối lượng của vật càng lớn"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu đồ thị càng nhọn (đỉnh càng cao, càng hẹp) khi lực cản của môi trường càng nhỏ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hộp đàn của đàn ghi-ta, vi-ô-lông có tác dụng làm tiếng đàn to, rõ hơn vì hộp đàn là",
+   "options": [
+    "hộp cộng hưởng với nhiều tần số khác nhau của dây đàn",
+    "bộ phận làm tắt dần dao động của dây đàn",
+    "bộ phận duy trì dao động của dây đàn",
+    "nơi tạo ra lực cản lớn đối với dây đàn"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu hộp đàn là hộp cộng hưởng với nhiều tần số khác nhau của dây đàn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Điều kiện để xảy ra hiện tượng cộng hưởng là (với $f$ là tần số của lực cưỡng bức, $f_0$ là tần số riêng của hệ)",
+   "options": [
+    "$f = f_0$",
+    "$f > f_0$",
+    "$f < f_0$",
+    "$f = 2f_0$"
+   ],
+   "answer": 0,
+   "explanation": "Cộng hưởng xảy ra khi tần số lực cưỡng bức bằng tần số riêng của hệ: $f = f_0$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Ngoại lực cưỡng bức có dạng $F = F_0\\cos(\\omega t + \\varphi_0)$. Đại lượng $\\omega$ là",
+   "options": [
+    "tần số góc của ngoại lực",
+    "biên độ của ngoại lực",
+    "pha ban đầu của ngoại lực",
+    "chu kì của ngoại lực"
+   ],
+   "answer": 0,
+   "explanation": "Trong biểu thức $F = F_0\\cos(\\omega t + \\varphi_0)$, $\\omega$ là tần số góc, $F_0$ là biên độ và $\\varphi_0$ là pha ban đầu."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Trong biểu thức $F = F_0\\cos(\\omega t + \\varphi_0)$, lực cưỡng bức $F$ có đơn vị là",
+   "options": [
+    "N",
+    "J",
+    "W",
+    "m/s"
+   ],
+   "answer": 0,
+   "explanation": "Bài ghi lực cưỡng bức $F = F_0\\cos(\\omega t + \\varphi_0)$ với đơn vị là niutơn (N)."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Xét lực cưỡng bức $F = F_0\\cos(\\omega t + \\varphi_0)$ tác dụng lên một hệ dao động có tần số riêng $f_0$. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$F_0$ là biên độ của lực cưỡng bức.",
+     "answer": true
+    },
+    {
+     "text": "Khi dao động đã ổn định, $f_{vật} = f_{lực}$.",
+     "answer": true
+    },
+    {
+     "text": "Tần số dao động của vật luôn bằng $f_0$.",
+     "answer": false
+    },
+    {
+     "text": "Cộng hưởng xảy ra khi $\\omega = \\omega_0$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Dao động cưỡng bức ổn định có tần số bằng tần số của lực và có thể khác $f_0$; cộng hưởng khi $\\omega = \\omega_0$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Một hệ dao động có tần số riêng $f_0 = 4$ Hz. Để xảy ra cộng hưởng, tần số của lực cưỡng bức phải bằng bao nhiêu Hz?",
+   "answer": "4",
+   "explanation": "Cộng hưởng khi $f = f_0 = 4$ Hz."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Một hệ dao động có chu kì riêng $T_0 = 0{,}5$ s. Để xảy ra cộng hưởng, chu kì của lực cưỡng bức phải bằng bao nhiêu giây?",
+   "answer": "0,5",
+   "explanation": "Cộng hưởng khi $T = T_0 = 0{,}5$ s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Lực cưỡng bức có tần số $5$ Hz tác dụng lên hệ có tần số riêng $8$ Hz. Khi đã ổn định, vật dao động với tần số bao nhiêu Hz?",
+   "answer": "5",
+   "explanation": "Dao động cưỡng bức ổn định có tần số bằng tần số của ngoại lực: $f_{vật} = f_{lực} = 5$ Hz."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Một hệ dao động có tần số góc riêng $\\omega_0 = 20$ rad/s. Để xảy ra cộng hưởng, tần số góc của lực cưỡng bức phải bằng bao nhiêu rad/s?",
+   "answer": "20",
+   "explanation": "Cộng hưởng khi $\\omega = \\omega_0 = 20$ rad/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Dao động cưỡng bức và hiện tượng cộng hưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Một hệ có tần số riêng $f_0 = 12$ Hz chịu lần lượt các lực cưỡng bức cùng biên độ, tần số $9$ Hz, $11$ Hz và $15$ Hz. Lực có tần số bao nhiêu Hz làm biên độ dao động lớn nhất?",
+   "answer": "11",
+   "explanation": "Biên độ càng lớn khi $|f - f_0|$ càng nhỏ: các độ chênh là 3, 1 và 3 nên chọn $f = 11$ Hz."
+  }
+ ]
+}

@@ -1,0 +1,375 @@
+{
+ "lesson_id": 45,
+ "lesson_title": "Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá",
+ "item_id": 216,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Mục đích của thí nghiệm trong bài là gì?",
+   "options": [
+    "Đo suất điện động và điện trở trong của pin mới và pin cũ, rồi so sánh",
+    "Chỉ đo điện trở của biến trở",
+    "Đo công suất tiêu thụ của điện trở đã biết",
+    "Đo điện dung của pin điện hoá"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu mục đích là đo $\\xi$ và $r$ của pin mới, pin cũ để so sánh sự thay đổi."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Đồ thị biểu diễn $U$ theo $I$ trong thí nghiệm có dạng nào?",
+   "options": [
+    "Đường thẳng đi lên",
+    "Đường thẳng giảm dần",
+    "Đường parabol",
+    "Đường hypebol"
+   ],
+   "answer": 1,
+   "explanation": "$U_{MN}=\\xi-Ir$ là hàm bậc nhất giảm dần theo $I$ nên đồ thị là đường thẳng giảm dần."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị $U-I$, suất điện động $\\xi$ được xác định bằng đại lượng nào?",
+   "options": [
+    "Hệ số góc của đường thẳng",
+    "Tung độ giao điểm của đường thẳng với trục $U$",
+    "Hoành độ giao điểm với trục $I$",
+    "Diện tích dưới đường thẳng"
+   ],
+   "answer": 1,
+   "explanation": "Kéo dài đường thẳng cắt trục tung tại $U_0$; $\\xi=U_0$ (khi $I=0$)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong quá trình tiến hành, giá trị biến trở $R_x$ được thay đổi như thế nào ở các lần đo sau?",
+   "options": [
+    "Tăng dần",
+    "Giảm dần",
+    "Giữ nguyên",
+    "Đặt ngẫu nhiên, không cần theo thứ tự"
+   ],
+   "answer": 1,
+   "explanation": "Bài yêu cầu lặp lại các bước với giá trị $R_x$ giảm dần."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ở lần đo đầu tiên, biến trở được điều chỉnh đến giá trị nào?",
+   "options": [
+    "$R_x = 0\\ \\Omega$",
+    "$R_x = 10\\ \\Omega$",
+    "$R_x = 50\\ \\Omega$",
+    "$R_x = 100\\ \\Omega$"
+   ],
+   "answer": 3,
+   "explanation": "Bước 2 của quy trình: điều chỉnh biến trở đến $R_x = 100\\ \\Omega$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Nếu thang đo trên đồng hồ đa năng không phù hợp với giá trị cần đo thì cách khắc phục nào đúng theo bài?",
+   "options": [
+    "Thay pin khác",
+    "Điều chỉnh thang đo cho phù hợp với giá trị cần đo",
+    "Đóng khoá K lâu hơn",
+    "Bỏ qua số liệu đó và dùng giá trị ước đoán"
+   ],
+   "answer": 1,
+   "explanation": "Cách khắc phục nêu trong bài: điều chỉnh thang đo trên đồng hồ đa năng cho phù hợp.",
+   "theorySection": 3
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Nhận xét về dụng cụ và thao tác trong thí nghiệm:",
+   "statements": [
+    {
+     "text": "Thí nghiệm dùng một pin chưa qua sử dụng và một pin đã qua sử dụng.",
+     "answer": true
+    },
+    {
+     "text": "Mạch gồm biến trở $100\\ \\Omega$ và một điện trở đã biết giá trị.",
+     "answer": true
+    },
+    {
+     "text": "Ampe kế đo cường độ $I$, vôn kế đo hiệu điện thế $U_{MN}$ giữa hai điểm M, N.",
+     "answer": true
+    },
+    {
+     "text": "Nên đóng khoá K liên tục trong suốt quá trình đo để số liệu ổn định.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài ghi: ngắt khoá K sau mỗi lần ghi số liệu và không đóng khoá K quá lâu để tránh tiêu hao năng lượng nguồn."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Về nguyên nhân gây sai số trong thí nghiệm:",
+   "statements": [
+    {
+     "text": "Chuôi cắm, khoá K bị lỏng có thể gây sai số.",
+     "answer": true
+    },
+    {
+     "text": "Dây dẫn và đồng hồ đa năng đều có điện trở nên gây sai số.",
+     "answer": true
+    },
+    {
+     "text": "Đọc và ghi giá trị chưa đúng không ảnh hưởng đến kết quả.",
+     "answer": false
+    },
+    {
+     "text": "Đóng khoá K càng lâu thì sai số càng nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài liệt kê các nguyên nhân sai số: chuôi cắm lỏng, thang đo, thao tác, đọc ghi sai, điện trở của thiết bị; đóng K quá lâu làm tiêu hao năng lượng nguồn.",
+   "theorySection": 3
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Mỗi pin, bước 2–4 được thực hiện lần đầu với $R_x=100\\ \\Omega$ rồi lặp lại thêm 4 lần với $R_x$ giảm dần. Mỗi pin có tất cả bao nhiêu lần đo cặp $(U, I)$?",
+   "answer": "5",
+   "explanation": "Lần đầu cộng 4 lần lặp lại là 5 lần đo."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_nghia",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm dùng bao nhiêu pin điện hoá?",
+   "answer": "2",
+   "explanation": "Dụng cụ gồm hai pin: một pin mới và một pin cũ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Định luật Ohm cho toàn mạch trong thí nghiệm có biểu thức nào?",
+   "options": [
+    "$I=\\dfrac{\\xi}{R+R_x-r}$",
+    "$I=\\dfrac{\\xi}{R+R_x}$",
+    "$I=\\dfrac{\\xi}{R+R_x+r}$",
+    "$I=\\dfrac{\\xi+r}{R+R_x}$"
+   ],
+   "answer": 2,
+   "explanation": "Mạch ngoài gồm $R$ nối tiếp $R_x$, nguồn có điện trở trong $r$ nên $I=\\dfrac{\\xi}{R+R_x+r}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Hiệu điện thế $U_{MN}$ giữa hai đầu mạch ngoài liên hệ với $I$ theo công thức nào?",
+   "options": [
+    "$U_{MN}=\\xi+Ir$",
+    "$U_{MN}=\\xi-Ir$",
+    "$U_{MN}=\\xi-\\dfrac{I}{r}$",
+    "$U_{MN}=Ir-\\xi$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $I(R+R_x)=\\xi-Ir$ suy ra $U_{MN}=\\xi-Ir$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Chọn hai điểm $(I_1;U_1)$ và $(I_2;U_2)$ trên đồ thị. Công thức tính điện trở trong $r$ là:",
+   "options": [
+    "$r=\\dfrac{U_1-U_2}{I_1-I_2}$",
+    "$r=\\dfrac{U_1+U_2}{I_1+I_2}$",
+    "$r=\\dfrac{I_2-I_1}{U_1-U_2}$",
+    "$r=\\dfrac{U_1-U_2}{I_2-I_1}$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $U_1=\\xi-I_1r$ và $U_2=\\xi-I_2r$ suy ra $r=\\dfrac{U_1-U_2}{I_2-I_1}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Đồ thị $U$ theo $I$ là đường thẳng có hệ số góc bằng:",
+   "options": [
+    "$r$",
+    "$-r$",
+    "$\\xi$",
+    "$-\\xi$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $U=\\xi-Ir$, hệ số góc bằng $-r$ và tung độ giao điểm bằng $\\xi$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Về đồ thị $U-I$ của pin:",
+   "statements": [
+    {
+     "text": "Tại $I=0$ thì $U_{MN}=\\xi$.",
+     "answer": true
+    },
+    {
+     "text": "Hệ số góc của đường thẳng bằng $-r$.",
+     "answer": true
+    },
+    {
+     "text": "Hệ số góc của đường thẳng bằng $\\xi$.",
+     "answer": false
+    },
+    {
+     "text": "Tung độ giao điểm với trục $U$ bằng $r$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ $U_{MN}=\\xi-Ir$: giao điểm với trục $U$ là $\\xi$, hệ số góc là $-r$."
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Về mạch điện thí nghiệm:",
+   "statements": [
+    {
+     "text": "$U_{MN}=I\\left(R+R_x\\right)$.",
+     "answer": true
+    },
+    {
+     "text": "$U_{MN}=\\xi+Ir$.",
+     "answer": false
+    },
+    {
+     "text": "Khi $R_x$ giảm thì $I$ tăng.",
+     "answer": true
+    },
+    {
+     "text": "Khi $I$ tăng thì $U_{MN}$ tăng.",
+     "answer": false
+    }
+   ],
+   "explanation": "$I=\\dfrac{\\xi}{R+R_x+r}$ nên $R_x$ giảm thì $I$ tăng; $U_{MN}=\\xi-Ir$ nên $I$ tăng thì $U_{MN}$ giảm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Đường thẳng thực nghiệm $U-I$ được kéo dài cắt trục tung tại $U_0=1{,}5$ V. Suất điện động $\\xi$ của pin bằng bao nhiêu vôn?",
+   "answer": "1,5",
+   "explanation": "$\\xi=U_0=1{,}5$ V."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Hai điểm trên đồ thị: $(I_1;U_1)=(0{,}1\\ \\text{A};1{,}3\\ \\text{V})$ và $(I_2;U_2)=(0{,}3\\ \\text{A};0{,}9\\ \\text{V})$. Điện trở trong $r$ bằng bao nhiêu ôm?",
+   "answer": "2",
+   "explanation": "$r=\\dfrac{1{,}3-0{,}9}{0{,}3-0{,}1}=2\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Pin có $\\xi=3$ V, $r=2\\ \\Omega$, mạch ngoài $R+R_x=4\\ \\Omega$. Cường độ dòng điện $I$ bằng bao nhiêu ampe?",
+   "answer": "0,5",
+   "explanation": "$I=\\dfrac{3}{4+2}=0{,}5$ A."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Pin có $\\xi=1{,}5$ V, $r=2\\ \\Omega$; dòng điện trong mạch $I=0{,}2$ A. Hiệu điện thế $U_{MN}$ bằng bao nhiêu vôn?",
+   "answer": "1,1",
+   "explanation": "$U_{MN}=\\xi-Ir=1{,}5-0{,}2\\cdot2=1{,}1$ V."
+  }
+ ]
+}

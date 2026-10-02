@@ -1,0 +1,386 @@
+{
+ "lesson_id": 33,
+ "lesson_title": "Bài 14. Bài tập về sóng",
+ "item_id": 165,
+ "generated_at": "2026-10-02",
+ "generated_by": "claude-code",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Quan sát $n$ ngọn sóng liên tiếp thì khoảng cách giữa ngọn đầu và ngọn cuối bằng bao nhiêu bước sóng?",
+   "options": [
+    "$n$",
+    "$n-1$",
+    "$n+1$",
+    "$\\dfrac{n}{2}$"
+   ],
+   "answer": 1,
+   "explanation": "Quan sát $n$ ngọn sóng liên tiếp thì có $(n-1)$ bước sóng (Dạng 1)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai điểm trên phương truyền sóng dao động cùng pha khi khoảng cách $d$ giữa chúng thỏa mãn:",
+   "options": [
+    "$d=k\\lambda$",
+    "$d=(k+\\tfrac12)\\lambda$",
+    "$d=(2k+1)\\dfrac{\\lambda}{4}$",
+    "$d=k\\dfrac{\\lambda}{4}$"
+   ],
+   "answer": 0,
+   "explanation": "Cùng pha: $d=k\\lambda$ (Dạng 3)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong giao thoa sóng cơ với hai nguồn cùng pha, điểm cực đại thỏa mãn điều kiện nào?",
+   "options": [
+    "$d_2-d_1=k\\lambda$",
+    "$d_2-d_1=(k+\\tfrac12)\\lambda$",
+    "$d_2-d_1=(2k+1)\\dfrac{\\lambda}{4}$",
+    "$d_2+d_1=k\\lambda$"
+   ],
+   "answer": 0,
+   "explanation": "Hai nguồn cùng pha: cực đại khi $d_2-d_1=k\\lambda$, cực tiểu khi $d_2-d_1=(k+\\tfrac12)\\lambda$ (Dạng 6)."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nhận định nào sau đây về độ lệch pha giữa hai điểm trên phương truyền sóng là đúng hay sai?",
+   "statements": [
+    {
+     "text": "Hai điểm cùng pha khi $d=k\\lambda$.",
+     "answer": true
+    },
+    {
+     "text": "Hai điểm ngược pha khi $d=k\\lambda$.",
+     "answer": false
+    },
+    {
+     "text": "Hai điểm vuông pha khi $d=(2k+1)\\dfrac{\\lambda}{4}$.",
+     "answer": true
+    },
+    {
+     "text": "Độ lệch pha giữa hai điểm cách nhau $d$ là $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Ngược pha khi $d=(k+\\tfrac12)\\lambda$, không phải $k\\lambda$ (Dạng 3)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Sóng dừng trên dây hai đầu cố định có 5 bụng thì có bao nhiêu nút?",
+   "options": [
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "answer": 2,
+   "explanation": "Hai đầu cố định: $n$ bụng thì có $n+1$ nút, nên 5 bụng có 6 nút (Dạng 13)."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nhận định nào sau đây về sóng dừng trên dây một đầu cố định, một đầu tự do là đúng hay sai?",
+   "statements": [
+    {
+     "text": "Chiều dài dây thỏa mãn $L=(2n+1)\\dfrac{\\lambda}{4}$.",
+     "answer": true
+    },
+    {
+     "text": "Số bụng là $n+1$.",
+     "answer": true
+    },
+    {
+     "text": "Số nút là $n+1$.",
+     "answer": true
+    },
+    {
+     "text": "Chiều dài dây thỏa mãn $L=n\\dfrac{\\lambda}{2}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Một đầu cố định một đầu tự do: $L=(2n+1)\\dfrac{\\lambda}{4}$, có $n+1$ bụng và $n+1$ nút (Dạng 13)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Giới hạn bước sóng của ánh sáng trắng (ánh sáng nhìn thấy) là:",
+   "options": [
+    "$0,38\\ \\mu m \\le \\lambda \\le 0,76\\ \\mu m$",
+    "$0,76\\ \\mu m \\le \\lambda \\le 1,52\\ \\mu m$",
+    "$0,19\\ \\mu m \\le \\lambda \\le 0,38\\ \\mu m$",
+    "$0,38\\ mm \\le \\lambda \\le 0,76\\ mm$"
+   ],
+   "answer": 0,
+   "explanation": "Ánh sáng trắng: $0,38\\ \\mu m \\le \\lambda \\le 0,76\\ \\mu m$ (Dạng 12)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai bức xạ $\\lambda_1,\\lambda_2$ cho vân sáng trùng nhau tại một vị trí khi:",
+   "options": [
+    "$k_1\\lambda_1=k_2\\lambda_2$",
+    "$k_1\\lambda_2=k_2\\lambda_1$",
+    "$\\lambda_1+\\lambda_2=k$",
+    "$k_1+\\lambda_1=k_2+\\lambda_2$"
+   ],
+   "answer": 0,
+   "explanation": "Trùng vân sáng: $k_1\\lambda_1=k_2\\lambda_2$ (Dạng 11)."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nhận định nào sau đây về giao thoa ánh sáng qua khe Young là đúng hay sai?",
+   "statements": [
+    {
+     "text": "Vị trí vân sáng là $x_s=ki$.",
+     "answer": true
+    },
+    {
+     "text": "Vị trí vân tối là $x_t=ki$.",
+     "answer": false
+    },
+    {
+     "text": "Khoảng vân là $i=\\dfrac{\\lambda D}{a}$.",
+     "answer": true
+    },
+    {
+     "text": "Vị trí vân tối là $x_t=(k+\\tfrac12)i$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Vân sáng $x_s=ki$, vân tối $x_t=(k+\\tfrac12)i$, khoảng vân $i=\\dfrac{\\lambda D}{a}$ (Dạng 9)."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nhận định nào sau đây về sóng điện từ là đúng hay sai?",
+   "statements": [
+    {
+     "text": "Tần số và bước sóng liên hệ bằng $f=\\dfrac{c}{\\lambda}$.",
+     "answer": true
+    },
+    {
+     "text": "Trong chân không, tần số tăng thì bước sóng giảm.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ $c=3.10^{8}$ m/s.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ $c=3.10^{6}$ m/s.",
+     "answer": false
+    }
+   ],
+   "explanation": "Sóng điện từ có $f=\\dfrac{c}{\\lambda}$ với $c=3.10^{8}$ m/s (Dạng 5)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công thức liên hệ bước sóng với tốc độ truyền sóng $v$ và tần số $f$ là:",
+   "options": [
+    "$\\lambda=\\dfrac{v}{f}$",
+    "$\\lambda=vf$",
+    "$\\lambda=\\dfrac{f}{v}$",
+    "$\\lambda=\\dfrac{T}{v}$"
+   ],
+   "answer": 0,
+   "explanation": "$\\lambda=vT=\\dfrac{v}{f}$ (Dạng 1)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Sóng cơ truyền với tốc độ $v=20$ m/s, tần số $f=5$ Hz. Bước sóng là bao nhiêu mét?",
+   "answer": "4",
+   "explanation": "$\\lambda=\\dfrac{v}{f}=\\dfrac{20}{5}=4$ m (Dạng 1)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Cường độ sóng cầu tại điểm cách nguồn điểm công suất $P$ một khoảng $R$ là:",
+   "options": [
+    "$I=\\dfrac{P}{4\\pi R^{2}}$",
+    "$I=\\dfrac{P}{2\\pi R^{2}}$",
+    "$I=\\dfrac{P}{4\\pi R}$",
+    "$I=4\\pi R^{2}P$"
+   ],
+   "answer": 0,
+   "explanation": "$I=\\dfrac{P}{S}$ với sóng cầu $S=4\\pi R^{2}$ (Dạng 2)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai điểm trên phương truyền sóng cách nhau $d=\\dfrac{\\lambda}{4}$ thì độ lệch pha là:",
+   "options": [
+    "$\\dfrac{\\pi}{2}$",
+    "$\\pi$",
+    "$\\dfrac{\\pi}{4}$",
+    "$2\\pi$"
+   ],
+   "answer": 0,
+   "explanation": "$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}=\\dfrac{2\\pi}{4}=\\dfrac{\\pi}{2}$ (Dạng 3)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Sóng điện từ có bước sóng $100$ m trong chân không ($c=3.10^{8}$ m/s). Tần số là bao nhiêu MHz?",
+   "answer": "3",
+   "explanation": "$f=\\dfrac{c}{\\lambda}=\\dfrac{3.10^{8}}{100}=3.10^{6}$ Hz $=3$ MHz (Dạng 5)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khoảng vân trong thí nghiệm Young (khoảng cách hai khe $a$, màn cách khe $D$) là:",
+   "options": [
+    "$i=\\dfrac{\\lambda D}{a}$",
+    "$i=\\dfrac{\\lambda a}{D}$",
+    "$i=\\dfrac{aD}{\\lambda}$",
+    "$i=\\dfrac{\\lambda}{aD}$"
+   ],
+   "answer": 0,
+   "explanation": "$i=\\dfrac{\\lambda D}{a}$ (Dạng 9)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Thí nghiệm Young: $\\lambda=0,5\\ \\mu m$, $a=1$ mm, $D=2$ m. Khoảng vân là bao nhiêu mm?",
+   "answer": "1",
+   "explanation": "$i=\\dfrac{\\lambda D}{a}=\\dfrac{0,5.10^{-6}.2}{10^{-3}}=10^{-3}$ m $=1$ mm (Dạng 9)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khoảng vân $i=1$ mm, bề rộng miền giao thoa $L=10$ mm (đối xứng qua vân trung tâm). Dùng $N_s=2\\left[\\dfrac{L}{2i}\\right]+1$, số vân sáng là bao nhiêu?",
+   "answer": "11",
+   "explanation": "$N_s=2\\left[\\dfrac{10}{2.1}\\right]+1=2.5+1=11$ (Dạng 10)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Sóng dừng trên dây hai đầu cố định dài $L=60$ cm, có 3 bụng. Bước sóng là bao nhiêu cm?",
+   "answer": "40",
+   "explanation": "$L=n\\dfrac{\\lambda}{2}$ với $n=3$ nên $\\lambda=\\dfrac{2L}{3}=40$ cm (Dạng 13)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Sóng dừng có $A_M=2A\\left|\\sin\\left(\\dfrac{2\\pi x}{\\lambda}\\right)\\right|$ với $A=3$ cm. Điểm M cách nút gần nhất $x=\\dfrac{\\lambda}{4}$ có biên độ bao nhiêu cm?",
+   "answer": "6",
+   "explanation": "$\\sin\\dfrac{\\pi}{2}=1$ nên $A_M=2A=6$ cm (Dạng 15)."
+  }
+ ]
+}
