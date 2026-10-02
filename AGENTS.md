@@ -150,3 +150,9 @@ git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
 ## Xung đột
 Hai phiên cùng sửa một file riêng (không phải file dùng chung) → phiên merge sau tự gộp và kiểm lại; nếu ý định mâu thuẫn
 thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
+
+# Cập nhật bài lý thuyết đã đăng — chỉ đẩy phần lý thuyết
+
+Sửa/đăng lại nội dung lý thuyết của bài có sẵn: dùng `bash scripts/cap-nhat-ly-thuyet.sh <theory.html|bundle.json> <lesson_id>`
+(chỉ ghi cột `body_html` của mục `ly_thuyet`, tự sao lưu ra `scripts/logs/`; hoàn tác bằng `scripts/khoi-phuc-ly-thuyet.mts`).
+Không dùng `upload-lesson.mts` cho việc này — nó tạo/ghi cả đề Luyện tập. Công thức có `<`/`>` trong `$…$` phải viết `\lt`/`\gt`.
