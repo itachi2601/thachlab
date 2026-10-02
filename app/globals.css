@@ -2551,20 +2551,6 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
      vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
    ================================================================== */
 
-/* Nút mở chế độ trình chiếu ở đầu tab Lý thuyết. Nói rõ công dụng ngay trên nút để
-   lần đầu thầy phân biệt được với nút "Toàn màn hình" của trình duyệt. */
-.lesson-present { display: flex; width: 100%; align-items: center; gap: 14px; margin-bottom: 18px; border: 1px solid var(--lesson-accent-line); border-radius: 14px; background: var(--lesson-accent-soft); padding: 13px 16px; color: var(--color-ink); text-align: left; cursor: pointer; transition: border-color .15s, background-color .15s, transform .15s; }
-.lesson-present:hover { border-color: var(--lesson-accent); transform: translateY(-1px); }
-.lesson-present > svg { flex: 0 0 auto; color: var(--lesson-accent-text); }
-.lesson-present > span:not(.lesson-present-go) { display: grid; gap: 2px; min-width: 0; }
-.lesson-present strong { font-size: 15px; font-weight: 700; }
-.lesson-present small { color: var(--color-muted); font-size: 12.5px; line-height: 1.45; }
-.lesson-present-go { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; margin-left: auto; color: var(--lesson-accent-text); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
-@media (max-width: 639px) {
-  .lesson-present { align-items: flex-start; gap: 11px; }
-  .lesson-present-go { display: none; }
-}
-
 /* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
 .lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
 .lesson-presenter-loading.is-error { color: #fca5a5; }
@@ -2762,4 +2748,40 @@ html.is-dim[data-theme="light"] :is(.border-white\/10, .border-white\/15, .borde
 }
 @media (forced-colors: active) {
   .text-gradient, .text-gradient--warm, .cnc-header-grid h1 em { color: CanvasText; }
+}
+
+/* ============================================================
+   Trang bài học — đợt gọn 2/10/2026 (docs/QUY-TAC-THIET-KE.md: B1, N4, H2, M5, C3)
+   ============================================================ */
+/* N4/B1: trên điện thoại breadcrumb chỉ còn lặp tên bài (đã có nút quay lại + h1) → ẩn hẳn
+   để nội dung học lên cao hơn. Mục cuối breadcrumb đã bỏ khỏi TSX; desktop vẫn giữ "Lớp › Chương". */
+@media (max-width: 639px) {
+  .lesson-breadcrumb { display: none; }
+}
+
+/* M5: mọi hình raster trong bài dùng MỘT kiểu khung sáng thống nhất (nền trắng, đệm 10px, bo 10px)
+   thay vì ô trắng chói, đệm/bo mỗi nơi một khác trên nền tối. Hình mới nên vẽ SVG nền trong suốt. */
+.lesson-prose img.figure {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+html[data-theme="light"] .lesson-prose img.figure,
+.lesson-page.is-dim .lesson-prose img.figure { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12); }
+
+/* H2/N7: bảng dán từ Word kiểu "chữ | hình" (có <img>): chữ không in đậm cả đoạn (th mặc định
+   bold), và dưới 760px xếp DỌC — chữ trước, hình ngay dưới, rộng 100% — thay vì cuộn ngang
+   làm cắt mất cột hình. Chỉ nhắm bảng có hình; bảng số liệu thật vẫn cuộn ngang như cũ. */
+.lesson-prose .table-scroll table:has(img) :is(th, td) { font-weight: 400; }
+@media (max-width: 759px) {
+  .lesson-prose .table-scroll:has(img) { overflow-x: visible; }
+  .lesson-prose .table-scroll table:has(img) { display: block; width: 100%; min-width: 0 !important; }
+  .lesson-prose .table-scroll table:has(img) :is(thead, tbody, tr, th, td) { display: block; width: 100% !important; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td) { border: 0; padding: 10px 12px; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td):has(img) { padding-top: 0; }
+  .lesson-prose .table-scroll table:has(img) img.figure { max-width: min(100%, 480px); margin: 0 auto; }
 }

@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronRight, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -478,7 +478,10 @@ function LessonSkeleton() {
 }
 
 function LessonLoader() {
-  const { session } = useAuth();
+  const { session, profile } = useAuth();
+  // B1/N1 (docs/QUY-TAC-THIET-KE.md): Trình chiếu là công cụ của người dạy, học sinh không thấy.
+  // `profile` đã tính cả chế độ "Xem như học sinh" của admin nên preview hiện đúng giao diện HS.
+  const canPresent = profile?.role === "admin" || profile?.role === "instructor" || profile?.role === "tro_giang";
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
   const classSlug = searchParams.get("class");
@@ -1169,8 +1172,10 @@ function LessonLoader() {
   const progressDone = Math.min(totalTabs, doneTabs + (lessonMarked ? 1 : 0));
 
   const assignmentItem = items.find((i) => i.kind === "bai_tap_ve_nha" && i.due_at);
-  const itemCount = items.length;
   const lessonTypeLabel = LESSON_KIND_META[lessonKind]?.label ?? "Bài học";
+  const lessonTheoryPassed = !!session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed";
+  // N4: chip "Bài học" và đếm "4 mục · 4 phần" bị bỏ (tab ngay dưới đã cho biết) — chỉ giữ thứ có ích.
+  const hasLessonMeta = lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed;
   const stepLabel = lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
 
   // Mục lục bài này = các h2/h3 có id trong TAB đang mở (heading do nội dung soạn sẵn sinh ra).
@@ -1379,6 +1384,17 @@ function LessonLoader() {
           A+
         </button>
       </div>
+      {canPresent && theoryItems.length > 0 && (
+        <button
+          type="button"
+          className="lesson-tool"
+          onClick={() => setPresenting(true)}
+          title="Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ"
+        >
+          <MonitorPlay size={14} aria-hidden />
+          <span className="lesson-tool-text">Trình chiếu</span>
+        </button>
+      )}
       <button
         type="button"
         className={`lesson-tool ${fullscreen ? "is-on" : ""}`}
@@ -1653,22 +1669,19 @@ function LessonLoader() {
                 <Link href={classHref} className="lesson-crumb-chapter">
                   {chapterFullLabel || "Chương"}
                 </Link>
-                <span aria-hidden className="lesson-crumb-sep">›</span>
-                <span className="lesson-breadcrumb-current">{title}</span>
               </nav>
               <h1>{title}</h1>
-              <div className="lesson-meta">
-                <span className="lesson-meta-chip">{lessonTypeLabel}</span>
-                <span>
-                  {itemCount} mục{totalTabs > 0 ? ` · ${totalTabs} phần` : ""}
-                </span>
-                {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
-                {session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed" && (
-                  <span className="lesson-meta-ok">
-                    <Check size={13} aria-hidden /> Đã xem lý thuyết
-                  </span>
-                )}
-              </div>
+              {hasLessonMeta && (
+                <div className="lesson-meta">
+                  {lessonKind !== "bai_hoc" && <span className="lesson-meta-chip">{lessonTypeLabel}</span>}
+                  {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
+                  {lessonTheoryPassed && (
+                    <span className="lesson-meta-ok">
+                      <Check size={13} aria-hidden /> Đã xem lý thuyết
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
             {readToolButton}
             <button
@@ -1713,22 +1726,6 @@ function LessonLoader() {
                 role="tabpanel"
                 aria-labelledby={`lesson-tab-${activeSection.kind}`}
               >
-                {/* Nút Trình chiếu chỉ có ở tab Lý thuyết — đúng nhu cầu dạy lý thuyết trên
-                    lớp; các tab bài tập/đề giữ nguyên giao diện làm bài của học sinh. */}
-                {activeSection.kind === "ly_thuyet" && theoryItems.length > 0 && (
-                  <button type="button" className="lesson-present" onClick={() => setPresenting(true)}>
-                    <MonitorPlay size={22} aria-hidden />
-                    <span>
-                      <strong>Trình chiếu bài giảng</strong>
-                      <small>
-                        Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ.
-                      </small>
-                    </span>
-                    <span className="lesson-present-go">
-                      Mở <ChevronRight size={15} aria-hidden />
-                    </span>
-                  </button>
-                )}
                 <div className="lesson-stack">{renderSectionItems(activeSection)}</div>
                 <div className="lesson-tabfoot">
                   {nextSection ? (
