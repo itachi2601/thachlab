@@ -48,6 +48,19 @@ export function isSemesterExam(kind: LessonKind): boolean {
   return kind === "kiem_tra_giua_ki" || kind === "kiem_tra_cuoi_ki";
 }
 
+/**
+ * Tiêu đề chương trong CSDL thường đã có "Chương N: …". Bỏ tiền tố đó để nơi hiển thị tự ghép
+ * "Chương N · Tên" (hoặc chỉ "Tên" khi số chương đã hiện riêng), tránh lặp "1  Chương 1: …".
+ */
+export function chapterDisplayTitle(title: string): string {
+  return title.replace(/^chương\s*\d+\s*[:.\-–]?\s*/i, "").trim() || title;
+}
+
+/** "Chương N · Tên" — nhãn đầy đủ dùng cho breadcrumb, link quay lại, tiêu đề thẻ chương. */
+export function chapterLabel(index: number, title: string): string {
+  return `Chương ${index + 1} · ${chapterDisplayTitle(title)}`;
+}
+
 export interface LessonKindMeta {
   label: string; // nhãn đầy đủ, cũng là tên bài mặc định
   badge: string; // nhãn ngắn hiển thị dạng chip ("" = không hiện)

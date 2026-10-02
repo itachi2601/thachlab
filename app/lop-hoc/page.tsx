@@ -12,6 +12,7 @@ import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
+  chapterDisplayTitle,
   isPeriodicExam,
   isSemesterExam,
   type Chapter,
@@ -59,12 +60,6 @@ function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>
 import ClassRankGroups from "@/components/rank/ClassRankGroups";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
-
-// Tiêu đề chương trong CSDL thường đã có sẵn "Chương N: …" — bỏ tiền tố đó để tự ghép lại
-// thành "Chương N · Tên chương" thống nhất, tránh lặp "Chương 1 · Chương 1: …".
-function chapterDisplayTitle(title: string): string {
-  return title.replace(/^chương\s*\d+\s*[:.\-–]?\s*/i, "").trim() || title;
-}
 
 const GRADE_LABELS: Record<string, string> = { "9": "KHTN 9" };
 const GRADE_ORDER = ["10", "11", "12", "9"];
@@ -348,7 +343,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                             </p>
                           </div>
                           <button type="button" className="lesson-btn" onClick={() => continueLesson(lastLesson)}>
-                            Tiếp tục <ArrowRight size={15} />
+                            Tiếp tục học <ArrowRight size={15} />
                           </button>
                         </div>
                       )}
@@ -395,7 +390,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                                   <span className="class-chapter-progress-bar">
                                     <i style={{ width: `${Math.round((chapterCompleted / chapterTotal) * 100)}%` }} />
                                   </span>
-                                  <small>{chapterCompleted}/{chapterTotal} nội dung hoàn thành</small>
+                                  <small>{chapterCompleted}/{chapterTotal} mục</small>
                                 </div>
                               )}
                               {!collapsed && (

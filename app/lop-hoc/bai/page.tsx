@@ -22,6 +22,8 @@ import {
 import {
   LESSON_KIND_META,
   SECTION_ORDER,
+  chapterDisplayTitle,
+  chapterLabel,
   formatTypeCounts,
   isGradedKind,
   isItemLive,
@@ -826,6 +828,14 @@ function LessonLoader() {
 
   const courseLessons = useMemo(() => courseChapters.flatMap((entry) => entry.lessons), [courseChapters]);
 
+  // "Chương N · Tên" — nhãn dùng chung cho breadcrumb, link quay lại và tiêu đề ngăn kéo, để
+  // trang bài nói cùng một thứ tiếng với trang chương (số chương lấy theo vị trí trong khoá).
+  const chapterFullLabel = useMemo(() => {
+    const idx = courseChapters.findIndex((e) => e.chapter.id === chapterId);
+    if (idx < 0) return chapterDisplayTitle(chapterTitle);
+    return chapterLabel(idx, courseChapters[idx].chapter.title);
+  }, [courseChapters, chapterId, chapterTitle]);
+
   // Bài trước/Bài tiếp theo: thứ tự bài trong cùng lớp và môn (xem courseChapters ở trên).
   const { prevLesson, nextLesson } = useMemo((): { prevLesson: Lesson | null; nextLesson: Lesson | null } => {
     const idx = courseLessons.findIndex((l) => l.id === id);
@@ -980,7 +990,7 @@ function LessonLoader() {
 
   const backLink = (
     <Link href={classHref} className="lesson-back">
-      <ArrowLeft size={15} /> {chapterTitle || "Lớp học"}
+      <ArrowLeft size={15} /> {chapterFullLabel || "Lớp học"}
     </Link>
   );
 
@@ -997,7 +1007,7 @@ function LessonLoader() {
             <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
               <Link href="/lop-hoc">Lớp học</Link>
               <span aria-hidden>›</span>
-              <Link href={classHref}>{chapterTitle || "Chương"}</Link>
+              <Link href={classHref}>{chapterFullLabel || "Chương"}</Link>
               <span aria-hidden>›</span>
               <span className="lesson-breadcrumb-current">{title}</span>
             </nav>
@@ -1325,9 +1335,9 @@ function LessonLoader() {
                   aria-expanded={open}
                 >
                   <em>{chapterIndex + 1}</em>
-                  <span>{chapter.title}</span>
+                  <span>{chapterDisplayTitle(chapter.title)}</span>
                   <small>
-                    {doneInChapter}/{lessons.length}
+                    {doneInChapter}/{lessons.length} bài
                   </small>
                   <ChevronDown size={15} className={open ? "is-open" : ""} aria-hidden />
                 </button>
@@ -1364,12 +1374,12 @@ function LessonLoader() {
   }
 
   /** Thẻ tiến độ khoá + ô tìm bài — dùng chung cho cột trái (máy tính) và ngăn kéo. */
-  /** Nút "Học tiếp" của thẻ tiến độ khoá — dùng chung cột trái (máy tính) và ngăn kéo. */
+  /** Nút "Tiếp tục học" của thẻ tiến độ khoá — dùng chung cột trái (máy tính) và ngăn kéo. */
   function renderContinueLink() {
     if (!nextInCourse) return null;
     return (
       <Link href={siblingHref(nextInCourse)} className="lesson-continue-btn">
-        Học tiếp <ArrowRight size={14} aria-hidden />
+        Tiếp tục học <ArrowRight size={14} aria-hidden />
       </Link>
     );
   }
@@ -1377,7 +1387,7 @@ function LessonLoader() {
   function renderCourseInfo() {
     return (
       <>
-        {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Học tiếp. */}
+        {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Tiếp tục học. */}
         {courseLessons.length > 0 && (
           <div className="lesson-progress-summary">
             <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
@@ -1574,7 +1584,7 @@ function LessonLoader() {
     </div>
   );
 
-  // Tiến độ cả khoá (chỉ tính được bài đang mở vì dữ liệu từng bài tải riêng) + bài "Học tiếp".
+  // Tiến độ cả khoá (chỉ tính được bài đang mở vì dữ liệu từng bài tải riêng) + bài "Tiếp tục học".
   const courseDone = courseLessons.filter(lessonComplete).length;
   let nextInCourse: Lesson | null = null;
   for (const lesson of courseLessons) {
@@ -1605,7 +1615,7 @@ function LessonLoader() {
                   <span aria-hidden className="lesson-crumb-sep">›</span>
                 </span>
                 <Link href={classHref} className="lesson-crumb-chapter">
-                  {chapterTitle || "Chương"}
+                  {chapterFullLabel || "Chương"}
                 </Link>
                 <span aria-hidden className="lesson-crumb-sep">›</span>
                 <span className="lesson-breadcrumb-current">{title}</span>
@@ -1739,7 +1749,7 @@ function LessonLoader() {
           bottom sheet, trượt từ đáy, đóng bằng ✕ / vuốt xuống / Esc. Chỉ render khi đang mở
           nên nội dung bên trong không tốn gì lúc tải trang. */}
       {drawerOpen && (
-        <div className="lesson-drawer" role="dialog" aria-modal="true" aria-label={`Nội dung khoá ${chapterTitle}`}>
+        <div className="lesson-drawer" role="dialog" aria-modal="true" aria-label={`Nội dung khoá ${chapterFullLabel}`}>
           <button type="button" className="lesson-drawer-scrim" aria-label="Đóng mục lục" onClick={() => setDrawerOpen(false)} />
           <div
             id="lesson-drawer"
@@ -1751,7 +1761,7 @@ function LessonLoader() {
           >
             <div className="lesson-drawer-head">
               <div>
-                <p className="lesson-drawer-title">Nội dung khoá {chapterTitle || ""}</p>
+                <p className="lesson-drawer-title">Nội dung khoá {chapterFullLabel || ""}</p>
                 <small>
                   Đã học {progressDone}/{totalTabs} mục
                 </small>
