@@ -45,6 +45,7 @@ export default function Navbar() {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const accountMenuRef = useRef<HTMLDivElement>(null);
   const isStaff = profile?.role === "admin" || profile?.role === "instructor";
+  const isTa = profile?.role === "tro_giang";
   const showParentLink = !session || profile?.role === "student";
   const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
 
@@ -171,6 +172,15 @@ export default function Navbar() {
                     </Link>
                   )}
                   {/* Trợ giảng trước đây phải tự gõ /tro-giang mới vào được khu làm việc của mình. */}
+                  {isTa && (
+                    <Link
+                      href="/dashboard-thpt"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <LayoutDashboard size={16} /> Quản lớp · THPT
+                    </Link>
+                  )}
                   {profile?.role === "tro_giang" && (
                     <Link
                       href="/tro-giang"

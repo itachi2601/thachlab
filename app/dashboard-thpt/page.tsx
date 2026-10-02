@@ -11,7 +11,7 @@ import TeacherThptDashboard from "@/components/dashboard/TeacherThptDashboard";
 function DashboardThptRouter() {
   const router = useRouter();
   const { profile, loading } = useAuth();
-  const isAdmin = profile?.role === "admin";
+  const isAdmin = profile?.role === "admin" || profile?.role === "tro_giang";
   const isThptInstructor = profile?.role === "instructor" && profile.admin_area === "thpt";
   const isCttcInstructor = profile?.role === "instructor" && profile.admin_area === "cttc";
 

@@ -70,7 +70,8 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
 
 export default function TeacherThptDashboard() {
   const { profile } = useAuth();
-  const isAdmin = profile?.role === "admin";
+  // Trợ giảng thấy đủ các khối lớp như admin.
+  const isAdmin = profile?.role === "admin" || profile?.role === "tro_giang";
   const [activeTab, setActiveTab] = useState<DashboardTab>("overview");
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);

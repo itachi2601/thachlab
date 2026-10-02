@@ -63,23 +63,18 @@ export interface TaAssistantClass {
   name: string;
 }
 
-/** Các lớp trợ giảng được phân công — nguồn cho ô chọn lớp ở form ghi buổi. */
-export async function fetchMyAssistantClasses(assistantId: string): Promise<TaAssistantClass[]> {
+/**
+ * Mọi trợ giảng chọn được tất cả khối lớp đang mở (10/11/12) — không còn gán riêng từng lớp.
+ * Tham số giữ lại cho các nơi gọi cũ.
+ */
+export async function fetchMyAssistantClasses(_assistantId?: string): Promise<TaAssistantClass[]> {
   const { data, error } = await getSupabase()
-    .from("ta_assistant_classes")
-    .select("class_id, classes(name)")
-    .eq("assistant_id", assistantId);
+    .from("classes")
+    .select("id, name, sort_order")
+    .eq("active", true)
+    .order("sort_order");
   if (error) throw error;
-  return (data ?? [])
-    .map((row) => {
-      const { class_id, classes } = row as {
-        class_id: number;
-        classes: { name: string } | { name: string }[] | null;
-      };
-      const joined = Array.isArray(classes) ? classes[0] : classes;
-      return { class_id, name: joined?.name ?? `Lớp #${class_id}` };
-    })
-    .sort((a, b) => a.name.localeCompare(b.name, "vi"));
+  return (data ?? []).map((row) => ({ class_id: row.id as number, name: row.name as string }));
 }
 
 export interface NewSessionInput {
