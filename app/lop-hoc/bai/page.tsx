@@ -11,6 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
 import {
@@ -859,11 +860,19 @@ function LessonLoader() {
     return new Set(courseLessons.filter((l) => l.title.toLowerCase().includes(q)).map((l) => l.id));
   }, [courseLessons, treeQuery]);
 
-  function isChapterOpen(chapterIdInTree: number, lessons: Lesson[]) {
-    if (openChapters.has(chapterIdInTree)) return true;
-    if (matchingLessonIds) return lessons.some((l) => matchingLessonIds.has(l.id));
-    return chapterIdInTree === chapterId;
-  }
+  // Cây chương (ChapterTree) là component thuần: trang tự quyết chương nào đang mở rồi truyền xuống.
+  const openChapterIds = useMemo(() => {
+    const ids = new Set<number>();
+    for (const { chapter, lessons } of courseChapters) {
+      if (
+        openChapters.has(chapter.id) ||
+        (matchingLessonIds ? lessons.some((l) => matchingLessonIds.has(l.id)) : chapter.id === chapterId)
+      ) {
+        ids.add(chapter.id);
+      }
+    }
+    return ids;
+  }, [courseChapters, openChapters, matchingLessonIds, chapterId]);
 
   function toggleChapter(chapterIdInTree: number) {
     setOpenChapters((prev) => {
@@ -1316,63 +1325,6 @@ function LessonLoader() {
     </>
   );
 
-  /** Cây chương — dùng chung cho cột trái (máy tính) và ngăn kéo (điện thoại). */
-  function renderChapterTree() {
-    return (
-      <>
-        <div className="lesson-tree">
-          {courseChapters.map(({ chapter, lessons }, chapterIndex) => {
-            const shown = matchingLessonIds ? lessons.filter((l) => matchingLessonIds.has(l.id)) : lessons;
-            if (shown.length === 0) return null;
-            const open = isChapterOpen(chapter.id, lessons);
-            const doneInChapter = lessons.filter(lessonComplete).length;
-            return (
-              <div key={chapter.id}>
-                <button
-                  type="button"
-                  className="lesson-tree-chapter"
-                  onClick={() => toggleChapter(chapter.id)}
-                  aria-expanded={open}
-                >
-                  <em>{chapterIndex + 1}</em>
-                  <span>{chapterDisplayTitle(chapter.title)}</span>
-                  <small>
-                    {doneInChapter}/{lessons.length} bài
-                  </small>
-                  <ChevronDown size={15} className={open ? "is-open" : ""} aria-hidden />
-                </button>
-                {open && (
-                  <ol>
-                    {shown.map((lesson) => {
-                      const current = lesson.id === id;
-                      const done = lessonComplete(lesson);
-                      return (
-                        <li key={lesson.id}>
-                          {current ? (
-                            <span className="lesson-tree-current is-current" aria-current="page">
-                              <i aria-hidden>{done ? <Check size={11} /> : "●"}</i>
-                              <span>{lesson.title}</span>
-                            </span>
-                          ) : (
-                            <Link href={siblingHref(lesson)} className={done ? "is-done" : ""}>
-                              <i aria-hidden>{done ? <Check size={11} /> : "○"}</i>
-                              <span>{lesson.title}</span>
-                            </Link>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ol>
-                )}
-              </div>
-            );
-          })}
-          {matchingLessonIds?.size === 0 && <p className="lesson-panel-empty">Không thấy bài nào khớp.</p>}
-        </div>
-      </>
-    );
-  }
-
   /** Thẻ tiến độ khoá + ô tìm bài — dùng chung cho cột trái (máy tính) và ngăn kéo. */
   /** Nút "Tiếp tục học" của thẻ tiến độ khoá — dùng chung cột trái (máy tính) và ngăn kéo. */
   function renderContinueLink() {
@@ -1600,7 +1552,16 @@ function LessonLoader() {
       <div className="lesson-layout">
         <aside className="lesson-nav" aria-label="Nội dung khoá học">
           {renderCourseInfo()}
-          {renderChapterTree()}
+          <ChapterTree
+            entries={courseChapters}
+            mode="learn"
+            currentLessonId={id}
+            openChapterIds={openChapterIds}
+            onToggleChapter={toggleChapter}
+            lessonHref={siblingHref}
+            isLessonDone={lessonComplete}
+            filterLessonIds={matchingLessonIds}
+          />
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
@@ -1772,7 +1733,16 @@ function LessonLoader() {
             </div>
             <div className="lesson-drawer-body">
               {renderCourseInfo()}
-              {renderChapterTree()}
+              <ChapterTree
+                entries={courseChapters}
+                mode="learn"
+                currentLessonId={id}
+                openChapterIds={openChapterIds}
+                onToggleChapter={toggleChapter}
+                lessonHref={siblingHref}
+                isLessonDone={lessonComplete}
+                filterLessonIds={matchingLessonIds}
+              />
               {renderSidePanels()}
             </div>
           </div>
