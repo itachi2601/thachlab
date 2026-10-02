@@ -2482,9 +2482,9 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
    chữ sans-serif hệ thống 16px/1.75, công thức KaTeX nằm liền dòng (không khung, không cuộn riêng).
-   Chỉ áp cho .lesson-page (app/lop-hoc/bai) và giao diện tối; giao diện sáng giữ nguyên. */
-html:not([data-theme="light"]) .lesson-page { background: #0f172a; }
-html:not([data-theme="light"]) .lesson-page::before { display: none; }
+   Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
+html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
+html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-page .exam-content { font-family: sans-serif; font-size: 1rem; line-height: 1.75; }
 .lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
 .lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
