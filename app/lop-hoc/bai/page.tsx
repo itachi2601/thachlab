@@ -248,14 +248,26 @@ function VideoBlock({
 }
 
 /** Ý chính/công thức cần thuộc của các mục lý thuyết — đặt ở đầu tab Luyện tập (không còn
- *  nằm trong tab Lý thuyết) để học sinh ôn lại ngay trước khi làm bài. Hiện luôn, không thu
- *  gọn. Rỗng (chưa backfill) thì không hiện gì. */
-function TheorySummary({ html }: { html: string }) {
+ *  nằm trong tab Lý thuyết) để học sinh ôn lại ngay trước khi làm bài. Mặc định THU GỌN chỉ
+ *  còn dòng nhãn (bài có nhiều mục lý thuyết thì khối này dài, đẩy câu hỏi xuống xa) — bấm
+ *  nhãn mới xổ ra. Rỗng (chưa backfill) thì không hiện gì. */
+function TheorySummary({ html, title }: { html: string; title?: string }) {
+  const [open, setOpen] = useState(false);
   if (!html.trim()) return null;
   return (
-    <div className="lesson-summary">
-      <p className="lesson-summary-label">📌 Tóm tắt ý chính cần thuộc</p>
-      <ContentHtml html={html} className="block leading-relaxed" />
+    <div className={`lesson-summary ${open ? "is-open" : ""}`}>
+      <button
+        type="button"
+        className="lesson-summary-toggle"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        <span className="lesson-summary-label">
+          📌 Tóm tắt ý chính cần thuộc{title ? <span className="lesson-summary-title"> · {title}</span> : null}
+        </span>
+        <ChevronDown size={16} className={open ? "rotate-180" : ""} />
+      </button>
+      {open && <ContentHtml html={html} className="block leading-relaxed" />}
     </div>
   );
 }
@@ -1256,7 +1268,7 @@ function LessonLoader() {
               {(items ?? [])
                 .filter((i) => i.kind === "ly_thuyet")
                 .map((t) => (
-                  <TheorySummary key={t.id} html={t.summary_html} />
+                  <TheorySummary key={t.id} html={t.summary_html} title={t.title} />
                 ))}
             </div>
           )}
