@@ -12,12 +12,17 @@ import Avatar from "@/components/ui/Avatar";
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
 const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
 
-const links = [
+// Mục "Phụ huynh" chỉ hiện với khách và học sinh: phụ huynh đã có mục "Kết quả của con" trong menu
+// tài khoản, giáo viên/admin không dùng trang đó — thêm cho mọi role sẽ chật thanh điều hướng.
+type NavLink = { label: string; href: string; audience?: "guest-student" };
+
+const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
+  { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
   { label: "Giới thiệu", href: "/#about" },
   { label: "Liên hệ", href: "/#contact" },
 ];
@@ -40,6 +45,8 @@ export default function Navbar() {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const accountMenuRef = useRef<HTMLDivElement>(null);
   const isStaff = profile?.role === "admin" || profile?.role === "instructor";
+  const showParentLink = !session || profile?.role === "student";
+  const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
 
   useEffect(() => {
     if (!accountMenuOpen) return;
@@ -52,7 +59,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
-      <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+      <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
             T
@@ -62,8 +69,8 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-8 lg:flex">
-          {links.map((link) => {
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
+          {navLinks.map((link) => {
             const hasQuick = link.href === "/lop-hoc";
             return (
               <li key={link.href} className={hasQuick ? "group relative" : undefined}>
@@ -209,7 +216,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/dang-ky"
-                className="hidden rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-block sm:px-5"
+                className="hidden whitespace-nowrap rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-block sm:px-5"
               >
                 Đăng ký
               </Link>
@@ -234,7 +241,7 @@ export default function Navbar() {
             className="absolute left-3 right-3 top-[calc(100%+8px)] overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-2 shadow-2xl shadow-black/50 lg:hidden"
           >
             <ul className="grid gap-1">
-              {links.map((link) => {
+              {navLinks.map((link) => {
                 const inCttc = CTTC_PATHS.some((path) => pathname.startsWith(path));
                 const isActive =
                   link.href !== "/" &&
@@ -270,6 +277,17 @@ export default function Navbar() {
                             {q.label}
                           </Link>
                         ))}
+                      </div>
+                    )}
+                    {link.href === "/phu-huynh" && (
+                      <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/[0.07] hover:text-white"
+                        >
+                          Xem kết quả của con
+                        </Link>
                       </div>
                     )}
                   </li>

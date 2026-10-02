@@ -82,11 +82,14 @@ export function PhysicsSimulationHero() {
             </Link>
           </div>
 
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-muted">
-            Hoàn toàn miễn phí. Thử kéo thanh <span className="text-ink">Biên độ</span> hay{" "}
-            <span className="text-ink">Tần số</span> trong mô phỏng — con lắc và đồ thị x–t đổi
-            theo ngay.
-          </p>
+          <div className="mt-6 max-w-md space-y-2 text-sm leading-relaxed text-muted">
+            <p>Học miễn phí trên web, theo đúng nhịp lớp trên trường.</p>
+            <p>
+              Thử kéo thanh <span className="text-ink">Biên độ</span> hay{" "}
+              <span className="text-ink">Tần số</span> trong mô phỏng — con lắc và đồ thị x–t đổi
+              theo ngay.
+            </p>
+          </div>
         </div>
 
         <div className="relative rounded-2xl border border-line bg-panel p-5 shadow-xl shadow-black/30 sm:p-6">

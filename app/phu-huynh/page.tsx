@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { CalendarPlus, ChevronDown, Users } from "lucide-react";
+import Image from "next/image";
+import { CalendarPlus, ChevronDown, MessageCircle, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -13,6 +14,7 @@ import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
+import { CONTACT, PARENT_SHOTS } from "@/lib/contact";
 
 function Notice({ children }: { children: React.ReactNode }) {
   return (
@@ -170,15 +172,44 @@ export default function PhuHuynhPage() {
           <RequireAuth
             loginHref="/dang-nhap?next=/phu-huynh"
             showSignUp={false}
+            guestActions={
+              CONTACT.zalo ? (
+                <a
+                  href={CONTACT.zalo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
+                >
+                  <MessageCircle size={16} /> Chưa có link mời? Nhắn Zalo cho thầy
+                </a>
+              ) : null
+            }
             guestNotice={
               <>
                 <Users className="mx-auto text-slate-500" size={36} />
-                <h1 className="mt-4 font-display text-xl font-bold text-white">Dành cho phụ huynh</h1>
-                <p className="mt-2 text-sm text-slate-400">
-                  Đăng nhập bằng tài khoản phụ huynh để xem kết quả học tập của con: điểm theo thời gian,
-                  bài đã làm, phần đang được phụ đạo và chủ đề còn sai nhiều.
-                </p>
-                <p className="mt-3 text-sm text-slate-400">
+                <h1 className="mt-4 font-display text-xl font-bold text-white">Anh chị sẽ thấy gì</h1>
+                <ul className="mx-auto mt-4 max-w-xs list-disc space-y-1.5 pl-5 text-left text-sm text-slate-400">
+                  <li>Điểm theo thời gian</li>
+                  <li>Bài đã làm và câu sai theo chủ đề</li>
+                  <li>Phần con đang được phụ đạo</li>
+                </ul>
+                {PARENT_SHOTS.length > 0 && (
+                  <div className={`mt-5 grid gap-3 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : ""}`}>
+                    {PARENT_SHOTS.map((shot) => (
+                      <Image
+                        key={shot.src}
+                        src={shot.src}
+                        alt={shot.alt}
+                        width={shot.width}
+                        height={shot.height}
+                        sizes="(min-width: 640px) 280px, 90vw"
+                        loading="lazy"
+                        className="h-auto w-full rounded-xl border border-white/10"
+                      />
+                    ))}
+                  </div>
+                )}
+                <p className="mt-4 text-sm text-slate-400">
                   Chưa có tài khoản? Nhờ giáo viên gửi link mời dạng{" "}
                   <code className="text-slate-300">/loi-moi?ma=PH…</code> — tạo tài khoản ngay tại đó là đã nối
                   với con, không cần mượn tài khoản của con.

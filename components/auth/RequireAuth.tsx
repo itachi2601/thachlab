@@ -20,6 +20,8 @@ function Notice({ children }: { children: React.ReactNode }) {
  *   (dùng cho các trang dùng chung/nhạy cảm như phân công giảng viên).
  * - guestNotice: nội dung thay cho câu mặc định "Em cần đăng nhập…" khi chưa đăng nhập — dùng ở
  *   trang không dành cho học sinh (vd /phu-huynh xưng "em" với phụ huynh là sai).
+ * - guestActions: nút phụ nằm cùng hàng với nút Đăng nhập (vd "Nhắn Zalo cho thầy" ở /phu-huynh).
+ *   Để riêng khỏi guestNotice vì hàng nút do component này render.
  * - loginHref: đích nút Đăng nhập (mặc định /dang-nhap).
  * - showSignUp: ẩn nút Đăng ký khi form /dang-ky không hợp với người xem (phụ huynh tạo tài khoản qua link mời).
  */
@@ -29,6 +31,7 @@ export default function RequireAuth({
   area,
   restrictToAdmin = false,
   guestNotice,
+  guestActions,
   loginHref = "/dang-nhap",
   showSignUp = true,
 }: {
@@ -37,6 +40,7 @@ export default function RequireAuth({
   area?: "thpt" | "cttc";
   restrictToAdmin?: boolean;
   guestNotice?: React.ReactNode;
+  guestActions?: React.ReactNode;
   loginHref?: string;
   showSignUp?: boolean;
 }) {
@@ -76,6 +80,7 @@ export default function RequireAuth({
               Đăng ký
             </Link>
           )}
+          {guestActions}
         </div>
       </Notice>
     );

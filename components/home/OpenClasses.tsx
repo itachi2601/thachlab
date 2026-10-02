@@ -16,9 +16,19 @@ function formatCount(n: number) {
   return n.toLocaleString("vi-VN");
 }
 
+// Số nhỏ hơn ngưỡng này thì KHÔNG hiện: "37 học sinh" hay "12 lượt làm đề" làm phụ huynh
+// đánh giá thấp mức độ dùng thật, phản tác dụng. Không đủ dữ liệu (null) cũng ẩn.
+const MIN_STAT_TO_SHOW = 50;
+
+function showStat(n: number | null | undefined): number | null {
+  return typeof n === "number" && n >= MIN_STAT_TO_SHOW ? n : null;
+}
+
 export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
   const statsByGrade = new Map<string | null, HomeStats["classes"][number]>();
   for (const c of stats?.classes ?? []) statsByGrade.set(classGrade(c.name), c);
+  const students = showStat(stats?.totals.students);
+  const attempts = showStat(stats?.totals.attempts);
 
   return (
     <section className="bg-[#05070B] px-6 pb-8 pt-24 sm:pb-10 sm:pt-28 lg:px-12">
@@ -91,6 +101,16 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
             <span>
               <strong className="font-semibold text-ink">{formatCount(stats.totals.items)}</strong> mục học
             </span>
+            {students !== null && (
+              <span>
+                <strong className="font-semibold text-ink">{formatCount(students)}</strong> học sinh
+              </span>
+            )}
+            {attempts !== null && (
+              <span>
+                <strong className="font-semibold text-ink">{formatCount(attempts)}</strong> lượt làm đề đã chấm
+              </span>
+            )}
             <Link href="/khoa-hoc" className="ml-auto font-sans text-sm font-medium text-cyan-300 hover:underline">
               Khoá học đang mở →
             </Link>
