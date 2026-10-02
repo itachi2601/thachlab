@@ -8,8 +8,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import type { PracticePick } from "@/services/lessons";
 import { fetchExamsFull, savePracticeSession } from "@/services/lessons";
-import type { Exam, QuestionResponse } from "@/features/exams/types";
-import { emptyResponses, gradeExam, isAnswered, pickRandom } from "@/features/exams/types";
+import type { Difficulty, Exam, QuestionResponse } from "@/features/exams/types";
+import { DIFFICULTY_LABELS, emptyResponses, gradeExam, isAnswered, pickRandom } from "@/features/exams/types";
 
 type Phase = "loading" | "empty" | "intro" | "running" | "done";
 
@@ -28,6 +28,9 @@ const COUNT = 10;
  *   NHỜ VẬY lượt luyện này cũng tự động tính vào 10 lượt gần nhất của lần tính mastery kế tiếp.
  * - `QuestionCard` — cùng UI trả lời câu hỏi với ExamRunner/PracticeSession/FixQuizModal.
  *
+ * Trang /luyen-tap dùng lại modal này: `topicName` rỗng = mọi YCCĐ của bài, `difficulty` (tuỳ chọn)
+ * lọc thêm theo mức Dễ/TB/Khó — cùng nguồn câu, cùng đường ghi phiên luyện.
+ *
  * KHÔNG dùng `rank_fix_quiz_start`/`FixQuizModal` (components/rank/FixQuizModal.tsx): hàm đó cần
  * một `exam_result_id` có thật + mùa rank đang mở + đề là nguồn RP, và bốc theo topic TẦNG BÀI
  * (coalesce parent_id) chứ không theo đúng YCCĐ — không khớp ngữ cảnh "cuối bài học"/"sau khi nộp
@@ -39,12 +42,14 @@ export default function TopicPracticeModal({
   lessonId,
   examIds,
   topicName,
+  difficulty,
   onClose,
   onFinished,
 }: {
   lessonId: number;
   examIds: number[];
   topicName: string;
+  difficulty?: Difficulty;
   onClose: () => void;
   onFinished?: () => void;
 }) {
@@ -69,7 +74,8 @@ export default function TopicPracticeModal({
           if (!exam) continue;
           exam.questions.forEach((question, qi) => {
             if (question.type === "essay") return;
-            if ((question.topic ?? "").trim() !== topicName.trim()) return;
+            if (topicName.trim() !== "" && (question.topic ?? "").trim() !== topicName.trim()) return;
+            if (difficulty && question.difficulty !== difficulty) return;
             pool.push({ question, examId: exam.id, sourceIndex: qi });
           });
         }
@@ -84,8 +90,9 @@ export default function TopicPracticeModal({
     return () => {
       cancelled = true;
     };
-  }, [examIds, topicName]);
+  }, [examIds, topicName, difficulty]);
 
+  const label = [topicName.trim() || "Cả bài", difficulty ? DIFFICULTY_LABELS[difficulty] : ""].filter(Boolean).join(" · ");
   const questions = picks.map((p) => p.question);
   const lastIndex = questions.length - 1;
   const answeredCount = questions.filter((q, i) => isAnswered(q, responses[i])).length;
@@ -142,7 +149,7 @@ export default function TopicPracticeModal({
         aria-modal="true"
       >
           <div className="mb-3 flex items-start justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-white">Luyện thêm: {topicName}</h2>
+            <h2 className="font-display text-lg font-semibold text-white">Luyện thêm: {label}</h2>
             <button type="button" onClick={onClose} aria-label="Đóng" className="text-slate-400 hover:text-white">
               <X size={18} />
             </button>
@@ -164,7 +171,7 @@ export default function TopicPracticeModal({
           {phase === "intro" && (
             <div className="space-y-4">
               <p className="text-sm text-slate-300">
-                <strong className="text-white">{topicName}</strong> · {questions.length} câu bốc ngẫu nhiên từ
+                <strong className="text-white">{label}</strong> · {questions.length} câu bốc ngẫu nhiên từ
                 các đề của bài học.
               </p>
               <p className="text-xs text-slate-500">Làm xong sẽ tính vào mức độ thành thạo của em ở phần này.</p>
