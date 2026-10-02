@@ -245,9 +245,9 @@ function VideoBlock({
   );
 }
 
-/** Ý chính/công thức cần thuộc của 1 mục lý thuyết — hiện luôn (không thu gọn thêm lần
- *  nữa), độc lập với việc mục lý thuyết đầy đủ bên dưới đang mở hay đóng, để học sinh
- *  xem nhanh mà không cần mở hết bài dài. Rỗng (chưa backfill) thì không hiện gì. */
+/** Ý chính/công thức cần thuộc của các mục lý thuyết — đặt ở đầu tab Luyện tập (không còn
+ *  nằm trong tab Lý thuyết) để học sinh ôn lại ngay trước khi làm bài. Hiện luôn, không thu
+ *  gọn. Rỗng (chưa backfill) thì không hiện gì. */
 function TheorySummary({ html }: { html: string }) {
   if (!html.trim()) return null;
   return (
@@ -296,7 +296,6 @@ function TheoryBlock({
         </span>
         {hasBody && <ChevronDown size={18} className={open ? "rotate-180" : ""} />}
       </button>}
-      <TheorySummary html={item.summary_html} />
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
           <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
@@ -1185,8 +1184,18 @@ function LessonLoader() {
       }
 
       // bai_tap_mau / luyen_tap: lưới từng câu
+      const showSummaries = item.kind === "luyen_tap" && itemIndex === 0;
       return (
         <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
+          {showSummaries && (
+            <div className="mb-4">
+              {(items ?? [])
+                .filter((i) => i.kind === "ly_thuyet")
+                .map((t) => (
+                  <TheorySummary key={t.id} html={t.summary_html} />
+                ))}
+            </div>
+          )}
           {(!plain || item.subtitle) && (
             <div className="lesson-block-head">
               {!plain && <p className="lesson-block-title">{item.title}</p>}

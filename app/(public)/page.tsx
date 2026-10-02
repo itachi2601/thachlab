@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import OpenClasses from "@/components/home/OpenClasses";
+import ForParents from "@/components/home/ForParents";
 import { readHomeStats } from "@/components/home/home-stats.server";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main>
         <OpenClasses stats={stats} />
+        <ForParents />
         <PhysicsSimulationHero />
         <Features />
         <PhysicsEverywhere />

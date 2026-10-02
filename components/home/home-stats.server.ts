@@ -18,7 +18,18 @@ export interface HomeClassStats {
 
 export interface HomeStats {
   generatedAt: string;
-  totals: { classes: number; chapters: number; lessons: number; items: number };
+  totals: {
+    classes: number;
+    chapters: number;
+    lessons: number;
+    items: number;
+    /** Học sinh có tài khoản (profiles.role = 'student'). null = build không có service role key. */
+    students?: number | null;
+    /** Lượt làm đề đã chấm (exam_results). null = không đếm được lúc build. */
+    attempts?: number | null;
+    /** Câu trong ngân hàng câu hỏi (question_bank chưa archive). null = không đếm được lúc build. */
+    questions?: number | null;
+  };
   classes: HomeClassStats[];
 }
 

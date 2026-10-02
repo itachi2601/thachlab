@@ -9,7 +9,12 @@
 //   public/data/lessons/<id>.json    — 1 bài: lesson + tên chương + các mục; chỉ mục lý thuyết/video
 //                                      có body_html; mục khác chỉ metadata (KHÔNG questions, KHÔNG đề)
 //   public/data/home-stats.json      — số chương/bài/mục toàn site + theo từng lớp, cho trang chủ
-//                                      (đọc LÚC BUILD trong app/(public)/page.tsx — không gọi Supabase khi tải)
+//                                      (đọc LÚC BUILD trong app/(public)/page.tsx — không gọi Supabase khi tải).
+//                                      Kèm 3 số thật của cả site: students (profiles.role='student'),
+//                                      attempts (exam_results — mỗi dòng là một bài đã chấm),
+//                                      questions (question_bank chưa archive). Ba bảng này khoá RLS với
+//                                      anon nên chỉ đếm được khi có SUPABASE_SERVICE_ROLE_KEY; thiếu khoá
+//                                      thì để null (trang chủ tự ẩn số), KHÔNG ghi 0 vì 0 là số sai.
 //
 // Chỉ dùng ANON key (đúng RLS của khách chưa đăng nhập) — file tĩnh không bao giờ
 // chứa thứ mà người chưa đăng nhập không xem được. Đề thi (exams.questions, có đáp án)
@@ -57,6 +62,7 @@ function loadEnv() {
   return {
     url: process.env.NEXT_PUBLIC_SUPABASE_URL,
     anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
   };
 }
 
@@ -93,11 +99,49 @@ async function fetchAll(makeQuery) {
 }
 
 /**
+ * Đếm số liệu thật của cả site cho dải tổng trang chủ (build-time, KHÔNG phải request lúc tải trang).
+ *
+ * profiles / exam_results / question_bank đều chỉ cho authenticated đọc (xem
+ * supabase/migrations/20260925140000_perf_rls.sql) nên anon key luôn đếm ra 0 → phải dùng
+ * service role. Không có khoá (máy khác, CI không cấu hình) → trả null cho từng số, trang chủ
+ * tự ẩn; TUYỆT ĐỐI không ghi 0 thay cho "không biết" vì 0 cũng là một con số trông như thật.
+ */
+async function fetchSiteCounts(url, serviceKey) {
+  const counts = { students: null, attempts: null, questions: null };
+  if (!serviceKey) {
+    warn(
+      "thiếu SUPABASE_SERVICE_ROLE_KEY — home-stats.json để trống students/attempts/questions " +
+        "(RLS chặn anon đọc profiles/exam_results/question_bank).",
+    );
+    return counts;
+  }
+  const { createClient } = await import("@supabase/supabase-js");
+  const admin = createClient(url, serviceKey, { auth: { persistSession: false } });
+  const targets = [
+    ["students", "profiles", (q) => q.eq("role", "student")],
+    ["attempts", "exam_results", null],
+    ["questions", "question_bank", (q) => q.eq("archived", false)],
+  ];
+  for (const [field, table, refine] of targets) {
+    try {
+      let query = admin.from(table).select("*", { count: "exact", head: true });
+      if (refine) query = refine(query);
+      const { count, error } = await query;
+      if (error) throw error;
+      counts[field] = typeof count === "number" ? count : null;
+    } catch (e) {
+      warn(`không đếm được ${table}: ${e?.message ?? e} — để trống trường ${field}.`);
+    }
+  }
+  return counts;
+}
+
+/**
  * Số liệu cho trang chủ (mục "Em đang học ở đâu?" + dải tổng): mỗi lớp đếm chương gắn với lớp
  * (chapter_classes), bài đã công bố trong các chương đó và mục đã đăng trong các bài đó.
  * Một chương gắn nhiều lớp được đếm cho từng lớp (tổng toàn site vẫn đếm mỗi chương 1 lần).
  */
-function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson) {
+function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts) {
   const lessonsByChapter = new Map();
   for (const l of lessons) {
     const list = lessonsByChapter.get(l.chapter_id) ?? [];
@@ -126,6 +170,7 @@ function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson) 
       chapters: chapters.length,
       lessons: lessons.length,
       items: lessons.reduce((sum, l) => sum + itemCount(l.id), 0),
+      ...counts,
     },
     classes: perClass,
   };
@@ -133,7 +178,7 @@ function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson) 
 
 async function main() {
   const started = Date.now();
-  const { url, anonKey } = loadEnv();
+  const { url, anonKey, serviceKey } = loadEnv();
   if (!url || !anonKey) return bail("thiếu NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY.");
 
   const { createClient } = await import("@supabase/supabase-js");
@@ -284,7 +329,8 @@ async function main() {
     writeFileSync(join(LESSONS_DIR, `${l.id}.json`), json);
   }
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
-  writeJson(join(OUT_DIR, "home-stats.json"), buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson));
+  const counts = await fetchSiteCounts(url, serviceKey);
+  writeJson(join(OUT_DIR, "home-stats.json"), buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts));
   writeJson(join(OUT_DIR, "manifest.json"), {
     generatedAt,
     itemColumns,
@@ -295,10 +341,13 @@ async function main() {
   });
 
   const files = readdirSync(LESSONS_DIR).length + 2;
+  const countsText = Object.entries(counts)
+    .map(([key, value]) => `${key}=${value ?? "?"}`)
+    .join(" · ");
   console.log(
     `[build-content] ✓ ${classes.length} lớp · ${chapters.length} chương · ${lessons.length} bài · ` +
       `${itemRows.length} mục → ${files} file, ${(bytes / 1024).toFixed(0)} KB bài học, ` +
-      `${((Date.now() - started) / 1000).toFixed(1)} s`,
+      `${((Date.now() - started) / 1000).toFixed(1)} s · ${countsText}`,
   );
 }
 
