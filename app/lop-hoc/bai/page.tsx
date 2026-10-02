@@ -11,6 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
+import LessonDownloadMenu from "@/components/lessons/LessonDownloadMenuLazy";
 import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
@@ -502,6 +503,7 @@ function LessonLoader() {
    * lazy, không chunk mới) — chỉ thời điểm render nội dung đổi. Đổi tab sau đó hiện ngay.
    */
   const [bodyReady, setBodyReady] = useState(false);
+  const [printHtml, setPrintHtml] = useState<string | null>(null);
   /** Ngăn kéo "Nội dung khoá" trên điện thoại: gộp cột trái + cột phải vào một bottom sheet. */
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -759,6 +761,22 @@ function LessonLoader() {
     if (document.fullscreenElement) void document.exitFullscreen();
     else void el.requestFullscreen?.().catch(() => setFullscreen(false));
   }
+
+  async function printLesson() {
+    const { buildLessonArticleHtml } = await import("@/services/lesson-export");
+    setPrintHtml(buildLessonArticleHtml(items ?? []));
+  }
+  // Có bản in thì chờ một nhịp cho KaTeX dựng xong rồi mở hộp thoại in; in xong thì gỡ đi.
+  useEffect(() => {
+    if (printHtml === null) return;
+    const clear = () => setPrintHtml(null);
+    window.addEventListener("afterprint", clear, { once: true });
+    const t = window.setTimeout(() => window.print(), 400);
+    return () => {
+      window.clearTimeout(t);
+      window.removeEventListener("afterprint", clear);
+    };
+  }, [printHtml]);
 
   function markLessonDone() {
     setLessonMarked(true);
@@ -1607,7 +1625,23 @@ function LessonLoader() {
               <Menu size={17} aria-hidden />
             </button>
             <div className={`lesson-tools ${toolsOpen ? "is-open" : ""}`}>{readTools}</div>
+            {items && (
+              <LessonDownloadMenu
+                lessonTitle={title}
+                chapterTitle={chapterTitle}
+                items={items}
+                onPrint={printLesson}
+              />
+            )}
           </header>
+          {/* Bản in/PDF: chỉ dựng khi bấm "In / Lưu PDF" (không nhân đôi DOM + KaTeX lúc mở bài). */}
+          {printHtml !== null && (
+            <div className="lesson-print-only">
+              <h1>{title}</h1>
+              {chapterTitle && <p className="lesson-print-sub">{chapterTitle}</p>}
+              <ContentHtml html={printHtml} className="block" />
+            </div>
+          )}
 
           {/* Header + thanh tiến độ + 6 tab nằm chung một khối: cả khối dính dưới navbar, mà
               header vẫn chỉ cao bằng nội dung (không phình ra che bài). */}
