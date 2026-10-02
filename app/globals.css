@@ -1730,7 +1730,10 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   flex: 1; min-height: 0; overflow-y: auto;
   background: radial-gradient(1200px 500px at 50% -8%, var(--rb-accent-soft), transparent 60%), var(--rb-stage);
 }
-.review-board .rb-stage { max-width: 1180px; margin: 0 auto; padding: clamp(20px,3.6vh,48px) clamp(20px,4vw,56px) 40px; }
+/* Bảng chữa bài chiếu lên tivi: dùng hết bề ngang màn hình, chỉ chừa lề nhỏ. Trước đây cap
+   1180px làm hụt 370px mỗi bên trên tivi 1920 — câu hỏi cỡ lớn bị bó thành cột hẹp giữa
+   màn hình và xuống dòng thừa. Muốn chữ to/nhỏ thì dùng nút +/− (--rb-zoom). */
+.review-board .rb-stage { max-width: none; margin: 0 auto; padding: clamp(20px,3.6vh,48px) clamp(16px,2.4vw,48px) 40px; }
 
 .review-board .rb-qmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 18px; }
 .review-board .rb-qnum {
