@@ -1,6 +1,6 @@
 ---
 name: soan-quiz-ly-thuyet
-description: Tự soạn bộ 20 câu "Kiểm tra nhanh" (10 kiến thức + 10 công thức) cho mục lý thuyết của từng bài học từ chính nội dung bài trong public/data — KHÔNG có file đề đầu vào. Dùng khi thầy nói "soạn quiz lý thuyết cho bài X", "soạn bộ câu công thức lớp 12", "tạo kiểm tra nhanh cho cả chương". Khác up-de-kiem-tra (skill đó đăng đề có sẵn từ file Word/LaTeX). Sinh + kiểm chéo + validate chạy được trên cloud (không cần DB); ĐĂNG lên DB phải chạy trên Mac.
+description: Tự soạn bộ 20 câu "Kiểm tra nhanh" (10 kiến thức + 10 công thức) cho mục lý thuyết của từng bài học từ chính nội dung bài trong public/data — KHÔNG có file đề đầu vào. Dùng khi thầy nói "soạn quiz lý thuyết cho bài X", "soạn bộ câu công thức lớp 11/12", "tạo kiểm tra nhanh cho cả chương". Khác up-de-kiem-tra (skill đó đăng đề có sẵn từ file Word/LaTeX). Sinh + kiểm chéo + validate chạy được trên cloud (không cần DB); ĐĂNG lên DB phải chạy trên Mac.
 ---
 
 # Soạn quiz lý thuyết cho từng bài
@@ -11,7 +11,7 @@ Quy ước `difficulty`: dùng **mã** của `features/exams/types.ts` — `"de"
 
 ## Quy trình
 
-1. **Chọn bài.** Một hoặc nhiều `lesson_id`, hoặc "cả lớp 12" → lấy từ `public/data/catalog.json`: bài có `chapters[chapter_id].classIds` chứa `18`. Bỏ bài có `lesson_kind` ≠ `bai_hoc`, bài không có mục `ly_thuyet`, và bài đã có file JSON (trừ khi thầy bảo làm lại).
+1. **Chọn bài.** Một hoặc nhiều `lesson_id`, hoặc "cả lớp N" → lấy từ `public/data/catalog.json`: bài có `chapters[chapter_id].classIds` chứa id lớp (`classes[]`: lớp 10 = 16, **lớp 11 = 17**, lớp 12 = 18, KHTN 9 = 15). Bỏ bài có `lesson_kind` ≠ `bai_hoc`, bài không có mục `ly_thuyet`, và bài đã có file JSON (trừ khi thầy bảo làm lại).
 2. **Đọc bài.** `public/data/lessons/<id>.json` → mục `kind === "ly_thuyet"`: `summary_html` + `body_html`. Rồi chạy
    `npx tsx .claude/skills/soan-quiz-ly-thuyet/scripts/list-sections.mts <id>` — đây là **nguồn duy nhất** của chỉ số `theorySection` (0-based, sinh bởi `wrapTheorySections`). Không tự đếm. Bài không có đoạn nào → bỏ `theorySection`.
 3. **Bước A — Phiếu kiến thức** (trong đầu hoặc file tạm ở scratchpad): khái niệm/định luật + phát biểu chuẩn; công thức LaTeX + tên từng ký hiệu + đơn vị + điều kiện áp dụng; mỗi mục ghi thuộc đoạn số mấy.
@@ -62,3 +62,6 @@ Quy ước `difficulty`: dùng **mã** của `features/exams/types.ts` — `"de"
 **Ngân hàng câu hỏi tự cập nhật khi đăng:** `publish-theory-quiz.mts` tạo exam → trigger `sync_exam_to_bank` đưa từng câu vào `question_bank` (đọc `topic`, `form`, `difficulty`, `difficultySource`). Không cần bước ghi ngân hàng riêng; chỉ cần `topic` khớp chính xác tên YCCĐ và `difficulty` ∈ {de, trung-binh}.
 
 **Giao nhận:** file quiz nằm ở nhánh cloud, chưa vào `main` → Mac phải `git fetch` + checkout nhánh (hoặc merge PR) trước khi `publish` (lỗi "không thấy scripts/data/theory-quiz/<id>.json" = chưa có nhánh). Nói rõ tên nhánh cho thầy ngay khi push.
+
+## Lớp 11 (id lớp 17) — 26 bài `bai_hoc`, lesson_id 20–45
+Dao động (Bài 1–7 = lesson 20–26), Sóng (Bài 8–15 = 27–34), Điện trường (Bài 16–21 = 35–40), Dòng điện (Bài 22–26 = 41–45). Chưa soạn bài nào (02/10/2026). Bài tập/thực hành (4, 7, 10, 14, 15, 26 theo số bài) thường ít/không có mục `ly_thuyet` hoặc ít công thức → kiểm `list-sections.mts` trước, bỏ nếu không có lý thuyết, dùng 20 câu kiến thức nếu không có công thức. Bài 12 Giao thoa sóng (lesson 31) có thể đã có bản lý thuyết tương tác mới (skill `soan-bai-ly-thuyet-tuong-tac`): đọc `body_html` bản hiện hành trên `public/data`, đừng soạn từ bản cũ.
