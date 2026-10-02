@@ -47,6 +47,11 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   tiến độ thành "x/y mục", hai nút "Tiếp tục học". Không đổi bố cục, không thêm request Supabase, không migration.
   Ảnh: `docs/anh/trang-chuong-2026-10/`. Đợt 2–4 chỉ bắt đầu sau khi PR này merge (prompt
   `docs/prompt-dong-bo-trang-chuong-2026-10.md`, prompt này chưa có trên `main`).
+- **Đồng bộ trang chương ↔ trang bài, đợt 2 (2/10/2026, PR #38, chưa merge)**: tách `components/lessons/ChapterTree.tsx`
+  dùng chung cho trang bài (mode `learn`) và trang chương (mode `pick`); trang chương ≥1024 dùng `.lesson-layout`
+  (cột trái 272px là cây chương, cột giữa chỉ chương đang chọn, thẻ "Tiếp tục học" lên cột trái), <1024 giữ nguyên
+  accordion; chọn chương ghi `?chapter=` lên URL. Đo hình học: 375/768 không đổi, 1024/1280 cột giữa bằng trang bài.
+  Ảnh `dot2-*.webp` trong `docs/anh/trang-chuong-2026-10/`. Không xoá rule `.class-*` (để đợt 4). Đợt 3 làm sau khi PR này merge.
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
