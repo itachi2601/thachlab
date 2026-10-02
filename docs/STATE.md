@@ -72,6 +72,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   Phiên đang dở đã lưu vẫn giữ tổng giờ cũ.
 
 ## Migration — ĐANG CHỜ
+- `20261002100000_course_enrollment_class_role.sql` (cột `class_role` cho `course_enrollments`, hàm `is_class_officer`, policy cho lớp trưởng/lớp phó mở điểm danh; chạy lúc nào cũng được; rollback `perf/rollback/20261002100000_course_enrollment_class_role.down.sql`) — ĐANG CHỜ. **Phải chạy TRƯỚC khi deploy**: `fetchCourseEnrollments` đã chọn cột `class_role`, chưa chạy thì trang danh sách lớp CNC lỗi.
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
 - `20260930160000_rank_title_distinct_questions.sql` (chống cày danh hiệu: đếm số câu khác nhau; `create or replace rank_title_stats`; chạy lúc nào cũng được; rollback `perf/rollback/20260930160000_rank_title_distinct_questions.down.sql`) — ĐANG CHỜ.
 - `20260930170000_question_bank_hash_ignore_image_ts.sql` (gộp ~4,7k câu trùng, ngoài giờ HS) và
