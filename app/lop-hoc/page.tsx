@@ -487,6 +487,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // Trang của một lớp: mục lục chương → bài, cùng ngôn ngữ với trang bài học.
   if (effectiveSlug) {
     const grade = active ? classGrade(active.name) : null;
+    // Nút "Tiếp tục học" ở thanh đáy điện thoại: bài học gần nhất → bài đầu chưa học xong →
+    // bài đầu khoá (khách chưa đăng nhập thì mọi bài đều "chưa xong" nên ra đúng bài đầu).
+    const treeLessons = treeEntries.flatMap((entry) => entry.lessons);
+    const bottomLesson =
+      lastLesson ?? treeLessons.find((lesson) => !lessonIsComplete(lesson)) ?? treeLessons[0] ?? null;
     return (
       <>
         <Navbar />
@@ -630,7 +635,37 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   </>
                 )}
               </div>
-              </div>
+            </div>
+
+            {/* Thanh đáy điện thoại (< 640px): 3 nút, dùng lại CSS của trang bài. Khi thanh này hiện thì
+                tabbar toàn site được ẩn đi (xem khối CSS cuối globals.css) — hai thanh fixed không thể cùng hiện. */}
+            {active && chapters && lessons && classChapters.length > 0 && (
+              <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--pick" aria-label="Điều hướng lớp học">
+                <Link href="/lop-hoc" className="lesson-bottom-link">
+                  <ArrowLeft size={16} aria-hidden />
+                  <span>Lớp học</span>
+                </Link>
+                {bottomLesson ? (
+                  <button
+                    type="button"
+                    className="lesson-bottom-link lesson-bottom-link--next"
+                    onClick={() => continueLesson(bottomLesson)}
+                    title={bottomLesson.title}
+                  >
+                    <span>Tiếp tục học</span>
+                    <ArrowRight size={16} aria-hidden />
+                  </button>
+                ) : (
+                  <span className="lesson-bottom-link lesson-bottom-link--next is-empty" aria-hidden>
+                    <span>Tiếp tục học</span>
+                    <ArrowRight size={16} />
+                  </span>
+                )}
+                <button type="button" className="lesson-bottom-link" onClick={toggleAllChapters}>
+                  <span>{collapsedChapters.size > 0 ? "Mở tất cả" : "Thu gọn"}</span>
+                </button>
+              </nav>
+            )}
           </div>
         </main>
         <Footer />
