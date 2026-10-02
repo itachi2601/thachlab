@@ -1,0 +1,149 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 1. Dao động điều hoà",
+ "lesson_id": 20,
+ "nguon_trong_bai": "content/lesson-samples/l11-dao-dong-dieu-hoa/theory.html",
+ "id": "tn-l11-daodongdieuhoa-03",
+ "ten": "Bóng của van xe đạp: hình chiếu của chuyển động tròn đều",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.phuong_trinh",
+  "daodong.hinh_chieu_tron_deu"
+ ],
+ "muc_tieu": "Thấy hình chiếu của chuyển động tròn đều lên một đường thẳng là dao động điều hoà; nối ω với tốc độ góc, A với bán kính.",
+ "dung_cu": [
+  {
+   "ten": "Bánh xe đạp dựng thẳng đứng, quay đều",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn pin chiếu từ phía trước",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tường hoặc màn hứng bóng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Quay bánh xe đều, chiếu đèn pin để bóng van xe rơi lên tường."
+  ],
+  "quan_sat": [
+   "Van xe chạy vòng tròn.",
+   "Bóng của van chạy qua lại trên một đường thẳng, chậm lại ở hai đầu."
+  ],
+  "rut_ra": [
+   "Bóng (hình chiếu) dao động điều hoà.",
+   "Biên độ bằng bán kính, tần số góc bằng tốc độ góc của bánh xe."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Bán kính đường tròn (biên độ)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "omega",
+   "ten": "Tốc độ góc (tần số góc)",
+   "don_vi": "rad/s",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 10,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "phi",
+   "ten": "Góc ban đầu của M (pha ban đầu)",
+   "don_vi": "rad",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6.28,
+   "mac_dinh": 0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Li độ của hình chiếu Q",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = A·cos(omega·t + phi)"
+  ],
+  "gia_thiet": [
+   "M quay đều",
+   "đèn chiếu song song, lên đường kính nằm ngang"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "A (cm)",
+   "omega (rad/s)",
+   "phi (rad)",
+   "t (s)",
+   "x (cm)"
+  ],
+  "hang": [
+   [
+    10,
+    2,
+    0,
+    0,
+    10.0
+   ],
+   [
+    10,
+    2,
+    0,
+    1,
+    -4.16
+   ],
+   [
+    10,
+    2,
+    0,
+    2,
+    -6.54
+   ],
+   [
+    10,
+    2,
+    0,
+    3,
+    9.6
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình (góc theo rad), không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với A = 10 cm, omega = 2 rad/s, phi = 0: x = 10; −4,16; −6,54; 9,60 cm tại t = 0; 1; 2; 3 s.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng bóng chuyển động đều như van xe (thực ra chậm ở biên, nhanh ở giữa).",
+  "Nhầm ω của dao động với tần số vòng/giây."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "A",
+   "omega",
+   "phi"
+  ],
+  "dau_ra": [
+   "M quay đều, Q chạy trên trục x",
+   "đồ thị x–t song song"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Hai khung cạnh nhau: vòng tròn bên trái, đồ thị x–t bên phải, điểm Q nối bằng đường nét đứt."
+ }
+}

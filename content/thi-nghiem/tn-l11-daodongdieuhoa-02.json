@@ -1,0 +1,159 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 1. Dao động điều hoà",
+ "lesson_id": 20,
+ "nguon_trong_bai": "content/lesson-samples/l11-dao-dong-dieu-hoa/theory.html",
+ "id": "tn-l11-daodongdieuhoa-02",
+ "ten": "Cây bút trên vật dao động tự vẽ đồ thị li độ – thời gian",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.do_thi_sin",
+  "daodong.bien_do",
+  "daodong.chu_ki"
+ ],
+ "muc_tieu": "Thấy đồ thị li độ theo thời gian của dao động điều hoà có dạng hình sin; đọc được biên độ A và chu kì T.",
+ "dung_cu": [
+  {
+   "ten": "Con lắc lò xo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút dạ gắn lên vật nặng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tờ giấy dài kéo đều",
+   "so_luong": 1,
+   "ghi_chu": "kéo đều tay hoặc dùng băng giấy chạy bằng động cơ"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gắn bút lên vật, đầu bút chạm giấy.",
+   "Cho vật dao động, kéo giấy chạy đều vuông góc phương dao động."
+  ],
+  "quan_sat": [
+   "Nét bút là đường lượn sóng đều đặn.",
+   "Khoảng cách theo chiều dọc từ trục đến đỉnh là A; khoảng cách giữa hai đỉnh liền kề ứng với T."
+  ],
+  "rut_ra": [
+   "Đồ thị li độ – thời gian có dạng hình sin.",
+   "A là giá trị lớn nhất của li độ; T là thời gian một dao động."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "phi",
+   "ten": "Pha ban đầu",
+   "don_vi": "rad",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6.28,
+   "mac_dinh": 0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Li độ",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = A·cos(2π·t/T + phi)"
+  ],
+  "gia_thiet": [
+   "giấy chạy đều nên trục ngang tỉ lệ với thời gian",
+   "bỏ qua tắt dần"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "A (cm)",
+   "T (s)",
+   "phi (rad)",
+   "t (s)",
+   "x (cm)"
+  ],
+  "hang": [
+   [
+    5,
+    2,
+    0,
+    0,
+    5.0
+   ],
+   [
+    5,
+    2,
+    0,
+    0.5,
+    0.0
+   ],
+   [
+    5,
+    2,
+    0,
+    1,
+    -5.0
+   ],
+   [
+    5,
+    2,
+    0,
+    1.5,
+    -0.0
+   ],
+   [
+    5,
+    2,
+    0,
+    2,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với A = 5 cm, T = 2 s, phi = 0: x = 5, 0, −5, 0, 5 cm tại t = 0; 0,5; 1; 1,5; 2 s.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng biên độ có thể âm.",
+  "Đọc chu kì là khoảng cách từ đỉnh đến đáy (đó chỉ là nửa chu kì)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "A",
+   "T",
+   "phi"
+  ],
+  "dau_ra": [
+   "đường x–t vẽ dần theo thời gian",
+   "nhãn A, −A, T"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Kéo thanh trượt phi để đường cong dịch ngang; hiện chấm đỏ tại t = 0."
+ }
+}

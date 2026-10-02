@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 1. Dao động điều hoà",
+ "lesson_id": 20,
+ "nguon_trong_bai": "content/lesson-samples/l11-dao-dong-dieu-hoa/theory.html",
+ "id": "tn-l11-daodongdieuhoa-01",
+ "ten": "Con lắc lò xo: dao động quanh vị trí cân bằng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.dao_dong_co",
+  "daodong.vi_tri_can_bang"
+ ],
+ "muc_tieu": "Thấy vật dao động qua lại hai bên vị trí cân bằng (chỗ vật đứng yên ban đầu) khi kéo lệch rồi thả.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vật nặng (quả cân)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ hoặc đường ray ngang",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho vật đứng yên trên lò xo, đánh dấu vị trí đó.",
+   "Kéo vật lệch ra rồi thả tay."
+  ],
+  "quan_sat": [
+   "Vật đi qua lại hai bên vị trí đánh dấu.",
+   "Biên độ giảm dần rất chậm do ma sát."
+  ],
+  "rut_ra": [
+   "Vị trí đánh dấu là vị trí cân bằng.",
+   "Dao động cơ là chuyển động qua lại quanh vị trí cân bằng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Độ kéo lệch ban đầu (biên độ)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Li độ tại thời điểm t",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = A·cos(2π·t/T)"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát, biên độ không đổi",
+   "thả tay lúc t = 0 ở biên dương"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "A (cm)",
+   "T (s)",
+   "t (s)",
+   "x (cm)"
+  ],
+  "hang": [
+   [
+    5,
+    1,
+    0,
+    5.0
+   ],
+   [
+    5,
+    1,
+    0.25,
+    0.0
+   ],
+   [
+    5,
+    1,
+    0.5,
+    -5.0
+   ],
+   [
+    5,
+    1,
+    0.75,
+    -0.0
+   ],
+   [
+    5,
+    1,
+    1,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với A = 5 cm, T = 1 s: x = 5 cm lúc t = 0, 0 lúc t = 0,25 s, −5 cm lúc t = 0,5 s.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng vị trí cân bằng là vị trí lò xo không biến dạng (khi treo thẳng đứng thì không phải).",
+  "Nhầm li độ với quãng đường đã đi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "A",
+   "T"
+  ],
+  "dau_ra": [
+   "vật chạy qua lại",
+   "điểm chạy trên đồ thị x–t"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Kéo vật bằng chuột, thả ra; hiện nhãn −A, O, +A trên trục."
+ }
+}
