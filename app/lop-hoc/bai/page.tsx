@@ -1585,7 +1585,7 @@ function LessonLoader() {
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
-          <header className="lesson-head">
+          <header className="lesson-head lesson-head--reader">
             <button type="button" className="lesson-head-back" onClick={() => window.history.back()} aria-label="Quay lại">
               <ArrowLeft size={16} aria-hidden />
             </button>
