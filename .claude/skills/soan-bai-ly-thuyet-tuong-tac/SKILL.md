@@ -92,3 +92,12 @@ Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định
 - [ ] Độ dài bài (≈20 KB, 5 phần) có vừa ý; mật độ tương tác có quá nhiều/ít?
 - [ ] Hình SVG: kiểu que có chấp nhận được hay cần vẽ đẹp hơn?
 - [ ] Giọng văn: chỗ nào chưa giống thầy?
+
+## Chốt nhanh sau khi thầy duyệt (rút kinh nghiệm 2/10/2026 — tiết kiệm token)
+
+- Thầy nói "duyệt/đăng đi" → **chạy ngay trên Mac của thầy** `bash scripts/cap-nhat-ly-thuyet.sh <theory.html> <lesson_id> --yes` (chỉ ghi phần lý thuyết, tự sao lưu). **Không** mở PR, không hỏi lại, không chờ merge: script đọc file local. Commit file bài lên nhánh và PR chỉ làm khi thầy yêu cầu.
+- Chỉ chạy lệnh DB khi thầy đã duyệt bằng lời; trước đó dừng ở `theory.html` + ảnh xem thử.
+- Cắt việc thừa: đã có lệnh, **không** đọc lại bài mẫu 27 KB, `linh-kien-html.md` hay catalog/bài cũ khi không cần; không chạy lại toàn bộ kiểm khi chỉ sửa chữ (chỉ `lint_theory.py` + `validate_bundle.mts`).
+- Xem thử: một lần duy nhất, chụp **cả bài ở 375px bằng 1–2 ảnh** và chạy tự bấm quiz bằng JS; không lặp "cuộn từng hình → chụp". Hình sửa lỗi nhỏ thì chỉ chụp đúng hình đó.
+- `<` / `>` trong `$…$` viết `\lt`/`\gt` ngay từ đầu để khỏi sửa lại.
+- Đừng giải thích dài giữa chừng; báo một lần cuối: đã đăng chưa, link bài, file sao lưu.
