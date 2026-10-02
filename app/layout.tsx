@@ -104,6 +104,14 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("thachlab-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()`,
           }}
         />
+        {/* Lưới an toàn SỚM cho ChunkLoadError: chạy trước hydrate (ChunkErrorGuard chỉ đăng ký
+            trong useEffect nên không bắt được lỗi chunk xảy ra trước đó → trang trắng).
+            Cùng cờ sessionStorage với ChunkErrorGuard: reload đúng 1 lần mỗi phiên tab. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var K="thachlab-chunk-reload",P=["ChunkLoadError","Failed to load chunk","Loading chunk","Failed to fetch dynamically imported module"];function m(x){if(!x)return"";return typeof x==="string"?x:(x.message||"")}function h(s){if(!s)return;for(var i=0;i<P.length;i++){if(s.indexOf(P[i])>-1){try{if(sessionStorage.getItem(K))return;sessionStorage.setItem(K,"1")}catch(e){return}location.reload();return}}}window.addEventListener("error",function(e){h(m(e.error)||e.message)});window.addEventListener("unhandledrejection",function(e){h(m(e.reason))})})()`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <script
