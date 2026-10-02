@@ -37,7 +37,8 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
    ```
    cd /Users/MAC/Projects/thachlab && git pull origin main
    bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/<thư-mục-bài>/theory.html <lesson_id>
-   bash scripts/deploy.sh      # chỉ khi CSS .tl-* chưa có trên production
+   # SAU KHI GHI DB BẮT BUỘC deploy (site tĩnh: build đọc DB lúc build). Deploy từ worktree sạch:
+   git -C .claude/worktrees/deploy-tree checkout --detach origin/main && (cd .claude/worktrees/deploy-tree && bash scripts/deploy.sh)
    ```
    Script tự: lint → dry-run + sao lưu `body_html` cũ ra `scripts/logs/` → hỏi xác nhận → chỉ ghi cột `body_html` của mục `ly_thuyet`. Hoàn tác: `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`. Chỉ dùng `upload-lesson.mts` (tạo cả đề Luyện tập) khi thầy nói rõ muốn đăng cả đề. Commit chỉ đúng thư mục bài + file đã đụng; không tự đăng DB.
    **Lưu ý HTML:** trong `$…$` viết `\lt`, `\gt` thay cho `<`, `>` (ký tự `<k` bị HTML hiểu là thẻ và làm hỏng công thức).
@@ -95,7 +96,7 @@ Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định
 
 ## Chốt nhanh sau khi thầy duyệt (rút kinh nghiệm 2/10/2026 — tiết kiệm token)
 
-- Thầy nói "duyệt/đăng đi" → **chạy ngay trên Mac của thầy** `bash scripts/cap-nhat-ly-thuyet.sh <theory.html> <lesson_id> --yes` (chỉ ghi phần lý thuyết, tự sao lưu). **Không** mở PR, không hỏi lại, không chờ merge: script đọc file local. Commit file bài lên nhánh và PR chỉ làm khi thầy yêu cầu.
+- Thầy nói "duyệt/đăng đi" → **chạy ngay trên Mac của thầy** `bash scripts/cap-nhat-ly-thuyet.sh <theory.html> <lesson_id> --yes` (chỉ ghi phần lý thuyết, tự sao lưu) **rồi deploy luôn** (ghi DB xong mà chưa deploy thì web vẫn hiện bài cũ — đã dính 2/10/2026), thầy đã cho phép deploy tự động. **Không** mở PR, không hỏi lại, không chờ merge: script đọc file local. Commit file bài lên nhánh và PR chỉ làm khi thầy yêu cầu.
 - Chỉ chạy lệnh DB khi thầy đã duyệt bằng lời; trước đó dừng ở `theory.html` + ảnh xem thử.
 - Cắt việc thừa: đã có lệnh, **không** đọc lại bài mẫu 27 KB, `linh-kien-html.md` hay catalog/bài cũ khi không cần; không chạy lại toàn bộ kiểm khi chỉ sửa chữ (chỉ `lint_theory.py` + `validate_bundle.mts`).
 - Xem thử: một lần duy nhất, chụp **cả bài ở 375px bằng 1–2 ảnh** và chạy tự bấm quiz bằng JS; không lặp "cuộn từng hình → chụp". Hình sửa lỗi nhỏ thì chỉ chụp đúng hình đó.
