@@ -1,6 +1,6 @@
 ---
 name: soan-bai-ly-thuyet-tuong-tac
-description: Soạn một bài LÝ THUYẾT có tương tác cho thachlab theo cách dạy của thầy Thạch, dùng để thầy chiếu giảng trực tiếp và học sinh tự học lại — mở bằng ví dụ đời thường và câu dự đoán; mỗi kiến thức kèm ví dụ/thí nghiệm; có mục "Trả bài" lý thuyết/công thức trước bài tập; bài toán mẫu đọc đề từng câu (dữ liệu và kiến thức liên quan); trắc nghiệm tự chấm ngay trong bài; hình SVG tự vẽ — rồi ghi thí nghiệm vào kho dữ liệu cho giai đoạn mô phỏng và đóng gói theory.html + bundle.json. Dùng khi thầy nói "soạn bài lý thuyết tương tác", "tạo bài lý thuyết có ví dụ thực tế", "làm bài học mới cho chương X", "vẽ hình cho bài lý thuyết", "ghi thí nghiệm của bài". Khác dang-bai-hoc-thachlab (đăng .tex có sẵn) và soan-quiz-ly-thuyet (bộ 20 câu Kiểm tra nhanh cuối bài). Soạn, vẽ, kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
+description: Soạn một bài LÝ THUYẾT có tương tác cho thachlab theo phong cách chốt 2/10/2026 của thầy Thạch, dùng để chiếu giảng trực tiếp và học sinh tự học lại — mục tiêu đầu bài, mở bằng tình huống đời thường, câu dự đoán trước khi học (先猜后学), từ khoá 3–6 chữ cho mỗi kiến thức, mỗi kiến thức kèm ví dụ/thí nghiệm Làm–Quan sát–Rút ra, bắt các "cái bẫy" của bài (易错点), trắc nghiệm tự chấm ngay có phân tích lỗi sai, mục "Trả bài" trước bài tập, bài toán mẫu đọc đề từng câu, luyện biến thể (变式) và thử thách phân tầng ⭐–⭐⭐⭐; KHÔNG dùng vai "thầy" trong bài; hình SVG tự vẽ; ghi thí nghiệm vào kho dữ liệu cho giai đoạn mô phỏng; đóng gói theory.html + bundle.json + bản xem thử (Chrome headless). Dùng khi thầy nói "soạn bài lý thuyết tương tác", "tạo bài lý thuyết có ví dụ thực tế", "làm bài học mới cho chương X", "vẽ hình cho bài lý thuyết", "ghi thí nghiệm của bài", "soạn theo phong cách bài Mô tả sóng". Khác dang-bai-hoc-thachlab (đăng .tex có sẵn) và soan-quiz-ly-thuyet (bộ 20 câu Kiểm tra nhanh cuối bài). Soạn, vẽ, kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
 ---
 
 # Soạn bài lý thuyết tương tác
@@ -15,6 +15,8 @@ Ba thói quen dạy của thầy, bài nào cũng phải có đủ:
 3. **Bài toán mẫu: đọc đề đến đâu, nêu dữ liệu và kiến thức đến đó.** Chép đề trong hộp "Đề bài", rồi bảng ba cột **Câu trong đề | Dữ liệu | Kiến thức liên quan** (`.tl-table--data`), mỗi hàng một câu/cụm của đề. Sau bảng mới đến lời giải (ẩn trong `<details>`, các bước đánh số bằng `.tl-steps`), cuối cùng bước kiểm tra kết quả.
 
 Bài mẫu chuẩn (đọc để bắt chước nhịp): `assets/mau-bai-dl3-newton/` trong skill, bản đầy đủ ở `content/lesson-samples/l10-dinh-luat-3-newton/` của repo.
+Bài mẫu thứ hai — **mới nhất, có đủ bộ công cụ xem thử**: `content/lesson-samples/l11-mo-ta-song/` (Bài 8 Mô tả sóng, lớp 11)
+và `content/lesson-samples/l11-giao-thoa-song/` (Bài 12 Giao thoa sóng, đã đăng).
 Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — mọi quy ước dưới đây rút từ lần làm đó, sẽ chỉnh khi thầy phản hồi (xem mục cuối).
 
 ## Đóng gói và phụ thuộc
@@ -31,7 +33,11 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
 3. **Viết `theory.html`** theo dàn ý dưới + linh kiện trong `references/linh-kien-html.md`.
 4. **Vẽ hình** 2–4 hình SVG theo `references/hinh-svg.md`, dùng `scripts/svg_lib.py` (sinh bằng script, chèn idempotent như `build_figs.py` của bài mẫu).
 4b. **Ghi thí nghiệm vào kho dữ liệu** `content/thi-nghiem/` (một file JSON cho mỗi thí nghiệm hoặc ví dụ: dụng cụ, các bước, tham số + khoảng giá trị, phương trình, số liệu mẫu, hiểu lầm hay gặp, gợi ý mô phỏng). Đây là dữ liệu nguồn cho giai đoạn **làm mô phỏng** tiếp theo, nên không để thí nghiệm chỉ nằm trong HTML. Gắn `data-exp="<id>"` lên hộp `.tl-box--exp` / `<figure>` tương ứng. Quy ước đầy đủ: `content/thi-nghiem/README.md`.
-5. **Kiểm.** `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_theory.py <theory.html>` (lỗi cấu trúc) → `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py <theory.html>` (kiểm kho thí nghiệm + liên kết `data-exp`, sinh `index.json`) → `node .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/preview.mjs <theory.html> <thư-mục-ra>` (chụp 375px từng hình + tự bấm mọi đáp án kiểm phản hồi). **Phải xem ảnh bằng mắt** — nhãn chồng chữ/cắt biên không script nào bắt được.
+5. **Kiểm.** `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_theory.py <theory.html>` (lỗi cấu trúc) → `python3 .../scripts/check_quizzes.py <theory.html>` (kiểm logic tự chấm của mọi `.tl-quiz` **không cần trình duyệt**: đúng 1 đáp án `tl-ok`, input đứng ngay trước label, hai hộp phản hồi là con trực tiếp) → `python3 .../scripts/thi_nghiem.py <theory.html>` (kiểm kho thí nghiệm + liên kết `data-exp`, sinh `index.json`) → **xem thử**:
+   - **Trên Mac (không có Playwright/`/opt/pw-browsers`)**: `python3 .../scripts/build_preview.py <theory.html> [thư-mục-ra]` rồi `python3 .../scripts/chup_anh.py <thư-mục-ra>` — dùng Google Chrome headless, tự cắt nền, lưu WebP (`xem-thu-desktop`, `sec-<n>`, `fig-<n>`, `mau-tra-loi-sai`). Ảnh `sec-*` đã mở sẵn `<details>` + đặt sẵn `checked` vào đáp án đúng nên **không cần JS** để thấy phản hồi.
+   - **Trên cloud (có Chromium `/opt/pw-browsers`)**: `node .../scripts/preview.mjs <theory.html> <thư-mục-ra>` (chụp 375px từng hình + tự bấm mọi đáp án kiểm phản hồi).
+   - Trang `xem-thu/xem-thu.html` mở bằng Chrome là bấm thử được ngay (có nút "Mở tất cả đáp án") — đưa link/ảnh này cho thầy xem trước khi đăng.
+   **Phải xem ảnh bằng mắt** — nhãn chồng chữ/cắt biên không script nào bắt được. Lưu ý bẫy đã gặp: trang xem thử thiếu lề phải làm chữ chạm mép; cửa sổ chụp hình quá thấp làm mất `figcaption`.
 6. **Đóng gói `bundle.json`** (schema `thachlab.lesson-bundle/v1`): `theory_html` + `worked_examples: []` + `exam` gồm các câu tự kiểm tra trong bài (validate bắt buộc ≥1 câu). Kiểm: `npx tsx .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/validate_bundle.mts <bundle.json>` (dùng đúng `validateBundle` của trang nhập bài). Phải `ok: true`.
 7. **Báo thầy** (ngắn): bài gì, hình nào ở đâu, đã kiểm gì. Nhắc lệnh trên Mac, **mặc định chỉ đẩy phần lý thuyết** (không đụng đề, bài tập mẫu, tiêu đề, tiến độ học):
    ```
@@ -43,25 +49,45 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
    Script tự: lint → dry-run + sao lưu `body_html` cũ ra `scripts/logs/` → hỏi xác nhận → chỉ ghi cột `body_html` của mục `ly_thuyet`. Hoàn tác: `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`. Chỉ dùng `upload-lesson.mts` (tạo cả đề Luyện tập) khi thầy nói rõ muốn đăng cả đề. Commit chỉ đúng thư mục bài + file đã đụng; không tự đăng DB.
    **Lưu ý HTML:** trong `$…$` viết `\lt`, `\gt` thay cho `<`, `>` (ký tự `<k` bị HTML hiểu là thẻ và làm hỏng công thức).
 
-## Dàn ý bài (nhịp 5 phần, mỗi phần là một `<h3>` đánh số I., II.…)
+## Dàn ý bài (nhịp 6 phần, mỗi phần là một `<h3>` đánh số I., II.…)
 
 Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để nút "Ôn ngay" của quiz cuộn đúng chỗ. Không dùng `<h2>` "LÝ THUYẾT" ngoài `<h3>`.
 
 | Phần | Nội dung | Linh kiện |
 |---|---|---|
-| I. Mở bài | Tình huống đời thường gần học sinh (sân băng, xưởng CNC, xe đạp, bếp...), kể bằng giọng thầy, kết bằng câu hỏi "tại sao?" | hộp **dự đoán** (radio) |
+| I. Mở bài | Tình huống đời thường gần học sinh (sân băng, xưởng CNC, xe đạp, bếp...), kể bằng người dẫn chuyện trung tính (**KHÔNG** dùng vai "thầy"), kết bằng câu hỏi "tại sao?" | hộp **dự đoán** (radio) |
 | II. Kiến thức | **Từ khoá để nhớ** (xem mục "Ít chữ") + phát biểu dạng gạch đầu dòng + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
-| III. Bẫy | Hiểu lầm kinh điển, vì sao sai; bảng so sánh đúng/sai | bảng + hình + **tự kiểm tra** |
-| IV. Trả bài | 4–6 câu nhớ lại lý thuyết/công thức, chưa giải bài | `<details>` trong hộp `tl-box--think` |
-| V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả; sau đó 1–2 câu "Thử sức" đổi số | `.tl-table--data` + `.tl-steps` + hình + quiz |
-| VI. Đời sống + tổng kết | 3–4 ứng dụng; 1 thử thách ẩn gợi ý; khung "Mang về sau bài học" 3–4 ý (có ý về cách đọc đề) | `<details>` + hộp định nghĩa |
+| III. Bẫy | 2–3 "cái bẫy" của riêng bài, vì sao sai; mỗi bẫy một **bảng đối chiếu hai khái niệm dễ lẫn** + tự kiểm tra | bảng + hình + **tự kiểm tra** |
+| IV. Trả bài | 5–6 câu nhớ lại lý thuyết/công thức, chưa giải bài | `<details>` trong hộp `tl-box--think` |
+| V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả; sau đó **biến thể** (đổi số, đổi chiều, đổi vị trí điểm) | `.tl-table--data` + `.tl-steps` + hình + quiz |
+| VI. Đời sống + tổng kết | 3–4 ứng dụng; **thử thách phân tầng ⭐ ⭐⭐ ⭐⭐⭐**; khung "Mang về sau bài học" dạng chuỗi từ khoá (có ý về cách đọc đề) | `<details>` + hộp định nghĩa |
 
-## Giọng văn thầy Thạch
+## Giọng văn (thầy chốt lại 2/10/2026)
 
-- Xưng "thầy", gọi "em/các em". Câu ngắn. Mở bằng cảnh thật, **không** mở bằng định nghĩa.
-- Có người thật nói câu thật ("Thầy ơi, em đẩy thành chứ có đẩy mình đâu…"). Mẹo nhớ có tên (4 chữ, 1 câu hỏi kiểm tra "đặt lên mấy vật?").
+- **KHÔNG dùng vai "thầy" trong bài đọc.** Bỏ hẳn các câu kiểu "Ở lớp, thầy cho cả lớp…", "Thầy hỏi: …",
+  "Mỗi câu của đề, thầy tự hỏi: …". Bài là bài đọc cho học sinh, không phải biên bản lời giảng; ai đọc cũng
+  thấy mình là người được nói tới. Viết lại thành câu trung tính/hướng dẫn: "Thử ngay tại lớp: …",
+  "Câu hỏi để nghĩ trước khi đọc tiếp: …", "Với mỗi câu của đề, tự hỏi hai điều: …".
+- Gọi người học là "em". Câu ngắn. Mở bằng cảnh thật, **không** mở bằng định nghĩa.
+- **Được phép** trích lời học sinh ("Thầy ơi, em đẩy thành chứ có đẩy mình đâu…") — đó là lời thoại của
+  học sinh, khác với người dẫn chuyện đóng vai thầy. Mẹo nhớ có tên (4 chữ, 1 câu hỏi kiểm tra).
 - Sai thì **giải thích vì sao sai** và gợi cách nghĩ lại, không chỉ báo "sai". Đúng thì củng cố lý do.
 - Thầy dạy vật lí THPT + CNC/chế tạo máy + trượt băng: ưu tiên ví dụ từ ba mảng đó. Trả lời chung gọn, vào thẳng kết quả.
+
+## Phong cách chốt cho MỌI bài sau (bảng đầy đủ: `references/phuong-phap-day-tq.md`)
+
+Bài Mô tả sóng (`content/lesson-samples/l11-mo-ta-song/`) là bài mẫu thứ hai, soạn sau bài Newton và Giao thoa —
+nhịp dưới đây là chuẩn, lượt sau không hỏi lại:
+
+1. Khung **🎯 Mục tiêu bài học** ở đầu bài (2–4 gạch đầu dòng + "cuối bài phải tự trả lời được N câu ở mục Trả bài").
+2. **情境导入** — mở bằng một cảnh học sinh đã thấy, không mở bằng định nghĩa.
+3. **先猜后学** — hộp dự đoán 3–4 phương án ngay sau cảnh mở bài, phản hồi giải thích vì sao.
+4. Mỗi ý kiến thức: **dòng 🔑 3–6 từ** → gạch đầu dòng ngắn → ví dụ/thí nghiệm (Làm–Quan sát–Rút ra) → quiz tự chấm.
+5. **易错点辨析** — 2–3 "cái bẫy" của riêng bài, mỗi bẫy kèm bảng đối chiếu hai khái niệm dễ lẫn.
+6. **当堂检测 + 错因分析** — 6–8 quiz rải khắp bài; phản hồi sai phải gọi tên lỗi cụ thể, không chỉ báo sai.
+7. **变式训练 + 分层练习** — sau bài toán mẫu có "Thử sức đổi số / đổi chiều" và thử thách ⭐ ⭐⭐ ⭐⭐⭐.
+8. **归纳小结** — khung "✅ Mang về sau bài học" toàn từ khoá, có một dòng về cách đọc đề.
+9. Mẹo/口诀 riêng cho từng công thức khó nhớ; `<details>` cho phần mở rộng (không giấu kiến thức bắt buộc).
 
 ## Ít chữ — nhớ bằng từ khoá (thầy yêu cầu 2/10/2026, áp dụng cho MỌI bài sau)
 
@@ -85,20 +111,25 @@ Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định
 7. **Bundle bắt buộc có `exam` ≥1 câu**; dùng chính các câu tự kiểm tra trong bài làm đề Luyện tập nhỏ (3–5 câu, kèm `explanation`).
 8. **Kiểm bằng mắt ở 375px** (thầy học sinh dùng điện thoại): bài mẫu bị cắt nhãn "Thành sân" và chồng chữ "mặt băng"/"em trượt lùi" cho tới khi chụp ảnh mới thấy.
 9. **Chưa test trong app thật** (Next.js tĩnh): preview chỉ dùng CSS + KaTeX rời. Khi có trình duyệt xem được `/lop-hoc/bai`, kiểm lại bài đăng thật trước khi nhân rộng.
+10. **Không viết vai "thầy" vào bài** (thầy nhắc 2/10/2026 khi đọc bài Mô tả sóng): "thầy cho cả lớp…", "Thầy hỏi: …", "thầy tự hỏi: …" đều phải bỏ. Đây là lỗi giọng văn dễ tái phát nhất vì bài mẫu cũ (`l10-dinh-luat-3-newton`) còn dùng.
+11. **Trang xem thử phải có `.wrap` (lề 16px + max-width 720px)** cho cả trang từng mục: thiếu nó, chữ chạm mép phải ở 375px mà đọc ảnh mới thấy.
+12. **Cửa sổ chụp `fig-*.html` phải cao ≥ 500 CSS px** và **≥ 375px cho mục**: quá thấp là mất `figcaption` (đã dính với fig-2/fig-4 vì `.wrap` đẩy nội dung xuống).
+13. **Bảng ở 375px: tối đa 3 cột.** Bảng 4 cột (Đại lượng | Ký hiệu | Nghĩa | Hệ thức) phải gộp lại thành 3 cột *Đại lượng | Ký hiệu (đơn vị) | Nghĩa ngắn và hệ thức*; bảng rộng hơn thì `.table-scroll` cho cuộn ngang chứ đừng để chữ bị bóp.
+14. **`.katex-display` và `.katex` đã tự cuộn ngang** trong chính nó (globals.css) nên công thức dài không đẩy tràn trang — không cần cắt công thức thành nhiều dòng.
 
 ## Cần kiểm tra khi thầy xem được bài mẫu (điền tiếp)
 
 - [ ] Radio tự chấm hiện đúng trong app thật (không bị React/`ContentHtml` render lại làm mất chọn)?
 - [ ] `<details>` mở/đóng ổn trên điện thoại?
-- [ ] Độ dài bài (≈20 KB, 5 phần) có vừa ý; mật độ tương tác có quá nhiều/ít?
+- [ ] Độ dài bài (bài Mô tả sóng 51 KB, 6 phần) có vừa ý; mật độ tương tác (7 quiz) có quá nhiều/ít?
 - [ ] Hình SVG: kiểu que có chấp nhận được hay cần vẽ đẹp hơn?
-- [ ] Giọng văn: chỗ nào chưa giống thầy?
+- [ ] Giọng văn sau khi bỏ vai "thầy": đã đúng ý chưa?
 
 ## Chốt nhanh sau khi thầy duyệt (rút kinh nghiệm 2/10/2026 — tiết kiệm token)
 
 - Thầy nói "duyệt/đăng đi" → **chạy ngay trên Mac của thầy** `bash scripts/cap-nhat-ly-thuyet.sh <theory.html> <lesson_id> --yes` (chỉ ghi phần lý thuyết, tự sao lưu) **rồi deploy luôn** (ghi DB xong mà chưa deploy thì web vẫn hiện bài cũ — đã dính 2/10/2026), thầy đã cho phép deploy tự động. **Không** mở PR, không hỏi lại, không chờ merge: script đọc file local. Commit file bài lên nhánh và PR chỉ làm khi thầy yêu cầu.
 - Chỉ chạy lệnh DB khi thầy đã duyệt bằng lời; trước đó dừng ở `theory.html` + ảnh xem thử.
 - Cắt việc thừa: đã có lệnh, **không** đọc lại bài mẫu 27 KB, `linh-kien-html.md` hay catalog/bài cũ khi không cần; không chạy lại toàn bộ kiểm khi chỉ sửa chữ (chỉ `lint_theory.py` + `validate_bundle.mts`).
-- Xem thử: một lần duy nhất, chụp **cả bài ở 375px bằng 1–2 ảnh** và chạy tự bấm quiz bằng JS; không lặp "cuộn từng hình → chụp". Hình sửa lỗi nhỏ thì chỉ chụp đúng hình đó.
+- Xem thử: trên Mac một lệnh `build_preview.py` + `chup_anh.py` là có đủ ảnh 375px, ảnh từng hình và trang bấm thử (`xem-thu.html`); không lặp "cuộn từng hình → chụp". Chỉ sửa hình nhỏ thì chạy `chup_anh.py <thư-mục> --chi-hinh`.
 - `<` / `>` trong `$…$` viết `\lt`/`\gt` ngay từ đầu để khỏi sửa lại.
 - Đừng giải thích dài giữa chừng; báo một lần cuối: đã đăng chưa, link bài, file sao lưu.

@@ -74,6 +74,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   3 nút (‹ Lớp học · Tiếp tục học · Mở tất cả/Thu gọn) dùng lại CSS `.lesson-bottombar--mobile` của trang bài; thanh này
   **thay** tabbar toàn site (2 rule `:has()` ở cuối `globals.css`), chừa đáy đúng 62px như trang bài. Đợt 4 (cột giữa giàu
   thông tin + rail phải) chờ `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` vào `main`.
+- **Bài Mô tả sóng soạn lại + chốt phong cách soạn bài (2/10/2026, đã commit `main`)**: bản xem thử Bài 8 Mô tả sóng
+  (lớp 11) ở `content/lesson-samples/l11-mo-ta-song/` (theory.html + bundle.json + 2 thí nghiệm trong
+  `content/thi-nghiem/` + ảnh xem thử `xem-thu/`) — **CHƯA ghi DB, chưa deploy**, chờ thầy duyệt
+  (`bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` rồi deploy).
+  Skill `soan-bai-ly-thuyet-tuong-tac` đã cập nhật: **bỏ vai "thầy" trong bài**, checklist 14 nét dạy học Trung Quốc
+  (`references/phuong-phap-day-tq.md`), thêm `scripts/build_preview.py` + `chup_anh.py` (xem thử bằng Chrome headless,
+  Mac không có Playwright) + `check_quizzes.py` (kiểm tự chấm không cần trình duyệt); đã sync Library plugin + `~/.codex`.
 
 ## Migration — ĐANG CHỜ
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
@@ -166,6 +173,11 @@ Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng h
 - Thẻ "3 kỹ năng yếu nhất" trên dashboard học sinh + trọng số mức độ trong mastery.
 - Bổ sung câu hỏi chương Động học 10 cho đủ ≥30 câu/bài.
 - `/lo-trinh` — Learning Journey (route chưa tồn tại).
+- Trang chương (`/lop-hoc/<slug>`) — đề xuất hiển thị thêm cho học sinh + phụ huynh, kèm mockup và
+  phát hiện lỗi P0 (phụ huynh đang thấy "Chưa học" ở mọi bài): `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` — **chờ thầy chốt 3 câu ở §7**, chưa code.
+- Trang chương ↔ trang bài học lệch khung xương (760px một cột vs 1320px ba cột; hai bộ idiom
+  `.class-*` / `.lesson-tree`): nghiên cứu + wireframe so sánh ở
+  `docs/NGHIEN-CUU-DONG-BO-TRANG-CHUONG-TRANG-BAI.md` — **chờ thầy chốt 3 câu ở §9**, chưa code.
 
 ## LÀM NGAY KHI CÓ TOKEN (thầy ghi 30/09/2026)
 **Bài tập mẫu → ngân hàng câu hỏi → tìm bài tương đương để rèn luyện.**

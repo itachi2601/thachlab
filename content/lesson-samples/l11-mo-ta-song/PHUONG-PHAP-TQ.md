@@ -22,6 +22,13 @@ Trên nền đó, bài này thêm các nét đặc trưng của lớp học Trun
 | **归纳小结 / 板书** — tổng kết có cấu trúc | Khung "✅ Mang về sau bài học": 6 dòng từ khoá, mỗi dòng một ý | Giữ nguyên cách của bài mẫu |
 | **拓展** — mở rộng cho học sinh khá | `<details>` sóng cầu $I = P/(4\pi r^2)$; sóng truyền ngược chiều; nguồn có pha ban đầu | Thêm phần mở rộng có công thức suy ra |
 
+## Giọng văn (thầy chốt 2/10/2026)
+
+**Không dùng vai "thầy" trong bài đọc.** Các câu kiểu "Ở lớp, thầy cho cả lớp…", "Thầy hỏi: …",
+"Mỗi câu của đề, thầy tự hỏi: …" đã được bỏ; thay bằng câu trung tính ("Thử ngay tại lớp: …",
+"Câu hỏi để nghĩ trước khi đọc tiếp: …", "Với mỗi câu của đề, tự hỏi hai điều: …").
+Người học được gọi là "em". Được phép trích lời học sinh, nhưng người dẫn chuyện không đóng vai thầy.
+
 ## Ba chỗ đáng chú ý về nội dung
 
 1. **Bổ sung phần còn thiếu của bài đang đăng.** Bài 27 hiện tại dừng ở "cường độ sóng", chưa có **phương trình sóng** và

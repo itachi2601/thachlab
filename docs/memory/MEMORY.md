@@ -15,6 +15,7 @@
 - [Skill có 2 bản](feedback_skill_two_copies.md) — Library plugin + ~/.codex (+ repo .claude/skills): diff trước, sửa cả hai
 - [Rà ảnh phải xem mắt](feedback_content_images_eyeball.md) — MD5 hash-list không bắt hết ảnh trang trí trong bài đã đăng
 - [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md) — tự schedule wakeup + resume
+- [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — bài soạn cho HS **không dùng vai "thầy"**; 14 nét phong cách + công cụ xem thử ở skill `soan-bai-ly-thuyet-tuong-tac`
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — project Singapore (migrate 28/9); URL/key ở .env.local; còn treo Pause project Sydney cũ
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f file.sql`, không cần mật khẩu DB
