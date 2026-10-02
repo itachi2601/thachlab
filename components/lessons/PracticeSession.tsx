@@ -354,7 +354,7 @@ export default function PracticeSession({
         <p className="text-sm text-slate-400">
           Thời lượng ước tính{" "}
           <span className="font-mono font-semibold text-white">{formatClock(estimate)}</span>{" "}
-          — mỗi câu lý thuyết 15 giây, mỗi câu bài tập 45 giây.
+          — mỗi câu lý thuyết 30 giây, mỗi câu bài tập 1 phút 30 giây.
         </p>
         <button
           type="button"

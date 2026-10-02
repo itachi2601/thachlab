@@ -101,7 +101,11 @@ export default function BugReportWidget() {
 
             <form onSubmit={submit} className="mt-4 space-y-3">
               <select value={category} onChange={(e) => setCategory(e.target.value as BugCategory)} className={inputCls}>
-                {Object.entries(BUG_CATEGORY_LABELS).map(([value, label]) => (
+                {Object.entries(BUG_CATEGORY_LABELS)
+                // "cau_hoi" chỉ dành cho nút "Báo lỗi câu này" (có gắn exam_id/question_index) —
+                // chọn ở form chung sẽ ra báo lỗi câu hỏi không biết câu nào.
+                .filter(([value]) => value !== "cau_hoi")
+                .map(([value, label]) => (
                   <option key={value} value={value}>
                     {label}
                   </option>
@@ -124,7 +128,7 @@ export default function BugReportWidget() {
               <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-white/15 px-4 py-2.5 text-sm text-slate-400 hover:border-white/30">
                 <Paperclip size={15} />
                 {file ? file.name : "Đính kèm ảnh chụp màn hình (không bắt buộc)"}
-                <input type="file" accept="image/*" className="hidden" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
+                <input type="file" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" className="hidden" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
               </label>
               {error && <p className="text-sm text-red-400">{error}</p>}
               <button type="submit" disabled={busy || !description.trim()} className="w-full rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-50">
