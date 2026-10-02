@@ -2502,6 +2502,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
      công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
    - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
      trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Trang chiếu TRÀN gần hết bề ngang màn hình, chỉ chừa lề nhỏ (xem .presenter-slide):
+     tivi/máy chiếu lớp học là 16:9, cap bề ngang cũ 1180px làm hụt ~740px trên tivi
+     1920 (nội dung co thành một cột hẹp giữa màn hình, chữ xuống dòng sớm).
    - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
      vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
    ================================================================== */
@@ -2577,11 +2580,16 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
 .presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
 
-.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(20px, 4vw, 72px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+/* Lề ngang chỉ để nội dung không dính sát mép màn hình (và không chui dưới nét vẽ ở rìa):
+   bề ngang thật của trang chiếu do .presenter-slide quyết định, không cap ở đây. */
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(16px, 2.4vw, 48px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
 .presenter-stage::-webkit-scrollbar { width: 10px; }
 .presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
 
-.presenter-slide { max-width: 1180px; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+/* Trang chiếu dùng hết bề ngang còn lại của khung (không cap max-width): trên tivi 1920
+   chữ chạy tới sát hai mép, chỉ chừa lề của .presenter-stage. Muốn chữ to/nhỏ thì dùng
+   Ctrl +/− (--presenter-zoom) chứ không thu hẹp cột nội dung. */
+.presenter-slide { max-width: none; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
