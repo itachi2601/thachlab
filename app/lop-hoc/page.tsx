@@ -13,6 +13,7 @@ import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   chapterDisplayTitle,
+  chapterNumber,
   isPeriodicExam,
   isSemesterExam,
   type Chapter,
@@ -78,7 +79,7 @@ export default function ClassHubPage({ classSlug }: { classSlug?: string } = {})
 }
 
 function ClassHubContent({ classSlug }: { classSlug?: string }) {
-  const { session } = useAuth();
+  const { session, profile } = useAuth();
   const searchParams = useSearchParams();
   const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
@@ -101,7 +102,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // đang MỞ (get_chapter_mastery) — mặc định trang chỉ mở sẵn đúng 1 chương nên vẫn đúng quy ước
   // "1 RPC là đủ, không lặp query"; chương khác chỉ tải khi người dùng tự mở.
   const [chapterMastery, setChapterMastery] = useState<Map<number, Map<number, MasteryLevel>>>(new Map());
-  const chapterMasteryFetching = useRef<Set<number>>(new Set());
+  // Chương ĐÃ THỬ tải (kể cả lỗi) — không thử lại, tránh gọi lại RPC mỗi lần render.
+  const chapterMasteryAttempted = useRef<Set<number>>(new Set());
 
   // link cũ /lop-hoc?tab=cttc → luồng CTTC riêng
   useEffect(() => {
@@ -140,27 +142,37 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   useEffect(() => {
     if (!supabaseConfigured || !session) return;
     fetchPublishedExams().then(setExams);
-    fetchMyProgressMarks(session.user.id).then(setProgressMarks).catch(() => setProgressMarks(null));
   }, [session]);
+
+  useEffect(() => {
+    // Chỉ học sinh mới có dấu tiến độ; phụ huynh/GV bỏ hẳn 2 truy vấn này (trước đây vẫn chạy
+    // rồi trả về rỗng, khiến trang hiện "Chưa học" cho mọi bài).
+    if (!supabaseConfigured || !session || profile?.role !== "student") return;
+    fetchMyProgressMarks(session.user.id).then(setProgressMarks).catch(() => setProgressMarks(null));
+  }, [session, profile]);
+
+  // Tiến độ ở trang này là tiến độ CỦA CHÍNH NGƯỜI ĐANG XEM: fetchMyProgressMarks lọc
+  // lesson_progress/exam_results theo auth.uid(). Phụ huynh/GV/admin cũng có `session` nhưng
+  // không có tiến độ học sinh — hiện theo `session` thì mọi bài hoá "Chưa học" (sai thông tin).
+  const isStudent = !!session && profile?.role === "student";
 
   const lessonProgress = useMemo(
     (): Map<number, InlineLessonProgress> =>
-      session && lessons?.length && progressMarks ? summarizeLessonProgress(lessons, progressMarks) : new Map(),
-    [session, lessons, progressMarks],
+      isStudent && lessons?.length && progressMarks ? summarizeLessonProgress(lessons, progressMarks) : new Map(),
+    [isStudent, lessons, progressMarks],
   );
 
   // Tải nhãn mastery của một chương khi nó được mở ra (mặc định 1 chương/khi thầy tự mở thêm) —
   // cache theo chapterId để mở/đóng lại không gọi lại RPC.
   function ensureChapterMastery(chapterId: number) {
     if (!session) return;
-    if (chapterMastery.has(chapterId) || chapterMasteryFetching.current.has(chapterId)) return;
-    chapterMasteryFetching.current.add(chapterId);
+    if (chapterMastery.has(chapterId) || chapterMasteryAttempted.current.has(chapterId)) return;
+    chapterMasteryAttempted.current.add(chapterId);
     fetchChapterMastery(chapterId)
       .then((m) => setChapterMastery((prev) => new Map(prev).set(chapterId, m)))
       .catch(() => {
         /* RPC chưa chạy/lỗi mạng — bỏ qua lặng lẽ, icon mastery chỉ là trang trí. */
-      })
-      .finally(() => chapterMasteryFetching.current.delete(chapterId));
+      });
   }
 
   const effectiveSlug = classSlug;
@@ -237,12 +249,20 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // Nhãn mastery cho các chương ĐANG MỞ — chạy lại mỗi khi mở thêm chương hoặc session tới sau
   // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
   useEffect(() => {
-    if (!session) return;
+    // Trang /lop-hoc (chưa chọn lớp) có classChapters = toàn bộ chương của mọi lớp → đừng bắn
+    // mastery cho tất cả. Chờ trạng thái gấp/mở mặc định áp xong cũng vậy: lần chạy đầu
+    // collapsedChapters còn rỗng nên vòng lặp cũ bắn 1 RPC cho MỌI chương của lớp.
+    if (!session || !effectiveSlug || !active) return;
+    if (!defaultChapterAppliedRef.current) return;
+    const need = new Set<number>();
+    // Chương đang hiện ở cột giữa (>=1024) luôn cần nhãn, dù nó không nằm trong accordion.
+    if (selectedChapterId !== null) need.add(selectedChapterId);
     for (const ch of classChapters) {
-      if (!collapsedChapters.has(ch.id)) ensureChapterMastery(ch.id);
+      if (!collapsedChapters.has(ch.id)) need.add(ch.id);
     }
+    for (const chapterId of need) ensureChapterMastery(chapterId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, collapsedChapters, classChapters]);
+  }, [session, effectiveSlug, active, collapsedChapters, classChapters, selectedChapterId]);
 
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
@@ -288,8 +308,15 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   useEffect(() => {
     if (!requestedChapterId || !lessons) return;
     const timer = window.setTimeout(() => {
-      document
-        .getElementById(`chapter-${requestedChapterId}`)
+      // Hai bản mục lục cùng nằm trong DOM (accordion <1024 và cột giữa >=1024, CSS ẩn một bản).
+      // Trên máy tính, id `chapter-<id>` thuộc bản đang bị ẩn nên scrollIntoView không đi đâu cả;
+      // chọn bản CÓ layout box để đúng ở cả hai chế độ.
+      const candidates = [
+        document.getElementById(`chapter-pick-${requestedChapterId}`),
+        document.getElementById(`chapter-${requestedChapterId}`),
+      ];
+      candidates
+        .find((el) => el && el.getClientRects().length > 0)
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 80);
     return () => window.clearTimeout(timer);
@@ -322,20 +349,38 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     });
   }
 
+  /** Ghi tham số lên URL (không cuộn) — F5 và link chia sẻ phải mở đúng lớp + môn + chương. */
+  function replaceUrlParams(mutate: (params: URLSearchParams) => void) {
+    if (!effectiveSlug) return;
+    const params = new URLSearchParams(window.location.search);
+    mutate(params);
+    router.replace(`/lop-hoc/${effectiveSlug}?${params.toString()}`, { scroll: false });
+  }
+
   /** Bấm tên chương trên cây (>= 1024): đổi cột giữa + ghi ?chapter= lên URL để F5/chia sẻ link vẫn đúng. */
   function pickChapter(chapterId: number) {
     setPickedChapterId(chapterId);
+    // Đồng bộ với chế độ accordion (<1024): thu nhỏ cửa sổ là rơi về đó, mà accordion đọc
+    // `collapsedChapters` + `requestedChapterId` — không đồng bộ thì chương đang đọc biến mất.
+    setRequestedChapterId(chapterId);
+    setCollapsedChapters((prev) => {
+      if (!prev.has(chapterId)) return prev;
+      const next = new Set(prev);
+      next.delete(chapterId);
+      return next;
+    });
     ensureChapterMastery(chapterId);
-    const params = new URLSearchParams(window.location.search);
-    params.set("chapter", String(chapterId));
-    router.replace(`/lop-hoc/${effectiveSlug}?${params.toString()}`, { scroll: false });
+    replaceUrlParams((params) => {
+      params.set("chapter", String(chapterId));
+      params.set("subject", subjectCode);
+    });
   }
 
   /** Bài đã học xong = đủ 100% số mục — đúng công thức thanh tiến độ trong accordion. */
   function lessonIsComplete(lesson: Lesson): boolean {
     const p = lessonProgress.get(lesson.id);
     const percent = p?.total ? Math.round((p.completed / p.total) * 100) : 0;
-    return !!session && percent === 100;
+    return isStudent && percent === 100;
   }
 
   /** % hoàn thành của bài học gần nhất — dùng cho thẻ "Tiếp tục học". */
@@ -349,6 +394,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   /** Thẻ "Tiếp tục học": <1024 nằm đầu cột giữa như trước, >= 1024 chuyển lên cột trái cạnh cây chương. */
   function renderContinueCard(variant: "main" | "nav") {
     if (!lastLesson || !lastLessonChapter) return null;
+    // Bài "học gần nhất" đọc từ localStorage của MÁY, không phải tiến độ máy chủ: phụ huynh/GV mở
+    // cùng máy sẽ thấy bài của con kèm "· 0%" (số của chính họ) — ẩn đi.
+    if (session && !isStudent) return null;
     return (
       <div className={`class-continue class-continue--${variant}`}>
         <div>
@@ -371,7 +419,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
    * kì hiện ngay sau chương. `desktop` = bản ở cột giữa từ 1024px (chương đang chọn: luôn mở, không
    * nút gấp, id khác bản accordion để không trùng id trong DOM).
    */
-  function renderChapterSection(ch: Chapter, chapterIndex: number, desktop: boolean) {
+  function renderChapterSection(ch: Chapter, desktop: boolean) {
     // Kiểm tra giữa/cuối học kì không nằm trong nội dung chương:
     // tách ra khỏi danh sách bài, hiện thành mục riêng ngay sau chương.
     const all = lessons ?? [];
@@ -380,6 +428,10 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const chapterTotal = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.total ?? lesson.itemCount), 0);
     const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
     const collapsed = !desktop && collapsedChapters.has(ch.id);
+    // Số chương đọc từ tiêu đề CSDL: vị trí trong mảng lệch với sách (lớp 9 có khối "Mở đầu"
+    // trước "Chương 1"; lớp 12 có khối "Đề thi thử…" không phải chương). Không có số thì chỉ
+    // hiện tiêu đề, không bịa "Chương N".
+    const chapterNum = chapterNumber(ch.title);
     let lessonNumber = 0;
     return (
       <Fragment key={ch.id}>
@@ -387,7 +439,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
           {desktop ? (
             <div className="class-chapter-head class-chapter-head--static">
               <span className="class-chapter-title">
-                <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
+                {chapterNum === null ? (
+                  chapterDisplayTitle(ch.title)
+                ) : (
+                  <>
+                    <span className="class-chapter-num">Chương {chapterNum}</span> · {chapterDisplayTitle(ch.title)}
+                  </>
+                )}
               </span>
             </div>
           ) : (
@@ -399,12 +457,18 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               aria-controls={`chapter-lessons-${ch.id}`}
             >
               <span className="class-chapter-title">
-                <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
+                {chapterNum === null ? (
+                  chapterDisplayTitle(ch.title)
+                ) : (
+                  <>
+                    <span className="class-chapter-num">Chương {chapterNum}</span> · {chapterDisplayTitle(ch.title)}
+                  </>
+                )}
               </span>
               <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
             </button>
           )}
-          {session && chapterTotal > 0 && (
+          {isStudent && chapterTotal > 0 && (
             <div className="class-chapter-progress">
               <span className="class-chapter-progress-bar">
                 <i style={{ width: `${Math.round((chapterCompleted / chapterTotal) * 100)}%` }} />
@@ -424,8 +488,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   : 0;
                 const periodic = isPeriodicExam(lesson.lesson_kind);
                 if (!periodic) lessonNumber += 1;
-                const complete = !!session && percent === 100;
-                const started = !!session && percent > 0 && !complete;
+                const complete = isStudent && percent === 100;
+                const started = isStudent && percent > 0 && !complete;
                 return (
                   <li key={lesson.id}>
                     <Link
@@ -443,8 +507,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       </span>
                       <span className="class-meta">
                         {periodic
-                          ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
-                          : session
+                          ? isStudent ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
+                          : isStudent
                             ? complete
                               ? "Hoàn thành"
                               : started
@@ -476,7 +540,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 {exam.title}
                 <small>{meta.label}</small>
               </span>
-              <span className="class-meta">{session ? (done ? "Đã làm" : "Chưa làm") : "Kiểm tra"}</span>
+              <span className="class-meta">{isStudent ? (done ? "Đã làm" : "Chưa làm") : "Kiểm tra"}</span>
             </Link>
           );
         })}
@@ -512,6 +576,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       lessonHref={lessonHref}
                       isLessonDone={lessonIsComplete}
                       onLessonClick={rememberLesson}
+                      progressKnown={isStudent}
                     />
                   </>
                 )}
@@ -546,6 +611,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                               onClick={() => {
                                 setActiveSubjectCode(subject.code);
                                 setCollapsedChapters(new Set());
+                                // Chương đang chọn thuộc môn cũ → bỏ, và ghi môn lên URL để F5 /
+                                // link chia sẻ không rơi về Vật lý rồi lọc mất chương của môn khác.
+                                setPickedChapterId(null);
+                                setRequestedChapterId(null);
+                                replaceUrlParams((params) => {
+                                  params.set("subject", subject.code);
+                                  params.delete("chapter");
+                                });
                               }}
                               className={activeSubjectCode === subject.code ? "is-active" : ""}
                             >
@@ -575,12 +648,12 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
 
                         {/* <1024: accordion cả khoá như trước. >= 1024: chỉ chương đang chọn, cây chương ở cột trái. */}
                         <div className="class-pick-mobile">
-                          {classChapters.map((ch, chapterIndex) => renderChapterSection(ch, chapterIndex, false))}
+                          {classChapters.map((ch) => renderChapterSection(ch, false))}
                         </div>
 
                         {selectedChapter && (
                           <div className="class-pick-desktop">
-                            {renderChapterSection(selectedChapter, selectedChapterIndex, true)}
+                            {renderChapterSection(selectedChapter, true)}
                           </div>
                         )}
                       </div>
@@ -610,6 +683,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     {!session && (
                       <p className="lesson-muted class-login-hint">
                         <Link href="/dang-nhap" className="lesson-link">Đăng nhập</Link> để xem đề thi và lưu tiến độ học.
+                      </p>
+                    )}
+
+                    {profile?.role === "parent" && (
+                      <p className="lesson-muted class-login-hint">
+                        Tài khoản phụ huynh không có tiến độ học riêng.{" "}
+                        <Link href="/phu-huynh" className="lesson-link">Xem kết quả của con</Link>.
                       </p>
                     )}
 
