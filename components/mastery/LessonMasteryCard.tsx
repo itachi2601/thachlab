@@ -152,8 +152,22 @@ export default function LessonMasteryCard({
                   <span aria-hidden>{MASTERY_ICON[t.level]}</span>
                   <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{t.topicName}</span>
                 </span>
-                <span style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
-                  <Badge tone={MASTERY_TONE[t.level]}>
+                {/* Nhóm nhãn + nút cũng phải co/wrap được: mức "Cần luyện thêm"/"Chưa đạt" có nhãn dài
+                    ("Cần luyện thêm · 43% (3 câu)") CỘNG nút "Luyện 10 câu phần này" — rộng hơn cả
+                    hàng (262px trong cột phải 292px), để flexShrink:0 thì nó thò ra ngoài panel. */}
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    flexWrap: "wrap",
+                    justifyContent: "flex-end",
+                    flexShrink: 1,
+                    minWidth: 0,
+                    maxWidth: "100%",
+                  }}
+                >
+                  <Badge tone={MASTERY_TONE[t.level]} className="max-w-full whitespace-normal break-words">
                     {t.level === "insufficient"
                       ? `Làm thêm ${Math.max(1, MIN_ANSWERS_FOR_LABEL - t.answeredCount)} câu`
                       : `${MASTERY_LABEL[t.level]} · ${t.pct}% (${t.answeredCount} câu)`}
@@ -163,7 +177,7 @@ export default function LessonMasteryCard({
                       type="button"
                       onClick={() => setPracticeTopic(t)}
                       className="lesson-done"
-                      style={{ padding: "4px 10px", fontSize: 12 }}
+                      style={{ padding: "4px 10px", fontSize: 12, flexShrink: 1 }}
                     >
                       Luyện 10 câu phần này
                     </button>
