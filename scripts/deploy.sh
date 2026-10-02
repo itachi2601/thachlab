@@ -43,6 +43,11 @@ RedirectMatch 404 /\.git
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Máy chủ LiteSpeed bỏ qua ExpiresDefault 1 năm ở trên và trả max-age 7 ngày → ép Cache-Control
+  # tường minh cho file có hash trong tên (js/css/woff2).
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
   <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
