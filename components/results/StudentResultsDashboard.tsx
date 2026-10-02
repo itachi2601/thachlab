@@ -10,6 +10,7 @@ import {
   fetchMyScoreHistory,
   fetchMyTopicGaps,
   fetchMyWrongQuestions,
+  reviewDueLabel,
   fetchOutcomeGaps,
   fetchQuestionTopics,
   outcomeGapsByNeed,
@@ -239,6 +240,14 @@ function GapRow({
                       <span className="block text-xs font-bold uppercase tracking-wide text-slate-500">
                         {it.ref.examTitle} · Câu {it.ref.questionIndex + 1}
                       </span>
+                      {(() => {
+                        const d = reviewDueLabel(it.ref.wrongAt);
+                        return d ? (
+                          <span className={`mt-0.5 block text-xs ${d.due ? "font-semibold text-amber-300" : "text-slate-500"}`}>
+                            {d.text}
+                          </span>
+                        ) : null;
+                      })()}
                       <span className="mt-1 line-clamp-2 block text-sm text-slate-300">
                         <Html html={it.question.question} />
                       </span>
