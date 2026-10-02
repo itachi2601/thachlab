@@ -1,0 +1,158 @@
+
+<h2 class="text-xl font-bold mt-3 mb-1.5">1. Thế năng và động năng trong dao động điều hoà</h2>
+<p class="text-base leading-relaxed my-2">Xét một chất điểm khối lượng $m$ dao động điều hoà với tần số góc $\omega$, biên độ $A$, li độ $x=A\cos(\omega t+\varphi)$. Mốc thế năng chọn tại vị trí cân bằng.</p>
+<div class="my-3 overflow-x-auto">
+<table class="w-full min-w-[560px] border-collapse text-sm">
+<thead>
+<tr class="bg-white/5">
+<th class="border border-white/10 p-2 text-left font-bold"></th>
+<th class="border border-white/10 p-2 text-left font-bold">Thế năng $E_t$</th>
+<th class="border border-white/10 p-2 text-left font-bold">Động năng $E_d$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Biểu thức</td>
+<td class="border border-white/10 p-2 align-top">$E_t=\frac{1}{2}kx^2=\frac{1}{2}m\omega^2x^2=\frac{1}{2}m\omega^2A^2\cos^2(\omega t+\varphi)$</td>
+<td class="border border-white/10 p-2 align-top">$E_d=\frac{1}{2}mv^2=\frac{1}{2}m\omega^2A^2\sin^2(\omega t+\varphi)=\frac{1}{2}m\omega^2(A^2-x^2)$</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Cực đại</td>
+<td class="border border-white/10 p-2 align-top">$E_{t\,max}=\dfrac{1}{2}kA^2=\dfrac{1}{2}m\omega^2A^2$, đạt tại vị trí biên ($x=\pm A$)</td>
+<td class="border border-white/10 p-2 align-top">$E_{d\,max}=\dfrac{1}{2}mv_{max}^2=\dfrac{1}{2}m\omega^2A^2$, đạt tại vị trí cân bằng ($x=0$)</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Cực tiểu</td>
+<td class="border border-white/10 p-2 align-top">$E_{t\,min}=0$ tại vị trí cân bằng</td>
+<td class="border border-white/10 p-2 align-top">$E_{d\,min}=0$ tại hai vị trí biên</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Tăng dần</td>
+<td class="border border-white/10 p-2 align-top">Khi vật đi từ vị trí cân bằng ra biên</td>
+<td class="border border-white/10 p-2 align-top">Khi vật đi từ biên về vị trí cân bằng</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Giảm dần</td>
+<td class="border border-white/10 p-2 align-top">Khi vật đi từ biên về vị trí cân bằng</td>
+<td class="border border-white/10 p-2 align-top">Khi vật đi từ vị trí cân bằng ra biên</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Biến thiên</td>
+<td class="border border-white/10 p-2 align-top" colspan="2">$E_d$ và $E_t$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $\dfrac{T}{2}$ — gấp đôi tần số và bằng một nửa chu kì của li độ.</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Quan hệ pha</td>
+<td class="border border-white/10 p-2 align-top" colspan="2">$E_d$ và $E_t$ biến thiên ngược pha nhau (khi cái này tăng thì cái kia giảm).</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Chuyển hoá năng lượng</td>
+<td class="border border-white/10 p-2 align-top" colspan="2">Động năng và thế năng liên tục chuyển hoá qua lại cho nhau; không bao giờ cùng tăng hoặc cùng giảm.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+<line x1="20" y1="190" x2="300" y2="190" stroke="currentColor" stroke-opacity="0.35"/>
+<line x1="160" y1="200" x2="160" y2="20" stroke="currentColor" stroke-opacity="0.35"/>
+<path d="M20 30 Q 160 200 300 30" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+<path d="M20 190 Q 160 20 300 190" fill="none" stroke="#60A5FA" stroke-width="2.5"/>
+<text x="290" y="205" fill="currentColor" font-size="12">x</text>
+<text x="8" y="18" fill="currentColor" font-size="12">E</text>
+<text x="230" y="55" fill="#F59E0B" font-size="12">E_d</text>
+<text x="230" y="170" fill="#60A5FA" font-size="12">E_t</text>
+<text x="10" y="200" fill="currentColor" font-size="11">-A</text>
+<text x="285" y="200" fill="currentColor" font-size="11">A</text>
+</svg>
+<figcaption>Đồ thị $E_t$ theo $x$ là parabol bề lõm hướng lên; đồ thị $E_d$ theo $x$ là parabol bề lõm hướng xuống. Hai đường cắt nhau tại $x=\pm\frac{A}{\sqrt2}$.</figcaption>
+</figure>
+
+<h2 class="text-xl font-bold mt-3 mb-1.5">2. Cơ năng trong dao động điều hoà</h2>
+<p class="text-base leading-relaxed my-2">Cơ năng $W=E_t+E_d=\dfrac{1}{2}kx^2+\dfrac{1}{2}mv^2=\dfrac{1}{2}kA^2=\dfrac{1}{2}m\omega^2A^2=E_{t\,max}=E_{d\,max}=\text{hằng số}$.</p>
+<ul class="list-disc list-inside my-2 ml-4">
+<li class="my-1">Cơ năng tỉ lệ với <strong class="font-bold">bình phương biên độ dao động</strong>.</li>
+<li class="my-1">Với con lắc lò xo, cơ năng phụ thuộc độ cứng $k$ và biên độ $A$, không phụ thuộc khối lượng vật nặng.</li>
+<li class="my-1">Cơ năng là một <strong class="font-bold">hằng số theo thời gian</strong> (khi bỏ qua ma sát) — khác với $E_d$, $E_t$ luôn biến thiên tuần hoàn.</li>
+</ul>
+
+<div class="my-3 overflow-x-auto">
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+<figure class="fig">
+<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+<line x1="20" y1="140" x2="300" y2="140" stroke="currentColor" stroke-opacity="0.35"/>
+<line x1="20" y1="140" x2="20" y2="20" stroke="currentColor" stroke-opacity="0.35"/>
+<line x1="20" y1="40" x2="300" y2="40" stroke="#34D399" stroke-width="2.5"/>
+<text x="285" y="155" fill="currentColor" font-size="11">t</text>
+<text x="6" y="18" fill="currentColor" font-size="11">W</text>
+</svg>
+<figcaption>Cơ năng $W$ không đổi theo thời gian (đường thẳng nằm ngang).</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+<line x1="20" y1="140" x2="300" y2="140" stroke="currentColor" stroke-opacity="0.35"/>
+<line x1="20" y1="140" x2="20" y2="20" stroke="currentColor" stroke-opacity="0.35"/>
+<path d="M20 40 Q 90 140 160 40 Q 230 140 300 40" fill="none" stroke="#F59E0B" stroke-width="2"/>
+<path d="M20 140 Q 90 40 160 140 Q 230 40 300 140" fill="none" stroke="#60A5FA" stroke-width="2"/>
+<text x="285" y="155" fill="currentColor" font-size="11">t</text>
+<text x="6" y="18" fill="currentColor" font-size="11">E</text>
+<text x="105" y="35" fill="#F59E0B" font-size="10">E_t</text>
+<text x="105" y="155" fill="#60A5FA" font-size="10">E_d</text>
+</svg>
+<figcaption>$E_t(t)$ và $E_d(t)$ dao động ngược pha, tần số góc $2\omega$, chu kì $T/2$.</figcaption>
+</figure>
+</div>
+</div>
+
+<h2 class="text-xl font-bold mt-3 mb-1.5">3. Động năng, thế năng ở các vị trí đặc biệt</h2>
+<div class="my-3 overflow-x-auto">
+<table class="w-full min-w-[560px] border-collapse text-sm">
+<thead>
+<tr class="bg-white/5">
+<th class="border border-white/10 p-2 text-left font-bold">Điều kiện</th>
+<th class="border border-white/10 p-2 text-left font-bold">$E_{d\,max}$ (hoặc $E_{t\,min}$)</th>
+<th class="border border-white/10 p-2 text-left font-bold">$E_d=3E_t$</th>
+<th class="border border-white/10 p-2 text-left font-bold">$E_d=E_t$</th>
+<th class="border border-white/10 p-2 text-left font-bold">$E_d=\frac{E_t}{3}$</th>
+<th class="border border-white/10 p-2 text-left font-bold">$E_{t\,max}$ (hoặc $E_{d\,min}$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Li độ $x$</td>
+<td class="border border-white/10 p-2 align-top">$x=0$</td>
+<td class="border border-white/10 p-2 align-top">$x=\pm\frac{A}{2}$</td>
+<td class="border border-white/10 p-2 align-top">$x=\pm\frac{A}{\sqrt2}$</td>
+<td class="border border-white/10 p-2 align-top">$x=\pm\frac{A\sqrt3}{2}$</td>
+<td class="border border-white/10 p-2 align-top">$x=\pm A$</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Vận tốc $v$</td>
+<td class="border border-white/10 p-2 align-top">$v=\pm v_{max}$</td>
+<td class="border border-white/10 p-2 align-top">$v=\pm\frac{v_{max}\sqrt3}{2}$</td>
+<td class="border border-white/10 p-2 align-top">$v=\pm\frac{v_{max}}{\sqrt2}$</td>
+<td class="border border-white/10 p-2 align-top">$v=\pm\frac{v_{max}}{2}$</td>
+<td class="border border-white/10 p-2 align-top">$v=0$</td>
+</tr>
+<tr>
+<td class="border border-white/10 p-2 align-top font-semibold">Số lần / chu kì</td>
+<td class="border border-white/10 p-2 align-top">2 lần</td>
+<td class="border border-white/10 p-2 align-top">4 lần</td>
+<td class="border border-white/10 p-2 align-top">4 lần</td>
+<td class="border border-white/10 p-2 align-top">4 lần</td>
+<td class="border border-white/10 p-2 align-top">2 lần</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-base leading-relaxed my-2"><strong class="font-bold">Tổng quát:</strong> khi $E_d=nE_t$ ($n>0$) thì $x=\pm\dfrac{A}{\sqrt{n+1}}$ và $v=\pm\dfrac{v_{max}}{\sqrt{\frac{1}{n}+1}}$.</p>
+
+
+<h2 class="text-xl font-bold mt-3 mb-1.5">4. Con lắc lò xo nằm ngang (bổ sung)</h2>
+<p class="text-base leading-relaxed my-2">Gồm một lò xo nhẹ độ cứng $k$ (N/m) gắn với vật nặng khối lượng $m$ (kg), đặt nằm ngang. Bỏ qua ma sát, con lắc dao động điều hoà với:</p>
+<ul class="list-disc list-inside my-2 ml-4">
+<li class="my-1">Tần số góc: $\omega=\sqrt{\dfrac{k}{m}}$ (rad/s)</li>
+<li class="my-1">Chu kì: $T=2\pi\sqrt{\dfrac{m}{k}}$ (s)</li>
+<li class="my-1">Tần số: $f=\dfrac{1}{2\pi}\sqrt{\dfrac{k}{m}}$ (Hz)</li>
+</ul>
+<p class="text-base leading-relaxed my-2">Chu kì, tần số, tần số góc chỉ phụ thuộc $m$, $k$ (đặc trưng của hệ), không phụ thuộc biên độ hay cách kích thích ban đầu. Nhiều bài tập năng lượng dùng bối cảnh con lắc lò xo với các đại lượng $k$, $m$ này.</p>
