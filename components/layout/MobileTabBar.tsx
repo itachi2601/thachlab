@@ -10,6 +10,8 @@
  *  - /quan-tri/**            — khu quản trị có bảng rộng, thanh đáy che mất dòng cuối.
  *  - /kiem-tra/lam           — đang làm bài, không cho điều hướng đi nơi khác.
  *  - /lop-hoc/bai            — trang bài học đã có thanh đáy riêng (3 nút), hai thanh chồng nhau.
+ *  - /tro-giang/ghi          — form ghi buổi/chấm công có thanh "Lưu buổi" dán đáy (cùng z-40);
+ *                              thanh này render sau nên đè lên nút Lưu, trợ giảng không nộp được.
  *
  * Thuần CSS + usePathname, không thêm request, không thêm thư viện icon (SVG inline).
  */
@@ -19,7 +21,7 @@ import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import { useAuth } from "@/components/auth/auth-context";
 
-const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai"];
+const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai", "/tro-giang/ghi"];
 
 const MOBILE_QUERY = "(max-width: 1023px)";
 
