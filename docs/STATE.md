@@ -41,13 +41,13 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   mobile hàng chip) `components/layout/Navbar.tsx`; `/phu-huynh` khách thấy lời nhắc riêng cho phụ huynh (prop
   `guestNotice`/`loginHref`/`showSignUp` của `RequireAuth`), `/dang-nhap?next=/duong-dan` quay lại trang vừa chặn,
   phụ huynh đăng nhập mặc định về `/phu-huynh`; Footer thêm link "Phụ huynh xem kết quả của con".
-- **Đồng bộ trang chương ↔ trang bài, đợt 1 (2/10/2026, PR #33, chưa merge)**: `chapterDisplayTitle` dời sang
+- **Đồng bộ trang chương ↔ trang bài, đợt 1 (2/10/2026, PR #33, đã merge main)**: `chapterDisplayTitle` dời sang
   `features/lessons/types.ts` + thêm `chapterLabel`; cây chương trang bài hết lặp số chương và có đơn vị "bài";
   breadcrumb/link quay lại/tiêu đề ngăn kéo dùng "Chương N · Tên" (`chapterFullLabel`); trang chương đổi thanh
   tiến độ thành "x/y mục", hai nút "Tiếp tục học". Không đổi bố cục, không thêm request Supabase, không migration.
   Ảnh: `docs/anh/trang-chuong-2026-10/`. Đợt 2–4 chỉ bắt đầu sau khi PR này merge (prompt
   `docs/prompt-dong-bo-trang-chuong-2026-10.md`, prompt này chưa có trên `main`).
-- **Đồng bộ trang chương ↔ trang bài, đợt 2 (2/10/2026, PR #38, chưa merge)**: tách `components/lessons/ChapterTree.tsx`
+- **Đồng bộ trang chương ↔ trang bài, đợt 2 (2/10/2026, PR #38, đã merge main)**: tách `components/lessons/ChapterTree.tsx`
   dùng chung cho trang bài (mode `learn`) và trang chương (mode `pick`); trang chương ≥1024 dùng `.lesson-layout`
   (cột trái 272px là cây chương, cột giữa chỉ chương đang chọn, thẻ "Tiếp tục học" lên cột trái), <1024 giữ nguyên
   accordion; chọn chương ghi `?chapter=` lên URL. Đo hình học: 375/768 không đổi, 1024/1280 cột giữa bằng trang bài.
@@ -70,7 +70,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - **Luyện tập: thời gian mỗi câu tăng 15s/45s → 30s/90s** (30/9/2026, theo góp ý #21 của học sinh, thầy duyệt): `SECONDS_PER_FORM`
   ở `features/exams/types.ts` + dòng mô tả ở `PracticeSession.tsx`. Chỉ tính phía client, không đổi DB. **Chưa deploy** (`bash scripts/deploy.sh`).
   Phiên đang dở đã lưu vẫn giữ tổng giờ cũ.
-- **Đồng bộ trang chương ↔ trang bài, đợt 3 (2/10/2026, PR #41, chưa merge)**: trang chương dưới 640px có thanh đáy
+- **Đồng bộ trang chương ↔ trang bài, đợt 3 (2/10/2026, PR #41, đã merge main + deploy cùng ngày)**: trang chương dưới 640px có thanh đáy
   3 nút (‹ Lớp học · Tiếp tục học · Mở tất cả/Thu gọn) dùng lại CSS `.lesson-bottombar--mobile` của trang bài; thanh này
   **thay** tabbar toàn site (2 rule `:has()` ở cuối `globals.css`), chừa đáy đúng 62px như trang bài. Đợt 4 (cột giữa giàu
   thông tin + rail phải) chờ `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` vào `main`.
