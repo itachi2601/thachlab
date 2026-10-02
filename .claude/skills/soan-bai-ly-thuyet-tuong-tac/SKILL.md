@@ -47,7 +47,7 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 | Phần | Nội dung | Linh kiện |
 |---|---|---|
 | I. Mở bài | Tình huống đời thường gần học sinh (sân băng, xưởng CNC, xe đạp, bếp...), kể bằng giọng thầy, kết bằng câu hỏi "tại sao?" | hộp **dự đoán** (radio) |
-| II. Kiến thức | Phát biểu + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
+| II. Kiến thức | **Từ khoá để nhớ** (xem mục "Ít chữ") + phát biểu dạng gạch đầu dòng + công thức + ký hiệu; mỗi ý có **ví dụ**; ít nhất một **thí nghiệm** Làm–Quan sát–Rút ra | hộp **định nghĩa** + hình + `.tl-box--exp` + `<details>` "xem thêm" |
 | III. Bẫy | Hiểu lầm kinh điển, vì sao sai; bảng so sánh đúng/sai | bảng + hình + **tự kiểm tra** |
 | IV. Trả bài | 4–6 câu nhớ lại lý thuyết/công thức, chưa giải bài | `<details>` trong hộp `tl-box--think` |
 | V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả; sau đó 1–2 câu "Thử sức" đổi số | `.tl-table--data` + `.tl-steps` + hình + quiz |
@@ -59,6 +59,17 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 - Có người thật nói câu thật ("Thầy ơi, em đẩy thành chứ có đẩy mình đâu…"). Mẹo nhớ có tên (4 chữ, 1 câu hỏi kiểm tra "đặt lên mấy vật?").
 - Sai thì **giải thích vì sao sai** và gợi cách nghĩ lại, không chỉ báo "sai". Đúng thì củng cố lý do.
 - Thầy dạy vật lí THPT + CNC/chế tạo máy + trượt băng: ưu tiên ví dụ từ ba mảng đó. Trả lời chung gọn, vào thẳng kết quả.
+
+## Ít chữ — nhớ bằng từ khoá (thầy yêu cầu 2/10/2026, áp dụng cho MỌI bài sau)
+
+Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định luật/tính chất được cô đọng thành vài từ khoá để học sinh nhớ**, văn xuôi chỉ để dẫn vào hoặc giải thích vì sao.
+
+- Mỗi ý chính của phần II (và khung "Mang về") có một **dòng từ khoá** in đậm, 3–6 từ, dạng cụm danh từ/vế ngắn, bỏ từ nối. Ví dụ: `Cùng độ lớn · Ngược chiều · Cùng phương · Khác vật` hay mẹo 4 chữ có tên. Đặt ngay dưới tiêu đề ý, **trước** phần giải thích.
+- Phát biểu định luật/tính chất: tách thành **gạch đầu dòng ngắn** (mỗi dòng một đặc điểm, ≤ 8 từ) hoặc bảng 2 cột *Từ khoá → Nghĩa*, không viết thành đoạn văn dài. Công thức kèm chú thích ký hiệu 1 dòng.
+- Đoạn văn xuôi tối đa 2–3 câu liền nhau; quá thì tách thành từ khoá + bullet, phần còn lại chuyển vào `<details>` "xem thêm".
+- Khung "Mang về sau bài học" = **chuỗi từ khoá** (mỗi ý 1 dòng ≤ 10 từ), không viết lại bài.
+- Mục "Trả bài" (IV): đáp án trong `<details>` cũng là từ khoá, không câu dài.
+- Trước khi giao: rà từng `<h3>`, đếm đoạn `<p>` > 3 câu → rút gọn. Mở bài và lời giải bài toán mẫu giữ giọng kể, nhưng cũng vào thẳng ý.
 
 ## Bài học rút ra từ bài mẫu (đừng lặp lại lỗi)
 
