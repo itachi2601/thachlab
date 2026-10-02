@@ -1,0 +1,179 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Giao thoa sóng",
+ "lesson_id": 31,
+ "nguon_trong_bai": "content/lesson-samples/l11-giao-thoa-song/theory.html",
+ "id": "tn-l11-giaothoa-01",
+ "ten": "Khay sóng hai mũi nhọn: vân giao thoa",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "giaothoa.nguon_ket_hop",
+  "giaothoa.cuc_dai_cuc_tieu",
+  "giaothoa.dem_tren_ab"
+ ],
+ "muc_tieu": "Thấy vân giao thoa (đường cực đại, cực tiểu) xuất hiện khi có hai nguồn kết hợp, biến mất khi bỏ một nguồn.",
+ "dung_cu": [
+  {
+   "ten": "Khay sóng nước có đèn chiếu",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cần rung gắn hai mũi nhọn",
+   "so_luong": 1,
+   "ghi_chu": "hai mũi cùng gắn một cần nên cùng pha"
+  },
+  {
+   "ten": "Màn hoặc tờ giấy trắng quan sát bóng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho hai mũi nhọn chạm mặt nước, bật cần rung.",
+   "Nhấc một mũi lên khỏi mặt nước."
+  ],
+  "quan_sat": [
+   "Hiện các đường cong sáng tối xen kẽ, đứng yên, đối xứng qua trung trực AB.",
+   "Nhấc một mũi: vân biến mất, chỉ còn sóng tròn."
+  ],
+  "rut_ra": [
+   "Vân giao thoa chỉ có khi có hai nguồn kết hợp.",
+   "Cực đại: d2 − d1 = kλ; cực tiểu: d2 − d1 = (k + 1/2)λ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số cần rung",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 20,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng",
+   "don_vi": "cm/s",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "AB",
+   "ten": "Khoảng cách hai nguồn",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 15,
+   "mac_dinh": 10,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N_max",
+   "ten": "Số cực đại trên AB",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N_min",
+   "ten": "Số cực tiểu trên AB",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lam = v/f",
+   "cực đại: d2 − d1 = k·lam",
+   "cực tiểu: d2 − d1 = (k + 1/2)·lam",
+   "N_max = số k nguyên: −AB/lam < k < AB/lam",
+   "N_min = số k nguyên: −AB/lam − 1/2 < k < AB/lam − 1/2"
+  ],
+  "gia_thiet": [
+   "hai nguồn cùng pha, cùng biên độ",
+   "bỏ qua tắt dần của sóng theo khoảng cách",
+   "không lấy hai đầu A, B"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f (Hz)",
+   "v (cm/s)",
+   "AB (cm)",
+   "lam (cm)",
+   "N_max",
+   "N_min"
+  ],
+  "hang": [
+   [
+    20,
+    30,
+    10,
+    1.5,
+    13,
+    14
+   ],
+   [
+    20,
+    30,
+    6,
+    1.5,
+    7,
+    8
+   ],
+   [
+    40,
+    30,
+    10,
+    0.75,
+    27,
+    26
+   ],
+   [
+    20,
+    15,
+    10,
+    0.75,
+    27,
+    26
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với f = 20 Hz, v = 30 cm/s, AB = 10 cm: lam = 1,5 cm, 13 cực đại, 14 cực tiểu. Tăng f (lam giảm) thì vân dày lên.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng cực tiểu là chỗ không có sóng tới.",
+  "Quên rằng k = 0 là đường trung trực (cực đại) khi hai nguồn cùng pha."
+ ],
+ "sai_so_thuong_gap": [
+  "Hai mũi nhọn nhúng sâu không đều làm lệch pha.",
+  "Sóng phản xạ ở thành khay làm nhoè vân."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "v",
+   "AB"
+  ],
+  "dau_ra": [
+   "bản đồ biên độ hai nguồn (hypebol)",
+   "bảng số cực đại, cực tiểu trên AB"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Nút 'tắt nguồn B' để thấy vân biến mất. Chấm điểm M kéo thả, hiện d2 − d1 chia λ."
+ },
+ "an_toan": "Không có nguy hiểm đáng kể; giữ khay xa mép bàn để không đổ nước vào dây điện."
+}

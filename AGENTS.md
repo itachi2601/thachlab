@@ -65,7 +65,7 @@ nhắc lệnh rollback. `--yes` chạy thẳng, `--only N` chạy riêng một f
 ## Script/migration viết trên cloud phải VÀO `main` trước khi giao lệnh cho Thạch
 Mac của Thạch chỉ chạy được file có trong `main` (thường còn thay đổi chưa commit nên không checkout nhánh khác được).
 Khi giao lệnh chạy (`run-migrations.sh`, file `.sql`, script `.mts`):
-1. Đảm bảo file đã nằm trong `main` — cloud chỉ đẩy nhánh `claude/...`, nên mở PR vào `main` (hỏi Thạch duyệt/merge) rồi mới in lệnh chạy. Không in lệnh chạy khi file mới chỉ ở nhánh.
+1. Đảm bảo file đã nằm trong `main` — cloud chỉ đẩy nhánh `claude/...`, nên in lệnh để Thạch merge nhánh vào `main` trên Mac (`git fetch origin && git merge origin/claude/<tên>`) rồi mới chạy. Không mở PR (repo chỉ có một người làm).
 2. Lệnh đầu tiên luôn là `cd /Users/MAC/Projects/thachlab && git pull origin main`.
 3. Nếu Mac báo "local changes would be overwritten": KHÔNG bảo bỏ thay đổi; hướng dẫn `git stash` → `git pull origin main` → `git stash pop`, hoặc `git diff --stat <file>` để xem trước.
 4. Sau khi merge, kiểm lại `FILES` trong `scripts/run-migrations.sh` (bản trên `main`) khớp danh sách đang chờ.
@@ -139,9 +139,9 @@ Mỗi phiên cloud chạy trên nhánh `claude/<tên>` riêng, tách từ `main`
 
 ## Cuối phiên — việc "xong" nghĩa là đã tới `main`
 1. Commit đúng file của mình (`git commit -- <path>`), push nhánh.
-2. Mở PR vào `main` (nhỏ, một việc; không push thẳng `main`). Mô tả nêu: đổi gì, file chung nào đã đụng, bước Thạch cần làm trên Mac.
-3. Phiên cloud không merge được thì **báo rõ "chưa vào main, cần merge PR #…"** — không báo "xong".
-4. Có skill mới/sửa → in kèm lệnh cho Thạch trên Mac, sau khi PR đã merge:
+2. KHÔNG mở PR (repo chỉ có Thạch làm). Báo ngắn: nhánh nào, đổi gì, file chung nào đã đụng, rồi in lệnh để Thạch merge trên Mac: `git -C ~/Projects/thachlab fetch origin && git -C ~/Projects/thachlab merge origin/claude/<tên>`. Phiên chạy trên Mac thì commit thẳng `main`.
+3. Phiên cloud không merge được thì **báo rõ "chưa vào main, cần merge nhánh claude/…"** — không báo "xong".
+4. Có skill mới/sửa → in kèm lệnh cho Thạch trên Mac, sau khi nhánh đã merge:
 ```
 git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
 ```
@@ -150,3 +150,9 @@ git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
 ## Xung đột
 Hai phiên cùng sửa một file riêng (không phải file dùng chung) → phiên merge sau tự gộp và kiểm lại; nếu ý định mâu thuẫn
 thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
+
+# Cập nhật bài lý thuyết đã đăng — chỉ đẩy phần lý thuyết
+
+Sửa/đăng lại nội dung lý thuyết của bài có sẵn: dùng `bash scripts/cap-nhat-ly-thuyet.sh <theory.html|bundle.json> <lesson_id>`
+(chỉ ghi cột `body_html` của mục `ly_thuyet`, tự sao lưu ra `scripts/logs/`; hoàn tác bằng `scripts/khoi-phuc-ly-thuyet.mts`).
+Không dùng `upload-lesson.mts` cho việc này — nó tạo/ghi cả đề Luyện tập. Công thức có `<`/`>` trong `$…$` phải viết `\lt`/`\gt`.

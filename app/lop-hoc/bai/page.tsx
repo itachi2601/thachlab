@@ -323,10 +323,12 @@ function TheoryQuizBlock({
   examId,
   itemId,
   status,
+  loggedIn,
 }: {
   examId: number;
   itemId: number;
   status: TheoryStatusResult | undefined;
+  loggedIn: boolean;
 }) {
   const attempted = !!status && status.attemptCount > 0;
   const tone =
@@ -339,12 +341,22 @@ function TheoryQuizBlock({
           {status?.status === "passed" && `Đúng ${status.bestCorrect} câu — `}
           {status?.status === "completed_not_passed" &&
             `Đúng ${status.bestCorrect} câu, chưa đạt (lần ${status.attemptCount}) — `}
-          <span className={tone}>{status?.label ?? "Chưa bắt đầu"}</span>
+          {loggedIn ? (
+            <span className={tone}>{status?.label ?? "Chưa bắt đầu"}</span>
+          ) : (
+            <span className="lesson-status">Đăng nhập để làm và lưu kết quả</span>
+          )}
         </p>
       </div>
-      <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
-        {attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
-      </Link>
+      {loggedIn ? (
+        <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
+          {attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
+        </Link>
+      ) : (
+        <Link href="/dang-nhap" className="lesson-btn">
+          Đăng nhập để làm
+        </Link>
+      )}
     </div>
   );
 }
@@ -1168,11 +1180,12 @@ function LessonLoader() {
               loggedIn={!!session}
               onDone={() => markDone(item)}
             />
-            {session && item.exam_ids.length > 0 && (
+            {item.exam_ids.length > 0 && (
               <TheoryQuizBlock
                 examId={item.exam_ids[0]}
                 itemId={item.id}
                 status={progress.get(item.id)?.theory}
+                loggedIn={!!session}
               />
             )}
           </div>
