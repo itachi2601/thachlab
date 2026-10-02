@@ -1179,8 +1179,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-review-banner-list { padding: 0 12px 12px; max-height: 42vh; }
   .theory-section { scroll-margin-top: 200px; }
   /* Thanh đáy 3 nút cao 62px + vùng an toàn iPhone; body chừa chỗ để không che nội dung cuối. */
-  body { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
-  .lesson-page { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+  /* --lesson-bottombar-h do trang bài tự công bố (thanh cao theo số dòng nhãn); mặc định 62px. */
+  body { padding-bottom: calc(var(--lesson-bottombar-h, 62px) + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page { padding-bottom: calc(var(--lesson-bottombar-h, 62px) + env(safe-area-inset-bottom, 0px)); }
   /* Thanh đáy 3 nút, vùng chạm >= 44px, chừa vùng an toàn iPhone. */
   .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
   .lesson-bottombar--mobile { min-height: 62px; }

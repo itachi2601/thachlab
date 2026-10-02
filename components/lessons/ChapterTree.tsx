@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Check, ChevronDown } from "lucide-react";
 import type { Chapter, Lesson } from "@/features/lessons/types";
-import { chapterDisplayTitle, isSemesterExam } from "@/features/lessons/types";
+import { chapterDisplayTitle, isPeriodicExam } from "@/features/lessons/types";
 
 export interface ChapterTreeEntry {
   chapter: Chapter;
@@ -72,7 +72,7 @@ export default function ChapterTree(p: Props) {
                 {shown.map((lesson) => {
                   const current = p.mode === "learn" && lesson.id === p.currentLessonId;
                   const isDone = p.isLessonDone(lesson);
-                  const exam = isSemesterExam(lesson.lesson_kind);
+                  const exam = isPeriodicExam(lesson.lesson_kind);
                   const icon = isDone ? <Check size={11} /> : exam ? "KT" : current ? "●" : "○";
                   const cls = `${isDone ? "is-done" : ""} ${exam ? "is-exam" : ""}`.trim();
                   return (

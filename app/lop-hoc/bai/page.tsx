@@ -683,6 +683,28 @@ function LessonLoader() {
     bodyRef.current?.style.setProperty("--lesson-read-scale", String(FONT_SCALES[fontLevel]));
   }, [fontLevel, items, activeTab]);
 
+  /**
+   * Thanh đáy cao theo số dòng nhãn: 62px khi nhãn vừa 1 dòng, 74px (360–414px) hoặc 93px (<360px)
+   * khi "Đánh dấu đã học xong bài này" xuống 2 dòng. Công bố chiều cao THẬT lên :root để CSS chừa
+   * đúng chỗ — nội dung cuối (footer) không bị thanh đáy che ở mọi bề rộng.
+   */
+  useEffect(() => {
+    const bar = document.querySelector<HTMLElement>(".lesson-bottombar");
+    if (!bar) return;
+    const publish = () => {
+      const height = bar.offsetHeight;
+      // 0px = thanh đang ẩn (ngăn kéo mở, hoặc màn hình ≥640) — giữ số cũ để trang không nhảy.
+      if (height > 0) document.documentElement.style.setProperty("--lesson-bottombar-h", `${height}px`);
+    };
+    publish();
+    const observer = new ResizeObserver(publish);
+    observer.observe(bar);
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--lesson-bottombar-h");
+    };
+  }, [items]);
+
   // Chỉ ghi lại sau khi đã khôi phục xong — nếu không, lần render đầu (mức mặc định) sẽ ghi đè
   // lựa chọn đã lưu của học sinh trước khi effect khôi phục kịp chạy.
   // Bỏ qua lần chạy đầu (giá trị mặc định) — nếu không, lần render đầu sẽ ghi 1rem/mặc định
