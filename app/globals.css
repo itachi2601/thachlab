@@ -694,7 +694,7 @@ html[data-theme="light"] .cnc-shell :is(.cnc-learning-card > b, .cnc-section-pil
 .lesson-main { min-width: 0; max-width: 760px; }
 .lesson-main--single { margin: 0 auto; padding: 32px 24px 72px; }
 .lesson-head { margin: 22px 0 36px; }
-.lesson-eyebrow { color: var(--lesson-accent-text); font-family: var(--font-mono), monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.lesson-eyebrow { color: var(--lesson-accent-text); font-family: var(--font-body), sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .02em; }
 .lesson-head h1 { margin-top: 6px; color: #fff; font-family: var(--font-display), sans-serif; font-size: clamp(26px, 3.2vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
 
 /* ------------------------------------------------------------------
@@ -918,7 +918,7 @@ html[data-theme="light"] .lesson-shell .lesson-summary-label { color: #b45309; }
 .lesson-btn:hover { background: var(--lesson-accent-hover); }
 .lesson-btn-ghost { border: 1px solid rgba(148,163,184,.3); color: #e2e8f0; }
 .lesson-btn-ghost:hover { border-color: #94a3b8; }
-.lesson-muted { color: #64748b; font-size: 14px; }
+.lesson-muted { color: #94a3b8; font-size: 14px; }
 .lesson-notice { padding: 48px 24px; text-align: center; color: #94a3b8; }
 
 /* Bài trước / Bài tiếp theo — cuối trang nội dung bài học. */
@@ -927,7 +927,7 @@ html[data-theme="light"] .lesson-shell .lesson-summary-label { color: #b45309; }
 .lesson-pager-link:hover { border-color: var(--lesson-accent-line); background: rgba(255,255,255,.045); }
 .lesson-pager-link svg { flex: 0 0 auto; color: #64748b; }
 .lesson-pager-link span { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
-.lesson-pager-link small { color: #64748b; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.lesson-pager-link small { color: #94a3b8; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
 .lesson-pager-link strong { color: #f1f5f9; font-size: 14.5px; font-weight: 600; line-height: 1.35; }
 .lesson-pager-next { grid-column: 2; justify-content: flex-end; text-align: right; }
 .lesson-pager-next span { align-items: flex-end; }
@@ -2485,7 +2485,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
    Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
 html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
 html:not([data-theme="light"]) .lesson-shell::before { display: none; }
-.lesson-page .exam-content { font-family: sans-serif; font-size: 1rem; line-height: 1.75; }
+.lesson-page .exam-content { font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.75; }
 .lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
 .lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
 .lesson-page .exam-content .katex-display > .katex { display: block; }
@@ -2670,3 +2670,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-page .exam-content h4 { font-size: 1.1rem; }
 .lesson-page .exam-content p { margin: 0 0 1em; }
 html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
+
+/* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
+html:not([data-theme="light"]) header.fixed.top-0 { background-color: rgba(15, 23, 42, .92); }
+html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
+.lesson-main--single > .lesson-head { display: block; margin: 22px 0 36px; }
+.lesson-main--single > .lesson-head h1 { max-width: 18ch; }
+.lesson-main--single > .lesson-head .lesson-lead { margin-top: 10px; max-width: 60ch; }
