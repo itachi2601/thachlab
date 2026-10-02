@@ -1,0 +1,89 @@
+<div class="tl-moc">
+  <p><strong>Tình huống mở đầu.</strong> Trong động cơ của một chiếc xe máy, pít-tông chạy lên rồi chạy xuống khoảng 50 lần mỗi giây. Dây đàn ghi-ta rung, chiếc đu đưa, màng loa rung theo nhạc — tất cả đều là những vật <em>chuyển động qua lại quanh một vị trí cũ</em>.</p>
+  <p>Vậy làm sao mô tả được chuyển động lặp đi lặp lại đó bằng toán học, và làm sao biết lúc nào vật ở đâu?</p>
+</div>
+
+<h3>1. Dao động cơ và dao động tuần hoàn</h3>
+<p>Vật chuyển động qua lại quanh một vị trí cân bằng gọi là <strong>dao động cơ</strong>. Vị trí cân bằng là vị trí mà nếu đặt vật đứng yên ở đó, vật vẫn đứng yên.</p>
+<div class="tl-real">
+  <p><strong>Gặp trong đời sống:</strong> dây đàn ghi-ta rung, chiếc đu đưa, pít-tông trong xi-lanh, màng loa, cần gạt nước ô tô khi trời mưa, lồng ngực phập phồng khi thở.</p>
+</div>
+<p>Dao động cơ có thể là <em>tuần hoàn</em> hoặc <em>không tuần hoàn</em>. Nếu <strong>sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ</strong> thì dao động đó là tuần hoàn. Dao động tuần hoàn đơn giản nhất là <strong>dao động điều hoà</strong> — đó là nội dung chính của bài này.</p>
+<details class="tl-reveal">
+  <summary>Đoán trước: vì sao dao động của cành cây khi gió thổi KHÔNG phải dao động tuần hoàn?</summary>
+  <p>Vì gió thổi giật từng cơn, mạnh yếu khác nhau: cành cây không trở lại vị trí cũ theo hướng cũ sau những khoảng thời gian bằng nhau. Còn con lắc đồng hồ thì lặp lại đúng như cũ mỗi lần, nên là dao động tuần hoàn.</p>
+</details>
+
+<h3>2. Đồ thị của dao động điều hoà</h3>
+<p>Treo một quả cầu vào lò xo, kéo lệch khỏi vị trí cân bằng rồi thả ra. Chọn gốc toạ độ $x = 0$ tại vị trí cân bằng, gốc thời gian $t = 0$ là lúc bắt đầu quan sát, rồi ghi lại vị trí quả cầu theo thời gian, ta được một đường cong dạng <strong>hình sin</strong>.</p>
+<p>Đường cong đó cho biết ở mỗi thời điểm, quả cầu đang ở đâu trên trục $Ox$. Muốn biết nhanh hơn, ta thay nó bằng một công thức.</p>
+<div class="tl-note">
+  <p><strong>Chú ý:</strong> đại lượng $x$ (vị trí của vật so với vị trí cân bằng) gọi là <strong>li độ</strong>, đơn vị là cm hoặc m. Giá trị lớn nhất của li độ gọi là <strong>biên độ</strong>, kí hiệu $A$.</p>
+</div>
+
+<h3>3. Phương trình của dao động điều hoà</h3>
+<p>Đường cong hình sin tương ứng với hàm cosin. Người ta chọn công thức sau làm <strong>phương trình của dao động điều hoà</strong>:</p>
+<div class="tl-formula">$$x = A\cos(\omega t + \varphi)$$</div>
+<p>Trong đó $A$, $\omega$, $\varphi$ là các hằng số, còn $t$ là thời điểm ta đang xét:</p>
+<ul>
+  <li>$x$ — <strong>li độ</strong> ở thời điểm $t$ (cm hoặc m).</li>
+  <li>$A$ — <strong>biên độ</strong>, độ lệch lớn nhất khỏi vị trí cân bằng; luôn dương (cm hoặc m).</li>
+  <li>$(\omega t + \varphi)$ — <strong>pha của dao động</strong> ở thời điểm $t$, đơn vị rad.</li>
+  <li>$\varphi$ — <strong>pha ban đầu</strong>, tức pha ở thời điểm $t = 0$; nó cho biết lúc bắt đầu quan sát vật ở đâu và đang đi theo chiều nào (rad).</li>
+</ul>
+<div class="tl-trap">
+  <p><strong>Đừng lẫn:</strong> pha $(\omega t + \varphi)$ đo bằng <strong>rad</strong>, còn li độ $x$ đo bằng <strong>cm/m</strong>. Pha không phải là vị trí của vật.</p>
+</div>
+
+<h3>4. Dao động điều hoà và chuyển động tròn đều</h3>
+<p>Cho điểm $M$ chạy trên đường tròn tâm $O$, bán kính $OM = A$, với tốc độ góc $\omega$ không đổi. Chiếu $M$ xuống trục $Ox$ (đường kính thẳng đứng) được điểm $Q$. Khi $M$ quay đều thì $Q$ <strong>dao động điều hoà</strong> quanh $O$ theo đúng phương trình:</p>
+<div class="tl-formula">$$x = A\cos(\omega t + \varphi)$$</div>
+<p>Ở đây $OM = A$ chính là bán kính đường tròn. Nói cách khác: <strong>dao động điều hoà là hình chiếu của một chuyển động tròn đều lên một đường kính</strong> — bán kính đường tròn là biên độ $A$, tốc độ góc của chuyển động tròn là $\omega$.</p>
+<p>Hãy thử ngay: kéo các thanh trượt rồi xem bóng $Q$ của điểm $M$ có luôn trùng với quả cầu của con lắc lò xo hay không.</p>
+<div class="tl-widget" data-tl-widget="dao-dong-dieu-hoa"></div>
+
+<h3>5. Ví dụ mẫu và bẫy thường gặp</h3>
+<p>Một vật dao động điều hoà có phương trình $x = 2\cos\left(4\pi t + \dfrac{\pi}{2}\right)$ cm. Hãy xác định:</p>
+<p><strong>a)</strong> biên độ và pha ban đầu; <strong>b)</strong> pha và li độ của vật khi $t = 2$ s.</p>
+<ol class="tl-steps">
+  <li>So sánh với phương trình tổng quát $x = A\cos(\omega t + \varphi)$: biên độ $A = 2$ cm, pha ban đầu $\varphi = \dfrac{\pi}{2}$ rad.</li>
+  <li>Pha ở thời điểm $t = 2$ s: $\omega t + \varphi = 4\pi \cdot 2 + \dfrac{\pi}{2} = 8\pi + \dfrac{\pi}{2} = 8{,}5\pi$ rad.</li>
+  <li>Li độ ở thời điểm đó: $x = 2\cos(8{,}5\pi)$. Vì $8{,}5\pi = 8\pi + 0{,}5\pi$ nên $\cos(8{,}5\pi) = \cos(0{,}5\pi) = 0$. Vậy $x = 0$ — lúc này vật đang ở đúng vị trí cân bằng.</li>
+</ol>
+<div class="tl-real">
+  <p><strong>Ví dụ thực tế:</strong> pít-tông của động cơ đốt trong chạy trên một đoạn thẳng dài 16 cm. Đoạn đó là quãng đường giữa hai vị trí biên, nên <strong>biên độ</strong> của pít-tông là $A = \dfrac{16}{2} = 8$ cm.</p>
+</div>
+<div class="tl-trap">
+  <p><strong>Ba bẫy hay mắc:</strong></p>
+  <ul>
+    <li>Nhầm <em>biên độ</em> $A$ với <em>quãng đường vật đi trong một chu kì</em>. Biên độ chỉ là độ lệch lớn nhất khỏi vị trí cân bằng ($8$ cm ở ví dụ pít-tông vì đoạn chạy dài 16 cm).</li>
+    <li>Thay số mà quên đơn vị: phương trình cho $x$ tính bằng cm thì li độ, vận tốc cũng phải đổi về cùng hệ đơn vị.</li>
+    <li>Cho rằng “pha ban đầu” là vị trí ban đầu. Pha ban đầu là một <em>góc</em> (rad); muốn biết vị trí ban đầu phải thay $t = 0$ vào phương trình để tính $x$.</li>
+  </ul>
+</div>
+<p><strong>Em tự kiểm nhanh</strong> — trả lời trong đầu rồi mở đáp án:</p>
+<details class="tl-check">
+  <summary>1. Vật dao động điều hoà $x = 5\cos(2\pi t)$ cm. Biên độ bằng bao nhiêu?</summary>
+  <p class="tl-answer">$A = 5$ cm. Đừng cộng thêm số hạng pha — $2\pi t$ không ảnh hưởng tới biên độ.</p>
+</details>
+<details class="tl-check">
+  <summary>2. Cũng phương trình đó, ở thời điểm $t = 0$ vật ở đâu?</summary>
+  <p class="tl-answer">$x = 5\cos 0 = 5$ cm — vật đang ở vị trí biên dương.</p>
+</details>
+<details class="tl-check">
+  <summary>3. Pha ban đầu của $x = 3\cos\left(4\pi t - \dfrac{\pi}{3}\right)$ cm là bao nhiêu?</summary>
+  <p class="tl-answer">$\varphi = -\dfrac{\pi}{3}$ rad. Lấy đúng dấu trừ, không lấy giá trị tuyệt đối.</p>
+</details>
+<details class="tl-check">
+  <summary>4. Vì sao biên độ của pít-tông chạy trên đoạn 16 cm lại là 8 cm?</summary>
+  <p class="tl-answer">Vì đoạn chạy 16 cm là khoảng cách giữa hai vị trí biên (từ $+A$ tới $-A$), tức $2A$. Suy ra $A = 8$ cm.</p>
+</details>
+<details class="tl-check">
+  <summary>5. Đúng hay sai: “Pha của dao động cho biết ở thời điểm $t$ vật đang ở đâu và chuyển động theo chiều nào.”</summary>
+  <p class="tl-answer">Đúng. Pha $(\omega t + \varphi)$ quyết định cả li độ lẫn chiều chuyển động tại thời điểm $t$; hai vật cùng biên độ nhưng khác pha thì ở vị trí/chiều khác nhau.</p>
+</details>
+
+<h3>6. Việc về nhà</h3>
+<div class="tl-note">
+  <p>Mở lại mô phỏng ở mục 4, giữ nguyên biên độ và đổi pha ban đầu $\varphi$. Ghi lại 3 điều em quan sát được về vị trí của quả cầu lúc $t = 0$, rồi đối chiếu với phương trình $x = A\cos(\omega t + \varphi)$.</p>
+</div>

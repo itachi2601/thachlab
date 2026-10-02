@@ -836,6 +836,59 @@ html[data-theme="light"] .lesson-shell .lesson-summary-label { color: #b45309; }
    không thì đoạn vừa tô nằm ngay dưới thẻ, bị che mất phần trên. */
 .theory-section { scroll-margin-top: 132px; transition: background-color .4s ease, box-shadow .4s ease; border-radius: 12px; }
 .theory-section--highlight { background-color: rgba(250, 204, 21, 0.14); box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.4); }
+/* ---------- Lý thuyết tương tác (chuẩn ở docs/LY-THUYET-TUONG-TAC.md) ----------
+   Các khối .tl-* dưới đây do tác giả gõ thẳng trong body_html của lesson_items, nên phải là CSS
+   thuần — ContentHtml render HTML thô, không có lớp Tailwind của build này. Màu lấy từ biến
+   --lesson-* của .lesson-shell (dòng 632) để tự ăn theo khối lớp (THPT xanh, CTTC cam). */
+.exam-content .tl-moc,
+.exam-content .tl-real,
+.exam-content .tl-trap,
+.exam-content .tl-note { margin: 16px 0; border-radius: 12px; padding: 12px 14px; font-size: 15px; line-height: 1.65; }
+.exam-content .tl-moc > :first-child,
+.exam-content .tl-real > :first-child,
+.exam-content .tl-trap > :first-child,
+.exam-content .tl-note > :first-child { margin-top: 0; }
+.exam-content .tl-moc > :last-child,
+.exam-content .tl-real > :last-child,
+.exam-content .tl-trap > :last-child,
+.exam-content .tl-note > :last-child { margin-bottom: 0; }
+.exam-content .tl-moc { border: 1px solid var(--lesson-accent-line, rgba(59,130,246,.32)); background: var(--lesson-accent-soft, rgba(59,130,246,.1)); }
+.exam-content .tl-moc strong:first-child { color: var(--lesson-accent-text, #93c5fd); }
+.exam-content .tl-real { border: 1px solid rgba(52,211,153,.28); background: rgba(52,211,153,.08); }
+.exam-content .tl-real strong:first-child { color: #6ee7b7; }
+.exam-content .tl-trap { border: 1px solid rgba(251,90,114,.3); background: rgba(251,90,114,.08); }
+.exam-content .tl-trap strong:first-child { color: #fca5a5; }
+.exam-content .tl-note { border-left: 3px solid var(--lesson-accent-line, rgba(59,130,246,.32)); background: rgba(255,255,255,.03); color: #cbd5e1; font-size: 14px; }
+/* Khối "đoán trước rồi mở" / "tự kiểm" — tương tác bằng HTML thuần, không JS, không tốn chunk. */
+.exam-content details.tl-reveal,
+.exam-content details.tl-check { margin: 14px 0; border: 1px solid var(--lesson-line, rgba(148,163,184,.14)); border-radius: 12px; background: rgba(255,255,255,.03); padding: 10px 14px; }
+.exam-content details.tl-check { border-color: rgba(250,204,21,.25); background: rgba(250,204,21,.05); }
+.exam-content details.tl-reveal > summary,
+.exam-content details.tl-check > summary { cursor: pointer; font-weight: 600; color: var(--lesson-accent-text, #93c5fd); }
+.exam-content details.tl-check > summary { color: #fbbf24; }
+.exam-content details.tl-reveal > summary::-webkit-details-marker,
+.exam-content details.tl-check > summary::-webkit-details-marker { display: none; }
+.exam-content details.tl-reveal > summary::before { content: "▸ "; }
+.exam-content details.tl-reveal[open] > summary::before { content: "▾ "; }
+.exam-content details.tl-reveal[open] > summary,
+.exam-content details.tl-check[open] > summary { margin-bottom: 8px; }
+.exam-content .tl-answer { color: #6ee7b7; }
+/* Ví dụ mẫu giải theo bước — đánh số bằng CSS để không phải gõ tay "Bước 1, Bước 2…". */
+.exam-content ol.tl-steps { counter-reset: tl-step; display: grid; gap: 10px; margin: 14px 0; padding-left: 0; list-style: none; }
+.exam-content ol.tl-steps > li { position: relative; padding-left: 34px; }
+.exam-content ol.tl-steps > li::before { counter-increment: tl-step; content: counter(tl-step); position: absolute; left: 0; top: 2px; display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-accent-line, rgba(59,130,246,.32)); border-radius: 999px; background: var(--lesson-accent-soft, rgba(59,130,246,.1)); color: var(--lesson-accent-text, #93c5fd); font-size: 12px; font-weight: 700; }
+.exam-content .tl-formula { margin: 16px 0; border: 1px solid var(--lesson-accent-line, rgba(59,130,246,.32)); border-radius: 12px; background: rgba(255,255,255,.04); padding: 12px 14px; text-align: center; }
+/* Thẻ widget React (components/lessons/TheoryWidget.tsx) render NGOÀI .exam-content (là anh em với
+   ContentHtml trong .lesson-prose) nên viết selector riêng, không có tiền tố .exam-content. */
+.tl-widget-card { margin: 20px 0; border: 1px solid var(--lesson-accent-line, rgba(59,130,246,.32)); border-radius: 16px; background: var(--lesson-accent-soft, rgba(59,130,246,.08)); padding: 16px; }
+.tl-widget-head { margin-bottom: 12px; }
+.tl-widget-title { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--lesson-accent-text, #93c5fd); font-size: 14.5px; font-weight: 700; }
+.tl-widget-hint { margin: 6px 0 0; color: #94a3b8; font-size: 13px; line-height: 1.55; }
+.tl-widget-open { display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: 10px; background: var(--lesson-accent, #3b82f6); padding: 10px 16px; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .15s; }
+.tl-widget-open:hover { background: var(--lesson-accent-hover, #2563eb); }
+@media (max-width: 480px) {
+  .tl-widget-card { padding: 13px; }
+}
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
 /* position: fixed (không phải sticky) — .lesson-shell có overflow: clip (chặn tràn ngang trên

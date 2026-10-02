@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Me
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import TheoryContent from "@/components/lessons/TheoryContent";
 import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
@@ -17,7 +18,6 @@ import type { SchoolClass } from "@/features/exams/types";
 import {
   consumeTheoryReviewContext,
   theorySectionItemId,
-  wrapTheorySections,
   type TheoryReviewContext,
 } from "@/features/lessons/theory-sections";
 import {
@@ -278,9 +278,6 @@ function TheoryBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
-  // Gắn id theo từng khối <h3> để quiz "Kiểm tra nhanh" cuộn + tô màu đúng đoạn khi trả lời
-  // sai (xem "Ôn ngay" trong ExamRunner) — chỉ tính lại khi nội dung mục thật sự đổi.
-  const sectionedHtml = useMemo(() => wrapTheorySections(item.body_html, item.id).html, [item.body_html, item.id]);
 
   return (
     <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`}>
@@ -299,7 +296,7 @@ function TheoryBlock({
       </button>}
       {open && hasBody && (
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
-          <ContentHtml html={sectionedHtml} className="block leading-relaxed" />
+          <TheoryContent html={item.body_html} itemId={item.id} />
         </div>
       )}
       <div className="lesson-block-foot">
