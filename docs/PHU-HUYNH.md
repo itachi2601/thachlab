@@ -56,6 +56,21 @@ Edge Function, không cần gửi email.
 - `components/dashboard/ParentLinkCard.tsx` — thẻ Phụ huynh trong hồ sơ học sinh.
 - `app/phu-huynh/page.tsx`, `app/loi-moi/page.tsx` (nhánh mã PH).
 
+## Giao diện cho phụ huynh (45–60 tuổi)
+
+Người đọc `/phu-huynh` là cha/mẹ 45–60 tuổi, không phải học sinh — bộ quy tắc riêng ở
+`docs/QUY-TAC-THIET-KE-PHU-HUYNH.md` (chữ thân 18px, nhãn ≥15px, tương phản 7:1, đích chạm 48px, nền
+sáng mặc định, không jargon, không biểu đồ, liên hệ thầy ở đầu **và** cuối trang); nghiên cứu nền 26
+nguồn ở `docs/NGHIEN-CUU-PHU-HUYNH-45-60.md`.
+
+- Khách chưa đăng nhập: `components/parent/ParentGuestLanding.tsx` — 3 bước lấy quyền xem, Zalo/gọi là
+  hành động chính, ảnh thật + khối "Thầy đứng lớp", FAQ.
+- Đã đăng nhập: `StudentResultsDashboard viewer="parent"` có thêm khối **"Tóm tắt cho anh chị"** (bài gần
+  nhất, điểm trung bình, so với bài trước, phần còn sai nhất, đang phụ đạo) và prop `afterSummary` để
+  trang chèn "Bài tập về nhà" + "Bù bài" ngay dưới tóm tắt.
+- Cỡ chữ/tương phản/đích chạm nâng theo phạm vi trang bằng class `.parent-page` (`app/globals.css`) —
+  không sửa trực tiếp trong component dùng chung với học sinh.
+
 ## Các bước sau đã làm
 
 - Trang khoá học công khai + lịch tuần + ghi danh — `docs/KHOA-HOC.md`.
