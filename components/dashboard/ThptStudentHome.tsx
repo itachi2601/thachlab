@@ -101,7 +101,7 @@ function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
   return (
     <div className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
       <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
-      <p className="mt-1.5 text-[12px] text-slate-500">
+      <p className="mt-1.5 text-[13px] text-slate-400">
         {item.createdByName || "Giáo viên"} ·{" "}
         {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
       </p>
@@ -304,8 +304,7 @@ export default function ThptStudentHome({
 
   return (
     <div className="space-y-4 sm:space-y-5">
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#172c46] via-[#0e1c32] to-[#071426] p-4 sm:rounded-3xl sm:p-7">
-        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel p-4 sm:rounded-3xl sm:p-7">
         <div className="relative flex items-start justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <RankAvatarFrame status={rank} size={56}>
@@ -322,7 +321,7 @@ export default function ThptStudentHome({
           <button
             onClick={onSignOut}
             aria-label="Đăng xuất"
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm sm:font-bold"
           >
             <LogOut size={16} />
             <span className="hidden sm:inline">Đăng xuất</span>
@@ -332,13 +331,13 @@ export default function ThptStudentHome({
           <div className="min-w-0 flex-1">
             <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
               <b className="text-blue-200">Năng lượng học tập</b>
-              <span className="whitespace-nowrap font-mono text-[12px] text-slate-400 sm:text-xs">
+              <span className="whitespace-nowrap font-mono text-[13px] text-slate-400">
                 {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
               </span>
             </div>
             <div className="h-3 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-3.5">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_18px_rgba(56,189,248,.45)] transition-[width]"
+                className="h-full rounded-full bg-primary transition-[width]"
                 style={{ width: `${totals?.pct ?? 0}%` }}
               />
             </div>
@@ -347,7 +346,7 @@ export default function ThptStudentHome({
             <strong className="block font-display text-lg leading-none text-white sm:text-xl">
               {avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"}
             </strong>
-            <span className="text-[12px] font-bold uppercase tracking-wide text-blue-300 sm:text-[12px]">Điểm TB</span>
+            <span className="text-[13px] font-bold uppercase tracking-wide text-blue-300">Điểm TB</span>
           </div>
         </div>
       </section>
@@ -368,16 +367,8 @@ export default function ThptStudentHome({
         </section>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-[1.15fr_1fr] sm:items-start">
-        <RankCard status={rank} />
-        <TitleShowcase titles={titles} displayCode={rank?.display_title?.code ?? null} className="h-full" />
-      </div>
-      <DailyStreakCard status={rank} suggestion={dailySuggestion} />
-      <ClassRankBoard classId={classId} />
-      <HonorVisibilityPicker />
-
       {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
-      <Section icon={Megaphone} title="Việc cần làm hôm nay">
+      {hasTodayContent && <Section icon={Megaphone} title="Việc cần làm hôm nay">
         <div className="mt-3 space-y-2.5">
           {todayNote && <AnnouncementNote item={todayNote} />}
 
@@ -387,7 +378,7 @@ export default function ThptStudentHome({
               className="flex items-center justify-between gap-3 rounded-xl border border-blue-400/20 bg-blue-500/5 p-3 hover:bg-blue-500/10"
             >
               <div className="min-w-0">
-                <small className="text-[12px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
+                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
                 <p className="mt-0.5 truncate text-sm font-bold text-white">{nextLesson.title}</p>
                 {nextChapter && <p className="truncate text-xs text-slate-400">{nextChapter.title}</p>}
               </div>
@@ -405,7 +396,7 @@ export default function ThptStudentHome({
                 <Trophy size={14} className="shrink-0 text-amber-300" />
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
-                  <small className="text-xs text-slate-500">Bài kiểm tra chưa làm</small>
+                  <small className="text-[13px] text-slate-400">Bài kiểm tra chưa làm</small>
                 </span>
               </span>
               <ChevronRight size={16} className="shrink-0 text-slate-500" />
@@ -422,7 +413,7 @@ export default function ThptStudentHome({
                 <CalendarClock size={14} className="shrink-0 text-cyan-300" />
                 <span className="min-w-0">
                   <strong className="block truncate text-sm text-white">{item.title}</strong>
-                  <small className="text-xs text-slate-500">
+                  <small className="text-[13px] text-slate-400">
                     BTVN ôn tập · {item.wrongCount} câu cả lớp hay sai + {item.bankCount} câu ôn lại
                   </small>
                 </span>
@@ -431,31 +422,26 @@ export default function ThptStudentHome({
             </Link>
           ))}
 
-          {!hasTodayContent && <p className="text-sm text-slate-500">Chưa có việc gì mới — cứ ôn lại bài cũ nhé.</p>}
         </div>
-      </Section>
+      </Section>}
 
       {/* Mục 2 — Bài tập về nhà */}
-      <Section icon={CalendarClock} title="Bài tập về nhà">
-        <div className="mt-3 space-y-2">
-          {homeworkNotes.length === 0 ? (
-            <p className="text-sm text-slate-500">Chưa có bài tập về nhà mới.</p>
-          ) : (
-            homeworkNotes.map((item) => <AnnouncementNote key={item.id} item={item} />)
-          )}
-        </div>
-      </Section>
+      {homeworkNotes.length > 0 && (
+        <Section icon={CalendarClock} title="Bài tập về nhà">
+          <div className="mt-3 space-y-2">
+            {homeworkNotes.map((item) => <AnnouncementNote key={item.id} item={item} />)}
+          </div>
+        </Section>
+      )}
 
       {/* Mục 3 — Chủ đề cần phụ đạo */}
       <CatchupCard studentId={studentId} classId={classId} viewer="student" />
 
-      <Section icon={Users} title="Chủ đề đang mở khoá">
+      {(needs.length > 0 || slots.length > 0) && <Section icon={Users} title="Chủ đề đang mở khoá">
         <div className="mt-3 space-y-4">
-          {needs.length === 0 ? (
-            <p className="text-sm text-slate-500">Chưa có chủ đề nào đang chờ mở khoá — cứ tiếp tục học nhé!</p>
-          ) : (
+          {needs.length > 0 && (
             <>
-              <p className="text-xs text-slate-400">
+              <p className="text-sm text-slate-400">
                 Để mở khoá một chủ đề: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
                 bên dưới rồi trả bài lại cho trợ giảng, hoặc <strong className="text-slate-200">tự ôn và làm bài
                 tự kiểm tra</strong> (câu hỏi ngẫu nhiên đúng chủ đề này) — đạt từ 80% là mở khoá. Mỗi chủ đề
@@ -466,14 +452,14 @@ export default function ThptStudentHome({
                   const wait = nextExitAttemptAt(lastExitAttempt.get(need.id));
                   return (
                     <div key={need.id} className="flex flex-wrap items-center gap-1.5">
-                      <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${NEED_TONE[need.status]}`}>
+                      <span className={`rounded-full border px-3 py-1 text-[13px] font-semibold ${NEED_TONE[need.status]}`}>
                         {needLabel(need)} · {NEED_STATUS_LABEL_STUDENT[need.status]}
                       </span>
                       <button
                         type="button"
                         onClick={() => setQuizNeed(need)}
                         disabled={wait !== null}
-                        className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="min-h-11 rounded-full border border-white/15 px-4 py-2 text-[13px] font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         {wait ? `Lượt tiếp theo mở lúc ${formatExitWait(wait)}` : "Tự kiểm tra"}
                       </button>
@@ -484,11 +470,9 @@ export default function ThptStudentHome({
             </>
           )}
 
-          <div>
-            <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>
-            {slots.length === 0 ? (
-              <p className="text-sm text-slate-500">Chưa có buổi phụ đạo nào được đăng cho lớp em.</p>
-            ) : (
+          {slots.length > 0 && <div>
+            <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>
+            {(
               <div className="space-y-2">
                 {slots.map((slot) => {
                   const registered = myRegistrations.has(slot.id);
@@ -514,7 +498,7 @@ export default function ThptStudentHome({
                         type="button"
                         onClick={() => toggleRegistration(slot)}
                         disabled={busySlotId === slot.id || full}
-                        className={`mt-2 w-full rounded-lg py-2 text-xs font-bold disabled:opacity-40 ${
+                        className={`mt-2 min-h-11 w-full rounded-lg py-2 text-sm font-bold disabled:opacity-40 ${
                           registered
                             ? "border border-white/15 text-slate-300"
                             : "bg-blue-600 text-white"
@@ -527,9 +511,9 @@ export default function ThptStudentHome({
                 })}
               </div>
             )}
-          </div>
+          </div>}
         </div>
-      </Section>
+      </Section>}
 
       <Link
         href="/lop-hoc"
@@ -538,6 +522,15 @@ export default function ThptStudentHome({
         Xem toàn bộ chương trình lớp {className}
         <ChevronRight size={16} className="shrink-0 text-slate-500" />
       </Link>
+
+      <div className="grid gap-4 sm:grid-cols-[1.15fr_1fr] sm:items-start">
+        <RankCard status={rank} />
+        <TitleShowcase titles={titles} displayCode={rank?.display_title?.code ?? null} className="h-full" />
+      </div>
+      <DailyStreakCard status={rank} suggestion={dailySuggestion} />
+      <ClassRankBoard classId={classId} />
+      <HonorVisibilityPicker />
+
 
       {quizNeed && (
         <TutoringExitQuiz
