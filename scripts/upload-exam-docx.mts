@@ -20,7 +20,8 @@ import { readDocx, SHAPE_MARK, VECTOR_IMAGE_MARK } from "@/services/docx-reader"
 import { docxTextToBundle } from "@/services/docx-exam-parser";
 import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
-import { questionsMissingFigure } from "@/services/question-figures";
+import { isMissingFigure, questionsMissingFigure } from "@/services/question-figures";
+import sharp from "sharp";
 
 class NodeDOMParser {
   parseFromString(str: string, type: string) {
@@ -74,11 +75,53 @@ if (process.argv.includes("--drop-vector-marks")) {
   console.log(`  bỏ ${n} mốc ảnh WMF/hình vẽ Word (--drop-vector-marks)`);
 }
 const draft = docxTextToBundle(text, { title, durationMinutes: duration, images: read.images });
-const bundle = draft.bundle;
-const qs = bundle.exam.questions;
+let bundle = draft.bundle;
+let qs = bundle.exam.questions;
 console.log(`Đọc ${path.basename(file)}: ${qs.length}/${draft.markerCount} câu dựng được · ${read.images.length} ảnh`);
 for (const n of [...read.warnings, ...draft.notes]) console.log("  ! " + n);
 if (qs.length !== draft.markerCount) fail("số câu dựng được khác số mốc 'Câu n.' — xem lại file");
+
+// --drop-bad: bỏ câu thiếu đáp án / sai cấu trúc / thiếu hình (và cả chùm dùng chung dữ kiện), đăng phần còn lại.
+// Quy tắc ở skill dang-de-hang-loat: mất >20% số câu hoặc còn <25 câu thì KHÔNG đăng (thoát mã 2).
+const droppedInfo: { n: number; reason: string }[] = [];
+if (process.argv.includes("--drop-bad")) {
+  const bad = new Map<number, string>();
+  qs.forEach((q, i) => {
+    const one = validateBundle({ ...bundle, exam: { ...bundle.exam, questions: [q] } });
+    const errs = one.errors.filter((e) => e.startsWith("Câu 1:"));
+    if (errs.length) bad.set(i, errs[0].replace(/^Câu 1:\s*/, ""));
+    else if (isMissingFigure(q)) bad.set(i, "thiếu hình");
+  });
+  for (const w of [...read.warnings, ...draft.notes]) {
+    const m = /^Câu (\d+) \((?:trắc nghiệm|đúng\/sai|trả lời ngắn)\): (cần đủ[^.]*|thiếu đáp án[^.]*|thiếu dòng đáp án)/.exec(w);
+    if (m && Number(m[1]) - 1 < qs.length && !bad.has(Number(m[1]) - 1)) bad.set(Number(m[1]) - 1, m[2].trim());
+  }
+  for (const [i] of [...bad]) {
+    const q = qs[i];
+    const m = /(?:câu|Câu)\s*(\d+)\s*(?:đến|[-–—]|và|,)\s*(?:câu\s*)?(\d+)/.exec(String(q.question));
+    if (m && /(dùng chung|sử dụng|thông tin|trả lời|đoạn)/i.test(String(q.question))) {
+      const [a, b] = [Number(m[1]), Number(m[2])];
+      if (a >= i + 1 && b - a < 6) for (let k = a; k <= b; k++) if (k - 1 < qs.length && !bad.has(k - 1)) bad.set(k - 1, `thuộc chùm câu ${a}–${b} (câu ${i + 1} lỗi)`);
+    }
+  }
+  const keep = qs.filter((_, i) => !bad.has(i));
+  const maxRatio = Number(arg("--max-drop-ratio") ?? 0.2);
+  const minKeep = Number(arg("--min-keep") ?? 25);
+  [...bad].sort((x, y) => x[0] - y[0]).forEach(([i, reason]) => droppedInfo.push({ n: i + 1, reason }));
+  if (bad.size) console.log(`  bỏ ${bad.size}/${qs.length} câu: ` + droppedInfo.map((d) => `${d.n} (${d.reason})`).join("; "));
+  if (bad.size / qs.length > maxRatio || keep.length < minKeep) {
+    console.log(`SKIP: mất ${bad.size}/${qs.length} câu (>${maxRatio * 100}%) hoặc còn ${keep.length} < ${minKeep} — để thầy xem`);
+    if (logPath && srcName) {
+      const sl = logPath.replace(/\.json$/, "") + "-skipped.json";
+      const o = fs.existsSync(sl) ? JSON.parse(fs.readFileSync(sl, "utf8")) : {};
+      o[srcName] = { total: qs.length, dropped: droppedInfo };
+      fs.writeFileSync(sl, JSON.stringify(o, null, 2) + "\n");
+    }
+    process.exit(2);
+  }
+  qs = keep;
+  bundle = { ...bundle, exam: { ...bundle.exam, questions: keep, title: bad.size ? `${bundle.exam.title} (đã lược ${bad.size} câu)` : bundle.exam.title } };
+}
 const check = validateBundle(bundle);
 if (!check.ok) fail("bundle không hợp lệ: " + check.errors.join("; "));
 for (const w of check.warnings ?? []) console.log("  ~ " + w);
@@ -87,6 +130,26 @@ if (missingFig.length) console.log(`  ! Câu nhắc hình mà không có ảnh: 
 const byType = qs.reduce<Record<string, number>>((m, q) => ((m[q.type] = (m[q.type] ?? 0) + 1), m), {});
 console.log("  Dạng câu:", JSON.stringify(byType), "· không đáp án:", qs.filter((q) => !("answer" in q) || q.answer === "" || q.answer == null).length);
 console.log("  Có Chủ đề:", qs.filter((q) => (q.topic ?? "").trim()).length, "/", qs.length);
+
+const stemKey = (t: unknown) => String(t ?? "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "").slice(0, 70);
+const { data: item0 } = await supabase.from("lesson_items").select("exam_ids").eq("id", itemId).single();
+if (item0?.exam_ids?.length) {
+  const { data: olds } = await supabase.from("exams").select("id, title, questions").in("id", item0.exam_ids as number[]);
+  const mine = qs.map((q) => stemKey(q.question)).filter((k) => k.length >= 25);
+  for (const o of olds ?? []) {
+    const set = new Set((o.questions as { question?: string }[]).map((q) => stemKey(q.question)));
+    const hit = mine.filter((k) => set.has(k)).length;
+    if (mine.length && hit / mine.length >= 0.5) {
+      console.log(`DUP: trùng ${hit}/${mine.length} câu với đề ${o.id} "${o.title}" — bỏ qua`);
+      if (logPath && srcName && !dry) {
+        const log = fs.existsSync(logPath) ? JSON.parse(fs.readFileSync(logPath, "utf8")) : {};
+        log[srcName] = o.id;
+        fs.writeFileSync(logPath, JSON.stringify(log, null, 2) + "\n");
+      }
+      process.exit(3);
+    }
+  }
+}
 
 if (dry) { console.log("(--dry: không ghi gì)"); process.exit(0); }
 
@@ -98,8 +161,22 @@ let uploaded: string[] = [];
 let examId: number | null = null;
 try {
   let resolved = bundle;
-  if (read.images.length) {
-    const media = await uploadLessonMedia(supabase, lessonId, read.images);
+  const used = JSON.stringify(bundle.exam.questions);
+  const keepImgs = read.images.filter((im) => used.includes(im.placeholder));
+  for (const im of keepImgs) {
+    const b64 = im.dataUri.slice(im.dataUri.indexOf(",") + 1);
+    const buf = Buffer.from(b64, "base64");
+    const meta = await sharp(buf).metadata();
+    if (buf.length > 100_000 || (meta.width ?? 0) > 1200) {
+      const out = await sharp(buf).resize({ width: 1200, withoutEnlargement: true }).webp({ quality: 80 }).toBuffer();
+      if (out.length < buf.length) {
+        im.dataUri = "data:image/webp;base64," + out.toString("base64");
+        im.name = im.name.replace(/\.[^.]+$/, "") + ".webp";
+      }
+    }
+  }
+  if (keepImgs.length) {
+    const media = await uploadLessonMedia(supabase, lessonId, keepImgs);
     uploaded = media.map((m) => m.storagePath);
     resolved = applyMediaToBundle(bundle, media);
     console.log(`  ✓ tải ${media.length} ảnh`);
@@ -121,6 +198,12 @@ try {
     const log = fs.existsSync(logPath) ? JSON.parse(fs.readFileSync(logPath, "utf8")) : {};
     log[srcName] = examId;
     fs.writeFileSync(logPath, JSON.stringify(log, null, 2) + "\n");
+    if (droppedInfo.length) {
+      const dl = logPath.replace(/\.json$/, "") + "-dropped.json";
+      const o = fs.existsSync(dl) ? JSON.parse(fs.readFileSync(dl, "utf8")) : {};
+      o[srcName] = { examId, total: draft.markerCount, dropped: droppedInfo };
+      fs.writeFileSync(dl, JSON.stringify(o, null, 2) + "\n");
+    }
   }
   console.log(`Xong: "${title}" → exam ${examId}, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=${examId}`);
 } catch (e) {

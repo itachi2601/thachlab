@@ -46,6 +46,23 @@ Quy tắc xử lý theo kết quả lọc:
    một đợt thấy tỉ lệ file bẩn cao bất thường, dừng lại xem script lọc/convert có bug
    (xem lịch sử vá ở skill `azota`) trước khi đổ thêm agent.
 
+## Quy tắc "bỏ câu lỗi, đăng phần còn lại" (thầy chốt 3/10/2026)
+
+Mục đích của đợt đề thi thử trường/sở (thư mục "các đề đã xong") là **tăng lượng ngân hàng câu
+hỏi**, nên đề có câu thiếu đáp án hoặc thiếu hình KHÔNG bị loại cả đề — bỏ câu lỗi, đăng phần
+còn lại. Đích đăng: mục đề thi thử trường/sở (mục 277), không phải Kiểm tra tính điểm.
+
+1. **Đơn vị bỏ**: Phần I/III → bỏ đúng câu lỗi. Phần II (Đúng–Sai) → bỏ cả câu, KHÔNG bỏ riêng
+   một ý a/b/c/d. Chùm "dùng chung dữ kiện/hình cho câu X, Y" → thiếu hình thì bỏ cả chùm.
+2. **Ngưỡng**: đề mất > 20% số câu, hoặc còn < 25 câu → KHÔNG đăng, để vào danh sách riêng
+   cho thầy xem.
+3. **Gắn tên**: đề đã bỏ câu thêm hậu tố "(đã lược N câu)" vào tên đề.
+4. **Log bắt buộc**: ghi vào log đợt (`scripts/data/bulk-de-thi-thu-log.json`) cho từng đề: số
+   câu gốc, số câu bỏ, số câu + lý do (thiếu đáp án / thiếu hình / thuộc chùm), để sau này có
+   hình/đáp án thì bổ sung lại.
+5. Vẫn qua kiểm trùng đề trước khi đăng và tóm tắt bảng cho thầy xem trước khi đăng hàng loạt
+   (đợt đầu thử batch nhỏ theo Bước 4).
+
 ## Vì sao cần bước lọc trước (đừng giao thẳng cả thư mục cho agent)
 
 Đợt thử 26/9/2026 (xem memory `feedback_batch_agent_upload_efficiency` +
