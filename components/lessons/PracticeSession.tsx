@@ -29,12 +29,28 @@ import {
   type LadderLevel,
 } from "@/features/lessons/practice-ladder";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
+import {
+  dueQuestionHashes,
+  pickKey,
+  questionHash,
+  readPracticeMode,
+  recordSpacing,
+  STEP_SECONDS_PER_QUESTION,
+  writePracticeMode,
+  type PracticeMode,
+} from "@/features/lessons/practice-step";
+import type { StepItem } from "@/components/lessons/PracticeStepView";
 
 // Màn "đang làm" + "sau khi nộp" của 1 phiên luyện tập (PracticeRunningView.tsx,
 // PracticeDoneView.tsx) — học sinh KHÔNG thấy 2 màn này lúc mới mở bài học (chỉ hiện sau khi bấm
 // "Bắt đầu luyện N câu" ở màn chọn số câu), tách chunk riêng để không nằm trong JS ban đầu của
 // /lop-hoc/bai (đợt tối ưu tốc độ lần 4, perf4/RESULT.md). Cả 2 đều kéo theo QuestionCard.
 const PracticeRunningViewLazy = dynamic(() => import("@/components/lessons/PracticeRunningView"), {
+  ssr: false,
+  loading: () => <p className="text-sm text-slate-400">Đang tải câu hỏi…</p>,
+});
+// Chế độ "Từng câu": cũng chỉ hiện sau khi bấm bắt đầu → chunk riêng + LazyErrorBoundary như 2 màn trên.
+const PracticeStepViewLazy = dynamic(() => import("@/components/lessons/PracticeStepView"), {
   ssr: false,
   loading: () => <p className="text-sm text-slate-400">Đang tải câu hỏi…</p>,
 });
@@ -59,6 +75,20 @@ function PracticeRunningView(props: ComponentProps<typeof PracticeRunningViewLaz
   );
 }
 
+function PracticeStepView(props: ComponentProps<typeof PracticeStepViewLazy>) {
+  return (
+    <LazyErrorBoundary
+      fallback={
+        <p className="rounded-2xl border border-white/10 bg-panel p-5 text-sm text-slate-400">
+          Không tải được phần làm bài (có thể do mạng chập chờn). Thử tải lại trang.
+        </p>
+      }
+    >
+      <PracticeStepViewLazy {...props} />
+    </LazyErrorBoundary>
+  );
+}
+
 // LazyErrorBoundary: kết quả đã được lưu (save() ở dưới gọi ĐỘC LẬP với việc chunk này tải được
 // hay không — submit() gọi setPhase("done") rồi save(...) ngay trong cùng 1 callback, không chờ
 // PracticeDoneView mount) — fallback có thể yên tâm báo "kết quả đã lưu".
@@ -77,7 +107,8 @@ function PracticeDoneView(props: ComponentProps<typeof PracticeDoneViewLazy>) {
   );
 }
 
-type Phase = "setup" | "running" | "done";
+// "step" = chế độ Từng câu (không đếm giờ, không dùng timer của "running").
+type Phase = "setup" | "running" | "step" | "done";
 
 const COUNT_CHOICES = [10, 20, 30, 50];
 const DEFAULT_COUNT = 20;
@@ -115,9 +146,11 @@ export default function PracticeSession({
   const [usedSeconds, setUsedSeconds] = useState(0);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
   // Thang độ khó: level = mức hiện tại của em ở mục này; free = tắt thang, bốc ngẫu nhiên như cũ.
-  const [level, setLevel] = useState<LadderLevel>("de");
+  const [levelOverride, setLevelOverride] = useState<LadderLevel | null>(null);
   const [free, setFree] = useState(false);
   const [ladderNote, setLadderNote] = useState<string | null>(null);
+  // Từng câu (mặc định) hay Cả bài (đồng hồ như cũ) — nhớ lựa chọn theo học sinh, như thang độ khó.
+  const [modeOverride, setModeOverride] = useState<PracticeMode | null>(null);
 
   const startedAt = useRef(0);
   const sessionLevelRef = useRef<LadderLevel | null>(null);
@@ -161,9 +194,14 @@ export default function PracticeSession({
 
   const ladderScope = itemId ?? lessonId;
   const studentId = session?.user.id;
-  useEffect(() => {
-    if (studentId) setLevel(readLadderLevel(studentId, ladderScope));
-  }, [studentId, ladderScope]);
+  // Mức đã lưu đọc ngay khi render (không qua effect); lên mức thì ghi đè trong state + lưu lại.
+  const level: LadderLevel = levelOverride ?? (studentId ? readLadderLevel(studentId, ladderScope) : "de");
+  // Đọc lựa chọn đã lưu ngay khi render (không qua effect); bấm đổi thì ghi đè và lưu lại.
+  const mode: PracticeMode = modeOverride ?? (studentId ? readPracticeMode(studentId) : "step");
+  function changeMode(next: PracticeMode) {
+    setModeOverride(next);
+    if (studentId) writePracticeMode(studentId, next);
+  }
   const ladderOn = !free && hasLabelledQuestions(bank);
 
   const questions = useMemo(() => picks.map((p) => p.question), [picks]);
@@ -197,7 +235,7 @@ export default function PracticeSession({
         const next = nextLadderLevel(played, ratio, finalPicks.length);
         if (next.moved) {
           writeLadderLevel(session.user.id, ladderScope, next.level);
-          setLevel(next.level);
+          setLevelOverride(next.level);
           setLadderNote(`🎉 Đạt ${Math.round(ratio * 100)}% — em được lên mức ${DIFFICULTY_LABELS[next.level]}!`);
         } else if (next.atTop) {
           setLadderNote(`🏆 Đạt ${Math.round(ratio * 100)}% ở mức cao nhất (Khó) — em đã leo hết thang.`);
@@ -241,7 +279,20 @@ export default function PracticeSession({
 
   function start() {
     if (bank.length === 0) return;
-    const chosen = ladderOn ? pickForLevel(bank, level, count) : pickRandom(bank, count);
+    let chosen: PracticePick[];
+    if (mode === "step") {
+      // Giãn cách: ưu tiên (tối đa ~40% phiên) các câu em từng làm sai đã tới hạn ôn (2 ngày → 1 tuần → 1 tháng).
+      const due = studentId ? dueQuestionHashes(studentId, Date.now()) : new Set<string>();
+      const dueBank = bank.filter((p) => due.has(questionHash(p.question)));
+      const duePicked = pickRandom(dueBank, Math.min(dueBank.length, Math.max(1, Math.ceil(count * 0.4))));
+      const dueKeys = new Set(duePicked.map(pickKey));
+      const restBank = bank.filter((p) => !dueKeys.has(pickKey(p)));
+      const need = Math.max(0, count - duePicked.length);
+      const rest = ladderOn ? pickForLevel(restBank, level, need) : pickRandom(restBank, need);
+      chosen = pickRandom([...duePicked, ...rest], duePicked.length + rest.length);
+    } else {
+      chosen = ladderOn ? pickForLevel(bank, level, count) : pickRandom(bank, count);
+    }
     sessionLevelRef.current = ladderOn ? level : null;
     setLadderNote(null);
     const blanks = emptyResponses(chosen.map((p) => p.question));
@@ -256,7 +307,27 @@ export default function PracticeSession({
     setCur(0);
     setSecondsLeft(totalSeconds(chosen.map((p) => p.question)));
     setSaveState("idle");
-    setPhase("running");
+    setPhase(mode === "step" ? "step" : "running");
+  }
+
+  // Hết phiên Từng câu: lưu ĐÚNG/SAI LẦN ĐẦU của mọi câu đã hiện (kể cả câu tương tự) như phiên thường —
+  // practice_question_results, mastery, danh hiệu, thang độ khó chạy y như cũ; câu làm lại cuối phiên không tính.
+  function finishStep(items: StepItem[]) {
+    if (items.length === 0 || submittedRef.current) return;
+    const finalPicks = items.map((i) => i.pick);
+    const finalResponses = items.map((i) => i.response);
+    picksRef.current = finalPicks;
+    responsesRef.current = finalResponses;
+    setPicks(finalPicks);
+    setResponses(finalResponses);
+    if (studentId) {
+      recordSpacing(
+        studentId,
+        items.map((i) => ({ hash: questionHash(i.pick.question), correct: i.correct })),
+        Date.now(),
+      );
+    }
+    submit(false);
   }
 
   function answer(r: QuestionResponse) {
@@ -337,6 +408,33 @@ export default function PracticeSession({
             </button>
           </div>
         )}
+        <div role="radiogroup" aria-label="Cách luyện" className="grid grid-cols-2 gap-2">
+          {(
+            [
+              { id: "step", label: "Từng câu", hint: "Biết đúng/sai ngay, câu sai làm lại cuối phiên. Không đếm giờ." },
+              { id: "whole", label: "Cả bài", hint: "Làm hết rồi nộp, có đồng hồ đếm ngược." },
+            ] as const
+          ).map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              role="radio"
+              aria-checked={mode === m.id}
+              onClick={() => changeMode(m.id)}
+              className="min-h-11 rounded-xl border px-3 py-2 text-left transition-colors"
+              style={
+                mode === m.id
+                  ? { borderColor: color, backgroundColor: `${color}26` }
+                  : { borderColor: "rgba(255,255,255,0.1)" }
+              }
+            >
+              <span className="block text-sm font-bold" style={{ color: mode === m.id ? color : "#CBD5E1" }}>
+                {m.label}
+              </span>
+              <span className="mt-0.5 block text-sm leading-snug text-slate-400">{m.hint}</span>
+            </button>
+          ))}
+        </div>
         <div className="flex flex-wrap gap-2">
           {choices.map((c) => (
             <button
@@ -354,11 +452,19 @@ export default function PracticeSession({
             </button>
           ))}
         </div>
-        <p className="text-sm text-slate-400">
-          Thời lượng ước tính{" "}
-          <span className="font-mono font-semibold text-white">{formatClock(estimate)}</span>{" "}
-          — mỗi câu lý thuyết 30 giây, mỗi câu bài tập 1 phút 30 giây.
-        </p>
+        {mode === "step" ? (
+          <p className="text-sm text-slate-400">
+            Khoảng{" "}
+            <span className="font-semibold text-white">{Math.max(1, Math.round((count * STEP_SECONDS_PER_QUESTION) / 60))} phút</span>{" "}
+            — em tự đi theo nhịp của mình, không có đồng hồ.
+          </p>
+        ) : (
+          <p className="text-sm text-slate-400">
+            Thời lượng ước tính{" "}
+            <span className="font-mono font-semibold text-white">{formatClock(estimate)}</span>{" "}
+            — mỗi câu lý thuyết 30 giây, mỗi câu bài tập 1 phút 30 giây.
+          </p>
+        )}
         <button
           type="button"
           onClick={start}
@@ -385,6 +491,19 @@ export default function PracticeSession({
         onSetCur={setCur}
         onToggleFlag={toggleFlag}
         onConfirmSubmit={confirmSubmit}
+      />
+    );
+  }
+
+  // ---------- Đang làm: Từng câu ----------
+  if (phase === "step") {
+    return (
+      <PracticeStepView
+        initialPicks={picks}
+        bank={bank}
+        color={color}
+        onFinish={finishStep}
+        onQuit={() => setPhase("setup")}
       />
     );
   }

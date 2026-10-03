@@ -26,6 +26,10 @@ interface QuestionTags {
    *  CHÍNH bài đó — dùng để "Ôn ngay" nhảy thẳng + tô màu đúng đoạn thay vì cả mục lý thuyết.
    *  Xem features/lessons/theory-sections.ts (wrapTheorySections sinh id "theory-sec-<itemId>-<n>"). */
   theorySection?: number;
+  /** Ghi chú lỗi tư duy cho từng phương án SAI, hiện ở chế độ Luyện tập "Từng câu" khi em chọn sai phương án đó.
+   *  Khoá: nhãn phương án ("A"…"D") với trắc nghiệm; chỉ số ý 0-based ("0"…"3") với đúng–sai (chỉ ý em chọn sai).
+   *  Một câu ≤ 25 từ, nêu đúng lỗi tư duy, không vai "thầy". Backfill: scripts/backfill-distractor-notes.mts. */
+  distractorNotes?: Record<string, string>;
 }
 
 export interface MultipleChoiceQuestion extends QuestionTags {
