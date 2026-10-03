@@ -1,31 +1,31 @@
 <div class="tl-box">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
-<li>Tách chuyển động ném ngang thành <strong>hai chuyển động thành phần</strong> và nói rõ mỗi phương chuyển động thế nào.</li>
+<li>Tách chuyển động ném ngang thành <strong>hai chuyển động thành phần</strong>.</li>
 <li>Viết <strong>phương trình quỹ đạo</strong> và nhận ra nó là một phần parabol.</li>
-<li>Tính <strong>thời gian bay</strong> và <strong>tầm xa</strong>; giải thích vì sao thời gian bay không phụ thuộc vận tốc ném.</li>
-<li>Tính <strong>vận tốc</strong> của vật tại một điểm bất kì và góc của nó với phương ngang.</li>
+<li>Tính <strong>thời gian bay</strong>, <strong>tầm xa</strong>; vì sao thời gian bay không phụ thuộc vận tốc ném.</li>
+<li>Tính <strong>vận tốc</strong> tại một điểm và góc của nó với phương ngang.</li>
 </ul>
 <p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở sách.</p>
 </div>
 
-<h3>I. Mở bài: tia dung dịch làm mát trong xưởng CNC</h3>
+<h3>I. Mở bài: máy bay cứu hộ thả gói hàng</h3>
 
-<p>Trong xưởng, vòi phun cạnh dao phay bắn dung dịch làm mát theo phương ngang. Tia nước không đi thẳng: nó cong dần xuống rồi chạm máng hứng dưới sàn.</p>
+<p>Máy bay cứu hộ bay ngang qua vùng lũ rồi thả một gói hàng. Nhìn từ mặt đất, gói hàng không rơi thẳng đứng: nó vừa rơi vừa bay tới trước thành parabol.</p>
 
-<p>Mở van mạnh hơn, tia bắn xa hơn hẳn. Nghĩ trước khi đọc tiếp: <em>giọt phun ngang và giọt rơi thẳng từ cùng độ cao — giọt nào chạm máng trước?</em></p>
+<p>Phi công phải thả hàng <em>trước</em> khi tới đích. Nghĩ trước khi đọc tiếp: <em>gói thả từ máy bay và gói thả từ trực thăng đứng yên ở cùng độ cao — gói nào chạm đất trước?</em></p>
 
 <!--FIG1-->
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Cùng độ cao, cùng lúc: một giọt phun ngang, một giọt rơi thẳng (bỏ qua lực cản). Giọt nào chạm máng trước?</p>
+<p>Cùng độ cao, cùng lúc: một gói thả từ máy bay, một gói thả từ trực thăng đứng yên (bỏ qua lực cản). Gói nào chạm đất trước?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Giọt phun ngang, vì nó được phun mạnh</label>
-<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-no">B. Giọt rơi thẳng, vì đường đi ngắn hơn</label>
-<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-ok">C. Hai giọt chạm máng cùng lúc, vì phần rơi giống hệt nhau</label>
-<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Tuỳ áp lực phun: mạnh thì giọt phun ngang rơi lâu hơn</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai giọt đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$. Áp lực chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
+<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Gói từ máy bay, vì nó đang bay nhanh</label>
+<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-no">B. Gói từ trực thăng, vì nó rơi thẳng đứng</label>
+<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-ok">C. Hai gói chạm đất cùng lúc, vì phần rơi giống hệt nhau</label>
+<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Tuỳ tốc độ bay: máy bay càng nhanh thì gói càng lâu chạm đất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai gói đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$. Tốc độ máy bay chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đường đi dài hơn không có nghĩa là rơi lâu hơn: phần chuyển động ngang không làm chậm phần rơi. Hai phương vuông góc <em>độc lập</em> với nhau — đó chính là điều mục II chứng minh bằng thí nghiệm.</p></div>
 </div>
 </div>
@@ -91,7 +91,7 @@
 
 <p>$$y=\dfrac{g}{2v_0^2}x^2$$</p>
 
-<p>$g$ và $v_0$ đều không đổi, nên $y$ tỉ lệ với $x^2$: quỹ đạo là một <strong>parabol</strong> có đỉnh tại điểm ném. Vật chỉ vẽ một <strong>phần</strong> của parabol, vì vừa tới mặt đất là chuyển động kết thúc.</p>
+<p>$g$ và $v_0$ đều không đổi, nên $y$ tỉ lệ với $x^2$: quỹ đạo là một <strong>parabol</strong> có đỉnh tại điểm ném. Vật chỉ vẽ một <strong>phần</strong> của parabol, vì tới mặt đất là chuyển động kết thúc.</p>
 
 <!--FIG2-->
 
@@ -177,9 +177,9 @@
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
-<h4>Bẫy 1: "phun mạnh hơn thì giọt nước rơi lâu hơn"</h4>
+<h4>Bẫy 1: "máy bay bay nhanh hơn thì gói hàng rơi lâu hơn"</h4>
 
-<p>Nhìn tia nước bắn mạnh thấy nó ở trên không lâu hơn, nhưng đó là vì nó <strong>đi xa hơn</strong>, chứ không phải vì rơi chậm hơn. Thời gian rơi chỉ do độ cao.</p>
+<p>Nhìn gói hàng thả từ máy bay bay nhanh, ta thấy nó ở trên không lâu hơn; thật ra nó chỉ <strong>đi xa hơn</strong>. Thời gian rơi chỉ do độ cao.</p>
 
 <p><strong>🔑 $v_0$ đổi tầm xa · $h$ đổi thời gian</strong></p>
 
@@ -189,8 +189,8 @@
 <tr><th>Nghĩ vậy</th><th>Thực tế</th></tr>
 </thead>
 <tbody>
-<tr><td>Phun mạnh thì giọt ở trên không lâu hơn</td><td>$t=\sqrt{2h/g}$ không chứa $v_0$; phun mạnh chỉ làm tia bay xa hơn</td></tr>
-<tr><td>Bay xa hơn thì phải rơi từ cao hơn</td><td>Cùng độ cao vẫn có tầm xa khác nhau; $v_0$ quyết định tầm xa, $h$ quyết định thời gian</td></tr>
+<tr><td>Bay nhanh hơn thì gói ở trên không lâu hơn</td><td>$t=\sqrt{2h/g}$ không chứa $v_0$; bay nhanh chỉ làm gói rơi xa hơn theo phương ngang</td></tr>
+<tr><td>Gói rơi xa hơn thì phải thả từ cao hơn</td><td>Cùng độ cao vẫn có tầm xa khác nhau; $v_0$ quyết định tầm xa, $h$ quyết định thời gian</td></tr>
 </tbody>
 </table>
 </div>
@@ -255,7 +255,7 @@
 <tbody>
 <tr><td>Tốc độ tăng đều mỗi giây</td><td>$v=\sqrt{v_0^2+(gt)^2}$ tăng không đều: lúc mới ném gần như không tăng, về sau mới tăng nhanh</td></tr>
 <tr><td>Quỹ đạo thẳng vì chuyển động biến đổi đều</td><td>Quỹ đạo cong (parabol) vì hai thành phần vuông góc</td></tr>
-<tr><td>$\vec v$ luôn cùng phương với $\vec g$</td><td>$\vec v$ dốc dần xuống; chỉ khi rơi đã lâu thì $\vec v$ gần trùng phương $\vec g$</td></tr>
+<tr><td>$\vec v$ luôn cùng phương với $\vec g$</td><td>$\vec v$ dốc dần xuống; chỉ khi rơi đã lâu mới gần trùng phương $\vec g$</td></tr>
 </tbody>
 </table>
 </div>
@@ -402,7 +402,7 @@
 <h3>VII. Đời sống và mang về</h3>
 
 <ul>
-<li><strong>Thả hàng cứu trợ:</strong> máy bay phải thả hàng <em>trước</em> khi tới đích, vì hàng vẫn bay ngang trong lúc rơi.</li>
+<li><strong>Thả hàng cứu trợ:</strong> phải thả trước đích đúng một tầm xa $L=v_0\sqrt{2h/g}$; bay nhanh gấp đôi thì phải thả xa gấp đôi.</li>
 <li><strong>Xưởng CNC:</strong> tia dung dịch làm mát và máng hứng phải tính theo tầm xa; phun mạnh hơn thì dịch máng ra xa hơn.</li>
 <li><strong>Thể thao:</strong> đánh đầu bóng từ trên cao là bài toán ném ngang; cú ném rổ, phát bóng tennis là ném xiên.</li>
 </ul>
@@ -423,6 +423,6 @@
 <li><strong>Tầm xa:</strong> $L=v_0\sqrt{\dfrac{2h}{g}}$ · $L$ tỉ lệ $\sqrt{h}$ và tỉ lệ $v_0$.</li>
 <li><strong>Vận tốc:</strong> $v=\sqrt{v_0^2+(gt)^2}$ · $v_{cd}=\sqrt{v_0^2+2gh}$ · $\tan\alpha=\dfrac{gt}{v_0}$.</li>
 <li><strong>Ném xiên:</strong> $H=\dfrac{v_0^2\sin^2\alpha}{2g}$ · $L=\dfrac{v_0^2\sin 2\alpha}{g}$ · xa nhất ở $45^\circ$.</li>
-<li><strong>Đọc đề:</strong> gạch ngay dữ kiện $h$ và $v_0$; hỏi thời gian thì chỉ dùng $h$, hỏi tầm xa mới cần $v_0$.</li>
+<li><strong>Đọc đề:</strong> gạch ngay $h$ và $v_0$; hỏi thời gian chỉ dùng $h$, hỏi tầm xa mới cần $v_0$.</li>
 </ul>
 </div>

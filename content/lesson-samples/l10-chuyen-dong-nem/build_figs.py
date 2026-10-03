@@ -27,35 +27,47 @@ def sub(x, y, base, s, c="currentColor", size=11, anchor="start", weight="700"):
             f'{base}<tspan dy="4" font-size="{size - 2}">{s}</tspan></text>')
 
 
-# ================= Hình 1: đầu phun CNC — giọt phun ngang và giọt rơi thẳng =================
-X0, Y0 = 44, 65          # miệng đầu phun
-XL, YL = 380, 210        # điểm chạm máng
-W = XL - X0
+# ================= Hình 1: máy bay cứu hộ thả gói hàng =================
+Y0 = 67                  # độ cao thả: đáy khoang máy bay và đáy trực thăng
+XL, YL = 300, 206        # gói của máy bay chạm đất
+XH = 350                 # trực thăng đứng yên, thả gói rơi thẳng đứng
 b = defs("f1")
-b += f'<rect x="20" y="56" width="24" height="15" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += text(20, 50, "đầu phun", "currentColor", 11, "start", "400")
-b += arrow("f1", "r", X0, Y0, X0 + 58, Y0, 3)
-b += text(X0 + 62, Y0 - 7, "v₀", RED, 12, "start", "700")
-# tia nước (parabol)
-jet = [(X0 + W * u / 40, Y0 + (YL - Y0) * (u / 40) ** 2) for u in range(0, 41)]
-b += poly(jet, GRN, 2.4)
-# giọt rơi thẳng từ cùng độ cao
-b += seg(X0, Y0, X0, YL - 2, ORG, 1.8, "5 4", .8)
+# máy bay (nhìn nghiêng, kiểu que)
+b += '<rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/>'
+b += '<path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/>'
+b += seg(54, 67, 45, 78, "currentColor", 2.2)
+b += '<circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+b += text(24, 38, "máy bay cứu hộ", "currentColor", 11, "start", "400")
+b += arrow("f1", "r", 70, Y0, 128, Y0, 3)
+b += text(132, Y0 - 5, "v₀", RED, 12, "start", "700")
+# quỹ đạo gói hàng thả từ máy bay
+par = [(70 + (XL - 70) * u / 40, Y0 + (YL - Y0) * (u / 40) ** 2) for u in range(0, 41)]
+b += poly(par, GRN, 2.4)
+# trực thăng đứng yên ở cùng độ cao
+b += seg(XH - 16, 46, XH + 16, 46, "currentColor", 2.2)                      # cánh quạt chính
+b += seg(XH, 46, XH, 52, "currentColor", 2)                                  # trục quạt
+b += f'<rect x="{XH - 13}" y="52" width="26" height="13" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>'
+b += seg(XH - 13, 58, XH - 30, 53, "currentColor", 2)                        # đuôi
+b += f'<circle cx="{XH - 30}" cy="53" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+b += seg(XH - 12, 74, XH + 12, 74, "currentColor", 2)                        # thanh trượt
+b += seg(XH - 8, 65, XH - 8, 74, "currentColor", 1.4) + seg(XH + 8, 65, XH + 8, 74, "currentColor", 1.4)
+b += text(XH - 52, 38, "trực thăng đứng yên", "currentColor", 11, "start", "400")
+# các vị trí sau những khoảng thời gian bằng nhau
+b += seg(XH, Y0, XH, YL - 2, ORG, 1.8, "5 4", .85)
 for u in (0.4, 0.6, 0.8, 1.0):
-    xj = X0 + W * u
+    xj = 70 + (XL - 70) * u
     yj = Y0 + (YL - Y0) * u * u
     b += dot(xj, yj, 4.2, GRN)
-    b += dot(X0, yj, 4.2, ORG)
+    b += dot(XH, yj, 4.2, ORG)
     if u < 1:
-        b += seg(X0 + 6, yj, xj - 6, yj, "currentColor", 1.1, "4 4", .35)
-b += text(150, 54, "tia phun ngang", GRN, 11, "start", "400")
-b += text(96, 200, "giọt rơi thẳng", ORG, 11, "start", "400")
-b += f'<rect x="20" y="208" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += text(20, 240, "máng hứng", "currentColor", 11, "start", "400")
+        b += seg(xj + 6, yj, XH - 6, yj, "currentColor", 1.1, "4 4", .35)
+b += text(150, 26, "cùng độ cao, cùng lúc", "currentColor", 11, "start", "400")
+b += '<rect x="20" y="206" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/>'
+b += text(20, 238, "mặt đất", "currentColor", 11, "start", "400")
 fig1 = wrap("0 0 440 250",
-            "Đầu phun dung dịch làm mát bắn tia ngang; giọt phun ngang và giọt rơi thẳng từ cùng độ cao luôn nằm ngang nhau",
+            "Máy bay cứu hộ bay ngang thả gói hàng rơi theo parabol; trực thăng đứng yên thả gói rơi thẳng đứng từ cùng độ cao, hai gói luôn nằm ngang nhau",
             b,
-            "Hình 1. Tia phun ngang cong dần thành parabol. Giọt phun ngang (xanh) và giọt rơi thẳng (cam) <strong>luôn ngang nhau</strong>: cùng hàng thì cùng lúc tới máng.")
+            "Hình 1. Gói thả từ máy bay rơi theo parabol (xanh), gói thả từ trực thăng rơi thẳng đứng (cam). Hai gói <strong>luôn ngang nhau</strong>: cùng hàng thì cùng lúc chạm đất.")
 
 # ================= Hình 2: hệ trục Oxy, quỹ đạo và hai chuyển động thành phần =================
 OX, OY = 40, 40          # gốc toạ độ
