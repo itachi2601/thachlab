@@ -8,6 +8,12 @@ import type {
   FixQuizResult,
   FixQuizStart,
   FixableTopic,
+  GateAnswerOutcome,
+  GateAttemptRow,
+  GateLevel,
+  GateQuestion,
+  GateResult,
+  GateStart,
   HonorVisibility,
   MondayList,
   PublicHonorBoard,
@@ -128,6 +134,97 @@ export async function submitFixQuiz(attemptId: number, correct: number): Promise
   if (error) throw new Error(error.message);
   const d = data as { pct: number; passed: boolean; rp_delta: number; fixed_topics: number; wrong_topics: number };
   return { pct: d.pct, passed: d.passed, rpDelta: d.rp_delta, fixedTopics: d.fixed_topics, wrongTopics: d.wrong_topics };
+}
+
+// ============================================================
+// Thi thăng hạng thích ứng (migration 20261003100000_rank_gate_adaptive.sql)
+// Server chọn câu, chấm và quyết định đỗ/trượt; client chỉ hiện câu và gửi câu trả lời.
+// ============================================================
+type RawGateResult = {
+  attempt_id: number;
+  tier_code: GateResult["tierCode"];
+  passed: boolean;
+  pct: number;
+  correct: number;
+  total: number;
+  hard_correct: number;
+  level_end: GateLevel;
+  pass_pct: number;
+  min_hard_correct: number;
+  min_level: GateLevel;
+  promoted: boolean;
+  tier: GateResult["tier"];
+  missing_titles: number;
+  cooldown_until: string | null;
+  weak_topics: { topic_id: number; name: string; wrong: number }[] | null;
+};
+
+function mapGateResult(d: RawGateResult): GateResult {
+  return {
+    attemptId: d.attempt_id,
+    tierCode: d.tier_code,
+    passed: d.passed,
+    pct: d.pct,
+    correct: d.correct,
+    total: d.total,
+    hardCorrect: d.hard_correct,
+    levelEnd: d.level_end,
+    passPct: d.pass_pct,
+    minHardCorrect: d.min_hard_correct,
+    minLevel: d.min_level,
+    promoted: d.promoted,
+    tier: d.tier,
+    missingTitles: d.missing_titles,
+    cooldownUntil: d.cooldown_until,
+    weakTopics: (d.weak_topics ?? []).map((w) => ({ topicId: w.topic_id, name: w.name, wrong: w.wrong })),
+  };
+}
+
+export async function startGateQuiz(tierCode: string): Promise<GateStart> {
+  const { data, error } = await getSupabase().rpc("rank_gate_start", { p_tier_code: tierCode });
+  if (error) throw new Error(error.message);
+  const d = data as {
+    attempt_id: number;
+    tier_code: GateStart["tierCode"];
+    total: number;
+    index: number;
+    pass_pct: number;
+    question: GateQuestion;
+  };
+  return { attemptId: d.attempt_id, tierCode: d.tier_code, total: d.total, index: d.index, passPct: d.pass_pct, question: d.question };
+}
+
+/** Gửi câu trả lời của câu hiện tại. `response`: số (trắc nghiệm), mảng true/false/null (đúng–sai) hoặc chuỗi (trả lời ngắn). */
+export async function answerGateQuiz(attemptId: number, response: unknown, questionId: number): Promise<GateAnswerOutcome> {
+  const { data, error } = await getSupabase().rpc("rank_gate_answer", {
+    p_attempt_id: attemptId,
+    p_response: response,
+    p_question_id: questionId,
+  });
+  if (error) throw new Error(error.message);
+  const d = data as {
+    done: boolean;
+    stale?: boolean;
+    index: number;
+    next_question: GateQuestion | null;
+    result?: RawGateResult;
+  };
+  if (d.done && d.result) return { done: true, index: d.index, result: mapGateResult(d.result) };
+  return { done: false, stale: !!d.stale, index: d.index, next: d.next_question as GateQuestion };
+}
+
+/** Chốt lượt (RPC đã tự gọi khi trả lời câu cuối) — gọi lại chỉ để lấy kết quả đã lưu. */
+export async function finishGateQuiz(attemptId: number): Promise<GateResult> {
+  const { data, error } = await getSupabase().rpc("rank_gate_finish", { p_attempt_id: attemptId });
+  if (error) throw new Error(error.message);
+  return mapGateResult(data as RawGateResult);
+}
+
+/** Lượt thi thăng hạng của một học sinh, kèm từng câu đúng/sai + chủ đề (tab giáo viên). */
+export async function fetchGateAttemptsOf(studentId: string, seasonId: number | null = null): Promise<GateAttemptRow[]> {
+  const { data, error } = await getSupabase().rpc("rank_gate_attempts_of", { p_student: studentId, p_season: seasonId });
+  if (error) throw new Error(error.message);
+  return (data as GateAttemptRow[] | null) ?? [];
 }
 
 /** Các chủ đề (tầng bài) em làm sai trong một bài — kèm số lượt sửa sai đã dùng. */
@@ -300,12 +397,16 @@ export interface RankTierRow {
   required_title_level: TitleLevel | null;
   challenge_exam_id: number | null;
   challenge_pass_score: number | null;
+  /** Ngưỡng bài thi thăng hạng thích ứng; null = dùng mặc định theo mã bậc (migration 20261003100000). */
+  gate_pass_pct: number | null;
+  gate_min_hard_correct: number | null;
+  gate_min_level_held: GateLevel | null;
 }
 
 export async function fetchTiers(seasonId: number): Promise<RankTierRow[]> {
   const { data, error } = await getSupabase()
     .from("rank_tiers")
-    .select("season_id, code, sort, name, min_rp, has_divisions, required_title_count, required_title_level, challenge_exam_id, challenge_pass_score")
+    .select("season_id, code, sort, name, min_rp, has_divisions, required_title_count, required_title_level, challenge_exam_id, challenge_pass_score, gate_pass_pct, gate_min_hard_correct, gate_min_level_held")
     .eq("season_id", seasonId)
     .order("sort");
   if (error) throw error;

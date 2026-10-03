@@ -11,10 +11,14 @@ import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import type { SchoolClass } from "@/features/exams/types";
 import {
+  GATE_DEFAULTS,
+  GATE_LEVEL_LABELS,
   GROUP_LABELS,
   LEDGER_KIND_LABELS,
   formatRp,
   tierLabel,
+  type GateAttemptRow,
+  type GateLevel,
   type RankLedgerEntry,
   type TitleGroup,
   type TitleLevel,
@@ -26,6 +30,7 @@ import {
   closeSeason,
   createSeason,
   fetchLedgerOf,
+  fetchGateAttemptsOf,
   fetchSeasonOverview,
   fetchSeasons,
   fetchSourceCandidates,
@@ -86,6 +91,9 @@ const CONFIG_FIELDS: { key: string; label: string; def: number }[] = [
   { key: "fix_pass_pct", label: "% đạt bài sửa sai", def: 80 },
   { key: "fix_min_pool", label: "Số câu tương đương tối thiểu trong ngân hàng", def: 5 },
   { key: "fix_quiz_count", label: "Số câu mỗi bài sửa sai", def: 10 },
+  { key: "gate_adaptive", label: "Thi thăng hạng thích ứng (1 = bật, 0 = chỉ dùng đề thử thách tĩnh)", def: 1 },
+  { key: "gate_quiz_count", label: "Thi thăng hạng: số câu mỗi bài", def: 12 },
+  { key: "gate_cooldown_hours", label: "Thi thăng hạng: số giờ chờ sau khi trượt", def: 48 },
 ];
 
 function errMsg(e: unknown, fallback: string) {
@@ -334,7 +342,8 @@ function SeasonConfigForm({ season, onSaved }: { season: RankSeason; onSaved: ()
   async function saveConfig() {
     setBusy(true);
     try {
-      const cfg: Record<string, number> = {};
+      // Giữ nguyên các khoá không có ô nhập (chuỗi ngày, đóng băng, gate_mode…) — trước đây lưu là xoá sạch.
+      const cfg: Record<string, number> = { ...season.config };
       for (const f of CONFIG_FIELDS) {
         const v = Number(config[f.key]);
         if (!Number.isFinite(v) || v < 0) throw new Error(`Giá trị không hợp lệ: ${f.label}`);
@@ -402,6 +411,11 @@ function TiersTab({ season }: { season: RankSeason }) {
   function set(code: string, patch: Partial<RankTierRow>) {
     setDraft((d) => ({ ...d, [code]: { ...d[code], ...patch } }));
   }
+  // Ngưỡng thi thăng hạng: null là giá trị hợp lệ ("để trống = mặc định") nên không dùng val() (nó nuốt null).
+  function gateVal<K extends "gate_pass_pct" | "gate_min_hard_correct" | "gate_min_level_held">(t: RankTierRow, k: K): RankTierRow[K] {
+    const d = draft[t.code];
+    return d && k in d ? (d[k] as RankTierRow[K]) : t[k];
+  }
 
   async function save(t: RankTierRow) {
     const patch = draft[t.code];
@@ -429,7 +443,7 @@ function TiersTab({ season }: { season: RankSeason }) {
     <section className="admin-card">
       <h2 className="admin-h2">Ngưỡng RP và điều kiện lên hạng</h2>
       <p className="admin-lead">
-        Phân bậc III → II → I tự chia đều trong dải RP của bậc (không hở, không chồng). Từ Vàng trở lên cần danh hiệu chuyên môn; Tinh Anh và Cao Thủ bắt buộc có đề thử thách — chưa gán thì học sinh không thể lên bậc đó.
+        Phân bậc III → II → I tự chia đều trong dải RP của bậc (không hở, không chồng). Từ Vàng trở lên cần danh hiệu chuyên môn. Khi mùa bật thi thăng hạng thích ứng (mặc định), bậc nào chưa gán đề thử thách sẽ dùng bài thi thích ứng bốc từ ngân hàng câu hỏi; gán đề thử thách thì bậc đó dùng đề tĩnh (ở chế độ đề tĩnh, Tinh Anh và Cao Thủ chưa gán đề thì học sinh không thể lên).
       </p>
       {!tiers ? (
         <p className="admin-muted">Đang tải…</p>
@@ -472,6 +486,30 @@ function TiersTab({ season }: { season: RankSeason }) {
                     </button>
                   )}
                 </div>
+                {GATE_DEFAULTS[t.code] && (
+                  <div className="mt-2 flex flex-wrap items-center gap-3 border-t border-white/5 pt-2">
+                    <span className="admin-label">Bài thi thăng hạng (để trống = mặc định):</span>
+                    <label className="admin-label flex items-center gap-2">
+                      Đạt từ
+                      <input className="w-16 rounded-xl border border-white/10 bg-white/5 px-2 py-2 text-sm text-white" type="number" min={0} max={100} disabled={readOnly} placeholder={String(GATE_DEFAULTS[t.code]!.pct)} value={gateVal(t, "gate_pass_pct") ?? ""} onChange={(e) => set(t.code, { gate_pass_pct: e.target.value === "" ? null : Number(e.target.value) })} />
+                      %
+                    </label>
+                    <label className="admin-label flex items-center gap-2">
+                      Đúng ít nhất
+                      <input className="w-16 rounded-xl border border-white/10 bg-white/5 px-2 py-2 text-sm text-white" type="number" min={0} disabled={readOnly} placeholder={String(GATE_DEFAULTS[t.code]!.hard)} value={gateVal(t, "gate_min_hard_correct") ?? ""} onChange={(e) => set(t.code, { gate_min_hard_correct: e.target.value === "" ? null : Number(e.target.value) })} />
+                      câu Khó
+                    </label>
+                    <label className="admin-label flex items-center gap-2">
+                      Kết thúc ở mức từ
+                      <select className={selectCls} disabled={readOnly} value={gateVal(t, "gate_min_level_held") ?? ""} onChange={(e) => set(t.code, { gate_min_level_held: e.target.value === "" ? null : (e.target.value as GateLevel) })}>
+                        <option value="">Mặc định ({GATE_LEVEL_LABELS[GATE_DEFAULTS[t.code]!.level]})</option>
+                        <option value="de">{GATE_LEVEL_LABELS.de}</option>
+                        <option value="trung-binh">{GATE_LEVEL_LABELS["trung-binh"]}</option>
+                        <option value="kho">{GATE_LEVEL_LABELS.kho}</option>
+                      </select>
+                    </label>
+                  </div>
+                )}
                 {!readOnly && (
                   <details className="mt-2">
                     <summary className="cursor-pointer text-xs text-slate-400">Chọn đề thử thách cho {t.name}</summary>
@@ -797,6 +835,7 @@ function StudentsTab({ season }: { season: RankSeason }) {
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
   const [search, setSearch] = useState("");
+  const [gateAttempts, setGateAttempts] = useState<GateAttemptRow[]>([]);
 
   const load = useCallback(() => {
     fetchSeasonOverview(season.id).then(setRows).catch((e) => toast("error", errMsg(e, "Không tải được")));
@@ -806,6 +845,8 @@ function StudentsTab({ season }: { season: RankSeason }) {
   useEffect(() => {
     if (!selected) return;
     fetchLedgerOf(selected.student_id, season.id, 100).then(setLedger).catch(() => setLedger([]));
+    // RPC chưa có (migration chưa chạy) → danh sách rỗng, mục tự ẩn.
+    fetchGateAttemptsOf(selected.student_id, season.id).then(setGateAttempts).catch(() => setGateAttempts([]));
   }, [selected, season.id]);
 
   async function submitAdjust() {
@@ -917,6 +958,43 @@ function StudentsTab({ season }: { season: RankSeason }) {
                   </button>
                 </div>
               </div>
+            )}
+            {gateAttempts.length > 0 && (
+              <>
+                <h3 className="admin-h3 mt-4">Thi thăng hạng</h3>
+                <ul className="mt-2 divide-y divide-white/5">
+                  {gateAttempts.map((g) => (
+                    <li key={g.id} className="py-2 text-sm">
+                      <details>
+                        <summary className="flex cursor-pointer flex-wrap items-center gap-x-3 gap-y-1">
+                          <span className="font-semibold text-white">{tierLabel(g.tier_code, null)}</span>
+                          <span className={g.status === "open" ? "text-cyan-300" : g.passed ? "text-emerald-300" : "text-amber-300"}>
+                            {g.status === "open" ? "Đang làm dở" : g.passed ? "Đỗ" : "Trượt"}
+                          </span>
+                          {g.status === "done" && (
+                            <span className="text-slate-300">
+                              {g.pct}% · {g.correct}/{g.total} câu · {g.hard_correct} câu Khó · cuối bài mức {g.level_end ? GATE_LEVEL_LABELS[g.level_end] : "—"}
+                            </span>
+                          )}
+                          <span className="text-xs text-slate-500">{new Date(g.submitted_at ?? g.created_at).toLocaleString("vi-VN")}</span>
+                        </summary>
+                        <ol className="mt-2 grid gap-1 pl-1 sm:grid-cols-2">
+                          {g.answers.map((a) => (
+                            <li key={a.n} className="flex items-start gap-2 text-slate-300">
+                              <span className={`w-14 shrink-0 font-semibold ${a.correct ? "text-emerald-300" : "text-red-300"}`}>
+                                {a.n}. {a.correct ? "Đúng" : "Sai"}
+                              </span>
+                              <span className="min-w-0">
+                                {GATE_LEVEL_LABELS[a.level]} · {a.topic ?? "?"} <span className="text-xs text-slate-500">#{a.qid}</span>
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
+                      </details>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
             <h3 className="admin-h3 mt-4">Lịch sử RP</h3>
             {ledger.length === 0 ? (

@@ -104,6 +104,9 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
       required_title_level: null,
       challenge_exam_id: null,
       challenge_pass_score: null,
+      gate_pass_pct: null,
+      gate_min_hard_correct: null,
+      gate_min_level_held: null,
       next_min: null,
       challenge_title: null,
     }));
@@ -127,7 +130,7 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
     reached || isCurrent
       ? "done"
       : gate
-        ? gate.passed || (gate.challenge_best_pct !== null && gate.challenge_best_pct >= gate.challenge_pass_pct)
+        ? gate.passed || gate.last_passed || (gate.challenge_best_pct !== null && gate.challenge_best_pct >= gate.challenge_pass_pct)
           ? "done"
           : "todo"
         : "neutral";
@@ -367,8 +370,13 @@ export default function TierLadder({ status }: { status: RankStatus | null }) {
                         )}
                       </>
                     ) : (
-                      <>Vượt thử thách lên hạng — giáo viên sẽ giao đề riêng cho bậc này</>
+                      <>Vượt bài thi thăng hạng của bậc này</>
                     )}
+                  </Cond>
+                )}
+                {isNext && gate?.adaptive && !challengeRequired(step) && (
+                  <Cond state={gate.passed || gate.last_passed ? "done" : "todo"}>
+                    Vượt bài thi thăng hạng ({gate.quiz_count ?? 12} câu, đạt từ {gate.pass_pct ?? 70}%)
                   </Cond>
                 )}
               </ul>

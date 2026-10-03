@@ -140,6 +140,22 @@ export interface RankGate {
   challenge_title: string | null;
   challenge_pass_pct: number;
   challenge_best_pct: number | null;
+  // Bài thi thăng hạng thích ứng (migration 20261003100000). RPC cũ không trả các khoá này -> undefined, nút ẩn.
+  adaptive?: boolean;
+  /** Số lượt đã nộp ở bậc kế tiếp. */
+  attempts?: number;
+  /** Đã có một lượt đỗ (còn thiếu điều kiện danh hiệu thì chưa lên bậc). */
+  last_passed?: boolean;
+  /** Trượt gần nhất + giờ chờ; null = không phải chờ. */
+  cooldown_until?: string | null;
+  /** Em bấm Thi thăng hạng được ngay (đủ RP, hết chờ, ngân hàng đủ câu, hoặc đang có lượt dở). */
+  can_start?: boolean;
+  open_attempt?: boolean;
+  pass_pct?: number | null;
+  min_hard_correct?: number | null;
+  min_level?: GateLevel | null;
+  quiz_count?: number | null;
+  cooldown_hours?: number | null;
 }
 
 export interface RankNext {
@@ -435,3 +451,86 @@ export interface PublicHonorBoard {
   week_start: string;
   grades: PublicHonorGrade[];
 }
+
+// ---------- Thi thăng hạng thích ứng (rank_gate_*) ----------
+export type GateLevel = "de" | "trung-binh" | "kho";
+
+export const GATE_LEVEL_LABELS: Record<GateLevel, string> = {
+  de: "Dễ",
+  "trung-binh": "Trung bình",
+  kho: "Khó",
+};
+
+/** Câu hỏi RPC gửi cho em: không có đáp án, lời giải, nhãn chủ đề/mức; đúng–sai chỉ còn chữ từng ý. */
+export type GateQuestion =
+  | { qid: number; type: "multiple_choice"; question: string; options: string[] }
+  | { qid: number; type: "true_false"; question: string; statements: { text: string }[] }
+  | { qid: number; type: "short_answer"; question: string };
+
+export interface GateStart {
+  attemptId: number;
+  tierCode: TierCode;
+  total: number;
+  /** Số câu đã trả lời (0 nếu lượt mới, > 0 khi mở lại lượt dở). */
+  index: number;
+  passPct: number;
+  question: GateQuestion;
+}
+
+export interface GateWeakTopic {
+  topicId: number;
+  name: string;
+  wrong: number;
+}
+
+export interface GateResult {
+  attemptId: number;
+  tierCode: TierCode;
+  passed: boolean;
+  pct: number;
+  correct: number;
+  total: number;
+  hardCorrect: number;
+  levelEnd: GateLevel;
+  passPct: number;
+  minHardCorrect: number;
+  minLevel: GateLevel;
+  /** Đỗ và đã lên bậc ngay (đỗ mà thiếu danh hiệu thì false). */
+  promoted: boolean;
+  /** Mã bậc hiện tại của em sau khi chốt. */
+  tier: TierCode | null;
+  /** Số danh hiệu còn thiếu cho bậc này (0 = đủ). */
+  missingTitles: number;
+  cooldownUntil: string | null;
+  weakTopics: GateWeakTopic[];
+}
+
+export type GateAnswerOutcome =
+  | { done: false; stale: boolean; index: number; next: GateQuestion }
+  | { done: true; index: number; result: GateResult };
+
+/** Một dòng của rank_gate_attempts_of — cho tab giáo viên. */
+export interface GateAttemptRow {
+  id: number;
+  season_id: number;
+  tier_code: TierCode;
+  status: "open" | "done";
+  correct: number;
+  total: number;
+  hard_correct: number;
+  pct: number | null;
+  passed: boolean | null;
+  level_end: GateLevel | null;
+  created_at: string;
+  submitted_at: string | null;
+  answers: { n: number; qid: string; level: GateLevel; correct: boolean; topic: string | null }[];
+}
+
+/** Ngưỡng mặc định của bài thi thăng hạng theo mã bậc — khớp rank_gate_rule (migration 20261003100000). */
+export const GATE_DEFAULTS: Partial<Record<TierCode, { pct: number; hard: number; level: GateLevel }>> = {
+  tinh_anh: { pct: 70, hard: 0, level: "de" },
+  tinh_nhue: { pct: 70, hard: 0, level: "trung-binh" },
+  dai_su: { pct: 75, hard: 2, level: "trung-binh" },
+  cao_thu: { pct: 80, hard: 3, level: "trung-binh" },
+  thach_dau: { pct: 80, hard: 4, level: "kho" },
+};

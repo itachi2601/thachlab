@@ -1,11 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CalendarCheck, ChevronRight, Flag, History, Medal, Route, Target, Trophy } from "lucide-react";
 import EmptyState from "@/components/ui/EmptyState";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import { useToast } from "@/components/ui/Toast";
+import GateEntry from "@/components/rank/GateEntry";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import TitleCollection from "@/components/rank/TitleCollection";
@@ -18,6 +21,7 @@ import {
   formatRp,
   tierLabel,
   tierMeta,
+  type RankGate,
   type RankLedgerEntry,
   type RankSeasonSummary,
   type RankStatus,
@@ -34,6 +38,9 @@ import {
 import { isStudentPreview } from "@/features/rank/preview";
 
 const TIER_SORT_KEY = "thachlab-rank-tier-sort";
+
+// Bài thi thăng hạng chỉ mở khi em bấm nút → chunk riêng, lỗi tải chunk không kéo sập trang xếp hạng.
+const GateQuizModal = dynamic(() => import("@/components/rank/GateQuizModal"), { ssr: false });
 
 function Section({ icon: Icon, title, children, aside }: { icon: typeof Trophy; title: string; children: React.ReactNode; aside?: React.ReactNode }) {
   return (
@@ -74,6 +81,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
   const [ledger, setLedger] = useState<RankLedgerEntry[]>([]);
   const [seasons, setSeasons] = useState<RankSeasonSummary[]>([]);
   const [celebrate, setCelebrate] = useState<string | null>(null);
+  // Modal thi nằm ở gốc trang (không trong khối "Điều kiện") để vẫn còn khi trạng thái tải lại sau khi nộp bài.
+  const [gateOpen, setGateOpen] = useState<{ tierCode: string; gate: RankGate } | null>(null);
 
   const load = useCallback(() => {
     fetchMyRankStatus()
@@ -207,6 +216,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
         <div className="grid gap-4 sm:grid-cols-2">
           <Section icon={Flag} title="Điều kiện lên hạng">
             {status.next ? (
+              <>
               <ul className="space-y-2">
                 <Condition done={status.next.rp_needed === 0}>
                   Đạt {formatRp(status.next.min_rp)} RP để chạm <b>{status.next.name}</b>
@@ -234,8 +244,18 @@ export default function RankPage({ studentId, studentName }: { studentId: string
                     )}
                   </Condition>
                 )}
+                {status.next.gate?.adaptive && !status.next.gate.passed && (
+                  <Condition done={!!status.next.gate.last_passed}>
+                    Bài thi thăng hạng: {status.next.gate.quiz_count ?? 12} câu, đạt từ {status.next.gate.pass_pct ?? 70}%
+                  </Condition>
+                )}
                 {status.next.gate?.passed && <Condition done>Đã vượt điều kiện lên {status.next.name}</Condition>}
               </ul>
+              <GateEntry
+                next={status.next}
+                onStart={() => status.next?.gate && setGateOpen({ tierCode: status.next.code, gate: status.next.gate })}
+              />
+              </>
             ) : (
               <p className="text-sm text-slate-300">
                 {paragon
@@ -363,6 +383,12 @@ export default function RankPage({ studentId, studentName }: { studentId: string
           )}
         </Section>
       </div>
+
+      {gateOpen && (
+        <LazyErrorBoundary fallback={<p className="text-sm text-red-300">Không mở được bài thi. Em tải lại trang rồi thử lại nhé.</p>}>
+          <GateQuizModal tierCode={gateOpen.tierCode} gate={gateOpen.gate} onClose={() => setGateOpen(null)} onDone={() => load()} />
+        </LazyErrorBoundary>
+      )}
     </div>
   );
 }

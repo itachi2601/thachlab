@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
@@ -28,6 +29,7 @@ export default function RankCard({
   compact?: boolean;
   className?: string;
 }) {
+  const [now] = useState(() => Date.now()); // mốc chờ thi lại so với lúc mở trang
   const paragon = !!status?.tier?.paragon;
   const meta = tierMeta(status?.tier?.code, paragon);
   const inner = (
@@ -79,6 +81,10 @@ export default function RankCard({
                       {" · "}
                       {status.next.rp_needed > 0
                         ? `còn ${formatRp(status.next.rp_needed)} RP tới ${status.next.name}`
+                        : status.next.gate?.adaptive && !status.next.gate.passed && !status.next.gate.last_passed
+                          ? status.next.gate.cooldown_until && new Date(status.next.gate.cooldown_until).getTime() > now
+                            ? `đủ RP — thi thăng hạng lại sau ${new Date(status.next.gate.cooldown_until).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" })}`
+                            : "đủ RP — còn bài thi thăng hạng"
                         : status.next.gate && !status.next.gate.passed
                           ? `đủ RP — xem thử thách lên ${status.next.name}`
                           : `sắp lên ${status.next.name}`}
