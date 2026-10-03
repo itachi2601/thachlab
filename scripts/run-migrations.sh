@@ -14,16 +14,13 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20260930160000_rank_title_distinct_questions.sql|Chong cay danh hieu: dem so CAU KHAC NHAU giai dung thay vi so luot (create or replace rank_title_stats)|bat ky luc nao; rollback: perf/rollback/20260930160000_rank_title_distinct_questions.down.sql"
-  "supabase/migrations/20260930170000_question_bank_hash_ignore_image_ts.sql|Ngan hang cau hoi: ham bam bo tien to thoi gian cua ten anh + gop ~4.7k dong trung (co backup)|NGOAI GIO hoc sinh lam bai; rollback: perf/rollback/20260930170000_question_bank_hash_ignore_image_ts.down.sql"
-  "supabase/migrations/20260930180000_bank_similarity_per_topic.sql|Nghi trung lap: 2 ham quet theo tung chu de (ham cu qua 60s o khoi 12, trang luon loi)|bat ky luc nao; rollback: perf/rollback/20260930180000_bank_similarity_per_topic.down.sql"
-  "supabase/migrations/20261001100000_resolve_login_email.sql|Ham resolve_login_email: dang nhap bang username cho tai khoan dang ky kem email that|bat ky luc nao; rollback: perf/rollback/20261001100000_resolve_login_email.down.sql"
-  "supabase/migrations/20261002100000_ta_all_classes.sql|Tro giang hoat dong duoc xem/ho tro moi khoi lop (sua 2 ham assists_class, teaches_student)|bat ky luc nao; rollback: chay lai 2 ham cu trong 20260925140000_perf_rls.sql"
-  "supabase/migrations/20261002110000_staff_student_account.sql|Ham staff_student_account: admin/GV phu trach xem username, email, SDT, SDT phu huynh, ngay sinh cua hoc sinh (the Thong tin tai khoan)|bat ky luc nao; rollback: perf/rollback/20261002110000_staff_student_account.down.sql"
   "supabase/migrations/20261003100000_rank_gate_adaptive.sql|Thi thang hang thich ung: bang rank_gate_attempts, RPC rank_gate_start/answer/finish/attempts_of, 3 cot nguong o rank_tiers, sua rank_eval_gates + rank_tier_needs_gate + rank_status_of (khoa next.gate.adaptive/can_start/...)|NGOAI GIO hoc sinh lam bai (alter rank_tiers + create or replace 3 ham rank); rollback: perf/rollback/20261003100000_rank_gate_adaptive.down.sql; test: supabase db query --linked -f docs/supabase-test-rank-gate.sql"
   "supabase/migrations/20261003110000_rank_rp_first_attempt.sql|RP chi tinh LUOT DAU cua moi bai trong mua (create or replace rank_on_result; co config rp_first_attempt_only, mac dinh 1)|NGOAI GIO hoc sinh lam bai (ham chay sau moi lan nop bai); rollback: perf/rollback/20261003110000_rank_rp_first_attempt.down.sql; test: supabase db query --linked -f docs/supabase-test-rank-rp-first.sql"
   "supabase/migrations/20261003120000_distractor_notes.sql|Ghi chu phuong an nhieu (Luyen tap Tung cau): question_content_hash bo qua distractorNotes + ham bank_set_distractor_notes (ghi vao ngan hang VA de chua cau)|NGOAI GIO hoc sinh lam bai (doi ham hash dung chung); CHAY TRUOC scripts/backfill-distractor-notes.mts; rollback: perf/rollback/20261003120000_distractor_notes.down.sql; test: supabase db query --linked -f docs/supabase-test-distractor-notes.sql"
 )
+# ĐÃ CHẠY (kiểm trên production 3/10/2026 13:20 — hàm tồn tại, log scripts/logs/ không lỗi): 20260930160000_rank_title_distinct_questions (nhiều lần, idempotent),
+#   20260930170000_question_bank_hash_ignore_image_ts + 20260930180000_bank_similarity_per_topic (1/10, file đã bị xoá khỏi đĩa),
+#   20261001100000_resolve_login_email, 20261002100000_ta_all_classes, 20261002110000_staff_student_account (2/10 23:54).
 # ĐÃ CHẠY 30/9/2026 (17:15): 20260930160000_exit_quiz_bank_children.sql
 # ĐÃ CHẠY 30/9/2026 (16:07): 20260930110000_rank_board_by_tier.sql, 20260930120000_rank_gd1b_spacing_progress.sql,
 #   20260930130000_rank_streak_freeze.sql, 20260930140000_rank_class_goal.sql, 20260930150000_rank_teacher_reports.sql (thứ tự 1 → 5)
