@@ -18,6 +18,7 @@ import type { SchoolClass } from "@/features/exams/types";
 import {
   consumeTheoryReviewContext,
   splitTheorySections,
+  estimateTheoryTime,
   theorySectionItemId,
   wrapTheorySections,
   type TheoryReviewContext,
@@ -317,6 +318,7 @@ function TheoryBlock({
     [item.body_html, item.id],
   );
   const total = sections.length;
+  const estimate = useMemo(() => estimateTheoryTime(item.body_html), [item.body_html]);
   const [openSections, setOpenSections] = useState<Set<number>>(() => new Set([0]));
   const [allOpen, setAllOpen] = useState(false);
   const [resumeIndex, setResumeIndex] = useState<number | null>(null);
@@ -421,7 +423,10 @@ function TheoryBlock({
                       <Play size={14} fill="currentColor" aria-hidden />
                     </button>
                   ) : (
-                    <span>{total} mục</span>
+                    <span>
+                      ~{estimate.minutes} phút · {total} mục
+                      {estimate.quizzes > 0 ? ` · ${estimate.quizzes} câu tự kiểm tra` : ""}
+                    </span>
                   )}
                   <button type="button" className="theory-nav-all" onClick={() => setAllOpen((a) => !a)}>
                     {allOpen ? "Thu gọn" : "Mở tất cả"}

@@ -159,3 +159,30 @@ export function consumeTheoryReviewContext(): TheoryReviewContext[] | null {
     return null;
   }
 }
+
+export interface TheoryEstimate {
+  /** Số phút đã làm tròn lên (tối thiểu 1). */
+  minutes: number;
+  /** Số câu tự kiểm tra (quiz) trong bài. */
+  quizzes: number;
+}
+
+// 140 từ/phút: tốc độ đọc chữ Việt trên điện thoại (docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md mục 2).
+// Phần trong <details> (lời giải, phần mở rộng) không tính vì không hiện ngay.
+const WORDS_PER_MIN = 140;
+const MIN_PER_INTERACTION = 1;
+
+/** Ước tính thời gian học một mục lý thuyết: chữ hiện ngay + ~1 phút cho mỗi quiz / thí nghiệm / câu dự đoán. */
+export function estimateTheoryTime(html: string): TheoryEstimate {
+  const quizzes = (html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length;
+  const interactions =
+    quizzes + (html.match(/class="[^"]*\btl-box--(?:exp|think)\b/g) ?? []).length;
+  const visible = html
+    .replace(/<details\b[\s\S]*?<\/details>/gi, " ")
+    .replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ");
+  const words = visible.split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.ceil(words / WORDS_PER_MIN + interactions * MIN_PER_INTERACTION));
+  return { minutes, quizzes };
+}

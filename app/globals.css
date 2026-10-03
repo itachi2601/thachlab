@@ -901,6 +901,11 @@ html[data-theme="light"] .lesson-shell .lesson-summary-title { color: #1e293b; }
 .theory-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; margin-bottom: 10px; color: #94a3b8; font-size: var(--fs-sm); }
 .theory-nav-all { min-height: 44px; border: 0; background: none; padding: 0 4px; color: #94a3b8; font-size: var(--fs-sm); font-weight: 600; cursor: pointer; }
 .theory-nav-all:hover { color: #e2e8f0; }
+/* Dải đầu gọn lại: tiêu đề mục đầu lên sát (L2/N5 — dải chỉ còn việc báo thời gian + mở tất cả). */
+.theory-nav { margin-bottom: 0; flex-wrap: nowrap; }
+.theory-nav > span { flex: 1 1 0; min-width: 0; line-height: 1.35; }
+.theory-nav-all { flex: none; }
+.theory-nav + .theory-section > :first-child { margin-top: 4px; }
 .theory-next.theory-resume { flex: 1 1 0; width: auto; min-width: 0; margin: 0; min-height: 44px; padding: 6px 12px; }
 .theory-next.theory-resume strong { -webkit-line-clamp: 1; white-space: nowrap; text-overflow: ellipsis; }
 .theory-section--closed:empty { display: none; }
