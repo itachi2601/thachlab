@@ -28,3 +28,5 @@ Xong cả 3 việc, 4 migration viết + test trong `begin…rollback` trên pro
 
 
 **3/10/2026 13:30 — 3 migration ĐÃ CHẠY** trên production (log `scripts/logs/20261003-133029-*`), kiểm: `rank_gate_mode(4)=adaptive`, pool câu lớp 12/11/10 = 4721/1702/779, HS Đại Sư top đã `can_start=true` cho cao_thu. Hàm hash mới = bản prod + bỏ `distractorNotes` (đã đối chiếu). FILES trong run-migrations.sh đã trống. Client đang deploy từ deploy-tree (main b027d772e+). CÒN: test HS thật trên web, backfill `scripts/backfill-distractor-notes.mts 20 --dry-run` rồi thật, cấu hình mùa 2 (practice_max_rp 30, weekly_goal_rp 40), 126 em đã qua cửa Tinh Anh bằng danh hiệu không phải thi lại (khối SQL tuỳ chọn cuối migration A nếu muốn).
+
+**3/10 16:40 — backfill distractorNotes:** lượt 1 ghi 158 câu (bỏ 27% vì lô JSON hỏng); nguyên nhân thật = max_tokens 4096 bị token suy nghĩ ăn hết (xem [[reference_anthropic_api_thinking_max_tokens]]); script sửa `f234f3d60`, lượt vét chạy sạch 0 bỏ qua. Giọng ghi chú: không mở đầu "Em", 10–18 từ, "Phát biểu này đúng: …" cho câu chọn phát biểu sai.
