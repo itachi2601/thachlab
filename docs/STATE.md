@@ -87,6 +87,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   2.457 từ**, 3 bảng 3 cột bị bóp chữ ở 375px đưa về 2 cột. Dòng ở mục trên ("CHƯA ghi DB") là **đã cũ**: log
   `scripts/logs/ly-thuyet-bai27-backup-*.json` (22:51) cho thấy bản Mô tả sóng **đã ghi DB**; bản cắt này
   **chưa ghi DB, chưa deploy** — chờ thầy duyệt rồi chạy `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` + deploy.
+  3/10/2026: cắt thêm đoạn mở bài trùng câu Dự đoán → "tới việc đầu" 165→142 từ (lint mới, xem
+  `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` mục 3); theory.html + bundle.json đã đồng bộ, vẫn chờ lệnh trên.
 
 ## Migration — ĐANG CHỜ
 - `20261002110000_staff_student_account.sql` (hàm `staff_student_account`: thẻ "Thông tin tài khoản" trong hồ sơ HS cho admin/GV — username, email, SĐT, SĐT phụ huynh, ngày sinh; chạy lúc nào cũng được; rollback `perf/rollback/20261002110000_staff_student_account.down.sql`) — ĐANG CHỜ.

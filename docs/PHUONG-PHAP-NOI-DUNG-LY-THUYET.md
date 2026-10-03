@@ -119,7 +119,8 @@ có lỗi cứng** nên cắm được vào quy trình soạn bài. Chạy cùng
 
 Số đo "tới việc đầu" của 5 bài (3/10/2026): Định luật III Newton 127 · Dao động điều hoà 79 · Giao thoa sóng
 127 · Cảm ứng điện từ 130 · **Mô tả sóng 165 (⚠)** — bốn bài đọc thoải mái đều dưới 130 từ, bài phình là bài
-duy nhất vượt ngưỡng, cùng chiều với bảng mục 2. Chỉ `.tl-quiz` được tính là "việc"; `<details>` và hình là nhịp
+duy nhất vượt ngưỡng, cùng chiều với bảng mục 2. (Mô tả sóng đã về **142** cùng ngày: bỏ câu "Câu hỏi để nghĩ
+trước khi đọc tiếp" vì khối Dự đoán ngay dưới hỏi đúng câu đó — N4.) Chỉ `.tl-quiz` được tính là "việc"; `<details>` và hình là nhịp
 thụ động (chỉ một cú bấm hoặc không cần làm gì) nên không tính.
 
 Vì sao có hai mức ⚠/✗ thay vì một: các ngưỡng này rút từ số đo 5 bài trên, sao cho **bài đã làm tốt
