@@ -104,6 +104,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   (item 45, sao lưu `scripts/logs/ly-thuyet-bai27-backup-1790986956595.json`), deploy lại để bản tĩnh 27.json cập nhật.
 
 ## Migration — ĐANG CHỜ
+- **Lưu ý 3/10/2026 13:20 (kiểm trên production):** 6 file dưới đây (`20260930160000`, `…170000`, `…180000`, `20261001100000`, `20261002100000`, `20261002110000`) ĐÃ CHẠY rồi — hàm tồn tại trên DB, log `scripts/logs/`; 2 file `…170000`/`…180000` đã mất khỏi đĩa. Các dòng ĐANG CHỜ bên dưới của chúng là cũ, đã bỏ khỏi `FILES`; phiên nào sở hữu thì tự chuyển sang `STATE-archive.md`.
 - `20261002110000_staff_student_account.sql` (hàm `staff_student_account`: thẻ "Thông tin tài khoản" trong hồ sơ HS cho admin/GV — username, email, SĐT, SĐT phụ huynh, ngày sinh; chạy lúc nào cũng được; rollback `perf/rollback/20261002110000_staff_student_account.down.sql`) — ĐANG CHỜ.
 - `20261001100000_resolve_login_email.sql` (hàm `resolve_login_email`: đăng nhập bằng username cho tài khoản đăng ký kèm email thật; chạy lúc nào cũng được; rollback `perf/rollback/20261001100000_resolve_login_email.down.sql`) — ĐANG CHỜ. Client đã gọi RPC, chưa chạy thì tự rơi về `@thachlab.local`.
 - `20260930160000_rank_title_distinct_questions.sql` (chống cày danh hiệu: đếm số câu khác nhau; `create or replace rank_title_stats`; chạy lúc nào cũng được; rollback `perf/rollback/20260930160000_rank_title_distinct_questions.down.sql`) — ĐANG CHỜ.
