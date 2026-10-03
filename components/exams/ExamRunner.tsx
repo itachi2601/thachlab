@@ -116,7 +116,7 @@ export default function ExamRunner({
   const [usedSeconds, setUsedSeconds] = useState(0);
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
-  const [paletteOpen, setPaletteOpen] = useState(true);
+  const [paletteOpen, setPaletteOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [violationBanner, setViolationBanner] = useState<{
     type: ViolationType;
@@ -442,14 +442,11 @@ export default function ExamRunner({
             </div>
           </div>
         )}
-        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-5 py-3 backdrop-blur-md">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="sticky top-16 z-40 mb-6 rounded-2xl border border-white/10 bg-panel/95 px-4 py-2 backdrop-blur-md">
+          <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-slate-400">
-              Câu <span className="font-semibold text-white">{cur + 1}</span>/
-              {exam.questions.length} · đã làm{" "}
-              <span className="font-semibold text-white">
-                {answeredCount}/{exam.questions.length}
-              </span>
+              Câu <span className="font-semibold text-white">{cur + 1}</span>/{exam.questions.length}
+              <span className="ml-2 hidden sm:inline">· đã làm {answeredCount}</span>
             </span>
             <span
               className={`font-mono text-lg font-semibold ${
@@ -458,14 +455,15 @@ export default function ExamRunner({
             >
               {formatClock(secondsLeft)}
             </span>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={() => setPaletteOpen((v) => !v)}>
-                {paletteOpen ? "Ẩn bảng câu" : "Bảng câu hỏi"}
-              </Button>
-              <Button size="sm" onClick={confirmSubmit}>
-                Nộp bài
-              </Button>
-            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="min-h-11"
+              aria-expanded={paletteOpen}
+              onClick={() => setPaletteOpen((v) => !v)}
+            >
+              {paletteOpen ? "Đóng" : `Bảng câu · ${answeredCount}/${exam.questions.length}`}
+            </Button>
           </div>
 
           {paletteOpen && (
@@ -476,7 +474,7 @@ export default function ExamRunner({
                     <div className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-slate-500">
                       {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-2">
                       {section.indices.map((i) => {
                         const item = exam.questions[i];
                         const state = answerState(item, responses[i]);
@@ -499,7 +497,7 @@ export default function ExamRunner({
                                   ? " · làm dở"
                                   : " · chưa làm"
                             }${flagged ? " · đánh dấu xem lại" : ""}`}
-                            className={`relative h-8 w-8 rounded-lg border text-xs font-bold transition-colors sm:h-9 sm:w-9 ${cls} ${
+                            className={`relative h-11 w-11 rounded-lg border text-sm font-bold transition-colors ${cls} ${
                               i === cur ? "ring-2 ring-white/70" : ""
                             }`}
                           >
@@ -533,6 +531,9 @@ export default function ExamRunner({
                   Đánh dấu xem lại
                 </span>
               </div>
+              <Button variant="outline" size="sm" className="mt-3 min-h-11 w-full" onClick={confirmSubmit}>
+                Nộp bài
+              </Button>
             </>
           )}
         </div>
@@ -551,26 +552,26 @@ export default function ExamRunner({
           />
         </QuestionSlide>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2">
-          <Button variant="outline" disabled={cur === 0} onClick={() => goTo(cur - 1)}>
-            ← Câu trước
+        <div className="mt-6 flex items-center gap-2">
+          <Button variant="outline" className="min-h-11" disabled={cur === 0} onClick={() => goTo(cur - 1)}>
+            ← Trước
           </Button>
           <Button
             variant="outline"
             onClick={() => toggleFlag(cur)}
-            className={
+            className={`min-h-11 ${
               flags.has(cur) ? "border-amber-400/60 bg-amber-400/10 text-amber-300" : ""
-            }
+            }`}
           >
             <Flag size={14} />
-            {flags.has(cur) ? "Bỏ đánh dấu" : "Đánh dấu xem lại"}
+            {flags.has(cur) ? "Bỏ dấu" : "Đánh dấu"}
           </Button>
           {cur < lastIndex ? (
-            <Button className="ml-auto" onClick={() => goTo(cur + 1)}>
-              Câu sau →
+            <Button className="ml-auto min-h-11" onClick={() => goTo(cur + 1)}>
+              Sau →
             </Button>
           ) : (
-            <Button className="ml-auto" onClick={confirmSubmit}>
+            <Button className="ml-auto min-h-11" onClick={confirmSubmit}>
               Nộp bài
             </Button>
           )}

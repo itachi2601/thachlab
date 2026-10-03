@@ -267,6 +267,8 @@ export default function QuestionCard({
             </div>
           ) : (
             <input
+              inputMode="decimal"
+              autoComplete="off"
               value={typeof r === "string" ? r : ""}
               onChange={(e) => {
                 const v = e.target.value.replace(/[^0-9,.\-]/g, "").slice(0, 4);
