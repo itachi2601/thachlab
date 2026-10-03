@@ -83,7 +83,7 @@ export default function ParentUpcoming({ classId, courses }: { classId: number; 
       {freshTask && (
         <div className="mt-4 rounded-xl border border-cyan-400/25 bg-cyan-400/[.06] p-3">
           <p className="text-slate-400">Thầy nhắn con</p>
-          <p className="parent-copy mt-0.5 whitespace-pre-wrap text-slate-100">{freshTask.body}</p>
+          <p className="parent-copy mt-0.5 whitespace-pre-wrap text-white">{freshTask.body}</p>
         </div>
       )}
     </section>

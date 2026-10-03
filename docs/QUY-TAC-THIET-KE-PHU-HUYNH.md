@@ -218,12 +218,16 @@ nhắn thoại Zalo ở thẻ liên hệ (gõ phím chậm với tay lớn tuổ
 | 10 | Đăng ký học (nếu đang chờ duyệt) · Xem lớp đang mở | việc thương mại ở cuối |
 | 11 | Thẻ liên hệ thầy + FAQ | P10, P19 |
 
-![Trang phụ huynh đã đăng nhập — 375px (ảnh dựng, xem ghi chú)](anh/phu-huynh-2026-10/phu-huynh-375-sang-mockup.webp)
-![Trang phụ huynh đã đăng nhập — 1280px (ảnh dựng)](anh/phu-huynh-2026-10/phu-huynh-1280-sang-mockup.webp)
+![Trang phụ huynh đã đăng nhập — 375px, nền sáng (dữ liệu mẫu)](anh/phu-huynh-2026-10/phu-huynh-375-sang-du-lieu-mau.webp)
+![Trang phụ huynh đã đăng nhập — 1280px, nền sáng (dữ liệu mẫu)](anh/phu-huynh-2026-10/phu-huynh-1280-sang-du-lieu-mau.webp)
+![Trang phụ huynh đã đăng nhập — 375px, nền tối (dữ liệu mẫu)](anh/phu-huynh-2026-10/phu-huynh-375-toi-du-lieu-mau.webp)
 
-> **Hai ảnh "đã đăng nhập" là ảnh DỰNG**: dữ liệu điểm là dữ liệu mẫu (5 bài, 3 chủ đề), vì phiên làm
-> việc không có tài khoản phụ huynh thật để chụp. Mockup dựng bằng đúng component thật, không phải vẽ lại.
-> Cần chụp lại bằng tài khoản phụ huynh thật trước khi coi là ảnh nghiệm thu.
+> **Ba ảnh trên chụp 3/10/2026 bằng DỮ LIỆU MẪU** (con tên giả "Nguyễn Minh An", điểm/điểm danh/lịch/học phí
+> do tôi bịa): chạy chính trang thật `/phu-huynh` trên bản dev, giả lập Supabase trong trình duyệt (session và
+> các request `/rest/v1/*` trả dữ liệu mẫu), Chrome headless + CDP chụp trọn trang, 375px và 1280px, không cuộn
+> ngang. Production chưa có phụ huynh nào nối với con (`parent_links` = 0) nên chưa có ảnh bằng dữ liệu thật —
+> khi có, chụp lại và thay. Chụp lần này bắt được 2 lỗi (chữ "Thầy nhắn con" gần như vô hình ở nền sáng; nhãn
+> "Mục tiêu" đè lên số trên cột) — đã sửa trước khi chụp bản cuối.
 
 ---
 
@@ -275,7 +279,7 @@ Cách đo: `scripts/check-a11y.mjs` cho từng cặp màu; Chrome headless + Dev
 | Nhận xét của thầy theo từng con | chưa có bảng; `student_alerts.handled_note` là gần nhất | nếu thầy muốn, thêm cột ghi chú ngắn theo tuần |
 | Cam kết "thầy trả lời Zalo trong ngày" | hiện ghi "**thường** trả lời trong ngày" để không hứa thay thầy | thầy xác nhận thời gian thật thì sửa lại |
 | Phụ huynh có biết con biết mình xem điểm không | chưa quyết: minh bạch (báo cho con) hay không | thầy quyết — ảnh hưởng niềm tin thầy–trò, đừng tự làm |
-| Ảnh nghiệm thu trang đã đăng nhập | cần tài khoản phụ huynh thật | chụp lại 375/1280, sáng/tối rồi thay 2 ảnh mockup |
+| Ảnh nghiệm thu bằng dữ liệu thật | production chưa có phụ huynh nào nối với con | khi có tài khoản + em thử, chụp lại 375/1280 và thay 3 ảnh dữ liệu mẫu ở §3.2 |
 | Footer nền đen trên trang sáng | `Footer.tsx` dùng `bg-[#04060A]`, không có nhánh sáng; chữ 12px | đổi thành `bg-panel`/chữ ≥15px khi ở `/phu-huynh` (đụng file dùng chung — hỏi thầy trước) |
 | **Phỏng vấn 5–8 phụ huynh thật** | chưa làm; mọi mục `[SUY LUẬN]`/`[CHƯA CÓ NGUỒN]` còn nguyên | xem §9 — câu hỏi cần kiểm |
 

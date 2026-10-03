@@ -32,15 +32,10 @@ export default function ParentScoreBars({ points, goal }: { points: BarPoint[]; 
             6,5
           </span>
           {goal ? (
-            <>
-              <span
-                className="pointer-events-none absolute inset-x-0 border-t-2 border-cyan-300/80"
-                style={{ bottom: at(goal) }}
-              />
-              <span className="absolute left-0 text-[15px] font-semibold text-cyan-300" style={{ bottom: at(goal) + 1 }}>
-                Mục tiêu {scoreText(goal)}
-              </span>
-            </>
+            <span
+              className="pointer-events-none absolute inset-x-0 border-t-2 border-cyan-600"
+              style={{ bottom: at(goal) }}
+            />
           ) : null}
           <div className="absolute inset-0 flex items-end justify-around gap-1.5 pl-1 pr-9">
             {shown.map((p) => {
@@ -69,6 +64,7 @@ export default function ParentScoreBars({ points, goal }: { points: BarPoint[]; 
       </div>
       <figcaption className="mt-2 text-[15px] text-slate-400">
         Mỗi cột là một bài, từ cũ (trái) đến mới (phải). Vạch đứt là mốc 6,5 (bắt đầu mức Khá).
+        {goal ? ` Vạch xanh liền là mục tiêu ${scoreText(goal)} do phụ huynh chọn.` : ""}
       </figcaption>
     </figure>
   );
