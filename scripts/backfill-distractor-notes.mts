@@ -110,7 +110,8 @@ const SYSTEM =
   '"thầy/cô", không chữ "thầy". Công thức viết trong $…$ (KaTeX); trong công thức dùng \\lt, \\gt thay cho < và >. ' +
   "Không nhắc lại đáp án đúng, không tiết lộ số liệu cuối. Chỉ trả về DUY NHẤT một JSON hợp lệ dạng " +
   '{"results":[{"index":0,"notes":{"A":"…","C":"…","D":"…"}}]} — khoá là nhãn phương án SAI (A–D), không bọc ' +
-  "trong markdown code fence, không lời giải thích thêm.";
+  "trong markdown code fence, không lời giải thích thêm. Trong chuỗi JSON, mỗi dấu gạch chéo ngược của LaTeX phải " +
+  'nhân đôi ("\\\\lambda", "\\\\frac").';
 
 function buildPrompt(items: { i: number; text: string; wrong: string[] }[]): string {
   return items
@@ -138,24 +139,38 @@ function cleanNotes(raw: unknown, wrong: string[]): { notes: Record<string, stri
   return { notes: out };
 }
 
-async function generateBatch(apiKey: string, items: { i: number; text: string; wrong: string[] }[]): Promise<Map<number, Record<string, string>>> {
-  const res = await withRetry(
-    () =>
-      fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
-        body: JSON.stringify({ model: MODEL, max_tokens: 4096, system: SYSTEM, messages: [{ role: "user", content: buildPrompt(items) }] }),
-      }),
-    "Gọi AI",
-  );
-  if (!res.ok) throw new Error(`Anthropic API lỗi ${res.status}: ${await res.text()}`);
-  const data = (await res.json()) as { content?: { type: string; text?: string }[] };
-  const raw = data.content?.find((b) => b.type === "text")?.text ?? "";
+/** AI đôi khi quên nhân đôi dấu \ của LaTeX trong chuỗi JSON ("\lambda" là escape không hợp lệ → JSON.parse hỏng cả lô).
+ *  Ghi chú không có xuống dòng/tab thật, nên mọi \ đơn không đứng trước " đều coi là dấu \ của công thức → nhân đôi. */
+function repairJson(s: string): string {
+  const P = "\u0000";
+  return s.replace(/\\\\/g, P).replace(/\\(?!")/g, "\\\\").replace(new RegExp(P, "g"), "\\\\");
+}
+
+function parseResults(raw: string): unknown[] {
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
   if (start < 0 || end < 0) throw new Error("AI không trả về JSON hợp lệ.");
-  const parsed = JSON.parse(raw.slice(start, end + 1)) as { results?: unknown };
-  const rows = Array.isArray(parsed.results) ? parsed.results : [];
+  const slice = raw.slice(start, end + 1);
+  let parsed: { results?: unknown };
+  try {
+    parsed = JSON.parse(slice) as { results?: unknown };
+  } catch {
+    parsed = JSON.parse(repairJson(slice)) as { results?: unknown }; // ném lỗi tiếp nếu vẫn hỏng
+  }
+  return Array.isArray(parsed.results) ? parsed.results : [];
+}
+
+async function generateBatch(apiKey: string, items: { i: number; text: string; wrong: string[] }[]): Promise<Map<number, Record<string, string>>> {
+  let rows: unknown[] = [];
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      rows = parseResults(await callAi(apiKey, items));
+      break;
+    } catch (e) {
+      if (attempt >= 2) throw e;
+      console.log(`  ↻ JSON hỏng (${e instanceof Error ? e.message : String(e)}), gọi AI lại lần 2…`);
+    }
+  }
   const byIndex = new Map(items.map((it) => [it.i, it]));
   const out = new Map<number, Record<string, string>>();
   const seen = new Set<number>();
@@ -171,6 +186,21 @@ async function generateBatch(apiKey: string, items: { i: number; text: string; w
   }
   for (const it of items) if (!seen.has(it.i)) console.log(`  ✗ index ${it.i}: AI không trả về câu này`);
   return out;
+}
+
+async function callAi(apiKey: string, items: { i: number; text: string; wrong: string[] }[]): Promise<string> {
+  const res = await withRetry(
+    () =>
+      fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
+        body: JSON.stringify({ model: MODEL, max_tokens: 4096, system: SYSTEM, messages: [{ role: "user", content: buildPrompt(items) }] }),
+      }),
+    "Gọi AI",
+  );
+  if (!res.ok) throw new Error(`Anthropic API lỗi ${res.status}: ${await res.text()}`);
+  const data = (await res.json()) as { content?: { type: string; text?: string }[] };
+  return data.content?.find((b) => b.type === "text")?.text ?? "";
 }
 
 async function main() {
