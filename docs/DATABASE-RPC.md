@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 229 hàm, sinh tự động 2026-09-30
+# Hàm SQL / RPC (schema public) — 250 hàm, sinh tự động 2026-10-03
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -10,6 +10,8 @@ repo — xem trên Supabase Dashboard).
 - `apply_parent_link(p_user_id uuid, p_code text)` → uuid
 - `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
 - `assists_class(p_class bigint)` → boolean
+- `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
+- `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
@@ -22,6 +24,7 @@ repo — xem trên Supabase Dashboard).
 - `evaluate_student_alerts(p_student uuid)` → void
 - `exam_open_to_student(p_exam_id bigint, p_user_id uuid)` → boolean
 - `find_similar_bank_questions(p_grade text, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
+- `find_similar_bank_questions_in_topic(p_grade text, p_topic_id bigint, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
 - `get_chapter_mastery(p_chapter bigint)` → TABLE(lesson_id bigint, lesson_title text, sort_order integer, level text)
 - `get_class_exam_best(p_exam bigint, p_students uuid[])` → TABLE(student_id uuid, score numeric, duration_seconds integer)
 - `get_class_exam_question_stats(p_exam bigint, p_students uuid[])` → TABLE(question_index integer, topic_name text, form text, qtype text, total integer, wrong integer)
@@ -92,6 +95,22 @@ repo — xem trên Supabase Dashboard).
 - `rank_eval_weekly_goal(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_fix_quiz_start(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
 - `rank_fix_quiz_submit(p_attempt_id bigint, p_correct integer)` → jsonb
+- `rank_gate_adaptive_code(p_code text)` → boolean
+- `rank_gate_answer(p_attempt_id bigint, p_response jsonb, p_question_id bigint)` → jsonb
+- `rank_gate_attempts_of(p_student uuid, p_season bigint)` → jsonb
+- `rank_gate_current_payload(a rank_gate_attempts)` → jsonb
+- `rank_gate_finish(p_attempt_id bigint)` → jsonb
+- `rank_gate_grade(p_season bigint, p_student uuid)` → text
+- `rank_gate_lvl(p text)` → integer
+- `rank_gate_lvl_name(p integer)` → text
+- `rank_gate_mode(p_season bigint)` → text
+- `rank_gate_pick(p_pool bigint[], p_used bigint[], p_level text)` → bigint
+- `rank_gate_pool_ids(p_season bigint, p_student uuid, p_grade text)` → bigint[]
+- `rank_gate_pool_size(p_season bigint, p_grade text)` → integer
+- `rank_gate_public_question(p_id bigint, q jsonb)` → jsonb
+- `rank_gate_rule(p_season bigint, p_code text)` → TABLE(pct integer, hard integer, lvl text)
+- `rank_gate_start(p_tier_code text)` → jsonb
+- `rank_grade_question(q jsonb, r jsonb)` → boolean
 - `rank_grant_title(p_student uuid, p_title text, p_level text, p_season bigint, p_evidence jsonb)` → boolean
 - `rank_honor_name(p_name text, p_vis text)` → text
 - `rank_is_paragon(p_student uuid)` → boolean
@@ -140,6 +159,7 @@ repo — xem trên Supabase Dashboard).
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
 - `seed_absent_attendance_for_enrollment()` → trigger
@@ -153,6 +173,7 @@ repo — xem trên Supabase Dashboard).
 - `similarity(text, text)` → real
 - `similarity_dist(text, text)` → real
 - `similarity_op(text, text)` → boolean
+- `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void

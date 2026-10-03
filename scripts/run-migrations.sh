@@ -14,10 +14,8 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261003100000_rank_gate_adaptive.sql|Thi thang hang thich ung: bang rank_gate_attempts, RPC rank_gate_start/answer/finish/attempts_of, 3 cot nguong o rank_tiers, sua rank_eval_gates + rank_tier_needs_gate + rank_status_of (khoa next.gate.adaptive/can_start/...)|NGOAI GIO hoc sinh lam bai (alter rank_tiers + create or replace 3 ham rank); rollback: perf/rollback/20261003100000_rank_gate_adaptive.down.sql; test: supabase db query --linked -f docs/supabase-test-rank-gate.sql"
-  "supabase/migrations/20261003110000_rank_rp_first_attempt.sql|RP chi tinh LUOT DAU cua moi bai trong mua (create or replace rank_on_result; co config rp_first_attempt_only, mac dinh 1)|NGOAI GIO hoc sinh lam bai (ham chay sau moi lan nop bai); rollback: perf/rollback/20261003110000_rank_rp_first_attempt.down.sql; test: supabase db query --linked -f docs/supabase-test-rank-rp-first.sql"
-  "supabase/migrations/20261003120000_distractor_notes.sql|Ghi chu phuong an nhieu (Luyen tap Tung cau): question_content_hash bo qua distractorNotes + ham bank_set_distractor_notes (ghi vao ngan hang VA de chua cau)|NGOAI GIO hoc sinh lam bai (doi ham hash dung chung); CHAY TRUOC scripts/backfill-distractor-notes.mts; rollback: perf/rollback/20261003120000_distractor_notes.down.sql; test: supabase db query --linked -f docs/supabase-test-distractor-notes.sql"
 )
+# ĐÃ CHẠY 3/10/2026 13:30: 20261003100000_rank_gate_adaptive, 20261003110000_rank_rp_first_attempt, 20261003120000_distractor_notes
 # ĐÃ CHẠY (kiểm trên production 3/10/2026 13:20 — hàm tồn tại, log scripts/logs/ không lỗi): 20260930160000_rank_title_distinct_questions (nhiều lần, idempotent),
 #   20260930170000_question_bank_hash_ignore_image_ts + 20260930180000_bank_similarity_per_topic (1/10, file đã bị xoá khỏi đĩa),
 #   20261001100000_resolve_login_email, 20261002100000_ta_all_classes, 20261002110000_staff_student_account (2/10 23:54).
