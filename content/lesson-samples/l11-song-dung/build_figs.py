@@ -26,20 +26,20 @@ b += poly(sine(30, 410, 62, 36, 760), GRN, 2.6)
 b += poly(sine(30, 410, 62, -36, 760), GRN, 1.6, "5 4", .5)
 b += dot(30, 62, 4) + dot(410, 62, 4)
 b += text(20, 112, "đầu cố định", "currentColor", 11, "start", "400")
-# (b) bấm phím ở giữa: đoạn rung còn một nửa, 2 bó
-b += text(20, 136, "Bấm phím giữa dây: đoạn rung còn một nửa, 2 bó — nốt cao hơn", "currentColor", 12, "start")
-b += poly(sine(30, 250, 182, 34, 220), GRN, 2.6)
-b += poly(sine(30, 250, 182, -34, 220), GRN, 1.6, "5 4", .5)
+# (b) bấm phím đúng giữa dây (phím 12): đoạn rung còn một nửa, VẪN 1 bó -> bước sóng giảm một nửa
+b += text(20, 136, "Bấm phím ở giữa dây (phím 12): đoạn rung còn một nửa, vẫn 1 bó", "currentColor", 11, "start")
+b += poly(sine(30, 220, 182, 34, 380), GRN, 2.6)
+b += poly(sine(30, 220, 182, -34, 380), GRN, 1.6, "5 4", .5)
 b += seg(30, 152, 30, 212, "currentColor", 3)
-b += seg(250, 152, 250, 212, "currentColor", 2.5)
-b += seg(250, 182, 410, 182, "currentColor", 1.4, "3 3", .35)
-b += dot(30, 182, 4) + dot(250, 182, 5, ORG)
-b += text(258, 174, "ngón bấm", ORG, 11, "start", "700")
+b += seg(220, 152, 220, 212, "currentColor", 2.5)
+b += seg(220, 182, 410, 182, "currentColor", 1.4, "3 3", .35)
+b += dot(30, 182, 4) + dot(220, 182, 5, ORG)
+b += text(228, 174, "ngón bấm ở giữa dây", ORG, 11, "start", "700")
 b += text(330, 204, "không rung", "currentColor", 11, "middle", "400")
 fig1 = wrap("0 0 440 226",
-            "Dây đàn buông rung thành 1 bó; bấm phím cho đoạn rung ngắn còn một nửa thì có 2 bó và nốt cao hơn",
+            "Dây đàn buông rung thành 1 bó; bấm phím ở giữa dây cho đoạn rung ngắn còn một nửa, vẫn 1 bó nên tần số gấp đôi",
             b,
-            "Hình 1. Bấm phím làm đoạn dây rung <strong>ngắn lại</strong>: cùng sợi dây, sóng dừng chuyển từ 1 bó sang 2 bó, nên tần số tăng, nốt cao hơn.")
+            "Hình 1. Bấm phím ở giữa dây làm đoạn rung <strong>ngắn còn một nửa</strong>: vẫn một bó sóng nhưng bước sóng giảm một nửa, nên tần số tăng gấp đôi — nốt cao hơn một quãng tám.")
 fig1 = fig1.replace('<figure class="fig" data-tl="1">',
                     '<figure class="fig" data-tl="1" data-exp="tn-l11-songdung-04">', 1)
 

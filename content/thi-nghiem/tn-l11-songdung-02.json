@@ -42,11 +42,11 @@
   "quan_sat": [
    "Số bó k tăng theo f; ở giữa hai nút dây vồng lên rõ nhất.",
    "Tính lam = 2l/k và v = lam·f cho mỗi lần đo; v ra gần như cùng một giá trị.",
-   "Bảng mẫu: k = 2 → f = 25,0 Hz, v = 20,0 m/s; k = 3 → 37,5 Hz, 20,0 m/s; k = 4 → 50,0 Hz, 20,0 m/s; k = 5 → 62,5 Hz, 20,0 m/s."
+   "Bảng đo được: k = 2 → f = 24,9 Hz; k = 3 → 37,4 Hz; k = 4 → 50,2 Hz; k = 5 → 62,3 Hz; lam tính ra 0,80; 0,53; 0,40; 0,32 m."
   ],
   "rut_ra": [
-   "Các tần số có sóng dừng là f = k·v/(2l), tức 25,0; 37,5; 50,0; 62,5 Hz — cách nhau đều 12,5 Hz.",
-   "Tốc độ truyền sóng v = lam·f ≈ 20 m/s không đổi: v do sợi dây quyết định, không do tần số."
+   "Các tần số có sóng dừng xấp xỉ 25,0; 37,5; 50,0; 62,5 Hz — cách nhau đều 12,5 Hz.",
+   "Bốn lần đo đều cho v trong khoảng 20 ± 0,1 m/s (sai số cỡ 0,6% do thước đo chiều dài): v do sợi dây quyết định, không do tần số."
   ]
  },
  "tham_so": [
@@ -110,38 +110,40 @@
   "hang": [
    [
     2,
-    25,
+    24.9,
     0.8,
-    20
+    19.9
    ],
    [
     3,
-    37.5,
+    37.4,
     0.53,
-    20
+    19.9
    ],
    [
     4,
-    50,
+    50.2,
     0.4,
-    20
+    20.1
    ],
    [
     5,
-    62.5,
+    62.3,
     0.32,
-    20
+    19.9
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (không phải số đo thật). Chạy lại mô hình sẽ cho đúng bốn hàng này."
+  "ghi_chu": "Số liệu minh hoạ, KHÔNG phải số đo thật: lấy mô hình l = 0,80 m, v = 20 m/s rồi thêm nhiễu đo (f lệch ±0,2 Hz, l lệch ±0,5 cm) cho giống thực nghiệm; v dao động trong 19,9–20,1 m/s."
  },
- "ket_qua_ky_vong": "Với l = 0,80 m và v = 20 m/s: các tần số có sóng dừng là 12,5; 25,0; 37,5; 50,0; 62,5 Hz. Mỗi lần đo đều cho v ≈ 20,0 m/s, sai khác dưới 1%.",
+ "ket_qua_ky_vong": [
+  "Với l = 0,80 m và v = 20 m/s: các tần số có sóng dừng là 12,5; 25,0; 37,5; 50,0; 62,5 Hz. Bốn lần đo đều cho v ≈ 20 m/s, tản mát ±0,1 m/s — đúng cỡ sai số của thước đo chiều dài."
+ ],
  "hien_tuong_hay_sai": [
   "Nghĩ rằng tăng tần số thì tốc độ truyền sóng tăng theo.",
   "Lấy lam = l/k (quên rằng mỗi bó dài lam/2, nên lam = 2l/k) — kết quả v sai đúng một nửa."
  ],
  "sai_so_thuong_gap": [
-  "Đọc chiều dài dây bằng thước dây: sai số ±0,5 cm, cỡ 0,6%.",
+  "Đọc chiều dài dây bằng thước dây: sai số ±0,5 cm trên 0,80 m, cỡ 0,6% (±0,1 m/s).",
   "Đếm nhầm số bó khi dây rung chưa rõ nét (hay đếm thiếu một bó ở mép).",
   "Vạch chia tần số của máy rung; dây căng lệch giữa hai lần đo làm v đổi chút ít."
  ],
