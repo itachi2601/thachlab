@@ -63,7 +63,9 @@ export default function ParentHomeworkNotes({ classId, studentId }: { classId: n
                   <CheckCircle2 size={12} /> Trợ giảng đã chấm trên lớp: {percent}% đã làm
                 </p>
               ) : (
-                <p className="mt-1.5 text-[12px] text-slate-600">Chưa được chấm trên lớp.</p>
+                // slate-600 (#475569) trên panel tối chỉ ~3,4:1 — dưới ngưỡng đọc của phụ huynh; dùng
+                // slate-500 (token đã được nâng ở @theme và .parent-page) để đạt ≥4,5:1 cả hai theme.
+                <p className="mt-1.5 text-[12px] text-slate-500">Chưa được chấm trên lớp.</p>
               )}
             </div>
           );

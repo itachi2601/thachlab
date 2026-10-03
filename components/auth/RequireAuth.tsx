@@ -4,9 +4,13 @@ import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 
-function Notice({ children }: { children: React.ReactNode }) {
+function Notice({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
-    <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8 text-center text-slate-300">
+    <div
+      className={`mx-auto rounded-2xl border border-white/10 bg-panel p-6 sm:p-8 ${
+        wide ? "max-w-3xl text-left text-slate-300" : "max-w-xl text-center text-slate-300"
+      }`}
+    >
       {children}
     </div>
   );
@@ -24,6 +28,10 @@ function Notice({ children }: { children: React.ReactNode }) {
  *   Để riêng khỏi guestNotice vì hàng nút do component này render.
  * - loginHref: đích nút Đăng nhập (mặc định /dang-nhap).
  * - showSignUp: ẩn nút Đăng ký khi form /dang-ky không hợp với người xem (phụ huynh tạo tài khoản qua link mời).
+ * - guestWide: khách chưa đăng nhập thấy khung rộng (max-w-3xl) và căn trái — dùng khi nội dung
+ *   khách là một trang giới thiệu thật (vd /phu-huynh) chứ không phải 1 câu nhắc đăng nhập.
+ * - guestHideAuthRow: trang tự vẽ nút hành động trong guestNotice (để đặt Zalo/gọi lên trước,
+ *   Đăng nhập xuống dưới) — component thôi render hàng nút Đăng nhập/Đăng ký mặc định.
  */
 export default function RequireAuth({
   children,
@@ -34,6 +42,8 @@ export default function RequireAuth({
   guestActions,
   loginHref = "/dang-nhap",
   showSignUp = true,
+  guestWide = false,
+  guestHideAuthRow = false,
 }: {
   children: React.ReactNode;
   adminOnly?: boolean;
@@ -43,6 +53,8 @@ export default function RequireAuth({
   guestActions?: React.ReactNode;
   loginHref?: string;
   showSignUp?: boolean;
+  guestWide?: boolean;
+  guestHideAuthRow?: boolean;
 }) {
   const { session, profile, loading } = useAuth();
 
@@ -63,25 +75,27 @@ export default function RequireAuth({
 
   if (!session) {
     return (
-      <Notice>
+      <Notice wide={guestWide}>
         {guestNotice ?? <p>Em cần đăng nhập để sử dụng tính năng này.</p>}
-        <div className="mt-5 flex justify-center gap-3">
-          <Link
-            href={loginHref}
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
-          >
-            Đăng nhập
-          </Link>
-          {showSignUp && (
+        {!guestHideAuthRow && (
+          <div className={`mt-5 flex flex-wrap gap-3 ${guestWide ? "" : "justify-center"}`}>
             <Link
-              href="/dang-ky"
-              className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
+              href={loginHref}
+              className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
             >
-              Đăng ký
+              Đăng nhập
             </Link>
-          )}
-          {guestActions}
-        </div>
+            {showSignUp && (
+              <Link
+                href="/dang-ky"
+                className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
+              >
+                Đăng ký
+              </Link>
+            )}
+            {guestActions}
+          </div>
+        )}
       </Notice>
     );
   }

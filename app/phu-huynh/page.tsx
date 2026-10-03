@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { CalendarPlus, ChevronDown, MessageCircle, Users } from "lucide-react";
+import { CalendarPlus, ChevronDown, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -12,11 +11,21 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
 import CatchupCard from "@/components/results/CatchupCard";
 import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
+import ParentFaq from "@/components/parent/ParentFaq";
+import ParentGuestLanding from "@/components/parent/ParentGuestLanding";
+import TeacherContact from "@/components/parent/TeacherContact";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
-import { CONTACT, PARENT_SHOTS } from "@/lib/contact";
 
+/**
+ * Trang phụ huynh — người đọc chính là cha/mẹ 45–60 tuổi (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md).
+ * Khác trang học sinh ở 4 điểm, có chủ ý:
+ *   - Thứ tự: trả lời "con học thế nào" trước, việc phụ (đăng ký lớp khác, xem thành tích) xuống cuối (P7).
+ *   - Liên hệ thầy ở cả đầu và cuối trang, dạng gọi điện/Zalo chứ không phải form (P10, P18).
+ *   - Chữ to hơn và tương phản cao hơn (P1, P2) — qua class .parent-page ở app/globals.css.
+ *   - Không có gì ghi: mọi quyền của phụ huynh đều là đọc.
+ */
 function Notice({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-panel p-8 text-center text-slate-300">
@@ -33,24 +42,28 @@ const REG_TONE: Record<MyRegistration["status"], string> = {
   left: "text-slate-500",
 };
 
-/** Các đăng ký học (của con đã nối, hoặc con chưa có tài khoản) và trạng thái duyệt. */
+/**
+ * Đăng ký học của con đang chờ duyệt / bị từ chối / đã nghỉ. Đăng ký đã duyệt (active) không hiện:
+ * nó không còn là việc phải làm, mà lại chiếm chỗ của phần kết quả học tập (N3, P7).
+ */
 function RegistrationList({ items }: { items: MyRegistration[] }) {
-  if (items.length === 0) return null;
+  const needAttention = items.filter((r) => r.status !== "active");
+  if (needAttention.length === 0) return null;
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5 text-left">
-      <h2 className="font-display font-semibold text-white">Đăng ký học</h2>
+    <section className="mb-6 rounded-2xl border border-white/10 bg-panel p-5">
+      <h2 className="font-display text-lg font-semibold text-white">Đăng ký học</h2>
       <ul className="mt-3 space-y-2">
-        {items.map((r) => (
-          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2 text-sm">
+        {needAttention.map((r) => (
+          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-xl bg-white/[.02] px-3 py-2">
             <span className="min-w-0 flex-1">
               <span className="block font-semibold text-white">{r.courseName}</span>
-              <span className="block text-xs text-slate-400">
+              <span className="block text-slate-400">
                 {r.student_id === null ? `${r.child_name} (chưa có tài khoản)` : r.studentName}
                 {r.className ? ` · khối ${r.className}` : ""}
                 {r.joined_late ? " · vào trễ, sẽ bù bài" : ""}
               </span>
             </span>
-            <span className={`text-xs font-bold ${REG_TONE[r.status]}`}>{REGISTRATION_STATUS_LABEL[r.status]}</span>
+            <span className={`font-bold ${REG_TONE[r.status]}`}>{REGISTRATION_STATUS_LABEL[r.status]}</span>
           </li>
         ))}
       </ul>
@@ -58,9 +71,40 @@ function RegistrationList({ items }: { items: MyRegistration[] }) {
   );
 }
 
+/** Chưa nối với con nào: phụ huynh cần biết xin mã ở đâu — nút gọi/Zalo phải nằm ngay đây (P9, P10). */
+function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
+  return (
+    <Notice>
+      <Users className="mx-auto text-slate-400" size={36} />
+      <h1 className="mt-4 font-display text-xl font-bold text-white">Tài khoản này chưa nối với con</h1>
+      <p className="mt-3 text-left text-slate-400">
+        Thầy cần gửi anh chị một <b>link mời</b> (dạng{" "}
+        <code className="rounded bg-white/[.06] px-1.5 py-0.5 text-slate-200">/loi-moi?ma=PH…</code>) để
+        tài khoản này nối với con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
+      </p>
+      <RegistrationList items={registrations} />
+      <div className="mt-5 flex flex-wrap justify-center gap-3">
+        <Link
+          href="/khoa-hoc"
+          className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-2.5 font-semibold text-slate-200 hover:border-white/30"
+        >
+          <CalendarPlus size={16} /> Đăng ký học cho con
+        </Link>
+        <Link
+          href="/tai-khoan"
+          className="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-2.5 font-semibold text-slate-200 hover:border-white/30"
+        >
+          Về tài khoản
+        </Link>
+      </div>
+    </Notice>
+  );
+}
+
 /**
- * Trang phụ huynh: chọn con (nếu nối nhiều em) rồi xem đúng bảng kết quả em thấy ở
- * /lop-hoc/ket-qua, đổi cách xưng hô. Không có gì để ghi — mọi quyền chỉ là đọc.
+ * Phụ huynh đã đăng nhập: chọn con (nếu nối nhiều em) rồi xem đúng số liệu con thấy ở
+ * /lop-hoc/ket-qua, đổi cách xưng hô. Phần "tóm tắt cho anh chị" nằm trong dashboard (nó cần
+ * dữ liệu điểm đã tải ở đó — không gọi thêm Supabase lần nào).
  */
 function ParentHome() {
   const { session } = useAuth();
@@ -79,85 +123,100 @@ function ParentHome() {
       .catch(() => setChildren([]));
   }, [session]);
 
-  if (children === null) return <Notice>Đang tải…</Notice>;
+  if (children === null) return <Notice>Đang tải kết quả của con…</Notice>;
 
-  if (children.length === 0)
-    return (
-      <Notice>
-        <Users className="mx-auto text-slate-500" size={36} />
-        <h1 className="mt-4 font-display text-xl font-bold text-white">Chưa nối với học sinh nào</h1>
-        <p className="mt-2 text-sm text-slate-400">
-          Tài khoản này chưa được gắn với con. Nhờ giáo viên chủ nhiệm tạo mã phụ huynh cho con
-          (dạng <code className="text-slate-300">PH1A2B3C</code>) rồi mở link{" "}
-          <code className="text-slate-300">/loi-moi?ma=PH…</code> để nối.
-        </p>
-        <RegistrationList items={registrations} />
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link
-            href="/khoa-hoc"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white"
-          >
-            <CalendarPlus size={16} /> Đăng ký học cho con
-          </Link>
-          <Link
-            href="/tai-khoan"
-            className="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200"
-          >
-            Về tài khoản
-          </Link>
-        </div>
-      </Notice>
-    );
+  if (children.length === 0) return <NoChildYet registrations={registrations} />;
 
   const selected = children.find((c) => c.studentId === selectedId) ?? children[0];
-  const selectedRegistrations = registrations.filter((r) => r.student_id === selected.studentId || r.student_id === null);
+  const selectedRegistrations = registrations.filter(
+    (r) => r.student_id === selected.studentId || r.student_id === null,
+  );
 
   return (
     <div className="mx-auto w-full max-w-4xl">
-      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-3">
-        <span className="text-sm text-slate-300">Muốn con học thêm lớp khác hoặc đăng ký cho em nhỏ?</span>
-        <Link href="/khoa-hoc" className="ml-auto inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white">
-          <CalendarPlus size={15} /> Đăng ký học
-        </Link>
+      <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+        {children.length > 1 && (
+          <>
+            <label htmlFor="chon-con" className="font-semibold text-slate-300">
+              Chọn con:
+            </label>
+            <span className="relative">
+              <select
+                id="chon-con"
+                value={selected.studentId}
+                onChange={(e) => setSelectedId(e.target.value)}
+                className="appearance-none rounded-xl border border-white/10 bg-panel py-2.5 pl-4 pr-10 font-semibold text-white focus:border-primary focus:outline-none"
+              >
+                {children.map((c) => (
+                  <option key={c.studentId} value={c.studentId}>
+                    {c.fullName}
+                    {c.classLabel ? ` · lớp ${c.classLabel}` : ""}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                size={18}
+                className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"
+              />
+            </span>
+          </>
+        )}
+        {selected.classLabel && (
+          <span className="rounded-full border border-white/15 px-3 py-1 font-semibold text-slate-300">
+            Lớp {selected.classLabel}
+          </span>
+        )}
       </div>
-      <RegistrationList items={selectedRegistrations} />
-      {children.length > 1 && (
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <span className="text-sm text-slate-400">Đang xem:</span>
-          <label className="relative">
-            <select
-              value={selected.studentId}
-              onChange={(e) => setSelectedId(e.target.value)}
-              className="appearance-none rounded-xl border border-white/10 bg-panel py-2 pl-4 pr-10 text-sm font-semibold text-white focus:border-primary focus:outline-none"
-            >
-              {children.map((c) => (
-                <option key={c.studentId} value={c.studentId}>
-                  {c.fullName}
-                  {c.classLabel ? ` · lớp ${c.classLabel}` : ""}
-                </option>
-              ))}
-            </select>
-            <ChevronDown size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-500" />
-          </label>
-        </div>
-      )}
+
+      <TeacherContact variant="slim" className="mb-6" />
+
       {selected.classId === null && (
-        <p className="mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-sm text-amber-100/90">
-          {selected.fullName} chưa được duyệt vào khối lớp nào trên thachlab, nên chưa có hạng trong lớp.
+        <p className="parent-copy mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-amber-100/90">
+          {selected.fullName} chưa được thầy duyệt vào lớp trên thachlab, nên chưa có điểm và chưa có
+          hạng trong lớp. Anh chị nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
         </p>
       )}
-      {selected.classId !== null && (
-        <ParentHomeworkNotes key={`homework-${selected.studentId}`} classId={selected.classId} studentId={selected.studentId} />
-      )}
-      <div className="mb-6">
-        <CatchupCard key={`catchup-${selected.studentId}`} studentId={selected.studentId} classId={selected.classId} viewer="parent" />
-      </div>
+
       <StudentResultsDashboard
         key={selected.studentId}
         studentId={selected.studentId}
         viewer="parent"
-        title={selected.fullName}
+        title={`Con: ${selected.fullName}`}
+        afterSummary={
+          selected.classId !== null ? (
+            <>
+              <ParentHomeworkNotes
+                key={`homework-${selected.studentId}`}
+                classId={selected.classId}
+                studentId={selected.studentId}
+              />
+              <CatchupCard
+                key={`catchup-${selected.studentId}`}
+                studentId={selected.studentId}
+                classId={selected.classId}
+                viewer="parent"
+              />
+            </>
+          ) : null
+        }
       />
+
+      <div className="mt-8 space-y-6">
+        <RegistrationList items={selectedRegistrations} />
+
+        <section className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-4">
+          <span className="text-slate-300">Muốn đăng ký cho con học lớp khác, hoặc cho em nhỏ?</span>
+          <Link
+            href="/khoa-hoc"
+            className="ml-auto inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-white hover:bg-primary-dark"
+          >
+            <CalendarPlus size={18} /> Xem lớp đang mở
+          </Link>
+        </section>
+
+        <TeacherContact />
+        <ParentFaq />
+      </div>
     </div>
   );
 }
@@ -166,57 +225,16 @@ export default function PhuHuynhPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen w-full px-6 pb-20 pt-28">
+      <main className="parent-page min-h-screen w-full px-5 pb-20 pt-28 sm:px-6">
         {!supabaseConfigured ? (
           <p className="text-center text-slate-400">Hệ thống đang được cấu hình.</p>
         ) : (
           <RequireAuth
             loginHref="/dang-nhap?next=/phu-huynh"
             showSignUp={false}
-            guestActions={
-              CONTACT.zalo ? (
-                <a
-                  href={CONTACT.zalo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:border-white/30"
-                >
-                  <MessageCircle size={16} /> Chưa có link mời? Nhắn Zalo cho thầy
-                </a>
-              ) : null
-            }
-            guestNotice={
-              <>
-                <Users className="mx-auto text-slate-500" size={36} />
-                <h1 className="mt-4 font-display text-xl font-bold text-white">Anh chị sẽ thấy gì</h1>
-                <ul className="mx-auto mt-4 max-w-xs list-disc space-y-1.5 pl-5 text-left text-sm text-slate-400">
-                  <li>Điểm theo thời gian</li>
-                  <li>Bài đã làm và câu sai theo chủ đề</li>
-                  <li>Phần con đang được phụ đạo</li>
-                </ul>
-                {PARENT_SHOTS.length > 0 && (
-                  <div className={`mt-5 grid gap-3 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : ""}`}>
-                    {PARENT_SHOTS.map((shot) => (
-                      <Image
-                        key={shot.src}
-                        src={shot.src}
-                        alt={shot.alt}
-                        width={shot.width}
-                        height={shot.height}
-                        sizes="(min-width: 640px) 280px, 90vw"
-                        loading="lazy"
-                        className="h-auto w-full rounded-xl border border-white/10"
-                      />
-                    ))}
-                  </div>
-                )}
-                <p className="mt-4 text-sm text-slate-400">
-                  Chưa có tài khoản? Nhờ giáo viên gửi link mời dạng{" "}
-                  <code className="text-slate-300">/loi-moi?ma=PH…</code> — tạo tài khoản ngay tại đó là đã nối
-                  với con, không cần mượn tài khoản của con.
-                </p>
-              </>
-            }
+            guestWide
+            guestHideAuthRow
+            guestNotice={<ParentGuestLanding />}
           >
             <ReadingZone>
               <ParentHome />

@@ -2,10 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, ChevronDown, Target } from "lucide-react";
+import { AlertTriangle, ArrowRight, BookOpen, ChevronDown, RotateCcw, Sparkles, Target, Trophy } from "lucide-react";
 import Html from "@/components/exams/ContentHtml";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import {
+  fetchClassAssessments,
   fetchMyAlert,
   fetchMyScoreHistory,
   fetchMyTopicGaps,
@@ -13,6 +14,7 @@ import {
   fetchOutcomeGaps,
   fetchQuestionTopics,
   outcomeGapsByNeed,
+  type ClassAssessment,
   type OutcomeGap,
   type ScorePoint,
   type StudentAlert,
@@ -25,9 +27,11 @@ import {
   type NeedStatus,
   type TutoringNeed,
 } from "@/services/tutoring";
+import { fetchMyClassIds } from "@/services/classes";
 import RankCard from "@/components/rank/RankCard";
 import type { RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
+import { CONTACT } from "@/lib/contact";
 
 /**
  * Bảng kết quả học tập của MỘT học sinh. Dùng ở hai chỗ:
@@ -59,14 +63,18 @@ const COPY: Record<ResultsViewer, {
     violation: "Bài kiểm tra gần đây của em bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình. Trợ giảng sẽ kiểm tra lại kiến thức thực tế của em.",
   },
   parent: {
-    subtitle: "Điểm kiểm tra của con và những chủ đề con cần ôn lại.",
-    noExam: "Con chưa làm bài kiểm tra nào trên thachlab.",
-    noGap: "Chưa có dữ liệu — hoặc con chưa sai câu nào.",
-    needsTitle: "Phần con đang mở khoá",
+    subtitle: "Điểm các bài con đã làm trên web, phần con còn sai và phần thầy đang phụ đạo.",
+    noExam:
+      "Con chưa làm bài nào trên web. Khi con làm bài đầu tiên, điểm sẽ hiện ở đây — anh chị không phải làm gì thêm.",
+    noGap: "Chưa thấy phần nào con sai nhiều. Nếu con mới vào lớp, cần vài bài mới có dữ liệu.",
+    // P8: phụ huynh không biết chữ "mở khoá" của hệ thống — nói thẳng là phụ đạo.
+    needsTitle: "Phần con đang được phụ đạo",
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào con đã làm đúng trở lại.",
-    missed: "Con còn bài kiểm tra chưa làm — phụ huynh nhắc con hoàn thành sớm.",
-    low: "Điểm kiểm tra của con đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo.",
-    violation: "Bài kiểm tra gần đây của con bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình. Trợ giảng sẽ kiểm tra lại kiến thức của con.",
+    missed: "Con còn bài kiểm tra chưa làm. Anh chị nhắc con vào làm cho kịp.",
+    // P8/P18: không phán xét ("đang thấp", "yếu") — nói theo NGƯỠNG đạt (6,5) + việc làm tiếp.
+    low: "Điểm bài kiểm tra gần đây của con dưới mức đạt (6,5). Thầy sẽ sắp lịch phụ đạo cho con — anh chị nhắc con ôn lại các phần ở dưới.",
+    violation:
+      "Bài kiểm tra gần đây của con bị ghi nhận nhiều lần rời màn hình. Thầy sẽ kiểm tra lại kiến thức thực tế của con — anh chị hỏi thăm con xem có việc gì không.",
   },
 };
 
@@ -200,12 +208,16 @@ function GapRow({
             {formLabel(gap.form)} · sai {gap.wrong}/{gap.total} câu
           </span>
         </span>
-        <span
-          className={`shrink-0 font-mono text-lg font-bold ${
-            gap.pct >= 60 ? "text-red-300" : gap.pct >= 30 ? "text-amber-300" : "text-slate-300"
-          }`}
-        >
-          {gap.pct}%
+        {/* P8/P19: một mình "60%" không nói là 60% cái gì — phụ huynh phải đọc được nghĩa con số. */}
+        <span className="shrink-0 text-right">
+          <span
+            className={`block font-mono text-lg font-bold ${
+              gap.pct >= 60 ? "text-red-300" : gap.pct >= 30 ? "text-amber-300" : "text-slate-300"
+            }`}
+          >
+            {gap.pct}%
+          </span>
+          {viewer === "parent" && <span className="block text-[13px] text-slate-400">tỉ lệ sai</span>}
         </span>
         <ChevronDown
           size={18}
@@ -255,12 +267,22 @@ function GapRow({
   );
 }
 
-function AttemptRow({ point, viewer }: { point: ScorePoint; viewer: ResultsViewer }) {
+function AttemptRow({
+  point,
+  viewer,
+  prev,
+}: {
+  point: ScorePoint;
+  viewer: ResultsViewer;
+  /** Bài liền trước (cũ hơn) — chỉ dùng để hiện chênh lệch cho phụ huynh. */
+  prev?: ScorePoint;
+}) {
   const dateLabel = new Date(point.at).toLocaleDateString("vi-VN", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
   });
+  const delta = prev ? Math.round((point.score - prev.score) * 100) / 100 : null;
 
   return (
     <Link
@@ -270,9 +292,14 @@ function AttemptRow({ point, viewer }: { point: ScorePoint; viewer: ResultsViewe
       <span className="min-w-0 flex-1">
         <span className="block font-display font-semibold text-white">{point.examTitle}</span>
         <span className="mt-0.5 block text-[13px] text-slate-400">
-          {dateLabel}
+          {viewer === "parent" ? longDate(point.at) : dateLabel}
           {point.periodic ? ` · ${point.kindLabel}` : ""}
         </span>
+        {viewer === "parent" && delta !== null && (
+          <span className={`mt-1 block text-[13px] font-semibold ${deltaShort(delta).cls}`}>
+            {deltaShort(delta).text}
+          </span>
+        )}
       </span>
       <span
         className={`shrink-0 font-mono text-lg font-bold ${
@@ -289,7 +316,16 @@ function AttemptRow({ point, viewer }: { point: ScorePoint; viewer: ResultsViewe
   );
 }
 
-function AlertBanner({ alert, copy }: { alert: StudentAlert; copy: (typeof COPY)[ResultsViewer] }) {
+function AlertBanner({
+  alert,
+  copy,
+  hideMissed,
+}: {
+  alert: StudentAlert;
+  copy: (typeof COPY)[ResultsViewer];
+  hideMissed?: boolean;
+}) {
+  if (hideMissed && alert.kind === "missed_assessment") return null;
   return (
     <section className="rounded-2xl border border-amber-400/25 bg-amber-500/[.07] p-5">
       <div className="flex items-center gap-2 text-amber-300">
@@ -378,15 +414,159 @@ function NeedRow({
   );
 }
 
+/* ============================================================
+   Khối riêng cho PHỤ HUYNH (45–60 tuổi) — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Không đụng nhánh học sinh: mọi thứ dưới đây chỉ render khi viewer === "parent".
+   ============================================================ */
+
+/** P11: ngày kèm thứ — "Thứ Ba, 30/09/2026" định vị được, "30/09/2026" thì phải tính. */
+function longDate(iso: string) {
+  const d = new Date(iso);
+  const weekday = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"][d.getDay()];
+  return `${weekday}, ${d.toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" })}`;
+}
+
+function scoreText(score: number) {
+  return score.toLocaleString("vi-VN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
+
+/** P12: chênh lệch điểm phải có cả màu LẪN chữ (mù màu đỏ–lục ~8% nam giới). */
+function deltaText(delta: number) {
+  if (delta === 0) return { cls: "text-slate-400", text: "không đổi so với bài trước" };
+  return delta > 0
+    ? { cls: "text-emerald-300", text: `tăng ${scoreText(Math.abs(delta))} điểm so với bài trước` }
+    : { cls: "text-red-300", text: `giảm ${scoreText(Math.abs(delta))} điểm so với bài trước` };
+}
+
+/** Bản ngắn của deltaText, dùng trong danh sách bài đã làm (một dòng). */
+function deltaShort(delta: number) {
+  if (delta === 0) return { cls: "text-slate-400", text: "= không đổi so với bài trước" };
+  return delta > 0
+    ? { cls: "text-emerald-300", text: `↑ tăng ${scoreText(delta)} so với bài trước` }
+    : { cls: "text-red-300", text: `↓ giảm ${scoreText(Math.abs(delta))} so với bài trước` };
+}
+
+/** Một mục "nhãn → số to → câu giải thích", xếp dọc trong một cột đọc (P6, P17: bảng hai cột
+ *  nhãn–số bắt mắt lia trái–phải; số to, chữ số tabular nên các hàng vẫn thẳng cột nhau). */
+function Fact({ label, value, sub }: { label: string; value: React.ReactNode; sub?: React.ReactNode }) {
+  return (
+    <div className="border-b border-white/10 py-3 first:pt-0 last:border-b-0 last:pb-0">
+      <p className="text-slate-400">{label}</p>
+      <p className="parent-num mt-0.5 font-display text-2xl font-bold text-white">{value}</p>
+      {sub && <p className="parent-copy mt-0.5 text-slate-400">{sub}</p>}
+    </div>
+  );
+}
+
+/**
+ * Tóm tắt cho phụ huynh: trả lời "con học thế nào" trong một màn hình, bằng số to + câu chữ,
+ * từ dữ liệu dashboard đã tải (không gọi thêm Supabase lần nào).
+ * Cố ý KHÔNG vẽ biểu đồ ở đây: biểu đồ đường với nhãn trục nhỏ khó đọc với tuổi 45–60 và lặp lại
+ * đúng dữ liệu của danh sách bài bên dưới (P6, P17, N4).
+ */
+function ParentSummaryPanel({
+  points,
+  gaps,
+  needs,
+  avg,
+}: {
+  points: ScorePoint[];
+  gaps: TopicGap[];
+  needs: TutoringNeed[] | null;
+  avg: number | null;
+}) {
+  const latest = points[points.length - 1];
+  const prev = points.length > 1 ? points[points.length - 2] : null;
+  const delta = prev ? Math.round((latest.score - prev.score) * 100) / 100 : null;
+  // "Sai nhiều nhất" xếp theo SỐ CÂU SAI, không theo % — một chủ đề chỉ có 1 câu mà sai cũng ra
+  // 100%, đứng đầu bảng sẽ doạ phụ huynh bằng con số vô nghĩa. Ưu tiên chủ đề có ≥3 câu.
+  const ranked = [...gaps].filter((g) => g.wrong > 0).sort((a, b) => b.wrong - a.wrong || b.pct - a.pct || b.total - a.total);
+  const worst = ranked.find((g) => g.total >= 3) ?? ranked[0];
+  const openNeed = (needs ?? []).find((n) => n.status === "open" || n.status === "assigned");
+  const lastThree = points.slice(-3).map((p) => scoreText(p.score)).join(" → ");
+
+  return (
+    <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
+      <h2 className="font-display text-lg font-bold text-white">Tóm tắt cho anh chị</h2>
+      <p className="mt-1 text-slate-400">Số liệu lấy từ các bài con làm trên web.</p>
+
+      <div className="mt-3">
+        <Fact
+          label="Bài gần nhất"
+          value={`${scoreText(latest.score)}/10`}
+          sub={
+            <>
+              {longDate(latest.at)} · {latest.examTitle}
+              {latest.periodic ? ` (${latest.kindLabel})` : ""}
+            </>
+          }
+        />
+        <Fact
+          label="Điểm trung bình"
+          value={avg === null ? "—" : scoreText(avg)}
+          sub={`${points.length} bài đã làm`}
+        />
+        <Fact
+          label={prev ? "So với bài trước" : "Ghi chú"}
+          value={delta === null ? "Bài đầu tiên" : `${delta > 0 ? "+" : ""}${scoreText(delta)}`}
+          sub={delta === null ? "Chưa có bài nào trước đó để so sánh." : <span className={deltaText(delta).cls}>{deltaText(delta).text}</span>}
+        />
+      </div>
+
+      {points.length >= 3 && (
+        <p className="mt-3 text-slate-400">
+          Ba bài gần nhất: <b className="parent-num text-white">{lastThree}</b>
+        </p>
+      )}
+
+      {worst && (
+        <p className="parent-copy mt-3 text-slate-300">
+          Còn sai nhiều nhất: <b className="text-white">{worst.topic}</b> — sai {worst.wrong}/{worst.total} câu (
+          {worst.pct}%).
+        </p>
+      )}
+
+      <p className="parent-copy mt-2 text-slate-300">
+        {openNeed
+          ? `Thầy đã ghi nhận và đang sắp phụ đạo phần ${needLabel(openNeed)}.`
+          : "Hiện chưa có phần nào con cần phụ đạo thêm."}
+      </p>
+      <p className="parent-copy mt-2 text-slate-300">
+        Việc anh chị làm được hôm nay: nhắc con làm bài tập thầy giao và ôn lại phần con còn sai.
+        {worst && CONTACT.zalo && (
+          <>
+            {" "}
+            <a
+              href={CONTACT.zalo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+            >
+              Nhờ thầy kèm thêm phần này
+            </a>
+            .
+          </>
+        )}
+      </p>
+    </section>
+  );
+}
+
 export default function StudentResultsDashboard({
   studentId,
   viewer = "student",
   title = "Kết quả học tập",
+  afterSummary,
 }: {
   studentId: string;
   viewer?: ResultsViewer;
   /** Tiêu đề — trang phụ huynh truyền tên con. */
   title?: string;
+  /**
+   * Chỉ dùng ở /phu-huynh: khối chèn ngay sau "Tóm tắt cho anh chị" (bài tập về nhà, bù bài) —
+   * đó là việc phụ huynh phải làm tiếp, không nên nằm dưới cùng trang.
+   */
+  afterSummary?: React.ReactNode;
 }) {
   const copy = COPY[viewer];
   const [points, setPoints] = useState<ScorePoint[] | null>(null);
@@ -396,9 +576,16 @@ export default function StudentResultsDashboard({
   const [lessonByTopic, setLessonByTopic] = useState<Map<string, number | null>>(new Map());
   const [outcomeGaps, setOutcomeGaps] = useState<OutcomeGap[]>([]);
   const [rankStatus, setRankStatus] = useState<RankStatus | null | undefined>(undefined);
+  const [assessments, setAssessments] = useState<ClassAssessment[] | null>(null);
 
   useEffect(() => {
     const uid = studentId;
+    if (viewer === "student") {
+      fetchMyClassIds(uid)
+        .then((ids) => Promise.all(ids.map((id) => fetchClassAssessments(id))))
+        .then((lists) => setAssessments(lists.flat()))
+        .catch(() => setAssessments([]));
+    }
     fetchMyScoreHistory(uid).then(setPoints).catch(() => setPoints([]));
     fetchMyTopicGaps(uid).then(setGaps).catch(() => setGaps([]));
     fetchMyAlert(uid).then(setAlert).catch(() => setAlert(null));
@@ -437,6 +624,30 @@ export default function StudentResultsDashboard({
   const isEmpty = !loading && points.length === 0 && priorityGaps.length === 0;
   const attempts = useMemo(() => (points ? [...points].reverse() : null), [points]);
 
+  // Bài được giao mà chưa làm → bấm vào làm ngay; hết bài thì gợi ý việc tiếp theo (chỉ học sinh).
+  const todoExams = useMemo(() => {
+    if (viewer !== "student" || !assessments || !points) return [];
+    const done = new Set(points.map((p) => p.examId));
+    const seen = new Set<number>();
+    return assessments.filter((a) => {
+      if (done.has(a.examId) || seen.has(a.examId)) return false;
+      seen.add(a.examId);
+      return true;
+    }).slice(0, 5);
+  }, [viewer, assessments, points]);
+  const retryExam = useMemo(() => {
+    if (!points) return null;
+    const best = new Map<number, ScorePoint>();
+    for (const p of points) {
+      const cur = best.get(p.examId);
+      if (!cur || p.score > cur.score) best.set(p.examId, p);
+    }
+    return [...best.values()].filter((p) => p.score < PASS).sort((a, b) => a.score - b.score)[0] ?? null;
+  }, [points]);
+  const firstReviewGap = priorityGaps.find((g) => lessonHref(g.topic, g.form));
+  const studentReady = viewer === "student" && assessments !== null && points !== null;
+  const showSuggestions = studentReady && todoExams.length === 0;
+
   return (
     <div className="mx-auto w-full max-w-4xl">
       <div className="flex flex-wrap items-center gap-3">
@@ -449,11 +660,104 @@ export default function StudentResultsDashboard({
         </div>
       </div>
 
-      {alert && (
+      {alert && (viewer !== "student" || alert.kind !== "missed_assessment" || todoExams.length === 0) && (
         <div className="mt-6">
-          <AlertBanner alert={alert} copy={copy} />
+          <AlertBanner alert={alert} copy={copy} hideMissed={viewer === "student"} />
         </div>
       )}
+
+      {studentReady && todoExams.length > 0 && (
+        <section className="mt-6 rounded-2xl border border-amber-400/25 bg-amber-500/[.07] p-4 sm:p-5">
+          <div className="flex items-center gap-2 text-amber-300">
+            <AlertTriangle size={18} />
+            <h2 className="font-display font-bold text-white">Cần chú ý</h2>
+          </div>
+          <p className="mt-2 text-sm text-amber-100/80">
+            Em còn <strong className="text-white">{todoExams.length} bài chưa làm</strong> — bấm vào để làm ngay:
+          </p>
+          <div className="mt-3 space-y-2">
+            {todoExams.map((item) => (
+              <Link
+                key={item.id}
+                href={`/kiem-tra/lam?id=${item.examId}`}
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-amber-400/20 bg-black/15 p-3 hover:bg-black/25"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <Trophy size={16} className="shrink-0 text-amber-300" />
+                  <span className="min-w-0">
+                    <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
+                    <small className="text-[13px] text-slate-400">Bài kiểm tra · chưa làm</small>
+                  </span>
+                </span>
+                <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-amber-200">
+                  Làm bài <ArrowRight size={16} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {showSuggestions && (
+        <section className="mt-6 rounded-2xl border border-emerald-400/25 bg-emerald-500/[.07] p-4 sm:p-5">
+          <div className="flex items-center gap-2 text-emerald-300">
+            <Sparkles size={18} />
+            <h2 className="font-display font-bold text-white">Em đã làm xong bài được giao — việc nên làm tiếp</h2>
+          </div>
+          <div className="mt-3 space-y-2">
+            {retryExam && (
+              <Link
+                href={`/kiem-tra/lam?id=${retryExam.examId}`}
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <RotateCcw size={16} className="shrink-0 text-rose-300" />
+                  <span className="min-w-0">
+                    <strong className="block truncate text-sm text-white">Làm lại: {retryExam.examTitle}</strong>
+                    <small className="text-[13px] text-slate-400">
+                      Lần trước {retryExam.score.toLocaleString("vi-VN")} điểm — làm lại để chốt kiến thức
+                    </small>
+                  </span>
+                </span>
+                <ArrowRight size={16} className="shrink-0 text-emerald-300" />
+              </Link>
+            )}
+            {firstReviewGap && (
+              <Link
+                href={lessonHref(firstReviewGap.topic, firstReviewGap.form) as string}
+                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <BookOpen size={16} className="shrink-0 text-blue-300" />
+                  <span className="min-w-0">
+                    <strong className="block truncate text-sm text-white">Ôn lại: {firstReviewGap.topic}</strong>
+                    <small className="text-[13px] text-slate-400">Chủ đề em còn sai nhiều nhất</small>
+                  </span>
+                </span>
+                <ArrowRight size={16} className="shrink-0 text-emerald-300" />
+              </Link>
+            )}
+            <Link
+              href="/tai-khoan"
+              className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
+            >
+              <span className="min-w-0">
+                <strong className="block truncate text-sm text-white">Học tiếp bài đang dở</strong>
+                <small className="text-[13px] text-slate-400">Về trang cá nhân để vào bài tiếp theo</small>
+              </span>
+              <ArrowRight size={16} className="shrink-0 text-emerald-300" />
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* P7: với phụ huynh, "con học thế nào" phải xong trong một màn hình — tóm tắt đứng ngay
+          sau cảnh báo, trước mọi danh sách chi tiết. */}
+      {viewer === "parent" && points !== null && points.length > 0 && (
+        <ParentSummaryPanel points={points} gaps={priorityGaps} needs={needs} avg={avg} />
+      )}
+
+      {viewer === "parent" && afterSummary && <div className="mt-6">{afterSummary}</div>}
 
       {!loading && isEmpty && (
         <p className="mt-6 text-sm text-slate-400">{copy.noExam}</p>
@@ -461,7 +765,9 @@ export default function StudentResultsDashboard({
 
       {priorityGaps.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-3 font-display font-semibold text-white">Chủ đề cần ôn</h2>
+          <h2 className="mb-3 font-display font-semibold text-white">
+            {viewer === "parent" ? "Phần con còn sai" : "Chủ đề cần ôn"}
+          </h2>
           <div className="space-y-3">
             {priorityGaps.map((gap) => (
               <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />
@@ -490,16 +796,21 @@ export default function StudentResultsDashboard({
 
       {attempts !== null && attempts.length > 0 && (
         <section className="mt-6">
-          <h2 className="mb-3 font-display font-semibold text-white">Bài đã làm</h2>
+          <h2 className="mb-3 font-display font-semibold text-white">
+            {viewer === "parent" ? "Các bài con đã làm" : "Bài đã làm"}
+          </h2>
           <div className="space-y-3">
-            {attempts.map((p) => (
-              <AttemptRow key={p.resultId} point={p} viewer={viewer} />
+            {attempts.map((p, i) => (
+              // attempts mới nhất trước → bài liền trước (cũ hơn) là phần tử kế tiếp.
+              <AttemptRow key={p.resultId} point={p} viewer={viewer} prev={attempts[i + 1]} />
             ))}
           </div>
         </section>
       )}
 
-      {points !== null && points.length > 0 && (
+      {/* P6/P17/N4: phụ huynh 45–60 tuổi nhận số to + câu chữ nhanh hơn biểu đồ đường có nhãn trục
+          nhỏ, và biểu đồ lặp đúng dữ liệu của danh sách trên → chỉ học sinh xem biểu đồ. */}
+      {viewer === "student" && points !== null && points.length > 0 && (
         <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
           <div className="mb-3 flex items-baseline justify-between">
             <h2 className="font-display font-semibold text-white">Điểm theo thời gian</h2>
@@ -516,7 +827,18 @@ export default function StudentResultsDashboard({
       )}
 
       {/* L3: phần thưởng ngoài (hạng) chỉ ở cuối, sau việc cần làm. */}
-      <div className="mt-8">
+      {viewer === "parent" && (
+        <h2 className="mt-8 font-display font-semibold text-white">Thành tích trong lớp</h2>
+      )}
+      {viewer === "parent" && (
+        // P19: RP/danh hiệu là hệ thống điểm thưởng của web, không phải điểm học tập — nói rõ,
+        // nếu không phụ huynh sẽ đọc "CAO THỦ · 2.180 RP" như một nhận xét học lực.
+        <p className="parent-copy mt-1 text-slate-400">
+          Điểm thưởng và danh hiệu con nhận khi làm bài trên web. Đây không phải điểm học tập — điểm
+          học tập nằm ở phần trên.
+        </p>
+      )}
+      <div className={viewer === "parent" ? "mt-3" : "mt-8"}>
         <RankCard status={rankStatus} href={viewer === "student" ? "/lop-hoc/xep-hang/" : null} />
       </div>
     </div>
