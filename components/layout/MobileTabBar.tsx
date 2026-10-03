@@ -21,7 +21,8 @@ import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import { useAuth } from "@/components/auth/auth-context";
 
-const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai", "/tro-giang/ghi"];
+// /phu-huynh: thanh này là của học sinh (Lớp học, Luyện tập) — phụ huynh bấm vào sẽ lạc sang trang không dành cho họ.
+const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai", "/tro-giang/ghi", "/phu-huynh"];
 
 const MOBILE_QUERY = "(max-width: 1023px)";
 

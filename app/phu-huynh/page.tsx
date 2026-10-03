@@ -14,6 +14,12 @@ import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
 import ParentFaq from "@/components/parent/ParentFaq";
 import ParentGuestLanding from "@/components/parent/ParentGuestLanding";
 import TeacherContact from "@/components/parent/TeacherContact";
+import ParentUpcoming from "@/components/parent/ParentUpcoming";
+import ParentAttendanceCard from "@/components/parent/ParentAttendanceCard";
+import ParentStanding from "@/components/parent/ParentStanding";
+import ParentTuitionCard from "@/components/parent/ParentTuitionCard";
+import { fetchCoursesByIds } from "@/services/parent-view";
+import type { ThptCourse } from "@/services/thpt-courses-public";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRegistrations, REGISTRATION_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import { supabaseConfigured } from "@/services/supabase";
@@ -78,7 +84,7 @@ function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
       <Users className="mx-auto text-slate-400" size={36} />
       <h1 className="mt-4 font-display text-xl font-bold text-white">Tài khoản này chưa nối với con</h1>
       <p className="mt-3 text-left text-slate-400">
-        Thầy cần gửi anh chị một <b>link mời</b> (dạng{" "}
+        Thầy cần gửi phụ huynh một <b>link mời</b> (dạng{" "}
         <code className="rounded bg-white/[.06] px-1.5 py-0.5 text-slate-200">/loi-moi?ma=PH…</code>) để
         tài khoản này nối với con. Nhắn Zalo hoặc gọi thầy, cho biết tên con đang học.
       </p>
@@ -103,7 +109,7 @@ function NoChildYet({ registrations }: { registrations: MyRegistration[] }) {
 
 /**
  * Phụ huynh đã đăng nhập: chọn con (nếu nối nhiều em) rồi xem đúng số liệu con thấy ở
- * /lop-hoc/ket-qua, đổi cách xưng hô. Phần "tóm tắt cho anh chị" nằm trong dashboard (nó cần
+ * /lop-hoc/ket-qua, đổi cách xưng hô. Phần "tóm tắt cho phụ huynh" nằm trong dashboard (nó cần
  * dữ liệu điểm đã tải ở đó — không gọi thêm Supabase lần nào).
  */
 function ParentHome() {
@@ -111,10 +117,18 @@ function ParentHome() {
   const [children, setChildren] = useState<LinkedChild[] | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [registrations, setRegistrations] = useState<MyRegistration[]>([]);
+  const [courses, setCourses] = useState<ThptCourse[]>([]);
 
   useEffect(() => {
     if (!session) return;
-    fetchMyRegistrations().then(setRegistrations).catch(() => setRegistrations([]));
+    fetchMyRegistrations()
+      .then((rows) => {
+        setRegistrations(rows);
+        // Lịch học + ghi chú học phí của các khoá con đang học (1 request, dùng cho "Sắp tới" và "Học phí").
+        const ids = rows.filter((r) => r.status === "active" || r.status === "catchup").map((r) => r.course_id);
+        return fetchCoursesByIds(ids).then(setCourses);
+      })
+      .catch(() => setRegistrations([]));
     fetchMyChildren(session.user.id)
       .then((rows) => {
         setChildren(rows);
@@ -130,6 +144,9 @@ function ParentHome() {
   const selected = children.find((c) => c.studentId === selectedId) ?? children[0];
   const selectedRegistrations = registrations.filter(
     (r) => r.student_id === selected.studentId || r.student_id === null,
+  );
+  const selectedCourses = courses.filter((c) =>
+    selectedRegistrations.some((r) => r.course_id === c.id && (r.status === "active" || r.status === "catchup")),
   );
 
   return (
@@ -173,7 +190,7 @@ function ParentHome() {
       {selected.classId === null && (
         <p className="parent-copy mb-6 rounded-2xl border border-amber-500/25 bg-amber-500/[.06] p-4 text-amber-100/90">
           {selected.fullName} chưa được thầy duyệt vào lớp trên thachlab, nên chưa có điểm và chưa có
-          hạng trong lớp. Anh chị nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
+          hạng trong lớp. Phụ huynh nhắn thầy nếu con đã đi học mà vẫn thấy dòng này.
         </p>
       )}
 
@@ -185,6 +202,8 @@ function ParentHome() {
         afterSummary={
           selected.classId !== null ? (
             <>
+              <ParentUpcoming key={`upcoming-${selected.studentId}`} classId={selected.classId} courses={selectedCourses} />
+              <ParentAttendanceCard key={`attendance-${selected.studentId}`} studentId={selected.studentId} />
               <ParentHomeworkNotes
                 key={`homework-${selected.studentId}`}
                 classId={selected.classId}
@@ -196,12 +215,14 @@ function ParentHome() {
                 classId={selected.classId}
                 viewer="parent"
               />
+              <ParentStanding key={`standing-${selected.studentId}`} studentId={selected.studentId} classId={selected.classId} />
             </>
           ) : null
         }
       />
 
       <div className="mt-8 space-y-6">
+        <ParentTuitionCard registrations={selectedRegistrations} courses={selectedCourses} />
         <RegistrationList items={selectedRegistrations} />
 
         <section className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-panel px-5 py-4">
@@ -236,7 +257,7 @@ export default function PhuHuynhPage() {
             guestHideAuthRow
             guestNotice={<ParentGuestLanding />}
           >
-            <ReadingZone>
+            <ReadingZone plainLabels>
               <ParentHome />
             </ReadingZone>
           </RequireAuth>

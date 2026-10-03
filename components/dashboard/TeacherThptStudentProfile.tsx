@@ -10,6 +10,7 @@ import type { LearningHistoryEntry } from "@/services/progress";
 import { fetchStudentLearningHistoryFast } from "@/services/student-profile";
 import ParentLinkCard from "@/components/dashboard/ParentLinkCard";
 import StudentAccountCard from "@/components/dashboard/StudentAccountCard";
+import ParentDigestCard from "@/components/dashboard/ParentDigestCard";
 import PasswordResetCard from "@/components/dashboard/PasswordResetCard";
 
 const ACTIVITY_LABEL: Record<LearningHistoryEntry["activity"], string> = {
@@ -192,6 +193,8 @@ export default function TeacherThptStudentProfile({
           <PasswordResetCard key={`pw-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
 
           <ParentLinkCard key={selected.id} studentId={selected.id} studentName={selected.full_name} />
+
+          <ParentDigestCard key={`digest-${selected.id}`} studentId={selected.id} studentName={selected.full_name} />
 
           <section className="rounded-2xl border border-white/10 bg-panel p-5">
             <h4 className="font-display text-lg font-bold text-white">Lịch sử học tập</h4>

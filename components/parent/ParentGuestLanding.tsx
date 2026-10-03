@@ -38,13 +38,13 @@ export default function ParentGuestLanding() {
       <div>
         <h1 className="font-display text-2xl font-bold text-white sm:text-3xl">Theo dõi việc học của con</h1>
         <p className="parent-copy mt-3 text-slate-300">
-          Đây là trang riêng cho phụ huynh. Anh chị xem được con đang học tới đâu, mạnh yếu phần nào —
+          Đây là trang riêng cho phụ huynh. Phụ huynh xem được con đang học tới đâu, mạnh yếu phần nào —
           không cần mượn tài khoản của con và không phải nhắn hỏi thầy mỗi tuần.
         </p>
       </div>
 
       <section>
-        <h2 className="font-display text-lg font-bold text-white">Anh chị sẽ thấy gì</h2>
+        <h2 className="font-display text-lg font-bold text-white">Phụ huynh sẽ thấy gì</h2>
         <ul className="mt-3 grid gap-4 sm:grid-cols-3">
           {SEES.map(({ icon: Icon, title, desc }) => (
             <li key={title} className="rounded-2xl border border-white/10 p-4">
@@ -76,7 +76,7 @@ export default function ParentGuestLanding() {
               </code>
             </>,
             <>
-              Mở link, điền họ tên, email và mật khẩu. Tài khoản tự nối với con — anh chị{" "}
+              Mở link, điền họ tên, email và mật khẩu. Tài khoản tự nối với con — phụ huynh{" "}
               <b>không cần mật khẩu của con</b>.
             </>,
           ].map((step, i) => (
@@ -143,7 +143,7 @@ export default function ParentGuestLanding() {
             ))}
           </div>
           <p className="mt-2 text-slate-400">
-            Ảnh thật, không phải ảnh minh hoạ. Điểm của con chỉ hiện trong tài khoản của anh chị và
+            Ảnh thật, không phải ảnh minh hoạ. Điểm của con chỉ hiện trong tài khoản của phụ huynh và
             tài khoản của con — không công khai cho người khác.
           </p>
         </section>

@@ -17,7 +17,7 @@
 - [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md) — tự schedule wakeup + resume
 - [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — bài soạn cho HS **không dùng vai "thầy"**; 14 nét phong cách + công cụ xem thử ở skill `soan-bai-ly-thuyet-tuong-tac`
 - [Quy tắc thiết kế theo nghiên cứu](feedback_design_research_rules.md) — mọi UI HS theo docs/QUY-TAC-THIET-KE.md, nêu mã quy tắc; phụ lục A = lỗi trang bài học 2/10 chờ sửa
-- [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — bộ quy tắc P1..P21 (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md): 18px, 7:1, 48px, nền sáng, không biểu đồ/jargon; nghiên cứu 26 nguồn ở docs/NGHIEN-CUU-PHU-HUYNH-45-60.md; treo: điểm danh (cần migration), ảnh nghiệm thu
+- [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — bộ quy tắc P1..P27 (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md); 3/10 đợt 2 sau phản biện (Sắp tới, điểm danh, học phí, mục tiêu, Tin Zalo cho PH); treo: chạy migration 20261003130000, phỏng vấn phụ huynh thật, Zalo OA, ảnh nghiệm thu
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — project Singapore (migrate 28/9); URL/key ở .env.local; còn treo Pause project Sydney cũ
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f file.sql`, không cần mật khẩu DB

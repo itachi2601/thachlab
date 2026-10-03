@@ -5,7 +5,7 @@ import { CONTACT } from "@/lib/contact";
 /**
  * Dải "Dành cho phụ huynh" — đặt ngay sau OpenClasses trên trang chủ, trả lời 3 câu phụ huynh
  * hay hỏi khi tìm chỗ học cho con: con học gì · thầy theo dõi ra sao · xem kết quả ở đâu.
- * Giọng của khối này là "thầy – anh chị" (khối học sinh vẫn xưng "em"), không trộn trong cùng một câu.
+ * Giọng của khối này là "thầy – phụ huynh" (khối học sinh vẫn xưng "em"), không trộn trong cùng một câu.
  */
 const QUESTIONS = [
   {
@@ -17,7 +17,7 @@ const QUESTIONS = [
     desc: "Mỗi bài làm được chấm ngay; câu sai gắn với chủ đề, thầy biết em yếu chỗ nào để phụ đạo.",
   },
   {
-    title: "Anh chị xem kết quả ở đâu",
+    title: "Phụ huynh xem kết quả ở đâu",
     desc: "Tài khoản phụ huynh xem điểm, bài đã làm, chủ đề còn sai.",
     href: "/phu-huynh",
   },

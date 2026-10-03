@@ -15,7 +15,7 @@ const QA: { q: string; a: React.ReactNode }[] = [
       <>
         Là điểm các bài con làm trên thachlab: bài tập thầy giao và bài kiểm tra định kỳ của lớp
         (giữa kỳ, cuối kỳ, kiểm tra chương) nếu lớp làm trên web. Điểm chính thức của nhà trường do
-        nhà trường công bố — anh chị đối chiếu thêm sổ điểm của trường.
+        nhà trường công bố — phụ huynh đối chiếu thêm sổ điểm của trường.
       </>
     ),
   },
@@ -32,7 +32,7 @@ const QA: { q: string; a: React.ReactNode }[] = [
     q: "Sao con tôi chưa có điểm nào?",
     a: (
       <>
-        Con chưa làm bài nào trên web, hoặc tài khoản của con chưa được duyệt vào lớp. Anh chị nhắn
+        Con chưa làm bài nào trên web, hoặc tài khoản của con chưa được duyệt vào lớp. Phụ huynh nhắn
         Zalo cho thầy để thầy kiểm tra.
       </>
     ),
@@ -51,7 +51,7 @@ const QA: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         Con có trang riêng của mình với cùng số liệu. Trang này là bản dành cho phụ huynh và chỉ đọc —
-        anh chị không sửa được gì, cũng không thấy điểm của các bạn khác.
+        phụ huynh không sửa được gì, cũng không thấy điểm của các bạn khác.
       </>
     ),
   },
@@ -66,7 +66,7 @@ const QA: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "Muốn ngừng theo dõi thì làm sao?",
-    a: <>Nhắn thầy để gỡ liên kết với con. Tài khoản của anh chị vẫn còn, chỉ là không xem được nữa.</>,
+    a: <>Nhắn thầy để gỡ liên kết với con. Tài khoản của phụ huynh vẫn còn, chỉ là không xem được nữa.</>,
   },
 ];
 

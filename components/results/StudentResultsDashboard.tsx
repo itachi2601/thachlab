@@ -32,6 +32,9 @@ import RankCard from "@/components/rank/RankCard";
 import type { RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import { CONTACT } from "@/lib/contact";
+import ParentScoreBars from "@/components/parent/ParentScoreBars";
+import ParentGoal, { useChildGoal } from "@/components/parent/ParentGoal";
+import { gradeBand } from "@/lib/parent-format";
 
 /**
  * Bảng kết quả học tập của MỘT học sinh. Dùng ở hai chỗ:
@@ -65,16 +68,16 @@ const COPY: Record<ResultsViewer, {
   parent: {
     subtitle: "Điểm các bài con đã làm trên web, phần con còn sai và phần thầy đang phụ đạo.",
     noExam:
-      "Con chưa làm bài nào trên web. Khi con làm bài đầu tiên, điểm sẽ hiện ở đây — anh chị không phải làm gì thêm.",
+      "Con chưa làm bài nào trên web. Khi con làm bài đầu tiên, điểm sẽ hiện ở đây — phụ huynh không phải làm gì thêm.",
     noGap: "Chưa thấy phần nào con sai nhiều. Nếu con mới vào lớp, cần vài bài mới có dữ liệu.",
     // P8: phụ huynh không biết chữ "mở khoá" của hệ thống — nói thẳng là phụ đạo.
     needsTitle: "Phần con đang được phụ đạo",
     needsIntro: "Phần nào thầy và trợ giảng đã dạy lại, phần nào con đã làm đúng trở lại.",
-    missed: "Con còn bài kiểm tra chưa làm. Anh chị nhắc con vào làm cho kịp.",
+    missed: "Con còn bài kiểm tra chưa làm. Phụ huynh nhắc con vào làm cho kịp.",
     // P8/P18: không phán xét ("đang thấp", "yếu") — nói theo NGƯỠNG đạt (6,5) + việc làm tiếp.
-    low: "Điểm bài kiểm tra gần đây của con dưới mức đạt (6,5). Thầy sẽ sắp lịch phụ đạo cho con — anh chị nhắc con ôn lại các phần ở dưới.",
+    low: "Điểm bài kiểm tra gần đây của con dưới 6,5 (chưa tới mức Khá). Thầy sẽ sắp lịch phụ đạo cho con — phụ huynh nhắc con ôn lại các phần ở dưới.",
     violation:
-      "Bài kiểm tra gần đây của con bị ghi nhận nhiều lần rời màn hình. Thầy sẽ kiểm tra lại kiến thức thực tế của con — anh chị hỏi thăm con xem có việc gì không.",
+      "Bài kiểm tra gần đây của con bị ghi nhận nhiều lần rời màn hình. Thầy sẽ kiểm tra lại kiến thức thực tế của con — phụ huynh hỏi thăm con xem có việc gì không.",
   },
 };
 
@@ -306,12 +309,12 @@ function AttemptRow({
       </span>
       <span
         className={`shrink-0 font-mono text-lg font-bold ${
-          point.score >= PASS ? "text-emerald-300" : "text-red-300"
+          viewer === "parent" ? gradeBand(point.score).cls : point.score >= PASS ? "text-emerald-300" : "text-red-300"
         }`}
       >
         {point.score.toLocaleString("vi-VN")}
-        <span className="block text-right font-sans text-[13px] font-semibold">
-          {point.score >= PASS ? "Đạt" : "Chưa đạt"}
+        <span className="ml-auto block max-w-28 text-right font-sans text-[13px] font-semibold leading-tight">
+          {viewer === "parent" ? gradeBand(point.score).label : point.score >= PASS ? "Đạt" : "Chưa đạt"}
         </span>
       </span>
       <ArrowRight size={18} className="shrink-0 text-slate-500" />
@@ -468,11 +471,13 @@ function Fact({ label, value, sub }: { label: string; value: React.ReactNode; su
  * đúng dữ liệu của danh sách bài bên dưới (P6, P17, N4).
  */
 function ParentSummaryPanel({
+  studentId,
   points,
   gaps,
   needs,
   avg,
 }: {
+  studentId: string;
   points: ScorePoint[];
   gaps: TopicGap[];
   needs: TutoringNeed[] | null;
@@ -486,17 +491,22 @@ function ParentSummaryPanel({
   const ranked = [...gaps].filter((g) => g.wrong > 0).sort((a, b) => b.wrong - a.wrong || b.pct - a.pct || b.total - a.total);
   const worst = ranked.find((g) => g.total >= 3) ?? ranked[0];
   const openNeed = (needs ?? []).find((n) => n.status === "open" || n.status === "assigned");
-  const lastThree = points.slice(-3).map((p) => scoreText(p.score)).join(" → ");
+  const goal = useChildGoal(studentId);
+  const latestBand = gradeBand(latest.score);
 
   return (
     <section className="mt-6 rounded-2xl border border-white/10 bg-panel p-5">
-      <h2 className="font-display text-lg font-bold text-white">Tóm tắt cho anh chị</h2>
+      <h2 className="font-display text-lg font-bold text-white">Tóm tắt cho phụ huynh</h2>
       <p className="mt-1 text-slate-400">Số liệu lấy từ các bài con làm trên web.</p>
 
       <div className="mt-3">
         <Fact
           label="Bài gần nhất"
-          value={`${scoreText(latest.score)}/10`}
+          value={
+            <>
+              {scoreText(latest.score)}/10 <span className={`text-lg ${latestBand.cls}`}>· {latestBand.label}</span>
+            </>
+          }
           sub={
             <>
               {longDate(latest.at)} · {latest.examTitle}
@@ -516,11 +526,13 @@ function ParentSummaryPanel({
         />
       </div>
 
-      {points.length >= 3 && (
-        <p className="mt-3 text-slate-400">
-          Ba bài gần nhất: <b className="parent-num text-white">{lastThree}</b>
-        </p>
-      )}
+      {/* P20 (sửa 3/10): số in trên đầu cột, không trục — thay cho chuỗi "6,5 → 8 → 7,5" bắt phụ huynh
+          tự so sánh các số trong đầu. Chuỗi điểm vẫn nằm trong aria-label của biểu đồ. */}
+      <ParentScoreBars points={points} goal={goal} />
+
+      <div className="mt-4">
+        <ParentGoal studentId={studentId} avg={avg} />
+      </div>
 
       {worst && (
         <p className="parent-copy mt-3 text-slate-300">
@@ -535,7 +547,16 @@ function ParentSummaryPanel({
           : "Hiện chưa có phần nào con cần phụ đạo thêm."}
       </p>
       <p className="parent-copy mt-2 text-slate-300">
-        Việc anh chị làm được hôm nay: nhắc con làm bài tập thầy giao và ôn lại phần con còn sai.
+        Gợi ý cho tối nay:{" "}
+        {worst ? (
+          <>
+            hỏi con “phần <b className="text-white">{worst.topic}</b> hôm nay con thấy khó ở chỗ nào?”, rồi ngồi cùng
+            con xem lại một câu.
+          </>
+        ) : (
+          <>hỏi con “tuần này con thấy phần nào thú vị, phần nào khó?”.</>
+        )}{" "}
+        Hỏi để hiểu con, không phải để chấm điểm con.
         {worst && CONTACT.zalo && (
           <>
             {" "}
@@ -566,7 +587,7 @@ export default function StudentResultsDashboard({
   /** Tiêu đề — trang phụ huynh truyền tên con. */
   title?: string;
   /**
-   * Chỉ dùng ở /phu-huynh: khối chèn ngay sau "Tóm tắt cho anh chị" (bài tập về nhà, bù bài) —
+   * Chỉ dùng ở /phu-huynh: khối chèn ngay sau "Tóm tắt cho phụ huynh" (bài tập về nhà, bù bài) —
    * đó là việc phụ huynh phải làm tiếp, không nên nằm dưới cùng trang.
    */
   afterSummary?: React.ReactNode;
@@ -771,7 +792,7 @@ export default function StudentResultsDashboard({
       {/* P7: với phụ huynh, "con học thế nào" phải xong trong một màn hình — tóm tắt đứng ngay
           sau cảnh báo, trước mọi danh sách chi tiết. */}
       {viewer === "parent" && points !== null && points.length > 0 && (
-        <ParentSummaryPanel points={points} gaps={priorityGaps} needs={needs} avg={avg} />
+        <ParentSummaryPanel studentId={studentId} points={points} gaps={priorityGaps} needs={needs} avg={avg} />
       )}
 
       {viewer === "parent" && afterSummary && <div className="mt-6">{afterSummary}</div>}
@@ -785,6 +806,11 @@ export default function StudentResultsDashboard({
           <h2 className="mb-3 font-display font-semibold text-white">
             {viewer === "parent" ? "Phần con còn sai" : "Chủ đề cần ôn"}
           </h2>
+          {viewer === "parent" && (
+            <p className="parent-copy -mt-1.5 mb-3 text-slate-400">
+              Để cùng con xem lại phần chưa chắc — không phải để chấm điểm con.
+            </p>
+          )}
           <div className="space-y-3">
             {shownGaps.map((gap) => (
               <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />

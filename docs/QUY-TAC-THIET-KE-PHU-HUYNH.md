@@ -4,6 +4,11 @@
 khách chưa đăng nhập), dải "Dành cho phụ huynh" ở trang chủ (`components/home/ForParents.tsx`),
 `/loi-moi?ma=PH…`, `/khoa-hoc`, footer, và mọi email/tin Zalo gửi phụ huynh.
 
+> **Bản sửa 3/10/2026 (phản biện sau đợt đầu):** bộ này ban đầu mạnh ở thị giác/công thái học nhưng gần như
+> bỏ trống phần tâm lý–văn hoá của phụ huynh Việt (mọi mục văn hoá trong bản nghiên cứu đều `[CHƯA CÓ NGUỒN]`).
+> Đợt sửa thêm P22–P27 và đổi P7, P15, P16, P20 — xem §9 để biết đã đổi gì, vì sao, và giả thuyết nào CHƯA kiểm
+> chứng với phụ huynh thật.
+
 Nghiên cứu nền (số đo, nguồn, mức độ tin cậy): [`docs/NGHIEN-CUU-PHU-HUYNH-45-60.md`](NGHIEN-CUU-PHU-HUYNH-45-60.md) —
 26 nguồn, mọi khẳng định gắn nhãn `[ĐO]` / `[SUY LUẬN]` / `[CHƯA CÓ NGUỒN]`.
 
@@ -38,7 +43,7 @@ những chỗ bảng §0 dưới đây ghi khác. Viết mã `P…` khi quy tắ
 | 1 | **Con tôi học thế nào?** | Khối "Tóm tắt cho anh chị": bài gần nhất + ngày, điểm trung bình, so với bài trước, 3 bài gần nhất | ✅ có |
 | 2 | **Con còn yếu phần nào?** | "Phần con còn sai": sai x/y câu, tỉ lệ sai, mở ra xem đúng câu sai | ✅ có |
 | 3 | **Thầy đã làm gì cho con?** | "Phần con đang được phụ đạo" + "Bài tập về nhà" + "Bù bài" | ✅ có |
-| 4 | **Con có đi học đều không?** | chưa có — `thpt_attendance_records` mới chỉ cho chính học sinh đọc (`perf_rls.sql` dòng 807) | ⛔ cần migration (§6) |
+| 4 | **Con có đi học đều không?** | `ParentAttendanceCard` (RPC `parent_attendance_summary`) | ✅ code xong; ẩn tới khi chạy migration `20261003130000` |
 | 5 | **Hỏi thầy bằng cách nào?** | `TeacherContact` (đầu + cuối trang) + Zalo trong câu hỏi thường gặp | ✅ có |
 | 6 | **Tôi vào xem bằng cách nào?** | Trang khách: 3 bước + nút Zalo/gọi; "Đã có tài khoản? Đăng nhập" | ✅ có |
 
@@ -76,8 +81,8 @@ không dùng bảng "nhãn trái – số phải" hàng rộng (bắt mắt lia 
 *Nguồn: Scialfa 1994 (người 64 vs 24 tuổi, lệch tâm 4°–14°).*
 
 ### P7 — Một màn hình = một câu trả lời
-Thứ tự: cảnh báo (nếu có) → tóm tắt → việc phải làm (bài tập/bù bài) → phần còn sai → phụ đạo → các bài
-đã làm → thành tích game → liên hệ/FAQ. *Kế thừa N1, B2.*
+Thứ tự: cảnh báo (nếu có) → tóm tắt → **sắp tới** → **điểm danh** → việc phải làm (bài tập/bù bài) → "xem con
+so với lớp" (đóng sẵn) → phần còn sai → phụ đạo → các bài đã làm → thành tích game → **học phí** → liên hệ/FAQ. *Kế thừa N1, B2.*
 
 ### P8 — Không dùng từ nội bộ
 Cấm: "mở khoá", "mastery", "RP", "chủ đề cần ôn" (mơ hồ), một mình "60%" (60% cái gì?). Dùng: "phần con
@@ -106,13 +111,19 @@ Kế thừa B4. `<details>` gốc của trình duyệt cho FAQ: không JS, khôn
 Ảnh thật có chú thích nói rõ ảnh thật; số năm dạy/trường lấy từ `lib/contact.ts`; **không bịa** thành tích,
 bằng cấp, cam kết thời gian phản hồi.
 
-### P15 — Ngôn ngữ trung tính, đối chiếu theo ngưỡng
-Không "yếu/kém/chậm tiến bộ/đáng lo". Nói theo mốc đạt 6,5: "Điểm bài kiểm tra gần đây của con dưới mức
-đạt (6,5)". **Không hiển thị thứ hạng cá nhân mặc định.**
+### P15 — Ngôn ngữ trung tính; xếp loại quen thuộc; vị trí trong lớp do phụ huynh chọn xem
+Không "yếu/kém/chậm tiến bộ/đáng lo". Điểm đi kèm **xếp loại như sổ liên lạc**: Giỏi (≥8) · Khá (≥6,5) ·
+Trung bình (≥5) · "Cần cố gắng thêm" (<5) — thay cho "Đạt/Chưa đạt 6,5" tự đặt (phụ huynh đã có sẵn khung này;
+`lib/parent-format.ts: gradeBand`). **Không hiển thị thứ hạng cá nhân mặc định**, nhưng có mục "Xem con so với cả
+lớp (không bắt buộc)" **đóng sẵn**, phụ huynh tự mở: nói bằng dải ("nhóm 25% cao nhất") + điểm trung bình lớp,
+không bao giờ nói "hạng 32/40"; lớp < 8 em có điểm thì không hiện. *Đổi 3/10: bản đầu che hẳn vì suy từ loss aversion
+(tái lập trên lựa chọn có rủi ro, không phải về thứ hạng), trong khi hỏi "con đứng thứ mấy" là câu rất thường gặp —
+che hẳn dễ bị đọc là giấu.*
 *Nguồn: Ruggeri 2020 (loss aversion tái lập 19 quốc gia) → `[SUY LUẬN]` cho VN.*
 
 ### P16 — Không so sánh anh/chị/em trong nhà; trung tính về giới
-Đổi con bằng ô **"Chọn con"** (không bày số liệu hai con cạnh nhau); xưng "anh chị", không mặc định là mẹ.
+Đổi con bằng ô **"Chọn con"** (không bày số liệu hai con cạnh nhau); xưng **"phụ huynh"** (không "anh chị": phụ huynh
+50–60 tuổi có thể lớn hơn thầy), không mặc định là mẹ. *Đổi 3/10.*
 *Mục 4.6 của bản nghiên cứu ghi rõ: chưa có nguồn cho vai trò giới ở VN.*
 
 ### P17 — Một cột, thông tin quan trọng ở giữa cột, không cuộn ngang
@@ -128,14 +139,49 @@ Mỗi loại số có một dòng giải thích: dưới "Tóm tắt" là "Số 
 thành tích game có câu "Đây không phải điểm học tập"; FAQ có câu "Điểm trên đây là điểm gì?".
 Hiểu sai nguồn điểm là mất tin, không chỉ là lỗi hiển thị.
 
-### P20 — Biểu đồ chỉ khi nó thay được một câu chữ
-Phụ huynh **không** xem biểu đồ đường ở `/phu-huynh`: nhãn trục nhỏ khó đọc với 45–60 và biểu đồ lặp đúng
-dữ liệu của danh sách bài ngay trên (N4). Thay bằng: "Ba bài gần nhất: 6,5 → 8 → 7,5" + chênh lệch từng
-bài. Học sinh vẫn giữ biểu đồ SVG ở `/lop-hoc/ket-qua`.
+### P20 — Biểu đồ chỉ khi nó thay được một câu chữ (và không bắt đọc trục)
+Phụ huynh **không** xem biểu đồ đường có trục. Thay bằng **biểu đồ cột 6 bài gần nhất**
+(`components/parent/ParentScoreBars.tsx`): số in thẳng trên đầu cột (≥18px), không trục/lưới, chỉ một vạch mốc 6,5
+(và vạch mục tiêu nếu phụ huynh đặt), ngày dưới cột ≥15px, màu cột theo xếp loại + chuỗi điểm trong `aria-label`.
+*Đổi 3/10: chuỗi "6,5 → 8 → 7,5" bắt phụ huynh tự so các số trong đầu — chính là tải trí nhớ làm việc mà bản
+nghiên cứu muốn giảm. Cột có số không còn lý do "nhãn trục nhỏ" ở bản đầu. Chưa A/B — xem §9.* Học sinh vẫn giữ
+biểu đồ SVG ở `/lop-hoc/ket-qua`.
 
 ### P21 — Đọc được trong phòng thiếu sáng
 Mắt 60 tuổi cần ~3× ánh sáng so với mắt 20 tuổi (Weale 1975), nhạy chói tăng theo tuổi → tương phản cao,
 nét đậm, nền sáng, không chữ mảnh/italic cho đoạn dài. *Nguồn: Weale 1975 / NIOSH, W3C-AGE.*
+
+### P22 — Có phần "Sắp tới" nhìn về phía trước
+Các khối khác đều nhìn lại. Phụ huynh cần biết buổi học tới và việc thầy nhắn con để sắp đưa đón/nhắc con
+(`ParentUpcoming`: lịch tuần của khoá con đã vào + việc thầy nhắn hôm nay ≤7 ngày). **Không bịa** "bài kiểm tra
+sắp tới" khi DB chưa có ngày kiểm tra.
+
+### P23 — Điểm danh và học phí là hạng nhất, không phải "việc thương mại" xuống đáy
+Với lớp học thêm, "con có đến lớp không" và "tôi đã đóng chưa" nằm trong nỗi lo đầu của người trả tiền.
+`ParentAttendanceCard` (có mặt x/y buổi 30 ngày + 5 buổi gần nhất, buổi chưa điểm danh KHÔNG tính vắng) và
+`ParentTuitionCard` (đọc trạng thái thầy ghi; chưa đóng nói trung tính + "nếu đã đóng, nhắn thầy cập nhật").
+
+### P24 — Cho phụ huynh đặt mục tiêu, đo khoảng cách tới mục tiêu
+Mốc "qua/chưa qua" quá thấp so với kỳ vọng nhiều gia đình. Chip 7/8/9 (`ParentGoal`), vạch mục tiêu trên biểu đồ,
+câu "còn cách mục tiêu x điểm". Lưu trên điện thoại (localStorage) và **nói rõ thầy không thấy** — nếu sau này
+cần thầy thấy thì phải thêm bảng + migration và hỏi lại.
+
+### P25 — Cho phụ huynh một việc làm được, nói cách hỏi con không phán xét
+Biết điểm không đủ; phụ huynh cần biết *làm gì tối nay*. Tóm tắt có câu gợi ý hỏi con đúng chủ đề còn sai nhiều
+nhất ("phần … hôm nay con thấy khó ở chỗ nào?") kèm "Hỏi để hiểu con, không phải để chấm điểm con"; mục "Phần con
+còn sai" mở bằng "Để cùng con xem lại — không phải để chấm điểm con". Lý do: trang này có thể thành công cụ trách
+phạt trong bối cảnh áp lực thi cử; văn liệu "tiger parenting" (Kim và cs. 2013, nhớ từ kiến thức nền, chưa kiểm lại
+nguồn) gợi ý kiểu kiểm soát đi cùng kết quả tâm lý kém hơn kiểu hỗ trợ.
+
+### P26 — Đưa thông tin tới Zalo, đừng bắt đăng nhập mới biết
+Đăng nhập là chỗ rớt nhiều nhất với người sợ "quê" trước công nghệ. Thẻ **"Tin Zalo cho phụ huynh"** trong hồ sơ học
+sinh của thầy (`ParentDigestCard`, `lib/parent-digest.ts`) soạn sẵn bản tóm tắt từ số liệu thật (điểm + xếp loại,
+chênh lệch, điểm danh, phần cần ôn, số gọi thầy); thầy sửa rồi chép/mở Zalo phụ huynh. Chưa tự gửi (cần Zalo OA/ZNS
+có phí và một Edge Function) — xem §6.
+
+### P27 — Nhãn công cụ nói bằng lời
+"Chữ to hơn" / "Chữ nhỏ lại" thay cho "A+ / A−" ở trang phụ huynh (`ReadingZone plainLabels`); khuyến khích tin
+nhắn thoại Zalo ở thẻ liên hệ (gõ phím chậm với tay lớn tuổi).
 
 ---
 
@@ -216,18 +262,24 @@ Cách đo: `scripts/check-a11y.mjs` cho từng cặp màu; Chrome headless + Dev
 
 ---
 
-## 6. Chưa làm — cần thầy quyết hoặc cần migration
+## 6. Chưa làm — cần thầy quyết hoặc cần hạ tầng (cập nhật 3/10/2026)
 
 | Việc | Vướng | Đề xuất |
 |---|---|---|
-| "Con có đi học đều không?" | `thpt_attendance_records` chỉ cho chính học sinh đọc (`supabase/migrations/20260925140000_perf_rls.sql:807`) | migration: thêm `is_parent_of(student_id)` vào policy đọc + 1 RPC trả về "đi đủ / vắng / đi trễ" theo tháng — **chưa viết**, cần thầy duyệt trước |
-| Học phí, biên nhận | chưa có bảng nào trong hệ thống | ngoài phạm vi, hiện trả lời qua Zalo |
+| **Chạy migration** `20261003130000_parent_attendance_announcements.sql` | agent không được chạy lên production | `bash scripts/run-migrations.sh` — mở khoá điểm danh **và sửa lỗi cũ: phụ huynh chưa bao giờ đọc được "Bài tập về nhà"** (policy `class_announcements` chỉ cho học sinh) |
+| Tự gửi tin tóm tắt tuần qua Zalo (không cần thầy bấm) | cần Zalo OA + ZNS (có phí, phải duyệt mẫu tin) và 1 Edge Function chạy theo lịch; site là export tĩnh nên không có server | hiện thầy dùng thẻ "Tin Zalo cho phụ huynh" (P26); thầy quyết có đầu tư OA không |
+| Đăng nhập không mật khẩu (OTP qua SĐT/Zalo) | SMS/ZNS OTP có phí; phải cấu hình nhà cung cấp trong Supabase Auth | đo trước: bao nhiêu phụ huynh có mã nhưng chưa nhận (cột `claimed_at` ở `parent_links`) |
+| Ngày kiểm tra sắp tới trong "Sắp tới" | DB chưa có ngày kiểm tra (`class_assessments` chỉ có `published_at`) | nếu muốn, thêm cột `scheduled_for` + ô chọn ngày khi giao bài |
+| Mục tiêu điểm lưu cho thầy thấy | hiện chỉ trên điện thoại phụ huynh (localStorage) | bảng `parent_goals` + migration, sau khi có phản hồi phụ huynh |
+| Mốc xếp loại Giỏi ≥8 / Khá ≥6,5 / TB ≥5 | thầy xác nhận khớp cách trường/lớp đang xếp loại | sửa ở `lib/parent-format.ts: gradeBand` |
 | Nhận xét của thầy theo từng con | chưa có bảng; `student_alerts.handled_note` là gần nhất | nếu thầy muốn, thêm cột ghi chú ngắn theo tuần |
-| Đối chiếu theo ngưỡng cả lớp ("bao nhiêu % lớp đạt") | cần RPC tổng hợp; `get_periodic_rank_of` có sẵn nhưng chưa nối UI | ưu tiên sau P15 (đừng đưa thứ hạng cá nhân) |
 | Cam kết "thầy trả lời Zalo trong ngày" | hiện ghi "**thường** trả lời trong ngày" để không hứa thay thầy | thầy xác nhận thời gian thật thì sửa lại |
-| `MobileTabBar` (Trang chủ · Lớp học · Luyện tập · Tài khoản) hiện cả trên `/phu-huynh` | là thanh của học sinh; phụ huynh bấm "Luyện tập" sẽ vào trang không dành cho họ | ẩn thanh này khi người đang xem là phụ huynh, hoặc đổi 4 mục cho phụ huynh |
+| Phụ huynh có biết con biết mình xem điểm không | chưa quyết: minh bạch (báo cho con) hay không | thầy quyết — ảnh hưởng niềm tin thầy–trò, đừng tự làm |
 | Ảnh nghiệm thu trang đã đăng nhập | cần tài khoản phụ huynh thật | chụp lại 375/1280, sáng/tối rồi thay 2 ảnh mockup |
 | Footer nền đen trên trang sáng | `Footer.tsx` dùng `bg-[#04060A]`, không có nhánh sáng; chữ 12px | đổi thành `bg-panel`/chữ ≥15px khi ở `/phu-huynh` (đụng file dùng chung — hỏi thầy trước) |
+| **Phỏng vấn 5–8 phụ huynh thật** | chưa làm; mọi mục `[SUY LUẬN]`/`[CHƯA CÓ NGUỒN]` còn nguyên | xem §9 — câu hỏi cần kiểm |
+
+Đã xong 3/10: `MobileTabBar` ẩn ở `/phu-huynh`.
 
 ---
 
@@ -243,7 +295,7 @@ Cách đo: `scripts/check-a11y.mjs` cho từng cặp màu; Chrome headless + Dev
 6. Mọi trạng thái rỗng đã có câu giải thích + việc làm được chưa? (P9)
 7. Lối liên hệ thầy (gọi/Zalo) có ở **đầu và cuối** trang không? (P10)
 8. Số liệu mới có dòng nói rõ nguồn không? (P19)
-9. Không thêm request Supabase khi tải trang (đếm trước/sau) — trang này đã ở mức 8 request.
+9. Đếm request Supabase trước/sau; mỗi request mới phải có lý do (đợt 3/10 thêm 3 — xem §9) và không chặn nội dung chính.
 10. Nêu mã quy tắc (`P…`) trong mô tả commit; phá quy tắc thì ghi lý do.
 
 ---
@@ -258,3 +310,23 @@ nguồn quyết định nhiều nhất:
 - Piepenbrock, Mayr, Mund & Buchner 2013, *Ergonomics* — positive polarity có lợi cho cả người trẻ và lớn tuổi: https://pubmed.ncbi.nlm.nih.gov/23654206/
 - NN/g — Middle-Aged Users' Declining Web Performance (+0,8%/năm từ 25–60 tuổi): https://www.nngroup.com/articles/middle-aged-web-users/
 - Scialfa, Thomas & Joffe 1994, *Optom Vis Sci* 71(12) — tuổi tác và "useful field of view" (phân tích chuyển động mắt): https://pubmed.ncbi.nlm.nih.gov/7898880/
+
+---
+
+## 9. Phản biện 3/10/2026 — đã đổi gì, giả thuyết nào chưa kiểm
+
+| Phản biện | Đã làm | Chưa kiểm chứng (cần phụ huynh thật) |
+|---|---|---|
+| P15 che thứ hạng đi ngược văn hoá | mục "so với cả lớp" tuỳ chọn, theo dải (P15) | phụ huynh có mở không? có hiểu "nhóm 25% cao nhất" không? |
+| Mốc "đạt 6,5" lạ với phụ huynh; mục tiêu cao hơn mốc qua | xếp loại Giỏi/Khá/TB; chip mục tiêu 7/8/9 (P15, P24) | mốc có khớp trường? có ai đặt mục tiêu? |
+| Trang chỉ nhìn lại | khối "Sắp tới" (P22) | phụ huynh có đọc lịch ở đây hay vẫn hỏi Zalo? |
+| Điểm danh/học phí bị xếp là việc phụ | cả hai thành khối riêng (P23) | thứ tự nỗi lo thật |
+| Mô hình "kéo" + đăng nhập | thẻ Tin Zalo cho phụ huynh (P26) | tỉ lệ phụ huynh thật sự dùng web sau khi nhận tin |
+| P20 bỏ biểu đồ dựa trên suy luận | biểu đồ cột có số (P20) | **cột có số vs chuỗi số — chưa A/B**; thử đo thời gian trả lời "điểm lên hay xuống?" với 5 phụ huynh |
+| Xưng "anh chị" sai vai | "phụ huynh" toàn bộ (P16) | cách xưng phụ huynh thấy tự nhiên nhất |
+| Nhãn A−/A+ khó hiểu | "Chữ to hơn/Chữ nhỏ lại" (P27) | — |
+| Trang có thể thành công cụ trách phạt con | khung "hỏi để hiểu, không chấm điểm" (P25) | tác động thật lên con — không đo được từ trang |
+
+Mỗi khối mới thêm request Supabase: khoá học (1), điểm danh (1), việc hôm nay (1); "so với lớp" chỉ gọi khi
+phụ huynh mở. Tổng trang đăng nhập: 8 → 11 request (phần phụ, không chặn nội dung chính). Ghi lại để lần tối ưu
+tốc độ sau có số để so.

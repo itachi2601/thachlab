@@ -61,8 +61,8 @@ export default function TeacherContact({
     <section className={`rounded-2xl border border-white/10 bg-panel p-5 sm:p-6 ${className}`}>
       <h2 className="font-display text-lg font-bold text-white">Cần trao đổi với thầy về con?</h2>
       <p className="parent-copy mt-1.5 text-slate-400">
-        Thầy thường trả lời Zalo trong ngày. Nếu việc gấp (con ốm, xin nghỉ, đổi lịch học), anh chị gọi
-        trực tiếp.
+        Thầy thường trả lời Zalo trong ngày. Nếu việc gấp (con ốm, xin nghỉ, đổi lịch học), phụ huynh gọi
+        trực tiếp. Gõ chữ không tiện thì cứ gửi tin nhắn thoại Zalo cũng được.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         {CONTACT.phone && (

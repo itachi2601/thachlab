@@ -38,7 +38,19 @@ function applyTheme(theme: Theme) {
   window.dispatchEvent(new Event(THEME_EVENT));
 }
 
-export default function ReadingZone({ children, className }: { children: ReactNode; className?: string }) {
+/**
+ * plainLabels: nút cỡ chữ ghi thành lời ("Chữ nhỏ lại" / "Chữ to hơn") thay vì "A− / A+" — nhiều phụ huynh
+ * 45–60 không nhận ra ký hiệu A−/A+. Chỉ trang phụ huynh bật; trang học sinh giữ bản gọn.
+ */
+export default function ReadingZone({
+  children,
+  className,
+  plainLabels = false,
+}: {
+  children: ReactNode;
+  className?: string;
+  plainLabels?: boolean;
+}) {
   const [fontLevel, setFontLevel] = useState(1);
   const [dim, setDim] = useState(false);
   const restored = useRef(false);
@@ -124,16 +136,18 @@ export default function ReadingZone({ children, className }: { children: ReactNo
             onClick={() => setFontLevel((v) => Math.max(0, v - 1))}
             disabled={fontLevel === 0}
             aria-label="Cỡ chữ nhỏ hơn"
+            style={plainLabels ? { padding: "0 14px" } : undefined}
           >
-            A−
+            {plainLabels ? "Chữ nhỏ lại" : "A−"}
           </button>
           <button
             type="button"
             onClick={() => setFontLevel((v) => Math.min(FONT_SCALES.length - 1, v + 1))}
             disabled={fontLevel === FONT_SCALES.length - 1}
             aria-label="Cỡ chữ lớn hơn"
+            style={plainLabels ? { padding: "0 14px" } : undefined}
           >
-            A+
+            {plainLabels ? "Chữ to hơn" : "A+"}
           </button>
         </div>
       </div>
