@@ -262,6 +262,17 @@ export default function ThptStudentHome({
     );
   }, [classLessons, progress, lastLessonId]);
 
+  // L2: tiến độ của bài đang dở (không phải cả lớp); chưa có thì quay về tổng.
+  const lessonProgress = useMemo(() => {
+    if (!nextLesson) return null;
+    const summary = progress.get(nextLesson.id);
+    const total = summary?.total ?? nextLesson.itemCount;
+    if (!total) return null;
+    const completed = summary?.completed ?? 0;
+    return { completed, total, pct: Math.round((completed / total) * 100) };
+  }, [nextLesson, progress]);
+  const shownProgress = lessonProgress ?? totals;
+
   const nextChapter = classChapters?.find((chapter) => chapter.id === nextLesson?.chapter_id) ?? null;
   const avgScore = scores.length
     ? Math.round((scores.reduce((sum, point) => sum + point.score, 0) / scores.length) * 10) / 10
@@ -330,15 +341,15 @@ export default function ThptStudentHome({
         <div className="relative mt-4 flex items-end gap-3 sm:mt-5 sm:gap-5">
           <div className="min-w-0 flex-1">
             <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
-              <b className="text-blue-200">Năng lượng học tập</b>
+              <b className="text-blue-200">{lessonProgress ? "Bài đang học" : "Năng lượng học tập"}</b>
               <span className="whitespace-nowrap font-mono text-[13px] text-slate-400">
-                {totals ? `${totals.completed}/${totals.total} mục · ${totals.pct}%` : "…"}
+                {shownProgress ? `${shownProgress.completed}/${shownProgress.total} mục · ${shownProgress.pct}%` : "…"}
               </span>
             </div>
             <div className="h-3 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-3.5">
               <div
                 className="h-full rounded-full bg-primary transition-[width]"
-                style={{ width: `${totals?.pct ?? 0}%` }}
+                style={{ width: `${shownProgress?.pct ?? 0}%` }}
               />
             </div>
           </div>
@@ -442,10 +453,8 @@ export default function ThptStudentHome({
           {needs.length > 0 && (
             <>
               <p className="text-sm text-slate-400">
-                Để mở khoá một chủ đề: <strong className="text-slate-200">đăng ký buổi phụ đạo</strong>{" "}
-                bên dưới rồi trả bài lại cho trợ giảng, hoặc <strong className="text-slate-200">tự ôn và làm bài
-                tự kiểm tra</strong> (câu hỏi ngẫu nhiên đúng chủ đề này) — đạt từ 80% là mở khoá. Mỗi chủ đề
-                cách nhau {EXIT_COOLDOWN_HOURS} giờ giữa hai lượt để kịp ôn lại đoạn lý thuyết.
+                Mở khoá bằng cách <strong className="text-slate-200">đăng ký phụ đạo</strong> bên dưới, hoặc{" "}
+                <strong className="text-slate-200">tự kiểm tra</strong> (đạt từ 80%). Hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ.
               </p>
               <div className="space-y-1.5">
                 {needs.map((need) => {

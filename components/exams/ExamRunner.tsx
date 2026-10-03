@@ -394,7 +394,7 @@ export default function ExamRunner({
         >
           {resumable ? "Làm tiếp bài đang dở" : "Bắt đầu làm bài"}
         </Button>
-        <p className="mt-3 text-center text-xs text-slate-500">
+        <p className="mt-3 text-center text-[13px] text-slate-400">
           Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.
         </p>
       </div>
@@ -418,7 +418,7 @@ export default function ExamRunner({
           onCancel={() => setConfirmOpen(false)}
         />
         {violationBanner && (
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-amber-400/10 px-4 py-2.5 text-sm text-amber-200">
+          <div role="alert" className="fixed inset-x-3 top-20 z-50 mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-400/40 bg-[#2a2210] px-4 py-2.5 text-sm text-amber-200 shadow-lg">
             <span>{violationBanner.text}</span>
             <div className="flex items-center gap-3">
               {violationBanner.type === "fullscreen_exit" && (
@@ -471,7 +471,7 @@ export default function ExamRunner({
               <div className="mt-3 max-h-[30vh] space-y-2 overflow-y-auto border-t border-white/10 pt-3">
                 {groupQuestionIndexesByType(exam.questions).map((section) => (
                   <div key={section.type}>
-                    <div className="mb-1 text-[12px] font-semibold uppercase tracking-wide text-slate-500">
+                    <div className="mb-1 text-[13px] font-semibold uppercase tracking-wide text-slate-400">
                       {QUESTION_TYPE_LABELS[section.type]} · {section.indices.length} câu
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -513,7 +513,7 @@ export default function ExamRunner({
                 ))}
               </div>
 
-              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] text-slate-500">
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <span className="h-3 w-3 rounded border border-primary bg-primary/25" />
                   Đã làm

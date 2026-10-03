@@ -1561,7 +1561,16 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   margin: 0.75rem auto;
   border-radius: 0.5rem;
   background: #f8fafc;
-  padding: 0.5rem;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
 
 /* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
