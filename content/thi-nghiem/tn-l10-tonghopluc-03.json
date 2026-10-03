@@ -1,0 +1,126 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+ "lesson_id": 58,
+ "nguon_trong_bai": "content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html",
+ "id": "tn-l10-tonghopluc-03",
+ "ten": "Đèn treo hai dây: lực căng phụ thuộc góc giữa hai dây",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "canbangluc.treo_hai_day",
+  "tonghopluc.hai_luc_bang_nhau"
+ ],
+ "muc_tieu": "Thấy lực căng mỗi dây tăng lên khi hai dây mở rộng dù trọng lượng đèn không đổi.",
+ "dung_cu": [
+  {
+   "ten": "Đèn (hoặc quả nặng) 2,0 kg, hai dây đối xứng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho đèn 2,0 kg (P = 20 N) treo bằng hai dây đối xứng hợp nhau góc α.",
+   "Thay đổi α từ 30° đến 170°.",
+   "Tính lực căng T của mỗi dây."
+  ],
+  "quan_sat": [
+   "α = 60°: T ≈ 11,5 N.",
+   "α = 120°: T = 20 N.",
+   "α → 180°: T tăng rất nhanh."
+  ],
+  "rut_ra": [
+   "Hợp lực của T1, T2 cân bằng P: 2T·cos(α/2) = P.",
+   "Dây treo không được căng thẳng ngang vì T → ∞."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng đèn",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc giữa hai dây",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 20,
+   "max": 170,
+   "mac_dinh": 60,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Lực căng mỗi dây",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = m·g",
+   "T = P / (2·cos(α/2))"
+  ],
+  "gia_thiet": [
+   "hai dây đối xứng, nhẹ, không giãn",
+   "đèn đứng yên"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (độ)",
+   "T (N)"
+  ],
+  "hang": [
+   [
+    30,
+    10.4
+   ],
+   [
+    60,
+    11.5
+   ],
+   [
+    90,
+    14.1
+   ],
+   [
+    120,
+    20.0
+   ],
+   [
+    150,
+    38.6
+   ],
+   [
+    170,
+    114.7
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với m = 2,0 kg, g = 10 m/s²."
+ },
+ "ket_qua_ky_vong": "T nhỏ nhất (=P/2) khi hai dây song song thẳng đứng và tăng không giới hạn khi α → 180°.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng mỗi dây luôn đỡ P/2.",
+  "Cho rằng T không đổi vì trọng lượng không đổi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Kéo hai đầu dây ra xa nhau, vectơ T1, T2 và đường chéo F12 đổi theo; đồ thị T theo α.",
+  "diem_nhan": "Gần 180° lực căng vọt lên; đây là lý do dây treo đèn không căng ngang."
+ }
+}

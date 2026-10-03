@@ -1,0 +1,128 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+ "lesson_id": 58,
+ "nguon_trong_bai": "content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html",
+ "id": "tn-l10-tonghopluc-02",
+ "ten": "Vật trên mặt phẳng nghiêng: lực kéo dọc ván bằng P sin α",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "phantichluc.thanh_phan_vuong_goc",
+  "phantichluc.mat_phang_nghieng"
+ ],
+ "muc_tieu": "Đo lực kéo song song mặt phẳng nghiêng để thấy nó bằng thành phần Px = P sin α của trọng lực.",
+ "dung_cu": [
+  {
+   "ten": "Quả nặng có móc, trọng lượng 2,0 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ván phẳng trơn có thước đo góc nghiêng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 0–5 N",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo quả nặng vào lực kế đo trọng lượng P.",
+   "Đặt quả nặng lên ván trơn nghiêng góc α, móc lực kế song song với ván giữ vật đứng yên.",
+   "Đọc lực kế ở α = 15°, 30°, 45°."
+  ],
+  "quan_sat": [
+   "Lực kế chỉ khoảng 0,5; 1,0; 1,4 N.",
+   "Số chỉ tăng theo góc và luôn nhỏ hơn P."
+  ],
+  "rut_ra": [
+   "Lực kéo dọc ván bằng Px = P sin α.",
+   "Thành phần Py = P cos α ép vuông góc vào ván, không làm vật trượt."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng quả nặng",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 2.0
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc nghiêng",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 80,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "Px",
+   "ten": "Thành phần dọc ván",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "Py",
+   "ten": "Thành phần vuông góc ván",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Px = P·sin(α)",
+   "Py = P·cos(α)",
+   "Px² + Py² = P²"
+  ],
+  "gia_thiet": [
+   "ván trơn, bỏ qua ma sát",
+   "lực kế song song với ván"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (độ)",
+   "Px (N)",
+   "Py (N)"
+  ],
+  "hang": [
+   [
+    15,
+    0.52,
+    1.93
+   ],
+   [
+    30,
+    1.0,
+    1.73
+   ],
+   [
+    45,
+    1.41,
+    1.41
+   ],
+   [
+    60,
+    1.73,
+    1.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với P = 2,0 N."
+ },
+ "ket_qua_ky_vong": "Số chỉ lực kế bằng P·sin α trong sai số ±0,1 N.",
+ "hien_tuong_hay_sai": [
+  "Nhầm Px = P cos α.",
+  "Tưởng lực kéo dọc ván bằng cả trọng lượng P."
+ ],
+ "sai_so_thuong_gap": "Lực kế không song song ván, ma sát còn sót làm số chỉ nhỏ hơn P·sin α.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "y_tuong": "Kéo thanh trượt α, vectơ P phân tích thành Px, Py trên hình; đồ thị Px, Py theo α.",
+  "diem_nhan": "Px tăng, Py giảm khi dốc đứng dần; tại 45° hai thành phần bằng nhau."
+ }
+}
