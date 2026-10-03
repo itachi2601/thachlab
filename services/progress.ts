@@ -546,3 +546,22 @@ export async function gradeEssayAnswer(
   if (error) return { ok: false, message: error.message };
   return { ok: true };
 }
+
+/**
+ * Các bài em đã học = bài có ≥1 mục trong `lesson_progress` của chính em. Một truy vấn, nhúng
+ * `lesson_items(lesson_id)` để không phải map item → bài ở client. Lỗi mạng → tập rỗng
+ * (chỉ mất phần tick sẵn ở "Ôn tổng hợp", em vẫn tự chọn bài được).
+ */
+export async function fetchLearnedLessonIds(studentId: string): Promise<Set<number>> {
+  const { data, error } = await getSupabase()
+    .from("lesson_progress")
+    .select("lesson_items(lesson_id)")
+    .eq("user_id", studentId);
+  const ids = new Set<number>();
+  if (error) return ids;
+  for (const row of (data ?? []) as unknown as { lesson_items: { lesson_id: number } | { lesson_id: number }[] | null }[]) {
+    const item = Array.isArray(row.lesson_items) ? row.lesson_items[0] : row.lesson_items;
+    if (item) ids.add(item.lesson_id);
+  }
+  return ids;
+}

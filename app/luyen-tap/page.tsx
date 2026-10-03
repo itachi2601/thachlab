@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { useAuth } from "@/components/auth/AuthProvider";
 import RequireAuth from "@/components/auth/RequireAuth";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import type { Difficulty, SchoolClass } from "@/features/exams/types";
@@ -15,6 +16,7 @@ import { isPeriodicExam } from "@/features/lessons/types";
 import { displayClassesByGrade, expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { fetchExamsFull, type LessonWithItemRefs } from "@/services/lessons";
+import { fetchLearnedLessonIds } from "@/services/progress";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -48,6 +50,11 @@ function PracticeModal(props: ComponentProps<typeof PracticeModalLazy>) {
 }
 
 const LEVELS: Difficulty[] = ["de", "trung-binh", "kho"];
+const NO_EXAMS: number[] = [];
+const REVIEW_COUNTS = [10, 20, 30] as const;
+type Mode = "single" | "review";
+
+const lessonExamIds = (l: LessonWithItemRefs) => Array.from(new Set(l.itemRefs.flatMap((r) => r.exam_ids)));
 
 interface PoolStats {
   topics: { name: string; total: number }[];
@@ -60,6 +67,15 @@ const selectCls =
   "w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-white/30 focus:outline-none";
 
 function Content() {
+  const { session } = useAuth();
+  const [mode, setMode] = useState<Mode>("single");
+  const [learned, setLearned] = useState<Set<number> | null>(null);
+  // null = em chưa tự chọn gì → dùng mặc định "các bài đã học"; có giá trị = em đã chỉnh tay.
+  const [selected, setSelected] = useState<Set<number> | null>(null);
+  const [reviewCount, setReviewCount] = useState<(typeof REVIEW_COUNTS)[number]>(20);
+  // Ảnh chụp lựa chọn lúc bấm nút: đổi chọn/tải xong dữ liệu khi modal đang mở không làm bốc lại câu.
+  const [reviewRun, setReviewRun] = useState<{ byLesson: Record<number, number[]>; count: number } | null>(null);
+  const [soloLessonId, setSoloLessonId] = useState<number | null>(null);
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
@@ -151,6 +167,61 @@ function Content() {
 
   const available = !stats ? 0 : level ? stats.byLevel[level as keyof PoolStats["byLevel"]] : stats.total;
 
+  // ---- Ôn tổng hợp: các chương của lớp → bài (bài chưa có đề thì mờ, không chọn được) ----
+  const reviewGroups = useMemo(
+    () =>
+      classChapters
+        .map((c) => ({
+          chapter: c,
+          lessons: (lessons ?? [])
+            .filter((l) => l.chapter_id === c.id && l.published && !isPeriodicExam(l.lesson_kind))
+            .map((l) => ({ lesson: l, examIds: lessonExamIds(l) })),
+        }))
+        .filter((g) => g.lessons.length > 0),
+    [classChapters, lessons],
+  );
+  const reviewable = useMemo(
+    () => reviewGroups.flatMap((g) => g.lessons).filter((x) => x.examIds.length > 0),
+    [reviewGroups],
+  );
+  const learnedReviewable = useMemo(
+    () => reviewable.filter((x) => learned?.has(x.lesson.id)),
+    [reviewable, learned],
+  );
+  const effectiveSelected = useMemo(
+    () => selected ?? new Set(learnedReviewable.map((x) => x.lesson.id)),
+    [selected, learnedReviewable],
+  );
+  const pickedLessons = reviewable.filter((x) => effectiveSelected.has(x.lesson.id));
+  const lessonTitles = useMemo(
+    () => Object.fromEntries((lessons ?? []).map((l) => [l.id, l.title])),
+    [lessons],
+  );
+  const soloExamIds = useMemo(() => {
+    const l = (lessons ?? []).find((x) => x.id === soloLessonId);
+    return l ? lessonExamIds(l) : [];
+  }, [lessons, soloLessonId]);
+
+  function openMode(next: Mode) {
+    setMode(next);
+    if (next === "review" && learned === null && session) {
+      fetchLearnedLessonIds(session.user.id).then(setLearned);
+    }
+  }
+  function toggleLesson(id: number) {
+    const next = new Set(effectiveSelected);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    setSelected(next);
+  }
+  function selectChapter(ids: number[]) {
+    setSelected(new Set([...effectiveSelected, ...ids]));
+  }
+  function selectRecent() {
+    // "Gần nhất" theo thứ tự chương trình (chưa có mốc thời gian học trong dữ liệu đã tải).
+    setSelected(new Set(learnedReviewable.slice(-3).map((x) => x.lesson.id)));
+  }
+
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-20 pt-28 sm:px-6">
       <Link href="/tai-khoan/" className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white">
@@ -162,7 +233,29 @@ function Content() {
         được tính lại cho danh hiệu — làm câu mới mới tiến thêm.
       </p>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+      <div role="tablist" aria-label="Kiểu luyện tập" className="mt-5 grid grid-cols-2 gap-2">
+        {(
+          [
+            ["single", "Theo yêu cầu cần đạt"],
+            ["review", "Ôn tổng hợp"],
+          ] as [Mode, string][]
+        ).map(([m, text]) => (
+          <button
+            key={m}
+            type="button"
+            role="tab"
+            aria-selected={mode === m}
+            onClick={() => openMode(m)}
+            className={`min-h-11 rounded-xl border px-3 text-sm font-semibold ${
+              mode === m ? "border-white/60 bg-white/10 text-white" : "border-white/15 text-slate-300 hover:border-white/30"
+            }`}
+          >
+            {text}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <label className="text-xs text-slate-400">
           Lớp
           <select
@@ -171,6 +264,7 @@ function Content() {
             onChange={(e) => {
               setClassId(Number(e.target.value));
               setChapterId(null);
+              setSelected(null);
               pickLesson(null);
             }}
           >
@@ -181,7 +275,7 @@ function Content() {
             ))}
           </select>
         </label>
-        <label className="text-xs text-slate-400">
+        <label className={`text-xs text-slate-400 ${mode === "review" ? "hidden" : ""}`}>
           Chương
           <select
             className={selectCls}
@@ -199,7 +293,7 @@ function Content() {
             ))}
           </select>
         </label>
-        <label className="text-xs text-slate-400 sm:col-span-2">
+        <label className={`text-xs text-slate-400 sm:col-span-2 ${mode === "review" ? "hidden" : ""}`}>
           Bài
           <select
             className={selectCls}
@@ -217,7 +311,115 @@ function Content() {
         </label>
       </div>
 
-      {lesson && (
+      {mode === "review" && (
+        <div className="mt-5 space-y-5">
+          {reviewGroups.map((g) => {
+            const ready = g.lessons.filter((x) => x.examIds.length > 0).map((x) => x.lesson.id);
+            return (
+              <section key={g.chapter.id}>
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+                  <h2 className="text-sm font-semibold text-white">{g.chapter.title}</h2>
+                  {ready.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => selectChapter(ready)}
+                      className="min-h-11 px-2 text-[13px] font-semibold text-slate-300 hover:text-white"
+                    >
+                      Cả chương
+                    </button>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {g.lessons.map(({ lesson: l, examIds: ids }) => {
+                    const empty = ids.length === 0;
+                    const on = effectiveSelected.has(l.id) && !empty;
+                    return (
+                      <button
+                        key={l.id}
+                        type="button"
+                        disabled={empty}
+                        aria-pressed={on}
+                        onClick={() => toggleLesson(l.id)}
+                        className={`min-h-11 rounded-full border px-4 py-2 text-left text-[13px] font-semibold ${
+                          on
+                            ? "border-white/60 bg-white/10 text-white"
+                            : "border-white/15 text-slate-300 hover:border-white/30"
+                        } ${empty ? "cursor-not-allowed opacity-40" : ""}`}
+                      >
+                        {on ? "✓ " : ""}
+                        {l.title}
+                        {empty && <span className="ml-1.5 font-normal text-slate-400">· chưa có câu</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+          {lessons && reviewGroups.length === 0 && (
+            <p className="text-sm text-slate-400">Lớp này chưa có bài để ôn.</p>
+          )}
+          {learned !== null && learnedReviewable.length === 0 && selected === null && reviewable.length > 0 && (
+            <p className="text-[13px] text-slate-400">Em chưa học bài nào của lớp này — chọn các bài muốn ôn nhé.</p>
+          )}
+
+          <div className="space-y-3 rounded-2xl border border-white/10 bg-panel/60 p-4">
+            <div className="flex flex-wrap gap-2">
+              {learnedReviewable.length > 0 && (
+                <button
+                  type="button"
+                  onClick={selectRecent}
+                  className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-slate-300 hover:border-white/30"
+                >
+                  3 bài gần nhất
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => setSelected(new Set())}
+                className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-slate-300 hover:border-white/30"
+              >
+                Bỏ chọn hết
+              </button>
+            </div>
+            <div>
+              <p className="mb-1.5 text-[13px] text-slate-400">Số câu</p>
+              <div className="flex gap-2">
+                {REVIEW_COUNTS.map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    aria-pressed={reviewCount === n}
+                    onClick={() => setReviewCount(n)}
+                    className={`min-h-11 flex-1 rounded-full border text-sm font-semibold ${
+                      reviewCount === n
+                        ? "border-white/60 bg-white/10 text-white"
+                        : "border-white/15 text-slate-300 hover:border-white/30"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <button
+              type="button"
+              disabled={pickedLessons.length === 0}
+              onClick={() =>
+                setReviewRun({
+                  byLesson: Object.fromEntries(pickedLessons.map((x) => [x.lesson.id, x.examIds])),
+                  count: reviewCount,
+                })
+              }
+              className="min-h-11 w-full rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-black disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              {pickedLessons.length === 0 ? "Chọn ít nhất 1 bài" : `Làm ${reviewCount} câu từ ${pickedLessons.length} bài`}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {mode === "single" && lesson && (
         <div className="mt-5 space-y-4 rounded-2xl border border-white/10 bg-panel/60 p-4">
           {poolError && <p className="text-sm text-amber-300">Chưa tải được câu hỏi của bài, thử tải lại trang.</p>}
           {!poolError && !stats && <p className="text-sm text-slate-400">Đang tải câu hỏi của bài…</p>}
@@ -272,7 +474,32 @@ function Content() {
         </div>
       )}
 
-      {practicing && lesson && (
+      {reviewRun && (
+        <PracticeModal
+          lessonId={null}
+          examIds={NO_EXAMS}
+          topicName=""
+          count={reviewRun.count}
+          examIdsByLesson={reviewRun.byLesson}
+          lessonTitles={lessonTitles}
+          onPickLesson={(id) => {
+            setReviewRun(null);
+            setSoloLessonId(id);
+          }}
+          onClose={() => setReviewRun(null)}
+        />
+      )}
+
+      {soloLessonId !== null && (
+        <PracticeModal
+          lessonId={soloLessonId}
+          examIds={soloExamIds}
+          topicName=""
+          onClose={() => setSoloLessonId(null)}
+        />
+      )}
+
+      {practicing && mode === "single" && lesson && (
         <PracticeModal
           lessonId={lesson.id}
           examIds={examIds}
