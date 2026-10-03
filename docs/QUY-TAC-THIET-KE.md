@@ -129,3 +129,55 @@ Sweller 1988; Sweller & Cooper 1985; Chandler & Sweller 1992; Kalyuga 2003 · Ma
 
 Điểm tốt nên giữ: một màu nhấn duy nhất; tiêu đề mục đánh số rõ; ví dụ đóng khung nền nhạt ngay dưới khái niệm (N8);
 thân bài 16px/1.6; mục lục bài sticky ≤ 7 mục (B7); tương phản chữ `#E2E8F0`/`#05070B` đúng M2.
+
+---
+
+## Phụ lục B — Rà 3 trang HS ngày 3/10/2026 (đọc code, chưa chụp màn hình vì cần đăng nhập HS thật)
+
+Phạm vi: trang chủ HS (`/tai-khoan` → `components/dashboard/ThptStudentHome.tsx` + `WelcomePanel`), `/lop-hoc/ket-qua`
+(`StudentResultsDashboard.tsx`), `/kiem-tra/lam` (`ExamRunner.tsx`). Cần chụp 375px bằng tài khoản HS để xác nhận số đo.
+
+### B1. Trang chủ HS (`ThptStudentHome`)
+| Ưu tiên | Vấn đề | Vi phạm | Hướng sửa |
+|---|---|---|---|
+| 1 | Trước "Việc cần làm hôm nay" có: WelcomePanel + thẻ hero (avatar, danh hiệu, thanh năng lượng, điểm TB) + Cần chú ý + RankCard + TitleShowcase + DailyStreakCard + ClassRankBoard + HonorVisibilityPicker. Việc học bắt đầu rất xa quá 40% màn đầu | B1, N1, L3, G2 | Đưa "Học tiếp" (nút duy nhất nổi) lên ngay dưới hero; gom rank/danh hiệu/streak/bảng lớp/chọn hiển thị thành 1 hàng thu gọn hoặc trang riêng `/lop-hoc/xep-hang` |
+| 1 | Cùng lúc có ≥ 3 khối thưởng ngoài + 2 thanh tiến độ (năng lượng, streak) → cạnh tranh chú ý | L3, B2, N7 | Chỉ 1 điểm nổi bật (Học tiếp); phần thưởng hạ cấp thành chữ/viền |
+| 1 | Hero: gradient + quầng blur + thanh gradient có glow | M6, M3 | Nền phẳng; thanh tiến độ 1 màu nhấn, bỏ shadow glow |
+| 2 | Thẻ rỗng: "Chưa có việc gì mới…", "Chưa có bài tập về nhà mới", "Chưa có chủ đề nào đang chờ mở khoá…", "Chưa có buổi phụ đạo…" | N3 | Ẩn hẳn Section khi rỗng (cả Section "Bài tập về nhà", "Chủ đề đang mở khoá") |
+| 2 | Chữ 12px ở nhãn ("Điểm TB", "Học tiếp theo", chú thích) và `text-xs` cho nội dung cần đọc (đoạn hướng dẫn mở khoá, mô tả BTVN) | C1 | Nội dung ≥ 14px; nhãn ≥ 13px |
+| 2 | Đoạn dài giải thích "Để mở khoá một chủ đề…" (4–5 dòng ở 375px, xs) | C4 | Rút còn 1–2 câu hoặc thu vào "Cách mở khoá" |
+| 2 | Nút "Đăng ký" py-2 text-xs ≈ 32px; chip "Tự kiểm tra" py-1 ≈ 26px; nút đăng xuất 40px | D2 | Đích chạm ≥ 44px, cách nhau ≥ 8px |
+| 3 | `WelcomePanel` lặp lời chào với h1 "Chào {tên} 👋" của hero (2 lời chào) | N4 | Với HS đã có lớp, bỏ WelcomePanel hoặc bỏ h1 |
+| 3 | Lời chào có tên + emoji, thanh "Năng lượng học tập" đếm theo cả lớp (%) | L2 | Giữ 1 con số: bài đang dở; % cả lớp để ở trang lớp |
+
+### B2. `/lop-hoc/ket-qua` (`StudentResultsDashboard`)
+| Ưu tiên | Vấn đề | Vi phạm | Hướng sửa |
+|---|---|---|---|
+| 1 | `RankCard` đầu trang trước điểm: phần thưởng ngoài chen vào trang kết quả | L3, B1 | Chuyển xuống cuối hoặc thành 1 dòng + link `/lop-hoc/xep-hang` |
+| 1 | Biểu đồ điểm SVG `min-w-[420px]` → cuộn ngang ở 375px, chữ trục nhỏ | D1, H4 | viewBox co giãn 100% rộng, chữ trục ≥ 13px; hoặc thay bằng danh sách 5 điểm gần nhất + mũi tên xu hướng |
+| 1 | Thẻ rỗng: "Em chưa làm bài kiểm tra nào", "Chưa có dữ liệu — hoặc em chưa sai câu nào", "Bài đã làm" rỗng | N3 | Ẩn Section khi rỗng; 1 dòng mờ duy nhất nếu hoàn toàn chưa có gì |
+| 2 | 4 khối đứng cạnh nhau cùng cấp (Cần chú ý, Điểm theo thời gian, Bài đã làm, Mở khoá, Chủ đề cần ôn) → không rõ cái nào làm trước | B2, B8 | Thứ tự: Cần chú ý (nếu có) → Chủ đề cần ôn (hành động) → Bài đã làm → biểu đồ. 1 nút nổi: "Ôn chủ đề yếu nhất" |
+| 2 | Ngôn ngữ phản hồi: "Điểm kiểm tra của em đang thấp…", "Em còn bài kiểm tra chưa làm — hãy hoàn thành sớm" | L4 | Hướng việc tiếp theo: "Làm lại mục … rồi thử câu tương tự" |
+| 2 | Điểm chỉ phân biệt màu (đạt/chưa đạt `PASS = 6.5`) ở vài chỗ | M4 | Kèm chữ "Đạt/Chưa đạt" hoặc icon |
+| 2 | Chữ `text-xs` (12px) cho phụ đề từng dòng, danh sách câu sai `text-sm` + `line-clamp-2` | C1 | Phụ đề ≥ 13px; câu sai ≥ 14px |
+| 3 | Mỗi chủ đề là thẻ mở rộng chứa nút + danh sách câu: lồng viền 3 cấp (thẻ → khối → mục) | B3 | Bỏ viền mục con, dùng khoảng cách |
+
+### B3. `/kiem-tra/lam` (`ExamRunner`)
+| Ưu tiên | Vấn đề | Vi phạm | Hướng sửa |
+|---|---|---|---|
+| 1 | Thanh sticky đầu bài: hàng "Câu x/y · đã làm" + đồng hồ + 2 nút ("Bảng câu hỏi", "Nộp bài") → ở 375px xuống 2–3 dòng, mở bảng câu thêm ≤ 30vh; chiếm quá 15% màn | B6, D2 | 1 hàng: đồng hồ + "x/y" + nút ⋯ (Bảng câu/Nộp). Bảng câu mở dạng sheet từ đáy |
+| 1 | "Nộp bài" (phá huỷ) nằm ngay cạnh "Bảng câu hỏi" ở góc trên, và lặp lại ở cuối; "Nộp bài" cùng cấp "Câu sau" | D3, B2 | Bỏ nút nộp ở thanh trên; chỉ ở câu cuối + trong bảng câu; "Câu sau" là nút nổi duy nhất |
+| 1 | Ô số trong bảng câu `h-8 w-8` (32px) cách 6px | D2 | 44px, 5–6 ô/hàng ở 375px |
+| 1 | Ô nhập đáp số không có `inputMode="decimal"` (bàn phím chữ hiện ra) | D6 | `inputMode="decimal"` + `autoComplete="off"` |
+| 2 | Hàng dưới 3 nút (Câu trước, Đánh dấu, Câu sau) `flex-wrap` → xuống 2 dòng ở 360px; nhãn "Đánh dấu xem lại" 3 từ | D2, N2 | Nhãn "Đánh dấu"; cố định vị trí "Câu sau" bên phải (B5) |
+| 2 | Banner vi phạm tự hiện giữa bài (8 giây) | B4, L6 | Giữ (do chống gian lận) nhưng dạng dải mảnh 1 dòng, không đẩy nội dung xuống (overlay) |
+| 2 | Chuyển câu bằng trượt + mờ (framer-motion) | B4 | Chấp nhận nếu < 200ms và tôn trọng `prefers-reduced-motion`; kiểm tra |
+| 2 | Màn intro: đồng hồ/ghi chú 12–14px màu `slate-500` (tương phản ≈ 3:1 trên nền tối) | M2, C1 | Chữ phụ `slate-400` trở lên, ≥ 13px |
+| 2 | Nền: trang làm đề đọc dài nhưng theme theo mặc định chung (tối) | M1 | `ReadingZone` mặc định sáng/`prefers-color-scheme` (hiện chỉ `/phu-huynh` ép sáng) |
+| 3 | Ảnh đề scan nền trắng trên nền tối | M5 | Khung sáng đệm 12px thống nhất |
+| 3 | Trạng thái lỗi/đang tải của `ExamLoader` là chữ trơ không căn hợp mạch ("Thiếu mã đề", "Đang tải đề…") | N3, L4 | Thêm link "Về trang lớp" |
+
+### Thứ tự đề xuất sửa (giá trị cao / công ít)
+1. `/kiem-tra/lam`: `inputMode`, thanh sticky 1 hàng, đích chạm 44px, bỏ "Nộp bài" ở thanh trên.
+2. Trang chủ HS: ẩn Section rỗng, đưa "Học tiếp" lên đầu, gom khối rank/streak/bảng lớp xuống dưới.
+3. `/lop-hoc/ket-qua`: ẩn trạng thái rỗng, biểu đồ co giãn, hạ RankCard.
