@@ -1,0 +1,41 @@
+RedirectMatch 404 /\.git
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(js|css|woff2?)$">
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
+    ExpiresDefault "access plus 30 days"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Máy chủ LiteSpeed bỏ qua ExpiresDefault 1 năm ở trên và trả max-age 7 ngày → ép Cache-Control
+  # tường minh cho file có hash trong tên (js/css/woff2).
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|webp|svg|gif)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Site 100% tĩnh (output: "export"), không có trang nào cần PHP chạy. Chặn hẳn thực thi PHP
+# trong toàn bộ web root: nếu có file .php lạ bị chèn vào (qua FTP/cPanel lộ mật khẩu, ví dụ
+# shell chèn trang cờ bạc/spam SEO), file đó vẫn nằm đó nhưng KHÔNG chạy được, chỉ trả về lỗi.
+<FilesMatch "\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
