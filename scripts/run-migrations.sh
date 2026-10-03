@@ -14,6 +14,8 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261003130000_parent_attendance_announcements.sql|Phụ huynh đọc được thông báo/bài tập về nhà của lớp con + RPC điểm danh cho phụ huynh (chỉ đọc)|chạy lúc nào cũng được"
+  "supabase/migrations/20261003140000_rank_theory_rp.sql|RP bài lý thuyết: bảng khoá đáp án + phiên, RPC rank_theory_open/submit (chấm máy chủ, trần ngày/tuần/mùa)|chạy lúc nào cũng được"
 )
 # ĐÃ CHẠY 3/10/2026 13:30: 20261003100000_rank_gate_adaptive, 20261003110000_rank_rp_first_attempt, 20261003120000_distractor_notes
 # ĐÃ CHẠY (kiểm trên production 3/10/2026 13:20 — hàm tồn tại, log scripts/logs/ không lỗi): 20260930160000_rank_title_distinct_questions (nhiều lần, idempotent),
