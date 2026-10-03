@@ -91,6 +91,7 @@ const CONFIG_FIELDS: { key: string; label: string; def: number }[] = [
   { key: "fix_pass_pct", label: "% đạt bài sửa sai", def: 80 },
   { key: "fix_min_pool", label: "Số câu tương đương tối thiểu trong ngân hàng", def: 5 },
   { key: "fix_quiz_count", label: "Số câu mỗi bài sửa sai", def: 10 },
+  { key: "rp_first_attempt_only", label: "RP mỗi bài chỉ tính lượt làm đầu tiên (1 = bật, 0 = tính điểm tốt nhất)", def: 1 },
   { key: "gate_adaptive", label: "Thi thăng hạng thích ứng (1 = bật, 0 = chỉ dùng đề thử thách tĩnh)", def: 1 },
   { key: "gate_quiz_count", label: "Thi thăng hạng: số câu mỗi bài", def: 12 },
   { key: "gate_cooldown_hours", label: "Thi thăng hạng: số giờ chờ sau khi trượt", def: 48 },
