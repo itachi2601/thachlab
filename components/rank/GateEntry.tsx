@@ -3,11 +3,7 @@
 import { useState } from "react";
 import { ClipboardCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { formatRp, type RankNext } from "@/features/rank/types";
-
-function formatUntil(iso: string): string {
-  return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" });
-}
+import { formatGateWhen, formatRp, type RankNext } from "@/features/rank/types";
 
 /**
  * Cửa vào bài thi thăng hạng thích ứng ở "Điều kiện lên hạng": đủ RP + thiếu cửa → nút "Thi thăng hạng".
@@ -29,7 +25,7 @@ export default function GateEntry({ next, onStart }: { next: RankNext; onStart: 
         </p>
       ) : waiting ? (
         <p className="text-base leading-relaxed text-slate-200">
-          Đủ RP rồi, còn bài thi thăng hạng. Em thi lại được sau <b className="text-white">{formatUntil(gate.cooldown_until!)}</b> — lúc đó ôn lại chủ đề sai nhiều rồi thử tiếp.
+          Đủ RP rồi, còn bài thi thăng hạng. Em thi lại được sau <b className="text-white">{formatGateWhen(gate.cooldown_until!)}</b> — lúc đó ôn lại chủ đề sai nhiều rồi thử tiếp.
         </p>
       ) : gate.can_start ? (
         <>

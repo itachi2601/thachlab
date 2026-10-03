@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -83,6 +83,7 @@ export default function RankPage({ studentId, studentName }: { studentId: string
   const [celebrate, setCelebrate] = useState<string | null>(null);
   // Modal thi nằm ở gốc trang (không trong khối "Điều kiện") để vẫn còn khi trạng thái tải lại sau khi nộp bài.
   const [gateOpen, setGateOpen] = useState<{ tierCode: string; gate: RankGate } | null>(null);
+  const gatePromoted = useRef(false);
 
   const load = useCallback(() => {
     fetchMyRankStatus()
@@ -386,7 +387,22 @@ export default function RankPage({ studentId, studentName }: { studentId: string
 
       {gateOpen && (
         <LazyErrorBoundary fallback={<p className="text-sm text-red-300">Không mở được bài thi. Em tải lại trang rồi thử lại nhé.</p>}>
-          <GateQuizModal tierCode={gateOpen.tierCode} gate={gateOpen.gate} onClose={() => setGateOpen(null)} onDone={() => load()} />
+          <GateQuizModal
+            tierCode={gateOpen.tierCode}
+            gate={gateOpen.gate}
+            onClose={() => {
+              setGateOpen(null);
+              // Đỗ và lên bậc: sau khi em đọc xong kết quả mới gọi màn chúc mừng lên hạng sẵn có (RankCelebrationWatcher).
+              if (gatePromoted.current) {
+                gatePromoted.current = false;
+                window.dispatchEvent(new Event("thachlab:rank-check"));
+              }
+            }}
+            onDone={(r) => {
+              if (r.promoted) gatePromoted.current = true;
+              load();
+            }}
+          />
         </LazyErrorBoundary>
       )}
     </div>

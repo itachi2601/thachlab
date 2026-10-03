@@ -10,6 +10,7 @@ import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { emptyResponses, isAnswered } from "@/features/exams/types";
 import {
   GATE_LEVEL_LABELS,
+  formatGateWhen,
   tierMeta,
   type GateQuestion,
   type GateResult,
@@ -27,11 +28,6 @@ function toExamQuestion(q: GateQuestion): ExamQuestion {
     return { type: "true_false", question: q.question, statements: q.statements.map((s) => ({ text: s.text, answer: false })), explanation: "" };
   }
   return { type: "short_answer", question: q.question, answer: "", explanation: "" };
-}
-
-function formatUntil(iso: string | null): string {
-  if (!iso) return "";
-  return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" });
 }
 
 /**
@@ -267,7 +263,7 @@ function GateResultView({ result, gate }: { result: GateResult; gate: RankGate }
           )}
           {result.cooldownUntil && (
             <p className="text-sm text-slate-300">
-              Thi lại được sau {formatUntil(result.cooldownUntil)} ({gate.cooldown_hours ?? 48} giờ kể từ lúc nộp).
+              Thi lại được sau {formatGateWhen(result.cooldownUntil)} ({gate.cooldown_hours ?? 48} giờ kể từ lúc nộp).
             </p>
           )}
         </>

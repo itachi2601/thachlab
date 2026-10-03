@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 import RankBadge from "@/components/rank/RankBadge";
 import TierName from "@/components/rank/TierName";
 import WornTitle from "@/components/rank/WornTitle";
-import { formatRp, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
+import { formatGateWhen, formatRp, tierMeta, titleDisplay, type RankStatus } from "@/features/rank/types";
 
 /**
  * Thẻ rank dùng ở nhiều chỗ (trang học sinh, trang kết quả, phụ huynh):
@@ -83,7 +83,7 @@ export default function RankCard({
                         ? `còn ${formatRp(status.next.rp_needed)} RP tới ${status.next.name}`
                         : status.next.gate?.adaptive && !status.next.gate.passed && !status.next.gate.last_passed
                           ? status.next.gate.cooldown_until && new Date(status.next.gate.cooldown_until).getTime() > now
-                            ? `đủ RP — thi thăng hạng lại sau ${new Date(status.next.gate.cooldown_until).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" })}`
+                            ? `đủ RP — thi thăng hạng lại sau ${formatGateWhen(status.next.gate.cooldown_until)}`
                             : "đủ RP — còn bài thi thăng hạng"
                         : status.next.gate && !status.next.gate.passed
                           ? `đủ RP — xem thử thách lên ${status.next.name}`

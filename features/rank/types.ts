@@ -534,3 +534,10 @@ export const GATE_DEFAULTS: Partial<Record<TierCode, { pct: number; hard: number
   cao_thu: { pct: 80, hard: 3, level: "trung-binh" },
   thach_dau: { pct: 80, hard: 4, level: "kho" },
 };
+
+/** "11:37 ngày 05/10" (giờ máy em) — mốc được thi thăng hạng lại. */
+export function formatGateWhen(iso: string): string {
+  const d = new Date(iso);
+  const p2 = (n: number) => String(n).padStart(2, "0");
+  return `${p2(d.getHours())}:${p2(d.getMinutes())} ngày ${p2(d.getDate())}/${p2(d.getMonth() + 1)}`;
+}
