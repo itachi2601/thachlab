@@ -99,6 +99,44 @@ async function fetchAll(makeQuery) {
 }
 
 /**
+ * Thời khoá biểu các khoá đang mở (thpt_courses công khai) cho trang chủ — ghi lúc build để trang chủ
+ * không phải gọi Supabase khi tải. Lỗi → giữ file cũ (nếu có), trang chủ tự ẩn khối lịch khi thiếu file.
+ */
+async function writeTeachingSchedule(url, anonKey, generatedAt) {
+  try {
+    const qs = new URLSearchParams({
+      select: "id, name, classes(name), thpt_course_schedules(weekday, start_time, end_time, location)",
+      is_public: "eq.true",
+      status: "eq.active",
+      order: "class_id.asc,starts_at.asc.nullslast",
+    });
+    const res = await fetch(`${url}/rest/v1/thpt_courses?${qs}`, {
+      headers: { apikey: anonKey, Authorization: `Bearer ${anonKey}` },
+    });
+    if (!res.ok) throw new Error(`REST ${res.status}`);
+    const rows = await res.json();
+    const hhmm = (t) => String(t).slice(0, 5);
+    const courses = rows
+      .map((r) => ({
+        id: r.id,
+        name: r.name,
+        className: (Array.isArray(r.classes) ? r.classes[0] : r.classes)?.name ?? "",
+        slots: (r.thpt_course_schedules ?? []).map((s) => ({
+          weekday: s.weekday,
+          start: hhmm(s.start_time),
+          end: hhmm(s.end_time),
+          location: s.location ?? "",
+        })),
+      }))
+      .filter((c) => c.slots.length > 0);
+    writeJson(join(OUT_DIR, "teaching-schedule.json"), { generatedAt, courses });
+    console.log(`[build-content] ✓ lịch dạy: ${courses.length} khoá`);
+  } catch (e) {
+    warn(`không lấy được lịch dạy: ${e?.message ?? e} — giữ file cũ nếu có.`);
+  }
+}
+
+/**
  * Đếm số liệu thật của cả site cho dải tổng trang chủ (build-time, KHÔNG phải request lúc tải trang).
  *
  * profiles / exam_results / question_bank đều chỉ cho authenticated đọc (xem
@@ -331,6 +369,7 @@ async function main() {
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
   const counts = await fetchSiteCounts(url, serviceKey);
   writeJson(join(OUT_DIR, "home-stats.json"), buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts));
+  await writeTeachingSchedule(url, anonKey, generatedAt);
   writeJson(join(OUT_DIR, "manifest.json"), {
     generatedAt,
     itemColumns,
