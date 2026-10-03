@@ -127,6 +127,8 @@ Sweller 1988; Sweller & Cooper 1985; Chandler & Sweller 1992; Kalyuga 2003 · Ma
 | 3 | Cột đọc 626px ≈ 84 ký tự/dòng với chữ 16px | C2 | 17px + cột 600px, hoặc giữ cột và tăng chữ lên 18px |
 | 3 | Thẻ "Kiểm tra nhanh — Đăng nhập để làm" + nút "Mục tiếp theo" + nút nổi "Báo lỗi / Góp ý" cùng xuất hiện cuối bài | B2 | Một nút chính ("Làm kiểm tra nhanh"), phần còn lại dạng chữ liên kết |
 
+**Tiến độ sửa (3/10/2026):** ưu tiên 1 xong (`8bad25b13`). Ưu tiên 2 xong: cột phải chỉ còn thẻ khi có dữ liệu (câu sai) + ghi chú là `<details>` thu gọn; cột trái trong bài chỉ còn bài trước/sau (cây chương đầy đủ ở ngăn kéo điện thoại); thanh đáy nhãn "Đã học xong" 1 dòng; 5 tab vừa 360/375px (bỏ badge, "Bài mẫu"); breadcrumb và công cụ đọc không chồng ở ≥1024px; theme đọc theo `prefers-color-scheme` khi chưa lưu lựa chọn (đã đúng từ trước — bản rà thấy tối vì trình duyệt đặt tối). Ưu tiên 3: cỡ chữ vùng nội dung còn 3 mức (token `--fs-cap/-sm/-body` ở `:root`, đo 12/14/16px); **còn treo:** công thức viết thường xen KaTeX (C5, sửa ở nội dung khi đăng), cột đọc 626px (C2), 3 nút cuối bài (B2).
+
 Điểm tốt nên giữ: một màu nhấn duy nhất; tiêu đề mục đánh số rõ; ví dụ đóng khung nền nhạt ngay dưới khái niệm (N8);
 thân bài 16px/1.6; mục lục bài sticky ≤ 7 mục (B7); tương phản chữ `#E2E8F0`/`#05070B` đúng M2.
 

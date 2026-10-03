@@ -61,7 +61,7 @@ const ACCENT = "#3B82F6";
 const TAB_LABEL: Record<LessonItemKind, string> = {
   ly_thuyet: "Lý thuyết",
   video: "Video",
-  bai_tap_mau: "Bài tập mẫu",
+  bai_tap_mau: "Bài mẫu",
   luyen_tap: "Luyện tập",
   bai_tap_ve_nha: "BTVN",
   kiem_tra: "Kiểm tra",
@@ -697,6 +697,7 @@ function LessonLoader() {
   const [tocQuery, setTocQuery] = useState("");
   /** Ghi chú của em — chỉ lưu trên máy, khoá thachlab-note-<lessonId>. */
   const [note, setNote] = useState("");
+  const [noteOpen, setNoteOpen] = useState(false);
   /**
    * Nội dung của tab đang mở chỉ render SAU lần vẽ đầu (1 frame + requestIdleCallback), không
    * nằm trong lần render đầu tiên. Bối cảnh: bản accordion cũ để tất cả 6 mục ĐÓNG nên lúc tải
@@ -857,6 +858,7 @@ function LessonLoader() {
       if (savedDone !== lessonMarked) setLessonMarked(savedDone);
       const savedNote = window.localStorage.getItem(`${NOTE_STORE}${id}`) ?? "";
       if (savedNote !== note) setNote(savedNote);
+      if (savedNote) setNoteOpen(true);
     } catch {}
     // Chỉ khôi phục 1 lần khi mở bài (theo id) — thêm dim/fontLevel/lessonMarked vào deps sẽ
     // làm effect chạy lại sau mỗi lần đổi cỡ chữ và ghi đè lựa chọn vừa bấm.
@@ -888,9 +890,8 @@ function LessonLoader() {
   }, [fontLevel, items, activeTab]);
 
   /**
-   * Thanh đáy cao theo số dòng nhãn: 62px khi nhãn vừa 1 dòng, 74px (360–414px) hoặc 93px (<360px)
-   * khi "Đánh dấu đã học xong bài này" xuống 2 dòng. Công bố chiều cao THẬT lên :root để CSS chừa
-   * đúng chỗ — nội dung cuối (footer) không bị thanh đáy che ở mọi bề rộng.
+   * Công bố chiều cao THẬT của thanh đáy lên :root để CSS chừa đúng chỗ — nội dung cuối (footer)
+   * không bị thanh đáy che ở mọi bề rộng (kể cả khi chữ hệ thống to làm nhãn xuống dòng).
    */
   useEffect(() => {
     const bar = document.querySelector<HTMLElement>(".lesson-bottombar");
@@ -1490,7 +1491,7 @@ function LessonLoader() {
               >
                 {complete && <Check size={13} aria-hidden />}
                 <span>{TAB_LABEL[section.kind]}</span>
-                <i>{section.items.length}</i>
+                {section.items.length > 1 && <i>{section.items.length}</i>}
               </button>
             </li>
           );
@@ -1672,45 +1673,49 @@ function LessonLoader() {
           <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
         )}
 
-        {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request. */}
-        <div className="lesson-panel lesson-controls">
-          <p className="lesson-panel-title">Câu sai liên quan</p>
-          {reviewContexts && reviewContexts.length > 0 ? (
-            <>
-              <p className="lesson-panel-note">
-                {reviewContexts.length === 1
-                  ? `Câu ${reviewContexts[0].questionIndex} em vừa làm sai thuộc bài này.`
-                  : `${reviewContexts.length} câu em vừa làm sai thuộc bài này.`}
-              </p>
-              <ul>
-                {reviewContexts.map((ctx, i) => (
-                  <li key={i}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        selectTab("ly_thuyet");
-                        window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
-                      }}
-                    >
-                      Câu {ctx.questionIndex} — xem đoạn lý thuyết
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <p className="lesson-panel-empty">
-              Chưa có câu sai nào của bài này trong phiên đang học. Em làm bài ở mục Luyện tập, câu sai sẽ hiện ở đây.
+        {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request.
+            Không có câu sai thì KHÔNG dựng thẻ (N3: trạng thái rỗng là nhiễu) — chỉ còn một dòng liên kết. */}
+        {reviewContexts && reviewContexts.length > 0 ? (
+          <div className="lesson-panel lesson-controls">
+            <p className="lesson-panel-title">Câu sai liên quan</p>
+            <p className="lesson-panel-note">
+              {reviewContexts.length === 1
+                ? `Câu ${reviewContexts[0].questionIndex} em vừa làm sai thuộc bài này.`
+                : `${reviewContexts.length} câu em vừa làm sai thuộc bài này.`}
             </p>
-          )}
-          <Link href="/lop-hoc" className="lesson-panel-link">
-            Xem sổ câu sai đầy đủ ›
+            <ul>
+              {reviewContexts.map((ctx, i) => (
+                <li key={i}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      selectTab("ly_thuyet");
+                      window.setTimeout(() => flashTheorySection(`theory-sec-${ctx.itemId}-${ctx.sectionIndex}`), 80);
+                    }}
+                  >
+                    Câu {ctx.questionIndex} — xem đoạn lý thuyết
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <Link href="/lop-hoc" className="lesson-panel-link">
+              Xem sổ câu sai đầy đủ ›
+            </Link>
+          </div>
+        ) : (
+          <Link href="/lop-hoc" className="lesson-side-link">
+            Sổ câu sai ›
           </Link>
-        </div>
+        )}
 
-        {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. */}
-        <div className="lesson-panel lesson-controls">
-          <p className="lesson-panel-title">Ghi chú của em</p>
+        {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. Thu thành một nút nhỏ; tự mở
+            khi đã có ghi chú để em không quên mình từng viết. */}
+        <details
+          className="lesson-panel lesson-note-panel"
+          open={noteOpen}
+          onToggle={(e) => setNoteOpen(e.currentTarget.open)}
+        >
+          <summary>Ghi chú của em</summary>
           <textarea
             className="lesson-note"
             value={note}
@@ -1719,7 +1724,7 @@ function LessonLoader() {
             aria-label="Ghi chú của em cho bài này"
           />
           <p className="lesson-panel-note">Chỉ lưu trên máy em.</p>
-        </div>
+        </details>
       </>
     );
   }
@@ -1798,18 +1803,21 @@ function LessonLoader() {
   return (
     <div className={`lesson-shell lesson-page ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
       <div className="lesson-layout">
-        <aside className="lesson-nav" aria-label="Nội dung khoá học">
-          {renderCourseInfo()}
-          <ChapterTree
-            entries={courseChapters}
-            mode="learn"
-            currentLessonId={id}
-            openChapterIds={openChapterIds}
-            onToggleChapter={toggleChapter}
-            lessonHref={siblingHref}
-            isLessonDone={lessonComplete}
-            filterLessonIds={matchingLessonIds}
-          />
+        {/* Cột trái trong bài chỉ cần: bài trước · bài sau (link về chương đã có ở breadcrumb) (N4: không lặp mục lục cả lớp —
+            cây chương đầy đủ nằm trong ngăn kéo "Mục lục" và ở trang lớp). */}
+        <aside className="lesson-nav lesson-nav--compact" aria-label="Điều hướng bài học">
+          {prevLesson && (
+            <Link href={siblingHref(prevLesson)} className="lesson-nav-step">
+              <small>‹ Bài trước</small>
+              <span>{prevLesson.title}</span>
+            </Link>
+          )}
+          {nextLesson && (
+            <Link href={siblingHref(nextLesson)} className="lesson-nav-step lesson-nav-step--next">
+              <small>Bài sau ›</small>
+              <span>{nextLesson.title}</span>
+            </Link>
+          )}
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
@@ -1924,14 +1932,10 @@ function LessonLoader() {
           onClick={markLessonDone}
           disabled={lessonMarked}
           aria-pressed={lessonMarked}
+          aria-label={lessonMarked ? "Đã đánh dấu: học xong bài này" : "Đánh dấu đã học xong bài này"}
         >
           {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
-          <span className="lesson-bottom-done-text--short">
-            {lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong"}
-          </span>
-          <span className="lesson-bottom-done-text--long">
-            {lessonMarked ? "Đã học xong bài này" : "Đánh dấu đã học xong bài này"}
-          </span>
+          <span>Đã học xong</span>
         </button>
 
         <span className="lesson-bottom-step" aria-live="polite">
