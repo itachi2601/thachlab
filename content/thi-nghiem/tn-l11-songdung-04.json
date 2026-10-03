@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Sóng dừng",
+ "lesson_id": 32,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dung/theory.html",
+ "id": "tn-l11-songdung-04",
+ "ten": "Dây đàn ghi-ta: bấm phím cho đoạn dây ngắn lại thì nốt cao lên",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "songdung.dieu_kien_hai_dau_co_dinh",
+  "songdung.tan_so_nho_nhat",
+  "songdung.ung_dung_nhac_cu"
+ ],
+ "muc_tieu": "Giải thích vì sao cùng một sợi dây, cùng sức căng, mà bấm phím cho đoạn dây rung ngắn lại thì âm phát ra cao hơn.",
+ "dung_cu": [
+  {
+   "ten": "Đàn ghi-ta (hoặc đàn ukulele)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có ứng dụng đo tần số âm (tùy chọn)",
+   "so_luong": 1,
+   "ghi_chu": "dùng để đọc tần số nốt, không bắt buộc"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gảy dây buông, nghe nốt và nhìn sợi dây ở chỗ sáng.",
+   "Bấm phím ở đúng giữa dây (phím 12), gảy lại và so sánh độ cao."
+  ],
+  "quan_sat": [
+   "Dây buông rung thành một vệt dày, nghe nốt thấp.",
+   "Bấm phím 12: đoạn dây rung còn một nửa, dây vồng thành hai múi, nghe nốt cao hơn đúng một quãng tám (tần số gấp đôi)."
+  ],
+  "rut_ra": [
+   "Sóng dừng trên dây hai đầu cố định có f = v/(2L); sức căng giữ nguyên nên v không đổi.",
+   "L giảm một nửa thì f tăng gấp đôi — bấm phím chính là đổi chiều dài dây để đổi nốt."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài đoạn dây rung",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.65,
+   "mac_dinh": 0.65,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên dây",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 300
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số âm cơ bản",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng trên dây",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lam = 2L",
+   "f = v/(2L)"
+  ],
+  "gia_thiet": [
+   "dây hai đầu cố định (nut đàn và ngựa đàn)",
+   "sức căng và khối lượng riêng của dây không đổi nên v = 300 m/s",
+   "chỉ xét âm cơ bản (một bó trên đoạn dây rung)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Doan day rung L (m)",
+   "f = v/(2L) (Hz)",
+   "Nghe"
+  ],
+  "hang": [
+   [
+    0.65,
+    231,
+    "not thap (day buong)"
+   ],
+   [
+    0.325,
+    462,
+    "cao hon mot quang tam (bam phim 12)"
+   ],
+   [
+    0.163,
+    923,
+    "cao hon hai quang tam (bam phim 24)"
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với v = 300 m/s; tần số thật của đàn còn phụ thuộc sức căng và loại dây."
+ },
+ "ket_qua_ky_vong": "Dây buông L = 0,65 m cho f ≈ 231 Hz; bấm phím 12 còn L = 0,325 m cho f ≈ 462 Hz (gấp đôi). Bấm càng gần ngựa đàn, đoạn dây càng ngắn, nốt càng cao.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ bấm phím làm dây rung mạnh hơn nên chỉ nghe to hơn — thực ra là cao hơn (tần số tăng).",
+  "Nghĩ tần số không đổi vì vẫn sợi dây đó, quên rằng chiều dài đoạn rung đã đổi."
+ ],
+ "sai_so_thuong_gap": [
+  "Bấm phím không sát nên đoạn dây rung dài hơn, nốt phát ra phô.",
+  "Dây cũ hoặc lên dây sai làm v lệch, tần số đo được không đúng bội số."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "L"
+  ],
+  "dau_ra": [
+   "số bó trên đoạn dây rung",
+   "tần số f tính ra",
+   "bảng L – f"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Kéo 'ngón tay bấm' dọc dây; đoạn bên phải ngón không rung, đoạn bên trái vẽ sóng dừng với số bó tăng dần và tần số hiện tương ứng."
+ },
+ "an_toan": "Không có nguy hiểm; không gảy quá mạnh để đứt dây đàn."
+}

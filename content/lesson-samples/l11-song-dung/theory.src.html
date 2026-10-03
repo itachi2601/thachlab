@@ -1,0 +1,407 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Giải thích vì sao sóng tới gặp sóng phản xạ lại tạo ra <strong>những chỗ đứng yên</strong>.</li>
+<li>Chỉ đúng <strong>nút</strong>, <strong>bụng</strong> sóng và khoảng cách giữa chúng.</li>
+<li>Viết được <strong>điều kiện có sóng dừng</strong> cho dây hai đầu cố định và dây một đầu tự do.</li>
+<li>Từ chiều dài dây, số nút và tần số, tính được <strong>bước sóng và tốc độ truyền sóng</strong>.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: gảy dây đàn rồi bấm phím</h3>
+
+<p>Gảy một dây đàn ghi-ta: dây rung, tai nghe một nốt. Nhìn sợi dây ở chỗ sáng, nó <strong>mờ thành một vệt dày</strong> — như nhiều sợi cùng rung.</p>
+
+<p>Rồi bấm một phím cho đoạn dây rung ngắn lại, gảy lại: cùng sợi dây, cùng sức căng, mà nốt <strong>cao hơn</strong> rõ. Câu hỏi để nghĩ trước khi đọc tiếp: <em>dây rung thành hình gì, và vì sao ngắn lại thì nốt cao lên?</em></p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Bấm phím cho đoạn dây rung ngắn lại, giữ nguyên sức căng. Tần số âm phát ra sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q0" id="tl13-q0a"><label for="tl13-q0a" class="tl-opt tl-no">A. Thấp hơn, vì dây ngắn dao động chậm hơn</label>
+<input type="radio" name="tl13-q0" id="tl13-q0b"><label for="tl13-q0b" class="tl-opt tl-ok">B. Cao hơn, vì đoạn dây ngắn thì tần số lớn hơn</label>
+<input type="radio" name="tl13-q0" id="tl13-q0c"><label for="tl13-q0c" class="tl-opt tl-no">C. Không đổi, vì vẫn là sợi dây đó</label>
+<input type="radio" name="tl13-q0" id="tl13-q0d"><label for="tl13-q0d" class="tl-opt tl-no">D. Không đổi, vì tai không phân biệt được</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trên dây dài $l$ hai đầu cố định, sóng dừng có $f=\dfrac{v}{2l}$. Sức căng giữ nguyên nên $v$ không đổi; $l$ giảm thì $f$ tăng, tai nghe nốt cao hơn. Đó chính là cách cây đàn đổi nốt.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nốt cao hay thấp là do <em>tần số</em>. Dây ngắn lại thì bước sóng dài nhất đặt vừa trên dây cũng ngắn lại; mà $v$ không đổi, nên $f=\dfrac{v}{\lambda}$ phải tăng. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: hai sóng ngược chiều gặp nhau</h3>
+
+<h4>1. Sóng phản xạ: gặp vật cản thì quay lại</h4>
+
+<p><strong>🔑 Cố định → ngược pha · Tự do → cùng pha</strong></p>
+
+<ul>
+<li>Đầu dây buộc chặt vào tường: sóng tới và sóng phản xạ <strong>ngược pha</strong> tại điểm phản xạ.</li>
+<li>Đầu dây gắn vào một vòng nhẹ trượt trên cọc: đầu đó coi như <strong>tự do</strong>, sóng phản xạ <strong>cùng pha</strong> với sóng tới.</li>
+<li>Sóng phản xạ có cùng tần số, cùng bước sóng với sóng tới.</li>
+</ul>
+
+<p><strong>🔑 Tới + phản xạ · cùng biên độ · ngược chiều</strong></p>
+
+<p><strong>Sóng dừng</strong> là sóng tổng hợp của hai sóng <strong>cùng biên độ, cùng bước sóng, truyền ngược chiều nhau</strong> (thường là sóng tới và sóng phản xạ của chính nó). Chỗ mạnh, chỗ yếu <strong>đứng yên tại chỗ</strong>.</p>
+
+<details class="tl-details">
+<summary>👀 Bấm xem: vì sao đầu cố định phản xạ ngược pha?</summary>
+<p>Đầu dây bị giữ chặt nên điểm đó <strong>không được dao động</strong>. Muốn tổng hai sóng tại điểm đó luôn bằng $0$ thì sóng phản xạ phải ngược pha với sóng tới tại chính điểm phản xạ. Đó là lý do đầu cố định luôn là nút.</p>
+</details>
+
+<h4>2. Nút sóng và bụng sóng</h4>
+
+<p><strong>🔑 Triệt tiêu = nút · Mạnh nhất = bụng</strong></p>
+
+<ul>
+<li><strong>Nút sóng:</strong> hai sóng thành phần <strong>ngược pha</strong> → điểm <strong>không dao động</strong>, biên độ bằng $0$.</li>
+<li><strong>Bụng sóng:</strong> hai sóng thành phần <strong>cùng pha</strong> → điểm dao động mạnh nhất, biên độ bằng $2A$ (gấp đôi biên độ $A$ của sóng tới).</li>
+<li>Đầu dây <strong>cố định</strong> luôn là <strong>nút</strong>; đầu dây <strong>tự do</strong> luôn là <strong>bụng</strong>.</li>
+<li>Hai nút liên tiếp (hoặc hai bụng liên tiếp) cách nhau $\dfrac{\lambda}{2}$; một nút và một bụng liền kề cách nhau $\dfrac{\lambda}{4}$.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-songdung-01">
+<p class="tl-label">🔬 Thí nghiệm: sợi dây thun rung bằng tay</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> buộc một đầu dây thun vào chân ghế (đầu cố định), tay trái giữ căng đầu kia, tay phải vung đầu dây lên xuống đều.</li>
+<li><strong>Quan sát:</strong> dây chia thành những <strong>múi</strong> vồng lên vồng xuống, có chỗ đứng yên hẳn. Vung nhanh hơn thì số múi tăng.</li>
+<li><strong>Rút ra:</strong> sóng tới gặp đầu buộc cố định bị phản xạ; hai sóng ngược chiều tạo sóng dừng: chỗ đứng yên là <strong>nút</strong>, giữa hai nút là <strong>bụng</strong>.</li>
+</ol>
+</div>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 1.</strong> Trên một sợi dây có sóng dừng, hai nút sóng liên tiếp cách nhau:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q1" id="tl13-q1a"><label for="tl13-q1a" class="tl-opt tl-no">A. $\lambda$</label>
+<input type="radio" name="tl13-q1" id="tl13-q1b"><label for="tl13-q1b" class="tl-opt tl-ok">B. $\dfrac{\lambda}{2}$</label>
+<input type="radio" name="tl13-q1" id="tl13-q1c"><label for="tl13-q1c" class="tl-opt tl-no">C. $\dfrac{\lambda}{4}$</label>
+<input type="radio" name="tl13-q1" id="tl13-q1d"><label for="tl13-q1d" class="tl-opt tl-no">D. $2\lambda$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giữa hai nút liên tiếp dây vẽ đúng một bó sóng, tức nửa bước sóng. Nút và bụng liền kề mới cách nhau $\dfrac{\lambda}{4}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em nhớ lại hình: từ nút này tới nút kế tiếp dây vồng lên rồi trở về, đó là nửa bước sóng. Còn $\dfrac{\lambda}{4}$ là khoảng từ nút tới bụng liền kề.</p></div>
+</div>
+</div>
+
+<h4>3. Điều kiện để có sóng dừng</h4>
+
+<p><strong>🔑 Hai đầu cố định: nguyên lần λ/2 · Một đầu tự do: lẻ lần λ/4</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trường hợp</th><th>Điều kiện · số nút · số bụng</th></tr>
+</thead>
+<tbody>
+<tr><td>Hai đầu cố định</td><td>$l=k\dfrac{\lambda}{2}$ với $k=1,2,3,\dots$ · số bụng $=k$ · số nút $=k+1$ · tần số nhỏ nhất $f_0=\dfrac{v}{2l}$</td></tr>
+<tr><td>Một đầu cố định, một đầu tự do</td><td>$l=(2k+1)\dfrac{\lambda}{4}$ với $k=0,1,2,\dots$ · số bụng = số nút $=k+1$ · tần số nhỏ nhất $f_0=\dfrac{v}{4l}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Ký hiệu: $l$ chiều dài dây · $\lambda$ bước sóng · $v$ tốc độ truyền sóng · $k$ nguyên.</p>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 2.</strong> Dây AB dài $1{,}2$ m, hai đầu cố định, có sóng dừng với 3 bó sóng. Bước sóng trên dây là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl13-q2c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl13-q2c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q2" id="tl13-q2a"><label for="tl13-q2a" class="tl-opt tl-no">A. $1{,}2$ m</label>
+<input type="radio" name="tl13-q2" id="tl13-q2b"><label for="tl13-q2b" class="tl-opt tl-ok">B. $0{,}8$ m</label>
+<input type="radio" name="tl13-q2" id="tl13-q2c"><label for="tl13-q2c" class="tl-opt tl-no">C. $0{,}4$ m</label>
+<input type="radio" name="tl13-q2" id="tl13-q2d"><label for="tl13-q2d" class="tl-opt tl-no">D. $0{,}6$ m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ba bó thì $l=3\dfrac{\lambda}{2}$, suy ra $\lambda=\dfrac{2l}{3}=\dfrac{2\times1{,}2}{3}=0{,}8$ m. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}4$ m là em lấy $\dfrac{l}{3}$ — nhưng mỗi bó dài $\dfrac{\lambda}{2}$ chứ không phải $\lambda$. Ra $0{,}6$ m là lấy $\dfrac{l}{2}$. Viết $l=k\dfrac{\lambda}{2}$ rồi rút $\lambda$ trước đã. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>4. Đo bước sóng và tốc độ truyền sóng từ sóng dừng</h4>
+
+<p><strong>🔑 Đếm bó → ra λ · Nhân với f → ra v</strong></p>
+
+<p>Từ điều kiện $l=k\dfrac{\lambda}{2}$, đo $l$ và đếm số bó $k$ là tính được $\lambda=\dfrac{2l}{k}$, rồi $v=\lambda f$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-songdung-02">
+<p class="tl-label">🔬 Thí nghiệm đo: dây đàn hồi hai đầu cố định, $l=0{,}80$ m</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> căng dây đàn hồi dài $0{,}80$ m giữa hai điểm cố định, một đầu gắn máy rung. Tăng dần tần số tới khi dây rung rõ nét; ghi $f$ và đếm số bó $k$.</li>
+<li><strong>Quan sát:</strong> bảng dưới là bốn lần đo liên tiếp trên cùng sợi dây, cùng sức căng.</li>
+<li><strong>Rút ra:</strong> $v$ không đổi qua các lần đo: tốc độ truyền sóng do <strong>sợi dây</strong> quyết định, không do tần số máy rung.</li>
+</ol>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Số bó $k$</th><th>$f$ (Hz)</th><th>$v=\lambda f$ (m/s)</th></tr>
+</thead>
+<tbody>
+<tr><td>2</td><td>25,0</td><td>20,0</td></tr>
+<tr><td>3</td><td>37,5</td><td>20,0</td></tr>
+<tr><td>4</td><td>50,0</td><td>20,0</td></tr>
+<tr><td>5</td><td>62,5</td><td>20,0</td></tr>
+</tbody>
+</table>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: tính mẫu và chỗ sai số hay đến</summary>
+<p>Lần $k=3$: $\lambda=\dfrac{2l}{k}=\dfrac{2\times0{,}80}{3}\approx0{,}53$ m; $v=\lambda f\approx0{,}53\times37{,}5\approx20$ m/s.</p>
+<p>Sai số hay đến từ ba chỗ: đọc chiều dài dây bằng thước ($\pm0{,}5$ cm, cỡ $0{,}6\%$), đếm nhầm số bó khi dây rung chưa rõ, và vạch chia tần số của máy rung. Vì <em>mọi</em> lần đo đều ra $20{,}0$ m/s, kết quả đáng tin.</p>
+</details>
+</div>
+
+<h4>5. Dây một đầu tự do: đo bằng λ/4</h4>
+
+<p><strong>🔑 Đầu tự do là bụng · Cách nút gần nhất λ/4</strong></p>
+
+<p>Nếu một đầu dây gắn vào vòng nhẹ trượt trên cọc, đầu đó là <strong>bụng</strong>. Vì bụng gần nút nhất cách nhau $\dfrac{\lambda}{4}$, chiều dài dây phải là số <strong>lẻ</strong> lần $\dfrac{\lambda}{4}$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-songdung-03">
+<p class="tl-label">🔬 Thí nghiệm: đổi đầu cố định thành đầu tự do</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tháo đầu B khỏi giá, gắn vào vòng nhẹ trượt trên thanh thẳng đứng. Giữ nguyên sức căng và tần số như lần đo trước.</li>
+<li><strong>Quan sát:</strong> hình sóng dừng biến mất. Tới $f\approx18{,}75$ Hz dây rung rõ trở lại, <strong>đầu B vung mạnh nhất</strong>; đoạn dây dài $\dfrac{3\lambda}{4}$.</li>
+<li><strong>Rút ra:</strong> đầu tự do thì chiều dài phải là số <strong>lẻ</strong> lần $\dfrac{\lambda}{4}$; cùng sợi dây, tần số nhỏ nhất <strong>giảm còn một nửa</strong> ($6{,}25$ Hz thay cho $12{,}5$ Hz).</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>👀 Bấm xem: vì sao tần số nhỏ nhất lại giảm còn một nửa?</summary>
+<p>Dây hai đầu cố định cần $l=\dfrac{\lambda}{2}$, tức $\lambda=2l$. Dây một đầu tự do chỉ cần $l=\dfrac{\lambda}{4}$, tức $\lambda=4l$. Cùng $v$, bước sóng cần cho sóng dừng dài gấp đôi nên $f=\dfrac{v}{\lambda}$ giảm còn một nửa.</p>
+</details>
+
+<h4>6. Biên độ dao động của một điểm trên dây</h4>
+
+<p><strong>🔑 Xa nút dần → mạnh dần · Bụng $2A$ · Bề rộng $4A$</strong></p>
+
+<ul>
+<li>Gọi $A$ là biên độ sóng tới (bằng biên độ sóng phản xạ). Điểm cách nút gần nhất đoạn $x$ có biên độ $A_M=2A\left|\sin\left(2\pi\dfrac{x}{\lambda}\right)\right|$: bằng $0$ tại nút, bằng $2A$ tại bụng.</li>
+<li><strong>Bề rộng</strong> vùng dao động của bụng (từ đáy này sang đáy kia) bằng $4A$ — đừng lẫn với biên độ $2A$.</li>
+<li>Các điểm trong <strong>cùng một bó</strong> dao động <strong>cùng pha</strong>; hai bó kề nhau dao động <strong>ngược pha</strong>.</li>
+</ul>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 3.</strong> Sóng tới có biên độ $A$. Tại một bụng sóng, biên độ dao động và bề rộng vùng dao động lần lượt là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q3" id="tl13-q3a"><label for="tl13-q3a" class="tl-opt tl-no">A. $A$ và $2A$</label>
+<input type="radio" name="tl13-q3" id="tl13-q3b"><label for="tl13-q3b" class="tl-opt tl-ok">B. $2A$ và $4A$</label>
+<input type="radio" name="tl13-q3" id="tl13-q3c"><label for="tl13-q3c" class="tl-opt tl-no">C. $2A$ và $2A$</label>
+<input type="radio" name="tl13-q3" id="tl13-q3d"><label for="tl13-q3d" class="tl-opt tl-no">D. $4A$ và $4A$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai sóng cùng pha ở bụng cộng lại thành biên độ $2A$; bụng vung từ $+2A$ xuống $-2A$ nên bề rộng là $4A$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai đại lượng khác nhau: <em>biên độ</em> là nửa khoảng vung (từ vị trí cân bằng ra tới đỉnh), <em>bề rộng</em> là cả khoảng vung từ đáy này sang đáy kia. Ở bụng, hai sóng cùng pha nên biên độ gấp đôi sóng tới. Thử lại nhé.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: nghĩ rằng nút là chỗ "sóng không tới"</h4>
+
+<p>Thấy dây đứng yên ở nút, nhiều em nghĩ chỗ đó không có sóng. Không phải: <strong>cả hai sóng đều tới</strong>, nhưng <strong>ngược pha</strong> nên triệt tiêu.</p>
+
+<p><strong>🔑 Có sóng tới · ngược pha · triệt tiêu</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Nghĩ vậy</th><th>Thực tế trên dây</th></tr>
+</thead>
+<tbody>
+<tr><td>Nút là chỗ sóng không truyền tới</td><td>Hai sóng đều tới; tại nút chúng ngược pha, cộng lại bằng $0$</td></tr>
+<tr><td>Dây im ở nút nghĩa là dây không nhận năng lượng</td><td>Dây vẫn nhận năng lượng; phần lớn dồn về các bụng</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Câu 4.</strong> Tại một nút sóng trên dây đang có sóng dừng, hai sóng thành phần:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl13-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl13-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q4" id="tl13-q4a"><label for="tl13-q4a" class="tl-opt tl-no">A. Không có sóng nào tới đó</label>
+<input type="radio" name="tl13-q4" id="tl13-q4b"><label for="tl13-q4b" class="tl-opt tl-ok">B. Ngược pha nhau, cộng lại thành $0$</label>
+<input type="radio" name="tl13-q4" id="tl13-q4c"><label for="tl13-q4c" class="tl-opt tl-no">C. Cùng pha nhau, biên độ $2A$</label>
+<input type="radio" name="tl13-q4" id="tl13-q4d"><label for="tl13-q4d" class="tl-opt tl-no">D. Vuông pha nhau, biên độ $A\sqrt2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Nút là điểm hai sóng thành phần <strong>ngược pha</strong>, biên độ tổng bằng $0$. Đó cũng là lý do nút không dao động chứ không phải vì "không có sóng".</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu không có sóng tới thì hết sóng dừng ngay. Ở nút, hai sóng <em>vẫn tới</em> nhưng lệch pha nửa chu kì. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: dây một đầu tự do mà vẫn dùng $l=k\dfrac{\lambda}{2}$</h4>
+
+<p>Hai công thức trông gần giống nhau, chỉ khác chỗ chia $2$ hay chia $4$. Dấu hiệu để chọn đúng: <strong>đếm số đầu cố định</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đọc đề thấy</th><th>Dùng công thức</th></tr>
+</thead>
+<tbody>
+<tr><td>Hai đầu cố định (dây đàn, dây buộc hai đầu)</td><td>$l=k\dfrac{\lambda}{2}$, $k=1,2,3,\dots$</td></tr>
+<tr><td>Một đầu cố định, một đầu tự do (vòng trượt, đầu dây để lỏng)</td><td>$l=(2k+1)\dfrac{\lambda}{4}$, $k=0,1,2,\dots$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Câu 5.</strong> Dây dài $0{,}6$ m, một đầu cố định và một đầu tự do, tốc độ truyền sóng trên dây $v=12$ m/s. Tần số nhỏ nhất để trên dây có sóng dừng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q5" id="tl13-q5a"><label for="tl13-q5a" class="tl-opt tl-no">A. $2{,}5$ Hz</label>
+<input type="radio" name="tl13-q5" id="tl13-q5b"><label for="tl13-q5b" class="tl-opt tl-ok">B. $5$ Hz</label>
+<input type="radio" name="tl13-q5" id="tl13-q5c"><label for="tl13-q5c" class="tl-opt tl-no">C. $10$ Hz</label>
+<input type="radio" name="tl13-q5" id="tl13-q5d"><label for="tl13-q5d" class="tl-opt tl-no">D. $20$ Hz</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Một đầu tự do, tần số nhỏ nhất ứng với $l=\dfrac{\lambda}{4}$: $\lambda=4l=2{,}4$ m, $f=\dfrac{v}{\lambda}=\dfrac{12}{2{,}4}=5$ Hz.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $10$ Hz là em dùng công thức của dây <em>hai đầu cố định</em>. Đề cho một đầu tự do, nên đoạn ngắn nhất đặt vừa trên dây là $\dfrac{\lambda}{4}$, không phải $\dfrac{\lambda}{2}$.</p></div>
+</div>
+
+<h4>Bẫy 3: "có bao nhiêu bó thì có bấy nhiêu nút"</h4>
+
+<p>Dây hai đầu cố định thì <strong>hai đầu đều là nút</strong>: $k$ bó có $k-1$ nút ở giữa, cộng hai đầu thành $k+1$ nút.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trường hợp</th><th>Số bụng</th><th>Số nút</th></tr>
+</thead>
+<tbody>
+<tr><td>Hai đầu cố định, $k$ bó</td><td>$k$</td><td>$k+1$</td></tr>
+<tr><td>Một đầu cố định, một đầu tự do</td><td>$k+1$</td><td>$k+1$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Câu 6.</strong> Dây dài $60$ cm, hai đầu cố định, có sóng dừng với 3 bó sóng. Trên dây có bao nhiêu nút sóng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q6" id="tl13-q6a"><label for="tl13-q6a" class="tl-opt tl-no">A. 3 nút</label>
+<input type="radio" name="tl13-q6" id="tl13-q6b"><label for="tl13-q6b" class="tl-opt tl-ok">B. 4 nút</label>
+<input type="radio" name="tl13-q6" id="tl13-q6c"><label for="tl13-q6c" class="tl-opt tl-no">C. 5 nút</label>
+<input type="radio" name="tl13-q6" id="tl13-q6d"><label for="tl13-q6d" class="tl-opt tl-no">D. 6 nút</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k=3$ bó → $k+1=4$ nút: hai đầu dây và hai điểm ở giữa. Vẽ nhanh một hình là thấy ngay.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn 3 là quên rằng <em>hai đầu dây cũng là nút</em>. Chọn 6 là lẫn nút với bụng (số bụng bằng số bó). Vẽ 3 bó rồi đếm các chỗ dây đứng yên nhé.</p></div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Em đọc to câu trả lời bằng lời của mình trước, rồi mới bấm xem đáp án.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
+<details class="tl-details">
+<summary>1. Sóng dừng được tạo thành khi nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Khi hai sóng <strong>cùng biên độ, cùng bước sóng, truyền ngược chiều nhau</strong> gặp nhau — thường là sóng tới và sóng phản xạ.</p>
+</details>
+<details class="tl-details">
+<summary>2. Phản xạ trên vật cản cố định và trên vật cản tự do khác nhau thế nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Cố định: sóng phản xạ <strong>ngược pha</strong> sóng tới. Tự do: sóng phản xạ <strong>cùng pha</strong> sóng tới. Cả hai trường hợp đều cùng tần số, cùng bước sóng.</p>
+</details>
+<details class="tl-details">
+<summary>3. Nút sóng là gì, bụng sóng là gì? Biên độ mỗi loại? <small>(nói bằng lời của em trước)</small></summary>
+<p>Nút: hai sóng thành phần ngược pha, biên độ $0$. Bụng: hai sóng thành phần cùng pha, biên độ $2A$ với $A$ là biên độ sóng tới.</p>
+</details>
+<details class="tl-details">
+<summary>4. Viết điều kiện có sóng dừng cho hai trường hợp, kèm số nút, số bụng. <small>(nói bằng lời của em trước)</small></summary>
+<p>Hai đầu cố định: $l=k\dfrac{\lambda}{2}$ ($k=1,2,3,\dots$), số bụng $=k$, số nút $=k+1$. Một đầu tự do: $l=(2k+1)\dfrac{\lambda}{4}$ ($k=0,1,2,\dots$), số bụng = số nút $=k+1$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Từ sóng dừng tính bước sóng và tốc độ truyền sóng như thế nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Đo chiều dài dây $l$, đếm số bó $k$: hai đầu cố định thì $\lambda=\dfrac{2l}{k}$; sau đó $v=\lambda f$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Sợi dây AB dài $l=1{,}0$ m, hai đầu cố định. Tốc độ truyền sóng trên dây là $v=20$ m/s.</p>
+<p>a) Tính tần số nhỏ nhất để trên dây có sóng dừng và bước sóng khi đó.</p>
+<p>b) Với tần số $f=40$ Hz, trên dây có bao nhiêu bó sóng, bao nhiêu nút sóng?</p>
+<p>c) Giữ nguyên $f=40$ Hz rồi thả đầu B cho tự do. Trên dây có sóng dừng không? Vì sao?</p>
+</div>
+
+<p>Với mỗi câu của đề, tự hỏi: <strong>đề cho dữ liệu gì</strong>, <strong>gọi ra kiến thức nào?</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"hai đầu cố định"</td><td>Hai đầu là nút</td><td>Dùng $l=k\lambda/2$; số nút $=k+1$</td></tr>
+<tr><td>"$l=1{,}0$ m... $v=20$ m/s"</td><td>$l=1{,}0$ m, $v=20$ m/s</td><td>$\lambda=v/f$; $f_0=v/(2l)$</td></tr>
+<tr><td>"tần số nhỏ nhất để có sóng dừng"</td><td>Cần $k$ nhỏ nhất</td><td>$k=1$ → $l=\lambda/2$</td></tr>
+<tr><td>"$f=40$ Hz... bao nhiêu bó, bao nhiêu nút"</td><td>$f=40$ Hz</td><td>$\lambda=v/f$ rồi $k=2l/\lambda$; số nút $=k+1$</td></tr>
+<tr><td>"thả đầu B cho tự do" ... "có sóng dừng không? Vì sao?"</td><td>Một đầu cố định, một đầu tự do</td><td>Điều kiện $l=(2k+1)\lambda/4$; xét $l/(\lambda/4)$ lẻ hay chẵn</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: hai đầu cố định nên $l=k\dfrac{\lambda}{2}$. Tần số nhỏ nhất ứng với $k=1$: $\lambda=2l=2\times1{,}0=2{,}0$ m.</li>
+<li>$f_0=\dfrac{v}{\lambda}=\dfrac{20}{2{,}0}=10$ Hz.</li>
+<li>Câu b: $\lambda=\dfrac{v}{f}=\dfrac{20}{40}=0{,}5$ m. Số bó $k=\dfrac{2l}{\lambda}=\dfrac{2\times1{,}0}{0{,}5}=4$ bó.</li>
+<li>Số nút $=k+1=5$ nút (kể cả hai đầu A, B).</li>
+<li>Câu c: một đầu tự do thì phải có $l=(2k+1)\dfrac{\lambda}{4}$. Với $f=40$ Hz, $\dfrac{\lambda}{4}=0{,}125$ m, mà $\dfrac{l}{\lambda/4}=\dfrac{1{,}0}{0{,}125}=8$ — số <strong>chẵn</strong>, không có số nguyên $k$ nào thoả mãn.</li>
+<li>Kết luận câu c: <strong>không có sóng dừng</strong>. Cách nói tương đương: dây một đầu tự do cần $f$ là số <em>lẻ</em> lần $\dfrac{v}{4l}=5$ Hz, tức $f=5;\,15;\,25;\,35;\dots$ Hz; $40$ Hz không thuộc dãy này.</li>
+<li>Kiểm tra: 4 bó chiếm $4\times\dfrac{\lambda}{2}=4\times0{,}25=1{,}0$ m, đúng bằng $l$. Kết quả câu b hợp lý.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — cùng cách làm, đổi số: dây dài $l=1{,}2$ m, hai đầu cố định, $v=24$ m/s, $f=30$ Hz.</p>
+<ol class="tl-steps">
+<li>Bước sóng: $\lambda=\dfrac{v}{f}=\dfrac{24}{30}=0{,}8$ m.</li>
+<li><strong>Bước 2 (em điền):</strong> số bó $k=\dfrac{2l}{\lambda}=\;?$</li>
+<li><strong>Bước 3 (em điền):</strong> có sóng dừng không, và có bao nhiêu nút?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$k=\dfrac{2\times1{,}2}{0{,}8}=3$ — số nguyên, nên <strong>có sóng dừng</strong> với 3 bó; số nút $=k+1=4$ nút.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức, tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Dây AB dài $1{,}0$ m, hai đầu cố định, $v=20$ m/s, cho dây rung với $f=30$ Hz. Trên dây có bao nhiêu bó sóng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q7" id="tl13-q7a"><label for="tl13-q7a" class="tl-opt tl-no">A. 2 bó</label>
+<input type="radio" name="tl13-q7" id="tl13-q7b"><label for="tl13-q7b" class="tl-opt tl-ok">B. 3 bó</label>
+<input type="radio" name="tl13-q7" id="tl13-q7c"><label for="tl13-q7c" class="tl-opt tl-no">C. 4 bó</label>
+<input type="radio" name="tl13-q7" id="tl13-q7d"><label for="tl13-q7d" class="tl-opt tl-no">D. 5 bó</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda=\dfrac{20}{30}\approx0{,}67$ m; $k=\dfrac{2l}{\lambda}=\dfrac{2\times1{,}0}{0{,}67}\approx3$ bó. Làm tròn đúng số nguyên là dấu hiệu kết quả đúng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn 4 thường là lẫn với số nút (nút $=k+1$). Chọn 2 hoặc 5 là làm tròn sai: $k$ phải ra <em>đúng</em> một số nguyên thì mới có sóng dừng. Tính $\lambda$ rồi $k=\dfrac{2l}{\lambda}$ và thử lại.</p></div>
+</div>
+</div>
+
+<h3>VI. Sóng dừng trong đời sống và mang về</h3>
+
+<ul>
+<li><strong>Nhạc cụ</strong>: dây đàn (ghi-ta, violon) hay cột không khí trong ống sáo, kèn đều có sóng dừng; bấm phím hoặc bịt, mở lỗ để đổi chiều dài nên đổi nốt.</li>
+<li><strong>Đo tốc độ truyền âm:</strong> ống cộng hưởng, đo $\lambda$ từ vị trí các nút rồi tính $v=\lambda f$ (bài thực hành sau).</li>
+<li><strong>Trong xưởng:</strong> dây curoa, băng tải rung thành sóng dừng gây tiếng ồn, mài mòn; máy CNC rung mạnh ở tần số cộng hưởng nên phải đổi tốc độ trục.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
+<p><strong>⭐</strong> Dây dài $1{,}2$ m, hai đầu cố định, có sóng dừng với 3 bó. Tính bước sóng. <em>Gợi ý:</em> $l=k\dfrac{\lambda}{2}$ → $\lambda=0{,}8$ m.</p>
+<p><strong>⭐⭐</strong> Cũng sợi dây đó có $v=24$ m/s. Tính tần số. <em>Gợi ý:</em> $f=\dfrac{v}{\lambda}=30$ Hz.</p>
+<p><strong>⭐⭐⭐</strong> Vẫn sợi dây dài $1{,}2$ m và $v=24$ m/s, nhưng thả một đầu cho tự do; giữ $f=30$ Hz. Có sóng dừng không? Nếu không, hai tần số gần nhất cho sóng dừng là bao nhiêu? <em>Gợi ý:</em> một đầu tự do cần $f$ lẻ lần $\dfrac{v}{4l}=5$ Hz, tức $5;\,15;\,25;\,35;\dots$ Hz. Vậy $30$ Hz không có sóng dừng; hai giá trị gần nhất là $25$ Hz và $35$ Hz.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Sóng dừng:</strong> hai sóng cùng biên độ · ngược chiều · giao thoa.</li>
+<li><strong>Nút</strong> = ngược pha, biên độ $0$ · <strong>Bụng</strong> = cùng pha, biên độ $2A$.</li>
+<li><strong>Khoảng cách:</strong> nút–nút $\dfrac{\lambda}{2}$ · nút–bụng $\dfrac{\lambda}{4}$.</li>
+<li><strong>Hai đầu cố định:</strong> $l=k\dfrac{\lambda}{2}$ · bụng $=k$ · nút $=k+1$.</li>
+<li><strong>Một đầu tự do:</strong> $l=(2k+1)\dfrac{\lambda}{4}$ · bụng = nút $=k+1$.</li>
+<li><strong>Đọc đề:</strong> đếm số đầu cố định trước, rồi mới chọn công thức; tính $\lambda=\dfrac{v}{f}$ ngay từ dữ liệu.</li>
+</ul>
+</div>

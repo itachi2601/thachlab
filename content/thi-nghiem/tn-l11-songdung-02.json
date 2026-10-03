@@ -1,0 +1,162 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Sóng dừng",
+ "lesson_id": 32,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dung/theory.html",
+ "id": "tn-l11-songdung-02",
+ "ten": "Đo bước sóng và tốc độ truyền sóng từ sóng dừng (dây hai đầu cố định)",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "songdung.dieu_kien_hai_dau_co_dinh",
+  "songdung.do_buoc_song_tu_song_dung",
+  "songdung.tinh_toc_do_truyen_song"
+ ],
+ "muc_tieu": "Từ chiều dài dây và số bó đếm được, tính bước sóng rồi tính tốc độ truyền sóng; nhận ra v chỉ phụ thuộc sợi dây (sức căng, khối lượng), không phụ thuộc tần số máy rung.",
+ "dung_cu": [
+  {
+   "ten": "Dây đàn hồi (dây cao su đặc) dài khoảng 1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Máy rung có núm chỉnh tần số (hoặc bộ rung gắn mô-tơ nhỏ)",
+   "so_luong": 1,
+   "ghi_chu": "cần đọc được tần số, vạch chia tới 0,5 Hz"
+  },
+  {
+   "ten": "Giá đỡ hai điểm cố định, kẹp căng dây",
+   "so_luong": 2
+  },
+  {
+   "ten": "Thước dài chia tới mm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Căng dây giữa hai điểm cố định, đo chiều dài đoạn dây l = 0,80 m.",
+   "Gắn một đầu dây vào máy rung, tăng tần số từ từ tới khi dây rung thành hình rõ nét; ghi f và đếm số bó k.",
+   "Làm lại bốn lần với các tần số khác nhau, giữ nguyên sức căng dây."
+  ],
+  "quan_sat": [
+   "Số bó k tăng theo f; ở giữa hai nút dây vồng lên rõ nhất.",
+   "Tính lam = 2l/k và v = lam·f cho mỗi lần đo; v ra gần như cùng một giá trị.",
+   "Bảng mẫu: k = 2 → f = 25,0 Hz, v = 20,0 m/s; k = 3 → 37,5 Hz, 20,0 m/s; k = 4 → 50,0 Hz, 20,0 m/s; k = 5 → 62,5 Hz, 20,0 m/s."
+  ],
+  "rut_ra": [
+   "Các tần số có sóng dừng là f = k·v/(2l), tức 25,0; 37,5; 50,0; 62,5 Hz — cách nhau đều 12,5 Hz.",
+   "Tốc độ truyền sóng v = lam·f ≈ 20 m/s không đổi: v do sợi dây quyết định, không do tần số."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số máy rung",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 12.5,
+   "max": 75,
+   "mac_dinh": 50,
+   "buoc": 12.5
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài đoạn dây",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.8
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên dây",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 20
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Số bó sóng",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "k = 2lf/v",
+   "lam = 2l/k",
+   "v = lam·f",
+   "f_k = k·v/(2l)"
+  ],
+  "gia_thiet": [
+   "hai đầu dây cố định nên hai đầu là nút",
+   "bỏ qua tắt dần và khối lượng riêng của dây thay đổi khi căng",
+   "số liệu mẫu tính từ mô hình với l = 0,80 m, v = 20 m/s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "So bo k",
+   "f (Hz)",
+   "lam = 2l/k (m)",
+   "v = lam·f (m/s)"
+  ],
+  "hang": [
+   [
+    2,
+    25,
+    0.8,
+    20
+   ],
+   [
+    3,
+    37.5,
+    0.53,
+    20
+   ],
+   [
+    4,
+    50,
+    0.4,
+    20
+   ],
+   [
+    5,
+    62.5,
+    0.32,
+    20
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (không phải số đo thật). Chạy lại mô hình sẽ cho đúng bốn hàng này."
+ },
+ "ket_qua_ky_vong": "Với l = 0,80 m và v = 20 m/s: các tần số có sóng dừng là 12,5; 25,0; 37,5; 50,0; 62,5 Hz. Mỗi lần đo đều cho v ≈ 20,0 m/s, sai khác dưới 1%.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng tăng tần số thì tốc độ truyền sóng tăng theo.",
+  "Lấy lam = l/k (quên rằng mỗi bó dài lam/2, nên lam = 2l/k) — kết quả v sai đúng một nửa."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc chiều dài dây bằng thước dây: sai số ±0,5 cm, cỡ 0,6%.",
+  "Đếm nhầm số bó khi dây rung chưa rõ nét (hay đếm thiếu một bó ở mép).",
+  "Vạch chia tần số của máy rung; dây căng lệch giữa hai lần đo làm v đổi chút ít."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f"
+  ],
+  "dau_ra": [
+   "hình dạng dây",
+   "số bó k, bước sóng lam",
+   "bảng v theo từng lần đo"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Núm tần số nhảy theo bội số của f_0 = v/(2l); hiện ngay lam và v để học sinh thấy v không đổi. Chế độ 'sai số' thêm nhiễu ±0,5 cm vào l để bảng v lệch nhẹ như thật."
+ },
+ "an_toan": "Kẹp chặt giá đỡ để máy rung không bò khỏi bàn; không để dây đàn hồi bật vào mặt khi đứt."
+}

@@ -1,0 +1,139 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Sóng dừng",
+ "lesson_id": 32,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dung/theory.html",
+ "id": "tn-l11-songdung-01",
+ "ten": "Sợi dây thun rung bằng tay: những múi dây đứng yên tại chỗ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "songdung.pha_xa_vat_can_co_dinh",
+  "songdung.nut_va_bung",
+  "songdung.dieu_kien_hai_dau_co_dinh"
+ ],
+ "muc_tieu": "Thấy sóng dừng hình thành trên dây khi một đầu buộc cố định, đầu kia vung tay: dây chia thành các múi, chỗ đứng yên (nút) và chỗ vồng mạnh nhất (bụng) xen kẽ, cố định tại chỗ.",
+ "dung_cu": [
+  {
+   "ten": "Dây thun dài hoặc dây dù mảnh, dài 1,5–2 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Chân ghế / cọc làm điểm buộc cố định",
+   "so_luong": 1,
+   "ghi_chu": "đầu buộc là vật cản cố định nên là nút sóng"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Buộc một đầu dây vào chân ghế, tay trái giữ căng đầu kia cách chân ghế khoảng 1 m.",
+   "Tay phải vung đầu dây lên xuống đều theo nhịp, tăng dần tần số vung."
+  ],
+  "quan_sat": [
+   "Dây chia thành những múi vồng lên vồng xuống, có chỗ đứng yên hẳn.",
+   "Vung nhanh hơn (nhưng vẫn đều tay) thì số múi tăng, múi ngắn lại.",
+   "Giữ nguyên nhịp vung, hình múi vẫn đứng yên tại chỗ, không chạy dọc dây."
+  ],
+  "rut_ra": [
+   "Sóng tới gặp đầu buộc cố định bị phản xạ; hai sóng cùng biên độ, ngược chiều giao thoa tạo sóng dừng.",
+   "Chỗ đứng yên là nút, giữa hai nút là bụng; các vị trí này cố định, không truyền đi."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số vung tay",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 8,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài đoạn dây rung",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Số bó (múi) sóng",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "f_k = k·v/(2l)",
+   "lam = 2l/k",
+   "v = 2·l·f_k/k"
+  ],
+  "gia_thiet": [
+   "dây nhẹ, bỏ qua tắt dần theo thời gian",
+   "tay vung đều nên coi là nguồn dao động điều hoà",
+   "lấy v = 4 m/s cho dây thun căng vừa (số liệu minh hoạ)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "So bo k",
+   "f (Hz)",
+   "lam (m)"
+  ],
+  "hang": [
+   [
+    1,
+    2,
+    2
+   ],
+   [
+    2,
+    4,
+    1
+   ],
+   [
+    3,
+    6,
+    0.67
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với l = 1,0 m và v = 4 m/s, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với l = 1,0 m, v = 4 m/s: nhịp 2 Hz được 1 múi, 4 Hz được 2 múi, 6 Hz được 3 múi. Vung càng nhanh thì số múi càng nhiều và bước sóng càng ngắn.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng các múi dây chạy dọc theo dây rồi biến mất ở đầu kia.",
+  "Đếm số nút mà quên hai đầu dây cũng là nút (dây hai đầu cố định: k bó thì k + 1 nút)."
+ ],
+ "sai_so_thuong_gap": [
+  "Vung tay không đều nên hình múi nhấp nháy, khó đếm.",
+  "Dây bị xoắn hoặc chùng làm múi lệch, không đối xứng.",
+  "Cầm đầu dây quá chặt làm đầu đó thành gần cố định thay vì tự do."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "l"
+  ],
+  "dau_ra": [
+   "hình dạng dây theo thời gian",
+   "số múi, vị trí nút và bụng",
+   "bảng f_k – lam"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Thanh trượt tần số vung; dây vẽ bằng đường sin dừng, chấm đỏ ở nút, chấm cam ở bụng. Nút 'đổi đầu tự do' để so sánh điều kiện chiều dài."
+ },
+ "an_toan": "Dùng dây mềm, không kéo quá căng để dây không đứt bật vào mắt; không buộc vào vật dễ đổ."
+}

@@ -1,0 +1,163 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Sóng dừng",
+ "lesson_id": 32,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dung/theory.html",
+ "id": "tn-l11-songdung-03",
+ "ten": "Đổi đầu cố định thành đầu tự do: điều kiện chuyển từ lam/2 sang lam/4",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "songdung.dau_tu_do_la_bung",
+  "songdung.dieu_kien_mot_dau_tu_do",
+  "songdung.tan_so_nho_nhat"
+ ],
+ "muc_tieu": "Thấy rằng khi một đầu dây để tự do thì đầu đó là bụng, chiều dài dây phải bằng số lẻ lần lam/4, và tần số nhỏ nhất giảm còn một nửa so với dây hai đầu cố định.",
+ "dung_cu": [
+  {
+   "ten": "Dây đàn hồi gắn máy rung, một đầu cố định",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vòng nhẹ (vòng dây thép nhỏ) trượt trên thanh thẳng đứng",
+   "so_luong": 1,
+   "ghi_chu": "để đầu dây trượt gần như không ma sát — vật cản tự do"
+  },
+  {
+   "ten": "Thanh thẳng đứng (trục trơn) để vòng trượt",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dài chia tới mm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lắp dây dài l = 0,80 m giữa máy rung và giá cố định; tăng f tới khi có sóng dừng rõ nét, ghi lại f (lần trước được 12,5 Hz với 1 bó).",
+   "Tháo đầu dây khỏi giá, gắn vào vòng nhẹ trượt trên thanh thẳng đứng. Giữ nguyên sức căng và tần số.",
+   "Tăng tần số từ từ, ghi lại tần số đầu tiên mà dây rung rõ trở lại và quan sát đầu vòng."
+  ],
+  "quan_sat": [
+   "Ở tần số cũ, hình sóng dừng biến mất.",
+   "Tới f = 18,75 Hz dây rung rõ trở lại: đoạn dây dài 3·lam/4 = 0,80 m, tức lam ≈ 1,07 m; đầu vòng (đầu tự do) vung mạnh nhất.",
+   "Tần số nhỏ nhất cho sóng dừng lúc này là 6,25 Hz — đúng bằng một nửa 12,5 Hz của dây hai đầu cố định."
+  ],
+  "rut_ra": [
+   "Đầu tự do là bụng, nên điều kiện là l = (2k+1)·lam/4.",
+   "Cùng sợi dây, cùng sức căng: đổi một đầu cố định thành tự do thì tần số nhỏ nhất chia đôi, f_0 = v/(4l)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số máy rung",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 40,
+   "mac_dinh": 18.75,
+   "buoc": 6.25
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.8
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền sóng trên dây",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 20
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Chỉ số trong l = (2k+1)·lam/4",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Số nút (bằng số bụng)",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "l = (2k+1)·lam/4",
+   "lam = 4l/(2k+1)",
+   "f = (2k+1)·v/(4l)",
+   "f_0 = v/(4l) = (1/2)·v/(2l)",
+   "so nut = so bung = k+1"
+  ],
+  "gia_thiet": [
+   "đầu gắn vòng trượt coi như tự do hoàn toàn (bỏ qua ma sát và khối lượng vòng)",
+   "bỏ qua tắt dần",
+   "số liệu mẫu tính với l = 0,80 m, v = 20 m/s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "k",
+   "f = (2k+1)·6,25 (Hz)",
+   "lam = 3,2/(2k+1) (m)",
+   "So nut = so bung"
+  ],
+  "hang": [
+   [
+    0,
+    6.25,
+    3.2,
+    1
+   ],
+   [
+    1,
+    18.75,
+    1.07,
+    2
+   ],
+   [
+    2,
+    31.25,
+    0.64,
+    3
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật. Tần số cách nhau 12,5 Hz, bắt đầu từ 6,25 Hz (lẻ lần 6,25 Hz)."
+ },
+ "ket_qua_ky_vong": "Dây dài 0,80 m, một đầu tự do: sóng dừng có ở f = 6,25; 18,75; 31,25; … Hz. Ở f = 18,75 Hz dây có 2 nút và 2 bụng, đầu tự do là một bụng. Tần số nhỏ nhất bằng nửa so với trường hợp hai đầu cố định (12,5 Hz).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng đầu tự do cũng là nút nên vẫn dùng l = k·lam/2.",
+  "Nghĩ rằng đổi đầu cố định thành tự do thì tần số nhỏ nhất tăng gấp đôi (thực ra là giảm còn một nửa)."
+ ],
+ "sai_so_thuong_gap": [
+  "Vòng trượt bị ma sát hoặc nặng nên đầu dây không tự do thật, sóng dừng nhoè.",
+  "Chưa đo lại chiều dài sau khi tháo đầu khỏi giá nên l bị lệch.",
+  "Máy rung không giữ đúng sức căng làm v đổi giữa hai lần thử."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f"
+  ],
+  "dau_ra": [
+   "hình dạng dây",
+   "chấm đánh dấu nút và bụng",
+   "bảng f – lam – số nút"
+  ],
+  "hinh_trong_bai": "Hình 3 (phần dưới)",
+  "y_tuong": "Nút gạt 'đầu B: cố định / tự do'; khi chuyển sang tự do, mô hình chỉ cho qua các tần số lẻ lần v/(4l) và tô sáng đầu dây đang là bụng."
+ },
+ "an_toan": "Thanh trượt phải đứng vững; vòng nhỏ không để bật ra khi dây rung mạnh."
+}
