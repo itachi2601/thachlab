@@ -31,7 +31,7 @@ import type { ExamQuestion } from "@/features/exams/types";
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const BATCH_SIZE = 8;
 const MODEL = "claude-sonnet-5-5";
-const MAX_WORDS = 25;
+const MAX_WORDS = 30; // trần cứng; prompt nhắm 10–18 từ (công thức $…$ cũng tính là từ)
 const LETTERS = ["A", "B", "C", "D"] as const;
 const PRIORITY_TITLES = [
   "chua_te_song",
@@ -100,11 +100,14 @@ interface BankRow {
 }
 
 const SYSTEM =
-  "Bạn viết ghi chú sửa lỗi tư duy cho câu trắc nghiệm Vật lí THPT. Với MỖI phương án SAI của câu, viết đúng 1 câu " +
-  `(tối đa ${MAX_WORDS} từ, tiếng Việt) nói rõ lỗi tư duy khiến người học chọn phương án đó: nhầm công thức hoặc đại ` +
-  "lượng, quên đổi đơn vị, đổi dấu hoặc chiều, lẫn hai khái niệm, bỏ sót một bước… — nói LỖI chứ không chỉ nói " +
-  '"phương án này sai". Giọng trung tính, gọi người học là "em" khi cần; TUYỆT ĐỐI không dùng vai "thầy/cô" ' +
-  'và không chữ "thầy". Công thức viết trong $…$ (KaTeX); trong công thức dùng \\lt, \\gt thay cho < và >. ' +
+  "Bạn viết ghi chú chẩn đoán lỗi cho câu trắc nghiệm Vật lí THPT, hiện ngay sau khi người học chọn sai (kiểu Duolingo). " +
+  "Với MỖI phương án SAI, viết đúng 1 câu ngắn 10–18 từ (tiếng Việt) nêu LỖI TƯ DUY dẫn tới phương án đó: nhầm công thức " +
+  "hoặc đại lượng, quên đổi đơn vị, đổi dấu hoặc chiều, lẫn hai khái niệm, bỏ sót một bước… Nói lỗi, không nói " +
+  '"phương án này sai". Dạng viết: mở đầu bằng động từ hoặc danh từ chỉ lỗi, KHÔNG mở đầu bằng "Em", không có chủ ngữ ' +
+  '"em/bạn/học sinh" (ví dụ: "Nhầm $\\omega$ với $f$: quên chia cho $2\\pi$." · "Lẫn khoảng cách ngược pha ' +
+  '$\\lambda/2$ với $\\lambda/4$." · "Đổi 20 cm sang mét còn thiếu."). Với câu hỏi "chọn phát biểu SAI/KHÔNG đúng", ' +
+  'các phương án nhiễu là phát biểu đúng → viết "Phát biểu này đúng: <lý do ngắn>." TUYỆT ĐỐI không dùng vai ' +
+  '"thầy/cô", không chữ "thầy". Công thức viết trong $…$ (KaTeX); trong công thức dùng \\lt, \\gt thay cho < và >. ' +
   "Không nhắc lại đáp án đúng, không tiết lộ số liệu cuối. Chỉ trả về DUY NHẤT một JSON hợp lệ dạng " +
   '{"results":[{"index":0,"notes":{"A":"…","C":"…","D":"…"}}]} — khoá là nhãn phương án SAI (A–D), không bọc ' +
   "trong markdown code fence, không lời giải thích thêm.";
@@ -120,16 +123,19 @@ function countWords(s: string): number {
 }
 
 /** Giữ ghi chú hợp lệ: đúng khoá phương án sai, ≤ MAX_WORDS từ, không có chữ "thầy". Đủ hết phương án sai mới nhận. */
-function cleanNotes(raw: unknown, wrong: string[]): Record<string, string> | null {
-  if (!raw || typeof raw !== "object") return null;
+function cleanNotes(raw: unknown, wrong: string[]): { notes: Record<string, string> } | { reason: string } {
+  if (!raw || typeof raw !== "object") return { reason: "không có notes" };
   const src = raw as Record<string, unknown>;
   const out: Record<string, string> = {};
   for (const k of wrong) {
     const v = typeof src[k] === "string" ? (src[k] as string).trim() : "";
-    if (!v || countWords(v) > MAX_WORDS || /thầy/i.test(v)) return null;
+    if (!v) return { reason: `thiếu phương án ${k}` };
+    if (countWords(v) > MAX_WORDS) return { reason: `${k} dài ${countWords(v)} từ (> ${MAX_WORDS})` };
+    if (/thầy/i.test(v)) return { reason: `${k} có chữ "thầy"` };
+    if (/^\s*em\b/i.test(v)) return { reason: `${k} mở đầu bằng "Em"` };
     out[k] = v;
   }
-  return out;
+  return { notes: out };
 }
 
 async function generateBatch(apiKey: string, items: { i: number; text: string; wrong: string[] }[]): Promise<Map<number, Record<string, string>>> {
@@ -152,14 +158,18 @@ async function generateBatch(apiKey: string, items: { i: number; text: string; w
   const rows = Array.isArray(parsed.results) ? parsed.results : [];
   const byIndex = new Map(items.map((it) => [it.i, it]));
   const out = new Map<number, Record<string, string>>();
+  const seen = new Set<number>();
   for (const row of rows) {
     if (!row || typeof row !== "object") continue;
     const r = row as Record<string, unknown>;
     const item = byIndex.get(Number(r.index));
     if (!item) continue;
-    const notes = cleanNotes(r.notes, item.wrong);
-    if (notes) out.set(item.i, notes);
+    seen.add(item.i);
+    const res = cleanNotes(r.notes, item.wrong);
+    if ("notes" in res) out.set(item.i, res.notes);
+    else console.log(`  ✗ index ${item.i}: ${res.reason}`);
   }
+  for (const it of items) if (!seen.has(it.i)) console.log(`  ✗ index ${it.i}: AI không trả về câu này`);
   return out;
 }
 
