@@ -280,7 +280,7 @@ Cách đo: `scripts/check-a11y.mjs` cho từng cặp màu; Chrome headless + Dev
 | Cam kết "thầy trả lời Zalo trong ngày" | hiện ghi "**thường** trả lời trong ngày" để không hứa thay thầy | thầy xác nhận thời gian thật thì sửa lại |
 | Phụ huynh có biết con biết mình xem điểm không | chưa quyết: minh bạch (báo cho con) hay không | thầy quyết — ảnh hưởng niềm tin thầy–trò, đừng tự làm |
 | Ảnh nghiệm thu bằng dữ liệu thật | production chưa có phụ huynh nào nối với con | khi có tài khoản + em thử, chụp lại 375/1280 và thay 3 ảnh dữ liệu mẫu ở §3.2 |
-| Footer nền đen trên trang sáng | `Footer.tsx` dùng `bg-[#04060A]`, không có nhánh sáng; chữ 12px | đổi thành `bg-panel`/chữ ≥15px khi ở `/phu-huynh` (đụng file dùng chung — hỏi thầy trước) |
+| ~~Footer nền đen trên trang sáng~~ | **Đã sửa 3/10**: `Footer variant="parent"` (nền theo theme, chữ ≥15px, link cao ≥48px; trang khác không đổi) | — |
 | **Phỏng vấn 5–8 phụ huynh thật** | chưa làm; mọi mục `[SUY LUẬN]`/`[CHƯA CÓ NGUỒN]` còn nguyên | xem §9 — câu hỏi cần kiểm |
 
 Đã xong 3/10: `MobileTabBar` ẩn ở `/phu-huynh`.

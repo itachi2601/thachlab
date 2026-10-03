@@ -263,7 +263,7 @@ export default function PhuHuynhPage() {
           </RequireAuth>
         )}
       </main>
-      <Footer />
+      <Footer variant="parent" />
     </>
   );
 }
