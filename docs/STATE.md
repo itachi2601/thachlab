@@ -16,8 +16,10 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   + `build_figs.py` 4 hình SVG + bản xem thử 375px). 8 quiz tự chấm, 3 thí nghiệm (dây thun rung tay · đo
   λ, v bằng bảng số liệu thật · đổi sang đầu tự do), 3 cái bẫy, mục Trả bài, bài toán mẫu + điền bước trống,
   thử thách ⭐–⭐⭐⭐. Lint sạch: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK (4 mục mới
-  `tn-l11-songdung-01..04`) · `validate_bundle` ok:true; `lint_do_dai` 2.358 từ hiện ngay (~17 phút, còn 1
-  cảnh báo ⚠ tổng > 2.000 — từng mục ≤ 288 từ, đoạn liền dài nhất 205 từ). **CHƯA ghi DB**, chờ thầy xem
+  `tn-l11-songdung-01..04`) · `validate_bundle` ok:true; `lint_do_dai` 2.384 từ hiện ngay (~17 phút, còn 1
+  cảnh báo ⚠ tổng > 2.000 — từng mục ≤ 288 từ, đoạn liền dài nhất 205 từ). Đã kiểm chéo độc lập 8 quiz +
+  5 câu đề (13/13 đáp án đúng) và sửa theo góp ý: Hình 1 (ngón bấm đúng trung điểm, vẫn 1 bó), phản hồi
+  câu 6–7, số liệu đo có sai số ±0,1 m/s, xáo vị trí đáp án (A2/B2/C2/D2). **CHƯA ghi DB**, chờ thầy xem
   `content/lesson-samples/l11-song-dung/xem-thu/xem-thu.html`: `bash scripts/cap-nhat-ly-thuyet.sh
   content/lesson-samples/l11-song-dung/theory.html 32` rồi deploy. Bộ "Kiểm tra nhanh" 20 câu
   (`scripts/data/theory-quiz/32.json`) đã có trong git, validate đạt, cũng chưa đăng.
