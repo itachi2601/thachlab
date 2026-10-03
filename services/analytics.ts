@@ -153,9 +153,9 @@ export async function fetchMyWrongQuestions(
     .select(`id, exam_id, detail, exams(title, questions), exam_question_results!inner(${eqrCols})`)
     .eq("student_id", userId)
     .eq("exam_question_results.is_correct", false)
-    .eq("exam_question_results.form", form)
     .order("id")
     .order("question_index", { referencedTable: "exam_question_results" });
+  if (form) query = query.eq("exam_question_results.form", form); // form rỗng = gộp mọi loại
   query =
     topic === UNTAGGED
       ? query.or(`topic_name.is.null,topic_name.eq."",topic_name.eq."${UNTAGGED}"`, { referencedTable: "exam_question_results" })

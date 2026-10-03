@@ -152,10 +152,13 @@ function ScoreTrend({ points }: { points: ScorePoint[] }) {
   );
 }
 
+const UNTAGGED_TOPIC = "Chưa gắn chủ đề";
+const MAX_GAPS_SHOWN = 5;
+
 function formLabel(form: string) {
   return form === "ly_thuyet" || form === "bai_tap"
     ? QUESTION_FORM_LABELS[form]
-    : "Chưa phân loại";
+    : form === "" ? "Nhiều loại" : "Chưa phân loại";
 }
 
 /** Trang chi tiết bài làm dùng ?ph=1 để nút "Về" trỏ lại /phu-huynh thay vì /lop-hoc/ket-qua. */
@@ -619,7 +622,21 @@ export default function StudentResultsDashboard({
   // Chi tiết mịn: trong mỗi phần cần phụ đạo, em còn sai đúng yêu cầu cần đạt nào.
   const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomeGaps), [outcomeGaps]);
 
-  const priorityGaps = (gaps ?? []).filter((g) => g.wrong > 0);
+  // Các dòng "Chưa gắn chủ đề" (mỗi loại một dòng) gộp thành một; danh sách chỉ hiện 5 chủ đề đầu (N3).
+  const priorityGaps = useMemo(() => {
+    const wrongOnly = (gaps ?? []).filter((g) => g.wrong > 0);
+    const untagged = wrongOnly.filter((g) => g.topic === UNTAGGED_TOPIC);
+    if (untagged.length === 0) return wrongOnly;
+    const total = untagged.reduce((a, g) => a + g.total, 0);
+    const wrong = untagged.reduce((a, g) => a + g.wrong, 0);
+    const merged: TopicGap = {
+      key: `${UNTAGGED_TOPIC}|`, topicId: null, topic: UNTAGGED_TOPIC, form: "", total, wrong,
+      pct: total ? Math.round((wrong / total) * 100) : 0,
+    };
+    return [...wrongOnly.filter((g) => g.topic !== UNTAGGED_TOPIC), merged]
+      .sort((a, b) => b.wrong - a.wrong || b.pct - a.pct);
+  }, [gaps]);
+  const shownGaps = priorityGaps.slice(0, MAX_GAPS_SHOWN);
   const loading = points === null || gaps === null;
   const isEmpty = !loading && points.length === 0 && priorityGaps.length === 0;
   const attempts = useMemo(() => (points ? [...points].reverse() : null), [points]);
@@ -769,7 +786,7 @@ export default function StudentResultsDashboard({
             {viewer === "parent" ? "Phần con còn sai" : "Chủ đề cần ôn"}
           </h2>
           <div className="space-y-3">
-            {priorityGaps.map((gap) => (
+            {shownGaps.map((gap) => (
               <GapRow key={gap.key} gap={gap} lessonHref={lessonHref} studentId={studentId} viewer={viewer} />
             ))}
           </div>

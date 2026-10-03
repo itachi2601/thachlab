@@ -45,6 +45,7 @@ export default function TitleShowcase({
     return { owned: o, total: list.filter((t) => t.visible).length };
   }, [titles, displayCode]);
 
+  const tile = Math.max(44, size + 4); // đích chạm ≥44px (M-đích chạm)
   const pickedTitle = picked ? owned.find((t) => t.code === picked) ?? null : null;
   const shown = owned.length > limit ? owned.slice(0, limit - 1) : owned;
   const extra = owned.length - shown.length;
@@ -61,7 +62,7 @@ export default function TitleShowcase({
             {href && (
               <>
                 {" · "}
-                <Link href={href} className="text-cyan-300 hover:underline">
+                <Link href={href} className="-my-3 inline-flex min-h-11 items-center px-1 text-cyan-300 hover:underline">
                   xem tất cả →
                 </Link>
               </>
@@ -73,7 +74,7 @@ export default function TitleShowcase({
       {titles === undefined ? (
         <div className="flex gap-1.5">
           {[0, 1, 2, 3, 4].map((i) => (
-            <span key={i} className="animate-pulse rounded-xl bg-white/5" style={{ width: size + 4, height: size + 4 }} />
+            <span key={i} className="animate-pulse rounded-xl bg-white/5" style={{ width: tile, height: tile }} />
           ))}
         </div>
       ) : owned.length === 0 ? (
@@ -95,7 +96,7 @@ export default function TitleShowcase({
                     className={`grid place-items-center rounded-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 ${
                       wearing ? "bg-amber-400/15 ring-2 ring-amber-400 shadow-[0_0_12px_rgba(226,185,59,.5)]" : active ? "bg-white/10" : "bg-white/[0.03] hover:bg-white/[0.07]"
                     }`}
-                    style={{ width: size + 4, height: size + 4 }}
+                    style={{ width: tile, height: tile }}
                   >
                     <TitleBadge code={t.code} level={t.level} size={size} />
                   </button>
@@ -113,12 +114,12 @@ export default function TitleShowcase({
                   <Link
                     href={href}
                     className="grid place-items-center rounded-xl border border-dashed border-white/15 text-xs font-bold text-slate-400 hover:text-white"
-                    style={{ width: size + 4, height: size + 4 }}
+                    style={{ width: tile, height: tile }}
                   >
                     +{extra}
                   </Link>
                 ) : (
-                  <span className="grid place-items-center rounded-xl border border-dashed border-white/15 text-xs font-bold text-slate-400" style={{ width: size + 4, height: size + 4 }}>
+                  <span className="grid place-items-center rounded-xl border border-dashed border-white/15 text-xs font-bold text-slate-400" style={{ width: tile, height: tile }}>
                     +{extra}
                   </span>
                 )}

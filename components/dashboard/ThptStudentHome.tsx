@@ -302,8 +302,15 @@ export default function ThptStudentHome({
   const attentionReady = scoresLoaded && assessmentsLoaded;
   const showSuggestions = attentionReady && pendingCount === 0;
 
+  const todoItems = [
+    ...todoExams.map((item) => ({ key: `a-${item.id}`, href: `/kiem-tra/lam?id=${item.examId}`, title: item.examTitle, kind: "Bài kiểm tra" })),
+    ...todoReviewHomework.map((item) => ({ key: `r-${item.id}`, href: `/kiem-tra/lam?id=${item.examId}`, title: item.title, kind: "BTVN ôn tập" })),
+  ];
+  const primaryTodo = attentionReady ? todoItems[0] ?? null : null;
+  const otherTodos = primaryTodo ? todoItems.slice(1) : [];
+  const hasAlert = attentionReady && Boolean(alert && alert.kind !== "missed_assessment");
   const hasTodayContent =
-    Boolean(todayNote) || (Boolean(nextLesson) && !showSuggestions);
+    Boolean(todayNote) || Boolean(primaryTodo) || hasAlert || (Boolean(nextLesson) && !showSuggestions);
 
   const nearTier = rank?.next && rank.next.rp_needed > 0 && rank.next.rp_needed <= 50
     ? `Còn ${rank.next.rp_needed} RP là lên ${rank.next.name}`
@@ -383,68 +390,6 @@ export default function ThptStudentHome({
         </div>
       </section>
 
-      {/* Cần chú ý — chỉ rõ bài nào chưa làm để bấm vào làm ngay; hết bài thì đề xuất việc tiếp theo */}
-      {attentionReady && (pendingCount > 0 || (alert && alert.kind !== "missed_assessment")) && (
-        <section className="rounded-2xl border border-amber-400/25 bg-gradient-to-r from-amber-500/10 to-transparent p-4 sm:p-5">
-          <div className="flex items-center gap-2 text-amber-300">
-            <AlertTriangle size={18} />
-            <h2 className="font-display font-bold text-white">Cần chú ý</h2>
-          </div>
-          {alert && alert.kind !== "missed_assessment" && (
-            <p className="mt-2 text-sm text-amber-100/80">
-              {alert.kind === "exam_violation"
-                ? "Bài kiểm tra gần đây của em bị ghi nhận nhiều lần rời màn hình/thoát toàn màn hình — trợ giảng sẽ kiểm tra lại kiến thức của em."
-                : "Điểm kiểm tra của em đang thấp. Trợ giảng sẽ liên hệ để sắp lịch phụ đạo."}
-            </p>
-          )}
-          {pendingCount > 0 && (
-            <>
-              <p className="mt-2 text-sm text-amber-100/80">
-                Em còn <strong className="text-white">{pendingCount} bài chưa làm</strong> — bấm vào để làm ngay:
-              </p>
-              <div className="mt-3 space-y-2">
-                {todoExams.map((item) => (
-                  <Link
-                    key={`a-${item.id}`}
-                    href={`/kiem-tra/lam?id=${item.examId}`}
-                    className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-amber-400/20 bg-black/15 p-3 hover:bg-black/25"
-                  >
-                    <span className="flex min-w-0 items-center gap-2">
-                      <Trophy size={16} className="shrink-0 text-amber-300" />
-                      <span className="min-w-0">
-                        <strong className="block truncate text-sm text-white">{item.examTitle}</strong>
-                        <small className="text-[13px] text-slate-400">Bài kiểm tra · chưa làm</small>
-                      </span>
-                    </span>
-                    <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-amber-200">
-                      Làm bài <ChevronRight size={16} />
-                    </span>
-                  </Link>
-                ))}
-                {todoReviewHomework.map((item) => (
-                  <Link
-                    key={`r-${item.id}`}
-                    href={`/kiem-tra/lam?id=${item.examId}`}
-                    className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-amber-400/20 bg-black/15 p-3 hover:bg-black/25"
-                  >
-                    <span className="flex min-w-0 items-center gap-2">
-                      <CalendarClock size={16} className="shrink-0 text-cyan-300" />
-                      <span className="min-w-0">
-                        <strong className="block truncate text-sm text-white">{item.title}</strong>
-                        <small className="text-[13px] text-slate-400">BTVN ôn tập · chưa làm</small>
-                      </span>
-                    </span>
-                    <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-amber-200">
-                      Làm bài <ChevronRight size={16} />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
-        </section>
-      )}
-
       {showSuggestions && (
         <section className="rounded-2xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 to-transparent p-4 sm:p-5">
           <div className="flex items-center gap-2 text-emerald-300">
@@ -517,26 +462,58 @@ export default function ThptStudentHome({
         </section>
       )}
 
-      {/* Mục 1 — Việc cần làm trong buổi học hiện tại */}
+      {/* Mục 1 — MỘT thẻ việc cần làm hôm nay: đúng một nút nổi ("Làm bài" hoặc "Học tiếp"), cảnh báo chỉ là một dòng nhỏ (N3, B2) */}
       {hasTodayContent && <Section icon={Megaphone} title="Việc cần làm hôm nay">
         <div className="mt-3 space-y-2.5">
           {todayNote && <AnnouncementNote item={todayNote} />}
 
-          {nextLesson && !showSuggestions && (
+          {primaryTodo ? (
             <Link
-              href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
-              className="flex items-center justify-between gap-3 rounded-xl border border-blue-400/20 bg-blue-500/5 p-3 hover:bg-blue-500/10"
+              href={primaryTodo.href}
+              className="flex min-h-12 items-center justify-between gap-3 rounded-xl bg-primary p-3 text-white hover:bg-primary-dark"
             >
               <div className="min-w-0">
-                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-300">Học tiếp theo</small>
-                <p className="mt-0.5 truncate text-sm font-bold text-white">{nextLesson.title}</p>
-                {nextChapter && <p className="truncate text-xs text-slate-400">{nextChapter.title}</p>}
+                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-100">Làm bài</small>
+                <p className="mt-0.5 truncate text-sm font-bold">{primaryTodo.title}</p>
+                <p className="text-[13px] text-blue-100">{primaryTodo.kind} · chưa làm</p>
               </div>
-              <ChevronRight className="shrink-0 text-blue-300" size={18} />
+              <ChevronRight className="shrink-0" size={18} />
             </Link>
+          ) : nextLesson && !showSuggestions ? (
+            <Link
+              href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
+              className="flex min-h-12 items-center justify-between gap-3 rounded-xl bg-primary p-3 text-white hover:bg-primary-dark"
+            >
+              <div className="min-w-0">
+                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-100">Học tiếp</small>
+                <p className="mt-0.5 truncate text-sm font-bold">{nextLesson.title}</p>
+                {nextChapter && <p className="truncate text-[13px] text-blue-100">{nextChapter.title}</p>}
+              </div>
+              <ChevronRight className="shrink-0" size={18} />
+            </Link>
+          ) : null}
+
+          {otherTodos.length > 0 && (
+            <ul className="space-y-0.5">
+              {otherTodos.map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className="flex min-h-11 items-center justify-between gap-2 text-sm text-slate-300 hover:text-white">
+                    <span className="min-w-0 truncate">{item.title} <span className="text-[13px] text-slate-400">· {item.kind}</span></span>
+                    <ChevronRight size={16} className="shrink-0 text-slate-500" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
 
-
+          {attentionReady && alert && alert.kind !== "missed_assessment" && (
+            <p className="flex items-start gap-1.5 text-[13px] text-amber-200/80">
+              <AlertTriangle size={14} className="mt-0.5 shrink-0 text-amber-300" />
+              {alert.kind === "exam_violation"
+                ? "Bài kiểm tra gần đây bị ghi nhận rời màn hình nhiều lần — trợ giảng sẽ kiểm tra lại kiến thức của em."
+                : "Điểm kiểm tra đang thấp — trợ giảng sẽ liên hệ sắp lịch phụ đạo."}
+            </p>
+          )}
         </div>
       </Section>}
 
