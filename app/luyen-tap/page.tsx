@@ -236,7 +236,7 @@ function Content() {
       <div role="tablist" aria-label="Kiểu luyện tập" className="mt-5 grid grid-cols-2 gap-2">
         {(
           [
-            ["single", "Theo yêu cầu cần đạt"],
+            ["single", "Theo yêu cầu"],
             ["review", "Ôn tổng hợp"],
           ] as [Mode, string][]
         ).map(([m, text]) => (

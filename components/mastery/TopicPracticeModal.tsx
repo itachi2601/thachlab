@@ -357,23 +357,29 @@ export default function TopicPracticeModal({
                   {byLesson.map((r) => {
                     const m = masteryTone(r.correct, r.total);
                     return (
-                      <li key={r.lessonId} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-3">
-                        <div className="min-w-0 flex-1">
-                          <p className="text-sm font-semibold text-white">{lessonTitles?.[r.lessonId] ?? `Bài ${r.lessonId}`}</p>
-                          <p className="mt-0.5 text-[13px] text-slate-400">
+                      <li key={r.lessonId} className="space-y-2 px-3 py-3">
+                        <div className="flex items-start justify-between gap-2">
+                          <p className="min-w-0 flex-1 text-sm font-semibold text-white">
+                            {lessonTitles?.[r.lessonId] ?? `Bài ${r.lessonId}`}
+                          </p>
+                          <Badge tone={m.tone} className="shrink-0 whitespace-nowrap">
+                            {m.text}
+                          </Badge>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-[13px] text-slate-400">
                             Đúng {r.correct}/{r.total} câu
                           </p>
+                          {onPickLesson && (
+                            <button
+                              type="button"
+                              onClick={() => onPickLesson(r.lessonId)}
+                              className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-white hover:border-white/30"
+                            >
+                              Luyện riêng bài này
+                            </button>
+                          )}
                         </div>
-                        <Badge tone={m.tone}>{m.text}</Badge>
-                        {onPickLesson && (
-                          <button
-                            type="button"
-                            onClick={() => onPickLesson(r.lessonId)}
-                            className="min-h-11 rounded-full border border-white/15 px-4 text-[13px] font-semibold text-white hover:border-white/30"
-                          >
-                            Luyện riêng bài này
-                          </button>
-                        )}
                       </li>
                     );
                   })}
