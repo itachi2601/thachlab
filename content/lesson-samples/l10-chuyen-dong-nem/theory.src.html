@@ -1,0 +1,428 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Tách chuyển động ném ngang thành <strong>hai chuyển động thành phần</strong> và nói rõ mỗi phương chuyển động thế nào.</li>
+<li>Viết <strong>phương trình quỹ đạo</strong> và nhận ra nó là một phần parabol.</li>
+<li>Tính <strong>thời gian bay</strong> và <strong>tầm xa</strong>; giải thích vì sao thời gian bay không phụ thuộc vận tốc ném.</li>
+<li>Tính <strong>vận tốc</strong> của vật tại một điểm bất kì và góc của nó với phương ngang.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: tia dung dịch làm mát trong xưởng CNC</h3>
+
+<p>Trong xưởng, vòi phun cạnh dao phay bắn dung dịch làm mát theo phương ngang. Tia nước không đi thẳng: nó cong dần xuống rồi chạm máng hứng dưới sàn.</p>
+
+<p>Mở van mạnh hơn, tia bắn xa hơn hẳn. Nghĩ trước khi đọc tiếp: <em>giọt phun ngang và giọt rơi thẳng từ cùng độ cao — giọt nào chạm máng trước?</em></p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Cùng độ cao, cùng lúc: một giọt phun ngang, một giọt rơi thẳng (bỏ qua lực cản). Giọt nào chạm máng trước?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Giọt phun ngang, vì nó được phun mạnh</label>
+<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-no">B. Giọt rơi thẳng, vì đường đi ngắn hơn</label>
+<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-ok">C. Hai giọt chạm máng cùng lúc, vì phần rơi giống hệt nhau</label>
+<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Tuỳ áp lực phun: mạnh thì giọt phun ngang rơi lâu hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai giọt đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$. Áp lực chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đường đi dài hơn không có nghĩa là rơi lâu hơn: phần chuyển động ngang không làm chậm phần rơi. Hai phương vuông góc <em>độc lập</em> với nhau — đó chính là điều mục II chứng minh bằng thí nghiệm.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: tách một chuyển động cong thành hai chuyển động thẳng</h3>
+
+<h4>1. Ném ngang và hai chuyển động thành phần</h4>
+
+<p><strong>🔑 Ngang: thẳng đều · Dọc: rơi tự do</strong></p>
+
+<ul>
+<li><strong>Ném ngang</strong> là ném vật với vận tốc đầu $\vec v_0$ theo phương ngang; sau đó vật chỉ chịu <strong>trọng lực</strong> (bỏ qua lực cản của không khí).</li>
+<li>Chọn gốc toạ độ O tại điểm ném: Ox nằm ngang theo $\vec v_0$, Oy thẳng đứng hướng xuống.</li>
+<li>Trọng lực hướng xuống nên chỉ gây gia tốc theo Oy: $a_x=0$ và $a_y=g$.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Phương</th><th>Chuyển động · công thức</th></tr>
+</thead>
+<tbody>
+<tr><td>Ox (ngang)</td><td>thẳng đều · $v_x=v_0$ · $x=v_0t$</td></tr>
+<tr><td>Oy (xuống)</td><td>rơi tự do · $v_y=gt$ · $y=\dfrac{1}{2}gt^2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Hai chuyển động này <strong>độc lập</strong>: chuyển động ngang không ảnh hưởng gì tới phần rơi. Chuyển động ném ngang là <strong>tổng hợp</strong> của hai chuyển động thành phần. Ký hiệu: $v_0$ vận tốc ném (m/s) · $h$ độ cao lúc ném (m) · $g\approx 9{,}8$ m/s².</p>
+
+<details class="tl-details">
+<summary>👀 Bấm xem: vì sao hai phương lại độc lập?</summary>
+<p>Trọng lực chỉ hướng xuống, không có thành phần nằm ngang, nên nó không thể làm đổi $v_x$. Ngược lại, chuyển động ngang không sinh ra lực nào theo phương thẳng đứng. Hai phương chỉ "gặp nhau" ở chỗ cùng thuộc một vật và cùng trôi theo thời gian $t$.</p>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-nemngang-01">
+<p class="tl-label">🔬 Thí nghiệm: một viên bi thả rơi, một viên bắn ngang</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt một viên bi lên máng ở mép bàn, gạt ngang cho bay ra; đồng thời thả rơi viên thứ hai từ đúng độ cao mép bàn. Quay chậm điện thoại để đánh dấu những thời điểm cách nhau như nhau.</li>
+<li><strong>Quan sát:</strong> viên bắn ngang đi xa dần, viên thả rơi thẳng đứng. Ở mỗi nhịp, <strong>hai viên luôn nằm trên cùng một đường ngang</strong> và chạm sàn cùng lúc.</li>
+<li><strong>Rút ra:</strong> phần rơi của hai viên giống hệt nhau: chuyển động ngang không làm nhanh hay chậm phần rơi.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 1.</strong> Từ cùng độ cao $h$, viên bi A được bắn ngang với $v_0=2$ m/s, viên bi B được bắn ngang với $v_0=6$ m/s (bỏ qua lực cản). Thời gian rơi của hai viên:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q1" id="tl12-q1a"><label for="tl12-q1a" class="tl-opt tl-no">A. B rơi lâu gấp ba lần, vì B bay xa gấp ba</label>
+<input type="radio" name="tl12-q1" id="tl12-q1b"><label for="tl12-q1b" class="tl-opt tl-no">B. A rơi lâu gấp ba lần, vì A bay chậm hơn</label>
+<input type="radio" name="tl12-q1" id="tl12-q1c"><label for="tl12-q1c" class="tl-opt tl-no">C. Chưa kết luận được, còn phải biết khối lượng hai viên</label>
+<input type="radio" name="tl12-q1" id="tl12-q1d"><label for="tl12-q1d" class="tl-opt tl-ok">D. Bằng nhau, vì thời gian rơi chỉ do độ cao quyết định</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Công thức $t=\sqrt{2h/g}$ chỉ chứa $h$ và $g$ — không có $v_0$, không có khối lượng. Viên B chỉ bay xa hơn, chứ không rơi lâu hơn. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang cho chuyển động ngang ảnh hưởng tới phần rơi. Thí nghiệm hai viên bi ở trên cho thấy hai viên luôn ngang nhau. Còn nếu chọn "phải biết khối lượng": trọng lực gây cho mọi vật cùng gia tốc $g$, nên khối lượng không có mặt trong công thức.</p></div>
+</div>
+</div>
+
+<h4>2. Quỹ đạo: một phần parabol</h4>
+
+<p><strong>🔑 Khử $t$ → parabol</strong></p>
+
+<p>Từ $x=v_0t$ rút ra $t=\dfrac{x}{v_0}$, rồi thế vào $y=\dfrac{1}{2}gt^2$:</p>
+
+<p>$$y=\dfrac{g}{2v_0^2}x^2$$</p>
+
+<p>$g$ và $v_0$ đều không đổi, nên $y$ tỉ lệ với $x^2$: quỹ đạo là một <strong>parabol</strong> có đỉnh tại điểm ném. Vật chỉ vẽ một <strong>phần</strong> của parabol, vì vừa tới mặt đất là chuyển động kết thúc.</p>
+
+<!--FIG2-->
+
+<h4>3. Thời gian bay và tầm xa</h4>
+
+<p><strong>🔑 Thời gian chỉ do $h$ · Tầm xa do cả $h$ và $v_0$</strong></p>
+
+<ul>
+<li>Vật chạm đất khi $y=h$, tức $h=\dfrac{1}{2}gt^2$, suy ra $t=\sqrt{\dfrac{2h}{g}}$. Trong công thức <strong>không có $v_0$</strong>.</li>
+<li>Tầm xa là quãng đường ngang đi được trong thời gian đó: $L=v_0t=v_0\sqrt{\dfrac{2h}{g}}$.</li>
+<li>Vì $L$ tỉ lệ với $\sqrt{h}$: muốn $L$ gấp đôi mà giữ nguyên $v_0$ thì phải ném từ độ cao <strong>gấp bốn</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-nemngang-02">
+<p class="tl-label">🔬 Thí nghiệm đo: bắn bi ngang khỏi mép bàn ở ba độ cao</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> kẹp súng bắn bi vào giá, nòng nằm ngang. Đặt giá ở ba độ cao $h=0{,}45$ m; $0{,}80$ m; $1{,}25$ m; mỗi lần bắn trải giấy than lên giấy trắng để đánh dấu điểm chạm, mỗi độ cao bắn hai lần.</li>
+<li><strong>Quan sát:</strong> với $g=9{,}8$ m/s², thời gian rơi tính theo $t=\sqrt{2h/g}$ là 0,303 s; 0,404 s; 0,505 s. Bảng dưới là tầm xa đo được và vận tốc ném suy ra.</li>
+<li><strong>Rút ra:</strong> cả bốn lần đo đều cho $v_0\approx 1{,}50$ m/s: cùng một súng bắn, cùng một vận tốc ném, chỉ khác độ cao nên chỉ khác thời gian rơi và tầm xa.</li>
+</ol>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$h$ (m)</th><th>$L$ đo (m)</th><th>$v_0=L/t$ (m/s)</th></tr>
+</thead>
+<tbody>
+<tr><td>0,45</td><td>0,451</td><td>1,49</td></tr>
+<tr><td>0,80</td><td>0,611</td><td>1,51</td></tr>
+<tr><td>0,80</td><td>0,606</td><td>1,50</td></tr>
+<tr><td>1,25</td><td>0,757</td><td>1,50</td></tr>
+</tbody>
+</table>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: tính mẫu và chỗ sai số hay đến</summary>
+<p>Lần $h=0{,}45$ m: $t=\sqrt{\dfrac{2\times0{,}45}{9{,}8}}\approx0{,}303$ s, rồi $v_0=\dfrac{L}{t}=\dfrac{0{,}451}{0{,}303}\approx1{,}49$ m/s.</p>
+<p>Bốn lần đo lệch nhau chưa tới $0{,}02$ m/s (khoảng $1\%$). Sai số hay đến từ: đọc vạch thước trên giấy ($\pm2$ mm trên $0{,}6$ m, cỡ $0{,}3\%$), lò xo súng nhả hơi khác nhau giữa các lần bắn, viên bi còn quay nên bị lệch nhẹ, và lực cản không khí — bỏ qua nên kết quả đo hơi nhỏ hơn tính toán.</p>
+</details>
+</div>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 2.</strong> Một vật được ném ngang từ độ cao $h$. Muốn tầm xa tăng gấp đôi mà giữ nguyên $v_0$, phải ném vật từ độ cao:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl12-q2c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl12-q2c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q2" id="tl12-q2a"><label for="tl12-q2a" class="tl-opt tl-no">A. $2h$</label>
+<input type="radio" name="tl12-q2" id="tl12-q2b"><label for="tl12-q2b" class="tl-opt tl-ok">B. $4h$</label>
+<input type="radio" name="tl12-q2" id="tl12-q2c"><label for="tl12-q2c" class="tl-opt tl-no">C. $\dfrac{h}{2}$</label>
+<input type="radio" name="tl12-q2" id="tl12-q2d"><label for="tl12-q2d" class="tl-opt tl-no">D. $\sqrt{2}\,h$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $L=v_0\sqrt{\dfrac{2h}{g}}$ nên $L$ tỉ lệ với $\sqrt{h}$: muốn $L$ gấp đôi thì $h$ phải gấp bốn. Thử số: $h=5$ m cho $L=v_0$; $h=20$ m cho $L=2v_0$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $2h$ là quên dấu căn — $L$ tỉ lệ với $\sqrt{h}$ chứ không phải $h$. Chọn $\sqrt{2}h$ là làm ngược: $h$ gấp $\sqrt2$ lần thì $L$ chỉ gấp $\sqrt[4]{2}\approx1{,}19$ lần. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>4. Vận tốc tại một điểm</h4>
+
+<p><strong>🔑 $v_x$ giữ nguyên · $v_y$ lớn dần · cộng hai vectơ vuông góc</strong></p>
+
+<ul>
+<li>Tại thời điểm $t$: $\vec v=\vec v_x+\vec v_y$, hai thành phần vuông góc nên $v=\sqrt{v_x^2+v_y^2}=\sqrt{v_0^2+(gt)^2}$.</li>
+<li>Khi chạm đất $v_y=gt=\sqrt{2gh}$, do đó $v_{cd}=\sqrt{v_0^2+2gh}$.</li>
+<li>Góc lệch so với phương ngang: $\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{gt}{v_0}$ — càng rơi, $\vec v$ càng dốc xuống.</li>
+</ul>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay (chọn là có đáp án)</p>
+<p><strong>Câu 3.</strong> Một vật ném ngang với $v_0=6$ m/s từ độ cao 20 m, lấy $g=10$ m/s². Độ lớn vận tốc khi chạm đất là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-no">A. $20$ m/s</label>
+<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. $26$ m/s</label>
+<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-ok">C. $20{,}9$ m/s</label>
+<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. $22{,}9$ m/s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v_y=\sqrt{2gh}=\sqrt{2\times10\times20}=20$ m/s; $v=\sqrt{v_0^2+v_y^2}=\sqrt{36+400}\approx20{,}9$ m/s.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $20$ m/s là bỏ quên $v_0$, chỉ tính vận tốc rơi. Ra $26$ m/s là cộng thẳng $6+20$ như số thường — hai thành phần <em>vuông góc</em> phải cộng bằng Pitago, nên kết quả chỉ hơn $20$ m/s một chút. Ra $22{,}9$ m/s là lấy $\sqrt{6^2+20^2}$ với $v_y$ tính sai.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "phun mạnh hơn thì giọt nước rơi lâu hơn"</h4>
+
+<p>Nhìn tia nước bắn mạnh thấy nó ở trên không lâu hơn, nhưng đó là vì nó <strong>đi xa hơn</strong>, chứ không phải vì rơi chậm hơn. Thời gian rơi chỉ do độ cao.</p>
+
+<p><strong>🔑 $v_0$ đổi tầm xa · $h$ đổi thời gian</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Nghĩ vậy</th><th>Thực tế</th></tr>
+</thead>
+<tbody>
+<tr><td>Phun mạnh thì giọt ở trên không lâu hơn</td><td>$t=\sqrt{2h/g}$ không chứa $v_0$; phun mạnh chỉ làm tia bay xa hơn</td></tr>
+<tr><td>Bay xa hơn thì phải rơi từ cao hơn</td><td>Cùng độ cao vẫn có tầm xa khác nhau; $v_0$ quyết định tầm xa, $h$ quyết định thời gian</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>Câu 4.</strong> Hai vật cùng được ném ngang từ độ cao 20 m, lấy $g=10$ m/s². Vật A có $v_0=5$ m/s, vật B có $v_0=20$ m/s. Kết luận đúng là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl12-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl12-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q4" id="tl12-q4a"><label for="tl12-q4a" class="tl-opt tl-no">A. A chạm đất trước B</label>
+<input type="radio" name="tl12-q4" id="tl12-q4b"><label for="tl12-q4b" class="tl-opt tl-no">B. B chạm đất trước A</label>
+<input type="radio" name="tl12-q4" id="tl12-q4c"><label for="tl12-q4c" class="tl-opt tl-ok">C. Hai vật chạm đất cùng lúc, B bay xa gấp bốn lần A</label>
+<input type="radio" name="tl12-q4" id="tl12-q4d"><label for="tl12-q4d" class="tl-opt tl-no">D. Hai vật chạm đất cùng lúc và cùng tầm xa</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t=\sqrt{\dfrac{2\times20}{10}}=2$ s cho cả hai. Tầm xa $L=v_0t$: A được 10 m, B được 40 m — gấp bốn vì $v_0$ gấp bốn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu em chọn A hoặc B, em vẫn đang cho vận tốc ném ảnh hưởng tới thời gian rơi. Nếu chọn D, em quên rằng tầm xa $L=v_0t$ tỉ lệ với $v_0$: cùng $t$ mà $v_0$ gấp bốn thì $L$ gấp bốn. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: "vật bay xa dần nên theo phương ngang cũng nhanh dần"</h4>
+
+<p>Vật ra xa dần vì <strong>thời gian trôi</strong>, không phải vì nhanh hơn. Theo Ox không có lực nào nên $v_x=v_0$ suốt chuyển động: cứ mỗi 0,5 s vật đi đúng một đoạn ngang như nhau.</p>
+
+<p><strong>🔑 Ox đều · Oy nhanh dần</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đại lượng</th><th>Phương Ox</th><th>Phương Oy</th></tr>
+</thead>
+<tbody>
+<tr><td>Gia tốc</td><td>$a_x=0$</td><td>$a_y=g$</td></tr>
+<tr><td>Vận tốc</td><td>$v_x=v_0$, không đổi</td><td>$v_y=gt$, tăng đều</td></tr>
+<tr><td>Quãng đường mỗi giây</td><td>bằng nhau</td><td>tăng theo tỉ lệ $1:3:5$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>Câu 5.</strong> Trong chuyển động ném ngang (bỏ qua lực cản), quãng đường vật đi được theo phương ngang trong mỗi khoảng 0,5 s liên tiếp thì:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q5" id="tl12-q5a"><label for="tl12-q5a" class="tl-opt tl-no">A. Tăng dần, vì vật bay càng lúc càng nhanh</label>
+<input type="radio" name="tl12-q5" id="tl12-q5b"><label for="tl12-q5b" class="tl-opt tl-ok">B. Bằng nhau, vì $v_x=v_0$ không đổi</label>
+<input type="radio" name="tl12-q5" id="tl12-q5c"><label for="tl12-q5c" class="tl-opt tl-no">C. Giảm dần, vì vật mất dần năng lượng</label>
+<input type="radio" name="tl12-q5" id="tl12-q5d"><label for="tl12-q5d" class="tl-opt tl-no">D. Tăng rồi giảm, vì quỹ đạo là parabol</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ có thành phần $v_y$ tăng đều; theo Ox vật chuyển động thẳng đều nên mỗi 0,5 s đi được $0{,}5v_0$ — các đoạn bằng nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn "tăng dần" là nhìn tổng quãng đường (đường chéo) chứ không nhìn riêng phương ngang. Chọn "giảm dần" hay "tăng rồi giảm" là gán cho Ox tính chất của Oy hoặc của cả quỹ đạo. Tách hai phương ra rồi xét riêng Ox.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "ném ngang là chuyển động nhanh dần đều"</h4>
+
+<p>Gia tốc không đổi ($\vec a=\vec g$), nên đây là chuyển động <strong>biến đổi đều</strong>. Nhưng nó không phải chuyển động thẳng, và <strong>tốc độ không tăng đều</strong>: chỉ thành phần $v_y=gt$ mới tăng đều.</p>
+
+<p><strong>🔑 Chỉ $v_y$ tăng đều · Tốc độ $v$ tăng không đều</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tưởng vậy</th><th>Đúng là</th></tr>
+</thead>
+<tbody>
+<tr><td>Tốc độ tăng đều mỗi giây</td><td>$v=\sqrt{v_0^2+(gt)^2}$ tăng không đều: lúc mới ném gần như không tăng, về sau mới tăng nhanh</td></tr>
+<tr><td>Quỹ đạo thẳng vì chuyển động biến đổi đều</td><td>Quỹ đạo cong (parabol) vì hai thành phần vuông góc</td></tr>
+<tr><td>$\vec v$ luôn cùng phương với $\vec g$</td><td>$\vec v$ dốc dần xuống; chỉ khi rơi đã lâu thì $\vec v$ gần trùng phương $\vec g$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>Câu 6.</strong> Trong chuyển động ném ngang, đại lượng tăng đều theo thời gian là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q6" id="tl12-q6a"><label for="tl12-q6a" class="tl-opt tl-no">A. Tốc độ $v$ của vật</label>
+<input type="radio" name="tl12-q6" id="tl12-q6b"><label for="tl12-q6b" class="tl-opt tl-no">B. Vận tốc theo phương ngang $v_x$</label>
+<input type="radio" name="tl12-q6" id="tl12-q6c"><label for="tl12-q6c" class="tl-opt tl-ok">C. Vận tốc theo phương thẳng đứng $v_y$</label>
+<input type="radio" name="tl12-q6" id="tl12-q6d"><label for="tl12-q6d" class="tl-opt tl-no">D. Tầm xa $L$ của vật</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v_y=gt$ là hàm bậc nhất của thời gian nên tăng đều. $v_x$ không đổi, còn $v=\sqrt{v_0^2+(gt)^2}$ tăng không đều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $v$ là lẫn "tốc độ lớn dần" với "tốc độ tăng đều": gia tốc của tốc độ lúc đầu bằng 0 vì $\vec g$ vuông góc với $\vec v$, về sau mới tiến tới $g$. Chọn $v_x$ thì sai hẳn vì Ox không có gia tốc; còn $L$ chỉ có nghĩa khi vật đã chạm đất.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Em đọc to câu trả lời bằng lời của mình trước, rồi mới bấm xem đáp án.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
+<details class="tl-details">
+<summary>1. Chuyển động ném ngang là gì? Vật chịu lực nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Vật được ném với vận tốc đầu $\vec v_0$ theo phương ngang, sau đó chỉ chịu <strong>trọng lực</strong> (bỏ qua lực cản).</p>
+</details>
+<details class="tl-details">
+<summary>2. Theo mỗi phương, vật chuyển động thế nào? Viết công thức vận tốc và toạ độ. <small>(nói bằng lời của em trước)</small></summary>
+<p>Ox: thẳng đều — $v_x=v_0$, $x=v_0t$. Oy: rơi tự do — $v_y=gt$, $y=\dfrac{1}{2}gt^2$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Viết phương trình quỹ đạo. Vì sao quỹ đạo là parabol mà vật chỉ vẽ một phần? <small>(nói bằng lời của em trước)</small></summary>
+<p>Khử $t$: $y=\dfrac{g}{2v_0^2}x^2$ — parabol đỉnh ở điểm ném. Vật chạm đất là hết chuyển động nên chỉ vẽ một nhánh.</p>
+</details>
+<details class="tl-details">
+<summary>4. Viết thời gian bay và tầm xa. Thời gian bay phụ thuộc gì? <small>(nói bằng lời của em trước)</small></summary>
+<p>$t=\sqrt{\dfrac{2h}{g}}$ chỉ phụ thuộc $h$ và $g$ · $L=v_0\sqrt{\dfrac{2h}{g}}$ phụ thuộc cả $v_0$ lẫn $h$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Viết vận tốc tại thời điểm $t$, vận tốc chạm đất và cách xác định góc lệch. <small>(nói bằng lời của em trước)</small></summary>
+<p>$v=\sqrt{v_0^2+(gt)^2}$ · $v_{cd}=\sqrt{v_0^2+2gh}$ · $\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{gt}{v_0}$ với $\alpha$ là góc hợp với phương ngang.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Từ một bờ kè cao $h=20$ m so với mặt nước, một người ném ngang một hòn sỏi với vận tốc ban đầu $v_0=15$ m/s. Bỏ qua sức cản của không khí, lấy $g=9{,}8$ m/s².</p>
+<p>a) Sau bao lâu hòn sỏi chạm nước?</p>
+<p>b) Điểm chạm nước cách chân bờ kè theo phương ngang bao xa?</p>
+<p>c) Tính độ lớn vận tốc của hòn sỏi khi vừa chạm nước và góc hợp bởi vận tốc đó với phương ngang.</p>
+</div>
+
+<p>Với mỗi câu của đề, tự hỏi hai điều: <strong>đề cho dữ liệu gì</strong>, <strong>gọi ra kiến thức nào?</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"ném ngang một hòn sỏi"</td><td>$\vec v_0$ theo phương ngang</td><td>Tách hai phương: Ox thẳng đều, Oy rơi tự do</td></tr>
+<tr><td>"bờ kè cao $h=20$ m"</td><td>$h=20$ m</td><td>$t=\sqrt{2h/g}$; $v_y=\sqrt{2gh}$</td></tr>
+<tr><td>"$v_0=15$ m/s"</td><td>$v_0=15$ m/s</td><td>$x=v_0t$; $v=\sqrt{v_0^2+v_y^2}$</td></tr>
+<tr><td>"bỏ qua sức cản của không khí"</td><td>Chỉ có trọng lực</td><td>$a_x=0$; $a_y=g$</td></tr>
+<tr><td>"cách chân bờ kè bao xa"</td><td>Cần tầm xa $L$</td><td>$L=v_0t$</td></tr>
+<tr><td>"góc hợp bởi vận tốc với phương ngang"</td><td>Cần $\alpha$</td><td>$\tan\alpha=v_y/v_x$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: theo Oy, vật rơi tự do từ độ cao $h$: $t=\sqrt{\dfrac{2h}{g}}=\sqrt{\dfrac{2\times20}{9{,}8}}\approx2{,}02$ s.</li>
+<li>Câu b: theo Ox, vật đi đều với $v_x=v_0=15$ m/s, nên $L=v_0t=15\times2{,}02\approx30{,}3$ m.</li>
+<li>Câu c: chạm nước khi $v_y=gt=9{,}8\times2{,}02\approx19{,}8$ m/s.</li>
+<li>Độ lớn vận tốc: $v=\sqrt{v_0^2+v_y^2}=\sqrt{15^2+19{,}8^2}\approx24{,}8$ m/s.</li>
+<li>Góc lệch: $\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{19{,}8}{15}=1{,}32$, suy ra $\alpha\approx53^\circ$ so với phương ngang.</li>
+<li>Kiểm tra: dùng công thức riêng cho vận tốc chạm đất $v_{cd}=\sqrt{v_0^2+2gh}=\sqrt{225+392}=\sqrt{617}\approx24{,}8$ m/s — trùng kết quả ở bước 4. Đơn vị: m/s cho vận tốc, m cho tầm xa, độ cho góc. Kết quả hợp lí: bờ kè cao bằng toà nhà 6 tầng, ném mạnh cỡ 54 km/h thì sỏi bay xa hơn 30 m.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — cùng cách làm, đổi số: bờ kè cao $h=45$ m, ném ngang với $v_0=20$ m/s, lấy $g=10$ m/s².</p>
+<ol class="tl-steps">
+<li>Thời gian rơi: $t=\sqrt{\dfrac{2h}{g}}=\sqrt{\dfrac{90}{10}}=3$ s.</li>
+<li><strong>Bước 2 (em điền):</strong> tầm xa $L=v_0t=\;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $v_y=gt=\;?$ rồi $v=\sqrt{v_0^2+v_y^2}=\;?$ và $\tan\alpha=\;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$L=20\times3=60$ m. $v_y=10\times3=30$ m/s, nên $v=\sqrt{20^2+30^2}=\sqrt{1300}\approx36$ m/s và $\tan\alpha=\dfrac{30}{20}=1{,}5$, tức $\alpha\approx56^\circ$.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức, tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Một vật được ném ngang từ độ cao 5 m với $v_0=10$ m/s, lấy $g=10$ m/s². Tầm xa của vật là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q7" id="tl12-q7a"><label for="tl12-q7a" class="tl-opt tl-no">A. $5$ m</label>
+<input type="radio" name="tl12-q7" id="tl12-q7b"><label for="tl12-q7b" class="tl-opt tl-ok">B. $10$ m</label>
+<input type="radio" name="tl12-q7" id="tl12-q7c"><label for="tl12-q7c" class="tl-opt tl-no">C. $20$ m</label>
+<input type="radio" name="tl12-q7" id="tl12-q7d"><label for="tl12-q7d" class="tl-opt tl-no">D. $50$ m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t=\sqrt{\dfrac{2\times5}{10}}=1$ s, rồi $L=v_0t=10\times1=10$ m. Thời gian rơi tròn 1 s nên tầm xa đúng bằng $v_0$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $20$ m là tính $t=\dfrac{2h}{g}=1$ rồi bỏ bước lấy căn — nhưng ở đây may ra vẫn đúng vì $\sqrt1=1$; hãy kiểm lại cách thay số. Ra $50$ m là quên hẳn dấu căn khi tính $t$ (lấy $t=5$ s). Ra $5$ m là lẫn tầm xa với độ cao. Viết $t=\sqrt{2h/g}$ ra nháp trước, rồi mới nhân với $v_0$.</p></div>
+</div>
+</div>
+
+<h3>VI. Ném xiên: vẫn là tách hai phương</h3>
+
+<p><strong>🔑 Ngang: đều · Dọc: lên chậm dần, xuống nhanh dần</strong></p>
+
+<ul>
+<li><strong>Ném xiên</strong> là ném vật với vận tốc đầu $\vec v_0$ hợp với phương ngang góc $\alpha$; vật vẫn chỉ chịu trọng lực.</li>
+<li>Tách $\vec v_0$ thành hai thành phần: $v_{0x}=v_0\cos\alpha$ (phương ngang) và $v_{0y}=v_0\sin\alpha$ (phương thẳng đứng hướng lên).</li>
+<li>Ox vẫn thẳng đều. Oy lúc đầu ngược chiều $\vec g$ nên vật <strong>lên chậm dần đều</strong>, dừng lại ở đỉnh rồi <strong>xuống nhanh dần đều</strong>.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đại lượng</th><th>Ném ngang</th><th>Ném xiên (từ mặt đất)</th></tr>
+</thead>
+<tbody>
+<tr><td>Vận tốc ban đầu</td><td>ngang · $v_0$</td><td>xiên góc $\alpha$ · $v_0$</td></tr>
+<tr><td>Phương Ox</td><td>$x=v_0t$</td><td>$x=v_{0x}t$</td></tr>
+<tr><td>Phương Oy</td><td>$y=\dfrac{1}{2}gt^2$</td><td>$y=v_{0y}t-\dfrac{1}{2}gt^2$</td></tr>
+<tr><td>Thời gian bay</td><td>$t=\sqrt{\dfrac{2h}{g}}$</td><td>$t=\dfrac{2v_0\sin\alpha}{g}$</td></tr>
+<tr><td>Tầm xa</td><td>$L=v_0\sqrt{2h/g}$</td><td>$L=\dfrac{v_0^2\sin 2\alpha}{g}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>👀 Bấm xem: tầm cao, tầm xa và mẹo nhớ công thức ném xiên</summary>
+<p><strong>Tầm cao</strong> (độ cao lớn nhất): tại đỉnh $v_y=0$, từ $v_y=v_0\sin\alpha-gt$ rút ra $t_{len}=\dfrac{v_0\sin\alpha}{g}$, thay vào $y$ được $H=\dfrac{v_0^2\sin^2\alpha}{2g}$.</p>
+<p><strong>Mẹo nhớ:</strong> chữ <em>S</em> là <em>sin</em> — tầm cao và thời gian bay dùng $\sin\alpha$; tầm xa dùng $\sin 2\alpha$ nên lớn nhất khi $2\alpha=90^\circ$, tức ném ở $45^\circ$.</p>
+<p><strong>Ví dụ số:</strong> $v_0=10$ m/s, $\alpha=30^\circ$, $g=10$ m/s² thì $H=\dfrac{100\times0{,}25}{20}=1{,}25$ m; $t=\dfrac{2\times10\times0{,}5}{10}=1$ s; $L=\dfrac{100\times\sin 60^\circ}{10}\approx8{,}7$ m.</p>
+<p><strong>Liên hệ với ném ngang:</strong> ném xiên từ mặt đất chỉ là trường hợp $v_{0y}\neq0$ của cùng một cách làm — vẫn tách hai phương, vẫn dùng $x=v_{0x}t$ và các công thức biến đổi đều cho phương Oy.</p>
+</details>
+
+<h3>VII. Đời sống và mang về</h3>
+
+<ul>
+<li><strong>Thả hàng cứu trợ:</strong> máy bay phải thả hàng <em>trước</em> khi tới đích, vì hàng vẫn bay ngang trong lúc rơi.</li>
+<li><strong>Xưởng CNC:</strong> tia dung dịch làm mát và máng hứng phải tính theo tầm xa; phun mạnh hơn thì dịch máng ra xa hơn.</li>
+<li><strong>Thể thao:</strong> đánh đầu bóng từ trên cao là bài toán ném ngang; cú ném rổ, phát bóng tennis là ném xiên.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
+<p><strong>⭐</strong> Ném ngang từ $h=45$ m, lấy $g=10$ m/s². Tính thời gian rơi. <em>Gợi ý:</em> $t=\sqrt{2h/g}=\sqrt{9}=3$ s, không liên quan vận tốc ném.</p>
+<p><strong>⭐⭐</strong> Cũng bài đó với $v_0=20$ m/s. Tính tầm xa và vận tốc chạm đất. <em>Gợi ý:</em> $L=v_0t=60$ m; $v_y=gt=30$ m/s nên $v=\sqrt{20^2+30^2}\approx36$ m/s.</p>
+<p><strong>⭐⭐⭐</strong> Máy bay cứu trợ bay ngang ở độ cao 500 m với tốc độ 100 m/s, lấy $g=10$ m/s². Phải thả hàng khi máy bay còn cách đích bao xa theo phương ngang? Vì sao phi công không thả khi đang ở ngay trên đích? <em>Gợi ý:</em> $t=\sqrt{1000/10}=10$ s, hàng bay tiếp $L=100\times10=1000$ m — thả khi còn cách đích 1 km. Thả đúng trên đích thì hàng rơi xuống trước đích 1 km.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tách hai phương:</strong> Ox thẳng đều · Oy rơi tự do (ném ngang).</li>
+<li><strong>Quỹ đạo:</strong> $y=\dfrac{g}{2v_0^2}x^2$ — parabol, chỉ vẽ một phần.</li>
+<li><strong>Thời gian:</strong> $t=\sqrt{\dfrac{2h}{g}}$ · không chứa $v_0$ · không chứa khối lượng.</li>
+<li><strong>Tầm xa:</strong> $L=v_0\sqrt{\dfrac{2h}{g}}$ · $L$ tỉ lệ $\sqrt{h}$ và tỉ lệ $v_0$.</li>
+<li><strong>Vận tốc:</strong> $v=\sqrt{v_0^2+(gt)^2}$ · $v_{cd}=\sqrt{v_0^2+2gh}$ · $\tan\alpha=\dfrac{gt}{v_0}$.</li>
+<li><strong>Ném xiên:</strong> $H=\dfrac{v_0^2\sin^2\alpha}{2g}$ · $L=\dfrac{v_0^2\sin 2\alpha}{g}$ · xa nhất ở $45^\circ$.</li>
+<li><strong>Đọc đề:</strong> gạch ngay dữ kiện $h$ và $v_0$; hỏi thời gian thì chỉ dùng $h$, hỏi tầm xa mới cần $v_0$.</li>
+</ul>
+</div>

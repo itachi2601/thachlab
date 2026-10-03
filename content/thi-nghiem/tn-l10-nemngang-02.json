@@ -1,0 +1,142 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 12. Chuyển động ném",
+ "lesson_id": 57,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-nem/theory.html",
+ "id": "tn-l10-nemngang-02",
+ "ten": "Bắn bi ngang khỏi mép bàn ở ba độ cao: đo tầm xa, suy ra vận tốc ném",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "chuyendongnem.tam_xa",
+  "chuyendongnem.thoi_gian_bay"
+ ],
+ "muc_tieu": "Đo tầm xa ở ba độ cao khác nhau với cùng một súng bắn, từ đó kiểm chứng L = v₀·√(2h/g) và nhận xét sai số của phép đo.",
+ "dung_cu": [
+  {
+   "ten": "Súng bắn bi lò xo (hoặc máng cong có chặn) giữ nguyên lực bắn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ thay đổi được độ cao, kẹp cố định súng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bi sắt 10 mm",
+   "so_luong": 10
+  },
+  {
+   "ten": "Thước cuộn 1 m (chia tới mm), tờ giấy trắng, giấy than",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây dọi hoặc thước thuỷ để kiểm nòng nằm ngang",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kẹp súng vào giá, kiểm nòng nằm ngang bằng thước thuỷ; đặt súng ở độ cao h = 0,45 m so với mặt bàn.",
+   "Trải giấy trắng có phủ giấy than dưới điểm rơi; bắn 2 viên, đánh dấu vết chạm rồi đo L bằng thước cuộn.",
+   "Đổi giá lên h = 0,80 m và h = 1,25 m, mỗi độ cao bắn 2–3 viên, ghi L từng lần; tính t = √(2h/g) rồi suy ra v₀ = L/t."
+  ],
+  "quan_sat": [
+   "Tầm xa tăng khi tăng độ cao, dù lực bắn (và viên bi) không đổi.",
+   "Với g = 9,8 m/s², thời gian rơi ứng với ba độ cao là 0,303 s; 0,404 s; 0,505 s.",
+   "Bốn lần đo cho v₀ = 1,49; 1,51; 1,50; 1,50 m/s — chênh nhau chưa tới 0,02 m/s."
+  ],
+  "rut_ra": [
+   "Cùng một súng bắn thì vận tốc ném không đổi, nên L tỉ lệ với t, tức L tỉ lệ với √h.",
+   "Thời gian rơi tính được chỉ từ h, không cần biết v₀ — đúng như công thức t = √(2h/g).",
+   "Sai số của phép đo cỡ 1%, đến từ vạch thước, lực bắn nhả hơi khác nhau và lực cản không khí bị bỏ qua."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao của nòng súng so với mặt bàn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.5,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Vận tốc ném do súng tạo ra (giữ nguyên khi đổi h)",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi tính từ độ cao",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Tầm xa",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "L_do",
+   "ten": "Tầm xa đo trên giấy",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.002
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t = sqrt(2·h/g)",
+   "L = v0·t",
+   "v0 = L/t",
+   "L tỉ lệ với sqrt(h) khi giữ nguyên v0"
+  ],
+  "gia_thiet": [
+   "bỏ qua lực cản của không khí (kết quả đo vì thế hơi nhỏ hơn tính toán)",
+   "nòng súng nằm ngang, vận tốc đầu đúng phương ngang",
+   "lực bắn của lò xo giống nhau ở mọi lần bắn",
+   "mặt bàn nằm ngang, g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (m)",
+   "t = √(2h/g) (s)",
+   "L đo (m)",
+   "v₀ = L/t (m/s)"
+  ],
+  "hang": [
+   [0.45, 0.303, 0.451, 1.49],
+   [0.8, 0.404, 0.611, 1.51],
+   [0.8, 0.404, 0.606, 1.5],
+   [1.25, 0.505, 0.757, 1.5]
+  ],
+  "ghi_chu": "Số liệu mẫu minh hoạ: cột t và v₀ tính theo mô hình với g = 9,8 m/s², cột L đo là giá trị gần đúng (lệch cỡ 1% quanh v₀ = 1,50 m/s) cho giống số đo thật; chưa phải số đo trong phòng thí nghiệm."
+ },
+ "ket_qua_ky_vong": "Bốn lần đo đều cho v₀ ≈ 1,50 m/s dù h khác nhau: tầm xa đo được trùng với L = v₀√(2h/g) trong sai số cỡ 1%.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng đổi độ cao thì vận tốc ném cũng đổi theo.",
+  "Nghĩ tầm xa tỉ lệ với h (h gấp đôi thì L gấp đôi) thay vì tỉ lệ với √h.",
+  "Bỏ bước lấy căn khi tính t = √(2h/g).",
+  "Lẫn tầm xa L với độ cao h khi ghi bảng."
+ ],
+ "sai_so_thuong_gap": "Vết bi trên giấy nhoè nên đọc lệch 1–2 mm; nòng súng không thật nằm ngang làm vận tốc đầu có thành phần thẳng đứng; lò xo nhả khác nhau giữa các lần bắn; bi còn quay gây lệch ngang; lực cản không khí làm L đo nhỏ hơn L tính.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Bắn bi ngang khỏi mép bàn; thanh trượt h, giữ v₀ cố định; hiện vết chạm và bảng t–L–v₀ tự điền, kèm đồ thị L theo √h là đường thẳng.",
+  "diem_nhan": "Kéo h từ 0,2 lên 1,5 m: L tăng theo √h chứ không tăng theo h; cột v₀ suy ra gần như đứng yên quanh 1,5 m/s."
+ }
+}

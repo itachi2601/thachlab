@@ -1,0 +1,141 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 12. Chuyển động ném",
+ "lesson_id": 57,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-nem/theory.html",
+ "id": "tn-l10-nemngang-01",
+ "ten": "Một viên bi thả rơi, một viên bắn ngang: hai chuyển động thành phần độc lập",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "chuyendongnem.hai_phuong_doc_lap",
+  "chuyendongnem.thoi_gian_bay"
+ ],
+ "muc_tieu": "Chứng minh bằng quan sát rằng chuyển động ngang không ảnh hưởng tới phần rơi: hai viên bi ở cùng độ cao luôn ngang nhau và chạm sàn cùng lúc.",
+ "dung_cu": [
+  {
+   "ten": "Máng nhôm trượt dài 30–40 cm, kẹp cố định ở mép bàn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bi sắt đường kính 10–15 mm",
+   "so_luong": 2
+  },
+  {
+   "ten": "Điện thoại quay chậm (120–240 fps) hoặc thước kẹp giữ bi thứ hai để thả cùng lúc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước cuộn 1 m, giấy trắng, bút chì",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kẹp máng vào mép bàn sao cho đầu ra của máng nằm ngang, cao h = 0,80 m so với sàn; dán giấy trắng dưới sàn để đánh dấu điểm chạm.",
+   "Đặt bi A ở đầu máng, bi B ngay miệng máng cùng độ cao; một bạn gạt bi A cho bay ngang, đồng thời bạn thứ hai thả rơi bi B.",
+   "Quay chậm toàn bộ chuyển động, hoặc vỗ tay theo nhịp đều để đánh dấu những thời điểm cách nhau như nhau; lặp lại 3 lần."
+  ],
+  "quan_sat": [
+   "Trong đoạn quay chậm, ở mỗi khung hình hai viên bi luôn nằm trên cùng một đường ngang.",
+   "Bi A đi xa dần theo phương ngang trong khi bi B chỉ rơi thẳng đứng.",
+   "Hai vết chạm trên sàn xuất hiện cùng một khung hình: hai viên chạm sàn cùng lúc."
+  ],
+  "rut_ra": [
+   "Chuyển động theo phương ngang và chuyển động rơi là hai chuyển động độc lập.",
+   "Thời gian rơi chỉ do độ cao: t = √(2h/g), không chứa vận tốc ném.",
+   "Tầm xa do vận tốc ném quyết định: L = v₀·t, cùng h nên cùng t, khác v₀ nên khác L."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao miệng máng so với sàn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.5,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Vận tốc bắn ngang của bi A",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 6.0,
+   "mac_dinh": 2.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Tầm xa của bi A",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "t_do",
+   "ten": "Thời gian rơi đọc từ video quay chậm",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t = sqrt(2·h/g)",
+   "L = v0·t = v0·sqrt(2·h/g)",
+   "x = v0·t",
+   "y = (1/2)·g·t²"
+  ],
+  "gia_thiet": [
+   "bỏ qua lực cản của không khí và lực nâng",
+   "đầu ra của máng nằm ngang, vận tốc đầu đúng phương ngang",
+   "hai viên được thả và gạt đúng cùng một thời điểm",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (m)",
+   "v₀ (m/s)",
+   "t = √(2h/g) (s)",
+   "L (m)"
+  ],
+  "hang": [
+   [0.5, 2.0, 0.319, 0.64],
+   [0.8, 2.0, 0.404, 0.81],
+   [0.8, 5.0, 0.404, 2.02],
+   [1.25, 5.0, 0.505, 2.53]
+  ],
+  "ghi_chu": "Số liệu mẫu tính từ chính các hệ thức trong mo_hinh với g = 9,8 m/s²; hàng 2 và hàng 3 cùng h nên cùng t, chỉ khác L — đó là điểm cần cho học sinh thấy."
+ },
+ "ket_qua_ky_vong": "Ở mỗi khung hình hai viên bi luôn ngang nhau; hai viên chạm sàn trong cùng một khung hình. Thời gian rơi đo được trùng t = √(2h/g) trong sai số ±0,02 s.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ bi bắn ngang rơi lâu hơn vì đường đi dài hơn.",
+  "Nghĩ bi ném mạnh hơn thì chạm sàn muộn hơn.",
+  "Nghĩ phải biết khối lượng hai viên mới so được thời gian rơi.",
+  "Nhìn bi A ra xa dần mà tưởng bi A nhanh dần theo phương ngang."
+ ],
+ "sai_so_thuong_gap": "Hai viên không được thả đúng cùng lúc (lệch 1–2 khung hình); máng không nằm ngang nên vận tốc đầu có thành phần thẳng đứng; khung hình quay chậm không đều; bi A bị lực cản và lực Magnus do còn quay.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hai viên bi rơi song song trên cùng khung hình; thanh trượt h và v₀; vẽ vệt mờ ở mỗi 0,1 s để thấy các chấm của hai viên luôn cùng hàng.",
+  "diem_nhan": "Kéo v₀ từ 0,5 tới 6 m/s: bi A bay xa hơn hẳn mà các chấm vẫn cùng hàng với bi B; kéo h thì cả hai cùng rơi lâu hơn."
+ }
+}

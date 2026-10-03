@@ -1,5 +1,40 @@
 [
  {
+  "id": "tn-l10-nemngang-01",
+  "ten": "Một viên bi thả rơi, một viên bắn ngang: hai chuyển động thành phần độc lập",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 12. Chuyển động ném",
+  "lesson_id": 57,
+  "kien_thuc": [
+   "chuyendongnem.hai_phuong_doc_lap",
+   "chuyendongnem.thoi_gian_bay"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "h",
+   "v0"
+  ]
+ },
+ {
+  "id": "tn-l10-nemngang-02",
+  "ten": "Bắn bi ngang khỏi mép bàn ở ba độ cao: đo tầm xa, suy ra vận tốc ném",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 12. Chuyển động ném",
+  "lesson_id": 57,
+  "kien_thuc": [
+   "chuyendongnem.tam_xa",
+   "chuyendongnem.thoi_gian_bay"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "h"
+  ]
+ },
+ {
   "id": "tn-l10-newton3-01",
   "ten": "Hai lực kế kéo nhau",
   "loai": "thi_nghiem",
@@ -116,6 +151,58 @@
    "m_t",
    "m_c",
    "F"
+  ]
+ },
+ {
+  "id": "tn-l10-tonghopluc-01",
+  "ten": "Ba lực kế và chiếc vòng nhẫn: kiểm tra quy tắc hình bình hành",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+  "lesson_id": 58,
+  "kien_thuc": [
+   "tonghopluc.hinh_binh_hanh",
+   "tonghopluc.can_bang_ba_luc"
+  ],
+  "mo_phong": "so_do_luc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "alpha"
+  ]
+ },
+ {
+  "id": "tn-l10-tonghopluc-02",
+  "ten": "Vật trên mặt phẳng nghiêng: lực kéo dọc ván bằng P sin α",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+  "lesson_id": 58,
+  "kien_thuc": [
+   "phantichluc.thanh_phan_vuong_goc",
+   "phantichluc.mat_phang_nghieng"
+  ],
+  "mo_phong": "so_do_luc+do_thi",
+  "tham_so_dieu_chinh": [
+   "alpha"
+  ]
+ },
+ {
+  "id": "tn-l10-tonghopluc-03",
+  "ten": "Đèn treo hai dây: lực căng phụ thuộc góc giữa hai dây",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+  "lesson_id": 58,
+  "kien_thuc": [
+   "canbangluc.treo_hai_day",
+   "tonghopluc.hai_luc_bang_nhau"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi",
+  "tham_so_dieu_chinh": [
+   "m",
+   "alpha"
   ]
  },
  {
@@ -273,6 +360,79 @@
   ]
  },
  {
+  "id": "tn-l11-songdung-01",
+  "ten": "Sợi dây thun rung bằng tay: những múi dây đứng yên tại chỗ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 11,
+  "bai": "Sóng dừng",
+  "lesson_id": 32,
+  "kien_thuc": [
+   "songdung.pha_xa_vat_can_co_dinh",
+   "songdung.nut_va_bung",
+   "songdung.dieu_kien_hai_dau_co_dinh"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "f",
+   "l"
+  ]
+ },
+ {
+  "id": "tn-l11-songdung-02",
+  "ten": "Đo bước sóng và tốc độ truyền sóng từ sóng dừng (dây hai đầu cố định)",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 11,
+  "bai": "Sóng dừng",
+  "lesson_id": 32,
+  "kien_thuc": [
+   "songdung.dieu_kien_hai_dau_co_dinh",
+   "songdung.do_buoc_song_tu_song_dung",
+   "songdung.tinh_toc_do_truyen_song"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "f"
+  ]
+ },
+ {
+  "id": "tn-l11-songdung-03",
+  "ten": "Đổi đầu cố định thành đầu tự do: điều kiện chuyển từ lam/2 sang lam/4",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 11,
+  "bai": "Sóng dừng",
+  "lesson_id": 32,
+  "kien_thuc": [
+   "songdung.dau_tu_do_la_bung",
+   "songdung.dieu_kien_mot_dau_tu_do",
+   "songdung.tan_so_nho_nhat"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "f"
+  ]
+ },
+ {
+  "id": "tn-l11-songdung-04",
+  "ten": "Dây đàn ghi-ta: bấm phím cho đoạn dây ngắn lại thì nốt cao lên",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 11,
+  "bai": "Sóng dừng",
+  "lesson_id": 32,
+  "kien_thuc": [
+   "songdung.dieu_kien_hai_dau_co_dinh",
+   "songdung.tan_so_nho_nhat",
+   "songdung.ung_dung_nhac_cu"
+  ],
+  "mo_phong": "do_thi+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "L"
+  ]
+ },
+ {
   "id": "tn-l12-camungdt-01",
   "ten": "Nam châm và cuộn dây nối điện kế",
   "loai": "thi_nghiem",
@@ -345,6 +505,116 @@
    "B1",
    "B2",
    "dt"
+  ]
+ },
+ {
+  "id": "tn-l12-chuyenthe-01",
+  "ten": "Đun nước đá, mỗi phút ghi nhiệt độ một lần",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Sự chuyển thể",
+  "lesson_id": 2,
+  "kien_thuc": [
+   "chuyenthe.mo_hinh_dong_hoc",
+   "chuyenthe.nhiet_do_khong_doi_khi_chuyen_the"
+  ],
+  "mo_phong": "do_thi+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "m",
+   "P",
+   "T0"
+  ]
+ },
+ {
+  "id": "tn-l12-chuyenthe-02",
+  "ten": "Đổ 50 ml rượu vào 50 ml nước",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Sự chuyển thể",
+  "lesson_id": 2,
+  "kien_thuc": [
+   "chuyenthe.mo_hinh_dong_hoc",
+   "chuyenthe.khoang_cach_phan_tu"
+  ],
+  "mo_phong": "bang_so_lieu+2d_dong_hoc",
+  "tham_so_dieu_chinh": [
+   "V_nuoc",
+   "V_ruou"
+  ]
+ },
+ {
+  "id": "tn-l12-chuyenthe-03",
+  "ten": "Hai đĩa nước, một đĩa trước quạt: bay hơi ở nhiệt độ phòng",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Sự chuyển thể",
+  "lesson_id": 2,
+  "kien_thuc": [
+   "chuyenthe.bay_hoi_va_soi",
+   "chuyenthe.mo_hinh_dong_hoc"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "v_gio",
+   "T_phong",
+   "S"
+  ]
+ },
+ {
+  "id": "tn-l12-xoaychieu-01",
+  "ten": "Máy phát mini quay tay: biên độ tỉ lệ với tốc độ quay",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Đại cương về dòng điện xoay chiều",
+  "lesson_id": 14,
+  "kien_thuc": [
+   "xoaychieu.suat_dien_dong_khung_quay",
+   "xoaychieu.e_ti_le_omega",
+   "xoaychieu.vuong_pha_phi_e"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "tham_so_dieu_chinh": [
+   "n",
+   "B",
+   "S"
+  ]
+ },
+ {
+  "id": "tn-l12-xoaychieu-02",
+  "ten": "Hai đèn LED mắc ngược chiều: đếm số lần đổi chiều",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Đại cương về dòng điện xoay chiều",
+  "lesson_id": 14,
+  "kien_thuc": [
+   "xoaychieu.tan_so",
+   "xoaychieu.doi_chieu_2f"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi",
+  "tham_so_dieu_chinh": [
+   "f"
+  ]
+ },
+ {
+  "id": "tn-l12-xoaychieu-03",
+  "ten": "Một chiều 12 V so với xoay chiều 12 V hiệu dụng",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Đại cương về dòng điện xoay chiều",
+  "lesson_id": 14,
+  "kien_thuc": [
+   "xoaychieu.hieu_dung",
+   "xoaychieu.nhiet_i_binh_phuong"
+  ],
+  "mo_phong": "do_thi",
+  "tham_so_dieu_chinh": [
+   "U"
   ]
  }
 ]
