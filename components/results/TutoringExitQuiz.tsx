@@ -13,13 +13,44 @@ import {
   EXIT_QUIZ_PASS_PCT,
   EXIT_QUIZ_QUESTION_COUNT,
   EXIT_COOLDOWN_HOURS,
+  WINDOW_QUIZ_MIX,
+  WINDOW_QUIZ_PASS_PCT,
+  WINDOW_QUIZ_QUESTION_COUNT,
+  fetchSeenQuestionIds,
   fetchTopicFamilyIds,
   logExitAttempt,
   needLabel,
+  type ExitWindow,
   type TutoringNeed,
 } from "@/services/tutoring";
 
 type Phase = "loading" | "empty" | "intro" | "running" | "result";
+
+/**
+ * Bài cuối buổi (có `exitWindow`): 10 câu cơ cấu 4 dễ / 4 trung bình / 2 khó, ưu tiên câu em chưa gặp,
+ * đạt từ 70%, chỉ làm được trong cửa sổ trợ giảng mở. Lượt này được tính vào điểm phụ đạo của trợ giảng.
+ */
+function pickWindowQuestions(pool: BankQuestion[], seen: Set<number>): BankQuestion[] {
+  const fresh = (list: BankQuestion[]) => [
+    ...pickRandom(list.filter((q) => !seen.has(q.id)), list.length),
+    ...pickRandom(list.filter((q) => seen.has(q.id)), list.length),
+  ];
+  const levels = ["de", "trung-binh", "kho"] as const;
+  const byLevel = new Map(levels.map((lv) => [lv, fresh(pool.filter((q) => q.difficulty === lv))]));
+  const picked: BankQuestion[] = [];
+  const taken = new Set<number>();
+  const take = (q: BankQuestion) => {
+    picked.push(q);
+    taken.add(q.id);
+  };
+  for (const lv of levels) (byLevel.get(lv) ?? []).slice(0, WINDOW_QUIZ_MIX[lv]).forEach(take);
+  // Thiếu câu ở mức nào thì bù từ phần còn lại (câu chưa gặp trước, kể cả chưa phân loại mức).
+  if (picked.length < WINDOW_QUIZ_QUESTION_COUNT) {
+    const rest = fresh(pool.filter((q) => !taken.has(q.id)));
+    rest.slice(0, WINDOW_QUIZ_QUESTION_COUNT - picked.length).forEach(take);
+  }
+  return pickRandom(picked, picked.length);
+}
 
 /**
  * Bài ~20 câu bốc ngẫu nhiên từ ngân hàng đúng chủ đề em đang cần phụ đạo — đạt từ 80%
@@ -29,11 +60,14 @@ type Phase = "loading" | "empty" | "intro" | "running" | "result";
 export default function TutoringExitQuiz({
   need,
   studentId,
+  exitWindow,
   onClose,
   onCleared,
 }: {
   need: TutoringNeed;
   studentId: string;
+  /** Có thì đây là bài kiểm tra cuối buổi do trợ giảng mở (xem pickWindowQuestions). */
+  exitWindow?: ExitWindow;
   onClose: () => void;
   onCleared: () => void;
 }) {
@@ -47,17 +81,24 @@ export default function TutoringExitQuiz({
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ pct: number; passed: boolean; correct: number; total: number } | null>(null);
 
+  const passPct = exitWindow ? WINDOW_QUIZ_PASS_PCT : EXIT_QUIZ_PASS_PCT;
   const theoryHref = need.lessonId ? `/lop-hoc/bai/?id=${need.lessonId}#secondary-stage-ly_thuyet` : null;
 
   useEffect(() => {
     let cancelled = false;
     const form = need.form === "ly_thuyet" || need.form === "bai_tap" ? need.form : undefined;
-    fetchTopicFamilyIds(need.topicId)
-      .then((topicIds) => fetchBankQuestions({ topicIds, form, includeArchived: false }))
-      .then((rows) => {
+    Promise.all([
+      fetchTopicFamilyIds(need.topicId).then((topicIds) =>
+        fetchBankQuestions({ topicIds, form, includeArchived: false }),
+      ),
+      exitWindow ? fetchSeenQuestionIds(studentId, need.id).catch(() => new Set<number>()) : Promise.resolve(null),
+    ])
+      .then(([rows, seen]) => {
         if (cancelled) return;
         const pool = rows.filter((r) => r.qtype !== "essay");
-        const picked: BankQuestion[] = pickRandom(pool, EXIT_QUIZ_QUESTION_COUNT);
+        const picked: BankQuestion[] = seen
+          ? pickWindowQuestions(pool, seen)
+          : pickRandom(pool, EXIT_QUIZ_QUESTION_COUNT);
         setBankIds(picked.map((b) => b.id));
         const examQuestions = picked.map(toExamQuestion);
         setQuestions(examQuestions);
@@ -70,7 +111,7 @@ export default function TutoringExitQuiz({
     return () => {
       cancelled = true;
     };
-  }, [need.topicId, need.form]);
+  }, [need.topicId, need.form, need.id, studentId, exitWindow]);
 
   const lastIndex = questions.length - 1;
   const answeredCount = questions.filter((q, i) => isAnswered(q, responses[i])).length;
@@ -93,6 +134,7 @@ export default function TutoringExitQuiz({
         questionIds: bankIds,
         total: questions.length,
         correct: summary.correctCount,
+        windowId: exitWindow?.id,
       });
       setResult({ pct: attempt.pct, passed: attempt.passed, correct: summary.correctCount, total: questions.length });
       setPhase("result");
@@ -133,7 +175,9 @@ export default function TutoringExitQuiz({
           aria-modal="true"
         >
           <div className="mb-3 flex items-start justify-between gap-3">
-            <h2 className="font-display text-lg font-semibold text-white">Tự kiểm tra thoát phụ đạo</h2>
+            <h2 className="font-display text-lg font-semibold text-white">
+              {exitWindow ? "Kiểm tra cuối buổi phụ đạo" : "Tự kiểm tra thoát phụ đạo"}
+            </h2>
             <button type="button" onClick={onClose} aria-label="Đóng" className="text-slate-400 hover:text-white">
               <X size={18} />
             </button>
@@ -157,9 +201,13 @@ export default function TutoringExitQuiz({
             <div className="space-y-4">
               <p className="text-sm text-slate-300">
                 <strong className="text-white">{needLabel(need)}</strong> · {questions.length} câu · cần đạt từ{" "}
-                {EXIT_QUIZ_PASS_PCT}%.
+                {passPct}%.
               </p>
-              <p className="text-xs text-slate-500">Câu hỏi lấy ngẫu nhiên từ ngân hàng, mỗi lượt một bộ khác nhau.</p>
+              <p className="text-xs text-slate-500">
+                {exitWindow
+                  ? "Em tự làm một mình, một lượt duy nhất cho chủ đề này trong buổi. Kết quả giúp thầy cô biết buổi phụ đạo có hiệu quả không."
+                  : "Câu hỏi lấy ngẫu nhiên từ ngân hàng, mỗi lượt một bộ khác nhau."}
+              </p>
               <Button onClick={() => setPhase("running")} className="w-full">
                 Bắt đầu làm bài
               </Button>
@@ -216,8 +264,9 @@ export default function TutoringExitQuiz({
               ) : (
                 <div className="space-y-2 text-sm text-amber-200">
                   <p>
-                    Chưa đạt {EXIT_QUIZ_PASS_PCT}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau{" "}
-                    {EXIT_COOLDOWN_HOURS} giờ em thử lượt mới nhé.
+                    {exitWindow
+                      ? `Chưa đạt ${passPct}% — chưa sao cả. Em nhờ trợ giảng giảng lại phần còn vướng; chủ đề này vẫn còn trong danh sách của em.`
+                      : `Chưa đạt ${passPct}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau ${EXIT_COOLDOWN_HOURS} giờ em thử lượt mới nhé.`}
                   </p>
                   {theoryHref && (
                     <a href={theoryHref} className="inline-block font-semibold text-sky-300 underline-offset-2 hover:underline">

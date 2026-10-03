@@ -534,6 +534,7 @@ export default function GhiBuoiForm({
         {draft.sessionType === "phudao" && (
           <>
             <PhudaoPlanner
+              assistantId={demo ? null : assistant.id}
               classId={selectedClassId}
               grade={selectedClassName ? classGrade(selectedClassName) : null}
               students={pickedStudents}

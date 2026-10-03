@@ -22,13 +22,14 @@ const legacy=await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2
 await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
 await sql(fs.readFileSync('docs/supabase-migration-ta-policy-oct2026.sql','utf8'));
 assert.deepEqual(await one(`select row_to_json(t) v from ta_monthly_score('${ta}','2026-09-01') t`),legacy);
-// Stub tối giản của 2 bảng thoát-phụ-đạo (docs/supabase-migration-tutoring-needs.sql +
-// -tutoring-exit-quiz.sql) — chỉ đủ cột cho ta_monthly_policy join, không kéo cả migration
+// Stub tối giản của 3 bảng phụ đạo (docs/supabase-migration-tutoring-needs.sql +
+// -tutoring-exit-quiz.sql) — chỉ đủ cột cho migration 20261003150000 chạy, không kéo cả migration
 // thật vào (kéo theo question_topics/exam_question_results không có trong DB test này).
 await sql(`create table public.tutoring_session_topics(id bigint generated always as identity primary key, session_id uuid not null, student_id uuid not null, topic_id bigint not null, created_at timestamptz not null default now());
- create table public.tutoring_exit_attempts(id bigint generated always as identity primary key, student_id uuid not null, topic_id bigint not null, passed boolean not null default false, pct int not null default 0, created_at timestamptz not null default now());`);
-await sql(fs.readFileSync('docs/supabase-migration-ta-policy-phudao-exit-quiz.sql','utf8'));
-await sql(fs.readFileSync('docs/supabase-migration-ta-policy-phudao-exit-quiz.sql','utf8'));
+ create table public.tutoring_needs(id bigint generated always as identity primary key, student_id uuid not null, topic_id bigint not null, form text not null default '', status text not null default 'open');
+ create table public.tutoring_exit_attempts(id bigint generated always as identity primary key, tutoring_need_id bigint, student_id uuid not null, topic_id bigint, form text not null default '', question_ids bigint[] not null default '{}', total int not null default 10, correct int not null default 0, pct int not null default 0, passed boolean not null default false, created_at timestamptz not null default now());`);
+await sql(fs.readFileSync('supabase/migrations/20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql','utf8'));
+await sql(fs.readFileSync('supabase/migrations/20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql','utf8'));
 await sql(`create or replace function public.ta_policy_today() returns date language sql stable as $$ select date '2026-12-31' $$; grant select,insert,update on ta_sessions to authenticated; grant select on ta_assistants to authenticated;`);
 const base={attendance:'on_time',arrived_early:true,homework_checked:true,homework_missing:0,walked_tables:true,reported_students:true,attention_note:'',teaching_minutes:45,teaching_note:'Chữa bài 1',prepared:true,recalled:true,asked_each:true,followups:[]};
 const setUser=async id=>sql(`select set_config('test.user','${id}',false)`);
@@ -49,19 +50,57 @@ await test('Admin edit reopens month; teacher can reclose; audit preserved',asyn
 await test('Per-session touches cap stops one busy session offsetting another',async()=>{await add('2026-12-02','lop',{student_touches:0,policy:{...base,teaching_minutes:0}});await add('2026-12-03','lop',{student_touches:24,policy:{...base,teaching_minutes:0}});const s=await save('2026-12-01',{phudao:25,observation:10});assert.equal(s.touches,20)});
 await test('Marks outside their ranges rejected; future month cannot close',async()=>{await assert.rejects(()=>save('2026-12-01',{observation:11}));await assert.rejects(()=>save('2027-01-01',{phudao:25,observation:10},true))});
 await sql(`create or replace function public.ta_policy_today() returns date language sql stable as $$ select date '2027-01-31' $$;`);
-await test('Phụ đạo 25đ cần bằng chứng tự kiểm tra đạt cùng ngày, không chỉ tick tay',async()=>{
- const topic=999, emA='00000000-0000-0000-0000-0000000000a1', emB='00000000-0000-0000-0000-0000000000b1';
- const followup=student=>[{student,lesson:'Bài 1',difficulty:'Đã làm được'}];
- const s1=await add('2027-01-05','phudao',{phudao_students:['Em A'],policy:{...base,teaching_minutes:0,followups:followup('Em A')}});
- assert.equal((await month('2027-01-01')).phudao,0); // đủ tick tay, chưa có bằng chứng -> 0đ
- await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s1.id}','${emA}',${topic})`);
- await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emA}',${topic},false,60,'2027-01-05T10:00:00Z')`);
- assert.equal((await month('2027-01-01')).phudao,0); // đã làm nhưng chưa đạt -> vẫn 0đ
- await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emA}',${topic},true,85,'2027-01-05T10:30:00Z')`);
- assert.equal((await month('2027-01-01')).phudao,25); // đạt trong đúng ngày ghi buổi -> đủ 25đ
- const s2=await add('2027-01-06','phudao',{phudao_students:['Em B'],policy:{...base,teaching_minutes:0,followups:followup('Em B')}});
- await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s2.id}','${emB}',${topic})`);
- await sql(`insert into tutoring_exit_attempts(student_id,topic_id,passed,pct,created_at) values('${emB}',${topic},true,90,'2027-01-05T10:30:00Z')`); // đạt nhưng khác ngày buổi (05, buổi ghi 06)
- assert.equal((await month('2027-01-01')).phudao,12.5); // trung bình (25 + 0)/2 — buổi sau không tính vì lượt đạt sai ngày
+const e=i=>`00000000-0000-0000-0000-0000000000e${i}`;
+const T1=901,T2=902;
+const followup=names=>names.map(student=>({student,lesson:'Bài 1',difficulty:'Đã làm được'}));
+const attempt=(i,topic,passed,windowId,at)=>sql(`insert into tutoring_exit_attempts(tutoring_need_id,student_id,topic_id,passed,pct,window_id,created_at) select id,'${e(i)}',${topic},${passed},${passed?80:40},${windowId?`'${windowId}'`:'null'},'${at}' from tutoring_needs where student_id='${e(i)}' and topic_id=${topic}`);
+const mkWindow=async(students,topics,openedAt)=>{const w=await one(`insert into tutoring_exit_windows(assistant_id,student_ids,topic_ids) values('${ta}',array[${students.map(i=>`'${e(i)}'`).join(',')}]::uuid[],array[${topics.join(',')}]::bigint[]) returning id,extract(epoch from closes_at-opened_at)/60 as len`);assert.equal(Number(w.len),20);await sql(`update tutoring_exit_windows set opened_at='${openedAt}',closes_at='${openedAt}'::timestamptz+interval '20 minutes' where id='${w.id}'`);return w.id};
+await test('Phụ đạo 25đ theo tỉ lệ nhóm đạt: ≥60% đủ, 40–59% nửa, <40% không',async()=>{
+ // buổi 5/1/2027: 3 em x 1 chủ đề = 3 cặp; cửa sổ mở 10:00 UTC (17:00 VN) cùng ngày
+ const s=await add('2027-01-05','phudao',{phudao_students:['A','B','C'],policy:{...base,teaching_minutes:0,followups:followup(['A','B','C'])}});
+ for(const i of [1,2,3]){await sql(`insert into tutoring_needs(student_id,topic_id) values('${e(i)}',${T1})`);await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s.id}','${e(i)}',${T1})`)}
+ // chủ đề dạy thêm ngoài danh sách hổng không có bài để làm -> không được làm tụt mẫu số
+ await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s.id}','${e(1)}',${T2})`);
+ const w=await mkWindow([1,2,3],[T1],'2027-01-05T10:00:00Z');
+ assert.equal((await month('2027-01-01')).phudao,0); // chưa ai làm
+ await attempt(1,T1,true,w,'2027-01-05T10:10:00Z');
+ assert.equal((await month('2027-01-01')).phudao,0); // 1/3 = 33% < 40%
+ await attempt(2,T1,false,w,'2027-01-05T10:11:00Z');
+ await attempt(3,T1,true,w,'2027-01-05T10:12:00Z');
+ assert.equal((await month('2027-01-01')).phudao,25); // 2/3 = 67% >= 60%
+ // buổi 6/1: 2 cặp, 1 đạt = 50% -> 12,5đ cho buổi đó; trung bình tháng (25+12,5)/2
+ const s2=await add('2027-01-06','phudao',{phudao_students:['A','B'],policy:{...base,teaching_minutes:0,followups:followup(['A','B'])}});
+ for(const i of [1,2]) await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s2.id}','${e(i)}',${T1})`);
+ const w2=await mkWindow([1,2],[T1],'2027-01-06T10:00:00Z');
+ await attempt(1,T1,true,w2,'2027-01-06T10:10:00Z');
+ await attempt(2,T1,false,w2,'2027-01-06T10:11:00Z');
+ assert.equal(Number((await one('select ta_tutoring_pass_ratio($1) v',[s2.id])).v),0.5);
+ assert.equal((await month('2027-01-01')).phudao,18.75);
+});
+await test('Lượt tự ôn ngoài cửa sổ và cửa sổ sai ngày không được tính vào điểm trợ giảng',async()=>{
+ const s=await add('2027-01-07','phudao',{phudao_students:['A'],policy:{...base,teaching_minutes:0,followups:followup(['A'])}});
+ await sql(`insert into tutoring_session_topics(session_id,student_id,topic_id) values('${s.id}','${e(1)}',${T1})`);
+ await attempt(1,T1,true,null,'2027-01-07T10:10:00Z'); // tự ôn đạt, không có window_id
+ assert.equal(Number((await one('select ta_tutoring_pass_ratio($1) v',[s.id])).v),0);
+ const wrongDay=await mkWindow([1],[T1],'2027-01-08T10:00:00Z'); // cửa sổ mở ngày khác
+ await attempt(1,T1,true,wrongDay,'2027-01-08T10:05:00Z');
+ assert.equal(Number((await one('select ta_tutoring_pass_ratio($1) v',[s.id])).v),0);
+});
+await test('Guard DB: cửa sổ 10 câu đạt từ 70%, mỗi em/chủ đề một lượt, đúng em và chủ đề, quá hạn bị chặn',async()=>{
+ await sql(`create trigger trg_tutoring_exit_attempt_guard before insert on public.tutoring_exit_attempts for each row execute function public.tutoring_exit_attempt_guard()`);
+ const ins=(i,topic,correct,windowId,total=10)=>one(`insert into tutoring_exit_attempts(tutoring_need_id,student_id,total,correct,window_id) select id,'${e(i)}',${total},${correct},${windowId?`'${windowId}'`:'null'} from tutoring_needs where student_id='${e(i)}' and topic_id=${topic} returning pct,passed`);
+ await sql(`insert into tutoring_needs(student_id,topic_id) values('${e(4)}',${T1}),('${e(5)}',${T2})`);
+ const fresh=await one(`insert into tutoring_exit_windows(assistant_id,student_ids,topic_ids) values('${ta}',array['${e(4)}']::uuid[],array[${T1}]::bigint[]) returning id`);
+ assert.deepEqual(await ins(4,T1,7,fresh.id),{pct:70,passed:true});
+ await assert.rejects(()=>ins(4,T1,9,fresh.id)); // lượt thứ hai trong cùng cửa sổ
+ await assert.rejects(()=>ins(5,T2,10,fresh.id)); // em không thuộc cửa sổ / chủ đề không thuộc cửa sổ
+ const expired=await mkWindow([4],[T1],'2026-01-01T00:00:00Z');
+ await sql(`insert into tutoring_needs(student_id,topic_id) values('${e(6)}',${T1})`);
+ await assert.rejects(()=>ins(4,T1,10,expired));
+ const f2=await one(`insert into tutoring_exit_windows(assistant_id,student_ids,topic_ids) values('${ta}',array['${e(6)}']::uuid[],array[${T1}]::bigint[]) returning id`);
+ assert.deepEqual(await ins(6,T1,6,f2.id),{pct:60,passed:false}); // 6/10 < 70%
+ // ngoài cửa sổ: vẫn 80% (7/10 trượt)
+ await sql(`insert into tutoring_needs(student_id,topic_id) values('${e(7)}',${T1})`);
+ assert.deepEqual(await ins(7,T1,7,null),{pct:70,passed:false});
 });
 console.log(`${count} policy checks passed; migration applied twice; legacy payroll preserved.`);await db.close();

@@ -44,3 +44,14 @@ GỘP LUÔN vào công thức lương trợ giảng: điểm 25đ "phụ đạo"
 prepared/recalled/asked_each như trước (buổi trước 01/10/2026 vẫn giữ cách tick tay cũ).
 `PhudaoPlanner` hiện trạng thái tự kiểm tra realtime theo từng chủ đề. `scripts/tests/ta-policy.mjs`
 đã có ca kiểm thử công thức mới, 13/13 pass. **Vẫn CHƯA test UI thật** qua tài khoản học sinh/trợ giảng thật.
+
+**Cập nhật 2026-10-03 — bài kiểm tra cuối buổi (đổi cách đo buổi phụ đạo):** thầy chốt đo chất lượng buổi bằng
+TỈ LỆ NHÓM ĐẠT, không còn "một em đạt 80% là đủ 25đ". Trợ giảng tick chủ đề đã dạy rồi bấm "Mở bài kiểm tra cuối buổi"
+(`PhudaoPlanner`) → bảng `tutoring_exit_windows` (20 phút, giờ do máy chủ đặt); em tự đăng nhập tài khoản mình làm
+(banner trên trang chủ HS, 10 câu cơ cấu 4 dễ/4 TB/2 khó ưu tiên câu chưa gặp, đạt ≥70%, 1 lượt/cửa sổ/chủ đề, không áp
+cooldown 24h). Điểm phụ đạo 25đ/buổi: ≥60% cặp (em, chủ đề đã dạy có trong danh sách hổng) đạt trong cửa sổ do chính
+trợ giảng mở đúng ngày ghi buổi → 25; 40–59% → 12,5; <40% → 0. Tự ôn ở nhà (80%, 24h) giữ nguyên nhưng KHÔNG tính điểm
+trợ giảng. Chú thích "đưa lại điện thoại cho em" đã bỏ khỏi PhudaoPlanner và `/tro-giang/quy-che`.
+Migration `20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql` ĐANG CHỜ chạy; test `scripts/tests/ta-policy.mjs` 15/15 pass
+(pglite); CHƯA test UI thật, chưa commit/deploy. Treo: chưa gắn tên 'buổi' vào cửa sổ (liên kết qua ngày + trợ giảng),
+em không có thiết bị thì mượn máy lớp (đã ghi trong chú thích).

@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 250 hàm, sinh tự động 2026-10-03
+# Hàm SQL / RPC (schema public) — 255 hàm, sinh tự động 2026-10-03
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -66,6 +66,7 @@ repo — xem trên Supabase Dashboard).
 - `notify_class_staff(p_class_id bigint, p_kind text, p_title text, p_body text, p_href text, p_except uuid)` → void
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
 - `notify_user(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
+- `parent_attendance_summary(p_student uuid, p_limit integer)` → TABLE(session_id bigint, session_date date, title text, status text)
 - `preview_cttc_enroll()` → jsonb
 - `preview_cttc_unenroll()` → integer
 - `question_bank_plain_text(q jsonb)` → text
@@ -139,6 +140,8 @@ repo — xem trên Supabase Dashboard).
 - `rank_status_of(p_student uuid)` → jsonb
 - `rank_streak_day(p_season bigint, p_at timestamp with time zone)` → date
 - `rank_streak_offset(p_season bigint)` → integer
+- `rank_theory_open(p_item bigint)` → void
+- `rank_theory_submit(p_item bigint, p_answers jsonb)` → jsonb
 - `rank_tier_code_by_rp(p_season bigint, p_rp integer)` → text
 - `rank_tier_info(p_season bigint, p_code text, p_rp integer)` → TABLE(code text, name text, sort integer, tier_min integer, next_min integer, division integer, div_min integer, div_max integer)
 - `rank_tier_needs_gate(t rank_tiers)` → boolean
@@ -175,8 +178,8 @@ repo — xem trên Supabase Dashboard).
 - `similarity_op(text, text)` → boolean
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -202,6 +205,7 @@ repo — xem trên Supabase Dashboard).
 - `ta_session_student_link_guard()` → trigger
 - `ta_team_monthly_hours(p_months integer)` → TABLE(month date, converted_hours numeric, session_count integer)
 - `ta_topic_exploitation_rate(p_days integer)` → TABLE(eligible_count integer, used_count integer, rate numeric)
+- `ta_tutoring_pass_ratio(p_session uuid)` → numeric
 - `ta_video_admin_summary(p_month date)` → TABLE(month date, videos_published integer, total_views numeric, total_saves numeric, total_comments numeric, leads_count integer, production_spend numeric, view_bonus_spend numeric, lead_bonus_spend numeric, total_spend numeric, budget_cap integer, over_budget boolean, cost_per_lead numeric)
 - `ta_video_ledger(p_assistant_id uuid)` → TABLE(session_id uuid, assistant_id uuid, work_date date, video_tier text, video_url text, published_at timestamp with time zone, status text, reject_reason text, topic_source_id uuid, latest_checked_at date, latest_views integer, latest_saves integer, latest_comments integer, view_bonus numeric, production_pay numeric, lead_count integer, lead_bonus numeric, total_pay numeric)
 - `ta_video_topic_suggestions(p_days integer)` → TABLE(session_id uuid, work_date date, class_label text, error_note text)
@@ -243,6 +247,7 @@ repo — xem trên Supabase Dashboard).
 - `trg_tutoring_covered()` → trigger
 - `trg_tutoring_exit_attempt_clear()` → trigger
 - `tutoring_exit_attempt_guard()` → trigger
+- `tutoring_exit_window_defaults()` → trigger
 - `tutoring_slot_register()` → trigger
 - `tutoring_slot_unregister()` → trigger
 - `unread_notification_count()` → integer

@@ -13,12 +13,21 @@ import {
 } from "@/services/analytics";
 import {
   ACTIVE_NEED_STATUSES,
+  EXIT_WINDOW_MINUTES,
+  PASS_TIER_LABEL,
+  WINDOW_QUIZ_PASS_PCT,
+  WINDOW_QUIZ_QUESTION_COUNT,
+  fetchLatestExitWindowToday,
   fetchNeedsForStudents,
-  fetchTodayExitAttempts,
+  fetchWindowAttempts,
   needLabel,
-  type TodayExitAttempt,
+  openExitWindow,
+  passTier,
+  type ExitWindow,
   type TutoringNeed,
+  type WindowAttempt,
 } from "@/services/tutoring";
+import { useToast } from "@/components/ui/Toast";
 
 export interface PickedStudent {
   id: string;
@@ -39,6 +48,7 @@ const DEMO_ROSTER: ClassStudent[] = [
  * làm đúng lại thì hệ thống tự đóng thành "đã khắc phục".
  */
 export default function PhudaoPlanner({
+  assistantId,
   classId,
   grade,
   students,
@@ -48,6 +58,8 @@ export default function PhudaoPlanner({
   demo,
   badge,
 }: {
+  /** id trợ giảng đang ghi buổi — cần để mở bài kiểm tra cuối buổi. */
+  assistantId: string | null;
   classId: number | null;
   grade: string | null;
   students: PickedStudent[];
@@ -68,7 +80,11 @@ export default function PhudaoPlanner({
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [outcomes, setOutcomes] = useState<OutcomeGap[]>([]);
   const [query, setQuery] = useState("");
-  const [attempts, setAttempts] = useState<TodayExitAttempt[]>([]);
+  const toast = useToast();
+  const [win, setWin] = useState<ExitWindow | null>(null);
+  const [attempts, setAttempts] = useState<WindowAttempt[]>([]);
+  const [opening, setOpening] = useState(false);
+  const [nowMs, setNowMs] = useState(() => Date.now());
 
   const roster = demo ? DEMO_ROSTER : loaded && loaded.classId === classId ? loaded.list : null;
   const error = loaded && loaded.classId === classId ? loaded.error : null;
@@ -107,17 +123,69 @@ export default function PhudaoPlanner({
     fetchQuestionTopics(grade).then(setTopics).catch(() => setTopics([]));
   }, [grade, demo]);
 
-  const studentIds = useMemo(() => students.map((s) => s.id), [students]);
+  // Khôi phục cửa sổ đã mở hôm nay (tải lại trang không làm mất kết quả).
+  useEffect(() => {
+    if (demo || !assistantId) return;
+    fetchLatestExitWindowToday(assistantId).then(setWin).catch(() => setWin(null));
+  }, [assistantId, demo]);
 
   const loadAttempts = useCallback(() => {
-    if (demo || studentIds.length === 0) return;
-    fetchTodayExitAttempts(studentIds).then(setAttempts).catch(() => setAttempts([]));
-  }, [studentIds, demo]);
+    if (demo || !win) return;
+    fetchWindowAttempts(win.id).then(setAttempts).catch(() => setAttempts([]));
+  }, [win, demo]);
   useEffect(loadAttempts, [loadAttempts]);
+
+  // Cập nhật kết quả + đồng hồ khi cửa sổ còn mở.
+  const windowOpen = win ? new Date(win.closesAt).getTime() > nowMs : false;
+  useEffect(() => {
+    if (!win) return;
+    const t = window.setInterval(() => {
+      setNowMs(Date.now());
+      loadAttempts();
+    }, 10_000);
+    return () => window.clearInterval(t);
+  }, [win, loadAttempts]);
+
+  // Cặp (em, chủ đề đã tick) có bài để làm — chủ đề dạy thêm ngoài danh sách hổng không có.
+  const taughtPairs = useMemo(
+    () =>
+      students.flatMap((s) =>
+        (coverage[s.id] ?? [])
+          .filter((topicId) => needs.some((n) => n.studentId === s.id && n.topicId === topicId))
+          .map((topicId) => ({ studentId: s.id, topicId })),
+      ),
+    [students, coverage, needs],
+  );
+
+  async function openWindow() {
+    if (!assistantId || taughtPairs.length === 0) return;
+    setOpening(true);
+    try {
+      const w = await openExitWindow({
+        assistantId,
+        classId,
+        studentIds: [...new Set(taughtPairs.map((p) => p.studentId))],
+        topicIds: [...new Set(taughtPairs.map((p) => p.topicId))],
+      });
+      setWin(w);
+      setNowMs(Date.now());
+      setAttempts([]);
+      toast("success", `Đã mở bài kiểm tra cuối buổi — các em làm trong ${EXIT_WINDOW_MINUTES} phút.`);
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa mở được bài kiểm tra, thử lại.");
+    } finally {
+      setOpening(false);
+    }
+  }
 
   function attemptFor(studentId: string, topicId: number) {
     return attempts.find((a) => a.studentId === studentId && a.topicId === topicId) ?? null;
   }
+
+  const passedPairs = taughtPairs.filter((p) => attemptFor(p.studentId, p.topicId)?.passed).length;
+  const doneBy = (p: { studentId: string; topicId: number }) => attemptFor(p.studentId, p.topicId) !== null;
+  const tier = passTier(passedPairs, taughtPairs.length);
+  const minutesLeft = win ? Math.max(0, Math.ceil((new Date(win.closesAt).getTime() - nowMs) / 60000)) : 0;
 
   // Trong mỗi phần đang hổng, em sai đúng yêu cầu cần đạt nào — dạy cho trúng.
   const outcomesByNeed = useMemo(() => outcomeGapsByNeed(outcomes), [outcomes]);
@@ -174,19 +242,55 @@ export default function PhudaoPlanner({
       </div>
 
       {students.length > 0 && (
-        <div className="mb-3 flex items-start justify-between gap-2 rounded-2xl border border-sky-400/25 bg-sky-500/10 px-3.5 py-3 text-xs text-sky-100">
-          <p>
-            Chủ đề nào vừa tick “đã dạy”: đưa lại điện thoại của em, bảo em tự đăng nhập tài
-            khoản của em rồi bấm “Tự kiểm tra” ngay bây giờ — đạt mới tính là hoàn thành, không
-            tính theo lời trợ giảng khai nữa.
-          </p>
-          <button
-            type="button"
-            onClick={loadAttempts}
-            className="flex shrink-0 items-center gap-1 rounded-full border border-sky-400/40 px-2.5 py-1 font-semibold text-sky-200"
-          >
-            <RefreshCw size={12} /> Làm mới
-          </button>
+        <div className="mb-3 space-y-3 rounded-2xl border border-sky-400/25 bg-sky-500/10 px-3.5 py-3 text-xs text-sky-100">
+          <div>
+            <p className="font-semibold text-sky-50">Kiểm tra cuối buổi — các em tự làm trên điện thoại/máy của mình</p>
+            <p className="mt-1">
+              Cuối buổi, tick chủ đề đã dạy rồi bấm <strong>“Mở bài kiểm tra cuối buổi”</strong>. Mỗi em tự đăng nhập tài
+              khoản của mình, mở trang chủ sẽ thấy bài ({WINDOW_QUIZ_QUESTION_COUNT} câu, đạt từ {WINDOW_QUIZ_PASS_PCT}%,
+              làm trong {EXIT_WINDOW_MINUTES} phút). <strong>Không cần đưa máy cho em</strong> — bạn chỉ ngồi cạnh để em tự
+              làm một mình, không tra cứu hay hỏi nhau. Em không có điện thoại thì mượn máy tính của lớp, vẫn đăng nhập
+              tài khoản của em.
+            </p>
+            <p className="mt-1">
+              Điểm phụ đạo của buổi tính theo <strong>tỉ lệ cả nhóm đạt</strong>: từ 60% số bài đạt thì đủ 25đ, 40–59% được
+              một nửa, dưới 40% thì không có điểm này. Lượt tự ôn của em ở nhà <strong>không</strong> tính vào điểm của bạn.
+            </p>
+          </div>
+
+          {!demo && (
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={openWindow}
+                disabled={opening || !assistantId || taughtPairs.length === 0 || windowOpen}
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-sky-500 px-4 py-2 text-sm font-bold text-white disabled:opacity-50"
+              >
+                {opening && <Loader2 size={14} className="animate-spin" />}
+                {windowOpen ? `Đang mở — còn ${minutesLeft} phút` : win ? "Mở lại bài kiểm tra" : "Mở bài kiểm tra cuối buổi"}
+              </button>
+              {taughtPairs.length === 0 && (
+                <span className="text-sky-200/80">Tick ít nhất một chủ đề đã dạy (trong danh sách em đang hổng) để mở.</span>
+              )}
+              {win && (
+                <button
+                  type="button"
+                  onClick={loadAttempts}
+                  className="flex shrink-0 items-center gap-1 rounded-full border border-sky-400/40 px-2.5 py-1 font-semibold text-sky-200"
+                >
+                  <RefreshCw size={12} /> Làm mới
+                </button>
+              )}
+            </div>
+          )}
+
+          {win && taughtPairs.length > 0 && (
+            <p className="font-semibold text-sky-50">
+              {passedPairs}/{taughtPairs.length} bài đạt · đã nộp {taughtPairs.filter(doneBy).length}/
+              {taughtPairs.length} — {PASS_TIER_LABEL[tier]}
+              {windowOpen ? " (tạm tính, đang cập nhật)" : ""}
+            </p>
+          )}
         </div>
       )}
 
@@ -263,10 +367,12 @@ export default function PhudaoPlanner({
                               ? "border-amber-400/40 bg-amber-500/10 text-amber-200"
                               : "border-white/15 bg-white/5 text-slate-400";
                           const text = attempt?.passed
-                            ? `Đã tự kiểm tra đạt ${attempt.pct}% — ${needLabel(need)}`
+                            ? `Đạt ${attempt.pct}% — ${needLabel(need)}`
                             : attempt
-                              ? `Đã làm nhưng chưa đạt (${attempt.pct}%) — ${needLabel(need)}, cho em làm lại`
-                              : `Chưa làm bài xác nhận — ${needLabel(need)}`;
+                              ? `Chưa đạt (${attempt.pct}%) — ${needLabel(need)}, giảng lại phần còn vướng`
+                              : win
+                                ? `Chưa nộp bài — ${needLabel(need)}`
+                                : `Chưa mở bài kiểm tra — ${needLabel(need)}`;
                           return (
                             <span
                               key={`attempt-${need.id}`}

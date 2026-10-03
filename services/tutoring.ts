@@ -464,6 +464,14 @@ export function formatExitWait(at: Date): string {
 export const EXIT_QUIZ_PASS_PCT = 80;
 export const EXIT_QUIZ_QUESTION_COUNT = 20;
 
+// Bài kiểm tra cuối buổi (trợ giảng mở cửa sổ, em tự làm trên tài khoản của mình) — khớp trigger DB
+// trong supabase/migrations/20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql.
+export const WINDOW_QUIZ_QUESTION_COUNT = 10;
+export const WINDOW_QUIZ_PASS_PCT = 70;
+export const EXIT_WINDOW_MINUTES = 20;
+/** Cơ cấu độ khó của bài cuối buổi: 4 dễ, 4 trung bình, 2 khó (thiếu thì dồn sang mức kề). */
+export const WINDOW_QUIZ_MIX = { de: 4, "trung-binh": 4, kho: 2 } as const;
+
 /**
  * Mục phụ đạo mở ở tầng bài, còn câu hỏi thường gắn ở tầng yêu cầu cần đạt con (parent_id = bài)
  * — trả về id bài cùng mọi id con để bốc câu cho bài tự kiểm tra.
@@ -482,6 +490,7 @@ export interface ExitAttempt {
   pct: number;
   passed: boolean;
   createdAt: string;
+  windowId: string | null;
 }
 
 interface ExitAttemptRow {
@@ -492,9 +501,10 @@ interface ExitAttemptRow {
   pct: number;
   passed: boolean;
   created_at: string;
+  window_id: string | null;
 }
 
-const EXIT_ATTEMPT_SELECT = "id, tutoring_need_id, total, correct, pct, passed, created_at";
+const EXIT_ATTEMPT_SELECT = "id, tutoring_need_id, total, correct, pct, passed, created_at, window_id";
 
 function toExitAttempt(row: ExitAttemptRow): ExitAttempt {
   return {
@@ -505,6 +515,7 @@ function toExitAttempt(row: ExitAttemptRow): ExitAttempt {
     pct: row.pct,
     passed: row.passed,
     createdAt: row.created_at,
+    windowId: row.window_id,
   };
 }
 
@@ -528,6 +539,8 @@ export async function logExitAttempt(input: {
   questionIds: number[];
   total: number;
   correct: number;
+  /** Có thì đây là lượt làm trong cửa sổ kiểm tra cuối buổi (70%, 10 câu, được tính điểm trợ giảng). */
+  windowId?: string;
 }): Promise<ExitAttempt> {
   const { data, error } = await getSupabase()
     .from("tutoring_exit_attempts")
@@ -537,6 +550,7 @@ export async function logExitAttempt(input: {
       question_ids: input.questionIds,
       total: input.total,
       correct: input.correct,
+      ...(input.windowId ? { window_id: input.windowId } : {}),
     })
     .select(EXIT_ATTEMPT_SELECT)
     .single();
@@ -544,34 +558,139 @@ export async function logExitAttempt(input: {
   return toExitAttempt(data as unknown as ExitAttemptRow);
 }
 
-export interface TodayExitAttempt {
+// ============================================================
+// Bài kiểm tra cuối buổi phụ đạo — cửa sổ do trợ giảng mở, điểm phụ đạo tính theo tỉ lệ nhóm đạt.
+// ============================================================
+
+export interface ExitWindow {
+  id: string;
+  assistantId: string;
+  classId: number | null;
+  studentIds: string[];
+  topicIds: number[];
+  openedAt: string;
+  closesAt: string;
+}
+
+interface ExitWindowRow {
+  id: string;
+  assistant_id: string;
+  class_id: number | null;
+  student_ids: string[];
+  topic_ids: number[];
+  opened_at: string;
+  closes_at: string;
+}
+
+const EXIT_WINDOW_SELECT = "id, assistant_id, class_id, student_ids, topic_ids, opened_at, closes_at";
+
+function toExitWindow(row: ExitWindowRow): ExitWindow {
+  return {
+    id: row.id,
+    assistantId: row.assistant_id,
+    classId: row.class_id,
+    studentIds: row.student_ids,
+    topicIds: row.topic_ids,
+    openedAt: row.opened_at,
+    closesAt: row.closes_at,
+  };
+}
+
+/** Trợ giảng mở cửa sổ kiểm tra cuối buổi cho 1–4 em, theo các chủ đề đã dạy (giờ mở/đóng do máy chủ đặt). */
+export async function openExitWindow(input: {
+  assistantId: string;
+  classId: number | null;
+  studentIds: string[];
+  topicIds: number[];
+}): Promise<ExitWindow> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_windows")
+    .insert({
+      assistant_id: input.assistantId,
+      class_id: input.classId,
+      student_ids: input.studentIds,
+      topic_ids: input.topicIds,
+    })
+    .select(EXIT_WINDOW_SELECT)
+    .single();
+  if (error) throw error;
+  return toExitWindow(data as unknown as ExitWindowRow);
+}
+
+/** Cửa sổ còn mở dành cho em (RLS đã lọc theo student_ids). */
+export async function fetchMyOpenExitWindows(): Promise<ExitWindow[]> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_windows")
+    .select(EXIT_WINDOW_SELECT)
+    .gt("closes_at", new Date().toISOString())
+    .order("opened_at", { ascending: false });
+  if (error) throw error;
+  return ((data ?? []) as unknown as ExitWindowRow[]).map(toExitWindow);
+}
+
+/** Cửa sổ trợ giảng mở gần đây nhất trong ngày hôm nay (để hiện lại sau khi tải lại trang). */
+export async function fetchLatestExitWindowToday(assistantId: string): Promise<ExitWindow | null> {
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_windows")
+    .select(EXIT_WINDOW_SELECT)
+    .eq("assistant_id", assistantId)
+    .gte("opened_at", startOfToday.toISOString())
+    .order("opened_at", { ascending: false })
+    .limit(1);
+  if (error) throw error;
+  const row = (data ?? [])[0] as unknown as ExitWindowRow | undefined;
+  return row ? toExitWindow(row) : null;
+}
+
+export interface WindowAttempt {
   studentId: string;
   topicId: number;
   pct: number;
   passed: boolean;
-  createdAt: string;
 }
 
-/**
- * Lượt tự kiểm tra hôm nay của một nhóm học sinh — trợ giảng dùng để xác nhận ngay tại
- * buổi phụ đạo (bằng chứng khách quan, thay cho tick tay "học sinh trình bày lại được").
- */
-export async function fetchTodayExitAttempts(studentIds: string[]): Promise<TodayExitAttempt[]> {
-  if (studentIds.length === 0) return [];
-  const startOfToday = new Date();
-  startOfToday.setHours(0, 0, 0, 0);
+/** Kết quả các em trong một cửa sổ (trợ giảng đọc được qua RLS "ta reads own window attempts"). */
+export async function fetchWindowAttempts(windowId: string): Promise<WindowAttempt[]> {
   const { data, error } = await getSupabase()
     .from("tutoring_exit_attempts")
-    .select("student_id, topic_id, pct, passed, created_at")
-    .in("student_id", studentIds)
-    .gte("created_at", startOfToday.toISOString())
-    .order("created_at", { ascending: false });
+    .select("student_id, topic_id, pct, passed")
+    .eq("window_id", windowId);
   if (error) throw error;
   return (data ?? []).map((row) => ({
     studentId: row.student_id as string,
     topicId: row.topic_id as number,
     pct: row.pct as number,
     passed: row.passed as boolean,
-    createdAt: row.created_at as string,
   }));
 }
+
+/** Câu em đã gặp ở các lượt trước của một mục — lượt sau ưu tiên câu mới để khỏi học vẹt đáp án. */
+export async function fetchSeenQuestionIds(studentId: string, needId: number): Promise<Set<number>> {
+  const { data, error } = await getSupabase()
+    .from("tutoring_exit_attempts")
+    .select("question_ids")
+    .eq("student_id", studentId)
+    .eq("tutoring_need_id", needId);
+  if (error) throw error;
+  return new Set((data ?? []).flatMap((r) => (r.question_ids as number[] | null) ?? []));
+}
+
+export type PassTier = "full" | "half" | "none";
+
+/**
+ * Điểm phụ đạo của một buổi theo tỉ lệ nhóm đạt: ≥ 60% → đủ 25đ, 40–59% → một nửa, < 40% → 0.
+ * Khớp ta_tutoring_pass_ratio / ta_monthly_policy.
+ */
+export function passTier(passedPairs: number, totalPairs: number): PassTier {
+  if (totalPairs <= 0) return "none";
+  const ratio = passedPairs / totalPairs;
+  return ratio >= 0.6 ? "full" : ratio >= 0.4 ? "half" : "none";
+}
+
+export const PASS_TIER_LABEL: Record<PassTier, string> = {
+  full: "đủ 25đ phụ đạo",
+  half: "được một nửa điểm phụ đạo (12,5đ)",
+  none: "chưa đủ để tính điểm phụ đạo",
+};

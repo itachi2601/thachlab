@@ -50,11 +50,15 @@ import {
   EXIT_COOLDOWN_HOURS,
   cancelRegistration,
   fetchMyExitAttempts,
+  fetchMyOpenExitWindows,
+  WINDOW_QUIZ_PASS_PCT,
+  WINDOW_QUIZ_QUESTION_COUNT,
   fetchMyNeeds,
   fetchMyRegistrations,
   fetchUpcomingSlots,
   needLabel,
   registerForSlot,
+  type ExitWindow,
   type NeedStatus,
   type TutoringNeed,
   type TutoringSlot,
@@ -158,6 +162,16 @@ export default function ThptStudentHome({
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
+  // Bài kiểm tra cuối buổi do trợ giảng mở: cửa sổ còn mở + các lượt em đã làm trong từng cửa sổ.
+  const [openWindows, setOpenWindows] = useState<ExitWindow[]>([]);
+  const [windowDone, setWindowDone] = useState<Set<string>>(new Set());
+  const [quizWindow, setQuizWindow] = useState<ExitWindow | null>(null);
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    if (openWindows.length === 0) return;
+    const t = window.setInterval(() => setNowMs(Date.now()), 15_000);
+    return () => window.clearInterval(t);
+  }, [openWindows.length]);
 
   useEffect(() => {
     // Ưu tiên file tĩnh /data/catalog.json; Supabase đối chiếu ngầm, có khác thì setter được gọi lại.
@@ -211,10 +225,14 @@ export default function ThptStudentHome({
               if (!prev || a.createdAt > prev) last.set(a.tutoringNeedId, a.createdAt);
             }
             setLastExitAttempt(last);
+            setWindowDone(
+              new Set(attempts.filter((a) => a.windowId).map((a) => `${a.windowId}|${a.tutoringNeedId}`)),
+            );
           })
           .catch(() => setLastExitAttempt(new Map()));
       })
       .catch(() => setNeeds([]));
+    fetchMyOpenExitWindows().then(setOpenWindows).catch(() => setOpenWindows([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
     fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
   }
@@ -529,6 +547,43 @@ export default function ThptStudentHome({
       {/* Mục 3 — Chủ đề cần phụ đạo */}
       <CatchupCard studentId={studentId} classId={classId} viewer="student" />
 
+      {openWindows
+        .filter((w) => new Date(w.closesAt).getTime() > nowMs)
+        .map((w) => {
+          const mine = needs.filter((n) => w.topicIds.includes(n.topicId));
+          if (mine.length === 0) return null;
+          const minutesLeft = Math.max(1, Math.ceil((new Date(w.closesAt).getTime() - nowMs) / 60000));
+          return (
+            <div key={w.id} className="rounded-2xl border border-sky-400/40 bg-sky-500/10 p-4 sm:p-5">
+              <h2 className="font-display font-bold text-white">Bài kiểm tra cuối buổi phụ đạo đã mở</h2>
+              <p className="mt-1 text-sm text-sky-100">
+                Em tự làm một mình, {WINDOW_QUIZ_QUESTION_COUNT} câu, đạt từ {WINDOW_QUIZ_PASS_PCT}%. Còn khoảng{" "}
+                {minutesLeft} phút.
+              </p>
+              <div className="mt-3 space-y-2">
+                {mine.map((need) => {
+                  const done = windowDone.has(`${w.id}|${need.id}`);
+                  return (
+                    <button
+                      key={need.id}
+                      type="button"
+                      disabled={done}
+                      onClick={() => {
+                        setQuizNeed(need);
+                        setQuizWindow(w);
+                      }}
+                      className="flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-sky-400/30 bg-black/20 p-3 text-left text-sm font-semibold text-white hover:bg-black/30 disabled:opacity-50"
+                    >
+                      <span className="min-w-0 truncate">{needLabel(need)}</span>
+                      <span className="shrink-0 text-[13px] text-sky-200">{done ? "Đã làm" : "Bắt đầu"}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+
       {(needs.length > 0 || slots.length > 0) && <Section icon={Users} title="Chủ đề đang mở khoá">
         <div className="mt-3 space-y-4">
           {needs.length > 0 && (
@@ -626,9 +681,15 @@ export default function ThptStudentHome({
         <TutoringExitQuiz
           need={quizNeed}
           studentId={studentId}
-          onClose={() => setQuizNeed(null)}
+          exitWindow={quizWindow ?? undefined}
+          onClose={() => {
+            setQuizNeed(null);
+            setQuizWindow(null);
+            reloadTutoring();
+          }}
           onCleared={() => {
             setQuizNeed(null);
+            setQuizWindow(null);
             reloadTutoring();
           }}
         />
