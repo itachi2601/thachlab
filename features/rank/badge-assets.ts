@@ -136,6 +136,12 @@ export const LEVEL_TEXT_COLOR: Record<TitleLevel, string> = {
   don: "#fff3cf",
 };
 
+/** Như levelTextColor nhưng đổi theo theme (biến CSS --lv-* ở globals.css: pastel trên nền tối, tông đậm trên nền sáng). */
+export function levelThemedColor(level: TitleLevel | string | null | undefined): string {
+  const lv = (level ?? "don") as TitleLevel;
+  return `var(--lv-${lv in LEVEL_TEXT_COLOR ? lv : "don"}, ${levelTextColor(lv)})`;
+}
+
 export function levelTextColor(level: TitleLevel | string | null | undefined): string {
   return LEVEL_TEXT_COLOR[(level ?? "don") as TitleLevel] ?? LEVEL_TEXT_COLOR.don;
 }

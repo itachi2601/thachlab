@@ -2,7 +2,7 @@
 
 import { Sparkles } from "lucide-react";
 import TitleBadge from "@/components/rank/TitleBadge";
-import { levelTextColor } from "@/features/rank/badge-assets";
+import { levelThemedColor } from "@/features/rank/badge-assets";
 import { LEVEL_LABELS, type TitleLevel } from "@/features/rank/types";
 
 /**
@@ -22,7 +22,7 @@ export default function WornTitle({
   if (!title) return null;
   const lv = (title.level ?? null) as TitleLevel | null;
   const lvLabel = lv ? LEVEL_LABELS[lv] : "";
-  const color = levelTextColor(lv);
+  const color = levelThemedColor(lv);
   const icon = size === "md" ? 20 : 14;
   return (
     <span

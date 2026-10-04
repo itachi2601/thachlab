@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import TitleBadge from "@/components/rank/TitleBadge";
-import { levelTextColor } from "@/features/rank/badge-assets";
+import { levelThemedColor } from "@/features/rank/badge-assets";
 import { LEVEL_LABELS, levelRank, type RankTitle, type TitleLevel } from "@/features/rank/types";
 
 /**
@@ -126,7 +126,7 @@ export default function TitleShowcase({
               </li>
             )}
           </ul>
-          <p className="mt-2 min-h-[16px] text-xs" style={{ color: pickedTitle ? levelTextColor(pickedTitle.level) : undefined }}>
+          <p className="mt-2 min-h-[16px] text-xs" style={{ color: pickedTitle ? levelThemedColor(pickedTitle.level) : undefined }}>
             {pickedTitle ? (
               <>
                 <b>{pickedTitle.name}</b>

@@ -48,7 +48,18 @@ body {
 }
 
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
+/* Màu chữ danh hiệu theo mức (WornTitle, TitleShowcase): pastel cho nền tối, tông đậm cho nền sáng (≥4,5:1 trên trắng). */
+:root {
+  --lv-thuc_tinh: #bff3f9;
+  --lv-lam_chu: #d8e3f7;
+  --lv-huyen_thoai: #d9c4ff;
+  --lv-don: #fff3cf;
+}
 html[data-theme="light"] {
+  --lv-thuc_tinh: #0e7490;
+  --lv-lam_chu: #475569;
+  --lv-huyen_thoai: #6d28d9;
+  --lv-don: #92400e;
   color-scheme: light;
   /* Chữ/viền xanh trên nền sáng cần tông ĐẬM: #2563eb trên #f8fafc = 4,94:1 (vừa đủ), còn
      #3b82f6 chỉ 3,52:1. #1d4ed8 cho 6,41:1 trên nền trang và 6,70:1 trên trắng, đồng thời
