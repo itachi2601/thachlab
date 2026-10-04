@@ -9,7 +9,10 @@ const facts = [
     label: "Hiện tại",
     value: `Giảng viên ngành Cơ khí, ${CONTACT.school} — đứng lớp CNC, tiện, phay`,
   },
-  { label: "Học vấn", value: "Á khoa đầu vào Đại học Sư phạm Kỹ thuật TP.HCM" },
+  {
+    label: "Học vấn",
+    value: "Thạc sĩ Đại học Bách khoa TP.HCM · Á khoa đầu vào Đại học Sư phạm Kỹ thuật TP.HCM",
+  },
   {
     label: "Dạy THPT",
     value: `Luyện Vật lý THPT hơn ${CONTACT.years} năm · KHTN 9, Vật lý 10–12 theo chương trình 2018`,
@@ -59,7 +62,7 @@ export default function AboutFounder() {
             Một chút về thầy Thạch
           </h2>
           <p className="mt-5 font-display text-lg leading-snug text-ink">
-            Hơn {CONTACT.years} năm luyện Vật lý THPT, ban ngày đứng xưởng máy ở Cao Thắng
+            Hơn {CONTACT.years} năm luyện Vật lý THPT và giảng dạy cơ khí chế tạo
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Thầy luyện Vật lý THPT từ hơn {CONTACT.years} năm nay, từng đậu á khoa Đại học Sư phạm Kỹ
@@ -68,8 +71,8 @@ export default function AboutFounder() {
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Nghề chính của thầy là giảng viên ngành Cơ khí tại {CONTACT.school}, một trong những
-            trường đào tạo kỹ sư thực hành hàng đầu Việt Nam. Ngày thường đứng cạnh máy tiện, máy phay,
-            máy CNC cùng sinh viên, nên với thầy vật lý chưa bao giờ chỉ nằm trên giấy: mỗi kiến thức
+            trường đào tạo kỹ sư thực hành hàng đầu Việt Nam. Thầy giảng dạy cơ khí chế tạo — tiện, phay,
+            CNC — cùng sinh viên, nên với thầy vật lý chưa bao giờ chỉ nằm trên giấy: mỗi kiến thức
             đều phải đi kèm một ví dụ cụ thể ngoài đời — lực ma sát là chuyện bánh xe, áp suất là chuyện
             nồi áp suất trong bếp — để em hiểu và dùng được, không học thuộc để trả bài.
           </p>
