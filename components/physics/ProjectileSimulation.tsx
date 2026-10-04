@@ -49,7 +49,6 @@ const ACCENT = "#22D3EE";
 const ACCENT_DIM = "rgba(34,211,238,0.55)";
 const WARM = "#FBBF24";
 const SLATE_400 = "#94A3B8";
-const SLATE_500 = "#64748B";
 const SLATE_600 = "#475569";
 const SLATE_700 = "#334155";
 
@@ -95,6 +94,17 @@ interface SceneParams {
   earthMarker: number | null;
 }
 
+const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+
+/**
+ * Hệ số phóng to nét/chữ/theo bề ngang khung: khung desktop rộng gấp đôi điện thoại
+ * thì nét vẽ, viên đạn và chữ cũng phải to lên, nếu không sẽ thành "UI điện thoại
+ * phóng to" — nhìn nhỏ và rỗng.
+ */
+function scaleFor(width: number): number {
+  return Math.max(0.85, Math.min(1.55, width / 520));
+}
+
 function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -108,17 +118,24 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, geo.w, geo.h);
 
+  const k = scaleFor(geo.w);
   const X = (xm: number) => PAD_L + xm * geo.s;
   const Y = (ym: number) => geo.groundY - ym * geo.s;
   const rad = (deg: number) => (deg * Math.PI) / 180;
+  const setFont = (size: number) => {
+    ctx.font = `${size}px ${MONO}`;
+  };
+  const fsRuler = Math.max(11, 12 * k);
+  const fsValue = Math.max(12, 13 * k);
 
-  // --- nền + lưới 5 m ---
+  // --- nền + lưới ---
   const bg = ctx.createLinearGradient(0, 0, 0, geo.groundY);
   bg.addColorStop(0, STAGE_BG_TOP);
   bg.addColorStop(1, STAGE_BG_BOTTOM);
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, geo.w, geo.groundY);
 
+  // Lưới mỗi 5 m (Mặt Trăng: 25 m) — cùng tỉ lệ ở cả hai trục nên ô lưới là hình vuông thật.
   const gridStep = geo.xMax > 120 ? 25 : 5;
   ctx.strokeStyle = "rgba(148,163,184,0.10)";
   ctx.lineWidth = 1;
@@ -135,7 +152,26 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.stroke();
   }
 
-  // --- mặt đất + thước đo ---
+  // --- thang đo ĐỘ CAO ở lề trái ---
+  // Không chỉ để đẹp: nhờ nó vùng trời phía trên quỹ đạo thành không gian đo được
+  // ("đỉnh cao 10 m" có mốc để đối chiếu) thay vì một khoảng trống.
+  ctx.textAlign = "left";
+  setFont(fsRuler);
+  for (let y = gridStep; Y(y) > PAD_T + 3; y += gridStep) {
+    const py = Y(y);
+    // Bỏ qua dải trên cùng: dòng gợi ý "Kéo từ bệ phóng…" nằm đè ở đó (nhãn sẽ bị che).
+    if (py < 42) continue;
+    ctx.strokeStyle = "rgba(148,163,184,0.20)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(PAD_L - 5 * k, py);
+    ctx.lineTo(PAD_L, py);
+    ctx.stroke();
+    ctx.fillStyle = "rgba(100,116,139,0.95)";
+    ctx.fillText(`${y} m`, 6, py + fsRuler * 0.35);
+  }
+
+  // --- mặt đất + thước đo ngang ---
   ctx.strokeStyle = SLATE_700;
   ctx.lineWidth = 2;
   ctx.beginPath();
@@ -145,29 +181,35 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
 
   ctx.strokeStyle = "rgba(51,65,85,0.75)";
   ctx.lineWidth = 1;
-  for (let i = 0; i < 26; i++) {
-    const x = (geo.w * i) / 25;
+  const hatches = Math.max(12, Math.round(geo.w / 22));
+  for (let i = 0; i < hatches; i++) {
+    const x = (geo.w * i) / (hatches - 1);
     ctx.beginPath();
     ctx.moveTo(x, geo.groundY);
-    ctx.lineTo(x - 8, geo.groundY + 12);
+    ctx.lineTo(x - 8 * k, geo.groundY + 12 * k);
     ctx.stroke();
   }
 
   const rulerStep = geo.xMax <= 60 ? 10 : 50;
-  ctx.fillStyle = SLATE_500;
-  ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
+  setFont(fsRuler);
   ctx.textAlign = "center";
   for (let x = rulerStep; x <= geo.xMax; x += rulerStep) {
     ctx.strokeStyle = SLATE_600;
     ctx.beginPath();
     ctx.moveTo(X(x), geo.groundY);
-    ctx.lineTo(X(x), geo.groundY + 7);
+    ctx.lineTo(X(x), geo.groundY + 7 * k);
     ctx.stroke();
-    ctx.fillText(`${x} m`, X(x), geo.groundY + 20);
+    ctx.fillStyle = SLATE_400;
+    ctx.fillText(`${x} m`, X(x), geo.groundY + 8 * k + fsRuler);
   }
   ctx.textAlign = "left";
 
-  const drawPath = (points: Point[], color: string, width: number, dash: number[] = []) => {
+  const drawPath = (
+    points: Point[],
+    color: string | CanvasGradient,
+    width: number,
+    dash: number[] = []
+  ) => {
     if (points.length < 2) return;
     ctx.save();
     ctx.setLineDash(dash);
@@ -183,31 +225,43 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.restore();
   };
 
+  // Vệt quỹ đạo mờ dần về phía đã đi qua: mắt đọc được chiều chuyển động ngay cả
+  // khi chỉ nhìn một khung hình tĩnh.
+  const drawMotionTrail = (points: Point[], maxAlpha: number) => {
+    if (points.length < 2) return;
+    const first = points[0];
+    const last = points[points.length - 1];
+    const gradient = ctx.createLinearGradient(X(first.x), Y(first.y), X(last.x), Y(last.y));
+    gradient.addColorStop(0, `rgba(34,211,238,${maxAlpha * 0.06})`);
+    gradient.addColorStop(1, `rgba(34,211,238,${maxAlpha})`);
+    drawPath(points, gradient, 2.4 * k);
+  };
+
   // --- vết các lần ném trước (mờ dần theo thứ tự) ---
   p.ghosts.forEach((ghost, i) => {
     const alpha = 0.13 + 0.08 * i;
-    drawPath(ghost.dots, `rgba(148,163,184,${alpha})`, 1.5, [5, 5]);
+    drawPath(ghost.dots, `rgba(148,163,184,${alpha})`, 1.5 * k, [5, 5]);
     const landing = ghost.dots[ghost.dots.length - 1];
     if (!landing) return;
     ctx.fillStyle = `rgba(148,163,184,${alpha + 0.15})`;
     ctx.beginPath();
-    ctx.arc(X(landing.x), Y(landing.y), 2.5, 0, Math.PI * 2);
+    ctx.arc(X(landing.x), Y(landing.y), 2.5 * k, 0, Math.PI * 2);
     ctx.fill();
   });
 
   // --- nét đứt: quỹ đạo sắp ném (chỉ khi đang ngắm) ---
   if (p.phase === "aim") {
     const preview = trajectoryPoints(p.v0, p.angle, GRAVITIES[p.gKey].g, 70);
-    drawPath(preview, ACCENT_DIM, 1.6, [6, 6]);
+    drawPath(preview, ACCENT_DIM, 1.7 * k, [6, 6]);
     const range = rangeOf(p.v0, p.angle, GRAVITIES[p.gKey].g);
     ctx.fillStyle = "rgba(34,211,238,0.75)";
     ctx.beginPath();
-    ctx.arc(X(range), Y(0), 3.5, 0, Math.PI * 2);
+    ctx.arc(X(range), Y(0), 3.5 * k, 0, Math.PI * 2);
     ctx.fill();
     // Nhãn chỉ hiện trong lúc đang kéo: để thường trực thì nó đè lên nhãn độ cao h ở đỉnh.
     if (p.isAiming) {
       ctx.fillStyle = "#67E8F9";
-      ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
+      setFont(fsValue);
       ctx.textAlign = "center";
       ctx.fillText(
         "quỹ đạo sắp ném",
@@ -225,21 +279,22 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
       ctx.save();
       ctx.setLineDash([4, 4]);
       ctx.strokeStyle = "rgba(251,191,36,0.55)";
-      ctx.lineWidth = 1.4;
+      ctx.lineWidth = 1.4 * k;
       ctx.beginPath();
       ctx.moveTo(x, geo.groundY);
-      ctx.lineTo(x, geo.groundY - 46);
+      ctx.lineTo(x, geo.groundY - 46 * k);
       ctx.stroke();
       ctx.restore();
       ctx.fillStyle = WARM;
-      ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
-      ctx.fillText(`Trái Đất: ${formatNumber(p.earthMarker, 0)} m`, Math.min(x + 5, geo.w - 104), geo.groundY - 50);
+      setFont(fsRuler);
+      const text = `Trái Đất: ${formatNumber(p.earthMarker, 0)} m`;
+      ctx.fillText(text, Math.min(x + 5, geo.w - ctx.measureText(text).width - 6), geo.groundY - 50 * k);
     }
   }
 
   // --- lần ném vừa rồi: nét liền + mốc tầm xa ---
   if (p.phase === "aim" && p.lastShot) {
-    drawPath(p.trail, "rgba(34,211,238,0.6)", 2);
+    drawMotionTrail(p.trail, 0.6);
     const x = X(Math.min(p.lastShot.range, geo.xMax));
     ctx.save();
     ctx.setLineDash([3, 4]);
@@ -247,12 +302,13 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(x, geo.groundY);
-    ctx.lineTo(x, geo.groundY - 30);
+    ctx.lineTo(x, geo.groundY - 30 * k);
     ctx.stroke();
     ctx.restore();
+    setFont(fsValue);
+    const rangeText = `R = ${formatNumber(p.lastShot.range, 1)} m`;
     ctx.fillStyle = ACCENT;
-    ctx.font = "13px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillText(`R = ${formatNumber(p.lastShot.range, 1)} m`, Math.min(x + 4, geo.w - 94), geo.groundY - 34);
+    ctx.fillText(rangeText, Math.min(x + 4, geo.w - ctx.measureText(rangeText).width - 4), geo.groundY - 34 * k);
 
     // độ cao cực đại của lần ném đó
     const xApex = X(p.lastShot.range / 2);
@@ -266,7 +322,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.stroke();
     ctx.restore();
     ctx.fillStyle = SLATE_400;
-    ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
+    setFont(fsRuler);
     ctx.fillText(`h = ${formatNumber(p.lastShot.apex, 1)} m`, xApex + 5, yApex + 4);
   }
 
@@ -274,29 +330,34 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   if (p.phase === "flight") {
     const g = GRAVITIES[p.gKey].g;
     const pos = positionAt(p.t, p.v0, p.angle, g);
-    drawPath(p.trail, "rgba(34,211,238,0.85)", 2.2);
+    const bx = X(pos.x);
+    const by = Y(pos.y);
+
+    drawMotionTrail(p.trail, 0.9);
+
     ctx.fillStyle = ACCENT;
     p.dots.forEach((dot) => {
       ctx.beginPath();
-      ctx.arc(X(dot.x), Y(dot.y), 2.4, 0, Math.PI * 2);
+      ctx.arc(X(dot.x), Y(dot.y), 2.4 * k, 0, Math.PI * 2);
       ctx.fill();
     });
 
-    // Phân tích vận tốc: vₓ không đổi, v_y đổi dấu ở đỉnh.
-    if (p.showDots) {
-      const a = rad(p.angle);
-      const vx = p.v0 * Math.cos(a);
-      const vy = p.v0 * Math.sin(a) - g * p.t;
-      drawArrow(ctx, X(pos.x), Y(pos.y), X(pos.x + vx * 0.22), Y(pos.y), "rgba(94,234,212,0.9)", "vₓ");
-      drawArrow(ctx, X(pos.x), Y(pos.y), X(pos.x), Y(pos.y - vy * 0.22), "rgba(251,191,36,0.9)", "v_y");
-    }
+    // Hai thành phần vận tốc: vₓ không đổi, v_y giảm dần rồi đổi dấu ở đỉnh.
+    // Lưu ý hệ toạ độ màn hình (y hướng xuống): vy > 0 thì mũi tên phải chỉ LÊN,
+    // nên độ dời trên màn hình là −vy · (px trên mỗi m/s).
+    const a = rad(p.angle);
+    const vx = p.v0 * Math.cos(a);
+    const vy = p.v0 * Math.sin(a) - g * p.t;
+    const pxPerVel = 0.26 * geo.s;
+    drawArrow(ctx, bx, by, bx + vx * pxPerVel, by, "rgba(94,234,212,0.95)", "v", "x", k);
+    drawArrow(ctx, bx, by, bx, by - vy * pxPerVel, "rgba(251,191,36,0.95)", "v", "y", k);
 
     ctx.save();
-    ctx.shadowColor = "rgba(34,211,238,0.7)";
-    ctx.shadowBlur = 12;
+    ctx.shadowColor = "rgba(34,211,238,0.75)";
+    ctx.shadowBlur = 12 * k;
     ctx.fillStyle = "#E6FEFF";
     ctx.beginPath();
-    ctx.arc(X(pos.x), Y(pos.y), 6, 0, Math.PI * 2);
+    ctx.arc(bx, by, 6 * k, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   } else if (p.lastShot) {
@@ -304,10 +365,10 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     if (end) {
       ctx.save();
       ctx.shadowColor = "rgba(34,211,238,0.7)";
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 12 * k;
       ctx.fillStyle = "#E6FEFF";
       ctx.beginPath();
-      ctx.arc(X(Math.min(end.x, geo.xMax)), Y(end.y), 6, 0, Math.PI * 2);
+      ctx.arc(X(Math.min(end.x, geo.xMax)), Y(end.y), 6 * k, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
@@ -320,15 +381,15 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   ctx.rotate(-rad(p.angle));
   ctx.fillStyle = "#1E293B";
   ctx.strokeStyle = SLATE_600;
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1.5 * k;
   ctx.beginPath();
-  ctx.roundRect(-6, -6, 40, 12, 4);
+  ctx.roundRect(-6 * k, -6 * k, 40 * k, 12 * k, 4 * k);
   ctx.fill();
   ctx.stroke();
   ctx.restore();
   ctx.fillStyle = SLATE_700;
   ctx.beginPath();
-  ctx.roundRect(ax - 12, ay - 2, 24, 16, 3);
+  ctx.roundRect(ax - 12 * k, ay - 2 * k, 24 * k, 16 * k, 3 * k);
   ctx.fill();
   // Không ghi nhãn "bệ phóng" lên khung: hàng dưới mặt đất đã dành cho thước đo
   // (nhãn sẽ đè lên "10 m"), còn trên mặt đất thì vướng quỹ đạo. Chú thích đã có
@@ -339,7 +400,7 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.save();
     ctx.setLineDash([4, 4]);
     ctx.strokeStyle = "rgba(251,191,36,0.8)";
-    ctx.lineWidth = 1.6;
+    ctx.lineWidth = 1.6 * k;
     ctx.beginPath();
     ctx.moveTo(ax, ay);
     ctx.lineTo(p.pointer.x, p.pointer.y);
@@ -347,19 +408,20 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
     ctx.restore();
     ctx.fillStyle = "rgba(251,191,36,0.9)";
     ctx.beginPath();
-    ctx.arc(p.pointer.x, p.pointer.y, 5, 0, Math.PI * 2);
+    ctx.arc(p.pointer.x, p.pointer.y, 5 * k, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = "rgba(251,191,36,0.5)";
-    ctx.lineWidth = 1.4;
+    ctx.lineWidth = 1.4 * k;
     ctx.beginPath();
-    ctx.arc(ax, ay, 30, -rad(p.angle), 0);
+    ctx.arc(ax, ay, 30 * k, -rad(p.angle), 0);
     ctx.stroke();
     ctx.fillStyle = WARM;
-    ctx.font = "13px ui-monospace, SFMono-Regular, Menlo, monospace";
+    setFont(fsValue);
     ctx.fillText(`${Math.round(p.angle)}°  ·  ${formatNumber(p.v0, 1)} m/s`, p.pointer.x + 10, p.pointer.y - 8);
   }
 }
 
+/** Mũi tên vector có nhãn kiểu vₓ / v_y (chỉ số dưới vẽ nhỏ hơn và hạ xuống). */
 function drawArrow(
   ctx: CanvasRenderingContext2D,
   x1: number,
@@ -367,26 +429,36 @@ function drawArrow(
   x2: number,
   y2: number,
   color: string,
-  label: string
+  label: string,
+  sub: string | null,
+  k: number
 ) {
   const dx = x2 - x1;
   const dy = y2 - y1;
-  if (Math.hypot(dx, dy) < 8) return;
+  if (Math.hypot(dx, dy) < 9 * k) return;
   ctx.strokeStyle = color;
-  ctx.lineWidth = 1.6;
+  ctx.lineWidth = 1.7 * k;
   ctx.beginPath();
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.stroke();
   const ang = Math.atan2(dy, dx);
+  const head = 7 * k;
   ctx.fillStyle = color;
   ctx.beginPath();
   ctx.moveTo(x2, y2);
-  ctx.lineTo(x2 - 7 * Math.cos(ang - 0.4), y2 - 7 * Math.sin(ang - 0.4));
-  ctx.lineTo(x2 - 7 * Math.cos(ang + 0.4), y2 - 7 * Math.sin(ang + 0.4));
+  ctx.lineTo(x2 - head * Math.cos(ang - 0.4), y2 - head * Math.sin(ang - 0.4));
+  ctx.lineTo(x2 - head * Math.cos(ang + 0.4), y2 - head * Math.sin(ang + 0.4));
   ctx.fill();
-  ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
-  ctx.fillText(label, x2 + 4, y2 + 4);
+
+  const fs = Math.max(11, 12 * k);
+  ctx.font = `${fs}px ${MONO}`;
+  const labelWidth = ctx.measureText(label).width;
+  ctx.fillText(label, x2 + 5, y2 + 4);
+  if (sub) {
+    ctx.font = `${Math.max(9, fs - 3)}px ${MONO}`;
+    ctx.fillText(sub, x2 + 5 + labelWidth + 0.5, y2 + 4 + fs * 0.3);
+  }
 }
 
 const MESSAGE_STYLE: Record<"goal" | "best" | "win", string> = {
@@ -532,7 +604,7 @@ export function ProjectileSimulation() {
           onPointerUp={finishPointer}
           onPointerCancel={finishPointer}
           onKeyDown={onKeyDown}
-          className="block aspect-[2.2] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.1] lg:aspect-[2.7]"
+          className="block aspect-[2.2] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.1] lg:aspect-[2.3]"
         />
         {/* Dòng gợi ý nằm trên nền canvas luôn tối nên phải dùng màu cố định: lớp phủ theme sáng
             trong globals.css đổi .text-slate-200 thành chữ sẫm → chữ sẫm trên nền tối (M2). */}
@@ -543,7 +615,7 @@ export function ProjectileSimulation() {
         )}
       </div>
 
-      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
+      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono lg:grid-cols-6">
         <div>
           <dt className="text-[13px] text-slate-500">Góc ném</dt>
           <dd className="text-sm text-ink">{formatNumber(sim.angle, 0)}°</dd>

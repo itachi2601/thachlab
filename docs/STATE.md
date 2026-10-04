@@ -11,6 +11,18 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Hero có thêm tab "Giao thoa" — khay sóng hai nguồn (5/10/2026)**: mô phỏng theo đúng spec
+  `content/thi-nghiem/tn-l11-giaothoa-01.json` (Bài 12 Giao thoa sóng, Vật lí 11):
+  `components/physics/InterferenceSimulation.tsx` + `hooks/useInterferenceTank.ts` + `lib/interference.ts`
+  (toán thuần, test được). Vẽ **bản đồ bao hình biên độ** bằng canvas 2D (không vòng lặp rAF, không animation
+  → B4): học sinh chạm/kéo điểm M để tự đọc ra d₂ − d₁ = kλ (cực đại) và (k + ½)λ (cực tiểu), bấm **tắt
+  nguồn B** để thấy vân biến mất; N_max/N_min khớp cả 4 hàng `so_lieu_mau` của spec (kiểm bằng
+  `tmp/hero-review/interference-math.mts`). Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary`: chunk
+  riêng 14 KB raw / 5 KB gzip nên **JS tải đầu trang chủ không đổi** (216 KB gzip, đo bằng
+  `tmp/hero-review/firstload.mjs`). Quy tắc áp dụng: B4, D2, D4 (3 tab vẫn lộ hết ở 375px), M2, M4 (nói
+  bằng chữ, không chỉ bằng màu), N7, C1, H3. Phần gắn tab nằm trong `components/home/PhysicsSimulationHero.tsx`
+  — file một phiên khác cũng đang sửa (tab "Thả hàng") nên **chưa commit**; commit nốt file đó sau khi phiên
+  kia xong, kẻo kéo việc dở của phiên kia vào main.
 - **Hero trang chủ thành mô phỏng chuyển động ném xiên (5/10/2026)**: thay con lắc lò xo mặc định bằng
   thí nghiệm kéo-thả ná cao su (`components/physics/ProjectileSimulation.tsx` + `hooks/useProjectileMotion.ts`
   + `lib/projectile.ts`), con lắc lò xo chuyển thành tab 2 và được **nạp chậm** (`HarmonicPanel.tsx` qua
