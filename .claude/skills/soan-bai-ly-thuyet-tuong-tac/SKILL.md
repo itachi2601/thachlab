@@ -123,6 +123,21 @@ Bài mẫu còn nhiều chữ. Phong cách thầy: **mỗi kiến thức/định
 18. **Bài Mô tả sóng KHÔNG còn là khuôn về độ dài** (đo lại 2/10/2026): 3.021 từ hiện ngay (~22 phút), mục con "Năm đại lượng đặc trưng" 489 từ trong một `<h4>`, một đoạn 478 từ liền không có gì để làm — trong khi ba bài ngắn (1.103–1.537 từ, 8–11 phút) mới là mức đọc thoải mái. Đã cắt còn 2.457 từ (0 lỗi cứng). Trước khi giao bài, chạy `scripts/lint_do_dai.py`; mục vượt 480 từ phải tách mục con. Hạn mức + lý do: `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`.
 19. **Bảng 3 cột ở 375px rất dễ bị bóp chữ** (phát hiện 2/10/2026 khi xem ảnh bài Mô tả sóng): bảng "Đại lượng | Ký hiệu (đơn vị) | Nghĩa…" làm header cột giữa xuống dòng từng chữ, bảng so sánh có ô header rỗng làm nhãn hàng gãy giữa chữ ("Phu/thu/ộc"). Script `--kiem-tran` chỉ bắt tràn ngang, **không bắt được cái này** — phải xem ảnh. Cách sửa: gộp về **bảng 2 cột** (ô đầu = đối tượng, ô sau = nghĩa), hoặc đổi thành 2 khối/danh sách song song. Giữ 3 cột chỉ khi cả 3 header đều ngắn (kiểu bảng *Câu trong đề / Dữ liệu / Kiến thức*).
 
+### Lỗi kiểm chéo bắt được ở cả 14 bài lớp 12 (4/10/2026) — soát trước khi giao
+
+Đợt 14 bài, **bài nào cũng bị bắt ít nhất một lỗi `chan`**; đây là các nhóm lỗi lặp lại, kiểm trước khi trình thầy:
+
+20. **Không để `$…$` trong `<text>` của SVG.** KaTeX auto-render chèn `<span>` HTML vào trong SVG → **chữ biến mất** (bài 6 Boyle/Charles mất nhãn V, p, T₁, T₂; chỉ lộ khi xem ảnh). Nhãn hình viết chữ thường + `<tspan baseline-shift="sub">` cho chỉ số dưới.
+21. **Phản hồi sai phải gọi tên đúng phương án ĐANG hiển thị.** Xoá/xáo phương án mà quên sửa `.tl-fb--no` → học sinh đọc "D — bỏ hệ số 931,5" trong khi bài chỉ có A, B, C (bài 15 hạt nhân, bài 5). Kiểm chéo phải so **từng chữ cái trong phản hồi** với danh sách phương án thật.
+22. **Số liệu bảng thí nghiệm phải khớp phương trình `mo_hinh` của chính file JSON.** Đợt này bắt được: bảng Boyle lệch ~7 % so với `L = 21,8·760/(760+h)`; bảng lưỡng cực khớp `m = 0,02 A·m²` nhưng `tham_so` khai 0,5 (lệch 25 lần); "6,8·10¹¹ J ≈ hai vạn tấn than" (đúng là 23 tấn); "chậm hơn hàng nghìn lần" trong khi tỉ số là 2 vạn. Quy tắc: **tính lại bằng script**, đừng ước lượng bằng mắt.
+23. **Hình SVG phải kiểm bằng TOẠ ĐỘ, không chỉ bằng mắt:** chấm dữ liệu phải nằm trên đường (bài 7: chấm đỏ lệch 26 px khỏi hypebol), trục phải chia tuyến tính (bài 7: 27 K và 60 K vẽ dài bằng nhau), mũi tên phải đúng chiều vật lí (bài 9: hai mũi "hút nhau" lại chĩa ra ngoài; từ trường chữ U vẽ S→N), đầu mũi phải nằm trên cung. `--kiem-tran` **không** bắt được nhóm lỗi này.
+24. **Đáp án đúng không được dồn một chữ cái.** Bài 5 có 6/8 quiz đúng ở A (đoán A ăn 75 %). Xáo vị trí rồi **đổi luôn hậu tố `id`** cho khớp chữ cái mới, và đừng để nhóm "Em chắc" trùng `name` với một phương án.
+25. **Thí nghiệm "đo" phải khớp ở ba chỗ:** bước *Làm* (số lần đo) ↔ bảng trong `theory.html` ↔ `so_lieu_mau` của file JSON. Bài 6 nói đẩy tới 3,0 ml mà bảng chỉ 4 hàng; nói ngâm "nước sôi" mà bảng dừng ở 75 °C.
+26. **Số phút trong khung "🎯 Mục tiêu" phải khớp `lint_do_dai.py`** (bài 9 ghi 13 phút, đo ra 17,7; bài 18 ghi 15, đo ra 17,8). Chạy lint rồi mới điền số.
+27. **Số hình theo đúng thứ tự xuất hiện** trong bài (bài 15 hạt nhân: 1 → 4 → 2 → 3).
+28. **Đối chiếu TỪNG gạch đầu dòng của bản cũ trước khi bỏ.** Đợt này bỏ sót: định nghĩa mặt nam/mặt bắc của dòng điện tròn (bài 9), áp suất theo cột nước + trường hợp bịt kín hai đầu (bài 6), đặc điểm giống tạo bằng chiếu xạ + cảnh báo (bài 18). Ghi danh sách "ý bắt buộc" ra trước khi viết, rồi so lại sau.
+29. **Viết ~2.300 từ hiện ngay, chừa chỗ cho lời giải.** Thêm lời giải bài toán mẫu và khối "điền bước trống" ở vòng sửa dễ đẩy bài qua 2.500 từ rồi phải cắt lại (bài 6 từng 2.840 → 2.464; bài 7 phải cắt để nhét lời giải).
+
 ## Cần kiểm tra khi thầy xem được bài mẫu (điền tiếp)
 
 - [ ] Radio tự chấm hiện đúng trong app thật (không bị React/`ContentHtml` render lại làm mất chọn)?
@@ -197,6 +212,22 @@ thì chạy lại một lần, **tuyệt đối không sửa file của bài kh�
 - **`xem-thu/` không commit.** 13 bài lớp 12 cho ra 43 MB ảnh — nặng vĩnh viễn cho repo, mà sinh lại được
   bằng hai lệnh (`build_preview.py` rồi `chup_anh.py`). Commit `theory.html` + `theory.src.html` +
   `build_figs.py` + `build_bundle.py` + `bundle.json` là đủ; để `xem-thu/` lại trên máy cho thầy xem.
+- **Rà hiện trạng bằng DB, đừng tin `public/data/`.** `public/data/lessons/<id>.json` là bản build tĩnh cuối
+  cùng, **không phải DB**: bài 2 hiện `tl=false` trong file tĩnh nhưng DB đã có bản tương tác từ trước → suýt
+  chọn lại bài đã xong và suýt đăng đè. Trước khi chọn bài phải `select kind, body_html from lesson_items`
+  (`kind='ly_thuyet'`) rồi mới kết luận bài nào còn thiếu.
+- **Tiền tố id theo `lesson_id`, không theo "Bài N".** Lớp 12 có **hai "Bài 14"** (chương Từ trường id 125 và
+  chương Hạt nhân id 15) — đánh theo số bài là trùng và khó tra. Đặt `tl125-…`, `tl15-…` theo id; nhờ vậy mới
+  phát hiện phiên khác đang dùng `tl15-` cho bài 15 (khác bài với `tl15-` của mình).
+- **Giữ bộ ba nguồn `theory.src.html` + `build_figs.py` + `build_bundle.py`.** Nguồn chứa mốc `<!--FIGn-->`;
+  `build_figs.py` sinh hình rồi dựng `theory.html`; `build_bundle.py` dựng `bundle.json` từ `theory.html`.
+  Ba bản luôn khớp byte, sửa một chỗ không sợ quên đồng bộ (13 bài đợt này đều theo khuôn đó).
+- **Đăng theo lô rồi deploy MỘT lần.** 13 bài ghi DB mất ~2 phút (`cap-nhat-ly-thuyet.sh … --yes` trong vòng
+  lặp, log `scripts/logs/dang-13-bai-l12-*.log`); chỉ deploy một lần ở cuối, đừng deploy từng bài.
+- **Kiểm chứng ba tầng sau khi đăng** (đừng tin "chắc là lên rồi"): (1) **DB** — `lesson_items` của đúng bài có
+  `tl-quiz`; (2) **bản build** — đọc `out/data/lessons/<id>.json` trong worktree deploy xem có `tl-quiz`;
+  (3) **web thật** — `curl https://thachlab.id.vn/data/lessons/<id>.json`. Hosting chỉ kéo bản mới sau **5–10
+  phút**, nên lần `curl` đầu vẫn ra bài cũ là bình thường — phải chờ rồi kiểm lại mới kết luận.
 
 **Đo đợt 4/10/2026 (14 bài Vật lí 12, trừ bài thực hành đo + kiểm tra):** 1 bài chạy thử một mình + 3 lô
 (3 + 5 + 5 bài) + 1 vòng kiểm lại 5 bài = **~50 lượt subagent**, khoảng **2 giờ** tính từ lúc bắt đầu soạn đến
