@@ -1,6 +1,6 @@
 ---
 name: project_thachlab_de_lop10_24_25
-description: "Số hoá bộ đề Vật lí 10 năm 24-25 (364 bộ trong 1190 file, thư mục CT2025_VietnamTeach) bằng script scripts/dang-de-l10-24-25.py — thí điểm 6 bộ xong 4/10/2026 (exam 475–480, mục 53 lesson 113 đang ẩn); còn 358 bộ chờ chạy --all; lời giải + nhãn Chủ đề chưa có; tự luận bị cắt"
+description: "Số hoá bộ đề Vật lí 10 năm 24-25 (364 bộ/1190 file) bằng scripts/dang-de-l10-24-25.py — 4/10/2026 chạy hết: 176 đề (exam 475–650) vào 4 mục Kiểm tra giữa/cuối kì lớp 10 ĐANG ẨN (lesson 113–116); 167 bộ chưa đăng được liệt kê ở scripts/data/de-l10-24-25-can-xem.md; lời giải + nhãn Chủ đề chưa có; tự luận bị cắt"
 metadata:
   type: project
 ---
@@ -37,8 +37,14 @@ Hưng, đều GHK1 → item 53.** Đã đối chiếu tay đáp án 3 đề vớ
 code + vá dữ liệu 187/448 đề trên DB (1141 chỗ) qua REST PATCH, sao lưu questions gốc ở
 `scripts/logs/fix-accent-backup-2026-10-04.json` (gitignore — đừng xoá).
 
-**Còn chờ:** (a) chạy hết: `python3 scripts/dang-de-l10-24-25.py --all` (364 bộ, ~3 phút/bộ, có `--limit/--offset`), xem
-run.json: OK / SKIP>20% / LỆCH / LỖI, bộ LỆCH+LỖI để thầy xem; (b) nhãn Chủ đề/Dạng = 0 cho mọi câu (script không gọi được Edge
+**Chạy hết 4/10/2026 (2 lượt, lượt 2 sau khi vá script: xlsx cột dài/cột=mã/chuỗi ĐSSĐ, đánh số tự động, suy PHẦN theo
+cấu trúc, trải bảng phương án):** 355 bộ → **176 OK** (GHK1 61 → item 53; HK1 72 + TỔNG HỢP 8 → item 54; GHK2 20 → item 55;
+HK2 15 → item 56), 12 TRÙNG, 118 SKIP>20%, 46 LỆCH, 3 LỖI. Lý do chưa đăng: 56 bộ không có đáp án ở đâu cả, 50 bộ phương án/đáp án
+không đọc được (>20%), 36 lệch số câu, 13 đề nằm trong hộp văn bản/bảng lạ, 10 thiếu hình. Danh sách + lý do từng bộ:
+`scripts/data/de-l10-24-25-can-xem.md` (kèm 20 đề đã đăng có phương án trùng chữ, đề 593 có 50 câu). Kiểm máy trên 176 đề: 0 câu
+thiếu đáp án, 0 mốc ⟦⟧, 0 lệnh LaTeX dính chữ. Thầy chưa "Hiện" 4 mục.
+
+**Còn chờ:** (a) thầy xem can-xem.md, sửa file gốc rồi chạy lại từng bộ bằng `--sets "<tên>"`; bật "Hiện" 4 mục; (b) nhãn Chủ đề/Dạng = 0 cho mọi câu (script không gọi được Edge
 Function classify) → cần đợt gắn nhãn sau (API hoặc trang Đăng đề); (c) lời giải: viết script API theo mẫu
 `scripts/backfill-distractor-notes.mts`; (d) tên đề tự suy từ đầu file ("Giữa HK1 2024–2025 – THPT X – Tỉnh"), thầy sửa ở
 /quan-tri/sua-de nếu lệch; (e) tự luận (xem quyết định 4). Liên quan: [[feedback_batch_agent_upload_efficiency]],

@@ -62,4 +62,4 @@
 - [Rank: thi thăng hạng thích ứng + luyện từng câu](project_thachlab_rank_gate_adaptive.md) — đánh giá 3/10 + spec bàn giao Sonnet (docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md)
 - [Claude API: thinking tính vào max_tokens](reference_anthropic_api_thinking_max_tokens.md) — script backfill để max_tokens ≥16000 + effort low; log stop_reason
 - [Bài mẫu trống dù DB còn (4/10)](project_thachlab_worked_examples_blank.md) — file tĩnh không chứa lời giải, lượt Supabase hỏng → trống; đã vá + deploy 5967310a8; nguyên nhân gốc trên máy thầy chưa xác nhận
-- [Đề Vật lí 10 năm 24-25](project_thachlab_de_lop10_24_25.md) — 364 bộ/1190 file, script dang-de-l10-24-25.py; thí điểm 6 bộ xong 4/10 (exam 475–480, mục ẩn); còn 358 bộ `--all`, nhãn + lời giải + tự luận chưa làm
+- [Đề Vật lí 10 năm 24-25](project_thachlab_de_lop10_24_25.md) — 364 bộ/1190 file, script dang-de-l10-24-25.py; 4/10 chạy hết: 176 đề (exam 475–650) vào 4 mục Kiểm tra giữa/cuối kì lớp 10 ĐANG ẨN; 167 bộ chưa được ở scripts/data/de-l10-24-25-can-xem.md; nhãn + lời giải + tự luận chưa làm
