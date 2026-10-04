@@ -11,6 +11,23 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Hero có tab 4 "Hình chiếu" — bóng của M quay đều đồng nhịp với con lắc lò xo (4/10/2026)**:
+  `components/physics/ShadowSpringSimulation.tsx` + `hooks/useCircularProjection.ts` + `lib/circularProjection.ts`
+  (toán thuần; 34 kiểm ở `tmp/hero-review/hinhchieu-check.mts`, gồm đối chiếu `so_lieu_mau` của spec
+  `tn-l11-daodongdieuhoa-03`). Hai hệ chạy trên **cùng một trục x**: làn trên là đường tròn bán kính A₁ = 6 cm có
+  điểm M quay đều (Q là hình chiếu, có chấm mỗi 0,1 s để thấy bóng KHÔNG chuyển động đều), làn dưới là con lắc
+  lò xo **nằm ngang** (k = 4 N/m, chỉnh m) — học sinh tự khớp ω = √(k/m) rồi tự thử câu hỏi chính: *kéo con lắc
+  ra xa gấp đôi thì nhịp có đổi không?* (không: T = 2π√(m/k) không chứa A).
+  Câu nhận xét tách **5 trạng thái**; `samePeriod` là chỗ dễ nói sai nhất: **khớp ω chỉ làm hiệu pha THÔI TĂNG,
+  không xoá phần đã lệch** — cùng chu kì vẫn có thể khác pha, muốn trùng nhau phải thả cùng lúc (nút "Đặt lại").
+  Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary`: JS tải đầu trang chủ **216 KB gzip — không đổi** so với
+  baseline 3 tab, chunk riêng 17 KB raw / 6 KB gzip. Hàng tab 4 mục lộ hết ở 360px, mỗi nhãn 1 dòng, không tràn
+  ngang (D4 — nhãn phải `whitespace-nowrap` + chữ 13px ở mobile). Quy tắc áp dụng: B4, B8, N1, N2, N7, C1, D2,
+  D4, M2, M4, H3.
+  **Chặng 2 CHƯA làm**: nhúng bản tương tác này vào bài 1 lớp 11 (lesson 20, mục 5 "Liên hệ với chuyển động tròn
+  đều") — chưa có cơ chế nào để nhúng mô phỏng vào `theory.html`; phải thêm placeholder + mount trong
+  `components/exams/ContentHtml.tsx` (nhớ: mount SAU khi KaTeX render xong, và chỉ bài đó trả giá chunk).
+  **Chưa deploy.**
 - **Hero: tab 2 đổi từ "Dao động" (con lắc lò xo) sang "Thả hàng" — máy bay cứu hộ thả gói hàng (5/10/2026)**:
   đúng cảnh mở bài của **Bài 12. Chuyển động ném, Vật lí 10 (lesson 57, đang published)** và đúng cái bẫy đã
   ghi trong `content/thi-nghiem/tn-l10-nemngang-01.json` ("máy bay bay nhanh hơn thì gói rơi lâu hơn").

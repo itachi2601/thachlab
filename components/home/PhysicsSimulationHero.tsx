@@ -9,12 +9,16 @@
  * cho tầm xa lớn nhất. Tab 2 — "Thả hàng": máy bay cứu hộ bay ngang ở độ cao h,
  * bấm thả đúng lúc để gói hàng rơi trúng bãi đáp (chuyển động ném ngang, Vật lí 10
  * Bài 12). Tab 3 — "Giao thoa": khay sóng hai nguồn (Bài 12, Vật lí 11), kéo điểm M
- * để tự đọc ra d₂ − d₁ = kλ.
+ * để tự đọc ra d₂ − d₁ = kλ. Tab 4 — "Hình chiếu": bóng của điểm M quay đều và một
+ * con lắc lò xo nằm ngang trên cùng một trục x (Bài 1. Dao động điều hoà, Vật lí 11)
+ * — học sinh tự khớp ω để giữ nhịp rồi tự thử xem biên độ có đổi nhịp không.
  *
  * Con lắc lò xo (HarmonicPanel) đã rời hero 5/10/2026 — code giữ nguyên để nhúng
  * vào bài Dao động lớp 11 khi Giai đoạn 3 làm (xem docs/ROADMAP.md).
  *
- * Hai tab sau nạp chậm, chỉ mount khi được chọn.
+ * Ba tab sau nạp chậm, chỉ mount khi được chọn. Hàng tab có 4 mục — đúng trần D4 —
+ * nên nhãn phải 1 dòng ở 360px: chữ nhỏ hơn và đệm hẹp hơn ở mobile, và mỗi nhãn
+ * đều whitespace-nowrap để không bị bẻ thành 2 dòng.
  *
  * Thứ tự DOM = thứ tự đọc trên điện thoại: câu hỏi → thí nghiệm → nút vào lớp
  * (B8) — nhờ vậy phần tương tác nằm trong màn hình đầu ở 375px (B1), còn trên
@@ -56,10 +60,25 @@ const InterferenceSimulation = dynamic(
   }
 );
 
+// Mô hình "Hình chiếu": canvas 2 làn + toán hình chiếu, cũng chỉ có nghĩa khi học
+// sinh thật sự chọn tab này.
+const ShadowSpringSimulation = dynamic(
+  () => import("@/components/physics/ShadowSpringSimulation").then((m) => m.ShadowSpringSimulation),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-400 sm:h-[26rem]">
+        Đang tải mô phỏng…
+      </div>
+    ),
+  }
+);
+
 const TABS = [
   { key: "projectile", label: "Ném xiên" },
   { key: "rescue", label: "Thả hàng" },
   { key: "interference", label: "Giao thoa" },
+  { key: "projection", label: "Hình chiếu" },
 ] as const;
 
 type TabKey = (typeof TABS)[number]["key"];
@@ -82,6 +101,11 @@ const FORMULAS = [
 
 export function PhysicsSimulationHero() {
   const [tab, setTab] = useState<TabKey>("projectile");
+
+  // Một khung báo lỗi dùng chung cho cả 4 tab (chỉ một tab được mount ở mỗi thời điểm).
+  const panelFallback = (
+    <LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />
+  );
 
   // Điều hướng tab bằng phím trái/phải (chuẩn ARIA cho tablist).
   const onTablistKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -160,7 +184,7 @@ export function PhysicsSimulationHero() {
                   aria-controls={`hero-panel-${item.key}`}
                   tabIndex={tab === item.key ? 0 : -1}
                   onClick={() => setTab(item.key)}
-                  className={`inline-flex min-h-11 items-center rounded-none px-3 text-sm font-medium transition active:scale-[0.98] ${
+                  className={`inline-flex min-h-11 items-center whitespace-nowrap rounded-none px-2 text-[13px] font-medium transition active:scale-[0.98] sm:px-3 sm:text-sm ${
                     tab === item.key
                       ? "bg-cyan-300/[0.14] text-cyan-300"
                       : "text-slate-400 hover:bg-white/[0.06]"
@@ -178,22 +202,20 @@ export function PhysicsSimulationHero() {
             aria-labelledby={`hero-tab-${tab}`}
           >
             {tab === "projectile" ? (
-              <LazyErrorBoundary
-                fallback={<LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />}
-              >
+              <LazyErrorBoundary fallback={panelFallback}>
                 <ProjectileSimulation />
               </LazyErrorBoundary>
             ) : tab === "rescue" ? (
-              <LazyErrorBoundary
-                fallback={<LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />}
-              >
+              <LazyErrorBoundary fallback={panelFallback}>
                 <RescueDropSimulation />
               </LazyErrorBoundary>
-            ) : (
-              <LazyErrorBoundary
-                fallback={<LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />}
-              >
+            ) : tab === "interference" ? (
+              <LazyErrorBoundary fallback={panelFallback}>
                 <InterferenceSimulation />
+              </LazyErrorBoundary>
+            ) : (
+              <LazyErrorBoundary fallback={panelFallback}>
+                <ShadowSpringSimulation />
               </LazyErrorBoundary>
             )}
           </div>

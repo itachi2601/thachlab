@@ -101,6 +101,11 @@ Thay vì dựng trang lộ trình riêng theo chương, **bộ huy hiệu theo l
 Đã có: con lắc lò xo SVG (`SpringSimulation`) làm hero trang chủ.
 - 5/10/2026: con lắc lò xo **rời hero** (thay bằng tab "Thả hàng" — máy bay cứu hộ thả gói, ném ngang, Bài 12
   Vật lí 10). `HarmonicPanel` + `SpringSimulation` giữ nguyên code, chờ nhúng vào bài Dao động ở đây.
+- 4/10/2026: hero có **tab 4 "Hình chiếu"** — bóng của M quay đều và con lắc lò xo nằm ngang trên CÙNG một trục x
+  (`components/physics/ShadowSpringSimulation.tsx`, `hooks/useCircularProjection.ts`, `lib/circularProjection.ts`),
+  nguồn là spec `content/thi-nghiem/tn-l11-daodongdieuhoa-03.json` của Bài 1 Vật lí 11. Việc còn lại của Giai
+  đoạn 3: nhúng bản tương tác vào chính bài 1 (lesson 20) + gắn bộ câu hỏi YCCĐ `daodong.hinh_chieu_tron_deu` —
+  cần thêm cơ chế mount mô phỏng trong `components/exams/ContentHtml.tsx` (chi tiết ở `docs/STATE.md`).
 - [ ] Nhúng vào bài Dao động kèm bộ câu hỏi gắn YCCĐ (mô phỏng cũng góp câu cho danh hiệu).
 - [ ] Đồ thị x–t, v–t → rơi tự do, ném ngang → sóng → nhiệt → điện.
 - Không làm mô phỏng nào không gắn với một bài học + một bộ câu hỏi.
