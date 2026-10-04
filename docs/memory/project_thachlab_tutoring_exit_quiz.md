@@ -55,3 +55,10 @@ trợ giảng. Chú thích "đưa lại điện thoại cho em" đã bỏ khỏi
 Migration `20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql` ĐANG CHỜ chạy; test `scripts/tests/ta-policy.mjs` 15/15 pass
 (pglite); CHƯA test UI thật, chưa commit/deploy. Treo: chưa gắn tên 'buổi' vào cửa sổ (liên kết qua ngày + trợ giảng),
 em không có thiết bị thì mượn máy lớp (đã ghi trong chú thích).
+
+**Cập nhật 2026-10-04 — bắt buộc xem lại lý thuyết trước bài thoát:** tự kiểm tra giờ gồm bước 1 `TheoryReviewStep` (đọc hết mốc +
+≥80% câu tự kiểm tra trong bài + đủ thời gian xem, máy chủ ghi `tutoring_theory_reviews`, guard chặn nộp nếu chưa xem sau lượt trước)
+rồi bước 2 bài ~20 câu: ≤8 câu dễ từ bộ Kiểm tra nhanh của bài + còn lại ngân hàng (dễ→khó). Cửa sổ cuối buổi không đổi.
+Migration `20261004130000_phu_dao_xem_lai_ly_thuyet.sql` ĐANG CHỜ (SQL test pglite qua); CHƯA test UI HS thật, chưa commit/deploy.
+Lớp 12 chưa đăng bộ Kiểm tra nhanh nên phần câu dễ từ quiz lý thuyết rỗng tới khi đăng. Treo: nếu lý thuyết có nhiều bài trong một
+chủ đề thì chỉ lấy mục `ly_thuyet` đầu tiên theo `sort_order`.

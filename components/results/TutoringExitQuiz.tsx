@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
+import TheoryReviewStep from "@/components/results/TheoryReviewStep";
 import { useToast } from "@/components/ui/Toast";
 import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import { emptyResponses, gradeExam, isAnswered, pickRandom } from "@/features/exams/types";
@@ -12,11 +13,13 @@ import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/service
 import {
   EXIT_QUIZ_PASS_PCT,
   EXIT_QUIZ_QUESTION_COUNT,
+  EXIT_QUIZ_THEORY_COUNT,
   EXIT_COOLDOWN_HOURS,
   WINDOW_QUIZ_MIX,
   WINDOW_QUIZ_PASS_PCT,
   WINDOW_QUIZ_QUESTION_COUNT,
   fetchSeenQuestionIds,
+  fetchTheoryItem,
   fetchTopicFamilyIds,
   logExitAttempt,
   needLabel,
@@ -24,7 +27,7 @@ import {
   type TutoringNeed,
 } from "@/services/tutoring";
 
-type Phase = "loading" | "empty" | "intro" | "running" | "result";
+type Phase = "loading" | "empty" | "review" | "intro" | "running" | "result";
 
 /**
  * Bài cuối buổi (có `exitWindow`): 10 câu cơ cấu 4 dễ / 4 trung bình / 2 khó, ưu tiên câu em chưa gặp,
@@ -52,6 +55,26 @@ function pickWindowQuestions(pool: BankQuestion[], seen: Set<number>): BankQuest
   return pickRandom(picked, picked.length);
 }
 
+const DIFFICULTY_RANK: Record<string, number> = { de: 0, "trung-binh": 1, "": 1, kho: 2 };
+
+/**
+ * Bài tự kiểm tra thoát phụ đạo: phần ĐẦU (dễ) lấy từ bộ Kiểm tra nhanh của bài lý thuyết — đúng những câu em vừa
+ * xem lại — phần SAU lấy các câu khác trong ngân hàng của chủ đề, xếp dễ → khó. Bài chưa có bộ Kiểm tra nhanh
+ * (hoặc ngân hàng ít câu) thì phần thiếu bù từ ngân hàng như cũ.
+ */
+function pickSelfQuizQuestions(pool: BankQuestion[], theory: BankQuestion[]): { picked: BankQuestion[]; easyCount: number } {
+  const easy = pickRandom(
+    theory.filter((q) => q.qtype !== "essay"),
+    EXIT_QUIZ_THEORY_COUNT,
+  );
+  const taken = new Set(easy.map((q) => q.id));
+  const others = pickRandom(
+    pool.filter((q) => !taken.has(q.id)),
+    EXIT_QUIZ_QUESTION_COUNT - easy.length,
+  ).sort((a, b) => (DIFFICULTY_RANK[a.difficulty] ?? 1) - (DIFFICULTY_RANK[b.difficulty] ?? 1));
+  return { picked: [...easy, ...others], easyCount: easy.length };
+}
+
 /**
  * Bài ~20 câu bốc ngẫu nhiên từ ngân hàng đúng chủ đề em đang cần phụ đạo — đạt từ 80%
  * thì DB (trigger) tự gỡ mục khỏi tutoring_needs, không cần chờ trợ giảng. Xem
@@ -77,6 +100,7 @@ export default function TutoringExitQuiz({
   const [bankIds, setBankIds] = useState<number[]>([]);
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
+  const [easyCount, setEasyCount] = useState(0);
   const [cur, setCur] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ pct: number; passed: boolean; correct: number; total: number } | null>(null);
@@ -89,21 +113,39 @@ export default function TutoringExitQuiz({
     const form = need.form === "ly_thuyet" || need.form === "bai_tap" ? need.form : undefined;
     Promise.all([
       fetchTopicFamilyIds(need.topicId).then((topicIds) =>
-        fetchBankQuestions({ topicIds, form, includeArchived: false }),
+        Promise.all([
+          fetchBankQuestions({ topicIds, form, includeArchived: false }),
+          // Bộ Kiểm tra nhanh của bài lý thuyết (bài tự kiểm tra thoát phụ đạo lấy làm phần dễ).
+          exitWindow || !need.lessonId
+            ? Promise.resolve<BankQuestion[]>([])
+            : fetchTheoryItem(need.lessonId)
+                .then((t) =>
+                  t && t.examIds.length > 0
+                    ? fetchBankQuestions({ topicIds, sourceExamIds: t.examIds, includeArchived: false })
+                    : [],
+                )
+                .catch(() => [] as BankQuestion[]),
+        ]),
       ),
       exitWindow ? fetchSeenQuestionIds(studentId, need.id).catch(() => new Set<number>()) : Promise.resolve(null),
     ])
-      .then(([rows, seen]) => {
+      .then(([[rows, theoryRows], seen]) => {
         if (cancelled) return;
         const pool = rows.filter((r) => r.qtype !== "essay");
-        const picked: BankQuestion[] = seen
-          ? pickWindowQuestions(pool, seen)
-          : pickRandom(pool, EXIT_QUIZ_QUESTION_COUNT);
+        let picked: BankQuestion[];
+        let easy = 0;
+        if (seen) {
+          picked = pickWindowQuestions(pool, seen);
+        } else {
+          ({ picked, easyCount: easy } = pickSelfQuizQuestions(pool, theoryRows));
+        }
+        setEasyCount(easy);
         setBankIds(picked.map((b) => b.id));
         const examQuestions = picked.map(toExamQuestion);
         setQuestions(examQuestions);
         setResponses(emptyResponses(examQuestions));
-        setPhase(examQuestions.length === 0 ? "empty" : "intro");
+        // Tự kiểm tra: xem lại lý thuyết trước (bước này tự bỏ qua nếu chủ đề không có bài lý thuyết).
+        setPhase(examQuestions.length === 0 ? "empty" : exitWindow ? "intro" : "review");
       })
       .catch(() => {
         if (!cancelled) setPhase("empty");
@@ -111,7 +153,7 @@ export default function TutoringExitQuiz({
     return () => {
       cancelled = true;
     };
-  }, [need.topicId, need.form, need.id, studentId, exitWindow]);
+  }, [need.topicId, need.form, need.id, need.lessonId, studentId, exitWindow]);
 
   const lastIndex = questions.length - 1;
   const answeredCount = questions.filter((q, i) => isAnswered(q, responses[i])).length;
@@ -149,7 +191,7 @@ export default function TutoringExitQuiz({
     }
   }
 
-  const wide = phase === "running";
+  const wide = phase === "running" || phase === "review";
 
   return (
     <AnimatePresence>
@@ -197,6 +239,8 @@ export default function TutoringExitQuiz({
             </div>
           )}
 
+          {phase === "review" && <TheoryReviewStep need={need} onReady={() => setPhase("intro")} />}
+
           {phase === "intro" && (
             <div className="space-y-4">
               <p className="text-sm text-slate-300">
@@ -206,7 +250,9 @@ export default function TutoringExitQuiz({
               <p className="text-xs text-slate-500">
                 {exitWindow
                   ? "Em tự làm một mình, một lượt duy nhất cho chủ đề này trong buổi. Kết quả giúp thầy cô biết buổi phụ đạo có hiệu quả không."
-                  : "Câu hỏi lấy ngẫu nhiên từ ngân hàng, mỗi lượt một bộ khác nhau."}
+                  : easyCount > 0
+                    ? `${easyCount} câu đầu (dễ) lấy từ bộ Kiểm tra nhanh của bài em vừa xem lại; các câu sau lấy từ ngân hàng, xếp từ dễ đến khó.`
+                    : "Câu hỏi lấy ngẫu nhiên từ ngân hàng, xếp từ dễ đến khó, mỗi lượt một bộ khác nhau."}
               </p>
               <Button onClick={() => setPhase("running")} className="w-full">
                 Bắt đầu làm bài
@@ -266,7 +312,7 @@ export default function TutoringExitQuiz({
                   <p>
                     {exitWindow
                       ? `Chưa đạt ${passPct}% — chưa sao cả. Em nhờ trợ giảng giảng lại phần còn vướng; chủ đề này vẫn còn trong danh sách của em.`
-                      : `Chưa đạt ${passPct}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau ${EXIT_COOLDOWN_HOURS} giờ em thử lượt mới nhé.`}
+                      : `Chưa đạt ${passPct}% — chưa sao cả. Ôn lại đúng phần lý thuyết của chủ đề này, sau ${EXIT_COOLDOWN_HOURS} giờ em xem lại lý thuyết rồi thử lượt mới nhé.`}
                   </p>
                   {theoryHref && (
                     <a href={theoryHref} className="inline-block font-semibold text-sky-300 underline-offset-2 hover:underline">

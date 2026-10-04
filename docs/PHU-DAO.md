@@ -88,3 +88,18 @@ gõ tên tay nữa (DB chặn ở `ta_session_student_link_guard`). Buổi trư�
 
 Đổi trong `public.refresh_tutoring_needs`: `v_window` (2 bài), `v_min_q` (3 câu),
 `v_need_pct` (50%), `v_clear_pct` (25%).
+
+## Tự kiểm tra thoát phụ đạo: xem lại lý thuyết → làm bài
+
+Ngoài cửa sổ cuối buổi, em muốn tự gỡ một chủ đề phải qua 2 bước (modal `TutoringExitQuiz`):
+
+1. **Xem lại lý thuyết tương tác** (`TheoryReviewStep`) — bài lý thuyết của chủ đề hiện ngay trong modal. Máy chủ ghi quá trình
+   (bảng `tutoring_theory_reviews`) và chỉ cho qua khi đủ cả ba: **cuộn tới cuối mọi mốc** · **trả lời ≥ 80% câu tự kiểm
+   tra nằm trong bài** (radio `tl-quiz`) · **thời gian xem thật ≥ 40% thời gian đọc ước tính** (kẹp 45–480 giây; đồng hồ dừng
+   khi tab ẩn hoặc 20 giây không cuộn/chạm). Máy chủ kẹp thời gian cộng thêm theo đồng hồ thật nên không khai tăng được.
+2. **Bài thoát ~20 câu**: tối đa 8 câu **dễ** đầu bài lấy từ bộ **Kiểm tra nhanh** của bài lý thuyết (`question_bank.source_exam_id`
+   thuộc `exam_ids` của mục lý thuyết), phần còn lại các câu khác của chủ đề trong ngân hàng, xếp dễ → khó. Bài chưa có bộ
+   Kiểm tra nhanh thì cả bài lấy từ ngân hàng như trước. Đạt ≥ 80% → mục `cleared`.
+
+Trigger `tutoring_exit_attempt_guard` chặn lượt nộp nếu chưa xem lại **sau lượt tự kiểm tra trước** — mỗi lần thử lại (sau 24 giờ)
+phải xem lại. Chủ đề không có mục lý thuyết thì bỏ qua bước 1. Bài cuối buổi do trợ giảng mở (cửa sổ 20 phút) **không** đòi xem lại.

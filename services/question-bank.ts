@@ -106,6 +106,8 @@ export interface BankFilter {
   search?: string;
   /** Chỉ lấy câu nhắc đồ thị/hình vẽ mà câu dẫn + phương án không có ảnh, hoặc còn mốc ⟦…⟧ thay hình. */
   missingFigure?: boolean;
+  /** Chỉ lấy câu nạp từ các đề này (vd. bộ Kiểm tra nhanh của một bài lý thuyết). */
+  sourceExamIds?: number[];
   limit?: number;
 }
 
@@ -138,6 +140,7 @@ export async function fetchBankQuestions(filter: BankFilter = {}): Promise<BankQ
     else if (ids.length) q = q.in("topic_id", ids);
     else q = q.is("topic_id", null);
   }
+  if (filter.sourceExamIds?.length) q = q.in("source_exam_id", filter.sourceExamIds);
   if (filter.form) q = q.eq("form", filter.form);
   if (filter.qtype) q = q.eq("qtype", filter.qtype);
   if (filter.difficulty !== undefined && filter.difficulty !== "all") q = q.eq("difficulty", filter.difficulty);

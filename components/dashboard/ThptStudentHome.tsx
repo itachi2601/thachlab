@@ -440,7 +440,7 @@ export default function ThptStudentHome({
                   <Users size={16} className="shrink-0 text-sky-300" />
                   <span className="min-w-0">
                     <strong className="block truncate text-sm text-white">Mở khoá chủ đề: {needLabel(needs[0])}</strong>
-                    <small className="text-[13px] text-slate-400">Tự kiểm tra, đạt từ 80% là mở khoá</small>
+                    <small className="text-[13px] text-slate-400">Xem lại lý thuyết, làm bài, đạt từ 80% là mở khoá</small>
                   </span>
                 </span>
                 <ChevronRight size={16} className="shrink-0 text-emerald-300" />
@@ -604,7 +604,7 @@ export default function ThptStudentHome({
             <>
               <p className="text-sm text-slate-400">
                 Mở khoá bằng cách <strong className="text-slate-200">đăng ký phụ đạo</strong> bên dưới, hoặc{" "}
-                <strong className="text-slate-200">tự kiểm tra</strong> (đạt từ 80%). Hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ.
+                <strong className="text-slate-200">tự kiểm tra</strong> (xem lại lý thuyết rồi làm bài, đạt từ 80%). Hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ.
               </p>
               <div className="space-y-1.5">
                 {needs.map((need) => {

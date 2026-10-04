@@ -15,6 +15,7 @@ cd "$(dirname "$0")/.."
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
   "supabase/migrations/20261004120000_phu_dao_hang_cho.sql|Hang cho buoi phu dao (bang tutoring_waitlist, tu dong len khi co nguoi huy, RPC Mo luot tiep)|Bat ky luc nao (them bang/ham moi, thay trigger huy dang ky)"
+  "supabase/migrations/20261004130000_phu_dao_xem_lai_ly_thuyet.sql|Phu dao: bat buoc xem lai ly thuyet tuong tac truoc khi lam bai thoat (bang tutoring_theory_reviews, 3 ham RPC, thay guard tutoring_exit_attempts)|Bat ky luc nao (them bang/ham, thay trigger guard)"
 )
 # ĐÃ CHẠY 4/10/2026: 20261004100000_bank_grade_thi_thu_tn
 # ĐÃ CHẠY 3/10/2026 22:57: 20261003130000_parent_attendance_announcements, 20261003140000_rank_theory_rp, 20261003150000_phu_dao_kiem_tra_cuoi_buoi
