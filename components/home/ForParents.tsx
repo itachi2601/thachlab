@@ -155,9 +155,11 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
 
 export default function ForParents({ courses = null }: { courses?: HomeCourse[] | null }) {
   const phone = CONTACT.phone ? displayPhone(CONTACT.phone) : "";
-  const intro = [CONTACT.years ? `${CONTACT.years} năm dạy Vật lý` : "", CONTACT.school]
-    .filter(Boolean)
-    .join(" · ");
+  // Hai dòng giới thiệu, cùng thứ tự với khối "Một chút về thầy Thạch": kinh nghiệm THPT trước, nghề chính sau.
+  const introLines = [
+    CONTACT.years ? `Hơn ${CONTACT.years} năm luyện Vật lý THPT` : "",
+    CONTACT.school ? `Giảng viên ngành Cơ khí, ${CONTACT.school}` : "",
+  ].filter(Boolean);
 
   return (
     <section className="bg-[#f8fafc] px-6 py-10 text-[#0f172a] lg:px-12">
@@ -174,7 +176,11 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
             />
           )}
           <p className="mt-4 font-display text-xl font-bold">Thầy Thạch</p>
-          {intro && <p className="mt-1 text-lg leading-snug text-[#334155]">{intro}</p>}
+          {introLines.map((line) => (
+            <p key={line} className="mt-1 text-lg leading-snug text-[#334155]">
+              {line}
+            </p>
+          ))}
         </div>
 
         <div>
