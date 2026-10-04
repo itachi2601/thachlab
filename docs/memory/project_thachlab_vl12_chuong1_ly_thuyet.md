@@ -71,6 +71,15 @@ Hai thư mục mới trong `content/lesson-samples/`, mỗi thư mục: `theory.
 6. **Tách mục khi một `<h3>` phình ra**: bài 4 ban đầu có "4. Tính nhiệt dung riêng" gộp cả thí nghiệm
    bếp điện; đổi thành `<h3>III. Thí nghiệm đo nhiệt lượng bằng bếp điện</h3>` thì vừa nhẹ mục vừa có nhịp.
 
+## Đề xuất bị bỏ (để lượt sau khỏi làm lại từ đầu)
+Trong phiên 4/10 có soạn nháp một hướng **khác** cho bài 4 rồi không dùng (bản đã đăng là bản thực hành
+thuần, xem mục trên). Hướng bị bỏ: đổi bài 4 thành *"nhiệt lượng và chuyển thể"* — 7 quiz (thêm bài tập
+tính `Q = λm`, `Q = Lm`; thêm câu **3 nhiệt kế đựng trong một cốc** để nói rõ một phép đo chỉ ra một giá
+trị, muốn so ba chất phải làm ba phép đo cùng điều kiện), Hình 4 = "ba đại lượng, hai cách tính". Bản nháp
+bị từ chối ghi đè nên **không còn trên đĩa** — nếu thầy muốn đi hướng đó thì phải soạn lại. Lý do chọn
+bản hiện tại: giữ đúng mục tiêu "thực hành" của bài 4, và phần `Q = λm`, `Q = Lm` đã có trong bảng số liệu
+một lần đun đá liên tục (mục II.4).
+
 ## Còn chờ
 1. **Thầy xem bản xem thử** rồi duyệt:
    `content/lesson-samples/l12-noi-nang-dl1/xem-thu/xem-thu.html` và
