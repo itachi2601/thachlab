@@ -27,9 +27,16 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   (nhiệt kế đứng yên ≠ hết truyền nhiệt · hai cách tính c · trộn đơn vị), Trả bài 6 câu, bài toán mẫu
   nhiệt hoá hơi + điền bước + biến thể, thử thách ⭐–⭐⭐⭐. 6 quiz, 2 mục mới `tn-l12-thuchanh-01..02`.
   Lint cả hai bài: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK (41 mục trong `index.json`) ·
-  `validate_bundle` ok:true; `lint_do_dai` 2.494 và 2.492 từ hiện ngay (~18 phút, còn 1 cảnh báo ⚠ tổng
-  > 2.000 mỗi bài; từng mục ≤ 467 từ, đoạn liền dài nhất 335 từ). Đã soát ảnh 375px từng mục + từng hình
-  bằng mắt và sửa 6 lỗi chồng nhãn (Hình 1–2 bài 3, Hình 1 bài 4). Lệnh đăng (chỉ ghi mục Lý thuyết):
+  `validate_bundle` ok:true; `lint_do_dai` **2.496** và **2.491** từ hiện ngay (~18 phút, còn 1 cảnh báo ⚠
+  tổng > 2.000 mỗi bài; từng mục ≤ 467 từ). Đã soát ảnh 375px từng mục + từng hình bằng mắt (sửa 6 lỗi
+  chồng nhãn) và **kiểm chéo độc lập bằng subagent** — lượt đó tìm ra 11 mục sai, đã sửa hết: 1 lỗi chết
+  người (bài 4 câu 3 có **hai phương án cùng đúng** $3\ 750$ J/(kg·K)), **hướng sai số hệ thống bị viết
+  ngược** (mất nhiệt ⇒ $\Delta t$ nhỏ đi ⇒ $c$ đo được **cao hơn** thật, ở 4 vị trí), bảng bài 4 trộn hai
+  khối lượng (0,100 kg nhưng lấy thời gian của 0,200 kg → 838 s phải là 419 s), Hình 3 sai phần trăm
+  (phải là 0,7 / 11,0 / 13,8 / 74,5%), "gần 7 lần" (thực 5,4), thiếu heading III ở bài 3, `$c = 4180$`
+  trong `<text>` SVG (SVG không vẽ `<span>` của KaTeX → mất chữ), và xáo lại vị trí đáp án đúng (bài 3
+  B–C–A–B–D–B, bài 4 B–A–B–B–C–B). Chi tiết + bài học quy trình: `docs/memory/project_thachlab_vl12_chuong1_ly_thuyet.md`.
+  Lệnh đăng (chỉ ghi mục Lý thuyết):
   `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-noi-nang-dl1/theory.html 4` rồi
   `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-thuc-hanh-nhiet/theory.html 5`, sau đó deploy.
 - **Bài 13. Sóng dừng (Vật lí 11) — bản lý thuyết tương tác (3/10/2026)**: soạn theo skill

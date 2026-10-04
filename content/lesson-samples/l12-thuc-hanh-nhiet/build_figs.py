@@ -113,7 +113,7 @@ b += text(112, 168, "2. Tan ở 0 °C", ORG, 11, "start", "700")
 b += text(112, 182, "λ = Pτ/m", ORG, 10.5, "start", "600")
 b += line(114, 186, 92, 202, ORG, 1, "3 3", .8)
 b += text(16, 250, "Đoạn ngang = nhiệt dùng để chuyển thể, không làm nhiệt độ đổi.", "currentColor", 10.5, "start", "600")
-fig2 = wrap("0 0 440 262", "Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi",
+fig2 = wrap("0 0 440 292", "Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi",
             b, "Hình 2. Đường cong đun nóng: hai đoạn nằm ngang là hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Nhìn độ dài đoạn ngang để thấy nhiệt chuyển thể lớn hơn nhiều so với nhiệt làm nóng.")
 
 # ======================================================= Hình 3: bốn giai đoạn, tỉ lệ nhiệt
@@ -121,21 +121,21 @@ b = defs("f3")
 b += text(16, 22, "Nhiệt chia thế nào giữa bốn giai đoạn", "currentColor", 12.5, "start", "700")
 
 stages = (
-    ("Đá −10 → 0 °C", 1.0, BLUE, "10 500 J · 1,1%"),
-    ("Tan hoàn toàn ở 0 °C", 16.0, ORG, "167 000 J · 17,5%"),
-    ("Nước 0 → 100 °C", 20.0, BLUE, "210 000 J · 22%"),
-    ("Hoá hơi ở 100 °C", 75.0, RED, "1 130 000 J · 74%"),
+    ("Đá −10 → 0 °C", 0.7, BLUE, "10 500 J · 0,7%"),
+    ("Tan hoàn toàn ở 0 °C", 11.0, ORG, "167 000 J · 11,0%"),
+    ("Nước 0 → 100 °C", 13.8, BLUE, "210 000 J · 13,8%"),
+    ("Hoá hơi ở 100 °C", 74.5, RED, "1 130 000 J · 74,5%"),
 )
 for i, (ten, phan, col, so) in enumerate(stages):
     y = 52 + i * 44
     b += text(16, y + 6, ten, "currentColor", 11, "start", "600")
-    b += rect(150, y - 6, 240, 18, "rgba(148,163,184,.12)", "currentColor", 1, 4)
-    b += rect(150, y - 6, 240 * phan / 100, 18, f"{col}55", col, 1.5, 4)
+    b += rect(150, y - 6, 210, 18, "rgba(148,163,184,.12)", "currentColor", 1, 4)
+    b += rect(150, y - 6, max(3, 210 * phan / 100), 18, f"{col}55", col, 1.5, 4)
     b += text(398, y + 6, so, "currentColor", 10, "end", "600")
 b += text(150, 238, "Cùng một khối nước đá 0,500 kg, bếp 500 W", "currentColor", 10.5, "start", "600")
-b += text(150, 254, "→ giai đoạn hoá hơi chiếm 3/4 tổng nhiệt", RED, 10.5, "start", "700")
+b += text(150, 254, "→ riêng hoá hơi chiếm 3/4 tổng nhiệt", RED, 10.5, "start", "700")
 fig3 = wrap("0 0 440 266", "Bốn thanh biểu diễn nhiệt cần cho bốn giai đoạn: hoá hơi chiếm 74 phần trăm, hoá hơi và tan chiếm phần lớn",
-            b, "Hình 3. Cùng một khối nước đá 0,500 kg: hoá hơi chiếm 74% tổng nhiệt, còn giai đoạn đá nóng từ −10 °C lên 0 °C chỉ chiếm 1,1%. Đây là lí do cô đặc dung dịch rất tốn năng lượng.")
+            b, "Hình 3. Cùng một khối nước đá 0,500 kg: hoá hơi chiếm 74% tổng nhiệt, còn giai đoạn đá nóng từ −10 °C lên 0 °C chỉ chiếm 0,7%. Đây là lí do cô đặc dung dịch rất tốn năng lượng.")
 
 # ======================================================= Hình 4: ba đại lượng cần đo
 b = defs("f4")

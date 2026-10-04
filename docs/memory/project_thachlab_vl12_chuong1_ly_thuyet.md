@@ -80,6 +80,41 @@ bị từ chối ghi đè nên **không còn trên đĩa** — nếu thầy mu�
 bản hiện tại: giữ đúng mục tiêu "thực hành" của bài 4, và phần `Q = λm`, `Q = Lm` đã có trong bảng số liệu
 một lần đun đá liên tục (mục II.4).
 
+## Kiểm chéo độc lập + 11 lỗi đã sửa (4/10/2026)
+Nhờ subagent tự tính lại toàn bộ con số và kiểm từng quiz (không dùng lại kết quả của người soạn). Kết quả:
+11 mục sai, trong đó **3 lỗi thật phải sửa** — đây là các bẫy đáng nhớ cho mọi bài sau:
+
+1. **Trùng đáp án (lỗi chết người)** — bài 4 câu 3: hai phương án A và B cùng ghi $3\ 750$ J/(kg·K) nhưng
+   A bị gắn `tl-no`. Học sinh chọn A bị chấm sai oan. **Quy tắc: sau khi xáo đáp án phải đọc lại cả bốn
+   phương án như một học sinh, không chỉ kiểm "có đúng 1 `tl-ok`"** — `check_quizzes.py` và `lint_theory.py`
+   không bắt được lỗi này.
+2. **Hướng sai số hệ thống bị viết ngược** — chỗ này mình đã hiểu sai vật lí rồi viết vào cả 4 vị trí
+   (bài 3 mục II.5, bài 4 mục II.3 + Trả bài 6 + bundle). Sự thật: `c = Pτ/(m·Δt)`; nhiệt mất ra môi
+   trường/đun nóng bình ⇒ `Δt` **nhỏ** hơn thực tế ⇒ **c đo được CAO HƠN** giá trị thật. Muốn `c` **thấp
+   hơn** thì nhiệt kế phải **đọc cao hơn** thực tế. (SBT Vật lí 12 KNTT Bài 4 cũng hỏi đúng ý này, đáp án
+   "cao hơn thực tế vì hiệu suất bộ thí nghiệm < 100%".) Còn với `λ`, `L` thì tính bằng `Pτ/m`, mất nhiệt
+   làm **`λ`, `L` đo được lớn hơn** — hai chiều khác nhau, đừng viết chung một câu.
+   **Mẹo kiểm: viết `Pτ = m·c·Δt` rồi tự hỏi nhiệt mất đi thì `Δt` tăng hay giảm, `c` sẽ đổi theo chiều nào.**
+3. **Số liệu sai hệ số 2 vì trộn hai khối lượng** — bài 4 bảng "một lần đun đá": cột 0,100 kg nhưng thời
+   gian giai đoạn nâng nhiệt lại lấy của 0,200 kg (838 s thay vì 419 s), và giá trị $c$ vẫn ghi 4,19.10³
+   (không khớp: $83\ 800/(0{,}100 \times 100) = 8\ 380$). **Quy tắc: mỗi bảng số liệu phải kiểm lại toàn bộ
+   dòng theo đúng một khối lượng**; hình vẽ SVG cũng phải vẽ theo đúng bảng đó.
+
+Các lỗi còn lại (đã sửa hết): Hình 3 bài 4 ghi phần trăm sai (1,1 / 17,5 / 22% → **0,7 / 11,0 / 13,8 / 74,5%**,
+cộng lại phải bằng 100%); câu "gấp gần 7 lần" (thực ra 2260/419 = **5,4 lần**); kiểm tra chéo trộn số của
+thử thách ⭐⭐⭐ vào mục II.4 (2 260/3 013 ≈ 75% mới đúng); mô tả lỗi sai bậc 10 ($Q/m_1 = 2,27.10^6$, đúng
+bậc 10⁶ chứ không phải 10⁵); câu hỏi "vì sao II.3 ra *thấp* hơn" (thực tế mục II.3 cũng ra **cao** hơn —
+nay cả hai chỗ đều nói "cùng hướng, đúng dấu hiệu sai số hệ thống"); bài 3 **thiếu hẳn heading III** nên
+nhảy II → IV (đã đánh số lại, cập nhật "7 mục" → "6 mục"); bài 4 ghi "7 câu tự kiểm tra" nhưng chỉ có 6
+quiz; **`$c = 4180$` nằm trong `<text>` của SVG** — `ContentHtml` render KaTeX thành `<span>`/MathML, SVG
+**không vẽ** `<span>` trong `<text>` nên chữ sẽ mất; nay đã đổi thành chữ thường "c nước = 4180". Quét cả
+`content/lesson-samples/*/theory.html`: chỉ bài 3 dính lỗi này.
+Xáo lại vị trí đáp án đúng cho khỏi dồn một chỗ: bài 3 nay là B–C–A–B–D–B, bài 4 là B–A–B–B–C–B.
+
+**Bài học về quy trình**: `lint_theory.py` + `check_quizzes.py` + `validate_bundle.mts` đều **không** kiểm
+số học và **không** kiểm hai phương án có trùng nhau. Bắt buộc có một lượt **tự tính lại bằng tay hoặc
+nhờ subagent tính độc lập** trước khi báo thầy, và lượt đó phải đọc từng phương án của từng quiz.
+
 ## Còn chờ
 1. **Thầy xem bản xem thử** rồi duyệt:
    `content/lesson-samples/l12-noi-nang-dl1/xem-thu/xem-thu.html` và

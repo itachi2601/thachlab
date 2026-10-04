@@ -115,7 +115,7 @@ b += f'<path d="M56 52 l8 122 q1 10 11 10 l48 0 q10 0 11 -10 l8 -122 z" fill="rg
 b += line(58, 76, 140, 76, BLUE, 3)          # mặt nước
 b += text(99, 118, "1 kg", BLUE, 13, "middle", "700")
 b += text(99, 138, "nước", BLUE, 12, "middle", "600")
-b += text(99, 200, "$c = 4180$", BLUE, 13, "middle", "700")
+b += text(99, 200, "c nước = 4180", BLUE, 13, "middle", "700")
 b += text(99, 218, "nhiệt cần: 4180 J", "currentColor", 11.5, "middle", "600")
 for i in range(5):                            # ô nhiệt lượng
     b += rect(58 + i * 17, 160, 14, 22, "rgba(56,189,248,.45)", BLUE, 1.5, 3)
@@ -124,7 +124,7 @@ for i in range(5):                            # ô nhiệt lượng
 b += rect(258, 96, 104, 66, "rgba(251,146,60,.20)", ORG, 2.5)
 b += text(310, 128, "1 kg", ORG, 13, "middle", "700")
 b += text(310, 146, "nhôm", ORG, 12, "middle", "600")
-b += text(310, 200, "$c = 880$", ORG, 13, "middle", "700")
+b += text(310, 200, "c nhôm = 880", ORG, 13, "middle", "700")
 b += text(310, 218, "nhiệt cần: 880 J", "currentColor", 11.5, "middle", "600")
 for i in range(2):
     b += rect(282 + i * 17, 160, 14, 22, "rgba(251,146,60,.45)", ORG, 1.5, 3)

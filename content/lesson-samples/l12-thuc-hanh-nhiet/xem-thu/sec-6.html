@@ -572,7 +572,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <summary>🏅 Thử thách ⭐ ⭐⭐ ⭐⭐⭐ — bấm xem đề và lời giải</summary>
 <p><strong>⭐ Cơ bản.</strong> Đun 0,500 kg nước bằng bếp 300 W, sau 420 s nhiệt độ tăng từ 25 °C lên 85 °C. Tính $c$.</p>
 <p>$c = \dfrac{P\tau}{m\Delta t} = \dfrac{300 \times 420}{0{,}500 \times 60} = \dfrac{126\ 000}{30} = 4\,200\ \text{J/(kg·K)}$.<br>
-<b>Nhận xét:</b> kết quả cao hơn 4 180 chút ít — trong phạm vi sai số. Em nêu được vì sao ở mục II.3 $c$ lại ra <em>thấp</em> hơn không?</p>
+<b>Nhận xét:</b> kết quả cao hơn 4 180 chút ít — cùng hướng với mục II.3 (đều cao hơn), đúng dấu hiệu của sai số hệ thống do mất nhiệt.</p>
 <p><strong>⭐⭐ Khá.</strong> Ấm đun 1,2 kg nước từ 20 °C, bếp 1 500 W, hiệu suất 80%. Tính thời gian nước sôi, $c = 4200\ \text{J/(kg·K)}$.</p>
 <p>Nước cần $Q = 4200 \times 1{,}2 \times 80 = 403\ 200\ \text{J}$. Vì chỉ 80% nhiệt bếp vào nước: $Q_\text{bếp} = \dfrac{403\ 200}{0{,}8} = 504\ 000\ \text{J}$ → $\tau = 336\ \text{s} \approx 5{,}6$ phút.<br>
 <b>Bẫy:</b> nhân 0,8 thay vì chia — hiệu suất 80% nghĩa là bếp phải toả <em>nhiều hơn</em> lượng nước nhận.</p>
@@ -583,16 +583,16 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <details class="tl-details" open>
 <summary>⭐⭐⭐ Thách đấu: đá −10 °C thành hơi 100 °C</summary>
 <p><strong>⭐⭐⭐ Thách đấu.</strong> Đun 0,500 kg nước đá ở −10 °C bằng bếp 500 W tới khi toàn bộ thành hơi ở 100 °C. Tính tổng thời gian, bỏ qua mất mát. Cho $c_\text{đá} = 2100$, $c_\text{nước} = 4200$, $\lambda = 3{,}34 \times 10^5$, $L = 2{,}26 \times 10^6$ (đơn vị SI).</p>
-<p>Năm giai đoạn, cộng dồn nhiệt:<br>
-1) Đá −10 °C → 0 °C: $2100 \times 0{,}5 \times 10 = 10\ 500\ \text{J}$<br>
-2) Tan hoàn toàn: $3{,}34 \times 10^5 \times 0{,}5 = 167\ 000\ \text{J}$<br>
-3) Nước 0 °C → 100 °C: $4200 \times 0{,}5 \times 100 = 210\ 000\ \text{J}$<br>
-4) Hoá hơi hoàn toàn: $2{,}26 \times 10^6 \times 0{,}5 = 1\ 130\ 000\ \text{J}$<br>
+<p>Bốn giai đoạn, cộng dồn nhiệt:<br>
+1) Đá −10 °C → 0 °C: $2100 \times 0{,}5 \times 10 = 10\ 500\ \text{J}$ (0,7%)<br>
+2) Tan hoàn toàn: $3{,}34 \times 10^5 \times 0{,}5 = 167\ 000\ \text{J}$ (11,0%)<br>
+3) Nước 0 °C → 100 °C: $4200 \times 0{,}5 \times 100 = 210\ 000\ \text{J}$ (13,8%)<br>
+4) Hoá hơi hoàn toàn: $2{,}26 \times 10^6 \times 0{,}5 = 1\ 130\ 000\ \text{J}$ (74,5%)<br>
 Tổng $Q \approx 1\ 517\ 500\ \text{J}$ → $\tau = \dfrac{1\ 517\ 500}{500} \approx 3\ 035\ \text{s} \approx 50{,}6$ phút.<br>
-<b>Đáng chú ý:</b> riêng hoá hơi chiếm 74% tổng thời gian — nên thực tế người ta đun tới gần sôi rồi giữ nhiệt.</p>
+<b>Đáng chú ý:</b> riêng hoá hơi chiếm 74% tổng nhiệt — nên thực tế người ta đun tới gần sôi rồi giữ nhiệt.</p>
 <details class="tl-details" open>
 <summary>🔍 Bấm xem: kiểm tra chéo tỉ lệ</summary>
-<p>Giai đoạn hoá hơi chiếm $\dfrac{1\ 130\ 000}{1\ 517\ 500} \approx 74\%$ tổng nhiệt — khớp tỉ lệ $2\ 260 / 3\ 035$ ở mục II.4. Hai bộ số liệu khác nhau nhưng cùng chỉ ra "kẻ ngốn nhiệt" chính.</p>
+<p>Giai đoạn hoá hơi chiếm $\dfrac{1\ 130\ 000}{1\ 517\ 500} \approx 74\%$ tổng nhiệt. Bộ số liệu thực nghiệm ở mục II.4 cho cùng tỉ lệ: $\dfrac{2\ 260}{334 + 419 + 2\ 260} = \dfrac{2\ 260}{3\ 013} \approx 75\%$. Hai bộ số liệu độc lập nhưng cùng chỉ ra "kẻ ngốn nhiệt" chính.</p>
 </details>
 </details>
 </details>
