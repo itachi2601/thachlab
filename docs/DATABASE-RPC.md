@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 255 hàm, sinh tự động 2026-10-04
+# Hàm SQL / RPC (schema public) — 261 hàm, sinh tự động 2026-10-04
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -248,8 +248,14 @@ repo — xem trên Supabase Dashboard).
 - `trg_tutoring_exit_attempt_clear()` → trigger
 - `tutoring_exit_attempt_guard()` → trigger
 - `tutoring_exit_window_defaults()` → trigger
+- `tutoring_review_ping(p_need bigint, p_delta integer, p_sections_seen integer, p_quiz_answered integer)` → jsonb
+- `tutoring_review_start(p_need bigint, p_sections integer, p_quiz_total integer, p_est_seconds integer)` → jsonb
+- `tutoring_slot_open_next(p_slot_id bigint, p_work_date date, p_start time without time zone, p_end time without time zone)` → bigint
 - `tutoring_slot_register()` → trigger
 - `tutoring_slot_unregister()` → trigger
+- `tutoring_theory_item(p_topic bigint)` → bigint
+- `tutoring_waitlist_guard()` → trigger
+- `tutoring_waitlist_mine(p_student uuid)` → TABLE(slot_id bigint, queue_pos integer, total integer)
 - `unread_notification_count()` → integer
 - `update_machine_status_log(p_id bigint, p_status text, p_note text, p_created_at timestamp with time zone)` → void
 - `update_post_with_targets(p_post_id bigint, p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → void

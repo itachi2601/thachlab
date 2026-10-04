@@ -3,6 +3,12 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 04/10/2026 22:58 (đã chạy, log `scripts/logs/20261004-225841-*`)
+- `20261004230000_thpt_course_pairs.sql` (lớp 12 học 2 buổi/tuần: điền `pair_key='Vật lí 12L1'`, `pair_slot` A/B cho 4 khoá id 5–8 + comment cột; CHỈ update dữ liệu, chạy lúc nào cũng được; rollback ở cuối file) — ĐÃ CHẠY 4/10/2026 22:58. Code (trang chủ, `/khoa-hoc`, `/khoa-hoc/dang-ky`) đã deploy 4/10 và tự suy buổi A/B từ tên khoá khi cột trống, nên chưa chạy vẫn hiện đúng; ràng buộc "chọn 1A + 1B" mới ép ở client, RPC `thpt_register` chưa ép.
+- `20261004130000_phu_dao_xem_lai_ly_thuyet.sql` (bắt buộc xem lại lý thuyết tương tác trước bài tự kiểm tra thoát phụ đạo: bảng `tutoring_theory_reviews`, RPC `tutoring_review_start`/`tutoring_review_ping`, hàm `tutoring_theory_item`, thay guard `tutoring_exit_attempt_guard`; chạy lúc nào cũng được; rollback `perf/rollback/20261004130000_phu_dao_xem_lai_ly_thuyet.down.sql`) — ĐÃ CHẠY 4/10/2026 22:58. Client (`TheoryReviewStep`, `TutoringExitQuiz`) tự bỏ qua bước xem lại khi RPC chưa có. Test SQL bằng pglite 4/10/2026 qua; CHƯA test UI với tài khoản HS thật. Lớp 12: bộ Kiểm tra nhanh chưa đăng (xem mục dưới) nên phần "câu dễ từ quiz lý thuyết" chỉ có hiệu lực sau khi đăng bộ quiz.
+- `20261004120000_phu_dao_hang_cho.sql` (bảng `tutoring_waitlist`, trigger tự đẩy em đầu hàng chờ lên khi có người huỷ — thay hàm `tutoring_slot_unregister`, RPC `tutoring_waitlist_mine` + `tutoring_slot_open_next`; chạy lúc nào cũng được; rollback ở cuối file) — ĐÃ CHẠY 4/10/2026 22:58. Client (`TutoringSlotsPlanner`, `ThptStudentHome`, `CatchupCard`) gọi bảng/RPC này; chưa chạy thì nút "vào hàng chờ" báo lỗi.
+Sau khi chạy: `gen-database-doc.mjs` ghi 109 bảng/261 hàm; `pair_key`/`pair_slot` của 4 khoá 12L1 đã điền (kiểm REST).
+
 ## Migration — 04/10/2026 (đã chạy)
 `20261004100000_bank_grade_thi_thu_tn.sql` — gắn `grade='12'` cho 5 899 câu `question_bank` từ đề thi thử TN/minh hoạ (trước đó `grade=''`, không chủ đề). Chỉ đụng cột grade.
 Kết quả: khối 12 = 11 023 câu, còn 11 câu chưa rõ khối (đề 209, 258 — gắn tay ở "Câu chưa rõ khối"). Rollback ở cuối file; id lưu trong `question_bank_grade_fix_20261004`.

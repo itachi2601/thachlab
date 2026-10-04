@@ -45,3 +45,4 @@ học thêm năm học …" gom buổi theo khối 10/11/12, đọc `thpt_course
 `home-stats.json.courses`), không thêm request khi tải `/`; đổi lịch trong dashboard → phải deploy lại mới hiện.
 Quyết định: KHÔNG đưa lịch phụ đạo trợ giảng (`tutoring_slots`, đang 0 dòng) lên trang chủ làm quảng cáo — đó là
 lịch vận hành theo tuần cho HS đã vào lớp, RLS theo lớp; chỉ nhắc một câu "trợ giảng mở buổi phụ đạo riêng".
+**4/10/2026 22:58:** lớp 12 tách buổi A (T4|T5) / B (T7|CN), bắt chọn 1A+1B ở `/khoa-hoc` + `/khoa-hoc/dang-ky` (commit 765eb0dcd, đã deploy); migration `20261004230000_thpt_course_pairs` ĐÃ CHẠY (pair_key/pair_slot điền xong). Treo: RPC `thpt_register` chưa ép 1A+1B ở server; chưa test gửi đăng ký bằng tài khoản thật; tab Ghi danh chưa có ô nhập buổi A/B (đặt tên theo mẫu).
