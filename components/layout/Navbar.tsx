@@ -20,9 +20,13 @@ const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
+  { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
+];
+
+// Gom vào mục "Thêm" trên desktop (N2: ≤4 lựa chọn/vùng); menu mobile vẫn liệt kê đủ.
+const MORE_LINKS: NavLink[] = [
   { label: "Blog", href: "/blog" },
   { label: "Tin tức", href: "/tin-tuc" },
-  { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
   { label: "Giới thiệu", href: "/#about" },
   { label: "Liên hệ", href: "/#contact" },
 ];
@@ -44,10 +48,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const accountMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+  const moreRef = useRef<HTMLLIElement>(null);
   const isStaff = profile?.role === "admin" || profile?.role === "instructor";
   const isTa = profile?.role === "tro_giang";
   const showParentLink = !session || profile?.role === "student";
   const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
+  const mobileLinks = [...navLinks.slice(0, 3), ...MORE_LINKS.slice(0, 2), ...navLinks.slice(3), ...MORE_LINKS.slice(2)];
 
   useEffect(() => {
     if (!accountMenuOpen) return;
@@ -57,6 +65,36 @@ export default function Navbar() {
     document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, [accountMenuOpen]);
+
+  // Menu mobile: đóng khi bấm ra ngoài, nhấn Escape, hoặc đổi trang.
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function onClickOutside(event: MouseEvent) {
+      const t = event.target as Node;
+      if (mobileMenuRef.current?.contains(t) || mobileToggleRef.current?.contains(t)) return;
+      setMobileMenuOpen(false);
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setAccountMenuOpen(false);
+  }, [pathname]);
+
+  // Escape đóng mọi menu; với dropdown "Thêm" (mở bằng hover/focus) thì bỏ focus để đóng.
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setMobileMenuOpen(false);
+      setAccountMenuOpen(false);
+      const active = document.activeElement as HTMLElement | null;
+      if (active && (moreRef.current?.contains(active))) active.blur();
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
@@ -77,7 +115,7 @@ export default function Navbar() {
               <li key={link.href} className={hasQuick ? "group relative" : undefined}>
                 <Link
                   href={link.href}
-                  className="inline-flex items-center gap-1 text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                  className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-slate-300 transition-colors hover:text-white"
                 >
                   {link.label}
                   {hasQuick && (
@@ -105,10 +143,37 @@ export default function Navbar() {
               </li>
             );
           })}
+          <li ref={moreRef} className="group relative">
+            <button
+              type="button"
+              aria-haspopup="menu"
+              className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]"
+            >
+              Thêm
+              <ChevronDown size={14} className="text-slate-500 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
+            </button>
+            <div className="invisible absolute right-0 top-full pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+              <ul className="w-48 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50">
+                {MORE_LINKS.map((q) => (
+                  <li key={q.href}>
+                    <Link
+                      href={q.href}
+                      className="flex items-center justify-between whitespace-nowrap rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      {q.label}
+                      <ChevronRight size={15} className="text-slate-500" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle />
+          <span className="hidden sm:inline-flex">
+            <ThemeToggle />
+          </span>
           <NotificationBell />
           {session ? (
             <div className="relative" ref={accountMenuRef}>
@@ -116,12 +181,13 @@ export default function Navbar() {
                 type="button"
                 aria-expanded={accountMenuOpen}
                 aria-haspopup="menu"
+                aria-label="Tài khoản"
                 onClick={() => setAccountMenuOpen((open) => !open)}
-                className="flex items-center gap-2 rounded-full bg-primary/15 py-1.5 pl-1.5 pr-3.5 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-primary/25 sm:pr-4"
+                className="flex h-11 w-11 items-center justify-center gap-2 rounded-full bg-primary/15 text-sm font-semibold text-[#3B82F6] transition-colors hover:bg-primary/25 sm:w-auto sm:py-1.5 sm:pl-1.5 sm:pr-4"
               >
                 <Avatar url={profile?.avatar_url} name={profile?.full_name} size={26} />
-                {profile?.full_name?.split(" ").pop() ?? "Tài khoản"}
-                <ChevronDown size={15} className={`transition-transform ${accountMenuOpen ? "rotate-180" : ""}`} />
+                <span className="hidden sm:inline">{profile?.full_name?.split(" ").pop() ?? "Tài khoản"}</span>
+                <ChevronDown size={15} className={`hidden transition-transform sm:inline ${accountMenuOpen ? "rotate-180" : ""}`} />
               </button>
               {accountMenuOpen && (
                 <div
@@ -235,6 +301,7 @@ export default function Navbar() {
 
           <button
             type="button"
+            ref={mobileToggleRef}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-main-navigation"
             aria-label={mobileMenuOpen ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
@@ -248,10 +315,11 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div
             id="mobile-main-navigation"
-            className="absolute left-3 right-3 top-[calc(100%+8px)] overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-2 shadow-2xl shadow-black/50 lg:hidden"
+            ref={mobileMenuRef}
+            className="absolute left-3 right-3 top-[calc(100%+8px)] max-h-[calc(100dvh-80px)] overflow-y-auto rounded-2xl border border-white/10 bg-[#0B1220] p-2 shadow-2xl shadow-black/50 lg:hidden"
           >
             <ul className="grid gap-1">
-              {navLinks.map((link) => {
+              {mobileLinks.map((link) => {
                 const inCttc = CTTC_PATHS.some((path) => pathname.startsWith(path));
                 const isActive =
                   link.href !== "/" &&
@@ -282,33 +350,28 @@ export default function Navbar() {
                             key={q.href}
                             href={q.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/[0.07] hover:text-white"
+                            className="inline-flex min-h-11 items-center rounded-full border border-white/10 px-3.5 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/[0.07] hover:text-white"
                           >
                             {q.label}
                           </Link>
                         ))}
                       </div>
                     )}
-                    {link.href === "/phu-huynh" && (
-                      <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
-                        <Link
-                          href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/[0.07] hover:text-white"
-                        >
-                          Xem kết quả của con
-                        </Link>
-                      </div>
-                    )}
                   </li>
                 );
               })}
+              <li className="border-t border-white/10 pt-1 sm:hidden">
+                <div className="flex min-h-12 items-center justify-between rounded-xl px-4 text-[15px] font-semibold text-slate-200">
+                  Giao diện sáng/tối
+                  <ThemeToggle />
+                </div>
+              </li>
               {!session && (
                 <li className="border-t border-white/10 pt-1 sm:hidden">
                   <Link
                     href="/dang-ky"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-[#60A5FA] transition-colors hover:bg-blue-500/10"
+                    className="flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-blue-300 transition-colors hover:bg-blue-500/10"
                   >
                     Đăng ký
                     <ChevronRight size={18} />
