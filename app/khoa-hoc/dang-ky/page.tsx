@@ -11,10 +11,13 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import {
-  fetchCourse,
+  fetchCourses,
+  fetchPairCourses,
   fetchTaughtTopics,
   formatDate,
   formatSchedule,
+  pairSlotLabel,
+  pairSlots,
   registerCourse,
   setCatchup,
   type RegisterResult,
@@ -30,26 +33,36 @@ function Card({ children }: { children: React.ReactNode }) {
   return <div className="mx-auto max-w-lg rounded-3xl border border-white/10 bg-panel p-8">{children}</div>;
 }
 
-function CourseSummary({ course }: { course: ThptCourse }) {
+/** Tóm tắt lớp đang đăng ký: khoá đơn in tên khoá; lớp 2 buổi/tuần in tên lớp + từng buổi đã chọn (A, B). */
+function CourseSummary({ courses }: { courses: ThptCourse[] }) {
+  const first = courses[0];
+  const paired = !!first.pairKey;
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[.03] p-4">
-      <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {course.className}</p>
-      <h2 className="mt-1 font-display text-lg font-bold text-white">{course.name}</h2>
+      <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {first.className}</p>
+      <h2 className="mt-1 font-display text-lg font-bold text-white">{paired ? first.pairKey : first.name}</h2>
+      {paired && <p className="mt-1 text-xs text-slate-400">Học {courses.length} buổi mỗi tuần.</p>}
       <ul className="mt-2 space-y-1 text-sm text-slate-300">
-        {course.schedules.map((s) => (
-          <li key={`${s.weekday}-${s.start_time}`} className="flex items-center gap-2">
-            <CalendarDays size={14} className="text-blue-300" /> {formatSchedule(s)}
-          </li>
-        ))}
+        {courses.flatMap((c) =>
+          c.schedules.map((s) => (
+            <li key={`${c.id}-${s.weekday}-${s.start_time}`} className="flex items-center gap-2">
+              <CalendarDays size={14} className="text-blue-300" />
+              {c.pairSlot && <span className="font-semibold text-white">{pairSlotLabel(c.pairSlot)} ·</span>}
+              {formatSchedule(s)}
+            </li>
+          )),
+        )}
       </ul>
-      {course.starts_at && <p className="mt-2 text-xs text-slate-500">Khai giảng {formatDate(course.starts_at)}</p>}
-      {course.fee_note && <p className="mt-1 text-xs text-slate-500">{course.fee_note}</p>}
+      {first.starts_at && <p className="mt-2 text-xs text-slate-500">Khai giảng {formatDate(first.starts_at)}</p>}
+      {first.fee_note && <p className="mt-1 text-xs text-slate-500">{first.fee_note}</p>}
     </div>
   );
 }
 
 /** Ai đang đăng ký: phụ huynh chọn con (hoặc khai con chưa có tài khoản), học sinh đăng ký cho mình. */
-function RegisterForm({ course }: { course: ThptCourse }) {
+function RegisterForm({ courses }: { courses: ThptCourse[] }) {
+  // Lớp 2 buổi/tuần: cùng khối, cùng chương trình → phần "lớp đã học tới" và bù bài tính theo khoá đầu.
+  const course = courses[0];
   const { session, profile } = useAuth();
   const toast = useToast();
   const isStaff = profile?.role === "admin" || profile?.role === "instructor" || profile?.role === "tro_giang";
@@ -61,7 +74,7 @@ function RegisterForm({ course }: { course: ThptCourse }) {
   const [contact, setContact] = useState("");
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<RegisterResult | null>(null);
+  const [result, setResult] = useState<RegisterResult[] | null>(null);
   // Lớp đã khai giảng: phần lớp đã học (bài gần nhất trước) để em tick bài đã học nơi khác.
   const [taught, setTaught] = useState<TaughtTopic[]>([]);
   const [known, setKnown] = useState<Set<number>>(new Set());
@@ -107,10 +120,12 @@ function RegisterForm({ course }: { course: ThptCourse }) {
         <Check className="mx-auto text-emerald-300" size={40} />
         <h1 className="mt-4 text-center font-display text-xl font-bold text-white">Đã gửi đăng ký</h1>
         <p className="mt-2 text-center text-sm text-slate-400">
-          Đăng ký vào <strong className="text-slate-200">{result.course_name}</strong> đang chờ giáo viên duyệt. Học
-          phí đóng tại trung tâm; giáo viên sẽ xác nhận sau khi nhận.
+          Đăng ký vào{" "}
+          <strong className="text-slate-200">{course.pairKey ?? result.map((r) => r.course_name).join(", ")}</strong>
+          {course.pairKey ? ` (${result.length} buổi/tuần)` : ""} đang chờ giáo viên duyệt. Học phí đóng tại trung
+          tâm; giáo viên sẽ xác nhận sau khi nhận.
         </p>
-        {result.joined_late && (
+        {result.some((r) => r.joined_late) && (
           <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[.06] p-3 text-sm text-amber-100/90">
             {catchupCount === null
               ? "Lớp đã học được một phần. Giáo viên sẽ xếp buổi phụ đạo bù bài với trợ giảng trước khi vào lớp chính thức."
@@ -137,19 +152,33 @@ function RegisterForm({ course }: { course: ThptCourse }) {
       return;
     }
     setBusy(true);
+    const done: RegisterResult[] = [];
     try {
-      const res = await registerCourse({ courseId: course.id, studentId, childName, contact, note });
-      if (res.joined_late && taught.length > 0) {
-        try {
-          const remaining = await setCatchup(res.registration_id, [...known]);
-          setCatchupCount(remaining.length);
-        } catch {
-          // Không chặn: giáo viên vẫn sửa được danh sách bù trong tab Ghi danh.
+      // Lớp 2 buổi/tuần = 2 lượt ghi danh (buổi A rồi buổi B). RPC hiện nhận một khoá mỗi lần; nếu buổi sau
+      // lỗi (hết chỗ…) thì buổi trước vẫn đã ghi — báo rõ để giáo viên xếp tay, không âm thầm bỏ.
+      for (const c of courses) {
+        const res = await registerCourse({ courseId: c.id, studentId, childName, contact, note });
+        done.push(res);
+        if (res.joined_late && taught.length > 0) {
+          try {
+            const remaining = await setCatchup(res.registration_id, [...known]);
+            setCatchupCount(remaining.length);
+          } catch {
+            // Không chặn: giáo viên vẫn sửa được danh sách bù trong tab Ghi danh.
+          }
         }
       }
-      setResult(res);
+      setResult(done);
     } catch (error) {
-      toast("error", error instanceof Error ? error.message : "Chưa đăng ký được.");
+      const msg = error instanceof Error ? error.message : "Chưa đăng ký được.";
+      if (done.length > 0) {
+        const failed = courses[done.length];
+        toast(
+          "error",
+          `Đã ghi ${done.map((r) => r.course_name).join(", ")}; ${failed?.pairSlot ? `buổi ${failed.pairSlot}` : "buổi còn lại"} chưa được: ${msg} Nhắn giáo viên để xếp buổi.`,
+        );
+        setResult(done);
+      } else toast("error", msg);
     } finally {
       setBusy(false);
     }
@@ -159,7 +188,7 @@ function RegisterForm({ course }: { course: ThptCourse }) {
     <Card>
       <h1 className="font-display text-xl font-bold text-white">Đăng ký học</h1>
       <div className="mt-4">
-        <CourseSummary course={course} />
+        <CourseSummary courses={courses} />
       </div>
       <form onSubmit={submit} className="mt-5 space-y-3">
         {isParent ? (
@@ -255,19 +284,54 @@ function RegisterForm({ course }: { course: ThptCourse }) {
   );
 }
 
+/**
+ * Kiểm bộ khoá đã chọn. Khoá đơn: đúng 1 id. Lớp 2 buổi/tuần (pairKey): phải có đúng MỘT khoá cho MỖI loại
+ * buổi đang mở của lớp (A và B), không trộn lớp khác. Trả về câu báo lỗi, null = hợp lệ.
+ */
+function validateSelection(selected: ThptCourse[], pairAll: ThptCourse[]): string | null {
+  if (selected.length === 0) return "Chưa chọn lớp.";
+  const keys = new Set(selected.map((c) => c.pairKey ?? `#${c.id}`));
+  if (keys.size > 1) return "Mỗi lần chỉ đăng ký một lớp. Quay lại trang Đăng ký học và chọn lại.";
+  const first = selected[0];
+  if (!first.pairKey) return selected.length === 1 ? null : "Mỗi lần chỉ đăng ký một lớp.";
+  const required = pairSlots(pairAll);
+  const chosen = selected.map((c) => c.pairSlot ?? "");
+  const ok = required.length === chosen.length && required.every((slot) => chosen.filter((x) => x === slot).length === 1);
+  if (ok) return null;
+  const words = required.map((slot) => `một buổi ${slot}`).join(" và ");
+  return `Lớp ${first.pairKey} học ${required.length} buổi mỗi tuần: cần chọn ${words}. Quay lại trang Đăng ký học để chọn đủ.`;
+}
+
 function Loader() {
   const searchParams = useSearchParams();
-  const id = Number(searchParams.get("id"));
-  const [course, setCourse] = useState<ThptCourse | null | undefined>(undefined);
+  // ?id=5&id=7 (lớp 2 buổi/tuần) hoặc ?id=1 (khoá đơn). Chuỗi hoá để effect không chạy lại vô ích.
+  const idsKey = [...new Set(searchParams.getAll("id").map(Number).filter((n) => Number.isInteger(n) && n > 0))].join(",");
+  const [state, setState] = useState<{ courses: ThptCourse[]; problem: string | null } | null | undefined>(undefined);
 
   useEffect(() => {
-    // id không hợp lệ -> fetchCourse trả null qua cùng một đường, không setState đồng bộ trong effect.
-    const load = !id || Number.isNaN(id) ? Promise.resolve(null) : fetchCourse(id);
-    load.then(setCourse).catch(() => setCourse(null));
-  }, [id]);
+    const ids = idsKey ? idsKey.split(",").map(Number) : [];
+    let cancelled = false;
+    // Không có id → đi cùng đường promise (không setState đồng bộ trong effect).
+    (async () => {
+      if (ids.length === 0) return null;
+      const courses = await fetchCourses(ids);
+      if (courses.length === 0) return null;
+      const pairAll = courses[0].pairKey ? await fetchPairCourses(courses[0]) : courses;
+      return { courses, problem: validateSelection(courses, pairAll) };
+    })()
+      .then((r) => {
+        if (!cancelled) setState(r);
+      })
+      .catch(() => {
+        if (!cancelled) setState(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [idsKey]);
 
-  if (course === undefined) return <Card><p className="text-center text-slate-400">Đang tải…</p></Card>;
-  if (course === null)
+  if (state === undefined) return <Card><p className="text-center text-slate-400">Đang tải…</p></Card>;
+  if (state === null)
     return (
       <Card>
         <h1 className="font-display text-xl font-bold text-white">Không tìm thấy khoá học</h1>
@@ -277,10 +341,20 @@ function Loader() {
         </Link>
       </Card>
     );
+  if (state.problem)
+    return (
+      <Card>
+        <h1 className="font-display text-xl font-bold text-white">Chưa chọn đủ buổi</h1>
+        <p className="mt-2 text-sm text-slate-400">{state.problem}</p>
+        <Link href="/khoa-hoc" className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white">
+          Chọn lại buổi học
+        </Link>
+      </Card>
+    );
 
   return (
     <RequireAuth>
-      <RegisterForm course={course} />
+      <RegisterForm courses={state.courses} />
     </RequireAuth>
   );
 }

@@ -4,6 +4,7 @@ import { getSupabase } from "./supabase";
 // để các file đang import từ "@/services/thpt-courses" không phải sửa gì.
 import {
   COURSE_SELECT,
+  derivePair,
   toCourse,
   type CourseStatus,
   type CourseSchedule,
@@ -13,9 +14,13 @@ import {
 export {
   WEEKDAY_LABEL,
   COURSE_SELECT,
+  derivePair,
   fetchPublicCourses,
   formatDate,
   formatSchedule,
+  groupCoursesByPair,
+  pairSlotLabel,
+  pairSlots,
   type CourseStatus,
   type CourseSchedule,
   type ThptCourse,
@@ -59,6 +64,34 @@ export async function fetchCourse(id: number): Promise<ThptCourse | null> {
   if (!data) return null;
   const [course] = await attachSeats([data as unknown as CourseRow]);
   return course;
+}
+
+/** Nhiều khoá theo id (trang đăng ký lớp 2 buổi/tuần: một id cho buổi A, một cho buổi B). Giữ thứ tự ids. */
+export async function fetchCourses(ids: number[]): Promise<ThptCourse[]> {
+  const unique = [...new Set(ids)];
+  if (unique.length === 0) return [];
+  const { data, error } = await getSupabase().from("thpt_courses").select(COURSE_SELECT).in("id", unique);
+  if (error) throw supabaseError(error, "Chưa đọc được khoá học.");
+  const courses = await attachSeats((data ?? []) as unknown as CourseRow[]);
+  const byId = new Map(courses.map((c) => [c.id, c]));
+  return unique.map((id) => byId.get(id)).filter((c): c is ThptCourse => !!c);
+}
+
+/**
+ * Các khoá cùng lớp (cùng pairKey) với khoá đã cho, đang mở — để trang đăng ký biết lớp đó có những loại
+ * buổi nào mà bắt chọn đủ. Lọc pairKey ở client vì cột pair_key có thể còn trống (suy từ tên).
+ */
+export async function fetchPairCourses(course: ThptCourse): Promise<ThptCourse[]> {
+  if (!course.pairKey) return [course];
+  const { data, error } = await getSupabase()
+    .from("thpt_courses")
+    .select(COURSE_SELECT)
+    .eq("class_id", course.class_id)
+    .eq("status", "active")
+    .order("id");
+  if (error) throw supabaseError(error, "Chưa đọc được các buổi của lớp.");
+  const rows = ((data ?? []) as unknown as CourseRow[]).filter((r) => derivePair(r).pairKey === course.pairKey);
+  return attachSeats(rows);
 }
 
 /** Mọi khoá của một khối — cho giáo viên phụ trách (RLS manages_class). */

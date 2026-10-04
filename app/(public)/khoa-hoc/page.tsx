@@ -16,6 +16,9 @@ import { supabaseConfigured } from "@/lib/supabase-env";
 import {
   fetchPublicCourses,
   formatDate,
+  groupCoursesByPair,
+  pairSlotLabel,
+  pairSlots,
   WEEKDAY_LABEL,
   type ThptCourse,
 } from "@/services/thpt-courses-public";
@@ -103,6 +106,114 @@ function CourseCard({ course }: { course: ThptCourse }) {
   );
 }
 
+/**
+ * Lớp học 2 buổi/tuần tách thành nhiều khoá (buổi A: T4 hoặc T5; buổi B: T7 hoặc CN). Một thẻ cho cả lớp,
+ * mỗi loại buổi một nhóm radio — phải chọn đủ MỖI loại một buổi mới bấm được Đăng ký (link mang nhiều id).
+ */
+function PairCard({ pairKey, courses }: { pairKey: string; courses: ThptCourse[] }) {
+  const slots = pairSlots(courses);
+  const [choice, setChoice] = useState<Record<string, number>>({});
+  const first = courses[0];
+  const complete = slots.every((slot) => choice[slot] !== undefined);
+  const allFull = slots.some((slot) =>
+    courses.filter((c) => c.pairSlot === slot).every((c) => c.capacity !== null && c.taken >= c.capacity),
+  );
+  const href = `/khoa-hoc/dang-ky/?${slots.map((slot) => `id=${choice[slot]}`).join("&")}`;
+  const slotWord = slots.map((s) => `một buổi ${s}`).join(" và ");
+  return (
+    <article className="flex flex-col rounded-3xl border border-white/10 bg-panel p-6 md:col-span-2">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[.14em] text-blue-300">Khối {first.className}</p>
+          <h2 className="mt-1 font-display text-xl font-bold text-white">{pairKey}</h2>
+          <p className="text-xs text-slate-500">Năm học {first.school_year}</p>
+        </div>
+        <span className="shrink-0 rounded-full bg-blue-500/15 px-3 py-1 text-xs font-bold text-blue-200">
+          {slots.length} buổi/tuần
+        </span>
+      </div>
+      {/* Không in description của từng khoá: đó là lời dặn cho từng buổi của luồng cũ, thẻ gộp đã nói đủ. */}
+      <p className="mt-3 text-sm text-slate-300">
+        Mỗi tuần học {slots.length} buổi: chọn {slotWord}.
+      </p>
+
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        {slots.map((slot) => (
+          <fieldset key={slot} className="rounded-2xl border border-white/10 p-4">
+            <legend className="px-1 text-xs font-bold uppercase tracking-[.14em] text-blue-300">
+              {pairSlotLabel(slot)} — chọn 1
+            </legend>
+            <ul className="mt-1 space-y-2">
+              {courses
+                .filter((c) => c.pairSlot === slot)
+                .map((c) => {
+                  const full = c.capacity !== null && c.taken >= c.capacity;
+                  const checked = choice[slot] === c.id;
+                  return (
+                    <li key={c.id}>
+                      <label
+                        className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 text-sm ${
+                          checked ? "border-primary bg-primary/10" : "border-white/10 hover:bg-white/[.03]"
+                        } ${full ? "cursor-not-allowed opacity-50" : ""}`}
+                      >
+                        <input
+                          type="radio"
+                          name={`pair-${pairKey}-${slot}`}
+                          value={c.id}
+                          checked={checked}
+                          disabled={full}
+                          onChange={() => setChoice((prev) => ({ ...prev, [slot]: c.id }))}
+                          className="h-4 w-4 accent-primary"
+                        />
+                        <span className="flex-1">
+                          {c.schedules.map((s) => (
+                            <span key={`${s.weekday}-${s.start_time}`} className="block">
+                              <span className="font-semibold text-white">{WEEKDAY_LABEL[s.weekday]}</span>{" "}
+                              <span className="text-slate-300">
+                                {s.start_time}–{s.end_time}
+                              </span>
+                              {s.location && <span className="text-slate-400"> · {s.location}</span>}
+                            </span>
+                          ))}
+                        </span>
+                        <span className={`text-xs font-semibold ${full ? "text-red-300" : "text-emerald-300"}`}>
+                          {seatsLabel(c)}
+                        </span>
+                      </label>
+                    </li>
+                  );
+                })}
+            </ul>
+          </fieldset>
+        ))}
+      </div>
+
+      <div className="mt-4 space-y-1 text-xs text-slate-400">
+        {first.starts_at && <p>Khai giảng {formatDate(first.starts_at)}</p>}
+        {first.fee_note && (
+          <p className="flex items-center gap-1.5">
+            <Wallet size={13} /> {first.fee_note}
+          </p>
+        )}
+      </div>
+
+      <div className="mt-5 flex-1" />
+      {!complete && !allFull && (
+        <p className="text-xs text-slate-400">Chọn đủ {slotWord} để đăng ký.</p>
+      )}
+      <Link
+        href={complete && !allFull ? href : "#"}
+        aria-disabled={!complete || allFull}
+        className={`mt-2 inline-flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold ${
+          complete && !allFull ? "bg-primary text-white hover:bg-primary-dark" : "pointer-events-none bg-white/5 text-slate-500"
+        }`}
+      >
+        <Users size={16} /> {allFull ? "Đã đủ chỗ" : "Đăng ký học"}
+      </Link>
+    </article>
+  );
+}
+
 export default function KhoaHocPage() {
   const [courses, setCourses] = useState<ThptCourse[] | null>(null);
   const [error, setError] = useState("");
@@ -156,9 +267,13 @@ export default function KhoaHocPage() {
               <section key={className}>
                 <h2 className="mb-4 font-display text-lg font-bold text-slate-200">Khối {className}</h2>
                 <div className="grid gap-5 md:grid-cols-2">
-                  {list.map((course) => (
-                    <CourseCard key={course.id} course={course} />
-                  ))}
+                  {groupCoursesByPair(list).map((g) =>
+                    g.pairKey ? (
+                      <PairCard key={g.key} pairKey={g.pairKey} courses={g.courses} />
+                    ) : (
+                      <CourseCard key={g.key} course={g.courses[0]} />
+                    ),
+                  )}
                 </div>
               </section>
             ))}

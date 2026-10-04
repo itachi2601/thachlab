@@ -25,6 +25,22 @@ nhắn qua lại rồi giáo viên gõ tay vào roster.
    hướng dẫn chuyển khoản ở trang đăng ký và dùng nhánh `paid_transfer`, không đổi schema.
 7. Phụ huynh xem trạng thái đăng ký ở `/phu-huynh` (mục "Đăng ký học").
 
+## Lớp học 2 buổi/tuần (buổi A / buổi B) — 4/10/2026
+
+Lớp 12 học 2 buổi/tuần nhưng mỗi buổi có 2 ca để chọn (buổi A: Thứ 4 hoặc Thứ 5; buổi B: Thứ 7 hoặc Chủ
+nhật). Trong DB vẫn là **mỗi khoá một buổi**; các khoá cùng một lớp nối với nhau bằng `thpt_courses.pair_key`
+(tên lớp, vd `Vật lí 12L1`) và `pair_slot` (`A`/`B`). Cột trống thì code suy từ tên theo quy ước
+`"<tên lớp> — buổi A · Thứ 4 (A4)"` (`derivePair` trong `services/thpt-courses-public.ts`; cùng logic ở
+`scripts/build-content.mjs`). Tab Ghi danh chưa có ô nhập 2 cột này — đặt tên khoá theo quy ước là đủ.
+
+- Trang chủ (dải phụ huynh): lớp 12 in hai hàng "Buổi A …" / "Buổi B …" + câu "chọn một buổi A và một buổi B".
+- `/khoa-hoc`: một thẻ cho cả lớp, hai nhóm radio; chọn đủ mỗi loại một buổi mới bấm được Đăng ký → link
+  `/khoa-hoc/dang-ky/?id=<A>&id=<B>`.
+- `/khoa-hoc/dang-ky`: kiểm bộ id (đúng một khoá cho mỗi `pair_slot` của lớp, không trộn lớp), rồi gọi
+  `thpt_register` **hai lần** (A rồi B). Lượt sau lỗi (hết chỗ…) thì lượt trước vẫn đã ghi — toast báo rõ để
+  giáo viên xếp tay. RPC chưa ép ràng buộc ở server.
+- Migration `20261004230000_thpt_course_pairs.sql` điền 2 cột cho 4 khoá 12L1 (chỉ dữ liệu).
+
 ## Chạy lần đầu
 
 **SQL Editor** → `docs/supabase-migration-khoa-hoc-thpt.sql` (sau `supabase-migration-phu-huynh.sql`).

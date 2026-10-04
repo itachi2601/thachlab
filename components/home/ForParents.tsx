@@ -40,26 +40,65 @@ const WEEKDAY: Record<number, string> = {
   1: "Thứ 2", 2: "Thứ 3", 3: "Thứ 4", 4: "Thứ 5", 5: "Thứ 6", 6: "Thứ 7", 7: "Chủ nhật",
 };
 
-interface GradeRow {
-  className: string;
+interface SessionGroup {
+  /** "Buổi A" cho lớp 2 buổi/tuần; null cho khoá đơn. */
+  label: string | null;
   sessions: HomeCourseSession[];
 }
 
-/** Gom buổi theo khối, bỏ buổi trùng, xếp theo thứ rồi giờ. Tên lớp nội bộ ("10L3") không hiện (P8). */
+interface GradeRow {
+  className: string;
+  groups: SessionGroup[];
+  /** Lớp học 2 buổi/tuần (có nhóm buổi A/B) → in câu "chọn một buổi A và một buổi B". */
+  paired: boolean;
+}
+
+/**
+ * Gom buổi theo khối. Khoá đơn: một nhóm không nhãn. Lớp tách buổi A/B (pairKey/pairSlot): mỗi loại buổi
+ * một nhóm có nhãn, xếp A → B. Bỏ buổi trùng, xếp theo thứ rồi giờ. Tên lớp nội bộ ("10L3") không hiện (P8).
+ */
 function groupByGrade(courses: HomeCourse[]): GradeRow[] {
-  const byGrade = new Map<string, Map<string, HomeCourseSession>>();
+  type Bucket = Map<string, HomeCourseSession>;
+  const byGrade = new Map<string, Map<string, { label: string | null; bucket: Bucket }>>();
   for (const c of courses) {
-    const m = byGrade.get(c.className) ?? new Map<string, HomeCourseSession>();
-    for (const s of c.schedules) m.set(`${s.weekday}|${s.start}|${s.end}|${s.location}`, s);
-    byGrade.set(c.className, m);
+    const groups = byGrade.get(c.className) ?? new Map();
+    const pairKeys = new Set(courses.filter((x) => x.className === c.className && x.pairKey).map((x) => x.pairKey));
+    // Một khối có ≥2 lớp tách buổi thì nhãn kèm tên lớp để khỏi lẫn; thường chỉ có một lớp → "Buổi A".
+    const label = c.pairSlot ? (pairKeys.size > 1 ? `${c.pairKey} · buổi ${c.pairSlot}` : `Buổi ${c.pairSlot}`) : null;
+    const gKey = c.pairSlot ? `${pairKeys.size > 1 ? c.pairKey : ""}|${c.pairSlot}` : "";
+    const g = groups.get(gKey) ?? { label, bucket: new Map() as Bucket };
+    for (const s of c.schedules) g.bucket.set(`${s.weekday}|${s.start}|${s.end}|${s.location}`, s);
+    groups.set(gKey, g);
+    byGrade.set(c.className, groups);
   }
+  const sortSessions = (a: HomeCourseSession, b: HomeCourseSession) =>
+    a.weekday - b.weekday || a.start.localeCompare(b.start);
   return [...byGrade.entries()]
-    .map(([className, m]) => ({
-      className,
-      sessions: [...m.values()].sort((a, b) => a.weekday - b.weekday || a.start.localeCompare(b.start)),
-    }))
-    .filter((g) => g.sessions.length > 0)
+    .map(([className, groups]) => {
+      const list = [...groups.entries()]
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([, g]) => ({ label: g.label, sessions: [...g.bucket.values()].sort(sortSessions) }))
+        .filter((g) => g.sessions.length > 0);
+      return { className, groups: list, paired: list.some((g) => g.label !== null) };
+    })
+    .filter((g) => g.groups.length > 0)
     .sort((a, b) => Number(a.className) - Number(b.className) || a.className.localeCompare(b.className));
+}
+
+function SessionList({ sessions }: { sessions: HomeCourseSession[] }) {
+  return (
+    <ul className="flex flex-wrap gap-x-5 gap-y-1 text-lg leading-relaxed text-[#334155]">
+      {sessions.map((s) => (
+        <li key={`${s.weekday}-${s.start}`} className="whitespace-nowrap">
+          <span className="font-semibold text-[#0f172a]">{WEEKDAY[s.weekday] ?? ""}</span>{" "}
+          <span className="tabular-nums">
+            {s.start}–{s.end}
+          </span>
+          {s.location && <span className="text-[#475569]"> · {s.location}</span>}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
@@ -83,17 +122,21 @@ function ClassSchedule({ courses }: { courses: HomeCourse[] | null }) {
         {rows.map((g) => (
           <li key={g.className} className="grid gap-y-1 py-3 sm:grid-cols-[5.5rem_1fr] sm:items-baseline">
             <span className="text-lg font-bold">Lớp {g.className}</span>
-            <ul className="flex flex-wrap gap-x-5 gap-y-1 text-lg leading-relaxed text-[#334155]">
-              {g.sessions.map((s) => (
-                <li key={`${s.weekday}-${s.start}`} className="whitespace-nowrap">
-                  <span className="font-semibold text-[#0f172a]">{WEEKDAY[s.weekday] ?? ""}</span>{" "}
-                  <span className="tabular-nums">
-                    {s.start}–{s.end}
-                  </span>
-                  {s.location && <span className="text-[#475569]"> · {s.location}</span>}
-                </li>
+            <div className="space-y-1">
+              {g.groups.map((grp, i) => (
+                <div key={grp.label ?? i} className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  {grp.label && (
+                    <span className="text-[15px] font-semibold uppercase tracking-wide text-[#475569]">{grp.label}</span>
+                  )}
+                  <SessionList sessions={grp.sessions} />
+                </div>
               ))}
-            </ul>
+              {g.paired && (
+                <p className="text-[15px] leading-relaxed text-[#475569]">
+                  Học hai buổi mỗi tuần: chọn một buổi A và một buổi B.
+                </p>
+              )}
+            </div>
           </li>
         ))}
       </ul>

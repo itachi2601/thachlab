@@ -153,7 +153,7 @@ async function fetchPublicCourses(supabase) {
     const { data, error } = await supabase
       .from("thpt_courses")
       .select(
-        "id, class_id, name, school_year, starts_at, is_public, status, classes(name), thpt_course_schedules(weekday, start_time, end_time, location)",
+        "id, class_id, name, school_year, starts_at, is_public, status, pair_key, pair_slot, classes(name), thpt_course_schedules(weekday, start_time, end_time, location)",
       )
       .eq("is_public", true)
       .eq("status", "active")
@@ -162,12 +162,18 @@ async function fetchPublicCourses(supabase) {
     if (error) throw error;
     return (data ?? []).map((row) => {
       const cls = Array.isArray(row.classes) ? row.classes[0] : row.classes;
+      // Lớp 2 buổi/tuần tách thành nhiều khoá (buổi A / buổi B) — cùng logic derivePair ở
+      // services/thpt-courses-public.ts: ưu tiên cột pair_key/pair_slot, trống thì suy từ tên.
+      const slot = (row.pair_slot?.trim() || row.name.match(/buổi\s+([A-Za-z])\b/i)?.[1] || "").toUpperCase();
+      const pairKey = slot ? row.pair_key?.trim() || row.name.split(/\s+[—–-]\s+/)[0].trim() || row.name : null;
       return {
         id: row.id,
         name: row.name,
         className: cls?.name ?? "",
         schoolYear: row.school_year ?? "",
         startsAt: row.starts_at ?? null,
+        pairKey,
+        pairSlot: slot || null,
         schedules: (row.thpt_course_schedules ?? [])
           .map((x) => ({
             weekday: x.weekday,

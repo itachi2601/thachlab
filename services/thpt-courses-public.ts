@@ -44,21 +44,77 @@ export interface ThptCourse {
   schedules: CourseSchedule[];
   /** Số chỗ đã lấy (pending + catchup + active). */
   taken: number;
+  /**
+   * Lớp học 2 buổi/tuần tách thành nhiều khoá, mỗi khoá một buổi: các khoá cùng `pairKey` là một lớp,
+   * `pairSlot` ("A"/"B") là loại buổi — học sinh phải chọn đúng MỘT khoá cho MỖI loại buổi.
+   * Đọc từ cột pair_key/pair_slot; cột trống thì suy từ tên ("Vật lí 12L1 — buổi A · Thứ 4").
+   * null = khoá đơn (một buổi/tuần, đăng ký một khoá là xong).
+   */
+  pairKey: string | null;
+  pairSlot: string | null;
 }
 
 export const COURSE_SELECT =
-  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
+  "id, class_id, name, description, school_year, starts_at, ends_at, capacity, fee_note, is_public, status, current_topic_id, pair_key, pair_slot, classes(name), thpt_course_schedules(id, weekday, start_time, end_time, location)";
 
 export type CourseRow = {
   id: number; class_id: number; name: string; description: string; school_year: string;
   starts_at: string | null; ends_at: string | null; capacity: number | null; fee_note: string;
   is_public: boolean; status: CourseStatus; current_topic_id: number | null;
+  pair_key?: string | null; pair_slot?: string | null;
   classes: { name: string } | { name: string }[] | null;
   thpt_course_schedules: { id: number; weekday: number; start_time: string; end_time: string; location: string }[] | null;
 };
 
 export function hhmm(t: string) {
   return t.slice(0, 5);
+}
+
+const PAIR_SLOT_IN_NAME = /buổi\s+([A-Za-z])\b/i;
+
+/**
+ * Lớp/buổi của một khoá. Ưu tiên cột pair_key/pair_slot; cột trống thì suy từ tên theo quy ước
+ * "<tên lớp> — buổi <A|B> · …" (phần trước " — " là tên lớp). Cùng logic với scripts/build-content.mjs.
+ */
+export function derivePair(row: { name: string; pair_key?: string | null; pair_slot?: string | null }): {
+  pairKey: string | null;
+  pairSlot: string | null;
+} {
+  const slot = (row.pair_slot?.trim() || row.name.match(PAIR_SLOT_IN_NAME)?.[1] || "").toUpperCase();
+  if (!slot) return { pairKey: null, pairSlot: null };
+  const key = row.pair_key?.trim() || row.name.split(/\s+[—–-]\s+/)[0].trim() || row.name.trim();
+  return { pairKey: key, pairSlot: slot };
+}
+
+/** Nhãn buổi cho người đọc: "Buổi A". */
+export function pairSlotLabel(slot: string) {
+  return `Buổi ${slot}`;
+}
+
+/** Gom khoá theo lớp: khoá đơn đứng riêng, khoá cùng pairKey gộp thành một nhóm (giữ thứ tự xuất hiện). */
+export function groupCoursesByPair<T extends { pairKey: string | null; pairSlot: string | null }>(
+  courses: T[],
+): { key: string; pairKey: string | null; courses: T[] }[] {
+  const out: { key: string; pairKey: string | null; courses: T[] }[] = [];
+  const idx = new Map<string, number>();
+  for (const c of courses) {
+    if (!c.pairKey) {
+      out.push({ key: `single-${out.length}`, pairKey: null, courses: [c] });
+      continue;
+    }
+    const i = idx.get(c.pairKey);
+    if (i === undefined) {
+      idx.set(c.pairKey, out.length);
+      out.push({ key: `pair-${c.pairKey}`, pairKey: c.pairKey, courses: [c] });
+    } else out[i].courses.push(c);
+  }
+  for (const g of out) g.courses.sort((a, b) => (a.pairSlot ?? "").localeCompare(b.pairSlot ?? ""));
+  return out;
+}
+
+/** Danh sách loại buổi (A, B…) của một nhóm khoá, đã xếp. */
+export function pairSlots<T extends { pairSlot: string | null }>(courses: T[]): string[] {
+  return [...new Set(courses.map((c) => c.pairSlot).filter((x): x is string => !!x))].sort();
 }
 
 export function toCourse(row: CourseRow, taken: number): ThptCourse {
@@ -71,6 +127,7 @@ export function toCourse(row: CourseRow, taken: number): ThptCourse {
     school_year: row.school_year, starts_at: row.starts_at, ends_at: row.ends_at, capacity: row.capacity,
     fee_note: row.fee_note, is_public: row.is_public, status: row.status, current_topic_id: row.current_topic_id ?? null,
     schedules, taken,
+    ...derivePair(row),
   };
 }
 

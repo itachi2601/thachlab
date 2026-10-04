@@ -33,6 +33,9 @@ export interface HomeCourse {
   className: string;
   schoolYear: string;
   startsAt: string | null;
+  /** Lớp 2 buổi/tuần: các khoá cùng pairKey là một lớp, pairSlot "A"/"B" là loại buổi (null = khoá đơn). */
+  pairKey: string | null;
+  pairSlot: string | null;
   schedules: HomeCourseSession[];
 }
 
