@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 2. Thang nhiệt độ",
+  "lesson_id": 3,
+  "nguon_trong_bai": "content/lesson-samples/l12-thang-nhiet-do/theory.html",
+  "id": "tn-l12-thangnhietdo-04",
+  "ten": "Ba nhiệt kế đo cùng một cốc nước: tiếp xúc và hồng ngoại",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "thangnhietdo.nguyen_li_nhiet_ke",
+    "thangnhietdo.hong_ngoai_do_be_mat"
+  ],
+  "muc_tieu": "So sánh ba cách đo nhiệt độ trên cùng một vật; nhận ra nhiệt kế hồng ngoại đo nhiệt độ bề mặt qua bức xạ nên bề mặt bóng, phản xạ mạnh cho số đọc sai lệch, còn nhiệt kế tiếp xúc chỉ đo được nơi nó đặt vào.",
+  "dung_cu": [
+    { "ten": "Cốc sứ hoặc cốc thuỷ tinh", "so_luong": 2 },
+    { "ten": "Nhiệt kế thuỷ ngân hoặc rượu", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nhiệt kế điện tử có que đo", "so_luong": 1, "ghi_chu": "sai số ±0,2 °C" },
+    { "ten": "Nhiệt kế hồng ngoại", "so_luong": 1, "ghi_chu": "đặt hệ số phát xạ mặc định 0,95" },
+    { "ten": "Mảnh giấy bạc và mảnh băng dính giấy", "so_luong": 1, "ghi_chu": "dán ngoài thành cốc để so bề mặt bóng với bề mặt nhám" },
+    { "ten": "Nước ấm khoảng 50 °C", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Rót nước ấm (~50 °C) vào cốc, chờ một phút cho nhiệt độ trong cốc ổn định.",
+      "Đo bằng nhiệt kế thuỷ ngân (ngâm bầu trong nước) và nhiệt kế điện tử (que đo trong nước), ghi hai số đọc.",
+      "Dùng nhiệt kế hồng ngoại bắn vào mặt nước từ khoảng cách 5 cm, rồi bắn vào thành cốc, rồi bắn vào mảnh giấy bạc đã dán ngoài thành cốc; ghi cả ba số đọc.",
+      "Làm lại hai lần cho mỗi vị trí và lấy giá trị trung bình."
+    ],
+    "quan_sat": [
+      "Hai nhiệt kế tiếp xúc cho kết quả sát nhau, lệch trong khoảng ±0,5 °C.",
+      "Nhiệt kế hồng ngoại bắn vào mặt nước cho số thấp hơn khoảng 1–2 °C, vì mặt nước vừa phát xạ vừa bay hơi làm lạnh lớp bề mặt.",
+      "Bắn vào mảnh giấy bạc cho số thấp hơn hẳn nữa, dù mảnh giấy bạc đang ấm đúng bằng thành cốc."
+    ],
+    "rut_ra": [
+      "Nhiệt kế tiếp xúc đo nhiệt độ của nơi nó đặt vào; nhiệt kế hồng ngoại đo nhiệt độ bề mặt qua bức xạ điện từ mà vật phát ra.",
+      "Bề mặt bóng, phản xạ mạnh phát xạ yếu nên cảm biến suy ra nhiệt độ thấp giả — đây là sai số do vật đo, không phải do nhiệt kế hỏng.",
+      "Muốn so sánh công bằng các nhiệt kế, phải đo cùng một vị trí, cùng khoảng cách và cùng loại bề mặt."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "t_nuoc", "ten": "Nhiệt độ nước trong cốc", "don_vi": "°C", "kieu": "dieu_chinh", "min": 30, "max": 80, "mac_dinh": 50, "buoc": 5 },
+    { "ky_hieu": "d", "ten": "Khoảng cách từ nhiệt kế hồng ngoại tới bề mặt", "don_vi": "cm", "kieu": "dieu_chinh", "min": 1, "max": 30, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "eps_be_mat", "ten": "Độ phát xạ của bề mặt đo", "don_vi": "—", "kieu": "dieu_chinh", "min": 0.05, "max": 0.98, "mac_dinh": 0.95, "buoc": 0.01 },
+    { "ky_hieu": "sai_so_dc", "ten": "Sai số dụng cụ của nhiệt kế tiếp xúc", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 0.5 },
+    { "ky_hieu": "t_do", "ten": "Số đọc của nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "t_suy_ra", "ten": "Nhiệt độ suy ra từ bức xạ đo được", "don_vi": "°C", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Nhiệt kế tiếp xúc: t_do ≈ t_nuoc, sai khác trong khoảng ±sai_so_dc",
+      "Công suất bức xạ của bề mặt: P = eps_be_mat·sigma·T⁴ (T tính bằng Kelvin)",
+      "Nếu nhiệt kế giả định mọi bề mặt đều có eps = 0,95 thì nhiệt độ suy ra bị hụt: vật có eps thấp hiện nhiệt độ thấp hơn thực tế"
+    ],
+    "gia_thiet": [
+      "nước trong cốc đã ổn định nhiệt độ, không còn chênh lệch giữa các lớp",
+      "nhiệt kế hồng ngoại giữ nguyên hệ số phát xạ đặt sẵn trong suốt phép đo",
+      "bề mặt giấy bạc và thành cốc cùng nhiệt độ vì dán sát nhau"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo eps_be_mat: ở 0,95 (da, giấy nhám) số đọc sát nhiệt độ thật; hạ xuống 0,10 (giấy bạc) thì nhiệt độ hiện ra tụt mạnh dù nhiệt độ thật không đổi."
+  },
+  "so_lieu_mau": {
+    "cot": ["Dụng cụ / vị trí đo", "Số đọc (°C)"],
+    "hang": [
+      ["Nhiệt kế thuỷ ngân (trong nước)", 49.8],
+      ["Nhiệt kế điện tử (trong nước)", 50.2],
+      ["Hồng ngoại — mặt nước, cách 5 cm", 48.4],
+      ["Hồng ngoại — thành cốc sứ, cách 5 cm", 47.1],
+      ["Hồng ngoại — mảnh giấy bạc, cách 5 cm", 41.0],
+      ["Hồng ngoại — mảnh giấy bạc, cách 25 cm", 38.5]
+    ],
+    "ghi_chu": "Số liệu minh hoạ với t_nuoc = 50 °C, eps mặc định 0,95. Số đọc trên giấy bạc thấp giả vì eps của bạc chỉ khoảng 0,02–0,10; kéo xa thêm còn thấp hơn vì chùm tia hứng thêm bức xạ nền của phòng."
+  },
+  "ket_qua_ky_vong": "Hai nhiệt kế tiếp xúc cho kết quả nhất quán trong sai số; nhiệt kế hồng ngoại cho số thấp hơn trên mặt nước, thấp hơn nữa trên thành cốc và thấp hẳn trên giấy bạc — dù mọi vị trí ấy cùng nhiệt độ.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nhiệt kế hồng ngoại đo được nhiệt độ bên trong vật, không cần chạm cũng biết nhiệt độ trong lõi.",
+    "Cho rằng nhiệt kế hồng ngoại 'chính xác hơn' nên số đọc trên giấy bạc mới là nhiệt độ thật.",
+    "Cho rằng hai nhiệt kế tiếp xúc lệch nhau 0,4 °C chứng tỏ một trong hai cái đã hỏng."
+  ],
+  "sai_so_thuong_gap": [
+    "Không chờ mặt nước ổn định: vừa rót nước xong đã đo nên lớp mặt còn đang nguội vì bay hơi.",
+    "Đo hồng ngoại ở khoảng cách khác nhau giữa các lần nên chùm tia hứng lượng bức xạ nền khác nhau.",
+    "Cầm nhiệt kế hồng ngoại quá gần, hơi nước nóng phủ lên thấu kính."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Một cốc nước với ba nhiệt kế đặt quanh; người dùng kéo thanh trượt độ phát xạ và khoảng cách để thấy số đọc hồng ngoại thay đổi trong khi nhiệt độ thật của nước không đổi.",
+    "diem_nhan": "Bảng số liệu cho thấy cùng một vật mà sáu phép đo ra sáu số khác nhau — nghĩa là phải ghi rõ đo bằng dụng cụ gì, ở đâu, mới so sánh được."
+  },
+  "an_toan": [
+    "Nước 50 °C vẫn gây bỏng: rót vào cốc đặt trên bàn phẳng, không cầm trên tay.",
+    "Không hướng nhiệt kế hồng ngoại vào mắt người khác (tia laser định vị)."
+  ]
+}

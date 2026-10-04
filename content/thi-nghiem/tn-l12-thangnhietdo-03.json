@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 2. Thang nhiệt độ",
+  "lesson_id": 3,
+  "nguon_trong_bai": "content/lesson-samples/l12-thang-nhiet-do/theory.html",
+  "id": "tn-l12-thangnhietdo-03",
+  "ten": "Kéo dài đường biểu diễn p(t) để tìm độ không tuyệt đối",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "thangnhietdo.do_khong_tuyet_doi",
+    "thangnhietdo.thang_kelvin"
+  ],
+  "muc_tieu": "Từ bảng số liệu áp suất – nhiệt độ của một lượng khí, ngoại suy đường thẳng tới áp suất bằng 0 và nhận ra mọi chất khí đều cho cùng một điểm cắt ở −273,15 °C — gốc 0 K.",
+  "dung_cu": [
+    { "ten": "Bình kín chứa khí có nắp và van (hoặc bình tam giác đậy kín)", "so_luong": 1, "ghi_chu": "thể tích không đổi trong suốt thí nghiệm" },
+    { "ten": "Cảm biến áp suất hoặc áp kế có chia tới 1 kPa", "so_luong": 1, "ghi_chu": "sai số ±1 kPa" },
+    { "ten": "Nhiệt kế", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nồi nước nóng có bếp, nước đá, nước phòng", "so_luong": 1, "ghi_chu": "để tạo các mức nhiệt độ 0, 25, 50, 75, 100 °C" },
+    { "ten": "Giá đỡ hoặc kẹp giữ bình khỏi chạm đáy nồi", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối cảm biến áp suất với bình kín, kiểm tra không rò khí; ghi áp suất ở nhiệt độ phòng.",
+      "Lần lượt ngâm bình vào nước đá đang tan (0 °C), nước phòng (25 °C), nước ấm (50 °C), nước nóng hơn (75 °C) và nước đang sôi (100 °C); mỗi mức chờ 2–3 phút cho nhiệt độ ổn định rồi đọc đồng thời nhiệt độ và áp suất.",
+      "Ghi 5 cặp số (t, p) vào bảng, vẽ các điểm lên đồ thị p – t, kẻ đường thẳng đi qua các điểm rồi kéo dài tới khi cắt trục nhiệt độ."
+    ],
+    "quan_sat": [
+      "Áp suất tăng đều theo nhiệt độ: các điểm gần như nằm trên một đường thẳng.",
+      "Kéo dài đường thẳng, nó cắt trục nhiệt độ ở khoảng −273 °C, nơi áp suất bằng 0.",
+      "Làm lại với lượng khí khác hoặc áp suất ban đầu khác, điểm cắt vẫn ở đó, chỉ độ dốc đường thẳng thay đổi."
+    ],
+    "rut_ra": [
+      "Không thể hạ nhiệt độ mãi: mọi chất khí đều cho cùng một điểm cắt, ứng với nhiệt độ thấp nhất có thể có.",
+      "Điểm cắt đó là gốc của thang Kelvin: 0 K = −273,15 °C.",
+      "Vì điểm cắt không phụ thuộc loại khí hay lượng khí, người ta chọn nó làm mốc 0 của thang nhiệt động."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p0", "ten": "Áp suất khí ở 0 °C", "don_vi": "kPa", "kieu": "dieu_chinh", "min": 80, "max": 150, "mac_dinh": 100, "buoc": 5 },
+    { "ky_hieu": "t_max", "ten": "Nhiệt độ cao nhất khảo sát", "don_vi": "°C", "kieu": "dieu_chinh", "min": 60, "max": 120, "mac_dinh": 100, "buoc": 5 },
+    { "ky_hieu": "n_diem", "ten": "Số điểm đo", "don_vi": "điểm", "kieu": "dieu_chinh", "min": 3, "max": 8, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "alpha", "ten": "Hệ số tăng áp suất theo nhiệt độ", "don_vi": "1/K", "kieu": "co_dinh", "gia_tri": 0.003661 },
+    { "ky_hieu": "p_do", "ten": "Áp suất đọc trên cảm biến", "don_vi": "kPa", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "t_cat", "ten": "Nhiệt độ tại điểm cắt p = 0", "don_vi": "°C", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Áp suất theo nhiệt độ Celsius: p = p0·(1 + alpha·t), với alpha = 1/273,15 K⁻¹",
+      "Ngoại suy cho p = 0: t_cat = −1/alpha = −273,15 °C",
+      "Theo thang Kelvin: p = p0·T/273,15 — đường thẳng đi qua gốc 0 K"
+    ],
+    "gia_thiet": [
+      "thể tích bình không đổi, không rò khí trong suốt thí nghiệm",
+      "khí được coi là khí lí tưởng; ở áp suất cao, khí thực lệch khỏi đường thẳng",
+      "bỏ qua nhiệt hao và thời gian chờ cho bình đạt nhiệt độ của nước"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ dần các điểm theo từng mức nhiệt độ và cho kéo dài đường thẳng bằng chuột: điểm cắt trục hoành luôn nhảy về −273 °C dù đổi p0 hay t_max."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ (°C)", "Áp suất khí (kPa)"],
+    "hang": [
+      [0, 100.0],
+      [25, 109.2],
+      [50, 118.3],
+      [75, 127.5],
+      [100, 136.6]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với p0 = 100,0 kPa (khí lí tưởng). Đo thật sẽ lệch vài phần nghìn ở nhiệt độ cao và gần 0 °C sẽ thấy áp suất khác 100 kPa nếu bình có rò khí."
+  },
+  "ket_qua_ky_vong": "Năm điểm nằm gần như trên một đường thẳng; kéo dài đường thẳng cắt trục nhiệt độ ở khoảng −273 °C. Điểm cắt không đổi khi thay đổi lượng khí, loại khí hay dải nhiệt độ khảo sát.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nhiệt độ thấp nhất là 0 °C, còn −273 °C chỉ là con số suy ra từ công thức, không có thật.",
+    "Cho rằng điểm cắt phụ thuộc loại khí: oxi cắt ở một chỗ, hêli cắt ở chỗ khác.",
+    "Cho rằng 'áp suất bằng 0' nghĩa là vật biến mất, thay vì hiểu đó là giới hạn dưới của nhiệt độ."
+  ],
+  "sai_so_thuong_gap": [
+    "Bình rò khí nên áp suất không tăng đúng quy luật, đường biểu diễn bị cong.",
+    "Chưa chờ bình đạt nhiệt độ của nước đã đọc số, nhiệt độ và áp suất không còn tương ứng.",
+    "Vẽ đồ thị bằng tay với trục nhiệt độ chia không đều, điểm cắt bị xác định sai."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bình khí ngâm trong nồi nước; mỗi mức nhiệt độ là một điểm sáng hiện trên đồ thị p – t, sau đó kéo dài đường thẳng tới trục hoành.",
+    "diem_nhan": "Điểm cắt −273 °C giữ nguyên khi đổi p0, đổi lượng khí hay đổi khoảng nhiệt độ — đó là lí do người ta lấy nó làm gốc 0 K."
+  },
+  "an_toan": [
+    "Bình kín ngâm nước sôi có thể tăng áp suất mạnh: dùng van an toàn, không dùng bình thuỷ tinh mỏng.",
+    "Dùng kẹp và găng khi thao tác với nước sôi."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 2. Thang nhiệt độ",
+  "lesson_id": 3,
+  "nguon_trong_bai": "content/lesson-samples/l12-thang-nhiet-do/theory.html",
+  "id": "tn-l12-thangnhietdo-02",
+  "ten": "Kiểm tra hai mốc 0 °C và 100 °C của thang Celsius",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "thangnhietdo.moc_celsius",
+    "thangnhietdo.sai_so_dung_cu"
+  ],
+  "muc_tieu": "Kiểm chứng hai mốc quy ước của thang Celsius bằng chính nước đá đang tan và hơi nước đang sôi; tập đọc kết quả đo kèm sai số và nhận ra vì sao áp suất khí quyển làm nhiệt độ sôi thay đổi.",
+  "dung_cu": [
+    { "ten": "Nhiệt kế rượu hoặc nhiệt kế điện tử", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C, đo được tới 110 °C" },
+    { "ten": "Cốc thuỷ tinh chịu nhiệt 250 ml", "so_luong": 2 },
+    { "ten": "Nước đá nguyên chất đang tan", "so_luong": 1, "ghi_chu": "đá nhỏ, có nước đá đang tan chứ không phải đá khô" },
+    { "ten": "Bếp điện hoặc đèn cồn có lưới amiăng", "so_luong": 1 },
+    { "ten": "Áp kế hoặc điện thoại tra áp suất khí quyển hiện tại", "so_luong": 1, "ghi_chu": "để so với 101,325 kPa" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cho nước đá đang tan vào cốc 1, cắm nhiệt kế sao cho bầu ngập trong hỗn hợp nhưng không chạm đáy và không chạm viên đá; chờ một phút cho nhiệt kế ổn định.",
+      "Đọc nhiệt độ ba lần, cách nhau một phút, ghi vào bảng.",
+      "Đun nước trong cốc 2 tới khi sôi đều; hơi nước phải bao quanh bầu nhiệt kế (không để bầu chạm nước sôi), đọc ba lần cách nhau một phút.",
+      "Tra áp suất khí quyển tại nơi làm thí nghiệm và ghi lại cùng bảng số liệu."
+    ],
+    "quan_sat": [
+      "Ở cốc nước đá đang tan, nhiệt kế chỉ quanh 0 °C nhưng không đúng y một số: 0,1–0,3 °C tuỳ lần đọc.",
+      "Ở hơi nước đang sôi, nhiệt kế chỉ quanh 100 °C, cũng lệch vài phần mười độ.",
+      "Trên núi cao (áp suất nhỏ hơn) hoặc trong ngày áp suất thấp, nhiệt độ sôi đo được thấp hơn 100 °C rõ rệt."
+    ],
+    "rut_ra": [
+      "Hai mốc quy ước của thang Celsius là 0 °C (nước đá tinh khiết đang tan) và 100 °C (hơi nước tinh khiết đang sôi ở áp suất tiêu chuẩn).",
+      "Số đọc lệch vài phần mười độ nằm trong sai số dụng cụ ±0,5 °C, không có nghĩa là mốc quy ước sai.",
+      "Nhiệt độ sôi phụ thuộc áp suất: áp suất khí quyển khác 101,325 kPa thì mốc 100 °C không còn đúng tại chỗ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p_kq", "ten": "Áp suất khí quyển", "don_vi": "kPa", "kieu": "dieu_chinh", "min": 80, "max": 105, "mac_dinh": 101.325, "buoc": 0.5 },
+    { "ky_hieu": "sai_so_ht", "ten": "Sai số hệ thống của nhiệt kế", "don_vi": "°C", "kieu": "dieu_chinh", "min": -1.0, "max": 1.0, "mac_dinh": 0, "buoc": 0.1 },
+    { "ky_hieu": "t_phong", "ten": "Nhiệt độ phòng thí nghiệm", "don_vi": "°C", "kieu": "dieu_chinh", "min": 18, "max": 35, "mac_dinh": 28, "buoc": 1 },
+    { "ky_hieu": "sai_so_dc", "ten": "Sai số dụng cụ của nhiệt kế", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 0.5 },
+    { "ky_hieu": "t_nc", "ten": "Nhiệt độ nóng chảy của nước đá", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 0 },
+    { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Nhiệt độ nóng chảy của nước đá tinh khiết: t_nc = 0 °C (trong khoảng áp suất khảo sát)",
+      "Nhiệt độ sôi của nước (xấp xỉ gần 100 °C): t_s ≈ 100 + (p_kq − 101,325) / 3,6",
+      "Số đọc trên nhiệt kế: t_do = giá trị thật + sai_so_ht + sai số ngẫu nhiên trong khoảng ±sai_so_dc"
+    ],
+    "gia_thiet": [
+      "nước cất hoặc nước tinh khiết, không lẫn muối hay tạp chất",
+      "bầu nhiệt kế không chạm đáy cốc và không bị nước sôi phủ trực tiếp",
+      "nhiệt kế đã được kiểm tra ở hai mốc trước khi dùng để đo các nhiệt độ khác"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt p_kq: hạ áp suất xuống 80 kPa thì nhiệt độ sôi tụt xuống khoảng 94 °C — đúng cảnh 'lên núi cao nước sôi khi chưa tới 100 °C'."
+  },
+  "so_lieu_mau": {
+    "cot": ["Lần đọc", "Nước đá đang tan (°C)", "Hơi nước đang sôi (°C)"],
+    "hang": [
+      [1, 0.2, 99.6],
+      [2, 0.1, 99.8],
+      [3, 0.3, 100.1]
+    ],
+    "ghi_chu": "Số liệu minh hoạ với p_kq = 101,325 kPa, sai_so_ht = 0, sai_so_dc = ±0,5 °C. Các số lệch ngẫu nhiên trong khoảng ±0,5 °C nên 0,2 °C và 99,6 °C đều phù hợp với hai mốc 0 °C và 100 °C."
+  },
+  "ket_qua_ky_vong": "Đo ở hai mốc đều cho số quanh 0 °C và quanh 100 °C; khoảng tin cậy ±0,5 °C luôn chứa giá trị quy ước. Khi hạ áp suất khí quyển, mốc sôi tụt xuống dưới 100 °C trong khi mốc nóng chảy gần như không đổi.",
+  "hien_tuong_hay_sai": [
+    "Đọc 0,2 °C rồi kết luận 'nước đá này nóng chảy ở 0,2 °C', bỏ qua sai số dụng cụ.",
+    "Cho rằng nhiệt độ sôi luôn đúng bằng 100 °C ở mọi nơi, mọi áp suất.",
+    "Cho rằng sai số ±0,5 °C là do mốc quy ước của thang đo bị sai."
+  ],
+  "sai_so_thuong_gap": [
+    "Bầu nhiệt kế chạm đáy cốc hoặc bị nước sôi phủ trực tiếp nên đọc cao hơn.",
+    "Nước đá chưa tan hết hoặc lẫn tạp chất, nước không tinh khiết.",
+    "Nhiệt kế chưa được hiệu chuẩn: sai số hệ thống lệch cả hai mốc về cùng một phía."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+2d_dong_hoc",
+    "y_tuong": "Hai cốc cạnh nhau: cốc nước đá đang tan và cốc nước sôi trên bếp, nhiệt kế cắm trong mỗi cốc; mỗi phút một dòng số liệu được thêm vào bảng.",
+    "diem_nhan": "Cho thấy rõ hai mốc 0 °C và 100 °C chỉ là quy ước, còn số đọc luôn dao động trong khoảng sai số — và mốc sôi tụt xuống khi kéo áp suất khí quyển xuống."
+  },
+  "an_toan": [
+    "Đun nước và hơi nước gây bỏng nặng: đặt cốc trên lưới amiăng, không nghiêng người trên miệng cốc.",
+    "Dùng găng hoặc khăn khô khi cầm cốc nước sôi."
+  ]
+}
