@@ -119,7 +119,7 @@ b += text(ox - dx / nrm * Tl - 14, oy - dy / nrm * Tl + 18, sub("T", "1"), RED, 
 b += text(ox + dx / nrm * Tl + 14, oy - dy / nrm * Tl + 18, sub("T", "2"), BLUE, 15, "start", "700")
 b += text(ox + 10, oy + 66, "P", ORG, 16, "start", "700")
 b += text(ox, oy - Fy - 7, sub("F", "12") + " = P", GRN, 13, "middle", "700")
-b += arc(ox, oy, 34, 90 - half, 90 + half, "currentColor") + text(ox + 8, oy - 24, "α", "currentColor", 13, "start", "700")
+b += arc(ox, oy, 44, 90 - half, 90 + half, "currentColor") + text(ox, oy - 28, "α", "currentColor", 13, "middle", "700")
 fig4 = wrap("0 0 440 304", "Đèn treo bằng hai dây: hai lực căng T1, T2 có hợp lực F12 cân bằng với trọng lực P",
             b, "Hình 4. Đèn đứng yên: hợp lực <em>F</em><sub>12</sub> của hai lực căng <em>T</em><sub>1</sub>, <em>T</em><sub>2</sub> cân bằng với trọng lực <em>P</em>; α là góc giữa hai dây.")
 

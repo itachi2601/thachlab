@@ -23,6 +23,20 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `content/lesson-samples/l11-song-dung/xem-thu/xem-thu.html`: `bash scripts/cap-nhat-ly-thuyet.sh
   content/lesson-samples/l11-song-dung/theory.html 32` rồi deploy. Bộ "Kiểm tra nhanh" 20 câu
   (`scripts/data/theory-quiz/32.json`) đã có trong git, validate đạt, cũng chưa đăng.
+- **Bài 13. Tổng hợp và phân tích lực. Cân bằng lực (Vật lí 10, lesson 58) — bản lý thuyết tương tác (3/10/2026)**:
+  soạn theo skill `soan-bai-ly-thuyet-tuong-tac` tại `content/lesson-samples/l10-tong-hop-phan-tich-luc/` (`theory.html`
+  39 KB + `bundle.json` + `build_figs.py` 4 hình SVG + bản xem thử 375px). 6 mục, 7 quiz tự chấm, 3 thí nghiệm
+  (`tn-l10-tonghopluc-01..03`), 3 cái bẫy, mục Trả bài (6 câu), 2 bài toán mẫu + điền bước trống + biến thể,
+  thử thách ⭐–⭐⭐⭐. Lint sạch: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK · `validate_bundle`
+  ok:true; `lint_do_dai` 2.307 từ hiện ngay (~16 phút, 1 cảnh báo ⚠ tổng > 2.000). Đã kiểm chéo độc lập
+  (subagent tính lại toàn bộ): 7/7 quiz + 5 câu đề + 2 bài toán mẫu + bảng số liệu + thử thách đều ĐÚNG; sửa
+  theo góp ý: Hình 4 (nhãn α đè vectơ T₂), **xáo vị trí đáp án đúng** (trước đó cả 7 quiz và 5 câu đề Luyện tập
+  đều đúng ở B → nay A2/B1/C2/D2), ví dụ kẹp phôi CNC (bỏ suy luận "đối diện thì vô dụng"), định nghĩa
+  $d_1, d_2$, $F_y$ của lực kéo vali, ba lực cân bằng (nói rõ đồng phẳng), mẹo kề/đối, phản hồi sai câu 1, đổi
+  tên nhóm radio "Em chắc" cho khỏi trùng id phương án. **CHƯA ghi DB**, chờ thầy xem
+  `content/lesson-samples/l10-tong-hop-phan-tich-luc/xem-thu/xem-thu.html`: `bash scripts/cap-nhat-ly-thuyet.sh
+  content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html 58` rồi deploy. Chưa có bộ "Kiểm tra nhanh"
+  20 câu (`scripts/data/theory-quiz/58.json`).
 - **Đợt tối ưu tốc độ (perf, 24–25/09)**: Lighthouse trang chủ 68→91, trang bài 78→83; `out/` 41→34 MB; ảnh 4,6 MB→0,6 MB; bỏ Google Fonts; Supabase request trang bài 10→4. Chi tiết: `perf/RESULT.md`.
 - **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
 - Hệ thống Rank/RP 7 bậc (Đồng → Cao Thủ, đổi theo bậc Liên Quân Mobile 28/9/2026 — migration đã chạy 23:47, xem `STATE-archive.md`), nhiệm vụ hằng ngày, chuỗi ngày.
