@@ -95,7 +95,7 @@ end; $$;
 
 -- Vị trí của em (hoặc con của phụ huynh) trong hàng chờ từng buổi.
 create or replace function public.tutoring_waitlist_mine(p_student uuid)
-returns table (slot_id bigint, position int, total int)
+returns table (slot_id bigint, queue_pos int, total int)
 language plpgsql stable security definer set search_path = public
 as $$
 begin

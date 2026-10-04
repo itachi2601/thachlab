@@ -1,4 +1,5 @@
 import { getSupabase } from "@/services/supabase";
+import { fetchLessonWithItemsStatic } from "@/services/static-content";
 
 // ============================================================
 // Phụ đạo theo chủ đề — "em nào hổng phần nào, đã được dạy phần nào"
@@ -472,9 +473,9 @@ export async function leaveWaitlist(slotId: number, studentId: string): Promise<
 export async function fetchMyWaitlist(studentId: string): Promise<WaitlistPosition[]> {
   const { data, error } = await getSupabase().rpc("tutoring_waitlist_mine", { p_student: studentId });
   if (error) throw error;
-  return ((data ?? []) as { slot_id: number; position: number; total: number }[]).map((r) => ({
+  return ((data ?? []) as { slot_id: number; queue_pos: number; total: number }[]).map((r) => ({
     slotId: r.slot_id,
-    position: r.position,
+    position: r.queue_pos,
     total: r.total,
   }));
 }
@@ -546,6 +547,120 @@ export function formatExitWait(at: Date): string {
 }
 export const EXIT_QUIZ_PASS_PCT = 80;
 export const EXIT_QUIZ_QUESTION_COUNT = 20;
+/** Phần "dễ" của bài thoát: tối đa chừng này câu lấy từ bộ Kiểm tra nhanh của bài lý thuyết, số còn lại lấy từ ngân hàng. */
+export const EXIT_QUIZ_THEORY_COUNT = 8;
+
+// ------------------------------------------------------------
+// Xem lại lý thuyết tương tác trước khi làm bài thoát — bảng tutoring_theory_reviews,
+// supabase/migrations/20261004130000_phu_dao_xem_lai_ly_thuyet.sql. Máy chủ tự kẹp thời gian theo đồng hồ
+// thật và quyết định "hoàn thành"; guard của tutoring_exit_attempts chặn lượt nộp nếu chưa hoàn thành.
+// ------------------------------------------------------------
+
+/** Mục lý thuyết (đã có ở file tĩnh) của bài gắn với chủ đề phụ đạo. */
+export interface TheoryItemLite {
+  id: number;
+  title: string;
+  bodyHtml: string;
+  /** Đề "Kiểm tra nhanh" gắn với mục lý thuyết (rỗng nếu bài chưa có bộ quiz). */
+  examIds: number[];
+}
+
+export async function fetchTheoryItem(lessonId: number, preferItemId?: number | null): Promise<TheoryItemLite | null> {
+  const bundle = await fetchLessonWithItemsStatic(lessonId);
+  const items = (bundle?.items ?? []).filter((i) => i.kind === "ly_thuyet" && i.body_html.trim() !== "");
+  const item = items.find((i) => i.id === preferItemId) ?? items[0];
+  return item ? { id: item.id, title: item.title, bodyHtml: item.body_html, examIds: item.exam_ids ?? [] } : null;
+}
+
+export interface TheoryReviewState {
+  /** false = chủ đề không có mục lý thuyết (hoặc migration chưa chạy) → bỏ qua bước xem lại. */
+  required: boolean;
+  completed: boolean;
+  itemId: number | null;
+  activeSeconds: number;
+  requiredSeconds: number;
+  sectionsTotal: number;
+  sectionsSeen: number;
+  quizTotal: number;
+  quizAnswered: number;
+}
+
+export const NO_THEORY_REVIEW: TheoryReviewState = {
+  required: false,
+  completed: true,
+  itemId: null,
+  activeSeconds: 0,
+  requiredSeconds: 0,
+  sectionsTotal: 0,
+  sectionsSeen: 0,
+  quizTotal: 0,
+  quizAnswered: 0,
+};
+
+interface ReviewJson {
+  required?: boolean;
+  completed?: boolean;
+  item_id?: number;
+  active_seconds?: number;
+  required_seconds?: number;
+  sections_total?: number;
+  sections_seen?: number;
+  quiz_total?: number;
+  quiz_answered?: number;
+}
+
+function toReviewState(j: ReviewJson | null): TheoryReviewState {
+  if (!j || j.required === false) return NO_THEORY_REVIEW;
+  return {
+    required: true,
+    completed: !!j.completed,
+    itemId: j.item_id ?? null,
+    activeSeconds: j.active_seconds ?? 0,
+    requiredSeconds: j.required_seconds ?? 0,
+    sectionsTotal: j.sections_total ?? 0,
+    sectionsSeen: j.sections_seen ?? 0,
+    quizTotal: j.quiz_total ?? 0,
+    quizAnswered: j.quiz_answered ?? 0,
+  };
+}
+
+/** Hàm RPC chưa có trên DB (migration chưa chạy) → coi như không bắt buộc, để luồng cũ vẫn chạy. */
+function isMissingRpc(error: { code?: string; message?: string }): boolean {
+  return error.code === "PGRST202" || error.code === "42883" || /could not find the function/i.test(error.message ?? "");
+}
+
+export async function startTheoryReview(
+  needId: number,
+  input: { sections: number; quizTotal: number; estSeconds: number },
+): Promise<TheoryReviewState> {
+  const { data, error } = await getSupabase().rpc("tutoring_review_start", {
+    p_need: needId,
+    p_sections: input.sections,
+    p_quiz_total: input.quizTotal,
+    p_est_seconds: input.estSeconds,
+  });
+  if (error) {
+    if (isMissingRpc(error)) return NO_THEORY_REVIEW;
+    throw new Error(error.message);
+  }
+  return toReviewState(data as ReviewJson);
+}
+
+export async function pingTheoryReview(
+  needId: number,
+  input: { delta: number; sectionsSeen: number; quizAnswered: number },
+): Promise<TheoryReviewState | null> {
+  const { data, error } = await getSupabase().rpc("tutoring_review_ping", {
+    p_need: needId,
+    p_delta: input.delta,
+    p_sections_seen: input.sectionsSeen,
+    p_quiz_answered: input.quizAnswered,
+  });
+  if (error) return null;
+  const j = data as ReviewJson & { ok?: boolean };
+  if (!j?.ok) return null;
+  return j.active_seconds === undefined ? { ...NO_THEORY_REVIEW, required: true, completed: !!j.completed } : toReviewState(j);
+}
 
 // Bài kiểm tra cuối buổi (trợ giảng mở cửa sổ, em tự làm trên tài khoản của mình) — khớp trigger DB
 // trong supabase/migrations/20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql.
