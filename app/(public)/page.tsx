@@ -20,7 +20,7 @@ export default function Home() {
       <main>
         <PhysicsSimulationHero />
         <OpenClasses stats={stats} />
-        <ForParents />
+        <ForParents courses={stats?.courses ?? null} />
         <Features />
         <PhysicsEverywhere />
         <LearningPath />

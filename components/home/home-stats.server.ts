@@ -16,6 +16,26 @@ export interface HomeClassStats {
   items: number;
 }
 
+/** Một buổi trong lịch tuần của lớp học thêm. weekday: 1 = Thứ 2 … 7 = Chủ nhật. */
+export interface HomeCourseSession {
+  weekday: number;
+  /** "18:00" */
+  start: string;
+  end: string;
+  location: string;
+}
+
+/** Lớp học thêm đang mở đăng ký (thpt_courses is_public + active), đọc lúc build. */
+export interface HomeCourse {
+  id: number;
+  name: string;
+  /** Tên khối: "10" / "11" / "12". */
+  className: string;
+  schoolYear: string;
+  startsAt: string | null;
+  schedules: HomeCourseSession[];
+}
+
 export interface HomeStats {
   generatedAt: string;
   totals: {
@@ -31,6 +51,8 @@ export interface HomeStats {
     questions?: number | null;
   };
   classes: HomeClassStats[];
+  /** Thiếu (build cũ) hoặc null (không đọc được) → trang chủ hiện câu "chưa có lịch". */
+  courses?: HomeCourse[] | null;
 }
 
 export function readHomeStats(): HomeStats | null {

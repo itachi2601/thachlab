@@ -141,7 +141,50 @@ async function fetchSiteCounts(url, serviceKey) {
  * (chapter_classes), bài đã công bố trong các chương đó và mục đã đăng trong các bài đó.
  * Một chương gắn nhiều lớp được đếm cho từng lớp (tổng toàn site vẫn đếm mỗi chương 1 lần).
  */
-function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts) {
+/**
+ * Lớp học thêm đang mở đăng ký + lịch tuần, cho dải "Dành cho phụ huynh" ở trang chủ.
+ * RLS cho anon đọc khoá is_public + active (xem docs/KHOA-HOC.md), nên dùng được anon key.
+ * Đọc LÚC BUILD (giống số liệu bên dưới) — trang chủ không gọi Supabase khi tải (quy tắc
+ * "không thêm round-trip cho /"). Lịch đổi theo học kì, mỗi lần deploy là mới. Lỗi → null,
+ * trang chủ tự hiện câu "chưa có lịch", không fail build.
+ */
+async function fetchPublicCourses(supabase) {
+  try {
+    const { data, error } = await supabase
+      .from("thpt_courses")
+      .select(
+        "id, class_id, name, school_year, starts_at, is_public, status, classes(name), thpt_course_schedules(weekday, start_time, end_time, location)",
+      )
+      .eq("is_public", true)
+      .eq("status", "active")
+      .order("class_id")
+      .order("id");
+    if (error) throw error;
+    return (data ?? []).map((row) => {
+      const cls = Array.isArray(row.classes) ? row.classes[0] : row.classes;
+      return {
+        id: row.id,
+        name: row.name,
+        className: cls?.name ?? "",
+        schoolYear: row.school_year ?? "",
+        startsAt: row.starts_at ?? null,
+        schedules: (row.thpt_course_schedules ?? [])
+          .map((x) => ({
+            weekday: x.weekday,
+            start: String(x.start_time).slice(0, 5),
+            end: String(x.end_time).slice(0, 5),
+            location: x.location ?? "",
+          }))
+          .sort((a, b) => a.weekday - b.weekday || a.start.localeCompare(b.start)),
+      };
+    });
+  } catch (e) {
+    warn(`không đọc được thpt_courses: ${e?.message ?? e} — home-stats.json để trống courses.`);
+    return null;
+  }
+}
+
+function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts, courses) {
   const lessonsByChapter = new Map();
   for (const l of lessons) {
     const list = lessonsByChapter.get(l.chapter_id) ?? [];
@@ -173,6 +216,7 @@ function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, 
       ...counts,
     },
     classes: perClass,
+    courses,
   };
 }
 
@@ -330,7 +374,11 @@ async function main() {
   }
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
   const counts = await fetchSiteCounts(url, serviceKey);
-  writeJson(join(OUT_DIR, "home-stats.json"), buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts));
+  const courses = await fetchPublicCourses(supabase);
+  writeJson(
+    join(OUT_DIR, "home-stats.json"),
+    buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, counts, courses),
+  );
   writeJson(join(OUT_DIR, "manifest.json"), {
     generatedAt,
     itemColumns,
