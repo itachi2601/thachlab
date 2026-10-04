@@ -1,0 +1,136 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài tập về sóng",
+ "lesson_id": 33,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-song/theory.html",
+ "id": "tn-l11-baitapsong-02",
+ "ten": "Hai loa cùng phát một nốt: chỗ nghe to, chỗ nghe tắt",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "giaothoa.cuc_dai_cung_pha",
+  "giaothoa.cuc_tieu_cung_pha",
+  "giaothoa.dem_cuc_tri_tren_ab"
+ ],
+ "muc_tieu": "Thấy điều kiện cực đại, cực tiểu của hai nguồn cùng pha qua hiệu đường đi, và đếm số cực trị trên đoạn nối hai nguồn.",
+ "dung_cu": [
+  {
+   "ten": "Hai loa giống nhau",
+   "so_luong": 2
+  },
+  {
+   "ten": "Máy phát âm tần 340 Hz",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz.",
+   "Đi ngang trước hai loa, nghe to nhỏ."
+  ],
+  "quan_sat": [
+   "Điểm cách đều hai loa nghe to nhất.",
+   "Điểm cách loa 1 là 4,0 m và loa 2 là 4,5 m nghe gần như tắt."
+  ],
+  "rut_ra": [
+   "Hiệu đường 0 = 0·λ nên cực đại.",
+   "Hiệu đường 0,5 m = λ/2 nên cực tiểu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 800,
+   "mac_dinh": 340,
+   "buoc": 20
+  },
+  {
+   "ky_hieu": "AB",
+   "ten": "Khoảng cách hai nguồn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ âm",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 340
+  },
+  {
+   "ky_hieu": "N_max",
+   "ten": "Số cực đại trên AB",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lam = v/f",
+   "cuc dai: d2-d1 = k·lam",
+   "cuc tieu: d2-d1 = (k+1/2)·lam",
+   "dem k nguyen trong (-AB/lam; AB/lam)"
+  ],
+  "gia_thiet": [
+   "hai nguồn cùng pha, cùng biên độ",
+   "bỏ qua phản xạ từ tường"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Điểm",
+   "d1 (m)",
+   "d2 (m)",
+   "d2-d1 (m)",
+   "Loại"
+  ],
+  "hang": [
+   [
+    "P",
+    4.0,
+    4.0,
+    0.0,
+    "cực đại"
+   ],
+   [
+    "Q",
+    4.0,
+    4.5,
+    0.5,
+    "cực tiểu"
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với λ = 1 m."
+ },
+ "ket_qua_ky_vong": "Với λ = 1 m, AB = 2 m: cực đại k = -1, 0, 1 (3 điểm); cực tiểu k+1/2 = ±0,5, ±1,5 (4 điểm).",
+ "hien_tuong_hay_sai": [
+  "Tính cả hai nguồn vào số cực đại",
+  "Dùng nhầm điều kiện cùng pha cho nguồn ngược pha"
+ ],
+ "sai_so_thuong_gap": [
+  "Phòng có phản xạ làm cực tiểu không tắt hẳn"
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "AB"
+  ],
+  "dau_ra": [
+   "hình vân giao thoa",
+   "N_max, N_min"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Bản đồ hai sóng tròn, chấm đỏ cực đại, chấm xanh cực tiểu trên AB."
+ },
+ "an_toan": "Để âm lượng vừa phải."
+}

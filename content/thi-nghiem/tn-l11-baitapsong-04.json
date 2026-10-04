@@ -1,0 +1,120 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài tập về sóng",
+ "lesson_id": 33,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-song/theory.html",
+ "id": "tn-l11-baitapsong-04",
+ "ten": "Thổi vào ống nhựa một đầu kín: nốt của cột khí",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "songdung.mot_dau_co_dinh_mot_dau_tu_do",
+  "songdung.tan_so_cot_khi",
+  "songdung.nut_bung"
+ ],
+ "muc_tieu": "Thấy tần số âm của cột khí giảm khi ống dài ra, và tính tần số cơ bản của ống một đầu kín.",
+ "dung_cu": [
+  {
+   "ten": "Ống nhựa dài 0,17 m, bịt một đầu",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ống nối thêm",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Bịt kín một đầu ống.",
+   "Thổi ngang miệng đầu còn lại.",
+   "Nối thêm ống rồi thổi lại."
+  ],
+  "quan_sat": [
+   "Nốt trầm ổn định.",
+   "Ống dài hơn thì nốt thấp hơn."
+  ],
+  "rut_ra": [
+   "Đầu kín là nút, miệng hở là bụng nên L = λ/4.",
+   "f1 = v/(4L) = 500 Hz với L = 0,17 m."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài ống",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.17,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ âm",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 340
+  },
+  {
+   "ky_hieu": "f1",
+   "ten": "Tần số cơ bản",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "f1 = v/(4L)",
+   "f_m = m·f1 với m lẻ",
+   "L = (2n+1)·lam/4"
+  ],
+  "gia_thiet": [
+   "bỏ qua hiệu chỉnh miệng ống",
+   "v = 340 m/s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "L (m)",
+   "f1 (Hz)"
+  ],
+  "hang": [
+   [
+    0.17,
+    500
+   ],
+   [
+    0.34,
+    250
+   ],
+   [
+    0.68,
+    125
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "Ống 0,17 m kêu 500 Hz; dài gấp đôi thì tần số giảm một nửa.",
+ "hien_tuong_hay_sai": [
+  "Dùng f = v/(2L) của dây hai đầu cố định cho ống một đầu kín"
+ ],
+ "sai_so_thuong_gap": [
+  "Bịt đầu kín không chặt làm nốt không ổn định",
+  "Hiệu chỉnh miệng ống làm L hiệu dụng lớn hơn đôi chút"
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "L"
+  ],
+  "dau_ra": [
+   "hình sóng dừng trong ống",
+   "f1"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo chiều dài ống, hiện đường bao biên độ, chấm nút và bụng."
+ },
+ "an_toan": "Dùng ống sạch, không chia sẻ miệng thổi."
+}

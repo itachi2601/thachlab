@@ -1,0 +1,142 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài tập về sóng",
+ "lesson_id": 33,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-song/theory.html",
+ "id": "tn-l11-baitapsong-01",
+ "ten": "Đo tốc độ sóng nước trong chậu bằng nút chai",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "song.chu_ky_tan_so",
+  "song.buoc_song_n_ngon_n_tru_1",
+  "song.v_bang_lambda_chia_t"
+ ],
+ "muc_tieu": "Đo chu kỳ bằng cách đếm nhiều dao động và đo bước sóng bằng nhiều ngọn sóng liên tiếp, rồi tính tốc độ truyền sóng.",
+ "dung_cu": [
+  {
+   "ten": "Chậu nước rộng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nút chai",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước thẳng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giờ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả nút chai vào chậu, gõ nhịp đều đầu thước xuống mặt nước.",
+   "Bấm giờ 10 dao động của nút chai.",
+   "Đo khoảng cách 5 ngọn sóng liên tiếp."
+  ],
+  "quan_sat": [
+   "10 dao động mất 5,0 s.",
+   "5 ngọn liên tiếp cách nhau 0,60 m."
+  ],
+  "rut_ra": [
+   "T = 0,50 s; 4λ = 0,60 m nên λ = 0,15 m.",
+   "v = λ/T = 0,30 m/s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kỳ",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Số ngọn sóng đo",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 8,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ sóng",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lam = d/(n-1)",
+   "v = lam/T",
+   "f = 1/T"
+  ],
+  "gia_thiet": [
+   "nước nông, tốc độ không đổi trong chậu",
+   "bỏ qua phản xạ ở thành chậu"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n ngọn",
+   "d (m)",
+   "lam (m)"
+  ],
+  "hang": [
+   [
+    3,
+    0.3,
+    0.15
+   ],
+   [
+    5,
+    0.6,
+    0.15
+   ],
+   [
+    7,
+    0.9,
+    0.15
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với T = 0,5 s và λ = 0,15 m thì v = 0,30 m/s, f = 2 Hz.",
+ "hien_tuong_hay_sai": [
+  "Chia khoảng cách cho số ngọn thay vì số ngọn trừ 1."
+ ],
+ "sai_so_thuong_gap": [
+  "Bấm giờ trễ khi đếm dao động",
+  "Sóng phản xạ từ thành chậu làm ngọn sóng méo"
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "T",
+   "n"
+  ],
+  "dau_ra": [
+   "lam",
+   "v"
+  ],
+  "hinh_trong_bai": "không có",
+  "y_tuong": "Sóng tròn lan trên mặt nước, kéo thước đo khoảng cách n ngọn."
+ },
+ "an_toan": "Lau sàn nếu nước bắn ra ngoài."
+}

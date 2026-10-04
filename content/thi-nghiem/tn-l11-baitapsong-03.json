@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài tập về sóng",
+ "lesson_id": 33,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-song/theory.html",
+ "id": "tn-l11-baitapsong-03",
+ "ten": "Đo bước sóng laser bằng khe Young",
+ "loai": "thi_nghiem",
+ "muc_do": "nang_cao",
+ "kien_thuc": [
+  "young.khoang_van",
+  "young.do_lambda_qua_5_khoang_van",
+  "young.sai_so_do"
+ ],
+ "muc_tieu": "Tính khoảng vân từ 5 khoảng vân đo nhiều lần, suy ra bước sóng và hiểu vì sao đo nhiều khoảng vân một lần giảm sai số tương đối.",
+ "dung_cu": [
+  {
+   "ten": "Laser đỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm hai khe a = 0,50 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn cách khe 1,50 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo mm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chiếu laser qua hai khe lên màn cách 1,50 m.",
+   "Đo khoảng cách L của 6 vân sáng liên tiếp (5 khoảng vân), 5 lần."
+  ],
+  "quan_sat": [
+   "L (mm): 9,6; 9,8; 9,7; 9,9; 9,7."
+  ],
+  "rut_ra": [
+   "L trung bình = 9,74 mm; i = 1,95 mm.",
+   "λ = i·a/D = 0,65 µm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "a",
+   "ten": "Khoảng cách hai khe",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Khoảng cách khe tới màn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1.0,
+   "max": 3.0,
+   "mac_dinh": 1.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Bề rộng 5 khoảng vân",
+   "don_vi": "mm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  },
+  {
+   "ky_hieu": "lam",
+   "ten": "Bước sóng",
+   "don_vi": "µm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "i = L/5",
+   "lam = i·a/D",
+   "i = lam·D/a"
+  ],
+  "gia_thiet": [
+   "hai khe hẹp, chùm laser đơn sắc",
+   "sai số đọc thước ±0,5 mm mỗi lần"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "L (mm)"
+  ],
+  "hang": [
+   [
+    1,
+    9.6
+   ],
+   [
+    2,
+    9.8
+   ],
+   [
+    3,
+    9.7
+   ],
+   [
+    4,
+    9.9
+   ],
+   [
+    5,
+    9.7
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, trung bình 9,74 mm."
+ },
+ "ket_qua_ky_vong": "i = 1,95 mm; λ ≈ 0,65 µm.",
+ "hien_tuong_hay_sai": [
+  "Chia L cho 6 vì đếm 6 vân sáng thay vì 5 khoảng vân"
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc thước lệch",
+  "Màn không vuông góc với tia laser"
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "a",
+   "D"
+  ],
+  "dau_ra": [
+   "hình vân",
+   "i",
+   "lam"
+  ],
+  "hinh_trong_bai": "không có",
+  "y_tuong": "Thanh trượt a, D; hiện các vạch sáng tối và thước đo L."
+ },
+ "an_toan": "Không chiếu laser vào mắt."
+}
