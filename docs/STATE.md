@@ -33,10 +33,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   theo góp ý: Hình 4 (nhãn α đè vectơ T₂), **xáo vị trí đáp án đúng** (trước đó cả 7 quiz và 5 câu đề Luyện tập
   đều đúng ở B → nay A2/B1/C2/D2), ví dụ kẹp phôi CNC (bỏ suy luận "đối diện thì vô dụng"), định nghĩa
   $d_1, d_2$, $F_y$ của lực kéo vali, ba lực cân bằng (nói rõ đồng phẳng), mẹo kề/đối, phản hồi sai câu 1, đổi
-  tên nhóm radio "Em chắc" cho khỏi trùng id phương án. **CHƯA ghi DB**, chờ thầy xem
-  `content/lesson-samples/l10-tong-hop-phan-tich-luc/xem-thu/xem-thu.html`: `bash scripts/cap-nhat-ly-thuyet.sh
-  content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html 58` rồi deploy. Chưa có bộ "Kiểm tra nhanh"
-  20 câu (`scripts/data/theory-quiz/58.json`).
+  tên nhóm radio "Em chắc" cho khỏi trùng id phương án. **ĐÃ ĐĂNG 4/10/2026**: ghi đúng mục Lý thuyết
+  (item 108, `body_html` 10.981 → 39.581 ký tự; mục Bài tập mẫu và Luyện tập giữ nguyên) bằng
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html 58 --yes`,
+  sao lưu `scripts/logs/ly-thuyet-bai58-backup-1791083195069.json`, hoàn tác
+  `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`; đã deploy (`bash scripts/deploy.sh`). Chưa có bộ
+  "Kiểm tra nhanh" 20 câu (`scripts/data/theory-quiz/58.json`).
 - **Đợt tối ưu tốc độ (perf, 24–25/09)**: Lighthouse trang chủ 68→91, trang bài 78→83; `out/` 41→34 MB; ảnh 4,6 MB→0,6 MB; bỏ Google Fonts; Supabase request trang bài 10→4. Chi tiết: `perf/RESULT.md`.
 - **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
 - Hệ thống Rank/RP 7 bậc (Đồng → Cao Thủ, đổi theo bậc Liên Quân Mobile 28/9/2026 — migration đã chạy 23:47, xem `STATE-archive.md`), nhiệm vụ hằng ngày, chuỗi ngày.
