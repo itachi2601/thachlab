@@ -1,0 +1,91 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "lesson_id": 125,
+  "nguon_trong_bai": "content/lesson-samples/l12-may-phat-dien-bien-ap/theory.html",
+  "id": "tn-l12-mayphatdien-01",
+  "ten": "Máy phát mini quay tay: đo tần số theo tốc độ quay để kiểm f = np",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "mayphatdien.tan_so_bang_np",
+    "mayphatdien.cam_ung_dien_tu"
+  ],
+  "muc_tieu": "Chứng tỏ tần số dòng điện do máy phát ra tỉ lệ với tốc độ quay và với số cặp cực: f = n·p; học sinh đọc bảng số liệu để thấy tỉ số f/n không đổi và nhận xét được sai số.",
+  "dung_cu": [
+    { "ten": "Máy phát điện mini quay tay (rô-to 2 cặp cực, có ghi trên vỏ)", "so_luong": 1, "ghi_chu": "kiểm tra vỏ ghi số cặp cực trước khi làm" },
+    { "ten": "Tần số kế hoặc đồng hồ vạn năng có thang Hz", "so_luong": 1, "ghi_chu": "sai số ±0,1 Hz" },
+    { "ten": "Dây nối", "so_luong": 2 },
+    { "ten": "Bóng đèn LED hoặc bóng đèn sợi đốt nhỏ", "so_luong": 1, "ghi_chu": "dùng để mắt thấy máy phát có điện" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "để giữ đúng tốc độ quay" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối hai đầu máy phát mini với tần số kế (mắc song song thêm bóng đèn nhỏ để thấy máy phát có điện).",
+      "Quay tay đều sao cho rô-to quay khoảng 5 vòng trong 1 giây (n = 5 vòng/s); đọc và ghi tần số f.",
+      "Lặp lại với n = 10, 15, 20, 25 vòng/s, mỗi tốc độ đọc một lần; tốc độ quay xác định bằng số vòng đếm được trong 10 giây rồi chia 10."
+    ],
+    "quan_sat": [
+      "Quay càng nhanh, kim tần số kế càng lệch và bóng đèn càng sáng.",
+      "Tần số đọc được tăng gần như tuyến tính theo tốc độ quay.",
+      "Đến n = 25 vòng/s thì tần số đọc được xấp xỉ 50 Hz."
+    ],
+    "rut_ra": [
+      "Tỉ số f/n gần như không đổi và xấp xỉ 2 — đúng bằng số cặp cực p của máy, nên f = n·p.",
+      "Tần số dòng điện phụ thuộc tốc độ quay và số cặp cực, không phụ thuộc tải tiêu thụ.",
+      "Muốn có tần số lưới 50 Hz với máy hai cặp cực thì phải quay đúng 25 vòng/s."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "n", "ten": "Tốc độ quay của rô-to", "don_vi": "vòng/s", "kieu": "dieu_chinh", "min": 2, "max": 30, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "p", "ten": "Số cặp cực của rô-to", "don_vi": "cặp", "kieu": "dieu_chinh", "min": 1, "max": 4, "mac_dinh": 2, "buoc": 1 },
+    { "ky_hieu": "f", "ten": "Tần số tính theo mô hình", "don_vi": "Hz", "kieu": "tinh_ra" },
+    { "ky_hieu": "f_do", "ten": "Tần số đọc trên tần số kế", "don_vi": "Hz", "kieu": "do_duoc", "sai_so_do": 0.1 },
+    { "ky_hieu": "n_60", "ten": "Tốc độ quay quy ra vòng/phút", "don_vi": "vòng/phút", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Mỗi vòng quay của rô-to cho p chu kì dòng điện: f = n·p",
+      "Nếu đề cho tốc độ quay N (vòng/phút) thì n = N/60 và f = N·p/60",
+      "Sai số tương đối của phép đo: Δf/f = Δn/n + Δf_kế/f"
+    ],
+    "gia_thiet": [
+      "bỏ qua sự trượt tốc độ do tay quay không đều, coi n đúng bằng số vòng đếm được chia cho thời gian",
+      "tần số kế đã hiệu chuẩn, sai số ±0,1 Hz",
+      "rô-to có đúng số cặp cực ghi trên vỏ máy"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo hai thanh trượt n và p, hiện giá trị f = n·p theo thời gian thực và vẽ đường f(n) bậc nhất đi qua gốc; đổi p thì độ dốc đường thẳng đổi."
+  },
+  "so_lieu_mau": {
+    "cot": ["n (vòng/s)", "f đo (Hz)", "f/n"],
+    "hang": [
+      [5, 9.8, 1.96],
+      [10, 20.1, 2.01],
+      [15, 30.2, 2.01],
+      [20, 39.6, 1.98],
+      [25, 50.3, 2.01]
+    ],
+    "ghi_chu": "Số liệu minh hoạ của một lần đo với máy phát hai cặp cực (p = 2). Giá trị lí thuyết là f = 2n; số đo lệch chút ít vì quay tay không đều và sai số của tần số kế."
+  },
+  "ket_qua_ky_vong": "Tỉ số f/n giữ nguyên (khoảng 1,96–2,01) khi đổi tốc độ quay, đúng bằng số cặp cực; đường biểu diễn f theo n là đường thẳng đi qua gốc toạ độ.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng tần số chỉ phụ thuộc tốc độ quay, không cần biết số cặp cực (dùng nhầm f = n).",
+    "Nghĩ rằng tần số tăng khi mắc thêm tải vào máy phát (tải chỉ làm dòng lớn hơn, tần số không đổi).",
+    "Nghĩ rằng số '2 cặp cực' nghĩa là p = 4 rồi nhân thừa một lần."
+  ],
+  "sai_so_thuong_gap": [
+    "Quay tay không đều nên tốc độ thật lệch tốc độ đã định — đây là nguồn sai số lớn nhất.",
+    "Đếm vòng trong thời gian ngắn (1–2 giây) làm sai tốc độ; nên đếm trong 10 giây rồi chia 10.",
+    "Tần số kế sai số ±0,1 Hz và có thể chậm hiển thị khi tốc độ thay đổi nhanh."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Rô-to quay với tốc độ đặt bằng thanh trượt; vẽ dần đường f(n) và tự điền bảng số liệu, đồng thời hiện số đọc tần số kế có nhiễu nhỏ.",
+    "diem_nhan": "Cho thấy đường f(n) luôn là đường thẳng qua gốc và đổi độ dốc khi đổi số cặp cực — học sinh dự đoán được f trước khi bấm chạy."
+  },
+  "an_toan": [
+    "Máy phát mini quay tay không gây nguy hiểm về điện, nhưng không chạm vào chổi quét khi rô-to đang quay.",
+    "Giữ dây gọn để không vướng vào tay quay."
+  ]
+}

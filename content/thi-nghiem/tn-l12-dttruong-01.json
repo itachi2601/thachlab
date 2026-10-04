@@ -1,0 +1,101 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "lesson_id": 127,
+  "nguon_trong_bai": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/theory.html",
+  "id": "tn-l12-dttruong-01",
+  "ten": "Nam châm rơi qua ống dây: từ trường biến thiên sinh điện trường xoáy",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "dttruong.tu_truong_bien_thien",
+    "dttruong.dien_truong_xoay"
+  ],
+  "muc_tieu": "Chứng tỏ điện trường trong dây xuất hiện chỉ khi từ trường biến thiên theo thời gian: nam châm chuyển động càng nhanh thì suất điện động càng lớn, nam châm nằm yên thì suất điện động bằng 0 dù từ trường tại đó mạnh nhất.",
+  "dung_cu": [
+    { "ten": "Ống dây đồng quấn trên lõi nhựa, đường kính 3 cm, dài 20 cm", "so_luong": 1, "ghi_chu": "khoảng 1000 vòng, điện trở cuộn dây ~10 Ω" },
+    { "ten": "Điện kế xung hoặc đồng hồ vạn năng ở thang đo điện áp một chiều nhỏ nhất", "so_luong": 1, "ghi_chu": "sai số ±(0,5% + 3 số cuối)" },
+    { "ten": "Nam châm thẳng neodymium", "so_luong": 1, "ghi_chu": "cảm ứng từ trên bề mặt cực ~0,15 T" },
+    { "ten": "Giá đỡ hoặc ống nhựa dài 40 cm để nam châm rơi thẳng", "so_luong": 1 },
+    { "ten": "Thước đo độ cao thả", "so_luong": 1 },
+    { "ten": "Điện trở 10 Ω mắc nối tiếp để hạn dòng", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối hai đầu ống dây qua điện trở 10 Ω với điện kế, tạo thành mạch kín; ghi lại vị trí kim khi chưa có nam châm.",
+      "Dựng ống nhựa thẳng đứng xuyên qua lòng ống dây, thả nam châm rơi từ độ cao 5 cm; đọc độ lệch lớn nhất của kim.",
+      "Làm lại với độ cao 10 cm, 20 cm, 30 cm (nam châm rơi nhanh dần) rồi ghi số đo vào bảng.",
+      "Cuối cùng giữ nam châm nằm yên ngay giữa lòng ống dây và đọc điện kế trong 10 giây."
+    ],
+    "quan_sat": [
+      "Kim chỉ lệch trong khoảng thời gian nam châm đang đi qua ống dây; kim trở về 0 ngay khi nam châm ra khỏi ống.",
+      "Thả từ độ cao lớn hơn (nam châm qua ống nhanh hơn) thì kim lệch mạnh hơn, gần như tỉ lệ với tốc độ.",
+      "Khi nam châm nằm yên giữa lòng ống — nơi từ trường mạnh nhất — kim đứng yên ở 0.",
+      "Chiều lệch của kim đảo ngược khi nam châm rơi ra khỏi ống so với lúc đi vào."
+    ],
+    "rut_ra": [
+      "Suất điện động trong mạch tỉ lệ với tốc độ biến thiên của từ thông, tức với tốc độ biến thiên của từ trường, không tỉ lệ với độ mạnh của từ trường.",
+      "Điện trường làm điện tích trong dây chuyển động có đường sức khép kín quanh các đường cảm ứng từ — đó là điện trường xoáy.",
+      "Từ trường không đổi (nam châm nằm yên) không sinh ra điện trường xoáy, dù từ trường rất mạnh."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "v", "ten": "Tốc độ nam châm qua ống dây", "don_vi": "m/s", "kieu": "dieu_chinh", "min": 0.1, "max": 2.0, "mac_dinh": 0.5, "buoc": 0.05 },
+    { "ky_hieu": "N", "ten": "Số vòng dây của ống dây", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 200, "max": 2000, "mac_dinh": 1000, "buoc": 100 },
+    { "ky_hieu": "B0", "ten": "Cảm ứng từ của nam châm tại tâm ống dây", "don_vi": "T", "kieu": "dieu_chinh", "min": 0.05, "max": 0.30, "mac_dinh": 0.15, "buoc": 0.01 },
+    { "ky_hieu": "A", "ten": "Tiết diện ống dây", "don_vi": "m2", "kieu": "co_dinh", "gia_tri": 0.0004 },
+    { "ky_hieu": "L", "ten": "Chiều dài ống dây", "don_vi": "m", "kieu": "co_dinh", "gia_tri": 0.2 },
+    { "ky_hieu": "R", "ten": "Điện trở toàn mạch", "don_vi": "Ω", "kieu": "co_dinh", "gia_tri": 10 },
+    { "ky_hieu": "e", "ten": "Suất điện động cảm ứng theo mô hình", "don_vi": "V", "kieu": "tinh_ra" },
+    { "ky_hieu": "e_do", "ten": "Suất điện động đọc trên điện kế", "don_vi": "V", "kieu": "do_duoc", "sai_so_do": 0.005 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Từ thông qua ống dây: Φ = N·B·A",
+      "Nam châm đi qua ống dây dài L trong thời gian Δt ≈ L/v, từ trường đổi từ 0 tới B0 nên ΔB/Δt ≈ B0·v/L",
+      "Suất điện động cảm ứng: e = N·A·ΔB/Δt = N·A·B0·v/L",
+      "Dòng điện trong mạch: I = e/R",
+      "Với N = 1000 vòng, A = 4·10⁻⁴ m², B0 = 0,15 T, L = 0,2 m thì e = 0,3·v (V), tức 300 mV cho mỗi 1 m/s"
+    ],
+    "gia_thiet": [
+      "từ trường của nam châm trong lòng ống coi như đều và bằng B0 khi nam châm ở giữa ống",
+      "bỏ qua độ tự cảm của ống dây và điện dung ký sinh",
+      "nam châm rơi tự do, tốc độ coi như không đổi trong lúc đi qua ống"
+    ],
+    "ghi_chu": "Mô phỏng nên cho nam châm rơi thật (2d_dong_hoc) và vẽ kim điện kế lệch theo thời gian; đồ thị e(t) có hai đỉnh ngược dấu (lúc vào và lúc ra khỏi ống) — đúng với chiều lệch đảo ngược quan sát được."
+  },
+  "so_lieu_mau": {
+    "cot": ["Tốc độ nam châm v (m/s)", "Suất điện động đo được e (mV)"],
+    "hang": [
+      [0.10, 30.0],
+      [0.25, 75.5],
+      [0.50, 149.0],
+      [0.75, 224.0],
+      [1.00, 298.0],
+      [0.00, 0.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình e = 0,3·v (V) với N = 1000 vòng, B0 = 0,15 T; hàng cuối là lúc nam châm nằm yên giữa lòng ống. Sai lệch vài phần nghìn so với mô hình là do sai số của điện kế và việc tốc độ rơi không hoàn toàn đều."
+  },
+  "ket_qua_ky_vong": "Kim điện kế chỉ lệch khi nam châm đang chuyển động; độ lệch tỉ lệ với tốc độ nam châm và bằng 0 khi nam châm nằm yên, kể cả khi nó đang ở vị trí từ trường mạnh nhất.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng nam châm hút dây dẫn làm kim lệch, nên cho rằng đưa nam châm mạnh lại gần mà không chuyển động cũng làm kim lệch.",
+    "Nghĩ rằng nam châm nằm yên giữa lòng ống — nơi từ trường mạnh nhất — thì phải làm kim lệch mạnh nhất.",
+    "Nghĩ rằng điện trường trong dây do điện tích của nam châm gây ra, chứ không phải do từ trường biến thiên.",
+    "Nghĩ rằng chỉ cần có từ trường là có dòng điện, không cần từ trường biến thiên."
+  ],
+  "sai_so_thuong_gap": [
+    "Không giữ nam châm rơi thẳng: nam châm chạm thành ống, tốc độ thay đổi bất thường.",
+    "Điện kế quá chậm nên không đọc được đỉnh lệch; phải dùng điện kế xung hoặc đồng hồ có chức năng lưu giá trị lớn nhất.",
+    "Điện trở mạch quá nhỏ làm dòng lớn, kim lệch kịch trần và không đọc được tỉ lệ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Ống dây cắt dọc, nam châm rơi qua, kim điện kế hoặc đồng hồ số hiện giá trị; kéo thanh trượt đổi tốc độ thả và số vòng dây.",
+    "diem_nhan": "Cho thấy e = 0 khi nam châm dừng lại giữa ống — phá đúng hiểu lầm 'từ trường mạnh thì có dòng điện'."
+  },
+  "an_toan": [
+    "Nam châm neodymium rất mạnh: để xa thẻ ngân hàng, điện thoại, đồng hồ cơ và máy tính.",
+    "Hai nam châm mạnh có thể kẹp vào ngón tay khi hút nhau — cầm một cái mỗi tay, không để hai cực đối diện gần nhau."
+  ]
+}

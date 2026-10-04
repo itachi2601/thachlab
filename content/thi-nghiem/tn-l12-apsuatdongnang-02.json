@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 8. Áp suất - động năng của phân tử khí",
+  "lesson_id": 9,
+  "nguon_trong_bai": "content/lesson-samples/l12-ap-suat-dong-nang/theory.html",
+  "id": "tn-l12-apsuatdongnang-02",
+  "ten": "Đo áp suất khí trong bình kín khi đổi nhiệt độ",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "apsuatdongnang.nhiet_do_ti_le_dong_nang",
+    "apsuatdongnang.dong_nang_trung_binh_3_2_kt"
+  ],
+  "muc_tieu": "Đo áp suất một lượng khí có thể tích không đổi ở năm nhiệt độ khác nhau, tính tỉ số p/T và nhận xét sai số — từ đó khẳng định p tỉ lệ thuận với nhiệt độ tuyệt đối, do đó động năng tịnh tiến trung bình cũng tỉ lệ thuận với T.",
+  "dung_cu": [
+    { "ten": "Bình kim loại kín có thể tích đã biết", "so_luong": 1, "ghi_chu": "0,25 lít, có van nối áp kế" },
+    { "ten": "Áp kế điện tử hoặc cảm biến áp suất", "so_luong": 1, "ghi_chu": "thang đo 0–200 kPa, sai số ±0,5 kPa" },
+    { "ten": "Nhiệt kế rượu hoặc nhiệt kế điện tử", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nồi nước đun trên bếp điện", "so_luong": 1 },
+    { "ten": "Giá đỡ hoặc kẹp giữ bình", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối bình kim loại kín với áp kế điện tử qua van, kiểm tra không rò khí (đọc áp suất, để yên vài phút, số đọc phải đứng yên).",
+      "Ngâm bình vào nồi nước, đặt nhiệt kế cạnh bình. Đun dần và chờ mỗi mốc khoảng 3 phút cho bình cân bằng nhiệt với nước.",
+      "Đọc đồng thời nhiệt độ nước và áp suất khí ở các mốc 20 °C, 40 °C, 60 °C, 80 °C, 100 °C; ghi vào bảng theo nhiệt độ tuyệt đối T = t + 273."
+    ],
+    "quan_sat": [
+      "Áp suất tăng đều theo nhiệt độ: từ 100,2 kPa ở 293 K lên 127,6 kPa ở 373 K.",
+      "Chia mỗi giá trị áp suất cho nhiệt độ tuyệt đối tương ứng, kết quả luôn quanh 0,342 kPa/K.",
+      "Năm giá trị p/T chênh nhau chút ít: 0,3420; 0,3422; 0,3420; 0,3414; 0,3421 kPa/K."
+    ],
+    "rut_ra": [
+      "Thể tích và lượng khí không đổi thì p/T là hằng số, tức áp suất tỉ lệ thuận với nhiệt độ tuyệt đối: p ∝ T.",
+      "Vì p = (2/3)·μ·(động năng trung bình) và μ = N/V không đổi, nên động năng tịnh tiến trung bình của phân tử cũng tỉ lệ thuận với T: E_d = (3/2)kT.",
+      "Áp suất phải tính theo nhiệt độ Kelvin; dùng nhiệt độ Celsius thì p không còn tỉ lệ thuận với con số nhiệt độ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "t_nuoc", "ten": "Nhiệt độ nước", "don_vi": "°C", "kieu": "dieu_chinh", "min": 20, "max": 100, "mac_dinh": 60, "buoc": 10 },
+    { "ky_hieu": "V_binh", "ten": "Thể tích bình khí", "don_vi": "lít", "kieu": "co_dinh", "gia_tri": 0.25 },
+    { "ky_hieu": "p_0", "ten": "Áp suất ở 293 K", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100.2 },
+    { "ky_hieu": "k", "ten": "Hằng số Boltzmann", "don_vi": "J/K", "kieu": "co_dinh", "gia_tri": 1.38e-23 },
+    { "ky_hieu": "T", "ten": "Nhiệt độ tuyệt đối", "don_vi": "K", "kieu": "tinh_ra" },
+    { "ky_hieu": "p", "ten": "Áp suất đọc trên áp kế", "don_vi": "kPa", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "E_d", "ten": "Động năng tịnh tiến trung bình", "don_vi": "J", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Đổi nhiệt độ: T = t + 273",
+      "Thể tích và lượng khí không đổi nên p/T = hằng số, suy ra p = p_0·T/T_0 với T_0 = 293 K",
+      "Phương trình trạng thái: p = μ·k·T với μ = N/V là mật độ phân tử",
+      "Từ p = (2/3)·μ·E_d suy ra E_d = (3/2)·k·T"
+    ],
+    "gia_thiet": [
+      "bỏ qua rò khí trong suốt quá trình đo",
+      "bỏ qua giãn nở của bình kim loại (thể tích coi như không đổi)",
+      "khí trong bình đã cân bằng nhiệt với nước trước mỗi lần đọc"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ bình ngâm trong nồi nước, thanh trượt nhiệt độ, đồng hồ áp suất; đồ thị p(T) vẽ dần theo từng mốc và bảng tự điền cột p/T để học sinh thấy tỉ số gần như không đổi."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ T (K)", "Áp suất p (kPa)"],
+    "hang": [
+      [293, 100.2],
+      [313, 107.1],
+      [333, 113.9],
+      [353, 120.5],
+      [373, 127.6]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ p = p_0·T/T_0 với p_0 = 100,2 kPa ở 293 K, thêm nhiễu nhỏ cho giống số đo thật. Nếu đo thật, p/T thu được khoảng 0,342 ± 0,002 kPa/K."
+  },
+  "ket_qua_ky_vong": "Năm điểm (T, p) nằm gần đúng trên một đường thẳng đi qua gốc toạ độ; tỉ số p/T không đổi trong phạm vi sai số, chứng tỏ p tỉ lệ thuận với nhiệt độ tuyệt đối và do đó động năng tịnh tiến trung bình của phân tử cũng tỉ lệ thuận với T.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng áp suất tỉ lệ thuận với nhiệt độ Celsius, tức lấy tỉ số hai giá trị °C để so sánh.",
+    "Cho rằng nhiệt độ tăng thì phân tử nặng lên nên đập mạnh hơn, thay vì bay nhanh hơn.",
+    "Cho rằng bình kín thì áp suất không đổi dù nhiệt độ thay đổi."
+  ],
+  "sai_so_thuong_gap": [
+    "Áp kế sai số ±0,5 kPa (khoảng 0,5 % số đọc) làm p/T dao động ở chữ số thập phân thứ ba.",
+    "Bình kim loại giãn nở khi nóng nên thể tích tăng chút ít, làm áp suất đo được thấp hơn tính toán.",
+    "Chưa chờ đủ lâu: nhiệt độ khí trong bình còn thấp hơn nhiệt độ nước, nên T ghi nhận bị cao hơn thực tế.",
+    "Bầu nhiệt kế chạm đáy nồi hoặc chạm thành bình nên số đọc nhiệt độ lệch."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bình khí ngâm trong nồi nước, thanh trượt nhiệt độ từ 20 °C đến 100 °C; đồng hồ áp suất hiện số, đồ thị p(T) vẽ dần, bảng tự điền thêm cột p/T.",
+    "diem_nhan": "Các điểm p(T) xếp thành đường thẳng qua gốc; cột p/T gần như đứng yên ở 0,342 kPa/K — học sinh thấy ngay vì sao phải dùng nhiệt độ tuyệt đối."
+  },
+  "an_toan": [
+    "Cẩn thận với nước sôi và hơi nước: dùng kẹp giữ bình, không mở nắp bình khi đang nóng.",
+    "Không đun kín nồi có nắp; để hơi nước thoát ra an toàn."
+  ]
+}

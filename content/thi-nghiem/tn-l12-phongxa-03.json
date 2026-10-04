@@ -1,0 +1,88 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 17. Hiện tượng phóng xạ",
+  "lesson_id": 18,
+  "nguon_trong_bai": "content/lesson-samples/l12-phong-xa/theory.html",
+  "id": "tn-l12-phongxa-03",
+  "ten": "Định tuổi mẫu gỗ cổ bằng carbon-14",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "phongxa.dong_vi_phong_xa",
+    "phongxa.dinh_luat_phong_xa",
+    "phongxa.ung_dung_dinh_tuoi"
+  ],
+  "muc_tieu": "Dùng định luật phóng xạ đảo ngược để tính tuổi một mẫu hữu cơ từ tỉ lệ carbon-14 còn lại, và nhận ra giả thiết nào có thể làm kết quả sai.",
+  "dung_cu": [
+    { "ten": "Mẫu cần định tuổi (gỗ, than, xương, vỏ sò)", "so_luong": 1, "ghi_chu": "lấy ở lớp ngoài, tránh nhiễm bẩn" },
+    { "ten": "Máy đo độ phóng xạ carbon-14 (hoặc máy gia tốc khối phổ)", "so_luong": 1, "ghi_chu": "ở phòng thí nghiệm chuyên dụng" },
+    { "ten": "Mẫu cùng loại còn sống để lấy giá trị ban đầu", "so_luong": 1 },
+    { "ten": "Bảng chu kì bán rã và đường cong hiệu chỉnh carbon-14", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Làm sạch lớp ngoài của mẫu để loại phần bị nhiễm carbon mới, rồi đốt mẫu thành khí CO2.",
+      "Đo độ phóng xạ riêng của carbon-14 trong mẫu: số phân rã mỗi phút trên mỗi gam carbon.",
+      "Đo mẫu cùng loại còn sống (gỗ tươi, xương động vật mới) để lấy độ phóng xạ ban đầu A0.",
+      "Tính tỉ lệ p = A/A0, suy ra số chu kì n = log2(1/p) rồi nhân với T = 5730 năm; cuối cùng tra đường cong hiệu chỉnh."
+    ],
+    "quan_sat": [
+      "Mẫu gỗ cổ trong bài chỉ còn khoảng 25% độ phóng xạ carbon-14 so với gỗ tươi.",
+      "Các mẫu còn 50%, 25%, 12,5% ứng với 1, 2, 3 chu kì bán rã.",
+      "Mẫu quá cũ — còn dưới khoảng 0,25%, tức đã trôi qua ~50 000 năm — cho số đếm chìm vào phông nền, kết quả mất tin cậy."
+    ],
+    "rut_ra": [
+      "Tuổi tính theo t = T·log2(A0/A): mẫu còn 25% có tuổi 2T = 11 460 năm.",
+      "Phép tính chỉ đúng khi lượng carbon-14 trong khí quyển không đổi theo thời gian.",
+      "Vì vậy kết quả carbon-14 luôn phải hiệu chỉnh bằng đường cong chuẩn lập từ vòng năm cây và các mẫu đã biết tuổi."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p", "ten": "Phần trăm carbon-14 còn lại", "don_vi": "%", "kieu": "dieu_chinh", "min": 0.25, "max": 100, "mac_dinh": 25, "buoc": 0.25 },
+    { "ky_hieu": "T", "ten": "Chu kì bán rã của carbon-14", "don_vi": "năm", "kieu": "co_dinh", "gia_tri": 5730 },
+    { "ky_hieu": "t", "ten": "Tuổi tính ra của mẫu", "don_vi": "năm", "kieu": "tinh_ra" },
+    { "ky_hieu": "n", "ten": "Số chu kì bán rã đã trôi qua", "don_vi": "1", "kieu": "tinh_ra" },
+    { "ky_hieu": "A_do", "ten": "Độ phóng xạ riêng đo được của mẫu", "don_vi": "phân rã/(phút·g C)", "kieu": "do_duoc", "sai_so_do": 0.2 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật phóng xạ: p/100 = 2^(−t/T)",
+      "Suy ra tuổi: t = T · log2(100/p) = T · ln(100/p) / ln2",
+      "Độ phóng xạ riêng ban đầu của carbon trong cơ thể sống: A0 ≈ 13,6 phân rã mỗi phút trên một gam carbon"
+    ],
+    "gia_thiet": [
+      "nồng độ carbon-14 trong khí quyển không đổi trong suốt thời gian sống và sau khi sinh vật chết",
+      "mẫu không bị nhiễm carbon mới từ môi trường hay từ chất bảo quản",
+      "chỉ định tuổi được mẫu hữu cơ (gỗ, than, xương, vỏ sò); đá không trao đổi carbon với khí quyển"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt p từ 100% xuống 0,25% và hiện đồng thời tuổi tính ra, đường cong phân rã và giới hạn tin cậy — học sinh thấy vì sao dưới khoảng 0,25% (≈ 50 000 năm) thì kết quả nhoè."
+  },
+  "so_lieu_mau": {
+    "cot": ["Mẫu", "Carbon-14 còn lại (%)", "Tuổi tính ra (năm)"],
+    "hang": [
+      ["Gỗ tươi (mốc so sánh)", 100, 0],
+      ["Mẫu còn 1 chu kì", 50, 5730],
+      ["Mẫu gỗ trong bài", 25, 11460],
+      ["Mẫu xương cổ", 12.5, 17190],
+      ["Mẫu than củi", 6.25, 22920]
+    ],
+    "ghi_chu": "Tuổi tính từ t = T·log2(100/p) với T = 5730 năm, chưa hiệu chỉnh. Số liệu minh hoạ cho mô hình, không phải kết quả đo của một mẫu cụ thể."
+  },
+  "ket_qua_ky_vong": "Mẫu còn 25% carbon-14 có tuổi 11 460 năm (đúng 2 chu kì bán rã); mẫu còn 12,5% có tuổi 17 190 năm. Dưới khoảng 0,25% còn lại (≈ 50 000 năm; 10 chu kì ≈ 57 000 năm thì còn dưới 0,1%), sai số đo phông nền làm tuổi sai hàng nghìn năm.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng phóng xạ làm carbon-14 trong mẫu biến mất hẳn sau vài chu kì bán rã.",
+    "Nghĩ rằng carbon-14 định tuổi được mọi vật liệu, kể cả đá và kim loại.",
+    "Bỏ qua bước so với mẫu cùng loại còn sống nên không có giá trị ban đầu A0."
+  ],
+  "sai_so_thuong_gap": [
+    "Mẫu bị nhiễm carbon mới: tuổi đo được trẻ hơn thực tế.",
+    "Nồng độ carbon-14 trong khí quyển thay đổi theo thời gian (đốt nhiên liệu hoá thạch, thử hạt nhân) — phải hiệu chỉnh.",
+    "Mẫu quá nhỏ hoặc quá cũ: số đếm thấp, sai số tương đối lớn."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Một mẫu gỗ trên bàn, thanh trượt 'tuổi mẫu' kéo từ 0 đến 50 000 năm; đường cong carbon-14 còn lại chạy ngược, bảng tự điền tuổi và phần trăm còn lại.",
+    "diem_nhan": "Cho học sinh kéo tới 50 000 năm rồi xem phần trăm còn lại: chỉ còn khoảng 0,25%, giải thích vì sao phương pháp carbon-14 dừng ở khoảng 50 000 năm; kéo tiếp tới 57 000 năm (≈ 10 chu kì) thì chỉ còn dưới 0,1%."
+  }
+}

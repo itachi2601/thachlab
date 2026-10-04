@@ -1,0 +1,94 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Hạt nhân và mô hình nguyên tử",
+  "lesson_id": 15,
+  "nguon_trong_bai": "content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.html",
+  "id": "tn-l12-hatnhan-01",
+  "ten": "Mô hình \"bắn bi mù\": tìm vật chắn bằng chùm hạt bị lệch",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "hatnhan.cau_tao",
+    "hatnhan.mo_hinh_rutherford"
+  ],
+  "muc_tieu": "Chứng tỏ rằng chỉ cần đếm chùm hạt bị lệch là suy ra được sự tồn tại của một vật rất nhỏ, rất cứng, rất nặng nằm khuất bên trong — đúng cách Rutherford suy ra hạt nhân từ thí nghiệm lá vàng.",
+  "dung_cu": [
+    { "ten": "Khối gỗ hoặc mặt bàn phẳng", "so_luong": 1 },
+    { "ten": "Đinh nhỏ (hoặc viên bi sắt nhỏ dán cố định)", "so_luong": 1, "ghi_chu": "dán kín sao cho không nhìn thấy" },
+    { "ten": "Băng dính hai mặt hoặc băng dính trong", "so_luong": 1 },
+    { "ten": "Bi thép đường kính 8–12 mm", "so_luong": 1 },
+    { "ten": "Thước thẳng và bút chì để đánh dấu hướng bi vào, hướng bi ra", "so_luong": 1 },
+    { "ten": "Giấy kẻ ô vuông để ghi sơ đồ các lượt lăn", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Dán chiếc đinh nhỏ lên mặt bàn bằng băng dính hai mặt, rồi phủ một tờ giấy trắng lên trên để không nhìn thấy vị trí chiếc đinh.",
+      "Từ một phía cố định, lăn viên bi thép qua lại vài chục lượt, mỗi lượt ghi lại hướng bi đi vào và hướng bi bật ra trên giấy kẻ ô vuông.",
+      "Đánh dấu các lượt bi bị lệch mạnh, rồi tìm xem chúng cùng nằm quanh vị trí nào."
+    ],
+    "quan_sat": [
+      "Khoảng năm mươi trong sáu mươi lượt bi lăn thẳng qua mà hướng không đổi; chỉ vài lượt bị lệch.",
+      "Vài lượt đi sát chiếc đinh bị lệch rõ, có lượt bật ngược lại gần như theo hướng cũ.",
+      "Tất cả các lượt bị lệch đều nằm quanh đúng một vị trí trên bàn, dù người lăn không hề nhìn thấy đinh."
+    ],
+    "rut_ra": [
+      "Chùm bi bay lệch đã chỉ điểm cho một vật nhỏ, cứng nằm khuất bên dưới tờ giấy.",
+      "Số lượt bị lệch chỉ vài lượt trong sáu mươi lượt bay thẳng, nghĩa là vật chắn chỉ chắn một phần nhỏ bề rộng vùng lăn.",
+      "Hạt alpha bật ngược trong thí nghiệm lá vàng là trường hợp tương tự: nó chỉ điểm cho hạt nhân — vùng rất nhỏ, rất nặng, mang điện dương."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d_bia", "ten": "Đường kính chiếc đinh (vật chắn)", "don_vi": "mm", "kieu": "dieu_chinh", "min": 1, "max": 6, "mac_dinh": 2, "buoc": 0.5 },
+    { "ky_hieu": "d_bi", "ten": "Đường kính viên bi thép", "don_vi": "mm", "kieu": "co_dinh", "gia_tri": 10 },
+    { "ky_hieu": "b", "ten": "Bề rộng vùng lăn bi", "don_vi": "cm", "kieu": "dieu_chinh", "min": 10, "max": 40, "mac_dinh": 20, "buoc": 5 },
+    { "ky_hieu": "N", "ten": "Số lượt lăn", "don_vi": "lượt", "kieu": "dieu_chinh", "min": 20, "max": 200, "mac_dinh": 60, "buoc": 20 },
+    { "ky_hieu": "n_lech", "ten": "Số lượt bi bị lệch mạnh", "don_vi": "lượt", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "ti_le", "ten": "Tỉ lệ lượt bị lệch n_lech/N", "don_vi": "—", "kieu": "tinh_ra" },
+    { "ky_hieu": "R_bia", "ten": "Bán kính vật chắn suy từ tỉ lệ lệch", "don_vi": "mm", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Bi va vào vật chắn khi tâm bi đi qua cách tâm vật chắn không quá (d_bia + d_bi)/2, nên ti_le ≈ (d_bia + d_bi)/b (d_bia, d_bi, b cùng đơn vị) — tỉ lệ TUYẾN TÍNH theo đường kính vật chắn, không phải theo bình phương.",
+      "Suy ra bán kính vật chắn từ tỉ lệ đo được: R_bia ≈ (ti_le·b − d_bi)/2",
+      "Với hạt alpha trong thí nghiệm lá vàng, tỉ lệ hạt lệch mạnh cỡ 1/8000 = 1,25.10⁻⁴. Tỉ số DIỆN TÍCH hạt nhân trên diện tích nguyên tử (bán kính 7,0.10⁻¹⁵ m và 1,4.10⁻¹⁰ m) chỉ cỡ 2,5.10⁻⁹; tỉ số THỂ tích tương ứng cỡ 1,25.10⁻¹³ (xem thử thách ⭐⭐⭐ trong bài học)."
+    ],
+    "gia_thiet": [
+      "bi lăn theo đường thẳng, không nảy lên khỏi mặt bàn",
+      "các lượt lăn rải đều trên bề rộng b",
+      "chỉ tính là \"lệch\" khi hướng bay đổi rõ rệt (khác quá 15°)"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt d_bia và b, chạy nhiều lượt bi và vẽ dần các vệt bay; học sinh tự đoán vị trí vật chắn trước khi bấm hiện nó. Khi b tăng mà d_bia giữ nguyên, tỉ lệ lượt lệch giảm tỉ lệ nghịch với b."
+  },
+  "so_lieu_mau": {
+    "cot": ["Đường kính đinh (mm)", "Bề rộng vùng lăn (cm)", "Số lượt lăn", "Số lượt lệch mạnh", "Tỉ lệ lệch"],
+    "hang": [
+      [2, 20, 60, 3, 0.05],
+      [3, 20, 60, 4, 0.067],
+      [4, 20, 60, 4, 0.067],
+      [4, 40, 60, 2, 0.033],
+      [6, 20, 60, 6, 0.1]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình ti_le ≈ (d_bia + d_bi)/b với d_bi = 10 mm; đổi b về mm trước khi tính. Ví dụ d_bia = 4 mm, b = 200 mm cho ti_le = 0,07 — trong 60 lượt, kỳ vọng khoảng 4 lượt lệch và dao động thêm bớt 2 lượt là bình thường, nên phải lăn nhiều lượt mới ước lượng được tỉ lệ."
+  },
+  "ket_qua_ky_vong": "Học sinh chỉ ra được vị trí vật chắn mà không nhìn thấy nó, và nhận ra tỉ lệ lượt bị lệch nhỏ hơn nhiều so với lượt bay thẳng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng hạt bay thẳng nghĩa là bên trong hoàn toàn không có gì.",
+    "Cho rằng hạt bật ngược là do bị vật lớn chắn, chứ không nghĩ tới một vật rất nhỏ nhưng rất nặng.",
+    "Cho rằng tỉ lệ hạt lệch không phụ thuộc kích thước vật chắn, chỉ phụ thuộc số lượt lăn."
+  ],
+  "sai_so_thuong_gap": [
+    "Số lượt lăn ít (dưới 30) nên tỉ lệ lệch dao động mạnh giữa các lần làm.",
+    "Bi lăn không thẳng hoặc bị nảy lên khỏi mặt bàn làm xuất hiện lượt lệch \"giả\".",
+    "Đánh dấu hướng bi ra bị lệch do tay che khuất, nhất là các lượt bật ngược."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Mặt bàn có vật chắn ẩn; người dùng bắn bi từ một phía, hệ thống vẽ các vệt bay vào và bay ra, đồng thời đếm số lượt lệch.",
+    "diem_nhan": "Tăng dần số lượt bắn để thấy tỉ lệ lệch ổn định dần quanh giá trị (d_bia + d_bi)/b; đổi kích thước vật chắn để thấy tỉ lệ đổi tuyến tính theo đường kính vật chắn, không phải theo bình phương."
+  },
+  "an_toan": [
+    "Chiếc đinh dán trên bàn phải được dán kín và dẹt, không để đầu nhọn hướng lên.",
+    "Không lăn bi trên mặt bàn trơn trượt dễ rơi xuống sàn."
+  ]
+}

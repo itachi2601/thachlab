@@ -1,0 +1,97 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 9. Khái niệm từ trường",
+  "lesson_id": 10,
+  "nguon_trong_bai": "content/lesson-samples/l12-khai-niem-tu-truong/theory.html",
+  "id": "tn-l12-tutruong-04",
+  "ten": "Đo cảm ứng từ theo khoảng cách bằng cảm biến từ trường",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "tutruong.cam_ung_tu",
+    "tutruong.mat_do_duong_suc",
+    "tutruong.tu_truong_giam_theo_khoang_cach"
+  ],
+  "muc_tieu": "Đo cảm ứng từ tại nhiều khoảng cách khác nhau trên trục một nam châm trụ, từ đó rút ra từ trường yếu dần theo khoảng cách và mật độ đường sức biểu diễn độ mạnh của từ trường.",
+  "dung_cu": [
+    { "ten": "Nam châm trụ neodym nhỏ, đường kính khoảng 5 mm và dày khoảng 2 mm", "so_luong": 1 },
+    { "ten": "Điện thoại có cảm biến từ trường (ứng dụng đo từ trường)", "so_luong": 1, "ghi_chu": "sai số vài µT" },
+    { "ten": "Thước kẻ chia tới milimét và giá đỡ hoặc đế giữ nam châm", "so_luong": 1 },
+    { "ten": "Tấm nhựa hoặc bìa có vạch chia khoảng cách 2, 4, 6, 8, 10 cm", "so_luong": 1 },
+    { "ten": "Giá đỡ điện thoại để giữ cảm biến đúng trên trục nam châm", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt nam châm trụ đứng trên bàn, dựng giá đỡ giữ điện thoại sao cho cảm biến nằm trên trục của nam châm.",
+      "Đo khoảng cách từ mặt cực bắc tới cảm biến bằng thước; đặt lần lượt 2, 4, 6, 8, 10 cm.",
+      "Tại mỗi vị trí, đọc số trên ứng dụng ba lần, ghi cả ba số rồi tính trung bình.",
+      "Làm lại toàn bộ phép đo một lần nữa theo thứ tự ngược lại (từ 10 cm về 2 cm) để kiểm tra."
+    ],
+    "quan_sat": [
+      "Số đọc giảm rất nhanh khi ra xa: từ khoảng 1000 µT ở 2 cm xuống còn khoảng 31 µT ở 10 cm — đã gần bằng từ trường Trái Đất.",
+      "Ba lần đọc ở cùng một vị trí lệch nhau khoảng 1–2 µT.",
+      "Khoảng cách tăng gấp đôi (2 cm lên 4 cm) thì số đọc giảm còn khoảng một phần tám.",
+      "Khi đưa điện thoại ra xa (từ khoảng 8–10 cm trở đi), số đọc chững lại ở mức vài chục µT — đúng bằng từ trường Trái Đất tại chỗ — chứ không về 0."
+    ],
+    "rut_ra": [
+      "Cảm ứng từ của nam châm giảm nhanh theo khoảng cách, nhanh hơn nhiều so với tỉ lệ nghịch với khoảng cách.",
+      "Chỗ cảm biến đọc số lớn đúng là chỗ đường sức từ vẽ mau, chỗ số nhỏ là chỗ đường sức thưa: mật độ đường sức biểu diễn độ mạnh từ trường.",
+      "Kết quả đo luôn phải ghi kèm sai số, và điều đáng tin là xu hướng chứ không phải một con số lẻ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách từ mặt cực tới cảm biến", "don_vi": "cm", "kieu": "dieu_chinh", "min": 1, "max": 20, "mac_dinh": 4, "buoc": 0.5 },
+    { "ky_hieu": "m", "ten": "Mômen từ của nam châm trụ", "don_vi": "A·m²", "kieu": "dieu_chinh", "min": 0.01, "max": 0.1, "mac_dinh": 0.04, "buoc": 0.01 },
+    { "ky_hieu": "B_TD", "ten": "Từ trường Trái Đất tại chỗ làm thí nghiệm", "don_vi": "µT", "kieu": "co_dinh", "gia_tri": 30 },
+    { "ky_hieu": "mu_0", "ten": "Hằng số từ", "don_vi": "T·m/A", "kieu": "co_dinh", "gia_tri": 1.2566e-6 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ đọc trên cảm biến", "don_vi": "µT", "kieu": "do_duoc", "sai_so_do": 3 },
+    { "ky_hieu": "B_lt", "ten": "Cảm ứng từ tính theo mô hình lưỡng cực trên trục", "don_vi": "µT", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Trên trục nam châm trụ, mô hình lưỡng cực: B_lt = (mu_0 / 2π) · m / d^3  (d tính bằng m, B ra T)",
+      "Tỉ số khi tăng gấp đôi khoảng cách: B_lt(2d) / B_lt(d) = 1/8",
+      "Giá trị đọc được gần đúng: B ≈ căn(B_lt^2 + B_TD^2) nếu hai từ trường vuông góc nhau"
+    ],
+    "gia_thiet": [
+      "nam châm trụ coi như lưỡng cực từ điểm, chỉ dùng khi d lớn hơn khoảng hai lần đường kính nam châm",
+      "cảm biến nằm đúng trên trục nam châm; lệch trục làm số đọc nhỏ hơn",
+      "bỏ qua từ trường của các vật bằng sắt gần đó",
+      "từ trường Trái Đất (B_TD ≈ 30 µT) chỉ là nhiễu nhỏ khi d dưới khoảng 4 cm; từ 6 cm trở ra nó đã đáng kể và từ khoảng 10 cm thì lấn át từ trường của nam châm"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt d theo bước 0,5 cm, vẽ đồ thị B(d) trên trục logarit và hiện luôn đường lý thuyết 1/d^3 để so sánh; thêm nút bật/tắt từ trường Trái Đất để thấy nó chỉ đáng kể khi ra xa."
+  },
+  "so_lieu_mau": {
+    "cot": ["d (cm)", "Ba lần đọc (µT)", "Trung bình B (µT)", "B_lt theo mô hình (µT)"],
+    "hang": [
+      [2, "999 · 1001 · 1000", 1000, 1000],
+      [4, "128 · 130 · 129", 129, 125],
+      [6, "47 · 48 · 49", 48, 37.0],
+      [8, "33 · 34 · 35", 34, 15.6],
+      [10, "30 · 31 · 32", 31, 8.0]
+    ],
+    "ghi_chu": "Các số ở cột trung bình là số liệu minh hoạ đọc trên cảm biến điện thoại, dựng theo mô hình lưỡng cực với m = 0,04 A·m² rồi cộng vectơ với từ trường Trái Đất: gần nam châm thì B ≈ B_lt, còn từ khoảng 6 cm trở ra từ trường Trái Đất chi phối nên số đọc không tụt tiếp. Điều đáng dùng là xu hướng: khoảng cách tăng gấp đôi thì cảm ứng từ của nam châm giảm còn khoảng một phần tám."
+  },
+  "ket_qua_ky_vong": "Đồ thị B theo d giảm rất nhanh: gần như tỉ lệ nghịch với lập phương khoảng cách (mô hình lưỡng cực) khi còn gần nam châm; ở khoảng cách lớn, số đọc chững lại và tiến về giá trị từ trường Trái Đất thay vì về 0.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng ra xa nam châm thì từ trường bằng 0 — thực tế chỉ yếu dần rồi bị từ trường Trái Đất lấn át.",
+    "Cho rằng khoảng cách tăng gấp đôi thì cảm ứng từ giảm một nửa.",
+    "Cho rằng số đọc cảm biến là con số chính xác, không cần đọc nhiều lần và không cần ghi sai số."
+  ],
+  "sai_so_thuong_gap": [
+    "Cảm biến của điện thoại có sai số vài µT, lại bị ảnh hưởng bởi chính loa và nam châm trong máy.",
+    "Đặt cảm biến lệch khỏi trục nam châm vài milimét làm số đọc giảm rõ rệt.",
+    "Bàn thí nghiệm có chân bằng thép hoặc kẹp giấy làm số đọc nền cao hơn thực tế.",
+    "Chưa trừ số đọc nền khi chưa có nam châm, nên kết quả ở khoảng cách lớn bị cộng thêm một lượng không đổi."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Nam châm trụ và cảm biến trên một trục có vạch chia; kéo cảm biến thì số đo hiện ra và đồ thị B(d) vẽ dần, kèm bảng số liệu tự điền ba lần đọc.",
+    "diem_nhan": "Cho thấy đường B(d) dốc hơn hẳn đường 1/d, và ở khoảng cách lớn đường cong tiến tới một mức sàn là từ trường Trái Đất chứ không chạm 0."
+  },
+  "an_toan": [
+    "Nam châm neodym hút rất mạnh: để xa các vật bằng sắt, không kẹp ngón tay giữa hai nam châm.",
+    "Không để nam châm gần thẻ ngân hàng, ổ cứng, đồng hồ cơ."
+  ]
+}

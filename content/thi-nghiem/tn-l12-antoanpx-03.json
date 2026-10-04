@@ -1,0 +1,93 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 18. An toàn phóng xạ",
+  "lesson_id": 19,
+  "nguon_trong_bai": "content/lesson-samples/l12-an-toan-phong-xa/theory.html",
+  "id": "tn-l12-antoanpx-03",
+  "ten": "Chờ phân rã chất thải phóng xạ: ¹³¹I và ¹³⁷Cs",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "antoanpx.chat_thai_phong_xa",
+    "phongxa.chu_ki_ban_ra"
+  ],
+  "muc_tieu": "Tính được độ phóng xạ còn lại theo số chu kì bán rã để hiểu vì sao chất thải chu kì ngắn chỉ cần lưu chờ phân rã, còn chất thải chu kì dài phải cách li hàng nghìn năm.",
+  "dung_cu": [
+    { "ten": "Bảng chu kì bán rã của một số đồng vị (¹³¹I, ¹³⁷Cs, ²³⁹Pu)", "so_luong": 1 },
+    { "ten": "Máy tính cầm tay hoặc bảng tính", "so_luong": 1 },
+    { "ten": "Số liệu độ phóng xạ ban đầu của một lô chất thải y tế", "so_luong": 1, "ghi_chu": "ví dụ lô dung dịch rửa có ¹³¹I" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Ghi chu kì bán rã: ¹³¹I là 8,02 ngày; ¹³⁷Cs là 30,1 năm; ²³⁹Pu là 24 100 năm.",
+      "Lập bảng theo số chu kì bán rã n = 0, 1, 3, 5, 10; tính độ phóng xạ còn lại theo công thức A = A₀·2^(−n).",
+      "Đổi số chu kì ra thời gian thực: với ¹³¹I, 10 chu kì là khoảng 80 ngày; với ¹³⁷Cs, 10 chu kì là 301 năm.",
+      "So sánh với thời gian lưu giữ thực tế của một kho chất thải."
+    ],
+    "quan_sat": [
+      "Độ phóng xạ giảm rất nhanh trong vài chu kì đầu rồi chậm dần: sau 1 chu kì còn 50%, sau 5 chu kì còn 3,1%, sau 10 chu kì còn 0,1%.",
+      "Với ¹³¹I, mức 0,1% đạt được chỉ sau khoảng 80 ngày — nằm trong một học kì.",
+      "Với ²³⁹Pu, muốn giảm 1000 lần phải chờ khoảng 241 000 năm, dài hơn toàn bộ lịch sử loài người."
+    ],
+    "rut_ra": [
+      "Chất thải chu kì ngắn có thể lưu trong bể chờ phân rã vài tháng rồi xử lí như chất thải y tế thường.",
+      "Chất thải chu kì dài không thể 'chờ' được: phải cố định trong khối bền (thuỷ tinh hoá, bọc thép) và chôn sâu trong tầng địa chất ổn định.",
+      "Vì vậy bước phân loại theo chu kì bán rã quyết định toàn bộ cách xử lí phía sau."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "dong_vi", "ten": "Đồng vị chất thải: 0 = ¹³¹I, 1 = ¹³⁷Cs, 2 = ²³⁹Pu (bảng chu kì bán rã ở mo_hinh)", "don_vi": "chỉ số", "kieu": "dieu_chinh", "min": 0, "max": 2, "mac_dinh": 0, "buoc": 1 },
+    { "ky_hieu": "T", "ten": "Chu kì bán rã của đồng vị đã chọn", "don_vi": "ngày", "kieu": "tinh_ra" },
+    { "ky_hieu": "n", "ten": "Số chu kì bán rã đã trôi qua", "don_vi": "chu kì", "kieu": "dieu_chinh", "min": 0, "max": 20, "mac_dinh": 10, "buoc": 1 },
+    { "ky_hieu": "A0", "ten": "Độ phóng xạ ban đầu của lô chất thải", "don_vi": "Bq", "kieu": "co_dinh", "gia_tri": 1.0 },
+    { "ky_hieu": "A", "ten": "Độ phóng xạ còn lại", "don_vi": "Bq", "kieu": "tinh_ra" },
+    { "ky_hieu": "t", "ten": "Thời gian lưu giữ thực tế", "don_vi": "ngày", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật phóng xạ: A(t) = A0 · 2^(−t/T)",
+      "Bảng chu kì bán rã theo đồng vị đã chọn: ¹³¹I 8,02 ngày; ¹³⁷Cs 30,1 năm ≈ 1,1×10⁴ ngày; ²³⁹Pu 24 100 năm ≈ 8,8×10⁶ ngày (T nhận giá trị này theo dong_vi, không khai cứng một khoảng ngày)",
+      "Số chu kì bán rã: n = t/T, do đó A = A0 · 2^(−n)",
+      "Thời gian lưu giữ: t = n · T",
+      "Muốn giảm 1000 lần (còn 0,1%) cần n = log2(1000) ≈ 9,97 ≈ 10 chu kì"
+    ],
+    "gia_thiet": [
+      "độ phóng xạ ban đầu A0 lấy bằng 1 đơn vị để so tỉ lệ, không cần giá trị tuyệt đối",
+      "một lô chất thải chỉ chứa một đồng vị chính; thực tế có hỗn hợp nhiều đồng vị nên phải tính riêng từng đồng vị",
+      "bỏ qua việc đồng vị mẹ phân rã thành đồng vị con cũng phóng xạ"
+    ],
+    "ghi_chu": "Mô phỏng nên cho chọn đồng vị (¹³¹I, ¹³⁷Cs, ²³⁹Pu) rồi kéo thanh thời gian; đường cong phân rã vẽ theo thang lôgarit để thấy ¹³¹I tụt trong vài tháng còn ²³⁹Pu gần như nằm ngang suốt hàng nghìn năm."
+  },
+  "so_lieu_mau": {
+    "cot": ["Số chu kì bán rã n", "Độ phóng xạ còn lại (%)", "Thời gian với ¹³¹I (ngày)"],
+    "hang": [
+      [0, 100.0, 0],
+      [1, 50.0, 8],
+      [3, 12.5, 24],
+      [5, 3.1, 40],
+      [10, 0.1, 80]
+    ],
+    "ghi_chu": "Số liệu tính đúng từ A = A0·2^(−n), không phải đo. Với ¹³⁷Cs (T = 30,1 năm) cùng số chu kì đó cho thời gian lớn gấp khoảng 1 370 lần: 10 chu kì là 301 năm."
+  },
+  "ket_qua_ky_vong": "Độ phóng xạ giảm một nửa sau mỗi chu kì bán rã; sau khoảng 10 chu kì còn dưới 0,1%. Vì vậy chất thải chu kì ngắn chỉ cần lưu chờ, chất thải chu kì dài buộc phải cách li lâu dài.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng độ phóng xạ giảm đều theo thời gian (giảm tuyến tính) nên sau 2 chu kì còn 0%.",
+    "Cho rằng cứ pha loãng chất thải với nước là hết nguy hiểm, không cần để ý chu kì bán rã.",
+    "Cho rằng chất thải chu kì dài có thể lưu vài chục năm là an toàn."
+  ],
+  "sai_so_thuong_gap": [
+    "Nhầm đơn vị chu kì bán rã (ngày với năm) khi tính thời gian lưu giữ.",
+    "Lấy trung bình cộng độ phóng xạ của hỗn hợp đồng vị thay vì tính riêng từng đồng vị.",
+    "Bỏ qua đồng vị con cũng phóng xạ, nên tưởng lô chất thải 'hết phóng xạ' sớm hơn thực tế."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Chọn đồng vị và kéo thanh thời gian; vẽ đường cong phân rã theo thang lôgarit, đánh dấu mốc 50%, 3,1% và 0,1%.",
+    "diem_nhan": "Hai đồng vị đặt cạnh nhau cho thấy cùng một quy luật nhưng khoảng thời gian lệch nhau hơn nghìn lần — đó chính là căn cứ để phân loại chất thải."
+  },
+  "an_toan": [
+    "Chỉ tính toán trên số liệu đã công bố; không mang chất thải thật vào lớp học.",
+    "Nếu tham quan kho lưu giữ, tuân thủ tuyệt đối vạch giới hạn và hướng dẫn của nhân viên bức xạ."
+  ]
+}

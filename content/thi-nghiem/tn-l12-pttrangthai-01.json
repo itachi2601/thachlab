@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+  "lesson_id": 8,
+  "nguon_trong_bai": "content/lesson-samples/l12-phuong-trinh-trang-thai/theory.html",
+  "id": "tn-l12-pttrangthai-01",
+  "ten": "Quả bóng bàn bẹp phồng trở lại trong nước nóng",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "pttrangthai.ba_thong_so_trang_thai",
+    "pttrangthai.ap_suat_tang_theo_nhiet_do"
+  ],
+  "muc_tieu": "Cho thấy khi nhiệt độ khí trong một vật kín tăng thì áp suất khí tăng, và chính áp suất ấy đẩy vỏ bóng trở về dạng ban đầu — cả ba thông số p, V, T đều đổi nên phải cần phương trình trạng thái.",
+  "dung_cu": [
+    { "ten": "Quả bóng bàn bị bẹp nhưng chưa nứt", "so_luong": 1, "ghi_chu": "vỏ còn kín, không có vết rách" },
+    { "ten": "Cốc hoặc bát chịu nhiệt đựng nước nóng", "so_luong": 1 },
+    { "ten": "Nước nóng khoảng 80 °C", "so_luong": 1, "ghi_chu": "khoảng 300 ml, có nắp đậy hoặc đĩa úp lên trên" },
+    { "ten": "Nhiệt kế", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Thước kẹp hoặc thước thẳng có chia milimét", "so_luong": 1, "ghi_chu": "để đo đường kính quả bóng" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đo đường kính chỗ bẹp của quả bóng ở nhiệt độ phòng, ghi vào bảng.",
+      "Rót nước nóng khoảng 80 °C vào cốc, đo nhiệt độ nước, thả quả bóng vào rồi úp đĩa lên trên.",
+      "Cứ 20 giây lấy bóng ra lau khô, đo lại đường kính, rồi thả lại vào nước; làm 4–5 lần."
+    ],
+    "quan_sat": [
+      "Vỏ bóng phồng dần, chỗ bẹp mất hẳn sau khoảng một phút.",
+      "Đường kính đo được tăng từ chỗ bẹp rồi đứng ở giá trị lớn nhất — không phình thêm nữa dù nước vẫn nóng.",
+      "Nếu quả bóng có vết nứt, không thấy hiện tượng gì: khí thoát ra ngoài nên áp suất trong bóng không tăng."
+    ],
+    "rut_ra": [
+      "Nước nóng truyền nhiệt cho khối khí bên trong: nhiệt độ T tăng.",
+      "Bóng kín nên lượng khí không đổi; nhiệt độ tăng kéo áp suất khí tăng theo tỉ số T₂/T₁, áp suất ấy đẩy vỏ bóng phồng ra.",
+      "Trong lúc phồng, thể tích V cũng tăng — cả p, V, T đều đổi, nên hiện tượng này không thuộc riêng định luật nào mà cần phương trình trạng thái."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "t_nuoc", "ten": "Nhiệt độ nước nóng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 40, "max": 95, "mac_dinh": 80, "buoc": 5 },
+    { "ky_hieu": "d_ban_dau", "ten": "Đường kính chỗ bẹp ở nhiệt độ phòng", "don_vi": "mm", "kieu": "dieu_chinh", "min": 28, "max": 36, "mac_dinh": 33, "buoc": 0.5 },
+    { "ky_hieu": "d_bong", "ten": "Đường kính quả bóng khi đã căng", "don_vi": "mm", "kieu": "co_dinh", "gia_tri": 38 },
+    { "ky_hieu": "t_phong", "ten": "Nhiệt độ phòng", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 27 },
+    { "ky_hieu": "d_do", "ten": "Đường kính đọc trên thước", "don_vi": "mm", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "t_do", "ten": "Nhiệt độ nước đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "p_ti_so", "ten": "Tỉ số áp suất khí trong bóng (p/p₀)", "don_vi": "lần", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Bóng kín, lượng khí không đổi: p₂/p₁ = T₂/T₁ (nhiệt độ tuyệt đối)",
+      "Với nước 80 °C: T₁ = 300 K, T₂ = 353 K → p₂/p₁ = 1,18, tức áp suất tăng 18%",
+      "Đường kính quan sát tăng dần từ d_ban_dau tới d_bong rồi dừng lại",
+      "Điều kiện để phồng: áp suất trong bóng lớn hơn áp suất khí quyển cộng với lực đàn hồi giữ vết bẹp"
+    ],
+    "gia_thiet": [
+      "bỏ qua nhiệt lượng làm nóng vỏ bóng và nhiệt hao ra môi trường",
+      "coi khí trong bóng là khí lí tưởng, thể tích bóng đổi nhưng lượng khí không đổi",
+      "bỏ qua sự tăng nhỏ thể tích vỏ nhựa do giãn nở vì nhiệt"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt nhiệt độ nước và hiện tỉ số p₂/p₁ theo Kelvin ngay trên hình, để học sinh thấy đổi từ 27 °C lên 80 °C chỉ làm áp suất tăng 18% — không phải tăng gần 3 lần như khi lấy tỉ số Celsius."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thời gian (s)", "Đường kính chỗ bẹp (mm)"],
+    "hang": [
+      [0, 33.0],
+      [20, 34.5],
+      [40, 36.0],
+      [60, 37.5],
+      [80, 38.0],
+      [100, 38.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ (không phải đo thật) khi nước ở 80 °C; đường kính dừng ở 38,0 mm vì bóng đã căng hết cỡ. Đo thật, lần đọc đầu sau khi vớt bóng ra thường thấp hơn vì bóng nguội nhanh."
+  },
+  "ket_qua_ky_vong": "Vỏ bóng phồng dần rồi dừng ở dạng cầu đầy đủ; nước càng nóng thì bóng căng càng nhanh. Bóng có vết nứt thì không có hiện tượng gì.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng vỏ bóng gặp nóng thì nở ra, trong khi phần lớn chuyển động là do khí bên trong tăng áp suất.",
+    "Cho rằng nước nóng chui vào trong bóng và làm bóng căng lên.",
+    "Cho rằng nhiệt độ tăng gấp ba lần (80/27) thì áp suất cũng tăng gấp ba — đã lấy tỉ số nhiệt độ Celsius."
+  ],
+  "sai_so_thuong_gap": [
+    "Đo đường kính khi bóng còn nóng và ướt nên số đọc chệch.",
+    "Chưa chờ khí trong bóng đạt nhiệt độ của nước đã đo, bóng chỉ mới phồng một phần.",
+    "Quả bóng có vết nứt nhỏ: khí rò ra nên thí nghiệm không thành công dù nước rất nóng."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Quả bóng bẹp thả vào cốc nước nóng; thanh trượt nhiệt độ nước, trên hình hiện nhiệt độ Kelvin và tỉ số p₂/p₁; bảng đường kính tự điền theo thời gian.",
+    "diem_nhan": "Học sinh dự đoán số lần áp suất tăng trước khi xem, rồi đối chiếu với tỉ số Kelvin — đúng chỗ hay sai nhất của bài."
+  },
+  "an_toan": [
+    "Nước 80 °C gây bỏng: dùng kẹp hoặc thìa để vớt bóng, không thò tay vào cốc.",
+    "Lau khô tay và bàn trước khi thao tác để bóng và cốc không trượt."
+  ]
+}

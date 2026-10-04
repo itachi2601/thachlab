@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+  "lesson_id": 8,
+  "nguon_trong_bai": "content/lesson-samples/l12-phuong-trinh-trang-thai/theory.html",
+  "id": "tn-l12-pttrangthai-02",
+  "ten": "Bình kín ngâm nước ở năm nhiệt độ: p/T không đổi",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "pttrangthai.qua_trinh_dang_tich",
+    "pttrangthai.ap_suat_ti_le_thuan_nhiet_do_tuyet_doi"
+  ],
+  "muc_tieu": "Đo áp suất của một lượng khí có thể tích không đổi ở năm nhiệt độ khác nhau, rồi tự chia p cho T (Kelvin) để nhận ra thương số ấy không đổi — nội dung định luật của quá trình đẳng tích.",
+  "dung_cu": [
+    { "ten": "Bình thuỷ tinh kín có nút và van (hoặc bình tam giác đậy kín)", "so_luong": 1, "ghi_chu": "thể tích bình không đổi suốt thí nghiệm" },
+    { "ten": "Cảm biến áp suất hoặc áp kế chia tới 1 kPa", "so_luong": 1, "ghi_chu": "sai số ±1 kPa" },
+    { "ten": "Nhiệt kế", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nồi nước có bếp, nước đá, nước phòng, nước nóng", "so_luong": 1, "ghi_chu": "để tạo các mức 0, 25, 50, 75, 100 °C" },
+    { "ten": "Kẹp hoặc giá giữ bình khỏi chạm đáy nồi", "so_luong": 1 },
+    { "ten": "Máy tính bỏ túi", "so_luong": 1, "ghi_chu": "để chia p cho T" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối cảm biến áp suất với bình kín, kiểm tra không rò khí, ghi áp suất ở nhiệt độ phòng.",
+      "Lần lượt ngâm bình vào nước đá đang tan (0 °C), nước phòng (25 °C), nước ấm (50 °C), nước nóng (75 °C) và nước đang sôi (100 °C); mỗi mức chờ 2–3 phút cho nhiệt độ ổn định rồi đọc đồng thời nhiệt độ và áp suất.",
+      "Ghi 5 cặp số vào bảng; đổi mỗi nhiệt độ ra Kelvin rồi tính p/T cho từng dòng, so sánh các giá trị với nhau."
+    ],
+    "quan_sat": [
+      "Áp suất tăng đều theo nhiệt độ: nhiệt độ càng cao, kim áp kế càng lệch.",
+      "Cột p/T ở năm dòng gần như bằng nhau, chỉ lệch nhau ở chữ số thứ ba.",
+      "Không phụ thuộc việc chọn mức nhiệt độ nào: nếu ngâm ở 10 °C hay 60 °C thì p/T vẫn ra cùng một con số."
+    ],
+    "rut_ra": [
+      "Với thể tích không đổi, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối: p/T = hằng số.",
+      "Hệ thức p₁/T₁ = p₂/T₂ đúng cho mọi cặp trạng thái của cùng lượng khí trong bình này.",
+      "Hằng số p/T chỉ phụ thuộc lượng khí và thể tích bình; đổi bình khác hoặc nạp lượng khí khác thì hằng số đổi."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p0", "ten": "Áp suất khí ở 0 °C", "don_vi": "kPa", "kieu": "dieu_chinh", "min": 80, "max": 150, "mac_dinh": 100, "buoc": 5 },
+    { "ky_hieu": "t_max", "ten": "Nhiệt độ cao nhất khảo sát", "don_vi": "°C", "kieu": "dieu_chinh", "min": 60, "max": 120, "mac_dinh": 100, "buoc": 5 },
+    { "ky_hieu": "n_diem", "ten": "Số mức nhiệt độ", "don_vi": "mức", "kieu": "dieu_chinh", "min": 3, "max": 6, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "alpha", "ten": "Hệ số tăng áp suất theo nhiệt độ Celsius", "don_vi": "1/K", "kieu": "co_dinh", "gia_tri": 0.003661 },
+    { "ky_hieu": "p_do", "ten": "Áp suất đọc trên cảm biến", "don_vi": "kPa", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "p_tren_T", "ten": "Thương số p/T (Kelvin)", "don_vi": "kPa/K", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Áp suất theo nhiệt độ Celsius: p = p0·(1 + alpha·t) với alpha = 1/273,15 K⁻¹",
+      "Theo nhiệt độ tuyệt đối: p = p0·T/273,15 → p/T = p0/273,15 = hằng số",
+      "Hệ thức hai trạng thái: p₁/T₁ = p₂/T₂",
+      "Với p0 = 100 kPa: hằng số p/T = 100/273,15 = 0,366 kPa/K"
+    ],
+    "gia_thiet": [
+      "thể tích bình không đổi, không rò khí trong suốt thí nghiệm",
+      "khí được coi là khí lí tưởng; ở áp suất cao và gần nhiệt độ hoá lỏng, khí thực lệch khỏi quy luật",
+      "bỏ qua thời gian chờ để bình đạt nhiệt độ của nước và nhiệt hao ra môi trường"
+    ],
+    "ghi_chu": "Mô phỏng nên tự tính và hiện cột p/T ngay khi học sinh kéo thanh trượt nhiệt độ, để cột ấy đứng yên ở 0,366 kPa/K — đó là bằng chứng số của quá trình đẳng tích."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ t (°C)", "Áp suất p (kPa)", "p/T (kPa/K)"],
+    "hang": [
+      [0, 100.0, 0.366],
+      [25, 109.2, 0.366],
+      [50, 118.3, 0.366],
+      [75, 127.5, 0.366],
+      [100, 136.6, 0.366]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình khí lí tưởng với p0 = 100,0 kPa (chính xác p/T = 0,36610 ÷ 0,36626 kPa/K, đã làm tròn 3 chữ số). Đo thật, cột p/T lệch nhau cỡ 1% vì cảm biến áp suất sai ±1 kPa và nhiệt kế sai ±0,5 °C."
+  },
+  "ket_qua_ky_vong": "Năm điểm (t, p) nằm gần như trên một đường thẳng; cột p/T (Kelvin) gần như không đổi. Kết luận: trong quá trình đẳng tích, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối.",
+  "hien_tuong_hay_sai": [
+    "Chia p cho nhiệt độ Celsius rồi thấy kết quả tăng dần và kết luận sai rằng p không tỉ lệ thuận với nhiệt độ.",
+    "Cho rằng thể tích bình tăng khi khí nóng lên nên kết quả không còn là quá trình đẳng tích.",
+    "Cho rằng hằng số p/T là một hằng số chung cho mọi chất khí, trong khi nó bằng nR/V và phụ thuộc lượng khí, thể tích bình."
+  ],
+  "sai_so_thuong_gap": [
+    "Bình rò khí: áp suất không tăng đúng quy luật, cột p/T trôi dần.",
+    "Chưa chờ bình đạt nhiệt độ của nước đã đọc số, nhiệt độ và áp suất không còn tương ứng với nhau.",
+    "Bầu nhiệt kế chạm đáy nồi hoặc cảm biến bị nước làm ướt nên số đọc lệch."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bình khí ngâm trong nồi nước; mỗi mức nhiệt độ là một dòng mới hiện dần trong bảng kèm cột p/T, đồng thời một điểm sáng hiện trên đồ thị p – T.",
+    "diem_nhan": "Cột p/T đứng yên ở 0,366 kPa/K là bằng chứng số; nếu học sinh chia cho °C thì cột ấy tăng dần — mô phỏng nên cho chọn giữa hai cách chia để thấy khác nhau."
+  },
+  "an_toan": [
+    "Bình kín ngâm nước sôi tăng áp suất mạnh: dùng van an toàn, không dùng bình thuỷ tinh mỏng.",
+    "Dùng kẹp và găng khi thao tác với nước sôi."
+  ]
+}

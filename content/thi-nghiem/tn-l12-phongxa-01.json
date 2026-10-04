@@ -1,0 +1,97 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 17. Hiện tượng phóng xạ",
+  "lesson_id": 18,
+  "nguon_trong_bai": "content/lesson-samples/l12-phong-xa/theory.html",
+  "id": "tn-l12-phongxa-01",
+  "ten": "Đo nhịp đếm của một nguồn phóng xạ: trung bình ổn định, từng phút ngẫu nhiên",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "phongxa.tinh_tu_phat",
+    "phongxa.tinh_ngau_nhien",
+    "phongxa.phong_nen"
+  ],
+  "muc_tieu": "Chứng tỏ nhịp đếm trung bình của một nguồn phóng xạ rất ổn định nhưng số đếm từng phút dao động ngẫu nhiên, và phông nền của phòng luôn phải trừ ra.",
+  "dung_cu": [
+    { "ten": "Nguồn phóng xạ yếu (nguồn kiểm tra của phòng thí nghiệm)", "so_luong": 1, "ghi_chu": "để trong hộp chì khi không dùng" },
+    { "ten": "Ống đếm Geiger kèm máy đếm xung", "so_luong": 1, "ghi_chu": "có chế độ đếm theo phút" },
+    { "ten": "Thước chia đến 1 cm", "so_luong": 1 },
+    { "ten": "Giá đỡ hoặc kẹp giữ nguồn cố định", "so_luong": 1 },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt nguồn cách ống đếm Geiger đúng 10 cm, cố định bằng giá đỡ.",
+      "Bấm đếm 1 phút, ghi số xung; làm lại 5 lần liên tiếp, mỗi lần ghi một số vào bảng.",
+      "Đưa nguồn ra xa khỏi phòng (hoặc cất vào hộp chì), đếm 1 phút để đo phông nền.",
+      "Muốn kiểm tra quy luật khoảng cách: đo thêm ở 20 cm và 40 cm, so số đếm đã trừ phông."
+    ],
+    "quan_sat": [
+      "Năm số đếm không giống nhau: 512, 486, 531, 497, 505 — cùng dao động quanh khoảng 500 xung/phút.",
+      "Phông nền chỉ vài chục xung mỗi phút (đo được 23).",
+      "Số đếm trung bình ổn định giữa các buổi đo khác nhau, nhưng không bao giờ lặp lại y hệt."
+    ],
+    "rut_ra": [
+      "Nhịp đếm trung bình đặc trưng cho nguồn, còn từng phút một thì ngẫu nhiên — đúng với tính ngẫu nhiên của phóng xạ.",
+      "Độ tản mát giữa các lần đếm cỡ căn bậc hai của số đếm, tức sai số tương đối 1/sqrt(N). Lấy trung bình 5 lần thì sai số của giá trị trung bình nhỏ đi √5 lần: một lần đếm tản mát cỡ ±20 xung/phút, còn trung bình 5 lần chỉ cỡ ±10 xung/phút.",
+      "Phông nền là số đếm khi không có nguồn, phải trừ đi trước khi so sánh các nguồn khác nhau."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách nguồn – ống đếm", "don_vi": "cm", "kieu": "dieu_chinh", "min": 5, "max": 40, "mac_dinh": 10, "buoc": 5 },
+    { "ky_hieu": "t_dem", "ten": "Thời gian mỗi lần đếm", "don_vi": "s", "kieu": "dieu_chinh", "min": 30, "max": 300, "mac_dinh": 60, "buoc": 30 },
+    { "ky_hieu": "H_nguon", "ten": "Độ phóng xạ của nguồn", "don_vi": "Bq", "kieu": "dieu_chinh", "min": 100, "max": 5000, "mac_dinh": 2500, "buoc": 100 },
+    { "ky_hieu": "eps", "ten": "Hiệu suất đếm của ống Geiger", "don_vi": "1", "kieu": "co_dinh", "gia_tri": 0.2 },
+    { "ky_hieu": "H_phong", "ten": "Tốc độ đếm phông nền của phòng", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 5 },
+    { "ky_hieu": "n_tb", "ten": "Số đếm trung bình mỗi phút (đã trừ phông)", "don_vi": "xung/phút", "kieu": "tinh_ra" },
+    { "ky_hieu": "sigma", "ten": "Độ lệch chuẩn của một lần đếm", "don_vi": "xung", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số đếm mỗi phút khi có nguồn: n = eps · H_nguon · (t_dem/60) · (d0/d)^2 + H_phong, với d0 = 10 cm",
+      "Số đếm trung bình đã trừ phông: n_tb = n − H_phong",
+      "Sai số thống kê của một lần đếm: sigma = sqrt(n_tb), sai số tương đối = 1/sqrt(n_tb)"
+    ],
+    "gia_thiet": [
+      "nguồn coi như nguồn điểm, bỏ qua hấp thụ của không khí và vỏ nguồn",
+      "phông nền không đổi trong suốt thời gian đo",
+      "hiệu suất đếm eps không phụ thuộc năng lượng tia trong khoảng đang xét"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt d, t_dem, H_nguon và hiển thị 5 cột số đếm mới mỗi lần bấm 'đếm lại': cột trung bình gần như không đổi còn các cột lẻ nhảy loạn — đó là điều cần cho học sinh thấy."
+  },
+  "so_lieu_mau": {
+    "cot": ["Lần đo", "Số xung trong 1 phút"],
+    "hang": [
+      ["Lần 1", 512],
+      ["Lần 2", 486],
+      ["Lần 3", 531],
+      ["Lần 4", 497],
+      ["Lần 5", 505],
+      ["Phông nền", 23]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với d = 10 cm, t_dem = 60 s, H_nguon = 2500 Bq, eps = 0,2 và phông nền 23 xung/phút; các giá trị lẻ được thêm thăng giáng thống kê cỡ sqrt(N). Trung bình 5 lần là 506,2 xung/phút; trừ phông còn 483 xung/phút."
+  },
+  "ket_qua_ky_vong": "Năm số đếm dao động trong khoảng 486–531 xung/phút quanh giá trị trung bình 506, khoảng ±4%; phông nền khoảng vài chục xung mỗi phút. Số đếm trung bình ổn định, từng lần đếm thì ngẫu nhiên.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng số đếm mỗi phút phải bằng nhau vì nguồn không đổi — thực ra phóng xạ là quá trình ngẫu nhiên.",
+    "Quên trừ phông nền nên tưởng nguồn mạnh hơn thực tế.",
+    "Nghĩ rằng đặt nguồn xa gấp đôi thì số đếm giảm một nửa, trong khi với nguồn điểm số đếm giảm theo bình phương khoảng cách (còn một phần tư)."
+  ],
+  "sai_so_thuong_gap": [
+    "Thăng giáng thống kê: nguồn chính, sai số tương đối cỡ 1/sqrt(N), muốn giảm phải đếm lâu hơn.",
+    "Phông nền thay đổi theo thời tiết, theo vật liệu trong phòng (bê tông, đá hoa cương).",
+    "Khoảng cách đo bằng mắt hoặc nguồn không cố định làm số đếm lệch cả chục phần trăm."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Một nguồn nhỏ, một ống đếm, thanh trượt khoảng cách và thời gian đếm; mỗi lần bấm 'đếm' thì một cột số đếm mới hiện thêm, đồ thị phân bố số đếm vẽ dần thành hình chuông quanh giá trị trung bình.",
+    "diem_nhan": "Cho học sinh dự đoán số đếm lần sau rồi bấm đếm: các em sẽ thấy mình đoán sai liên tục dù giá trị trung bình rất dễ đoán — cảm giác đó chính là tính ngẫu nhiên."
+  },
+  "an_toan": [
+    "Chỉ dùng nguồn kiểm tra yếu của phòng thí nghiệm; không mở vỏ nguồn.",
+    "Khi không đo thì cất nguồn vào hộp chì; không cầm nguồn lâu trong tay.",
+    "Giữ khoảng cách và không hướng nguồn về phía người."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "lesson_id": 17,
+  "nguon_trong_bai": "content/lesson-samples/l12-phan-hach-nhiet-hach/theory.html",
+  "id": "tn-l12-phanbach-03",
+  "ten": "Mặt trời — lò nhiệt hạch tự nhiên giam plasma bằng lực hấp dẫn",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "nhiet_hach.dieu_kien",
+    "nhiet_hach.mat_troi_sao"
+  ],
+  "muc_tieu": "Giải thích nghịch lí: lõi Mặt trời chỉ cỡ 1,5·10⁷ K, thấp hơn điều kiện 10⁸ K mà con người cần, nhưng Mặt trời vẫn duy trì phản ứng nhiệt hạch hàng tỉ năm — nhờ mật độ cực lớn, thời gian giam dài và hiệu ứng xuyên hầm.",
+  "dung_cu": [
+    { "ten": "Số liệu thiên văn về Mặt trời (không đo tại lớp)", "so_luong": 1, "ghi_chu": "nhiệt độ, mật độ lõi, công suất bức xạ" },
+    { "ten": "Máy tính hoặc bảng số liệu in sẵn", "so_luong": 1 },
+    { "ten": "Mô hình hoặc video minh hoạ chu trình proton–proton (nếu có)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Ghi lại bốn con số đã biết của Mặt trời: nhiệt độ lõi, mật độ lõi, công suất bức xạ, tuổi.",
+      "Tính năng lượng một chu trình proton–proton toả ra và suy ra số chu trình mỗi giây cần có để duy trì công suất bức xạ.",
+      "So sánh nhiệt độ lõi Mặt trời với điều kiện 10⁸–10⁹ K mà con người cần cho nhiệt hạch có kiểm soát."
+    ],
+    "quan_sat": [
+      "Nhiệt độ lõi cỡ 1,5·10⁷ K, thấp hơn điều kiện của con người khoảng một bậc độ lớn.",
+      "Mật độ lõi cỡ 1,5·10⁵ kg/m³, gấp hàng trăm lần nước; khối khí bị lực hấp dẫn giam hàng tỉ năm.",
+      "Mỗi giây Mặt trời biến cỡ 6·10¹¹ kg hiđrô thành heli, trong đó cỡ 4·10⁹ kg khối lượng hoá thành năng lượng."
+    ],
+    "rut_ra": [
+      "Nhiệt độ không phải điều kiện duy nhất: còn mật độ và thời gian giam. Ba điều kiện bù trừ cho nhau.",
+      "Ở Mặt trời, phần lớn proton không đủ năng lượng vượt hàng rào Cu-lông, nhưng số cặp proton cực lớn nên một tỉ lệ rất nhỏ xuyên hầm được là đủ.",
+      "Con người không có lực hấp dẫn để giam plasma nên phải đền bằng nhiệt độ cao hơn và giam bằng từ trường (JET, ITER)."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "T_loi", "ten": "Nhiệt độ lõi Mặt trời (mô phỏng kéo để so sánh)", "don_vi": "K", "kieu": "dieu_chinh", "min": 10000000, "max": 30000000, "mac_dinh": 15000000, "buoc": 1000000 },
+    { "ky_hieu": "rho_loi", "ten": "Mật độ lõi", "don_vi": "kg/m3", "kieu": "co_dinh", "gia_tri": 150000 },
+    { "ky_hieu": "W_1ct", "ten": "Năng lượng một chu trình proton–proton", "don_vi": "MeV", "kieu": "co_dinh", "gia_tri": 26.7 },
+    { "ky_hieu": "P", "ten": "Công suất bức xạ của Mặt trời", "don_vi": "W", "kieu": "co_dinh", "gia_tri": 3.8e26 },
+    { "ky_hieu": "n_ct", "ten": "Số chu trình mỗi giây cần để duy trì công suất", "don_vi": "1/s", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Chu trình proton–proton: 4 proton → heli-4 + 2 positron + 2 neutrino + 26,7 MeV",
+      "Số chu trình mỗi giây: n_ct = P / (26,7 MeV × 1,6·10⁻¹³ J/MeV)",
+      "Khối lượng hiđrô tiêu thụ mỗi giây: m_H = 4 · n_ct · m_proton"
+    ],
+    "gia_thiet": [
+      "coi toàn bộ công suất bức xạ đều sinh từ chu trình proton–proton ở lõi (thực tế còn chu trình CNO, chiếm tỉ lệ nhỏ)",
+      "bỏ qua neutrino mang một phần năng lượng ra ngoài",
+      "lấy khối lượng proton 1,673·10⁻²⁷ kg và bỏ qua hao hụt theo thời gian"
+    ],
+    "ghi_chu": "n_ct ≈ 3,8·10²⁶ / (26,7 × 1,6·10⁻¹³) ≈ 8,9·10³⁷ chu trình mỗi giây; m_H ≈ 4 × 8,9·10³⁷ × 1,673·10⁻²⁷ ≈ 6,0·10¹¹ kg/s. Phần khối lượng hoá thành năng lượng mỗi giây cỡ 4·10⁹ kg."
+  },
+  "so_lieu_mau": {
+    "cot": ["Đại lượng", "Giá trị"],
+    "hang": [
+      ["Nhiệt độ lõi", "1,5·10⁷ K"],
+      ["Mật độ lõi", "1,5·10⁵ kg/m³"],
+      ["Năng lượng mỗi chu trình", "26,7 MeV"],
+      ["Công suất bức xạ", "3,8·10²⁶ W"],
+      ["Số chu trình mỗi giây", "≈ 8,9·10³⁷"],
+      ["Hiđrô tiêu thụ mỗi giây", "≈ 6·10¹¹ kg"]
+    ],
+    "ghi_chu": "Số liệu thiên văn đã công bố, tính lại từ mô hình ở trên — không đo tại lớp."
+  },
+  "ket_qua_ky_vong": "Mặt trời duy trì nhiệt hạch ở nhiệt độ thấp hơn điều kiện 10⁸ K của con người nhờ mật độ lõi cực lớn và thời gian giam hàng tỉ năm; tốc độ phản ứng tuy chậm tính trên từng cặp proton nhưng tổng khối lượng tham gia thì khổng lồ.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng Mặt trời \"cháy\" theo kiểu phản ứng hoá học với oxi — thực chất là phản ứng nhiệt hạch ở lõi.",
+    "Cho rằng Mặt trời nóng hơn điều kiện 10⁸ K nên mới có nhiệt hạch; thực tế lõi chỉ khoảng 1,5·10⁷ K.",
+    "Nghĩ rằng phản ứng nhiệt hạch ở Mặt trời cần chất xúc tác đặc biệt; cơ chế chính là xuyên hầm lượng tử."
+  ],
+  "sai_so_thuong_gap": [
+    "Lẫn nhiệt độ bề mặt Mặt trời (khoảng 5 800 K) với nhiệt độ lõi (1,5·10⁷ K).",
+    "Quên rằng neutrino mang đi một phần năng lượng nên công suất tính theo chu trình hơi lớn hơn thực tế.",
+    "Dùng công suất Mặt trời ở khoảng cách Trái Đất (hằng số Mặt trời) thay cho công suất bức xạ toàn phần."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Mặt cắt lõi Mặt trời với các hạt proton chuyển động; kéo thanh trượt nhiệt độ và mật độ, số cặp proton đủ năng lượng xuyên hầm (và tốc độ phản ứng) hiện theo thời gian thực; bảng số liệu cập nhật.",
+    "diem_nhan": "Cho thấy khi hạ nhiệt độ, chỉ cần tăng mật độ lên rất cao là tốc độ phản ứng vẫn giữ được — cơ chế bù trừ của ba điều kiện nhiệt hạch."
+  },
+  "an_toan": [
+    "Không có nguy cơ trực tiếp; nếu chiếu video/phim về Mặt trời, nhắc học sinh không nhìn trực tiếp vào Mặt trời thật để quan sát."
+  ]
+}

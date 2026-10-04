@@ -1,0 +1,88 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Năng lượng liên kết hạt nhân",
+  "lesson_id": 16,
+  "nguon_trong_bai": "content/lesson-samples/l12-nang-luong-lien-ket/theory.html",
+  "id": "tn-l12-nllk-01",
+  "ten": "Hai nam châm vòng đẩy nhau và chiếc đai giữ chúng lại",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "nangluonglienket.luc_hat_nhan",
+    "nangluonglienket.can_bang_luc_day_va_luc_hut"
+  ],
+  "muc_tieu": "Cho thấy một hệ gồm các phần đẩy nhau chỉ đứng yên được khi có một cơ chế hút đủ mạnh — hình ảnh tương ứng với việc lực hạt nhân thắng lực đẩy tĩnh điện giữa các prôtôn.",
+  "dung_cu": [
+    { "ten": "Nam châm vòng (nam châm đất hiếm, đường kính ngoài 20–30 mm)", "so_luong": 2 },
+    { "ten": "Que nhựa hoặc trục inox thẳng đứng, dài 30 cm", "so_luong": 1, "ghi_chu": "đường kính nhỏ hơn lỗ nam châm một chút" },
+    { "ten": "Đế gỗ giữ que thẳng đứng", "so_luong": 1 },
+    { "ten": "Đai nhựa hoặc vòng cao su siết quanh hai nam châm", "so_luong": 1 },
+    { "ten": "Thước đo khoảng cách (tuỳ chọn)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cắm que vào đế, luồn nam châm thứ nhất xuống sát đế.",
+      "Luồn nam châm thứ hai lên que sao cho hai mặt cùng cực quay vào nhau; thả tay ra.",
+      "Đo khoảng cách giữa hai vòng khi vòng trên đứng yên (nếu có thước), rồi lồng đai nhựa siết chặt cả hai vòng và thả lại."
+    ],
+    "quan_sat": [
+      "Không có đai: vòng trên bị đẩy bật lên, hai vòng không bao giờ tự dính vào nhau.",
+      "Vòng trên lơ lửng ở một khoảng cách xác định — tại đó lực đẩy từ của nó cân bằng với trọng lượng.",
+      "Có đai siết: cả cụm đứng yên, hai vòng vẫn đẩy nhau nhưng không tách ra được."
+    ],
+    "rut_ra": [
+      "Hai vật đẩy nhau không thể tạo thành một hệ kín đứng yên nếu thiếu một lực hút (hoặc một ràng buộc) giữ chúng lại.",
+      "Trong hạt nhân, vai trò ấy thuộc về lực hạt nhân: nó hút mọi cặp nuclôn và mạnh hơn hẳn lực đẩy tĩnh điện giữa các prôtôn.",
+      "Lực đẩy giữa các prôtôn là lực tĩnh điện, còn lực giữ chúng lại không phải lực tĩnh điện — đó là điểm khác biệt cốt lõi của mục này."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách giữa hai vòng nam châm", "don_vi": "mm", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ tại mặt cực (giả thiết, chỉ để minh hoạ)", "don_vi": "mT", "kieu": "co_dinh", "gia_tri": 300 },
+    { "ky_hieu": "m", "ten": "Khối lượng mỗi vòng nam châm", "don_vi": "g", "kieu": "co_dinh", "gia_tri": 12 },
+    { "ky_hieu": "d_bat_dau", "ten": "Khoảng cách vòng trên bắt đầu bật lên", "don_vi": "mm", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 10, "buoc": 5 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Lực đẩy từ giữa hai vòng cùng cực giảm rất nhanh theo khoảng cách: F_day ~ 1/d^4 (mô hình hai lưỡng cực đối nhau)",
+      "Vòng trên cân bằng ở khoảng cách d0 thoả F_day(d0) = m·g",
+      "Khi có đai siết: hệ chịu thêm lực đàn hồi/ma sát của đai, tổng lực bằng 0 ở mọi khoảng cách"
+    ],
+    "gia_thiet": [
+      "bỏ qua ma sát giữa nam châm và que khi chưa có đai",
+      "coi hai vòng nam châm là hai lưỡng cực điểm để ước lượng bậc giảm của lực đẩy",
+      "nam châm không bị nóng lên làm thay đổi từ tính"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo vòng trên lên rồi thả, hiện mũi tên lực đẩy (đỏ) và trọng lực (xanh); chỉ khi bật 'đai siết' thì hệ mới khoá lại — tương ứng vai trò của lực hạt nhân."
+  },
+  "so_lieu_mau": {
+    "cot": ["Cấu hình", "Khoảng cách hai vòng (mm)", "Trạng thái"],
+    "hang": [
+      ["Không đai, thả tự do", 18, "vòng trên lơ lửng, cân bằng với trọng lượng"],
+      ["Không đai, ép hai vòng sát rồi thả", 18, "bật trở lại khoảng cách cân bằng"],
+      ["Có đai siết", 5, "hai vòng ép sát, cả cụm đứng yên"]
+    ],
+    "ghi_chu": "Số liệu minh hoạ cho nam châm vòng 12 g, đường kính ngoài 25 mm. Giá trị thật phụ thuộc từng loại nam châm; điều cần thấy là hệ chỉ đứng yên khi có ràng buộc hút."
+  },
+  "ket_qua_ky_vong": "Hai vật đẩy nhau luôn tách ra nếu không có gì giữ; khi được siết bằng đai thì hệ đứng yên dù hai vật vẫn đẩy nhau.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng hai nam châm cùng cực 'tự dính' được nếu ép đủ mạnh.",
+    "Cho rằng lực hút của vỏ êlectron giữ được các prôtôn trong hạt nhân.",
+    "Cho rằng lực hấp dẫn giữa các nuclôn là thứ cân bằng với lực đẩy tĩnh điện."
+  ],
+  "sai_so_thuong_gap": [
+    "Đo khoảng cách khi nam châm còn dao động dọc theo que nên số đọc thay đổi liên tục.",
+    "Dùng nam châm yếu (nam châm dẻo) thì khoảng cách cân bằng quá nhỏ, khó quan sát.",
+    "Bỏ qua ma sát que — nam châm có thể dừng lại ở vị trí không phải vị trí cân bằng lực."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "so_do_luc",
+    "y_tuong": "Que thẳng đứng với hai nam châm vòng; kéo thả vòng trên, hiện hai mũi tên lực đẩy và trọng lực; có nút bật/tắt 'đai siết'.",
+    "diem_nhan": "Tắt đai thì vòng trên luôn bị đẩy đi; bật đai thì hệ đứng yên — trực quan hoá vai trò của lực hạt nhân trong hạt nhân."
+  },
+  "an_toan": [
+    "Nam châm đất hiếm hút nhau rất mạnh, có thể kẹp ngón tay: giữ cả hai vòng bằng hai tay khi đưa lại gần.",
+    "Tránh để nam châm gần thẻ từ, điện thoại, đồng hồ cơ."
+  ]
+}

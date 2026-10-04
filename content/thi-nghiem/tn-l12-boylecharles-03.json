@@ -1,0 +1,168 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 6. Định luật Boyle. Định luật Charles",
+  "lesson_id": 7,
+  "nguon_trong_bai": "content/lesson-samples/l12-boyle-charles/theory.html",
+  "id": "tn-l12-boylecharles-03",
+  "ten": "Ống chữ J đổ thêm thuỷ ngân: kiểm tra lại đường đẳng nhiệt",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "boyle.dang_nhiet",
+    "boyle.pv_hang_so",
+    "boyle.ap_suat_cot_thuy_ngan"
+  ],
+  "muc_tieu": "Tạo áp suất cho một lượng khí bằng cột thuỷ ngân thay cho pittông, ghi lại cặp (p, V) ở nhiệt độ phòng rồi vẽ đường đẳng nhiệt dạng hypebol từ chính số liệu đo.",
+  "dung_cu": [
+    {
+      "ten": "Ống thuỷ tinh một đầu kín, đường kính trong đều, dài khoảng 60 cm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thuỷ ngân hoặc dầu trong ống nhỏ giọt",
+      "so_luong": 1,
+      "ghi_chu": "dùng dầu nếu không có thuỷ ngân; giữ ống thẳng đứng"
+    },
+    {
+      "ten": "Giá kẹp và thước đo dài gắn theo ống",
+      "so_luong": 1
+    },
+    {
+      "ten": "Ống nhỏ giọt để thêm chất lỏng vào ống",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nhiệt kế rượu và khăn ẩm",
+      "so_luong": 1,
+      "ghi_chu": "giữ ống ở nhiệt độ phòng"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Bịt kín một đầu ống rồi nhốt một cột không khí dài 21,8 cm ở nhiệt độ phòng, phía trên là cột chất lỏng dùng làm pittông.",
+      "Đọc chiều dài cột khí và chiều cao cột chất lỏng; áp suất khí bằng p = p0 + h với p0 = 760 mmHg và h là chiều cao cột chất lỏng tính ra mmHg.",
+      "Thêm dần chất lỏng vào ống theo các bước h ≈ 55; 85; 110; 165 mmHg, mỗi lần đợi 1 phút cho cột khí ổn định rồi ghi lại chiều dài cột khí và chiều cao cột chất lỏng.",
+      "Giữ ống ở nhiệt độ phòng suốt thí nghiệm: nếu tay làm ấm ống thì chờ ống trở lại nhiệt độ phòng rồi mới đọc."
+    ],
+    "quan_sat": [
+      "Càng đổ thêm chất lỏng, cột khí càng ngắn: từ 21,8 cm xuống còn 17,9 cm.",
+      "Áp suất khí tăng từ 760 mmHg khi chưa đổ thêm lên 925 mmHg, tức tăng khoảng 22%.",
+      "Tích p·L của bốn lần đo nằm trong khoảng 1,65·10⁴ đến 1,66·10⁴ mmHg·cm, lệch nhau dưới 1%."
+    ],
+    "rut_ra": [
+      "Cùng một lượng khí ở nhiệt độ không đổi, áp suất tỉ lệ nghịch với thể tích: p·V không đổi.",
+      "Các điểm đo nằm sát một nhánh hypebol, đó chính là đường đẳng nhiệt trên đồ thị p–V.",
+      "Cột chất lỏng vừa là pittông vừa là áp kế: chênh lệch chiều cao cột chính là phần áp suất tăng thêm."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "h",
+      "ten": "Chiều cao cột chất lỏng phía trên (độ chênh mức)",
+      "don_vi": "mmHg",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 200,
+      "mac_dinh": 0,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "L",
+      "ten": "Chiều dài cột khí bị nhốt",
+      "don_vi": "cm",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "p0",
+      "ten": "Áp suất khí quyển",
+      "don_vi": "mmHg",
+      "kieu": "co_dinh",
+      "gia_tri": 760
+    },
+    {
+      "ky_hieu": "p",
+      "ten": "Áp suất khí bị nhốt",
+      "don_vi": "mmHg",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "pV",
+      "ten": "Tích áp suất và chiều dài cột khí (tỉ lệ với thể tích)",
+      "don_vi": "mmHg·cm",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Áp suất khí bị nhốt: p = p0 + h (ống hở phía trên, cột chất lỏng đè lên khí)",
+      "Định luật Boyle: p·V = hằng số, với V tỉ lệ với chiều dài cột khí L",
+      "Suy ra chiều dài cột khí theo áp suất: L = p0·L0 / (p0 + h)",
+      "Kiểm tra bằng tích: p · L phải xấp xỉ p0·L0 = 760 × 21,8 = 1,66·10⁴ mmHg·cm khi h = 0"
+    ],
+    "gia_thiet": [
+      "nhiệt độ phòng không đổi trong suốt thí nghiệm",
+      "tiết diện ống đều nên chiều dài cột khí tỉ lệ với thể tích",
+      "cột chất lỏng không bị rò rỉ và không hấp thụ khí",
+      "độ chênh mức chất lỏng đo được chính là h trong công thức p = p0 + h"
+    ],
+    "ghi_chu": "Nếu dùng dầu thay thuỷ ngân thì phải quy đổi chiều cao: 13,6 mm nước ≈ 1 mmHg; với dầu ăn (ρ ≈ 0,9 g/cm³) thì khoảng 15 mm dầu ≈ 1 mmHg. Mô phỏng nên vẽ ống chữ J, cho rót thêm chất lỏng và đồng thời vẽ điểm (p, V) lên đồ thị p–V."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "h (mmHg)",
+      "p = p0 + h (mmHg)",
+      "L ~ V (cm)",
+      "p·L (10⁴ mmHg·cm)"
+    ],
+    "hang": [
+      [
+        55,
+        815,
+        20.3,
+        1.65
+      ],
+      [
+        85,
+        845,
+        19.6,
+        1.66
+      ],
+      [
+        110,
+        870,
+        19.0,
+        1.65
+      ],
+      [
+        165,
+        925,
+        17.9,
+        1.66
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ L = 21,8·760/(760 + h) rồi làm tròn tới 0,1 cm. Khi h = 0 thì p = 760 mmHg và p·L = 760 × 21,8 = 1,66·10⁴ mmHg·cm — đúng bằng hằng số của lượng khí này; ở các hàng dưới, p·L chỉ còn 1,65–1,66·10⁴ vì L đã làm tròn tới 0,1 cm."
+  },
+  "ket_qua_ky_vong": "Khi cột chất lỏng cao thêm, cột khí ngắn lại theo đúng quy luật tỉ lệ nghịch; bốn điểm (p, V) nằm sát một nhánh hypebol và tích p·V lệch nhau dưới 1%.",
+  "hien_tuong_hay_sai": [
+    "Cộng hoặc trừ sai chiều cột chất lỏng: ống hở phía trên thì p = p0 + h, hở phía dưới mới là p = p0 − h.",
+    "Nghĩ rằng đổ thêm chất lỏng làm tăng lượng khí nên p·V phải tăng theo.",
+    "Bỏ qua việc đọc chiều cao cột chất lỏng, chỉ dùng chiều dài cột khí làm áp suất."
+  ],
+  "sai_so_thuong_gap": [
+    "Thước đo chiều cao cột chất lỏng có sai số ±1 mm, tương đương ±1 mmHg.",
+    "Bọt khí bám thành ống làm tiết diện hiệu dụng thay đổi và cột khí đọc sai.",
+    "Cầm ống bằng tay làm khí nóng lên, tích p·V tăng dần qua các lần đo.",
+    "Chất lỏng dính thành ống nên độ chênh mức thật nhỏ hơn độ cao đã rót."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Ống chữ J vẽ theo tỉ lệ, cho rót thêm chất lỏng bằng thanh trượt h; cột khí ngắn lại theo thời gian thực, điểm (p, V) hiện dần trên đồ thị p–V cùng đường hypebol lí thuyết.",
+    "diem_nhan": "Học sinh thấy trực tiếp vì sao đường đẳng nhiệt là hypebol: mỗi lần thêm chất lỏng, điểm mới trượt dọc theo cùng một nhánh cong."
+  },
+  "an_toan": [
+    "Thuỷ ngân rất độc: nếu vỡ ống, phải thu gom bằng ống hút và rắc lưu huỳnh, không dùng tay trần.",
+    "Nếu không có thuỷ ngân thì dùng dầu ăn pha màu — an toàn hơn, chỉ cần quy đổi chiều cao."
+  ]
+}

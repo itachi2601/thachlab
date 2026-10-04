@@ -1,0 +1,89 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 9. Khái niệm từ trường",
+  "lesson_id": 10,
+  "nguon_trong_bai": "content/lesson-samples/l12-khai-niem-tu-truong/theory.html",
+  "id": "tn-l12-tutruong-02",
+  "ten": "Kim nam châm nhỏ làm đầu dò hướng từ trường",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tutruong.huong_tu_truong",
+    "tutruong.kim_nam_cham_nho"
+  ],
+  "muc_tieu": "Xác định hướng của từ trường tại nhiều điểm quanh một thanh nam châm bằng kim nam châm nhỏ, từ đó nêu quy ước hướng từ trường và chiều đường sức từ bên ngoài nam châm.",
+  "dung_cu": [
+    { "ten": "Thanh nam châm thẳng (nam châm chữ nhật)", "so_luong": 1 },
+    { "ten": "Kim nam châm nhỏ gắn trên trục quay, có đánh dấu cực N", "so_luong": 1, "ghi_chu": "hoặc la bàn nhỏ có mũi đỏ chỉ cực bắc" },
+    { "ten": "Tờ giấy trắng hoặc bìa có vẽ sẵn các vị trí cần khảo sát", "so_luong": 1 },
+    { "ten": "Thước thẳng và bút chì", "so_luong": 1 },
+    { "ten": "Compa hoặc êke để đánh dấu phương", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt thanh nam châm lên giữa tờ giấy, vẽ viền thanh nam châm và đánh dấu cực N, cực S.",
+      "Chọn 8 vị trí quanh thanh nam châm (2 vị trí trên trục, 6 vị trí hai bên) và đánh dấu bằng chấm bút.",
+      "Đặt kim nam châm nhỏ lần lượt vào từng vị trí, chờ kim đứng yên rồi vẽ một đoạn thẳng theo hướng cực N của kim.",
+      "Nối các đoạn thẳng đó thành các đường cong và đánh dấu mũi tên theo chiều cực N của kim."
+    ],
+    "quan_sat": [
+      "Tại vị trí sát cực bắc, đầu N của kim chỉ ra xa cực bắc.",
+      "Tại vị trí sát cực nam, đầu N của kim chỉ vào cực nam.",
+      "Hai vị trí đối xứng qua trục nam châm cho hai hướng đối xứng nhau; các đường vẽ ra đều khép kín khi đi qua hai cực.",
+      "Không có vị trí nào cho kim đứng yên theo hai hướng khác nhau."
+    ],
+    "rut_ra": [
+      "Hướng của từ trường tại một điểm là hướng nam – bắc của kim nam châm nhỏ nằm cân bằng tại điểm đó, lấy chiều từ cực nam sang cực bắc của kim.",
+      "Bên ngoài thanh nam châm, đường sức từ đi ra ở cực bắc và đi vào ở cực nam.",
+      "Tại mỗi điểm chỉ có một hướng từ trường xác định, nên hai đường sức không thể cắt nhau."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "r", "ten": "Khoảng cách từ tâm nam châm tới điểm khảo sát", "don_vi": "cm", "kieu": "dieu_chinh", "min": 2, "max": 15, "mac_dinh": 6, "buoc": 1 },
+    { "ky_hieu": "theta", "ten": "Góc giữa trục nam châm và tia tới điểm khảo sát", "don_vi": "độ", "kieu": "dieu_chinh", "min": 0, "max": 90, "mac_dinh": 45, "buoc": 5 },
+    { "ky_hieu": "m", "ten": "Mômen từ của thanh nam châm", "don_vi": "A·m²", "kieu": "co_dinh", "gia_tri": 0.02 },
+    { "ky_hieu": "mu_0", "ten": "Hằng số từ", "don_vi": "T·m/A", "kieu": "co_dinh", "gia_tri": 1.2566e-6 },
+    { "ky_hieu": "B", "ten": "Độ lớn cảm ứng từ tại điểm khảo sát", "don_vi": "µT", "kieu": "tinh_ra" },
+    { "ky_hieu": "phi", "ten": "Góc giữa kim và trục nam châm", "don_vi": "độ", "kieu": "do_duoc", "sai_so_do": 3 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Trên trục nam châm (theta = 0): B = (mu_0 / 2π) · m / r^3",
+      "Trên đường xích đạo của nam châm (theta = 90 độ): B = (mu_0 / 4π) · m / r^3, bằng một nửa giá trị trên trục",
+      "Hướng từ trường tại điểm khảo sát lấy theo chiều cực N của kim nam châm nhỏ đặt tại đó"
+    ],
+    "gia_thiet": [
+      "nam châm coi như một lưỡng cực từ điểm, tính ở khoảng cách lớn hơn nhiều kích thước nam châm",
+      "bỏ qua từ trường Trái Đất và từ trường của các vật bằng sắt quanh đó khi mô hình hoá hướng",
+      "kim nam châm nhỏ đủ nhẹ và trục quay đủ nhạy để nằm đúng theo từ trường tổng hợp"
+    ],
+    "ghi_chu": "Khi mô phỏng nên cho bật/tắt lớp từ trường Trái Đất: bật thì phương kim bị lệch khỏi hình đường sức lý tưởng, đó lại là chỗ giải thích vì sao la bàn ngoài đời chỉ gần đúng."
+  },
+  "so_lieu_mau": {
+    "cot": ["Vị trí so với nam châm", "r (cm)", "B (µT)", "Hướng đầu N của kim"],
+    "hang": [
+      ["Trên trục, phía cực bắc", 4, 62, "chỉ ra xa cực bắc"],
+      ["Trên trục, phía nam", 4, 62, "chỉ vào cực nam"],
+      ["Hai bên, ngang mức giữa", 4, 31, "chỉ dọc thân nam châm, từ nam sang bắc"],
+      ["Hai bên, ngang mức giữa", 8, 3.9, "cùng hướng trên, kim nằm yếu hơn"]
+    ],
+    "ghi_chu": "Số liệu tính theo mô hình lưỡng cực với m = 0,02 A·m² ở r = 4 cm và 8 cm. Giá trị thực đo được còn phụ thuộc kích thước nam châm nên chỉ dùng để so sánh tương đối giữa các vị trí."
+  },
+  "ket_qua_ky_vong": "Các đoạn thẳng vẽ theo đầu N của kim nối lại thành những đường cong khép kín: ra khỏi cực bắc, vòng qua hai bên rồi vào cực nam; đường sức dày ở gần cực và thưa dần khi ra xa.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng kim nam châm nhỏ chỉ hướng về phía cực bắc của thanh nam châm ở mọi vị trí.",
+    "Cho rằng hai đường sức có thể cắt nhau ở vùng giữa hai nam châm.",
+    "Cho rằng bên trong nam châm không có đường sức từ vì không quan sát được mạt sắt ở đó."
+  ],
+  "sai_so_thuong_gap": [
+    "Kim nam châm nhỏ bị ma sát ở trục nên đứng lệch vài độ so với hướng từ trường thật.",
+    "Mặt bàn có vật bằng sắt (chân bàn, kẹp giấy) làm hướng kim sai lệch.",
+    "Vẽ hướng theo mắt nhìn chứ không đánh dấu bằng thước, dẫn tới đường vẽ không cắt đúng vị trí."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Một mặt phẳng có thanh nam châm ở giữa; người học kéo kim nam châm nhỏ tới các vị trí rồi bấm để ghi hướng, hệ thống vẽ dần các đường sức khép kín.",
+    "diem_nhan": "Cho thấy hướng từ trường đổi liên tục quanh nam châm nhưng tại mỗi điểm chỉ có một hướng — dùng để chứng minh hai đường sức không cắt nhau."
+  }
+}

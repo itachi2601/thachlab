@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 6. Định luật Boyle. Định luật Charles",
+  "lesson_id": 7,
+  "nguon_trong_bai": "content/lesson-samples/l12-boyle-charles/theory.html",
+  "id": "tn-l12-boylecharles-01",
+  "ten": "Nén khí trong xilanh kín: nhiệt độ không đổi thì pV không đổi",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "boyle.dang_nhiet",
+    "boyle.pv_hang_so",
+    "boyle.dinh_luat_boyle"
+  ],
+  "muc_tieu": "Đo áp suất của một lượng khí khi thể tích giảm dần ở nhiệt độ không đổi, từ bảng số liệu thấy tích pV giữ nguyên trong phạm vi sai số — đó là định luật Boyle.",
+  "dung_cu": [
+    { "ten": "Xilanh nhựa 20 ml có pittông kín (loại bơm tiêm)", "so_luong": 1 },
+    { "ten": "Áp kế điện tử hoặc áp kế cơ có thang tới 300 kPa", "so_luong": 1, "ghi_chu": "sai số ±2 kPa" },
+    { "ten": "Ống nối nhanh giữa đầu xilanh và áp kế", "so_luong": 1 },
+    { "ten": "Nhiệt kế rượu", "so_luong": 1, "ghi_chu": "dùng để kiểm tra nhiệt độ phòng không đổi" },
+    { "ten": "Giá đỡ hoặc kẹp gỗ giữ xilanh", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Kéo pittông lấy sẵn 8,0 ml không khí, bịt kín đầu xilanh rồi nối với áp kế; đọc nhiệt độ phòng.",
+      "Ấn pittông từ từ tới các vạch 6,0 ml; 5,0 ml; 4,0 ml (từ từ để khí kịp trao đổi nhiệt, giữ nhiệt độ không đổi), mỗi lần đợi 10 giây cho số chỉ áp kế ổn định rồi ghi vào bảng.",
+      "Ghi thêm áp suất ở 3,0 ml nếu áp kế còn trong thang đo; kiểm tra nhiệt độ phòng ở lần đo cuối."
+    ],
+    "quan_sat": [
+      "Thể tích càng nhỏ thì số chỉ áp kế càng lớn, không theo tỉ lệ bậc nhất.",
+      "Tích pV ở năm lần đo gần như đứng yên quanh 8,3·10² kPa·ml, lệch nhau không quá 8%.",
+      "Số chỉ nhảy lên rồi tụt xuống vài kPa ngay sau khi ấn: phải đợi mới đọc được giá trị ổn định."
+    ],
+    "rut_ra": [
+      "Ở nhiệt độ không đổi, áp suất tỉ lệ nghịch với thể tích: thể tích giảm 2 lần thì áp suất tăng 2 lần.",
+      "Tích pV của một khối lượng khí xác định là hằng số khi nhiệt độ không đổi: p1V1 = p2V2.",
+      "Kết quả chỉ khẳng định được pV không đổi trong phạm vi sai số (khoảng 5%), không phải bằng nhau tuyệt đối."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "V", "ten": "Thể tích khí trong xilanh", "don_vi": "ml", "kieu": "dieu_chinh", "min": 3, "max": 8, "mac_dinh": 8, "buoc": 0.5 },
+    { "ky_hieu": "t", "ten": "Nhiệt độ phòng (giữ không đổi)", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 25 },
+    { "ky_hieu": "p0", "ten": "Áp suất khí quyển lúc làm thí nghiệm", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
+    { "ky_hieu": "V0", "ten": "Thể tích ban đầu của lượng khí nhốt trong xilanh", "don_vi": "ml", "kieu": "co_dinh", "gia_tri": 8 },
+    { "ky_hieu": "p", "ten": "Áp suất khí đọc trên áp kế", "don_vi": "kPa", "kieu": "do_duoc", "sai_so_do": 2 },
+    { "ky_hieu": "pV", "ten": "Tích áp suất và thể tích", "don_vi": "kPa·ml", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật Boyle: p·V = hằng số = p0·V0",
+      "Suy ra áp suất theo thể tích: p = p0·V0 / V",
+      "Kiểm tra bằng tích: p_do · V phải xấp xỉ p0·V0 = 8,0·10² kPa·ml",
+      "Sai số tương đối của tích: δ = |p_do·V − p0·V0| / (p0·V0)"
+    ],
+    "gia_thiet": [
+      "nhiệt độ khí giữ đúng bằng nhiệt độ phòng trong suốt quá trình (ấn pittông từ từ)",
+      "không có khí lọt ra ngoài qua gioăng pittông",
+      "thể tích ống nối và áp kế nhỏ, bỏ qua",
+      "áp suất khí quyển lấy tròn 100 kPa"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo pittông bằng chuột và vẽ đồ thị p–V ngay cạnh bảng: khi V giảm, điểm chạy dọc theo nhánh hypebol p = 100·8/V, còn cột pV gần như đứng yên."
+  },
+  "so_lieu_mau": {
+    "cot": ["Lần đo", "V (ml)", "p (kPa)", "pV (kPa·ml)"],
+    "hang": [
+      [1, 8.0, 100, 800],
+      [2, 6.0, 142, 852],
+      [3, 5.0, 170, 850],
+      [4, 4.0, 215, 860],
+      [5, 3.0, 267, 801]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình p = 800/V rồi làm tròn theo độ chia của áp kế và cộng sai số đọc; ở 3,0 ml áp kế đã gần trần thang đo (300 kPa) nên số đọc kém tin cậy hơn."
+  },
+  "ket_qua_ky_vong": "Áp suất tăng nhanh hơn tuyến tính khi thể tích giảm; năm giá trị pV rơi vào khoảng 800–860 kPa·ml, tức tích pV không đổi trong phạm vi sai số 5–8%.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng thể tích giảm 2 lần thì áp suất cũng chỉ tăng chút ít vì khí \"dồn lại\" chứ không bị nén.",
+    "Nghĩ rằng tích pV phải giống nhau ở cả năm lần đo tới từng đơn vị, thấy lệch 8% liền kết luận định luật sai.",
+    "Ấn pittông thật nhanh rồi đọc áp suất và cho rằng đây vẫn là quá trình đẳng nhiệt, dù khí đã nóng lên."
+  ],
+  "sai_so_thuong_gap": [
+    "Đọc vạch chia xilanh sai ±0,2 ml; ở thể tích 4,0 ml thì đó đã là 5% và ở 3,0 ml là gần 7%.",
+    "Ma sát giữa pittông và thành xilanh làm áp suất khí khác số chỉ áp kế vài kPa.",
+    "Hơi nóng từ tay truyền sang xilanh làm nhiệt độ khí tăng, khiến pV lần sau lớn hơn lần trước.",
+    "Khí lọt ra qua gioăng khi áp suất đã cao làm lượng khí giảm dần, hằng số pV trôi xuống."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Xilanh có pittông kéo được, áp kế hiện số theo thời gian thực; bảng số liệu tự điền mỗi lần chốt một thể tích, đồ thị p–V vẽ dần các điểm và đường hypebol lí thuyết.",
+    "diem_nhan": "Cho thấy rõ các điểm đo bám sát đường p = p0V0/V nhưng lệch nhau vài kPa — bắt học sinh đọc sai số thay vì tin rằng số đo lí tưởng."
+  },
+  "an_toan": [
+    "Không ấn pittông quá mạnh làm bung ống nối hoặc nứt xilanh.",
+    "Giữ xilanh chắc trên giá, không để pittông bật ra khi đang có áp suất."
+  ]
+}

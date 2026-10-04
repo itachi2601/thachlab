@@ -1,0 +1,196 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Năng lượng liên kết hạt nhân",
+  "lesson_id": 16,
+  "nguon_trong_bai": "content/lesson-samples/l12-nang-luong-lien-ket/theory.html",
+  "id": "tn-l12-nllk-02",
+  "ten": "Đo khối lượng nguyên tử heli-4 bằng phổ kế khối lượng để tìm độ hụt khối",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "nangluonglienket.do_hut_khoi",
+    "nangluonglienket.khoi_luong_nguyen_tu",
+    "nangluonglienket.sai_so_phep_do_khoi_luong"
+  ],
+  "muc_tieu": "Đo khối lượng nguyên tử heli-4 đủ chính xác để so với tổng khối lượng hai prôtôn, hai nơtron và hai êlectron rời rạc, từ đó tìm độ hụt khối và năng lượng liên kết; đồng thời thấy vì sao phép đo này đòi hỏi độ chính xác tới phần triệu.",
+  "dung_cu": [
+    {
+      "ten": "Phổ kế khối lượng (hoặc máy khối phổ của phòng thí nghiệm)",
+      "so_luong": 1,
+      "ghi_chu": "có thể thay bằng số liệu chuẩn nếu không có máy"
+    },
+    {
+      "ten": "Mẫu heli tinh khiết (hoặc bảng khối lượng nguyên tử đã hiệu chuẩn)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Bảng khối lượng prôtôn, nơtron, êlectron",
+      "so_luong": 1
+    },
+    {
+      "ten": "Máy tính hoặc máy tính cầm tay",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Hiệu chuẩn phổ kế bằng một nuclit đã biết khối lượng, ghi lại độ lệch của máy.",
+      "Đưa mẫu heli vào buồng ion hoá, điều chỉnh điện áp và từ trường để chùm ion heli-4 (ion một lần) đi đúng vào khe thu.",
+      "Đọc khối lượng nguyên tử heli-4 ba lần, mỗi lần trên một mẫu mới; ghi số đọc và sai số dụng cụ vào bảng."
+    ],
+    "quan_sat": [
+      "Ba số đọc chênh nhau không quá 0,000005 u: 4,002602 · 4,002603 · 4,002604 u.",
+      "Giá trị nhận là 4,002603 ± 0,000005 u, nhỏ hơn tổng khối lượng các hạt rời (4,032980 u) khoảng 0,030377 u.",
+      "Nếu làm tròn khối lượng về 4,00 u thì hiệu số biến mất hoàn toàn."
+    ],
+    "rut_ra": [
+      "Khối lượng nguyên tử heli-4 nhỏ hơn tổng khối lượng hai prôtôn, hai nơtron và hai êlectron rời rạc — phần chênh lệch là độ hụt khối.",
+      "Vì độ hụt khối chỉ chiếm 0,76 % khối lượng nguyên tử nên phép đo phải chính xác tới cỡ 10^-6 u; sai số của hiệu bị khuếch đại so với sai số của từng số đọc.",
+      "Nhân độ hụt khối với 931,5 MeV/u được năng lượng liên kết 28,3 MeV, tức 7,07 MeV cho mỗi nuclôn."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "m_He",
+      "ten": "Khối lượng nguyên tử heli-4 đọc trên phổ kế",
+      "don_vi": "u",
+      "kieu": "do_duoc",
+      "sai_so_do": 5e-06
+    },
+    {
+      "ky_hieu": "Z",
+      "ten": "Số prôtôn của heli-4",
+      "don_vi": "hạt",
+      "kieu": "co_dinh",
+      "gia_tri": 2
+    },
+    {
+      "ky_hieu": "N",
+      "ten": "Số nơtron của heli-4",
+      "don_vi": "hạt",
+      "kieu": "co_dinh",
+      "gia_tri": 2
+    },
+    {
+      "ky_hieu": "m_p",
+      "ten": "Khối lượng prôtôn",
+      "don_vi": "u",
+      "kieu": "co_dinh",
+      "gia_tri": 1.007276
+    },
+    {
+      "ky_hieu": "m_n",
+      "ten": "Khối lượng nơtron",
+      "don_vi": "u",
+      "kieu": "co_dinh",
+      "gia_tri": 1.008665
+    },
+    {
+      "ky_hieu": "m_e",
+      "ten": "Khối lượng êlectron",
+      "don_vi": "u",
+      "kieu": "co_dinh",
+      "gia_tri": 0.000549
+    },
+    {
+      "ky_hieu": "m_lep",
+      "ten": "Khối lượng mẫu nạp vào buồng ion",
+      "don_vi": "mg",
+      "kieu": "dieu_chinh",
+      "min": 0.1,
+      "max": 5,
+      "mac_dinh": 1,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "U",
+      "ten": "Điện áp tăng tốc ion",
+      "don_vi": "kV",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 10,
+      "mac_dinh": 5,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "B_tu",
+      "ten": "Cảm ứng từ của buồng tách",
+      "don_vi": "T",
+      "kieu": "dieu_chinh",
+      "min": 0.1,
+      "max": 1.5,
+      "mac_dinh": 0.8,
+      "buoc": 0.05
+    },
+    {
+      "ky_hieu": "dm",
+      "ten": "Độ hụt khối tính ra",
+      "don_vi": "u",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "E_lk",
+      "ten": "Năng lượng liên kết tính ra",
+      "don_vi": "MeV",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Tổng khối lượng các hạt rời (kể cả êlectron vì đang dùng khối lượng nguyên tử): m_tong = Z·m_p + N·m_n + Z·m_e",
+      "Độ hụt khối: dm = m_tong − m_He = Z·m_p + N·m_n + Z·m_e − m_He = 4,032980 − 4,002603 = 0,030377 u",
+      "Năng lượng liên kết: E_lk = dm · 931,5 MeV/u = 28,30 MeV",
+      "Năng lượng liên kết riêng: E_lkr = E_lk / A = 28,30 / 4 = 7,07 MeV",
+      "Sai số độ hụt khối: Δ(dm) ≈ sqrt( (Z·Δm_p)^2 + (N·Δm_n)^2 + (Z·Δm_e)^2 + Δm_He^2 ). Ba lần đọc chỉ tản 2·10^-6 u, nhưng sai số dụng cụ của m_He là ±5·10^-6 u nên Δ(dm) ≈ 5·10^-6 u (≈ 0,005 MeV cho năng lượng liên kết)."
+    ],
+    "gia_thiet": [
+      "chỉ xét ion heli-4 bị mất một êlectron; ion có thêm một êlectron thì khối lượng lệch 0,000549 u và phải trừ lại",
+      "khối lượng prôtôn, nơtron, êlectron lấy từ bảng chuẩn với sai số không đáng kể so với sai số của m_He",
+      "bỏ qua năng lượng liên kết của hai êlectron trong nguyên tử heli vì chỉ cỡ vài chục eV, nhỏ hơn 28 MeV hàng triệu lần"
+    ],
+    "ghi_chu": "Mô phỏng nên cho ba thanh trượt U, B_tu, m_lep: ion vào tới khe thu khi bán kính quỹ đạo r = mv/(qB) đúng bằng bán kính khe thu; từ ½mv² = qU suy ra m = qB²r²/(2U) nên hai thanh U và B_tu phải khớp theo tỉ số B²/U, và vạch khối lượng trên phim chỉ hiện đúng vị trí khi hai thanh U, B_tu khớp nhau. Sau đó hiện vạch 4,002603 bên cạnh tổng 4,032980 để thấy khe hụt khối."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Lần đo",
+      "Khối lượng nguyên tử He-4 (u)"
+    ],
+    "hang": [
+      [
+        1,
+        4.002602
+      ],
+      [
+        2,
+        4.002603
+      ],
+      [
+        3,
+        4.002604
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ theo giá trị chuẩn 4,002603 u, sai số dụng cụ ±0,000005 u. Tổng khối lượng các hạt rời là 4,032980 u, độ hụt khối 0,030377 u, năng lượng liên kết 28,30 MeV."
+  },
+  "ket_qua_ky_vong": "Khối lượng nguyên tử heli-4 đo được là 4,002603 ± 0,000005 u; hiệu với tổng khối lượng các hạt rời cho độ hụt khối 0,030377 u, tức năng lượng liên kết 28,30 MeV và năng lượng liên kết riêng 7,07 MeV.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng khối lượng nguyên tử phải bằng đúng tổng khối lượng các nuclôn rời, chênh lệch chỉ là sai số.",
+    "Trừ luôn khối lượng êlectron khỏi khối lượng nguyên tử hai lần (một lần khi tính tổng, một lần khi trừ).",
+    "Nghĩ rằng đo khối lượng tới 0,01 u là đủ để tính năng lượng liên kết.",
+    "Cho rằng phần khối lượng hụt đã biến mất khỏi vũ trụ."
+  ],
+  "sai_so_thuong_gap": [
+    "Chưa hiệu chuẩn phổ kế làm khối lượng lệch một lượng không đổi cỡ 10^-5 u — sai số này không triệt tiêu khi lấy hiệu.",
+    "Làm tròn khối lượng về 3–4 chữ số thập phân khiến độ hụt khối sai hàng chục lần.",
+    "Lẫn ion He+ với nguyên tử trung hoà: chênh nhau đúng 0,000549 u, tức 0,51 MeV."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Buồng phổ kế với chùm ion, hai thanh trượt U và B_tu; phim ghi vạch khối lượng; bảng số liệu tự điền và một ô hiện khe hụt khối 4,032980 − 4,002603.",
+    "diem_nhan": "Khe hụt khối chỉ rộng 0,76 % khối lượng, nên chỉ cần lệch ở chữ số thứ năm là kết quả đã sai — đây là lí do phải đo tới phần triệu."
+  },
+  "an_toan": [
+    "Phổ kế khối lượng có điện áp cao: chỉ vận hành theo hướng dẫn của giáo viên phụ trách.",
+    "Heli là khí trơ, không độc, nhưng bình chứa phải được giữ thẳng đứng và van xả mở từ từ."
+  ]
+}

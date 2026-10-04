@@ -1,0 +1,93 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "lesson_id": 125,
+  "nguon_trong_bai": "content/lesson-samples/l12-may-phat-dien-bien-ap/theory.html",
+  "id": "tn-l12-mayphatdien-04",
+  "ten": "Hao phí trên đường dây tải điện: vì sao phải tăng điện áp trước khi truyền đi",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "truyentai.hao_phi_tren_day",
+    "truyentai.tang_ap_giam_hao_phi"
+  ],
+  "muc_tieu": "Chứng tỏ công suất hao phí trên đường dây là ΔP = R·I² = R·P²/U², nên tăng điện áp lên k lần thì hao phí giảm k² lần; giải thích vì sao lưới điện dùng đường dây cao thế.",
+  "dung_cu": [
+    { "ten": "Nguồn xoay chiều 12 V", "so_luong": 1 },
+    { "ten": "Bóng đèn 12 V – 5 W", "so_luong": 1 },
+    { "ten": "Cuộn dây dẫn mảnh dài 20 m (điện trở vài ôm)", "so_luong": 2, "ghi_chu": "đo điện trở từng cuộn bằng đồng hồ vạn năng" },
+    { "ten": "Đồng hồ vạn năng (thang AC và thang Ω)", "so_luong": 1 },
+    { "ten": "Máy biến áp mini hai cuộn (nếu có) để so sánh", "so_luong": 1, "ghi_chu": "tuỳ chọn, dùng cho phần mở rộng" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nối bóng đèn 12 V trực tiếp với nguồn xoay chiều 12 V bằng dây ngắn; quan sát độ sáng và đo điện áp hai đầu bóng đèn.",
+      "Thay dây ngắn bằng hai cuộn dây mảnh dài 20 m mắc nối tiếp; giữ nguyên nguồn và bóng đèn, quan sát độ sáng và đo lại điện áp hai đầu bóng đèn.",
+      "Đo điện trở tổng của hai cuộn dây, ghi lại giá trị R; dùng bảng dưới (số liệu của một đường dây tải thật) để phân tích mức hao phí theo điện áp."
+    ],
+    "quan_sat": [
+      "Với dây dài, đèn sáng yếu hẳn và điện áp hai đầu đèn thấp hơn 12 V rõ rệt; sờ vào cuộn dây thấy ấm lên.",
+      "Đo được R tổng của hai cuộn dây khoảng vài ôm; dòng qua mạch chỉ còn vài trăm miliampe.",
+      "Trong bảng số liệu, khi điện áp tăng gấp đôi thì công suất hao phí giảm còn một phần tư."
+    ],
+    "rut_ra": [
+      "Dây dẫn có điện trở R nên toả nhiệt: công suất hao phí ΔP = R·I², phần này không tới được nơi tiêu thụ.",
+      "Với công suất truyền đi P không đổi, I = P/U nên ΔP = R·P²/U²: tăng U lên k lần thì hao phí giảm k² lần.",
+      "Vì vậy đường dây dài phải dùng điện áp cao (hàng trăm kV), rồi hạ dần bằng máy biến áp ở gần nơi tiêu thụ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "P", "ten": "Công suất cần truyền đi", "don_vi": "W", "kieu": "dieu_chinh", "min": 5000, "max": 50000, "mac_dinh": 20000, "buoc": 5000 },
+    { "ky_hieu": "U", "ten": "Điện áp đặt vào đường dây", "don_vi": "V", "kieu": "dieu_chinh", "min": 250, "max": 5000, "mac_dinh": 500, "buoc": 250 },
+    { "ky_hieu": "R", "ten": "Điện trở tổng của đường dây", "don_vi": "Ω", "kieu": "dieu_chinh", "min": 0.5, "max": 10, "mac_dinh": 2, "buoc": 0.5 },
+    { "ky_hieu": "cos_phi", "ten": "Hệ số công suất của đường dây", "don_vi": "", "kieu": "co_dinh", "gia_tri": 1 },
+    { "ky_hieu": "I", "ten": "Cường độ hiệu dụng trên dây", "don_vi": "A", "kieu": "tinh_ra" },
+    { "ky_hieu": "dP", "ten": "Công suất hao phí trên đường dây", "don_vi": "W", "kieu": "tinh_ra" },
+    { "ky_hieu": "H", "ten": "Hiệu suất truyền tải", "don_vi": "%", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Dòng điện trên đường dây: I = P/(U·cos_phi)",
+      "Công suất hao phí: ΔP = R·I² = R·P²/(U²·cos_phi²)",
+      "Hiệu suất truyền tải: H = (P − ΔP)/P = 1 − ΔP/P",
+      "Khi tăng U lên k lần (giữ P và R): ΔP giảm k² lần"
+    ],
+    "gia_thiet": [
+      "công suất truyền đi P và điện trở đường dây R không đổi khi thay đổi điện áp",
+      "hệ số công suất cos_phi = 1",
+      "bỏ qua hao phí do vầng quang điện và rò điện qua cách điện trên đường dây cao thế"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ đường dây có điện trở R, cho kéo ba thanh trượt P, U, R và hiện ΔP, H theo thời gian thực; thêm đồ thị ΔP theo U dạng hypebol để thấy rõ quy luật nghịch với bình phương."
+  },
+  "so_lieu_mau": {
+    "cot": ["U (V)", "I (A)", "ΔP (W)", "H (%)"],
+    "hang": [
+      [250, 80, 12800, 36],
+      [500, 40, 3200, 84],
+      [1000, 20, 800, 96],
+      [5000, 4, 32, 99.84]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với P = 20 kW, R = 2 Ω, cos_phi = 1. Chú ý: từ 500 V lên 5000 V (tăng 10 lần), hao phí giảm từ 3200 W xuống 32 W, đúng 100 lần = 10²."
+  },
+  "ket_qua_ky_vong": "Đèn sáng yếu khi dây dài; trong bảng số liệu, hao phí giảm theo bình phương điện áp: tăng U lên k lần thì ΔP giảm k² lần, hiệu suất truyền tải tiến gần 100%.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng tăng điện áp thì hao phí cũng tăng theo (thực ra hao phí tỉ lệ nghịch với bình phương điện áp).",
+    "Nghĩ rằng muốn giảm hao phí chỉ có cách làm dây to hơn — cách đó tốn rất nhiều kim loại, nên thực tế tăng điện áp.",
+    "Nghĩ rằng máy biến áp tăng áp sinh thêm điện năng nên đường dây cao thế 'lãi' năng lượng."
+  ],
+  "sai_so_thuong_gap": [
+    "Quên rằng dây dẫn dài cũng có điện trở, coi điện áp nguồn bằng điện áp hai đầu tải.",
+    "Đo điện trở cuộn dây khi tay còn chạm hai đầu dây, làm sai số đọc đồng hồ.",
+    "Độ sáng của đèn phụ thuộc cả nhiệt độ dây tóc nên quan sát định tính dễ bị đánh lừa; cần đo điện áp để khẳng định."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Đường dây có điện trở R nối máy phát với tải; kéo thanh trượt U thấy dòng trên dây giảm, hao phí giảm rất nhanh; bên cạnh là đồ thị ΔP(U) và bảng số liệu tự điền.",
+    "diem_nhan": "Cho học sinh dự đoán trước: tăng U lên 2 lần thì hao phí còn bao nhiêu, rồi bấm chạy để kiểm bằng số."
+  },
+  "an_toan": [
+    "Chỉ làm với nguồn 12 V; không thử nghiệm với điện lưới.",
+    "Dây dẫn dài có thể nóng lên khi dòng lớn — không cuộn dây thành bó kín khi đang có dòng."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 8. Áp suất - động năng của phân tử khí",
+  "lesson_id": 9,
+  "nguon_trong_bai": "content/lesson-samples/l12-ap-suat-dong-nang/theory.html",
+  "id": "tn-l12-apsuatdongnang-03",
+  "ten": "Quả bóng bàn bẹp phồng lại trong nước nóng",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "apsuatdongnang.nhiet_do_ti_le_dong_nang",
+    "apsuatdongnang.ap_suat_do_va_cham"
+  ],
+  "muc_tieu": "Phân tích một tình huống đời sống bằng mô hình động học phân tử: nhiệt độ tăng làm phân tử khí bên trong bóng bay nhanh hơn, va chạm mạnh và dày hơn, nên áp suất tăng và đẩy vỏ bóng phồng trở lại.",
+  "dung_cu": [
+    { "ten": "Quả bóng bàn bị bẹp một chỗ (vỏ còn kín)", "so_luong": 1 },
+    { "ten": "Cốc hoặc bát chịu nhiệt", "so_luong": 1 },
+    { "ten": "Nước nóng khoảng 80 °C", "so_luong": 1, "ghi_chu": "khoảng 300 ml" },
+    { "ten": "Kẹp gắp hoặc thìa", "so_luong": 1 },
+    { "ten": "Nhiệt kế (nếu muốn đo nhiệt độ nước)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Rót nước nóng khoảng 80 °C vào cốc (khoảng 300 ml).",
+      "Thả quả bóng bàn bẹp vào nước nóng, giữ cho chỗ bẹp ngập trong nước; chờ 1–2 phút.",
+      "Vớt bóng ra, lau khô và quan sát chỗ bẹp; làm lại với một quả bóng đã bị chọc thủng một lỗ nhỏ để so sánh."
+    ],
+    "quan_sat": [
+      "Quả bóng kín: chỗ bẹp từ từ phồng trở lại, vỏ bóng căng đều như trước khi bị giẫm.",
+      "Quả bóng đã thủng: không phồng lại, vì khí bên trong thoát ra ngoài và số phân tử trong bóng giảm xuống.",
+      "Bóng phồng lại trong khi nước nóng không hề chạm vào mặt trong của vỏ bóng."
+    ],
+    "rut_ra": [
+      "Nước nóng truyền nhiệt cho khí bên trong bóng: nhiệt độ khí tăng, phân tử khí bay nhanh hơn.",
+      "Phân tử bay nhanh hơn nên mỗi va chạm truyền động lượng lớn hơn và số va chạm mỗi giây lên vỏ bóng cũng nhiều hơn — áp suất khí trong bóng tăng.",
+      "Vỏ bóng mềm nên áp suất tăng đẩy nó phồng trở lại. Không thể giải thích hiện tượng này bằng chuyển động của vỏ bóng hay bằng hơi nước lọt vào bóng."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "t_nuoc", "ten": "Nhiệt độ nước nóng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 40, "max": 95, "mac_dinh": 80, "buoc": 5 },
+    { "ky_hieu": "V_bong", "ten": "Thể tích khí trong bóng (coi như không đổi khi đã căng)", "don_vi": "m³", "kieu": "co_dinh", "gia_tri": 0.000035 },
+    { "ky_hieu": "t_1", "ten": "Nhiệt độ khí trong bóng lúc đầu (nhiệt độ phòng)", "don_vi": "K", "kieu": "co_dinh", "gia_tri": 293 },
+    { "ky_hieu": "p_1", "ten": "Áp suất khí trong bóng lúc đầu (bằng áp suất khí quyển)", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 101.3 },
+    { "ky_hieu": "T_2", "ten": "Nhiệt độ khí trong bóng sau khi nhúng", "don_vi": "K", "kieu": "tinh_ra" },
+    { "ky_hieu": "p_2", "ten": "Áp suất khí trong bóng sau khi nhúng", "don_vi": "kPa", "kieu": "tinh_ra" },
+    { "ky_hieu": "E_d_2", "ten": "Động năng tịnh tiến trung bình của phân tử sau khi nhúng", "don_vi": "J", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Coi thể tích bóng không đổi khi vỏ đã căng: p/T = hằng số",
+      "Áp suất sau khi nhúng: p_2 = p_1·T_2/T_1",
+      "Động năng tịnh tiến trung bình: E_d = (3/2)·k·T nên E_d_2/E_d_1 = T_2/T_1",
+      "Số phân tử trong bóng không đổi (vỏ kín), nên mật độ μ = N/V không đổi"
+    ],
+    "gia_thiet": [
+      "vỏ bóng kín, khí không rò ra và nước không lọt vào",
+      "bỏ qua sự thay đổi thể tích của bóng khi vỏ đã căng",
+      "khí trong bóng đạt cân bằng nhiệt với nước nóng (chờ đủ lâu)"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ mặt cắt quả bóng với các phân tử chuyển động; thanh trượt nhiệt độ nước làm tốc độ phân tử và tần số va chạm vào vỏ thay đổi, đồng thời vẽ vỏ bóng phồng ra theo áp suất."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ khí trong bóng (K)", "Áp suất tương đối (lần)"],
+    "hang": [
+      [293, 1.0],
+      [313, 1.07],
+      [333, 1.14],
+      [353, 1.2],
+      [373, 1.27]
+    ],
+    "ghi_chu": "Áp suất tương đối tính từ p_2/p_1 = T_2/T_1. Đây là số liệu minh hoạ theo mô hình, không phải số đo thật vì áp suất khí trong bóng rất khó đo trực tiếp."
+  },
+  "ket_qua_ky_vong": "Bóng kín phồng trở lại sau 1–2 phút trong nước nóng; bóng đã thủng thì không. Áp suất khí trong bóng tăng khoảng 27 % khi nhiệt độ khí tăng từ 293 K lên 373 K, và động năng tịnh tiến trung bình của phân tử cũng tăng đúng 27 %.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng vỏ bóng gặp nóng thì mềm ra và tự phồng lại, không liên quan đến khí bên trong.",
+    "Cho rằng hơi nước thấm qua vỏ bóng vào trong làm số phân tử khí tăng lên.",
+    "Cho rằng phân tử khí nặng lên khi nóng nên đập mạnh hơn."
+  ],
+  "sai_so_thuong_gap": [
+    "Chưa chờ đủ lâu nên khí trong bóng chưa kịp nóng: bóng chỉ phồng một phần.",
+    "Bóng bị nứt hoặc thủng kín đáo nên khí rò ra, bóng không phồng lại dù nước đủ nóng.",
+    "Nước quá nóng có thể làm biến dạng vỏ bóng, dễ nhầm với việc bóng phồng lại."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Mặt cắt quả bóng bàn với các phân tử khí bên trong; thanh trượt nhiệt độ nước làm tốc độ phân tử, số va chạm mỗi giây lên vỏ và độ phồng của vỏ thay đổi; kèm đồ thị p(T) theo thời gian nhúng.",
+    "diem_nhan": "Cho thấy độ phồng của vỏ tăng theo áp suất khí, mà áp suất tăng chỉ vì phân tử bay nhanh và đập dày hơn — số phân tử không đổi."
+  },
+  "an_toan": [
+    "Nước 80 °C gây bỏng: rót chậm, không để trẻ nhỏ tự làm.",
+    "Dùng kẹp hoặc thìa để vớt bóng, không thò tay vào nước nóng."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 8. Áp suất - động năng của phân tử khí",
+  "lesson_id": 9,
+  "nguon_trong_bai": "content/lesson-samples/l12-ap-suat-dong-nang/theory.html",
+  "id": "tn-l12-apsuatdongnang-01",
+  "ten": "Hạt đập vào thành hộp: vô số va chạm cộng thành lực đều",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "apsuatdongnang.mo_hinh_khi_li_tuong",
+    "apsuatdongnang.ap_suat_do_va_cham"
+  ],
+  "muc_tieu": "Cho thấy áp suất lên thành bình không phải do phân tử đứng đè mà do vô số va chạm liên tục cộng lại thành một lực đều — mô hình động học phân tử giải thích áp suất khí.",
+  "dung_cu": [
+    { "ten": "Hộp nhựa trong có nắp, thành mỏng", "so_luong": 1, "ghi_chu": "hộp đựng thực phẩm loại nhỏ, kín nắp" },
+    { "ten": "Hạt gạo hoặc hạt xốp nhỏ", "so_luong": 1, "ghi_chu": "khoảng 200 hạt, đường kính 1–2 mm" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cho khoảng 200 hạt gạo vào hộp nhựa trong, đậy kín nắp.",
+      "Lắc hộp theo mọi hướng với tần số vừa phải trong 10 giây, áp tai vào một thành hộp để nghe.",
+      "Lắc mạnh hơn (tần số cao hơn) trong 10 giây nữa, vẫn áp tai vào đúng thành hộp đó."
+    ],
+    "quan_sat": [
+      "Từng hạt đập lộp bộp vào thành hộp; không nghe thấy tiếng đập nào đều đặn mà là chuỗi tiếng rời rạc dày đặc.",
+      "Lắc càng mạnh thì tiếng đập càng dày, thành hộp rung đều tay hơn.",
+      "Lắc chậm lại thì tiếng thưa dần và yếu đi, nhưng vẫn còn tiếng đập."
+    ],
+    "rut_ra": [
+      "Một hạt chỉ đập vào thành một cái rồi bật ra; lực do một va chạm là rất nhỏ và gián đoạn.",
+      "Vô số hạt đập liên tục trong mỗi giây cộng lại thành một lực trung bình đều lên thành — đúng như cách phân tử khí gây áp suất.",
+      "Lắc mạnh hơn (tốc độ hạt lớn hơn) làm tiếng đập dày và mạnh hơn: đó là lí do nhiệt độ cao thì áp suất khí lớn."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "N_hat", "ten": "Số hạt trong hộp", "don_vi": "hạt", "kieu": "dieu_chinh", "min": 50, "max": 500, "mac_dinh": 200, "buoc": 25 },
+    { "ky_hieu": "f_lac", "ten": "Tần số lắc", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 0.5, "max": 5, "mac_dinh": 2, "buoc": 0.5 },
+    { "ky_hieu": "m_hat", "ten": "Khối lượng một hạt", "don_vi": "kg", "kieu": "co_dinh", "gia_tri": 0.00002 },
+    { "ky_hieu": "l_hop", "ten": "Cạnh hộp (coi như lập phương)", "don_vi": "m", "kieu": "co_dinh", "gia_tri": 0.2 },
+    { "ky_hieu": "v_hat", "ten": "Tốc độ trung bình của hạt theo mô hình", "don_vi": "m/s", "kieu": "tinh_ra" },
+    { "ky_hieu": "n_va", "ten": "Số va chạm vào một thành mỗi giây", "don_vi": "1/s", "kieu": "tinh_ra" },
+    { "ky_hieu": "F_tb", "ten": "Lực trung bình lên thành", "don_vi": "N", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Tốc độ hạt lấy tỉ lệ với tần số lắc: v_hat = 0,5·f_lac",
+      "Mỗi va chạm đàn hồi truyền cho thành động lượng |Δp| = 2·m_hat·v_hat",
+      "Số va chạm vào một thành trong một giây: n_va = N_hat·v_hat/(2·l_hop)",
+      "Lực trung bình lên thành: F_tb = n_va·2·m_hat·v_hat",
+      "Áp suất trung bình lên thành: p = F_tb/l_hop²"
+    ],
+    "gia_thiet": [
+      "bỏ qua va chạm giữa các hạt với nhau và ma sát với đáy hộp",
+      "hạt va chạm hoàn toàn đàn hồi với thành hộp",
+      "lắc đều theo mọi hướng nên coi chuyển động của hạt là hỗn loạn, mọi phương bình đẳng"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ các hạt chuyển động hỗn loạn trong hộp, có thanh trượt số hạt và tần số lắc; cho hiện đồng hồ đếm số va chạm mỗi giây và một cột lực trung bình để thấy lực đều dần khi số hạt tăng."
+  },
+  "so_lieu_mau": {
+    "cot": ["Số hạt", "Tần số lắc (Hz)", "Số va chạm vào một thành mỗi giây"],
+    "hang": [
+      [100, 1, 125],
+      [100, 3, 375],
+      [200, 1, 250],
+      [200, 3, 750],
+      [400, 3, 1500]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình n_va = N_hat·v_hat/(2·l_hop) với v_hat = 0,5·f_lac và l_hop = 0,2 m. Không phải số đo thật — thí nghiệm này chỉ nghe và cảm nhận định tính."
+  },
+  "ket_qua_ky_vong": "Tiếng đập vào thành hộp dày lên rõ rệt khi tăng số hạt hoặc tăng tần số lắc; thành hộp rung đều tay vì vô số va chạm nhỏ cộng thành một lực trung bình không đổi theo thời gian.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng áp suất khí là do các phân tử đứng yên ở đáy bình đè lên thành, giống vật nặng đặt trên bàn.",
+    "Cho rằng một phân tử tác dụng một lực lớn, trong khi thực tế mỗi va chạm chỉ truyền một động lượng rất nhỏ.",
+    "Cho rằng khoảng thời gian giữa hai va chạm liên tiếp không ảnh hưởng gì tới độ lớn áp suất."
+  ],
+  "sai_so_thuong_gap": [
+    "Lắc không đều tay nên tiếng đập lúc dày lúc thưa, khó so sánh giữa hai lần lắc.",
+    "Hộp không kín hoặc hạt quá to làm hạt kẹt ở góc, giảm số va chạm vào thành đang nghe."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Một hộp chữ nhật với các hạt tròn chuyển động hỗn loạn, va chạm đàn hồi với bốn thành; thanh trượt số hạt và tần số lắc; đồng hồ đếm va chạm mỗi giây và cột lực trung bình hiện dần.",
+    "diem_nhan": "Cho thấy lực lên thành là kết quả cộng của rất nhiều va chạm rời rạc: tăng số hạt hoặc tốc độ hạt thì lực trung bình tăng, dù mỗi hạt vẫn chỉ đập một cái rồi bật ra."
+  },
+  "an_toan": [
+    "Đậy kín nắp trước khi lắc để hạt không bắn ra ngoài.",
+    "Không lắc quá mạnh làm bung nắp hoặc va hộp vào người khác."
+  ]
+}

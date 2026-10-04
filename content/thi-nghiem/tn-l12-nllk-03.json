@@ -1,0 +1,148 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Năng lượng liên kết hạt nhân",
+  "lesson_id": 16,
+  "nguon_trong_bai": "content/lesson-samples/l12-nang-luong-lien-ket/theory.html",
+  "id": "tn-l12-nllk-03",
+  "ten": "Một gam heli-4 ứng với bao nhiêu năng lượng",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "nangluonglienket.nang_luong_lien_ket",
+    "nangluonglienket.so_sanh_nang_luong_hoa_hoc"
+  ],
+  "muc_tieu": "Đổi năng lượng liên kết 28,3 MeV của một nguyên tử heli-4 thành năng lượng của cả gam chất, rồi so với năng lượng hoá học để thấy khoảng cách hàng triệu lần.",
+  "dung_cu": [
+    {
+      "ten": "Máy tính cầm tay hoặc máy tính bảng",
+      "so_luong": 1
+    },
+    {
+      "ten": "Số Avogadro N_A = 6,02.10^23 mol^-1",
+      "so_luong": 1
+    },
+    {
+      "ten": "Số liệu nhiệt lượng toả khi đốt 1 kg than (khoảng 3.10^7 J)",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Lấy 1 gam heli-4, tính số nguyên tử: N = (1/4)·N_A = 1,5.10^23 nguyên tử.",
+      "Nhân với năng lượng liên kết của một nguyên tử: E = N · 28,3 MeV, rồi đổi MeV ra jun bằng 1 MeV = 1,6.10^-13 J.",
+      "Chia kết quả cho 3.10^7 J (nhiệt lượng đốt 1 kg than) để xem tương đương bao nhiêu than."
+    ],
+    "quan_sat": [
+      "E = 1,5.10^23 × 28,3 × 1,6.10^-13 ≈ 6,8.10^11 J.",
+      "Chia cho 3.10^7 J/kg được khoảng 2,3.10^4 kg, tức hơn hai chục tấn than (khoảng 23 tấn).",
+      "Một phản ứng hoá học chỉ giải phóng vài eV cho mỗi phân tử, tức nhỏ hơn khoảng ba triệu lần tính cho mỗi hạt."
+    ],
+    "rut_ra": [
+      "Năng lượng liên kết hạt nhân, tính cho cùng một khối lượng chất, lớn hơn năng lượng hoá học hàng triệu lần.",
+      "Đó là lí do nhà máy điện hạt nhân chỉ cần vài tấn nhiên liệu mỗi năm thay vì hàng triệu tấn than.",
+      "Cần phân biệt: vài MeV là năng lượng cho MỘT nuclôn/hạt nhân, còn vài eV là năng lượng cho MỘT phân tử trong phản ứng hoá học."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng heli-4 đem tính",
+      "don_vi": "g",
+      "kieu": "dieu_chinh",
+      "min": 0.1,
+      "max": 10,
+      "mac_dinh": 1,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "E_1",
+      "ten": "Năng lượng liên kết của một nguyên tử heli-4",
+      "don_vi": "MeV",
+      "kieu": "co_dinh",
+      "gia_tri": 28.3
+    },
+    {
+      "ky_hieu": "N_A",
+      "ten": "Số Avogadro",
+      "don_vi": "mol^-1",
+      "kieu": "co_dinh",
+      "gia_tri": 6.02e+23
+    },
+    {
+      "ky_hieu": "q_than",
+      "ten": "Nhiệt lượng toả khi đốt 1 kg than",
+      "don_vi": "J/kg",
+      "kieu": "co_dinh",
+      "gia_tri": 30000000
+    },
+    {
+      "ky_hieu": "E_J",
+      "ten": "Năng lượng của m gam heli tính ra jun",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "m_than",
+      "ten": "Khối lượng than tương đương",
+      "don_vi": "kg",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số nguyên tử trong m gam heli-4: N = (m/A)·N_A với A = 4 g/mol",
+      "Năng lượng: E = N · E_1 (MeV), đổi ra jun: E_J = E · 1,6.10^-13",
+      "Khối lượng than tương đương: m_than = E_J / q_than",
+      "So sánh với hoá học: năng lượng đốt một phân tử CH4 khoảng 8 eV = 1,28.10^-18 J"
+    ],
+    "gia_thiet": [
+      "toàn bộ năng lượng liên kết được giải phóng và thu hết (thực tế chỉ thu được một phần, hiệu suất nhà máy cỡ 30 %)",
+      "nhiệt lượng đốt than lấy giá trị trung bình 3.10^7 J cho mỗi kg",
+      "chỉ tính năng lượng liên kết, bỏ qua khối lượng êlectron trong phép đổi vì không đáng kể"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt khối lượng heli và hiện hai cột năng lượng cạnh nhau: một cột là năng lượng hạt nhân, một cột là năng lượng hoá học của cùng khối lượng, chênh nhau cỡ 10^6 lần."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Khối lượng heli-4 (g)",
+      "Năng lượng (J)",
+      "Tương đương than (kg)"
+    ],
+    "hang": [
+      [
+        0.1,
+        68000000000.0,
+        2300
+      ],
+      [
+        1,
+        680000000000.0,
+        23000
+      ],
+      [
+        10,
+        6800000000000.0,
+        230000
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với E_1 = 28,3 MeV, N_A = 6,02.10^23, 1 MeV = 1,6.10^-13 J và than 3.10^7 J/kg."
+  },
+  "ket_qua_ky_vong": "Một gam heli-4 ứng với khoảng 6,8.10^11 J, tương đương năng lượng đốt hơn hai chục tấn than (≈ 2,3.10^4 kg) — lớn hơn năng lượng hoá học hàng triệu lần tính cho cùng khối lượng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng con số 28,3 MeV là năng lượng cho cả gam chất, không phải cho một hạt nhân.",
+    "Đổi MeV sang jun bằng cách nhân với 1,6.10^-19 (giá trị dùng cho eV) thay vì 1,6.10^-13.",
+    "Nghĩ rằng năng lượng hạt nhân lớn hơn năng lượng hoá học chỉ vài lần."
+  ],
+  "sai_so_thuong_gap": [
+    "Quên đổi MeV ra jun rồi so thẳng MeV với jun.",
+    "Dùng khối lượng mol của heli là 2 g/mol (nhầm với số prôtôn) thay vì 4 g/mol.",
+    "Tính năng lượng liên kết riêng (7,07 MeV) rồi nhân với số nguyên tử, thiếu hệ số 4."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Hai cột năng lượng đặt cạnh nhau theo khối lượng heli; thanh trượt khối lượng; bảng tự điền số nguyên tử, năng lượng jun, khối lượng than tương đương.",
+    "diem_nhan": "Cột năng lượng hạt nhân vọt lên rất nhanh và luôn cao hơn cột hoá học cỡ một triệu lần — con số này không phụ thuộc chất, chỉ phụ thuộc khối lượng."
+  },
+  "an_toan": []
+}

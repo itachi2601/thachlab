@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "lesson_id": 127,
+  "nguon_trong_bai": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/theory.html",
+  "id": "tn-l12-dttruong-02",
+  "ten": "Dòng xoay chiều \"đi qua\" tụ điện: điện trường biến thiên tương đương dòng điện dịch",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "dttruong.dong_dien_dich",
+    "dttruong.dien_truong_bien_thien"
+  ],
+  "muc_tieu": "Đo cường độ dòng xoay chiều qua một tụ điện ở năm tần số khác nhau để thấy mạch có dòng dù giữa hai bản tụ là chất cách điện; dòng tỉ lệ với tần số, đúng với mô hình điện trường biến thiên đóng vai trò dòng điện dịch.",
+  "dung_cu": [
+    { "ten": "Tụ điện 1,0 μF", "so_luong": 1, "ghi_chu": "dung sai ±5%" },
+    { "ten": "Máy phát tần số có đầu ra xoay chiều, dải 20 Hz – 2 kHz", "so_luong": 1 },
+    { "ten": "Đồng hồ vạn năng số ở thang đo dòng xoay chiều", "so_luong": 1, "ghi_chu": "sai số ±(1% + 3 số cuối)" },
+    { "ten": "Dây nối có kẹp cá sấu", "so_luong": 4 },
+    { "ten": "Bảng ghi số liệu hoặc điện thoại chụp màn hình đồng hồ", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Mắc nối tiếp tụ 1,0 μF với đồng hồ vạn năng ở thang đo dòng xoay chiều, rồi nối cả hai vào đầu ra của máy phát tần số.",
+      "Đặt máy phát ở điện áp hiệu dụng 12 V; lần lượt đặt tần số 50, 100, 200, 400, 800 Hz và đọc cường độ dòng hiệu dụng ở mỗi tần số.",
+      "Lấy mỗi giá trị dòng chia cho tần số tương ứng rồi ghi vào cột thứ ba của bảng.",
+      "Cuối cùng đổi máy phát sang chế độ một chiều, giữ nguyên 12 V, đọc lại đồng hồ."
+    ],
+    "quan_sat": [
+      "Tần số càng lớn thì dòng càng mạnh: từ 3,6 mA ở 50 Hz lên 58,0 mA ở 800 Hz.",
+      "Dòng chia cho tần số gần như đứng yên trong khoảng 0,072–0,074 mA/Hz ở cả năm dòng — dòng tỉ lệ thuận với tần số.",
+      "Số đo thấp hơn giá trị tính theo 12·2πfC khoảng 2–5% (trung bình gần 3%).",
+      "Khi chuyển sang nguồn một chiều, đồng hồ chỉ 0: mạch một chiều không có dòng qua tụ."
+    ],
+    "rut_ra": [
+      "Chất điện môi giữa hai bản tụ cách điện, không có điện tích nào chạy qua, nhưng mạch xoay chiều vẫn có dòng.",
+      "Điện trường giữa hai bản biến thiên theo thời gian và tương đương một dòng điện — gọi là dòng điện dịch; dòng điện dịch này gây ra từ trường có đường sức khép kín.",
+      "Dòng qua tụ tỉ lệ với tần số nên tụ cản dòng một chiều hoàn toàn, còn dòng tần số càng cao thì đi qua càng dễ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "f", "ten": "Tần số của nguồn xoay chiều", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 20, "max": 2000, "mac_dinh": 50, "buoc": 10 },
+    { "ky_hieu": "C", "ten": "Điện dung của tụ", "don_vi": "μF", "kieu": "dieu_chinh", "min": 0.1, "max": 10, "mac_dinh": 1.0, "buoc": 0.1 },
+    { "ky_hieu": "U", "ten": "Điện áp hiệu dụng của nguồn", "don_vi": "V", "kieu": "dieu_chinh", "min": 2, "max": 24, "mac_dinh": 12, "buoc": 1 },
+    { "ky_hieu": "I_lt", "ten": "Cường độ dòng theo mô hình", "don_vi": "mA", "kieu": "tinh_ra" },
+    { "ky_hieu": "I_do", "ten": "Cường độ dòng đọc trên đồng hồ", "don_vi": "mA", "kieu": "do_duoc", "sai_so_do": 0.05 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Dung kháng của tụ: Z_C = 1/(2πfC)",
+      "Cường độ dòng hiệu dụng: I = U/Z_C = U·2πfC",
+      "Với U = 12 V, C = 1,0 μF: I = 0,0754·f (mA) khi f tính bằng Hz",
+      "Điện trường giữa hai bản tụ: E = u/d (d là khoảng cách hai bản), biến thiên cùng tần số với u",
+      "Mật độ dòng điện dịch: J_d = ε0·dE/dt; tổng dòng điện dịch qua tiết diện bản tụ bằng dòng dẫn trong dây: I_d = I"
+    ],
+    "gia_thiet": [
+      "bỏ qua điện trở dây dẫn và điện trở trong của máy phát",
+      "coi điện áp đặt lên tụ đúng bằng 12 V hiệu dụng",
+      "tụ là tụ lý tưởng, không rò điện"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ mạch có tụ và đồng hồ, cho kéo thanh trượt f và C; đồ thị I theo f là đường thẳng qua gốc toạ độ — đúng dạng tỉ lệ thuận cần thấy."
+  },
+  "so_lieu_mau": {
+    "cot": ["Tần số f (Hz)", "Dòng đo được (mA)", "Dòng theo I = U·2πfC (mA)"],
+    "hang": [
+      [50, 3.6, 3.77],
+      [100, 7.4, 7.54],
+      [200, 14.8, 15.08],
+      [400, 29.5, 30.16],
+      [800, 58.0, 60.32]
+    ],
+    "ghi_chu": "Số đo minh hoạ theo mô hình I = 12·2πf·1,0·10⁻⁶ (A). Số đo thực thấp hơn 2–5% (trung bình gần 3%) vì dung sai tụ ±5%, sai số đồng hồ và điện áp rơi trên dây nối. Tỉ số I/f đo được ở cả năm dòng nằm trong khoảng 0,072–0,074 mA/Hz."
+  },
+  "ket_qua_ky_vong": "Mạch xoay chiều có tụ vẫn có dòng; dòng tỉ lệ thuận với tần số và bằng 0 khi dùng nguồn một chiều.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng điện tích chạy xuyên qua lớp điện môi giữa hai bản tụ, tức tụ dẫn điện như một dây dẫn.",
+    "Cho rằng tụ điện cản dòng càng mạnh khi tần số càng cao — thực tế ngược lại.",
+    "Cho rằng dòng qua tụ không sinh ra từ trường vì không có điện tích chuyển động giữa hai bản.",
+    "Cho rằng đèn chỉ sáng một lúc rồi tắt vì tụ chỉ phóng điện một lần."
+  ],
+  "sai_so_thuong_gap": [
+    "Đặt thang đo dòng xoay chiều nhưng máy phát lại đang ở chế độ một chiều, hoặc ngược lại.",
+    "Điện áp đầu ra máy phát sụt khi tần số tăng: phải đọc lại điện áp ở mỗi tần số rồi mới ghi vào bảng.",
+    "Dung sai của tụ làm hệ số tỉ lệ lệch tới 5% giữa hai tụ cùng nhãn."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Mạch điện có tụ và đồng hồ, hai thanh trượt f và C; bảng số liệu tự điền theo từng lần đặt tần số, kèm đồ thị I theo f.",
+    "diem_nhan": "Cho thấy rõ đường I(f) đi qua gốc toạ độ và dòng bằng 0 ở tần số 0 — dòng điện dịch không phải là điện tích chạy qua chất điện môi."
+  },
+  "an_toan": [
+    "Hạ điện áp nguồn về 0 trước khi đổi cách mắc dây.",
+    "Tụ phân cực không dùng cho mạch xoay chiều; chỉ dùng tụ không phân cực (gốm, phim)."
+  ]
+}

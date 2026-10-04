@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 6. Định luật Boyle. Định luật Charles",
+  "lesson_id": 7,
+  "nguon_trong_bai": "content/lesson-samples/l12-boyle-charles/theory.html",
+  "id": "tn-l12-boylecharles-02",
+  "ten": "Cột khí trong ống thuỷ tinh: nhiệt độ tăng thì thể tích tăng theo",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "charles.dang_ap",
+    "charles.v_ti_le_thuan_t",
+    "charles.nhiet_do_tuyet_doi"
+  ],
+  "muc_tieu": "Đo chiều dài một cột khí được giữ ở áp suất khí quyển khi ngâm vào các bình nước có nhiệt độ khác nhau, từ bảng số liệu thấy tỉ số V/T không đổi — đó là định luật Charles.",
+  "dung_cu": [
+    { "ten": "Ống thuỷ tinh hẹp một đầu kín, dài khoảng 25 cm", "so_luong": 1 },
+    { "ten": "Dầu ăn hoặc nước màu nhỏ một giọt để đánh dấu cột khí", "so_luong": 1 },
+    { "ten": "Thước chia tới milimét", "so_luong": 1 },
+    { "ten": "Cốc thuỷ tinh chịu nhiệt 500 ml", "so_luong": 1 },
+    { "ten": "Nhiệt kế rượu tới 110 °C", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nước đá, nước nóng, bếp đun và giá kẹp giữ ống", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nhốt một giọt dầu trong ống để giữ cột không khí dài đúng 10,0 cm ở nhiệt độ phòng; đầu hở để ống thông với khí trời nên áp suất khí trong ống luôn bằng áp suất khí quyển.",
+      "Ngâm ống vào cốc nước đá đang tan, đợi 2 phút cho khí trong ống cùng nhiệt độ với nước rồi đo chiều dài cột khí và nhiệt độ nước.",
+      "Làm lại lần lượt với nước phòng, nước khoảng 50 °C, nước khoảng 75 °C; mỗi lần đợi đủ 2 phút, ghi chiều dài cột khí và nhiệt độ tuyệt đối T = t + 273."
+    ],
+    "quan_sat": [
+      "Nước càng nóng, cột khí càng dài: từ 10,0 cm ở 0 °C lên 12,9 cm ở 75 °C.",
+      "Thể tích tăng thêm tỉ lệ với nhiệt độ tuyệt đối chứ không tỉ lệ với nhiệt độ Celsius.",
+      "Tỉ số V/T gần như đứng yên quanh 0,0368 cm/K, lệch nhau khoảng 1,4%."
+    ],
+    "rut_ra": [
+      "Áp suất không đổi thì thể tích tỉ lệ thuận với nhiệt độ tuyệt đối: V1/T1 = V2/T2.",
+      "Phải dùng kenvin: lấy tỉ số hai nhiệt độ Celsius cho kết quả sai hoàn toàn.",
+      "Kéo dài đường V theo T về phía trái, đường cắt trục nhiệt độ tại gốc 0 K."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "t", "ten": "Nhiệt độ nước ngâm ống", "don_vi": "°C", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 0, "buoc": 5 },
+    { "ky_hieu": "L", "ten": "Chiều dài cột khí", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.1 },
+    { "ky_hieu": "p0", "ten": "Áp suất khí quyển (giữ không đổi)", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
+    { "ky_hieu": "T", "ten": "Nhiệt độ tuyệt đối của khí", "don_vi": "K", "kieu": "tinh_ra" },
+    { "ky_hieu": "L_T", "ten": "Tỉ số V/T của cột khí", "don_vi": "cm/K", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật Charles: V / T = hằng số, tức V1/T1 = V2/T2",
+      "Nhiệt độ tuyệt đối: T(K) = t(°C) + 273",
+      "Chiều dài cột khí tỉ lệ với thể tích (tiết diện ống không đổi): V ~ L",
+      "Suy ra chiều dài theo nhiệt độ: L = L0 · T / T0 với T0 = 273 K, L0 = 10,0 cm",
+      "Sai số tương đối của tỉ số: δ = |L/T − L0/T0| / (L0/T0)"
+    ],
+    "gia_thiet": [
+      "áp suất khí trong ống luôn bằng áp suất khí quyển vì đầu ống hở",
+      "tiết diện ống đều nên chiều dài cột khí tỉ lệ với thể tích",
+      "không có khí lọt qua giọt dầu",
+      "bỏ qua sự nở dài của thuỷ tinh (nhỏ hơn 0,1% trong khoảng 0–100 °C)"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ ống thuỷ tinh nhúng trong cốc nước, thanh trượt nhiệt độ, giọt dầu chạy lên xuống; đồ thị V–T vẽ dần và kéo dài đường thẳng về phía trái để cắt trục tại 0 K."
+  },
+  "so_lieu_mau": {
+    "cot": ["t (°C)", "T (K)", "L = V (cm)", "V/T (cm/K)"],
+    "hang": [
+      [0, 273, 10.0, 0.0366],
+      [25, 298, 10.9, 0.0366],
+      [50, 323, 11.9, 0.0368],
+      [75, 348, 12.9, 0.0371]
+    ],
+    "ghi_chu": "Số liệu minh hoạ: mô hình L = 10,0·T/273 cho 10,0; 10,9; 11,8; 12,7 cm; cột L trong bảng đã kể thêm sai số đọc của thước (thành 11,9 và 12,9 cm), nên V/T nhích dần từ 0,0366 lên 0,0371 cm/K — đúng như câu hỏi về sai số trong bài. Ở 100 °C mô hình cho 13,7 cm nhưng cột khí nhô lên khỏi mặt nước nên số đọc kém tin cậy, vì vậy bảng dừng ở 75 °C."
+  },
+  "ket_qua_ky_vong": "Chiều dài cột khí tăng đều theo nhiệt độ tuyệt đối; đồ thị L theo T là đường thẳng, kéo dài đi qua gốc 0 K; tỉ số V/T không đổi trong khoảng 1,4%.",
+  "hien_tuong_hay_sai": [
+    "Lấy tỉ số hai nhiệt độ Celsius (87/27 ≈ 3,2) rồi kết luận thể tích tăng hơn ba lần.",
+    "Nghĩ rằng nhiệt độ tăng gấp đôi thì thể tích cũng tăng gấp đôi tính theo °C (từ 20 °C lên 40 °C).",
+    "Cho rằng phải giữ áp suất không đổi bằng cách bịt kín đầu ống, trong khi chính đầu hở mới giữ áp suất bằng khí quyển."
+  ],
+  "sai_so_thuong_gap": [
+    "Thước chia 1 mm nên chiều dài 12,9 cm đã có sai số ±0,1 cm, tức khoảng ±0,8%.",
+    "Chưa đợi đủ lâu: thuỷ tinh dẫn nhiệt chậm nên khí trong ống chưa cùng nhiệt độ với nước.",
+    "Hơi nước bám thành ống làm nhoè vạch chia khi làm với nước nóng.",
+    "Ống không đặt thẳng đứng nên chiều dài đọc được lớn hơn chiều cao thật của cột khí."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Cốc nước có thanh trượt nhiệt độ, ống thuỷ tinh nhúng trong cốc với giọt dầu đánh dấu; đồ thị V–T vẽ dần bốn điểm và đường thẳng lí thuyết kéo dài về gốc 0 K.",
+    "diem_nhan": "Cho thấy khi trục hoành ghi bằng kenvin thì bốn điểm nằm thẳng hàng, còn khi đổi trục sang Celsius thì đường cắt trục hoành ở −273 °C — chính là gốc 0 K."
+  },
+  "an_toan": [
+    "Nước sôi gây bỏng: dùng kẹp gỗ hoặc giá đỡ, không cầm ống bằng tay trần.",
+    "Cốc thuỷ tinh phải là loại chịu nhiệt, không rót nước sôi vào cốc mỏng đang lạnh."
+  ]
+}

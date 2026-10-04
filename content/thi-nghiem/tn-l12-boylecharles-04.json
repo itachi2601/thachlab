@@ -1,0 +1,94 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 6. Định luật Boyle. Định luật Charles",
+  "lesson_id": 7,
+  "nguon_trong_bai": "content/lesson-samples/l12-boyle-charles/theory.html",
+  "id": "tn-l12-boylecharles-04",
+  "ten": "Bơm xe đạp: nén nhanh thì khí nóng lên, không còn đẳng nhiệt",
+  "loai": "vi_du",
+  "muc_do": "nang_cao",
+  "kien_thuc": [
+    "boyle.dang_nhiet",
+    "boyle.dinh_luat_boyle",
+    "khi_li_tuong.qua_trinh_doan_nhiet"
+  ],
+  "muc_tieu": "Giải thích vì sao khi nén khí thật nhanh thì lực ấn tăng nhanh hơn dự đoán của định luật Boyle: công nén chuyển thành nội năng làm nhiệt độ khí tăng, nên quá trình không còn đẳng nhiệt.",
+  "dung_cu": [
+    { "ten": "Bơm xe đạp loại tốt, thân bơm kín", "so_luong": 1 },
+    { "ten": "Nhiệt kế hồng ngoại hoặc nhiệt kế dán ngoài thân bơm", "so_luong": 1, "ghi_chu": "dùng để so nhiệt độ thân bơm trước và sau khi bơm" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 },
+    { "ten": "Áp kế của bơm (nếu có)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đo nhiệt độ thân bơm rồi bịt đầu ra bằng nút kín để khí không thoát đi, nhờ đó cùng một lượng khí bị nén đi nén lại trong thân bơm.",
+      "Ấn cán bơm thật nhanh liên tục khoảng 30 lần trong 20 giây, tay cảm nhận lực ấn tăng dần.",
+      "Đo lại nhiệt độ thân bơm ngay sau khi ấn và sau đó 5 phút; ghi lại nhận xét về lực ấn ở 10 lần đầu và 10 lần cuối."
+    ],
+    "quan_sat": [
+      "Thân bơm nóng lên rõ rệt, có thể tăng 5–10 °C so với lúc đầu.",
+      "Ở những lần ấn cuối, cán bơm nặng tay hơn nhiều so với mức mà định luật Boyle dự đoán nếu nhiệt độ thật sự không đổi.",
+      "Sau khi dừng 5 phút, thân bơm nguội trở lại và lực ấn cũng giảm về gần như trước."
+    ],
+    "rut_ra": [
+      "Nén nhanh thì khí chưa kịp truyền nhiệt ra ngoài: công nén thành nội năng, nhiệt độ khí tăng — quá trình là đoạn nhiệt, không phải đẳng nhiệt.",
+      "Nhiệt độ tăng làm áp suất lớn hơn giá trị mà định luật Boyle cho ở cùng thể tích, nên tay phải ấn mạnh hơn.",
+      "Vì vậy muốn kiểm chứng định luật Boyle phải nén thật chậm, và muốn đo áp suất lốp đúng thì phải đo khi lốp đã nguội."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "n", "ten": "Số lần ấn cán bơm", "don_vi": "lần", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 30, "buoc": 5 },
+    { "ky_hieu": "t_an", "ten": "Thời gian ấn liên tục", "don_vi": "s", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 20, "buoc": 5 },
+    { "ky_hieu": "T0", "ten": "Nhiệt độ khí lúc đầu (nhiệt độ phòng)", "don_vi": "K", "kieu": "co_dinh", "gia_tri": 300 },
+    { "ky_hieu": "V1", "ten": "Thể tích khí trong thân bơm ở cuối hành trình", "don_vi": "ml", "kieu": "co_dinh", "gia_tri": 50 },
+    { "ky_hieu": "V2", "ten": "Thể tích khí trong thân bơm ở đầu hành trình", "don_vi": "ml", "kieu": "co_dinh", "gia_tri": 200 },
+    { "ky_hieu": "T_khi", "ten": "Nhiệt độ khí ngay sau khi nén nhanh", "don_vi": "K", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "p_doan", "ten": "Áp suất khí sau khi nén nhanh (đoạn nhiệt)", "don_vi": "kPa", "kieu": "tinh_ra" },
+    { "ky_hieu": "p_boyle", "ten": "Áp suất khí nếu nén thật chậm (đẳng nhiệt)", "don_vi": "kPa", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Nén chậm, đẳng nhiệt (định luật Boyle): p_boyle·V1 = p0·V2, suy ra p_boyle = p0·V2/V1",
+      "Nén nhanh, đoạn nhiệt với không khí (γ ≈ 1,4): p_doan·V1^γ = p0·V2^γ, suy ra p_doan = p0·(V2/V1)^γ",
+      "Nhiệt độ khí tăng theo quá trình đoạn nhiệt: T_khi = T0·(V2/V1)^(γ−1)",
+      "Tỉ số áp suất: p_doan / p_boyle = (V2/V1)^(γ−1) = (T_khi / T0)"
+    ],
+    "gia_thiet": [
+      "coi không khí là khí lí tưởng hai nguyên tử với γ ≈ 1,4",
+      "nén đủ nhanh để nhiệt không kịp truyền ra ngoài (đoạn nhiệt)",
+      "bỏ qua khí lọt ra qua gioăng và nhiệt dung của thân bơm",
+      "p0 = 100 kPa, V2/V1 = 4, T0 = 300 K"
+    ],
+    "ghi_chu": "Với V2/V1 = 4 thì p_boyle = 4·p0 = 400 kPa, còn p_doan = 4^1,4·p0 ≈ 696 kPa và T_khi ≈ 300 × 4^0,4 ≈ 522 K (khoảng 249 °C — thực tế thấp hơn nhiều vì thân bơm hấp thụ nhiệt)."
+  },
+  "so_lieu_mau": {
+    "cot": ["Đại lượng", "Nén thật chậm (đẳng nhiệt)", "Nén thật nhanh (đoạn nhiệt)"],
+    "hang": [
+      ["Nhiệt độ khí (K)", "300", "khoảng 522 (nhiệt độ khí suy ra từ mô hình đoạn nhiệt, không phải nhiệt độ đo trên thân bơm)"],
+      ["Áp suất cuối (kPa)", "khoảng 400", "khoảng 696"],
+      ["Lực tay phải ấn", "nhẹ, tăng từ từ", "nặng hơn rõ rệt ở các lần cuối"]
+    ],
+    "ghi_chu": "Cột đoạn nhiệt lấy đúng mô hình với V2/V1 = 4 và γ = 1,4: p = 100 × 4^1,4 ≈ 696 kPa và T = 300 × 4^0,4 ≈ 522 K (khoảng 249 °C). Đây là nhiệt độ khí suy ra từ mô hình, không đo được trên thân bơm: thân nhôm dẫn nhiệt tốt nên chỉ nóng thêm 5–10 °C, còn khí thật cũng mất bớt nhiệt cho thân bơm."
+  },
+  "ket_qua_ky_vong": "Nén nhanh làm thân bơm nóng lên và lực ấn tăng nhanh hơn dự đoán đẳng nhiệt; để nguội thì mọi thứ trở lại gần như ban đầu — bằng chứng cho thấy quá trình nén nhanh là đoạn nhiệt.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng thân bơm nóng lên là do ma sát giữa pittông và thành bơm — thực ra phần lớn nhiệt đến từ công nén khí.",
+    "Nghĩ rằng định luật Boyle sai vì tay phải ấn mạnh hơn dự đoán, trong khi lỗi nằm ở chỗ điều kiện nhiệt độ không đổi đã bị phá vỡ.",
+    "Cho rằng càng ấn nhanh thì áp suất cuối càng lớn vô hạn; thực tế khí nóng lên làm giảm hiệu quả nén và thân bơm có giới hạn chịu áp."
+  ],
+  "sai_so_thuong_gap": [
+    "Nhiệt kế hồng ngoại đo nhiệt độ bề mặt thân bơm, không đo trực tiếp nhiệt độ khí bên trong.",
+    "Thân bơm nguội rất nhanh nên phải đo ngay sau khi ấn, nếu chậm thì số đọc thấp hơn thực tế.",
+    "Khí lọt ra qua gioăng khi áp suất cao làm lượng khí giảm, ảnh hưởng tới cả hai cách tính."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+2d_dong_hoc",
+    "y_tuong": "Hình bơm xe có cán ấn được, thanh trượt chọn tốc độ ấn; nhiệt kế trên thân bơm và áp kế hiện số theo thời gian thực, đồ thị p–V vẽ hai đường: đường đẳng nhiệt lí thuyết và đường đoạn nhiệt đi lên cao hơn.",
+    "diem_nhan": "Cho học sinh thấy hai đường tách nhau ngay khi tăng tốc độ ấn: nén càng nhanh, điểm cuối càng nằm cao hơn đường đẳng nhiệt — trực quan hoá vì sao điều kiện nhiệt độ không đổi quan trọng."
+  },
+  "an_toan": [
+    "Bịt kín đầu ra làm áp suất trong thân bơm tăng cao: không ấn quá mạnh, không dùng bơm cũ nứt thân.",
+    "Thân bơm có thể nóng tới mức gây bỏng nhẹ: đừng áp má vào thân bơm để cảm nhận nhiệt độ."
+  ]
+}

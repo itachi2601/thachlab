@@ -1,0 +1,98 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "lesson_id": 125,
+  "nguon_trong_bai": "content/lesson-samples/l12-may-phat-dien-bien-ap/theory.html",
+  "id": "tn-l12-mayphatdien-02",
+  "ten": "Ba cuộn dây lệch 120 độ: ba suất điện động cùng tần số, lệch pha một phần ba chu kì",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "mayphatdien.ba_pha_lech_120",
+    "mayphatdien.ba_cuon_day_stato"
+  ],
+  "muc_tieu": "Chứng tỏ ba cuộn dây giống nhau đặt lệch 120° trên stato cho ba suất điện động cùng tần số, cùng biên độ và lệch pha nhau đúng 2π/3 — đó là nguyên tắc máy phát ba pha.",
+  "dung_cu": [
+    { "ten": "Vòng nhựa hoặc ống nhựa đường kính 8–10 cm", "so_luong": 1, "ghi_chu": "làm giá quấn ba cuộn dây" },
+    { "ten": "Dây đồng emay đường kính 0,3–0,5 mm", "so_luong": 1, "ghi_chu": "khoảng 6–9 m, chia ba đoạn bằng nhau" },
+    { "ten": "Nam châm thẳng hoặc nam châm chữ U nhỏ", "so_luong": 1, "ghi_chu": "quay được quanh tâm vòng dây" },
+    { "ten": "Ba bóng đèn LED (cùng loại)", "so_luong": 3 },
+    { "ten": "Điện trở hạn dòng 330 Ω", "so_luong": 3, "ghi_chu": "mắc nối tiếp với mỗi LED" },
+    { "ten": "Dao động ký ba kênh hoặc ba kênh đo của bộ cảm biến", "so_luong": 1, "ghi_chu": "nếu có; không có thì dùng ba LED để quan sát định tính" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Quấn ba cuộn dây có số vòng bằng nhau (khoảng 200 vòng) trên cùng một vòng nhựa, đặt lệch nhau đúng 120°.",
+      "Nối mỗi cuộn với một LED mắc nối tiếp điện trở hạn dòng; đánh số ba cuộn là 1, 2, 3.",
+      "Quay nam châm đều quanh tâm vòng dây với tốc độ chậm (khoảng 1 vòng/s) rồi quan sát ba LED; sau đó đưa ba đầu cuộn dây vào ba kênh dao động ký để chụp dạng sóng."
+    ],
+    "quan_sat": [
+      "Ba LED chớp lệch nhịp nhau đều đặn, không bao giờ hai LED chớp cùng lúc; mỗi chu kì quay có đúng ba nhịp chớp lệch nhau.",
+      "Trên dao động ký, ba đường hình sin có cùng biên độ và cùng tần số, đỉnh của chúng lệch nhau đúng một phần ba chu kì.",
+      "Ở một thời điểm bất kì, tổng ba suất điện động (đo theo cùng tỉ lệ) gần bằng 0."
+    ],
+    "rut_ra": [
+      "Ba cuộn dây giống nhau lệch 120° cho ba suất điện động cùng tần số, cùng biên độ, lệch pha nhau 2π/3.",
+      "Nguyên nhân là từ thông qua ba cuộn biến thiên lệch pha nhau đúng 2π/3 khi nam châm quay.",
+      "Dòng ba pha đối xứng tạo từ trường quay — cơ sở cho động cơ điện ba pha."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "f_quay", "ten": "Tần số quay của nam châm", "don_vi": "vòng/s", "kieu": "dieu_chinh", "min": 0.2, "max": 3, "mac_dinh": 1, "buoc": 0.1 },
+    { "ky_hieu": "p", "ten": "Số cặp cực của nam châm quay", "don_vi": "cặp", "kieu": "dieu_chinh", "min": 1, "max": 2, "mac_dinh": 1, "buoc": 1 },
+    { "ky_hieu": "U0", "ten": "Biên độ suất điện động mỗi pha", "don_vi": "V", "kieu": "co_dinh", "gia_tri": 6 },
+    { "ky_hieu": "f", "ten": "Tần số dòng điện ba pha", "don_vi": "Hz", "kieu": "tinh_ra" },
+    { "ky_hieu": "lech_pha", "ten": "Góc lệch pha giữa hai pha liền kề", "don_vi": "độ", "kieu": "co_dinh", "gia_tri": 120 },
+    { "ky_hieu": "u1", "ten": "Suất điện động tức thời pha 1", "don_vi": "V", "kieu": "tinh_ra" },
+    { "ky_hieu": "u2", "ten": "Suất điện động tức thời pha 2", "don_vi": "V", "kieu": "tinh_ra" },
+    { "ky_hieu": "u3", "ten": "Suất điện động tức thời pha 3", "don_vi": "V", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "f = f_quay · p (mỗi vòng quay cho p chu kì)",
+      "u1 = U0·cos(2πft)",
+      "u2 = U0·cos(2πft − 2π/3)",
+      "u3 = U0·cos(2πft + 2π/3)",
+      "Với ba pha đối xứng: u1 + u2 + u3 = 0 tại mọi thời điểm"
+    ],
+    "gia_thiet": [
+      "ba cuộn dây hoàn toàn giống nhau (cùng số vòng, cùng tiết diện) và đặt lệch đúng 120°",
+      "từ trường của nam châm quay là đều theo góc quay, bỏ qua dạng xung của nam châm thẳng",
+      "bỏ qua điện trở cuộn dây và hiện tượng tự cảm khi mô tả suất điện động"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ đồng thời ba đường hình sin trên cùng hệ trục và cho kéo thanh trượt f_quay, p; thêm một đường tròn stato với ba cuộn dây và một kim nam châm quay để học sinh thấy góc lệch 120° là góc trong không gian."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thời điểm t (s)", "u1 (V)", "u2 (V)", "u3 (V)"],
+    "hang": [
+      [0.0, 6.0, -3.0, -3.0],
+      [0.083, 5.2, 0.0, -5.2],
+      [0.167, 3.0, 3.0, -6.0],
+      [0.25, 0.0, 5.2, -5.2],
+      [0.333, -3.0, 6.0, -3.0],
+      [0.417, -5.2, 5.2, 0.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với U0 = 6 V, f = 1 Hz (chu kì 1 s), ba pha lệch nhau 120°. Tổng ba cột u1 + u2 + u3 bằng 0 ở mọi hàng."
+  },
+  "ket_qua_ky_vong": "Ba đèn chớp lệch nhịp đều nhau; trên dao động ký là ba đường hình sin cùng biên độ, cùng tần số, đỉnh lệch nhau đúng một phần ba chu kì; tổng ba suất điện động luôn bằng 0.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng ba pha nghĩa là ba dòng điện khác tần số (thực ra chỉ khác pha, cùng tần số và cùng biên độ).",
+    "Nghĩ rằng góc lệch giữa hai pha là 90° hoặc 180° thay vì 120°.",
+    "Nghĩ rằng muốn có ba pha thì phải dùng ba nam châm quay lệch nhau — thực ra chỉ cần một nam châm và ba cuộn dây lệch nhau."
+  ],
+  "sai_so_thuong_gap": [
+    "Ba cuộn dây quấn không đều nhau nên biên độ ba pha lệch nhau vài phần trăm.",
+    "Đặt ba cuộn lệch không đúng 120° (đo bằng mắt) làm góc lệch pha sai.",
+    "Quay tay không đều nên tần số ba kênh tuy bằng nhau nhưng dạng sóng bị méo ở đoạn tăng tốc."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Vòng tròn stato có ba cuộn dây lệch 120° và một nam châm quay; bên cạnh là đồ thị ba đường hình sin vẽ dần theo thời gian, kèm bảng giá trị u1, u2, u3 tự điền để kiểm tổng bằng 0.",
+    "diem_nhan": "Học sinh dự đoán trước: khi nam châm quay được một phần ba vòng thì pha nào đạt cực đại, rồi bấm chạy để đối chiếu."
+  },
+  "an_toan": [
+    "Suất điện động của máy phát mini rất nhỏ, không nguy hiểm, nhưng không chạm vào mối nối khi nam châm đang quay nhanh.",
+    "Cố định vòng nhựa trên bàn để vòng dây không văng khi quay nam châm."
+  ]
+}

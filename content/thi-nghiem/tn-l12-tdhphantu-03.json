@@ -1,0 +1,82 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 5. Thuyết động học phân tử chất khí",
+  "lesson_id": 6,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/theory.html",
+  "id": "tn-l12-tdhphantu-03",
+  "ten": "Một mol mỗi chất khí: cùng 22,4 lít, cùng số phân tử, khác khối lượng",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tdhphantu.mol_so_avogadro",
+    "tdhphantu.the_tich_mol",
+    "tdhphantu.khoi_luong_mol"
+  ],
+  "muc_tieu": "Phân biệt ba đại lượng dễ lẫn: số mol n (đếm phân tử), thể tích mol ở điều kiện tiêu chuẩn (22,4 lít, giống nhau cho mọi chất khí) và khối lượng mol M (khác nhau theo từng chất).",
+  "dung_cu": [
+    { "ten": "Ba bình cầu có thể tích bằng nhau 22,4 lít (hoặc ba túi khí cùng cỡ)", "so_luong": 3 },
+    { "ten": "Ba chất khí: nitrogen (N₂), oxygen (O₂), carbon dioxide (CO₂)", "so_luong": 1, "ghi_chu": "mỗi bình một chất, cùng nhiệt độ 0 °C và áp suất 1 atm" },
+    { "ten": "Cân điện tử", "so_luong": 1, "ghi_chu": "để so khối lượng khí trong ba bình (trừ khối lượng bình rỗng)" },
+    { "ten": "Nhiệt kế và áp kế", "so_luong": 1, "ghi_chu": "kiểm tra đúng điều kiện tiêu chuẩn" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Nạp ba bình cầu cùng thể tích 22,4 lít với ba chất khí khác nhau, giữ ở 0 °C và 1 atm.",
+      "Cân từng bình (đã trừ khối lượng bình rỗng) để so khối lượng khí; ghi lại số phân tử tương ứng với 1 mol.",
+      "Thay vì cân (khó làm chính xác ở lớp), có thể tính khối lượng khí từ khối lượng mol và kiểm tra bằng cách so ba con số 28 g · 32 g · 44 g."
+    ],
+    "quan_sat": [
+      "Ba bình có cùng thể tích 22,4 lít và cùng chứa 6,02.10²³ phân tử, nhưng khối lượng khí khác nhau.",
+      "N₂ nặng 28 g, O₂ nặng 32 g, CO₂ nặng 44 g cho cùng một số phân tử.",
+      "Nếu đổi điều kiện (nén lại hoặc làm lạnh) thì thể tích 22,4 lít không còn đúng, nhưng khối lượng mol của mỗi chất vẫn không đổi."
+    ],
+    "rut_ra": [
+      "Ở điều kiện tiêu chuẩn (0 °C, 1 atm), thể tích mol của mọi chất khí đều bằng 22,4 lít = 0,0224 m³.",
+      "Cùng số mol thì cùng số phân tử và cùng thể tích khí, nhưng khối lượng bằng n·M nên phụ thuộc chất.",
+      "Hệ thức dùng để đổi qua lại: n = N/N_A = m/M và V = n · 22,4 lít ở đktc."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "n", "ten": "Số mol khí trong mỗi bình", "don_vi": "mol", "kieu": "dieu_chinh", "min": 0.5, "max": 5, "mac_dinh": 1, "buoc": 0.5 },
+    { "ky_hieu": "M", "ten": "Khối lượng mol của chất khí", "don_vi": "g/mol", "kieu": "dieu_chinh", "min": 2, "max": 44, "mac_dinh": 28, "buoc": 2 },
+    { "ky_hieu": "V_m", "ten": "Thể tích mol ở điều kiện tiêu chuẩn", "don_vi": "lít/mol", "kieu": "co_dinh", "gia_tri": 22.4 },
+    { "ky_hieu": "N_A", "ten": "Số Avogadro", "don_vi": "mol⁻¹", "kieu": "co_dinh", "gia_tri": 6.02e23 },
+    { "ky_hieu": "V", "ten": "Thể tích khí", "don_vi": "lít", "kieu": "tinh_ra" },
+    { "ky_hieu": "m", "ten": "Khối lượng khí", "don_vi": "g", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số mol từ khối lượng: n = m / M",
+      "Số mol từ số phân tử: n = N / N_A với N_A ≈ 6,02.10²³ mol⁻¹",
+      "Thể tích khí ở điều kiện tiêu chuẩn: V = n · 22,4 (lít)",
+      "Khối lượng khí: m = n · M — cùng n nhưng M khác nhau thì m khác nhau"
+    ],
+    "gia_thiet": [
+      "các khí được coi gần đúng là khí lí tưởng ở 0 °C và 1 atm",
+      "bỏ qua khối lượng riêng của không khí còn lại trong bình và sai số của cân",
+      "khối lượng mol lấy theo giá trị thường dùng: N₂ 28, O₂ 32, CO₂ 44 g/mol"
+    ],
+    "ghi_chu": "Mô phỏng nên cho chọn chất khí và kéo số mol: ba bình luôn cùng thể tích khi cùng điều kiện, còn khối lượng thay đổi theo chất."
+  },
+  "so_lieu_mau": {
+    "cot": ["Chất khí", "Khối lượng mol M (g/mol)", "Khối lượng 1 mol (g)"],
+    "hang": [
+      ["Nitrogen (N₂)", 28, 28],
+      ["Oxygen (O₂)", 32, 32],
+      ["Carbon dioxide (CO₂)", 44, 44]
+    ],
+    "ghi_chu": "Cả ba mẫu đều là 1 mol, đều chiếm 22,4 lít ở 0 °C và 1 atm, đều chứa 6,02.10²³ phân tử; chỉ khối lượng là khác nhau."
+  },
+  "ket_qua_ky_vong": "Ba bình cùng thể tích và cùng số phân tử nhưng khối lượng khác nhau: 28 g · 32 g · 44 g. Học sinh phân biệt được thể tích mol (22,4 lít, giống nhau) với khối lượng mol (khác nhau theo chất).",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng 1 mol khí luôn nặng 22,4 gam — lẫn thể tích mol (lít) với khối lượng mol (g/mol).",
+    "Nghĩ rằng phân tử nặng hơn thì chiếm thể tích lớn hơn ở cùng nhiệt độ và áp suất.",
+    "Nghĩ rằng mol là đơn vị đo khối lượng, hoặc 1 mol chất nào cũng có cùng khối lượng."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+2d_dong_hoc",
+    "y_tuong": "Ba bình cầu bằng nhau chứa ba chất khí; kéo thanh trượt chọn chất và số mol, hiện số phân tử, thể tích và khối lượng tương ứng.",
+    "diem_nhan": "Cho thấy thể tích và số phân tử giống nhau khi cùng số mol, còn khối lượng thay đổi theo khối lượng mol."
+  }
+}

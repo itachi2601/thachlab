@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 17. Hiện tượng phóng xạ",
+  "lesson_id": 18,
+  "nguon_trong_bai": "content/lesson-samples/l12-phong-xa/theory.html",
+  "id": "tn-l12-phongxa-02",
+  "ten": "Theo dõi độ phóng xạ giảm theo thời gian để đọc chu kì bán rã",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "phongxa.dinh_luat_phong_xa",
+    "phongxa.chu_ki_ban_ra",
+    "phongxa.do_phong_xa"
+  ],
+  "muc_tieu": "Đo độ phóng xạ của một nguồn chu kì ngắn theo thời gian, nhận ra cứ sau mỗi T thì số đếm còn một nửa, và đọc được T từ bảng số liệu.",
+  "dung_cu": [
+    { "ten": "Nguồn phóng xạ có chu kì bán rã ngắn (cỡ vài phút)", "so_luong": 1, "ghi_chu": "nguồn kiểm tra của phòng thí nghiệm" },
+    { "ten": "Ống đếm Geiger kèm máy đếm xung", "so_luong": 1 },
+    { "ten": "Giá đỡ giữ nguồn và ống đếm cố định", "so_luong": 1 },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 },
+    { "ten": "Giấy kẻ ô li hoặc phần mềm bảng tính để vẽ đồ thị", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cố định nguồn cách ống đếm một khoảng không đổi; ghi lại khoảng cách đó.",
+      "Cứ 5 phút, đếm số xung trong 1 phút và ghi vào bảng; làm liên tục 25 phút.",
+      "Đo phông nền một lần trong 1 phút khi đã cất nguồn, rồi trừ vào mọi số đọc.",
+      "Vẽ đồ thị ln(H) theo t, tìm độ dốc bằng −lambda rồi suy ra T = ln2/lambda; so với cách đọc trực tiếp từ bảng."
+    ],
+    "quan_sat": [
+      "Số đếm tụt rất nhanh lúc đầu rồi chậm dần: 812, 398, 205, 97, 52, 24 xung/phút.",
+      "Cứ sau 5 phút, số đếm gần như còn đúng một nửa số trước đó; tỉ số hai lần liên tiếp nằm trong khoảng 1,87–2,17.",
+      "Đường biểu diễn trên giấy bán log là một đường thẳng."
+    ],
+    "rut_ra": [
+      "Độ phóng xạ giảm theo quy luật hàm mũ H_t = H0·2^(−t/T); thời gian để còn một nửa chính là chu kì bán rã T ≈ 5 phút.",
+      "Tỉ số giữa hai lần đọc liên tiếp không đúng bằng 2 vì thăng giáng thống kê, không phải vì T thay đổi.",
+      "Độ phóng xạ giảm cùng quy luật với số hạt nhân và khối lượng chất phóng xạ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "T", "ten": "Chu kì bán rã của nguồn", "don_vi": "phút", "kieu": "dieu_chinh", "min": 1, "max": 20, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "H0", "ten": "Số đếm ban đầu (đã trừ phông)", "don_vi": "xung/phút", "kieu": "dieu_chinh", "min": 100, "max": 2000, "mac_dinh": 810, "buoc": 10 },
+    { "ky_hieu": "dt", "ten": "Khoảng thời gian giữa hai lần ghi", "don_vi": "phút", "kieu": "co_dinh", "gia_tri": 5 },
+    { "ky_hieu": "H_t", "ten": "Số đếm theo mô hình tại thời điểm t", "don_vi": "xung/phút", "kieu": "tinh_ra" },
+    { "ky_hieu": "H_do", "ten": "Số đếm đọc được trên máy", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 15 },
+    { "ky_hieu": "lambda", "ten": "Hằng số phóng xạ", "don_vi": "1/phút", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật phóng xạ: H_t = H0 · 2^(−t/T) = H0 · e^(−lambda·t)",
+      "Hằng số phóng xạ: lambda = ln2 / T",
+      "Dạng tuyến tính để vẽ đồ thị: ln(H_t) = ln(H0) − lambda·t, độ dốc của đường thẳng là −lambda"
+    ],
+    "gia_thiet": [
+      "bỏ qua phông nền sau khi đã trừ (phông nền coi như không đổi)",
+      "nguồn chỉ chứa một đồng vị phóng xạ, không có hạt nhân con cũng phóng xạ",
+      "hiệu suất đếm không đổi trong suốt 25 phút"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ đồng thời bảng số liệu và đường H(t) theo thang logarit, cho kéo thanh trượt T và H0: học sinh thấy rõ T chỉ đổi độ dốc còn H0 chỉ dịch đường lên xuống."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thời gian (phút)", "Số xung trong 1 phút"],
+    "hang": [
+      [0, 812],
+      [5, 398],
+      [10, 205],
+      [15, 97],
+      [20, 52],
+      [25, 24]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với T = 5 phút, H0 = 810 xung/phút, có thêm thăng giáng thống kê cỡ sqrt(N) và đã trừ phông nền. Tỉ số hai lần liên tiếp: 2,04 · 1,94 · 2,11 · 1,87 · 2,17."
+  },
+  "ket_qua_ky_vong": "Số đếm giảm theo hàm mũ, cứ mỗi 5 phút lại còn khoảng một nửa; đọc trực tiếp từ bảng được T ≈ 5 phút, còn lấy độ dốc trên giấy bán log thì T nằm trong khoảng 4,7–5,3 phút.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng số đếm giảm đều theo đường thẳng nên trừ hai lần đọc liên tiếp ra một hằng số.",
+    "Cho rằng sau một chu kì bán rã thì nguồn hết phóng xạ.",
+    "Nghĩ rằng chu kì bán rã phụ thuộc lượng chất: lấy bớt một nửa nguồn thì T giảm một nửa."
+  ],
+  "sai_so_thuong_gap": [
+    "Thăng giáng thống kê làm tỉ số hai lần đọc lệch khỏi 2 khoảng 3–20%, càng về cuối bảng càng lớn vì số đếm càng ít.",
+    "Phông nền không được trừ, hoặc trừ sai vì phông nền đo ở thời điểm khác.",
+    "Thời gian bấm đồng hồ lệch vài giây mỗi lần, với T cỡ vài phút thì sai số này đáng kể."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Nguồn phóng xạ cạnh ống đếm; mỗi 5 phút mô phỏng tự thêm một hàng vào bảng và một điểm lên đồ thị; đường lý thuyết vẽ mờ phía sau để so.",
+    "diem_nhan": "Cho học sinh kéo thanh trượt T rồi dự đoán số đếm ở phút 15 trước khi bấm chạy: sai lầm hay gặp là chia đôi theo số lần đọc thay vì chia đôi theo từng chu kì."
+  },
+  "an_toan": [
+    "Nguồn chu kì ngắn vẫn là nguồn phóng xạ: cất vào hộp chì ngay sau khi đo xong.",
+    "Không dùng tay trần đặt nguồn sát ống đếm; dùng kẹp hoặc giá đỡ."
+  ]
+}

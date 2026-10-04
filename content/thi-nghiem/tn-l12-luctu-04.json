@@ -1,0 +1,98 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-04",
+  "ten": "La bàn cạnh dây dẫn thẳng và trong lòng ống dây",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "luctu.tu_truong_dong_dien_thang",
+    "luctu.tu_truong_vong_day",
+    "luctu.tu_truong_ong_day",
+    "luctu.quy_tac_nam_tay_phai"
+  ],
+  "muc_tieu": "Dùng kim la bàn làm bằng chứng cho chiều đường sức từ của dòng điện thẳng và của ống dây, đồng thời so sánh độ lớn cảm ứng từ của hai dạng dòng điện này với từ trường Trái Đất.",
+  "dung_cu": [
+    { "ten": "La bàn nhỏ (kim nam châm trên trụ nhọn)", "so_luong": 1 },
+    { "ten": "Dây dẫn thẳng dài 40–60 cm", "so_luong": 1 },
+    { "ten": "Ống nhựa đường kính 2–3 cm làm lõi ống dây", "so_luong": 1, "ghi_chu": "quấn 100–200 vòng dây" },
+    { "ten": "Ắc quy hoặc nguồn một chiều 12 V, biến trở", "so_luong": 1 },
+    { "ten": "Ampe kế một chiều", "so_luong": 1 },
+    { "ten": "Thước thẳng và bút đánh dấu phương Bắc – Nam", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt la bàn trên bàn, đánh dấu phương kim chỉ khi chưa có dòng điện (phương Bắc – Nam).",
+      "Căng dây dẫn thẳng theo phương Bắc – Nam, cách la bàn khoảng 5 cm, cho dòng 5–10 A chạy qua vài giây rồi đọc góc lệch của kim.",
+      "Đảo chiều dòng điện và làm lại; sau đó đưa la bàn vào trong lòng ống dây đang có dòng và đọc phương kim."
+    ],
+    "quan_sat": [
+      "Cạnh dây dẫn thẳng, kim lệch hẳn khỏi phương Bắc – Nam (cỡ 40° khi I = 10 A, r = 5 cm; càng gần dây hoặc càng tăng dòng thì lệch càng nhiều).",
+      "Đảo chiều dòng thì kim lệch sang phía ngược lại, đối xứng qua phương Bắc – Nam; ngắt dòng thì kim trở về phương Bắc – Nam.",
+      "Trong lòng ống dây, kim chỉ dọc theo trục ống và lệch hẳn khỏi phương Bắc – Nam ngay cả khi dòng chỉ 1–2 A."
+    ],
+    "rut_ra": [
+      "Đường sức từ của dòng điện thẳng là những đường tròn đồng tâm quanh dây; chiều xác định bằng quy tắc nắm tay phải.",
+      "Từ trường trong lòng ống dây mạnh hơn hẳn từ trường của một dây thẳng cùng dòng điện và song song với trục ống.",
+      "Kim la bàn chỉ theo chiều của vectơ cảm ứng từ tổng hợp, nên so góc lệch với từ trường Trái Đất có thể suy ra độ lớn tương đối của B."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "I", "ten": "Cường độ dòng điện", "don_vi": "A", "kieu": "dieu_chinh", "min": 1, "max": 20, "mac_dinh": 10, "buoc": 1 },
+    { "ky_hieu": "r", "ten": "Khoảng cách từ điểm khảo sát tới dây thẳng", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.02, "max": 0.2, "mac_dinh": 0.05, "buoc": 0.01 },
+    { "ky_hieu": "n", "ten": "Số vòng dây trên một mét của ống dây", "don_vi": "vong/m", "kieu": "dieu_chinh", "min": 100, "max": 2000, "mac_dinh": 500, "buoc": 100 },
+    { "ky_hieu": "B_dat", "ten": "Cảm ứng từ của Trái Đất ở mặt đất", "don_vi": "T", "kieu": "co_dinh", "gia_tri": 0.00005 },
+    { "ky_hieu": "B_thang", "ten": "Cảm ứng từ của dây dẫn thẳng", "don_vi": "T", "kieu": "tinh_ra" },
+    { "ky_hieu": "B_ong", "ten": "Cảm ứng từ trong lòng ống dây", "don_vi": "T", "kieu": "tinh_ra" },
+    { "ky_hieu": "theta", "ten": "Góc lệch của kim la bàn", "don_vi": "độ", "kieu": "do_duoc", "sai_so_do": 2 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Dây dẫn thẳng dài: B = 2.10^-7 · I / r",
+      "Ống dây dài: B = 4π.10^-7 · n · I",
+      "Góc lệch của kim khi mặt phẳng quay của kim vuông góc với dây: tan(theta) = B / B_dat",
+      "Với I = 10 A, r = 5 cm: B = 4.10^-5 T, cỡ bằng từ trường Trái Đất nên kim lệch khoảng 40°"
+    ],
+    "gia_thiet": [
+      "dây dẫn thẳng coi như dài vô hạn so với khoảng cách r đang khảo sát",
+      "ống dây dài hơn nhiều so với đường kính, điểm khảo sát nằm giữa lòng ống",
+      "bỏ qua từ trường của dây nối và của các vật sắt thép quanh bàn thí nghiệm",
+      "kim la bàn đủ nhỏ để coi cả kim nằm tại một điểm"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ các đường tròn đồng tâm quanh dây thẳng (mật độ dày lên khi tăng I hoặc giảm r), và ống dây với các đường sức song song trong lòng ống; kim la bàn quay theo chiều đường sức, đổi chiều khi đảo dòng."
+  },
+  "so_lieu_mau": {
+    "cot": ["I (A)", "r (cm)", "B dây thẳng (µT)"],
+    "hang": [
+      [5, 5, 20],
+      [10, 5, 40],
+      [10, 2, 100],
+      [20, 5, 80],
+      [10, 10, 20]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ B = 2.10^-7·I/r. So sánh: từ trường Trái Đất cỡ 50 µT, ống dây n = 500 vòng/m với I = 2 A cho B ≈ 1260 µT — mạnh hơn hẳn nên kim la bàn trong lòng ống lệch rất rõ."
+  },
+  "ket_qua_ky_vong": "Kim la bàn quay theo chiều đường sức từ của dòng điện, đổi chiều khi đảo chiều dòng; trong lòng ống dây kim chỉ dọc theo trục ống và lệch mạnh khỏi phương Bắc – Nam chỉ với dòng nhỏ.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng kim la bàn luôn chỉ về hướng Bắc vì 'la bàn là để chỉ hướng Bắc'.",
+    "Cho rằng đường sức từ của dây thẳng là các đường thẳng song song với dây.",
+    "Cho rằng trong lòng ống dây, điểm gần thành ống có cảm ứng từ lớn hơn điểm ở giữa ống."
+  ],
+  "sai_so_thuong_gap": [
+    "Trên bàn có vật bằng sắt hoặc điện thoại nên kim la bàn lệch cả khi chưa có dòng.",
+    "Dòng 10 A qua dây mảnh làm dây nóng và chùng, khoảng cách r thay đổi trong lúc đo.",
+    "Đo góc lệch khi kim còn dao động chưa ổn định."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Dây dẫn thẳng đứng với các đường tròn đồng tâm và mũi tên chiều đường sức; la bàn nhỏ đặt cạnh dây, kim quay khi bật dòng; kèm đồ thị B theo I và theo r.",
+    "diem_nhan": "Giảm r một nửa thì mật độ đường sức quanh dây dày gấp đôi, kim lệch nhiều hơn — cho thấy B tỉ lệ nghịch với r."
+  },
+  "an_toan": [
+    "Dòng 10–20 A gây nóng dây và có thể bỏng tay: dùng găng hoặc chỉ chạm vào phần dây đã ngắt điện.",
+    "Ngắt nguồn trước khi thay đổi cách quấn ống dây."
+  ]
+}

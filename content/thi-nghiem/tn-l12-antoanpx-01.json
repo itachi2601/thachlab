@@ -1,0 +1,97 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 18. An toàn phóng xạ",
+  "lesson_id": 19,
+  "nguon_trong_bai": "content/lesson-samples/l12-an-toan-phong-xa/theory.html",
+  "id": "tn-l12-antoanpx-01",
+  "ten": "Đo suất liều theo khoảng cách: kiểm chứng quy luật 1/r²",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "antoanpx.khoang_cach_binh_phuong",
+    "antoanpx.suat_lieu"
+  ],
+  "muc_tieu": "Chứng tỏ suất liều của một nguồn điểm giảm theo bình phương khoảng cách, để học sinh thấy lùi xa là biện pháp giảm liều hiệu quả nhất — và biết đọc số đếm kèm sai số thống kê.",
+  "dung_cu": [
+    { "ten": "Máy đo bức xạ cầm tay (ống đếm Geiger), có hiện số đếm mỗi phút", "so_luong": 1 },
+    { "ten": "Nguồn gamma kiểm định hoạt độ thấp (ví dụ nguồn kiểm tra ¹³⁷Cs)", "so_luong": 1, "ghi_chu": "dùng nguồn che kín, có giấy phép của phòng thí nghiệm" },
+    { "ten": "Thước dây hoặc thước cuộn 5 m", "so_luong": 1, "ghi_chu": "sai số ±1 cm" },
+    { "ten": "Giá đỡ hoặc kẹp giữ đầu dò ở độ cao không đổi", "so_luong": 1 },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đo phông trước: để nguồn trong hộp chì, đếm số xung trong 1 phút, làm ba lần rồi lấy trung bình.",
+      "Lấy nguồn ra, đặt đầu dò cách nguồn lần lượt 0,5 m; 1 m; 1,5 m; 2 m; 3 m theo đúng một đường thẳng, cùng độ cao.",
+      "Ở mỗi vị trí đếm số xung trong 1 phút, ghi số đếm thô rồi trừ số đếm phông.",
+      "Nhân số đếm đã trừ phông với hệ số quy đổi của máy (k = 0,25 µSv/h cho mỗi xung/phút) để ra suất liều."
+    ],
+    "quan_sat": [
+      "Số đếm giảm rất nhanh khi lùi xa: từ 1440 xung/phút ở 0,5 m xuống 40 xung/phút ở 3 m.",
+      "Tỉ số giữa hai vị trí gần đúng bằng bình phương tỉ số khoảng cách: ở 2 m số đếm còn 1/4 so với ở 1 m, ở 3 m còn 1/9.",
+      "Mỗi số đếm dao động vài phần trăm giữa hai lần đo liên tiếp dù giữ nguyên vị trí."
+    ],
+    "rut_ra": [
+      "Suất liều tỉ lệ nghịch với bình phương khoảng cách: xa gấp n lần thì liều còn 1/n².",
+      "Lùi xa là cách giảm liều rẻ nhất, không cần thiết bị gì thêm.",
+      "Số đếm luôn kèm sai số thống kê √N, nên chỉ được kết luận quy luật 1/r² trong phạm vi sai số đó."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "r", "ten": "Khoảng cách từ nguồn tới đầu dò", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.5, "max": 3.0, "mac_dinh": 1.0, "buoc": 0.5 },
+    { "ky_hieu": "N_phong", "ten": "Số đếm phông mỗi phút", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 6 },
+    { "ky_hieu": "N_do", "ten": "Số đếm thô mỗi phút tại vị trí đo", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 20 },
+    { "ky_hieu": "k", "ten": "Hệ số quy đổi số đếm ra suất liều của máy đo", "don_vi": "µSv/h trên xung/phút", "kieu": "co_dinh", "gia_tri": 0.25 },
+    { "ky_hieu": "N_net", "ten": "Số đếm đã trừ phông", "don_vi": "xung/phút", "kieu": "tinh_ra" },
+    { "ky_hieu": "H_dot", "ten": "Suất liều tại vị trí đo", "don_vi": "µSv/h", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số đếm đã trừ phông: N_net(r) = N_do(r) − N_phong",
+      "Quy luật nguồn điểm: N_net(r) = N_net(1 m) / r²",
+      "Suất liều quy đổi: H_dot(r) = k · N_net(r)",
+      "Sai số thống kê của phép đếm: ΔN = √N (phân bố Poisson)",
+      "Kiểm tra: H_dot(2 m) / H_dot(1 m) = 0,25 và H_dot(3 m) / H_dot(1 m) = 0,111"
+    ],
+    "gia_thiet": [
+      "nguồn được coi là nguồn điểm, đặt cách sàn và tường đủ xa để bỏ qua bức xạ tán xạ",
+      "phông của phòng không đổi trong suốt buổi đo và đã được trừ đúng",
+      "đầu dò hướng thẳng vào nguồn, thời gian đếm mỗi vị trí là 1 phút",
+      "bỏ qua suy giảm của không khí trên quãng đường vài mét"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt r để đầu dò chạy ra xa, vẽ đồng thời cột số đếm và đồ thị H_dot(r) theo dạng 1/r²; thêm nút bật/tắt 'trừ phông' để học sinh thấy phông ảnh hưởng thế nào ở vị trí xa."
+  },
+  "so_lieu_mau": {
+    "cot": ["Khoảng cách d (m)", "Số đếm/phút (đã trừ phông)", "Suất liều (µSv/h)"],
+    "hang": [
+      [0.5, 1440, 360.0],
+      [1.0, 360, 90.0],
+      [1.5, 160, 40.0],
+      [2.0, 90, 22.5],
+      [3.0, 40, 10.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình N_net = 360/d² với k = 0,25 µSv/h trên xung/phút và phông 40 xung/phút. Sai số đếm là ±√N: ±38 ở 1440, ±19 ở 360, ±13 ở 160, ±9 ở 90, ±6 ở 40."
+  },
+  "ket_qua_ky_vong": "Số đếm (và suất liều quy đổi) giảm theo bình phương khoảng cách: ở 2 m còn khoảng 1/4, ở 3 m còn khoảng 1/9 giá trị ở 1 m; kết luận đúng trong phạm vi ±√N.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng lùi xa gấp đôi thì suất liều giảm một nửa (lẫn 1/r với 1/r²).",
+    "Cho rằng số đếm phải trùng khít tỉ lệ 1/r² ở mọi vị trí, không để ý sai số ±√N.",
+    "Cho rằng đứng xa thì không cần quan tâm thời gian phơi nhiễm nữa."
+  ],
+  "sai_so_thuong_gap": [
+    "Không trừ phông, hoặc trừ phông đo ở thời điểm khác nên số đếm ở xa bị lệch.",
+    "Khoảng cách đo từ vỏ hộp nguồn chứ không từ tâm nguồn; sai số ±1 cm đã là 1–2% ở 0,5 m.",
+    "Bức xạ tán xạ từ sàn bê tông, tường và các vật kim loại trong phòng làm số đếm ở xa cao hơn lí thuyết."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bàn thí nghiệm ảo có nguồn gamma, đầu dò di chuyển trên thước, số đếm nhảy theo phân bố Poisson; đồ thị H_dot(r) vẽ dần và bảng số liệu tự điền.",
+    "diem_nhan": "Cho thấy đường cong tụt rất nhanh khi vừa rời nguồn và bẹt dần khi đã xa — giải thích vì sao quy trình luôn ưu tiên kẻ vạch giới hạn rộng."
+  },
+  "an_toan": [
+    "Chỉ dùng nguồn kiểm định hoạt độ thấp, có che kín; cất nguồn vào hộp chì ngay khi đo xong.",
+    "Cầm nguồn bằng kẹp dài, không hướng nguồn vào người; đeo liều kế cá nhân trong suốt buổi đo.",
+    "Vạch sẵn các vị trí 0,5–3 m trước khi lấy nguồn ra để thao tác nhanh."
+  ]
+}

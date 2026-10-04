@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 5. Thuyết động học phân tử chất khí",
+  "lesson_id": 6,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/theory.html",
+  "id": "tn-l12-tdhphantu-04",
+  "ten": "Quả bóng bay trong nước nóng và nước lạnh: áp suất sinh ra từ va chạm phân tử",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tdhphantu.va_cham_gay_ap_suat",
+    "tdhphantu.nhiet_do_va_toc_do"
+  ],
+  "muc_tieu": "Cho học sinh thấy nhiệt độ tăng làm phân tử khí chuyển động nhanh hơn, va đập vào thành nhiều và mạnh hơn, nên quả bóng căng ra — áp suất khí là kết quả của các va chạm đó.",
+  "dung_cu": [
+    { "ten": "Quả bóng bay", "so_luong": 2, "ghi_chu": "một quả để so sánh, một quả làm thí nghiệm" },
+    { "ten": "Chậu nước nóng khoảng 60 °C", "so_luong": 1, "ghi_chu": "pha nước nóng và kiểm tra bằng nhiệt kế trước khi nhúng bóng" },
+    { "ten": "Chậu nước lạnh có đá", "so_luong": 1 },
+    { "ten": "Nhiệt kế", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Thước dây hoặc dây chỉ để đo vòng quanh bóng", "so_luong": 1, "ghi_chu": "sai số ±0,2 cm" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Thổi hai quả bóng căng vừa phải như nhau, buộc chặt miệng, đo vòng quanh mỗi quả ở nhiệt độ phòng và ghi lại.",
+      "Nhúng quả thứ nhất vào chậu nước nóng khoảng 60 °C trong một phút, lấy ra lau khô và đo vòng quanh ngay.",
+      "Nhúng quả thứ hai vào chậu nước lạnh có đá trong một phút, lấy ra lau khô và đo vòng quanh ngay. Làm lại mỗi trường hợp hai lần."
+    ],
+    "quan_sat": [
+      "Quả bóng trong nước nóng căng phồng lên rõ rệt: vòng quanh tăng thêm khoảng 0,5–1,0 cm.",
+      "Quả bóng trong nước lạnh xẹp lại: vòng quanh giảm khoảng 0,4–0,8 cm.",
+      "Đưa cả hai quả trở lại nhiệt độ phòng vài phút thì kích thước gần trở về ban đầu."
+    ],
+    "rut_ra": [
+      "Nhiệt độ tăng làm phân tử khí chuyển động nhanh hơn, va đập vào thành bóng nhiều và mạnh hơn nên bóng căng ra.",
+      "Nhiệt độ giảm thì ngược lại: phân tử chuyển động chậm hơn, va đập yếu hơn, bóng xẹp lại.",
+      "Áp suất khí lên thành bình không phải một lực kì bí nào khác, mà là tổng hợp của vô số va chạm phân tử trong mỗi giây."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "T_nong", "ten": "Nhiệt độ nước nóng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 40, "max": 80, "mac_dinh": 60, "buoc": 5 },
+    { "ky_hieu": "T_lanh", "ten": "Nhiệt độ nước lạnh", "don_vi": "°C", "kieu": "dieu_chinh", "min": 0, "max": 20, "mac_dinh": 5, "buoc": 1 },
+    { "ky_hieu": "T_p", "ten": "Nhiệt độ phòng", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 27 },
+    { "ky_hieu": "C", "ten": "Vòng quanh bóng ở nhiệt độ phòng", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.2 },
+    { "ky_hieu": "C_nong", "ten": "Vòng quanh bóng sau khi gặp nước nóng", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.2 },
+    { "ky_hieu": "C_lanh", "ten": "Vòng quanh bóng sau khi gặp nước lạnh", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.2 },
+    { "ky_hieu": "v_p", "ten": "Tốc độ trung bình của phân tử khí", "don_vi": "m/s", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Ở đktc, tốc độ trung bình của phân tử khí khoảng v_p ≈ 400 m/s",
+      "Tốc độ trung bình tăng theo nhiệt độ tuyệt đối: v_p tỉ lệ với √T, nên T tăng thì va chạm mạnh hơn",
+      "Áp suất khí tỉ lệ với số va chạm mỗi giây và xung lượng mỗi va chạm (định tính ở bài này; công thức định lượng học ở bài sau)"
+    ],
+    "gia_thiet": [
+      "bóng bay kín, không rò khí trong thời gian làm thí nghiệm",
+      "thời gian nhúng đủ ngắn để khí trong bóng gần đạt nhiệt độ của nước",
+      "bỏ qua sự thay đổi độ đàn hồi của vỏ bóng khi gặp nóng hoặc lạnh"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ các phân tử trong bóng với mũi tên va đập; kéo thanh trượt nhiệt độ để thấy mũi tên dài ra, số va đập mỗi giây tăng và thành bóng bị đẩy ra."
+  },
+  "so_lieu_mau": {
+    "cot": ["Trường hợp", "Vòng quanh bóng (cm)"],
+    "hang": [
+      ["Ở nhiệt độ phòng 27 °C", 32.0],
+      ["Sau 1 phút trong nước 60 °C", 32.9],
+      ["Sau 1 phút trong nước 5 °C", 31.4]
+    ],
+    "ghi_chu": "Số liệu minh hoạ cho một quả bóng cỡ thường (vòng quanh 32 cm khi ở nhiệt độ phòng). Độ lệch thực đo phụ thuộc độ căng ban đầu, thời gian nhúng và nhiệt độ nước; ở đây chỉ cần so chiều tăng – giảm."
+  },
+  "ket_qua_ky_vong": "Bóng căng ra trong nước nóng và xẹp lại trong nước lạnh; đưa về nhiệt độ phòng thì kích thước gần như trở lại ban đầu. Chiều biến đổi này lặp lại được qua các lần làm.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng bóng căng lên vì nước nóng thấm vào trong bóng — thực tế vỏ bóng kín, chỉ có nhiệt truyền qua.",
+    "Nghĩ rằng áp suất khí là một đại lượng có sẵn trong khí, không liên quan tới va chạm của phân tử vào thành bình.",
+    "Nghĩ rằng nhiệt độ tăng chỉ làm khí nở ra mà không làm tốc độ phân tử thay đổi."
+  ],
+  "sai_so_thuong_gap": [
+    "Hai quả bóng thổi không căng đều nhau nên khó so sánh kích thước trước và sau.",
+    "Thời gian nhúng quá ngắn nên khí trong bóng chưa kịp đổi nhiệt độ.",
+    "Đo vòng quanh bằng dây chỉ bị lỏng hoặc chéo, làm sai lệch cỡ vài milimét."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Quả bóng có các phân tử khí bên trong đập vào thành; thanh trượt nhiệt độ làm tốc độ phân tử và số va đập thay đổi, thành bóng phồng lên xẹp xuống theo.",
+    "diem_nhan": "Cho thấy trực tiếp mối liên hệ nhiệt độ – tốc độ phân tử – số va chạm vào thành bình – áp suất."
+  },
+  "an_toan": [
+    "Nước 60 °C gây bỏng: dùng kẹp gắp bóng, không nhúng tay.",
+    "Lau khô bóng trước khi đo để dây không trượt, và lau khô bàn tránh trượt ngã."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 18. An toàn phóng xạ",
+  "lesson_id": 19,
+  "nguon_trong_bai": "content/lesson-samples/l12-an-toan-phong-xa/theory.html",
+  "id": "tn-l12-antoanpx-04",
+  "ten": "Đọc liều kế cá nhân TLD và suy ra liều năm",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "antoanpx.lieu_ke_ca_nhan",
+    "antoanpx.gioi_han_lieu"
+  ],
+  "muc_tieu": "Biết cách đọc liều kế cá nhân theo tuần và nhân lên thành liều năm để so với giới hạn 20 mSv/năm — thấy liều nghề nghiệp phải đo và ghi sổ, không đoán.",
+  "dung_cu": [
+    { "ten": "Liều kế cá nhân nhiệt phát quang (TLD) hoặc liều kế phim", "so_luong": 4, "ghi_chu": "mỗi tuần một tấm, đeo ở ngực" },
+    { "ten": "Máy đọc liều kế của phòng an toàn bức xạ", "so_luong": 1 },
+    { "ten": "Sổ ghi liều của nhân viên bức xạ", "so_luong": 1 },
+    { "ten": "Liều kế chuẩn để trừ liều phông của phòng đọc", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Phát một liều kế cho kỹ thuật viên vào đầu mỗi tuần; đeo ở ngực trong suốt ca làm việc, không để gần nguồn khi không làm việc.",
+      "Cuối tuần thu liều kế, gửi phòng an toàn bức xạ đọc; đọc kèm một liều kế chuẩn để trừ liều phông của phòng đọc.",
+      "Ghi số đọc của bốn tuần vào bảng và cộng lại.",
+      "Tính liều trung bình mỗi tuần rồi nhân với số tuần làm việc trong năm (khoảng 50 tuần) để dự báo liều năm."
+    ],
+    "quan_sat": [
+      "Bốn tuần cho 0,12; 0,09; 0,15 và 0,10 mSv — tổng 0,46 mSv, trung bình 0,115 mSv mỗi tuần.",
+      "Số đọc dao động giữa các tuần theo khối lượng công việc, không tăng đều.",
+      "Dự báo liều năm: 0,115 × 50 ≈ 5,8 mSv, nằm dưới giới hạn nghề nghiệp 20 mSv/năm nhưng vẫn phải theo dõi."
+    ],
+    "rut_ra": [
+      "Liều nghề nghiệp phải được đo bằng liều kế và ghi sổ, không ước lượng bằng cảm giác.",
+      "Phải trừ liều phông của phòng đọc, nếu không sẽ cộng thêm một lượng không thuộc về người lao động.",
+      "Nhân liều trung bình mỗi tuần với số tuần làm việc trong năm là cách kiểm tra nhanh xem có nguy cơ vượt giới hạn không."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "so_tuan", "ten": "Số tuần đeo liều kế", "don_vi": "tuần", "kieu": "dieu_chinh", "min": 1, "max": 8, "mac_dinh": 4, "buoc": 1 },
+    { "ky_hieu": "L_tuan", "ten": "Liều đọc được trong một tuần", "don_vi": "mSv", "kieu": "dieu_chinh", "min": 0.01, "max": 0.5, "mac_dinh": 0.115, "buoc": 0.01 },
+    { "ky_hieu": "so_tuan_nam", "ten": "Số tuần làm việc trong năm", "don_vi": "tuần", "kieu": "co_dinh", "gia_tri": 50 },
+    { "ky_hieu": "L_phong", "ten": "Liều phông của phòng đọc (đã trừ sẵn vào từng số đọc)", "don_vi": "mSv", "kieu": "do_duoc", "sai_so_do": 0.01 },
+    { "ky_hieu": "L_tong", "ten": "Tổng liều trong kì đeo liều kế", "don_vi": "mSv", "kieu": "tinh_ra" },
+    { "ky_hieu": "L_nam", "ten": "Liều năm dự báo", "don_vi": "mSv", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Tổng liều trong kì: L_tong = Σ L_tuan(i), trong đó mỗi L_tuan(i) là số đọc đã trừ liều phông L_phong của phòng đọc (phông đã trừ ngay ở từng lần đọc, không trừ lại lần nữa)",
+      "Liều trung bình mỗi tuần: L_tb = L_tong / so_tuan",
+      "Liều năm dự báo: L_nam = L_tb · so_tuan_nam",
+      "So sánh với giới hạn nghề nghiệp 20 mSv/năm; dân thường 1 mSv/năm; phông tự nhiên khoảng 2,4 mSv/năm"
+    ],
+    "gia_thiet": [
+      "khối lượng công việc và quy trình che chắn giữ nguyên trong cả năm",
+      "liều kế đeo đúng vị trí trên ngực và không bị chiếu trực tiếp khi cất giữ",
+      "liều phông của phòng đọc đã được trừ đúng theo liều kế chuẩn"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo số tuần và liều mỗi tuần, hiện đồng thời cột liều cộng dồn và một vạch ngang giới hạn 20 mSv/năm để học sinh thấy lúc nào vượt."
+  },
+  "so_lieu_mau": {
+    "cot": ["Tuần", "Liều đọc trên liều kế (mSv)"],
+    "hang": [
+      [1, 0.12],
+      [2, 0.09],
+      [3, 0.15],
+      [4, 0.1]
+    ],
+    "ghi_chu": "Số liệu minh hoạ của một kỹ thuật viên phòng chụp ảnh phóng xạ; tổng 0,46 mSv trong 4 tuần, dự báo khoảng 5,8 mSv cho 50 tuần làm việc — dưới giới hạn 20 mSv/năm."
+  },
+  "ket_qua_ky_vong": "Cộng liều bốn tuần được 0,46 mSv; dự báo liều năm khoảng 5,8 mSv, thấp hơn giới hạn nghề nghiệp 20 mSv/năm nhưng vẫn phải ghi sổ và theo dõi xu hướng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng cứ đứng trong phòng có nguồn là nhận liều, không cần biết liều kế đọc bao nhiêu.",
+    "Cho rằng liều ghi trên liều kế là liều của cả năm, không cần nhân với số tuần làm việc.",
+    "Cho rằng vượt 20 mSv một tuần là chuyện nhỏ vì giới hạn tính theo năm."
+  ],
+  "sai_so_thuong_gap": [
+    "Không trừ liều phông của phòng đọc, làm liều báo cáo cao hơn thực tế.",
+    "Đeo liều kế sai vị trí hoặc để trong túi quần, che mất phần thân trên.",
+    "Tháo liều kế ra khi làm việc với nguồn — khi đó số đọc không còn đại diện cho liều thật."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Bảng liều bốn tuần tự điền, cột cộng dồn chạy dần và một vạch ngang giới hạn 20 mSv/năm; kéo liều mỗi tuần để thấy khi nào vượt.",
+    "diem_nhan": "Nhấn mạnh vai trò của liều kế: cùng một phòng làm việc, người đeo liều kế mới biết mình đang nhận bao nhiêu và có phải chỉnh quy trình không."
+  },
+  "an_toan": [
+    "Liều kế đã đọc xong phải lưu theo hồ sơ an toàn bức xạ, không dùng lại tấm đã đọc.",
+    "Khi liều tuần tăng bất thường, báo ngay cho người phụ trách an toàn bức xạ để xem lại quy trình."
+  ]
+}

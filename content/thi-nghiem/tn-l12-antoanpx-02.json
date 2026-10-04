@@ -1,0 +1,99 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 18. An toàn phóng xạ",
+  "lesson_id": 19,
+  "nguon_trong_bai": "content/lesson-samples/l12-an-toan-phong-xa/theory.html",
+  "id": "tn-l12-antoanpx-02",
+  "ten": "Ba tấm chắn giấy – nhôm – chì trước chùm tia phóng xạ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "antoanpx.che_chan"
+  ],
+  "muc_tieu": "So sánh khả năng chắn của giấy, nhôm và chì để thấy mỗi loại tia cần một tấm chắn khác nhau: có tấm chắn chưa đủ, phải đúng vật liệu và đủ dày.",
+  "dung_cu": [
+    { "ten": "Máy đo bức xạ cầm tay (ống đếm Geiger)", "so_luong": 1 },
+    { "ten": "Nguồn gamma kiểm định hoạt độ thấp", "so_luong": 1, "ghi_chu": "nguồn che kín, có giấy phép" },
+    { "ten": "Tấm nhôm dày 3 mm", "so_luong": 1 },
+    { "ten": "Tấm chì dày 5 mm (hoặc tấm cao su chì của phòng X-quang)", "so_luong": 1 },
+    { "ten": "Tờ giấy dày hoặc bìa cứng 0,1 mm", "so_luong": 1 },
+    { "ten": "Thước cuộn 2 m và giá đỡ đầu dò", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cố định đầu dò cách nguồn 1 m, đo phông trước khi lấy nguồn ra.",
+      "Đếm 1 phút khi không chèn gì, ghi số đếm chuẩn N₀.",
+      "Lần lượt chèn tờ giấy, tấm nhôm 3 mm, tấm chì 5 mm vào chính giữa nguồn và đầu dò; mỗi lần đếm 1 phút và ghi số đếm còn lại.",
+      "Tính hệ số truyền qua T = N/N₀ cho mỗi vật liệu."
+    ],
+    "quan_sat": [
+      "Tờ giấy gần như không làm giảm số đếm của chùm gamma (T ≈ 0,99).",
+      "Tấm nhôm 3 mm giảm ít (T ≈ 0,83), tấm chì 5 mm giảm rõ rệt (T ≈ 0,43, tức còn 154 xung/phút).",
+      "Muốn giảm mạnh chùm gamma phải tăng bề dày chì lên nhiều lần, không phải chỉ vài milimét."
+    ],
+    "rut_ra": [
+      "Mỗi loại tia cần vật liệu chắn riêng: giấy đủ chặn alpha, nhôm vài milimét đủ chặn beta, gamma chỉ giảm khi tấm chắn đủ nặng và đủ dày.",
+      "Hiệu quả che chắn giảm theo hàm mũ với bề dày: N = N₀·e^(−μx).",
+      "Vì vậy trong quy trình, che chắn luôn đi kèm lùi xa và giảm thời gian, không thay thế nhau."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách nguồn tới đầu dò", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.5, "max": 2.0, "mac_dinh": 1.0, "buoc": 0.5 },
+    { "ky_hieu": "x", "ten": "Bề dày tấm chắn", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0.1, "max": 20.0, "mac_dinh": 5.0, "buoc": 0.1 },
+    { "ky_hieu": "N0", "ten": "Số đếm khi không chèn vật liệu", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 19 },
+    { "ky_hieu": "N", "ten": "Số đếm sau khi chèn vật liệu", "don_vi": "xung/phút", "kieu": "do_duoc", "sai_so_do": 15 },
+    { "ky_hieu": "vat_lieu", "ten": "Vật liệu chèn: 0 = giấy, 1 = nhôm, 2 = chì (bảng μ ở mo_hinh)", "don_vi": "chỉ số", "kieu": "dieu_chinh", "min": 0, "max": 2, "mac_dinh": 2, "buoc": 1 },
+    { "ky_hieu": "mu", "ten": "Hệ số suy giảm tuyến tính của vật liệu đã chọn", "don_vi": "1/mm", "kieu": "tinh_ra" },
+    { "ky_hieu": "T", "ten": "Hệ số truyền qua", "don_vi": "không đơn vị", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Định luật suy giảm theo bề dày: N(x) = N0 · e^(−μ·x)",
+      "Bảng μ theo vật liệu đã chọn: giấy ≈ 0 (coi như không suy giảm); nhôm 0,061 mm⁻¹; chì 0,17 mm⁻¹",
+      "Hệ số truyền qua: T = N/N0",
+      "Bề dày để giảm một nửa (chì): x_1/2 = ln2 / μ ≈ 0,693/0,17 ≈ 4,1 mm",
+      "Với nhôm, μ ≈ 0,061 mm⁻¹; với giấy, coi như không suy giảm đáng kể",
+      "Số đếm chịu sai số thống kê ΔN = √N"
+    ],
+    "gia_thiet": [
+      "chùm tia coi như hẹp, chiếu vuông góc qua tấm chắn",
+      "các tấm chắn đặt sát nhau, không có khe hở cho tia lọt qua",
+      "bỏ qua bức xạ tán xạ từ tường và sàn lọt vào đầu dò",
+      "hệ số μ lấy theo vật liệu đã chọn ở mức năng lượng của nguồn kiểm định; giấy gần như không suy giảm, nhôm nhỏ hơn chì nhiều"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ chùm tia đi từ nguồn tới đầu dò, chèn tấm vật liệu vào giữa và cho số đếm tụt theo hàm mũ khi tăng bề dày; đổi vật liệu thì độ dốc đổi — chì dốc nhất, giấy gần như nằm ngang."
+  },
+  "so_lieu_mau": {
+    "cot": ["Vật liệu chèn (dày)", "Số đếm/phút còn lại", "Hệ số truyền qua"],
+    "hang": [
+      ["không chắn", 360, 1.0],
+      ["giấy (0,1 mm)", 355, 0.99],
+      ["nhôm (3 mm)", 300, 0.83],
+      ["chì (5 mm)", 154, 0.43],
+      ["chì (10 mm)", 66, 0.18]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ N = 360·e^(−μx) với μ = 0,061 mm⁻¹ cho nhôm và 0,17 mm⁻¹ cho chì; bài trong sách giáo khoa làm tròn tấm chì 5 mm thành 150. Sai số đếm ±√N (±19 ở mức 360), nên hai giá trị 360 và 355 coi như bằng nhau — tờ giấy thực tế không suy giảm chùm gamma."
+  },
+  "ket_qua_ky_vong": "Giấy hầu như không ảnh hưởng tới chùm gamma, nhôm giảm ít, chì giảm mạnh và giảm theo hàm mũ khi tăng bề dày; kết luận phải chọn đúng vật liệu và đủ dày.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng chỉ cần có một tấm chắn bất kì là an toàn với mọi loại tia.",
+    "Cho rằng tấm chắn dày gấp đôi thì số đếm giảm một nửa (quên quy luật hàm mũ).",
+    "Cho rằng nguồn alpha nguy hiểm hơn nguồn gamma vì 'tia alpha mạnh hơn' — thực tế ngoài cơ thể nó bị tờ giấy chặn."
+  ],
+  "sai_so_thuong_gap": [
+    "Khe hở giữa các tấm chắn hoặc tấm chắn không phủ hết mặt đầu dò làm tia lọt thẳng vào.",
+    "Số đếm ở mức thấp (dưới 100) có sai số tương đối lớn, dễ kết luận sai thứ tự giữa hai vật liệu.",
+    "Tấm chì mỏng có thể phát tia hãm khi chắn tia beta năng lượng cao — cần lớp nhựa phía trước."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Kéo tấm chắn vào giữa nguồn và đầu dò, chọn vật liệu từ danh sách; đồ thị N(x) vẽ theo hàm e^(−μx) và bảng số liệu tự điền.",
+    "diem_nhan": "Cho thấy ba đường suy giảm có độ dốc rất khác nhau: giấy gần như nằm ngang, chì tụt nhanh — trực quan hoá vì sao phòng X-quang dùng tạp dề chì."
+  },
+  "an_toan": [
+    "Không chạm tay vào nguồn; dùng kẹp dài và cất nguồn vào hộp chì ngay sau khi đo.",
+    "Đeo liều kế cá nhân; không đứng giữa nguồn và đầu dò khi chùm tia hướng ra ngoài.",
+    "Cẩn thận khiêng tấm chì nặng, tránh kẹp tay."
+  ]
+}

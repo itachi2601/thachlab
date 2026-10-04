@@ -1,0 +1,87 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "lesson_id": 17,
+  "nguon_trong_bai": "content/lesson-samples/l12-phan-hach-nhiet-hach/theory.html",
+  "id": "tn-l12-phanbach-02",
+  "ten": "Chèn tấm chắn vào bàn ghim — mô hình thanh điều khiển hấp thụ neutron",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "phanhach.thanh_dieu_khien",
+    "phanhach.he_so_nhan_neutron"
+  ],
+  "muc_tieu": "Dùng lại bàn ghim ở mức lan mạnh (k > 1), chèn dần một tấm chắn để thấy \"vật hấp thụ\" kéo hệ số nhân xuống: từ tăng nhanh qua tự duy trì rồi tắt — đúng cách thanh điều khiển làm việc trong lò.",
+  "dung_cu": [
+    { "ten": "Bàn ghim đã dựng ở thí nghiệm trước", "so_luong": 1, "ghi_chu": "lưới 7 × 7, khoảng cách 2 cm" },
+    { "ten": "Tấm bìa cứng hoặc nhựa mỏng", "so_luong": 2, "ghi_chu": "cắt sẵn để che 30% và 60% diện tích lưới" },
+    { "ten": "Bi thép đường kính 12–15 mm", "so_luong": 1 },
+    { "ten": "Thước thẳng", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Giữ lưới ghim ở khoảng cách 2 cm. Thả bi không chắn, đếm số ghim đổ; làm ba lần.",
+      "Đặt tấm bìa nằm phẳng trên mặt xốp, che khoảng 30% lưới rồi thả bi vào vùng không bị che; đếm số ghim đổ, làm ba lần.",
+      "Làm lại với tấm che 60%, ghi số ghim đổ từng lần."
+    ],
+    "quan_sat": [
+      "Không chắn: dây chuyền lan gần hết bàn, khoảng 34–37 ghim đổ.",
+      "Che 30%: số ghim đổ tụt còn khoảng một phần ba, quanh 10–12 ghim.",
+      "Che 60%: chỉ còn vài ghim đổ (3–5), dây chuyền tắt ngay sau thế hệ đầu."
+    ],
+    "rut_ra": [
+      "Tấm chắn không làm phản ứng chậm lại mà \"lấy đi\" các ghim đang lan truyền, đúng như thanh điều khiển hấp thụ neutron.",
+      "Che càng nhiều thì k càng nhỏ: từ k > 1 xuống k ≈ 1 rồi k < 1.",
+      "Muốn giảm công suất lò thì đẩy thanh điều khiển vào sâu hơn; đẩy đủ sâu thì lò tắt."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p", "ten": "Phần diện tích lưới bị tấm chắn che", "don_vi": "%", "kieu": "dieu_chinh", "min": 0, "max": 60, "mac_dinh": 30, "buoc": 30 },
+    { "ky_hieu": "N0", "ten": "Số ghim ban đầu", "don_vi": "ghim", "kieu": "co_dinh", "gia_tri": 49 },
+    { "ky_hieu": "N_do", "ten": "Số ghim đổ trong một lần thả", "don_vi": "ghim", "kieu": "do_duoc", "sai_so_do": 2 },
+    { "ky_hieu": "k", "ten": "Hệ số nhân ước lượng", "don_vi": "", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Hệ số nhân giảm khi phần bị che tăng: k(p) nhỏ hơn k(0) khi p > 0 (mô hình định tính, không theo dạng tuyến tính)",
+      "Ba mức: che 0% cho k > 1 · che khoảng 30% cho k ≈ 1 · che từ 60% trở lên cho k < 1",
+      "Trong lò thật, thanh điều khiển (bo, cađimi) hấp thụ neutron nên làm giảm k theo cùng cách"
+    ],
+    "gia_thiet": [
+      "tấm chắn chặn tuyệt đối mọi ghim đi qua, thực tế còn khe hở ở mép",
+      "ghim phân bố đều nên phần trăm diện tích che xấp xỉ phần trăm ghim bị chặn",
+      "không kể ghim đổ do tấm bìa xô lệch khi đặt xuống"
+    ],
+    "ghi_chu": "Đây là mô hình ĐỊNH TÍNH: mục đích là thấy chiều biến thiên của k khi chèn vật hấp thụ, không phải đo giá trị k thật của lò."
+  },
+  "so_lieu_mau": {
+    "cot": ["Phần bị che (%)", "Số ghim đổ (3 lần)", "k ước lượng"],
+    "hang": [
+      [0, "36 · 34 · 37", 1.6],
+      [30, "12 · 10 · 11", 1.0],
+      [60, "4 · 5 · 3", 0.6]
+    ],
+    "ghi_chu": "Số liệu minh hoạ từ mô hình. Khi làm thật, mức che 30% thường cho số ghim đổ chênh lệch rõ giữa ba lần vì tấm bìa không đặt đúng cùng vị trí."
+  },
+  "ket_qua_ky_vong": "Số ghim đổ giảm mạnh và có ngưỡng khi tăng phần bị che: trên một mức che nào đó, dây chuyền không lan được nữa dù vẫn còn ghim trên bàn.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng thanh điều khiển làm nguội lò — thực ra nó hấp thụ neutron, tức can thiệp vào hệ số nhân k.",
+    "Cho rằng che ít thì không ảnh hưởng gì, trong khi k chỉ cần tụt dưới 1 là phản ứng tắt dần.",
+    "Lẫn \"giảm công suất\" với \"tắt lò\": hạ k xuống dưới 1 mới là tắt."
+  ],
+  "sai_so_thuong_gap": [
+    "Tấm bìa che không đúng cùng một vị trí giữa ba lần lặp: lệch tới 2 ghim.",
+    "Tấm bìa dày làm bi nảy lệch hướng, số ghim đổ phụ thuộc hướng nảy nhiều hơn phần bị che.",
+    "Đếm cả ghim bị tấm bìa xô đổ khi đặt xuống."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Thanh trượt \"độ sâu thanh điều khiển\" 0–100%; ghim đổ lan theo từng thế hệ, phần bị che hiện mờ đi và không truyền được; bảng ghi số ghim đổ và k theo từng mức.",
+    "diem_nhan": "Cho thấy quan hệ có ngưỡng giữa mức hấp thụ và sự duy trì phản ứng — vì sao trong lò phải chỉnh thanh điều khiển rất chính xác."
+  },
+  "an_toan": [
+    "Ghim nhọn: đặt tấm bìa bằng cách hạ phẳng, không miết tay qua lưới ghim.",
+    "Không dùng vật chắn bằng kim loại cứng có cạnh sắc."
+  ]
+}

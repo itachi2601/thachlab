@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-02",
+  "ten": "Dây treo giữa hai cực nam châm chữ U — kiểm chứng quy tắc bàn tay trái",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "luctu.phuong_chieu_luc_tu",
+    "luctu.quy_tac_ban_tay_trai",
+    "luctu.luc_tu_len_day"
+  ],
+  "muc_tieu": "Thấy tận mắt lực từ đẩy dây lệch khỏi vị trí cân bằng, đổi chiều khi đảo chiều dòng điện, và mất hẳn khi dây song song với đường sức từ — đúng như quy tắc bàn tay trái.",
+  "dung_cu": [
+    { "ten": "Nam châm chữ U gắn trên đế", "so_luong": 1 },
+    { "ten": "Đoạn dây nhôm mảnh dài 10–15 cm", "so_luong": 1, "ghi_chu": "dùng dây mềm để thấy rõ độ lệch" },
+    { "ten": "Giá treo và hai sợi chỉ mảnh", "so_luong": 1 },
+    { "ten": "Nguồn một chiều 3–6 V và công tắc", "so_luong": 1 },
+    { "ten": "Biến trở 20 Ω, ampe kế", "so_luong": 1 },
+    { "ten": "Thước thẳng có chia milimét", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Treo đoạn dây nhôm vào hai sợi chỉ sao cho dây nằm ngang, vuông góc với đường sức từ, ngay giữa hai cực nam châm chữ U.",
+      "Đánh dấu vị trí cân bằng của dây trên thước, nối dây với nguồn một chiều qua biến trở và công tắc.",
+      "Đóng công tắc vài giây, ghi độ lệch và chiều lệch; đảo hai đầu nguồn rồi làm lại; cuối cùng xoay nam châm 90° cho dây song song với đường sức và đóng mạch."
+    ],
+    "quan_sat": [
+      "Vừa đóng mạch, dây bị đẩy lệch khỏi vị trí cân bằng rồi dừng ở vị trí mới vì bị chỉ treo giữ lại.",
+      "Đảo hai đầu nguồn thì dây lệch về phía ngược lại với cùng độ lớn.",
+      "Khi dây song song với đường sức từ, đóng mạch mà dây không nhúc nhích."
+    ],
+    "rut_ra": [
+      "Lực từ có phương vuông góc với đoạn dây và vuông góc với đường sức từ.",
+      "Chiều lực từ phụ thuộc chiều dòng điện, xác định được bằng quy tắc bàn tay trái.",
+      "Dây song song với đường sức thì lực từ bằng 0, không cần dùng quy tắc bàn tay trái."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "I", "ten": "Cường độ dòng điện qua đoạn dây", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.5, "max": 5.0, "mac_dinh": 2.0, "buoc": 0.5 },
+    { "ky_hieu": "alpha", "ten": "Góc giữa đoạn dây và đường sức từ", "don_vi": "độ", "kieu": "dieu_chinh", "min": 0, "max": 90, "mac_dinh": 90, "buoc": 15 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ giữa hai cực nam châm", "don_vi": "T", "kieu": "co_dinh", "gia_tri": 0.1 },
+    { "ky_hieu": "l", "ten": "Chiều dài đoạn dây nằm trong từ trường", "don_vi": "m", "kieu": "co_dinh", "gia_tri": 0.05 },
+    { "ky_hieu": "F", "ten": "Lực từ tác dụng lên đoạn dây", "don_vi": "mN", "kieu": "tinh_ra" },
+    { "ky_hieu": "x", "ten": "Độ lệch của dây so với vị trí cân bằng", "don_vi": "mm", "kieu": "do_duoc", "sai_so_do": 1 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Lực từ: F = B·I·l·sin(alpha)",
+      "Dây vuông góc đường sức (alpha = 90°): F = 0,10 · I · 0,05 · 1000 = 5,0 · I (mN)",
+      "Dây song song đường sức (alpha = 0°): F = 0",
+      "Độ lệch tỉ lệ với lực khi góc lệch còn nhỏ: x ≈ F / k với k là độ cứng của hệ hai sợi chỉ"
+    ],
+    "gia_thiet": [
+      "từ trường giữa hai cực coi như đều và cùng phương trong cả vùng có dây",
+      "dây không dãn và hai sợi chỉ luôn căng nên dây chỉ dịch ngang trong mặt phẳng ngang",
+      "bỏ qua lực điện từ giữa hai phần dây nối và từ trường Trái Đất (nhỏ hơn nhiều so với 0,1 T)"
+    ],
+    "ghi_chu": "Mô phỏng cho kéo thanh trượt dòng điện và thanh trượt góc alpha; dây vẽ lệch theo F, đổi dấu dòng thì lệch đổi phía. Nhấn mạnh hình ảnh ở alpha = 0°: dây đứng yên tuy vẫn có dòng."
+  },
+  "so_lieu_mau": {
+    "cot": ["I (A)", "alpha (độ)", "F = B·I·l·sin(alpha) (mN)"],
+    "hang": [
+      [2.0, 90, 10.0],
+      [2.0, 45, 7.1],
+      [2.0, 30, 5.0],
+      [2.0, 0, 0.0],
+      [4.0, 90, 20.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với B = 0,10 T, l = 5,0 cm. Đảo chiều dòng điện thì độ lớn F không đổi nhưng chiều lệch của dây đổi ngược lại — bảng không thể hiện được chiều."
+  },
+  "ket_qua_ky_vong": "Dây lệch ngay khi đóng mạch, lệch ngược lại khi đảo chiều dòng điện, lệch mạnh nhất khi dây vuông góc đường sức và hoàn toàn đứng yên khi dây song song đường sức.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng đảo chiều dòng điện chỉ làm dây lệch yếu đi chứ không đổi phía.",
+    "Cho rằng dây nằm trong từ trường thì chắc chắn bị đẩy, kể cả khi dây song song với đường sức.",
+    "Cho rằng dây bị kéo dọc theo chính nó chứ không phải bị đẩy vuông góc."
+  ],
+  "sai_so_thuong_gap": [
+    "Đóng mạch quá lâu làm dây nóng và chùng, vị trí cân bằng dịch đi.",
+    "Hai sợi chỉ treo không song song nên dây có thêm chuyển động xoay.",
+    "Đoạn dây dài hơn khe nam châm: phần ngoài khe không chịu lực nhưng vẫn nằm trong chiều dài l đem chia."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+so_do_luc",
+    "y_tuong": "Hai cực nam châm chữ U nhìn từ trên xuống, đoạn dây treo vẽ bằng nét đậm; vectơ B vẽ bằng mũi tên xanh, chiều dòng bằng mũi tên cam dọc dây, lực từ bằng mũi tên đỏ vuông góc.",
+    "diem_nhan": "Khi kéo alpha về 0, mũi tên đỏ co lại bằng 0 dù dòng điện vẫn chạy — đúng chỗ học sinh hay quên kiểm tra."
+  },
+  "an_toan": [
+    "Dòng 4–5 A qua dây nhôm mảnh làm dây nóng: chỉ đóng mạch vài giây.",
+    "Nam châm chữ U khá nặng, kẹp chặt đế trước khi treo dây để không rơi vào chân."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 5. Thuyết động học phân tử chất khí",
+  "lesson_id": 6,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/theory.html",
+  "id": "tn-l12-tdhphantu-01",
+  "ten": "Hạt khói trong hộp kính: chuyển động Brown trong chất khí",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tdhphantu.chuyen_dong_brown",
+    "tdhphantu.phan_tu_chuyen_dong_khong_ngung"
+  ],
+  "muc_tieu": "Cho học sinh nhìn thấy bằng mắt chuyển động hỗn loạn của hạt khói lơ lửng trong không khí đứng yên, từ đó suy ra các phân tử khí chuyển động hỗn loạn, không ngừng.",
+  "dung_cu": [
+    { "ten": "Hộp kính trong suốt có nắp đậy kín", "so_luong": 1, "ghi_chu": "hộp mica hoặc hộp nhựa trong, khoảng 10 × 10 × 10 cm" },
+    { "ten": "Que hương hoặc điếu thuốc đang cháy", "so_luong": 1, "ghi_chu": "chỉ dùng trong phòng thoáng, có người lớn" },
+    { "ten": "Đèn pin hoặc bút laser", "so_luong": 1, "ghi_chu": "laser công suất thấp, không chiếu vào mắt" },
+    { "ten": "Kính lúp hoặc kính hiển vi quang học", "so_luong": 1, "ghi_chu": "không bắt buộc, giúp thấy rõ hơn" },
+    { "ten": "Nền tối (bìa đen, vải đen)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đốt que hương, cho khói vào hộp kính rồi đậy kín nắp ngay; chờ khoảng 30 giây cho khói phân bố đều.",
+      "Đặt hộp lên nền tối. Rọi chùm sáng đèn pin hoặc laser ngang qua hộp, vuông góc với hướng nhìn.",
+      "Nhìn vào vùng sáng trong hộp, ghi lại đường đi của vài hạt sáng trong 30 giây. Làm lại lần hai ở nhiệt độ phòng khác (ví dụ bật máy lạnh hoặc để gần bóng đèn)."
+    ],
+    "quan_sat": [
+      "Mỗi hạt khói hiện thành một chấm sáng nhảy múa: sang phải, sang trái, lên, xuống, không hạt nào đứng yên.",
+      "Hai hạt cạnh nhau đi hai kiểu khác nhau, không cùng chiều — dấu hiệu loại trừ nguyên nhân 'có gió' hay 'đối lưu một chiều'.",
+      "Khi hộp ấm hơn, các chấm sáng nhảy nhanh và dữ dội hơn rõ rệt so với khi hộp lạnh."
+    ],
+    "rut_ra": [
+      "Hạt khói nặng hơn phân tử khí rất nhiều, nó không tự chuyển động được; cái đẩy nó là các phân tử khí va đập.",
+      "Số va đập hai phía một hạt không bao giờ cân bằng tuyệt đối, nên hạt bị đẩy lệch liên tục — đó là chuyển động Brown.",
+      "Chuyển động Brown xảy ra cả trong chất khí, không chỉ trong chất lỏng, và là bằng chứng gián tiếp cho chuyển động hỗn loạn không ngừng của phân tử."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "T", "ten": "Nhiệt độ không khí trong hộp", "don_vi": "°C", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 27, "buoc": 1 },
+    { "ky_hieu": "d", "ten": "Đường kính hạt khói", "don_vi": "µm", "kieu": "dieu_chinh", "min": 0.2, "max": 5, "mac_dinh": 1, "buoc": 0.2 },
+    { "ky_hieu": "n", "ten": "Số phân tử khí trong 1 cm³", "don_vi": "phân tử", "kieu": "tinh_ra" },
+    { "ky_hieu": "v_p", "ten": "Tốc độ trung bình của phân tử khí", "don_vi": "m/s", "kieu": "tinh_ra" },
+    { "ky_hieu": "N_A", "ten": "Số Avogadro", "don_vi": "mol⁻¹", "kieu": "co_dinh", "gia_tri": 6.02e23 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số phân tử trong 1 cm³ khí ở đktc: n = (10⁻³ lít / 22,4 lít.mol⁻¹) · N_A ≈ 2,7.10¹⁹ phân tử",
+      "Tốc độ trung bình phân tử khí ở đktc: v_p ≈ 400 m/s, tăng theo nhiệt độ",
+      "Hạt khói khối lượng m chịu tổng xung lượng của các va chạm trong khoảng thời gian Δt; vì số va đập hai phía lệch nhau ngẫu nhiên nên hạt chuyển động theo đường gấp khúc"
+    ],
+    "gia_thiet": [
+      "hộp đậy kín, không có gió và không có dòng đối lưu đáng kể",
+      "hạt khói đủ nhỏ để số va đập mỗi giây lên nó là rất lớn, nhưng vẫn lớn hơn phân tử khí hàng nghìn lần",
+      "bỏ qua lực tĩnh điện và lực hấp dẫn tác dụng lên hạt khói trong thời gian quan sát"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt nhiệt độ và đường kính hạt: nhiệt độ tăng làm tốc độ phân tử tăng, hạt nhỏ thì quỹ đạo gấp khúc rõ hơn. Vẽ quỹ đạo của một hạt theo thời gian thay vì chỉ vẽ các mũi tên va đập."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ hộp (°C)", "Mức nhảy của hạt (thang 1–5)"],
+    "hang": [
+      [10, 2],
+      [25, 3],
+      [40, 4],
+      [55, 5]
+    ],
+    "ghi_chu": "Số liệu minh hoạ cho mức độ chuyển động nhìn thấy của hạt khói (tự đánh giá theo thang 1–5), không phải số đo chính xác. Ở đktc, tốc độ trung bình của phân tử khí vào khoảng 400 m/s và 1 cm³ khí chứa cỡ 2,7.10¹⁹ phân tử."
+  },
+  "ket_qua_ky_vong": "Mỗi hạt khói đi một đường gấp khúc riêng, không hạt nào đứng yên, và mức nhảy tăng rõ khi hộp ấm lên — không có hạt nào bị cuốn theo một chiều chung.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng hạt khói tự chuyển động, hoặc cho rằng phải có gió/đối lưu mới đẩy được hạt.",
+    "Nghĩ rằng ánh sáng chiếu vào đã tạo lực đẩy hạt bụi, trong khi ánh sáng chỉ giúp nhìn thấy hạt.",
+    "Lẫn chuyển động Brown với chuyển động của chính phân tử: hạt khói to hơn phân tử rất nhiều lần."
+  ],
+  "sai_so_thuong_gap": [
+    "Hộp chưa đậy kín nên có dòng khí nhẹ từ ngoài vào, làm mọi hạt bị cuốn cùng chiều.",
+    "Nền không đủ tối nên chỉ thấy vài hạt to, dễ kết luận sai là hạt không chuyển động.",
+    "Chùm sáng quá mạnh làm nóng không khí trong hộp, sinh đối lưu cục bộ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Hộp kính 2D với vài hạt khói và hàng trăm phân tử khí nhỏ; phân tử chuyển động hỗn loạn, va vào hạt khói và làm hạt đi đường gấp khúc.",
+    "diem_nhan": "Cho thấy quỹ đạo gấp khúc của hạt khói sinh ra từ vô số va chạm riêng lẻ, và tăng nhiệt độ thì cả phân tử lẫn hạt đều chuyển động mạnh hơn."
+  },
+  "an_toan": [
+    "Không chiếu laser vào mắt người khác; chỉ rọi ngang qua hộp.",
+    "Đốt hương ở nơi thoáng, có người lớn, tránh xa vật dễ cháy."
+  ]
+}

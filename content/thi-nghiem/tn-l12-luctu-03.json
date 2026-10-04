@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-03",
+  "ten": "Khung dây tự quay trong từ trường nhờ ngẫu lực từ",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "luctu.ngau_luc_tu",
+    "luctu.momen_ngau_luc",
+    "luctu.luc_tu_len_day"
+  ],
+  "muc_tieu": "Chứng tỏ hai cạnh đối diện của khung dây chịu hai lực từ cùng độ lớn, ngược chiều, tạo thành ngẫu lực làm khung quay — và mômen ngẫu lực tính bằng M = N·B·I·S.",
+  "dung_cu": [
+    { "ten": "Khung giấy cứng hình chữ nhật 3 cm × 4 cm", "so_luong": 1 },
+    { "ten": "Dây đồng mảnh có vỏ cách điện", "so_luong": 1, "ghi_chu": "quấn khoảng 20 vòng" },
+    { "ten": "Hai kim khâu (hoặc trục quay bằng tăm tre)", "so_luong": 2 },
+    { "ten": "Nam châm chữ U", "so_luong": 1 },
+    { "ten": "Pin 1,5 V và hai dây nối mềm", "so_luong": 1 },
+    { "ten": "Giá đỡ có kẹp", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Quấn 20 vòng dây quanh khung giấy, chừa hai đầu dây dài để nối nguồn.",
+      "Luồn hai kim khâu qua hai cạnh ngắn của khung làm trục quay, đặt khung vào giữa hai cực nam châm chữ U sao cho trục quay vuông góc với đường sức.",
+      "Nối hai đầu dây với pin qua hai dây mềm (không để dây nối căng làm khung không quay được), quan sát rồi đảo hai đầu pin và làm lại."
+    ],
+    "quan_sat": [
+      "Vừa nối pin, khung giật quay một góc rồi dừng khi mặt phẳng khung vuông góc với đường sức từ.",
+      "Đảo hai đầu pin thì khung quay ngược lại; tháo pin thì khung đứng yên.",
+      "Tăng số vòng dây hoặc dùng nam châm mạnh hơn thì khung quay nhanh hơn và dừng ở cùng vị trí."
+    ],
+    "rut_ra": [
+      "Hai cạnh dài của khung mang dòng điện ngược chiều nhau nên chịu hai lực từ cùng độ lớn, ngược chiều.",
+      "Hai lực đó không cùng đường thẳng nên hợp lực bằng 0 nhưng mômen khác 0: khung quay mà tâm khung không dịch chuyển.",
+      "Mômen ngẫu lực từ bằng M = N·B·I·S, tỉ lệ với số vòng dây, cảm ứng từ, dòng điện và diện tích khung."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "N", "ten": "Số vòng dây của khung", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 1, "max": 50, "mac_dinh": 20, "buoc": 1 },
+    { "ky_hieu": "I", "ten": "Cường độ dòng điện trong khung", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.1, "max": 2.0, "mac_dinh": 0.5, "buoc": 0.1 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ giữa hai cực nam châm", "don_vi": "T", "kieu": "dieu_chinh", "min": 0.05, "max": 0.5, "mac_dinh": 0.2, "buoc": 0.05 },
+    { "ky_hieu": "S", "ten": "Diện tích một vòng khung", "don_vi": "m2", "kieu": "co_dinh", "gia_tri": 0.0012 },
+    { "ky_hieu": "M", "ten": "Mômen ngẫu lực từ", "don_vi": "N.m", "kieu": "tinh_ra" },
+    { "ky_hieu": "goc_quay", "ten": "Góc khung quay được trước khi dừng", "don_vi": "độ", "kieu": "do_duoc", "sai_so_do": 5 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Lực từ trên mỗi cạnh dài a: F = B·I·a",
+      "Mômen ngẫu lực từ: M = N·B·I·S·sin(alpha), cực đại M_max = N·B·I·S khi mặt phẳng khung song song đường sức; S = a·b, alpha là góc giữa B và pháp tuyến mặt phẳng khung",
+      "Với S = 3 cm × 4 cm = 1,2.10^-3 m2, B = 0,20 T: M_max = N·I·2,4.10^-4 (N.m)",
+      "Khung dừng khi mặt phẳng khung vuông góc với đường sức, tức vectơ pháp tuyến của khung song song với B"
+    ],
+    "gia_thiet": [
+      "từ trường giữa hai cực nam châm coi như đều trên cả diện tích khung",
+      "bỏ qua ma sát ở trục quay và lực cản của không khí",
+      "bỏ qua từ trường của chính dòng điện trong khung",
+      "dây nối mềm không tạo mômen cản lên khung"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ khung nhìn từ trên xuống, hai mũi tên đỏ ngược chiều ở hai cạnh dài, một mũi tên mômen cong quanh trục; cho kéo thanh trượt N, I, B để thấy mômen và tốc độ quay đổi theo."
+  },
+  "so_lieu_mau": {
+    "cot": ["N (vòng)", "I (A)", "M_max = N·B·I·S (N.m)"],
+    "hang": [
+      [20, 0.5, 0.0024],
+      [20, 1.0, 0.0048],
+      [40, 0.5, 0.0048],
+      [50, 2.0, 0.024],
+      [10, 0.5, 0.0012]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với B = 0,20 T, S = 1,2.10^-3 m2. Hai hàng 2 và 3 cho cùng mômen: tăng gấp đôi số vòng cũng cho kết quả như tăng gấp đôi dòng điện."
+  },
+  "ket_qua_ky_vong": "Khung quay ngay khi có dòng điện và dừng lại ở vị trí mặt phẳng khung vuông góc với đường sức từ; đảo chiều dòng thì khung quay ngược lại; mômen quay tăng theo số vòng dây, dòng điện, cảm ứng từ và diện tích khung.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng khung bị đẩy tịnh tiến ra khỏi vùng từ trường thay vì quay tại chỗ.",
+    "Cho rằng khung quay liên tục mãi như động cơ thật, trong khi khung ở đây chỉ quay rồi dừng.",
+    "Cho rằng mômen ngẫu lực phụ thuộc hình dạng khung chứ không phải diện tích khung."
+  ],
+  "sai_so_thuong_gap": [
+    "Hai dây nối bị căng nên hãm khung, góc quay đo được nhỏ hơn thực tế.",
+    "Trục quay không vuông góc với đường sức làm khung vừa quay vừa lắc.",
+    "Khung quay hết một góc lớn thì từ trường ở mép nam châm không còn đều."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Khung chữ nhật nhìn từ trên xuống giữa hai cực nam châm, hai cạnh dài vẽ hai mũi tên lực ngược chiều; khung quay dần quanh trục khi bấm chạy và dừng ở vị trí vuông góc với đường sức.",
+    "diem_nhan": "Cho thấy hai lực bằng nhau ngược chiều: hợp lực bằng 0 (tâm khung đứng yên) nhưng khung vẫn quay — đúng định nghĩa ngẫu lực."
+  },
+  "an_toan": [
+    "Dòng 2 A qua 20 vòng dây có thể làm dây nóng: chỉ đóng mạch trong thời gian ngắn.",
+    "Đầu kim khâu nhọn, cắm vào nút bấc hoặc ghim vào giá đỡ khi không dùng."
+  ]
+}

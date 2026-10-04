@@ -1,0 +1,95 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "lesson_id": 127,
+  "nguon_trong_bai": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/theory.html",
+  "id": "tn-l12-dttruong-04",
+  "ten": "Thang sóng điện từ quanh em: mỗi thiết bị một bước sóng",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "dttruong.thang_song_dien_tu",
+    "dttruong.buoc_song_bang_c_chia_f"
+  ],
+  "muc_tieu": "Từ tần số ghi trên nhãn các thiết bị quen thuộc (đài FM, wifi, lò vi sóng, điện thoại, điều khiển từ xa, máy X-quang), tính bước sóng trong chân không rồi đặt chúng vào đúng vị trí trên thang sóng điện từ.",
+  "dung_cu": [
+    { "ten": "Đài FM hoặc ứng dụng radio trên điện thoại", "so_luong": 1, "ghi_chu": "dải 88–108 MHz" },
+    { "ten": "Router wifi hoặc điện thoại thông minh", "so_luong": 1, "ghi_chu": "nhãn ghi 2,4 GHz hoặc 5 GHz" },
+    { "ten": "Lò vi sóng", "so_luong": 1, "ghi_chu": "nhãn ghi 2,45 GHz" },
+    { "ten": "Điều khiển từ xa của tivi", "so_luong": 1, "ghi_chu": "hồng ngoại, bước sóng khoảng 0,9 μm" },
+    { "ten": "Máy tính có kết nối mạng", "so_luong": 1, "ghi_chu": "để tra bảng tần số của tia X, tia gamma" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Chép tần số ghi trên nhãn từng thiết bị: đài FM theo MHz, wifi và lò vi sóng theo GHz.",
+      "Đổi hết tần số về Hz, rồi tính bước sóng trong chân không bằng λ = c/f với c = 3·10⁸ m/s.",
+      "Điền thiết bị vào bảng theo thứ tự bước sóng giảm dần và ghi tên vùng sóng tương ứng.",
+      "Tra thêm bước sóng của tia X dùng trong nha khoa (khoảng 0,1 nm) để thấy thang sóng trải dài đến mức nào."
+    ],
+    "quan_sat": [
+      "Một đài FM 100 MHz cho bước sóng 3 m; wifi 2,4 GHz cho 12,5 cm; lò vi sóng 2,45 GHz cho 12,2 cm.",
+      "Điện thoại 4G ở 1800 MHz cho bước sóng 16,7 cm — cùng vùng vô tuyến với đài FM.",
+      "Điều khiển từ xa hồng ngoại có bước sóng dưới 1 μm, nhỏ hơn bước sóng vô tuyến hàng triệu lần.",
+      "Tia X 0,1 nm có tần số 3·10¹⁸ Hz, cao hơn tần số wifi khoảng tỉ lần."
+    ],
+    "rut_ra": [
+      "Mọi thiết bị này đều phát hoặc thu sóng điện từ, chỉ khác vùng bước sóng — cùng bản chất, cùng tốc độ c trong chân không.",
+      "Bước sóng tỉ lệ nghịch với tần số, nên đổi tần số là đổi luôn vị trí trên thang sóng.",
+      "Bước sóng càng nhỏ thì tần số và năng lượng càng lớn, nên tia X, tia gamma phải che chắn cẩn thận."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "f", "ten": "Tần số của sóng điện từ", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 100000, "max": 1e18, "mac_dinh": 2450000000, "buoc": 1000 },
+    { "ky_hieu": "c", "ten": "Tốc độ sóng điện từ trong chân không", "don_vi": "m/s", "kieu": "co_dinh", "gia_tri": 300000000 },
+    { "ky_hieu": "lambda", "ten": "Bước sóng trong chân không", "don_vi": "m", "kieu": "tinh_ra" },
+    { "ky_hieu": "lambda_do", "ten": "Bước sóng đo trên dây Lecher", "don_vi": "m", "kieu": "do_duoc", "sai_so_do": 0.005 },
+    { "ky_hieu": "h", "ten": "Hằng số Planck (dùng cho phần mở rộng)", "don_vi": "J.s", "kieu": "co_dinh", "gia_tri": 6.626e-34 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Bước sóng trong chân không: λ = c/f = cT",
+      "Từ bước sóng suy ngược tần số: f = c/λ",
+      "Mở rộng: năng lượng của một photon E = h·f = h·c/λ"
+    ],
+    "gia_thiet": [
+      "coi sóng truyền trong chân không (trong không khí, sai khác không đáng kể)",
+      "tần số do nguồn phát quyết định, không đổi khi sóng đi qua môi trường khác",
+      "các giá trị tần số lấy đúng theo nhãn thiết bị, không làm tròn"
+    ],
+    "ghi_chu": "Mô phỏng nên có một thang sóng điện từ nằm ngang theo thang logarit, kéo con trỏ tần số thì bước sóng và tên vùng sóng hiện ra, đồng thời một thiết bị minh hoạ sáng lên khi con trỏ vào đúng vùng của nó."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thiết bị / bức xạ", "Tần số f (Hz)", "Bước sóng λ"],
+    "hang": [
+      ["Đài FM", 100000000, "3 m"],
+      ["Wifi 2,4 GHz", 2400000000, "12,5 cm"],
+      ["Lò vi sóng", 2450000000, "12,2 cm"],
+      ["Điện thoại 4G (1800 MHz)", 1800000000, "16,7 cm"],
+      ["Điều khiển từ xa hồng ngoại", 330000000000000, "0,91 μm"],
+      ["Tia X nha khoa", 3e18, "0,1 nm"]
+    ],
+    "ghi_chu": "Bước sóng tính từ λ = c/f với c = 3·10⁸ m/s. Sáu dòng này trải từ vùng vô tuyến (3 m) tới tia X (0,1 nm), tức mười bậc về bước sóng."
+  },
+  "ket_qua_ky_vong": "Mỗi thiết bị quen thuộc ứng với một vùng của thang sóng điện từ; bước sóng giảm từ mét (vô tuyến) xuống nanomét (tia X) khi tần số tăng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng wifi, ánh sáng nhìn thấy và tia X là ba loại sóng khác nhau về bản chất.",
+    "Cho rằng sóng có tần số cao hơn thì truyền trong chân không nhanh hơn.",
+    "Cho rằng lò vi sóng làm nóng thức ăn bằng nhiệt truyền từ thành lò, không phải bằng năng lượng sóng điện từ.",
+    "Nhầm bước sóng của tia X (nanomét) với bước sóng vô tuyến (mét) vì cùng gọi là 'sóng'."
+  ],
+  "sai_so_thuong_gap": [
+    "Quên đổi GHz và MHz về Hz trước khi chia, dẫn tới bước sóng sai nghìn hoặc triệu lần.",
+    "Nhãn thiết bị ghi tần số danh định; tần số thực có thể lệch vài phần trăm theo kênh phát.",
+    "Đo bước sóng trên dây Lecher phải trừ sai số của thước và của đầu dò."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Thang sóng điện từ nằm ngang theo thang logarit; con trỏ tần số kéo được, bước sóng và tên vùng hiện tức thì, kèm bảng thiết bị mẫu.",
+    "diem_nhan": "Cho thấy chỉ một thanh trượt tần số mà đi hết từ sóng vô tuyến tới tia gamma, và tốc độ truyền trong chân không không hề đổi."
+  },
+  "an_toan": [
+    "Không nhìn trực tiếp vào đèn tử ngoại hoặc đèn flash mạnh.",
+    "Không tự ý vận hành máy X-quang; chỉ quan sát qua hình ảnh do cơ sở y tế cung cấp."
+  ]
+}

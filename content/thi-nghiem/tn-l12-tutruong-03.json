@@ -1,0 +1,182 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 9. Khái niệm từ trường",
+  "lesson_id": 10,
+  "nguon_trong_bai": "content/lesson-samples/l12-khai-niem-tu-truong/theory.html",
+  "id": "tn-l12-tutruong-03",
+  "ten": "Rắc mạt sắt xem từ phổ và so với đường sức từ vẽ theo quy ước",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tutruong.duong_suc_tu",
+    "tutruong.tu_pho"
+  ],
+  "muc_tieu": "Quan sát hình dạng từ trường của thanh nam châm, của hai cực cùng tên đặt gần nhau và của nam châm chữ U bằng mạt sắt; phân biệt từ phổ (ảnh thật) với đường sức từ (đường vẽ theo quy ước).",
+  "dung_cu": [
+    {
+      "ten": "Mạt sắt mịn (hoặc bột sắt) trong lọ có nắp lỗ",
+      "so_luong": 1,
+      "ghi_chu": "khoảng 20 g, dùng lại nhiều lần"
+    },
+    {
+      "ten": "Tấm nhựa trong hoặc kính mỏng khoảng 15 × 20 cm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thanh nam châm thẳng",
+      "so_luong": 2
+    },
+    {
+      "ten": "Nam châm chữ U",
+      "so_luong": 1
+    },
+    {
+      "ten": "Tờ giấy trắng lót dưới tấm nhựa",
+      "so_luong": 1
+    },
+    {
+      "ten": "Khăn mềm hoặc bàn chải nhỏ để thu hồi mạt sắt",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt thanh nam châm lên bàn, úp tấm nhựa trong lên trên rồi rắc một lớp mạt sắt mỏng.",
+      "Gõ nhẹ liên tục vào mép tấm nhựa cho mạt sắt ổn định thành hình, rồi quan sát và chụp ảnh lại.",
+      "Thu mạt sắt, làm lại với hai thanh nam châm đặt sao cho hai cực cùng tên hướng vào nhau, cách nhau khoảng 4 cm.",
+      "Làm lại lần thứ ba với nam châm chữ U, rắc mạt sắt ở khoảng giữa hai cực."
+    ],
+    "quan_sat": [
+      "Với thanh nam châm: mạt sắt xếp thành những chuỗi cong nối từ cực này sang cực kia, dày nhất ở sát hai cực.",
+      "Với hai cực cùng tên: các chuỗi bị đẩy ra xa nhau, để lại một vùng gần như trống ở giữa.",
+      "Với nam châm chữ U: ở khoảng giữa hai cực, các chuỗi gần như song song và cách đều nhau.",
+      "Gõ mạnh hơn hoặc rắc dày hơn làm hình bị nhoè, các chuỗi dính vào nhau."
+    ],
+    "rut_ra": [
+      "Từ phổ cho biết hình dạng và mật độ tương đối của từ trường, nhưng không cho biết chiều.",
+      "Vùng mạt sắt dày là vùng từ trường mạnh hơn — tương ứng quy ước vẽ đường sức mau ở chỗ mạnh.",
+      "Giữa hai cực nam châm chữ U, các đường sức song song và cách đều: đó là từ trường đều."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "k",
+      "ten": "Khoảng cách giữa hai cực cùng tên",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 2,
+      "max": 10,
+      "mac_dinh": 4,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "m_day",
+      "ten": "Độ dày lớp mạt sắt",
+      "don_vi": "g",
+      "kieu": "dieu_chinh",
+      "min": 2,
+      "max": 20,
+      "mac_dinh": 8,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "F_go",
+      "ten": "Số lần gõ mép tấm",
+      "don_vi": "lần",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 30,
+      "mac_dinh": 15,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "B_cuc",
+      "ten": "Cảm ứng từ sát mặt cực nam châm",
+      "don_vi": "mT",
+      "kieu": "co_dinh",
+      "gia_tri": 30
+    },
+    {
+      "ky_hieu": "n_vach",
+      "ten": "Số chuỗi mạt sắt đếm được trên một đường thẳng nối hai cực",
+      "don_vi": "chuỗi",
+      "kieu": "do_duoc",
+      "sai_so_do": 1
+    },
+    {
+      "ky_hieu": "B_vung",
+      "ten": "Cảm ứng từ suy ra từ mật độ chuỗi",
+      "don_vi": "mT",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Mật độ chuỗi mạt sắt tỉ lệ với độ lớn cảm ứng từ: n_vach / S ~ B",
+      "Với nam châm chữ U, khoảng giữa hai cực coi là từ trường đều: B không đổi theo vị trí trên mặt phẳng giữa hai cực",
+      "Ở sát mặt cực của nam châm thẳng: B_cuc ~ 30 mT giảm còn khoảng vài mT ở cách 2 cm"
+    ],
+    "gia_thiet": [
+      "mạt sắt đủ mịn và đủ ít để mỗi hạt nhiễm từ độc lập, không dính thành cục",
+      "gõ đủ nhẹ để các chuỗi chưa bị xô lệch khỏi vị trí cân bằng",
+      "bỏ qua từ trường Trái Đất vì nó yếu hơn nhiều so với từ trường của nam châm ở sát cực"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt k (khoảng cách hai cực cùng tên) và số lần gõ: số lần gõ ít thì chuỗi còn lộn xộn, gõ nhiều thì hiện rõ mô hình chuỗi và vùng trống giữa hai cực."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Cấu hình",
+      "Số chuỗi trên 4 cm",
+      "Nhận xét mật độ"
+    ],
+    "hang": [
+      [
+        "Thanh nam châm, sát cực bắc",
+        9,
+        "dày nhất"
+      ],
+      [
+        "Thanh nam châm, giữa thân",
+        5,
+        "thưa hơn"
+      ],
+      [
+        "Thanh nam châm, cách cực 4 cm",
+        3,
+        "thưa"
+      ],
+      [
+        "Hai cực cùng tên, cách 4 cm",
+        2,
+        "có vùng trống ở giữa"
+      ],
+      [
+        "Nam châm chữ U, giữa hai cực",
+        8,
+        "đều nhau trên cả bề rộng"
+      ]
+    ],
+    "ghi_chu": "Số chuỗi là số liệu minh hoạ đếm trên ảnh chụp, không phải phép đo chính xác; hai lần đếm có thể lệch nhau 1 chuỗi."
+  },
+  "ket_qua_ky_vong": "Mạt sắt xếp thành các chuỗi mô tả hình dạng từ trường: khép kín qua hai cực với thanh nam châm, bị đẩy ra xa khi hai cực cùng tên, và song song cách đều ở khoảng giữa nam châm chữ U.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng từ phổ chính là các đường sức từ được nam châm vẽ ra sẵn trong không gian.",
+    "Cho rằng chỗ mạt sắt thưa là chỗ không có từ trường.",
+    "Cho rằng rắc càng nhiều mạt sắt thì hình càng rõ."
+  ],
+  "sai_so_thuong_gap": [
+    "Rắc quá dày làm các chuỗi dính vào nhau, không đọc được hình dạng.",
+    "Không gõ hoặc gõ quá mạnh: mạt sắt không xếp thành chuỗi hoặc bị xô khỏi vị trí.",
+    "Tấm nhựa bị tích điện hút mạt sắt thành đám rối."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Hai chế độ xem cạnh nhau: bên trái là từ phổ mạt sắt, bên phải là đường sức từ vẽ theo quy ước có mũi tên chiều, cho người học kéo thanh trượt rồi so sánh.",
+    "diem_nhan": "So sánh trực tiếp giúp phân biệt ảnh thật với đường vẽ quy ước, và thấy vùng thưa giữa hai cực cùng tên không phải là vùng không có từ trường."
+  },
+  "an_toan": [
+    "Mạt sắt bám vào tay và quần áo: thao tác trên tờ giấy, thu hồi bằng khăn mềm.",
+    "Không thổi mạt sắt bằng miệng để tránh bay vào mắt."
+  ]
+}

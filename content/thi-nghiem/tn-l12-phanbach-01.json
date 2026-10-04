@@ -1,0 +1,91 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "lesson_id": 17,
+  "nguon_trong_bai": "content/lesson-samples/l12-phan-hach-nhiet-hach/theory.html",
+  "id": "tn-l12-phanbach-01",
+  "ten": "Bàn ghim mô hình phản ứng dây chuyền: đổi khoảng cách để đổi hệ số nhân",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "phanhach.he_so_nhan_neutron",
+    "phanhach.day_chuyen"
+  ],
+  "muc_tieu": "Cho học sinh tự tay thấy ba chế độ của phản ứng dây chuyền: lan không nổi (k < 1), lan vừa đủ (k ≈ 1) và lan khắp bàn (k > 1) — chỉ bằng cách đổi khoảng cách giữa các ghim.",
+  "dung_cu": [
+    { "ten": "Tấm xốp hoặc bảng ghim 40 cm × 40 cm", "so_luong": 1 },
+    { "ten": "Ghim đầu tròn (ghim bấm bảng)", "so_luong": 49, "ghi_chu": "lưới 7 × 7" },
+    { "ten": "Bi thép đường kính 12–15 mm", "so_luong": 1 },
+    { "ten": "Thước chia đến milimét", "so_luong": 1 },
+    { "ten": "Ống nhựa hoặc máng giấy để thả bi từ độ cao cố định", "so_luong": 1, "ghi_chu": "dài khoảng 20 cm" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cắm 49 ghim thành lưới 7 × 7 trên tấm xốp với khoảng cách 4 cm, thả bi thép từ độ cao cố định (dùng ống nhựa làm máng) vào gần tâm lưới rồi đếm số ghim đổ.",
+      "Làm lại hai lần nữa với khoảng cách 4 cm, ghi cả ba số đếm.",
+      "Lặp lại toàn bộ với khoảng cách 3 cm rồi 2 cm, mỗi khoảng cách ba lần."
+    ],
+    "quan_sat": [
+      "Khoảng cách 4 cm: bi chỉ làm đổ vài ghim rồi dừng, ba lần đếm đều nhỏ hơn 6.",
+      "Khoảng cách 3 cm: số ghim đổ giữ mức gần như nhau ở ba lần, quanh 9–10 ghim.",
+      "Khoảng cách 2 cm: dây chuyền lan gần hết bàn, 34–37 ghim đổ, ba lần đếm lệch nhau tới 3 ghim."
+    ],
+    "rut_ra": [
+      "Mỗi ghim đổ có thể làm đổ các ghim bên cạnh: đó là cơ chế \"neutron sinh thêm neutron\" của phản ứng dây chuyền.",
+      "Khoảng cách ghim đóng vai trò như xác suất neutron bị hấp thụ lại: ghim càng sát thì \"hệ số nhân\" càng lớn.",
+      "Ba mức quan sát tương ứng ba chế độ: k < 1 tắt dần, k ≈ 1 tự duy trì ổn định, k > 1 tăng nhanh."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách giữa hai ghim", "don_vi": "cm", "kieu": "dieu_chinh", "min": 2, "max": 5, "mac_dinh": 3, "buoc": 0.5 },
+    { "ky_hieu": "N0", "ten": "Số ghim tối đa trên bàn (trần bão hoà)", "don_vi": "ghim", "kieu": "co_dinh", "gia_tri": 49 },
+    { "ky_hieu": "N_seed", "ten": "Số ghim đổ ở thế hệ đầu", "don_vi": "ghim", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "h", "ten": "Độ cao thả bi", "don_vi": "cm", "kieu": "dieu_chinh", "min": 10, "max": 40, "mac_dinh": 20, "buoc": 5 },
+    { "ky_hieu": "N_do", "ten": "Số ghim đổ trong một lần thả", "don_vi": "ghim", "kieu": "do_duoc", "sai_so_do": 3 },
+    { "ky_hieu": "k", "ten": "Hệ số nhân của mô hình", "don_vi": "", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Số ghim đổ ở thế hệ thứ n: N(n) = min(N0, N_seed · k^n), với N_seed là số ghim đổ ở thế hệ đầu và N0 = 49 là trần số ghim có trên bàn",
+      "Hệ số nhân ước lượng từ hai lần liên tiếp: k ≈ N(n+1) / N(n)",
+      "Ba chế độ: k < 1 tắt dần · k = 1 tự duy trì · k > 1 tăng nhanh"
+    ],
+    "gia_thiet": [
+      "coi mỗi ghim đổ có cùng xác suất làm đổ ghim bên cạnh, không phụ thuộc vị trí",
+      "số ghim đổ không vượt quá 49 ghim có trên bàn: N(n) ≤ N0",
+      "mỗi lần thả bi rơi vào cùng một vùng của lưới và cùng độ cao",
+      "bỏ qua ghim đổ do rung bàn và do bi lăn tiếp sau va chạm"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt khoảng cách ghim: lưới ghim hiện dần số ghim đổ theo từng thế hệ, kèm con số k ước lượng. Mô hình này KHÔNG đo neutron, chỉ bắt chước hình học của phản ứng dây chuyền."
+  },
+  "so_lieu_mau": {
+    "cot": ["Khoảng cách ghim (cm)", "Số ghim đổ (3 lần)", "k ước lượng"],
+    "hang": [
+      [4, "3 · 4 · 3", 0.6],
+      [3, "9 · 8 · 10", 1.0],
+      [2, "36 · 34 · 37", 1.6]
+    ],
+    "ghi_chu": "Số liệu minh hoạ từ mô hình, không phải đo thật; cột \"Số ghim đổ (3 lần)\" là tổng số ghim đổ sau khi dây chuyền dừng, còn N(n) là số đổ ở một thế hệ. Xu hướng đúng khi làm thật: khoảng cách càng nhỏ, số ghim đổ càng nhiều và ba lần đếm càng lệch nhau."
+  },
+  "ket_qua_ky_vong": "Khoảng cách ghim giảm thì số ghim đổ tăng vọt: từ vài ghim (tắt dần) qua mức giữ nguyên (tự duy trì) tới gần hết lưới (tăng nhanh). Ba lần lặp lại ở cùng khoảng cách cho kết quả gần nhau nhưng không trùng khít.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng phải có \"neutron thật\" thì mới gọi là phản ứng dây chuyền — mô hình ghim chỉ bắt chước hình học, kết luận chỉ ở mức định tính.",
+    "Cho rằng một lần thả bi là đủ để kết luận k > 1, không cần lặp lại.",
+    "Lẫn hệ số nhân k với số ghim đổ: k là tỉ số giữa hai thế hệ, không phải tổng số ghim đổ."
+  ],
+  "sai_so_thuong_gap": [
+    "Bi không rơi trúng cùng một điểm giữa các lần: lệch 1–3 ghim ở cùng khoảng cách.",
+    "Ghim cắm nghiêng sẵn hoặc lỏng chân, đổ dù không có ghim nào chạm tới.",
+    "Đếm sót ghim đổ nằm ngoài rìa lưới; cần vạch sẵn khung 7 × 7 trước khi cắm."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Lưới ghim 7 × 7 vẽ trên bàn; học sinh kéo thanh trượt khoảng cách rồi bấm \"thả bi\", các ghim đổ lan dần theo từng thế hệ, bảng số liệu tự điền số ghim đổ và k ước lượng.",
+    "diem_nhan": "Cho thấy chỉ một thay đổi hình học (khoảng cách) đủ đưa phản ứng từ tắt dần sang tự duy trì rồi tăng nhanh — đúng vai trò của khối lượng tới hạn và của thanh điều khiển."
+  },
+  "an_toan": [
+    "Ghim đầu tròn nhọn: cắm và rút theo phương thẳng đứng, không để tay dưới đầu ghim.",
+    "Thu ghim vào hộp có nắp sau khi làm xong để tránh giẫm phải."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
+  "lesson_id": 17,
+  "nguon_trong_bai": "content/lesson-samples/l12-phan-hach-nhiet-hach/theory.html",
+  "id": "tn-l12-phanbach-04",
+  "ten": "Cân khối lượng bằng phổ kế khối lượng để tính năng lượng một phân hạch",
+  "loai": "vi_du",
+  "muc_do": "nang_cao",
+  "kien_thuc": [
+    "phanhach.nang_luong_toa_ra",
+    "phanhach.do_hut_khoi"
+  ],
+  "muc_tieu": "Từ bảng khối lượng đo bằng phổ kế khối lượng (sai số cỡ 0,0002–0,0003 u), học sinh tự tính độ hụt khối và năng lượng toả ra của một phân hạch, đồng thời thấy vì sao sai số của phép trừ bốn số lớn lại lớn tới cỡ 1 MeV.",
+  "dung_cu": [
+    { "ten": "Phổ kế khối lượng (thiết bị phòng thí nghiệm chuyên dụng, không có ở lớp)", "so_luong": 1 },
+    { "ten": "Bảng khối lượng nguyên tử đo được (in sẵn cho học sinh)", "so_luong": 1 },
+    { "ten": "Máy tính cầm tay", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đọc bảng khối lượng nghỉ đo được của U-235, neutron, Ba-144, Kr-89 cùng sai số từng số.",
+      "Cộng khối lượng các hạt trước phản ứng, cộng khối lượng các hạt sau (kể cả 3 neutron), rồi lấy hiệu.",
+      "Nhân hiệu vừa tìm được với 931,5 MeV/c² để ra năng lượng toả ra; làm lại với bộ số liệu của lần cân khác để so sánh."
+    ],
+    "quan_sat": [
+      "Độ hụt khối rất nhỏ, chỉ cỡ 0,186 u, trong khi mỗi khối lượng đem trừ đều trên 1 u.",
+      "Ba lần cân cho năng lượng 173,4 · 173,2 · 173,5 MeV — lệch nhau cỡ 0,3 MeV.",
+      "Sai số cộng dồn của bốn khối lượng lên tới cỡ 0,001 u, tương ứng gần 1 MeV."
+    ],
+    "rut_ra": [
+      "Năng lượng một phân hạch cỡ 173 MeV, phải ghi kèm sai số: W ≈ 173 ± 1 MeV.",
+      "Khi lấy hiệu của những số lớn, sai số tương đối của hiệu lớn hơn hẳn sai số của từng số.",
+      "Vì vậy trong thực tế người ta thường tính năng lượng qua năng lượng liên kết, hoặc dùng hiệu khối lượng đo trực tiếp, thay vì trừ bốn khối lượng lớn."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "s", "ten": "Sai số của phép đo khối lượng", "don_vi": "u", "kieu": "dieu_chinh", "min": 0.0001, "max": 0.001, "mac_dinh": 0.0002, "buoc": 0.0001 },
+    { "ky_hieu": "m_U", "ten": "Khối lượng nghỉ của U-235", "don_vi": "u", "kieu": "co_dinh", "gia_tri": 235.0439 },
+    { "ky_hieu": "m_n", "ten": "Khối lượng nghỉ của neutron", "don_vi": "u", "kieu": "co_dinh", "gia_tri": 1.0087 },
+    { "ky_hieu": "m_Ba", "ten": "Khối lượng nghỉ của Ba-144", "don_vi": "u", "kieu": "co_dinh", "gia_tri": 143.923 },
+    { "ky_hieu": "m_Kr", "ten": "Khối lượng nghỉ của Kr-89", "don_vi": "u", "kieu": "co_dinh", "gia_tri": 88.9176 },
+    { "ky_hieu": "dm", "ten": "Độ hụt khối của phản ứng", "don_vi": "u", "kieu": "tinh_ra" },
+    { "ky_hieu": "W", "ten": "Năng lượng toả ra của một phân hạch", "don_vi": "MeV", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Phản ứng: U-235 + n → Ba-144 + Kr-89 + 3n",
+      "Độ hụt khối: dm = (m_U + m_n) − (m_Ba + m_Kr + 3·m_n) = 0,1859 u",
+      "Năng lượng toả ra: W = dm · 931,5 MeV/c² ≈ 173 MeV",
+      "Sai số: Δ(dm) ≈ 4·s, suy ra ΔW ≈ 4·s·931,5 MeV"
+    ],
+    "gia_thiet": [
+      "phản ứng xảy ra đúng theo kênh Ba-144 + Kr-89 + 3 neutron (các kênh khác cho năng lượng hơi khác)",
+      "bỏ qua năng lượng tia gamma và neutrino bay ra, chỉ tính khối lượng các hạt nhân và neutron",
+      "khối lượng đo là khối lượng nghỉ, không tính khối lượng của electron lớp vỏ"
+    ],
+    "ghi_chu": "Với s = 0,0002 u thì ΔW ≈ 0,0008 × 931,5 ≈ 0,75 MeV; nếu cộng thêm sai số của neutron nhân ba thì ΔW xấp xỉ 1 MeV. Đây là lí do phải ghi W ≈ 173 ± 1 MeV."
+  },
+  "so_lieu_mau": {
+    "cot": ["Lần cân", "Độ hụt khối (u)", "Năng lượng (MeV)"],
+    "hang": [
+      [1, 0.1861, 173.4],
+      [2, 0.1859, 173.2],
+      [3, 0.1863, 173.5]
+    ],
+    "ghi_chu": "Số liệu minh hoạ dựng từ mô hình, KHÔNG đo tại lớp: khối lượng lấy theo bảng khối lượng nguyên tử đã công bố, sai số đặt ở mức 0,0002–0,0003 u để học sinh luyện đọc bảng và nhận xét sai số."
+  },
+  "ket_qua_ky_vong": "Học sinh tính được độ hụt khối cỡ 0,186 u và năng lượng cỡ 173 MeV, đồng thời nhận ra rằng phép trừ bốn khối lượng lớn làm sai số phình lên cỡ 1 MeV — nên kết quả phải ghi kèm sai số.",
+  "hien_tuong_hay_sai": [
+    "Bỏ qua 3 neutron sinh ra khi cộng khối lượng các hạt sau, dẫn tới độ hụt khối sai hẳn.",
+    "Cho rằng \"khối lượng hụt đi\" là mất hẳn, không chuyển thành năng lượng.",
+    "Ghi kết quả 173,27 MeV với năm chữ số có nghĩa trong khi sai số đã cỡ 1 MeV."
+  ],
+  "sai_so_thuong_gap": [
+    "Sai số cộng dồn khi trừ bốn khối lượng lớn: Δ(dm) cỡ 0,001 u tương ứng gần 1 MeV.",
+    "Quên nhân độ hụt khối với 931,5 mà dùng thẳng giá trị theo u.",
+    "Lấy khối lượng nguyên tử thay vì khối lượng hạt nhân, bỏ qua khối lượng electron lớp vỏ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Bảng khối lượng có thanh trượt sai số; bấm \"cân lại\" thì các khối lượng và độ hụt khối nhảy trong khoảng sai số, biểu đồ năng lượng W hiện kèm thanh sai số ±ΔW.",
+    "diem_nhan": "Cho thấy kết quả lặp lại ba lần không trùng nhau, và khoảng sai số của W rộng hơn trực giác — vì sao phải ghi W ≈ 173 ± 1 MeV."
+  },
+  "an_toan": [
+    "Không có nguy cơ trực tiếp: đây là bài tập đọc bảng số liệu, không dùng nguồn phóng xạ."
+  ]
+}

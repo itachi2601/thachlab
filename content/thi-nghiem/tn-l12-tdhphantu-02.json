@@ -1,0 +1,94 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 5. Thuyết động học phân tử chất khí",
+  "lesson_id": 6,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/theory.html",
+  "id": "tn-l12-tdhphantu-02",
+  "ten": "Ống khuếch tán: đo tốc độ lan của phân tử NH₃ và HCl",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "tdhphantu.khuat_tan",
+    "tdhphantu.nhiet_do_va_toc_do",
+    "tdhphantu.toc_do_phan_tu_va_toc_do_lan"
+  ],
+  "muc_tieu": "Đo được tốc độ lan thực tế của phân tử trong ống kín (không có gió) và đối chiếu với tốc độ trung bình 400 m/s của một phân tử khí, qua đó phân biệt tốc độ của một phân tử với tốc độ lan của cả đám phân tử.",
+  "dung_cu": [
+    { "ten": "Ống thuỷ tinh dài 40 cm, đường kính trong khoảng 1 cm", "so_luong": 1, "ghi_chu": "hai đầu có nút cao su hoặc bông" },
+    { "ten": "Thước chia đến milimét", "so_luong": 1 },
+    { "ten": "Dung dịch amoniac đậm đặc (NH₃)", "so_luong": 1, "ghi_chu": "mở nắp trong tủ hút hoặc nơi thoáng" },
+    { "ten": "Dung dịch axit clohiđric đậm đặc (HCl)", "so_luong": 1, "ghi_chu": "dùng găng tay, kính bảo hộ" },
+    { "ten": "Bông thấm", "so_luong": 4 },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "sai số bấm tay khoảng ±0,5 s" },
+    { "ten": "Nhiệt kế phòng", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt ống thuỷ tinh nằm ngang trên giá, ghi lại nhiệt độ phòng. Đánh dấu hai đầu ống là A (đầu NH₃) và B (đầu HCl).",
+      "Tẩm bông bằng dung dịch NH₃, đưa vào đầu A; tẩm bông khác bằng dung dịch HCl, đưa vào đầu B; bịt kín hai đầu ngay và bấm đồng hồ.",
+      "Theo dõi ống, ghi thời điểm một vòng khói trắng NH₄Cl hiện ra và đo khoảng cách từ vòng khói tới đầu A. Làm lại ba lần với ống đã rửa sạch và lau khô."
+    ],
+    "quan_sat": [
+      "Một vòng khói trắng mảnh hiện ra trong ống sau khoảng 12 giây; vòng khói luôn nằm lệch về phía đầu B (đầu HCl).",
+      "Ba lần đo cho vị trí vòng khói cách đầu A lần lượt 23,5 cm · 24,0 cm · 24,2 cm.",
+      "Tốc độ lan tính ra chỉ khoảng 2 cm/s, nhỏ hơn tốc độ trung bình của một phân tử khí (khoảng 400 m/s) hàng chục nghìn lần (400 : 0,02 = 2 × 10⁴)."
+    ],
+    "rut_ra": [
+      "Không có gió, hai loại phân tử vẫn tự đi vào nhau: phân tử chuyển động hỗn loạn, không ngừng.",
+      "Tốc độ lan của cả đám phân tử nhỏ hơn tốc độ của từng phân tử rất nhiều, vì mỗi phân tử bị va đập liên tục và đổi hướng, đường đi bị kéo dài gấp bội.",
+      "Phân tử nhẹ hơn lan nhanh hơn: NH₃ (M = 17 g/mol) đi được khoảng 24 cm trong khi HCl (M = 36,5 g/mol) chỉ đi được khoảng 16 cm trong cùng thời gian."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "L", "ten": "Chiều dài ống", "don_vi": "cm", "kieu": "dieu_chinh", "min": 20, "max": 60, "mac_dinh": 40, "buoc": 5 },
+    { "ky_hieu": "T", "ten": "Nhiệt độ phòng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 10, "max": 40, "mac_dinh": 27, "buoc": 1 },
+    { "ky_hieu": "M_NH3", "ten": "Khối lượng mol của NH₃", "don_vi": "g/mol", "kieu": "co_dinh", "gia_tri": 17 },
+    { "ky_hieu": "M_HCl", "ten": "Khối lượng mol của HCl", "don_vi": "g/mol", "kieu": "co_dinh", "gia_tri": 36.5 },
+    { "ky_hieu": "x", "ten": "Khoảng cách từ vòng khói tới đầu NH₃", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "t", "ten": "Thời gian tới lúc thấy vòng khói", "don_vi": "s", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "v_lan", "ten": "Tốc độ lan đo được", "don_vi": "cm/s", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Tốc độ lan đo được: v_lan = x / t (với x ≈ 24 cm và t ≈ 12 s thì v_lan ≈ 2 cm/s)",
+      "Hai loại phân tử gặp nhau sau cùng thời gian t, nên quãng đường tỉ lệ với tốc độ: x_NH3 / x_HCl = v_NH3 / v_HCl",
+      "Tỉ lệ tốc độ tỉ lệ nghịch với căn bậc hai khối lượng mol: v_NH3 / v_HCl ≈ √(M_HCl / M_NH3) = √(36,5/17) ≈ 1,47. Với ống dài 40 cm: x_NH3 = 40 × 1,47/2,47 ≈ 23,8 cm"
+    ],
+    "gia_thiet": [
+      "ống kín, không có gió và không có chênh lệch áp suất giữa hai đầu",
+      "hai đầu ống được tẩm dung dịch cùng lúc và nồng độ gần bằng nhau",
+      "bỏ qua việc khói NH₄Cl có thể bám vào thành ống và dịch chuyển chậm sau khi tạo thành"
+    ],
+    "ghi_chu": "Mô phỏng nên cho chọn chất ở hai đầu ống, hiện vòng khói dịch chuyển theo thời gian và tự tính vị trí gặp nhau từ tỉ lệ căn bậc hai khối lượng mol."
+  },
+  "so_lieu_mau": {
+    "cot": ["Lần đo", "Chỗ vòng khói cách đầu NH₃ (cm)", "Thời gian (s)"],
+    "hang": [
+      [1, 23.5, 12.0],
+      [2, 24.0, 11.8],
+      [3, 24.2, 12.5]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với ống dài 40 cm ở nhiệt độ phòng khoảng 27 °C; giá trị trung bình x ≈ 23,9 cm, t ≈ 12,1 s, v_lan ≈ 2,0 cm/s. Kết quả thực đo phụ thuộc nhiệt độ phòng và thời điểm quan sát vòng khói."
+  },
+  "ket_qua_ky_vong": "Vòng khói trắng hiện ra trong ống kín sau khoảng 10–15 giây, luôn nằm gần đầu HCl hơn đầu NH₃, và tốc độ lan đo được chỉ cỡ vài cm mỗi giây.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng phân tử khí chuyển động 400 m/s thì mùi phải lan khắp ống trong tích tắc — lẫn tốc độ một phân tử với tốc độ lan của cả đám.",
+    "Cho rằng vòng khói hiện ra vì có gió hoặc vì hai dung dịch bị hút về phía nhau.",
+    "Cho rằng hai loại phân tử lan nhanh như nhau nên vòng khói phải hiện ở chính giữa ống."
+  ],
+  "sai_so_thuong_gap": [
+    "Thời điểm nhìn thấy vòng khói do mắt người phán đoán, lệch cỡ ±0,5 s.",
+    "Lúc tẩm dung dịch phải mở nút ống nên có chút khí bên ngoài lọt vào.",
+    "Nhiệt độ phòng thay đổi giữa các lần đo, mà tốc độ phân tử phụ thuộc nhiệt độ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Ống nằm ngang có hai đầu tẩm hai chất khác nhau; các chấm phân tử chuyển động hỗn loạn, vòng khói trắng hiện ra ở vị trí gặp nhau và ghi lại thời gian.",
+    "diem_nhan": "Cho thấy vòng khói hiện gần đầu chất nặng hơn, và thời gian lan dài hơn nhiều so với thời gian một phân tử bay hết chiều dài ống nếu bay thẳng."
+  },
+  "an_toan": [
+    "NH₃ và HCl đậm đặc đều có mùi và gây bỏng: mở nắp trong tủ hút hoặc phòng thoáng, đeo găng tay và kính bảo hộ.",
+    "Rửa ống và lau khô giữa hai lần đo để khói cũ không làm sai vị trí quan sát."
+  ]
+}

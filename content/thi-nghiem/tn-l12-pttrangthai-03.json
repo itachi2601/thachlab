@@ -1,0 +1,92 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+  "lesson_id": 8,
+  "nguon_trong_bai": "content/lesson-samples/l12-phuong-trinh-trang-thai/theory.html",
+  "id": "tn-l12-pttrangthai-03",
+  "ten": "Bình khí nén 40 lít để ngoài nắng: kim đồng hồ nhích lên",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "pttrangthai.qua_trinh_dang_tich",
+    "pttrangthai.ap_suat_ti_le_thuan_nhiet_do_tuyet_doi",
+    "pttrangthai.pham_vi_ap_dung"
+  ],
+  "muc_tieu": "Giải thích bằng số vì sao một bình kín không bơm thêm khí mà áp suất vẫn tăng khi trời nắng, và chỉ ra rằng chỉ được dùng phương trình trạng thái khi lượng khí không đổi.",
+  "dung_cu": [
+    { "ten": "Bình tích áp (bình khí nén) 40 lít có đồng hồ áp suất", "so_luong": 1, "ghi_chu": "bình kín, van khoá, không xả khí trong lúc quan sát" },
+    { "ten": "Nhiệt kế đo nhiệt độ vỏ bình hoặc nhiệt độ không khí quanh bình", "so_luong": 1 },
+    { "ten": "Sân hoặc khoảng trống ngoài nắng", "so_luong": 1, "ghi_chu": "buổi sáng và giữa trưa, chênh nhau khoảng 20 °C" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Buổi sáng, khi bình còn nguội, ghi đồng thời nhiệt độ không khí và số chỉ đồng hồ áp suất.",
+      "Để bình nguyên tại chỗ ngoài nắng (che phần đồng hồ cho khỏi nóng trực tiếp), chờ tới giữa trưa.",
+      "Ghi lại nhiệt độ và áp suất; lặp lại vào một ngày râm mát để so sánh."
+    ],
+    "quan_sat": [
+      "Nhiệt độ tăng khoảng 20 °C, áp suất tăng khoảng 0,3 bar trên nền 5,0 bar — tức chừng 7%.",
+      "Độ tăng áp suất tính theo tỉ số nhiệt độ Kelvin khớp với số đọc trên đồng hồ.",
+      "Nếu mở van xả bớt khí rồi làm lại, số liệu không còn khớp công thức vì lượng khí đã khác."
+    ],
+    "rut_ra": [
+      "Thể tích bình không đổi, lượng khí không đổi → đây là quá trình đẳng tích: p/T = hằng số.",
+      "Áp suất tăng theo nhiệt độ tuyệt đối, không theo nhiệt độ Celsius: 320/300 ≈ 1,07 chứ không phải 47/27 ≈ 1,74.",
+      "Điều kiện áp dụng là lượng khí không đổi; xả bớt hoặc bơm thêm khí thì phải tính lại theo lượng khí mới."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "p1", "ten": "Áp suất khí buổi sáng", "don_vi": "bar", "kieu": "dieu_chinh", "min": 3, "max": 8, "mac_dinh": 5, "buoc": 0.5 },
+    { "ky_hieu": "t1", "ten": "Nhiệt độ khí buổi sáng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 15, "max": 35, "mac_dinh": 27, "buoc": 1 },
+    { "ky_hieu": "t2", "ten": "Nhiệt độ khí giữa trưa", "don_vi": "°C", "kieu": "dieu_chinh", "min": 35, "max": 65, "mac_dinh": 47, "buoc": 1 },
+    { "ky_hieu": "V", "ten": "Dung tích bình", "don_vi": "lít", "kieu": "co_dinh", "gia_tri": 40 },
+    { "ky_hieu": "p_do", "ten": "Áp suất đọc trên đồng hồ", "don_vi": "bar", "kieu": "do_duoc", "sai_so_do": 0.05 },
+    { "ky_hieu": "p2", "ten": "Áp suất khí giữa trưa", "don_vi": "bar", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Quá trình đẳng tích: p₁/T₁ = p₂/T₂ → p₂ = p₁·T₂/T₁",
+      "Đổi nhiệt độ: T = t + 273",
+      "Với p₁ = 5,0 bar, t₁ = 27 °C, t₂ = 47 °C: p₂ = 5,0 × 320/300 = 5,33 bar",
+      "Kịch bản van an toàn (phần thử thách cuối bài, khác kịch bản 5,0 bar ở trên): lấy p₁ = 6,0 bar lúc 27 °C, van mở ở 8,0 bar → T = 300 × 8,0/6,0 = 400 K, tức 127 °C"
+    ],
+    "gia_thiet": [
+      "bình kín tuyệt đối: không rò khí, không xả, không bơm thêm trong lúc quan sát",
+      "thể tích bình không đổi (bỏ qua giãn nở rất nhỏ của vỏ thép)",
+      "coi khí nén trong bình là khí lí tưởng; ở áp suất rất cao kết quả sẽ lệch"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ bình kín với đồng hồ kim quay theo nhiệt độ, và có nút 'xả bớt khí' để học sinh thấy công thức hết đúng khi lượng khí đổi."
+  },
+  "so_lieu_mau": {
+    "cot": ["Nhiệt độ khí (°C)", "Áp suất p (bar)"],
+    "hang": [
+      [27, 5.00],
+      [32, 5.08],
+      [37, 5.17],
+      [42, 5.25],
+      [47, 5.33]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ p = 5,0 × T/300 với bình kín 40 lít. Đo thật, số chỉ lệch chút ít vì nhiệt độ vỏ bình không đều và đồng hồ có sai số ±0,05 bar."
+  },
+  "ket_qua_ky_vong": "Áp suất tăng từ 5,0 bar lên khoảng 5,3 bar khi nhiệt độ tăng từ 27 °C lên 47 °C; quan hệ p – T là đường thẳng đi qua gốc khi dùng thang Kelvin.",
+  "hien_tuong_hay_sai": [
+    "Lấy tỉ số nhiệt độ Celsius (47/27 ≈ 1,74) và tưởng áp suất tăng gần gấp đôi.",
+    "Cho rằng bình kín thì áp suất không thể đổi, vì thể tích không đổi.",
+    "Cho rằng trong bình chỉ còn ít khí nên áp suất giảm khi trời nóng."
+  ],
+  "sai_so_thuong_gap": [
+    "Đồng hồ áp suất của bình khí nén có sai số ±0,05 bar, gần bằng nửa độ tăng cần đo.",
+    "Ánh nắng chiếu trực tiếp làm nóng riêng đồng hồ, số đọc không đúng nhiệt độ khí trong bình.",
+    "Bình có rò khí ở van: áp suất giảm dần theo ngày, che mất phần tăng do nhiệt độ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bình khí nén đặt ngoài sân, kim đồng hồ quay theo nhiệt độ; thanh trượt nhiệt độ và một nút 'xả bớt khí'; đồ thị p – T vẽ dần.",
+    "diem_nhan": "Bấm nút xả bớt khí rồi nâng nhiệt độ: công thức p/T không còn khớp — đó là cái bẫy về lượng khí thay đổi."
+  },
+  "an_toan": [
+    "Không tháo van hay đục bình chứa khí nén; áp suất cao gây nguy hiểm.",
+    "Bình khí nén phải có van an toàn và để chỗ râm, tránh ánh nắng trực tiếp lâu dài."
+  ]
+}

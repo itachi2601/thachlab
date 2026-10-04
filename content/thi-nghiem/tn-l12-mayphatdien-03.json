@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+  "lesson_id": 125,
+  "nguon_trong_bai": "content/lesson-samples/l12-may-phat-dien-bien-ap/theory.html",
+  "id": "tn-l12-mayphatdien-03",
+  "ten": "Tự quấn máy biến áp: đo điện áp thứ cấp theo số vòng dây",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "maybienap.ti_so_dien_ap_bang_ti_so_vong",
+    "maybienap.cam_ung_dien_tu",
+    "maybienap.loi_ghep_la"
+  ],
+  "muc_tieu": "Chứng tỏ điện áp hai đầu cuộn thứ cấp tỉ lệ với số vòng dây: U2/U1 = N2/N1; học sinh đọc bảng số liệu, thấy số đo luôn hơi thấp hơn tính toán và giải thích được vì sao.",
+  "dung_cu": [
+    { "ten": "Lõi thép kín (lõi biến áp tháo được hoặc lõi tôn silic hình chữ nhật)", "so_luong": 1, "ghi_chu": "nếu lõi ghép từ lá mỏng, sơn cách điện giữa các lá" },
+    { "ten": "Dây đồng emay đường kính 0,4–0,6 mm", "so_luong": 1, "ghi_chu": "khoảng 40 m" },
+    { "ten": "Nguồn xoay chiều hạ áp 12 V (máy biến áp cách li hoặc adapter xoay chiều)", "so_luong": 1 },
+    { "ten": "Vôn kế xoay chiều (đồng hồ vạn năng thang AC)", "so_luong": 1, "ghi_chu": "sai số khoảng 1%" },
+    { "ten": "Băng dính giấy và nhãn ghi số vòng", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Quấn cuộn sơ cấp N1 = 200 vòng trên một nhánh lõi, đếm đủ vòng và dán nhãn; nối hai đầu cuộn này với nguồn xoay chiều U1 = 12 V.",
+      "Quấn cuộn thứ cấp trên nhánh còn lại, lần lượt 100, 200, 400, 600 vòng; sau mỗi lần quấn, đo U2 bằng vôn kế xoay chiều.",
+      "Ghi số đo vào bảng, tính tỉ số U2/U1 ở từng hàng rồi so với N2/N1."
+    ],
+    "quan_sat": [
+      "U2 tăng theo N2, gần đúng theo tỉ lệ số vòng.",
+      "Ở N2 = 200 vòng, vôn kế chỉ khoảng 11,7 V — gần bằng 12 V của cuộn sơ cấp.",
+      "Số đo U2 luôn hơi nhỏ hơn giá trị tính theo công thức, lệch khoảng 2–4%."
+    ],
+    "rut_ra": [
+      "Điện áp hai đầu mỗi cuộn tỉ lệ với số vòng dây của cuộn đó: U1/U2 = N1/N2, nên U2/U1 bám sát N2/N1.",
+      "N2 nhỏ hơn N1 cho điện áp nhỏ hơn (máy hạ áp); N2 lớn hơn N1 cho điện áp lớn hơn (máy tăng áp).",
+      "Phần chênh lệch là do từ thông rò ra ngoài lõi, điện trở cuộn dây và sai số của vôn kế."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "U1", "ten": "Điện áp hiệu dụng cuộn sơ cấp", "don_vi": "V", "kieu": "co_dinh", "gia_tri": 12 },
+    { "ky_hieu": "N1", "ten": "Số vòng cuộn sơ cấp", "don_vi": "vòng", "kieu": "co_dinh", "gia_tri": 200 },
+    { "ky_hieu": "N2", "ten": "Số vòng cuộn thứ cấp", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 50, "max": 800, "mac_dinh": 200, "buoc": 50 },
+    { "ky_hieu": "f", "ten": "Tần số dòng điện", "don_vi": "Hz", "kieu": "co_dinh", "gia_tri": 50 },
+    { "ky_hieu": "U2_lt", "ten": "Điện áp thứ cấp tính theo mô hình", "don_vi": "V", "kieu": "tinh_ra" },
+    { "ky_hieu": "U2_do", "ten": "Điện áp thứ cấp đọc trên vôn kế", "don_vi": "V", "kieu": "do_duoc", "sai_so_do": 0.2 },
+    { "ky_hieu": "k", "ten": "Tỉ số vòng dây N1/N2", "don_vi": "", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Máy biến áp lí tưởng: U1/U2 = N1/N2, suy ra U2 = U1·N2/N1",
+      "Hao phí làm điện áp đo hơi thấp: U2_do ≈ U2_lt·(1 − δ) với δ ≈ 2–4%",
+      "Suất điện động cảm ứng mỗi vòng: e = |ΔΦ/Δt|, giống nhau ở hai cuộn vì cùng từ thông trong lõi",
+      "Hiệu suất: H = P2/P1 = U2·I2/(U1·I1)"
+    ],
+    "gia_thiet": [
+      "bỏ qua điện trở cuộn dây khi tính U2 theo công thức (coi máy lí tưởng)",
+      "coi mọi đường sức từ chạy hết trong lõi, chỉ còn một phần nhỏ từ thông rò ra ngoài",
+      "bỏ qua dòng Fu-cô và hiện tượng từ trễ trong lõi"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt N2 và vẽ ngay U2 theo công thức, đồng thời hiện số đọc vôn kế có sai số nhỏ để học sinh thấy số đo không bao giờ khớp tuyệt đối với lí thuyết."
+  },
+  "so_lieu_mau": {
+    "cot": ["N2 (vòng)", "U2 đo (V)", "U2/U1 so với N2/N1"],
+    "hang": [
+      [100, 5.8, "0,48 so với 0,50"],
+      [200, 11.7, "0,98 so với 1,00"],
+      [400, 23.5, "1,96 so với 2,00"],
+      [600, 35.0, "2,92 so với 3,00"]
+    ],
+    "ghi_chu": "Số liệu minh hoạ của một lần đo với U1 = 12 V, N1 = 200 vòng. Giá trị lí thuyết U2 = 0,06·N2; số đo thấp hơn 2–4% do từ thông rò, điện trở cuộn dây và sai số vôn kế."
+  },
+  "ket_qua_ky_vong": "Điện áp thứ cấp tỉ lệ với số vòng dây thứ cấp; tỉ số U2/U1 bám sát N2/N1 và luôn thấp hơn một chút so với tính toán.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng máy biến áp tăng điện áp thì cũng tăng công suất (thực ra U tăng bao nhiêu lần thì I giảm bấy nhiêu lần).",
+    "Nghĩ rằng số vòng dây không quan trọng bằng điện áp nguồn — chỉ cần cắm điện áp cao là ra điện áp cao.",
+    "Nghĩ rằng máy biến áp đổi cả tần số dòng điện."
+  ],
+  "sai_so_thuong_gap": [
+    "Quấn thiếu hoặc thừa vòng so với số ghi trên nhãn — phải đếm vòng khi quấn.",
+    "Cuộn thứ cấp quấn lỏng, không áp sát lõi nên từ thông rò nhiều, U2 thấp rõ rệt.",
+    "Dùng đồng hồ ở thang một chiều (DC) nên kim chỉ 0 hoặc nhảy loạn; phải để thang AC.",
+    "Vôn kế sai số khoảng 1% và dây đo dài cũng gây sụt áp nhỏ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Lõi biến áp với hai cuộn dây vẽ theo số vòng đặt được; kéo thanh trượt N2 thấy số vòng cuộn thứ cấp đổi, vôn kế hiện U2 và bảng số liệu tự điền.",
+    "diem_nhan": "Học sinh dự đoán U2 trước khi kéo thanh trượt rồi đối chiếu; đường U2(N2) là đường thẳng qua gốc toạ độ, còn số đo lệch xuống dưới một chút."
+  },
+  "an_toan": [
+    "Chỉ dùng nguồn xoay chiều hạ áp 12 V; tuyệt đối không nối cuộn sơ cấp với điện lưới 220 V khi tự quấn.",
+    "Kiểm tra lớp emay cách điện trước khi cấp nguồn; không chạm vào hai đầu cuộn dây khi đang nối nguồn.",
+    "Cuộn dây nóng lên là dấu hiệu ngắn mạch vòng — ngắt nguồn ngay."
+  ]
+}

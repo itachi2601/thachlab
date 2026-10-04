@@ -1,0 +1,198 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Hạt nhân và mô hình nguyên tử",
+  "lesson_id": 15,
+  "nguon_trong_bai": "content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.html",
+  "id": "tn-l12-hatnhan-02",
+  "ten": "Đo bề dày lá nhôm để suy ra bán kính hạt nhân",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "hatnhan.kich_thuoc_ban_kinh",
+    "hatnhan.don_vi_khoi_luong_u"
+  ],
+  "muc_tieu": "Từ một phép đo cân và đo kích thước đơn giản, suy ra bán kính hạt nhân theo công thức thực nghiệm R = 1,2.10⁻¹⁵.A^(1/3) và biết ghi kết quả kèm sai số.",
+  "dung_cu": [
+    {
+      "ten": "Lá nhôm mỏng (giấy bạc nhôm) nguyên chất",
+      "so_luong": 1,
+      "ghi_chu": "cắt thành tấm chữ nhật, có thể gấp nhiều lớp để cân cho chính xác"
+    },
+    {
+      "ten": "Thước kẹp hoặc thước thẳng chia đến 1 mm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Cân điện tử độ chia 0,001 g",
+      "so_luong": 1
+    },
+    {
+      "ten": "Kéo cắt kim loại",
+      "so_luong": 1
+    },
+    {
+      "ten": "Bảng tra khối lượng riêng và khối lượng mol các kim loại",
+      "so_luong": 1
+    },
+    {
+      "ten": "Máy tính cầm tay",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cắt một tấm lá nhôm hình chữ nhật, đo chiều dài a và chiều rộng b bằng thước kẹp (đơn vị mm).",
+      "Cân tấm lá được khối lượng m bằng cân điện tử (đơn vị g). Tra khối lượng riêng D của nhôm là 2700 kg/m³.",
+      "Tính bề dày lá: d = m/(D.a.b); sau đó chia bề dày cho đường kính một NGUYÊN TỬ nhôm (2.r_nguyên tử với r_nguyên tử ≈ 1,4.10⁻¹⁰ m) để ra số lớp nguyên tử xếp dọc bề dày. Chú ý: 2R với R = 1,2.10⁻¹⁵.27^(1/3) là đường kính HẠT NHÂN, nhỏ hơn đường kính nguyên tử hàng chục nghìn lần, KHÔNG dùng để đếm lớp nguyên tử."
+    ],
+    "quan_sat": [
+      "Tấm lá nhôm 100 mm × 100 mm nặng khoảng 0,27 g, suy ra bề dày cỡ 10⁻⁵ m.",
+      "Số lớp nguyên tử xếp dọc bề dày cỡ ba sáu vạn lớp (khoảng 3,6.10⁴ lớp) — một lá mỏng đã chứa hàng vạn lớp nguyên tử.",
+      "Nhôm, đồng và vàng cho số lớp cùng cỡ dù khối lượng mol khác nhau, vì bán kính chỉ tỉ lệ với A^(1/3)."
+    ],
+    "rut_ra": [
+      "Bề dày một lá nhôm thông thường chứa hàng vạn đến hàng trăm nghìn lớp nguyên tử, mà hạt nhân mỗi nguyên tử chỉ chiếm khoảng một phần mười nghìn tỉ thể tích nguyên tử.",
+      "Đó là lí do chùm hạt alpha trong thí nghiệm lá vàng hầu như không gặp hạt nhân nào: xác suất va vào hạt nhân cực nhỏ.",
+      "Công thức R = 1,2.10⁻¹⁵.A^(1/3) chỉ là công thức thực nghiệm gần đúng, phải ghi kết quả kèm sai số."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "a",
+      "ten": "Chiều dài tấm lá",
+      "don_vi": "mm",
+      "kieu": "dieu_chinh",
+      "min": 50,
+      "max": 200,
+      "mac_dinh": 100,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "b",
+      "ten": "Chiều rộng tấm lá",
+      "don_vi": "mm",
+      "kieu": "dieu_chinh",
+      "min": 50,
+      "max": 200,
+      "mac_dinh": 100,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng tấm lá",
+      "don_vi": "g",
+      "kieu": "dieu_chinh",
+      "min": 0.1,
+      "max": 10.0,
+      "mac_dinh": 0.27,
+      "buoc": 0.01
+    },
+    {
+      "ky_hieu": "A",
+      "ten": "Số nuclôn của kim loại",
+      "don_vi": "—",
+      "kieu": "dieu_chinh",
+      "min": 27,
+      "max": 197,
+      "mac_dinh": 27,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "D",
+      "ten": "Khối lượng riêng của nhôm",
+      "don_vi": "kg/m³",
+      "kieu": "co_dinh",
+      "gia_tri": 2700
+    },
+    {
+      "ky_hieu": "M",
+      "ten": "Khối lượng mol của nhôm",
+      "don_vi": "g/mol",
+      "kieu": "co_dinh",
+      "gia_tri": 27
+    },
+    {
+      "ky_hieu": "d",
+      "ten": "Bề dày lá tính từ phép đo",
+      "don_vi": "m",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "N_lop",
+      "ten": "Số lớp nguyên tử theo bề dày",
+      "don_vi": "lớp",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "R",
+      "ten": "Bán kính hạt nhân theo công thức",
+      "don_vi": "m",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Bề dày lá: d = m/(D.a.b) với m tính bằng kg, a, b tính bằng m",
+      "Bán kính hạt nhân: R = 1,2.10⁻¹⁵.A^(1/3) (m)",
+      "Số lớp nguyên tử xếp dọc bề dày: N_lop = d/(2.r_nguyên tử) với r_nguyên tử ≈ 1,4.10⁻¹⁰ m — KHÔNG dùng 2R của hạt nhân (7,2.10⁻¹⁵ m) để đếm lớp nguyên tử",
+      "Tỉ số thể tích hạt nhân trên thể tích nguyên tử: (R/r_nguyên_tử)³, với r_nguyên_tử cỡ 1,4.10⁻¹⁰ m",
+      "Sai số tương đối của bề dày: δd = δm + δa + δb + δD"
+    ],
+    "gia_thiet": [
+      "lá nhôm nguyên chất, không bị oxi hoá thành Al2O3",
+      "tấm lá phẳng đều, cùng bề dày trên toàn mặt",
+      "nguyên tử xếp sít nhau theo kiểu xếp khối, bỏ qua khoảng trống giữa các nguyên tử"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt a, b và nhập m, rồi tự tính d, N_lop, R; hiển thị kèm thanh sai số để thấy kết quả phải ghi dạng R = (3,6 ± 0,2).10⁻¹⁵ m."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Kim loại",
+      "Khối lượng mol (g/mol)",
+      "Khối lượng riêng (kg/m³)",
+      "Bán kính hạt nhân R (10⁻¹⁵ m)"
+    ],
+    "hang": [
+      [
+        "Nhôm",
+        27,
+        2700,
+        3.6
+      ],
+      [
+        "Đồng",
+        63,
+        8960,
+        4.8
+      ],
+      [
+        "Vàng",
+        197,
+        19300,
+        7.0
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ R = 1,2.10⁻¹⁵.A^(1/3): 27^(1/3) = 3 nên R = 3,6.10⁻¹⁵ m; 63^(1/3) ≈ 3,98 nên R ≈ 4,8.10⁻¹⁵ m; 197^(1/3) ≈ 5,82 nên R ≈ 7,0.10⁻¹⁵ m. Khối lượng riêng chỉ dùng để minh hoạ chiều dài và dẫn tới cùng một cỡ R."
+  },
+  "ket_qua_ky_vong": "Học sinh tính được bề dày lá cỡ 10⁻⁵ m, số lớp nguyên tử cỡ 3,6.10⁴ và bán kính hạt nhân nhôm cỡ 3,6.10⁻¹⁵ m; biết rằng A tăng 7,3 lần nhưng R chỉ tăng khoảng 2 lần.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng bán kính hạt nhân tỉ lệ thuận với A, nên vàng phải lớn hơn nhôm gần 7,3 lần.",
+    "Cho rằng lá nhôm chỉ có vài lớp nguyên tử, nên hạt alpha gần như luôn va vào hạt nhân.",
+    "Cho rằng khối lượng mol 27 g/mol nghĩa là khối lượng một nguyên tử là 27 g."
+  ],
+  "sai_so_thuong_gap": [
+    "Lá nhôm bị oxi hoá mỏng ở bề mặt làm khối lượng đo lớn hơn khối lượng nhôm thật.",
+    "Cân độ chia 0,001 g vẫn cho sai số tương đối cỡ vài phần nghìn trên tấm lá nhỏ; nên gấp nhiều lớp hoặc cắt tấm lớn hơn.",
+    "Quên đổi mm sang m và g sang kg làm bề dày sai 10⁶ lần."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Nhập kích thước và khối lượng tấm lá, hệ thống tính bề dày, số lớp nguyên tử và bán kính hạt nhân; đồ thị R theo A^(1/3) là một đường thẳng qua gốc.",
+    "diem_nhan": "Đồ thị R phụ thuộc A^(1/3) cho đường thẳng, chứng tỏ bán kính hạt nhân không tỉ lệ thuận với số nuclôn."
+  },
+  "an_toan": [
+    "Cạnh lá nhôm mỏng rất sắc, cầm bằng hai ngón tay hoặc dùng kẹp, không vuốt dọc mép cắt.",
+    "Kéo cắt kim loại chỉ dùng khi có người lớn; cắt trên tấm lót, không cắt trên mặt bàn."
+  ]
+}

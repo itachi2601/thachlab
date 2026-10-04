@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 9. Khái niệm từ trường",
+  "lesson_id": 10,
+  "nguon_trong_bai": "content/lesson-samples/l12-khai-niem-tu-truong/theory.html",
+  "id": "tn-l12-tutruong-01",
+  "ten": "Dòng điện tác dụng lực từ lên kim la bàn",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "tutruong.tuong_tac_tu",
+    "tutruong.dong_dien_co_tu_tinh"
+  ],
+  "muc_tieu": "Chứng tỏ dòng điện tạo ra từ trường quanh nó và tác dụng lực từ lên kim nam châm; đổi chiều dòng điện thì đổi chiều lệch của kim.",
+  "dung_cu": [
+    { "ten": "Dây đồng đơn cứng, dài khoảng 30 cm", "so_luong": 1 },
+    { "ten": "Tấm bìa cứng hoặc nhựa mỏng khoảng 10 × 15 cm, có lỗ ở giữa", "so_luong": 1 },
+    { "ten": "La bàn nhỏ hoặc kim nam châm đặt trên trục quay", "so_luong": 1 },
+    { "ten": "Pin 1,5 V (hoặc nguồn một chiều 3 V)", "so_luong": 1 },
+    { "ten": "Công tắc và hai đoạn dây nối có kẹp cá sấu", "so_luong": 1 },
+    { "ten": "Biến trở 20 Ω (để hạn chế dòng)", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Luồn dây đồng thẳng qua lỗ giữa tấm bìa sao cho dây vuông góc với mặt bìa; giữ dây thẳng đứng.",
+      "Đặt la bàn lên mặt bìa ở phía bắc hoặc phía nam của dây, cách dây khoảng 2 cm. Khi chưa nối pin, ghi lại hướng kim chỉ.",
+      "Nối dây với pin qua công tắc và biến trở; đóng mạch vài giây, ghi hướng kim lệch; ngắt mạch.",
+      "Đảo hai đầu pin (đổi chiều dòng điện), đóng mạch vài giây và ghi lại hướng kim lệch."
+    ],
+    "quan_sat": [
+      "Chưa có dòng điện, kim la bàn chỉ hướng bắc.",
+      "Đóng mạch, kim quay lệch khỏi hướng bắc một góc 20°–60° tuỳ khoảng cách và cường độ dòng.",
+      "Đảo hai đầu pin, kim lệch sang phía đối diện với góc lệch gần như cũ.",
+      "Ngắt mạch, kim trở về hướng bắc ban đầu."
+    ],
+    "rut_ra": [
+      "Dòng điện tạo ra từ trường ở vùng không gian quanh nó.",
+      "Từ trường đó tác dụng lực từ lên kim nam châm, làm kim lệch khỏi hướng bắc.",
+      "Chiều của lực từ phụ thuộc chiều dòng điện: đổi chiều dòng thì kim lệch sang phía kia."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "d", "ten": "Khoảng cách từ dây tới la bàn", "don_vi": "cm", "kieu": "dieu_chinh", "min": 1, "max": 10, "mac_dinh": 2, "buoc": 1 },
+    { "ky_hieu": "I", "ten": "Cường độ dòng điện trong dây", "don_vi": "A", "kieu": "dieu_chinh", "min": 0, "max": 2, "mac_dinh": 0.5, "buoc": 0.1 },
+    { "ky_hieu": "B_d", "ten": "Thành phần nằm ngang của từ trường Trái Đất", "don_vi": "µT", "kieu": "co_dinh", "gia_tri": 30 },
+    { "ky_hieu": "mu_0", "ten": "Hằng số từ", "don_vi": "T·m/A", "kieu": "co_dinh", "gia_tri": 1.2566e-6 },
+    { "ky_hieu": "B_day", "ten": "Cảm ứng từ của dòng điện thẳng tại la bàn", "don_vi": "µT", "kieu": "tinh_ra" },
+    { "ky_hieu": "alpha", "ten": "Góc lệch của kim la bàn", "don_vi": "độ", "kieu": "do_duoc", "sai_so_do": 2 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Cảm ứng từ của dòng điện thẳng dài: B_day = 2·10^-7 · I / d  (I tính bằng A, d tính bằng m, B ra T)",
+      "Từ trường tổng hợp tại la bàn: B = căn(B_d^2 + B_day^2)",
+      "Góc lệch của kim: tan(alpha) = B_day / B_d"
+    ],
+    "gia_thiet": [
+      "dây dài so với khoảng cách d, coi là dòng điện thẳng dài",
+      "bỏ qua từ trường của các vật bằng sắt quanh đó và từ trường riêng của la bàn",
+      "la bàn đặt nằm ngang nên chỉ thành phần nằm ngang của từ trường Trái Đất định hướng kim",
+      "dây và la bàn đặt cùng mặt phẳng nằm ngang, dây vuông góc phương bắc – nam ở chỗ khảo sát"
+    ],
+    "ghi_chu": "Mô phỏng nên có thanh trượt I và d, vẽ kim la bàn quay theo góc alpha, và hiện vectơ B_d, B_day, B tổng hợp. Cho đảo chiều dòng bằng một nút bấm: kim lệch sang phía đối diện."
+  },
+  "so_lieu_mau": {
+    "cot": ["I (A)", "d (cm)", "B_day (µT)", "Góc lệch alpha (độ)"],
+    "hang": [
+      [0.5, 5, 2.0, 4],
+      [0.5, 2, 5.0, 9],
+      [1.0, 5, 4.0, 8],
+      [1.0, 2, 10.0, 18],
+      [2.0, 2, 20.0, 34]
+    ],
+    "ghi_chu": "Số liệu tính từ mô hình với B_d = 30 µT và tan(alpha) = B_day/B_d. Số đo thật lệch vài độ vì la bàn có ma sát trục và từ trường của bàn thí nghiệm."
+  },
+  "ket_qua_ky_vong": "Kim la bàn lệch khỏi hướng bắc khi có dòng điện chạy qua dây, lệch nhiều hơn khi tăng cường độ dòng hoặc đưa la bàn lại gần dây, và lệch sang phía đối diện khi đảo chiều dòng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng kim la bàn lệch vì dây dẫn bị nhiễm từ giống một thanh sắt, không liên quan tới dòng điện.",
+    "Cho rằng dòng điện chỉ tác dụng lực từ khi có nam châm đặt sẵn — ngược lại, chính dòng điện tạo ra từ trường.",
+    "Cho rằng đổi chiều dòng điện thì kim lệch về cùng phía nhưng góc nhỏ hơn."
+  ],
+  "sai_so_thuong_gap": [
+    "La bàn đặt gần vật bằng sắt (chân bàn, kẹp cá sấu) nên kim lệch ngay cả khi chưa đóng mạch.",
+    "Đóng mạch quá lâu làm dây nóng, điện trở tăng, dòng giảm trong lúc đọc góc.",
+    "Ước lượng góc lệch bằng mắt nên sai số tới 5°–10°."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Nhìn từ trên xuống: tấm bìa có lỗ, dây dẫn thẳng đứng xuyên qua, la bàn đặt cạnh dây. Thanh trượt I và d làm kim quay; nút đảo chiều cho kim quay sang phía đối diện.",
+    "diem_nhan": "Dây thẳng đứng xuyên qua tấm bìa, la bàn đặt trên bìa: nếu đường dây – la bàn nằm theo phương đông – tây thì từ trường của dây hướng bắc – nam, kim gần như không lệch; nếu đặt la bàn ở phía bắc hoặc nam của dây (từ trường của dây hướng đông – tây, vuông góc kim) thì kim lệch cực đại."
+  },
+  "an_toan": [
+    "Chỉ đóng mạch vài giây mỗi lần để dây và pin không nóng.",
+    "Dùng biến trở hạn chế dòng, không nối tắt trực tiếp hai cực pin."
+  ]
+}

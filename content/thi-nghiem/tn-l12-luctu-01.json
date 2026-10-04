@@ -1,0 +1,97 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-01",
+  "ten": "Đo lực từ theo cường độ dòng điện bằng lực kế điện tử",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "luctu.luc_tu_len_day",
+    "luctu.dinh_luat_ampe",
+    "luctu.cam_ung_tu"
+  ],
+  "muc_tieu": "Chứng tỏ lực từ tác dụng lên đoạn dây tỉ lệ thuận với cường độ dòng điện khi dây đặt vuông góc đường sức, và từ số liệu suy ra độ lớn cảm ứng từ của khe nam châm kèm sai số.",
+  "dung_cu": [
+    { "ten": "Nam châm chữ U (hoặc hai cực của nam châm điện)", "so_luong": 1, "ghi_chu": "cảm ứng từ trong khe cỡ 0,1 T" },
+    { "ten": "Đoạn dây dẫn thẳng dài 5,0 cm", "so_luong": 1, "ghi_chu": "đo bằng thước kẹp, sai số ±0,5 mm" },
+    { "ten": "Lực kế điện tử hoặc cân điện tử có thang mN", "so_luong": 1, "ghi_chu": "sai số ±0,3 mN" },
+    { "ten": "Nguồn một chiều điều chỉnh được 0–6 V", "so_luong": 1 },
+    { "ten": "Ampe kế một chiều", "so_luong": 1, "ghi_chu": "sai số ±0,05 A" },
+    { "ten": "Biến trở và dây nối", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt đoạn dây dài 5,0 cm nằm ngang, vuông góc với đường sức từ trong khe nam châm chữ U.",
+      "Móc một đầu dây vào lực kế điện tử, hiệu chỉnh lực kế về 0 khi chưa có dòng.",
+      "Tăng dần dòng điện theo các giá trị 1,0 – 2,0 – 3,0 – 4,0 – 5,0 A; ở mỗi giá trị đọc lực kế một lần rồi ghi vào bảng."
+    ],
+    "quan_sat": [
+      "Lực kế chỉ lực tăng gần như tuyến tính theo cường độ dòng điện: 1,0 A cho 4,6 mN, 5,0 A cho 25,5 mN.",
+      "Khi ngắt dòng, kim lực kế trở về 0 — không có lực từ.",
+      "Chia lực cho tích I·l, cả năm dòng đều cho giá trị quanh 0,10 T (từ 0,092 T đến 0,104 T)."
+    ],
+    "rut_ra": [
+      "F tỉ lệ thuận với I khi dây vuông góc đường sức: đồ thị F theo I là đường thẳng đi qua gốc toạ độ.",
+      "Độ dốc của đường thẳng bằng B·l, nên đo độ dốc rồi chia cho l sẽ được cảm ứng từ của khe nam châm.",
+      "Kết quả trung bình B = 0,099 T, sai số ±0,005 T; sai số tương đối lớn nhất ở dòng nhỏ vì lực đo được nhỏ."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "I", "ten": "Cường độ dòng điện qua đoạn dây", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.5, "max": 5.0, "mac_dinh": 2.0, "buoc": 0.5 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ trong khe nam châm", "don_vi": "T", "kieu": "co_dinh", "gia_tri": 0.1 },
+    { "ky_hieu": "l", "ten": "Chiều dài đoạn dây nằm trong từ trường", "don_vi": "m", "kieu": "co_dinh", "gia_tri": 0.05 },
+    { "ky_hieu": "F_lt", "ten": "Lực từ tính theo mô hình", "don_vi": "mN", "kieu": "tinh_ra" },
+    { "ky_hieu": "F_do", "ten": "Số đọc của lực kế", "don_vi": "mN", "kieu": "do_duoc", "sai_so_do": 0.3 },
+    { "ky_hieu": "B_suy", "ten": "Cảm ứng từ suy ra từ số đo", "don_vi": "T", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Dây vuông góc đường sức: F = B·I·l",
+      "Suy ra cảm ứng từ từ số đo: B = F_do / (I·l)",
+      "Lực tính theo mô hình: F_lt = 0,10 · I · 0,05 · 1000 = 5,0 · I (mN)",
+      "Sai số tương đối của phép suy B: ΔB/B ≈ ΔF/F + ΔI/I + Δl/l"
+    ],
+    "gia_thiet": [
+      "từ trường trong khe nam châm coi như đều và vuông góc đúng 90° với đoạn dây",
+      "bỏ qua lực đẩy Ác-si-mét của không khí và khối lượng riêng của dây",
+      "hai đầu dây bị kẹp nằm ngoài vùng từ trường đều nên chiều dài hiệu dụng hơi nhỏ hơn 5,0 cm",
+      "bỏ qua từ trường rò ở mép hai cực nam châm"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ thanh trượt I và đồ thị F–I vẽ dần theo từng điểm đo; cho bật/tắt chế độ hiện sai số để thấy sai số tương đối nhỏ dần khi I tăng."
+  },
+  "so_lieu_mau": {
+    "cot": ["I (A)", "F đo (mN)", "B = F/(I·l) (T)"],
+    "hang": [
+      [1.0, 4.6, 0.092],
+      [2.0, 10.4, 0.104],
+      [3.0, 14.2, 0.095],
+      [4.0, 20.6, 0.103],
+      [5.0, 25.5, 0.102]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với B = 0,10 T, l = 5,0 cm (F lý thuyết = 5,0·I mN); các giá trị lệch vài phần trăm là sai số của lực kế ±0,3 mN và của chiều dài hiệu dụng. Trung bình năm giá trị B = 0,099 T."
+  },
+  "ket_qua_ky_vong": "Lực kế cho số đọc tăng đều theo cường độ dòng điện; năm giá trị B suy ra đều quanh 0,10 T, chứng tỏ lực từ tỉ lệ thuận với I và cảm ứng từ là đại lượng đặc trưng cho từ trường tại chỗ đặt dây.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng lực từ tỉ lệ với bình phương cường độ dòng điện vì 'dòng mạnh thì đẩy mạnh hơn nhiều'.",
+    "Cho rằng B tính ra thay đổi theo I, tức cảm ứng từ phụ thuộc vào dòng điện thử.",
+    "Đọc số lực kế ngay khi dây còn rung nên số đọc dao động, lấy giá trị lớn nhất thay vì giá trị ổn định."
+  ],
+  "sai_so_thuong_gap": [
+    "Lực kế chưa hiệu chỉnh 0 khi đang có dòng chạy qua dây.",
+    "Đoạn dây không thật sự vuông góc với đường sức: lệch 5° làm lực giảm khoảng 0,4%.",
+    "Bỏ qua phần dây bị kẹp nằm ngoài khe nam châm nên chiều dài hiệu dụng nhỏ hơn 5,0 cm.",
+    "Từ trường rò ở mép khe làm B ở hai đầu đoạn dây khác B ở giữa."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Khe nam châm chữ U với đoạn dây treo trên lực kế; thanh trượt dòng điện, kim lực kế nhích theo; đồ thị F–I và bảng số liệu tự điền thêm một hàng mỗi lần bấm 'đo'.",
+    "diem_nhan": "Năm điểm đo nằm gần như trên một đường thẳng đi qua gốc toạ độ; đổi cảm ứng từ của nam châm thì độ dốc đổi, còn các điểm vẫn thẳng hàng."
+  },
+  "an_toan": [
+    "Dòng tới 5 A làm dây nóng lên: mỗi lần chỉ đóng mạch vài giây rồi ngắt.",
+    "Không để dây dẫn chạm vào hai cực nam châm gây đoản mạch."
+  ]
+}
