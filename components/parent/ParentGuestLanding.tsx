@@ -4,6 +4,7 @@ import { Eye, LineChart, ListChecks, MessageCircle, Phone } from "lucide-react";
 import { CONTACT, PARENT_SHOTS } from "@/lib/contact";
 import { displayPhone } from "@/components/parent/TeacherContact";
 import ParentFaq from "@/components/parent/ParentFaq";
+import ScrollToHash from "@/components/ui/ScrollToHash";
 
 /**
  * Trang khách của /phu-huynh — người xem là PHỤ HUYNH 45–60 tuổi chưa đăng nhập, thường mở link
@@ -125,6 +126,8 @@ export default function ParentGuestLanding() {
 
       {PARENT_SHOTS.length > 0 && (
         <section id="ket-qua" className="scroll-mt-24">
+          {/* Link "Xem điểm thi tốt nghiệp" ở trang chủ trỏ tới #ket-qua; khối này dựng sau hydrate nên cần tự cuộn. */}
+          <ScrollToHash />
           <h2 className="font-display text-lg font-bold text-white">Kết quả học sinh của thầy</h2>
           <div className={`mt-3 grid gap-4 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
             {PARENT_SHOTS.map((shot) => (
