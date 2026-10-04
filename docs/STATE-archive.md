@@ -3,6 +3,10 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 04/10/2026 (đã chạy)
+`20261004100000_bank_grade_thi_thu_tn.sql` — gắn `grade='12'` cho 5 899 câu `question_bank` từ đề thi thử TN/minh hoạ (trước đó `grade=''`, không chủ đề). Chỉ đụng cột grade.
+Kết quả: khối 12 = 11 023 câu, còn 11 câu chưa rõ khối (đề 209, 258 — gắn tay ở "Câu chưa rõ khối"). Rollback ở cuối file; id lưu trong `question_bank_grade_fix_20261004`.
+
 ## Migration — 30/09/2026 17:15 (đã chạy)
 `20260930160000_exit_quiz_bank_children.sql` — policy `student reads exit-quiz bank questions` trên `question_bank` mở cho HS đọc cả câu ở
 YCCĐ con của bài đang cần phụ đạo (trước đó 11/25 cặp bài×dạng hiện "chưa có câu nào"). Log `scripts/logs/20260930-171530-*` OK.

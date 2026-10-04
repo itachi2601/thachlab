@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 255 hàm, sinh tự động 2026-10-03
+# Hàm SQL / RPC (schema public) — 255 hàm, sinh tự động 2026-10-04
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
