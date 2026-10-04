@@ -3,11 +3,15 @@
 /**
  * components/physics/HarmonicPanel.tsx
  *
- * Tab "Dao động" của hero: con lắc lò xo + đồ thị x–t + bảng điều khiển.
+ * Panel "Dao động": con lắc lò xo + đồ thị x–t + bảng điều khiển.
  *
- * Được nạp bằng next/dynamic({ ssr: false }) từ PhysicsSimulationHero vì tab
- * này chỉ mount SAU khi học sinh bấm chọn — nhờ vậy SVG + đồ thị + framer-motion
- * của bảng công thức không nằm trong gói JS tải đầu tiên của trang chủ.
+ * ĐÃ RỜI HERO 5/10/2026 (hero đổi tab 2 thành "Thả hàng cứu hộ"). Code giữ nguyên,
+ * cố ý: đây là mô phỏng tương tác duy nhất của chương Dao động lớp 11 — Giai đoạn 3
+ * trong docs/ROADMAP.md chờ nhúng nó vào bài Dao động kèm bộ câu hỏi.
+ * Hiện chưa file nào import, nên nó không nằm trong bundle.
+ *
+ * Khi nhúng lại: nạp bằng next/dynamic({ ssr: false }) — SVG + đồ thị + framer-motion
+ * của bảng công thức không nên vào gói JS tải đầu tiên của trang.
  *
  * Không tự chạy khi mới mở (autoPlay: false): mô phỏng chỉ chuyển động khi học
  * sinh bấm "Phát" (quy tắc B4 — hoạt hình để giải thích, do HS bấm chạy).

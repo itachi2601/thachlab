@@ -1,4 +1,4 @@
-# ROADMAP ThachLab (cập nhật 28/09/2026 — bản đối chiếu mã nguồn + hệ động lực)
+# ROADMAP ThachLab (cập nhật 28/09/2026 — bản đối chiếu mã nguồn + hệ động lực; kế hoạch lý thuyết tương tác bổ sung 4/10/2026)
 
 Triết lý: **"Cho hết kiến thức. Bán sự đồng hành."**
 Khác biệt: *Hệ thống biết học sinh đang yếu ở đâu và biết đưa học sinh đi đâu tiếp theo.*
@@ -99,6 +99,8 @@ Thay vì dựng trang lộ trình riêng theo chương, **bộ huy hiệu theo l
 
 ## Giai đoạn 3 — Khám phá / Mô phỏng (song song từ Q1/2027, 1–2 mô phỏng/tháng)
 Đã có: con lắc lò xo SVG (`SpringSimulation`) làm hero trang chủ.
+- 5/10/2026: con lắc lò xo **rời hero** (thay bằng tab "Thả hàng" — máy bay cứu hộ thả gói, ném ngang, Bài 12
+  Vật lí 10). `HarmonicPanel` + `SpringSimulation` giữ nguyên code, chờ nhúng vào bài Dao động ở đây.
 - [ ] Nhúng vào bài Dao động kèm bộ câu hỏi gắn YCCĐ (mô phỏng cũng góp câu cho danh hiệu).
 - [ ] Đồ thị x–t, v–t → rơi tự do, ném ngang → sóng → nhiệt → điện.
 - Không làm mô phỏng nào không gắn với một bài học + một bộ câu hỏi.
@@ -154,3 +156,18 @@ Hạn mức tuần Claude reset **12:00 trưa Thứ Năm 02/10/2026** (giờ VN)
   phụ đạo) — mỗi việc 1 phiên riêng, xong commit + deploy rồi mới sang việc sau.
 - **Song song, rẻ**: đăng ~300 đề thi thử theo quy tắc mới trong `dang-de-hang-loat`.
 - Không thêm lớp động lực mới nào khác cho tới hết mùa 1 (25/10).
+
+## Lý thuyết tương tác — việc tiếp (chốt 4/10/2026)
+
+Bài đọc có tương tác (mục tiêu, dự đoán, từ khoá, thí nghiệm, bẫy, trả bài, bài toán mẫu) theo skill `soan-bai-ly-thuyet-tuong-tac`. Không tính 17 mục Kiểm tra.
+
+**Đã lên web 4/10/2026 — Vật lí 12 gần đủ.** 19/20 bài dạy đã có lý thuyết tương tác. Ba bài có từ trước (Bài 1, Bài 12, Bài 13). Mười sáu bài ghi cơ sở dữ liệu trong ngày và lên web cùng bản deploy này: Bài 2–10, Bài 14–16 (từ trường), Bài 14–18 (hạt nhân). Kèm Bài 14 lớp 11 (Bài tập về sóng, id 33) vì đã ghi cùng đợt. **Còn trống ở lớp 12:** Bài 11 Thực hành đo độ lớn cảm ứng từ (id 12) — chưa có mục lý thuyết.
+
+Cách làm mỗi đợt: 4 bài một lượt, soạn song song, kiểm chéo trước khi ghi, chỉ ghi mục Lý thuyết, rồi deploy.
+
+- [ ] **Đợt 1 — Lớp 11, chương Dao động** (đang dạy đầu năm). Soạn 4 bài kiến thức còn lý thuyết cũ: Bài 2 Mô tả dao động điều hoà (id 21), Bài 3 Vận tốc và gia tốc (id 22), Bài 5 Động năng và thế năng (id 24), Bài 6 Tắt dần, cưỡng bức, cộng hưởng (id 25). Xong bốn bài đó mới tới hai tiết bài tập đang trống: Bài 4 (id 23), Bài 7 (id 26).
+- [ ] **Đợt 2 — Lớp 10, chương Động học.** Soạn Bài 4, 5, 7, 8, 9, 10 (id 49, 50, 52, 53, 54, 55). Bài 12 Chuyển động ném đã có. Bài 6 và Bài 11 (thực hành, đang trống) để sau các bài kiến thức.
+- [ ] **Đợt 3 — Lớp 11, nốt Sóng rồi sang Điện.** Sóng: Bài 9, Bài 11, Bài 15 và Bài 10 thực hành (id 28, 30, 34, 29). Bài 8, 12, 13 đã có; Bài 14 vừa lên web. Tiếp điện trường Bài 16–21 (id 35–40), rồi dòng điện Bài 22–26 (id 41–45).
+- [ ] **Đợt 4 — Lớp 10, phần còn lại.** Mở đầu Bài 1–3 (id 46–48). Động lực học trừ Bài 13 và Bài 16 đã có (id 59, 60, 62–67; Bài 20 và Bài 22 đang trống). Sau đó năng lượng Bài 23–27, động lượng Bài 28–30, chuyển động tròn Bài 31–32, biến dạng và áp suất Bài 33–34.
+- [ ] **Đợt 5 — KHTN 9.** 17 bài, chưa bài nào tương tác. Đã có lý thuyết cũ: Bài 2–6. Đang trống: Bài 1 và Bài 7–17. Làm khi 10–12 đã phủ chương đang dạy.
+- [ ] **Lớp 12, một bài còn lại:** Bài 11 Thực hành đo cảm ứng từ (id 12).

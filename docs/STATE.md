@@ -11,6 +11,16 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Hero: tab 2 đổi từ "Dao động" (con lắc lò xo) sang "Thả hàng" — máy bay cứu hộ thả gói hàng (5/10/2026)**:
+  đúng cảnh mở bài của **Bài 12. Chuyển động ném, Vật lí 10 (lesson 57, đang published)** và đúng cái bẫy đã
+  ghi trong `content/thi-nghiem/tn-l10-nemngang-01.json` ("máy bay bay nhanh hơn thì gói rơi lâu hơn").
+  `components/physics/RescueDropSimulation.tsx` + `hooks/useRescueDrop.ts` + `lib/horizontalProjectile.ts`
+  (toán thuần, kiểm bằng `tmp/hero-review/thahang-check.mts`: thả đúng vạch → trúng tâm bãi đáp sai số 0 với
+  **mọi** cặp h–v₀; chấm 0,1 s cách đều theo phương ngang; t = √(2h/g) không phụ thuộc v₀). Bãi đáp rộng 40 m
+  và sau mỗi lượt hiện vạch "phải thả ở đây" + độ lệch — cố ý để không thành bài đo phản xạ. Không tự bay khi
+  mới mở, chỉ chạy khi học sinh bấm (B4). Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary` → JS tải đầu
+  trang chủ không đổi. `HarmonicPanel`/`SpringSimulation` **giữ nguyên code**, chờ nhúng vào bài Dao động
+  (Giai đoạn 3). Hero còn 3 tab: Ném xiên · Thả hàng · Giao thoa. Quy tắc áp dụng: B1, B4, B8, D2, M2, M5, C1.
 - **Hero có thêm tab "Giao thoa" — khay sóng hai nguồn (5/10/2026)**: mô phỏng theo đúng spec
   `content/thi-nghiem/tn-l11-giaothoa-01.json` (Bài 12 Giao thoa sóng, Vật lí 11):
   `components/physics/InterferenceSimulation.tsx` + `hooks/useInterferenceTank.ts` + `lib/interference.ts`
@@ -187,6 +197,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 
+- `20261004230000_thpt_course_pairs.sql` (lớp 12 học 2 buổi/tuần: điền `pair_key='Vật lí 12L1'`, `pair_slot` A/B cho 4 khoá id 5–8 + comment cột; CHỈ update dữ liệu, chạy lúc nào cũng được; rollback ở cuối file) — ĐANG CHỜ. Code (trang chủ, `/khoa-hoc`, `/khoa-hoc/dang-ky`) đã deploy 4/10 và tự suy buổi A/B từ tên khoá khi cột trống, nên chưa chạy vẫn hiện đúng; ràng buộc "chọn 1A + 1B" mới ép ở client, RPC `thpt_register` chưa ép.
 - `20261004130000_phu_dao_xem_lai_ly_thuyet.sql` (bắt buộc xem lại lý thuyết tương tác trước bài tự kiểm tra thoát phụ đạo: bảng `tutoring_theory_reviews`, RPC `tutoring_review_start`/`tutoring_review_ping`, hàm `tutoring_theory_item`, thay guard `tutoring_exit_attempt_guard`; chạy lúc nào cũng được; rollback `perf/rollback/20261004130000_phu_dao_xem_lai_ly_thuyet.down.sql`) — ĐANG CHỜ. Client (`TheoryReviewStep`, `TutoringExitQuiz`) tự bỏ qua bước xem lại khi RPC chưa có. Test SQL bằng pglite 4/10/2026 qua; CHƯA test UI với tài khoản HS thật. Lớp 12: bộ Kiểm tra nhanh chưa đăng (xem mục dưới) nên phần "câu dễ từ quiz lý thuyết" chỉ có hiệu lực sau khi đăng bộ quiz.
 - `20261004120000_phu_dao_hang_cho.sql` (bảng `tutoring_waitlist`, trigger tự đẩy em đầu hàng chờ lên khi có người huỷ — thay hàm `tutoring_slot_unregister`, RPC `tutoring_waitlist_mine` + `tutoring_slot_open_next`; chạy lúc nào cũng được; rollback ở cuối file) — ĐANG CHỜ. Client (`TutoringSlotsPlanner`, `ThptStudentHome`, `CatchupCard`) gọi bảng/RPC này; chưa chạy thì nút "vào hàng chờ" báo lỗi.
 - `20261003150000_phu_dao_kiem_tra_cuoi_buoi.sql` (bảng `tutoring_exit_windows`, cột `tutoring_exit_attempts.window_id`, guard cửa sổ 10 câu/70%, hàm `ta_tutoring_pass_ratio`, `ta_monthly_policy` tính 25đ phụ đạo theo tỉ lệ nhóm đạt ≥60%/40–59%/<40%; chạy lúc nào cũng được; rollback `perf/rollback/20261003150000_phu_dao_kiem_tra_cuoi_buoi.down.sql` — đọc đầu file về thứ tự) — ĐÃ CHẠY 3/10/2026 22:57 (log `scripts/logs/`), cùng `20261003130000` và `20261003140000`. UI trợ giảng (`PhudaoPlanner`) và học sinh (`ThptStudentHome`) chưa commit/deploy.
