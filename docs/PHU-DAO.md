@@ -62,6 +62,14 @@ cần server.
 - **Giáo viên** — `/dashboard-thpt` tab **Phụ đạo**: bốn số tổng, "Nên phụ đạo chung phần nào",
   và từng em với lịch sử đã dạy (ngày, tên trợ giảng).
 
+## Buổi đầy chỗ → hàng chờ
+
+Trần **4 em/buổi** (quy chế TA 10/2026; planner chặn `capacity` ≤ `SLOT_MAX_CAPACITY`). Buổi đã đủ thì em
+(hoặc phụ huynh hộ con) bấm **"Đã đủ chỗ — vào hàng chờ"**, thấy vị trí "thứ k/n". Có người huỷ → em đầu hàng
+tự được xếp vào (trigger DB). Trợ giảng thấy hàng chờ dưới từng buổi ở `/tro-giang/phu-dao?tab=slots` và bấm
+**"Mở lượt tiếp"** để tạo buổi mới (cùng lớp, chủ đề, sức chứa) và chuyển tối đa 4 em đầu hàng sang.
+Nhóm cùng hổng một chỗ từ ~8 em trở lên nên dạy chung cả lớp thay vì chia nhiều lượt 4 em.
+
 ## Bảng
 
 | Bảng | Vai trò |
@@ -70,6 +78,7 @@ cần server.
 | `exam_question_results` | Đúng/sai từng câu kèm chủ đề — nguồn của mọi thống kê |
 | `tutoring_needs` | Mục cần phụ đạo + trạng thái |
 | `tutoring_session_topics` | Buổi nào đã dạy chủ đề nào cho em nào |
+| `tutoring_waitlist` | Hàng chờ của buổi đã đầy (`tutoring_slot_open_next` chuyển sang buổi mới) |
 | `ta_sessions.phudao_student_ids` | Nối phiếu phụ đạo với tài khoản học sinh thật |
 
 Từ 01/10/2026 em được phụ đạo **bắt buộc có tài khoản** — chọn trong danh sách lớp, không

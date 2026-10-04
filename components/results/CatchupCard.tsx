@@ -7,7 +7,11 @@ import { fetchQuestionTopics, type QuestionTopic } from "@/services/analytics";
 import {
   cancelRegistration,
   fetchMyRegistrations as fetchMySlotRegistrations,
+  fetchMyWaitlist,
   fetchUpcomingSlots,
+  joinWaitlist,
+  leaveWaitlist,
+  type WaitlistPosition,
   registerForSlot,
   type TutoringSlot,
 } from "@/services/tutoring";
@@ -34,6 +38,7 @@ export default function CatchupCard({
   const [topics, setTopics] = useState<QuestionTopic[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [mine, setMine] = useState<Set<number>>(new Set());
+  const [waitlist, setWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlot, setBusySlot] = useState<number | null>(null);
 
   const reload = useCallback(() => {
@@ -41,6 +46,9 @@ export default function CatchupCard({
     if (classId !== null) {
       fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
       fetchMySlotRegistrations(studentId).then((ids) => setMine(new Set(ids))).catch(() => setMine(new Set()));
+      fetchMyWaitlist(studentId)
+        .then((rows) => setWaitlist(new Map(rows.map((r) => [r.slotId, r]))))
+        .catch(() => setWaitlist(new Map()));
     }
   }, [studentId, classId]);
 
@@ -80,6 +88,12 @@ export default function CatchupCard({
       if (mine.has(slot.id)) {
         await cancelRegistration(slot.id, studentId);
         toast("success", "Đã huỷ đăng ký ca này.");
+      } else if (waitlist.has(slot.id)) {
+        await leaveWaitlist(slot.id, studentId);
+        toast("success", "Đã rời hàng chờ.");
+      } else if (slot.registeredCount >= slot.capacity) {
+        await joinWaitlist(slot.id, studentId);
+        toast("success", `Đã vào hàng chờ ca này — có chỗ trống ${who} sẽ được xếp vào.`);
       } else {
         await registerForSlot(slot.id, studentId);
         toast("success", "Đã đăng ký ca phụ đạo.");
@@ -95,6 +109,7 @@ export default function CatchupCard({
   function renderSlot(slot: TutoringSlot, highlight: boolean) {
     const registered = mine.has(slot.id);
     const full = slot.registeredCount >= slot.capacity && !registered;
+    const waiting = waitlist.get(slot.id);
     const date = new Date(`${slot.workDate}T00:00:00`).toLocaleDateString("vi-VN", { weekday: "short", day: "2-digit", month: "2-digit" });
     const slotTopics = slot.topicIds.map((t) => topicName.get(t)).filter(Boolean) as string[];
     return (
@@ -109,13 +124,18 @@ export default function CatchupCard({
         </div>
         {slotTopics.length > 0 && <p className="mt-1 text-xs text-slate-400">{slotTopics.join(" · ")}</p>}
         {slot.note && <p className="mt-1 text-xs text-slate-500">{slot.note}</p>}
+        {waiting && (
+          <p className="mt-1 text-xs text-amber-300">
+            Đang ở hàng chờ: thứ {waiting.position}/{waiting.total}. Có chỗ trống sẽ được xếp vào tự động.
+          </p>
+        )}
         <button
           type="button"
           onClick={() => toggle(slot)}
-          disabled={busySlot === slot.id || full}
-          className={`mt-2 w-full rounded-lg py-2 text-xs font-bold disabled:opacity-40 ${registered ? "border border-white/15 text-slate-300" : "bg-blue-600 text-white"}`}
+          disabled={busySlot === slot.id}
+          className={`mt-2 w-full rounded-lg py-2 text-xs font-bold disabled:opacity-40 ${registered || waiting ? "border border-white/15 text-slate-300" : full ? "border border-amber-400/40 text-amber-200" : "bg-blue-600 text-white"}`}
         >
-          {registered ? "Huỷ đăng ký" : full ? "Đã đủ số lượng" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
+          {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
         </button>
       </div>
     );

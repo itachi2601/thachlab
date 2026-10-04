@@ -55,6 +55,10 @@ import {
   WINDOW_QUIZ_QUESTION_COUNT,
   fetchMyNeeds,
   fetchMyRegistrations,
+  fetchMyWaitlist,
+  joinWaitlist,
+  leaveWaitlist,
+  type WaitlistPosition,
   fetchUpcomingSlots,
   needLabel,
   registerForSlot,
@@ -159,6 +163,7 @@ export default function ThptStudentHome({
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
+  const [myWaitlist, setMyWaitlist] = useState<Map<number, WaitlistPosition>>(new Map());
   const [busySlotId, setBusySlotId] = useState<number | null>(null);
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
@@ -235,6 +240,9 @@ export default function ThptStudentHome({
     fetchMyOpenExitWindows().then(setOpenWindows).catch(() => setOpenWindows([]));
     fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
     fetchMyRegistrations(studentId).then((ids) => setMyRegistrations(new Set(ids))).catch(() => setMyRegistrations(new Set()));
+    fetchMyWaitlist(studentId)
+      .then((rows) => setMyWaitlist(new Map(rows.map((r) => [r.slotId, r]))))
+      .catch(() => setMyWaitlist(new Map()));
   }
   useEffect(reloadTutoring, [studentId, classId]);
 
@@ -347,6 +355,12 @@ export default function ThptStudentHome({
       if (myRegistrations.has(slot.id)) {
         await cancelRegistration(slot.id, studentId);
         toast("info", "Đã huỷ đăng ký.");
+      } else if (myWaitlist.has(slot.id)) {
+        await leaveWaitlist(slot.id, studentId);
+        toast("info", "Đã rời hàng chờ.");
+      } else if (slot.registeredCount >= slot.capacity) {
+        await joinWaitlist(slot.id, studentId);
+        toast("success", "Đã vào hàng chờ — có bạn huỷ hoặc trợ giảng mở lượt tiếp, em sẽ được xếp vào.");
       } else {
         await registerForSlot(slot.id, studentId);
         toast("success", "Đã đăng ký buổi phụ đạo.");
@@ -626,6 +640,7 @@ export default function ThptStudentHome({
                 {slots.map((slot) => {
                   const registered = myRegistrations.has(slot.id);
                   const full = slot.registeredCount >= slot.capacity && !registered;
+                  const waiting = myWaitlist.get(slot.id);
                   return (
                     <div key={slot.id} className="rounded-xl border border-white/10 bg-white/[.02] p-3">
                       <div className="flex flex-wrap items-center gap-2">
@@ -643,17 +658,24 @@ export default function ThptStudentHome({
                         </span>
                       </div>
                       {slot.note && <p className="mt-1 text-xs text-slate-400">{slot.note}</p>}
+                      {waiting && (
+                        <p className="mt-1 text-xs text-amber-300">
+                          Em đang ở hàng chờ: thứ {waiting.position}/{waiting.total}. Có chỗ trống em sẽ được xếp vào tự động.
+                        </p>
+                      )}
                       <button
                         type="button"
                         onClick={() => toggleRegistration(slot)}
-                        disabled={busySlotId === slot.id || full}
+                        disabled={busySlotId === slot.id}
                         className={`mt-2 min-h-11 w-full rounded-lg py-2 text-sm font-bold disabled:opacity-40 ${
-                          registered
+                          registered || waiting
                             ? "border border-white/15 text-slate-300"
-                            : "bg-blue-600 text-white"
+                            : full
+                              ? "border border-amber-400/40 text-amber-200"
+                              : "bg-blue-600 text-white"
                         }`}
                       >
-                        {registered ? "Huỷ đăng ký" : full ? "Đã đủ số lượng" : "Đăng ký"}
+                        {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : "Đăng ký"}
                       </button>
                     </div>
                   );

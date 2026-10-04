@@ -442,6 +442,89 @@ export async function cancelRegistration(slotId: number, studentId: string): Pro
   if (error) throw error;
 }
 
+// --- Hàng chờ: buổi đã đủ chỗ (trần 4 em/buổi) thì em vào hàng chờ, xem
+// supabase/migrations/20261004120000_phu_dao_hang_cho.sql. ---
+
+/** Trần số em một buổi phụ đạo theo quy chế trợ giảng 10/2026 (hệ số lương dừng ở 3–4 em). */
+export const SLOT_MAX_CAPACITY = 4;
+
+export interface WaitlistPosition {
+  slotId: number;
+  position: number;
+  total: number;
+}
+
+export async function joinWaitlist(slotId: number, studentId: string): Promise<void> {
+  const { error } = await getSupabase().from("tutoring_waitlist").insert({ slot_id: slotId, student_id: studentId });
+  if (error) throw error;
+}
+
+export async function leaveWaitlist(slotId: number, studentId: string): Promise<void> {
+  const { error } = await getSupabase()
+    .from("tutoring_waitlist")
+    .delete()
+    .eq("slot_id", slotId)
+    .eq("student_id", studentId);
+  if (error) throw error;
+}
+
+/** Vị trí của em trong hàng chờ từng buổi (1 = em tiếp theo được lên). */
+export async function fetchMyWaitlist(studentId: string): Promise<WaitlistPosition[]> {
+  const { data, error } = await getSupabase().rpc("tutoring_waitlist_mine", { p_student: studentId });
+  if (error) throw error;
+  return ((data ?? []) as { slot_id: number; position: number; total: number }[]).map((r) => ({
+    slotId: r.slot_id,
+    position: r.position,
+    total: r.total,
+  }));
+}
+
+export interface WaitlistEntry {
+  slotId: number;
+  studentId: string;
+  studentName: string;
+  createdAt: string;
+}
+
+/** Danh sách em đang chờ của các buổi cho trước, theo thứ tự vào hàng — trợ giảng xem. */
+export async function fetchWaitlistForSlots(slotIds: number[]): Promise<WaitlistEntry[]> {
+  if (slotIds.length === 0) return [];
+  const { data, error } = await getSupabase()
+    .from("tutoring_waitlist")
+    .select("slot_id, student_id, created_at, profiles(full_name)")
+    .in("slot_id", slotIds)
+    .order("created_at");
+  if (error) throw error;
+  return ((data ?? []) as unknown as {
+    slot_id: number;
+    student_id: string;
+    created_at: string;
+    profiles: { full_name: string } | { full_name: string }[] | null;
+  }[]).map((row) => ({
+    slotId: row.slot_id,
+    studentId: row.student_id,
+    studentName: one(row.profiles)?.full_name ?? "",
+    createdAt: row.created_at,
+  }));
+}
+
+/** Tạo buổi mới cùng lớp/chủ đề và chuyển tối đa `capacity` em đầu hàng chờ sang. Trả về id buổi mới. */
+export async function openNextSlot(input: {
+  fromSlotId: number;
+  workDate: string;
+  startTime: string;
+  endTime: string;
+}): Promise<number> {
+  const { data, error } = await getSupabase().rpc("tutoring_slot_open_next", {
+    p_slot_id: input.fromSlotId,
+    p_work_date: input.workDate,
+    p_start: input.startTime,
+    p_end: input.endTime,
+  });
+  if (error) throw error;
+  return data as number;
+}
+
 // ============================================================
 // Thoát phụ đạo bằng tự kiểm tra — cách 2 bên cạnh đăng ký buổi học ở trên.
 // Xem docs/supabase-migration-tutoring-exit-quiz.sql.
