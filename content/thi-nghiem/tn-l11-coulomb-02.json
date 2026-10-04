@@ -1,0 +1,170 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Lực tương tác giữa hai điện tích",
+ "lesson_id": 35,
+ "nguon_trong_bai": "content/lesson-samples/l11-luc-coulomb/theory.html",
+ "id": "tn-l11-coulomb-02",
+ "ten": "Cân điện tử đo lực Coulomb theo khoảng cách",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "coulomb.nghich_binh_phuong_r",
+  "coulomb.ti_le_tich_q",
+  "sai_so.sai_so_tuong_doi"
+ ],
+ "muc_tieu": "Đo lực đẩy giữa hai quả cầu tích điện ở 5 khoảng cách, thấy F·r² không đổi, và nhận ra số đọc nhỏ có sai số tương đối lớn.",
+ "dung_cu": [
+  {
+   "ten": "Cân điện tử",
+   "so_luong": 1,
+   "ghi_chu": "đọc đến 0,01 g, có nút trừ bì"
+  },
+  {
+   "ten": "Quả cầu kim loại nhỏ trên trụ cách điện",
+   "so_luong": 2
+  },
+  {
+   "ten": "Giá đỡ có vít nâng hạ, thước đo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn tích điện (máy phát tĩnh điện)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt quả A (+20 nC) trên trụ cách điện lên cân, bấm trừ bì.",
+   "Hạ quả B (+20 nC) thẳng phía trên A.",
+   "Đọc số cân ở 5 khoảng cách tâm–tâm r = 2; 3; 4; 5; 6 cm."
+  ],
+  "quan_sat": [
+   "Số cân tăng (B đẩy A xuống), r càng nhỏ số cân càng lớn."
+  ],
+  "rut_ra": [
+   "F = (số cân)·g; tích F·r² gần như không đổi nên F tỉ lệ nghịch r².",
+   "Hai hàng cuối lệch nhiều hơn vì số đọc nhỏ so với độ phân giải 0,01 g."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "q",
+   "ten": "Điện tích mỗi quả",
+   "don_vi": "nC",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 40,
+   "mac_dinh": 20,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách tâm–tâm",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 8,
+   "mac_dinh": 3,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "m_doc",
+   "ten": "Số cân",
+   "don_vi": "g",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực đẩy",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Hằng số Coulomb",
+   "don_vi": "N·m²/C²",
+   "kieu": "co_dinh",
+   "gia_tri": 9000000000.0
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = k·q^2/r^2 (q tính bằng C, r bằng m)",
+   "m_doc = round(F/g·1000, 2) (gam)",
+   "F·r^2 = m_doc·10^-3·g·r^2"
+  ],
+  "gia_thiet": [
+   "hai quả cầu là điện tích điểm",
+   "điện tích không rò trong lúc đo",
+   "số cân làm tròn đến 0,01 g"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (cm)",
+   "Số cân (g)",
+   "F·r² (10⁻⁶ N·m²)"
+  ],
+  "hang": [
+   [
+    2,
+    0.92,
+    3.61
+   ],
+   [
+    3,
+    0.41,
+    3.62
+   ],
+   [
+    4,
+    0.23,
+    3.61
+   ],
+   [
+    5,
+    0.15,
+    3.68
+   ],
+   [
+    6,
+    0.1,
+    3.53
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với q = 20 nC, g = 9,8 m/s², làm tròn số cân 0,01 g; không phải số đo thật. Lý thuyết F·r² = 3,6·10⁻⁶ N·m²."
+ },
+ "ket_qua_ky_vong": "F·r² ≈ 3,6·10⁻⁶ N·m² ở mọi hàng; lệch lớn nhất ở r = 5 và 6 cm do sai số làm tròn của số đọc nhỏ.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ F tỉ lệ nghịch với r (gấp đôi r thì lực còn một nửa).",
+  "Đọc số cân là lực luôn, quên nhân g và đổi g ra kg."
+ ],
+ "sai_so_thuong_gap": [
+  "Điện tích rò qua không khí ẩm, số cân giảm dần theo thời gian.",
+  "Ở r nhỏ quả cầu không còn là điện tích điểm (hưởng ứng phân bố lại điện tích).",
+  "Đo r giữa mép thay vì tâm–tâm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "q",
+   "r"
+  ],
+  "dau_ra": [
+   "số cân hiển thị",
+   "đồ thị F theo 1/r²"
+  ],
+  "hinh_trong_bai": "",
+  "y_tuong": "Thanh trượt r, màn cân nhảy số; bật 'làm tròn 0,01 g' để thấy sai số tương đối tăng khi r lớn."
+ },
+ "an_toan": "Máy phát tĩnh điện có thể phóng tia lửa nhỏ; không chạm hai cực khi đang chạy."
+}

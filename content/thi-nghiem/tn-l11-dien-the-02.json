@@ -1,0 +1,122 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện thế",
+ "lesson_id": 39,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-the/theory.html",
+ "id": "tn-l11-dien-the-02",
+ "ten": "Vôn kế chỉ đo hiệu điện thế: pin 1,5 V và dây dẫn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dienthe.hieu_dien_the",
+  "dienthe.doi_dau_u"
+ ],
+ "muc_tieu": "Thấy vôn kế đo U giữa hai điểm, đổi thứ tự hai que thì U đổi dấu, hai điểm trên cùng một dây dẫn có U ≈ 0.",
+ "dung_cu": [
+  {
+   "ten": "Pin 1,5 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đoạn dây đồng nối vào cực dương",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Que đỏ chạm cực (+), que đen chạm cực (−).",
+   "Đổi chỗ hai que.",
+   "Chạm hai que vào hai điểm trên cùng dây đồng nối cực (+)."
+  ],
+  "quan_sat": [
+   "Lần 1: 1,5 V.",
+   "Lần 2: −1,5 V.",
+   "Lần 3: 0,00 V."
+  ],
+  "rut_ra": [
+   "Vôn kế đo U_MN = V_M − V_N, không đo điện thế của một điểm.",
+   "U_NM = −U_MN.",
+   "Hai điểm cùng một dây dẫn: U ≈ 0."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E_pin",
+   "ten": "Hiệu điện thế giữa hai cực pin",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1.2,
+   "max": 9,
+   "mac_dinh": 1.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "U_MN",
+   "ten": "Số chỉ vôn kế",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "U_MN = V_M − V_N",
+   "U_NM = −U_MN",
+   "U giữa hai điểm của cùng một dây dẫn (không có dòng) = 0"
+  ],
+  "gia_thiet": [
+   "pin để hở mạch",
+   "vôn kế điện trở rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "lần",
+   "que đỏ",
+   "que đen",
+   "U (V)"
+  ],
+  "hang": [
+   [
+    1,
+    "cực +",
+    "cực −",
+    1.5
+   ],
+   [
+    2,
+    "cực −",
+    "cực +",
+    -1.5
+   ],
+   [
+    3,
+    "dây, điểm 1",
+    "dây, điểm 2",
+    0.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với E_pin = 1,5 V."
+ },
+ "ket_qua_ky_vong": "1,5 V; −1,5 V; 0,00 V.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vôn kế đo điện thế của một điểm.",
+  "Nghĩ dây nối với cực (+) có hiệu điện thế 1,5 V giữa hai điểm của nó."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "dieu_khien": [
+   "E_pin",
+   "vị trí hai que"
+  ],
+  "dau_ra": [
+   "số chỉ vôn kế có dấu"
+  ],
+  "y_tuong": "Kéo hai que tới các điểm khác nhau của mạch, hiện U = V_đỏ − V_đen."
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trường đều",
+ "lesson_id": 37,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-truong-deu/theory.html",
+ "id": "tn-l11-dien-truong-deu-01",
+ "ten": "Hạt bột trong dầu: hình ảnh đường sức giữa hai bản song song",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dientruongdeu.dinh_nghia",
+  "dientruongdeu.duong_suc"
+ ],
+ "muc_tieu": "Thấy đường sức giữa hai bản phẳng song song tích điện trái dấu là những đường thẳng song song, cách đều; ở mép bản đường sức cong.",
+ "dung_cu": [
+  {
+   "ten": "Khay nhựa trong đựng dầu ăn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bột semolina (hoặc hạt cỏ khô nghiền)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai lá đồng phẳng",
+   "so_luong": 2,
+   "ghi_chu": "đặt song song, cách nhau 4 cm"
+  },
+  {
+   "ten": "Máy phát tĩnh điện (Wimshurst)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối có kẹp cách điện",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ dầu vào khay, rắc đều bột semolina.",
+   "Nhúng hai lá đồng song song cách nhau 4 cm, nối với hai cực máy phát tĩnh điện.",
+   "Quay máy vài vòng, không chạm tay vào lá đồng."
+  ],
+  "quan_sat": [
+   "Hạt bột xếp thành các đường thẳng song song, cách đều, nối hai lá.",
+   "Gần mép lá, các đường cong ra và thưa dần."
+  ],
+  "rut_ra": [
+   "Giữa hai bản (xa mép) là điện trường đều: đường sức thẳng, song song, cách đều.",
+   "Đường sức vuông góc với hai bản, từ bản dương sang bản âm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai lá",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 8,
+   "mac_dinh": 4,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai lá",
+   "don_vi": "kV",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 30,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Cường độ điện trường vùng giữa",
+   "don_vi": "V/m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "E = U/d (vùng giữa, xa mép)",
+   "đường sức ⊥ hai bản, chiều từ bản + sang bản −"
+  ],
+  "gia_thiet": [
+   "bản rộng so với d",
+   "bỏ qua hiệu ứng mép trong vùng giữa",
+   "hạt bột chỉ định hướng, không mang điện tích tự do"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "U (kV)",
+   "E (V/m)"
+  ],
+  "hang": [
+   [
+    4,
+    15,
+    375000
+   ],
+   [
+    2,
+    15,
+    750000
+   ],
+   [
+    4,
+    30,
+    750000
+   ]
+  ],
+  "ghi_chu": "Tính từ E = U/d; hình đường sức không đổi dạng, chỉ hạt xếp nhanh hơn khi E lớn."
+ },
+ "ket_qua_ky_vong": "Vùng giữa: các đường thẳng song song cách đều; vùng mép: đường cong.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng gần bản dương điện trường mạnh hơn ở giữa.",
+  "Nghĩ đường sức ở mép cũng thẳng và đều."
+ ],
+ "sai_so_thuong_gap": [
+  "Hai lá không thật song song làm đường sức xiên.",
+  "Bột rắc quá dày, các đường dính nhau."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "dieu_khien": [
+   "d",
+   "U"
+  ],
+  "dau_ra": [
+   "bản đồ đường sức có vùng mép",
+   "mũi tên E tại điểm bất kỳ"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Kéo thả một điểm đo: ở vùng giữa mũi tên E không đổi, kéo ra mép thì mũi tên đổi hướng và ngắn lại."
+ },
+ "an_toan": "Máy phát tĩnh điện tạo hiệu điện thế hàng chục kV: chỉ chạm kẹp cách điện, tắt và nối đất hai lá trước khi chạm."
+}

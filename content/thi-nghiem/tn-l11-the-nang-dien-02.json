@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Thế năng điện",
+ "lesson_id": 38,
+ "nguon_trong_bai": "content/lesson-samples/l11-the-nang-dien/theory.html",
+ "id": "tn-l11-the-nang-dien-02",
+ "ten": "Ba đường đi từ M tới N trong điện trường đều: công như nhau",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thenangdien.cong_luc_dien",
+  "thenangdien.khong_phu_thuoc_duong_di"
+ ],
+ "muc_tieu": "Tính công của lực điện trên đường thẳng, gấp khúc và cong cùng điểm đầu M, điểm cuối N; thấy chỉ hình chiếu d quyết định.",
+ "dung_cu": [
+  {
+   "ten": "Hình vẽ hai bản phẳng tích điện trái dấu (Hình 2)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Tính công trên đường gấp khúc M → P → N: MP vuông góc đường sức, PN dọc đường sức dài d.",
+   "Chia đường cong thành các bậc thang nhỏ."
+  ],
+  "quan_sat": [
+   "A_MP = 0, A_PN = qEd; tổng bằng qEd như đi thẳng.",
+   "Bậc ngang cho công 0, bậc dọc cộng lại bằng d."
+  ],
+  "rut_ra": [
+   "Công lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu, điểm cuối.",
+   "Đi vòng kín thì A = 0; lực điện là lực thế."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "q",
+   "ten": "Điện tích",
+   "don_vi": "C",
+   "kieu": "dieu_chinh",
+   "min": -1.6e-19,
+   "max": 1.6e-19,
+   "mac_dinh": 1.6e-19
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Cường độ điện trường",
+   "don_vi": "V/m",
+   "kieu": "dieu_chinh",
+   "min": 100,
+   "max": 5000,
+   "mac_dinh": 1000,
+   "buoc": 100
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Hình chiếu MN lên chiều đường sức",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": -0.05,
+   "max": 0.05,
+   "mac_dinh": 0.03,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công của lực điện",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "A = q·E·d",
+   "A_MPN = A_MP + A_PN = 0 + q·E·d",
+   "vòng kín: A = 0"
+  ],
+  "gia_thiet": [
+   "điện trường đều",
+   "chỉ xét lực điện"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "đường",
+   "q (C)",
+   "E (V/m)",
+   "d (m)",
+   "A (J)"
+  ],
+  "hang": [
+   [
+    "thẳng MN",
+    1.6e-19,
+    1000,
+    0.03,
+    4.8e-18
+   ],
+   [
+    "gấp khúc M-P-N",
+    1.6e-19,
+    1000,
+    0.03,
+    4.8e-18
+   ],
+   [
+    "cong",
+    1.6e-19,
+    1000,
+    0.03,
+    4.8e-18
+   ],
+   [
+    "thẳng MN, electron",
+    -1.6e-19,
+    1000,
+    0.03,
+    -4.8e-18
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; proton, MN dài 5 cm, hình chiếu 3 cm cùng chiều đường sức (ví dụ mục II.1)."
+ },
+ "ket_qua_ky_vong": "Proton, E = 1000 V/m, d = 3 cm: A = 4,8·10⁻¹⁸ J trên cả ba đường.",
+ "hien_tuong_hay_sai": [
+  "Lấy độ dài đường đi (5 cm) làm d.",
+  "Cho rằng đường cong dài hơn thì công lớn hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "dieu_khien": [
+   "q",
+   "E",
+   "d"
+  ],
+  "dau_ra": [
+   "công trên từng đoạn",
+   "tổng công mỗi đường"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Học sinh vẽ đường tuỳ ý từ M tới N, mô phỏng cộng công từng đoạn và hiện tổng luôn bằng qEd."
+ }
+}

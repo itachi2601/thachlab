@@ -1,0 +1,150 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Tụ điện",
+ "lesson_id": 40,
+ "nguon_trong_bai": "content/lesson-samples/l11-tu-dien/theory.html",
+ "id": "tn-l11-tudien-02",
+ "ten": "Đo Q theo U để suy ra điện dung",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "tudien.dien_dung_q_chia_u",
+  "tudien.nang_luong_dien_tich_do_thi",
+  "do_luong.sai_so_tuong_doi"
+ ],
+ "muc_tieu": "Từ bảng Q–U thấy Q tỉ lệ thuận với U, tỉ số Q/U không đổi là điện dung; nhận xét sai số.",
+ "dung_cu": [
+  {
+   "ten": "Tụ hoá ghi 470 μF – 16 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn một chiều điều chỉnh 0–12 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cảm biến điện tích (bộ thí nghiệm số)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nạp tụ ở 5 mức U = 2, 4, 6, 8, 10 V.",
+   "Mỗi lần cho tụ phóng qua cảm biến điện tích, đọc Q."
+  ],
+  "quan_sat": [
+   "Q tăng tỉ lệ với U; Q/U dao động quanh 480 μF (475–490)."
+  ],
+  "rut_ra": [
+   "C = Q/U không đổi với một tụ.",
+   "Lần đo ở U nhỏ có sai số tương đối lớn nhất.",
+   "Lệch so với 470 μF ghi trên vỏ do sai số chế tạo (tụ hoá ±20%)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nạp",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 12,
+   "mac_dinh": 6,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "C",
+   "ten": "Điện dung thật của tụ",
+   "don_vi": "μF",
+   "kieu": "co_dinh",
+   "gia_tri": 480
+  },
+  {
+   "ky_hieu": "Q",
+   "ten": "Điện tích đo được",
+   "don_vi": "μC",
+   "kieu": "do_duoc",
+   "sai_so_do": "≤ 2,5 %"
+  },
+  {
+   "ky_hieu": "W",
+   "ten": "Năng lượng tụ",
+   "don_vi": "mJ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Q = C·U",
+   "Q_do = C·U·(1 + e), |e| ≤ 0,025",
+   "W = Q·U/2 = C·U²/2"
+  ],
+  "gia_thiet": [
+   "tụ không rò điện trong lúc chuyển sang cảm biến",
+   "C thật = 480 μF (danh định 470 μF)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "Q (μC)",
+   "Q/U (μF)"
+  ],
+  "hang": [
+   [
+    2,
+    980,
+    490.0
+   ],
+   [
+    4,
+    1900,
+    475.0
+   ],
+   [
+    6,
+    2890,
+    481.7
+   ],
+   [
+    8,
+    3820,
+    477.5
+   ],
+   [
+    10,
+    4800,
+    480.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ = mô hình Q = 480·U cộng nhiễu đo ≤ 2,5 % (đã kiểm bằng script); trung bình Q/U ≈ 481 μF."
+ },
+ "ket_qua_ky_vong": "C ≈ 480 μF; đường Q–U thẳng qua gốc; tại U = 8 V năng lượng W = ½·3820·8 μJ ≈ 15 mJ.",
+ "hien_tuong_hay_sai": [
+  "Lấy số danh định trên vỏ làm kết quả đo.",
+  "Lấy giá trị Q lớn nhất làm điện dung.",
+  "Tưởng C giảm khi U tăng vì C = Q/U."
+ ],
+ "sai_so_thuong_gap": [
+  "Tụ rò điện trong lúc chuyển mạch làm Q đo nhỏ hơn.",
+  "U nhỏ thì Q nhỏ, sai số đọc chiếm tỉ lệ lớn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "U"
+  ],
+  "dau_ra": [
+   "bảng Q, Q/U",
+   "đồ thị Q–U, tô diện tích ½QU"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Thêm thanh 'nhiễu đo' để học sinh thấy vì sao lấy trung bình nhiều lần đo."
+ },
+ "an_toan": "Không nạp quá 16 V; xả tụ trước khi tháo dây."
+}

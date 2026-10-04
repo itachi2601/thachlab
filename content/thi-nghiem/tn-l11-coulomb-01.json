@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Lực tương tác giữa hai điện tích",
+ "lesson_id": 35,
+ "nguon_trong_bai": "content/lesson-samples/l11-luc-coulomb/theory.html",
+ "id": "tn-l11-coulomb-01",
+ "ten": "Thước nhựa cọ tóc: hút giấy vụn và lăn lon nhôm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dientich.nhiem_dien_co_xat",
+  "dientich.nhiem_dien_huong_ung",
+  "dientich.thuyet_electron"
+ ],
+ "muc_tieu": "Thấy vật nhiễm điện do cọ xát hút vật nhẹ, và vật dẫn trung hoà bị hút nhờ nhiễm điện do hưởng ứng.",
+ "dung_cu": [
+  {
+   "ten": "Thước nhựa",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giấy vụn",
+   "so_luong": 1,
+   "ghi_chu": "mẩu ~5 mm"
+  },
+  {
+   "ten": "Lon nhôm rỗng",
+   "so_luong": 1,
+   "ghi_chu": "đặt nằm ngang trên bàn phẳng"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cọ thước nhựa vào tóc khô vài lần.",
+   "Đưa thước lại gần giấy vụn.",
+   "Đưa thước lại gần (không chạm) đầu lon nhôm nằm ngang.",
+   "Đối chứng: đưa thước chưa cọ lại gần giấy vụn và lon nhôm."
+  ],
+  "quan_sat": [
+   "Giấy vụn bay lên bám thước.",
+   "Lon nhôm lăn về phía thước dù không bị chạm.",
+   "Thước chưa cọ: không hút. Đưa thước đã cọ ra xa thì lon trung hoà lại."
+  ],
+  "rut_ra": [
+   "Cọ xát làm thước nhiễm điện (electron chuyển giữa tóc và thước).",
+   "Lon nhôm nhiễm điện do hưởng ứng: đầu gần trái dấu bị hút mạnh hơn đầu xa cùng dấu bị đẩy, vì lực giảm theo 1/r^2."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "q",
+   "ten": "Điện tích trên thước",
+   "don_vi": "nC",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 50,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách thước – lon",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 10,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "F_hut",
+   "ten": "Hợp lực hút lên lon (định tính)",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "điện tích cảm ứng: +q' ở đầu xa, −q' ở đầu gần (q' cùng độ lớn)",
+   "F_hut = k·q·q'·(1/d^2 − 1/(d + D)^2) > 0, D là đường kính lon"
+  ],
+  "gia_thiet": [
+   "coi điện tích trên thước và trên hai đầu lon là điện tích điểm",
+   "bỏ qua ma sát lăn",
+   "q' tỉ lệ với q/d; mô hình chỉ để so sánh định tính độ lớn hai lực"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vật",
+   "Hiện tượng"
+  ],
+  "hang": [
+   [
+    "Giấy vụn",
+    "bay lên bám thước"
+   ],
+   [
+    "Lon nhôm",
+    "lăn về phía thước"
+   ],
+   [
+    "Thước chưa cọ",
+    "không hút"
+   ]
+  ],
+  "ghi_chu": "Thí nghiệm định tính, không có số đo."
+ },
+ "ket_qua_ky_vong": "Giấy vụn bị hút, lon nhôm lăn lại gần thước; thước chưa cọ không gây hiện tượng.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ lon nhôm phải chạm thước mới nhiễm điện.",
+  "Nghĩ vật trung hoà thì không bị hút."
+ ],
+ "sai_so_thuong_gap": [
+  "Không khí ẩm làm điện tích rò nhanh, hiện tượng yếu."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "dieu_khien": [
+   "q",
+   "d"
+  ],
+  "dau_ra": [
+   "phân bố điện tích trên lon",
+   "mũi tên hai lực hút/đẩy lên lon"
+  ],
+  "hinh_trong_bai": "",
+  "y_tuong": "Kéo thước lại gần lon, hiện điện tích cảm ứng hai đầu và hai mũi tên lực dài ngắn khác nhau."
+ },
+ "an_toan": "Không có nguy hiểm đáng kể."
+}

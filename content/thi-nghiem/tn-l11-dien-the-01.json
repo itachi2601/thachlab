@@ -1,0 +1,177 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện thế",
+ "lesson_id": 39,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-the/theory.html",
+ "id": "tn-l11-dien-the-01",
+ "ten": "Đo điện thế giữa hai lá đồng trong khay nước muối",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dienthe.u_bang_ed",
+  "dienthe.duong_dang_the",
+  "dienthe.giam_theo_duong_suc"
+ ],
+ "muc_tieu": "Đo điện thế V theo khoảng cách x tới lá âm, thấy V tăng tuyến tính và V/x ≈ U/d: điện trường giữa hai bản phẳng là đều, U = Ed.",
+ "dung_cu": [
+  {
+   "ten": "Khay nhựa nông đựng nước muối loãng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lá đồng phẳng làm điện cực",
+   "so_luong": 2,
+   "ghi_chu": "đặt song song, cách nhau 10 cm"
+  },
+  {
+   "ten": "Nguồn một chiều 6 V (4 pin 1,5 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế số có hai que đo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ đặt dưới đáy khay",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối hai lá đồng với nguồn U = 6,0 V, cách nhau d = 10 cm.",
+   "Que đen chạm lá âm (mốc 0 V).",
+   "Nhúng que đỏ ở 4 vị trí cách lá âm x = 2; 4; 6; 8 cm, ghi số chỉ.",
+   "Di que đỏ song song với lá đồng, quan sát số chỉ."
+  ],
+  "quan_sat": [
+   "Số chỉ tăng đều theo x: 1,18; 2,43; 3,57; 4,84 V.",
+   "Di song song với lá đồng thì số chỉ gần như không đổi."
+  ],
+  "rut_ra": [
+   "V tăng tuyến tính từ lá âm sang lá dương; V/x ≈ U/d = 60 V/m.",
+   "Điện thế giảm theo chiều đường sức (từ lá dương sang lá âm).",
+   "Đường song song lá đồng là đường đẳng thế."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1.5,
+   "max": 12,
+   "mac_dinh": 6,
+   "buoc": 1.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai lá",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 4,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Khoảng cách que đỏ tới lá âm",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 10,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Điện thế đo tại vị trí que đỏ",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Cường độ điện trường",
+   "don_vi": "V/m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "E = U/d",
+   "V = U·x/d (mốc 0 V ở lá âm)",
+   "U = E·d"
+  ],
+  "gia_thiet": [
+   "hai lá phẳng, song song, đặt ở giữa khay (bỏ hiệu ứng mép)",
+   "nước muối đồng đều",
+   "vôn kế có điện trở rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "x (cm)",
+   "V lí thuyết (V)",
+   "V đo (V)",
+   "V/x (V/m)"
+  ],
+  "hang": [
+   [
+    2,
+    1.2,
+    1.18,
+    59.0
+   ],
+   [
+    4,
+    2.4,
+    2.43,
+    60.8
+   ],
+   [
+    6,
+    3.6,
+    3.57,
+    59.5
+   ],
+   [
+    8,
+    4.8,
+    4.84,
+    60.5
+   ]
+  ],
+  "ghi_chu": "V lí thuyết tính từ V = U·x/d với U = 6,0 V, d = 10 cm. Cột V đo là số liệu minh hoạ lệch ±0,05 V quanh mô hình; trung bình V/x ≈ 59,9 V/m."
+ },
+ "ket_qua_ky_vong": "V tăng đều theo x, V/x ≈ 60 V/m = U/d; đặt que ở x = 5 cm thì đọc ≈ 3,0 V.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ điện thế giảm dần từ lá âm sang lá dương (ngược chiều thật).",
+  "Lấy U = E·MN khi di que xiên, quên chỉ hình chiếu dọc đường sức mới tính.",
+  "Nhầm cm và m khi tính E (ra 0,6 V/cm hoặc 600 V/m)."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc vị trí que đỏ ±1 mm.",
+  "Lá đồng không thật phẳng, sát mép lá đường sức cong.",
+  "Nồng độ muối không đều.",
+  "Vôn kế lấy một phần dòng nhỏ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "U",
+   "d",
+   "x"
+  ],
+  "dau_ra": [
+   "bản đồ đường đẳng thế giữa hai lá",
+   "đồ thị V theo x",
+   "bảng V/x"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo que đỏ trên mặt khay, hiện số vôn kế; nút 'thêm điểm' ghi vào bảng và vẽ lên đồ thị."
+ },
+ "an_toan": "Chỉ dùng nguồn pin dưới 12 V; không dùng điện lưới."
+}

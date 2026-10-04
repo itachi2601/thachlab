@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Lực tương tác giữa hai điện tích",
+ "lesson_id": 35,
+ "nguon_trong_bai": "content/lesson-samples/l11-luc-coulomb/theory.html",
+ "id": "tn-l11-coulomb-03",
+ "ten": "Hai quả cầu tích điện treo cùng một điểm",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "coulomb.can_bang_nhieu_luc",
+  "coulomb.tong_hop_luc"
+ ],
+ "muc_tieu": "Dùng điều kiện cân bằng P + T + F = 0 để suy ra điện tích từ góc lệch dây và khoảng cách hai quả.",
+ "dung_cu": [
+  {
+   "ten": "Hai quả cầu nhỏ nhẹ giống nhau (xốp phủ kim loại)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Dây mảnh cách điện",
+   "so_luong": 2
+  },
+  {
+   "ten": "Giá treo, thước, thước đo góc",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo hai quả vào cùng một điểm bằng hai dây dài bằng nhau.",
+   "Tích điện bằng nhau cho hai quả, đo góc giữa hai dây và khoảng cách hai quả."
+  ],
+  "quan_sat": [
+   "Hai quả đẩy nhau, mỗi dây lệch cùng góc α so với phương thẳng đứng."
+  ],
+  "rut_ra": [
+   "tan α = F/P; F = k·q²/r² nên |q| = r·√(F/k)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng mỗi quả",
+   "don_vi": "g",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 1,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "goc",
+   "ten": "Góc giữa hai dây",
+   "don_vi": "độ",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách hai quả",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực điện",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "q",
+   "ten": "Điện tích mỗi quả",
+   "don_vi": "nC",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "alpha = goc/2",
+   "F = m·g·tan(alpha)",
+   "|q| = r·sqrt(F/k)"
+  ],
+  "gia_thiet": [
+   "hai quả là điện tích điểm, điện tích bằng nhau",
+   "dây không dãn, khối lượng dây bỏ qua",
+   "g = 10 m/s² theo đề"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (g)",
+   "góc (độ)",
+   "r (cm)",
+   "F (N)",
+   "q (nC)"
+  ],
+  "hang": [
+   [
+    0.1,
+    90,
+    6,
+    0.001,
+    20.0
+   ],
+   [
+    0.1,
+    60,
+    3,
+    0.000577,
+    7.6
+   ],
+   [
+    0.4,
+    90,
+    6,
+    0.004,
+    40.0
+   ]
+  ],
+  "ghi_chu": "Ba hàng là bài toán mẫu, bài điền bước trống và biến thể trong bài; tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "m = 0,1 g, góc 90°, r = 6 cm: F = 10⁻³ N, q = 20 nC.",
+ "hien_tuong_hay_sai": [
+  "Lấy góc giữa hai dây làm α (quên chia đôi).",
+  "Nghĩ q tỉ lệ với m (thực ra q tỉ lệ √m khi giữ góc và r).",
+  "Tích trái dấu vẫn nghĩ hai quả lệch ra ngoài."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+2d_dong_hoc",
+  "dieu_khien": [
+   "m",
+   "goc",
+   "r"
+  ],
+  "dau_ra": [
+   "góc lệch dây",
+   "ba vectơ P, F, T"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Kéo thanh góc và khoảng cách r để thấy F và q thay đổi; nút 'đổi dấu' cho hai quả hút, chạm rồi buông thẳng."
+ },
+ "an_toan": "Không có nguy hiểm đáng kể."
+}

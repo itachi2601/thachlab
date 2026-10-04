@@ -1,0 +1,172 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Thế năng điện",
+ "lesson_id": 38,
+ "nguon_trong_bai": "content/lesson-samples/l11-the-nang-dien/theory.html",
+ "id": "tn-l11-the-nang-dien-01",
+ "ten": "Khay nước muối hai lá đồng: điện thế (thế năng của 1 C) tỉ lệ khoảng cách tới lá âm",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thenangdien.the_nang_dien_truong_deu",
+  "thenangdien.moc_the_nang",
+  "thenangdien.cong_luc_dien"
+ ],
+ "muc_tieu": "Đo điện thế tại các điểm giữa hai lá đồng song song (mốc lá âm), thấy V tỉ lệ x nên thế năng W = qV = qEx tỉ lệ khoảng cách tới bản âm; đọc bảng và nhận xét sai số.",
+ "dung_cu": [
+  {
+   "ten": "Khay nhựa đựng nước muối loãng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lá đồng phẳng làm điện cực",
+   "so_luong": 2,
+   "ghi_chu": "đặt song song, cách nhau 10,0 cm"
+  },
+  {
+   "ten": "Nguồn điện một chiều 6,0 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế số (cực âm nối lá âm) + que đo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ đặt dưới đáy khay",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ nước muối loãng vào khay, đặt hai lá đồng song song cách nhau 10,0 cm, nối nguồn 6,0 V.",
+   "Nối cực âm vôn kế vào lá âm; đặt que đo lần lượt tại x = 2,0; 4,0; 6,0; 8,0 cm tính từ lá âm, đọc số chỉ."
+  ],
+  "quan_sat": [
+   "Số chỉ tăng đều theo x: 1,18; 2,43; 3,57; 4,84 V.",
+   "Tỉ số V/x gần như không đổi, quanh 60 V/m = 0,60 V/cm."
+  ],
+  "rut_ra": [
+   "Số chỉ vôn kế là công lực điện làm 1 C đi từ que đo về lá âm, tức thế năng của 1 C tại đó (mốc lá âm).",
+   "V tỉ lệ x nên W = qV = qEx: thế năng tỉ lệ khoảng cách tới bản âm, E ≈ 0,60 V/cm = 60 V/m."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn giữa hai lá",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1.5,
+   "max": 12,
+   "mac_dinh": 6.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Khoảng cách hai lá",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 4,
+   "max": 20,
+   "mac_dinh": 10.0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Khoảng cách que đo tới lá âm",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 10,
+   "mac_dinh": 2.0,
+   "buoc": 0.5,
+   "ghi_chu": "mô phỏng ràng buộc x ≤ D (que đo nằm giữa hai lá)"
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Cường độ điện trường",
+   "don_vi": "V/cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Điện thế tại que đo (mốc lá âm)",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "E = U/D",
+   "V = E·x = U·x/D",
+   "W = q·V = q·E·x (mốc lá âm)"
+  ],
+  "gia_thiet": [
+   "điện trường giữa hai lá coi là đều (bỏ hiệu ứng mép)",
+   "bỏ qua sụt áp ở bề mặt điện cực",
+   "vôn kế có điện trở trong rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "x (cm)",
+   "V mô hình (V)",
+   "V đo (V)",
+   "V/x đo (V/m)"
+  ],
+  "hang": [
+   [
+    2.0,
+    1.2,
+    1.18,
+    59.0
+   ],
+   [
+    4.0,
+    2.4,
+    2.43,
+    60.8
+   ],
+   [
+    6.0,
+    3.6,
+    3.57,
+    59.5
+   ],
+   [
+    8.0,
+    4.8,
+    4.84,
+    60.5
+   ]
+  ],
+  "ghi_chu": "V mô hình tính từ V = U·x/D với U = 6,0 V, D = 10,0 cm. Cột V đo là số liệu minh hoạ có sai số ≤ 1,7 % so với mô hình, dùng chung bộ số với Bài 20 (Điện thế); trung bình V/x ≈ 60 V/m = 0,60 V/cm."
+ },
+ "ket_qua_ky_vong": "V tăng tuyến tính theo x, V/x ≈ 0,60 V/cm (E ≈ 60 V/m); thế năng của q tại x là W = qEx.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng điện thế/thế năng như nhau ở mọi điểm giữa hai bản vì điện trường đều.",
+  "Quên rằng thế năng phụ thuộc mốc: đổi mốc sang lá dương thì mọi giá trị đổi."
+ ],
+ "sai_so_thuong_gap": [
+  "Đặt que đo lệch 1 mm: ở x = 2 cm đã sai 5 %.",
+  "Gần mép lá đồng điện trường không đều.",
+  "Bọt khí bám điện cực làm hiệu điện thế giữa hai lá khác 6,0 V."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "U",
+   "D",
+   "x"
+  ],
+  "dau_ra": [
+   "đồ thị V theo x",
+   "bảng V/x"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo que đo giữa hai lá, đồng hồ hiện V và W của một điện tích chọn được (proton/electron); nút đổi mốc sang lá dương."
+ },
+ "an_toan": "Dùng nguồn ≤ 12 V một chiều; không chạm tay ướt vào cực nguồn."
+}

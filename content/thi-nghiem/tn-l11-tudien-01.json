@@ -1,0 +1,156 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Tụ điện",
+ "lesson_id": 40,
+ "nguon_trong_bai": "content/lesson-samples/l11-tu-dien/theory.html",
+ "id": "tn-l11-tudien-01",
+ "ten": "Tụ nạp rồi phóng qua đèn LED",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "tudien.cau_tao",
+  "tudien.tich_phong_dien",
+  "tudien.chan_dong_mot_chieu"
+ ],
+ "muc_tieu": "Thấy tụ nạp điện tích rồi giữ lại, phóng ra được, và không cho dòng một chiều đi qua lâu dài.",
+ "dung_cu": [
+  {
+   "ten": "Pin 9 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tụ hoá 1000 μF – 16 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn LED kèm điện trở bảo vệ 1 kΩ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối, kẹp cá sấu",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc nối tiếp pin 9 V, tụ 1000 μF (đúng cực) và LED có điện trở bảo vệ.",
+   "Tháo pin, nối hai đầu tụ qua LED nhưng đảo chiều LED so với lúc nạp (dòng phóng ngược chiều dòng nạp)."
+  ],
+  "quan_sat": [
+   "Vừa nối pin: LED loé rồi tắt hẳn dù pin còn nối.",
+   "Nối tụ với LED: LED loé lại rồi mờ dần."
+  ],
+  "rut_ra": [
+   "Tụ nạp điện tích rồi giữ lại, sau đó phóng ra được.",
+   "Dòng một chiều không đi qua tụ: giữa hai bản là chất cách điện."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế pin",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 12,
+   "mac_dinh": 9,
+   "buoc": 1.5
+  },
+  {
+   "ky_hieu": "C",
+   "ten": "Điện dung",
+   "don_vi": "μF",
+   "kieu": "dieu_chinh",
+   "min": 100,
+   "max": 2200,
+   "mac_dinh": 1000,
+   "buoc": 100
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở mạch (gồm LED)",
+   "don_vi": "kΩ",
+   "kieu": "co_dinh",
+   "gia_tri": 1
+  },
+  {
+   "ky_hieu": "tau",
+   "ten": "Hằng số thời gian nạp/phóng",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "Q",
+   "ten": "Điện tích khi nạp đầy",
+   "don_vi": "μC",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Q = C·U (khi nạp đầy)",
+   "tau = R·C",
+   "i(t) = (U/R)·exp(−t/tau) khi nạp; LED tắt khi i dưới ngưỡng sáng"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện áp ngưỡng của LED khi tính tau",
+   "tụ lí tưởng, không rò"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "C (μF)",
+   "R (kΩ)",
+   "tau (s)",
+   "Q (μC)"
+  ],
+  "hang": [
+   [
+    9,
+    1000,
+    1,
+    1.0,
+    9000
+   ],
+   [
+    9,
+    2200,
+    1,
+    2.2,
+    19800
+   ],
+   [
+    4.5,
+    1000,
+    1,
+    1.0,
+    4500
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "LED loé khoảng vài phần mười giây đến 1 s (tau = 1 s) rồi tắt; khi phóng, LED sáng lại rồi mờ dần.",
+ "hien_tuong_hay_sai": [
+  "Tưởng LED tắt vì pin hết điện.",
+  "Tưởng điện tích chạy xuyên qua lớp điện môi."
+ ],
+ "sai_so_thuong_gap": [
+  "Lắp ngược cực tụ hoá làm tụ nóng, hỏng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+2d_dong_hoc",
+  "dieu_khien": [
+   "U",
+   "C"
+  ],
+  "dau_ra": [
+   "đồ thị i(t) nạp và phóng",
+   "độ sáng LED theo thời gian"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Công tắc gạt giữa 'nạp' và 'phóng'; hạt điện tích dồn lên hai bản rồi dừng."
+ },
+ "an_toan": "Tụ hoá phải đúng cực; không dùng nguồn vượt số vôn ghi trên tụ."
+}

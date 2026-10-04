@@ -1,0 +1,119 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 17. Khái niệm điện trường",
+  "lesson_id": 36,
+  "nguon_trong_bai": "content/lesson-samples/l11-khai-niem-dien-truong/theory.html",
+  "id": "tn-l11-dien-truong-01",
+  "ten": "Thước nhựa nhiễm điện hút mẩu giấy khi chưa chạm",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "dien_truong.khai_niem",
+    "dien_truong.tac_dung_luc"
+  ],
+  "muc_tieu": "Thấy lực điện tác dụng qua khoảng trống, dẫn tới khái niệm điện trường quanh điện tích.",
+  "dung_cu": [
+    {
+      "ten": "Thước nhựa",
+      "so_luong": 1
+    },
+    {
+      "ten": "Mẩu giấy vụn nhỏ",
+      "so_luong": 10
+    },
+    {
+      "ten": "Tóc khô hoặc mảnh len",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cọ thước nhựa vào tóc khô hoặc mảnh len vài lần.",
+      "Đưa đầu thước lại gần các mẩu giấy vụn, dừng cách khoảng 1–3 cm, không chạm."
+    ],
+    "quan_sat": [
+      "Mẩu giấy bật lên dính vào thước trước khi thước chạm tới.",
+      "Đưa thước càng gần, giấy bật lên càng mạnh."
+    ],
+    "rut_ra": [
+      "Quanh vật nhiễm điện có điện trường; điện trường tác dụng lực điện lên vật đặt trong nó, không cần tiếp xúc.",
+      "Điện trường càng gần điện tích càng mạnh."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "d",
+      "ten": "Khoảng cách đầu thước tới giấy",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 0.5,
+      "max": 5,
+      "mac_dinh": 2,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "Q",
+      "ten": "Điện tích trên đầu thước",
+      "don_vi": "nC",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 20,
+      "mac_dinh": 5,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "E",
+      "ten": "Cường độ điện trường tại mẩu giấy",
+      "don_vi": "V/m",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Coi đầu thước như điện tích điểm: E = k·Q/d², k = 9·10^9 N·m²/C²",
+      "Giấy bị nhiễm điện hưởng ứng (phân cực) nên bị hút về phía điện trường mạnh hơn"
+    ],
+    "gia_thiet": [
+      "coi đầu thước là điện tích điểm",
+      "bỏ qua dòng khí",
+      "giấy đủ nhẹ (cỡ 0,01 g)"
+    ],
+    "ghi_chu": "Mô phỏng định tính: giấy chỉ bật lên khi lực điện vượt trọng lượng; vẽ thêm đường sức quanh đầu thước."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "d (cm)",
+      "E với Q = 5 nC (V/m)"
+    ],
+    "hang": [
+      [
+        1,
+        450000
+      ],
+      [
+        2,
+        112500
+      ],
+      [
+        3,
+        50000
+      ],
+      [
+        4,
+        28125
+      ]
+    ],
+    "ghi_chu": "Tính từ E = kQ/d²; minh hoạ E giảm nhanh khi ra xa."
+  },
+  "ket_qua_ky_vong": "Giấy bị hút lên khi thước còn cách vài centimét; càng gần, giấy bật lên càng mạnh.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng lực chỉ có khi hai vật chạm nhau.",
+    "Cho rằng gió hoặc lực hấp dẫn kéo giấy lên."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc",
+    "y_tuong": "Kéo đầu thước lại gần giấy; hiện đường sức và vectơ E tại giấy, giấy bật lên khi lực điện vượt trọng lượng.",
+    "diem_nhan": "Giấy bật lên trước khi chạm: lực truyền qua điện trường."
+  }
+}

@@ -1,0 +1,179 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trường đều",
+ "lesson_id": 37,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-truong-deu/theory.html",
+ "id": "tn-l11-dien-truong-deu-03",
+ "ten": "Ống lệch tia điện tử: quỹ đạo parabol của electron",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dientruongdeu.chuyen_dong_dien_tich",
+  "dientruongdeu.chieu_lech"
+ ],
+ "muc_tieu": "Thấy electron bay vuông góc đường sức lệch về bản dương theo parabol; độ lệch tỉ lệ với U; đảo cực thì lệch sang phía kia.",
+ "dung_cu": [
+  {
+   "ten": "Ống lệch tia điện tử có màn huỳnh quang kẻ lưới",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn cao áp cho súng điện tử",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn một chiều điều chỉnh cho hai bản lệch",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Bật súng điện tử, tia bay ngang vào giữa hai bản.",
+   "Đặt U = 0, rồi tăng U, rồi U gấp đôi.",
+   "Đảo cực hai bản."
+  ],
+  "quan_sat": [
+   "U = 0: tia thẳng.",
+   "Có U: tia cong về bản dương.",
+   "U gấp đôi: độ lệch ở mép bản gấp đôi.",
+   "Đảo cực: tia cong sang phía kia."
+  ],
+  "rut_ra": [
+   "Electron lệch về bản dương theo parabol.",
+   "Độ lệch y = |e|U·L²/(2·m·d·v0²), tỉ lệ với U."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai bản lệch",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 200,
+   "mac_dinh": 91,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Tốc độ electron khi vào",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 10000000.0,
+   "max": 50000000.0,
+   "mac_dinh": 20000000.0,
+   "buoc": 1000000.0
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài bản",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai bản",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.02
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Độ lớn điện tích electron",
+   "don_vi": "C",
+   "kieu": "co_dinh",
+   "gia_tri": 1.6e-19
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng electron",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 9.1e-31
+  },
+  {
+   "ky_hieu": "y",
+   "ten": "Độ lệch khi ra khỏi bản",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "E = U/d",
+   "a = e·U/(m·d)",
+   "t = L/v0",
+   "y = a·t²/2 = e·U·L²/(2·m·d·v0²)",
+   "quỹ đạo: y = e·U·x²/(2·m·d·v0²)",
+   "ngoài hai bản: chuyển động thẳng đều, tan α = a·t/v0"
+  ],
+  "gia_thiet": [
+   "chân không",
+   "bỏ qua trọng lực (m·g ≈ 8,9e−30 N rất nhỏ so với e·E)",
+   "bỏ qua hiệu ứng mép",
+   "electron vào chính giữa, vận tốc song song hai bản"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "v0 (m/s)",
+   "y (mm)"
+  ],
+  "hang": [
+   [
+    0,
+    20000000.0,
+    0.0
+   ],
+   [
+    45.5,
+    20000000.0,
+    1.25
+   ],
+   [
+    91,
+    20000000.0,
+    2.5
+   ],
+   [
+    182,
+    20000000.0,
+    5.0
+   ],
+   [
+    91,
+    40000000.0,
+    0.625
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với L = 0,05 m, d = 0,02 m; hàng U = 91 V khớp bài toán mẫu (2,5 mm) và biến thể v0 = 4,0e7 m/s (0,625 mm)."
+ },
+ "ket_qua_ky_vong": "U = 91 V, v0 = 2,0e7 m/s: y = 2,5 mm, không chạm bản (cách 10 mm); U gấp đôi thì y gấp đôi; v0 gấp đôi thì y giảm 4 lần.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng electron lệch theo chiều đường sức.",
+  "Cho rằng ra khỏi bản electron vẫn cong tiếp.",
+  "Bay nhanh hơn thì lệch nhiều hơn."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc vệt sáng trên lưới lệch nửa ô.",
+  "Hiệu ứng mép làm độ lệch đo được hơi lớn hơn tính."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "U",
+   "v0"
+  ],
+  "dau_ra": [
+   "quỹ đạo parabol trong khe và đường thẳng sau khe",
+   "độ lệch y ở mép bản",
+   "góc lệch α"
+  ],
+  "hinh_trong_bai": "Hình 3, Hình 4",
+  "y_tuong": "Nút đảo cực và nút đổi electron thành proton (lệch ngược chiều, nhỏ hơn 1836 lần)."
+ },
+ "an_toan": "Súng điện tử dùng cao áp vài kV: chỉ nối dây khi đã tắt nguồn."
+}

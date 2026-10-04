@@ -1,0 +1,110 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện thế",
+ "lesson_id": 39,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-the/theory.html",
+ "id": "tn-l11-dien-the-03",
+ "ten": "Chim đậu trên dây cao thế 500 kV",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dienthe.hieu_dien_the",
+  "dienthe.dien_the_vs_hieu_dien_the"
+ ],
+ "muc_tieu": "Phân biệt điện thế cao với hiệu điện thế: dòng qua cơ thể do hiệu điện thế giữa hai chỗ chạm quyết định.",
+ "dung_cu": [
+  {
+   "ten": "Hình minh hoạ đường dây, cột nối đất, con chim",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xét chim đậu hai chân trên cùng một dây 500 kV.",
+   "Xét trường hợp chim chạm cùng lúc dây và cột nối đất."
+  ],
+  "quan_sat": [
+   "Hai chân: U_AB ≈ 0, chim an toàn.",
+   "Dây – cột: U ≈ 500 kV, phóng điện."
+  ],
+  "rut_ra": [
+   "Nguy hiểm do hiệu điện thế giữa hai điểm chạm, không do điện thế của một điểm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "V_day",
+   "ten": "Điện thế dây so với đất",
+   "don_vi": "kV",
+   "kieu": "dieu_chinh",
+   "min": 0.22,
+   "max": 500,
+   "mac_dinh": 500
+  },
+  {
+   "ky_hieu": "V_cham2",
+   "ten": "Điện thế chỗ chạm thứ hai",
+   "don_vi": "kV",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 500,
+   "mac_dinh": 500
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế giữa hai chỗ chạm",
+   "don_vi": "kV",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "U = V_day − V_cham2"
+  ],
+  "gia_thiet": [
+   "bỏ qua sụt áp dọc đoạn dây giữa hai chân (vài cm)",
+   "coi điện thế dây là giá trị hiệu dụng so với đất"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "tình huống",
+   "V_day (kV)",
+   "V_cham2 (kV)",
+   "U (kV)"
+  ],
+  "hang": [
+   [
+    "hai chân trên một dây",
+    500,
+    500,
+    0
+   ],
+   [
+    "dây và cột nối đất",
+    500,
+    0,
+    500
+   ]
+  ],
+  "ghi_chu": "Minh hoạ định tính."
+ },
+ "ket_qua_ky_vong": "U ≈ 0 khi hai chân cùng một dây; U ≈ 500 kV khi chạm dây và cột.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ chim không bị giật vì chân cách điện.",
+  "Nghĩ điện thế cao tự nó gây giật."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "vị trí chân/cánh chim"
+  ],
+  "dau_ra": [
+   "U giữa hai chỗ chạm",
+   "cảnh báo phóng điện"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Kéo cánh chim lại gần cột: khi chạm cột, U nhảy từ 0 lên 500 kV."
+ }
+}

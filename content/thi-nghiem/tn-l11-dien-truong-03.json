@@ -1,0 +1,133 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 17. Khái niệm điện trường",
+  "lesson_id": 36,
+  "nguon_trong_bai": "content/lesson-samples/l11-khai-niem-dien-truong/theory.html",
+  "id": "tn-l11-dien-truong-03",
+  "ten": "Điện phổ: hạt cách điện trong dầu xếp theo đường sức",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "dien_truong.duong_suc",
+    "dien_truong.dien_pho"
+  ],
+  "muc_tieu": "Quan sát hình dạng đường sức quanh một điện cực và thấy đường sức mau ở chỗ điện trường mạnh.",
+  "dung_cu": [
+    {
+      "ten": "Đĩa petri hoặc khay thuỷ tinh nông",
+      "so_luong": 1
+    },
+    {
+      "ten": "Dầu ăn",
+      "so_luong": 1,
+      "ghi_chu": "khoảng 1 cm"
+    },
+    {
+      "ten": "Bột hạt cách điện nhỏ (bột báng, hạt cỏ khô)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Điện cực kim loại tròn nhỏ",
+      "so_luong": 2
+    },
+    {
+      "ten": "Máy phát tĩnh điện",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đổ dầu vào đĩa, rắc đều bột hạt cách điện.",
+      "Cắm một điện cực vào giữa đĩa, nối với máy phát tĩnh điện, quay máy.",
+      "Thêm điện cực thứ hai trái dấu để thấy đường sức nối hai điện cực."
+    ],
+    "quan_sat": [
+      "Hạt xếp thành chuỗi thẳng toả ra từ điện cực như nan hoa.",
+      "Gần điện cực chuỗi mau, ra xa chuỗi thưa.",
+      "Hai điện cực trái dấu: chuỗi cong nối từ điện cực này sang điện cực kia."
+    ],
+    "rut_ra": [
+      "Hình ảnh đó là điện phổ, cho biết dạng đường sức điện.",
+      "Chỗ đường sức mau là chỗ điện trường mạnh."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "Q",
+      "ten": "Điện tích điện cực",
+      "don_vi": "nC",
+      "kieu": "dieu_chinh",
+      "min": 5,
+      "max": 50,
+      "mac_dinh": 20,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "r",
+      "ten": "Khoảng cách tới điện cực",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 5,
+      "mac_dinh": 2,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "n",
+      "ten": "Mật độ đường sức (số đường trên 1 cm chu vi)",
+      "don_vi": "đường/cm",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Đường sức hướng theo E = kQ/r² (xuyên tâm)",
+      "Mật độ đường sức trong mặt phẳng: n = N/(2πr), giảm theo 1/r với N đường"
+    ],
+    "gia_thiet": [
+      "điện cực coi như điện tích điểm",
+      "hình phẳng hai chiều nên mật độ giảm theo 1/r (trong không gian 3 chiều là 1/r²)"
+    ],
+    "ghi_chu": "Mô phỏng rắc hạt ngẫu nhiên rồi xoay mỗi hạt theo E tại vị trí của nó."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "r (cm)",
+      "n với N = 16 đường (đường/cm)"
+    ],
+    "hang": [
+      [
+        1,
+        2.55
+      ],
+      [
+        2,
+        1.27
+      ],
+      [
+        3,
+        0.85
+      ],
+      [
+        4,
+        0.64
+      ]
+    ],
+    "ghi_chu": "Minh hoạ: càng xa điện cực, đường sức càng thưa."
+  },
+  "ket_qua_ky_vong": "Các hạt xếp thành chuỗi xuyên tâm quanh một điện cực, mau ở gần và thưa ở xa; với hai điện cực trái dấu, chuỗi cong nối hai điện cực.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ đường sức là vật có thật (sợi), không phải hình biểu diễn.",
+    "Nghĩ các chuỗi hạt cho biết chiều của điện trường (điện phổ không chỉ chiều)."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "so_do_luc",
+    "y_tuong": "Kéo thả điện tích dương/âm trên mặt phẳng, hạt tự xoay theo E; bật/tắt lớp đường sức có mũi tên.",
+    "diem_nhan": "Điện phổ cho dạng; mũi tên chiều phải suy từ dấu điện tích."
+  },
+  "an_toan": [
+    "Không chạm điện cực khi máy phát đang quay.",
+    "Lau sạch dầu tràn để tránh trơn ngã."
+  ]
+}

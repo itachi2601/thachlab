@@ -1,0 +1,172 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trường đều",
+ "lesson_id": 37,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-truong-deu/theory.html",
+ "id": "tn-l11-dien-truong-deu-02",
+ "ten": "Dò điện thế trên giấy dẫn điện giữa hai điện cực song song",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dientruongdeu.e_bang_u_chia_d",
+  "dientruongdeu.don_vi"
+ ],
+ "muc_tieu": "Đo điện thế V theo khoảng cách x tới điện cực âm, thấy V/x không đổi và bằng U/d; đọc bảng và nhận xét sai số.",
+ "dung_cu": [
+  {
+   "ten": "Giấy dẫn điện (giấy than chì)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thanh đồng làm điện cực",
+   "so_luong": 2,
+   "ghi_chu": "dán song song, cách nhau 6,0 cm"
+  },
+  {
+   "ten": "Nguồn một chiều 9,0 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế số",
+   "so_luong": 1,
+   "ghi_chu": "độ phân giải 0,1 V, sai số ±0,1 V"
+  },
+  {
+   "ten": "Thước kẻ mm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dán hai thanh đồng song song cách nhau d = 6,0 cm, nối nguồn U = 9,0 V.",
+   "Que âm vôn kế chạm thanh âm; que dương đặt lần lượt tại x = 1, 2, 3, 4, 5 cm, ở giữa tờ giấy.",
+   "Ghi số đọc V mỗi lần (5 lần đo)."
+  ],
+  "quan_sat": [
+   "V tăng đều theo x, mỗi cm thêm 1,5 V."
+  ],
+  "rut_ra": [
+   "V/x = 150 V/m ở mọi hàng, bằng U/d = 9,0/0,060.",
+   "Hàng x lớn cho E tin cậy hơn vì sai số ±0,1 V chia cho x lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 12,
+   "mac_dinh": 9,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai điện cực",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 10,
+   "mac_dinh": 6,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Khoảng cách que dò tới điện cực âm",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Số đọc vôn kế",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Cường độ điện trường V/x",
+   "don_vi": "V/m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "V = U·x/d",
+   "E = V/x = U/d",
+   "sai số của E từ một hàng: ΔE = ΔV/x (x tính bằng m)"
+  ],
+  "gia_thiet": [
+   "giấy dẫn điện đồng chất",
+   "đo ở giữa tờ giấy, xa mép điện cực",
+   "bỏ qua sai số vị trí que dò"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "x (cm)",
+   "V (V)",
+   "V/x (V/m)"
+  ],
+  "hang": [
+   [
+    1.0,
+    1.5,
+    150
+   ],
+   [
+    2.0,
+    3.0,
+    150
+   ],
+   [
+    3.0,
+    4.5,
+    150
+   ],
+   [
+    4.0,
+    6.0,
+    150
+   ],
+   [
+    5.0,
+    7.5,
+    150
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình V = U·x/d với U = 9,0 V, d = 6,0 cm; số đọc vôn kế có sai số ±0,1 V. Không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "V/x = 150 V/m ở mọi hàng; ΔE = 10 V/m ở x = 1 cm, 2 V/m ở x = 5 cm.",
+ "hien_tuong_hay_sai": [
+  "Để d bằng cm khi tính E (ra 1,5 thay vì 150 V/m).",
+  "Cho rằng mọi hàng đều tin cậy như nhau vì cùng ra 150 V/m."
+ ],
+ "sai_so_thuong_gap": [
+  "Vôn kế ±0,1 V: hàng x nhỏ lệch nhiều nhất.",
+  "Đặt que dò lệch vị trí vài mm.",
+  "Đo gần mép điện cực, trường không đều."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "U",
+   "d",
+   "x"
+  ],
+  "dau_ra": [
+   "số đọc V có nhiễu ±0,1 V",
+   "đồ thị V theo x (đường thẳng qua gốc)",
+   "thanh sai số của E theo x"
+  ],
+  "hinh_trong_bai": "bảng trong mục II.2",
+  "y_tuong": "Cho học sinh kéo que dò, thêm nhiễu ngẫu nhiên ±0,1 V để thấy hàng x nhỏ dao động E mạnh."
+ },
+ "an_toan": "Nguồn 9 V, không nguy hiểm."
+}
