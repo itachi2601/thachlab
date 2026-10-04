@@ -49,3 +49,6 @@ Function classify) → cần đợt gắn nhãn sau (API hoặc trang Đăng đ�
 `scripts/backfill-distractor-notes.mts`; (d) tên đề tự suy từ đầu file ("Giữa HK1 2024–2025 – THPT X – Tỉnh"), thầy sửa ở
 /quan-tri/sua-de nếu lệch; (e) tự luận (xem quyết định 4). Liên quan: [[feedback_batch_agent_upload_efficiency]],
 [[project_thachlab_periodic_exam]].
+
+**Bộ /23 (năm 2023, 4/10/2026):** cùng script, thêm cờ `--nam 23` (`python3 scripts/dang-de-l10-24-25.py --nam 23 --list|--sets|--all`; log riêng `scripts/data/de-l10-23-{log,run}.json`, work `scripts/logs/de-l10-23/`). Nguồn `…/đề thi /23` (3026 file) → 444 bộ (GHK1 141, HK1 203, GHK2 68, HK2 32), kho "BỘ N ĐỀ"/"BO DE" tách mỗi file một bộ; đích vẫn lesson 113–116 (ẩn). Thí điểm: exam 651–656 (đã sửa tay tên 654–656); ~nửa bộ SKIP vì không có đáp án trong file. Chưa chạy `--all`. Script chưa commit.
+**Chạy hết /23 xong (4/10/2026):** 444 bộ → 100 OK (HK1 36 → item 54; GHK1 30 → 53; GHK2 21 → 55; HK2 13 → 56; exam 651+), 9 TRÙNG, 309 SKIP>20% (đa số không có đáp án trong file), 21 LỆCH, 5 LỖI. Chi tiết ở `scripts/data/de-l10-23-run.json`. 4 mục vẫn ẨN; chưa soát từng đề, chưa nhãn/lời giải.

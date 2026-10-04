@@ -33,6 +33,17 @@ SOFFICE = "/opt/homebrew/bin/soffice"
 LOG = os.path.join(ROOT, "scripts/data/de-l10-24-25-log.json")
 RUN = os.path.join(ROOT, "scripts/data/de-l10-24-25-run.json")
 WORK = os.path.join(ROOT, "scripts/logs/de-l10-24-25")
+NAM = "2024–2025"
+# --nam 23: bộ đề năm 2023 (3026 file; kỳ nằm ở 4 thư mục gốc + 4 thư mục trong "KIỂM TRA VẬT LÍ 10 CẢ 2023";
+# các thư mục "BỘ N ĐỀ…"/"BO DE…" là kho chứa nhiều đề rời → mỗi file/thư mục con một bộ)
+SRC23 = "/Users/MAC/Documents/THPT/Lop10/00_Dung_chung/Thu_vien_tai_lieu/CT2025_VietnamTeach/đề thi /23"
+ROOTS23 = [
+    ("1. GHK1", "Giữa học kì 1"), ("1. GHK1", "KIỂM TRA VẬT LÍ 10 CẢ 2023/1. GIUA HK I"),
+    ("2. HK1", "học kì 1"), ("2. HK1", "KIỂM TRA VẬT LÍ 10 CẢ 2023/2. HK I"),
+    ("3. GHK2", "giữa học kì 2"), ("3. GHK2", "KIỂM TRA VẬT LÍ 10 CẢ 2023/3. GIUA HK II"),
+    ("4. HK2", "học kì 2"), ("4. HK2", "KIỂM TRA VẬT LÍ 10 CẢ 2023/4. HK II"),
+]
+RE_KHO = re.compile(r"^(BỘ\s*\d+|BO\s*DE|DE\s*LY|TONG\s*HOP|ghk2|BỘ\s*ĐỀ)", re.I)
 # kỳ → (lesson_id, lesson_item_id) mục Kiểm tra giữa/cuối kì lớp 10 (lesson 113–116, đang ẩn)
 TARGET = {"1. GHK1": (113, 53), "2. HK1": (114, 54), "3. GHK2": (115, 55), "4. HK2": (116, 56), "5. TỔNG HỢP": (114, 54)}
 KY_LABEL = {"1. GHK1": "Giữa HK1", "2. HK1": "Cuối HK1", "3. GHK2": "Giữa HK2", "4. HK2": "Cuối HK2", "5. TỔNG HỢP": "Cuối HK1"}
@@ -43,6 +54,11 @@ from docx.shared import Pt  # noqa: E402
 
 args = sys.argv[1:]
 DRY = "--dry" in args
+if "--nam" in args and args[args.index("--nam") + 1] == "23":
+    SRC, NAM = SRC23, "2023"
+    LOG = os.path.join(ROOT, "scripts/data/de-l10-23-log.json")
+    RUN = os.path.join(ROOT, "scripts/data/de-l10-23-run.json")
+    WORK = os.path.join(ROOT, "scripts/logs/de-l10-23")
 
 
 def opt(n, d=None):
@@ -65,7 +81,55 @@ RE_CAU = re.compile(r"^\s*Câu\s*(\d+)\s*[:.]")
 
 
 # ---------- liệt kê bộ ----------
+def _gather(p):
+    files = []
+    if os.path.isdir(p):
+        for r, _, fs in os.walk(p):
+            files += [os.path.join(r, f) for f in fs if not f.startswith((".", "~$"))]
+    else:
+        files = [p]
+    exams, keys = [], []
+    for f in files:
+        b = os.path.basename(f)
+        ext = b.rsplit(".", 1)[-1].lower()
+        if ext in ("xlsx", "xls") or (ext in ("doc", "docx") and RE_KEYNAME.search(b)):
+            keys.append(f)
+        elif ext in ("doc", "docx") and not RE_MATRIX.search(b):
+            exams.append(f)
+    return exams, keys
+
+
+def list_sets23():
+    sets, seen = [], set()
+
+    def add(ky, p):
+        exams, keys = _gather(p)
+        rel = os.path.relpath(p, SRC)
+        if exams and rel not in seen:
+            seen.add(rel)
+            sets.append({"ky": ky, "name": rel, "label": os.path.basename(p), "exams": sorted(exams), "keys": sorted(keys)})
+
+    for ky, sub in ROOTS23:
+        root = os.path.join(SRC, sub)
+        if not os.path.isdir(root):
+            continue
+        for name in sorted(os.listdir(root)):
+            p = os.path.join(root, name)
+            if name.startswith((".", "~$")):
+                continue
+            if os.path.isdir(p) and RE_KHO.search(name):
+                for sub2 in sorted(os.listdir(p)):
+                    q = os.path.join(p, sub2)
+                    if not sub2.startswith((".", "~$")):
+                        add(ky, q)
+            else:
+                add(ky, p)
+    return sets
+
+
 def list_sets():
+    if SRC == SRC23:
+        return list_sets23()
     sets = []
     for ky in sorted(os.listdir(SRC)):
         kyd = os.path.join(SRC, ky)
@@ -713,11 +777,11 @@ TITLE_PART = {2: "PHẦN II. Câu trắc nghiệm đúng sai.", 3: "PHẦN III. 
 
 
 # ---------- tên đề ----------
-DROP = re.compile(r"^(VAT|VẬT|LY|LÝ|LI|LÍ|10|KNTT|CTST|CD|XXX|GIUA|GIỮA|CUOI|CUỐI|HK\s*[12I]*|HKI|HKII|KT|KTGK\d?|GK\d?|CK\d?|HOC|HỌC|KI|KÌ|KY|KỲ|\d{4}|\d{4}-\d{4}|24-25|DE|ĐỀ|DEDA|DEDAN|MATRAN|DEDAMATRAN|\d|SP TAP HUAN)$", re.I)
+DROP = re.compile(r"^(VAT|VẬT|LY|LÝ|LI|LÍ|10|KNTT|CTST|CD|XXX|GIUA|GIỮA|CUOI|CUỐI|HK\s*[12I]*|HKI|HKII|KT|KTGK\d?|GK\d?|CK\d?|HOC|HỌC|KI|KÌ|KY|KỲ|\d{4}|\d{4}-\d{4}|24-25|DE|ĐỀ|DEDA|DEDAN|MATRAN|DEDAMATRAN|\d|SP TAP HUAN|I|II|MA|MÃ|BO|SACH|CANH|DIEU|CANHDIEU|VCVB|DAC|TA|CAU|TRUC|ON|TAP|\d{2}-\d{2}|\d{4}\.\d+)$", re.I)
 
 
 def title_of(s):
-    raw = re.sub(r"\.(docx?|pdf)$", "", s["name"], flags=re.I)
+    raw = re.sub(r"\.(docx?|pdf)$", "", s.get("label", s["name"]), flags=re.I)
     raw = re.sub(r"[@(].*$", "", raw)
     segs = [x.strip() for x in re.split(r"[-–_]", raw) if x.strip()]
     keep = []
@@ -729,7 +793,7 @@ def title_of(s):
     school = school.title()
     for w in ("Thpt", "Thcs", "Ptdtnt", "Dtnt", "Gdtx", "Tphcm", "Tp Hcm", "Hcm", "Pt ", "Vp", "Dn"):
         school = re.sub(r"\b" + re.escape(w) + r"\b", w.upper(), school)
-    return f"{KY_LABEL[s['ky']]} 2024–2025 – {school}"[:140]
+    return f"{KY_LABEL[s['ky']]} {NAM} – {school}"[:140]
 
 
 # ---------- chạy một bộ ----------
@@ -808,7 +872,7 @@ def process(s, log):
         res["notes"] += prepare_exam(exam_docx, merged, dap, cut_tail=bool(dap))
         sc = school_from_doc(Document(exam_docx))
         if sc:
-            res["title"] = f"{KY_LABEL[s['ky']]} 2024–2025 – {sc}"[:140]
+            res["title"] = f"{KY_LABEL[s['ky']]} {NAM} – {sc}"[:140]
     except Exception as e:  # noqa: BLE001
         res["status"] = "LỖI"
         res["notes"].append(f"ghép đề lỗi: {str(e)[:150]}")
