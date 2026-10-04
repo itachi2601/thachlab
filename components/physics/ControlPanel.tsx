@@ -83,14 +83,14 @@ export function ControlPanel({
       <div className="flex items-center gap-2">
         <button
           onClick={onToggle}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-dark active:scale-[0.98]"
+          className="flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-dark active:scale-[0.98]"
         >
           {isPlaying ? <Pause size={15} /> : <Play size={15} />}
           {isPlaying ? "Tạm dừng" : "Phát"}
         </button>
         <button
           onClick={onReset}
-          className="flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition hover:bg-white/[0.08] active:scale-[0.98]"
+          className="flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition hover:bg-white/[0.08] active:scale-[0.98]"
           aria-label="Đặt lại"
         >
           <RotateCcw size={15} />
@@ -98,7 +98,7 @@ export function ControlPanel({
         <button
           onClick={onToggleFormula}
           aria-pressed={formulaOpen}
-          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm transition active:scale-[0.98] ${
+          className={`flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm transition active:scale-[0.98] ${
             formulaOpen
               ? "bg-accent text-[#1E1300]"
               : "border border-white/10 bg-white/[0.04] text-slate-200 hover:bg-white/[0.08]"

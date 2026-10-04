@@ -2088,6 +2088,7 @@ function LessonLoader() {
                 onToggleChapter={toggleChapter}
                 lessonHref={siblingHref}
                 isLessonDone={lessonComplete}
+                showProgress={!!session}
                 filterLessonIds={matchingLessonIds}
               />
               {renderSidePanels()}

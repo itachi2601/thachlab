@@ -36,10 +36,10 @@ const FORMULAS = [
 
 export function PhysicsSimulationHero() {
   const motion = useHarmonicMotion({ initialAmplitude: 0.1, initialFrequency: 1 });
-  const [formulaOpen, setFormulaOpen] = useState(true);
+  const [formulaOpen, setFormulaOpen] = useState(false);
 
   return (
-    <section id="thpt" className="relative overflow-hidden bg-[#05070B] px-6 pt-14 pb-16 sm:pt-20 sm:pb-20 lg:px-12">
+    <section id="thpt" className="relative overflow-hidden bg-[#05070B] px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
       <div
         aria-hidden
@@ -52,7 +52,7 @@ export function PhysicsSimulationHero() {
             Có bao giờ em tự hỏi…
           </p>
 
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[3.4rem]">
             Tại sao mọi thứ
             <br />
             lại{" "}
@@ -92,13 +92,13 @@ export function PhysicsSimulationHero() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl border border-line bg-panel p-5 shadow-xl shadow-black/30 sm:p-6">
-          <p className="mb-3 font-mono text-[12px] uppercase tracking-widest text-muted">
+        <div className="relative rounded-2xl border border-line bg-panel p-3 shadow-xl shadow-black/30 sm:p-6">
+          <p className="mb-3 font-mono text-[13px] uppercase tracking-widest text-muted">
             Mô phỏng: Dao động con lắc lò xo
           </p>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div className="h-56 rounded-xl border border-white/5 bg-black/20 sm:h-64">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <div className="h-36 rounded-xl border border-white/5 bg-black/20 sm:h-64">
               <SpringSimulation
                 x={motion.x}
                 v={motion.v}
@@ -106,7 +106,7 @@ export function PhysicsSimulationHero() {
                 amplitude={motion.amplitude}
               />
             </div>
-            <div className="h-56 rounded-xl border border-white/5 bg-black/20 p-2 sm:h-64">
+            <div className="h-36 rounded-xl border border-white/5 bg-black/20 p-2 sm:h-64">
               <DisplacementChart
                 t={motion.t}
                 amplitude={motion.amplitude}

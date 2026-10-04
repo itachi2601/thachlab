@@ -71,11 +71,22 @@ export interface TheorySectionPart extends TheorySection {
  *
  * `introHtml` là phần mở bài nằm trước mốc tiêu đề đầu tiên (thường là rỗng).
  */
+// Câu "Khoảng 17 phút · 6 mục · 8 câu tự kiểm tra" do người soạn chèn trong mục tiêu.
+// Thanh lý thuyết đã hiện một ước lượng duy nhất (~N phút) — bỏ câu này lúc hiển thị
+// để không còn hai con số thời lượng. Không khớp "Khoảng cách / Khoảng chênh".
+const AUTHORED_DURATION_RE =
+  /(?:\s*[—–-]\s*|\s+)[Kk]hoảng\s+\d+\s+phút\s*·\s*(?:\d+\s+mục\s*·\s*)?\d+\s+câu tự kiểm tra\.?/g;
+
+export function stripAuthoredDuration(html: string): string {
+  return html.replace(AUTHORED_DURATION_RE, "");
+}
+
 export function splitTheorySections(
   html: string,
   itemId: number | string,
   mode: TheorySplitMode = "doc",
 ): { introHtml: string; sections: TheorySectionPart[] } {
+  html = stripAuthoredDuration(html);
   const matches = headingMatches(html, mode);
   if (matches.length === 0) return { introHtml: html, sections: [] };
 

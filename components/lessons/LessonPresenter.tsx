@@ -123,14 +123,15 @@ export function buildPresenterDeck(lessonTitle: string, items: LessonItem[]): De
 
     if (sections.length === 0) {
       // Bài chưa có mốc tiêu đề nào → cả mục là một trang, không cắt vụn nội dung.
-      if (item.body_html.trim()) {
+      // introHtml đã bỏ câu thời lượng tác giả (xem stripAuthoredDuration).
+      if (introHtml.trim()) {
         pages.push({
           key: `${groupKey}-all`,
           kind: "content",
           groupKey,
           groupTitle: item.title,
           heading: item.title,
-          bodyHtml: item.body_html,
+          bodyHtml: introHtml,
         });
       }
       return;

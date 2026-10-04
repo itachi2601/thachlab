@@ -1,6 +1,6 @@
 // Kiểm wrapTheorySections: npx tsx scripts/tests/theory-sections.mjs
 import assert from "node:assert/strict";
-import { wrapTheorySections } from "../../features/lessons/theory-sections.ts";
+import { stripAuthoredDuration, wrapTheorySections } from "../../features/lessons/theory-sections.ts";
 
 // h3
 const h3 = wrapTheorySections("<p>mở</p><h3>I. A</h3><p>a</p><h3>II. B</h3><p>b</p>", 7);
@@ -25,4 +25,18 @@ assert.ok(h2.html.startsWith("<h2>LÝ THUYẾT</h2><p>a</p><div"));
 assert.equal(wrapTheorySections("<h2>I. X</h2><h3>a</h3>", 1).sections.length, 1);
 assert.equal(wrapTheorySections("<h2>LÝ THUYẾT</h2><p>x</p>", 1).sections.length, 0);
 assert.equal(wrapTheorySections("<p>x</p>", 1).html, "<p>x</p>");
+
+const kept = stripAuthoredDuration("<p>Khoảng cách giữa hai mốc là 10 cm. Khoảng chênh 10 °C.</p>");
+assert.equal(kept, "<p>Khoảng cách giữa hai mốc là 10 cm. Khoảng chênh 10 °C.</p>");
+const stripped = stripAuthoredDuration(
+  "<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 17 phút · 6 mục · 6 câu tự kiểm tra.</p>",
+);
+assert.equal(
+  stripped,
+  "<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>",
+);
+const dashed = stripAuthoredDuration(
+  "<p>Cuối bài, em tự trả lời được <strong>6 câu</strong> — khoảng 15 phút · 8 câu tự kiểm tra.</p>",
+);
+assert.equal(dashed, "<p>Cuối bài, em tự trả lời được <strong>6 câu</strong></p>");
 console.log("theory-sections: OK");

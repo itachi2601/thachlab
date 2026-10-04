@@ -22,6 +22,8 @@ interface Props {
   onPickChapter?: (chapterId: number) => void;
   lessonHref: (lesson: Lesson) => string;
   isLessonDone: (lesson: Lesson) => boolean;
+  /** false khi khách chưa đăng nhập: "0/6 bài" không có nghĩa, ẩn đi. */
+  showProgress?: boolean;
   onLessonClick?: (lesson: Lesson) => void;
   /** Kết quả ô "Tìm bài trong khoá"; null = không lọc. */
   filterLessonIds?: Set<number> | null;
@@ -54,7 +56,9 @@ export default function ChapterTree(p: Props) {
             >
               <em>{chapterIndex + 1}</em>
               <span>{chapterDisplayTitle(chapter.title)}</span>
-              <small>{done}/{lessons.length} bài</small>
+              {p.showProgress !== false && (
+                <small>{done}/{lessons.length} bài</small>
+              )}
               <ChevronDown
                 size={15}
                 className={open ? "is-open" : ""}

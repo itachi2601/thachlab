@@ -50,6 +50,18 @@ export async function fetchPublishedExams(): Promise<ExamMeta[]> {
   })) as ExamMeta[];
 }
 
+// Thông báo đã đăng còn lỗi chính tả (lớp 12, thấy 4/10/2026). Sửa lúc đọc để trang
+// lớp và trang tin tức hết lỗi; bản trong cơ sở dữ liệu vẫn là bản gốc cho tới khi thầy sửa trong quản trị.
+const PUBLISHED_POST_FIXES: Record<string, string> = {
+  "bài 1: Thuyết động học phân tử": "Bài 1. Thuyết động học phân tử",
+  "3 nội dung về thuýet động học phan tử chất khí \nbài tập trắc nghiệm":
+    "Ba nội dung của thuyết động học phân tử chất khí, kèm bài tập trắc nghiệm.",
+};
+
+function displayPostField(text: string) {
+  return PUBLISHED_POST_FIXES[text.trim()] ?? text;
+}
+
 export async function fetchPublishedPosts(): Promise<PostMeta[]> {
   const { data } = await getSupabase()
     .from("posts")
@@ -60,6 +72,8 @@ export async function fetchPublishedPosts(): Promise<PostMeta[]> {
     .order("created_at", { ascending: false });
   return (data ?? []).map((p) => ({
     ...p,
+    title: displayPostField(p.title ?? ""),
+    body: displayPostField(p.body ?? ""),
     content_type: (p.content_type as PostContentType) ?? "thong_bao",
     classIds: ((p.post_classes as ClassRef[]) ?? []).map((c) => c.class_id),
     courseIds: ((p.post_courses as CourseRef[]) ?? []).map((c) => c.course_id),

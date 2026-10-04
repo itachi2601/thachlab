@@ -511,6 +511,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       onPickChapter={pickChapter}
                       lessonHref={lessonHref}
                       isLessonDone={lessonIsComplete}
+                      showProgress={!!session}
                       onLessonClick={rememberLesson}
                     />
                   </>

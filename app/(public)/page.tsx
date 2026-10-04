@@ -18,9 +18,9 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <PhysicsSimulationHero />
         <OpenClasses stats={stats} />
         <ForParents />
-        <PhysicsSimulationHero />
         <Features />
         <PhysicsEverywhere />
         <LearningPath />
