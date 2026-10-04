@@ -56,7 +56,7 @@ def env(name):
     return None
 
 
-RE_KEYNAME = re.compile(r"dap[\s_-]*an|đáp[\s_-]*án|hdc|huong dan cham|hướng dẫn chấm|\bda\b", re.I)
+RE_KEYNAME = re.compile(r"dap[\s_-]*a[np]|đáp[\s_-]*á[np]|dapan|hdc|huong dan cham|hướng dẫn chấm|\bda\b|\bkey\b", re.I)
 RE_MATRIX = re.compile(r"ma[\s_-]*tr[aậ]n|dac ta|đặc tả|mt\+|bang dac", re.I)
 RE_GOC = re.compile(r"g[oố]c", re.I)
 RE_TULUAN = re.compile(r"T[ỰU]\s*LU[ẬA]N", re.I)
@@ -108,6 +108,7 @@ def pick_exam(s, key_mades):
     goc = [f for f in ex if RE_GOC.search(os.path.basename(f))]
     if goc:
         return goc[0], "000"
+    ex = sorted(ex, key=lambda f: (1 if re.search(r"(?<![A-Z])TL(?![A-Z])|t[ựu] lu[ậa]n", os.path.basename(f), re.I) else 0, 0 if re.search(r"(?<![A-Z])TN(?![A-Z])", os.path.basename(f)) else 1, f))
     for f in ex:
         m = made_of(f)
         if m and (not key_mades or m in key_mades):
@@ -137,6 +138,10 @@ def split_parts(headers, values):
 
     phase, last, flat = 1, 0, []
     for i, (h, v) in enumerate(pairs):
+        if re.fullmatch(r"[ĐDS]{4}", v.upper()) and h.isdigit():
+            phase = 2
+            dap[2][len(dap[2]) + 1] = {y: ("Đ" if ch in "ĐD" else "S") for y, ch in zip("abcd", v.upper())}
+            continue
         m2 = re.match(r"^(\d+)\s*([a-d])\)?$", h)
         if m2:
             phase = 2
@@ -169,22 +174,60 @@ def split_parts(headers, values):
     return dap
 
 
+def _cell(v):
+    if v is None:
+        return ""
+    if isinstance(v, float) and v.is_integer():
+        v = int(v)
+    return str(v).strip()
+
+
 def key_from_grid(rows, made):
-    """rows: list[list[str]] của một bảng. Nhận 2 bố cục: hàng = mã ("Đề\\câu") hoặc cột = mã ("Câu\\Mã Đề")."""
-    rows = [[("" if c is None else str(c).strip()) for c in r] for r in rows if r]
-    for i, r in enumerate(rows):
-        if r and re.match(r"^đề\s*\\\s*câu", r[0].lower().replace(" ", "")):
-            headers = r[1:]
-            cands = {rr[0].strip(): rr[1:] for rr in rows[i + 1:] if rr and rr[0].strip()}
-            row = cands.get(made) or cands.get(made.lstrip("0") if made else None) or cands.get("000") or (next(iter(cands.values())) if cands else None)
+    """rows: list[list] của một bảng. Ba bố cục:
+    (L) cột dài  MÃ ĐỀ | CÂU | ĐÁP ÁN;
+    (R) hàng = mã ("Đề\\câu" McMix: hàng tiêu đề là số câu, mỗi hàng dưới là một mã);
+    (C) cột = mã (hàng tiêu đề chứa ≥2 mã 3 chữ số, cột đầu là số câu)."""
+    rows = [[_cell(c) for c in r] for r in rows if r]
+    rows = [r for r in rows if any(r)]
+    if not rows:
+        return None
+    is_made = lambda x: bool(re.fullmatch(r"\d{3}", x))  # noqa: E731
+    # (L)
+    for i, r in enumerate(rows[:3]):
+        low = [c.lower() for c in r]
+        if len(r) >= 3 and any("mã" in c for c in low) and any("câu" in c for c in low) and any("đáp" in c for c in low):
+            im = next(j for j, c in enumerate(low) if "mã" in c)
+            ic = next(j for j, c in enumerate(low) if "câu" in c)
+            ia = next(j for j, c in enumerate(low) if "đáp" in c)
+            by = {}
+            for rr in rows[i + 1:]:
+                if len(rr) > max(im, ic, ia) and is_made(rr[im]):
+                    by.setdefault(rr[im], []).append((rr[ic], rr[ia]))
+            row = by.get(made) or (next(iter(by.values())) if by else None)
             if row:
-                return split_parts(headers, row)
-        if r and re.match(r"^câu\s*\\\s*mã", r[0].lower()):
-            mades = [c.strip() for c in r[1:]]
-            col = mades.index(made) + 1 if made in mades else 1
-            headers = [rr[0] for rr in rows[i + 1:] if rr]
-            vals = [(rr[col] if len(rr) > col else "") for rr in rows[i + 1:] if rr]
-            return split_parts(headers, vals)
+                return split_parts([h for h, _ in row], [v for _, v in row])
+    # (R) hàng = mã
+    for i, r in enumerate(rows):
+        if is_made(r[0]) and sum(1 for c in r[1:] if c) >= 5:
+            hdr = next((rows[j] for j in range(i - 1, -1, -1) if sum(1 for c in rows[j][1:] if c) >= 5), None)
+            if not hdr:
+                break
+            cands = {rr[0]: rr[1:] for rr in rows[i:] if rr and is_made(rr[0])}
+            row = cands.get(made) or cands.get("000") or next(iter(cands.values()))
+            return split_parts(hdr[1:], row)
+    # (C) cột = mã
+    for i, r in enumerate(rows):
+        mades = [c for c in r[1:] if is_made(c)]
+        if len(mades) >= 2 or (len(r) >= 2 and is_made(r[1]) and sum(1 for c in r if c) <= 3 and len(rows) > i + 5):
+            col = r.index(made) if made in r else next(j for j, c in enumerate(r) if is_made(c))
+            if col == 0:
+                continue
+            body = rows[i + 1:]
+            hdrs = [rr[0] for rr in body if rr and rr[0]]
+            vals = [(rr[col] if len(rr) > col else "") for rr in body if rr and rr[0]]
+            d = split_parts(hdrs, vals)
+            if d[1] or d[3]:
+                return d
     return None
 
 
@@ -247,11 +290,16 @@ def key_from_ai(text, made, tag):
             "messages": [{"role": "user", "content": f"Mã đề cần lấy: {made or 'không rõ (lấy bộ đầu tiên/đề gốc)'}\n\n{text[:60000]}"}]}
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(),
                                  headers={"content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01"})
-    try:
-        with urllib.request.urlopen(req, timeout=180) as r:
-            data = json.loads(r.read())
-    except Exception as e:  # noqa: BLE001
-        return None, f"API lỗi: {str(e)[:120]}"
+    data = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=240) as r:
+                data = json.loads(r.read())
+            break
+        except Exception as e:  # noqa: BLE001
+            err = f"API lỗi: {str(e)[:120]}"
+    if data is None:
+        return None, err
     txt = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
     usage = data.get("usage", {})
     m = re.search(r"\{.*\}", txt, re.S)
@@ -423,7 +471,8 @@ def school_from_doc(doc):
     for t in texts:
         m = re.search(r"TR[ƯU][ỜO]NG\s+((?:THPT|THCS|PT\s*DTNT|PTDTNT|TH\s*&\s*THCS|THCS\s*&\s*THPT|THCS\s*-\s*THPT|TIỂU HỌC)[^–\-:(]{2,45})", t, re.I)
         if m and not school:
-            school = re.sub(r"\s+", " ", m.group(1)).strip(" .,")
+            school = re.split(r"\s*(?:KIỂM TRA|ĐỀ |NĂM HỌC|MÔN|LỚP|MÃ ĐỀ|TỔ(?!NG)|NHÓM|HỌ VÀ TÊN)", re.sub(r"\s+", " ", m.group(1)), flags=re.I)[0]
+            school = " ".join(school.split()[:6]).strip(" .,")
         m = re.search(r"S[ỞO]\s+GD\s*(?:&|VÀ|-)?\s*(?:ĐT|ĐÀO TẠO)\s+([^–\-:(]{2,40})", t, re.I)
         if m and not province:
             province = re.split(r"\s*TR[ƯU][ỜO]NG", m.group(1), flags=re.I)[0]
@@ -436,58 +485,176 @@ def school_from_doc(doc):
     return ""
 
 
+def materialize_numbering(doc):
+    """Word đánh số tự động (numPr) → ghi số vào chữ: decimal → 'Câu N. ', chữ hoa → 'A. ', chữ thường → 'a) '."""
+    try:
+        numbering = doc.part.numbering_part.element
+    except Exception:  # noqa: BLE001
+        return 0
+    abs_of = {n.get(W + "numId"): n.find(W + "abstractNumId").get(W + "val") for n in numbering.findall(W + "num") if n.find(W + "abstractNumId") is not None}
+    lv = {}
+    for an in numbering.findall(W + "abstractNum"):
+        for l in an.findall(W + "lvl"):
+            fmt = l.find(W + "numFmt")
+            txt = l.find(W + "lvlText")
+            st = l.find(W + "start")
+            lv[(an.get(W + "abstractNumId"), l.get(W + "ilvl"))] = (fmt.get(W + "val") if fmt is not None else "decimal", txt.get(W + "val") if txt is not None else "%1.", int(st.get(W + "val")) if st is not None else 1)
+    counters, n_done = {}, 0
+    for p in doc.element.body.iter(W + "p"):
+        ppr = p.find(W + "pPr")
+        npr = ppr.find(W + "numPr") if ppr is not None else None
+        if npr is None or npr.find(W + "numId") is None:
+            continue
+        nid = npr.find(W + "numId").get(W + "val")
+        il = npr.find(W + "ilvl").get(W + "val") if npr.find(W + "ilvl") is not None else "0"
+        fmt, txt, st = lv.get((abs_of.get(nid), il), ("decimal", "%1.", 1))
+        if fmt in ("bullet", "none"):
+            continue
+        key = (nid, il)
+        counters[key] = counters.get(key, st - 1) + 1
+        for k2 in [k for k in counters if k[0] == nid and int(k[1]) > int(il)]:
+            counters.pop(k2)
+        n = counters[key]
+        if fmt == "upperLetter":
+            label = chr(64 + n) + ". "
+        elif fmt == "lowerLetter":
+            label = chr(96 + n) + ") "
+        elif fmt in ("decimal", "decimalZero"):
+            label = ("Câu %d. " % n) if "Câu" not in txt else txt.replace("%1", str(n)) + " "
+        else:
+            continue
+        first = next((x for x in p.iter(W + "t")), None)
+        if first is None:
+            r = p.makeelement(W + "r", {})
+            first = r.makeelement(W + "t", {})
+            r.append(first)
+            p.append(r)
+        if re.match(r"^\s*(Câu\s*\d|[A-D][.)]|[a-d]\))", first.text or ""):
+            continue
+        first.text = label + (first.text or "")
+        first.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
+        npr.getparent().remove(npr)
+        n_done += 1
+    return n_done
+
+
+def flatten_option_tables(doc):
+    """Bảng mà mọi ô có chữ đều bắt đầu bằng nhãn A./B./a) (2x2, 1x4, 4x1) → đưa các đoạn trong ô ra ngoài, bỏ bảng."""
+    n = 0
+    body = doc.element.body
+    for tbl in list(body.iter(W + "tbl")):
+        if tbl.getparent() is not body:
+            continue
+        cells = [tc for tc in tbl.iter(W + "tc")]
+        texts = ["".join(x.text or "" for x in tc.iter(W + "t")).strip() for tc in cells]
+        nonempty = [t for t in texts if t]
+        if not (2 <= len(nonempty) <= 8) or not all(RE_LABEL_HEAD.match(t) for t in nonempty):
+            continue
+        for tc in cells:
+            for p in list(tc.findall(W + "p")):
+                if "".join(x.text or "" for x in p.iter(W + "t")).strip() or p.find(".//" + W + "drawing") is not None:
+                    tbl.addprevious(p)
+        body.remove(tbl)
+        n += 1
+    return n
+
+
+def _top(el, body):
+    while el.getparent() is not None and el.getparent() is not body:
+        el = el.getparent()
+    return el
+
+
 def prepare_exam(src_docx, dst, dap, cut_tail=True):
     """Chuẩn hoá tiêu đề PHẦN, cắt tự luận, nối BẢNG ĐÁP ÁN. Trả về ghi chú."""
     doc = Document(src_docx)
     notes = []
     body = doc.element.body
+    nn = materialize_numbering(doc)
+    if nn:
+        notes.append(f"ghi số tự động vào chữ cho {nn} đoạn")
+    nt = flatten_option_tables(doc)
+    if nt:
+        notes.append(f"trải {nt} bảng phương án thành đoạn")
     ns = split_option_paragraphs(doc)
     if ns:
         notes.append(f"tách {ns} đoạn phương án chung dòng")
-    els = list(body.iterchildren())
-    # 1) chuẩn hoá "Phần 1:", "PHẦN I:" → "PHẦN I." (convert_docx chỉ nhận dạng này); cắt từ tiêu đề TỰ LUẬN tới hết
-    cut_from = None
-    seen_part = False
+    # 1) chuẩn hoá "Phần 1:", "PHẦN I:" → "PHẦN I." (convert_docx chỉ nhận dạng này); tìm Câu đầu, tiêu đề TỰ LUẬN, HẾT
+    paras = list(body.iter(W + "p"))
+    heads = {}  # part → index trong paras
     first_cau = None
-    for i, el in enumerate(els):
-        if not el.tag.endswith("}p"):
-            continue
+    cut_el = None
+    for i, el in enumerate(paras):
         t = para_text(el)
         m = re.match(r"^\s*(PH[ẦA]N|Ph[ầa]n)\s*(I{1,3}|[1-3]|IV|4)\s*[.:\-–]?\s*(.*)$", t)
         if m and not RE_TULUAN.search(t) and len(t) < 400:
-            k = {"I": "I", "1": "I", "II": "II", "2": "II", "III": "III", "3": "III"}.get(m.group(2))
-            if k:
-                seen_part = True
-                for x in el.iter():
-                    if x.tag.endswith("}t"):
-                        x.text = ""
-                r = next((x for x in el.iter() if x.tag.endswith("}t")), None)
-                if r is not None:
-                    r.text = f"PHẦN {k}. {m.group(3)}"
+            k = {"I": 1, "1": 1, "II": 2, "2": 2, "III": 3, "3": 3}.get(m.group(2))
+            if k and k not in heads:
+                heads[k] = i
+                ts = [x for x in el.iter(W + "t")]
+                for x in ts:
+                    x.text = ""
+                if ts:
+                    ts[0].text = f"PHẦN {'I' * k}. {m.group(3)}"
                 continue
         if first_cau is None and RE_CAU.match(t):
             first_cau = i
-        if RE_TULUAN.search(t) and (re.match(r"^\s*(PH[ẦA]N|Ph[ầa]n|B\.|II\.|2\.)", t) or t.upper().startswith("TỰ LUẬN")) and len(t) < 200 and cut_from is None:
-            cut_from = i
-        if cut_tail and RE_HET.match(t) and cut_from is None and i > (first_cau or 0):
-            cut_from = i  # phần sau HẾT (đáp án cũ) bỏ, mình nối bảng mới
-    if cut_from is not None:
-        for el in els[cut_from:]:
-            if el.tag.endswith("}sectPr"):
-                continue
-            body.remove(el)
-        notes.append("đã cắt từ đoạn %d (%s)" % (cut_from, "TỰ LUẬN" if RE_TULUAN.search(para_text(els[cut_from])) else "HẾT"))
-    if not seen_part and first_cau is not None:
-        p = doc.paragraphs[0].insert_paragraph_before("PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.")
-        els[first_cau].addprevious(p._p)
-        notes.append("đề không có tiêu đề PHẦN — chèn PHẦN I trước Câu 1")
-    # 1b) đối chiếu số câu thật trong đề với khoá đáp án: đề thiếu số (vd nhảy 13→15) hay đánh số liên tục
-    #     (Phần II = Câu 19–22) → gán theo SỐ CÂU rồi đánh lại 1..n theo vị trí, để convert_docx (gán theo vị trí) không lệch
+        is_tl = RE_TULUAN.search(t) and (re.match(r"^\s*(PH[ẦA]N|Ph[ầa]n|B\.|II\.|2\.|IV\.)", t) or t.upper().startswith("TỰ LUẬN")) and len(t) < 120
+        if cut_el is None and first_cau is not None and i > first_cau and (is_tl or (cut_tail and RE_HET.match(t))):
+            cut_el = (_top(el, body), "TỰ LUẬN" if is_tl else "HẾT", i)
+    if first_cau is None:
+        notes.append("không thấy 'Câu N.' nào")
+    # 1a) không có PHẦN I trước Câu đầu → chèn
+    if first_cau is not None and (1 not in heads or heads[1] > first_cau):
+        top = _top(paras[first_cau], body)
+        np_ = doc.paragraphs[0].insert_paragraph_before("PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.")
+        top.addprevious(np_._p)
+        notes.append("chèn PHẦN I trước Câu đầu")
+        heads[1] = -1
+    # 1b) không có PHẦN II/III mà đáp án có (hoặc đề không tiêu đề) → suy phần theo cấu trúc câu
+    need2 = (dap and dap[2] and 2 not in heads) or (not dap and 2 not in heads)
+    need3 = (dap and dap[3] and 3 not in heads) or (not dap and 3 not in heads)
+    if first_cau is not None and (need2 or need3):
+        paras = list(body.iter(W + "p"))
+        blocks = []  # (index Câu, kind)
+        cur = None
+        stop = cut_el[2] + 1 if cut_el else len(paras)
+        for i, el in enumerate(paras[:stop]):
+            t = para_text(el)
+            if RE_CAU.match(t):
+                cur = [i, 0, 0]
+                blocks.append(cur)
+            elif cur is not None:
+                if re.match(r"^\s*\*?\s*[A-D][.)]", t):
+                    cur[1] += 1
+                elif re.match(r"^\s*\*?\s*[a-d]\)", t):
+                    cur[2] += 1
+        kinds = [(b[0], 1 if b[1] >= 3 else 2 if b[2] >= 3 else 3) for b in blocks]
+        done = set()
+        for idx, k in kinds:
+            if k in (2, 3) and k not in heads and k not in done and (k == 2 and need2 or k == 3 and need3):
+                # chỉ chèn khi từ đây về sau không còn câu loại 1 (tránh câu TN mất phương án vì bảng)
+                later = [kk for ii, kk in kinds if ii > idx]
+                if 1 in later and later.count(1) > 1:
+                    continue
+                top = _top(paras[idx], body)
+                np_ = doc.paragraphs[0].insert_paragraph_before(TITLE_PART[k])
+                top.addprevious(np_._p)
+                done.add(k)
+                notes.append(f"suy ra PHẦN {'I' * k} từ cấu trúc câu")
+    # 1c) cắt từ tiêu đề TỰ LUẬN / HẾT tới hết
+    if cut_el is not None:
+        hit = False
+        for el in list(body.iterchildren()):
+            if el is cut_el[0]:
+                hit = True
+            if hit and not el.tag.endswith("}sectPr"):
+                body.remove(el)
+        notes.append(f"đã cắt từ '{cut_el[1]}'")
+    # 1d) đối chiếu số câu thật trong đề với khoá: đề thiếu số (13→15) hay đánh số liên tục (19–22) → gán theo SỐ CÂU rồi đánh lại 1..n
     if dap:
         part, nums = 0, {1: [], 2: [], 3: []}
-        for el in body.iterchildren():
-            if not el.tag.endswith("}p"):
-                continue
+        for el in body.iter(W + "p"):
             t = para_text(el)
             m = re.match(r"^\s*PHẦN (I{1,3})\.", t)
             if m:
@@ -500,7 +667,7 @@ def prepare_exam(src_docx, dst, dap, cut_tail=True):
             if not dap[k] or not nums[k] or len(nums[k]) == len(dap[k]) and nums[k] == sorted(dap[k]):
                 continue
             keys = sorted(dap[k])
-            off = nums[k][0] - 1 if nums[k][0] > 1 and keys[0] == 1 else 0  # đánh số liên tục
+            off = nums[k][0] - 1 if nums[k][0] > 1 and keys[0] == 1 else 0
             cand = [n - off for n in nums[k]]
             if all(n in dap[k] for n in cand) and len(set(cand)) == len(cand):
                 dap[k] = {i + 1: dap[k][n] for i, n in enumerate(cand)}
@@ -538,14 +705,11 @@ def prepare_exam(src_docx, dst, dap, cut_tail=True):
                 for off, idx in ((0, j), (2, j + half)):
                     if idx < len(ns):
                         row[off].text, row[off + 1].text = str(ns[idx]), dap[3][ns[idx]]
-        for t in doc.tables[-3:]:
-            for r in t.rows:
-                for c in r.cells:
-                    for p in c.paragraphs:
-                        for run in p.runs:
-                            run.font.size = Pt(11)
     doc.save(dst)
     return notes
+
+
+TITLE_PART = {2: "PHẦN II. Câu trắc nghiệm đúng sai.", 3: "PHẦN III. Câu trắc nghiệm trả lời ngắn."}
 
 
 # ---------- tên đề ----------
@@ -592,8 +756,9 @@ def process(s, log):
                 wb = openpyxl.load_workbook(k, data_only=True)
                 for ws in wb.worksheets:
                     for r in ws.iter_rows(values_only=True):
-                        if r and r[0] and re.match(r"^\d{3}$", str(r[0]).strip()):
-                            key_mades.add(str(r[0]).strip())
+                        for c in r:
+                            if re.fullmatch(r"\d{3}", _cell(c)):
+                                key_mades.add(_cell(c))
             except Exception:  # noqa: BLE001
                 pass
     exam, made = pick_exam(s, key_mades)
@@ -659,7 +824,12 @@ def process(s, log):
     # Lưới an toàn: số câu convert_docx đọc được phải khớp số đáp án từng phần — lệch là đáp án sẽ gán sai câu
     if dap:
         got = {int(m.group(1)): int(m.group(2)) for m in re.finditer(r"^Phần (\d): (\d+) câu", c.stdout + c.stderr, re.M)}
-        lech = [f"P{k}: đề {got.get(k, 0)} câu / đáp án {len(dap[k])}" for k in (1, 2, 3) if dap[k] and got.get(k, 0) != len(dap[k])]
+        lech = [f"P{k}: đề {got.get(k, 0)} câu / đáp án {len(dap[k])}" for k in (1, 2, 3) if dap[k] and got.get(k, 0) and got.get(k, 0) != len(dap[k])]
+        for k in (1, 2, 3):
+            if dap[k] and not got.get(k, 0):
+                res["notes"].append(f"P{k}: khoá có {len(dap[k])} đáp án nhưng đề không có câu phần này — bỏ qua phần khoá")
+        if not got.get(1, 0) and not got.get(2, 0) and not got.get(3, 0):
+            lech = ["đề 0 câu (convert_docx không đọc được câu nào)"]
         if lech:
             res["status"] = "LỆCH"
             res["notes"].append("số câu lệch số đáp án — không đăng: " + "; ".join(lech))
