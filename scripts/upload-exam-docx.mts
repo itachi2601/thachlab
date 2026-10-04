@@ -4,7 +4,7 @@
 // nên quy tắc tách câu/đáp án/ảnh không lệch.
 //
 //   npx tsx scripts/upload-exam-docx.mts <de_thachlab.docx> --title "<Tên đề>" \
-//        --lesson <lesson_id> --item <lesson_item_id> [--duration 50] [--dry] [--drop-vector-marks] [--log <log.json> --src "<tên file gốc>"]
+//        --lesson <lesson_id> --item <lesson_item_id> [--duration 50] [--dry] [--drop-vector-marks] [--drop-bad [--max-drop-ratio 0.2] [--min-keep 25] [--drop-mathtype]] [--log <log.json> --src "<tên file gốc>"]
 //
 // - Ảnh phải được nén sẵn (script không có canvas). Ảnh lên bucket lesson-media/<lesson_id>/.
 // - Gắn vào mục theo kiểu "Giữ + thêm": đọc lại exam_ids ngay trước khi ghi, append id mới.
@@ -16,7 +16,7 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readDocx, SHAPE_MARK, VECTOR_IMAGE_MARK } from "@/services/docx-reader";
+import { MATH_MARK, readDocx, SHAPE_MARK, VECTOR_IMAGE_MARK } from "@/services/docx-reader";
 import { docxTextToBundle } from "@/services/docx-exam-parser";
 import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
@@ -67,7 +67,7 @@ const key = env.SUPABASE_SERVICE_ROLE_KEY ?? fail("thiếu SUPABASE_SERVICE_ROLE
 const supabase = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } });
 
 const read = await readDocx(new Uint8Array(fs.readFileSync(file)));
-if (read.mathTypeCount > 0) fail(`còn ${read.mathTypeCount} công thức MathType chưa chuyển (⟦CT⟧) — chạy mtef trước`);
+if (read.mathTypeCount > 0 && !process.argv.includes("--drop-mathtype")) fail(`còn ${read.mathTypeCount} công thức MathType chưa chuyển (⟦CT⟧) — chạy mtef trước`);
 let text = read.text;
 if (process.argv.includes("--drop-vector-marks")) {
   const n = (text.match(new RegExp(`${VECTOR_IMAGE_MARK}|${SHAPE_MARK}`, "g")) ?? []).length;
@@ -91,6 +91,7 @@ if (process.argv.includes("--drop-bad")) {
     const errs = one.errors.filter((e) => e.startsWith("Câu 1:"));
     if (errs.length) bad.set(i, errs[0].replace(/^Câu 1:\s*/, ""));
     else if (isMissingFigure(q)) bad.set(i, "thiếu hình");
+    else if (process.argv.includes("--drop-mathtype") && JSON.stringify(q).includes(MATH_MARK)) bad.set(i, "còn công thức MathType chưa chuyển");
   });
   for (const w of [...read.warnings, ...draft.notes]) {
     const m = /^Câu (\d+) \((?:trắc nghiệm|đúng\/sai|trả lời ngắn)\): (cần đủ[^.]*|thiếu đáp án[^.]*|thiếu dòng đáp án)/.exec(w);

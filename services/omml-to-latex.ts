@@ -163,10 +163,11 @@ function convert(el: Element): string {
       return `\\overset${arg(part(el, "lim"))}${arg(part(el, "e"))}`;
     case "acc": {
       const chr = propVal(el, "chr") ?? "̂";
-      return `${ACCENTS[chr] ?? "\\hat"}${arg(part(el, "e"))}`;
+      // Luôn đóng ngoặc: `\vec` + `v` không ngoặc thành lệnh `\vecv` (KaTeX báo lỗi) — phát hiện 4/10/2026 ở đề lớp 10.
+      return `${ACCENTS[chr] ?? "\\hat"}{${part(el, "e").trim()}}`;
     }
     case "bar":
-      return `${propVal(el, "pos") === "bot" ? "\\underline" : "\\overline"}${arg(part(el, "e"))}`;
+      return `${propVal(el, "pos") === "bot" ? "\\underline" : "\\overline"}{${part(el, "e").trim()}}`;
     case "groupChr":
       return arg(part(el, "e"));
     case "box":
