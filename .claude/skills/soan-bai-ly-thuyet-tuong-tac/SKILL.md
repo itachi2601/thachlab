@@ -233,3 +233,19 @@ thì chạy lại một lần, **tuyệt đối không sửa file của bài kh�
 (3 + 5 + 5 bài) + 1 vòng kiểm lại 5 bài = **~50 lượt subagent**, khoảng **2 giờ** tính từ lúc bắt đầu soạn đến
 lúc đăng xong; **mọi bài đều có ít nhất một lỗi `chan`** do bản kiểm chéo bắt được (nhiều nhất 4 lỗi/bài),
 5 bài phải sửa hai vòng. Kết quả: 13 bài đăng DB + deploy (bài 15 id 126 bỏ vì phiên khác đăng trước).
+
+## Chọn mô hình Claude cho từng việc (đề xuất 4/10/2026 — CHƯA đo trên repo này)
+
+Mỗi bài có 4 loại việc đòi hỏi khác nhau; chọn mô hình theo việc, không theo bài:
+
+| Việc | Mô hình | Vì sao |
+|---|---|---|
+| Soạn nội dung (giọng không vai "thầy", mở bài, câu dự đoán, bẫy, phân tích lỗi sai) + **vẽ SVG** | **Opus 5.5** (agent soạn) | Cần cảm quan sư phạm và suy luận không gian; SVG là chỗ hay sai nhất (chương 1 VL12 gặp 6 lỗi hình, mũi tên ngược chiều, nhãn chồng chữ). Mô hình mạnh hơn ít vòng sửa hơn. |
+| Kiểm chéo (giải lại từng quiz, tính lại số liệu, soát ràng buộc) | **Sonnet 5.5** | Việc đối chiếu, rẻ hơn nhiều, đủ dùng. Nên là mô hình KHÁC agent soạn để không lặp cùng điểm mù. |
+| Bài thực hành / bài ứng dụng đơn giản (khuôn lặp, ít hình) | **Sonnet 5.5** soạn thẳng | Tiết kiệm; vẫn qua kiểm chéo như thường. |
+| Đóng gói bundle, xem thử, validate, ghi DB | script (`build_bundle.py`, `validate_bundle`, `cap-nhat-ly-thuyet.sh`) | Không cần mô hình mạnh. **Không dùng Haiku để soạn.** |
+
+- Khối nhiều hình vector/đường sức (Vật lí 10 động học–động lực học, Vật lí 11 điện trường) → ưu tiên Opus cho agent soạn.
+- Chỉ định mô hình bằng tham số `model` của công cụ Agent khi thuê agent soạn/kiểm (xem mục "thuê subagent song song").
+- Làm theo **lô theo chương** (ví dụ 6 bài Điện trường L11) để dùng chung thư viện SVG và khung bài.
+- Muốn chắc: soạn **cùng một bài** bằng hai mô hình, so số lỗi `chan` mà bản kiểm chéo bắt được rồi cập nhật bảng này.
