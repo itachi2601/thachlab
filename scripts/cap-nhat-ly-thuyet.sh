@@ -2,6 +2,13 @@
 # Đẩy CHỈ nội dung lý thuyết của một bài (không đụng đề, bài tập mẫu, tiêu đề, tiến độ học).
 #   bash scripts/cap-nhat-ly-thuyet.sh <theory.html | bundle.json> <lesson_id> [--yes]
 # Chạy trên Mac: pull main → xem thử (dry-run, tự sao lưu) → hỏi xác nhận → ghi → nhắc deploy.
+#
+# QUY TẮC (thầy chốt 4/10/2026): đăng bài lý thuyết CHỈ ghi mục Lý thuyết của đúng bài đó, không làm
+# ảnh hưởng phần còn lại của bài (Luyện tập, Kiểm tra, Bài tập mẫu…) hay bài khác. Script không tin
+# vào việc người chạy nhớ quy tắc: `update-ly-thuyet-from-bundle.mts` lọc đúng mục kind='ly_thuyet',
+# in phạm vi ở bước dry-run, ràng buộc UPDATE bằng cả id lẫn kind, rồi chụp lesson_items TRƯỚC/SAU và
+# tự báo lỗi (exit 1) nếu có bất kỳ cột/mục nào khác đổi. Đừng thay bằng upload-lesson.mts (script đó
+# ghi cả đề Luyện tập).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 SRC="${1:-}"; LESSON="${2:-}"; YES="${3:-}"

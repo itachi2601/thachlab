@@ -46,7 +46,7 @@ Trạng thái: **mẫu đầu tiên chưa được thầy xem trên web** — m�
    # SAU KHI GHI DB BẮT BUỘC deploy (site tĩnh: build đọc DB lúc build). Deploy từ worktree sạch:
    git -C .claude/worktrees/deploy-tree checkout --detach origin/main && (cd .claude/worktrees/deploy-tree && bash scripts/deploy.sh)
    ```
-   Script tự: lint → dry-run + sao lưu `body_html` cũ ra `scripts/logs/` → hỏi xác nhận → chỉ ghi cột `body_html` của mục `ly_thuyet`. Hoàn tác: `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`. Chỉ dùng `upload-lesson.mts` (tạo cả đề Luyện tập) khi thầy nói rõ muốn đăng cả đề. Commit chỉ đúng thư mục bài + file đã đụng; không tự đăng DB.
+   Script tự: lint → dry-run **in rõ phạm vi** (mục nào ghi, mục nào của bài bị bỏ qua) + sao lưu `body_html` cũ ra `scripts/logs/` → hỏi xác nhận → chỉ ghi cột `body_html` của mục `ly_thuyet` (UPDATE ràng buộc cả `id` lẫn `kind='ly_thuyet'`, đòi đúng 1 dòng), rồi **chụp toàn bộ `lesson_items` của bài trước/sau và đối chiếu**: ngoài mục Lý thuyết, mọi cột/mục khác phải y nguyên, lệch là exit 1 kèm lệnh hoàn tác. Quy tắc thầy chốt 4/10/2026: **đăng bài lý thuyết chỉ chạm đúng mục Lý thuyết của bài đó, không làm ảnh hưởng phần còn lại** (Luyện tập, Kiểm tra, Bài tập mẫu, tiêu đề, tiến độ học) — script thực thi quy tắc này chứ không dựa vào việc người chạy nhớ. Hoàn tác: `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`. Chỉ dùng `upload-lesson.mts` (tạo cả đề Luyện tập) khi thầy nói rõ muốn đăng cả đề. Commit chỉ đúng thư mục bài + file đã đụng; không tự đăng DB.
    **Lưu ý HTML:** trong `$…$` viết `\lt`, `\gt` thay cho `<`, `>` (ký tự `<k` bị HTML hiểu là thẻ và làm hỏng công thức).
 
 ## Dàn ý bài (nhịp 6 phần, mỗi phần là một `<h3>` đánh số I., II.…)

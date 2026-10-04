@@ -161,6 +161,12 @@ Sửa/đăng lại nội dung lý thuyết của bài có sẵn: dùng `bash scr
 (chỉ ghi cột `body_html` của mục `ly_thuyet`, tự sao lưu ra `scripts/logs/`; hoàn tác bằng `scripts/khoi-phuc-ly-thuyet.mts`).
 Không dùng `upload-lesson.mts` cho việc này — nó tạo/ghi cả đề Luyện tập. Công thức có `<`/`>` trong `$…$` phải viết `\lt`/`\gt`.
 
+**Quy tắc (thầy chốt 4/10/2026): đăng lý thuyết chỉ ghi đúng mục Lý thuyết của bài đó, không làm ảnh hưởng
+phần còn lại** (Luyện tập, Kiểm tra, Bài tập mẫu, tiêu đề, tiến độ học) hay bài khác. Script đã thực thi quy tắc
+này, không dựa vào việc người chạy nhớ: dry-run in rõ phạm vi (mục nào ghi, mục nào bỏ qua), UPDATE ràng buộc cả
+`id` lẫn `kind='ly_thuyet'` và đòi đúng 1 dòng, rồi chụp toàn bộ `lesson_items` của bài TRƯỚC/SAU để đối chiếu —
+lệch là exit 1 kèm lệnh hoàn tác. Sửa script thì giữ nguyên phần kiểm này, đừng gỡ.
+
 # Thiết kế UI học sinh — đọc `docs/QUY-TAC-THIET-KE.md` trước, không chờ nhắc
 
 Mọi UI học sinh nhìn thấy (`/lop-hoc/**`, `/kiem-tra/**`, trang chủ HS, xếp hạng, phụ đạo, thông báo) phải theo
