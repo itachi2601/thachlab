@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, ClipboardList, KeyRound, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
+import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
 import Avatar from "@/components/ui/Avatar";
@@ -55,6 +56,8 @@ export default function Navbar() {
   const isTa = profile?.role === "tro_giang";
   const showParentLink = !session || profile?.role === "student";
   const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
+  // Thanh đáy đã có Lớp học: khi nó hiện thì menu ☰ bỏ hàng "THPT – THCS" (giữ chip vào nhanh từng lớp).
+  const tabBarShown = tabBarShownOn(pathname);
   const mobileLinks = [...navLinks.slice(0, 3), ...MORE_LINKS.slice(0, 2), ...navLinks.slice(3), ...MORE_LINKS.slice(2)];
 
   useEffect(() => {
@@ -330,6 +333,7 @@ export default function Navbar() {
 
                 return (
                   <li key={link.href}>
+                    {!(link.href === "/lop-hoc" && tabBarShown) && (
                     <Link
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
@@ -343,6 +347,7 @@ export default function Navbar() {
                       {link.label}
                       <ChevronRight size={18} className="text-slate-500" />
                     </Link>
+                    )}
                     {link.href === "/lop-hoc" && (
                       <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
                         {THPT_QUICK_LINKS.map((q) => (

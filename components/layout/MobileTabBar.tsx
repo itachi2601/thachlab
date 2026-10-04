@@ -24,6 +24,11 @@ import { useAuth } from "@/components/auth/auth-context";
 // /phu-huynh: thanh này là của học sinh (Lớp học, Luyện tập) — phụ huynh bấm vào sẽ lạc sang trang không dành cho họ.
 const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai", "/tro-giang/ghi", "/phu-huynh"];
 
+/** Thanh đáy có đang hiện ở đường dẫn này không — Navbar dùng để bỏ mục trùng khỏi menu ☰. */
+export function tabBarShownOn(pathname: string) {
+  return !HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+}
+
 const MOBILE_QUERY = "(max-width: 1023px)";
 
 function subscribeViewport(onChange: () => void) {
@@ -86,7 +91,7 @@ export default function MobileTabBar() {
   const isMobile = useSyncExternalStore(subscribeViewport, isMobileViewport, () => false);
 
   if (!isMobile) return null;
-  if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return null;
+  if (!tabBarShownOn(pathname)) return null;
 
   const items = [
     { key: "home", label: "Trang chủ", href: "/", icon: "home" as const },
