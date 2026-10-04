@@ -11,6 +11,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Hero trang chủ thành mô phỏng chuyển động ném xiên (5/10/2026)**: thay con lắc lò xo mặc định bằng
+  thí nghiệm kéo-thả ná cao su (`components/physics/ProjectileSimulation.tsx` + `hooks/useProjectileMotion.ts`
+  + `lib/projectile.ts`), con lắc lò xo chuyển thành tab 2 và được **nạp chậm** (`HarmonicPanel.tsx` qua
+  `next/dynamic`), không tự chạy khi mới mở. Học sinh tự tìm ra α = 45° cho tầm xa lớn nhất, phát hiện hai
+  góc phụ nhau cho cùng tầm xa, so Trái Đất ↔ Mặt Trăng (g nhỏ 6 lần). JS tải đầu trang chủ 213 → 215 KB
+  gzip (đo bằng `tmp/hero-review/firstload.mjs`). Quy tắc áp dụng: B1, B4, B8, N2, D2, D3, C1, M5.
 - **Nốt 13 bài Vật lí 12 còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
   `soan-bai-ly-thuyet-tuong-tac` cho toàn bộ bài học lớp 12 còn thiếu, **trừ các bài Kiểm tra và hai bài
   Thực hành đo** (Bài 4 id 5, Bài 11 id 12 — Bài 4 đã do phiên khác làm). Danh sách đã đăng DB (chỉ ghi mục

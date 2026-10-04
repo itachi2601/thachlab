@@ -1,27 +1,49 @@
 "use client";
 
-import { useState } from "react";
+/**
+ * components/home/PhysicsSimulationHero.tsx
+ *
+ * Hero trang chủ: một thí nghiệm tương tác ngay màn hình đầu.
+ *
+ * Tab 1 (mặc định) — "Ném xiên": học sinh tự tay kéo bệ phóng, tự tìm ra góc ném
+ * cho tầm xa lớn nhất. Tab 2 — "Dao động": con lắc lò xo (nạp chậm, chỉ mount khi
+ * được chọn).
+ *
+ * Thứ tự DOM = thứ tự đọc trên điện thoại: câu hỏi → thí nghiệm → nút vào lớp
+ * (B8) — nhờ vậy phần tương tác nằm trong màn hình đầu ở 375px (B1), còn trên
+ * desktop thì thí nghiệm đứng cột phải, cao bằng cả hai hàng chữ.
+ */
+
+import { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { useHarmonicMotion } from "@/hooks/useHarmonicMotion";
-import { SpringSimulation } from "@/components/physics/SpringSimulation";
-import { DisplacementChart } from "@/components/physics/DisplacementChart";
-import { ControlPanel } from "@/components/physics/ControlPanel";
 import dynamic from "next/dynamic";
-import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
-import type { ComponentProps } from "react";
-// Bảng công thức dùng framer-motion (~140 KB) và chỉ hiện khi bấm nút — tải chậm, lúc đóng vốn không render gì.
-const FormulaPanelLazy = dynamic(() => import("@/components/physics/FormulaPanel").then((m) => m.FormulaPanel), { ssr: false, loading: () => null });
-// Panel phụ, vốn đã trả null khi đóng — lỗi render thì cũng chỉ ẩn đi, không cần thông báo.
-function FormulaPanel(props: ComponentProps<typeof FormulaPanelLazy>) {
-  return (
-    <LazyErrorBoundary>
-      <FormulaPanelLazy {...props} />
-    </LazyErrorBoundary>
-  );
-}
+import { ArrowRight } from "lucide-react";
+import { ProjectileSimulation } from "@/components/physics/ProjectileSimulation";
+import { LazyErrorBoundary, LazyPanelFallback } from "@/components/ui/LazyErrorBoundary";
+
+// Con lắc lò xo + đồ thị + bảng công thức chỉ cần khi học sinh bấm sang tab 2 →
+// để ngoài gói JS tải đầu tiên (xem AGENTS.md mục "Đăng nội dung — luôn tối ưu tốc độ tải").
+const HarmonicPanel = dynamic(
+  () => import("@/components/physics/HarmonicPanel").then((m) => m.HarmonicPanel),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-400 sm:h-[26rem]">
+        Đang tải mô phỏng…
+      </div>
+    ),
+  }
+);
+
+const TABS = [
+  { key: "projectile", label: "Ném xiên" },
+  { key: "harmonic", label: "Dao động" },
+] as const;
+
+type TabKey = (typeof TABS)[number]["key"];
 
 const FORMULAS = [
+  "R = v₀²·sin2α/g",
   "x = A·cos(ωt + φ)",
   "F = ma",
   "E = mc²",
@@ -35,8 +57,16 @@ const FORMULAS = [
 ];
 
 export function PhysicsSimulationHero() {
-  const motion = useHarmonicMotion({ initialAmplitude: 0.1, initialFrequency: 1 });
-  const [formulaOpen, setFormulaOpen] = useState(false);
+  const [tab, setTab] = useState<TabKey>("projectile");
+
+  // Điều hướng tab bằng phím trái/phải (chuẩn ARIA cho tablist).
+  const onTablistKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const index = TABS.findIndex((item) => item.key === tab);
+    const next = event.key === "ArrowRight" ? (index + 1) % TABS.length : (index - 1 + TABS.length) % TABS.length;
+    setTab(TABS[next].key);
+  };
 
   return (
     <section id="thpt" className="relative overflow-hidden bg-[#05070B] px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
@@ -46,27 +76,25 @@ export function PhysicsSimulationHero() {
         className="pointer-events-none absolute left-1/2 top-[-20%] h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-cyan-500/[0.08] blur-[120px]"
       />
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-10">
-        <div>
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2 lg:items-center lg:gap-x-10">
+        <div className="lg:col-start-1 lg:row-start-1">
           <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">
             Có bao giờ em tự hỏi…
           </p>
 
-          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[3.4rem]">
-            Tại sao mọi thứ
+          <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[3.4rem]">
+            Ném ở góc nào
             <br />
-            lại{" "}
-            <span className="text-cyan-300">
-              dao động?
-            </span>
+            thì <span className="text-cyan-300">xa nhất</span>?
           </h1>
 
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted sm:text-lg">
-            Từ con lắc lò xo đến nhịp đập của trái tim — Vật lý giúp em hiểu nhịp
-            điệu của thế giới quanh mình.
+          <p className="mt-3 max-w-md text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
+            Kéo bệ phóng rồi thả tay — mỗi lần ném là một thí nghiệm em tự làm.
           </p>
+        </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+        <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
+          <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/lop-hoc"
               className="inline-flex items-center gap-2 rounded-lg bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 active:scale-[0.98] sm:text-base"
@@ -78,60 +106,71 @@ export function PhysicsSimulationHero() {
               href="#learning-path"
               className="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-ink transition hover:bg-white/5 active:scale-[0.98] sm:text-base"
             >
-              Xem lộ trình lớp 9–12
+              Xem lộ trình
             </Link>
           </div>
 
-          <div className="mt-6 max-w-md space-y-2 text-sm leading-relaxed text-muted">
-            <p>Học miễn phí trên web, theo đúng nhịp lớp trên trường.</p>
-            <p>
-              Thử kéo thanh <span className="text-ink">Biên độ</span> hay{" "}
-              <span className="text-ink">Tần số</span> trong mô phỏng — con lắc và đồ thị x–t đổi
-              theo ngay.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative rounded-2xl border border-line bg-panel p-3 shadow-xl shadow-black/30 sm:p-6">
-          <p className="mb-3 font-mono text-[13px] uppercase tracking-widest text-muted">
-            Mô phỏng: Dao động con lắc lò xo
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
+            Học miễn phí trên web, theo đúng nhịp lớp trên trường.
           </p>
-
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            <div className="h-36 rounded-xl border border-white/5 bg-black/20 sm:h-64">
-              <SpringSimulation
-                x={motion.x}
-                v={motion.v}
-                a={motion.a}
-                amplitude={motion.amplitude}
-              />
-            </div>
-            <div className="h-36 rounded-xl border border-white/5 bg-black/20 p-2 sm:h-64">
-              <DisplacementChart
-                t={motion.t}
-                amplitude={motion.amplitude}
-                frequency={motion.frequency}
-              />
+        </div>
+        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl shadow-black/30 sm:p-5 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2 sm:mb-3">
+            <p className="font-mono text-[13px] uppercase tracking-widest text-muted">
+              Thí nghiệm
+            </p>
+            <div
+              role="tablist"
+              aria-label="Chọn thí nghiệm"
+              onKeyDown={onTablistKeyDown}
+              className="flex overflow-hidden rounded-lg border border-white/10"
+            >
+              {TABS.map((item) => (
+                <button
+                  key={item.key}
+                  type="button"
+                  role="tab"
+                  id={`hero-tab-${item.key}`}
+                  aria-selected={tab === item.key}
+                  aria-controls={`hero-panel-${item.key}`}
+                  tabIndex={tab === item.key ? 0 : -1}
+                  onClick={() => setTab(item.key)}
+                  className={`inline-flex min-h-11 items-center rounded-none px-3 text-sm font-medium transition active:scale-[0.98] ${
+                    tab === item.key
+                      ? "bg-cyan-300/[0.14] text-cyan-300"
+                      : "text-slate-400 hover:bg-white/[0.06]"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          <ControlPanel
-            amplitude={motion.amplitude}
-            frequency={motion.frequency}
-            isPlaying={motion.isPlaying}
-            formulaOpen={formulaOpen}
-            onAmplitudeChange={motion.setAmplitude}
-            onFrequencyChange={motion.setFrequency}
-            onToggle={motion.toggle}
-            onReset={motion.reset}
-            onToggleFormula={() => setFormulaOpen((o) => !o)}
-          />
-
-          <FormulaPanel open={formulaOpen} period={motion.period} omega={motion.omega} />
+          <div
+            role="tabpanel"
+            id={`hero-panel-${tab}`}
+            aria-labelledby={`hero-tab-${tab}`}
+          >
+            {tab === "projectile" ? (
+              <LazyErrorBoundary
+                fallback={<LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />}
+              >
+                <ProjectileSimulation />
+              </LazyErrorBoundary>
+            ) : (
+              <LazyErrorBoundary
+                fallback={<LazyPanelFallback className="min-h-72" message="Không tải được mô phỏng. Thử tải lại trang." />}
+              >
+                <HarmonicPanel />
+              </LazyErrorBoundary>
+            )}
+          </div>
         </div>
+
       </div>
 
-      <div className="relative mx-auto mt-14 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
+      <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
         <div className="marquee font-mono text-sm text-slate-500">
           {[0, 1].map((dup) => (
             <span key={dup} className="flex shrink-0 items-center gap-12">

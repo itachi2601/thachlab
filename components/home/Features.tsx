@@ -31,7 +31,7 @@ export default function Features() {
             Một bài học trên ThachLab diễn ra thế nào
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted">
-            Mỗi bài bắt đầu bằng một câu hỏi từ đời thường — như con lắc lò xo ở đầu
+            Mỗi bài bắt đầu bằng một câu hỏi từ đời thường — như cú ném ở đầu
             trang — rồi mới đến lý thuyết. Phần còn lại em làm ngay trên web: bài tập
             mẫu, luyện tập, bài về nhà và kiểm tra đều được chấm tự động.
           </p>
