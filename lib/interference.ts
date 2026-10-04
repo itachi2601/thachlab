@@ -122,6 +122,78 @@ export function singleSourceFieldIntensity(r: number, lambda: number): number {
   return singleSourceIntensity(r, lambda) * spreadingFalloff(r, lambda);
 }
 
+// ---------------------------------------------------------------------------
+// Ảnh động (li độ tức thời) — tách sẵn pha để mỗi khung hình thật rẻ
+// ---------------------------------------------------------------------------
+//
+// Li độ tại M: u(t) = Σ aᵢ·cos(ωt − k·dᵢ) với k = 2π/λ, aᵢ là biên độ (đã tính
+// độ tắt dần). Khai triển cos(ωt − kd) = cosωt·cos(kd) + sinωt·sin(kd):
+//
+//     u(t) = cos(ωt)·C + sin(ωt)·S,   C = Σ aᵢ·cos(k·dᵢ),  S = Σ aᵢ·sin(k·dᵢ)
+//
+// C và S KHÔNG phụ thuộc thời gian → tính một lần cho mỗi điểm ảnh khi đổi f, v,
+// AB; mỗi khung hình chỉ còn u = cosφ·C + sinφ·S (2 phép nhân), không gọi cos/sin
+// trong vòng lặp vẽ. Đây là lý do ảnh động chạy được 60 khung hình/giây trên
+// điện thoại mà không cần thư viện nào.
+
+/** Hệ số pha k = 2π/λ (rad/cm). */
+export function waveNumber(lambda: number): number {
+  return (2 * Math.PI) / lambda;
+}
+
+export interface Phasor {
+  c: number;
+  s: number;
+}
+
+/**
+ * Phasor của hai nguồn tại điểm cách chúng d₁, d₂. Biên độ lấy theo đúng độ tắt
+ * dần dùng cho phần vẽ, chia 2 để u ∈ [−1, 1] (khớp thang sáng của ảnh đứng yên).
+ */
+export function twoSourcePhasors(d1: number, d2: number, lambda: number): Phasor {
+  const k = waveNumber(lambda);
+  const a1 = spreadingFalloff(d1, lambda) / 2;
+  const a2 = spreadingFalloff(d2, lambda) / 2;
+  return {
+    c: a1 * Math.cos(k * d1) + a2 * Math.cos(k * d2),
+    s: a1 * Math.sin(k * d1) + a2 * Math.sin(k * d2),
+  };
+}
+
+/** Phasor khi chỉ còn nguồn A (nguồn B đã tắt): mặt nước chỉ có sóng tròn từ A. */
+export function singleSourcePhasor(r: number, lambda: number): Phasor {
+  const k = waveNumber(lambda);
+  const a = spreadingFalloff(r, lambda) / 2;
+  return { c: a * Math.cos(k * r), s: a * Math.sin(k * r) };
+}
+
+/** Li độ chuẩn hoá tại thời điểm có pha ωt: u = cosφ·C + sinφ·S. */
+export function displacementFromPhasor(
+  phasor: Phasor,
+  cosPhase: number,
+  sinPhase: number
+): number {
+  return phasor.c * cosPhase + phasor.s * sinPhase;
+}
+
+/**
+ * Chu kỳ HIỂN THỊ của ảnh động (giây) — cố ý không phải chu kỳ thật 1/f.
+ *
+ * Sóng thật ở thí nghiệm này có f = 10–60 Hz, mắt chỉ thấy nhoè; nên hình được
+ * tua chậm: tốc độ lan trên màn hình 6 cm/s, kẹp trong 0,4–1,5 s mỗi chu kỳ để
+ * vừa theo được bằng mắt vừa không nhấp nháy (bước sóng nhỏ thì chu kỳ ngắn,
+ * chạm sàn 0,4 s). Bước sóng VẼ vẫn đúng bằng λ thật — chỉ thời gian bị tua.
+ */
+export const VISUAL_SPEED_CM_PER_S = 6;
+export const VISUAL_PERIOD_RANGE = { min: 0.4, max: 1.5 } as const;
+
+export function visualPeriod(lambda: number): number {
+  return Math.min(
+    VISUAL_PERIOD_RANGE.max,
+    Math.max(VISUAL_PERIOD_RANGE.min, lambda / VISUAL_SPEED_CM_PER_S)
+  );
+}
+
 /** Sai số cho phép khi coi M nằm ĐÚNG trên một vân (tính theo λ). */
 export const FRINGE_TOLERANCE = 0.06;
 

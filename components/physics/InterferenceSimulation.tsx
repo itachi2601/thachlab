@@ -4,19 +4,28 @@
  * components/physics/InterferenceSimulation.tsx
  *
  * Tab "Giao thoa" của hero: khay sóng nước hai mũi nhọn (Bài 12, Vật lí 11) —
- * bản đồ vân giao thoa vẽ bằng canvas 2D thuần (không thư viện, không animation
- * CSS), học sinh chạm/kéo chấm M để tự đọc ra d₂ − d₁ = kλ (cực đại) và
- * (k + ½)λ (cực tiểu), và tắt nguồn B để thấy vân biến mất.
+ * canvas 2D thuần (không thư viện), học sinh chạm/kéo chấm M để tự đọc ra
+ * d₂ − d₁ = kλ (cực đại) và (k + ½)λ (cực tiểu), tắt nguồn B để thấy vân biến mất,
+ * và bấm "Chạy sóng" để xem nước chạy qua lại.
  *
- * Vẽ BAO HÌNH biên độ (|2a·cos(πΔd/λ)|) chứ không phải li độ tức thời: vân trên
- * mặt nước là các đường sáng/tối ĐỨNG YÊN, nên không cần vòng lặp hình ảnh nào —
- * mọi thứ chỉ tính lại khi đổi f, v, AB (quy tắc B4: không có gì tự chuyển động,
- * và cũng là cách rẻ nhất về CPU/pin).
+ * HAI CHẾ ĐỘ HÌNH:
+ *  - Đứng yên (mặc định): vẽ BAO HÌNH biên độ |2a·cos(πΔd/λ)| — đúng cái khay
+ *    sóng thật cho thấy: các đường sáng/tối ĐỨNG YÊN.
+ *  - Chạy sóng (HS bấm nút): vẽ LI ĐỘ TỨC THỜI u = Σaᵢ·cos(ωt − k·dᵢ) — nước
+ *    chạy qua lại, còn vân thì vẫn đứng yên. Đây là hình trả lời đúng cái bẫy
+ *    trong spec ("cực tiểu là chỗ không có sóng tới"): cả hai sóng đều tới, chỉ
+ *    là chúng triệt tiêu nhau tại đó.
  *
- * Quy tắc thiết kế áp dụng: B4 (mô phỏng đứng yên, do HS ra lệnh), D2 (đích chạm
- * ≥ 44px, nhãn nút ≤ 1 dòng), M2 (chữ trên nền tối dùng màu cố định), M4 (cực
- * đại/cực tiểu nói bằng chữ, không chỉ bằng màu), N7 (mỗi đoạn một kiểu nhấn),
- * C1 (chữ đọc được ≥ 13px).
+ * VÌ SAO ẢNH ĐỘNG KHÔNG TỐN CPU: tách sẵn C = Σaᵢcos(k·dᵢ) và S = Σaᵢsin(k·dᵢ)
+ * cho từng điểm ảnh (chỉ tính lại khi đổi f, v, AB — không tính trong vòng lặp
+ * vẽ), nên mỗi khung hình chỉ còn u = cosφ·C + sinφ·S (2 phép nhân) + tra bảng
+ * màu. Canvas tách 2 lớp: lớp trường chỉ putImageData (không vẽ lại chữ mỗi
+ * khung hình), lớp trên vẽ nhãn/điểm M theo React.
+ *
+ * QUY TẮC THIẾT KẾ: B4 (không tự chạy — HS bấm nút mới chạy; dừng khi khay ra
+ * khỏi tầm mắt), D2 (đích chạm ≥ 44px, nhãn nút ≤ 1 dòng), M2 (chữ trên nền tối
+ * dùng màu cố định), M4 (cực đại/cực tiểu nói bằng chữ, không chỉ bằng màu),
+ * N7 (mỗi đoạn một kiểu nhấn), C1 (chữ đọc được ≥ 13px).
  */
 
 import {
@@ -27,7 +36,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import { RotateCcw } from "lucide-react";
+import { Pause, Play, RotateCcw } from "lucide-react";
 import { formatNumber } from "@/lib/physics";
 import {
   AB_RANGE,
@@ -35,7 +44,10 @@ import {
   TANK,
   V_RANGE,
   singleSourceFieldIntensity,
+  singleSourcePhasor,
   twoSourceFieldIntensity,
+  twoSourcePhasors,
+  visualPeriod,
   type FringeKind,
 } from "@/lib/interference";
 import {
@@ -44,8 +56,8 @@ import {
 } from "@/hooks/useInterferenceTank";
 
 // --- Màu cố định cho phần vẽ trên nền tối (M2) ---
-const STAGE_BG_TOP = "#070C15";
-const STAGE_BG_BOTTOM = "#04070C";
+const STAGE_BG_TOP = [7, 12, 21] as const; // #070C15
+const STAGE_BG_BOTTOM = [4, 7, 12] as const; // #04070C
 const ACCENT = "#22D3EE";
 const ACCENT_SOFT = "rgba(34,211,238,0.55)";
 const WARM = "#FBBF24";
@@ -60,6 +72,13 @@ const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
 
 /** Bước nhảy khi chỉnh M bằng phím (cm) — D2: bàn phím là đường dự phòng cho ngón tay. */
 const KEY_STEP_CM = 0.4;
+
+/**
+ * Trần số điểm ảnh của lớp trường. Điện thoại/desktop thường ở dưới trần này nên
+ * vẫn vẽ đúng độ phân giải thiết bị; màn hình rất nét (4K/DPR 3) thì hạ nhẹ để
+ * ảnh động giữ được 60 khung hình/giây.
+ */
+const MAX_RASTER_PIXELS = 480_000;
 
 interface Box {
   w: number;
@@ -84,71 +103,182 @@ function geometryFor(box: Box): Geometry {
   };
 }
 
+/**
+ * Bảng màu theo cường độ (0..1) → một số nguyên đóng gói RGB, để mỗi điểm ảnh chỉ
+ * tốn một phép tra bảng thay vì gọi pow() — đây là mấu chốt giữ 60 fps.
+ */
+const LUT_SIZE = 1024;
+const GLOW_LUT = (() => {
+  const table = new Int32Array(LUT_SIZE + 1);
+  for (let i = 0; i <= LUT_SIZE; i++) {
+    const glow = (i / LUT_SIZE) ** 2.25; // thu hẹp vệt sáng thành đúng đường vân
+    const r = Math.round(5 + 30 * glow);
+    const g = Math.round(8 + 190 * glow);
+    const b = Math.round(14 + 214 * glow);
+    table[i] = (r << 16) | (g << 8) | b;
+  }
+  return table;
+})();
+
+function glowPacked(intensity: number): number {
+  const i = intensity <= 0 ? 0 : intensity >= 1 ? LUT_SIZE : (intensity * LUT_SIZE) | 0;
+  return GLOW_LUT[i];
+}
+
 interface FieldParams {
   lambda: number;
   sourceBOn: boolean;
   sources: { a: TankPoint; b: TankPoint };
 }
 
-/**
- * Bản đồ vân: mỗi điểm ảnh = biên độ tổng hợp tại đó. Ngoài khay để trong suốt
- * (nền gradient của canvas lộ ra). Tính ở độ phân giải thiết bị (≤ 2×) nên vân
- * nhỏ nhất vẫn tách được; đổi tham số mới tính lại một lần.
- */
-function buildFieldCanvas(geo: Geometry, params: FieldParams): HTMLCanvasElement | null {
-  if (typeof document === "undefined" || geo.w <= 0 || geo.h <= 0) return null;
-  const pw = Math.max(1, Math.round(geo.w * geo.dpr));
-  const ph = Math.max(1, Math.round(geo.h * geo.dpr));
-  const canvas = document.createElement("canvas");
-  canvas.width = pw;
-  canvas.height = ph;
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return null;
+interface FieldTextures {
+  width: number;
+  height: number;
+  /** Vùng khay trong hệ điểm ảnh của lớp trường (để mỗi khung hình chỉ quét vùng này). */
+  tankX0: number;
+  tankY0: number;
+  tankX1: number;
+  tankY1: number;
+  /** Phasor C, S của từng điểm ảnh trong khay (gộp theo hàng) — không phụ thuộc thời gian. */
+  cos: Float32Array;
+  sin: Float32Array;
+  /** Ảnh đứng yên (bao hình biên độ) — dựng một lần mỗi khi đổi tham số. */
+  envelope: ImageData;
+  /** Ảnh động — ghi lại mỗi khung hình rồi putImageData. */
+  wave: ImageData;
+}
 
-  const image = ctx.createImageData(pw, ph);
-  const data = image.data;
-  const { scale, offsetX, offsetY, dpr } = geo;
+/**
+ * Dựng sẵn hai ảnh và bảng pha cho cả hai chế độ. Ảnh phủ kín canvas (kể cả lề
+ * ngoài khay — lề tô đúng màu nền gradient) nên mỗi khung hình chỉ cần một
+ * `putImageData`, không phải vẽ lại nền.
+ */
+function buildFieldTextures(
+  geo: Geometry,
+  rasterDpr: number,
+  params: FieldParams
+): FieldTextures | null {
+  if (typeof document === "undefined" || geo.w <= 0 || geo.h <= 0) return null;
+  const width = Math.max(1, Math.round(geo.w * rasterDpr));
+  const height = Math.max(1, Math.round(geo.h * rasterDpr));
+  const scratch = document.createElement("canvas").getContext("2d");
+  if (!scratch) return null;
+
+  const envelope = scratch.createImageData(width, height);
+  const wave = scratch.createImageData(width, height);
+  const envData = envelope.data;
+  const waveData = wave.data;
+
+  // Nền gradient (giống hệt bản vẽ vector trước đây) cho cả hai ảnh.
+  for (let py = 0; py < height; py++) {
+    const f = height > 1 ? py / (height - 1) : 0;
+    const r = Math.round(STAGE_BG_TOP[0] + (STAGE_BG_BOTTOM[0] - STAGE_BG_TOP[0]) * f);
+    const g = Math.round(STAGE_BG_TOP[1] + (STAGE_BG_BOTTOM[1] - STAGE_BG_TOP[1]) * f);
+    const b = Math.round(STAGE_BG_TOP[2] + (STAGE_BG_BOTTOM[2] - STAGE_BG_TOP[2]) * f);
+    let index = py * width * 4;
+    for (let px = 0; px < width; px++, index += 4) {
+      envData[index] = r;
+      envData[index + 1] = g;
+      envData[index + 2] = b;
+      envData[index + 3] = 255;
+      waveData[index] = r;
+      waveData[index + 1] = g;
+      waveData[index + 2] = b;
+      waveData[index + 3] = 255;
+    }
+  }
+
+  // Vùng khay (hình chữ nhật) trong hệ điểm ảnh của lớp trường.
+  const tankX0 = Math.max(0, Math.floor(geo.offsetX * rasterDpr));
+  const tankY0 = Math.max(0, Math.floor(geo.offsetY * rasterDpr));
+  const tankX1 = Math.min(width, Math.ceil((geo.offsetX + TANK.widthCm * geo.scale) * rasterDpr));
+  const tankY1 = Math.min(height, Math.ceil((geo.offsetY + TANK.heightCm * geo.scale) * rasterDpr));
+  const tankPixels = Math.max(0, (tankX1 - tankX0) * (tankY1 - tankY0));
+  const cos = new Float32Array(tankPixels);
+  const sin = new Float32Array(tankPixels);
+
+  const { scale, offsetX, offsetY } = geo;
   const { a, b } = params.sources;
   const lambda = params.lambda;
   const twoSources = params.sourceBOn;
+  let k = 0;
 
-  for (let py = 0; py < ph; py++) {
-    const ycm = (py + 0.5) / dpr;
-    const yTank = (ycm - offsetY) / scale;
+  for (let py = tankY0; py < tankY1; py++) {
+    const yTank = ((py + 0.5) / rasterDpr - offsetY) / scale;
     const dyA = yTank - a.y;
     const dyB = yTank - b.y;
     const dyA2 = dyA * dyA;
     const dyB2 = dyB * dyB;
-    const inRow = yTank >= 0 && yTank <= TANK.heightCm;
-    let index = py * pw * 4;
+    let index = (py * width + tankX0) * 4;
 
-    for (let px = 0; px < pw; px++, index += 4) {
-      const xTank = ((px + 0.5) / dpr - offsetX) / scale;
-      if (!inRow || xTank < 0 || xTank > TANK.widthCm) continue; // alpha = 0
-
+    for (let px = tankX0; px < tankX1; px++, k++, index += 4) {
+      const xTank = ((px + 0.5) / rasterDpr - offsetX) / scale;
       const dxA = xTank - a.x;
       const d1 = Math.sqrt(dxA * dxA + dyA2);
+
       let intensity: number;
       if (twoSources) {
         const dxB = xTank - b.x;
         const d2 = Math.sqrt(dxB * dxB + dyB2);
         intensity = twoSourceFieldIntensity(d1, d2, lambda);
+        const phasor = twoSourcePhasors(d1, d2, lambda);
+        cos[k] = phasor.c;
+        sin[k] = phasor.s;
       } else {
         intensity = singleSourceFieldIntensity(d1, lambda);
+        const phasor = singleSourcePhasor(d1, lambda);
+        cos[k] = phasor.c;
+        sin[k] = phasor.s;
       }
 
-      // glow = I^2,25: thu hẹp vệt sáng thành đúng đường vân, không nhoè cả khay,
-      // nhưng vẫn đủ sáng ở xa để mắt thấy vân (độ tắt dần ở lib đã lo phần mờ).
-      const glow = intensity ** 2.25;
-      data[index] = 5 + 30 * glow;
-      data[index + 1] = 8 + 190 * glow;
-      data[index + 2] = 14 + 214 * glow;
-      data[index + 3] = 255;
+      const packed = glowPacked(intensity);
+      envData[index] = (packed >> 16) & 255;
+      envData[index + 1] = (packed >> 8) & 255;
+      envData[index + 2] = packed & 255;
     }
   }
 
-  ctx.putImageData(image, 0, 0);
-  return canvas;
+  return { width, height, tankX0, tankY0, tankX1, tankY1, cos, sin, envelope, wave };
+}
+
+/**
+ * Vẽ lớp trường. `phase = null` → ảnh đứng yên (bao hình); có pha → li độ tức thời.
+ * Hàm này chạy mỗi khung hình khi đang chạy sóng nên tuyệt đối không cấp phát gì.
+ */
+function paintField(
+  canvas: HTMLCanvasElement | null,
+  textures: FieldTextures | null,
+  phase: { cos: number; sin: number } | null
+) {
+  if (!canvas || !textures) return;
+  if (canvas.width !== textures.width || canvas.height !== textures.height) {
+    canvas.width = textures.width;
+    canvas.height = textures.height;
+  }
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  if (!phase) {
+    ctx.putImageData(textures.envelope, 0, 0);
+    return;
+  }
+
+  const { cos, sin, wave, width, tankX0, tankY0, tankX1, tankY1 } = textures;
+  const out = wave.data;
+  const cosPhase = phase.cos;
+  const sinPhase = phase.sin;
+  let k = 0;
+  for (let py = tankY0; py < tankY1; py++) {
+    let index = (py * width + tankX0) * 4;
+    for (let px = tankX0; px < tankX1; px++, k++, index += 4) {
+      const u = cos[k] * cosPhase + sin[k] * sinPhase;
+      const packed = glowPacked(u < 0 ? -u : u);
+      out[index] = (packed >> 16) & 255;
+      out[index + 1] = (packed >> 8) & 255;
+      out[index + 2] = packed & 255;
+    }
+  }
+  ctx.putImageData(wave, 0, 0);
 }
 
 /** Chữ có viền tối để đọc được cả khi nằm trên vệt vân sáng. */
@@ -187,19 +317,19 @@ function kindLabel(kind: FringeKind, order: number): string {
 
 interface SceneParams {
   geo: Geometry;
-  field: HTMLCanvasElement | null;
-  lambda: number;
   AB: number;
   sourceBOn: boolean;
   sources: { a: TankPoint; b: TankPoint };
   marker: TankPoint;
   d1: number;
   d2: number;
+  lambda: number;
   kind: FringeKind;
   order: number;
 }
 
-function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
+/** Lớp trên: khung khay, đường trung trực, nguồn, thước AB, điểm M và ô số liệu. */
+function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
   const { geo } = p;
@@ -216,14 +346,6 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams) {
   const Y = (cm: number) => geo.offsetY + cm * geo.scale;
   const tankW = TANK.widthCm * geo.scale;
   const tankH = TANK.heightCm * geo.scale;
-
-  // --- nền + bể nước ---
-  const bg = ctx.createLinearGradient(0, 0, 0, geo.h);
-  bg.addColorStop(0, STAGE_BG_TOP);
-  bg.addColorStop(1, STAGE_BG_BOTTOM);
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, geo.w, geo.h);
-  if (p.field) ctx.drawImage(p.field, geo.offsetX, geo.offsetY, tankW, tankH);
 
   ctx.strokeStyle = SLATE_700;
   ctx.lineWidth = 1.5;
@@ -394,18 +516,35 @@ const sliderClass =
 
 export function InterferenceSimulation() {
   const sim = useInterferenceTank();
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const overlayRef = useRef<HTMLCanvasElement | null>(null);
+  const fieldRef = useRef<HTMLCanvasElement | null>(null);
   const [box, setBox] = useState<Box>({ w: 0, h: 0, dpr: 1 });
+  const [playing, setPlaying] = useState(false);
+  const [inView, setInView] = useState(true);
+  // Pha ωt giữ trong ref để bấm Dừng rồi Chạy lại thì sóng chạy tiếp, không nhảy.
+  const phaseRef = useRef(0);
 
   const geo = useMemo(() => geometryFor(box), [box]);
-  const field = useMemo(
-    () => buildFieldCanvas(geo, { lambda: sim.lambda, sourceBOn: sim.sourceBOn, sources: sim.sources }),
-    [geo, sim.lambda, sim.sourceBOn, sim.sources]
+  // Lớp trường có thể hạ độ phân giải (màn hình rất nét) để ảnh động giữ 60 fps;
+  // lớp chữ/nhãn luôn vẽ ở độ phân giải thiết bị nên vẫn sắc.
+  const rasterDpr = useMemo(() => {
+    const area = Math.max(1, box.w * box.h);
+    return Math.min(box.dpr, Math.max(1, Math.sqrt(MAX_RASTER_PIXELS / area)));
+  }, [box]);
+  const textures = useMemo(
+    () =>
+      buildFieldTextures(geo, rasterDpr, {
+        lambda: sim.lambda,
+        sourceBOn: sim.sourceBOn,
+        sources: sim.sources,
+      }),
+    [geo, rasterDpr, sim.lambda, sim.sourceBOn, sim.sources]
   );
+  const period = visualPeriod(sim.lambda);
 
-  // Kích thước thật của canvas (xoay máy, đổi bề ngang, đổi màn hình có DPR khác).
+  // Kích thước thật của khay (xoay máy, đổi bề ngang, đổi màn hình có DPR khác).
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = overlayRef.current;
     if (!canvas) return;
     const measure = () => {
       const rect = canvas.getBoundingClientRect();
@@ -428,24 +567,62 @@ export function InterferenceSimulation() {
     };
   }, []);
 
-  // Vẽ lại sau mỗi lần render — không có vòng lặp rAF vì mọi thứ đứng yên (B4).
+  // Khay ra khỏi tầm mắt (cuộn xuống dưới) thì dừng vòng lặp — B4 + không đốt pin.
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || box.w === 0) return;
-    drawScene(canvas, {
+    const canvas = overlayRef.current;
+    if (!canvas || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  }, []);
+
+  // Vẽ lớp chữ/nhãn sau mỗi lần render; lớp trường lấy đúng pha đang chạy (nếu có)
+  // để một lần render giữa chừng (kéo M) không làm ảnh động đứng hình.
+  useEffect(() => {
+    const canvas = overlayRef.current;
+    if (!canvas) return;
+    drawOverlay(canvas, {
       geo,
-      field,
-      lambda: sim.lambda,
       AB: sim.AB,
       sourceBOn: sim.sourceBOn,
       sources: sim.sources,
       marker: sim.marker,
       d1: sim.d1,
       d2: sim.d2,
+      lambda: sim.lambda,
       kind: sim.kind,
       order: sim.order,
     });
+    const phase = playing
+      ? { cos: Math.cos(phaseRef.current), sin: Math.sin(phaseRef.current) }
+      : null;
+    paintField(fieldRef.current, textures, phase);
   });
+
+  // Vòng lặp ảnh động: CHỈ chạy khi HS bấm "Chạy sóng" và khay đang trong tầm mắt.
+  // Mỗi khung hình chỉ tính u = cosφ·C + sinφ·S và putImageData — không vẽ lại chữ.
+  useEffect(() => {
+    if (!playing || !inView || !textures) return;
+    let rafId = 0;
+    let last: number | null = null;
+    const step = (timestamp: number) => {
+      if (last !== null) {
+        const dt = Math.min(0.05, (timestamp - last) / 1000);
+        phaseRef.current = (phaseRef.current + (2 * Math.PI * dt) / period) % (2 * Math.PI);
+      }
+      last = timestamp;
+      paintField(fieldRef.current, textures, {
+        cos: Math.cos(phaseRef.current),
+        sin: Math.sin(phaseRef.current),
+      });
+      rafId = requestAnimationFrame(step);
+    };
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, [playing, inView, textures, period]);
 
   const tankPointFromEvent = (event: ReactPointerEvent<HTMLCanvasElement>): TankPoint | null => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -493,21 +670,29 @@ export function InterferenceSimulation() {
   return (
     <div>
       <div className="relative overflow-hidden rounded-xl border border-white/10">
+        {/* Lớp trường: chỉ ảnh, không bắt sự kiện, không chữ (chạy 60 fps khi có sóng). */}
         <canvas
-          ref={canvasRef}
+          ref={fieldRef}
+          aria-hidden
+          className="pointer-events-none absolute inset-0 block h-full w-full"
+        />
+        {/* Lớp trên: nhãn, nguồn, điểm M — vẽ theo React, bắt mọi thao tác. */}
+        <canvas
+          ref={overlayRef}
           tabIndex={0}
           role="img"
           aria-label="Khay sóng hai nguồn A, B. Chạm hoặc kéo để đặt điểm M rồi đọc hiệu đường đi d₂ − d₁; dùng phím mũi tên để chỉnh từng bước nhỏ."
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onKeyDown={onKeyDown}
-          className="block aspect-[2] w-full cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+          className="relative block aspect-[2] w-full cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
         />
       </div>
 
       <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
-        Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại
-        (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ).
+        {playing
+          ? "Đang chạy sóng (tua chậm): nước chạy qua lại, nhưng các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau, không phải không có sóng tới."
+          : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ)."}
       </p>
 
       <p
@@ -590,6 +775,19 @@ export function InterferenceSimulation() {
       </dl>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          aria-pressed={playing}
+          onClick={() => setPlaying((value) => !value)}
+          className={`${BUTTON_BASE} ${
+            playing
+              ? "bg-cyan-300/[0.16] text-cyan-300 hover:bg-cyan-300/[0.22]"
+              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+          }`}
+        >
+          {playing ? <Pause size={15} /> : <Play size={15} />}
+          {playing ? "Dừng sóng" : "Chạy sóng"}
+        </button>
         <button
           type="button"
           aria-pressed={sim.sourceBOn}
