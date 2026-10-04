@@ -534,8 +534,10 @@ export function ProjectileSimulation() {
           onKeyDown={onKeyDown}
           className="block aspect-[2.2] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.1] lg:aspect-[2.7]"
         />
+        {/* Dòng gợi ý nằm trên nền canvas luôn tối nên phải dùng màu cố định: lớp phủ theme sáng
+            trong globals.css đổi .text-slate-200 thành chữ sẫm → chữ sẫm trên nền tối (M2). */}
         {showHint && (
-          <p className="pointer-events-none absolute left-2.5 top-2.5 rounded-full border border-white/10 bg-black/70 px-3 py-1 text-[13px] text-slate-200">
+          <p className="pointer-events-none absolute left-2.5 top-2.5 rounded-full border border-[#334155] bg-black/70 px-3 py-1 text-[13px] text-[#E2E8F0]">
             {hint}
           </p>
         )}
