@@ -1,0 +1,96 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "nguon_trong_bai": "content/lesson-samples/l12-noi-nang-dl1/theory.html",
+  "id": "tn-l12-noinang-01",
+  "ten": "Bơm xe bằng tay: khí bị nén thì nóng lên",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "noinang.khai_niem",
+    "noinang.thuc_hien_cong",
+    "dl1.dau_cong"
+  ],
+  "muc_tieu": "Chứng tỏ nội năng của khối khí tăng khi khí bị nén (nhận công), và phân biệt nguyên nhân nóng lên do nén với nóng lên do cọ xát.",
+  "dung_cu": [
+    { "ten": "Bơm xe đạp tay (bơm đứng hoặc bơm sàn)", "so_luong": 1 },
+    { "ten": "Bánh xe hoặc săm xe còn non hơi", "so_luong": 1, "ghi_chu": "cần bơm khoảng 30 giây liên tục mới thấy rõ" },
+    { "ten": "Nhiệt kế phòng", "so_luong": 1, "ghi_chu": "để chứng minh nhiệt độ phòng không đổi" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đọc nhiệt độ phòng, ghi lại. Sờ thân ống bơm lúc chưa bơm để biết nhiệt độ ban đầu.",
+      "Bơm liên tục và nhanh khoảng 30 giây vào bánh xe non hơi (khoảng 40–50 lần ấn).",
+      "Sờ dọc thân ống bơm ngay sau khi bơm, rồi sờ lại sau khi nghỉ 2 phút.",
+      "Lặp lại nhưng lần này ấn thật chậm, mỗi lần cách nhau vài giây, rồi so cảm giác."
+    ],
+    "quan_sat": [
+      "Thân ống bơm nóng rõ rệt sau khi bơm nhanh, nóng nhất ở phần gần van (nơi khí bị nén nhiều nhất).",
+      "Để yên 2 phút, thân bơm nguội dần; nhiệt kế trong phòng vẫn chỉ đúng số cũ.",
+      "Bơm chậm thì thân bơm nóng ít hơn hẳn dù số lần ấn tương đương — vì có thời gian truyền nhiệt ra ngoài."
+    ],
+    "rut_ra": [
+      "Khí bị nén là khí nhận công từ tay người: A > 0 nên nội năng khí tăng, khí nóng lên.",
+      "Sau đó khí nóng truyền nhiệt ra thành ống bơm: Q < 0 đối với khí, còn thân bơm nhận nhiệt nên ta sờ thấy nóng.",
+      "Bơm nhanh thì Q gần như không kịp truyền đi trong lúc nén, nên toàn bộ công dồn vào nội năng; bơm chậm thì nhiệt thoát ra ngay."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "n", "ten": "Số lần ấn pit-tông", "don_vi": "lần", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 45, "buoc": 5 },
+    { "ky_hieu": "V0", "ten": "Thể tích khí trong ống bơm trước khi ấn", "don_vi": "cm3", "kieu": "co_dinh", "gia_tri": 200 },
+    { "ky_hieu": "V1", "ten": "Thể tích khí sau khi ấn hết pit-tông", "don_vi": "cm3", "kieu": "co_dinh", "gia_tri": 40 },
+    { "ky_hieu": "p_kq", "ten": "Áp suất khí quyển", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
+    { "ky_hieu": "A1", "ten": "Công một lần ấn (mô hình đẳng nhiệt)", "don_vi": "J", "kieu": "tinh_ra" },
+    { "ky_hieu": "A", "ten": "Tổng công đưa vào khí", "don_vi": "J", "kieu": "tinh_ra" },
+    { "ky_hieu": "t_than", "ten": "Nhiệt độ thân ống bơm đo được", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 1.0 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Công một lần nén (coi gần đúng đẳng nhiệt): A1 = p_kq · V0 · ln(V0 / V1)",
+      "Tổng công: A = n · A1",
+      "Định luật I cho khối khí trong một lần ấn nhanh: ΔU = A1 + Q với Q ≈ 0, nên ΔU ≈ A1 > 0",
+      "Phần nội năng tăng được chia cho cả khối khí rồi truyền ra thân bơm: ΔU ≈ m_khí · c_khí · ΔT"
+    ],
+    "gia_thiet": [
+      "coi khí trong bơm là khí lí tưởng, nén gần đẳng nhiệt để ước lượng công",
+      "bỏ qua ma sát giữa pit-tông và thành ống bơm (ma sát có nhưng nhỏ so với công nén)",
+      "bỏ qua nhiệt dung của thân ống bơm khi quy đổi độ tăng nhiệt độ"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt số lần ấn n và vẽ dần nhiệt độ khối khí: bơm nhanh (Q = 0) thì nhiệt độ tăng nhanh; có công tắc 'cho nhiệt thoát ra' thì nhiệt độ tăng chậm hơn — đó là trực giác cho vai trò của Q trong ΔU = A + Q."
+  },
+  "so_lieu_mau": {
+    "cot": ["Số lần ấn", "Tổng công A (J)", "Nhiệt độ thân bơm (°C)"],
+    "hang": [
+      [0, 0, 26.0],
+      [10, 258, 27.5],
+      [20, 516, 29.0],
+      [30, 774, 31.0],
+      [45, 1161, 34.0],
+      [60, 1548, 37.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với V0 = 200 cm3, V1 = 40 cm3, p = 100 kPa: A1 = 100000 × 200e-6 × ln(5) ≈ 32,2 J. Cột nhiệt độ là số ước lượng theo cảm giác/đo bằng nhiệt kế hồng ngoại trên thân bơm, không phải đo trong lòng khí (trong lòng khí nóng hơn nhiều)."
+  },
+  "ket_qua_ky_vong": "Sau khi bơm nhanh, thân ống bơm nóng lên rõ rệt và nguội dần khi để yên; nhiệt độ phòng không đổi. Bơm chậm cho độ nóng thấp hơn hẳn so với bơm nhanh cùng số lần ấn.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng ống bơm nóng là do cọ xát giữa pit-tông và thành ống, không liên quan gì tới việc khí bị nén.",
+    "Cho rằng khí nóng lên nghĩa là khí 'nhận nhiệt lượng từ bên ngoài', trong khi nguyên nhân chính ở đây là nhận công.",
+    "Cho rằng bơm chậm hơn thì khí nóng hơn vì 'bơm lâu hơn' — thực tế bơm chậm cho nhiệt thoát ra nên nóng ít hơn."
+  ],
+  "sai_so_thuong_gap": [
+    "Sờ van hoặc ống dẫn khí thay vì sờ thân ống bơm — chỗ đó nóng do khí đã bị nén trước đó, không phải chỗ đang nén.",
+    "Bơm quá ngắn (dưới 15 giây) nên chưa thấy khác biệt rõ so với nhiệt độ tay người.",
+    "Cảm giác tay khác nhau giữa các lần sờ (tay đã nóng lên) — nên nghỉ cho tay nguội trước mỗi lần so sánh."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Vẽ mặt cắt ống bơm với pit-tông ấn xuống, các phân tử khí dồn lại và chuyển động nhanh dần; nhiệt kế trên thân bơm leo theo số lần ấn; bảng số liệu tự điền.",
+    "diem_nhan": "Thanh trượt 'tốc độ bơm' đổi vai trò của Q: bơm nhanh thì Q ≈ 0 và ΔU ≈ A, bơm chậm thì Q < 0 làm ΔU nhỏ đi — học sinh thấy trực tiếp ý nghĩa hai số hạng trong ΔU = A + Q."
+  },
+  "an_toan": [
+    "Thân ống bơm có thể nóng tới mức gây bỏng nhẹ sau khi bơm rất nhanh — chỉ sờ nhanh bằng đầu ngón tay.",
+    "Kiểm tra van và lốp trước khi bơm quá căng để tránh nổ săm."
+  ]
+}

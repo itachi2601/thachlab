@@ -11,6 +11,27 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Chương 1 Vật lí 12 — nốt hai bài còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
+  `soan-bai-ly-thuyet-tuong-tac`, **CHƯA ghi DB** (chờ thầy duyệt + chạy trên Mac).
+  (1) **Bài 3. Nội năng. Định luật 1 của nhiệt động lực học** — `content/lesson-samples/l12-noi-nang-dl1/`
+  (`theory.html` 40 KB, `bundle.json`, `build_figs.py`, bản xem thử 375px). Bản cũ trên web chỉ
+  460 từ và **thiếu hẳn định luật I** (item `ly_thuyet` 173, lesson 4); bản mới 6 mục: mở bài thanh chắn kim loại
+  ở 5 °C, nội năng, hai cách đổi nội năng, `Q = mcΔt`, `ΔU = A + Q` với quy ước dấu, bảng số liệu đo c
+  bằng bếp 500 W; 3 cái bẫy (nội năng ↔ nhiệt độ, nhiệt lượng không chứa trong vật, dấu của A), Trả bài
+  6 câu, bài toán mẫu bơm xe + điền bước trống + biến thể, thử thách ⭐–⭐⭐⭐. 6 quiz, 4 thí nghiệm/ví dụ
+  mới `tn-l12-noinang-01..02`.
+  (2) **Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng** —
+  `content/lesson-samples/l12-thuc-hanh-nhiet/` (44 KB + bundle + 4 hình SVG + xem thử). Bản cũ là văn SGK
+  (lesson 5, item `ly_thuyet` 175); bản mới xoay sang **kỹ năng thực hành**: dụng cụ và cách suy Q = Pτ,
+  đọc đồ thị t(τ) (đoạn ngang = chuyển thể), công thức `c`, `λ`, `L` kèm hai bảng số liệu thật, 3 cái bẫy
+  (nhiệt kế đứng yên ≠ hết truyền nhiệt · hai cách tính c · trộn đơn vị), Trả bài 6 câu, bài toán mẫu
+  nhiệt hoá hơi + điền bước + biến thể, thử thách ⭐–⭐⭐⭐. 6 quiz, 2 mục mới `tn-l12-thuchanh-01..02`.
+  Lint cả hai bài: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK (41 mục trong `index.json`) ·
+  `validate_bundle` ok:true; `lint_do_dai` 2.494 và 2.492 từ hiện ngay (~18 phút, còn 1 cảnh báo ⚠ tổng
+  > 2.000 mỗi bài; từng mục ≤ 467 từ, đoạn liền dài nhất 335 từ). Đã soát ảnh 375px từng mục + từng hình
+  bằng mắt và sửa 6 lỗi chồng nhãn (Hình 1–2 bài 3, Hình 1 bài 4). Lệnh đăng (chỉ ghi mục Lý thuyết):
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-noi-nang-dl1/theory.html 4` rồi
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-thuc-hanh-nhiet/theory.html 5`, sau đó deploy.
 - **Bài 13. Sóng dừng (Vật lí 11) — bản lý thuyết tương tác (3/10/2026)**: soạn theo skill
   `soan-bai-ly-thuyet-tuong-tac` tại `content/lesson-samples/l11-song-dung/` (`theory.html` 44 KB + `bundle.json`
   + `build_figs.py` 4 hình SVG + bản xem thử 375px). 8 quiz tự chấm, 3 thí nghiệm (dây thun rung tay · đo

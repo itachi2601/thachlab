@@ -1,0 +1,971 @@
+<!doctype html><html lang="vi"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
+.exam-content{display:block}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
+   nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
+   vì .exam-content còn dùng ở khu quản trị/kết quả không có khung đó. */
+.exam-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.06);
+  padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  max-width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
+.exam-content img.eq {
+  display: inline-block;
+  /* chiều cao thật đặt inline theo kích thước gốc trong Word */
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 0 0.15em;
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+.exam-content img.figure {
+  display: block;
+  max-width: min(100%, 360px);
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */
+.exam-content figure.fig {
+  max-width: min(100%, 420px);
+  margin: 0.9rem auto;
+}
+.exam-content figure.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.exam-content figure.fig figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85em;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Bài lý thuyết tương tác (không JS): hộp dự đoán/định nghĩa, <details> bấm mở, trắc nghiệm tự chấm
+   bằng radio + :checked (HTML lưu DB không được chứa <script>/on*=). Mẫu: content/lesson-samples/. */
+.exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
+.exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
+.exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-box--rule .tl-label { color: #fbbf24; }
+.exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
+.exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
+.exam-content .tl-details > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-details > summary::after { content: "▾"; float: right; transition: transform .15s; }
+.exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
+.exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
+.exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
+.exam-content .tl-opt:hover { border-color: #22d3ee; }
+.exam-content .tl-quiz > input:focus-visible + .tl-opt { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-ok { border-color: #34d399; background: rgba(52,211,153,.18); }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
+.exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
+.exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
+.exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
+.exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
+.exam-content .tl-table th { background: rgba(148,163,184,.14); }
+html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
+html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
+.exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
+.exam-content .tl-box--exp .tl-label { color: #34d399; }
+.exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
+.exam-content .tl-steps > li { margin-bottom: 8px; }
+.exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
+.exam-content .tl-box .tl-details { background: transparent; }
+html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
+html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
+
+/* ============================================================
+   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+     < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
+     >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
+   ============================================================ */
+.class-pick-desktop { display: none; }
+.class-pick-mobile { display: grid; gap: 28px; }
+
+@media (max-width: 1023px) {
+  /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
+  .lesson-layout--pick { display: block; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-nav { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
+  .lesson-layout--pick .class-continue--main { display: none; }
+  /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
+  .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
+  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
+  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
+  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+}
+
+/* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
+@media (min-width: 1320px) {
+  .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+}
+
+/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
+   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
+   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
+@media (max-width: 639px) {
+  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
+   chữ sans-serif hệ thống 16px/1.75, công thức KaTeX nằm liền dòng (không khung, không cuộn riêng).
+   Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
+html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
+html:not([data-theme="light"]) .lesson-shell::before { display: none; }
+.lesson-page .exam-content { font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.75; }
+.lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
+.lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
+.lesson-page .exam-content .katex-display > .katex { display: block; }
+/* Dấu căn KaTeX (\sqrt) là một <svg> có height theo thuộc tính; quy tắc ".exam-content svg { height: auto }"
+   ở trên làm nó xẹp về 0 nên mọi công thức căn mất dấu √ (hiện thành "I/2" thay vì "I/√2"). Trả lại chiều cao KaTeX. */
+.exam-content .katex svg { height: inherit; max-width: none; }
+
+/* ==================================================================
+   CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
+   (components/lessons/LessonPresenter.tsx, mở từ nút ở tab Lý thuyết của /lop-hoc/bai)
+
+   Nguyên tắc thiết kế:
+   - Nội dung là nhân vật chính: không navbar, không cây chương, không nút thường
+     trực — thanh điều khiển tự ẩn sau ~3 giây, đụng chuột/chạm là hiện lại.
+   - Nền mặc định SÁNG (chữ đậm trên nền sáng) vì phòng học bật đèn; nút "Nền tối"
+     dành cho phòng tối cho đỡ chói. Nền SÁNG cũng là lý do phải tắt đảo màu ảnh
+     công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
+   - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
+     trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Trang chiếu TRÀN gần hết bề ngang màn hình, chỉ chừa lề nhỏ (xem .presenter-slide):
+     tivi/máy chiếu lớp học là 16:9, cap bề ngang cũ 1180px làm hụt ~740px trên tivi
+     1920 (nội dung co thành một cột hẹp giữa màn hình, chữ xuống dòng sớm).
+   - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
+     vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
+   ================================================================== */
+
+/* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
+.lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
+.lesson-presenter-loading.is-error { color: #fca5a5; }
+
+.lesson-presenter {
+  --pres-text: #e8eefc;
+  --pres-muted: #9fb0cc;
+  --pres-heading: #fff;
+  --pres-accent: #60a5fa;
+  --pres-line: rgba(148,163,184,.24);
+  --pres-surface: rgba(15,23,42,.86);
+  --pres-panel: #101a2e;
+  position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
+  background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
+}
+.lesson-presenter[data-bg="light"] {
+  --pres-text: #17233a;
+  --pres-muted: #59678a;
+  --pres-heading: #0b1220;
+  --pres-accent: #1d4ed8;
+  --pres-line: rgba(15,23,42,.16);
+  --pres-surface: rgba(255,255,255,.92);
+  --pres-panel: #fff;
+  background: #f4f6fb;
+}
+
+/* Khung vẽ tay: luôn hiện (nét cũ còn nguyên khi tắt bút), chỉ nhận chuột khi đang bật bút. */
+.presenter-canvas { position: absolute; inset: 0; z-index: 15; width: 100%; height: 100%; pointer-events: none; touch-action: none; }
+.presenter-canvas.is-active { pointer-events: auto; cursor: crosshair; }
+
+/* Thanh trên/dưới: tự ẩn, và khi ẩn thì không chặn cả nét vẽ lẫn cú bấm. */
+.presenter-top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.presenter-bar { position: absolute; z-index: 20; bottom: clamp(14px, 3vh, 28px); left: 50%; display: flex; width: max-content; max-width: min(96vw, 1120px); align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 7px 9px; box-shadow: 0 18px 40px -22px rgba(2,6,23,.6); opacity: 0; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.presenter-top, .presenter-bar { pointer-events: none; }
+.lesson-presenter.is-chrome .presenter-top { opacity: 1; }
+.lesson-presenter.is-chrome .presenter-bar { opacity: 1; transform: translate(-50%, 0); }
+.lesson-presenter.is-chrome .presenter-top > *, .lesson-presenter.is-chrome .presenter-bar > * { pointer-events: auto; }
+
+.presenter-info { display: grid; gap: 3px; min-width: 0; max-width: 46vw; border: 1px solid var(--pres-line); border-radius: 12px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 8px 14px; }
+.presenter-info strong { overflow: hidden; font-size: 13.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-info span { color: var(--pres-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.presenter-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.presenter-actions button, .presenter-bar button { display: inline-flex; min-height: 36px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 10px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: border-color .15s, color .15s, background-color .15s; }
+.presenter-bar button { border-radius: 999px; }
+.presenter-actions button:hover, .presenter-bar button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-actions button:disabled, .presenter-bar button:disabled { opacity: .35; cursor: default; }
+.presenter-actions .presenter-close:hover { border-color: #f87171; color: #f87171; }
+.presenter-bar button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.lesson-presenter[data-bg="light"] .presenter-bar button.is-on { background: rgba(29,78,216,.12); }
+.presenter-bar .presenter-page { font-variant-numeric: tabular-nums; }
+.presenter-bar-sep { flex: 0 0 auto; width: 1px; align-self: stretch; margin: 0 4px; background: var(--pres-line); }
+.presenter-zoom { min-width: 46px; color: var(--pres-muted); font-size: 12px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.presenter-colors { display: inline-flex; align-items: center; gap: 5px; padding: 0 3px; }
+.presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
+.presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
+
+/* Lề ngang chỉ để nội dung không dính sát mép màn hình (và không chui dưới nét vẽ ở rìa):
+   bề ngang thật của trang chiếu do .presenter-slide quyết định, không cap ở đây. */
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(16px, 2.4vw, 48px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+.presenter-stage::-webkit-scrollbar { width: 10px; }
+.presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
+
+/* Trang chiếu dùng hết bề ngang còn lại của khung (không cap max-width): trên tivi 1920
+   chữ chạy tới sát hai mép, chỉ chừa lề của .presenter-stage. Muốn chữ to/nhỏ thì dùng
+   Ctrl +/− (--presenter-zoom) chứ không thu hẹp cột nội dung. */
+.presenter-slide { max-width: none; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+@keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
+
+.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
+
+/* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
+   khung công thức khối) vì ở đây chữ phải to theo --presenter-zoom và phẳng như slide. */
+.presenter-prose.exam-content { display: block; color: var(--pres-text); font-family: var(--font-body), sans-serif; font-size: 1em; line-height: 1.68; }
+.presenter-prose p { margin: 0 0 .85em; }
+.presenter-prose > :last-child { margin-bottom: 0; }
+.presenter-prose :is(ul, ol) { margin: 0 0 .85em; padding-left: 1.45em; }
+.presenter-prose li { margin-bottom: .3em; }
+.presenter-prose :is(h3, h4) { margin: 1.05em 0 .45em; color: var(--pres-heading); font-size: 1.1em; font-weight: 700; line-height: 1.3; }
+.presenter-prose :is(strong, b) { color: var(--pres-heading); }
+.presenter-prose :is(img, svg, table, .table-scroll) { max-width: 100%; }
+.presenter-prose .katex-display { margin: .85em 0; border: 0; border-radius: 0; background: none; padding: 0; text-align: center; }
+.presenter-prose .katex { vertical-align: baseline; }
+.presenter-prose .exam-content-raw-tex { background: rgba(148,163,184,.18); color: inherit; }
+/* Ảnh công thức trong bài là nét đen trên nền trắng: nền tối thì đảo màu, nền sáng để nguyên. */
+.lesson-presenter[data-bg="dark"] .presenter-prose img.eq { filter: invert(.88) hue-rotate(180deg); }
+.lesson-presenter[data-bg="light"] .presenter-prose img.eq { filter: none; }
+/* Khối "tl-*" soạn cho nền tối (nhãn cyan/vàng trên nền mờ) — đổi sang bảng màu đọc được trên nền sáng. */
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-box, .tl-details) { border-color: rgba(15,23,42,.18); background: rgba(15,23,42,.045); }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-label { color: #0e7490; }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-box--rule .tl-label { color: #b45309; }
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-table th, .tl-table td, .tl-opt) { border-color: rgba(15,23,42,.22); }
+
+.presenter-cover { display: grid; justify-items: center; gap: 16px; padding: clamp(20px, 7vh, 80px) 0; text-align: center; }
+.presenter-cover-kicker { margin: 0; color: var(--pres-accent); font-family: var(--font-mono), monospace; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+.presenter-cover h1 { max-width: 18em; margin: 0; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 2.3em; font-weight: 700; letter-spacing: -.02em; line-height: 1.16; }
+.presenter-cover-sub { margin: 0; color: var(--pres-muted); font-size: .95em; }
+.presenter-cover-start { display: inline-flex; min-height: 52px; align-items: center; gap: 8px; margin-top: 4px; border: 0; border-radius: 999px; background: #3b82f6; padding: 0 26px; color: #fff; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; }
+.presenter-cover-start:hover { background: #2563eb; }
+.presenter-cover kbd, .presenter-draw-hint kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 1px 6px; font-family: var(--font-mono), monospace; font-size: .84em; }
+
+.presenter-panel { position: absolute; z-index: 30; top: 50%; left: 50%; display: flex; max-height: min(82vh, 760px); flex-direction: column; overflow: hidden; border: 1px solid var(--pres-line); border-radius: 16px; background: var(--pres-panel); box-shadow: 0 30px 70px -30px rgba(2,6,23,.7); transform: translate(-50%, -50%); }
+.presenter-panel--menu { width: min(92vw, 560px); }
+.presenter-panel--help { width: min(92vw, 640px); }
+.presenter-panel-head { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--pres-line); padding: 12px 14px; }
+.presenter-panel-head p { display: inline-flex; align-items: center; gap: 7px; margin: 0; color: var(--pres-heading); font-size: 13.5px; font-weight: 700; }
+.presenter-panel-head button { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--pres-line); border-radius: 8px; background: none; color: var(--pres-muted); cursor: pointer; }
+.presenter-panel-head button:hover { border-color: #f87171; color: #f87171; }
+.presenter-panel-body { overflow-y: auto; padding: 12px 14px 16px; }
+.presenter-menu-group + .presenter-menu-group { margin-top: 14px; }
+.presenter-menu-title { margin: 0 0 6px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.presenter-menu-group ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.presenter-menu-group button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; border-radius: 8px; background: none; padding: 7px 9px; color: var(--pres-text); font-family: inherit; font-size: 13.5px; line-height: 1.45; text-align: left; cursor: pointer; }
+.presenter-menu-group button:hover { background: rgba(148,163,184,.16); }
+.presenter-menu-group button.is-current { background: rgba(59,130,246,.18); color: var(--pres-accent); font-weight: 700; }
+.presenter-menu-group button > span { flex: 0 0 auto; min-width: 24px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+.presenter-menu-group button.is-current > span { color: inherit; }
+.presenter-keys { display: grid; gap: 9px; margin: 0; }
+.presenter-keys > div { display: grid; grid-template-columns: minmax(132px, auto) 1fr; align-items: baseline; gap: 14px; }
+.presenter-keys dt { margin: 0; white-space: nowrap; }
+.presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
+.presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
+.presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+.presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
+.presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
+
+.presenter-draw-hint { position: absolute; z-index: 22; bottom: clamp(76px, 11vh, 100px); left: 50%; margin: 0; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 6px 14px; color: var(--pres-muted); font-size: 12px; white-space: nowrap; transform: translateX(-50%); }
+
+@media (max-width: 900px) {
+  .presenter-btn-text { display: none; }
+  .presenter-info { max-width: 40vw; padding: 6px 11px; }
+  .presenter-info span { display: none; }
+}
+@media (max-width: 639px) {
+  .presenter-top { padding: 12px; }
+  /* Điện thoại: thanh điều khiển xuống 2 hàng — cuộn ngang thì các nút cỡ chữ nằm ngoài tầm
+     mắt, không biết là có; và chừa thêm chỗ đáy để hàng chữ cuối không bị thanh che. */
+  .presenter-bar { flex-wrap: wrap; justify-content: center; row-gap: 5px; max-width: min(94vw, 460px); border-radius: 18px; overflow: visible; }
+  .presenter-bar-sep { display: none; }
+  .presenter-zoom { min-width: 38px; }
+  .presenter-stage { padding-left: 14px; padding-right: 14px; padding-bottom: 172px; }
+  .presenter-keys > div { grid-template-columns: 1fr; gap: 3px; }
+  .presenter-draw-hint { display: none; }
+}
+/* Nhấn ý chính như trang mẫu: chữ đậm sáng hơn thân bài, tiêu đề lớn, đoạn cách nhau rõ. */
+.lesson-page .exam-content :is(strong, b) { color: #fff; font-weight: 700; }
+.lesson-page .exam-content :is(h2, h3, h4) { color: #fff; font-weight: 700; line-height: 1.35; margin: 1.6em 0 .6em; }
+.lesson-page .exam-content h2 { font-size: 1.5rem; }
+.lesson-page .exam-content h3 { font-size: 1.3rem; }
+.lesson-page .exam-content h4 { font-size: 1.1rem; }
+.lesson-page .exam-content p { margin: 0 0 1em; }
+/* Lề trái/phải của nội dung trong <details> bài lý thuyết: phải có .lesson-page để thắng `p`/`h3`… ở trên (cùng 0,2,1, dòng sau thắng) — chỉ đặt lề ngang, lề dưới vẫn do từng phần tử quyết định. */
+.lesson-page .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.lesson-page .exam-content .tl-details > :is(table, .tl-table) { width: calc(100% - 28px); }
+.lesson-page .exam-content .tl-details > span > .katex-display { margin-left: 14px; margin-right: 14px; }
+html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
+
+/* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
+html:not([data-theme="light"]) header.fixed.top-0 { background-color: rgba(15, 23, 42, .92); }
+html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
+.lesson-main--single > .lesson-head { display: block; margin: 22px 0 36px; }
+.lesson-main--single > .lesson-head h1 { max-width: 18ch; }
+.lesson-main--single > .lesson-head .lesson-lead { margin-top: 10px; max-width: 60ch; }
+
+/* ---------- P1/P2 kha-nang-doc (02/10/2026) ---------- */
+/* Chuẩn ở docs/UI.md. Số đo WCAG tính bằng scripts/check-a11y.mjs — đổi màu thì đo lại. */
+
+/* Màu nhấn tiêu đề (thay chữ gradient). Tối: #60a5fa = 7,9:1 trên #05070b, #fb923c = 8,9:1.
+   Sáng: #1d4ed8 = 6,4:1 trên #f8fafc, #c2410c = 5,2:1 trên trắng. */
+:root { --accent-brand-text: #60a5fa; --accent-warm-text: #fb923c; }
+/* C3: thang chữ vùng nội dung học sinh — chỉ 3 mức nhỏ (cỡ thân = 16px; tiêu đề lấy từ h1/h2/h3) thay cho 12,5/13/13,5/15/15,5 rải rác. */
+:root { --fs-cap: 12px; --fs-sm: 14px; --fs-body: 16px; }
+html[data-theme="light"] { --accent-brand-text: #1d4ed8; --accent-warm-text: #c2410c; }
+
+/* Công cụ đọc dùng chung (components/ui/ReadingZone.tsx — /phu-huynh, /kiem-tra/lam).
+   Dùng lại .lesson-tool/.lesson-fonttools nên phải cấp các biến --lesson-* mà .lesson-shell đặt. */
+.read-zone-tools { --lesson-line: rgba(148,163,184,.24); --lesson-accent-line: rgba(59,130,246,.45); --lesson-accent-soft: rgba(59,130,246,.12); --lesson-accent-text: #93c5fd; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 14px; }
+html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); --lesson-accent-text: #1d4ed8; }
+
+/* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
+   rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
+html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
+html.is-dim[data-theme="light"] .text-white { color: #33291a; }
+html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
+html.is-dim[data-theme="light"] :is(.bg-\[\#05070B\], .bg-\[\#05070B\]\/90, .bg-\[\#080D1A\], .bg-\[\#0B1220\]\/\[0\.98\]) { background-color: rgb(251 247 234 / .94); }
+html.is-dim[data-theme="light"] :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: rgba(120,96,40,.24); }
+
+/* Người dùng bật "tăng tương phản" ở hệ điều hành: chữ phụ và viền đậm hơn, chữ nhấn sáng hơn. */
+@media (prefers-contrast: more) {
+  html:not([data-theme="light"]) { --color-muted: #cbd5e1; --color-line: rgba(255,255,255,.32); --accent-brand-text: #93c5fd; --accent-warm-text: #fdba74; }
+  html:not([data-theme="light"]) :is(.text-slate-500, .text-slate-400) { color: #cbd5e1; }
+  html:not([data-theme="light"]) [class*="text-primary"] { color: #93c5fd; }
+  html[data-theme="light"] { --color-muted: #1e293b; --color-line: rgba(15,23,42,.42); --accent-brand-text: #1e3a8a; --accent-warm-text: #9a3412; }
+  html[data-theme="light"] :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #1e293b !important; }
+  :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: var(--color-line); }
+  .lesson-shell, .cnc-shell, .cnc-page { --lesson-line: var(--color-line); --cnc-line: var(--color-line); --cnc-faint: var(--color-muted); }
+}
+@media (forced-colors: active) {
+  .text-gradient, .text-gradient--warm, .cnc-header-grid h1 em { color: CanvasText; }
+}
+
+/* ============================================================
+   Trang bài học — đợt gọn 2/10/2026 (docs/QUY-TAC-THIET-KE.md: B1, N4, H2, M5, C3)
+   ============================================================ */
+/* N4/B1: trên điện thoại breadcrumb chỉ còn lặp tên bài (đã có nút quay lại + h1) → ẩn hẳn
+   để nội dung học lên cao hơn. Mục cuối breadcrumb đã bỏ khỏi TSX; desktop vẫn giữ "Lớp › Chương". */
+@media (max-width: 639px) {
+  .lesson-breadcrumb { display: none; }
+}
+
+/* M5: mọi hình raster trong bài dùng MỘT kiểu khung sáng thống nhất (nền trắng, đệm 10px, bo 10px)
+   thay vì ô trắng chói, đệm/bo mỗi nơi một khác trên nền tối. Hình mới nên vẽ SVG nền trong suốt. */
+.lesson-prose img.figure {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+html[data-theme="light"] .lesson-prose img.figure,
+.lesson-page.is-dim .lesson-prose img.figure { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12); }
+
+/* H2/N7: bảng dán từ Word kiểu "chữ | hình" (có <img>): chữ không in đậm cả đoạn (th mặc định
+   bold), và dưới 760px xếp DỌC — chữ trước, hình ngay dưới, rộng 100% — thay vì cuộn ngang
+   làm cắt mất cột hình. Chỉ nhắm bảng có hình; bảng số liệu thật vẫn cuộn ngang như cũ. */
+.lesson-prose .table-scroll table:has(img) :is(th, td) { font-weight: 400; }
+@media (max-width: 759px) {
+  .lesson-prose .table-scroll:has(img) { overflow-x: visible; }
+  .lesson-prose .table-scroll table:has(img) { display: block; width: 100%; min-width: 0 !important; }
+  .lesson-prose .table-scroll table:has(img) :is(thead, tbody, tr, th, td) { display: block; width: 100% !important; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td) { border: 0; padding: 10px 12px; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td):has(img) { padding-top: 0; }
+  .lesson-prose .table-scroll table:has(img) img.figure { max-width: min(100%, 480px); margin: 0 auto; }
+}
+/* RankCelebrationModal: pop-up chúc mừng lên rank / đạt danh hiệu.
+   Trình tự: thẻ hiện → huy chương xoay 3D 3 vòng thu nhỏ→phóng to (0,25–1,3 s) → loé sáng + sóng + tia lan ra (1,3 s) → chữ → pháo hoa (canvas, trên cùng). */
+@keyframes rcl-card-in { from { opacity: 0; transform: scale(.8) translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-badge-in { 0% { opacity: 0; transform: rotateY(0) scale(.15); } 15% { opacity: 1; } 100% { opacity: 1; transform: rotateY(1080deg) scale(1); } }
+@keyframes rcl-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-rays-in { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.1) rotate(0); } 100% { opacity: .45; transform: translate(-50%, -50%) scale(1) rotate(60deg); } }
+@keyframes rcl-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes rcl-glow { 0%, 100% { opacity: .55; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes rcl-flash { 0% { opacity: 0; transform: scale(.2); } 25% { opacity: .95; } 100% { opacity: 0; transform: scale(4.5); } }
+@keyframes rcl-ring { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(5); } }
+@keyframes rcl-shine { 0%, 55% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(120%) skewX(-20deg); } }
+.rcl-card { animation: rcl-card-in .4s ease-out; }
+.rcl-stage { perspective: 700px; }
+.rcl-badge { opacity: 0; animation: rcl-badge-in 1.05s .25s cubic-bezier(.2,.7,.2,1) forwards; }
+.rcl-rise { opacity: 0; animation: rcl-rise .5s ease-out forwards; }
+.rcl-rays { opacity: 0; animation: rcl-rays-in 1.4s 1.25s ease-out forwards, rcl-spin 30s 2.65s linear infinite; }
+.rcl-glow { animation: rcl-glow 2.6s ease-in-out infinite; }
+.rcl-flash { position: absolute; left: 50%; top: 50%; width: 170px; height: 170px; margin: -85px 0 0 -85px; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-flash 1.1s 1.25s ease-out forwards; }
+.rcl-ring { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border: 3px solid; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-ring 1.3s 1.25s ease-out forwards; }
+.rcl-ring2 { animation-delay: 1.45s; border-width: 2px; }
+.rcl-shine { overflow: hidden; background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); mix-blend-mode: overlay; animation: rcl-shine 3s 2.6s ease-in-out infinite; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .rcl-card, .rcl-badge, .rcl-rise, .rcl-rays, .rcl-glow, .rcl-shine, .rcl-flash, .rcl-ring { animation: none; opacity: 1; } .rcl-rays { opacity: .45; } .rcl-flash, .rcl-ring { opacity: 0; } }
+
+/* ============================================================
+   P1/P2/P4 — khối PHỤ HUYNH (45–60 tuổi) · docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Phạm vi: class .parent-page (đặt ở <main> của /phu-huynh). Trang học sinh KHÔNG bị đổi.
+   Vì sao có khối này thay vì sửa từng component: các component của phụ huynh
+   (StudentResultsDashboard viewer="parent", ParentHomeworkNotes, CatchupCard) dùng chung
+   với trang học sinh — nâng sàn cỡ chữ theo phạm vi trang là cách duy nhất không kéo
+   giao diện học sinh 14–18 tuổi theo.
+   ============================================================ */
+/* P1 sàn cỡ chữ: thân 18px, nhãn phụ 15px (nghiên cứu: thân ≥17–18px, nhãn 15–16px, không có
+   12–13px cho câu cần đọc — docs/NGHIEN-CUU-PHU-HUYNH-45-60.md §2). Dùng rem (KHÔNG px) để nút
+   A+/A− của ReadingZone — thứ phụ huynh lão thị cần nhất — vẫn phóng được toàn bộ chữ trong trang. */
+.parent-page { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-xs) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-\[11px\], .text-\[12px\], .text-\[13px\]) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-sm) { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-base) { font-size: 1.1875rem; }
+.parent-page :is(.text-lg) { font-size: 1.3125rem; }
+/* P2 tương phản: chữ phụ phải ≥ 4,5:1 (AA) và nhắm 7:1 (AAA) — #64748b trên nền sáng chỉ 4,76:1.
+   #475569 trên #fff = 7,0:1; trên panel tối #b8c4d6 = 9,3:1. */
+.parent-page :is(.text-slate-500, .text-slate-400) { color: #475569; }
+html[data-theme="dark"] .parent-page :is(.text-slate-500, .text-slate-400) { color: #b8c4d6; }
+/* Chế độ "Dịu mắt" (kem/nâu): #6b5a3e = 5,8:1 → đậm lên #57492f = 7,6:1 trên #f5efe0. */
+html.is-dim[data-theme="light"] .parent-page :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #57492f; }
+/* P2 (và tinh thần "đọc được trong phòng thiếu sáng"): màu nhấn/trạng thái trong khối phụ huynh
+   đạt ≥7:1 ở theme sáng — lớp override sáng phía trên ép #0e7490/#047857/#b91c1c/#a16207
+   (4,9–5,9:1) bằng !important nên ở đây cũng phải !important. Theme tối giữ nguyên (đều >9:1). */
+html[data-theme="light"] .parent-page :is(.text-cyan-300, .text-cyan-400) { color: #155e75 !important; }
+html[data-theme="light"] .parent-page :is(.text-emerald-300, .text-emerald-200) { color: #065f46 !important; }
+html[data-theme="light"] .parent-page :is(.text-red-300, .text-red-200) { color: #991b1b !important; }
+html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { color: #92400e !important; }
+/* P4 đích chạm ≥ 48px (≥ 3rem) và P18 hạn chế gõ: ô nhập ≥ 18px để iOS không tự phóng to. */
+.parent-page :is(button, select, summary) { min-height: 3rem; }
+.parent-page a[class*="rounded-xl"], .parent-page a[class*="rounded-full"], .parent-page a[class*="rounded-2xl"] { min-height: 3rem; }
+.parent-page :is(input, select, textarea) { font-size: 1.125rem; }
+/* Công cụ đọc (Dịu mắt · A− / A+): globals đặt 13px cho .lesson-tool — đúng cho học sinh nhưng
+   13px là chữ nhỏ nhất trên trang phụ huynh, mà đây lại đúng là nút người lão thị cần bấm. */
+.parent-page .read-zone-tools :is(button, span) { font-size: .9375rem; }
+.parent-page .read-zone-tools :is(button) { min-width: 2.75rem; }
+/* P6 con số phải to và thẳng cột; P12 không dựa vào màu: luôn có nhãn chữ đi kèm. */
+.parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+/* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
+.parent-page .parent-copy { max-width: 44rem; }
+
+.exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
+.exam-content figure.fig svg{display:block;width:100%;height:auto}
+.exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
+
+</style>
+<div class="lesson-page"><div class="wrap"><h1>Bài 3. Nội năng. Định luật 1 của nhiệt động lực học</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu được <strong>nội năng</strong> là gì, đơn vị, phụ thuộc <strong>nhiệt độ</strong> và <strong>thể tích (khối lượng)</strong>.</li>
+<li>Kể được <strong>hai cách làm biến đổi nội năng</strong>: thực hiện công và truyền nhiệt.</li>
+<li>Tính được nhiệt lượng $Q = mc\Delta t$; hiểu <strong>nhiệt dung riêng</strong>.</li>
+<li>Vận dụng <strong>định luật I</strong> $\Delta U = A + Q$ với đúng <strong>quy ước dấu</strong>.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 17 phút · 7 mục · 6 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: hai thanh chạm vào lúc 6 giờ sáng</h3>
+
+<p>Sáng sớm ở sân trượt, em đặt tay lên <strong>thanh chắn kim loại</strong> rồi lên <strong>mặt ghế gỗ</strong> cạnh đó. Thanh kim loại lạnh buốt, ghế gỗ chỉ hơi mát.</p>
+
+<p>Cắm nhiệt kế vào cả hai thì cả hai đều chỉ <strong>5 °C</strong>. Vậy lạnh buốt ấy từ đâu ra?</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 252" role="img" aria-label="Bàn tay đặt lên thanh kim loại 5 độ C và thanh gỗ 5 độ C: kim loại rút nhiệt từ tay nhanh hơn nên thấy buốt hơn"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Cùng 5 °C — vì sao kim loại buốt hơn gỗ?</text><path d="M158 74 q0 -16 16 -16 q16 0 16 16 l0 18 q10 -6 18 2 q6 6 2 14 l-8 16 q-4 8 -12 8 l-24 0 q-8 0 -12 -8 l-10 -20 q-4 -8 2 -14 q8 -8 16 -2 z" fill="rgba(148,163,184,.20)" stroke="currentColor" stroke-width="2"/><text x="210" y="60" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">tay em 33 °C</text><rect x="40" y="140" width="150" height="46" rx="8" fill="rgba(56,189,248,.18)" stroke="#38bdf8" stroke-width="2.5"/><text x="115" y="168" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">kim loại</text><text x="115" y="206" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">5 °C</text><line x1="66" y1="128" x2="66" y2="72" stroke="#f87171" stroke-width="4.5" marker-end="url(#f1-r)"/><text x="78" y="104" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">rút nhiệt</text><text x="78" y="119" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">rất nhanh</text><rect x="250" y="140" width="150" height="46" rx="8" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2.5"/><line x1="250" y1="156" x2="400" y2="156" stroke="#fb923c" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/><line x1="250" y1="170" x2="400" y2="170" stroke="#fb923c" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/><text x="325" y="168" fill="#fb923c" font-size="13" font-weight="700" text-anchor="middle">gỗ</text><text x="325" y="206" fill="#fb923c" font-size="12" font-weight="700" text-anchor="middle">5 °C</text><line x1="274" y1="132" x2="274" y2="96" stroke="#f87171" stroke-width="2.5" marker-end="url(#f1-r)"/><text x="286" y="118" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">rút nhiệt chậm</text><line x1="16" y1="222" x2="404" y2="222" stroke="currentColor" stroke-width="1.5" opacity="0.5"/><text x="16" y="240" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">Cùng nhiệt độ, khác tốc độ dẫn nhiệt → khác cảm giác</text></svg><figcaption>Hình 1. Hai vật cùng 5 °C nhưng kim loại dẫn nhiệt nhanh hơn gỗ, rút nhiệt từ tay nhanh hơn — nên tay thấy buốt. Cảm giác không phải là nhiệt độ.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Hai ấm nước đều ở <strong>60 °C</strong>: ấm A chứa 200 g, ấm B chứa 2 kg. So với ấm A, ấm B có nội năng</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q0" id="tl4-q0a" checked><label for="tl4-q0a" class="tl-opt tl-no">A. Bằng nhau — nội năng chỉ do nhiệt độ quyết định</label>
+<input type="radio" name="tl4-q0" id="tl4-q0b"><label for="tl4-q0b" class="tl-opt tl-ok">B. Lớn hơn — cùng nhiệt độ nhưng nhiều phân tử hơn</label>
+<input type="radio" name="tl4-q0" id="tl4-q0c"><label for="tl4-q0c" class="tl-opt tl-no">C. Nhỏ hơn — nước nhiều thì phân tử chuyển động chậm hơn</label>
+<input type="radio" name="tl4-q0" id="tl4-q0d"><label for="tl4-q0d" class="tl-opt tl-no">D. Không so được, phải biết chất làm ấm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhiệt độ cho biết mức chuyển động <em>trung bình</em> của mỗi phân tử, còn nội năng là <em>tổng</em> năng lượng của tất cả phân tử. Ấm B nhiều nước gấp 10 lần nên ở cùng nhiệt độ, tổng ấy gấp khoảng 10 lần.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang cho nhiệt độ quyết định tất cả. Nhiệt độ chỉ nói mức chuyển động trung bình của <em>mỗi</em> phân tử; nội năng là <em>tổng</em> của cả khối. Cùng 60 °C, khối lượng càng lớn thì tổng càng lớn. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Nội năng</h4>
+
+<p><strong>🔑 Tổng động năng + thế năng phân tử · Ký hiệu U · Jun</strong></p>
+
+<ul>
+<li>Nội năng là tổng <em>động năng</em> và <em>thế năng</em> của các phân tử cấu tạo nên vật.</li>
+<li>Ký hiệu $U$, đơn vị <strong>jun (J)</strong>.</li>
+<li>Phụ thuộc <strong>nhiệt độ</strong> và <strong>thể tích</strong>; cùng chất, khối lượng càng lớn thì nội năng càng lớn.</li>
+<li>Không đo trực tiếp được — chỉ đo <em>phần biến thiên</em> qua công và nhiệt lượng.</li>
+</ul>
+
+<p>Thanh kim loại không lạnh hơn ghế gỗ, nhưng <em>dẫn nhiệt nhanh hơn</em> nên rút nhiệt từ tay nhanh hơn — tay mất năng lượng nhanh thì buốt.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Hai miếng sắt cùng khối lượng: miếng ngoài nắng 45 °C, miếng trong bóng râm 30 °C. Kết luận nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q1" id="tl4-q1a"><label for="tl4-q1a" class="tl-opt tl-ok">A. Miếng ngoài nắng có nội năng lớn hơn, vì phân tử của nó chuyển động nhanh hơn</label>
+<input type="radio" name="tl4-q1" id="tl4-q1b"><label for="tl4-q1b" class="tl-opt tl-no">B. Hai miếng có nội năng bằng nhau, vì cùng là sắt và cùng khối lượng</label>
+<input type="radio" name="tl4-q1" id="tl4-q1c"><label for="tl4-q1c" class="tl-opt tl-no">C. Miếng trong bóng râm có nội năng lớn hơn, vì nó giữ nhiệt tốt hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng chất, cùng khối lượng nên số phân tử như nhau; nội năng lúc này chỉ còn phụ thuộc nhiệt độ. 45 °C ứng với mức chuyển động phân tử nhanh hơn 30 °C.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> "Cùng chất, cùng khối lượng" chỉ loại bỏ khác nhau về <em>số phân tử</em>, không loại bỏ nhiệt độ. Hai miếng đang ở 45 °C và 30 °C nên nội năng khác nhau. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>2. Hai cách làm biến đổi nội năng</h4>
+
+<p><strong>🔑 Thực hiện công · Truyền nhiệt · Cả hai đều là quá trình</strong></p>
+
+<ul>
+<li><strong>Thực hiện công:</strong> có lực làm vật dịch chuyển. Nhận công → nội năng tăng; sinh công → giảm.</li>
+<li><strong>Truyền nhiệt:</strong> hai vật chênh nhiệt độ. Thu nhiệt → nội năng tăng; toả nhiệt → giảm.</li>
+<li>Công và nhiệt lượng <strong>không phải năng lượng chứa trong vật</strong> — chúng là năng lượng <em>đã truyền đi</em>.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 300" role="img" aria-label="Hai cách làm biến đổi nội năng: nén khí bằng công và hơ nóng bằng truyền nhiệt, cùng làm nội năng tăng"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="20" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Hai cách làm biến đổi nội năng</text><text x="16" y="50" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">a) Thực hiện công</text><rect x="46" y="100" width="66" height="87" rx="8" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.5"/><circle cx="56" cy="120" r="3.2" fill="#38bdf8"/><circle cx="74" cy="120" r="3.2" fill="#38bdf8"/><circle cx="92" cy="120" r="3.2" fill="#38bdf8"/><circle cx="56" cy="148" r="3.2" fill="#38bdf8"/><circle cx="74" cy="148" r="3.2" fill="#38bdf8"/><circle cx="92" cy="148" r="3.2" fill="#38bdf8"/><rect x="40" y="86" width="78" height="14" rx="4" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2"/><line x1="79" y1="74" x2="79" y2="84" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="79" y1="72" x2="79" y2="46" stroke="#f87171" stroke-width="4" marker-end="url(#f2-r)"/><text x="92" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">đẩy xuống</text><text x="79" y="204" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="middle">khí bị nén</text><text x="79" y="222" fill="#f87171" font-size="11.5" font-weight="700" text-anchor="middle">A dương</text><text x="166" y="50" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">b) Truyền nhiệt</text><rect x="178" y="100" width="66" height="92" rx="8" fill="rgba(248,113,113,.10)" stroke="currentColor" stroke-width="2.5"/><circle cx="188" cy="120" r="3.2" fill="#f87171"/><circle cx="206" cy="120" r="3.2" fill="#f87171"/><circle cx="224" cy="120" r="3.2" fill="#f87171"/><circle cx="188" cy="148" r="3.2" fill="#f87171"/><circle cx="206" cy="148" r="3.2" fill="#f87171"/><circle cx="224" cy="148" r="3.2" fill="#f87171"/><line x1="204" y1="126" x2="204" y2="96" stroke="#f87171" stroke-width="3.5" marker-end="url(#f2-r)"/><text x="222" y="100" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">nhiệt</text><path d="M204 242 q-14 -14 0 -26 q14 12 0 26 z" fill="#fb923c" stroke="#fb923c" stroke-width="2"/><text x="216" y="236" fill="#fb923c" font-size="11" font-weight="700" text-anchor="start">ngọn lửa</text><text x="209" y="264" fill="#f87171" font-size="11.5" font-weight="700" text-anchor="middle">Q dương</text><text x="209" y="284" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">cùng một kết quả: nội năng tăng</text><line x1="292" y1="40" x2="292" y2="240" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/><text x="304" y="60" fill="currentColor" font-size="11.5" font-weight="700" text-anchor="start">Xoa hai bàn tay</text><text x="304" y="76" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">→ công của ma sát</text><text x="304" y="108" fill="currentColor" font-size="11.5" font-weight="700" text-anchor="start">Hơ ống nghiệm</text><text x="304" y="124" fill="currentColor" font-size="11.5" font-weight="700" text-anchor="start">trên ngọn lửa</text><text x="304" y="140" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">→ nhiệt truyền vào</text><text x="304" y="176" fill="currentColor" font-size="11.5" font-weight="700" text-anchor="start">Cách phân biệt:</text><text x="304" y="192" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">có lực làm vật</text><text x="304" y="206" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">dịch chuyển không?</text></svg><figcaption>Hình 2. Nội năng đổi bằng hai đường: thực hiện công (có lực làm dịch chuyển) hoặc truyền nhiệt (chênh nhiệt độ). Cả hai đều dẫn tới nội năng tăng.</figcaption></figure>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-noinang-01">
+<p class="tl-label">🔬 Thí nghiệm: bơm xe bằng tay — nóng ở đâu?</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> bơm nhanh một bánh xe non hơi khoảng 30 giây; sờ dọc <em>thân ống bơm</em>, rồi sờ lại sau khi nghỉ 2 phút.</li>
+<li><strong>Quan sát:</strong> thân bơm nóng rõ rệt, để yên thì nguội dần; nhiệt kế trong phòng không đổi.</li>
+<li><strong>Rút ra:</strong> khí bị nén — <em>nhận công</em> — nên nội năng tăng, khí nóng lên rồi truyền nhiệt ra thân bơm. Nóng lên là do <strong>bị nén</strong>, không do cọ xát.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Mỗi trường hợp sau đổi nội năng bằng cách nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q2" id="tl4-q2a"><label for="tl4-q2a" class="tl-opt tl-ok">A. Xoa hai bàn tay — thực hiện công · Hơ ống nghiệm trên lửa — truyền nhiệt</label>
+<input type="radio" name="tl4-q2" id="tl4-q2b"><label for="tl4-q2b" class="tl-opt tl-no">B. Xoa hai bàn tay — truyền nhiệt · Hơ ống nghiệm trên lửa — thực hiện công</label>
+<input type="radio" name="tl4-q2" id="tl4-q2c"><label for="tl4-q2c" class="tl-opt tl-no">C. Cả hai trường hợp đều là truyền nhiệt, vì đều thấy nóng lên</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Xoa tay: lực ma sát làm da dịch chuyển → <em>thực hiện công</em>; hai tay không chênh nhiệt độ nên không thể là truyền nhiệt. Hơ trên lửa: chỉ có chênh nhiệt độ, không có dịch chuyển → <em>truyền nhiệt</em>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cách phân biệt duy nhất: <em>có lực làm vật dịch chuyển (hoặc đổi thể tích) hay không</em>. Xoa tay có dịch chuyển → công. Hơ trên lửa không có dịch chuyển → truyền nhiệt. Em đang phân loại theo "thấy nóng lên", mà cả hai cách đều làm nóng. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>3. Nhiệt lượng – nhiệt dung riêng</h4>
+
+<p><strong>🔑 Q = mcΔt · c là "sức ì" của chất với nhiệt</strong></p>
+
+<ul>
+<li>$Q = mc\left(t_2 - t_1\right) = mc\Delta t$ · $Q$ (J) · $m$ (kg) · $c$: <strong>nhiệt dung riêng</strong> (J/(kg·K)) · $\Delta t$ là <em>độ tăng</em> nhiệt độ (K).</li>
+<li><strong>Nhiệt dung riêng</strong> = nhiệt lượng cho 1 kg chất tăng thêm 1 K. Nước $4180\ \text{J/(kg·K)}$ · nhôm $880$ · đồng $380$ · chì $126$.</li>
+<li>Mẹo nhớ: <strong>c lớn = khó nóng, khó nguội</strong> — nước có $c$ gấp ~4,7 lần nhôm.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 266" role="img" aria-label="So sánh nhiệt lượng cần để làm 1 kg nước và 1 kg nhôm tăng thêm 1 K: nước cần 4180 J, nhôm chỉ cần 880 J"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="24" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Cùng 1 kg, cùng tăng 1 K — khác nhiệt lượng</text><path d="M56 52 l8 122 q1 10 11 10 l48 0 q10 0 11 -10 l8 -122 z" fill="rgba(56,189,248,.16)" stroke="currentColor" stroke-width="2.5"/><line x1="58" y1="76" x2="140" y2="76" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="99" y="118" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">1 kg</text><text x="99" y="138" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="middle">nước</text><text x="99" y="200" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">$c = 4180$</text><text x="99" y="218" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="middle">nhiệt cần: 4180 J</text><rect x="58" y="160" width="14" height="22" rx="3" fill="rgba(56,189,248,.45)" stroke="#38bdf8" stroke-width="1.5"/><rect x="75" y="160" width="14" height="22" rx="3" fill="rgba(56,189,248,.45)" stroke="#38bdf8" stroke-width="1.5"/><rect x="92" y="160" width="14" height="22" rx="3" fill="rgba(56,189,248,.45)" stroke="#38bdf8" stroke-width="1.5"/><rect x="109" y="160" width="14" height="22" rx="3" fill="rgba(56,189,248,.45)" stroke="#38bdf8" stroke-width="1.5"/><rect x="126" y="160" width="14" height="22" rx="3" fill="rgba(56,189,248,.45)" stroke="#38bdf8" stroke-width="1.5"/><rect x="258" y="96" width="104" height="66" rx="8" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2.5"/><text x="310" y="128" fill="#fb923c" font-size="13" font-weight="700" text-anchor="middle">1 kg</text><text x="310" y="146" fill="#fb923c" font-size="12" font-weight="600" text-anchor="middle">nhôm</text><text x="310" y="200" fill="#fb923c" font-size="13" font-weight="700" text-anchor="middle">$c = 880$</text><text x="310" y="218" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="middle">nhiệt cần: 880 J</text><rect x="282" y="160" width="14" height="22" rx="3" fill="rgba(251,146,60,.45)" stroke="#fb923c" stroke-width="1.5"/><rect x="299" y="160" width="14" height="22" rx="3" fill="rgba(251,146,60,.45)" stroke="#fb923c" stroke-width="1.5"/><text x="220" y="70" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">cùng</text><text x="220" y="86" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">tăng 1 K</text><line x1="16" y1="236" x2="424" y2="236" stroke="currentColor" stroke-width="1.5" opacity="0.5"/><text x="16" y="254" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">c nước lớn gấp ~4,7 lần c nhôm → nước “khó nóng, khó nguội”</text></svg><figcaption>Hình 3. Cùng khối lượng và cùng độ tăng nhiệt độ, nước cần nhiều nhiệt hơn nhôm gần 5 lần — vì nhiệt dung riêng của nước lớn hơn. Đó là lí do nước làm mát tốt.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Cần bao nhiêu nhiệt lượng để đun 2 kg nước từ 25 °C lên 100 °C? Lấy $c = 4200\ \text{J/(kg·K)}$.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q3" id="tl4-q3a"><label for="tl4-q3a" class="tl-opt tl-no">A. $210\ 000\ \text{J}$ — vì $4200 \times 25 \times 2$</label>
+<input type="radio" name="tl4-q3" id="tl4-q3b"><label for="tl4-q3b" class="tl-opt tl-ok">B. $630\ 000\ \text{J}$ — vì $4200 \times 2 \times 75$</label>
+<input type="radio" name="tl4-q3" id="tl4-q3c"><label for="tl4-q3c" class="tl-opt tl-no">C. $840\ 000\ \text{J}$ — vì $4200 \times 2 \times 100$</label>
+<input type="radio" name="tl4-q3" id="tl4-q3d"><label for="tl4-q3d" class="tl-opt tl-no">D. $8\ 400\ \text{J}$ — vì $4200 \times 2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $Q = mc\Delta t = 4200 \times 2 \times \left(100 - 25\right) = 630\ 000\ \text{J} = 630\ \text{kJ}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gọi tên lỗi: $\Delta t$ là <em>độ tăng</em> nhiệt độ, phải lấy $100 - 25 = 75\ \text{K}$. Ra 210 000 J là lấy $\Delta t = 25$; ra 840 000 J là lấy $\Delta t = 100$; ra 8 400 J là quên nhân khối lượng. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>4. Định luật I Nhiệt động lực học</h4>
+
+<p><strong>🔑 ΔU = A + Q · A, Q là số đại số · Nhận vào thì dương</strong></p>
+
+<ul>
+<li>Phát biểu: <strong>Độ biến thiên nội năng của hệ bằng tổng công và nhiệt lượng mà hệ nhận được.</strong></li>
+<li>Hệ thức $\Delta U = A + Q$: $A \gt 0$ hệ <em>nhận</em> công, $A \lt 0$ hệ <em>sinh</em> công; $Q \gt 0$ hệ <em>thu</em> nhiệt, $Q \lt 0$ hệ <em>toả</em> nhiệt. $\Delta U \gt 0$: nội năng tăng, nhiệt độ thường tăng.</li>
+<li>Mẹo nhớ: đọc câu chuyện trước, đặt dấu sau — <strong>"nhận thì cộng, mất thì trừ"</strong>.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 298" role="img" aria-label="Sơ đồ định luật I cho một lần ấn bơm: công 60 J truyền vào khí, khí toả ra 15 J, độ biến thiên nội năng bằng 45 J"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="24" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Định luật I cho một lần ấn bơm</text><rect x="150" y="96" width="84" height="118" rx="8" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.5"/><circle cx="162" cy="140" r="3.4" fill="#38bdf8"/><circle cx="186" cy="140" r="3.4" fill="#38bdf8"/><circle cx="210" cy="140" r="3.4" fill="#38bdf8"/><circle cx="162" cy="174" r="3.4" fill="#38bdf8"/><circle cx="186" cy="174" r="3.4" fill="#38bdf8"/><circle cx="210" cy="174" r="3.4" fill="#38bdf8"/><rect x="142" y="80" width="100" height="15" rx="4" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2"/><line x1="192" y1="62" x2="192" y2="78" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="192" y1="60" x2="192" y2="32" stroke="#f87171" stroke-width="4" marker-end="url(#f4-r)"/><text x="206" y="46" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">công 60 J</text><text x="206" y="62" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">tay truyền cho khí</text><text x="192" y="236" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="middle">khối khí</text><line x1="240" y1="132" x2="308" y2="110" stroke="#38bdf8" stroke-width="3.5" marker-end="url(#f4-b)"/><text x="314" y="100" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">toả ra 15 J</text><text x="314" y="116" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">qua thành ống bơm</text><rect x="302" y="146" width="122" height="84" rx="8" fill="rgba(52,211,153,.14)" stroke="#34d399" stroke-width="2.5"/><text x="363" y="172" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="middle">ΔU = A + Q</text><text x="363" y="196" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">= 60 + (−15)</text><text x="363" y="219" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">= +45 J</text><line x1="16" y1="268" x2="432" y2="268" stroke="currentColor" stroke-width="1.5" opacity="0.5"/><text x="16" y="286" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">Nhận vào thì dương (công +60) · mất đi thì âm (nhiệt −15)</text></svg><figcaption>Hình 4. Cùng một lần bơm: công 60 J đi vào khí, nhiệt 15 J đi ra khỏi khí. Định luật I cộng hai số đại số lại: ΔU = 60 + (−15) = +45 J.</figcaption></figure>
+
+<h4>5. Đo nhiệt lượng bằng số liệu thực</h4>
+
+<p><strong>🔑 P·τ là nhiệt đưa vào · c là ẩn cần tìm</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-noinang-02">
+<p class="tl-label">📊 Số liệu: đo $c$ của nước bằng bếp điện</p>
+<p>Đun <strong>0,500 kg</strong> nước, bếp có oát kế chỉ <strong>500 W</strong>; 20 giây ghi nhiệt độ một lần.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>Thời gian $\tau$ (s)</th><th>Nhiệt độ (°C)</th><th>Nhiệt bếp truyền $Q = P\tau$ (J)</th><th>$c = \dfrac{Q}{m\Delta t}$</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>25,0</td><td>—</td><td>—</td></tr>
+<tr><td>20</td><td>29,8</td><td>10 000</td><td>4 167</td></tr>
+<tr><td>40</td><td>34,9</td><td>20 000</td><td>4 040</td></tr>
+<tr><td>60</td><td>39,7</td><td>30 000</td><td>4 082</td></tr>
+<tr><td>80</td><td>44,6</td><td>40 000</td><td>4 082</td></tr>
+</tbody>
+</table></div>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cân nước, cho vào nhiệt lượng kế, bật bếp 500 W, khuấy nhẹ, đọc nhiệt độ mỗi 20 s.</li>
+<li><strong>Quan sát:</strong> nhiệt độ tăng gần như đều; bốn giá trị $c$ đều quanh <strong>4,1.10³ J/(kg·K)</strong>, sách tra là 4 180.</li>
+<li><strong>Rút ra:</strong> $Q = mc\Delta t$ đúng cho quá trình truyền nhiệt. Vì có <em>nhiệt mất ra môi trường</em> nên $c$ đo được <em>nhỏ hơn</em> giá trị thật khoảng 2–3%.</li>
+</ol>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead>
+<tr><th>Quá trình</th><th>$A$ và $Q$</th><th>Dấu hiệu nhận biết</th></tr>
+</thead>
+<tbody>
+<tr><td>Nén khí nhanh, không kịp trao đổi nhiệt</td><td>$A \gt 0$, $Q = 0$</td><td>$\Delta U \gt 0$ — khí nóng lên</td></tr>
+<tr><td>Khí giãn nở, không trao đổi nhiệt</td><td>$A \lt 0$, $Q = 0$</td><td>$\Delta U \lt 0$ — khí lạnh đi</td></tr>
+<tr><td>Đun khí trong bình kín, thể tích không đổi</td><td>$A = 0$, $Q \gt 0$</td><td>$\Delta U \gt 0$ — khí nóng lên</td></tr>
+</tbody>
+</table></div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl4-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl4-q4c" value="khong"> Không chắc</label></p>
+<p><strong>Câu 4.</strong> Khí trong xilanh nhận nhiệt 100 J; khí giãn nở sinh công 60 J. Độ biến thiên nội năng của khí là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q4" id="tl4-q4a"><label for="tl4-q4a" class="tl-opt tl-no">A. $+160\ \text{J}$ — cộng cả hai con số</label>
+<input type="radio" name="tl4-q4" id="tl4-q4b"><label for="tl4-q4b" class="tl-opt tl-ok">B. $+40\ \text{J}$ — vì $100 - 60$</label>
+<input type="radio" name="tl4-q4" id="tl4-q4c"><label for="tl4-q4c" class="tl-opt tl-no">C. $-40\ \text{J}$ — vì khí sinh công nên nội năng giảm</label>
+<input type="radio" name="tl4-q4" id="tl4-q4d"><label for="tl4-q4d" class="tl-opt tl-no">D. $+60\ \text{J}$ — chỉ tính phần công</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khí <em>thu</em> nhiệt: $Q = +100\ \text{J}$; khí <em>sinh</em> công: $A = -60\ \text{J}$. Vậy $\Delta U = -60 + 100 = +40\ \text{J}$ — nội năng tăng. Em giải thích được cho bạn ngồi cạnh vì sao $A$ mang dấu âm chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là <em>cái bẫy dấu</em> của cả bài. Nhiệt 100 J khí <em>nhận</em> → $Q = +100$. Công 60 J khí <em>sinh ra, mất đi</em> → $A = -60$, không phải $+60$. Ra $+160$ là quên đổi dấu công; ra $-40$ là đổi dấu nhầm cả nhiệt. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>IV. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "Vật nhiều nội năng hơn thì nóng hơn"</h4>
+
+<p>Nội năng là <em>tổng</em>; nhiệt độ chỉ là <em>mức trung bình mỗi phân tử</em>. Chậu nước ấm có thể chứa nội năng lớn hơn hẳn một giọt nước sôi.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Nhiệt độ</th><th>Nội năng</th></tr>
+</thead>
+<tbody>
+<tr><td>Mức chuyển động <em>trung bình</em> của phân tử</td><td><em>Tổng</em> động năng và thế năng của mọi phân tử</td></tr>
+<tr><td>Không phụ thuộc khối lượng</td><td>Tăng theo khối lượng (số phân tử)</td></tr>
+<tr><td>Quyết định chiều truyền nhiệt</td><td>Không quyết định chiều truyền nhiệt</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details" open>
+<summary>👀 Bấm xem: vì sao sắt 1 000 °C vẫn có thể ít nội năng hơn bể nước 30 °C</summary>
+<p>Miếng sắt nhỏ có ít phân tử: mỗi phân tử chuyển động rất nhanh nhưng tổng của một ít phân tử vẫn nhỏ. Bể nước có vô số phân tử, mỗi phân tử chậm hơn nhưng tổng lại khổng lồ. Vì thế <strong>không so nội năng chỉ bằng nhiệt độ</strong> khi khối lượng khác nhau.</p>
+</details>
+
+<h4>Bẫy 2: "Nhiệt lượng là năng lượng chứa trong vật"</h4>
+
+<p>Vật <em>chứa</em> nội năng $U$, không chứa nhiệt lượng. Nhiệt lượng $Q$ chỉ tồn tại <em>trong lúc truyền</em>: hết truyền thì không còn $Q$ để nói tới.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Nhiệt lượng $Q$</th><th>Nội năng $U$</th></tr>
+</thead>
+<tbody>
+<tr><td>Năng lượng <em>truyền đi</em> trong một quá trình</td><td>Năng lượng <em>vật đang có</em> ở một trạng thái</td></tr>
+<tr><td>Chỉ có khi hai vật chênh nhiệt độ</td><td>Luôn có, kể cả khi vật đứng yên một mình</td></tr>
+<tr><td>"Vật có nhiệt lượng 500 J" — sai</td><td>"Vật có nội năng 500 J" — đúng</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details" open>
+<summary>👀 Bấm xem: hộp sữa trong tủ lạnh "có nhiệt lượng lạnh"?</summary>
+<p>Không. Sữa <em>toả</em> nhiệt cho tới khi bằng nhiệt độ tủ; khi đã bằng thì trao đổi nhiệt dừng. Cái còn lại là nội năng nhỏ hơn lúc đầu, không phải "nhiệt lượng lạnh".</p>
+</details>
+
+<h4>Bẫy 3: dấu của $A$ trong $\Delta U = A + Q$</h4>
+
+<p>Đây là chỗ mất điểm nhiều nhất. Định luật I viết cho <strong>hệ nhận</strong>: hệ <em>nhận</em> mang dấu $+$, hệ <em>mất đi</em> mang dấu $-$.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Đề nói</th><th>Dấu phải đặt</th></tr>
+</thead>
+<tbody>
+<tr><td>Khí <em>bị nén</em>, nhận công 80 J</td><td>$A = +80\ \text{J}$</td></tr>
+<tr><td>Khí <em>giãn nở</em>, sinh công 80 J</td><td>$A = -80\ \text{J}$</td></tr>
+<tr><td>Khí <em>thu</em> nhiệt 80 J</td><td>$Q = +80\ \text{J}$</td></tr>
+<tr><td>Khí <em>toả</em> nhiệt 80 J</td><td>$Q = -80\ \text{J}$</td></tr>
+</tbody>
+</table>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Khí bị nén, nhận công 90 J, đồng thời toả ra môi trường 30 J. Độ biến thiên nội năng của khí là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl4-q6" id="tl4-q6a"><label for="tl4-q6a" class="tl-opt tl-no">A. $+120\ \text{J}$</label>
+<input type="radio" name="tl4-q6" id="tl4-q6b"><label for="tl4-q6b" class="tl-opt tl-ok">B. $+60\ \text{J}$</label>
+<input type="radio" name="tl4-q6" id="tl4-q6c"><label for="tl4-q6c" class="tl-opt tl-no">C. $-60\ \text{J}$</label>
+<input type="radio" name="tl4-q6" id="tl4-q6d"><label for="tl4-q6d" class="tl-opt tl-no">D. $-120\ \text{J}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhận công: $A = +90\ \text{J}$. Toả nhiệt: $Q = -30\ \text{J}$. $\Delta U = 90 - 30 = +60\ \text{J}$ — nội năng tăng, khí nóng lên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đặt sai dấu ở một trong hai số. <em>Nhận</em> công 90 J → $A = +90$; <em>toả</em> nhiệt 30 J → $Q = -30$. Ra $+120$ là cộng cả hai như thể khí cũng nhận nhiệt; ra số âm là đổi dấu phần nhận công. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>V. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
+
+<details class="tl-details" open>
+<summary>1. Nội năng của một vật là gì? Đơn vị? Nó phụ thuộc những gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> tổng động năng + thế năng phân tử · $U$, jun · nhiệt độ + thể tích (khối lượng).</p>
+</details>
+
+<details class="tl-details" open>
+<summary>2. Kể hai cách làm biến đổi nội năng và dấu hiệu phân biệt. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> thực hiện công (có lực làm dịch chuyển/đổi thể tích) · truyền nhiệt (chênh nhiệt độ, không dịch chuyển).</p>
+</details>
+
+<details class="tl-details" open>
+<summary>3. Viết công thức tính nhiệt lượng khi vật đổi nhiệt độ, nói rõ ký hiệu và đơn vị. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> $Q = mc\Delta t$ · $m$ (kg) · $c$ (J/(kg·K)) · $\Delta t$ là <em>độ tăng</em> nhiệt độ · $Q \gt 0$ vật thu nhiệt.</p>
+</details>
+
+<details class="tl-details" open>
+<summary>4. Nhiệt dung riêng cho biết điều gì? Vì sao nước được dùng làm chất làm mát? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> nhiệt lượng cho 1 kg tăng 1 K · nước $c = 4180\ \text{J/(kg·K)}$ · cùng khối lượng thì nước hút nhiều nhiệt mà nóng lên ít → làm mát tốt.</p>
+</details>
+
+<details class="tl-details" open>
+<summary>5. Phát biểu định luật I Nhiệt động lực học và viết hệ thức. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> độ biến thiên nội năng = tổng công <em>và</em> nhiệt lượng hệ <em>nhận</em> · $\Delta U = A + Q$ · nhận vào thì dương.</p>
+</details>
+
+<details class="tl-details" open>
+<summary>6. Vì sao khí bị nén nhanh lại nóng lên? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Từ khoá:</strong> nén → $A \gt 0$ · nhanh nên $Q \approx 0$ · $\Delta U = A + Q \gt 0$ → nhiệt độ tăng. Lời: pit-tông ập xuống truyền động năng cho phân tử khí, phân tử nhanh hơn thì khí nóng hơn.</p>
+</details>
+</div>
+
+<h3>VI. Bài toán mẫu: bơm xe đạp</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📄 Đề bài</p>
+<p>Một người bơm xe đạp bằng bơm tay. Trong <strong>một lần ấn pit-tông</strong>, người đó thực hiện công <strong>60 J</strong> lên khối khí trong bơm; cùng lúc khối khí <strong>truyền ra ngoài 15 J</strong> nhiệt lượng qua thành ống bơm.</p>
+<p>a) Tính độ biến thiên nội năng của khối khí trong lần bơm đó.</p>
+<p>b) Khối khí nóng lên hay lạnh đi? Vì sao?</p>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"công 60 J lên khối khí"</td><td>Khí <em>nhận</em> công → $A = +60\ \text{J}$</td><td>Quy ước dấu định luật I</td></tr>
+<tr><td>"truyền ra ngoài 15 J nhiệt lượng"</td><td>Khí <em>toả</em> nhiệt → $Q = -15\ \text{J}$</td><td>Quy ước dấu: mất đi thì âm</td></tr>
+<tr><td>"độ biến thiên nội năng"</td><td>Cần tìm $\Delta U$</td><td>$\Delta U = A + Q$</td></tr>
+<tr><td><em>ngầm hiểu</em>: bơm kín</td><td>Hệ xét là <strong>khối khí</strong>, không phải tay người</td><td>Xác định đúng hệ trước khi đặt dấu</td></tr>
+</tbody>
+</table></div>
+
+<details class="tl-details" open>
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li><strong>Xác định hệ:</strong> khối khí trong ống bơm — mọi công, nhiệt tính <em>cho hệ này</em>.</li>
+<li><strong>Đặt dấu:</strong> khí bị nén, tay truyền công <em>cho</em> khí → $A = +60\ \text{J}$; khí truyền nhiệt <em>ra</em> → $Q = -15\ \text{J}$.</li>
+<li><strong>Áp dụng:</strong> $\Delta U = A + Q = 60 + \left(-15\right) = \mathbf{+45\ J}$.</li>
+<li><strong>Trả lời b):</strong> $\Delta U \gt 0$ nên nội năng tăng, tức phân tử khí chuyển động nhanh hơn — <em>khí nóng lên</em>.</li>
+<li><strong>Kiểm tra:</strong> công vào 60 J lớn hơn nhiệt mất 15 J nên phần dư dương; ra 75 J là quên dấu âm của nhiệt lượng.</li>
+</ol>
+<p><em>Nhận xét:</em> sau vài chục lần bơm, phần nội năng tăng cộng dồn đủ làm thân ống bơm nóng rõ — đúng như thí nghiệm đầu bài.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — cùng bài bơm đó, lần ấn này công <strong>90 J</strong>, nhiệt truyền ra ngoài <strong>30 J</strong>.</p>
+<ol class="tl-steps">
+<li><strong>Đặt dấu:</strong> $A = \;?$ · $Q = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $\Delta U = \;?$ — gợi ý: thay số vào $\Delta U = A + Q$ rồi cộng hai số đại số.</li>
+<li><strong>Bước 3 (em điền):</strong> khí nóng lên hay lạnh đi? Vì sao? — gợi ý: dấu của $\Delta U$ nói gì về nhiệt độ?</li>
+</ol>
+<details class="tl-details" open>
+<summary>Xem bước 2–3</summary>
+<p><strong>Bước 1:</strong> $A = +90\ \text{J}$ (khí nhận công), $Q = -30\ \text{J}$ (khí toả nhiệt).<br>
+<strong>Bước 2:</strong> $\Delta U = 90 + \left(-30\right) = +60\ \text{J}$.<br>
+<strong>Bước 3:</strong> $\Delta U \gt 0$ → nội năng tăng → khí nóng lên; tăng nhiều hơn lần trước ($+45\ \text{J}$) vì công đưa vào nhiều hơn.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Thử sức — đổi chiều quá trình.</strong> Khí trong xilanh <strong>nhận nhiệt 200 J</strong> và <strong>giãn nở sinh công 120 J</strong>. Tính $\Delta U$ và cho biết nhiệt độ khí sau cao hơn hay thấp hơn lúc đầu.</p>
+<details class="tl-details" open>
+<summary>🧮 Bấm xem lời giải biến thể</summary>
+<ol class="tl-steps">
+<li>Khí <em>nhận</em> nhiệt: $Q = +200\ \text{J}$.</li>
+<li>Khí <em>sinh</em> công: $A = -120\ \text{J}$ (mất đi).</li>
+<li>$\Delta U = -120 + 200 = +80\ \text{J}$ → nội năng tăng → nhiệt độ sau <strong>cao hơn</strong>.</li>
+<li><strong>Kiểm tra:</strong> khí nhận 200 J mà chỉ sinh ra 120 J công, phần dư 80 J ở lại trong khí — đúng trực giác.</li>
+</ol>
+</details>
+</div>
+
+<h3>VII. Đời sống và tổng kết</h3>
+
+<h4>Bốn chỗ gặp lại bài này</h4>
+
+<details class="tl-details" open>
+<summary>🏭 Bấm xem: bốn chỗ trong đời sống dùng đúng bài này</summary>
+<ul>
+<li><strong>Bơm lốp ô tô:</strong> nén khí nhanh làm lốp nóng, áp suất tăng thêm.</li>
+<li><strong>Tủ lạnh, điều hoà:</strong> dàn nóng toả nhiệt ($Q \lt 0$), dàn lạnh thu nhiệt ($Q \gt 0$), máy nén thực hiện công lên gas.</li>
+<li><strong>Gia công CNC:</strong> lực cắt thực hiện công làm dao, phôi nóng; xưởng phun dung dịch làm mát.</li>
+<li><strong>Phích nước nóng:</strong> chặn ba đường mất nhiệt — dẫn nhiệt (vỏ chân không), đối lưu (nút kín), bức xạ (tráng bạc).</li>
+</ul>
+</details>
+
+<details class="tl-details" open>
+<summary>🌡️ Bấm xem: ba đường nhiệt rời khỏi một vật</summary>
+<p>Vật mất nội năng theo ba đường: <em>dẫn nhiệt</em> (qua vật rắn tiếp xúc), <em>đối lưu</em> (dòng khí/chất lỏng nóng bốc lên), <em>bức xạ</em> (phát tia hồng ngoại). Phích nước nóng chặn cả ba.</p>
+</details>
+
+<details class="tl-details" open>
+<summary>🏅 Thử thách phân tầng ⭐ · ⭐⭐ · ⭐⭐⭐ — bấm xem đề và lời giải</summary>
+<p><strong>⭐ Cơ bản.</strong> Đun 1,5 kg nước từ 20 °C lên 80 °C, $c = 4200\ \text{J/(kg·K)}$. Tính nhiệt lượng cần.</p>
+<p>$Q = mc\Delta t = 4200 \times 1{,}5 \times 60 = 378\ 000\ \text{J}$. Lỗi hay gặp: lấy $\Delta t = 20$ hoặc 80 — luôn lấy hiệu cuối trừ đầu.</p>
+<p><strong>⭐⭐ Khá.</strong> Nhôm 400 g ở 250 °C nhúng vào 0,80 kg nước ở 25 °C. Bỏ qua mất mát, tính nhiệt độ cân bằng. $c_\text{nhôm} = 880$, $c_\text{nước} = 4200\ \text{J/(kg·K)}$.</p>
+<p>Nhiệt toả = nhiệt thu: $0{,}4 \times 880\left(250 - t\right) = 0{,}8 \times 4200\left(t - 25\right)$ → $t \approx 46\ ^\circ\text{C}$.<br>
+<b>Kiểm tra:</b> kết quả nằm giữa 25 °C và 250 °C, gần 25 °C hơn vì $m_2c_2$ lớn hơn $m_1c_1$ nhiều lần.</p>
+<details class="tl-details" open>
+<summary>❄️ Bấm xem: vì sao nhiệt kế đứng im khi nước đá tan</summary>
+<p>Nhiệt bếp đưa vào dùng để <em>phá vỡ liên kết</em> giữa các phân tử ở mạng tinh thể, không làm phân tử nhanh thêm — nên nhiệt độ không đổi mà vẫn tốn nhiều nhiệt. Bài sau sẽ tính phần nhiệt đó bằng <em>nhiệt nóng chảy riêng</em>.</p>
+</details>
+
+<p><strong>⭐⭐⭐ Thách đấu.</strong> 0,500 kg nước đá ở 0 °C đun bằng bếp 500 W: tan hết sau 334 s, rồi đun tiếp lên 40 °C mất thêm 168 s. Vì sao tan hết tốn nhiều thời gian hơn mà chỉ tăng được 40 °C? Tính nhiệt nóng chảy riêng của nước đá.</p>
+<p><strong>Tính:</strong> $Q = 500 \times 334 = 167\ 000\ \text{J}$ → $\lambda = 167\ 000 / 0{,}5 = 3{,}34 \times 10^5\ \text{J/kg}$.</p>
+<p><strong>Vì sao:</strong> nhiệt kế đứng ở 0 °C nhưng bếp vẫn đưa nhiệt vào — phần nhiệt đó phá liên kết mạng tinh thể, không làm phân tử nhanh thêm.</p>
+<details class="tl-details" open>
+<summary>🔍 Bấm xem: kiểm tra chéo</summary>
+<p>Đun nước 0 °C → 40 °C cần $4200 \times 0{,}5 \times 40 = 84\ 000\ \text{J}$ = 168 s ở 500 W — khớp số đề cho.</p>
+</details>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Nội năng</strong> = tổng động năng + thế năng phân tử · $U$, jun · phụ thuộc nhiệt độ và thể tích (khối lượng).</li>
+<li><strong>Nhiệt độ</strong> nói mức trung bình mỗi phân tử — không nói tổng.</li>
+<li><strong>Hai cách đổi nội năng:</strong> thực hiện công (có dịch chuyển) · truyền nhiệt (có chênh nhiệt độ).</li>
+<li><strong>Nhiệt lượng</strong> $Q = mc\Delta t$ · $c$ tính bằng J/(kg·K) · "c lớn thì khó nóng, khó nguội".</li>
+<li><strong>Định luật I:</strong> $\Delta U = A + Q$ · nhận vào thì dương, mất đi thì âm.</li>
+<li><strong>Cách đọc đề:</strong> xác định hệ → đặt dấu theo câu chữ ("nhận/thu" là $+$, "sinh/toả" là $-$) → thay số → kiểm tra $\Delta U$ có hợp trực giác.</li>
+<li><strong>Bẫy nhớ đời:</strong> không nói "vật có nhiệt lượng" — nhiệt lượng chỉ có trong lúc truyền.</li>
+</ul>
+</div>
+</span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+</script>
+</html>

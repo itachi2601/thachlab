@@ -56,6 +56,7 @@
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu (số đo 30/9); ⚠ file docs/title-bank-gaps-2026-09-30.md đã MẤT, chạy lại scripts/sql/title-bank-coverage.sql trước khi soạn
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — script cap-nhat-ly-thuyet.sh; bài Giao thoa sóng L11 chờ đăng
+- [Chương 1 VL12 — lý thuyết tương tác](project_thachlab_vl12_chuong1_ly_thuyet.md) — bài 3 Nội năng/ĐL1 (lesson 4) + bài 4 Thực hành (lesson 5) soạn 4/10/2026, CHƯA ghi DB; số đo độ dài + 6 lỗi hình SVG đã gặp
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết tương tác: duyệt là đăng, không PR, ít token
 - [Khả năng đọc WCAG 2/10](project_thachlab_kha_nang_doc.md) — P0+P1/P2 đã vào main; chuẩn docs/UI.md, `npm run check:a11y`; treo: xem ReadingZone khi đăng nhập, text-violet theme sáng
 - [Rank: thi thăng hạng thích ứng + luyện từng câu](project_thachlab_rank_gate_adaptive.md) — đánh giá 3/10 + spec bàn giao Sonnet (docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md)

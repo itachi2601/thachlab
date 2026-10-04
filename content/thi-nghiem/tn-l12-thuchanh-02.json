@@ -1,0 +1,102 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
+  "lesson_id": 5,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuc-hanh-nhiet/theory.html",
+  "id": "tn-l12-thuchanh-02",
+  "ten": "Một lần đun đá liên tục: đo nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "thuchanh.do_nhiet_luong_gian_tiep",
+    "chuyenthe.nhiet_nong_chay_rieng",
+    "chuyenthe.nhiet_hoa_hoi_rieng",
+    "thuchanh.doc_do_thi_t_tau"
+  ],
+  "muc_tieu": "Đo nhiệt nóng chảy riêng của nước đá và nhiệt hoá hơi riêng của nước trong cùng một lần đun, nhận ra hai đoạn nằm ngang trên đồ thị tương ứng hai lần chuyển thể và giai đoạn hoá hơi ngốn nhiệt nhiều nhất.",
+  "dung_cu": [
+    { "ten": "Nhiệt lượng kế hoặc bình thuỷ tinh chịu nhiệt có nắp", "so_luong": 1 },
+    { "ten": "Bếp điện có oát kế (hoặc điện trở nhiệt + oát kế)", "so_luong": 1, "ghi_chu": "cần giữ công suất không đổi trong suốt 1 giờ đo" },
+    { "ten": "Nhiệt kế thang -20 °C đến 110 °C, độ chia 0,1 °C", "so_luong": 1 },
+    { "ten": "Cân điện tử", "so_luong": 1, "ghi_chu": "sai số ±1 g; dùng để cân cả khối nước ban đầu và khối nước còn lại" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "hoặc dùng chức năng đo thời gian của oát kế" },
+    { "ten": "Nước đá đang tan (đã lọc bỏ nước)", "so_luong": 1, "ghi_chu": "khoảng 100 g" },
+    { "ten": "Que khuấy và kẹp giữ nhiệt kế", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cân khoảng 0,100 kg nước đá đang tan (đã để ráo nước), cho ngay vào bình, cắm nhiệt kế sao cho đầu đo ngập nhưng không chạm đáy.",
+      "Bật bếp ở công suất P đã đọc trên oát kế (ví dụ 100 W) và bấm đồng hồ cùng lúc.",
+      "Ghi lại ba mốc thời gian: (1) nhiệt kế bắt đầu nhích khỏi 0 °C — đá đã tan hết; (2) nhiệt kế chạm 100 °C; (3) nước cuối cùng biến thành hơi.",
+      "Tắt bếp, để nguội, cân lại khối lượng nước còn lại trong bình.",
+      "Tính λ = P·τ₁/m cho giai đoạn 1; c = P·τ₂/(m·Δt) cho giai đoạn 2; L = P·τ₃/m cho giai đoạn 3, rồi so với giá trị tra bảng."
+    ],
+    "quan_sat": [
+      "Nhiệt kế đứng yên ở 0 °C suốt 334 s dù bếp vẫn chạy — đó là lúc đá đang tan.",
+      "Sau đó nhiệt độ leo gần như đều từ 0 °C đến 100 °C trong 838 s, các điểm gần nằm trên một đường thẳng.",
+      "Nhiệt kế lại đứng ở 100 °C suốt 2 260 s cho tới khi nước cạn dần; khối lượng nước giảm rõ khi cân lại.",
+      "Ba giai đoạn chênh nhau rất nhiều về thời gian dù công suất bếp hoàn toàn không đổi."
+    ],
+    "rut_ra": [
+      "Đoạn nằm ngang trên đồ thị t(τ) là lúc chất chuyển thể: nhiệt vào dùng phá liên kết nên nhiệt độ không đổi.",
+      "λ và L tính bằng cùng một công thức P·τ/m, chỉ khác là τ lấy ở đoạn nằm ngang tương ứng.",
+      "Giai đoạn hoá hơi chiếm phần lớn thời gian (74% trong bộ số liệu mẫu) — nhiệt hoá hơi riêng lớn hơn nhiệt nóng chảy riêng gần 7 lần."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "m", "ten": "Khối lượng nước đá ban đầu", "don_vi": "kg", "kieu": "dieu_chinh", "min": 0.05, "max": 0.3, "mac_dinh": 0.1, "buoc": 0.05 },
+    { "ky_hieu": "P", "ten": "Công suất bếp", "don_vi": "W", "kieu": "dieu_chinh", "min": 50, "max": 500, "mac_dinh": 100, "buoc": 25 },
+    { "ky_hieu": "lambda_that", "ten": "Nhiệt nóng chảy riêng thật của nước đá", "don_vi": "J/kg", "kieu": "co_dinh", "gia_tri": 334000 },
+    { "ky_hieu": "L_that", "ten": "Nhiệt hoá hơi riêng thật của nước", "don_vi": "J/kg", "kieu": "co_dinh", "gia_tri": 2260000 },
+    { "ky_hieu": "tau1", "ten": "Thời gian đá tan hoàn toàn", "don_vi": "s", "kieu": "tinh_ra" },
+    { "ky_hieu": "tau2", "ten": "Thời gian nước nóng từ 0 °C lên 100 °C", "don_vi": "s", "kieu": "tinh_ra" },
+    { "ky_hieu": "tau3", "ten": "Thời gian nước hoá hơi hoàn toàn", "don_vi": "s", "kieu": "tinh_ra" },
+    { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.1 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Giai đoạn 1 (đá tan ở 0 °C): Q1 = P·τ1 = m·λ → λ = P·τ1/m",
+      "Giai đoạn 2 (nước 0 → 100 °C): Q2 = P·τ2 = m·c·Δt → c = P·τ2/(m·100)",
+      "Giai đoạn 3 (nước sôi ở 100 °C): Q3 = P·τ3 = m·L → L = P·τ3/m",
+      "Tỉ lệ thời gian phản ánh tỉ lệ nhiệt: τ1 : τ2 : τ3 = λ : c·100 : L"
+    ],
+    "gia_thiet": [
+      "bếp giữ đúng công suất P trong suốt quá trình và toàn bộ nhiệt vào nước, bỏ qua mất mát",
+      "nước đá đã ở 0 °C trước khi bắt đầu (không tính nhiệt làm đá nóng từ âm độ lên 0 °C)",
+      "không có nước bị bắn ra ngoài trong lúc sôi"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ đồ thị t(τ) lớn dần theo thời gian thực với hai đoạn nằm ngang, kèm thanh trượt P và m. Cho phép bật 'mất nhiệt 10%' để thấy λ và L đo được đều lớn hơn giá trị tra bảng — cả hai đều lệch cùng một phía."
+  },
+  "so_lieu_mau": {
+    "cot": ["Giai đoạn", "Thời gian τ (s)", "Nhiệt đưa vào Q = P·τ (J)", "Đại lượng tính được"],
+    "hang": [
+      ["Đá tan hoàn toàn ở 0 °C", 334, 33400, "λ = 3,34e5 J/kg"],
+      ["Nước 0 °C nóng lên 100 °C", 838, 83800, "c = 4,19e3 J/(kg·K)"],
+      ["Nước 100 °C hoá hơi hoàn toàn", 2260, 226000, "L = 2,26.10⁶ J/kg"]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,100 kg, P = 100 W và các giá trị tra bảng λ = 3,34.10⁵ J/kg, c = 4190 J/(kg·K), L = 2,26.10⁶ J/kg. Trong thực tế đo được λ và L thường lớn hơn vì có mất nhiệt, còn c có thể lệch cả hai phía."
+  },
+  "ket_qua_ky_vong": "Đồ thị t(τ) có hai đoạn nằm ngang (0 °C và 100 °C) và một đoạn nghiêng ở giữa; thời gian của ba giai đoạn theo tỉ lệ khoảng 334 : 838 : 2260. λ và L tính ra cùng bậc với giá trị tra bảng, thường cao hơn do mất nhiệt.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nhiệt kế đứng yên ở 0 °C và 100 °C là lúc bếp ngừng truyền nhiệt — ngược lại, đó là hai giai đoạn ngốn nhiệt nhiều nhất.",
+    "Cho rằng giai đoạn sôi ngắn vì nước đã ở 100 °C rồi; thực tế đây thường là giai đoạn dài nhất.",
+    "Cho rằng λ và L tính bằng hai công thức khác nhau; thực ra cả hai đều là P·τ/m, chỉ khác đoạn lấy τ."
+  ],
+  "sai_so_thuong_gap": [
+    "Không để nước đá ráo nước trước khi cân: khối lượng cân được lớn hơn khối lượng đá thật, làm λ nhỏ đi.",
+    "Đầu đo nhiệt kế chạm đáy bình hoặc chạm điện trở: mốc 0 °C và 100 °C bị đọc lệch, kéo theo sai τ1, τ2, τ3.",
+    "Bếp không giữ đúng công suất (điện áp dao động): giả thiết P không đổi bị phá vỡ.",
+    "Nước sôi bắn ra ngoài hoặc hơi nước ngưng lại trên nắp rồi rơi xuống: khối lượng hoá hơi không còn đúng bằng phần khối lượng đã mất."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Vẽ đường cong đun nóng lớn dần theo thời gian thực, đánh dấu ba giai đoạn bằng ba màu; thanh trượt m và P; bảng tự điền λ, c, L khi từng giai đoạn kết thúc.",
+    "diem_nhan": "Cùng một bếp, cùng một khối nước: đoạn ngang hoá hơi dài gấp gần 7 lần đoạn nâng 0 → 100 °C — học sinh thấy trực tiếp vì sao cô đặc dung dịch tốn năng lượng và vì sao phải có đại lượng riêng cho chuyển thể."
+  },
+  "an_toan": [
+    "Khi nước sôi và cạn dần, nhiệt độ thành bình tăng lên rất cao — không chạm tay vào bình.",
+    "Không đậy kín hoàn toàn khi đun hoá hơi để tránh tăng áp suất trong bình.",
+    "Dùng kẹp hoặc găng khi tháo nhiệt kế khỏi nước nóng."
+  ]
+}

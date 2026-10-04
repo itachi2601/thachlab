@@ -1,0 +1,105 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "nguon_trong_bai": "content/lesson-samples/l12-noi-nang-dl1/theory.html",
+  "id": "tn-l12-noinang-02",
+  "ten": "Đo nhiệt dung riêng của nước bằng bếp điện có oát kế",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "nhietluong.cong_thuc_q_mcdt",
+    "nhietluong.nhiet_dung_rieng",
+    "dl1.do_bien_thien_noi_nang"
+  ],
+  "muc_tieu": "Từ nhiệt lượng bếp truyền vào nước suy ra nhiệt dung riêng của nước, so với giá trị tra bảng 4180 J/(kg·K), và giải thích vì sao giá trị đo được luôn nhỏ hơn.",
+  "dung_cu": [
+    { "ten": "Nhiệt lượng kế bằng nhựa có vỏ xốp, nắp đậy", "so_luong": 1 },
+    { "ten": "Bếp điện hoặc điện trở nhiệt gắn trong bình", "so_luong": 1 },
+    { "ten": "Oát kế (bộ đo công suất) có chức năng đo thời gian", "so_luong": 1, "ghi_chu": "hoặc đồng hồ bấm giây + ampe kế và vôn kế" },
+    { "ten": "Nhiệt kế có thang -20 °C đến 110 °C, độ chia 0,1 °C", "so_luong": 1 },
+    { "ten": "Cân điện tử", "so_luong": 1, "ghi_chu": "sai số ±1 g" },
+    { "ten": "Nước sạch", "so_luong": 1, "ghi_chu": "khoảng 500 g" },
+    { "ten": "Que khuấy", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cân 0,500 kg nước (cân cả bình rồi trừ khối lượng bình), đổ vào nhiệt lượng kế sao cho điện trở nhiệt chìm hoàn toàn.",
+      "Đậy nắp, cắm nhiệt kế qua lỗ nắp, đọc nhiệt độ ban đầu t1.",
+      "Nối oát kế vào mạch và bật nguồn; đọc công suất P trên oát kế.",
+      "Khuấy nhẹ liên tục; cứ 20 giây ghi một lần: thời gian τ, nhiệt độ t, công suất P.",
+      "Sau khoảng 80–100 giây thì tắt nguồn, ghi số đọc cuối.",
+      "Tính Q = P·τ cho từng mốc rồi tính c = Q / (m·Δt); vẽ đồ thị t theo τ và tính c theo độ dốc."
+    ],
+    "quan_sat": [
+      "Nhiệt độ tăng gần như tuyến tính theo thời gian: các điểm trên đồ thị t(τ) nằm gần một đường thẳng.",
+      "Bốn giá trị c tính ra nằm trong khoảng 4,0.10³ đến 4,2.10³ J/(kg·K), đều nhỏ hơn 4180.",
+      "Giá trị c tính theo độ dốc đồ thị lệch không quá 3% so với giá trị tính theo từng mốc; sai khác thấy rõ nhất ở mốc cuối vì nhiệt độ nước đã cao nên mất nhiệt ra môi trường mạnh hơn."
+    ],
+    "rut_ra": [
+      "Nhiệt lượng bếp truyền vào nước là Q = P·τ, và hệ thức Q = m·c·Δt cho phép suy ra c.",
+      "c đo được nhỏ hơn giá trị tra bảng vì một phần nhiệt truyền cho bình, nắp và thoát ra môi trường chứ không vào nước.",
+      "Sai số hệ thống (mất nhiệt) làm c luôn lệch về một phía; nếu chỉ có sai số ngẫu nhiên thì các lần đo sẽ lệch cả hai phía của giá trị thật."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "m", "ten": "Khối lượng nước", "don_vi": "kg", "kieu": "dieu_chinh", "min": 0.2, "max": 0.8, "mac_dinh": 0.5, "buoc": 0.05 },
+    { "ky_hieu": "P", "ten": "Công suất bếp", "don_vi": "W", "kieu": "dieu_chinh", "min": 200, "max": 800, "mac_dinh": 500, "buoc": 50 },
+    { "ky_hieu": "t1", "ten": "Nhiệt độ nước ban đầu", "don_vi": "°C", "kieu": "dieu_chinh", "min": 15, "max": 35, "mac_dinh": 25, "buoc": 1 },
+    { "ky_hieu": "tau", "ten": "Thời gian đun", "don_vi": "s", "kieu": "dieu_chinh", "min": 20, "max": 300, "mac_dinh": 80, "buoc": 20 },
+    { "ky_hieu": "c_that", "ten": "Nhiệt dung riêng thật của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4180 },
+    { "ky_hieu": "c_binh", "ten": "Nhiệt dung riêng của nhôm (bình)", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 880 },
+    { "ky_hieu": "dt", "ten": "Độ tăng nhiệt độ (mô hình)", "don_vi": "K", "kieu": "tinh_ra" },
+    { "ky_hieu": "c_do", "ten": "Nhiệt dung riêng tính từ số đo", "don_vi": "J/(kg.K)", "kieu": "tinh_ra" },
+    { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.1 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Nhiệt bếp truyền cho hệ: Q = P·τ",
+      "Phần nhiệt vào nước làm nước nóng lên: Q_nước = m·c·Δt",
+      "Bỏ qua mất mát: c = P·τ / (m·Δt)",
+      "Kể cả bình và hao phí: P·τ = m·c·Δt + m_b·c_b·Δt + Q_hao, do đó c_đo < c_thật",
+      "Tính theo độ dốc đồ thị t(τ) với k = Δt/Δτ: c = P / (m·k)"
+    ],
+    "gia_thiet": [
+      "công suất bếp không đổi trong suốt quá trình đun",
+      "nước được khuấy đều nên nhiệt độ trong bình đồng nhất",
+      "khối lượng bình khoảng 0,05 kg nhôm và nhiệt hao ra môi trường khoảng 5% trong 80 giây"
+    ],
+    "ghi_chu": "Mô phỏng nên có hai chế độ: 'bình cách nhiệt hoàn hảo' cho c đúng 4180, và 'bình thật' cộng thêm nhiệt dung bình + hao phí để c ra khoảng 4000–4100 — học sinh thấy sai số hệ thống chứ không phải sai số ngẫu nhiên."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thời gian τ (s)", "Nhiệt độ t (°C)", "Q = P·τ (J)", "c = Q/(m·Δt) (J/(kg·K))"],
+    "hang": [
+      [0, 25.0, 0, 0],
+      [20, 29.8, 10000, 4167],
+      [40, 34.9, 20000, 4040],
+      [60, 39.7, 30000, 4082],
+      [80, 44.6, 40000, 4082]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,500 kg, P = 500 W, c_hiệu dụng ≈ 4,1.10³ J/(kg·K) (đã kể nhiệt dung bình và hao phí ~2%). Giá trị c tính ra ở cột cuối dùng Δt so với nhiệt độ ban đầu 25,0 °C."
+  },
+  "ket_qua_ky_vong": "Nhiệt độ nước tăng gần như đều theo thời gian; c tính từ số đo nằm trong khoảng 4,0.10³ đến 4,2.10³ J/(kg·K), luôn nhỏ hơn 4180. Hai cách tính (từng mốc và theo độ dốc đồ thị) cho kết quả lệch nhau dưới 3%.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng c đo được nhỏ hơn vì 'nhiệt kế đọc sai' — thực ra nguyên nhân chính là nhiệt mất cho bình và môi trường, tức sai số hệ thống.",
+    "Cho rằng đồ thị t(τ) phải là đường cong vì nước nóng lên ngày càng nhanh — thực tế gần như đường thẳng khi P không đổi.",
+    "Cho rằng phải đun tới 100 °C mới tính được c, trong khi chỉ cần một khoảng Δt bất kì miễn là chưa sôi."
+  ],
+  "sai_so_thuong_gap": [
+    "Điện trở nhiệt không chìm hết trong nước: phần trên nóng đỏ và toả nhiệt ra không khí, Q tính theo P·τ bị 'đắt' hơn thực tế.",
+    "Khuấy không đều: nhiệt kế đọc nhiệt độ gần điện trở, cao hơn nhiệt độ trung bình của cả khối nước.",
+    "Quên trừ khối lượng bình khi cân nước, hoặc để nước bắn ra ngoài khi đun.",
+    "Đọc nhiệt độ ngay sau khi tắt nguồn mà không khuấy: số đọc còn nhích lên thêm 0,2–0,3 °C."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Bình nhiệt lượng kế có điện trở nhiệt, oát kế hiện P và τ, nhiệt kế leo theo thời gian; đồ thị t(τ) vẽ dần và một bảng tự điền c theo từng mốc 20 giây.",
+    "diem_nhan": "Công tắc 'bọc cách nhiệt hoàn hảo' cho c đúng 4180 còn 'bình thật' cho c thấp hơn — qua đó học sinh phân biệt sai số hệ thống với sai số ngẫu nhiên và biết vì sao bài thực hành phải tính sai số."
+  },
+  "an_toan": [
+    "Không chạm tay vào điện trở nhiệt khi đang bật nguồn.",
+    "Kiểm tra dây nối và phích cắm trước khi bật; tắt nguồn trước khi tháo nhiệt kế.",
+    "Nước nóng tối đa khoảng 50 °C trong bài này — không cần đun tới sôi."
+  ]
+}
