@@ -39,3 +39,9 @@ nhánh `viewer="parent"` (Tóm tắt + `afterSummary`) · `components/results/Pa
 - Ảnh `loading="lazy"` không tải khi chụp bằng `captureBeyondViewport` → phải cuộn hết trang rồi mới chụp.
 - Mock dữ liệu Supabase để chụp trang đã đăng nhập: khớp URL theo `/rest/v1/<bảng>` (khớp chuỗi con sẽ
   dính bẫy — `tutoring_needs` select có nhúng `question_topics(...)`).
+
+**4/10/2026 — lịch học lên trang chủ (commit c4ff600fc, đã deploy):** dải "Dành cho phụ huynh" có khối "Lịch lớp
+học thêm năm học …" gom buổi theo khối 10/11/12, đọc `thpt_courses` công khai LÚC BUILD (`build-content.mjs` →
+`home-stats.json.courses`), không thêm request khi tải `/`; đổi lịch trong dashboard → phải deploy lại mới hiện.
+Quyết định: KHÔNG đưa lịch phụ đạo trợ giảng (`tutoring_slots`, đang 0 dòng) lên trang chủ làm quảng cáo — đó là
+lịch vận hành theo tuần cho HS đã vào lớp, RLS theo lớp; chỉ nhắc một câu "trợ giảng mở buổi phụ đạo riêng".
