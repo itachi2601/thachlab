@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Megaphone, PenLine, Sparkles, Video, LifeBuoy } from "lucide-react";
+import { Megaphone, PenLine, Sparkles, Video, LifeBuoy, CalendarPlus } from "lucide-react";
 import ScoreRing from "./ScoreRing";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import { demoAccruedHours, demoMonthlyScore, demoSessions, isDemoAssistant } from "@/lib/tro-giang/demo";
@@ -133,6 +133,14 @@ function LegacyDashboard({ assistant, month }: { assistant: TaAssistant; month: 
       >
         <LifeBuoy size={16} />
         Cần phụ đạo
+      </Link>
+
+      <Link
+        href="/tro-giang/phu-dao?tab=slots"
+        className="flex items-center justify-center gap-2 rounded-2xl border border-blue-400/40 bg-blue-500/10 py-3 text-sm font-bold text-blue-100"
+      >
+        <CalendarPlus size={16} />
+        Đăng lịch phụ đạo cho học sinh đặt
       </Link>
 
       <Link

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -18,7 +19,8 @@ type Tab = (typeof TABS)[number]["id"];
 
 function PhuDaoLoader() {
   const { assistant, demo } = useAssistantOrDemo();
-  const [tab, setTab] = useState<Tab>("needs");
+  const params = useSearchParams();
+  const [tab, setTab] = useState<Tab>(params.get("tab") === "slots" ? "slots" : "needs");
 
   if (assistant === undefined) return <p className="text-slate-400">Đang tải…</p>;
   if (assistant === null)
@@ -62,7 +64,9 @@ export default function PhuDaoPage() {
       <Navbar />
       <main className="mx-auto min-h-screen w-full max-w-lg px-5 pt-28 pb-16">
         <RequireAuth>
-          <PhuDaoLoader />
+          <Suspense fallback={<p className="text-slate-400">Đang tải…</p>}>
+            <PhuDaoLoader />
+          </Suspense>
         </RequireAuth>
       </main>
       <Footer />

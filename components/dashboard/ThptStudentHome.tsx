@@ -584,7 +584,7 @@ export default function ThptStudentHome({
           );
         })}
 
-      {(needs.length > 0 || slots.length > 0) && <Section icon={Users} title="Chủ đề đang mở khoá">
+      <Section icon={Users} title="Lịch phụ đạo của trợ giảng">
         <div className="mt-3 space-y-4">
           {needs.length > 0 && (
             <>
@@ -615,9 +615,13 @@ export default function ThptStudentHome({
             </>
           )}
 
-          {slots.length > 0 && <div>
+          <div>
             <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>
-            {(
+            {slots.length === 0 ? (
+              <p className="text-sm text-slate-400">
+                Chưa có buổi nào được mở. Khi trợ giảng đăng lịch, buổi sẽ hiện ở đây để em bấm đăng ký.
+              </p>
+            ) : (
               <div className="space-y-2">
                 {slots.map((slot) => {
                   const registered = myRegistrations.has(slot.id);
@@ -656,9 +660,9 @@ export default function ThptStudentHome({
                 })}
               </div>
             )}
-          </div>}
+          </div>
         </div>
-      </Section>}
+      </Section>
 
       <Link
         href="/lop-hoc"
