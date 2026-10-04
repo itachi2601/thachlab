@@ -124,7 +124,7 @@ export default function ParentGuestLanding() {
       </section>
 
       {PARENT_SHOTS.length > 0 && (
-        <section>
+        <section id="ket-qua" className="scroll-mt-24">
           <h2 className="font-display text-lg font-bold text-white">Kết quả học sinh của thầy</h2>
           <div className={`mt-3 grid gap-4 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
             {PARENT_SHOTS.map((shot) => (
