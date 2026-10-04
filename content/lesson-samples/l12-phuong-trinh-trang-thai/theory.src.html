@@ -1,0 +1,412 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu được <strong>ba thông số trạng thái</strong> và viết <strong>phương trình trạng thái</strong> của khí lí tưởng.</li>
+<li>Nêu được <strong>quá trình đẳng tích</strong>: phát biểu định luật và viết hệ thức $p_1/T_1 = p_2/T_2$.</li>
+<li>Từ phương trình trạng thái <strong>suy ra lại ba định luật</strong> Boyle – Charles – Gay-Lussac.</li>
+<li>Viết được <strong>phương trình Clapeyron – Mendeleev</strong> $pV = nRT$ với $R = 8{,}31\ \text{J/(mol·K)}$.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 15 phút · 6 mục · 8 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: kim đồng hồ nhích lên giữa trưa nắng</h3>
+
+<p>Chiếc bình khí nén của xưởng để ngoài sân. Không ai bơm thêm khí, vậy mà giữa trưa kim đồng hồ nhích từ <strong>5,0 bar</strong> lên hơn <strong>5,3 bar</strong>.</p>
+
+<p>Bình kín, lượng khí không đổi, thể tích bình cũng không đổi. Vậy cái gì đã đẩy kim lên?</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Sáng khí trong bình ở $27\ ^\circ\text{C}$ (300 K), trưa lên $47\ ^\circ\text{C}$ (320 K). Áp suất tăng bao nhiêu lần?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q0" id="tl8-q0a"><label for="tl8-q0a" class="tl-opt tl-no">A. $47/27 \approx 1{,}74$ lần</label>
+<input type="radio" name="tl8-q0" id="tl8-q0b"><label for="tl8-q0b" class="tl-opt tl-ok">B. $320/300 \approx 1{,}07$ lần</label>
+<input type="radio" name="tl8-q0" id="tl8-q0c"><label for="tl8-q0c" class="tl-opt tl-no">C. Không tăng, vì thể tích bình không đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bình kín thì áp suất tỉ lệ thuận với <em>nhiệt độ tuyệt đối</em>: $5{,}0 \times \dfrac{320}{300} \approx 5{,}3$ bar — khớp đúng kim đồng hồ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là chỗ sai phổ biến nhất của bài: lấy tỉ số hai nhiệt độ <em>Celsius</em>. Thang Celsius có gốc 0 không thật, nên $47/27$ vô nghĩa. Phải đổi ra Kelvin trước: $300\ \text{K} \to 320\ \text{K}$, rồi mới chia. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<!--FIG1-->
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Ba thông số trạng thái — một hằng số</h4>
+
+<p><strong>🔑 Ba thông số · pV/T không đổi · T phải là Kelvin</strong></p>
+
+<ul>
+<li>Một lượng khí xác định được mô tả bằng <strong>ba thông số trạng thái</strong>: áp suất $p$, thể tích $V$, nhiệt độ tuyệt đối $T$.</li>
+<li>Khí đi từ trạng thái 1 sang trạng thái 2 thì tỉ số $pV/T$ <em>không đổi</em>.</li>
+<li>Hằng số ấy chỉ phụ thuộc <strong>lượng khí</strong> đang xét, không phụ thuộc cách biến đổi.</li>
+<li>Đơn vị: $p$ (Pa), $V$ (m³ hoặc lít), $T$ (K). Đổi $t = 27\ ^\circ\text{C} \to T = 300\ \text{K}$ trước khi bấm máy.</li>
+</ul>
+
+<p>$$\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} = \text{hằng số}$$</p>
+
+<p>Đây là <strong>phương trình trạng thái của khí lí tưởng</strong>, còn gọi là phương trình Clapeyron. Mẹo nhớ: <strong>ba chữ, một hằng số</strong> — $p$, $V$, $T$ đi liền nhau, $T$ luôn ở dưới mẫu.</p>
+
+<details class="tl-details">
+<summary>🧠 Phương trình này từ đâu ra?</summary>
+<p><strong>Kết hợp định luật Boyle (giữ $T$ không đổi) với định luật Charles (giữ $p$ không đổi)</strong> cho ra hệ thức chung cho cả ba thông số $p$, $V$, $T$ — đó chính là phương trình trạng thái. Vì thế nó dùng được cho mọi quá trình của một lượng khí xác định, còn ba định luật chỉ là ba trường hợp riêng.</p>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-pttrangthai-01">
+<p class="tl-label">🔬 Thí nghiệm: quả bóng bàn bẹp phồng trở lại</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thả quả bóng bàn bị bẹp (nhưng <em>chưa nứt</em>) vào cốc nước nóng khoảng 80 °C.</li>
+<li><strong>Quan sát:</strong> vỏ bóng từ từ phồng trở lại; nước nóng đã truyền nhiệt cho khối khí bên trong bóng.</li>
+<li><strong>Rút ra:</strong> nhiệt độ $T$ tăng làm áp suất khí bên trong tăng, đẩy vỏ bóng về dạng cũ. Cả ba thông số đều đổi — vì thế cần một phương trình cho cả ba.</li>
+</ol>
+</div>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Một lượng khí xác định chuyển từ trạng thái 1 sang trạng thái 2. Hệ thức nào <em>luôn</em> đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q1" id="tl8-q1a"><label for="tl8-q1a" class="tl-opt tl-no">A. $p_1V_1 = p_2V_2$, vì $p$ và $V$ luôn tỉ lệ nghịch</label>
+<input type="radio" name="tl8-q1" id="tl8-q1b"><label for="tl8-q1b" class="tl-opt tl-ok">B. $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$</label>
+<input type="radio" name="tl8-q1" id="tl8-q1c"><label for="tl8-q1c" class="tl-opt tl-no">C. $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$, vì $p$ luôn tỉ lệ thuận với $T$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khi cả ba thông số cùng đổi thì chỉ phương trình trạng thái là chắc chắn đúng; hằng số $pV/T$ giữ nguyên suốt quá trình.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai hệ thức kia chỉ đúng khi có một thông số được giữ không đổi: $p_1V_1 = p_2V_2$ cần $T$ không đổi, còn $p_1/T_1 = p_2/T_2$ cần $V$ không đổi. Đề không nói giữ gì cả — nên phải dùng phương trình trạng thái.</p></div>
+</div>
+</div>
+
+<h4>2. Quá trình đẳng tích</h4>
+
+<p><strong>🔑 V không đổi · p tỉ lệ thuận T · p/T = hằng số</strong></p>
+
+<ul>
+<li><strong>Quá trình đẳng tích</strong> là quá trình biến đổi trạng thái khi <strong>thể tích không đổi</strong>.</li>
+<li>Trong quá trình đẳng tích của một lượng khí nhất định, <strong>áp suất tỉ lệ thuận với nhiệt độ tuyệt đối</strong>.</li>
+<li>Hệ thức: $p_1/T_1 = p_2/T_2$, tức $p/T = \text{hằng số}$.</li>
+<li>Hằng số này phụ thuộc vào <strong>lượng khí</strong> và <strong>thể tích</strong> của bình chứa.</li>
+</ul>
+
+<p>$$\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$$</p>
+
+<p>Ví dụ: khí trơ trong bóng đèn dây tóc; bình gas để ngoài nắng; lốp xe vừa chạy đường dài.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-pttrangthai-02">
+<p class="tl-label">🔬 Thí nghiệm đo: bình kín ngâm nước ở năm nhiệt độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối bình kín với cảm biến áp suất; lần lượt ngâm vào nước đá đang tan, nước phòng, nước ấm, nước nóng và nước sôi; chờ 2–3 phút rồi đọc nhiệt độ và áp suất.</li>
+<li><strong>Quan sát:</strong> thể tích bình không đổi, áp suất tăng đều theo nhiệt độ — ghi ở bảng dưới.</li>
+<li><strong>Rút ra:</strong> đem chia $p$ cho $T$ (Kelvin) ở mọi dòng, kết quả gần như bằng nhau: $p$ tỉ lệ thuận với nhiệt độ tuyệt đối.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$t$ (°C)</th><th>$p$ (kPa)</th><th>$p/T$ (kPa/K)</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>100,0</td><td>0,366</td></tr>
+<tr><td>25</td><td>109,2</td><td>0,366</td></tr>
+<tr><td>50</td><td>118,3</td><td>0,366</td></tr>
+<tr><td>75</td><td>127,5</td><td>0,366</td></tr>
+<tr><td>100</td><td>136,6</td><td>0,366</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🤏 Câu hỏi về sai số: vì sao cột $p/T$ không giống nhau tuyệt đối?</summary>
+<p>Kim chỉ đúng 0,366 vì số liệu đã làm tròn. Đo thật, cảm biến áp suất sai khoảng <strong>±1 kPa</strong> (1% ở mức 100 kPa) còn nhiệt kế sai <strong>±0,5 °C</strong> (0,17% ở 300 K) — nên $p/T$ được phép lệch tới cỡ 1%, tức khoảng 0,004 kPa/K. Ba nguồn lệch khác: bình chưa kịp đạt nhiệt độ của nước đã đọc số, bình rò khí, và ở gần 100 °C khí thực không còn lí tưởng hoàn hảo. Ghi kết quả đo bao giờ cũng phải kèm sai số.</p>
+</details>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Bình kín chứa khí ở $27\ ^\circ\text{C}$, áp suất $2{,}0.10^5\ \text{Pa}$. Nung bình lên $87\ ^\circ\text{C}$. Áp suất khí lúc đó là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q2c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q2c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q2" id="tl8-q2a"><label for="tl8-q2a" class="tl-opt tl-no">A. $6{,}4.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q2" id="tl8-q2b"><label for="tl8-q2b" class="tl-opt tl-no">B. $2{,}0.10^5\ \text{Pa}$, không đổi</label>
+<input type="radio" name="tl8-q2" id="tl8-q2c"><label for="tl8-q2c" class="tl-opt tl-ok">C. $2{,}4.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q2" id="tl8-q2d"><label for="tl8-q2d" class="tl-opt tl-no">D. $1{,}7.10^5\ \text{Pa}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đẳng tích: $p_2 = p_1 \times \dfrac{T_2}{T_1} = 2{,}0.10^5 \times \dfrac{360}{300} = 2{,}4.10^5\ \text{Pa}$. Nhớ đổi $27\ ^\circ\text{C} = 300\ \text{K}$ và $87\ ^\circ\text{C} = 360\ \text{K}$. Em giải thích được cho bạn ngồi cạnh vì sao không lấy $87/27$ chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai là ba lỗi khác nhau: A lấy tỉ số nhiệt độ Celsius ($87/27$), D lật ngược tỉ số, còn B quên rằng nhiệt độ tăng thì áp suất phải tăng. Việc đầu tiên luôn là đổi cả hai nhiệt độ ra Kelvin. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>3. Ba định luật cũ nằm gọn trong một phương trình</h4>
+
+<p><strong>🔑 Giữ một thông số · Còn lại hai · Suy ra ba định luật</strong></p>
+
+<p>Phương trình trạng thái là "mẹ" của ba định luật đã học: giữ một thông số không đổi thì nó triệt tiêu hai vế.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Không đổi</th><th>Hệ thức còn lại</th><th>Tên định luật</th></tr>
+</thead>
+<tbody>
+<tr><td>Nhiệt độ $T$</td><td>$p_1V_1 = p_2V_2$</td><td>Boyle (đẳng nhiệt)</td></tr>
+<tr><td>Áp suất $p$</td><td>$V_1/T_1 = V_2/T_2$</td><td>Charles (đẳng áp)</td></tr>
+<tr><td>Thể tích $V$</td><td>$p_1/T_1 = p_2/T_2$</td><td>Gay-Lussac (đẳng tích)</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Một quá trình biến đổi trạng thái mà thể tích của lượng khí không đổi. Hệ thức nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q3" id="tl8-q3a"><label for="tl8-q3a" class="tl-opt tl-ok">A. $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$</label>
+<input type="radio" name="tl8-q3" id="tl8-q3b"><label for="tl8-q3b" class="tl-opt tl-no">B. $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$</label>
+<input type="radio" name="tl8-q3" id="tl8-q3c"><label for="tl8-q3c" class="tl-opt tl-no">C. $p_1V_1 = p_2V_2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $V$ không đổi nên $V$ triệt tiêu ở hai vế, chỉ còn $p_1/T_1 = p_2/T_2$ — định luật Gay-Lussac, cũng chính là quá trình đẳng tích.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mỗi hệ thức ứng với một thông số được giữ không đổi khác nhau: $p_1V_1 = p_2V_2$ cần $T$ không đổi, còn $V_1/T_1 = V_2/T_2$ cần $p$ không đổi. Đề giữ $V$ không đổi.</p></div>
+</div>
+</div>
+
+<h4>4. Phương trình Clapeyron – Mendeleev</h4>
+
+<p><strong>🔑 pV = nRT · R = 8,31 · n = m/M</strong></p>
+
+<ul>
+<li>Hằng số $pV/T$ của một lượng khí bằng $nR$, với $n$ là số mol khí.</li>
+<li>Với $n$ mol khí: $pV = nRT$, trong đó $R = 8{,}31\ \text{J/(mol·K)}$ là hằng số khí.</li>
+<li>Số mol: $n = \dfrac{m}{M}$ — $m$ là khối lượng khí, $M$ là khối lượng mol.</li>
+<li>Ở điều kiện tiêu chuẩn ($0\ ^\circ\text{C}$, 1 atm): 1 mol khí chiếm <strong>22,4 lít</strong>. Ở điều kiện chuẩn ($25\ ^\circ\text{C}$, 1 bar): <strong>24,79 lít</strong>.</li>
+</ul>
+
+<p>$$pV = nRT$$</p>
+
+<details class="tl-details">
+<summary>🧠 Vì sao hai bình giống nhau lại có hằng số $pV/T$ khác nhau?</summary>
+<p>Vì hằng số ấy bằng $nR$, mà $n$ là <em>số mol khí trong bình</em>. Hai bình cùng dung tích nhưng một bình nạp nhiều khí hơn thì $n$ lớn hơn, hằng số lớn hơn. Muốn áp dụng phương trình trạng thái cho hai trạng thái, điều kiện bắt buộc là <strong>lượng khí không đổi</strong>.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: lấy tỉ số hai nhiệt độ Celsius</h4>
+
+<p>Nhiệt độ $27\ ^\circ\text{C}$ lên $47\ ^\circ\text{C}$ nghe như "nóng thêm gần gấp đôi", nhưng trên thang Kelvin chỉ là $300\ \text{K} \to 320\ \text{K}$, tức tăng 6,7%. Mọi công thức chất khí đều là hệ thức <em>tỉ lệ</em>, mà tỉ lệ chỉ có nghĩa khi thang đo có gốc 0 thật.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Lấy tỉ số trên thang Celsius</th><th>Lấy tỉ số trên thang Kelvin</th></tr>
+</thead>
+<tbody>
+<tr><td>Gốc 0 là nước đá đang tan, không phải "không có nhiệt độ"</td><td>Gốc 0 là độ không tuyệt đối — mức thấp nhất</td></tr>
+<tr><td>$47/27 \approx 1{,}74$ — nghe như tăng gần gấp đôi</td><td>$320/300 \approx 1{,}07$ — đúng mức tăng thật</td></tr>
+<tr><td>Chỉ dùng để tính <em>khoảng chênh</em> nhiệt độ</td><td>Dùng để tính <em>tỉ số</em> trong mọi công thức chất khí</td></tr>
+</tbody>
+</table>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Khí trong bình kín ở $27\ ^\circ\text{C}$ có áp suất $3{,}0.10^5\ \text{Pa}$. Hạ nhiệt độ xuống $0\ ^\circ\text{C}$ thì áp suất là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q4" id="tl8-q4a"><label for="tl8-q4a" class="tl-opt tl-no">A. $3{,}0.10^5\ \text{Pa}$, không đổi vì bình vẫn kín</label>
+<input type="radio" name="tl8-q4" id="tl8-q4b"><label for="tl8-q4b" class="tl-opt tl-ok">B. $2{,}73.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q4" id="tl8-q4c"><label for="tl8-q4c" class="tl-opt tl-no">C. $0\ \text{Pa}$, vì $0\ ^\circ\text{C}$ ứng với 0 K</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $p_2 = p_1 \times \dfrac{T_2}{T_1} = 3{,}0.10^5 \times \dfrac{273}{300} \approx 2{,}73.10^5\ \text{Pa}$. Nhiệt độ giảm nên áp suất giảm theo đúng tỉ số Kelvin. Em giải thích được cho bạn ngồi cạnh vì sao $0\ ^\circ\text{C}$ là 273 K chứ không phải 0 K chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai điều phải nhớ: $0\ ^\circ\text{C}$ là <strong>273 K</strong> chứ không phải 0 K, và bình kín thì áp suất <em>không</em> đứng yên khi nhiệt độ đổi. Cứ đổi ra Kelvin rồi lấy tỉ số $T_2/T_1$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: dùng phương trình trạng thái khi lượng khí đã đổi</h4>
+
+<p>Người thợ xả bớt khí cho vơi bình rồi mới nung nóng. Bình vẫn kín, thể tích vẫn thế — nhưng <strong>lượng khí đã khác</strong>, nên hai trạng thái không còn chung một hằng số.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Cùng một lượng khí, bình kín</th><th>Bơm thêm hoặc xì bớt khí</th></tr>
+</thead>
+<tbody>
+<tr><td>$p_1V_1/T_1 = p_2V_2/T_2$ dùng được</td><td>Hai trạng thái là hai lượng khí khác nhau</td></tr>
+<tr><td>Hằng số là $nR$ của lượng khí đó</td><td>Hằng số đã đổi, phải tính theo lượng khí mới</td></tr>
+<tr><td>Ví dụ: bình khí nén để ngoài nắng</td><td>Ví dụ: xả vơi bình rồi mới nung</td></tr>
+</tbody>
+</table>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Xả bớt khí cho vơi bình, rồi nung bình nóng lên. Có dùng được $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$ cho trạng thái trước và sau không?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q5" id="tl8-q5a"><label for="tl8-q5a" class="tl-opt tl-no">A. Có, vì bình vẫn kín và thể tích không đổi</label>
+<input type="radio" name="tl8-q5" id="tl8-q5b"><label for="tl8-q5b" class="tl-opt tl-no">B. Có, vì $pV/T$ là một hằng số chung cho mọi bình khí</label>
+<input type="radio" name="tl8-q5" id="tl8-q5c"><label for="tl8-q5c" class="tl-opt tl-ok">C. Không, vì lượng khí đã thay đổi nên hằng số $pV/T$ của hai trạng thái khác nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Phương trình trạng thái chỉ dùng cho <em>một lượng khí xác định</em>. Sau khi xả bớt, hằng số $pV/T = nR$ đã nhỏ đi, nên tỉ số hai trạng thái không còn bằng nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Bình vẫn kín nhưng <em>lượng khí</em> đã bớt — mỗi lượng khí có hằng số $nR$ riêng. Trước khi dùng phương trình trạng thái, luôn tự hỏi: lượng khí có giữ nguyên không, hay có bơm thêm / xì bớt?</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: đọc nhầm hai đường đẳng tích</h4>
+
+<p>Trên đồ thị $p$ – $T$, đường đẳng tích là đường thẳng kéo dài qua gốc toạ độ. Với cùng một lượng khí, đường <strong>nằm trên</strong> (dốc hơn) ứng với thể tích <strong>nhỏ hơn</strong>: bình chật thì cùng nhiệt độ đã có áp suất lớn hơn.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Đường dốc hơn (nằm trên)</th><th>Đường thoải hơn (nằm dưới)</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng $T$ mà $p$ lớn hơn</td><td>Cùng $T$ mà $p$ nhỏ hơn</td></tr>
+<tr><td>$V$ nhỏ hơn — bình chật hơn</td><td>$V$ lớn hơn — bình rộng hơn</td></tr>
+<tr><td>Ví dụ: bình khí nén 40 lít</td><td>Ví dụ: bình khí nén 60 lít</td></tr>
+</tbody>
+</table>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Trên đồ thị $p$ – $T$, hai đường đẳng tích của cùng một lượng khí. Đường nằm trên ứng với:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q6" id="tl8-q6a"><label for="tl8-q6a" class="tl-opt tl-ok">A. Thể tích nhỏ hơn</label>
+<input type="radio" name="tl8-q6" id="tl8-q6b"><label for="tl8-q6b" class="tl-opt tl-no">B. Thể tích lớn hơn</label>
+<input type="radio" name="tl8-q6" id="tl8-q6c"><label for="tl8-q6c" class="tl-opt tl-no">C. Cùng thể tích, chỉ khác lượng khí</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Kẻ một đường thẳng đứng tại một giá trị $T$: đường nằm trên cho $p$ lớn hơn. Cùng lượng khí mà $p$ lớn hơn thì bình phải chật hơn — $V$ nhỏ hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo cảm giác "dốc là to". Hãy đọc theo cột: giữ nguyên $T$, so hai giá trị $p$. Vì $pV/T$ không đổi, $p$ lớn hơn buộc $V$ nhỏ hơn.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+
+<details class="tl-details">
+<summary>1. Trạng thái của một lượng khí được xác định bởi những thông số nào? Viết phương trình trạng thái. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Ba thông số: p, V, T.</strong> Phương trình trạng thái: $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} = \text{hằng số}$ — còn gọi là phương trình Clapeyron. Hằng số chỉ phụ thuộc lượng khí đang xét.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Vì sao trong công thức phải dùng $T$ (Kelvin) mà không dùng $t$ (°C)? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Vì công thức là hệ thức tỉ lệ.</strong> Muốn lấy tỉ số hai nhiệt độ thì thang đo phải có gốc 0 thật; chỉ thang Kelvin có gốc 0 tại độ không tuyệt đối. Trên thang Celsius, $0\ ^\circ\text{C}$ vẫn còn nhiều năng lượng nên các tỉ số như $47/27$ vô nghĩa.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Quá trình đẳng tích là gì? Phát biểu định luật và viết hệ thức. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>V không đổi · p tỉ lệ thuận T · p/T = hằng số.</strong> Quá trình đẳng tích là quá trình biến đổi trạng thái khi thể tích không đổi. Trong quá trình đó, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối: $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Hằng số $p/T$ (và $pV/T$) phụ thuộc vào những gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Hai hằng số khác nhau.</strong> $p/T = nR/V$ → phụ thuộc <em>lượng khí</em> và <em>thể tích bình</em>; còn $pV/T = nR$ → chỉ phụ thuộc <em>lượng khí</em> (số mol), <em>không</em> phụ thuộc thể tích bình: cùng $n$ mol đặt vào bình $V$ khác thì $p$ tự điều chỉnh, $pV/T$ vẫn bằng $nR$. Cũng vì hằng số ấy gắn với lượng khí, phương trình trạng thái chỉ áp dụng được khi lượng khí giữ nguyên.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Từ phương trình trạng thái suy ra ba định luật đã học như thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Giữ một thông số không đổi thì nó triệt tiêu hai vế.</strong> Giữ $T$: $p_1V_1 = p_2V_2$ (Boyle). Giữ $p$: $V_1/T_1 = V_2/T_2$ (Charles). Giữ $V$: $p_1/T_1 = p_2/T_2$ (Gay-Lussac). Ba định luật là ba trường hợp riêng của cùng một phương trình.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Viết phương trình Clapeyron – Mendeleev. $R$ bằng bao nhiêu? 1 mol khí ở điều kiện tiêu chuẩn chiếm bao nhiêu lít? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>$pV = nRT$ · $R = 8{,}31\ \text{J/(mol·K)}$ · 22,4 lít.</strong> Số mol $n = m/M$. Ở điều kiện tiêu chuẩn ($0\ ^\circ\text{C}$, 1 atm), 1 mol khí chiếm 22,4 lít; ở điều kiện chuẩn ($25\ ^\circ\text{C}$, 1 bar) là 24,79 lít.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: nén khí trong xilanh máy nén</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Xilanh của máy nén khí chứa $200\ \text{cm}^3$ không khí ở $27\ ^\circ\text{C}$, áp suất $1{,}0.10^5\ \text{Pa}$.</p>
+<p>a) Pittông nén khí xuống còn $40\ \text{cm}^3$; do nén nhanh, nhiệt độ khí lên $87\ ^\circ\text{C}$. Tính áp suất khí lúc đó.</p>
+<p>b) Nếu nén thật chậm để nhiệt độ giữ nguyên $27\ ^\circ\text{C}$ thì áp suất là bao nhiêu?</p>
+<p>c) Tính số mol khí trong xilanh ở trạng thái sau khi nén nhanh.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"xilanh kín, 200 cm³"</td><td>$V_1 = 200\ \text{cm}^3$; lượng khí không đổi</td><td>điều kiện áp dụng</td></tr>
+<tr><td>"27 °C, 1,0.10⁵ Pa"</td><td>$T_1 = 300\ \text{K}$; $p_1 = 1{,}0.10^5\ \text{Pa}$</td><td>trạng thái 1; đổi K</td></tr>
+<tr><td>"nén còn 40 cm³"</td><td>$V_2 = 40\ \text{cm}^3$</td><td>giảm 5 lần</td></tr>
+<tr><td>"lên 87 °C"</td><td>$T_2 = 360\ \text{K}$</td><td>trạng thái 2</td></tr>
+<tr><td>"nén chậm"</td><td>$T = 300\ \text{K}$</td><td>định luật Boyle $p_1V_1 = p_2V_2$</td></tr>
+<tr><td>"tính số mol"</td><td>$n = ?$</td><td>$pV = nRT$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Đổi nhiệt độ ra Kelvin: $T_1 = 27 + 273 = 300\ \text{K}$, $T_2 = 87 + 273 = 360\ \text{K}$.</li>
+<li>Câu a: phương trình trạng thái $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$, suy ra $p_2 = p_1 \times \dfrac{V_1}{V_2} \times \dfrac{T_2}{T_1} = 1{,}0.10^5 \times 5 \times 1{,}2 = 6{,}0.10^5\ \text{Pa}$.</li>
+<li>Câu b: nhiệt độ không đổi nên dùng định luật Boyle: $p'_2 = p_1 \times \dfrac{V_1}{V_2} = 1{,}0.10^5 \times 5 = 5{,}0.10^5\ \text{Pa}$.</li>
+<li>Câu c: $n = \dfrac{pV}{RT} = \dfrac{6{,}0.10^5 \times 40.10^{-6}}{8{,}31 \times 360} = \dfrac{24}{2991{,}6} \approx 8{,}0.10^{-3}\ \text{mol}$.</li>
+<li>Kiểm tra kết quả: $p_1V_1/T_1 = 1{,}0.10^5 \times 200/300 = 66\,667$ và $p_2V_2/T_2 = 6{,}0.10^5 \times 40/360 = 66\,667$ — bằng nhau, đúng; câu b cũng nhất quán ($5{,}0.10^5 \times 40/300 = 66\,667$). Nén nhanh làm khí nóng lên nên áp suất cao hơn nén chậm đúng $1{,}0.10^5\ \text{Pa}$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Vẫn xilanh đó: $150\ \text{cm}^3$ khí ở $27\ ^\circ\text{C}$, $p_1 = 1{,}0.10^5\ \text{Pa}$; nén xuống $30\ \text{cm}^3$ và nhiệt độ lên $57\ ^\circ\text{C}$.</p>
+<ol class="tl-steps">
+<li>Bước 1: đổi nhiệt độ — $T_1 = 300\ \text{K}$, $T_2 = 330\ \text{K}$.</li>
+<li><strong>Em điền:</strong> viết hệ thức tính $p_2$ từ phương trình trạng thái.</li>
+<li><strong>Em điền:</strong> thay số và cho biết $p_2$ bằng bao nhiêu.</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2–3</summary>
+<p>$p_2 = p_1 \times \dfrac{V_1}{V_2} \times \dfrac{T_2}{T_1} = 1{,}0.10^5 \times \dfrac{150}{30} \times \dfrac{330}{300} = 1{,}0.10^5 \times 5 \times 1{,}1 = 5{,}5.10^5\ \text{Pa}$. Kiểm lại: $1{,}0.10^5 \times 150/300 = 5{,}5.10^5 \times 30/330$ — hai vế bằng nhau, kết quả hợp lí.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số, đổi quá trình</p>
+<p><strong>Câu 7.</strong> Bình khí nén 40 lít để ngoài nắng: buổi sáng $27\ ^\circ\text{C}$, áp suất $5{,}0.10^5\ \text{Pa}$; giữa trưa $47\ ^\circ\text{C}$, thể tích bình không đổi. Áp suất giữa trưa là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl8-q7" id="tl8-q7a"><label for="tl8-q7a" class="tl-opt tl-no">A. $8{,}7.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q7" id="tl8-q7b"><label for="tl8-q7b" class="tl-opt tl-ok">B. $5{,}3.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q7" id="tl8-q7c"><label for="tl8-q7c" class="tl-opt tl-no">C. $4{,}7.10^5\ \text{Pa}$</label>
+<input type="radio" name="tl8-q7" id="tl8-q7d"><label for="tl8-q7d" class="tl-opt tl-no">D. $5{,}0.10^5\ \text{Pa}$, không đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Quá trình đẳng tích: $p_2 = p_1 \times \dfrac{T_2}{T_1} = 5{,}0.10^5 \times \dfrac{320}{300} \approx 5{,}3.10^5\ \text{Pa}$ — đúng con số kim đồng hồ ở đầu bài. Em giải thích được cho bạn ngồi cạnh vì sao không lấy $47/27$ chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Từng phương án sai một kiểu: A lấy $47/27$ (tỉ số Celsius), C lật ngược tỉ số $300/320$, D quên rằng nhiệt độ tăng thì áp suất tăng. Đổi ra Kelvin rồi chia $T_2$ cho $T_1$.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Bình khí nén, bình gas để ngoài nắng:</strong> nhiệt độ tăng làm áp suất tăng — để chỗ râm, có van an toàn.</li>
+<li><strong>Nồi áp suất:</strong> thể tích gần như không đổi, hơi nóng làm áp suất tăng nên nước sôi trên 100 °C, thức ăn nhanh chín.</li>
+<li><strong>Lốp xe chạy đường dài:</strong> lốp nóng lên, áp suất tăng; phải đo áp suất khi lốp đã nguội.</li>
+<li><strong>Bơm xe đạp:</strong> vừa nén thể tích vừa làm khí nóng lên — thân bơm ấm lên.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: bình kín chứa khí ở $27\ ^\circ\text{C}$, $p = 2{,}0.10^5\ \text{Pa}$. Nung lên $87\ ^\circ\text{C}$. Tính $p$.</summary>
+<p>Đẳng tích, với $T_1 = 300\ \text{K}$ và $T_2 = 360\ \text{K}$: $p_2 = 2{,}0.10^5 \times 360/300 = 2{,}4.10^5\ \text{Pa}$.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Khá: cùng một lượng khí, hai bình thể tích $V_1 \lt V_2$. Vẽ hai đường đẳng tích trên đồ thị $p$ – $T$. Đường nào nằm trên?</summary>
+<p>Đường ứng với $V_1$ (bình nhỏ hơn) nằm trên và dốc hơn. Lí do: ở cùng nhiệt độ $T$, bình chật hơn cho áp suất lớn hơn; mà cả hai đường đều là đường thẳng kéo dài qua gốc toạ độ nên đường có $p$ lớn hơn ở mọi $T$ phải nằm trên.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thách đấu: bình khí nén 40 lít có van an toàn mở ở $8{,}0.10^5\ \text{Pa}$. Buổi sáng $27\ ^\circ\text{C}$, áp suất $6{,}0.10^5\ \text{Pa}$. Nắng lên tới nhiệt độ nào thì van mở?</summary>
+<p>Van mở khi $p_2 = 8{,}0.10^5\ \text{Pa}$. Quá trình đẳng tích nên $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$, suy ra $T_2 = T_1 \times \dfrac{p_2}{p_1} = 300 \times \dfrac{8{,}0}{6{,}0} = 400\ \text{K}$, tức $t_2 = 400 - 273 = 127\ ^\circ\text{C}$. Kết luận: $127\ ^\circ\text{C}$ là <em>ngưỡng van an toàn mở</em> — biên thiết kế, không phải nhiệt độ nắng ngoài trời. Nắng thật chỉ làm khí nóng thêm vài chục độ, nhưng áp suất đã tăng theo đúng tỉ số Kelvin: chỉ cần nắng làm nhiệt độ khí nhích lên là áp suất nhích theo, nên van an toàn và chỗ râm là bắt buộc — và phải kiểm tra van trước mùa nắng.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Ba thông số:</strong> $p$, $V$, $T$ (Kelvin) xác định một trạng thái.</li>
+<li><strong>Phương trình trạng thái:</strong> $p_1V_1/T_1 = p_2V_2/T_2$ — ba chữ, một hằng số.</li>
+<li><strong>Đẳng tích:</strong> $V$ không đổi · $p$ tỉ lệ thuận $T$ · $p_1/T_1 = p_2/T_2$.</li>
+<li><strong>Ba định luật:</strong> giữ $T$ → Boyle · giữ $p$ → Charles · giữ $V$ → Gay-Lussac.</li>
+<li><strong>Clapeyron – Mendeleev:</strong> $pV = nRT$, $R = 8{,}31\ \text{J/(mol·K)}$, $n = m/M$.</li>
+<li><strong>Điều kiện áp dụng:</strong> một lượng khí xác định — không bơm thêm, không xì bớt.</li>
+<li><strong>Đọc đề:</strong> gặp chữ "bình kín", "thể tích không đổi" thì nghĩ ngay tới $p/T$; gặp °C thì đổi ra Kelvin trước khi chia.</li>
+</ul>
+</div>

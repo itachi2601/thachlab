@@ -210,11 +210,26 @@ def check_overflow(cdp, page, width=375):
 
 
 
-def save_webp(png: pathlib.Path, out: pathlib.Path, quality=86, crop=True, trim_x=True, warn_cut=True):
+def save_webp(png: pathlib.Path, out: pathlib.Path, quality=86, crop=True, trim_x=True, warn_cut=True,
+              split_h=5000):
     im = Image.open(png)
     cut = False
     if crop:
         im, cut = crop_bg(im, trim_x=trim_x)
+    # Mục quá dài (thường là mục II nhiều mục con, chụp ở scale=2) thì CẮT THÀNH NHIỀU KHÚC
+    # sec-2a/sec-2b… — ảnh cao cả chục nghìn px không ai soi được, mà WebP/VP8 còn cứng trần 16 383 px.
+    for stale in list(out.parent.glob(f"{out.stem}[a-z]{out.suffix}")):   # khúc của lần chạy trước
+        stale.unlink()
+    if im.height > split_h:
+        out.unlink(missing_ok=True)                                      # bản không cắt khúc cũ
+        n = (im.height + split_h - 1) // split_h
+        for i in range(n):
+            part = im.crop((0, i * split_h, im.width, min(im.height, (i + 1) * split_h)))
+            outp = out.with_name(f"{out.stem}{chr(97 + i)}{out.suffix}")
+            part.save(outp, "WEBP", quality=quality, method=6)
+            print(f"{outp.name:26s} {part.width}x{part.height}  {outp.stat().st_size/1024:5.0f} KB"
+                  + f"  (mục cao {im.height} px → khúc {i + 1}/{n})")
+        return
     im.save(out, "WEBP", quality=quality, method=6)
     print(f"{out.name:26s} {im.width}x{im.height}  {out.stat().st_size/1024:5.0f} KB"
           + ("  ⚠ CÓ THỂ BỊ CẮT ĐÁY" if (cut and warn_cut) else ""))

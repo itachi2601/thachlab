@@ -1,0 +1,406 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Phát biểu <strong>mô hình động học phân tử</strong> của khí lí tưởng và giải thích vì sao khí gây <strong>áp suất</strong> lên thành bình.</li>
+<li>Viết công thức áp suất do một phân tử và do $N$ phân tử; nhớ $\overline{E_d} = \dfrac{3}{2}kT$ và hằng số Boltzmann $k = 1{,}38\cdot10^{-23}$ J/K.</li>
+<li>Giải thích vì sao <strong>nhiệt độ tuyệt đối tỉ lệ thuận với động năng trung bình</strong>.</li>
+<li>Cuối bài, em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 8 câu tự kiểm tra.</li>
+</ul>
+</div>
+
+<h3>I. Mở bài: quả bóng bàn bẹp và cốc nước nóng</h3>
+
+<p>Quả bóng bàn bị giẫm bẹp. Nhúng vào cốc nước nóng khoảng $80\ ^\circ\text{C}$, vỏ bóng phồng trở lại. Nước nóng không chạm mặt trong vỏ bóng — vậy cái gì đã đẩy vỏ bóng ra?</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Vì sao áp suất khí trong bóng tăng khi bóng gặp nước nóng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q0" id="tl9-q0a"><label for="tl9-q0a" class="tl-opt tl-no">A. Phân tử khí nặng lên vì nóng nên va chạm mạnh hơn.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0b"><label for="tl9-q0b" class="tl-opt tl-ok">B. Phân tử bay nhanh hơn: mỗi va chạm truyền động lượng lớn hơn, lại thêm nhiều va chạm.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0c"><label for="tl9-q0c" class="tl-opt tl-no">C. Hơi nước nóng thấm qua vỏ bóng, làm số phân tử khí tăng lên.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0d"><label for="tl9-q0d" class="tl-opt tl-no">D. Vỏ bóng gặp nóng mềm ra và tự phồng lại.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nung nóng thì phân tử bay nhanh hơn, nên mỗi va chạm truyền động lượng lớn hơn và số va chạm mỗi giây cũng nhiều hơn — hai lí do cộng lại làm áp suất tăng, đẩy vỏ bóng phồng lại.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nóng lên không làm phân tử nặng thêm; vỏ bóng bàn kín nên hơi nước không lọt vào; còn vỏ bóng chỉ mềm ra thì không tự phồng. Chỗ thay đổi thật sự là <em>tốc độ</em> của phân tử. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Mô hình khí lí tưởng nhìn từ thành bình</h4>
+
+<p><strong>🔑 Phân tử nhỏ · Hỗn loạn · Va chạm đàn hồi</strong></p>
+
+<ul>
+<li>Chất khí gồm <strong>rất nhiều phân tử</strong>, kích thước rất nhỏ so với khoảng cách giữa chúng; chúng <strong>chuyển động hỗn loạn, không ngừng</strong> và giữa hai va chạm thì bay thẳng đều.</li>
+<li>Chưa va chạm, lực tương tác giữa các phân tử rất yếu nên <strong>bỏ qua</strong> — mô hình khí lí tưởng.</li>
+<li>Chạm thành, phân tử <strong>truyền động lượng</strong> cho thành rồi bật ngược; va chạm hoàn toàn đàn hồi.</li>
+<li>Cộng vô số va chạm mỗi giây thành lực đẩy đều lên thành — đó là <strong>áp suất khí</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-apsuatdongnang-01">
+<p class="tl-label">🔬 Thí nghiệm: hạt đập vào thành hộp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cho một nắm gạo vào hộp nhựa trong có nắp, lắc mạnh rồi áp tai vào thành hộp.</li>
+<li><strong>Quan sát:</strong> từng hạt đập lộp bộp vào thành; lắc càng mạnh thì tiếng đập càng dày.</li>
+<li><strong>Rút ra:</strong> một hạt đập một cái, nhưng vô số hạt đập liên tục thành lực đều lên thành — như phân tử khí.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Trong mô hình khí lí tưởng, điều nào mô tả đúng một phân tử khí?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q1" id="tl9-q1a"><label for="tl9-q1a" class="tl-opt tl-no">A. Đứng yên ở đáy bình và đè lên thành như một vật nặng.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1b"><label for="tl9-q1b" class="tl-opt tl-ok">B. Giữa hai va chạm thì bay thẳng đều; chạm thành thì truyền động lượng rồi bật ra.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1c"><label for="tl9-q1c" class="tl-opt tl-no">C. Bị các phân tử xung quanh hút mạnh nên dính chặt vào thành.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1d"><label for="tl9-q1d" class="tl-opt tl-no">D. Có kích thước lớn, chiếm gần hết thể tích bình.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mô hình bỏ qua kích thước phân tử và lực tương tác khi chưa va chạm, nên giữa hai va chạm phân tử bay thẳng đều; va chạm với thành là đàn hồi và truyền động lượng cho thành.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu phân tử đứng yên thì đã không có va chạm nào và bình không có áp suất. Mô hình cũng bỏ qua kích thước phân tử và lực hút giữa chúng. Đọc lại gạch đầu dòng đầu rồi chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>2. Một phân tử va chạm vào thành bình</h4>
+
+<p><strong>🔑 Đổi chiều · Truyền cho thành 2mv</strong></p>
+
+<ul>
+<li>Bình lập phương cạnh $l$, thể tích $V = l^3$. Phân tử khối lượng $m$ bay song song $Ox$ tốc độ $v$, đập vuông góc vào thành.</li>
+<li>Trước va chạm động lượng là $+mv$, sau là $-mv$ (bật ngược, tốc độ vẫn $v$). Độ biến thiên: $\left|\Delta p\right| = 2mv$.</li>
+<li>Mỗi vòng sang thành đối diện rồi quay lại mất $\Delta t = \dfrac{2l}{v}$, nên mỗi giây có $\dfrac{v}{2l}$ va chạm.</li>
+<li>Lực trung bình lên thành: $F = \dfrac{2mv}{\Delta t} = \dfrac{mv^2}{l}$; chia cho $S = l^2$ được áp suất do <strong>một</strong> phân tử:</li>
+</ul>
+
+<p>$$p_m = \frac{F}{S} = \frac{mv^2}{l^3} = \frac{m}{V}v^2$$</p>
+
+<p>Ví dụ: bóng tennis ném vào tường bật lại gần như cùng tốc độ; bóng đổi chiều nên động lượng biến thiên $2mv$.</p>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Phân tử khối lượng $m$ bay vuông góc vào thành với tốc độ $v$, va chạm đàn hồi rồi bật ngược. Độ lớn độ biến thiên động lượng là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q2" id="tl9-q2a"><label for="tl9-q2a" class="tl-opt tl-no">A. $0$, vì tốc độ của phân tử không đổi.</label>
+<input type="radio" name="tl9-q2" id="tl9-q2b"><label for="tl9-q2b" class="tl-opt tl-no">B. $mv$.</label>
+<input type="radio" name="tl9-q2" id="tl9-q2c"><label for="tl9-q2c" class="tl-opt tl-ok">C. $2mv$.</label>
+<input type="radio" name="tl9-q2" id="tl9-q2d"><label for="tl9-q2d" class="tl-opt tl-no">D. $mv/2$.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Động lượng là vectơ: nó đổi chiều từ $+mv$ thành $-mv$, nên độ lớn biến thiên là $\left|-mv - (+mv)\right| = 2mv$. Thành bình nhận đúng $2mv$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tốc độ không đổi nhưng động lượng đổi chiều — đây là chỗ hay bị bỏ sót. Lấy hiệu hai vectơ: $-mv - (+mv) = -2mv$, độ lớn $2mv$. Phương án $mv$ là quên mất lượt bật ngược trở lại. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>3. $N$ phân tử: công thức áp suất của khí</h4>
+
+<p><strong>🔑 Ba phương bình đẳng · Hệ số 1/3</strong></p>
+
+<ul>
+<li>Chỉ thành phần tốc độ <em>vuông góc</em> với thành mới gây áp suất; ba phương $Ox, Oy, Oz$ bình đẳng nên mỗi phương góp $\dfrac{1}{3}$.</li>
+<li>Phải dùng <strong>trung bình của các bình phương tốc độ</strong>: $\overline{v^2} = \dfrac{v_1^2 + v_2^2 + \dots + v_N^2}{N}$.</li>
+<li>Lấy trung bình theo mọi phân tử: $\overline{p_m}=\dfrac{m}{V}\overline{v^2}$, rồi $p=\dfrac{N}{3}\overline{p_m}=\dfrac{1}{3}\dfrac{Nm}{V}\overline{v^2}$.</li>
+<li>Cộng đóng góp của $N$ phân tử:</li>
+</ul>
+
+<p>$$p = \frac{1}{3}\cdot\frac{Nm}{V}\cdot\overline{v^2} = \frac{1}{3}\rho\,\overline{v^2}$$</p>
+
+<p>$$p = \frac{1}{3}\mu m\,\overline{v^2} = \frac{2}{3}\mu\,\overline{E_d}$$</p>
+
+<ul>
+<li>$\mu = \dfrac{N}{V}$ là <strong>mật độ phân tử</strong> (1/m³); $\rho = \mu m$ là <strong>khối lượng riêng</strong> (kg/m³).</li>
+<li>$\overline{E_d} = \dfrac{m\overline{v^2}}{2}$ là <strong>động năng tịnh tiến trung bình</strong>.</li>
+<li>Áp suất do <strong>va chạm liên tục</strong>, không do phân tử "đứng đè": tăng $\mu$ hoặc tăng $\overline{v^2}$ thì $p$ tăng.</li>
+<li>Ví dụ: bình $2{,}0$ lít chứa $6{,}02\cdot10^{22}$ phân tử N₂ ($m = 4{,}65\cdot10^{-26}$ kg) với $\overline{v^2} = 2{,}5\cdot10^5\ \text{m}^2/\text{s}^2$ cho $p \approx 1{,}2\cdot10^5\ \text{Pa}$.</li>
+</ul>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Trong công thức $p = \dfrac{2}{3}\mu\overline{E_d}$, đại lượng $\mu$ là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q3" id="tl9-q3a"><label for="tl9-q3a" class="tl-opt tl-no">A. Khối lượng riêng của khí, đơn vị kg/m³.</label>
+<input type="radio" name="tl9-q3" id="tl9-q3b"><label for="tl9-q3b" class="tl-opt tl-ok">B. Mật độ phân tử — số phân tử trong một mét khối.</label>
+<input type="radio" name="tl9-q3" id="tl9-q3c"><label for="tl9-q3c" class="tl-opt tl-no">C. Khối lượng của một phân tử, đơn vị kg.</label>
+<input type="radio" name="tl9-q3" id="tl9-q3d"><label for="tl9-q3d" class="tl-opt tl-no">D. Số mol khí chứa trong bình.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\mu = \dfrac{N}{V}$ đếm số phân tử trong một mét khối. Nhân thêm khối lượng một phân tử mới ra khối lượng riêng: $\rho = \mu m$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai ký hiệu này chỉ khác nhau một chữ $m$: $\mu = \dfrac{N}{V}$ là mật độ phân tử (1/m³), còn $\rho = \dfrac{Nm}{V} = \mu m$ mới là khối lượng riêng (kg/m³). Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>4. Động năng tịnh tiến trung bình và nhiệt độ tuyệt đối</h4>
+
+<p><strong>🔑 Ê-đờ bằng 3/2 kT · Chỉ phụ thuộc T</strong></p>
+
+<ul>
+<li>Ở mục 3: $p = \dfrac{2}{3}\mu\overline{E_d}$. Phương trình trạng thái (bài trước) cho $p = \dfrac{N}{V}kT = \mu kT$.</li>
+<li>So hai biểu thức của $p$:</li>
+</ul>
+
+<p>$$\overline{E_d} = \frac{m\overline{v^2}}{2} = \frac{3}{2}kT = \frac{3}{2}\frac{R}{N_A}T$$</p>
+
+<ul>
+<li>$k = \dfrac{R}{N_A} = 1{,}38\cdot10^{-23}\ \text{J/K}$ là <strong>hằng số Boltzmann</strong>; $R = 8{,}31\ \text{J/(mol·K)}$.</li>
+<li>Hệ số $\dfrac{3}{2}$ ứng với <strong>ba phương tịnh tiến</strong>, mỗi phương góp $\dfrac{1}{2}kT$.</li>
+<li><strong>Chỉ phụ thuộc $T$:</strong> mọi khí ở cùng nhiệt độ có cùng $\overline{E_d}$. Khối lượng chỉ quyết định tốc độ: $v_{rms} = \sqrt{\dfrac{3kT}{m}}$.</li>
+<li><strong>Kelvin bắt buộc:</strong> hệ thức tỉ lệ thuận phải dùng nhiệt độ tuyệt đối — nhiệt độ tuyệt đối là số đo động năng trung bình của phân tử.</li>
+<li>Ví dụ: ở $300\ \text{K}$, $\overline{E_d} \approx 6{,}2\cdot10^{-21}\ \text{J}$, không cần biết là khí gì.</li>
+</ul>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Ở $27\ ^\circ\text{C}$, động năng tịnh tiến trung bình của một phân tử xấp xỉ</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q4" id="tl9-q4a"><label for="tl9-q4a" class="tl-opt tl-ok">A. $6{,}2\cdot10^{-21}$ J.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4b"><label for="tl9-q4b" class="tl-opt tl-no">B. $4{,}1\cdot10^{-21}$ J.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4c"><label for="tl9-q4c" class="tl-opt tl-no">C. $5{,}6\cdot10^{-22}$ J.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4d"><label for="tl9-q4d" class="tl-opt tl-no">D. Không xác định được, vì còn cần khối lượng phân tử.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\overline{E_d} = \dfrac{3}{2}kT$ chỉ phụ thuộc nhiệt độ, không cần khối lượng phân tử: $1{,}5 \times 1{,}38\cdot10^{-23} \times 300 \approx 6{,}2\cdot10^{-21}\ \text{J}$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi nằm ở ba phương án kia: B là quên hệ số $\dfrac{3}{2}$, C là dùng số 27 như thể đó là nhiệt độ Kelvin, còn D nhầm rằng phải biết khí gì — thực ra $\overline{E_d}$ chỉ phụ thuộc $T$. Nhớ mẹo: <em>đổi sang Kelvin trước, rồi nhân $\dfrac{3}{2}kT$</em>. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>5. Thực nghiệm: đo áp suất khí theo nhiệt độ</h4>
+
+<p><strong>🔑 V không đổi · p tỉ lệ với T</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-apsuatdongnang-02">
+<p class="tl-label">🔬 Thí nghiệm đo: áp suất khí trong bình kín khi đổi nhiệt độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối bình kim loại kín ($0{,}25$ lít) với áp kế điện tử, ngâm vào nồi nước; đun dần và đọc áp suất ở $20$, $40$, $60$, $80$, $100\ ^\circ\text{C}$, chờ cho cân bằng nhiệt.</li>
+<li><strong>Quan sát:</strong> áp suất tăng đều theo nhiệt độ (bảng dưới); chia mỗi áp suất cho nhiệt độ tuyệt đối đều được khoảng $0{,}342\ \text{kPa/K}$.</li>
+<li><strong>Rút ra:</strong> với $V$ và lượng khí không đổi thì $\dfrac{p}{T}$ không đổi, tức $p$ tỉ lệ thuận $T$. Vì $p = \dfrac{2}{3}\mu\overline{E_d}$ với $\mu$ không đổi, $\overline{E_d}$ cũng tỉ lệ thuận $T$.</li>
+</ol>
+</div>
+
+<table class="tl-table">
+<thead>
+<tr><th>Nhiệt độ T (K)</th><th>Áp suất p (kPa)</th></tr>
+</thead>
+<tbody>
+<tr><td>293</td><td>100,2</td></tr>
+<tr><td>313</td><td>107,1</td></tr>
+<tr><td>333</td><td>113,9</td></tr>
+<tr><td>353</td><td>120,5</td></tr>
+<tr><td>373</td><td>127,6</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details">
+<summary>🤏 Sai số: vì sao tỉ số p/T không giống hệt nhau ở năm lần đọc?</summary>
+<p>Chia ra được $0{,}3420$; $0{,}3422$; $0{,}3420$; $0{,}3414$; $0{,}3421\ \text{kPa/K}$ — dao động quanh $0{,}342$. Ba nguồn lệch: áp kế có sai số $\pm0{,}5\ \text{kPa}$ (khoảng $0{,}5\%$); nhiệt kế có sai số $\pm0{,}5\ ^\circ\text{C}$; và bình kim loại <em>giãn nở</em> chút ít khi nóng nên thể tích không còn đúng $0{,}25$ lít, làm áp suất đo được thấp hơn tính toán. Thêm nữa, nếu chưa chờ đủ lâu, nhiệt độ khí trong bình còn thấp hơn nhiệt độ nước. Vì vậy kết quả đo bao giờ cũng phải ghi kèm sai số: $\dfrac{p}{T} = 0{,}342 \pm 0{,}002\ \text{kPa/K}$.</p>
+</details>
+
+<h3>III. Hai cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "nhiệt độ gấp đôi thì động năng gấp đôi"</h4>
+
+<p>Nhiệt độ trong $\overline{E_d} = \frac{3}{2}kT$ là <strong>nhiệt độ tuyệt đối</strong>. Lấy $40 : 20 = 2$ rồi kết luận động năng gấp đôi là sai vì thang Celsius không có gốc 0 thật.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Nhiệt độ Celsius</th><th>Nhiệt độ tuyệt đối</th></tr>
+</thead>
+<tbody>
+<tr><td>$0\ ^\circ\text{C}$ trông như "không còn nóng"</td><td>$273\ \text{K}$ — vẫn còn nguyên động năng phân tử</td></tr>
+<tr><td>$20\ ^\circ\text{C} \to 40\ ^\circ\text{C}$: trông như gấp đôi</td><td>$293\ \text{K} \to 313\ \text{K}$: chỉ tăng $1{,}07$ lần</td></tr>
+<tr><td>Không dùng được trong hệ thức tỉ lệ thuận</td><td>$\overline{E_d} = \frac{3}{2}kT$ tỉ lệ thuận với $T$</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details">
+<summary>👀 Bấm xem: $20\ ^\circ\text{C}$ lên $40\ ^\circ\text{C}$ thì động năng trung bình tăng mấy lần?</summary>
+<p>Tăng $\dfrac{313}{293} \approx 1{,}07$ lần, tức khoảng $7\%$ — chứ không phải gấp đôi. Nhìn vào thang Kelvin mới thấy đúng mức tăng.</p>
+</details>
+
+<h4>Bẫy 2: "phân tử nặng hơn thì động năng trung bình lớn hơn"</h4>
+
+<p>Ở cùng nhiệt độ, động năng trung bình của mọi chất khí <strong>bằng nhau</strong>; khối lượng chỉ quyết định phân tử bay nhanh hay chậm.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Ở cùng $300\ \text{K}$</th><th>Điều thực sự xảy ra</th></tr>
+</thead>
+<tbody>
+<tr><td>Động năng trung bình của H₂ và O₂</td><td>bằng nhau, chỉ phụ thuộc $T$</td></tr>
+<tr><td>Tốc độ căn quân phương của H₂</td><td>khoảng $1930$ m/s</td></tr>
+<tr><td>Tốc độ căn quân phương của O₂</td><td>khoảng $484$ m/s</td></tr>
+<tr><td>Kết luận</td><td>cùng động năng, khác tốc độ</td></tr>
+</tbody>
+</table>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl9-q5c" value="chac"> Chắc</label> <label><input type="radio" name="tl9-q5c" value="khong"> Không chắc</label></p>
+<p><strong>Câu 5.</strong> Hai bình kín cùng thể tích, cùng số phân tử, cùng ở $27\ ^\circ\text{C}$: bình 1 là H₂, bình 2 là O₂. So sánh áp suất:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q5" id="tl9-q5a"><label for="tl9-q5a" class="tl-opt tl-no">A. Bình O₂ lớn hơn vì phân tử O₂ nặng hơn.</label>
+<input type="radio" name="tl9-q5" id="tl9-q5b"><label for="tl9-q5b" class="tl-opt tl-no">B. Bình H₂ lớn hơn vì phân tử H₂ nhanh hơn.</label>
+<input type="radio" name="tl9-q5" id="tl9-q5c"><label for="tl9-q5c" class="tl-opt tl-ok">C. Hai bình bằng nhau, vì cùng $N$, $V$, $T$ nên $m\overline{v^2}$ như nhau.</label>
+<input type="radio" name="tl9-q5" id="tl9-q5d"><label for="tl9-q5d" class="tl-opt tl-no">D. Không so sánh được vì hai khí khác khối lượng phân tử.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ở cùng nhiệt độ, hai khí có cùng $\overline{E_d}$, nghĩa là $m\overline{v^2}$ bằng nhau. Cùng $N$ và $V$ nữa thì $p = \dfrac{1}{3}\mu m\overline{v^2}$ bằng nhau: H₂ nhẹ nên bay nhanh hơn, vừa đủ bù cho khối lượng nhỏ hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Khí nặng hơn không có nghĩa là va chạm mạnh hơn: ở cùng nhiệt độ, tích $m\overline{v^2}$ của mọi khí như nhau, nên phân tử nặng bù lại bằng cách bay chậm hơn. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+
+<details class="tl-details">
+<summary>1. Mô hình động học phân tử nói gì, và vì sao có áp suất?</summary>
+<p><strong>Phân tử nhỏ · Hỗn loạn · Thẳng đều giữa hai va chạm · Va chạm đàn hồi với thành.</strong> Mỗi va chạm, phân tử truyền động lượng cho thành rồi bật ngược; vô số va chạm mỗi giây cộng thành lực đẩy đều lên thành — đó là áp suất.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Vì sao độ biến thiên động lượng khi va chạm vuông góc với thành là $2mv$?</summary>
+<p><strong>Động lượng là vectơ.</strong> Phân tử đổi chiều: từ $+mv$ thành $-mv$. Hiệu hai vectơ có độ lớn $\left|-mv - (+mv)\right| = 2mv$. Nếu chỉ nhìn "tốc độ không đổi" thì dễ kết luận sai là $0$.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Viết công thức áp suất do một phân tử và do $N$ phân tử; nêu tên, đơn vị các ký hiệu.</summary>
+<p><strong>Một phân tử:</strong> $p_m = \dfrac{m}{V}v^2$. <strong>$N$ phân tử:</strong> $p = \dfrac{1}{3}\dfrac{Nm}{V}\overline{v^2} = \dfrac{1}{3}\rho\overline{v^2} = \dfrac{2}{3}\mu\overline{E_d}$. Ở đây $m$ (kg) là khối lượng một phân tử, $V$ (m³) thể tích bình, $\overline{v^2}$ (m²/s²) trung bình bình phương tốc độ, $\mu = \dfrac{N}{V}$ (1/m³) mật độ phân tử, $\rho = \mu m$ (kg/m³) khối lượng riêng, $\overline{E_d}$ (J) động năng tịnh tiến trung bình.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Động năng tịnh tiến trung bình liên hệ với nhiệt độ thế nào? Hằng số Boltzmann bằng bao nhiêu?</summary>
+<p><strong>$\overline{E_d} = \dfrac{m\overline{v^2}}{2} = \dfrac{3}{2}kT$</strong> — tỉ lệ thuận với nhiệt độ tuyệt đối. Hằng số Boltzmann $k = \dfrac{R}{N_A} = 1{,}38\cdot10^{-23}\ \text{J/K}$. Hệ số $\dfrac{3}{2}$ ứng với ba phương tịnh tiến, mỗi phương góp $\dfrac{1}{2}kT$.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Cùng nhiệt độ, khí H₂ và khí O₂ khác nhau thế nào về động năng và tốc độ?</summary>
+<p><strong>Cùng động năng, khác tốc độ.</strong> $\overline{E_d}$ chỉ phụ thuộc $T$ nên hai khí bằng nhau. Nhưng $v_{rms} = \sqrt{\dfrac{3kT}{m}}$ nên khí nhẹ hơn bay nhanh hơn; H₂ nhẹ hơn O₂ 16 lần nên tốc độ lớn hơn $\sqrt{16} = 4$ lần.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Vì sao công thức $\overline{E_d} = \dfrac{3}{2}kT$ bắt buộc dùng Kelvin mà không dùng Celsius?</summary>
+<p><strong>Vì đó là hệ thức tỉ lệ thuận, phải có gốc 0 thật.</strong> $0\ \text{K}$ ứng với mức động năng chuyển động tịnh tiến thấp nhất; còn $0\ ^\circ\text{C}$ vẫn còn rất nhiều động năng.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: bình khí nitơ trong phòng thí nghiệm</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Bình kín dung tích $V = 3{,}0$ lít chứa $n = 0{,}20$ mol khí nitơ ở $27\ ^\circ\text{C}$. Cho $M = 28\ \text{g/mol}$, $N_A = 6{,}02\cdot10^{23}\ \text{mol}^{-1}$, $k = 1{,}38\cdot10^{-23}\ \text{J/K}$, $R = 8{,}31\ \text{J/(mol·K)}$.</p>
+<p>a) Tính mật độ phân tử $\mu$ và động năng tịnh tiến trung bình $\overline{E_d}$.</p>
+<p>b) Tính tốc độ căn quân phương $v_{rms}$.</p>
+<p>c) Tính áp suất theo hai cách: từ $\overline{E_d}$ và từ phương trình trạng thái.</p>
+<p>d) Nung lên $87\ ^\circ\text{C}$ (thể tích không đổi): áp suất và động năng trung bình tăng mấy lần?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"bình kín 3,0 lít"</td><td>$V = 3{,}0\cdot10^{-3}\ \text{m}^3$</td><td>đổi lít ra m³</td></tr>
+<tr><td>"0,20 mol N₂"</td><td>$N = nN_A \approx 1{,}2\cdot10^{23}$</td><td>mật độ $\mu = N/V$</td></tr>
+<tr><td>"27 °C"</td><td>$T = 300\ \text{K}$</td><td>phải dùng Kelvin</td></tr>
+<tr><td>"M = 28 g/mol"</td><td>$m = M/N_A$</td><td>$\overline{E_d} = \dfrac{3}{2}kT$</td></tr>
+<tr><td>"câu c: áp suất"</td><td>$p = \dfrac{2}{3}\mu\overline{E_d}$; $p = \mu kT$</td><td>hai đường phải khớp nhau</td></tr>
+<tr><td>"nung lên 87 °C"</td><td>$T' = 360\ \text{K}$; $T'/T = 1{,}2$</td><td>$p$ tỉ lệ $T$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Số phân tử: $N = nN_A = 0{,}20 \times 6{,}02\cdot10^{23} = 1{,}204\cdot10^{23}$ phân tử. Mật độ: $\mu = \dfrac{N}{V} = \dfrac{1{,}204\cdot10^{23}}{3{,}0\cdot10^{-3}} \approx 4{,}0\cdot10^{25}\ \text{m}^{-3}$.</li>
+<li>Nhiệt độ tuyệt đối: $T = 27 + 273 = 300\ \text{K}$. Động năng tịnh tiến trung bình: $\overline{E_d} = \dfrac{3}{2}kT = 1{,}5 \times 1{,}38\cdot10^{-23} \times 300 \approx 6{,}2\cdot10^{-21}\ \text{J}$.</li>
+<li>Khối lượng một phân tử: $m = \dfrac{M}{N_A} \approx 4{,}65\cdot10^{-26}\ \text{kg}$. Từ $\overline{E_d} = \dfrac{m\overline{v^2}}{2}$ suy ra $\overline{v^2} = \dfrac{2\overline{E_d}}{m} \approx 2{,}67\cdot10^{5}\ \text{m}^2/\text{s}^2$, nên $v_{rms} \approx 5{,}2\cdot10^{2}\ \text{m/s}$.</li>
+<li>Áp suất theo động năng: $p = \dfrac{2}{3}\mu\overline{E_d} = \dfrac{2}{3} \times 4{,}0\cdot10^{25} \times 6{,}2\cdot10^{-21} \approx 1{,}66\cdot10^{5}\ \text{Pa}$.</li>
+<li>Áp suất theo phương trình trạng thái: $p = \dfrac{nRT}{V} = \dfrac{0{,}20 \times 8{,}31 \times 300}{3{,}0\cdot10^{-3}} \approx 1{,}66\cdot10^{5}\ \text{Pa}$ — khớp với kết quả trên.</li>
+<li>Câu d: $T' = 87 + 273 = 360\ \text{K}$ và $\dfrac{T'}{T} = \dfrac{360}{300} = 1{,}2$. Áp suất và động năng trung bình đều tăng $1{,}2$ lần: $p' \approx 2{,}0\cdot10^{5}\ \text{Pa}$, $\overline{E_d}' \approx 7{,}4\cdot10^{-21}\ \text{J}$. Riêng tốc độ chỉ tăng $\sqrt{1{,}2} \approx 1{,}1$ lần.</li>
+<li>Kiểm tra kết quả: $p = \mu kT = 4{,}0\cdot10^{25} \times 1{,}38\cdot10^{-23} \times 300 \approx 1{,}66\cdot10^{5}\ \text{Pa}$ — ba đường tính gặp nhau ở khoảng $1{,}6$ atm, hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Vẫn bình đó, thay khí nitơ bằng $0{,}20$ mol heli (He, $M = 4\ \text{g/mol}$) ở $27\ ^\circ\text{C}$.</p>
+<ol class="tl-steps">
+<li>Bước 1: động năng tịnh tiến trung bình vẫn là $\overline{E_d} \approx 6{,}2\cdot10^{-21}\ \text{J}$, vì chỉ phụ thuộc nhiệt độ.</li>
+<li><strong>Em điền:</strong> khối lượng một phân tử heli $m_{He} = \;?$</li>
+<li><strong>Em điền:</strong> tốc độ căn quân phương $v_{rms} = \;?$ — lớn hơn hay nhỏ hơn của N₂?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2–3</summary>
+<p>$m_{He} = \dfrac{0{,}004}{6{,}02\cdot10^{23}} \approx 6{,}64\cdot10^{-27}\ \text{kg}$. Từ $\overline{E_d} = \dfrac{m\overline{v^2}}{2}$: $\overline{v^2} = \dfrac{2 \times 6{,}2\cdot10^{-21}}{6{,}64\cdot10^{-27}} \approx 1{,}87\cdot10^{6}\ \text{m}^2/\text{s}^2$, nên $v_{rms} \approx 1{,}37\cdot10^{3}\ \text{m/s}$ — lớn hơn N₂ (khoảng $5{,}2\cdot10^{2}$ m/s) đúng $\sqrt{28/4} \approx 2{,}6$ lần. Cùng nhiệt độ nên cùng động năng; phân tử nhẹ hơn thì bay nhanh hơn.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p><strong>Câu 6.</strong> Bình kín $3{,}0$ lít chứa $0{,}20$ mol N₂. Mật độ phân tử là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q6" id="tl9-q6a"><label for="tl9-q6a" class="tl-opt tl-ok">A. $4{,}0\cdot10^{25}\ \text{m}^{-3}$</label>
+<input type="radio" name="tl9-q6" id="tl9-q6b"><label for="tl9-q6b" class="tl-opt tl-no">B. $4{,}0\cdot10^{22}\ \text{m}^{-3}$</label>
+<input type="radio" name="tl9-q6" id="tl9-q6c"><label for="tl9-q6c" class="tl-opt tl-no">C. $6{,}0\cdot10^{23}\ \text{m}^{-3}$</label>
+<input type="radio" name="tl9-q6" id="tl9-q6d"><label for="tl9-q6d" class="tl-opt tl-no">D. $0{,}067\ \text{m}^{-3}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\mu = \dfrac{nN_A}{V} = \dfrac{0{,}20 \times 6{,}02\cdot10^{23}}{3{,}0\cdot10^{-3}} \approx 4{,}0\cdot10^{25}\ \text{m}^{-3}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai lỗi hay gặp nằm ở B và D: B quên đổi $3{,}0$ lít $= 3{,}0\cdot10^{-3}\ \text{m}^3$, còn D lấy số mol chia thể tích thay vì số phân tử chia thể tích. $\mu$ đếm <em>phân tử</em> trong một mét khối. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Biến thể: đổi nhiệt độ</p>
+<p><strong>Câu 7.</strong> Cũng bình đó, nung từ $27\ ^\circ\text{C}$ lên $327\ ^\circ\text{C}$ (V không đổi). Động năng tịnh tiến trung bình</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q7" id="tl9-q7a"><label for="tl9-q7a" class="tl-opt tl-ok">A. Tăng 2 lần, vì nhiệt độ tuyệt đối tăng từ 300 K lên 600 K.</label>
+<input type="radio" name="tl9-q7" id="tl9-q7b"><label for="tl9-q7b" class="tl-opt tl-no">B. Tăng 12,1 lần, vì $327 : 27 = 12{,}1$.</label>
+<input type="radio" name="tl9-q7" id="tl9-q7c"><label for="tl9-q7c" class="tl-opt tl-no">C. Không đổi, vì thể tích bình không đổi.</label>
+<input type="radio" name="tl9-q7" id="tl9-q7d"><label for="tl9-q7d" class="tl-opt tl-no">D. Tăng 4 lần, vì động năng tỉ lệ với bình phương nhiệt độ.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đổi sang Kelvin: $T_1 = 300\ \text{K}$, $T_2 = 600\ \text{K}$, tỉ số $2$. Vì $\overline{E_d} = \dfrac{3}{2}kT$ tỉ lệ thuận với $T$, động năng tăng đúng 2 lần.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi: B lấy tỉ số hai giá trị Celsius; C nhầm rằng thể tích không đổi thì động năng không đổi, trong khi $\overline{E_d}$ chỉ phụ thuộc $T$; D nhớ nhầm thành $T^2$. Mẹo: <em>đổi Kelvin trước, rồi mới lấy tỉ số</em>. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Bơm lốp xe:</strong> mỗi nhát bơm dồn thêm phân tử, mật độ $\mu$ tăng nên $p$ tăng; để ngoài nắng, lốp nóng cũng làm $p$ tăng theo $T$.</li>
+<li><strong>Bình khí nén ở xưởng CNC:</strong> áp suất vài bar nhờ mật độ phân tử rất lớn; bình bị nắng nóng thì van an toàn phải mở.</li>
+<li><strong>Nồi áp suất:</strong> hơi nước nóng tạo áp suất cao nên nước sôi trên $100\ ^\circ\text{C}$, thức ăn chín nhanh hơn.</li>
+<li><strong>Bóng bay heli:</strong> phân tử heli nhẹ nên bay nhanh hơn phân tử không khí, khí thoát qua vỏ nhanh hơn.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: động năng tịnh tiến trung bình ở $0\ ^\circ\text{C}$ và ở $27\ ^\circ\text{C}$.</summary>
+<p>Ở $273\ \text{K}$: $\overline{E_d} = \dfrac{3}{2} \times 1{,}38\cdot10^{-23} \times 273 \approx 5{,}7\cdot10^{-21}\ \text{J}$. Ở $300\ \text{K}$: $\approx 6{,}2\cdot10^{-21}\ \text{J}$. Nhiệt độ tăng khoảng $10\%$ thì động năng tăng đúng $10\%$.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Khá: vì sao cùng nhiệt độ, H₂ nhanh hơn O₂ khoảng bốn lần mà áp suất hai bình (cùng $N$, cùng $V$) vẫn bằng nhau?</summary>
+<p>Vì áp suất phụ thuộc tích $m\overline{v^2}$, mà ở cùng nhiệt độ mọi khí có cùng $\overline{E_d} = \dfrac{1}{2}m\overline{v^2}$. Phân tử H₂ nhẹ hơn 16 lần nên $\overline{v^2}$ lớn hơn 16 lần, tốc độ lớn hơn 4 lần — vừa đủ bù cho khối lượng nhỏ hơn.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thách đấu: bình kín giữ nguyên nhiệt độ, hút bớt một nửa số phân tử. Áp suất đổi thế nào? Giải thích hai cách.</summary>
+<p>Áp suất giảm còn một nửa. <strong>Cách 1 — theo mật độ:</strong> $p = \dfrac{2}{3}\mu\overline{E_d}$; $T$ không đổi nên $\overline{E_d}$ không đổi, còn $\mu$ giảm 2 lần nên $p$ giảm 2 lần. <strong>Cách 2 — theo phương trình trạng thái:</strong> $p = \dfrac{N}{V}kT = \mu kT$, cùng kết quả.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Mô hình khí:</strong> phân tử nhỏ · hỗn loạn · thẳng đều giữa hai va chạm · va chạm đàn hồi với thành.</li>
+<li><strong>Một va chạm:</strong> động lượng đổi chiều · truyền cho thành $2mv$.</li>
+<li><strong>Một phân tử:</strong> $p_m = \dfrac{mv^2}{V}$ · lực trung bình $F = \dfrac{mv^2}{l}$.</li>
+<li><strong>$N$ phân tử:</strong> $p = \dfrac{1}{3}\rho\overline{v^2} = \dfrac{2}{3}\mu\overline{E_d}$ · $\mu = \dfrac{N}{V}$ · $\rho = \mu m$.</li>
+<li><strong>Động năng tịnh tiến:</strong> $\overline{E_d} = \dfrac{3}{2}kT$ · ba phương, mỗi phương $\dfrac{1}{2}kT$.</li>
+<li><strong>Boltzmann:</strong> $k = \dfrac{R}{N_A} = 1{,}38\cdot10^{-23}\ \text{J/K}$.</li>
+<li><strong>Nhiệt độ:</strong> $\overline{E_d}$ tỉ lệ thuận $T$ · cùng $T$ thì mọi khí cùng $\overline{E_d}$ · khí nhẹ thì $v_{rms}$ lớn.</li>
+<li><strong>Đọc đề:</strong> gặp chữ "nhiệt độ" thì đổi ngay sang Kelvin; hỏi "tăng mấy lần" thì lấy $T_2/T_1$, đừng lấy $t_2/t_1$.</li>
+</ul>
+</div>

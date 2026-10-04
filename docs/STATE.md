@@ -11,6 +11,26 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **Nốt 13 bài Vật lí 12 còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
+  `soan-bai-ly-thuyet-tuong-tac` cho toàn bộ bài học lớp 12 còn thiếu, **trừ các bài Kiểm tra và hai bài
+  Thực hành đo** (Bài 4 id 5, Bài 11 id 12 — Bài 4 đã do phiên khác làm). Danh sách đã đăng DB (chỉ ghi mục
+  Lý thuyết, tự sao lưu): **Bài 5 (id 6), Bài 6 (7), Bài 7 (8), Bài 8 (9)** chương Khí lí tưởng · **Bài 9
+  (10), Bài 10 (11), Bài 14 (125), Bài 16 (127)** chương Từ trường · **Bài 14 hạt nhân (15), Bài 15 (16),
+  Bài 16 (17), Bài 17 (18), Bài 18 (19)** chương Vật lí hạt nhân. Mỗi bài: theory.html 6 phần + 3–4 hình SVG
+  tự vẽ + 2–4 file `content/thi-nghiem/tn-l12-*` + bundle.json, mỗi bài 7–8 quiz tự chấm, mục Trả bài, bài
+  toán mẫu có bảng *Câu trong đề/Dữ liệu/Kiến thức* + bài điền bước trống + biến thể, thử thách ⭐–⭐⭐⭐,
+  khung "Mang về". Lint sạch toàn bộ (`lint_theory` · `lint_do_dai` 2.4–2.5k từ hiện ngay · `check_quizzes` ·
+  `thi_nghiem` 96 mục · `validate_bundle` ok:true) · `--kiem-tran` không mục nào tràn ngang ở 375 px.
+  Cách làm: **1 bài chạy thử + 3 lô subagent song song (3+5+5 bài), mỗi bài có một subagent kiểm chéo độc lập
+  rồi một subagent sửa**; ~50 lượt subagent, ~2 giờ. Mọi bài đều bị kiểm chéo bắt ít nhất 1 lỗi `chan`
+  (số liệu thí nghiệm mâu thuẫn, mũi tay SVG ngược chiều, phản hồi quiz gọi tên phương án không có, số hình
+  sai thứ tự); 5 bài phải sửa hai vòng (6, 7, 10, 16, 19). Quy trình + bài học đã ghi vào SKILL.md mục
+  "Làm nhiều bài một đợt — thuê subagent song song". File bài nằm trong `content/lesson-samples/l12-*`;
+  **`xem-thu/` (43 MB cho 13 bài) không commit** — sinh lại bằng `build_preview.py` + `chup_anh.py`.
+  Log đăng: `scripts/logs/dang-13-bai-l12-*.log` (0 bài lỗi). **CHƯA deploy** — deploy xong mới lên web.
+  Lưu ý: **bài 15 (id 126)** do một phiên khác đã soạn (`content/lesson-samples/l12-ung-dung-cam-ung/`) và
+  đăng trước, nên **không ghi đè** (bản của phiên này ở `l12-ung-dung-cam-ung-dien-tu/`, để nguyên, chưa đăng).
+  `scripts/chup_anh.py` cũng được vá: mục dài >5 000 px tự cắt thành `sec-2a/sec-2b…` (WebP có trần 16 383 px).
 - **Chương 1 Vật lí 12 — nốt hai bài còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
   `soan-bai-ly-thuyet-tuong-tac`, **CHƯA ghi DB** (chờ thầy duyệt + chạy trên Mac).
   (1) **Bài 3. Nội năng. Định luật 1 của nhiệt động lực học** — `content/lesson-samples/l12-noi-nang-dl1/`

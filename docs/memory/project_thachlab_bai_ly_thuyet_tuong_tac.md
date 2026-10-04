@@ -30,3 +30,23 @@ Bài LÝ THUYẾT tương tác để thầy **chiếu giảng trực tiếp** v�
 - Không dùng ảnh sách Halliday (bản quyền, trang công khai) → vẽ lại SVG tự vẽ; không ảnh raster (quy tắc tốc độ trong AGENTS.md).
 - Bundle bắt buộc có `exam` ≥1 câu → dùng chính các câu tự kiểm tra làm đề Luyện tập 3 câu.
 - Cloud xem thử bài: Artifact CSP chặn stylesheet ngoài → KaTeX phải render MathML trước, không tải CSS KaTeX.
+
+## Đợt 2026-10-04 — nốt 13 bài Vật lí 12 bằng subagent song song (phiên DSH trên Mac)
+- **Đã đăng DB (chỉ mục Lý thuyết, `cap-nhat-ly-thuyet.sh --yes`, log `scripts/logs/dang-13-bai-l12-*.log`)**:
+  id 6, 7, 8, 9 (Khí lí tưởng) · 10, 11, 125, 127 (Từ trường) · 15, 16, 17, 18, 19 (Hạt nhân). Mỗi bài có
+  `content/lesson-samples/l12-<slug>/` (theory.html + theory.src.html + build_figs.py + build_bundle.py +
+  bundle.json) và 2–4 file `content/thi-nghiem/tn-l12-*.json`. Trừ đúng các bài Kiểm tra và hai bài Thực hành
+  đo (id 5, id 12 — id 5 do phiên khác làm rồi).
+- **Cách làm (đã ghi vào SKILL.md, mục "Làm nhiều bài một đợt")**: 1 bài chạy thử một mình → 3 lô song song
+  (3+5+5 bài) → 1 vòng kiểm lại 5 bài. Mỗi bài: subagent soạn → subagent **kiểm chéo độc lập** (giải lại từng
+  quiz, tính lại số liệu, soi toạ độ SVG) → subagent sửa. ~50 lượt subagent, ~2 giờ. Mọi bài đều có ≥1 lỗi
+  `chan` do kiểm chéo bắt; 5 bài phải sửa 2 vòng (6, 7, 10, 16, 19).
+- **Bài học**: (1) đưa NGUYÊN danh sách lỗi cho agent sửa — cắt JSON ở 4 000 ký tự làm nó bỏ sót nửa danh
+  sách; (2) yêu cầu sửa cả `nen_sua`, không chỉ `chan`; (3) `xem-thu/` 43 MB cho 13 bài → **không commit**,
+  sinh lại bằng `build_preview.py` + `chup_anh.py`; (4) `chup_anh.py` nay tự cắt mục >5 000 px thành
+  `sec-2a/sec-2b…` (WebP trần 16 383 px, trước đó script chết giữa vòng).
+- **Xung đột phiên**: bài 15 (id 126) đã bị phiên khác soạn + đăng trước (`l12-ung-dung-cam-ung/`) → không ghi
+  đè; bản của phiên này `l12-ung-dung-cam-ung-dien-tu/` để nguyên chưa đăng. Trước khi đăng luôn `select` lại
+  `lesson_items` để biết bài nào vừa bị phiên khác đăng.
+- **Còn lại**: deploy (site tĩnh build đọc DB); cân nhắc bộ "Kiểm tra nhanh" 20 câu cho từng bài
+  (`scripts/data/theory-quiz/<id>.json`, hiện mới có 32 và 58).
