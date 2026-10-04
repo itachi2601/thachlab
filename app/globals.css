@@ -41,7 +41,10 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   transition: background-color 180ms ease, color 180ms ease;
-  overflow-x: hidden;
+  /* B6/D4: `overflow-x: hidden` biến <body> thành scroll container cao bằng nội dung → MỌI
+     `position: sticky` con cháu mất tác dụng (thanh tab đầu bài, cây chương .lesson-nav).
+     `clip` vẫn chặn tràn ngang nhưng KHÔNG tạo scroll container. */
+  overflow-x: clip;
 }
 
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
@@ -779,8 +782,17 @@ html[data-theme="light"] .lesson-meta-ok { color: #047857; }
 .lesson-progressbar > small { position: absolute; top: 7px; left: 0; color: var(--color-muted); font-size: 12px; }
 
 /* 6 tab ngang thay accordion: badge số mục, dấu ✓ khi xong, tab đang mở gạch chân màu nhấn. */
-.lesson-tabs ol { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.lesson-tabs ol { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.lesson-tabs ol::-webkit-scrollbar { display: none; }
+/* Mép còn tab khuất → mờ dần (trang đo scrollWidth/scrollLeft, gắn .is-overflow-left/right/both). Chỉ
+   che 28px mép nên tab cuối không bị mờ khi đã cuộn tới hết. */
+.lesson-tabs.is-overflow-right ol { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
+.lesson-tabs.is-overflow-left ol { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 28px), transparent); }
+.lesson-tabs.is-overflow-both ol { -webkit-mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent); }
 .lesson-tabs li { flex: 0 0 auto; }
+/* Chấm cam: phần có mục còn hạn nộp chưa làm (BTVN / Kiểm tra) — thấy ngay từ thanh tab, cả ở điện thoại. */
+.lesson-tab-due { display: inline-block; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: #f59e0b; box-shadow: 0 0 0 2px var(--color-bg); }
+.lesson-tabs button:focus-visible { outline: 2px solid var(--lesson-accent); outline-offset: -2px; border-radius: 6px; }
 .lesson-tabs button { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; border: 0; border-bottom: 2px solid transparent; background: none; padding: 0 12px; color: var(--color-muted); font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer; }
 .lesson-tabs button:hover { color: var(--color-ink); }
 .lesson-tabs button.is-active { border-bottom-color: var(--lesson-accent); color: var(--color-ink); font-weight: 700; }
@@ -925,13 +937,10 @@ html[data-theme="light"] .lesson-shell :is(.theory-nav, .theory-nav-all) { color
 html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg) { color: #0e7490; }
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
-/* position: fixed (không phải sticky) — .lesson-shell có overflow: clip (chặn tràn ngang trên
-   di động) nên mọi position: sticky của con cháu bị vô hiệu hoá, kể cả .lesson-nav sẵn có; đã
-   tự kiểm bằng getBoundingClientRect thấy rõ, thử tách overflow-x/overflow-y riêng cũng không
-   ăn thua (nghi do quy tắc CSS: 1 trục "visible" cạnh trục kia không "visible" thì trục
-   "visible" tự chuyển thành "auto", vẫn tạo vùng có thể cuộn). Dùng fixed để không phụ thuộc
-   overflow của tổ tiên — nổi giữa màn hình dưới thanh điều hướng, không nằm trong luồng bố cục
-   2 cột như .lesson-nav nữa. */
+/* position: fixed (không phải sticky) — thẻ này phải nổi giữa màn hình dưới thanh điều hướng,
+   không nằm trong luồng bố cục 2 cột như .lesson-nav, nên fixed là đúng ý đồ. Ghi chú cũ ở đây
+   đổ lỗi cho `.lesson-shell { overflow: clip }` là SAI: thủ phạm thật là `body { overflow-x: hidden }`
+   (đã đổi sang `clip` ngày 3/10/2026), sau đó .lesson-nav và thanh tab dính lại bình thường. */
 /* Thu gọn mặc định (chỉ 1 dòng tóm tắt) — bản đầy đủ che mất đúng đoạn vừa tô vàng bên dưới,
    nhất là trên điện thoại (màn hẹp, cao có hạn). Mở ra khi bấm, đọc xong tự thu gọn lại khi
    bấm "Xem đoạn này" để không che nội dung. */
@@ -1134,11 +1143,11 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
      1024–1319px    laptop nhỏ: 272 · 1fr (bỏ cột phải)
      ≥ 1320px       máy tính: 272 · 1fr · 292, rộng 1320px
    ============================================================ */
-.lesson-tabs--mobile { display: block; }
-.lesson-tabs--desktop { display: none; }
-/* Header + thanh tiến độ + tab nằm chung .lesson-content: cả khối dính dưới navbar mà header
-   vẫn chỉ cao bằng nội dung — dính trực tiếp vào .lesson-layout thì bị giới hạn bởi chiều cao
-   của chính phần tử, tab sẽ trôi mất sau vài chục pixel cuộn (đã thấy đúng như vậy khi thử). */
+/* .lesson-content chỉ là khối bọc (thanh tiến độ + tab + thân bài) — KHÔNG đặt `position: sticky`
+   lên chính nó: khối cao bằng nội dung nên sticky không bao giờ dính (đo 3/10/2026 ở 375px: tab
+   trôi tới −1300px). Thanh tab TỰ dính — xem nhánh <640px và 640–1023px bên dưới; ≥1024px thì
+   .lesson-tabs dính sẵn. Chỉ MỘT tablist cho mọi cỡ màn (hết id trùng, aria-controls đúng) — kiểu dáng theo
+   breakpoint bên dưới. */
 .lesson-content { min-width: 0; }
 /* Cỡ chữ đọc (A− / A / A+): chỉ nhân cỡ chữ gốc của khối nội dung, không nhân từng phần tử —
    vì vậy công thức KaTeX (đơn vị em) cũng to lên theo. --lesson-read-scale do trang bài đặt. */
@@ -1170,7 +1179,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-progress { margin: 6px 0 14px; }
   .lesson-progress small { display: none; }
   .lesson-head { margin: 0 -20px; background: var(--color-bg); padding: 16px 20px 0; }
-  .lesson-content { position: sticky; top: 76px; z-index: 6; margin: 0 -20px 20px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); padding: 0 20px 14px; }
+  .lesson-content { margin: 0 -20px 20px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); padding: 0 20px 14px; }
+  /* B6/D4: thanh tab dính ngay dưới navbar để lúc nào cũng đổi được phần và biết còn phần khác. */
+  .lesson-tabs { position: sticky; top: 76px; z-index: 6; background: var(--color-bg); }
   .lesson-nav { margin-top: 8px; }
   /* Cột trái gọn trên tablet: một hàng — bài trước · bài sau, không dính. */
   .lesson-progressbar > small { display: none; }
@@ -1185,8 +1196,6 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-nav { position: sticky; top: 96px; }
   .lesson-main { grid-column: 2; align-self: start; max-width: none; }
   .lesson-side { display: none; }
-  .lesson-tabs--mobile { display: none; }
-  .lesson-tabs--desktop { display: block; }
   .lesson-head { position: static; margin: 0 0 20px; border-bottom: 0; background: none; padding: 0; }
   .lesson-head-back { display: none; }
   /* B3: breadcrumb và công cụ đọc cùng một hàng nhưng KHÔNG chồng nhau — .lesson-head-text "mở"
@@ -1204,10 +1213,8 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-content { position: static; margin: 0; border-bottom: 0; background: none; padding: 0; }
 
   /* Tab 6 mục dính ngay dưới header bài — luôn biết mình đang ở mục nào. */
-  .lesson-tabs--desktop { position: sticky; top: 76px; z-index: 4; margin: 0 -4px 18px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); }
-  .lesson-tabs--desktop ol { overflow-x: auto; scrollbar-width: none; }
-  .lesson-tabs--desktop ol::-webkit-scrollbar { display: none; }
-  html[data-theme="light"] .lesson-tabs--desktop { background: var(--color-bg); }
+  .lesson-tabs { position: sticky; top: 76px; z-index: 4; margin: 0 -4px 18px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); }
+  html[data-theme="light"] .lesson-tabs { background: var(--color-bg); }
 
   /* Cây chương: nhóm theo chương, chỉ chương đang học mở sẵn. */
   .lesson-progress-summary { display: flex; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
@@ -1255,17 +1262,20 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   /* Cột trái + cột phải gộp vào ngăn kéo — chỉ hiện trong ngăn kéo, không nhồi xuống dưới bài. */
   .lesson-nav, .lesson-side { display: none; }
   .lesson-head { margin: 0 -16px; background: var(--color-bg); padding: 12px 16px 0; }
-  .lesson-content { position: sticky; top: 76px; z-index: 6; margin: 0 -16px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); padding: 0 16px; }
+  .lesson-content { margin: 0 -16px; border-bottom: 1px solid var(--lesson-line); background: var(--color-bg); padding: 0 16px; }
   .lesson-progressbar { margin-top: 12px; }
   .lesson-progressbar > small { display: none; }
-  .lesson-tabs--mobile { margin: 10px -16px 0; border-bottom: 0; background: none; padding: 0 16px 10px; }
+  /* B6/D4: dải tab tự dính dưới navbar — đang đọc sâu trong một phần vẫn thấy thanh tab để đổi.
+     Navbar điện thoại cao 69px (đo 3/10/2026 ở 320/360/375px, `py-3` + logo 40px + viền), lấy
+     76px như máy tính thì hở khe 7px cho chữ chạy qua phía trên dải tab. */
+  .lesson-tabs { position: sticky; top: 69px; z-index: 6; margin: 10px -16px 0; border-bottom: 0; background: var(--color-bg); padding: 0 16px 10px; }
   /* D4: 5 tab (Lý thuyết · Bài mẫu · Luyện tập · BTVN · Kiểm tra) phải lộ hết ở 360–375px — chia đều
-     chiều rộng, bỏ badge đếm, chữ 13px. Quá 5 tab (có Video) thì cuộn ngang, tab bị cắt là dấu hiệu còn tab. */
-  .lesson-tabs--mobile ol { gap: 0; overflow-x: auto; scrollbar-width: none; }
-  .lesson-tabs--mobile ol::-webkit-scrollbar { display: none; }
-  .lesson-tabs--mobile li { flex: 1 0 auto; }
-  .lesson-tabs--mobile button { width: 100%; justify-content: center; gap: 3px; padding: 0 4px; font-size: 13px; }
-  .lesson-tabs--mobile button i { display: none; }
+     chiều rộng, bỏ badge đếm (dải đầu bài đã ghi số mục/số câu), chữ 13px. Quá 5 tab (có Video) thì
+     cuộn ngang; mép còn tab khuất được mờ dần (.is-overflow-*) nên không phụ thuộc số tab. */
+  .lesson-tabs ol { gap: 0; }
+  .lesson-tabs li { flex: 1 0 auto; }
+  .lesson-tabs button { width: 100%; justify-content: center; gap: 3px; padding: 0 4px; font-size: 13px; }
+  .lesson-tabs button i { display: none; }
   .lesson-body { padding-top: 16px; }
   .lesson-page .lesson-back { display: none; }
   .lesson-head h1 { font-size: 20px; }

@@ -125,6 +125,7 @@ export default function PracticeSession({
   itemId,
   passScore = null,
   color = "#F59E0B",
+  onActiveChange,
 }: {
   examIds: number[];
   lessonId: number | null;
@@ -132,6 +133,8 @@ export default function PracticeSession({
   /** Điểm đạt thang 10 do giáo viên cấu hình cho mục luyện tập này — null = không đánh giá đạt. */
   passScore?: number | null;
   color?: string;
+  /** Báo cho trang bài: phiên đang làm dở (đã bấm Bắt đầu, chưa nộp) — trang hỏi trước khi đổi tab. */
+  onActiveChange?: (active: boolean) => void;
 }) {
   const { session } = useAuth();
   const [bank, setBank] = useState<PracticePick[]>([]);
@@ -194,6 +197,24 @@ export default function PracticeSession({
 
   const ladderScope = itemId ?? lessonId;
   const studentId = session?.user.id;
+
+  // Đang làm dở = phase running/step. Báo lên trang (đổi tab unmount → mất bài) và chặn đóng/tải lại
+  // trang bằng beforeunload. Unmount thì báo false để trang không hỏi oan.
+  const practiceActive = phase === "running" || phase === "step";
+  useEffect(() => {
+    onActiveChange?.(practiceActive);
+    if (!practiceActive) return;
+    const warn = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => {
+      window.removeEventListener("beforeunload", warn);
+      onActiveChange?.(false);
+    };
+    // onActiveChange là callback inline của trang — chỉ cần chạy lại khi phase đổi.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [practiceActive]);
   // Mức đã lưu đọc ngay khi render (không qua effect); lên mức thì ghi đè trong state + lưu lại.
   const level: LadderLevel = levelOverride ?? (studentId ? readLadderLevel(studentId, ladderScope) : "de");
   // Đọc lựa chọn đã lưu ngay khi render (không qua effect); bấm đổi thì ghi đè và lưu lại.

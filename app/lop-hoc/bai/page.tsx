@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
@@ -324,6 +324,8 @@ function TheoryBlock({
   const [resumeIndex, setResumeIndex] = useState<number | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const isOpen = (i: number) => allOpen || openSections.has(i);
+  // Số mốc chưa từng mở — hiện cạnh "Mở tất cả" để biết bài còn bao nhiêu (bản đồ "còn gì").
+  const unopenedCount = allOpen ? 0 : Math.max(0, total - openSections.size);
 
   const openSection = useCallback((index: number) => {
     setOpen(true);
@@ -429,7 +431,7 @@ function TheoryBlock({
                     </span>
                   )}
                   <button type="button" className="theory-nav-all" onClick={() => setAllOpen((a) => !a)}>
-                    {allOpen ? "Thu gọn" : "Mở tất cả"}
+                    {allOpen ? "Thu gọn" : unopenedCount > 0 ? `Mở tất cả · còn ${unopenedCount} mốc` : "Mở tất cả"}
                   </button>
                 </div>
               )}
@@ -719,6 +721,11 @@ function LessonLoader() {
   const [openChapters, setOpenChapters] = useState<Set<number>>(new Set());
   const reviewBannerRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  // Mục Luyện tập đang làm dở (PracticeSession báo lên) — đổi tab sẽ unmount và mất bài, nên hỏi trước.
+  const practiceActiveRef = useRef(false);
+  // Thanh tab cuộn ngang: mask mờ mép nào còn tab bị khuất (D4 không phụ thuộc số tab).
+  const tabListRef = useRef<HTMLOListElement>(null);
+  const [tabOverflow, setTabOverflow] = useState<"" | "left" | "right" | "both">("");
   // Quay lại từ "Ôn ngay" (ExamRunner) qua #theory-sec-<itemId>-<n>: mục lý thuyết đó phải tự
   // mở (mặc định các mục từ thứ hai trở đi đang thu gọn) trước khi cuộn + tô màu tới đúng đoạn.
   const [hashTargetItemId, setHashTargetItemId] = useState<number | null>(() =>
@@ -1122,6 +1129,29 @@ function LessonLoader() {
   }
 
   const visibleSections = sections.filter((s) => s.items.length > 0);
+  // Đo thanh tab còn khuất tab nào ở mép trái/phải (resize + cuộn) → CSS mask đúng mép đó.
+  useEffect(() => {
+    const ol = tabListRef.current;
+    if (!ol) return;
+    const measure = () => {
+      const max = ol.scrollWidth - ol.clientWidth;
+      if (max <= 2) return setTabOverflow("");
+      const left = ol.scrollLeft > 2;
+      const right = ol.scrollLeft < max - 2;
+      setTabOverflow(left && right ? "both" : left ? "left" : right ? "right" : "");
+    };
+    measure();
+    ol.addEventListener("scroll", measure, { passive: true });
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(measure) : null;
+    ro?.observe(ol);
+    window.addEventListener("resize", measure);
+    return () => {
+      ol.removeEventListener("scroll", measure);
+      ro?.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [visibleSections.length]);
+
   const activeKind: LessonItemKind | undefined = visibleSections.some((s) => s.kind === activeTab)
     ? activeTab
     : visibleSections[0]?.kind;
@@ -1345,6 +1375,12 @@ function LessonLoader() {
   // Cột phải dùng; ở bước này chỉ cần activeHeading được cập nhật.
 
   function selectTabAndScroll(kind: LessonItemKind) {
+    if (
+      kind !== activeTab &&
+      practiceActiveRef.current &&
+      !confirm("Em đang luyện tập dở — đổi mục sẽ mất bài đang làm (chưa nộp, chưa lưu). Vẫn đổi?")
+    )
+      return;
     const target = kind === activeTab ? bodyRef.current : null;
     const firstItemId = target?.querySelector<HTMLElement>("[data-item]")?.dataset.item ?? null;
     selectTab(kind);
@@ -1458,6 +1494,9 @@ function LessonLoader() {
               itemId={item.id}
               passScore={item.practice_pass_score}
               color={ACCENT}
+              onActiveChange={(active) => {
+                practiceActiveRef.current = active;
+              }}
             />
           )}
           {session && (
@@ -1477,26 +1516,51 @@ function LessonLoader() {
     });
   }
 
-  /** 6 tab ngang: badge số mục, dấu ✓ khi xong, tab đang mở gạch chân màu nhấn. */
-  const tabNav = (extraClass: string) => (
-    <nav className={`lesson-tabs ${extraClass}`} aria-label="Các mục của bài học">
-      <ol role="tablist">
+  /** Thanh tab (một tablist duy nhất cho mọi cỡ màn hình — CSS lo kiểu dáng): badge số mục, dấu ✓
+      khi xong, chấm cam ở phần có hạn nộp còn dang dở, tab đang mở gạch chân màu nhấn. Phím ←/→,
+      Home/End chuyển tab theo mẫu ARIA tabs (kích hoạt tự động, tabindex xoay vòng). */
+  function onTabKeyDown(e: ReactKeyboardEvent<HTMLOListElement>) {
+    const kinds = visibleSections.map((sec) => sec.kind);
+    const i = kinds.indexOf(activeTab);
+    if (i < 0 || kinds.length === 0) return;
+    let next = i;
+    if (e.key === "ArrowRight") next = (i + 1) % kinds.length;
+    else if (e.key === "ArrowLeft") next = (i - 1 + kinds.length) % kinds.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = kinds.length - 1;
+    else return;
+    e.preventDefault();
+    if (next === i) return;
+    selectTabAndScroll(kinds[next]);
+    document.getElementById(`lesson-tab-${kinds[next]}`)?.focus();
+  }
+  const tabNav = (
+    <nav className={`lesson-tabs ${tabOverflow ? `is-overflow-${tabOverflow}` : ""}`} aria-label="Các mục của bài học">
+      <ol role="tablist" ref={tabListRef} onKeyDown={onTabKeyDown}>
         {visibleSections.map((section) => {
+          const active = section.kind === activeTab;
           const complete = !!session && section.items.every(isDone);
+          const dueOpen = !complete && section.items.some((it) => !!it.due_at && !isDone(it));
           return (
             <li key={section.kind}>
               <button
                 type="button"
                 role="tab"
                 id={`lesson-tab-${section.kind}`}
-                className={`${section.kind === activeTab ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
-                aria-selected={section.kind === activeTab}
-                aria-controls={`secondary-stage-${section.kind}`}
+                className={`${active ? "is-active" : ""} ${complete ? "is-complete" : ""}`}
+                aria-selected={active}
+                aria-controls={active ? `secondary-stage-${section.kind}` : undefined}
+                tabIndex={active ? 0 : -1}
                 onClick={() => selectTabAndScroll(section.kind)}
               >
                 {complete && <Check size={13} aria-hidden />}
                 <span>{TAB_LABEL[section.kind]}</span>
                 {section.items.length > 1 && <i>{section.items.length}</i>}
+                {dueOpen && (
+                  <em className="lesson-tab-due" title="Có hạn nộp">
+                    <span className="sr-only">, có hạn nộp</span>
+                  </em>
+                )}
               </button>
             </li>
           );
@@ -1877,8 +1941,7 @@ function LessonLoader() {
               </small>
             </div>
 
-            {tabNav("lesson-tabs--mobile")}
-            {tabNav("lesson-tabs--desktop")}
+            {tabNav}
 
             <div className="lesson-body" ref={bodyRef}>
             {reviewBanner}
