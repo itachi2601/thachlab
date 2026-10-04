@@ -130,6 +130,9 @@ export interface LessonItem {
   published_at: string | null; // null = chưa đăng, học sinh chưa thấy mục này
   draft_payload: LessonItemDraftPayload | null; // bản nháp đang sửa dở, chưa ghi đè bản đã đăng
   draft_saved_at: string | null;
+  /** Chỉ có khi mục đến từ file tĩnh /data/lessons/<id>.json: số dạng bài tập mẫu trên DB
+   *  (file tĩnh không chứa lời giải, `questions` rỗng cho tới khi đối chiếu Supabase xong). */
+  questions_count?: number;
 }
 
 /** Các trường nội dung soạn trong ItemForm — lưu tạm vào lesson_items.draft_payload khi "Lưu nháp". */

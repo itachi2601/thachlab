@@ -47,6 +47,7 @@ import {
   fetchClassesStatic,
   fetchLessonWithItemsStatic,
   fetchLessonsStatic,
+  retryLessonRevalidate,
   type LessonBundle,
 } from "@/services/static-content";
 import { fetchMyLessonPageProgress, type ItemProgress } from "@/services/progress";
@@ -656,6 +657,9 @@ function LessonLoader() {
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
   const [items, setItems] = useState<LessonItem[] | null>(null);
+  /** Lời giải bài tập mẫu không nằm trong file tĩnh — theo dõi lượt tải thêm để không hiện lưới trống. */
+  const [workedFailedId, setWorkedFailedId] = useState<number | null>(null);
+  const workedState: "loading" | "failed" = workedFailedId === id ? "failed" : "loading";
   const [examMetas, setExamMetas] = useState<Map<number, LessonExamMeta>>(new Map());
   const [examMetaStatus, setExamMetaStatus] = useState<"loading" | "error" | "ready">("loading");
   const [scores, setScores] = useState<Map<number, number>>(new Map());
@@ -774,10 +778,20 @@ function LessonLoader() {
       setLessonKind(res.lesson.lesson_kind);
       setItems(res.items.filter(isItemLive));
     };
-    fetchLessonWithItemsStatic(id, apply).then(apply);
+    fetchLessonWithItemsStatic(id, apply, () => {
+      if (!stale) setWorkedFailedId(id);
+    }).then(apply);
     return () => {
       stale = true;
     };
+  }, [id]);
+  // Nút "Tải lại" ở mục bài tập mẫu: đối chiếu lại DB (không reload cả trang, giữ tab/cuộn).
+  const retryWorked = useCallback(() => {
+    setWorkedFailedId(null);
+    retryLessonRevalidate(id).then((res) => {
+      if (res === undefined) setWorkedFailedId(id);
+      else if (res) setItems(res.items.filter(isItemLive));
+    });
   }, [id]);
 
   useEffect(() => {
@@ -1485,7 +1499,23 @@ function LessonLoader() {
           {item.kind === "bai_tap_mau" ? (
             <>
               {item.exam_ids.length > 0 && <SampleQuestionsGrid examIds={item.exam_ids} color={ACCENT} />}
-              <WorkedQuestionsGrid questions={item.questions} color={ACCENT} />
+              {item.questions.length === 0 && (item.questions_count ?? 0) > 0 ? (
+                // DB có dạng bài nhưng lời giải chưa về (file tĩnh không chứa): báo rõ, không để lưới trống (N3, L4).
+                <p className="lesson-block-sub" role="status" aria-live="polite">
+                  {workedState === "failed" ? (
+                    <>
+                      Chưa tải được {item.questions_count} dạng bài.{" "}
+                      <button type="button" className="lesson-btn-ghost" onClick={retryWorked}>
+                        Tải lại
+                      </button>
+                    </>
+                  ) : (
+                    `Đang tải ${item.questions_count} dạng bài…`
+                  )}
+                </p>
+              ) : (
+                <WorkedQuestionsGrid questions={item.questions} color={ACCENT} />
+              )}
             </>
           ) : (
             <PracticeSession

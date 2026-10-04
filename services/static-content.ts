@@ -273,12 +273,26 @@ async function fetchLessonMeta(
   return undefined;
 }
 
+// Giữ nguyên questions_count trên mục trả ra: trang bài cần biết "DB có N dạng bài nhưng chưa
+// tải được lời giải" để hiện trạng thái tải/lỗi thay vì lưới trống (sự cố bài 57, 4/10/2026).
 function stripCount(items: StaticItem[]): LessonItem[] {
-  return items.map((it) => {
-    const { questions_count: _omit, ...rest } = it;
-    void _omit;
-    return rest as LessonItem;
-  });
+  return items;
+}
+
+/** Số mục bài tập mẫu trong file tĩnh có dạng bài trên DB nhưng chưa có lời giải trong file. */
+function pendingWorkedIds(file: StaticLesson): number[] {
+  return file.items.filter((it) => (it.questions_count ?? 0) > 0 && it.questions.length === 0).map((it) => it.id);
+}
+
+/**
+ * Đường lùi khi truy vấn đối chiếu (lessons + lesson_items lồng) lỗi: lấy thẳng lời giải bài tập
+ * mẫu bằng một select phẳng trên lesson_items. Trả undefined nếu cũng lỗi.
+ */
+async function fetchWorkedQuestionsDirect(ids: number[]): Promise<Map<number, LessonItem["questions"]> | undefined> {
+  if (ids.length === 0) return new Map();
+  const res = await getSupabase().from("lesson_items").select("id, questions").in("id", ids);
+  if (res.error || !res.data) return undefined;
+  return new Map(res.data.map((r) => [r.id as number, (r.questions as LessonItem["questions"]) ?? []]));
 }
 
 const revalidatedLessons = new Map<number, Promise<LessonBundle | null | undefined>>();
@@ -295,7 +309,21 @@ function revalidateLesson(id: number, file: StaticLesson): Promise<LessonBundle 
     p = (async () => {
       try {
         const meta = await fetchLessonMeta(id);
-        if (meta === undefined) return undefined; // không đối chiếu được → giữ bản tĩnh
+        if (meta === undefined) {
+          // Không đối chiếu được (mạng, phiên hết hạn, truy vấn lồng lỗi…) → giữ bản tĩnh, nhưng
+          // vẫn cố lấy lời giải bài tập mẫu bằng truy vấn phẳng; không ghi nhớ thất bại để lần
+          // mở sau (điều hướng trong app) thử lại.
+          revalidatedLessons.delete(id);
+          const pending = pendingWorkedIds(file);
+          if (pending.length === 0) return undefined;
+          const direct = await fetchWorkedQuestionsDirect(pending);
+          if (!direct || ![...direct.values()].some((q) => q.length > 0)) return undefined;
+          return {
+            lesson: file.lesson,
+            chapterTitle: file.chapterTitle,
+            items: stripCount(file.items).map((it) => ({ ...it, questions: direct.get(it.id) ?? it.questions })),
+          };
+        }
         if (meta === null) return null;
         if (lessonKey(meta.lesson, meta.chapterTitle, meta.items) !== lessonKey(file.lesson, file.chapterTitle, file.items)) {
           return fetchLessonWithItems(id); // đã khác → lấy trọn bản mới (có body_html)
@@ -308,6 +336,7 @@ function revalidateLesson(id: number, file: StaticLesson): Promise<LessonBundle 
           items: stripCount(file.items).map((it) => ({ ...it, questions: questionsById.get(it.id) ?? [] })),
         };
       } catch {
+        revalidatedLessons.delete(id);
         return undefined;
       }
     })();
@@ -317,16 +346,34 @@ function revalidateLesson(id: number, file: StaticLesson): Promise<LessonBundle 
 }
 
 /**
+ * Thử đối chiếu lại một bài (nút "Tải lại" ở mục bài tập mẫu khi lời giải chưa tải được):
+ * bỏ kết quả đã nhớ rồi chạy lại; trả về như revalidateLesson. Không có file tĩnh → lấy trọn từ DB.
+ */
+export async function retryLessonRevalidate(id: number): Promise<LessonBundle | null | undefined> {
+  revalidatedLessons.delete(id);
+  const file = await loadStaticLesson(id);
+  if (!file) return fetchLessonWithItems(id);
+  return revalidateLesson(id, file);
+}
+
+/**
  * Như fetchLessonWithItems(id) nhưng ưu tiên file tĩnh. onUpdate nhận bản cần thay
  * (lời giải bài tập mẫu tải thêm, hoặc bản mới khi DB đã khác) hoặc null nếu bài không còn.
  */
 export async function fetchLessonWithItemsStatic(
   id: number,
   onUpdate?: (fresh: LessonBundle | null) => void,
+  /** Gọi khi đối chiếu thất bại mà file tĩnh còn thiếu lời giải bài tập mẫu (lưới sẽ trống). */
+  onWorkedFailed?: () => void,
 ): Promise<LessonBundle | null> {
   const file = await loadStaticLesson(id);
   if (!file) return fetchLessonWithItems(id);
-  if (onUpdate) void revalidateLesson(id, file).then((fresh) => fresh !== undefined && onUpdate(fresh));
+  if (onUpdate) {
+    void revalidateLesson(id, file).then((fresh) => {
+      if (fresh !== undefined) onUpdate(fresh);
+      else if (pendingWorkedIds(file).length > 0) onWorkedFailed?.();
+    });
+  }
   return { lesson: file.lesson, chapterTitle: file.chapterTitle, items: stripCount(file.items) };
 }
 
