@@ -114,3 +114,31 @@ export async function changeMyPassword(currentPassword: string, newPassword: str
   const { error: updateError } = await supabase.auth.updateUser({ password: newPassword });
   if (updateError) throw supabaseError(updateError, "Chưa đổi được mật khẩu.");
 }
+
+/**
+ * Học sinh quên mật khẩu: gửi email đặt lại tới địa chỉ đã đăng ký (không cần giáo viên).
+ * Nhận email hoặc tên đăng nhập. Tài khoản chỉ có email nội bộ @thachlab.local thì không có hộp thư
+ * để gửi — trả "no_email" để trang hướng em sang cách dùng mã giáo viên.
+ * Cố ý không cho biết email có tồn tại hay không (trả "sent" cả khi không khớp) để tránh dò tài khoản.
+ */
+export async function requestPasswordResetEmail(login: string): Promise<"sent" | "no_email"> {
+  const supabase = getSupabase();
+  const typed = login.trim().toLowerCase();
+  let email = typed;
+  if (!typed.includes("@")) {
+    const { data: resolved } = await supabase.rpc("resolve_login_email", { p_login: typed });
+    email = typeof resolved === "string" && resolved ? resolved : `${typed}@thachlab.local`;
+  }
+  if (email.endsWith("@thachlab.local")) return "no_email";
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/dat-lai-mat-khau`,
+  });
+  if (error) throw supabaseError(error, "Chưa gửi được email. Thử lại sau ít phút.");
+  return "sent";
+}
+
+/** Đặt mật khẩu mới trong phiên khôi phục (mở từ link trong email). */
+export async function setNewPasswordFromRecovery(newPassword: string): Promise<void> {
+  const { error } = await getSupabase().auth.updateUser({ password: newPassword });
+  if (error) throw supabaseError(error, "Chưa đặt lại được mật khẩu.");
+}
