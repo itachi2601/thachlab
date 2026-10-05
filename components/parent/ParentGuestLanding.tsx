@@ -167,8 +167,8 @@ export default function ParentGuestLanding() {
         <div>
           <h2 className="font-display text-lg font-bold text-white">Thầy đứng lớp</h2>
           <p className="mt-1 text-slate-300">
-            Thầy Thạch — hơn {CONTACT.years} năm luyện Vật lý THPT và KHTN 9, á khoa Đại học Sư phạm Kỹ
-            thuật TP.HCM.
+            Thầy Thạch — hơn {CONTACT.years} năm luyện Vật lý THPT và KHTN 9, thạc sĩ Đại học Bách khoa
+            TP.HCM, á khoa đầu vào Đại học Sư phạm Kỹ thuật TP.HCM.
             {CONTACT.school ? ` Nghề chính: giảng viên ngành Cơ khí, ${CONTACT.school}.` : ""}
             {CONTACT.area ? ` ${CONTACT.area}.` : ""}
           </p>

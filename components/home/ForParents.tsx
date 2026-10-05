@@ -158,6 +158,7 @@ export default function ForParents({ courses = null }: { courses?: HomeCourse[] 
   // Hai dòng giới thiệu, cùng thứ tự với khối "Một chút về thầy Thạch": kinh nghiệm THPT trước, nghề chính sau.
   const introLines = [
     CONTACT.years ? `Hơn ${CONTACT.years} năm luyện Vật lý THPT` : "",
+    "Thạc sĩ Đại học Bách khoa TP.HCM",
     CONTACT.school ? `Giảng viên ngành Cơ khí, ${CONTACT.school}` : "",
   ].filter(Boolean);
 
