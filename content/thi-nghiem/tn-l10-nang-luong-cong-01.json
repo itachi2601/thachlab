@@ -1,0 +1,144 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 23. Năng lượng. Công cơ học",
+ "lesson_id": 68,
+ "nguon_trong_bai": "content/lesson-samples/l10-nang-luong-cong-co-hoc/theory.html",
+ "id": "tn-l10-nang-luong-cong-01",
+ "ten": "Quả bóng nảy thấp dần: năng lượng chuyển hoá, không mất",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nang_luong.chuyen_hoa",
+  "nang_luong.bao_toan"
+ ],
+ "muc_tieu": "Thấy thế năng ↔ động năng chuyển hoá qua lại và một phần chuyển thành nhiệt, âm thanh mỗi lần va sàn.",
+ "dung_cu": [
+  {
+   "ten": "Bóng tennis (khoảng 57 g)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước 1 m dựng đứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm (tuỳ chọn)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả bóng từ độ cao 1 m xuống sàn gạch, không ném.",
+   "Đặt thước dựng đứng cạnh chỗ rơi, nhìn (hoặc quay chậm) độ cao mỗi lần nảy."
+  ],
+  "quan_sat": [
+   "Mỗi lần nảy thấp hơn lần trước.",
+   "Mỗi lần chạm sàn có tiếng bộp.",
+   "Sau vài chục lần bóng nằm yên."
+  ],
+  "rut_ra": [
+   "Thế năng và động năng chuyển hoá qua lại.",
+   "Mỗi lần va chạm một phần thành nhiệt năng và âm thanh; tổng năng lượng không mất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h0",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2.0,
+   "mac_dinh": 1.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Tỉ lệ độ cao nảy h(n+1)/h(n)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.3,
+   "max": 0.8,
+   "mac_dinh": 0.55,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng bóng",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.057
+  },
+  {
+   "ky_hieu": "hn",
+   "ten": "Độ cao lần nảy thứ n",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  },
+  {
+   "ky_hieu": "Wt",
+   "ten": "Thế năng ở đỉnh lần nảy n",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "h(n) = h0·k^n",
+   "Wt(n) = m·g·h(n)",
+   "Năng lượng chuyển thành nhiệt + âm ở lần va thứ n = m·g·(h(n-1) − h(n))"
+  ],
+  "gia_thiet": [
+   "bỏ qua sức cản không khí",
+   "k không đổi giữa các lần nảy",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần nảy n",
+   "h (m)",
+   "Wt = mgh (J)"
+  ],
+  "hang": [
+   [
+    0,
+    1.0,
+    0.559
+   ],
+   [
+    1,
+    0.55,
+    0.307
+   ],
+   [
+    2,
+    0.3,
+    0.169
+   ],
+   [
+    3,
+    0.17,
+    0.093
+   ],
+   [
+    4,
+    0.09,
+    0.051
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình h(n) = 1,0·0,55^n; bài chỉ mô tả định tính, không hiện bảng."
+ },
+ "ket_qua_ky_vong": "Độ cao nảy giảm dần theo cấp số nhân; phần thế năng mất đi mỗi lần chuyển thành nhiệt và âm thanh.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ năng lượng của bóng bị mất đi.",
+  "Nghĩ bóng nảy được lại đúng độ cao thả nếu sàn cứng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Bóng rơi nảy; cột năng lượng chồng: thế năng, động năng, nhiệt + âm cộng dồn, tổng không đổi.",
+  "diem_nhan": "Hỏi trước: sau 5 lần nảy, năng lượng ban đầu đi đâu hết?"
+ }
+}

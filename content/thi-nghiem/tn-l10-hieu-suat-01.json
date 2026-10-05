@@ -1,0 +1,103 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 27. Hiệu suất",
+ "lesson_id": 72,
+ "nguon_trong_bai": "content/lesson-samples/l10-hieu-suat/theory.html",
+ "id": "tn-l10-hieu-suat-01",
+ "ten": "Sờ vỏ quạt bàn sau khi chạy",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "hieu_suat.hao_phi_nhiet"
+ ],
+ "muc_tieu": "Cảm nhận điện năng nhận vào không thành hết cơ năng: vỏ động cơ ấm lên là bằng chứng của hao phí.",
+ "dung_cu": [
+  {
+   "ten": "Quạt bàn (động cơ có vỏ ngoài sờ được)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Bật quạt chạy 10 phút.",
+   "Áp mu bàn tay lên vỏ động cơ (không chạm cánh quạt), rồi lên vỏ nhựa ở chân đế."
+  ],
+  "quan_sat": [
+   "Vỏ động cơ ấm hơn chân đế rõ rệt.",
+   "Có tiếng ù nhẹ."
+  ],
+  "rut_ra": [
+   "Một phần điện năng thành nhiệt và âm: hao phí W_hp."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P_tp",
+   "ten": "Công suất điện (minh hoạ)",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 45
+  },
+  {
+   "ky_hieu": "H",
+   "ten": "Hiệu suất động cơ (minh hoạ)",
+   "don_vi": "%",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 90,
+   "mac_dinh": 65,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "P_hp",
+   "ten": "Công suất hao phí",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P_ci = H·P_tp",
+   "P_hp = P_tp − P_ci"
+  ],
+  "gia_thiet": [
+   "số liệu minh hoạ, không đo thật",
+   "nhiệt hao phí toả ra không khí và vỏ máy"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "H (%)",
+   "P_ci (W)",
+   "P_hp (W)"
+  ],
+  "hang": [
+   [
+    40,
+    18.0,
+    27.0
+   ],
+   [
+    65,
+    29.25,
+    15.75
+   ],
+   [
+    90,
+    40.5,
+    4.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ P_tp = 45 W; chỉ để mô phỏng, bài không hiện bảng này."
+ },
+ "ket_qua_ky_vong": "Vỏ động cơ ấm hơn môi trường: có hao phí nhiệt.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ phần điện năng không thành chuyển động thì biến mất."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Thanh trượt H; mũi tên Sankey đổi bề dày: có ích và hao phí.",
+  "diem_nhan": "Hỏi trước: nếu H = 100 % thì vỏ có nóng không?"
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 23. Năng lượng. Công cơ học",
+ "lesson_id": 68,
+ "nguon_trong_bai": "content/lesson-samples/l10-nang-luong-cong-co-hoc/theory.html",
+ "id": "tn-l10-nang-luong-cong-03",
+ "ten": "Kéo ván trượt trên băng bằng dây chếch lên: công của từng lực",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "cong.cong_thuc",
+  "cong.dau_cua_cong",
+  "cong.cong_ma_sat"
+ ],
+ "muc_tieu": "Tính công của lực kéo, trọng lực, phản lực và ma sát; thấy phần lực kéo hướng lên làm giảm áp lực và ma sát.",
+ "dung_cu": [
+  {
+   "ten": "Ván trượt chở em nhỏ (tổng 30 kg)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây kéo",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kéo ván trên mặt băng nằm ngang bằng dây chếch lên 30°, lực 40 N, đi 15 m."
+  ],
+  "quan_sat": [
+   "A_F ≈ 520 J; A_P = A_N = 0; N = 280 N; F_ms = 14 N; A_ms = −210 J."
+  ],
+  "rut_ra": [
+   "Lực vuông góc đường đi không sinh công; ma sát sinh công cản; tổng công dương nên ván nhanh dần."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Tổng khối lượng",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 40,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc dây với phương ngang (dương: chếch lên)",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": -60,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 40,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát trượt ván–băng",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "A_F",
+   "ten": "Công lực kéo",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "A_ms",
+   "ten": "Công lực ma sát",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "N = m·g − F·sin α",
+   "F_ms = μ·N",
+   "A_F = F·s·cos α",
+   "A_ms = −F_ms·s",
+   "A_P = A_N = 0"
+  ],
+  "gia_thiet": [
+   "mặt băng nằm ngang",
+   "ván không bị nhấc khỏi mặt băng (N > 0)",
+   "g = 10 m/s² theo bài mẫu",
+   "μ = 0,05 là số liệu minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (độ)",
+   "s (m)",
+   "N (N)",
+   "A_F (J)",
+   "A_ms (J)"
+  ],
+  "hang": [
+   [
+    30,
+    15,
+    280.0,
+    519.6,
+    -210.0
+   ],
+   [
+    0,
+    15,
+    300.0,
+    600.0,
+    -225.0
+   ],
+   [
+    -30,
+    15,
+    320.0,
+    519.6,
+    -240.0
+   ],
+   [
+    30,
+    30,
+    280.0,
+    1039.2,
+    -420.0
+   ]
+  ],
+  "ghi_chu": "Hàng 1: bài toán mẫu; hàng 2: điền bước trống (dây ngang); hàng 3: thử sức đẩy chếch xuống; hàng 4: Câu 6."
+ },
+ "ket_qua_ky_vong": "A_F ≈ 520 J, A_P = A_N = 0, A_ms = −210 J.",
+ "hien_tuong_hay_sai": [
+  "Lấy N = mg khi lực kéo chếch lên.",
+  "Quên dấu trừ của công ma sát.",
+  "Cho trọng lực sinh công khi vật đi ngang."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Thanh trượt góc dây; vẽ lại các lực và cột công từng lực, tổng công.",
+  "diem_nhan": "Hỏi trước: kéo chếch lên hay đẩy chếch xuống thì ma sát lớn hơn?"
+ }
+}

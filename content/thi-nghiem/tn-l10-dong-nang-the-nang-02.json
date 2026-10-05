@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 25. Động năng, thế năng",
+ "lesson_id": 70,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-nang-the-nang/theory.html",
+ "id": "tn-l10-dong-nang-the-nang-02",
+ "ten": "Con lắc vướng đinh (con lắc Galilei)",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "the_nang.cong_trong_luc_khong_phu_thuoc_duong_di",
+  "dong_nang.dinh_li_dong_nang"
+ ],
+ "muc_tieu": "Thấy quả nặng lên lại gần đúng độ cao ban đầu dù dây vướng đinh: công trọng lực chỉ phụ thuộc độ cao, lực căng không sinh công.",
+ "dung_cu": [
+  {
+   "ten": "Quả nặng 100–200 g + dây mảnh 1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá treo trước bảng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đinh hoặc chốt cắm được dưới điểm treo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Phấn vạch mốc độ cao",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo quả nặng, kéo lệch tới vạch độ cao h0 rồi thả (không đẩy).",
+   "Đánh dấu độ cao quả nặng lên tới phía bên kia.",
+   "Cắm đinh dưới điểm treo để dây vướng khi qua vị trí thấp nhất, thả lại từ vạch cũ."
+  ],
+  "quan_sat": [
+   "Hai lần quả nặng đều lên gần đúng vạch h0, lần vướng đinh quỹ đạo cong gắt hơn."
+  ],
+  "rut_ra": [
+   "Lực căng vuông góc đường đi nên không sinh công.",
+   "Công trọng lực khi xuống h0 và khi lên h0 bằng nhau, trái dấu: chỉ phụ thuộc độ cao đầu, cuối."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h0",
+   "ten": "Độ cao thả so với điểm thấp nhất",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.3,
+   "mac_dinh": 0.2
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách điểm treo – đinh",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.0,
+   "max": 0.7,
+   "mac_dinh": 0.5
+  },
+  {
+   "ky_hieu": "h1",
+   "ten": "Độ cao lên được phía bên kia",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v_thấp² = 2·g·h0",
+   "h1 = h0 (khi h0 ≤ L − d, dây không chùng)"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s²",
+   "bỏ qua lực cản không khí và ma sát ở điểm treo",
+   "h0 ≤ L − d (thanh trượt h0 tối đa 0,3 m, d tối đa 0,7 m) để dây không chùng sau khi vướng đinh"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (m)",
+   "h0 (m)",
+   "h1 mô hình (m)"
+  ],
+  "hang": [
+   [
+    0.0,
+    0.2,
+    0.2
+   ],
+   [
+    0.5,
+    0.2,
+    0.2
+   ],
+   [
+    0.7,
+    0.2,
+    0.2
+   ]
+  ],
+  "ghi_chu": "Số liệu mô hình, không đo; thực tế h1 thấp hơn h0 vài mm do lực cản."
+ },
+ "ket_qua_ky_vong": "Quả nặng lên lại cùng độ cao h0 với mọi vị trí đinh (khi dây không chùng).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dây vướng đinh thì quả nặng lên cao hơn hoặc thấp hơn hẳn.",
+  "Nghĩ lực căng dây sinh công."
+ ],
+ "an_toan": [
+  "Đinh cắm chắc, không đứng trên đường quả nặng đi qua."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo thả con lắc, thanh trượt vị trí đinh; vạch mờ đánh dấu h0 ở cả hai bên.",
+  "diem_nhan": "Hỏi trước: có đinh thì quả nặng lên cao hơn, thấp hơn hay bằng vạch cũ?"
+ }
+}

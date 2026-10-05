@@ -1,0 +1,144 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 25. Động năng, thế năng",
+ "lesson_id": 70,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-nang-the-nang/theory.html",
+ "id": "tn-l10-dong-nang-the-nang-01",
+ "ten": "Khúc gỗ trượt sau cổng quang: quãng trượt tỉ lệ v²",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dong_nang.dinh_li_dong_nang",
+  "dong_nang.ti_le_v_binh_phuong"
+ ],
+ "muc_tieu": "Đo tốc độ v khi khúc gỗ qua cổng quang và quãng trượt s tới khi dừng, thấy s tỉ lệ với v² (định lí động năng với công ma sát).",
+ "dung_cu": [
+  {
+   "ten": "Khúc gỗ có tấm chắn sáng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dây 2 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn dài phẳng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt cổng quang trên mặt bàn, đo bề rộng tấm chắn sáng để tính v.",
+   "Đẩy khúc gỗ rồi buông tay trước cổng quang.",
+   "Đọc v khi khúc gỗ qua cổng, đo quãng trượt s từ cổng tới chỗ dừng.",
+   "Làm 4 lần với 4 tốc độ khác nhau: 1,00; 1,50; 2,00; 2,50 m/s."
+  ],
+  "quan_sat": [
+   "s = 0,21; 0,44; 0,82; 1,22 m.",
+   "s/v² = 0,210; 0,196; 0,205; 0,195 s²/m, quanh 0,20."
+  ],
+  "rut_ra": [
+   "0 − ½mv² = −μmg·s nên s = v²/(2μg) tỉ lệ với v²: tốc độ gấp đôi, quãng trượt gấp bốn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ qua cổng quang",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3.0,
+   "mac_dinh": 2.0,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát trượt gỗ–bàn",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.25
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng trượt tới khi dừng",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "0 − ½·m·v² = −μ·m·g·s",
+   "s = v²/(2·μ·g) = v²/5 (m)",
+   "s/v² = 1/(2μg) = 0,20 s²/m"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s² (thống nhất với bài, khác 9,8 trong README)",
+   "lực ma sát trượt không đổi",
+   "bỏ qua lực cản không khí"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "s đo (m)",
+   "s/v² (s²/m)",
+   "s mô hình (m)"
+  ],
+  "hang": [
+   [
+    1.0,
+    0.21,
+    0.21,
+    0.2
+   ],
+   [
+    1.5,
+    0.44,
+    0.196,
+    0.45
+   ],
+   [
+    2.0,
+    0.82,
+    0.205,
+    0.8
+   ],
+   [
+    2.5,
+    1.22,
+    0.195,
+    1.25
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: s lệch vài % quanh mô hình s = v²/5; lần v = 1,00 m/s lệch nhiều nhất (+5,0 %), các lần khác −2,2 %, +2,5 %, −2,4 %. Bài hiện 3 cột đầu."
+ },
+ "ket_qua_ky_vong": "s tỉ lệ với v²; s/v² ≈ 0,20 s²/m, suy ra μ ≈ 0,25.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ tốc độ gấp đôi thì quãng trượt gấp đôi.",
+  "Quên rằng ma sát sinh công âm làm giảm động năng."
+ ],
+ "sai_so_thuong_gap": [
+  "Quãng trượt ngắn (v nhỏ): sai 1 cm đã là 5 %.",
+  "Mặt bàn không đều, hệ số ma sát thay đổi theo chỗ.",
+  "Cổng quang đặt lệch, tấm chắn sáng nghiêng làm sai v."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt v; khúc gỗ trượt và dừng, bảng tự thêm hàng v, s, s/v².",
+  "diem_nhan": "Hỏi trước: tốc độ gấp đôi thì trượt xa gấp mấy?"
+ }
+}

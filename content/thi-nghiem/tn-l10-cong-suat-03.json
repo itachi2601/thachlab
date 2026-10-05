@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 24. Công suất",
+ "lesson_id": 69,
+ "nguon_trong_bai": "content/lesson-samples/l10-cong-suat/theory.html",
+ "id": "tn-l10-cong-suat-03",
+ "ten": "Thang máy nâng đều: công không đổi, công suất theo thời gian",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "cong_suat.p_bang_a_chia_t",
+  "cong_suat.p_bang_f_nhan_v"
+ ],
+ "muc_tieu": "Tính công và công suất của thang nâng đều, kiểm lại bằng P = F·v.",
+ "dung_cu": [
+  {
+   "ten": "Thang máy chở hàng (phân tích trên giấy)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xác định lực kéo khi nâng đều: F = mg.",
+   "Tính A = F·d rồi P = A/t.",
+   "Kiểm lại bằng v = d/t và P = F·v."
+  ],
+  "quan_sat": [
+   "Đổi t từ 30 s xuống 10 s: A giữ 120 kJ, P tăng từ 4 kW lên 12 kW."
+  ],
+  "rut_ra": [
+   "Công không phụ thuộc thời gian; công suất tỉ lệ nghịch với thời gian."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng cabin cùng hàng",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 800
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Độ cao nâng",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 15
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do (dùng trong bài)",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian nâng",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 40,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công của lực kéo",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất trung bình",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = m·g",
+   "A = F·d",
+   "P = A/t",
+   "v = d/t; P = F·v"
+  ],
+  "gia_thiet": [
+   "nâng đều",
+   "bỏ qua ma sát và đối trọng",
+   "g = 10 m/s²",
+   "số liệu minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "v (m/s)",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    30,
+    0.5,
+    4000
+   ],
+   [
+    20,
+    0.75,
+    6000
+   ],
+   [
+    15,
+    1.0,
+    8000
+   ],
+   [
+    10,
+    1.5,
+    12000
+   ]
+  ],
+  "ghi_chu": "A = 120000 J không đổi; P = 120000/t."
+ },
+ "ket_qua_ky_vong": "A = 120 kJ; t = 30 s cho P = 4 kW; t = 40 s cho 3 kW; động cơ 6 kW nâng nhanh nhất trong 20 s.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nâng nhanh hơn thì công lớn hơn.",
+  "Quên đổi kW ra W hoặc nhầm công thức t = P/A."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo thanh t hoặc P_động_cơ; cabin chạy lên, hiện A, P, v theo thời gian.",
+  "diem_nhan": "Hỏi trước: nâng nhanh gấp đôi thì công suất gấp mấy lần, công thì sao?"
+ }
+}

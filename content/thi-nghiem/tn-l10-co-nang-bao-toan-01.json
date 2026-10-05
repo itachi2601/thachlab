@@ -1,0 +1,149 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+ "lesson_id": 71,
+ "nguon_trong_bai": "content/lesson-samples/l10-co-nang-bao-toan/theory.html",
+ "id": "tn-l10-co-nang-bao-toan-01",
+ "ten": "Con lắc qua cổng quang: thế năng thành động năng",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "co_nang.bao_toan",
+  "co_nang.v_bang_can_2gh"
+ ],
+ "muc_tieu": "Đo tốc độ quả nặng con lắc ở vị trí thấp nhất khi thả từ các độ cao h khác nhau, so v² với 2gh để kiểm định luật bảo toàn cơ năng.",
+ "dung_cu": [
+  {
+   "ten": "Quả nặng có tấm chắn sáng, dây treo dài ~1 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ cao",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá treo",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo con lắc, đặt cổng quang ở vị trí thấp nhất.",
+   "Kéo lệch quả nặng lên độ cao h (đo từ tâm quả nặng ở vị trí thấp nhất) rồi thả không vận tốc đầu.",
+   "Đọc tốc độ v khi qua cổng.",
+   "Làm 4 lần: h = 5; 10; 15; 20 cm."
+  ],
+  "quan_sat": [
+   "v = 0,98; 1,39; 1,70; 1,97 m/s.",
+   "v²/(2gh) = 96,0; 96,6; 96,3; 97,0 %, luôn dưới 100 %."
+  ],
+  "rut_ra": [
+   "mgh ≈ ½mv²: cơ năng bảo toàn gần đúng; lực căng dây vuông góc đường đi nên không sinh công.",
+   "Phần thiếu 3–4 % là sai số hệ thống (lực cản, ma sát điểm treo, tốc độ trung bình qua cổng)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Phần cơ năng giữ lại (mô hình hao hụt)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.965
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ ở vị trí thấp nhất",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "mgh = ½mv² (lí tưởng) ⇒ v = √(2gh)",
+   "v_do ≈ √(k·2gh), k ≈ 0,965"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s² (thống nhất với bài)",
+   "dây không dãn, khối lượng dây không đáng kể",
+   "hao hụt do lực cản gộp vào hệ số k"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (cm)",
+   "v đo (m/s)",
+   "giữ lại v²/(2gh) (%)",
+   "v lí tưởng (m/s)",
+   "v mô hình k=0,965 (m/s)"
+  ],
+  "hang": [
+   [
+    5,
+    0.98,
+    96.0,
+    1.0,
+    0.982
+   ],
+   [
+    10,
+    1.39,
+    96.6,
+    1.414,
+    1.389
+   ],
+   [
+    15,
+    1.7,
+    96.3,
+    1.732,
+    1.701
+   ],
+   [
+    20,
+    1.97,
+    97.0,
+    2.0,
+    1.965
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ; lệch v đo so với mô hình ≤ 0,006 m/s. Lần h = 5 cm giữ lại ít nhất (96,0 %). Bài hiện 3 cột đầu."
+ },
+ "ket_qua_ky_vong": "v²/(2gh) ≈ 96–97 %, luôn dưới 100 %: cơ năng bảo toàn gần đúng, hao hụt nhỏ do lực cản.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ quả nặng nặng hơn thì qua cổng nhanh hơn.",
+  "Nghĩ lực căng dây làm mất cơ năng."
+ ],
+ "sai_so_thuong_gap": [
+  "h nhỏ: đo sai 2 mm đã là 4 %.",
+  "Tấm chắn sáng cho tốc độ trung bình qua cổng.",
+  "Lực cản không khí, ma sát ở điểm treo."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt h; con lắc dao động, cột Wt/Wđ đổi qua lại, bảng thêm hàng h, v, v²/(2gh).",
+  "diem_nhan": "Hỏi trước: đổi quả nặng nặng gấp đôi thì v đổi không?"
+ }
+}

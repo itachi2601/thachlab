@@ -1,0 +1,141 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 25. Động năng, thế năng",
+ "lesson_id": 70,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-nang-the-nang/theory.html",
+ "id": "tn-l10-dong-nang-the-nang-03",
+ "ten": "Tàu lượn: thế năng, công trọng lực và tốc độ",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "the_nang.mgz_theo_moc",
+  "the_nang.cong_trong_luc_bang_hieu_the_nang",
+  "dong_nang.dinh_li_dong_nang"
+ ],
+ "muc_tieu": "Tính thế năng tại A, B, công trọng lực A→B và tốc độ tại B, D của toa tàu lượn (bỏ qua ma sát).",
+ "dung_cu": [
+  {
+   "ten": "Tình huống đời sống: tàu lượn công viên",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Toa 400 kg qua A (18 m) với 10 m/s, xuống B (3 m), lên D (13 m)."
+  ],
+  "quan_sat": [
+   "WtA = 72 000 J, WtB = 12 000 J (mốc mặt đất).",
+   "Công trọng lực A→B = 60 000 J; vB = 20 m/s; vD ≈ 14,1 m/s."
+  ],
+  "rut_ra": [
+   "Công trọng lực = thế năng đầu − cuối, không phụ thuộc mốc và hình dạng ray.",
+   "Đi lên thì công trọng lực âm, động năng giảm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng toa + khách",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 800,
+   "mac_dinh": 400
+  },
+  {
+   "ky_hieu": "vA",
+   "ten": "Tốc độ tại A",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 15,
+   "mac_dinh": 10
+  },
+  {
+   "ky_hieu": "zA",
+   "ten": "Độ cao A",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 18
+  },
+  {
+   "ky_hieu": "zB",
+   "ten": "Độ cao B",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 3
+  },
+  {
+   "ky_hieu": "zD",
+   "ten": "Độ cao D",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 13
+  },
+  {
+   "ky_hieu": "vB",
+   "ten": "Tốc độ tại B",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "vD",
+   "ten": "Tốc độ tại D",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Wt = m·g·z",
+   "A_AB = m·g·(zA − zB)",
+   "vB² = vA² + 2·g·(zA − zB)",
+   "vD² = vB² − 2·g·(zD − zB)"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s²",
+   "bỏ qua ma sát và lực cản; phản lực ray vuông góc đường đi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "điểm",
+   "z (m)",
+   "Wt (J)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    "A",
+    18,
+    72000.0,
+    10
+   ],
+   [
+    "B",
+    3,
+    12000.0,
+    20.0
+   ],
+   [
+    "D",
+    13,
+    52000.0,
+    14.14
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (bài toán mẫu + Câu 7). Có lực cản sinh công −30 000 J từ A đến B thì vB = √250 ≈ 15,8 m/s."
+ },
+ "ket_qua_ky_vong": "vB = 20 m/s, vD ≈ 14,1 m/s; mọi mốc thế năng cho cùng công 60 000 J từ A đến B.",
+ "hien_tuong_hay_sai": [
+  "Lấy cuối trừ đầu khi tính công trọng lực.",
+  "Dùng độ cao D so với mặt đất thay vì hiệu zD − zB.",
+  "Nghĩ toa nặng hơn thì xuống B nhanh hơn (m triệt tiêu)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Toa chạy trên ray, đồ thị cột Wđ và Wt cập nhật theo vị trí; thanh trượt chọn mốc thế năng.",
+  "diem_nhan": "Đổi mốc: cột Wt nhảy, nhưng công và tốc độ không đổi."
+ }
+}

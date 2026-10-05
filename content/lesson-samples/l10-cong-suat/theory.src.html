@@ -1,0 +1,432 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Hiểu <strong>công suất</strong> $P = A/t$: sinh công nhanh hay chậm.</li>
+<li>Đổi đơn vị <strong>W, kW, MW, mã lực</strong>; nhớ <strong>kWh là đơn vị của công</strong>.</li>
+<li>Dùng <strong>$P = F v$</strong> cho công suất tức thời; giải thích vì sao xe lên dốc phải giảm số.</li>
+<li>Không nhầm <strong>công suất lớn</strong> với <strong>công lớn</strong> khi so sánh hai máy.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: hai thang máy trong xưởng</h3>
+
+<p>Xưởng cơ khí có hai thang máy chở hàng. Cả hai nâng cùng một thùng phôi thép $500$ kg từ mặt đất lên sàn cao $20$ m. Thang A mất $10$ s, thang B mất $20$ s. Hai thang nâng cùng vật lên cùng độ cao.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Điều gì khác nhau giữa hai thang máy?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q1" id="tl69-q1a"><label for="tl69-q1a" class="tl-opt tl-no">A. Công của thang A lớn hơn, vì nó nâng nhanh hơn</label>
+<input type="radio" name="tl69-q1" id="tl69-q1b"><label for="tl69-q1b" class="tl-opt tl-ok">B. Công bằng nhau, thang A sinh công nhanh hơn</label>
+<input type="radio" name="tl69-q1" id="tl69-q1c"><label for="tl69-q1c" class="tl-opt tl-no">C. Công của thang B lớn hơn, vì nó làm việc lâu hơn</label>
+<input type="radio" name="tl69-q1" id="tl69-q1d"><label for="tl69-q1d" class="tl-opt tl-no">D. Hai thang giống hệt nhau, vì cùng nâng một thùng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Cả hai nâng thùng $500$ kg lên $20$ m nên công bằng nhau, $A = mgh = 100\,000\ \text{J}$. Thang A xong trong $10$ s, thang B trong $20$ s: A sinh công nhanh gấp đôi. Đại lượng chỉ tốc độ sinh công có tên là <strong>công suất</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A hoặc C là gắn công với thời gian: lực nâng và quãng đường như nhau thì công như nhau, nhanh hay chậm không đổi được. Chọn D là bỏ qua việc thang A xong sớm gấp đôi, nên giữa hai thang vẫn có một điều khác nhau.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: công suất và đơn vị</h3>
+
+<h4>1. Công suất trung bình</h4>
+
+<p><strong>🔑 Công trong một giây · nhanh là công suất lớn</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Công suất</p>
+<ul>
+<li>Đặc trưng cho <strong>tốc độ sinh công</strong>.</li>
+<li>Bằng công sinh ra trong <strong>một đơn vị thời gian</strong>.</li>
+</ul>
+$$P = \dfrac{A}{t}$$
+<p>$A$: công (J) · $t$: thời gian (s) · $P$: công suất trung bình (W).</p>
+</div>
+
+<ul>
+<li>Ví dụ mở bài, lấy $g = 10\ \text{m/s}^2$: cả hai thang $A = 500 \cdot 10 \cdot 20 = 100\,000\ \text{J}$. Thang A có $P = 100\,000/10 = 10\,000\ \text{W}$, thang B có $5\,000\ \text{W}$ (số minh hoạ).</li>
+<li>Mở rộng: dùng cho <strong>mọi nguồn năng lượng</strong> (lò nung, nhà máy điện, đài phát sóng): năng lượng phát ra mỗi giây. Công suất tiêu thụ: năng lượng thiết bị dùng mỗi giây, như đèn $10\ \text{W}$ dùng $10$ J điện mỗi giây.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-cong-suat-01">
+<p class="tl-label">🔬 Thí nghiệm: leo cầu thang</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> bạn nặng $50$ kg leo cầu thang cao $3{,}0$ m bốn lần, mỗi lần nhanh hơn; bạn khác bấm giờ từ chân tới đỉnh.</li>
+<li><strong>Quan sát:</strong> thời gian giảm dần; leo nhanh thì mệt hơn.</li>
+<li><strong>Rút ra:</strong> công nâng người luôn bằng nhau; leo nhanh hơn thì công suất lớn hơn.</li>
+</ol>
+</div>
+
+<p>Mỗi lần, công nâng người là $A = mgh$ với $m = 50$ kg, $h = 3{,}0$ m, $g = 10\ \text{m/s}^2$ (số liệu minh hoạ). Lần 1 là đi chậm, lần 4 là leo thật nhanh.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lần</th><th>$t$ (s)</th><th>$P$ (W)</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>12,0</td><td>125</td></tr>
+<tr><td>2</td><td>8,5</td><td>176</td></tr>
+<tr><td>3</td><td>6,0</td><td>250</td></tr>
+<tr><td>4</td><td>4,0</td><td>375</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>Công $A$ có đổi giữa bốn lần không? Đồng hồ bấm tay sai $0{,}3$ s thì lần đo nào bị ảnh hưởng nhiều nhất?</p>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem nhận xét</summary>
+<p>Công $A = mgh = 50 \cdot 10 \cdot 3{,}0 = 1\,500$ J không đổi; chỉ $t$ đổi nên $P = A/t$ tăng khi $t$ giảm, từ $125$ W lên $375$ W.</p>
+<p>Sai $0{,}3$ s chiếm $2{,}5\,\%$ của $12{,}0$ s nhưng tới $7{,}5\,\%$ của $4{,}0$ s. Lần 4 chịu ảnh hưởng nhiều nhất: $t$ từ $3{,}7$ s đến $4{,}3$ s cho $P$ từ khoảng $405$ W xuống $349$ W. Đo thời gian càng ngắn, sai số tương đối càng lớn. Độ cao bậc thang đo sai vài cm cũng làm lệch $A$.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Cần cẩu nâng đều khối $200$ kg lên cao $6$ m trong $4$ s ($g = 10\ \text{m/s}^2$). Công suất trung bình của lực nâng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q2" id="tl69-q2a"><label for="tl69-q2a" class="tl-opt tl-no">A. $12\,000\ \text{W}$</label>
+<input type="radio" name="tl69-q2" id="tl69-q2b"><label for="tl69-q2b" class="tl-opt tl-no">B. $300\ \text{W}$</label>
+<input type="radio" name="tl69-q2" id="tl69-q2c"><label for="tl69-q2c" class="tl-opt tl-ok">C. $3\,000\ \text{W}$</label>
+<input type="radio" name="tl69-q2" id="tl69-q2d"><label for="tl69-q2d" class="tl-opt tl-no">D. $48\,000\ \text{W}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nâng đều nên lực nâng bằng trọng lượng: $F = mg = 2\,000$ N; $A = F d = 12\,000$ J; $P = A/t = 12\,000/4 = 3\,000$ W.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là công $12\,000$ J, chưa chia cho $t$; B quên $g$ (lấy $m$ thay cho trọng lượng); D nhân với $t$ thay vì chia. Công suất bằng công chia thời gian.</p></div>
+</div>
+</div>
+
+<h4>2. Đơn vị công suất</h4>
+
+<p><strong>🔑 Oát là jun mỗi giây · kWh là công</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đơn vị</th><th>Bằng</th></tr>
+</thead>
+<tbody>
+<tr><td>oát (W)</td><td>$1\ \text{W} = 1\ \text{J/s}$</td></tr>
+<tr><td>kilôoát (kW)</td><td>$10^{3}\ \text{W}$</td></tr>
+<tr><td>mêgaoát (MW)</td><td>$10^{6}\ \text{W}$</td></tr>
+<tr><td>mã lực Pháp (CV)</td><td>$736\ \text{W}$</td></tr>
+<tr><td>mã lực Anh (HP)</td><td>$746\ \text{W}$</td></tr>
+<tr><td>kilôoát giờ (kWh)</td><td>đơn vị <strong>công</strong>: $3{,}6\cdot 10^{6}\ \text{J}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>Ví dụ: thang A ở mở bài có $P = 10\ \text{kW}$, tương đương $10\,000/736 \approx 13{,}6$ mã lực Pháp.</li>
+<li>Ví dụ: thiết bị $1\ \text{kW}$ chạy $1$ giờ tiêu thụ $1\ \text{kWh} = 3\,600\,000\ \text{J}$. Hoá đơn tiền điện tính theo đơn vị này.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Động cơ ghi $2$ mã lực Pháp (CV), $1\ \text{CV} = 736\ \text{W}$. Công suất của nó khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q3" id="tl69-q3a"><label for="tl69-q3a" class="tl-opt tl-ok">A. $1{,}47\ \text{kW}$</label>
+<input type="radio" name="tl69-q3" id="tl69-q3b"><label for="tl69-q3b" class="tl-opt tl-no">B. $368\ \text{W}$</label>
+<input type="radio" name="tl69-q3" id="tl69-q3c"><label for="tl69-q3c" class="tl-opt tl-no">C. $14{,}7\ \text{kW}$</label>
+<input type="radio" name="tl69-q3" id="tl69-q3d"><label for="tl69-q3d" class="tl-opt tl-no">D. $2\ \text{kW}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $2 \cdot 736 = 1\,472\ \text{W} \approx 1{,}47\ \text{kW}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B chia $736$ cho $2$ thay vì nhân; C lệch một bậc mười khi đổi W sang kW; D coi $1$ CV bằng $1$ kW. Nhân $2 \cdot 736$, rồi đổi $1\,000\ \text{W} = 1\ \text{kW}$.</p></div>
+</div>
+</div>
+
+<h4>3. Công suất, lực và vận tốc</h4>
+
+<p><strong>🔑 Công suất bằng lực nhân vận tốc</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Liên hệ $P$ với $F$ và $v$</p>
+<ul>
+<li>Lực $F$ <strong>cùng hướng</strong> độ dịch chuyển: $A = F d = F v_{tb} t$.</li>
+<li>Chia cho $t$ ta có công suất trung bình.</li>
+</ul>
+$$P = \dfrac{A}{t} = F\,v_{tb}$$
+<ul>
+<li>Lấy khoảng thời gian rất nhỏ thì $v_{tb}$ thành vận tốc tức thời: <strong>công suất tức thời</strong> $P = F v$ tại đúng lúc đó.</li>
+</ul>
+<p>$F$: lực (N) · $v$: vận tốc (m/s) · $P$: công suất (W).</p>
+</div>
+
+<ul>
+<li>Ví dụ, máy phay CNC: trục chính $2{,}2$ kW, giả định toàn bộ dùng để cắt. Tốc độ cắt $1{,}0$ m/s cho lực cắt tối đa $F = P/v = 2\,200$ N; tăng gấp đôi tốc độ thì chỉ còn $1\,100$ N, nên phải giảm lượng ăn dao.</li>
+<li>Công suất tối đa của động cơ gần như cố định: muốn $F$ lớn thì $v$ phải nhỏ.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-cong-suat-02">
+<p class="tl-label">🔬 Thí nghiệm: đạp xe lên dốc cầu</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đạp xe trên đường bằng, rồi lên dốc cầu mà giữ nguyên số; sau đó chuyển số nhẹ và lên dốc lại.</li>
+<li><strong>Quan sát:</strong> giữ số cũ, chân ấn rất nặng, xe chậm dần. Số nhẹ thì đạp nhẹ hơn nhưng xe đi chậm hơn nữa.</li>
+<li><strong>Rút ra:</strong> người đạp có công suất giới hạn nên $P = F v$ cố định: lực lớn thì vận tốc nhỏ.</li>
+</ol>
+</div>
+
+<p>Xe máy minh hoạ có công suất tối đa $6\ \text{kW}$ (giả định). Lực kéo lớn nhất theo vận tốc là $F = P/v$:</p>
+
+<!--FIG2-->
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$v$ (m/s)</th><th>$F$ lớn nhất (N)</th></tr>
+</thead>
+<tbody>
+<tr><td>20</td><td>300</td></tr>
+<tr><td>10</td><td>600</td></tr>
+<tr><td>5</td><td>1 200</td></tr>
+<tr><td>2</td><td>3 000</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>➕ Xem thêm: lực hợp góc với hướng chuyển động</summary>
+<p>Khi lực $F$ hợp với vận tốc góc $\alpha$ thì công suất là $P = F v\cos\alpha$. Chỉ thành phần của lực cùng hướng chuyển động mới sinh công. Lực vuông góc vận tốc ($\alpha = 90^\circ$) có $P = 0$.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Ô tô chạy đều $72$ km/h, lực kéo của động cơ $1\,500$ N. Công suất tức thời của động cơ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q4" id="tl69-q4a"><label for="tl69-q4a" class="tl-opt tl-no">A. $108\ \text{kW}$</label>
+<input type="radio" name="tl69-q4" id="tl69-q4b"><label for="tl69-q4b" class="tl-opt tl-no">B. $75\ \text{W}$</label>
+<input type="radio" name="tl69-q4" id="tl69-q4c"><label for="tl69-q4c" class="tl-opt tl-no">C. $30\ \text{W}$</label>
+<input type="radio" name="tl69-q4" id="tl69-q4d"><label for="tl69-q4d" class="tl-opt tl-ok">D. $30\ \text{kW}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $72$ km/h $= 20$ m/s; $P = F v = 1\,500 \cdot 20 = 30\,000\ \text{W} = 30\ \text{kW}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhân thẳng với $72$ mà chưa đổi km/h ra m/s; B chia $F/v$ thay vì nhân; C đúng chữ số nhưng sai bội, $30\,000\ \text{W}$ là $30$ kW chứ không phải $30$ W. Đổi $v$ ra m/s (chia $3{,}6$) rồi nhân với $F$.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: công suất lớn là công lớn</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Công suất $P$</th><th>Công $A$</th></tr>
+</thead>
+<tbody>
+<tr><td>Sinh công nhanh hay chậm</td><td>Tổng việc đã làm</td></tr>
+<tr><td>$P = A/t$, đơn vị W</td><td>$A = P\,t$, đơn vị J</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Công bằng công suất nhân thời gian</strong></p>
+
+<!--FIG3-->
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl69-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl69-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Máy A có công suất $5$ kW, chạy $10$ s. Máy B có công suất $1$ kW, chạy $100$ s. Nhận xét nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q5" id="tl69-q5a"><label for="tl69-q5a" class="tl-opt tl-no">A. Máy A có công suất lớn hơn nên cũng sinh công lớn hơn</label>
+<input type="radio" name="tl69-q5" id="tl69-q5b"><label for="tl69-q5b" class="tl-opt tl-ok">B. Công suất A lớn hơn, nhưng công của B lớn hơn</label>
+<input type="radio" name="tl69-q5" id="tl69-q5c"><label for="tl69-q5c" class="tl-opt tl-no">C. Máy B sinh nhiều công hơn nên công suất của B cũng lớn hơn</label>
+<input type="radio" name="tl69-q5" id="tl69-q5d"><label for="tl69-q5d" class="tl-opt tl-no">D. Không so sánh được công suất vì hai máy chạy thời gian khác nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A_A = 5\,000 \cdot 10 = 50\,000$ J, $A_B = 1\,000 \cdot 100 = 100\,000$ J. A sinh công nhanh hơn nhưng B làm lâu hơn nên tổng công nhiều hơn. Em giải thích được cho bạn ngồi cạnh vì sao công suất lớn chưa chắc công lớn chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và C đều cho rằng công và công suất luôn tăng giảm cùng nhau, nhưng $A = P t$ còn phụ thuộc thời gian. D nhầm: công suất đã là công trên mỗi giây nên so sánh trực tiếp được. Tính $A = P t$ cho từng máy. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: kWh là đơn vị công suất</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>kW (công suất)</th><th>kWh (công)</th></tr>
+</thead>
+<tbody>
+<tr><td>$1\ \text{kW} = 1\,000\ \text{J/s}$</td><td>$1\ \text{kWh} = 3{,}6\cdot 10^{6}\ \text{J}$</td></tr>
+<tr><td>Ghi trên nhãn đèn, máy</td><td>Ghi trên hoá đơn điện</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 kW nhân giờ ra kWh · điện năng là công</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Bóng đèn ghi $100$ W bật liên tục $10$ giờ. Điện năng tiêu thụ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q6" id="tl69-q6a"><label for="tl69-q6a" class="tl-opt tl-ok">A. $1\ \text{kWh}$</label>
+<input type="radio" name="tl69-q6" id="tl69-q6b"><label for="tl69-q6b" class="tl-opt tl-no">B. $10\ \text{kWh}$</label>
+<input type="radio" name="tl69-q6" id="tl69-q6c"><label for="tl69-q6c" class="tl-opt tl-no">C. $1\,000\ \text{kWh}$</label>
+<input type="radio" name="tl69-q6" id="tl69-q6d"><label for="tl69-q6d" class="tl-opt tl-no">D. $100\ \text{W}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $100\ \text{W} \cdot 10\ \text{h} = 1\,000\ \text{Wh} = 1\ \text{kWh}$, tức $3{,}6\cdot 10^{6}$ J.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B coi $100$ W là $1$ kW; C quên đổi $\text{Wh}$ sang $\text{kWh}$ (chia $1\,000$); D là công suất, không phải điện năng. Điện năng bằng công suất nhân thời gian.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: xe lên dốc chạy chậm vì động cơ yếu đi</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đường bằng</th><th>Lên dốc</th></tr>
+</thead>
+<tbody>
+<tr><td>Lực cản nhỏ</td><td>Lực cản lớn hơn (thêm thành phần trọng lực)</td></tr>
+<tr><td>Cùng $P_{\max}$</td><td>Cùng $P_{\max}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Công suất tối đa có hạn</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Xe máy chạy trên đường bằng, rồi gặp dốc dài. Người lái giảm số, xe chạy chậm lại. Lý do đúng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q7" id="tl69-q7a"><label for="tl69-q7a" class="tl-opt tl-no">A. Giảm số làm động cơ phát công suất lớn hơn mức tối đa</label>
+<input type="radio" name="tl69-q7" id="tl69-q7b"><label for="tl69-q7b" class="tl-opt tl-no">B. Lên dốc thì công suất của động cơ tự động giảm đi</label>
+<input type="radio" name="tl69-q7" id="tl69-q7c"><label for="tl69-q7c" class="tl-opt tl-ok">C. Công suất có hạn, $P = F v$ nên $F$ lớn thì $v$ nhỏ</label>
+<input type="radio" name="tl69-q7" id="tl69-q7d"><label for="tl69-q7d" class="tl-opt tl-no">D. Chạy chậm thì dốc kéo xe xuống yếu đi nên xe lên dễ hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Công suất tối đa của động cơ gần như cố định. Lên dốc cần lực kéo lớn hơn; vì $v = P/F$ nên vận tốc phải nhỏ lại. Cùng công suất, lực kéo lớn thì chạy chậm: giảm số đổi vận tốc lấy lực kéo, không tạo thêm công suất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: không hộp số nào cho công suất vượt mức tối đa. B: vặn ga hết cỡ thì công suất vẫn ở mức tối đa, không tự giảm. D: thành phần trọng lực kéo xe xuống dốc không đổi theo vận tốc. Nhìn lại $P = F v$ khi $P$ cố định.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Công suất là gì? Viết công thức. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tốc độ sinh công · công trong một đơn vị thời gian · $P = A/t$.</p>
+</details>
+<details class="tl-details">
+<summary>2. $1$ W bằng gì? Nêu kW, MW, mã lực. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$1\ \text{W} = 1\ \text{J/s}$ · $1\ \text{kW} = 10^{3}\ \text{W}$ · $1\ \text{MW} = 10^{6}\ \text{W}$ · $1\ \text{CV} = 736\ \text{W}$, $1\ \text{HP} = 746\ \text{W}$.</p>
+</details>
+<details class="tl-details">
+<summary>3. kWh là đơn vị của đại lượng nào? Bằng bao nhiêu jun? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đơn vị của <strong>công</strong> (điện năng) · $1\ \text{kWh} = 3{,}6\cdot 10^{6}\ \text{J}$.</p>
+</details>
+<details class="tl-details">
+<summary>4. Công suất liên hệ thế nào với lực và vận tốc? Điều kiện? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$P = F v$ · lực cùng hướng chuyển động.</p>
+</details>
+<details class="tl-details">
+<summary>5. Công suất tức thời khác công suất trung bình ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Trung bình: cả khoảng thời gian, $A/t$ · tức thời: đúng một lúc, $F v$ với $v$ tức thời.</p>
+</details>
+<details class="tl-details">
+<summary>6. Vì sao xe lên dốc phải giảm số? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$P$ tối đa cố định · cần $F$ lớn · nên $v$ nhỏ.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box" data-exp="tn-l10-cong-suat-03">
+<p class="tl-label">📝 Đề bài</p>
+<p>Thang máy chở hàng trong xưởng, cabin cùng hàng nặng $800$ kg, nâng đều lên cao $15$ m trong $30$ s. Bỏ qua ma sát và đối trọng, lấy $g = 10\ \text{m/s}^2$. Tìm công của lực kéo, công suất trung bình, rồi kiểm lại bằng $P = F v$.</p>
+</div>
+
+<!--FIG4-->
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"nặng $800$ kg"</td><td>$m = 800$ kg → $mg = 8\,000$ N</td></tr>
+<tr><td>"nâng đều"</td><td>$a = 0$ → lực kéo $F = mg$</td></tr>
+<tr><td>"cao $15$ m"</td><td>$d = 15$ m → $A = F d$</td></tr>
+<tr><td>"trong $30$ s"</td><td>$t = 30$ s → $P = A/t$</td></tr>
+<tr><td>"bỏ qua ma sát, đối trọng"</td><td>chỉ có lực kéo và trọng lực</td></tr>
+<tr><td>"kiểm lại bằng $P = F v$"</td><td>$v = d/t$, rồi $F v$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Lực kéo:</strong> nâng đều nên $F = mg = 800 \cdot 10 = 8\,000$ N.</li>
+<li><strong>Công:</strong> $A = F d = 8\,000 \cdot 15 = 120\,000\ \text{J} = 120\ \text{kJ}$.</li>
+<li><strong>Công suất:</strong> $P = A/t = 120\,000/30 = 4\,000\ \text{W} = 4\ \text{kW}$, khoảng $5{,}4$ mã lực Pháp.</li>
+<li><strong>Kiểm tra:</strong> $v = d/t = 15/30 = 0{,}5$ m/s; $F v = 8\,000 \cdot 0{,}5 = 4\,000\ \text{W}$, khớp.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng thang chạy chậm hơn: $40$ s.</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $A = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $P = A/t = \;?$</li>
+<li>Kiểm tra: $v = d/t$, rồi $F v$.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2 và kết quả</summary>
+<p>$A$ vẫn $120\,000$ J (cùng lực, cùng độ cao); $P = 120\,000/40 = 3\,000$ W. Kiểm tra: $v = 15/40 = 0{,}375$ m/s, $F v = 8\,000 \cdot 0{,}375 = 3\,000$ W. Chậm hơn thì công suất nhỏ hơn, công không đổi.</p>
+</details>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl69-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl69-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Thang máy ở bài toán mẫu ($800$ kg lên $15$ m). Động cơ có công suất $6$ kW, nâng đều, bỏ qua mất mát. Thời gian ngắn nhất để nâng lên:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl69-q8" id="tl69-q8a"><label for="tl69-q8a" class="tl-opt tl-no">A. $2{,}5$ s</label>
+<input type="radio" name="tl69-q8" id="tl69-q8b"><label for="tl69-q8b" class="tl-opt tl-no">B. $0{,}05$ s</label>
+<input type="radio" name="tl69-q8" id="tl69-q8c"><label for="tl69-q8c" class="tl-opt tl-no">C. $30$ s</label>
+<input type="radio" name="tl69-q8" id="tl69-q8d"><label for="tl69-q8d" class="tl-opt tl-ok">D. $20$ s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Công cần thiết $A = 120\,000$ J nên $t = A/P = 120\,000/6\,000 = 20$ s; khi đó $v = 15/20 = 0{,}75$ m/s.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là $15/6$, chia quãng đường cho số kW; B đảo thành $P/A$; C là thời gian ở bài mẫu, ứng với $4$ kW, trong khi động cơ $6$ kW làm nhanh hơn. Dùng $t = A/P$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy làm lại phần thử sức.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: biết công suất, tìm vận tốc</summary>
+<p>Động cơ $5$ kW nâng đều hàng $800$ kg. Vận tốc lớn nhất: $v = P/F = 5\,000/8\,000 = 0{,}625$ m/s. Cabin cùng hàng nặng $1\,600$ kg thì $F = 16\,000$ N, $v$ chỉ còn $0{,}31$ m/s: tải gấp đôi, vận tốc giảm một nửa.</p>
+</details>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: những nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Máy CNC:</strong> trục chính ghi công suất kW; lực cắt cho phép giảm khi tốc độ cắt tăng.</li>
+<li><strong>Thang máy:</strong> công suất động cơ chọn theo tải và vận tốc, $P = F v$.</li>
+<li><strong>Xe đạp, xe máy:</strong> giảm số khi lên dốc để đổi vận tốc lấy lực kéo.</li>
+<li><strong>Hoá đơn điện:</strong> tính theo kWh, là công chứ không phải công suất.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Lực $200$ N kéo vật đều $5$ m trong $10$ s. Công suất? <em>($A = 1\,000$ J, $P = 100$ W)</em></li>
+<li><strong>⭐⭐</strong> Ô tô $60$ kW chạy đều $15$ m/s trên đường bằng. Lực cản? Nếu cùng $P$ mà chạy $30$ m/s, lực kéo lớn nhất? <em>($F = 4\,000$ N; $F = 2\,000$ N)</em></li>
+<li><strong>⭐⭐⭐</strong> Ô tô $60$ kW chạy đều $20$ m/s trên đường bằng. Lên dốc, lực cản tổng cộng tăng gấp $3$, công suất giữ nguyên. Vận tốc lên dốc? <em>(đường bằng $F = 3\,000$ N; dốc $F = 9\,000$ N; $v = 60\,000/9\,000 \approx 6{,}7$ m/s)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>$P = A/t$: công mỗi giây, đơn vị W $= $ J/s.</li>
+<li>kW, MW, mã lực: $1\ \text{CV} = 736\ \text{W}$, $1\ \text{HP} = 746\ \text{W}$.</li>
+<li>kWh là đơn vị <strong>công</strong>: $1\ \text{kWh} = 3{,}6\cdot 10^{6}\ \text{J}$.</li>
+<li>$P = F v$: lực cùng hướng chuyển động; $v$ tức thời cho $P$ tức thời.</li>
+<li>Công suất lớn chưa chắc công lớn: $A = P t$.</li>
+<li>Đọc đề: gạch "nâng đều" ($F = mg$), đổi km/h ra m/s, đổi kW ra W trước khi tính.</li>
+</ul>
+</div>

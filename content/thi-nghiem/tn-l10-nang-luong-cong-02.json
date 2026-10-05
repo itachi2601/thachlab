@@ -1,0 +1,163 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 23. Năng lượng. Công cơ học",
+ "lesson_id": 68,
+ "nguon_trong_bai": "content/lesson-samples/l10-nang-luong-cong-co-hoc/theory.html",
+ "id": "tn-l10-nang-luong-cong-02",
+ "ten": "Đưa xe lên cùng độ cao bằng nhiều đường: không lợi về công",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "cong.cong_thuc",
+  "cong.cong_trong_luc",
+  "cong.cong_ma_sat"
+ ],
+ "muc_tieu": "Đo lực kéo đều xe lên độ cao 0,20 m theo 4 đường để thấy F·s gần bằng P·h, phần dôi ra do ma sát.",
+ "dung_cu": [
+  {
+   "ten": "Xe lăn trọng lượng 2,0 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Máng nghiêng điều chỉnh được dài tới 1,0 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 0–2,5 N, độ chia 0,02 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lần 1: móc lực kế, kéo xe thẳng đứng lên 0,20 m thật đều, đọc F.",
+   "Đặt máng để đỉnh cao 0,20 m, dài s = 0,40 m; kéo đều xe song song máng, đọc F.",
+   "Lặp lại với s = 0,80 m và 1,00 m (đỉnh vẫn cao 0,20 m)."
+  ],
+  "quan_sat": [
+   "F = 2,00; 1,06; 0,56; 0,46 N.",
+   "F·s = 0,400; 0,424; 0,448; 0,460 J."
+  ],
+  "rut_ra": [
+   "Mặt nghiêng lợi về lực, thiệt về đường đi, không lợi về công.",
+   "F·s dôi ra so với P·h là công thắng ma sát, tăng theo s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng xe",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 2.0
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao đỉnh",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.2
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Chiều dài đường kéo",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.2,
+   "mac_dinh": 0.8,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát lăn tương đương",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.1,
+   "mac_dinh": 0.03,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công lực kéo F·s",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin θ = h/s",
+   "F = P·sin θ + μ·P·cos θ (kéo đều, song song máng)",
+   "A = F·s = P·h + μ·P·s·cos θ",
+   "Kéo thẳng đứng (s = h): F = P, A = P·h"
+  ],
+  "gia_thiet": [
+   "kéo đều (vận tốc không đổi)",
+   "lực kéo song song máng",
+   "ma sát lăn gộp thành một hệ số μ = 0,03",
+   "g = 10 m/s² (P = 2,0 N ứng với 200 g)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "s (m)",
+   "F (N)",
+   "A = F·s (J)",
+   "F mô hình (N)"
+  ],
+  "hang": [
+   [
+    0.2,
+    2.0,
+    0.4,
+    2.0
+   ],
+   [
+    0.4,
+    1.06,
+    0.424,
+    1.052
+   ],
+   [
+    0.8,
+    0.56,
+    0.448,
+    0.558
+   ],
+   [
+    1.0,
+    0.46,
+    0.46,
+    0.459
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: F là số chỉ lực kế làm tròn theo độ chia 0,02 N; F mô hình là giá trị tính từ phương trình F = P·sin θ + μ·P·cos θ. Lần s = 1,00 m lệch nhiều nhất so với P·h = 0,40 J (+15 %). Bài hiện 3 cột đầu."
+ },
+ "ket_qua_ky_vong": "F tỉ lệ gần nghịch với s; F·s ≈ P·h = 0,40 J, tăng nhẹ theo s do ma sát.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ mặt nghiêng dài giúp tốn ít công hơn vì lực nhỏ hơn.",
+  "Lấy α bằng góc nghiêng của máng khi tính công lực kéo."
+ ],
+ "sai_so_thuong_gap": [
+  "Kéo không đều làm số chỉ dao động.",
+  "Lực kế lệch khỏi phương song song máng.",
+  "Ma sát lăn sinh công cản tăng theo chiều dài đường kéo."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Thanh trượt s và μ; hiện F, F·s và cột P·h; μ = 0 thì mọi hàng bằng 0,40 J.",
+  "diem_nhan": "Hỏi trước: máng dài gấp đôi thì công kéo xe lên tăng, giảm hay giữ nguyên?"
+ }
+}

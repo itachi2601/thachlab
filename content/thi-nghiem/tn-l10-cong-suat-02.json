@@ -1,0 +1,111 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 24. Công suất",
+ "lesson_id": 69,
+ "nguon_trong_bai": "content/lesson-samples/l10-cong-suat/theory.html",
+ "id": "tn-l10-cong-suat-02",
+ "ten": "Lên dốc: công suất cố định, lực kéo lớn thì vận tốc nhỏ",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "cong_suat.p_bang_f_nhan_v",
+  "cong_suat.len_doc_giam_so"
+ ],
+ "muc_tieu": "Thấy với công suất tối đa cố định, lực kéo F tỉ lệ nghịch với vận tốc v; hiểu vì sao lên dốc phải giảm số.",
+ "dung_cu": [
+  {
+   "ten": "Xe đạp có đề số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dốc cầu hoặc dốc sân trường",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đạp xe trên đường bằng, rồi lên dốc cầu mà giữ nguyên số.",
+   "Chuyển số nhẹ và lên dốc lại."
+  ],
+  "quan_sat": [
+   "Giữ số cũ: chân ấn rất nặng, xe chậm dần.",
+   "Số nhẹ: đạp nhẹ hơn nhưng xe đi chậm hơn."
+  ],
+  "rut_ra": [
+   "Người đạp có công suất giới hạn nên P = F·v cố định.",
+   "Lực lớn thì vận tốc nhỏ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P_max",
+   "ten": "Công suất tối đa của động cơ xe máy (giả định)",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 6000
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc của xe",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 22,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo lớn nhất",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = P_max/v",
+   "P = F·v"
+  ],
+  "gia_thiet": [
+   "công suất tối đa không đổi theo vận tốc",
+   "bỏ qua mất mát ở hộp số, xích",
+   "số liệu minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "F lớn nhất (N)"
+  ],
+  "hang": [
+   [
+    20,
+    300
+   ],
+   [
+    10,
+    600
+   ],
+   [
+    5,
+    1200
+   ],
+   [
+    2,
+    3000
+   ]
+  ],
+  "ghi_chu": "Tính từ F = 6000/v. Nằm trên đường hypebol ở Hình 2."
+ },
+ "ket_qua_ky_vong": "v giảm 10 lần (20 xuống 2 m/s) thì F lớn nhất tăng 10 lần (300 lên 3000 N).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ xe lên dốc chạy chậm vì động cơ yếu đi (công suất vẫn tối đa).",
+  "Nghĩ giảm số tạo thêm công suất."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+so_do_luc",
+  "y_tuong": "Kéo thanh v, chấm chạy trên đường F = P/v, so lực cản của dốc.",
+  "diem_nhan": "Hỏi trước: muốn lực kéo gấp 3 thì vận tốc còn bao nhiêu?"
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 27. Hiệu suất",
+ "lesson_id": 72,
+ "nguon_trong_bai": "content/lesson-samples/l10-hieu-suat/theory.html",
+ "id": "tn-l10-hieu-suat-03",
+ "ten": "Xe máy: hai khâu nối tiếp",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "hieu_suat.ghep_noi_tiep"
+ ],
+ "muc_tieu": "Thấy hiệu suất cả hệ là tích H1·H2, nhỏ hơn từng khâu.",
+ "dung_cu": [
+  {
+   "ten": "Không cần dụng cụ (phân tích/mô phỏng)",
+   "so_luong": 0
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho 100 kJ năng lượng xăng vào động cơ H1 = 30 %.",
+   "Cơ năng ra đi qua bộ truyền động H2 = 90 %."
+  ],
+  "quan_sat": [
+   "Sau động cơ còn 30 kJ; sau truyền động còn 27 kJ."
+  ],
+  "rut_ra": [
+   "H = H1·H2 = 27 %."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E0",
+   "ten": "Năng lượng vào",
+   "don_vi": "kJ",
+   "kieu": "co_dinh",
+   "gia_tri": 100
+  },
+  {
+   "ky_hieu": "H1",
+   "ten": "Hiệu suất động cơ",
+   "don_vi": "%",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "H2",
+   "ten": "Hiệu suất truyền động",
+   "don_vi": "%",
+   "kieu": "dieu_chinh",
+   "min": 50,
+   "max": 100,
+   "mac_dinh": 90,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "E2",
+   "ten": "Năng lượng tới bánh xe",
+   "don_vi": "kJ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "E1 = H1·E0",
+   "E2 = H2·E1 = H1·H2·E0",
+   "H = E2/E0 = H1·H2"
+  ],
+  "gia_thiet": [
+   "số liệu minh hoạ",
+   "hai khâu nối tiếp, không rẽ nhánh"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "H1 (%)",
+   "H2 (%)",
+   "E2 (kJ)",
+   "H (%)"
+  ],
+  "hang": [
+   [
+    30,
+    90,
+    27.0,
+    27.0
+   ],
+   [
+    30,
+    80,
+    24.0,
+    24.0
+   ],
+   [
+    35,
+    90,
+    31.5,
+    31.5
+   ],
+   [
+    25,
+    95,
+    23.75,
+    23.75
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ E0 = 100 kJ; hàng đầu là ví dụ trong bài."
+ },
+ "ket_qua_ky_vong": "H luôn nhỏ hơn cả H1 lẫn H2.",
+ "hien_tuong_hay_sai": [
+  "Cộng hai hiệu suất (30 % + 90 % = 120 %).",
+  "Lấy trung bình hai hiệu suất."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "y_tuong": "Hai thanh trượt H1, H2; sơ đồ Sankey hai khâu.",
+  "diem_nhan": "Hỏi trước: tăng H2 từ 90 lên 100 % thì H tăng bao nhiêu?"
+ }
+}

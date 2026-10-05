@@ -1,0 +1,135 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+ "lesson_id": 71,
+ "nguon_trong_bai": "content/lesson-samples/l10-co-nang-bao-toan/theory.html",
+ "id": "tn-l10-co-nang-bao-toan-03",
+ "ten": "Trượt ván trong lòng chảo (bài toán mẫu)",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "co_nang.bao_toan",
+  "co_nang.bien_thien_khi_co_luc_can"
+ ],
+ "muc_tieu": "Dùng bảo toàn cơ năng tìm tốc độ ở đáy và ở độ cao bất kì; dùng ΔW = A_c tìm công lực cản khi đỉnh bên kia thấp hơn.",
+ "dung_cu": [
+  {
+   "ten": "Lòng chảo trượt ván (halfpipe), người + ván 50 kg",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lan xuất phát không vận tốc đầu từ mép A cao 3,2 m so với đáy O."
+  ],
+  "quan_sat": [
+   "Bỏ ma sát: v_O = 8 m/s, v_M = 6 m/s ở M cao 1,4 m.",
+   "Thực tế: Lan chỉ lên tới B cao 2,8 m rồi dừng."
+  ],
+  "rut_ra": [
+   "W_A = 1600 J; A_c = W_B − W_A = 1400 − 1600 = −200 J."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng người + ván",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 80,
+   "mac_dinh": 50,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "zA",
+   "ten": "Độ cao mép xuất phát",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 3.2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "vA",
+   "ten": "Tốc độ đẩy đà ở A",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 4,
+   "mac_dinh": 0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "Ac",
+   "ten": "Công ma sát + lực cản mỗi lượt",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "½m·vA² + m·g·zA = ½m·v² + m·g·z (không ma sát)",
+   "A_c = W_B − W_A"
+  ],
+  "gia_thiet": [
+   "mốc thế năng ở đáy O",
+   "phản lực vuông góc mặt trượt, không sinh công",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "điểm",
+   "z (m)",
+   "v (m/s)",
+   "W (J)"
+  ],
+  "hang": [
+   [
+    "A",
+    3.2,
+    0,
+    1600
+   ],
+   [
+    "M",
+    1.4,
+    6,
+    1600
+   ],
+   [
+    "O",
+    0,
+    8,
+    1600
+   ],
+   [
+    "B (thực tế)",
+    2.8,
+    0,
+    1400
+   ]
+  ],
+  "ghi_chu": "Ba hàng đầu bỏ qua ma sát; hàng B là tình huống thực tế có ma sát (A_c = −200 J)."
+ },
+ "ket_qua_ky_vong": "v_O = 8 m/s; v_M = 6 m/s; A_c = −200 J; đẩy đà 2 m/s thì cơ năng 1700 J, hơn thế năng ở mép (1600 J) 100 J: tới mép bên kia còn 2 m/s, đủ rời mép (cao thêm tối đa 0,2 m nếu bay thẳng lên); coi phần mất vẫn 200 J thì cần đẩy đà ≈ 2,8 m/s để lên đúng mép.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ ở đáy tốc độ lớn nên lên được cao hơn mép xuất phát.",
+  "Nghĩ động năng bằng thế năng khi tốc độ bằng nửa tốc độ ở đáy."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Người trượt qua lại lòng chảo; thanh trượt hệ số ma sát; cột Wt/Wđ/nhiệt.",
+  "diem_nhan": "Bật/tắt ma sát, hỏi trước lượt sau lên tới đâu."
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 24. Công suất",
+ "lesson_id": 69,
+ "nguon_trong_bai": "content/lesson-samples/l10-cong-suat/theory.html",
+ "id": "tn-l10-cong-suat-01",
+ "ten": "Leo cầu thang: cùng công, công suất tăng khi leo nhanh",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "cong_suat.p_bang_a_chia_t",
+  "cong_suat.cong_khong_doi_theo_thoi_gian"
+ ],
+ "muc_tieu": "Thấy công nâng người không đổi còn công suất tăng khi thời gian leo giảm; đọc sai số của phép bấm giờ.",
+ "dung_cu": [
+  {
+   "ten": "Cầu thang cao khoảng 3 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước cuộn đo độ cao",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cân người",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đo độ cao h của cầu thang và khối lượng m của người leo.",
+   "Leo bốn lần với tốc độ tăng dần, bạn khác bấm giờ từ chân tới đỉnh."
+  ],
+  "quan_sat": [
+   "Thời gian giảm dần từ 12,0 s tới 4,0 s.",
+   "Leo nhanh thì mệt hơn dù độ cao và khối lượng không đổi."
+  ],
+  "rut_ra": [
+   "Công nâng người A = mgh như nhau ở cả bốn lần.",
+   "P = A/t tăng khi t giảm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng người leo",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 50
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao cầu thang",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do (dùng trong bài)",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian leo",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 3.0,
+   "max": 15.0,
+   "mac_dinh": 8.5,
+   "buoc": 0.5,
+   "sai_so_do": 0.3
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Công nâng người",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất trung bình",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "A = m·g·h",
+   "P = A/t"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s²",
+   "chỉ tính công nâng người, bỏ qua công cơ thể tiêu hao thêm khi bước",
+   "số liệu minh hoạ, không phải đo thật"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "t (s)",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    1,
+    12.0,
+    125
+   ],
+   [
+    2,
+    8.5,
+    176
+   ],
+   [
+    3,
+    6.0,
+    250
+   ],
+   [
+    4,
+    4.0,
+    375
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với A = 50·10·3,0 = 1500 J (minh hoạ). Sai số bấm giờ 0,3 s: 2,5 % ở lần 1, 7,5 % ở lần 4."
+ },
+ "ket_qua_ky_vong": "A = 1500 J không đổi; P tăng từ 125 W lên 375 W khi t giảm từ 12,0 s xuống 4,0 s; lần t nhỏ nhất chịu sai số tương đối lớn nhất.",
+ "sai_so_thuong_gap": [
+  "Bấm giờ tay lệch khoảng 0,3 s, ảnh hưởng nhiều nhất khi t ngắn.",
+  "Độ cao bậc thang đo lệch vài cm."
+ ],
+ "hien_tuong_hay_sai": [
+  "Nghĩ leo nhanh thì công lớn hơn (công không đổi, chỉ công suất đổi).",
+  "Nhầm công suất với lực nâng."
+ ],
+ "an_toan": [
+  "Leo thật nhanh chỉ trên cầu thang khô, có tay vịn, không có người khác đi ngược chiều."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Kéo thanh t; hiện A không đổi và P = A/t chạy theo, kèm thanh sai số ±0,3 s.",
+  "diem_nhan": "Hỏi trước: leo nhanh gấp đôi thì công suất gấp mấy lần?"
+ }
+}

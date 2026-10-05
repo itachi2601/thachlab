@@ -1,0 +1,165 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 27. Hiệu suất",
+ "lesson_id": 72,
+ "nguon_trong_bai": "content/lesson-samples/l10-hieu-suat/theory.html",
+ "id": "tn-l10-hieu-suat-02",
+ "ten": "Đo hiệu suất của ván nghiêng ở bốn góc",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "hieu_suat.cong_thuc",
+  "hieu_suat.hao_phi_ma_sat"
+ ],
+ "muc_tieu": "Đo F và s ở 4 góc để tính W_tp = F·s, so với W_ci = mgh = 0,80 J và thấy H luôn nhỏ hơn 100 %, tăng theo góc.",
+ "dung_cu": [
+  {
+   "ten": "Ván phẳng có thước đo, giá đỡ chỉnh góc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe gỗ 0,40 kg (mg = 4,0 N, g = 10 m/s²)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 0–5 N (sai số ±0,02 N)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt ván nghiêng góc α, nâng xe cao h = 20 cm (s = h/sinα).",
+   "Kéo đều xe lên theo ván bằng lực kế song song ván, đọc F.",
+   "Đo s, tính W_tp = F·s; W_ci = mgh = 0,80 J.",
+   "Lặp lại với α = 15°; 25°; 35°; 45°."
+  ],
+  "quan_sat": [
+   "W_tp = 1,55; 1,22; 1,09; 1,00 J, đều lớn hơn 0,80 J.",
+   "H = 51,6; 65,6; 73,4; 80,0 %."
+  ],
+  "rut_ra": [
+   "H = W_ci/W_tp < 100 % vì ma sát; ván thoải hơn thì s dài hơn, hao phí nhiều hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "mg",
+   "ten": "Trọng lượng xe",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 4.0
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao nâng",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 20
+  },
+  {
+   "ky_hieu": "μ",
+   "ten": "Hệ số ma sát (mô hình)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.25
+  },
+  {
+   "ky_hieu": "α",
+   "ten": "Góc nghiêng",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 35,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  },
+  {
+   "ky_hieu": "H",
+   "ten": "Hiệu suất",
+   "don_vi": "%",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "s = h/sinα",
+   "F = mg·(sinα + μ·cosα)",
+   "W_ci = mg·h = 0,80 J",
+   "W_tp = F·s",
+   "H = W_ci/W_tp = 1/(1 + μ·cotα)"
+  ],
+  "gia_thiet": [
+   "kéo đều, lực kéo song song ván",
+   "μ = 0,25 không đổi",
+   "bỏ qua ma sát ở lực kế"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (độ)",
+   "s (cm)",
+   "F (N)",
+   "W_tp (J)",
+   "H (%)",
+   "H mô hình (%)"
+  ],
+  "hang": [
+   [
+    15,
+    77.3,
+    2.01,
+    1.55,
+    51.6,
+    51.7
+   ],
+   [
+    25,
+    47.3,
+    2.58,
+    1.22,
+    65.6,
+    65.1
+   ],
+   [
+    35,
+    34.9,
+    3.13,
+    1.09,
+    73.4,
+    73.7
+   ],
+   [
+    45,
+    28.3,
+    3.52,
+    1.0,
+    80.0,
+    80.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: F = F_mô_hình + sai lệch đọc nhỏ; W_tp = F·s làm tròn 2 chữ số; H tính từ W_tp đã làm tròn. Bài chỉ hiện 3 cột α, W_tp, H."
+ },
+ "ket_qua_ky_vong": "H < 100 % ở mọi góc; H tăng từ khoảng 52 % (15°) lên 80 % (45°).",
+ "hien_tuong_hay_sai": [
+  "Cho rằng ván thoải hao phí ít vì lực kéo nhỏ (quên quãng đường dài hơn).",
+  "Lấy W_tp chia W_ci nên ra H > 100 %."
+ ],
+ "sai_so_thuong_gap": [
+  "Lực kế sai ±0,02 N: khoảng 1 % ở F ≈ 2 N.",
+  "Kéo không song song ván hoặc không đều làm F sai.",
+  "Đọc s sai ±0,2 cm: dưới 1 %."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt góc α; xe chạy lên ván, bảng tự thêm hàng W_tp và H.",
+  "diem_nhan": "Hỏi trước: ván thoải hơn thì H cao hay thấp?"
+ }
+}
