@@ -17,6 +17,7 @@ import {
   type Exam,
   type QuestionResponse,
 } from "@/features/exams/types";
+import { markFirstPracticeDone } from "@/lib/pwa-install";
 import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
 import {
   hasLabelledQuestions,
@@ -250,6 +251,7 @@ export default function PracticeSession({
         clientToken: clientTokenRef.current,
       }).then((ok) => {
         setSaveState(ok ? "saved" : "failed");
+        if (ok) markFirstPracticeDone();
         const played = sessionLevelRef.current;
         if (!ok || !played) return;
         const ratio = summary.max > 0 ? summary.earned / summary.max : 0;
