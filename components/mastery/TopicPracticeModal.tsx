@@ -8,6 +8,7 @@ import QuestionCard from "@/components/exams/QuestionCard";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import type { PracticePick } from "@/services/lessons";
+import { markFirstPracticeDone } from "@/lib/pwa-install";
 import { fetchExamsFull, savePracticeSession } from "@/services/lessons";
 import type { Difficulty, Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
@@ -228,6 +229,7 @@ export default function TopicPracticeModal({
         timedOut: false,
         clientToken: clientToken.current,
       });
+      markFirstPracticeDone();
       if (multi) {
         const rows = buildQuestionResults(questions, responses);
         const acc = new Map<number, LessonResult>();
