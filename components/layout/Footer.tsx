@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONTACT } from "@/lib/contact";
 
 const columns = [
@@ -133,6 +134,14 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
             Thầy Thạch · Vật lý THPT – KHTN 9{CONTACT.area ? ` · ${CONTACT.area}` : ""}
           </p>
         </div>
+        {/* Ghi nhận cách làm trang web (thầy chốt 5/10/2026); bản dài hơn ở trang chủ mục "Về ThachLab" (/#about). */}
+        <p className={`mt-4 text-center text-muted sm:text-left ${parent ? "text-[15px]" : "text-xs"}`}>
+          Website do thầy Ngô Diệu Thạch thiết kế nội dung và xây dựng cùng trợ lý AI{" "}
+          <Link href="/#about" className="underline-offset-2 transition-colors hover:text-primary hover:underline">
+            Claude (Anthropic)
+          </Link>
+          .
+        </p>
       </div>
     </footer>
   );
