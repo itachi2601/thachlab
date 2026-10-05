@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import ChunkErrorGuard from "@/components/system/ChunkErrorGuard";
 import MobileTabBar from "@/components/layout/MobileTabBar";
+import PwaBoot from "@/components/pwa/PwaBoot";
 import ToastProvider from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import { SUPABASE_URL } from "@/lib/supabase-env";
@@ -17,6 +18,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  // PWA (GĐ 2.6 M1): manifest do app/manifest.ts sinh ra; iOS cần apple-touch-icon riêng.
+  icons: { apple: "/icons/apple-touch-icon.png" },
+  appleWebApp: { capable: true, title: "ThachLab", statusBarStyle: "black-translucent" },
   title: {
     default: "ThachLab — Vật lý không chỉ là công thức",
     template: "%s | ThachLab",
@@ -127,6 +131,7 @@ export default function RootLayout({
             và /lop-hoc/bai (trang bài học đã có thanh đáy riêng). Dùng useAuth nên chỉ chạy
             trong cây có AuthProvider; nhóm trang công khai không có AuthProvider sẽ tự bỏ qua. */}
         <MobileTabBar />
+        <PwaBoot />
       </body>
     </html>
   );
