@@ -2,71 +2,62 @@
   "lesson_id": 9,
   "lesson_title": "Bài 8. Áp suất - động năng của phân tử khí",
   "item_id": 222,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
-  "quiz_min_correct": 15,
+  "quiz_min_correct": 14,
   "review": {
     "checked": true,
     "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
+      "kien_thuc": 9,
+      "cong_thuc": 9
     },
-    "removed": []
+    "removed": [
+      {
+        "question": "Trong công thức $p=\\dfrac{2}{3}\\mu\\overline{E_d}$, đại lượng $\\mu$ là:",
+        "reason": "Đáp án đánh dấu sai: answer=3 trỏ tới \"Khối lượng riêng của khí\", trong khi đáp án đúng theo bài là \"Mật độ phân tử\" (phương án chỉ số 2); explanation mâu thuẫn với đáp án."
+      },
+      {
+        "question": "Bình kín $3{,}0$ lít chứa $0{,}20$ mol N$_2$. Mật độ phân tử $\\mu=a\\cdot10^{25}\\ \\text{m}^{-3}$. Tìm $a$ (làm tròn 1 chữ số thập phân).",
+        "reason": "Đề yêu cầu làm tròn 1 chữ số thập phân (học sinh sẽ gõ 4,0) nhưng đáp án lưu là \"4\"; chấm so khớp chuỗi nên HS làm đúng vẫn bị chấm sai."
+      }
+    ]
   },
   "questions": [
     {
       "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Điều nào mô tả đúng mô hình khí lí tưởng?",
+      "options": [
+        "Phân tử rất nhỏ, chuyển động hỗn loạn, giữa hai va chạm bay thẳng đều, va chạm với thành là đàn hồi",
+        "Phân tử đứng yên ở đáy bình và đè lên thành bình",
+        "Phân tử có kích thước lớn, chiếm gần hết thể tích bình",
+        "Các phân tử hút nhau mạnh nên dính vào thành bình"
+      ],
+      "answer": 0,
+      "explanation": "Bài: bỏ qua kích thước phân tử và lực tương tác khi chưa va chạm; va chạm với thành hoàn toàn đàn hồi."
+    },
+    {
+      "type": "multiple_choice",
       "kind": "hien_tuong",
       "topic": "Liên hệ áp suất với động năng phân tử",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Trong mô hình động học, phân tử khí va chạm đàn hồi với thành bình. Sau va chạm, phân tử chuyển động như thế nào?",
+      "theorySection": 1,
+      "question": "Khí gây áp suất lên thành bình là do:",
       "options": [
-        "Dừng lại tại thành bình",
-        "Chuyển động theo chiều ngược lại với tốc độ có cùng độ lớn $v$",
-        "Chuyển động theo chiều cũ với tốc độ nhỏ hơn $v$",
-        "Chuyển động theo chiều ngược lại với tốc độ lớn hơn $v$"
+        "Phân tử khí đứng yên rồi đè lên thành như một vật nặng",
+        "Vô số va chạm của phân tử vào thành, mỗi va chạm truyền động lượng cho thành",
+        "Lực hút giữa các phân tử kéo thành bình ra ngoài",
+        "Khối lượng của cả bình khí đè xuống đáy"
       ],
       "answer": 1,
-      "explanation": "Bài nêu: sau va chạm đàn hồi phân tử chuyển động ngược chiều với tốc độ có cùng độ lớn $v$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đại lượng $\\mu = \\dfrac{N}{V}$ trong công thức áp suất khí được gọi là gì?",
-      "options": [
-        "Khối lượng riêng của khí",
-        "Mật độ phân tử",
-        "Động năng trung bình của phân tử",
-        "Hằng số Boltzmann"
-      ],
-      "answer": 1,
-      "explanation": "Trong bài, $\\mu=\\dfrac{N}{V}$ là mật độ phân tử (số phân tử trong một đơn vị thể tích)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "$\\overline{v^2}$ trong lý thuyết động học phân tử khí là",
-      "options": [
-        "bình phương của trung bình các tốc độ",
-        "trung bình của các bình phương tốc độ các phân tử",
-        "tổng các bình phương tốc độ các phân tử",
-        "bình phương tốc độ của một phân tử bất kì"
-      ],
-      "answer": 1,
-      "explanation": "Bài định nghĩa $\\overline{v^2}=\\dfrac{v_1^2+v_2^2+...+v_N^2}{N}$, là trung bình của các bình phương tốc độ."
+      "explanation": "Cộng vô số va chạm mỗi giây thành lực đẩy đều lên thành — đó là áp suất khí."
     },
     {
       "type": "multiple_choice",
@@ -75,92 +66,92 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động năng trung bình của phân tử khí tỉ lệ thuận với đại lượng nào?",
+      "theorySection": 2,
+      "question": "Ở cùng một nhiệt độ, so sánh động năng tịnh tiến trung bình của phân tử H$_2$ và O$_2$:",
       "options": [
-        "Thể tích của khí",
-        "Khối lượng của phân tử",
-        "Nhiệt độ tuyệt đối của khí",
-        "Áp suất của khí"
+        "Bằng nhau, vì chỉ phụ thuộc nhiệt độ",
+        "H$_2$ lớn hơn vì nhẹ hơn",
+        "O$_2$ lớn hơn vì nặng hơn",
+        "Không so sánh được nếu chưa biết áp suất"
       ],
-      "answer": 2,
-      "explanation": "Từ $\\overline{E}_d=\\dfrac{3}{2}kT$, động năng trung bình tỉ lệ thuận với nhiệt độ tuyệt đối."
+      "answer": 0,
+      "explanation": "$\\overline{E_d}=\\dfrac{3}{2}kT$ chỉ phụ thuộc $T$; khối lượng chỉ quyết định tốc độ."
     },
     {
       "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Vì sao áp suất khí trong quả bóng bàn tăng khi gặp nước nóng?",
+      "options": [
+        "Phân tử khí nặng lên vì nóng",
+        "Hơi nước nóng thấm qua vỏ bóng làm tăng số phân tử",
+        "Phân tử bay nhanh hơn: mỗi va chạm truyền động lượng lớn hơn và số va chạm nhiều hơn",
+        "Vỏ bóng mềm ra nên tự phồng lại"
+      ],
+      "answer": 2,
+      "explanation": "Phân tử bay nhanh hơn: động lượng truyền mỗi va chạm lớn hơn và va chạm dày hơn nên $p$ tăng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về mô hình khí lí tưởng là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Giữa hai va chạm, phân tử bay thẳng đều.",
+          "answer": true
+        },
+        {
+          "text": "Va chạm của phân tử với thành bình là hoàn toàn đàn hồi.",
+          "answer": true
+        },
+        {
+          "text": "Kích thước phân tử lớn so với khoảng cách giữa chúng.",
+          "answer": false
+        },
+        {
+          "text": "Lực hút giữa các phân tử khi chưa va chạm rất mạnh nên không thể bỏ qua.",
+          "answer": false
+        }
+      ],
+      "explanation": "Mô hình: phân tử rất nhỏ so với khoảng cách giữa chúng, lực tương tác khi chưa va chạm rất yếu nên bỏ qua."
+    },
+    {
+      "type": "true_false",
       "kind": "dieu_kien",
       "topic": "Động năng trung bình phân tử và nhiệt độ",
       "form": "ly_thuyet",
-      "difficulty": "de",
+      "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai chất khí có bản chất và khối lượng phân tử khác nhau nhưng cùng nhiệt độ. Kết luận đúng là",
-      "options": [
-        "động năng trung bình của các phân tử bằng nhau",
-        "phân tử khí nhẹ hơn có động năng trung bình lớn hơn",
-        "phân tử khí nặng hơn có động năng trung bình lớn hơn",
-        "áp suất của hai khí chắc chắn bằng nhau"
-      ],
-      "answer": 0,
-      "explanation": "Bài kết luận: các khí khác nhau, cùng nhiệt độ thì động năng trung bình của phân tử bằng nhau."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Xét công thức $p=\\dfrac{1}{3}\\rho\\overline{v^2}$. Các phát biểu sau đúng hay sai?",
+      "theorySection": 2,
+      "question": "Hai bình cùng $N$, cùng $V$, cùng ở $300\\ \\text{K}$: bình 1 là H$_2$, bình 2 là O$_2$. Nhận định nào đúng hay sai?",
       "statements": [
         {
-          "text": "$\\rho$ là khối lượng riêng của khí.",
+          "text": "Động năng tịnh tiến trung bình của phân tử hai khí bằng nhau.",
           "answer": true
         },
         {
-          "text": "$\\overline{v^2}$ là trung bình của các bình phương tốc độ phân tử.",
+          "text": "Phân tử H$_2$ bay nhanh hơn phân tử O$_2$.",
           "answer": true
         },
         {
-          "text": "$\\overline{E}_d=\\dfrac{m\\overline{v^2}}{2}$ là động năng trung bình của phân tử.",
-          "answer": true
+          "text": "Phân tử O$_2$ nặng hơn nên có động năng trung bình lớn hơn.",
+          "answer": false
         },
         {
-          "text": "$V$ trong $p_m=\\dfrac{m}{V}v^2$ là thể tích một phân tử.",
+          "text": "Áp suất bình O$_2$ lớn hơn vì phân tử O$_2$ nặng hơn.",
           "answer": false
         }
       ],
-      "explanation": "Theo bài: $\\rho$ là khối lượng riêng, $\\overline{v^2}$ là trung bình bình phương tốc độ, $\\overline{E}_d=\\dfrac{m\\overline{v^2}}{2}$; $V$ là thể tích lượng khí chứ không phải của một phân tử."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Động năng trung bình phân tử và nhiệt độ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về mối quan hệ giữa động năng phân tử và nhiệt độ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Động năng trung bình của phân tử tỉ lệ thuận với nhiệt độ tuyệt đối.",
-          "answer": true
-        },
-        {
-          "text": "Động năng trung bình của phân tử khí càng lớn thì nhiệt độ của khí càng cao.",
-          "answer": true
-        },
-        {
-          "text": "Các khí khác nhau cùng nhiệt độ có động năng trung bình phân tử khác nhau.",
-          "answer": false
-        },
-        {
-          "text": "Động năng trung bình của phân tử tỉ lệ nghịch với nhiệt độ tuyệt đối.",
-          "answer": false
-        }
-      ],
-      "explanation": "Theo bài: $\\overline{E}_d=\\dfrac{3}{2}kT$ nên tỉ lệ thuận với $T$; khí khác nhau cùng $T$ có cùng $\\overline{E}_d$."
+      "explanation": "Cùng $T$ thì $m\\overline{v^2}$ bằng nhau nên cùng $N$, $V$ thì áp suất bằng nhau; H$_2$ nhẹ nên bay nhanh hơn."
     },
     {
       "type": "short_answer",
@@ -169,22 +160,22 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Phân tử khối lượng $m$, tốc độ $v$ va chạm đàn hồi vuông góc với thành bình. Độ lớn độ biến thiên động lượng bằng bao nhiêu lần $mv$?",
-      "answer": "2",
-      "explanation": "Bài: $|\\Delta\\vec p|=|-mv-mv|=2mv$, tức 2 lần $mv$."
+      "theorySection": 1,
+      "question": "Ba phương $Ox,Oy,Oz$ bình đẳng, mỗi phương góp $\\dfrac{1}{k}$ vào áp suất. Giá trị của $k$ là:",
+      "answer": "3",
+      "explanation": "Chỉ thành phần vuông góc với thành gây áp suất; ba phương bình đẳng nên mỗi phương góp $1/3$."
     },
     {
       "type": "short_answer",
       "kind": "dinh_nghia",
-      "topic": "Động năng trung bình phân tử và nhiệt độ",
+      "topic": "Liên hệ áp suất với động năng phân tử",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Hằng số Boltzmann $k=1{,}38\\times10^{n}$ J/K. Số mũ $n$ bằng bao nhiêu?",
-      "answer": "-23",
-      "explanation": "Bài nêu $k=1{,}38\\times10^{-23}$ J/K."
+      "question": "Phân tử va chạm đàn hồi vuông góc vào thành, độ biến thiên động lượng có độ lớn $x\\cdot mv$. Giá trị $x$ là:",
+      "answer": "2",
+      "explanation": "Động lượng đổi từ $+mv$ thành $-mv$ nên $|\\Delta p|=2mv$."
     },
     {
       "type": "short_answer",
@@ -193,64 +184,46 @@
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Ở cùng nhiệt độ, tốc độ căn quân phương của H$_2$ lớn hơn O$_2$ khoảng mấy lần?",
+      "answer": "4",
+      "explanation": "H$_2$ nhẹ hơn O$_2$ 16 lần nên tốc độ lớn hơn $\\sqrt{16}=4$ lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Khí heli và khí oxi cùng ở 300 K. Động năng trung bình của phân tử heli gấp bao nhiêu lần của phân tử oxi?",
-      "answer": "1",
-      "explanation": "Cùng nhiệt độ thì $\\overline{E}_d=\\dfrac{3}{2}kT$ như nhau, nên tỉ số bằng 1."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Công thức tính áp suất khí theo khối lượng riêng $\\rho$ và $\\overline{v^2}$ là",
+      "question": "Công thức áp suất của khí theo khối lượng riêng $\\rho$ là:",
       "options": [
-        "$p=\\dfrac{1}{3}\\rho\\overline{v^2}$",
-        "$p=\\dfrac{2}{3}\\rho\\overline{v^2}$",
-        "$p=\\dfrac{1}{3}\\rho\\left(\\overline{v}\\right)$",
-        "$p=\\dfrac{1}{3}\\dfrac{\\overline{v^2}}{\\rho}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài: $p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}=\\dfrac{1}{3}\\rho\\overline{v^2}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Áp suất khí liên hệ với mật độ phân tử $\\mu$ và động năng trung bình $\\overline{E}_d$ theo hệ thức",
-      "options": [
-        "$p=\\dfrac{1}{3}\\mu\\overline{E}_d$",
-        "$p=\\dfrac{3}{2}\\mu\\overline{E}_d$",
-        "$p=\\dfrac{2}{3}\\mu\\overline{E}_d$",
-        "$p=\\dfrac{2}{3}\\dfrac{\\overline{E}_d}{\\mu}$"
+        "$p=\\dfrac{1}{3}\\rho\\,\\overline{v}$",
+        "$p=\\rho\\,\\overline{v^2}$",
+        "$p=\\dfrac{1}{3}\\rho\\,\\overline{v^2}$",
+        "$p=3\\rho\\,\\overline{v^2}$"
       ],
       "answer": 2,
-      "explanation": "Bài: $p=\\dfrac{2}{3}\\mu\\overline{E}_d$."
+      "explanation": "Bài: $p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}=\\dfrac{1}{3}\\rho\\overline{v^2}$ (có hệ số $1/3$ và bình phương tốc độ)."
     },
     {
       "type": "multiple_choice",
       "kind": "cong_thuc",
-      "topic": "Động năng trung bình phân tử và nhiệt độ",
+      "topic": "Liên hệ áp suất với động năng phân tử",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Động năng trung bình của phân tử khí ở nhiệt độ tuyệt đối $T$ là",
+      "question": "Mối liên hệ giữa áp suất và động năng tịnh tiến trung bình là:",
       "options": [
-        "$\\overline{E}_d=\\dfrac{2}{3}kT$",
-        "$\\overline{E}_d=\\dfrac{3}{2}kT$",
-        "$\\overline{E}_d=\\dfrac{3}{2}kT^2$",
-        "$\\overline{E}_d=\\dfrac{3}{2}\\dfrac{k}{T}$"
+        "$p=\\dfrac{3}{2}\\mu\\overline{E_d}$",
+        "$p=\\dfrac{2}{3}\\mu\\overline{E_d}$",
+        "$p=\\dfrac{1}{3}\\mu\\overline{E_d}$",
+        "$p=\\dfrac{2}{3}\\dfrac{\\overline{E_d}}{\\mu}$"
       ],
       "answer": 1,
-      "explanation": "Bài: $\\overline{E}_d=\\dfrac{3}{2}kT=\\dfrac{3}{2}\\dfrac{R}{N_A}T$."
+      "explanation": "Bài: $p=\\dfrac{1}{3}\\mu m\\overline{v^2}=\\dfrac{2}{3}\\mu\\overline{E_d}$."
     },
     {
       "type": "multiple_choice",
@@ -260,127 +233,133 @@
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Đơn vị của hằng số Boltzmann $k$ là",
+      "question": "Hằng số Boltzmann $k$ có giá trị và đơn vị là:",
       "options": [
-        "J/K",
-        "J.K",
-        "K/J",
-        "J/mol"
+        "$1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
+        "$8{,}31\\ \\text{J/(mol·K)}$",
+        "$6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$",
+        "$1{,}38\\cdot10^{-23}\\ \\text{J}$"
       ],
       "answer": 0,
-      "explanation": "Bài nêu $k=1{,}38\\times10^{-23}$ J/K."
+      "explanation": "Bài: $k=R/N_A=1{,}38\\cdot10^{-23}\\ \\text{J/K}$."
     },
     {
       "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Từ $p=\\dfrac{1}{3}\\rho\\overline{v^2}$, biểu thức của $\\overline{v^2}$ theo $p$ và $\\rho$ là",
-      "options": [
-        "$\\overline{v^2}=\\dfrac{p}{3\\rho}$",
-        "$\\overline{v^2}=\\dfrac{3p}{\\rho}$",
-        "$\\overline{v^2}=\\dfrac{3\\rho}{p}$",
-        "$\\overline{v^2}=3p\\rho$"
-      ],
-      "answer": 1,
-      "explanation": "Nhân hai vế với 3 rồi chia cho $\\rho$: $\\overline{v^2}=\\dfrac{3p}{\\rho}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Áp suất khí có thể biểu diễn qua các đại lượng trung bình. Các biểu thức sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}$",
-          "answer": true
-        },
-        {
-          "text": "$p=\\dfrac{1}{3}\\mu m\\overline{v^2}$",
-          "answer": true
-        },
-        {
-          "text": "$p=\\dfrac{2}{3}\\mu\\overline{E}_d$",
-          "answer": true
-        },
-        {
-          "text": "$p=\\dfrac{2}{3}\\rho\\overline{v^2}$",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài viết $p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}=\\dfrac{1}{3}\\mu m\\overline{v^2}=\\dfrac{2}{3}\\mu\\overline{E}_d$; hệ số $\\dfrac{1}{3}$ đi với $\\rho\\overline{v^2}$."
-    },
-    {
-      "type": "true_false",
       "kind": "cong_thuc",
       "topic": "Động năng trung bình phân tử và nhiệt độ",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Về động năng trung bình và nhiệt độ, các biểu thức sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\overline{E}_d=\\dfrac{3}{2}kT$",
-          "answer": true
-        },
-        {
-          "text": "$\\overline{E}_d=\\dfrac{3}{2}\\dfrac{R}{N_A}T$",
-          "answer": true
-        },
-        {
-          "text": "$\\overline{E}_d=\\dfrac{3}{2}\\dfrac{N_A}{R}T$",
-          "answer": false
-        },
-        {
-          "text": "$\\overline{E}_d=\\dfrac{2}{3}kT$",
-          "answer": false
-        }
+      "question": "Động năng tịnh tiến trung bình của phân tử khí ở nhiệt độ tuyệt đối $T$ là:",
+      "options": [
+        "$kT$",
+        "$\\dfrac{3}{2}kt$ với $t$ là nhiệt độ Celsius",
+        "$\\dfrac{3}{2}kT^2$",
+        "$\\dfrac{3}{2}kT$"
       ],
-      "explanation": "Bài: $\\overline{E}_d=\\dfrac{3}{2}\\dfrac{R}{N_A}T=\\dfrac{3}{2}kT$."
+      "answer": 3,
+      "explanation": "Bài: $\\overline{E_d}=\\dfrac{3}{2}kT$, tỉ lệ thuận với nhiệt độ tuyệt đối $T$ (Kelvin)."
     },
     {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Bốn phân tử có tốc độ 1; 2; 2; 3 (m/s). Giá trị $\\overline{v^2}$ (m$^2$/s$^2$) là bao nhiêu?",
-      "answer": "4,5",
-      "explanation": "$\\overline{v^2}=\\dfrac{1+4+4+9}{4}=4{,}5$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Liên hệ áp suất với động năng phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Khí có $\\rho=6$ kg/m$^3$ và $\\overline{v^2}=2$ m$^2$/s$^2$. Áp suất $p=\\dfrac{1}{3}\\rho\\overline{v^2}$ bằng bao nhiêu Pa?",
-      "answer": "4",
-      "explanation": "$p=\\dfrac{1}{3}\\cdot6\\cdot2=4$ Pa."
-    },
-    {
-      "type": "short_answer",
+      "type": "multiple_choice",
       "kind": "bien_doi",
       "topic": "Động năng trung bình phân tử và nhiệt độ",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Nhiệt độ tuyệt đối của khí tăng từ 300 K lên 600 K. Động năng trung bình của phân tử tăng bao nhiêu lần?",
+      "question": "Từ $\\overline{E_d}=\\dfrac{m\\overline{v^2}}{2}=\\dfrac{3}{2}kT$, tốc độ căn quân phương của phân tử là:",
+      "options": [
+        "$v_{rms}=\\sqrt{3kTm}$",
+        "$v_{rms}=\\sqrt{\\dfrac{3kT}{m}}$",
+        "$v_{rms}=\\dfrac{3kT}{m}$",
+        "$v_{rms}=\\sqrt{\\dfrac{kT}{3m}}$"
+      ],
+      "answer": 1,
+      "explanation": "Rút $\\overline{v^2}=\\dfrac{3kT}{m}$ rồi lấy căn bậc hai."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Giữ nguyên $\\overline{E_d}$, mật độ phân tử $\\mu$ tăng gấp đôi thì $p$ tăng gấp đôi.",
+          "answer": true
+        },
+        {
+          "text": "Giữ nguyên $\\mu$, $\\overline{E_d}$ tăng gấp đôi thì $p$ tăng gấp đôi.",
+          "answer": true
+        },
+        {
+          "text": "Có thể viết $p=\\dfrac{1}{3}\\rho\\overline{v^2}$ với $\\rho=\\mu m$.",
+          "answer": true
+        },
+        {
+          "text": "Áp suất chỉ phụ thuộc $\\mu$, không phụ thuộc $\\overline{E_d}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "$p$ tỉ lệ thuận với cả $\\mu$ lẫn $\\overline{E_d}$ theo công thức của bài."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Động năng trung bình phân tử và nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Nhận định nào sau đây về $\\overline{E_d}=\\dfrac{3}{2}kT$ là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Từ $20\\ ^\\circ\\text{C}$ lên $40\\ ^\\circ\\text{C}$, động năng trung bình tăng khoảng $1{,}07$ lần.",
+          "answer": true
+        },
+        {
+          "text": "Từ $20\\ ^\\circ\\text{C}$ lên $40\\ ^\\circ\\text{C}$, động năng trung bình tăng gấp đôi.",
+          "answer": false
+        },
+        {
+          "text": "Từ $300\\ \\text{K}$ lên $600\\ \\text{K}$, động năng trung bình tăng 2 lần.",
+          "answer": true
+        },
+        {
+          "text": "Động năng trung bình tỉ lệ thuận với $T^2$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Phải dùng Kelvin: $313/293\\approx1{,}07$; $\\overline{E_d}$ tỉ lệ thuận với $T$, không phải $T^2$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Động năng trung bình phân tử và nhiệt độ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Nung khí từ $27\\ ^\\circ\\text{C}$ lên $327\\ ^\\circ\\text{C}$. Động năng tịnh tiến trung bình tăng bao nhiêu lần?",
       "answer": "2",
-      "explanation": "$\\overline{E}_d=\\dfrac{3}{2}kT$ tỉ lệ thuận với $T$, $T$ tăng 2 lần nên $\\overline{E}_d$ tăng 2 lần."
+      "explanation": "$T_1=300\\ \\text{K}$, $T_2=600\\ \\text{K}$, tỉ số $2$; $\\overline{E_d}\\sim T$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Liên hệ áp suất với động năng phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Khí trong bình kín nung từ $27\\ ^\\circ\\text{C}$ lên $87\\ ^\\circ\\text{C}$ (thể tích không đổi). Áp suất tăng bao nhiêu lần?",
+      "answer": "1,2",
+      "explanation": "$T'/T=360/300=1{,}2$; áp suất tỉ lệ thuận $T$ nên tăng $1{,}2$ lần."
     }
   ]
 }

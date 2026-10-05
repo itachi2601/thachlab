@@ -2,372 +2,385 @@
   "lesson_id": 7,
   "lesson_title": "Bài 6. Định luật Boyle. Định luật Charles",
   "item_id": 220,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
     "checked": true,
     "counts": {
       "kien_thuc": 10,
-      "cong_thuc": 9
+      "cong_thuc": 10
     },
-    "removed": [
-      {
-        "question": "Ống thủy tinh chứa cột thủy ngân cao $h$, đầu để hở phía dưới, áp suất khí quyển $p_0$. Áp suất khí bị nhốt là:",
-        "reason": "Mơ hồ: bài viết p = p0 - h với h tính bằng mmHg, câu không nêu h (mmHg) nên p0 - h không cùng thứ nguyên/đơn vị; thiếu điều kiện."
-      }
-    ]
+    "removed": []
   },
   "questions": [
     {
       "type": "multiple_choice",
       "kind": "dinh_nghia",
-      "difficulty": "de",
-      "question": "Trạng thái của một lượng khí được xác định bằng ba thông số nào?",
-      "options": [
-        "Áp suất, thể tích, nhiệt độ",
-        "Áp suất, khối lượng, nhiệt độ",
-        "Thể tích, khối lượng, nhiệt độ",
-        "Áp suất, thể tích, khối lượng"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu ba thông số trạng thái: áp suất $p$, thể tích $V$, nhiệt độ $T$.",
-      "theorySection": 0,
       "topic": "Quá trình đẳng nhiệt và định luật Boyle",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
       "difficulty": "de",
-      "question": "Đẳng quá trình là quá trình biến đổi trạng thái mà:",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đẳng quá trình là quá trình biến đổi trạng thái của một lượng khí trong đó:",
       "options": [
-        "một thông số trạng thái không đổi",
-        "cả ba thông số trạng thái đều không đổi",
-        "khối lượng khí thay đổi",
-        "cả ba thông số trạng thái cùng thay đổi"
+        "cả ba thông số $p$, $V$, $T$ đều giữ không đổi",
+        "một trong ba thông số $p$, $V$, $T$ được giữ không đổi",
+        "khối lượng khí thay đổi còn $T$ không đổi",
+        "cả ba thông số cùng tăng theo một tỉ lệ"
       ],
-      "answer": 0,
-      "explanation": "Khi biến đổi trạng thái mà còn một thông số không đổi thì gọi là đẳng quá trình.",
-      "theorySection": 0,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "answer": 1,
+      "explanation": "Quá trình có một thông số không đổi là đẳng quá trình: đẳng nhiệt, đẳng áp, đẳng tích."
     },
     {
       "type": "multiple_choice",
       "kind": "dinh_luat",
-      "difficulty": "de",
-      "question": "Phát biểu nào đúng với định luật Boyle?",
-      "options": [
-        "Nhiệt độ không đổi thì áp suất khí tỉ lệ nghịch với thể tích",
-        "Nhiệt độ không đổi thì áp suất khí tỉ lệ thuận với thể tích",
-        "Áp suất không đổi thì thể tích tỉ lệ nghịch với nhiệt độ",
-        "Thể tích không đổi thì áp suất tỉ lệ nghịch với nhiệt độ"
-      ],
-      "answer": 0,
-      "explanation": "Với khối khí xác định ở nhiệt độ không đổi, áp suất tỉ lệ nghịch với thể tích.",
-      "theorySection": 1,
       "topic": "Quá trình đẳng nhiệt và định luật Boyle",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào sau đây đúng với định luật Boyle?",
+      "options": [
+        "Nhiệt độ không đổi thì áp suất tỉ lệ thuận với thể tích",
+        "Áp suất không đổi thì thể tích tỉ lệ nghịch với nhiệt độ",
+        "Thể tích không đổi thì áp suất tỉ lệ nghịch với nhiệt độ",
+        "Nhiệt độ không đổi thì áp suất của khối khí xác định tỉ lệ nghịch với thể tích"
+      ],
+      "answer": 3,
+      "explanation": "Định luật Boyle: nhiệt độ không đổi thì $p$ tỉ lệ nghịch với $V$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào sau đây đúng với định luật Charles?",
+      "options": [
+        "Áp suất không đổi thì thể tích tỉ lệ thuận với nhiệt độ tuyệt đối",
+        "Áp suất không đổi thì thể tích tỉ lệ thuận với nhiệt độ Celsius",
+        "Nhiệt độ không đổi thì thể tích tỉ lệ thuận với áp suất",
+        "Áp suất không đổi thì thể tích tỉ lệ nghịch với nhiệt độ tuyệt đối"
+      ],
+      "answer": 0,
+      "explanation": "Charles: áp suất không đổi thì $V$ tỉ lệ thuận với nhiệt độ tuyệt đối $T$."
     },
     {
       "type": "multiple_choice",
       "kind": "hien_tuong",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Trong hệ tọa độ $(p, V)$, đường đẳng nhiệt có dạng:",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Quả bóng bay phơi nắng căng phồng lên. Hiện tượng này được bài dùng làm ví dụ cho quá trình nào?",
       "options": [
-        "một nhánh của đường hyperbol",
-        "một đường thẳng đi qua gốc tọa độ",
-        "một đường thẳng song song trục $V$",
-        "một đường parabol"
+        "Đẳng nhiệt: khí bị nén lại",
+        "Đẳng tích: khí tăng áp suất còn thể tích giữ nguyên",
+        "Đẳng áp: khí dãn ra khi nhiệt độ tăng",
+        "Khí bị lạnh đi nên thể tích tăng"
       ],
-      "answer": 0,
-      "explanation": "Bài nêu: trong hệ $(p, V)$ đường đẳng nhiệt là một nhánh của hyperbol.",
-      "theorySection": 2,
+      "answer": 2,
+      "explanation": "Bài nêu ví dụ đẳng áp: quả bóng phơi nắng căng phồng vì khí trong bóng dãn ra khi nhiệt độ tăng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về định luật Boyle là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Áp dụng cho một khối lượng khí xác định ở nhiệt độ không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Hệ thức viết cho hai trạng thái là $p_1V_1 = p_2V_2$.",
+          "answer": true
+        },
+        {
+          "text": "Thể tích giảm 2 lần thì áp suất giảm 2 lần.",
+          "answer": false
+        },
+        {
+          "text": "Hai trạng thái chỉ cần dùng cùng đơn vị cho $p$ và cùng đơn vị cho $V$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Thể tích giảm 2 lần thì áp suất tăng 2 lần vì $pV$ không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về định luật Charles là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Nhiệt độ trong hệ thức phải là nhiệt độ tuyệt đối tính bằng kenvin.",
+          "answer": true
+        },
+        {
+          "text": "Dùng nhiệt độ Celsius vẫn cho kết quả đúng miễn là lập tỉ số đúng.",
+          "answer": false
+        },
+        {
+          "text": "Kenvin có gốc 0 thật, còn $0\\ ^\\circ\\text{C}$ vẫn còn nội năng.",
+          "answer": true
+        },
+        {
+          "text": "Hệ thức viết cho hai trạng thái là $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Tỉ lệ thuận chỉ đúng với nhiệt độ tuyệt đối; dùng Celsius là sai ngay cả khi lập tỉ số đúng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
       "topic": "Đọc đồ thị các đẳng quá trình",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đường đẳng nhiệt trên đồ thị $p$–$V$ có dạng:",
+      "options": [
+        "đoạn thẳng đứng",
+        "một nhánh hypebol",
+        "đoạn thẳng kéo dài đi qua gốc toạ độ",
+        "đường nằm ngang"
+      ],
+      "answer": 1,
+      "explanation": "Đường đẳng nhiệt trên hệ toạ độ $(p,V)$ là một nhánh hypebol."
     },
     {
       "type": "multiple_choice",
-      "kind": "dieu_kien",
+      "kind": "hien_tuong",
+      "topic": "Đọc đồ thị các đẳng quá trình",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Định luật Charles áp dụng cho một khối khí xác định khi:",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đường đẳng áp trên đồ thị $V$–$T$ (T tính bằng kenvin) có dạng:",
       "options": [
-        "áp suất không đổi",
-        "thể tích không đổi",
-        "nhiệt độ không đổi",
-        "khối lượng khí thay đổi"
+        "một nhánh hypebol",
+        "đoạn thẳng nằm ngang",
+        "đoạn thẳng đứng",
+        "đoạn thẳng mà kéo dài thì đi qua gốc toạ độ"
       ],
-      "answer": 0,
-      "explanation": "Quá trình đẳng áp có áp suất không đổi; khi đó $V$ tỉ lệ thuận với $T$.",
-      "theorySection": 3,
-      "topic": "Quá trình đẳng áp và định luật Charles",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "difficulty": "trung-binh",
-      "question": "Xét định luật Boyle cho một khối lượng khí xác định. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Quá trình đẳng nhiệt có nhiệt độ được giữ không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Áp suất khí tỉ lệ thuận với thể tích của nó.",
-          "answer": false
-        },
-        {
-          "text": "Biểu thức của định luật là $pV = \\text{hằng số}$.",
-          "answer": true
-        },
-        {
-          "text": "Đường đẳng nhiệt của cùng một lượng khí ở các nhiệt độ khác nhau thì trùng nhau.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ý 2 sai vì $p$ tỉ lệ nghịch với $V$; ý 4 sai vì các nhiệt độ khác nhau cho các đường đẳng nhiệt khác nhau.",
-      "theorySection": 1,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "difficulty": "de",
-      "question": "Xét quá trình đẳng áp của một khối khí xác định. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Thể tích khí tỉ lệ thuận với nhiệt độ tuyệt đối.",
-          "answer": true
-        },
-        {
-          "text": "Trong hệ tọa độ $(V, T)$, đường đẳng áp là đoạn thẳng mà khi kéo dài đi qua gốc tọa độ.",
-          "answer": true
-        },
-        {
-          "text": "Thể tích khí tỉ lệ nghịch với nhiệt độ tuyệt đối.",
-          "answer": false
-        },
-        {
-          "text": "Áp suất khí thay đổi trong quá trình này.",
-          "answer": false
-        }
-      ],
-      "explanation": "Định luật Charles: $V/T$ = hằng số ở áp suất không đổi; đường đẳng áp trong $(V, T)$ là đoạn thẳng qua gốc khi kéo dài.",
-      "theorySection": 3,
-      "topic": "Quá trình đẳng áp và định luật Charles",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "answer": 3,
+      "explanation": "Đường đẳng áp trên $(V,T)$ là đoạn thẳng kéo dài qua gốc $O$."
     },
     {
       "type": "short_answer",
       "kind": "dinh_nghia",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Áp suất 1 atm bằng bao nhiêu mmHg? (chỉ điền số)",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Áp suất khí quyển $1$ atm bằng bao nhiêu mmHg?",
       "answer": "760",
-      "explanation": "Bài cho $1\\text{atm} = 760\\text{mmHg}$.",
-      "theorySection": 1,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "explanation": "Bài nêu $1\\ \\text{atm} = 760\\ \\text{mmHg}$."
     },
     {
       "type": "short_answer",
       "kind": "dinh_nghia",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "$1\\,\\text{m}^3 = 10^{n}\\,\\text{dm}^3$. Tìm $n$.",
-      "answer": "3",
-      "explanation": "Bài cho $1\\text{m}^3 = 10^3\\text{dm}^3$.",
+      "difficultySource": "ai",
       "theorySection": 1,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "difficulty": "de",
-      "question": "Số thông số trạng thái xác định trạng thái của một lượng khí là bao nhiêu?",
-      "answer": "3",
-      "explanation": "Bài nêu 3 thông số: $p$, $V$, $T$.",
-      "theorySection": 0,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "question": "Nhiệt độ $0\\ ^\\circ\\text{C}$ ứng với bao nhiêu kenvin?",
+      "answer": "273",
+      "explanation": "$T(\\text{K}) = t(^\\circ\\text{C}) + 273$ nên $0\\ ^\\circ\\text{C} = 273$ K."
     },
     {
       "type": "multiple_choice",
       "kind": "cong_thuc",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Biểu thức của định luật Boyle cho hai trạng thái 1 và 2 của một lượng khí là:",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ thức của định luật Boyle cho hai trạng thái là:",
       "options": [
-        "$p_1V_1 = p_2V_2$",
         "$\\dfrac{p_1}{V_1} = \\dfrac{p_2}{V_2}$",
         "$p_1V_2 = p_2V_1$",
+        "$p_1V_1 = p_2V_2$",
         "$p_1 + V_1 = p_2 + V_2$"
       ],
-      "answer": 0,
-      "explanation": "Bài cho $p_1V_1 = p_2V_2$ khi nhiệt độ không đổi.",
-      "theorySection": 1,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "answer": 2,
+      "explanation": "Boyle: $pV$ = hằng số nên $p_1V_1 = p_2V_2$."
     },
     {
       "type": "multiple_choice",
       "kind": "cong_thuc",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Biểu thức của định luật Charles cho hai trạng thái 1 và 2 là:",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ thức của định luật Charles cho hai trạng thái là:",
       "options": [
         "$\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$",
         "$V_1T_1 = V_2T_2$",
         "$\\dfrac{V_1}{T_2} = \\dfrac{V_2}{T_1}$",
-        "$\\dfrac{p_1}{T_1} = \\dfrac{p_2}{T_2}$"
+        "$\\dfrac{V_1}{t_1} = \\dfrac{V_2}{t_2}$ với $t$ tính bằng $^\\circ\\text{C}$"
       ],
       "answer": 0,
-      "explanation": "Bài cho $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$ với $T$ là nhiệt độ tuyệt đối.",
-      "theorySection": 3,
-      "topic": "Quá trình đẳng áp và định luật Charles",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "explanation": "Charles: $V/T$ = hằng số, $T$ tính bằng kenvin."
     },
     {
       "type": "multiple_choice",
       "kind": "bien_doi",
-      "difficulty": "trung-binh",
-      "question": "Từ $p_1V_1 = p_2V_2$, thể tích $V_2$ được tính bằng:",
-      "options": [
-        "$V_2 = \\dfrac{p_1V_1}{p_2}$",
-        "$V_2 = \\dfrac{p_2V_1}{p_1}$",
-        "$V_2 = \\dfrac{p_1p_2}{V_1}$",
-        "$V_2 = p_1V_1p_2$"
-      ],
-      "answer": 0,
-      "explanation": "Chia hai vế của $p_1V_1 = p_2V_2$ cho $p_2$.",
-      "theorySection": 1,
       "topic": "Quá trình đẳng nhiệt và định luật Boyle",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Từ $p_1V_1 = p_2V_2$, áp suất ở trạng thái 2 được tính bằng:",
+      "options": [
+        "$p_2 = \\dfrac{p_1V_2}{V_1}$",
+        "$p_2 = \\dfrac{p_1V_1}{V_2}$",
+        "$p_2 = \\dfrac{V_1V_2}{p_1}$",
+        "$p_2 = p_1 + \\dfrac{V_1}{V_2}$"
+      ],
+      "answer": 1,
+      "explanation": "Chia hai vế cho $V_2$."
     },
     {
       "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "difficulty": "de",
-      "question": "Khí trong bình bị nén bởi ngoại lực $F$ lên diện tích tiếp xúc $S$, áp suất ban đầu $p_0$. Áp suất lúc sau là:",
+      "kind": "tinh_nhanh",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một lượng khí có $V = 3{,}0$ lít ở $27\\ ^\\circ\\text{C}$, áp suất giữ không đổi. Nung nóng tới $127\\ ^\\circ\\text{C}$ thì thể tích là:",
       "options": [
-        "$p = p_0 + \\dfrac{F}{S}$",
-        "$p = p_0 - \\dfrac{F}{S}$",
-        "$p = p_0 + FS$",
-        "$p = p_0 + \\dfrac{S}{F}$"
+        "$14{,}1$ lít",
+        "$3{,}0$ lít",
+        "$4{,}0$ lít",
+        "$2{,}3$ lít"
       ],
-      "answer": 0,
-      "explanation": "Bài cho khí nén: $p = p_0 + \\dfrac{F}{S}$.",
-      "theorySection": 7,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
-    },
-    {
-      "type": "true_false",
-      "kind": "don_vi",
-      "difficulty": "de",
-      "question": "Xét các đổi đơn vị theo bài. Phát biểu nào đúng hay sai?",
-      "statements": [
-        {
-          "text": "$1\\text{atm} = 1\\text{bar}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\text{atm} = 10^5\\text{Pa}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\text{m}^3 = 10^6\\text{cm}^3$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\text{m}^3 = 10^3\\text{cm}^3$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài cho $1\\text{m}^3 = 10^3\\text{dm}^3 = 10^6\\text{cm}^3$, nên ý 4 sai.",
-      "theorySection": 1,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "answer": 2,
+      "explanation": "$T_1 = 300$ K, $T_2 = 400$ K nên $V_2 = 3{,}0 \\times 400/300 = 4{,}0$ lít; $14{,}1$ lít là do lấy tỉ số $127/27$ của nhiệt độ Celsius."
     },
     {
       "type": "true_false",
       "kind": "cong_thuc",
-      "difficulty": "trung-binh",
-      "question": "Xét áp suất tính theo mmHg. Các phát biểu sau đúng hay sai?",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về các hệ thức chất khí là đúng hay sai?",
       "statements": [
         {
-          "text": "$1\\text{mmHg} = 133{,}3\\text{Pa}$.",
+          "text": "$T(\\text{K}) = t(^\\circ\\text{C}) + 273$.",
           "answer": true
         },
         {
-          "text": "$1\\text{atm} = 1{,}013\\times10^5\\text{Pa}$.",
+          "text": "Khi nhiệt độ không đổi thì $pV$ = hằng số.",
           "answer": true
         },
         {
-          "text": "Nếu $h$ tính bằng mmHg thì $p$ và $p_0$ cũng tính bằng mmHg.",
+          "text": "Khi áp suất không đổi thì $\\dfrac{V}{T}$ = hằng số.",
           "answer": true
         },
         {
-          "text": "$1\\text{atm} = 76\\text{mmHg}$.",
+          "text": "Định luật Charles viết đúng là $\\dfrac{V_1}{t_1} = \\dfrac{V_2}{t_2}$ với $t$ tính bằng $^\\circ\\text{C}$.",
           "answer": false
         }
       ],
-      "explanation": "Bài cho $1\\text{atm} = 760\\text{mmHg}$, nên ý 4 sai.",
+      "explanation": "Hệ thức Charles dùng nhiệt độ tuyệt đối $T$, không dùng $t$ Celsius."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
       "theorySection": 4,
-      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "question": "Xilanh y tế nhốt $60$ ml khí ở $1{,}0\\cdot10^5$ Pa, $27\\ ^\\circ\\text{C}$. Nhận định nào sau đây là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Nén đẳng nhiệt còn $25$ ml thì áp suất là $2{,}4\\cdot10^5$ Pa.",
+          "answer": true
+        },
+        {
+          "text": "Đưa về $60$ ml rồi nung đẳng áp tới $87\\ ^\\circ\\text{C}$ thì thể tích tăng thêm $12$ ml.",
+          "answer": true
+        },
+        {
+          "text": "Nén đẳng nhiệt từ $60$ ml còn $15$ ml thì áp suất tăng $4$ lần.",
+          "answer": true
+        },
+        {
+          "text": "Nén đẳng nhiệt từ $60$ ml còn $15$ ml thì áp suất tăng $3$ lần.",
+          "answer": false
+        }
+      ],
+      "explanation": "Thể tích giảm 4 lần thì áp suất tăng 4 lần, $p_2 = 4{,}0\\cdot10^5$ Pa."
     },
     {
       "type": "short_answer",
       "kind": "tinh_nhanh",
+      "topic": "Quá trình đẳng áp và định luật Charles",
+      "form": "ly_thuyet",
       "difficulty": "de",
-      "question": "Đổi $27^\\circ\\text{C}$ sang nhiệt độ tuyệt đối theo $T = t + 273$ (đơn vị K). Đáp số?",
-      "answer": "300",
-      "explanation": "$T = 27 + 273 = 300\\,\\text{K}$.",
-      "theorySection": 0,
-      "topic": "Quá trình đẳng áp và định luật Charles",
-      "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đổi $127\\ ^\\circ\\text{C}$ sang kenvin được bao nhiêu K?",
+      "answer": "400",
+      "explanation": "$T = 127 + 273 = 400$ K."
     },
     {
       "type": "short_answer",
       "kind": "tinh_nhanh",
-      "difficulty": "trung-binh",
-      "question": "Khí ở nhiệt độ không đổi: $p_1 = 1\\,\\text{atm}$, $V_1 = 6$ lít, $V_2 = 2$ lít. Tìm $p_2$ (atm).",
-      "answer": "3",
-      "explanation": "$p_2 = \\dfrac{p_1V_1}{V_2} = \\dfrac{1\\cdot 6}{2} = 3\\,\\text{atm}$.",
-      "theorySection": 1,
       "topic": "Quá trình đẳng nhiệt và định luật Boyle",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khí ở $1{,}0$ atm, $6{,}0$ lít được nén đẳng nhiệt còn $2{,}0$ lít. Áp suất khí lúc sau là bao nhiêu atm?",
+      "answer": "3",
+      "explanation": "$p_2 = 1{,}0 \\times 6{,}0 / 2{,}0 = 3{,}0$ atm."
     },
     {
       "type": "short_answer",
       "kind": "tinh_nhanh",
-      "difficulty": "trung-binh",
-      "question": "Khí ở áp suất không đổi: $V_1 = 2$ lít, $T_1 = 300\\,\\text{K}$, $T_2 = 600\\,\\text{K}$. Tìm $V_2$ (lít).",
-      "answer": "4",
-      "explanation": "$V_2 = V_1\\dfrac{T_2}{T_1} = 2\\cdot\\dfrac{600}{300} = 4$ lít.",
-      "theorySection": 3,
       "topic": "Quá trình đẳng áp và định luật Charles",
       "form": "ly_thuyet",
-      "difficultySource": "ai"
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khí ở $300$ K có $V = 5{,}0$ lít, được nung đẳng áp tới $360$ K. Thể tích khí lúc sau là bao nhiêu lít?",
+      "answer": "6",
+      "explanation": "$V_2 = 5{,}0 \\times 360/300 = 6{,}0$ lít."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đổi $2\\ \\text{m}^3$ ra lít được bao nhiêu lít?",
+      "answer": "2000",
+      "explanation": "$1\\ \\text{m}^3 = 10^3$ lít nên $2\\ \\text{m}^3 = 2000$ lít."
     }
   ]
 }

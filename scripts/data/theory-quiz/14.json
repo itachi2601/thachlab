@@ -1,359 +1,386 @@
 {
- "lesson_id": 14,
- "lesson_title": "Bài 13. Đại cương về dòng điện xoay chiều",
- "item_id": 141,
- "generated_at": "2026-09-30",
- "generated_by": "claude-code",
- "quiz_min_correct": 14,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 8
+  "lesson_id": 14,
+  "lesson_title": "Bài 13. Đại cương về dòng điện xoay chiều",
+  "item_id": 141,
+  "generated_at": "2026-10-05",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": [
-   {
-    "question": "Biểu thức từ thông qua khung dây N vòng, diện tích S quay đều với tốc độ góc $\\omega$ trong từ trường $B$ là:",
-    "reason": "Nhiễu số 3 ($NBS\\sin(\\omega t+\\varphi)\\cdot\\omega$) là biểu thức bịa, lẫn sin với hệ số $\\omega$, sai thứ nguyên và không phải lỗi học sinh thật; nhiễu số 2 cũng có $\\omega$ làm sai thứ nguyên của từ thông"
-   },
-   {
-    "question": "Biểu thức suất điện động cảm ứng trong khung dây là:",
-    "reason": "Nhiễu số 3 ($-NBS\\omega\\cos(\\cdot)\\cdot\\omega$) có $\\omega$ hai lần, là công thức bịa vô nghĩa, sai thứ nguyên"
-   }
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khung dây quay đều trong từ trường đều sinh ra suất điện động xoay chiều vì:",
+      "options": [
+        "Từ trường của nam châm thay đổi chiều liên tục",
+        "Khung dây bị nhiễm điện do ma sát với không khí",
+        "Điện trở của khung thay đổi tuần hoàn khi quay",
+        "Từ thông qua khung biến thiên tuần hoàn, nên xảy ra hiện tượng cảm ứng điện từ"
+      ],
+      "answer": 3,
+      "explanation": "Pháp tuyến hợp $\\vec{B}$ góc $\\omega t+\\varphi$ tăng đều nên $\\Phi$ dao động tuần hoàn và theo Faraday có $e=-\\Phi'$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "So với từ thông qua khung dây, suất điện động cảm ứng trong khung:",
+      "options": [
+        "Chậm pha hơn $\\dfrac{\\pi}{2}$",
+        "Nhanh pha hơn $\\dfrac{\\pi}{2}$",
+        "Ngược pha",
+        "Cùng pha"
+      ],
+      "answer": 0,
+      "explanation": "Vì $e=-\\Phi'$ nên $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$ (hai đại lượng vuông pha)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong biểu thức $i=I_0\\cos(\\omega t+\\varphi)$, đại lượng $\\omega t+\\varphi$ gọi là:",
+      "options": [
+        "Pha ban đầu",
+        "Pha của dòng điện tại thời điểm $t$",
+        "Tần số góc",
+        "Biên độ của dòng điện"
+      ],
+      "answer": 1,
+      "explanation": "Bài gọi $\\omega t+\\varphi$ là pha tại lúc $t$; còn $\\varphi$ mới là pha ban đầu."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cường độ hiệu dụng của dòng điện xoay chiều là cường độ của dòng điện không đổi mà khi chạy qua cùng một điện trở trong cùng thời gian thì:",
+      "options": [
+        "Toả ra nhiệt lượng bằng nhiệt lượng do dòng xoay chiều toả ra",
+        "Có độ lớn bằng giá trị trung bình của dòng xoay chiều",
+        "Có độ lớn bằng giá trị cực đại của dòng xoay chiều",
+        "Tạo ra từ thông bằng từ thông của dòng xoay chiều"
+      ],
+      "answer": 0,
+      "explanation": "Giá trị hiệu dụng được định nghĩa theo tác dụng toả nhiệt."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Số 220 V ghi trên ổ điện và số chỉ của vôn kế xoay chiều là giá trị:",
+      "options": [
+        "Cực đại",
+        "Hiệu dụng",
+        "Tức thời",
+        "Trung bình trong một chu kì"
+      ],
+      "answer": 1,
+      "explanation": "Bài nêu: ampe kế, vôn kế xoay chiều và số ghi trên thiết bị đều là giá trị hiệu dụng; đỉnh của ổ 220 V là khoảng 311 V."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Tại thời điểm mặt khung dây đang quay song song với $\\vec{B}$, so với cực đại thì từ thông và suất điện động lần lượt:",
+      "options": [
+        "Cả hai đều bằng 0",
+        "Từ thông cực đại, suất điện động bằng 0",
+        "Từ thông bằng 0, suất điện động cực đại",
+        "Cả hai đều cực đại"
+      ],
+      "answer": 2,
+      "explanation": "Mặt khung song song $\\vec{B}$ thì $\\Phi=0$ nhưng $\\Phi$ biến thiên nhanh nhất nên $|e|$ cực đại."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Khung dây quay đều trong từ trường đều. Xét từ thông $\\Phi$ và suất điện động $e$:",
+      "statements": [
+        {
+          "text": "$\\Phi$ và $e$ vuông pha.",
+          "answer": true
+        },
+        {
+          "text": "Khi $\\Phi$ đạt giá trị cực đại thì $e=0$.",
+          "answer": true
+        },
+        {
+          "text": "Suất điện động xác định bởi $e=-\\Phi'$.",
+          "answer": true
+        },
+        {
+          "text": "Khi mặt khung song song với $\\vec{B}$ thì $e=0$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Mặt khung song song $\\vec{B}$ thì $\\Phi=0$ và $e$ cực đại, nên ý 4 sai."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về giá trị hiệu dụng của dòng điện xoay chiều:",
+      "statements": [
+        {
+          "text": "Giá trị trung bình của $i$ trong một chu kì bằng 0.",
+          "answer": true
+        },
+        {
+          "text": "Nhiệt toả ra tỉ lệ với $i^2$ chứ không tỉ lệ với $i$.",
+          "answer": true
+        },
+        {
+          "text": "Số ghi trên thiết bị điện là giá trị hiệu dụng.",
+          "answer": true
+        },
+        {
+          "text": "Dòng xoay chiều hiệu dụng $2\\ \\text{A}$ toả nhiệt ít hơn dòng không đổi $2\\ \\text{A}$ vì trung bình của nó bằng 0.",
+          "answer": false
+        }
+      ],
+      "explanation": "Hai dòng này toả nhiệt bằng nhau theo định nghĩa của giá trị hiệu dụng; trung bình bằng 0 không quyết định nhiệt."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ổ điện nhà em có tần số $50\\ \\text{Hz}$. Mỗi giây dòng điện đổi chiều bao nhiêu lần?",
+      "answer": "100",
+      "explanation": "Mỗi chu kì đổi chiều 2 lần nên mỗi giây đổi chiều $2f=100$ lần."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Máy phát mini có một cặp cực, khung quay đều. Mỗi vòng quay của khung cho bao nhiêu chu kì của dòng điện?",
+      "answer": "1",
+      "explanation": "Bài nêu mỗi vòng quay cho đúng một chu kì điện, nên $f=n$ (số vòng quay mỗi giây)."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khung $N$ vòng, diện tích $S$ quay đều với tốc độ góc $\\omega$ trong từ trường đều $B$. Suất điện động cực đại là:",
+      "options": [
+        "$E_0=NBS\\omega$",
+        "$E_0=NBS$",
+        "$E_0=\\dfrac{NBS}{\\omega}$",
+        "$E_0=NBS\\omega^2$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $\\Phi_0=NBS$ và $e=-\\Phi'$ được $E_0=NBS\\omega$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Liên hệ giữa chu kì $T$ và tần số góc $\\omega$ là:",
+      "options": [
+        "$T=\\dfrac{\\omega}{2\\pi}$",
+        "$T=\\dfrac{1}{\\omega}$",
+        "$T=\\dfrac{2\\pi}{\\omega}$",
+        "$T=2\\pi\\omega$"
+      ],
+      "answer": 2,
+      "explanation": "Bài cho $T=\\dfrac{2\\pi}{\\omega}=\\dfrac{1}{f}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Liên hệ giữa cường độ hiệu dụng $I$ và cường độ cực đại $I_0$ là:",
+      "options": [
+        "$I=I_0$",
+        "$I=\\dfrac{I_0}{2}$",
+        "$I=\\dfrac{I_0}{\\sqrt{2}}$",
+        "$I=I_0\\sqrt{2}$"
+      ],
+      "answer": 2,
+      "explanation": "Mẹo của bài: chia căn hai ra hiệu dụng, nhân căn hai ra đỉnh."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khung dây quay đều; giữ nguyên $N$, $B$, $S$ nhưng quay nhanh gấp đôi. Suất điện động cực đại $E_0$ và tần số $f$:",
+      "options": [
+        "$E_0$ gấp bốn, $f$ gấp đôi",
+        "$E_0$ gấp đôi, $f$ không đổi",
+        "$E_0$ không đổi, $f$ gấp đôi",
+        "$E_0$ gấp đôi và $f$ gấp đôi"
+      ],
+      "answer": 3,
+      "explanation": "$E_0=NBS\\omega$ tỉ lệ với $\\omega$ và $f=\\dfrac{\\omega}{2\\pi}$ cũng tỉ lệ với $\\omega$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về mối liên hệ giữa $\\omega$, $T$ và $f$:",
+      "statements": [
+        {
+          "text": "$\\omega=2\\pi f$.",
+          "answer": true
+        },
+        {
+          "text": "$T=\\dfrac{1}{f}$.",
+          "answer": true
+        },
+        {
+          "text": "$f=\\dfrac{\\omega}{2\\pi}$.",
+          "answer": true
+        },
+        {
+          "text": "$T=\\dfrac{\\omega}{2\\pi}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Đúng là $T=\\dfrac{2\\pi}{\\omega}$, ý 4 đã đảo tử và mẫu."
+    },
+    {
+      "type": "true_false",
+      "kind": "bien_doi",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Điện áp $u=100\\sqrt{2}\\cos(100\\pi t)\\ \\text{V}$. Các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Điện áp hiệu dụng $U=100\\ \\text{V}$.",
+          "answer": true
+        },
+        {
+          "text": "Tần số $f=50\\ \\text{Hz}$.",
+          "answer": true
+        },
+        {
+          "text": "Điện áp cực đại $U_0=100\\ \\text{V}$.",
+          "answer": false
+        },
+        {
+          "text": "Chu kì $T=0{,}02\\ \\text{s}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "$U_0=100\\sqrt{2}\\ \\text{V}$ và $U=\\dfrac{U_0}{\\sqrt{2}}=100\\ \\text{V}$, nên ý 3 sai; $f=\\dfrac{100\\pi}{2\\pi}=50\\ \\text{Hz}$ và $T=0{,}02\\ \\text{s}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Viết biểu thức u, i theo thời gian",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Dòng điện $i=4\\cos\\left(100\\pi t-\\dfrac{\\pi}{3}\\right)\\ \\text{A}$ có tần số bao nhiêu Hz?",
+      "answer": "50",
+      "explanation": "$f=\\dfrac{\\omega}{2\\pi}=\\dfrac{100\\pi}{2\\pi}=50\\ \\text{Hz}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Dòng $i=4\\cos(100\\pi t)\\ \\text{A}$ chạy qua điện trở $R=5\\ \\Omega$. Công suất toả nhiệt trung bình là bao nhiêu W?",
+      "answer": "40",
+      "explanation": "$I=\\dfrac{4}{\\sqrt{2}}$ nên $I^2=8$ và $P=I^2R=8\\cdot5=40\\ \\text{W}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "bien_doi",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Dòng xoay chiều hiệu dụng $3\\ \\text{A}$ chạy qua điện trở $R=10\\ \\Omega$ trong $1$ phút. Nhiệt lượng toả ra là bao nhiêu J?",
+      "answer": "5400",
+      "explanation": "Dùng giá trị hiệu dụng: $Q=I^2Rt=3^2\\cdot10\\cdot60=5400\\ \\text{J}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ổ điện có điện áp hiệu dụng $220\\ \\text{V}$. Điện áp cực đại xấp xỉ bao nhiêu V (làm tròn đến đơn vị)?",
+      "answer": "311",
+      "explanation": "$U_0=U\\sqrt{2}=220\\sqrt{2}\\approx311\\ \\text{V}$."
+    }
   ]
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện xoay chiều hình sin là dòng điện có cường độ:",
-   "options": [
-    "Biến thiên tuần hoàn theo thời gian theo quy luật hàm sin hoặc cos",
-    "Không đổi theo thời gian",
-    "Chỉ đổi chiều một lần trong mỗi chu kì mà độ lớn không đổi",
-    "Luôn bằng 0 tại mọi thời điểm"
-   ],
-   "answer": 0,
-   "explanation": "Bài định nghĩa: dòng điện xoay chiều hình sin có cường độ biến thiên tuần hoàn với thời gian theo hàm số sin hay cos."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Dòng điện xoay chiều trong khung dây quay đều trong từ trường đều được tạo ra dựa trên hiện tượng nào?",
-   "options": [
-    "Cảm ứng điện từ",
-    "Tán sắc ánh sáng",
-    "Nhiễm điện do cọ xát",
-    "Phóng xạ"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: nguyên tắc tạo dòng xoay chiều dựa trên hiện tượng cảm ứng điện từ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "So với từ thông qua khung dây, suất điện động cảm ứng trong khung:",
-   "options": [
-    "Chậm pha hơn $\\frac{\\pi}{2}$",
-    "Nhanh pha hơn $\\frac{\\pi}{2}$",
-    "Cùng pha",
-    "Ngược pha"
-   ],
-   "answer": 0,
-   "explanation": "Từ $e=-\\Phi'$ suy ra suất điện động chậm pha hơn từ thông một góc $\\frac{\\pi}{2}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cường độ hiệu dụng của dòng điện xoay chiều bằng cường độ của một dòng điện không đổi mà khi lần lượt đi qua cùng một điện trở trong những thời gian như nhau thì:",
-   "options": [
-    "Toả ra nhiệt lượng bằng nhau",
-    "Có cùng giá trị tức thời",
-    "Có cùng tần số",
-    "Có cùng pha ban đầu"
-   ],
-   "answer": 0,
-   "explanation": "Định nghĩa trong bài dựa trên tác dụng toả nhiệt: hai dòng toả nhiệt lượng bằng nhau trong thời gian như nhau."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ampe kế đo cường độ hiệu dụng của dòng xoay chiều hoạt động dựa trên tác dụng nào của dòng điện?",
-   "options": [
-    "Tác dụng có độ lớn tỉ lệ với bình phương cường độ dòng điện (như tác dụng nhiệt)",
-    "Tác dụng có độ lớn tỉ lệ với căn bậc hai của cường độ",
-    "Tác dụng chỉ phụ thuộc chiều dòng điện",
-    "Tác dụng có độ lớn không phụ thuộc cường độ"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu ampe kế xoay chiều dựa trên những tác dụng có độ lớn tỉ lệ với bình phương cường độ dòng điện."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tần số của mạng điện xoay chiều ở Việt Nam là:",
-   "options": [
-    "$50$ Hz",
-    "$100$ Hz",
-    "$25$ Hz",
-    "$220$ Hz"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: tần số mạng điện xoay chiều ở Việt Nam là $f=50$ Hz."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Nếu pha ban đầu của dòng điện là $\\varphi_i=\\pm\\frac{\\pi}{2}$ thì số lần dòng điện đổi chiều trong giây đầu tiên là:",
-   "options": [
-    "$2f-1$",
-    "$2f$",
-    "$2f+1$",
-    "$f$"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: khi $\\varphi_i=\\pm\\frac{\\pi}{2}$ thì giây đầu tiên đổi chiều $2f-1$ lần, các giây sau $2f$ lần."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Khung dây phẳng N vòng, diện tích S quay đều với tốc độ góc $\\omega$ quanh trục trong từ trường đều $B$. Xét các phát biểu:",
-   "statements": [
-    {
-     "text": "Từ thông qua khung biến thiên nên trong khung xuất hiện suất điện động cảm ứng.",
-     "answer": true
-    },
-    {
-     "text": "Suất điện động cảm ứng được xác định bởi $e=-\\Phi'$.",
-     "answer": true
-    },
-    {
-     "text": "Suất điện động cảm ứng cùng pha với từ thông.",
-     "answer": false
-    },
-    {
-     "text": "Nối khung với thiết bị tiêu thụ điện thì có dòng điện xoay chiều.",
-     "answer": true
-    }
-   ],
-   "explanation": "Từ thông biến thiên gây $e=-\\Phi'$, chậm pha $\\frac{\\pi}{2}$ so với từ thông nên ý 3 sai."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về giá trị hiệu dụng của dòng điện xoay chiều, xét các phát biểu:",
-   "statements": [
-    {
-     "text": "Giá trị trung bình của dòng điện xoay chiều trong một chu kì bằng 0.",
-     "answer": true
-    },
-    {
-     "text": "Giá trị hiệu dụng được định nghĩa dựa trên tác dụng toả nhiệt.",
-     "answer": true
-    },
-    {
-     "text": "Ampe kế xoay chiều đo trực tiếp giá trị cực đại $I_0$.",
-     "answer": false
-    },
-    {
-     "text": "Giá trị cực đại $I_0$ của dòng điện luôn dương.",
-     "answer": true
-    }
-   ],
-   "explanation": "Bài nêu ampe kế đo cường độ hiệu dụng, không phải giá trị cực đại nên ý 3 sai."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Các hệ thức về giá trị hiệu dụng và tần số của dòng điện xoay chiều:",
-   "statements": [
-    {
-     "text": "$I=\\frac{I_0}{\\sqrt{2}}$",
-     "answer": true
-    },
-    {
-     "text": "$U=U_0\\sqrt{2}$",
-     "answer": false
-    },
-    {
-     "text": "$E=\\frac{E_0}{\\sqrt{2}}$",
-     "answer": true
-    },
-    {
-     "text": "$f=\\frac{\\omega}{2\\pi}$",
-     "answer": true
-    }
-   ],
-   "explanation": "Đúng: $U=\\frac{U_0}{\\sqrt{2}}$, không phải $U_0\\sqrt{2}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "bien_doi",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Từ thông $\\Phi=\\Phi_0\\cos(\\omega t+\\varphi)$ với $\\Phi_0=NBS$ và suất điện động $e$ có biên độ $E_0$. Xét các ý:",
-   "statements": [
-    {
-     "text": "$\\left(\\frac{\\Phi}{\\Phi_0}\\right)^2+\\left(\\frac{e}{E_0}\\right)^2=1$",
-     "answer": true
-    },
-    {
-     "text": "$E_0=NBS\\omega$",
-     "answer": true
-    },
-    {
-     "text": "$E_0=NBS$",
-     "answer": false
-    },
-    {
-     "text": "Khi $\\Phi=\\Phi_0$ thì $e=0$.",
-     "answer": true
-    }
-   ],
-   "explanation": "$e=NBS\\omega\\sin(\\omega t+\\varphi)$ nên $E_0=NBS\\omega$; từ thông và suất điện động vuông pha nên ý 3 sai."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Chu kì $T$ của dòng điện xoay chiều liên hệ với tần số góc $\\omega$ bởi:",
-   "options": [
-    "$T=\\frac{2\\pi}{\\omega}$",
-    "$T=2\\pi\\omega$",
-    "$T=\\frac{\\omega}{2\\pi}$",
-    "$T=\\frac{\\pi}{\\omega}$"
-   ],
-   "answer": 0,
-   "explanation": "Bài: $T=\\frac{1}{f}=\\frac{2\\pi}{\\omega}$ (s)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện xoay chiều có tần số $50$ Hz (pha ban đầu bất kì thông thường). Trong mỗi giây, dòng điện đổi chiều bao nhiêu lần?",
-   "answer": "100",
-   "explanation": "Trong mỗi giây dòng điện đổi chiều $2f=2\\cdot50=100$ lần."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện xoay chiều có tần số góc $\\omega=40\\pi$ rad/s. Tần số $f$ bằng bao nhiêu Hz?",
-   "answer": "20",
-   "explanation": "$f=\\frac{\\omega}{2\\pi}=\\frac{40\\pi}{2\\pi}=20$ Hz."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện xoay chiều có chu kì $T=0,04$ s. Tần số $f$ bằng bao nhiêu Hz?",
-   "answer": "25",
-   "explanation": "$f=\\frac{1}{T}=\\frac{1}{0,04}=25$ Hz."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện xoay chiều có cường độ cực đại $I_0=2\\sqrt{2}$ A. Cường độ hiệu dụng bằng bao nhiêu A?",
-   "answer": "2",
-   "explanation": "$I=\\frac{I_0}{\\sqrt{2}}=\\frac{2\\sqrt{2}}{\\sqrt{2}}=2$ A."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện $i=4\\cos(20\\pi t)$ (A). Chu kì của dòng điện bằng bao nhiêu giây?",
-   "answer": "0,1",
-   "explanation": "$T=\\frac{2\\pi}{\\omega}=\\frac{2\\pi}{20\\pi}=0,1$ s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết biểu thức u, i theo thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Suất điện động có biên độ $E_0=10$ V. Tại thời điểm từ thông qua khung bằng $0$, độ lớn $|e|$ bằng bao nhiêu V?",
-   "answer": "10",
-   "explanation": "Từ thông và suất điện động vuông pha: $\\Phi=0$ thì $\\left(\\frac{e}{E_0}\\right)^2=1$, nên $|e|=E_0=10$ V."
-  }
- ]
 }

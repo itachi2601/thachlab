@@ -1,386 +1,386 @@
 {
- "lesson_id": 6,
- "lesson_title": "Bài 5. Thuyết động học phân tử chất khí",
- "item_id": 219,
- "generated_at": "2026-09-30",
- "generated_by": "claude-code",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 10
+  "lesson_id": 6,
+  "lesson_title": "Bài 5. Thuyết động học phân tử chất khí",
+  "item_id": 219,
+  "generated_at": "2026-10-05",
+  "generated_by": "claude-code",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "difficulty": "de",
-   "question": "Chuyển động Brown xảy ra trong môi trường nào?",
-   "options": [
-    "Cả chất lỏng và chất khí",
-    "Chỉ trong chất lỏng",
-    "Chỉ trong chất rắn",
-    "Chỉ trong chân không"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: chuyển động Brown không chỉ xảy ra trong chất lỏng mà xảy ra cả trong chất khí.",
-   "theorySection": 0,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "difficulty": "de",
-   "question": "Khi nhiệt độ của chất khí tăng lên thì tốc độ chuyển động hỗn loạn của các phân tử khí:",
-   "options": [
-    "Tăng lên",
-    "Giảm đi",
-    "Không đổi",
-    "Chỉ đổi hướng, không đổi độ lớn"
-   ],
-   "answer": 0,
-   "explanation": "Nhiệt độ của khí càng cao thì tốc độ chuyển động hỗn loạn của các phân tử khí càng lớn.",
-   "theorySection": 0,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "difficulty": "de",
-   "question": "So với chất lỏng và chất rắn, lực liên kết giữa các phân tử khí:",
-   "options": [
-    "Rất yếu, vì khoảng cách giữa các phân tử khí rất lớn",
-    "Rất mạnh, vì các phân tử khí ở sát nhau",
-    "Bằng lực liên kết ở chất rắn",
-    "Bằng không tuyệt đối"
-   ],
-   "answer": 0,
-   "explanation": "Khoảng cách giữa các phân tử khí rất lớn nên lực liên kết rất yếu so với thể lỏng và thể rắn.",
-   "theorySection": 0,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "difficulty": "de",
-   "question": "Theo mô hình động học phân tử chất khí, áp suất chất khí lên thành bình là do:",
-   "options": [
-    "Các phân tử khí va chạm vào thành bình và tác dụng lực lên thành bình",
-    "Các phân tử khí đứng yên đè lên thành bình",
-    "Trọng lượng riêng của bình",
-    "Các phân tử khí bị hút vào thành bình"
-   ],
-   "answer": 0,
-   "explanation": "Khi chuyển động hỗn loạn, các phân tử khí va chạm vào thành bình, tác dụng lực và gây áp suất.",
-   "theorySection": 1,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "difficulty": "de",
-   "question": "Trong mô hình khí lí tưởng, có thể bỏ qua:",
-   "options": [
-    "Kích thước của các phân tử và lực tương tác giữa chúng khi chưa va chạm",
-    "Khối lượng của các phân tử",
-    "Chuyển động của các phân tử",
-    "Va chạm của các phân tử vào thành bình"
-   ],
-   "answer": 0,
-   "explanation": "Mô hình khí lí tưởng bỏ qua kích thước phân tử và lực tương tác khi chưa va chạm.",
-   "theorySection": 2,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "difficulty": "trung-binh",
-   "question": "Nhận định nào sau đây về mô hình khí lí tưởng là đúng hay sai?",
-   "statements": [
+  "questions": [
     {
-     "text": "Giữa hai va chạm liên tiếp, phân tử khí chuyển động thẳng đều.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Chuyển động Brown là chuyển động của:",
+      "options": [
+        "phân tử khí chuyển động thẳng đều với tốc độ không đổi",
+        "hạt bụi bị dòng đối lưu cuốn đi theo một chiều xác định",
+        "hạt nhỏ lơ lửng (hạt phấn hoa, hạt khói) lắc lư theo đường gấp khúc do bị phân tử va đập không cân bằng",
+        "hạt bụi tự di chuyển như một sinh vật tí hon"
+      ],
+      "answer": 2,
+      "explanation": "Hạt nhỏ lơ lửng bị phân tử va đập từ mọi phía, hai phía không bao giờ cân bằng nên đi theo đường gấp khúc."
     },
     {
-     "text": "Va chạm của các phân tử với nhau và với thành bình là va chạm hoàn toàn đàn hồi.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về chuyển động Brown, phát biểu nào đúng?",
+      "options": [
+        "Hạt càng nhỏ thì chuyển động càng rõ",
+        "Hạt càng to thì chuyển động càng rõ",
+        "Chuyển động dừng hẳn khi hộp được đậy kín",
+        "Chuyển động chỉ xảy ra khi có gió thổi qua"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu: hạt càng nhỏ, chuyển động càng rõ; hộp kín không có gió mà hạt vẫn nhảy múa."
     },
     {
-     "text": "Kích thước phân tử rất lớn so với khoảng cách giữa chúng nên không thể bỏ qua.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Theo thuyết động học phân tử, nguyên nhân gây ra áp suất của chất khí lên thành bình là:",
+      "options": [
+        "các phân tử khí đứng yên đè lên thành bình",
+        "các phân tử khí hút nhau rất mạnh",
+        "các phân tử khí bị thành bình hút vào",
+        "các phân tử khí va đập vào thành bình và tác dụng lực lên thành"
+      ],
+      "answer": 3,
+      "explanation": "Phân tử đập vào thành bình, tác dụng lực — đó là nguyên nhân gây áp suất khí."
     },
     {
-     "text": "Khi chưa va chạm, lực tương tác giữa các phân tử rất yếu nên có thể bỏ qua.",
-     "answer": true
+      "type": "true_false",
+      "kind": "dinh_luat",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về thuyết động học phân tử chất khí là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Chất khí gồm rất nhiều phân tử có kích thước rất nhỏ so với khoảng cách giữa chúng.",
+          "answer": true
+        },
+        {
+          "text": "Các phân tử khí chuyển động hỗn loạn, không ngừng.",
+          "answer": true
+        },
+        {
+          "text": "Nhiệt độ càng cao thì các phân tử chuyển động càng chậm.",
+          "answer": false
+        },
+        {
+          "text": "Va chạm của phân tử vào thành bình gây ra áp suất khí.",
+          "answer": true
+        }
+      ],
+      "explanation": "Nhiệt độ càng cao thì tốc độ phân tử càng lớn; ba ý còn lại đúng theo ba nội dung của thuyết."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về mô hình khí lí tưởng là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Giữa hai va chạm liên tiếp, phân tử chuyển động thẳng đều.",
+          "answer": true
+        },
+        {
+          "text": "Va chạm với nhau và với thành bình là va chạm hoàn toàn đàn hồi.",
+          "answer": true
+        },
+        {
+          "text": "Phải tính đến kích thước phân tử vì nó lớn hơn nhiều so với khoảng cách giữa chúng.",
+          "answer": false
+        },
+        {
+          "text": "Khí thực ở nhiệt độ, áp suất bình thường gần đúng như khí lí tưởng.",
+          "answer": true
+        }
+      ],
+      "explanation": "Mô hình bỏ qua kích thước phân tử vì khoảng cách giữa chúng rất lớn."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở điều kiện tiêu chuẩn, tốc độ trung bình của phân tử khí khoảng bao nhiêu m/s?",
+      "answer": "400",
+      "explanation": "Bài nêu tốc độ trung bình của phân tử khí ở điều kiện tiêu chuẩn khoảng 400 m/s."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong thí nghiệm ống khuếch tán, vòng khói trắng hiện ra cách đầu NH₃ 24 cm sau 12 s. Tốc độ lan của cả đám phân tử là bao nhiêu cm/s?",
+      "answer": "2",
+      "explanation": "$24/12 = 2$ cm/s, chậm hơn nhiều so với 400 m/s của một phân tử."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Mở lọ nước hoa ở góc phòng, vài chục giây sau mới ngửi thấy mùi dù phân tử bay khoảng 400 m/s. Nguyên nhân là:",
+      "options": [
+        "con số 400 m/s trong bài là sai",
+        "phân tử bị va đập liên tục nên đường đi gấp khúc; cả đám chỉ lan vài cm mỗi giây",
+        "mũi người cần vài chục giây mới nhận ra mùi",
+        "phân tử nước hoa đứng yên cho tới khi có gió"
+      ],
+      "answer": 1,
+      "explanation": "400 m/s là tốc độ của từng phân tử trên đoạn bay tự do ngắn; tốc độ lan của cả đám chậm hơn hàng chục nghìn lần."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vì sao khí thực bị nén mạnh và làm lạnh sâu thì không còn giống khí lí tưởng?",
+      "options": [
+        "Phân tử khí ngừng chuyển động",
+        "Va chạm của phân tử với thành bình trở thành không đàn hồi hoàn toàn nên áp suất bằng không",
+        "Khoảng cách giữa các phân tử nhỏ lại, kích thước và lực tương tác không còn bỏ qua được",
+        "Số phân tử khí tự giảm đi"
+      ],
+      "answer": 2,
+      "explanation": "Nén mạnh làm khoảng cách giảm, hai giả thiết bỏ kích thước và bỏ lực tương tác bị phá vỡ; khí thực còn có thể hoá lỏng."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Nội dung thuyết động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lực tương tác giữa các phân tử khí có đặc điểm nào sau đây?",
+      "options": [
+        "Có cả lực hút và lực đẩy nhưng rất yếu vì khoảng cách giữa các phân tử lớn",
+        "Không có lực nào tác dụng giữa các phân tử",
+        "Chỉ có lực hút và mạnh hơn cả ở thể rắn",
+        "Lực đẩy lớn đến mức các phân tử không thể lại gần nhau"
+      ],
+      "answer": 0,
+      "explanation": "Giữa các phân tử khí có lực hút và đẩy nhưng yếu hơn hẳn thể lỏng, thể rắn do khoảng cách lớn."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Số mol $n$ của mẫu khí có khối lượng $m$ và khối lượng mol $M$ được tính bằng:",
+      "options": [
+        "$n = m \\cdot M$",
+        "$n = \\dfrac{m}{M}$",
+        "$n = \\dfrac{M}{m}$",
+        "$n = \\dfrac{m}{N_A}$"
+      ],
+      "answer": 1,
+      "explanation": "Bài cho $n = \\dfrac{N}{N_A} = \\dfrac{m}{M}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khối lượng mol $M$ có đơn vị là:",
+      "options": [
+        "mol",
+        "g",
+        "mol/g",
+        "g/mol"
+      ],
+      "answer": 3,
+      "explanation": "Khối lượng mol là khối lượng của 1 mol chất, đơn vị g/mol."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Từ $n = \\dfrac{N}{N_A}$, số phân tử $N$ của mẫu có $n$ mol là:",
+      "options": [
+        "$N = n N_A$",
+        "$N = \\dfrac{n}{N_A}$",
+        "$N = \\dfrac{N_A}{n}$",
+        "$N = n + N_A$"
+      ],
+      "answer": 0,
+      "explanation": "Nhân hai vế với $N_A$: $N = nN_A$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Một bình chứa 3 mol khí helium (He, $M = 4$ g/mol) ở điều kiện tiêu chuẩn. Khối lượng và thể tích của lượng khí đó là:",
+      "options": [
+        "$12$ g và $3$ lít",
+        "$4$ g và $67{,}2$ lít",
+        "$12$ g và $67{,}2$ lít",
+        "$12$ g và $22{,}4$ lít"
+      ],
+      "answer": 2,
+      "explanation": "$m = nM = 3 \\times 4 = 12$ g; $V = n \\times 22{,}4 = 67{,}2$ lít."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về lượng chất và thể tích mol là đúng hay sai?",
+      "statements": [
+        {
+          "text": "$n = \\dfrac{N}{N_A}$ với $N$ là số phân tử.",
+          "answer": true
+        },
+        {
+          "text": "Ở điều kiện tiêu chuẩn, thể tích mol của mọi chất khí là $22{,}4$ lít.",
+          "answer": true
+        },
+        {
+          "text": "Ở điều kiện tiêu chuẩn, 1 mol khí nào cũng có khối lượng $22{,}4$ g.",
+          "answer": false
+        },
+        {
+          "text": "$N_A \\approx 6{,}02 \\times 10^{23}\\ \\text{mol}^{-1}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "22,4 lít là thể tích mol, giống nhau cho mọi khí; khối lượng 1 mol thì bằng khối lượng mol $M$, khác nhau theo từng chất."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Túi khí N₂ ở điều kiện tiêu chuẩn chứa $0{,}56$ kg ($M = 28$ g/mol). Nhận định nào sau đây là đúng hay sai?",
+      "statements": [
+        {
+          "text": "Số mol khí trong túi là $20$ mol.",
+          "answer": true
+        },
+        {
+          "text": "Số phân tử N₂ trong túi là $1{,}204 \\times 10^{25}$.",
+          "answer": true
+        },
+        {
+          "text": "Thể tích túi là $448$ lít.",
+          "answer": true
+        },
+        {
+          "text": "Túi CO₂ ($M = 44$ g/mol) cùng thể tích, cùng điều kiện cũng nặng $0{,}56$ kg.",
+          "answer": false
+        }
+      ],
+      "explanation": "Cùng thể tích thì cùng 20 mol, nhưng $m = 20 \\times 44 = 880$ g $= 0{,}88$ kg."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Mẫu khí chứa $6{,}02 \\times 10^{24}$ phân tử. Số mol của mẫu là bao nhiêu?",
+      "answer": "10",
+      "explanation": "$n = N/N_A = 6{,}02\\times10^{24} / 6{,}02\\times10^{23} = 10$ mol."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khối lượng của $0{,}5$ mol khí O₂ ($M = 32$ g/mol) là bao nhiêu gam?",
+      "answer": "16",
+      "explanation": "$m = nM = 0{,}5 \\times 32 = 16$ g."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thể tích của $0{,}5$ mol khí ở điều kiện tiêu chuẩn là bao nhiêu lít?",
+      "answer": "11,2",
+      "explanation": "$V = n \\times 22{,}4 = 0{,}5 \\times 22{,}4 = 11{,}2$ lít."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Mol, số Avogadro và lượng chất khí",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một lượng khí ở điều kiện tiêu chuẩn chiếm $0{,}0672\\ \\text{m}^3$. Số mol khí là bao nhiêu?",
+      "answer": "3",
+      "explanation": "$0{,}0672\\ \\text{m}^3 = 67{,}2$ lít; $n = 67{,}2 : 22{,}4 = 3$ mol."
     }
-   ],
-   "explanation": "Trong khí lí tưởng, kích thước phân tử rất nhỏ so với khoảng cách giữa chúng nên bỏ qua.",
-   "theorySection": 2,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "difficulty": "de",
-   "question": "Nhận định nào sau đây về mô hình động học phân tử chất khí là đúng hay sai?",
-   "statements": [
-    {
-     "text": "Chất khí gồm các phân tử có kích thước rất nhỏ so với khoảng cách giữa chúng.",
-     "answer": true
-    },
-    {
-     "text": "Các phân tử khí chuyển động hỗn loạn không ngừng.",
-     "answer": true
-    },
-    {
-     "text": "Phân tử khí chuyển động càng chậm thì nhiệt độ chất khí càng cao.",
-     "answer": false
-    },
-    {
-     "text": "Áp suất chất khí do các phân tử va chạm vào thành bình gây ra.",
-     "answer": true
-    }
-   ],
-   "explanation": "Chuyển động càng nhanh thì nhiệt độ chất khí càng cao.",
-   "theorySection": 1,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "difficulty": "de",
-   "question": "Ở điều kiện tiêu chuẩn ($T = 273$ K, $p = 1$ atm), tốc độ trung bình của các phân tử khí khoảng bao nhiêu m/s?",
-   "answer": "400",
-   "explanation": "Bài nêu tốc độ trung bình khoảng 400 m/s.",
-   "theorySection": 0,
-   "topic": "Nội dung thuyết động học phân tử",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "difficulty": "de",
-   "question": "Số Avogadro $N_A \\approx 6{,}02\\cdot 10^{x}$ mol$^{-1}$. Tìm $x$.",
-   "answer": "23",
-   "explanation": "$N_A \\approx 6{,}02\\cdot10^{23}$ mol$^{-1}$.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "difficulty": "de",
-   "question": "Điều kiện tiêu chuẩn của chất khí có áp suất bao nhiêu atm?",
-   "answer": "1",
-   "explanation": "Bài nêu điều kiện tiêu chuẩn: $T = 273$ K và $p = 1$ atm.",
-   "theorySection": 0,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "difficulty": "de",
-   "question": "Số mol $n$ của mẫu chứa $N$ phân tử được tính bằng công thức:",
-   "options": [
-    "$n = \\dfrac{N}{N_A}$",
-    "$n = N\\cdot N_A$",
-    "$n = \\dfrac{N_A}{N}$",
-    "$n = \\dfrac{N}{M}$"
-   ],
-   "answer": 0,
-   "explanation": "Bài cho $n = \\dfrac{N}{N_A}$.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "difficulty": "de",
-   "question": "Số mol $n$ của mẫu vật khối lượng $m$, khối lượng mol $M$ là:",
-   "options": [
-    "$n = \\dfrac{m}{M}$",
-    "$n = \\dfrac{M}{m}$",
-    "$n = m\\cdot M$",
-    "$n = \\dfrac{m}{N_A}$"
-   ],
-   "answer": 0,
-   "explanation": "Bài cho $n = \\dfrac{m}{M}$.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "difficulty": "de",
-   "question": "Từ $n = \\dfrac{m}{M}$, khối lượng $m$ của mẫu là:",
-   "options": [
-    "$m = n\\cdot M$",
-    "$m = \\dfrac{n}{M}$",
-    "$m = \\dfrac{M}{n}$",
-    "$m = n + M$"
-   ],
-   "answer": 0,
-   "explanation": "Nhân hai vế với $M$: $m = nM$.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "don_vi",
-   "difficulty": "de",
-   "question": "Đơn vị của số Avogadro $N_A$ là:",
-   "options": [
-    "mol$^{-1}$",
-    "mol",
-    "lít",
-    "m$^3$"
-   ],
-   "answer": 0,
-   "explanation": "Bài viết $N_A \\approx 6{,}02\\cdot10^{23}$ mol$^{-1}$ (số phân tử trong 1 mol).",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "don_vi",
-   "difficulty": "de",
-   "question": "Thể tích mol của mọi chất khí ở điều kiện tiêu chuẩn bằng:",
-   "options": [
-    "22,4 lít",
-    "22,4 m$^3$",
-    "2,24 lít",
-    "0,224 lít"
-   ],
-   "answer": 0,
-   "explanation": "Thể tích mol của mọi chất khí ở đktc bằng 22,4 lít (0,0224 m$^3$).",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "difficulty": "trung-binh",
-   "question": "Nhận định nào sau đây về công thức tính lượng chất là đúng hay sai?",
-   "statements": [
-    {
-     "text": "$n = \\dfrac{N}{N_A}$.",
-     "answer": true
-    },
-    {
-     "text": "$n = \\dfrac{m}{M}$.",
-     "answer": true
-    },
-    {
-     "text": "$N = n\\cdot N_A$.",
-     "answer": true
-    },
-    {
-     "text": "Thể tích mol của chất khí ở đktc là 22,4 m$^3$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Thể tích mol ở đktc là 22,4 lít = 0,0224 m$^3$.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "true_false",
-   "kind": "tinh_nhanh",
-   "difficulty": "trung-binh",
-   "question": "Với $N_A \\approx 6{,}02\\cdot10^{23}$ mol$^{-1}$ và thể tích mol 22,4 lít, nhận định nào sau đây đúng hay sai?",
-   "statements": [
-    {
-     "text": "1 mol chất chứa khoảng $6{,}02\\cdot10^{23}$ phân tử.",
-     "answer": true
-    },
-    {
-     "text": "2 mol khí ở đktc có thể tích 44,8 lít.",
-     "answer": true
-    },
-    {
-     "text": "$12{,}04\\cdot10^{23}$ phân tử ứng với 2 mol.",
-     "answer": true
-    },
-    {
-     "text": "0,5 mol chứa khoảng $12{,}04\\cdot10^{23}$ phân tử.",
-     "answer": false
-    }
-   ],
-   "explanation": "0,5 mol chứa $0{,}5\\cdot6{,}02\\cdot10^{23}=3{,}01\\cdot10^{23}$ phân tử.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "difficulty": "trung-binh",
-   "question": "Mẫu khí chứa $6{,}02\\cdot10^{24}$ phân tử. Số mol của mẫu là bao nhiêu?",
-   "answer": "10",
-   "explanation": "$n = N/N_A = 6{,}02\\cdot10^{24}/6{,}02\\cdot10^{23} = 10$ mol.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "difficulty": "trung-binh",
-   "question": "Ở điều kiện tiêu chuẩn, 2 mol khí chiếm thể tích bao nhiêu lít?",
-   "answer": "44,8",
-   "explanation": "$V = 2\\cdot 22{,}4 = 44{,}8$ lít.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "difficulty": "trung-binh",
-   "question": "Mẫu khối lượng $m = 36$ g, khối lượng mol $M = 18$ g/mol. Số mol của mẫu là bao nhiêu?",
-   "answer": "2",
-   "explanation": "$n = m/M = 36/18 = 2$ mol.",
-   "theorySection": 3,
-   "topic": "Mol, số Avogadro và lượng chất khí",
-   "form": "ly_thuyet",
-   "difficultySource": "ai"
-  }
- ]
+  ]
 }

@@ -2,34 +2,58 @@
   "lesson_id": 17,
   "lesson_title": "Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng",
   "item_id": 181,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
     "checked": true,
     "counts": {
-      "kien_thuc": 14,
-      "cong_thuc": 6
+      "kien_thuc": 10,
+      "cong_thuc": 9
     },
-    "removed": []
+    "removed": [
+      {
+        "question": "Lò có hệ số nhân $k=1{,}2$, thế hệ đầu có 1000 neutron. Thế hệ thứ hai sau đó có bao nhiêu neutron?",
+        "reason": "Mơ hồ: 'thế hệ thứ hai' (=1200 neutron) mâu thuẫn với đáp án 1440 (sau hai thế hệ, tức thế hệ thứ ba); bài cũng không nói rõ cách đếm thế hệ."
+      }
+    ]
   },
   "questions": [
     {
       "type": "multiple_choice",
-      "kind": "dinh_nghia",
+      "kind": "hien_tuong",
       "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Phản ứng phân hạch là quá trình trong đó:",
+      "theorySection": 0,
+      "question": "Nhà máy điện hạt nhân không đốt than hay khí nhưng vẫn có nhiệt. Năng lượng ấy đến từ đâu?",
       "options": [
-        "một hạt nhân nặng vỡ thành các hạt nhân nhẹ hơn",
-        "hai hay nhiều hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn",
-        "một hạt nhân không bền tự phân ra thành hạt nhân mới mà không có tương tác",
-        "hạt nhân nhẹ hấp thụ electron thành hạt nhân nặng hơn"
+        "Phản ứng hoá học giữa urani và nước",
+        "Hạt nhân urani vỡ ra, một phần khối lượng nghỉ biến thành năng lượng",
+        "Nhiệt còn lại trong lòng đất",
+        "Ma sát giữa nước và thanh nhiên liệu"
       ],
-      "answer": 0,
-      "explanation": "Theo bài, phản ứng phân hạch là quá trình một hạt nhân nặng vỡ thành các hạt nhân nhẹ hơn."
+      "answer": 1,
+      "explanation": "Phản ứng hạt nhân đụng tới hạt nhân, phần khối lượng nghỉ hụt đi thành năng lượng theo $W=\\Delta m\\,c^2$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong phản ứng hạt nhân, đại lượng nào sau đây KHÔNG được bảo toàn?",
+      "options": [
+        "Điện tích",
+        "Số nuclôn",
+        "Tổng khối lượng nghỉ của các hạt",
+        "Năng lượng toàn phần"
+      ],
+      "answer": 2,
+      "explanation": "Bài nêu bốn đại lượng bảo toàn là điện tích, số nuclôn, năng lượng toàn phần và động lượng; khối lượng nghỉ không bảo toàn vì phần hụt chính là năng lượng."
     },
     {
       "type": "multiple_choice",
@@ -39,49 +63,15 @@
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Phương pháp pyroprocessing được nêu trong bài có thể giúp:",
+      "question": "Phân hạch là phản ứng trong đó:",
       "options": [
-        "giảm lượng chất thải hạt nhân cần lưu trữ",
-        "tăng nhiệt độ của lò phản ứng",
-        "tăng hệ số nhân neutron k lên trên 1",
-        "giảm chu kì bán rã của các đồng vị"
+        "hạt nhân rất nặng hấp thụ neutron rồi vỡ thành hai hạt nhân nhẹ hơn",
+        "hai hạt nhân rất nhẹ kết hợp thành hạt nhân nặng hơn",
+        "hạt nhân không bền tự phát ra tia phóng xạ",
+        "hạt nhân nhẹ bị nung tới nhiệt độ phòng rồi vỡ ra"
       ],
       "answer": 0,
-      "explanation": "Bài nêu ví dụ: pyroprocessing có thể giúp giảm lượng chất thải hạt nhân cần lưu trữ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Trong phản ứng hạt nhân $^{A_1}_{Z_1}A + \\,^{A_2}_{Z_2}B \\to \\,^{A_3}_{Z_3}C + \\,^{A_4}_{Z_4}D$, biểu thức bảo toàn điện tích là:",
-      "options": [
-        "$Z_1 + Z_2 = Z_3 + Z_4$",
-        "$A_1 + A_2 = A_3 + A_4$",
-        "$Z_1 - Z_2 = Z_3 - Z_4$",
-        "$Z_1 \\cdot Z_2 = Z_3 \\cdot Z_4$"
-      ],
-      "answer": 0,
-      "explanation": "Tổng điện tích (số $Z$) trước phản ứng bằng tổng sau phản ứng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Biểu thức bảo toàn số nucleon trong phản ứng hạt nhân $A + B \\to C + D$ là:",
-      "options": [
-        "$A_1 + A_2 = A_3 + A_4$",
-        "$Z_1 + Z_2 = Z_3 + Z_4$",
-        "$A_1 + A_2 = A_3 - A_4$",
-        "$A_1 - A_2 = A_3 - A_4$"
-      ],
-      "answer": 0,
-      "explanation": "Tổng số nucleon (số khối $A$) trước và sau phản ứng bằng nhau."
+      "explanation": "Phân hạch cần hạt nhân rất nặng hấp thụ neutron rồi vỡ thành hai mảnh nhẹ hơn; kết hợp hạt nhân nhẹ là nhiệt hạch."
     },
     {
       "type": "multiple_choice",
@@ -90,101 +80,52 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Khi hệ số nhân neutron $k = 1$ thì phản ứng dây chuyền:",
+      "theorySection": 1,
+      "question": "Điều kiện để phản ứng nhiệt hạch xảy ra là:",
       "options": [
-        "tự duy trì và điều khiển được",
-        "tắt nhanh",
-        "tự duy trì nhưng không điều khiển được",
-        "không xảy ra phản ứng phân hạch nào"
+        "có neutron chậm bắn vào hạt nhân nhẹ",
+        "nhiệt độ phòng, áp suất thấp",
+        "chỉ cần đặt hai hạt nhân sát nhau",
+        "nhiệt độ $10^8$–$10^9\\ \\text{K}$, mật độ hạt nhân đủ lớn, duy trì đủ lâu"
       ],
-      "answer": 0,
-      "explanation": "Bảng trong bài: $k = 1$ là tự duy trì, điều khiển được, công suất phát ra không đổi."
+      "answer": 3,
+      "explanation": "Ba điều kiện phải đủ cùng lúc để thắng lực đẩy Cu-lông giữa hai hạt nhân cùng dấu."
     },
     {
       "type": "multiple_choice",
-      "kind": "dieu_kien",
+      "kind": "dinh_nghia",
       "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Khi hệ số nhân neutron $k > 1$ thì công suất phát ra của phản ứng dây chuyền:",
+      "theorySection": 1,
+      "question": "Thanh điều khiển (bo, cađimi) trong lò phản ứng dùng để:",
       "options": [
-        "tăng nhanh, không điều khiển được",
-        "không đổi",
-        "giảm dần rồi tắt",
-        "luôn bằng không"
+        "làm chậm neutron để dễ phân hạch",
+        "hấp thụ neutron, giữ hệ số nhân $k$ bằng 1",
+        "mang nhiệt sang bộ trao đổi nhiệt",
+        "biến nhiệt thành điện năng"
       ],
-      "answer": 0,
-      "explanation": "Bảng trong bài: $k > 1$ là tự duy trì, không điều khiển được, công suất tăng nhanh."
+      "answer": 1,
+      "explanation": "Đẩy thanh vào thì $k$ giảm, kéo ra thì $k$ tăng; nhờ vậy công suất lò được giữ ổn định."
     },
     {
       "type": "multiple_choice",
       "kind": "hien_tuong",
       "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
       "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Trong nhà máy điện hạt nhân, bộ phận chính là:",
-      "options": [
-        "lò phản ứng hạt nhân",
-        "máy biến áp",
-        "pin mặt trời",
-        "tháp làm mát bằng gió"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: bộ phận chính của nhà máy điện hạt nhân là lò phản ứng hạt nhân."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-      "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "question": "Điều nào sau đây KHÔNG phải điều kiện để tạo ra phản ứng nhiệt hạch?",
+      "theorySection": 2,
+      "question": "Vì sao lò phản ứng hạt nhân không thể \"nổ như bom\"?",
       "options": [
-        "Áp suất thấp gần như chân không",
-        "Hỗn hợp có mật độ hạt nhân đủ lớn",
-        "Nhiệt độ rất cao, cỡ $10^8$ K đến $10^9$ K",
-        "Duy trì trạng thái này đủ dài"
+        "Vì phân hạch trong lò khác bản chất với phân hạch trong bom",
+        "Vì trong lò không có neutron",
+        "Nhiên liệu lò làm giàu thấp và thanh điều khiển luôn giữ $k=1$",
+        "Vì $k$ trong lò luôn lớn hơn 1 nhiều lần"
       ],
-      "answer": 0,
-      "explanation": "Ba điều kiện gồm mật độ đủ lớn, nhiệt độ rất cao và duy trì đủ lâu; không có điều kiện áp suất thấp."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Từ định luật bảo toàn số nucleon $A_1 + A_2 = A_3 + A_4$, số khối $A_4$ được tính bằng:",
-      "options": [
-        "$A_1 + A_2 - A_3$",
-        "$A_1 + A_2 + A_3$",
-        "$A_3 - A_1 - A_2$",
-        "$A_1 - A_2 - A_3$"
-      ],
-      "answer": 0,
-      "explanation": "Chuyển vế $A_3$ sang vế trái: $A_4 = A_1 + A_2 - A_3$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Các lò phản ứng hạt nhân thế hệ IV được nêu trong bài là ví dụ của hướng phát triển:",
-      "options": [
-        "công nghệ hạt nhân an toàn hơn",
-        "nhà máy chạy bằng nhiên liệu hóa thạch",
-        "tăng lượng khí thải CO2",
-        "giảm hiệu suất chuyển đổi năng lượng"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu ví dụ: lò thế hệ IV được thiết kế với nhiều tính năng an toàn hơn."
+      "answer": 2,
+      "explanation": "Cùng một phản ứng, khác nhau ở cách giữ $k$: lò giữ $k=1$ còn bom để $k\\gt 1$ không kiểm soát với urani giàu cao."
     },
     {
       "type": "true_false",
@@ -193,121 +134,210 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Nhận định nào sau đây về phân loại phản ứng hạt nhân là đúng hay sai?",
+      "theorySection": 1,
+      "question": "Nhận định nào sau đây về phản ứng hạt nhân là đúng hay sai?",
       "statements": [
         {
-          "text": "Phản ứng hạt nhân kích thích là quá trình các hạt nhân tương tác với nhau tạo thành hạt nhân mới.",
+          "text": "Phản ứng hạt nhân tự phát là hạt nhân không bền tự biến đổi, ví dụ phân rã phóng xạ.",
           "answer": true
         },
         {
-          "text": "Phản ứng phân hạch và phản ứng tổng hợp hạt nhân là các ví dụ của phản ứng hạt nhân kích thích.",
+          "text": "Phản ứng phân hạch và nhiệt hạch thuộc loại phản ứng kích thích.",
           "answer": true
         },
         {
-          "text": "Phân rã của hạt nhân $^{238}_{92}U$ là ví dụ của phản ứng hạt nhân tự phát.",
+          "text": "Trong mọi phản ứng hạt nhân, tổng số nuclôn hai vế bằng nhau.",
           "answer": true
         },
         {
-          "text": "Phản ứng hạt nhân tự phát cần có hạt nhân khác bắn vào mới xảy ra.",
+          "text": "Trong phản ứng hạt nhân, tổng khối lượng nghỉ hai vế luôn bằng nhau.",
           "answer": false
         }
       ],
-      "explanation": "Phản ứng tự phát là quá trình hạt nhân không bền tự phân ra, không cần tương tác với hạt nhân khác."
+      "explanation": "Ba ý đầu là nội dung bài; khối lượng nghỉ không bảo toàn nên ý cuối sai."
     },
     {
       "type": "true_false",
-      "kind": "dieu_kien",
+      "kind": "hien_tuong",
       "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "question": "Nhận định nào sau đây về hệ số nhân neutron $k$ là đúng hay sai?",
+      "theorySection": 1,
+      "question": "Về phản ứng dây chuyền và hệ số nhân neutron $k$, nhận định nào đúng hay sai?",
       "statements": [
         {
-          "text": "Khi $k < 1$, phản ứng dây chuyền tắt nhanh.",
+          "text": "Với $k\\lt 1$ phản ứng dây chuyền tắt dần.",
           "answer": true
         },
         {
-          "text": "Khi $k = 1$, công suất phát ra không đổi.",
+          "text": "Với $k=1$ phản ứng tự duy trì, công suất không đổi.",
           "answer": true
         },
         {
-          "text": "Khi $k > 1$, phản ứng tự duy trì và điều khiển được.",
+          "text": "Với $k\\gt 1$ công suất giữ nguyên không đổi.",
           "answer": false
         },
         {
-          "text": "Khi $k > 1$, công suất phát ra tăng nhanh.",
+          "text": "Khối lượng tới hạn là lượng nhiên liệu tối thiểu để giữ $k\\ge 1$.",
           "answer": true
         }
       ],
-      "explanation": "$k > 1$ là tự duy trì nhưng không điều khiển được, công suất tăng nhanh."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Nhận định nào sau đây về phản ứng nhiệt hạch là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Là quá trình hai hay nhiều hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn.",
-          "answer": true
-        },
-        {
-          "text": "Cần nhiệt độ rất cao, cỡ $10^8$ K đến $10^9$ K.",
-          "answer": true
-        },
-        {
-          "text": "Cần hỗn hợp có mật độ hạt nhân đủ lớn.",
-          "answer": true
-        },
-        {
-          "text": "Chỉ cần xảy ra trong thời gian rất ngắn, không cần duy trì trạng thái đó.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài yêu cầu duy trì trạng thái nhiệt độ cao và mật độ lớn đủ dài."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Nhận định nào sau đây về các định luật bảo toàn trong phản ứng hạt nhân là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Bảo toàn điện tích.",
-          "answer": true
-        },
-        {
-          "text": "Bảo toàn số nucleon.",
-          "answer": true
-        },
-        {
-          "text": "Bảo toàn năng lượng toàn phần và bảo toàn động lượng.",
-          "answer": true
-        },
-        {
-          "text": "Tổng số proton của các hạt luôn tăng sau phản ứng.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu bốn định luật bảo toàn: điện tích, số nucleon, năng lượng toàn phần, động lượng."
+      "explanation": "Với $k\\gt 1$ số neutron tăng nhanh theo từng thế hệ nên công suất không thể đứng yên."
     },
     {
       "type": "short_answer",
-      "kind": "bien_doi",
+      "kind": "dieu_kien",
+      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Muốn lò phản ứng chạy ổn định, công suất không đổi, hệ số nhân neutron $k$ phải bằng bao nhiêu?",
+      "answer": "1",
+      "explanation": "$k=1$ nghĩa là mỗi thế hệ neutron vừa đủ thay thế thế hệ trước."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Mỗi phân hạch U-235 nhả ra từ 2 đến tối đa bao nhiêu neutron?",
+      "answer": "3",
+      "explanation": "Bài nêu mỗi phân hạch nhả 2–3 neutron."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
       "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Trong một phản ứng hạt nhân có $Z_1 = 92$, $Z_2 = 0$, $Z_3 = 56$. Tìm $Z_4$.",
-      "answer": "36",
-      "explanation": "Bảo toàn điện tích: $Z_4 = Z_1 + Z_2 - Z_3 = 92 + 0 - 56 = 36$."
+      "theorySection": 1,
+      "question": "Năng lượng toả ra của phản ứng $A+B\\to C+D$ được tính bằng:",
+      "options": [
+        "$W=(m_A+m_B-m_C-m_D)c^2$",
+        "$W=(m_C+m_D-m_A-m_B)c^2$",
+        "$W=(m_A+m_B-m_C-m_D)c$",
+        "$W=(m_A+m_B+m_C+m_D)c^2$"
+      ],
+      "answer": 0,
+      "explanation": "Khối lượng trước trừ khối lượng sau, nhân $c^2$; $W\\gt 0$ là toả."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hệ thức đổi đơn vị khối lượng nguyên tử đúng là:",
+      "options": [
+        "$1\\ \\text{u}=931{,}5\\ \\text{J}/c^2$",
+        "$1\\ \\text{u}=93{,}15\\ \\text{MeV}/c^2$",
+        "$1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$",
+        "$1\\ \\text{u}=1{,}6\\cdot10^{-13}\\ \\text{MeV}/c^2$"
+      ],
+      "answer": 2,
+      "explanation": "Bài cho $1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$ và $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Cho phản ứng $^{235}_{92}U+^{1}_{0}n\\to ^{139}_{54}Xe+^{95}_{38}Sr+x\\,^{1}_{0}n$. Giá trị của $x$ là:",
+      "options": [
+        "$x=3$",
+        "$x=1$",
+        "$x=4$",
+        "$x=2$"
+      ],
+      "answer": 3,
+      "explanation": "Bảo toàn nuclôn: $235+1=139+95+x\\Rightarrow x=2$; điện tích $92=54+38$ khớp."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Mỗi phân hạch toả $200\\ \\text{MeV}$. Đổi ra jun, năng lượng đó bằng (lấy $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$):",
+      "options": [
+        "$3{,}2\\cdot10^{-13}\\ \\text{J}$",
+        "$3{,}2\\cdot10^{-11}\\ \\text{J}$",
+        "$1{,}6\\cdot10^{-11}\\ \\text{J}$",
+        "$3{,}2\\cdot10^{-9}\\ \\text{J}$"
+      ],
+      "answer": 1,
+      "explanation": "$200\\times1{,}6\\cdot10^{-13}=3{,}2\\cdot10^{-11}\\ \\text{J}$."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về dấu của $W=(m_A+m_B-m_C-m_D)c^2$, nhận định nào đúng hay sai?",
+      "statements": [
+        {
+          "text": "$W\\gt 0$ thì phản ứng toả năng lượng.",
+          "answer": true
+        },
+        {
+          "text": "$W\\lt 0$ thì phản ứng thu năng lượng.",
+          "answer": true
+        },
+        {
+          "text": "Tổng khối lượng nghỉ trước nhỏ hơn sau thì phản ứng toả năng lượng.",
+          "answer": false
+        },
+        {
+          "text": "Tổng khối lượng nghỉ trước lớn hơn sau thì phản ứng toả năng lượng.",
+          "answer": true
+        }
+      ],
+      "explanation": "Nhớ câu \"trước nặng hơn thì toả\"; khối lượng trước nhỏ hơn thì phải cấp thêm năng lượng."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Với phân hạch $^{235}_{92}U+^{1}_{0}n\\to ^{144}_{56}Ba+^{89}_{36}Kr+x\\,^{1}_{0}n$ ($m_U=235{,}0439$ u; $m_n=1{,}0087$ u; $m_{Ba}=143{,}9230$ u; $m_{Kr}=88{,}9176$ u), nhận định nào đúng hay sai?",
+      "statements": [
+        {
+          "text": "$x=3$.",
+          "answer": true
+        },
+        {
+          "text": "Độ hụt khối của một phân hạch xấp xỉ $0{,}186\\ \\text{u}$.",
+          "answer": true
+        },
+        {
+          "text": "Năng lượng toả ra của một phân hạch xấp xỉ $17{,}3\\ \\text{MeV}$.",
+          "answer": false
+        },
+        {
+          "text": "Một gam U-235 phân hạch hoàn toàn toả năng lượng tương đương khoảng 2,6 tấn than.",
+          "answer": true
+        }
+      ],
+      "explanation": "$W=0{,}1859\\times931{,}5\\approx173\\ \\text{MeV}$ chứ không phải $17{,}3\\ \\text{MeV}$."
     },
     {
       "type": "short_answer",
@@ -316,53 +346,34 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Trong một phản ứng hạt nhân có $A_1 = 235$, $A_2 = 1$, $A_3 = 141$. Tìm $A_4$.",
-      "answer": "95",
-      "explanation": "Bảo toàn số nucleon: $A_4 = 235 + 1 - 141 = 95$."
+      "theorySection": 1,
+      "question": "Phản ứng nhiệt hạch $^{2}_{1}H+^{3}_{1}H\\to ^{A}_{Z}X+^{1}_{0}n$. Số khối $A$ của hạt $X$ bằng bao nhiêu?",
+      "answer": "4",
+      "explanation": "Bảo toàn nuclôn: $2+3=A+1\\Rightarrow A=4$ (hạt nhân heli)."
     },
     {
       "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "question": "Nhiệt độ cần cho phản ứng nhiệt hạch cỡ $10^{x}$ K đến $10^{9}$ K. Tìm $x$.",
-      "answer": "8",
-      "explanation": "Bài nêu nhiệt độ rất cao cỡ $10^8$ K đến $10^9$ K."
+      "theorySection": 1,
+      "question": "Độ hụt khối của một phản ứng là $0{,}2\\ \\text{u}$. Năng lượng toả ra bằng bao nhiêu MeV (làm tròn đến hàng đơn vị)?",
+      "answer": "186",
+      "explanation": "$W=0{,}2\\times931{,}5=186{,}3\\approx186\\ \\text{MeV}$."
     },
     {
       "type": "short_answer",
-      "kind": "hien_tuong",
+      "kind": "tinh_nhanh",
       "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
       "form": "ly_thuyet",
-      "difficulty": "de",
+      "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "question": "So với nhà máy điện than, nhà máy điện hạt nhân có thể giảm lượng khí thải CO2 tới bao nhiêu phần trăm?",
-      "answer": "80",
-      "explanation": "Bài nêu giảm lượng khí thải CO2 lên tới 80%."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Theo bài, hiệu suất nhà máy điện hạt nhân có thể đạt tới bao nhiêu phần trăm (ví dụ so với 30% của nhà máy điện than)?",
-      "answer": "33",
-      "explanation": "Ví dụ trong bài: hiệu suất nhà máy điện hạt nhân đạt tới 33%, nhà máy điện than chỉ 30%."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Chu kì bán rã của $^{90}Sr$ và $^{137}Cs$ khoảng bao nhiêu năm?",
-      "answer": "30",
-      "explanation": "Bài nêu chu kì bán rã của $^{90}Sr$, $^{137}Cs$ khoảng 30 năm."
+      "theorySection": 4,
+      "question": "Một gam U-235 phân hạch hoàn toàn toả khoảng $7{,}1\\cdot10^{10}\\ \\text{J}$; than toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$. Năng lượng đó bằng đốt bao nhiêu tấn than (làm tròn một chữ số thập phân)?",
+      "answer": "2,6",
+      "explanation": "$7{,}1\\cdot10^{10}/2{,}7\\cdot10^{7}\\approx2{,}6\\cdot10^{3}\\ \\text{kg}=2{,}6$ tấn."
     }
   ]
 }

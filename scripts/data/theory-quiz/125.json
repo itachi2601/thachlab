@@ -2,7 +2,7 @@
   "lesson_id": 125,
   "lesson_title": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
   "item_id": 143,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
@@ -21,70 +21,52 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Máy phát điện xoay chiều có hai bộ phận chính là:",
-      "explanation": "Bài nêu máy phát điện xoay chiều có hai bộ phận chính là phần cảm và phần ứng.",
+      "theorySection": 2,
+      "question": "Trong máy phát điện xoay chiều, phần cảm là bộ phận:",
       "options": [
-        "Phần cảm và phần ứng",
-        "Cuộn sơ cấp và cuộn thứ cấp",
-        "Vành khuyên và lõi sắt",
-        "Stato và lõi biến áp"
+        "luôn luôn là bộ phận quay",
+        "luôn luôn là bộ phận đứng yên",
+        "tạo ra từ trường (thường là nam châm)",
+        "sinh suất điện động cảm ứng (cuộn dây)"
       ],
-      "answer": 0
+      "answer": 2,
+      "explanation": "Bẫy 3 của bài: tên gọi dựa vào nhiệm vụ; phần cảm tạo từ trường, phần ứng là cuộn dây sinh suất điện động, cả hai đều có thể là rô-to hoặc stato."
     },
     {
       "type": "multiple_choice",
-      "kind": "dinh_nghia",
+      "kind": "dieu_kien",
       "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Trong máy phát điện xoay chiều, bộ phận được đặt cố định gọi là:",
-      "explanation": "Bộ phận đặt cố định gọi là stato, bộ phận quay quanh một trục gọi là roto.",
+      "theorySection": 2,
+      "question": "Vành khuyên và chổi quét chỉ cần dùng khi:",
       "options": [
-        "Roto",
-        "Stato",
-        "Chổi quét",
-        "Vành khuyên"
+        "phần ứng (cuộn dây) quay, để đưa dòng ra mạch ngoài",
+        "nam châm quay còn cuộn dây đứng yên",
+        "máy phát là máy ba pha",
+        "máy biến áp nối với nguồn một chiều"
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "Nếu nam châm quay, cuộn dây đứng yên thì lấy điện trực tiếp từ hai đầu cuộn dây; chỉ khi phần ứng quay mới cần vành khuyên và chổi quét."
     },
     {
       "type": "multiple_choice",
       "kind": "hien_tuong",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "topic": "Máy biến áp",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Vai trò của hai vành khuyên và hai chổi quét trong máy phát điện xoay chiều là:",
-      "explanation": "Hai vành khuyên trượt trên hai chổi quét để truyền dòng điện từ khung dây ra mạch ngoài.",
+      "theorySection": 1,
+      "question": "Điều nào đúng với máy biến áp lí tưởng?",
       "options": [
-        "Tạo ra từ trường",
-        "Dẫn điện từ khung dây ra mạch ngoài",
-        "Giảm hao phí do dòng Foucault",
-        "Làm tăng điện áp ở đầu ra"
+        "Sinh thêm công suất khi tăng điện áp",
+        "Đổi cả điện áp lẫn tần số của dòng điện",
+        "Cho suất điện động ở cuộn thứ cấp cả với nguồn một chiều không đổi",
+        "Không đổi tần số và không sinh thêm điện năng"
       ],
-      "answer": 1
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Máy phát điện xoay chiều ba pha tạo ra:",
-      "explanation": "Theo bài, máy ba pha tạo ra 3 suất điện động xoay chiều hình sin cùng tần số, cùng biên độ và lệch pha nhau $120^{\\circ}$ từng đôi một.",
-      "options": [
-        "Ba suất điện động cùng tần số, cùng biên độ, lệch pha nhau $120^{\\circ}$ từng đôi một",
-        "Ba suất điện động khác tần số, cùng biên độ",
-        "Ba suất điện động cùng pha, cùng biên độ",
-        "Một suất điện động không đổi theo thời gian"
-      ],
-      "answer": 0
+      "answer": 3,
+      "explanation": "Bài nêu máy biến áp không đổi tần số, không sinh thêm điện năng: $U$ tăng bao nhiêu lần thì $I$ giảm bấy nhiêu lần."
     },
     {
       "type": "multiple_choice",
@@ -93,121 +75,92 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp hoạt động dựa trên hiện tượng:",
-      "explanation": "Dòng điện xoay chiều ở cuộn sơ cấp gây từ thông biến thiên qua cuộn thứ cấp, tức là dựa trên cảm ứng điện từ.",
+      "theorySection": 1,
+      "question": "Lõi máy biến áp được ghép từ nhiều lá thép silic mỏng, sơn cách điện giữa các lá nhằm:",
       "options": [
-        "Cảm ứng điện từ",
-        "Tự cảm của mạch dao động",
-        "Nhiễm điện do cọ xát",
-        "Tác dụng nhiệt của dòng điện"
+        "tạo thêm điện năng cho cuộn thứ cấp",
+        "giảm dòng Fu-cô làm nóng lõi vô ích",
+        "tăng điện trở của cuộn sơ cấp",
+        "đổi tần số của dòng điện"
       ],
-      "answer": 0
+      "answer": 1,
+      "explanation": "Dòng Fu-cô chạy trong khối thép làm lõi nóng lên vô ích; lá mỏng cách điện chỉ còn diện tích nhỏ nên dòng xoáy yếu hẳn."
     },
     {
       "type": "multiple_choice",
       "kind": "hien_tuong",
       "topic": "Máy biến áp",
       "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Lõi biến áp thường làm bằng các lá sắt hoặc thép pha silicon ghép cách điện với nhau nhằm:",
-      "explanation": "Bài nêu các lá sắt ghép cách điện để giảm hao phí điện năng do dòng điện Foucault.",
-      "options": [
-        "Tăng điện trở của cuộn sơ cấp",
-        "Giảm hao phí điện năng do dòng điện Foucault",
-        "Tăng số vòng dây của cuộn thứ cấp",
-        "Làm điện áp thứ cấp luôn bằng điện áp sơ cấp"
-      ],
-      "answer": 1
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 0,
-      "question": "Nhận định nào sau đây về máy phát điện xoay chiều ba pha là đúng hay sai?",
-      "explanation": "Ba suất điện động cùng tần số, cùng biên độ, lệch pha $\\frac{2\\pi}{3}$; nên ý 3 sai.",
-      "statements": [
-        {
-          "text": "Stato gồm 3 cuộn dây giống nhau, lệch nhau từng đôi một góc $\\frac{2\\pi}{3}$.",
-          "answer": true
-        },
-        {
-          "text": "Roto là nam châm NS quay quanh tâm O với tốc độ góc không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Ba suất điện động có cùng tần số nhưng biên độ khác nhau.",
-          "answer": false
-        },
-        {
-          "text": "Máy hoạt động dựa trên hiện tượng cảm ứng điện từ.",
-          "answer": true
-        }
-      ]
+      "question": "Vì sao đường dây truyền tải điện được đẩy lên điện áp rất cao như 500 kV?",
+      "options": [
+        "Để sinh thêm điện năng",
+        "Để giảm hao phí toả nhiệt trên dây dẫn",
+        "Để giữ cho dòng điện trên dây không đổi chiều",
+        "Để tăng tần số cho động cơ quay nhanh hơn"
+      ],
+      "answer": 1,
+      "explanation": "Với cùng công suất, dòng trên dây $I = P/U$ nhỏ khi $U$ lớn, mà hao phí $\\Delta P = RI^2$ nên giảm mạnh."
     },
     {
       "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nhận định nào sau đây về máy biến áp là đúng hay sai?",
-      "explanation": "Cuộn sơ cấp mới nối với nguồn $u_1$, cuộn thứ cấp nối với tải tiêu thụ.",
-      "statements": [
-        {
-          "text": "Nếu $k>1$ thì $U_1>U_2$ và máy là máy hạ áp.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $k<1$ thì $U_1<U_2$ và máy là máy tăng áp.",
-          "answer": true
-        },
-        {
-          "text": "Cuộn thứ cấp được nối với nguồn điện xoay chiều $u_1$.",
-          "answer": false
-        },
-        {
-          "text": "Nếu mạch thứ cấp kín thì có dòng điện chạy trong cuộn thứ cấp.",
-          "answer": true
-        }
-      ]
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
+      "kind": "hien_tuong",
       "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Nhận định nào sau đây về sử dụng an toàn dòng điện xoay chiều là đúng hay sai?",
-      "explanation": "Bài yêu cầu tuân thủ các biển báo an toàn điện, nên ý 3 sai.",
+      "question": "Xét các phát biểu về máy phát điện xoay chiều ba pha:",
       "statements": [
         {
-          "text": "Ổ cắm điện, cầu dao nên lắp ở nơi khô ráo, xa tầm tay trẻ em.",
+          "text": "Ba suất điện động có cùng tần số.",
           "answer": true
         },
         {
-          "text": "Nên dùng thiết bị tự động ngắt điện khi xảy ra chập điện hay quá tải.",
+          "text": "Ba suất điện động có cùng biên độ.",
           "answer": true
         },
         {
-          "text": "Có thể bỏ qua các biển báo an toàn điện khi đã quen sử dụng.",
+          "text": "Ba suất điện động lệch pha nhau $\\dfrac{2\\pi}{3}$ từng đôi một.",
+          "answer": true
+        },
+        {
+          "text": "Ba cuộn dây trên stato đặt lệch nhau $90^\\circ$.",
+          "answer": false
+        }
+      ],
+      "explanation": "Ba cuộn dây giống nhau đặt lệch $120^\\circ$ (tức $\\frac{2\\pi}{3}$) trên stato nên ba suất điện động chỉ khác nhau ở pha."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Máy biến áp",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Xét các phát biểu về máy biến áp:",
+      "statements": [
+        {
+          "text": "Máy biến áp hoạt động theo cảm ứng điện từ.",
+          "answer": true
+        },
+        {
+          "text": "Nối cuộn sơ cấp với nguồn một chiều không đổi thì cuộn thứ cấp có suất điện động.",
           "answer": false
         },
         {
-          "text": "Dòng điện xoay chiều dễ truyền đi xa nhờ dùng máy biến áp.",
+          "text": "Máy biến áp lí tưởng có hiệu suất $H = 1$.",
           "answer": true
+        },
+        {
+          "text": "Tăng điện áp bằng máy biến áp cũng làm tăng tần số.",
+          "answer": false
         }
-      ]
+      ],
+      "explanation": "Nguồn một chiều không đổi cho từ thông không biến thiên nên thứ cấp không có suất điện động; máy biến áp không đổi tần số."
     },
     {
       "type": "short_answer",
@@ -216,10 +169,70 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Để dẫn điện từ khung dây quay ra mạch ngoài, mỗi đầu khung dây gắn với một vành khuyên. Số vành khuyên cần dùng là bao nhiêu?",
-      "explanation": "Mỗi đầu khung dây gắn với một vành khuyên nên cần 2 vành khuyên (kèm 2 chổi quét).",
-      "answer": "2"
+      "theorySection": 1,
+      "question": "Ba cuộn dây của máy phát ba pha lệch pha nhau bao nhiêu độ?",
+      "answer": "120",
+      "explanation": "Bài nêu ba suất điện động lệch pha $\\frac{2\\pi}{3}$, tức $120^\\circ$ từng đôi một."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một vòng quay của rô-to có 2 cặp cực ứng với bao nhiêu chu kì của dòng điện?",
+      "answer": "2",
+      "explanation": "Bảng so sánh ở bẫy 2: rô-to 2 cặp cực, một vòng quay cho 2 chu kì (nên $f = np$)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lưới ba pha mắc hình sao có mấy dây pha (chưa kể dây trung hoà)?",
+      "answer": "3",
+      "explanation": "Bài nêu lưới ba pha mắc hình sao gồm ba dây pha và một dây trung hoà."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Rô-to có $p$ cặp cực quay $n$ vòng/phút. Tần số dòng điện là:",
+      "options": [
+        "$f = 60np$",
+        "$f = np$",
+        "$f = \\dfrac{n}{60p}$",
+        "$f = \\dfrac{np}{60}$"
+      ],
+      "answer": 3,
+      "explanation": "Bài nêu $f = np$ với $n$ tính bằng vòng/s; đề cho vòng/phút thì $f = \\dfrac{np}{60}$."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Suất điện động cực đại của khung $N$ vòng, diện tích $S$ quay đều với tốc độ góc $\\omega$ trong từ trường $B$ là:",
+      "options": [
+        "$E_0 = NBS\\omega$",
+        "$E_0 = NB\\omega$",
+        "$E_0 = BS\\omega$",
+        "$E_0 = NBS/\\omega$"
+      ],
+      "answer": 0,
+      "explanation": "Bài nêu $E_0 = NBS\\omega$; ba phương án nhiễu lần lượt chia cho $\\omega$, thiếu $S$, thiếu $N$."
     },
     {
       "type": "multiple_choice",
@@ -228,99 +241,122 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp lý tưởng có số vòng cuộn sơ cấp $N_1$, thứ cấp $N_2$. Tỉ số $\\frac{U_1}{U_2}$ bằng:",
-      "explanation": "Khi bỏ qua hao phí: $\\frac{U_1}{U_2}=\\frac{N_1}{N_2}=\\frac{I_2}{I_1}=k$.",
+      "theorySection": 1,
+      "question": "Hệ thức đúng cho máy biến áp lí tưởng là:",
       "options": [
-        "$\\frac{N_2}{N_1}$",
-        "$\\frac{N_1}{N_2}$",
-        "$\\frac{N_1^2}{N_2^2}$",
-        "$\\frac{I_1}{I_2}$"
+        "$\\dfrac{U_1}{U_2} = \\dfrac{N_2}{N_1} = \\dfrac{I_2}{I_1}$",
+        "$U_1N_1 = U_2N_2$",
+        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$",
+        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_1}{I_2}$"
       ],
-      "answer": 1
+      "answer": 2,
+      "explanation": "Bài nêu $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$: điện áp tỉ lệ với số vòng, dòng điện tỉ lệ nghịch."
     },
     {
       "type": "multiple_choice",
-      "kind": "cong_thuc",
+      "kind": "tinh_nhanh",
       "topic": "Máy biến áp",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Suất điện động cảm ứng trong cuộn sơ cấp của máy biến áp được tính bởi:",
-      "explanation": "Bài cho $e_1=N_1\\left|\\frac{\\Delta\\Phi}{\\Delta t}\\right|$.",
+      "theorySection": 1,
+      "question": "Máy biến áp lí tưởng có $N_1 = 1000$ vòng, $N_2 = 250$ vòng, $U_1 = 220\\ \\text{V}$. Điện áp thứ cấp là:",
       "options": [
-        "$e_1=N_1\\Delta\\Phi\\,\\Delta t$",
-        "$e_1=N_1\\left|\\frac{\\Delta\\Phi}{\\Delta t}\\right|$",
-        "$e_1=\\left|\\frac{\\Delta\\Phi}{N_1\\Delta t}\\right|$",
-        "$e_1=N_1\\left|\\frac{\\Delta t}{\\Delta\\Phi}\\right|$"
+        "$220\\ \\text{V}$",
+        "$880\\ \\text{V}$",
+        "$5{,}5\\ \\text{V}$",
+        "$55\\ \\text{V}$"
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "$U_2 = U_1\\dfrac{N_2}{N_1} = 220 \\times \\dfrac{250}{1000} = 55\\ \\text{V}$; 880 V là viết ngược tỉ số."
     },
     {
       "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hiệu suất của máy biến áp được tính bằng:",
-      "explanation": "$H=\\frac{P_2}{P_1}=\\frac{U_2I_2\\cos\\varphi_2}{U_1I_1\\cos\\varphi_1}$.",
-      "options": [
-        "$H=\\frac{P_1}{P_2}$",
-        "$H=\\frac{P_2}{P_1}$",
-        "$H=P_2-P_1$",
-        "$H=\\frac{U_1I_1}{U_2I_2}$"
-      ],
-      "answer": 1
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
+      "kind": "tinh_nhanh",
       "topic": "Máy biến áp",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Với máy biến áp lý tưởng, tỉ số $\\frac{I_2}{I_1}$ bằng:",
-      "explanation": "Từ $\\frac{U_1}{U_2}=\\frac{N_1}{N_2}=\\frac{I_2}{I_1}$ suy ra $\\frac{I_2}{I_1}=\\frac{N_1}{N_2}$.",
+      "theorySection": 4,
+      "question": "Với cùng công suất truyền đi, tăng điện áp nơi phát lên 20 lần thì hao phí trên đường dây giảm:",
       "options": [
-        "$\\frac{N_2}{N_1}$",
-        "$\\frac{N_1}{N_2}$",
-        "$\\frac{N_1^2}{N_2^2}$",
-        "$\\frac{N_1N_2}{U_1}$"
+        "20 lần",
+        "400 lần",
+        "200 lần",
+        "40 lần"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "$\\Delta P = RP^2/U^2$ nên tăng $U$ lên $k$ lần thì hao phí giảm $k^2 = 400$ lần (bài mẫu câu 6)."
     },
     {
       "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Máy biến áp",
+      "kind": "tinh_nhanh",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nhận định nào sau đây về máy biến áp lý tưởng là đúng hay sai?",
-      "explanation": "Tỉ số dòng điện ngược với tỉ số điện áp: $\\frac{I_2}{I_1}=\\frac{N_1}{N_2}$, nên ý 3 sai.",
+      "theorySection": 1,
+      "question": "Rô-to có 4 cặp cực quay 750 vòng/phút. Xét các phát biểu:",
       "statements": [
         {
-          "text": "$\\frac{U_1}{U_2}=\\frac{N_1}{N_2}$.",
+          "text": "Tốc độ quay là $n = 12{,}5$ vòng/s.",
           "answer": true
         },
         {
-          "text": "$\\frac{I_2}{I_1}=\\frac{N_1}{N_2}$.",
+          "text": "Tần số dòng điện là $50\\ \\text{Hz}$.",
           "answer": true
         },
         {
-          "text": "$\\frac{I_1}{I_2}=\\frac{N_1}{N_2}$.",
+          "text": "Tần số dòng điện là $3000\\ \\text{Hz}$.",
           "answer": false
         },
         {
-          "text": "Công suất sơ cấp $P_1=U_1I_1\\cos\\varphi_1$.",
+          "text": "Rô-to 2 cặp cực muốn có cùng tần số $50\\ \\text{Hz}$ phải quay $25$ vòng/s.",
           "answer": true
         }
-      ]
+      ],
+      "explanation": "$n = 750/60 = 12{,}5$ vòng/s, $f = 12{,}5 \\times 4 = 50$ Hz; 3000 là lỗi quên chia 60; với $p = 2$ thì $n = 50/2 = 25$ vòng/s."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Máy biến áp",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Tổ máy phát $20\\ \\text{kW}$, đường dây điện trở $R = 2\\ \\Omega$, $\\cos\\varphi \\approx 1$. Xét các phát biểu:",
+      "statements": [
+        {
+          "text": "Truyền ở $500\\ \\text{V}$ thì dòng trên dây là $40\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Truyền ở $500\\ \\text{V}$ thì hao phí là $3200\\ \\text{W}$.",
+          "answer": true
+        },
+        {
+          "text": "Truyền ở $5000\\ \\text{V}$ thì hao phí là $320\\ \\text{W}$.",
+          "answer": false
+        },
+        {
+          "text": "Truyền ở $500\\ \\text{V}$ thì hiệu suất truyền tải là $84\\%$.",
+          "answer": true
+        }
+      ],
+      "explanation": "Ở 500 V: $I = 40$ A, $\\Delta P = 2\\times 40^2 = 3200$ W, $H = 1 - 3200/20000 = 84\\%$; ở 5000 V: $I = 4$ A, $\\Delta P = 32$ W."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Rô-to 4 cặp cực quay 900 vòng/phút. Tần số dòng điện là bao nhiêu Hz?",
+      "answer": "60",
+      "explanation": "$n = 900/60 = 15$ vòng/s nên $f = np = 15 \\times 4 = 60$ Hz."
     },
     {
       "type": "short_answer",
@@ -329,22 +365,10 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp lý tưởng có $N_1=1000$ vòng, $N_2=100$ vòng, điện áp hiệu dụng sơ cấp $U_1=220$ V. Điện áp hiệu dụng thứ cấp $U_2$ bằng bao nhiêu vôn?",
-      "explanation": "$U_2=U_1\\frac{N_2}{N_1}=220\\cdot\\frac{100}{1000}=22$ V.",
-      "answer": "22"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp lý tưởng có $N_1=500$ vòng, $N_2=1500$ vòng, $U_1=100$ V. Điện áp hiệu dụng thứ cấp $U_2$ bằng bao nhiêu vôn?",
-      "explanation": "$U_2=U_1\\frac{N_2}{N_1}=100\\cdot 3=300$ V (máy tăng áp).",
-      "answer": "300"
+      "theorySection": 1,
+      "question": "Máy biến áp lí tưởng: $U_1 = 220\\ \\text{V}$, $I_1 = 2\\ \\text{A}$, $U_2 = 44\\ \\text{V}$. Cường độ $I_2$ bằng bao nhiêu A?",
+      "answer": "10",
+      "explanation": "$\\dfrac{I_2}{I_1} = \\dfrac{U_1}{U_2} = 5$ nên $I_2 = 5 \\times 2 = 10$ A."
     },
     {
       "type": "short_answer",
@@ -353,34 +377,10 @@
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp lý tưởng có $U_1=200$ V, $U_2=50$ V, cường độ dòng điện thứ cấp $I_2=8$ A. Cường độ dòng điện sơ cấp $I_1$ bằng bao nhiêu ampe?",
-      "explanation": "$\\frac{U_1}{U_2}=\\frac{I_2}{I_1}\\Rightarrow I_1=I_2\\frac{U_2}{U_1}=8\\cdot\\frac{50}{200}=2$ A.",
-      "answer": "2"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một máy biến áp có công suất sơ cấp $P_1=200$ W và công suất thứ cấp $P_2=180$ W. Hiệu suất $H$ của máy bằng bao nhiêu (viết dạng số thập phân)?",
-      "explanation": "$H=\\frac{P_2}{P_1}=\\frac{180}{200}=0{,}9$.",
-      "answer": "0,9"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Máy biến áp có $N_1=2000$ vòng và $N_2=500$ vòng. Tỉ số $k=\\frac{N_1}{N_2}$ bằng bao nhiêu?",
-      "explanation": "$k=\\frac{N_1}{N_2}=\\frac{2000}{500}=4>1$, máy hạ áp.",
-      "answer": "4"
+      "theorySection": 5,
+      "question": "Truyền $P = 100\\ \\text{kW}$ ở $U = 5\\ \\text{kV}$ trên dây $R = 5\\ \\Omega$. Hao phí là bao nhiêu W?",
+      "answer": "2000",
+      "explanation": "$I = 10^5/5000 = 20$ A, $\\Delta P = RI^2 = 5 \\times 400 = 2000$ W (mục ⭐⭐⭐ Thách đấu)."
     }
   ]
 }

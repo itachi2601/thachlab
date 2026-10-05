@@ -2,7 +2,7 @@
   "lesson_id": 5,
   "lesson_title": "Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
   "item_id": 175,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
@@ -21,70 +21,16 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Nhiệt dung riêng của một chất là nhiệt lượng cần truyền cho",
+      "theorySection": 1,
+      "question": "Nhiệt dung riêng của một chất cho biết",
       "options": [
-        "1 kg chất đó để nhiệt độ tăng thêm 1 °C",
-        "1 kg chất đó để nó nóng chảy hoàn toàn ở nhiệt độ nóng chảy",
-        "1 kg chất lỏng đó để nó hoá hơi hoàn toàn ở nhiệt độ xác định",
-        "1 m³ chất đó để nhiệt độ tăng thêm 1 °C"
-      ],
-      "answer": 0,
-      "explanation": "Theo bài, nhiệt dung riêng là nhiệt lượng cần truyền cho 1 kg chất để nhiệt độ tăng thêm 1 °C."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Nhiệt nóng chảy riêng của một chất là nhiệt lượng cần để làm cho",
-      "options": [
-        "1 kg chất đó tăng nhiệt độ thêm 1 K",
-        "1 kg chất đó nóng chảy hoàn toàn ở nhiệt độ nóng chảy mà không làm thay đổi nhiệt độ",
-        "1 kg chất lỏng đó hoá hơi hoàn toàn ở nhiệt độ sôi",
-        "một vật bất kì nóng chảy hoàn toàn"
+        "nhiệt lượng cần để 1 kg chất đó nóng chảy hoàn toàn",
+        "nhiệt lượng cần để 1 kg chất đó tăng thêm 1 K",
+        "nhiệt lượng cần để 1 kg chất đó hoá hơi hoàn toàn",
+        "nhiệt lượng mà vật đang chứa ở nhiệt độ hiện tại"
       ],
       "answer": 1,
-      "explanation": "Nhiệt nóng chảy riêng là nhiệt lượng làm 1 đơn vị khối lượng chất nóng chảy hoàn toàn ở nhiệt độ nóng chảy mà nhiệt độ không đổi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 11,
-      "question": "Nhiệt hoá hơi riêng của một chất lỏng là nhiệt lượng cần để làm cho",
-      "options": [
-        "1 kg chất lỏng đó tăng nhiệt độ thêm 1 °C",
-        "1 kg chất rắn đó nóng chảy hoàn toàn",
-        "1 kg chất lỏng đó hoá hơi hoàn toàn ở nhiệt độ xác định",
-        "1 lít chất lỏng đó sôi"
-      ],
-      "answer": 2,
-      "explanation": "Bài định nghĩa: nhiệt hoá hơi riêng là nhiệt lượng cần để 1 kg chất lỏng hoá hơi hoàn toàn ở nhiệt độ xác định."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khi thực hành đo nhiệt dung riêng của nước, việc khuấy liên tục nước trong nhiệt lượng kế nhằm mục đích",
-      "options": [
-        "làm nước nóng đều",
-        "làm nước sôi nhanh hơn để hoá hơi",
-        "giảm công suất của dòng điện",
-        "làm tăng khối lượng nước"
-      ],
-      "answer": 0,
-      "explanation": "Bước 5 của thí nghiệm yêu cầu khuấy liên tục để nước nóng đều."
+      "explanation": "Bài định nghĩa nhiệt dung riêng là nhiệt cho 1 kg chất tăng thêm 1 K; hai đáp án kia là $\\lambda$ và $L$."
     },
     {
       "type": "multiple_choice",
@@ -93,116 +39,164 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Trong quá trình vật nóng chảy hoàn toàn ở nhiệt độ nóng chảy, nhiệt lượng truyền cho vật được dùng để",
+      "theorySection": 0,
+      "question": "Đun cốc nước đá đang tan thì nhiệt kế chỉ 0 °C không đổi. Lúc này bếp",
       "options": [
-        "làm nhiệt độ của vật tăng dần",
-        "làm vật nóng chảy mà nhiệt độ của vật không thay đổi",
-        "làm vật hoá hơi",
-        "làm giảm khối lượng của vật"
+        "đã ngừng truyền nhiệt vì nhiệt kế không đổi",
+        "chỉ truyền nhiệt khi đá đã tan hết",
+        "truyền nhiệt nhưng chỉ một nửa vì nước đá lạnh hơn nước",
+        "vẫn truyền nhiệt, nhiệt đó dùng làm đá tan chứ không làm nóng thêm"
       ],
-      "answer": 1,
-      "explanation": "Theo bài, công thức $Q=\\lambda m$ áp dụng cho quá trình nóng chảy hoàn toàn mà không thay đổi nhiệt độ."
+      "answer": 3,
+      "explanation": "Nhiệt vẫn vào liên tục và phá liên kết mạng tinh thể, nên nhiệt độ giữ nguyên trong lúc nóng chảy."
     },
     {
       "type": "multiple_choice",
-      "kind": "dieu_kien",
+      "kind": "dinh_nghia",
       "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 14,
-      "question": "Biện pháp nào sau đây phù hợp với yêu cầu an toàn khi làm thí nghiệm đo nhiệt hoá hơi riêng của nước?",
+      "theorySection": 1,
+      "question": "Trong bài thực hành, dụng cụ nào dùng để đọc công suất $P$ của bếp và thời gian đun $\\tau$?",
       "options": [
-        "Chạm tay trực tiếp vào nhiệt lượng kế đang sôi để kiểm tra",
-        "Kiểm tra thiết bị trước khi dùng, dùng dụng cụ bảo hộ, tránh tiếp xúc trực tiếp với nguồn nhiệt",
-        "Bỏ qua việc kiểm tra dây nối điện",
-        "Đứng sát nhiệt lượng kế để quan sát rõ hơn"
+        "Oát kế",
+        "Nhiệt kế chia 0,1 °C",
+        "Cân điện tử",
+        "Nhiệt lượng kế vỏ xốp"
       ],
-      "answer": 1,
-      "explanation": "Bài nêu: kiểm tra thiết bị, tuân thủ quy tắc an toàn với nguồn nhiệt và điện, dùng dụng cụ bảo hộ, giữ khoảng cách an toàn."
+      "answer": 0,
+      "explanation": "Oát kế cho $P$ và $\\tau$, từ đó $Q = P\\tau$; cân đo $m$, nhiệt kế đo nhiệt độ."
     },
     {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Xét nhiệt dung riêng của một chất. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nhiệt dung riêng đo bằng đơn vị J/kg.K.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt dung riêng là nhiệt lượng cần truyền cho 1 kg chất để nhiệt độ tăng thêm 1 °C.",
-          "answer": true
-        },
-        {
-          "text": "Mọi chất có cùng một giá trị nhiệt dung riêng.",
-          "answer": false
-        },
-        {
-          "text": "Nhiệt dung riêng của nước lớn hơn nhiệt dung riêng của nhôm (theo bảng trong bài).",
-          "answer": true
-        }
-      ],
-      "explanation": "Mỗi chất có nhiệt dung riêng riêng; nước 4180 J/kg.K, nhôm 880 J/kg.K."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 15,
-      "question": "Xét thí nghiệm đo nhiệt hoá hơi riêng của nước. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Mục đích là xác định nhiệt hoá hơi riêng của nước ở nhiệt độ sôi (100 °C).",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt lượng làm nước hoá hơi lấy từ nguồn điện qua điện trở nhiệt.",
-          "answer": true
-        },
-        {
-          "text": "Khối lượng nước trong bình tăng dần theo thời gian khi đun sôi.",
-          "answer": false
-        },
-        {
-          "text": "Cần đọc công suất trên oát kế và khối lượng nước trên cân sau mỗi khoảng thời gian 2 phút.",
-          "answer": true
-        }
-      ],
-      "explanation": "Nước hoá hơi nên khối lượng trong bình giảm dần; các ý còn lại đúng theo phần thiết kế và tiến hành thí nghiệm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Theo bảng trong bài, nhiệt dung riêng của nước ở 0 °C bằng bao nhiêu J/kg.K?",
-      "answer": "4180",
-      "explanation": "Bảng nhiệt dung riêng trong bài ghi nước là 4180 J/kg.K."
-    },
-    {
-      "type": "short_answer",
+      "type": "multiple_choice",
       "kind": "hien_tuong",
       "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Theo Bảng 5.1 trong bài, nhiệt độ nóng chảy của chì là bao nhiêu °C?",
-      "answer": "327",
-      "explanation": "Bảng 5.1 ghi nhiệt độ nóng chảy của chì là 327 °C."
+      "theorySection": 1,
+      "question": "Trên đồ thị nhiệt độ theo thời gian khi đun một chất, đoạn nằm ngang ứng với",
+      "options": [
+        "chất đang nóng lên đều",
+        "bếp đã ngừng truyền nhiệt",
+        "chất đang chuyển thể (nóng chảy hoặc sôi)",
+        "chất đã nguội đi hoàn toàn"
+      ],
+      "answer": 2,
+      "explanation": "Đoạn nghiêng là đang nóng lên; đoạn nằm ngang là chuyển thể, nhiệt độ không đổi nhưng nhiệt vẫn vào."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Hai cách tính $c$ (từng mốc và độ dốc đồ thị) cho hai số hơi khác nhau. Việc cần làm là",
+      "options": [
+        "chọn cách cho số đẹp hơn rồi bỏ cách còn lại",
+        "kết luận cả hai cách đều sai và đo lại từ đầu",
+        "giải thích chênh lệch, tìm mốc lệch bất thường hoặc sai số hệ thống",
+        "lấy giá trị nhỏ hơn làm kết quả"
+      ],
+      "answer": 2,
+      "explanation": "Hai cách đều đúng trong phạm vi sai số; việc phải làm là giải thích chênh lệch, không chọn cách đẹp hơn."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Các nhận định sau về đồ thị $t$ theo $\\tau$ đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đoạn nghiêng ứng với lúc chất đang nóng lên.",
+          "answer": true
+        },
+        {
+          "text": "Đoạn nằm ngang ứng với lúc chất đang chuyển thể.",
+          "answer": true
+        },
+        {
+          "text": "Đoạn nằm ngang càng dài thì nhiệt chuyển thể càng lớn.",
+          "answer": true
+        },
+        {
+          "text": "Đoạn nằm ngang thứ nhất (nhiệt độ thấp hơn) ứng với hoá hơi.",
+          "answer": false
+        }
+      ],
+      "explanation": "Đoạn ngang thứ nhất là nóng chảy; đoạn ngang thứ hai ở nhiệt độ cao hơn mới là hoá hơi."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Các nhận định sau về sai số trong bài thực hành đúng hay sai?",
+      "statements": [
+        {
+          "text": "Nhiệt mất ra môi trường làm $c$ đo được cao hơn giá trị thật.",
+          "answer": true
+        },
+        {
+          "text": "Kết quả lệch cùng một phía qua nhiều lần đo là dấu hiệu của sai số hệ thống.",
+          "answer": true
+        },
+        {
+          "text": "Nếu hai cách tính $c$ lệch nhau thì chắc chắn một cách bị sai.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt kế đứng yên nghĩa là bếp đã ngừng truyền nhiệt.",
+          "answer": false
+        }
+      ],
+      "explanation": "Hai cách chỉ khác ở cách lấy số liệu nên đều đúng trong phạm vi sai số; nhiệt kế đứng yên lúc chuyển thể nhưng nhiệt vẫn vào."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bài thực hành có bao nhiêu phép đo (đo $c$, $\\lambda$ và $L$)?",
+      "answer": "3",
+      "explanation": "Ba phép đo ứng với ba trạng thái: đổi nhiệt độ ($c$), nóng chảy ($\\lambda$), hoá hơi ($L$)."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dinh_nghia",
+      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhiệt kế dùng trong bài có độ chia nhỏ nhất là bao nhiêu °C?",
+      "answer": "0,1",
+      "explanation": "Bài dùng nhiệt kế chia 0,1 °C."
+    },
+    {
+      "type": "short_answer",
+      "kind": "dieu_kien",
+      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Độ tăng nhiệt độ 1 K tương ứng với độ tăng bao nhiêu °C?",
+      "answer": "1",
+      "explanation": "$\\Delta t$ ghi bằng K hay °C đều đúng vì 1 K = 1 °C."
     },
     {
       "type": "multiple_choice",
@@ -211,128 +205,146 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Công thức xác định nhiệt dung riêng của một chất là",
+      "theorySection": 1,
+      "question": "Từ số đo của bếp công suất $P$ trong thời gian $\\tau$, nhiệt dung riêng của chất khối lượng $m$ tăng $\\Delta t$ được tính bằng",
       "options": [
-        "$c=\\dfrac{Q}{m\\,\\Delta T}$",
-        "$c=\\dfrac{m\\,\\Delta T}{Q}$",
-        "$c=Q\\,m\\,\\Delta T$",
-        "$c=\\dfrac{Q\\,\\Delta T}{m}$"
+        "$c = \\dfrac{P\\tau}{m\\Delta t}$",
+        "$c = \\dfrac{P\\tau}{m}$",
+        "$c = \\dfrac{m\\Delta t}{P\\tau}$",
+        "$c = \\dfrac{P}{m\\tau\\Delta t}$"
       ],
       "answer": 0,
-      "explanation": "Từ $Q=mc\\Delta T$ suy ra $c=\\dfrac{Q}{m\\Delta T}$."
+      "explanation": "Nhiệt đưa vào $Q = P\\tau$ và $Q = mc\\Delta t$ nên $c = \\dfrac{P\\tau}{m\\Delta t}$."
     },
     {
       "type": "multiple_choice",
       "kind": "cong_thuc",
-      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
+      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 9,
-      "question": "Trong thí nghiệm đo nhiệt nóng chảy riêng của nước đá (cách 1), công thức tính $\\lambda$ là",
+      "theorySection": 1,
+      "question": "Nhiệt nóng chảy riêng đo ở đoạn nằm ngang thứ nhất, với $\\tau_1$ là thời gian của đoạn đó, được tính bằng",
       "options": [
-        "$\\lambda=\\dfrac{m}{\\overline{P}\\,\\tau}$",
-        "$\\lambda=\\overline{P}\\,\\tau\\, m$",
-        "$\\lambda=\\dfrac{\\overline{P}\\,\\tau}{m}$",
-        "$\\lambda=\\dfrac{\\overline{P}\\, m}{\\tau}$"
+        "$\\lambda = \\dfrac{P\\tau_1}{m\\Delta t}$",
+        "$\\lambda = \\dfrac{P}{m\\tau_1}$",
+        "$\\lambda = Pm\\tau_1$",
+        "$\\lambda = \\dfrac{P\\tau_1}{m}$"
       ],
-      "answer": 2,
-      "explanation": "Nhiệt lượng do điện trở toả ra là $\\overline{P}\\tau$, nên $\\lambda=\\dfrac{\\overline{P}\\tau}{m}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 16,
-      "question": "Nhiệt hoá hơi riêng của nước xác định từ thí nghiệm bằng công thức $L=\\dfrac{\\overline{P}(t_Q-t_P)}{m_P-m_Q}$. Đại lượng $m_P-m_Q$ là",
-      "options": [
-        "khối lượng nước ban đầu trong bình",
-        "khối lượng nước đã hoá hơi trong khoảng thời gian $t_Q-t_P$",
-        "khối lượng của nhiệt lượng kế",
-        "khối lượng nước còn lại trong bình"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $m_P-m_Q$ là khối lượng nước đã hoá hơi trong thời gian trên."
+      "answer": 3,
+      "explanation": "Ở đoạn ngang nhiệt độ không đổi nên không có $\\Delta t$: $\\lambda = \\dfrac{P\\tau_1}{m}$."
     },
     {
       "type": "multiple_choice",
       "kind": "don_vi",
-      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đơn vị của nhiệt dung riêng trong hệ SI là",
+      "theorySection": 1,
+      "question": "Đơn vị của nhiệt hoá hơi riêng $L$ là",
       "options": [
-        "J/kg",
-        "J/kg.K",
-        "J/K",
-        "W/kg"
+        "$\\text{J/(kg·K)}$",
+        "$\\text{J/kg}$",
+        "$\\text{J}$",
+        "$\\text{W/kg}$"
       ],
       "answer": 1,
-      "explanation": "Bài ghi $c=\\dfrac{Q}{mT}$ có đơn vị J/kg.K."
+      "explanation": "$L = \\dfrac{P\\tau}{m}$ có đơn vị J/kg, không có K; chỉ $c$ mới có J/(kg·K)."
     },
     {
-      "type": "true_false",
-      "kind": "cong_thuc",
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đun khối chất 0,5 kg bằng bếp có độ dốc đồ thị $k = 0{,}15\\ \\text{K/s}$, công suất $P = 300\\ \\text{W}$. Nhiệt dung riêng $c = \\dfrac{P}{mk}$ bằng",
+      "options": [
+        "$600\\ \\text{J/(kg·K)}$",
+        "$90\\ \\text{J/(kg·K)}$",
+        "$4\\ 000\\ \\text{J/(kg·K)}$",
+        "$2\\ 000\\ \\text{J/(kg·K)}$"
+      ],
+      "answer": 2,
+      "explanation": "$c = \\dfrac{300}{0{,}5 \\times 0{,}15} = 4000\\ \\text{J/(kg·K)}$. Quên $k$ ra 600; nhân $k$ thay vì chia ra 90; quên $m$ ra 2000."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
       "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 18,
-      "question": "Xét các công thức tính nhiệt lượng trong bài. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nhiệt lượng làm thay đổi nhiệt độ của vật: $Q=mc\\Delta T$.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt lượng làm vật nóng chảy hoàn toàn ở nhiệt độ không đổi: $Q=\\lambda m$.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt lượng làm chất lỏng hoá hơi ở nhiệt độ không đổi: $Q=mc\\Delta T$.",
-          "answer": false
-        },
-        {
-          "text": "Khi các vật chỉ trao đổi nhiệt với nhau thì $Q_{toả}+Q_{thu}=0$.",
-          "answer": true
-        }
+      "theorySection": 4,
+      "question": "Bếp 400 W làm 0,200 kg nước đá ở 0 °C tan hoàn toàn sau 167 s. Nhiệt nóng chảy riêng đo được là",
+      "options": [
+        "$3{,}34 \\times 10^5\\ \\text{J/kg}$",
+        "$6{,}68 \\times 10^4\\ \\text{J/kg}$",
+        "$1{,}67 \\times 10^5\\ \\text{J/kg}$",
+        "$3{,}34 \\times 10^2\\ \\text{J/kg}$"
       ],
-      "explanation": "Hoá hơi ở nhiệt độ không đổi dùng $Q=Lm$, không dùng $Q=mc\\Delta T$."
+      "answer": 0,
+      "explanation": "$Q = 400 \\times 167 = 66\\ 800\\ \\text{J}$; $\\lambda = \\dfrac{66\\ 800}{0{,}200} = 3{,}34 \\times 10^5\\ \\text{J/kg}$. Quên chia $m$ ra $6{,}68 \\times 10^4$."
     },
     {
       "type": "true_false",
-      "kind": "cong_thuc",
+      "kind": "don_vi",
       "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Xét thí nghiệm đo nhiệt dung riêng của nước, với $P$ là công suất, $\\Delta t$ là thời gian đun. Các phát biểu sau đúng hay sai?",
+      "theorySection": 2,
+      "question": "Các nhận định sau về đơn vị khi tính trong bài đúng hay sai?",
       "statements": [
         {
-          "text": "Nhiệt lượng nước nhận được là $P\\Delta t$.",
+          "text": "Khối lượng $m$ phải tính bằng kilôgam.",
           "answer": true
         },
         {
-          "text": "Nhiệt dung riêng tính bằng $c=\\dfrac{P\\Delta t}{m\\Delta T}$.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt dung riêng tính bằng $c=\\dfrac{m\\Delta T}{P\\Delta t}$.",
+          "text": "Thời gian $\\tau$ phải tính bằng phút.",
           "answer": false
         },
         {
-          "text": "Nếu $\\Delta T$ tăng còn các đại lượng khác không đổi thì $c$ tăng.",
+          "text": "Oát kế ghi kW thì phải đổi sang W.",
+          "answer": true
+        },
+        {
+          "text": "$\\Delta t$ ghi bằng K hay °C đều đúng.",
+          "answer": true
+        }
+      ],
+      "explanation": "$\\tau$ phải tính bằng giây vì oát là jun trên giây."
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Đun 0,150 kg nước đang sôi bằng bếp 420 W trong 810 s thì còn 0,100 kg. Các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Khối lượng đã hoá hơi là 0,050 kg.",
+          "answer": true
+        },
+        {
+          "text": "Nhiệt bếp truyền là $340\\ 200\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Nhiệt hoá hơi riêng đo được khoảng $6{,}80 \\times 10^6\\ \\text{J/kg}$.",
+          "answer": true
+        },
+        {
+          "text": "Giá trị đo được nhỏ hơn giá trị tra bảng $2{,}26 \\times 10^6\\ \\text{J/kg}$.",
           "answer": false
         }
       ],
-      "explanation": "$c=\\dfrac{P\\Delta t}{m\\Delta T}$ nên $c$ tỉ lệ nghịch với $\\Delta T$."
+      "explanation": "Giá trị đo lớn hơn khoảng 3 lần vì nhiệt còn đi vào không khí, thành bình và hơi thoát ra."
     },
     {
       "type": "short_answer",
@@ -341,34 +353,10 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Một vật đồng khối lượng 0,5 kg được làm nóng thêm 10 K. Biết nhiệt dung riêng của đồng là 380 J/kg.K. Nhiệt lượng cần truyền cho vật là bao nhiêu J?",
-      "answer": "1900",
-      "explanation": "$Q=mc\\Delta T=0{,}5\\cdot380\\cdot10=1900$ J."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Cần 9000 J để làm 3 kg một chất nóng chảy hoàn toàn ở nhiệt độ nóng chảy. Nhiệt nóng chảy riêng của chất đó là bao nhiêu J/kg?",
+      "theorySection": 1,
+      "question": "Bếp 150 W đun trong 20 s. Nhiệt lượng bếp truyền đi $Q = P\\tau$ là bao nhiêu J?",
       "answer": "3000",
-      "explanation": "$\\lambda=\\dfrac{Q}{m}=\\dfrac{9000}{3}=3000$ J/kg."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Xử lí số liệu thí nghiệm đo nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Trong thí nghiệm đo nhiệt dung riêng, $P=200$ W, $\\Delta t=100$ s, $m=1$ kg, $\\Delta T=5$ K. Nhiệt dung riêng $c$ bằng bao nhiêu J/kg.K?",
-      "answer": "4000",
-      "explanation": "$c=\\dfrac{P\\Delta t}{m\\Delta T}=\\dfrac{200\\cdot100}{1\\cdot5}=4000$ J/kg.K."
+      "explanation": "$Q = 150 \\times 20 = 3000\\ \\text{J}$."
     },
     {
       "type": "short_answer",
@@ -377,10 +365,22 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 10,
-      "question": "Nhiệt lượng làm hoá hơi hoàn toàn một lượng chất lỏng là 3000 J, nhiệt hoá hơi riêng của chất là 1500 J/kg. Khối lượng chất lỏng là bao nhiêu kg?",
-      "answer": "2",
-      "explanation": "Từ $Q=Lm$ suy ra $m=\\dfrac{Q}{L}=\\dfrac{3000}{1500}=2$ kg."
+      "theorySection": 4,
+      "question": "Đun 0,300 kg nước đang sôi, sau một lúc còn 0,250 kg. Khối lượng $m$ dùng trong $L = Q/m$ là bao nhiêu kg?",
+      "answer": "0,05",
+      "explanation": "Chỉ tính phần đã hoá hơi: $m = 0{,}300 - 0{,}250 = 0{,}05\\ \\text{kg}$."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bếp 400 W đun 0,5 kg nước trong 210 s, nhiệt độ tăng 40 K. Nhiệt dung riêng đo được là bao nhiêu J/(kg·K)?",
+      "answer": "4200",
+      "explanation": "$c = \\dfrac{400 \\times 210}{0{,}5 \\times 40} = \\dfrac{84\\ 000}{20} = 4200$."
     }
   ]
 }

@@ -2,14 +2,14 @@
   "lesson_id": 2,
   "lesson_title": "Bài 1. Sự chuyển thể",
   "item_id": 8,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
     "checked": true,
     "counts": {
-      "kien_thuc": 20,
-      "cong_thuc": 0
+      "kien_thuc": 17,
+      "cong_thuc": 3
     },
     "removed": []
   },
@@ -21,26 +21,26 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Theo mô hình động học phân tử, nhiệt độ của vật càng cao thì điều gì xảy ra?",
+      "theorySection": 1,
+      "question": "Nội dung nào sau đây KHÔNG thuộc mô hình động học phân tử về cấu tạo chất?",
       "options": [
-        "Tốc độ chuyển động của các phân tử cấu tạo nên vật càng lớn",
-        "Các phân tử dừng chuyển động",
-        "Kích thước mỗi phân tử càng lớn",
-        "Số phân tử trong vật càng ít"
+        "Các chất được cấu tạo từ những hạt riêng biệt, giữa chúng có khoảng cách",
+        "Các hạt chuyển động hỗn loạn không ngừng",
+        "Các phân tử đứng yên tại vị trí cố định ở mọi thể của chất",
+        "Giữa các hạt có lực hút và lực đẩy"
       ],
-      "answer": 0,
-      "explanation": "Bài nêu: nhiệt độ của vật càng cao thì tốc độ chuyển động của các phân tử cấu tạo nên vật càng lớn."
+      "answer": 2,
+      "explanation": "Mô hình có ba nội dung: có khoảng cách, chuyển động không ngừng, có lực hút và đẩy. Phân tử không đứng yên."
     },
     {
       "type": "multiple_choice",
-      "kind": "dinh_luat",
+      "kind": "dieu_kien",
       "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Theo mô hình động học phân tử, khi các phân tử ở gần nhau thì lực nào chiếm ưu thế?",
+      "theorySection": 1,
+      "question": "Theo mẹo nhớ \"gần đẩy, xa hút\", khi các phân tử ở rất gần nhau thì lực nào chiếm ưu thế?",
       "options": [
         "Lực đẩy",
         "Lực hút",
@@ -48,7 +48,7 @@
         "Không có lực nào tác dụng"
       ],
       "answer": 0,
-      "explanation": "Bài nêu: khi các phân tử gần nhau thì lực đẩy chiếm ưu thế, khi xa nhau thì lực hút chiếm ưu thế."
+      "explanation": "Gần nhau thì lực đẩy chiếm ưu thế; xa nhau thì lực hút chiếm ưu thế."
     },
     {
       "type": "multiple_choice",
@@ -58,33 +58,33 @@
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Đặc điểm nào sau đây đúng với chuyển động của phân tử ở thể rắn?",
+      "question": "Đổ 50 ml rượu vào 50 ml nước, thể tích hỗn hợp thu được:",
       "options": [
-        "Chỉ dao động quanh vị trí cân bằng cố định",
-        "Chuyển động hỗn loạn",
-        "Dao động quanh vị trí cân bằng luôn luôn thay đổi",
-        "Đứng yên hoàn toàn"
+        "Bằng đúng 100 ml",
+        "Lớn hơn 100 ml vì hai chất đẩy nhau",
+        "Không xác định được",
+        "Nhỏ hơn 100 ml, vì phân tử rượu xen vào khoảng trống giữa các phân tử nước"
       ],
-      "answer": 0,
-      "explanation": "Bảng cấu trúc: ở thể rắn, các phân tử chỉ dao động quanh vị trí cân bằng cố định."
+      "answer": 3,
+      "explanation": "Giữa các phân tử có khoảng trống nên tổng thể tích giảm (khoảng 96–97 ml)."
     },
     {
       "type": "multiple_choice",
-      "kind": "dinh_nghia",
+      "kind": "hien_tuong",
       "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 1,
-      "question": "Thể nào của chất có cả hình dạng và thể tích phụ thuộc bình chứa?",
+      "question": "Đặc điểm nào đúng với chất rắn?",
       "options": [
-        "Thể khí",
-        "Thể rắn",
-        "Thể lỏng",
-        "Cả thể rắn và thể lỏng"
+        "Phân tử xa nhau, chuyển động hỗn loạn",
+        "Phân tử rất gần nhau, sắp xếp trật tự, dao động quanh vị trí cân bằng cố định",
+        "Phân tử gần nhau nhưng vị trí cân bằng luôn thay đổi",
+        "Phân tử không có lực liên kết"
       ],
-      "answer": 0,
-      "explanation": "Bảng cấu trúc: thể khí có hình dạng và thể tích phụ thuộc bình chứa; thể rắn xác định cả hai; thể lỏng có thể tích xác định."
+      "answer": 1,
+      "explanation": "Chất rắn: gần, trật tự, vị trí cân bằng cố định nên có hình dạng và thể tích riêng."
     },
     {
       "type": "multiple_choice",
@@ -93,16 +93,52 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quá trình chuyển từ thể lỏng sang thể rắn được gọi là gì?",
+      "theorySection": 1,
+      "question": "Quá trình chuyển từ thể lỏng sang thể khí (gồm bay hơi và sôi) gọi là:",
       "options": [
-        "Sự đông đặc",
-        "Sự nóng chảy",
         "Sự ngưng tụ",
-        "Sự hoá hơi"
+        "Sự nóng chảy",
+        "Sự hoá hơi",
+        "Sự đông đặc"
+      ],
+      "answer": 2,
+      "explanation": "Hoá hơi là lỏng → khí; ngưng tụ là chiều ngược lại."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Thành li nước đá bên ngoài lấm tấm nước là do hiện tượng nào?",
+      "options": [
+        "Hơi nước trong không khí gặp mặt lạnh và ngưng tụ",
+        "Nước trong li thấm qua thành li",
+        "Đá nóng chảy rồi chảy ra ngoài",
+        "Nước trong li sôi và bay hơi"
       ],
       "answer": 0,
-      "explanation": "Bài nêu: chuyển từ thể lỏng sang thể rắn là sự đông đặc."
+      "explanation": "Hơi nước gặp bề mặt lạnh thì ngưng tụ thành giọt nước."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Bình thuỷ tinh 20 lít đang chứa 20 lít khí oxygen. Bơm thêm 2 lít khí oxygen vào bình thì:",
+      "options": [
+        "Thể tích khí thành 22 lít",
+        "Thể tích khí vẫn là 20 lít, số phân tử và áp suất tăng",
+        "Thể tích khí thành 18 lít",
+        "Khí tràn ra ngoài bình"
+      ],
+      "answer": 1,
+      "explanation": "Khí dàn ra chiếm hết phần rỗng của bình; thứ tăng lên là số phân tử (áp suất), không phải thể tích."
     },
     {
       "type": "multiple_choice",
@@ -111,252 +147,228 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Sự bay hơi là sự hoá hơi xảy ra ở đâu?",
-      "options": [
-        "Ở mặt thoáng của chất lỏng",
-        "Ở trong lòng chất lỏng",
-        "Ở cả trong lòng và bề mặt chất lỏng",
-        "Ở đáy bình chứa"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: sự bay hơi là sự hoá hơi xảy ra ở mặt thoáng của chất lỏng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hiện tượng nào sau đây là sự thăng hoa?",
-      "options": [
-        "Iodine (i-ốt) rắn chuyển trực tiếp sang thể hơi khi nhận nhiệt",
-        "Nước đá tan thành nước",
-        "Hơi nước ngưng tụ thành sương",
-        "Nước sôi trong ấm"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: iodine, băng phiến, đá khô có thể chuyển trực tiếp từ thể rắn sang thể hơi, gọi là sự thăng hoa."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khi chất lỏng sôi, sự hoá hơi xảy ra ở đâu?",
-      "options": [
-        "Ở cả trong lòng và bề mặt chất lỏng",
-        "Chỉ ở bề mặt chất lỏng",
-        "Chỉ ở trong lòng chất lỏng",
-        "Chỉ ở thành bình chứa"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: khi chất lỏng sôi, sự hoá hơi xảy ra ở cả trong lòng và bề mặt chất lỏng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Đặc điểm nào sau đây là của chất rắn kết tinh?",
-      "options": [
-        "Có nhiệt độ nóng chảy xác định",
-        "Không có cấu trúc tinh thể",
-        "Không có nhiệt độ nóng chảy xác định",
-        "Luôn luôn chỉ ở dạng vô định hình"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: chất rắn kết tinh có cấu trúc tinh thể và có nhiệt độ nóng chảy xác định."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Chất rắn nào sau đây thuộc loại chất rắn vô định hình?",
+      "theorySection": 1,
+      "question": "Chất nào sau đây có nhiệt độ nóng chảy xác định (chất rắn kết tinh)?",
       "options": [
         "Thuỷ tinh",
-        "Hạt muối",
-        "Viên kim cương",
-        "Miếng thạch anh"
+        "Nhựa",
+        "Cao su",
+        "Muối ăn"
       ],
-      "answer": 0,
-      "explanation": "Bài nêu ví dụ chất rắn vô định hình: thuỷ tinh, các loại nhựa, cao su; hạt muối, thạch anh, kim cương là đơn tinh thể."
+      "answer": 3,
+      "explanation": "Muối ăn có cấu trúc tinh thể nên có nhiệt độ nóng chảy xác định; thuỷ tinh, nhựa, cao su là vô định hình."
     },
     {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
       "form": "ly_thuyet",
-      "difficulty": "trung-binh",
+      "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Nhận định nào sau đây về mô hình động học phân tử là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Các chất được cấu tạo từ các hạt riêng biệt là phân tử.",
-          "answer": true
-        },
-        {
-          "text": "Các phân tử chuyển động không ngừng.",
-          "answer": true
-        },
-        {
-          "text": "Giữa các phân tử chỉ có lực hút, không có lực đẩy.",
-          "answer": false
-        },
-        {
-          "text": "Khi các phân tử ở xa nhau thì lực hút chiếm ưu thế.",
-          "answer": true
-        }
+      "theorySection": 2,
+      "question": "Quá trình nào xảy ra ở mọi nhiệt độ và chỉ ở mặt thoáng chất lỏng?",
+      "options": [
+        "Sự sôi",
+        "Sự bay hơi",
+        "Sự ngưng kết",
+        "Sự thăng hoa"
       ],
-      "explanation": "Bài nêu giữa các phân tử có cả lực hút và lực đẩy (lực liên kết phân tử); xa nhau thì lực hút chiếm ưu thế."
+      "answer": 1,
+      "explanation": "Bay hơi xảy ra ở mặt thoáng, ở mọi nhiệt độ; sôi xảy ra cả trong lòng chất lỏng ở nhiệt độ xác định."
     },
     {
-      "type": "true_false",
+      "type": "multiple_choice",
       "kind": "hien_tuong",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào sau đây về cấu trúc các thể của chất là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Ở thể khí, các phân tử rất xa nhau và chuyển động hỗn loạn.",
-          "answer": true
-        },
-        {
-          "text": "Ở thể lỏng, hình dạng phụ thuộc phần bình chứa nó, thể tích xác định.",
-          "answer": true
-        },
-        {
-          "text": "Ở thể rắn, các phân tử sắp xếp kém trật tự hơn ở thể lỏng.",
-          "answer": false
-        },
-        {
-          "text": "Ở thể khí, thể tích xác định còn hình dạng phụ thuộc bình chứa.",
-          "answer": false
-        }
-      ],
-      "explanation": "Theo bảng cấu trúc: thể rắn sắp xếp trật tự hơn thể lỏng; thể khí có cả hình dạng và thể tích phụ thuộc bình chứa."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
       "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nhận định nào sau đây về sự chuyển thể là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sự nóng chảy là quá trình chuyển từ thể rắn sang thể lỏng.",
-          "answer": true
-        },
-        {
-          "text": "Sự ngưng tụ là quá trình chuyển từ thể khí (hơi) sang thể lỏng.",
-          "answer": true
-        },
-        {
-          "text": "Sự hoá hơi gồm hai hình thức là bay hơi và sôi.",
-          "answer": true
-        },
-        {
-          "text": "Sự thăng hoa là quá trình chuyển từ thể khí sang thể rắn.",
-          "answer": false
-        }
+      "theorySection": 4,
+      "question": "Đun nóng đều một chất rắn kết tinh, trên đồ thị nhiệt độ – thời gian, đoạn nằm ngang cho biết:",
+      "options": [
+        "Chất đang nóng lên nhanh hơn",
+        "Chất không nhận nhiệt nữa",
+        "Chất đang chuyển thể, nhiệt độ không đổi",
+        "Chất là chất rắn vô định hình"
       ],
-      "explanation": "Bài nêu: thăng hoa là chất rắn chuyển trực tiếp sang thể hơi; ngược lại là sự ngưng kết."
+      "answer": 2,
+      "explanation": "Đoạn nằm ngang: độ cao là nhiệt độ chuyển thể, độ dài là thời gian chuyển thể."
     },
     {
       "type": "true_false",
       "kind": "dieu_kien",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
       "theorySection": 2,
-      "question": "Nhận định nào sau đây về chất rắn kết tinh và vô định hình là đúng hay sai?",
+      "question": "Khi khối nước đá đang tan ở 0 °C mà vẫn tiếp tục đun, các nhận định sau đúng hay sai?",
       "statements": [
         {
-          "text": "Chất rắn đơn tinh thể có tính dị hướng.",
+          "text": "Nhiệt độ không đổi.",
           "answer": true
         },
         {
-          "text": "Chất rắn đa tinh thể có tính đẳng hướng.",
-          "answer": true
-        },
-        {
-          "text": "Chất rắn vô định hình có nhiệt độ nóng chảy xác định.",
+          "text": "Nhiệt lượng truyền vào bằng 0.",
           "answer": false
         },
         {
-          "text": "Hầu hết các kim loại như sắt, nhôm, đồng là chất rắn đa tinh thể.",
+          "text": "Nhiệt lượng nhận vào dùng để phá liên kết trong mạng tinh thể.",
+          "answer": true
+        },
+        {
+          "text": "Tốc độ chuyển động trung bình của phân tử tăng dần.",
+          "answer": false
+        }
+      ],
+      "explanation": "Nhiệt lượng vẫn vào nhưng dùng phá liên kết, không làm tăng tốc độ phân tử nên nhiệt độ không đổi."
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về chất lỏng và chất khí, các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Chất lỏng có thể tích xác định, hình dạng theo bình chứa.",
+          "answer": true
+        },
+        {
+          "text": "Chất khí có thể tích riêng xác định.",
+          "answer": false
+        },
+        {
+          "text": "Phân tử chất lỏng ở rất xa nhau, gấp hàng chục lần kích thước phân tử.",
+          "answer": false
+        },
+        {
+          "text": "Phân tử chất khí chuyển động hỗn loạn.",
           "answer": true
         }
       ],
-      "explanation": "Bài nêu: vô định hình không có nhiệt độ nóng chảy xác định; kim loại phổ biến là đa tinh thể."
+      "explanation": "Chỉ chất khí có phân tử rất xa nhau; thể tích và hình dạng của khí đều phụ thuộc bình chứa."
+    },
+    {
+      "type": "true_false",
+      "kind": "dinh_nghia",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Về các quá trình chuyển thể, các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Thăng hoa là chất rắn chuyển thẳng sang thể khí.",
+          "answer": true
+        },
+        {
+          "text": "Ngưng kết là chuyển từ thể lỏng sang thể rắn.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt độ nóng chảy bằng nhiệt độ đông đặc của cùng một chất.",
+          "answer": true
+        },
+        {
+          "text": "Ngưng tụ là chuyển từ thể lỏng sang thể khí.",
+          "answer": false
+        }
+      ],
+      "explanation": "Ngưng kết là hơi → rắn; ngưng tụ là khí → lỏng."
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Về sự bay hơi và sự sôi, các nhận định sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Bay hơi xảy ra ở mọi nhiệt độ.",
+          "answer": true
+        },
+        {
+          "text": "Nước luôn sôi ở 100 °C bất kể áp suất.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt độ sôi phụ thuộc áp suất.",
+          "answer": true
+        },
+        {
+          "text": "Bay hơi xảy ra cả trong lòng chất lỏng.",
+          "answer": false
+        }
+      ],
+      "explanation": "100 °C chỉ đúng ở áp suất tiêu chuẩn; bay hơi chỉ ở mặt thoáng."
     },
     {
       "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
+      "kind": "tinh_nhanh",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Một chất rắn kết tinh được đun đều; nhiệt độ đứng yên ở 80 °C từ phút thứ 4 đến phút thứ 8. Thời gian nóng chảy là bao nhiêu phút?",
+      "answer": "4",
+      "explanation": "Nóng chảy từ phút 4 đến phút 8 nên kéo dài 8 − 4 = 4 phút."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Chất rắn kết tinh ở trên (đun đều) có nhiệt độ tăng từ 80 °C lên 140 °C trong 4 phút sau khi nóng chảy xong. Nhiệt độ tăng bao nhiêu °C mỗi phút?",
+      "answer": "15",
+      "explanation": "(140 − 80) : 4 = 15 °C mỗi phút."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Làm nguội đều chất lỏng trên, nhiệt độ giảm 15 °C mỗi phút. Từ 140 °C xuống 80 °C mất bao nhiêu phút?",
+      "answer": "4",
+      "explanation": "(140 − 80) : 15 = 4 phút."
+    },
+    {
+      "type": "short_answer",
+      "kind": "hien_tuong",
+      "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
       "theorySection": 0,
-      "question": "Mô hình động học phân tử về cấu tạo chất gồm mấy nội dung chính?",
-      "answer": "3",
-      "explanation": "Bài liệt kê 3 nội dung: chất cấu tạo từ phân tử, phân tử chuyển động không ngừng, giữa các phân tử có lực liên kết."
+      "question": "Li nước đá đang tan có nhiệt kế đứng yên ở bao nhiêu °C?",
+      "answer": "0",
+      "explanation": "Nước đá đang tan có nhiệt độ không đổi ở 0 °C."
     },
     {
       "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Có mấy thể của chất được so sánh về cấu trúc trong bài (rắn, lỏng, khí)?",
-      "answer": "3",
-      "explanation": "Bảng cấu trúc so sánh 3 thể: rắn, lỏng, khí."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong ba thể rắn, lỏng, khí, có mấy thể có thể tích xác định?",
-      "answer": "2",
-      "explanation": "Bảng cấu trúc: thể rắn và thể lỏng có thể tích xác định; thể khí phụ thuộc bình chứa."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
+      "kind": "dieu_kien",
       "topic": "Nóng chảy, đông đặc, hoá hơi, ngưng tụ",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Sự hoá hơi có mấy hình thức?",
-      "answer": "2",
-      "explanation": "Bài nêu: sự hoá hơi có hai hình thức là bay hơi và sôi."
+      "theorySection": 1,
+      "question": "Thuỷ ngân nóng chảy ở −39 °C. Nhiệt độ đông đặc của thuỷ ngân là bao nhiêu °C?",
+      "answer": "-39",
+      "explanation": "Nhiệt độ đông đặc bằng nhiệt độ nóng chảy."
     },
     {
       "type": "short_answer",
@@ -365,22 +377,10 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Đồ thị sự nóng chảy của chất rắn kết tinh chia thành mấy giai đoạn (a, b, c)?",
-      "answer": "3",
-      "explanation": "Hình 1.5 gồm 3 giai đoạn: chưa nóng chảy, đang nóng chảy, đã nóng chảy hoàn toàn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Cấu trúc chất rắn, lỏng, khí theo mô hình động học phân tử",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Chất rắn kết tinh gồm mấy loại (đơn tinh thể và đa tinh thể)?",
-      "answer": "2",
-      "explanation": "Bài nêu: chất rắn kết tinh gồm chất rắn đơn tinh thể và chất rắn đa tinh thể."
+      "theorySection": 5,
+      "question": "Theo bài, đúc kim loại nấu chảy nhôm ở bao nhiêu °C?",
+      "answer": "660",
+      "explanation": "Bài nêu nhôm nóng chảy ở 660 °C."
     }
   ]
 }

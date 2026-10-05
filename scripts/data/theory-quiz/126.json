@@ -2,385 +2,361 @@
   "lesson_id": 126,
   "lesson_title": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "item_id": 145,
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-05",
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
     "checked": true,
     "counts": {
-      "kien_thuc": 20,
-      "cong_thuc": 0
+      "kien_thuc": 10,
+      "cong_thuc": 9
     },
-    "removed": []
+    "removed": [
+      {
+        "question": "Bảng đo thời gian rơi của nam châm: ống nhựa $0{,}25;\\ 0{,}24;\\ 0{,}26$ s, ống đồng $1{,}8;\\ 2{,}1;\\ 1{,}9$ s. Các phát biểu sau đúng hay sai?",
+        "reason": "Ý 'độ lệch lớn nhất so với trung bình của ống đồng là 0,2 s' phụ thuộc làm tròn: trung bình đúng 1,933 s cho độ lệch 0,17 s, chỉ ra 0,2 s khi dùng 1,9 s đã làm tròn; đáp án đúng/sai không duy nhất."
+      }
+    ]
   },
   "questions": [
     {
       "type": "multiple_choice",
-      "question": "Vì sao dây đàn guitar điện phải làm bằng thép?",
-      "options": [
-        "Để dây đàn được từ hóa khi nằm sát nam châm của cuộn dây cảm ứng",
-        "Để dây đàn dẫn điện tốt hơn đồng",
-        "Để dây đàn nhẹ hơn",
-        "Để dây đàn phát âm trực tiếp to hơn"
-      ],
-      "answer": 0,
-      "explanation": "Dây đàn bằng thép nên đoạn dây sát nam châm được từ hóa, trở thành một nam châm.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0
+      "theorySection": 0,
+      "question": "Đàn guitar điện, sạc không dây và bếp từ cùng dựa vào điều kiện chung nào?",
+      "options": [
+        "Nhiệt của mặt bếp biến đổi trực tiếp thành điện",
+        "Nam châm vĩnh cửu đặt thật gần vật cần nạp năng lượng",
+        "Từ thông qua mạch hoặc khối vật dẫn biến thiên theo thời gian",
+        "Sóng Wi-Fi mang năng lượng sang các thiết bị"
+      ],
+      "answer": 2,
+      "explanation": "Cả ba thiết bị đều cần từ thông biến thiên để có suất điện động cảm ứng hoặc dòng Foucault."
     },
     {
       "type": "multiple_choice",
-      "question": "Trong đàn guitar điện, dòng điện cảm ứng xuất hiện trong cuộn dây khi nào?",
-      "options": [
-        "Khi từ thông qua cuộn dây thay đổi do dây đàn dao động",
-        "Khi cuộn dây được nối trực tiếp với pin",
-        "Khi dây đàn đứng yên trên nam châm",
-        "Khi cuộn dây bị nung nóng"
-      ],
-      "answer": 0,
-      "explanation": "Khi từ thông qua cuộn dây thay đổi thì trong cuộn dây xuất hiện dòng điện cảm ứng.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0
+      "theorySection": 1,
+      "question": "Thay dây thép của đàn guitar điện bằng dây nylon, gảy cùng cách. Tín hiệu vào loa thế nào?",
+      "options": [
+        "To hơn, vì dây nylon nhẹ nên rung mạnh hơn",
+        "Không đổi, vì nam châm trong cuộn vẫn còn",
+        "Gần như mất, vì dây nylon không bị từ hoá nên từ thông qua cuộn gần như không đổi",
+        "Đổi sang dòng một chiều, vì dây nylon cách điện"
+      ],
+      "answer": 2,
+      "explanation": "Pickup chỉ cho tín hiệu khi từ thông đổi; dây nylon không nhiễm từ nên không làm từ thông đổi."
     },
     {
       "type": "multiple_choice",
-      "question": "Dòng điện cảm ứng trong cuộn dây của đàn guitar điện có tần số như thế nào?",
-      "options": [
-        "Cùng tần số với dao động của âm (của dây đàn)",
-        "Luôn bằng 50 Hz",
-        "Lớn hơn nhiều tần số của âm",
-        "Bằng 0 vì là dòng điện không đổi"
-      ],
-      "answer": 0,
-      "explanation": "Dòng điện cảm ứng biến đổi phù hợp với dao động của dây đàn, cùng tần số với dao động của âm.",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Dòng điện cảm ứng trong đàn guitar điện được đưa tới đâu để ta nghe được âm?",
-      "options": [
-        "Máy tăng âm rồi đến loa",
-        "Trực tiếp đến tai người nghe",
-        "Hộp cộng hưởng của đàn",
-        "Pin của đàn"
-      ],
-      "answer": 0,
-      "explanation": "Dòng điện cảm ứng được đưa đến máy tăng âm rồi đến loa.",
-      "kind": "dieu_kien",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Sạc điện thoại không dây hoạt động dựa trên hiện tượng nào?",
-      "options": [
-        "Cảm ứng điện từ, tương tự máy biến áp",
-        "Hiệu ứng nhiệt Joule",
-        "Sự nhiễm điện do cọ xát",
-        "Hiện tượng phóng xạ"
-      ],
-      "answer": 0,
-      "explanation": "Sạc không dây hoạt động dựa trên hiện tượng cảm ứng điện từ như máy biến áp.",
       "kind": "hien_tuong",
       "topic": "Máy biến áp",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0
+      "theorySection": 1,
+      "question": "Sạc không dây cho điện thoại cần cuộn trong đế sạc nối với nguồn nào, và vì sao?",
+      "options": [
+        "Nguồn nào cũng được, miễn hai cuộn đặt sát nhau",
+        "Điện một chiều, vì pin chỉ nạp được bằng dòng một chiều",
+        "Điện xoay chiều, vì chỉ dòng biến thiên mới làm từ thông qua cuộn trong máy biến thiên liên tục",
+        "Điện một chiều ổn định, vì dòng không đổi tạo từ trường mạnh nhất"
+      ],
+      "answer": 2,
+      "explanation": "Sạc không dây hoạt động như máy biến áp có khe hở: cần dòng xoay chiều ở cuộn sơ cấp."
     },
     {
       "type": "multiple_choice",
-      "question": "Dòng điện Foucault là gì?",
-      "options": [
-        "Dòng điện cảm ứng sinh ra trong khối vật dẫn chuyển động trong từ trường hoặc đặt trong từ trường biến thiên",
-        "Dòng điện một chiều chạy trong dây dẫn mảnh",
-        "Dòng điện do pin sinh ra",
-        "Dòng điện chỉ xuất hiện trong chất cách điện"
-      ],
-      "answer": 0,
-      "explanation": "Dòng điện Foucault là dòng điện cảm ứng sinh ra trong khối vật dẫn khi chuyển động trong từ trường hoặc đặt trong từ trường biến thiên.",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Tấm kim loại liền khối dao động giữa hai cực nam châm sẽ dừng lại khá nhanh vì:",
-      "options": [
-        "Xuất hiện dòng điện Foucault gây lực hãm điện từ",
-        "Tấm kim loại bị nam châm hút chặt",
-        "Không khí cản trở mạnh",
-        "Tấm kim loại mất hết điện tích"
-      ],
-      "answer": 0,
-      "explanation": "Dòng điện Foucault sinh ra trong tấm kim loại gây lực hãm điện từ làm nó dừng nhanh.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 1,
+      "question": "Vì sao nam châm rơi trong ống đồng chậm hơn trong ống nhựa cùng kích thước?",
+      "options": [
+        "Dòng Foucault trong thành đồng sinh lực từ hãm nam châm",
+        "Ống đồng nặng hơn nên kéo nam châm xuống chậm hơn",
+        "Đồng hút nam châm nên nam châm bị dính vào thành ống",
+        "Không khí trong ống đồng đặc hơn nên cản mạnh hơn"
+      ],
+      "answer": 0,
+      "explanation": "Thành đồng dẫn điện nên có dòng Foucault; theo Lenz, lực từ chống lại chuyển động của nam châm. Nhựa không dẫn điện nên không có dòng đó."
     },
     {
       "type": "multiple_choice",
-      "question": "So với tấm kim loại liền khối, tấm kim loại có rãnh xẻ dao động giữa hai cực nam châm sẽ:",
-      "options": [
-        "Dao động lâu hơn vì dòng Foucault bị chia nhỏ, lực hãm giảm",
-        "Dừng nhanh hơn vì dòng Foucault mạnh hơn",
-        "Dừng lại hoàn toàn ngay lập tức",
-        "Dao động giống hệt tấm liền khối"
-      ],
-      "answer": 0,
-      "explanation": "Rãnh xẻ làm dòng Foucault bị chia nhỏ, lực hãm điện từ giảm nên tấm dao động lâu hơn.",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Ứng dụng nào sau đây dựa trên lực hãm điện từ do dòng điện Foucault?",
-      "options": [
-        "Phanh điện từ của ô tô hạng nặng",
-        "Lò cảm ứng nung nóng kim loại",
-        "Đèn sợi đốt",
-        "Ống nhòm"
-      ],
-      "answer": 0,
-      "explanation": "Lực hãm điện từ được ứng dụng trong các bộ phanh điện từ của ô tô hạng nặng.",
       "kind": "dieu_kien",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 2,
+      "question": "Nồi nào nấu sôi được trên bếp từ thông thường?",
+      "options": [
+        "Nồi gang mà nam châm dính được vào đáy",
+        "Nồi đồng",
+        "Nồi nhôm đáy dày",
+        "Nồi thuỷ tinh"
+      ],
+      "answer": 0,
+      "explanation": "Đáy nhiễm từ gom từ trường vào đáy, dòng Foucault lớn sinh nhiệt ngay trong đáy nồi; nhôm, đồng không nhiễm từ, thuỷ tinh không dẫn điện."
     },
     {
       "type": "multiple_choice",
-      "question": "Ứng dụng nào sau đây dựa trên hiệu ứng tỏa nhiệt Joule của dòng điện Foucault?",
-      "options": [
-        "Lò cảm ứng để nung nóng kim loại",
-        "Phanh điện từ của ô tô",
-        "Đàn guitar điện",
-        "Loa phát âm thanh"
-      ],
-      "answer": 0,
-      "explanation": "Khối kim loại trong từ trường biến thiên nóng lên do dòng Foucault, ứng dụng trong lò cảm ứng.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 1,
+      "question": "Vì sao lõi động cơ và lõi máy biến áp được ghép từ các lá tôn silic mỏng, cách điện với nhau?",
+      "options": [
+        "Để tăng dòng Foucault giúp lõi nóng lên nhanh",
+        "Để cắt vòng xoáy của dòng Foucault, giảm toả nhiệt có hại",
+        "Để lõi chuyển động nhanh hơn trong từ trường",
+        "Để lõi nhẹ hơn mà từ trường không xuyên qua được"
+      ],
+      "answer": 1,
+      "explanation": "Lớp cách điện chặn dòng chạy ngang qua nhiều lá, vòng xoáy nhỏ đi nên nhiệt Joule giảm."
     },
     {
       "type": "true_false",
-      "question": "Nhận định nào sau đây về đàn guitar điện là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đàn guitar điện có cấu tạo đặc, không có hộp cộng hưởng.",
-          "answer": true
-        },
-        {
-          "text": "Dây đàn được từ hóa khi nằm sát nam châm của cuộn dây cảm ứng.",
-          "answer": true
-        },
-        {
-          "text": "Cuộn dây cảm ứng được nối với máy tăng âm.",
-          "answer": true
-        },
-        {
-          "text": "Dòng điện cảm ứng trong cuộn dây có chiều và cường độ không đổi khi dây đàn dao động.",
-          "answer": false
-        }
-      ],
-      "explanation": "Dòng điện cảm ứng biến đổi cả về chiều và cường độ phù hợp với dao động của dây đàn.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "true_false",
-      "question": "Nhận định nào sau đây về sạc điện thoại không dây là đúng hay sai?",
+      "theorySection": 1,
+      "question": "Về pickup của đàn guitar điện, các phát biểu sau đúng hay sai?",
       "statements": [
         {
-          "text": "Cuộn dây trên sạc được nối với dòng điện xoay chiều và đóng vai trò cuộn sơ cấp.",
+          "text": "Mỗi cuộn dây có nam châm nằm trong cuộn, đặt dưới dây thép.",
           "answer": true
         },
         {
-          "text": "Cuộn dây phía sau điện thoại được nối với pin và đóng vai trò cuộn thứ cấp.",
+          "text": "Đoạn dây thép sát nam châm bị từ hoá.",
           "answer": true
         },
         {
-          "text": "Dòng xoay chiều qua cuộn dây của sạc sinh ra suất điện động cảm ứng trong cuộn dây của điện thoại.",
+          "text": "Khi dây rung, từ thông qua cuộn thay đổi và sinh dòng cảm ứng cùng tần số với dây.",
           "answer": true
         },
         {
-          "text": "Cuộn dây trên sạc phải nối với dòng điện một chiều không đổi.",
+          "text": "Nếu dây giữ yên trong lúc nam châm vẫn nằm trong cuộn thì vẫn có dòng cảm ứng ổn định đưa vào loa.",
           "answer": false
         }
       ],
-      "explanation": "Sạc nối dòng xoay chiều tạo từ thông biến thiên, sinh suất điện động cảm ứng ở cuộn thứ cấp trong điện thoại.",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0
+      "explanation": "Dòng chỉ xuất hiện khi từ thông biến thiên do dây rung; dây và nam châm đứng yên thì từ thông không đổi."
     },
     {
       "type": "true_false",
-      "question": "Nhận định nào sau đây về dòng điện Foucault là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Dòng điện Foucault sinh ra trong khối vật dẫn như khối kim loại.",
-          "answer": true
-        },
-        {
-          "text": "Khối vật dẫn đặt trong từ trường biến thiên theo thời gian có thể xuất hiện dòng Foucault.",
-          "answer": true
-        },
-        {
-          "text": "Khối vật dẫn chuyển động trong từ trường có thể xuất hiện dòng Foucault.",
-          "answer": true
-        },
-        {
-          "text": "Dòng điện Foucault chỉ xuất hiện trong chất cách điện.",
-          "answer": false
-        }
-      ],
-      "explanation": "Dòng Foucault là dòng cảm ứng sinh ra trong khối vật dẫn (kim loại) chuyển động trong từ trường hoặc đặt trong từ trường biến thiên.",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1
-    },
-    {
-      "type": "true_false",
-      "question": "Nhận định nào sau đây về tính chất và ứng dụng của dòng điện Foucault là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khối kim loại chuyển động trong từ trường chịu tác dụng của lực hãm điện từ.",
-          "answer": true
-        },
-        {
-          "text": "Dòng Foucault gây hiệu ứng tỏa nhiệt Joule trong lõi động cơ, máy biến áp.",
-          "answer": true
-        },
-        {
-          "text": "Lò cảm ứng dùng dòng Foucault để nung nóng kim loại.",
-          "answer": true
-        },
-        {
-          "text": "Lực hãm điện từ làm vật chuyển động trong từ trường tăng tốc nhanh chóng.",
-          "answer": false
-        }
-      ],
-      "explanation": "Lực hãm điện từ làm vật giảm tốc độ nhanh chóng, không làm tăng tốc.",
       "kind": "dieu_kien",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "trung-binh",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 2,
+      "question": "Xe đang chạy dùng phanh Foucault (nam châm một chiều kẹp đĩa kim loại). Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "Đĩa quay trong từ trường thì có dòng Foucault và lực hãm.",
+          "answer": true
+        },
+        {
+          "text": "Năng lượng cơ bị mất chuyển thành nhiệt trên đĩa.",
+          "answer": true
+        },
+        {
+          "text": "Xe đã dừng hẳn thì phanh Foucault vẫn giữ xe vì nam châm còn bật.",
+          "answer": false
+        },
+        {
+          "text": "Phanh tái sinh trả điện về pin, khác với phanh Foucault biến điện năng thành nhiệt.",
+          "answer": true
+        }
+      ],
+      "explanation": "Lực hãm Foucault chỉ có khi đĩa đang chuyển động; đứng yên thì từ thông không đổi. Giữ xe lúc đỗ cần phanh ma sát."
     },
     {
       "type": "short_answer",
-      "question": "Đàn guitar điện có bao nhiêu dây đàn (theo bài học)?",
-      "answer": "6",
-      "explanation": "Bài nêu dây cảm ứng gắn dưới sáu dây đàn.",
-      "kind": "dinh_nghia",
+      "kind": "dieu_kien",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "short_answer",
-      "question": "Đàn guitar điện có hộp cộng hưởng không? Có ghi 1, không ghi 0.",
-      "answer": "0",
-      "explanation": "Đàn guitar điện có cấu tạo đặc, không có hộp cộng hưởng.",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "short_answer",
-      "question": "Cuộn dây trên sạc không dây nối với dòng điện một chiều hay xoay chiều? Ghi 1 nếu một chiều, ghi 2 nếu xoay chiều.",
+      "theorySection": 3,
+      "question": "Dòng Foucault được sinh ra trong khối kim loại bằng mấy cách (khối chuyển động trong từ trường; khối đặt trong từ trường biến thiên)? Điền số.",
       "answer": "2",
-      "explanation": "Cuộn dây trên sạc được nối với dòng điện xoay chiều để tạo từ thông biến thiên.",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0
+      "explanation": "Bài nêu hai cách: khối chuyển động trong từ trường, hoặc khối nằm trong từ trường biến thiên theo thời gian."
     },
     {
       "type": "short_answer",
-      "question": "Trong sạc không dây, cuộn dây nối với pin điện thoại là cuộn sơ cấp hay thứ cấp? Ghi 1 nếu sơ cấp, ghi 2 nếu thứ cấp.",
-      "answer": "2",
-      "explanation": "Cuộn dây phía sau điện thoại nối với pin đóng vai trò cuộn thứ cấp.",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0
-    },
-    {
-      "type": "short_answer",
-      "question": "Tấm kim loại liền khối hay tấm có rãnh xẻ dao động lâu hơn trong từ trường? Ghi 1 nếu tấm có rãnh xẻ, ghi 2 nếu tấm liền khối.",
-      "answer": "1",
-      "explanation": "Tấm có rãnh xẻ làm dòng Foucault bị chia nhỏ, lực hãm giảm nên dao động lâu hơn.",
       "kind": "hien_tuong",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 1,
+      "question": "Dây đàn guitar điện rung với tần số 440 Hz. Dòng cảm ứng trong cuộn có tần số bao nhiêu Hz?",
+      "answer": "440",
+      "explanation": "Dòng cảm ứng trong pickup có cùng tần số với dây rung."
     },
     {
-      "type": "short_answer",
-      "question": "Khối kim loại đặt trong từ trường biến thiên sẽ nóng lên do dòng Foucault. Đúng ghi 1, sai ghi 0.",
-      "answer": "1",
-      "explanation": "Khối kim loại trong từ trường biến thiên nóng lên do dòng Foucault tiêu tán năng lượng.",
-      "kind": "hien_tuong",
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
       "topic": "Định luật Faraday và định luật Lenz",
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 1
+      "theorySection": 4,
+      "question": "Từ thông qua một vòng dây là $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb. Biên độ suất điện động $e_0$ bằng",
+      "options": [
+        "$320$ V",
+        "$32$ V",
+        "$3{,}2$ V",
+        "$22{,}6$ V"
+      ],
+      "answer": 1,
+      "explanation": "$e=-\\Phi'$ nên $e_0=\\Phi_0\\omega=2\\cdot10^{-4}\\cdot1{,}6\\cdot10^{5}=32$ V."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Công suất toả nhiệt trung bình trên vòng dây điện trở $r$ có suất điện động biên độ $e_0$ được tính đúng bằng",
+      "options": [
+        "$P=e_0^2/r$",
+        "$P=e_0/(r\\sqrt{2})$",
+        "$P=E\\cdot r$ với $E=e_0/\\sqrt{2}$",
+        "$P=E^2/r$ với $E=e_0/\\sqrt{2}$"
+      ],
+      "answer": 3,
+      "explanation": "Công suất trung bình dùng giá trị hiệu dụng: $E=e_0/\\sqrt{2}$, $P=E^2/r$. Thay thẳng $e_0$ vào $P$ sẽ ra gấp đôi."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vẫn $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb nhưng $r=1{,}00\\ \\Omega$. Công suất trung bình trên vòng là",
+      "options": [
+        "$1024$ W",
+        "$256$ W",
+        "$2048$ W",
+        "$512$ W"
+      ],
+      "answer": 3,
+      "explanation": "$e_0$ và $E$ không đổi, $P=E^2/r$ tỉ lệ nghịch với $r$ nên $1024$ W giảm còn $512$ W."
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Với $\\omega=1{,}6\\cdot10^{5}$ rad/s, tần số của từ thông $f=\\omega/(2\\pi)$ gần bằng",
+      "options": [
+        "$1{,}0\\cdot10^{6}$ Hz",
+        "$1{,}6\\cdot10^{5}$ Hz",
+        "$5{,}1\\cdot10^{4}$ Hz",
+        "$2{,}5\\cdot10^{4}$ Hz"
+      ],
+      "answer": 3,
+      "explanation": "$f=\\omega/(2\\pi)=1{,}6\\cdot10^{5}/6{,}28\\approx2{,}5\\cdot10^{4}$ Hz, đúng vùng tần số bếp từ."
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Bài toán mẫu: $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb, $r=0{,}50\\ \\Omega$. Các phát biểu sau đúng hay sai?",
+      "statements": [
+        {
+          "text": "$e_0=\\Phi_0\\omega=32$ V.",
+          "answer": true
+        },
+        {
+          "text": "Suất điện động hiệu dụng $E=32$ V.",
+          "answer": false
+        },
+        {
+          "text": "Công suất toả nhiệt trung bình $P=E^2/r=1024$ W.",
+          "answer": true
+        },
+        {
+          "text": "Kết quả $2048$ W là đúng vì dùng được $e_0^2/r$ cho công suất trung bình.",
+          "answer": false
+        }
+      ],
+      "explanation": "$E=e_0/\\sqrt{2}=16\\sqrt{2}$ V nên $P=512/0{,}50=1024$ W; $2048$ W là kết quả sai do dùng biên độ thay cho hiệu dụng."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Từ thông $\\Phi=3\\cdot10^{-4}\\cos(10^{4}t)$ Wb qua một vòng dây. Biên độ suất điện động $e_0$ bằng bao nhiêu vôn?",
+      "answer": "3",
+      "explanation": "$e_0=\\Phi_0\\omega=3\\cdot10^{-4}\\cdot10^{4}=3$ V."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Cùng đề bài mẫu ($e_0=32$ V) nhưng điện trở vòng $r=2{,}00\\ \\Omega$. Công suất trung bình bằng bao nhiêu oát?",
+      "answer": "256",
+      "explanation": "$E^2=(16\\sqrt{2})^2=512$, $P=512/2{,}00=256$ W."
+    },
+    {
+      "type": "short_answer",
+      "kind": "tinh_nhanh",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ống đồng ở bảng đo có thời gian rơi $1{,}8;\\ 2{,}1;\\ 1{,}9$ s. Thời gian rơi trung bình bằng bao nhiêu giây (làm tròn một chữ số thập phân)?",
+      "answer": "1,9",
+      "explanation": "$(1{,}8+2{,}1+1{,}9)/3\\approx1{,}9$ s."
+    },
+    {
+      "type": "short_answer",
+      "kind": "don_vi",
+      "topic": "Định luật Faraday và định luật Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Với số liệu bài mẫu, $e_0=\\Phi_0\\omega=32$. Công suất $P=E^2/r$ của vòng $r=0{,}50\\ \\Omega$ có $E^2=512$. Điền công suất (oát).",
+      "answer": "1024",
+      "explanation": "$P=512/0{,}50=1024$ W, cỡ công suất một bếp nhà."
     }
   ]
 }
