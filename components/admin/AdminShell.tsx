@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import LogoMark from "@/components/brand/LogoMark";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ExternalLink, LogOut, Menu, X } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -86,9 +87,9 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
           <div className="admin-scrim" onClick={closeDrawer} aria-hidden />
           <nav className="admin-side" aria-label="Điều hướng quản trị">
             <Link href="/quan-tri" className="admin-side-brand" onClick={closeDrawer}>
-              <span className="admin-side-mark">TL</span>
+              <LogoMark surface="dark" className="h-7 w-auto shrink-0" />
               <span className="min-w-0">
-                <span className="admin-side-name">ThachLab</span>
+                <span className="admin-side-name">ThạchLab</span>
                 <span className="admin-side-tag">Quản trị</span>
               </span>
             </Link>

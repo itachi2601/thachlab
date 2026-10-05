@@ -9,6 +9,7 @@ import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
 import Avatar from "@/components/ui/Avatar";
+import Logo from "@/components/brand/Logo";
 
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
 const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
@@ -102,13 +103,8 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
-            T
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            Thach<span className="text-[#3B82F6]">Lab</span>
-          </span>
+        <Link href="/" className="shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]">
+          <Logo />
         </Link>
 
         <ul className="hidden items-center gap-5 lg:flex xl:gap-8">

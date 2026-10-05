@@ -1,3 +1,4 @@
+import Logo from "@/components/brand/Logo";
 import { CONTACT } from "@/lib/contact";
 
 const columns = [
@@ -63,14 +64,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
       <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
         <div className={`grid grid-cols-1 gap-12 ${gridColumns}`}>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white font-display">
-                T
-              </span>
-              <span className="font-display text-lg font-semibold text-ink">
-                ThachLab
-              </span>
-            </div>
+            <Logo surface={parent ? undefined : "dark"} />
             <p className={`mt-4 max-w-xs leading-relaxed ${textCls}`}>
               Nền tảng học Vật lý THPT giúp học sinh hiểu bản chất của thế
               giới xung quanh — không chỉ là những công thức trong sách giáo
