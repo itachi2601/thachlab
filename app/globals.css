@@ -824,7 +824,10 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 /* ------------------------------------------------------------------
    Cột phải — "hộp dụng cụ": mục lục scroll-spy, mức nắm vững, câu sai, ghi chú
    ------------------------------------------------------------------ */
-.lesson-side { position: sticky; top: 100px; display: grid; gap: 14px; align-content: start; }
+.lesson-side { position: sticky; top: 100px; display: grid; gap: 14px; align-content: start; /* Cột cao hơn màn hình thì tự cuộn bên trong; chừa đáy 72px cho nút Báo lỗi nổi (N2). */ max-height: calc(100vh - 172px); overflow-y: auto; overscroll-behavior: contain; padding-bottom: 4px; scrollbar-width: thin; }
+.lesson-toc ol { max-height: 240px; overflow-y: auto; }
+/* Nút Báo lỗi nổi: trang bài có thanh đáy cố định (z 45) che mất nút → nâng lên trên thanh. */
+@media (max-width: 639px) { body:has(.lesson-bottombar) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 46; } }
 .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 14px; }
 .lesson-panel-title { margin: 0 0 10px; color: var(--color-ink); font-size: 13px; font-weight: 700; }
 .lesson-panel-note { margin: 0 0 8px; color: var(--color-muted); font-size: 12px; }
@@ -1327,7 +1330,7 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
   .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 14px 16px 20px; }
   .lesson-drawer-body .lesson-tree { margin-bottom: 16px; }
-  .lesson-drawer-body .lesson-side { position: static; display: grid; gap: 14px; }
+  .lesson-drawer-body .lesson-side { position: static; display: grid; max-height: none; overflow: visible; gap: 14px; }
   .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
   .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
   .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
