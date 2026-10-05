@@ -105,13 +105,13 @@ Thay vì dựng trang lộ trình riêng theo chương, **bộ huy hiệu theo l
 Không làm app native: biến site `output: "export"` thành PWA cài được (Android + iOS 16.4+), không phá mốc
 "mobile app chỉ khi ≥500 HS/tuần" ở GĐ 6. **Chỉ dựng vỏ + lối vào + nhắc**, không viết lại luyện tập.
 Chi tiết, ràng buộc và thứ tự: `docs/BAN-GIAO-MOBILE-PWA-2026-10-05.md`.
-- [ ] **M1 Vỏ PWA**: `app/manifest.ts` (static export dùng được), icon 192/512/maskable + apple-touch-icon (`.webp`/PNG
+- [x] **M1 Vỏ PWA**: `app/manifest.ts` (static export dùng được), icon 192/512/maskable + apple-touch-icon (`.webp`/PNG
       sinh từ logo), `public/sw.js` viết tay (precache shell, KHÔNG cache `/data/*.json` kiểu cache-first vì
       `services/static-content.ts` đã tự đối chiếu Supabase), đăng ký SW ở client, `theme_color` lấy từ
       `--color-bg`. Banner "Thêm vào màn hình chính" 1 lần, sau khi HS xong bài luyện đầu tiên.
-- [ ] **M2 Luyện nhanh 10 câu**: nút ở thẻ `WeakestSkillsCard` (đã gọi `get_my_weakest_topics`) mở thẳng
+- [x] **M2 Luyện nhanh 10 câu**: nút ở thẻ `WeakestSkillsCard` (đã gọi `get_my_weakest_topics`) mở thẳng
       `TopicPracticeModal` với chủ đề yếu nhất, 10 câu, chế độ "Từng câu" có sẵn. KHÔNG thêm RPC/bảng/URL mới.
-- [ ] **M3 Offline**: cache phần đã mở + hàng đợi `savePracticeSession` khi mất mạng (localStorage/IndexedDB), gửi lại
+- [x] **M3 Offline**: cache phần đã mở + hàng đợi `savePracticeSession` khi mất mạng (localStorage/IndexedDB), gửi lại
       khi có mạng. Làm sau M2; giữ kết quả LẦN ĐẦU từng câu như hiện nay.
 - [ ] **M4 Nhắc 1 lần/ngày**: Web Push (VAPID) qua Edge Function mới + bảng đăng ký (migration, chạy theo
       quy trình `run-migrations.sh`); nội dung lấy từ chủ đề yếu nhất; HS tự chọn giờ. Streak đóng băng **đã có**
