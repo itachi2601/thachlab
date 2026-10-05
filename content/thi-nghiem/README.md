@@ -93,6 +93,13 @@ npx tsx scripts/chen-video-thi-nghiem.mts --kiem --apply                # điề
 npx tsx scripts/chen-video-thi-nghiem.mts --apply                       # chèn vào bài
 ```
 
+Bước cuối — **đăng vào bài đã đăng thì luôn thêm `--chi-video`** (chỉ ghi nếu phần ngoài khối video
+giống hệt DB, chặn ghi đè mất bản sửa trực tiếp trên web). Kiểm loạt trước bằng
+`npx tsx scripts/so-file-voi-db.mts` (chỉ đọc, 1 truy vấn): bài nào file ≠ DB sẽ bị `--chi-video` chặn.
+```
+bash scripts/cap-nhat-ly-thuyet-hang-loat.sh l11-mo-ta-song:27 l11-song-dung:32 --chi-video
+```
+
 ## Liên kết với bài lý thuyết
 Trong `theory.html`, đặt `data-exp="<id>"` lên hộp thí nghiệm (`.tl-box--exp`) hoặc `<figure>` tương ứng. Kiểm bằng:
 ```

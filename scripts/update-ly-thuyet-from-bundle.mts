@@ -1,10 +1,15 @@
 // Chỉ ghi đè mục "Lý thuyết" (lesson_items.kind=ly_thuyet) của một bài từ file bundle.json.
 // KHÔNG tạo đề, KHÔNG đụng Luyện tập/Kiểm tra/Bài tập mẫu (khác upload-lesson.mts).
 //
-//   npx tsx scripts/update-ly-thuyet-from-bundle.mts <bundle.json | theory.html> --lesson <id> [--dry-run] [--with-title]
+//   npx tsx scripts/update-ly-thuyet-from-bundle.mts <bundle.json | theory.html> --lesson <id> [--dry-run] [--with-title] [--chi-video]
 //
 // Mặc định CHỈ ghi body_html (nội dung lý thuyết); tiêu đề/phụ đề giữ nguyên, thêm --with-title mới ghi.
 // Nhận thẳng theory.html (không cần bundle). Khôi phục: scripts/khoi-phuc-ly-thuyet.mts.
+//
+// --chi-video: dùng khi BỒI DẶP video vào bài ĐÃ ĐĂNG. Trước khi ghi, script bỏ mọi khối
+//   `.tl-box--video` ra khỏi cả hai bên rồi so phần còn lại; khác nhau ở đâu ngoài khối video
+//   (dấu hiệu bài đã được sửa trực tiếp trên web sau khi đăng) → KHÔNG ghi, in chỗ khác đầu tiên.
+//   Chủ ý ghi đè thì thêm --cho-phep-khac. Không có cờ này thì chỉ cảnh báo, vẫn ghi như cũ.
 //
 // QUY TẮC (thầy chốt 4/10/2026): đăng bài lý thuyết CHỈ được ghi vào mục Lý thuyết của đúng bài đó,
 // KHÔNG làm ảnh hưởng phần còn lại của bài (Luyện tập, Kiểm tra, Bài tập mẫu…) hay bài khác.
@@ -15,6 +20,7 @@
 //   4. Chụp toàn bộ lesson_items của bài TRƯỚC và SAU khi ghi rồi đối chiếu: ngoài body_html
 //      (và title/subtitle khi --with-title) của mục Lý thuyết, mọi cột/mục khác phải y nguyên.
 //      Lệch → in danh sách chỗ lệch + lệnh hoàn tác, exit 1.
+//   5. --chi-video: phần ngoài khối video phải giống DB, nếu khác thì dừng (xem mô tả ở trên).
 //
 // Tự sao lưu body_html cũ ra scripts/logs/ trước khi ghi. Đọc khoá từ .env.local.
 
@@ -23,6 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { bundleToRows, validateBundle, type LessonBundle } from "@/services/lesson-import";
+import { choKhacDauTien, chuanHoaNgoaiVideo, demKhoiVideo } from "./lib/video-html";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 function env(key: string): string | undefined {
@@ -62,7 +69,19 @@ const withTitle = argv.includes("--with-title");
 const li = argv.indexOf("--lesson");
 const lessonId = li >= 0 ? Number(argv[li + 1]) : NaN;
 const dry = argv.includes("--dry-run");
+const chiVideo = argv.includes("--chi-video");
+const choPhepKhac = argv.includes("--cho-phep-khac");
 if (!file || !lessonId) fail("cần <bundle.json> và --lesson <id>");
+
+/**
+ * Bỏ mọi khối video khỏi HTML để so phần còn lại — hàm ở scripts/lib/video-html.mts (dùng chung
+ * với scripts/so-file-voi-db.mts).
+ *
+ * Vì sao cần: đăng video vào bài ĐÃ ĐĂNG là ghi lại `body_html` từ file. Nếu sau khi đăng
+ * có ai sửa trực tiếp bài trên web (hotfix), lần đăng này sẽ ghi đè mất bản sửa đó mà
+ * dry-run chỉ in "độ dài cũ → mới" nên không ai thấy. `--chi-video` bắt buộc phần còn lại
+ * (ngoài khối video) phải GIỐNG NHAU, khác là dừng kèm chỗ khác đầu tiên.
+ */
 
 const raw = file.endsWith(".html")
   ? { schema: "thachlab.lesson-bundle/v1", target: { class_name: "x", lesson_title: "x" }, theory_title: "Lý thuyết trọng tâm", theory_html: fs.readFileSync(file, "utf8"),
@@ -97,6 +116,27 @@ fs.mkdirSync(path.join(root, "scripts/logs"), { recursive: true });
 const bak = path.join(root, "scripts/logs", `ly-thuyet-bai${lessonId}-backup-${Date.now()}.json`);
 fs.writeFileSync(bak, JSON.stringify(cur, null, 1));
 console.log(`Sao lưu: ${bak} (${(cur.body_html ?? "").length} → ${rows.lyThuyet.body_html.length} ký tự)`);
+
+// 2b. So phần NGOÀI khối video: DB đang có bản khác file không (bản sửa trực tiếp trên web)?
+const aNgoai = chuanHoaNgoaiVideo(cur.body_html ?? "");
+const bNgoai = chuanHoaNgoaiVideo(rows.lyThuyet.body_html);
+const soKhoiMoi = demKhoiVideo(rows.lyThuyet.body_html);
+const soKhoiCu = demKhoiVideo(cur.body_html ?? "");
+if (aNgoai === bNgoai) {
+  console.log(`Khác biệt ngoài khối video: KHÔNG — chỉ đổi số khối video (${soKhoiCu} → ${soKhoiMoi}).`);
+} else {
+  const canhBao =
+    `Khác biệt ngoài khối video (${soKhoiCu} → ${soKhoiMoi} khối):\n` + choKhacDauTien(aNgoai, bNgoai);
+  if (chiVideo && !choPhepKhac) {
+    fail(
+      `--chi-video: file khác DB ở phần KHÔNG phải video nên KHÔNG ghi.\n${canhBao}\n` +
+        `  → Nếu chủ ý (bản DB đã cũ, file mới là bản đúng): thêm --cho-phep-khac.`,
+    );
+  }
+  console.log(canhBao);
+  if (!chiVideo) console.log("  (chỉ là cảnh báo — thêm --chi-video để chặn hẳn trường hợp này)");
+}
+
 if (dry) { console.log("--dry-run: không ghi"); process.exit(0); }
 
 // 3. Ghi, ràng buộc id + kind, đòi đúng 1 dòng.

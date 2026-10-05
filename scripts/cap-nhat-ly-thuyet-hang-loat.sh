@@ -2,9 +2,13 @@
 # Đăng lý thuyết NHIỀU bài trong một lượt (mỗi bài vẫn chỉ ghi đúng mục Lý thuyết của bài đó),
 # rồi nhắc deploy MỘT lần — thay vì chạy cap-nhat-ly-thuyet.sh rồi deploy từng bài.
 #
-#   bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id> [<slug>:<lesson_id> ...] [--yes]
+#   bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id> [<slug>:<lesson_id> ...] [--yes] [--chi-video]
 # Ví dụ:
 #   bash scripts/cap-nhat-ly-thuyet-hang-loat.sh l11-giao-thoa-song:31 l11-song-dung:32 --yes
+#
+# --chi-video (chuyển tiếp cho từng bài): chỉ ghi nếu phần ngoài khối video giống DB — dùng khi
+# bồi dặp video vào loạt bài ĐÃ ĐĂNG, để không ghi đè bản sửa trực tiếp trên web.
+# --cho-phep-khac: chủ ý ghi đè dù khác ngoài khối video.
 #
 # Chạy TRÊN MAC (Supabase bị chặn ở sandbox). Mặc định từng bài vẫn hỏi xác nhận;
 # thêm --yes để chạy thẳng. Dừng ngay khi một bài lỗi. Sao lưu nằm trong scripts/logs/.
@@ -12,11 +16,16 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 YES=""
+EXTRA=""
 PAIRS=()
 for a in "$@"; do
-  if [[ "$a" == "--yes" ]]; then YES="--yes"; else PAIRS+=("$a"); fi
+  case "$a" in
+    --yes) YES="--yes" ;;
+    --chi-video|--cho-phep-khac|--with-title) EXTRA="$EXTRA $a" ;;
+    *) PAIRS+=("$a") ;;
+  esac
 done
-[[ ${#PAIRS[@]} -gt 0 ]] || { echo "Dùng: bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id> [...] [--yes]"; exit 1; }
+[[ ${#PAIRS[@]} -gt 0 ]] || { echo "Dùng: bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id> [...] [--yes] [--chi-video]"; exit 1; }
 
 LOGDIR="scripts/logs"
 mkdir -p "$LOGDIR"
@@ -34,7 +43,8 @@ for pair in "${PAIRS[@]}"; do
   if [[ ! "$LESSON" =~ ^[0-9]+$ ]]; then echo "✗ lesson_id '$LESSON' phải là số"; exit 1; fi
 
   echo "════ Bài $SLUG → lesson $LESSON ════"
-  bash scripts/cap-nhat-ly-thuyet.sh "$THEORY" "$LESSON" $YES
+  # shellcheck disable=SC2086
+  bash scripts/cap-nhat-ly-thuyet.sh "$THEORY" "$LESSON" $YES $EXTRA
   echo "$SLUG:$LESSON ok $(date +%H:%M:%S)" >> "$SUMMARY"
 done
 
