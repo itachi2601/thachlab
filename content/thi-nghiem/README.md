@@ -43,6 +43,28 @@ ghi vào đây rồi chạy script chèn — một nguồn dữ liệu, chèn l�
 npx tsx scripts/chen-video-thi-nghiem.mts                       # xem thử mọi bài
 npx tsx scripts/chen-video-thi-nghiem.mts --bai l11-giao-thoa-song --apply
 ```
+
+### Video mở bài (và video gắn theo bài) — `video-theo-bai.json`
+Clip **mở bài** (đặt vấn đề bằng hiện tượng thật) không thuộc hộp thí nghiệm nào, nên khai riêng:
+
+```json
+{
+ "bai": [
+  { "slug": "l11-giao-thoa-song", "lesson_id": 31,
+    "videos": [
+      { "vi_tri": "mo_bai", "youtube_id": "b87QZtYKmqo",
+        "nhan": "hai loa phát cùng một âm",
+        "nhin_vao": "Hai loa đều đang kêu, vậy chỗ nghe nhỏ có phải là chỗ hết sóng?",
+        "giay_bat_dau": 20, "giay_ket_thuc": 70 }
+    ] } ]
+}
+```
+
+- `vi_tri`: `mo_bai` (mặc định) · `truoc:<data-exp>` · `sau:<data-exp>` để gắn clip vào một mốc bất kỳ.
+- `mo_bai` được chèn **ngay trước hộp "Dự đoán trước khi học"** của mục I (không có hộp đó thì sau hình đầu,
+  rồi mới tới sau đoạn văn đầu) — học sinh **thấy hiện tượng rồi mới dự đoán**, đúng thứ tự bài Giao thoa đã duyệt.
+- Clip mở bài **chỉ quay hiện tượng, không giải thích cơ chế, không lộ đáp án**; `nhin_vao` hỏi đúng câu hỏi mở bài; nên ≤ 60 giây.
+- Nhãn hộp mặc định "Xem thực tế"; đổi bằng `tieu_de_hop` nếu cần.
 Script chèn khối `.tl-box--video` ngay sau hộp `.tl-box--exp`/`<figure>` mang `data-exp` đó, đồng bộ
 `theory.src.html` + `theory.html` + `theory_html` trong `bundle.json`. Đăng lên DB:
 `bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id>` (một lượt deploy cho nhiều bài).

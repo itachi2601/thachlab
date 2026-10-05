@@ -1,6 +1,7 @@
-// Chèn khối video thí nghiệm (.tl-box--video) vào bài lý thuyết tương tác, lấy dữ liệu
-// từ kho content/thi-nghiem/*.json (field tuỳ chọn `video`). Chạy lại được — đã chèn rồi
-// thì bỏ qua, không nhân đôi khối.
+// Chèn khối video thí nghiệm / video mở bài (.tl-box--video) vào bài lý thuyết tương tác,
+// lấy dữ liệu từ kho content/thi-nghiem/: field `video` trong tn-*.json (video của từng hộp
+// thí nghiệm) và video-theo-bai.json (video mở bài, hoặc trước/sau một mốc data-exp).
+// Chạy lại được — đã chèn rồi thì bỏ qua, không nhân đôi khối.
 //
 //   npx tsx scripts/chen-video-thi-nghiem.mts                     # xem thử tất cả bài có dữ liệu
 //   npx tsx scripts/chen-video-thi-nghiem.mts --bai l11-giao-thoa-song
@@ -45,6 +46,7 @@ type Video = {
   ten?: string;
   kenh?: string;
   nhan?: string;
+  tieu_de_hop?: string;
   nhin_vao?: string;
   giay_bat_dau?: number;
   giay_ket_thuc?: number;
@@ -81,21 +83,88 @@ function escapeHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function renderBlock(expId: string, expTen: string, v: Video, pool: Map<string, Video>): string {
-  const shared = pool.get(v.youtube_id);
-  const nhan = (v.nhan ?? v.ten ?? shared?.ten ?? expTen).trim();
+/**
+ * Ghi JSON giữ ĐÚNG kiểu trình bày của file gốc (số space thụt lề + có/không newline cuối).
+ * Các file trong repo không thống nhất (bundle.json/tn-*.json: indent 1, không newline cuối;
+ * index.json: indent 2, có newline) — ghi lại sai kiểu là diff loe ra toàn file.
+ */
+function ghiJsonGiuDinhDang(file: string, obj: unknown): void {
+  const raw = fs.readFileSync(file, "utf8");
+  const m = /\n( +)"/.exec(raw);
+  const indent = m ? m[1].length : 1;
+  fs.writeFileSync(file, JSON.stringify(obj, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");
+}
+
+function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video): string {
   const params = new URLSearchParams({ rel: "0" });
   if (typeof v.giay_bat_dau === "number") params.set("start", String(v.giay_bat_dau));
   if (typeof v.giay_ket_thuc === "number") params.set("end", String(v.giay_ket_thuc));
   const lines = [
-    `<!--video:${expId}-->`,
+    `<!--video:${marker}-->`,
     `<div class="tl-box tl-box--video">`,
-    `<p class="tl-label">🎬 Xem thí nghiệm thật: ${escapeHtml(nhan)}</p>`,
+    `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
     `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
   ];
   if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
   lines.push(`</div>`, ``);
   return lines.join("\n");
+}
+
+/** Tên hộp + nhãn của một khối video, theo vị trí chèn. */
+function nhanCuaVideo(v: Video, pool: Map<string, Video>, macDinh: string): { tieuDeHop: string; nhan: string } {
+  const shared = pool.get(v.youtube_id);
+  return {
+    tieuDeHop: v.tieu_de_hop?.trim() || macDinh,
+    nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "video").trim(),
+  };
+}
+
+/**
+ * Video gắn vào bài mà KHÔNG thuộc hộp thí nghiệm nào (mở bài, hoặc trước/sau một mốc
+ * `data-exp`). Khai trong content/thi-nghiem/video-theo-bai.json.
+ */
+type ViTriBai = { vi_tri: string; video: Video };
+
+function docVideoTheoBai(): Map<string, ViTriBai[]> {
+  const map = new Map<string, ViTriBai[]>();
+  const f = path.join(khoDir, "video-theo-bai.json");
+  if (!fs.existsSync(f)) return map;
+  const data = JSON.parse(fs.readFileSync(f, "utf8")) as { bai?: { slug?: string; videos?: ViTriBai[] }[] };
+  for (const b of data?.bai ?? []) {
+    if (!b?.slug || !Array.isArray(b.videos)) continue;
+    map.set(b.slug, b.videos.filter((v) => v?.video?.youtube_id));
+  }
+  return map;
+}
+
+/**
+ * Chèn clip MỞ BÀI: ngay TRƯỚC hộp "Dự đoán trước khi học" của mục I (học sinh thấy hiện
+ * tượng thật rồi mới dự đoán — đúng thứ tự bài Giao thoa đã duyệt); không có hộp đó thì
+ * sau hình đầu, rồi mới tới sau đoạn văn đầu của mục I. Chỉ soi trong mục I.
+ */
+function viTriMoBai(html: string): number | null {
+  const h3 = [...html.matchAll(/<h3\b[^>]*>/g)];
+  if (h3.length === 0) return null;
+  const start = h3[0].index;
+  const end = h3.length > 1 ? h3[1].index : html.length;
+  const muc1 = html.slice(start, end);
+  const doan = /<div[^>]*class="[^"]*tl-box--think[^"]*"[^>]*>/.exec(muc1);
+  if (doan) return start + doan.index;
+  const fig = muc1.indexOf("</figure>");
+  if (fig !== -1) return start + fig + "</figure>".length;
+  const p = muc1.indexOf("</p>");
+  if (p !== -1) return start + p + "</p>".length;
+  return null;
+}
+
+/** Vị trí chèn của `mo_bai` | `truoc:<data-exp>` | `sau:<data-exp>`. */
+function viTriChon(html: string, viTri: string): number | null {
+  if (viTri === "mo_bai") return viTriMoBai(html);
+  const m = /^(truoc|sau):(.+)$/.exec(viTri);
+  if (!m) return null;
+  const anchor = findAnchor(html, m[2]);
+  if (!anchor) return null;
+  return m[1] === "truoc" ? anchor.start : anchor.end;
 }
 
 /** Vị trí kết thúc của hộp thí nghiệm / figure chứa `data-exp="<id>"`. */
@@ -133,7 +202,12 @@ function findAnchor(html: string, expId: string): { start: number; end: number }
 
 type KetQuaFile = { file: string; chen: string[]; boQua: string[] };
 
-function chenVaoHtml(html: string, kho: Map<string, KhoEntry>, pool: Map<string, Video>): { html: string; chen: string[]; boQua: string[] } {
+function chenVaoHtml(
+  html: string,
+  kho: Map<string, KhoEntry>,
+  pool: Map<string, Video>,
+  theoBai: ViTriBai[] = [],
+): { html: string; chen: string[]; boQua: string[] } {
   const ids: string[] = [];
   for (const m of html.matchAll(/data-exp="([^"]+)"/g)) if (!ids.includes(m[1])) ids.push(m[1]);
 
@@ -158,8 +232,29 @@ function chenVaoHtml(html: string, kho: Map<string, KhoEntry>, pool: Map<string,
       boQua.push(`${id} (không thấy hộp .tl-box--exp/figure mang data-exp này)`);
       continue;
     }
-    inserts.push({ pos: anchor.end, block: renderBlock(id, entry.expTen, video, pool) });
+    const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, "Xem thí nghiệm thật");
+    inserts.push({ pos: anchor.end, block: renderBlock(id, tieuDeHop, nhan || entry.expTen, video) });
     chen.push(`${id} → ${video.youtube_id}`);
+  }
+
+  // Video gắn theo BÀI (mở bài / trước-sau một mốc) — khai ở video-theo-bai.json
+  for (const { vi_tri: viTri, video } of theoBai) {
+    if (html.includes(`<!--video:${viTri}-->`)) {
+      boQua.push(`${viTri} (đã chèn trước đó)`);
+      continue;
+    }
+    if (html.includes(video.youtube_id)) {
+      boQua.push(`${viTri} (bài đã có video ${video.youtube_id} chèn tay)`);
+      continue;
+    }
+    const pos = viTriChon(html, viTri);
+    if (pos === null) {
+      boQua.push(`${viTri} (không tìm thấy mốc chèn)`);
+      continue;
+    }
+    const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, viTri === "mo_bai" ? "Xem thực tế" : "Xem video");
+    inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan, video) });
+    chen.push(`${viTri} → ${video.youtube_id}`);
   }
 
   let out = html;
@@ -206,6 +301,16 @@ async function kiemLink(): Promise<void> {
       if (typeof id === "string" && id) them(id, poolFile, (x) => Object.assign(v, x));
     }
   }
+  const baiFile = path.join(khoDir, "video-theo-bai.json");
+  if (fs.existsSync(baiFile)) {
+    const data = doc(baiFile) as { bai?: { videos?: { video?: Record<string, unknown> }[] }[] };
+    for (const b of data.bai ?? []) {
+      for (const m of b?.videos ?? []) {
+        const id = m?.video?.youtube_id;
+        if (typeof id === "string" && id) them(id, baiFile, (x) => Object.assign(m.video as object, x));
+      }
+    }
+  }
   if (theoId.size === 0) {
     console.log("Kho chưa có `youtube_id` nào để kiểm.");
     return;
@@ -248,6 +353,7 @@ async function kiemLink(): Promise<void> {
         : `✗ ${k.id}  ${k.ghiChu}   [${k.soFile} file]`,
     );
   }
+  if (APPLY) for (const f of daGhi) ghiJsonGiuDinhDang(f, daDoc.get(f));
   if (APPLY) for (const f of daGhi) console.log(`   đã ghi: ${path.relative(root, f)}`);
   const hong = ketQua.filter((k) => !k.ok).length;
   console.log(`\n${ketQua.length} link, ${hong} link hỏng.`);
@@ -261,8 +367,9 @@ async function main() {
   }
   const kho = docKho();
   const pool = docVideoDungChung();
-  if (kho.size === 0) {
-    console.log("Kho chưa có thí nghiệm nào gắn field `video` — không có gì để chèn.");
+  const videoBai = docVideoTheoBai();
+  if (kho.size === 0 && videoBai.size === 0) {
+    console.log("Kho chưa có thí nghiệm nào gắn field `video` và chưa có video mở bài nào — không có gì để chèn.");
     console.log("Xem quy ước: content/thi-nghiem/README.md (mục Video thí nghiệm).");
     return;
   }
@@ -301,7 +408,7 @@ async function main() {
     for (const file of [src, html]) {
       if (!fs.existsSync(file)) continue;
       const before = fs.readFileSync(file, "utf8");
-      const kq = chenVaoHtml(before, kho, pool);
+      const kq = chenVaoHtml(before, kho, pool, videoBai.get(slug) ?? []);
       if (kq.chen.length === 0) {
         if (kq.boQua.length > 0) files.push({ file, chen: [], boQua: kq.boQua });
         continue;
@@ -316,12 +423,12 @@ async function main() {
       const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
       if (bundle.theory_html !== newTheoryHtml) {
         bundle.theory_html = newTheoryHtml;
-        fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 1) + "\n", "utf8");
+        ghiJsonGiuDinhDang(bundlePath, bundle);
         files.push({ file: bundlePath, chen: ["theory_html ← theory.html"], boQua: [] });
       }
     }
 
-    if (files.some((f) => f.chen.length > 0)) baoCao.push({ bai: slug, files, ghi: APPLY });
+    if (files.length > 0) baoCao.push({ bai: slug, files, ghi: APPLY });
   }
 
   if (JSON_OUT) {
@@ -330,6 +437,7 @@ async function main() {
   }
 
   const tong = baoCao.reduce((n, b) => n + b.files.reduce((k, f) => k + f.chen.length, 0), 0);
+  const coChen = baoCao.filter((b) => b.files.some((f) => f.chen.length > 0)).length;
   console.log(APPLY ? "── ĐÃ GHI ──" : "── XEM THỬ (chưa ghi file; thêm --apply để ghi) ──");
   for (const b of baoCao) {
     console.log(`\n▸ ${b.bai}`);
@@ -338,7 +446,10 @@ async function main() {
       for (const s of f.boQua) console.log(`   · bỏ qua: ${s}   [${path.relative(root, f.file)}]`);
     }
   }
-  console.log(`\n${baoCao.length} bài, ${tong} khối video${APPLY ? " đã chèn" : " sẽ chèn"}.`);
+  console.log(
+    `\n${coChen} bài, ${tong} khối video${APPLY ? " đã chèn" : " sẽ chèn"}.` +
+      (baoCao.length > coChen ? ` ${baoCao.length - coChen} bài chỉ có clip nằm sẵn trong file (không chèn thêm).` : ""),
+  );
   if (APPLY) {
     console.log("Đăng lên DB (trên Mac): bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id> …");
   }

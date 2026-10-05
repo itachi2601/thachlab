@@ -1,0 +1,4 @@
+{
+ "ghi_chu": "Video gắn vào BÀI nhưng không thuộc một hộp thí nghiệm nào — thường là clip MỞ BÀI (đặt vấn đề bằng hiện tượng thật). Video của từng hộp thí nghiệm ghi trong tn-*.json (field `video`). Mỗi mục: slug (tên thư mục bài trong content/lesson-samples), lesson_id (để đối chiếu), videos[] với vi_tri = `mo_bai` | `truoc:<data-exp>` | `sau:<data-exp>`, youtube_id (11 ký tự), nhan, nhin_vao (bắt buộc, câu hỏi mở bài), giay_bat_dau/giay_ket_thuc (≤ 90 giây), tieu_de_hop (mặc định 'Xem thực tế'). Quy ước đầy đủ: README.md mục Video thí nghiệm.",
+ "bai": []
+}

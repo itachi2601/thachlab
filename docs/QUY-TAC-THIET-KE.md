@@ -77,6 +77,7 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 - **V4 Ưu tiên clip tiếng Việt hoặc không lời.** Clip tiếng Anh chỉ dùng khi phần chữ trong bài đã đủ để hiểu, không bắt học sinh nghe hiểu tiếng Anh.
 - **V5 Không nạp player trước khi bấm**: khối video hiện **ảnh bìa + nút phát**, player chỉ nhúng khi học sinh bấm (`ContentHtml.tsx`). Mỗi iframe YouTube kéo theo ~1 MB JS; bài có 4 video là ~4 MB cho thứ phần lớn em không xem (B4, mục "Đăng nội dung — tối ưu tốc độ" của `AGENTS.md`).
 - **V6 Không thêm video cho chỗ bài đã có mô phỏng/SVG thể hiện rõ hiện tượng** (trùng nội dung — N1, H1), và không dùng video thay thí nghiệm học sinh làm được ngay tại lớp.
+- **V7 Clip MỞ BÀI khi tình huống mở bài có thật ngoài đời** (xe phanh gấp, cầu thủ sút, dây đàn, hai loa…): đặt **ngay trước hộp "Dự đoán trước khi học"** để học sinh thấy hiện tượng rồi mới dự đoán. Clip **chỉ quay hiện tượng, không giải thích cơ chế, không lộ đáp án** (nếu lộ thì mất luôn câu dự đoán); `nhin_vao` hỏi đúng câu hỏi mở bài; nên ≤ 60 giây. Tình huống mở bài là giả định trong đầu (không có cảnh thật) thì bỏ qua, không bịa clip.
 
 ## 6. Điện thoại & thao tác (D)
 
@@ -108,7 +109,7 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 6. Đích chạm ≥ 44pt, nhãn nút ≤ 1 dòng (D2); tab lộ hết ở 360px (D4); thanh cố định ≤ 15% (B6).
 7. Không có gì tự chuyển động/tự bật trong lúc đọc hoặc làm bài (B4, L6).
 8. Nêu mã quy tắc đã áp dụng trong mô tả commit; nếu phá quy tắc, ghi lý do.
-9. Video thí nghiệm: 1 clip mỗi hộp, có dòng "Nhìn vào", ≤ 90 giây, không nạp player trước khi bấm (V1–V6).
+9. Video: mở bài 1 clip hiện tượng trước hộp Dự đoán (V7), mỗi hộp thí nghiệm 1 clip, đều có dòng "Nhìn vào", ≤ 90 giây, không nạp player trước khi bấm (V1–V7).
 
 ## 9. Nguồn chính (để tra khi cần, không cần đọc lại trước mỗi việc)
 
