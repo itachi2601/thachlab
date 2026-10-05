@@ -13,6 +13,7 @@ import { useToast } from "@/components/ui/Toast";
 import NextStepsCard from "@/components/learning/NextStepsCard";
 import { rankNextSteps } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
+import WeakestSkillsCard from "@/components/mastery/WeakestSkillsCard";
 import {
   fetchMyProgressMarks,
   summarizeLessonProgress,
@@ -510,6 +511,7 @@ export default function ThptStudentHome({
 
       {/* Mục 3 — Chủ đề cần phụ đạo */}
       <CatchupCard studentId={studentId} classId={classId} viewer="student" />
+      <WeakestSkillsCard />
 
       {openWindows
         .filter((w) => new Date(w.closesAt).getTime() > nowMs)

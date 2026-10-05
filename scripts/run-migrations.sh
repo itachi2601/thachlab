@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261005140000_weakest_topics.sql|Tạo RPC get_my_weakest_topics (thẻ 3 kỹ năng yếu nhất ở trang chủ HS)|Bất kỳ lúc nào (chỉ tạo hàm, không đụng dữ liệu)"
   "supabase/migrations/20261005100000_bank_grade_lop10.sql|Gắn grade=10 cho ~6.262 câu ngân hàng từ đề lớp 10 (grade đang rỗng)|Bất kỳ lúc nào (1 UPDATE ngắn, idempotent)"
 )
 # ĐÃ CHẠY 4/10/2026 22:58: 20261004120000_phu_dao_hang_cho, 20261004130000_phu_dao_xem_lai_ly_thuyet, 20261004230000_thpt_course_pairs

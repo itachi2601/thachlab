@@ -109,3 +109,37 @@ export async function fetchChapterMastery(chapterId: number): Promise<Map<number
   for (const row of (data ?? []) as ChapterMasteryRow[]) map.set(row.lesson_id, row.level);
   return map;
 }
+
+export interface WeakTopic {
+  topicId: number;
+  topicName: string;
+  lessonId: number;
+  lessonTitle: string;
+  pct: number;
+  level: MasteryLevel;
+}
+
+/**
+ * Tối đa `limit` YCCĐ yếu nhất của học sinh đang đăng nhập (chỉ Chưa đạt / Cần luyện thêm, đủ ≥4 lượt).
+ * 1 RPC gộp: supabase/migrations/20261005140000_weakest_topics.sql. Ném lỗi khi RPC chưa chạy —
+ * nơi gọi (WeakestSkillsCard) tự ẩn thẻ.
+ */
+export async function fetchMyWeakestTopics(limit = 3): Promise<WeakTopic[]> {
+  const { data, error } = await getSupabase().rpc("get_my_weakest_topics", { p_limit: limit });
+  if (error) throw error;
+  return ((data ?? []) as Array<{
+    topic_id: number;
+    topic_name: string;
+    lesson_id: number;
+    lesson_title: string;
+    pct: number;
+    level: MasteryLevel;
+  }>).map((r) => ({
+    topicId: r.topic_id,
+    topicName: r.topic_name,
+    lessonId: r.lesson_id,
+    lessonTitle: r.lesson_title,
+    pct: r.pct,
+    level: r.level,
+  }));
+}
