@@ -1,0 +1,152 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 14. Định luật 1 Newton",
+ "lesson_id": 59,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-1-newton/theory.html",
+ "id": "tn-l10-dl1-newton-01",
+ "ten": "Thí nghiệm Galilei: hòn bi trên hai máng nghiêng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton1.thi_nghiem_galilei",
+  "newton1.luc_khong_duy_tri_chuyen_dong"
+ ],
+ "muc_tieu": "Thấy máng (2) càng thoải bi càng lăn xa; suy ra không ma sát và máng nằm ngang thì bi lăn mãi với vận tốc không đổi.",
+ "dung_cu": [
+  {
+   "ten": "Hai máng nghiêng có thể chỉnh góc (máng nhôm chữ V)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Hòn bi thép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dài 2 m, chia 0,5 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo góc",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt máng (1) nghiêng 30°, đánh dấu điểm thả ở độ cao h0 = 20 cm.",
+   "Thả bi không vận tốc đầu; bi lăn xuống rồi lăn lên máng (2).",
+   "Lần lượt đặt máng (2) nghiêng 30°, 15°, 5°; mỗi lần đo quãng đường d trên máng (2) và độ cao h bi lên được."
+  ],
+  "quan_sat": [
+   "Bi luôn lên thấp hơn h0 một chút.",
+   "Máng (2) càng thoải, bi lăn càng xa (d tăng từ khoảng 37 cm lên 180 cm)."
+  ],
+  "rut_ra": [
+   "Bi thiếu độ cao vì ma sát.",
+   "Không ma sát và máng (2) nằm ngang thì bi lăn mãi với vận tốc không đổi: không cần lực để duy trì chuyển động."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h0",
+   "ten": "Độ cao thả bi",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.4,
+   "mac_dinh": 0.2,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "alpha1",
+   "ten": "Góc máng (1)",
+   "don_vi": "độ",
+   "kieu": "co_dinh",
+   "gia_tri": 30
+  },
+  {
+   "ky_hieu": "alpha2",
+   "ten": "Góc máng (2)",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 45,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số cản lăn hiệu dụng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.1,
+   "mac_dinh": 0.02,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Quãng đường trên máng (2)",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao bi lên được",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x1 = h0/tan(alpha1)",
+   "h0 - mu·x1 = d·(sin(alpha2) + mu·cos(alpha2))",
+   "h = d·sin(alpha2)",
+   "alpha2 = 0: d = (h0 - mu·x1)/mu; mu = 0: d → ∞"
+  ],
+  "gia_thiet": [
+   "lực cản lăn tỉ lệ áp lực (công cản = mu·m·g·quãng đường chiếu ngang)",
+   "bỏ qua va chạm ở chỗ nối hai máng",
+   "động năng quay của bi tỉ lệ với động năng tịnh tiến nên không ảnh hưởng độ cao lên được"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "alpha2 (độ)",
+   "d (cm)",
+   "h (cm)"
+  ],
+  "hang": [
+   [
+    30,
+    37.3,
+    18.7
+   ],
+   [
+    15,
+    69.4,
+    18.0
+   ],
+   [
+    5,
+    180.3,
+    15.7
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với h0 = 20 cm, alpha1 = 30°, mu = 0,02. Máng (2) nằm ngang: d ≈ 9.7 m."
+ },
+ "ket_qua_ky_vong": "d tăng mạnh khi máng (2) thoải dần; h luôn nhỏ hơn h0 và giảm nhẹ khi đường lăn dài hơn.",
+ "hien_tuong_hay_sai": [
+  "Tưởng bi dừng vì 'hết lực đẩy' chứ không phải vì ma sát.",
+  "Tưởng máng thoải thì bi lên được cao hơn.",
+  "Kết luận từ cột h dù chênh lệch gần bằng sai số thước."
+ ],
+ "sai_so_thuong_gap": "Hai hàng đầu của cột h chỉ chênh 0,7 cm, gần sai số thước ±0,5 cm; cần đo lặp nhiều lần. Chỗ nối hai máng gồ ghề làm bi mất thêm năng lượng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo thanh trượt góc máng (2) và hệ số ma sát; bi lăn và để lại vạch độ cao lớn nhất; bảng d, h tự điền.",
+  "diem_nhan": "Đặt mu = 0 rồi hạ máng (2) về 0°: bi chạy mãi, đồng hồ quãng đường không dừng."
+ }
+}

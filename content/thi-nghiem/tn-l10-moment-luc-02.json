@@ -1,0 +1,139 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "lesson_id": 66,
+ "nguon_trong_bai": "content/lesson-samples/l10-moment-luc/theory.html",
+ "id": "tn-l10-moment-luc-02",
+ "ten": "Quy tắc moment với thước có trục quay ở giữa",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "moment_luc.quy_tac_moment",
+  "moment_luc.canh_tay_don"
+ ],
+ "muc_tieu": "Đo lực kế F2 ở 4 vị trí d2 để thấy F2·d2 ≈ P1·d1 = 30 N·cm.",
+ "dung_cu": [
+  {
+   "ten": "Thước nhôm 70 cm có lỗ ở giữa làm trục, giá đỡ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng tổng 2,0 N kèm dây treo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 0–5 N (sai số ±0,02 N)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lắp thước quay quanh trục O ở đúng giữa, thước tự nằm ngang.",
+   "Treo quả nặng P1 = 2,0 N bên trái, cách trục d1 = 15 cm.",
+   "Móc lực kế bên phải ở d2, kéo thẳng đứng xuống cho thước nằm ngang, đọc F2.",
+   "Lặp lại với d2 = 10; 15; 20; 30 cm."
+  ],
+  "quan_sat": [
+   "F2 giảm khi d2 tăng: 3,10; 2,00; 1,52; 0,99 N.",
+   "F2·d2 = 31,0; 30,0; 30,4; 29,7 N·cm, trung bình ≈ 30,3 N·cm."
+  ],
+  "rut_ra": [
+   "F2·d2 ≈ P1·d1: tổng moment thuận kim bằng tổng moment ngược kim."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P1",
+   "ten": "Trọng lượng quả nặng",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 2.0
+  },
+  {
+   "ky_hieu": "d1",
+   "ten": "Cánh tay đòn của P1",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 15
+  },
+  {
+   "ky_hieu": "d2",
+   "ten": "Vị trí móc lực kế",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 35,
+   "mac_dinh": 20,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "F2",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F2 = P1·d1 / d2",
+   "F2·d2 = P1·d1 = 30 N·cm"
+  ],
+  "gia_thiet": [
+   "trục ở đúng giữa thước nên trọng lực thước có giá qua trục (M = 0)",
+   "lực kế kéo thẳng đứng",
+   "bỏ qua ma sát ở trục"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d2 (cm)",
+   "F2 (N)",
+   "F2·d2 (N·cm)",
+   "F2 mô hình (N)"
+  ],
+  "hang": [
+   [
+    10,
+    3.1,
+    31.0,
+    3.0
+   ],
+   [
+    15,
+    2.0,
+    30.0,
+    2.0
+   ],
+   [
+    20,
+    1.52,
+    30.4,
+    1.5
+   ],
+   [
+    30,
+    0.99,
+    29.7,
+    1.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: F2 lệch vài % quanh mô hình F2 = 30/d2 (lần d2 = 10 cm lệch nhiều nhất, +3,3 %). Bài chỉ hiện 3 cột đầu."
+ },
+ "ket_qua_ky_vong": "F2 tỉ lệ nghịch với d2; F2·d2 ≈ 30 N·cm ở mọi lần đo.",
+ "hien_tuong_hay_sai": [
+  "So lực hai bên (2,0 N với F2) thay vì so moment.",
+  "Kéo lực kế xiên mà vẫn lấy d2 làm cánh tay đòn."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc vị trí móc sai ±0,5 cm: 5 % ở d2 = 10 cm, chỉ 1,7 % ở 30 cm.",
+  "Lực kế kéo hơi xiên làm cánh tay đòn thật ngắn hơn d2, số chỉ lớn hơn.",
+  "Ma sát ở trục làm lệch vài phần trăm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Thanh trượt d2; thước nghiêng nếu F2 chưa đúng, nằm ngang khi F2·d2 = 30 N·cm; bảng tự thêm hàng.",
+  "diem_nhan": "Hỏi trước: móc lực kế xa gấp đôi thì số chỉ còn bao nhiêu?"
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 15. Định luật 2 Newton",
+ "lesson_id": 60,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-2-newton/theory.html",
+ "id": "tn-l10-dl2-newton-02",
+ "ten": "Gia tốc của xe theo khối lượng (lực kéo không đổi)",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton2.a_ti_le_nghich_m"
+ ],
+ "muc_tieu": "Giữ lực kéo 0,40 N, tăng khối lượng xe bằng gia trọng, thấy a tỉ lệ nghịch với m (m·a không đổi).",
+ "dung_cu": [
+  {
+   "ten": "Bộ thí nghiệm như tn-l10-dl2-newton-01",
+   "so_luong": 1
+  },
+  {
+   "ten": "Gia trọng 0,25 kg",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Giữ lực kéo F = 0,40 N: điều chỉnh quả treo để cảm biến luôn đọc 0,40 N.",
+   "Chất gia trọng để tổng khối lượng xe là 0,50; 0,75; 1,00; 1,50 kg.",
+   "Mỗi lần đo a như thí nghiệm 01."
+  ],
+  "quan_sat": [
+   "a ≈ 0,80; 0,53; 0,40; 0,27 m/s².",
+   "Tích m·a luôn xấp xỉ 0,40 N."
+  ],
+  "rut_ra": [
+   "Lực không đổi thì a tỉ lệ nghịch với m.",
+   "Khối lượng gấp đôi, gia tốc còn một nửa."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 0.4
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Tổng khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 1.5,
+   "mac_dinh": 0.5,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a = F / m"
+  ],
+  "gia_thiet": [
+   "máng đệm khí, ma sát gần như bằng 0",
+   "lực kéo giữ đúng 0,40 N nhờ đọc cảm biến"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "a (m/s²)",
+   "m·a (N)"
+  ],
+  "hang": [
+   [
+    0.5,
+    0.8,
+    0.4
+   ],
+   [
+    0.75,
+    0.53,
+    0.4
+   ],
+   [
+    1.0,
+    0.4,
+    0.4
+   ],
+   [
+    1.5,
+    0.27,
+    0.41
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình a = 0,40/m, làm tròn 0,01."
+ },
+ "ket_qua_ky_vong": "Đồ thị a theo 1/m là đường thẳng qua gốc; m·a = 0,40 N không đổi.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng cùng lực thì mọi vật có cùng gia tốc.",
+  "Cho rằng m gấp 3 thì a giảm 9 lần (bình phương nhầm)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Kéo thả gia trọng lên xe, xe chạy chậm dần đi; đồ thị a–m (hypebol) và a–1/m (thẳng).",
+  "diem_nhan": "Cho học sinh đoán a khi m gấp ba trước khi chạy."
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 14. Định luật 1 Newton",
+ "lesson_id": 59,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-1-newton/theory.html",
+ "id": "tn-l10-dl1-newton-02",
+ "ten": "Đồng xu, tấm bìa và chiếc cốc",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "newton1.quan_tinh",
+  "newton1.van_toc_khong_doi_tuc_thoi"
+ ],
+ "muc_tieu": "Thấy vật giữ nguyên vận tốc (ở đây bằng 0) khi lực tác dụng quá ngắn: biểu hiện của quán tính.",
+ "dung_cu": [
+  {
+   "ten": "Cốc thuỷ tinh",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm bìa cứng khoảng 10 cm × 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng xu",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt tấm bìa lên miệng cốc, đồng xu ở giữa bìa.",
+   "Búng thật nhanh vào mép bìa theo phương ngang.",
+   "Làm lại nhưng kéo bìa thật chậm."
+  ],
+  "quan_sat": [
+   "Búng nhanh: bìa bay ra, đồng xu rơi thẳng vào cốc.",
+   "Kéo chậm: đồng xu đi theo bìa."
+  ],
+  "rut_ra": [
+   "Ma sát của bìa lên xu tác dụng quá ngắn nên vận tốc ngang của xu gần như vẫn bằng 0: quán tính.",
+   "Kéo chậm thì ma sát nghỉ đủ thời gian kéo xu đi cùng bìa."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v_bia",
+   "ten": "Tốc độ bìa khi búng",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát trượt xu – bìa",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.3
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường bìa trượt dưới xu",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "tau",
+   "ten": "Thời gian ma sát tác dụng",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "dx",
+   "ten": "Độ dịch ngang của xu",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "tau = s/v_bia",
+   "a_xu = mu·g",
+   "v_xu = mu·g·tau",
+   "dx = mu·g·tau²/2",
+   "kéo chậm: nếu gia tốc bìa < mu·g thì ma sát nghỉ giữ xu đi cùng bìa"
+  ],
+  "gia_thiet": [
+   "bìa chuyển động đều khi trượt dưới xu",
+   "g = 9,8 m/s²",
+   "bỏ qua sức cản không khí"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v_bia (m/s)",
+   "tau (ms)",
+   "dx (mm)"
+  ],
+  "hang": [
+   [
+    2,
+    25.0,
+    0.919
+   ],
+   [
+    5,
+    10.0,
+    0.147
+   ],
+   [
+    10,
+    5.0,
+    0.037
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với mu = 0,3, s = 5 cm, g = 9,8 m/s²."
+ },
+ "ket_qua_ky_vong": "Búng càng nhanh, xu càng ít bị kéo lệch; ở vài m/s độ lệch dưới 1 mm, xu rơi thẳng vào cốc.",
+ "hien_tuong_hay_sai": [
+  "Tưởng xu bị bìa 'kéo theo' rồi văng ra.",
+  "Tưởng có 'lực quán tính' giữ xu lại."
+ ],
+ "sai_so_thuong_gap": "Búng chéo lên làm bìa nhấc xu; bìa mềm cong làm xu lệch.",
+ "an_toan": "Dùng cốc nhựa nếu cho học sinh tự làm.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Thanh trượt tốc độ bìa; xu và bìa chuyển động, đồ thị vận tốc xu theo thời gian.",
+  "diem_nhan": "Cho học sinh dự đoán ngưỡng tốc độ để xu còn rơi vào cốc."
+ }
+}

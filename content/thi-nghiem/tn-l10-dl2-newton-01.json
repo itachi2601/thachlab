@@ -1,0 +1,156 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 15. Định luật 2 Newton",
+ "lesson_id": 60,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-2-newton/theory.html",
+ "id": "tn-l10-dl2-newton-01",
+ "ten": "Gia tốc của xe theo lực kéo (khối lượng không đổi)",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "newton2.a_ti_le_f",
+  "newton2.do_gia_toc_cong_quang"
+ ],
+ "muc_tieu": "Đo gia tốc của xe 0,50 kg ứng với 4 lực kéo, thấy a tỉ lệ thuận với F và F/a ≈ khối lượng xe.",
+ "dung_cu": [
+  {
+   "ten": "Máng đệm khí (ma sát gần như bằng 0)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe 0,50 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ròng rọc, dây nhẹ, bộ quả nặng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cảm biến lực gắn ở đầu xe (sai số ±0,01 N)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai cổng quang + đồng hồ đo thời gian (±0,01 s)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt xe trên máng đệm khí, đầu xe tại cổng quang 1; cổng 2 cách cổng 1 một đoạn s = 0,50 m.",
+   "Treo quả nặng, đọc lực kéo F trên cảm biến.",
+   "Thả xe từ nghỉ, đọc thời gian t từ cổng 1 tới cổng 2, tính a = 2s/t².",
+   "Đổi quả nặng, lặp lại với F = 0,10; 0,20; 0,30; 0,40 N."
+  ],
+  "quan_sat": [
+   "t giảm khi F tăng: 2,29 s → 1,11 s.",
+   "a ≈ 0,19; 0,41; 0,58; 0,81 m/s²; F/a ≈ 0,53; 0,49; 0,52; 0,49 kg.",
+   "Các điểm (F, a) nằm sát một đường thẳng qua gốc toạ độ."
+  ],
+  "rut_ra": [
+   "Khối lượng không đổi thì a tỉ lệ thuận với F.",
+   "F/a ≈ 0,51 kg, sát khối lượng xe 0,50 kg: F = m·a."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "M",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Khoảng cách hai cổng quang",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.6,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian xe đi hết s",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a = F / M",
+   "t = √(2·s / a)",
+   "a_do = 2·s / t²"
+  ],
+  "gia_thiet": [
+   "máng đệm khí, ma sát gần như bằng 0",
+   "dây nhẹ, không giãn; bỏ qua khối lượng ròng rọc",
+   "F đo bằng cảm biến lực trên dây (không lấy bằng trọng lượng quả nặng)",
+   "xe thả từ nghỉ tại cổng 1"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F (N)",
+   "t (s)",
+   "a (m/s²)",
+   "F/a (kg)"
+  ],
+  "hang": [
+   [
+    0.1,
+    2.29,
+    0.19,
+    0.53
+   ],
+   [
+    0.2,
+    1.56,
+    0.41,
+    0.49
+   ],
+   [
+    0.3,
+    1.31,
+    0.58,
+    0.52
+   ],
+   [
+    0.4,
+    1.11,
+    0.81,
+    0.49
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: a đo lệch ngẫu nhiên vài % quanh mô hình a = F/0,50; t làm tròn 0,01 s và a tính lại từ t đã làm tròn. Bài chỉ hiện 3 cột đầu."
+ },
+ "ket_qua_ky_vong": "Đồ thị a theo F là đường thẳng qua gốc, hệ số góc 1/M = 2 kg⁻¹; F/a trung bình ≈ 0,51 kg.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng tăng lực thêm 0,40 N thì gia tốc cũng tăng thêm 0,40 m/s² (quên chia cho m).",
+  "Lần đo lực nhỏ nhất bị coi là tin cậy nhất, trong khi sai số tương đối của F lớn nhất ở đó (±0,01/0,10 = 10 %)."
+ ],
+ "sai_so_thuong_gap": [
+  "Ma sát nhỏ còn sót (đệm khí không đều) làm a đo nhỏ hơn, F/a lớn hơn M.",
+  "Sai số đo t ±0,01 s gây sai số a cỡ 1–2 %."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt F; xe chạy qua hai cổng quang, đồng hồ hiện t, bảng tự thêm hàng và chấm điểm lên đồ thị a–F.",
+  "diem_nhan": "Hỏi trước: tăng F gấp đôi thì t giảm bao nhiêu lần (√2, không phải 2)."
+ }
+}

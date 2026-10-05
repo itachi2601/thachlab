@@ -1,0 +1,115 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 17. Trọng lực và lực căng",
+ "lesson_id": 62,
+ "nguon_trong_bai": "content/lesson-samples/l10-trong-luc-luc-cang/theory.html",
+ "id": "tn-l10-trong-luc-luc-cang-03",
+ "ten": "Lực kế kéo dây vắt qua ròng rọc cố định theo nhiều hướng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "lucang.rong_roc_doi_huong",
+  "lucang.day_nhe_cung_t"
+ ],
+ "muc_tieu": "Thấy ròng rọc cố định nhẹ chỉ đổi hướng dây, lực căng hai bên bằng nhau.",
+ "dung_cu": [
+  {
+   "ten": "Ròng rọc cố định nhẹ, quay trơn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây mảnh không dãn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng 1,0 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 0–2,5 N",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo quả nặng 1,0 N vào một đầu dây vắt qua ròng rọc, đầu kia móc lực kế.",
+   "Giữ quả nặng đứng yên, kéo lực kế theo phương thẳng đứng, chếch 45°, rồi nằm ngang."
+  ],
+  "quan_sat": [
+   "Cả ba lần lực kế đều chỉ khoảng 1,0 N."
+  ],
+  "rut_ra": [
+   "Ròng rọc đổi hướng dây nhưng không đổi độ lớn lực căng.",
+   "Vật đứng yên nên T = P."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "beta",
+   "ten": "Góc của dây phía lực kế so với phương thẳng đứng",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 90,
+   "mac_dinh": 45,
+   "buoc": 15
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng quả nặng",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = P (vật đứng yên, ròng rọc nhẹ, không ma sát)",
+   "T không phụ thuộc beta"
+  ],
+  "gia_thiet": [
+   "dây nhẹ, không dãn",
+   "ròng rọc nhẹ, bỏ qua ma sát trục"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "beta (độ)",
+   "T (N)"
+  ],
+  "hang": [
+   [
+    0,
+    1.0
+   ],
+   [
+    45,
+    1.0
+   ],
+   [
+    90,
+    1.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; đo thật có thể lệch 0,05 N do ma sát trục ròng rọc."
+ },
+ "ket_qua_ky_vong": "Số chỉ lực kế bằng P = 1,0 N ở mọi hướng kéo.",
+ "hien_tuong_hay_sai": [
+  "Tưởng kéo chếch thì lực kế chỉ ít hơn (nhầm với phân tích lực).",
+  "Tưởng ròng rọc cố định làm lợi về lực."
+ ],
+ "sai_so_thuong_gap": "Ma sát trục ròng rọc làm số chỉ lệch tuỳ chiều kéo đang tăng hay giảm.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "y_tuong": "Xoay hướng dây phía lực kế quanh ròng rọc; hai mũi tên T hai bên luôn dài bằng nhau.",
+  "diem_nhan": "Hỏi dự đoán trước: kéo ngang thì lực kế chỉ lớn hơn, nhỏ hơn hay bằng?"
+ }
+}

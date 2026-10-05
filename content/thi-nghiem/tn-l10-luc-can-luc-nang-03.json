@@ -1,0 +1,136 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 19. Lực cản và lực nâng",
+ "lesson_id": 64,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-can-luc-nang/theory.html",
+ "id": "tn-l10-luc-can-luc-nang-03",
+ "ten": "Lực đẩy Archimedes đo bằng lực kế và bình tràn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "archimedes.bang_trong_luong_chat_long_chiem_cho",
+  "archimedes.khong_phu_thuoc_do_sau"
+ ],
+ "muc_tieu": "Thấy lực đẩy bằng trọng lượng nước bị chiếm chỗ, tăng theo phần chìm và không đổi theo độ sâu khi đã chìm hẳn.",
+ "dung_cu": [
+  {
+   "ten": "Lực kế 5 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khối nhôm 100 cm³",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bình tràn + cốc hứng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo khối nhôm vào lực kế, đọc số chỉ ngoài không khí.",
+   "Nhúng một nửa rồi chìm hẳn vào bình tràn đầy nước, đọc số chỉ.",
+   "Hạ sâu thêm (chưa chạm đáy), đọc lại.",
+   "Đo thể tích, trọng lượng nước tràn ra khi chìm hẳn."
+  ],
+  "quan_sat": [
+   "(g = 9,8 m/s²) Ngoài không khí 2,65 N; chìm một nửa 2,16 N; chìm hẳn 1,67 N; sâu hơn vẫn 1,67 N.",
+   "Nước tràn 100 cm³, nặng 0,98 N."
+  ],
+  "rut_ra": [
+   "F_A = 2,65 − 1,67 = 0,98 N = trọng lượng nước tràn.",
+   "F_A tăng theo phần chìm, không đổi theo độ sâu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "V",
+   "ten": "Thể tích khối",
+   "don_vi": "m³",
+   "kieu": "co_dinh",
+   "gia_tri": 0.0001
+  },
+  {
+   "ky_hieu": "ρ_v",
+   "ten": "Khối lượng riêng nhôm",
+   "don_vi": "kg/m³",
+   "kieu": "co_dinh",
+   "gia_tri": 2700
+  },
+  {
+   "ky_hieu": "ρ",
+   "ten": "Khối lượng riêng chất lỏng",
+   "don_vi": "kg/m³",
+   "kieu": "dieu_chinh",
+   "min": 700,
+   "max": 1300,
+   "mac_dinh": 1000,
+   "buoc": 50
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Phần thể tích chìm",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = ρ_v·V·g",
+   "F_A = ρ·g·f·V",
+   "T = P − F_A"
+  ],
+  "gia_thiet": [
+   "g = 9,8 m/s²",
+   "vật đứng yên khi đọc lực kế",
+   "bỏ qua lực đẩy của không khí"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "phần chìm f",
+   "T (N)",
+   "F_A (N)"
+  ],
+  "hang": [
+   [
+    0,
+    2.65,
+    0
+   ],
+   [
+    0.5,
+    2.16,
+    0.49
+   ],
+   [
+    1,
+    1.67,
+    0.98
+   ]
+  ],
+  "ghi_chu": "Tính đúng từ mô hình, làm tròn 0,01 N (P = 2,646 N)."
+ },
+ "ket_qua_ky_vong": "F_A = ρgV_chìm; ở mọi độ sâu khi chìm hẳn, T không đổi.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng càng sâu lực đẩy càng lớn.",
+  "Dùng thể tích cả vật khi vật chỉ chìm một phần."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc+bang_so_lieu",
+  "y_tuong": "Kéo vật xuống nước bằng chuột, lực kế và cốc tràn cập nhật theo phần chìm và độ sâu.",
+  "diem_nhan": "Hỏi trước: hạ sâu gấp 3 thì lực kế đổi thế nào."
+ }
+}

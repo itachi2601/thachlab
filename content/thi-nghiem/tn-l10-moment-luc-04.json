@@ -1,0 +1,126 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "lesson_id": 66,
+ "nguon_trong_bai": "content/lesson-samples/l10-moment-luc/theory.html",
+ "id": "tn-l10-moment-luc-04",
+ "ten": "Thanh thép đồng chất cân bằng trên giá đỡ nhọn",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "moment_luc.quy_tac_moment",
+  "can_bang_vat_ran.hai_dieu_kien"
+ ],
+ "muc_tieu": "Dùng quy tắc moment (trục qua giá đỡ) tìm vật treo, rồi tổng lực bằng 0 tìm lực giá đỡ.",
+ "dung_cu": [
+  {
+   "ten": "Thanh thép đồng chất 1,2 m, 40 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ nhọn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hộp dụng cụ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kê thanh trên giá đỡ O cách đầu A 0,4 m.",
+   "Treo hộp ở A cho thanh nằm ngang."
+  ],
+  "quan_sat": [
+   "Thanh cân bằng khi hộp nặng 20 N; giá đỡ đẩy lên 60 N."
+  ],
+  "rut_ra": [
+   "P1·OA = P·OG; N = P1 + P.",
+   "Lấy moment quanh điểm khác (A) vẫn cân bằng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài thanh",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.2
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng thanh",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 40
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Khoảng cách OA",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.6,
+   "mac_dinh": 0.4,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "P1",
+   "ten": "Trọng lượng hộp ở A",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Lực giá đỡ",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P1 = P·(L/2 − x)/x",
+   "N = P1 + P"
+  ],
+  "gia_thiet": [
+   "thanh đồng chất, trọng tâm ở giữa",
+   "các lực thẳng đứng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "x (m)",
+   "P1 (N)",
+   "N (N)"
+  ],
+  "hang": [
+   [
+    0.4,
+    20.0,
+    60.0
+   ],
+   [
+    0.3,
+    40.0,
+    80.0
+   ],
+   [
+    0.24,
+    60.0,
+    100.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình (bài toán mẫu, bước điền trống, thử sức đổi chiều)."
+ },
+ "ket_qua_ky_vong": "x = 0,4 m: P1 = 20 N, N = 60 N.",
+ "hien_tuong_hay_sai": [
+  "Quên trọng lượng của chính thanh.",
+  "Chỉ dùng quy tắc moment mà quên tổng lực bằng 0 khi tìm N."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Kéo giá đỡ dọc thanh, hiện P1 cần treo và N; thanh nghiêng nếu lệch.",
+  "diem_nhan": "Hỏi trước: dời giá đỡ về phía A thì hộp cần nặng hơn hay nhẹ hơn?"
+ }
+}

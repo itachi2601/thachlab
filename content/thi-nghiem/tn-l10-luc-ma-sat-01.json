@@ -1,0 +1,157 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 18. Lực ma sát",
+ "lesson_id": 63,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-ma-sat/theory.html",
+ "id": "tn-l10-luc-ma-sat-01",
+ "ten": "Đo ma sát nghỉ cực đại và ma sát trượt bằng lực kế",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "masat.ma_sat_nghi_cuc_dai",
+  "masat.ma_sat_truot_ti_le_n",
+  "masat.he_so_ma_sat"
+ ],
+ "muc_tieu": "Kéo hộp gỗ trên bàn gỗ với 4 khối lượng khác nhau, đọc lực kế lúc hộp vừa bật đi và lúc trượt đều; thấy ma sát trượt tỉ lệ với áp lực (μ ≈ 0,30) và nhỏ hơn ma sát nghỉ cực đại.",
+ "dung_cu": [
+  {
+   "ten": "Hộp gỗ 0,20 kg có móc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Gia trọng 0,20 kg",
+   "so_luong": 3
+  },
+  {
+   "ten": "Lực kế 5 N, chia độ 0,1 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn gỗ phẳng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hộp gỗ 0,20 kg trên mặt bàn gỗ, móc lực kế, giữ lực kế nằm ngang.",
+   "Kéo tăng dần, ghi số chỉ lúc hộp vừa bật đi (ma sát nghỉ cực đại).",
+   "Kéo cho hộp trượt đều, ghi số chỉ (ma sát trượt).",
+   "Thêm gia trọng cho tổng khối lượng 0,40; 0,60; 0,80 kg, lặp lại: tổng 4 lần đo. Áp lực N = mg, g = 9,8 m/s²."
+  ],
+  "quan_sat": [
+   "Số chỉ tăng dần rồi tụt xuống khi hộp bắt đầu trượt.",
+   "Nghỉ cực đại: 0,7; 1,5; 2,1; 2,9 N. Trượt: 0,6; 1,2; 1,7; 2,4 N.",
+   "F_trượt/N ≈ 0,31; 0,31; 0,29; 0,31."
+  ],
+  "rut_ra": [
+   "Ma sát trượt tỉ lệ với áp lực: μ ≈ 0,30.",
+   "Ma sát nghỉ cực đại luôn lớn hơn ma sát trượt (tỉ số ≈ 0,36–0,38)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Tổng khối lượng hộp",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.4,
+   "buoc": 0.2
+  },
+  {
+   "ky_hieu": "μ",
+   "ten": "Hệ số ma sát trượt gỗ–gỗ",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.3
+  },
+  {
+   "ky_hieu": "μn",
+   "ten": "Hệ số ma sát nghỉ gỗ–gỗ",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.36
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "F_nghi_max",
+   "ten": "Số chỉ lúc hộp vừa bật đi",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "F_truot",
+   "ten": "Số chỉ lúc trượt đều",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "N = m·g",
+   "F_truot = μ·N",
+   "F_nghi_max = μn·N",
+   "đứng yên: F_ms = F_keo (khi F_keo ≤ F_nghi_max)"
+  ],
+  "gia_thiet": [
+   "lực kế nằm ngang, kéo đều khi đo ma sát trượt",
+   "mặt bàn đồng chất",
+   "μ không phụ thuộc tốc độ và diện tích tiếp xúc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "N (N)",
+   "F nghỉ max (N)",
+   "F trượt (N)"
+  ],
+  "hang": [
+   [
+    1.96,
+    0.7,
+    0.6
+   ],
+   [
+    3.92,
+    1.5,
+    1.2
+   ],
+   [
+    5.88,
+    2.1,
+    1.7
+   ],
+   [
+    7.84,
+    2.9,
+    2.4
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: mô hình μ = 0,30, μn = 0,36 cho F trượt 0,59; 1,18; 1,76; 2,35 N và nghỉ max 0,71; 1,41; 2,12; 2,82 N; số trong bảng là số đọc lực kế làm tròn 0,1 N kèm lệch ngẫu nhiên vài %."
+ },
+ "ket_qua_ky_vong": "F trượt tỉ lệ với N, μ trung bình ≈ 0,30; nghỉ max lớn hơn trượt ở mọi lần đo; lần đo nhẹ nhất có sai số tương đối lớn nhất (±0,05/0,6 ≈ 8 %).",
+ "hien_tuong_hay_sai": [
+  "Cho rằng khi hộp còn đứng yên thì không có ma sát.",
+  "Cho rằng ma sát nghỉ luôn bằng μN.",
+  "Coi lần đo lực nhỏ nhất là chính xác nhất."
+ ],
+ "sai_so_thuong_gap": [
+  "Lực kế đọc sai ±0,05 N (nửa vạch chia).",
+  "Kéo không đều hoặc dây lực kế hơi chếch làm số chỉ dao động."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt lực kéo tăng dần; hộp đứng yên tới khi F vượt μn·N rồi bật đi; đồ thị F_ms theo F_kéo vẽ đoạn chéo rồi tụt xuống đoạn ngang.",
+  "diem_nhan": "Hỏi trước: lúc kéo 0,3 N mà hộp chưa đi thì ma sát bằng bao nhiêu?"
+ }
+}

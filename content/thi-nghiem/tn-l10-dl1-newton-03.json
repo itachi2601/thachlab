@@ -1,0 +1,128 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 14. Định luật 1 Newton",
+ "lesson_id": 59,
+ "nguon_trong_bai": "content/lesson-samples/l10-dinh-luat-1-newton/theory.html",
+ "id": "tn-l10-dl1-newton-03",
+ "ten": "Ô tô, xe tải chạy thẳng đều: lực kéo cân bằng lực cản",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "newton1.trang_thai_can_bang",
+  "newton1.hop_luc_bang_khong"
+ ],
+ "muc_tieu": "Dùng điều kiện hợp lực bằng 0 của chuyển động thẳng đều để tìm lực kéo và lực đỡ.",
+ "dung_cu": [
+  {
+   "ten": "Không cần (ví dụ đời sống, bài toán mẫu)",
+   "so_luong": 0
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xe tải khối lượng m chạy thẳng đều trên đường ngang, lực cản bằng k lần trọng lượng."
+  ],
+  "quan_sat": [
+   "Vận tốc không đổi cả độ lớn lẫn hướng."
+  ],
+  "rut_ra": [
+   "Hợp lực bằng 0: Fk = Fc = k·m·g, N = P = m·g.",
+   "Tốc độ không ảnh hưởng tới lực kéo khi lực cản cho cố định."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 1000,
+   "max": 20000,
+   "mac_dinh": 5000,
+   "buoc": 500
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Tỉ số lực cản / trọng lượng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.01,
+   "max": 0.1,
+   "mac_dinh": 0.04,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "Fk",
+   "ten": "Lực kéo động cơ",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Lực đỡ của mặt đường",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = m·g",
+   "Fc = k·P",
+   "Fk - Fc = 0",
+   "N - P = 0"
+  ],
+  "gia_thiet": [
+   "đường nằm ngang, xe chuyển động thẳng đều",
+   "lực cản không phụ thuộc tốc độ (theo đề)",
+   "g = 10 m/s² như đề bài"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "k",
+   "Fk (N)",
+   "N (N)"
+  ],
+  "hang": [
+   [
+    5000,
+    0.04,
+    2000,
+    50000
+   ],
+   [
+    8000,
+    0.05,
+    4000,
+    80000
+   ],
+   [
+    6000,
+    0.05,
+    3000,
+    60000
+   ]
+  ],
+  "ghi_chu": "Ba hàng ứng với bài toán mẫu, bước điền và biến thể đổi vai trong bài."
+ },
+ "ket_qua_ky_vong": "Fk = k·m·g; xe 5 tấn, k = 0,04 cần 2000 N.",
+ "hien_tuong_hay_sai": [
+  "Tưởng xe chạy về trước thì hợp lực hướng về trước.",
+  "Dùng tốc độ 54 km/h vào tính lực kéo.",
+  "Nhầm lực kéo với hợp lực."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+2d_dong_hoc",
+  "y_tuong": "Xe chạy trên đường, bốn mũi tên lực; thanh trượt lực kéo: bằng lực cản thì xe đều, lớn hơn thì nhanh dần, bằng 0 thì chậm dần.",
+  "diem_nhan": "Bấm 'tắt máy': xe vẫn lăn tiếp một đoạn nhờ quán tính."
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 19. Lực cản và lực nâng",
+ "lesson_id": 64,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-can-luc-nang/theory.html",
+ "id": "tn-l10-luc-can-luc-nang-04",
+ "ten": "Người nhảy dù: ba giai đoạn rơi và tốc độ giới hạn",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "luc_can.ba_giai_doan_roi",
+  "luc_can.toc_do_gioi_han"
+ ],
+ "muc_tieu": "Mô tả đồ thị v–t của người rơi trong không khí: gần nhanh dần đều, nhanh dần chậm lại, rơi đều.",
+ "dung_cu": [
+  {
+   "ten": "Không cần (phân tích tình huống / mô phỏng)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Người nhảy khỏi máy bay, nằm sấp, chưa mở dù; sau đó mở dù."
+  ],
+  "quan_sat": [
+   "Sau khoảng 12 s tốc độ đạt cỡ 50 m/s (số liệu minh hoạ).",
+   "Mở dù: chậm dần rồi rơi đều khoảng 5 m/s."
+  ],
+  "rut_ra": [
+   "Tốc độ giới hạn đạt khi lực cản bằng trọng lượng; hình dạng khác cho tốc độ giới hạn khác."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng người + dù",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 50,
+   "max": 120,
+   "mac_dinh": 80,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "v_gh",
+   "ten": "Tốc độ giới hạn",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 4,
+   "max": 60,
+   "mac_dinh": 50,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m·dv/dt = m·g − k·v²",
+   "v(t) = v_gh·tanh(g·t / v_gh)",
+   "k = m·g / v_gh²"
+  ],
+  "gia_thiet": [
+   "lực cản tỉ lệ v²",
+   "giả định v_gh = 50 m/s khi chưa mở dù, khoảng 5 m/s khi đã mở dù",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "v (m/s)",
+   "v/v_gh"
+  ],
+  "hang": [
+   [
+    1,
+    9.7,
+    0.194
+   ],
+   [
+    2,
+    18.7,
+    0.373
+   ],
+   [
+    5,
+    37.7,
+    0.753
+   ],
+   [
+    10,
+    48.1,
+    0.961
+   ],
+   [
+    12,
+    49.1,
+    0.982
+   ],
+   [
+    16,
+    49.8,
+    0.996
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với v_gh = 50 m/s (giả định); dùng vẽ hình 3 của bài."
+ },
+ "ket_qua_ky_vong": "Đồ thị bám v = gt lúc đầu, cong dần, nằm ngang sau khoảng 12 s.",
+ "hien_tuong_hay_sai": [
+  "Rơi đều nghĩa là không còn lực nào.",
+  "Lực cản lớn hơn trọng lượng nên vật thôi nhanh thêm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+so_do_luc",
+  "y_tuong": "Nút 'mở dù'; đồ thị v–t vẽ dần, mũi tên F_c lớn dần đến bằng P.",
+  "diem_nhan": "Lúc vừa mở dù F_c > P: người chậm dần dù vẫn đi xuống."
+ }
+}

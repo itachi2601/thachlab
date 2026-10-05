@@ -1,0 +1,133 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 18. Lực ma sát",
+ "lesson_id": 63,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-ma-sat/theory.html",
+ "id": "tn-l10-luc-ma-sat-03",
+ "ten": "Tìm hệ số ma sát bằng góc nghiêng của tấm ván",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "masat.mat_phang_nghieng",
+  "masat.ap_luc_mat_nghieng",
+  "masat.he_so_ma_sat"
+ ],
+ "muc_tieu": "Nâng dần một đầu tấm ván dài 1,00 m, tìm độ cao lúc hộp gỗ bắt đầu trượt và lúc trượt đều; suy ra μn = tan α0 ≈ 0,36 và μ ≈ 0,30.",
+ "dung_cu": [
+  {
+   "ten": "Tấm ván gỗ dài 1,00 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hộp gỗ (cùng hộp của thí nghiệm 01)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ cao",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hộp gỗ trên tấm ván dài L = 1,00 m, nâng dần một đầu.",
+   "Đo độ cao h lúc hộp bắt đầu trượt.",
+   "Hạ ván, búng nhẹ hộp, tìm h để hộp trượt đều."
+  ],
+  "quan_sat": [
+   "Hộp bắt đầu trượt khi h ≈ 0,34 m (α ≈ 20°).",
+   "Hộp trượt đều khi h ≈ 0,29 m (α ≈ 17°)."
+  ],
+  "rut_ra": [
+   "Lúc sắp trượt: mg·sinα = μn·mg·cosα ⇒ μn = tanα ≈ 0,36.",
+   "Trượt đều: μ = tanα ≈ 0,30, khớp số đo bằng lực kế."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài ván",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao đầu ván",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.6,
+   "mac_dinh": 0.2,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "μn",
+   "ten": "Hệ số ma sát nghỉ",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.36
+  },
+  {
+   "ky_hieu": "μ",
+   "ten": "Hệ số ma sát trượt",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.3
+  },
+  {
+   "ky_hieu": "α",
+   "ten": "Góc nghiêng",
+   "don_vi": "°",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sinα = h/L",
+   "N = m·g·cosα",
+   "P_x = m·g·sinα",
+   "bắt đầu trượt khi tanα > μn",
+   "trượt đều khi tanα = μ",
+   "a = g·(sinα − μ·cosα) khi đang trượt"
+  ],
+  "gia_thiet": [
+   "ván phẳng, đồng chất",
+   "nâng chậm (hộp đứng yên tới lúc trượt)",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Trạng thái",
+   "h (m)",
+   "α (°)",
+   "tanα"
+  ],
+  "hang": [
+   [
+    "bắt đầu trượt",
+    0.34,
+    19.9,
+    0.36
+   ],
+   [
+    "trượt đều",
+    0.29,
+    16.9,
+    0.3
+   ]
+  ],
+  "ghi_chu": "tanα = h/√(L² − h²): 0,34/0,940 = 0,362; 0,29/0,957 = 0,303."
+ },
+ "ket_qua_ky_vong": "μn ≈ 0,36 và μ ≈ 0,30, trùng giá trị đo bằng lực kế ở thí nghiệm 01.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vật nặng hơn sẽ trượt ở góc nhỏ hơn (thực ra góc không phụ thuộc m).",
+  "Nghĩ áp lực trên mặt nghiêng vẫn bằng mg."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Thanh trượt h; sơ đồ lực P, Px, Py, N, Fms đổi theo góc; hộp tự trượt khi tanα vượt μn.",
+  "diem_nhan": "Hỏi trước: thêm gia trọng lên hộp thì góc bắt đầu trượt lớn hơn hay nhỏ hơn?"
+ }
+}

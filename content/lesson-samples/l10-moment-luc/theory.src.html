@@ -1,0 +1,417 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Hiểu <strong>moment lực</strong> $M = F\cdot d$ và tìm đúng <strong>cánh tay đòn</strong> $d$.</li>
+<li>Dùng <strong>quy tắc moment</strong> cho vật có trục quay cố định.</li>
+<li>Nêu <strong>hai điều kiện cân bằng</strong> của vật rắn.</li>
+<li>Nhận ra <strong>ngẫu lực</strong> và tính moment của nó.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: siết đai ốc trong xưởng</h3>
+
+<p>Minh cầm cờ lê <strong>sát đai ốc</strong>, cách tâm $8$ cm, ấn mạnh $300$ N. Đai ốc không nhúc nhích. Anh Tuấn cầm ở <strong>cuối cán</strong>, cách tâm $30$ cm, chỉ ấn $150$ N. Đai ốc siết thêm được một nấc.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Anh Tuấn dùng lực nhỏ bằng một nửa mà vẫn làm đai ốc quay. Điều gì quyết định <strong>tác dụng làm quay</strong> của lực?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q1" id="tl66-q1a"><label for="tl66-q1a" class="tl-opt tl-no">A. Chỉ độ lớn của lực</label>
+<input type="radio" name="tl66-q1" id="tl66-q1b"><label for="tl66-q1b" class="tl-opt tl-ok">B. Độ lớn của lực và khoảng cách từ trục quay tới giá của lực</label>
+<input type="radio" name="tl66-q1" id="tl66-q1c"><label for="tl66-q1c" class="tl-opt tl-no">C. Khối lượng của cờ lê</label>
+<input type="radio" name="tl66-q1" id="tl66-q1d"><label for="tl66-q1d" class="tl-opt tl-no">D. Tay ấn nhanh hay chậm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Lực của Minh lớn gấp đôi nhưng đặt gần trục; lực của anh Tuấn nhỏ nhưng đặt xa trục. Tích "lực × khoảng cách" mới quyết định. Cả bài này đặt tên cho tích ấy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A thì Minh phải thắng, vì $300$ N lớn hơn $150$ N. Chọn C: cùng một cờ lê cho cả hai người. Chọn D: ấn nhanh hay chậm không đổi được việc đai ốc có quay hay không. Hãy nhìn <em>chỗ</em> mỗi người đặt tay.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: moment lực và cân bằng</h3>
+
+<h4>1. Moment lực</h4>
+
+<p><strong>🔑 Tác dụng làm quay · lực nhân cánh tay đòn</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Moment lực</p>
+<ul>
+<li>Đặc trưng cho <strong>tác dụng làm quay</strong> của lực quanh một trục.</li>
+<li>Bằng lực nhân <strong>cánh tay đòn</strong>.</li>
+</ul>
+$$M = F\cdot d$$
+<p>$F$: độ lớn lực (N) · $d$: cánh tay đòn (m) · $M$: moment lực ($\text{N}\cdot\text{m}$).</p>
+<p><strong>Cánh tay đòn $d$</strong> = khoảng cách từ trục quay tới <strong>giá của lực</strong> (đường thẳng chứa lực), đo vuông góc.</p>
+</div>
+
+<ul>
+<li>Ví dụ mở bài: Minh $M = 300 \cdot 0{,}08 = 24\ \text{N}\cdot\text{m}$; anh Tuấn $M = 150 \cdot 0{,}30 = 45\ \text{N}\cdot\text{m}$. Giả định đai ốc cần khoảng $40\ \text{N}\cdot\text{m}$ mới xoay: chỉ anh Tuấn đủ.</li>
+<li>Giá của lực <strong>đi qua trục</strong> thì $d = 0$, $M = 0$: lực không làm quay.</li>
+</ul>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-moment-luc-01">
+<p class="tl-label">🔬 Thí nghiệm: mở cửa lớp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dùng một ngón tay đẩy cánh cửa, vuông góc mặt cửa, lần lượt ở mép ngoài, ở giữa, sát bản lề. Lần cuối đẩy ở mép ngoài nhưng hướng thẳng vào bản lề.</li>
+<li><strong>Quan sát:</strong> mép ngoài mở nhẹ nhất; sát bản lề rất nặng; đẩy hướng vào bản lề thì cửa không quay dù đẩy mạnh.</li>
+<li><strong>Rút ra:</strong> tác dụng làm quay tăng theo cánh tay đòn; giá lực qua trục thì $M = 0$.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Đai ốc cần moment $36\ \text{N}\cdot\text{m}$. Cầm cờ lê cách tâm $30$ cm, ấn vuông góc cán. Lực cần dùng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q2" id="tl66-q2a"><label for="tl66-q2a" class="tl-opt tl-no">A. $10{,}8$ N</label>
+<input type="radio" name="tl66-q2" id="tl66-q2b"><label for="tl66-q2b" class="tl-opt tl-no">B. $1{,}2$ N</label>
+<input type="radio" name="tl66-q2" id="tl66-q2c"><label for="tl66-q2c" class="tl-opt tl-no">C. $0{,}0083$ N</label>
+<input type="radio" name="tl66-q2" id="tl66-q2d"><label for="tl66-q2d" class="tl-opt tl-ok">D. $120$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = M/d = 36/0{,}30 = 120$ N. Cầm xa gấp đôi thì lực chỉ cần một nửa.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $10{,}8$ N là nhân $36 \cdot 0{,}30$ thay vì chia; $1{,}2$ N là để nguyên $30$ cm mà chia; $0{,}0083$ N là chia ngược $d/M$. Đổi $d = 0{,}30$ m rồi dùng $F = M/d$.</p></div>
+</div>
+</div>
+
+<h4>2. Quy tắc moment</h4>
+
+<p><strong>🔑 Moment thuận kim = moment ngược kim</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Quy tắc moment lực</p>
+<ul>
+<li>Áp dụng cho vật có <strong>trục quay cố định</strong>.</li>
+<li>Vật cân bằng khi tổng moment làm quay <strong>thuận chiều kim đồng hồ</strong> bằng tổng moment làm quay <strong>ngược chiều</strong>.</li>
+</ul>
+$$M_1 + M_2 + \dots = M_1' + M_2' + \dots$$
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-moment-luc-02">
+<p class="tl-label">🔬 Thí nghiệm: thước có trục quay ở giữa</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thước quay quanh trục $O$ ở đúng giữa. Bên trái treo quả nặng $P_1 = 2{,}0$ N cách trục $d_1 = 15$ cm. Bên phải móc lực kế, kéo thẳng đứng xuống cho thước nằm ngang. Đo lực $F_2$ ở 4 vị trí $d_2 = 10$; $15$; $20$; $30$ cm.</li>
+<li><strong>Quan sát:</strong> móc lực kế càng xa trục, số chỉ càng nhỏ.</li>
+<li><strong>Rút ra:</strong> $F_2 \cdot d_2$ luôn xấp xỉ $P_1 \cdot d_1 = 30\ \text{N}\cdot\text{cm}$: moment hai bên bằng nhau.</li>
+</ol>
+</div>
+
+<!--FIG3-->
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$d_2$ (cm)</th><th>$F_2$ (N)</th><th>$F_2 d_2$ (N·cm)</th></tr>
+</thead>
+<tbody>
+<tr><td>10</td><td>3,10</td><td>31,0</td></tr>
+<tr><td>15</td><td>2,00</td><td>30,0</td></tr>
+<tr><td>20</td><td>1,52</td><td>30,4</td></tr>
+<tr><td>30</td><td>0,99</td><td>29,7</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>So cột cuối với $P_1 d_1 = 30$ N·cm. Lần đo nào lệch nhiều nhất, vì sao?</p>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem nhận xét</summary>
+<p>Cột cuối nằm trong $29{,}7$–$31{,}0$ N·cm, trung bình $\approx 30{,}3$ N·cm, sát $30$ N·cm: quy tắc moment đúng.</p>
+<p>Lần $d_2 = 10$ cm lệch nhiều nhất, tới $+3{,}3\,\%$. Đọc vị trí móc sai $0{,}5$ cm đã là $5\,\%$ của $10$ cm. Lực kế kéo hơi xiên thì cánh tay đòn thật ngắn hơn $d_2$, nên số chỉ lực lớn hơn. Ma sát ở trục cũng làm lệch vài phần trăm.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Bập bênh có trục ở giữa, bỏ qua khối lượng ván. Minh $30$ kg ngồi cách trục $1{,}5$ m. Lan $45$ kg phải ngồi bên kia, cách trục bao xa để bập bênh cân bằng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q3" id="tl66-q3a"><label for="tl66-q3a" class="tl-opt tl-ok">A. $1{,}0$ m</label>
+<input type="radio" name="tl66-q3" id="tl66-q3b"><label for="tl66-q3b" class="tl-opt tl-no">B. $2{,}25$ m</label>
+<input type="radio" name="tl66-q3" id="tl66-q3c"><label for="tl66-q3c" class="tl-opt tl-no">C. $1{,}5$ m</label>
+<input type="radio" name="tl66-q3" id="tl66-q3d"><label for="tl66-q3d" class="tl-opt tl-no">D. $0{,}67$ m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $30g \cdot 1{,}5 = 45g \cdot x$ nên $x = 1{,}0$ m; $g$ ở hai vế triệt tiêu. Người nặng ngồi gần trục hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $2{,}25$ m là làm ngược tỉ lệ, cho người nặng ngồi xa hơn; $1{,}5$ m là so lực chứ không so moment; $0{,}67$ m là lấy $30/45$ mà quên nhân $1{,}5$. Viết $P_1 d_1 = P_2 d_2$ rồi giải.</p></div>
+</div>
+</div>
+
+<h4>3. Điều kiện cân bằng tổng quát của vật rắn</h4>
+
+<p><strong>🔑 Tổng lực bằng 0 · tổng moment bằng 0</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Vật rắn cân bằng khi đủ cả hai</p>
+<ul>
+<li><strong>Tổng các lực</strong> tác dụng lên vật bằng $\vec 0$: vật không tịnh tiến.</li>
+<li><strong>Tổng các moment lực</strong> đối với <strong>một điểm bất kì</strong> bằng 0 (chọn một chiều quay làm chiều dương): vật không quay.</li>
+</ul>
+</div>
+
+<ul>
+<li>Mẹo chọn trục: đặt trục ở chỗ có <strong>lực chưa biết</strong>. Lực đó có $d = 0$, biến mất khỏi phương trình moment.</li>
+<li>Ví dụ: tấm ván bắc qua mương nằm yên trên hai bờ.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: tấm ván qua mương bằng số</summary>
+<p>Ván đồng chất dài $2$ m, trọng lượng $200$ N, hai đầu gác lên hai bờ. Trục qua bờ trái: $N_{\text{phải}} \cdot 2 = 200 \cdot 1$ nên $N_{\text{phải}} = 100$ N. Tổng lực: $N_{\text{trái}} = 200 - 100 = 100$ N. Lấy trục ở giữa ván cũng ra $100 \cdot 1 = 100 \cdot 1$: moment quanh điểm nào cũng bằng 0.</p>
+</details>
+
+<h4>4. Ngẫu lực</h4>
+
+<p><strong>🔑 Song song · ngược chiều · bằng nhau · cùng vật</strong></p>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Ngẫu lực và moment ngẫu lực</p>
+<ul>
+<li><strong>Ngẫu lực</strong>: hai lực song song, ngược chiều, cùng độ lớn, cùng đặt vào một vật.</li>
+<li>Tổng hai lực bằng 0: ngẫu lực <strong>chỉ làm biến đổi chuyển động quay</strong>.</li>
+<li>Vật <strong>không có trục cố định</strong>: quay quanh trục qua <strong>trọng tâm</strong>, vuông góc mặt phẳng chứa ngẫu lực.</li>
+</ul>
+$$M = F_1 d_1 + F_2 d_2 = F\cdot d$$
+<p>$F$: độ lớn mỗi lực (N) · $d_1$, $d_2$: cánh tay đòn của từng lực đối với trục · $d = d_1 + d_2$: khoảng cách <strong>giữa hai giá</strong> (m), còn gọi là cánh tay đòn của ngẫu lực.</p>
+<p>Moment ngẫu lực <strong>không phụ thuộc vị trí trục quay</strong> (trục vuông góc mặt phẳng ngẫu lực).</p>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-moment-luc-03">
+<p class="tl-label">🔬 Thí nghiệm: thước trên mặt bàn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt thước $30$ cm lên mặt bàn nhẵn. Hai ngón tay đẩy hai đầu thước theo hai chiều ngược nhau, vuông góc thước, mạnh như nhau.</li>
+<li><strong>Quan sát:</strong> thước quay tại chỗ quanh vạch $15$ cm (trọng tâm), không trượt đi.</li>
+<li><strong>Rút ra:</strong> ngẫu lực chỉ làm quay; vật tự do quay quanh trọng tâm.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: vì sao moment ngẫu lực không phụ thuộc trục</summary>
+<p>Đặt trục giữa hai giá, cách giá $F_1$ một đoạn $x$. Cả hai lực cùng làm quay một chiều: $M = F x + F(d - x) = F d$. Biến $x$ biến mất, nên trục ở đâu cũng ra $F d$.</p>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: cánh tay đòn là khoảng cách tới điểm đặt lực</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tới điểm đặt (sai)</th><th>Tới giá của lực (đúng)</th></tr>
+</thead>
+<tbody>
+<tr><td>Đo dọc cán, $r = OA$</td><td>Đo vuông góc tới giá, $d$</td></tr>
+<tr><td>Chỉ đúng khi lực vuông góc cán</td><td>Lực xiên góc $\alpha$: $d = r\sin\alpha$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Kéo dài giá lực · hạ vuông góc</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl66-q4-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl66-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Lực $100$ N đặt ở tay cầm cờ lê cách tâm đai ốc $0{,}25$ m, hợp với cán góc $30^\circ$. Moment lực:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q4" id="tl66-q4a"><label for="tl66-q4a" class="tl-opt tl-no">A. $25\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q4" id="tl66-q4b"><label for="tl66-q4b" class="tl-opt tl-no">B. $21{,}7\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q4" id="tl66-q4c"><label for="tl66-q4c" class="tl-opt tl-ok">C. $12{,}5\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q4" id="tl66-q4d"><label for="tl66-q4d" class="tl-opt tl-no">D. $400\ \text{N}\cdot\text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $d = 0{,}25 \sin 30^\circ = 0{,}125$ m; $M = 100 \cdot 0{,}125 = 12{,}5\ \text{N}\cdot\text{m}$. Em giải thích được cho bạn ngồi cạnh vì sao không lấy $0{,}25$ m chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $25\ \text{N}\cdot\text{m}$ là lấy khoảng cách tới điểm đặt làm cánh tay đòn; $21{,}7$ là dùng $\cos 30^\circ$ (góc hợp với cán, nên phải là $\sin$); $400$ là chia $F/d$. Vẽ giá lực, hạ vuông góc từ trục như Hình 2. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: lực càng lớn, vật càng dễ quay</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lực lớn, giá qua trục</th><th>Lực nhỏ, cánh tay đòn lớn</th></tr>
+</thead>
+<tbody>
+<tr><td>$d = 0$ nên $M = 0$</td><td>$M = F d$ đáng kể</td></tr>
+<tr><td>Đẩy cửa hướng vào bản lề</td><td>Đẩy vuông góc ở mép cửa</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 So moment · không so lực</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Đẩy mép cánh cửa rộng $0{,}8$ m bằng lực $50$ N, hướng dọc mặt cửa thẳng vào bản lề. Moment lực đối với trục bản lề:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q5" id="tl66-q5a"><label for="tl66-q5a" class="tl-opt tl-no">A. $40\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q5" id="tl66-q5b"><label for="tl66-q5b" class="tl-opt tl-ok">B. $0$</label>
+<input type="radio" name="tl66-q5" id="tl66-q5c"><label for="tl66-q5c" class="tl-opt tl-no">C. $62{,}5\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q5" id="tl66-q5d"><label for="tl66-q5d" class="tl-opt tl-no">D. Lớn nhất có thể, vì lực đặt xa bản lề nhất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giá lực đi qua trục bản lề nên $d = 0$, $M = 0$. Cửa không quay, chỉ bị ép vào bản lề.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $40\ \text{N}\cdot\text{m}$ và D đều lấy $0{,}8$ m (khoảng cách tới điểm đặt) làm cánh tay đòn; $62{,}5$ là chia $F/d$. Kéo dài giá lực: nó đi qua đâu?</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: tổng lực bằng 0 là vật cân bằng</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Chỉ tổng lực bằng 0</th><th>Thêm tổng moment bằng 0</th></tr>
+</thead>
+<tbody>
+<tr><td>Không tịnh tiến, vẫn có thể quay</td><td>Không tịnh tiến, không quay</td></tr>
+<tr><td>Ví dụ: ngẫu lực trên vô lăng</td><td>Ví dụ: bập bênh nằm yên</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Đủ hai điều kiện mới cân bằng</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Hai tay tác dụng ngẫu lực lên vô lăng, mỗi lực $20$ N, hai giá cách nhau $0{,}36$ m. Kết luận nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q6" id="tl66-q6a"><label for="tl66-q6a" class="tl-opt tl-no">A. Hợp lực $40$ N, moment $7{,}2\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q6" id="tl66-q6b"><label for="tl66-q6b" class="tl-opt tl-no">B. Hợp lực bằng 0 nên vô lăng cân bằng, đứng yên</label>
+<input type="radio" name="tl66-q6" id="tl66-q6c"><label for="tl66-q6c" class="tl-opt tl-no">C. Hợp lực bằng 0, moment $3{,}6\ \text{N}\cdot\text{m}$</label>
+<input type="radio" name="tl66-q6" id="tl66-q6d"><label for="tl66-q6d" class="tl-opt tl-ok">D. Hợp lực bằng 0, moment $7{,}2\ \text{N}\cdot\text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai lực ngược chiều nên tổng bằng 0; $M = F d = 20 \cdot 0{,}36 = 7{,}2\ \text{N}\cdot\text{m}$, vô lăng quay.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A cộng hai lực ngược chiều như cùng chiều. B quên điều kiện moment: tổng lực bằng 0 chưa đủ. C chỉ tính một lực với bán kính $0{,}18$ m, trong khi cả hai lực cùng làm quay. Dùng $M = F d$ với $d$ là khoảng cách giữa hai giá.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Moment lực là gì? Viết công thức, đơn vị. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đặc trưng tác dụng làm quay · $M = F d$ · $\text{N}\cdot\text{m}$.</p>
+</details>
+<details class="tl-details">
+<summary>2. Cánh tay đòn đo từ đâu tới đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Từ <strong>trục quay</strong> tới <strong>giá của lực</strong>, vuông góc. Lực xiên: $d = r\sin\alpha$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Phát biểu quy tắc moment. Áp dụng cho vật nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vật có trục quay cố định · tổng moment thuận kim = tổng moment ngược kim.</p>
+</details>
+<details class="tl-details">
+<summary>4. Hai điều kiện cân bằng của vật rắn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tổng lực bằng $\vec 0$ · tổng moment đối với điểm bất kì bằng 0.</p>
+</details>
+<details class="tl-details">
+<summary>5. Ngẫu lực là gì? Gây ra chuyển động gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Song song · ngược chiều · bằng nhau · cùng vật. Chỉ làm quay; vật tự do quay quanh trọng tâm.</p>
+</details>
+<details class="tl-details">
+<summary>6. Moment ngẫu lực tính thế nào? Có phụ thuộc trục không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$M = F d$, $d$ là khoảng cách giữa hai giá · không phụ thuộc vị trí trục.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box" data-exp="tn-l10-moment-luc-04">
+<p class="tl-label">📝 Đề bài</p>
+<p>Trong xưởng, thanh thép đồng chất $AB$ dài $1{,}2$ m, trọng lượng $40$ N, kê trên giá đỡ nhọn tại $O$ cách đầu $A$ một đoạn $0{,}4$ m. Treo hộp dụng cụ ở $A$ thì thanh nằm ngang cân bằng. Tìm trọng lượng hộp và lực giá đỡ tác dụng lên thanh.</p>
+</div>
+
+<!--FIG5-->
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"đồng chất, dài $1{,}2$ m"</td><td>Trọng tâm $G$ ở giữa: $AG = 0{,}6$ m</td></tr>
+<tr><td>"trọng lượng $40$ N"</td><td>$P = 40$ N, đặt tại $G$</td></tr>
+<tr><td>"cách đầu $A$ $0{,}4$ m"</td><td>$OA = 0{,}4$ m, suy ra $OG = 0{,}2$ m</td></tr>
+<tr><td>"treo hộp ở $A$"</td><td>$P_1 = ?$, làm quay ngược kim</td></tr>
+<tr><td>"nằm ngang cân bằng"</td><td>Dữ kiện ngầm: tổng lực = 0, tổng moment = 0</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Chọn trục qua $O$:</strong> lực giá đỡ $N$ chưa biết, có giá qua $O$ nên moment bằng 0.</li>
+<li><strong>Quy tắc moment:</strong> $P_1$ ở $A$ làm thanh quay ngược kim, $P$ ở $G$ làm quay thuận kim: $P_1 \cdot OA = P \cdot OG$.</li>
+<li><strong>Thế số:</strong> $P_1 \cdot 0{,}4 = 40 \cdot 0{,}2$ nên $P_1 = 20$ N.</li>
+<li><strong>Tổng lực bằng 0:</strong> $N = P_1 + P = 20 + 40 = 60$ N, hướng lên.</li>
+<li><strong>Kiểm tra:</strong> lấy moment quanh $A$: $N \cdot 0{,}4 = 24$ và $P \cdot 0{,}6 = 24\ \text{N}\cdot\text{m}$, khớp. Đổi trục vẫn cân bằng.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng giá đỡ dời tới cách $A$ đúng $0{,}3$ m.</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $OG = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $P_1 = \;?$</li>
+<li>Lực giá đỡ: $N = P_1 + P$.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2 và kết quả</summary>
+<p>$OG = 0{,}6 - 0{,}3 = 0{,}3$ m; $P_1 \cdot 0{,}3 = 40 \cdot 0{,}3$ nên $P_1 = 40$ N; $N = 80$ N.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: biết hộp, tìm chỗ đặt giá đỡ</summary>
+<p>Treo hộp $60$ N ở $A$. Đặt $OA = x$ thì $OG = 0{,}6 - x$. Quy tắc moment: $60x = 40(0{,}6 - x)$, nên $100x = 24$, $x = 0{,}24$ m. Hộp càng nặng, giá đỡ càng phải dời về phía hộp.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl66-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl66-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Thanh ở đề bài đang cân bằng với hộp $20$ N ở $A$. Treo thêm vật $10$ N ở đầu $B$. Muốn thanh vẫn nằm ngang, ở $A$ phải treo thêm:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl66-q7" id="tl66-q7a"><label for="tl66-q7a" class="tl-opt tl-ok">A. $20$ N</label>
+<input type="radio" name="tl66-q7" id="tl66-q7b"><label for="tl66-q7b" class="tl-opt tl-no">B. $10$ N</label>
+<input type="radio" name="tl66-q7" id="tl66-q7c"><label for="tl66-q7c" class="tl-opt tl-no">C. $5$ N</label>
+<input type="radio" name="tl66-q7" id="tl66-q7d"><label for="tl66-q7d" class="tl-opt tl-no">D. Không cần, vì $10$ N nhỏ hơn trọng lượng thanh</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $OB = 1{,}2 - 0{,}4 = 0{,}8$ m; moment thêm $10 \cdot 0{,}8 = 8\ \text{N}\cdot\text{m}$ thuận kim. Ở $A$ cần thêm $8/0{,}4 = 20$ N.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $10$ N là so lực, quên $B$ xa trục gấp đôi $A$; $5$ N là làm ngược tỉ lệ khoảng cách; D so vật treo với trọng lượng thanh, trong khi thanh đã cân bằng sẵn và vật mới thêm moment. Tính $OB$ trước. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy làm lại phần thử sức.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: những nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Cờ lê, cờ lê lực:</strong> cán dài cho moment lớn; trong xưởng CNC, cờ lê lực đặt sẵn số $\text{N}\cdot\text{m}$, đủ là kêu "tách" để không siết quá tay.</li>
+<li><strong>Tay nắm cửa:</strong> lắp ở mép xa bản lề để cánh tay đòn lớn nhất.</li>
+<li><strong>Đòn bẩy, xà beng:</strong> lực nhỏ ở cánh tay đòn dài bẩy được tảng đá nặng.</li>
+<li><strong>Vô lăng, vòi nước:</strong> hai tay tạo ngẫu lực, chỉ làm quay.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Lực $15$ N vuông góc tay quay, cách trục $0{,}2$ m. Moment? <em>($3\ \text{N}\cdot\text{m}$)</em></li>
+<li><strong>⭐⭐</strong> Lực $40$ N đặt ở mép cửa cách bản lề $0{,}9$ m, hợp với mặt cửa góc $60^\circ$. Moment? <em>($d = 0{,}9\sin 60^\circ \approx 0{,}78$ m, $M \approx 31\ \text{N}\cdot\text{m}$)</em></li>
+<li><strong>⭐⭐⭐</strong> Thanh nhẹ dài $1$ m kê trên hai giá ở hai đầu $A$, $B$; treo vật $300$ N cách $A$ $0{,}4$ m. Lực mỗi giá? <em>(moment quanh $A$: $N_B = 120$ N; tổng lực: $N_A = 180$ N)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>$M = F d$: lực nhân <strong>cánh tay đòn</strong>, đơn vị $\text{N}\cdot\text{m}$.</li>
+<li>$d$: từ trục tới <strong>giá lực</strong>, vuông góc; giá qua trục thì $M = 0$.</li>
+<li>Trục cố định: moment thuận kim = moment ngược kim.</li>
+<li>Vật rắn cân bằng: tổng lực = 0 <strong>và</strong> tổng moment = 0.</li>
+<li>Ngẫu lực: chỉ quay, $M = F d$, không phụ thuộc trục.</li>
+<li>Đọc đề: gạch "đồng chất" (trọng tâm ở giữa), "cân bằng" (đủ hai điều kiện); chọn trục ở lực chưa biết.</li>
+</ul>
+</div>

@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 17. Trọng lực và lực căng",
+ "lesson_id": 62,
+ "nguon_trong_bai": "content/lesson-samples/l10-trong-luc-luc-cang/theory.html",
+ "id": "tn-l10-trong-luc-luc-cang-01",
+ "ten": "Tìm trọng tâm tấm bìa phẳng bằng dây dọi",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "trongluc.trong_tam",
+  "trongluc.phuong_thang_dung"
+ ],
+ "muc_tieu": "Xác định trọng tâm của vật phẳng mỏng bằng cách treo ở hai điểm và kẻ theo dây dọi; thấy trọng tâm có thể nằm ngoài vật.",
+ "dung_cu": [
+  {
+   "ten": "Tấm bìa cứng hình bất kì có đục 3 lỗ nhỏ gần mép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây dọi (dây mảnh + quả nặng nhỏ)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đinh ghim cắm trên giá hoặc bảng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ, bút chì",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vòng đệm thép (long đền) lớn",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đục ba lỗ nhỏ A, B, C gần mép tấm bìa hình bất kì.",
+   "Treo bìa qua lỗ A lên đinh, buộc dây dọi vào cùng đinh, đợi đứng yên rồi kẻ theo dây.",
+   "Làm lại với lỗ B, rồi lỗ C.",
+   "Treo vòng đệm qua một điểm trên vành, quan sát dây dọi."
+  ],
+  "quan_sat": [
+   "Ba đường kẻ cắt nhau tại một điểm G.",
+   "Đặt G lên đầu bút chì, tấm bìa nằm thăng bằng.",
+   "Với vòng đệm, dây dọi đi qua tâm lỗ."
+  ],
+  "rut_ra": [
+   "Vật treo đứng yên khi trọng tâm nằm ngay dưới điểm treo (trên đường thẳng đứng qua điểm treo).",
+   "Giao điểm các đường dây dọi là trọng tâm.",
+   "Trọng tâm có thể nằm ngoài phần vật chất của vật."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "phi",
+   "ten": "Góc xoay của điểm treo quanh mép bìa",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 360,
+   "mac_dinh": 0,
+   "buoc": 15
+  },
+  {
+   "ky_hieu": "xG",
+   "ten": "Hoành độ trọng tâm (toạ độ riêng của bìa)",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "yG",
+   "ten": "Tung độ trọng tâm (toạ độ riêng của bìa)",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "xG = Σ(xi + xi+1)(xi·yi+1 − xi+1·yi) / (6A)",
+   "yG = Σ(yi + yi+1)(xi·yi+1 − xi+1·yi) / (6A)",
+   "A = ½ Σ(xi·yi+1 − xi+1·yi)",
+   "Vật treo cân bằng ⇔ điểm treo và G cùng nằm trên một đường thẳng đứng"
+  ],
+  "gia_thiet": [
+   "tấm bìa phẳng, đồng chất, bề dày đều",
+   "bỏ qua ma sát ở đinh treo",
+   "dây dọi mảnh, nhẹ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần treo",
+   "Lỗ treo",
+   "Đường kẻ đi qua G?"
+  ],
+  "hang": [
+   [
+    1,
+    "A",
+    "có"
+   ],
+   [
+    2,
+    "B",
+    "có"
+   ],
+   [
+    3,
+    "C",
+    "có"
+   ]
+  ],
+  "ghi_chu": "Định tính: cả ba đường kẻ đồng quy tại G trong khoảng 1–2 mm do độ dày nét bút."
+ },
+ "ket_qua_ky_vong": "Các đường dây dọi đồng quy tại trọng tâm G; với vòng đệm, G ở tâm lỗ.",
+ "hien_tuong_hay_sai": [
+  "Tưởng trọng lực đặt ở điểm treo.",
+  "Tưởng trọng tâm luôn nằm trên vật.",
+  "Tưởng vật không đối xứng thì không có trọng tâm."
+ ],
+ "sai_so_thuong_gap": "Bìa chưa đứng yên đã kẻ; dây dọi chạm mép bìa; lỗ treo quá to làm bìa lệch.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "y_tuong": "Kéo điểm treo quanh mép một tấm bìa bất kì, tấm bìa tự xoay tới khi G nằm ngay dưới điểm treo; vết các đường dây dọi đồng quy.",
+  "diem_nhan": "Cho học sinh đoán vị trí G trước khi treo lần hai; vòng đệm cho G ở chỗ không có vật chất."
+ }
+}

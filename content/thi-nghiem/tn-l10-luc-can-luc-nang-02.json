@@ -1,0 +1,142 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 19. Lực cản và lực nâng",
+ "lesson_id": 64,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-can-luc-nang/theory.html",
+ "id": "tn-l10-luc-can-luc-nang-02",
+ "ten": "Tốc độ rơi đều của chồng phễu giấy",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "luc_can.toc_do",
+  "luc_can.toc_do_gioi_han"
+ ],
+ "muc_tieu": "Đo tốc độ rơi đều của 1–4 phễu giấy chồng nhau; thấy trọng lượng gấp 4 thì tốc độ giới hạn chỉ gấp khoảng 2: lực cản tăng theo tốc độ, nhanh hơn tỉ lệ thuận.",
+ "dung_cu": [
+  {
+   "ten": "Khuôn giấy nướng bánh (phễu giấy) giống nhau",
+   "so_luong": 4
+  },
+  {
+   "ten": "Thước dán tường, vạch 1,50 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm 120 hình/giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả phễu từ độ cao 2,5 m, miệng phễu hướng lên.",
+   "Quay video chậm đoạn 1,50 m cuối (từ vạch 1,50 m tới sàn), đếm số hình để có thời gian t.",
+   "Chồng lần lượt 1, 2, 3, 4 phễu; mỗi trường hợp thả 3 lượt, lấy trung bình t.",
+   "Tính v = 1,50/t."
+  ],
+  "quan_sat": [
+   "Sau khoảng 1 m đầu phễu rơi đều.",
+   "t trung bình: 1,38; 0,95; 0,80; 0,67 s → v ≈ 1,09; 1,58; 1,88; 2,24 m/s."
+  ],
+  "rut_ra": [
+   "Khi rơi đều, lực cản bằng trọng lượng.",
+   "Trọng lượng gấp 4 thì v chỉ gấp khoảng 2: lực cản tăng nhanh hơn tốc độ (gần như theo v²)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Số phễu chồng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 6,
+   "mac_dinh": 1,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đo",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Tốc độ giới hạn của 1 phễu",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 1.1
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi hết s",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ rơi đều",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_c = k·v²",
+   "n·m·g = k·v_gh² → v_gh = v1·√n",
+   "t = s / v_gh",
+   "v_do = s / t"
+  ],
+  "gia_thiet": [
+   "sau 1,0 m đầu phễu đã đạt ≥ 99 % tốc độ giới hạn (v(y) = v_gh·√(1 − e^(−2gy/v_gh²)))",
+   "bỏ qua lực đẩy Archimedes của không khí",
+   "chồng phễu giữ nguyên hình dạng, chỉ tăng khối lượng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Số phễu",
+   "t (s)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    1,
+    1.38,
+    1.09
+   ],
+   [
+    2,
+    0.95,
+    1.58
+   ],
+   [
+    3,
+    0.8,
+    1.88
+   ],
+   [
+    4,
+    0.67,
+    2.24
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: t lệch vài % quanh mô hình t = 1,50/(1,10·√n); v tính lại từ t đã làm tròn. v/√n ≈ 1,09; 1,12; 1,08; 1,12 m/s; v²/n ≈ 1,2."
+ },
+ "ket_qua_ky_vong": "v tỉ lệ √n; v² tỉ lệ với trọng lượng, nên lực cản ≈ k·v².",
+ "hien_tuong_hay_sai": [
+  "Cho rằng trọng lượng gấp 4 thì tốc độ rơi đều gấp 4.",
+  "Cho rằng phễu nặng hơn rơi nhanh hơn vì 'trọng lực kéo mạnh hơn' mà quên lực cản cũng lớn lên."
+ ],
+ "sai_so_thuong_gap": [
+  "Phễu 1 lớp nhẹ, dễ chao lật nên đường rơi không thẳng (không thấy được từ bảng, chỉ thấy khi làm).",
+  "Đếm hình ±0,01 s: sai số tương đối lớn nhất ở 4 phễu (t nhỏ nhất 0,67 s) ≈ 1,5 %, vẫn nhỏ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt n; phễu rơi, đồ thị v–t đi ngang ở v_gh, bảng tự thêm hàng.",
+  "diem_nhan": "Hỏi trước: 4 phễu thì rơi đều nhanh gấp mấy lần 1 phễu (2, không phải 4)."
+ }
+}

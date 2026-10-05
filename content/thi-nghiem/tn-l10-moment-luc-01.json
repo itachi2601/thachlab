@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "lesson_id": 66,
+ "nguon_trong_bai": "content/lesson-samples/l10-moment-luc/theory.html",
+ "id": "tn-l10-moment-luc-01",
+ "ten": "Mở cửa: tác dụng làm quay theo chỗ đặt và hướng của lực",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "moment_luc.canh_tay_don",
+  "moment_luc.gia_qua_truc"
+ ],
+ "muc_tieu": "Thấy tác dụng làm quay tăng theo cánh tay đòn, và bằng 0 khi giá lực đi qua trục bản lề.",
+ "dung_cu": [
+  {
+   "ten": "Cánh cửa lớp có bản lề",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dùng một ngón tay đẩy cửa vuông góc mặt cửa ở mép ngoài, ở giữa, sát bản lề.",
+   "Đẩy ở mép ngoài nhưng hướng dọc mặt cửa, thẳng vào bản lề."
+  ],
+  "quan_sat": [
+   "Mép ngoài mở nhẹ nhất; sát bản lề rất nặng.",
+   "Đẩy hướng vào bản lề thì cửa không quay dù đẩy mạnh."
+  ],
+  "rut_ra": [
+   "Tác dụng làm quay tăng theo cánh tay đòn d.",
+   "Giá lực qua trục thì d = 0, M = 0."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực đẩy",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 60,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách từ bản lề tới điểm đặt",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.8,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc giữa lực và mặt cửa",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 90,
+   "mac_dinh": 90,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "M_can",
+   "ten": "Moment cần để thắng ma sát bản lề (giả định)",
+   "don_vi": "N·m",
+   "kieu": "co_dinh",
+   "gia_tri": 2.0
+  },
+  {
+   "ky_hieu": "M",
+   "ten": "Moment lực",
+   "don_vi": "N·m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = r·sin(alpha)",
+   "M = F·d",
+   "cửa quay khi M > M_can"
+  ],
+  "gia_thiet": [
+   "lực nằm trong mặt phẳng nằm ngang",
+   "M_can = 2 N·m là giá trị giả định cho ma sát bản lề"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (m)",
+   "alpha (độ)",
+   "F cần (N)"
+  ],
+  "hang": [
+   [
+    0.8,
+    90,
+    2.5
+   ],
+   [
+    0.4,
+    90,
+    5.0
+   ],
+   [
+    0.1,
+    90,
+    20.0
+   ],
+   [
+    0.8,
+    30,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với M_can = 2 N·m (giả định): F cần = M_can/(r·sin alpha). alpha = 0 thì không lực nào đủ."
+ },
+ "ket_qua_ky_vong": "Lực cần tỉ lệ nghịch với r·sinα; α = 0 (lực hướng vào bản lề) cửa không quay.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ lực càng lớn cửa càng dễ quay, kể cả khi đẩy hướng vào bản lề.",
+  "Lấy khoảng cách tới điểm đặt r làm cánh tay đòn khi lực xiên."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Nhìn cửa từ trên xuống; kéo điểm đặt dọc cửa và xoay hướng lực, hiện giá lực + đoạn d, cửa quay khi M vượt ngưỡng.",
+  "diem_nhan": "Hỏi trước: đẩy 60 N thẳng vào bản lề có mở được không?"
+ }
+}

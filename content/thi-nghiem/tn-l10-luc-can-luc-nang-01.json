@@ -1,0 +1,112 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 19. Lực cản và lực nâng",
+ "lesson_id": 64,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-can-luc-nang/theory.html",
+ "id": "tn-l10-luc-can-luc-nang-01",
+ "ten": "Tờ giấy phẳng và viên giấy vo tròn rơi cùng lúc",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "luc_can.hinh_dang",
+  "luc_can.nguoc_chieu_chuyen_dong"
+ ],
+ "muc_tieu": "Thấy hai vật cùng trọng lượng rơi khác nhau chỉ vì hình dạng: lực cản của không khí phụ thuộc hình dạng.",
+ "dung_cu": [
+  {
+   "ten": "Giấy A4 giống nhau",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Vo tròn một tờ giấy, tờ kia để phẳng.",
+   "Giơ hai tờ lên cùng độ cao (khoảng 2 m), thả cùng lúc."
+  ],
+  "quan_sat": [
+   "Viên giấy vo chạm sàn trước; tờ phẳng chao lượn, rơi chậm hơn hẳn."
+  ],
+  "rut_ra": [
+   "Hai tờ cùng khối lượng nên cùng trọng lượng; tờ phẳng chịu lực cản của không khí lớn hơn vì hình dạng hứng gió."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng mỗi tờ",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.0045
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1.0,
+   "max": 3.0,
+   "mac_dinh": 2.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích hứng gió",
+   "don_vi": "m²",
+   "kieu": "dieu_chinh",
+   "min": 0.0005,
+   "max": 0.0624,
+   "mac_dinh": 0.0624,
+   "buoc": 0.0005
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m·a = m·g − F_c",
+   "F_c = ½·C·ρ_kk·S·v²",
+   "v_gh = √(2·m·g / (C·ρ_kk·S))"
+  ],
+  "gia_thiet": [
+   "coi lực cản tỉ lệ v² (C ≈ 1,2 cho tờ phẳng, ≈ 0,5 cho viên giấy)",
+   "bỏ qua lực đẩy Archimedes của không khí",
+   "bỏ qua chuyển động chao lượn của tờ phẳng",
+   "g = 9,8 m/s², ρ_kk = 1,2 kg/m³"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "vật",
+   "S (m²)",
+   "v_gh (m/s)"
+  ],
+  "hang": [
+   [
+    "tờ phẳng",
+    0.0624,
+    0.99
+   ],
+   [
+    "viên vo (đường kính 4 cm)",
+    0.00126,
+    10.8
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; tờ phẳng thực tế chao lượn nên rơi còn chậm hơn. Bài chỉ mô tả định tính."
+ },
+ "ket_qua_ky_vong": "Viên giấy vo chạm sàn trước rõ rệt; tờ phẳng gần như rơi đều với tốc độ cỡ 1 m/s.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng viên giấy vo nặng hơn.",
+  "Cho rằng tờ phẳng chịu lực đẩy Archimedes của không khí lớn hơn vì trải rộng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Hai vật rơi cạnh nhau, mũi tên P bằng nhau, mũi tên F_c lớn dần theo v.",
+  "diem_nhan": "Hỏi trước: vật nào chạm sàn trước, vì sao, khi cả hai cùng khối lượng."
+ }
+}

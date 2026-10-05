@@ -1,0 +1,135 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 17. Trọng lực và lực căng",
+ "lesson_id": 62,
+ "nguon_trong_bai": "content/lesson-samples/l10-trong-luc-luc-cang/theory.html",
+ "id": "tn-l10-trong-luc-luc-cang-02",
+ "ten": "Đo trọng lượng các quả nặng bằng lực kế: P tỉ lệ với m",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "trongluc.trong_luong",
+  "trongluc.p_bang_mg"
+ ],
+ "muc_tieu": "Đo trọng lượng của 1–4 quả nặng 50 g, thấy P tỉ lệ với m và thương P/m xấp xỉ g; nhận xét sai số tương đối.",
+ "dung_cu": [
+  {
+   "ten": "Lực kế lò xo 0–2,5 N, vạch chia 0,05 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng có móc 50 g",
+   "so_luong": 4
+  },
+  {
+   "ten": "Giá treo",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chỉnh kim lực kế về vạch 0 khi chưa treo gì.",
+   "Lần lượt treo 1, 2, 3, 4 quả nặng 50 g (4 lần đo), đợi đứng yên rồi đọc số chỉ."
+  ],
+  "quan_sat": [
+   "Số chỉ lần lượt 0,50; 0,95; 1,45; 1,95 N.",
+   "Khối lượng gấp đôi thì số chỉ gần gấp đôi."
+  ],
+  "rut_ra": [
+   "P tỉ lệ thuận với m; P/m gần như không đổi, xấp xỉ g ≈ 9,8 m/s².",
+   "Vật nặng hơn cho P/m tin cậy hơn vì sai số tương đối của một vạch nhỏ hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng treo",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.25,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "P_tinh",
+   "ten": "Trọng lượng tính từ mô hình",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P_tinh = m·g",
+   "P (đọc) = P_tinh ± tối đa 1 vạch (0,05 N) — số minh hoạ có nhiễu",
+   "sai số tương đối = 0,05 / P"
+  ],
+  "gia_thiet": [
+   "vật đứng yên khi đọc",
+   "lực kế đã chỉnh về 0",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "P tính (N)",
+   "P đọc (N)",
+   "P/m (N/kg)"
+  ],
+  "hang": [
+   [
+    0.05,
+    0.49,
+    0.5,
+    10.0
+   ],
+   [
+    0.1,
+    0.98,
+    0.95,
+    9.5
+   ],
+   [
+    0.15,
+    1.47,
+    1.45,
+    9.67
+   ],
+   [
+    0.2,
+    1.96,
+    1.95,
+    9.75
+   ]
+  ],
+  "ghi_chu": "P tính từ m·g; P đọc là số minh hoạ có nhiễu, lệch không quá 1 vạch (0,05 N) so với P tính. Trung bình P/m ≈ 9,73 N/kg."
+ },
+ "ket_qua_ky_vong": "P/m ≈ 9,8 N/kg trong sai số; hàng m nhỏ nhất kém tin cậy nhất vì một vạch chiếm 10 % số đọc (hàng cuối chỉ 2,6 %).",
+ "hien_tuong_hay_sai": [
+  "Ghi trọng lượng bằng kg.",
+  "Tưởng lệch 0,5 N/kg ở hàng đầu là quy luật sai, quên sai số tương đối."
+ ],
+ "sai_so_thuong_gap": "Kim chưa chỉnh về 0, đọc lệch vạch do mắt không ngang kim, quả nặng còn đung đưa.",
+ "an_toan": "Không treo quá 2,5 N làm giãn hỏng lò xo lực kế.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thả quả nặng vào lực kế, số chỉ nhảy tới vạch gần nhất kèm nhiễu ±1 vạch; vẽ điểm (m, P) và đường P = 9,8m.",
+  "diem_nhan": "Cho chọn hành tinh (Trái Đất, Mặt Trăng g = 1,6) để thấy m giữ nguyên, P đổi."
+ }
+}

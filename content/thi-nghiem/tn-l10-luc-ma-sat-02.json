@@ -1,0 +1,147 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 18. Lực ma sát",
+ "lesson_id": 63,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-ma-sat/theory.html",
+ "id": "tn-l10-luc-ma-sat-02",
+ "ten": "Ma sát trượt không đổi theo diện tích, tốc độ; ma sát lăn rất nhỏ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "masat.khong_phu_thuoc_dien_tich",
+  "masat.khong_phu_thuoc_toc_do",
+  "masat.ma_sat_lan"
+ ],
+ "muc_tieu": "Kéo cùng một hộp 0,40 kg trượt đều khi nằm, khi dựng đứng, khi kéo nhanh hơn và khi kê lên bút chì cho lăn; so số chỉ lực kế.",
+ "dung_cu": [
+  {
+   "ten": "Hộp gỗ hình hộp chữ nhật, tổng 0,40 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 5 N, chia độ 0,1 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút chì tròn",
+   "so_luong": 2
+  },
+  {
+   "ten": "Mặt bàn gỗ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kéo hộp trượt đều khi hộp nằm (mặt rộng), đọc lực kế.",
+   "Dựng đứng hộp (mặt hẹp), kéo trượt đều, đọc lực kế.",
+   "Kéo trượt đều nhanh hơn, đọc lực kế.",
+   "Kê hộp lên hai bút chì tròn cho lăn, kéo đều, đọc lực kế."
+  ],
+  "quan_sat": [
+   "Ba lần trượt đều chỉ khoảng 1,2 N.",
+   "Khi lăn chỉ dưới 0,1 N."
+  ],
+  "rut_ra": [
+   "Ma sát trượt gần như không phụ thuộc diện tích tiếp xúc và tốc độ.",
+   "Ma sát lăn nhỏ hơn ma sát trượt rất nhiều."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng hộp",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.4
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích mặt tiếp xúc",
+   "don_vi": "cm²",
+   "kieu": "dieu_chinh",
+   "min": 20,
+   "max": 120,
+   "mac_dinh": 120,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ kéo",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "μ",
+   "ten": "Hệ số ma sát trượt",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.3
+  },
+  {
+   "ky_hieu": "μl",
+   "ten": "Hệ số ma sát lăn (bút chì trên gỗ)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.02
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Số chỉ lực kế",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_truot = μ·m·g (không chứa S, v)",
+   "F_lan = μl·m·g"
+  ],
+  "gia_thiet": [
+   "kéo đều, lực kế nằm ngang",
+   "g = 9,8 m/s²",
+   "bỏ qua khối lượng bút chì"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Trường hợp",
+   "F (N)"
+  ],
+  "hang": [
+   [
+    "nằm, chậm",
+    1.2
+   ],
+   [
+    "dựng đứng, chậm",
+    1.2
+   ],
+   [
+    "nằm, nhanh hơn",
+    1.2
+   ],
+   [
+    "lăn trên bút chì",
+    0.08
+   ]
+  ],
+  "ghi_chu": "Mô hình: 0,30·0,40·9,8 = 1,18 N; lăn 0,02·0,40·9,8 ≈ 0,08 N (lực kế chỉ đọc được 'dưới 0,1 N')."
+ },
+ "ket_qua_ky_vong": "Ba lần trượt cùng ≈ 1,2 N; lăn dưới 0,1 N.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ mặt tiếp xúc nhỏ thì ma sát nhỏ (hoặc lớn) hơn.",
+  "Nghĩ kéo nhanh thì ma sát trượt lớn hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Nút xoay hộp nằm/đứng, thanh trượt tốc độ, nút kê bút chì; lực kế hiện số chỉ.",
+  "diem_nhan": "Cho học sinh đoán trước số chỉ khi dựng đứng hộp."
+ }
+}

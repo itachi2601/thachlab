@@ -1,0 +1,112 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "lesson_id": 66,
+ "nguon_trong_bai": "content/lesson-samples/l10-moment-luc/theory.html",
+ "id": "tn-l10-moment-luc-03",
+ "ten": "Ngẫu lực làm thước quay quanh trọng tâm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "ngau_luc.chi_lam_quay",
+  "ngau_luc.quay_quanh_trong_tam"
+ ],
+ "muc_tieu": "Thấy ngẫu lực chỉ làm vật quay; vật tự do quay quanh trục qua trọng tâm.",
+ "dung_cu": [
+  {
+   "ten": "Thước 30 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn nhẵn",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt thước lên mặt bàn nhẵn.",
+   "Hai ngón tay đẩy hai đầu thước theo hai chiều ngược nhau, vuông góc thước, mạnh như nhau."
+  ],
+  "quan_sat": [
+   "Thước quay tại chỗ quanh vạch 15 cm (trọng tâm), không trượt đi."
+  ],
+  "rut_ra": [
+   "Ngẫu lực có tổng bằng 0 nên không tịnh tiến, chỉ làm quay.",
+   "Vật không có trục cố định quay quanh trục qua trọng tâm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Độ lớn mỗi lực",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 2,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai giá",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.3,
+   "mac_dinh": 0.3,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "M",
+   "ten": "Moment ngẫu lực",
+   "don_vi": "N·m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "tổng lực = F − F = 0",
+   "M = F·d (không phụ thuộc vị trí trục)"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát bàn",
+   "hai lực vuông góc thước, cùng độ lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F (N)",
+   "d (m)",
+   "M (N·m)"
+  ],
+  "hang": [
+   [
+    0.5,
+    0.3,
+    0.15
+   ],
+   [
+    1.0,
+    0.3,
+    0.3
+   ],
+   [
+    1.0,
+    0.15,
+    0.15
+   ]
+  ],
+  "ghi_chu": "Tính từ M = F·d."
+ },
+ "ket_qua_ky_vong": "Thước quay quanh trọng tâm, không tịnh tiến; M = F·d.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ tổng lực bằng 0 thì vật đứng yên.",
+  "Tính moment ngẫu lực bằng F nhân bán kính (một nửa d)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Thước trên mặt phẳng; đặt hai lực ở hai điểm bất kì, hiện tổng lực và moment, thước quay quanh trọng tâm.",
+  "diem_nhan": "Hỏi trước: thước sẽ trượt đi hay quay tại chỗ?"
+ }
+}

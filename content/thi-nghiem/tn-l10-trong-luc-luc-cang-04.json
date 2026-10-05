@@ -1,0 +1,147 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 17. Trọng lực và lực căng",
+ "lesson_id": 62,
+ "nguon_trong_bai": "content/lesson-samples/l10-trong-luc-luc-cang/theory.html",
+ "id": "tn-l10-trong-luc-luc-cang-04",
+ "ten": "Hệ vật trên bàn nhẵn nối dây qua ròng rọc với vật treo",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "lucang.he_vat_noi_day",
+  "lucang.t_khac_p_khi_co_gia_toc"
+ ],
+ "muc_tieu": "Tìm gia tốc và lực căng của hệ hai vật nối dây; thấy T nhỏ hơn trọng lượng vật treo khi hệ chuyển động.",
+ "dung_cu": [
+  {
+   "ten": "Xe/khối A trên mặt bàn nhẵn (đệm khí)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ròng rọc nhẹ kẹp mép bàn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nhẹ không dãn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vật treo B",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối khối A (2 kg) trên bàn với vật B (0,5 kg) bằng dây vắt qua ròng rọc ở mép bàn.",
+   "Thả hệ từ nghỉ."
+  ],
+  "quan_sat": [
+   "A chạy về phía ròng rọc, B đi xuống, cả hai nhanh dần cùng gia tốc."
+  ],
+  "rut_ra": [
+   "a = mB·g/(mA + mB) = 2 m/s².",
+   "T = mA·a = 4 N, nhỏ hơn PB = 5 N."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "mA",
+   "ten": "Khối lượng khối trên bàn",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 10,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "mB",
+   "ten": "Khối lượng vật treo",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 2,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc của hệ",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Lực căng dây",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = mA·a",
+   "mB·g − T = mB·a",
+   "a = mB·g/(mA + mB)",
+   "T = mA·mB·g/(mA + mB)"
+  ],
+  "gia_thiet": [
+   "bàn nhẵn, bỏ qua mọi ma sát",
+   "dây và ròng rọc nhẹ, dây không dãn",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "mA (kg)",
+   "a (m/s²)",
+   "T (N)"
+  ],
+  "hang": [
+   [
+    0.5,
+    5.0,
+    2.5
+   ],
+   [
+    1,
+    3.333,
+    3.333
+   ],
+   [
+    2,
+    2.0,
+    4.0
+   ],
+   [
+    4,
+    1.111,
+    4.444
+   ],
+   [
+    10,
+    0.476,
+    4.762
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với mB = 0,5 kg, g = 10 m/s². mA lớn thì T tiến tới mB·g = 5 N."
+ },
+ "ket_qua_ky_vong": "Với mA = 2 kg, mB = 0,5 kg: a = 2 m/s², T = 4 N < PB.",
+ "hien_tuong_hay_sai": [
+  "Coi T = PB = 5 N dù hệ đang có gia tốc.",
+  "Quên rằng hai vật cùng gia tốc vì dây không dãn.",
+  "Viết một phương trình chung mà lẫn lực căng là ngoại lực của hệ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Hệ chuyển động thật trên màn hình, mũi tên T và PB co giãn theo mA, mB; giữ A lại thì T nhảy lên bằng PB.",
+  "diem_nhan": "Cho học sinh đoán T khi mA rất lớn và khi giữ chặt A."
+ }
+}
