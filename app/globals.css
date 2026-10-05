@@ -2948,3 +2948,23 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
+
+/* Dấu ThạchLab (components/brand). Mực sáng cho nền tối; theme sáng đổi mực
+   trừ data-surface="dark" — footer marketing và sidebar quản trị luôn nền tối.
+   M2: "Lab" trên nền sáng dùng #1d4ed8 (6,4:1), không dùng #3b82f6 (3,7:1). */
+.logo-mark {
+  --mark-ink: #e2e8f0;
+  --mark-bowl: #f8fafc;
+  --mark-line: #3b82f6;
+  display: block;
+  aspect-ratio: 136 / 79.03;
+}
+html[data-theme="light"] .logo-mark:not([data-surface="dark"]) {
+  --mark-ink: #0f172a;
+  --mark-bowl: #eff6ff;
+  --mark-line: #1d4ed8;
+}
+.logo-name { color: #f8fafc; }
+.logo-lab { color: #3b82f6; }
+html[data-theme="light"] .logo-lockup:not([data-surface="dark"]) .logo-name { color: #0f172a; }
+html[data-theme="light"] .logo-lockup:not([data-surface="dark"]) .logo-lab { color: #1d4ed8; }
