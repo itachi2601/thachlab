@@ -101,6 +101,24 @@ Thay vì dựng trang lộ trình riêng theo chương, **bộ huy hiệu theo l
       lớp offline 1 tháng. Đây là lớp 10, bộ huy hiệu lớp 10 phải đạt được trọn vẹn bằng chương này.
 - [ ] Ra mắt công khai ThachLab 2.0 với chương Động học 10 hoàn chỉnh + số liệu mùa 1–2.
 
+## Giai đoạn 2.6 — Mobile PWA (đề xuất 5/10/2026, đã đối chiếu code; chờ thầy duyệt trước khi làm)
+Không làm app native: biến site `output: "export"` thành PWA cài được (Android + iOS 16.4+), không phá mốc
+"mobile app chỉ khi ≥500 HS/tuần" ở GĐ 6. **Chỉ dựng vỏ + lối vào + nhắc**, không viết lại luyện tập.
+Chi tiết, ràng buộc và thứ tự: `docs/BAN-GIAO-MOBILE-PWA-2026-10-05.md`.
+- [ ] **M1 Vỏ PWA**: `app/manifest.ts` (static export dùng được), icon 192/512/maskable + apple-touch-icon (`.webp`/PNG
+      sinh từ logo), `public/sw.js` viết tay (precache shell, KHÔNG cache `/data/*.json` kiểu cache-first vì
+      `services/static-content.ts` đã tự đối chiếu Supabase), đăng ký SW ở client, `theme_color` lấy từ
+      `--color-bg`. Banner "Thêm vào màn hình chính" 1 lần, sau khi HS xong bài luyện đầu tiên.
+- [ ] **M2 Luyện nhanh 10 câu**: nút ở thẻ `WeakestSkillsCard` (đã gọi `get_my_weakest_topics`) mở thẳng
+      `TopicPracticeModal` với chủ đề yếu nhất, 10 câu, chế độ "Từng câu" có sẵn. KHÔNG thêm RPC/bảng/URL mới.
+- [ ] **M3 Offline**: cache phần đã mở + hàng đợi `savePracticeSession` khi mất mạng (localStorage/IndexedDB), gửi lại
+      khi có mạng. Làm sau M2; giữ kết quả LẦN ĐẦU từng câu như hiện nay.
+- [ ] **M4 Nhắc 1 lần/ngày**: Web Push (VAPID) qua Edge Function mới + bảng đăng ký (migration, chạy theo
+      quy trình `run-migrations.sh`); nội dung lấy từ chủ đề yếu nhất; HS tự chọn giờ. Streak đóng băng **đã có**
+      (migration 20260930130000) — chỉ hiển thị, không làm lại.
+- Đo: % HS cài PWA, phiên/tuần/HS, độ dài phiên, quay lại ngày 7. Đợt 2 (sau ra mắt): chụp ảnh bài → AI Tutor (GĐ 4),
+  thẻ chia sẻ lên hạng, tin tuần cho phụ huynh, mô phỏng cảm biến nghiêng, QR điểm danh lớp Cao Thắng.
+
 ## Giai đoạn 3 — Khám phá / Mô phỏng (song song từ Q1/2027, 1–2 mô phỏng/tháng)
 Đã có: con lắc lò xo SVG (`SpringSimulation`) làm hero trang chủ.
 - 5/10/2026: con lắc lò xo **rời hero** (thay bằng tab "Thả hàng" — máy bay cứu hộ thả gói, ném ngang, Bài 12
