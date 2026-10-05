@@ -43,13 +43,35 @@ for f in sorted(DIR.glob("tn-*.json")):
     for r in sl.get("hang", []):
         if len(r) != len(sl.get("cot", [])): w(f"so_lieu_mau: hàng {r} lệch số cột")
     if d.get("goi_y_mo_phong", {}).get("loai", "").split("+")[0] not in SIM: w("goi_y_mo_phong.loai không hợp lệ")
+    v = d.get("video")
+    if v is not None:
+        if not isinstance(v, dict):
+            w("video phải là object")
+        else:
+            yid = v.get("youtube_id", "")
+            if not re.fullmatch(r"[\w-]{11}", str(yid)): w(f"video.youtube_id '{yid}' phải là 11 ký tự YouTube")
+            if not v.get("nhin_vao"): w("video.nhin_vao trống — phải có câu hướng chú ý cho học sinh")
+            elif len(str(v["nhin_vao"]).split()) > 40: w("video.nhin_vao dài quá 40 từ")
+            st, en = v.get("giay_bat_dau"), v.get("giay_ket_thuc")
+            for k, x in (("giay_bat_dau", st), ("giay_ket_thuc", en)):
+                if x is not None and (not isinstance(x, (int, float)) or isinstance(x, bool) or x < 0):
+                    w(f"video.{k} phải là số ≥ 0")
+            if isinstance(st, (int, float)) and isinstance(en, (int, float)) and not isinstance(st, bool) and not isinstance(en, bool):
+                if en <= st: w("video.giay_ket_thuc phải lớn hơn giay_bat_dau")
+                elif en - st > 120: w(f"video dài {en - st:.0f}s > 120s — cắt ngắn lại")
     index.append({"id": d["id"], "ten": d["ten"], "loai": d["loai"], "muc_do": d["muc_do"], "lop": d["lop"], "bai": d["bai"],
                   "lesson_id": d.get("lesson_id"), "kien_thuc": d["kien_thuc"], "mo_phong": d["goi_y_mo_phong"]["loai"],
+                  "co_video": bool(d.get("video")),
                   "tham_so_dieu_chinh": [t["ky_hieu"] for t in d["tham_so"] if t.get("kieu") == "dieu_chinh"]})
 ids = {i["id"] for i in index}
 for th in sys.argv[1:]:
     for m in re.findall(r'data-exp="([^"]+)"', pathlib.Path(th).read_text(encoding="utf8")):
         if m not in ids: err.append(f"{th}: data-exp '{m}' không có trong content/thi-nghiem/")
+pool = DIR / "video-dung-chung.json"
+if pool.exists():
+    for n, v in enumerate(json.loads(pool.read_text(encoding="utf8")).get("videos", [])):
+        if not re.fullmatch(r"[\w-]{11}", str(v.get("youtube_id", ""))):
+            err.append(f"video-dung-chung.json: mục {n} youtube_id không hợp lệ")
 (DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
 print(f"{len(index)} thí nghiệm/ví dụ → content/thi-nghiem/index.json")
 for e in err: print("✗", e)

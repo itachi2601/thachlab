@@ -16,7 +16,36 @@ Mỗi file `tn-<lớp>-<bài>-<số>.json` mô tả MỘT thí nghiệm hoặc v
 
 ## Trường bắt buộc
 `id, ten, loai, muc_do, mon, lop, bai, kien_thuc, muc_tieu, dung_cu, cac_buoc{lam,quan_sat,rut_ra}, tham_so, mo_hinh, so_lieu_mau, ket_qua_ky_vong, hien_tuong_hay_sai, goi_y_mo_phong`.
-Tuỳ chọn: `lesson_id, nguon_trong_bai, sai_so_thuong_gap, an_toan`.
+Tuỳ chọn: `lesson_id, nguon_trong_bai, sai_so_thuong_gap, an_toan, video`.
+
+## Video thí nghiệm (tuỳ chọn, chèn tự động vào bài)
+Mỗi thí nghiệm có thể gắn **một** clip YouTube thật. Video **không** viết vào `theory.html` bằng tay:
+ghi vào đây rồi chạy script chèn — một nguồn dữ liệu, chèn lại được cho nhiều bài.
+
+```json
+"video": {
+  "youtube_id": "UMkAXvWIRY4",          // 11 ký tự, bắt buộc
+  "nhan": "khay sóng, hai nguồn điểm",  // nhãn hiện trên hộp (mặc định lấy `ten`)
+  "nhin_vao": "Các đường cực đại và cực tiểu có dạng gì?",  // bắt buộc, ≤ 40 từ
+  "giay_bat_dau": 12, "giay_ket_thuc": 48,                  // cắt đoạn cần xem, ≤ 120 giây
+  "ten": "Ripple Tank: Interference of Two Point Sources",  // do `--kiem` điền
+  "kenh": "MIT Physics Instructional Resources Lab",
+  "da_kiem": "2026-10-06"
+}
+```
+
+- Ưu tiên **tiếng Việt hoặc không lời**; cắt bằng `giay_bat_dau`/`giay_ket_thuc` để bỏ intro/nhiễu.
+- `nhin_vao` là câu hướng chú ý (bắt buộc) — video thật thường nhiễu, không có câu này học sinh xem mà không rút ra gì.
+- Clip dùng cho nhiều thí nghiệm/bài: khai một lần trong `video-dung-chung.json` (mục `videos`, mỗi mục có
+  `youtube_id` + `ten` + `kenh` + `da_kiem`), rồi các file `tn-*.json` chỉ cần ghi `youtube_id` + `nhin_vao`.
+- Chèn vào bài (mặc định xem thử, chỉ ghi khi có `--apply`; chạy lại không nhân đôi):
+```
+npx tsx scripts/chen-video-thi-nghiem.mts                       # xem thử mọi bài
+npx tsx scripts/chen-video-thi-nghiem.mts --bai l11-giao-thoa-song --apply
+```
+Script chèn khối `.tl-box--video` ngay sau hộp `.tl-box--exp`/`<figure>` mang `data-exp` đó, đồng bộ
+`theory.src.html` + `theory.html` + `theory_html` trong `bundle.json`. Đăng lên DB:
+`bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id>` (một lượt deploy cho nhiều bài).
 
 ## Liên kết với bài lý thuyết
 Trong `theory.html`, đặt `data-exp="<id>"` lên hộp thí nghiệm (`.tl-box--exp`) hoặc `<figure>` tương ứng. Kiểm bằng:
@@ -25,4 +54,4 @@ python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/thi_nghiem.py <theor
 ```
 
 ## Danh sách hiện có
-Xem `index.json` (6 mục từ bài Định luật III Newton, lớp 10). Mỗi bài lý thuyết mới phải thêm mục vào đây, không để thí nghiệm chỉ nằm trong HTML.
+Xem `index.json` (211 mục, sinh tự động). Mỗi bài lý thuyết mới phải thêm mục vào đây, không để thí nghiệm chỉ nằm trong HTML.

@@ -29,6 +29,58 @@ function withImageDimensions(html: string): string {
 }
 
 /**
+ * Video thí nghiệm trong bài lý thuyết được soạn dưới dạng
+ * `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/ID?rel=0">…`.
+ * Nhúng thẳng thì mỗi video kéo theo ~1 MB JS của YouTube ngay khi cuộn tới (bài Giao thoa
+ * có 4 video), trong khi phần lớn học sinh không bấm xem. Ở đây đổi thành **ảnh bìa + nút
+ * phát**, chỉ nhúng player khi bấm — cùng cách với `VideoBlock` ở `app/lop-hoc/bai/page.tsx`.
+ * Ảnh bìa lấy từ i.ytimg.com (có width/height nên không nhảy layout), nút là `<button>` thật
+ * nên bấm được cả bằng bàn phím. Video không phải YouTube thì để nguyên iframe.
+ */
+const TL_VIDEO_RE = /<div class="tl-video">\s*<iframe\b([^>]*)>\s*<\/iframe>\s*<\/div>/g;
+
+function escapeAttr(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+export function withVideoFacades(html: string): string {
+  if (!html.includes("tl-video")) return html;
+  let slot = 0;
+  return html.replace(TL_VIDEO_RE, (match, attrs: string) => {
+    const src = /\bsrc="([^"]+)"/.exec(attrs)?.[1] ?? "";
+    const id = /youtube-nocookie\.com\/embed\/([\w-]{11})/.exec(src)?.[1];
+    if (!id) return match;
+    const query = src.includes("?") ? src.slice(src.indexOf("?")) : "";
+    const title = escapeAttr((/\btitle="([^"]*)"/.exec(attrs)?.[1] ?? "video thí nghiệm").trim());
+    const start = Number(/[?&]start=(\d+)/.exec(query)?.[1] ?? NaN);
+    const end = Number(/[?&]end=(\d+)/.exec(query)?.[1] ?? NaN);
+    const dur = Number.isFinite(start) && Number.isFinite(end) && end > start ? `${end - start} giây` : "";
+    return (
+      `<div class="tl-video tl-video--facade">` +
+      `<button type="button" class="tl-video-play" data-yt-slot="${slot++}" data-yt-id="${id}"` +
+      ` data-yt-query="${escapeAttr(query)}" data-yt-title="${title}" aria-label="Phát video: ${title}">` +
+      `<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">` +
+      `<span class="tl-video-play-icon" aria-hidden="true">▶</span>` +
+      (dur ? `<span class="tl-video-play-time">${dur}</span>` : "") +
+      `<span class="tl-video-play-title">${title}</span>` +
+      `</button></div>`
+    );
+  });
+}
+
+/** Đổi đúng nút phát của `slot` thành iframe player (chạy sau khi học sinh bấm). */
+export function playVideo(html: string, slot: number, id: string, query: string, title: string): string {
+  const re = new RegExp(`<button type="button" class="tl-video-play" data-yt-slot="${slot}"[\\s\\S]*?</button>`);
+  const params = new URLSearchParams(query.startsWith("?") ? query.slice(1) : query);
+  params.set("autoplay", "1");
+  if (!params.has("rel")) params.set("rel", "0");
+  const iframe =
+    `<iframe src="https://www.youtube-nocookie.com/embed/${id}?${params.toString()}"` +
+    ` title="${escapeAttr(title)}" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  return html.replace(re, iframe);
+}
+
+/**
  * Dấu vết định dạng Word còn sót lại khi dán qua: dòng chấm dẫn của mục lục
  * ("I. TÓM TẮT.........."), ký tự thay thế khi font/encoding lỗi, và các
  * đoạn liệt kê gõ tay bằng "-"/"•" ở đầu dòng thay vì thẻ <ul><li> thật —
@@ -117,8 +169,18 @@ export default function ContentHtml({
   html: string;
   className?: string;
 }) {
-  const cleaned = useMemo(() => withImageDimensions(stripWordArtifacts(html)), [html]);
+  const cleaned = useMemo(
+    () => withImageDimensions(withVideoFacades(stripWordArtifacts(html))),
+    [html],
+  );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);
+
+  // Video đang phát (theo `slot` trong `cleaned`). Giữ kèm `forHtml` để html đổi
+  // thì tự rơi về facade, không cần setState "reset" trong effect.
+  const [playing, setPlaying] = useState<
+    { forHtml: string; slot: number; id: string; query: string; title: string } | null
+  >(null);
+  const active = playing && playing.forHtml === cleaned ? playing : null;
 
   // Chỉ giữ bản KaTeX đã render xong ỨNG VỚI đúng `cleaned` hiện tại (so khớp bằng
   // `forHtml`) — html đổi thì coi như chưa có, tự rơi về fallback thô bên dưới mà
@@ -148,10 +210,32 @@ export default function ContentHtml({
       ? katexResult.rendered
       : renderRawFallback(cleaned);
 
+  const renderedWithVideo = active
+    ? playVideo(rendered, active.slot, active.id, active.query, active.title)
+    : rendered;
+
+  /** Bấm nút phát (uỷ quyền sự kiện): đổi đúng nút đó thành player, không tải player trước. */
+  function handleClick(event: React.MouseEvent<HTMLSpanElement>) {
+    if (!(event.target instanceof Element)) return;
+    const button = event.target.closest("button.tl-video-play");
+    if (!(button instanceof HTMLButtonElement)) return;
+    const slot = Number(button.dataset.ytSlot);
+    const id = button.dataset.ytId ?? "";
+    if (!id || !Number.isFinite(slot)) return;
+    setPlaying({
+      forHtml: cleaned,
+      slot,
+      id,
+      query: button.dataset.ytQuery ?? "",
+      title: button.dataset.ytTitle ?? "video thí nghiệm",
+    });
+  }
+
   return (
     <span
       className={`exam-content ${className}`}
-      dangerouslySetInnerHTML={{ __html: rendered }}
+      onClick={handleClick}
+      dangerouslySetInnerHTML={{ __html: renderedWithVideo }}
     />
   );
 }

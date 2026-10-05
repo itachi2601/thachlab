@@ -69,6 +69,15 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 - **H4 Hình vẽ cho bài học là SVG nét 2px, 2–3 màu, nền trong suốt**, chữ trong SVG ≥ 13px khi hiển thị ở 360px.
 - **H5 Công thức khối đứng riêng dòng, căn giữa, có khoảng thở ≥ 12px**; ký hiệu được giải thích ngay dưới trong ≤ 1 dòng mỗi ký hiệu.
 
+## 5b. Video thí nghiệm trong bài lý thuyết (V)
+
+- **V1 Mỗi hộp thí nghiệm (`.tl-box--exp`) tối đa MỘT clip, đặt ngay sau hộp đó.** Clip không thay phần chữ Làm–Quan sát–Rút ra, chỉ để xác nhận hiện tượng thật. Media thêm cạnh chữ đã đủ ý làm giảm học, không tăng. *Mayer – multimedia & coherence (Harp & Mayer 1998).*
+- **V2 Bắt buộc có dòng "Nhìn vào:" một câu ≤ 25 từ** nêu đúng hiện tượng cần quan sát. Video phòng thí nghiệm thật thường nhiễu (tay, bàn, chữ kênh); không hướng chú ý thì học sinh xem mà không rút ra gì. *Mayer – signaling; de Koning et al. 2009.*
+- **V3 Cắt còn ≤ 90 giây** đúng đoạn có hiện tượng (`giay_bat_dau`/`giay_ket_thuc`) — bỏ intro, quảng cáo, đoạn nói lan man.
+- **V4 Ưu tiên clip tiếng Việt hoặc không lời.** Clip tiếng Anh chỉ dùng khi phần chữ trong bài đã đủ để hiểu, không bắt học sinh nghe hiểu tiếng Anh.
+- **V5 Không nạp player trước khi bấm**: khối video hiện **ảnh bìa + nút phát**, player chỉ nhúng khi học sinh bấm (`ContentHtml.tsx`). Mỗi iframe YouTube kéo theo ~1 MB JS; bài có 4 video là ~4 MB cho thứ phần lớn em không xem (B4, mục "Đăng nội dung — tối ưu tốc độ" của `AGENTS.md`).
+- **V6 Không thêm video cho chỗ bài đã có mô phỏng/SVG thể hiện rõ hiện tượng** (trùng nội dung — N1, H1), và không dùng video thay thí nghiệm học sinh làm được ngay tại lớp.
+
 ## 6. Điện thoại & thao tác (D)
 
 - **D1 Thiết kế ở 375px trước, desktop sau.** Chụp 375×812 (và 360) trước khi báo xong.
@@ -99,6 +108,7 @@ vừa học vừa có Zalo/TikTok chạy nền, ý chí tập trung có hạn. G
 6. Đích chạm ≥ 44pt, nhãn nút ≤ 1 dòng (D2); tab lộ hết ở 360px (D4); thanh cố định ≤ 15% (B6).
 7. Không có gì tự chuyển động/tự bật trong lúc đọc hoặc làm bài (B4, L6).
 8. Nêu mã quy tắc đã áp dụng trong mô tả commit; nếu phá quy tắc, ghi lý do.
+9. Video thí nghiệm: 1 clip mỗi hộp, có dòng "Nhìn vào", ≤ 90 giây, không nạp player trước khi bấm (V1–V6).
 
 ## 9. Nguồn chính (để tra khi cần, không cần đọc lại trước mỗi việc)
 
