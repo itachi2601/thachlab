@@ -65,3 +65,9 @@ Quy ước `difficulty`: dùng **mã** của `features/exams/types.ts` — `"de"
 
 ## Lớp 11 (id lớp 17) — 26 bài `bai_hoc`, lesson_id 20–45
 Dao động (Bài 1–7 = lesson 20–26), Sóng (Bài 8–15 = 27–34), Điện trường (Bài 16–21 = 35–40), Dòng điện (Bài 22–26 = 41–45). Chưa soạn bài nào (02/10/2026). Bài tập/thực hành (4, 7, 10, 14, 15, 26 theo số bài) thường ít/không có mục `ly_thuyet` hoặc ít công thức → kiểm `list-sections.mts` trước, bỏ nếu không có lý thuyết, dùng 20 câu kiến thức nếu không có công thức. Bài 12 Giao thoa sóng (lesson 31) có thể đã có bản lý thuyết tương tác mới (skill `soan-bai-ly-thuyet-tuong-tac`): đọc `body_html` bản hiện hành trên `public/data`, đừng soạn từ bản cũ.
+
+## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
+
+Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
+một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
+

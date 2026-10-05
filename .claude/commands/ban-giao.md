@@ -27,6 +27,11 @@ Nội dung phải trả lời được, cụ thể, có đường dẫn file:
 
 Ngày tháng ghi tuyệt đối (2026-09-14), đừng ghi "hôm qua", "tuần trước".
 
+## 2b. Rút kinh nghiệm (bắt buộc nếu phiên có bài lý thuyết / đề thi / đề kiểm tra / quiz / ngân hàng câu hỏi)
+
+Theo `AGENTS.md` mục "Rút kinh nghiệm cuối phiên": kiểm skill liên quan đã có dòng `## Nhật ký rút kinh nghiệm` mới cho phiên này chưa;
+chưa thì thêm (hoặc ghi vào `project_*.md` nếu skill nằm ngoài repo). Đây là việc duy nhất ngoài memory được phép sửa file skill/AGENTS.md ở bước này.
+
 ## 3. Báo lại
 
 Liệt kê ngắn gọn: đã ghi/sửa file memory nào, việc gì còn treo. Rồi nhắc tôi có thể `/clear`.

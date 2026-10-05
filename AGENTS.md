@@ -174,3 +174,20 @@ Mọi UI học sinh nhìn thấy (`/lop-hoc/**`, `/kiem-tra/**`, trang chủ HS,
 (tải nhận thức, đa phương tiện Mayer, não vị thành niên, F-pattern, độ dài dòng, cực tính nền, đích chạm…).
 Khi đề xuất hay sửa UI: **nêu mã quy tắc** (N1, C2, M5…), chạy checklist mục 8 (chụp 375px trước), và ghi mã vào
 mô tả commit; cố ý phá quy tắc thì ghi lý do. Phụ lục A của file là bản rà trang bài học 2/10/2026 còn chờ sửa.
+
+# Rút kinh nghiệm cuối phiên — bắt buộc với bài lý thuyết, đề thi, đề kiểm tra (thầy chốt 5/10/2026)
+
+Mọi phiên có làm bài học lý thuyết, đề thi, đề kiểm tra, quiz, ngân hàng câu hỏi (soạn, sửa, lọc, đăng) **phải kết thúc bằng
+phần "Rút kinh nghiệm"** — không có thì chưa tính là xong phiên. Làm trước khi báo hoàn thành / chạy `/ban-giao`:
+
+1. **Viết ngắn trong câu trả lời cuối** (3–6 gạch đầu dòng, mỗi dòng một bài học cụ thể): lỗi đã gặp + nguyên nhân thật,
+   cách phát hiện, cách làm đúng lần sau, việc gì tốn token/thời gian vô ích. Không có gì mới thì ghi rõ "không có bài học mới".
+2. **Ghi vào đúng nơi, không chỉ nói miệng**:
+   - Bài học gắn với một quy trình → mục `## Nhật ký rút kinh nghiệm` ở cuối skill tương ứng trong `.claude/skills/<tên>/SKILL.md`
+     (`soan-bai-ly-thuyet-tuong-tac`, `soan-quiz-ly-thuyet`, `up-de-kiem-tra`, `dang-de-hang-loat`). Skill nằm ngoài repo
+     (`azota`, `ngan-hang-cau-hoi`, `dang-bai-hoc-thachlab`, `latex`) → ghi vào file `project_*.md` liên quan trong `docs/memory/`
+     và nhắc thầy cập nhật skill đó.
+   - Bài học áp cho mọi phiên/mọi skill → thêm quy tắc ngắn vào `AGENTS.md` (chỉ thêm, không viết lại phần có sẵn).
+3. **Dạng mỗi mục**: `- YYYY-MM-DD · <sự cố/phát hiện> → <quy tắc làm đúng>`. Sửa ngay bước trong skill nếu bước đó sai, đừng chỉ
+   chất thêm ghi chú. Mục trùng ý đã có thì gộp, không lặp.
+4. Báo trong câu trả lời cuối: đã ghi vào file nào.

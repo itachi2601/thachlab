@@ -445,3 +445,9 @@ Nội dung + ảnh Storage **không cần deploy**. Chỉ chạy `./scripts/depl
   `DELETE` lên `lesson_items`/`exams` qua `supabase db query --linked` (xem `AGENTS.md`).
 - Không `git push` / deploy khi working tree có thay đổi không liên quan chưa được xác nhận.
 - Chỉ commit/deploy đúng phần vừa làm nếu buộc phải đụng tới code.
+
+## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
+
+Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
+một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
+

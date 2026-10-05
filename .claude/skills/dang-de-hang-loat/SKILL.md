@@ -328,3 +328,9 @@ cố thật (báo ngay cho người dùng, đừng tự ý ghi đè lại `exam_
 - Không tự ý xoá file — `--apply-missing` chỉ di chuyển vào thư mục con, không xoá.
 - Nội dung agent tự sửa/phục hồi trong đề gốc (đáp án sai, đoạn dẫn thiếu…) luôn phải
   báo lại cho người dùng, không âm thầm coi là xong.
+
+## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
+
+Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
+một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
+
