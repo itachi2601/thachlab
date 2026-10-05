@@ -13,7 +13,7 @@ import {
   type ExamQuestion,
   type QuestionForm,
 } from "@/features/exams/types";
-import { classifyQuestionTags } from "@/services/ai-classify";
+import { classifyQuestionTagsBatched } from "@/services/ai-classify";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
 import {
@@ -655,6 +655,7 @@ function TagGrid({
   const toast = useToast();
   const [open, setOpen] = useState(true);
   const [aiBusy, setAiBusy] = useState(false);
+  const [aiProgress, setAiProgress] = useState<{ done: number; total: number } | null>(null);
   const known = useMemo(() => new Set(groups.flatMap((g) => g.names).map((n) => n.toLowerCase())), [groups]);
   const untaggedTopic = questions.map((_, i) => i).filter((i) => !(questions[i].topic ?? "").trim());
   const untaggedForm = questions.map((_, i) => i).filter((i) => !questions[i].form);
@@ -673,7 +674,7 @@ function TagGrid({
     setAiBusy(true);
     try {
       const items = aiTargets.map((i) => ({ index: i, text: questionTextForAi(questions[i]) }));
-      const results = await classifyQuestionTags(aiCandidates, items);
+      const results = await classifyQuestionTagsBatched(aiCandidates, items, (done, total) => setAiProgress({ done, total }));
       for (const r of results) {
         if (r.topic) onTag(r.index, "topic", r.topic);
         if (r.form) onTag(r.index, "form", QUESTION_FORM_LABELS[r.form].toLowerCase());
@@ -688,6 +689,7 @@ function TagGrid({
       toast("error", e instanceof Error ? e.message : String(e));
     } finally {
       setAiBusy(false);
+      setAiProgress(null);
     }
   }
 
@@ -736,7 +738,7 @@ function TagGrid({
               disabled={aiBusy}
               className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[12px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
             >
-              <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
+              <Sparkles size={12} /> {aiBusy ? `Đang phân loại… ${aiProgress ? `${aiProgress.done}/${aiProgress.total} câu` : ""}` : `AI gắn nhãn (${aiTargets.length} câu)`}
             </button>
           )}
           <button type="button" onClick={() => setOpen((o) => !o)} className="text-slate-500 hover:text-slate-300">

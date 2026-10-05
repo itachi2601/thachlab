@@ -31,7 +31,7 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { TYPE_SHORT } from "@/features/lessons/types";
-import { classifyQuestionTags } from "@/services/ai-classify";
+import { classifyQuestionTagsBatched } from "@/services/ai-classify";
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
 import {
   attachFigureToBankQuestion,
@@ -123,6 +123,7 @@ export default function QuestionBankAdmin() {
   const [randomN, setRandomN] = useState(10);
   const [bulkTopic, setBulkTopic] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
+  const [aiProgress, setAiProgress] = useState<{ done: number; total: number } | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setDebounced(search), 300);
@@ -399,25 +400,27 @@ export default function QuestionBankAdmin() {
     try {
       const batch = aiTargets.slice(0, AI_BATCH_LIMIT);
       const aiItems = batch.map((q, i) => ({ index: i, text: questionTextForAi(q.question) }));
-      const results = await classifyQuestionTags(aiCandidateNames, aiItems);
+      const results = await classifyQuestionTagsBatched(aiCandidateNames, aiItems, (done, total) => setAiProgress({ done, total }));
       const sourcePatches: SourceLabelPatch[] = [];
       let applied = 0;
-      for (const r of results) {
-        const q = batch[r.index];
-        if (!q || (!r.topic && !r.form)) continue;
-        const bankPatch: Parameters<typeof updateBankQuestion>[1] = { grade };
-        if (r.topic) bankPatch.topicName = r.topic;
-        if (r.form) bankPatch.form = r.form;
-        try {
-          await updateBankQuestion(q.id, bankPatch);
-        } catch {
-          continue;
-        }
-        applied++;
-        if (q.sourceExamId !== null && q.sourceIndex !== null) {
-          sourcePatches.push({ sourceExamId: q.sourceExamId, sourceIndex: q.sourceIndex, topicName: r.topic, form: r.form });
-        }
-      }
+      await Promise.all(
+        results.map(async (r) => {
+          const q = batch[r.index];
+          if (!q || (!r.topic && !r.form)) return;
+          const bankPatch: Parameters<typeof updateBankQuestion>[1] = { grade };
+          if (r.topic) bankPatch.topicName = r.topic;
+          if (r.form) bankPatch.form = r.form;
+          try {
+            await updateBankQuestion(q.id, bankPatch);
+          } catch {
+            return;
+          }
+          applied++;
+          if (q.sourceExamId !== null && q.sourceIndex !== null) {
+            sourcePatches.push({ sourceExamId: q.sourceExamId, sourceIndex: q.sourceIndex, topicName: r.topic, form: r.form });
+          }
+        }),
+      );
       let syncNote = "";
       if (sourcePatches.length) {
         const { examsUpdated, failed } = await syncLabelsToSourceExams(sourcePatches);
@@ -438,6 +441,7 @@ export default function QuestionBankAdmin() {
       toast("error", e instanceof Error ? e.message : String(e));
     } finally {
       setAiBusy(false);
+      setAiProgress(null);
     }
   }
 
@@ -592,7 +596,7 @@ export default function QuestionBankAdmin() {
                 className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1.5 text-xs font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
                 title="Gắn topic/form còn thiếu bằng AI, đồng thời vá lại đề gốc nếu câu có nguồn từ một đề đã đăng"
               >
-                <Sparkles size={14} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${Math.min(aiTargets.length, AI_BATCH_LIMIT)}/${aiTargets.length} câu)`}
+                <Sparkles size={14} /> {aiBusy ? `Đang phân loại… ${aiProgress ? `${aiProgress.done}/${aiProgress.total} câu` : ""}` : `AI gắn nhãn (${Math.min(aiTargets.length, AI_BATCH_LIMIT)}/${aiTargets.length} câu)`}
               </button>
             )}
             {node.kind === "missing-figure" && drawTargets.length > 0 && (

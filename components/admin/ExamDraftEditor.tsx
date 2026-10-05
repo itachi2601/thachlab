@@ -12,7 +12,7 @@ import type {
   ShortAnswerQuestion,
   TrueFalseQuestion,
 } from "@/features/exams/types";
-import { classifyQuestionTags } from "@/services/ai-classify";
+import { classifyQuestionTagsBatched } from "@/services/ai-classify";
 import { questionTextForAi } from "@/services/exam-question-text";
 import type { Difficulty, LessonBundle } from "@/services/lesson-import";
 
@@ -82,6 +82,7 @@ export default function ExamDraftEditor({
 }) {
   const toast = useToast();
   const [aiBusy, setAiBusy] = useState(false);
+  const [aiProgress, setAiProgress] = useState<{ done: number; total: number } | null>(null);
   const questions = bundle.exam.questions;
   // "add": mở bảng chọn nhiều câu để thêm cuối đề. { index }: đang thay đúng 1 câu tại vị trí đó.
   const [bankPicker, setBankPicker] = useState<{ mode: "add" } | { mode: "swap"; index: number } | null>(null);
@@ -120,7 +121,7 @@ export default function ExamDraftEditor({
     setAiBusy(true);
     try {
       const items = aiTargets.map((i) => ({ index: i, text: questionTextForAi(questions[i]) }));
-      const results = await classifyQuestionTags(aiTopicCandidates, items);
+      const results = await classifyQuestionTagsBatched(aiTopicCandidates, items, (done, total) => setAiProgress({ done, total }));
       let next = questions;
       for (const r of results) {
         next = next.map((q, i) =>
@@ -148,6 +149,7 @@ export default function ExamDraftEditor({
       toast("error", e instanceof Error ? e.message : String(e));
     } finally {
       setAiBusy(false);
+      setAiProgress(null);
     }
   }
 
@@ -215,7 +217,7 @@ export default function ExamDraftEditor({
             disabled={aiBusy}
             className="ml-auto inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2 py-1 text-[12px] font-semibold text-primary hover:bg-primary/30 disabled:opacity-50"
           >
-            <Sparkles size={12} /> {aiBusy ? "Đang phân loại…" : `AI gắn nhãn (${aiTargets.length} câu)`}
+            <Sparkles size={12} /> {aiBusy ? `Đang phân loại… ${aiProgress ? `${aiProgress.done}/${aiProgress.total} câu` : ""}` : `AI gắn nhãn (${aiTargets.length} câu)`}
           </button>
         )}
       </div>
