@@ -69,6 +69,30 @@ Script chèn khối `.tl-box--video` ngay sau hộp `.tl-box--exp`/`<figure>` ma
 `theory.src.html` + `theory.html` + `theory_html` trong `bundle.json`. Đăng lên DB:
 `bash scripts/cap-nhat-ly-thuyet-hang-loat.sh <slug>:<lesson_id>` (một lượt deploy cho nhiều bài).
 
+### Bảng đề xuất & cổng duyệt (không chép tay id)
+Clip do agent tìm **không ghi thẳng vào JSON**: đưa ra bảng markdown để thầy duyệt trước. Mỗi chương một
+bảng, đặt tại `content/thi-nghiem/video-de-xuat-<lớp>-<chương>.md`:
+
+```markdown
+| # | Bài | Vị trí | Link | Kênh | Thời lượng | Nhãn | Nhìn vào | Cờ | Duyệt? | start–end |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | l11-mo-ta-song | mo_bai | https://www.youtube.com/watch?v=b87QZtYKmqo | Physics Demos | 3:20 | khán đài làm sóng người | Người trên khán đài có rời chỗ ngồi không? | ok | x | 0:20–1:10 |
+| 2 | l11-mo-ta-song | tn-l11-motasong-01 | https://youtu.be/UMkAXvWIRY4 | MIT | 2:00 | sóng nước, vật nổi | Miếng xốp có trôi ra xa không? | cần cắt |  | |
+```
+
+- `Vị trí`: `mo_bai` hoặc `data-exp` của hộp thí nghiệm. `start–end`: `0:20–1:10` hoặc `70-125` (giây).
+- **Chỉ dòng có `Duyệt?` = `x`/`✓` mới được nhập**; chưa điền thì bỏ qua, không nhập gì.
+- Cổng duyệt (thầy chốt 6/10/2026): agent tự chấm từng clip theo V1–V7 rồi **đánh cờ** vào cột `Cờ`;
+  thầy soát **mẫu ~10%** + **toàn bộ dòng có cờ**, không phải xem hết.
+- Quy trình 5 bước (không ai chép tay `youtube_id`):
+```
+npx tsx scripts/nhap-video-de-xuat.mts content/thi-nghiem/video-de-xuat-l11-chuong2.md --ra /tmp/kho-thu
+npx tsx scripts/chen-video-thi-nghiem.mts --kiem --kho /tmp/kho-thu     # link phải ✓ hết
+npx tsx scripts/nhap-video-de-xuat.mts content/thi-nghiem/video-de-xuat-l11-chuong2.md --apply
+npx tsx scripts/chen-video-thi-nghiem.mts --kiem --apply                # điền tên kênh + ngày kiểm
+npx tsx scripts/chen-video-thi-nghiem.mts --apply                       # chèn vào bài
+```
+
 ## Liên kết với bài lý thuyết
 Trong `theory.html`, đặt `data-exp="<id>"` lên hộp thí nghiệm (`.tl-box--exp`) hoặc `<figure>` tương ứng. Kiểm bằng:
 ```
