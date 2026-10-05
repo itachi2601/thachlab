@@ -56,7 +56,7 @@ export default function LearningPath() {
         <Reveal className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">Lộ trình lớp 9–12</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Chọn lớp em đang học
+            Mỗi lớp học gì?
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Chương trình 2018 xếp lại kiến thức khá khác trước, nên mỗi lớp có một
@@ -74,10 +74,10 @@ export default function LearningPath() {
         <div className="mt-10 divide-y divide-line border-y border-line">
           {stages.map((s, i) => (
             <Reveal key={s.grade} delay={i * 0.06}>
-              <article className="grid gap-6 py-8 md:grid-cols-[220px_1fr] md:gap-8 lg:grid-cols-[260px_1fr]">
+              <article className="grid gap-6 py-6 md:py-8 md:grid-cols-[220px_1fr] md:gap-8 lg:grid-cols-[260px_1fr]">
                 <Link
                   href={s.classHref}
-                  className="block aspect-[4/3] overflow-hidden rounded-lg border border-line md:aspect-auto md:h-full"
+                  className="hidden aspect-[4/3] overflow-hidden rounded-lg border border-line md:block md:aspect-auto md:h-full"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -99,7 +99,7 @@ export default function LearningPath() {
                       <p className="text-xs font-medium uppercase tracking-wider text-muted">Trọng tâm</p>
                       <p className="mt-1.5 text-sm text-ink">{s.topics.join(" · ")}</p>
                     </div>
-                    <div>
+                    <div className="hidden sm:block">
                       <p className="text-xs font-medium uppercase tracking-wider text-muted">Mốc cần đạt</p>
                       <ul className="mt-1.5 space-y-1">
                         {s.checkpoints.map((c) => (
