@@ -1,0 +1,100 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 1. Làm quen với Vật lí",
+ "lesson_id": 46,
+ "nguon_trong_bai": "content/lesson-samples/l10-lam-quen-voi-vat-li/theory.html",
+ "id": "tn-l10-lam-quen-01",
+ "ten": "Giọt mực trong nước nóng và nước lạnh: vĩ mô nhìn thấy, vi mô giải thích",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "lamquen.doi_tuong",
+  "lamquen.cap_do",
+  "lamquen.chuyen_dong_nhiet"
+ ],
+ "muc_tieu": "Nhìn hiện tượng vĩ mô (mực loang) và giải thích bằng chuyển động của phân tử (vi mô); thấy nhiệt độ càng cao thì loang càng nhanh.",
+ "dung_cu": [
+  {
+   "ten": "Cốc thuỷ tinh trong",
+   "so_luong": 2
+  },
+  {
+   "ten": "Mực màu (hoặc thuốc nhuộm thực phẩm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nước lạnh và nước nóng khoảng 60 °C",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Rót nước lạnh vào cốc 1, nước nóng khoảng 60 °C vào cốc 2 (cùng lượng).",
+   "Nhỏ một giọt mực vào mỗi cốc, không khuấy, để yên."
+  ],
+  "quan_sat": [
+   "Mực trong cốc nóng loang đều nhanh hơn hẳn cốc lạnh."
+  ],
+  "rut_ra": [
+   "Cái thấy được (mực loang) là hiện tượng vĩ mô.",
+   "Nguyên nhân vi mô: phân tử nước chuyển động nhiệt, nước càng nóng chuyển động càng nhanh."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T",
+   "ten": "Nhiệt độ nước",
+   "don_vi": "°C",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 80,
+   "mac_dinh": 60,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "t_loang",
+   "ten": "Thời gian mực loang đều",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "tốc độ loang tăng khi nhiệt độ T tăng (chuyển động nhiệt của phân tử mạnh hơn)"
+  ],
+  "gia_thiet": [
+   "không khuấy, không có đối lưu mạnh",
+   "chỉ xét ảnh hưởng của nhiệt độ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Cốc",
+   "Mực loang đều"
+  ],
+  "hang": [
+   [
+    "nước lạnh",
+    "chậm"
+   ],
+   [
+    "nước nóng ~60 °C",
+    "nhanh hơn rõ rệt"
+   ]
+  ],
+  "ghi_chu": "Thí nghiệm định tính, không có số đo; ở giai đoạn mô phỏng sẽ gán thời gian theo mô hình khuếch tán."
+ },
+ "ket_qua_ky_vong": "Cốc nước nóng loang đều trước cốc nước lạnh.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng mực loang vì mực nặng hơn nên chìm xuống (bỏ qua chuyển động phân tử).",
+  "Nghĩ vật lí chỉ nghiên cứu cái nhìn thấy được."
+ ],
+ "sai_so_thuong_gap": "Nước nóng tạo đối lưu làm trộn mực; khó xác định lúc 'loang đều'.",
+ "an_toan": "Nước nóng 60 °C: rót cẩn thận, tránh bỏng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Hai cốc nhìn từ bên, hạt mực là các chấm chuyển động ngẫu nhiên; nút phóng to xuống mức phân tử.",
+  "diem_nhan": "Thanh trượt nhiệt độ làm vận tốc phân tử tăng, thấy mực loang nhanh hơn ở mức vĩ mô."
+ }
+}

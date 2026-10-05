@@ -1,0 +1,158 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+ "lesson_id": 51,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-do-toc-do/theory.html",
+ "id": "tn-l10-do-toc-do-01",
+ "ten": "Đo tốc độ xe đồ chơi bằng thước và đồng hồ bấm giây, 5 lần bấm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dotocdo.v_bang_s_chia_t",
+  "dotocdo.sai_so_tuyet_doi",
+  "dotocdo.sai_so_tuong_doi",
+  "dotocdo.do_tre_phan_xa"
+ ],
+ "muc_tieu": "Từ năm số đo thời gian bấm tay, tính giá trị trung bình, sai số tuyệt đối, sai số tương đối và tốc độ trung bình của xe; nhận ra nguồn sai số chính là độ trễ phản xạ của người bấm.",
+ "dung_cu": [
+  {
+   "ten": "Thước dây (chia 1 mm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe đồ chơi chạy đều (pin)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính đánh dấu vạch xuất phát và vạch đích",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kẻ vạch xuất phát và vạch đích cách nhau 1,20 m bằng thước dây (sai số 0,002 m).",
+   "Cho xe chạy đều qua; một bạn bấm khi xe qua vạch đầu và bấm lại khi qua vạch cuối. Lặp 5 lần."
+  ],
+  "quan_sat": [
+   "Năm số đo t: 3,12; 2,86; 3,04; 3,21; 2,92 s.",
+   "Số đo lệch hai phía quanh giá trị trung bình, cỡ vài phần mười giây."
+  ],
+  "rut_ra": [
+   "t̄ = 3,03 s; Δt = 0,11 s; δt ≈ 3,7 %.",
+   "v̄ = s/t̄ ≈ 0,40 m/s với δv ≈ 3,9 % (δs ≈ 0,2 %). Sai số chủ yếu do độ trễ phản xạ; kéo dài đường chạy làm δt nhỏ đi."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường đo",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3.0,
+   "mac_dinh": 1.2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "v_that",
+   "ten": "Tốc độ thật của xe",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.4,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "tre",
+   "ten": "Độ lệch phản xạ cực đại mỗi lần bấm",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.0,
+   "max": 0.3,
+   "mac_dinh": 0.2,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đo (đồng hồ bấm tay)",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.11199999999999999
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ trung bình",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_thật = s/v_thật",
+   "t_i = t_thật + e_i (e_i: độ trễ phản xạ ngẫu nhiên hai phía)",
+   "t̄ = Σt_i/n",
+   "Δt = Σ|t_i − t̄|/n",
+   "δt = Δt/t̄",
+   "δv = δs + δt"
+  ],
+  "gia_thiet": [
+   "xe chạy đều",
+   "e_i là dãy giả định (+0,12; −0,14; +0,04; +0,21; −0,08 s), không phải đo thật",
+   "sai số thước dây Δs = 0,002 m"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "t (s)",
+   "|t − t̄| (s)"
+  ],
+  "hang": [
+   [
+    1,
+    3.12,
+    0.09
+   ],
+   [
+    2,
+    2.86,
+    0.17
+   ],
+   [
+    3,
+    3.04,
+    0.01
+   ],
+   [
+    4,
+    3.21,
+    0.18
+   ],
+   [
+    5,
+    2.92,
+    0.11
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (t thật = 3,00 s). t̄ = 3,03 s, Δt = 0,11 s (11,2 cs), δt = 3,7 %."
+ },
+ "ket_qua_ky_vong": "v̄ ≈ 0,40 m/s, δv ≈ 3,9 %.",
+ "hien_tuong_hay_sai": [
+  "Chỉ bấm một lần rồi kết luận.",
+  "Tưởng đồng hồ bấm giây đắt hơn thì hết sai số do phản xạ.",
+  "Rút ngắn đường chạy cho dễ quan sát, làm δt tăng lên."
+ ],
+ "sai_so_thuong_gap": "Độ trễ phản xạ của người bấm (đầu và cuối đoạn), vạch kẻ lệch, xe không chạy thật đều.",
+ "an_toan": "Chặn cuối đường chạy để xe không rơi khỏi bàn.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Xe chạy qua hai vạch; người dùng bấm hai nút Bắt đầu/Dừng, mô phỏng thêm độ trễ ngẫu nhiên; bảng điền dần sau mỗi lần chạy.",
+  "diem_nhan": "Kéo thanh trượt độ trễ và độ dài đường chạy để thấy δt thay đổi."
+ }
+}

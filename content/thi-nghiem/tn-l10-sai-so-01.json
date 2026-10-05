@@ -1,0 +1,157 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo",
+ "lesson_id": 48,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-sai-so/theory.html",
+ "id": "tn-l10-sai-so-01",
+ "ten": "Đo thời gian 10 dao động của con lắc đơn 5 lần: trung bình, sai số tuyệt đối và tỉ đối",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "saiso.trung_binh",
+  "saiso.tuyet_doi_do_truc_tiep",
+  "saiso.ti_doi",
+  "saiso.ngau_nhien"
+ ],
+ "muc_tieu": "Từ bảng 5 lần đo, tính giá trị trung bình, sai số tuyệt đối từng lần, sai số tuyệt đối của phép đo (cộng sai số dụng cụ), sai số tỉ đối; ghi kết quả đúng dạng t = trung bình ± Δt.",
+ "dung_cu": [
+  {
+   "ten": "Con lắc đơn dây dài 1,000 m, vật nặng nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây số (ĐCNN 0,01 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dây (đo chiều dài dây)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo con lắc đơn dài 1,000 m, kéo lệch khoảng 5° rồi thả nhẹ.",
+   "Bấm đồng hồ đo thời gian t của 10 dao động toàn phần; lặp lại 5 lần."
+  ],
+  "quan_sat": [
+   "t lần lượt 20,19; 19,85; 20,14; 19,94; 20,23 s.",
+   "Các lần đo tản quanh 20,07 s, lệch trung bình 0,14 s."
+  ],
+  "rut_ra": [
+   "Trung bình 20,07 s; sai số tuyệt đối Δt = 0,14 + 0,01 = 0,15 s; sai số tỉ đối ≈ 0,75 %.",
+   "Kết quả ghi: t = (20,07 ± 0,15) s. Sai số ngẫu nhiên (do bấm tay) lấn át sai số dụng cụ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 1.5,
+   "mac_dinh": 1.0,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "do_lech_bam_tay",
+   "ten": "Độ lệch bấm tay tối đa",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.0,
+   "max": 0.3,
+   "mac_dinh": 0.25,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.81
+  },
+  {
+   "ky_hieu": "dcnn_dong_ho",
+   "ten": "Độ chia nhỏ nhất đồng hồ",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.01
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian 10 dao động",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "delta_t",
+   "ten": "Sai số tuyệt đối của phép đo",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_i = 10·2π·√(l/g) + e_i, làm tròn tới 0,01 s",
+   "t̄ = (t_1 + … + t_5)/5",
+   "Δt_i = |t̄ − t_i|",
+   "Δt = trung bình(Δt_i) + Δt_dc, với Δt_dc = 0,01 s",
+   "δt = Δt/t̄ · 100 %"
+  ],
+  "gia_thiet": [
+   "e_i là dãy độ lệch cố định (+0,13; −0,21; +0,08; −0,12; +0,17 s) mô phỏng phản xạ bấm tay",
+   "góc lệch nhỏ",
+   "g = 9,81 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "t (s)",
+   "Δt_i (s)"
+  ],
+  "hang": [
+   [
+    1,
+    20.19,
+    0.12
+   ],
+   [
+    2,
+    19.85,
+    0.22
+   ],
+   [
+    3,
+    20.14,
+    0.07
+   ],
+   [
+    4,
+    19.94,
+    0.13
+   ],
+   [
+    5,
+    20.23,
+    0.16
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (T0 = 2.0061 s, 10·T0 = 20.0607 s) cộng độ lệch bấm tay cố định, làm tròn 0,01 s. t̄ = 20,07 s; trung bình Δt_i = 0,14 s; Δt = 0,15 s; δt ≈ 0.75 %."
+ },
+ "ket_qua_ky_vong": "t = (20,07 ± 0,15) s; δt ≈ 0,75 %.",
+ "hien_tuong_hay_sai": [
+  "Quên cộng sai số dụng cụ (ra 0,14 s thay vì 0,15 s).",
+  "Lấy độ lệch lớn nhất (0,22 s) làm sai số.",
+  "Tưởng đồng hồ chia 0,01 s thì sai số cũng cỡ 0,01 s."
+ ],
+ "sai_so_thuong_gap": "Phản xạ bấm đồng hồ sớm hoặc muộn; đếm nhầm số dao động; kéo lệch góc lớn.",
+ "an_toan": "Buộc chắc vật nặng, tránh vùng đầu người đứng.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Con lắc đơn thả được; mỗi lần bấm sinh một số đo = giá trị thật + nhiễu; bảng tự điền Δt_i và vẽ chấm cùng đoạn t̄ ± Δt trên trục thời gian.",
+  "diem_nhan": "Thanh trượt 'độ lệch bấm tay' và số lần đo: đo nhiều lần thì t̄ ổn định hơn, nhưng đổi sang đồng hồ chia nhỏ hơn thì Δt gần như không đổi."
+ }
+}

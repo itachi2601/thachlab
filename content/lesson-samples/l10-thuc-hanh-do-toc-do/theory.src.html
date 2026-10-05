@@ -1,0 +1,386 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Thiết kế được phương án <strong>đo tốc độ</strong> bằng thước và đồng hồ, bằng cổng quang, bằng video.</li>
+<li>Xử lý bảng số liệu: <strong>giá trị trung bình</strong>, sai số tuyệt đối, sai số tương đối.</li>
+<li><strong>So sánh ưu, nhược</strong> của từng phương án và chọn tấm chắn cho cổng quang.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: hai con số cho một lượt chạy</h3>
+
+<p>Tiết thể dục, Minh chạy $100\ \text{m}$. Hai bạn đứng ở vạch đích, mỗi bạn một chiếc đồng hồ bấm giây, cùng bấm khi Minh chạm vạch. Đồng hồ thứ nhất hiện $14{,}2\ \text{s}$, đồng hồ thứ hai hiện $14{,}6\ \text{s}$. Cùng một lượt chạy, hai con số khác nhau.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Hai con số khác nhau thì nên làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q1" id="tl51-q1a"><label for="tl51-q1a" class="tl-opt tl-no">A. Một bạn bấm sai: bỏ số đó và lấy số còn lại</label>
+<input type="radio" name="tl51-q1" id="tl51-q1b"><label for="tl51-q1b" class="tl-opt tl-ok">B. Cả hai đều hợp lí: người bấm luôn trễ hoặc sớm chút ít. Đo nhiều lần, lấy trung bình, ghi kèm sai số</label>
+<input type="radio" name="tl51-q1" id="tl51-q1c"><label for="tl51-q1c" class="tl-opt tl-no">C. Mua đồng hồ bấm giây đắt hơn thì hai số sẽ trùng nhau</label>
+<input type="radio" name="tl51-q1" id="tl51-q1d"><label for="tl51-q1d" class="tl-opt tl-no">D. Hai bạn đo hai đại lượng khác nhau vì Minh nhanh dần ở cuối đoạn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Chênh $0{,}4\ \text{s}$ là cỡ độ trễ phản xạ của người bấm. Không số nào "sai", mỗi số chỉ là một lần đo. Muốn tin được thì đo nhiều lần và <strong>ghi sai số</strong> — đó là việc của cả bài thực hành này.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: không có cơ sở nào để coi một số là sai, hai số cùng đáng tin như nhau. C: đồng hồ tốt hơn không sửa được độ trễ của người bấm. D: hai bạn đo cùng một đại lượng, là thời gian chạy cả $100\ \text{m}$.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: đo tốc độ thế nào</h3>
+
+<h4>1. Nguyên tắc đo và cách ghi sai số</h4>
+
+<p><strong>🔑 Đo $s$ · đo $t$ · chia · ghi sai số</strong></p>
+
+<ul>
+<li>Tốc độ trung bình trên đoạn đo: $v = \dfrac{s}{t}$.</li>
+<li>Đo trực tiếp $s$ bằng thước, $t$ bằng đồng hồ, rồi chia.</li>
+<li>Đo $n$ lần, lấy <strong>giá trị trung bình</strong> $\bar t$.</li>
+<li><strong>Sai số tuyệt đối</strong> $\Delta t$: trung bình các độ lệch $|t_i - \bar t|$.</li>
+<li><strong>Sai số tương đối</strong> $\delta t = \dfrac{\Delta t}{\bar t}$, đổi ra phần trăm.</li>
+<li>Thương hai đại lượng: $\delta v = \delta s + \delta t$.</li>
+</ul>
+
+<p>Mẹo nhớ: <strong>"chia thì cộng phần trăm"</strong>. Kết quả viết $v = \bar v \pm \Delta v$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-01">
+<p class="tl-label">🔬 Thí nghiệm 1: thước và đồng hồ bấm giây</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> kẻ vạch xuất phát và vạch đích cách nhau $1{,}20\ \text{m}$ (thước dây, $\Delta s = 0{,}002\ \text{m}$). Cho xe đồ chơi chạy đều qua; một bạn bấm khi xe qua vạch đầu, bấm lại khi qua vạch cuối. Lặp 5 lần.</li>
+<li><strong>Quan sát:</strong> năm số $t$ lệch nhau cỡ vài phần mười giây (bảng dưới, số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> người bấm trễ hoặc sớm ngẫu nhiên, nên số đo lệch hai phía quanh giá trị trung bình.</li>
+</ol>
+</div>
+
+__BANG_TN1__
+
+<!--FIG2-->
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: sai số của phép đo bấm tay (tự tính trước, rồi bấm xem)</summary>
+<p>$\bar t = @@TBAR:m@@\ \text{s}$ và $\Delta t = @@DT1:m@@\ \text{s}$, nên $\delta t = \dfrac{@@DT1:m@@}{@@TBAR:m@@} \approx @@DLT1:m@@\ \%$. Thước dây: $\delta s = \dfrac{0{,}002}{1{,}20} \approx @@DLS1:m@@\ \%$. Vậy $\bar v = \dfrac{1{,}20}{@@TBAR:m@@} \approx @@VB1:m@@\ \text{m/s}$, $\delta v \approx @@DLV1:m@@\ \%$. Sai số gần hết đến từ <strong>độ trễ phản xạ</strong> của người bấm, không phải từ thước.</p>
+</details>
+
+<h4>2. Ba phương án và so sánh</h4>
+
+<p><strong>🔑 Bấm tay: rẻ · Cổng quang: chính xác · Video: thấy cả quá trình</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Phương án</th><th>Ưu và nhược</th></tr>
+</thead>
+<tbody>
+<tr><td>Thước và đồng hồ bấm giây</td><td><strong>Ưu:</strong> rẻ, làm ở đâu cũng được.<br><strong>Nhược:</strong> trễ phản xạ, chỉ cho tốc độ trung bình cả đoạn.</td></tr>
+<tr><td>Cổng quang và đồng hồ hiện số</td><td><strong>Ưu:</strong> không phụ thuộc người bấm, chia tới $0{,}001\ \text{s}$.<br><strong>Nhược:</strong> đắt, chỉ đo ở chỗ đặt cổng.</td></tr>
+<tr><td>Video và phần mềm Tracker</td><td><strong>Ưu:</strong> có vị trí ở mọi thời điểm, vẽ được đồ thị.<br><strong>Nhược:</strong> hình mờ gây sai số, mất công xử lý.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Phương án video, các bước:</strong></p>
+<ul>
+<li>Quay xe chạy cạnh một thước chuẩn, máy cố định, vuông góc đường chạy.</li>
+<li>Đọc vị trí $x$ của xe theo từng khung hình; hai khung liền nhau cách $\Delta t = 1/(\text{số khung hình mỗi giây})$.</li>
+<li>Tính $v = \dfrac{\Delta x}{\Delta t}$ cho từng khoảng, hoặc để phần mềm Tracker vẽ đồ thị.</li>
+</ul>
+
+<h4>3. Cổng quang và tấm chắn</h4>
+
+<p><strong>🔑 Tấm chắn che tia sáng · $v = d/t$</strong></p>
+
+<!--FIG3-->
+
+<ul>
+<li>Gắn lên xe một <strong>tấm chắn</strong> bề rộng $d$. Khi qua cổng, tấm chắn che tia sáng trong thời gian $t$.</li>
+<li>Đồng hồ hiện số ghi $t$; tốc độ là $v = \dfrac{d}{t}$.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-02">
+<p class="tl-label">🔬 Thí nghiệm 2: cổng quang</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tấm chắn $d = 5{,}0\ \text{cm}$ ($\Delta d = 0{,}1\ \text{cm}$). Xe chạy đều qua cổng, đồng hồ chia tới $0{,}001\ \text{s}$. Lặp 5 lần.</li>
+<li><strong>Quan sát:</strong> $t$ lệch nhau chỉ vài phần nghìn giây (bảng dưới, số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> không còn độ trễ của người bấm, nên số đo gọn hơn nhiều.</li>
+</ol>
+</div>
+
+__BANG_TN2__
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: nguồn sai số nào lớn nhất? (tự tính trước, rồi bấm xem)</summary>
+<p>$\delta t = \dfrac{@@DT2:m@@}{@@TBAR2:m@@} \approx @@DLT2:m@@\ \%$ và $\delta d = \dfrac{0{,}1}{5{,}0} = @@DLD2:m@@\ \%$, nên $\delta v \approx @@DLV2:m@@\ \%$. Lúc này sai số lớn nhất lại đến từ <strong>việc đo $d$ bằng thước</strong>, không phải từ đồng hồ.</p>
+</details>
+
+<details class="tl-details">
+<summary>➕ Xem thêm: tốc kế và súng bắn tốc độ</summary>
+<p>Tốc kế xe máy đếm số vòng quay của bánh xe. Súng bắn tốc độ phát sóng radar rồi đo độ lệch tần số của sóng phản xạ (hiệu ứng Doppler). Cả hai đo trực tiếp tốc độ tức thời, không cần tự chia $s$ cho $t$.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Vì sao đồng hồ hiện số nối cổng quang cho thời gian ít sai số hơn bấm tay?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q2" id="tl51-q2a"><label for="tl51-q2a" class="tl-opt tl-ok">A. Thời điểm bắt đầu và kết thúc do tia sáng bị chắn quyết định, không có độ trễ của người bấm</label>
+<input type="radio" name="tl51-q2" id="tl51-q2b"><label for="tl51-q2b" class="tl-opt tl-no">B. Vì xe chạy chậm hơn khi qua cổng quang</label>
+<input type="radio" name="tl51-q2" id="tl51-q2c"><label for="tl51-q2c" class="tl-opt tl-no">C. Vì $d/t$ luôn đúng bằng tốc độ tức thời tại cổng</label>
+<input type="radio" name="tl51-q2" id="tl51-q2d"><label for="tl51-q2d" class="tl-opt tl-no">D. Vì đồng hồ hiện số hoàn toàn không có sai số</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia sáng bị chắn thì đồng hồ chạy, hết chắn thì đồng hồ dừng, không cần tay người. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: cách đo không làm xe đổi tốc độ. C: $d/t$ vẫn là tốc độ trung bình trên bề rộng tấm chắn (xem mục 4). D: đồng hồ chỉ chia tới $0{,}001\ \text{s}$ nên vẫn có sai số, chỉ là nhỏ hơn bấm tay.</p></div>
+</div>
+</div>
+
+<h4>4. Tấm chắn rộng hay hẹp?</h4>
+
+<p><strong>🔑 $d/t$ là trung bình · hẹp thì sát tức thời · quá hẹp thì $t$ quá ngắn</strong></p>
+
+<ul>
+<li>$d/t$ là tốc độ trung bình <strong>trong lúc tấm chắn đi qua</strong>, không phải tốc độ tại một điểm.</li>
+<li>Xe đang đổi tốc độ thì tấm chắn càng rộng, $d/t$ càng lệch khỏi tốc độ lúc vào cổng.</li>
+<li>Thu hẹp $d$ thì $t$ cũng ngắn lại, đồng hồ chia tới $0{,}001\ \text{s}$ sẽ làm tròn mạnh.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-03">
+<p class="tl-label">🔬 Thí nghiệm 3: thay tấm chắn cho xe đang nhanh dần</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> xe nhanh dần, lúc mép trước tấm chắn vào cổng xe có tốc độ $0{,}600\ \text{m/s}$ (minh hoạ: mỗi giây tốc độ tăng thêm $0{,}50\ \text{m/s}$). Lần lượt thay 4 tấm chắn.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> $d$ giảm thì $d/t$ tiến sát $0{,}600\ \text{m/s}$, nhưng tới $d = 1{,}0\ \text{cm}$ thì sai số làm tròn của đồng hồ bắt đầu lấn át.</li>
+</ol>
+</div>
+
+__BANG_TN3__
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: vì sao hàng cuối lại lệch xa hơn hàng ba? (nghĩ rồi bấm)</summary>
+<p>Với $d = 1{,}0\ \text{cm}$, thời gian thật chỉ khoảng $0{,}0166\ \text{s}$ mà đồng hồ chia tới $0{,}001\ \text{s}$, hiện $0{,}017\ \text{s}$. Sai số làm tròn tới $0{,}0005\ \text{s}$, tức khoảng $3\ \%$ của $t$, thế chỗ cho sai số do tấm chắn rộng. Vì vậy chọn $d$ <strong>vừa hẹp, vừa đủ để $t$ dài hơn nhiều bước chia</strong> của đồng hồ.</p>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "Đồng hồ tốt hoặc đo một lần là đủ"</h4>
+
+<p>Độ trễ của người bấm là lỗi <strong>ngẫu nhiên</strong>: lúc sớm, lúc muộn. Chỉ có nhiều lần đo mới cho thấy nó lệch bao nhiêu.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đo một lần</th><th>Đo nhiều lần</th></tr>
+</thead>
+<tbody>
+<tr><td>Không biết lệch bao nhiêu</td><td>Độ lệch giữa các lần cho ước lượng sai số</td></tr>
+<tr><td>Một lần trễ là lệch cả kết quả</td><td>Lệch hai phía bù nhau trong trung bình</td></tr>
+<tr><td>Đo một lần với đường ngắn thì $\delta t$ lớn</td><td>Đường dài hơn thì $\delta t$ nhỏ hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Nhiều lần · trung bình · đường dài</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Nhóm em bấm tay, mỗi lần bấm lệch cỡ $0{,}1\ \text{s}$. Cách nào giảm sai số tương đối hợp lí nhất?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q3" id="tl51-q3a"><label for="tl51-q3a" class="tl-opt tl-no">A. Dùng đồng hồ bấm giây đắt hơn, vẫn bấm tay</label>
+<input type="radio" name="tl51-q3" id="tl51-q3b"><label for="tl51-q3b" class="tl-opt tl-no">B. Chỉ bấm một lần, nhưng bấm thật dứt khoát</label>
+<input type="radio" name="tl51-q3" id="tl51-q3c"><label for="tl51-q3c" class="tl-opt tl-no">C. Rút ngắn đường chạy để dễ nhìn xe hơn</label>
+<input type="radio" name="tl51-q3" id="tl51-q3d"><label for="tl51-q3d" class="tl-opt tl-ok">D. Kéo dài đường chạy (cùng tốc độ), đo nhiều lần rồi lấy trung bình</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đường dài gấp đôi thì $t$ dài gấp đôi, còn độ lệch bấm vẫn cỡ $0{,}1\ \text{s}$, nên $\delta t$ giảm một nửa. Đo nhiều lần cho thêm trung bình và ước lượng sai số.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: đồng hồ đắt không sửa được độ trễ của người bấm. B: một lần bấm thì không có gì để lấy trung bình, cũng không ước được sai số. C: đường ngắn làm $t$ ngắn đi, $\delta t$ còn lớn hơn.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: "$d/t$ là tốc độ đúng tại cổng"</h4>
+
+<p>Xe đang nhanh dần thì tốc độ đổi ngay trong lúc tấm chắn đi qua. Số đọc được là <strong>tốc độ trung bình</strong> trên bề rộng $d$.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tốc độ trung bình trên $d$</th><th>Tốc độ tức thời tại cổng</th></tr>
+</thead>
+<tbody>
+<tr><td>Đo được: $d/t$</td><td>Giá trị tại một thời điểm</td></tr>
+<tr><td>Tấm chắn rộng thì lệch nhiều</td><td>Chỉ gần đúng khi $d$ nhỏ</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Trung bình trên $d$ · tức thời cần $d$ nhỏ</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Xe đang chạy nhanh dần qua cổng quang. Muốn $d/t$ sát tốc độ tức thời tại cổng hơn, nên làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q4" id="tl51-q4a"><label for="tl51-q4a" class="tl-opt tl-no">A. Dùng tấm chắn rộng hơn để $t$ dài, đo cho chính xác</label>
+<input type="radio" name="tl51-q4" id="tl51-q4b"><label for="tl51-q4b" class="tl-opt tl-no">B. Không cần làm gì, $d/t$ luôn là tốc độ tức thời</label>
+<input type="radio" name="tl51-q4" id="tl51-q4c"><label for="tl51-q4c" class="tl-opt tl-ok">C. Dùng tấm chắn hẹp hơn, miễn $t$ còn dài hơn nhiều bước chia của đồng hồ</label>
+<input type="radio" name="tl51-q4" id="tl51-q4d"><label for="tl51-q4d" class="tl-opt tl-no">D. Đo thêm một lần với cùng tấm chắn rồi lấy trung bình</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tấm chắn hẹp thì khoảng thời gian ngắn, tốc độ đổi ít, $d/t$ sát giá trị tức thời. Hẹp quá thì đồng hồ làm tròn mạnh (Thí nghiệm 3).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A làm lệch nhiều hơn vì tấm chắn rộng. B bỏ qua việc $d/t$ chỉ là trung bình. D: lấy trung bình nhiều lần không sửa được độ lệch do $d$ rộng, vì lần nào cũng lệch cùng một phía.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "Sai số tuyệt đối nhỏ là đo tốt"</h4>
+
+<p>Sai $0{,}5\ \text{m}$ trên $100\ \text{m}$ là nhỏ, nhưng sai $0{,}5\ \text{cm}$ trên $0{,}5\ \text{m}$ lại lớn hơn. Cần so với giá trị đo, tức dùng sai số tương đối.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Sai số tuyệt đối $\Delta A$</th><th>Sai số tương đối $\delta A$</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng đơn vị với $A$</td><td>Không đơn vị, đổi ra $\%$</td></tr>
+<tr><td>Cho biết lệch bao nhiêu</td><td>Cho biết lệch bao nhiêu so với cả phép đo</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 So với giá trị đo · dùng phần trăm</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl51-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl51-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Phép đo (I): $100\ \text{m}$, sai số $0{,}5\ \text{m}$. Phép đo (II): $0{,}50\ \text{m}$, sai số $0{,}5\ \text{cm}$. Phép đo nào chính xác hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q5" id="tl51-q5a"><label for="tl51-q5a" class="tl-opt tl-no">A. (II), vì $0{,}5\ \text{cm}$ nhỏ hơn $0{,}5\ \text{m}$</label>
+<input type="radio" name="tl51-q5" id="tl51-q5b"><label for="tl51-q5b" class="tl-opt tl-ok">B. (I), vì sai số tương đối của (I) nhỏ hơn của (II)</label>
+<input type="radio" name="tl51-q5" id="tl51-q5c"><label for="tl51-q5c" class="tl-opt tl-no">C. Như nhau, vì cùng ghi "$0{,}5$"</label>
+<input type="radio" name="tl51-q5" id="tl51-q5d"><label for="tl51-q5d" class="tl-opt tl-no">D. Không so sánh được vì hai đơn vị khác nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> (I): $\dfrac{0{,}5}{100} = 0{,}5\ \%$. (II): $\dfrac{0{,}5}{50} = 1\ \%$ (đổi $0{,}50\ \text{m} = 50\ \text{cm}$). (I) chính xác hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A so sánh hai số khác đơn vị. C so sánh chữ số, không so với giá trị đo. D: sai số tương đối không có đơn vị nên so sánh được. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: đổi cùng đơn vị rồi chia.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Tốc độ trung bình tính thế nào? Cần đo những đại lượng nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v = s/t$; đo $s$ bằng thước, đo $t$ bằng đồng hồ; đo nhiều lần, lấy trung bình.</p>
+</details>
+<details class="tl-details">
+<summary>2. Sai số tuyệt đối, sai số tương đối và sai số của thương ghi thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<ul><li>$\Delta t$ là trung bình các $|t_i - \bar t|$.</li><li>$\delta t = \Delta t/\bar t$.</li><li>$\delta v = \delta s + \delta t$ (chia thì cộng phần trăm).</li></ul>
+</details>
+<details class="tl-details">
+<summary>3. Cổng quang tính tốc độ bằng gì? Vì sao ít sai số hơn bấm tay? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v = d/t$ với $d$ là bề rộng tấm chắn; tia sáng quyết định đồng hồ chạy và dừng; không có độ trễ của người bấm.</p>
+</details>
+<details class="tl-details">
+<summary>4. $d/t$ là tốc độ gì? Tấm chắn nên rộng hay hẹp? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tốc độ trung bình trên $d$; hẹp thì sát tức thời; quá hẹp thì $t$ quá ngắn, đồng hồ làm tròn mạnh.</p>
+</details>
+<details class="tl-details">
+<summary>5. So sánh ba phương án đo. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Bấm tay: rẻ, trễ phản xạ · cổng quang: chính xác, chỉ đo tại cổng · video: thấy cả quá trình, tốn công xử lý.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài (số liệu minh hoạ)</p>
+<p>Một nhóm đo tốc độ xe bằng cổng quang. Tấm chắn rộng $2{,}0\ \text{cm}$, đo bằng thước chia mm nên sai số $0{,}1\ \text{cm}$. Đồng hồ hiện số hiện $0{,}050\ \text{s}$, sai số $0{,}001\ \text{s}$. Tính tốc độ của xe, sai số tương đối và kết quả có sai số. Nguồn sai số nào lớn hơn?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"rộng $2{,}0\ \text{cm}$"</td><td>$d = 0{,}020\ \text{m}$ (đổi sang m)</td></tr>
+<tr><td>"sai số $0{,}1\ \text{cm}$"</td><td>$\delta d = \dfrac{0{,}1}{2{,}0}$</td></tr>
+<tr><td>"hiện $0{,}050\ \text{s}$"</td><td>$t = 0{,}050\ \text{s}$</td></tr>
+<tr><td>"sai số $0{,}001\ \text{s}$"</td><td>$\delta t = \dfrac{0{,}001}{0{,}050}$</td></tr>
+<tr><td>"tính tốc độ"</td><td>$v = d/t$; chia thì cộng phần trăm</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Tốc độ:</strong> $v = \dfrac{0{,}020}{0{,}050} = @@VB3:m@@\ \text{m/s}$.</li>
+<li><strong>Sai số tương đối:</strong> $\delta d = @@DLD3:m@@\ \%$ và $\delta t = @@DLT3:m@@\ \%$.</li>
+<li><strong>Chia thì cộng phần trăm:</strong> $\delta v = @@DLD3:m@@ + @@DLT3:m@@ = @@DLV3:m@@\ \%$.</li>
+<li><strong>Sai số tuyệt đối:</strong> $\Delta v = @@VB3:m@@ \cdot @@DLV3F:m@@ \approx @@DV3F:m@@ \approx @@DV3R:m@@\ \text{m/s}$, nên $v = @@VB3:m@@ \pm @@DV3R:m@@\ \text{m/s}$.</li>
+<li><strong>Nguồn sai số:</strong> $\delta d$ lớn hơn $\delta t$, nghĩa là <strong>thước đo $d$</strong> quyết định. Muốn chính xác hơn, đo $d$ bằng thước kẹp hoặc dùng tấm chắn rộng hơn.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, đổi tấm chắn rộng $4{,}0\ \text{cm}$ (sai số $0{,}1\ \text{cm}$), đồng hồ hiện $0{,}100\ \text{s}$.</p>
+<ol class="tl-steps">
+<li>$v = \dfrac{0{,}040}{0{,}100} = @@VB4:m@@\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $\delta d = \;?$ và $\delta t = \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $\delta v = \;?$ — gợi ý: chia thì cộng phần trăm.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$\delta d = \dfrac{0{,}1}{4{,}0} = @@DLD4:m@@\ \%$; $\delta t = \dfrac{0{,}001}{0{,}100} = @@DLT4:m@@\ \%$; $\delta v = @@DLV4:m@@\ \%$, tức $\Delta v \approx @@DV4F:m@@ \approx @@DV4R:m@@\ \text{m/s}$. Cùng tốc độ nhưng tấm chắn rộng hơn nên sai số tương đối nhỏ hơn.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi số: xe chạy chậm hơn</summary>
+<p>Giữ tấm chắn $2{,}0\ \text{cm}$ nhưng xe chậm hơn nên đồng hồ hiện $0{,}100\ \text{s}$. Khi đó $v = @@VB5:m@@\ \text{m/s}$, $\delta t = @@DLT5:m@@\ \%$ nhỏ đi, còn $\delta d$ vẫn $5\ \%$: $\delta v = @@DLV5:m@@\ \%$. Đồng hồ ít sai số hơn, nhưng thước vẫn giữ sai số tổng ở mức cao.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl51-q6-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl51-q6-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Tấm chắn rộng $3{,}0\ \text{cm}$ che cổng quang trong $0{,}060\ \text{s}$. Tốc độ của xe là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl51-q6" id="tl51-q6a"><label for="tl51-q6a" class="tl-opt tl-no">A. $50\ \text{m/s}$</label>
+<input type="radio" name="tl51-q6" id="tl51-q6b"><label for="tl51-q6b" class="tl-opt tl-no">B. $2{,}0\ \text{m/s}$</label>
+<input type="radio" name="tl51-q6" id="tl51-q6c"><label for="tl51-q6c" class="tl-opt tl-no">C. $0{,}0018\ \text{m/s}$</label>
+<input type="radio" name="tl51-q6" id="tl51-q6d"><label for="tl51-q6d" class="tl-opt tl-ok">D. $0{,}50\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v = \dfrac{0{,}030}{0{,}060} = 0{,}50\ \text{m/s}$ (đổi $3{,}0\ \text{cm} = 0{,}030\ \text{m}$).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lấy $3{,}0 : 0{,}060 = 50$, quên đổi $\text{cm}$ ra $\text{m}$. B chia ngược $t : d$ ($d$ đã đổi ra m). C nhân $d \cdot t$ thay vì chia. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 1 của lời giải.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: bốn nơi người ta đo tốc độ</summary>
+<ul>
+<li><strong>Điền kinh:</strong> vạch đích điện tử và cổng quang thay người bấm giây, vì độ trễ phản xạ vài phần mười giây đủ làm đổi thứ hạng.</li>
+<li><strong>Camera giao thông:</strong> ghi giờ xe qua hai trạm cách nhau một quãng đường đã biết, rồi chia $s/t$. Đó là tốc độ trung bình trên đoạn đường.</li>
+<li><strong>Máy CNC:</strong> bộ mã hoá đếm vạch trên đĩa gắn trục chính để biết tốc độ quay, giống cổng quang đếm tia bị chắn.</li>
+<li><strong>Trượt băng tốc độ:</strong> cảm biến ở vạch cho thời gian từng vòng, từ đó tính tốc độ trung bình mỗi vòng.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Xe đồ chơi đi hết đường ray dài $1{,}50\ \text{m}$ trong $3{,}00\ \text{s}$ (bấm tay). Tốc độ trung bình? <em>Đáp số: $v = \dfrac{1{,}50}{3{,}00} = @@C1:m@@\ \text{m/s}$</em></li>
+<li><strong>⭐⭐</strong> Nhóm A đo $2{,}40\ \text{m}$ hết $6{,}00\ \text{s}$; nhóm B đo $1{,}20\ \text{m}$ hết $3{,}00\ \text{s}$; cả hai bấm lệch $0{,}15\ \text{s}$. Nhóm nào có $\delta t$ nhỏ hơn? <em>(A: $\dfrac{0{,}15}{6{,}00} = @@C2A:m@@\ \%$; B: $\dfrac{0{,}15}{3{,}00} = @@C2B:m@@\ \%$. Cùng tốc độ nhưng đường dài hơn nên A nhỏ hơn)</em></li>
+<li><strong>⭐⭐⭐</strong> Xe chạy khoảng $0{,}40\ \text{m/s}$, đồng hồ chia $0{,}001\ \text{s}$, sai số thước $0{,}1\ \text{cm}$. Chọn tấm chắn $1{,}0\ \text{cm}$ hay $2{,}0\ \text{cm}$ để $\delta v$ nhỏ hơn? <em>($1{,}0\ \text{cm}$: $t \approx 0{,}025\ \text{s}$, $\delta v = @@C3A:m@@ + @@C3At:m@@ = @@C3AT:m@@\ \%$; $2{,}0\ \text{cm}$: $t \approx 0{,}050\ \text{s}$, $\delta v = @@C3B:m@@ + @@C3Bt:m@@ = @@C3BT:m@@\ \%$. Tấm chắn rộng hơn cho $\delta v$ nhỏ hơn; cái giá là $d/t$ kém sát tức thời hơn)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Đo tốc độ</strong>: $v = s/t$, đo $s$ và $t$, đo nhiều lần.</li>
+<li><strong>Sai số tương đối</strong>: $\delta = \Delta/\bar A$, chia thì cộng phần trăm.</li>
+<li><strong>Bấm tay</strong>: rẻ · trễ phản xạ · kéo dài đường.</li>
+<li><strong>Cổng quang</strong>: $v = d/t$, không trễ, chỉ đo tại cổng.</li>
+<li><strong>Tấm chắn</strong>: hẹp thì sát tức thời · quá hẹp thì $t$ quá ngắn.</li>
+<li><strong>Video</strong>: $v = \Delta x/\Delta t$ theo khung hình, thấy cả quá trình.</li>
+<li>Đọc đề: đổi $\text{cm}$ ra $\text{m}$ · tính $\delta$ từng đại lượng · cộng lại.</li>
+</ul>
+</div>

@@ -1,0 +1,144 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 10. Sự rơi tự do",
+ "lesson_id": 55,
+ "nguon_trong_bai": "content/lesson-samples/l10-su-roi-tu-do/theory.html",
+ "id": "tn-l10-roi-tu-do-01",
+ "ten": "Ba lần thả (giấy phẳng, giấy trên sách, giấy vo viên) và ống Newton",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "roitudo.luc_can_khong_khi",
+  "roitudo.dinh_nghia",
+  "roitudo.moi_vat_nhu_nhau"
+ ],
+ "muc_tieu": "Thấy rằng trong không khí vật rơi nhanh hay chậm do lực cản so với trọng lượng, không do nặng nhẹ; bỏ không khí thì mọi vật rơi như nhau.",
+ "dung_cu": [
+  {
+   "ten": "Tờ giấy A4 (hoặc nhỏ hơn bìa sách)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Quyển sách bìa cứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hòn bi thép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ống Newton có van + bơm hút chân không (hoặc video)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả cùng lúc tờ giấy phẳng và quyển sách từ cùng độ cao.",
+   "Đặt tờ giấy (nhỏ hơn bìa) nằm phẳng trên quyển sách rồi thả.",
+   "Vo tròn tờ giấy, thả cùng lúc với hòn bi từ độ cao khoảng 1,5 m.",
+   "Lật ống Newton khi còn không khí, rồi khi đã hút hết không khí; quan sát lông chim và hòn bi."
+  ],
+  "quan_sat": [
+   "Sách chạm sàn trước tờ giấy phẳng.",
+   "Tờ giấy rơi sát theo sách, không tách ra.",
+   "Viên giấy và hòn bi chạm sàn gần như cùng lúc.",
+   "Ống đã hút không khí: lông chim và bi rơi như nhau."
+  ],
+  "rut_ra": [
+   "Nhanh hay chậm do lực cản không khí so với trọng lượng.",
+   "Không có lực cản (chỉ còn trọng lực): rơi tự do, mọi vật rơi như nhau."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "v_gh",
+   "ten": "Vận tốc giới hạn của vật (đặc trưng lực cản)",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 60,
+   "mac_dinh": 8,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "lực cản F_c = m·g·(v/v_gh)²",
+   "s(t) = (v_gh²/g)·ln cosh(g·t/v_gh)",
+   "t(h) = (v_gh/g)·arccosh(exp(g·h/v_gh²))",
+   "chân không (v_gh → ∞): t = √(2h/g)"
+  ],
+  "gia_thiet": [
+   "lực cản tỉ lệ bình phương vận tốc",
+   "tờ giấy phẳng coi như rơi thẳng (bỏ qua chao lượn)",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vật",
+   "v_gh (m/s)",
+   "t rơi 1,5 m (s)"
+  ],
+  "hang": [
+   [
+    "Hòn bi thép (đường kính 2 cm)",
+    40.0,
+    0.554
+   ],
+   [
+    "Viên giấy vo chặt",
+    8.0,
+    0.575
+   ],
+   [
+    "Tờ giấy A4 để phẳng",
+    1.5,
+    1.106
+   ],
+   [
+    "Bất kì vật nào trong chân không",
+    null,
+    0.553
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình; v_gh là ước lượng cỡ độ lớn, không phải số đo."
+ },
+ "ket_qua_ky_vong": "Bi thép 0.554 s, viên giấy 0.575 s (gần như cùng lúc), tờ giấy phẳng 1.106 s; chân không 0.553 s cho mọi vật.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng vật nặng rơi nhanh hơn.",
+  "Cho rằng viên giấy vẫn rơi chậm vì khối lượng không đổi.",
+  "Cho rằng trong chân không lông chim lơ lửng."
+ ],
+ "sai_so_thuong_gap": "Thả không cùng lúc; tờ giấy phẳng chao lượn nên thời gian rơi thay đổi nhiều giữa các lần.",
+ "an_toan": "Ống Newton bằng thuỷ tinh: lật nhẹ, không va đập.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hai làn thả song song; chọn vật (bi, viên giấy, tờ giấy, lông chim) và công tắc 'có không khí / chân không'; hiện thời gian chạm sàn.",
+  "diem_nhan": "Cho học sinh dự đoán trước khi bấm thả; tắt không khí thì mọi cặp chạm sàn cùng lúc."
+ }
+}

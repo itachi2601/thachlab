@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+ "lesson_id": 56,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-do-g/theory.html",
+ "id": "tn-l10-do-g-02",
+ "ten": "Đo g bằng đồ thị s theo t² từ năm độ cao",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "doig.do_thi_s_t2",
+  "doig.do_doc_g_nua",
+  "doig.cong_thuc_g"
+ ],
+ "muc_tieu": "Vẽ điểm (t², s) cho năm độ cao, thấy chúng gần thẳng hàng qua gốc, tính độ dốc và g = 2·độ dốc.",
+ "dung_cu": [
+  {
+   "ten": "Bộ nam châm điện, bi, cổng quang, đồng hồ hiện số như thí nghiệm 1",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước 1 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giấy kẻ ô",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dời cổng quang để s = 0,200; 0,300; 0,400; 0,500; 0,600 m.",
+   "Mỗi độ cao thả 5 lần, lấy t̄; tính t̄²; vẽ điểm (t̄², s)."
+  ],
+  "quan_sat": [
+   "Các điểm gần như nằm trên một đường thẳng đi qua gốc toạ độ."
+  ],
+  "rut_ra": [
+   "Độ dốc ≈ 4,86 m/s² (hai điểm xa nhau), g = 2·độ dốc ≈ 9,72 m/s²."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s_max",
+   "ten": "Độ cao lớn nhất",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.4,
+   "max": 1.0,
+   "mac_dinh": 0.6,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "tre_ht",
+   "ten": "Độ trễ hệ thống",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.006,
+   "mac_dinh": 0.002,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "g_that",
+   "ten": "Gia tốc rơi tự do thật",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t2",
+   "ten": "Bình phương thời gian rơi",
+   "don_vi": "s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "do_doc",
+   "ten": "Độ dốc đồ thị s theo t²",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t̄ = sqrt(2s/g_thật) + tre_ht (đã trung bình, làm tròn 0,001 s)",
+   "s = (g/2)·t² nên độ dốc = g/2",
+   "g = 2·(s_cuối − s_đầu)/(t²_cuối − t²_đầu)"
+  ],
+  "gia_thiet": [
+   "bỏ qua sức cản",
+   "độ trễ hệ thống không đổi",
+   "t̄ coi như đã trung bình bỏ nhiễu ngẫu nhiên"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "s (m)",
+   "t̄ (s)",
+   "t̄² (s²)"
+  ],
+  "hang": [
+   [
+    0.2,
+    0.204,
+    0.0416
+   ],
+   [
+    0.3,
+    0.249,
+    0.062
+   ],
+   [
+    0.4,
+    0.288,
+    0.0829
+   ],
+   [
+    0.5,
+    0.321,
+    0.103
+   ],
+   [
+    0.6,
+    0.352,
+    0.1239
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (trễ 0,002 s). Hàng s = 0,500 khớp thí nghiệm 1. Độ dốc hai điểm xa = 4.8603; hai điểm giữa = 4.8780."
+ },
+ "ket_qua_ky_vong": "Độ dốc ≈ 4,86 m/s² nên g ≈ 9,72 m/s²; năm điểm lệch đường thẳng dưới 0,004 m.",
+ "hien_tuong_hay_sai": [
+  "Vẽ s theo t (đường cong) rồi kẻ thẳng bừa.",
+  "Quên nhân 2 sau khi tính độ dốc.",
+  "Lấy độ dốc theo hai điểm sát nhau nên sai số lớn."
+ ],
+ "sai_so_thuong_gap": "Điểm gần gốc nhạy với sai số t; độ trễ hệ thống làm đường thẳng không qua gốc chính xác.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Bấm 'thả' ở từng độ cao, điểm (t², s) hiện dần trên đồ thị; kéo hai điểm chọn để vẽ tam giác độ dốc.",
+  "diem_nhan": "Nút 'thêm độ trễ hệ thống' làm đường thẳng lệch khỏi gốc."
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
+ "lesson_id": 47,
+ "nguon_trong_bai": "content/lesson-samples/l10-an-toan-phong-thuc-hanh/theory.html",
+ "id": "tn-l10-an-toan-01",
+ "ten": "Núm bộ nguồn ở các vạch 3, 6, 9, 12 V: vôn kế chỉ bao nhiêu",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "antoan.doc_nhan_thiet_bi",
+  "antoan.hieu_dien_the_khop",
+  "antoan.sai_so_nguon"
+ ],
+ "muc_tieu": "Đọc nhãn Input/Output, DC/AC, cực +/−; so số chỉ vôn kế với vạch núm, nhận ra độ lệch vài phần trăm và vì sao phải chọn đúng vạch cho dụng cụ.",
+ "dung_cu": [
+  {
+   "ten": "Bộ nguồn học đường (Input 220 V ~, Output 3–12 V DC)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế một chiều, độ chia 0,1 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối có đầu cắm",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Được giáo viên cho phép, đặt núm lần lượt ở các vạch 3; 6; 9; 12 V.",
+   "Mắc vôn kế một chiều vào hai cực Output (cực đỏ của vôn kế nối cực +), đọc số chỉ."
+  ],
+  "quan_sat": [
+   "Số chỉ lần lượt 3,1; 6,2; 9,3; 12,4 V.",
+   "Số chỉ luôn cao hơn vạch 0,1–0,4 V, tức khoảng 3 % của vạch."
+  ],
+  "rut_ra": [
+   "Vạch chỉ là giá trị gần đúng; độ lệch là sai số của bộ nguồn (và làm tròn tới 0,1 V của vôn kế).",
+   "Chọn vạch bằng định mức dụng cụ rồi đo lại bằng vôn kế; nhầm vạch 12 V cho bóng 6 V là hơn gấp đôi định mức."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "vach",
+   "ten": "Vạch núm bộ nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 12,
+   "mac_dinh": 6,
+   "buoc": 3
+  },
+  {
+   "ky_hieu": "sai_so_nguon",
+   "ten": "Độ lệch tương đối của nguồn so với vạch",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.03
+  },
+  {
+   "ky_hieu": "chia_do",
+   "ten": "Độ chia của vôn kế",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Số chỉ vôn kế",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "V_thực = 1,03 · vạch",
+   "V_đọc = V_thực làm tròn tới 0,1 V",
+   "lệch = V_đọc − vạch"
+  ],
+  "gia_thiet": [
+   "nguồn ổn áp, không mắc tải",
+   "độ lệch tỉ lệ với vạch (~3 %)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vạch (V)",
+   "V thực (V)",
+   "V đọc (V)",
+   "Lệch (V)"
+  ],
+  "hang": [
+   [
+    3,
+    3.09,
+    3.1,
+    0.1
+   ],
+   [
+    6,
+    6.18,
+    6.2,
+    0.2
+   ],
+   [
+    9,
+    9.27,
+    9.3,
+    0.3
+   ],
+   [
+    12,
+    12.36,
+    12.4,
+    0.4
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình V = 1,03·vạch, làm tròn tới 0,1 V."
+ },
+ "ket_qua_ky_vong": "Số chỉ 3,1; 6,2; 9,3; 12,4 V; lệch 0,1–0,4 V (≈ 3 %).",
+ "hien_tuong_hay_sai": [
+  "Cho rằng số chỉ khác vạch là đo sai hay nguồn hỏng.",
+  "Bỏ qua vôn kế, tin tuyệt đối vào vạch núm.",
+  "Chọn vạch lớn hơn định mức cho dụng cụ 'sáng hơn'."
+ ],
+ "sai_so_thuong_gap": "Sai số bộ nguồn, làm tròn của vôn kế, đọc nhầm thang đo.",
+ "an_toan": "Chỉ làm khi giáo viên cho phép; tắt công tắc trước khi nối hoặc tháo dây; vôn kế mắc đúng cực.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Bộ nguồn có núm xoay 3/6/9/12 V, vôn kế hiện số chỉ; kéo thêm bóng 6 V để thấy cháy khi ở vạch 12 V.",
+  "diem_nhan": "Nút 'nối bóng 6 V' ở vạch 12 V: bóng sáng chói rồi tắt, kèm cảnh báo quá áp."
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
+ "lesson_id": 47,
+ "nguon_trong_bai": "content/lesson-samples/l10-an-toan-phong-thuc-hanh/theory.html",
+ "id": "tn-l10-an-toan-02",
+ "ten": "Nhiệt độ cạnh ngọn đèn cồn theo khoảng cách",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "antoan.khoang_cach_an_toan",
+  "antoan.vat_nong"
+ ],
+ "muc_tieu": "Thấy nhiệt độ giảm rất nhanh khi ra xa nguồn nóng (gấp đôi khoảng cách thì phần nóng thêm còn khoảng 1/4), từ đó hiểu quy tắc giữ khoảng cách an toàn.",
+ "dung_cu": [
+  {
+   "ten": "Đèn cồn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nhiệt kế đo tới 200 °C",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước, giá đỡ nhiệt kế",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Giáo viên đặt nhiệt kế cạnh ngọn đèn cồn, cách lần lượt 2; 5; 10; 20 cm, đợi số chỉ ổn định.",
+   "Cả lớp đứng xa quan sát, ghi số chỉ."
+  ],
+  "quan_sat": [
+   "Nhiệt kế chỉ lần lượt 125; 41; 29; 26 °C (nhiệt độ phòng 25 °C).",
+   "Từ 5 cm ra 10 cm, phần nóng thêm giảm từ 16 °C còn 4 °C."
+  ],
+  "rut_ra": [
+   "Gần ngọn lửa nóng rất nhiều, ra xa thì nguội nhanh.",
+   "Nhiều thí nghiệm nung nóng, laser, vật bắn ra cần giữ khoảng cách an toàn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách tới ngọn lửa",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 40,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "T_phong",
+   "ten": "Nhiệt độ phòng",
+   "don_vi": "°C",
+   "kieu": "co_dinh",
+   "gia_tri": 25
+  },
+  {
+   "ky_hieu": "K",
+   "ten": "Hệ số nguồn nóng",
+   "don_vi": "°C·cm²",
+   "kieu": "co_dinh",
+   "gia_tri": 400
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Nhiệt độ nhiệt kế",
+   "don_vi": "°C",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = T_phòng + K/d²",
+   "T làm tròn tới 1 °C"
+  ],
+  "gia_thiet": [
+   "mô hình đơn giản, số liệu minh hoạ",
+   "nguồn nhỏ, đo cạnh ngọn lửa, bỏ qua gió"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "T (°C)",
+   "T − 25 (°C)"
+  ],
+  "hang": [
+   [
+    2,
+    125,
+    100
+   ],
+   [
+    5,
+    41,
+    16
+   ],
+   [
+    10,
+    29,
+    4
+   ],
+   [
+    20,
+    26,
+    1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình T = 25 + 400/d², làm tròn 1 °C."
+ },
+ "ket_qua_ky_vong": "125; 41; 29; 26 °C; phần nóng thêm 100; 16; 4; 1 °C.",
+ "hien_tuong_hay_sai": [
+  "Tưởng càng xa thì nhiệt độ giảm đều từng cm.",
+  "Tưởng ngoài 'vùng đỏ' của lửa thì không nóng."
+ ],
+ "sai_so_thuong_gap": "Nhiệt kế đặt lệch ngọn lửa, gió thổi, chưa đợi ổn định.",
+ "an_toan": "Giáo viên làm, học sinh đứng xa; không để đèn cồn gần thiết bị điện hay chất dễ cháy.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Kéo nhiệt kế ra xa ngọn lửa, đồ thị T theo d vẽ dần.",
+  "diem_nhan": "Vùng màu đỏ thu nhỏ khi ra xa; đánh dấu khoảng cách an toàn."
+ }
+}

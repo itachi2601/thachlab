@@ -1,0 +1,187 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+ "lesson_id": 56,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-do-g/theory.html",
+ "id": "tn-l10-do-g-01",
+ "ten": "Đo g bằng cổng quang: thả bi 5 lần từ s = 0,500 m, xử lí sai số",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "doig.cong_thuc_g",
+  "doig.sai_so_tuyet_doi",
+  "doig.sai_so_tuong_doi",
+  "doig.sai_so_he_thong"
+ ],
+ "muc_tieu": "Từ 5 lần đo thời gian rơi, tính t trung bình, sai số tuyệt đối từng lần, sai số của t, rồi g = ḡ ± Δg; nhận ra thời gian chi phối sai số và khoảng ḡ ± Δg chứa 9,8.",
+ "dung_cu": [
+  {
+   "ten": "Giá đỡ thẳng đứng + dây dọi",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nam châm điện + hộp công tắc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Viên bi thép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ đo thời gian hiện số, độ chia 0,001 s",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước, độ chia 1 mm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dựng giá thẳng đứng bằng dây dọi; đặt cổng quang sao cho tia sáng cách mép dưới bi (lúc còn ở nam châm) s = 0,500 m.",
+   "Ngắt công tắc nam châm điện, ghi thời gian rơi t trên đồng hồ; lặp 5 lần."
+  ],
+  "quan_sat": [
+   "t = 0,319; 0,322; 0,321; 0,323; 0,320 s.",
+   "Các lần chênh nhau vài phần nghìn giây."
+  ],
+  "rut_ra": [
+   "t̄ = 0,321 s; Δt̄ = 0,0012 s; Δt = 0,0022 s.",
+   "ḡ = 9,70 m/s²; δ ≈ 0,0157; Δg ≈ 0,15 m/s²; g = 9,70 ± 0,15 m/s², khoảng chứa 9,8."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "tre_ht",
+   "ten": "Độ trễ hệ thống (từ dư nam châm)",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.006,
+   "mac_dinh": 0.002,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "nhieu",
+   "ten": "Biên độ nhiễu ngẫu nhiên mỗi lần thả",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.004,
+   "mac_dinh": 0.002,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "g_that",
+   "ten": "Gia tốc rơi tự do thật",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "dcnn_t",
+   "ten": "Độ chia nhỏ nhất đồng hồ",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "dcnn_s",
+   "ten": "Độ chia nhỏ nhất thước",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi đo được",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "g_do",
+   "ten": "Gia tốc tính được",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_lần = sqrt(2s/g_thật) + tre_ht + nhiễu_lần, làm tròn 0,001 s",
+   "t̄ = trung bình các lần",
+   "Δt_i = |t_i − t̄|; Δt = trung bình(Δt_i) + dcnn_t",
+   "ḡ = 2s/t̄²",
+   "δ = dcnn_s/s + 2Δt/t̄; Δg = δ·ḡ"
+  ],
+  "gia_thiet": [
+   "bỏ qua sức cản không khí",
+   "độ trễ hệ thống không đổi mọi lần",
+   "g thật = 9,8 m/s²",
+   "nhiễu là dãy cố định để tái lập: −0,002; +0,001; 0; +0,002; −0,001 s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "t (s)",
+   "|t − t̄| (s)"
+  ],
+  "hang": [
+   [
+    1,
+    0.319,
+    0.002
+   ],
+   [
+    2,
+    0.322,
+    0.001
+   ],
+   [
+    3,
+    0.321,
+    0.0
+   ],
+   [
+    4,
+    0.323,
+    0.002
+   ],
+   [
+    5,
+    0.32,
+    0.001
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (s = 0,500 m; trễ hệ thống 0,002 s), không phải đo thật. t̄ = 0.321; ḡ = 9.7049; δ = 0.0157; Δg = 0.1524."
+ },
+ "ket_qua_ky_vong": "g = 9,70 ± 0,15 m/s²; Δs/s = 0,2 %, 2Δt/t̄ ≈ 1,4 %: thời gian chi phối; khoảng 9,55–9,85 chứa 9,8.",
+ "hien_tuong_hay_sai": [
+  "Quên hệ số 2 trước Δt/t̄.",
+  "Cho rằng lấy trung bình là hết sai số.",
+  "Thấy ḡ khác 9,8 liền kết luận thí nghiệm hỏng, không xét khoảng ± Δg."
+ ],
+ "sai_so_thuong_gap": "Đo s sai gốc (từ mặt nam châm, dài hơn một đường kính bi); từ dư làm bi rời muộn; cổng quang đặt lệch tâm bi; giá đỡ không thẳng đứng.",
+ "an_toan": "Đặt hộp mềm dưới cổng quang để bi không nảy ra sàn.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Giá đỡ, nam châm, bi, cổng quang; nút thả; đồng hồ hiện t; bảng điền sau mỗi lần thả và tự tính t̄, Δt, ḡ, Δg.",
+  "diem_nhan": "Thanh trượt 'độ trễ hệ thống': kéo lên thì ḡ lệch hẳn khỏi 9,8 dù Δg vẫn nhỏ (chụm nhưng lệch)."
+ }
+}

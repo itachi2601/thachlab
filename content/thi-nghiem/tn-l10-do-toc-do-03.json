@@ -1,0 +1,154 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
+ "lesson_id": 51,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-do-toc-do/theory.html",
+ "id": "tn-l10-do-toc-do-03",
+ "ten": "Tấm chắn rộng hay hẹp: d/t với xe đang nhanh dần",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dotocdo.toc_do_trung_binh_tren_d",
+  "dotocdo.toc_do_tuc_thoi",
+  "dotocdo.do_phan_giai_dong_ho"
+ ],
+ "muc_tieu": "Thấy d/t là tốc độ trung bình trên bề rộng tấm chắn: d giảm thì sát tốc độ lúc vào cổng, nhưng d quá hẹp thì độ phân giải của đồng hồ gây sai số lớn.",
+ "dung_cu": [
+  {
+   "ten": "Cổng quang nối đồng hồ hiện số (chia 0,001 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe nhanh dần trên máng nghiêng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bốn tấm chắn rộng 10,0; 5,0; 2,0; 1,0 cm",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xe thả từ trên máng nghiêng, mép trước tấm chắn vào cổng với tốc độ 0,600 m/s (minh hoạ, mỗi giây tăng thêm 0,50 m/s).",
+   "Lần lượt thay bốn tấm chắn, ghi t và tính d/t."
+  ],
+  "quan_sat": [
+   "d/t: 0,641; 0,617; 0,606; 0,588 m/s ứng với d = 10,0; 5,0; 2,0; 1,0 cm."
+  ],
+  "rut_ra": [
+   "d giảm thì d/t tiến sát 0,600 m/s (tốc độ lúc mép trước vào cổng).",
+   "Tới d = 1,0 cm, t = 0,0166 s mà đồng hồ chỉ hiện 0,017 s nên sai số làm tròn (khoảng 3 %) lấn át, d/t = 0,588 m/s lệch xa hơn hàng d = 2,0 cm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Bề rộng tấm chắn",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 10.0,
+   "mac_dinh": 2.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Tốc độ lúc mép trước vào cổng",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.6,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Mức tăng tốc độ mỗi giây",
+   "don_vi": "m/s²",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "buoc_dh",
+   "ten": "Bước chia của đồng hồ",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian che cổng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.0005
+  },
+  {
+   "ky_hieu": "v_tb",
+   "ten": "d/t",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = v1·t + a·t²/2",
+   "t = (−v1 + √(v1² + 2·a·d))/a",
+   "t hiện = t làm tròn tới 0,001 s",
+   "v_tb = d/t hiện"
+  ],
+  "gia_thiet": [
+   "xe nhanh dần đều trong lúc tấm chắn qua",
+   "đồng hồ chia 0,001 s, không thêm nhiễu"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "t thật (s)",
+   "t hiện (s)",
+   "d/t (m/s)"
+  ],
+  "hang": [
+   [
+    10.0,
+    0.1565,
+    0.156,
+    0.641
+   ],
+   [
+    5.0,
+    0.0806,
+    0.081,
+    0.617
+   ],
+   [
+    2.0,
+    0.0329,
+    0.033,
+    0.606
+   ],
+   [
+    1.0,
+    0.0166,
+    0.017,
+    0.588
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình v1 = 0,600 m/s, a = 0,50 m/s²; d/t tính từ t hiện (đã làm tròn 0,001 s)."
+ },
+ "ket_qua_ky_vong": "d/t = 0,641; 0,617; 0,606; 0,588 m/s; lệch nhỏ nhất so với 0,600 ở d = 2,0 cm.",
+ "hien_tuong_hay_sai": [
+  "Tưởng d/t luôn là tốc độ tức thời tại cổng.",
+  "Cho rằng tấm chắn càng hẹp càng tốt, bỏ qua độ phân giải của đồng hồ."
+ ],
+ "sai_so_thuong_gap": "Làm tròn 0,001 s của đồng hồ; mép tấm chắn không vuông góc.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt bề rộng tấm chắn; bảng cập nhật t hiện và d/t, đường chấm 0,600 m/s để so sánh.",
+  "diem_nhan": "Đặt d rất nhỏ để thấy d/t dao động vì làm tròn."
+ }
+}

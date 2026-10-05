@@ -1,0 +1,108 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
+ "lesson_id": 47,
+ "nguon_trong_bai": "content/lesson-samples/l10-an-toan-phong-thuc-hanh/theory.html",
+ "id": "tn-l10-an-toan-03",
+ "ten": "Rà phòng thực hành: xếp kí hiệu cảnh báo vào nhóm",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "antoan.ki_hieu_canh_bao",
+  "antoan.nhom_ki_hieu"
+ ],
+ "muc_tieu": "Nhận ra hình dạng và màu của kí hiệu (tam giác cảnh báo, tròn đỏ gạch chéo cấm, tròn xanh bắt buộc) rồi nói việc phải làm.",
+ "dung_cu": [
+  {
+   "ten": "Điện thoại chụp ảnh",
+   "so_luong": 1
+  },
+  {
+   "ten": "Phiếu ghi nhóm kí hiệu",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đi một vòng phòng thực hành, tìm ít nhất 5 kí hiệu (bộ nguồn, tủ hoá chất, chai cồn, bình khí...), chụp ảnh."
+  ],
+  "quan_sat": [
+   "Kí hiệu cùng nhóm thường cùng hình dạng, cùng màu viền."
+  ],
+  "rut_ra": [
+   "Xếp từng kí hiệu vào nhóm cảnh báo, cấm hay bắt buộc rồi nêu việc phải làm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "so_ki_hieu",
+   "ten": "Số kí hiệu tìm được",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 16,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "nhom",
+   "ten": "Nhóm kí hiệu",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "nhóm = f(hình dạng, màu viền)"
+  ],
+  "gia_thiet": [
+   "quy ước đa số: tam giác = cảnh báo, tròn đỏ gạch chéo = cấm, tròn xanh = bắt buộc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Kí hiệu",
+   "Hình dạng",
+   "Nhóm"
+  ],
+  "hang": [
+   [
+    "nguy hiểm về điện",
+    "tam giác",
+    "cảnh báo"
+   ],
+   [
+    "nhiệt độ cao",
+    "tam giác",
+    "cảnh báo"
+   ],
+   [
+    "chất dễ cháy",
+    "tam giác",
+    "cảnh báo"
+   ],
+   [
+    "cấm lửa",
+    "tròn đỏ gạch chéo",
+    "cấm"
+   ],
+   [
+    "đeo mặt nạ phòng độc",
+    "tròn xanh",
+    "bắt buộc"
+   ]
+  ],
+  "ghi_chu": "Bảng minh hoạ, không phải số đo."
+ },
+ "ket_qua_ky_vong": "Mỗi kí hiệu tìm được xếp đúng một nhóm và nêu được việc phải làm.",
+ "hien_tuong_hay_sai": [
+  "Chỉ nhìn hình bên trong, bỏ qua hình dạng và màu.",
+  "Cho rằng kí hiệu cảnh báo chỉ để trang trí."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Kéo thả kí hiệu vào ba ô nhóm, đúng thì hiện việc phải làm.",
+  "diem_nhan": "Kí hiệu 'lạ' không có trong bài để học sinh suy luận từ hình dạng và màu."
+ }
+}

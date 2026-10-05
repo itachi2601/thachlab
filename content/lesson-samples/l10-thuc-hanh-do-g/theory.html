@@ -1,0 +1,415 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu <strong>phương án đo</strong> gia tốc rơi tự do: $g = \dfrac{2s}{t^2}$, dụng cụ và thao tác.</li>
+<li><strong>Xử lí số liệu</strong>: giá trị trung bình, sai số tuyệt đối, sai số tương đối, viết $g = \bar g \pm \Delta g$.</li>
+<li>Đọc <strong>đồ thị $s$–$t^2$</strong>: độ dốc bằng $\dfrac{g}{2}$.</li>
+<li>Phân biệt sai số <strong>ngẫu nhiên</strong> và <strong>hệ thống</strong>, nói được cách giảm.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 15 phút.</p>
+</div>
+
+<h3>I. Mở bài: bấm tay hay cổng quang?</h3>
+
+<p>Hai bạn cùng thả viên bi thép từ độ cao $0{,}500\ \text{m}$. Bạn Lan bấm đồng hồ bấm giây bằng tay: mỗi lần một số khác, quanh $0{,}5\ \text{s}$. Đồng hồ hiện số nối cổng quang thì lần nào cũng gần $0{,}32\ \text{s}$ (số liệu minh hoạ).</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Vì sao phòng thí nghiệm dùng cổng quang chứ không bấm tay?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q1" id="tl56-q1a"><label for="tl56-q1a" class="tl-opt tl-no">A. Cổng quang làm bi rơi nhanh hơn nên số nhỏ hơn</label>
+<input type="radio" name="tl56-q1" id="tl56-q1b"><label for="tl56-q1b" class="tl-opt tl-ok">B. Tay bấm trễ cỡ $0{,}1\ \text{s}$ trở lên, mà cả lần rơi chỉ khoảng $0{,}3\ \text{s}$: sai số chiếm cỡ một phần ba</label>
+<input type="radio" name="tl56-q1" id="tl56-q1c"><label for="tl56-q1c" class="tl-opt tl-no">C. Đồng hồ hiện số hiện nhiều chữ số nên không có sai số</label>
+<input type="radio" name="tl56-q1" id="tl56-q1d"><label for="tl56-q1d" class="tl-opt tl-no">D. Bấm tay đúng hơn, còn cổng quang bị ánh sáng làm lệch</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Độ trễ vài phần mười giây không đáng kể khi đo vài giây, nhưng với $0{,}3\ \text{s}$ nó chiếm $\dfrac{0{,}1}{0{,}32} \approx 31\,\%$. Cổng quang ghi đúng lúc bi che tia sáng, độ chia tới $0{,}001\ \text{s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: cổng quang chỉ ghi thời điểm, không tác động lên bi. C: nhiều chữ số không có nghĩa là hết sai số, vẫn còn sai số dụng cụ. D đảo ngược vấn đề: người mới là khâu chậm. Gợi ý: so độ trễ của tay với thời gian rơi.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: thiết kế phương án và xử lí số liệu</h3>
+
+<h4>1. Nguyên lí đo</h4>
+
+<p><strong>🔑 Rơi từ nghỉ · $s = \dfrac{1}{2}gt^2$ · đo $s$ và $t$</strong></p>
+
+<ul>
+<li>Bi thả từ nghỉ, bỏ qua sức cản: rơi tự do, $v_0 = 0$, $a = g$ (Bài 10).</li>
+<li>Quãng đường: $s = \dfrac{1}{2}gt^2$.</li>
+<li>Suy ra: $$g = \dfrac{2s}{t^2}$$</li>
+<li>Chỉ cần đo hai đại lượng: <strong>độ cao $s$</strong> và <strong>thời gian rơi $t$</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Thả bi từ $s = 0{,}300\ \text{m}$; đồng hồ ghi $t = 0{,}247\ \text{s}$. Gia tốc rơi tự do tính được là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q2" id="tl56-q2a"><label for="tl56-q2a" class="tl-opt tl-no">A. $2{,}43\ \text{m/s}^2$</label>
+<input type="radio" name="tl56-q2" id="tl56-q2b"><label for="tl56-q2b" class="tl-opt tl-no">B. $4{,}92\ \text{m/s}^2$</label>
+<input type="radio" name="tl56-q2" id="tl56-q2c"><label for="tl56-q2c" class="tl-opt tl-no">C. $0{,}0366\ \text{m/s}^2$</label>
+<input type="radio" name="tl56-q2" id="tl56-q2d"><label for="tl56-q2d" class="tl-opt tl-ok">D. $9{,}83\ \text{m/s}^2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $g = \dfrac{2 \cdot 0{,}300}{0{,}247^2} = \dfrac{0{,}600}{0{,}0610} \approx 9{,}83\ \text{m/s}^2$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là $2s/t$: chia cho $t$ thay vì $t^2$. B là $s/t^2$: quên nhân $2$. C là $2st^2$: nhân thay vì chia. Đọc lại $g = 2s/t^2$.</p></div>
+</div>
+</div>
+
+<h4>2. Phương án đo</h4>
+
+<p><strong>🔑 Nam châm giữ bi · ngắt điện thì rơi · cổng quang dừng đồng hồ</strong></p>
+
+<ul>
+<li>Giá đỡ thẳng đứng (kiểm bằng dây dọi); nam châm điện giữ viên bi thép.</li>
+<li>Ngắt công tắc: bi rời nam châm, đồng hồ bắt đầu đếm.</li>
+<li>Mép dưới bi che tia sáng của cổng quang: đồng hồ dừng, cho $t$.</li>
+<li>$s$ đo bằng thước, từ <strong>mép dưới bi</strong> (lúc còn ở nam châm) tới <strong>tia sáng</strong>.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đo</th><th>Dụng cụ → sai số dụng cụ</th></tr>
+</thead>
+<tbody>
+<tr><td>$s$: độ cao</td><td>Thước, độ chia $1\ \text{mm}$ → $\Delta s = 0{,}001\ \text{m}$</td></tr>
+<tr><td>$t$: thời gian</td><td>Đồng hồ hiện số + cổng quang, độ chia $0{,}001\ \text{s}$ → $\Delta t_{\text{dc}} = 0{,}001\ \text{s}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 330" role="img" aria-label="Sơ đồ bố trí đo gia tốc rơi tự do: giá đỡ thẳng đứng, nam châm điện giữ viên bi thép ở trên, cổng quang ở dưới với tia sáng nét đứt đỏ, hai dây nối tới đồng hồ hiện số; mũi tên hai đầu s đo từ mép dưới bi tới tia sáng"><defs><marker id="f1-k10" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><line x1="60.0" y1="26.0" x2="60.0" y2="290.0" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="20.0" y1="290.0" x2="120.0" y2="290.0" stroke="currentColor" stroke-width="6" opacity="1"/><line x1="60.0" y1="53.0" x2="140.0" y2="53.0" stroke="currentColor" stroke-width="5" opacity="1"/><rect x="140" y="40" width="60" height="26" rx="3" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/><circle cx="170" cy="77" r="11" fill="#fb923c" stroke="currentColor" stroke-width="1.5"/><rect x="146" y="232" width="10" height="40" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/><rect x="184" y="232" width="10" height="40" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/><rect x="146" y="262" width="48" height="10" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/><line x1="140.0" y1="246.0" x2="200.0" y2="246.0" stroke="#f87171" stroke-width="2.5" stroke-dasharray="6 4" opacity="1"/><line x1="172.0" y1="88.0" x2="250.0" y2="88.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="200.0" y1="246.0" x2="250.0" y2="246.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="250.0" y1="167.0" x2="250.0" y2="98.0" stroke="currentColor" stroke-width="2.2" marker-end="url(#f1-k10)"/><line x1="250.0" y1="167.0" x2="250.0" y2="236.0" stroke="currentColor" stroke-width="2.2" marker-end="url(#f1-k10)"/><text x="262.0" y="171.0" fill="currentColor" font-size="18" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">s</text><rect x="290" y="70" width="114" height="56" rx="6" fill="none" stroke="currentColor" stroke-width="2"/><text x="347.0" y="94.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">đồng hồ</text><text x="347.0" y="114.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">hiện số</text><polyline points="200,53 347,53 347,70" fill="none" stroke="currentColor" stroke-width="1.8"/><polyline points="194,266 347,266 347,126" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="96.0" y="30.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">nam châm điện</text><text x="98.0" y="84.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">bi thép</text><text x="150.0" y="300.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">cổng quang</text><text x="20.0" y="318.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">giá đỡ</text></svg><figcaption>Hình 1. Bố trí thí nghiệm. Ngắt điện nam châm: bi rơi và đồng hồ bắt đầu đếm; bi che tia sáng (nét đỏ đứt) thì đồng hồ dừng. <em>s</em> đo từ mép dưới bi (lúc còn ở nam châm) tới tia sáng.</figcaption></figure>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-g-01">
+<p class="tl-label">🔬 Thí nghiệm: thả bi 5 lần từ cùng một độ cao</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt $s = 0{,}500\ \text{m}$ (cổng quang đúng dưới bi, tia sáng cách mép dưới bi $0{,}500\ \text{m}$). Thả bi 5 lần, ghi $t$ mỗi lần.</li>
+<li><strong>Quan sát:</strong> 5 số hơi khác nhau, cách nhau vài phần nghìn giây (bảng dưới, số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> một lần đo chưa đủ tin; lấy trung bình và tính sai số.</li>
+</ol>
+</div>
+
+<h4>3. Xử lí số liệu</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lần đo</th><th>$t$ (s)</th><th>$\Delta t_i$ (s)</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>0,319</td><td>0,002</td></tr>
+<tr><td>2</td><td>0,322</td><td>0,001</td></tr>
+<tr><td>3</td><td>0,321</td><td>0,000</td></tr>
+<tr><td>4</td><td>0,323</td><td>0,002</td></tr>
+<tr><td>5</td><td>0,320</td><td>0,001</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Trung bình · sai số tuyệt đối · sai số tương đối</strong></p>
+
+<ul>
+<li>Trung bình: $\bar t = \dfrac{t_1 + t_2 + \dots + t_n}{n}$.</li>
+<li>Từng lần: $\Delta t_i = |t_i - \bar t|$; lấy trung bình được $\overline{\Delta t}$.</li>
+<li>Sai số của $t$: $\Delta t = \overline{\Delta t} + \Delta t_{\text{dc}}$.</li>
+<li>Sai số tương đối ($t$ bình phương nên có hệ số $2$): $$\delta = \dfrac{\Delta g}{\bar g} = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$$</li>
+<li>Kết quả: $\Delta g = \delta \cdot \bar g$, viết $g = \bar g \pm \Delta g$.</li>
+</ul>
+
+<p>Làm cùng bảng ($s = 0{,}500\ \text{m}$, $\Delta s = 0{,}001\ \text{m}$):</p>
+<ol class="tl-steps">
+<li>$\bar t = 0{,}321\ \text{s}$; $\overline{\Delta t} = 0{,}0012\ \text{s}$; $\Delta t = 0{,}0012 + 0{,}001 = 0{,}0022\ \text{s}$.</li>
+<li>$\bar g = \dfrac{2 \cdot 0{,}500}{0{,}321^2} \approx 9{,}70\ \text{m/s}^2$.</li>
+<li>$\delta = \dfrac{0{,}001}{0{,}500} + \dfrac{2 \cdot 0{,}0022}{0{,}321} \approx 0{,}0157$, nên $\Delta g \approx 9{,}70 \cdot 0{,}0157 \approx 0{,}15\ \text{m/s}^2$.</li>
+<li>Kết quả: $g = 9{,}70 \pm 0{,}15\ \text{m/s}^2$.</li>
+</ol>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Trong phép đo trên, $\Delta s / s = 0{,}2\,\%$ còn $2\Delta t/\bar t \approx 1{,}4\,\%$. Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q3" id="tl56-q3a"><label for="tl56-q3a" class="tl-opt tl-ok">A. Sai số chủ yếu do thời gian; nên thả cao hơn và đo nhiều lần hơn</label>
+<input type="radio" name="tl56-q3" id="tl56-q3b"><label for="tl56-q3b" class="tl-opt tl-no">B. Sai số chủ yếu do độ cao; nên dùng thước chia tới $0{,}1\ \text{mm}$</label>
+<input type="radio" name="tl56-q3" id="tl56-q3c"><label for="tl56-q3c" class="tl-opt tl-no">C. Hai phần như nhau vì cùng có mặt trong công thức</label>
+<input type="radio" name="tl56-q3" id="tl56-q3d"><label for="tl56-q3d" class="tl-opt tl-no">D. Không còn sai số vì đã lấy trung bình 5 lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thời gian chiếm $1{,}4\,\%$ so với $0{,}2\,\%$ của độ cao, vì $\Delta t$ có hệ số $2$ và $\bar t$ chỉ cỡ $0{,}3\ \text{s}$. Thả cao hơn làm $\bar t$ lớn hơn nên $\Delta t / \bar t$ nhỏ đi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B ngược: $0{,}2\,\%$ nhỏ hơn $1{,}4\,\%$ nhiều. C bỏ quên hệ số $2$ và $\Delta t$ lớn hơn. D: lấy trung bình chỉ giảm phần ngẫu nhiên, sai số dụng cụ vẫn còn.</p></div>
+</div>
+</div>
+
+<h4>4. Phương án thứ hai: đồ thị $s$–$t^2$</h4>
+
+<p><strong>🔑 Nhiều độ cao · $s$ theo $t^2$ · dốc $= \dfrac{g}{2}$</strong></p>
+
+<ul>
+<li>Từ $s = \dfrac{g}{2}t^2$: $s$ theo $t^2$ là <strong>đường thẳng qua gốc</strong>.</li>
+<li>Độ dốc $= \dfrac{g}{2}$, nên $g = 2 \cdot \text{độ dốc}$.</li>
+<li>Lợi: dùng cả năm độ cao, điểm nào lệch thì thấy ngay.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-g-02">
+<p class="tl-label">🔬 Thí nghiệm: đổi độ cao thả</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dời cổng quang để $s = 0{,}200;\ 0{,}300;\ \dots;\ 0{,}600\ \text{m}$; mỗi độ cao thả 5 lần, lấy $\bar t$.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ); các điểm $(t^2, s)$ gần như thẳng hàng (Hình 2).</li>
+<li><strong>Rút ra:</strong> độ dốc cho $g$ mà không phụ thuộc một lần đo riêng lẻ.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$s$ (m)</th><th>$\bar t$ (s)</th><th>$\bar t^2$ (s²)</th></tr>
+</thead>
+<tbody>
+<tr><td>0,200</td><td>0,204</td><td>0,0416</td></tr>
+<tr><td>0,300</td><td>0,249</td><td>0,0620</td></tr>
+<tr><td>0,400</td><td>0,288</td><td>0,0829</td></tr>
+<tr><td>0,500</td><td>0,321</td><td>0,1030</td></tr>
+<tr><td>0,600</td><td>0,352</td><td>0,1239</td></tr>
+</tbody>
+</table>
+</div>
+
+<figure class="fig" data-tl="1" data-exp="tn-l10-do-g-02"><svg viewBox="0 0 420 270" role="img" aria-label="Đồ thị quãng đường s theo bình phương thời gian t²: năm điểm cam gần như nằm trên một đường thẳng xanh đi qua gốc toạ độ; tam giác nét đứt có cạnh ngang Δ(t²) và cạnh đứng Δs cho độ dốc"><defs><marker id="f2-k9" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><line x1="60.0" y1="220.0" x2="399.0" y2="220.0" stroke="currentColor" stroke-width="1.8" marker-end="url(#f2-k9)"/><line x1="60.0" y1="220.0" x2="60.0" y2="31.0" stroke="currentColor" stroke-width="1.8" marker-end="url(#f2-k9)"/><text x="68.0" y="38.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">s (m)</text><text x="350.0" y="252.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">t² (s²)</text><text x="38.0" y="238.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">O</text><line x1="56.0" y1="160.0" x2="64.0" y2="160.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52.0" y="165.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">0,2</text><line x1="56.0" y1="100.0" x2="64.0" y2="100.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52.0" y="105.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">0,4</text><line x1="56.0" y1="40.0" x2="64.0" y2="40.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52.0" y="45.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">0,6</text><line x1="180.0" y1="216.0" x2="180.0" y2="224.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="180.0" y="240.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">0,05</text><line x1="300.0" y1="216.0" x2="300.0" y2="224.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="300.0" y="240.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">0,10</text><line x1="60.0" y1="220.0" x2="372.0" y2="30.5" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="159.8" y1="160.0" x2="357.4" y2="160.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="1"/><line x1="357.4" y1="160.0" x2="357.4" y2="40.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="1"/><circle cx="159.8" cy="160.0" r="5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="208.8" cy="130.0" r="5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="259.0" cy="100.0" r="5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="307.2" cy="70.0" r="5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="357.4" cy="40.0" r="5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><text x="258.6" y="180.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Δ(t²)</text><text x="366.4" y="105.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Δs</text></svg><figcaption>Hình 2. Đồ thị <em>s</em> theo <em>t</em><sup>2</sup> (số liệu minh hoạ): các điểm gần thẳng hàng qua gốc. Độ dốc Δ<em>s</em>/Δ(<em>t</em><sup>2</sup>) bằng <em>g</em>/2.</figcaption></figure>
+
+<p>Lấy hai điểm xa nhau để tính độ dốc $k$: $$k = \dfrac{0{,}600 - 0{,}200}{0{,}1239 - 0{,}0416} \approx 4{,}86\ \text{m/s}^2$$ Suy ra $g = 2k \approx 9{,}72\ \text{m/s}^2$.</p>
+
+<details class="tl-details">
+<summary>📱 Không có cổng quang? Dùng điện thoại quay chậm</summary>
+<div class="tl-box tl-box--exp" data-exp="tn-l10-do-g-03">
+<p class="tl-label">🔬 Thí nghiệm: đếm khung hình</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> quay video chậm $240$ khung/s cảnh bi rơi cạnh thước; đếm số khung từ lúc bi rời nam châm tới lúc bi chạm mốc $s$.</li>
+<li><strong>Quan sát:</strong> $n = 77$ khung, nên $t = \dfrac{77}{240} \approx 0{,}321\ \text{s}$.</li>
+<li><strong>Rút ra:</strong> sai lệch $1$ khung là $\dfrac{1}{240} \approx 0{,}0042\ \text{s}$, lớn hơn độ chia $0{,}001\ \text{s}$ của đồng hồ hiện số: dụng cụ kém thì $\Delta t_{\text{dc}}$ lớn.</li>
+</ol>
+</div>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: đo $s$ sai gốc</h4>
+
+<p>$s$ là đoạn bi <strong>thật sự rơi</strong> tới lúc mép dưới bi che tia sáng. Đo từ mặt nam châm thì dài hơn một đường kính bi (cỡ $1\ \text{cm}$), và lệch cùng một phía ở mọi lần thả.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Cách đo $s$</th><th>Hệ quả</th></tr>
+</thead>
+<tbody>
+<tr><td>Mép dưới bi → tia sáng</td><td>Đúng đoạn bi rơi</td></tr>
+<tr><td>Mặt nam châm → tia sáng</td><td>$s$ quá dài, $g$ lệch cùng phía</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Đúng gốc · đúng ngọn</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Bi thật sự rơi $0{,}500\ \text{m}$ trong $t = 0{,}319\ \text{s}$ (đo đúng). Nhóm đo $s$ từ mặt nam châm nên ghi $0{,}510\ \text{m}$. Gia tốc nhóm tính ra:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q4" id="tl56-q4a"><label for="tl56-q4a" class="tl-opt tl-no">A. Nhỏ hơn $9{,}83\ \text{m/s}^2$, vì $s$ ghi dài hơn thì bi rơi chậm hơn</label>
+<input type="radio" name="tl56-q4" id="tl56-q4b"><label for="tl56-q4b" class="tl-opt tl-no">B. Vẫn bằng $9{,}83\ \text{m/s}^2$, vì $g$ chỉ phụ thuộc thời gian</label>
+<input type="radio" name="tl56-q4" id="tl56-q4c"><label for="tl56-q4c" class="tl-opt tl-ok">C. Lớn hơn: $\dfrac{2 \cdot 0{,}510}{0{,}319^2} \approx 10{,}02\ \text{m/s}^2$, lệch khoảng $+2\,\%$</label>
+<input type="radio" name="tl56-q4" id="tl56-q4d"><label for="tl56-q4d" class="tl-opt tl-no">D. Lớn hơn, nhưng lấy trung bình nhiều lần sẽ bù lại</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $g = 2s/t^2$ tỉ lệ với $s$: $s$ lớn hơn $2\,\%$ thì $g$ lớn hơn $2\,\%$. Đúng giá trị $\dfrac{2 \cdot 0{,}500}{0{,}319^2} \approx 9{,}83\ \text{m/s}^2$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: thời gian $t$ đã đo đúng, không đổi; $s$ lớn thì tử số lớn, $g$ lớn. B quên $s$ ở tử số. D: lệch cùng một phía ở mọi lần nên trung bình không bù được (Bẫy 2).</p></div>
+</div>
+</div>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 250" role="img" aria-label="Hai cách đo độ cao s: mũi tên xanh lá đúng đo từ mép dưới viên bi tới tia sáng của cổng quang; mũi tên đỏ sai đo từ mặt dưới nam châm, dài hơn đoạn bi thật sự rơi một đường kính bi"><defs><marker id="f3-g10" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker><marker id="f3-r10" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><rect x="130" y="14" width="100" height="32" rx="3" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/><text x="180.0" y="36.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">nam châm</text><circle cx="180" cy="59" r="13" fill="#fb923c" stroke="currentColor" stroke-width="1.5"/><circle cx="180.0" cy="72.0" r="2.5" fill="currentColor"/><text x="200.0" y="64.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">bi thép</text><line x1="120.0" y1="205.0" x2="240.0" y2="205.0" stroke="#f87171" stroke-width="2.5" stroke-dasharray="6 4" opacity="1"/><text x="130.0" y="232.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">tia sáng cổng quang</text><line x1="100.0" y1="72.0" x2="176.0" y2="72.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="100.0" y1="205.0" x2="120.0" y2="205.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="100.0" y1="138.0" x2="100.0" y2="82.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f3-g10)"/><line x1="100.0" y1="138.0" x2="100.0" y2="195.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f3-g10)"/><text x="58.0" y="146.0" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">đúng</text><line x1="230.0" y1="46.0" x2="290.0" y2="46.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="240.0" y1="205.0" x2="290.0" y2="205.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.55"/><line x1="290.0" y1="125.0" x2="290.0" y2="56.0" stroke="#f87171" stroke-width="2.6" marker-end="url(#f3-r10)"/><line x1="290.0" y1="125.0" x2="290.0" y2="195.0" stroke="#f87171" stroke-width="2.6" marker-end="url(#f3-r10)"/><text x="302.0" y="130.0" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">sai</text></svg><figcaption>Hình 3. Đúng: <em>s</em> đo từ mép dưới bi tới tia sáng. Sai: đo từ mặt nam châm, dài hơn đoạn bi thật sự rơi một đường kính bi.</figcaption></figure>
+
+<h4>Bẫy 2: lấy trung bình là hết sai số</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Sai số ngẫu nhiên</th><th>Sai số hệ thống</th></tr>
+</thead>
+<tbody>
+<tr><td>Lệch lên xuống thất thường</td><td>Lệch cùng một phía mọi lần</td></tr>
+<tr><td>Lấy trung bình thì giảm</td><td>Lấy trung bình không giảm</td></tr>
+<tr><td>Ví dụ: thả bi lệch vài phần nghìn giây</td><td>Ví dụ: từ dư giữ bi; đo $s$ sai gốc</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Trung bình trị ngẫu nhiên · hệ thống phải tìm nguyên nhân</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl56-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl56-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Nam châm còn từ dư nên bi luôn rời muộn khoảng $0{,}002\ \text{s}$ ở mọi lần thả. Nhóm đo $100$ lần rồi lấy trung bình. Điều nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q5" id="tl56-q5a"><label for="tl56-q5a" class="tl-opt tl-ok">A. Dao động giữa các lần giảm, nhưng $\bar t$ vẫn lớn hơn thật cỡ $0{,}002\ \text{s}$, nên $g$ vẫn nhỏ hơn thật</label>
+<input type="radio" name="tl56-q5" id="tl56-q5b"><label for="tl56-q5b" class="tl-opt tl-no">B. Cả sai số ngẫu nhiên lẫn hệ thống đều giảm về $0$</label>
+<input type="radio" name="tl56-q5" id="tl56-q5c"><label for="tl56-q5c" class="tl-opt tl-no">C. Độ trễ $0{,}002\ \text{s}$ mất đi vì lần nhanh lần chậm bù nhau</label>
+<input type="radio" name="tl56-q5" id="tl56-q5d"><label for="tl56-q5d" class="tl-opt tl-no">D. $g$ lớn hơn thật vì $t$ đọc lớn hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Độ trễ cùng phía mọi lần là sai số hệ thống. $t$ đọc lớn hơn thật nên $g = 2s/t^2$ nhỏ hơn thật. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và C coi độ trễ như sai số ngẫu nhiên: nó không lên xuống nên không triệt tiêu. D: $t$ lớn thì $t^2$ ở mẫu lớn, $g$ nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: trung bình chỉ trị sai số ngẫu nhiên.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "khác $9{,}8$ là thí nghiệm hỏng"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Khoảng $g$</th><th>Nhận xét</th></tr>
+</thead>
+<tbody>
+<tr><td>Chứa $9{,}8$</td><td>Phù hợp giá trị tham khảo</td></tr>
+<tr><td>Không chứa $9{,}8$</td><td>Còn sai số hệ thống chưa tìm ra</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Xét cả khoảng, không xét riêng $\bar g$</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Ba nhóm báo cáo (đơn vị $\text{m/s}^2$): nhóm 1: $9{,}68 \pm 0{,}13$; nhóm 2: $9{,}50 \pm 0{,}05$; nhóm 3: $10{,}20 \pm 0{,}30$. Kết quả của nhóm nào phù hợp với $9{,}8$?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q6" id="tl56-q6a"><label for="tl56-q6a" class="tl-opt tl-no">A. Nhóm 2, vì sai số nhỏ nhất</label>
+<input type="radio" name="tl56-q6" id="tl56-q6b"><label for="tl56-q6b" class="tl-opt tl-ok">B. Nhóm 1, vì khoảng từ $9{,}55$ đến $9{,}81$ chứa $9{,}8$</label>
+<input type="radio" name="tl56-q6" id="tl56-q6c"><label for="tl56-q6c" class="tl-opt tl-no">C. Nhóm 3, vì khoảng $\pm 0{,}30$ rộng nhất nên chắc chắn chứa $9{,}8$</label>
+<input type="radio" name="tl56-q6" id="tl56-q6d"><label for="tl56-q6d" class="tl-opt tl-no">D. Không nhóm nào, vì không nhóm nào đo đúng $9{,}8$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $9{,}68 - 0{,}13 = 9{,}55$ và $9{,}68 + 0{,}13 = 9{,}81$: khoảng chứa $9{,}8$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: khoảng từ $9{,}45$ đến $9{,}55$ không chứa $9{,}8$, chụm lại nhưng lệch, dấu hiệu sai số hệ thống. C: khoảng từ $9{,}90$ đến $10{,}50$ cũng không chứa $9{,}8$. D: kết quả đo có sai số nên không cần trùng khít, chỉ cần khoảng chứa giá trị tham khảo.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Công thức tính $g$ từ $s$ và $t$ suy ra từ đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Rơi từ nghỉ: $s = \dfrac{1}{2}gt^2$ · suy ra $g = \dfrac{2s}{t^2}$.</p>
+</details>
+<details class="tl-details">
+<summary>2. Cần đo đại lượng nào, bằng dụng cụ gì, thao tác ra sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$s$: thước, từ mép dưới bi tới tia sáng · $t$: đồng hồ hiện số + cổng quang · nam châm giữ bi, ngắt điện thì bi rơi và đồng hồ đếm · bi che tia sáng thì dừng.</p>
+</details>
+<details class="tl-details">
+<summary>3. Viết các bước tính sai số của $g$. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$\bar t$ · $\Delta t_i = |t_i - \bar t|$ · $\Delta t = \overline{\Delta t} + \Delta t_{\text{dc}}$ · $\delta = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$ · $\Delta g = \delta \cdot \bar g$ · $g = \bar g \pm \Delta g$.</p>
+</details>
+<details class="tl-details">
+<summary>4. Vì sao $\Delta t / \bar t$ có hệ số $2$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$g$ chứa $t^2$ · sai số tương đối của $t^2$ gấp đôi của $t$ · sai số thời gian quan trọng gấp đôi.</p>
+</details>
+<details class="tl-details">
+<summary>5. Đồ thị $s$–$t^2$ có dạng gì, độ dốc cho biết gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đường thẳng qua gốc · độ dốc $= \dfrac{g}{2}$ · $g = 2 \cdot \text{độ dốc}$.</p>
+</details>
+<details class="tl-details">
+<summary>6. Phân biệt sai số ngẫu nhiên và hệ thống; cách xử lí mỗi loại? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Ngẫu nhiên: lên xuống · đo nhiều lần, lấy trung bình · hệ thống: lệch một phía · tìm nguyên nhân (từ dư, sai gốc $s$, dụng cụ).</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một nhóm thả bi từ độ cao $s = 0{,}800\ \text{m}$ (thước chia tới $1\ \text{mm}$). Bốn lần đo thời gian rơi: $0{,}403;\ 0{,}404;\ 0{,}405;\ 0{,}404\ \text{s}$ (đồng hồ chia tới $0{,}001\ \text{s}$). Tính $g$, viết kết quả có sai số, và cho biết có phù hợp với $9{,}8\ \text{m/s}^2$ không.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"độ cao $0{,}800\ \text{m}$"</td><td>$s = 0{,}800\ \text{m}$ · $\Delta s = 0{,}001\ \text{m}$</td></tr>
+<tr><td>"bốn lần đo"</td><td>Lấy $\bar t$ · tính $\Delta t_i$</td></tr>
+<tr><td>"chia tới $0{,}001\ \text{s}$"</td><td>$\Delta t_{\text{dc}} = 0{,}001\ \text{s}$</td></tr>
+<tr><td>"thả bi" (ngầm)</td><td>$v_0 = 0$ nên $g = \dfrac{2s}{t^2}$</td></tr>
+<tr><td>"phù hợp với $9{,}8$"</td><td>Xét khoảng $\bar g \pm \Delta g$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Trung bình:</strong> $\bar t = \dfrac{0{,}403 + 0{,}404 + 0{,}405 + 0{,}404}{4} = 0{,}404\ \text{s}$.</li>
+<li><strong>Sai số từng lần:</strong> $0{,}001;\ 0;\ 0{,}001;\ 0$, nên $\overline{\Delta t} = 0{,}0005\ \text{s}$ và $\Delta t = 0{,}0005 + 0{,}001 = 0{,}0015\ \text{s}$.</li>
+<li><strong>Giá trị $g$:</strong> $\bar g = \dfrac{2 \cdot 0{,}800}{0{,}404^2} \approx 9{,}80\ \text{m/s}^2$.</li>
+<li><strong>Sai số:</strong> $\delta = \dfrac{0{,}001}{0{,}800} + \dfrac{2 \cdot 0{,}0015}{0{,}404} \approx 0{,}0087$, nên $\Delta g \approx 9{,}80 \cdot 0{,}0087 \approx 0{,}09\ \text{m/s}^2$.</li>
+<li><strong>Kết quả:</strong> $g = 9{,}80 \pm 0{,}09\ \text{m/s}^2$.</li>
+<li><strong>Kiểm tra:</strong> khoảng từ $9{,}71$ đến $9{,}89$ chứa $9{,}8$ ✓: phù hợp. $\Delta g$ cỡ $1\,\%$ của $\bar g$ là hợp lí cho phép đo bằng cổng quang ✓.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng cách làm, nhóm khác: $s = 0{,}450\ \text{m}$, $\bar t = 0{,}303\ \text{s}$, $\Delta t = 0{,}0022\ \text{s}$.</p>
+<ol class="tl-steps">
+<li>$\bar g = \dfrac{2 \cdot 0{,}450}{0{,}303^2}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $\delta = \;?$ — gợi ý: $\dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$.</li>
+<li><strong>Bước 3 (em điền):</strong> $\Delta g = \;?$ rồi viết $g = \bar g \pm \Delta g$.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–3</summary>
+<p>$\bar g \approx 9{,}80$; $\delta = \dfrac{0{,}001}{0{,}450} + \dfrac{2 \cdot 0{,}0022}{0{,}303} \approx 0{,}0167$; $\Delta g \approx 9{,}80 \cdot 0{,}0167 \approx 0{,}16$. Kết quả $g = 9{,}80 \pm 0{,}16\ \text{m/s}^2$.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi dụng cụ: thay đồng hồ bằng điện thoại $240$ khung/s</summary>
+<p>Đề gốc, nhưng $\Delta t_{\text{dc}} = \dfrac{1}{240} \approx 0{,}0042\ \text{s}$. Khi đó $\Delta t \approx 0{,}0005 + 0{,}0042 = 0{,}0047\ \text{s}$; $\delta \approx 0{,}00125 + \dfrac{2 \cdot 0{,}0047}{0{,}404} \approx 0{,}0245$; $\Delta g \approx 0{,}24\ \text{m/s}^2$. Sai số khoảng gấp $2{,}7$ lần, vì dụng cụ kém.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl56-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl56-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Nhóm tăng độ cao thả từ $0{,}200\ \text{m}$ lên $0{,}800\ \text{m}$ (lí thuyết, bỏ qua sai số hệ thống). Giữ nguyên $\Delta t$. Thời gian rơi $t$ và tỉ số $2\Delta t/\bar t$ thay đổi thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl56-q7" id="tl56-q7a"><label for="tl56-q7a" class="tl-opt tl-no">A. $t$ gấp $4$; tỉ số giảm $4$ lần</label>
+<input type="radio" name="tl56-q7" id="tl56-q7b"><label for="tl56-q7b" class="tl-opt tl-no">B. $t$ gấp $2$; tỉ số không đổi</label>
+<input type="radio" name="tl56-q7" id="tl56-q7c"><label for="tl56-q7c" class="tl-opt tl-no">C. $t$ gấp $4$; tỉ số không đổi</label>
+<input type="radio" name="tl56-q7" id="tl56-q7d"><label for="tl56-q7d" class="tl-opt tl-ok">D. $t$ gấp $2$; tỉ số giảm một nửa</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t = \sqrt{2s/g}$: $s$ gấp $4$ thì $t$ gấp $\sqrt{4} = 2$. $\Delta t$ giữ nguyên nên $\Delta t / \bar t$ giảm một nửa. Thả cao hơn thì chính xác hơn (trong giới hạn giá đỡ).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và C coi $t$ tỉ lệ với $s$, trong khi $s$ tỉ lệ với $t^2$. B đúng ở $t$ gấp $2$ nhưng quên rằng $\bar t$ lớn hơn thì tỉ số nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại $s = \dfrac{1}{2}gt^2$.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: nơi người ta cần biết $g$ chính xác</summary>
+<ul>
+<li><strong>Thăm dò địa chất:</strong> $g$ ở xích đạo cỡ $9{,}78\ \text{m/s}^2$, ở cực cỡ $9{,}83\ \text{m/s}^2$; nơi có mỏ đặc nặng, $g$ lệch nhẹ nên trọng lực kế tìm được mỏ.</li>
+<li><strong>Hiệu chuẩn cảm biến:</strong> cảm biến gia tốc điện thoại đặt nằm yên phải đọc xấp xỉ $g$.</li>
+<li><strong>Đo bằng cách khác:</strong> con lắc đơn cũng cho $g$ qua chu kì (học ở lớp 11, chương Dao động), dùng để so sánh và tìm sai số hệ thống.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Thả bi từ $s = 1{,}000\ \text{m}$, đo $t = 0{,}452\ \text{s}$. Tính $g$. <em>Đáp số: $g = \dfrac{2 \cdot 1{,}000}{0{,}452^2} \approx 9{,}79\ \text{m/s}^2$</em></li>
+<li><strong>⭐⭐</strong> Dùng hai điểm $(0{,}0620;\ 0{,}300)$ và $(0{,}1030;\ 0{,}500)$ của bảng $s$–$t^2$ để tính độ dốc rồi $g$. <em>(độ dốc $= \dfrac{0{,}200}{0{,}0410} \approx 4{,}88\ \text{m/s}^2$; $g \approx 9{,}76\ \text{m/s}^2$)</em></li>
+<li><strong>⭐⭐⭐</strong> Với $\Delta t = 0{,}002\ \text{s}$ và bỏ qua $\Delta s/s$, muốn $\delta$ không quá $1\,\%$ thì phải thả từ độ cao tối thiểu bao nhiêu? <em>($\dfrac{2 \cdot 0{,}002}{t} \le 0{,}01$ nên $t \ge 0{,}4\ \text{s}$; $s = \dfrac{1}{2} \cdot 9{,}8 \cdot 0{,}4^2 \approx 0{,}78\ \text{m}$)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Công thức</strong>: $g = \dfrac{2s}{t^2}$ · thả từ nghỉ.</li>
+<li><strong>Đo</strong>: $s$ bằng thước (mép dưới bi → tia sáng) · $t$ bằng cổng quang.</li>
+<li><strong>Lặp lại</strong>: nhiều lần · lấy trung bình.</li>
+<li><strong>Sai số</strong>: $\Delta t = \overline{\Delta t} + \Delta t_{\text{dc}}$ · $\delta = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$ · $g = \bar g \pm \Delta g$</li>
+<li><strong>Đồ thị $s$–$t^2$</strong>: thẳng qua gốc · dốc $= \dfrac{g}{2}$.</li>
+<li><strong>Ngẫu nhiên</strong>: trung bình giảm · <strong>hệ thống</strong>: phải tìm nguyên nhân.</li>
+<li>Đọc kết quả: khoảng $\bar g \pm \Delta g$ có chứa $9{,}8$ không · đổi độ cao thì $t$ đổi theo $\sqrt{s}$.</li>
+</ul>
+</div>

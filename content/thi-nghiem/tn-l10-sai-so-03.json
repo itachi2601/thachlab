@@ -1,0 +1,138 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo",
+ "lesson_id": 48,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-sai-so/theory.html",
+ "id": "tn-l10-sai-so-03",
+ "ten": "Đo g bằng con lắc đơn: sai số của phép đo gián tiếp",
+ "loai": "vi_du",
+ "muc_do": "nang_cao",
+ "kien_thuc": [
+  "saiso.gian_tiep_tich_thuong",
+  "saiso.gian_tiep_so_mu",
+  "saiso.ghi_ket_qua"
+ ],
+ "muc_tieu": "Tính g = 4π²l/T² từ l và T đo trực tiếp; cộng sai số tỉ đối (số mũ 2 nhân với δT); ghi g = trung bình ± Δg đúng chữ số có nghĩa.",
+ "dung_cu": [
+  {
+   "ten": "Không cần (bài toán mẫu dùng số liệu của TN1)",
+   "so_luong": 0
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dùng l = 1,000 m (thước ĐCNN 1 mm, lấy Δl = 1 mm) và t = (20,07 ± 0,15) s cho 10 dao động; T = t/10."
+  ],
+  "quan_sat": [
+   "T = 2,007 s, δT ≈ 0,747 %; δl = 0,1 %."
+  ],
+  "rut_ra": [
+   "δg = δl + 2δT ≈ 1,6 %; g ≈ 9,80 m/s²; Δg ≈ 0,16 m/s².",
+   "Kết quả g = (9,80 ± 0,16) m/s²; giá trị chuẩn 9,81 nằm trong khoảng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "dl",
+   "ten": "Sai số tuyệt đối của chiều dài",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.0005,
+   "max": 0.005,
+   "mac_dinh": 0.001,
+   "buoc": 0.0005
+  },
+  {
+   "ky_hieu": "n_dao_dong",
+   "ten": "Số dao động mỗi lần bấm",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 30,
+   "mac_dinh": 10,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "delta_t",
+   "ten": "Sai số tuyệt đối của t (bấm tay)",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.15
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do đo được",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "delta_g",
+   "ten": "Sai số tuyệt đối của g",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = t/(số dao động)",
+   "g = 4π²·l/T²",
+   "δg = δl + 2·δT",
+   "Δg = g·δg",
+   "đo 20 dao động: t̄ gấp đôi, Δt giữ nguyên → δT giảm một nửa"
+  ],
+  "gia_thiet": [
+   "bỏ qua sai số của π",
+   "Δt cố định 0,15 s (giả định ở biến thể 20 dao động)",
+   "góc lệch nhỏ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Đại lượng",
+   "Giá trị",
+   "Sai số tuyệt đối",
+   "Sai số tỉ đối (%)"
+  ],
+  "hang": [
+   [
+    "l (m)",
+    1.0,
+    0.001,
+    0.1
+   ],
+   [
+    "T (s)",
+    2.007,
+    0.015,
+    0.747
+   ],
+   [
+    "g (m/s²)",
+    9.8,
+    0.16,
+    1.6
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình của bài toán mẫu; g = 9,80 ± 0,16 m/s². Biến thể 20 dao động: δg ≈ 0,85 %, Δg ≈ 0,08 m/s² (giả định)."
+ },
+ "ket_qua_ky_vong": "g = (9,80 ± 0,16) m/s²; sai số chủ yếu đến từ T vì số mũ 2.",
+ "hien_tuong_hay_sai": [
+  "Quên nhân đôi δT vì T² có số mũ 2.",
+  "Cộng sai số tuyệt đối thay vì sai số tỉ đối khi nhân chia.",
+  "Ghi g = 9,8008 ± 0,16 (nhiều chữ số thập phân hơn Δg)."
+ ],
+ "sai_so_thuong_gap": "Đo l không tính tới bán kính vật nặng; góc lệch lớn.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Thanh trượt Δl và số dao động; thanh cột chồng thể hiện đóng góp của δl và 2δT vào δg.",
+  "diem_nhan": "Tăng số dao động từ 10 lên 20: cột của 2δT thấp xuống một nửa, thấy rõ đo nhiều dao động trong một lần bấm có lợi."
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 10. Sự rơi tự do",
+ "lesson_id": 55,
+ "nguon_trong_bai": "content/lesson-samples/l10-su-roi-tu-do/theory.html",
+ "id": "tn-l10-roi-tu-do-03",
+ "ten": "Đo gia tốc rơi tự do bằng nam châm điện, cổng quang và đồng hồ hiện số",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "roitudo.gia_toc_g",
+  "roitudo.s_bang_mot_nua_g_t_binh",
+  "do_luong.sai_so_he_thong"
+ ],
+ "muc_tieu": "Đo thời gian rơi ở 5 quãng rơi khác nhau, tính g = 2s/t², nhận ra sai số hệ thống (mọi giá trị cùng nhỏ hơn 9,8) và cách giảm.",
+ "dung_cu": [
+  {
+   "ten": "Nam châm điện + công tắc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ đo thời gian hiện số (0,001 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hòn bi thép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ có thước dựng đứng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nam châm điện giữ hòn bi ở đầu thước dựng đứng.",
+   "Đặt cổng quang lần lượt cách điểm thả s = 0,20; 0,40; 0,60; 0,80; 1,00 m; mỗi vị trí thả một lần.",
+   "Ngắt điện: bi rơi, đồng hồ bắt đầu đếm; bi qua cổng quang thì đồng hồ dừng."
+  ],
+  "quan_sat": [
+   "Thời gian đo: 0,205; 0,289; 0,353; 0,407; 0,455 s.",
+   "g = 2s/t² tính ra: 9,52; 9,58; 9,63; 9,66; 9,66 m/s²."
+  ],
+  "rut_ra": [
+   "Các giá trị g sát nhau và gần 9,8 m/s²: tại một nơi, vật rơi với cùng gia tốc.",
+   "Mọi giá trị cùng nhỏ hơn 9,8 và lệch nhiều nhất ở quãng rơi ngắn nhất: sai số hệ thống do nam châm nhả bi trễ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Khoảng cách điểm thả – cổng quang",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.2,
+   "mac_dinh": 0.6,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "tau",
+   "ten": "Độ trễ nhả bi của nam châm",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.01,
+   "mac_dinh": 0.003,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do thật",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đồng hồ hiện",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.0005
+  },
+  {
+   "ky_hieu": "g_do",
+   "ten": "g tính từ số đo",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_thật = √(2s/g)",
+   "t_đo = t_thật + tau, làm tròn tới 0,001 s",
+   "g_do = 2s/t_đo²"
+  ],
+  "gia_thiet": [
+   "bỏ qua lực cản không khí",
+   "tau không đổi giữa các lần thả",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "s (m)",
+   "t thật (s)",
+   "t đo (s)",
+   "g = 2s/t² (m/s²)"
+  ],
+  "hang": [
+   [
+    0.2,
+    0.202,
+    0.205,
+    9.52
+   ],
+   [
+    0.4,
+    0.286,
+    0.289,
+    9.58
+   ],
+   [
+    0.6,
+    0.35,
+    0.353,
+    9.63
+   ],
+   [
+    0.8,
+    0.404,
+    0.407,
+    9.66
+   ],
+   [
+    1.0,
+    0.452,
+    0.455,
+    9.66
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình với tau = 0.003 s (sai số hệ thống), làm tròn 0,001 s, không thêm nhiễu ngẫu nhiên. g trung bình = 9.610 m/s²."
+ },
+ "ket_qua_ky_vong": "g từ 9.52 đến 9.66 m/s², đều nhỏ hơn 9,8; lệch nhiều nhất ở s = 0,20 m.",
+ "hien_tuong_hay_sai": [
+  "Thấy g < 9,8 rồi cho rằng thí nghiệm hỏng, không nhận ra sai số hệ thống.",
+  "Lấy trung bình để 'khử' sai số hệ thống (trung bình không khử được sai số cùng một phía).",
+  "Dùng g = s/t² (quên hệ số 2)."
+ ],
+ "sai_so_thuong_gap": "Nam châm dư từ nhả bi trễ; cổng quang đặt lệch; đo s từ mép bi thay vì tâm bi.",
+ "an_toan": "Đặt hộp đựng cát/khăn dưới chỗ bi rơi.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "y_tuong": "Kéo cổng quang lên xuống, bấm thả; bảng điền t và g; vẽ g theo s.",
+  "diem_nhan": "Thanh trượt tau: đặt tau = 0 thì mọi hàng ra đúng 9,8; tau > 0 thì hàng s nhỏ lệch nhiều nhất."
+ }
+}

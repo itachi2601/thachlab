@@ -1,0 +1,141 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+ "lesson_id": 56,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-do-g/theory.html",
+ "id": "tn-l10-do-g-03",
+ "ten": "Đếm khung hình: sai số dụng cụ khi dùng điện thoại quay chậm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "doig.sai_so_dung_cu",
+  "doig.khung_hinh"
+ ],
+ "muc_tieu": "Thấy thời gian đo bằng số khung hình bị làm tròn tới 1/fps, nên fps càng thấp thì sai số dụng cụ càng lớn.",
+ "dung_cu": [
+  {
+   "ten": "Điện thoại quay chậm 240 khung/s",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dán thẳng đứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Viên bi thép + nam châm điện",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Quay video chậm cảnh bi rơi từ độ cao s = 0,500 m cạnh thước.",
+   "Đếm số khung từ lúc bi rời nam châm tới lúc bi chạm mốc s."
+  ],
+  "quan_sat": [
+   "n = 77 khung ở 240 khung/s."
+  ],
+  "rut_ra": [
+   "t = n/fps = 77/240 ≈ 0,321 s.",
+   "Sai lệch 1 khung = 1/240 ≈ 0,0042 s, lớn hơn độ chia 0,001 s của đồng hồ hiện số."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "fps",
+   "ten": "Số khung hình mỗi giây",
+   "don_vi": "khung/s",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 480,
+   "mac_dinh": 240,
+   "buoc": 30
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Độ cao thả",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Số khung đếm được",
+   "don_vi": "khung",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian rơi",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_thật = sqrt(2s/9,8) + 0,002",
+   "n = làm tròn(t_thật·fps)",
+   "t = n/fps; sai số dụng cụ = 1/fps"
+  ],
+  "gia_thiet": [
+   "bi rơi tự do",
+   "độ trễ hệ thống 0,002 s như thí nghiệm 1"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "fps (khung/s)",
+   "n (khung)",
+   "t (s)",
+   "±1 khung (s)"
+  ],
+  "hang": [
+   [
+    30,
+    10,
+    0.3333,
+    0.0333
+   ],
+   [
+    60,
+    19,
+    0.3167,
+    0.0167
+   ],
+   [
+    120,
+    39,
+    0.325,
+    0.0083
+   ],
+   [
+    240,
+    77,
+    0.3208,
+    0.0042
+   ],
+   [
+    480,
+    154,
+    0.3208,
+    0.0021
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, s = 0,500 m."
+ },
+ "ket_qua_ky_vong": "Ở 240 khung/s: n = 77, t ≈ 0,321 s, sai số dụng cụ ≈ 0,0042 s; ở 30 khung/s sai số tới 0,033 s.",
+ "hien_tuong_hay_sai": [
+  "Tưởng quay chậm là hết sai số.",
+  "Đếm khung từ lúc bi nằm sẵn trong nam châm thay vì lúc bắt đầu rời."
+ ],
+ "sai_so_thuong_gap": "Khó xác định khung bi bắt đầu rời và khung chạm mốc; thước không thẳng đứng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Phát video giả lập từng khung, người dùng bấm khung bắt đầu và khung chạm; hiện t và ±1/fps.",
+  "diem_nhan": "Thanh trượt fps: thấy sai số dụng cụ giảm khi fps tăng."
+ }
+}
