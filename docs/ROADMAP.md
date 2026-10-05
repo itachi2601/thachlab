@@ -90,8 +90,12 @@ Thứ tự = thứ tự làm. Ba việc đầu là tối thiểu cho mùa 2.
 Thay vì dựng trang lộ trình riêng theo chương, **bộ huy hiệu theo lớp là trang lộ trình**:
 - [ ] Mỗi huy hiệu trong bộ của lớp hiện trạng thái ✅ đạt / 🟡 đang tới / 🔴 đang cần phụ đạo /
       ⚪ chưa học, lấy từ mastery + tutoring_needs (không thêm RPC rời, mở rộng RPC rank có sẵn).
-- [ ] "Bước tiếp theo": chọn 1 huy hiệu gần đạt nhất + 10 câu luyện đúng YCCĐ đó, đặt ngay
-      trên trang chủ HS (rule-based, dùng `tutoring_needs` + tiến độ danh hiệu).
+- [x] "Bước tiếp theo" (bản rút gọn, 5/10/2026): thẻ ở trang chủ HS gợi ý tối đa 3 việc theo thứ tự — mở khoá
+      MỘT chủ đề đang phụ đạo → làm lại đề điểm thấp (<6,5) → học bài kế (luôn giữ chỗ để có việc dễ thắng).
+      Rule-based, chỉ dùng dữ liệu trang chủ đã tải (không RPC/migration mới): `features/learning/next-steps.ts`,
+      `components/learning/NextStepsCard.tsx`, test `npm run test:next-steps`.
+- [ ] "Bước tiếp theo" bản đầy đủ: chọn 1 huy hiệu gần đạt nhất + 10 câu luyện đúng YCCĐ đó — làm sau, khi RPC rank
+      trả được tiến độ huy hiệu; lúc đó chỉ thêm dòng "làm xong sẽ gần huy hiệu X", không đổi thứ tự ưu tiên.
 - [ ] Thành tích "Phục hồi" cho HS thoát phụ đạo — kênh hụt cũng phải có lối ra tích cực.
 - [ ] Chương mẫu **Vật lý 10 – Động học**: đủ ảnh lý thuyết + ≥30 câu/bài có mức độ, đo trên
       lớp offline 1 tháng. Đây là lớp 10, bộ huy hiệu lớp 10 phải đạt được trọn vẹn bằng chương này.

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:a11y": "node scripts/check-a11y.mjs"
+    "check:a11y": "node scripts/check-a11y.mjs",
+    "test:next-steps": "tsx scripts/test-next-steps.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.0",

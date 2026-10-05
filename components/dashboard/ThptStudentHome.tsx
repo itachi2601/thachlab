@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, BookOpen, CalendarClock, ChevronRight, LogOut, Megaphone, RotateCcw, Sparkles, Trophy, Users } from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -10,6 +10,8 @@ import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
+import NextStepsCard from "@/components/learning/NextStepsCard";
+import { rankNextSteps } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
 import {
   fetchMyProgressMarks,
@@ -324,6 +326,19 @@ export default function ThptStudentHome({
     return [...worst.values()].filter((p) => p.score < 6.5).sort((a, b) => a.score - b.score)[0] ?? null;
   }, [scores]);
 
+  const nextSteps = useMemo(
+    () =>
+      rankNextSteps({
+        need: needs[0] ? { id: needs[0].id, label: needLabel(needs[0]) } : null,
+        needAvailableAt: needs[0] ? nextExitAttemptAt(lastExitAttempt.get(needs[0].id), nowMs) : null,
+        retryExam,
+        nextLesson: nextLesson
+          ? { id: nextLesson.id, chapterId: nextLesson.chapter_id, title: nextLesson.title, chapterTitle: nextChapter?.title }
+          : null,
+      }),
+    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter],
+  );
+
   const pendingCount = todoExams.length + todoReviewHomework.length;
   const attentionReady = scoresLoaded && assessmentsLoaded;
   const showSuggestions = attentionReady && pendingCount === 0;
@@ -423,75 +438,10 @@ export default function ThptStudentHome({
       </section>
 
       {showSuggestions && (
-        <section className="rounded-2xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 to-transparent p-4 sm:p-5">
-          <div className="flex items-center gap-2 text-emerald-300">
-            <Sparkles size={18} />
-            <h2 className="font-display font-bold text-white">Em đã làm xong bài được giao — việc nên làm tiếp</h2>
-          </div>
-          <div className="mt-3 space-y-2">
-            {needs[0] && (
-              <button
-                type="button"
-                onClick={() => setQuizNeed(needs[0])}
-                disabled={nextExitAttemptAt(lastExitAttempt.get(needs[0].id)) !== null}
-                className="flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 text-left hover:bg-black/25 disabled:opacity-50"
-              >
-                <span className="flex min-w-0 items-center gap-2">
-                  <Users size={16} className="shrink-0 text-sky-300" />
-                  <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">Mở khoá chủ đề: {needLabel(needs[0])}</strong>
-                    <small className="text-[13px] text-slate-400">Xem lại lý thuyết, làm bài, đạt từ 80% là mở khoá</small>
-                  </span>
-                </span>
-                <ChevronRight size={16} className="shrink-0 text-emerald-300" />
-              </button>
-            )}
-            {retryExam && (
-              <Link
-                href={`/kiem-tra/lam?id=${retryExam.examId}`}
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
-              >
-                <span className="flex min-w-0 items-center gap-2">
-                  <RotateCcw size={16} className="shrink-0 text-rose-300" />
-                  <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">Làm lại: {retryExam.examTitle}</strong>
-                    <small className="text-[13px] text-slate-400">
-                      Lần trước {retryExam.score.toLocaleString("vi-VN")} điểm — làm lại để chốt kiến thức
-                    </small>
-                  </span>
-                </span>
-                <ChevronRight size={16} className="shrink-0 text-emerald-300" />
-              </Link>
-            )}
-            {nextLesson && (
-              <Link
-                href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
-              >
-                <span className="flex min-w-0 items-center gap-2">
-                  <BookOpen size={16} className="shrink-0 text-blue-300" />
-                  <span className="min-w-0">
-                    <strong className="block truncate text-sm text-white">Học tiếp: {nextLesson.title}</strong>
-                    {nextChapter && <small className="block truncate text-[13px] text-slate-400">{nextChapter.title}</small>}
-                  </span>
-                </span>
-                <ChevronRight size={16} className="shrink-0 text-emerald-300" />
-              </Link>
-            )}
-            {!needs[0] && !retryExam && !nextLesson && (
-              <Link
-                href="/lop-hoc"
-                className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-emerald-400/20 bg-black/15 p-3 hover:bg-black/25"
-              >
-                <span className="min-w-0">
-                  <strong className="block truncate text-sm text-white">Ôn lại các bài đã học</strong>
-                  <small className="text-[13px] text-slate-400">Chọn một bài bất kỳ để luyện thêm</small>
-                </span>
-                <ChevronRight size={16} className="shrink-0 text-emerald-300" />
-              </Link>
-            )}
-          </div>
-        </section>
+        <NextStepsCard
+          steps={nextSteps}
+          onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
+        />
       )}
 
       {/* Mục 1 — MỘT thẻ việc cần làm hôm nay: đúng một nút nổi ("Làm bài" hoặc "Học tiếp"), cảnh báo chỉ là một dòng nhỏ (N3, B2) */}
