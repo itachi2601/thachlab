@@ -143,11 +143,42 @@ function main() {
 
   const ok: string[] = [];
   const bo: string[] = [];
+  const khongCo: string[] = [];
+  const canhBao: string[] = [];
+  // clip đang dùng ở bài nào (để cảnh báo dùng lại ở bài KHÁC — hợp lệ nhưng phải biết)
+  const idTheoBai = new Map<string, Set<string>>();
+  const ghiId = (id: unknown, slug: string) => {
+    if (typeof id !== "string" || !id) return;
+    const s = idTheoBai.get(id) ?? new Set<string>();
+    s.add(slug);
+    idTheoBai.set(id, s);
+  };
+  for (const name of fs.readdirSync(khoDir)) {
+    if (!/^tn-.*\.json$/.test(name)) continue;
+    const d = JSON.parse(fs.readFileSync(path.join(khoDir, name), "utf8"));
+    const m = /lesson-samples\/([^/]+)\//.exec(d.nguon_trong_bai ?? "");
+    if (m) ghiId(d.video?.youtube_id, m[1]);
+  }
+  {
+    const f = path.join(khoDir, "video-theo-bai.json");
+    if (fs.existsSync(f)) {
+      const d = JSON.parse(fs.readFileSync(f, "utf8"));
+      for (const b of d.bai ?? []) for (const v of b.videos ?? []) ghiId(v?.video?.youtube_id, b.slug);
+    }
+  }
+
   const daDungTrongBang = new Set<string>(); // `${slug}|${youtube_id}` — chặn 2 dòng cùng bài dùng 1 clip
+  const slugTheoId = new Map<string, string>(); // youtube_id → bài dùng đầu tiên trong bảng này
   for (const d of dong) {
     const slug = (d["Bài"] ?? "").trim();
     const viTri = (d["Vị trí"] ?? "").trim();
-    const id = youtubeIdTuLink(d["Link"] ?? "");
+    const linkRaw = (d["Link"] ?? "").trim();
+    // dòng cố ý không có clip (tình huống giả định, không tìm được clip đạt) — không phải lỗi
+    if (!linkRaw || /^kh[oô]ng c[oó]/i.test(linkRaw) || linkRaw === "—" || linkRaw === "-") {
+      khongCo.push(`${slug} ${viTri}`);
+      continue;
+    }
+    const id = youtubeIdTuLink(linkRaw);
     if (!slug || !viTri || !id) {
       bo.push(`thiếu Bài/Vị trí/Link hợp lệ (${JSON.stringify(d).slice(0, 120)})`);
       continue;
@@ -197,19 +228,30 @@ function main() {
       const { obj } = nhan(f);
       obj.video = video;
     }
+    const baiKhac = [...(idTheoBai.get(id) ?? [])].filter((s) => s !== slug);
+    const baiTrongBang = slugTheoId.get(id);
+    if (baiKhac.length > 0) {
+      canhBao.push(`${slug} ${viTri}: clip ${id} đang dùng ở bài khác (${baiKhac.join(", ")})`);
+    } else if (baiTrongBang && baiTrongBang !== slug) {
+      canhBao.push(`${slug} ${viTri}: clip ${id} cũng dùng ở bài ${baiTrongBang} trong bảng này — dùng lại được nhưng nên cân nhắc`);
+    }
+    if (!baiTrongBang) slugTheoId.set(id, slug);
     ok.push(`${slug} ${viTri} → ${id}${bat_dau !== undefined ? ` [${bat_dau}s–${ket_thuc ?? "?"}s]` : ""}`);
   }
 
   if (JSON_OUT) {
-    console.log(JSON.stringify({ bang: bangPath, apply: APPLY, ra, nhan: ok, bo, thieuDuyet, loi }, null, 1));
+    console.log(JSON.stringify({ bang: bangPath, apply: APPLY, ra, nhan: ok, bo, khongCo, canhBao, thieuDuyet, loi }, null, 1));
     return;
   }
   console.log(`Bảng: ${path.relative(root, bangPath as string)}`);
   for (const l of loi) console.log(`✗ ${l}`);
   for (const o of ok) console.log(`✓ ${o}`);
+  for (const c of canhBao) console.log(`⚠ ${c}`);
   for (const b of bo) console.log(`· bỏ: ${b}`);
+  for (const k of khongCo) console.log(`– không có clip: ${k}`);
   console.log(
-    `\n${ok.length} dòng được nhập, ${thieuDuyet} dòng chưa duyệt (bỏ qua), ${bo.length} dòng lỗi.`,
+    `\n${ok.length} dòng được nhập, ${thieuDuyet} dòng chưa duyệt (bỏ qua), ${bo.length} dòng lỗi, ` +
+      `${khongCo.length} chỗ cố ý không có clip.`,
   );
 
   if (ok.length === 0) return;
