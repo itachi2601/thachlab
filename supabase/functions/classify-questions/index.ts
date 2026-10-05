@@ -1,15 +1,20 @@
-// AI (Claude) gợi ý Chủ đề (yêu cầu cần đạt) + Dạng (lý thuyết/bài tập) cho các câu hỏi còn
+// AI (DeepSeek) gợi ý Chủ đề (yêu cầu cần đạt) + Dạng (lý thuyết/bài tập) cho các câu hỏi còn
 // thiếu nhãn khi soạn đề ở trang Đăng đề — chỉ được chọn trong đúng danh mục YCCĐ của bài đang
 // soạn (gửi kèm trong `topics`), không tự đặt tên chủ đề mới. Kết quả được trang gọi ghi thẳng
 // vào văn bản đề (như khi giáo viên tự chọn ở bảng "Phân loại câu"), không qua bước duyệt riêng.
 //
-// Cần secret ANTHROPIC_API_KEY (KHÔNG tự có như SUPABASE_* — chạy một lần:
-//   supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
+// Gọi thẳng REST /chat/completions của DeepSeek (không dùng SDK) để Edge Function không phải kéo
+// thêm phụ thuộc npm. Dùng JSON Output (response_format=json_object) + tắt thinking: việc này chỉ
+// là phân loại JSON ngắn, tắt thinking cho nhanh và rẻ hơn nhiều (xem docs DeepSeek — Thinking
+// Mode: mặc định BẬT, và "JSON Output" yêu cầu có chữ "json" trong prompt).
+//
+// Cần secret DEEPSEEK_API_KEY (KHÔNG tự có như SUPABASE_* — chạy một lần:
+//   supabase secrets set DEEPSEEK_API_KEY=sk-...
 // rồi supabase functions deploy classify-questions). Xem docs/deploy-edge-function.md cho các
 // bước cài CLI/login/link (dùng chung với mọi Edge Function trong dự án).
+// Đổi model không cần sửa code: đặt secret CLASSIFY_MODEL (mặc định deepseek-flash).
 
 import { createClient } from "npm:@supabase/supabase-js@2";
-import Anthropic from "npm:@anthropic-ai/sdk";
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -17,7 +22,8 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const MODEL = "claude-haiku-4-5";
+const API_URL = "https://api.deepseek.com/chat/completions";
+const DEFAULT_MODEL = "deepseek-flash";
 const MAX_ITEMS = 60;
 const FORMS = ["ly_thuyet", "bai_tap"] as const;
 type Form = (typeof FORMS)[number];
@@ -97,24 +103,44 @@ Deno.serve(async (req) => {
   const { data: authUser, error: authError } = await callerClient.auth.getUser();
   if (authError || !authUser?.user) return jsonResponse({ error: "Phiên đăng nhập không hợp lệ." }, 401);
 
-  const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
-  if (!apiKey) return jsonResponse({ error: "Server chưa cấu hình ANTHROPIC_API_KEY." }, 500);
+  const apiKey = Deno.env.get("DEEPSEEK_API_KEY");
+  if (!apiKey) return jsonResponse({ error: "Server chưa cấu hình DEEPSEEK_API_KEY." }, 500);
+  const model = Deno.env.get("CLASSIFY_MODEL") || DEFAULT_MODEL;
 
   try {
-    const client = new Anthropic({ apiKey });
-    const response = await client.messages.create({
-      model: MODEL,
-      max_tokens: 4096,
-      system:
-        "Bạn là trợ lý phân loại câu hỏi trắc nghiệm Vật lý THPT theo yêu cầu cần đạt (YCCĐ). " +
-        'Chỉ trả về DUY NHẤT một JSON hợp lệ đúng dạng ' +
-        '{"results":[{"index":0,"topic":"...","form":"ly_thuyet","difficulty":"de"}]}, ' +
-        "không kèm lời giải thích, không bọc trong markdown code fence.",
-      messages: [{ role: "user", content: buildPrompt(topics, items) }],
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model,
+        max_tokens: 8192,
+        temperature: 0,
+        // Tắt thinking: đây là việc phân loại JSON ngắn — bật thinking chỉ tốn token/thời gian.
+        thinking: { type: "disabled" },
+        response_format: { type: "json_object" },
+        messages: [
+          {
+            role: "system",
+            content:
+              "Bạn là trợ lý phân loại câu hỏi trắc nghiệm Vật lý THPT theo yêu cầu cần đạt (YCCĐ). " +
+              "Chỉ trả về DUY NHẤT một JSON hợp lệ đúng dạng " +
+              '{"results":[{"index":0,"topic":"...","form":"ly_thuyet","difficulty":"de"}]}, ' +
+              "không kèm lời giải thích, không bọc trong markdown code fence.",
+          },
+          { role: "user", content: buildPrompt(topics, items) },
+        ],
+      }),
     });
-
-    const textBlock = response.content.find((b) => b.type === "text") as { type: "text"; text: string } | undefined;
-    const raw = textBlock?.text ?? "";
+    if (!res.ok) {
+      return jsonResponse(
+        { error: `DeepSeek API lỗi ${res.status}: ${(await res.text()).slice(0, 300)}` },
+        502,
+      );
+    }
+    const data = (await res.json()) as {
+      choices?: { message?: { content?: string | null } }[];
+    };
+    const raw = data.choices?.[0]?.message?.content ?? "";
     const start = raw.indexOf("{");
     const end = raw.lastIndexOf("}");
     if (start < 0 || end < 0) return jsonResponse({ error: "AI không trả về JSON hợp lệ." }, 502);

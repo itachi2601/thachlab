@@ -21,3 +21,21 @@ Ngân hàng câu hỏi (commit 3d8c5efe, 19/9/2026): bảng `question_bank` là 
 **Cập nhật 2026-09-26 (đợt 3 agent song song, xem [[project_thachlab_mastery_yccd]]):** thêm cột `question_bank.difficulty_source` ('gv'|'ai', migration `supabase/migrations/20260925150000_difficulty_source.sql`) để phân biệt mức độ do AI gợi ý hay giáo viên tự xác nhận — vá lại 3 hàm `sync_exam_to_bank`/`trg_bank_tags_to_exams`/`trg_bank_touch` để đọc/ghi 2 chiều đề↔ngân hàng, và `ExamSection.tsx` (trang Đăng đề/Sửa đề) hiện huy hiệu "AI gợi ý" khi `difficulty_source='ai'`, tự ẩn + đổi thành `'gv'` khi giáo viên bấm sửa tay. Đã chạy migration lên production + chạy hết `scripts/backfill-question-bank-difficulty.mts` (không giới hạn) — 3511/3544 câu rỗng trước đó đã được AI gắn mức độ (nguồn `ai`), còn **33 câu** AI không chắc/bỏ qua, cần gắn tay ở `/quan-tri/ngan-hang-cau-hoi`. Lưu ý quan trọng: script backfill **không có cờ dry-run/--apply thật** — tham số số nguyên duy nhất chỉ giới hạn SỐ CÂU xử lý trong 1 lần chạy, mọi câu được xử lý đều ghi thẳng DB + tốn API Anthropic ngay lập tức, không có bước "xem trước rồi mới áp dụng".
 
 **Xác nhận 2026-09-29:** thầy xác nhận backfill difficulty ĐÃ XONG (con số "còn ~3541/7223 rỗng" trong docs/STATE.md là số cũ trước khi chạy). Chỉ còn ~33 câu gắn tay. Đừng nhắc lại như việc đang chờ.
+
+**Cập nhật 2026-10-05 (gắn nhãn YCCĐ hàng loạt + đổi AI gắn nhãn sang DeepSeek):** Edge Function
+`classify-questions` (nút "AI gắn nhãn" ở trang Đăng đề / ngân hàng câu hỏi) đã chuyển từ Claude
+(`claude-haiku-4-5`) sang DeepSeek (`deepseek-flash`, JSON Output, `thinking: disabled`) — secret mới
+`DEEPSEEK_API_KEY`, đổi model bằng secret `CLASSIFY_MODEL`; cần `supabase functions deploy classify-questions`.
+`draw-figure` **giữ nguyên Claude** theo yêu cầu thầy (chi tiết + bài học ở [[project_thachlab_missing_figures]]).
+Thêm script `scripts/backfill-question-bank-topics.mts` gắn `topic_name` + `form` cho câu ngân hàng còn trống nhãn
+(theo lô 40 câu, mỗi lô chỉ trong MỘT khối lớp vì danh mục YCCĐ gửi kèm là danh mục của khối đó; nhãn AI trả phải
+khớp NGUYÊN VĂN danh mục, không khớp thì bỏ qua chứ không đoán bừa). Trạng thái dữ liệu lúc viết script (đọc thật,
+chỉ đọc): 20 687 câu chưa lưu trữ, **12 445 câu trống `topic_name`** (lớp 10 = 6 405, lớp 12 = 5 899, 141 câu
+không có khối), tất cả đều là `vat-ly`, đề gốc 499 đề, phần lớn đề không có `exams.topic` nên gợi ý nguồn chỉ có
+tên đề. Đã chạy thử `--dry-run 5` (không ghi DB) và đối chiếu tay 3/5 câu: nhãn khớp nội dung. Hai điểm phải nhớ:
+(1) Ghi `topic_name` vào `question_bank` là **trigger DB tự lo hết** — `trg_bank_touch` tra `topic_id` theo tên,
+điền lại `grade`/`subject_code` theo danh mục, `trg_bank_tags_to_exams` vá `topic`/`form` vào MỌI `exams.questions`
+cùng `content_hash`; **đừng viết lại logic đồng bộ trong script**. (2) Ngân hàng **chưa có cột `topic_source`**
+như `difficulty_source`, nên không phân biệt được nhãn do AI hay do người gắn — hiện chỉ có file log JSON trong
+`scripts/logs/` (gitignore) làm bằng chứng + `--undo <log>` để hoàn tác. Muốn có cột đánh dấu thì phải thêm
+migration (chưa làm).

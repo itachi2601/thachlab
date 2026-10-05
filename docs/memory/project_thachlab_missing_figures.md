@@ -66,5 +66,29 @@ lần đăng lại đề sinh dòng trùng). Gộp 10 780 → 7 215 dòng, khôn
 - Lint có sẵn 2 lỗi `set-state-in-effect` ở QuestionBankAdmin (reloadTree/reloadItems), không phải của đợt này.
 - Supabase CLI `supabase db query` thỉnh thoảng treo vài phút → chạy nền, thống kê bằng SQL file trong scratchpad.
 
+## Nhật ký rút kinh nghiệm
+
+- 2026-10-05 · Chuyển **chỉ** Edge Function `classify-questions` (gắn nhãn YCCĐ + dạng + mức độ) từ Claude
+  (`claude-haiku-4-5`) sang DeepSeek (`deepseek-flash`, JSON Output, `thinking: disabled`). `draw-figure` **giữ nguyên
+  Claude** theo yêu cầu thầy ("bỏ qua phần hình") — bản DeepSeek đã viết thử rồi `git checkout HEAD --` hoàn nguyên,
+  KHÔNG deploy. Đừng tự đổi model của tính năng đang có kết quả chờ duyệt (80 hình AI) khi chưa được yêu cầu.
+- 2026-10-05 · Tên model AI là thứ có hạn dùng: `deepseek-chat` (trong `backfill-question-bank-difficulty.mts`) đã bị
+  khai tử 24/7/2026, gọi vào là 400 "Model Not Exist" → tên hiện hành `deepseek-flash` / `deepseek-v4-pro`.
+  **Trước khi viết/port đoạn gọi AI, mở api-docs.deepseek.com/updates + /api/create-chat-completion đọc lại tên model
+  và tham số** — code cũ không phải nguồn tin.
+- 2026-10-05 · Nếu sau này quay lại chuyển `draw-figure`: DeepSeek **không** hỗ trợ `tool_choice` chỉ đích danh hàm
+  (và cả `required`) khi thinking BẬT — API trả 400 (`required` and named tool choices are not supported in thinking
+  mode), buộc phải `thinking: {type:"disabled"}` hoặc bỏ tool use mà dùng JSON Output. Đọc mục `tool_choice` trước khi
+  port tool use từ Anthropic sang, kẻo deploy xong mới phát hiện 400. (Bài học giữ lại, đợt này không dùng.)
+- 2026-10-05 · `classify-questions` dùng JSON Output của DeepSeek: bắt buộc prompt có chữ "json" + ví dụ JSON, và nên
+  tắt thinking cho nhanh/rẻ. Tài liệu cảnh báo JSON mode thỉnh thoảng trả content RỖNG → giữ nhánh "AI không trả về
+  JSON hợp lệ" làm lưới an toàn, đừng tin payload luôn có.
+- 2026-10-05 · Secret mới trên Supabase: `DEEPSEEK_API_KEY`; đổi model không cần sửa code nhờ `CLASSIFY_MODEL`.
+  Máy không có `deno` → **không typecheck được Edge Function**, chỉ kiểm được cú pháp (`ts.transpileModule`); vì vậy
+  sau khi deploy BẮT BUỘC bấm thử thật ở trang Đăng đề ("Phân loại câu") / ngân hàng câu hỏi.
+- 2026-10-05 · Trước khi viết lại cả file Edge Function, so bản đang có với `git show HEAD:<file>` để biết file có
+  thay đổi chưa commit của phiên khác không — lần này khớp nên hoàn nguyên an toàn, nhưng nếu lệch thì đã ghi đè mất
+  việc của phiên khác mà không có backup.
+
 Liên quan: [[project_thachlab_question_bank]], [[project_thachlab_dang_de_azota]], [[project_thachlab_azota_skill]],
 [[project_thachlab_ngan_hang_cau_hoi_skill]], [[project_thachlab_concurrent_sessions]], [[reference_supabase_db_query_cli]].

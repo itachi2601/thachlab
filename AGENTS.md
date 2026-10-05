@@ -191,3 +191,25 @@ phần "Rút kinh nghiệm"** — không có thì chưa tính là xong phiên. L
 3. **Dạng mỗi mục**: `- YYYY-MM-DD · <sự cố/phát hiện> → <quy tắc làm đúng>`. Sửa ngay bước trong skill nếu bước đó sai, đừng chỉ
    chất thêm ghi chú. Mục trùng ý đã có thì gộp, không lặp.
 4. Báo trong câu trả lời cuối: đã ghi vào file nào.
+
+# Gọi AI provider trong code (DeepSeek/Anthropic) — đọc tài liệu hiện hành trước, test thật sau
+
+- **Tên model bị khai tử theo thời gian** (`deepseek-chat`/`deepseek-reasoner` ngừng phục vụ 24/7/2026 → `deepseek-flash`
+  / `deepseek-v4-pro`). Trước khi viết hoặc port một đoạn gọi AI, mở tài liệu hiện hành
+  (api-docs.deepseek.com/updates, /api/create-chat-completion) xem tên model + tham số còn hợp lệ; code cũ KHÔNG phải
+  nguồn tin. Gọi model đã khai tử → 400 `Model Not Exist`.
+- Port tool use từ Anthropic sang DeepSeek: `tool_choice` chỉ đích danh hàm và `required` **không chạy khi thinking bật**
+  (API trả 400) → phải đặt `thinking: {type:"disabled"}` và bù bằng model mạnh hơn.
+- `supabase/functions/**` không nằm trong `tsconfig` và máy không có `deno` → **không typecheck được Edge Function**
+  (chỉ kiểm được cú pháp). Vì vậy sau khi deploy phải **bấm thử thật trên web**. Deploy + `supabase secrets set` là việc
+  của thầy trên Mac, agent không tự chạy.
+- Script backfill chạy theo vòng "đọc các dòng còn thiếu nhãn → xử lý → đọc lại" **phải nhớ id đã thử trong chính lượt
+  chạy đó** (kể cả câu AI trả lời không hợp lệ, kể cả khi `--dry-run` không ghi gì vào DB) rồi loại khỏi lượt đọc sau —
+  không thì vòng lặp chạy vô hạn và đốt tiền API. Trước khi chạy thật, chạy `--dry-run` với số câu nhỏ và **đối chiếu
+  tay vài dòng** với nội dung gốc — kiểm cả **một cặp câu cùng đề bài nhưng hỏi khác đại lượng** (nhãn phải khác
+  nhau; nếu giống nhau là AI đang chép tên đề chứ không đọc nội dung câu).
+- Trước khi viết lại cả một file (nhất là Edge Function / script dùng chung), so bản đang có với `git show HEAD:<file>`
+  để biết có thay đổi chưa commit của phiên khác không — ghi đè là mất, không có backup. **Kiểm cả `git diff` của file
+  trước khi commit**: nếu diff còn lẫn việc của phiên khác thì đừng commit cả file (bỏ lại cho phiên đó), và nhớ
+  `git commit -- <path>` chỉ nhận file git đã biết — file MỚI phải `git add <path>` trước, nếu không sẽ báo
+  `pathspec ... did not match any file(s) known to git`.
