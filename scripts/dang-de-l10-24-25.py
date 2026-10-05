@@ -924,6 +924,20 @@ def process(s, log):
     if dap:
         got = {int(m.group(1)): int(m.group(2)) for m in re.finditer(r"^Phần (\d): (\d+) câu", c.stdout + c.stderr, re.M)}
         lech = [f"P{k}: đề {got.get(k, 0)} câu / đáp án {len(dap[k])}" for k in (1, 2, 3) if dap[k] and got.get(k, 0) and got.get(k, 0) != len(dap[k])]
+        if SRC == SRC11 and lech:
+            # l11 (6/10/2026): đề DƯ câu ở ĐUÔI so với khoá (câu M+1..N không có đáp án; khoá đủ 1..M) → không lệch thật,
+            # coi là câu thiếu đáp án để upload --drop-bad bỏ (quy tắc "bỏ câu lỗi, đăng phần còn lại"; >20% thì vẫn SKIP)
+            miss = {int(m.group(1)): [int(x) for x in re.findall(r"\d+", m.group(2))]
+                    for m in re.finditer(r"^Phần (\d): \d+ câu, thiếu đáp án: \[([^\]]*)\]", c.stdout + c.stderr, re.M)}
+            keep = []
+            for k in (1, 2, 3):
+                n, m_ = got.get(k, 0), len(dap[k])
+                if dap[k] and n and n != m_:
+                    if n > m_ and sorted(dap[k]) == list(range(1, m_ + 1)) and miss.get(k) == list(range(m_ + 1, n + 1)):
+                        res["notes"].append(f"P{k}: đề {n} câu, khoá {m_} — {n - m_} câu cuối không có đáp án, để --drop-bad bỏ")
+                    else:
+                        keep.append(f"P{k}: đề {n} câu / đáp án {m_}")
+            lech = keep
         for k in (1, 2, 3):
             if dap[k] and not got.get(k, 0):
                 res["notes"].append(f"P{k}: khoá có {len(dap[k])} đáp án nhưng đề không có câu phần này — bỏ qua phần khoá")
@@ -975,6 +989,10 @@ def main():
             chosen = [s for s in chosen if re.search(r"11|V[ẬA]T|L[ÝIÍ]", s["name"].upper())]
         off, lim = int(opt("--offset", 0)), int(opt("--limit", 10**6))
         chosen = chosen[off:off + lim]
+        if "--only-status" in args:  # chạy lại đúng các bộ có trạng thái X trong file run (vd LỆCH)
+            _prev = json.load(open(RUN)) if os.path.exists(RUN) else {}
+            _st = args[args.index("--only-status") + 1]
+            chosen = [x for x in chosen if _prev.get(f"{x['ky']}/{x['name']}", {}).get("status") == _st]
     else:
         print(__doc__)
         return

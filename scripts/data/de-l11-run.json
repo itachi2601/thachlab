@@ -323,7 +323,7 @@
    "tách 17 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 20 câu / đáp án 16"
+   "P1: đề 20 câu, khoá 16 — 4 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "Giữa học kì 1/BỘ 34 ĐỀ KIỂM TRA VẬT LÍ 11 BA BỘ SÁCH GIỮA HỌC KÌ 1 WORD/VAT LY 11 KNTT-GK1 PHUNG KHAC KHOAN HN/nguon 1/De_goc 101 và 102.docx",
   "made": "000",
@@ -338,7 +338,18 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P1 câu 20: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 12 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 7/20 câu: 2 (còn công thức MathType chưa chuyển); 12 (thiếu hình); 15 (còn công thức MathType chưa chuyển); 17 (đáp án phải là số 0–3.); 18 (đáp án phải là số 0–3.); 19 (đáp án phải là số 0–3.); 20 (đáp án phải là số 0–3.)",
+   "SKIP: mất 7/20 câu (>20%) hoặc còn 13 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/Giữa học kì 1/BỘ 47 ĐỀ KIỂM TRA VẬT LÍ 11 KẾT NỐI TRI THỨC GIỮA HỌC KÌ 1 WORD": {
   "bo": "1. GHK1/Giữa học kì 1/BỘ 47 ĐỀ KIỂM TRA VẬT LÍ 11 KẾT NỐI TRI THỨC GIỮA HỌC KÌ 1 WORD",
@@ -526,7 +537,7 @@
   "bo": "1. GHK1/Giữa học kì 1/NHÓM 1-MA TRẬN-BẢN ĐẶC TẢ GIỮA HKI-LỚP 11-HÀ NỘI.docx",
   "title": "Giữa HK1 2025 – NhóM – TrậN – BảN ĐặC Tả GiữA – LớP 11 – Hà NộI",
   "notes": [
-   "AI đọc (916/183 tok)",
+   "AI đọc (916/127 tok)",
    "tách 25 đoạn phương án chung dòng",
    "không thấy 'Câu N.' nào",
    "P1: khoá có 28 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
@@ -644,12 +655,12 @@
   "bo": "1. GHK1/Giữa học kì 1/VL 11 - CTST – GHK I - THPT PHAN CHU TRINH - NINH THUẬN - Cao Thanh Bông THPT Phan Chu Trinh.docx",
   "title": "Giữa HK1 2025 – Vl 11 – Ghk – THPT Phan Chu Trinh – Ninh ThuậN – Cao Thanh BôNg THPT Phan Chu Trinh",
   "notes": [
-   "AI đọc (9154/63 tok)",
+   "AI đọc (9154/87 tok)",
    "ghi số tự động vào chữ cho 25 đoạn",
    "tách 44 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'TỰ LUẬN'",
-   "số câu lệch số đáp án — không đăng: P1: đề 13 câu / đáp án 12"
+   "P1: đề 13 câu, khoá 12 — 1 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "Giữa học kì 1/VL 11 - CTST – GHK I - THPT PHAN CHU TRINH - NINH THUẬN - Cao Thanh Bông THPT Phan Chu Trinh.docx",
   "made": null,
@@ -664,7 +675,15 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 13: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 13 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 5/13 câu: 1 (đáp án phải là số 0–3.); 5 (còn công thức MathType chưa chuyển); 6 (còn công thức MathType chưa chuyển); 9 (còn công thức MathType chưa chuyển); 13 (đáp án phải là số 0–3.)",
+   "SKIP: mất 5/13 câu (>20%) hoặc còn 8 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/Giữa học kì 1/VL11-CTST-GHK1-THPT TP SADEC-DONGTHAP - Dung Vo Ngoc Kim Dung.docx": {
   "bo": "1. GHK1/Giữa học kì 1/VL11-CTST-GHK1-THPT TP SADEC-DONGTHAP - Dung Vo Ngoc Kim Dung.docx",
@@ -1019,9 +1038,9 @@
    "ghi số tự động vào chữ cho 1 đoạn",
    "chèn PHẦN I trước Câu đầu",
    "suy ra PHẦN III từ cấu trúc câu",
+   "P3: đề 19 câu, khoá 4 — 15 câu cuối không có đáp án, để --drop-bad bỏ",
    "P1: khoá có 12 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "P2: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P3: đề 19 câu / đáp án 4"
+   "P2: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-NINH THUAN/VẬT LÝ 11-CTST-GIỮA HK1-NINH THUẬN/DE GOC.docx",
   "made": "000",
@@ -1036,7 +1055,13 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 19 câu, thiếu đáp án: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]"
   ],
-  "status": "LỆCH"
+  "xuat": [],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 19 (trả lời ngắn): thiếu đáp án.",
+   "  bỏ 15/19 câu: 5 (thiếu đáp án.); 6 (thiếu đáp án.); 7 (thiếu đáp án.); 8 (thiếu đáp án.); 9 (thiếu đáp án.); 10 (thiếu đáp án.); 11 (thiếu đáp án.); 12 (thiếu đáp án.); 13 (thiếu đáp án.); 14 (thiếu đáp án.); 15 (thiếu đáp án.); 16 (thiếu đáp án.); 17 (thiếu đáp án.); 18 (thiếu đáp án.); 19 (thiếu đáp án.)",
+   "SKIP: mất 15/19 câu (>20%) hoặc còn 4 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT BINH DONG-TIEN GIANG": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT BINH DONG-TIEN GIANG",
@@ -1044,7 +1069,7 @@
   "notes": [
    "tách 8 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
-   "số câu lệch số đáp án — không đăng: P1: đề 22 câu / đáp án 16"
+   "P1: đề 22 câu, khoá 16 — 6 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT BINH DONG-TIEN GIANG/GKI_VATLY_11/DEGOC_11_GK1.docx",
   "made": "000",
@@ -1059,17 +1084,30 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P1 câu 20: chưa có đáp án.",
+   "[đề] P1 câu 21: chưa có đáp án.",
+   "[đề] P1 câu 22: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 6 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 7/22 câu: 6 (thiếu hình); 17 (đáp án phải là số 0–3.); 18 (đáp án phải là số 0–3.); 19 (đáp án phải là số 0–3.); 20 (đáp án phải là số 0–3.); 21 (đáp án phải là số 0–3.); 22 (đáp án phải là số 0–3.)",
+   "SKIP: mất 7/22 câu (>20%) hoặc còn 15 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT CAI BE-TIEN GIANG.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT CAI BE-TIEN GIANG.docx",
   "title": "Giữa HK1 2025 – THPT Cái Bè – Tiền Giang",
   "notes": [
-   "AI đọc (896/180 tok)",
+   "AI đọc (896/193 tok)",
    "tách 11 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "P3: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P2: đề 4 câu / đáp án 3"
+   "P2: đề 4 câu, khoá 3 — 1 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P3: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT CAI BE-TIEN GIANG.docx",
   "made": null,
@@ -1084,7 +1122,17 @@
    "Phần 2: 4 câu, thiếu đáp án: [4], thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 2: thấy 8 ý a–d (cần 4).",
+   "[đề] P2 câu 3: thấy 3 ý a–d (cần 4).",
+   "[đề] P2 câu 4: thấy 3 ý a–d (cần 4)."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 893",
+   "  ✓ mục 57: 36 → 37 đề",
+   "Xong: \"Giữa HK1 2025 – THPT Cái Bè – Tiền Giang\" → exam 893, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=893"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT LE DUAN-NINH THUAN": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT LE DUAN-NINH THUAN",
@@ -1273,14 +1321,14 @@
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT TRINH HOAI DUC-DONG NAI.docx",
   "title": "Giữa HK1 2025 – 11 – THPT Trinh Hoai Duc – Dong Nai",
   "notes": [
-   "AI đọc (964/162 tok)",
+   "AI đọc (964/231 tok)",
    "ghi số tự động vào chữ cho 3 đoạn",
    "trải 2 bảng phương án thành đoạn",
    "tách 11 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "suy ra PHẦN II từ cấu trúc câu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P2: đề 7 câu / đáp án 4"
+   "P2: đề 7 câu, khoá 4 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT TRINH HOAI DUC-DONG NAI.docx",
   "made": null,
@@ -1295,7 +1343,17 @@
    "Phần 2: 7 câu, thiếu đáp án: [5, 6, 7], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7]",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 5: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 6: thấy 2 ý a–d (cần 4).",
+   "[đề] P2 câu 7: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 894",
+   "  ✓ mục 57: 37 → 38 đề",
+   "Xong: \"Giữa HK1 2025 – 11 – THPT Trinh Hoai Duc – Dong Nai\" → exam 894, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=894"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT TRUONG VINH KY-BEN TRE.doc": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-CTST-GIUA HK1-THPT TRUONG VINH KY-BEN TRE.doc",
@@ -1671,8 +1729,8 @@
    "tách 16 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'HẾT'",
-   "P2: khoá có 3 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P1: đề 19 câu / đáp án 16"
+   "P1: đề 19 câu, khoá 16 — 3 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P2: khoá có 3 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-GIUA HK1-SP TAP HUAN HAI PHONG/VAT LY 11-XXX-GIUA HK1-NHOM 5-THPT MAC DINH CHI-QUAN DUONG KINH/DE KIEM TRA GIUA HK 1 LOP 11-MA 132.doc",
   "made": "132",
@@ -1687,7 +1745,17 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P1 câu 19: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 19 (trắc nghiệm): thiếu đáp án đúng (A/B/C/D).",
+   "  bỏ 4/19 câu: 7 (cần đủ 4 phương án A–D (thấy 0)); 17 (đáp án phải là số 0–3.); 18 (đáp án phải là số 0–3.); 19 (đáp án phải là số 0–3.)",
+   "SKIP: mất 4/19 câu (>20%) hoặc còn 15 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT- GIUA HK1- SOC SON HA NOI.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT- GIUA HK1- SOC SON HA NOI.docx",
@@ -1788,7 +1856,7 @@
    "AI đọc (1844/194 tok)",
    "ghi số tự động vào chữ cho 12 đoạn",
    "tách 27 đoạn phương án chung dòng",
-   "số câu lệch số đáp án — không đăng: P1: đề 29 câu / đáp án 18"
+   "P1: đề 29 câu, khoá 18 — 11 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK 1-THPT NGUYEN HUE-LAM DONG.docx",
   "made": null,
@@ -1803,7 +1871,22 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 6 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P1 câu 20: chưa có đáp án.",
+   "[đề] P1 câu 21: chưa có đáp án.",
+   "[đề] P1 câu 22: chưa có đáp án.",
+   "[đề] P1 câu 23: chưa có đáp án.",
+   "[đề] P1 câu 24: chưa có đáp án.",
+   "[đề] P1 câu 25: chưa có đáp án.",
+   "[đề] P1 câu 26: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 2, 19 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 14/39 câu: 2 (thiếu hình); 3 (cần đủ 4 phương án A–D (thấy 0)); 7 (còn công thức MathType chưa chuyển); 19 (đáp án phải là số 0–3.); 20 (thiếu nội dung câu hỏi.); 21 (thiếu nội dung câu hỏi.); 22 (đáp án phải là số 0–3.); 23 (đáp án phải là số 0–3.); 24 (đáp án phải là số 0–3.); 25 (đáp án phải là số 0–3.); 26 (đáp án phải là số 0–3.); 27 (đáp án phải là số 0–3.); 28 (đáp án phải là số 0–3.); 29 (đáp án phải là số 0–3.)",
+   "SKIP: mất 14/39 câu (>20%) hoặc còn 25 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK 1-THPT PHAM VANNGHI-NAM DINH": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK 1-THPT PHAM VANNGHI-NAM DINH",
@@ -2030,7 +2113,7 @@
   "notes": [
    "tách 21 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 18 câu / đáp án 16"
+   "P1: đề 18 câu, khoá 16 — 2 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-CHUONG I-TRUONG THPT TAM DUONG-VP/ĐỀ GK I 11- 2024-2005/ĐỀ GK I 11- 2024-2005/DE KTGKI-SO 1/De_goc.docx",
   "made": "000",
@@ -2045,7 +2128,18 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 3 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P3 câu 2: đáp án \"0,5.\" -> \"0,5\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 3: đáp án \"15.\" -> \"15\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi)."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 895",
+   "  ✓ mục 57: 38 → 39 đề",
+   "Xong: \"Giữa HK1 2025 – THPT Tam Dương – Vĩnh Phúc\" → exam 895, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=895"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-HUYNH VAN NGHE-BINH DUONG": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-HUYNH VAN NGHE-BINH DUONG",
@@ -2053,7 +2147,7 @@
   "notes": [
    "tách 17 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P3: đề 6 câu / đáp án 5"
+   "P3: đề 6 câu, khoá 5 — 1 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-HUYNH VAN NGHE-BINH DUONG/VẬT LÝ 11-HUỲNH VĂN NGHỆ-BÌNH DƯƠNG/Ma_de_136.docx",
   "made": "136",
@@ -2068,7 +2162,13 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 6 câu, thiếu đáp án: [6], thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 896",
+   "  ✓ mục 57: 39 → 40 đề",
+   "Xong: \"Giữa HK1 2025 – THPT Huỳnh Văn Nghệ – Bình Dương\" → exam 896, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=896"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-KT CHUYEN DE L1-CHUONG 1-CHUYEN LQD VT.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-KT CHUYEN DE L1-CHUONG 1-CHUYEN LQD VT.docx",
@@ -2420,7 +2520,7 @@
    "ghi số tự động vào chữ cho 17 đoạn",
    "tách 21 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
-   "số câu lệch số đáp án — không đăng: P1: đề 19 câu / đáp án 16"
+   "P1: đề 19 câu, khoá 16 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-THPT HUONG TRA/VẬT LÍ 11-KNTT-ĐỀ GIỮA KÌ 1 K11-THPT HƯƠNG TRÀ/Ma_de_101.docx",
   "made": "101",
@@ -2435,7 +2535,18 @@
    "Phần 2: 4 câu, thiếu đáp án: [1, 2, 3, 4], thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P2 câu 2: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 3, 7, 16, 21 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 10/23 câu: 3 (đáp án phải là số 0–3.); 7 (đáp án phải là số 0–3.); 16 (đáp án phải là số 0–3.); 17 (đáp án phải là số 0–3.); 18 (đáp án phải là số 0–3.); 19 (đáp án phải là số 0–3.); 20 (còn công thức MathType chưa chuyển); 21 (thiếu hình); 22 (thiếu dòng đáp án); 23 (thiếu dòng đáp án)",
+   "SKIP: mất 10/23 câu (>20%) hoặc còn 13 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-THPT KON TUM.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-THPT KON TUM.docx",
@@ -2590,7 +2701,7 @@
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-KNTT-GIUA HK1-THPT NAM DONG QUAN-THAI BINH-NAM 2024-2025.docx",
   "title": "Giữa HK1 2025 – THPT Nam Đông Quan",
   "notes": [
-   "AI đọc (842/338 tok)",
+   "AI đọc (842/270 tok)",
    "tách 23 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
    "P1: khoá có 18 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
@@ -3198,7 +3309,7 @@
   "notes": [
    "ghi số tự động vào chữ cho 9 đoạn",
    "tách 26 đoạn phương án chung dòng",
-   "số câu lệch số đáp án — không đăng: P3: đề 8 câu / đáp án 4"
+   "P3: đề 8 câu, khoá 4 — 4 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-XXX-GIUA HK 1-THPT TAN PHU-DONG NAI/đề KTGKI-vật lí 11-2024-2025/đề gốc -KTGHKI-Vật lí 11-2024-2025.docx",
   "made": "000",
@@ -3213,7 +3324,13 @@
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "Phần 3: 8 câu, thiếu đáp án: [5, 6, 7, 8], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8]"
   ],
-  "status": "LỆCH"
+  "xuat": [],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 3, 7, 13, 30, 34 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 8/34 câu: 3 (thiếu hình); 7 (thiếu hình); 13 (thiếu hình); 30 (thiếu hình); 31 (thiếu đáp án.); 32 (thiếu đáp án.); 33 (thiếu đáp án.); 34 (thiếu đáp án.)",
+   "SKIP: mất 8/34 câu (>20%) hoặc còn 26 < 10 — để thầy xem"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-XXX-GIUA HK1-CHUYEN LQD VT.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-XXX-GIUA HK1-CHUYEN LQD VT.docx",
@@ -3287,7 +3404,7 @@
   "notes": [
    "tách 22 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 18 câu / đáp án 16"
+   "P1: đề 18 câu, khoá 16 — 2 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11-XXX-GIUA HK1-THPT BINH LU-LAI CHAU/MA-DE-101.docx",
   "made": "101",
@@ -3302,7 +3419,16 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 6 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 897",
+   "  ✓ mục 57: 40 → 41 đề",
+   "Xong: \"Giữa HK1 2025 – THPT Bình Lư\" → exam 897, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=897"
+  ]
  },
  "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11. KNTT-GIUA HK1-THPT LUONG THE VINH-NAM DINH.docx": {
   "bo": "1. GHK1/ĐỀ TRƯỜNG SỞ 2025/1. GHK1/VAT LY 11. KNTT-GIUA HK1-THPT LUONG THE VINH-NAM DINH.docx",
@@ -3495,10 +3621,10 @@
   "bo": "3. GHK2/giữa học kì 2/02.11GK2.docx",
   "title": "Giữa HK2 2025 – 02.11Gk2",
   "notes": [
-   "AI đọc (2119/204 tok)",
+   "AI đọc (2119/205 tok)",
    "ghi số tự động vào chữ cho 33 đoạn",
    "tách 12 đoạn phương án chung dòng",
-   "số câu lệch số đáp án — không đăng: P3: đề 15 câu / đáp án 6"
+   "P3: đề 15 câu, khoá 6 — 9 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "giữa học kì 2/02.11GK2.docx",
   "made": null,
@@ -3513,7 +3639,20 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 15 câu, thiếu đáp án: [7, 8, 9, 10, 11, 12, 13, 14, 15], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P3 câu 1: đáp án \"+1,25*10^11 electron\" -> \"+1,2\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 2: đáp án \"600µC\" -> \"600\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 3: đáp án \"0,184 s\" -> \"0,18\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 4: đáp án \"190,5 V\" -> \"190\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 5: đáp án \"160V\" -> \"160\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi).",
+   "[đề] P3 câu 6: đáp án \"2,00 m\" -> \"2,00\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi)."
+  ],
+  "status": "LỖI",
+  "upload": [
+   "  ! Câu 33 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  ! File có 38 mốc \"Câu n.\" nhưng dựng được 39 câu — rà lại phần sửa bên dưới.",
+   "✕ số câu dựng được khác số mốc 'Câu n.' — xem lại file"
+  ]
  },
  "3. GHK2/giữa học kì 2/03.11GK2.docx": {
   "bo": "3. GHK2/giữa học kì 2/03.11GK2.docx",
@@ -4310,30 +4449,44 @@
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-CTST-GIUA HK2-THPT TRUONG VINH KY-TP.HCM.docx",
   "title": "Giữa HK2 2025 – 11 – THPT Truong Vinh – Tp.HCM",
   "notes": [
-   "AI đọc (1021/194 tok)",
+   "AI đọc (1021/91 tok)",
    "tách 1 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "suy ra PHẦN III từ cấu trúc câu",
    "suy ra PHẦN II từ cấu trúc câu",
    "đã cắt từ 'TỰ LUẬN'",
-   "P1: đề đánh số 1–10 (10 câu) — gán đáp án theo số câu, bỏ 2 đáp án thừa",
    "P3: đề đánh số 11–12 (2 câu) — gán đáp án theo số câu, bỏ 6 đáp án thừa",
-   "số câu lệch số đáp án — không đăng: P2: đề 10 câu / đáp án 2"
+   "P2: đề 10 câu, khoá 2 — 8 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-CTST-GIUA HK2-THPT TRUONG VINH KY-TP.HCM.docx",
   "made": null,
   "key": "inline→AI",
   "dap_an": {
-   "I": 12,
+   "I": 0,
    "II": 2,
    "III": 8
   },
   "convert": [
-   "Phần 1: 10 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+   "Phần 1: 10 câu, thiếu đáp án: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
    "Phần 2: 10 câu, thiếu đáp án: [3, 4, 5, 6, 7, 8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
    "Phần 3: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 1: chưa có đáp án.",
+   "[đề] P1 câu 2: chưa có đáp án.",
+   "[đề] P1 câu 3: chưa có đáp án.",
+   "[đề] P1 câu 4: chưa có đáp án.",
+   "[đề] P1 câu 5: chưa có đáp án.",
+   "[đề] P1 câu 6: chưa có đáp án.",
+   "[đề] P1 câu 7: chưa có đáp án.",
+   "[đề] P1 câu 8: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 20 (đúng/sai): thiếu dòng đáp án — tạm để tất cả là Sai.",
+   "  bỏ 19/22 câu: 1 (đáp án phải là số 0–3.); 2 (đáp án phải là số 0–3.); 3 (đáp án phải là số 0–3.); 4 (đáp án phải là số 0–3.); 5 (đáp án phải là số 0–3.); 6 (đáp án phải là số 0–3.); 7 (đáp án phải là số 0–3.); 8 (đáp án phải là số 0–3.); 9 (đáp án phải là số 0–3.); 10 (đáp án phải là số 0–3.); 12 (thiếu dòng đáp án); 13 (cần đủ 4 ý a–d (thấy 0)); 14 (cần đủ 4 ý a–d (thấy 0)); 15 (cần đủ 4 ý a–d (thấy 0)); 16 (cần đủ 4 ý a–d (thấy 0)); 17 (cần đủ 4 ý a–d (thấy 0)); 18 (cần đủ 4 ý a–d (thấy 0)); 19 (cần đủ 4 ý a–d (thấy 0)); 20 (cần đủ 4 ý a–d (thấy 0))",
+   "SKIP: mất 19/22 câu (>20%) hoặc còn 3 < 10 — để thầy xem"
+  ]
  },
  "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-CTST-GIUA HK2-THTP NGUYEN TRAI-NINH THUAN.docx": {
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-CTST-GIUA HK2-THTP NGUYEN TRAI-NINH THUAN.docx",
@@ -4434,7 +4587,7 @@
    "AI đọc (917/120 tok)",
    "tách 12 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P3: đề 7 câu / đáp án 4"
+   "P3: đề 7 câu, khoá 4 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-KNTT-GIUA HK 2-THPT CHUYEN NGUYEN TAT THANH-KON TUM.doc",
   "made": null,
@@ -4449,7 +4602,15 @@
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "Phần 3: 7 câu, thiếu đáp án: [5, 6, 7], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 5: không chèn được * trước D."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 12, 18, 21 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 8/21 câu: 5 (đáp án phải là số 0–3.); 11 (đáp án phải là số 0–3.); 12 (thiếu hình); 13 (cần đủ 4 ý a–d (thấy 0)); 18 (thiếu hình); 19 (thiếu đáp án.); 20 (thiếu đáp án.); 21 (thiếu đáp án.)",
+   "SKIP: mất 8/21 câu (>20%) hoặc còn 13 < 10 — để thầy xem"
+  ]
  },
  "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-KNTT-GIUA HK 2-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx": {
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VAT LY 11-KNTT-GIUA HK 2-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx",
@@ -5099,11 +5260,11 @@
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT PHÚ LỘC-HUẾ",
   "title": "Giữa HK2 2025 – THPT Phú Lộc – Thành Phố Huế",
   "notes": [
-   "AI đọc (1789/147 tok)",
+   "AI đọc (1789/146 tok)",
    "ghi số tự động vào chữ cho 3 đoạn",
    "tách 11 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
-   "số câu lệch số đáp án — không đăng: P3: đề 10 câu / đáp án 8"
+   "P3: đề 10 câu, khoá 7 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT PHÚ LỘC-HUẾ/DE KIEM TRA GIUA KI II _ VAT LÍ 11 _ NH 2024-2025/Vatli11_Made132_GK1_NH2024-2025.docx",
   "made": "132",
@@ -5111,14 +5272,22 @@
   "dap_an": {
    "I": 12,
    "II": 2,
-   "III": 8
+   "III": 7
   },
   "convert": [
    "Phần 1: 12 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]",
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
-   "Phần 3: 10 câu, thiếu đáp án: [9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+   "Phần 3: 10 câu, thiếu đáp án: [8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P3 câu 6: đáp án \"2,67.10-9\" -> \"2,67\" (bỏ đơn vị/ký hiệu và/hoặc rút bớt chữ số thập phân cho vừa giới hạn 4 ký tự của trang — soát lại nếu câu hỏi có yêu cầu làm tròn cụ thể, có thể cần sửa luôn câu hỏi)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 24 (trả lời ngắn): thiếu đáp án.",
+   "  bỏ 7/24 câu: 1 (đáp án phải là số 0–3.); 11 (cần đủ 4 phương án A–D (thấy 0)); 12 (cần đủ 4 phương án A–D (thấy 0)); 13 (cần đủ 4 ý a–d (thấy 0)); 22 (thiếu nội dung câu hỏi.); 23 (thiếu nội dung câu hỏi.); 24 (thiếu đáp án.)",
+   "SKIP: mất 7/24 câu (>20%) hoặc còn 17 < 10 — để thầy xem"
+  ]
  },
  "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT PHẠM VĂN NGHỊ-NAM ĐỊNH.docx": {
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT PHẠM VĂN NGHỊ-NAM ĐỊNH.docx",
@@ -5157,7 +5326,7 @@
   "bo": "3. GHK2/ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT YÊN PHONG SỐ 2-BẮC NINH",
   "title": "Giữa HK2 2025 – THPT Yên Phong Số 2 – Bắc Ninh",
   "notes": [
-   "AI đọc (747/208 tok)",
+   "AI đọc (747/117 tok)",
    "ghi số tự động vào chữ cho 8 đoạn",
    "tách 11 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
@@ -5166,7 +5335,7 @@
    "đã cắt từ 'TỰ LUẬN'",
    "P1: đề đánh số 1–9 (9 câu) — gán đáp án theo số câu, bỏ 3 đáp án thừa",
    "P3: đề đánh số 10–12 (3 câu) — gán đáp án theo số câu, bỏ 1 đáp án thừa",
-   "số câu lệch số đáp án — không đăng: P2: đề 6 câu / đáp án 2"
+   "P2: đề 6 câu, khoá 2 — 4 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/3. GHK2/VẬT LÝ 11-KNTT-GIỮA HK2-THPT YÊN PHONG SỐ 2-BẮC NINH/Vật lí 11. KNTT.Giữa hk2.THPT Yên Phong số 2.24.25/Vật lý 11.KNTT. Giữa hk2. THPT Yên Phong số 2.24.25.docx",
   "made": null,
@@ -5181,7 +5350,18 @@
    "Phần 2: 6 câu, thiếu đáp án: [3, 4, 5, 6], thiếu lời giải: [1, 2, 3, 4, 5, 6]",
    "Phần 3: 3 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 3: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 4: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 5: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 6: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 15 (đúng/sai): thiếu dòng đáp án — tạm để tất cả là Sai.",
+   "  bỏ 6/18 câu: 4 (đáp án phải là số 0–3.); 10 (cần đủ 4 ý a–d (thấy 0)); 12 (cần đủ 4 ý a–d (thấy 0)); 13 (cần đủ 4 ý a–d (thấy 0)); 14 (cần đủ 4 ý a–d (thấy 0)); 15 (cần đủ 4 ý a–d (thấy 0))",
+   "SKIP: mất 6/18 câu (>20%) hoặc còn 12 < 10 — để thầy xem"
+  ]
  },
  "4. HK2/học kì 2/4 NHÓM 4 Ma trận đề cuối kì 2 VL11 (Autosaved).docx": {
   "bo": "4. HK2/học kì 2/4 NHÓM 4 Ma trận đề cuối kì 2 VL11 (Autosaved).docx",
@@ -5224,9 +5404,9 @@
    "AI đọc (983/192 tok)",
    "tách 25 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
+   "P1: đề 28 câu, khoá 18 — 10 câu cuối không có đáp án, để --drop-bad bỏ",
    "P2: khoá có 4 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P1: đề 28 câu / đáp án 18"
+   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "học kì 2/BỘ 27 ĐỀ KIỂM TRA VẬT LÍ 11 BA BỘ SÁCH CUỐI HỌC KÌ 2 WORD/KIM DUNG LÝ 11 CKII (2023-2024)/de 001.docx",
   "made": "001",
@@ -5241,7 +5421,22 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P1 câu 20: chưa có đáp án.",
+   "[đề] P1 câu 21: chưa có đáp án.",
+   "[đề] P1 câu 22: chưa có đáp án.",
+   "[đề] P1 câu 23: chưa có đáp án.",
+   "[đề] P1 câu 24: chưa có đáp án.",
+   "[đề] P1 câu 25: chưa có đáp án.",
+   "[đề] P1 câu 26: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 28 (trắc nghiệm): thiếu đáp án đúng (A/B/C/D).",
+   "  bỏ 10/28 câu: 19 (đáp án phải là số 0–3.); 20 (đáp án phải là số 0–3.); 21 (đáp án phải là số 0–3.); 22 (đáp án phải là số 0–3.); 23 (đáp án phải là số 0–3.); 24 (đáp án phải là số 0–3.); 25 (đáp án phải là số 0–3.); 26 (đáp án phải là số 0–3.); 27 (đáp án phải là số 0–3.); 28 (đáp án phải là số 0–3.)",
+   "SKIP: mất 10/28 câu (>20%) hoặc còn 18 < 10 — để thầy xem"
+  ]
  },
  "4. HK2/học kì 2/CUOI KI 2 LOP 11.docx": {
   "bo": "4. HK2/học kì 2/CUOI KI 2 LOP 11.docx",
@@ -5418,7 +5613,7 @@
    "suy ra PHẦN II từ cấu trúc câu",
    "đã cắt từ 'TỰ LUẬN'",
    "P3: đề đánh số 11–12 (2 câu) — gán đáp án theo số câu, bỏ 6 đáp án thừa",
-   "số câu lệch số đáp án — không đăng: P2: đề 10 câu / đáp án 2"
+   "P2: đề 10 câu, khoá 2 — 8 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-CUOI HK2-THPT TRUONG VINH KY-TP.HCM.docx",
   "made": null,
@@ -5434,7 +5629,22 @@
    "Phần 3: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "[lưu ý] đoạn dẫn/bảng dùng chung được gắn vào: Phần 2 câu 5, Phần 2 câu 7, Phần 2 câu 9 — nếu trộn đề thì phải khóa thứ tự các câu này lại"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 1: chưa có đáp án.",
+   "[đề] P1 câu 2: chưa có đáp án.",
+   "[đề] P1 câu 3: chưa có đáp án.",
+   "[đề] P1 câu 4: chưa có đáp án.",
+   "[đề] P1 câu 5: chưa có đáp án.",
+   "[đề] P1 câu 6: chưa có đáp án.",
+   "[đề] P1 câu 7: chưa có đáp án.",
+   "[đề] P1 câu 8: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 21 (đúng/sai): thiếu dòng đáp án — tạm để tất cả là Sai.",
+   "  bỏ 19/23 câu: 1 (đáp án phải là số 0–3.); 2 (đáp án phải là số 0–3.); 3 (đáp án phải là số 0–3.); 4 (đáp án phải là số 0–3.); 5 (đáp án phải là số 0–3.); 6 (đáp án phải là số 0–3.); 7 (đáp án phải là số 0–3.); 8 (đáp án phải là số 0–3.); 9 (đáp án phải là số 0–3.); 10 (đáp án phải là số 0–3.); 11 (đáp án phải là số 0–3.); 14 (cần đủ 4 ý a–d (thấy 0)); 15 (cần đủ 4 ý a–d (thấy 0)); 16 (cần đủ 4 ý a–d (thấy 0)); 17 (cần đủ 4 ý a–d (thấy 0)); 18 (cần đủ 4 ý a–d (thấy 0)); 19 (cần đủ 4 ý a–d (thấy 0)); 20 (cần đủ 4 ý a–d (thấy 0)); 21 (cần đủ 4 ý a–d (thấy 0))",
+   "SKIP: mất 19/23 câu (>20%) hoặc còn 4 < 10 — để thầy xem"
+  ]
  },
  "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK 2-THPT LE DUAN-NINH THUAN": {
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK 2-THPT LE DUAN-NINH THUAN",
@@ -5469,12 +5679,14 @@
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK1-THPT TRINH HOAI DUC-DONG NAI.docx",
   "title": "Cuối HK2 2025 – 11 – THPT Trinh Hoai Duc – Dong Nai",
   "notes": [
-   "AI đọc (1010/162 tok)",
+   "AI đọc (1010/175 tok)",
    "tách 12 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
+   "suy ra PHẦN III từ cấu trúc câu",
    "suy ra PHẦN II từ cấu trúc câu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 19 câu / đáp án 18; P2: đề 6 câu / đáp án 4"
+   "P3: đề đánh số 1–1 (1 câu) — gán đáp án theo số câu, bỏ 2 đáp án thừa",
+   "P2: đề 6 câu, khoá 4 — 2 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK1-THPT TRINH HOAI DUC-DONG NAI.docx",
   "made": null,
@@ -5482,14 +5694,25 @@
   "dap_an": {
    "I": 18,
    "II": 4,
-   "III": 0
+   "III": 3
   },
   "convert": [
-   "Phần 1: 19 câu, thiếu đáp án: [19], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]",
+   "Phần 1: 18 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]",
    "Phần 2: 6 câu, thiếu đáp án: [5, 6], thiếu lời giải: [1, 2, 3, 4, 5, 6]",
-   "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
+   "Phần 3: 1 câu, thiếu đáp án: không, thiếu lời giải: [1]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 3: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 4: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 5: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 6: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 4 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 6/25 câu: 4 (thiếu hình); 15 (cần đủ 4 phương án A–D (thấy 0)); 21 (thiếu dòng đáp án); 22 (cần đủ 4 ý a–d (thấy 0)); 23 (cần đủ 4 ý a–d (thấy 0)); 24 (cần đủ 4 ý a–d (thấy 0))",
+   "SKIP: mất 6/25 câu (>20%) hoặc còn 19 < 10 — để thầy xem"
+  ]
  },
  "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK2-THPT AN NGHIA-HO CHI MINH.docx": {
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-CTST-HK2-THPT AN NGHIA-HO CHI MINH.docx",
@@ -5715,11 +5938,11 @@
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT- HK2-CHUYEN NGUYEN TAT THANH-KON TUM.doc",
   "title": "Cuối HK2 2025 – THPT Chuyên – Tỉnh Kon Tum",
   "notes": [
-   "AI đọc (925/213 tok)",
+   "AI đọc (925/120 tok)",
    "tách 9 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
-   "P2: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P1: đề 14 câu / đáp án 12"
+   "P1: đề 14 câu, khoá 12 — 2 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P2: khoá có 2 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT- HK2-CHUYEN NGUYEN TAT THANH-KON TUM.doc",
   "made": null,
@@ -5734,7 +5957,16 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 13: chưa có đáp án.",
+   "[đề] P1 câu 14: chưa có đáp án."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 900",
+   "  ✓ mục 60: 14 → 15 đề",
+   "Xong: \"Cuối HK2 2025 – THPT Chuyên – Tỉnh Kon Tum\" → exam 900, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=900"
+  ]
  },
  "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT-HK 2-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx": {
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT-HK 2-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx",
@@ -5914,7 +6146,7 @@
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT-HK2-THPT PHAN DANG LUU-DAK LAK",
   "title": "Cuối HK2 2025 – 11 – THPT Phan Dang Luu – Dak Lak",
   "notes": [
-   "AI đọc (1665/214 tok)",
+   "AI đọc (1665/170 tok)",
    "tách 4 đoạn phương án chung dòng",
    "không thấy 'Câu N.' nào",
    "P1: khoá có 12 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
@@ -6004,7 +6236,9 @@
   "notes": [
    "AI đọc (915/189 tok)",
    "tách 46 đoạn phương án chung dòng",
-   "số câu lệch số đáp án — không đăng: P1: đề 36 câu / đáp án 18; P2: đề 8 câu / đáp án 4; P3: đề 12 câu / đáp án 6"
+   "P1: đề 36 câu, khoá 18 — 18 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P2: đề 8 câu, khoá 4 — 4 câu cuối không có đáp án, để --drop-bad bỏ",
+   "số câu lệch số đáp án — không đăng: P3: đề 12 câu / đáp án 6"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11-KNTT-HK2-TU SOAN.docx",
   "made": null,
@@ -6118,7 +6352,7 @@
    "AI đọc (1144/70 tok)",
    "tách 11 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P3: đề 7 câu / đáp án 4"
+   "P3: đề 7 câu, khoá 4 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11_KNTT_HK2_THPT TRAN QUANG DIEU_QUANG NGAI/Vat li 11 HK2 (2024-2025)/Ma_de_101.docx",
   "made": "101",
@@ -6133,7 +6367,22 @@
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "Phần 3: 7 câu, thiếu đáp án: [5, 6, 7], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 1: chưa có đáp án.",
+   "[đề] P1 câu 2: chưa có đáp án.",
+   "[đề] P1 câu 3: chưa có đáp án.",
+   "[đề] P1 câu 4: chưa có đáp án.",
+   "[đề] P1 câu 5: chưa có đáp án.",
+   "[đề] P1 câu 6: chưa có đáp án.",
+   "[đề] P1 câu 7: chưa có đáp án.",
+   "[đề] P1 câu 8: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 18, 19 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 16/21 câu: 1 (đáp án phải là số 0–3.); 2 (đáp án phải là số 0–3.); 3 (đáp án phải là số 0–3.); 4 (đáp án phải là số 0–3.); 5 (đáp án phải là số 0–3.); 6 (đáp án phải là số 0–3.); 7 (đáp án phải là số 0–3.); 8 (đáp án phải là số 0–3.); 9 (đáp án phải là số 0–3.); 10 (đáp án phải là số 0–3.); 11 (đáp án phải là số 0–3.); 12 (đáp án phải là số 0–3.); 18 (thiếu hình); 19 (thiếu đáp án.); 20 (thiếu đáp án.); 21 (thiếu đáp án.)",
+   "SKIP: mất 16/21 câu (>20%) hoặc còn 5 < 10 — để thầy xem"
+  ]
  },
  "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11_KNTT_HK2_THPT YEN VIEN_HANOI.docx": {
   "bo": "4. HK2/ĐỀ TRƯỜNG SỞ 2025/4. HK2/VAT LY 11_KNTT_HK2_THPT YEN VIEN_HANOI.docx",
@@ -6515,7 +6764,7 @@
   "bo": "2. HK1/học kì 1/Nhóm 2-Kiểm tra cuối kì 1-Lớp 11.docx",
   "title": "Cuối HK1 2025 – NhóM – KiểM Tra CuốI Kì – LớP 11",
   "notes": [
-   "AI đọc (702/123 tok)",
+   "AI đọc (702/175 tok)",
    "tách 15 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'TỰ LUẬN'",
@@ -6846,7 +7095,7 @@
    "ghi số tự động vào chữ cho 14 đoạn",
    "trải 23 bảng phương án thành đoạn",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 21 câu / đáp án 20"
+   "P1: đề 21 câu, khoá 20 — 1 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-CTST-HK1-THPT HAI BA TRUNG-HCM.docx",
   "made": null,
@@ -6861,7 +7110,15 @@
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "Phần 3: 6 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 21: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 21 (trắc nghiệm): thiếu đáp án đúng (A/B/C/D).",
+   "  bỏ 7/29 câu: 1 (còn công thức MathType chưa chuyển); 5 (còn công thức MathType chưa chuyển); 16 (cần đủ 4 phương án A–D (thấy 0)); 17 (còn công thức MathType chưa chuyển); 21 (đáp án phải là số 0–3.); 23 (còn công thức MathType chưa chuyển); 28 (còn công thức MathType chưa chuyển)",
+   "SKIP: mất 7/29 câu (>20%) hoặc còn 22 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-CTST-HK1-THPT HOANG DIEU-DONG NAI_": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-CTST-HK1-THPT HOANG DIEU-DONG NAI_",
@@ -6928,8 +7185,9 @@
   "notes": [
    "AI đọc (3171/189 tok)",
    "tách 20 đoạn phương án chung dòng",
+   "P2: đề 8 câu, khoá 4 — 4 câu cuối không có đáp án, để --drop-bad bỏ",
    "P1: khoá có 18 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P2: đề 8 câu / đáp án 4; P3: đề 12 câu / đáp án 4"
+   "số câu lệch số đáp án — không đăng: P3: đề 12 câu / đáp án 4"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-CTST-HK1-THPT PHAN CHU TRINH-NINH THUAN.docx",
   "made": null,
@@ -7297,8 +7555,8 @@
    "AI đọc (751/191 tok)",
    "tách 16 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P2: đề 10 câu / đáp án 4"
+   "P2: đề 10 câu, khoá 4 — 6 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-HK1 TP HCM/VAT LY 11-HK1-THPT ANLAC-HCM.doc",
   "made": null,
@@ -7313,7 +7571,20 @@
    "Phần 2: 10 câu, thiếu đáp án: [5, 6, 7, 8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 5: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 6: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 7: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 8: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 9: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 10: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 21, 28 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 8/28 câu: 21 (thiếu hình); 22 (cần đủ 4 ý a–d (thấy 0)); 23 (thiếu đáp án.); 24 (thiếu đáp án.); 25 (thiếu đáp án.); 26 (thiếu đáp án.); 27 (thiếu đáp án.); 28 (thiếu đáp án.)",
+   "SKIP: mất 8/28 câu (>20%) hoặc còn 20 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-HK1-SP TAP HUAN HAI PHONG": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-HK1-SP TAP HUAN HAI PHONG",
@@ -7407,7 +7678,7 @@
    "chèn PHẦN I trước Câu đầu",
    "suy ra PHẦN II từ cấu trúc câu",
    "suy ra PHẦN III từ cấu trúc câu",
-   "số câu lệch số đáp án — không đăng: P3: đề 34 câu / đáp án 5"
+   "P3: đề 34 câu, khoá 5 — 29 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-CUOI HKI-THPT CHUYEN HUYNH MAN DAT-KIEN GIANG.docx",
   "made": null,
@@ -7422,7 +7693,15 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 34 câu, thiếu đáp án: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 5: không chèn được * trước D."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 56 (trả lời ngắn): thiếu đáp án.",
+   "  bỏ 29/56 câu: 28 (thiếu đáp án.); 29 (thiếu đáp án.); 30 (thiếu đáp án.); 31 (thiếu đáp án.); 32 (thiếu đáp án.); 33 (thiếu đáp án.); 34 (thiếu đáp án.); 35 (thiếu đáp án.); 36 (thiếu đáp án.); 37 (thiếu đáp án.); 38 (thiếu đáp án.); 39 (thiếu đáp án.); 40 (thiếu đáp án.); 41 (thiếu đáp án.); 42 (thiếu đáp án.); 43 (thiếu đáp án.); 44 (thiếu đáp án.); 45 (thiếu đáp án.); 46 (thiếu đáp án.); 47 (thiếu đáp án.); 48 (thiếu đáp án.); 49 (thiếu đáp án.); 50 (thiếu đáp án.); 51 (thiếu đáp án.); 52 (thiếu đáp án.); 53 (thiếu đáp án.); 54 (thiếu đáp án.); 55 (thiếu đáp án.); 56 (thiếu đáp án.)",
+   "SKIP: mất 29/56 câu (>20%) hoặc còn 27 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-CUOI HOC KI 1-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-CUOI HOC KI 1-THPT CHUYEN QUOC HOC-THANH PHO HUE.docx",
@@ -7576,26 +7855,32 @@
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HK I-THPT THIEU HOA-THANH HOA.doc",
   "title": "Cuối HK1 2025 – THPT Thiệu Hóa – Thanh Hóa",
   "notes": [
-   "AI đọc (1920/37 tok)",
+   "AI đọc (1920/326 tok)",
    "tách 21 đoạn phương án chung dòng",
    "suy ra PHẦN III từ cấu trúc câu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P3: đề 6 câu / đáp án 4"
+   "P3: đề 6 câu, khoá 4 — 2 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HK I-THPT THIEU HOA-THANH HOA.doc",
   "made": null,
   "key": "inline→AI",
   "dap_an": {
-   "I": 0,
-   "II": 0,
+   "I": 18,
+   "II": 4,
    "III": 4
   },
   "convert": [
-   "Phần 1: 18 câu, thiếu đáp án: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]",
-   "Phần 2: 4 câu, thiếu đáp án: [1, 2, 3, 4], thiếu lời giải: [1, 2, 3, 4]",
+   "Phần 1: 18 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]",
+   "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 6 câu, thiếu đáp án: [5, 6], thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 898",
+   "  ✓ mục 58: 50 → 51 đề",
+   "Xong: \"Cuối HK1 2025 – THPT Thiệu Hóa – Thanh Hóa\" → exam 898, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=898"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HK I-THPT TRAN NGUYEN HAN-BA RIA-VUNG TAU": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HK I-THPT TRAN NGUYEN HAN-BA RIA-VUNG TAU",
@@ -8099,7 +8384,7 @@
    "tách 16 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 19 câu / đáp án 12"
+   "P1: đề 19 câu, khoá 12 — 7 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HK1-THPT YEN MY-HUNG YEN/de 147.doc",
   "made": "147",
@@ -8114,7 +8399,21 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 13: chưa có đáp án.",
+   "[đề] P1 câu 14: chưa có đáp án.",
+   "[đề] P1 câu 15: chưa có đáp án.",
+   "[đề] P1 câu 16: chưa có đáp án.",
+   "[đề] P1 câu 17: chưa có đáp án.",
+   "[đề] P1 câu 18: chưa có đáp án.",
+   "[đề] P1 câu 19: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 17 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 8/19 câu: 2 (cần đủ 4 phương án A–D (thấy 0)); 13 (đáp án phải là số 0–3.); 14 (đáp án phải là số 0–3.); 15 (đáp án phải là số 0–3.); 16 (đáp án phải là số 0–3.); 17 (đáp án phải là số 0–3.); 18 (đáp án phải là số 0–3.); 19 (đáp án phải là số 0–3.)",
+   "SKIP: mất 8/19 câu (>20%) hoặc còn 11 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HKI-THPT CHU VAN AN-LAM DONG.docx": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HKI-THPT CHU VAN AN-LAM DONG.docx",
@@ -8216,7 +8515,7 @@
    "ghi số tự động vào chữ cho 24 đoạn",
    "tách 14 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
-   "số câu lệch số đáp án — không đăng: P3: đề 10 câu / đáp án 6"
+   "P3: đề 10 câu, khoá 6 — 4 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HKI-THPT YÊN VIÊN-HA NOI/kt ly11-hoan chinh/ma de 111..docx",
   "made": "111",
@@ -8231,7 +8530,13 @@
    "Phần 2: 2 câu, thiếu đáp án: không, thiếu lời giải: [1, 2]",
    "Phần 3: 10 câu, thiếu đáp án: [7, 8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
   ],
-  "status": "LỆCH"
+  "xuat": [],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 7 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 10/30 câu: 1 (cần đủ 4 phương án A–D (thấy 0)); 3 (còn công thức MathType chưa chuyển); 5 (đáp án phải là số 0–3.); 6 (cần đủ 4 phương án A–D (thấy 0)); 7 (thiếu hình); 8 (cần đủ 4 phương án A–D (thấy 0)); 27 (thiếu đáp án.); 28 (thiếu đáp án.); 29 (thiếu đáp án.); 30 (thiếu đáp án.)",
+   "SKIP: mất 10/30 câu (>20%) hoặc còn 20 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HKI-TRUONG THPT DI AN-BINH DUONG-2024-2025": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-HKI-TRUONG THPT DI AN-BINH DUONG-2024-2025",
@@ -8270,7 +8575,7 @@
   "notes": [
    "tách 23 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 18 câu / đáp án 17"
+   "P1: đề 18 câu, khoá 17 — 1 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-KNTT-KS LAN 1-THPT MAI ANH TUAN/ĐÊ& ĐÁP ÁN LÍ LẦN 1 LỚP 11/Ma_de_223.docx",
   "made": "223",
@@ -8285,7 +8590,15 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 6 câu, thiếu đáp án: [1, 2, 3, 4, 5, 6], thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 18: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 3, 24, 26 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 11/28 câu: 3 (thiếu hình); 18 (đáp án phải là số 0–3.); 20 (thiếu dòng đáp án); 21 (thiếu dòng đáp án); 22 (thiếu dòng đáp án); 23 (thiếu đáp án.); 24 (thiếu đáp án.); 25 (thiếu đáp án.); 26 (thiếu đáp án.); 27 (thiếu đáp án.); 28 (thiếu đáp án.)",
+   "SKIP: mất 11/28 câu (>20%) hoặc còn 17 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-XXX-HK 1-THPT PHU LOC-TP HUE": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11-XXX-HK 1-THPT PHU LOC-TP HUE",
@@ -8542,8 +8855,8 @@
    "AI đọc (3864/344 tok)",
    "tách 17 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá",
-   "số câu lệch số đáp án — không đăng: P2: đề 10 câu / đáp án 4"
+   "P2: đề 10 câu, khoá 4 — 6 câu cuối không có đáp án, để --drop-bad bỏ",
+   "P3: khoá có 6 đáp án nhưng đề không có câu phần này — bỏ qua phần khoá"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_ HK1_ PHU NHUAN TPHCM.doc",
   "made": null,
@@ -8558,7 +8871,20 @@
    "Phần 2: 10 câu, thiếu đáp án: [5, 6, 7, 8, 9, 10], thiếu lời giải: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
    "Phần 3: 0 câu, thiếu đáp án: không, thiếu lời giải: không"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P2 câu 5: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 6: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 7: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 8: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 9: thấy 0 ý a–d (cần 4).",
+   "[đề] P2 câu 10: thấy 0 ý a–d (cần 4)."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 28 (đúng/sai): thiếu dòng đáp án — tạm để tất cả là Sai.",
+   "  bỏ 7/28 câu: 19 (cần đủ 4 ý a–d (thấy 0)); 23 (cần đủ 4 ý a–d (thấy 0)); 24 (cần đủ 4 ý a–d (thấy 0)); 25 (cần đủ 4 ý a–d (thấy 0)); 26 (cần đủ 4 ý a–d (thấy 0)); 27 (cần đủ 4 ý a–d (thấy 0)); 28 (cần đủ 4 ý a–d (thấy 0))",
+   "SKIP: mất 7/28 câu (>20%) hoặc còn 21 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_ HK1_ TAN THONG HOI TPHCM.docx": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_ HK1_ TAN THONG HOI TPHCM.docx",
@@ -8593,12 +8919,12 @@
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_ HK1_ TRUNG VUONG TPHCM.docx",
   "title": "Cuối HK1 2025 – THPT Trưng Vươngcộng Hòa Xã Hội",
   "notes": [
-   "AI đọc (864/310 tok)",
+   "AI đọc (864/246 tok)",
    "ghi số tự động vào chữ cho 1 đoạn",
    "tách 18 đoạn phương án chung dòng",
    "chèn PHẦN I trước Câu đầu",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 16 câu / đáp án 15"
+   "P1: đề 16 câu, khoá 15 — 1 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_ HK1_ TRUNG VUONG TPHCM.docx",
   "made": null,
@@ -8613,7 +8939,15 @@
    "Phần 2: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]",
    "Phần 3: 5 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4, 5]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 16: chưa có đáp án."
+  ],
+  "status": "OK",
+  "upload": [
+   "  ✓ đề số 899",
+   "  ✓ mục 58: 51 → 52 đề",
+   "Xong: \"Cuối HK1 2025 – THPT Trưng Vươngcộng Hòa Xã Hội\" → exam 899, sửa tại https://thachlab.id.vn/quan-tri/sua-de/?id=899"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_KNTT_ HKI_THPT SOC SON_HA NOI.docx": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_KNTT_ HKI_THPT SOC SON_HA NOI.docx",
@@ -8651,7 +8985,7 @@
    "tách 13 đoạn phương án chung dòng",
    "đã cắt từ 'TỰ LUẬN'",
    "P3: đề đánh số 1–4 (4 câu) — gán đáp án theo số câu, bỏ 5 đáp án thừa",
-   "số câu lệch số đáp án — không đăng: P1: đề 16 câu / đáp án 7"
+   "P1: đề 16 câu, khoá 7 — 9 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 11_KNTT_HK 1_THPT NGHIA DAN_HUNG YEN/VAT LI 11/Made 201.docx",
   "made": "201",
@@ -8666,7 +9000,22 @@
    "Phần 2: 3 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3]",
    "Phần 3: 4 câu, thiếu đáp án: không, thiếu lời giải: [1, 2, 3, 4]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 8: chưa có đáp án.",
+   "[đề] P1 câu 9: chưa có đáp án.",
+   "[đề] P1 câu 10: chưa có đáp án.",
+   "[đề] P1 câu 11: chưa có đáp án.",
+   "[đề] P1 câu 12: chưa có đáp án.",
+   "[đề] P1 câu 13: chưa có đáp án.",
+   "[đề] P1 câu 14: chưa có đáp án.",
+   "[đề] P1 câu 15: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 23 (trả lời ngắn): đáp án \"B\" không phải dạng số.",
+   "  bỏ 9/23 câu: 8 (đáp án phải là số 0–3.); 9 (đáp án phải là số 0–3.); 10 (đáp án phải là số 0–3.); 11 (đáp án phải là số 0–3.); 12 (đáp án phải là số 0–3.); 13 (đáp án phải là số 0–3.); 14 (đáp án phải là số 0–3.); 15 (đáp án phải là số 0–3.); 16 (đáp án phải là số 0–3.)",
+   "SKIP: mất 9/23 câu (>20%) hoặc còn 14 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 12-CTST-GIUA HKI-THPT THAI PHIEN-HAI PHONG": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 12-CTST-GIUA HKI-THPT THAI PHIEN-HAI PHONG",
@@ -8674,7 +9023,7 @@
   "notes": [
    "tách 20 đoạn phương án chung dòng",
    "đã cắt từ 'HẾT'",
-   "số câu lệch số đáp án — không đăng: P1: đề 21 câu / đáp án 18"
+   "P1: đề 21 câu, khoá 18 — 3 câu cuối không có đáp án, để --drop-bad bỏ"
   ],
   "file": "ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY 12-CTST-GIUA HKI-THPT THAI PHIEN-HAI PHONG/VẬT LÝ 12 -CTST- GIỮA HKI - THPT THÁI PHIÊN - HẢI PHÒNG/GKI_2024-2025_LÍ_12_VŨ NGA_132.doc.docx",
   "made": "132",
@@ -8689,7 +9038,17 @@
    "Phần 2: 0 câu, thiếu đáp án: không, thiếu lời giải: không",
    "Phần 3: 6 câu, thiếu đáp án: [1, 2, 3, 4, 5, 6], thiếu lời giải: [1, 2, 3, 4, 5, 6]"
   ],
-  "status": "LỆCH"
+  "xuat": [
+   "[đề] P1 câu 19: chưa có đáp án.",
+   "[đề] P1 câu 20: chưa có đáp án.",
+   "[đề] P1 câu 21: chưa có đáp án."
+  ],
+  "status": "SKIP>20%",
+  "upload": [
+   "  ! Câu 18, 19 nhắc tới đồ thị/hình vẽ nhưng không có ảnh — học sinh sẽ không làm được. Chèn lại hình (ảnh PNG/JPG trong Word, hoặc \\includegraphics trong .tex) rồi tải lên lần nữa; nếu câu thật sự không cần hình thì bỏ qua cảnh báo này.",
+   "  bỏ 10/27 câu: 18 (thiếu hình); 19 (đáp án phải là số 0–3.); 20 (đáp án phải là số 0–3.); 21 (đáp án phải là số 0–3.); 22 (thiếu đáp án.); 23 (thiếu đáp án.); 24 (thiếu đáp án.); 25 (thiếu đáp án.); 26 (thiếu đáp án.); 27 (thiếu đáp án.)",
+   "SKIP: mất 10/27 câu (>20%) hoặc còn 17 < 10 — để thầy xem"
+  ]
  },
  "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY_11_KNTT_HK1_THPT PHUOC BINH_BINH PHUOC.docx": {
   "bo": "2. HK1/ĐỀ TRƯỜNG SỞ 2025/2. HK1/VAT LY_11_KNTT_HK1_THPT PHUOC BINH_BINH PHUOC.docx",
