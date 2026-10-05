@@ -7,8 +7,9 @@
  *    (khớp cả khi khác query), cuối cùng "/". Nhờ đó bài/luyện đã mở xem lại được khi mất mạng.
  *  - Kết quả luyện tập mất mạng KHÔNG đi qua SW: services/lessons.ts xếp hàng ở localStorage.
  *  - RUNTIME_CACHE giới hạn MAX_RUNTIME_ENTRIES mục (xoá mục cũ nhất).
+ *  - push + notificationclick: nhắc luyện 1 lần/ngày (M4), bấm vào mở /lop-hoc/ và focus tab có sẵn.
  * Đổi VERSION để dọn cache cũ. */
-const VERSION = "v2";
+const VERSION = "v3";
 const SHELL_CACHE = "thachlab-shell-" + VERSION;
 const RUNTIME_CACHE = "thachlab-runtime-" + VERSION;
 const MAX_RUNTIME_ENTRIES = 120;
@@ -110,4 +111,38 @@ self.addEventListener("fetch", (event) => {
   if (url.searchParams.has("_rsc") || url.pathname.endsWith(".txt")) {
     event.respondWith(networkFirst(req, RUNTIME_CACHE));
   }
+});
+
+// Web Push (M4): nhắc luyện 1 lần/ngày. Payload JSON {title, body, url, tag}; hỏng thì dùng chữ mặc định.
+self.addEventListener("push", (event) => {
+  let d = {};
+  try {
+    d = event.data ? event.data.json() : {};
+  } catch (e) {
+    d = {};
+  }
+  event.waitUntil(
+    self.registration.showNotification(d.title || "ThachLab", {
+      body: d.body || "Hôm nay luyện 5 phút nhé?",
+      icon: "/icons/icon-192.png",
+      badge: "/icons/icon-192.png",
+      tag: d.tag || "thachlab-daily",
+      data: { url: d.url || "/lop-hoc/" },
+    }),
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const target = new URL((event.notification.data && event.notification.data.url) || "/lop-hoc/", self.location.origin).href;
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((list) => {
+      for (const c of list) {
+        if (c.url.startsWith(self.location.origin) && "focus" in c) {
+          return c.focus().then(() => ("navigate" in c ? c.navigate(target).catch(() => c) : c));
+        }
+      }
+      return self.clients.openWindow(target);
+    }),
+  );
 });
