@@ -10,9 +10,15 @@ import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/type
 import {
   buildQuestionResults,
   gradeQuestion,
-  questionTopicNames,
 } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
+import {
+  enqueue,
+  flushQueue,
+  isNetworkError,
+  pendingCount,
+  type SendResult,
+} from "@/lib/offline-queue";
 
 interface ClassRef {
   class_id: number;
@@ -431,56 +437,126 @@ export interface PracticeSessionInput {
   clientToken: string;
 }
 
-/** Lưu kết quả một phiên luyện tập. Lỗi ở đây chỉ mất dữ liệu phân tích — không chặn em xem lời giải. */
-export async function savePracticeSession(input: PracticeSessionInput): Promise<boolean> {
+/** Dữ liệu phiên đã rút gọn (không còn nội dung câu hỏi) — dạng được xếp hàng khi mất mạng. */
+export interface PracticeQueuePayload {
+  studentId: string;
+  clientToken: string;
+  lessonId: number | null;
+  itemId: number | null;
+  questionCount: number;
+  correctCount: number;
+  score10: number;
+  durationSeconds: number;
+  timedOut: boolean;
+  /** Thời điểm học sinh nộp (ISO) — chỉ có ở bản gửi lại, để giữ thứ tự "lần đầu". */
+  occurredAt?: string;
+  rows: {
+    question_index: number;
+    exam_id: number;
+    source_index: number;
+    topic_name: string;
+    form: string;
+    qtype: string;
+    earned: number;
+    max: number;
+    is_correct: boolean;
+    difficulty: string;
+  }[];
+}
+
+function toPracticePayload(input: PracticeSessionInput): PracticeQueuePayload {
+  const questions = input.picks.map((p) => p.question);
+  const rows = buildQuestionResults(questions, input.responses).map((r, i) => ({
+    question_index: r.question_index,
+    exam_id: input.picks[i].examId,
+    source_index: input.picks[i].sourceIndex,
+    topic_name: r.topic_name,
+    form: r.form,
+    qtype: r.qtype,
+    earned: r.earned,
+    max: r.max,
+    is_correct: r.is_correct,
+    difficulty: r.difficulty,
+  }));
+  return {
+    studentId: input.studentId,
+    clientToken: input.clientToken,
+    lessonId: input.lessonId,
+    itemId: input.itemId,
+    questionCount: input.picks.length,
+    correctCount: input.correctCount,
+    score10: input.score10,
+    durationSeconds: input.durationSeconds,
+    timedOut: input.timedOut,
+    rows,
+  };
+}
+
+/**
+ * Gửi một phiên. Idempotent theo client_token: nếu phiên đã có (lần trước đứt mạng giữa chừng) thì không
+ * tạo phiên mới, và chỉ ghi kết quả từng câu khi phiên đó CHƯA có dòng kết quả nào.
+ * "network" = đáng gửi lại; "logic" = lỗi DB/RLS, gửi lại cũng vậy.
+ */
+async function sendPracticePayload(p: PracticeQueuePayload): Promise<SendResult> {
   const supabase = getSupabase();
   try {
     const existing = await supabase
       .from("practice_sessions")
       .select("id")
-      .eq("client_token", input.clientToken)
+      .eq("client_token", p.clientToken)
       .maybeSingle();
+    if (existing.error && isNetworkError(existing.error)) return "network";
     let sessionId = existing.data?.id as number | undefined;
+    let freshSession = false;
     if (!sessionId) {
       const base = {
-        student_id: input.studentId,
-        lesson_id: input.lessonId,
-        item_id: input.itemId,
-        question_count: input.picks.length,
-        correct_count: input.correctCount,
-        score: input.score10,
-        duration_seconds: input.durationSeconds,
-        timed_out: input.timedOut,
+        student_id: p.studentId,
+        lesson_id: p.lessonId,
+        item_id: p.itemId,
+        question_count: p.questionCount,
+        correct_count: p.correctCount,
+        score: p.score10,
+        duration_seconds: p.durationSeconds,
+        timed_out: p.timedOut,
       };
       let res = await supabase
         .from("practice_sessions")
-        .insert({ ...base, client_token: input.clientToken })
+        .insert({ ...base, client_token: p.clientToken, ...(p.occurredAt ? { created_at: p.occurredAt } : {}) })
         .select("id")
         .single();
+      if (res.error && isNetworkError(res.error)) return "network";
       // client_token là cột mới (migration chưa chạy) — lùi về insert không có token.
       if (res.error) res = await supabase.from("practice_sessions").insert(base).select("id").single();
-      if (res.error || !res.data) return false;
+      if (res.error && isNetworkError(res.error)) return "network";
+      if (res.error || !res.data) return "logic";
       sessionId = res.data.id as number;
+      freshSession = true;
     }
-    const data = { id: sessionId };
 
-    const questions = input.picks.map((p) => p.question);
-    const names = questionTopicNames(questions);
+    if (!freshSession) {
+      // Phiên đã có từ lần gửi trước: nếu kết quả từng câu đã ghi thì không ghi lại (tránh nhân đôi).
+      const have = await supabase
+        .from("practice_question_results")
+        .select("session_id", { count: "exact", head: true })
+        .eq("session_id", sessionId);
+      if (have.error && isNetworkError(have.error)) return "network";
+      if ((have.count ?? 0) > 0) return "ok";
+    }
+
+    const names = [...new Set(p.rows.map((r) => r.topic_name).filter((t) => t !== ""))];
     const idByName = new Map<string, number>();
     if (names.length) {
-      const { data: topics } = await supabase
-        .from("question_topics")
-        .select("id, name")
-        .in("name", names);
+      const { data: topics, error } = await supabase.from("question_topics").select("id, name").in("name", names);
+      if (error && isNetworkError(error)) return "network";
       for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
     }
-    const rows = buildQuestionResults(questions, input.responses, idByName).map((r, i) => ({
-      session_id: data.id,
+    const rows = p.rows.map((r) => ({
+      session_id: sessionId,
       question_index: r.question_index,
-      student_id: input.studentId,
-      exam_id: input.picks[i].examId,
-      source_index: input.picks[i].sourceIndex,
-      topic_id: r.topic_id,
+      student_id: p.studentId,
+      exam_id: r.exam_id,
+      source_index: r.source_index,
+      topic_id: r.topic_name ? (idByName.get(r.topic_name) ?? null) : null,
       topic_name: r.topic_name,
       form: r.form,
       qtype: r.qtype,
@@ -489,9 +565,38 @@ export async function savePracticeSession(input: PracticeSessionInput): Promise<
       is_correct: r.is_correct,
       difficulty: r.difficulty,
     }));
-    await supabase.from("practice_question_results").insert(rows);
-    return true;
-  } catch {
-    return false;
+    const ins = await supabase.from("practice_question_results").insert(rows);
+    // Lỗi logic ở bước này giữ nguyên hành vi cũ (không báo lỗi cho em); chỉ lỗi mạng mới xếp hàng.
+    if (ins.error && isNetworkError(ins.error)) return "network";
+    return "ok";
+  } catch (e) {
+    return isNetworkError(e) ? "network" : "logic";
   }
+}
+
+/**
+ * Lưu kết quả một phiên luyện tập. Lỗi ở đây chỉ mất dữ liệu phân tích — không chặn em xem lời giải.
+ * Mất mạng: phiên được giữ trên máy (hàng đợi bền) và tự gửi lại khi có mạng — hàm vẫn trả true để
+ * giao diện không báo "lưu lỗi"; số kết quả đang chờ hiện ở OfflineSync. Trả false chỉ khi lỗi thật
+ * (DB/RLS) hoặc không giữ được trên máy.
+ */
+export async function savePracticeSession(input: PracticeSessionInput): Promise<boolean> {
+  const payload = toPracticePayload(input);
+  const result = await sendPracticePayload(payload);
+  if (result === "ok") return true;
+  if (result === "logic") return false;
+  return enqueue({
+    id: payload.clientToken,
+    studentId: payload.studentId,
+    payload: { ...payload, occurredAt: new Date().toISOString() },
+  });
+}
+
+/** Gửi lại các phiên đang chờ của học sinh đang đăng nhập. Trả số phiên đã gửi xong. Không round-trip nếu hàng đợi rỗng. */
+export async function flushPracticeQueue(): Promise<number> {
+  if (pendingCount() === 0) return 0;
+  const { data } = await getSupabase().auth.getSession();
+  const uid = data.session?.user.id;
+  if (!uid) return 0;
+  return flushQueue<PracticeQueuePayload>(uid, (item) => sendPracticePayload(item.payload));
 }

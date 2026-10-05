@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 
 const PwaInstallBanner = dynamic(() => import("./PwaInstallBanner"), { ssr: false });
+const OfflineSync = dynamic(() => import("./OfflineSync"), { ssr: false });
 
 export default function PwaBoot() {
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function PwaBoot() {
   return (
     <LazyErrorBoundary>
       <PwaInstallBanner />
+      <OfflineSync />
     </LazyErrorBoundary>
   );
 }

@@ -3,11 +3,15 @@
  * Supabase. Bỏ qua mọi request không phải GET, khác origin, và *.supabase.co.
  *  - /_next/static/*: file băm tên, bất biến -> cache-first.
  *  - /data/*: network-first, rớt mạng mới dùng bản cache.
- *  - điều hướng trang: network-first, rớt mạng -> trang đã cache hoặc "/".
+ *  - điều hướng trang + dữ liệu RSC của Next (`_rsc`): network-first, rớt mạng -> bản đã cache
+ *    (khớp cả khi khác query), cuối cùng "/". Nhờ đó bài/luyện đã mở xem lại được khi mất mạng.
+ *  - Kết quả luyện tập mất mạng KHÔNG đi qua SW: services/lessons.ts xếp hàng ở localStorage.
+ *  - RUNTIME_CACHE giới hạn MAX_RUNTIME_ENTRIES mục (xoá mục cũ nhất).
  * Đổi VERSION để dọn cache cũ. */
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = "thachlab-shell-" + VERSION;
 const RUNTIME_CACHE = "thachlab-runtime-" + VERSION;
+const MAX_RUNTIME_ENTRIES = 120;
 const SHELL = ["/", "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {
@@ -35,17 +39,36 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+function trimCache(cacheName) {
+  return caches
+    .open(cacheName)
+    .then((c) =>
+      c.keys().then((keys) => {
+        const extra = keys.length - MAX_RUNTIME_ENTRIES;
+        return extra > 0 ? Promise.all(keys.slice(0, extra).map((k) => c.delete(k))) : undefined;
+      }),
+    )
+    .catch(() => {});
+}
+
 function networkFirst(request, cacheName, fallbackUrl) {
   return fetch(request)
     .then((res) => {
       if (res && res.ok) {
         const copy = res.clone();
-        caches.open(cacheName).then((c) => c.put(request, copy)).catch(() => {});
+        caches
+          .open(cacheName)
+          .then((c) => c.put(request, copy))
+          .then(() => trimCache(cacheName))
+          .catch(() => {});
       }
       return res;
     })
     .catch(() =>
-      caches.match(request).then((hit) => hit || (fallbackUrl ? caches.match(fallbackUrl) : undefined) || Response.error()),
+      caches
+        .match(request)
+        .then((hit) => hit || caches.match(request, { ignoreSearch: true }))
+        .then((hit) => hit || (fallbackUrl ? caches.match(fallbackUrl) : undefined) || Response.error()),
     );
 }
 
@@ -80,5 +103,11 @@ self.addEventListener("fetch", (event) => {
 
   if (req.mode === "navigate") {
     event.respondWith(networkFirst(req, RUNTIME_CACHE, "/"));
+    return;
+  }
+
+  // Dữ liệu RSC khi chuyển trang phía client (static export): chỉ network-first, không fallback "/".
+  if (url.searchParams.has("_rsc") || url.pathname.endsWith(".txt")) {
+    event.respondWith(networkFirst(req, RUNTIME_CACHE));
   }
 });
