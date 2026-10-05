@@ -1,0 +1,165 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Năng lượng điện và công suất điện",
+ "lesson_id": 44,
+ "nguon_trong_bai": "content/lesson-samples/l11-nang-luong-cong-suat-dien/theory.html",
+ "id": "tn-l11-nang-luong-dien-02",
+ "ten": "Kiểm nhãn 12 V – 21 W của đèn xe máy bằng vôn kế và ampe kế",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "congsuatdien.p_bang_ui",
+  "congsuatdien.dinh_muc",
+  "congsuatdien.r_tu_nhan"
+ ],
+ "muc_tieu": "Đo U và I của bóng đèn rồi tính P = UI, so với công suất định mức trên nhãn; thấy nhãn chỉ đúng khi dùng đúng hiệu điện thế định mức.",
+ "dung_cu": [
+  {
+   "ten": "Bóng đèn hậu xe máy 12 V – 21 W",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn một chiều điều chỉnh được 0–15 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế một chiều thang 3 A",
+   "so_luong": 1,
+   "ghi_chu": "sai số ±0,01 A"
+  },
+  {
+   "ten": "Vôn kế một chiều thang 15 V",
+   "so_luong": 1,
+   "ghi_chu": "sai số ±0,1 V"
+  },
+  {
+   "ten": "Dây nối, đế đèn",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc đèn vào nguồn, ampe kế nối tiếp với đèn, vôn kế song song với đèn.",
+   "Chỉnh nguồn để vôn kế chỉ đúng 12,0 V, đọc ampe kế.",
+   "Hạ nguồn xuống 9,0 V rồi 6,0 V, đọc lại ampe kế."
+  ],
+  "quan_sat": [
+   "Ở 12,0 V: ampe kế 1,75 A, đèn sáng bình thường.",
+   "Ở 9,0 V dòng 1,55 A; ở 6,0 V đèn đỏ mờ, dòng 1,30 A."
+  ],
+  "rut_ra": [
+   "P = UI = 12,0 × 1,75 = 21 W, đúng nhãn 21 W.",
+   "Điện trở dây tóc khi sáng R = U/I ≈ 6,9 Ω; ở hiệu điện thế thấp dây tóc nguội hơn, R nhỏ hơn nên I không giảm tỉ lệ với U.",
+   "Công suất ghi trên nhãn chỉ đúng khi dùng đúng hiệu điện thế định mức."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế đặt vào đèn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 14,
+   "mac_dinh": 12,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện qua đèn",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất đèn",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở dây tóc",
+   "don_vi": "Ω",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P_dm",
+   "ten": "Công suất định mức",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 21
+  },
+  {
+   "ky_hieu": "U_dm",
+   "ten": "Hiệu điện thế định mức",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 12
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = U × I",
+   "R = U / I",
+   "tại U = U_dm: P = P_dm"
+  ],
+  "gia_thiet": [
+   "ampe kế và vôn kế lí tưởng",
+   "I ở 9,0 V và 6,0 V là số đo minh hoạ: dây tóc nguội có R nhỏ hơn, nên I lớn hơn giá trị U/6,86"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "I (A)",
+   "P = UI (W)",
+   "R = U/I (Ω)"
+  ],
+  "hang": [
+   [
+    12.0,
+    1.75,
+    21.0,
+    6.86
+   ],
+   [
+    9.0,
+    1.55,
+    13.95,
+    5.81
+   ],
+   [
+    6.0,
+    1.3,
+    7.8,
+    4.62
+   ]
+  ],
+  "ghi_chu": "P và R tính từ U, I bằng script. Hàng 12,0 V là số trong bài (nhãn 21 W). Hai hàng còn lại minh hoạ R giảm khi dây tóc nguội."
+ },
+ "ket_qua_ky_vong": "Ở 12,0 V tính được P ≈ 21 W trùng nhãn; ở hiệu điện thế thấp hơn công suất giảm mạnh và R nhỏ hơn.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ đèn 21 W lúc nào cũng tiêu thụ 21 W dù mắc vào 6 V.",
+  "Nghĩ R của đèn luôn bằng U_dm²/P_dm ở mọi hiệu điện thế (chỉ đúng khi dây tóc nóng như lúc định mức)."
+ ],
+ "sai_so_thuong_gap": [
+  "Ampe kế có điện trở nhỏ làm U thật ở đèn thấp hơn số vôn kế nếu mắc vôn kế trước ampe kế.",
+  "Dây tóc nóng dần nên I giảm nhẹ trong vài giây đầu; đọc số sau khi ổn định."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "U"
+  ],
+  "dau_ra": [
+   "kim ampe kế",
+   "độ sáng đèn tỉ lệ P",
+   "bảng U, I, P"
+  ],
+  "hinh_trong_bai": "",
+  "y_tuong": "Kéo U từ 0 lên 14 V; đèn sáng dần, con số P hiện cạnh đèn; bẫy: đoán P khi U = 6 V trước khi kéo (nhiều em đoán 10,5 W)."
+ },
+ "an_toan": "Không vượt 14 V để khỏi đứt dây tóc; đèn nóng, không chạm tay."
+}

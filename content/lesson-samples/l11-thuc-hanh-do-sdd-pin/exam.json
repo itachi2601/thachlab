@@ -1,0 +1,78 @@
+{
+ "title": "Kiểm tra nhanh — Đo suất điện động và điện trở trong của pin",
+ "duration_minutes": 8,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Đo hai đầu một viên pin lúc chưa lắp vào xe đồ chơi được 1,50 V; lắp vào, động cơ quay ì ạch và đo lại chỉ còn 1,06 V. Giải thích đúng là",
+   "options": [
+    "Đồng hồ đo sai khi có dòng chạy trong mạch",
+    "Động cơ \"hút\" bớt suất điện động của pin",
+    "Có dòng thì pin sụt áp I·r bên trong; pin cũ có r lớn nên sụt nhiều",
+    "Pin hết năng lượng, chỉ còn \"điện áp ảo\""
+   ],
+   "answer": 2,
+   "explanation": "Lúc hở mạch I = 0 nên vôn kế đọc đúng E = 1,50 V. Khi động cơ kéo dòng I ≈ 0,5 A, hai cực pin chỉ còn U = E − I·r; pin cũ có r ≈ 0,8 Ω nên mất ≈ 0,4 V ngay trong pin."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Đường thẳng U–I của một pin cắt trục U tại 1,50 V và đi qua điểm (0,50 A; 1,10 V). Điện trở trong của pin là",
+   "options": [
+    "0,8 Ω",
+    "2,2 Ω",
+    "3,0 Ω",
+    "1,25 Ω"
+   ],
+   "answer": 0,
+   "explanation": "r = (U1 − U2)/(I2 − I1) = (1,50 − 1,10)/(0,50 − 0) = 0,8 Ω. 1,10/0,50 = 2,2 Ω là điện trở mạch ngoài; 1,50/0,50 = 3,0 Ω là điện trở toàn mạch."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Trong phương án đo E, r bằng biến trở, vì sao phải mắc thêm điện trở bảo vệ R0 = 2,0 Ω nối tiếp với biến trở?",
+   "options": [
+    "Để vôn kế đọc đúng E mà không cần ngắt K",
+    "Khi biến trở về 0, mạch ngoài vẫn còn 2 Ω, dòng không vọt như đoản mạch",
+    "Để tăng suất điện động của pin lên",
+    "Để đồ thị U–I thành đường thẳng"
+   ],
+   "answer": 1,
+   "explanation": "Không có R0, lúc Rx = 0 thì I = E/r ≈ 1,5/0,8 ≈ 1,9 A: pin nóng nhanh, ampe kế sát thang 2 A, dễ quá tải. Có R0, dòng lớn nhất chỉ ≈ 1,5/2,8 ≈ 0,54 A. K đóng là có dòng nên vôn kế đọc U = E − I·r < E dù có R0."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Bảng đo có 6 cặp (I, U) với vôn kế ±0,01 V, ampe kế ±0,002 A; lần 1: (0,014 A; 1,48 V), lần 2: (0,066; 1,44), lần 3: (0,117; 1,40), lần 6: (0,534 A; 1,06 V). Nếu chỉ dùng hai trong sáu điểm đo để tính r (chưa vẽ đường), muốn sai số nhỏ nhất thì chọn",
+   "options": [
+    "Lần 2 và 3, hai điểm gần nhau nên \"sát\" đường thẳng nhất",
+    "Lần 3 và 4, nằm giữa bảng",
+    "Cặp nào cũng như nhau, mọi điểm đều trên một đường thẳng",
+    "Lần 1 và 6, hai điểm xa nhau nhất"
+   ],
+   "answer": 3,
+   "explanation": "Sai số ±0,01 V của mỗi số đo là cố định. Lần 1 và 6: hiệu U là 0,42 V, sai số 0,02 V chỉ chiếm ≈ 5 %. Lần 2 và 3: hiệu chỉ 0,04 V, sai số 0,02 V chiếm 50 %. Khi đã vẽ đường thẳng thì lấy hai điểm trên đường, cũng xa nhau."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Pin có E = 1,50 V, r = 0,8 Ω nối với động cơ kéo dòng 0,50 A. Hiệu điện thế hai đầu động cơ là",
+   "options": [
+    "1,50 V",
+    "1,90 V",
+    "1,10 V",
+    "0,40 V"
+   ],
+   "answer": 2,
+   "explanation": "U = E − I·r = 1,50 − 0,50·0,8 = 1,10 V. 1,50 V chỉ là số đọc lúc hở mạch; 0,40 V là phần sụt I·r trong pin."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Lần đo 5 có I = 0,311 A, U = 1,25 V (biến trở Rx = 2 Ω, điện trở bảo vệ R0 = 2 Ω). Một bạn tính r = U/I = 4,0 Ω. Nhận xét đúng là",
+   "options": [
+    "Đúng, vì R = U/I áp dụng cho mọi đoạn mạch",
+    "Sai, phải tính r = I/U = 0,25 Ω",
+    "Sai, phải lấy E/I = 1,50/0,311 ≈ 4,8 Ω",
+    "Sai: 4,0 Ω là R0 + Rx = 2 + 2, điện trở mạch ngoài ở lần đo đó"
+   ],
+   "answer": 3,
+   "explanation": "Vôn kế đo U hai đầu mạch ngoài nên U/I là R0 + Rx = 4 Ω. Muốn ra r phải dùng thêm E: (1,50 − 1,25)/0,311 ≈ 0,8 Ω, hoặc dùng hai cặp số."
+  }
+ ]
+}

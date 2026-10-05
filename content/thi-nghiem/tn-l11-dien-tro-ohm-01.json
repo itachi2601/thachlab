@@ -1,0 +1,164 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trở. Định luật Ohm",
+ "lesson_id": 42,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l11-dien-tro-ohm-01",
+ "ten": "Đo U và I của điện trở 10 Ω: đường đặc trưng vôn – ampe thẳng qua gốc",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dientro.r_bang_u_chia_i",
+  "dientro.duong_dac_trung_von_ampe",
+  "ohm.i_bang_u_chia_r"
+ ],
+ "muc_tieu": "Đo 5 cặp (U, I) của một điện trở, thấy U/I không đổi và đồ thị I theo U là đường thẳng qua gốc; đọc bảng và nhận xét sai số theo từng hàng.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn một chiều điều chỉnh 0–6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở công suất 10 Ω (≥5 W)",
+   "so_luong": 1,
+   "ghi_chu": "loại công suất để nhiệt độ hầu như không đổi khi đo"
+  },
+  {
+   "ten": "Ampe kế một chiều",
+   "so_luong": 1,
+   "ghi_chu": "độ phân giải 0,01 A, sai số ±0,01 A"
+  },
+  {
+   "ten": "Vôn kế một chiều",
+   "so_luong": 1,
+   "ghi_chu": "độ phân giải 0,1 V, sai số ±0,1 V"
+  },
+  {
+   "ten": "Dây nối, khoá K",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc nguồn – khoá K – ampe kế – điện trở thành mạch kín; vôn kế mắc song song hai đầu điện trở.",
+   "Chỉnh nguồn để vôn kế chỉ 1,0 V, ghi số đọc ampe kế.",
+   "Tăng U từng 1,0 V tới 5,0 V, mỗi lần ghi I (5 lần đo)."
+  ],
+  "quan_sat": [
+   "U gấp đôi thì I gấp đôi.",
+   "Tỉ số U/I ở mọi hàng đều bằng 10 Ω."
+  ],
+  "rut_ra": [
+   "I tỉ lệ thuận với U; đồ thị I theo U là đường thẳng qua gốc toạ độ, độ dốc 1/R.",
+   "Hàng có U, I lớn cho R tin cậy hơn vì sai số dụng cụ cố định chia cho số đo lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 50,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai đầu điện trở",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Số đọc ampe kế",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "R_do",
+   "ten": "Điện trở tính từ một hàng U/I",
+   "don_vi": "Ω",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = U/R",
+   "R_do = U/I",
+   "sai số tương đối của R từ một hàng: ΔR/R = ΔU/U + ΔI/I, với ΔU = 0,1 V, ΔI = 0,01 A"
+  ],
+  "gia_thiet": [
+   "điện trở công suất, nhiệt độ không đổi trong lúc đo",
+   "vôn kế lí tưởng (không rẽ dòng), ampe kế lí tưởng (điện trở không đáng kể)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "I (A)",
+   "U/I (Ω)"
+  ],
+  "hang": [
+   [
+    1.0,
+    0.1,
+    10
+   ],
+   [
+    2.0,
+    0.2,
+    10
+   ],
+   [
+    3.0,
+    0.3,
+    10
+   ],
+   [
+    4.0,
+    0.4,
+    10
+   ],
+   [
+    5.0,
+    0.5,
+    10
+   ]
+  ],
+  "ghi_chu": "Tính từ I = U/R với R = 10 Ω. Không phải số đo thật; số đo thật dao động ±0,01 A."
+ },
+ "ket_qua_ky_vong": "U/I = 10 Ω ở cả 5 hàng; sai số tương đối của R: 20 % ở hàng 1,0 V, 4 % ở hàng 5,0 V.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ rằng U tăng thì R tăng vì R = U/I.",
+  "Cho rằng mọi hàng tin cậy như nhau vì cùng ra 10 Ω.",
+  "Để nguyên kΩ hoặc mA khi tính."
+ ],
+ "sai_so_thuong_gap": [
+  "Ampe kế ±0,01 A: hàng 1,0 V lệch tới 10 % chỉ riêng phép đo I.",
+  "Vôn kế ±0,1 V: hàng 1,0 V lệch 10 %.",
+  "Điện trở nóng nhẹ ở 5,0 V (2,5 W) làm R tăng vài phần trăm nếu dùng điện trở công suất quá nhỏ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "R",
+   "U"
+  ],
+  "dau_ra": [
+   "số đọc I có nhiễu ±0,01 A",
+   "đồ thị I theo U: các điểm đo và đường thẳng qua gốc",
+   "thanh sai số của R theo từng hàng"
+  ],
+  "hinh_trong_bai": "Hình 1, Hình 2",
+  "y_tuong": "Kéo thanh U, thêm nhiễu ±0,01 A và ±0,1 V, cho học sinh thấy hàng U nhỏ làm R dao động mạnh; đổi R để thấy độ dốc đổi."
+ },
+ "an_toan": "Nguồn 6 V, không nguy hiểm. Điện trở công suất có thể ấm, không chạm tay lâu."
+}

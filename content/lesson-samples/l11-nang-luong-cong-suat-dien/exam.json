@@ -1,0 +1,48 @@
+{
+ "title": "Kiểm tra nhanh — Năng lượng điện và công suất điện",
+ "duration_minutes": 8,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Một bóng đèn 100 W sáng liên tục 10 giờ. Điện năng tiêu thụ tính ra \"số điện\" (kWh) là",
+   "options": ["100 kWh", "1000 kWh", "1 kWh", "10 kWh"],
+   "answer": 2,
+   "explanation": "A = Pt = 100 W × 10 h = 1000 Wh = 1 kWh. Số điện là năng lượng: công suất nhân thời gian."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Bàn là mắc vào 220 V, dòng điện qua bàn là 4,0 A, dùng trong 15 phút. Năng lượng điện tiêu thụ là",
+   "options": ["13,2 kJ", "792 kJ", "52,8 kJ", "3,3 kJ"],
+   "answer": 1,
+   "explanation": "t = 15 phút = 900 s; A = UIt = 220 × 4,0 × 900 = 792 000 J = 792 kJ. Thời gian phải đổi ra giây."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Đèn ghi 220 V – 100 W mắc vào hiệu điện thế 110 V, coi điện trở đèn không đổi. Công suất thực của đèn là",
+   "options": ["25 W", "50 W", "100 W", "200 W"],
+   "answer": 0,
+   "explanation": "R = U_đm²/P_đm = 220²/100 = 484 Ω; P = U²/R = 110²/484 = 25 W. U giảm một nửa thì P giảm 4 lần."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Nguồn điện có suất điện động 9,0 V, điện trở trong 0,5 Ω nối với điện trở ngoài 4,0 Ω. Công suất của nguồn điện là",
+   "options": ["16 W", "2,0 W", "20 W", "18 W"],
+   "answer": 3,
+   "explanation": "I = E/(R + r) = 9,0/4,5 = 2,0 A; P_ng = EI = 18 W. Mạch ngoài nhận UI = 16 W, nguồn toả nhiệt I²r = 2,0 W; 16 + 2 = 18."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Nguồn có suất điện động 12 V, điện trở trong 2,0 Ω nối với điện trở ngoài 4,0 Ω. Hiệu suất của nguồn là",
+   "options": ["66,7 %", "83,3 %", "33,3 %", "50 %"],
+   "answer": 0,
+   "explanation": "H = R/(R + r) = 4,0/6,0 ≈ 66,7 %. Kiểm: I = 2,0 A, U = IR = 8,0 V, U/E = 8/12 = 66,7 %."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Hai pin nối với điện trở ngoài R; điện trở trong r không đổi. Khi R tăng mãi, hiệu suất của nguồn",
+   "options": ["giảm dần, vì cường độ dòng điện giảm", "không đổi, vì suất điện động không đổi", "tăng rồi giảm, lớn nhất khi R = r", "tăng dần, tiến tới 100 % nhưng không đạt"],
+   "answer": 3,
+   "explanation": "H = R/(R + r) tăng theo R và tiến tới 1 khi R rất lớn so với r; không bao giờ bằng 1 vì r > 0. Cực đại tại R = r là của công suất mạch ngoài, không phải hiệu suất."
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "title": "Kiểm tra nhanh — Điện trở. Định luật Ohm",
+ "duration_minutes": 8,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Một điện trở 2,2 kΩ mắc vào hiệu điện thế 11 V. Cường độ dòng điện qua nó là",
+   "options": ["5 A", "5 mA", "0,2 A", "24,2 mA"],
+   "answer": 1,
+   "explanation": "2,2 kΩ = 2200 Ω; I = U/R = 11/2200 = 0,005 A = 5 mA. Đổi kΩ ra Ω trước rồi mới chia; 11/2,2 = 5 A là để nguyên kΩ."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Một điện trở công suất 10 Ω (nhiệt độ ổn định) đang chịu hiệu điện thế 2,0 V. Tăng hiệu điện thế lên 4,0 V thì",
+   "options": ["R tăng lên 20 Ω, I giữ nguyên", "R tăng lên 20 Ω, I tăng gấp đôi", "R vẫn 10 Ω, I tăng từ 0,20 A lên 0,40 A", "R giảm còn 5 Ω, I tăng gấp 4"],
+   "answer": 2,
+   "explanation": "Điện trở do vật liệu, kích thước và nhiệt độ quyết định, không đổi theo U. Theo định luật Ohm I = U/R = 4,0/10 = 0,40 A, gấp đôi."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Cảm biến nhiệt trong pin điện thoại là điện trở nhiệt NTC 10 kΩ. Khi pin sạc nóng lên từ 25 °C tới 45 °C, điện trở của NTC",
+   "options": ["giảm, còn khoảng 4 kΩ", "tăng lên khoảng 11 kΩ, như kim loại", "không đổi, vì NTC không phải kim loại", "giảm về 0, vì NTC trở thành siêu dẫn"],
+   "answer": 0,
+   "explanation": "NTC có hệ số nhiệt điện trở âm: nhiệt độ tăng thì R giảm mạnh (10 kΩ ở 25 °C còn khoảng 4,3 kΩ ở 45 °C). Công thức R = R0[1 + α(t − t0)] với α > 0 chỉ dùng cho kim loại."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Trên cùng đồ thị I theo U, hai đường thẳng qua gốc toạ độ: đường (1) đi qua điểm (4,0 V; 0,40 A), đường (2) đi qua điểm (4,0 V; 0,20 A). Kết luận đúng là",
+   "options": ["R1 = 20 Ω, R2 = 10 Ω; đường dốc hơn có điện trở lớn hơn", "R1 = 0,1 Ω, R2 = 0,05 Ω", "không đủ dữ liệu vì chưa biết nhiệt độ", "R1 = 10 Ω, R2 = 20 Ω; đường dốc hơn có điện trở nhỏ hơn"],
+   "answer": 3,
+   "explanation": "R1 = 4,0/0,40 = 10 Ω; R2 = 4,0/0,20 = 20 Ω. Trên đồ thị I theo U, độ dốc bằng 1/R nên đường dốc hơn ứng với điện trở nhỏ hơn."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Dây tóc vonfram có điện trở R0 = 2,0 Ω ở 20 °C. Khi đèn sáng, dây tóc đạt 2 020 °C. Hệ số nhiệt điện trở của vonfram α = 4,5·10⁻³ K⁻¹. Điện trở dây tóc lúc sáng là",
+   "options": ["0,2 Ω", "20 Ω", "18 Ω", "11 Ω"],
+   "answer": 1,
+   "explanation": "R = R0[1 + α(t − t0)] = 2,0·[1 + 4,5·10⁻³·2000] = 2,0·10 = 20 Ω. Quên số \"1 +\" cho 18 Ω; cộng αΔt thẳng vào R0 cho 11 Ω."
+  }
+ ]
+}

@@ -1,0 +1,193 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Năng lượng điện và công suất điện",
+ "lesson_id": 44,
+ "nguon_trong_bai": "content/lesson-samples/l11-nang-luong-cong-suat-dien/theory.html",
+ "id": "tn-l11-nang-luong-dien-03",
+ "ten": "Hiệu suất của hai pin AA theo điện trở mạch ngoài",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "hieusuatnguon.h_bang_u_chia_e",
+  "hieusuatnguon.h_bang_r_chia_r_cong_r",
+  "congsuatnguon.ei_bang_ui_cong_i2r"
+ ],
+ "muc_tieu": "Đo U ở hai cực nguồn với nhiều giá trị R, tính H = U/E và so với R/(R + r); thấy H tăng theo R và tiến tới 100 % nhưng công suất mạch ngoài lại giảm.",
+ "dung_cu": [
+  {
+   "ten": "Hai pin AA đã dùng một thời gian, mắc nối tiếp",
+   "so_luong": 1,
+   "ghi_chu": "E ≈ 3,0 V, r ≈ 1,0 Ω (pin đã dùng nên r khá lớn; sẽ đo ở Bài 26)"
+  },
+  {
+   "ten": "Hộp điện trở (hoặc bộ điện trở 1, 2, 4, 9 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế một chiều thang 5 V",
+   "so_luong": 1,
+   "ghi_chu": "sai số ±0,05 V"
+  },
+  {
+   "ten": "Ampe kế một chiều thang 3 A",
+   "so_luong": 1,
+   "ghi_chu": "sai số ±0,01 A"
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc hai pin nối tiếp với hộp điện trở R và ampe kế; vôn kế song song với R; khoá K hở.",
+   "Đặt R = 1,0 Ω, đóng K, đọc nhanh U và I rồi mở K ngay.",
+   "Lặp lại với R = 2,0; 4,0; 9,0 Ω, mỗi lần nghỉ 30 s cho pin nguội."
+  ],
+  "quan_sat": [
+   "R tăng thì I giảm từ 1,50 A xuống 0,30 A.",
+   "U tăng dần: 1,50; 2,00; 2,40; 2,70 V, tiến về phía 3,0 V."
+  ],
+  "rut_ra": [
+   "H = U/E lần lượt 50 %, 66,7 %, 80 %, 90 %, khớp R/(R + r) với r = 1,0 Ω.",
+   "R càng lớn so với r, H càng gần 100 % nhưng không chạm vì luôn có r > 0.",
+   "Công suất mạch ngoài UI lại lớn nhất ở R = r = 1,0 Ω (2,25 W) dù H chỉ 50 %."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở mạch ngoài",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 20,
+   "mac_dinh": 4,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Suất điện động",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở trong",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 3,
+   "mac_dinh": 1.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai cực",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "H",
+   "ten": "Hiệu suất nguồn",
+   "don_vi": "%",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P_R",
+   "ten": "Công suất mạch ngoài",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = E/(R + r)",
+   "U = I R = E − I r",
+   "H = U/E = R/(R + r)",
+   "P_R = U I = E² R/(R + r)²",
+   "E I = U I + I² r"
+  ],
+  "gia_thiet": [
+   "E và r không đổi trong lúc đo (đo nhanh, nghỉ giữa các lần)",
+   "vôn kế có điện trở rất lớn, ampe kế điện trở rất nhỏ",
+   "bỏ qua điện trở dây nối, kẹp và ampe kế (chúng nối tiếp với nguồn, thực chất cộng vào r)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "R (Ω)",
+   "I (A)",
+   "U (V)",
+   "H (%)",
+   "P_R (W)"
+  ],
+  "hang": [
+   [
+    1.0,
+    1.5,
+    1.5,
+    50.0,
+    2.25
+   ],
+   [
+    2.0,
+    1.0,
+    2.0,
+    66.7,
+    2.0
+   ],
+   [
+    4.0,
+    0.6,
+    2.4,
+    80.0,
+    1.44
+   ],
+   [
+    9.0,
+    0.3,
+    2.7,
+    90.0,
+    0.81
+   ]
+  ],
+  "ghi_chu": "Tính bằng script từ E = 3,0 V, r = 1,0 Ω: I = E/(R + r), U = IR, H = U/E, P_R = UI. Bảng trong bài hiện 3 cột R, U, H; Hình 3 vẽ bốn điểm này trên đường H = R/(R + 1)."
+ },
+ "ket_qua_ky_vong": "H tăng đơn điệu theo R: 50 → 66,7 → 80 → 90 %; P_R giảm sau R = r.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ hiệu suất lớn nhất khi R = r (đó là công suất mạch ngoài lớn nhất, H lúc đó chỉ 50 %).",
+  "Nghĩ H giảm khi R tăng vì thấy I giảm.",
+  "Lấy E ghi trên pin làm U hai cực khi có dòng."
+ ],
+ "sai_so_thuong_gap": [
+  "Vôn kế ±0,05 V làm H lệch ±1,7 % ở mọi hàng (cùng chia cho E = 3,0 V).",
+  "Pin xả lâu thì r tăng, E giảm → U đo thấp dần; phải đóng K ngắn và nghỉ giữa các lần.",
+  "Dây nối, kẹp và ampe kế nối tiếp với nguồn có điện trở vài phần mười ôm, cộng thêm vào r, nên U và H đo được thấp hơn công thức R/(R + r) một chút, rõ nhất ở R = 1,0 Ω."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "R",
+   "r"
+  ],
+  "dau_ra": [
+   "điểm (R, H) chạy trên đường cong H = R/(R + r)",
+   "cột P_R bên cạnh để thấy cực đại tại R = r",
+   "vôn kế, ampe kế ảo"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo R, chấm đỏ trượt trên đường cong tiến về 100 %; bật thêm đường P_R để thấy hai cực trị không trùng nhau. Bẫy: hỏi trước 'R bao nhiêu thì H lớn nhất?'."
+ },
+ "an_toan": "Không để R = 0 (đoản mạch pin): dòng 3 A làm pin nóng nhanh."
+}

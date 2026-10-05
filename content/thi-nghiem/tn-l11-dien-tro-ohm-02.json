@@ -1,0 +1,166 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trở. Định luật Ohm",
+ "lesson_id": 42,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l11-dien-tro-ohm-02",
+ "ten": "Đo U và I của bóng đèn sợi đốt 6 V – 3 W: đường đặc trưng vôn – ampe cong",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dientro.duong_dac_trung_von_ampe",
+  "dientro.phu_thuoc_nhiet_do",
+  "dientro.den_soi_dot"
+ ],
+ "muc_tieu": "Đo 6 cặp (U, I) của bóng đèn sợi đốt, thấy U/I tăng dần khi đèn sáng hơn, đồ thị I theo U cong với độ dốc giảm dần.",
+ "dung_cu": [
+  {
+   "ten": "Nguồn một chiều điều chỉnh 0–6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn sợi đốt 6 V – 3 W có đế",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế một chiều",
+   "so_luong": 1,
+   "ghi_chu": "độ phân giải 0,01 A"
+  },
+  {
+   "ten": "Vôn kế một chiều",
+   "so_luong": 1,
+   "ghi_chu": "độ phân giải 0,1 V"
+  },
+  {
+   "ten": "Dây nối, khoá K",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dùng lại mạch đo của thí nghiệm điện trở 10 Ω, thay điện trở bằng bóng đèn.",
+   "Chỉnh nguồn để vôn kế chỉ 1,0 V, chờ đèn ổn định (2–3 s), ghi I.",
+   "Tăng U từng 1,0 V tới 6,0 V, mỗi lần chờ ổn định rồi ghi I (6 lần đo)."
+  ],
+  "quan_sat": [
+   "U tăng 6 lần nhưng I chỉ tăng từ 0,17 A lên 0,50 A (chưa tới 3 lần).",
+   "Tỉ số U/I tăng dần từ 5,9 Ω lên 12,0 Ω; đèn càng sáng tỉ số càng lớn."
+  ],
+  "rut_ra": [
+   "Điện trở dây tóc tăng khi nhiệt độ tăng.",
+   "Đường đặc trưng vôn – ampe của đèn không phải đường thẳng: độ dốc giảm dần khi U tăng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai đầu đèn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 6,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Hệ số của đèn 6 V – 3 W (= 0,5/6^0,6)",
+   "don_vi": "A/V^0,6",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1706
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Số đọc ampe kế",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở dây tóc U/I",
+   "don_vi": "Ω",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = k·U^0,6 với k = 0,1706 A/V^0,6 (đèn 6 V – 3 W: I = 0,50 A tại U = 6,0 V)",
+   "R = U/I = U^0,4/k (tăng theo U)",
+   "nguồn gốc số mũ 0,6: công suất toả ra bằng bức xạ P = UI ∝ T^4, điện trở vonfram R = U/I ∝ T, khử T được I^5 ∝ U^3"
+  ],
+  "gia_thiet": [
+   "dây tóc đã nóng đỏ (U ≥ 1 V), toả nhiệt chủ yếu bằng bức xạ",
+   "mô hình I = k·U^0,6 chỉ dùng cho U từ 1 V trở lên; dưới 1 V dây tóc chưa nóng đỏ, không dùng mô hình này để ngoại suy (đường cong dốc nhất sát gốc, không có đoạn \"gần thẳng\" ở U nhỏ)",
+   "R của vonfram coi như tỉ lệ thuận với nhiệt độ tuyệt đối",
+   "đèn đã ổn định nhiệt trước khi đọc số"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U (V)",
+   "I (A)",
+   "U/I (Ω)"
+  ],
+  "hang": [
+   [
+    1.0,
+    0.17,
+    5.9
+   ],
+   [
+    2.0,
+    0.26,
+    7.7
+   ],
+   [
+    3.0,
+    0.33,
+    9.1
+   ],
+   [
+    4.0,
+    0.39,
+    10.3
+   ],
+   [
+    5.0,
+    0.45,
+    11.1
+   ],
+   [
+    6.0,
+    0.5,
+    12.0
+   ]
+  ],
+  "ghi_chu": "I tính từ I = 0,1706·U^0,6 rồi làm tròn tới 0,01 A như số đọc ampe kế; U/I tính từ I đã làm tròn, lấy 1 chữ số thập phân. Không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "U/I tăng đều đặn: 5,9 → 7,7 → 9,1 → 10,3 → 11,1 → 12,0 Ω; các điểm đo nằm phía trên đường thẳng O–(6 V; 0,50 A).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ R tăng vì U tăng (theo R = U/I) chứ không phải vì dây tóc nóng.",
+  "Coi đường cong là do đo sai và cố vẽ đường thẳng qua các điểm.",
+  "Cho rằng điện trở nguội và điện trở sáng của đèn bằng nhau."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc I khi đèn chưa ổn định nhiệt (I còn đang giảm).",
+  "Ampe kế ±0,01 A làm hàng 1,0 V lệch tới 6 %.",
+  "Nguồn sụt áp khi dòng tăng, phải chỉnh lại U trước khi ghi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "U"
+  ],
+  "dau_ra": [
+   "I và R theo U",
+   "đồ thị I theo U: đường cong của đèn và đường thẳng 12 Ω để so sánh",
+   "độ sáng dây tóc đổi màu theo nhiệt độ"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Kéo U, thấy điểm đo chạy trên đường cong và tách dần khỏi đường thẳng 12 Ω; hiện R = U/I bên cạnh."
+ },
+ "an_toan": "Nguồn 6 V, không nguy hiểm. Không vượt 6 V kẻo cháy đèn; bóng nóng, không chạm tay."
+}

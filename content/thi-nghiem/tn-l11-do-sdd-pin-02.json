@@ -1,0 +1,203 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Thực hành: Đo suất điện động và điện trở trong của pin điện hoá",
+ "lesson_id": 45,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-sdd-pin/theory.html",
+ "id": "tn-l11-do-sdd-pin-02",
+ "ten": "Lặp lại phép đo với pin mới cùng loại: so sánh r của pin mới và pin cũ",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "nguondien.do_e_r_bang_do_thi",
+  "nguondien.r_tang_khi_pin_cu"
+ ],
+ "muc_tieu": "Đo E, r của pin mới bằng cùng mạch và cùng 6 giá trị Rx, so với pin cũ: E gần nhau nhưng r pin mới nhỏ hơn khoảng 3 lần (0,26 so với 0,82 Ω) — giải thích vì sao pin 'còn 1,5 V' vẫn không chạy nổi động cơ.",
+ "dung_cu": [
+  {
+   "ten": "Pin AA 1,5 V",
+   "so_luong": 1,
+   "ghi_chu": "pin mới cùng loại, mô hình E = 1,58 V, r = 0,25 Ω"
+  },
+  {
+   "ten": "Biến trở 0–100 Ω",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở bảo vệ R0 = 2,0 Ω (đã biết giá trị)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ đa năng hiện số làm vôn kế (thang 2 V DC, đọc tới 0,01 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ đa năng hiện số làm ampe kế (thang 2 A DC, đọc tới 0,001 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bảng lắp mạch và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thay pin mới vào mạch của thí nghiệm 01, giữ nguyên R0 = 2,0 Ω và cách mắc vôn kế, ampe kế.",
+   "Lặp lại 6 lần đo với Rx = 100; 20; 10; 5; 2; 0 Ω (đóng K, đọc nhanh, ngắt K).",
+   "Chấm 6 điểm lên cùng hệ trục với pin cũ, kẻ đường thẳng, đọc giao trục U và hai điểm trên đường."
+  ],
+  "quan_sat": [
+   "U chỉ tụt từ 1,58 V xuống 1,40 V dù I lên tới 0,701 A.",
+   "Đường thẳng của pin mới thoải hơn hẳn đường của pin cũ."
+  ],
+  "rut_ra": [
+   "E pin mới ≈ 1,58 V, r ≈ 0,26 Ω (hai điểm (0; 1,58) và (0,500; 1,45)); pin cũ r ≈ 0,82 Ω.",
+   "Pin 'hết' chủ yếu vì r tăng, không phải vì mất E: với dòng 0,5 A pin mới chỉ tụt 0,13 V, pin cũ tụt 0,41 V."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E",
+   "ten": "Suất điện động của pin",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1.0,
+   "max": 1.7,
+   "mac_dinh": 1.58,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở trong của pin",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 3.0,
+   "mac_dinh": 0.25,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "Rx",
+   "ten": "Giá trị biến trở",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "R0",
+   "ten": "Điện trở bảo vệ",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 2.0
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.002
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai cực pin",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "r_do",
+   "ten": "Điện trở trong tính từ đồ thị",
+   "don_vi": "Ω",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "E_do",
+   "ten": "Suất điện động tính từ giao trục U",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = E/(R0 + Rx + r)",
+   "U = E − I·r",
+   "r = (U1 − U2)/(I2 − I1) với hai điểm trên đường thẳng U–I",
+   "E = U tại I = 0 (giao trục U)"
+  ],
+  "gia_thiet": [
+   "vôn kế có điện trở rất lớn (bỏ qua dòng qua vôn kế)",
+   "ampe kế, dây nối, chuôi cắm có điện trở không đáng kể so với R0 + Rx",
+   "E và r không đổi trong lúc đo (đóng K ngắn)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Rx (Ω)",
+   "I (A)",
+   "U (V)"
+  ],
+  "hang": [
+   [
+    100,
+    0.015,
+    1.58
+   ],
+   [
+    20,
+    0.073,
+    1.56
+   ],
+   [
+    10,
+    0.129,
+    1.55
+   ],
+   [
+    5,
+    0.217,
+    1.53
+   ],
+   [
+    2,
+    0.372,
+    1.49
+   ],
+   [
+    0,
+    0.701,
+    1.4
+   ]
+  ],
+  "ghi_chu": "Tính bằng script từ I = E/(R0 + Rx + r), U = E − I·r, rồi cộng nhiễu đều ngẫu nhiên trong ±0,002 A và ±0,01 V (random.Random(seed).uniform) và làm tròn I tới 0,001 A, U tới 0,01 V để mô phỏng sai số dụng cụ. Mô hình E = 1,58 V, r = 0,25 Ω, R0 = 2,0 Ω, seed = 11. Khớp bình phương tối thiểu: U = 1,583 − 0,259·I. Hai điểm trên đường (0; 1,58) và (0,500; 1,45) cho r = 0,26 Ω. Sáu cặp này được liệt kê trong hộp 'Lặp lại với pin mới' ở mục V của bài."
+ },
+ "ket_qua_ky_vong": "E = 1,58 ± 0,01 V; r = 0,26 ± 0,04 Ω (tính theo cách của bài: hai điểm trên đường thẳng khớp (0; 1,58) và (0,500; 1,45), ΔU = 0,13 V → Δr/r ≈ 0,02/0,13 + 0,004/0,500 ≈ 0,16); hệ số góc nhỏ hơn pin cũ khoảng 3 lần.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ pin cũ và pin mới khác nhau ở E (thực ra E gần nhau, khác nhiều ở r).",
+  "Nghĩ đo hở mạch là đủ để biết pin còn tốt hay không."
+ ],
+ "sai_so_thuong_gap": [
+  "Với r nhỏ, hiệu U giữa hai điểm nhỏ (0,13 V), sai số tỉ đối của r lớn hơn (≈16 % so với ≈6 % ở pin cũ, cùng cách hai điểm trên đường) — cần hai điểm thật xa nhau."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi",
+  "dieu_khien": [
+   "E",
+   "r",
+   "Rx"
+  ],
+  "dau_ra": [
+   "hai đường thẳng U–I (pin cũ, pin mới) trên cùng hệ trục",
+   "hiệu điện thế hai đầu động cơ 0,5 A cho từng pin"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Chồng hai bộ số liệu lên một đồ thị; kéo thanh trượt r của một pin để thấy đường xoay quanh giao trục U; hiển thị 'động cơ 0,5 A nhận bao nhiêu vôn' cho từng pin."
+ },
+ "an_toan": "Như thí nghiệm 01: không đoản mạch pin, không đóng K lâu."
+}

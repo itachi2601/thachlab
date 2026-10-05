@@ -1,0 +1,176 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Nguồn điện",
+ "lesson_id": 43,
+ "nguon_trong_bai": "content/lesson-samples/l11-nguon-dien/theory.html",
+ "id": "tn-l11-nguon-dien-03",
+ "ten": "Nối tắt pin tiểu: dòng đoản mạch chỉ còn bị r giới hạn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nguondien.doan_mach",
+  "nguondien.ohm_toan_mach",
+  "nguondien.dien_tro_trong"
+ ],
+ "muc_tieu": "Thấy khi R → 0, dòng điện tăng vọt tới ℰ/r, dây nóng lên rõ (pin chỉ ấm nếu giữ lâu hơn); nguồn có r càng nhỏ thì đoản mạch càng nguy hiểm.",
+ "dung_cu": [
+  {
+   "ten": "Pin tiểu AA mới (ℰ ≈ 1,5 V, r ≈ 0,3 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây đồng mảnh (đường kính ~0,3 mm) dài 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Kẹp cá sấu có vỏ cách điện",
+   "so_luong": 2
+  },
+  {
+   "ten": "Ampe kế số thang 10 A (tuỳ chọn, mắc nối tiếp với dây)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kẹp hai đầu dây đồng vào hai kẹp cá sấu; nếu có ampe kế 10 A thì mắc nối tiếp với dây.",
+   "Chạm hai kẹp vào hai cực pin tiểu mới, giữ đúng 3 giây rồi tháo ra.",
+   "Sờ nhẹ dây (sau khi đã tháo) và vỏ pin."
+  ],
+  "quan_sat": [
+   "Dây nóng lên rõ, có thể nóng không cầm được; vỏ pin chỉ ấm lên nếu giữ lâu hơn vài chục giây.",
+   "Ampe kế chỉ cỡ vài ampe (khoảng 4–5 A với pin mới), gấp hàng trăm lần dòng qua một LED (~0,02 A)."
+  ],
+  "rut_ra": [
+   "Khi R ≈ 0 chỉ còn điện trở trong r giới hạn dòng: I = ℰ/(r + R_dây) ≈ ℰ/r.",
+   "Pin đã dùng (r ≈ 1,0 Ω) đoản mạch chỉ ra 1,5 A; ắc quy xe máy (r = 0,02 Ω) ra hàng trăm ampe, đủ làm cháy dây — không bao giờ nối tắt ắc quy hay pin lithium."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E",
+   "ten": "Suất điện động của nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 13,
+   "mac_dinh": 1.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở trong",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 3,
+   "mac_dinh": 0.3,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "R_day",
+   "ten": "Điện trở dây nối tắt",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng đoản mạch",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian nối tắt",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 3
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = E / (r + R_day)",
+   "Đoản mạch lí tưởng (R_day = 0): I_dm = E / r",
+   "Nhiệt toả trong nguồn trong thời gian t: Q = r·I²·t"
+  ],
+  "gia_thiet": [
+   "E, r không đổi trong 3 giây nối tắt",
+   "bỏ qua điện trở tiếp xúc của kẹp"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Nguồn",
+   "E (V)",
+   "r (Ω)",
+   "R_day (Ω)",
+   "I (A)"
+  ],
+  "hang": [
+   [
+    "pin AA mới",
+    1.5,
+    0.3,
+    0,
+    5.0
+   ],
+   [
+    "pin AA mới, dây 0,05 Ω",
+    1.5,
+    0.3,
+    0.05,
+    4.3
+   ],
+   [
+    "pin AA đã dùng",
+    1.5,
+    1.0,
+    0,
+    1.5
+   ],
+   [
+    "ắc quy xe máy",
+    12.6,
+    0.02,
+    0,
+    630.0
+   ]
+  ],
+  "ghi_chu": "Tính từ I = E/(r + R_day). Hai hàng \"pin AA mới\" (5 A) và \"ắc quy xe máy\" (630 A) là hai số nêu trong bài, mục II.4. Hàng \"pin AA đã dùng\" dùng pin của thí nghiệm 02 (r = 1,0 Ω)."
+ },
+ "ket_qua_ky_vong": "Pin mới: dòng cỡ 4–5 A, dây và pin nóng rõ sau 3 s; pin đã dùng (r ≈ 1,0 Ω): dòng nhỏ hơn hẳn, dây chỉ hơi ấm.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ đoản mạch thì dòng \"vô cùng lớn\" (thực ra bị r giới hạn: I = E/r).",
+  "Nghĩ nguồn có E lớn mới nguy hiểm khi đoản mạch (thực ra r nhỏ mới quyết định: ắc quy 12 V nguy hiểm hơn nhiều pin 9 V có r vài ôm).",
+  "Nghĩ pin nóng lên là vì \"dây truyền nhiệt vào pin\" (thực ra nhiệt r·I²·t toả ngay bên trong pin)."
+ ],
+ "sai_so_thuong_gap": [
+  "Kẹp tiếp xúc kém làm thêm điện trở, dòng đo được nhỏ hơn E/r.",
+  "Giữ quá 3 s: pin nóng, E giảm và r tăng, số chỉ ampe kế tụt dần."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "E",
+   "r",
+   "R_day"
+  ],
+  "dau_ra": [
+   "số chỉ ampe kế",
+   "độ nóng của dây (đổi màu theo I²)",
+   "cột so sánh I đoản mạch của pin mới / pin đã dùng / ắc quy"
+  ],
+  "hinh_trong_bai": "không có hình riêng (hộp thí nghiệm mục II.4)",
+  "y_tuong": "Chọn loại nguồn (pin mới, pin đã dùng, ắc quy) rồi kéo R_day về 0: ampe kế tăng vọt, dây đổi màu đỏ. Cho học sinh dự đoán trước: nguồn nào cho dòng đoản mạch lớn nhất — nguồn có E lớn hay nguồn có r nhỏ?"
+ },
+ "an_toan": "Chỉ làm với pin tiểu kiềm/kẽm-carbon, tối đa 3 giây, dùng kẹp có vỏ cách điện. Tuyệt đối không nối tắt ắc quy, pin lithium (điện thoại, sạc dự phòng): dòng hàng trăm ampe gây cháy nổ."
+}

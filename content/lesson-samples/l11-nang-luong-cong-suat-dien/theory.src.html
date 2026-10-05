@@ -1,0 +1,412 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Tính <strong>năng lượng điện</strong> $A = UIt$, <strong>công suất</strong> $P = UI = I^2R = U^2/R$; đổi J ↔ kWh; đọc nhãn "220 V – 100 W".</li>
+<li>Phân biệt công suất của <strong>nguồn</strong> $\mathcal{E}I$ với công suất <strong>mạch ngoài</strong> $UI$; tính hiệu suất nguồn $H = U/\mathcal{E} = R/(R + r)$.</li>
+<li>Giải thích vì sao <strong>đoản mạch</strong> gây cháy; chọn cầu chì.</li>
+</ul>
+<p>Cuối bài em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 16 phút · 8 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: con số trên hoá đơn tiền điện</h3>
+
+<p>Cuối tháng, hoá đơn tiền điện nhà em ghi: <strong>"Điện năng tiêu thụ: 312 kWh"</strong>. Mẹ gọi là "312 số điện".</p>
+
+<p>Trong xưởng cơ khí, nhãn trục chính máy phay CNC ghi <strong>"2,2 kW"</strong>. Chạy một ca 8 giờ, xưởng trả bao nhiêu "số"? kW và kWh nhìn gần giống nhau, nhưng hoá đơn chỉ tính bằng một thứ.</p>
+
+<p>Câu hỏi để nghĩ: <strong>"số điện" đo cái gì</strong> — công suất, hay năng lượng?</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Một bóng đèn 100 W sáng liên tục 10 giờ. Nó "ăn" bao nhiêu số điện?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q1" id="tl44-q1a"><label for="tl44-q1a" class="tl-opt tl-no">A. 100 số, vì công suất là 100 W</label>
+<input type="radio" name="tl44-q1" id="tl44-q1b"><label for="tl44-q1b" class="tl-opt tl-no">B. 1000 số, vì 100 nhân 10</label>
+<input type="radio" name="tl44-q1" id="tl44-q1c"><label for="tl44-q1c" class="tl-opt tl-ok">C. 1 số</label>
+<input type="radio" name="tl44-q1" id="tl44-q1d"><label for="tl44-q1d" class="tl-opt tl-no">D. 10 số, vì 10 giờ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $100\ \text{W} \times 10\ \text{h} = 1000\ \text{Wh} = 1\ \text{kWh}$, tức 1 "số". Số điện là <em>năng lượng</em>: công suất nhân thời gian.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — 100 là công suất (W), chưa nhân thời gian thì chưa phải năng lượng. B — $100 \times 10 = 1000$ đúng, nhưng đơn vị là Wh; chia 1000 mới ra kWh. D — 10 là số giờ, không phải số điện. Nhớ: kWh = kW nhân số giờ.</p></div>
+</div>
+</div>
+
+<h3>II. Năng lượng điện và công suất điện</h3>
+
+<h4>1. Năng lượng điện tiêu thụ: A = UIt</h4>
+
+<p><strong>🔑 U nhân I nhân t · Jun hoặc kWh</strong></p>
+
+<ul>
+<li>Dòng điện qua đoạn mạch: lực điện thực hiện công $A = qU$.</li>
+<li>Mà $q = It$, nên $A = UIt$; $U$ (V), $I$ (A), $t$ (s) thì $A$ ra jun (J).</li>
+<li>Điện năng biến thành: <strong>nhiệt</strong> (bàn là), <strong>cơ</strong> (trục chính CNC), <strong>hoá</strong> (sạc pin), <strong>quang</strong> (đèn LED).</li>
+<li>Đoạn mạch <strong>chỉ toả nhiệt</strong> (bàn là): toàn bộ $A$ thành nhiệt lượng $Q = UIt = I^2Rt = \dfrac{U^2}{R}t$ — định luật Jun–Len-xơ.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đơn vị kWh và công tơ điện</p>
+<p>$1$ kWh = thiết bị $1$ kW dùng trong $1$ giờ $= 1000 \cdot 3600 = 3{,}6 \cdot 10^{6}$ J.</p>
+<p><strong>Công tơ điện</strong> đếm số kWh: đo <em>năng lượng</em>, không đo công suất.</p>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-01">
+<p class="tl-label">🔬 Ví dụ: đọc công tơ khi đun ấm nước</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tắt mọi thiết bị, chỉ cắm ấm siêu tốc $1800$ W. Ghi chỉ số công tơ lúc bật ($1234{,}5$ kWh) và lúc tắt sau đúng $10$ phút (đổ thêm nước lạnh nếu ấm tự ngắt).</li>
+<li><strong>Quan sát:</strong> chỉ số thành $1234{,}8$ kWh, tăng $0{,}3$ kWh — công tơ đọc tới $0{,}1$ kWh nên chỉ chắc tới $\pm 0{,}1$.</li>
+<li><strong>Rút ra:</strong> $A = Pt = 1{,}8\ \text{kW} \cdot \tfrac{1}{6}\ \text{h} = 0{,}3$ kWh, khớp công tơ. Đổi ra jun: $0{,}3 \cdot 3{,}6\cdot10^{6} = 1{,}08\cdot10^{6}$ J.</li>
+</ol>
+</div>
+
+<p>Bàn là mắc vào $220$ V, dòng $4{,}0$ A, dùng $15$ phút. Năng lượng điện tiêu thụ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q2" id="tl44-q2a"><label for="tl44-q2a" class="tl-opt tl-no">A. $13{,}2$ kJ</label>
+<input type="radio" name="tl44-q2" id="tl44-q2b"><label for="tl44-q2b" class="tl-opt tl-ok">B. $792$ kJ</label>
+<input type="radio" name="tl44-q2" id="tl44-q2c"><label for="tl44-q2c" class="tl-opt tl-no">C. $52{,}8$ kJ</label>
+<input type="radio" name="tl44-q2" id="tl44-q2d"><label for="tl44-q2d" class="tl-opt tl-no">D. $3{,}3$ kJ</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t = 15 \cdot 60 = 900$ s; $A = UIt = 220 \cdot 4{,}0 \cdot 900 = 792\,000$ J $= 792$ kJ, tức $0{,}22$ kWh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $220 \cdot 4 \cdot 15 = 13\,200$: em để nguyên $t = 15$, chưa đổi phút ra giây. C — $220 \cdot 4 \cdot 60$: mới nhân với 1 phút. D — $220 \cdot 15 = 3300$: quên nhân $I$. Thời gian trong $A = UIt$ phải tính bằng giây.</p></div>
+</div>
+
+<h4>2. Công suất điện: P = UI</h4>
+
+<p><strong>🔑 Công suất = năng lượng mỗi giây</strong></p>
+
+<ul>
+<li>$P = \dfrac{A}{t} = UI$, đơn vị oát (W); $1$ W $= 1$ J/s.</li>
+<li>Chỉ toả nhiệt: $P = I^2R = \dfrac{U^2}{R}$.</li>
+<li>Nhãn <strong>"220 V – 100 W"</strong>: hiệu điện thế định mức $U_{\text{đm}} = 220$ V, công suất định mức $P_{\text{đm}} = 100$ W — công suất khi dùng <em>đúng</em> $U_{\text{đm}}$.</li>
+<li>Từ nhãn suy ra: $I_{\text{đm}} = P_{\text{đm}}/U_{\text{đm}}$ và $R = U_{\text{đm}}^2/P_{\text{đm}}$. Đèn 220 V – 100 W có $R = 220^2/100 = 484\ \Omega$.</li>
+</ul>
+
+<p>Mẹo nhớ: <strong>"U bình chia P ra R"</strong>.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-02">
+<p class="tl-label">🔬 Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối đèn hậu xe máy với nguồn chỉnh được, ampe kế nối tiếp, vôn kế song song với đèn. Đặt $12{,}0$ V, rồi thử $9{,}0$ V và $6{,}0$ V.</li>
+<li><strong>Quan sát:</strong> $12{,}0$ V: $1{,}75$ A, sáng bình thường; $9{,}0$ V: $1{,}55$ A; $6{,}0$ V: $1{,}30$ A, đỏ mờ.</li>
+<li><strong>Rút ra:</strong> $P = UI = 12{,}0 \cdot 1{,}75 = 21$ W, đúng nhãn. Điện trở dây tóc khi sáng: $R = 12/1{,}75 \approx 6{,}9\ \Omega$.</li>
+</ol>
+</div>
+
+<p>Đèn 220 V – 100 W mắc vào $110$ V, coi $R$ không đổi. Công suất thực của đèn là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl44-sure3" value="chac"> Chắc</label> <label><input type="radio" name="tl44-sure3" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q3" id="tl44-q3a"><label for="tl44-q3a" class="tl-opt tl-ok">A. $25$ W</label>
+<input type="radio" name="tl44-q3" id="tl44-q3b"><label for="tl44-q3b" class="tl-opt tl-no">B. $50$ W</label>
+<input type="radio" name="tl44-q3" id="tl44-q3c"><label for="tl44-q3c" class="tl-opt tl-no">C. $100$ W</label>
+<input type="radio" name="tl44-q3" id="tl44-q3d"><label for="tl44-q3d" class="tl-opt tl-no">D. $200$ W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R = 484\ \Omega$ không đổi, $P = U^2/R = 110^2/484 = 25$ W. $U$ giảm một nửa thì $P$ giảm $2^2 = 4$ lần. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — $50$ W là chia đôi: em coi $P$ tỉ lệ với $U$, nhưng $P = U^2/R$ tỉ lệ với $U^2$. C — 100 W chỉ đúng khi mắc vào đúng $220$ V. D — nhân đôi là ngược chiều: $U$ giảm thì $P$ phải giảm. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>3. Công và công suất của nguồn điện</h4>
+
+<p><strong>🔑 Nguồn: $\mathcal{E}$ nhân I · Mạch ngoài: U nhân I</strong></p>
+
+<ul>
+<li>Nguồn đẩy điện lượng $q = It$ qua cả mạch kín. Công của nguồn: $A_{ng} = q\mathcal{E} = \mathcal{E}It$.</li>
+<li>Công suất của nguồn: $P_{ng} = \mathcal{E}I$.</li>
+<li>Nhắc lại Bài 24: $U = \mathcal{E} - Ir$. Nhân hai vế với $I$: $\mathcal{E}I = UI + I^2r$.</li>
+<li>Nguồn phát $\mathcal{E}I$ → mạch ngoài nhận $UI$ (có ích) + nguồn tự nóng $I^2r$ (hao phí).</li>
+<li>Ví dụ: sạc dự phòng ấm lên khi xả dòng lớn — đó là $I^2r$ toả ngay trong pin.</li>
+</ul>
+
+<!--FIG2-->
+
+<h4>4. Hiệu suất của nguồn điện</h4>
+
+<p><strong>🔑 Có ích chia toàn phần · U chia $\mathcal{E}$</strong></p>
+
+<p>$$H = \dfrac{A_{\text{ích}}}{A_{\text{tp}}} = \dfrac{UIt}{\mathcal{E}It} = \dfrac{U}{\mathcal{E}}$$</p>
+
+<ul>
+<li>Mạch ngoài thuần điện trở, $R$ là điện trở tương đương: $U = IR$, $\mathcal{E} = I(R + r)$ nên $H = \dfrac{R}{R + r}$. Có động cơ hay máy thu: chỉ dùng $H = U/\mathcal{E}$.</li>
+<li>$R$ càng lớn so với $r$, $H$ càng gần $100\ \%$.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-03">
+<p class="tl-label">🔬 Thí nghiệm đo: hiệu suất của hai pin AA</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hai pin AA nối tiếp ($\mathcal{E} = 3{,}0$ V, $r = 1{,}0\ \Omega$) nối với hộp điện trở $R$, ampe kế nối tiếp, vôn kế song song với $R$. Đặt lần lượt $R = 1{,}0$; $2{,}0$; $4{,}0$; $9{,}0\ \Omega$, đọc $U$ và $I$.</li>
+<li><strong>Quan sát:</strong> $R$ tăng thì $I$ giảm ($1{,}50 \to 0{,}30$ A) nhưng $U$ tăng dần về phía $3{,}0$ V.</li>
+<li><strong>Rút ra:</strong> $H = U/\mathcal{E}$ tăng theo $R$, khớp $R/(R + r)$.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$R$ ($\Omega$)</th><th>$U$ (V)</th><th>$H = U/\mathcal{E}$</th></tr></thead>
+<tbody>
+<tr><td>$1{,}0$</td><td>$1{,}50$</td><td>$50\ \%$</td></tr>
+<tr><td>$2{,}0$</td><td>$2{,}00$</td><td>$66{,}7\ \%$</td></tr>
+<tr><td>$4{,}0$</td><td>$2{,}40$</td><td>$80\ \%$</td></tr>
+<tr><td>$9{,}0$</td><td>$2{,}70$</td><td>$90\ \%$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>So với công thức $H = \dfrac{R}{R + 1}$: $\dfrac{1}{2}$, $\dfrac{2}{3}$, $\dfrac{4}{5}$, $\dfrac{9}{10}$. Khớp.</p>
+
+<!--FIG3-->
+
+<details class="tl-details">
+<summary>👀 Sai số đến từ đâu?</summary>
+<p>Vôn kế lệch $\pm 0{,}05$ V: ở hàng $U = 1{,}50$ V, $H$ lệch tới $0{,}05/3{,}0 \approx 0{,}017$, tức $1{,}7$ điểm phần trăm ($50\ \%$ thành $48$–$52\ \%$); ở hàng $2{,}70$ V cũng lệch $1{,}7$ điểm phần trăm vì cùng chia cho $\mathcal{E}$. Lớn hơn là sai số của $\mathcal{E}$ và $r$: pin xả lâu thì $r$ tăng, $\mathcal{E}$ giảm, nên đo nhanh và nghỉ giữa các lần. Dây nối, kẹp và ampe kế nối tiếp với nguồn cộng thêm vào $r$, nên $U$, $H$ đo thấp hơn công thức một chút.</p>
+</details>
+
+<p>Nhìn bảng: khi $R$ tăng mãi, hiệu suất nguồn thay đổi thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q4" id="tl44-q4a"><label for="tl44-q4a" class="tl-opt tl-no">A. Giảm, vì $I$ giảm</label>
+<input type="radio" name="tl44-q4" id="tl44-q4b"><label for="tl44-q4b" class="tl-opt tl-no">B. Không đổi, vì $\mathcal{E}$ không đổi</label>
+<input type="radio" name="tl44-q4" id="tl44-q4c"><label for="tl44-q4c" class="tl-opt tl-no">C. Tăng rồi giảm, lớn nhất khi $R = r$</label>
+<input type="radio" name="tl44-q4" id="tl44-q4d"><label for="tl44-q4d" class="tl-opt tl-ok">D. Tăng dần, tiến tới $100\ \%$ nhưng không chạm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H = R/(R + r)$: $R$ càng lớn thì $r$ càng "lép", $H$ tiến sát 1. Không bao giờ bằng 1 vì luôn có $r \gt 0$. Đổi lại, $I$ rất nhỏ nên mạch ngoài nhận ít công suất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $I$ giảm nhưng $U$ tăng; $H$ đi theo $U$, không theo $I$. B — $\mathcal{E}$ không đổi, nhưng $U = \mathcal{E} - Ir$ đổi theo $I$. C — "lớn nhất khi $R = r$" là chuyện của <em>công suất mạch ngoài</em>, không phải hiệu suất (xem ⭐⭐⭐ cuối bài). Đọc lại cột $H$: chỉ tăng.</p></div>
+</div>
+
+<h4>5. An toàn điện: đoản mạch và cầu chì</h4>
+
+<p><strong>🔑 Đoản mạch · I = $\mathcal{E}$/r rất lớn · cầu chì đứt trước</strong></p>
+
+<ul>
+<li><strong>Đoản mạch</strong> (ngắn mạch): hai cực nguồn nối thẳng, $R \to 0$, dòng $I = \mathcal{E}/r$ rất lớn vì $r$ nhỏ.</li>
+<li>Nhiệt $I^2r$ trong nguồn và $I^2R_{\text{dây}}$ tăng vọt → cháy. Pin cũ ($r$ lớn) hay xả dòng lớn: phần đáng kể năng lượng hao thành nhiệt ngay trong nguồn.</li>
+<li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$ bị cờ lê chạm hai cực: $I = 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W — cờ lê đỏ rực, ắc quy có thể nổ.</li>
+<li>Bảo vệ: <strong>cầu chì / aptomat</strong> đúng dòng định mức, đứt trước khi dây nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
+</ul>
+
+<details class="tl-details">
+<summary>👀 Xem thêm: chọn cầu chì thế nào?</summary>
+<p>Dòng định mức của cầu chì lấy hơi lớn hơn dòng làm việc của mạch. Ấm 220 V – 1800 W có $I = 1800/220 \approx 8{,}2$ A: dùng cầu chì $10$ A. Chọn $30$ A thì dây đã cháy mà cầu chì chưa đứt; chọn $5$ A thì vừa bật ấm đã đứt.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: kW và kWh là một</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>kW — công suất</th><th>kWh — năng lượng</th></tr></thead>
+<tbody>
+<tr><td>Trên nhãn máy: "2,2 kW"</td><td>Trên hoá đơn: "312 kWh"</td></tr>
+<tr><td>Tốc độ tiêu thụ, mỗi giây</td><td>Tổng tiêu thụ sau một thời gian</td></tr>
+<tr><td>$1$ kW $= 1000$ J/s</td><td>$1$ kWh $= 3{,}6\cdot10^{6}$ J</td></tr>
+<tr><td>Không phụ thuộc dùng bao lâu</td><td>$=$ kW $\times$ số giờ</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Điều hoà $1{,}2$ kW chạy liên tục $8$ giờ mỗi đêm, trong $30$ đêm. Điện năng tiêu thụ là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl44-sure5" value="chac"> Chắc</label> <label><input type="radio" name="tl44-sure5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q5" id="tl44-q5a"><label for="tl44-q5a" class="tl-opt tl-no">A. $9{,}6$ kWh</label>
+<input type="radio" name="tl44-q5" id="tl44-q5b"><label for="tl44-q5b" class="tl-opt tl-ok">B. $288$ kWh</label>
+<input type="radio" name="tl44-q5" id="tl44-q5c"><label for="tl44-q5c" class="tl-opt tl-no">C. $36$ kWh</label>
+<input type="radio" name="tl44-q5" id="tl44-q5d"><label for="tl44-q5d" class="tl-opt tl-no">D. $288$ kW</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1{,}2 \cdot 8 \cdot 30 = 288$ kWh. Hoá đơn ghi 288 số — riêng cái điều hoà, và là cận trên: thực tế máy nén có lúc nghỉ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $9{,}6$ kWh mới là một đêm, chưa nhân 30. C — $1{,}2 \cdot 30$: quên nhân 8 giờ. D — số đúng nhưng đơn vị sai: kW là công suất, năng lượng phải là kWh. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: công suất của nguồn là công suất mạch ngoài</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Công suất nguồn $\mathcal{E}I$</th><th>Công suất mạch ngoài $UI$</th></tr></thead>
+<tbody>
+<tr><td>Toàn phần: cả phần nóng trong nguồn</td><td>Chỉ phần có ích</td></tr>
+<tr><td>$\mathcal{E}$ ghi trên pin</td><td>$U$ đo ở hai cực khi có dòng</td></tr>
+<tr><td>Lớn hơn $UI$ một phần $I^2r$</td><td>Nhỏ hơn $\mathcal{E}I$ khi $I \neq 0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Nguồn $\mathcal{E} = 9{,}0$ V, $r = 0{,}5\ \Omega$ nối với $R = 4{,}0\ \Omega$. Công suất của nguồn là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q6" id="tl44-q6a"><label for="tl44-q6a" class="tl-opt tl-no">A. $16$ W</label>
+<input type="radio" name="tl44-q6" id="tl44-q6b"><label for="tl44-q6b" class="tl-opt tl-no">B. $2{,}0$ W</label>
+<input type="radio" name="tl44-q6" id="tl44-q6c"><label for="tl44-q6c" class="tl-opt tl-no">C. $20$ W</label>
+<input type="radio" name="tl44-q6" id="tl44-q6d"><label for="tl44-q6d" class="tl-opt tl-ok">D. $18$ W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $I = 9{,}0/4{,}5 = 2{,}0$ A; $P_{ng} = \mathcal{E}I = 18$ W. Trong đó mạch ngoài nhận $UI = 8{,}0 \cdot 2{,}0 = 16$ W, nguồn nóng $I^2r = 2{,}0$ W.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $16$ W là $UI$, công suất <em>mạch ngoài</em>, đề hỏi nguồn. B — $2{,}0$ W là $I^2r$, phần nóng trong nguồn. C — $20 = 18 + 2$: em cộng nhiệt thêm một lần nữa, nhưng $I^2r$ đã nằm sẵn trong $\mathcal{E}I$. Nguồn phát $\mathcal{E}I$, chia ra $UI + I^2r$.</p></div>
+</div>
+
+<h4>Bẫy 3: đèn công suất lớn thì luôn sáng hơn</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Nối tiếp — cùng $I$</th><th>Song song — cùng $U$</th></tr></thead>
+<tbody>
+<tr><td>Dùng $P = I^2R$</td><td>Dùng $P = U^2/R$</td></tr>
+<tr><td>$R$ lớn nhận nhiều hơn</td><td>$R$ nhỏ nhận nhiều hơn</td></tr>
+<tr><td>Đèn định mức <em>nhỏ</em> ($R$ lớn) sáng hơn</td><td>Đèn định mức <em>lớn</em> sáng hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Đèn 1 ghi 220 V – 100 W, đèn 2 ghi 220 V – 40 W, mắc <strong>nối tiếp</strong> vào $220$ V (coi $R$ không đổi). Đèn nào sáng hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q7" id="tl44-q7a"><label for="tl44-q7a" class="tl-opt tl-no">A. Đèn 1, vì $100$ W lớn hơn $40$ W</label>
+<input type="radio" name="tl44-q7" id="tl44-q7b"><label for="tl44-q7b" class="tl-opt tl-no">B. Như nhau, vì cùng dòng điện chạy qua</label>
+<input type="radio" name="tl44-q7" id="tl44-q7c"><label for="tl44-q7c" class="tl-opt tl-ok">C. Đèn 2, vì $R$ lớn hơn và $P = I^2R$</label>
+<input type="radio" name="tl44-q7" id="tl44-q7d"><label for="tl44-q7d" class="tl-opt tl-no">D. Cả hai sáng đúng định mức, vì mắc đúng $220$ V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_1 = 484\ \Omega$, $R_2 = 1210\ \Omega$, $I = 220/1694 \approx 0{,}13$ A. $P_1 = I^2R_1 \approx 8{,}2$ W, $P_2 \approx 20{,}4$ W: đèn 40 W sáng hơn, cả hai đều mờ. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — 100 W là công suất khi đèn được đúng 220 V; nối tiếp thì mỗi đèn chỉ được một phần. B — cùng $I$ nhưng $R$ khác nhau, nên $I^2R$ khác nhau. D — 220 V chia cho hai đèn, không đèn nào đủ 220 V. Nối tiếp: hỏi $R$ nào lớn hơn.</p></div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Năng lượng điện tiêu thụ: công thức, đơn vị, đo bằng gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$A = UIt$ · jun (J) · $1$ kWh $= 3{,}6\cdot10^{6}$ J · đo bằng công tơ điện. Chỉ toả nhiệt: $Q = I^2Rt$.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Công suất điện là gì? Ba cách viết? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Năng lượng tiêu thụ mỗi giây · $P = A/t = UI = I^2R = U^2/R$ · oát (W).</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Nhãn "220 V – 60 W" cho biết gì? Điện trở đèn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$U_{\text{đm}} = 220$ V · $P_{\text{đm}} = 60$ W khi đúng $U_{\text{đm}}$ · $R = U_{\text{đm}}^2/P_{\text{đm}} = 220^2/60 \approx 807\ \Omega$.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Công và công suất của nguồn? Khác công suất mạch ngoài chỗ nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$A_{ng} = \mathcal{E}It$ · $P_{ng} = \mathcal{E}I$ · $\mathcal{E}I = UI + I^2r$: nguồn phát, mạch ngoài nhận $UI$, nguồn nóng $I^2r$.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Hiệu suất nguồn: hai cách viết, suy ra từ đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$H = U/\mathcal{E} = R/(R + r)$ · từ $U = \mathcal{E} - Ir$ và $\mathcal{E} = I(R + r)$ · $R$ lớn → $H$ cao.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Vì sao đoản mạch gây cháy? Bảo vệ bằng gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$R \to 0$ · $I = \mathcal{E}/r$ rất lớn · nhiệt $I^2r$, $I^2R_{\text{dây}}$ tăng vọt · cầu chì, aptomat đúng dòng định mức, dây đủ tiết diện.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: nguồn nuôi bộ sấy</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một nguồn điện có suất điện động $\mathcal{E} = 12$ V, điện trở trong $r = 1{,}0\ \Omega$, nối với dây điện trở của một bộ sấy có $R = 5{,}0\ \Omega$.</p>
+<p>a) Tính cường độ dòng điện và hiệu điện thế giữa hai cực nguồn.</p>
+<p>b) Tính công suất của nguồn, công suất mạch ngoài và công suất toả nhiệt trong nguồn.</p>
+<p>c) Tính hiệu suất của nguồn.</p>
+<p>d) Tính năng lượng bộ sấy nhận được trong $10$ phút.</p>
+</div>
+
+<!--FIG4-->
+
+<p>Với mỗi cụm, tự hỏi: <strong>dữ liệu gì</strong>, <strong>kiến thức nào</strong>?</p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"suất điện động 12 V, điện trở trong 1,0 Ω"</td><td>$\mathcal{E}$, $r$ → nguồn thật có $r$</td></tr>
+<tr><td>"dây điện trở… $R = 5{,}0\ \Omega$"</td><td>$R$ → mạch ngoài chỉ toả nhiệt</td></tr>
+<tr><td>(ngầm) mạch kín</td><td>định luật Ohm toàn mạch</td></tr>
+<tr><td>"công suất của nguồn… mạch ngoài… trong nguồn"</td><td>$\mathcal{E}I$, $UI$, $I^2r$</td></tr>
+<tr><td>"trong 10 phút"</td><td>$t = 600$ s → $A = Pt$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>a) $I = \dfrac{\mathcal{E}}{R + r} = \dfrac{12}{5{,}0 + 1{,}0} = 2{,}0$ A.</li>
+<li>$U = IR = 2{,}0 \cdot 5{,}0 = 10$ V. Kiểm: $U = \mathcal{E} - Ir = 12 - 2{,}0 = 10$ V. Khớp.</li>
+<li>b) Nguồn: $P_{ng} = \mathcal{E}I = 12 \cdot 2{,}0 = 24$ W.</li>
+<li>Mạch ngoài: $P_R = UI = 10 \cdot 2{,}0 = 20$ W.</li>
+<li>Trong nguồn: $P_r = I^2r = 2{,}0^2 \cdot 1{,}0 = 4{,}0$ W. Kiểm: $20 + 4{,}0 = 24$ W.</li>
+<li>c) $H = \dfrac{U}{\mathcal{E}} = \dfrac{10}{12} \approx 83{,}3\ \%$. Kiểm: $\dfrac{R}{R + r} = \dfrac{5}{6}$. Khớp.</li>
+<li>d) $A_R = P_R t = 20 \cdot 600 = 12\,000$ J $= 12$ kJ (chỉ $\dfrac{1}{300}$ kWh, pin không "ăn" nổi một số điện).</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, chỉ đổi $R = 11\ \Omega$.</p>
+<ol class="tl-steps">
+<li>$I = 12/(11 + 1{,}0) = 1{,}0$ A.</li>
+<li><strong>Em điền:</strong> $U = \;?$ — gợi ý: $IR$ hay $\mathcal{E} - Ir$, cùng ra một số.</li>
+<li>$P_{ng} = \mathcal{E}I = 12$ W.</li>
+<li><strong>Em điền:</strong> $P_R = \;?$ và $H = \;?$ — $R$ tăng thì $H$ tăng hay giảm?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2 và 4</summary>
+<p>$U = 1{,}0 \cdot 11 = 11$ V. $P_R = 11 \cdot 1{,}0 = 11$ W, $P_r = 1{,}0$ W. $H = 11/12 \approx 91{,}7\ \%$: $R$ tăng thì $H$ tăng, nhưng $P_R$ giảm từ $20$ W còn $11$ W.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>Giữ $\mathcal{E} = 12$ V, nhưng nguồn cũ hơn: $r = 2{,}0\ \Omega$, và $R = 4{,}0\ \Omega$. Hiệu suất nguồn là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl44-sure8" value="chac"> Chắc</label> <label><input type="radio" name="tl44-sure8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl44-q8" id="tl44-q8a"><label for="tl44-q8a" class="tl-opt tl-ok">A. $66{,}7\ \%$</label>
+<input type="radio" name="tl44-q8" id="tl44-q8b"><label for="tl44-q8b" class="tl-opt tl-no">B. $83{,}3\ \%$</label>
+<input type="radio" name="tl44-q8" id="tl44-q8c"><label for="tl44-q8c" class="tl-opt tl-no">C. $33{,}3\ \%$</label>
+<input type="radio" name="tl44-q8" id="tl44-q8d"><label for="tl44-q8d" class="tl-opt tl-no">D. $50\ \%$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H = \dfrac{R}{R + r} = \dfrac{4{,}0}{6{,}0} \approx 66{,}7\ \%$. Kiểm: $I = 2{,}0$ A, $U = 8{,}0$ V, $8/12$ cũng ra $66{,}7\ \%$. Em giải thích được cho bạn ngồi cạnh chưa: vì sao pin cũ hao hơn?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — $83{,}3\ \%$ là đáp án bài mẫu, nhưng $r$ và $R$ đều đã đổi. C — $33{,}3\ \% = r/(R + r)$ là phần <em>hao phí</em>, không phải hiệu suất. D — $50\ \% = r/R$, không phải công thức nào của bài. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🔄 Đổi chiều: muốn $H = 90\ \%$ với $r = 1{,}0\ \Omega$ thì $R$ bằng bao nhiêu?</summary>
+<p>$\dfrac{R}{R + 1} = 0{,}9 \Rightarrow R = 9r = 9{,}0\ \Omega$. Khi đó $I = 1{,}2$ A, $U = 10{,}8$ V, $P_R = 12{,}96$ W. Hiệu suất cao nhưng công suất nhận được chỉ còn $12{,}96$ W so với $20$ W ở bài mẫu.</p>
+</details>
+
+<h3>VI. Năng lượng điện trong đời sống</h3>
+
+<p><strong>🔑 Tiền điện = số kWh nhân giá</strong> (giá giả định, số tròn: $2500$ đồng/kWh).</p>
+
+<ul>
+<li><strong>Nồi cơm điện</strong> $700$ W, $1$ giờ/ngày, $30$ ngày: $0{,}7 \cdot 30 = 21$ kWh, khoảng $52\,500$ đồng.</li>
+<li><strong>Trục chính CNC</strong> $2{,}2$ kW, ca $8$ giờ: $17{,}6$ kWh, khoảng $44\,000$ đồng.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Tủ lạnh chạy suốt ngày đêm, công suất trung bình $50$ W (máy nén có lúc nghỉ). Điện năng và tiền điện một ngày?</summary>
+<p>$A = 0{,}05 \cdot 24 = 1{,}2$ kWh, tiền khoảng $3000$ đồng. Một tháng xấp xỉ $36$ số.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Ấm 220 V – 1800 W đun $1{,}0$ kg nước từ $25\ °\text{C}$ lên $100\ °\text{C}$ hết $200$ s. Hiệu suất của ấm? ($c = 4200$ J/kg·K)</summary>
+<p>Nhiệt có ích: $Q = mc\Delta T = 1{,}0 \cdot 4200 \cdot 75 = 315\,000$ J. Điện năng: $A = Pt = 1800 \cdot 200 = 360\,000$ J. $H = 315\,000/360\,000 = 87{,}5\ \%$. Phần còn lại làm nóng vỏ ấm và bay ra không khí.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Nguồn $\mathcal{E} = 12$ V, $r = 1{,}0\ \Omega$, $R$ thay đổi được. $R$ bằng bao nhiêu thì mạch ngoài nhận công suất lớn nhất? $H$ lúc đó?</summary>
+<p>$P_R = I^2R = \dfrac{\mathcal{E}^2R}{(R + r)^2}$. Thử: $R = 0{,}5\ \Omega$ cho $32$ W; $R = 1{,}0\ \Omega$ cho $36$ W; $R = 2{,}0\ \Omega$ cho $32$ W. Lớn nhất khi $R = r$, $P_{\max} = \dfrac{\mathcal{E}^2}{4r} = 36$ W, nhưng khi đó $H = \dfrac{r}{2r} = 50\ \%$: nửa năng lượng nóng trong nguồn. Đây là lý do đáp án "Tăng rồi giảm, lớn nhất khi $R = r$" ở câu hỏi "$R$ tăng mãi" (mục II.4) sai: cực đại ở $R = r$ là của công suất, không phải hiệu suất.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>$A = UIt$ · jun · $t$ bằng giây.</li>
+<li>$1$ kWh $= 3{,}6\cdot10^{6}$ J · công tơ đếm kWh.</li>
+<li>Công suất: $P = UI = I^2R = U^2/R$ · oát.</li>
+<li>Nhãn: $U_{\text{đm}}$, $P_{\text{đm}}$ · "U bình chia P ra R".</li>
+<li>Nguồn: $A_{ng} = \mathcal{E}It$, $P_{ng} = \mathcal{E}I = UI + I^2r$.</li>
+<li>Hiệu suất: $H = U/\mathcal{E} = R/(R + r)$ · $R$ lớn, $H$ cao.</li>
+<li>kW là tốc độ · kWh là tổng.</li>
+<li>Nối tiếp: $I^2R$ · song song: $U^2/R$.</li>
+<li>Đoản mạch: $I = \mathcal{E}/r$ · cầu chì đứt trước dây.</li>
+<li>Đọc đề: gặp "nguồn" hỏi $\mathcal{E}I$; gặp "mạch ngoài", "thiết bị" hỏi $UI$; gặp "phút, giờ" đổi ra giây trước.</li>
+</ul>
+</div>

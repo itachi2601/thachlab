@@ -1,0 +1,78 @@
+{
+ "title": "Kiểm tra nhanh — Nguồn điện",
+ "duration_minutes": 8,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Nguồn điện có suất điện động 6,0 V, điện trở trong 0,50 Ω nối với điện trở R = 2,5 Ω thành mạch kín. Cường độ dòng điện trong mạch là",
+   "options": [
+    "2,0 A",
+    "2,4 A",
+    "12 A",
+    "3,0 A"
+   ],
+   "answer": 0,
+   "explanation": "I = ℰ/(R + r) = 6,0/(2,5 + 0,50) = 2,0 A. 2,4 A là quên cộng r; 12 A là dòng đoản mạch ℰ/r; 3,0 A là lấy R − r."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Trong mạch điện kín, chiều dòng điện (quy ước) bên trong nguồn điện là",
+   "options": [
+    "từ cực dương sang cực âm, giống như ở mạch ngoài",
+    "từ cực âm sang cực dương, nhờ lực lạ",
+    "không có dòng điện bên trong nguồn, chỉ có ở mạch ngoài",
+    "tuỳ cách mắc điện trở ở mạch ngoài"
+   ],
+   "answer": 1,
+   "explanation": "Dòng điện chạy thành vòng kín: ở mạch ngoài từ cực (+) về cực (−), bên trong nguồn lực lạ đưa điện tích dương từ cực (−) lên cực (+)."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Đèn pha xe máy nối thẳng với hai cực ắc quy. Khi bấm nút đề, đèn tối đi trong một giây rồi sáng lại. Nguyên nhân là",
+   "options": [
+    "nút đề cắt bớt điện của đèn để dồn cho mô tơ",
+    "ắc quy hết điện trong tích tắc rồi tự nạp lại",
+    "dòng đề rất lớn chạy qua điện trở trong của ắc quy làm hiệu điện thế hai cực tụt xuống",
+    "dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng"
+   ],
+   "answer": 2,
+   "explanation": "U = ℰ − Ir: dòng đề hàng chục ampe làm độ giảm thế Ir trên điện trở trong tăng vọt, hiệu điện thế hai cực (cũng là hiệu điện thế đặt vào đèn) tụt xuống nên đèn tối đi. Dây dẫn chưa kịp nóng trong một giây, và đèn tối ngay lúc mới bấm."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Pin có suất điện động 1,5 V, điện trở trong 0,5 Ω. Vôn kế lí tưởng mắc vào hai cực pin lần lượt khi mạch ngoài hở và khi mạch ngoài là điện trở R = 2,5 Ω. Số chỉ của vôn kế lần lượt là",
+   "options": [
+    "1,5 V và 1,5 V",
+    "0 V và 1,25 V",
+    "1,25 V và 1,25 V",
+    "1,5 V và 1,25 V"
+   ],
+   "answer": 3,
+   "explanation": "Hở mạch: I = 0 nên U = ℰ = 1,5 V. Mạch kín: I = 1,5/(2,5 + 0,5) = 0,5 A, U = ℰ − Ir = 1,5 − 0,25 = 1,25 V."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Nguồn điện có suất điện động 12 V, điện trở trong 0,5 Ω nối với điện trở R = 5,5 Ω thành mạch kín. Hiệu điện thế giữa hai cực của nguồn là",
+   "options": [
+    "12 V",
+    "11 V",
+    "1,0 V",
+    "13 V"
+   ],
+   "answer": 1,
+   "explanation": "I = 12/(5,5 + 0,5) = 2,0 A; U = ℰ − Ir = 12 − 1,0 = 11 V (hoặc U = IR = 2,0·5,5 = 11 V). 12 V là ℰ; 1,0 V là Ir; 13 V là cộng nhầm dấu."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Trên vỏ một pin ghi \"1,5 V\". Con số này có nghĩa là",
+   "options": [
+    "hiệu điện thế hai cực pin luôn là 1,5 V, dù mạch kín hay hở",
+    "lực điện luôn thực hiện công 1,5 J khi 1 C điện tích chạy qua mạch ngoài",
+    "mỗi giây pin đẩy 1,5 C điện tích qua mạch",
+    "lực lạ trong pin thực hiện công 1,5 J để đưa 1 C điện tích dương từ cực âm sang cực dương"
+   ],
+   "answer": 3,
+   "explanation": "Suất điện động ℰ = A/q: 1,5 V nghĩa là lực lạ thực hiện công 1,5 J cho mỗi coulomb dịch chuyển qua nguồn. Khi có dòng, hiệu điện thế hai cực nhỏ hơn 1,5 V."
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Thực hành: Đo suất điện động và điện trở trong của pin điện hoá",
+ "lesson_id": 45,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-sdd-pin/theory.html",
+ "id": "tn-l11-do-sdd-pin-03",
+ "ten": "Pin 'còn 1,5 V' mà xe đồ chơi không chạy: hiệu điện thế hai cực pin lúc hở mạch và lúc có tải",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nguondien.u_bang_e_tru_ir",
+  "nguondien.sut_ap_tren_r"
+ ],
+ "muc_tieu": "Nhận ra số đọc vôn kế lúc hở mạch là E, còn khi động cơ kéo dòng thì hai cực pin chỉ còn U = E − I·r; pin cũ có r lớn nên sụt nhiều.",
+ "dung_cu": [
+  {
+   "ten": "Pin AA cũ (E = 1,50 V, r = 0,80 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe đồ chơi có động cơ một chiều (kéo dòng ≈ 0,5 A, điện trở tương đương ≈ 2 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ đa năng hiện số thang 2 V DC",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đo hai đầu viên pin khi chưa lắp vào xe (hở mạch).",
+   "Lắp pin vào xe, bật công tắc, đo lại hai đầu pin trong lúc động cơ quay."
+  ],
+  "quan_sat": [
+   "Hở mạch: vôn kế đọc 1,50 V.",
+   "Động cơ quay: vôn kế chỉ còn 1,06 V, động cơ ì ạch."
+  ],
+  "rut_ra": [
+   "1,50 V là E của pin; 1,06 V là U = E − I·r khi I ≈ 0,53 A.",
+   "Phần 0,44 V 'mất' là sụt áp trên điện trở trong r ≈ 0,8 Ω của pin cũ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E",
+   "ten": "Suất điện động",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở trong của pin",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 3.0,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở tương đương của động cơ",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 20,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Dòng qua động cơ",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai cực pin",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = E/(R + r)",
+   "U = E − I·r = E·R/(R + r)",
+   "hở mạch: I = 0, U = E"
+  ],
+  "gia_thiet": [
+   "động cơ coi như điện trở thuần R khi đang quay",
+   "vôn kế có điện trở rất lớn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (Ω)",
+   "R (Ω)",
+   "I (A)",
+   "U (V)"
+  ],
+  "hang": [
+   [
+    0.8,
+    2.0,
+    0.53,
+    1.06
+   ],
+   [
+    0.25,
+    2.0,
+    0.667,
+    1.333
+   ],
+   [
+    0.8,
+    10.0,
+    0.139,
+    1.389
+   ],
+   [
+    2.0,
+    2.0,
+    0.375,
+    0.75
+   ]
+  ],
+  "ghi_chu": "Tính từ I = E/(R + r), U = E·R/(R + r) với E = 1,50 V, làm tròn 3 chữ số. Hàng 1 là tình huống mở bài, ghi đúng số đọc trong bảng đo 01 (hàng Rx = 0: I = 0,534 A → 0,53 A, U = 1,06 V; mô hình lý tưởng cho 0,536 A; 1,071 V, lệch trong sai số dụng cụ). Hàng 2: pin mới cùng động cơ. Hàng 3: tải nhẹ hơn, pin cũ vẫn giữ được U. Hàng 4: pin rất cũ, động cơ không quay nổi."
+ },
+ "ket_qua_ky_vong": "Hở mạch đọc đúng E; có tải U tụt theo I·r; r càng lớn hoặc R càng nhỏ thì tụt càng nhiều.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vôn kế 'đo sai' khi có dòng.",
+  "Nghĩ động cơ 'hút' bớt suất điện động.",
+  "Nghĩ pin đọc 1,5 V nghĩa là pin còn tốt."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "dieu_khien": [
+   "r",
+   "R"
+  ],
+  "dau_ra": [
+   "số đọc vôn kế khi công tắc mở và khi đóng",
+   "tốc độ quay của động cơ tỉ lệ với U"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Hai khung cạnh nhau: pin + vôn kế (hở) và pin + động cơ + vôn kế; gạt công tắc thấy số đọc tụt, kéo r tăng thấy tụt sâu hơn và xe chậm dần."
+ }
+}

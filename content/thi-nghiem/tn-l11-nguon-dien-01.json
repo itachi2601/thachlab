@@ -1,0 +1,203 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Nguồn điện",
+ "lesson_id": 43,
+ "nguon_trong_bai": "content/lesson-samples/l11-nguon-dien/theory.html",
+ "id": "tn-l11-nguon-dien-01",
+ "ten": "Tụ điện \"giả làm\" nguồn: vôn kế của tụ tụt dần, của pin đứng yên",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nguondien.duy_tri_hieu_dien_the",
+  "nguondien.dinh_nghia"
+ ],
+ "muc_tieu": "Thấy một tụ điện đã nạp chỉ tạo hiệu điện thế tạm thời (xả dần qua điện trở là hết), còn pin duy trì được hiệu điện thế khi có dòng — đó là dấu hiệu của nguồn điện.",
+ "dung_cu": [
+  {
+   "ten": "Siêu tụ 1,0 F (điện áp định mức 2,7 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bộ nạp hoặc nguồn một chiều chỉnh được 2,7 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở 100 Ω (công suất ≥ 0,25 W)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Pin tiểu AA 1,5 V (ghép nối tiếp thành 3,0 V)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Vôn kế số (điện trở vào ≥ 1 MΩ)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nạp siêu tụ tới 2,7 V, tháo khỏi bộ nạp.",
+   "Nối tụ với điện trở 100 Ω; vôn kế mắc vào hai đầu điện trở (cũng là hai bản tụ); bấm giờ.",
+   "Bên cạnh, nối hai pin tiểu nối tiếp (3,0 V) với điện trở 100 Ω giống hệt, vôn kế mắc vào hai đầu điện trở.",
+   "Đọc hai vôn kế mỗi 20 s trong 100 s; đọc lại sau 5 phút."
+  ],
+  "quan_sat": [
+   "Vôn kế của tụ tụt dần: 2,7 → 2,2 → 1,8 → 1,5 → 1,2 → 1,0 V sau 100 s; sau 5 phút chỉ còn 0,1 V.",
+   "Vôn kế của pin đứng ở gần 3,0 V suốt buổi (dòng 30 mA, pin AA chạy được hàng chục giờ)."
+  ],
+  "rut_ra": [
+   "Tụ chỉ chứa sẵn một lượng điện tích: xả dần qua điện trở là hết hiệu điện thế, giống hai quả cầu tích điện trái dấu nối dây.",
+   "Pin duy trì được hiệu điện thế khi có dòng chạy — đó mới là nguồn điện (có lực lạ bù điện tích)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "C",
+   "ten": "Điện dung tụ",
+   "don_vi": "F",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "U0",
+   "ten": "Hiệu điện thế nạp ban đầu",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 2.7,
+   "mac_dinh": 2.7,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở xả",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 50,
+   "max": 500,
+   "mac_dinh": 100,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian xả",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai đầu điện trở (nhánh tụ)",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "E_b",
+   "ten": "Suất điện động bộ hai pin nối tiếp",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "r_b",
+   "ten": "Điện trở trong bộ hai pin",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 0.6
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Nhánh tụ: U(t) = U0 · exp(−t / (R·C)); I(t) = U(t)/R",
+   "Hằng số thời gian τ = R·C = 100 Ω · 1,0 F = 100 s",
+   "Nhánh pin: U = E_b·R/(R + r_b) ≈ 2,98 V, không đổi theo thời gian trong vài giờ"
+  ],
+  "gia_thiet": [
+   "mạch xả chỉ có điện trở thuần R, không có linh kiện phi tuyến",
+   "vôn kế có điện trở vào rất lớn so với R, không xả thêm tụ",
+   "tụ không rò điện; bỏ qua hiện tượng hấp thụ điện môi của siêu tụ",
+   "pin có dung lượng đủ lớn để coi E_b, r_b không đổi trong thời gian quan sát"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "U tụ (V)",
+   "U pin (V)"
+  ],
+  "hang": [
+   [
+    0,
+    2.7,
+    2.98
+   ],
+   [
+    20,
+    2.21,
+    2.98
+   ],
+   [
+    40,
+    1.81,
+    2.98
+   ],
+   [
+    60,
+    1.48,
+    2.98
+   ],
+   [
+    80,
+    1.21,
+    2.98
+   ],
+   [
+    100,
+    0.99,
+    2.98
+   ],
+   [
+    300,
+    0.13,
+    2.98
+   ]
+  ],
+  "ghi_chu": "Cột U tụ tính từ U = 2,7·exp(−t/100) với R·C = 100 Ω · 1,0 F = 100 s; trong bài làm tròn tới 0,1 V (2,7 → 2,2 → 1,8 → 1,5 V sau 60 s; 0,1 V sau 300 s). Cột U pin = 3,0·100/100,6 = 2,98 V (I ≈ 30 mA), trong bài ghi 3,0 V."
+ },
+ "ket_qua_ky_vong": "Vôn kế của tụ giảm theo hàm mũ với τ = 100 s, sau 5 phút gần về 0; vôn kế của pin giữ gần 3,0 V suốt buổi.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ tụ điện đã nạp là một nguồn điện vì nó cũng có hai cực và cũng đẩy được dòng qua điện trở.",
+  "Nghĩ hiệu điện thế hai bản tụ giảm đều theo thời gian (thực ra giảm nhanh lúc đầu, chậm dần về sau: hàm mũ).",
+  "Nghĩ pin cũng sẽ tụt như tụ nếu chờ đủ lâu — đúng khi pin cạn (hàng chục giờ), nhưng trong lúc còn dùng được thì lực lạ bù lại điện tích nên U gần như không đổi."
+ ],
+ "sai_so_thuong_gap": [
+  "Tụ chưa nạp đủ 2,7 V (nạp quá ngắn) nên số đọc đầu thấp hơn 2,7 V.",
+  "Dùng vôn kế kim có điện trở vào nhỏ: vôn kế cũng xả tụ, U giảm nhanh hơn mô hình.",
+  "Siêu tụ có hấp thụ điện môi: sau khi xả, tháo điện trở ra thì U hơi nhích lên lại."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "C",
+   "U0",
+   "R"
+  ],
+  "dau_ra": [
+   "đường U(t) của nhánh tụ và đường ngang U của nhánh pin trên cùng đồ thị",
+   "hai vôn kế số hiện giá trị theo thời gian",
+   "thời điểm U của tụ xuống dưới 10 % U0 (≈ 2,3·τ)"
+  ],
+  "hinh_trong_bai": "không có hình riêng (hộp thí nghiệm mục II.1)",
+  "y_tuong": "Hai nhánh song song: tụ và bộ pin cùng nuôi một điện trở 100 Ω. Kéo thanh trượt C hoặc R thấy đường U(t) của tụ tụt nhanh/chậm; đường của pin vẫn nằm ngang trong khung thời gian mô phỏng. Hỏi học sinh dự đoán trước: vôn kế nào tụt trước?"
+ },
+ "an_toan": "Không nạp siêu tụ quá 2,7 V (điện áp định mức); không nối tắt hai bản tụ đã nạp bằng dây kim loại (dòng xả rất lớn, phát tia lửa)."
+}

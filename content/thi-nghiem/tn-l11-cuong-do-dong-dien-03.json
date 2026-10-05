@@ -1,0 +1,152 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Cường độ dòng điện",
+ "lesson_id": 41,
+ "nguon_trong_bai": "content/lesson-samples/l11-cuong-do-dong-dien/theory.html",
+ "id": "tn-l11-cuong-do-dong-dien-03",
+ "ten": "Tốc độ trôi của electron trong dây đồng 1,5 mm² theo cường độ dòng điện",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "cuongdodongdien.i_bang_snve",
+  "cuongdodongdien.toc_do_troi",
+  "cuongdodongdien.mat_do_dong"
+ ],
+ "muc_tieu": "Tính v = I/(Sne) cho dây đồng dân dụng ở các mức dòng thường gặp, thấy electron chỉ trôi dưới 1 mm/s dù đèn sáng ngay.",
+ "dung_cu": [
+  {
+   "ten": "Máy tính cầm tay",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bảng hằng số: n(đồng) = 8,5·10^28 m^-3, e = 1,6·10^-19 C",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lấy S = 1,5 mm² = 1,5·10^-6 m², n = 8,5·10^28 m^-3, e = 1,6·10^-19 C.",
+   "Tính Sne = 2,04·10^4 C/m.",
+   "Tính v = I/(Sne) với I = 1, 5, 10, 16 A."
+  ],
+  "quan_sat": [
+   "v tăng tỉ lệ với I: 0,049 → 0,25 → 0,49 → 0,78 mm/s."
+  ],
+  "rut_ra": [
+   "Ngay ở 16 A, electron trôi chưa tới 1 mm/s.",
+   "Tăng I trong cùng dây là tăng v; n là hằng số của vật liệu.",
+   "Đèn sáng ngay vì điện trường lan gần tốc độ ánh sáng, mọi electron trong dây cùng trôi."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Tiết diện dây",
+   "don_vi": "mm²",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 25,
+   "mac_dinh": 1.5,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Mật độ electron tự do của đồng",
+   "don_vi": "m^-3",
+   "kieu": "co_dinh",
+   "gia_tri": 8.5e+28
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Điện tích electron",
+   "don_vi": "C",
+   "kieu": "co_dinh",
+   "gia_tri": 1.6e-19
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ trôi",
+   "don_vi": "mm/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "j",
+   "ten": "Mật độ dòng điện I/S",
+   "don_vi": "A/m²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = S·n·v·e (S tính bằng m²)",
+   "v = I/(S·n·e)",
+   "j = I/S = n·v·e"
+  ],
+  "gia_thiet": [
+   "mỗi nguyên tử đồng góp 1 electron tự do",
+   "dòng phân bố đều trên tiết diện",
+   "bỏ qua chuyển động nhiệt hỗn loạn (không có hướng)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "I (A)",
+   "S (mm²)",
+   "v (mm/s)"
+  ],
+  "hang": [
+   [
+    1,
+    1.5,
+    0.049
+   ],
+   [
+    5,
+    1.5,
+    0.25
+   ],
+   [
+    10,
+    1.5,
+    0.49
+   ],
+   [
+    16,
+    1.5,
+    0.78
+   ]
+  ],
+  "ghi_chu": "Tính từ v = I/(Sne) với S = 1,5·10^-6 m², n = 8,5·10^28 m^-3, e = 1,6·10^-19 C."
+ },
+ "ket_qua_ky_vong": "v tỉ lệ thuận với I; với S = 1,5 mm² và I = 10 A thì v ≈ 0,49 mm/s.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ electron chạy gần tốc độ ánh sáng vì đèn sáng ngay.",
+  "Để S bằng mm² khi tính (v sai 10^6 lần).",
+  "Nghĩ dòng tăng là do n tăng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "I",
+   "S"
+  ],
+  "dau_ra": [
+   "hoạt hình electron trôi trong đoạn dây với tốc độ v (phóng đại thời gian)",
+   "đồ thị v theo I (đường thẳng qua gốc)",
+   "giá trị j"
+  ],
+  "hinh_trong_bai": "Hình 4 và bảng ở mục II.4",
+  "y_tuong": "Kéo I: hạt trôi nhanh hơn, số hạt không đổi; kéo S to: hạt trôi chậm lại dù I giữ nguyên. Đặt cạnh một đồng hồ thật để thấy 1 mm/s chậm thế nào."
+ }
+}

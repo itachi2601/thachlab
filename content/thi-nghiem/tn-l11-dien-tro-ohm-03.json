@@ -1,0 +1,144 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Điện trở. Định luật Ohm",
+ "lesson_id": 42,
+ "nguon_trong_bai": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/theory.html",
+ "id": "tn-l11-dien-tro-ohm-03",
+ "ten": "Điện trở nhiệt NTC trong cốc nước ấm: nóng thì điện trở giảm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dientro.dien_tro_nhiet_ntc",
+  "dientro.phu_thuoc_nhiet_do"
+ ],
+ "muc_tieu": "Đo điện trở NTC 10 kΩ ở 4 nhiệt độ nước, thấy R giảm mạnh khi nhiệt độ tăng, ngược với kim loại.",
+ "dung_cu": [
+  {
+   "ten": "Điện trở nhiệt NTC 10 kΩ (B = 3950 K)",
+   "so_luong": 1,
+   "ghi_chu": "loại có vỏ bọc chống nước hoặc bọc đầu dây bằng ống co nhiệt"
+  },
+  {
+   "ten": "Đồng hồ vạn năng số, thang đo Ω",
+   "so_luong": 1,
+   "ghi_chu": "thang 20 kΩ, đọc tới 0,01 kΩ"
+  },
+  {
+   "ten": "Cốc nước, ấm đun hoặc nước nóng để pha",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nhiệt kế 0–100 °C",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kẹp hai que đo của đồng hồ vào hai chân NTC, đặt thang Ω.",
+   "Nhúng NTC cùng nhiệt kế vào cốc nước 25 °C, chờ số ổn định rồi ghi R.",
+   "Pha thêm nước nóng để được 35, 45, 55 °C, mỗi mức chờ ổn định rồi ghi R (4 lần đo)."
+  ],
+  "quan_sat": [
+   "R giảm dần: 10,0 → 6,5 → 4,3 → 3,0 kΩ.",
+   "Nóng thêm 30 °C, R giảm hơn 3 lần; thay đổi rất mạnh so với kim loại."
+  ],
+  "rut_ra": [
+   "NTC có hệ số nhiệt điện trở âm: nhiệt độ tăng thì điện trở giảm.",
+   "Đo R là suy ra được nhiệt độ: nguyên lí của cảm biến nhiệt NTC."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "t",
+   "ten": "Nhiệt độ nước",
+   "don_vi": "°C",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 25,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "R0",
+   "ten": "Điện trở NTC ở 25 °C",
+   "don_vi": "kΩ",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "B",
+   "ten": "Hằng số B của NTC",
+   "don_vi": "K",
+   "kieu": "co_dinh",
+   "gia_tri": 3950
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Số đọc đồng hồ",
+   "don_vi": "kΩ",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "R = R0·exp[B·(1/T − 1/T0)], T = t + 273,15 K, T0 = 298,15 K",
+   "hệ số nhiệt điện trở tại T: α = −B/T² (âm, cỡ −0,044 K⁻¹ ở 25 °C)"
+  ],
+  "gia_thiet": [
+   "NTC đã cân bằng nhiệt với nước",
+   "dòng đo của đồng hồ nhỏ, không tự làm nóng NTC",
+   "phương trình B đúng trong khoảng 0–100 °C"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (°C)",
+   "R (kΩ)"
+  ],
+  "hang": [
+   [
+    25,
+    10.0
+   ],
+   [
+    35,
+    6.5
+   ],
+   [
+    45,
+    4.3
+   ],
+   [
+    55,
+    3.0
+   ]
+  ],
+  "ghi_chu": "Tính từ R = R0·exp[B(1/T − 1/T0)] với R0 = 10 kΩ, B = 3950 K, làm tròn tới 0,1 kΩ (giá trị chính xác: 10.00, 6.51, 4.35, 2.98 kΩ). Không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "R giảm theo hàm mũ khi t tăng: 10,0 kΩ (25 °C) → 3,0 kΩ (55 °C).",
+ "hien_tuong_hay_sai": [
+  "Áp công thức R = R0[1 + α(t − t0)] với α dương như kim loại cho NTC.",
+  "Cho rằng mọi vật dẫn nóng lên đều tăng điện trở.",
+  "Nghĩ R giảm về 0 là siêu dẫn."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc số khi NTC chưa cân bằng nhiệt với nước.",
+  "Nhiệt kế và NTC đặt xa nhau trong cốc, nhiệt độ hai nơi khác nhau.",
+  "Tay chạm vào chân NTC làm đổi số đọc."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "t"
+  ],
+  "dau_ra": [
+   "R theo t (đường cong giảm)",
+   "so sánh cùng trục với dây đồng R = R0[1 + 0,0039(t − 25)]"
+  ],
+  "hinh_trong_bai": "dòng Quan sát trong hộp thí nghiệm mục II.6",
+  "y_tuong": "Kéo thanh nhiệt độ, hai đường (NTC giảm mạnh, đồng tăng nhẹ) chạy ngược chiều để chốt bẫy 2."
+ },
+ "an_toan": "Nước 55 °C: không bỏng nhưng cẩn thận khi pha; không dùng nước sôi với NTC thường."
+}

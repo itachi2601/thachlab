@@ -1,0 +1,174 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Nguồn điện",
+ "lesson_id": 43,
+ "nguon_trong_bai": "content/lesson-samples/l11-nguon-dien/theory.html",
+ "id": "tn-l11-nguon-dien-02",
+ "ten": "Đo U hai cực pin khi thay đổi điện trở mạch ngoài: U tụt khi I tăng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nguondien.dien_tro_trong",
+  "nguondien.u_bang_e_tru_ir",
+  "nguondien.ohm_toan_mach"
+ ],
+ "muc_tieu": "Từ bảng (R, I, U) thấy hiệu điện thế hai cực giảm tuyến tính theo cường độ dòng điện; đồ thị U(I) là đường thẳng cắt trục U tại suất điện động, độ dốc bằng −r.",
+ "dung_cu": [
+  {
+   "ten": "Pin tiểu AA đã dùng một thời gian (ℰ ≈ 1,50 V, r ≈ 1,0 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hộp điện trở (hoặc bộ điện trở 14; 9; 4; 2; 1,5 Ω)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế số, đọc tới 0,01 A",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế số, đọc tới 0,01 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc pin – khoá K – ampe kế – hộp điện trở R thành mạch kín; vôn kế mắc vào hai cực pin.",
+   "Khoá K mở (hở mạch): đọc vôn kế, được ℰ = 1,50 V.",
+   "Đặt R = 14 Ω, đóng K, ghi I và U rồi mở K ngay.",
+   "Lặp lại với R = 9; 4; 2; 1,5 Ω (5 lần đo)."
+  ],
+  "quan_sat": [
+   "R giảm thì I tăng từ 0,10 A lên 0,60 A, còn U giảm từ 1,40 V xuống 0,90 V.",
+   "Hiệu ℰ − U tăng đúng tỉ lệ với I: 0,10; 0,15; 0,30; 0,50; 0,60 V."
+  ],
+  "rut_ra": [
+   "Hiệu điện thế hai cực không phải hằng số của pin: U = ℰ − I·r.",
+   "Đồ thị U theo I là đường thẳng cắt trục U tại ℰ, độ dốc −r; ở đây r = 1,0 Ω.",
+   "Hở mạch (I = 0) vôn kế chỉ đúng ℰ; đoản mạch (U = 0) dòng là ℰ/r = 1,5 A."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "E",
+   "ten": "Suất điện động của pin",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 3,
+   "mac_dinh": 1.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở trong",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở mạch ngoài",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 20,
+   "mac_dinh": 4,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế hai cực pin",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = E / (R + r)",
+   "U = I·R = E − I·r",
+   "r = (E − U) / I = ΔU / ΔI (lấy hai hàng của bảng)"
+  ],
+  "gia_thiet": [
+   "ampe kế có điện trở không đáng kể, vôn kế có điện trở rất lớn",
+   "E và r không đổi trong lúc đo (đóng khoá ngắn, pin không nóng)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "R (Ω)",
+   "I (A)",
+   "U (V)"
+  ],
+  "hang": [
+   [
+    14,
+    0.1,
+    1.4
+   ],
+   [
+    9,
+    0.15,
+    1.35
+   ],
+   [
+    4,
+    0.3,
+    1.2
+   ],
+   [
+    2,
+    0.5,
+    1.0
+   ],
+   [
+    1.5,
+    0.6,
+    0.9
+   ]
+  ],
+  "ghi_chu": "Tính từ I = 1,5/(R + 1,0) và U = I·R với E = 1,50 V, r = 1,0 Ω; khớp bảng trong bài và Hình 3 (đồ thị U theo I). Hở mạch: U = 1,50 V; đoản mạch: I = 1,5 A."
+ },
+ "ket_qua_ky_vong": "Các điểm (I, U) nằm trên đường thẳng U = 1,50 − 1,0·I; cắt trục U tại 1,50 V và trục I tại 1,5 A.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vôn kế luôn chỉ đúng số ghi trên pin (1,5 V) dù mạch kín hay hở.",
+  "Lấy U/I của một hàng rồi gọi đó là r (thực ra U/I = R, điện trở mạch ngoài).",
+  "Nghĩ R giảm thì U hai cực tăng vì \"dòng mạnh hơn\" — thực ra U giảm vì I·r tăng."
+ ],
+ "sai_so_thuong_gap": [
+  "Mỗi số đọc ±0,01 nên r tính từ hai hàng gần nhau có sai số tương đối lớn; nên lấy hai hàng xa nhau nhất (r lệch tới ±0,08 Ω).",
+  "Đóng khoá lâu ở R nhỏ làm pin nóng, E giảm và r tăng; đọc nhanh rồi ngắt.",
+  "Điện trở dây nối và ampe kế cộng thêm vào R, làm I nhỏ hơn tính toán."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "E",
+   "r",
+   "R"
+  ],
+  "dau_ra": [
+   "số chỉ ampe kế và vôn kế",
+   "điểm (I, U) được thêm vào đồ thị mỗi lần đo",
+   "đường thẳng U = E − I·r hiện dần khi đủ điểm"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo thanh trượt R từ lớn về nhỏ: ampe kế tăng, vôn kế giảm, điểm mới xuất hiện trên đồ thị. Kéo R về 0 thấy đoản mạch (U = 0, I = E/r). Đổi r thấy độ dốc đường thẳng thay đổi; đổi E thấy đường dịch lên/xuống. Trước khi kéo, hỏi học sinh: vôn kế sẽ tăng hay giảm?"
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Cường độ dòng điện",
+ "lesson_id": 41,
+ "nguon_trong_bai": "content/lesson-samples/l11-cuong-do-dong-dien/theory.html",
+ "id": "tn-l11-cuong-do-dong-dien-01",
+ "ten": "Ampe kế đặt ở đâu trong mạch nối tiếp cũng chỉ cùng một số; đảo cực pin thì đổi dấu",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "cuongdodongdien.do_bang_ampe_ke",
+  "cuongdodongdien.noi_tiep_cung_i",
+  "cuongdodongdien.chieu_dong_dien"
+ ],
+ "muc_tieu": "Thấy cường độ dòng điện như nhau tại mọi tiết diện của mạch nối tiếp (ampe kế phải mắc nối tiếp) và chiều dòng điện do cực nguồn quyết định.",
+ "dung_cu": [
+  {
+   "ten": "Pin 3 V (2 pin AA)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn nhỏ 3 V có đế",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế (thang 1 A) hoặc đồng hồ vạn năng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối có kẹp",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc pin, đèn, ampe kế thành mạch kín; ampe kế ở vị trí 1 (trước đèn, phía cực dương).",
+   "Đọc số; chuyển ampe kế sang vị trí 2 (sau đèn) rồi vị trí 3 (sát cực âm pin), đọc số mỗi lần.",
+   "Đưa ampe kế về vị trí 1, đảo hai cực pin, đọc số."
+  ],
+  "quan_sat": [
+   "Ba vị trí đều đọc 0,30 A.",
+   "Đảo cực pin: đồng hồ số hiện −0,30 A (kim lệch ngược)."
+  ],
+  "rut_ra": [
+   "Trong mạch nối tiếp, I như nhau tại mọi tiết diện: điện tích không tích lại ở đâu.",
+   "Ampe kế đo được là vì dòng chui qua nó: phải mắc nối tiếp.",
+   "Chiều dòng điện đi từ cực + qua mạch ngoài về cực −; đảo cực nguồn thì đảo chiều."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "I_nguon",
+   "ten": "Cường độ dòng điện trong mạch",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.3,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "vi_tri",
+   "ten": "Vị trí ampe kế (1 trước đèn, 2 sau đèn, 3 sát cực âm)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "dao_cuc",
+   "ten": "Đảo cực pin (0 thuận, 1 đảo)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "I_doc",
+   "ten": "Số đọc ampe kế",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I_doc = I_nguon tại mọi vi_tri (bảo toàn điện tích, mạch nối tiếp)",
+   "I_doc = −I_nguon khi dao_cuc = 1 (dòng đi vào cực − của ampe kế)"
+  ],
+  "gia_thiet": [
+   "điện trở ampe kế rất nhỏ, không làm đổi I",
+   "pin không sụt áp trong lúc đo",
+   "đèn sáng ổn định"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vị trí ampe kế",
+   "Cực pin",
+   "Số đọc (A)"
+  ],
+  "hang": [
+   [
+    "trước đèn",
+    "thuận",
+    0.3
+   ],
+   [
+    "sau đèn",
+    "thuận",
+    0.3
+   ],
+   [
+    "sát cực âm",
+    "thuận",
+    0.3
+   ],
+   [
+    "trước đèn",
+    "đảo",
+    -0.3
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với I_nguon = 0,30 A; ampe kế đọc tới 0,01 A. Không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Cùng một số 0,30 A ở ba vị trí; đảo cực cho −0,30 A.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dòng 'yếu đi' sau khi qua đèn nên ampe kế sau đèn chỉ số nhỏ hơn.",
+  "Mắc ampe kế song song với đèn (đèn tắt, ampe kế quá tải).",
+  "Nghĩ electron đi từ cực + ra."
+ ],
+ "sai_so_thuong_gap": [
+  "Kẹp lỏng làm số đọc nhấp nháy.",
+  "Pin yếu dần khiến lần đo sau thấp hơn vài phần trăm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "dieu_khien": [
+   "I_nguon",
+   "vi_tri",
+   "dao_cuc"
+  ],
+  "dau_ra": [
+   "số đọc ampe kế",
+   "mũi tên chiều dòng điện (đỏ) và chiều electron (xanh) trên mạch"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Kéo ampe kế tới bất kỳ chỗ nào trên vòng mạch, số không đổi; bấm 'đảo pin' thì mũi tên đổi chiều và số đổi dấu. Thêm nút 'mắc song song' để thấy đèn tắt và ampe kế báo quá tải."
+ },
+ "an_toan": "Pin 3 V, không nguy hiểm. Không nối ampe kế thẳng vào hai cực pin."
+}

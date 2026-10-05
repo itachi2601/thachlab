@@ -1,0 +1,469 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Định nghĩa <strong>điện trở</strong> $R = U/I$, đơn vị ôm; đổi đúng kΩ, mA.</li>
+<li>Phát biểu <strong>định luật Ohm</strong>; đọc <strong>đường đặc trưng vôn – ampe</strong>.</li>
+<li>Giải thích vì sao kim loại có điện trở; nóng thì $R$ tăng, NTC thì giảm.</li>
+</ul>
+<p>Cuối bài em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 16 phút · 8 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: bóng đèn hay "chết" đúng lúc bật</h3>
+
+<p>Mùa lạnh, bật đèn sưởi nhà tắm. "Tạch" một cái, bóng loé sáng rồi tắt hẳn. Đèn sợi đốt rất hay đứt <strong>đúng lúc bật công tắc</strong>, hiếm khi đứt lúc đang sáng.</p>
+
+<p>Ổ cắm lúc nào cũng 220 V. Vậy lúc vừa bật khác lúc đã sáng ở đâu?</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Cùng bóng đèn, cùng ổ 220 V. Dòng điện qua dây tóc <strong>lớn nhất</strong> vào lúc nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q1" id="tl42-q1a"><label for="tl42-q1a" class="tl-opt tl-ok">A. Lúc vừa bật, dây tóc còn nguội</label>
+<input type="radio" name="tl42-q1" id="tl42-q1b"><label for="tl42-q1b" class="tl-opt tl-no">B. Lúc đã sáng ổn định, dây tóc nóng nhất</label>
+<input type="radio" name="tl42-q1" id="tl42-q1c"><label for="tl42-q1c" class="tl-opt tl-no">C. Như nhau, vì hiệu điện thế không đổi</label>
+<input type="radio" name="tl42-q1" id="tl42-q1d"><label for="tl42-q1d" class="tl-opt tl-no">D. Lúc vừa tắt, dây tóc còn nóng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Dây tóc nguội có điện trở nhỏ hơn lúc nóng cỡ mười mấy lần. Cùng 220 V, dòng lúc vừa bật cũng lớn gấp mười mấy lần dòng bình thường, chỗ dây tóc mảnh nhất chịu không nổi. Bài này sẽ cho em con số cụ thể.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — dây tóc nóng cản dòng mạnh hơn dây nguội, nên lúc sáng ổn định dòng lại <em>nhỏ</em> hơn. C — hiệu điện thế không đổi nhưng thứ cản dòng (điện trở) thì thay đổi theo nhiệt độ. D — tắt rồi thì không còn hiệu điện thế, dòng bằng không. Nghĩ lại: ngoài hiệu điện thế, cái gì quyết định dòng?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: điện trở, định luật Ohm, nhiệt độ</h3>
+
+<h4>1. Điện trở là gì</h4>
+
+<p><strong>🔑 R bằng U chia I · đơn vị ôm (Ω)</strong></p>
+
+<p>Cùng đặt 12 V vào hai sợi dây: dây A cho dòng 2 A, dây B chỉ 0,5 A. Dây B "cản" mạnh hơn; đại lượng đo mức cản đó là <strong>điện trở</strong>.</p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Điện trở</p>
+<p>$$R = \dfrac{U}{I}$$</p>
+<ul>
+<li>$U$: hiệu điện thế hai đầu vật dẫn (V); $I$: dòng điện qua nó (A).</li>
+<li>$R$: điện trở (Ω). $1\ \Omega = 1$ V/A.</li>
+</ul>
+</div>
+
+<ul>
+<li>Dây A: $R = 12/2 = 6\ \Omega$; dây B: $24\ \Omega$, cản gấp 4 lần.</li>
+<li>Bội số: $1\ \text{k}\Omega = 1000\ \Omega$; $1\ \text{M}\Omega = 10^{6}\ \Omega$</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Điện trở 2,2 kΩ mắc vào hiệu điện thế 11 V. Dòng điện qua nó là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q2" id="tl42-q2a"><label for="tl42-q2a" class="tl-opt tl-no">A. 5 A</label>
+<input type="radio" name="tl42-q2" id="tl42-q2b"><label for="tl42-q2b" class="tl-opt tl-ok">B. 5 mA</label>
+<input type="radio" name="tl42-q2" id="tl42-q2c"><label for="tl42-q2c" class="tl-opt tl-no">C. 0,2 A</label>
+<input type="radio" name="tl42-q2" id="tl42-q2d"><label for="tl42-q2d" class="tl-opt tl-no">D. 24,2 mA</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $2{,}2\ \text{k}\Omega = 2200\ \Omega$; $I = 11/2200 = 0{,}005$ A $= 5$ mA. Đổi kΩ ra Ω trước, rồi mới chia.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $11/2{,}2 = 5$ là để nguyên kΩ, thiếu hệ số 1000. C — $2{,}2/11 = 0{,}2$ là chia ngược, lấy $R$ chia $U$. D — $11\cdot2{,}2 = 24{,}2$ là nhân thay vì chia. Công thức: $I = U/R$, $R$ tính bằng Ω.</p></div>
+</div>
+</div>
+
+<h4>2. Đo thật: đường đặc trưng vôn – ampe của điện trở</h4>
+
+<p><strong>🔑 Đồ thị I theo U · thẳng qua gốc · dốc hơn là R nhỏ hơn</strong></p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-dien-tro-ohm-01">
+<p class="tl-label">🔬 Thí nghiệm đo: U và I của điện trở 10 Ω</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> mắc điện trở công suất 10 Ω vào nguồn điều chỉnh được; ampe kế nối tiếp (±0,01 A), vôn kế song song (±0,1 V). Tăng $U$ từ 1,0 V tới 5,0 V từng 1,0 V, ghi $I$ (5 lần đo).</li>
+<li><strong>Quan sát:</strong> $U$ gấp đôi, $I$ gấp đôi; $U/I$ luôn ra 10 Ω.</li>
+<li><strong>Rút ra:</strong> $I$ tỉ lệ thuận $U$; vẽ $I$ theo $U$ được đường thẳng qua gốc.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$U$ (V)</th><th>$I$ (A)</th><th>$U/I$ (Ω)</th></tr></thead>
+<tbody>
+<tr><td>$1{,}0$</td><td>$0{,}10$</td><td>$10$</td></tr>
+<tr><td>$2{,}0$</td><td>$0{,}20$</td><td>$10$</td></tr>
+<tr><td>$3{,}0$</td><td>$0{,}30$</td><td>$10$</td></tr>
+<tr><td>$4{,}0$</td><td>$0{,}40$</td><td>$10$</td></tr>
+<tr><td>$5{,}0$</td><td>$0{,}50$</td><td>$10$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG2-->
+
+<ul>
+<li><strong>Đường đặc trưng vôn – ampe:</strong> đồ thị $I$ theo $U$ của một linh kiện.</li>
+<li>Điện trở: thẳng qua gốc, $I = kU$; $k = 1/R$ không đổi, gọi là <strong>độ dẫn điện</strong>.</li>
+<li>Dốc hơn là $R$ nhỏ hơn: đường 10 Ω dốc gấp đôi đường 20 Ω.</li>
+</ul>
+
+<p>Muốn tính $R$ chính xác nhất từ <strong>một</strong> hàng, chọn hàng nào?</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl42-sure3" value="chac"> Chắc</label> <label><input type="radio" name="tl42-sure3" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q3" id="tl42-q3a"><label for="tl42-q3a" class="tl-opt tl-no">A. Hàng 1,0 V, vì gần gốc toạ độ</label>
+<input type="radio" name="tl42-q3" id="tl42-q3b"><label for="tl42-q3b" class="tl-opt tl-no">B. Hàng nào cũng như nhau, vì đều ra 10 Ω</label>
+<input type="radio" name="tl42-q3" id="tl42-q3c"><label for="tl42-q3c" class="tl-opt tl-no">C. Hàng 3,0 V, vì nằm giữa bảng</label>
+<input type="radio" name="tl42-q3" id="tl42-q3d"><label for="tl42-q3d" class="tl-opt tl-ok">D. Hàng 5,0 V, vì sai số dụng cụ chia cho số đo lớn nhất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sai số của dụng cụ ($\pm 0{,}1$ V, $\pm 0{,}01$ A) cố định; số đo càng lớn thì phần lệch tương đối càng nhỏ: 20 % ở hàng đầu, chỉ 4 % ở hàng cuối. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — ở 1,0 V, lệch $\pm 0{,}1$ V đã là 10 % của số đo, tệ nhất bảng. B — các hàng cùng ra 10 Ω nhưng độ tin cậy khác nhau. C — "ở giữa" không làm số đo chính xác hơn; cái quyết định là số đo lớn so với sai số dụng cụ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>👀 Sai số đến từ đâu?</summary>
+<p>Vôn kế lệch $\pm 0{,}1$ V, ampe kế lệch $\pm 0{,}01$ A. Sai số tương đối của $R$ cộng từ hai phép đo: ở hàng 1,0 V là $\dfrac{0{,}1}{1{,}0} + \dfrac{0{,}01}{0{,}10} = 20\ \%$ (lệch tới 2 Ω); ở hàng 5,0 V chỉ $2\ \% + 2\ \% = 4\ \%$ (lệch 0,4 Ω). Cách tốt nhất: vẽ cả 5 điểm rồi lấy độ dốc của đường thẳng.</p>
+</details>
+
+<h4>3. Định luật Ohm</h4>
+
+<p><strong>🔑 I tỉ lệ thuận U · tỉ lệ nghịch R</strong></p>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Định luật Ohm cho đoạn mạch chỉ có điện trở</p>
+<p>Cường độ dòng điện qua vật dẫn tỉ lệ thuận với hiệu điện thế hai đầu vật dẫn, tỉ lệ nghịch với điện trở của nó:</p>
+<p>$$I = \dfrac{U}{R}$$</p>
+</div>
+
+<ul>
+<li>Mẹo nhớ: tam giác <strong>"U trên, I·R dưới"</strong>, che chữ cần tìm.</li>
+<li>Ví dụ: LED cần 20 mA, điện trở nối tiếp chịu 3 V: $R = 3/0{,}02 = 150\ \Omega$.</li>
+<li>Chỉ đúng khi $R$ không đổi; dây tóc nóng dần thì hết tỉ lệ thuận (phần 5).</li>
+</ul>
+
+<details class="tl-details">
+<summary>👀 Nhắc lại từ lớp 9: ghép điện trở, dây dẫn</summary>
+<ul>
+<li>Nối tiếp: $R = R_1 + R_2 + \dots$; $I = I_1 = I_2$; $U = U_1 + U_2$.</li>
+<li>Song song: $\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dots$; $U = U_1 = U_2$; $I = I_1 + I_2$.</li>
+<li>Dây đồng chất, tiết diện đều: $R = \rho\dfrac{l}{S}$, với $\rho$ là điện trở suất (Ω·m), $l$ chiều dài (m), $S$ tiết diện (m²).</li>
+</ul>
+</details>
+
+<h4>4. Vì sao kim loại có điện trở</h4>
+
+<p><strong>🔑 Electron va ion nút mạng · nóng hơn, rung mạnh hơn</strong></p>
+
+<!--FIG3-->
+
+<ul>
+<li>Nguyên tử kim loại nhường electron hoá trị, thành <strong>ion dương</strong> xếp đều ở nút mạng tinh thể.</li>
+<li>Electron tự do (hạt tải điện) trôi với tốc độ $v$ trong điện trường.</li>
+<li>Ion nút mạng <strong>dao động nhiệt</strong>; electron trôi qua va vào chúng, bị cản: đó là điện trở.</li>
+<li>Nóng hơn → ion rung mạnh hơn → va chạm nhiều → $v$ giảm → $R$ tăng.</li>
+</ul>
+
+<h4>5. Điện trở phụ thuộc nhiệt độ</h4>
+
+<p><strong>🔑 Kim loại: nóng thì R tăng · đèn sợi đốt: đường cong</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-dien-tro-ohm-02">
+<p class="tl-label">🔬 Thí nghiệm đo: U và I của bóng đèn 6 V – 3 W</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thay điện trở 10 Ω bằng đèn 6 V – 3 W; tăng $U$ từ 1,0 V tới 6,0 V từng 1,0 V, chờ ổn định rồi ghi $I$ (6 lần đo).</li>
+<li><strong>Quan sát:</strong> $U$ tăng 6 lần, $I$ tăng chưa tới 3 lần; $U/I$ tăng dần từ 5,9 Ω lên 12 Ω.</li>
+<li><strong>Rút ra:</strong> $R$ dây tóc tăng theo nhiệt độ; đường đặc trưng của đèn <strong>không thẳng</strong>.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$U$ (V)</th><th>$I$ (A)</th><th>$U/I$ (Ω)</th></tr></thead>
+<tbody>
+<tr><td>$1{,}0$</td><td>$0{,}17$</td><td>$5{,}9$</td></tr>
+<tr><td>$2{,}0$</td><td>$0{,}26$</td><td>$7{,}7$</td></tr>
+<tr><td>$3{,}0$</td><td>$0{,}33$</td><td>$9{,}1$</td></tr>
+<tr><td>$4{,}0$</td><td>$0{,}39$</td><td>$10{,}3$</td></tr>
+<tr><td>$5{,}0$</td><td>$0{,}45$</td><td>$11{,}1$</td></tr>
+<tr><td>$6{,}0$</td><td>$0{,}50$</td><td>$12{,}0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG4-->
+
+<ul>
+<li>Đường <strong>cong</strong>, dốc giảm dần khi $U$ tăng: dây tóc nóng lên nên $R$ tăng.</li>
+<li>Điốt cũng không thẳng: một chiều dòng gần bằng không, chiều kia tăng vọt.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Điện trở kim loại theo nhiệt độ</p>
+<p>$$R = R_0\,[1 + \alpha\,(t - t_0)]$$</p>
+<ul>
+<li>$R_0$: điện trở ở $t_0$ (thường 20 °C); $R$: ở nhiệt độ $t$.</li>
+<li>$\alpha$: hệ số nhiệt điện trở (K⁻¹); đồng $3{,}9\cdot10^{-3}$, vonfram $4{,}5\cdot10^{-3}$.</li>
+<li>Điện trở suất cũng vậy: $\rho = \rho_0[1 + \alpha(t - t_0)]$ (Ω·m); $\rho_0$: điện trở suất ở $t_0$.</li>
+</ul>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Bảng đo đèn: $R$ là 7,7 Ω ở 2,0 V nhưng 12 Ω ở 6,0 V. Vì sao?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q4" id="tl42-q4a"><label for="tl42-q4a" class="tl-opt tl-no">A. Vì đo sai, dây tóc chỉ có một điện trở</label>
+<input type="radio" name="tl42-q4" id="tl42-q4b"><label for="tl42-q4b" class="tl-opt tl-no">B. Vì $U$ lớn hơn thì $R$ lớn hơn, theo $R = U/I$</label>
+<input type="radio" name="tl42-q4" id="tl42-q4c"><label for="tl42-q4c" class="tl-opt tl-ok">C. Vì ở 6,0 V dây tóc nóng hơn, ion nút mạng rung mạnh, cản electron nhiều hơn</label>
+<input type="radio" name="tl42-q4" id="tl42-q4d"><label for="tl42-q4d" class="tl-opt tl-no">D. Vì ở 6,0 V dây tóc có ít electron tự do hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thứ làm $R$ đổi là <em>nhiệt độ</em>, không phải $U$. Dòng lớn hơn làm dây tóc nóng hơn, va chạm electron – ion tăng, $R$ tăng. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bảng đo không sai; dây tóc ở hai nhiệt độ khác nhau thì có hai điện trở khác nhau. B — $R = U/I$ là <em>cách tính</em>, không phải nguyên nhân: điện trở 10 Ω ở trên, $U$ tăng mà $R$ vẫn 10 Ω. D — số electron tự do trong kim loại hầu như không đổi theo nhiệt độ; cái đổi là mức va chạm.</p></div>
+</div>
+</div>
+
+<h4>6. Điện trở nhiệt: NTC và PTC</h4>
+
+<p><strong>🔑 NTC: nóng thì R giảm · PTC: nóng thì R tăng</strong></p>
+
+<ul>
+<li><strong>Điện trở nhiệt</strong>: $R$ đổi rất mạnh theo nhiệt độ, dùng làm cảm biến.</li>
+<li><strong>NTC</strong> (hệ số âm): nóng thì $R$ giảm mạnh.</li>
+<li><strong>PTC</strong> (hệ số dương): nóng thì $R$ tăng vọt; cầu chì tự phục hồi trong sạc.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-dien-tro-ohm-03">
+<p class="tl-label">🔬 Thí nghiệm: NTC trong cốc nước ấm</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đồng hồ vạn năng thang Ω kẹp hai chân NTC 10 kΩ; nhúng NTC cùng nhiệt kế vào nước 25, 35, 45, 55 °C (4 lần đo), chờ ổn định rồi ghi.</li>
+<li><strong>Quan sát:</strong> 10,0 kΩ → 6,5 → 4,3 → 3,0 kΩ: nóng thêm 30 °C, $R$ giảm hơn 3 lần.</li>
+<li><strong>Rút ra:</strong> NTC ngược với kim loại: nóng thì $R$ giảm. Đo $R$ là suy ra nhiệt độ: đó là cảm biến nhiệt.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>👀 Xem thêm: siêu dẫn và cặp nhiệt điện</summary>
+<p><strong>Siêu dẫn.</strong> Hạ nhiệt độ, điện trở suất kim loại giảm liên tục; gần 0 K điện trở của kim loại sạch rất nhỏ. Với một số kim loại và hợp kim, khi nhiệt độ xuống dưới <strong>nhiệt độ tới hạn</strong> $T_c$, điện trở đột ngột bằng 0: trạng thái siêu dẫn. Dòng điện trong vòng dây siêu dẫn chạy rất lâu sau khi ngắt nguồn. Ứng dụng: nam châm siêu dẫn trong máy chụp cộng hưởng từ (MRI), tạo từ trường mạnh mà không hao phí nhiệt.</p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Vật liệu</th><th>$T_c$ (K)</th></tr></thead>
+<tbody>
+<tr><td>Kẽm</td><td>0,85</td></tr>
+<tr><td>Nhôm</td><td>1,18</td></tr>
+<tr><td>Thuỷ ngân</td><td>4,15</td></tr>
+<tr><td>Chì</td><td>7,19</td></tr>
+<tr><td>Nb₃Sn</td><td>18</td></tr>
+<tr><td>Nb₃Ge</td><td>23</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Hiện tượng nhiệt điện.</strong> Mạch kín gồm hai kim loại khác nhau, hai mối hàn giữ ở nhiệt độ $T_1 \neq T_2$ thì xuất hiện suất điện động nhiệt điện $\mathcal{E} = \alpha_T(T_1 - T_2)$; $\alpha_T$ là hệ số nhiệt điện động (μV/K), phụ thuộc cặp vật liệu. Cặp nhiệt điện đo được nhiệt độ lò nung hàng nghìn độ.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "U tăng thì R tăng, vì R = U/I"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>$R$ do cái gì quyết định</th><th>$R = U/I$ nói gì</th></tr></thead>
+<tbody>
+<tr><td>Vật liệu, kích thước, nhiệt độ</td><td>Cách đo: $U$ chia $I$</td></tr>
+<tr><td>Không phải $U$ (nhiệt độ giữ nguyên)</td><td>$I$ tăng theo $U$, tỉ số giữ nguyên</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Điện trở 10 Ω (nhiệt độ ổn định) đang chịu 2,0 V. Tăng lên 4,0 V thì:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl42-sure5" value="chac"> Chắc</label> <label><input type="radio" name="tl42-sure5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q5" id="tl42-q5a"><label for="tl42-q5a" class="tl-opt tl-no">A. $R$ tăng lên 20 Ω, $I$ giữ nguyên</label>
+<input type="radio" name="tl42-q5" id="tl42-q5b"><label for="tl42-q5b" class="tl-opt tl-no">B. $R$ tăng lên 20 Ω, $I$ tăng gấp đôi</label>
+<input type="radio" name="tl42-q5" id="tl42-q5c"><label for="tl42-q5c" class="tl-opt tl-ok">C. $R$ vẫn 10 Ω, $I$ tăng từ 0,20 A lên 0,40 A</label>
+<input type="radio" name="tl42-q5" id="tl42-q5d"><label for="tl42-q5d" class="tl-opt tl-no">D. $R$ giảm còn 5 Ω, $I$ tăng gấp 4</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện trở do vật liệu và nhiệt độ quyết định, không đổi theo $U$. Dòng theo định luật Ohm: $I = 4{,}0/10 = 0{,}40$ A, gấp đôi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — nếu $R$ gấp đôi mà $I$ giữ nguyên thì $U/I$ đúng là 20 Ω, nhưng không có lý do vật lí nào để $R$ tự tăng: nhiệt độ không đổi. B — $R$ và $I$ cùng gấp đôi thì $U$ phải gấp 4, trái đề. D — $R$ không giảm khi tăng $U$; $I$ gấp 4 là nhân nhầm hai lần. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: "Cái gì nóng lên cũng tăng điện trở"</h4>
+
+<p>Đúng với kim loại, sai với NTC.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Kim loại (đồng, vonfram)</th><th>Điện trở nhiệt NTC</th></tr></thead>
+<tbody>
+<tr><td>Nóng → $R$ tăng từ từ, vài phần nghìn mỗi độ</td><td>Nóng → $R$ giảm mạnh, 3 lần trong 30 °C</td></tr>
+<tr><td>$R = R_0[1 + \alpha(t - t_0)]$, $\alpha \gt 0$</td><td>Hệ số nhiệt âm, không bậc nhất</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>NTC 10 kΩ trong pin điện thoại. Pin sạc nóng từ 25 °C lên 45 °C. Điện trở NTC:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q6" id="tl42-q6a"><label for="tl42-q6a" class="tl-opt tl-ok">A. Giảm, còn khoảng 4 kΩ</label>
+<input type="radio" name="tl42-q6" id="tl42-q6b"><label for="tl42-q6b" class="tl-opt tl-no">B. Tăng lên khoảng 11 kΩ, như kim loại</label>
+<input type="radio" name="tl42-q6" id="tl42-q6c"><label for="tl42-q6c" class="tl-opt tl-no">C. Không đổi, vì NTC không phải kim loại</label>
+<input type="radio" name="tl42-q6" id="tl42-q6d"><label for="tl42-q6d" class="tl-opt tl-no">D. Giảm về 0, vì NTC thành siêu dẫn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> NTC nóng thì $R$ giảm: thí nghiệm cho 4,3 kΩ ở 45 °C. Mạch sạc đọc giá trị này để biết pin nóng và giảm dòng sạc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — công thức bậc nhất với $\alpha \gt 0$ là của kim loại; NTC có hệ số nhiệt <em>âm</em>. C — "điện trở nhiệt" được chế tạo chính vì $R$ đổi mạnh theo nhiệt độ, không thể không đổi. D — siêu dẫn chỉ xảy ra ở vài kelvin, không phải lúc nóng lên 45 °C.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "Đường dốc hơn là điện trở lớn hơn"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Đồ thị $I$ theo $U$</th><th>Đồ thị $U$ theo $I$</th></tr></thead>
+<tbody>
+<tr><td>Độ dốc $= 1/R$</td><td>Độ dốc $= R$</td></tr>
+<tr><td>Dốc hơn → $R$ nhỏ hơn</td><td>Dốc hơn → $R$ lớn hơn</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Đồ thị $I$ theo $U$: hai đường thẳng qua gốc, (1) qua (4,0 V; 0,40 A), (2) qua (4,0 V; 0,20 A). Kết luận:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q7" id="tl42-q7a"><label for="tl42-q7a" class="tl-opt tl-no">A. $R_1 = 20\ \Omega$, $R_2 = 10\ \Omega$: dốc hơn, $R$ lớn hơn</label>
+<input type="radio" name="tl42-q7" id="tl42-q7b"><label for="tl42-q7b" class="tl-opt tl-no">B. $R_1 = 0{,}1\ \Omega$, $R_2 = 0{,}05\ \Omega$</label>
+<input type="radio" name="tl42-q7" id="tl42-q7c"><label for="tl42-q7c" class="tl-opt tl-no">C. Không đủ dữ liệu, vì chưa biết nhiệt độ</label>
+<input type="radio" name="tl42-q7" id="tl42-q7d"><label for="tl42-q7d" class="tl-opt tl-ok">D. $R_1 = 10\ \Omega$, $R_2 = 20\ \Omega$: dốc hơn, $R$ nhỏ hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_1 = 4{,}0/0{,}40 = 10\ \Omega$; $R_2 = 4{,}0/0{,}20 = 20\ \Omega$. Cùng $U$, đường nào cho $I$ lớn hơn thì cản ít hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — tính đúng số nhưng gán ngược: $4{,}0/0{,}40 = 10$ là của đường (1), và dốc hơn là $R$ nhỏ hơn. B — $0{,}40/4{,}0 = 0{,}1$ là lấy $I$ chia $U$, ra $1/R$ chứ không phải $R$. C — đường thẳng qua gốc nghĩa là $R$ không đổi trong vùng đo; một điểm là đủ tính.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Điện trở là gì? Công thức, đơn vị? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>Mức cản dòng của vật dẫn · $R = U/I$ · $U$ (V), $I$ (A), $R$ (Ω) · $1\ \text{k}\Omega = 10^3\ \Omega$, $1\ \text{M}\Omega = 10^6\ \Omega$.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Phát biểu định luật Ohm. Khi nào dùng được? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>$I$ tỉ lệ thuận $U$ · tỉ lệ nghịch $R$ · $I = U/R$ · đoạn mạch chỉ có điện trở, $R$ không đổi (nhiệt độ ổn định).</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Đường đặc trưng V–A của điện trở và của đèn khác nhau thế nào? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>Đồ thị $I$ theo $U$ · điện trở: thẳng qua gốc, dốc $= 1/R$ · đèn: cong, dốc giảm dần vì $R$ tăng khi nóng · điốt: không thẳng, chỉ dẫn một chiều.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Vì sao kim loại có điện trở? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>Ion dương ở nút mạng dao động nhiệt · electron tự do trôi qua bị va chạm · nóng hơn → rung mạnh hơn → cản nhiều hơn.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Công thức điện trở kim loại theo nhiệt độ, ý nghĩa ký hiệu? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>$R = R_0[1 + \alpha(t - t_0)]$ · $R_0$ ở $t_0$ · $\alpha$ hệ số nhiệt điện trở (K⁻¹), dương với kim loại · $\rho$ cũng theo công thức đó.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. NTC khác kim loại ở chỗ nào? Siêu dẫn là gì? <small>(nói trước, rồi bấm xem)</small></summary>
+<p>Điện trở nhiệt hệ số âm · nóng thì $R$ giảm mạnh · làm cảm biến nhiệt · PTC thì ngược lại · siêu dẫn: dưới $T_c$, $R = 0$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: dây tóc lúc nguội và lúc sáng</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Dây tóc bóng đèn bằng vonfram có $R_0 = 4{,}0\ \Omega$ ở 20 °C. Khi sáng bình thường, hiệu điện thế hai đầu đèn là 12 V, dòng qua đèn 0,25 A. Cho $\alpha = 4{,}5\cdot10^{-3}$ K⁻¹.</p>
+<p>a) Tính $R$ khi đèn sáng bình thường.</p>
+<p>b) Tính nhiệt độ dây tóc lúc đó.</p>
+<p>c) Lúc vừa bật, dây tóc còn 20 °C: tính dòng điện và so với lúc sáng bình thường.</p>
+</div>
+
+<p>Mỗi cụm trong đề, tự hỏi: <strong>dữ liệu gì, kiến thức nào</strong>?</p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"$R_0 = 4{,}0\ \Omega$ ở 20 °C"</td><td>$R_0$, $t_0 = 20$ °C</td><td>Mốc $t_0$ của công thức</td></tr>
+<tr><td>"12 V, dòng qua đèn 0,25 A"</td><td>$U = 12$ V, $I = 0{,}25$ A</td><td>$R = U/I$</td></tr>
+<tr><td>"$\alpha = 4{,}5\cdot10^{-3}$ K⁻¹"</td><td>$\alpha$</td><td>$R = R_0[1 + \alpha(t - t_0)]$</td></tr>
+<tr><td>"vừa bật, dây tóc còn 20 °C"</td><td>$R = R_0$</td><td>Định luật Ohm với $R_0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>a) $R = \dfrac{U}{I} = \dfrac{12}{0{,}25} = 48\ \Omega$.</li>
+<li>b) $R = R_0[1 + \alpha(t - t_0)]$ → $\dfrac{R}{R_0} = \dfrac{48}{4{,}0} = 12 = 1 + \alpha(t - 20)$.</li>
+<li>$t - 20 = \dfrac{11}{4{,}5\cdot10^{-3}} \approx 2444$ → $t \approx 2{,}5\cdot10^{3}$ °C (khoảng 2 460 °C).</li>
+<li>c) Lúc vừa bật: $I_0 = \dfrac{U}{R_0} = \dfrac{12}{4{,}0} = 3{,}0$ A, gấp $3{,}0/0{,}25 = 12$ lần dòng bình thường.</li>
+<li>Kiểm tra: $t$ cỡ 2 500 °C hợp lí với dây tóc vonfram (nóng chảy ở 3 400 °C). Tỉ số dòng 12 bằng đúng tỉ số điện trở 48/4,0 — vì cùng $U$, $I$ tỉ lệ nghịch $R$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng dây tóc, đèn sáng mờ: dây tóc 1 020 °C, dòng 0,20 A. Tính $R$ và $U$.</p>
+<ol class="tl-steps">
+<li>$t - t_0 = 1020 - 20 = 1000$ °C.</li>
+<li><strong>Em điền:</strong> $R = 4{,}0\,[1 + 4{,}5\cdot10^{-3}\cdot1000] = \;?$</li>
+<li><strong>Em điền:</strong> $U = IR = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2 và 3</summary>
+<p>$R = 4{,}0\cdot5{,}5 = 22\ \Omega$. $U = 0{,}20\cdot22 = 4{,}4$ V. Chỗ hay sai: quên số "1 +" (ra 18 Ω) hoặc cộng $\alpha\cdot1000$ thẳng vào $R_0$ (ra 8,5 Ω).</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>Dây tóc vonfram khác có $R_0 = 2{,}0\ \Omega$ ở 20 °C, khi sáng đạt 2 020 °C. Điện trở lúc sáng là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl42-sure8" value="chac"> Chắc</label> <label><input type="radio" name="tl42-sure8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl42-q8" id="tl42-q8a"><label for="tl42-q8a" class="tl-opt tl-no">A. $0{,}2\ \Omega$</label>
+<input type="radio" name="tl42-q8" id="tl42-q8b"><label for="tl42-q8b" class="tl-opt tl-ok">B. $20\ \Omega$</label>
+<input type="radio" name="tl42-q8" id="tl42-q8c"><label for="tl42-q8c" class="tl-opt tl-no">C. $18\ \Omega$</label>
+<input type="radio" name="tl42-q8" id="tl42-q8d"><label for="tl42-q8d" class="tl-opt tl-no">D. $11\ \Omega$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t - t_0 = 2000$; $1 + 4{,}5\cdot10^{-3}\cdot2000 = 10$; $R = 2{,}0\cdot10 = 20\ \Omega$. Em giải thích được cho bạn ngồi cạnh chưa: vì sao phải có số "1 +" trong ngoặc?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> C — $2{,}0\cdot4{,}5\cdot10^{-3}\cdot2000 = 18$ là quên số "1 +": đó chỉ là <em>phần tăng thêm</em>, chưa cộng $R_0$. D — $2{,}0 + 4{,}5\cdot10^{-3}\cdot2000 = 11$ là cộng $\alpha\Delta t$ thẳng vào $R_0$; phải <em>nhân</em> $R_0$ với cả ngoặc. A — $2{,}0/10 = 0{,}2$ là chia thay vì nhân; nóng lên thì $R$ phải tăng. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🔄 Đổi chiều: biết $R$, tìm nhiệt độ</summary>
+<p>Dây tóc $R_0 = 2{,}0\ \Omega$ ở 20 °C, đo được $R = 11\ \Omega$. $R/R_0 = 5{,}5 = 1 + 4{,}5\cdot10^{-3}(t - 20)$ → $t - 20 = 4{,}5/(4{,}5\cdot10^{-3}) = 1000$ → $t = 1020$ °C. Đây chính là nguyên lí nhiệt kế điện trở.</p>
+</details>
+
+<h3>VI. Điện trở trong đời sống</h3>
+
+<ul>
+<li><strong>Máy in 3D, máy CNC:</strong> NTC ở đầu phun, mạch đọc $R$ để giữ đúng 200 °C.</li>
+<li><strong>Pin điện thoại:</strong> NTC báo pin nóng để giảm dòng sạc; PTC làm cầu chì tự phục hồi.</li>
+<li><strong>Nhiệt kế Pt100:</strong> dây platin, đo nhiệt độ lò công nghiệp.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Điện trở 470 Ω mắc vào 9,4 V. Tính $I$ ra mA.</summary>
+<p>$I = 9{,}4/470 = 0{,}020$ A $= 20$ mA.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Nối O với điểm 6,0 V của bảng đo đèn bằng đường thẳng (đường đứt trong Hình 4). Điểm 2,0 V nằm trên hay dưới? Vì sao?</summary>
+<p>$R = 2{,}0/0{,}26 \approx 7{,}7\ \Omega$ và $6{,}0/0{,}50 = 12\ \Omega$. Đường O–(6,0 V) ứng với 12 Ω, tại 2,0 V cho $I = 0{,}17$ A; điểm đo là 0,26 A, nằm <strong>phía trên</strong>: lúc đó dây tóc nguội hơn, $R$ nhỏ hơn 12 Ω nên dòng lớn hơn.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Cuộn dây đồng động cơ CNC: 1,50 Ω ở 20 °C; chạy một giờ, tắt máy đo ngay được 1,80 Ω. Cuộn dây nóng bao nhiêu độ? Vì sao phải đo "ngay"?</summary>
+<p>$\alpha_{\text{Cu}} = 3{,}9\cdot10^{-3}$ K⁻¹. $R/R_0 = 1{,}80/1{,}50 = 1{,}20 = 1 + 3{,}9\cdot10^{-3}(t - 20)$ → $t - 20 = 0{,}20/(3{,}9\cdot10^{-3}) \approx 51$ → $t \approx 71$ °C. Phải đo ngay vì cuộn dây nguội dần sau khi tắt, chờ lâu thì $R$ giảm và tính ra nhiệt độ thấp hơn thực. Đây là phép đo tiêu chuẩn khi kiểm tra động cơ.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Điện trở:</strong> $R = U/I$ · ôm · kΩ đổi ra Ω trước.</li>
+<li><strong>Định luật Ohm:</strong> $I = U/R$ · thuận $U$ · nghịch $R$.</li>
+<li><strong>Đường V–A:</strong> điện trở thẳng qua gốc · dốc $= 1/R$ · đèn cong.</li>
+<li><strong>Nguyên nhân:</strong> electron va ion nút mạng · nóng rung mạnh.</li>
+<li><strong>Kim loại:</strong> $R = R_0[1 + \alpha(t - t_0)]$ · nóng thì tăng.</li>
+<li><strong>NTC:</strong> nóng thì giảm mạnh · PTC ngược lại.</li>
+<li><strong>Đọc đề:</strong> $R_0$ ở $t_0$ nào · kΩ hay Ω.</li>
+</ul>
+</div>

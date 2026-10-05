@@ -1,0 +1,151 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Năng lượng điện và công suất điện",
+ "lesson_id": 44,
+ "nguon_trong_bai": "content/lesson-samples/l11-nang-luong-cong-suat-dien/theory.html",
+ "id": "tn-l11-nang-luong-dien-01",
+ "ten": "Đọc công tơ điện khi chỉ bật một thiết bị",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "nangluongdien.a_bang_uit",
+  "nangluongdien.kwh",
+  "nangluongdien.cong_to"
+ ],
+ "muc_tieu": "Thấy công tơ điện đếm năng lượng (kWh) chứ không đếm công suất; đổi kWh ra J và kiểm bằng A = Pt.",
+ "dung_cu": [
+  {
+   "ten": "Công tơ điện tử của hộ gia đình",
+   "so_luong": 1,
+   "ghi_chu": "đọc được 0,1 kWh"
+  },
+  {
+   "ten": "Ấm siêu tốc 220 V – 1800 W",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giờ (điện thoại)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Tắt mọi thiết bị trong nhà, chỉ cắm ấm siêu tốc 1800 W.",
+   "Ghi chỉ số công tơ lúc bật ấm (ví dụ 1234,5 kWh) và bấm giờ.",
+   "Sau đúng 10 phút (đổ thêm nước lạnh nếu ấm tự ngắt) ghi chỉ số lúc tắt."
+  ],
+  "quan_sat": [
+   "Chỉ số công tơ thành 1234,8 kWh, tăng 0,3 kWh.",
+   "Số tăng đều theo thời gian khi ấm chạy; dừng lại khi tắt ấm."
+  ],
+  "rut_ra": [
+   "A = Pt = 1,8 kW × (1/6) h = 0,3 kWh, khớp số công tơ.",
+   "0,3 kWh = 0,3 × 3,6·10⁶ = 1,08·10⁶ J. Công tơ đo năng lượng, không đo công suất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất thiết bị",
+   "don_vi": "kW",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 3.0,
+   "mac_dinh": 1.8,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian bật",
+   "don_vi": "phút",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 480,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "A_kWh",
+   "ten": "Điện năng (số công tơ tăng)",
+   "don_vi": "kWh",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "A_J",
+   "ten": "Điện năng",
+   "don_vi": "J",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "A_kWh = P × t/60 (P tính bằng kW, t bằng phút)",
+   "A_J = A_kWh × 3,6·10⁶"
+  ],
+  "gia_thiet": [
+   "thiết bị chạy đúng công suất ghi trên nhãn suốt thời gian bật",
+   "không có thiết bị nào khác tiêu thụ",
+   "bỏ qua độ phân giải 0,1 kWh của công tơ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "P (kW)",
+   "t (phút)",
+   "A (kWh)",
+   "A (J)"
+  ],
+  "hang": [
+   [
+    1.8,
+    10,
+    0.3,
+    1080000
+   ],
+   [
+    1.8,
+    20,
+    0.6,
+    2160000
+   ],
+   [
+    0.7,
+    60,
+    0.7,
+    2520000
+   ],
+   [
+    2.2,
+    480,
+    17.6,
+    63360000
+   ]
+  ],
+  "ghi_chu": "Tính từ A = P·t/60 và 1 kWh = 3,6·10⁶ J. Hàng 1 là số trong bài; hàng 3 nồi cơm 700 W một giờ; hàng 4 trục chính CNC 2,2 kW một ca 8 giờ."
+ },
+ "ket_qua_ky_vong": "Số công tơ tăng tỉ lệ với công suất và với thời gian; 1800 W trong 10 phút tăng 0,3 kWh.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ công tơ đếm công suất (W) nên bật ấm 1800 W là 'mất 1,8 số'.",
+  "Nhân 1,8 kW với 10 phút ra 18 mà không đổi phút ra giờ.",
+  "Lẫn kW với kWh khi đọc hoá đơn."
+ ],
+ "sai_so_thuong_gap": [
+  "Công tơ chỉ hiện tới 0,1 kWh nên 10 phút chỉ đọc được 0,3 ± 0,1 kWh; đo 30–60 phút sẽ chính xác hơn.",
+  "Ấm tự ngắt khi sôi làm thời gian chạy thật ngắn hơn thời gian bấm giờ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "dieu_khien": [
+   "P",
+   "t"
+  ],
+  "dau_ra": [
+   "màn hình công tơ chạy số kWh theo thời gian",
+   "đồ thị A theo t là đường thẳng qua gốc, độ dốc = P"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Cho kéo thanh P và t, công tơ ảo nhảy số; đặt bẫy: hỏi trước 'bật ấm 1800 W thì mỗi phút tốn bao nhiêu số?'."
+ },
+ "an_toan": "Không chạm vào công tơ, chỉ đọc số; ấm siêu tốc phải có nước khi bật."
+}
