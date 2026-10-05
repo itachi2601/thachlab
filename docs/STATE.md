@@ -221,13 +221,9 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - (Không còn migration chờ — 5/10/2026. Các file 20260930160000…20261003150000 đã chạy, xem `STATE-archive.md`. `FILES` trong `scripts/run-migrations.sh` đang rỗng.)
 - Đã chạy: `20260930160000_exit_quiz_bank_children.sql` 30/9/2026 17:15 (xem STATE-archive.md). Đợt GĐ 1b (5 file `20260930110000`–`150000`) đã chạy 30/9/2026 16:07 (xem STATE-archive.md).
   Đã cấp bù thành tích `tien_bo_tuan` cho 7 em từng nhận RP tiến bộ (30/9/2026, chạy tay, kiểm lại = 0 em thiếu).
-- **Bộ Kiểm tra nhanh lý thuyết (không phải migration, không đổi schema)** — 20 file JSON lớp 12 chờ đăng
-  (đã kiểm chéo + validate, đã gắn YCCĐ + mức độ 1/10/2026 — sẵn sàng đăng): `scripts/data/theory-quiz/{2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,125,126,127}.json`.
-  Thầy chạy trên Mac, theo thứ tự:
-  `npx tsx scripts/export-question-topics.mts` → `npx tsx scripts/publish-theory-quiz.mts --lesson 2 --lesson 3 … --lesson 127` (liệt kê đủ 20 id)
-  (thử trước bằng `--dry-run`) → `bash scripts/deploy.sh`. Chưa đăng nên các mục lý thuyết này chưa có `exam_ids`.
-  Rollback: gỡ `exam_ids`/`quiz_min_correct` của mục đó + xoá exam mới tạo. Skill `soan-quiz-ly-thuyet`
-  (`.claude/skills/soan-quiz-ly-thuyet/`) cần đồng bộ sang 2 bản còn lại (Library plugin + `~/.codex`) trên Mac: `bash scripts/sync-skill.sh`.
+- **Bộ Kiểm tra nhanh lý thuyết lớp 12 — ĐÃ ĐĂNG 5/10/2026** (20 bài, lesson 2–11, 13–19, 125–127): soạn lại theo bài tương tác 6 đoạn, đăng bằng `publish-theory-quiz.mts --replace` → exam 751–770, đã `deploy.sh`.
+  Còn treo: đề cũ 209, 239–257 vẫn nằm trong DB (script không xoá) — kiểm `exam_results` rồi dọn tay. Bài 9/17/126 còn 18–19 câu (đã loại câu sai).
+  Lỗi nội dung bài phát hiện khi kiểm chéo, chưa sửa: bài 8 `summary_html` (273 K ↔ 24,79 lít phải 298 K); bài 19 Xofigo `^{223}_{86}Ra` phải Z=88; bài 10 "d gấp đôi → B còn 1/8" chỉ đúng lần 2→4 cm; bài 126 mục tiêu ghi 8 câu thực tế 7; bài 13 còn vai "Thầy". Skill `soan-quiz-ly-thuyet` cần đồng bộ 2 bản còn lại: `bash scripts/sync-skill.sh`.
 Mọi file trong `supabase/migrations/` tính tới 30/09/2026 đã chạy trên production.
 Lịch sử các đợt đã chạy: `docs/STATE-archive.md`. Sơ đồ bảng hiện tại: `docs/DATABASE.md`
 (sinh lại bằng `node scripts/gen-database-doc.mjs` sau mỗi đợt migration).
