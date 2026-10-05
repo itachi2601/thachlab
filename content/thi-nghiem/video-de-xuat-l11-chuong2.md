@@ -16,8 +16,8 @@ V6 link video nhúng được · V7 không bịa link (không có thì ghi "KHÔ
 
 | # | Bài | Vị trí | Link | Kênh | Thời lượng | Nhãn | Nhìn vào | Cờ | Duyệt? | start–end |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | l11-mo-ta-song | mo_bai | | | | | | | | |
-| 2 | l11-mo-ta-song | tn-l11-motasong-01 | | | | | | | | |
+| 1 | l11-mo-ta-song | mo_bai | https://www.youtube.com/watch?v=hq387m0PRac | Andy Webb | 0:27 | khán đài làm sóng người | Cả khán đài lần lượt đứng lên rồi ngồi xuống: có ai rời khỏi chỗ ngồi không? | không lời, không giải thích (đạt V4); **~15 s đầu khán đài còn đứng yên, làn sóng rõ ở 0:16–0:21 → cần cắt ~0:15–0:24**; dự phòng g2dlCKb6Ys0 (Adelaide, 0:17, bản ghi TV có bảng điểm) | | |
+| 2 | l11-mo-ta-song | tn-l11-motasong-01 | https://www.youtube.com/watch?v=RRvgdqqcrcE | Hùng Nguyễn (bản cắt lại của VQT GV) | 0:12 | bóng nổi nhấp nhô tại chỗ | Quả bóng nhấp nhô lên xuống khi sóng chạy qua — nó có trôi ra xa không? | không lời, bể nước sáng rõ, bóng đứng nguyên vị trí ngang (đã xem khung hình); **có watermark chữ vàng "Kênh YTB: VQT GV"**; bản gốc VQT GV 4:29 có thuyết minh; dự phòng nHllTEre-Fk (vịt nổi, 0:43, phải cắt thẻ chữ đầu + bảng hiệu cuối) | | |
 | 3 | l11-giao-thoa-song | tn-l11-giaothoa-02 | https://www.youtube.com/watch?v=yBBGE3ncQ7U | Elearning CLAN | 2:38 | hai loa: chỗ to chỗ tắt | Micro đi ngang trước hai loa — chỗ nào tiếng to, chỗ nào tiếng nhỏ? | dùng tạm: KHÔNG có cảnh "bịt một loa"; watermark Utah State; trùng hiện tượng với clip mở bài của chính bài + **trùng clip dòng 11** → **tôi đề xuất BỎ dòng này (V6)** | | |
 | 4 | l11-song-dung | mo_bai | https://www.youtube.com/watch?v=Voq8d2PKCGU | Mr. Mangiacapre | 0:17 | bấm phím rồi gảy, nốt cao lên | Cùng một dây: bấm phím rồi gảy, nốt nghe cao lên hay thấp đi? | không lời, đạt V4; **nửa sau chuyển sang harmonics → nên cắt 0:00–0:08**; không quay chậm; dự phòng LNNQvG0jWtw (2:28, đen trắng, không có đoạn bấm phím) | | |
 | 5 | l11-song-dung | tn-l11-songdung-04 | https://www.youtube.com/watch?v=XOCGb5ZGEV8 | Ruy Mascarúa | 0:29 | dây đàn rung thành bụng sóng | Dây đàn rung thành mấy bụng và chỗ nào gần như đứng yên? | hình sóng thấy được là do **rolling shutter 60fps, không phải quay chậm thật**; không có tiếng nốt dây buông/phím 12; dự phòng BSIw5SgUirg (0:51, tiếng Anh) | | |
@@ -38,6 +38,36 @@ V6 link video nhúng được · V7 không bịa link (không có thì ghi "KHÔ
 | l11-giao-thoa-song | tn-l11-giaothoa-01 | Lz3I0RTjumk | khay sóng hai nguồn (VẬT LÝ PHỔ THÔNG) |
 | l11-giao-thoa-song | tn-l11-giaothoa-03 | nuaHY5lj2AA | khe Young với laser (Pete G) |
 | (dùng chung) | — | UMkAXvWIRY4 | khay sóng MIT, không lời — dùng lại được cho Mô tả sóng / Sóng dừng |
+
+## Chờ thầy duyệt — 3 việc
+
+1. **Soát mẫu ~10%** (2 dòng bất kỳ) — nếu 2 dòng đó ổn thì phần còn lại tin được.
+2. **Xem các dòng có cờ** (đây là các dòng tôi không dám tự quyết):
+   - dòng 3 (Giao thoa `tn-02`): **tôi đề xuất bỏ** — không có cảnh "bịt một loa", lại trùng clip dòng 11;
+   - dòng 4 (Sóng dừng mở bài): clip 0:17 nhưng nửa sau chuyển sang harmonics → **cần cắt**;
+   - dòng 5 (tn-04 dây đàn): hình sóng là do rolling shutter, không phải quay chậm thật;
+   - dòng 12 (laser khe Young): đo khoảng vân ở ~0:50 → **nên cắt 0:50–1:10**;
+   - dòng 13 (ống cộng hưởng): dụng cụ khác bài (kích bằng âm thoa + ống nhúng nước);
+   - dòng 1 và 2: **cần cắt** (dòng 1: làn sóng chỉ rõ ở 0:16–0:21; dòng 2 có watermark kênh).
+3. **Tick `Duyệt?` = `x`** cho dòng nhận, ghi `start–end` (`0:20–1:10`) nếu muốn cắt. Xong tôi chạy:
+```
+npx tsx scripts/nhap-video-de-xuat.mts content/thi-nghiem/video-de-xuat-l11-chuong2.md --ra /tmp/kho-thu
+npx tsx scripts/chen-video-thi-nghiem.mts --kiem --kho /tmp/kho-thu    # phải ✓ hết mới đi tiếp
+npx tsx scripts/nhap-video-de-xuat.mts content/thi-nghiem/video-de-xuat-l11-chuong2.md --apply
+npx tsx scripts/chen-video-thi-nghiem.mts --kiem --apply
+npx tsx scripts/chen-video-thi-nghiem.mts --apply
+```
+
+## Tổng kết pilot (13 chỗ · 12 clip · 1 chỗ không có clip)
+
+- 2 clip tiếng Việt có thuyết minh (dòng 7, 8 — VẬT LÝ PHỔ THÔNG), 1 clip phụ đề Việt (dòng 3/11),
+  ~4 clip không lời; còn lại tiếng Anh.
+- 5 chỗ nên cắt ngắn (dòng 1, 4, 5, 12 và clip dự phòng); 1 chỗ dùng tạm chấp nhận được (dòng 3 — đề xuất bỏ).
+- 3 chỗ **không có clip đạt yêu cầu**: mở bài bài 33 (tình huống giả định), cảnh "bịt một loa" (bài 31),
+  và đúng dụng cụ "nổi ống nhựa 0,17 m" (bài 33 tn-04 dùng clip dụng cụ khác).
+- Đã kiểm **oEmbed toàn bộ** link (sống + nhúng được, 6/10/2026) và **xem khung hình** các clip quan trọng;
+  5 dòng do 3 agent tìm, 2 dòng do tôi tự tìm (và 1 dòng bị chính agent bác bỏ vì không chứng minh được
+  hiện tượng — đã thay bằng clip sáng rõ hơn), 6 dòng còn lại là clip thầy đã duyệt từ 5/10.
 
 ## Ghi chú kỹ thuật cho phiên sau (đã kiểm chứng 6/10/2026)
 

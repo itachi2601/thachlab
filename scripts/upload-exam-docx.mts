@@ -22,6 +22,7 @@ import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle } f
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
 import { isMissingFigure, questionsMissingFigure } from "@/services/question-figures";
 import sharp from "sharp";
+import { trimPageImages } from "@/services/docx-image-trim";
 
 class NodeDOMParser {
   parseFromString(str: string, type: string) {
@@ -66,7 +67,7 @@ const url = env.NEXT_PUBLIC_SUPABASE_URL ?? fail("thiếu NEXT_PUBLIC_SUPABASE_U
 const key = env.SUPABASE_SERVICE_ROLE_KEY ?? fail("thiếu SUPABASE_SERVICE_ROLE_KEY trong .env.local");
 const supabase = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } });
 
-const read = await readDocx(new Uint8Array(fs.readFileSync(file)));
+const read = await readDocx(new Uint8Array(fs.readFileSync(file)), { imageSizes: true });
 if (read.mathTypeCount > 0 && !process.argv.includes("--drop-mathtype")) fail(`còn ${read.mathTypeCount} công thức MathType chưa chuyển (⟦CT⟧) — chạy mtef trước`);
 let text = read.text;
 if (process.argv.includes("--drop-vector-marks")) {
@@ -161,9 +162,16 @@ if (item.lesson_id !== lessonId) fail(`mục ${itemId} thuộc lesson ${item.les
 let uploaded: string[] = [];
 let examId: number | null = null;
 try {
-  let resolved = bundle;
   const used = JSON.stringify(bundle.exam.questions);
   const keepImgs = read.images.filter((im) => used.includes(im.placeholder));
+  // Ảnh công thức/hình do Word xuất thành PNG cả trang A4: cắt sát nội dung, đặt lại cỡ theo khung Word, công thức nhỏ → class eq
+  const trim = await trimPageImages(keepImgs, used);
+  if (trim.stats.trimmed) console.log(`  ✓ cắt ${trim.stats.trimmed} ảnh nền A4 (${trim.stats.skipped} ảnh giữ nguyên)`);
+  const mapStrings = (v: unknown): unknown =>
+    typeof v === "string" ? trim.rewrite(v) : Array.isArray(v) ? v.map(mapStrings)
+      : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, mapStrings(x)])) : v;
+  bundle = mapStrings(bundle) as typeof bundle;
+  let resolved = bundle;
   for (const im of keepImgs) {
     const b64 = im.dataUri.slice(im.dataUri.indexOf(",") + 1);
     const buf = Buffer.from(b64, "base64");

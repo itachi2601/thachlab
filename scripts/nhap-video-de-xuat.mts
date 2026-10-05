@@ -91,26 +91,44 @@ type KhoObj = { bai?: BaiEntry[]; video?: VideoJson } & Record<string, unknown>;
 
 type Dong = Record<string, string>;
 function docBang(md: string): { dong: Dong[]; thieuDuyet: number; loi: string[] } {
-  const lines = md.split("\n").filter((l) => l.trim().startsWith("|"));
+  const lines = md.split("\n");
   const loi: string[] = [];
-  if (lines.length < 2) return { dong: [], thieuDuyet: 0, loi: ["Bảng không có dòng dữ liệu nào."] };
   const cat = (l: string) =>
     l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((x) => x.replace(/[*`]/g, "").trim());
-  const header = cat(lines[0]);
+  const laKhongCo = (v: string) => {
+    const t = (v ?? "").trim();
+    return !t || /^kh[oô]ng c[oó]/i.test(t) || t === "—" || t === "-";
+  };
   const dong: Dong[] = [];
   let thieuDuyet = 0;
-  for (const l of lines.slice(1)) {
-    const cells = cat(l);
-    if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue; // dòng kẻ |---|---|
-    const o: Dong = {};
-    header.forEach((h, i) => (o[h] = cells[i] ?? ""));
-    if (!Object.values(o).some((v) => v)) continue;
-    if (!DUYET.test(o["Duyệt?"] ?? "")) {
-      thieuDuyet++;
+
+  // Chỉ bảng nào có cột `Duyệt?` mới là bảng đề xuất (bảng "đã có sẵn trong kho" thì bỏ qua).
+  let i = 0;
+  while (i < lines.length) {
+    if (!lines[i].trim().startsWith("|")) {
+      i++;
       continue;
     }
-    dong.push(o);
+    const block: string[] = [];
+    while (i < lines.length && lines[i].trim().startsWith("|")) block.push(lines[i++]);
+    if (block.length < 2) continue;
+    const header = cat(block[0]);
+    if (!header.includes("Duyệt?")) continue;
+    for (const l of block.slice(1)) {
+      const cells = cat(l);
+      if (cells.every((c) => /^:?-{2,}:?$/.test(c))) continue; // dòng kẻ |---|---|
+      const o: Dong = {};
+      header.forEach((h, k) => (o[h] = cells[k] ?? ""));
+      if (!Object.values(o).some((v) => v)) continue;
+      // dòng cố ý không có clip là thông tin, không phải việc phải duyệt
+      if (!DUYET.test(o["Duyệt?"] ?? "") && !laKhongCo(o["Link"] ?? "")) {
+        thieuDuyet++;
+        continue;
+      }
+      dong.push(o);
+    }
   }
+  if (dong.length === 0 && thieuDuyet === 0) loi.push("Không thấy bảng nào có cột `Duyệt?`.");
   return { dong, thieuDuyet, loi };
 }
 
@@ -177,8 +195,7 @@ function main() {
     if (!linkRaw || /^kh[oô]ng c[oó]/i.test(linkRaw) || linkRaw === "—" || linkRaw === "-") {
       khongCo.push(`${slug} ${viTri}`);
       continue;
-    }
-    const id = youtubeIdTuLink(linkRaw);
+    }    const id = youtubeIdTuLink(linkRaw);
     if (!slug || !viTri || !id) {
       bo.push(`thiếu Bài/Vị trí/Link hợp lệ (${JSON.stringify(d).slice(0, 120)})`);
       continue;

@@ -50,6 +50,8 @@ interface Ctx {
   autoNumbered: number;
   missingMedia: number;
   shapeDrawings: number;
+  /** Gắn data-w/data-h (px, theo khung ảnh trong Word) vào thẻ <img> — để bước đăng cắt ảnh nền A4 rồi đặt đúng cỡ. */
+  imageSizes: boolean;
 }
 
 function els(parent: Element): Element[] {
@@ -98,8 +100,27 @@ function relTarget(ctx: Ctx, relId: string): string | null {
   return ctx.files.has(`word/${clean}`) ? `word/${clean}` : ctx.files.has(clean) ? clean : null;
 }
 
+const UNIT_PX: Record<string, number> = { pt: 4 / 3, px: 1, in: 96, cm: 96 / 2.54, mm: 96 / 25.4 };
+
+/** Kích thước khung ảnh trong Word (px @96dpi): VML `style="width:7.5pt;height:12.5pt"` hoặc `wp:extent` (EMU). */
+function frameSizePx(el: Element): { w: number; h: number } | null {
+  const ext = descendant(el, "extent");
+  const cx = ext ? Number(attr(ext, "cx")) : NaN;
+  const cy = ext ? Number(attr(ext, "cy")) : NaN;
+  if (cx > 0 && cy > 0) return { w: cx / 9525, h: cy / 9525 };
+  const shape = descendant(el, "shape");
+  const style = shape ? (attr(shape, "style") ?? "") : "";
+  const dim = (k: string): number => {
+    const m = style.match(new RegExp(`(?:^|;)\\s*${k}:\\s*([\\d.]+)(pt|px|in|cm|mm)`));
+    return m ? Number(m[1]) * UNIT_PX[m[2]] : NaN;
+  };
+  const w = dim("width");
+  const h = dim("height");
+  return w > 0 && h > 0 ? { w, h } : null;
+}
+
 /** Ảnh nhúng → thẻ <img> trỏ tới placeholder media/… (trang sẽ tự upload lên Storage). */
-function imageTag(ctx: Ctx, relId: string): string {
+function imageTag(ctx: Ctx, relId: string, frame: { w: number; h: number } | null = null): string {
   const known = ctx.byRelId.get(relId);
   if (known) return known;
 
@@ -123,7 +144,8 @@ function imageTag(ctx: Ctx, relId: string): string {
   const name = `hinh-${n}.${ext === "jpeg" ? "jpg" : ext}`;
   const placeholder = `media/${name}`;
   ctx.images.push({ name, dataUri: toDataUri(bytes, mime), placeholder });
-  const tag = `<img src="${placeholder}" alt="Hình ${n}" class="mx-auto my-2 max-w-full rounded-lg" />`;
+  const size = ctx.imageSizes && frame ? ` data-w="${frame.w.toFixed(1)}" data-h="${frame.h.toFixed(1)}"` : "";
+  const tag = `<img src="${placeholder}" alt="Hình ${n}" class="mx-auto my-2 max-w-full rounded-lg"${size} />`;
   ctx.byRelId.set(relId, tag);
   return tag;
 }
@@ -145,7 +167,7 @@ function objectText(el: Element, ctx: Ctx): string {
   }
   const imagedata = descendant(el, "imagedata");
   const relId = imagedata ? attr(imagedata, "id") : null;
-  return relId ? imageTag(ctx, relId) : "";
+  return relId ? imageTag(ctx, relId, frameSizePx(el)) : "";
 }
 
 function inlineText(node: Element, ctx: Ctx): string {
@@ -174,7 +196,7 @@ function inlineText(node: Element, ctx: Ctx): string {
         const blip = descendant(el, "blip");
         const relId = blip ? attr(blip, "embed") : null;
         if (relId) {
-          out += imageTag(ctx, relId);
+          out += imageTag(ctx, relId, frameSizePx(el));
           break;
         }
         const viaObject = objectText(el, ctx);
@@ -249,7 +271,10 @@ function blockText(el: Element, ctx: Ctx): string {
   }
 }
 
-export async function readDocx(input: ArrayBuffer | Uint8Array): Promise<DocxReadResult> {
+export async function readDocx(
+  input: ArrayBuffer | Uint8Array,
+  opts: { imageSizes?: boolean } = {},
+): Promise<DocxReadResult> {
   const bytes = input instanceof Uint8Array ? input : new Uint8Array(input);
   const files = await unzip(bytes);
   const documentXml = files.get("word/document.xml");
@@ -278,6 +303,7 @@ export async function readDocx(input: ArrayBuffer | Uint8Array): Promise<DocxRea
     autoNumbered: 0,
     missingMedia: 0,
     shapeDrawings: 0,
+    imageSizes: opts.imageSizes ?? false,
   };
 
   const doc = parseXml(documentXml, "nội dung");
