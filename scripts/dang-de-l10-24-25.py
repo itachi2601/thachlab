@@ -44,6 +44,13 @@ ROOTS23 = [
     ("4. HK2", "học kì 2"), ("4. HK2", "KIỂM TRA VẬT LÍ 10 CẢ 2023/4. HK II"),
 ]
 RE_KHO = re.compile(r"^(BỘ\s*\d+|BO\s*DE|DE\s*LY|TONG\s*HOP|ghk2|BỘ\s*ĐỀ)", re.I)
+SRC11 = "/Users/MAC/Documents/THPT/Lop11/00_Dung_chung/Thu_vien_tai_lieu/CT2025_VietnamTeach/đề thi "
+ROOTS11 = [
+    ("1. GHK1", "Giữa học kì 1"), ("1. GHK1", "ĐỀ TRƯỜNG SỞ 2025/1. GHK1"),
+    ("2. HK1", "học kì 1"), ("2. HK1", "ĐỀ TRƯỜNG SỞ 2025/2. HK1"), ("2. HK1", "ĐỀ TRƯỜNG SỞ 2025/5. TỔNG HỢP"),
+    ("3. GHK2", "giữa học kì 2"), ("3. GHK2", "ĐỀ TRƯỜNG SỞ 2025/3. GHK2"),
+    ("4. HK2", "học kì 2"), ("4. HK2", "ĐỀ TRƯỜNG SỞ 2025/4. HK2"),
+]
 # kỳ → (lesson_id, lesson_item_id) mục Kiểm tra giữa/cuối kì lớp 10 (lesson 113–116, đang ẩn)
 TARGET = {"1. GHK1": (113, 53), "2. HK1": (114, 54), "3. GHK2": (115, 55), "4. HK2": (116, 56), "5. TỔNG HỢP": (114, 54)}
 KY_LABEL = {"1. GHK1": "Giữa HK1", "2. HK1": "Cuối HK1", "3. GHK2": "Giữa HK2", "4. HK2": "Cuối HK2", "5. TỔNG HỢP": "Cuối HK1"}
@@ -59,6 +66,20 @@ if "--nam" in args and args[args.index("--nam") + 1] == "23":
     LOG = os.path.join(ROOT, "scripts/data/de-l10-23-log.json")
     RUN = os.path.join(ROOT, "scripts/data/de-l10-23-run.json")
     WORK = os.path.join(ROOT, "scripts/logs/de-l10-23")
+
+
+if "--nam" in args and args[args.index("--nam") + 1] == "l11":
+    # Lớp 11 (thêm 5/10/2026): nguồn "đề thi " gồm 4 thư mục kỳ + "ĐỀ TRƯỜNG SỞ 2025/<kỳ>" (thư mục "Đề thi vật lý 11" là bản sao → bỏ)
+    SRC, NAM = SRC11, "2025"
+    ROOTS23 = ROOTS11
+    # Cuối HK1 (lesson 118) đang HIỆN với HS → đề mới đăng ở Bản nháp (--draft, exams.published=false); --ky hk1 chỉ chạy kỳ này
+    TARGET = {"1. GHK1": (117, 57), "2. HK1": (118, 58), "3. GHK2": (119, 59), "4. HK2": (120, 60)}
+    if "--ky" in args and args[args.index("--ky") + 1] == "hk1":
+        TARGET = {"2. HK1": (118, 58)}
+    LOG = os.path.join(ROOT, "scripts/data/de-l11-log.json")
+    RUN = os.path.join(ROOT, "scripts/data/de-l11-run.json")
+    WORK = os.path.join(ROOT, "scripts/logs/de-l11")
+    SRC23 = SRC11
 
 
 def opt(n, d=None):
@@ -337,7 +358,7 @@ def key_from_docx(path, made):
     return None
 
 
-AI_SYS = ("Bạn đọc file đáp án đề Vật lí 10 và trả về JSON thuần (không markdown). Đề có thể có nhiều mã đề; "
+AI_SYS = ("Bạn đọc file đáp án đề Vật lí và trả về JSON thuần (không markdown). Đề có thể có nhiều mã đề; "
           "chỉ lấy đáp án của MÃ ĐỀ được hỏi (nếu file chỉ có một bộ đáp án hoặc mã '000'/'gốc' thì lấy bộ đó). "
           "Phần I (trắc nghiệm A/B/C/D) đánh số lại từ 1; Phần II (đúng/sai, mỗi câu 4 ý a-d, giá trị 'Đ' hoặc 'S') "
           "đánh số lại từ 1; Phần III (trả lời ngắn, giá trị số/chuỗi ngắn) đánh số lại từ 1. Nếu đề đánh số liên tục "
@@ -347,13 +368,23 @@ AI_SYS = ("Bạn đọc file đáp án đề Vật lí 10 và trả về JSON th
 
 
 def key_from_ai(text, made, tag):
+    # DeepSeek (thêm 5/10/2026, khi .env.local chưa có ANTHROPIC_API_KEY): deepseek-flash, tắt thinking, json_object
+    ds = env("DEEPSEEK_API_KEY")
     key = env("ANTHROPIC_API_KEY")
-    if not key:
-        return None, "thiếu ANTHROPIC_API_KEY"
-    body = {"model": "claude-sonnet-5-5", "max_tokens": 12000, "output_config": {"effort": "low"}, "system": AI_SYS,
-            "messages": [{"role": "user", "content": f"Mã đề cần lấy: {made or 'không rõ (lấy bộ đầu tiên/đề gốc)'}\n\n{text[:60000]}"}]}
-    req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(),
-                                 headers={"content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01"})
+    if not key and not ds:
+        return None, "thiếu ANTHROPIC_API_KEY/DEEPSEEK_API_KEY"
+    user = f"Mã đề cần lấy: {made or 'không rõ (lấy bộ đầu tiên/đề gốc)'}\n\n{text[:60000]}"
+    if ds and not key:
+        body = {"model": "deepseek-flash", "max_tokens": 8000, "thinking": {"type": "disabled"},
+                "response_format": {"type": "json_object"},
+                "messages": [{"role": "system", "content": AI_SYS + " Trả về JSON."}, {"role": "user", "content": user}]}
+        req = urllib.request.Request("https://api.deepseek.com/chat/completions", data=json.dumps(body).encode(),
+                                     headers={"content-type": "application/json", "authorization": "Bearer " + ds})
+    else:
+        body = {"model": "claude-sonnet-5-5", "max_tokens": 12000, "output_config": {"effort": "low"}, "system": AI_SYS,
+                "messages": [{"role": "user", "content": user}]}
+        req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(),
+                                     headers={"content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01"})
     data = None
     for attempt in range(3):
         try:
@@ -364,8 +395,12 @@ def key_from_ai(text, made, tag):
             err = f"API lỗi: {str(e)[:120]}"
     if data is None:
         return None, err
-    txt = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
-    usage = data.get("usage", {})
+    if "choices" in data:
+        txt = data["choices"][0]["message"].get("content") or ""
+        usage = {"input_tokens": data.get("usage", {}).get("prompt_tokens"), "output_tokens": data.get("usage", {}).get("completion_tokens")}
+    else:
+        txt = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
+        usage = data.get("usage", {})
     m = re.search(r"\{.*\}", txt, re.S)
     if not m:
         return None, "AI không trả JSON"
@@ -908,7 +943,7 @@ def process(s, log):
     res["xuat"] = [ln for ln in (x.stdout + x.stderr).splitlines() if ln.startswith("[đề]")][:8]
     lesson, item = TARGET[s["ky"]]
     cmd = ["npx", "tsx", "scripts/upload-exam-docx.mts", f"{wd}/de_thachlab.docx", "--title", res["title"], "--lesson", str(lesson),
-           "--item", str(item), "--duration", "45", "--drop-bad", "--min-keep", "10", "--drop-mathtype", "--log", LOG, "--src", res["bo"]]
+           "--item", str(item), "--duration", "45", "--drop-bad", "--min-keep", "10", "--drop-mathtype", "--log", LOG, "--src", res["bo"]] + (["--draft"] if item == 58 and SRC == SRC11 else [])
     if DRY:
         cmd.append("--dry")
     u = run(cmd, cwd=ROOT)
@@ -936,6 +971,8 @@ def main():
         chosen = [s for s in sets if any(p in s["name"].lower() for p in pats)]
     elif "--all" in args:
         chosen = [s for s in sets if s["ky"] in TARGET]
+        if SRC == SRC11:  # nguồn lẫn môn/khối khác → chỉ lấy bộ có "11" hoặc "VẬT/VAT"
+            chosen = [s for s in chosen if re.search(r"11|V[ẬA]T|L[ÝIÍ]", s["name"].upper())]
         off, lim = int(opt("--offset", 0)), int(opt("--limit", 10**6))
         chosen = chosen[off:off + lim]
     else:

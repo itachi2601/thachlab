@@ -333,4 +333,5 @@ cố thật (báo ngay cho người dùng, đừng tự ý ghi đè lại `exam_
 
 Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
 một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
-
+- 2026-10-05 · Lớp 11 (nguồn "đề thi " 2679 file → 1586 duy nhất): `classify-exam-folder.mts` KHÔNG đệ quy, và 856/1586 báo "thiếu đáp án" vì đáp án nằm file rời/bảng cuối → đừng tin bucket đó, đường `answer_table` qua `convert_docx.py` ra 0 câu → dùng `scripts/dang-de-l10-24-25.py --nam l11` (đọc đáp án bằng API, đích lesson 117/119/120). macOS tên thư mục NFD ≠ NFC → `unicodedata.normalize('NFC')` trước khi `startswith`. Đề đăng xong `published=true` ngay → mục đang HIỆN (lesson 118) không đăng thẳng. Kết quả: 75/206 bộ lên (GHK1 35, GHK2 26, HK2 14), 87 bị >20% câu lỗi, 35 LỆCH số câu/đáp án.
+- 2026-10-06 · Cuối HK1 lớp 11 (lesson 118/item 58, đang hiện): thêm cờ `upload-exam-docx.mts --draft` + `dang-de-l10-24-25.py --nam l11 --ky hk1` → đề mới `published=false` ngay lúc insert, không có khoảng HS thấy đề chưa duyệt. Phiên khác có thể đang chuyển đề lớp 10 đăng nhầm sang mục lớp 11 (exam 638/639/658/693/701) → đọc-sửa-ghi `exam_ids` có nguy cơ giẫm nhau.

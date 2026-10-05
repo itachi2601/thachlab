@@ -4,7 +4,7 @@
 // nên quy tắc tách câu/đáp án/ảnh không lệch.
 //
 //   npx tsx scripts/upload-exam-docx.mts <de_thachlab.docx> --title "<Tên đề>" \
-//        --lesson <lesson_id> --item <lesson_item_id> [--duration 50] [--dry] [--drop-vector-marks] [--drop-bad [--max-drop-ratio 0.2] [--min-keep 25] [--drop-mathtype]] [--log <log.json> --src "<tên file gốc>"]
+//        --lesson <lesson_id> --item <lesson_item_id> [--duration 50] [--dry] [--drop-vector-marks] [--draft] [--drop-bad [--max-drop-ratio 0.2] [--min-keep 25] [--drop-mathtype]] [--log <log.json> --src "<tên file gốc>"]
 //
 // - Ảnh phải được nén sẵn (script không có canvas). Ảnh lên bucket lesson-media/<lesson_id>/.
 // - Gắn vào mục theo kiểu "Giữ + thêm": đọc lại exam_ids ngay trước khi ghi, append id mới.
@@ -191,7 +191,7 @@ try {
     console.log(`  ✓ tải ${media.length} ảnh`);
   }
   const rows = bundleToRows(resolved, lessonId);
-  const ins = await supabase.from("exams").insert(rows.exam).select("id").single();
+  const ins = await supabase.from("exams").insert(process.argv.includes("--draft") ? { ...rows.exam, published: false } : rows.exam).select("id").single();
   if (ins.error || !ins.data) throw new Error("tạo đề lỗi: " + ins.error?.message);
   examId = ins.data.id as number;
   console.log(`  ✓ đề số ${examId}`);
