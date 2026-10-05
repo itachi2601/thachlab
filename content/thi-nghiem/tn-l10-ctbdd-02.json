@@ -1,0 +1,122 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 9. Chuyển động thẳng biến đổi đều",
+ "lesson_id": 54,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/theory.html",
+ "id": "tn-l10-ctbdd-02",
+ "ten": "Quãng đường phanh của xe tỉ lệ với bình phương tốc độ",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "ctbdd.cong_thuc_doc_lap_thoi_gian",
+  "ctbdd.quang_phanh"
+ ],
+ "muc_tieu": "Dùng v² − v0² = 2ad cho xe phanh tới dừng: quãng phanh d = v0²/(2|a|) — tốc độ gấp đôi thì quãng phanh gấp bốn.",
+ "dung_cu": [
+  {
+   "ten": "Ô tô/xe máy trên đường khô (tình huống, không làm thật)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho xe chạy ở 36, 54, 72, 90 km/h rồi phanh với cùng gia tốc 5 m/s² (giả định) tới khi dừng."
+  ],
+  "quan_sat": [
+   "Quãng phanh 10; 22,5; 40; 62,5 m."
+  ],
+  "rut_ra": [
+   "Quãng phanh tỉ lệ với v0²: gấp đôi tốc độ thì gấp bốn quãng phanh."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v0",
+   "ten": "Tốc độ lúc bắt đầu phanh",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 30,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Độ lớn gia tốc khi phanh",
+   "don_vi": "m/s²",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 8,
+   "mac_dinh": 5,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Quãng phanh",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian phanh",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = v0²/(2a)",
+   "t = v0/a"
+  ],
+  "gia_thiet": [
+   "gia tốc phanh không đổi 5 m/s² (giả định, đường khô)",
+   "chưa tính thời gian phản xạ của người lái"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v0 (km/h)",
+   "v0 (m/s)",
+   "d (m)",
+   "t (s)"
+  ],
+  "hang": [
+   [
+    36,
+    10.0,
+    10.0,
+    2.0
+   ],
+   [
+    54,
+    15.0,
+    22.5,
+    3.0
+   ],
+   [
+    72,
+    20.0,
+    40.0,
+    4.0
+   ],
+   [
+    90,
+    25.0,
+    62.5,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "72 km/h phanh mất 40 m, gấp 4 lần 10 m ở 36 km/h.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ tốc độ gấp đôi thì quãng phanh gấp đôi.",
+  "Quên đổi km/h sang m/s."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Hai làn xe chạy song song ở hai tốc độ, cùng phanh; vẽ vạch dừng và đồ thị v–t (tam giác) của mỗi xe.",
+  "diem_nhan": "Diện tích tam giác dưới đồ thị v–t gấp 4 khi chiều cao (v0) và đáy (t) cùng gấp đôi."
+ }
+}

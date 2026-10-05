@@ -1,0 +1,133 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 9. Chuyển động thẳng biến đổi đều",
+ "lesson_id": 54,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/theory.html",
+ "id": "tn-l10-ctbdd-03",
+ "ten": "Ô tô khởi hành ở đèn xanh đuổi theo xe máy chạy đều",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "ctbdd.phuong_trinh_toa_do",
+  "ctbdd.bai_toan_gap_nhau",
+  "ctbdd.do_thi_v_t"
+ ],
+ "muc_tieu": "Lập phương trình toạ độ của hai xe trên cùng một trục, giải x1 = x2 để tìm lúc và chỗ gặp; đọc đồ thị v–t để thấy khoảng cách lớn nhất khi hai xe cùng vận tốc.",
+ "dung_cu": [
+  {
+   "ten": "Ô tô và xe máy ở ngã tư (tình huống)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đèn xanh: ô tô khởi hành từ vạch dừng với a = 2 m/s²; cùng lúc xe máy chạy đều 10 m/s đi qua vạch."
+  ],
+  "quan_sat": [
+   "Ban đầu xe máy bỏ xa; tới t = 5 s hai xe cùng vận tốc, khoảng cách lớn nhất 25 m; t = 10 s ô tô đuổi kịp tại 100 m."
+  ],
+  "rut_ra": [
+   "Gặp nhau khi x1 = x2 (cùng gốc toạ độ, cùng gốc thời gian).",
+   "Cùng vận tốc không phải là gặp nhau."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc ô tô",
+   "don_vi": "m/s²",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v2",
+   "ten": "Vận tốc xe máy",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 15,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "t_gap",
+   "ten": "Thời điểm gặp",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "x_gap",
+   "ten": "Vị trí gặp",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x1 = ½·a·t²",
+   "x2 = v2·t",
+   "t_gap = 2·v2/a",
+   "x_gap = v2·t_gap",
+   "khoảng cách = v2·t − ½at², lớn nhất tại t = v2/a"
+  ],
+  "gia_thiet": [
+   "gốc toạ độ ở vạch dừng, chiều dương theo chiều chuyển động, gốc thời gian lúc đèn xanh",
+   "hai xe coi là chất điểm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "x ô tô (m)",
+   "x xe máy (m)",
+   "khoảng cách (m)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0,
+    0,
+    0.0
+   ],
+   [
+    2.5,
+    6.25,
+    25.0,
+    18.75
+   ],
+   [
+    5,
+    25.0,
+    50,
+    25.0
+   ],
+   [
+    7.5,
+    56.25,
+    75.0,
+    18.75
+   ],
+   [
+    10,
+    100.0,
+    100,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình với a = 2 m/s², v2 = 10 m/s."
+ },
+ "ket_qua_ky_vong": "Gặp nhau sau 10 s, cách vạch dừng 100 m; lúc đó ô tô có v = 20 m/s.",
+ "hien_tuong_hay_sai": [
+  "Tưởng hai đường v–t cắt nhau (t = 5 s) là lúc gặp nhau.",
+  "Đặt hai gốc toạ độ khác nhau cho hai xe."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Hai xe chạy trên cùng một đường, bên dưới vẽ đồng thời đồ thị v–t và x–t; tô diện tích giữa hai đường v–t.",
+  "diem_nhan": "Cho dừng hình ở t = 5 s và hỏi: hai xe gặp nhau chưa?"
+ }
+}

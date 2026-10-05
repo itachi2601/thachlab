@@ -1,0 +1,155 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 7. Đồ thị độ dịch chuyển - thời gian",
+ "lesson_id": 52,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/theory.html",
+ "id": "tn-l10-dt-dctg-01",
+ "ten": "Bọt khí trong ống nước: vẽ đồ thị d–t từ bảng số liệu và tìm vận tốc từ độ dốc",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dothi_dt.ve_tu_bang_so_lieu",
+  "dothi_dt.do_doc_la_van_toc",
+  "chuyendong_thang_deu.duong_thang"
+ ],
+ "muc_tieu": "Đo thời điểm bọt khí đi qua các vạch 10–50 cm, vẽ đồ thị d–t, thấy các điểm gần một đường thẳng và tính vận tốc từ độ dốc; nhận xét sai số tương đối của việc bấm giờ tay.",
+ "dung_cu": [
+  {
+   "ten": "Ống thuỷ tinh dài ~60 cm, nút kín, đựng đầy nước còn một bọt khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính đánh vạch 0, 10, 20, 30, 40, 50 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây (độ chia 0,01 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ để đặt ống nghiêng cố định",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt ống nghiêng cố định trên giá, dốc ngược để bọt khí xuất phát ở đầu dưới.",
+   "Bấm đồng hồ khi bọt khí qua vạch 0; đọc thời điểm bọt khí qua các vạch 10, 20, 30, 40, 50 cm (5 lần đọc).",
+   "Chấm 5 điểm (t, d) và gốc lên giấy kẻ ô, kẻ một đường thẳng gần mọi điểm."
+  ],
+  "quan_sat": [
+   "Thời điểm đọc lần lượt 2,1; 3,9; 6,1; 7,9; 10,0 s.",
+   "Các điểm gần như nằm trên một đường thẳng qua gốc; d/t dao động quanh 5 cm/s."
+  ],
+  "rut_ra": [
+   "Bọt khí chuyển động thẳng đều: đồ thị d–t là đường thẳng.",
+   "Vận tốc bằng độ dốc: 30 cm / 6 s = 5 cm/s; hàng đầu (t nhỏ) kém tin cậy nhất vì sai số bấm giờ chiếm tỉ lệ lớn nhất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc bọt khí (phụ thuộc góc nghiêng)",
+   "don_vi": "cm/s",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 10,
+   "mac_dinh": 5,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Vị trí vạch",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": [
+    10,
+    20,
+    30,
+    40,
+    50
+   ]
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời điểm bọt khí qua vạch (bấm tay)",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "t_tinh",
+   "ten": "Thời điểm tính từ mô hình",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = v·t",
+   "t_tinh = d / v",
+   "t (đọc) = t_tinh ± tối đa 0,1 s (phản xạ bấm tay) — số minh hoạ có nhiễu",
+   "sai số tương đối ≈ 0,1 / t",
+   "v_do_doc = Δd / Δt lấy trên đường kẻ qua các điểm"
+  ],
+  "gia_thiet": [
+   "bọt khí đã đạt vận tốc ổn định trước vạch 0",
+   "ống nghiêng cố định, nhiệt độ nước không đổi",
+   "v = 5 cm/s (minh hoạ)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "t tính (s)",
+   "t đọc (s)",
+   "d/t (cm/s)"
+  ],
+  "hang": [
+   [
+    10,
+    2.0,
+    2.1,
+    4.76
+   ],
+   [
+    20,
+    4.0,
+    3.9,
+    5.13
+   ],
+   [
+    30,
+    6.0,
+    6.1,
+    4.92
+   ],
+   [
+    40,
+    8.0,
+    7.9,
+    5.06
+   ],
+   [
+    50,
+    10.0,
+    10.0,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ d = 5t, t đọc lệch không quá 0,1 s so với t tính. Trung bình d/t ≈ 4,97 cm/s; độ dốc đường kẻ = 5 cm/s."
+ },
+ "ket_qua_ky_vong": "Đồ thị là đường thẳng qua gốc, độ dốc ≈ 5 cm/s; hàng 10 cm lệch nhiều nhất (4,76 cm/s) vì 0,1 s chiếm ~5 % của 2,1 s, hàng 50 cm chỉ ~1 %.",
+ "hien_tuong_hay_sai": [
+  "Nối các điểm thành đường gấp khúc thay vì kẻ một đường thẳng.",
+  "Lấy d/t của một hàng làm vận tốc thay vì độ dốc của cả đường.",
+  "Đọc độ dốc bằng thước đo góc trên giấy (phụ thuộc tỉ lệ trục)."
+ ],
+ "sai_so_thuong_gap": "Phản xạ bấm đồng hồ, mắt nhìn lệch vạch (thị sai), bọt khí to nhỏ khác nhau giữa các lần.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "y_tuong": "Ống nghiêng với bọt khí chạy đều; học sinh bấm nút khi bọt qua vạch (có trễ ngẫu nhiên ±0,1 s); điểm (t, d) tự chấm lên đồ thị, kéo thả một đường thẳng cho khớp.",
+  "diem_nhan": "Thanh trượt góc nghiêng đổi v → đổi độ dốc; so sánh độ dốc đường kẻ với d/t từng hàng."
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 5. Tốc độ và vận tốc",
+ "lesson_id": 50,
+ "nguon_trong_bai": "content/lesson-samples/l10-toc-do-van-toc/theory.html",
+ "id": "tn-l10-tdvt-03",
+ "ten": "Vẽ bút lên dải giấy đang bị kéo: quỹ đạo và vận tốc phụ thuộc hệ quy chiếu",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "vantoc.tinh_tuong_doi",
+  "vantoc.cong_van_toc_vuong_goc"
+ ],
+ "muc_tieu": "Thấy cùng một chuyển động của ngòi bút cho quỹ đạo thẳng so với bàn nhưng xiên so với tờ giấy đang bị kéo — chuyển động có tính tương đối.",
+ "dung_cu": [
+  {"ten": "Dải giấy khổ A4 dán nối dài khoảng 1 m", "so_luong": 1},
+  {"ten": "Bút dạ", "so_luong": 1},
+  {"ten": "Thước kẻ đặt cố định trên bàn, vuông góc mép bàn", "so_luong": 1}
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Trải dải giấy trên bàn, dọc mép bàn.",
+   "Bạn A kéo giấy đều dọc mép bàn; cùng lúc bạn B đưa bút dạ đều dọc thước (vuông góc mép bàn), ngòi bút chạm giấy."
+  ],
+  "quan_sat": [
+   "So với bàn, ngòi bút đi thẳng dọc thước.",
+   "Vệt mực trên giấy là đường xiên; giấy kéo càng nhanh, vệt càng nghiêng."
+  ],
+  "rut_ra": [
+   "Quỹ đạo và vận tốc của cùng một vật khác nhau trong hai hệ quy chiếu (bàn, giấy).",
+   "Đánh số (1) bút, (2) giấy, (3) bàn: v13 = v12 + v23; vệt mực cho hướng của v12 = v13 − v23."
+  ]
+ },
+ "tham_so": [
+  {"ky_hieu": "v_but", "ten": "Tốc độ bút so với bàn (vuông góc mép bàn)", "don_vi": "cm/s", "kieu": "dieu_chinh", "min": 1, "max": 8, "mac_dinh": 4, "buoc": 0.5},
+  {"ky_hieu": "v_giay", "ten": "Tốc độ giấy so với bàn (dọc mép bàn)", "don_vi": "cm/s", "kieu": "dieu_chinh", "min": 0, "max": 8, "mac_dinh": 3, "buoc": 0.5},
+  {"ky_hieu": "v_vet", "ten": "Tốc độ bút so với giấy", "don_vi": "cm/s", "kieu": "tinh_ra"},
+  {"ky_hieu": "goc", "ten": "Góc nghiêng vệt mực so với phương vuông góc mép giấy", "don_vi": "độ", "kieu": "tinh_ra"}
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v12 (vectơ) = v13 (vectơ) − v23 (vectơ)",
+   "v_vet = √(v_but² + v_giay²)",
+   "tan(goc) = v_giay / v_but"
+  ],
+  "gia_thiet": [
+   "bút và giấy đều chuyển động thẳng đều so với bàn",
+   "hai phương vuông góc nhau"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": ["v_but (cm/s)", "v_giay (cm/s)", "v_vet (cm/s)", "góc (độ)"],
+  "hang": [
+   [4, 0, 4.0, 0.0],
+   [4, 3, 5.0, 36.9],
+   [4, 6, 7.21, 56.3]
+  ],
+  "ghi_chu": "Tính từ mô hình (không đo); dùng làm số liệu minh hoạ cho mô phỏng."
+ },
+ "ket_qua_ky_vong": "Vệt mực xiên; với bút 4 cm/s, giấy 3 cm/s thì bút đi trên giấy 5 cm/s, vệt lệch khoảng 37° so với phương vuông góc mép giấy.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vệt mực phải thẳng vì tay đưa bút thẳng.",
+  "Cộng thẳng tốc độ 4 + 3 = 7 cm/s thay vì Pythagore."
+ ],
+ "an_toan": "Không có nguy hiểm đáng kể.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Hai khung nhìn song song: nhìn từ bàn (bút đi thẳng) và nhìn từ giấy (vệt xiên); thanh trượt cho v_but, v_giay.",
+  "diem_nhan": "Cho học sinh dự đoán hình dạng vệt mực trước khi chạy."
+ }
+}

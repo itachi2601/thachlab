@@ -1,0 +1,179 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 9. Chuyển động thẳng biến đổi đều",
+ "lesson_id": 54,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/theory.html",
+ "id": "tn-l10-ctbdd-01",
+ "ten": "Đo vận tốc xe lăn trên máng nghiêng bằng cổng quang điện: v tỉ lệ với t",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "ctbdd.v_bang_v0_cong_at",
+  "ctbdd.do_thi_v_t",
+  "ctbdd.gia_toc_khong_doi"
+ ],
+ "muc_tieu": "Thả xe lăn từ nghỉ trên máng nghiêng, đo vận tốc tại 4 vị trí bằng cổng quang điện; thấy v tỉ lệ với t (đồ thị v–t là đường thẳng qua gốc), tính được a ≈ 0,5 m/s² và nhận xét sai số.",
+ "dung_cu": [
+  {
+   "ten": "Máng nhôm dài ~1 m, kê nghiêng một góc nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe lăn có gắn tấm chắn sáng rộng 2,00 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện",
+   "so_luong": 2
+  },
+  {
+   "ten": "Đồng hồ đo thời gian hiện số (chia 0,001 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước mét",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt cổng quang thứ nhất ngay chỗ thả xe để bấm giờ lúc xe bắt đầu chạy.",
+   "Đặt cổng quang thứ hai lần lượt cách chỗ thả 10, 20, 40, 60 cm (4 lần đo); mỗi lần thả xe từ nghỉ.",
+   "Đọc t (từ lúc thả tới cổng thứ hai) và τ (thời gian tấm chắn đi qua cổng thứ hai); tính v = d/τ."
+  ],
+  "quan_sat": [
+   "t càng lớn thì τ càng nhỏ, tức xe càng nhanh.",
+   "Thương v/t gần như không đổi, khoảng 0,49–0,50 m/s²."
+  ],
+  "rut_ra": [
+   "v tỉ lệ thuận với t: v = at với a không đổi — chuyển động nhanh dần đều.",
+   "Đồ thị v–t là đường thẳng qua gốc; độ dốc là a."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc của xe (do độ nghiêng máng)",
+   "don_vi": "m/s²",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Khoảng cách từ chỗ thả tới cổng quang",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.8,
+   "mac_dinh": 0.4,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Bề rộng tấm chắn sáng",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.02
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian từ lúc thả tới cổng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "tau",
+   "ten": "Thời gian chắn sáng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc tại cổng, v = d/τ",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t = √(2s/a)",
+   "v = a·t",
+   "τ = d/v",
+   "v (đo) = d/τ (đọc)"
+  ],
+  "gia_thiet": [
+   "thả từ nghỉ (v0 = 0)",
+   "a không đổi dọc máng (bỏ qua ma sát thay đổi)",
+   "v = d/τ coi là vận tốc tức thời vì τ rất nhỏ",
+   "a = 0,5 m/s² là giá trị minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "s (m)",
+   "t tính (s)",
+   "τ tính (s)",
+   "t đọc (s)",
+   "τ đọc (s)",
+   "v = d/τ (m/s)",
+   "v/t (m/s²)"
+  ],
+  "hang": [
+   [
+    0.1,
+    0.6325,
+    0.0632,
+    0.635,
+    0.064,
+    0.3125,
+    0.4921
+   ],
+   [
+    0.2,
+    0.8944,
+    0.0447,
+    0.892,
+    0.045,
+    0.4444,
+    0.4983
+   ],
+   [
+    0.4,
+    1.2649,
+    0.0316,
+    1.262,
+    0.032,
+    0.625,
+    0.4952
+   ],
+   [
+    0.6,
+    1.5492,
+    0.0258,
+    1.551,
+    0.026,
+    0.7692,
+    0.496
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ tính từ mô hình a = 0,5 m/s², d = 2,00 cm; số đọc lệch không quá 1 vạch (0,001 s) so với số tính."
+ },
+ "ket_qua_ky_vong": "v/t ≈ 0,49–0,50 m/s² ở cả 4 lần đo; hàng cuối có sai số tương đối của τ lớn nhất (0,001/0,026 ≈ 4 %).",
+ "hien_tuong_hay_sai": [
+  "Tưởng v = s/t (vận tốc trung bình cả đoạn) là vận tốc tại cổng — ra đúng một nửa.",
+  "Không thả xe từ nghỉ (đẩy nhẹ) nên đồ thị không qua gốc."
+ ],
+ "sai_so_thuong_gap": "τ chỉ có 2 chữ số có nghĩa khi xe nhanh; v = d/τ là vận tốc trung bình khi đi qua cổng; bề rộng tấm chắn đo bằng thước có sai số.",
+ "an_toan": "Chặn cuối máng để xe không lao xuống sàn.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Kéo thanh trượt độ nghiêng (a) và vị trí cổng; xe lăn xuống, đồng hồ hiện t và τ; chấm điểm (t, v) lên đồ thị.",
+  "diem_nhan": "Cho học sinh dự đoán: đặt cổng xa gấp đôi thì v có gấp đôi không? (không — v ∝ √s, gấp đôi t mới gấp đôi v)."
+ }
+}

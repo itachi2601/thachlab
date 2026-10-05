@@ -1,0 +1,412 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nhận ra chuyển động <strong>nhanh dần đều</strong>, <strong>chậm dần đều</strong> qua dấu của $a$ và $v$.</li>
+<li>Đọc <strong>đồ thị vận tốc – thời gian</strong>: độ dốc là gia tốc, diện tích là độ dịch chuyển.</li>
+<li>Dùng đúng ba công thức: $v = v_0 + at$, $d = v_0t + \tfrac12 at^2$, $v^2 - v_0^2 = 2ad$.</li>
+<li>Giải bài <strong>hai xe gặp nhau</strong> và bài <strong>phanh gấp</strong>.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: tốc độ gấp đôi, quãng phanh gấp mấy?</h3>
+
+<p>Một xe máy chạy $36\ \text{km/h}$ trên đường khô. Người lái bóp phanh, xe trượt thêm $10\ \text{m}$ rồi dừng. Hôm sau, cũng xe đó, cũng đoạn đường đó, nhưng chạy $72\ \text{km/h}$ và phanh y như cũ.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Ở $72\ \text{km/h}$, xe trượt bao xa thì dừng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q1" id="tl54-q1a"><label for="tl54-q1a" class="tl-opt tl-no">A. $20\ \text{m}$, vì tốc độ gấp đôi thì quãng phanh gấp đôi</label>
+<input type="radio" name="tl54-q1" id="tl54-q1b"><label for="tl54-q1b" class="tl-opt tl-ok">B. $40\ \text{m}$, gấp bốn lần</label>
+<input type="radio" name="tl54-q1" id="tl54-q1c"><label for="tl54-q1c" class="tl-opt tl-no">C. $10\ \text{m}$, vì phanh như cũ</label>
+<input type="radio" name="tl54-q1" id="tl54-q1d"><label for="tl54-q1d" class="tl-opt tl-no">D. $30\ \text{m}$, vì xe nặng đà hơn một chút</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Tốc độ gấp đôi thì xe vừa phanh <strong>lâu gấp đôi</strong>, vừa có tốc độ trung bình <strong>gấp đôi</strong>: quãng đường gấp $2 \times 2 = 4$ lần. Mục II.4 sẽ cho công thức gọn: quãng phanh tỉ lệ với $v_0^2$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là dự đoán rất phổ biến. Gợi ý: tốc độ gấp đôi thì thời gian phanh gấp mấy lần? Tốc độ trung bình lúc phanh gấp mấy lần? Nhân hai con số đó lại rồi chọn lại.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Gia tốc không đổi: nhanh dần đều, chậm dần đều</h4>
+
+<p><strong>🔑 Quỹ đạo thẳng · $a$ không đổi · so dấu $a$ với $v$</strong></p>
+
+<ul>
+<li><strong>Chuyển động thẳng biến đổi đều:</strong> quỹ đạo thẳng, gia tốc không đổi (cả độ lớn lẫn hướng).</li>
+<li>Gia tốc: $a = \dfrac{\Delta v}{\Delta t} = \dfrac{v - v_0}{t - t_0}$, đơn vị $\text{m/s}^2$.</li>
+<li><strong>Nhanh dần đều:</strong> $a$ cùng dấu $v$ $(a \cdot v \gt 0)$</li>
+<li><strong>Chậm dần đều:</strong> $a$ ngược dấu $v$ $(a \cdot v \lt 0)$</li>
+</ul>
+
+<p>Ví dụ: vận động viên trượt băng thả trôi với $6\ \text{m/s}$, cứ mỗi giây chậm đi $0{,}5\ \text{m/s}$. Chọn chiều dương theo chiều trượt: $v \gt 0$, $a = -0{,}5\ \text{m/s}^2$, ngược dấu nên chậm dần đều.</p>
+
+<details class="tl-details">
+<summary>🤔 Thế thì sao: sau bao lâu người đó dừng hẳn? (tự tính rồi bấm)</summary>
+<p>$0 = 6 + (-0{,}5)t$, nên $t = 12\ \text{s}$. Mỗi giây mất $0{,}5\ \text{m/s}$, mất hết $6\ \text{m/s}$ thì cần $12$ giây.</p>
+</details>
+
+<h4>2. Công thức vận tốc và đồ thị v–t</h4>
+
+<p><strong>🔑 $v = v_0 + at$ · đường thẳng · độ dốc là $a$</strong></p>
+
+<ul>
+<li>$v = v_0 + a(t - t_0)$. Chọn gốc thời gian lúc bắt đầu xét ($t_0 = 0$): $v = v_0 + at$.</li>
+<li>Bắt đầu từ nghỉ ($v_0 = 0$): $v = at$.</li>
+<li>Đồ thị $v$ theo $t$ là <strong>đoạn thẳng</strong>, cắt trục $v$ tại $v_0$.</li>
+<li><strong>Độ dốc</strong> $= \dfrac{\Delta v}{\Delta t} = a$: dốc lên thì $a \gt 0$, dốc xuống thì $a \lt 0$, nằm ngang thì $a = 0$.</li>
+</ul>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-ctbdd-01">
+<p class="tl-label">🔬 Thí nghiệm: đo vận tốc xe lăn trên máng nghiêng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thả xe lăn từ nghỉ trên máng nghiêng. Cổng quang điện đặt lần lượt cách chỗ thả $10$, $20$, $40$, $60\ \text{cm}$. Đồng hồ hiện số (chia $0{,}001\ \text{s}$) đo $t$ từ lúc thả, và thời gian $\tau$ tấm chắn rộng $d = 2{,}00\ \text{cm}$ đi qua cổng. Tính $v = d/\tau$.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số minh hoạ, tính từ mô hình $a = 0{,}5\ \text{m/s}^2$ cộng sai số đọc).</li>
+<li><strong>Rút ra:</strong> $v/t$ gần như không đổi, nên $v = at$: đồ thị $v$–$t$ là đường thẳng qua gốc, $a \approx 0{,}50\ \text{m/s}^2$.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$t$ (s)</th><th>$v$ (m/s)</th><th>$v/t$ (m/s²)</th></tr>
+</thead>
+<tbody>
+<tr><td>0,635</td><td>0,31</td><td>0,49</td></tr>
+<tr><td>0,892</td><td>0,44</td><td>0,50</td></tr>
+<tr><td>1,262</td><td>0,63</td><td>0,50</td></tr>
+<tr><td>1,551</td><td>0,77</td><td>0,50</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: hàng nào có $v$ kém tin cậy nhất? (gợi ý: $\tau = d/v$; tự trả lời rồi bấm)</summary>
+<p>Hàng cuối. Ở đó $\tau = 0{,}026\ \text{s}$, sai một vạch $0{,}001\ \text{s}$ là lệch khoảng $4\,\%$; ở hàng đầu $\tau = 0{,}064\ \text{s}$ chỉ lệch khoảng $1{,}6\,\%$. Xe càng nhanh, $\tau$ càng ngắn, sai số tương đối càng lớn. Nguồn sai khác: $v = d/\tau$ thật ra là vận tốc <em>trung bình</em> lúc đi qua cổng; bề rộng tấm chắn đo bằng thước; ma sát dọc máng không đều.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Xem đường B ở Hình 2. Gia tốc của xe B là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q2" id="tl54-q2a"><label for="tl54-q2a" class="tl-opt tl-ok">A. $-1\ \text{m/s}^2$</label>
+<input type="radio" name="tl54-q2" id="tl54-q2b"><label for="tl54-q2b" class="tl-opt tl-no">B. $+1\ \text{m/s}^2$</label>
+<input type="radio" name="tl54-q2" id="tl54-q2c"><label for="tl54-q2c" class="tl-opt tl-no">C. $7\ \text{m/s}^2$</label>
+<input type="radio" name="tl54-q2" id="tl54-q2d"><label for="tl54-q2d" class="tl-opt tl-no">D. $-6\ \text{m/s}^2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ $t = 0$ đến $t = 6\ \text{s}$, $v$ giảm từ $7$ xuống $1\ \text{m/s}$: $a = \dfrac{1 - 7}{6} = -1\ \text{m/s}^2$. Đường dốc xuống, $v$ vẫn dương: chậm dần đều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $+1$ là quên dấu: đường dốc xuống thì $a \lt 0$. $7$ là đọc <em>độ cao</em> ($v_0$) thay vì <em>độ dốc</em>. $-6$ là lấy $\Delta v$ mà quên chia cho $\Delta t = 6\ \text{s}$. Gia tốc $= \dfrac{\Delta v}{\Delta t}$.</p></div>
+</div>
+</div>
+
+<h4>3. Độ dịch chuyển: diện tích dưới đồ thị</h4>
+
+<p><strong>🔑 Diện tích dưới v–t · $d = v_0t + \tfrac12 at^2$</strong></p>
+
+<ul>
+<li>Độ dịch chuyển $=$ <strong>diện tích</strong> giữa đồ thị $v$–$t$ và trục $t$.</li>
+<li>Hình thang có hai đáy $v_0$, $v$, chiều cao $t$: $d = \dfrac{v_0 + v}{2}\, t$, tức <strong>vận tốc trung bình × thời gian</strong>.</li>
+<li>Thay $v = v_0 + at$: $d = v_0t + \tfrac12 at^2$.</li>
+<li>Không đổi chiều chuyển động: quãng đường $s = d$.</li>
+</ul>
+
+<!--FIG3-->
+
+<p><strong>Phương trình chuyển động.</strong> Vật ở toạ độ $x_0$ lúc $t = 0$ thì $d = x - x_0$, nên:</p>
+<p>$$x = x_0 + v_0t + \tfrac12 at^2$$</p>
+<p>Trước khi viết, chọn đủ ba thứ: <strong>gốc toạ độ</strong>, <strong>chiều dương</strong>, <strong>gốc thời gian</strong>. Dấu của $x_0$, $v_0$, $a$ đọc theo chiều dương đó.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Ô tô đang chạy $10\ \text{m/s}$ thì tăng tốc đều, sau $5\ \text{s}$ đạt $20\ \text{m/s}$. Quãng đường đi được trong $5\ \text{s}$ đó là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q3" id="tl54-q3a"><label for="tl54-q3a" class="tl-opt tl-no">A. $50\ \text{m}$</label>
+<input type="radio" name="tl54-q3" id="tl54-q3b"><label for="tl54-q3b" class="tl-opt tl-no">B. $100\ \text{m}$</label>
+<input type="radio" name="tl54-q3" id="tl54-q3c"><label for="tl54-q3c" class="tl-opt tl-ok">C. $75\ \text{m}$</label>
+<input type="radio" name="tl54-q3" id="tl54-q3d"><label for="tl54-q3d" class="tl-opt tl-no">D. $25\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vận tốc trung bình $\dfrac{10 + 20}{2} = 15\ \text{m/s}$, nhân $5\ \text{s}$ được $75\ \text{m}$. Cách khác: $a = 2\ \text{m/s}^2$, $d = 10 \cdot 5 + \tfrac12 \cdot 2 \cdot 5^2 = 75\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $50\ \text{m}$ là coi xe chạy đều $10\ \text{m/s}$, quên phần tăng tốc. $100\ \text{m}$ là lấy vận tốc <em>cuối</em> nhân thời gian. $25\ \text{m}$ chỉ là phần $\tfrac12 at^2$, quên $v_0t$. Vẽ thử hình thang như Hình 3.</p></div>
+</div>
+</div>
+
+<h4>4. Công thức không có thời gian</h4>
+
+<p><strong>🔑 Không có $t$ · $v^2 - v_0^2 = 2ad$ · quãng phanh theo $v_0^2$</strong></p>
+
+<ul>
+<li>Khử $t$ giữa $v = v_0 + at$ và $d = v_0t + \tfrac12 at^2$ được: $v^2 - v_0^2 = 2ad$.</li>
+<li>Dùng khi đề <strong>không cho và không hỏi thời gian</strong>.</li>
+<li>Phanh tới dừng ($v = 0$): $d = \dfrac{v_0^2}{2|a|}$. Tốc độ gấp đôi, quãng phanh gấp bốn.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📐 Xem thêm: khử $t$ thế nào?</summary>
+<p>Từ $v = v_0 + at$ có $t = \dfrac{v - v_0}{a}$. Thay vào $d = \dfrac{v_0 + v}{2}\, t$:</p>
+<p>$$d = \dfrac{(v + v_0)(v - v_0)}{2a} = \dfrac{v^2 - v_0^2}{2a}$$</p>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-ctbdd-02">
+<p class="tl-label">🚗 Ví dụ: quãng phanh theo tốc độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> tính quãng phanh ở bốn tốc độ, cùng gia tốc phanh $5\ \text{m/s}^2$ (số giả định cho đường khô, chưa tính lúc người lái phản xạ).</li>
+<li><strong>Quan sát:</strong> bảng dưới.</li>
+<li><strong>Rút ra:</strong> $36 \to 72\ \text{km/h}$ (gấp đôi) thì $10 \to 40\ \text{m}$ (gấp bốn). Đây chính là đáp án câu dự đoán.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tốc độ lúc phanh</th><th>Quãng phanh (minh hoạ)</th></tr>
+</thead>
+<tbody>
+<tr><td>$36\ \text{km/h} = 10\ \text{m/s}$</td><td>$10\ \text{m}$</td></tr>
+<tr><td>$54\ \text{km/h} = 15\ \text{m/s}$</td><td>$22{,}5\ \text{m}$</td></tr>
+<tr><td>$72\ \text{km/h} = 20\ \text{m/s}$</td><td>$40\ \text{m}$</td></tr>
+<tr><td>$90\ \text{km/h} = 25\ \text{m/s}$</td><td>$62{,}5\ \text{m}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "$a$ âm là chậm dần"</h4>
+
+<p>Dấu của $a$ chỉ cho biết $\vec a$ cùng hay ngược chiều dương đã chọn. Nhanh hay chậm phải <strong>so dấu $a$ với dấu $v$</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Dấu của $a$ cho biết</th><th>Tích $a \cdot v$ cho biết</th></tr>
+</thead>
+<tbody>
+<tr><td>$\vec a$ cùng / ngược chiều dương</td><td>Nhanh dần ($\gt 0$) / chậm dần ($\lt 0$)</td></tr>
+<tr><td>Đổi khi đổi chiều dương</td><td>Không đổi khi đổi chiều dương</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Cùng dấu nhanh · ngược dấu chậm</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl54-q4-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl54-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Một xe chạy theo chiều âm của trục $Ox$ với $v = -10\ \text{m/s}$, gia tốc $a = -2\ \text{m/s}^2$. Xe đang:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q4" id="tl54-q4a"><label for="tl54-q4a" class="tl-opt tl-no">A. Chậm dần đều, vì $a \lt 0$</label>
+<input type="radio" name="tl54-q4" id="tl54-q4b"><label for="tl54-q4b" class="tl-opt tl-no">B. Chậm dần đều, vì xe đi ngược chiều dương</label>
+<input type="radio" name="tl54-q4" id="tl54-q4c"><label for="tl54-q4c" class="tl-opt tl-no">C. Chuyển động thẳng đều, vì $a$ không đổi</label>
+<input type="radio" name="tl54-q4" id="tl54-q4d"><label for="tl54-q4d" class="tl-opt tl-ok">D. Nhanh dần đều, vì $a$ cùng dấu $v$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $a \cdot v = (-2)(-10) = 20 \gt 0$: gia tốc cùng chiều chuyển động, xe nhanh dần. Sau $1\ \text{s}$, $v = -12\ \text{m/s}$: tốc độ $12 \gt 10$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là đúng cái bẫy: chỉ nhìn dấu $a$. B nhầm chiều chuyển động với nhanh/chậm. C nhầm "$a$ không đổi" với "$v$ không đổi". Tính thử $v$ sau $1\ \text{s}$ rồi so tốc độ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: thay $t$ quá lúc xe đã dừng</h4>
+
+<p>Công thức $d = v_0t + \tfrac12 at^2$ chỉ đúng khi gia tốc giữ nguyên suốt thời gian $t$. Xe phanh tới dừng thì <strong>đứng yên</strong>, không chạy lùi.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Thay máy móc</th><th>Làm đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>Thay ngay $t$ của đề vào công thức</td><td>Tính trước lúc dừng: $t_d = \dfrac{v_0}{|a|}$</td></tr>
+<tr><td>Ra quãng đường nhỏ dần, thậm chí âm</td><td>$t \gt t_d$ thì lấy $d = \dfrac{v_0^2}{2|a|}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Phanh thì tính lúc dừng trước</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Ô tô đang chạy $10\ \text{m/s}$ thì phanh, chậm dần đều với gia tốc có độ lớn $2\ \text{m/s}^2$. Quãng đường xe đi được trong $8\ \text{s}$ kể từ lúc phanh là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q5" id="tl54-q5a"><label for="tl54-q5a" class="tl-opt tl-no">A. $16\ \text{m}$</label>
+<input type="radio" name="tl54-q5" id="tl54-q5b"><label for="tl54-q5b" class="tl-opt tl-ok">B. $25\ \text{m}$</label>
+<input type="radio" name="tl54-q5" id="tl54-q5c"><label for="tl54-q5c" class="tl-opt tl-no">C. $80\ \text{m}$</label>
+<input type="radio" name="tl54-q5" id="tl54-q5d"><label for="tl54-q5d" class="tl-opt tl-no">D. $144\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Xe dừng sau $t_d = 10/2 = 5\ \text{s}$, đi được $\dfrac{10^2}{2 \cdot 2} = 25\ \text{m}$. Ba giây còn lại xe đứng yên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $16\ \text{m}$ là thay thẳng $t = 8$: $10 \cdot 8 - \tfrac12 \cdot 2 \cdot 8^2 = 16$, như thể xe dừng rồi chạy lùi. $80\ \text{m}$ là quên phanh. $144\ \text{m}$ là lấy $a$ dương. Luôn hỏi trước: xe dừng lúc nào?</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: hai đường v–t cắt nhau là hai xe gặp nhau</h4>
+
+<p>Đồ thị $v$–$t$ cho biết <strong>vận tốc</strong>, không cho biết <strong>vị trí</strong>. Hai đường cắt nhau chỉ nghĩa là lúc đó hai xe <strong>cùng vận tốc</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trên đồ thị v–t</th><th>Nghĩa vật lí</th></tr>
+</thead>
+<tbody>
+<tr><td>Độ cao của điểm</td><td>Vận tốc lúc đó</td></tr>
+<tr><td>Độ dốc của đường</td><td>Gia tốc</td></tr>
+<tr><td>Diện tích dưới đường</td><td>Độ dịch chuyển</td></tr>
+<tr><td>Hai đường cắt nhau</td><td>Cùng vận tốc, <strong>chưa chắc</strong> gặp nhau</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Cao là $v$ · dốc là $a$ · diện tích là $d$</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Ở Hình 2, hai đường A và B cắt nhau tại $t = 3\ \text{s}$. Nhận xét đúng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q6" id="tl54-q6a"><label for="tl54-q6a" class="tl-opt tl-no">A. Lúc đó hai xe có cùng gia tốc</label>
+<input type="radio" name="tl54-q6" id="tl54-q6b"><label for="tl54-q6b" class="tl-opt tl-no">B. Lúc đó chắc chắn hai xe gặp nhau</label>
+<input type="radio" name="tl54-q6" id="tl54-q6c"><label for="tl54-q6c" class="tl-opt tl-ok">C. Lúc đó hai xe cùng vận tốc $4\ \text{m/s}$, gia tốc trái dấu</label>
+<input type="radio" name="tl54-q6" id="tl54-q6d"><label for="tl54-q6d" class="tl-opt tl-no">D. Lúc đó xe B dừng lại rồi đổi chiều</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng độ cao nên cùng $v = 4\ \text{m/s}$; A dốc lên ($a = +1$), B dốc xuống ($a = -1$). Vị trí hai xe thì đồ thị không cho biết.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhầm độ cao với độ dốc. B nhầm vận tốc với vị trí: muốn biết gặp nhau phải so $x$, không so $v$. D: xe B dừng khi đường chạm trục $t$ ($v = 0$), mà tại $t = 3\ \text{s}$ vẫn có $v = 4\ \text{m/s}$.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Chuyển động thẳng biến đổi đều là gì? Nhận ra nhanh dần, chậm dần bằng cách nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Quỹ đạo thẳng · $a$ không đổi. $a \cdot v \gt 0$: nhanh dần · $a \cdot v \lt 0$: chậm dần.</p>
+</details>
+<details class="tl-details">
+<summary>2. Công thức vận tốc? Khi nào chỉ còn $v = at$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v = v_0 + a(t - t_0)$; gốc thời gian $t_0 = 0$: $v = v_0 + at$ · xuất phát từ nghỉ: $v = at$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Đồ thị v–t có dạng gì? Đọc $a$ và $d$ từ đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đoạn thẳng · độ dốc $= a$ · diện tích dưới đường $= d$ · cắt nhau là cùng $v$, chưa chắc gặp.</p>
+</details>
+<details class="tl-details">
+<summary>4. Công thức độ dịch chuyển và phương trình chuyển động? Khi nào $s = d$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$d = v_0t + \tfrac12 at^2$ (vận tốc trung bình × thời gian) · $x = x_0 + v_0t + \tfrac12 at^2$ · $s = d$ khi không đổi chiều.</p>
+</details>
+<details class="tl-details">
+<summary>5. Công thức không chứa $t$? Vì sao quãng phanh tăng nhanh theo tốc độ? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v^2 - v_0^2 = 2ad$ · phanh tới dừng: $d = v_0^2 / (2|a|)$ · $v_0$ gấp đôi thì $d$ gấp bốn.</p>
+</details>
+<details class="tl-details">
+<summary>6. Bài hai xe gặp nhau: lập phương trình thế nào, gặp nhau khi nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Một gốc toạ độ · một chiều dương · một gốc thời gian cho cả hai xe · gặp khi $x_1 = x_2$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: ô tô đuổi xe máy</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Ô tô đang dừng ở vạch đèn đỏ. Đèn chuyển xanh, ô tô khởi hành nhanh dần đều với gia tốc $2\ \text{m/s}^2$. Đúng lúc đó, một xe máy chạy thẳng đều $10\ \text{m/s}$ đi qua vạch dừng, cùng chiều với ô tô. Hỏi sau bao lâu ô tô đuổi kịp xe máy, ở đâu, và lúc đó ô tô có vận tốc bao nhiêu?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"đang dừng … khởi hành"</td><td>$v_{01} = 0$ → $x_1 = \tfrac12 at^2$</td></tr>
+<tr><td>"gia tốc $2\ \text{m/s}^2$"</td><td>$a = 2\ \text{m/s}^2$, cùng chiều dương</td></tr>
+<tr><td>"đúng lúc đó … đi qua vạch dừng"</td><td>Cùng gốc thời gian, cùng gốc toạ độ: $x_{01} = x_{02} = 0$</td></tr>
+<tr><td>"thẳng đều $10\ \text{m/s}$"</td><td>$a_2 = 0$ → $x_2 = 10t$</td></tr>
+<tr><td>"đuổi kịp, ở đâu"</td><td>Gặp nhau: $x_1 = x_2$</td></tr>
+<tr><td>"vận tốc lúc đó"</td><td>$v_1 = at$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Chọn hệ quy chiếu:</strong> gốc toạ độ ở vạch dừng, chiều dương theo chiều chuyển động, gốc thời gian lúc đèn xanh.</li>
+<li><strong>Phương trình:</strong> ô tô $x_1 = \tfrac12 \cdot 2 \cdot t^2 = t^2$; xe máy $x_2 = 10t$ (đơn vị m, s).</li>
+<li><strong>Gặp nhau:</strong> $t^2 = 10t$, nên $t = 0$ (lúc xuất phát) hoặc $t = 10\ \text{s}$. Lấy $t = 10\ \text{s}$.</li>
+<li><strong>Vị trí:</strong> $x = 10 \cdot 10 = 100\ \text{m}$ tính từ vạch dừng.</li>
+<li><strong>Vận tốc ô tô:</strong> $v_1 = 2 \cdot 10 = 20\ \text{m/s}$.</li>
+<li><strong>Kiểm tra bằng đồ thị:</strong> diện tích dưới hai đường $v$–$t$ từ $0$ đến $10\ \text{s}$ đều bằng $100\ \text{m}$ ✓ (vẽ ở Hình 4, mở sau Câu 6). Ô tô gặp xe máy khi đã nhanh gấp đôi, đúng vì nó phải bù phần bị bỏ xa.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu: phanh gấp</p>
+<p>Ô tô chạy $72\ \text{km/h}$ thì thấy vật cản cách $50\ \text{m}$, phanh ngay, chậm dần đều với gia tốc có độ lớn $5\ \text{m/s}^2$. Xe có đâm vào vật cản không?</p>
+<ol class="tl-steps">
+<li>Đổi đơn vị: $v_0 = 72\ \text{km/h} = 20\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> quãng phanh $d = \;?$ — gợi ý: đề không cho, không hỏi thời gian.</li>
+<li><strong>Bước 3 (em điền):</strong> so $d$ với $50\ \text{m}$, kết luận.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$0 - 20^2 = 2 \cdot (-5) \cdot d$, nên $d = 40\ \text{m}$. Vì $40 \lt 50$: xe dừng cách vật cản $10\ \text{m}$, không đâm. Thời gian phanh $t = 20/5 = 4\ \text{s}$.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: xe máy chạy ngược lại</summary>
+<p>Cùng lúc đèn xanh, xe máy ở cách vạch dừng $75\ \text{m}$, chạy đều $10\ \text{m/s}$ <strong>về phía</strong> ô tô. Giữ chiều dương như cũ: $x_2 = 75 - 10t$. Gặp nhau: $t^2 = 75 - 10t$, tức $t^2 + 10t - 75 = 0$, nên $t = 5\ \text{s}$ (loại nghiệm $-15$). Chỗ gặp: $x = 25\ \text{m}$ tính từ vạch dừng.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl54-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl54-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Trong bài toán mẫu, trước khi ô tô đuổi kịp, khoảng cách giữa hai xe lớn nhất vào lúc nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl54-q7" id="tl54-q7a"><label for="tl54-q7a" class="tl-opt tl-no">A. Lúc $t = 0$, khi vừa đèn xanh</label>
+<input type="radio" name="tl54-q7" id="tl54-q7b"><label for="tl54-q7b" class="tl-opt tl-no">B. Lúc $t = 10\ \text{s}$, ngay trước khi gặp</label>
+<input type="radio" name="tl54-q7" id="tl54-q7c"><label for="tl54-q7c" class="tl-opt tl-no">C. Khoảng cách tăng đều, không có lúc nào lớn nhất</label>
+<input type="radio" name="tl54-q7" id="tl54-q7d"><label for="tl54-q7d" class="tl-opt tl-ok">D. Lúc $t = 5\ \text{s}$, khi hai xe cùng vận tốc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trước $5\ \text{s}$ xe máy nhanh hơn nên bỏ xa thêm; sau $5\ \text{s}$ ô tô nhanh hơn nên rút ngắn. Khoảng cách lớn nhất: $10 \cdot 5 - 5^2 = 25\ \text{m}$, đúng bằng phần tô xanh ở Hình 4 (bấm mở ngay dưới câu này).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lúc đó hai xe cùng ở vạch, khoảng cách bằng $0$. B: lúc $10\ \text{s}$ hai xe gặp nhau, khoảng cách cũng bằng $0$. C quên rằng ô tô nhanh dần, đến lúc nào đó sẽ nhanh hơn xe máy. Khoảng cách đổi từ tăng sang giảm khi hai vận tốc bằng nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại Bẫy 3.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📈 Bấm xem Hình 4: đồ thị v–t của hai xe (sau khi đã trả lời Câu 6)</summary>
+<!--FIG4-->
+</details>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: bốn nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Khoảng cách an toàn khi lái xe:</strong> quãng phanh theo $v_0^2$, nên biển báo khoảng cách tăng rất nhanh theo tốc độ.</li>
+<li><strong>Máy CNC:</strong> bàn máy không nhảy ngay lên tốc độ chạy dao mà tăng tốc, giảm tốc với gia tốc giới hạn; đồ thị $v$–$t$ của mỗi lần chạy là hình thang.</li>
+<li><strong>Đường băng sân bay:</strong> từ $v^2 = 2ad$, máy bay cần đạt $75\ \text{m/s}$ với $a = 2\ \text{m/s}^2$ phải chạy khoảng $1\,400\ \text{m}$ (số minh hoạ).</li>
+<li><strong>Trượt băng:</strong> thả trôi trên băng gần như chậm dần đều; đo quãng trôi là ước lượng được gia tốc do ma sát.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Xe khởi hành từ nghỉ với $a = 2\ \text{m/s}^2$. Sau $5\ \text{s}$, vận tốc và quãng đường? <em>($10\ \text{m/s}$; $25\ \text{m}$)</em></li>
+<li><strong>⭐⭐</strong> Vật nhanh dần đều từ nghỉ, đi được $5\ \text{m}$ trong <strong>giây thứ ba</strong>. Tìm $a$. <em>($d_3 - d_2 = \tfrac12 a(9 - 4) = 5$, nên $a = 2\ \text{m/s}^2$)</em></li>
+<li><strong>⭐⭐⭐</strong> Ô tô chạy $15\ \text{m/s}$; người lái mất $0{,}8\ \text{s}$ mới đạp phanh, rồi xe chậm dần đều với gia tốc độ lớn $6\ \text{m/s}^2$. Tổng quãng đường từ lúc thấy vật cản tới lúc dừng? <em>($12 + 18{,}75 = 30{,}75\ \text{m}$; trong $0{,}8\ \text{s}$ phản xạ xe vẫn chạy đều)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Biến đổi đều</strong>: $a$ không đổi · so dấu $a$ với $v$</li>
+<li>$v = v_0 + at$ · đồ thị thẳng · dốc là $a$</li>
+<li>$d = v_0t + \tfrac12 at^2$ · diện tích dưới v–t</li>
+<li>$x = x_0 + v_0t + \tfrac12 at^2$ · chọn gốc, chiều, gốc thời gian</li>
+<li>$v^2 - v_0^2 = 2ad$ · không có $t$ · phanh theo $v_0^2$</li>
+<li>Phanh: tính lúc dừng trước · cắt nhau trên v–t chưa phải gặp</li>
+<li>Đọc đề: "từ nghỉ", "đúng lúc đó", "cùng chiều" là dữ kiện ngầm; đổi km/h ra m/s</li>
+</ul>
+</div>

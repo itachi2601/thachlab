@@ -1,0 +1,72 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 5. Tốc độ và vận tốc",
+ "lesson_id": 50,
+ "nguon_trong_bai": "content/lesson-samples/l10-toc-do-van-toc/theory.html",
+ "id": "tn-l10-tdvt-02",
+ "ten": "Đầu dao CNC đi nửa vòng tròn: tốc độ trung bình khác độ lớn vận tốc trung bình",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "tocdo.toc_do_trung_binh",
+  "vantoc.van_toc_trung_binh",
+  "vantoc.van_toc_tuc_thoi_tiep_tuyen"
+ ],
+ "muc_tieu": "So sánh quãng đường s = πR với độ dịch chuyển d = 2R khi đầu dao đi nửa đường tròn; tính tốc độ trung bình và độ lớn vận tốc trung bình.",
+ "dung_cu": [
+  {"ten": "Máy phay CNC (hoặc mô phỏng đường chạy dao G-code cung tròn G02)", "so_luong": 1}
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Lập trình đầu dao đi nửa đường tròn bán kính R = 20 mm từ A tới B trong t = 4 s."
+  ],
+  "quan_sat": [
+   "Quãng đường s = πR ≈ 62,8 mm; độ dịch chuyển d = 2R = 40 mm, hướng từ A sang B."
+  ],
+  "rut_ra": [
+   "Tốc độ trung bình s/t ≈ 15,7 mm/s; độ lớn vận tốc trung bình d/t = 10 mm/s.",
+   "Vận tốc tức thời tại mỗi điểm tiếp tuyến với cung, theo chiều chạy dao."
+  ]
+ },
+ "tham_so": [
+  {"ky_hieu": "R", "ten": "Bán kính cung", "don_vi": "mm", "kieu": "dieu_chinh", "min": 5, "max": 50, "mac_dinh": 20, "buoc": 5},
+  {"ky_hieu": "t", "ten": "Thời gian đi hết nửa vòng", "don_vi": "s", "kieu": "dieu_chinh", "min": 1, "max": 10, "mac_dinh": 4, "buoc": 1},
+  {"ky_hieu": "s", "ten": "Quãng đường", "don_vi": "mm", "kieu": "tinh_ra"},
+  {"ky_hieu": "d", "ten": "Độ lớn độ dịch chuyển", "don_vi": "mm", "kieu": "tinh_ra"},
+  {"ky_hieu": "v_tb", "ten": "Tốc độ trung bình", "don_vi": "mm/s", "kieu": "tinh_ra"},
+  {"ky_hieu": "vv_tb", "ten": "Độ lớn vận tốc trung bình", "don_vi": "mm/s", "kieu": "tinh_ra"}
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "s = π·R",
+   "d = 2·R",
+   "v_tb = s / t",
+   "|v_tb vectơ| = d / t",
+   "|v_tb vectơ| / v_tb = 2/π ≈ 0,64 (không phụ thuộc R, t)"
+  ],
+  "gia_thiet": [
+   "dao chạy đều trên cung",
+   "cung đúng nửa đường tròn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": ["R (mm)", "t (s)", "s (mm)", "d (mm)", "v_tb (mm/s)", "|v_tb| (mm/s)"],
+  "hang": [
+   [20, 4, 62.83, 40, 15.71, 10.0],
+   [10, 2, 31.42, 20, 15.71, 10.0],
+   [30, 4, 94.25, 60, 23.56, 15.0]
+  ],
+  "ghi_chu": "Tính từ mô hình (không đo). Hàng 1 là ví dụ trong bài."
+ },
+ "ket_qua_ky_vong": "Tốc độ trung bình ≈ 15,7 mm/s lớn hơn độ lớn vận tốc trung bình 10 mm/s; tỉ số luôn 2/π với nửa vòng tròn.",
+ "hien_tuong_hay_sai": [
+  "Lấy quãng đường cung chia thời gian làm độ lớn vận tốc trung bình.",
+  "Vẽ vận tốc tức thời theo hướng A → B (hướng của vận tốc trung bình) thay vì tiếp tuyến cung."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Đầu dao chạy trên cung, vẽ vệt quãng đường (cam) và mũi tên độ dịch chuyển từ A tới vị trí hiện tại (đỏ); hiện vectơ vận tốc tức thời tiếp tuyến (xanh lá).",
+  "diem_nhan": "Cho dừng ở giữa chừng để học sinh dự đoán hướng vận tốc tức thời trước khi hiện mũi tên."
+ }
+}

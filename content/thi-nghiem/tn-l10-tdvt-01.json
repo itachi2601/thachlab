@@ -1,0 +1,79 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 5. Tốc độ và vận tốc",
+ "lesson_id": 50,
+ "nguon_trong_bai": "content/lesson-samples/l10-toc-do-van-toc/theory.html",
+ "id": "tn-l10-tdvt-01",
+ "ten": "Đo tốc độ trung bình khi đi bộ trên đoạn 10 m bằng đồng hồ bấm giây",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "tocdo.toc_do_trung_binh",
+  "tocdo.sai_so_do_thoi_gian"
+ ],
+ "muc_tieu": "Đo thời gian một bạn đi bộ hết đoạn 10,0 m (5 lần), tính tốc độ trung bình v = s/t, nhận xét sai số do phản xạ tay khi bấm đồng hồ.",
+ "dung_cu": [
+  {"ten": "Thước dây 10 m", "so_luong": 1},
+  {"ten": "Băng dính màu đánh dấu vạch", "so_luong": 1},
+  {"ten": "Đồng hồ bấm giây (điện thoại), độ chia 0,01 s", "so_luong": 1}
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dán hai vạch cách nhau s = 10,0 m ở hành lang.",
+   "Một bạn đi bộ đều qua hai vạch; bạn khác bấm đồng hồ lúc chân chạm vạch đầu và vạch cuối.",
+   "Lặp lại 5 lần, ghi thời gian t mỗi lần."
+  ],
+  "quan_sat": [
+   "Năm thời gian đo: 7,9; 8,3; 8,1; 7,7; 8,0 s — không trùng nhau.",
+   "Tốc độ tính ra từ 1,20 đến 1,30 m/s."
+  ],
+  "rut_ra": [
+   "Tốc độ trung bình v = s/t ≈ 1,25 m/s (trung bình 5 lần).",
+   "Sai số chủ yếu do phản xạ tay khi bấm (0,2–0,3 s); đo đoạn dài hơn hoặc dùng cổng quang điện để giảm sai số tương đối."
+  ]
+ },
+ "tham_so": [
+  {"ky_hieu": "s", "ten": "Độ dài đoạn đo", "don_vi": "m", "kieu": "dieu_chinh", "min": 5, "max": 30, "mac_dinh": 10, "buoc": 5},
+  {"ky_hieu": "v_that", "ten": "Tốc độ đi bộ thật (đều)", "don_vi": "m/s", "kieu": "dieu_chinh", "min": 0.8, "max": 2.0, "mac_dinh": 1.25, "buoc": 0.05},
+  {"ky_hieu": "dt_phan_xa", "ten": "Sai lệch do phản xạ tay (tổng hai lần bấm)", "don_vi": "s", "kieu": "co_dinh", "gia_tri": 0.3},
+  {"ky_hieu": "t", "ten": "Thời gian đo được", "don_vi": "s", "kieu": "do_duoc", "sai_so_do": 0.3},
+  {"ky_hieu": "v", "ten": "Tốc độ trung bình tính từ số đo", "don_vi": "m/s", "kieu": "tinh_ra"}
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_that = s / v_that",
+   "t (đo) = t_that + nhiễu phản xạ, |nhiễu| ≤ dt_phan_xa",
+   "v = s / t",
+   "sai số tương đối ≈ dt_phan_xa / t_that"
+  ],
+  "gia_thiet": [
+   "bạn đi bộ đều trên đoạn đo",
+   "độ dài s đo chính xác (sai số thước bỏ qua)",
+   "nhiễu phản xạ ngẫu nhiên, không quá 0,3 s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": ["Lần", "t (s)", "v = s/t (m/s)"],
+  "hang": [
+   [1, 7.9, 1.27],
+   [2, 8.3, 1.2],
+   [3, 8.1, 1.23],
+   [4, 7.7, 1.3],
+   [5, 8.0, 1.25]
+  ],
+  "ghi_chu": "Số liệu minh hoạ sinh từ mô hình với s = 10,0 m, v_that = 1,25 m/s (t_that = 8,0 s) cộng nhiễu phản xạ trong ±0,3 s; v làm tròn 2 chữ số thập phân. Trung bình t = 8,0 s, trung bình v = 1,25 m/s."
+ },
+ "ket_qua_ky_vong": "v_tb ≈ 1,25 m/s; lần 2 (8,3 s) và lần 4 (7,7 s) cùng lệch 0,3 s ≈ 4 % so với trung bình 8,0 s (1,20 và 1,30 m/s so với 1,25 m/s) — đúng cỡ sai số phản xạ tay.",
+ "hien_tuong_hay_sai": [
+  "Lấy một lần đo duy nhất làm kết quả.",
+  "Tưởng tốc độ khác nhau giữa các lần là do bạn đi bộ đổi tốc độ, quên sai số bấm đồng hồ."
+ ],
+ "sai_so_thuong_gap": "Bấm sớm/muộn do phản xạ tay; người bấm đứng lệch vạch nên nhìn sai lúc chân chạm vạch; đoạn đo quá ngắn làm sai số tương đối lớn.",
+ "an_toan": "Đo ở hành lang thông thoáng, không chạy.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Người que đi đều qua hai vạch; học sinh bấm nút 'Bấm giờ' hai lần, mô phỏng cộng thêm trễ phản xạ ngẫu nhiên; bảng tự điền t và v = s/t.",
+  "diem_nhan": "Cho đổi s từ 5 m đến 30 m để thấy cùng trễ phản xạ nhưng sai số tương đối giảm khi đoạn dài hơn."
+ }
+}

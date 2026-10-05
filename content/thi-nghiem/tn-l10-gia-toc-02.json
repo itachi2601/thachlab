@@ -1,0 +1,151 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 8. Chuyển động biến đổi. Gia tốc",
+ "lesson_id": 53,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-bien-doi-gia-toc/theory.html",
+ "id": "tn-l10-gia-toc-02",
+ "ten": "Dấu vết viên bi qua video: đều, nhanh dần, chậm dần",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "giatoc.chuyen_dong_bien_doi",
+  "giatoc.nhanh_dan_deu",
+  "giatoc.cham_dan_deu"
+ ],
+ "muc_tieu": "Nhìn khoảng cách giữa các vị trí cách đều thời gian để nhận ra chuyển động đều, nhanh dần, chậm dần.",
+ "dung_cu": [
+  {
+   "ten": "Viên bi thép",
+   "so_luong": 1
+  },
+  {
+   "ten": "Máng nghiêng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay video (30 hình/s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dán dọc đường lăn",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Quay video bi lăn trên mặt bàn ngang, lăn xuống máng nghiêng, rồi lăn lên máng nghiêng.",
+   "Dừng hình mỗi 0,2 s (cứ 6 khung hình), lấy 5 vị trí từ t = 0 đến 0,8 s, chấm lên giấy."
+  ],
+  "quan_sat": [
+   "Trên bàn: các chấm gần cách đều.",
+   "Xuống dốc: khoảng cách dài dần.",
+   "Lên dốc: khoảng cách ngắn dần."
+  ],
+  "rut_ra": [
+   "Khoảng đi được trong mỗi 0,2 s thay đổi thì vận tốc thay đổi: chuyển động biến đổi.",
+   "Dài dần: nhanh dần (a cùng chiều v); ngắn dần: chậm dần (a ngược chiều v)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc dọc đường lăn",
+   "don_vi": "m/s²",
+   "kieu": "dieu_chinh",
+   "min": -2,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Vận tốc đầu",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Khoảng thời gian giữa hai chấm",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.2
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Vị trí bi",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = v0·t + a·t²/2 (cm = 100·m)",
+   "t = n·0,2 s, n = 0…4"
+  ],
+  "gia_thiet": [
+   "bàn ngang coi như đều (bỏ ma sát lăn)",
+   "bi lăn không trượt, coi như chất điểm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Đoạn",
+   "v0 (m/s)",
+   "a (m/s²)",
+   "x0",
+   "x1",
+   "x2",
+   "x3",
+   "x4 (cm)"
+  ],
+  "hang": [
+   [
+    "Trên bàn: gần thẳng đều",
+    0.4,
+    0.0,
+    0.0,
+    8.0,
+    16.0,
+    24.0,
+    32.0
+   ],
+   [
+    "Xuống dốc: nhanh dần đều",
+    0.0,
+    1.0,
+    0.0,
+    2.0,
+    8.0,
+    18.0,
+    32.0
+   ],
+   [
+    "Lên dốc: chậm dần đều",
+    0.8,
+    -1.0,
+    0.0,
+    14.0,
+    24.0,
+    30.0,
+    32.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, dùng vẽ Hình 1; cả ba hàng cùng đi 32 cm trong 0,8 s."
+ },
+ "ket_qua_ky_vong": "Khoảng cách các chấm: đều (8 cm), tăng dần (2, 6, 10, 14 cm), giảm dần (14, 10, 6, 2 cm).",
+ "hien_tuong_hay_sai": [
+  "Tưởng bi lên dốc có gia tốc bằng 0 vì vẫn đang tiến tới.",
+  "Chỉ nhìn vị trí cuối (cùng 32 cm) rồi kết luận ba chuyển động như nhau."
+ ],
+ "sai_so_thuong_gap": "Video mờ khi bi nhanh; chấm vị trí lệch tâm bi.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Ba làn song song, bi để lại chấm mỗi 0,2 s; thanh trượt v0, a; hiện mũi tên v (xanh dương) và a (xanh lá).",
+  "diem_nhan": "Đặt a âm với v0 lớn để thấy bi dừng rồi lăn ngược — mở đường cho bài sau."
+ }
+}

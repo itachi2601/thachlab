@@ -1,0 +1,166 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 7. Đồ thị độ dịch chuyển - thời gian",
+ "lesson_id": 52,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/theory.html",
+ "id": "tn-l10-dt-dctg-02",
+ "ten": "Đi bộ \"vẽ\" đồ thị d–t: đi chậm ra, đứng lại, quay về nhanh",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dothi_dt.mo_ta_chuyen_dong",
+  "dothi_dt.do_doc_la_van_toc",
+  "dichchuyen.quang_duong_khac_do_dich_chuyen"
+ ],
+ "muc_tieu": "Tạo ra đồ thị d–t bằng chính chuyển động của mình để thấy: dốc ít = chậm, nằm ngang = đứng yên, đi xuống = quay về; và d cuối = 0 trong khi s = 10 m.",
+ "dung_cu": [
+  {
+   "ten": "Thước dây 10 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giấy kẻ ô, bút",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Trải thước dây dọc hành lang, vạch 0 ở chỗ xuất phát, chiều dương ra xa vạch 0.",
+   "Bạn A đi chậm ra vạch 5 m (khoảng 5 s), đứng 3 s, rồi bước nhanh về vạch 0 (khoảng 2,5 s).",
+   "Bạn B bấm giờ và hô mỗi giây, bạn C ghi vị trí của A; chấm điểm (t, d) lên giấy kẻ ô."
+  ],
+  "quan_sat": [
+   "Đồ thị ba đoạn: xiên lên thoải, nằm ngang, xiên xuống dốc hơn.",
+   "Điểm cuối trở về d = 0."
+  ],
+  "rut_ra": [
+   "Mỗi kiểu đi cho một dạng đường: độ dốc dương nhỏ = ra xa chậm, nằm ngang = đứng, độ dốc âm lớn = về nhanh.",
+   "Độ dịch chuyển cả lượt bằng 0, quãng đường 10 m."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v1",
+   "ten": "Vận tốc đi ra",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "t_dung",
+   "ten": "Thời gian đứng lại",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v3",
+   "ten": "Vận tốc quay về",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": -3,
+   "max": -0.5,
+   "mac_dinh": -2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Vị trí trên thước dây",
+   "don_vi": "m",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "0 ≤ t ≤ 5 s: d = v1·t (v1 = 1 m/s)",
+   "5 s ≤ t ≤ 8 s: d = 5 m",
+   "8 s ≤ t ≤ 10,5 s: d = 5 + v3·(t − 8) (v3 = −2 m/s)",
+   "s = |Δd1| + |Δd2| + |Δd3|"
+  ],
+  "gia_thiet": [
+   "bỏ qua lúc tăng/giảm tốc khi bắt đầu đi và khi dừng",
+   "số liệu minh hoạ từ mô hình, không phải đo thật"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "d (m)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0
+   ],
+   [
+    1,
+    1.0
+   ],
+   [
+    2,
+    2.0
+   ],
+   [
+    3,
+    3.0
+   ],
+   [
+    4,
+    4.0
+   ],
+   [
+    5,
+    5.0
+   ],
+   [
+    6,
+    5.0
+   ],
+   [
+    7,
+    5.0
+   ],
+   [
+    8,
+    5.0
+   ],
+   [
+    9,
+    3.0
+   ],
+   [
+    10,
+    1.0
+   ],
+   [
+    10.5,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình ba đoạn; đo thật sẽ có các góc bo tròn ở chỗ đổi kiểu đi."
+ },
+ "ket_qua_ky_vong": "Đồ thị ba đoạn với độ dốc 1 m/s, 0, −2 m/s; d cuối = 0, s = 10 m.",
+ "hien_tuong_hay_sai": [
+  "Đọc đoạn đi xuống là 'đi xuống dốc'.",
+  "Đọc quãng đường ở điểm cuối của đồ thị (ra 0).",
+  "Đảo nhanh/chậm: tưởng đoạn thoải là đi nhanh."
+ ],
+ "an_toan": "Làm ở hành lang thông thoáng, không chạy.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Nhân vật đi trên thước dây theo phím bấm/thanh trượt, đồ thị d–t vẽ theo thời gian thực bên cạnh.",
+  "diem_nhan": "Chế độ ngược: cho sẵn một đồ thị, học sinh phải điều khiển nhân vật đi sao cho vẽ trùng."
+ }
+}

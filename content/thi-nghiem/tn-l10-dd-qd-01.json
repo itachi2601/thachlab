@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+ "lesson_id": 49,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/theory.html",
+ "id": "tn-l10-dd-qd-01",
+ "ten": "Xe đồ chơi chạy trên ray uốn: đo quãng đường bằng sợi chỉ, đo độ dịch chuyển bằng thước",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dong_hoc.quang_duong",
+  "dong_hoc.do_dich_chuyen",
+  "dong_hoc.so_sanh_d_s"
+ ],
+ "muc_tieu": "Đo s và độ lớn d cho bốn hình dạng đường ray, thấy d = s chỉ khi đường thẳng không đổi chiều, còn lại d < s; đường khép kín cho d = 0.",
+ "dung_cu": [
+  {
+   "ten": "Xe đồ chơi chạy pin",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đường ray nhựa uốn được, dài 80 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Sợi chỉ không dãn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước thẳng 1 m, vạch chia 1 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính đánh dấu điểm đầu, điểm cuối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Uốn ray lần lượt thành 4 hình: thẳng 30 cm, nửa vòng tròn bán kính 10 cm, chữ L (30 cm rồi rẽ vuông góc 40 cm), trọn vòng tròn bán kính 10 cm.",
+   "Mỗi hình cho xe chạy một lần từ đầu tới cuối ray, dán băng dính ở điểm xuất phát và điểm dừng.",
+   "Đặt sợi chỉ sát dọc ray, kéo thẳng rồi đo bằng thước: được s. Đo đoạn thẳng nối điểm đầu – điểm cuối: được độ lớn d."
+  ],
+  "quan_sat": [
+   "s đo: 30,2; 31,9; 70,6; 63,5 cm. d đo: 30,0; 20,1; 49,9; 0,0 cm (số liệu minh hoạ).",
+   "Chỉ hình ray thẳng cho d ≈ s; vòng tròn kín cho d = 0 dù xe chạy hơn 60 cm."
+  ],
+  "rut_ra": [
+   "Độ lớn độ dịch chuyển không lớn hơn quãng đường: d ≤ s.",
+   "d = s khi vật chuyển động thẳng, không đổi chiều."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "r",
+   "ten": "Bán kính ray tròn",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "theta",
+   "ten": "Góc cung tròn xe chạy",
+   "don_vi": "rad",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6.2832,
+   "mac_dinh": 3.1416
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường đo bằng sợi chỉ",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 1.0
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Độ lớn độ dịch chuyển đo bằng thước",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "thẳng dài L: s = L, d = L",
+   "cung tròn góc theta (rad): s = r·theta, d = 2r·sin(theta/2)",
+   "chữ L hai cạnh a, b vuông góc: s = a + b, d = √(a² + b²)"
+  ],
+  "gia_thiet": [
+   "xe coi là chất điểm",
+   "ray nằm trên mặt phẳng ngang",
+   "s đo bằng chỉ lệch ≤ 1 cm, d đo bằng thước lệch ≤ 0,2 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Hình ray",
+   "s mô hình (cm)",
+   "s đo (cm)",
+   "d mô hình (cm)",
+   "d đo (cm)"
+  ],
+  "hang": [
+   [
+    "thẳng 30 cm",
+    30,
+    30.2,
+    30,
+    30.0
+   ],
+   [
+    "nửa vòng tròn r = 10 cm",
+    31.4,
+    31.9,
+    20.0,
+    20.1
+   ],
+   [
+    "chữ L 30 cm + 40 cm",
+    70,
+    70.6,
+    50.0,
+    49.9
+   ],
+   [
+    "trọn vòng tròn r = 10 cm",
+    62.8,
+    63.5,
+    0.0,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: cột mô hình tính từ phương trình; cột đo lệch không quá sai số dụng cụ (chỉ ±1 cm, thước ±0,2 cm)."
+ },
+ "ket_qua_ky_vong": "d = s ở ray thẳng; d < s ở ba hình còn lại; d = 0 ở vòng kín. Cột s đo lệch mô hình nhiều hơn cột d vì sợi chỉ khó đặt sát ray cong.",
+ "hien_tuong_hay_sai": [
+  "Tưởng d của vòng kín là chu vi 62,8 cm.",
+  "Tưởng d của nửa vòng là nửa chu vi 31,4 cm thay vì đường kính 20 cm.",
+  "Cộng 30 + 40 = 70 cm làm độ dịch chuyển của hình chữ L."
+ ],
+ "sai_so_thuong_gap": "Sợi chỉ không bám sát ray ở chỗ cong (thường làm s đo lớn hơn), băng dính đánh dấu lệch điểm dừng thật của xe.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo thanh trượt góc cung từ 0 đến 2π: xe chạy trên cung tròn, vệt cam là s, mũi tên xanh lá nối đầu–cuối là d; bảng cập nhật s, d.",
+  "diem_nhan": "Cho học sinh đoán d ở nửa vòng và trọn vòng trước khi kéo; d lớn nhất ở nửa vòng rồi giảm về 0."
+ }
+}

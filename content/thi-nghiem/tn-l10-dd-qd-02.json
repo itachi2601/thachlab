@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+ "lesson_id": 49,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/theory.html",
+ "id": "tn-l10-dd-qd-02",
+ "ten": "Đầu dao máy CNC chạy tới rồi lùi trên trục X: d = x₂ − x₁ có dấu",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dong_hoc.he_quy_chieu",
+  "dong_hoc.do_dich_chuyen"
+ ],
+ "muc_tieu": "Đọc toạ độ đầu dao trên trục X của máy CNC để tính quãng đường và độ dịch chuyển có dấu khi dao đổi chiều.",
+ "dung_cu": [
+  {
+   "ten": "Máy phay CNC (hoặc mô hình bàn trượt có thước)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn hình toạ độ X (mm)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gốc O là điểm chuẩn của máy, trục X chiều dương sang phải.",
+   "Đầu dao đi từ x₁ = 20 mm tới x = 80 mm, rồi lùi về x₂ = 50 mm."
+  ],
+  "quan_sat": [
+   "Màn hình toạ độ chỉ lần lượt 20 → 80 → 50 mm."
+  ],
+  "rut_ra": [
+   "s = 60 + 30 = 90 mm.",
+   "d = x₂ − x₁ = 30 mm, dương vì điểm cuối nằm bên phải điểm đầu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "x1",
+   "ten": "Toạ độ đầu",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 20
+  },
+  {
+   "ky_hieu": "xq",
+   "ten": "Toạ độ chỗ đổi chiều",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 80
+  },
+  {
+   "ky_hieu": "x2",
+   "ten": "Toạ độ cuối",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 100,
+   "mac_dinh": 50
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Độ dịch chuyển",
+   "don_vi": "mm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "s = |xq − x1| + |x2 − xq|",
+   "d = x2 − x1"
+  ],
+  "gia_thiet": [
+   "đầu dao chỉ chạy dọc trục X",
+   "đổi chiều đúng một lần tại xq"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "x1 (mm)",
+   "xq (mm)",
+   "x2 (mm)",
+   "s (mm)",
+   "d (mm)"
+  ],
+  "hang": [
+   [
+    20,
+    80,
+    50,
+    90,
+    30
+   ],
+   [
+    70,
+    90,
+    40,
+    70,
+    -30
+   ],
+   [
+    10,
+    60,
+    60,
+    50,
+    50
+   ]
+  ],
+  "ghi_chu": "Hàng 1 là ví dụ trong bài (Hình 2), hàng 2 là câu tự kiểm tra (d âm), hàng 3 không đổi chiều nên d = s."
+ },
+ "ket_qua_ky_vong": "Khi đổi chiều, s > |d|; d mang dấu theo chiều dương đã chọn.",
+ "hien_tuong_hay_sai": [
+  "Lấy s làm d.",
+  "Bỏ dấu âm của d khi điểm cuối ở bên trái điểm đầu.",
+  "Tính d bằng đoạn lùi cuối cùng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Kéo ba thanh x1, xq, x2; vệt cam phía trên trục là đường đi, mũi tên xanh lá dưới trục là d.",
+  "diem_nhan": "Đổi chiều dương của trục để thấy d đổi dấu, s không đổi."
+ }
+}

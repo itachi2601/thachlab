@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 8. Chuyển động biến đổi. Gia tốc",
+ "lesson_id": 53,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-bien-doi-gia-toc/theory.html",
+ "id": "tn-l10-gia-toc-01",
+ "ten": "Đo gia tốc xe lăn xuống máng nghiêng từ vận tốc ở 5 thời điểm",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "giatoc.dinh_nghia",
+  "giatoc.a_bang_dv_chia_dt",
+  "giatoc.nhanh_dan_deu"
+ ],
+ "muc_tieu": "Từ bảng vận tốc của xe ở các thời điểm cách đều 0,2 s, tính Δv/Δt từng khoảng, thấy nó gần như không đổi (chuyển động nhanh dần đều) và nhận xét sai số do làm tròn số đo.",
+ "dung_cu": [
+  {
+   "ten": "Máng nghiêng thẳng (sinα ≈ 0,05)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe lăn nhẹ, ít ma sát",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cảm biến chuyển động nối máy tính, hoặc điện thoại quay video + phần mềm Tracker",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt máng nghiêng có sinα ≈ 0,05, thả xe lăn xuống (xe đã có vận tốc nhỏ khi bắt đầu ghi).",
+   "Ghi vận tốc của xe ở 5 thời điểm cách nhau 0,2 s (t = 0; 0,2; 0,4; 0,6; 0,8 s), máy hiện tới 0,01 m/s."
+  ],
+  "quan_sat": [
+   "Vận tốc lần lượt 0,20; 0,30; 0,40; 0,49; 0,59 m/s.",
+   "Sau mỗi 0,2 s vận tốc tăng gần như cùng một lượng (0,09–0,10 m/s)."
+  ],
+  "rut_ra": [
+   "Xe chuyển động nhanh dần đều; Δv/Δt gần như không đổi, đó là gia tốc a ≈ 0,49 m/s².",
+   "Lấy khoảng thời gian dài cho gia tốc tin cậy hơn vì sai số làm tròn chiếm phần nhỏ hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "sin_alpha",
+   "ten": "Sin góc nghiêng máng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.15,
+   "mac_dinh": 0.05,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Vận tốc lúc bắt đầu ghi",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.5,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc rơi tự do",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc máy ghi",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a = g·sinα",
+   "v = v0 + a·t",
+   "v (đọc) = v làm tròn tới 0,01 m/s",
+   "a_khoảng = Δv/Δt"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát và quán tính bánh xe",
+   "máng thẳng",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "v tính (m/s)",
+   "v đọc (m/s)",
+   "Δv/Δt (m/s²)"
+  ],
+  "hang": [
+   [
+    0.0,
+    0.2,
+    0.2,
+    null
+   ],
+   [
+    0.2,
+    0.298,
+    0.3,
+    0.5
+   ],
+   [
+    0.4,
+    0.396,
+    0.4,
+    0.5
+   ],
+   [
+    0.6,
+    0.494,
+    0.49,
+    0.45
+   ],
+   [
+    0.8,
+    0.592,
+    0.59,
+    0.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (a = 9,8·0,05 = 0.49 m/s², v0 = 0,20 m/s), chỉ làm tròn tới 0,01 m/s, không thêm nhiễu. Δv/Δt cả khoảng 0–0,8 s = 0.4875 m/s²."
+ },
+ "ket_qua_ky_vong": "Δv/Δt từng khoảng dao động 0,45–0,50 m/s² do làm tròn; cả khoảng 0–0,8 s cho ≈ 0,49 m/s², khớp g·sinα.",
+ "hien_tuong_hay_sai": [
+  "Thấy 0,45 và 0,50 lệch nhau, tưởng chuyển động không đều.",
+  "Lấy v/t thay vì Δv/Δt (quên vận tốc đầu khác 0)."
+ ],
+ "sai_so_thuong_gap": "Làm tròn số đo vận tốc, máng cong, ma sát ở trục bánh xe.",
+ "an_toan": "Chặn cuối máng để xe không rơi khỏi bàn.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "y_tuong": "Xe lăn trên máng có thanh trượt góc nghiêng; bảng tự điền v mỗi 0,2 s (làm tròn 0,01) và vẽ điểm (t, v) cùng đường thẳng v = v0 + at.",
+  "diem_nhan": "Cho chọn độ chính xác máy đo (0,01 hoặc 0,001 m/s) để thấy Δv/Δt các khoảng sát nhau hơn."
+ }
+}

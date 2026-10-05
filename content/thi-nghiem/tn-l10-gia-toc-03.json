@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 8. Chuyển động biến đổi. Gia tốc",
+ "lesson_id": 53,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-bien-doi-gia-toc/theory.html",
+ "id": "tn-l10-gia-toc-03",
+ "ten": "Ô tô hãm phanh: gia tốc âm và quãng đường từ đồ thị v–t",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "giatoc.a_bang_dv_chia_dt",
+  "giatoc.cham_dan_deu",
+  "giatoc.do_thi_v_t_dien_tich"
+ ],
+ "muc_tieu": "Tính gia tốc hãm phanh, xác định chiều gia tốc, đọc quãng đường hãm phanh là diện tích dưới đồ thị v–t.",
+ "dung_cu": [
+  {
+   "ten": "Không cần (ví dụ phân tích, bài toán mẫu)",
+   "so_luong": 0
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Ô tô đang chạy 54 km/h thì hãm phanh, dừng sau 5 s; vẽ đồ thị v–t."
+  ],
+  "quan_sat": [
+   "Đồ thị là đoạn thẳng đi xuống từ 15 m/s về 0 trong 5 s."
+  ],
+  "rut_ra": [
+   "a = (0 − 15)/5 = −3 m/s², ngược chiều chuyển động.",
+   "Quãng đường = diện tích tam giác = 37,5 m."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v0",
+   "ten": "Vận tốc lúc bắt đầu hãm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 30,
+   "mac_dinh": 15.0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "t_dung",
+   "ten": "Thời gian hãm đến khi dừng",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 10,
+   "mac_dinh": 5.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường hãm phanh",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a = (0 − v0)/t_dung",
+   "v = v0 + a·t",
+   "s(t) = v0·t + a·t²/2",
+   "s_dung = v0·t_dung/2 (diện tích tam giác)"
+  ],
+  "gia_thiet": [
+   "chậm dần đều",
+   "chiều dương là chiều chuyển động"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "v (m/s)",
+   "s (m)"
+  ],
+  "hang": [
+   [
+    0,
+    15.0,
+    0.0
+   ],
+   [
+    1,
+    12.0,
+    13.5
+   ],
+   [
+    2,
+    9.0,
+    24.0
+   ],
+   [
+    3,
+    6.0,
+    31.5
+   ],
+   [
+    4,
+    3.0,
+    36.0
+   ],
+   [
+    5,
+    0.0,
+    37.5
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình của bài toán mẫu."
+ },
+ "ket_qua_ky_vong": "a = −3 m/s²; s = 37,5 m.",
+ "hien_tuong_hay_sai": [
+  "Quên đổi 54 km/h ra 15 m/s.",
+  "Cho rằng a âm luôn là chậm dần (đổi chiều dương thì a = +3 m/s² mà xe vẫn chậm dần).",
+  "Tính quãng đường bằng v0·t = 75 m (quên vận tốc giảm dần)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+2d_dong_hoc",
+  "y_tuong": "Xe chạy rồi hãm; đồ thị v–t vẽ dần, vùng diện tích tô dần cùng lúc với quãng đường xe đi.",
+  "diem_nhan": "Nút đổi chiều dương: dấu của v và a cùng đảo, kết luận chậm dần không đổi."
+ }
+}

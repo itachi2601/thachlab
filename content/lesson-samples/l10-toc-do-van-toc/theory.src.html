@@ -1,0 +1,419 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Tính được <strong>tốc độ trung bình</strong> $v_{tb} = \dfrac{s}{t}$, đổi được km/h ↔ m/s; hiểu <strong>tốc độ tức thời</strong> trên tốc kế.</li>
+<li>Phân biệt <strong>tốc độ</strong> (dùng quãng đường, vô hướng) với <strong>vận tốc</strong> (dùng độ dịch chuyển, có hướng).</li>
+<li>Giải thích <strong>tính tương đối</strong> của chuyển động; dùng công thức cộng vận tốc $\vec v_{13} = \vec v_{12} + \vec v_{23}$ cho ba trường hợp: cùng chiều, ngược chiều, vuông góc.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: một vòng đường đua trượt băng</h3>
+
+<p>Đường đua trượt băng tốc độ cự li ngắn dài $111\ \text{m}$ một vòng. Một vận động viên xuất phát ở vạch, trượt hết đúng một vòng trong khoảng $9\ \text{s}$ (số minh hoạ) và dừng lại đúng ở vạch cũ. Bảng điện tử báo tốc độ trung bình khoảng $12\ \text{m/s}$.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Còn <strong>vận tốc</strong> trung bình của vận động viên sau cả vòng đó là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q1" id="tl50-q1a"><label for="tl50-q1a" class="tl-opt tl-no">A. Khoảng $12{,}3\ \text{m/s}$, vì lấy $111\ \text{m}$ chia $9\ \text{s}$</label>
+<input type="radio" name="tl50-q1" id="tl50-q1b"><label for="tl50-q1b" class="tl-opt tl-ok">B. Bằng $0$</label>
+<input type="radio" name="tl50-q1" id="tl50-q1c"><label for="tl50-q1c" class="tl-opt tl-no">C. Khoảng $6{,}2\ \text{m/s}$, vì lấy trung bình của $0$ (lúc đứng ở vạch) và $12{,}3\ \text{m/s}$</label>
+<input type="radio" name="tl50-q1" id="tl50-q1d"><label for="tl50-q1d" class="tl-opt tl-no">D. Không tính được, vì đường đua cong</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Vận tốc trung bình dùng <strong>độ dịch chuyển</strong> (từ điểm đầu tới điểm cuối), không dùng quãng đường. Về đúng chỗ cũ thì độ dịch chuyển bằng $0$, nên vận tốc trung bình bằng $0$ — dù vận động viên trượt rất nhanh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $12{,}3\ \text{m/s}$ là <em>tốc độ</em> trung bình (quãng đường chia thời gian) — đó chính là con số trên bảng điện tử. $6{,}2\ \text{m/s}$ là trung bình cộng hai tốc độ — vẫn là tốc độ, không phải vận tốc. Đường cong cũng không làm bài toán "không tính được". Gợi ý: vận tốc quan tâm vật <em>đi từ đâu tới đâu</em>. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: tốc độ, vận tốc, cộng vận tốc</h3>
+
+<h4>1. Tốc độ trung bình</h4>
+
+<p><strong>🔑 Quãng đường chia thời gian · vô hướng · nhanh hay chậm</strong></p>
+
+<ul>
+<li><strong>Tốc độ</strong> cho biết chuyển động nhanh hay chậm.</li>
+<li>Tốc độ trung bình: $v_{tb} = \dfrac{s}{t}$ — $s$ là quãng đường đi được, $t$ là thời gian đi hết $s$.</li>
+<li>Đơn vị: m/s (SI), km/h. Mẹo nhớ: <strong>km/h → m/s chia 3,6</strong>; m/s → km/h nhân 3,6.</li>
+</ul>
+
+<p>Ví dụ: vòng đua ở mở bài cho ${v_{tb} = \dfrac{111\ \text{m}}{9\ \text{s}} \approx 12{,}3\ \text{m/s}}$, tức khoảng $44\ \text{km/h}$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-tdvt-01">
+<p class="tl-label">🔬 Thí nghiệm: đo tốc độ đi bộ của một bạn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dán hai vạch cách nhau $s = 10{,}0\ \text{m}$. Một bạn đi bộ đều qua hai vạch, bạn khác bấm đồng hồ lúc chân chạm mỗi vạch. Đo 5 lần.</li>
+<li><strong>Quan sát:</strong> năm số đo thời gian không trùng nhau (bảng dưới, số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> $v_{tb} = s/t \approx 1{,}25\ \text{m/s}$; đo nhiều lần rồi lấy trung bình cho số tin cậy hơn.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lần</th><th>$t$ (s)</th><th>$v_{tb} = s/t$ (m/s)</th></tr>
+</thead>
+<tbody>
+<!--BANG1-->
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: vì sao lần 2 và lần 4 lệch nhiều nhất, và sai số đến từ đâu? (tự trả lời rồi bấm)</summary>
+<p>Lỗi lớn nhất là <strong>phản xạ tay khi bấm đồng hồ</strong>: bấm sớm hoặc muộn $0{,}2$–$0{,}3\ \text{s}$ là thường. Lần 2 ($8{,}3\ \text{s}$) và lần 4 ($7{,}7\ \text{s}$) cùng lệch $0{,}3\ \text{s}$ so với trung bình $8{,}0\ \text{s}$, khoảng $4\,\%$, nên tốc độ ($1{,}20$ và $1{,}30\ \text{m/s}$) cũng lệch khoảng $4\,\%$ so với $1{,}25\ \text{m/s}$. Trung bình năm lần: $v_{tb} \approx 1{,}25\ \text{m/s}$. Muốn giảm sai số: đo đoạn dài hơn (cùng $0{,}3\ \text{s}$ sai nhưng trên $16\ \text{s}$ chỉ còn khoảng $2\,\%$) hoặc dùng cổng quang điện (Bài 6).</p>
+</details>
+
+<h4>2. Tốc độ tức thời</h4>
+
+<p><strong>🔑 Tốc độ tại một thời điểm · tốc kế</strong></p>
+
+<ul>
+<li><strong>Tốc độ tức thời</strong>: tốc độ tại một thời điểm, tức tốc độ trung bình trong khoảng thời gian rất nhỏ.</li>
+<li>Số trên <strong>tốc kế</strong> xe máy, ô tô là tốc độ tức thời.</li>
+<li>Tốc độ tức thời không đổi → <strong>chuyển động đều</strong>.</li>
+</ul>
+
+<p>Ví dụ: máy phay CNC hiện tốc độ chạy dao $F$ từng khoảnh khắc; dao vào góc thì số tụt rồi tăng lại. Tốc độ trung bình chỉ là một số cho cả đường cắt.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Xe máy đi từ nhà tới trường $6\ \text{km}$ hết $15$ phút. Lúc qua cổng trường, tốc kế chỉ $20\ \text{km/h}$. Phát biểu đúng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q2" id="tl50-q2a"><label for="tl50-q2a" class="tl-opt tl-no">A. Tốc độ trung bình cả đường là $20\ \text{km/h}$</label>
+<input type="radio" name="tl50-q2" id="tl50-q2b"><label for="tl50-q2b" class="tl-opt tl-no">B. Suốt đường, tốc kế luôn chỉ $24\ \text{km/h}$</label>
+<input type="radio" name="tl50-q2" id="tl50-q2c"><label for="tl50-q2c" class="tl-opt tl-no">C. Xe chuyển động đều, vì tốc kế lúc nào cũng có số</label>
+<input type="radio" name="tl50-q2" id="tl50-q2d"><label for="tl50-q2d" class="tl-opt tl-ok">D. Tốc độ trung bình $24\ \text{km/h}$; tốc độ tức thời lúc qua cổng $20\ \text{km/h}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $15$ phút $= 0{,}25\ \text{h}$, nên $v_{tb} = 6 : 0{,}25 = 24\ \text{km/h}$. Số $20\ \text{km/h}$ chỉ là tốc độ <em>tại lúc</em> qua cổng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy số tốc kế ở một thời điểm làm tốc độ cả đường. B nghĩ tốc độ trung bình là số tốc kế giữ suốt — xe dừng đèn đỏ, tăng tốc, giảm tốc. C nhầm "có số" với "số không đổi": chuyển động đều cần tốc độ tức thời <strong>không đổi</strong>.</p></div>
+</div>
+</div>
+
+<h4>3. Vận tốc</h4>
+
+<p><strong>🔑 Độ dịch chuyển chia thời gian · có hướng</strong></p>
+
+<ul>
+<li>Nhắc lại: <strong>quãng đường</strong> $s$ = độ dài đường đi thật; <strong>độ dịch chuyển</strong> $\vec d$ = mũi tên nối thẳng điểm đầu → điểm cuối.</li>
+<li>Vận tốc trung bình: $\vec v_{tb} = \dfrac{\vec d}{t}$ — một vectơ.</li>
+<li>Vectơ vận tốc: <strong>gốc</strong> ở vật · <strong>hướng</strong> theo độ dịch chuyển · <strong>độ dài</strong> tỉ lệ độ lớn.</li>
+<li><strong>Vận tốc tức thời</strong>: vận tốc tại một thời điểm, hướng theo chiều vật đang đi; <strong>độ lớn</strong> của nó bằng tốc độ tức thời.</li>
+<li>Đi thẳng, không đổi chiều: $d = s$, độ lớn vận tốc trung bình = tốc độ trung bình.</li>
+</ul>
+
+<!--FIG2-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-tdvt-02">
+<p class="tl-label">🔬 Ví dụ: đầu dao CNC đi nửa vòng tròn</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lập trình đầu dao phay đi nửa đường tròn bán kính $R = 20\ \text{mm}$ từ $A$ tới $B$ trong $t = 4\ \text{s}$ (Hình 2).</li>
+<li><strong>Quan sát:</strong> quãng đường $s = \pi R \approx 62{,}8\ \text{mm}$; độ dịch chuyển $d = AB = 2R = 40\ \text{mm}$.</li>
+<li><strong>Rút ra:</strong> tốc độ trung bình $\approx 15{,}7\ \text{mm/s}$; độ lớn vận tốc trung bình chỉ $10\ \text{mm/s}$, hướng từ $A$ sang $B$. Đường cong → vận tốc trung bình nhỏ hơn tốc độ trung bình.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Đầu dao ở Hình 2 đang đi qua điểm $M$ trên cung tròn. Vectơ <strong>vận tốc tức thời</strong> tại $M$ có hướng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q3" id="tl50-q3a"><label for="tl50-q3a" class="tl-opt tl-ok">A. Tiếp tuyến với cung tại $M$, theo chiều dao đang chạy</label>
+<input type="radio" name="tl50-q3" id="tl50-q3b"><label for="tl50-q3b" class="tl-opt tl-no">B. Từ $M$ hướng vào tâm đường tròn</label>
+<input type="radio" name="tl50-q3" id="tl50-q3c"><label for="tl50-q3c" class="tl-opt tl-no">C. Từ $A$ sang $B$, giống độ dịch chuyển cả quãng</label>
+<input type="radio" name="tl50-q3" id="tl50-q3d"><label for="tl50-q3d" class="tl-opt tl-no">D. Từ tâm hướng ra $M$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vận tốc tức thời chỉ chiều vật đang đi <em>ngay lúc đó</em>, nên nằm dọc theo quỹ đạo — trên cung tròn là tiếp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> C trộn vận tốc <em>trung bình</em> cả quãng (hướng $A \to B$) với vận tốc <em>tức thời</em> tại một điểm. B và D là phương bán kính — dao không đi vào tâm hay ra xa tâm, nó đi dọc cung.</p></div>
+</div>
+</div>
+
+<h4>4. Tính tương đối và công thức cộng vận tốc</h4>
+
+<p><strong>🔑 Vận tốc tuỳ hệ quy chiếu · mẹo "khử số 2"</strong></p>
+
+<ul>
+<li>Đứng yên với hệ quy chiếu này, chuyển động với hệ khác → chuyển động có <strong>tính tương đối</strong>.</li>
+<li><strong>Hệ quy chiếu đứng yên</strong>: gắn với vật làm gốc quy ước đứng yên · <strong>hệ quy chiếu chuyển động</strong>: gắn với vật làm gốc chuyển động so với hệ đứng yên.</li>
+<li>Đánh số: <strong>(1)</strong> vật đang xét · <strong>(2)</strong> hệ chuyển động · <strong>(3)</strong> hệ đứng yên.</li>
+<li>$\vec v_{13}$: vận tốc <strong>tuyệt đối</strong> (vật so với hệ đứng yên).</li>
+<li>$\vec v_{12}$: vận tốc <strong>tương đối</strong> (vật so với hệ chuyển động).</li>
+<li>$\vec v_{23}$: vận tốc <strong>kéo theo</strong> (hệ chuyển động so với hệ đứng yên).</li>
+</ul>
+
+<p>$$\vec v_{13} = \vec v_{12} + \vec v_{23}$$</p>
+
+<p>Mẹo "khử số 2": nối ${1 \to 2}$ với ${2 \to 3}$ thì được ${1 \to 3}$.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$\vec v_{12}$ và $\vec v_{23}$</th><th>Độ lớn $v_{13}$</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng chiều</td><td>$v_{12} + v_{23}$</td></tr>
+<tr><td>Ngược chiều</td><td>$\lvert v_{12} - v_{23} \rvert$, chiều theo vận tốc lớn hơn</td></tr>
+<tr><td>Vuông góc</td><td>$\sqrt{v_{12}^2 + v_{23}^2}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-tdvt-03">
+<p class="tl-label">🔬 Thí nghiệm: vẽ trên tờ giấy đang bị kéo</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> bạn A kéo đều dải giấy dọc mép bàn; bạn B đưa bút dạ đều theo thước <strong>vuông góc</strong> mép bàn.</li>
+<li><strong>Quan sát:</strong> so với bàn, ngòi bút đi thẳng dọc thước; vệt mực trên giấy lại <strong>xiên</strong>.</li>
+<li><strong>Rút ra:</strong> cùng ngòi bút, so với bàn và so với giấy cho hai quỹ đạo, hai vận tốc khác nhau → tính tương đối.</li>
+</ol>
+</div>
+
+<p>Ví dụ: em đi về đầu toa $1\ \text{m/s}$ so với toa; tàu chạy $10\ \text{m/s}$ so với đường ray. So với đường ray: $1 + 10 = 11\ \text{m/s}$.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Trong ví dụ trên (em đi trên toa tàu), <strong>vận tốc kéo theo</strong> là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q4" id="tl50-q4a"><label for="tl50-q4a" class="tl-opt tl-no">A. $1\ \text{m/s}$ — em so với toa</label>
+<input type="radio" name="tl50-q4" id="tl50-q4b"><label for="tl50-q4b" class="tl-opt tl-no">B. $11\ \text{m/s}$ — em so với đường ray</label>
+<input type="radio" name="tl50-q4" id="tl50-q4c"><label for="tl50-q4c" class="tl-opt tl-ok">C. $10\ \text{m/s}$ — tàu so với đường ray</label>
+<input type="radio" name="tl50-q4" id="tl50-q4d"><label for="tl50-q4d" class="tl-opt tl-no">D. $9\ \text{m/s}$ — hiệu hai vận tốc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> (1) em, (2) toa tàu, (3) đường ray. Kéo theo là $\vec v_{23}$: hệ chuyển động (tàu) so với hệ đứng yên (đường ray).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là vận tốc <em>tương đối</em> $v_{12}$. B là vận tốc <em>tuyệt đối</em> $v_{13}$. D lấy hiệu, nhưng em đi cùng chiều tàu nên không có phép trừ nào ở đây. Đánh số (1), (2), (3) trước rồi mới gọi tên.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: tốc độ trung bình = độ lớn vận tốc trung bình</h4>
+
+<p>Chỉ đúng khi vật đi thẳng và <strong>không quay đầu</strong>. Đi vòng, đi cong, đi rồi quay lại thì $d \lt s$, có khi $d = 0$.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tốc độ trung bình</th><th>Vận tốc trung bình</th></tr>
+</thead>
+<tbody>
+<tr><td>Quãng đường $s$ chia $t$</td><td>Độ dịch chuyển $\vec d$ chia $t$</td></tr>
+<tr><td>Vô hướng, không âm</td><td>Vectơ, có thể bằng $0$</td></tr>
+<tr><td>Hỏi "nhanh hay chậm?"</td><td>Hỏi "nhanh và về hướng nào?"</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Tốc độ theo đường đi · vận tốc theo điểm đầu–cuối</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl50-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl50-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Một bạn chạy đúng 2 vòng sân $400\ \text{m}$ hết $160\ \text{s}$, về đúng chỗ xuất phát. Kết luận đúng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q5" id="tl50-q5a"><label for="tl50-q5a" class="tl-opt tl-ok">A. Tốc độ trung bình $5\ \text{m/s}$; vận tốc trung bình bằng $0$</label>
+<input type="radio" name="tl50-q5" id="tl50-q5b"><label for="tl50-q5b" class="tl-opt tl-no">B. Tốc độ trung bình bằng $0$; vận tốc trung bình $5\ \text{m/s}$</label>
+<input type="radio" name="tl50-q5" id="tl50-q5c"><label for="tl50-q5c" class="tl-opt tl-no">C. Cả hai đều bằng $5\ \text{m/s}$</label>
+<input type="radio" name="tl50-q5" id="tl50-q5d"><label for="tl50-q5d" class="tl-opt tl-no">D. Cả hai đều bằng $2{,}5\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $s = 800\ \text{m}$ nên $v_{tb} = 800 : 160 = 5\ \text{m/s}$; về chỗ cũ nên $\vec d = \vec 0$, vận tốc trung bình bằng $0$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B đảo ngược hai khái niệm: quãng đường (dùng cho tốc độ) không bao giờ bằng $0$ khi đã chạy. C coi vận tốc trung bình cũng dùng quãng đường. D chỉ tính 1 vòng ($400 : 160$) trong khi bạn chạy 2 vòng. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: tốc độ trung bình = trung bình cộng các tốc độ</h4>
+
+<p>Sai trong hầu hết trường hợp. Phải quay về định nghĩa: <strong>tổng quãng đường chia tổng thời gian</strong>. Đoạn đi chậm tốn nhiều thời gian hơn nên "kéo" tốc độ trung bình về phía nó.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Cách tính</th><th>Khi nào đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>$\dfrac{s_1 + s_2}{t_1 + t_2}$</td><td>Luôn đúng</td></tr>
+<tr><td>$\dfrac{v_1 + v_2}{2}$</td><td>Chỉ khi hai đoạn đi <strong>cùng thời gian</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Tổng $s$ chia tổng $t$ · đừng cộng tốc độ</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Xe đi nửa đầu quãng đường với $40\ \text{km/h}$, nửa sau với $60\ \text{km/h}$. Tốc độ trung bình cả quãng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q6" id="tl50-q6a"><label for="tl50-q6a" class="tl-opt tl-no">A. $50\ \text{km/h}$</label>
+<input type="radio" name="tl50-q6" id="tl50-q6b"><label for="tl50-q6b" class="tl-opt tl-ok">B. $48\ \text{km/h}$</label>
+<input type="radio" name="tl50-q6" id="tl50-q6c"><label for="tl50-q6c" class="tl-opt tl-no">C. $100\ \text{km/h}$</label>
+<input type="radio" name="tl50-q6" id="tl50-q6d"><label for="tl50-q6d" class="tl-opt tl-no">D. $52\ \text{km/h}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lấy cả quãng $120\ \text{km}$ cho dễ: $t_1 = 60 : 40 = 1{,}5\ \text{h}$, $t_2 = 60 : 60 = 1\ \text{h}$; $v_{tb} = 120 : 2{,}5 = 48\ \text{km/h}$. Kết quả không phụ thuộc quãng đường chọn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $50\ \text{km/h}$ là trung bình cộng — chỉ đúng nếu hai đoạn đi cùng <em>thời gian</em>, còn đây là cùng <em>quãng đường</em>. $100$ là cộng thẳng hai tốc độ. $52$ nghiêng về đoạn nhanh, trong khi xe ở đoạn chậm <strong>lâu hơn</strong>. Thử đặt cả quãng $120\ \text{km}$ rồi tính từng $t$.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: cộng tốc độ như cộng hai con số</h4>
+
+<p>Công thức cộng vận tốc là cộng <strong>vectơ</strong>. Ngược chiều phải trừ; vuông góc phải dùng Pythagore: $3 + 4$ thành $5$, không phải $7$.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Viết sai</th><th>Viết đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>Bơi ngược dòng: $1{,}5 + 2 = 3{,}5\ \text{m/s}$</td><td>$\lvert 1{,}5 - 2 \rvert = 0{,}5\ \text{m/s}$, theo chiều dòng nước</td></tr>
+<tr><td>Ca nô qua sông: $4 + 3 = 7\ \text{m/s}$</td><td>$\sqrt{4^2 + 3^2} = 5\ \text{m/s}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Vẽ vectơ trước · rồi mới tính độ lớn</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Một người bơi ngược dòng với $1{,}5\ \text{m/s}$ so với nước; nước chảy $2\ \text{m/s}$ so với bờ. So với bờ, người đó:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q7" id="tl50-q7a"><label for="tl50-q7a" class="tl-opt tl-no">A. Tiến lên ngược dòng với $3{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl50-q7" id="tl50-q7b"><label for="tl50-q7b" class="tl-opt tl-no">B. Tiến lên ngược dòng với $0{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl50-q7" id="tl50-q7c"><label for="tl50-q7c" class="tl-opt tl-no">C. Đứng yên, vì đang bơi hết sức</label>
+<input type="radio" name="tl50-q7" id="tl50-q7d"><label for="tl50-q7d" class="tl-opt tl-ok">D. Bị trôi theo chiều dòng nước với $0{,}5\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai vectơ ngược chiều: $v_{13} = \lvert 1{,}5 - 2 \rvert = 0{,}5\ \text{m/s}$, chiều theo vận tốc lớn hơn — dòng nước. Người vẫn bơi nhưng bị cuốn lùi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A cộng hai số trong khi hai vectơ ngược chiều. B tính đúng $0{,}5$ nhưng quên hỏi "chiều nào?" — vận tốc lớn hơn là của dòng nước. C: chỉ đứng yên khi hai vận tốc bằng nhau.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Công thức tốc độ trung bình, ý nghĩa từng kí hiệu, cách đổi km/h sang m/s? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v_{tb} = s/t$ · $s$: quãng đường · $t$: thời gian · km/h chia $3{,}6$ ra m/s.</p>
+</details>
+<details class="tl-details">
+<summary>2. Tốc độ tức thời là gì? Thế nào là chuyển động đều? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tốc độ tại một thời điểm · tốc kế chỉ · tốc độ tức thời không đổi → chuyển động đều.</p>
+</details>
+<details class="tl-details">
+<summary>3. Vận tốc trung bình tính thế nào? Vectơ vận tốc có ba đặc điểm gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$\vec v_{tb} = \vec d / t$ · gốc ở vật · hướng theo độ dịch chuyển · độ dài tỉ lệ độ lớn.</p>
+</details>
+<details class="tl-details">
+<summary>4. Khi nào độ lớn vận tốc trung bình bằng tốc độ trung bình? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đi thẳng · không đổi chiều ($d = s$). Độ lớn vận tốc tức thời luôn bằng tốc độ tức thời.</p>
+</details>
+<details class="tl-details">
+<summary>5. Vận tốc tuyệt đối, tương đối, kéo theo là vận tốc của cái gì so với cái gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v_{13}$: vật – hệ đứng yên · $v_{12}$: vật – hệ chuyển động · $v_{23}$: hệ chuyển động – hệ đứng yên.</p>
+</details>
+<details class="tl-details">
+<summary>6. Công thức cộng vận tốc và ba trường hợp đặc biệt? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$\vec v_{13} = \vec v_{12} + \vec v_{23}$ · cùng chiều: cộng · ngược chiều: trị tuyệt đối của hiệu · vuông góc: Pythagore.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: ca nô qua sông</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một ca nô chạy với vận tốc $4\ \text{m/s}$ so với nước, mũi ca nô luôn hướng <strong>vuông góc với bờ</strong>. Sông rộng $120\ \text{m}$, nước chảy đều $3\ \text{m/s}$ so với bờ. Tính: a) độ lớn vận tốc của ca nô so với bờ; b) thời gian sang sông; c) khoảng cách từ điểm cập bến tới điểm đối diện chỗ xuất phát.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"ca nô … $4\ \text{m/s}$ so với nước"</td><td>$v_{12} = 4\ \text{m/s}$ → vận tốc tương đối</td></tr>
+<tr><td>"nước chảy … $3\ \text{m/s}$ so với bờ"</td><td>$v_{23} = 3\ \text{m/s}$ → vận tốc kéo theo</td></tr>
+<tr><td>"mũi … vuông góc với bờ"</td><td>$\vec v_{12} \perp \vec v_{23}$ → Pythagore</td></tr>
+<tr><td>"sông rộng $120\ \text{m}$"</td><td>$AB = 120\ \text{m}$ → chỉ $\vec v_{12}$ đưa ca nô sang bờ</td></tr>
+<tr><td>"chạy đều" (ngầm)</td><td>vận tốc không đổi → $d = v\,t$</td></tr>
+<tr><td>"vận tốc so với bờ … thời gian … khoảng cách"</td><td>$v_{13}$, $t$, $BC$ = ?</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG4-->
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl50-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl50-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Đề gốc, nhưng mùa lũ nước chảy $5\ \text{m/s}$; ca nô vẫn $4\ \text{m/s}$ so với nước, mũi vẫn vuông góc bờ. Thời gian sang sông:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl50-q8" id="tl50-q8a"><label for="tl50-q8a" class="tl-opt tl-no">A. Giảm, vì vận tốc so với bờ lớn hơn</label>
+<input type="radio" name="tl50-q8" id="tl50-q8b"><label for="tl50-q8b" class="tl-opt tl-no">B. Tăng, vì ca nô bị trôi xa hơn</label>
+<input type="radio" name="tl50-q8" id="tl50-q8c"><label for="tl50-q8c" class="tl-opt tl-ok">C. Không đổi, vẫn $30\ \text{s}$</label>
+<input type="radio" name="tl50-q8" id="tl50-q8d"><label for="tl50-q8d" class="tl-opt tl-no">D. Ca nô không sang được, vì nước nhanh hơn ca nô</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ $\vec v_{12}$ (vuông góc bờ) đưa ca nô sang: $t = 120 : 4 = 30\ \text{s}$. Nước mạnh hơn chỉ làm ca nô cập bến xa hơn: $5 \cdot 30 = 150\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A chia bề rộng sông cho $v_{13}$ — nhưng $v_{13}$ đi xiên, không thẳng sang bờ. B nhầm "đi xa hơn" với "lâu hơn": phần trôi dọc bờ không làm chậm việc sang sông. D nghĩ nước nhanh thì đẩy ngược ca nô, nhưng nước chảy <em>dọc</em> bờ, vuông góc với hướng mũi. Nếu đã chọn <em>Chắc</em> mà vẫn sai, mở lời giải ngay dưới, xem bước b).</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Đánh số:</strong> (1) ca nô · (2) nước · (3) bờ. $\vec v_{13} = \vec v_{12} + \vec v_{23}$.</li>
+<li><strong>a)</strong> Hai vectơ vuông góc: $v_{13} = \sqrt{4^2 + 3^2} = 5\ \text{m/s}$.</li>
+<li><strong>b)</strong> Chỉ thành phần vuông góc bờ đưa ca nô sang: $t = \dfrac{AB}{v_{12}} = \dfrac{120}{4} = 30\ \text{s}$.</li>
+<li><strong>c)</strong> Trong $30\ \text{s}$, nước đẩy ca nô xuôi: $BC = v_{23}\,t = 3 \cdot 30 = 90\ \text{m}$.</li>
+<li><strong>Kiểm tra:</strong> quãng thật $AC = \sqrt{120^2 + 90^2} = 150\ \text{m}$ và $v_{13}\,t = 5 \cdot 30 = 150\ \text{m}$ ✓.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Đổi số: $v_{12} = 8\ \text{m/s}$, $v_{23} = 6\ \text{m/s}$, sông rộng $200\ \text{m}$, mũi vẫn vuông góc bờ.</p>
+<ol class="tl-steps">
+<li>$v_{13} = \sqrt{8^2 + 6^2} = 10\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $t = \;?$ — gợi ý: chia cho $8$ hay cho $10$?</li>
+<li><strong>Bước 3 (em điền):</strong> $BC = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$t = 200 : 8 = 25\ \text{s}$ (chia cho $v_{12}$, không chia $10$); $BC = 6 \cdot 25 = 150\ \text{m}$. Kiểm: $\sqrt{200^2 + 150^2} = 250 = 10 \cdot 25$ ✓.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: ca nô chạy dọc sông</summary>
+<p>Đề gốc, nhưng ca nô chạy <strong>xuôi dòng</strong> $140\ \text{m}$ rồi <strong>ngược dòng</strong> về chỗ cũ. Xuôi: $4 + 3 = 7\ \text{m/s}$, mất $20\ \text{s}$. Ngược: $4 - 3 = 1\ \text{m/s}$, mất $140\ \text{s}$. Tốc độ trung bình cả đi lẫn về: $280 : 160 = 1{,}75\ \text{m/s}$ — không phải $4\ \text{m/s}$ (Bẫy 2), còn vận tốc trung bình bằng $0$ (Bẫy 1).</p>
+</details>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: bốn nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Đo tốc độ trung bình trên cao tốc:</strong> hai camera cách nhau một đoạn ghi thời điểm xe qua; quãng đường chia thời gian ra tốc độ trung bình, dù lúc đi qua camera xe có giảm tốc.</li>
+<li><strong>Xưởng CNC:</strong> tốc độ chạy dao $F$ là tốc độ tức thời; thời gian gia công một chi tiết tính từ tổng quãng đường dao đi, không phải từ khoảng cách điểm đầu–cuối.</li>
+<li><strong>Băng chuyền ở sân bay:</strong> đi cùng chiều băng chuyền thì tốc độ so với sàn bằng tổng hai tốc độ; đi ngược chiều thì tốc độ so với sàn bằng hiệu hai tốc độ (có thể rất nhỏ).</li>
+<li><strong>Máy bay:</strong> gió xuôi thì tốc độ so với mặt đất lớn hơn tốc độ so với không khí; gió ngược thì nhỏ hơn.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Đổi $72\ \text{km/h}$ sang m/s. <em>($20\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐</strong> Xe đi nửa đầu <strong>thời gian</strong> với $40\ \text{km/h}$, nửa sau với $60\ \text{km/h}$. Tốc độ trung bình? <em>($50\ \text{km/h}$ — cùng thời gian nên lần này trung bình cộng đúng; so với Câu 5)</em></li>
+<li><strong>⭐⭐⭐</strong> Ca nô $5\ \text{m/s}$ so với nước, nước $3\ \text{m/s}$, sông rộng $120\ \text{m}$. Muốn cập bến <strong>đúng điểm đối diện</strong>, mũi phải hướng thế nào, mất bao lâu? <em>(Chếch lên phía thượng nguồn sao cho $\vec v_{13} \perp$ bờ: $v_{13} = \sqrt{5^2 - 3^2} = 4\ \text{m/s}$, $t = 30\ \text{s}$; mũi lệch khoảng $37^\circ$ so với phương vuông góc bờ, vì $\sin\alpha = 3/5$)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tốc độ trung bình</strong>: $s/t$ · vô hướng · km/h chia $3{,}6$.</li>
+<li><strong>Tốc độ tức thời</strong>: tại một lúc · tốc kế · không đổi là đều.</li>
+<li><strong>Vận tốc</strong>: $\vec d / t$ · có hướng · gốc ở vật.</li>
+<li>Đi vòng về chỗ cũ: tốc độ trung bình $\gt 0$, vận tốc trung bình $= 0$.</li>
+<li>Tốc độ trung bình: tổng $s$ chia tổng $t$, đừng cộng tốc độ.</li>
+<li><strong>Cộng vận tốc</strong>: $\vec v_{13} = \vec v_{12} + \vec v_{23}$ · khử số 2 · vẽ vectơ trước.</li>
+<li>Đọc đề: gạch "so với nước", "so với bờ" để đánh số (1)(2)(3); "vuông góc", "ngược dòng" chọn công thức.</li>
+</ul>
+</div>

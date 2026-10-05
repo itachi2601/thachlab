@@ -1,0 +1,127 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+ "lesson_id": 49,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/theory.html",
+ "id": "tn-l10-dd-qd-03",
+ "ten": "Một vòng sân băng: quãng đường 60 m, độ dịch chuyển bằng 0",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dong_hoc.so_sanh_d_s",
+  "dong_hoc.toc_do_trung_binh"
+ ],
+ "muc_tieu": "Thấy quãng đường cộng dồn theo đường đi, còn độ dịch chuyển chỉ phụ thuộc điểm đầu và điểm cuối; vòng kín cho d = 0.",
+ "dung_cu": [
+  {
+   "ten": "Sân băng (hoặc sân trường) có vòng chạy kín",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ thể thao đo quãng đường",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xuất phát ở cửa vào, trượt sát rào chắn đúng một vòng, dừng lại ở cửa vào. Bấm giờ."
+  ],
+  "quan_sat": [
+   "Đồng hồ báo khoảng 60 m (minh hoạ), mất 20 s; điểm dừng trùng điểm xuất phát."
+  ],
+  "rut_ra": [
+   "s = 60 m; d = 0.",
+   "Tốc độ trung bình = s/t = 3 m/s, khác 0 dù d = 0."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "C",
+   "ten": "Chu vi vòng trượt",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 120,
+   "mac_dinh": 60
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Số vòng đã trượt",
+   "don_vi": "vòng",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 2,
+   "mac_dinh": 1,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 60,
+   "mac_dinh": 20
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v_tb",
+   "ten": "Tốc độ trung bình",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "s = C·n",
+   "d = 0 khi n là số nguyên",
+   "v_tb = s/t"
+  ],
+  "gia_thiet": [
+   "người trượt coi là chất điểm",
+   "số liệu minh hoạ, tốc độ đều nên t tỉ lệ với n"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n (vòng)",
+   "s (m)",
+   "d (m)",
+   "t (s)",
+   "v_tb (m/s)"
+  ],
+  "hang": [
+   [
+    1,
+    60,
+    0,
+    20,
+    3.0
+   ],
+   [
+    2,
+    120,
+    0,
+    40,
+    3.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, chu vi 60 m, một vòng 20 s."
+ },
+ "ket_qua_ky_vong": "Sau số vòng nguyên, d = 0 nhưng s và tốc độ trung bình khác 0.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ đồng hồ thể thao đo độ dịch chuyển.",
+  "Nghĩ d = 0 thì tốc độ trung bình cũng bằng 0."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Chấm tròn chạy quanh vòng bầu dục; vệt cam dài dần (s), mũi tên xanh lá từ điểm xuất phát tới vị trí hiện tại (d) dài ra rồi co về 0.",
+  "diem_nhan": "Dừng ở nửa vòng để hỏi: lúc nào d lớn nhất?"
+ }
+}

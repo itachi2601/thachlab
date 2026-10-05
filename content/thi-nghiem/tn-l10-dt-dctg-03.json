@@ -1,0 +1,158 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 7. Đồ thị độ dịch chuyển - thời gian",
+ "lesson_id": 52,
+ "nguon_trong_bai": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/theory.html",
+ "id": "tn-l10-dt-dctg-03",
+ "ten": "Xe tự hành chở phôi trên đường ray: đọc đồ thị d–t nhiều đoạn",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dothi_dt.mo_ta_chuyen_dong",
+  "dothi_dt.do_doc_la_van_toc",
+  "dichchuyen.toc_do_tb_khac_van_toc_tb"
+ ],
+ "muc_tieu": "Từ đồ thị ba đoạn O(0;0) – A(4 s;8 m) – B(6 s;8 m) – C(10 s;0) mô tả chuyển động, tính vận tốc từng đoạn, quãng đường, độ dịch chuyển, tốc độ và vận tốc trung bình.",
+ "dung_cu": [
+  {
+   "ten": "Đồ thị d–t của xe (Hình 4 trong bài)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chia đồ thị theo các điểm gãy A, B.",
+   "Đọc toạ độ hai đầu mỗi đoạn, tính v = Δd/Δt.",
+   "Cộng |Δd| các đoạn để có s; đọc d ở điểm cuối."
+  ],
+  "quan_sat": [
+   "v_OA = 2 m/s, v_AB = 0, v_BC = −2 m/s.",
+   "s = 16 m, d = 0."
+  ],
+  "rut_ra": [
+   "Tốc độ trung bình 1,6 m/s nhưng vận tốc trung bình bằng 0 vì xe về đúng chỗ cũ.",
+   "Đổi chiều dương thì mọi đại lượng có hướng đổi dấu, đồ thị lật qua trục t."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v_OA",
+   "ten": "Vận tốc đi ra",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "t_dung",
+   "ten": "Thời gian dừng nhận phôi",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 6,
+   "mac_dinh": 2,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "v_BC",
+   "ten": "Vận tốc quay về",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": -4,
+   "max": -1,
+   "mac_dinh": -2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường",
+   "don_vi": "m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v_tb",
+   "ten": "Tốc độ trung bình",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = v_OA·t (0 ≤ t ≤ 4 s)",
+   "d = 8 m (4 s ≤ t ≤ 6 s)",
+   "d = 8 + v_BC·(t − 6) (6 s ≤ t ≤ 10 s)",
+   "s = Σ|Δd|; tốc độ TB = s/t; vận tốc TB = d/t"
+  ],
+  "gia_thiet": [
+   "xe tăng/giảm tốc tức thời (bỏ qua đoạn cong ở các điểm gãy)",
+   "số liệu minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "d (m)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0
+   ],
+   [
+    1,
+    2.0
+   ],
+   [
+    2,
+    4.0
+   ],
+   [
+    3,
+    6.0
+   ],
+   [
+    4,
+    8.0
+   ],
+   [
+    5,
+    8.0
+   ],
+   [
+    6,
+    8.0
+   ],
+   [
+    7,
+    6.0
+   ],
+   [
+    8,
+    4.0
+   ],
+   [
+    9,
+    2.0
+   ],
+   [
+    10,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Lấy từ đồ thị O–A–B–C; lúc t = 8 s, d = 4 m (điểm giữa BC)."
+ },
+ "ket_qua_ky_vong": "v_OA = 2 m/s; v_AB = 0; v_BC = −2 m/s; s = 16 m; d = 0; tốc độ TB 1,6 m/s; vận tốc TB 0.",
+ "hien_tuong_hay_sai": [
+  "Lấy d ở điểm cuối (0) làm quãng đường.",
+  "Quên dấu trừ của v_BC.",
+  "Coi đoạn AB nằm ngang là xe chạy đều."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Xe chạy trên ray giữa kho và máy, đồ thị d–t vẽ đồng bộ; nút đổi chiều dương lật đồ thị qua trục t.",
+  "diem_nhan": "Hiện song song đồng hồ quãng đường (chỉ tăng) và độ dịch chuyển (lên xuống)."
+ }
+}
