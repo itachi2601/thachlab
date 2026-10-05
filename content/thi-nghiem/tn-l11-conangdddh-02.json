@@ -1,0 +1,75 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà",
+  "lesson_id": 24,
+  "nguon_trong_bai": "content/lesson-samples/l11-co-nang-dao-dong/theory.html",
+  "id": "tn-l11-conangdddh-02",
+  "ten": "Xích đu: thế năng trên cao đổi thành động năng ở đáy",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "conang.chuyen_hoa",
+    "conang.bao_toan"
+  ],
+  "muc_tieu": "Thấy năng lượng lúc đu dừng ở trên cao không mất: nó là thế năng và trả lại thành động năng khi xuống đáy.",
+  "dung_cu": [
+    {"ten": "Xích đu", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Coi một bạn khối lượng 40 kg. Chỗ cao nhất cao hơn đáy 0,50 m. Lấy g = 9,8 m/s². Bỏ ma sát không khí trong một lượt."
+    ],
+    "quan_sat": [
+      "Trên cao, vận tốc bằng không, thế năng mgh = 196 J.",
+      "Ở đáy, thế năng về mốc, động năng 196 J, tốc độ khoảng 3,13 m/s."
+    ],
+    "rut_ra": [
+      "Năng lượng không mất ở chỗ dừng. Nó đổi từ thế năng sang động năng.",
+      "Xích đu thật còn mất dần vì ma sát, khác con lắc lò xo lý tưởng."
+    ]
+  },
+  "tham_so": [
+    {"ky_hieu": "m", "ten": "Khối lượng", "don_vi": "kg", "kieu": "co_dinh", "gia_tri": 40},
+    {"ky_hieu": "g", "ten": "Gia tốc trọng trường", "don_vi": "m/s^2", "kieu": "co_dinh", "gia_tri": 9.8},
+    {"ky_hieu": "H", "ten": "Độ cao lớn nhất so với đáy", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.1, "max": 1.2, "mac_dinh": 0.5, "buoc": 0.05},
+    {"ky_hieu": "h", "ten": "Độ cao so với đáy", "don_vi": "m", "kieu": "dieu_chinh", "min": 0, "max": 1.2, "mac_dinh": 0.5, "buoc": 0.05},
+    {"ky_hieu": "Et", "ten": "Thế năng", "don_vi": "J", "kieu": "tinh_ra"},
+    {"ky_hieu": "Ed", "ten": "Động năng", "don_vi": "J", "kieu": "tinh_ra"},
+    {"ky_hieu": "v", "ten": "Tốc độ", "don_vi": "m/s", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Et = m*g*h",
+      "Ed = m*g*(H - h)",
+      "v = sqrt(2*Ed/m)"
+    ],
+    "gia_thiet": [
+      "mốc thế năng tại đáy",
+      "bỏ ma sát trong một lượt",
+      "g = 9,8 m/s²",
+      "không coi xích đu là dao động điều hoà"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["h (m)", "Et (J)", "Ed (J)", "v (m/s)"],
+    "hang": [
+      [0.5, 196, 0, 0],
+      [0.25, 98, 98, 2.21],
+      [0, 0, 196, 3.13]
+    ],
+    "ghi_chu": "m = 40 kg, H = 0,50 m, g = 9,8. v làm tròn 0,01 m/s: sqrt(2*g*0,25) = sqrt(4,9) ≈ 2,21; sqrt(2*g*0,50) = sqrt(9,8) ≈ 3,13."
+  },
+  "ket_qua_ky_vong": "Trên cao Et = 196 J, v = 0. Ở đáy Ed = 196 J, v ≈ 3,13 m/s.",
+  "hien_tuong_hay_sai": [
+    "Tưởng năng lượng mất khi đu dừng vì vận tốc bằng không.",
+    "Tưởng xích đu có Et = (1/2)kx² như con lắc lò xo."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "dieu_khien": ["H", "h"],
+    "dau_ra": ["Et", "Ed", "v", "ghế đu"],
+    "hinh_trong_bai": "Hình 1",
+    "y_tuong": "Đưa ghế lên cao rồi thả; thanh năng lượng đổi từ thế sang động."
+  }
+}

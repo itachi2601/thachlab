@@ -1,0 +1,90 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà",
+  "lesson_id": 24,
+  "nguon_trong_bai": "content/lesson-samples/l11-co-nang-dao-dong/theory.html",
+  "id": "tn-l11-conangdddh-01",
+  "ten": "Đo độ cứng rồi tính thế năng, động năng và cơ năng",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "conang.the_nang",
+    "conang.dong_nang",
+    "conang.bao_toan"
+  ],
+  "muc_tieu": "Đo k bằng cách treo quả nặng, kéo biên độ A, tính Et, Ed, W tại năm li độ và thấy tổng không đổi.",
+  "dung_cu": [
+    {"ten": "Lò xo", "so_luong": 1},
+    {"ten": "Quả cân 200 g", "so_luong": 1},
+    {"ten": "Thước chia milimét", "so_luong": 1},
+    {"ten": "Giá đỡ", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Treo quả m = 0,200 kg, lấy g = 9,8 m/s², đo độ dãn thêm Δℓ = 0,049 m. Tính k = mg/Δℓ = 40 N/m.",
+      "Đặt lò xo nằm ngang, đánh dấu vị trí cân bằng, kéo tới A = 0,080 m rồi thả.",
+      "Giữ vật tại năm vạch: x = 0; A/2 = 0,040 m; A/√2; A√3/2; A = 0,080 m. Tính Et = (1/2)kx² và Ed = (1/2)k(A² − x²)."
+    ],
+    "quan_sat": [
+      "Năm hàng đều cho W = 0,128 J.",
+      "Tại x = 0,040 m thì Ed = 3 Et. Tại x = A/√2 thì Ed = Et. Ở biên Ed = 0 và Et = W."
+    ],
+    "rut_ra": [
+      "Bỏ ma sát thì cơ năng không đổi; Et và Ed chỉ đổi chỗ cho nhau.",
+      "Cùng k và A, đổi m thì W vẫn bằng 0,128 J."
+    ]
+  },
+  "tham_so": [
+    {"ky_hieu": "m", "ten": "Khối lượng quả nặng", "don_vi": "kg", "kieu": "co_dinh", "gia_tri": 0.2},
+    {"ky_hieu": "g", "ten": "Gia tốc trọng trường", "don_vi": "m/s^2", "kieu": "co_dinh", "gia_tri": 9.8},
+    {"ky_hieu": "delta_l", "ten": "Độ dãn thêm khi treo", "don_vi": "m", "kieu": "do_duoc", "sai_so_do": 0.001},
+    {"ky_hieu": "A", "ten": "Biên độ", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.02, "max": 0.12, "mac_dinh": 0.08, "buoc": 0.01},
+    {"ky_hieu": "x", "ten": "Li độ so với vị trí cân bằng", "don_vi": "m", "kieu": "dieu_chinh", "min": -0.12, "max": 0.12, "mac_dinh": 0, "buoc": 0.001},
+    {"ky_hieu": "k", "ten": "Độ cứng", "don_vi": "N/m", "kieu": "tinh_ra"},
+    {"ky_hieu": "Et", "ten": "Thế năng", "don_vi": "J", "kieu": "tinh_ra"},
+    {"ky_hieu": "Ed", "ten": "Động năng", "don_vi": "J", "kieu": "tinh_ra"},
+    {"ky_hieu": "W", "ten": "Cơ năng", "don_vi": "J", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "k = m*g/delta_l",
+      "W = 0.5*k*A*A",
+      "Et = 0.5*k*x*x",
+      "Ed = 0.5*k*(A*A - x*x)"
+    ],
+    "gia_thiet": [
+      "bỏ qua ma sát",
+      "mốc thế năng tại vị trí cân bằng",
+      "g = 9,8 m/s²",
+      "sau khi đo k thì đặt con lắc nằm ngang"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["x (m)", "Et (J)", "Ed (J)", "W (J)"],
+    "hang": [
+      [0, 0, 0.128, 0.128],
+      [0.04, 0.032, 0.096, 0.128],
+      [0.0565685424949238, 0.064, 0.064, 0.128],
+      [0.0692820323027551, 0.096, 0.032, 0.128],
+      [0.08, 0.128, 0, 0.128]
+    ],
+    "ghi_chu": "Tính từ k = 40 N/m (m = 0,200 kg, g = 9,8, Δℓ = 0,049 m) và A = 0,080 m. Năm li độ đúng là 0; A/2; A/sqrt(2); A*sqrt(3)/2; A. Nhãn 5,66 cm và 6,93 cm trong bài là số làm tròn của hai li độ giữa. Et, Ed làm tròn đến 0,001 J (sai số dấu phẩy động nhỏ hơn 10^-15 J)."
+  },
+  "ket_qua_ky_vong": "W = 0,128 J tại cả năm vạch. Et và Ed bằng nhau tại x = A/√2; Ed = 3 Et tại x = A/2.",
+  "hien_tuong_hay_sai": [
+    "Tưởng cơ năng đổi theo thời gian.",
+    "Tưởng Ed = Et tại x = A/2 (chỗ đó Ed = 3 Et).",
+    "Đọc thước tới milimét: 5,66 cm thành 5,7 cm thì Et = 0,06498 J và Ed = 0,06302 J.",
+    "Đặt mốc thế năng tại chỗ lò xo chưa dãn thì tại vị trí cân bằng ra Et = 0,04802 J thay vì 0."
+  ],
+  "sai_so_thuong_gap": "Đọc thước kém milimét, hoặc mốc thế năng không đặt ở vị trí cân bằng.",
+  "an_toan": "Không kéo lò xo quá giới hạn đàn hồi.",
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "dieu_khien": ["A", "x"],
+    "dau_ra": ["Et", "Ed", "W", "hai parabol Et(x) và Ed(x)"],
+    "hinh_trong_bai": "Hình 2",
+    "y_tuong": "Kéo biên độ, thả, đọc x; cột Et + Ed luôn bằng đường ngang W."
+  }
+}

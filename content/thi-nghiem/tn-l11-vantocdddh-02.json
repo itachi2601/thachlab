@@ -1,0 +1,102 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+  "lesson_id": 22,
+  "nguon_trong_bai": "content/lesson-samples/l11-van-toc-gia-toc/theory.html",
+  "id": "tn-l11-vantocdddh-02",
+  "ten": "Ba đồ thị x, v, a khi pha ban đầu bằng 0",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "daodong.quan_he_pha",
+    "daodong.do_thi_van_toc"
+  ],
+  "muc_tieu": "Thấy v sớm x một góc π/2 và a ngược pha với x, trên cùng một trục thời gian.",
+  "dung_cu": [
+    {"ten": "Đồ thị li độ, vận tốc, gia tốc", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Chọn φ = 0, A = 4 cm, T = 0,8 s, tức x = A cos(2πt/T)."
+    ],
+    "quan_sat": [
+      "Tại t = 0: x = +A, v = 0, a = −Aω².",
+      "Tại t = T/4: x = 0, v = −Aω, a = 0."
+    ],
+    "rut_ra": [
+      "v sớm x một góc π/2.",
+      "a ngược pha với x và sớm v một góc π/2."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "A",
+      "ten": "Biên độ",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 8,
+      "mac_dinh": 4,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Chu kì",
+      "don_vi": "s",
+      "kieu": "dieu_chinh",
+      "min": 0.4,
+      "max": 2,
+      "mac_dinh": 0.8,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "phi",
+      "ten": "Pha ban đầu",
+      "don_vi": "rad",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 6.28,
+      "mac_dinh": 0,
+      "buoc": 0.01
+    },
+    {"ky_hieu": "x", "ten": "Li độ", "don_vi": "cm", "kieu": "tinh_ra"},
+    {"ky_hieu": "v", "ten": "Vận tốc", "don_vi": "cm/s", "kieu": "tinh_ra"},
+    {"ky_hieu": "a", "ten": "Gia tốc", "don_vi": "cm/s^2", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "omega = 2*pi/T",
+      "x = A*cos(omega*t + phi)",
+      "v = -A*omega*sin(omega*t + phi)",
+      "a = -A*omega*omega*cos(omega*t + phi)"
+    ],
+    "gia_thiet": [
+      "φ = 0 trên hình trong bài",
+      "bỏ qua ma sát",
+      "làm tròn x và v đến 0,01 cm hoặc cm/s, a đến 0,1 cm/s²"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["t_s", "x_cm", "v_cm_s", "a_cm_s2"],
+    "hang": [
+      [0, 4, 0, -246.7],
+      [0.2, 0, -31.42, 0],
+      [0.4, -4, 0, 246.7],
+      [0.6, 0, 31.42, 0]
+    ],
+    "ghi_chu": "A = 4 cm, T = 0,8 s, phi = 0. t = 0; T/4; T/2; 3T/4. omega = 2*pi/0,8."
+  },
+  "ket_qua_ky_vong": "t = 0: x = 4 cm, v = 0, a = -246,7 cm/s². t = 0,2 s: x = 0, v = -31,42 cm/s, a = 0.",
+  "hien_tuong_hay_sai": [
+    "Tưởng đồ thị v trùng đồ thị x.",
+    "Tưởng a cùng pha với v."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+2d_dong_hoc",
+    "dieu_khien": ["A", "T", "phi"],
+    "dau_ra": ["ba đường x, v, a", "điểm chạy trên mỗi đường"],
+    "hinh_trong_bai": "Hình 2",
+    "y_tuong": "Ba đồ thị xếp dọc, cùng trục t, φ mặc định bằng 0."
+  }
+}

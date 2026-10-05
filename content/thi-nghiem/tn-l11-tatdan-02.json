@@ -1,0 +1,78 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+  "lesson_id": 25,
+  "nguon_trong_bai": "content/lesson-samples/l11-tat-dan-cuong-buc/theory.html",
+  "id": "tn-l11-tatdan-02",
+  "ten": "Con lắc tắt dần trong không khí, nước và dầu",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "daodong.tat_dan",
+    "daodong.luc_can"
+  ],
+  "muc_tieu": "Thấy cùng một con lắc, môi trường càng nhớt thì biên độ giảm càng nhanh.",
+  "dung_cu": [
+    {"ten": "Con lắc đơn dài khoảng 25 cm", "so_luong": 1},
+    {"ten": "Cốc nước", "so_luong": 1},
+    {"ten": "Cốc dầu nhớt", "so_luong": 1},
+    {"ten": "Thước", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Thả con lắc lệch A0 = 5,0 cm, mỗi môi trường một lần: không khí, nước, dầu nhớt.",
+      "Chu kì trong không khí T ≈ 1 s. Xem đỉnh còn lại sau 2 s."
+    ],
+    "quan_sat": [
+      "Không khí còn dao động rõ.",
+      "Nước yếu nhiều.",
+      "Dầu gần như hết sau một nhịp."
+    ],
+    "rut_ra": [
+      "Càng nhớt, biên độ tụt càng nhanh.",
+      "Nếu nhớt hơn nữa, vật có thể về cân bằng và dừng, không kịp qua lại."
+    ]
+  },
+  "tham_so": [
+    {"ky_hieu": "beta", "ten": "Hệ số tắt", "don_vi": "1/s", "kieu": "dieu_chinh", "min": 0.1, "max": 4.0, "mac_dinh": 0.4, "buoc": 0.05},
+    {"ky_hieu": "A0", "ten": "Biên độ lúc thả", "don_vi": "cm", "kieu": "co_dinh", "gia_tri": 5.0},
+    {"ky_hieu": "T", "ten": "Chu kì dùng trong mô hình so sánh", "don_vi": "s", "kieu": "co_dinh", "gia_tri": 1.0},
+    {"ky_hieu": "t", "ten": "Thời điểm đọc đỉnh", "don_vi": "s", "kieu": "co_dinh", "gia_tri": 2.0},
+    {"ky_hieu": "A", "ten": "Biên độ đỉnh còn lại", "don_vi": "cm", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "x = A0 * exp(-beta * t) * cos(2*pi*t/T)",
+      "A(t) = A0 * exp(-beta * t)"
+    ],
+    "gia_thiet": [
+      "Chỉ đổi beta giữa ba môi trường; A0 = 5,0 cm; T = 1 s",
+      "Bỏ qua việc nước và dầu còn làm chu kì đổi — để so riêng tác dụng của lực cản",
+      "beta = 2,8 /s vẫn nhỏ hơn 2*pi/T nên còn một nhịp nhỏ; beta lớn hơn nữa thì dừng hẳn, không dùng công thức dao động này",
+      "Đỉnh dương tại t = 0, 1, 2 s giảm dần"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["moi_truong", "beta_1_tren_s", "A0_cm", "A_tinh_sau_2s_cm", "A_lam_tron_cm"],
+    "hang": [
+      ["khong_khi", 0.4, 5.0, 2.247, 2.2],
+      ["nuoc", 1.15, 5.0, 0.501, 0.5],
+      ["dau", 2.8, 5.0, 0.018, 0.0]
+    ],
+    "ghi_chu": "A_tinh = 5 * exp(-beta * 2). A_lam_tron tới 0,1 cm là cột trong theory.html: 2,2 cm; 0,5 cm; 0,0 cm. Không phải số đo thật."
+  },
+  "ket_qua_ky_vong": "Sau 2 s: không khí còn 2,2 cm, nước 0,5 cm, dầu 0,0 cm (làm tròn). Biên độ đi xuống thật.",
+  "hien_tuong_hay_sai": [
+    "Tưởng tắt dần vẫn là điều hoà, chỉ biên độ giảm, chu kì riêng không đổi.",
+    "Tưởng trong dầu đặc vật vẫn qua lại mãi, chỉ chậm hơn."
+  ],
+  "an_toan": "Dầu nhớt trơn. Không đưa lên miệng. Lau tay sau khi làm.",
+  "goi_y_mo_phong": {
+    "loai": "do_thi+2d_dong_hoc",
+    "dieu_khien": ["beta"],
+    "dau_ra": ["đồ thị x-t", "bao biên độ đi xuống"],
+    "hinh_trong_bai": "Hình 2",
+    "y_tuong": "Ba thanh beta. Đường đứt là biên độ. Dầu áp vào trục sau một nhịp."
+  }
+}

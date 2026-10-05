@@ -1,0 +1,84 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+  "lesson_id": 25,
+  "nguon_trong_bai": "content/lesson-samples/l11-tat-dan-cuong-buc/theory.html",
+  "id": "tn-l11-tatdan-01",
+  "ten": "Quét tần số lực cưỡng bức, đọc biên độ",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "daodong.cuong_buc",
+    "daodong.cong_huong"
+  ],
+  "muc_tieu": "Thấy biên độ ổn định cực đại khi tần số lực bằng tần số riêng, và biết so hiệu số với sai số đọc.",
+  "dung_cu": [
+    {"ten": "Con lắc lò xo", "so_luong": 1},
+    {"ten": "Mô-tơ lệch tâm (lực cưỡng bức)", "so_luong": 1},
+    {"ten": "Thước đo biên độ, độ chia 1 mm", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đo riêng tần số riêng khi ma sát nhỏ: f0 = 2,0 Hz.",
+      "Chỉnh mô-tơ lần lượt năm tần số 1,0; 1,5; 2,0; 2,5; 3,0 Hz.",
+      "Mỗi tần số chờ dao động ổn định, đọc biên độ một lần. Sai số đọc ±0,2 cm."
+    ],
+    "quan_sat": [
+      "Biên độ lớn nhất ở 2,0 Hz.",
+      "1,5 Hz và 2,5 Hz cùng số đọc; 1,0 Hz và 3,0 Hz cùng số đọc."
+    ],
+    "rut_ra": [
+      "Đỉnh cộng hưởng tại f = f0.",
+      "Hiệu đỉnh với hai bên là 1,8 cm, lớn hơn sai số 0,2 cm, nên không nhầm đỉnh."
+    ]
+  },
+  "tham_so": [
+    {"ky_hieu": "f", "ten": "Tần số lực cưỡng bức", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 0.5, "max": 3.5, "mac_dinh": 2.0, "buoc": 0.5},
+    {"ky_hieu": "b", "ten": "Tham số lực cản trong mẫu Lorentz", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 0.2, "max": 2.0, "mac_dinh": 0.5, "buoc": 0.1},
+    {"ky_hieu": "f0", "ten": "Tần số riêng", "don_vi": "Hz", "kieu": "co_dinh", "gia_tri": 2.0},
+    {"ky_hieu": "Ar", "ten": "Biên độ tại cộng hưởng, đường cản nhỏ", "don_vi": "cm", "kieu": "co_dinh", "gia_tri": 6.0},
+    {"ky_hieu": "b_lon", "ten": "Tham số lực cản của đường thứ hai trên hình", "don_vi": "Hz", "kieu": "co_dinh", "gia_tri": 1.2},
+    {"ky_hieu": "Ar_lon", "ten": "Biên độ tại cộng hưởng, đường cản lớn", "don_vi": "cm", "kieu": "co_dinh", "gia_tri": 2.5},
+    {"ky_hieu": "sai_so", "ten": "Sai số đọc biên độ", "don_vi": "cm", "kieu": "co_dinh", "gia_tri": 0.2},
+    {"ky_hieu": "A", "ten": "Biên độ ổn định", "don_vi": "cm", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "A(f) = Ar * b / sqrt((f - f0)^2 + b^2)",
+      "Đường cản lớn trên hình: cùng công thức, b = 1,2 Hz, Ar = 2,5 cm, đỉnh 2,5 cm tại f = 2,0 Hz"
+    ],
+    "gia_thiet": [
+      "Mức THPT: dạng Lorentz đối xứng, đỉnh đúng tại f = f0",
+      "Bỏ qua độ dịch đỉnh khỏi f0 khi lực cản lớn (phần đại học)",
+      "F0 và khối lượng đã gộp vào Ar",
+      "Chỉ xét dao động đã ổn định",
+      "Năm hàng bảng là đường cản nhỏ: b = 0,5 Hz, Ar = 6,0 cm, f0 = 2,0 Hz"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["f_Hz", "A_tinh_cm", "A_lam_tron_cm", "sai_so_doc_cm"],
+    "hang": [
+      [1.0, 2.683, 2.7, 0.2],
+      [1.5, 4.243, 4.2, 0.2],
+      [2.0, 6.0, 6.0, 0.2],
+      [2.5, 4.243, 4.2, 0.2],
+      [3.0, 2.683, 2.7, 0.2]
+    ],
+    "ghi_chu": "A_tinh từ A = 6,0 * 0,5 / sqrt((f-2)^2 + 0,5^2). A_lam_tron tới 0,1 cm là cột trong theory.html (2,7; 4,2; 6,0; 4,2; 2,7). Lệch làm tròn dưới 0,05 cm, nhỏ hơn sai số đọc 0,2 cm. Không phải số đo thật."
+  },
+  "ket_qua_ky_vong": "Đỉnh 6,0 cm tại f = 2,0 Hz = f0. Hiệu với hai bên 1,8 cm lớn hơn sai số 0,2 cm. Hai bên đối xứng.",
+  "hien_tuong_hay_sai": [
+    "Tưởng lực mạnh là cộng hưởng dù tần số lệch xa f0.",
+    "Tưởng tần số vật luôn bằng f0, không bằng tần số lực.",
+    "Tưởng hai số đọc bằng nhau là khác nhau chỉ vì một bên trước đỉnh, một bên sau đỉnh."
+  ],
+  "sai_so_thuong_gap": "Mép biên độ khó chốt, lấy ±0,2 cm thay vì nửa độ chia 0,05 cm.",
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "dieu_khien": ["f", "b"],
+    "dau_ra": ["biên độ ổn định", "chấm trên đường cộng hưởng"],
+    "hinh_trong_bai": "Hình 3",
+    "y_tuong": "Kéo tần số lực, chấm chạy trên hai đường; đỉnh luôn tại f0, đỉnh thấp đi khi tăng b."
+  }
+}

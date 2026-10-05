@@ -1,0 +1,114 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+  "lesson_id": 22,
+  "nguon_trong_bai": "content/lesson-samples/l11-van-toc-gia-toc/theory.html",
+  "id": "tn-l11-vantocdddh-01",
+  "ten": "Con lắc lò xo nằm ngang: đo A, T rồi tính v_max và a",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "daodong.van_toc",
+    "daodong.gia_toc",
+    "daodong.he_thuc_doc_lap"
+  ],
+  "muc_tieu": "Từ A và chu kì đo được, tính v_max = Aω và a = −ω²x, rồi ước lượng sai số do thước và do bấm giờ.",
+  "dung_cu": [
+    {"ten": "Con lắc lò xo nằm ngang", "so_luong": 1},
+    {"ten": "Thước kẻ, độ chia 1 mm", "so_luong": 1, "ghi_chu": "sai số đọc 0,1 cm"},
+    {"ten": "Đồng hồ bấm giây", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Kéo vật lệch A = 4,0 cm (sai số thước 0,1 cm) rồi thả.",
+      "Bấm thời gian 10 dao động, năm lần: 8,02 s; 7,96 s; 8,08 s; 7,94 s; 8,00 s."
+    ],
+    "quan_sat": [
+      "T = t10/10. Trung bình T = 0,800 s, ΔT = 0,007 s, ω = 7,854 rad/s.",
+      "Với A = 4,0 cm: v_max = 31,42 cm/s. Tại x = 2,0 cm: tốc độ 27,21 cm/s, a = −123,4 cm/s². Tại x = 4,0 cm: tốc độ 0, a = −246,7 cm/s²."
+    ],
+    "rut_ra": [
+      "v_max = Aω và a = −ω²x.",
+      "Càng xa vị trí cân bằng, tốc độ càng nhỏ và độ lớn gia tốc càng lớn.",
+      "Δv_max ≈ 1,06 cm/s và Δa tại biên ≈ 10,5 cm/s²; lệch giữa lần 3 và lần 4 chỉ 0,55 cm/s."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "A",
+      "ten": "Biên độ",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 8,
+      "mac_dinh": 4,
+      "buoc": 0.1,
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Chu kì trung bình",
+      "don_vi": "s",
+      "kieu": "dieu_chinh",
+      "min": 0.4,
+      "max": 2,
+      "mac_dinh": 0.8,
+      "buoc": 0.001,
+      "sai_so_do": 0.007
+    },
+    {
+      "ky_hieu": "x",
+      "ten": "Li độ",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": -4,
+      "max": 4,
+      "mac_dinh": 2,
+      "buoc": 0.1
+    },
+    {"ky_hieu": "omega", "ten": "Tần số góc", "don_vi": "rad/s", "kieu": "tinh_ra"},
+    {"ky_hieu": "v", "ten": "Vận tốc", "don_vi": "cm/s", "kieu": "tinh_ra"},
+    {"ky_hieu": "a", "ten": "Gia tốc", "don_vi": "cm/s^2", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "T = t10/10",
+      "omega = 2*pi/T",
+      "v_max = A*omega",
+      "abs(v) = omega*sqrt(A*A - x*x)",
+      "a = -omega*omega*x"
+    ],
+    "gia_thiet": [
+      "bỏ qua ma sát, biên độ không đổi",
+      "làm tròn v đến 0,01 cm/s, a đến 0,1 cm/s², omega đến 0,001 rad/s",
+      "ΔT lấy (T_max - T_min)/2 của năm lần đo 10 dao động"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["lan", "t10_s", "T_s", "omega_rad_s", "vmax_cm_s", "a_bien_cm_s2"],
+    "hang": [
+      [1, 8.02, 0.802, 7.834, 31.34, -245.5],
+      [2, 7.96, 0.796, 7.893, 31.57, -249.2],
+      [3, 8.08, 0.808, 7.776, 31.10, -241.9],
+      [4, 7.94, 0.794, 7.913, 31.65, -250.5],
+      [5, 8.00, 0.800, 7.854, 31.42, -246.7]
+    ],
+    "ghi_chu": "Năm hàng là năm lần đo, tính omega=2*pi/T, vmax=A*omega, a_bien=-omega^2*A với A=4 cm. Với T trung bình 0,800 s: |v|(x=0)=31,42 cm/s; |v|(x=2 cm)=27,21 cm/s; a(x=2 cm)=-123,4 cm/s²; |v|(x=4 cm)=0; a(x=4 cm)=-246,7 cm/s². Δv_max≈1,06 cm/s; Δa biên≈10,5 cm/s²."
+  },
+  "ket_qua_ky_vong": "T trung bình 0,800 s; ω = 7,854 rad/s; v_max = 31,42 cm/s; tại x = 2 cm tốc độ 27,21 cm/s và a = -123,4 cm/s²; tại biên a = -246,7 cm/s².",
+  "hien_tuong_hay_sai": [
+    "Lấy v_max = A*f, quên 2π.",
+    "Tưởng a cùng dấu với x.",
+    "Coi lệch bấm giờ lớn hơn sai số thước đo A."
+  ],
+  "sai_so_thuong_gap": "Đọc lệch 1 mm trên thước; bấm sớm hoặc muộn khoảng vài phần trăm giây mỗi đầu mốc.",
+  "an_toan": "Không kéo lò xo quá giới hạn đàn hồi; đứng lệch khỏi phương bật của vật.",
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+    "dieu_khien": ["A", "T", "x"],
+    "dau_ra": ["vật chạy trên ray", "kim v và a", "bảng so với công thức"],
+    "hinh_trong_bai": "Hình 1",
+    "y_tuong": "Kéo vật rồi thả; hiện v_max = Aω và a = −ω²x cùng dải sai số."
+  }
+}

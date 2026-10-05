@@ -1,0 +1,73 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng",
+  "lesson_id": 25,
+  "nguon_trong_bai": "content/lesson-samples/l11-tat-dan-cuong-buc/theory.html",
+  "id": "tn-l11-tatdan-03",
+  "ten": "Xích đu: ngồi yên thì tắt, nhún đúng nhịp thì giữ độ cao",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "daodong.duy_tri",
+    "daodong.tat_dan"
+  ],
+  "muc_tieu": "Thấy nhún cùng chiều chỉ một phần nhịp thì bù được năng lượng ma sát lấy đi, chu kì vẫn là chu kì riêng.",
+  "dung_cu": [
+    {"ten": "Xích đu sân trường", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Lần một: ngồi yên, không nhún.",
+      "Lần hai: nhún cùng chiều chỉ lúc đu đang đi xuống, không đẩy suốt vòng."
+    ],
+    "quan_sat": [
+      "Ngồi yên: mỗi nhịp thấp hơn, rồi dừng.",
+      "Nhún đúng: độ cao giữ gần như cũ, nhịp đu không đổi."
+    ],
+    "rut_ra": [
+      "Nhún bù đúng phần năng lượng đã mất.",
+      "Chu kì vẫn là chu kì riêng của đu, không phải lực đẩy liên tục."
+    ]
+  },
+  "tham_so": [
+    {"ky_hieu": "A0", "ten": "Độ cao góc ban đầu, quy về cm trên cung", "don_vi": "cm", "kieu": "dieu_chinh", "min": 20, "max": 60, "mac_dinh": 40, "buoc": 5},
+    {"ky_hieu": "beta", "ten": "Hệ số tắt khi ngồi yên", "don_vi": "1/s", "kieu": "co_dinh", "gia_tri": 0.08},
+    {"ky_hieu": "T", "ten": "Chu kì riêng của đu", "don_vi": "s", "kieu": "co_dinh", "gia_tri": 2.0},
+    {"ky_hieu": "A", "ten": "Biên độ sau mỗi nhịp", "don_vi": "cm", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Ngồi yên: A_n = A0 * exp(-beta * n * T)",
+      "Nhún đúng: mỗi nhịp bù đúng phần đã mất, A_n = A0"
+    ],
+    "gia_thiet": [
+      "Chu kì riêng không đổi khi nhún đúng mức, T = 2 s",
+      "beta = 0,08 /s chỉ để minh hoạ tắt chậm, không có bảng số này trong bài",
+      "Lực nhún cùng chiều chuyển động và chỉ có trong một phần chu kì"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["lan", "n_nhip", "A_ngoi_yen_cm", "A_nhun_cm"],
+    "hang": [
+      ["ngoi_yen_va_nhun", 0, 40.0, 40.0],
+      ["ngoi_yen_va_nhun", 1, 34.1, 40.0],
+      ["ngoi_yen_va_nhun", 2, 29.0, 40.0],
+      ["ngoi_yen_va_nhun", 3, 24.8, 40.0]
+    ],
+    "ghi_chu": "A_ngoi_yen = 40 * exp(-0,08 * n * 2) = 40 * exp(-0,16 n), làm tròn 0,1 cm. A_nhun giữ 40 cm. Bài HTML không in bảng số này; hai lần làm là ngồi yên và nhún."
+  },
+  "ket_qua_ky_vong": "Ngồi yên thì biên độ giảm. Nhún đúng nhịp thì biên độ giữ, chu kì vẫn là chu kì riêng.",
+  "hien_tuong_hay_sai": [
+    "Tưởng nhún đúng nhịp là lực cưỡng bức liên tục.",
+    "Tưởng nhún tần số nào cũng làm đu cao mãi."
+  ],
+  "an_toan": "Đu vừa tầm, không đứng trên ghế đu, có người trông.",
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc",
+    "dieu_khien": ["A0"],
+    "dau_ra": ["đu tắt khi không nhún", "độ cao giữ khi nhún cùng chiều"],
+    "hinh_trong_bai": "Hình 1",
+    "y_tuong": "Hai mũi tên song song: chiều đi và lực nhún. Tắt mũi nhún thì biên độ tụt."
+  }
+}

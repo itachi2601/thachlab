@@ -1,0 +1,56 @@
+{
+  "bai": "Bài 6. Tắt dần, cưỡng bức, cộng hưởng",
+  "lesson_id": 25,
+  "thu_muc": "content/lesson-samples/l11-tat-dan-cuong-buc",
+  "files": [
+    "content/lesson-samples/l11-tat-dan-cuong-buc/theory.src.html",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/theory.html",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/svg_lib.py",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/build_figs.py",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/build_bundle.py",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/bundle.json",
+    "content/lesson-samples/l11-tat-dan-cuong-buc/bao-cao.json",
+    "content/thi-nghiem/tn-l11-tatdan-01.json",
+    "content/thi-nghiem/tn-l11-tatdan-02.json",
+    "content/thi-nghiem/tn-l11-tatdan-03.json"
+  ],
+  "tu_hien": 2500,
+  "phut": 18,
+  "lint": {
+    "lint_theory": "ok",
+    "lint_do_dai": "2500 từ, 17.9 phút, 0 lỗi cứng, cảnh báo >2000",
+    "check_quizzes": "ok 8 quiz",
+    "thi_nghiem": "ok",
+    "kiem_tran": "không tràn ngang 375px",
+    "validate_bundle": "ok true"
+  },
+  "hinh": [
+    "Hình 1. Xích đu nhún cùng chiều, chỉ một phần nhịp",
+    "Hình 2. Biên độ giảm: không khí, nước, dầu — đường bao đi xuống",
+    "Hình 3. Cộng hưởng hai đường lực cản, đỉnh đúng tại f0 = 2 Hz, trục tuyến tính",
+    "Hình 4. Sơ đồ tự vẽ cầu Tacoma Narrows 1940"
+  ],
+  "quiz_dap_an_dung": ["C", "A", "D", "B", "C", "A", "D", "B"],
+  "y_bat_buoc_da_giu": [
+    "Tắt dần: biên độ và năng lượng giảm; x, v, a, động năng, thế năng vẫn đổi nhưng không điều hoà tuyệt đối",
+    "Nguyên nhân ma sát, công âm, thành nhiệt; càng nhớt tắt càng nhanh; không có chu kì xác định; ma sát quá lớn thì dừng hẳn",
+    "Lợi giảm xóc, cửa tự đóng; hại thì phải hạn chế; ứng dụng lò xo giảm xóc, cửa kéo",
+    "Duy trì: bù đúng phần đã mất, chỉ một phần chu kì, không đẩy suốt; biên độ không đổi; chu kì bằng chu kì riêng",
+    "Ứng dụng duy trì: đồng hồ quả lắc, xích đu, đo g",
+    "Cưỡng bức: F = F0 cos(ωt+φ0) liên tục; khi ổn định f vật = f lực, có thể khác f0",
+    "A phụ thuộc F0, lực cản, |f-f0|; ứng dụng khung xe, bệ máy, lên dây, nhà, cầu",
+    "Cộng hưởng khi f = f0 (cũng ω, T); đồ thị hai đường, đỉnh cao hẹp khi cản nhỏ",
+    "Tacoma Narrows 1940 bằng lời và SVG tự vẽ",
+    "Lợi: hộp đàn, lò vi sóng, địa chấn, MRI, máy thu thanh — mức THPT",
+    "Ba bảng so sánh 2 cột: nguyên nhân, chu kì, biên độ, đặc biệt"
+  ],
+  "anh_da_xem": [
+    "xem-thu/fig-1.webp",
+    "xem-thu/fig-2.webp",
+    "xem-thu/fig-3.webp",
+    "xem-thu/fig-4.webp",
+    "xem-thu/sec-0.webp",
+    "xem-thu/sec-2d.webp"
+  ],
+  "van_de_con": []
+}

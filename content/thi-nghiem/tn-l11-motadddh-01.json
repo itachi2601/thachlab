@@ -1,0 +1,108 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 2. Mô tả dao động điều hoà",
+  "lesson_id": 21,
+  "nguon_trong_bai": "content/lesson-samples/l11-mo-ta-dao-dong/theory.html",
+  "id": "tn-l11-motadddh-01",
+  "ten": "Con lắc lò xo: vật không ra khỏi đoạn [-A, A]",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "daodong.li_do",
+    "daodong.bien_do"
+  ],
+  "muc_tieu": "Thấy li độ luôn nằm trong [-A, A]; biên độ là độ lệch cực đại do cách kéo.",
+  "dung_cu": [
+    {"ten": "Lò xo và vật nặng trên ray ngang", "so_luong": 1},
+    {"ten": "Thước thẳng", "so_luong": 1},
+    {"ten": "Đồng hồ bấm giây", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đánh dấu chỗ vật đứng yên, gọi là O.",
+      "Kéo lệch đúng 4 cm về phía dương rồi thả.",
+      "Quan sát đúng bốn mốc: 0; T/4; T/2; 3T/4, với T = 2 s (t = 0; 0,5; 1,0; 1,5 s)."
+    ],
+    "quan_sat": [
+      "Vật qua O, tới đầu âm, rồi quay lại.",
+      "Không vượt quá hai đầu mốc.",
+      "Bốn li độ là 4 cm; 0; −4 cm; 0."
+    ],
+    "rut_ra": [
+      "Li độ luôn trong đoạn [-4, 4] cm.",
+      "A = 4 cm là độ lệch cực đại, phụ thuộc cách kéo."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "A",
+      "ten": "Biên độ",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 2,
+      "max": 8,
+      "mac_dinh": 4,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Chu kì",
+      "don_vi": "s",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 4,
+      "mac_dinh": 2,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "phi",
+      "ten": "Pha ban đầu",
+      "don_vi": "rad",
+      "kieu": "co_dinh",
+      "gia_tri": 0
+    },
+    {
+      "ky_hieu": "x",
+      "ten": "Li độ",
+      "don_vi": "cm",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "x = A*cos(2*pi*t/T + phi)",
+      "voi A = 4, T = 2, phi = 0: x = 4*cos(pi*t)"
+    ],
+    "gia_thiet": [
+      "bỏ qua ma sát, biên độ không đổi",
+      "thả tay lúc t = 0 ở biên dương"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["t (s)", "x (cm)"],
+    "hang": [
+      [0, 4],
+      [0.5, 0],
+      [1.0, -4],
+      [1.5, 0]
+    ],
+    "ghi_chu": "Bốn mốc, tính đúng từ x = 4·cos(πt) cm. t = 0,5 s và t = 1,5 s đều có x = 0 nhưng chiều đi ngược nhau."
+  },
+  "ket_qua_ky_vong": "Với A = 4 cm, T = 2 s: x = 4; 0; −4; 0 cm tại t = 0; 0,5; 1; 1,5 s. Vật không ra khỏi [-4, 4] cm.",
+  "hien_tuong_hay_sai": [
+    "Tưởng li độ bằng quãng đường đã đi.",
+    "Tưởng hai lần x = 0 là cùng một trạng thái."
+  ],
+  "sai_so_thuong_gap": [
+    "Đánh dấu O lệch khỏi chỗ vật đứng yên."
+  ],
+  "an_toan": "Không đứng đối diện đầu lò xo khi thả.",
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "dieu_khien": ["A", "T"],
+    "dau_ra": ["vật chạy trên đoạn [-A, A]", "điểm chạy trên đồ thị x–t"],
+    "hinh_trong_bai": "Hình 1",
+    "y_tuong": "Kéo vật rồi thả; hiện nhãn −A, O, +A. Bảng bốn mốc cập nhật theo A và T."
+  }
+}

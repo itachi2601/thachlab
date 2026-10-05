@@ -1,0 +1,519 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Phân biệt <strong>tắt dần</strong>, <strong>duy trì</strong>, <strong>cưỡng bức</strong> theo nguyên nhân, chu kì và biên độ.</li>
+<li>Nêu điều kiện <strong>cộng hưởng</strong> $f = f_0$ và đọc đồ thị hai đường lực cản.</li>
+<li>Đọc bảng quét tần số, kể cả <strong>sai số đọc biên độ</strong>.</li>
+</ul>
+<p>Cuối bài em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 8 câu tự kiểm tra.</p>
+</div>
+
+<h3>I. Mở bài: xích đu tắt, giảm xóc nuốt rung</h3>
+
+<p>Em ngồi xích đu ở sân trường. Ngồi yên, mỗi nhịp thấp hơn nhịp trước, rồi đu dừng. Nhún đúng lúc đu đang đi xuống, độ cao giữ gần như cũ.</p>
+
+<p>Xe máy vừa qua ổ gà thì khác: bánh nảy một cái, giảm xóc nuốt rung, xe hết lắc ngay.</p>
+
+<p>Câu hỏi để nghĩ trước khi đọc tiếp: <em>vì sao ngồi yên thì đu tắt, còn nhún đúng nhịp thì giữ được độ cao?</em></p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q1" id="tl25-q1a"><label for="tl25-q1a" class="tl-opt tl-no">A. Không có chu kì, nên ngồi yên là dừng ngay</label>
+<input type="radio" name="tl25-q1" id="tl25-q1b"><label for="tl25-q1b" class="tl-opt tl-no">B. Nhún đẩy liên tục; tần số nào cũng làm đu cao mãi</label>
+<input type="radio" name="tl25-q1" id="tl25-q1c"><label for="tl25-q1c" class="tl-opt tl-ok">C. Ma sát lấy năng lượng; nhún chỉ bù một phần nhịp</label>
+<input type="radio" name="tl25-q1" id="tl25-q1d"><label for="tl25-q1d" class="tl-opt tl-no">D. Giảm xóc làm chu kì xe dài ra nên hết rung</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Ngồi yên: ma sát và lực cản lấy dần cơ năng, biên độ giảm — đó là tắt dần. Nhún đúng nhịp chỉ bù phần vừa mất, không đẩy suốt vòng — đó là duy trì. Giảm xóc thì cố ý cho tắt thật nhanh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — xích đu trong không khí tắt từ từ vì mất năng lượng, không phải vì "không có chu kì nên dừng ngay". B — nhún không đẩy liên tục, và không phải tần số nào cũng làm biên độ tăng mãi. D — giảm xóc nuốt năng lượng rung, không phải làm chu kì xe dài ra. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Ba loại dao động, rồi mới tới cộng hưởng</h3>
+
+<p>Mỗi loại một từ khoá, rồi một ví dụ.</p>
+
+<h4>1. Dao động tắt dần</h4>
+
+<p><strong>🔑 Biên độ giảm · cơ năng thành nhiệt</strong></p>
+
+<ul>
+<li>Biên độ và năng lượng giảm dần theo thời gian.</li>
+<li>Li độ, vận tốc, gia tốc, động năng, thế năng vẫn đổi theo thời gian — không còn điều hoà tuyệt đối.</li>
+<li>Ma sát, lực cản sinh công âm; cơ năng thành nhiệt. Càng nhớt, tắt càng nhanh.</li>
+<li>Không có chu kì hay tần số xác định, vì không còn tuần hoàn.</li>
+<li>Ma sát quá lớn: về cân bằng rồi dừng, không kịp qua lại.</li>
+<li>Lợi: giảm xóc, cửa tự đóng. Hại khi muốn kéo dài: hạn chế ma sát.</li>
+<li>Ứng dụng: lò xo giảm xóc; cửa kéo tự động.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tatdan-02">
+<p class="tl-label">🔬 Thí nghiệm: cùng một con lắc, ba môi trường</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thả lệch $5{,}0$ cm, mỗi chỗ một lần: không khí, nước, dầu. $T \approx 1$ s.</li>
+<li><strong>Quan sát:</strong> sau 2 s, không khí còn rõ, nước yếu, dầu gần hết.</li>
+<li><strong>Rút ra:</strong> càng nhớt, biên độ tụt càng nhanh.</li>
+</ol>
+</div>
+
+<!--FIG2-->
+
+<p>Bảng: $A = 5{,}0\,e^{-\beta \cdot 2}$ cm. Chỉ đổi $\beta$. Làm tròn $0{,}1$ cm.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Môi trường</th><th>Đỉnh còn sau 2 s</th></tr>
+</thead>
+<tbody>
+<tr><td>Không khí ($\beta = 0{,}40$/s)</td><td>$2{,}2$ cm</td></tr>
+<tr><td>Nước ($\beta = 1{,}15$/s)</td><td>$0{,}5$ cm</td></tr>
+<tr><td>Dầu nhớt ($\beta = 2{,}8$/s)</td><td>$0{,}0$ cm</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Dầu còn một nhịp rồi áp vào trục.</p>
+
+<details class="tl-details">
+<summary>👀 Số trước khi làm tròn</summary>
+<p>Sau 2 s: $5e^{-0{,}8} = 2{,}25$ cm, $5e^{-2{,}3} = 0{,}50$ cm, $5e^{-5{,}6} = 0{,}018$ cm. Làm tròn thành $2{,}2$; $0{,}5$; $0{,}0$. Giả thuyết: bỏ qua việc nước và dầu còn làm chu kì đổi.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>Dầu đặc hơn bảng trên, ma sát quá lớn. Con lắc sẽ thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q2" id="tl25-q2a"><label for="tl25-q2a" class="tl-opt tl-ok">A. Về cân bằng rồi dừng, không kịp qua lại</label>
+<input type="radio" name="tl25-q2" id="tl25-q2b"><label for="tl25-q2b" class="tl-opt tl-no">B. Vẫn điều hoà, chỉ chu kì dài hơn</label>
+<input type="radio" name="tl25-q2" id="tl25-q2c"><label for="tl25-q2c" class="tl-opt tl-no">C. Năng lượng giảm, biên độ giữ nguyên</label>
+<input type="radio" name="tl25-q2" id="tl25-q2d"><label for="tl25-q2d" class="tl-opt tl-no">D. Li độ không đổi từ lúc thả</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ma sát quá lớn thì không còn dao động qua lại. Năng lượng đã thành nhiệt trên một đoạn đường ngắn về cân bằng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — tắt dần không còn điều hoà tuyệt đối, và dầu đặc có thể không dao động. C — biên độ giảm cùng năng lượng, không giữ nguyên. D — vật vẫn dịch về cân bằng, li độ có đổi, rồi mới dừng. Nhớ: nhớt nhiều thì tắt nhanh, nhớt quá thì không kịp đu.</p></div>
+</div>
+</div>
+
+<h4>2. Dao động duy trì</h4>
+
+<p><strong>🔑 Bù đúng lúc · giữ chu kì riêng</strong></p>
+
+<ul>
+<li>Tắt dần được bù năng lượng, không đổi chu kì riêng.</li>
+<li>Mỗi chu kì, bù đúng phần đã mất. Ngoại lực cùng chiều, chỉ một phần chu kì — không đẩy suốt như lực cưỡng bức.</li>
+<li>Biên độ không đổi. Chu kì bằng chu kì riêng.</li>
+<li>Ứng dụng: đồng hồ quả lắc; xích đu nhún đúng nhịp; đo $g$, vì cần $T$ gần $T = 2\pi\sqrt{\ell/g}$.</li>
+</ul>
+
+<p>Mẹo: <strong>bù một nhịp, không đẩy suốt.</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tatdan-03">
+<p class="tl-label">🔬 Ví dụ làm được ở sân: hai lần trên xích đu</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lần một ngồi yên. Lần hai nhún cùng chiều chỉ lúc đu đi xuống.</li>
+<li><strong>Quan sát:</strong> ngồi yên thì thấp dần. Nhún đúng thì độ cao và nhịp giữ nguyên.</li>
+<li><strong>Rút ra:</strong> nhún bù đúng phần ma sát đã lấy. Chu kì vẫn là chu kì riêng.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q3" id="tl25-q3a"><label for="tl25-q3a" class="tl-opt tl-no">A. Cơ cấu đẩy quả lắc liên tục, như lực cưỡng bức</label>
+<input type="radio" name="tl25-q3" id="tl25-q3b"><label for="tl25-q3b" class="tl-opt tl-no">B. Chu kì đồng hồ bằng chu kì của pin</label>
+<input type="radio" name="tl25-q3" id="tl25-q3c"><label for="tl25-q3c" class="tl-opt tl-no">C. Biên độ giảm, vì đây là tắt dần thuần</label>
+<input type="radio" name="tl25-q3" id="tl25-q3d"><label for="tl25-q3d" class="tl-opt tl-ok">D. Mỗi nhịp chỉ bù phần đã mất; chu kì vẫn là chu kì riêng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Pin hay dây cót chỉ cung cấp năng lượng. Cái giữ nhịp là quả lắc. Biên độ không tụt vì phần mất đã được bù. Em giải thích được cho bạn ngồi cạnh chưa: vì sao không gọi đây là cưỡng bức?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — cơ cấu thoát chỉ đẩy một phần mỗi nhịp, không đẩy suốt. B — chu kì là chu kì riêng của quả lắc; pin không đặt tần số. C — nếu là tắt dần thuần, đồng hồ sẽ đứng. Nhớ mẹo: bù một nhịp, không đẩy suốt.</p></div>
+</div>
+</div>
+
+<h4>3. Dao động cưỡng bức</h4>
+
+<p><strong>🔑 Lực tuần hoàn · vật theo lực</strong></p>
+
+<ul>
+<li>Ngoại lực tuần hoàn tác dụng liên tục: $F = F_0\cos(\omega t + \varphi_0)$.</li>
+<li>Khi ổn định, $f_{\text{vật}} = f_{\text{lực}}$, có thể khác $f_0$.</li>
+<li>Khác duy trì: lực cưỡng bức có mặt suốt quá trình. Duy trì chỉ bù một phần chu kì.</li>
+<li>$A$ phụ thuộc: $F_0$ lớn thì $A$ lớn; cản nhỏ thì $A$ lớn; $|f-f_0|$ nhỏ thì $A$ lớn.</li>
+<li>Ứng dụng: khung xe, bệ máy có $f_0$ khác xa máy; lên dây; nhà và cầu né gió, né bước chân.</li>
+</ul>
+
+<details class="tl-details">
+<summary>👀 Vì sao lúc ổn định, vật không giữ tần số riêng?</summary>
+<p>Lúc mới chịu lực, vật còn "nhớ" tần số riêng. Phần đó tắt dần vì ma sát. Phần còn lại bị lực kéo đi theo nhịp của lực, nên tần số ổn định bằng tần số lực. Tắt hết phần riêng thì mới gọi là đã ổn định.</p>
+</details>
+
+<h4>4. Cộng hưởng</h4>
+
+<p><strong>🔑 Trùng tần số riêng · biên độ cực đại</strong></p>
+
+<ul>
+<li>Biên độ cưỡng bức cực đại khi tần số lực bằng tần số riêng.</li>
+<li>Điều kiện: $f = f_0$, cũng là $\omega = \omega_0$ hay $T = T_0$.</li>
+<li>Đồ thị: trục $f$ tuyến tính. Cản nhỏ thì đỉnh cao, hẹp. Cản lớn thì đỉnh thấp, thoải.</li>
+</ul>
+
+<p>Mẹo: <strong>trùng tần số — biên độ lớn nhất.</strong> Lực mạnh mà lệch tần số thì chưa cộng hưởng.</p>
+
+<!--FIG3-->
+
+<p>Đỉnh đều tại $f_0 = 2{,}0$ Hz. Cản nhỏ: $6{,}0$ cm. Cản lớn ($b = 1{,}2$ Hz, $A_r = 2{,}5$ cm): $2{,}5$ cm, thoải hơn.</p>
+
+<h4>5. Thí nghiệm: quét tần số lực cưỡng bức</h4>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-tatdan-01">
+<p class="tl-label">🔬 Thí nghiệm đo: năm tần số, đọc biên độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> $f_0 = 2{,}0$ Hz. Chỉnh năm tần số $1{,}0$; $1{,}5$; $2{,}0$; $2{,}5$; $3{,}0$ Hz. Mỗi lần chờ ổn định, đọc $A$ một lần. Sai số $\pm 0{,}2$ cm.</li>
+<li><strong>Quan sát:</strong> $A$ lớn nhất ở $2{,}0$ Hz. $1{,}5$ Hz và $2{,}5$ Hz cùng số đọc.</li>
+<li><strong>Rút ra:</strong> đỉnh tại $f = f_0$. Chênh với hai bên lớn hơn sai số đọc.</li>
+</ol>
+</div>
+
+<p>Mô hình gần đúng, đỉnh đúng tại $f_0$:</p>
+
+<p>$$A(f) = \dfrac{A_r\, b}{\sqrt{(f - f_0)^2 + b^2}}$$</p>
+
+<p>Bảng: $f_0 = 2{,}0$ Hz, $b = 0{,}5$ Hz, $A_r = 6{,}0$ cm. Làm tròn $0{,}1$ cm. Sai số đọc $\pm 0{,}2$ cm.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$f$ (Hz)</th><th>$A$ đọc (cm)</th></tr>
+</thead>
+<tbody>
+<tr><td>$1{,}0$</td><td>$2{,}7 \pm 0{,}2$</td></tr>
+<tr><td>$1{,}5$</td><td>$4{,}2 \pm 0{,}2$</td></tr>
+<tr><td>$2{,}0$</td><td>$6{,}0 \pm 0{,}2$</td></tr>
+<tr><td>$2{,}5$</td><td>$4{,}2 \pm 0{,}2$</td></tr>
+<tr><td>$3{,}0$</td><td>$2{,}7 \pm 0{,}2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Hiệu đỉnh: $6{,}0 - 4{,}2 = 1{,}8$ cm, lớn hơn $0{,}2$ cm. Hai hàng $4{,}2$ cm lệch nhau bằng $0$.</p>
+
+<details class="tl-details">
+<summary>👀 Giả thuyết của công thức và số chưa làm tròn</summary>
+<p>Dạng Lorentz đối xứng quanh $f_0$. $F_0$ và khối lượng gộp vào $A_r$. Chỉ xét lúc đã ổn định. Bỏ qua độ dịch đỉnh khi lực cản lớn. Số tính: $2{,}68$; $4{,}24$; $6{,}00$; $4{,}24$; $2{,}68$ cm. Lệch làm tròn dưới $0{,}05$ cm.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q4" id="tl25-q4a"><label for="tl25-q4a" class="tl-opt tl-no">A. $A$ lớn nhất ở $1{,}0$ Hz vì lực mới bắt đầu</label>
+<input type="radio" name="tl25-q4" id="tl25-q4b"><label for="tl25-q4b" class="tl-opt tl-ok">B. Đỉnh ở $2{,}0$ Hz; chênh $1{,}8$ cm lớn hơn sai số $0{,}2$ cm</label>
+<input type="radio" name="tl25-q4" id="tl25-q4c"><label for="tl25-q4c" class="tl-opt tl-no">C. $1{,}5$ Hz và $2{,}5$ Hz khác nhau rõ</label>
+<input type="radio" name="tl25-q4" id="tl25-q4d"><label for="tl25-q4d" class="tl-opt tl-no">D. Tần số vật luôn bằng $2{,}0$ Hz</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cột $A$ lớn nhất tại $2{,}0$ Hz, trùng $f_0$. Hiệu $1{,}8$ cm so với $\pm 0{,}2$ cm là đủ để kết luận đỉnh. Em chỉ được nói "bằng nhau" khi hiệu nhỏ hơn sai số — đúng như hai hàng $4{,}2$ cm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — ở $1{,}0$ Hz bảng ghi $2{,}7$ cm, nhỏ nhất trong năm số, không phải lớn nhất. C — hai tần số đó cùng đọc $4{,}2$ cm, lệch $0$, không vượt sai số $0{,}2$ cm. D — lúc ổn định, tần số vật bằng tần số lực đang đặt, không phải lúc nào cũng bằng $2{,}0$ Hz. Tìm số $A$ lớn nhất, rồi so hiệu với $0{,}2$ cm.</p></div>
+</div>
+</div>
+
+<h4>6. Ba loại, nhìn một lượt</h4>
+
+<p><strong>Tắt dần</strong></p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Tiêu chí</th><th>Tắt dần</th></tr></thead>
+<tbody>
+<tr><td>Nguyên nhân</td><td>Ma sát tiêu hao cơ năng</td></tr>
+<tr><td>Chu kì</td><td>Không xác định</td></tr>
+<tr><td>Biên độ</td><td>Giảm dần</td></tr>
+<tr><td>Đặc biệt</td><td>Có thể dừng hẳn</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Duy trì</strong></p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Tiêu chí</th><th>Duy trì</th></tr></thead>
+<tbody>
+<tr><td>Nguyên nhân</td><td>Bù đúng lúc, một phần chu kì</td></tr>
+<tr><td>Chu kì</td><td>Bằng chu kì riêng</td></tr>
+<tr><td>Biên độ</td><td>Không đổi</td></tr>
+<tr><td>Đặc biệt</td><td>Không đẩy suốt chu kì</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Cưỡng bức</strong></p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Tiêu chí</th><th>Cưỡng bức</th></tr></thead>
+<tbody>
+<tr><td>Nguyên nhân</td><td>Ngoại lực tuần hoàn, liên tục</td></tr>
+<tr><td>Chu kì</td><td>Bằng chu kì của lực</td></tr>
+<tr><td>Biên độ</td><td>Theo $F_0$, lực cản, $|f-f_0|$</td></tr>
+<tr><td>Đặc biệt</td><td>Cực đại khi $f = f_0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>👀 Một câu để khỏi trộn ba loại</summary>
+<p>Hỏi: năng lượng có được bù không, và lực có mặt suốt thời gian không? Không bù → tắt dần. Bù một phần nhịp, chu kì vẫn là chu kì riêng → duy trì. Lực tuần hoàn suốt quá trình, chu kì theo lực → cưỡng bức.</p>
+</details>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<p>Đọc bảng, rồi chọn.</p>
+
+<h4>Bẫy 1: tưởng duy trì là cưỡng bức</h4>
+
+<p>"Có ngoại lực nên là cưỡng bức." Chưa đủ: lực có mặt lúc nào, chu kì theo ai?</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Duy trì</th><th>Cưỡng bức</th></tr></thead>
+<tbody>
+<tr><td>Lực chỉ bù một phần chu kì</td><td>Lực tuần hoàn tác dụng liên tục</td></tr>
+<tr><td>Chu kì bằng chu kì riêng</td><td>Chu kì bằng chu kì của lực</td></tr>
+<tr><td>Biên độ giữ mức đã bù</td><td>Biên độ phụ thuộc $F_0$, lực cản, $|f-f_0|$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl25-sure5" value="chac"> Chắc</label> <label><input type="radio" name="tl25-sure5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q5" id="tl25-q5a"><label for="tl25-q5a" class="tl-opt tl-no">A. Xích đu không có ngoại lực</label>
+<input type="radio" name="tl25-q5" id="tl25-q5b"><label for="tl25-q5b" class="tl-opt tl-no">B. Cưỡng bức không có ngoại lực</label>
+<input type="radio" name="tl25-q5" id="tl25-q5c"><label for="tl25-q5c" class="tl-opt tl-ok">C. Nhún chỉ bù một phần nhịp; cưỡng bức thì lực liên tục, vật theo tần số lực</label>
+<input type="radio" name="tl25-q5" id="tl25-q5d"><label for="tl25-q5d" class="tl-opt tl-no">D. Hai loại cùng một chu kì</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Có ngoại lực ở cả hai, nhưng lịch đẩy thì khác. Duy trì giữ chu kì riêng. Cưỡng bức nộp chu kì cho lực. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — người nhún có đẩy, nên có ngoại lực; điểm sai không nằm ở chỗ "có lực hay không". B — cưỡng bức chính là do ngoại lực tuần hoàn. D — chu kì duy trì theo hệ, chu kì cưỡng bức theo lực, hai số có thể khác nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: tưởng lực mạnh là cộng hưởng, dù tần số lệch xa</h4>
+
+<p>$f_0 = 10$ Hz, lực rất mạnh nhưng $f = 25$ Hz. $A$ có cực đại không?</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Dễ tưởng</th><th>Đúng</th></tr></thead>
+<tbody>
+<tr><td>$F_0$ lớn thì luôn cộng hưởng</td><td>Cộng hưởng khi $f = f_0$, không phải khi lực mạnh</td></tr>
+<tr><td>$f$ khác $f_0$ thì vật đứng yên</td><td>Vật vẫn dao động, tần số bằng tần số lực, $A$ không cực đại</td></tr>
+<tr><td>$A$ chỉ phụ thuộc $F_0$</td><td>$A$ còn phụ thuộc lực cản và $|f - f_0|$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl25-sure6" value="chac"> Chắc</label> <label><input type="radio" name="tl25-sure6" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q6" id="tl25-q6a"><label for="tl25-q6a" class="tl-opt tl-ok">A. Không cực đại: cần $f = f_0$, không phải chỉ lực mạnh</label>
+<input type="radio" name="tl25-q6" id="tl25-q6b"><label for="tl25-q6b" class="tl-opt tl-no">B. Cực đại, vì lực mạnh thì luôn cộng hưởng</label>
+<input type="radio" name="tl25-q6" id="tl25-q6c"><label for="tl25-q6c" class="tl-opt tl-no">C. $A = 0$, vì $f$ khác $f_0$ thì vật không dao động</label>
+<input type="radio" name="tl25-q6" id="tl25-q6d"><label for="tl25-q6d" class="tl-opt tl-no">D. Vật dao động với $f = 10$ Hz, tức $f_0$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $|25 - 10| = 15$ Hz, lệch xa, nên $A$ không ở đỉnh. Lực mạnh làm $A$ lớn hơn so với lực yếu cùng tần số đó, nhưng không biến lệch tần số thành cộng hưởng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — lực mạnh không thay điều kiện $f = f_0$. C — vật vẫn bị kéo theo tần số 25 Hz, biên độ không về không. D — lúc ổn định, tần số vật bằng tần số lực (25 Hz), không giữ $f_0$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 3: tưởng tắt dần vẫn có chu kì riêng không đổi</h4>
+
+<p>Tắt chậm trông "gần đều". Dễ tưởng vẫn là điều hoà, chỉ biên độ giảm.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead><tr><th>Điều hoà</th><th>Tắt dần</th></tr></thead>
+<tbody>
+<tr><td>Biên độ không đổi</td><td>Biên độ và năng lượng giảm</td></tr>
+<tr><td>Tuần hoàn, có $T$ xác định</td><td>Không tuần hoàn, không có chu kì xác định</td></tr>
+<tr><td>$x$, $v$, $a$ biến thiên điều hoà</td><td>$x$, $v$, $a$, động năng, thế năng vẫn đổi, nhưng không điều hoà tuyệt đối</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q7" id="tl25-q7a"><label for="tl25-q7a" class="tl-opt tl-no">A. Chu kì giữ nguyên, nên vẫn là điều hoà</label>
+<input type="radio" name="tl25-q7" id="tl25-q7b"><label for="tl25-q7b" class="tl-opt tl-no">B. $T$ giữa hai lần qua cân bằng không đổi mãi, tần số xác định</label>
+<input type="radio" name="tl25-q7" id="tl25-q7c"><label for="tl25-q7c" class="tl-opt tl-no">C. Động năng và thế năng không còn phụ thuộc thời gian</label>
+<input type="radio" name="tl25-q7" id="tl25-q7d"><label for="tl25-q7d" class="tl-opt tl-ok">D. $x$, $v$, $a$ vẫn đổi, nhưng không điều hoà; không có chu kì xác định</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhịp nhìn gần đều khi tắt chậm chỉ là gần đúng. Định nghĩa thì tắt dần không tuần hoàn, nên không gán cho nó một chu kì xác định.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — biên độ đổi thì không còn điều hoà. B — không tuần hoàn thì không có một $T$ xác định để lấy nghịch đảo. C — động năng và thế năng vẫn đổi theo thời gian, chỉ không còn trao đổi đúng kiểu điều hoà. Nhớ câu: vẫn đổi theo thời gian, nhưng không điều hoà tuyệt đối.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Nói trước, rồi mới bấm xem.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+
+<details class="tl-details">
+<summary>1. Tắt dần là gì? Năng lượng mất vì đâu? <small>(nói trước rồi bấm)</small></summary>
+<p>Biên độ giảm · năng lượng giảm. Ma sát và lực cản · công âm · cơ năng thành nhiệt. Càng nhớt · tắt càng nhanh.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Vì sao tắt dần không có chu kì xác định? Ma sát quá lớn thì sao? <small>(nói trước rồi bấm)</small></summary>
+<p>Không tuần hoàn · không có $T$, $f$ xác định. $x$, $v$, $a$, động năng, thế năng vẫn đổi · không điều hoà tuyệt đối. Ma sát quá lớn · về cân bằng rồi dừng, không kịp qua lại.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Duy trì khác cưỡng bức chỗ nào? Chu kì và biên độ của duy trì? <small>(nói trước rồi bấm)</small></summary>
+<p>Bù đúng phần đã mất · chỉ một phần chu kì · không đẩy suốt. Biên độ không đổi · chu kì bằng chu kì riêng. Cưỡng bức: lực tuần hoàn liên tục · chu kì theo lực.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Viết dạng lực cưỡng bức. Khi ổn định, tần số vật bằng gì? <small>(nói trước rồi bấm)</small></summary>
+<p>$F = F_0\cos(\omega t + \varphi_0)$, tác dụng liên tục. $f_{\text{vật}} = f_{\text{lực}}$, có thể khác $f_0$.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Biên độ cưỡng bức phụ thuộc gì? Khi nào cộng hưởng? <small>(nói trước rồi bấm)</small></summary>
+<p>$F_0$ lớn thì $A$ lớn · cản nhỏ thì $A$ lớn · $|f - f_0|$ nhỏ thì $A$ lớn. Cộng hưởng khi $f = f_0$, cũng $\omega = \omega_0$, $T = T_0$. Đỉnh cao và hẹp khi cản nhỏ.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Một lợi, một hại của cộng hưởng? Tắt dần dùng vào việc gì? <small>(nói trước rồi bấm)</small></summary>
+<p>Hại: nhà, cầu, bệ máy, khung xe — né $f = f_0$. Lợi: hộp đàn, lò vi sóng, địa chấn, MRI, máy thu thanh. Tắt dần có lợi: giảm xóc, cửa kéo tự đóng.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: tìm tần số riêng và so biên độ</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Bệ máy chưa biết $f_0$. Lực $F = 20\cos(2\pi f t)$ N. $F_0$ và lực cản không đổi. Sai số đọc $\pm 0{,}2$ cm. Số trong bảng là số đề cho.</p>
+<p>a) Tìm $f_0$. Có cộng hưởng không?</p>
+<p>b) Ở $f = 16$ Hz, tần số dao động của bệ?</p>
+<p>c) $A$ lúc $16$ Hz so với lúc cộng hưởng? Hiệu có vượt sai số không?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$f$ (Hz)</th><th>$A$ (cm)</th></tr>
+</thead>
+<tbody>
+<tr><td>$8$</td><td>$1{,}0 \pm 0{,}2$</td></tr>
+<tr><td>$10$</td><td>$2{,}4 \pm 0{,}2$</td></tr>
+<tr><td>$12$</td><td>$5{,}0 \pm 0{,}2$</td></tr>
+<tr><td>$14$</td><td>$2{,}4 \pm 0{,}2$</td></tr>
+<tr><td>$16$</td><td>$1{,}0 \pm 0{,}2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Với mỗi cụm, tự hỏi: <strong>dữ liệu gì</strong>, <strong>kiến thức nào</strong>?</p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"chưa biết $f_0$"</td><td>$f_0$ là ẩn</td><td>$A$ lớn nhất</td></tr>
+<tr><td>"$F = 20\cos(2\pi f t)$"</td><td>$F_0 = 20$ N</td><td>$f$ vật $= f$ lực</td></tr>
+<tr><td>"$F_0$, lực cản không đổi"</td><td>hai thứ giữ nguyên</td><td>$A$ theo $|f-f_0|$</td></tr>
+<tr><td>"sai số $\pm 0{,}2$ cm"</td><td>$\pm 0{,}2$ cm</td><td>khác nhau nếu hiệu vượt $0{,}2$</td></tr>
+<tr><td>"$f = 16$ Hz"</td><td>$A = 1{,}0$ cm</td><td>so với đỉnh $5{,}0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>$A$ lớn nhất là $5{,}0$ cm tại $f = 12$ Hz. Hai bên đối xứng: $10$ Hz và $14$ Hz cùng $2{,}4$ cm; $8$ Hz và $16$ Hz cùng $1{,}0$ cm. Vậy $f_0 = 12$ Hz.</li>
+<li>Hiệu đỉnh với hàng kế: $5{,}0 - 2{,}4 = 2{,}6$ cm, lớn hơn $0{,}2$ cm, nên đỉnh không nhầm. Tại $f = f_0$ có cộng hưởng.</li>
+<li>Câu b: lúc ổn định, tần số bệ bằng tần số lực: $f_{\text{vật}} = 16$ Hz, không bằng $12$ Hz.</li>
+<li>Câu c: $A(16) = 1{,}0$ cm nhỏ hơn $A(12) = 5{,}0$ cm. Hiệu $4{,}0$ cm, vượt sai số $0{,}2$ cm. Lý do: $|16 - 12| = 4$ Hz, lệch khỏi $f_0$, trong khi $F_0$ và lực cản không đổi.</li>
+<li>Kiểm tra: $f = 12$ Hz là ô duy nhất có $A = 5{,}0$ cm. $f = 16$ Hz nằm trong bảng, $A = 1{,}0$ cm, khớp câu c. Đơn vị Hz và cm không trộn.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng bảng. Động cơ ở $f = 10$ Hz. $f_0 = 12$ Hz.</p>
+<ol class="tl-steps">
+<li>$|10 - 12| = 2$ Hz. Bảng: $A = 2{,}4$ cm.</li>
+<li><strong>Em điền:</strong> tần số bệ lúc ổn định bằng bao nhiêu Hz?</li>
+<li><strong>Em điền:</strong> $2{,}4$ cm so với $5{,}0$ cm — lớn hơn hay nhỏ hơn? Hiệu $2{,}6$ cm có vượt $0{,}2$ cm không?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2 và 3</summary>
+<ol class="tl-steps">
+<li>Tần số bệ $= 10$ Hz, bằng tần số lực, không bằng $f_0$.</li>
+<li>Nhỏ hơn. Hiệu $5{,}0 - 2{,}4 = 2{,}6$ cm, vượt $0{,}2$ cm, nên kết luận chắc. $|f - f_0| = 2$ Hz nhỏ hơn lúc $f = 16$ Hz (lệch $4$ Hz), nên $2{,}4$ cm vẫn lớn hơn $1{,}0$ cm — cùng một quy tắc.</li>
+</ol>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số</p>
+<p>$f_0 = 12$ Hz, động cơ ở $f = 18$ Hz. Tần số dao động của bệ là:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl25-sure8" value="chac"> Chắc</label> <label><input type="radio" name="tl25-sure8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl25-q8" id="tl25-q8a"><label for="tl25-q8a" class="tl-opt tl-no">A. $12$ Hz, vì hệ chỉ dao động ở tần số riêng</label>
+<input type="radio" name="tl25-q8" id="tl25-q8b"><label for="tl25-q8b" class="tl-opt tl-ok">B. $18$ Hz, vì lúc ổn định tần số vật bằng tần số lực</label>
+<input type="radio" name="tl25-q8" id="tl25-q8c"><label for="tl25-q8c" class="tl-opt tl-no">C. $30$ Hz, bằng tổng hai tần số</label>
+<input type="radio" name="tl25-q8" id="tl25-q8d"><label for="tl25-q8d" class="tl-opt tl-no">D. $6$ Hz, bằng hiệu hai tần số</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $18 \neq 12$ nên không cộng hưởng, nhưng vật vẫn dao động theo lực. Tần số lấy của lực, không cộng và không trừ. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — tần số riêng chỉ là chỗ biên độ lớn nhất, không phải tần số lúc ổn định khi lực có tần số khác. C — không có quy tắc cộng hai tần số. D — $|18 - 12| = 6$ Hz là độ lệch để xét biên độ, không phải tần số dao động. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h3>VI. Lợi, hại, và mang về</h3>
+
+<h4>1. Dùng tắt dần, né cộng hưởng</h4>
+
+<p><strong>🔑 Hết rung thì tắt · trùng tần số thì né</strong></p>
+
+<ul>
+<li>Giảm xóc ô tô, xe máy: dầu nuốt rung sau ổ gà.</li>
+<li>Cửa kéo tự đóng: về chỗ rồi dừng, không bật qua lại.</li>
+<li>Nhà, cầu, bệ máy, khung xe: tần số riêng phải khác xa lực cưỡng bức, kẻo gãy, đổ.</li>
+</ul>
+
+<p>Năm 1940, cầu Tacoma Narrows (Mỹ) xoắn rồi gãy: gió đều, gần tần số riêng của mặt cầu. Sơ đồ tự vẽ, không phải ảnh.</p>
+
+<!--FIG4-->
+
+<h4>2. Cộng hưởng có lợi</h4>
+
+<ul>
+<li><strong>Hộp đàn:</strong> tần số riêng gần hoạ âm của dây, tiếng to hơn. Lên dây là chỉnh tần số dây.</li>
+<li><strong>Lò vi sóng:</strong> $2{,}45$ GHz trùng tần số riêng của nước.</li>
+<li><strong>Địa chấn:</strong> chọn tần số riêng gần sóng đất để kim lệch rõ.</li>
+<li><strong>MRI:</strong> hạt nhân hiđrô có tần số quay riêng; sóng vô tuyến đúng tần số thì mô hấp thụ.</li>
+<li><strong>Máy thu thanh:</strong> vặn núm đổi tần số riêng, chọn đúng đài.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: con lắc có $f_0 = 2$ Hz, lực cưỡng bức có $f = 2$ Hz. Có cộng hưởng không?</summary>
+<p>Có. Vì $f = f_0$. Cũng đúng nếu em kiểm bằng $\omega = \omega_0$ hoặc $T = T_0$.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ $f_0 = 5$ Hz, $A = 8$ cm; $f = 8$ Hz, $A = 2$ cm. Tần số vật lần hai? $A$ nào lớn hơn?</summary>
+<p>Lần hai: $f_{\text{vật}} = 8$ Hz. Biên độ lớn hơn ở $f = 5$ Hz vì $|f - f_0| = 0$, đó là cộng hưởng. Lần $f = 8$ Hz lệch $3$ Hz nên $A$ nhỏ hơn. Hiệu $6$ cm, không cần sai số cũng thấy rõ.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Động cơ $25$ Hz: chọn $f_0 = 25$ Hz hay $8$ Hz? Dầu nhớt nhiều hay ít?</summary>
+<p>Chọn $f_0 = 8$ Hz, lệch xa $25$ Hz, tránh cộng hưởng lúc máy chạy. Dầu nên nhớt nhiều: lực cản lớn vừa hạ đỉnh cộng hưởng, vừa nuốt năng lượng khi đã tắt máy — tắt dần nhanh. Không mâu thuẫn. $f_0 = 25$ Hz sẽ cộng hưởng đúng lúc máy chạy, dù dầu nhớt cũng chỉ làm đỉnh thấp hơn chứ không xoá điều kiện $f = f_0$.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tắt dần:</strong> biên độ giảm · thành nhiệt · không có $T$.</li>
+<li><strong>Nhớt quá:</strong> về cân bằng rồi dừng.</li>
+<li><strong>Duy trì:</strong> bù một phần nhịp · $A$ không đổi · chu kì riêng.</li>
+<li><strong>Cưỡng bức:</strong> lực suốt chu kì · $f$ vật $= f$ lực.</li>
+<li><strong>Cộng hưởng:</strong> $f = f_0$ · đỉnh cao hẹp khi cản nhỏ.</li>
+<li><strong>Đọc đề:</strong> tần số vật hay $f_0$? Đừng trộn. Đỉnh bảng là $A$ lớn nhất.</li>
+</ul>
+</div>

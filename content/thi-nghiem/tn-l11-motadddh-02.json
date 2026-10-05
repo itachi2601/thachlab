@@ -1,0 +1,117 @@
+{
+  "mon": "vat-ly",
+  "lop": 11,
+  "bai": "Bài 2. Mô tả dao động điều hoà",
+  "lesson_id": 21,
+  "nguon_trong_bai": "content/lesson-samples/l11-mo-ta-dao-dong/theory.html",
+  "id": "tn-l11-motadddh-02",
+  "ten": "Năm lần đọc li độ trên đồ thị x–t",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "daodong.doc_do_thi",
+    "daodong.li_do"
+  ],
+  "muc_tieu": "Đối chiếu năm li độ đọc trên thước với x = A·cos(2πt/T) và chỉ ra sai số làm tròn 0,1 cm.",
+  "dung_cu": [
+    {"ten": "Lò xo và vật nặng trên ray ngang", "so_luong": 1},
+    {"ten": "Thước chia milimét", "so_luong": 1},
+    {"ten": "Đồng hồ hoặc camera quay chậm", "so_luong": 1}
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Chọn A = 5,0 cm, T = 1,00 s, thả từ biên dương (φ = 0).",
+      "Đọc li độ đúng năm thời điểm: 0; 0,10; 0,20; 0,30; 0,40 s.",
+      "Ghi cột x tính từ phương trình và cột x đọc theo vạch 0,1 cm."
+    ],
+    "quan_sat": [
+      "x tính (cm), làm tròn 0,001: 5,000; 4,045; 1,545; −1,545; −4,045.",
+      "x đọc (cm), làm tròn 0,1: 5,0; 4,0; 1,5; −1,5; −4,0.",
+      "Năm chấm nằm trên đường côsin của Hình 4."
+    ],
+    "rut_ra": [
+      "Li độ bám x = 5·cos(2πt) cm.",
+      "Ở t = 0,10 s, sai số tuyệt đối |4,045 − 4,0| = 0,045 cm, do làm tròn tới milimét.",
+      "Bốn lần đọc lẻ đều lệch 0,045 cm; lần t = 0 đọc đúng vì không có phần lẻ."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "A",
+      "ten": "Biên độ",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 2,
+      "max": 8,
+      "mac_dinh": 5,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Chu kì",
+      "don_vi": "s",
+      "kieu": "co_dinh",
+      "gia_tri": 1
+    },
+    {
+      "ky_hieu": "phi",
+      "ten": "Pha ban đầu",
+      "don_vi": "rad",
+      "kieu": "co_dinh",
+      "gia_tri": 0
+    },
+    {
+      "ky_hieu": "x_tinh",
+      "ten": "Li độ tính, làm tròn 0,001 cm",
+      "don_vi": "cm",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "x_doc",
+      "ten": "Li độ đọc trên thước",
+      "don_vi": "cm",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "x = A*cos(2*pi*t/T + phi)",
+      "x_tinh = round(x, 3)",
+      "x_doc = round(x, 1)"
+    ],
+    "gia_thiet": [
+      "A = 5 cm, T = 1 s, phi = 0",
+      "bỏ qua ma sát",
+      "thước chia nhỏ nhất 1 mm, đọc làm tròn tới 0,1 cm"
+    ]
+  },
+  "so_lieu_mau": {
+    "cot": ["t (s)", "x tinh (cm)", "x doc (cm)"],
+    "hang": [
+      [0, 5.0, 5.0],
+      [0.1, 4.045, 4.0],
+      [0.2, 1.545, 1.5],
+      [0.3, -1.545, -1.5],
+      [0.4, -4.045, -4.0]
+    ],
+    "ghi_chu": "Năm lần đo. x = 5·cos(2πt) cm. x tính = round(x, 3); x đọc = round(x, 1). |4,045 − 4,0| = 0,045 cm."
+  },
+  "ket_qua_ky_vong": "Năm li độ tính 5,000; 4,045; 1,545; −1,545; −4,045 cm. Sai số làm tròn tại t = 0,10 s là 0,045 cm.",
+  "hien_tuong_hay_sai": [
+    "Lấy số đọc thước làm biên độ.",
+    "Tưởng hai đỉnh trên đồ thị x–t cho bước sóng thay vì chu kì."
+  ],
+  "sai_so_thuong_gap": [
+    "Làm tròn tới 0,1 cm cắt phần lẻ 0,045 cm ở bốn lần đọc lẻ.",
+    "Bấm lệch thời điểm so với các mốc 0,10 s."
+  ],
+  "an_toan": "Không đứng đối diện đầu lò xo khi thả.",
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "dieu_khien": ["A"],
+    "dau_ra": ["đường x–t", "năm chấm", "hai cột x tính và x đọc"],
+    "hinh_trong_bai": "Hình 4",
+    "y_tuong": "Chấm phải nằm trên đường cos. Cột đọc lệch 0,045 cm khi phần thập phân không chẵn 0,1."
+  }
+}

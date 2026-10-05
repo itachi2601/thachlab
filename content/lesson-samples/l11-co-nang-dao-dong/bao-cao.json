@@ -1,0 +1,55 @@
+{
+  "bai": "Bài 5. Động năng và thế năng",
+  "lesson_id": 24,
+  "thu_muc": "content/lesson-samples/l11-co-nang-dao-dong",
+  "files": [
+    "content/lesson-samples/l11-co-nang-dao-dong/theory.src.html",
+    "content/lesson-samples/l11-co-nang-dao-dong/theory.html",
+    "content/lesson-samples/l11-co-nang-dao-dong/svg_lib.py",
+    "content/lesson-samples/l11-co-nang-dao-dong/build_figs.py",
+    "content/lesson-samples/l11-co-nang-dao-dong/build_bundle.py",
+    "content/lesson-samples/l11-co-nang-dao-dong/bundle.json",
+    "content/lesson-samples/l11-co-nang-dao-dong/bao-cao.json",
+    "content/thi-nghiem/tn-l11-conangdddh-01.json",
+    "content/thi-nghiem/tn-l11-conangdddh-02.json"
+  ],
+  "tu_hien": 2069,
+  "phut": 14.8,
+  "lint": {
+    "lint_theory": "ok",
+    "lint_do_dai": "ok, 1 cảnh báo mềm: 2069 từ > 2000, dưới trần 2500",
+    "check_quizzes": "ok, 7 quiz",
+    "thi_nghiem": "ok",
+    "kiem_tran": "ok, không tràn ngang",
+    "validate_bundle": "ok"
+  },
+  "hinh": [
+    "Hình 1. Xích đu: biên dừng, VTCB nhanh; kèm lò xo cửa và nam châm tủ",
+    "Hình 2. Et(x) parabol lõm lên, Ed(x) lõm xuống, cắt tại ±A/√2",
+    "Hình 3. Et và Ed ngược pha, chu kì T/2; W nằm ngang"
+  ],
+  "quiz_dap_an_dung": ["C", "B", "D", "A", "B", "C", "D"],
+  "y_bat_buoc_da_giu": [
+    "Mốc thế năng tại VTCB; x = A cos(ωt+φ)",
+    "Et = ½kx² = ½mω²x² = ½mω²A² cos²(ωt+φ)",
+    "Ed = ½mv² = ½mω²A² sin²(ωt+φ) = ½mω²(A²−x²)",
+    "Et max = ½kA² tại biên; Et min = 0 tại VTCB",
+    "Ed max = ½mω²A² tại VTCB; Ed min = 0 tại hai biên",
+    "Et tăng ra biên, giảm về VTCB; Ed ngược lại; không cùng tăng hoặc cùng giảm",
+    "Biến thiên với 2ω, 2f, chu kì T/2, ngược pha",
+    "Et(x) lõm lên, Ed(x) lõm xuống, cắt tại x = ±A/√2",
+    "W = ½kA² = ½mω²A² = hằng số, tỉ lệ A²; con lắc lò xo không phụ thuộc m; W(t) nằm ngang",
+    "Năm chỗ: Ed max, Ed=3Et, Ed=Et, Ed=Et/3, Et max — kèm v và số lần mỗi chu kì",
+    "Ed = n Et: x = ±A/√(n+1), v = ±vmax/√(1/n+1)",
+    "Con lắc lò xo: ω=√(k/m), T=2π√(m/k), f=(1/2π)√(k/m); chu kì không phụ thuộc A",
+    "Bảng nhiều cột của bản cũ đã thành bảng 2 cột và danh sách"
+  ],
+  "anh_da_xem": [
+    "xem-thu/fig-1.webp",
+    "xem-thu/fig-2.webp",
+    "xem-thu/fig-3.webp",
+    "xem-thu/sec-2c (bảng số và công thức ω, T)",
+    "xem-thu/sec-5a (đề bài mẫu)"
+  ],
+  "van_de_con": []
+}

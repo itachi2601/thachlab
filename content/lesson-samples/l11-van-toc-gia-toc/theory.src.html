@@ -1,0 +1,505 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Viết $v$ và $a$ khi $x=A\cos(\omega t+\varphi)$, kể cả $a=-\omega^{2}x$.</li>
+<li>Chỉ chỗ $|v|$, $|a|$ lớn nhất và nhỏ nhất; đọc chiều $\vec v$, $\vec a$.</li>
+<li>Dùng ba hệ thức không chứa $t$, và các mốc $T/12$, $T/8$, $T/6$, $T/4$.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Bài đọc khoảng 15 phút.</p>
+</div>
+
+<h3>I. Mở bài: xích đu, con lắc, bàn máy</h3>
+
+<p>Ghế xích đu đưa em lên cao rồi hạ xuống. Có lúc gió rít bên tai, có lúc ghế như khựng lại rồi đổi chiều.</p>
+
+<p>Con lắc lò xo trên bàn cũng trượt qua lại. Bàn máy CNC chạy tới lui trên ray, nhưng khúc hãm được lập trình gần như đều.</p>
+
+<p>Câu hỏi để nghĩ trước khi đọc tiếp: <em>trên quỹ đạo con lắc, chỗ nào tốc độ lớn nhất?</em></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Chỗ nào trên quỹ đạo thì tốc độ lớn nhất?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q1" id="tl22-q1a"><label for="tl22-q1a" class="tl-opt tl-no">A. Hai điểm cao nhất, vì ghế vừa tích được đà</label>
+<input type="radio" name="tl22-q1" id="tl22-q1b"><label for="tl22-q1b" class="tl-opt tl-ok">B. Chỗ thấp nhất, khi qua vị trí cân bằng</label>
+<input type="radio" name="tl22-q1" id="tl22-q1c"><label for="tl22-q1c" class="tl-opt tl-no">C. Mọi chỗ như nhau, vì chu kì không đổi</label>
+<input type="radio" name="tl22-q1" id="tl22-q1d"><label for="tl22-q1d" class="tl-opt tl-no">D. Ngay sau khi rời điểm cao, vì lúc đó mới bắt đầu nhanh</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỗ thấp nhất là vị trí cân bằng: tốc độ lớn nhất. Hai đầu cao là biên, tốc độ bằng 0 rồi mới đổi chiều. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là biên, tốc độ bằng 0. C lẫn chu kì không đổi với tốc độ không đổi. D vừa rời điểm cao thì tốc độ còn nhỏ, đang tăng.</p></div>
+</div>
+</div>
+
+<!--FIG1-->
+
+<p>Mũi xanh lá dài nhất khi vật qua O. Mũi đỏ dài nhất ở hai biên và luôn chĩa về O.</p>
+<p>Cùng hướng thì nhanh dần, đó là quãng từ $+A$ về O. Ngược hướng thì chậm dần, đó là quãng từ O ra $-A$.</p>
+
+<h3>II. Kiến thức: vận tốc, gia tốc và hệ thức</h3>
+
+<h4>1. Vận tốc</h4>
+
+<p><strong>🔑 Sớm π/2 · Cực đại khi qua O</strong></p>
+
+<p>Nếu $x=A\cos(\omega t+\varphi)$ thì $v$ là đạo hàm của $x$ theo thời gian:</p>
+
+<p>$$v=-A\omega\sin(\omega t+\varphi)$$</p>
+
+<p>$$v=A\omega\cos(\omega t+\varphi+\pi/2)$$</p>
+
+<p>Đơn vị cùng loại với $x$: cm thì $v$ là cm/s.</p>
+
+<ul>
+<li>$v$ biến thiên điều hoà, cùng tần số với $x$.</li>
+<li>$v$ sớm pha $\pi/2$ so với $x$ ($x$ trễ $v$ một góc $\pi/2$): vuông pha.</li>
+<li>$v$ chạy từ $-A\omega$ đến $+A\omega$. Tốc độ $|v|$ chạy từ $0$ đến $A\omega$.</li>
+<li>$|v|_{min}=0$ tại hai biên. $|v|_{max}=A\omega$ khi qua vị trí cân bằng.</li>
+<li>$v_{min}=-A\omega$ khi qua O theo chiều âm. $v_{max}=+A\omega$ khi qua O theo chiều dương.</li>
+<li>$\vec v$ cùng chiều chuyển động. $v\gt 0$ là chiều dương.</li>
+<li>Từ O ra biên: chậm dần. Từ biên về O: nhanh dần. Đổi chiều tại hai biên.</li>
+</ul>
+
+<p><strong>Mẹo:</strong> biên thì dừng, giữa thì nhanh.</p>
+
+<details class="tl-details">
+<summary>Vì sao không có nhanh dần đều hay chậm dần đều</summary>
+<p>$|a|=\omega^{2}|x|$ đổi theo chỗ đứng, nên độ nhanh không tăng hay giảm theo một nhịp cố định. Chỉ có nhanh dần và chậm dần, không có chữ “đều”.</p>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l11-vantocdddh-01">
+<p class="tl-label">🔬 Thí nghiệm: đo A, T rồi tính v và a</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> con lắc lò xo nằm ngang. Kéo lệch $A=4{,}0$ cm (thước, sai số $0{,}1$ cm) rồi thả. Bấm thời gian 10 dao động, năm lần: $8{,}02$ s; $7{,}96$ s; $8{,}08$ s; $7{,}94$ s; $8{,}00$ s.</li>
+<li><strong>Quan sát:</strong> $T=t_{10}/10$. Trung bình $T=0{,}800$ s, $\omega=7{,}854$ rad/s. Với $A=4{,}0$ cm thì $v_{max}=31{,}42$ cm/s. Tại $x=2{,}0$ cm: tốc độ $27{,}21$ cm/s, $a=-123{,}4$ cm/s². Tại biên $x=4{,}0$ cm: tốc độ $0$, $a=-246{,}7$ cm/s².</li>
+<li><strong>Rút ra:</strong> $v_{max}=A\omega$ và $a=-\omega^{2}x$. Càng xa O, tốc độ càng nhỏ và $|a|$ càng lớn.</li>
+</ol>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lần</th><th>t₁₀ (s)</th><th>T (s)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>8,02</td><td>0,802</td></tr>
+<tr><td>2</td><td>7,96</td><td>0,796</td></tr>
+<tr><td>3</td><td>8,08</td><td>0,808</td></tr>
+<tr><td>4</td><td>7,94</td><td>0,794</td></tr>
+<tr><td>5</td><td>8,00</td><td>0,800</td></tr>
+</tbody>
+</table></div>
+<p>$\Delta T=(0{,}808-0{,}794)/2=0{,}007$ s.</p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>x (cm)</th><th>Tốc độ (cm/s)</th><th>a (cm/s²)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>31,42</td><td>0</td></tr>
+<tr><td>2,0</td><td>27,21</td><td>−123,4</td></tr>
+<tr><td>4,0</td><td>0</td><td>−246,7</td></tr>
+</tbody>
+</table></div>
+<p>Sai số ước lượng: $\Delta v_{max}\approx 1{,}06$ cm/s và $\Delta a$ tại biên $\approx 10{,}5$ cm/s². Lệch $v_{max}$ giữa lần 3 và lần 4 chỉ $0{,}55$ cm/s — nhỏ hơn phần do thước.</p>
+<details class="tl-details">
+<summary>Xem năm lần và cách cộng sai số</summary>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lần</th><th>v cực đại và a tại biên</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>31,34 cm/s · −245,5 cm/s²</td></tr>
+<tr><td>2</td><td>31,57 cm/s · −249,2 cm/s²</td></tr>
+<tr><td>3</td><td>31,10 cm/s · −241,9 cm/s²</td></tr>
+<tr><td>4</td><td>31,65 cm/s · −250,5 cm/s²</td></tr>
+<tr><td>5</td><td>31,42 cm/s · −246,7 cm/s²</td></tr>
+</tbody>
+</table></div>
+<p>$\Delta A/A+\Delta T/T=0{,}025+0{,}00875=0{,}03375$, nhân $31{,}42$ được $1{,}06$ cm/s. Với $a$, lấy $2\Delta T/T+\Delta A/A=0{,}0425$, nhân $246{,}7$ được $10{,}5$ cm/s². Sai số đến từ thước đo $A$ nhiều hơn từ đồng hồ.</p>
+</details>
+</div>
+
+<p>$\varphi=0$, $x=A\cos(\omega t)$. Tại $t=T/4$, vận tốc bằng bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q2" id="tl22-q2a"><label for="tl22-q2a" class="tl-opt tl-no">A. $+A\omega$</label>
+<input type="radio" name="tl22-q2" id="tl22-q2b"><label for="tl22-q2b" class="tl-opt tl-no">B. $0$</label>
+<input type="radio" name="tl22-q2" id="tl22-q2c"><label for="tl22-q2c" class="tl-opt tl-ok">C. $-A\omega$</label>
+<input type="radio" name="tl22-q2" id="tl22-q2d"><label for="tl22-q2d" class="tl-opt tl-no">D. $-A\omega^{2}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\varphi=0$, $t=T/4$ thì $\omega t=\pi/2$, $v=-A\omega\sin(\pi/2)=-A\omega$. Li độ lúc đó bằng 0, vận tốc đang âm nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là vận tốc lúc $3T/4$. B quên rằng $T/4$ là lúc qua O, không phải biên. D là gia tốc tại $t=0$, sai đơn vị.</p></div>
+</div>
+
+<h4>2. Gia tốc</h4>
+
+<p><strong>🔑 Trái dấu với x · Luôn hướng về O</strong></p>
+
+<p>$a$ là đạo hàm của $v$:</p>
+
+<p>$$a=-A\omega^{2}\cos(\omega t+\varphi)$$</p>
+
+<p>$$a=A\omega^{2}\cos(\omega t+\varphi+\pi)$$</p>
+
+<p>$$a=-\omega^{2}x$$</p>
+
+<ul>
+<li>$a$ chạy từ $-A\omega^{2}$ đến $+A\omega^{2}$. $|a|$ chạy từ $0$ đến $A\omega^{2}$.</li>
+<li>$a_{min}=-A\omega^{2}$ tại biên dương. $a_{max}=+A\omega^{2}$ tại biên âm.</li>
+<li>$|a|=0$ tại O. $|a|_{max}=\omega^{2}A$ tại hai biên.</li>
+<li>$\vec a$ luôn hướng về O, đổi chiều khi qua O.</li>
+<li>Chỗ $|v|$ lớn nhất chính là chỗ $a=0$.</li>
+<li>Ra biên: $\vec v$ và $\vec a$ ngược chiều, chậm dần. Về O: cùng chiều, nhanh dần.</li>
+<li>Trong một chu kì, $v$ và $a$ cùng dấu trong $\Delta t=T/2$.</li>
+</ul>
+
+<p>Đồ thị $a$–$t$ ngược pha với li độ, và sớm pha $\pi/2$ so với vận tốc.</p>
+
+<!--FIG2-->
+
+<p>Hình 2 vẽ theo đơn vị $A$, $A\omega$, $A\omega^{2}$. Số ở thí nghiệm trên là trường hợp $A=4{,}0$ cm, $T=0{,}800$ s.</p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Mốc</th><th>Đọc trên hình 2</th></tr></thead>
+<tbody>
+<tr><td>$t=0$</td><td>$x=+A$, $v=0$, $a=-A\omega^{2}$</td></tr>
+<tr><td>$t=T/4$</td><td>$x=0$, $v=-A\omega$, $a=0$</td></tr>
+<tr><td>$t=T/2$</td><td>$x=-A$, $v=0$, $a=+A\omega^{2}$</td></tr>
+<tr><td>$t=3T/4$</td><td>$x=0$, $v=+A\omega$, $a=0$</td></tr>
+</tbody>
+</table></div>
+
+<p>Đỉnh của $v$ lệch trước đỉnh của $x$ đúng một phần tư chu kì. Đường $a$ lật ngược đường $x$.</p>
+
+<p>$a_{max}=+A\omega^{2}$ đạt tại đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q3" id="tl22-q3a"><label for="tl22-q3a" class="tl-opt tl-no">A. Biên dương</label>
+<input type="radio" name="tl22-q3" id="tl22-q3b"><label for="tl22-q3b" class="tl-opt tl-no">B. VTCB, đang đi chiều dương</label>
+<input type="radio" name="tl22-q3" id="tl22-q3c"><label for="tl22-q3c" class="tl-opt tl-no">C. VTCB, đang đi chiều âm</label>
+<input type="radio" name="tl22-q3" id="tl22-q3d"><label for="tl22-q3d" class="tl-opt tl-ok">D. Biên âm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $a=-\omega^{2}x$, nên $a$ dương nhất khi $x=-A$: $a_{max}=+A\omega^{2}$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là biên dương, nơi $a$ đạt $a_{min}=-A\omega^{2}$. B và C là O, nơi $a=0$. Đừng lẫn $a_{max}$ với $|a|_{max}$.</p></div>
+</div>
+
+<h4>3. Quan hệ pha và vị trí đặc biệt</h4>
+
+<p><strong>🔑 Vuông pha · Ngược pha · Xa thì chậm</strong></p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Cặp</th><th>Lệch pha</th></tr></thead>
+<tbody>
+<tr><td>$v$ so với $x$</td><td>sớm $\pi/2$, vuông pha</td></tr>
+<tr><td>$a$ so với $v$</td><td>sớm $\pi/2$, vuông pha</td></tr>
+<tr><td>$a$ so với $x$</td><td>sớm $\pi$, ngược pha</td></tr>
+</tbody>
+</table></div>
+
+<p>Dấu $\mp$ ở gia tốc nghĩa là $a$ trái dấu với $x$. $v_{max}$ dưới đây là $A\omega$, $a_{max}$ là $A\omega^{2}$.</p>
+
+<ul>
+<li><strong>O:</strong> $x=0$; $v=\pm A\omega$; $a=0$.</li>
+<li><strong>$\pm A/2$:</strong> $v=\pm v_{max}\sqrt{3}/2$; $a=\mp a_{max}/2$.</li>
+<li><strong>$\pm A\sqrt{2}/2$:</strong> $v=\pm v_{max}\sqrt{2}/2$; $a=\mp a_{max}\sqrt{2}/2$.</li>
+<li><strong>$\pm A\sqrt{3}/2$:</strong> $v=\pm v_{max}/2$; $a=\mp a_{max}\sqrt{3}/2$.</li>
+<li><strong>Biên $\pm A$:</strong> $v=0$; $a=\mp a_{max}$.</li>
+</ul>
+
+<p>Càng xa vị trí cân bằng, $|v|$ càng giảm và $|a|$ càng tăng.</p>
+
+<details class="tl-details">
+<summary>Vì sao trong một chu kì, v và a cùng dấu đúng T/2</summary>
+<p>Lấy $\varphi=0$. $v\gt 0$ khi $t$ từ $T/2$ đến $T$. $a\gt 0$ khi $t$ từ $T/4$ đến $3T/4$. Cùng dương: $T/4$. Cùng âm: thêm $T/4$. Tổng $T/2$.</p>
+</details>
+
+<h4>4. Hệ thức độc lập với thời gian</h4>
+
+<p><strong>🔑 Bỏ t · Elip hoặc đoạn thẳng</strong></p>
+
+<p>Hai đại lượng cùng tần số $m=M\cos(\omega t+\varphi_1)$, $n=N\cos(\omega t+\varphi_2)$, lệch pha $\Delta\varphi=\varphi_2-\varphi_1$:</p>
+
+<ul>
+<li><strong>Cùng pha</strong> ($\Delta\varphi=2k\pi$): $m/M=n/N$.</li>
+<li><strong>Ngược pha</strong> ($\Delta\varphi=(2k+1)\pi$): $m/M=-n/N$.</li>
+<li><strong>Vuông pha</strong> ($\Delta\varphi=(2k+1)\pi/2$): $(m/M)^{2}+(n/N)^{2}=1$.</li>
+</ul>
+
+<p>$x$ và $v$ vuông pha, nên</p>
+
+<p>$$(x/A)^{2}+(v/\omega A)^{2}=1$$</p>
+
+<p>$$A^{2}=x^{2}+v^{2}/\omega^{2}$$</p>
+
+<p>Đồ thị $x$–$v$ là một elip. Thế $x=A/2$ thì $(1/2)^{2}+(v/A\omega)^{2}=1$, nên $|v|=A\omega\sqrt{3}/2$. Cứ thế ra các mốc còn lại ở mục trên.</p>
+
+<p>$$(1/2)^{2}+(\sqrt{3}/2)^{2}=1$$</p>
+
+<!--FIG3-->
+
+<p>$v$ và $a$ vuông pha, nên</p>
+
+<p>$$(v/\omega A)^{2}+(a/\omega^{2}A)^{2}=1$$</p>
+
+<p>$$A^{2}=v^{2}/\omega^{2}+a^{2}/\omega^{4}$$</p>
+
+<p>Đồ thị $v$–$a$ cũng là một elip. $x$ và $a$ ngược pha, nên $a=-\omega^{2}x$: đồ thị là đoạn thẳng qua gốc.</p>
+
+<!--FIG4-->
+
+<details class="tl-details">
+<summary>Suy nhanh A² = x² + v²/ω²</summary>
+<p>$x=A\cos\theta$, $v=-A\omega\sin\theta$. Chia $A$ và $A\omega$ rồi bình phương, cộng lại: $\cos^{2}\theta+\sin^{2}\theta=1$.</p>
+</details>
+
+<h4>5. Thời gian tới vị trí đặc biệt</h4>
+
+<p><strong>🔑 Từ O ra xa: 12 · 8 · 6 · 4</strong></p>
+
+<p>Thời gian ngắn nhất từ $x=0$ tới các mốc (vòng tròn lượng giác):</p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Từ O tới</th><th>Thời gian</th></tr></thead>
+<tbody>
+<tr><td>$\pm A/2$</td><td>$T/12$</td></tr>
+<tr><td>$\pm A\sqrt{2}/2$</td><td>$T/8$</td></tr>
+<tr><td>$\pm A\sqrt{3}/2$</td><td>$T/6$</td></tr>
+<tr><td>$\pm A$</td><td>$T/4$</td></tr>
+</tbody>
+</table></div>
+
+<p>Giữa hai mốc liền kề, đi theo chiều dương:</p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đoạn</th><th>Thời gian</th></tr></thead>
+<tbody>
+<tr><td>$-A/2$ đến $A/2$</td><td>$T/6$</td></tr>
+<tr><td>$A/2$ đến $A\sqrt{2}/2$</td><td>$T/24$</td></tr>
+<tr><td>$A\sqrt{2}/2$ đến $A\sqrt{3}/2$</td><td>$T/24$</td></tr>
+<tr><td>$A\sqrt{3}/2$ đến $A$</td><td>$T/12$</td></tr>
+</tbody>
+</table></div>
+
+<p>Đoạn $-A/2$ đến $A/2$ có đi qua O. Ba đoạn sau là đi ra biên dương. Kiểm nhanh: $T/4-T/12=T/6$, đúng bằng tổng ba đoạn đó.</p>
+
+<p>Với con lắc vừa đo, $T=0{,}800$ s thì $T/12=0{,}067$ s, $T/8=0{,}100$ s, $T/6=0{,}133$ s, $T/4=0{,}200$ s. Đoạn $T/24$ chỉ khoảng $0{,}033$ s.</p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Thời gian</th><th>Góc</th></tr></thead>
+<tbody>
+<tr><td>$T$</td><td>$360^{\circ}$ · $2\pi$</td></tr>
+<tr><td>$T/2$</td><td>$180^{\circ}$ · $\pi$</td></tr>
+<tr><td>$T/3$</td><td>$120^{\circ}$ · $2\pi/3$</td></tr>
+<tr><td>$T/4$</td><td>$90^{\circ}$ · $\pi/2$</td></tr>
+<tr><td>$T/6$</td><td>$60^{\circ}$ · $\pi/3$</td></tr>
+<tr><td>$T/8$</td><td>$45^{\circ}$ · $\pi/4$</td></tr>
+<tr><td>$T/12$</td><td>$30^{\circ}$ · $\pi/6$</td></tr>
+</tbody>
+</table></div>
+
+<p>Từ O tới $\pm A\sqrt{2}/2$ mất bao lâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q4" id="tl22-q4a"><label for="tl22-q4a" class="tl-opt tl-no">A. $T/12$</label>
+<input type="radio" name="tl22-q4" id="tl22-q4b"><label for="tl22-q4b" class="tl-opt tl-no">B. $T/6$</label>
+<input type="radio" name="tl22-q4" id="tl22-q4c"><label for="tl22-q4c" class="tl-opt tl-no">C. $T/4$</label>
+<input type="radio" name="tl22-q4" id="tl22-q4d"><label for="tl22-q4d" class="tl-opt tl-ok">D. $T/8$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\cos\theta=\sqrt{2}/2$ lệch khỏi góc vuông một góc $\pi/4$, tức $T/8$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là tới $\pm A/2$. B là tới $\pm A\sqrt{3}/2$. C là tới biên $\pm A$. Mốc $A\sqrt{2}/2$ nằm giữa $A/2$ và $A\sqrt{3}/2$.</p></div>
+</div>
+
+<h3>III. Ba cái bẫy hay gặp</h3>
+
+<h4>1. Lẫn v với tốc độ</h4>
+
+<p><strong>🔑 v có dấu · |v| không âm</strong></p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đại lượng</th><th>Cực trị</th></tr></thead>
+<tbody>
+<tr><td>$v$</td><td>từ $-A\omega$ đến $+A\omega$</td></tr>
+<tr><td>$|v|$</td><td>từ $0$ đến $A\omega$</td></tr>
+<tr><td>$v_{max}$</td><td>$+A\omega$, qua O chiều dương</td></tr>
+<tr><td>$|v|_{max}$</td><td>$A\omega$, qua O cả hai chiều</td></tr>
+</tbody>
+</table></div>
+
+<p>Vật qua O theo chiều âm. Phát biểu nào đúng?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl22-sure5" value="chac"> Chắc</label>
+<label><input type="radio" name="tl22-sure5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q5" id="tl22-q5a"><label for="tl22-q5a" class="tl-opt tl-ok">A. $v=-A\omega$ và $|v|=A\omega$</label>
+<input type="radio" name="tl22-q5" id="tl22-q5b"><label for="tl22-q5b" class="tl-opt tl-no">B. $v=+A\omega$, vì tốc độ lớn nhất luôn lấy dấu dương</label>
+<input type="radio" name="tl22-q5" id="tl22-q5c"><label for="tl22-q5c" class="tl-opt tl-no">C. $v=0$, vì $a=0$ tại O</label>
+<input type="radio" name="tl22-q5" id="tl22-q5d"><label for="tl22-q5d" class="tl-opt tl-no">D. $|v|=0$, vì vật đổi chiều tại O</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Qua O theo chiều âm thì vận tốc âm nhất, nhưng tốc độ vẫn là $A\omega$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B quên chiều âm. C gộp $a=0$ với $v=0$. D tưởng đổi chiều ở O — đổi chiều là ở hai biên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>2. Tưởng a cùng chiều v, hoặc có chuyển động đều</h4>
+
+<p><strong>🔑 Ra biên thì ngược chiều</strong></p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đang đi</th><th>$\vec v$ và $\vec a$</th></tr></thead>
+<tbody>
+<tr><td>Từ O ra biên</td><td>ngược chiều, chậm dần, không đều</td></tr>
+<tr><td>Từ biên về O</td><td>cùng chiều, nhanh dần, không đều</td></tr>
+<tr><td>Nhanh dần đều</td><td>không có trong dao động điều hoà</td></tr>
+</tbody>
+</table></div>
+
+<p>Vật đi từ O ra biên dương. Câu nào đúng?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl22-sure6" value="chac"> Chắc</label>
+<label><input type="radio" name="tl22-sure6" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q6" id="tl22-q6a"><label for="tl22-q6a" class="tl-opt tl-no">A. $a$ cùng chiều $v$, nhanh dần đều</label>
+<input type="radio" name="tl22-q6" id="tl22-q6b"><label for="tl22-q6b" class="tl-opt tl-no">B. $a$ cùng chiều $v$, nhanh dần không đều</label>
+<input type="radio" name="tl22-q6" id="tl22-q6c"><label for="tl22-q6c" class="tl-opt tl-ok">C. $a$ ngược chiều $v$, chậm dần không đều</label>
+<input type="radio" name="tl22-q6" id="tl22-q6d"><label for="tl22-q6d" class="tl-opt tl-no">D. $a=0$ trên cả đoạn, vì tốc độ đang giảm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ra biên dương thì $v\gt 0$ còn $a=-\omega^{2}x\lt 0$. $|a|$ còn tăng theo $x$, nên không đều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B cùng chiều — đó là lúc từ biên về O. A còn thêm “đều”, mà $a$ đổi theo $x$. D chỉ đúng ngay tại O, không đúng trên đoạn ra biên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>3. Lẫn v_max với tốc độ truyền</h4>
+
+<p><strong>🔑 Aω là của vật · không phải sóng</strong></p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đại lượng</th><th>Do cái gì quyết</th></tr></thead>
+<tbody>
+<tr><td>$v_{max}=A\omega$</td><td>biên độ và tần số của vật</td></tr>
+<tr><td>Tốc độ truyền sóng</td><td>môi trường, không phải $A\omega$</td></tr>
+</tbody>
+</table></div>
+
+<p>Con lắc có $A=2$ cm, $f=5$ Hz. Tốc độ cực đại của vật là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q7" id="tl22-q7a"><label for="tl22-q7a" class="tl-opt tl-no">A. $10$ cm/s</label>
+<input type="radio" name="tl22-q7" id="tl22-q7b"><label for="tl22-q7b" class="tl-opt tl-ok">B. $20\pi$ cm/s</label>
+<input type="radio" name="tl22-q7" id="tl22-q7c"><label for="tl22-q7c" class="tl-opt tl-no">C. $5$ cm/s</label>
+<input type="radio" name="tl22-q7" id="tl22-q7d"><label for="tl22-q7d" class="tl-opt tl-no">D. $2$ cm/s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\omega=2\pi f=10\pi$ rad/s, $v_{max}=A\omega=20\pi$ cm/s. Đây không phải tốc độ lan của một sóng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là $A\cdot f$, quên $2\pi$. C lấy mỗi tần số. D lấy mỗi biên độ. Công thức là $v_{max}=2\pi f A$.</p></div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem.</p>
+<details class="tl-details">
+<summary>1. Viết v khi x = A cos(ωt+φ). <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v=-A\omega\sin(\omega t+\varphi)=A\omega\cos(\omega t+\varphi+\pi/2)$. Sớm $x$ một góc $\pi/2$.</p>
+</details>
+<details class="tl-details">
+<summary>2. |v| và v cực trị ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$|v|_{min}=0$ tại biên. $|v|_{max}=A\omega$ khi qua O. $v_{min}=-A\omega$ chiều âm. $v_{max}=+A\omega$ chiều dương.</p>
+</details>
+<details class="tl-details">
+<summary>3. Viết a và chỗ a_max, a_min. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$a=-A\omega^{2}\cos(\omega t+\varphi)=-\omega^{2}x$. $a_{min}=-A\omega^{2}$ biên dương. $a_{max}=+A\omega^{2}$ biên âm. $|a|=0$ tại O.</p>
+</details>
+<details class="tl-details">
+<summary>4. Pha giữa x, v, a. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v$ sớm $x$ góc $\pi/2$. $a$ sớm $v$ góc $\pi/2$. $a$ sớm $x$ góc $\pi$ (ngược pha).</p>
+</details>
+<details class="tl-details">
+<summary>5. Ba hệ thức bỏ t. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$(x/A)^{2}+(v/\omega A)^{2}=1$. $(v/\omega A)^{2}+(a/\omega^{2}A)^{2}=1$. $a=-\omega^{2}x$.</p>
+</details>
+<details class="tl-details">
+<summary>6. Thời gian từ O và đoạn liền kề. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tới $A/2$, $A\sqrt{2}/2$, $A\sqrt{3}/2$, $A$: $T/12$, $T/8$, $T/6$, $T/4$. Liền kề: $T/6$, $T/24$, $T/24$, $T/12$. Góc: $T\leftrightarrow 2\pi$, $T/2\leftrightarrow\pi$, $T/3\leftrightarrow 2\pi/3$, $T/4\leftrightarrow\pi/2$, $T/6\leftrightarrow\pi/3$, $T/8\leftrightarrow\pi/4$, $T/12\leftrightarrow\pi/6$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<p>Với mỗi cụm của đề, ghi dữ liệu rồi mới gọi công thức.</p>
+
+<div class="tl-box">
+<p class="tl-label">📄 Đề bài</p>
+<p>Vật dao động điều hoà trên trục Ox. Biên độ $A=4$ cm, $\omega=10$ rad/s. Lúc $t=0$ vật ở biên dương.</p>
+<p>a) Viết $v(t)$ và $a(t)$. b) Khi qua $x=2$ cm theo chiều âm, tính $v$ và $a$. c) Thời gian từ biên dương tới $x=2$ cm.</p>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức</th></tr></thead>
+<tbody>
+<tr><td>biên độ 4 cm</td><td>$A=4$ cm</td><td>$v_{max}=A\omega$</td></tr>
+<tr><td>$\omega=10$ rad/s</td><td>$\omega=10$</td><td>$a=-\omega^{2}x$</td></tr>
+<tr><td>$t=0$ ở biên dương</td><td>$\varphi=0$</td><td>$x=A\cos(\omega t)$</td></tr>
+<tr><td>qua $x=2$ cm chiều âm</td><td>$x=2$, $v\lt 0$</td><td>$A^{2}=x^{2}+v^{2}/\omega^{2}$</td></tr>
+<tr><td>giữ đơn vị cm, s</td><td>không đổi sang m</td><td>cùng hệ trong một bài</td></tr>
+</tbody>
+</table></div>
+
+<p>Cùng đề, độ lớn vận tốc tại $x=2$ cm là bao nhiêu?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl22-sure8" value="chac"> Chắc</label>
+<label><input type="radio" name="tl22-sure8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl22-q8" id="tl22-q8a"><label for="tl22-q8a" class="tl-opt tl-ok">A. $20\sqrt{3}$ cm/s</label>
+<input type="radio" name="tl22-q8" id="tl22-q8b"><label for="tl22-q8b" class="tl-opt tl-no">B. $40$ cm/s</label>
+<input type="radio" name="tl22-q8" id="tl22-q8c"><label for="tl22-q8c" class="tl-opt tl-no">C. $20$ cm/s</label>
+<input type="radio" name="tl22-q8" id="tl22-q8d"><label for="tl22-q8d" class="tl-opt tl-no">D. $10\sqrt{3}$ cm/s</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $|v|=\omega\sqrt{A^{2}-x^{2}}=10\sqrt{12}=20\sqrt{3}$ cm/s. Vì chiều âm, $v=-20\sqrt{3}$ cm/s. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là $A\omega$, đúng tại O chứ không tại $x=2$ cm. C là $A\omega/2$. D thiếu thừa số 2 khi $\sqrt{12}=2\sqrt{3}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Xem lời giải từng bước, có bước kiểm tra</summary>
+<ol class="tl-steps">
+<li>$x=4\cos(10t)$ cm, vì $\varphi=0$.</li>
+<li>$$v=-40\sin(10t)\ \text{cm/s}$$</li>
+<li>$$a=-400\cos(10t)\ \text{cm/s}^{2}$$</li>
+<li>Tại $x=2$ cm: $(2/4)^{2}+(v/40)^{2}=1$, nên $|v|=20\sqrt{3}$ cm/s. Chiều âm: $v=-20\sqrt{3}$ cm/s.</li>
+<li>$a=-\omega^{2}x=-200$ cm/s². Cùng dấu với $v$, nên đang nhanh dần về O.</li>
+<li>Từ biên tới $x=A/2$: $\cos(10t)=1/2$, $10t=\pi/3$, $t=\pi/30$ s $=T/6$.</li>
+<li><strong>Kiểm tra:</strong> $x^{2}+v^{2}/\omega^{2}=4+12=16=A^{2}$. $a$ trái dấu $x$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, nhưng lúc $x=A\sqrt{2}/2=2\sqrt{2}$ cm, vật đang đi về O.</p>
+<ol class="tl-steps">
+<li>$(x/A)^{2}=1/2$.</li>
+<li><strong>Bước 2 (em điền):</strong> $|v|=$ ?</li>
+<li><strong>Bước 3 (em điền):</strong> thời gian từ biên dương $=$ ?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2 và 3</summary>
+<p>$|v|=\omega\sqrt{A^{2}/2}=20\sqrt{2}$ cm/s, và $v=-20\sqrt{2}$ cm/s. Thời gian từ biên là $T/8=\pi/40$ s.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>Thử sức đổi pha: t = 0 ở biên âm, lần đầu qua O thì v bằng bao nhiêu?</summary>
+<p>$\varphi=\pi$, $x=-4\cos(10t)$ cm, $v=40\sin(10t)$ cm/s. Lần đầu $x=0$ lúc $t=T/4$, $v=+40$ cm/s.</p>
+</details>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<p><strong>🔑 Xích đu · Piston · Điện thoại · Bàn máy</strong></p>
+
+<ul>
+<li><strong>Xích đu:</strong> gió rít mạnh nhất ở chỗ thấp; hai đầu cao thì khựng.</li>
+<li><strong>Piston, kim đồng hồ:</strong> $|a|$ lớn nhất ở hai biên hành trình.</li>
+<li><strong>Điện thoại rung:</strong> cảm biến đọc được $a=-\omega^{2}x$ nếu dao động gần điều hoà.</li>
+<li><strong>Bàn CNC:</strong> khúc hãm thường gần đều. Đừng dùng $a=-\omega^{2}x$ để lập trình đoạn đó.</li>
+<li><strong>Đồ thị $a$–$x$:</strong> nếu là đoạn thẳng qua gốc thì dao động đang điều hoà. Elip $x$–$v$ cũng là dấu hiệu đó.</li>
+</ul>
+
+<details class="tl-details">
+<summary>⭐ A = 3 cm, T = 0,5 s. Tính v_max.</summary>
+<p>$\omega=2\pi/T=4\pi$ rad/s. $v_{max}=A\omega=12\pi$ cm/s $\approx 37{,}7$ cm/s.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ x = −A√3/2, A = 4 cm, ω = 10 rad/s, đang ra biên âm. Tính v và a.</summary>
+<p>$|v|=v_{max}/2=20$ cm/s và $v=-20$ cm/s. $a=+a_{max}\sqrt{3}/2=+200\sqrt{3}$ cm/s². $v$ và $a$ ngược chiều: chậm dần.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Chứng minh: trong một chu kì, v và a cùng dấu đúng T/2.</summary>
+<p>Với $\varphi=0$, khoảng cùng dương dài $T/4$ và cùng âm dài $T/4$. Cộng lại $T/2$. Đổi $\varphi$ chỉ dịch cả hai khoảng, độ dài không đổi.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>$v$ sớm $x$ góc $\pi/2$; $|v|$ max khi qua O</li>
+<li>$a=-\omega^{2}x$; $a_{max}$ ở biên âm</li>
+<li>Ra biên: chậm dần. Về O: nhanh dần. Không có “đều”</li>
+<li>Ba hệ thức bỏ $t$: hai elip, một đoạn thẳng</li>
+<li>Từ O: $T/12$, $T/8$, $T/6$, $T/4$</li>
+<li>Đọc đề: lấy $A$, $\omega$, chiều, rồi mới thế số</li>
+</ul>
+</div>

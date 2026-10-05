@@ -1,0 +1,64 @@
+{
+  "bai": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+  "lesson_id": 22,
+  "thu_muc": "content/lesson-samples/l11-van-toc-gia-toc",
+  "files": [
+    "content/lesson-samples/l11-van-toc-gia-toc/theory.src.html",
+    "content/lesson-samples/l11-van-toc-gia-toc/theory.html",
+    "content/lesson-samples/l11-van-toc-gia-toc/svg_lib.py",
+    "content/lesson-samples/l11-van-toc-gia-toc/build_figs.py",
+    "content/lesson-samples/l11-van-toc-gia-toc/build_bundle.py",
+    "content/lesson-samples/l11-van-toc-gia-toc/bundle.json",
+    "content/lesson-samples/l11-van-toc-gia-toc/bao-cao.json",
+    "content/lesson-samples/l11-van-toc-gia-toc/xem-thu/",
+    "content/thi-nghiem/tn-l11-vantocdddh-01.json",
+    "content/thi-nghiem/tn-l11-vantocdddh-02.json"
+  ],
+  "tu_hien": 2088,
+  "phut": 15,
+  "lint": {
+    "theory": "ok — 44.6 KB, 4 hình, 8 quiz, 16 details",
+    "do_dai": "2088 từ hiện / ~14.9 phút; tới việc đầu 97 từ; 0 lỗi cứng; 1 cảnh báo gần trần 2000",
+    "quizzes": "ok — 8 quiz, mỗi quiz 1 tl-ok",
+    "thi_nghiem": "ok — 109 mục, index.json được script ghi lại",
+    "kiem_tran": "ok — sec-0…6 và sec-sai không tràn ngang",
+    "bundle": "ok — schema thachlab.lesson-bundle/v1, worked_examples rỗng, exam 5 câu"
+  },
+  "hinh": [
+    "Hình 1: nửa chu kì +A → −A, mũi v hướng trái, a luôn về O, v=0 ở hai biên, a=0 tại O",
+    "Hình 2: ba đồ thị x, v, a khi φ=0; v sớm x góc π/2; a ngược pha x",
+    "Hình 3: elip x–v, chiều kim đồng hồ khi θ tăng, nhãn ±A và ±Aω ngoài đường cong",
+    "Hình 4: đoạn thẳng a=−ω²x qua gốc, và elip v–a cùng chiều θ tăng"
+  ],
+  "quiz_dap_an_dung": ["B", "C", "D", "D", "A", "C", "B", "A"],
+  "y_bat_buoc_da_giu": [
+    "v=−Aω sin(ωt+φ)=Aω cos(ωt+φ+π/2); v∈[−Aω,Aω]; |v|∈[0,Aω]",
+    "|v|min=0 ở biên; |v|max=Aω qua VTCB; vmin=−Aω và vmax=+Aω theo chiều",
+    "Chậm dần ra biên, nhanh dần về VTCB, đổi chiều ở biên; không có nhanh/chậm dần đều",
+    "a=−Aω² cos(ωt+φ)=−ω²x; amin=−Aω² ở biên dương; amax=+Aω² ở biên âm; |a|=0 tại O",
+    "a luôn về O; chỗ |v| max thì a=0; v và a cùng dấu đúng T/2",
+    "Pha: v sớm x π/2; a sớm v π/2; a sớm x π",
+    "Vị trí O, ±A/2, ±A√2/2, ±A√3/2, biên cho x, v, a",
+    "Cùng pha m/M=n/N; ngược pha m/M=−n/N; vuông pha (m/M)²+(n/N)²=1",
+    "Ba hệ thức: elip x–v, elip v–a, đoạn thẳng a=−ω²x",
+    "Từ O: T/12, T/8, T/6, T/4; liền kề ra biên T/6, T/24, T/24, T/12",
+    "Quy đổi T↔2π, T/2↔π, T/3↔2π/3, T/4↔π/2, T/6↔π/3, T/8↔π/4, T/12↔π/6"
+  ],
+  "anh_da_xem": [
+    "xem-thu/fig-1.webp",
+    "xem-thu/fig-2.webp",
+    "xem-thu/fig-3.webp",
+    "xem-thu/fig-4.webp",
+    "xem-thu/sec-0.webp",
+    "xem-thu/sec-2a.webp",
+    "xem-thu/sec-2b.webp",
+    "xem-thu/sec-2c.webp",
+    "xem-thu/sec-6.webp",
+    "xem-thu/mau-tra-loi-sai.webp",
+    "xem-thu/xem-thu-desktop.webp"
+  ],
+  "van_de_con": [
+    "Lint độ dài cảnh báo 2088 từ hiện > 2000 (gần trần); vẫn trong khoảng 2000–2500 đã giao, 0 lỗi cứng.",
+    "Ảnh xem-thu-desktop bị công cụ cắt cao 1150 px nên chú thích Hình 1 cụt trên ảnh đó; fig-1.webp và mục I đủ chú thích."
+  ]
+}
