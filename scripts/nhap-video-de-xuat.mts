@@ -143,6 +143,7 @@ function main() {
 
   const ok: string[] = [];
   const bo: string[] = [];
+  const daDungTrongBang = new Set<string>(); // `${slug}|${youtube_id}` — chặn 2 dòng cùng bài dùng 1 clip
   for (const d of dong) {
     const slug = (d["Bài"] ?? "").trim();
     const viTri = (d["Vị trí"] ?? "").trim();
@@ -155,6 +156,19 @@ function main() {
       bo.push(`${slug} ${viTri}: thiếu "Nhìn vào"`);
       continue;
     }
+    // Cùng một clip xuất hiện 2 lần trong một bài là lỗi ÂM THẦM: script chèn sẽ bỏ qua
+    // (vì bài đã có id đó) mà không ai biết. Chặn ngay ở đây, cả 2 kiểu: trùng trong bảng
+    // và trùng với clip đã nằm sẵn trong HTML của bài.
+    if (daDungTrongBang.has(`${slug}|${id}`)) {
+      bo.push(`${slug} ${viTri}: clip ${id} đã dùng ở một dòng khác của cùng bài — chọn clip khác`);
+      continue;
+    }
+    const htmlBai = path.join(root, "content", "lesson-samples", slug, "theory.html");
+    if (fs.existsSync(htmlBai) && fs.readFileSync(htmlBai, "utf8").includes(id)) {
+      bo.push(`${slug} ${viTri}: clip ${id} đã nằm trong bài (chèn tay hoặc dòng khác) — chọn clip khác`);
+      continue;
+    }
+    daDungTrongBang.add(`${slug}|${id}`);
     const { bat_dau, ket_thuc } = tachKhoang(d["start–end"] ?? "");
     const video: Record<string, unknown> = { youtube_id: id };
     const nhanVideo = (d["Nhãn"] ?? "").trim();

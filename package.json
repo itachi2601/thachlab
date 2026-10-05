@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "check:a11y": "node scripts/check-a11y.mjs",
-    "test:next-steps": "tsx scripts/test-next-steps.mts"
+    "test:next-steps": "tsx scripts/test-next-steps.mts",
+    "test:offline-queue": "tsx scripts/test-offline-queue.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.0",
