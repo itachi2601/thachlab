@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 261 hàm, sinh tự động 2026-10-04
+# Hàm SQL / RPC (schema public) — 264 hàm, sinh tự động 2026-10-05
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -16,6 +16,7 @@ repo — xem trên Supabase Dashboard).
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
+- `claim_push_reminders_due(p_now timestamp with time zone)` → TABLE(subscription_id bigint, student_id uuid, endpoint text, p256dh text, auth_key text, topic_name text, lesson_id bigint, level text)
 - `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `count_question_types(qs jsonb)` → jsonb
@@ -31,6 +32,7 @@ repo — xem trên Supabase Dashboard).
 - `get_class_topic_matrix(p_students uuid[], p_exam bigint)` → TABLE(topic_id bigint, topic_name text, form text, total integer, wrong integer)
 - `get_exam_rank(p_exam_id bigint)` → TABLE(rnk integer, total integer, my_best numeric)
 - `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
+- `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
 - `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_student_learning_history(p_student uuid)` → TABLE(activity text, at timestamp with time zone, lesson_title text, item_title text, score numeric, correct_count integer, question_count integer, detail_correct_count jsonb, has_essay boolean)
@@ -157,8 +159,8 @@ repo — xem trên Supabase Dashboard).
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
@@ -178,8 +180,8 @@ repo — xem trên Supabase Dashboard).
 - `similarity_op(text, text)` → boolean
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -259,6 +261,7 @@ repo — xem trên Supabase Dashboard).
 - `unread_notification_count()` → integer
 - `update_machine_status_log(p_id bigint, p_status text, p_note text, p_created_at timestamp with time zone)` → void
 - `update_post_with_targets(p_post_id bigint, p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → void
+- `upsert_my_push_subscription(p_endpoint text, p_p256dh text, p_auth text, p_hour integer)` → void
 - `vn_today()` → date
 - `word_similarity(text, text)` → real
 - `word_similarity_commutator_op(text, text)` → boolean
