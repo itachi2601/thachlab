@@ -25,6 +25,8 @@ interface Props {
   /** false khi khách chưa đăng nhập: "0/6 bài" không có nghĩa, ẩn đi. */
   showProgress?: boolean;
   onLessonClick?: (lesson: Lesson) => void;
+  /** Trang lớp (≥1024): cột trái chỉ tên chương. Danh sách bài nằm ở cột giữa. */
+  chaptersOnly?: boolean;
   /** Kết quả ô "Tìm bài trong khoá"; null = không lọc. */
   filterLessonIds?: Set<number> | null;
   /** Phụ huynh xem tiến độ của con: bài hiện dạng chữ, không dẫn vào trang bài học. */
@@ -42,36 +44,38 @@ export default function ChapterTree(p: Props) {
         const filter = p.filterLessonIds;
         const shown = filter ? lessons.filter((l) => filter.has(l.id)) : lessons;
         if (shown.length === 0) return null;
-        const open = p.openChapterIds.has(chapter.id);
+        const open = !p.chaptersOnly && p.openChapterIds.has(chapter.id);
         const done = lessons.filter(p.isLessonDone).length;
         const picked = p.mode === "pick" && chapter.id === p.currentChapterId;
         return (
           <div key={chapter.id}>
             <button
               type="button"
-              className={`lesson-tree-chapter ${picked ? "is-current" : ""}`}
+              className={`lesson-tree-chapter ${picked ? "is-current" : ""} ${p.chaptersOnly ? "is-chapters-only" : ""}`}
               onClick={() =>
                 p.mode === "pick" && p.onPickChapter ? p.onPickChapter(chapter.id) : p.onToggleChapter(chapter.id)
               }
-              aria-expanded={open}
+              aria-expanded={p.chaptersOnly ? undefined : open}
               aria-current={picked ? "true" : undefined}
             >
               <em>{chapterIndex + 1}</em>
               <span>{chapterDisplayTitle(chapter.title)}</span>
-              {p.showProgress !== false && (
+              {p.showProgress !== false && !p.chaptersOnly && (
                 <small>{done}/{lessons.length} bài</small>
               )}
-              <ChevronDown
-                size={15}
-                className={open ? "is-open" : ""}
-                aria-hidden
-                onClick={(e) => {
-                  if (p.mode === "pick") {
-                    e.stopPropagation();
-                    p.onToggleChapter(chapter.id);
-                  }
-                }}
-              />
+              {!p.chaptersOnly && (
+                <ChevronDown
+                  size={15}
+                  className={open ? "is-open" : ""}
+                  aria-hidden
+                  onClick={(e) => {
+                    if (p.mode === "pick") {
+                      e.stopPropagation();
+                      p.onToggleChapter(chapter.id);
+                    }
+                  }}
+                />
+              )}
             </button>
             {open && (
               <ol>

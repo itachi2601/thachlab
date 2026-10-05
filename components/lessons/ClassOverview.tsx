@@ -1,46 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import type { RankStatus } from "@/features/rank/types";
 import type { LinkedChild } from "@/services/parent-links";
 import "./class-overview.css";
 
-interface StatsProps {
-  completedItems: number;
-  totalItems: number;
-  doneLessons: number;
-  totalLessons: number;
-  rank: RankStatus | null;
-}
-
-/** Dải số liệu đầu trang chương (A1): luôn lấy từ dữ liệu trang đã tải + 1 RPC rank, không query thêm. */
-export function ClassStatsStrip({ completedItems, totalItems, doneLessons, totalLessons, rank }: StatsProps) {
-  const percent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
-  const streak = rank?.daily?.streak ?? null;
-  return (
-    <div className="class-stats" role="list" aria-label="Tóm tắt tiến độ">
-      <div className="class-stat" role="listitem">
-        <b>{percent}%</b>
-        <span>Tiến độ · {completedItems}/{totalItems} mục</span>
-      </div>
-      <div className="class-stat" role="listitem">
-        <b>{doneLessons}/{totalLessons}</b>
-        <span>Bài đã học xong</span>
-      </div>
-      {rank?.season && (
-        <div className="class-stat" role="listitem">
-          <b>{rank.rp} RP</b>
-          <span>{rank.tier?.name ?? "Điểm rank mùa này"}</span>
-        </div>
-      )}
-      {streak !== null && (
-        <div className="class-stat" role="listitem">
-          <b>{streak} ngày</b>
-          <span>Chuỗi ngày học liên tiếp</span>
-        </div>
-      )}
-    </div>
-  );
+/** Một dòng tiến độ cho phụ huynh. Học sinh thấy số của đúng bài đang học trên thẻ "Nên làm tiếp". */
+export function ClassProgressLine({ completedItems, totalItems }: { completedItems: number; totalItems: number }) {
+  if (totalItems <= 0) return null;
+  return <p className="class-progress-line">{completedItems}/{totalItems} mục đã học</p>;
 }
 
 interface ParentBandProps {
@@ -69,19 +36,5 @@ export function ParentBand({ childList, selectedId, onSelect }: ParentBandProps)
       )}
       <Link href="/phu-huynh">Xem kết quả đầy đủ của con</Link>
     </div>
-  );
-}
-
-/** Dải chấm theo mục của một bài (C1): mỗi chấm một mục, đặc = đã xong. */
-export function ItemDots({ done }: { done: boolean[] }) {
-  if (done.length === 0) return null;
-  const shown = done.slice(0, 10);
-  const doneCount = done.filter(Boolean).length;
-  return (
-    <span className="class-dots" role="img" aria-label={`${doneCount}/${done.length} mục đã xong`}>
-      {shown.map((d, i) => (
-        <i key={i} className={d ? "is-done" : ""} />
-      ))}
-    </span>
   );
 }

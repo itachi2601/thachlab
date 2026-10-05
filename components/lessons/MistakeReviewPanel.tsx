@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertCircle, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import { fetchMyLatestMistakes, type MistakeReviewItem } from "@/services/lessons";
@@ -18,22 +18,18 @@ export default function MistakeReviewPanel() {
   }, [session]);
 
   if (!session || !mistakes?.length) return null;
+  const preview = Math.min(5, mistakes.length);
   return (
-    <section className="rounded-xl border border-white/10 bg-panel">
-      <button type="button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mistake-review-list" className="flex w-full items-center gap-4 p-5 text-left">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-400"><AlertCircle size={20} /></span>
-        <span className="min-w-0 flex-1">
-          <strong className="block font-display text-white">Ôn lại lỗi sai</strong>
-          <small className="mt-1 block text-slate-400">{mistakes.length} câu cần xem lại từ lần làm gần nhất</small>
-        </span>
-        <span className="text-sm font-semibold text-slate-300">{open ? "Thu gọn" : "Bắt đầu ôn"}</span>
-        <ChevronDown size={18} className={`text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
+    <section className="class-mistake">
+      <button type="button" onClick={() => setOpen((current) => !current)} aria-expanded={open} aria-controls="mistake-review-list" className="class-mistake-toggle">
+        <span>Ôn {preview} câu vừa sai</span>
+        <ChevronDown size={18} className={open ? "is-open" : ""} aria-hidden />
       </button>
       {open && (
-        <div id="mistake-review-list" className="space-y-5 border-t border-white/10 p-5">
+        <div id="mistake-review-list" className="space-y-5 pb-2">
           {mistakes.slice(0, visibleCount).map((item) => (
             <div key={`${item.examId}-${item.questionIndex}`}>
-              <p className="mb-2 text-xs font-semibold text-slate-400">{item.examTitle}</p>
+              <p className="mb-2 text-sm font-semibold text-slate-300">{item.examTitle}</p>
               <QuestionCard index={item.questionIndex + 1} question={item.question} response={item.response} review />
             </div>
           ))}

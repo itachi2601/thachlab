@@ -25,7 +25,6 @@ import {
 } from "@/services/classes";
 import {
   fetchMyProgressMarks,
-  isItemDone,
   summarizeLessonProgress,
   type LessonWithItemRefs,
   type MyProgressMarks,
@@ -42,8 +41,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { supabaseConfigured } from "@/services/supabase";
 import { academicSubject, subjectsForGrade } from "@/services/academic-subjects";
 import type { InlineLessonProgress } from "@/components/lessons/InlineLessonAccordion";
-import MasteryBadge from "@/components/mastery/MasteryBadge";
-import { MASTERY_LABEL, fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
+import { fetchChapterMastery, type MasteryLevel } from "@/services/mastery";
 import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import type { ComponentProps } from "react";
@@ -58,8 +56,7 @@ function MistakeReviewPanel(props: ComponentProps<typeof MistakeReviewPanelLazy>
     </LazyErrorBoundary>
   );
 }
-import ClassRankGroups from "@/components/rank/ClassRankGroups";
-import { ClassStatsStrip, ItemDots, ParentBand } from "@/components/lessons/ClassOverview";
+import { ClassProgressLine, ParentBand } from "@/components/lessons/ClassOverview";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import type { RankStatus } from "@/features/rank/types";
@@ -256,26 +253,45 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const openIdsForTree = new Set(treeOpenIds);
   if (selectedChapterId !== null) openIdsForTree.add(selectedChapterId);
 
-  // Mặc định thu gọn tất cả các chương khi vào trang (trừ chương được yêu cầu mở qua đường dẫn).
-  // Chỉ áp dụng một lần — sau đó người dùng tự mở/thu theo ý mình.
+  // Mặc định chỉ mở một chương: chương trên URL, không thì chương của bài đang dở.
+  // Điện thoại thu các chương còn lại để danh sách bài bắt đầu sớm. Chỉ áp dụng một lần.
   useEffect(() => {
     if (defaultChapterAppliedRef.current) return;
     if (!classes || !chapters || !lessons) return;
     if (classChapters.length === 0) return;
+    if (session && !isParent && progressMarks === null) return;
     defaultChapterAppliedRef.current = true;
-    const targetId = requestedChapterId;
-    setCollapsedChapters(new Set(classChapters.filter((c) => c.id !== targetId).map((c) => c.id)));
-  }, [classes, chapters, lessons, classChapters, requestedChapterId]);
+    let targetId = requestedChapterId;
+    if (targetId === null && progressMarks) {
+      const regular = lessons.filter(
+        (lesson) => classChapters.some((chapter) => chapter.id === lesson.chapter_id) && !isPeriodicExam(lesson.lesson_kind),
+      );
+      const pct = (lesson: LessonWithItemRefs) => {
+        const progress = lessonProgress.get(lesson.id);
+        return progress?.total ? Math.round((progress.completed / progress.total) * 100) : 0;
+      };
+      const current = regular.find((lesson) => {
+        const done = pct(lesson);
+        return done > 0 && done < 100;
+      }) ?? regular.find((lesson) => pct(lesson) < 100);
+      targetId = current?.chapter_id ?? null;
+    }
+    if (targetId === null) targetId = classChapters[0]?.id ?? null;
+    const openId = targetId;
+    setCollapsedChapters(new Set(classChapters.filter((chapter) => chapter.id !== openId).map((chapter) => chapter.id)));
+    if (openId !== null) setPickedChapterId((current) => current ?? openId);
+  }, [classes, chapters, lessons, classChapters, requestedChapterId, session, isParent, progressMarks, lessonProgress]);
 
   // Nhãn mastery cho các chương ĐANG MỞ — chạy lại mỗi khi mở thêm chương hoặc session tới sau
   // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
   useEffect(() => {
     if (!session || isParent) return;
+    if (selectedChapterId !== null) ensureChapterMastery(selectedChapterId);
     for (const ch of classChapters) {
       if (!collapsedChapters.has(ch.id)) ensureChapterMastery(ch.id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, isParent, collapsedChapters, classChapters]);
+  }, [session, isParent, collapsedChapters, classChapters, selectedChapterId]);
 
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
@@ -387,33 +403,31 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     if (started.length > 0) {
       const lesson = started.find((l) => l.id === lastLessonId) ?? started[0];
       const p = lessonProgress.get(lesson.id)!;
-      return { lesson, why: `Đang học dở: xong ${p.completed}/${p.total} mục. Làm nốt để bài này được tính là xong.` };
+      return { lesson, why: `Xong ${p.completed}/${p.total} mục` };
     }
     for (const lesson of regular) {
       const level = chapterMastery.get(lesson.chapter_id)?.get(lesson.id);
       if (level === "weak" || level === "practicing") {
-        return { lesson, why: `Bài này đang ở mức "${MASTERY_LABEL[level]}" — ôn lại sẽ nhanh hơn học bài mới.` };
+        return { lesson, why: "Ôn lại bài này trước khi học bài mới." };
       }
     }
     const next = regular.find((l) => pct(l) < 100);
     if (next) {
       const anyDone = regular.some((l) => pct(l) === 100);
-      return { lesson: next, why: anyDone ? "Bài kế tiếp em chưa học." : "Bắt đầu từ bài đầu tiên của lớp." };
+      return { lesson: next, why: anyDone ? "Bài kế tiếp." : "Bắt đầu từ bài này." };
     }
-    return { lesson: null, why: "Em đã học xong mọi bài của lớp này. Vào Luyện tập để giữ phong độ." };
+    return { lesson: null, why: "Đã học xong mọi bài. Vào Luyện tập để giữ phong độ." };
   })();
 
-  function renderNextCard(variant: "main" | "nav") {
+  function renderNextCard() {
     if (!nextAction) return null;
     const { lesson, why } = nextAction;
-    const chapter = lesson ? classChapters.find((c) => c.id === lesson.chapter_id) : null;
     return (
-      <div className={`class-next class-continue--${variant}`}>
+      <div className="class-next class-continue--main">
         <div>
           <p className="lesson-eyebrow">Nên làm tiếp</p>
           {lesson ? <p className="lesson-block-title">{lesson.title}</p> : <p className="lesson-block-title">Hoàn thành lớp này</p>}
           <p className="class-next-why">{why}</p>
-          {chapter && <p className="lesson-block-sub">{chapter.title}</p>}
         </div>
         {lesson && (
           <button type="button" className="lesson-btn" onClick={() => continueLesson(lesson)}>
@@ -428,7 +442,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const statsLessons = treeEntries.flatMap((e) => e.lessons).filter((l) => !isPeriodicExam(l.lesson_kind));
   const statsTotalItems = statsLessons.reduce((n, l) => n + (lessonProgress.get(l.id)?.total ?? l.itemCount), 0);
   const statsDoneItems = statsLessons.reduce((n, l) => n + (lessonProgress.get(l.id)?.completed ?? 0), 0);
-  const statsDoneLessons = statsLessons.filter(lessonIsComplete).length;
 
   /**
    * Một chương của mục lục: tiêu đề + thanh tiến độ + danh sách bài, kèm các bài kiểm tra giữa/cuối
@@ -490,30 +503,31 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 if (!periodic) lessonNumber += 1;
                 const complete = !!session && percent === 100;
                 const started = !!session && percent > 0 && !complete;
-                const rowClass = `class-lesson ${complete ? "is-complete" : started ? "is-started" : ""}`;
+                const level = chapterMastery.get(ch.id)?.get(lesson.id);
+                const review = (started || complete) && (level === "weak" || level === "practicing");
+                const isNext = lesson.id === nextAction?.lesson?.id;
+                const rowClass = `class-lesson ${complete && !review ? "is-complete" : isNext ? "is-started" : ""}`;
                 const rowInner = (
                   <>
                       <span className={`class-num ${periodic ? "class-num--exam" : ""}`}>
-                        {complete ? <Check size={13} /> : periodic ? "KT" : lessonNumber}
+                        {complete && !review ? <Check size={13} /> : periodic ? "KT" : lessonNumber}
                       </span>
                       <span className="class-lesson-title">
                         {lesson.title}
-                        {!periodic && <MasteryBadge level={chapterMastery.get(ch.id)?.get(lesson.id)} showLabel />}
                         {lesson.description && <small>{lesson.description}</small>}
-                        {!periodic && session && progressMarks && (
-                          <ItemDots done={lesson.itemRefs.map((item) => isItemDone(item, progressMarks))} />
-                        )}
                       </span>
                       <span className="class-meta">
                         {periodic
                           ? session ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
-                          : session
-                            ? complete
-                              ? "Hoàn thành"
-                              : started
-                                ? `Đang học · ${percent}%`
-                                : "Chưa học"
-                            : `${lesson.itemCount} mục`}
+                          : !session
+                            ? `${lesson.itemCount} mục`
+                            : review
+                              ? "Ôn lại"
+                              : complete
+                                ? "Hoàn thành"
+                                : started
+                                  ? `Đang học · ${percent}%`
+                                  : "Chưa học"}
                       </span>
                   </>
                 );
@@ -532,35 +546,39 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             </ol>
           )}
         </section>
-        {semesterExams.map((exam) => {
-          const meta = LESSON_KIND_META[exam.lesson_kind];
-          const examProgress = lessonProgress.get(exam.id);
-          const done = !!examProgress?.total && examProgress.completed >= examProgress.total;
-          const examClass = `class-lesson class-lesson--semester ${done ? "is-complete" : ""}`;
-          const examInner = (
-            <>
-              <span className="class-num class-num--exam">{done ? <Check size={13} /> : "KT"}</span>
-              <span className="class-lesson-title">
-                {exam.title}
-                <small>{meta.label}</small>
-              </span>
-              <span className="class-meta">{session ? (done ? "Đã làm" : "Chưa làm") : "Kiểm tra"}</span>
-            </>
-          );
-          return isParent ? (
-            <div key={exam.id} className={`${examClass} class-lesson--static`}>{examInner}</div>
-          ) : (
-            <Link
-              key={exam.id}
-              id={desktop ? undefined : `lesson-${exam.id}`}
-              href={lessonHref(exam)}
-              onClick={() => rememberLesson(exam)}
-              className={examClass}
-            >
-              {examInner}
-            </Link>
-          );
-        })}
+        {semesterExams.length > 0 && (
+          <div className="class-semester">
+            {semesterExams.map((exam) => {
+              const meta = LESSON_KIND_META[exam.lesson_kind];
+              const examProgress = lessonProgress.get(exam.id);
+              const done = !!examProgress?.total && examProgress.completed >= examProgress.total;
+              const examClass = `class-lesson ${done ? "is-complete" : ""}`;
+              const examInner = (
+                <>
+                  <span className="class-num class-num--exam">{done ? <Check size={13} /> : "KT"}</span>
+                  <span className="class-lesson-title">
+                    {exam.title}
+                    <small>{meta.label}</small>
+                  </span>
+                  <span className="class-meta">{session ? (done ? "Đã làm" : "Chưa làm") : "Kiểm tra"}</span>
+                </>
+              );
+              return isParent ? (
+                <div key={exam.id} className={`${examClass} class-lesson--static`}>{examInner}</div>
+              ) : (
+                <Link
+                  key={exam.id}
+                  id={desktop ? undefined : `lesson-${exam.id}`}
+                  href={lessonHref(exam)}
+                  onClick={() => rememberLesson(exam)}
+                  className={examClass}
+                >
+                  {examInner}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </Fragment>
     );
   }
@@ -571,8 +589,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     // Nút "Tiếp tục học" ở thanh đáy điện thoại: bài học gần nhất → bài đầu chưa học xong →
     // bài đầu khoá (khách chưa đăng nhập thì mọi bài đều "chưa xong" nên ra đúng bài đầu).
     const treeLessons = treeEntries.flatMap((entry) => entry.lessons);
-    const bottomLesson =
-      isParent ? null : lastLesson ?? treeLessons.find((lesson) => !lessonIsComplete(lesson)) ?? treeLessons[0] ?? null;
+    const bottomLesson = isParent
+      ? null
+      : nextAction?.lesson ?? lastLesson ?? treeLessons.find((lesson) => !lessonIsComplete(lesson)) ?? treeLessons[0] ?? null;
     return (
       <>
         <Navbar />
@@ -581,22 +600,20 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             <div className="lesson-layout lesson-layout--pick">
               <aside className="lesson-nav" aria-label="Chương trình lớp">
                 {active && chapters && lessons && classChapters.length > 0 && (
-                  <>
-                    {renderNextCard("nav")}
-                    <ChapterTree
-                      entries={treeEntries}
-                      mode="pick"
-                      currentChapterId={selectedChapterId ?? undefined}
-                      openChapterIds={openIdsForTree}
-                      onToggleChapter={toggleTreeChapter}
-                      onPickChapter={pickChapter}
-                      lessonHref={lessonHref}
-                      isLessonDone={lessonIsComplete}
-                      showProgress={!!session}
-                      readOnly={isParent}
-                      onLessonClick={rememberLesson}
-                    />
-                  </>
+                  <ChapterTree
+                    entries={treeEntries}
+                    mode="pick"
+                    chaptersOnly
+                    currentChapterId={selectedChapterId ?? undefined}
+                    openChapterIds={openIdsForTree}
+                    onToggleChapter={toggleTreeChapter}
+                    onPickChapter={pickChapter}
+                    lessonHref={lessonHref}
+                    isLessonDone={lessonIsComplete}
+                    showProgress={false}
+                    readOnly={isParent}
+                    onLessonClick={rememberLesson}
+                  />
                 )}
               </aside>
               <div className="lesson-main lesson-main--single">
@@ -613,7 +630,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 ) : (
                   <>
                     <header className="lesson-head">
-                      <p className="lesson-eyebrow">{grade === "9" ? "Trung học cơ sở" : "Trung học phổ thông"}</p>
                       <h1>{activeDisplayName}</h1>
                       {grade && GRADE_DESCRIPTIONS[grade] && (
                         <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
@@ -653,17 +669,10 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                             Tài khoản chưa nối với em nào. <Link href="/phu-huynh">Nối mã phụ huynh ở đây</Link> để xem tiến độ của con.
                           </p>
                         )}
-                        {session && progressMarks && (
-                          <ClassStatsStrip
-                            completedItems={statsDoneItems}
-                            totalItems={statsTotalItems}
-                            doneLessons={statsDoneLessons}
-                            totalLessons={statsLessons.length}
-                            rank={rank}
-                          />
+                        {isParent && session && progressMarks && (
+                          <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
                         )}
-                        {renderNextCard("main")}
-                        {!isParent && <MistakeReviewPanel />}
+                        {renderNextCard()}
 
                         {classChapters.length > 1 && (
                           <div className="class-toc-toolbar">
@@ -683,10 +692,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                             {renderChapterSection(selectedChapter, selectedChapterIndex, true)}
                           </div>
                         )}
+                        {!isParent && <MistakeReviewPanel />}
+                        {!isParent && rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
+                          <p className="class-rank-link">
+                            <Link href="/lop-hoc/xep-hang/" className="lesson-link">Xếp hạng</Link>
+                          </p>
+                        )}
                       </div>
                     )}
-
-                    {session && !isParent && activeId !== null && <ClassRankGroups classId={activeId} />}
 
                     {!isParent && classExams.length > 0 && (
                       <section className="lesson-section">
