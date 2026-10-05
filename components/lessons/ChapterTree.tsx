@@ -27,6 +27,8 @@ interface Props {
   onLessonClick?: (lesson: Lesson) => void;
   /** Kết quả ô "Tìm bài trong khoá"; null = không lọc. */
   filterLessonIds?: Set<number> | null;
+  /** Phụ huynh xem tiến độ của con: bài hiện dạng chữ, không dẫn vào trang bài học. */
+  readOnly?: boolean;
 }
 
 /**
@@ -81,8 +83,8 @@ export default function ChapterTree(p: Props) {
                   const cls = `${isDone ? "is-done" : ""} ${exam ? "is-exam" : ""}`.trim();
                   return (
                     <li key={lesson.id}>
-                      {current ? (
-                        <span className={`lesson-tree-current is-current ${cls}`} aria-current="page">
+                      {current || p.readOnly ? (
+                        <span className={`lesson-tree-current ${current ? "is-current" : ""} ${cls}`} aria-current={current ? "page" : undefined}>
                           <i aria-hidden>{icon}</i>
                           <span>{lesson.title}</span>
                         </span>

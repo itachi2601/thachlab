@@ -317,6 +317,12 @@ export async function fetchMyProgressMarks(userId: string): Promise<MyProgressMa
   };
 }
 
+/** Mục gắn đề tính là xong khi đã làm hết đề — khớp với isDone() ở trang bài học. */
+export function isItemDone(item: LessonItemRef, marks: MyProgressMarks): boolean {
+  const examsDone = item.exam_ids.length > 0 && item.exam_ids.every((id) => marks.completedExams.has(id));
+  return marks.completedItems.has(item.id) || examsDone;
+}
+
 /** Tính tiến độ theo bài từ dữ liệu đã có (itemRefs của fetchLessons + dấu đã học) — không truy vấn. */
 export function summarizeLessonProgress(
   lessons: { id: number; itemRefs: LessonItemRef[] }[],
@@ -327,9 +333,7 @@ export function summarizeLessonProgress(
     for (const item of lesson.itemRefs) {
       const current = summaries.get(lesson.id) ?? { completed: 0, total: 0 };
       current.total += 1;
-      // Mục gắn đề tính là xong khi đã làm hết đề — khớp với isDone() ở trang bài học.
-      const examsDone = item.exam_ids.length > 0 && item.exam_ids.every((id) => marks.completedExams.has(id));
-      if (marks.completedItems.has(item.id) || examsDone) current.completed += 1;
+      if (isItemDone(item, marks)) current.completed += 1;
       summaries.set(lesson.id, current);
     }
   }
