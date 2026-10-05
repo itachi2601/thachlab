@@ -234,7 +234,7 @@ thì chạy lại một lần, **tuyệt đối không sửa file của bài kh�
 lúc đăng xong; **mọi bài đều có ít nhất một lỗi `chan`** do bản kiểm chéo bắt được (nhiều nhất 4 lỗi/bài),
 5 bài phải sửa hai vòng. Kết quả: 13 bài đăng DB + deploy (bài 15 id 126 bỏ vì phiên khác đăng trước).
 
-## Chọn mô hình Claude cho từng việc (đề xuất 4/10/2026 — CHƯA đo trên repo này)
+## Chọn mô hình Claude cho từng việc (đề xuất 4/10/2026; đã đo 5/10/2026 trên 2 đợt thật — xem Nhật ký)
 
 Mỗi bài có 4 loại việc đòi hỏi khác nhau; chọn mô hình theo việc, không theo bài:
 
@@ -247,6 +247,7 @@ Mỗi bài có 4 loại việc đòi hỏi khác nhau; chọn mô hình theo vi�
 
 - Khối nhiều hình vector/đường sức (Vật lí 10 động học–động lực học, Vật lí 11 điện trường) → ưu tiên Opus cho agent soạn.
 - Chỉ định mô hình bằng tham số `model` của công cụ Agent khi thuê agent soạn/kiểm (xem mục "thuê subagent song song").
+- **Luồng chính (điều phối) chạy Sonnet**, không chạy Fable/Opus: nó chỉ chia việc, đọc JSON tóm tắt và chạy script. Fable dùng cho **đúng agent soạn nội dung** khi thầy yêu cầu, và agent đó soạn **trọn bài** (nội dung + SVG + bundle) — không tách "Fable viết chữ, Sonnet code hình" (đo 5/10/2026: tách làm mỗi bài qua 2 agent full-context + thêm agent "sửa hình", tốn gấp đôi).
 - Làm theo **lô theo chương** (ví dụ 6 bài Điện trường L11) để dùng chung thư viện SVG và khung bài.
 - Muốn chắc: soạn **cùng một bài** bằng hai mô hình, so số lỗi `chan` mà bản kiểm chéo bắt được rồi cập nhật bảng này.
 
@@ -255,3 +256,8 @@ Mỗi bài có 4 loại việc đòi hỏi khác nhau; chọn mô hình theo vi�
 Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
 một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
 
+- 2026-10-05 · Đo 2 đợt thật cùng skill, cùng loại bài (L11): đợt chương 3 (6 bài, Sonnet điều phối, Opus soạn trọn bài, Sonnet kiểm chéo + sửa, 19 agent) tốn 0,55 triệu output / 46 triệu cache đọc; đợt chương 4 (5 bài, **Fable điều phối**, Fable soạn chữ + Sonnet code hình riêng, kiểm chéo, Fable sửa, Sonnet sửa hình, có bài kiểm chéo vòng 2, 22 agent) tốn 1,03 triệu output / 70 triệu cache đọc — gấp ~2 lần token mỗi bài (207k vs 92k output/bài), tiền còn chênh hơn vì Fable đắt nhất → giữ đúng bảng chọn mô hình ở trên: **luồng chính Sonnet; một agent soạn trọn bài (chữ + SVG + bundle); 1 vòng kiểm chéo; chỉ thuê agent sửa khi có lỗi.** Thầy nói "Fable làm nội dung" nghĩa là agent soạn, không phải phiên chính.
+- 2026-10-05 · Luồng chính chạy Fable có 7 lượt gọi output ≥10k token (thinking ẩn tới 32k/lượt) chỉ để chia việc và đọc JSON trả về → điều phối không cần mô hình mạnh; phiên Sonnet lượt lớn nhất 12,6k.
+- 2026-10-05 · Agent "code hình" của Sonnet đọc 204 lượt ảnh xem thử (34 MB base64, 56 ảnh PNG kích thước gốc ~570 KB, **112 lượt đọc lại cùng một file**), 2 agent nặng nhất 94 và 67 lượt gọi với 38 và 27 lần Read ảnh → trong prompt agent ghi rõ: chỉ xem ảnh `.webp` do `chup_anh.py` sinh (không chụp PNG gốc ở `/private/tmp`), **mỗi ảnh đọc một lần sau mỗi lần sửa**, sửa hình nhỏ thì `chup_anh.py --chi-hinh` rồi chỉ xem đúng `fig-<n>` đã sửa.
+- 2026-10-05 · Prompt giao việc đợt chương 4 dài ~7,5k ký tự/agent (chép cả hướng dẫn vào prompt) so với ~3,3k đợt chương 3 → prompt chỉ cần: danh tính bài, danh sách file **phải đọc** (SKILL.md, references, bài mẫu), ràng buộc cứng, lệnh kiểm, định dạng JSON trả về — không chép lại nội dung skill.
+- 2026-10-05 · Đợt chương 4 chạm hạn mức giữa chừng rồi chạy tiếp, thêm vòng khởi động lại → đợt >4 bài nên chia 2 lô và chốt (commit + ghi DB) xong lô 1 trước khi mở lô 2.
