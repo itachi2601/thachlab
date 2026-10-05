@@ -1016,7 +1016,7 @@ html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg)
 .lesson-video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; transition: opacity .2s; }
 .lesson-video button:hover img { opacity: .9; }
 .lesson-video button > span { position: relative; display: flex; width: 60px; height: 60px; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.92); color: #0f172a; }
-.lesson-exam { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--lesson-line); border-radius: 12px; padding: 14px 16px; }
+.lesson-exam { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--lesson-line); border-radius: 16px; background: var(--lesson-surface); padding: 14px 16px; }
 .lesson-exam > div { min-width: 0; }
 .lesson-status, .lesson-status-done { font-size: var(--fs-cap); }
 .lesson-status::before, .lesson-status-done::before { content: "·"; margin-right: 8px; color: #475569; }
@@ -1262,6 +1262,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
 /* ---------- ≥ 1320px: máy tính rộng — thêm cột dụng cụ 292px ============ */
 @media (min-width: 1320px) {
   .lesson-layout { grid-template-columns: 232px minmax(0,1fr) 292px; }
+  /* Trang kiểm tra không có cột dụng cụ — giữ 2 cột để đề không bị kẹp giữa hai khoảng trống. */
+  .lesson-layout--exam { grid-template-columns: 232px minmax(0, 1fr); }
+  .lesson-layout--exam .lesson-main { max-width: 760px; }
   .lesson-main { grid-column: 2; }
   .lesson-side { grid-column: 3; display: grid; }
   .lesson-body { --lesson-read-width: 716px; max-width: 716px; }

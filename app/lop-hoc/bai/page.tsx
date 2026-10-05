@@ -1273,37 +1273,59 @@ function LessonLoader() {
     ? `/lop-hoc/${classSlug}?subject=${encodeURIComponent(subjectCode)}${chapterId ? `&chapter=${chapterId}#chapter-${chapterId}` : ""}`
     : "/lop-hoc";
 
-  const backLink = (
-    <Link href={classHref} className="lesson-back">
-      <ArrowLeft size={15} /> {chapterFullLabel || "Lớp học"}
-    </Link>
-  );
-
   if (isPeriodicExam(lessonKind)) {
     const kindMeta = LESSON_KIND_META[lessonKind];
     const kiemTraItems = items.filter((i) => i.kind === "kiem_tra");
     const examIds = visibleExamIds(kiemTraItems.flatMap((i) => i.exam_ids));
     const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
-      <div className="lesson-shell lesson-page">
-        <div className="lesson-layout">
-          <div className="lesson-main lesson-main--single">
-            {backLink}
-            <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
-              <Link href="/lop-hoc">Lớp học</Link>
-              <span aria-hidden>›</span>
-              <Link href={classHref}>{chapterFullLabel || "Chương"}</Link>
-              <span aria-hidden>›</span>
-              <span className="lesson-breadcrumb-current">{title}</span>
-            </nav>
-            <header className="lesson-head lesson-head--single">
+      <div className={`lesson-shell lesson-page ${drawerOpen ? "is-drawer-open" : ""}`}>
+        <div className="lesson-layout lesson-layout--exam">
+          <aside className="lesson-nav lesson-nav--compact" aria-label="Điều hướng bài học">
+            {prevLesson && (
+              <Link href={siblingHref(prevLesson)} className="lesson-nav-step">
+                <small>‹ Bài trước</small>
+                <span>{prevLesson.title}</span>
+              </Link>
+            )}
+            {nextLesson && (
+              <Link href={siblingHref(nextLesson)} className="lesson-nav-step lesson-nav-step--next">
+                <small>Bài sau ›</small>
+                <span>{nextLesson.title}</span>
+              </Link>
+            )}
+          </aside>
+          <div className="lesson-main">
+            <header className="lesson-head">
+              <button type="button" className="lesson-head-back" onClick={() => window.history.back()} aria-label="Quay lại">
+                <ArrowLeft size={16} aria-hidden />
+              </button>
               <div className="lesson-head-text">
+                <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
+                  <span className="lesson-crumb-class">
+                    <Link href="/lop-hoc">Lớp học</Link>
+                    <span aria-hidden className="lesson-crumb-sep">›</span>
+                  </span>
+                  <Link href={classHref} className="lesson-crumb-chapter">
+                    {chapterFullLabel || "Chương"}
+                  </Link>
+                </nav>
                 <h1>{title}</h1>
                 <div className="lesson-meta">
                   <span className="lesson-meta-chip">{kindMeta.label}</span>
                   <span>{examIds.length} đề</span>
                 </div>
               </div>
+              <button
+                type="button"
+                className="lesson-drawer-toggle"
+                onClick={() => setDrawerOpen(true)}
+                aria-expanded={drawerOpen}
+                aria-controls="lesson-drawer"
+                aria-label="Mở mục lục khoá học"
+              >
+                <Menu size={17} aria-hidden />
+              </button>
             </header>
             <p className="lesson-lead">Làm bài trực tuyến, hệ thống chấm điểm tự động.</p>
             <div className="lesson-stack">
@@ -1367,6 +1389,40 @@ function LessonLoader() {
             </span>
           )}
         </nav>
+
+        {drawerOpen && (
+          <div className="lesson-drawer" role="dialog" aria-modal="true" aria-label={`Nội dung khoá ${chapterFullLabel}`}>
+            <button type="button" className="lesson-drawer-scrim" aria-label="Đóng mục lục" onClick={() => setDrawerOpen(false)} />
+            <div
+              id="lesson-drawer"
+              className="lesson-drawer-sheet"
+              ref={drawerRef}
+              onTouchStart={onDrawerTouchStart}
+              onTouchMove={onDrawerTouchMove}
+              onTouchEnd={onDrawerTouchEnd}
+            >
+              <div className="lesson-drawer-head">
+                <p className="lesson-drawer-title">Nội dung khoá {chapterFullLabel || ""}</p>
+                <button type="button" onClick={() => setDrawerOpen(false)} aria-label="Đóng mục lục">
+                  <X size={17} aria-hidden />
+                </button>
+              </div>
+              <div className="lesson-drawer-body">
+                <ChapterTree
+                  entries={courseChapters}
+                  mode="learn"
+                  currentLessonId={id}
+                  openChapterIds={openChapterIds}
+                  onToggleChapter={toggleChapter}
+                  lessonHref={siblingHref}
+                  isLessonDone={lessonComplete}
+                  showProgress={!!session}
+                  filterLessonIds={matchingLessonIds}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
