@@ -54,10 +54,10 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
   const parent = variant === "parent";
   const bg = parent ? "bg-panel" : "bg-[#04060A]";
   const headCls = parent ? "font-display text-base font-bold text-ink" : "font-display text-sm font-semibold text-ink";
-  const listCls = parent ? "mt-2 space-y-0" : "mt-4 space-y-3";
+  const listCls = "mt-2 space-y-0";
   const linkCls = parent
     ? "inline-flex min-h-12 items-center text-[15px] text-muted underline-offset-2 transition-colors hover:text-primary hover:underline"
-    : "text-sm text-muted transition-colors hover:text-primary";
+    : "inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary";
   const textCls = parent ? "text-[15px] text-muted" : "text-sm text-muted";
   return (
     <footer id="contact" className={`border-t border-line ${bg}`}>
@@ -119,7 +119,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
                         {item.label}
                       </a>
                     ) : (
-                      <span className={`inline-flex min-h-12 items-center ${textCls}`}>{item.label}</span>
+                      <span className={`inline-flex ${parent ? "min-h-12" : "min-h-11"} items-center ${textCls}`}>{item.label}</span>
                     )}
                   </li>
                 ))}

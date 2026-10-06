@@ -4,16 +4,17 @@
  *  - /_next/static/*: file băm tên, bất biến -> cache-first.
  *  - /data/*: network-first, rớt mạng mới dùng bản cache.
  *  - điều hướng trang + dữ liệu RSC của Next (`_rsc`): network-first, rớt mạng -> bản đã cache
- *    (khớp cả khi khác query), cuối cùng "/". Nhờ đó bài/luyện đã mở xem lại được khi mất mạng.
+ *    (khớp cả khi khác query), cuối cùng trang /offline/ (cache sẵn lúc cài). Nhờ đó bài/luyện đã mở xem lại được khi mất mạng.
  *  - Kết quả luyện tập mất mạng KHÔNG đi qua SW: services/lessons.ts xếp hàng ở localStorage.
  *  - RUNTIME_CACHE giới hạn MAX_RUNTIME_ENTRIES mục (xoá mục cũ nhất).
  *  - push + notificationclick: nhắc luyện 1 lần/ngày (M4), bấm vào mở /lop-hoc/ và focus tab có sẵn.
  * Đổi VERSION để dọn cache cũ. */
-const VERSION = "v3";
+const VERSION = "v4";
 const SHELL_CACHE = "thachlab-shell-" + VERSION;
 const RUNTIME_CACHE = "thachlab-runtime-" + VERSION;
 const MAX_RUNTIME_ENTRIES = 120;
-const SHELL = ["/", "/icons/icon-192.png", "/icons/icon-512.png"];
+const OFFLINE_URL = "/offline/";
+const SHELL = ["/", OFFLINE_URL, "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -103,7 +104,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (req.mode === "navigate") {
-    event.respondWith(networkFirst(req, RUNTIME_CACHE, "/"));
+    event.respondWith(networkFirst(req, RUNTIME_CACHE, OFFLINE_URL));
     return;
   }
 
