@@ -191,6 +191,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   (chỉ trong `explanation`) — script `scripts/clean-exam-watermark.mjs` (dry-run mặc định, `--apply` có backup), CHƯA chạy;
   (c) báo lỗi #23/#24/#26/#28 chọn loại "câu hỏi" ở form chung nên không gắn được câu (đã ẩn loại này khỏi form chung);
   (d) đề 237 câu 3 mở đầu "(Tiếp câu trên)" — hỏng ngữ cảnh khi đảo thứ tự câu.
+- **Xử lý đợt báo lỗi 06/10/2026 (58 báo lỗi, đóng 14 mục `da_xu_ly`)**:
+  (1) Sửa câu 71 Đề 72 (Bài 8 Lớp 12): phương án B `127°C.` -> `27°C.` tránh trùng với đáp án đúng `400 K.` (giải quyết #57).
+  (2) Cô lập 24 câu thiếu ảnh/đồ thị khỏi đề luyện tập & ngân hàng câu hỏi: Đề 44 (20 câu, còn 35 câu), Đề 49 (3 câu, còn 66 câu), Đề 259 (câu 21, còn 20 câu); đã sao lưu đầy đủ vào `scripts/logs/isolated-questions-backup-*.json` và đánh dấu `archived=true` trong `question_bank` (giải quyết #58, #55, #54, #44).
+  (3) Mở rộng hạn mức học sinh phụ đạo (`lib/tro-giang/policy.ts` + `GhiBuoiForm.tsx`): bỏ giới hạn chặn 4 học sinh, giữ hệ số 1.4 cho từ 3 em trở lên (giải quyết #56, #49).
+  (4) Chuẩn hoá câu 2 đề 474 bỏ dấu sao thừa, giải thích & đóng các báo lỗi #4, #5, #45, #47, #48, #51, #52.
+
 
 - **Luyện tập: thời gian mỗi câu tăng 15s/45s → 30s/90s** (30/9/2026, theo góp ý #21 của học sinh, thầy duyệt): `SECONDS_PER_FORM`
   ở `features/exams/types.ts` + dòng mô tả ở `PracticeSession.tsx`. Chỉ tính phía client, không đổi DB. **Chưa deploy** (`bash scripts/deploy.sh`).

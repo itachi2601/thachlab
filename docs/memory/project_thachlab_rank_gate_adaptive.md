@@ -32,3 +32,16 @@ Xong cả 3 việc, 4 migration viết + test trong `begin…rollback` trên pro
 **3/10 16:40 — backfill distractorNotes:** lượt 1 ghi 158 câu (bỏ 27% vì lô JSON hỏng); nguyên nhân thật = max_tokens 4096 bị token suy nghĩ ăn hết (xem [[reference_anthropic_api_thinking_max_tokens]]); script sửa `f234f3d60`, lượt vét chạy sạch 0 bỏ qua. Giọng ghi chú: không mở đầu "Em", 10–18 từ, "Phát biểu này đúng: …" cho câu chọn phát biểu sai.
 
 **5/10/2026 — chốt:** KHÔNG gắn `challenge_exam_id` cho cao_thu/thach_dau season 4 (đang null cả 7 bậc); để thi thăng hạng thích ứng lo. Việc tay "gắn đề tĩnh" ở trên coi như huỷ.
+
+## Mùa sau — đừng để một bài điểm thấp nhảy bậc (6/10/2026)
+
+Tối 5/10, mùa 4 (ngưỡng nén: Đồng 0–49, Bạc 50–119, Vàng từ 120; `weekly_goal_rp` 90). Phan Duy Khang nộp đề Dao động **4,5 điểm**: bài chỉ cộng **+9 RP** (đúng tỉ lệ, trần đề 20). Cùng lúc mục tiêu tuần riêng “1 bài đạt từ 4,0” cộng **+90**. 39 RP (Đồng I) → 138 RP. Cửa Vàng đã mở từ 28/9 bằng 1 danh hiệu (`rank_gate_passes.evidence.titles = 1`, không thi) nên vào thẳng **Vàng**, nhảy qua cả Bạc. Trần Hoàng Thiên Kim cùng tối: bài **4,1** + cùng kiểu thưởng, 40 → 138, cũng Vàng (cửa từ 25/9).
+
+`weekly_goal_min_score` của mùa là 7 nhưng **không có tác dụng** khi mục tiêu riêng bật: sàn thật là `weekly_goal_score_floor` (mặc định **4**), số bài có thể xuống `weekly_goal_count_min` (mặc định **1**).
+
+Quy tắc lúc mở mùa mới (đọc trước khi chép số 60/90 của mùa thử, và trước khi tin đề xuất cũ `weekly_goal_rp` 40):
+
+1. **Một khoản thưởng < độ rộng phân bậc hẹp nhất** của chính mùa đó: `(min_rp bậc trên − min_rp bậc này) / 3`. Mùa thử Đồng chỉ rộng 16 RP/phân bậc mà thưởng tuần 90. Số 40 chỉ an toàn nếu trả ngưỡng gốc (Bạc từ 200, phân bậc ~66). Giữ ngưỡng nén thì thưởng tuần phải ≤ 15.
+2. **Bài dưới 5 điểm không được xong tuần.** Đặt `weekly_goal_score_floor` ≥ 5 và `weekly_goal_count_min` ≥ 2. RP tỉ lệ của bài (4,5 → 9) cứ cộng; khoản thưởng một cục thì không.
+3. **Không chép `rank_gate_passes` sang mùa mới.** Cửa gắn `season_id` nên mùa mới tự sạch — đừng backfill từ danh hiệu. Bạc (`chien_binh`) không có thi thăng hạng; muốn chặn nhảy bậc thì dựa vào quy tắc 1, không trông vào cửa Vàng.
+4. Trước khi bật mùa, cộng thử một lần nộp xấu nhất (bài vừa sàn + thưởng tuần + chuỗi ngày + tiến bộ tuần) và xem RP đó có vượt quá một phân bậc không.

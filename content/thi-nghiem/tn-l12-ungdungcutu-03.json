@@ -1,0 +1,105 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.4, hộp .tl-box--exp + bảng số liệu + câu hỏi sai số)",
+  "id": "tn-l12-ungdungcutu-03",
+  "ten": "Bếp từ: đáy nồi gang tự nóng lên, mặt kính vẫn mát",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "ungdungcutu.bep_tu",
+    "ungdungcutu.dong_foucault_toa_nhiet"
+  ],
+  "muc_tieu": "Đo nhiệt độ nước theo thời gian khi đun bằng bếp từ để thấy nhiệt sinh ra ngay trong đáy nồi nhiễm từ (dòng Foucault toả nhiệt), đồng thời đo nhiệt độ mặt kính để loại bỏ cách giải thích \"truyền nhiệt từ mặt bếp sang nồi\"; từ bảng số liệu tính được công suất hữu ích và hiệu suất của bếp.",
+  "dung_cu": [
+    { "ten": "Bếp từ gia dụng ghi công suất 2 000 W", "so_luong": 1 },
+    { "ten": "Nồi gang hoặc nồi thép không gỉ có đáy nhiễm từ", "so_luong": 1 },
+    { "ten": "Nồi nhôm cùng cỡ", "so_luong": 1 },
+    { "ten": "Nước, đong đúng 1,0 lít", "so_luong": 1 },
+    { "ten": "Nhiệt kế que đo được tới 100 °C", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
+    { "ten": "Nhiệt kế hồng ngoại", "so_luong": 1, "ghi_chu": "đo mặt kính, sai số ±1 °C" },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1 },
+    { "ten": "Nam châm nhỏ để thử đáy nồi", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Dí nam châm vào đáy hai nồi để kiểm tra: nam châm dính chặt đáy nồi gang, không dính đáy nồi nhôm.",
+      "Rót đúng 1,0 lít nước ở 25,0 °C vào nồi gang, đặt lên bếp, bật mức 2 000 W và bấm đồng hồ.",
+      "Cứ mỗi phút khuấy nhẹ rồi đọc nhiệt kế một lần; đồng thời bắn nhiệt kế hồng ngoại vào mặt kính cách mép nồi 2 cm.",
+      "Làm lại toàn bộ với nồi nhôm trong cùng điều kiện."
+    ],
+    "quan_sat": [
+      "Nồi gang: nước sôi sau 4 phút; nhiệt độ tăng gần 21 °C trong phút đầu rồi chậm dần.",
+      "Mặt kính cạnh nồi chỉ 45–50 °C; mảnh giấy đặt trên mặt kính không bén lửa.",
+      "Nồi nhôm: sau 4 phút nước mới ấm khoảng 35 °C, gần như chỉ nhận nhiệt từ phần kính bị nồi gang nóng trước đó truyền sang."
+    ],
+    "rut_ra": [
+      "Nhiệt không truyền từ mặt kính vào nồi: chính đáy nồi nhiễm từ sinh dòng Foucault và tự nóng lên.",
+      "Từ bảng số liệu, phút đầu nước nhận khoảng 88 kJ, tương ứng công suất hữu ích gần 1 470 W và hiệu suất khoảng 74% so với 2 000 W ghi trên bếp.",
+      "Phần năng lượng còn lại nung nóng thân nồi, toả ra không khí và làm hơi nước bay đi; đây là các nguồn sai số chính của phép đo."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "P", "ten": "Công suất điện của bếp (mức đặt)", "don_vi": "W", "kieu": "dieu_chinh", "min": 800, "max": 2200, "mac_dinh": 2000, "buoc": 100 },
+    { "ky_hieu": "m", "ten": "Khối lượng nước", "don_vi": "kg", "kieu": "dieu_chinh", "min": 0.5, "max": 2, "mac_dinh": 1, "buoc": 0.1 },
+    { "ky_hieu": "t0", "ten": "Nhiệt độ nước ban đầu", "don_vi": "°C", "kieu": "dieu_chinh", "min": 15, "max": 40, "mac_dinh": 25, "buoc": 1 },
+    { "ky_hieu": "c", "ten": "Nhiệt dung riêng của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4200 },
+    { "ky_hieu": "T", "ten": "Nhiệt độ nước đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 },
+    { "ky_hieu": "T_kinh", "ten": "Nhiệt độ mặt kính cạnh nồi", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "Q", "ten": "Nhiệt nước nhận trong một khoảng thời gian", "don_vi": "J", "kieu": "tinh_ra" },
+    { "ky_hieu": "H", "ten": "Hiệu suất của bếp", "don_vi": "%", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Nhiệt nước nhận: Q = m·c·Δt",
+      "Công suất hữu ích trung bình: P_ich = Q/Δτ",
+      "Hiệu suất bếp: H = P_ich/P",
+      "Thời gian đun sôi (bỏ qua hao phí): τ = m·c·(100 − t0)/P_ich",
+      "Dòng Foucault trong đáy nồi toả nhiệt Joule: Q_nhiệt = I²·R·τ"
+    ],
+    "gia_thiet": [
+      "coi nhiệt dung riêng của nước không đổi trong khoảng 25–100 °C",
+      "bỏ qua khối lượng nước bay hơi trong 4 phút đầu",
+      "bỏ qua nhiệt dung của thân nồi khi tính nhanh, nhưng ghi rõ đây là nguồn hao",
+      "mặt kính không dẫn điện nên không sinh dòng Foucault đáng kể"
+    ],
+    "ghi_chu": "Mô phỏng nên vẽ mặt cắt bếp: cuộn dây phát từ trường biến thiên, dòng xoáy khép kín trong đáy nồi, nhiệt toả ra; thanh trượt công suất và khối lượng nước làm đường T(t) dốc lên nhanh hay chậm."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thời gian (phút)", "Nhiệt độ nước (°C)"],
+    "hang": [
+      [0, 25.0],
+      [1, 46.0],
+      [2, 66.6],
+      [3, 86.4],
+      [4, 100.0],
+      [5, 100.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ cho P = 2 000 W, m = 1,0 kg, t0 = 25,0 °C, nồi gang 0,8 kg, nhiệt kế sai số ±0,5 °C. Số đo thực có thể lệch 1–2 °C vì bếp tự ngắt theo chu kì và nhiệt kế chưa khuấy đều."
+  },
+  "ket_qua_ky_vong": "Nồi gang làm nước sôi sau khoảng 4 phút trong khi mặt kính cạnh nồi chỉ 45–50 °C; nồi nhôm gần như không nóng lên. Bảng số liệu cho công suất hữu ích khoảng 1 470 W, hiệu suất khoảng 74%.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng bếp từ nóng lên rồi truyền nhiệt sang nồi như bếp điện; thực tế mặt kính không nóng trước.",
+    "Nghĩ rằng mọi loại nồi đều dùng được trên bếp từ, kể cả nồi nhôm và nồi thuỷ tinh.",
+    "Nghĩ rằng nhiệt độ nước tăng đều theo thời gian; thực tế chậm dần vì hao nhiệt ra môi trường tăng theo hiệu nhiệt độ.",
+    "Nghĩ rằng 2 000 W ghi trên bếp là công suất truyền hết vào nồi — thực ra đó là công suất điện tiêu thụ."
+  ],
+  "sai_so_thuong_gap": [
+    "Không khuấy trước khi đọc: nước trong nồi chỗ nóng chỗ lạnh, nhiệt kế cho số thấp hơn.",
+    "Bầu nhiệt kế chạm đáy nồi gang: số đọc cao hơn nhiệt độ nước 2–3 °C.",
+    "Bếp tự ngắt theo chu kì nên công suất tức thời không ổn định; lấy trung bình theo phút.",
+    "Nhiệt kế hồng ngoại đo mặt kính bóng có thể sai vài độ; phải đo ở vùng kính nhám hoặc dán mẩu băng dính đen."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+2d_dong_hoc",
+    "y_tuong": "Mặt cắt bếp từ với cuộn dây, đáy nồi, dòng xoáy và các mũi tên nhiệt; bên cạnh là đồ thị T(t) vẽ dần theo từng phút và một nhiệt kế phụ chỉ nhiệt độ mặt kính.",
+    "diem_nhan": "Cho thấy mặt kính luôn mát trong khi đáy nồi nóng, và đổi nồi gang thành nồi nhôm thì đường T(t) gần như nằm ngang."
+  },
+  "an_toan": [
+    "Mặt bếp và đáy nồi rất nóng sau khi đun: chỉ chạm vào tay cầm nồi, dùng găng chịu nhiệt.",
+    "Không đặt thìa, nắp kim loại hay hộp giấy lên mặt bếp đang bật.",
+    "Lau khô đáy nồi và mặt bếp trước khi đun để tránh trượt."
+  ]
+}

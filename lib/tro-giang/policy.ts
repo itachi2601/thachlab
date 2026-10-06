@@ -28,7 +28,7 @@ export interface SessionPolicy {
 export function emptyPolicy(): SessionPolicy {
   return { attendance: 'on_time', arrived_early: false, homework_checked: false, homework_missing: 0, walked_tables: false, reported_students: false, attention_note: '', teaching_minutes: 0, teaching_note: '', prepared: false, recalled: false, asked_each: false, followups: [] };
 }
-export function tutoringFactor(count: number) { return count < 1 || count > 4 ? null : count <= 2 ? 1.2 : 1.4; }
+export function tutoringFactor(count: number) { return count < 1 ? null : count <= 2 ? 1.2 : 1.4; }
 export interface MonthPolicy extends Record<ScoreKey, number | null> {
   assistant_id: string; month: string; closed_at: string | null; note: string;
   overrides: Partial<Record<ScoreKey, number | null>>;

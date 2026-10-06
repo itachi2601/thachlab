@@ -96,8 +96,7 @@ export default function MobileTabBar() {
   const items = [
     { key: "home", label: "Trang chủ", href: "/", icon: "home" as const },
     { key: "class", label: "Lớp học", href: "/lop-hoc", icon: "class" as const },
-    // Chưa có route luyện tập riêng — đi qua danh sách lớp (xem mục "Cần thầy quyết" của PR).
-    { key: "practice", label: "Luyện tập", href: "/lop-hoc", icon: "practice" as const },
+    { key: "practice", label: "Luyện tập", href: "/luyen-tap", icon: "practice" as const },
     {
       key: "account",
       label: "Tài khoản",
@@ -113,14 +112,12 @@ export default function MobileTabBar() {
           item.href === "/"
             ? pathname === "/"
             : pathname === item.href || pathname.startsWith(`${item.href}/`);
-        // "Lớp học" và "Luyện tập" cùng trỏ /lop-hoc: chỉ tô đậm mục Lớp học để không sáng 2 mục.
-        const isActive = item.key === "practice" ? false : active;
         return (
           <Link
             key={item.key}
             href={item.href}
-            aria-current={isActive ? "page" : undefined}
-            className={isActive ? "is-active" : undefined}
+            aria-current={active ? "page" : undefined}
+            className={active ? "is-active" : undefined}
           >
             <TabIcon name={item.icon} />
             <span>{item.label}</span>

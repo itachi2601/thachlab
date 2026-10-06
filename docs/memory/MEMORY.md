@@ -1,4 +1,6 @@
 - [Archive](ARCHIVE.md) — 40 memory đã xong/không còn treo (bài đã đăng, feature đã deploy xong); grep khi cần, KHÔNG đọc cả file
+## Về thầy Thạch
+- [Phong cách học & dạy](user_thach_phong_cach_hoc_va_day.md) — triết lý học của thầy, nguồn phong cách cho AI tutor; THÊM mục mỗi khi thầy kể thêm
 ## Cách làm việc (feedback)
 - [Token discipline](feedback_token_discipline.md) — clear sớm, ảnh đọc trong subagent, đọc file có chọn lọc
 - [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, docs/DATABASE.md tự sinh (đọc thay vì dò schema), STATE-archive, dọn worktree; treo: tắt MCP thừa, 2 skill đề xuất
@@ -60,9 +62,11 @@
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết tương tác: duyệt là đăng, không PR, ít token
 - [Khả năng đọc WCAG 2/10](project_thachlab_kha_nang_doc.md) — P0+P1/P2 đã vào main; chuẩn docs/UI.md, `npm run check:a11y`; treo: xem ReadingZone khi đăng nhập, text-violet theme sáng
 - [Rank: thi thăng hạng thích ứng + luyện từng câu](project_thachlab_rank_gate_adaptive.md) — đánh giá 3/10 + spec bàn giao Sonnet (docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md)
+- [Rank mùa sau: một bài không được nhảy bậc](project_thachlab_rank_gate_adaptive.md) — 6/10: bài 4,5 + thưởng tuần 90 RP nhảy Đồng I → Vàng; quy tắc mở mùa ở cuối file đó
 - [Claude API: thinking tính vào max_tokens](reference_anthropic_api_thinking_max_tokens.md) — script backfill để max_tokens ≥16000 + effort low; log stop_reason
 - [Bài mẫu trống dù DB còn (4/10)](project_thachlab_worked_examples_blank.md) — file tĩnh không chứa lời giải, lượt Supabase hỏng → trống; đã vá + deploy 5967310a8; nguyên nhân gốc trên máy thầy chưa xác nhận
-- [Đề Vật lí 10 năm 24-25](project_thachlab_de_lop10_24_25.md) — 364 bộ/1190 file, script dang-de-l10-24-25.py; 4/10 chạy hết: 176 đề (exam 475–650) vào 4 mục Kiểm tra giữa/cuối kì lớp 10 ĐANG ẨN; 167 bộ chưa được ở scripts/data/de-l10-24-25-can-xem.md; nhãn + lời giải + tự luận chưa làm Thêm bộ /23 (cờ --nam 23, 4/10): 100/444 bộ đã đăng (exam 651+, ẩn), 309 bỏ vì thiếu đáp án.
+- [Đề Vật lí 10 năm 24-25](project_thachlab_de_lop10_24_25.md) — 364 bộ/1190 file, script dang-de-l10-24-25.py; 4/10 chạy hết: 176 đề (exam 475–650) + bộ /23 (100 đề, exam 651+) vào 4 mục Kiểm tra giữa/cuối kì lớp 10; **5/10 đã Hiện** lesson 113–116 (276 đề); 167 bộ chưa được ở scripts/data/de-l10-24-25-can-xem.md; nhãn + lời giải + tự luận chưa làm.
 - [Top bar Navbar 4/10](project_thachlab_navbar_topbar.md) — sửa N2/D2/M2 + dropdown "Thêm", đã live 2026-10-04 (e1c8e7651, a849aa18c); chờ kiểm khi đăng nhập ở 360/375px
 - [Hero tab 4 "Hình chiếu"](project_thachlab_hero_hinhchieu.md) — bóng của M quay đều đồng nhịp với con lắc lò xo nằm ngang trên CÙNG một trục x (4/10); 34 kiểm toán + ảnh 360/375/1440, JS tải đầu trang chủ không đổi (216 KB gzip); quyết định đã chốt: "đồng nhịp ≠ trùng vị trí" (khớp ω chỉ làm hiệu pha THÔI TĂNG) · treo: chưa deploy, chưa nhúng vào bài 1 lớp 11 (repo chưa có cơ chế mount mô phỏng trong ContentHtml)
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 6/10: 130 đề đăng (item 57=41, 59=28, 60=15 ẨN; item 58 Cuối HK1 +49 ở Bản nháp); 40 bộ LỆCH còn lại cần vá tay (7 bộ đề 0 câu); script `--nam l11` đã commit 471489729, chưa push; treo: thầy xem + bật Hiện, lời giải/nhãn chưa có, 693/701 do phiên khác chuyển vào item 58
+- [AI Tutor Socratic (GĐ 4)](project_thachlab_ai_tutor.md) — 6/10: docs/AI-TUTOR.md + scripts/eval-ai-tutor.mts đã vào main; KHÔNG xây tutor trước Q2/2027; treo: thầy chạy eval 30 câu + chấm, thêm OPENAI/ANTHROPIC key, rà is_correct lệch

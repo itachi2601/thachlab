@@ -1,0 +1,134 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Sự chuyển thể",
+  "lesson_id": 2,
+  "nguon_trong_bai": "content/lesson-samples/l12-su-chuyen-the/theory.html",
+  "id": "tn-l12-chuyenthe-02",
+  "ten": "Đổ 50 ml rượu vào 50 ml nước",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "chuyenthe.mo_hinh_dong_hoc",
+    "chuyenthe.khoang_cach_phan_tu"
+  ],
+  "muc_tieu": "Chứng tỏ giữa các phân tử có khoảng cách: thể tích hỗn hợp nhỏ hơn tổng thể tích hai chất lỏng ban đầu.",
+  "dung_cu": [
+    {
+      "ten": "Ống đong 100 ml có chia vạch",
+      "so_luong": 1,
+      "ghi_chu": "vạch nhỏ nhất 1 ml; đọc ngang tầm mắt"
+    },
+    {
+      "ten": "Nước sạch",
+      "so_luong": 1,
+      "ghi_chu": "khoảng 50 ml"
+    },
+    {
+      "ten": "Rượu hoặc cồn 90°",
+      "so_luong": 1,
+      "ghi_chu": "khoảng 50 ml; có thể pha màu thực phẩm cho dễ nhìn"
+    },
+    {
+      "ten": "Nút đậy hoặc màng bọc",
+      "so_luong": 1,
+      "ghi_chu": "để lắc mà không tràn"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đong 50 ml nước, rót vào ống đong 100 ml.",
+      "Đong riêng 50 ml rượu rồi rót tiếp vào ống đong.",
+      "Đậy nút, lắc nhẹ cho hai chất trộn đều, để yên cho bọt tan hết.",
+      "Đọc mực chất lỏng ngang tầm mắt. Làm lại lần hai với thứ tự ngược lại (rượu trước, nước sau)."
+    ],
+    "quan_sat": [
+      "Mực chất lỏng thấp hơn vạch 100 ml, thường chỉ khoảng 96–97 ml.",
+      "Kết quả không đổi khi đổi thứ tự rót.",
+      "Nếu đổ 50 ml nước vào 50 ml nước thì đúng 100 ml — chỉ khi trộn hai chất khác loại phân tử mới hụt thể tích."
+    ],
+    "rut_ra": [
+      "Tổng thể tích giảm vì các phân tử rượu xen vào khoảng trống giữa các phân tử nước và ngược lại.",
+      "Đây là bằng chứng trực tiếp cho ý 'các chất được cấu tạo từ những hạt riêng biệt, giữa chúng có khoảng cách'."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "V_nuoc",
+      "ten": "Thể tích nước đong vào",
+      "don_vi": "ml",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 50,
+      "mac_dinh": 50,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "V_ruou",
+      "ten": "Thể tích rượu đong vào",
+      "don_vi": "ml",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 50,
+      "mac_dinh": 50,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "V_do",
+      "ten": "Thể tích hỗn hợp đọc trên ống đong",
+      "don_vi": "ml",
+      "kieu": "do_duoc",
+      "sai_so_do": 1.0
+    },
+    {
+      "ky_hieu": "dV",
+      "ten": "Thể tích hụt đi",
+      "don_vi": "ml",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "V_hon_hop ≈ V_nuoc + V_ruou - dV",
+      "dV = k·V_nuoc·V_ruou/(V_nuoc + V_ruou), với k ≈ 0,08 khi trộn rượu với nước",
+      "Phần thể tích hụt đi đúng bằng thể tích các khoảng trống giữa các phân tử đã bị lấp"
+    ],
+    "gia_thiet": [
+      "bỏ qua sự co giãn thể tích theo nhiệt độ và sự bay hơi trong lúc trộn",
+      "coi rượu và nước trộn lẫn hoàn toàn, không phản ứng hoá học"
+    ],
+    "ghi_chu": "Hai chất càng khác nhau về kích thước phân tử thì hụt thể tích càng rõ. Trộn nước với nước hụt bằng 0."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Nước (ml)",
+      "Rượu (ml)",
+      "Thể tích đọc được (ml)",
+      "Hụt so với tổng (ml)"
+    ],
+    "hang": [
+      [50, 50, 96, 4],
+      [40, 40, 77, 3],
+      [30, 30, 58, 2],
+      [50, 30, 78, 2],
+      [50, 0, 50, 0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với k = 0,08, không phải số đo thật; số đo thực dao động 1–2 ml quanh các giá trị này tuỳ loại rượu và cách đọc."
+  },
+  "ket_qua_ky_vong": "Thể tích hỗn hợp nhỏ hơn tổng thể tích hai chất đã rót, lượng hụt vài ml và tăng theo lượng chất trộn; trộn cùng một chất thì không hụt.",
+  "hien_tuong_hay_sai": [
+    "Cộng thể tích như cộng hai con số: cho rằng 50 + 50 phải bằng đúng 100 ml.",
+    "Nghĩ rằng hụt thể tích là do 'rượu bay hơi mất' hoặc do phản ứng hoá học.",
+    "Cho rằng phân tử rượu nhỏ hơn nên 'tan vào' phân tử nước (chứ không phải vào khoảng trống giữa chúng)."
+  ],
+  "sai_so_thuong_gap": [
+    "Đọc mực chất lỏng không ngang tầm mắt (sai khúc xạ) hoặc còn bọt khí bám thành ống.",
+    "Ống đong không được tráng cùng loại chất lỏng, còn dính nước từ lần đo trước.",
+    "Rượu đã bay hơi bớt trong lúc đong ở phòng nóng."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+2d_dong_hoc",
+    "y_tuong": "Hai chai chất lỏng rót vào ống đong; zoom vào mặt thoáng thấy các hạt tròn to nhỏ xen vào khoảng trống của nhau, mực chất lỏng tụt xuống.",
+    "diem_nhan": "Cho thấy khoảng trống giữa các phân tử là thật: mực nước tụt ngay khi hai loại hạt trộn vào nhau, không có hạt nào biến mất."
+  }
+}

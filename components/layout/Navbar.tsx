@@ -17,8 +17,11 @@ const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
 // tài khoản, giáo viên/admin không dùng trang đó — thêm cho mọi role sẽ chật thanh điều hướng.
 type NavLink = { label: string; href: string; audience?: "guest-student" };
 
+// N2 cho phép tối đa 4 mục nhìn thấy; "Thêm" là chỗ gom phần còn lại. "Luyện tập" vẫn để ngoài
+// vì đây là việc học sinh mở mỗi ngày — giấu vào "Thêm" thì em không thấy trang. Đo 1024px vẫn một hàng.
 const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
+  { label: "Luyện tập", href: "/luyen-tap" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
@@ -56,7 +59,7 @@ export default function Navbar() {
   const isTa = profile?.role === "tro_giang";
   const showParentLink = !session || profile?.role === "student";
   const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
-  // Thanh đáy đã có Lớp học: khi nó hiện thì menu ☰ bỏ hàng "THPT – THCS" (giữ chip vào nhanh từng lớp).
+  // Thanh đáy đã có Lớp học và Luyện tập: khi nó hiện thì menu ☰ bỏ hai hàng đó (giữ chip vào nhanh từng lớp).
   const tabBarShown = tabBarShownOn(pathname);
   const mobileLinks = [...navLinks.slice(0, 3), ...MORE_LINKS.slice(0, 2), ...navLinks.slice(3), ...MORE_LINKS.slice(2)];
 
@@ -114,11 +117,19 @@ export default function Navbar() {
         <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navLinks.map((link) => {
             const hasQuick = link.href === "/lop-hoc";
+            const inCttc = CTTC_PATHS.some((path) => pathname.startsWith(path));
+            const isActive =
+              !link.href.startsWith("/#") &&
+              (pathname === link.href || pathname.startsWith(`${link.href}/`)) &&
+              (link.href !== "/lop-hoc" || !inCttc);
             return (
               <li key={link.href} className={hasQuick ? "group relative" : undefined}>
                 <Link
                   href={link.href}
-                  className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                  aria-current={isActive ? "page" : undefined}
+                  className={`inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-white ${
+                    isActive ? "text-white" : "text-slate-300"
+                  }`}
                 >
                   {link.label}
                   {hasQuick && (
@@ -330,10 +341,12 @@ export default function Navbar() {
                   pathname.startsWith(link.href) &&
                   // hai luồng riêng: /lop-hoc/cttc, /cnc, /tien-phay không tính cho mục THPT
                   (link.href !== "/lop-hoc" || !inCttc);
+                const onTabBar = tabBarShown && (link.href === "/lop-hoc" || link.href === "/luyen-tap");
+                if (onTabBar && link.href !== "/lop-hoc") return null;
 
                 return (
                   <li key={link.href}>
-                    {!(link.href === "/lop-hoc" && tabBarShown) && (
+                    {!onTabBar && (
                     <Link
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}

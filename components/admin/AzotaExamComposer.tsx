@@ -20,9 +20,8 @@ import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } fro
 import { classGrade, displayClassesByGrade, expandClassIdsByGrade, fetchClasses, setItemClasses } from "@/services/classes";
 import { applyMediaToBundle, bundleToRows, typeCountSubtitle, validateBundle, type LessonBundle } from "@/services/lesson-import";
 import { removeLessonMedia, uploadLessonMedia } from "@/services/lesson-media";
-import { questionsMissingFigure } from "@/services/question-figures";
-import { questionsDependingOnOthers } from "@/services/question-context";
-import { MissingFigureNotice } from "@/components/admin/MissingFigureNotice";
+import { triageQuestions } from "@/services/exam-triage";
+import { ExamTriagePanel } from "@/components/admin/ExamTriagePanel";
 import { fetchChapters, fetchLessonItems, fetchLessons } from "@/services/lessons";
 import { suggestedMinCorrect } from "@/features/progress/types";
 import { getSupabase } from "@/services/supabase";
@@ -173,27 +172,45 @@ export default function AzotaExamComposer() {
     return expandClassIdsByGrade(base, classes) ?? base;
   }, [selectedChapter, classId, classes]);
 
-  const questions = examBundle?.exam.questions ?? [];
-  const check = examBundle ? validateBundle(examBundle) : null;
-  // Câu nhắc đồ thị/hình vẽ mà không có ảnh: chặn Đăng cho tới khi thầy xác nhận đã xem.
-  // Xác nhận gắn với đúng bundle đang xem: đổi file/sửa đề là phải tick lại.
-  const missingFigure = questionsMissingFigure(questions);
-  const dependent = questionsDependingOnOthers(questions);
-  const [figureAckFor, setFigureAckFor] = useState<LessonBundle | null>(null);
-  const figureAck = figureAckFor !== null && figureAckFor === examBundle;
-  const setFigureAck = (v: boolean) => setFigureAckFor(v ? examBundle : null);
+  const questions = useMemo(() => examBundle?.exam.questions ?? [], [examBundle]);
+  // Phân loại câu: ổn / trùng (tự loại) / cần duyệt (thiếu hình, phụ thuộc câu khác — để riêng, mặc định không đăng).
+  // Câu lỗi không còn chặn cả đề. Lựa chọn "Vẫn đăng" gắn với đúng bundle đang xem: đổi file là chọn lại.
+  const triage = useMemo(() => triageQuestions(questions), [questions]);
+  const [includeState, setIncludeState] = useState<{ bundle: LessonBundle | null; set: Set<number> }>({
+    bundle: null,
+    set: new Set(),
+  });
+  const include = useMemo(
+    () => (includeState.bundle === examBundle ? includeState.set : new Set<number>()),
+    [includeState, examBundle],
+  );
+  const toggleInclude = (i: number, on: boolean) => {
+    const next = new Set(include);
+    if (on) next.add(i);
+    else next.delete(i);
+    setIncludeState({ bundle: examBundle, set: next });
+  };
+  const pubBundle = useMemo<LessonBundle | null>(() => {
+    if (!examBundle) return null;
+    const keep = new Set([...triage.ok, ...triage.review.map((r) => r.index).filter((i) => include.has(i))]);
+    return {
+      ...examBundle,
+      exam: { ...examBundle.exam, questions: questions.filter((_, i) => keep.has(i)) },
+    };
+  }, [examBundle, triage, include, questions]);
+  const pubQuestions = pubBundle?.exam.questions ?? [];
+  const check = pubBundle ? validateBundle(pubBundle) : null;
   const canPublish =
-    !!examBundle &&
+    !!pubBundle &&
     !!check?.ok &&
-    questions.length > 0 &&
+    pubQuestions.length > 0 &&
     lessonId !== null &&
     !busy &&
-    !!examBundle.exam.title.trim() &&
-    ((missingFigure.length === 0 && dependent.length === 0) || figureAck);
+    !!pubBundle.exam.title.trim();
 
   // ----- Đăng -----
   async function publish() {
-    if (!examBundle || lessonId === null) return;
+    if (!pubBundle || lessonId === null) return;
     setBusy(true);
     setDoneLink(null);
     const steps: string[] = [];
@@ -205,13 +222,13 @@ export default function AzotaExamComposer() {
     let uploadedPaths: string[] = [];
     let createdExamId: number | null = null;
     try {
-      let resolved = examBundle;
-      const rasters = examBundle.raster_images ?? [];
+      let resolved = pubBundle;
+      const rasters = pubBundle.raster_images ?? [];
       if (rasters.length) {
         push(`Nén & tải ${rasters.length} ảnh…`);
         const media = await uploadLessonMedia(supabase, lessonId, await compressRasterInputs(rasters));
         uploadedPaths = media.map((m) => m.storagePath);
-        resolved = applyMediaToBundle(examBundle, media);
+        resolved = applyMediaToBundle(pubBundle, media);
         push(`  ✓ đã tải ${media.length} ảnh`);
       }
       resolved = {
@@ -261,7 +278,7 @@ export default function AzotaExamComposer() {
       };
       const extra = {
         ...(kind === "ly_thuyet"
-          ? { quiz_min_correct: minCorrect.trim() ? Number(minCorrect) : suggestedMinCorrect(questions.length) }
+          ? { quiz_min_correct: minCorrect.trim() ? Number(minCorrect) : suggestedMinCorrect(pubQuestions.length) }
           : {}),
         ...(kind === "luyen_tap" ? { practice_pass_score: practicePassScore.trim() ? Number(practicePassScore) : null } : {}),
       };
@@ -441,8 +458,8 @@ export default function AzotaExamComposer() {
             <input
               type="number"
               min={1}
-              max={questions.length || undefined}
-              placeholder={questions.length ? String(suggestedMinCorrect(questions.length)) : "—"}
+              max={pubQuestions.length || undefined}
+              placeholder={pubQuestions.length ? String(suggestedMinCorrect(pubQuestions.length)) : "—"}
               value={minCorrect}
               onChange={(e) => setMinCorrectInput(e.target.value)}
               className={`${inputCls} mt-1`}
@@ -513,9 +530,7 @@ export default function AzotaExamComposer() {
           </ul>
         )}
 
-        {(missingFigure.length > 0 || dependent.length > 0) && (
-          <MissingFigureNotice nums={missingFigure} dependentNums={dependent} ack={figureAck} onAck={setFigureAck} />
-        )}
+        <ExamTriagePanel questions={questions} triage={triage} include={include} onToggle={toggleInclude} />
 
         <div className="flex flex-wrap items-center gap-3">
           <button

@@ -36,3 +36,14 @@ export function contextDependencyWarning(nums: number[]): string | null {
     `Câu có 'Sử dụng thông tin sau cho Câu…' nằm giữa/cuối là đoạn dẫn của câu sau bị dính vào. Chép lại đầy đủ dữ kiện vào từng câu (mỗi câu phải tự đọc hiểu được) rồi tải lại; nếu câu đã đủ dữ kiện thì bỏ qua cảnh báo.`
   );
 }
+
+/** Chuỗi so khớp câu trùng giữa các đề: bỏ HTML, gom khoảng trắng, không phân biệt hoa/thường.
+ *  Gồm cả phương án/ý/đáp án để hai câu cùng đề bài nhưng khác lựa chọn không bị coi là một. */
+export function questionKey(q: ExamQuestion): string {
+  const clean = (t: string) => t.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+  const parts = [q.question];
+  if (q.type === "multiple_choice") parts.push(...q.options);
+  else if (q.type === "true_false") parts.push(...q.statements.map((s) => s.text));
+  else if (q.type === "short_answer") parts.push(q.answer);
+  return parts.map(clean).join("|");
+}

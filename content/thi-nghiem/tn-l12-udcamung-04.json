@@ -1,0 +1,51 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+  "id": "tn-l12-udcamung-04",
+  "ten": "Con lắc tấm nhôm đặc và tấm có rãnh",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": ["camung_ud.foucault_luc_ham", "camung_ud.cat_vong_xoay"],
+  "muc_tieu": "Thấy tấm đặc bị hãm mạnh, tấm xẻ rãnh dao động lâu hơn vì đường Foucault bị cắt.",
+  "dung_cu": [
+    {"ten": "Nam châm chữ U mạnh", "so_luong": 1, "ghi_chu": "khe đủ cho tấm lọt qua"},
+    {"ten": "Tấm nhôm đặc", "so_luong": 1, "ghi_chu": "treo như con lắc"},
+    {"ten": "Tấm nhôm cùng cỡ có rãnh", "so_luong": 1, "ghi_chu": "nhiều khe song song"}
+  ],
+  "cac_buoc": {
+    "lam": ["Kéo tấm lệch cùng một góc rồi thả giữa hai cực.", "Đếm thời gian tới khi biên độ còn khoảng một nửa.", "Làm với tấm đặc rồi tấm có rãnh."],
+    "quan_sat": ["Tấm đặc dừng rất nhanh, khoảng 2,6 s.", "Tấm có rãnh đung đưa lâu, khoảng 15 s."],
+    "rut_ra": ["Rãnh cắt vòng kín của dòng Foucault.", "Lực hãm giảm.", "Cùng lý do lõi biến áp phải ghép bằng lá tôn cách điện."]
+  },
+  "tham_so": [
+    {"ky_hieu": "n_ranh", "ten": "Số rãnh trên tấm", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 8, "mac_dinh": 0, "buoc": 1},
+    {"ky_hieu": "B", "ten": "Cảm ứng từ trong khe nam châm", "don_vi": "T", "kieu": "dieu_chinh", "min": 0, "max": 0.4, "mac_dinh": 0.2, "buoc": 0.05},
+    {"ky_hieu": "t_tat", "ten": "Thời gian biên độ còn một nửa", "don_vi": "s", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": ["Lực hãm tỉ lệ với B² và với độ liền mạch của đường Foucault", "t_tat tăng khi n_ranh tăng", "t_tat rất lớn khi B = 0"],
+    "gia_thiet": ["bỏ qua ma sát ổ treo so với lực hãm của tấm đặc", "hai tấm cùng khối lượng gần đúng"],
+    "ghi_chu": "2,6 s và 15 s trong bài là số minh hoạ cho cùng biên độ đầu, không phải số đo một bộ nam châm cụ thể."
+  },
+  "so_lieu_mau": {
+    "cot": ["Tấm", "Số rãnh", "Thời gian tắt (s)"],
+    "hang": [["đặc", 0, 2.6], ["có rãnh", 6, 15]],
+    "ghi_chu": "Số minh hoạ cùng hướng với thí nghiệm SGK: tấm rãnh dao động lâu hơn nhiều lần."
+  },
+  "ket_qua_ky_vong": "Tấm đặc tắt nhanh. Tăng số rãnh thì thời gian tắt tăng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng tấm rãnh lâu hơn vì nhẹ hơn rõ rệt.",
+    "Cho rằng nam châm hút nhôm."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+so_do_luc",
+    "dieu_khien": ["kéo thả con lắc", "thêm rãnh", "tắt nam châm"],
+    "dau_ra": ["dao động tắt dần", "vòng Foucault", "mũi tên lực hãm"],
+    "hinh_trong_bai": "Hình 3",
+    "y_tuong": "Học sinh đoán tấm nào dừng trước khi thả."
+  },
+  "an_toan": "Nam châm mạnh: không kẹp da giữa hai cực."
+}

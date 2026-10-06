@@ -23,6 +23,7 @@
  * Thứ tự DOM = thứ tự đọc trên điện thoại: câu hỏi → thí nghiệm → nút vào lớp
  * (B8) — nhờ vậy phần tương tác nằm trong màn hình đầu ở 375px (B1), còn trên
  * desktop thì thí nghiệm đứng cột phải, cao bằng cả hai hàng chữ.
+ * Câu hỏi và câu dẫn (COPY) đổi theo tab đang chọn, không giữ lời của tab "Ném xiên".
  */
 
 import { useState, type KeyboardEvent } from "react";
@@ -83,6 +84,42 @@ const TABS = [
 
 type TabKey = (typeof TABS)[number]["key"];
 
+/** Câu hỏi + câu dẫn đổi theo tab đang chọn. Giữ hai dòng tiêu đề ngắn để mô phỏng
+ *  vẫn nằm trong màn hình đầu ở 375px (B1); câu dẫn chỉ nói việc của đúng tab đó (N1, N4). */
+const COPY: Record<
+  TabKey,
+  { line1: string; before: string; accent: string; after: string; body: string }
+> = {
+  projectile: {
+    line1: "Ném ở góc nào",
+    before: "thì ",
+    accent: "xa nhất",
+    after: "?",
+    body: "Kéo bệ phóng rồi thả tay — mỗi lần ném là một thí nghiệm em tự làm.",
+  },
+  rescue: {
+    line1: "Thả lúc nào",
+    before: "thì ",
+    accent: "trúng",
+    after: "?",
+    body: "Lái máy bay cứu hộ, bấm thả đúng lúc để gói hàng rơi trúng bãi đáp.",
+  },
+  interference: {
+    line1: "Sóng gặp nhau",
+    before: "chỗ nào ",
+    accent: "sáng",
+    after: "?",
+    body: "Kéo điểm M trên khay sóng hai nguồn — đọc hiệu đường đi, biết chỗ sáng hay tối.",
+  },
+  projection: {
+    line1: "Kéo xa gấp đôi",
+    before: "nhịp có ",
+    accent: "đổi",
+    after: "?",
+    body: "Khớp bóng quay đều với con lắc lò xo — rồi kéo ra xa, xem nhịp có chậm đi.",
+  },
+};
+
 const FORMULAS = [
   "R = v₀²·sin2α/g",
   "x = A·cos(ωt + φ)",
@@ -101,6 +138,7 @@ const FORMULAS = [
 
 export function PhysicsSimulationHero() {
   const [tab, setTab] = useState<TabKey>("projectile");
+  const copy = COPY[tab];
 
   // Một khung báo lỗi dùng chung cho cả 4 tab (chỉ một tab được mount ở mỗi thời điểm).
   const panelFallback = (
@@ -125,20 +163,21 @@ export function PhysicsSimulationHero() {
       />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-10">
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
+        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
           <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">
             Có bao giờ em tự hỏi…
           </p>
 
           <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[2.9rem]">
-            Ném ở góc nào
+            {copy.line1}
             <br />
-            thì <span className="text-cyan-300">xa nhất</span>?
+            {copy.before}
+            <span className="text-cyan-300">{copy.accent}</span>
+            {copy.after}
           </h1>
 
           <p className="mt-3 max-w-md text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
-            Kéo bệ phóng rồi thả tay, hoặc lái máy bay cứu hộ thả hàng đúng lúc — mỗi lần thử là
-            một thí nghiệm em tự làm.
+            {copy.body}
           </p>
         </div>
 

@@ -131,6 +131,14 @@ html[data-theme="light"] [class*="text-yellow-"] { color: #a16207 !important; }
 html[data-theme="light"] [class*="text-orange-"] { color: #c2410c !important; }
 html[data-theme="light"] [class*="text-red-"] { color: #b91c1c !important; }
 html[data-theme="light"] [class*="text-violet-"] { color: #6d28d9 !important; }
+html[data-theme="light"] [class*="text-sky-"] { color: #0369a1 !important; }
+html[data-theme="light"] [class*="text-indigo-"] { color: #4338ca !important; }
+html[data-theme="light"] [class*="text-rose-"] { color: #be123c !important; }
+html[data-theme="light"] [class*="text-fuchsia-"],
+html[data-theme="light"] [class*="text-pink-"],
+html[data-theme="light"] [class*="text-purple-"] { color: #a21caf !important; }
+html[data-theme="light"] [class*="text-teal-"] { color: #0f766e !important; }
+html[data-theme="light"] .text-slate-100 { color: #1e293b; }
 html[data-theme="light"] [class~="bg-[#2563EB]"].text-white,
 html[data-theme="light"] [class~="bg-[#1D4ED8]"].text-white,
 html[data-theme="light"] [class~="bg-primary"].text-white,
@@ -826,6 +834,9 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
    ------------------------------------------------------------------ */
 .lesson-side { position: sticky; top: 100px; display: grid; gap: 14px; align-content: start; /* Cột cao hơn màn hình thì tự cuộn bên trong; chừa đáy 72px cho nút Báo lỗi nổi (N2). */ max-height: calc(100vh - 172px); overflow-y: auto; overscroll-behavior: contain; padding-bottom: 4px; scrollbar-width: thin; }
 .lesson-toc ol { max-height: 240px; overflow-y: auto; }
+/* Dock admin "Xem thử như…" (bên trái): nằm trên thanh đáy điện thoại/máy tính bảng, không che thanh. */
+.admin-dock { bottom: 20px; }
+@media (max-width: 1023px) { .admin-dock { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
 /* Nút Báo lỗi nổi: trang bài có thanh đáy cố định (z 45) che mất nút → nâng lên trên thanh. */
 @media (max-width: 639px) { body:has(.lesson-bottombar) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 46; } }
 .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 14px; }
@@ -834,9 +845,6 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 .lesson-panel-empty { margin: 0; color: var(--color-muted); font-size: 12.5px; }
 .lesson-panel-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; color: var(--lesson-accent-text); font-size: 12.5px; font-weight: 600; text-decoration: none; }
 .lesson-panel-link:hover { text-decoration: underline; }
-/* Dock admin "Xem thử như…" (bên trái): nằm trên thanh đáy điện thoại/máy tính bảng, không che thanh. */
-.admin-dock { bottom: 20px; }
-@media (max-width: 1023px) { .admin-dock { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
 .lesson-toc ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
 .lesson-toc a { display: grid; gap: 1px; border-left: 2px solid transparent; padding: 5px 6px; color: var(--color-muted); font-size: 13px; line-height: 1.4; text-decoration: none; }
 .lesson-toc-item { color: var(--color-muted); font-size: 12px; font-weight: 600; letter-spacing: .02em; opacity: .75; }

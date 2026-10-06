@@ -8,6 +8,7 @@ const columns = [
       { label: "Vật lý 10", href: "/lop-hoc/lop-10" },
       { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
       { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
+      { label: "Luyện tập", href: "/luyen-tap" },
       { label: "Sinh viên CTTC", href: "/lop-hoc/cttc" },
     ],
   },

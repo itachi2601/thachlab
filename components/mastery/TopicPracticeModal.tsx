@@ -20,20 +20,11 @@ import {
   pickRandom,
 } from "@/features/exams/types";
 
+import { questionKey } from "@/services/question-context";
+
 type Phase = "loading" | "empty" | "intro" | "running" | "done";
 
 const COUNT = 10;
-
-/** Chuỗi so khớp câu trùng giữa các đề: bỏ HTML, gom khoảng trắng, không phân biệt hoa/thường.
- *  Gồm cả phương án/ý/đáp án để hai câu cùng đề bài nhưng khác lựa chọn không bị coi là một. */
-function questionKey(q: ExamQuestion): string {
-  const clean = (t: string) => t.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
-  const parts = [q.question];
-  if (q.type === "multiple_choice") parts.push(...q.options);
-  else if (q.type === "true_false") parts.push(...q.statements.map((s) => s.text));
-  else if (q.type === "short_answer") parts.push(q.answer);
-  return parts.map(clean).join("|");
-}
 
 /** Chia `count` câu cho các bài (mỗi bài ≥1 nếu còn chỗ); bài thiếu câu thì phần dư dồn sang bài còn câu. */
 function allocate(sizes: number[], count: number): number[] {

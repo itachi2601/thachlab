@@ -1,0 +1,177 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Đại cương về dòng điện xoay chiều",
+ "lesson_id": 14,
+ "nguon_trong_bai": "content/lesson-samples/l12-dong-dien-xoay-chieu/theory.html",
+ "id": "tn-l12-xoaychieu-01",
+ "ten": "Máy phát mini quay tay: biên độ tỉ lệ với tốc độ quay",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "xoaychieu.suat_dien_dong_khung_quay",
+  "xoaychieu.e_ti_le_omega",
+  "xoaychieu.vuong_pha_phi_e"
+ ],
+ "muc_tieu": "Cho thấy E0 = NBSω: quay nhanh gấp k lần thì biên độ và tần số cùng gấp k lần; Φ và e vuông pha.",
+ "dung_cu": [
+  {
+   "ten": "Máy phát điện mini quay tay (một cặp cực)",
+   "so_luong": 1,
+   "ghi_chu": "nam châm vĩnh cửu, cuộn dây quay"
+  },
+  {
+   "ten": "Dao động ký (hoặc cảm biến điện áp + máy tính)",
+   "so_luong": 1,
+   "ghi_chu": "đọc biên độ U0 và tần số"
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1,
+   "ghi_chu": "đếm vòng quay mỗi giây"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối hai đầu máy phát vào dao động ký.",
+   "Quay đều tay ở n = 2, 4, 6, 8, 10 vòng/s (đếm vòng bằng đồng hồ).",
+   "Mỗi lần đọc biên độ U0 trên màn."
+  ],
+  "quan_sat": [
+   "Màn hiện đường hình sin.",
+   "Quay càng nhanh, sóng càng cao và càng dày."
+  ],
+  "rut_ra": [
+   "U0/n gần như không đổi nên U0 tỉ lệ thuận với n, tức với ω.",
+   "Mỗi vòng quay cho một chu kì nên f = n."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Tốc độ quay",
+   "don_vi": "vòng/s",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 12,
+   "mac_dinh": 4,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Số vòng dây",
+   "don_vi": "vòng",
+   "kieu": "co_dinh",
+   "gia_tri": 100
+  },
+  {
+   "ky_hieu": "B",
+   "ten": "Cảm ứng từ",
+   "don_vi": "T",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích khung",
+   "don_vi": "m2",
+   "kieu": "dieu_chinh",
+   "min": 0.005,
+   "max": 0.05,
+   "mac_dinh": 0.02,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "U0",
+   "ten": "Biên độ điện áp đo trên dao động ký",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "E0",
+   "ten": "Biên độ suất điện động",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "omega = 2*pi*n",
+   "Phi = N*B*S*cos(omega*t)",
+   "e = -dPhi/dt = N*B*S*omega*sin(omega*t)",
+   "E0 = N*B*S*omega",
+   "f = n"
+  ],
+  "gia_thiet": [
+   "từ trường đều",
+   "khung quay đều",
+   "điện trở cuộn dây bỏ qua (thực tế làm U0 đo được nhỏ hơn E0)"
+  ],
+  "ghi_chu": "Mô phỏng nên vẽ đồ thị Φ(t) và e(t) chồng nhau, có thanh trượt n; cho thấy lúc Φ đỉnh thì e = 0."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n (vòng/s)",
+   "U0 (V)",
+   "U0/n (V·s)"
+  ],
+  "hang": [
+   [
+    2,
+    0.95,
+    0.475
+   ],
+   [
+    4,
+    1.82,
+    0.455
+   ],
+   [
+    6,
+    2.84,
+    0.473
+   ],
+   [
+    8,
+    3.67,
+    0.459
+   ],
+   [
+    10,
+    4.7,
+    0.47
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ của một lần đo mô phỏng, không phải số đo thật của lớp. U0/n trung bình ≈ 0,466 V·s."
+ },
+ "ket_qua_ky_vong": "U0 tỉ lệ thuận với n (U0/n ≈ 0,47 V·s); tần số của sóng bằng n.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng quay nhanh hơn chỉ làm tăng tần số, không đổi biên độ.",
+  "Cho rằng e cực đại khi Φ cực đại (thực tế e = 0 lúc đó)."
+ ],
+ "sai_so_thuong_gap": [
+  "Tay quay không đều.",
+  "Đọc đỉnh sóng lệch nửa ô trên màn dao động ký.",
+  "Điện trở cuộn dây và ma sát chổi than làm U0 nhỏ hơn E0."
+ ],
+ "an_toan": "Không có nguy cơ đáng kể (điện áp vài vôn).",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "n",
+   "B",
+   "S"
+  ],
+  "dau_ra": [
+   "khung quay và vectơ n",
+   "đồ thị Φ(t), e(t)",
+   "bảng U0 theo n"
+  ],
+  "hinh_trong_bai": "Hình 1, Hình 3",
+  "y_tuong": "Học sinh dự đoán U0 khi n gấp đôi trước khi mô phỏng chạy."
+ }
+}

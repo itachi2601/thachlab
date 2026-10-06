@@ -1,6 +1,6 @@
 "use client";
 
-import { dependsOnOtherQuestion } from "@/services/question-context";
+import { dependsOnOtherQuestion, questionKey } from "@/services/question-context";
 import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -122,6 +122,7 @@ const DEFAULT_COUNT = 20;
  */
 export default function PracticeSession({
   examIds,
+  poolExamIds,
   lessonId,
   itemId,
   passScore = null,
@@ -129,6 +130,8 @@ export default function PracticeSession({
   onActiveChange,
 }: {
   examIds: number[];
+  /** Đề chung của bài (kiểm tra/thi/BTVN...) — câu của các đề này cũng vào ngân hàng luyện tập, khử trùng. */
+  poolExamIds?: number[];
   lessonId: number | null;
   itemId: number | null;
   /** Điểm đạt thang 10 do giáo viên cấu hình cho mục luyện tập này — null = không đánh giá đạt. */
@@ -165,15 +168,17 @@ export default function PracticeSession({
   const timedOutRef = useRef(false);
 
   useEffect(() => {
-    if (!session || examIds.length === 0) return;
+    const allIds = [...new Set([...examIds, ...(poolExamIds ?? [])])];
+    if (!session || allIds.length === 0) return;
     let alive = true;
     void (async () => {
       setBankState("loading");
       try {
-        const metas = await fetchExamsFull(examIds);
+        const metas = await fetchExamsFull(allIds);
         if (!alive) return;
         const flat: PracticePick[] = [];
-        for (const id of examIds) {
+        const seen = new Set<string>();
+        for (const id of allIds) {
           const exam = metas.get(id) as Exam | undefined;
           if (!exam) continue;
           exam.questions.forEach((question, qi) => {
@@ -181,6 +186,9 @@ export default function PracticeSession({
             if (question.type === "essay") return;
             // Câu "tiếp câu trên" mất ngữ cảnh khi bốc ngẫu nhiên — bỏ khỏi ngân hàng luyện tập.
             if (dependsOnOtherQuestion(question)) return;
+            const key = questionKey(question);
+            if (seen.has(key)) return;
+            seen.add(key);
             flat.push({ question, examId: exam.id, sourceIndex: qi });
           });
         }
@@ -194,7 +202,7 @@ export default function PracticeSession({
     return () => {
       alive = false;
     };
-  }, [examIds, session]);
+  }, [examIds, poolExamIds, session]);
 
   const ladderScope = itemId ?? lessonId;
   const studentId = session?.user.id;
@@ -378,7 +386,7 @@ export default function PracticeSession({
 
   // ---------- Màn hình mở phiên ----------
   if (phase === "setup") {
-    if (examIds.length === 0)
+    if (examIds.length === 0 && !(poolExamIds?.length))
       return <p className="text-sm text-slate-400">Mục này chưa được gắn đề.</p>;
     if (!session)
       return (

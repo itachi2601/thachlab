@@ -1,0 +1,98 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.2, <details data-exp> + bảng số liệu)",
+  "id": "tn-l12-ungdungcutu-02",
+  "ten": "Sạc không dây: hai cuộn dây rời ghép qua từ trường, điện áp thứ cấp giảm theo khoảng cách",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "ungdungcutu.sac_khong_day",
+    "ungdungcutu.may_bien_ap_khong_loi"
+  ],
+  "muc_tieu": "Đo được sự phụ thuộc của điện áp cuộn thứ cấp vào khoảng cách giữa hai cuộn dây (máy biến áp không có lõi sắt chung), từ đó giải thích vì sao sạc không dây phải áp sát và vì sao hiệu suất thấp hơn sạc có dây.",
+  "dung_cu": [
+    { "ten": "Ống nhựa đường kính 40 mm, dài 60 mm", "so_luong": 2 },
+    { "ten": "Dây đồng emay 0,5 mm", "so_luong": 1, "ghi_chu": "quấn cuộn sơ cấp 200 vòng, cuộn thứ cấp 150 vòng" },
+    { "ten": "Máy phát điện áp xoay chiều tần số 10–20 kHz", "so_luong": 1, "ghi_chu": "đặt 12 V hiệu dụng; có thể dùng máy phát âm tần của phòng thí nghiệm" },
+    { "ten": "Vôn kế xoay chiều", "so_luong": 1, "ghi_chu": "sai số ±0,1 V" },
+    { "ten": "Tấm bìa cứng dày 1 cm", "so_luong": 4 },
+    { "ten": "Thước kẹp hoặc thước thẳng", "so_luong": 1, "ghi_chu": "sai số ±1 mm" }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Quấn cuộn sơ cấp 200 vòng lên ống nhựa thứ nhất và cuộn thứ cấp 150 vòng lên ống nhựa thứ hai, cùng chiều quấn.",
+      "Đặt hai ống đồng trục, hai đầu ống sát nhau; nối cuộn sơ cấp với máy phát đặt ở 12 V, nối cuộn thứ cấp với vôn kế xoay chiều.",
+      "Đọc điện áp khi hai đầu ống sát nhau, rồi lần lượt chèn 1, 2, 3, 4 tấm bìa dày 1 cm vào giữa và đọc lại; mỗi vị trí đọc ba lần."
+    ],
+    "quan_sat": [
+      "Hai cuộn áp sát: vôn kế chỉ 8,4 V, thấp hơn giá trị lí tưởng 9,0 V tính theo tỉ số vòng.",
+      "Khoảng cách tăng 1 cm thì điện áp mất gần 1 V; ở 4 cm chỉ còn 3,9 V, tức chưa đầy một nửa giá trị lí tưởng.",
+      "Nếu dùng đế sạc điện thoại thật: điện thoại báo đang sạc khi áp sát và ngừng sạc khi kê vật dày vài milimét; đế sạc ấm lên khi sạc."
+    ],
+    "rut_ra": [
+      "Cuộn sơ cấp tạo từ trường biến thiên, từ thông móc vòng qua cuộn thứ cấp sinh suất điện động cảm ứng — đúng nguyên lí máy biến áp, nhưng không có lõi sắt dẫn từ.",
+      "Khe hở càng lớn thì từ thông rò ra ngoài càng nhiều, phần từ thông móc vòng qua cuộn thứ cấp càng ít nên điện áp thứ cấp càng nhỏ.",
+      "Hiệu suất ghép thấp hơn sạc có dây vì năng lượng mất thành từ trường rò và nhiệt trong các khối kim loại gần đó (dòng Foucault)."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "U1", "ten": "Điện áp hiệu dụng trên cuộn sơ cấp", "don_vi": "V", "kieu": "dieu_chinh", "min": 6, "max": 24, "mac_dinh": 12, "buoc": 1 },
+    { "ky_hieu": "N1", "ten": "Số vòng cuộn sơ cấp", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 100, "max": 400, "mac_dinh": 200, "buoc": 20 },
+    { "ky_hieu": "N2", "ten": "Số vòng cuộn thứ cấp", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 50, "max": 400, "mac_dinh": 150, "buoc": 10 },
+    { "ky_hieu": "d", "ten": "Khoảng cách giữa hai cuộn dây", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 4, "mac_dinh": 0, "buoc": 1 },
+    { "ky_hieu": "f", "ten": "Tần số dòng điện xoay chiều", "don_vi": "kHz", "kieu": "co_dinh", "gia_tri": 20 },
+    { "ky_hieu": "U2_lt", "ten": "Điện áp thứ cấp theo mô hình lí tưởng", "don_vi": "V", "kieu": "tinh_ra" },
+    { "ky_hieu": "U2_do", "ten": "Điện áp thứ cấp đo trên vôn kế", "don_vi": "V", "kieu": "do_duoc", "sai_so_do": 0.1 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Suất điện động cảm ứng ở cuộn thứ cấp: e2 = −N2·ΔΦ/Δt",
+      "Máy biến áp lí tưởng (không rò từ thông): U2/U1 = N2/N1",
+      "Kể đến rò từ thông, hiệu suất ghép giảm theo khoảng cách: U2 = k(d)·U1·N2/N1 với k(0) ≈ 0,93",
+      "Công suất nhận trên tải: P2 = U2·I2; hiệu suất ghép: η = P2/P1"
+    ],
+    "gia_thiet": [
+      "hai cuộn dây cùng đường kính, cùng trục, chiều quấn như nhau",
+      "bỏ qua điện trở thuần của cuộn dây và điện dung kí sinh",
+      "vôn kế lí tưởng, tổng trở vào rất lớn",
+      "khe hở chỉ gồm không khí và các tấm bìa cách điện"
+    ],
+    "ghi_chu": "Mô phỏng nên có thanh trượt khoảng cách d và số vòng N2; cho hiện chồng đường lí tưởng (nằm ngang ở U1·N2/N1) với đường số đo để học sinh thấy phần mất do rò từ thông."
+  },
+  "so_lieu_mau": {
+    "cot": ["Khoảng cách d (cm)", "Điện áp thứ cấp đo được (V)", "Điện áp lí tưởng (V)"],
+    "hang": [
+      [0, 8.4, 9.0],
+      [1, 7.1, 9.0],
+      [2, 5.9, 9.0],
+      [3, 4.8, 9.0],
+      [4, 3.9, 9.0]
+    ],
+    "ghi_chu": "Số liệu minh hoạ cho U1 = 12 V, N1 = 200 vòng, N2 = 150 vòng, f = 20 kHz, vôn kế sai số ±0,1 V. Giá trị lí tưởng 9,0 V cao hơn mọi số đo vì luôn có từ thông rò."
+  },
+  "ket_qua_ky_vong": "Điện áp thứ cấp bằng khoảng 93% giá trị lí tưởng khi hai cuộn áp sát và giảm nhanh khi tăng khoảng cách; ở 4 cm chỉ còn khoảng 3,9 V.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng điện áp thứ cấp luôn đúng bằng U1·N2/N1 như máy biến áp có lõi sắt — bỏ qua phần từ thông rò.",
+    "Nghĩ rằng tăng khoảng cách thì điện áp giảm chậm, chỉ mất vài phần trăm.",
+    "Nghĩ rằng sạc không dây truyền năng lượng bằng sóng điện từ bức xạ (như wifi), không phải bằng từ trường biến thiên ghép giữa hai cuộn dây.",
+    "Nghĩ rằng điện thoại dùng được với mọi đế sạc mà không cần đúng chuẩn cuộn dây."
+  ],
+  "sai_so_thuong_gap": [
+    "Vôn kế xoay chiều đo tần số 20 kHz thường chỉ đúng ở dải 40–400 Hz, cho số thấp hơn thực tế.",
+    "Hai cuộn không đồng trục hoặc lệch nhau làm từ thông móc vòng giảm mạnh.",
+    "Dây quấn không đều làm N thực khác N ghi trên nhãn.",
+    "Tần số máy phát trôi làm số đo dao động giữa các lần đọc."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "y_tuong": "Hai cuộn dây đồng trục; kéo thanh trượt khoảng cách và thấy các đường sức từ nối hai cuộn thưa dần, đồng thời đồ thị U2(d) vẽ dần từng điểm.",
+    "diem_nhan": "Đường số đo luôn nằm dưới đường lí tưởng và tụt nhanh — cho thấy từ thông rò chứ không phải điện trở dây là nguyên nhân chính."
+  },
+  "an_toan": [
+    "Máy phát tần số cao có thể gây bỏng nhẹ khi chạm vào cuộn dây đang làm việc: chỉ chạm sau khi tắt nguồn.",
+    "Không để cuộn dây nóng chạm vào vật liệu dễ cháy; không đặt gần máy trợ tim."
+  ]
+}

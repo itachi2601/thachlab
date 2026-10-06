@@ -1,0 +1,157 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Sự chuyển thể",
+  "lesson_id": 2,
+  "nguon_trong_bai": "content/lesson-samples/l12-su-chuyen-the/theory.html",
+  "id": "tn-l12-chuyenthe-03",
+  "ten": "Hai đĩa nước, một đĩa trước quạt: bay hơi ở nhiệt độ phòng",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "chuyenthe.bay_hoi_va_soi",
+    "chuyenthe.mo_hinh_dong_hoc"
+  ],
+  "muc_tieu": "Chứng tỏ bay hơi xảy ra ở mọi nhiệt độ, chỉ ở mặt thoáng, và mạnh lên khi có gió — khác với sôi là chỉ xảy ra ở một nhiệt độ xác định, trong cả khối chất lỏng.",
+  "dung_cu": [
+    {
+      "ten": "Hai đĩa nhôm hoặc đĩa nhựa giống hệt nhau",
+      "so_luong": 2,
+      "ghi_chu": "cùng đường kính để diện tích mặt thoáng bằng nhau"
+    },
+    {
+      "ten": "Ống đong hoặc xi-lanh 20 ml",
+      "so_luong": 1,
+      "ghi_chu": "đong lượng nước bằng nhau cho hai đĩa"
+    },
+    {
+      "ten": "Quạt nhỏ hoặc quạt giấy",
+      "so_luong": 1,
+      "ghi_chu": "giữ khoảng cách và tốc độ gió không đổi"
+    },
+    {
+      "ten": "Cân điện tử (nếu có)",
+      "so_luong": 1,
+      "ghi_chu": "cân khối lượng nước còn lại, độ chia 0,1 g"
+    },
+    {
+      "ten": "Nhiệt kế phòng",
+      "so_luong": 1,
+      "ghi_chu": "ghi lại nhiệt độ phòng, không đổi trong suốt thí nghiệm"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Rót 20 ml nước vào mỗi đĩa, đặt hai đĩa cạnh nhau trong cùng một phòng, cách xa cửa sổ.",
+      "Một đĩa để yên làm mẫu đối chứng; đĩa kia đặt trước quạt ở khoảng cách cố định, bật ở một mức cố định.",
+      "Ghi nhiệt độ phòng. Sau mỗi 30 phút, cân (hoặc đọc mực nước) cả hai đĩa rồi ghi lại."
+    ],
+    "quan_sat": [
+      "Sau 1–2 giờ, đĩa trước quạt còn ít nước hơn hẳn đĩa để yên.",
+      "Nhiệt độ phòng không đổi, nước chưa hề sôi, mặt nước cũng không nóng lên.",
+      "Nếu đậy kín một đĩa, nước trong đĩa đó gần như không giảm: hơi không thoát ra được thì bão hoà ngay trên mặt thoáng."
+    ],
+    "rut_ra": [
+      "Bay hơi xảy ra ở mọi nhiệt độ, không cần tới 100 °C.",
+      "Bay hơi chỉ diễn ra ở mặt thoáng; gió cuốn hơi vừa thoát ra đi nên bay hơi nhanh hơn.",
+      "Sôi khác hẳn: chỉ xảy ra khi cả khối chất lỏng đạt nhiệt độ sôi xác định, và hơi tạo thành cả trong lòng chất lỏng."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "v_gio",
+      "ten": "Tốc độ gió trên mặt đĩa",
+      "don_vi": "m/s",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 5,
+      "mac_dinh": 0,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "T_phong",
+      "ten": "Nhiệt độ phòng",
+      "don_vi": "°C",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 40,
+      "mac_dinh": 30,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "S",
+      "ten": "Diện tích mặt thoáng",
+      "don_vi": "cm²",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 100,
+      "mac_dinh": 60,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "V0",
+      "ten": "Thể tích nước ban đầu mỗi đĩa",
+      "don_vi": "ml",
+      "kieu": "co_dinh",
+      "gia_tri": 20
+    },
+    {
+      "ky_hieu": "m_con",
+      "ten": "Khối lượng nước còn lại",
+      "don_vi": "g",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "v_bay_hoi",
+      "ten": "Tốc độ bay hơi",
+      "don_vi": "g/phút",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "v_bay_hoi = k·S·(1 + a·v_gio)·(1 + b·(T_phong - 20))",
+      "m_con(t) = m0 - v_bay_hoi·t",
+      "Nước chỉ sôi khi T = 100 °C ở áp suất khí quyển tiêu chuẩn; ở đây T_phong luôn nhỏ hơn nên chỉ có bay hơi"
+    ],
+    "gia_thiet": [
+      "độ ẩm không khí không đổi trong suốt thí nghiệm",
+      "bỏ qua sự hấp thụ hơi nước trở lại của đĩa nước",
+      "khối lượng riêng của nước lấy 1 g/ml"
+    ],
+    "ghi_chu": "Mô phỏng nên có thanh trượt gió và nhiệt độ, đồng thời hiện nhãn 'nhiệt độ nước: 30 °C — chưa hề sôi' để phá hiểu lầm 'phải sôi mới bay hơi'."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Tốc độ gió (m/s)",
+      "Nhiệt độ phòng (°C)",
+      "Nước còn lại sau 1 giờ (g)"
+    ],
+    "hang": [
+      [0, 30, 18.4],
+      [1, 30, 15.6],
+      [3, 30, 11.2],
+      [5, 30, 8.1],
+      [0, 40, 15.2],
+      [3, 40, 7.6]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với k·S = 0,027 g/phút ở 30 °C, a = 0,22, b = 0,035; không phải số đo thật. Đĩa đậy kín coi như v_bay_hoi ≈ 0."
+  },
+  "ket_qua_ky_vong": "Nước trong đĩa giảm dần ngay ở nhiệt độ phòng; gió mạnh hơn hoặc phòng nóng hơn thì giảm nhanh hơn; đĩa đậy kín gần như không giảm. Trong mọi trường hợp nhiệt độ nước đều thấp hơn 100 °C, tức chưa hề sôi.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nước chỉ bay hơi khi đã sôi ở 100 °C, nên tưởng quần áo phơi chỉ khô khi trời thật nóng.",
+    "Cho rằng gió 'thổi bay' nước đi (giống thổi bụi) chứ không phải gió cuốn hơi nước làm bay hơi nhanh hơn.",
+    "Cho rằng trong đĩa đậy kín nước không bay hơi chút nào — thực ra vẫn bay hơi, nhưng hơi bão hoà ngay trên mặt thoáng rồi ngưng tụ trở lại."
+  ],
+  "sai_so_thuong_gap": [
+    "Hai đĩa không giống nhau hoặc đặt ở hai vị trí khác nhiệt độ, khác luồng gió.",
+    "Cân không che gió nên số đọc dao động.",
+    "Quạt làm nóng không khí cục bộ, khiến nhiệt độ hai đĩa khác nhau."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Hai đĩa nước cạnh nhau, một đĩa có quạt; các hạt nước ở mặt thoáng văng ra thành hơi, đĩa trước quạt vơi nhanh hơn.",
+    "diem_nhan": "Cho thấy hạt chỉ thoát ra ở mặt thoáng và gió làm chúng không quay lại được, trong khi nhiệt độ nước đứng yên ở mức phòng."
+  }
+}

@@ -4,7 +4,7 @@ description: "Quy tắc bắt buộc 28/9/2026: mọi nội dung đăng lên tha
 metadata:
   type: project
   originSessionId: ced67303-e669-4938-ac6d-53a4b0cb65c7
-  modified: 2026-09-28T03:08:26.465Z
+  modified: 2026-10-02T08:19:25.983Z
 ---
 
 Theo yêu cầu thầy 28/9/2026: "đăng gì cũng phải tối ưu tốc độ tải" — đã thêm quy tắc chính
@@ -45,9 +45,12 @@ kẹt/lỗi). Không có cách nào từ file hệ thống để suy ra chắc c
 lý", cũng không sửa tay ngay). Lý do thầy chọn: đã thấy 3 skill khác tự bắt kịp trong vài
 ngày, muốn để cơ chế tự sync có thêm thời gian trước khi can thiệp tay — sửa tay có rủi ro bị
 tiến trình tự sync ghi đè ngược không báo trước nếu nguồn plugin gốc chưa cập nhật thật.
-**Việc còn treo:** kiểm tra lại sau vài ngày xem `ngan-hang-cau-hoi`/`dang-bai-hoc-thachlab`
-trong `synced/` đã tự bắt kịp Library chưa; nếu vẫn kẹt lâu thì hỏi lại thầy có muốn sửa tay
-hay tìm cách trigger sync thủ công.
+**ĐÃ XONG — xác nhận 2026-10-02 (scheduled task `check-skill-sync-catchup`, lần kiểm 2):**
+cả `ngan-hang-cau-hoi` (11304 bytes, mtime 28/9 09:01:36) và `dang-bai-hoc-thachlab`
+(17676 bytes, mtime 28/9 09:00:56) trong `synced/` đã **tự bắt kịp Library** — `diff -q`
+không khác, md5 trùng. Không sửa tay gì cả; quyết định "chờ" của thầy 28/9 là đúng. Bài học:
+cơ chế tự sync của Claude Desktop có độ trễ tới ~vài ngày theo từng skill, kiên nhẫn chờ
+thay vì copy đè. Scheduled task này có thể xoá.
 
 **Why:** thầy muốn chuẩn chốt "không có ngoại lệ" cho hiệu năng khi đăng nội dung, đặt vào
 văn bản luôn được nạp (AGENTS.md) thay vì chỉ nhớ miệng.

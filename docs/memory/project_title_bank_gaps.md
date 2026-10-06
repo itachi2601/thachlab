@@ -12,3 +12,5 @@ metadata:
 
 **Why:** thầy dặn ghi lại để dùng cho skill tạo câu hỏi ngay khi có token.
 **How to apply:** khi thầy nói soạn câu cho danh hiệu / hết hạn token, mở file docs trên, soạn đúng số thiếu, rồi chạy lại `scripts/sql/title-bank-coverage.sql`. Liên quan [[feedback_batch_agent_upload_efficiency]].
+
+**2026-10-03:** file `docs/title-bank-gaps-2026-09-30.md` không còn trong repo (git cũng không có lịch sử). Số liệu trên là số đo 30/9, có thể đã cũ — chạy `scripts/sql/title-bank-coverage.sql` trên Mac để đo lại trước khi soạn, và dựng lại bảng nếu cần.

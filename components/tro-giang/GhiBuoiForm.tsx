@@ -344,7 +344,7 @@ export default function GhiBuoiForm({
       if (minutes > 0 && !draft.policy.teaching_note.trim()) return "Ghi nội dung chữa bài thay thầy.";
       if (draft.policy.attendance.includes('absence') && (minutes > 0 || Number(draft.touchCount) > 0)) return "Buổi vắng không ghi lượt tiếp xúc hoặc chữa bài.";
     }
-    if (newPolicy && draft.sessionType === "phudao" && tutoringFactor(draft.phudaoStudents.length) === null) return "Mỗi buổi phụ đạo có từ 1 đến 4 em.";
+    if (newPolicy && draft.sessionType === "phudao" && draft.phudaoStudents.length < 1) return "Buổi phụ đạo phải có ít nhất 1 em.";
     if (newPolicy && draft.sessionType === "phudao" && draft.phudaoStudentIds.length !== draft.phudaoStudents.length)
       return "Chọn từng em trong danh sách lớp (em chưa có tài khoản thì đăng ký trước).";
     if (needsTime && (!draft.startTime || !draft.endTime)) return "Chọn giờ bắt đầu và kết thúc.";

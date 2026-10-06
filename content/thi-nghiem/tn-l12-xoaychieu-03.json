@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Đại cương về dòng điện xoay chiều",
+ "lesson_id": 14,
+ "nguon_trong_bai": "content/lesson-samples/l12-dong-dien-xoay-chieu/theory.html",
+ "id": "tn-l12-xoaychieu-03",
+ "ten": "Một chiều 12 V so với xoay chiều 12 V hiệu dụng",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "xoaychieu.hieu_dung",
+  "xoaychieu.nhiet_i_binh_phuong"
+ ],
+ "muc_tieu": "Chứng tỏ giá trị hiệu dụng được định nghĩa theo tác dụng nhiệt: xoay chiều 12 V hiệu dụng sáng bằng một chiều 12 V.",
+ "dung_cu": [
+  {
+   "ten": "Bóng đèn sợi đốt 12 V",
+   "so_luong": 1,
+   "ghi_chu": "đặt vào đui đèn"
+  },
+  {
+   "ten": "Nguồn một chiều 12 V",
+   "so_luong": 1,
+   "ghi_chu": "pin hoặc nguồn điều chỉnh"
+  },
+  {
+   "ten": "Nguồn xoay chiều 12 V",
+   "so_luong": 1,
+   "ghi_chu": "biến áp hạ áp, chỉnh về 12 V hiệu dụng"
+  },
+  {
+   "ten": "Vôn kế xoay chiều",
+   "so_luong": 1,
+   "ghi_chu": "kiểm tra 12 V hiệu dụng"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối bóng vào nguồn một chiều 12 V, quan sát độ sáng.",
+   "Nối cùng bóng vào nguồn xoay chiều 12 V (vôn kế xoay chiều chỉ 12 V)."
+  ],
+  "quan_sat": [
+   "Độ sáng hai lần như nhau."
+  ],
+  "rut_ra": [
+   "Xoay chiều 12 V hiệu dụng toả nhiệt bằng một chiều 12 V.",
+   "Đỉnh của điện áp xoay chiều là 12·√2 ≈ 17 V."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Điện áp hiệu dụng",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 24,
+   "mac_dinh": 12,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở bóng đèn",
+   "don_vi": "ohm",
+   "kieu": "co_dinh",
+   "gia_tri": 12
+  },
+  {
+   "ky_hieu": "U0",
+   "ten": "Điện áp cực đại",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất toả nhiệt trung bình",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "U0 = U*sqrt(2)",
+   "p(t) = u(t)^2 / R",
+   "P_tb = U^2 / R",
+   "trung_binh(cos^2) = 1/2"
+  ],
+  "gia_thiet": [
+   "điện trở bóng không đổi theo nhiệt độ (xấp xỉ)"
+  ],
+  "ghi_chu": "Mô phỏng vẽ p(t) = u²/R dao động giữa 0 và U0²/R, đường trung bình đúng bằng U²/R."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U hiệu dụng (V)",
+   "U0 (V)",
+   "P trung bình (W)"
+  ],
+  "hang": [
+   [
+    6,
+    8.49,
+    3.0
+   ],
+   [
+    12,
+    16.97,
+    12.0
+   ],
+   [
+    24,
+    33.94,
+    48.0
+   ]
+  ],
+  "ghi_chu": "Tính với R = 12 Ω; số liệu minh hoạ từ mô hình."
+ },
+ "ket_qua_ky_vong": "P trung bình = U²/R với U là giá trị hiệu dụng; xoay chiều và một chiều cùng U cho cùng P.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng trung bình bằng 0 thì không toả nhiệt.",
+  "Dùng U0 thay cho U khi tính công suất."
+ ],
+ "sai_so_thuong_gap": [
+  "Mắt khó phân biệt chênh lệch nhỏ về độ sáng; nên dùng luxmet hoặc nhiệt kế."
+ ],
+ "an_toan": "Dùng nguồn hạ áp 12 V, không dùng điện lưới 220 V.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi",
+  "dieu_khien": [
+   "U"
+  ],
+  "dau_ra": [
+   "đồ thị u(t)",
+   "đồ thị p(t) và đường trung bình"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Học sinh đoán đường trung bình của p(t) nằm ở đâu trước khi mô phỏng vẽ."
+ }
+}

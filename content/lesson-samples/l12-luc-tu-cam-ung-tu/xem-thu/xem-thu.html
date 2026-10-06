@@ -1,0 +1,1020 @@
+<!doctype html><html lang="vi"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
+.exam-content{display:block}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
+   nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
+   vì .exam-content còn dùng ở khu quản trị/kết quả không có khung đó. */
+.exam-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.06);
+  padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  max-width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
+.exam-content img.eq {
+  display: inline-block;
+  /* chiều cao thật đặt inline theo kích thước gốc trong Word */
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 0 0.15em;
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+.exam-content img.figure {
+  display: block;
+  max-width: min(100%, 360px);
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */
+.exam-content figure.fig {
+  max-width: min(100%, 420px);
+  margin: 0.9rem auto;
+}
+.exam-content figure.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.exam-content figure.fig figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85em;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Bài lý thuyết tương tác (không JS): hộp dự đoán/định nghĩa, <details> bấm mở, trắc nghiệm tự chấm
+   bằng radio + :checked (HTML lưu DB không được chứa <script>/on*=). Mẫu: content/lesson-samples/. */
+.exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
+.exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
+.exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-box--rule .tl-label { color: #fbbf24; }
+.exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
+.exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
+.exam-content .tl-details > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-details > summary::after { content: "▾"; float: right; transition: transform .15s; }
+.exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
+.exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
+.exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
+.exam-content .tl-opt:hover { border-color: #22d3ee; }
+.exam-content .tl-quiz > input:focus-visible + .tl-opt { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-ok { border-color: #34d399; background: rgba(52,211,153,.18); }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
+.exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
+.exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
+.exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
+.exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
+.exam-content .tl-table th { background: rgba(148,163,184,.14); }
+html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
+html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
+.exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
+.exam-content .tl-box--exp .tl-label { color: #34d399; }
+.exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
+.exam-content .tl-steps > li { margin-bottom: 8px; }
+.exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
+.exam-content .tl-box .tl-details { background: transparent; }
+html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
+html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
+
+/* ============================================================
+   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+     < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
+     >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
+   ============================================================ */
+.class-pick-desktop { display: none; }
+.class-pick-mobile { display: grid; gap: 28px; }
+
+@media (max-width: 1023px) {
+  /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
+  .lesson-layout--pick { display: block; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-nav { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
+  .lesson-layout--pick .class-continue--main { display: none; }
+  /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
+  .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
+  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
+  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
+  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+}
+
+/* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
+@media (min-width: 1320px) {
+  .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+}
+
+/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
+   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
+   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
+@media (max-width: 639px) {
+  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
+   chữ sans-serif hệ thống 16px/1.75, công thức KaTeX nằm liền dòng (không khung, không cuộn riêng).
+   Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
+html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
+html:not([data-theme="light"]) .lesson-shell::before { display: none; }
+.lesson-page .exam-content { font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.75; }
+.lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
+.lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
+.lesson-page .exam-content .katex-display > .katex { display: block; }
+/* Dấu căn KaTeX (\sqrt) là một <svg> có height theo thuộc tính; quy tắc ".exam-content svg { height: auto }"
+   ở trên làm nó xẹp về 0 nên mọi công thức căn mất dấu √ (hiện thành "I/2" thay vì "I/√2"). Trả lại chiều cao KaTeX. */
+.exam-content .katex svg { height: inherit; max-width: none; }
+
+/* ==================================================================
+   CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
+   (components/lessons/LessonPresenter.tsx, mở từ nút ở tab Lý thuyết của /lop-hoc/bai)
+
+   Nguyên tắc thiết kế:
+   - Nội dung là nhân vật chính: không navbar, không cây chương, không nút thường
+     trực — thanh điều khiển tự ẩn sau ~3 giây, đụng chuột/chạm là hiện lại.
+   - Nền mặc định SÁNG (chữ đậm trên nền sáng) vì phòng học bật đèn; nút "Nền tối"
+     dành cho phòng tối cho đỡ chói. Nền SÁNG cũng là lý do phải tắt đảo màu ảnh
+     công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
+   - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
+     trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Trang chiếu TRÀN gần hết bề ngang màn hình, chỉ chừa lề nhỏ (xem .presenter-slide):
+     tivi/máy chiếu lớp học là 16:9, cap bề ngang cũ 1180px làm hụt ~740px trên tivi
+     1920 (nội dung co thành một cột hẹp giữa màn hình, chữ xuống dòng sớm).
+   - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
+     vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
+   ================================================================== */
+
+/* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
+.lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
+.lesson-presenter-loading.is-error { color: #fca5a5; }
+
+.lesson-presenter {
+  --pres-text: #e8eefc;
+  --pres-muted: #9fb0cc;
+  --pres-heading: #fff;
+  --pres-accent: #60a5fa;
+  --pres-line: rgba(148,163,184,.24);
+  --pres-surface: rgba(15,23,42,.86);
+  --pres-panel: #101a2e;
+  position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
+  background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
+}
+.lesson-presenter[data-bg="light"] {
+  --pres-text: #17233a;
+  --pres-muted: #59678a;
+  --pres-heading: #0b1220;
+  --pres-accent: #1d4ed8;
+  --pres-line: rgba(15,23,42,.16);
+  --pres-surface: rgba(255,255,255,.92);
+  --pres-panel: #fff;
+  background: #f4f6fb;
+}
+
+/* Khung vẽ tay: luôn hiện (nét cũ còn nguyên khi tắt bút), chỉ nhận chuột khi đang bật bút. */
+.presenter-canvas { position: absolute; inset: 0; z-index: 15; width: 100%; height: 100%; pointer-events: none; touch-action: none; }
+.presenter-canvas.is-active { pointer-events: auto; cursor: crosshair; }
+
+/* Thanh trên/dưới: tự ẩn, và khi ẩn thì không chặn cả nét vẽ lẫn cú bấm. */
+.presenter-top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.presenter-bar { position: absolute; z-index: 20; bottom: clamp(14px, 3vh, 28px); left: 50%; display: flex; width: max-content; max-width: min(96vw, 1120px); align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 7px 9px; box-shadow: 0 18px 40px -22px rgba(2,6,23,.6); opacity: 0; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.presenter-top, .presenter-bar { pointer-events: none; }
+.lesson-presenter.is-chrome .presenter-top { opacity: 1; }
+.lesson-presenter.is-chrome .presenter-bar { opacity: 1; transform: translate(-50%, 0); }
+.lesson-presenter.is-chrome .presenter-top > *, .lesson-presenter.is-chrome .presenter-bar > * { pointer-events: auto; }
+
+.presenter-info { display: grid; gap: 3px; min-width: 0; max-width: 46vw; border: 1px solid var(--pres-line); border-radius: 12px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 8px 14px; }
+.presenter-info strong { overflow: hidden; font-size: 13.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-info span { color: var(--pres-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.presenter-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.presenter-actions button, .presenter-bar button { display: inline-flex; min-height: 36px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 10px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: border-color .15s, color .15s, background-color .15s; }
+.presenter-bar button { border-radius: 999px; }
+.presenter-actions button:hover, .presenter-bar button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-actions button:disabled, .presenter-bar button:disabled { opacity: .35; cursor: default; }
+.presenter-actions .presenter-close:hover { border-color: #f87171; color: #f87171; }
+.presenter-bar button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.lesson-presenter[data-bg="light"] .presenter-bar button.is-on { background: rgba(29,78,216,.12); }
+.presenter-bar .presenter-page { font-variant-numeric: tabular-nums; }
+.presenter-bar-sep { flex: 0 0 auto; width: 1px; align-self: stretch; margin: 0 4px; background: var(--pres-line); }
+.presenter-zoom { min-width: 46px; color: var(--pres-muted); font-size: 12px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.presenter-colors { display: inline-flex; align-items: center; gap: 5px; padding: 0 3px; }
+.presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
+.presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
+
+/* Lề ngang chỉ để nội dung không dính sát mép màn hình (và không chui dưới nét vẽ ở rìa):
+   bề ngang thật của trang chiếu do .presenter-slide quyết định, không cap ở đây. */
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(16px, 2.4vw, 48px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+.presenter-stage::-webkit-scrollbar { width: 10px; }
+.presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
+
+/* Trang chiếu dùng hết bề ngang còn lại của khung (không cap max-width): trên tivi 1920
+   chữ chạy tới sát hai mép, chỉ chừa lề của .presenter-stage. Muốn chữ to/nhỏ thì dùng
+   Ctrl +/− (--presenter-zoom) chứ không thu hẹp cột nội dung. */
+.presenter-slide { max-width: none; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+@keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
+
+.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
+
+/* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
+   khung công thức khối) vì ở đây chữ phải to theo --presenter-zoom và phẳng như slide. */
+.presenter-prose.exam-content { display: block; color: var(--pres-text); font-family: var(--font-body), sans-serif; font-size: 1em; line-height: 1.68; }
+.presenter-prose p { margin: 0 0 .85em; }
+.presenter-prose > :last-child { margin-bottom: 0; }
+.presenter-prose :is(ul, ol) { margin: 0 0 .85em; padding-left: 1.45em; }
+.presenter-prose li { margin-bottom: .3em; }
+.presenter-prose :is(h3, h4) { margin: 1.05em 0 .45em; color: var(--pres-heading); font-size: 1.1em; font-weight: 700; line-height: 1.3; }
+.presenter-prose :is(strong, b) { color: var(--pres-heading); }
+.presenter-prose :is(img, svg, table, .table-scroll) { max-width: 100%; }
+.presenter-prose .katex-display { margin: .85em 0; border: 0; border-radius: 0; background: none; padding: 0; text-align: center; }
+.presenter-prose .katex { vertical-align: baseline; }
+.presenter-prose .exam-content-raw-tex { background: rgba(148,163,184,.18); color: inherit; }
+/* Ảnh công thức trong bài là nét đen trên nền trắng: nền tối thì đảo màu, nền sáng để nguyên. */
+.lesson-presenter[data-bg="dark"] .presenter-prose img.eq { filter: invert(.88) hue-rotate(180deg); }
+.lesson-presenter[data-bg="light"] .presenter-prose img.eq { filter: none; }
+/* Khối "tl-*" soạn cho nền tối (nhãn cyan/vàng trên nền mờ) — đổi sang bảng màu đọc được trên nền sáng. */
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-box, .tl-details) { border-color: rgba(15,23,42,.18); background: rgba(15,23,42,.045); }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-label { color: #0e7490; }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-box--rule .tl-label { color: #b45309; }
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-table th, .tl-table td, .tl-opt) { border-color: rgba(15,23,42,.22); }
+
+.presenter-cover { display: grid; justify-items: center; gap: 16px; padding: clamp(20px, 7vh, 80px) 0; text-align: center; }
+.presenter-cover-kicker { margin: 0; color: var(--pres-accent); font-family: var(--font-mono), monospace; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+.presenter-cover h1 { max-width: 18em; margin: 0; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 2.3em; font-weight: 700; letter-spacing: -.02em; line-height: 1.16; }
+.presenter-cover-sub { margin: 0; color: var(--pres-muted); font-size: .95em; }
+.presenter-cover-start { display: inline-flex; min-height: 52px; align-items: center; gap: 8px; margin-top: 4px; border: 0; border-radius: 999px; background: #3b82f6; padding: 0 26px; color: #fff; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; }
+.presenter-cover-start:hover { background: #2563eb; }
+.presenter-cover kbd, .presenter-draw-hint kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 1px 6px; font-family: var(--font-mono), monospace; font-size: .84em; }
+
+.presenter-panel { position: absolute; z-index: 30; top: 50%; left: 50%; display: flex; max-height: min(82vh, 760px); flex-direction: column; overflow: hidden; border: 1px solid var(--pres-line); border-radius: 16px; background: var(--pres-panel); box-shadow: 0 30px 70px -30px rgba(2,6,23,.7); transform: translate(-50%, -50%); }
+.presenter-panel--menu { width: min(92vw, 560px); }
+.presenter-panel--help { width: min(92vw, 640px); }
+.presenter-panel-head { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--pres-line); padding: 12px 14px; }
+.presenter-panel-head p { display: inline-flex; align-items: center; gap: 7px; margin: 0; color: var(--pres-heading); font-size: 13.5px; font-weight: 700; }
+.presenter-panel-head button { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--pres-line); border-radius: 8px; background: none; color: var(--pres-muted); cursor: pointer; }
+.presenter-panel-head button:hover { border-color: #f87171; color: #f87171; }
+.presenter-panel-body { overflow-y: auto; padding: 12px 14px 16px; }
+.presenter-menu-group + .presenter-menu-group { margin-top: 14px; }
+.presenter-menu-title { margin: 0 0 6px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.presenter-menu-group ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.presenter-menu-group button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; border-radius: 8px; background: none; padding: 7px 9px; color: var(--pres-text); font-family: inherit; font-size: 13.5px; line-height: 1.45; text-align: left; cursor: pointer; }
+.presenter-menu-group button:hover { background: rgba(148,163,184,.16); }
+.presenter-menu-group button.is-current { background: rgba(59,130,246,.18); color: var(--pres-accent); font-weight: 700; }
+.presenter-menu-group button > span { flex: 0 0 auto; min-width: 24px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+.presenter-menu-group button.is-current > span { color: inherit; }
+.presenter-keys { display: grid; gap: 9px; margin: 0; }
+.presenter-keys > div { display: grid; grid-template-columns: minmax(132px, auto) 1fr; align-items: baseline; gap: 14px; }
+.presenter-keys dt { margin: 0; white-space: nowrap; }
+.presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
+.presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
+.presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+.presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
+.presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
+
+.presenter-draw-hint { position: absolute; z-index: 22; bottom: clamp(76px, 11vh, 100px); left: 50%; margin: 0; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 6px 14px; color: var(--pres-muted); font-size: 12px; white-space: nowrap; transform: translateX(-50%); }
+
+@media (max-width: 900px) {
+  .presenter-btn-text { display: none; }
+  .presenter-info { max-width: 40vw; padding: 6px 11px; }
+  .presenter-info span { display: none; }
+}
+@media (max-width: 639px) {
+  .presenter-top { padding: 12px; }
+  /* Điện thoại: thanh điều khiển xuống 2 hàng — cuộn ngang thì các nút cỡ chữ nằm ngoài tầm
+     mắt, không biết là có; và chừa thêm chỗ đáy để hàng chữ cuối không bị thanh che. */
+  .presenter-bar { flex-wrap: wrap; justify-content: center; row-gap: 5px; max-width: min(94vw, 460px); border-radius: 18px; overflow: visible; }
+  .presenter-bar-sep { display: none; }
+  .presenter-zoom { min-width: 38px; }
+  .presenter-stage { padding-left: 14px; padding-right: 14px; padding-bottom: 172px; }
+  .presenter-keys > div { grid-template-columns: 1fr; gap: 3px; }
+  .presenter-draw-hint { display: none; }
+}
+/* Nhấn ý chính như trang mẫu: chữ đậm sáng hơn thân bài, tiêu đề lớn, đoạn cách nhau rõ. */
+.lesson-page .exam-content :is(strong, b) { color: #fff; font-weight: 700; }
+.lesson-page .exam-content :is(h2, h3, h4) { color: #fff; font-weight: 700; line-height: 1.35; margin: 1.6em 0 .6em; }
+.lesson-page .exam-content h2 { font-size: 1.5rem; }
+.lesson-page .exam-content h3 { font-size: 1.3rem; }
+.lesson-page .exam-content h4 { font-size: 1.1rem; }
+.lesson-page .exam-content p { margin: 0 0 1em; }
+/* Lề trái/phải của nội dung trong <details> bài lý thuyết: phải có .lesson-page để thắng `p`/`h3`… ở trên (cùng 0,2,1, dòng sau thắng) — chỉ đặt lề ngang, lề dưới vẫn do từng phần tử quyết định. */
+.lesson-page .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.lesson-page .exam-content .tl-details > :is(table, .tl-table) { width: calc(100% - 28px); }
+.lesson-page .exam-content .tl-details > span > .katex-display { margin-left: 14px; margin-right: 14px; }
+html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
+
+/* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
+html:not([data-theme="light"]) header.fixed.top-0 { background-color: rgba(15, 23, 42, .92); }
+html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
+.lesson-main--single > .lesson-head { display: block; margin: 22px 0 36px; }
+.lesson-main--single > .lesson-head h1 { max-width: 18ch; }
+.lesson-main--single > .lesson-head .lesson-lead { margin-top: 10px; max-width: 60ch; }
+
+/* ---------- P1/P2 kha-nang-doc (02/10/2026) ---------- */
+/* Chuẩn ở docs/UI.md. Số đo WCAG tính bằng scripts/check-a11y.mjs — đổi màu thì đo lại. */
+
+/* Màu nhấn tiêu đề (thay chữ gradient). Tối: #60a5fa = 7,9:1 trên #05070b, #fb923c = 8,9:1.
+   Sáng: #1d4ed8 = 6,4:1 trên #f8fafc, #c2410c = 5,2:1 trên trắng. */
+:root { --accent-brand-text: #60a5fa; --accent-warm-text: #fb923c; }
+/* C3: thang chữ vùng nội dung học sinh — chỉ 3 mức nhỏ (cỡ thân = 16px; tiêu đề lấy từ h1/h2/h3) thay cho 12,5/13/13,5/15/15,5 rải rác. */
+:root { --fs-cap: 12px; --fs-sm: 14px; --fs-body: 16px; }
+html[data-theme="light"] { --accent-brand-text: #1d4ed8; --accent-warm-text: #c2410c; }
+
+/* Công cụ đọc dùng chung (components/ui/ReadingZone.tsx — /phu-huynh, /kiem-tra/lam).
+   Dùng lại .lesson-tool/.lesson-fonttools nên phải cấp các biến --lesson-* mà .lesson-shell đặt. */
+.read-zone-tools { --lesson-line: rgba(148,163,184,.24); --lesson-accent-line: rgba(59,130,246,.45); --lesson-accent-soft: rgba(59,130,246,.12); --lesson-accent-text: #93c5fd; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 14px; }
+html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); --lesson-accent-text: #1d4ed8; }
+
+/* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
+   rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
+html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
+html.is-dim[data-theme="light"] .text-white { color: #33291a; }
+html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
+html.is-dim[data-theme="light"] :is(.bg-\[\#05070B\], .bg-\[\#05070B\]\/90, .bg-\[\#080D1A\], .bg-\[\#0B1220\]\/\[0\.98\]) { background-color: rgb(251 247 234 / .94); }
+html.is-dim[data-theme="light"] :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: rgba(120,96,40,.24); }
+
+/* Người dùng bật "tăng tương phản" ở hệ điều hành: chữ phụ và viền đậm hơn, chữ nhấn sáng hơn. */
+@media (prefers-contrast: more) {
+  html:not([data-theme="light"]) { --color-muted: #cbd5e1; --color-line: rgba(255,255,255,.32); --accent-brand-text: #93c5fd; --accent-warm-text: #fdba74; }
+  html:not([data-theme="light"]) :is(.text-slate-500, .text-slate-400) { color: #cbd5e1; }
+  html:not([data-theme="light"]) [class*="text-primary"] { color: #93c5fd; }
+  html[data-theme="light"] { --color-muted: #1e293b; --color-line: rgba(15,23,42,.42); --accent-brand-text: #1e3a8a; --accent-warm-text: #9a3412; }
+  html[data-theme="light"] :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #1e293b !important; }
+  :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: var(--color-line); }
+  .lesson-shell, .cnc-shell, .cnc-page { --lesson-line: var(--color-line); --cnc-line: var(--color-line); --cnc-faint: var(--color-muted); }
+}
+@media (forced-colors: active) {
+  .text-gradient, .text-gradient--warm, .cnc-header-grid h1 em { color: CanvasText; }
+}
+
+/* ============================================================
+   Trang bài học — đợt gọn 2/10/2026 (docs/QUY-TAC-THIET-KE.md: B1, N4, H2, M5, C3)
+   ============================================================ */
+/* N4/B1: trên điện thoại breadcrumb chỉ còn lặp tên bài (đã có nút quay lại + h1) → ẩn hẳn
+   để nội dung học lên cao hơn. Mục cuối breadcrumb đã bỏ khỏi TSX; desktop vẫn giữ "Lớp › Chương". */
+@media (max-width: 639px) {
+  .lesson-breadcrumb { display: none; }
+}
+
+/* M5: mọi hình raster trong bài dùng MỘT kiểu khung sáng thống nhất (nền trắng, đệm 10px, bo 10px)
+   thay vì ô trắng chói, đệm/bo mỗi nơi một khác trên nền tối. Hình mới nên vẽ SVG nền trong suốt. */
+.lesson-prose img.figure {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+html[data-theme="light"] .lesson-prose img.figure,
+.lesson-page.is-dim .lesson-prose img.figure { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12); }
+
+/* H2/N7: bảng dán từ Word kiểu "chữ | hình" (có <img>): chữ không in đậm cả đoạn (th mặc định
+   bold), và dưới 760px xếp DỌC — chữ trước, hình ngay dưới, rộng 100% — thay vì cuộn ngang
+   làm cắt mất cột hình. Chỉ nhắm bảng có hình; bảng số liệu thật vẫn cuộn ngang như cũ. */
+.lesson-prose .table-scroll table:has(img) :is(th, td) { font-weight: 400; }
+@media (max-width: 759px) {
+  .lesson-prose .table-scroll:has(img) { overflow-x: visible; }
+  .lesson-prose .table-scroll table:has(img) { display: block; width: 100%; min-width: 0 !important; }
+  .lesson-prose .table-scroll table:has(img) :is(thead, tbody, tr, th, td) { display: block; width: 100% !important; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td) { border: 0; padding: 10px 12px; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td):has(img) { padding-top: 0; }
+  .lesson-prose .table-scroll table:has(img) img.figure { max-width: min(100%, 480px); margin: 0 auto; }
+}
+/* RankCelebrationModal: pop-up chúc mừng lên rank / đạt danh hiệu.
+   Trình tự: thẻ hiện → huy chương xoay 3D 3 vòng thu nhỏ→phóng to (0,25–1,3 s) → loé sáng + sóng + tia lan ra (1,3 s) → chữ → pháo hoa (canvas, trên cùng). */
+@keyframes rcl-card-in { from { opacity: 0; transform: scale(.8) translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-badge-in { 0% { opacity: 0; transform: rotateY(0) scale(.15); } 15% { opacity: 1; } 100% { opacity: 1; transform: rotateY(1080deg) scale(1); } }
+@keyframes rcl-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-rays-in { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.1) rotate(0); } 100% { opacity: .45; transform: translate(-50%, -50%) scale(1) rotate(60deg); } }
+@keyframes rcl-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes rcl-glow { 0%, 100% { opacity: .55; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes rcl-flash { 0% { opacity: 0; transform: scale(.2); } 25% { opacity: .95; } 100% { opacity: 0; transform: scale(4.5); } }
+@keyframes rcl-ring { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(5); } }
+@keyframes rcl-shine { 0%, 55% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(120%) skewX(-20deg); } }
+.rcl-card { animation: rcl-card-in .4s ease-out; }
+.rcl-stage { perspective: 700px; }
+.rcl-badge { opacity: 0; animation: rcl-badge-in 1.05s .25s cubic-bezier(.2,.7,.2,1) forwards; }
+.rcl-rise { opacity: 0; animation: rcl-rise .5s ease-out forwards; }
+.rcl-rays { opacity: 0; animation: rcl-rays-in 1.4s 1.25s ease-out forwards, rcl-spin 30s 2.65s linear infinite; }
+.rcl-glow { animation: rcl-glow 2.6s ease-in-out infinite; }
+.rcl-flash { position: absolute; left: 50%; top: 50%; width: 170px; height: 170px; margin: -85px 0 0 -85px; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-flash 1.1s 1.25s ease-out forwards; }
+.rcl-ring { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border: 3px solid; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-ring 1.3s 1.25s ease-out forwards; }
+.rcl-ring2 { animation-delay: 1.45s; border-width: 2px; }
+.rcl-shine { overflow: hidden; background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); mix-blend-mode: overlay; animation: rcl-shine 3s 2.6s ease-in-out infinite; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .rcl-card, .rcl-badge, .rcl-rise, .rcl-rays, .rcl-glow, .rcl-shine, .rcl-flash, .rcl-ring { animation: none; opacity: 1; } .rcl-rays { opacity: .45; } .rcl-flash, .rcl-ring { opacity: 0; } }
+
+/* ============================================================
+   P1/P2/P4 — khối PHỤ HUYNH (45–60 tuổi) · docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Phạm vi: class .parent-page (đặt ở <main> của /phu-huynh). Trang học sinh KHÔNG bị đổi.
+   Vì sao có khối này thay vì sửa từng component: các component của phụ huynh
+   (StudentResultsDashboard viewer="parent", ParentHomeworkNotes, CatchupCard) dùng chung
+   với trang học sinh — nâng sàn cỡ chữ theo phạm vi trang là cách duy nhất không kéo
+   giao diện học sinh 14–18 tuổi theo.
+   ============================================================ */
+/* P1 sàn cỡ chữ: thân 18px, nhãn phụ 15px (nghiên cứu: thân ≥17–18px, nhãn 15–16px, không có
+   12–13px cho câu cần đọc — docs/NGHIEN-CUU-PHU-HUYNH-45-60.md §2). Dùng rem (KHÔNG px) để nút
+   A+/A− của ReadingZone — thứ phụ huynh lão thị cần nhất — vẫn phóng được toàn bộ chữ trong trang. */
+.parent-page { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-xs) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-\[11px\], .text-\[12px\], .text-\[13px\]) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-sm) { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-base) { font-size: 1.1875rem; }
+.parent-page :is(.text-lg) { font-size: 1.3125rem; }
+/* P2 tương phản: chữ phụ phải ≥ 4,5:1 (AA) và nhắm 7:1 (AAA) — #64748b trên nền sáng chỉ 4,76:1.
+   #475569 trên #fff = 7,0:1; trên panel tối #b8c4d6 = 9,3:1. */
+.parent-page :is(.text-slate-500, .text-slate-400) { color: #475569; }
+html[data-theme="dark"] .parent-page :is(.text-slate-500, .text-slate-400) { color: #b8c4d6; }
+/* Chế độ "Dịu mắt" (kem/nâu): #6b5a3e = 5,8:1 → đậm lên #57492f = 7,6:1 trên #f5efe0. */
+html.is-dim[data-theme="light"] .parent-page :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #57492f; }
+/* P2 (và tinh thần "đọc được trong phòng thiếu sáng"): màu nhấn/trạng thái trong khối phụ huynh
+   đạt ≥7:1 ở theme sáng — lớp override sáng phía trên ép #0e7490/#047857/#b91c1c/#a16207
+   (4,9–5,9:1) bằng !important nên ở đây cũng phải !important. Theme tối giữ nguyên (đều >9:1). */
+html[data-theme="light"] .parent-page :is(.text-cyan-300, .text-cyan-400) { color: #155e75 !important; }
+html[data-theme="light"] .parent-page :is(.text-emerald-300, .text-emerald-200) { color: #065f46 !important; }
+html[data-theme="light"] .parent-page :is(.text-red-300, .text-red-200) { color: #991b1b !important; }
+html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { color: #92400e !important; }
+/* P4 đích chạm ≥ 48px (≥ 3rem) và P18 hạn chế gõ: ô nhập ≥ 18px để iOS không tự phóng to. */
+.parent-page :is(button, select, summary) { min-height: 3rem; }
+.parent-page a[class*="rounded-xl"], .parent-page a[class*="rounded-full"], .parent-page a[class*="rounded-2xl"] { min-height: 3rem; }
+.parent-page :is(input, select, textarea) { font-size: 1.125rem; }
+/* Công cụ đọc (Dịu mắt · A− / A+): globals đặt 13px cho .lesson-tool — đúng cho học sinh nhưng
+   13px là chữ nhỏ nhất trên trang phụ huynh, mà đây lại đúng là nút người lão thị cần bấm. */
+.parent-page .read-zone-tools :is(button, span) { font-size: .9375rem; }
+.parent-page .read-zone-tools :is(button) { min-width: 2.75rem; }
+/* P6 con số phải to và thẳng cột; P12 không dựa vào màu: luôn có nhãn chữ đi kèm. */
+.parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+/* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
+.parent-page .parent-copy { max-width: 44rem; }
+
+.exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
+.exam-content figure.fig svg{display:block;width:100%;height:auto}
+.exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
+
+</style>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu <strong>điểm đặt, phương, chiều</strong> của lực từ; dùng <strong>quy tắc bàn tay trái</strong>.</li>
+<li>Tính <strong>$F = BIl\sin\alpha$</strong>; dây song song đường sức thì $F = 0$.</li>
+<li>Hiểu <strong>cảm ứng từ $\vec{B}$</strong>: phương, chiều, độ lớn, đơn vị <strong>tesla</strong>.</li>
+<li>Nhận ra <strong>ngẫu lực từ</strong> làm khung quay; chiều đường sức của <strong>dây thẳng – vòng dây – ống dây</strong>.</li>
+</ul>
+<p>Cuối bài phải trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: chiếc loa bé xíu vẫn hát được</h3>
+
+<p>Chiếc loa bluetooth hát được nhờ màng giấy rung hàng nghìn lần mỗi giây; ngay sau đó là cuộn dây đặt sát nam châm mạnh.</p>
+
+<p>Dây dẫn mang dòng điện đặt trong từ trường thì bị đẩy. Lực ấy hướng về đâu, mạnh yếu do gì?</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Đoạn dây mang dòng điện đặt <em>song song</em> với đường sức từ. Lực từ lên dây:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q0" id="tl11-q0a"><label for="tl11-q0a" class="tl-opt tl-no">A. Lớn nhất, vì dây nằm trọn trong từ trường</label>
+<input type="radio" name="tl11-q0" id="tl11-q0b"><label for="tl11-q0b" class="tl-opt tl-ok">B. Bằng 0, vì dây cùng phương đường sức</label>
+<input type="radio" name="tl11-q0" id="tl11-q0c"><label for="tl11-q0c" class="tl-opt tl-no">C. Khác 0 nhưng nhỏ nhất</label>
+<input type="radio" name="tl11-q0" id="tl11-q0d"><label for="tl11-q0d" class="tl-opt tl-no">D. Bằng 0 khi dây vuông góc đường sức</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\alpha$ là góc giữa dây và đường sức. Dây song song đường sức thì $\alpha = 0^\circ$ (hoặc $180^\circ$), $\sin\alpha = 0$, nên không có lực từ kéo dây.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo cảm giác "nằm trong từ trường là bị đẩy mạnh": công thức có thừa số $\sin\alpha$. Dây nằm dọc đường sức thì lực triệt tiêu. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 260" role="img" aria-label="Đoạn dây mang dòng điện đặt giữa hai cực nam châm chữ U, đường sức từ hướng xuống, lực từ hướng vuông góc vào trong mặt phẳng hình vẽ"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="96" y="30" width="228" height="30" rx="8" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><rect x="96" y="190" width="228" height="30" rx="8" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="210" y="52" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">N</text><text x="210" y="212" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">S</text><line x1="150" y1="68" x2="150" y2="184" stroke="#38bdf8" stroke-width="2.6" marker-end="url(#f1-b)"/><line x1="300" y1="68" x2="300" y2="184" stroke="#38bdf8" stroke-width="2.6" marker-end="url(#f1-b)"/><text x="160" y="88" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">B</text><line x1="30" y1="120" x2="390" y2="120" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="58" y1="120" x2="108" y2="120" stroke="#fb923c" stroke-width="3" marker-end="url(#f1-o)"/><text x="78" y="108" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">I</text><circle cx="210" cy="120" r="14" fill="none" stroke="#f87171" stroke-width="2.5"/><line x1="200" y1="110" x2="220" y2="130" stroke="#f87171" stroke-width="2.5"/><line x1="220" y1="110" x2="200" y2="130" stroke="#f87171" stroke-width="2.5"/><text x="232" y="116" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">F</text><text x="16" y="250" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">⊗: lực từ F hướng vào trong mặt phẳng hình vẽ</text></svg><figcaption>Hình 1. Dây mang dòng điện trong khe nam châm: B hướng xuống, F vuông góc và hướng vào mặt phẳng hình vẽ (⊗).</figcaption></figure>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Lực từ tác dụng lên đoạn dây mang dòng điện</h4>
+
+<p><strong>🔑 Điểm đặt giữa dây · Vuông góc dây và đường sức · Chiều theo bàn tay trái</strong></p>
+
+<ul>
+<li><strong>Điểm đặt:</strong> trung điểm của đoạn dây.</li>
+<li><strong>Phương:</strong> vuông góc đoạn dây và vuông góc đường sức từ — tức vuông góc mặt phẳng $(\vec{I}; \vec{B})$.</li>
+<li><strong>Chiều:</strong> theo quy tắc bàn tay trái.</li>
+<li><strong>Kí hiệu vẽ hình:</strong> ⊗ là hướng vào mặt phẳng hình vẽ, ⊙ là hướng ra ngoài.</li>
+</ul>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Quy tắc bàn tay trái</p>
+<p>Đặt bàn tay trái duỗi thẳng sao cho đường cảm ứng từ <strong>xuyên vào lòng bàn tay</strong>, chiều <strong>cổ tay đến ngón tay</strong> trùng chiều dòng điện; ngón cái choãi $90^\circ$ chỉ chiều lực từ.</p>
+</div>
+
+<p>Kiểm tra trước: dây song song đường sức thì $F = 0$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-luctu-02">
+<p class="tl-label">🔬 Thí nghiệm: dây treo giữa hai cực nam châm</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> treo dây nhôm mảnh nằm ngang giữa hai cực nam châm chữ U, nối nguồn một chiều 3–6 V.</li>
+<li><strong>Quan sát:</strong> đóng mạch thì dây lệch; đảo chiều dòng thì lệch ngược lại; dây song song đường sức thì đứng yên.</li>
+<li><strong>Rút ra:</strong> lực từ có khi dây không song song đường sức, đổi chiều theo chiều dòng.</li>
+</ol>
+</div>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Bàn tay trái duỗi thẳng: các đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo chiều dòng điện, ngón cái choãi ra chỉ chiều lực từ"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="150" y="70" width="90" height="120" rx="18" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2.5"/><line x1="240" y1="88" x2="300" y2="88" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="240" y1="116" x2="300" y2="116" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="240" y1="144" x2="300" y2="144" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="240" y1="172" x2="300" y2="172" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="166" y1="76" x2="140" y2="30" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="150" y1="130" x2="124" y2="130" stroke="currentColor" stroke-width="3.5" opacity="1"/><circle cx="195" cy="130" r="16" fill="none" stroke="#38bdf8" stroke-width="2.5"/><line x1="184" y1="119" x2="206" y2="141" stroke="#38bdf8" stroke-width="2.5"/><line x1="206" y1="119" x2="184" y2="141" stroke="#38bdf8" stroke-width="2.5"/><text x="195" y="108" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">B</text><text x="140" y="20" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">F</text><text x="312" y="126" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">I</text><text x="312" y="146" fill="#fb923c" font-size="11" font-weight="600" text-anchor="start">cổ tay → ngón tay</text><text x="16" y="236" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="start">⊗: đường sức từ xuyên vào lòng bàn tay · ngón cái choãi 90° chỉ chiều F</text></svg><figcaption>Hình 2. Bàn tay trái: đường sức (⊗) xuyên vào lòng bàn tay, cổ tay → ngón tay theo chiều I, ngón cái chỉ F.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Dây vuông góc với đường sức từ. Lực từ có phương:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q1" id="tl11-q1a"><label for="tl11-q1a" class="tl-opt tl-no">A. Trùng phương đoạn dây</label>
+<input type="radio" name="tl11-q1" id="tl11-q1b"><label for="tl11-q1b" class="tl-opt tl-no">B. Trùng phương đường sức từ</label>
+<input type="radio" name="tl11-q1" id="tl11-q1c"><label for="tl11-q1c" class="tl-opt tl-ok">C. Vuông góc với cả dây và đường sức</label>
+<input type="radio" name="tl11-q1" id="tl11-q1d"><label for="tl11-q1d" class="tl-opt tl-no">D. Hợp với đoạn dây góc $45^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực từ vuông góc với cả đoạn dây và đường sức từ. Em giải thích được cho bạn ngồi cạnh vì sao lực không nằm dọc dây chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A sai: lực nằm dọc dây chỉ kéo căng dây, không làm dây lệch — thí nghiệm cho thấy dây bị đẩy ngang. B sai: $\vec{F}$ vuông góc với đường sức từ chứ không trùng phương đường sức. D sai: $\vec{F}$ vuông góc với đoạn dây, không hợp với dây $45^\circ$. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>2. Độ lớn lực từ — biểu thức của định luật Ampe</h4>
+
+<p><strong>🔑 F = B·I·l·sinα · Song song thì F = 0</strong></p>
+
+<p>$$F = B\,I\,l\,\sin\alpha$$</p>
+
+<ul>
+<li>$B$ — cảm ứng từ (T); $I$ — dòng điện (A); $l$ — chiều dài đoạn dây trong từ trường (m).</li>
+<li>$\alpha$ — góc hợp bởi đoạn dây và $\vec{B}$.</li>
+</ul>
+
+<ul>
+<li><strong>Vuông góc</strong> đường sức: $\alpha = 90^\circ$, lực lớn nhất $F_{\max} = BIl$.</li>
+<li><strong>Song song</strong> đường sức: $\alpha = 0^\circ$ hoặc $180^\circ$, $F = 0$.</li>
+<li>Ví dụ: $B = 0,10$ T, $I = 5$ A, $l = 0,04$ m, vuông góc: $F = 0,02$ N.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l12-luctu-01">
+<p class="tl-label">🔬 Thí nghiệm đo: lực từ theo cường độ dòng điện</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt dây $l = 5,0$ cm nằm ngang, vuông góc đường sức trong khe nam châm; móc đầu dây vào lực kế, tăng dần $I$ và đọc lực.</li>
+<li><strong>Quan sát:</strong> số đọc ở bảng dưới; lực tăng gần như tuyến tính theo $I$.</li>
+<li><strong>Rút ra:</strong> $F$ tỉ lệ thuận với $I$; $F$ chia cho $I\,l$ được cùng một giá trị — đó là cảm ứng từ của khe.</li>
+</ol>
+</div>
+
+<table class="tl-table">
+<thead>
+<tr><th>$I$ (A)</th><th>$F$ đo (mN)</th><th>$B = F/(Il)$ (T)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,0</td><td>4,6</td><td>0,092</td></tr>
+<tr><td>2,0</td><td>10,4</td><td>0,104</td></tr>
+<tr><td>3,0</td><td>14,2</td><td>0,095</td></tr>
+<tr><td>4,0</td><td>20,6</td><td>0,103</td></tr>
+<tr><td>5,0</td><td>25,5</td><td>0,102</td></tr>
+</tbody>
+</table>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 232" role="img" aria-label="Đồ thị lực từ theo cường độ dòng điện: năm điểm đo nằm gần một đường thẳng đi qua gốc toạ độ, độ dốc bằng cảm ứng từ nhân chiều dài đoạn dây"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="70" y1="200" x2="420" y2="200" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="70" y1="200" x2="70" y2="40" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="64" y1="136" x2="70" y2="136" stroke="currentColor" stroke-width="2" opacity="1"/><text x="60" y="140" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">10</text><line x1="70" y1="136" x2="400" y2="136" stroke="currentColor" stroke-width="1" stroke-dasharray="5 6" opacity="0.22"/><line x1="64" y1="72" x2="70" y2="72" stroke="currentColor" stroke-width="2" opacity="1"/><text x="60" y="76" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">20</text><line x1="70" y1="72" x2="400" y2="72" stroke="currentColor" stroke-width="1" stroke-dasharray="5 6" opacity="0.22"/><line x1="132" y1="200" x2="132" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="132" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">1</text><line x1="194" y1="200" x2="194" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="194" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">2</text><line x1="256" y1="200" x2="256" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="256" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">3</text><line x1="318" y1="200" x2="318" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="318" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">4</text><line x1="380" y1="200" x2="380" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="380" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">5</text><text x="42" y="30" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">F (mN)</text><text x="418" y="190" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">I (A)</text><line x1="70" y1="200" x2="380" y2="38" stroke="#34d399" stroke-width="2.4" stroke-dasharray="7 5" opacity="0.95"/><circle cx="132" cy="170.56" r="4.5" fill="#34d399"/><circle cx="194" cy="133.44" r="4.5" fill="#34d399"/><circle cx="256" cy="109.12" r="4.5" fill="#34d399"/><circle cx="318" cy="68.16" r="4.5" fill="#34d399"/><circle cx="380" cy="36.79999999999998" r="4.5" fill="#34d399"/><text x="238" y="166" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">độ dốc ≈ 5,1 mN/A</text><text x="238" y="184" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">= B·l  →  B ≈ 0,10 T</text></svg><figcaption>Hình 3. Lực từ tỉ lệ thuận với dòng điện: đường hồi quy qua gốc, độ dốc B·l ≈ 5,1 mN/A → B ≈ 0,10 T.</figcaption></figure>
+
+<details class="tl-details">
+<summary>🤏 Câu hỏi về sai số: vì sao $B$ tính ra mỗi dòng một khác, và lấy giá trị nào?</summary>
+<p>Năm giá trị trong khoảng 0,092–0,104 T; trung bình <strong>0,099 T</strong>, ghi $B = 0,099 \pm 0,005$ T. Hai nguồn lệch chính: lực kế sai số $\pm 0,3$ mN (ở dòng 1,0 A sai số tới hơn 6%) và hai đầu dây bị kẹp nằm ngoài vùng từ trường đều. Độ dốc đồ thị $F$ theo $I$ là $B\,l \approx 5,1$ mN/A → $B \approx 0,10$ T.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Dây dài 10 cm mang dòng 2 A, vuông góc đường sức, $B = 0,05$ T. Lực từ bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q2" id="tl11-q2a"><label for="tl11-q2a" class="tl-opt tl-ok">A. 0,01 N</label>
+<input type="radio" name="tl11-q2" id="tl11-q2b"><label for="tl11-q2b" class="tl-opt tl-no">B. 0,1 N</label>
+<input type="radio" name="tl11-q2" id="tl11-q2c"><label for="tl11-q2c" class="tl-opt tl-no">C. 0,005 N</label>
+<input type="radio" name="tl11-q2" id="tl11-q2d"><label for="tl11-q2d" class="tl-opt tl-no">D. 0,02 N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = BIl = 0,05 \times 2 \times 0,10 = 0,01$ N. Bước then chốt là đổi $10$ cm $= 0,10$ m trước khi thay số.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi đơn vị: lấy $l = 1$ m (B) — lệch một bậc 10, lấy $l = 5$ cm (C), lấy $l = 20$ cm (D). Dây vuông góc nên $F = BIl$. Chọn lại.</p></div>
+</div>
+</div>
+
+<h4>3. Cảm ứng từ</h4>
+
+<p><strong>🔑 Đặc trưng tác dụng lực · Phương nam châm thử · Đơn vị tesla</strong></p>
+
+<ul>
+<li><strong>Cảm ứng từ</strong> $\vec{B}$ là vectơ đặc trưng cho từ trường về tác dụng lực.</li>
+<li><strong>Phương:</strong> phương nam châm thử nằm cân bằng tại điểm đó.</li>
+<li><strong>Chiều:</strong> từ cực Nam sang cực Bắc của nam châm thử.</li>
+<li><strong>Độ lớn:</strong> $B = F/(I\,l\,\sin\alpha)$; đơn vị tesla (T), với $1\ \text{T} = 1\ \text{N}/(\text{A}\cdot\text{m})$.</li>
+</ul>
+
+<ul>
+<li>Mốc so: Trái Đất $5\cdot10^{-5}$ T · khe nam châm 0,1 T · máy MRI 1,5–3 T; dây 5,0 cm, $I = 4$ A, vuông góc đường sức, lực đo 0,02 N → $B = 0,10$ T.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Phát biểu nào đúng về vectơ cảm ứng từ tại một điểm?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q3" id="tl11-q3a"><label for="tl11-q3a" class="tl-opt tl-no">A. Phương trùng phương dòng điện tại điểm đó</label>
+<input type="radio" name="tl11-q3" id="tl11-q3b"><label for="tl11-q3b" class="tl-opt tl-no">B. Chiều từ cực Bắc sang cực Nam của nam châm thử</label>
+<input type="radio" name="tl11-q3" id="tl11-q3c"><label for="tl11-q3c" class="tl-opt tl-ok">C. Chiều từ cực Nam sang cực Bắc của nam châm thử</label>
+<input type="radio" name="tl11-q3" id="tl11-q3d"><label for="tl11-q3d" class="tl-opt tl-no">D. Độ lớn tăng theo cường độ dòng điện thử</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Phương nam châm thử nằm cân bằng, chiều Nam sang Bắc, độ lớn $B = F/(Il\sin\alpha)$ — không phụ thuộc dòng thử.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi ở A, B và D: A sai vì phương của $\vec{B}$ không gắn với chiều dòng điện đặt tại điểm đó — đó là phương nam châm thử nằm cân bằng; B sai vì chiều $\vec{B}$ là <em>Nam sang Bắc</em>; D sai vì $B$ có sẵn ở điểm đó, tăng dòng thử chỉ làm $F$ tăng. Chọn lại.</p></div>
+</div>
+</div>
+
+<h4>4. Lực từ tác dụng lên khung dây — ngẫu lực từ</h4>
+
+<p><strong>🔑 Hai cạnh ngược chiều · Ngẫu lực làm khung quay · M = N·B·I·S·sinα (cực đại N·B·I·S)</strong></p>
+
+<ul>
+<li>Khung chữ nhật trong từ trường đều: hai cạnh đối diện chịu hai lực từ <strong>cùng độ lớn, ngược chiều, không cùng giá</strong> → thành <strong>ngẫu lực từ</strong>.</li>
+<li>Ngẫu lực làm khung <strong>quay</strong> quanh trục, không đẩy cả khung đi; khung dừng khi mặt khung vuông góc đường sức.</li>
+<li>Mômen ngẫu lực: $M = NBIS\sin\alpha$, cực đại $M_{\max} = NBIS$ khi mặt phẳng khung song song đường sức ($N$ số vòng, $S$ diện tích một vòng; $\alpha$ là góc giữa $\vec{B}$ và pháp tuyến khung).</li>
+<li>Ví dụ: khung $4$ cm $\times$ $5$ cm, $N = 100$ vòng, $I = 0,5$ A, $B = 0,20$ T → cực đại $M = 0,02$ N·m.</li>
+</ul>
+
+<details class="tl-details" data-exp="tn-l12-luctu-03">
+<summary>🔬 Bấm xem thí nghiệm: khung dây tự quay trong từ trường</summary>
+<p><strong>Làm:</strong> quấn 20 vòng dây quanh khung giấy $3$ cm $\times$ $4$ cm, luồn hai đầu dây qua hai kim khâu làm trục quay, đặt khung giữa hai cực nam châm rồi nối với pin 1,5 V. <strong>Quan sát:</strong> khung giật quay rồi dừng khi mặt khung vuông góc đường sức; đảo hai đầu pin thì khung quay ngược lại; tháo pin thì khung đứng yên. <strong>Rút ra:</strong> hai cạnh đối diện bị hai lực từ ngược chiều kéo, tạo ngẫu lực làm khung quay — nguyên lí của động cơ điện.</p>
+</details>
+
+<p><strong>Câu 4.</strong> Vì sao ngẫu lực từ làm khung quay mà không đẩy cả khung đi?</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl11-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl11-q4c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q4" id="tl11-q4a"><label for="tl11-q4a" class="tl-opt tl-ok">A. Hợp lực bằng 0 nhưng mômen khác 0</label>
+<input type="radio" name="tl11-q4" id="tl11-q4b"><label for="tl11-q4b" class="tl-opt tl-no">B. Lực từ không tác dụng lên khung dây kín</label>
+<input type="radio" name="tl11-q4" id="tl11-q4c"><label for="tl11-q4c" class="tl-opt tl-no">C. Khung nhẹ nên chỉ quay mà không dịch chuyển</label>
+<input type="radio" name="tl11-q4" id="tl11-q4d"><label for="tl11-q4d" class="tl-opt tl-no">D. Hai lực cùng chiều hợp thành ngẫu lực</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ngẫu lực = hai lực cùng độ lớn, ngược chiều, giá khác nhau: hợp lực bằng 0 nhưng mômen $M = N\,B\,I\,S\,\sin\alpha$ làm khung quay. Em giải thích được cho bạn chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Khung kín vẫn chịu lực từ ở từng cạnh (B sai); nhẹ hay nặng không quyết định quay hay tịnh tiến (C sai); hai lực <em>cùng chiều</em> thì hợp lực khác 0 (D sai). Nếu em chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>5. Từ trường của dòng điện thẳng – vòng dây – ống dây</h4>
+
+<p><strong>🔑 Nắm tay phải · Dây thẳng theo 1/r · Ống dây đều trong lòng</strong></p>
+
+<ul>
+<li><strong>Quy tắc nắm tay phải:</strong> ngón cái chỉ chiều dòng điện trong dây thẳng, bốn ngón khum chỉ chiều đường sức.</li>
+<li><strong>Dây thẳng dài:</strong> đường sức là đường tròn đồng tâm trong mặt phẳng vuông góc với dây.</li>
+<li><strong>Vòng dây tròn:</strong> đường sức vào một mặt, ra mặt kia; tại tâm $\vec{B}$ vuông góc mặt vòng dây.</li>
+<li><strong>Ống dây dài:</strong> từ trường trong lòng ống đều, song song trục ống.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 206" role="img" aria-label="Ba dạng dòng điện: dây dẫn thẳng có đường sức là đường tròn đồng tâm, vòng dây có cảm ứng từ vuông góc mặt phẳng vòng dây, ống dây có từ trường đều song song trục ống"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">a) dây thẳng</text><line x1="78" y1="52" x2="78" y2="196" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="78" y1="150" x2="78" y2="86" stroke="#fb923c" stroke-width="3" marker-end="url(#f4-o)"/><text x="92" y="100" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">I</text><ellipse cx="78" cy="138" rx="44" ry="13" fill="none" stroke="#38bdf8" stroke-width="2"/><ellipse cx="78" cy="138" rx="27" ry="8" fill="none" stroke="#38bdf8" stroke-width="2"/><text x="126" y="162" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">B</text><text x="158" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">b) vòng dây</text><ellipse cx="222" cy="140" rx="44" ry="17" fill="none" stroke="currentColor" stroke-width="3"/><line x1="222" y1="178" x2="222" y2="96" stroke="#38bdf8" stroke-width="2.6" marker-end="url(#f4-b)"/><line x1="176" y1="132" x2="176" y2="154" stroke="#fb923c" stroke-width="2.4" marker-end="url(#f4-o)"/><line x1="268" y1="148" x2="268" y2="126" stroke="#fb923c" stroke-width="2.4" marker-end="url(#f4-o)"/><text x="166" y="122" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">I</text><text x="232" y="104" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">B</text><text x="300" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">c) ống dây</text><line x1="304" y1="140" x2="430" y2="140" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.35"/><ellipse cx="312" cy="140" rx="8" ry="24" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse cx="337" cy="140" rx="8" ry="24" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse cx="362" cy="140" rx="8" ry="24" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse cx="387" cy="140" rx="8" ry="24" fill="none" stroke="currentColor" stroke-width="2.4"/><ellipse cx="412" cy="140" rx="8" ry="24" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="308" y1="140" x2="424" y2="140" stroke="#38bdf8" stroke-width="2.6" marker-end="url(#f4-b)"/><text x="366" y="100" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">B</text></svg><figcaption>Hình 4. Dây thẳng — đường sức là đường tròn đồng tâm; vòng dây — B vuông góc mặt phẳng vòng; ống dây — B đều trong lòng.</figcaption></figure>
+
+<ul>
+<li>Dây thẳng dài, điểm cách dây khoảng $r$: $B = 2\cdot10^{-7}I/r$.</li>
+<li>Vòng dây bán kính $R$, $N$ vòng, tại tâm: $B = 2\pi\cdot10^{-7}NI/R$.</li>
+<li>Ống dây $n = N/l$ vòng trên mét, trong lòng ống: $B = 4\pi\cdot10^{-7} n I$.</li>
+</ul>
+
+<ul>
+<li>Ví dụ: dây thẳng $I = 10$ A, cách $r = 5$ cm → $B = 4\cdot10^{-5}$ T, cỡ từ trường Trái Đất; ống dây $n = 500$ vòng/m, $I = 2$ A → $B \approx 1,3\cdot10^{-3}$ T.</li>
+</ul>
+
+<details class="tl-details" data-exp="tn-l12-luctu-04">
+<summary>🔬 Bấm xem thí nghiệm: la bàn nói gì về chiều đường sức</summary>
+<p><strong>Làm:</strong> đặt la bàn nhỏ cách dây dẫn thẳng khoảng 5 cm, cho dòng 5–10 A chạy qua vài giây; sau đó quấn dây thành ống dây và đưa la bàn vào trong lòng ống. <strong>Quan sát:</strong> cạnh dây thẳng, kim lệch hẳn khỏi phương Bắc – Nam (cỡ $40^\circ$ khi $I = 10$ A, $r = 5$ cm; càng gần dây hoặc càng tăng dòng thì lệch càng nhiều); đảo chiều dòng thì kim lệch sang phía ngược lại; trong lòng ống dây, kim chỉ dọc theo trục ống. <strong>Rút ra:</strong> chiều đường sức theo quy tắc nắm tay phải; từ trường trong lòng ống dây mạnh và song song trục ống.</p>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Ống dây $n = 1000$ vòng/m, dòng 1 A. Cảm ứng từ trong lòng ống bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q5" id="tl11-q5a"><label for="tl11-q5a" class="tl-opt tl-ok">A. $1,26\cdot10^{-3}$ T</label>
+<input type="radio" name="tl11-q5" id="tl11-q5b"><label for="tl11-q5b" class="tl-opt tl-no">B. $12,6\cdot10^{-3}$ T</label>
+<input type="radio" name="tl11-q5" id="tl11-q5c"><label for="tl11-q5c" class="tl-opt tl-no">C. $0,126\cdot10^{-3}$ T</label>
+<input type="radio" name="tl11-q5" id="tl11-q5d"><label for="tl11-q5d" class="tl-opt tl-no">D. $1,26\cdot10^{-5}$ T</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $B = 4\pi\cdot10^{-7} n I \approx 1,26\cdot10^{-3}$ T $= 1,26$ mT; trong lòng ống dây, $B$ chỉ phụ thuộc $n$ và $I$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức lòng ống dây là $B = 4\pi\cdot10^{-7} n I$. So với đáp án đúng: B lệch 10 lần (lớn hơn), C lệch 10 lần (nhỏ hơn), D lệch 100 lần (nhỏ hơn) — dấu hiệu của lỗi luỹ thừa 10 hoặc lẫn công thức dây thẳng, vòng dây.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: quên kiểm tra dây có song song với đường sức không</h4>
+
+<p>Thấy dây trong từ trường là đặt tay trái ngay — nhưng dây song song đường sức thì $F = 0$.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Dây vuông góc đường sức</th><th>Dây song song đường sức</th></tr>
+</thead>
+<tbody>
+<tr><td>$\alpha = 90^\circ$; $\sin\alpha = 1$</td><td>$\alpha = 0^\circ$ hoặc $180^\circ$; $\sin\alpha = 0$</td></tr>
+<tr><td>Lực lớn nhất $F = BIl$</td><td>Không có lực: $F = 0$</td></tr>
+<tr><td>Tìm chiều bằng bàn tay trái</td><td>Không cần tìm chiều</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details">
+<summary>👀 Tự kiểm: vì sao đề bài hiếm khi cho dây song song với đường sức?</summary>
+<p>Vì khi đó $F = 0$ và cả bài chỉ còn một kết luận, không dùng được quy tắc bàn tay trái. Gặp dữ kiện "song song" trong đề, hãy viết ngay $F = 0$ — đó thường là câu hỏi bẫy chứ không phải câu tính toán.</p>
+</details>
+
+<h4>Bẫy 2: lẫn quy tắc bàn tay trái với quy tắc nắm tay phải</h4>
+
+<p>Hai quy tắc dùng hai bàn tay và trả lời hai câu hỏi khác nhau.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Bàn tay trái</th><th>Bàn tay phải</th></tr>
+</thead>
+<tbody>
+<tr><td>Trả lời: chiều lực từ $\vec{F}$</td><td>Trả lời: chiều đường sức $\vec{B}$</td></tr>
+<tr><td>Đường sức xuyên vào lòng bàn tay</td><td>Ngón cái dọc dây chỉ chiều $I$</td></tr>
+<tr><td>Cổ tay → ngón tay theo chiều $I$; ngón cái chỉ $F$</td><td>Bốn ngón khum theo chiều $I$; ngón cái chỉ $\vec{B}$ trong ống dây</td></tr>
+</tbody>
+</table>
+
+<details class="tl-details">
+<summary>👀 Tự kiểm: dây thẳng có dòng điện chạy từ dưới lên. Ở phía bên phải dây, đường sức từ hướng về đâu?</summary>
+<p>Ngón cái bàn tay phải chỉ lên theo chiều dòng điện, bốn ngón khum lại quanh dây. Phía bên phải dây, đường sức hướng <strong>từ ngoài vào trong mặt phẳng hình vẽ</strong> (⊗); phía bên trái thì hướng ra ngoài (⊙). Đảo chiều dòng điện thì hai phía đổi ngược lại.</p>
+</details>
+
+<h4>Bẫy 3: tưởng cảm ứng từ $B$ phụ thuộc vào dòng điện thử</h4>
+
+<p>$B$ là thứ có sẵn ở chỗ đặt dây; $I$ và $l$ chỉ là "cây thước" để đo nó.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Lực từ $F$</th><th>Cảm ứng từ $B$</th></tr>
+</thead>
+<tbody>
+<tr><td>Phụ thuộc $B, I, l, \alpha$</td><td>Chỉ phụ thuộc từ trường tại điểm đó</td></tr>
+<tr><td>Tăng dòng thử thì $F$ tăng theo</td><td>Tăng dòng thử thì $B$ không đổi</td></tr>
+<tr><td>Đo bằng lực kế (N)</td><td>Suy ra từ $F/(Il\sin\alpha)$ (T)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Câu 6.</strong> Dây dài 5 cm mang dòng 2 A, vuông góc đường sức, lực từ đo được 0,01 N. Tăng dòng lên 4 A thì $B$:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl11-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl11-q6c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q6" id="tl11-q6a"><label for="tl11-q6a" class="tl-opt tl-no">A. Tăng gấp đôi, thành 0,2 T</label>
+<input type="radio" name="tl11-q6" id="tl11-q6b"><label for="tl11-q6b" class="tl-opt tl-ok">B. Không đổi, vẫn bằng 0,1 T</label>
+<input type="radio" name="tl11-q6" id="tl11-q6c"><label for="tl11-q6c" class="tl-opt tl-no">C. Giảm một nửa, còn 0,05 T</label>
+<input type="radio" name="tl11-q6" id="tl11-q6d"><label for="tl11-q6d" class="tl-opt tl-no">D. Không xác định được vì thiếu chiều dài</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ dữ kiện đầu: $B = \dfrac{F}{Il} = \dfrac{0,01}{2 \times 0,05} = 0,1$ T. Tăng dòng thử lên 4 A thì lực từ thành 0,02 N, còn $B$ tại điểm đó vẫn là 0,1 T — nó là tính chất của từ trường, không phải của dây thử.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi ở đây là coi $B$ như kết quả phép chia phụ thuộc $I$ (A, C), hoặc quên rằng chiều dài $l = 5$ cm đã có trong đề (D). Đúng là: tăng $I$ thì $F$ tăng tỉ lệ, $B$ giữ nguyên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+
+<details class="tl-details">
+<summary>1. Lực từ tác dụng lên đoạn dây có điểm đặt, phương, chiều thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Giữa dây · Vuông góc dây và đường sức · Bàn tay trái.</strong> Điểm đặt tại trung điểm đoạn dây; phương vuông góc với đoạn dây và vuông góc với đường sức từ; chiều xác định bằng quy tắc bàn tay trái.</p>
+</details>
+
+<details class="tl-details">
+<summary>2. Phát biểu quy tắc bàn tay trái.</summary>
+<p>Đặt bàn tay trái duỗi thẳng để các đường cảm ứng từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay trùng chiều dòng điện; ngón tay cái choãi ra $90^\circ$ chỉ chiều lực từ. Nhớ kiểm tra dây có song song đường sức không, vì khi đó $F = 0$.</p>
+</details>
+
+<details class="tl-details">
+<summary>3. Viết công thức tính độ lớn lực từ, nêu kí hiệu và đơn vị.</summary>
+<p>$F = BIl\sin\alpha$: $B$ là cảm ứng từ (T), $I$ là cường độ dòng điện (A), $l$ là chiều dài đoạn dây trong từ trường (m), $\alpha$ là góc hợp bởi đoạn dây và $\vec{B}$. Vuông góc thì $F = BIl$; song song thì $F = 0$.</p>
+</details>
+
+<details class="tl-details">
+<summary>4. Cảm ứng từ là gì? Nêu phương, chiều, độ lớn, đơn vị.</summary>
+<p><strong>Đặc trưng tác dụng lực · Nam châm thử · Tesla.</strong> $\vec{B}$ đặc trưng cho từ trường về mặt tác dụng lực; phương là phương của nam châm thử nằm cân bằng; chiều từ cực Nam sang cực Bắc của nam châm thử; độ lớn $B = F/(Il\sin\alpha)$; đơn vị tesla (T), $1\ \text{T} = 1\ \text{N}/(\text{A}\cdot\text{m})$.</p>
+</details>
+
+<details class="tl-details">
+<summary>5. Vì sao khung dây quay trong từ trường đều? Viết công thức mômen ngẫu lực từ.</summary>
+<p><strong>Ngẫu lực từ.</strong> Hai cạnh đối diện chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá nên hợp lực bằng 0 mà mômen khác 0: $M = N\,B\,I\,S\,\sin\alpha$, cực đại $M_{\max} = N\,B\,I\,S$ khi mặt phẳng khung song song đường sức. Khung quay tới khi mặt phẳng khung vuông góc đường sức thì dừng.</p>
+</details>
+
+<details class="tl-details">
+<summary>6. Nêu chiều đường sức của dòng điện thẳng, vòng dây, ống dây và công thức $B$ trong ống dây.</summary>
+<p><strong>Quy tắc nắm tay phải.</strong> Dây thẳng: đường sức là đường tròn đồng tâm trong mặt phẳng vuông góc với dây. Vòng dây: đường sức vào một mặt, ra mặt kia. Ống dây: từ trường trong lòng ống đều, song song trục ống, $B = 4\pi\cdot10^{-7} n I$ với $n = N/l$ (vòng/m).</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đoạn dây trong từ trường của nam châm</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Dây dài $l = 20$ cm mang dòng $I = 2,5$ A trong từ trường đều $B = 0,08$ T; dây hợp đường sức góc $30^\circ$.</p>
+<p>a) Tính lực từ tác dụng lên đoạn dây.</p>
+<p>b) Xoay dây vuông góc đường sức thì lực từ bằng bao nhiêu?</p>
+<p>c) Thay bằng khung $4$ cm $\times$ $5$ cm, $N = 50$ vòng, cùng dòng. Tính mômen ngẫu lực cực đại.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"dài $20$ cm"</td><td>$l = 0,20$ m</td><td>đổi ra mét</td></tr>
+<tr><td>"góc $30^\circ$ với đường sức"</td><td>$\alpha = 30^\circ$</td><td>dùng $\sin\alpha$, không dùng $\cos\alpha$</td></tr>
+<tr><td>"xoay cho vuông góc"</td><td>$\alpha = 90^\circ$</td><td>lực cực đại</td></tr>
+<tr><td>"khung $4$×$5$ cm, 50 vòng"</td><td>$S = 0,002\ \text{m}^2$</td><td>$M_{\max} = NBIS$</td></tr>
+<tr><td>"từ trường đều" (ngầm)</td><td>$\vec{B}$ như nhau ở mọi điểm</td><td>chỉ cần một giá trị $B$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: $F = BIl\sin\alpha = 0,08 \times 2,5 \times 0,20 \times \sin 30^\circ = 0,02$ N $= 20$ mN.</li>
+<li>Câu b: vuông góc thì $\sin\alpha = 1$, nên $F = BIl = 0,04$ N $= 40$ mN — gấp đôi câu a.</li>
+<li>Câu c: $S = 0,04 \times 0,05 = 2\cdot10^{-3}\ \text{m}^2$; $M_{\max} = NBIS = 50 \times 0,08 \times 2,5 \times 2\cdot10^{-3} = 0,02$ N·m.</li>
+<li>Phương chiều: lực từ vuông góc dây và vuông góc đường sức từ; chiều chỉ bằng bàn tay trái (đường sức vào lòng bàn tay, cổ tay → ngón tay theo chiều $I$, ngón cái choãi $90^\circ$). Đảo chiều dòng thì lực từ đổi chiều.</li>
+<li>Kiểm tra kết quả: từ câu a suy ngược $B = \dfrac{F}{Il\sin\alpha} = \dfrac{0,02}{2,5 \times 0,20 \times 0,5} = 0,08$ T — khớp đề bài. Câu b gấp đôi câu a đúng bằng tỉ số $\sin 90^\circ / \sin 30^\circ$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Dây dài $l = 25$ cm mang dòng $I = 4$ A đặt vuông góc đường sức từ, lực kế đo được $F = 0,05$ N. Tìm $B$. Dây vuông góc nên $\sin\alpha = 1$ và $F = BIl$.</p>
+<ol class="tl-steps">
+<li>Bước 1: dây vuông góc nên $B = \dfrac{F}{I\,l}$.</li>
+<li><strong>Em điền:</strong> thay số (đổi $25$ cm $= 0,25$ m) rồi tính $B$.</li>
+<li><strong>Em điền:</strong> $B$ bằng bao nhiêu tesla, có hợp lí không?</li>
+</ol>
+<details class="tl-details">
+<summary>Bấm xem bước 2–3</summary>
+<p>$B = \dfrac{F}{Il} = \dfrac{0,05}{4 \times 0,25} = 0,05$ T. Giá trị này hợp lí: khe nam châm chữ U trong phòng thí nghiệm thường có cảm ứng từ cỡ 0,05–0,2 T. Nếu em ra $5\cdot10^{-4}$ T ($0,0005$ T) thì đã quên đổi $25$ cm thành mét; còn ra 5 T là đã nhầm $25$ cm thành $2,5$ mm.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức: đổi số và đổi góc</p>
+<p><strong>Câu 7.</strong> Dây dài 10 cm mang dòng 3 A, $B = 0,05$ T, dây hợp đường sức góc $30^\circ$. Lực từ bằng:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl11-q7c" value="chac"> Chắc</label> <label><input type="radio" name="tl11-q7c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl11-q7" id="tl11-q7a"><label for="tl11-q7a" class="tl-opt tl-ok">A. 7,5 mN</label>
+<input type="radio" name="tl11-q7" id="tl11-q7b"><label for="tl11-q7b" class="tl-opt tl-no">B. 15 mN</label>
+<input type="radio" name="tl11-q7" id="tl11-q7c"><label for="tl11-q7c" class="tl-opt tl-no">C. 13 mN</label>
+<input type="radio" name="tl11-q7" id="tl11-q7d"><label for="tl11-q7d" class="tl-opt tl-no">D. 0,75 mN</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = BIl\sin\alpha = 0,05 \times 3 \times 0,10 \times 0,5 = 7,5\cdot10^{-3}$ N $= 7,5$ mN. Hai chỗ dễ sập: đổi $10$ cm $= 0,10$ m và lấy $\sin 30^\circ = 0,5$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai ứng với ba lỗi: bỏ luôn $\sin\alpha$ nên được $BIl$ (B), lấy nhầm $\sin 60^\circ = 0,866$ (C), đổi $10$ cm thành $0,01$ m (D). Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Loa, tai nghe:</strong> dòng biến thiên làm lực từ đổi chiều, kéo màng loa rung.</li>
+<li><strong>Động cơ điện:</strong> rôto là khung dây quay nhờ ngẫu lực từ — máy khoan, quạt, xe đạp điện.</li>
+<li><strong>Cân dòng điện:</strong> đo lực từ lên dây đã biết $I$, $l$ để suy ra $B$.</li>
+<li><strong>Máy MRI:</strong> nam châm siêu dẫn tạo từ trường 1,5–3 T, mạnh hơn từ trường Trái Đất hàng chục nghìn lần.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎯 Thử thách phân tầng</p>
+
+<details class="tl-details">
+<summary>⭐ Cơ bản: dây 10 cm mang dòng 2 A vuông góc đường sức, $B = 0,5$ T. Tính lực từ.</summary>
+<p>$F = BIl\sin 90^\circ = 0,5 \times 2 \times 0,10 = 0,1$ N.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Khá: cũng dây đó, dây hợp đường sức $30^\circ$, lực từ đo được 0,1 N. $B$ bằng bao nhiêu?</summary>
+<p>$B = \dfrac{F}{Il\sin\alpha} = \dfrac{0,1}{2 \times 0,10 \times 0,5} = 1$ T. Cùng một lực đo được nhưng từ trường mạnh gấp đôi, vì dây đặt xiên $30^\circ$ nên chỉ "hứng" được một nửa lực.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thách đấu: khung 20 vòng, $S = 25$ cm², dòng 2 A, $B = 0,4$ T. Vì sao khung quay mà tâm khung không bị đẩy đi?</summary>
+<p>Mômen cực đại $M = NBIS = 20 \times 0,4 \times 2 \times 25\cdot10^{-4} = 0,04$ N·m. Hai cạnh đối diện chịu hai lực cùng độ lớn, ngược chiều, không cùng giá: hợp lực bằng 0 nên tâm khung không dịch chuyển, nhưng mômen khác 0 nên khung quay. Động cơ thực tế còn có bộ đổi chiều dòng để khung quay liên tục.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Lực từ:</strong> giữa dây · vuông góc dây và đường sức · bàn tay trái.</li>
+<li><strong>Bàn tay trái:</strong> đường sức vào lòng bàn tay · cổ tay → ngón tay theo $I$ · ngón cái chỉ $\vec{F}$.</li>
+<li><strong>Độ lớn:</strong> $F = BIl\sin\alpha$ · vuông góc $F = BIl$ · song song $F = 0$.</li>
+<li><strong>Cảm ứng từ:</strong> đặc trưng tác dụng lực · chiều Nam sang Bắc · tesla.</li>
+<li><strong>Ngẫu lực từ:</strong> $M = NBIS\sin\alpha$, cực đại $NBIS$ khi mặt phẳng khung song song đường sức · dừng khi mặt phẳng khung vuông góc đường sức.</li>
+<li><strong>Đường sức:</strong> dây thẳng là đường tròn đồng tâm · lòng ống dây đều $B = 4\pi\cdot10^{-7} n I$.</li>
+<li><strong>Đọc đề:</strong> gặp "song song", "vuông góc" thì viết $\sin\alpha$ trước; gặp cm thì đổi ra m.</li>
+</ul>
+</div>
+</span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+</script>
+<script>
+const bar=document.createElement('div');
+bar.style.cssText='position:sticky;top:0;z-index:9;background:#0b1220;border-bottom:1px solid #1e293b;padding:8px 16px;margin:-20px -16px 16px;display:flex;gap:8px;align-items:center;font-size:12px;color:#94a3b8';
+const b1=document.createElement('button');b1.textContent='Mở tất cả đáp án';
+const b2=document.createElement('button');b2.textContent='Đóng lại';
+for(const b of [b1,b2]) b.style.cssText='background:#1e293b;color:#e2e8f0;border:0;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer';
+b1.onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+b2.onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+bar.append(b1,b2);document.body.prepend(bar);
+</script></html>

@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     ".claude/worktrees/**",
     "scratchpad/**",
+    // File tạm sinh ra khi xử lý PDF/đề, không phải code của web.
+    "tmp/**",
     // Deno runtime (Supabase Edge Function), không dùng chung linter/tsconfig với Next.js.
     "supabase/functions/**",
   ]),

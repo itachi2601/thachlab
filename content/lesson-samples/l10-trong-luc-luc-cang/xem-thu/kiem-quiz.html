@@ -1,0 +1,994 @@
+<!doctype html><html lang="vi"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
+.exam-content{display:block}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
+   nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
+   vì .exam-content còn dùng ở khu quản trị/kết quả không có khung đó. */
+.exam-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.06);
+  padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  max-width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
+.exam-content img.eq {
+  display: inline-block;
+  /* chiều cao thật đặt inline theo kích thước gốc trong Word */
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 0 0.15em;
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+.exam-content img.figure {
+  display: block;
+  max-width: min(100%, 360px);
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */
+.exam-content figure.fig {
+  max-width: min(100%, 420px);
+  margin: 0.9rem auto;
+}
+.exam-content figure.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.exam-content figure.fig figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85em;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Bài lý thuyết tương tác (không JS): hộp dự đoán/định nghĩa, <details> bấm mở, trắc nghiệm tự chấm
+   bằng radio + :checked (HTML lưu DB không được chứa <script>/on*=). Mẫu: content/lesson-samples/. */
+.exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
+.exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
+.exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-box--rule .tl-label { color: #fbbf24; }
+.exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
+.exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
+.exam-content .tl-details > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-details > summary::after { content: "▾"; float: right; transition: transform .15s; }
+.exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
+.exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
+.exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
+.exam-content .tl-opt:hover { border-color: #22d3ee; }
+.exam-content .tl-quiz > input:focus-visible + .tl-opt { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-ok { border-color: #34d399; background: rgba(52,211,153,.18); }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
+.exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
+.exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
+.exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
+.exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
+.exam-content .tl-table th { background: rgba(148,163,184,.14); }
+html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
+html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
+.exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
+.exam-content .tl-box--exp .tl-label { color: #34d399; }
+.exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
+.exam-content .tl-steps > li { margin-bottom: 8px; }
+.exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
+.exam-content .tl-box .tl-details { background: transparent; }
+html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
+html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
+
+/* ============================================================
+   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+     < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
+     >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
+   ============================================================ */
+.class-pick-desktop { display: none; }
+.class-pick-mobile { display: grid; gap: 28px; }
+
+@media (max-width: 1023px) {
+  /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
+  .lesson-layout--pick { display: block; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-nav { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
+  .lesson-layout--pick .class-continue--main { display: none; }
+  /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
+  .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
+  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
+  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
+  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+}
+
+/* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
+@media (min-width: 1320px) {
+  .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+}
+
+/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
+   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
+   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
+@media (max-width: 639px) {
+  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
+   chữ sans-serif hệ thống 16px/1.75, công thức KaTeX nằm liền dòng (không khung, không cuộn riêng).
+   Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
+html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
+html:not([data-theme="light"]) .lesson-shell::before { display: none; }
+.lesson-page .exam-content { font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.75; }
+.lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
+.lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
+.lesson-page .exam-content .katex-display > .katex { display: block; }
+/* Dấu căn KaTeX (\sqrt) là một <svg> có height theo thuộc tính; quy tắc ".exam-content svg { height: auto }"
+   ở trên làm nó xẹp về 0 nên mọi công thức căn mất dấu √ (hiện thành "I/2" thay vì "I/√2"). Trả lại chiều cao KaTeX. */
+.exam-content .katex svg { height: inherit; max-width: none; }
+
+/* ==================================================================
+   CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
+   (components/lessons/LessonPresenter.tsx, mở từ nút ở tab Lý thuyết của /lop-hoc/bai)
+
+   Nguyên tắc thiết kế:
+   - Nội dung là nhân vật chính: không navbar, không cây chương, không nút thường
+     trực — thanh điều khiển tự ẩn sau ~3 giây, đụng chuột/chạm là hiện lại.
+   - Nền mặc định SÁNG (chữ đậm trên nền sáng) vì phòng học bật đèn; nút "Nền tối"
+     dành cho phòng tối cho đỡ chói. Nền SÁNG cũng là lý do phải tắt đảo màu ảnh
+     công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
+   - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
+     trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Trang chiếu TRÀN gần hết bề ngang màn hình, chỉ chừa lề nhỏ (xem .presenter-slide):
+     tivi/máy chiếu lớp học là 16:9, cap bề ngang cũ 1180px làm hụt ~740px trên tivi
+     1920 (nội dung co thành một cột hẹp giữa màn hình, chữ xuống dòng sớm).
+   - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
+     vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
+   ================================================================== */
+
+/* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
+.lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
+.lesson-presenter-loading.is-error { color: #fca5a5; }
+
+.lesson-presenter {
+  --pres-text: #e8eefc;
+  --pres-muted: #9fb0cc;
+  --pres-heading: #fff;
+  --pres-accent: #60a5fa;
+  --pres-line: rgba(148,163,184,.24);
+  --pres-surface: rgba(15,23,42,.86);
+  --pres-panel: #101a2e;
+  position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
+  background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
+}
+.lesson-presenter[data-bg="light"] {
+  --pres-text: #17233a;
+  --pres-muted: #59678a;
+  --pres-heading: #0b1220;
+  --pres-accent: #1d4ed8;
+  --pres-line: rgba(15,23,42,.16);
+  --pres-surface: rgba(255,255,255,.92);
+  --pres-panel: #fff;
+  background: #f4f6fb;
+}
+
+/* Khung vẽ tay: luôn hiện (nét cũ còn nguyên khi tắt bút), chỉ nhận chuột khi đang bật bút. */
+.presenter-canvas { position: absolute; inset: 0; z-index: 15; width: 100%; height: 100%; pointer-events: none; touch-action: none; }
+.presenter-canvas.is-active { pointer-events: auto; cursor: crosshair; }
+
+/* Thanh trên/dưới: tự ẩn, và khi ẩn thì không chặn cả nét vẽ lẫn cú bấm. */
+.presenter-top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.presenter-bar { position: absolute; z-index: 20; bottom: clamp(14px, 3vh, 28px); left: 50%; display: flex; width: max-content; max-width: min(96vw, 1120px); align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 7px 9px; box-shadow: 0 18px 40px -22px rgba(2,6,23,.6); opacity: 0; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.presenter-top, .presenter-bar { pointer-events: none; }
+.lesson-presenter.is-chrome .presenter-top { opacity: 1; }
+.lesson-presenter.is-chrome .presenter-bar { opacity: 1; transform: translate(-50%, 0); }
+.lesson-presenter.is-chrome .presenter-top > *, .lesson-presenter.is-chrome .presenter-bar > * { pointer-events: auto; }
+
+.presenter-info { display: grid; gap: 3px; min-width: 0; max-width: 46vw; border: 1px solid var(--pres-line); border-radius: 12px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 8px 14px; }
+.presenter-info strong { overflow: hidden; font-size: 13.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-info span { color: var(--pres-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.presenter-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.presenter-actions button, .presenter-bar button { display: inline-flex; min-height: 36px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 10px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: border-color .15s, color .15s, background-color .15s; }
+.presenter-bar button { border-radius: 999px; }
+.presenter-actions button:hover, .presenter-bar button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-actions button:disabled, .presenter-bar button:disabled { opacity: .35; cursor: default; }
+.presenter-actions .presenter-close:hover { border-color: #f87171; color: #f87171; }
+.presenter-bar button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.lesson-presenter[data-bg="light"] .presenter-bar button.is-on { background: rgba(29,78,216,.12); }
+.presenter-bar .presenter-page { font-variant-numeric: tabular-nums; }
+.presenter-bar-sep { flex: 0 0 auto; width: 1px; align-self: stretch; margin: 0 4px; background: var(--pres-line); }
+.presenter-zoom { min-width: 46px; color: var(--pres-muted); font-size: 12px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.presenter-colors { display: inline-flex; align-items: center; gap: 5px; padding: 0 3px; }
+.presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
+.presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
+
+/* Lề ngang chỉ để nội dung không dính sát mép màn hình (và không chui dưới nét vẽ ở rìa):
+   bề ngang thật của trang chiếu do .presenter-slide quyết định, không cap ở đây. */
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(16px, 2.4vw, 48px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+.presenter-stage::-webkit-scrollbar { width: 10px; }
+.presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
+
+/* Trang chiếu dùng hết bề ngang còn lại của khung (không cap max-width): trên tivi 1920
+   chữ chạy tới sát hai mép, chỉ chừa lề của .presenter-stage. Muốn chữ to/nhỏ thì dùng
+   Ctrl +/− (--presenter-zoom) chứ không thu hẹp cột nội dung. */
+.presenter-slide { max-width: none; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+@keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
+
+.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
+
+/* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
+   khung công thức khối) vì ở đây chữ phải to theo --presenter-zoom và phẳng như slide. */
+.presenter-prose.exam-content { display: block; color: var(--pres-text); font-family: var(--font-body), sans-serif; font-size: 1em; line-height: 1.68; }
+.presenter-prose p { margin: 0 0 .85em; }
+.presenter-prose > :last-child { margin-bottom: 0; }
+.presenter-prose :is(ul, ol) { margin: 0 0 .85em; padding-left: 1.45em; }
+.presenter-prose li { margin-bottom: .3em; }
+.presenter-prose :is(h3, h4) { margin: 1.05em 0 .45em; color: var(--pres-heading); font-size: 1.1em; font-weight: 700; line-height: 1.3; }
+.presenter-prose :is(strong, b) { color: var(--pres-heading); }
+.presenter-prose :is(img, svg, table, .table-scroll) { max-width: 100%; }
+.presenter-prose .katex-display { margin: .85em 0; border: 0; border-radius: 0; background: none; padding: 0; text-align: center; }
+.presenter-prose .katex { vertical-align: baseline; }
+.presenter-prose .exam-content-raw-tex { background: rgba(148,163,184,.18); color: inherit; }
+/* Ảnh công thức trong bài là nét đen trên nền trắng: nền tối thì đảo màu, nền sáng để nguyên. */
+.lesson-presenter[data-bg="dark"] .presenter-prose img.eq { filter: invert(.88) hue-rotate(180deg); }
+.lesson-presenter[data-bg="light"] .presenter-prose img.eq { filter: none; }
+/* Khối "tl-*" soạn cho nền tối (nhãn cyan/vàng trên nền mờ) — đổi sang bảng màu đọc được trên nền sáng. */
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-box, .tl-details) { border-color: rgba(15,23,42,.18); background: rgba(15,23,42,.045); }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-label { color: #0e7490; }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-box--rule .tl-label { color: #b45309; }
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-table th, .tl-table td, .tl-opt) { border-color: rgba(15,23,42,.22); }
+
+.presenter-cover { display: grid; justify-items: center; gap: 16px; padding: clamp(20px, 7vh, 80px) 0; text-align: center; }
+.presenter-cover-kicker { margin: 0; color: var(--pres-accent); font-family: var(--font-mono), monospace; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+.presenter-cover h1 { max-width: 18em; margin: 0; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 2.3em; font-weight: 700; letter-spacing: -.02em; line-height: 1.16; }
+.presenter-cover-sub { margin: 0; color: var(--pres-muted); font-size: .95em; }
+.presenter-cover-start { display: inline-flex; min-height: 52px; align-items: center; gap: 8px; margin-top: 4px; border: 0; border-radius: 999px; background: #3b82f6; padding: 0 26px; color: #fff; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; }
+.presenter-cover-start:hover { background: #2563eb; }
+.presenter-cover kbd, .presenter-draw-hint kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 1px 6px; font-family: var(--font-mono), monospace; font-size: .84em; }
+
+.presenter-panel { position: absolute; z-index: 30; top: 50%; left: 50%; display: flex; max-height: min(82vh, 760px); flex-direction: column; overflow: hidden; border: 1px solid var(--pres-line); border-radius: 16px; background: var(--pres-panel); box-shadow: 0 30px 70px -30px rgba(2,6,23,.7); transform: translate(-50%, -50%); }
+.presenter-panel--menu { width: min(92vw, 560px); }
+.presenter-panel--help { width: min(92vw, 640px); }
+.presenter-panel-head { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--pres-line); padding: 12px 14px; }
+.presenter-panel-head p { display: inline-flex; align-items: center; gap: 7px; margin: 0; color: var(--pres-heading); font-size: 13.5px; font-weight: 700; }
+.presenter-panel-head button { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--pres-line); border-radius: 8px; background: none; color: var(--pres-muted); cursor: pointer; }
+.presenter-panel-head button:hover { border-color: #f87171; color: #f87171; }
+.presenter-panel-body { overflow-y: auto; padding: 12px 14px 16px; }
+.presenter-menu-group + .presenter-menu-group { margin-top: 14px; }
+.presenter-menu-title { margin: 0 0 6px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.presenter-menu-group ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.presenter-menu-group button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; border-radius: 8px; background: none; padding: 7px 9px; color: var(--pres-text); font-family: inherit; font-size: 13.5px; line-height: 1.45; text-align: left; cursor: pointer; }
+.presenter-menu-group button:hover { background: rgba(148,163,184,.16); }
+.presenter-menu-group button.is-current { background: rgba(59,130,246,.18); color: var(--pres-accent); font-weight: 700; }
+.presenter-menu-group button > span { flex: 0 0 auto; min-width: 24px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+.presenter-menu-group button.is-current > span { color: inherit; }
+.presenter-keys { display: grid; gap: 9px; margin: 0; }
+.presenter-keys > div { display: grid; grid-template-columns: minmax(132px, auto) 1fr; align-items: baseline; gap: 14px; }
+.presenter-keys dt { margin: 0; white-space: nowrap; }
+.presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
+.presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
+.presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+.presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
+.presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
+
+.presenter-draw-hint { position: absolute; z-index: 22; bottom: clamp(76px, 11vh, 100px); left: 50%; margin: 0; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 6px 14px; color: var(--pres-muted); font-size: 12px; white-space: nowrap; transform: translateX(-50%); }
+
+@media (max-width: 900px) {
+  .presenter-btn-text { display: none; }
+  .presenter-info { max-width: 40vw; padding: 6px 11px; }
+  .presenter-info span { display: none; }
+}
+@media (max-width: 639px) {
+  .presenter-top { padding: 12px; }
+  /* Điện thoại: thanh điều khiển xuống 2 hàng — cuộn ngang thì các nút cỡ chữ nằm ngoài tầm
+     mắt, không biết là có; và chừa thêm chỗ đáy để hàng chữ cuối không bị thanh che. */
+  .presenter-bar { flex-wrap: wrap; justify-content: center; row-gap: 5px; max-width: min(94vw, 460px); border-radius: 18px; overflow: visible; }
+  .presenter-bar-sep { display: none; }
+  .presenter-zoom { min-width: 38px; }
+  .presenter-stage { padding-left: 14px; padding-right: 14px; padding-bottom: 172px; }
+  .presenter-keys > div { grid-template-columns: 1fr; gap: 3px; }
+  .presenter-draw-hint { display: none; }
+}
+/* Nhấn ý chính như trang mẫu: chữ đậm sáng hơn thân bài, tiêu đề lớn, đoạn cách nhau rõ. */
+.lesson-page .exam-content :is(strong, b) { color: #fff; font-weight: 700; }
+.lesson-page .exam-content :is(h2, h3, h4) { color: #fff; font-weight: 700; line-height: 1.35; margin: 1.6em 0 .6em; }
+.lesson-page .exam-content h2 { font-size: 1.5rem; }
+.lesson-page .exam-content h3 { font-size: 1.3rem; }
+.lesson-page .exam-content h4 { font-size: 1.1rem; }
+.lesson-page .exam-content p { margin: 0 0 1em; }
+/* Lề trái/phải của nội dung trong <details> bài lý thuyết: phải có .lesson-page để thắng `p`/`h3`… ở trên (cùng 0,2,1, dòng sau thắng) — chỉ đặt lề ngang, lề dưới vẫn do từng phần tử quyết định. */
+.lesson-page .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.lesson-page .exam-content .tl-details > :is(table, .tl-table) { width: calc(100% - 28px); }
+.lesson-page .exam-content .tl-details > span > .katex-display { margin-left: 14px; margin-right: 14px; }
+html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
+
+/* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
+html:not([data-theme="light"]) header.fixed.top-0 { background-color: rgba(15, 23, 42, .92); }
+html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
+.lesson-main--single > .lesson-head { display: block; margin: 22px 0 36px; }
+.lesson-main--single > .lesson-head h1 { max-width: 18ch; }
+.lesson-main--single > .lesson-head .lesson-lead { margin-top: 10px; max-width: 60ch; }
+
+/* ---------- P1/P2 kha-nang-doc (02/10/2026) ---------- */
+/* Chuẩn ở docs/UI.md. Số đo WCAG tính bằng scripts/check-a11y.mjs — đổi màu thì đo lại. */
+
+/* Màu nhấn tiêu đề (thay chữ gradient). Tối: #60a5fa = 7,9:1 trên #05070b, #fb923c = 8,9:1.
+   Sáng: #1d4ed8 = 6,4:1 trên #f8fafc, #c2410c = 5,2:1 trên trắng. */
+:root { --accent-brand-text: #60a5fa; --accent-warm-text: #fb923c; }
+/* C3: thang chữ vùng nội dung học sinh — chỉ 3 mức nhỏ (cỡ thân = 16px; tiêu đề lấy từ h1/h2/h3) thay cho 12,5/13/13,5/15/15,5 rải rác. */
+:root { --fs-cap: 12px; --fs-sm: 14px; --fs-body: 16px; }
+html[data-theme="light"] { --accent-brand-text: #1d4ed8; --accent-warm-text: #c2410c; }
+
+/* Công cụ đọc dùng chung (components/ui/ReadingZone.tsx — /phu-huynh, /kiem-tra/lam).
+   Dùng lại .lesson-tool/.lesson-fonttools nên phải cấp các biến --lesson-* mà .lesson-shell đặt. */
+.read-zone-tools { --lesson-line: rgba(148,163,184,.24); --lesson-accent-line: rgba(59,130,246,.45); --lesson-accent-soft: rgba(59,130,246,.12); --lesson-accent-text: #93c5fd; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 14px; }
+html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); --lesson-accent-text: #1d4ed8; }
+
+/* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
+   rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
+html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
+html.is-dim[data-theme="light"] .text-white { color: #33291a; }
+html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
+html.is-dim[data-theme="light"] :is(.bg-\[\#05070B\], .bg-\[\#05070B\]\/90, .bg-\[\#080D1A\], .bg-\[\#0B1220\]\/\[0\.98\]) { background-color: rgb(251 247 234 / .94); }
+html.is-dim[data-theme="light"] :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: rgba(120,96,40,.24); }
+
+/* Người dùng bật "tăng tương phản" ở hệ điều hành: chữ phụ và viền đậm hơn, chữ nhấn sáng hơn. */
+@media (prefers-contrast: more) {
+  html:not([data-theme="light"]) { --color-muted: #cbd5e1; --color-line: rgba(255,255,255,.32); --accent-brand-text: #93c5fd; --accent-warm-text: #fdba74; }
+  html:not([data-theme="light"]) :is(.text-slate-500, .text-slate-400) { color: #cbd5e1; }
+  html:not([data-theme="light"]) [class*="text-primary"] { color: #93c5fd; }
+  html[data-theme="light"] { --color-muted: #1e293b; --color-line: rgba(15,23,42,.42); --accent-brand-text: #1e3a8a; --accent-warm-text: #9a3412; }
+  html[data-theme="light"] :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #1e293b !important; }
+  :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: var(--color-line); }
+  .lesson-shell, .cnc-shell, .cnc-page { --lesson-line: var(--color-line); --cnc-line: var(--color-line); --cnc-faint: var(--color-muted); }
+}
+@media (forced-colors: active) {
+  .text-gradient, .text-gradient--warm, .cnc-header-grid h1 em { color: CanvasText; }
+}
+
+/* ============================================================
+   Trang bài học — đợt gọn 2/10/2026 (docs/QUY-TAC-THIET-KE.md: B1, N4, H2, M5, C3)
+   ============================================================ */
+/* N4/B1: trên điện thoại breadcrumb chỉ còn lặp tên bài (đã có nút quay lại + h1) → ẩn hẳn
+   để nội dung học lên cao hơn. Mục cuối breadcrumb đã bỏ khỏi TSX; desktop vẫn giữ "Lớp › Chương". */
+@media (max-width: 639px) {
+  .lesson-breadcrumb { display: none; }
+}
+
+/* M5: mọi hình raster trong bài dùng MỘT kiểu khung sáng thống nhất (nền trắng, đệm 10px, bo 10px)
+   thay vì ô trắng chói, đệm/bo mỗi nơi một khác trên nền tối. Hình mới nên vẽ SVG nền trong suốt. */
+.lesson-prose img.figure {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+html[data-theme="light"] .lesson-prose img.figure,
+.lesson-page.is-dim .lesson-prose img.figure { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12); }
+
+/* H2/N7: bảng dán từ Word kiểu "chữ | hình" (có <img>): chữ không in đậm cả đoạn (th mặc định
+   bold), và dưới 760px xếp DỌC — chữ trước, hình ngay dưới, rộng 100% — thay vì cuộn ngang
+   làm cắt mất cột hình. Chỉ nhắm bảng có hình; bảng số liệu thật vẫn cuộn ngang như cũ. */
+.lesson-prose .table-scroll table:has(img) :is(th, td) { font-weight: 400; }
+@media (max-width: 759px) {
+  .lesson-prose .table-scroll:has(img) { overflow-x: visible; }
+  .lesson-prose .table-scroll table:has(img) { display: block; width: 100%; min-width: 0 !important; }
+  .lesson-prose .table-scroll table:has(img) :is(thead, tbody, tr, th, td) { display: block; width: 100% !important; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td) { border: 0; padding: 10px 12px; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td):has(img) { padding-top: 0; }
+  .lesson-prose .table-scroll table:has(img) img.figure { max-width: min(100%, 480px); margin: 0 auto; }
+}
+/* RankCelebrationModal: pop-up chúc mừng lên rank / đạt danh hiệu.
+   Trình tự: thẻ hiện → huy chương xoay 3D 3 vòng thu nhỏ→phóng to (0,25–1,3 s) → loé sáng + sóng + tia lan ra (1,3 s) → chữ → pháo hoa (canvas, trên cùng). */
+@keyframes rcl-card-in { from { opacity: 0; transform: scale(.8) translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-badge-in { 0% { opacity: 0; transform: rotateY(0) scale(.15); } 15% { opacity: 1; } 100% { opacity: 1; transform: rotateY(1080deg) scale(1); } }
+@keyframes rcl-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-rays-in { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.1) rotate(0); } 100% { opacity: .45; transform: translate(-50%, -50%) scale(1) rotate(60deg); } }
+@keyframes rcl-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes rcl-glow { 0%, 100% { opacity: .55; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes rcl-flash { 0% { opacity: 0; transform: scale(.2); } 25% { opacity: .95; } 100% { opacity: 0; transform: scale(4.5); } }
+@keyframes rcl-ring { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(5); } }
+@keyframes rcl-shine { 0%, 55% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(120%) skewX(-20deg); } }
+.rcl-card { animation: rcl-card-in .4s ease-out; }
+.rcl-stage { perspective: 700px; }
+.rcl-badge { opacity: 0; animation: rcl-badge-in 1.05s .25s cubic-bezier(.2,.7,.2,1) forwards; }
+.rcl-rise { opacity: 0; animation: rcl-rise .5s ease-out forwards; }
+.rcl-rays { opacity: 0; animation: rcl-rays-in 1.4s 1.25s ease-out forwards, rcl-spin 30s 2.65s linear infinite; }
+.rcl-glow { animation: rcl-glow 2.6s ease-in-out infinite; }
+.rcl-flash { position: absolute; left: 50%; top: 50%; width: 170px; height: 170px; margin: -85px 0 0 -85px; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-flash 1.1s 1.25s ease-out forwards; }
+.rcl-ring { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border: 3px solid; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-ring 1.3s 1.25s ease-out forwards; }
+.rcl-ring2 { animation-delay: 1.45s; border-width: 2px; }
+.rcl-shine { overflow: hidden; background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); mix-blend-mode: overlay; animation: rcl-shine 3s 2.6s ease-in-out infinite; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .rcl-card, .rcl-badge, .rcl-rise, .rcl-rays, .rcl-glow, .rcl-shine, .rcl-flash, .rcl-ring { animation: none; opacity: 1; } .rcl-rays { opacity: .45; } .rcl-flash, .rcl-ring { opacity: 0; } }
+
+/* ============================================================
+   P1/P2/P4 — khối PHỤ HUYNH (45–60 tuổi) · docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Phạm vi: class .parent-page (đặt ở <main> của /phu-huynh). Trang học sinh KHÔNG bị đổi.
+   Vì sao có khối này thay vì sửa từng component: các component của phụ huynh
+   (StudentResultsDashboard viewer="parent", ParentHomeworkNotes, CatchupCard) dùng chung
+   với trang học sinh — nâng sàn cỡ chữ theo phạm vi trang là cách duy nhất không kéo
+   giao diện học sinh 14–18 tuổi theo.
+   ============================================================ */
+/* P1 sàn cỡ chữ: thân 18px, nhãn phụ 15px (nghiên cứu: thân ≥17–18px, nhãn 15–16px, không có
+   12–13px cho câu cần đọc — docs/NGHIEN-CUU-PHU-HUYNH-45-60.md §2). Dùng rem (KHÔNG px) để nút
+   A+/A− của ReadingZone — thứ phụ huynh lão thị cần nhất — vẫn phóng được toàn bộ chữ trong trang. */
+.parent-page { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-xs) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-\[11px\], .text-\[12px\], .text-\[13px\]) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-sm) { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-base) { font-size: 1.1875rem; }
+.parent-page :is(.text-lg) { font-size: 1.3125rem; }
+/* P2 tương phản: chữ phụ phải ≥ 4,5:1 (AA) và nhắm 7:1 (AAA) — #64748b trên nền sáng chỉ 4,76:1.
+   #475569 trên #fff = 7,0:1; trên panel tối #b8c4d6 = 9,3:1. */
+.parent-page :is(.text-slate-500, .text-slate-400) { color: #475569; }
+html[data-theme="dark"] .parent-page :is(.text-slate-500, .text-slate-400) { color: #b8c4d6; }
+/* Chế độ "Dịu mắt" (kem/nâu): #6b5a3e = 5,8:1 → đậm lên #57492f = 7,6:1 trên #f5efe0. */
+html.is-dim[data-theme="light"] .parent-page :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #57492f; }
+/* P2 (và tinh thần "đọc được trong phòng thiếu sáng"): màu nhấn/trạng thái trong khối phụ huynh
+   đạt ≥7:1 ở theme sáng — lớp override sáng phía trên ép #0e7490/#047857/#b91c1c/#a16207
+   (4,9–5,9:1) bằng !important nên ở đây cũng phải !important. Theme tối giữ nguyên (đều >9:1). */
+html[data-theme="light"] .parent-page :is(.text-cyan-300, .text-cyan-400) { color: #155e75 !important; }
+html[data-theme="light"] .parent-page :is(.text-emerald-300, .text-emerald-200) { color: #065f46 !important; }
+html[data-theme="light"] .parent-page :is(.text-red-300, .text-red-200) { color: #991b1b !important; }
+html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { color: #92400e !important; }
+/* P4 đích chạm ≥ 48px (≥ 3rem) và P18 hạn chế gõ: ô nhập ≥ 18px để iOS không tự phóng to. */
+.parent-page :is(button, select, summary) { min-height: 3rem; }
+.parent-page a[class*="rounded-xl"], .parent-page a[class*="rounded-full"], .parent-page a[class*="rounded-2xl"] { min-height: 3rem; }
+.parent-page :is(input, select, textarea) { font-size: 1.125rem; }
+/* Công cụ đọc (Dịu mắt · A− / A+): globals đặt 13px cho .lesson-tool — đúng cho học sinh nhưng
+   13px là chữ nhỏ nhất trên trang phụ huynh, mà đây lại đúng là nút người lão thị cần bấm. */
+.parent-page .read-zone-tools :is(button, span) { font-size: .9375rem; }
+.parent-page .read-zone-tools :is(button) { min-width: 2.75rem; }
+/* P6 con số phải to và thẳng cột; P12 không dựa vào màu: luôn có nhãn chữ đi kèm. */
+.parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+/* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
+.parent-page .parent-copy { max-width: 44rem; }
+
+.exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
+.exam-content figure.fig svg{display:block;width:100%;height:auto}
+.exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
+
+</style>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu đủ bốn đặc điểm của <strong>trọng lực</strong> (điểm đặt, phương, chiều, độ lớn $P = mg$) và tìm được <strong>trọng tâm</strong> của vật phẳng.</li>
+<li>Phân biệt <strong>khối lượng</strong> (kg, không đổi) với <strong>trọng lượng</strong> (N, đổi theo $g$).</li>
+<li>Vẽ đúng <strong>lực căng</strong> $\vec T$ của dây: điểm đặt, phương, chiều.</li>
+<li>Giải bài <strong>hệ vật nối dây qua ròng rọc</strong>: tìm gia tốc và lực căng.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 17 phút.</p>
+</div>
+
+<h3>I. Mở bài: chiếc vòng đệm treo trong xưởng</h3>
+
+<p>Trong xưởng cơ khí, một vòng đệm thép lớn (hình tròn, khoét lỗ ở giữa) được treo lên móc cầu trục bằng một sợi cáp móc vào vành. Thả ra, vòng đệm lắc vài cái rồi đứng yên. Lúc đó, sợi cáp kéo dài xuống luôn đi qua <strong>đúng tâm lỗ</strong>, chỗ không hề có thép.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Trọng lực tác dụng lên vòng đệm đặt ở đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q1" id="tl62-q1a"><label for="tl62-q1a" class="tl-opt tl-no">A. Ở điểm móc cáp trên vành, vì cáp giữ vật ở đó</label>
+<input type="radio" name="tl62-q1" id="tl62-q1b"><label for="tl62-q1b" class="tl-opt tl-ok">B. Ở tâm lỗ, dù chỗ đó không có thép</label>
+<input type="radio" name="tl62-q1" id="tl62-q1c"><label for="tl62-q1c" class="tl-opt tl-no">C. Rải đều trên vành, nên vòng đệm không có một điểm đặt nào</label>
+<input type="radio" name="tl62-q1" id="tl62-q1d"><label for="tl62-q1d" class="tl-opt tl-no">D. Ở điểm thấp nhất của vành, vì đó là chỗ gần đất nhất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Mỗi mẩu thép đều bị Trái Đất hút; gộp lại, ta coi như một lực duy nhất đặt tại <strong>trọng tâm</strong>. Vòng đệm đối xứng nên trọng tâm ở tâm đối xứng, tức tâm lỗ. Trọng tâm có thể nằm <strong>ngoài</strong> phần vật chất của vật.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Điểm móc cáp là chỗ đặt <em>lực căng</em>, không phải trọng lực. Còn "rải đều" là đúng với từng mẩu thép, nhưng tác dụng tổng của chúng giống hệt một lực đặt tại một điểm. Gợi ý: vòng đệm đứng yên khi cáp kéo dài đi qua điểm nào? Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: trọng lực, trọng lượng, lực căng</h3>
+
+<h4>1. Trọng lực</h4>
+
+<p><strong>🔑 Trái Đất hút · thẳng đứng · hướng xuống · $P = mg$</strong></p>
+
+<ul>
+<li><strong>Trọng lực</strong> là lực hấp dẫn giữa Trái Đất và vật — một trường hợp riêng của lực hấp dẫn. Kí hiệu $\vec P$.</li>
+<li><strong>Điểm đặt:</strong> trọng tâm $G$ của vật.</li>
+<li><strong>Phương:</strong> thẳng đứng.</li>
+<li><strong>Chiều:</strong> hướng về tâm Trái Đất (từ trên xuống).</li>
+<li><strong>Độ lớn:</strong> $P = mg$; $m$ (kg), $g$ (m/s²) là gia tốc rơi tự do, $P$ (N).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 290" role="img" aria-label="Trái Đất và bốn vật ở bốn nơi, trọng lực của mỗi vật đều hướng về tâm Trái Đất"><defs><marker id="f1-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><circle cx="200" cy="160" r="82" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.2"/><circle cx="200.0" cy="160.0" r="4" fill="currentColor"/><text x="200.0" y="182.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">Tâm Trái Đất</text><rect x="190.0" y="54.0" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(0.0 200.0 64.0)"/><line x1="200.0" y1="64.0" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="200.0" y1="64.0" x2="200.0" y2="99.0" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="211.0" y="92.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="281.3" y="120.3" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(72.0 291.3 130.3)"/><line x1="291.3" y1="130.3" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="291.3" y1="130.3" x2="258.0" y2="141.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="269.4" y="157.7" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="98.7" y="120.3" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-72.0 108.7 130.3)"/><line x1="108.7" y1="130.3" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="108.7" y1="130.3" x2="142.0" y2="141.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="130.5" y="127.2" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="130.9" y="225.6" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-142.0 140.9 235.6)"/><line x1="140.9" y1="235.6" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="140.9" y1="235.6" x2="162.4" y2="208.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="137.4" y="212.7" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><text x="16.0" y="24.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">Mọi nơi: P hướng về tâm Trái Đất</text></svg><figcaption>Hình 1. Ở bất kì đâu, trọng lực <em>P</em> cũng có phương thẳng đứng tại chỗ đó và hướng về tâm Trái Đất (hình không theo tỉ lệ).</figcaption></figure>
+
+<p>Ví dụ: thợ xây thả <strong>dây dọi</strong> (dây treo quả nặng) để dựng tường. Quả nặng đứng yên thì dây chỉ đúng phương thẳng đứng.</p>
+
+<h4>2. Trọng tâm</h4>
+
+<p><strong>🔑 Điểm đặt trọng lực · có thể ngoài vật</strong></p>
+
+<ul>
+<li>Vật phẳng, mỏng, có dạng <strong>đối xứng</strong>: trọng tâm ở <strong>tâm đối xứng</strong> (thước thẳng: giữa thước; đĩa tròn: tâm đĩa).</li>
+<li>Vị trí trọng tâm phụ thuộc <strong>sự phân bố khối lượng</strong> của vật.</li>
+<li>Trọng tâm có thể nằm <strong>trong</strong> vật hoặc <strong>ngoài</strong> vật (vòng đệm, chiếc nhẫn, khung chữ U).</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-01">
+<p class="tl-label">🔬 Thí nghiệm: tìm trọng tâm tấm bìa bằng dây dọi</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đục ba lỗ nhỏ $A$, $B$, $C$ gần mép tấm bìa hình bất kì. Treo bìa bằng lỗ $A$ lên đinh, buộc dây dọi cùng đinh, kẻ theo dây. Làm lại với $B$, rồi $C$. Sau cùng treo vòng đệm ở vành.</li>
+<li><strong>Quan sát:</strong> ba đường kẻ cắt nhau tại một điểm $G$; đặt $G$ lên đầu bút chì, bìa nằm thăng bằng. Dây dọi của vòng đệm đi qua tâm lỗ (Hình 2c).</li>
+<li><strong>Rút ra:</strong> vật treo đứng yên khi trọng tâm nằm <strong>ngay dưới</strong> điểm treo. Giao điểm các đường dây dọi là trọng tâm.</li>
+</ol>
+</div>
+
+<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-01"><svg viewBox="0 0 440 250" role="img" aria-label="Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; vòng đệm có trọng tâm ở tâm lỗ"><defs></defs><polygon points="37.9,33.6 126.9,49.4 127.8,99.4 81.4,140.7 35.9,109.7 21.3,64.3" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="62.0" y1="30.0" x2="90.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="76.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="76.0" y1="46.0" x2="76.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><path d="M70.0,205.0 L82.0,205.0 L76.0,219.0 Z" fill="#38bdf8"/><circle cx="76.0" cy="81.9" r="4.5" fill="#f87171"/><text x="85.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">A</text><text x="85.0" y="99.9" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="76.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(a) treo ở A</text><polygon points="210.2,147.0 169.5,66.3 208.9,35.6 269.8,47.9 272.3,102.9 244.8,141.9" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="212.0" y1="30.0" x2="240.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="226.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="226.0" y1="46.0" x2="226.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><path d="M220.0,205.0 L232.0,205.0 L226.0,219.0 Z" fill="#38bdf8"/><circle cx="226.0" cy="87.6" r="4.5" fill="#f87171"/><text x="235.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">B</text><line x1="197.3" y1="109.1" x2="250.0" y2="69.6" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="197.3" cy="109.1" r="3" fill="currentColor"/><text x="189.3" y="113.1" fill="currentColor" font-size="14" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">A</text><text x="236.0" y="105.6" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="226.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(b) treo ở B</text><line x1="358.0" y1="30.0" x2="386.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="372.0" y1="30.0" x2="372.0" y2="78.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M332,118 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0 Z M352,118 a20,20 0 1,1 40,0 a20,20 0 1,1 -40,0 Z" fill="rgba(148,163,184,.35)" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/><line x1="372.0" y1="78.0" x2="372.0" y2="205.0" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="372.0" cy="118.0" r="4.5" fill="#f87171"/><text x="379.0" y="123.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="372.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(c) vòng đệm</text></svg><figcaption>Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm vòng đệm ở tâm lỗ, ngoài phần vật chất.</figcaption></figure>
+
+<h4>3. Trọng lượng</h4>
+
+<p><strong>🔑 Độ lớn trọng lực · $m$ không đổi · $P$ đổi theo $g$</strong></p>
+
+<ul>
+<li>Khi vật <strong>đứng yên trên mặt đất</strong>, <strong>trọng lượng</strong> của vật bằng độ lớn trọng lực tác dụng lên vật: $P = mg$.</li>
+<li>Gần mặt đất, $g \approx 9{,}8$ m/s²; $g$ hơi khác nhau theo vĩ độ, độ cao.</li>
+<li>Đo trọng lượng bằng <strong>lực kế</strong> (N); đo khối lượng bằng <strong>cân</strong> (kg).</li>
+</ul>
+
+<p>Ví dụ: ở nơi $g = 9{,}8$ m/s², lực kế chỉ $P = 9{,}8$ N nên $m = 1$ kg. Mang vật tới nơi $g = 9{,}78$ m/s²: khối lượng vẫn $1$ kg, trọng lượng còn $9{,}78$ N.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-02">
+<p class="tl-label">🔬 Thí nghiệm: đo trọng lượng các quả nặng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lần lượt treo 1, 2, 3, 4 quả nặng $50$ g vào lực kế $0$–$2{,}5$ N (vạch chia $0{,}05$ N), đợi đứng yên rồi đọc.</li>
+<li><strong>Quan sát:</strong> khối lượng gấp đôi thì số chỉ cũng gần gấp đôi (bảng dưới).</li>
+<li><strong>Rút ra:</strong> $P$ tỉ lệ với $m$; thương $P/m$ gần như không đổi và bằng $g$.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$m$ (kg)</th><th>$P$ đọc (N)</th><th>$P/m$ (N/kg)</th></tr>
+</thead>
+<tbody>
+<tr><td>0,050</td><td>0,50</td><td>10,0</td></tr>
+<tr><td>0,100</td><td>0,95</td><td>9,5</td></tr>
+<tr><td>0,150</td><td>1,45</td><td>9,7</td></tr>
+<tr><td>0,200</td><td>1,95</td><td>9,8</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>📊 Đọc bảng: vì sao hàng đầu kém tin cậy nhất? (tự trả lời rồi bấm)</summary>
+<p>Mỗi số đọc sai tới $\pm 0{,}05$ N (một vạch). Với $0{,}50$ N, một vạch là $10\,\%$; với $1{,}95$ N chỉ còn khoảng $2{,}6\,\%$. Sai số tương đối lớn nhất ở hàng đầu, nên <strong>vật nặng hơn cho $P/m$ tin cậy hơn</strong> (hàng 2 lệch nhiều hơn chỉ là tình cờ, vẫn trong sai số). Trung bình bốn hàng $\approx 9{,}7$ N/kg, khớp $g \approx 9{,}8$ m/s² trong sai số. Nguồn sai khác: lò xo chưa chỉnh về 0, mắt đọc lệch vạch, quả nặng còn đung đưa.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl62-q2-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl62-q2-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Một phôi thép $2$ kg đưa từ xưởng ($g = 9{,}8$ m/s²) lên đỉnh núi ($g = 9{,}7$ m/s²). Nhận xét đúng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q2" id="tl62-q2a"><label for="tl62-q2a" class="tl-opt tl-no">A. Khối lượng và trọng lượng đều giảm</label>
+<input type="radio" name="tl62-q2" id="tl62-q2b"><label for="tl62-q2b" class="tl-opt tl-no">B. Khối lượng giảm, trọng lượng giữ nguyên $19{,}6$ N</label>
+<input type="radio" name="tl62-q2" id="tl62-q2c"><label for="tl62-q2c" class="tl-opt tl-no">C. Cả hai giữ nguyên, vì vẫn là phôi đó</label>
+<input type="radio" name="tl62-q2" id="tl62-q2d"><label for="tl62-q2d" class="tl-opt tl-ok">D. Khối lượng giữ nguyên $2$ kg, trọng lượng giảm từ $19{,}6$ N còn $19{,}4$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khối lượng là lượng chất, không đổi khi đổi chỗ. Trọng lượng $P = mg$ đổi theo $g$: $2 \cdot 9{,}8 = 19{,}6$ N thành $2 \cdot 9{,}7 = 19{,}4$ N.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A và B cho khối lượng giảm — nhưng phôi không mất mẩu thép nào. Phương án C quên rằng $P = mg$ có $g$ thay đổi theo nơi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>4. Lực căng dây</h4>
+
+<p><strong>🔑 Dây bị kéo · dọc theo dây · kéo vật về phía dây</strong></p>
+
+<ul>
+<li>Dây bị kéo thì tại <strong>mọi điểm</strong> trên dây, kể cả hai đầu, xuất hiện lực chống lại sự kéo: <strong>lực căng</strong>, kí hiệu $\vec T$.</li>
+<li><strong>Điểm đặt:</strong> điểm đầu dây tiếp xúc với vật.</li>
+<li><strong>Phương:</strong> trùng với chính sợi dây.</li>
+<li><strong>Chiều:</strong> từ hai đầu dây hướng vào phần giữa dây — tức là <strong>kéo vật về phía dây</strong>.</li>
+<li>Dây <strong>chỉ kéo, không đẩy</strong>. Dây nhẹ, không dãn: $T$ như nhau ở mọi điểm của đoạn dây (và qua ròng rọc nhẹ, nhẵn).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 320" role="img" aria-label="Vật treo dưới trần bằng dây: lực căng T đặt lên vật hướng lên, lực căng T phẩy đặt lên trần hướng xuống, trọng lực P hướng xuống"><defs><marker id="f3-b11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><line x1="80.0" y1="34.0" x2="260.0" y2="34.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="86.0" y1="34.0" x2="78.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="106.0" y1="34.0" x2="98.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="126.0" y1="34.0" x2="118.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="146.0" y1="34.0" x2="138.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="166.0" y1="34.0" x2="158.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="186.0" y1="34.0" x2="178.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="206.0" y1="34.0" x2="198.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="226.0" y1="34.0" x2="218.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="246.0" y1="34.0" x2="238.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="170.0" y1="34.0" x2="170.0" y2="196.0" stroke="currentColor" stroke-width="2" opacity="0.55"/><rect x="140" y="196" width="60" height="48" rx="4" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2.2"/><line x1="170.0" y1="196.0" x2="170.0" y2="145.0" stroke="#38bdf8" stroke-width="3.4" marker-end="url(#f3-b11)"/><line x1="170.0" y1="34.0" x2="170.0" y2="85.0" stroke="#38bdf8" stroke-width="3.4" marker-end="url(#f3-b11)"/><circle cx="170.0" cy="220.0" r="4" fill="currentColor"/><line x1="170.0" y1="220.0" x2="170.0" y2="271.0" stroke="#f87171" stroke-width="3.4" marker-end="url(#f3-r11)"/><text x="182.0" y="170.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T</text><text x="196.0" y="170.0" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">: dây kéo vật</text><text x="182.0" y="74.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T′</text><text x="203.0" y="74.0" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">: dây kéo trần</text><text x="182.0" y="270.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><text x="196.0" y="270.0" fill="#f87171" font-size="13" font-weight="600" text-anchor="start">: Trái Đất hút vật</text><text x="130.0" y="138.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">hai đầu dây:</text><text x="130.0" y="156.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">T hướng vào</text><text x="130.0" y="174.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">giữa dây</text></svg><figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây: <em>T</em> kéo vật lên, <em>T</em>′ kéo móc trần xuống. Vật đứng yên nên <em>T</em> = <em>P</em> (mũi tên dài bằng nhau).</figcaption></figure>
+
+<p>Ví dụ: đèn treo trần. Ở đầu dưới, dây kéo đèn <strong>lên</strong>; ở đầu trên, dây kéo móc trần <strong>xuống</strong>. Hai lực này cùng độ lớn $T$, ngược chiều, và đều hướng vào giữa dây.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Một bạn kéo xe trượt trên băng bằng sợi dây buộc vào đầu xe, dây chếch lên phía trước. Lực căng do dây tác dụng lên <strong>xe</strong>:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q3" id="tl62-q3a"><label for="tl62-q3a" class="tl-opt tl-ok">A. Đặt ở chỗ buộc dây trên xe, dọc theo dây, hướng về phía người kéo</label>
+<input type="radio" name="tl62-q3" id="tl62-q3b"><label for="tl62-q3b" class="tl-opt tl-no">B. Đặt ở tay người kéo, dọc theo dây, hướng về phía xe</label>
+<input type="radio" name="tl62-q3" id="tl62-q3c"><label for="tl62-q3c" class="tl-opt tl-no">C. Đặt ở trọng tâm xe, nằm ngang, hướng về phía trước</label>
+<input type="radio" name="tl62-q3" id="tl62-q3d"><label for="tl62-q3d" class="tl-opt tl-no">D. Đặt ở chỗ buộc dây trên xe, dọc theo dây, hướng ra xa người kéo</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ba câu hỏi của lực căng: đặt ở đâu (chỗ dây chạm xe), phương nào (theo dây, chếch lên), chiều nào (kéo xe về phía dây, tức về phía người).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là lực dây kéo <em>tay người</em>, đặt lên vật khác. C dời lực về trọng tâm và bẻ thành nằm ngang, trong khi lực căng nằm dọc dây, đặt ở chỗ buộc. D vẽ dây "đẩy" xe ra xa, mà dây chỉ kéo được.</p></div>
+</div>
+</div>
+
+<h4>5. Hệ vật nối dây qua ròng rọc</h4>
+
+<p><strong>🔑 Dây nhẹ không dãn · cùng gia tốc · cùng $T$</strong></p>
+
+<ul>
+<li>Dây <strong>không dãn</strong>: các vật nối với nhau đi được cùng quãng đường, nên có <strong>cùng độ lớn gia tốc</strong> $a$.</li>
+<li>Dây và ròng rọc <strong>nhẹ</strong>, bỏ qua ma sát ở ròng rọc: lực căng ở hai bên ròng rọc <strong>bằng nhau</strong>.</li>
+<li>Ròng rọc cố định chỉ <strong>đổi hướng</strong> lực căng, không đổi độ lớn.</li>
+<li>Cách giải: viết $\vec F = m\vec a$ <strong>riêng cho từng vật</strong>, mỗi vật một chiều dương theo chiều chuyển động.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-03">
+<p class="tl-label">🔬 Thí nghiệm: lực kế kéo dây vắt qua ròng rọc</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> treo quả nặng $1{,}0$ N vào một đầu dây vắt qua ròng rọc cố định; đầu kia móc lực kế, giữ cho quả nặng đứng yên. Kéo lực kế theo phương thẳng đứng, chếch $45^\circ$, rồi nằm ngang.</li>
+<li><strong>Quan sát:</strong> cả ba lần lực kế đều chỉ khoảng $1{,}0$ N.</li>
+<li><strong>Rút ra:</strong> ròng rọc đổi hướng dây nhưng lực căng hai bên như nhau; vật đứng yên nên $T = P$.</li>
+</ol>
+</div>
+
+<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-04"><svg viewBox="0 0 400 312" role="img" aria-label="Khối A trên bàn nhẵn nối qua ròng rọc ở mép bàn với vật B treo; lực căng T kéo A về phía ròng rọc và kéo B lên, trọng lực PB kéo B xuống"><defs><marker id="f4-b11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-g11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker><marker id="f4-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><rect x="20" y="132" width="270" height="14" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><line x1="40.0" y1="146.0" x2="40.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="250.0" y1="146.0" x2="250.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><rect x="96" y="82" width="80" height="50" rx="3" fill="rgba(251,146,60,.28)" stroke="currentColor" stroke-width="2.2"/><text x="136.0" y="114.0" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">A</text><line x1="284.0" y1="132.0" x2="304.0" y2="114.0" stroke="currentColor" stroke-width="2.4" opacity="1"/><circle cx="304" cy="114" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="304.0" cy="114.0" r="3" fill="currentColor"/><rect x="296" y="214" width="44" height="40" rx="3" fill="rgba(56,189,248,.22)" stroke="currentColor" stroke-width="2.2"/><text x="306.0" y="240.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">B</text><line x1="176.0" y1="100.0" x2="304.0" y2="100.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><line x1="318.0" y1="114.0" x2="318.0" y2="214.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><path d="M304,100 A14,14 0 0 1 318,114" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".6"/><line x1="176.0" y1="100.0" x2="213.0" y2="100.0" stroke="#38bdf8" stroke-width="3.2" marker-end="url(#f4-b11)"/><line x1="318.0" y1="214.0" x2="318.0" y2="177.0" stroke="#38bdf8" stroke-width="3.2" marker-end="url(#f4-b11)"/><circle cx="318.0" cy="234.0" r="3.5" fill="currentColor"/><line x1="318.0" y1="234.0" x2="318.0" y2="283.0" stroke="#f87171" stroke-width="3.2" marker-end="url(#f4-r11)"/><text x="190.0" y="90.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T</text><text x="306.0" y="188.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">T</text><text x="328.0" y="284.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P<tspan baseline-shift="sub" font-size="12">B</tspan></text><line x1="106.0" y1="66.0" x2="143.0" y2="66.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f4-g11)"/><text x="160.0" y="71.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">a</text><line x1="278.0" y1="218.0" x2="278.0" y2="251.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f4-g11)"/><text x="268.0" y="246.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">a</text><text x="30.0" y="24.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">Bàn nhẵn · dây nhẹ, không dãn</text></svg><figcaption>Hình 4. Hệ vật nối dây qua ròng rọc: cùng gia tốc <em>a</em>, cùng lực căng <em>T</em>. Vật B đi xuống nhanh dần nên <em>T</em> &lt; <em>P</em><sub>B</sub> (mũi tên đỏ dài hơn).</figcaption></figure>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "Em nặng 50 kg"</h4>
+
+<p>Ngoài đời ai cũng nói "nặng 50 kg". Trong vật lí, kg là đơn vị của <strong>khối lượng</strong>; "nặng" (trọng lượng) phải tính bằng <strong>N</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Khối lượng $m$</th><th>Trọng lượng $P$</th></tr>
+</thead>
+<tbody>
+<tr><td>Đơn vị kg, đo bằng cân</td><td>Đơn vị N, đo bằng lực kế</td></tr>
+<tr><td>Không đổi khi đổi chỗ</td><td>Đổi theo $g$ của nơi đặt vật</td></tr>
+<tr><td>Số vô hướng</td><td>Độ lớn của một vectơ lực</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 kg là lượng chất · N là lực hút</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Một nhà du hành có khối lượng $60$ kg. Trên Mặt Trăng ($g = 1{,}6$ m/s²), số đo nào là đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q4" id="tl62-q4a"><label for="tl62-q4a" class="tl-opt tl-no">A. Khối lượng $10$ kg, trọng lượng $96$ N</label>
+<input type="radio" name="tl62-q4" id="tl62-q4b"><label for="tl62-q4b" class="tl-opt tl-no">B. Khối lượng $60$ kg, trọng lượng $588$ N</label>
+<input type="radio" name="tl62-q4" id="tl62-q4c"><label for="tl62-q4c" class="tl-opt tl-ok">C. Khối lượng $60$ kg, trọng lượng $96$ N</label>
+<input type="radio" name="tl62-q4" id="tl62-q4d"><label for="tl62-q4d" class="tl-opt tl-no">D. Khối lượng $9{,}6$ kg, trọng lượng $60$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $m$ vẫn $60$ kg; $P = 60 \cdot 1{,}6 = 96$ N, chỉ bằng khoảng $1/6$ trên Trái Đất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và D cho khối lượng thay đổi — nhà du hành không mất bớt chất nào. B tính trọng lượng bằng $g$ của Trái Đất ($60 \cdot 9{,}8$) trong khi đang ở Mặt Trăng.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: lực căng luôn bằng trọng lượng vật treo</h4>
+
+<p>$T = P$ chỉ đúng khi vật treo <strong>đứng yên hoặc chuyển động thẳng đều</strong>. Cầu trục vừa giật phôi đi lên nhanh dần thì cáp phải kéo <strong>mạnh hơn</strong> trọng lượng phôi.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Vật treo</th><th>Lực căng</th></tr>
+</thead>
+<tbody>
+<tr><td>Đứng yên / đi thẳng đều</td><td>$T = P$</td></tr>
+<tr><td>Gia tốc $a$ hướng lên (đi lên nhanh dần)</td><td>$T \gt P$</td></tr>
+<tr><td>Gia tốc $a$ hướng xuống (đi xuống nhanh dần)</td><td>$T \lt P$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Công thức: $a$ hướng lên thì $T = m(g + a)$; $a$ hướng xuống thì $T = m(g - a)$.</p>
+
+<p><strong>🔑 Có gia tốc · $T \neq P$</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl62-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl62-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Cầu trục nâng phôi $200$ kg lên, nhanh dần với $a = 0{,}5$ m/s² (lấy $g = 10$ m/s²). Lực căng của cáp là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q5" id="tl62-q5a"><label for="tl62-q5a" class="tl-opt tl-no">A. $2\,000$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5b"><label for="tl62-q5b" class="tl-opt tl-ok">B. $2\,100$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5c"><label for="tl62-q5c" class="tl-opt tl-no">C. $1\,900$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5d"><label for="tl62-q5d" class="tl-opt tl-no">D. $100$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương hướng lên: $T - P = ma$ nên $T = 200 \cdot (10 + 0{,}5) = 2\,100$ N. Em giải thích được cho bạn ngồi cạnh vì sao cáp hay đứt lúc <em>bắt đầu</em> nâng chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $2\,000$ N là coi $T = P$, quên gia tốc. $1\,900$ N là lấy nhầm $g - a$ (trường hợp đi xuống nhanh dần). $100$ N chỉ là $ma$, quên trọng lực. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy đọc lại bảng ngay trên.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: vẽ lực căng chĩa vào trong vật</h4>
+
+<p>Khi vẽ hình, nhiều bạn cho $\vec T$ chĩa từ dây <em>đâm vào</em> vật, như dây đang đẩy. Dây mềm không đẩy được: lực căng lên vật luôn <strong>đi ra khỏi vật, dọc theo dây</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Vẽ sai</th><th>Vẽ đúng</th></tr>
+</thead>
+<tbody>
+<tr><td>Mũi tên từ dây chĩa vào vật</td><td>Gốc ở chỗ buộc, mũi chĩa theo dây ra xa vật</td></tr>
+<tr><td>Đặt $\vec T$ ở trọng tâm</td><td>Đặt $\vec T$ ở điểm dây chạm vật</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Gốc ở chỗ buộc · mũi theo dây</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Con lắc gồm quả cầu treo dưới sợi dây, đang ở vị trí lệch sang phải. Lực căng dây tác dụng lên quả cầu hướng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q6" id="tl62-q6a"><label for="tl62-q6a" class="tl-opt tl-no">A. Thẳng đứng lên trên</label>
+<input type="radio" name="tl62-q6" id="tl62-q6b"><label for="tl62-q6b" class="tl-opt tl-no">B. Dọc dây, từ điểm treo xuống quả cầu</label>
+<input type="radio" name="tl62-q6" id="tl62-q6c"><label for="tl62-q6c" class="tl-opt tl-no">C. Nằm ngang, về vị trí cân bằng</label>
+<input type="radio" name="tl62-q6" id="tl62-q6d"><label for="tl62-q6d" class="tl-opt tl-ok">D. Dọc dây, từ quả cầu về phía điểm treo</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Gốc ở chỗ dây buộc vào quả cầu, mũi chĩa theo dây về điểm treo, tức là kéo quả cầu về phía dây.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A chỉ đúng khi dây thẳng đứng; dây đang lệch thì $\vec T$ cũng lệch theo dây. B vẽ dây đang "đẩy" quả cầu ra xa. C trộn lực căng với xu hướng quay về của con lắc; lực căng luôn nằm dọc dây.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Trọng lực là gì? Nêu bốn đặc điểm. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Lực hấp dẫn Trái Đất – vật. <strong>Điểm đặt:</strong> trọng tâm · <strong>Phương:</strong> thẳng đứng · <strong>Chiều:</strong> về tâm Trái Đất · <strong>Độ lớn:</strong> $P = mg$.</p>
+</details>
+<details class="tl-details">
+<summary>2. Trọng tâm vật phẳng đối xứng ở đâu? Có luôn nằm trên vật không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Tâm đối xứng. Phụ thuộc phân bố khối lượng · <strong>có thể ở ngoài vật</strong> (vòng đệm, nhẫn).</p>
+</details>
+<details class="tl-details">
+<summary>3. Cách tìm trọng tâm tấm bìa bằng dây dọi? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Treo ở hai điểm khác nhau · kẻ theo dây dọi · giao điểm là $G$. Vật đứng yên: $G$ ngay dưới điểm treo.</p>
+</details>
+<details class="tl-details">
+<summary>4. Trọng lượng khác khối lượng ở những điểm nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$m$: kg · cân · không đổi. $P$: N · lực kế · $P = mg$, đổi theo $g$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Lực căng dây: điểm đặt, phương, chiều? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đặt ở chỗ dây chạm vật · dọc theo dây · hướng vào giữa dây (kéo vật về phía dây) · chỉ kéo, không đẩy.</p>
+</details>
+<details class="tl-details">
+<summary>6. Hệ vật nối dây nhẹ không dãn qua ròng rọc nhẹ: điều gì giống nhau giữa hai vật? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cùng độ lớn gia tốc $a$ · cùng lực căng $T$ · viết $F = ma$ riêng cho từng vật. $T = P$ chỉ khi không có gia tốc.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Khối $A$ khối lượng $2$ kg nằm trên mặt bàn nằm ngang nhẵn, được nối bằng sợi dây nhẹ, không dãn vắt qua ròng rọc nhẹ ở mép bàn với vật $B$ khối lượng $0{,}5$ kg treo thẳng đứng (Hình 4). Thả cho hệ chuyển động từ nghỉ. Bỏ qua mọi ma sát, lấy $g = 10$ m/s². Tính gia tốc của hệ và lực căng dây.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"khối $A$ … $2$ kg"</td><td>$m_A = 2$ kg</td><td>vật 1 của hệ</td></tr>
+<tr><td>"mặt bàn nằm ngang nhẵn"</td><td>không ma sát</td><td>$P_A$ cân bằng $N$</td></tr>
+<tr><td>"dây nhẹ, không dãn … ròng rọc nhẹ"</td><td>cùng $a$, cùng $T$</td><td>hệ vật nối dây</td></tr>
+<tr><td>"vật $B$ … $0{,}5$ kg treo"</td><td>$P_B = 5$ N</td><td>$P = mg$</td></tr>
+<tr><td>"gia tốc … lực căng"</td><td>$a = ?$; $T = ?$</td><td>$F = ma$ cho từng vật</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Vật A</strong> (chiều dương về phía ròng rọc): theo phương ngang chỉ có $T$, nên $T = m_A a$.</li>
+<li><strong>Vật B</strong> (chiều dương hướng xuống): $P_B - T = m_B a$.</li>
+<li><strong>Cộng hai phương trình:</strong> $P_B = (m_A + m_B)a$, suy ra $a = \dfrac{5}{2{,}5} = 2$ m/s².</li>
+<li><strong>Lực căng:</strong> $T = m_A a = 2 \cdot 2 = 4$ N.</li>
+<li><strong>Kiểm tra:</strong> với B, $5 - 4 = 1$ N $= 0{,}5 \cdot 2$ ✓. $T = 4$ N $\lt P_B = 5$ N, đúng vì B đi xuống nhanh dần (Bẫy 2).</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng hình, đổi số: $m_A = 3$ kg, $m_B = 1$ kg.</p>
+<ol class="tl-steps">
+<li>$P_B = m_B g = 10$ N.</li>
+<li><strong>Bước 2 (em điền):</strong> $a = \dfrac{P_B}{m_A + m_B} = \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $T = \;?$ — gợi ý: dùng phương trình của vật nào thì gọn hơn?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$a = \dfrac{10}{4} = 2{,}5$ m/s²; $T = m_A a = 3 \cdot 2{,}5 = 7{,}5$ N. Kiểm: $10 - 7{,}5 = 2{,}5 = 1 \cdot 2{,}5$ ✓.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi điều kiện: giữ chặt khối A</summary>
+<p>Đề gốc, nhưng tay giữ khối A đứng yên. Cả hệ đứng yên, $a = 0$: với B, $T = P_B = 5$ N. So với $4$ N khi thả tay: lực căng <strong>lớn hơn</strong> khi hệ đứng yên.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl62-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl62-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Giữ nguyên vật B $0{,}5$ kg, thay khối A bằng khối <strong>nặng hơn nhiều</strong> (vẫn trên bàn nhẵn). Lực căng dây khi hệ chuyển động sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl62-q7" id="tl62-q7a"><label for="tl62-q7a" class="tl-opt tl-ok">A. Tăng dần, tiến gần tới $5$ N nhưng không vượt</label>
+<input type="radio" name="tl62-q7" id="tl62-q7b"><label for="tl62-q7b" class="tl-opt tl-no">B. Giảm dần, vì gia tốc nhỏ đi</label>
+<input type="radio" name="tl62-q7" id="tl62-q7c"><label for="tl62-q7c" class="tl-opt tl-no">C. Luôn bằng $5$ N, vì bằng trọng lượng B</label>
+<input type="radio" name="tl62-q7" id="tl62-q7d"><label for="tl62-q7d" class="tl-opt tl-no">D. Tăng mãi, vượt quá $5$ N, vì A nặng thêm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ phương trình của B: $T = P_B - m_B a$. A càng nặng, $a$ càng nhỏ, nên $T$ càng gần $P_B = 5$ N. Khi $a \to 0$, B gần như "treo đứng yên".</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B nhìn mỗi $T = m_A a$ mà quên $m_A$ đang tăng — dùng phương trình của B gọn hơn: $T = P_B - m_B a$. C coi $T = P_B$ dù hệ vẫn có gia tốc (Bẫy 2). D bỏ qua rằng B đi xuống nhanh dần thì $T \lt P_B$. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 2 của lời giải.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🏗️ Bấm xem: bốn nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Dây dọi thợ xây:</strong> chỉ phương thẳng đứng, tức phương trọng lực tại chỗ đó.</li>
+<li><strong>Cầu trục, cáp nâng trong xưởng CNC:</strong> cáp chọn theo lực căng lúc <em>khởi động</em> nâng, $T = m(g + a)$, chứ không chỉ theo trọng lượng phôi.</li>
+<li><strong>Xe tải chở hàng cao:</strong> trọng tâm lên cao, vào cua dễ lật; hàng nặng luôn xếp dưới.</li>
+<li><strong>Trượt băng đôi:</strong> khi nâng bạn diễn, người nâng giữ trọng tâm chung ngay trên lưỡi giày trụ thì mới đứng vững.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Vật $5$ kg ở nơi $g = 9{,}8$ m/s²: trọng lượng bao nhiêu? <em>($49$ N)</em></li>
+<li><strong>⭐⭐</strong> Thang máy kéo thùng hàng $50$ kg đi xuống, chậm dần với $a = 1$ m/s² ($g = 10$ m/s²). Tính lực căng cáp. <em>($550$ N — chậm dần khi đi xuống nghĩa là gia tốc hướng lên)</em></li>
+<li><strong>⭐⭐⭐</strong> Hai vật $3$ kg và $2$ kg treo hai đầu dây vắt qua ròng rọc cố định nhẹ ($g = 10$ m/s²). Tìm $a$ và $T$. <em>($a = 2$ m/s²; $T = 24$ N, nằm giữa $20$ N và $30$ N)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Trọng lực</strong>: đặt ở $G$ · thẳng đứng · xuống · $P = mg$.</li>
+<li><strong>Trọng tâm</strong>: tâm đối xứng · có thể ngoài vật · dây dọi tìm được.</li>
+<li><strong>kg ≠ N</strong>: $m$ không đổi · $P$ đổi theo $g$.</li>
+<li><strong>Lực căng</strong>: chỗ buộc · dọc dây · kéo vật về phía dây.</li>
+<li><strong>Dây nhẹ không dãn</strong>: cùng $a$ · cùng $T$ · ròng rọc đổi hướng.</li>
+<li>$T = P$ <strong>chỉ khi</strong> không có gia tốc.</li>
+<li>Đọc đề: gạch "nhẹ", "không dãn", "nhẵn", "từ nghỉ" — đó là dữ kiện ngầm.</li>
+</ul>
+</div>
+</span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+</script>
+<script>
+const out=[];
+document.querySelectorAll('.tl-quiz').forEach((q,i)=>{
+  const res=[];
+  q.querySelectorAll('label.tl-opt').forEach(l=>{
+    l.click();
+    const fb=[...q.querySelectorAll('.tl-fb')].map(x=>getComputedStyle(x).display==='block');
+    const ok=l.classList.contains('tl-ok');
+    res.push(ok ? (fb[0]&&!fb[1]?'✓':'✗LỖI') : (!fb[0]&&fb[1]?'✓':'✗LỖI'));
+  });
+  out.push('quiz '+(i+1)+' ('+q.querySelectorAll('label.tl-opt').length+' đáp án): '+res.join(' '));
+});
+document.title='XONG';
+const p=document.createElement('pre');p.id='ket-qua';p.textContent=out.join('\n');
+document.body.append(p);
+</script></html>

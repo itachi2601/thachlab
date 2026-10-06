@@ -167,8 +167,9 @@ async function generateBatch(apiKey: string, items: { i: number; text: string; w
       rows = parseResults(await callAi(apiKey, items));
       break;
     } catch (e) {
+      const f = dumpRaw(`lan${attempt}`);
       if (attempt >= 2) throw e;
-      console.log(`  ↻ JSON hỏng (${e instanceof Error ? e.message : String(e)}), gọi AI lại lần 2…`);
+      console.log(`  ↻ JSON hỏng (${e instanceof Error ? e.message : String(e)}; đã lưu ${f}), gọi AI lại lần 2…`);
     }
   }
   const byIndex = new Map(items.map((it) => [it.i, it]));
@@ -194,13 +195,37 @@ async function callAi(apiKey: string, items: { i: number; text: string; wrong: s
       fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: { "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
-        body: JSON.stringify({ model: MODEL, max_tokens: 4096, system: SYSTEM, messages: [{ role: "user", content: buildPrompt(items) }] }),
+        // max_tokens phải tính cả token SUY NGHĨ (thinking thích ứng luôn bật trên Sonnet 5.5): 4096 bị cắt
+        // trước khi tới JSON với câu khó (stop_reason=max_tokens, text rỗng). effort low vì việc này ngắn, theo mẫu.
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 16000,
+          output_config: { effort: "low" },
+          system: SYSTEM,
+          messages: [{ role: "user", content: buildPrompt(items) }],
+        }),
       }),
     "Gọi AI",
   );
   if (!res.ok) throw new Error(`Anthropic API lỗi ${res.status}: ${await res.text()}`);
-  const data = (await res.json()) as { content?: { type: string; text?: string }[] };
-  return data.content?.find((b) => b.type === "text")?.text ?? "";
+  const data = (await res.json()) as { content?: { type: string; text?: string }[]; stop_reason?: string };
+  const text = data.content?.find((b) => b.type === "text")?.text ?? "";
+  if (data.stop_reason && data.stop_reason !== "end_turn") {
+    const sd = (data as { stop_details?: { category?: string; explanation?: string } }).stop_details;
+    console.log(`  ⚠ stop_reason=${data.stop_reason}${sd ? ` (${sd.category ?? ""}: ${sd.explanation ?? ""})` : ""}, dài ${text.length} ký tự`);
+  }
+  lastRaw = text;
+  return text;
+}
+
+/** Phản hồi AI gần nhất — ghi ra scripts/logs/ khi JSON hỏng để soi. */
+let lastRaw = "";
+function dumpRaw(tag: string): string {
+  const dir = path.join(scriptDir, "logs");
+  fs.mkdirSync(dir, { recursive: true });
+  const f = path.join(dir, `distractor-fail-${new Date().toISOString().replace(/[:.]/g, "-")}-${tag}.txt`);
+  fs.writeFileSync(f, lastRaw);
+  return f;
 }
 
 async function main() {

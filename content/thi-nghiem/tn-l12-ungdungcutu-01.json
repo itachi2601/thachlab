@@ -1,0 +1,194 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.1, hộp .tl-box--exp)",
+  "id": "tn-l12-ungdungcutu-01",
+  "ten": "Đàn ghi ta điện: dây thép dao động trên cuộn dây sinh dòng điện cảm ứng",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "ungdungcutu.ghita_dien",
+    "ungdungcutu.dong_cam_ung_cung_tan_so"
+  ],
+  "muc_tieu": "Chứng tỏ dao động cơ của một dây thép nằm trong từ trường nam châm làm từ thông qua cuộn dây biến thiên, sinh dòng điện cảm ứng có đúng tần số dao động của dây — nguyên lí bộ cảm ứng (pickup) của đàn ghi ta điện.",
+  "dung_cu": [
+    {
+      "ten": "Dây thép (dây đàn ghi ta) dài 60 cm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Giá gỗ căng dây, có hai đinh ốc làm trục",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nam châm vĩnh cửu thanh hoặc chữ U",
+      "so_luong": 1
+    },
+    {
+      "ten": "Cuộn dây 1 000 vòng quấn trên ống nhựa",
+      "so_luong": 1,
+      "ghi_chu": "hoặc dùng chính cuộn dây của đàn ghi ta điện"
+    },
+    {
+      "ten": "Điện kế nhạy (hoặc dao động kí / tai nghe)",
+      "so_luong": 1,
+      "ghi_chu": "điện kế có sai số ±1 vạch chia"
+    },
+    {
+      "ten": "Dây nối có kẹp cá sấu",
+      "so_luong": 2
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Căng dây thép trên giá gỗ, vặn đinh ốc cho dây đủ căng và phát ra âm rõ khi gảy.",
+      "Đặt nam châm vĩnh cửu áp sát mặt dưới của cuộn dây, rồi đưa cả nam châm lẫn cuộn dây lên sát dây thép, cách dây khoảng 2–3 mm.",
+      "Nối hai đầu cuộn dây vào điện kế nhạy; gảy dây nhẹ, gảy mạnh hơn, rồi vặn đinh ốc cho dây căng thêm và gảy lần nữa."
+    ],
+    "quan_sat": [
+      "Kim điện kế rung theo đúng nhịp dao động của dây, không phải rung một chiều; dây tắt thì kim đứng yên.",
+      "Gảy mạnh hơn: kim lệch xa hơn (biên độ dòng lớn hơn).",
+      "Kéo căng dây: âm nghe cao hơn và kim rung nhanh hơn — tần số dòng điện cảm ứng tăng theo tần số dao động của dây."
+    ],
+    "rut_ra": [
+      "Dây thép nằm trong từ trường nam châm nên khoảng cách dây – cuộn dây thay đổi làm từ thông qua cuộn dây biến thiên.",
+      "Trong cuộn dây xuất hiện suất điện động cảm ứng, tạo dòng điện xoay chiều có tần số đúng bằng tần số dao động của dây.",
+      "Biên độ dòng cảm ứng tỉ lệ với biên độ dao động của dây — đây là cách đàn ghi ta điện và micrô điện từ biến dao động cơ thành tín hiệu điện."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "f",
+      "ten": "Tần số dao động của dây",
+      "don_vi": "Hz",
+      "kieu": "dieu_chinh",
+      "min": 82,
+      "max": 660,
+      "mac_dinh": 196,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "d",
+      "ten": "Khoảng cách dây tới cuộn dây",
+      "don_vi": "mm",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 10,
+      "mac_dinh": 3,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "N",
+      "ten": "Số vòng của cuộn dây cảm ứng",
+      "don_vi": "vòng",
+      "kieu": "dieu_chinh",
+      "min": 200,
+      "max": 2000,
+      "mac_dinh": 1000,
+      "buoc": 100
+    },
+    {
+      "ky_hieu": "A",
+      "ten": "Biên độ dao động của dây",
+      "don_vi": "mm",
+      "kieu": "dieu_chinh",
+      "min": 0.2,
+      "max": 3,
+      "mac_dinh": 1,
+      "buoc": 0.2
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ tại khe giữa nam châm và dây",
+      "don_vi": "T",
+      "kieu": "co_dinh",
+      "gia_tri": 0.05
+    },
+    {
+      "ky_hieu": "E",
+      "ten": "Suất điện động cảm ứng cực đại",
+      "don_vi": "mV",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "E_do",
+      "ten": "Suất điện động đọc trên điện kế",
+      "don_vi": "mV",
+      "kieu": "do_duoc",
+      "sai_so_do": 1.5
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Dây thép bị từ hoá nên từ thông qua cuộn dây phụ thuộc khoảng cách dây – cuộn dây: Φ = Φ(x)",
+      "Suất điện động cảm ứng: e = −N·ΔΦ/Δt, biên độ E_max = k·N·B·l·2πf·A (k là hệ số ghép, chỉ một phần nhỏ từ thông qua cuộn dây bị điều biến theo dao động của dây)",
+      "Tần số dòng cảm ứng bằng tần số dao động của dây: f_dòng = f_dây",
+      "Biên độ dòng cảm ứng tỉ lệ biên độ dao động của dây: I ~ A"
+    ],
+    "gia_thiet": [
+      "coi từ trường của nam châm là đều trong vùng có dây thép và cuộn dây",
+      "hệ số ghép k ≈ 0,01 lấy theo cỡ đo được của bộ cảm ứng đàn ghi ta điện",
+      "bỏ qua dao động của dây theo phương dọc trục cuộn dây",
+      "điện kế lí tưởng, không kể điện trở của dây nối"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo tần số f và biên độ A: dạng sóng trên dao động kí đổi tần số và đổi chiều cao theo hai thanh trượt; đồng thời vẽ dây đàn rung lên xuống trên cuộn dây."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Biên độ dao động A (mm)",
+      "Suất điện động lí thuyết (mV)",
+      "Suất điện động đo được (mV)"
+    ],
+    "hang": [
+      [
+        0.5,
+        18.5,
+        18
+      ],
+      [
+        1.0,
+        36.9,
+        36
+      ],
+      [
+        1.5,
+        55.4,
+        54
+      ],
+      [
+        2.0,
+        73.8,
+        72
+      ],
+      [
+        2.5,
+        92.3,
+        89
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình E_max = k·N·B·l·2πf·A với k = 0,01, N = 1 000 vòng, B = 0,05 T, l = 60 mm, f = 196 Hz; điện kế có sai số ±1,5 mV. Số đo thấp hơn lí thuyết khoảng 2–4% vì từ trường không đều và dây không rung đúng một mode."
+  },
+  "ket_qua_ky_vong": "Kim điện kế (hoặc dao động kí) cho tín hiệu xoay chiều đúng tần số dao động của dây; gảy mạnh hơn thì biên độ tín hiệu lớn hơn, kéo căng dây thì tần số tín hiệu tăng theo.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng phải có dòng điện chạy vào cuộn dây thì cuộn dây mới có tín hiệu, không hiểu rằng tín hiệu sinh ra do từ thông biến thiên.",
+    "Nghĩ rằng đặt nam châm mạnh cạnh cuộn dây là có dòng, không cần dây dao động — thực ra từ thông không đổi thì không có suất điện động cảm ứng.",
+    "Nghĩ rằng tần số dòng điện phụ thuộc vào từ trường nam châm, không phụ thuộc cách gảy dây và độ căng dây."
+  ],
+  "sai_so_thuong_gap": [
+    "Cuộn dây đặt lệch khỏi vị trí dây nên chỉ một phần từ thông móc vòng: tín hiệu nhỏ hơn tính toán.",
+    "Khe hở dây – cuộn dây quá lớn (trên 5 mm) làm tín hiệu tụt nhanh.",
+    "Điện kế nhạy bị rung theo bàn nên kim dao động lẫn với tín hiệu thật; phải đặt trên đệm mềm.",
+    "Dây thép dài 60 cm có nhiều hoạ âm, tần số cơ bản đọc được có thể lệch vài Hz so với tính toán."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+2d_dong_hoc",
+    "y_tuong": "Vẽ dây đàn rung trên cuộn dây cảm ứng; bên cạnh là dao động kí hiện tín hiệu suất điện động cảm ứng theo thời gian.",
+    "diem_nhan": "Hai thanh trượt tần số f và biên độ A cho thấy tín hiệu đổi nhanh/chậm và cao/thấp tương ứng; kéo khoảng cách d ra xa thì biên độ tín hiệu tụt nhanh còn tần số không đổi."
+  },
+  "an_toan": [
+    "Dây thép căng có thể bật vào tay khi đứt: đeo kính bảo vệ và không căng quá mức.",
+    "Không để nam châm vĩnh cửu mạnh gần thẻ từ, đồng hồ cơ, điện thoại."
+  ]
+}

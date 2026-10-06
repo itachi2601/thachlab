@@ -1,0 +1,99 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.3, <details data-exp> + hình 4)",
+  "id": "tn-l12-ungdungcutu-04",
+  "ten": "Tấm Foucault: tấm liền khối tắt dao động rất nhanh, tấm có rãnh xẻ dao động lâu hơn",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "ungdungcutu.dong_foucault",
+    "ungdungcutu.luc_ham_dien_tu"
+  ],
+  "muc_tieu": "Đo số dao động và thời gian tắt dao động của một tấm kim loại giữa hai cực nam châm để thấy lực hãm điện từ do dòng Foucault gây ra, và thấy rãnh xẻ làm dòng Foucault nhỏ đi nên lực hãm yếu hẳn.",
+  "dung_cu": [
+    { "ten": "Tấm nhôm 100 × 60 × 3 mm", "so_luong": 1 },
+    { "ten": "Tấm nhôm cùng kích thước nhưng có 3 rãnh xẻ rộng 3 mm", "so_luong": 1 },
+    { "ten": "Nam châm điện chữ U có hai cực phẳng, khe 25 mm", "so_luong": 1, "ghi_chu": "hoặc hai nam châm vĩnh cửu mạnh kẹp hai bên" },
+    { "ten": "Giá treo có thanh ngang và hai sợi dây mảnh dài 40 cm", "so_luong": 1 },
+    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "sai số ±0,2 s" },
+    { "ten": "Nguồn một chiều nuôi nam châm điện", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Treo tấm nhôm vào thanh ngang bằng hai sợi dây mảnh sao cho tấm dao động như con lắc quanh vị trí thấp nhất.",
+      "Cho tấm lệch khỏi vị trí cân bằng một góc như nhau mỗi lần (20°), rồi đếm số lần tấm qua vị trí thấp nhất tới khi tắt hẳn — mỗi lần tấm qua vị trí thấp nhất tính là một dao động — và bấm đồng hồ đo thời gian đó.",
+      "Làm ba lần: (a) không đặt nam châm, (b) hai cực nam châm kẹp hai bên tấm liền khối, (c) thay bằng tấm có rãnh xẻ, vẫn đặt giữa hai cực.",
+      "Làm lại mỗi trường hợp ba lần và lấy giá trị trung bình."
+    ],
+    "quan_sat": [
+      "Không có nam châm: 42 dao động, tắt sau gần 27 s.",
+      "Tấm liền khối giữa hai cực: chỉ 6 dao động, tắt sau khoảng 3,8 s; tấm nóng lên rõ sau vài lần làm.",
+      "Tấm có rãnh xẻ: 21 dao động, tắt sau khoảng 13,3 s — chậm hơn hẳn tấm liền khối dù cùng khối lượng và cùng từ trường."
+    ],
+    "rut_ra": [
+      "Tấm kim loại chuyển động trong từ trường có từ thông qua nó biến thiên nên sinh dòng Foucault khép kín trong tấm.",
+      "Dòng Foucault tạo lực hãm điện từ chống lại chuyển động (định luật Lenz) và toả nhiệt Joule, làm cơ năng của con lắc tắt rất nhanh.",
+      "Rãnh xẻ cắt các đường dòng khép kín, làm điện trở mạch dòng tăng, dòng nhỏ đi nên lực hãm yếu — đây là cách chế tạo phanh điện từ và cũng là cách khắc phục tổn hao trong lõi máy biến áp và lõi động cơ (ghép từ lá thép mỏng sơn cách điện)."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "n", "ten": "Số rãnh xẻ trên tấm", "don_vi": "rãnh", "kieu": "dieu_chinh", "min": 0, "max": 6, "mac_dinh": 0, "buoc": 1 },
+    { "ky_hieu": "e", "ten": "Chiều dày tấm kim loại", "don_vi": "mm", "kieu": "dieu_chinh", "min": 1, "max": 6, "mac_dinh": 3, "buoc": 0.5 },
+    { "ky_hieu": "B", "ten": "Cảm ứng từ ở khe giữa hai cực", "don_vi": "T", "kieu": "dieu_chinh", "min": 0.05, "max": 0.6, "mac_dinh": 0.3, "buoc": 0.05 },
+    { "ky_hieu": "theta0", "ten": "Biên độ góc ban đầu của con lắc", "don_vi": "độ", "kieu": "dieu_chinh", "min": 10, "max": 30, "mac_dinh": 20, "buoc": 1 },
+    { "ky_hieu": "rho", "ten": "Điện trở suất của nhôm", "don_vi": "Ω·m", "kieu": "co_dinh", "gia_tri": 2.8e-8 },
+    { "ky_hieu": "N_dd", "ten": "Số lần tấm qua vị trí thấp nhất (mỗi lần tính là một dao động) tới khi tắt hẳn", "don_vi": "dao động", "kieu": "do_duoc", "sai_so_do": 1 },
+    { "ky_hieu": "tau", "ten": "Thời gian tắt dao động", "don_vi": "s", "kieu": "do_duoc", "sai_so_do": 0.2 },
+    { "ky_hieu": "F_ham", "ten": "Lực hãm điện từ trung bình", "don_vi": "N", "kieu": "tinh_ra" }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Suất điện động cảm ứng trong khối: e ≈ B·l·v (l là bề rộng tấm cắt đường sức, v là vận tốc)",
+      "Dòng Foucault trong khối: I ≈ e/R, với R là điện trở của đường dòng khép kín",
+      "Lực hãm điện từ: F ≈ B·I·l ≈ B²·l²·v/R — cùng phương, ngược chiều vận tốc",
+      "Năng lượng tiêu tán thành nhiệt Joule: Q = I²·R·τ; công của lực hãm làm biên độ giảm dần"
+    ],
+    "gia_thiet": [
+      "từ trường đều trong khe giữa hai cực và bỏ qua từ trường ngoài khe",
+      "coi tấm kim loại dẫn điện đều, bỏ qua hiệu ứng bề mặt",
+      "bỏ qua ma sát của dây treo và sức cản không khí khi so sánh các trường hợp",
+      "ba rãnh xẻ song song, cắt ngang các đường dòng khép kín"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt số rãnh: đường dòng Foucault khép kín trong tấm bị cắt thành các vòng nhỏ, lực hãm tụt xuống và số dao động tăng lên ngay trên màn hình."
+  },
+  "so_lieu_mau": {
+    "cot": ["Trường hợp", "Số dao động", "Thời gian tắt (s)"],
+    "hang": [
+      ["Không có nam châm (đối chứng)", 42, 26.6],
+      ["Tấm liền khối giữa hai cực", 6, 3.8],
+      ["Tấm có 3 rãnh xẻ giữa hai cực", 21, 13.3]
+    ],
+    "ghi_chu": "Số liệu minh hoạ với tấm nhôm 100 × 60 × 3 mm, chiều dài dây treo 40 cm, biên độ góc ban đầu 20°, B ≈ 0,3 T, đồng hồ sai số ±0,2 s. Một \"dao động\" tính là một lần tấm qua vị trí thấp nhất; con lắc dài 0,40 m có chu kì T = 2π√(0,40/9,8) ≈ 1,27 s nên mỗi dao động ≈ 0,63 s. Cả ba trường hợp lấy cùng giá trị thời gian/dao động (26,6/42 ≈ 3,8/6 ≈ 13,3/21 ≈ 0,63 s), vì chu kì con lắc không đổi khi dao động tắt dần — chỉ biên độ giảm. Số đo thực phụ thuộc lực căng dây và cách đặt tấm giữa hai cực."
+  },
+  "ket_qua_ky_vong": "Tấm liền khối giữa hai cực nam châm tắt dao động chỉ sau vài giây, trong khi tấm có rãnh xẻ cùng kích thước dao động lâu hơn nhiều lần — bằng chứng trực tiếp cho lực hãm điện từ của dòng Foucault.",
+  "hien_tuong_hay_sai": [
+    "Nghĩ rằng tấm có rãnh xẻ dao động lâu hơn vì nhẹ hơn; rãnh chỉ lấy đi vài gam nhôm, không thể đổi kết quả nhiều lần như vậy.",
+    "Nghĩ rằng tấm có rãnh xẻ không nằm trong từ trường nữa — phần nhôm giữa hai cực vẫn nằm nguyên trong khe từ.",
+    "Nghĩ rằng cứ đặt kim loại trong từ trường là có lực hãm, không cần chuyển động tương đối.",
+    "Nghĩ rằng dòng Foucault chỉ gây hại; thực tế nó là nguyên lí của phanh điện từ, bếp từ và lò cảm ứng."
+  ],
+  "sai_so_thuong_gap": [
+    "Biên độ góc ban đầu khác nhau giữa các lần làm, dẫn tới số dao động khác nhau dù cùng điều kiện.",
+    "Tấm không nằm đúng giữa hai cực nên chỉ một phần diện tích cắt từ trường.",
+    "Nam châm điện nóng lên làm B giảm dần trong quá trình đo.",
+    "Đếm dao động bằng mắt dễ lệch 1–2 dao động; nên quay video rồi đếm lại."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Con lắc tấm nhôm dao động giữa hai cực nam châm; vẽ các vòng dòng Foucault trong tấm, cho kéo thanh trượt số rãnh và xem biên độ tắt nhanh hay chậm.",
+    "diem_nhan": "Khi tăng số rãnh, các vòng dòng bị chia nhỏ và biên độ giảm chậm hẳn — học sinh thấy ngay mối liên hệ giữa đường dòng khép kín, điện trở mạch dòng và lực hãm."
+  },
+  "an_toan": [
+    "Tấm nhôm có cạnh sắc sau khi xẻ rãnh: mài nhẵn cạnh trước khi treo.",
+    "Nam châm điện và tấm kim loại có thể nóng lên: tắt nguồn và chờ nguội trước khi tháo.",
+    "Không để nam châm mạnh gần điện thoại, thẻ nhớ và đồng hồ cơ."
+  ]
+}

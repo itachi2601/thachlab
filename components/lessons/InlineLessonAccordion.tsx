@@ -119,6 +119,12 @@ export default function InlineLessonAccordion({
     });
   }, [open, session, items]);
 
+  // Mọi đề của bài (kiểm tra/thi/BTVN...) — câu của chúng cũng vào ngân hàng Luyện tập.
+  const lessonExamIds = useMemo(
+    () => Array.from(new Set((items ?? []).flatMap((item) => item.exam_ids))),
+    [items],
+  );
+
   const sections = useMemo(
     () => SECTION_ORDER.map((kind) => ({ kind, items: (items ?? []).filter((item) => item.kind === kind) }))
       .filter((section) => section.items.length > 0),
@@ -237,6 +243,7 @@ export default function InlineLessonAccordion({
                               <div className="mt-3">
                                 <PracticeSession
                                   examIds={item.exam_ids}
+                                  poolExamIds={lessonExamIds}
                                   lessonId={lesson.id}
                                   itemId={item.id}
                                   color={meta.color}

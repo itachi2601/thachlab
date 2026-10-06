@@ -1,0 +1,51 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+  "id": "tn-l12-udcamung-02",
+  "ten": "Hai cuộn đặt sát nhau, đóng ngắt dòng một chiều",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": ["camung_ud.sac_hai_cuon", "camungdt.tu_thong_bien_thien"],
+  "muc_tieu": "Thấy năng lượng chỉ sang cuộn thứ hai lúc dòng cuộn thứ nhất đang đổi — nguyên lí sạc không dây và biến áp.",
+  "dung_cu": [
+    {"ten": "Hai cuộn dây", "so_luong": 2, "ghi_chu": "đặt sát, trục trùng nhau"},
+    {"ten": "Pin 1,5 V và công tắc", "so_luong": 1, "ghi_chu": "nối với cuộn 1"},
+    {"ten": "Điện kế số 0 ở giữa", "so_luong": 1, "ghi_chu": "nối với cuộn 2"}
+  ],
+  "cac_buoc": {
+    "lam": ["Đặt hai cuộn sát nhau.", "Đóng công tắc, giữ khoảng 5 giây, rồi ngắt.", "Lặp lại khi hai cuộn cách nhau 10 cm."],
+    "quan_sat": ["Kim giật lúc đóng và lúc ngắt, hai phía ngược nhau.", "Giữ đóng thì kim về 0.", "Cách xa thì kim giật yếu hơn."],
+    "rut_ra": ["Cuộn 2 chỉ có suất điện động khi từ thông đang đổi.", "Đế sạc phải dùng điện xoay chiều để sự đổi đó liên tục.", "Nam châm vĩnh cửu đứng yên không nạp được pin."]
+  },
+  "tham_so": [
+    {"ky_hieu": "d", "ten": "Khoảng cách hai cuộn", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 15, "mac_dinh": 1, "buoc": 0.5},
+    {"ky_hieu": "f", "ten": "Tần số dòng cuộn 1 (0 là một chiều đã ổn định)", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 0, "max": 50, "mac_dinh": 0, "buoc": 1},
+    {"ky_hieu": "e2", "ten": "Suất điện động cuộn 2", "don_vi": "V", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": ["e2 = -N2·dΦ21/dt", "Φ21 tỉ lệ với dòng cuộn 1 và giảm khi d tăng", "e2 = 0 khi dòng cuộn 1 không đổi"],
+    "gia_thiet": ["bỏ qua điện dung ký sinh", "hai cuộn đồng trục"],
+    "ghi_chu": "Mô phỏng nên cho chuyển từ xung đóng-ngắt sang dòng xoay chiều để thấy sạc liên tục."
+  },
+  "so_lieu_mau": {
+    "cot": ["Thao tác", "d (cm)", "Độ lệch kim (quy ước)"],
+    "hang": [["đóng công tắc", 1, 4], ["giữ đóng", 1, 0], ["ngắt", 1, -4], ["đóng công tắc", 10, 1]],
+    "ghi_chu": "Số liệu minh hoạ, dấu âm là kim lệch ngược."
+  },
+  "ket_qua_ky_vong": "Chỉ lúc dòng đổi mới có xung ở cuộn 2. Giữ dòng không đổi thì e2 = 0.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng cứ có dòng ở cuộn 1 thì cuộn 2 luôn có dòng.",
+    "Cho rằng nam châm vĩnh cửu đặt sát điện thoại sẽ nạp pin."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "dieu_khien": ["đóng ngắt", "kéo xa hai cuộn", "đổi sang xoay chiều"],
+    "dau_ra": ["kim điện kế", "đồ thị e2 theo t", "đường sức chung hai cuộn"],
+    "hinh_trong_bai": "Hình 2",
+    "y_tuong": "Học sinh đoán kim khi giữ công tắc đóng trước khi bấm."
+  },
+  "an_toan": "Chỉ dùng pin 1,5 V. Không nối cuộn vào ổ điện 220 V."
+}

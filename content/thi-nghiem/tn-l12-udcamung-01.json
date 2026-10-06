@@ -1,0 +1,52 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+  "id": "tn-l12-udcamung-01",
+  "ten": "Nam châm chạy qua cuộn nối loa",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "kien_thuc": ["camung_ud.pickup_day_thep", "camungdt.tu_thong_bien_thien"],
+  "muc_tieu": "Nghe thấy dòng cảm ứng khi nam châm chuyển động trong cuộn, và im khi nam châm đứng yên — cùng nguyên lí pickup guitar.",
+  "dung_cu": [
+    {"ten": "Cuộn dây nhiều vòng", "so_luong": 1, "ghi_chu": "vài trăm vòng"},
+    {"ten": "Loa nhỏ hoặc tai nghe", "so_luong": 1, "ghi_chu": "nối thẳng hai đầu cuộn"},
+    {"ten": "Thanh nam châm", "so_luong": 1, "ghi_chu": "biết cực Bắc"}
+  ],
+  "cac_buoc": {
+    "lam": ["Nối cuộn với loa.", "Đưa nam châm vào rồi rút ra, nhanh và chậm.", "Giữ nam châm đứng yên trong cuộn."],
+    "quan_sat": ["Mỗi lần đưa vào hoặc rút ra, loa kêu một tiếng.", "Đưa nhanh thì tiếng mạnh hơn.", "Giữ yên thì im."],
+    "rut_ra": ["Tiếng kêu là dòng cảm ứng.", "Dây thép của guitar là nam châm nhỏ rung trước cuộn.", "Dây nylon không nhiễm từ nên pickup gần như im."]
+  },
+  "tham_so": [
+    {"ky_hieu": "v", "ten": "Tốc độ đưa nam châm", "don_vi": "m/s", "kieu": "dieu_chinh", "min": 0, "max": 1, "mac_dinh": 0.3, "buoc": 0.05},
+    {"ky_hieu": "N", "ten": "Số vòng cuộn", "don_vi": "vòng", "kieu": "co_dinh", "gia_tri": 400},
+    {"ky_hieu": "e", "ten": "Suất điện động cảm ứng", "don_vi": "V", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": ["e = -N·dΦ/dt", "dΦ/dt tỉ lệ với v khi nam châm đang vào hoặc ra", "e = 0 khi v = 0"],
+    "gia_thiet": ["bỏ qua điện cảm của cuộn", "loa chỉ để nghe, không tính công suất âm"],
+    "ghi_chu": "Mô phỏng nên có nút giữ yên để thấy im lặng dù nam châm vẫn nằm trong cuộn."
+  },
+  "so_lieu_mau": {
+    "cot": ["v (m/s)", "Trạng thái", "Độ lớn tiếng (quy ước)"],
+    "hang": [[0, "đứng yên", 0], [0.1, "đưa vào", 1], [0.3, "đưa vào", 3], [0.3, "rút ra", 3]],
+    "ghi_chu": "Số liệu minh hoạ tỉ lệ với tốc độ, không phải đo decibel."
+  },
+  "ket_qua_ky_vong": "Loa chỉ kêu khi từ thông đang đổi. Đứng yên thì im, dù từ trường vẫn mạnh.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nam châm nằm trong cuộn thì loa kêu liên tục.",
+    "Cho rằng dây nylon vẫn tạo tín hiệu vì cuộn còn nam châm."
+  ],
+  "sai_so_thuong_gap": ["Tai nghe quá nhạy, nhiễu điện 50 Hz tưởng là tín hiệu nam châm."],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "dieu_khien": ["kéo nam châm", "đổi tốc độ", "đổi dây thép hoặc nylon"],
+    "dau_ra": ["tiếng loa", "đồ thị e theo t", "từ thông qua cuộn"],
+    "hinh_trong_bai": "Hình 1",
+    "y_tuong": "Học sinh dự đoán lúc nào loa kêu trước khi kéo nam châm."
+  },
+  "an_toan": "Không nối cuộn vào ổ điện."
+}

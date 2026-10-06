@@ -1295,6 +1295,7 @@ function LessonLoader() {
               </Link>
             )}
           </aside>
+
           <div className="lesson-main">
             <header className="lesson-head">
               <button type="button" className="lesson-head-back" onClick={() => window.history.back()} aria-label="Quay lại">
@@ -1355,16 +1356,16 @@ function LessonLoader() {
         </div>
 
         <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
-        <button
-          type="button"
-          className="lesson-bottom-link"
-          onClick={() => setDrawerOpen(true)}
-          aria-expanded={drawerOpen}
-          aria-controls="lesson-drawer"
-        >
-          <Menu size={16} aria-hidden />
-          <span>Mục lục</span>
-        </button>
+          <button
+            type="button"
+            className="lesson-bottom-link"
+            onClick={() => setDrawerOpen(true)}
+            aria-expanded={drawerOpen}
+            aria-controls="lesson-drawer"
+          >
+            <Menu size={16} aria-hidden />
+            <span>Mục lục</span>
+          </button>
           {prevLesson ? (
             <Link href={siblingHref(prevLesson)} className="lesson-bottom-link" title={prevLesson.title}>
               <ArrowLeft size={16} aria-hidden />
@@ -1576,6 +1577,7 @@ function LessonLoader() {
           ) : (
             <PracticeSession
               examIds={item.exam_ids}
+              poolExamIds={lessonExamIds}
               lessonId={id}
               itemId={item.id}
               passScore={item.practice_pass_score}

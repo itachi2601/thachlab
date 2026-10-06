@@ -1,0 +1,286 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Giải thích vì sao <strong>khung dây quay</strong> trong từ trường sinh ra điện xoay chiều.</li>
+<li>Đọc và <strong>viết biểu thức</strong> $u$, $i$ theo thời gian; tính $T$, $f$, $\omega$.</li>
+<li>Hiểu <strong>giá trị hiệu dụng</strong> và vì sao ổ điện "220 V" có đỉnh cao hơn 220 V.</li>
+<li>Tự trả lời <strong>5 câu ở mục Trả bài</strong>. Khoảng 12 phút · 6 mục · 7 câu tự kiểm tra.</li>
+</ul>
+</div>
+
+<h3>I. Mở bài: con số 220 V trên ổ điện</h3>
+
+<p>Ổ điện trong phòng em ghi <strong>220 V – 50 Hz</strong>. Đèn bàn cắm vào sáng đều, không nhấp nháy. Nhưng điện áp giữa hai lỗ ổ cắm thật ra đang lên xuống liên tục, có lúc bằng 0, và đảo dấu 100 lần mỗi giây.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Đặt dao động ký vào hai lỗ ổ điện nhà em. Đỉnh cao nhất của sóng điện áp nằm ở khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q0" id="tl13-q0a"><label for="tl13-q0a" class="tl-opt tl-no">A. Đúng 220 V</label>
+<input type="radio" name="tl13-q0" id="tl13-q0b"><label for="tl13-q0b" class="tl-opt tl-ok">B. Khoảng 311 V</label>
+<input type="radio" name="tl13-q0" id="tl13-q0c"><label for="tl13-q0c" class="tl-opt tl-no">C. Khoảng 156 V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng rồi.</strong> Con số 220 V là giá trị <em>hiệu dụng</em>, không phải đỉnh. Đỉnh là $220\sqrt{2}\approx 311\ \text{V}$. Vì sao lại nhân $\sqrt{2}$, mục II.3 sẽ trả lời.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Sóng điện áp có lúc bằng 0, lúc cao nhất, rồi đảo dấu. Con số in trên ổ điện không phải là chỗ cao nhất của sóng đó. Đọc tiếp, rồi quay lại chọn lại.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: từ khung dây quay đến ổ điện nhà em</h3>
+
+<h4>II.1 Khung dây quay trong từ trường</h4>
+<p>🔑 <strong>Quay khung · Từ thông đổi · Suất điện động xoay chiều</strong></p>
+<p>Khung dây $N$ vòng, diện tích $S$, quay đều với tốc độ góc $\omega$ quanh trục vuông góc với $\vec{B}$.</p>
+<ul>
+<li>Pháp tuyến $\vec{n}$ hợp $\vec{B}$ góc $\alpha=\omega t+\varphi$, với $\varphi$ là góc lúc $t=0$.</li>
+<li>Từ thông: $\Phi=\Phi_0\cos(\omega t+\varphi)$, trong đó $\Phi_0=NBS$.</li>
+<li>Theo Faraday, $e=-\Phi'$. Suy ra $e$ cũng là hàm cos, nhưng <strong>chậm pha $\dfrac{\pi}{2}$</strong> so với $\Phi$:</li>
+</ul>
+<p>$$e=E_0\cos\left(\omega t+\varphi-\frac{\pi}{2}\right)$$</p>
+<p>$$E_0=NBS\omega$$</p>
+<p>Quay nhanh gấp đôi thì $E_0$ gấp đôi: đạp xe nhanh thì đèn dynamo sáng hơn.</p>
+<figure class="fig" data-tl="1" data-exp="tn-l12-xoaychieu-01"><svg viewBox="0 0 430 238" role="img" aria-label="Khung dây quay đều quanh trục O trong từ trường đều, pháp tuyến n hợp với B góc alpha tăng dần"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="14" y1="48" x2="410" y2="48" stroke="#f87171" stroke-width="1.8" opacity=".7" marker-end="url(#f1-r)"/><line x1="14" y1="88" x2="410" y2="88" stroke="#f87171" stroke-width="1.8" opacity=".7" marker-end="url(#f1-r)"/><line x1="14" y1="128" x2="410" y2="128" stroke="#f87171" stroke-width="1.8" opacity=".7" marker-end="url(#f1-r)"/><line x1="14" y1="168" x2="410" y2="168" stroke="#f87171" stroke-width="1.8" opacity=".7" marker-end="url(#f1-r)"/><text x="16" y="38" fill="#f87171" font-size="12" font-weight="600" text-anchor="start">đường sức, vectơ B</text><line x1="208" y1="57" x2="292" y2="159" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="250" cy="108" r="4" fill="currentColor"/><line x1="250" y1="108" x2="305" y2="62" stroke="#fb923c" stroke-width="3" marker-end="url(#f1-o)"/><text x="311" y="56" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">n</text><path d="M284 108 A34 34 0 0 0 276 86" fill="none" stroke="#34d399" stroke-width="2.2"/><text x="290" y="100" fill="#34d399" font-size="15" font-weight="700" text-anchor="start">α</text><path d="M278 21 A92 92 0 0 0 207 27" fill="none" stroke="#34d399" stroke-width="2.6" marker-end="url(#f1-g)"/><text x="288" y="27" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">ω</text><text x="16" y="206" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">Chấm tròn ở tâm khung: trục quay O (vuông góc trang)</text><text x="16" y="226" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α = ωt + φ  →  Φ = NBS·cos α</text></svg><figcaption>Hình 1. Nhìn dọc trục quay: khung quay đều nên góc α tăng đều theo thời gian, và Φ = NBS·cos α dao động tuần hoàn.</figcaption></figure>
+<div class="tl-box tl-box--exp" data-exp="tn-l12-xoaychieu-01">
+<p class="tl-label">🔬 Thí nghiệm đo: máy phát mini quay tay</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối máy phát mini (một cặp cực) với dao động ký. Quay đều tay ở $n=2,4,6,8,10$ vòng/s, mỗi lần đọc biên độ $U_0$ trên màn.</li>
+<li><strong>Quan sát:</strong> màn hiện đường hình sin; quay càng nhanh, sóng càng cao và càng dày.</li>
+<li><strong>Rút ra:</strong> xem bảng bên dưới.</li>
+</ol>
+</div>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>$n$ (vòng/s)</th><th>$U_0$ (V)</th><th>$U_0/n$ (V·s)</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>0,95</td><td>0,475</td></tr>
+<tr><td>4</td><td>1,82</td><td>0,455</td></tr>
+<tr><td>6</td><td>2,84</td><td>0,473</td></tr>
+<tr><td>8</td><td>3,67</td><td>0,459</td></tr>
+<tr><td>10</td><td>4,70</td><td>0,470</td></tr>
+</tbody></table></div>
+<p><em>Bảng số liệu mẫu của một lần đo (minh hoạ, không phải số đo của lớp em).</em></p>
+<details class="tl-details">
+<summary>📊 Bấm xem: từ bảng rút ra gì, sai số đến từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
+<p><strong>Rút ra:</strong> $U_0/n$ gần như không đổi (khoảng $0{,}47$), nên $U_0\propto n\propto\omega$, đúng với $E_0=NBS\omega$.</p>
+<p><strong>Sai số:</strong> tay quay không đều · đọc đỉnh sóng trên màn lệch nửa ô · điện trở cuộn dây làm $U_0$ đo được nhỏ hơn $E_0$.</p>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Theo bảng, tăng tốc độ quay từ 2 lên 6 vòng/s. Biên độ $U_0$ và tần số $f$ của điện áp thay đổi thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q1" id="tl13-q1a"><label for="tl13-q1a" class="tl-opt tl-ok">A. $U_0$ gấp 3 lần, $f$ gấp 3 lần</label>
+<input type="radio" name="tl13-q1" id="tl13-q1b"><label for="tl13-q1b" class="tl-opt tl-no">B. $U_0$ gấp 3 lần, $f$ không đổi</label>
+<input type="radio" name="tl13-q1" id="tl13-q1c"><label for="tl13-q1c" class="tl-opt tl-no">C. $U_0$ không đổi, $f$ gấp 3 lần</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> $E_0=NBS\omega$ tỉ lệ với $\omega$, và mỗi vòng quay cho đúng một chu kì nên $f=n$. Cả hai đều gấp 3.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai ý cần nhớ: (1) bảng cho thấy $U_0$ tăng theo $n$; (2) mỗi vòng quay khung cho một chu kì điện, nên quay nhanh hơn thì dòng cũng đổi chiều nhanh hơn. Tính lại.</p></div>
+</div>
+</div>
+
+<h4>II.2 Biểu thức dòng điện và điện áp xoay chiều</h4>
+<p>🔑 <strong>Hàm cos · $I_0$, $\omega$, $\varphi$ · Cùng tần số</strong></p>
+<p>Nối khung với mạch ngoài, $u$ và $i$ biến thiên cùng tần số với $e$:</p>
+<p>$$u=U_0\cos(\omega t+\varphi_u)$$</p>
+<p>$$i=I_0\cos(\omega t+\varphi_i)$$</p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đại lượng</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>$u$, $i$</td><td>giá trị tức thời tại lúc $t$</td></tr>
+<tr><td>$U_0$, $I_0\ \gt 0$</td><td>giá trị cực đại (biên độ)</td></tr>
+<tr><td>$\omega t+\varphi$</td><td>pha tại lúc $t$; $\varphi$ là pha ban đầu</td></tr>
+<tr><td>$\omega$ (rad/s)</td><td>tần số góc, $\omega=2\pi f$</td></tr>
+</tbody></table></div>
+<p>🔑 <strong>$T=\dfrac{2\pi}{\omega}$ · $f=\dfrac{1}{T}$ · Đổi chiều $2f$ lần/s</strong></p>
+<ul>
+<li>Điện lưới Việt Nam: $f=50\ \text{Hz}$, nên $\omega=100\pi\approx314\ \text{rad/s}$ và $T=0{,}02\ \text{s}$.</li>
+<li>Mỗi chu kì dòng điện đổi chiều 2 lần, nên 1 s đổi chiều $2f$ lần: ổ điện nhà em là <strong>100 lần/s</strong>.</li>
+</ul>
+<div class="tl-box tl-box--exp" data-exp="tn-l12-xoaychieu-02">
+<p class="tl-label">🔬 Thí nghiệm: hai đèn LED mắc ngược chiều</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối máy phát tín hiệu với hai LED mắc song song, ngược chiều, qua điện trở bảo vệ. Chỉnh $f=1\ \text{Hz}$, rồi tăng dần lên $50\ \text{Hz}$.</li>
+<li><strong>Quan sát:</strong> ở 1 Hz, hai LED chớp luân phiên, mỗi LED 1 lần mỗi giây. Lên 50 Hz, cả hai trông như sáng liên tục.</li>
+<li><strong>Rút ra:</strong> mỗi chu kì mỗi LED sáng 1 lần, tức dòng đổi chiều 2 lần. Mắt không theo kịp 100 lần đổi chiều mỗi giây nên thấy đèn sáng đều.</li>
+</ol>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: khi nào "$2f$ lần" thành "$2f-1$ lần"?</summary>
+<p>Nếu tại $t=0$ dòng điện đang bằng 0 ($\varphi_i=\pm\dfrac{\pi}{2}$), thì lúc $t=0$ và lúc $t=1\ \text{s}$ đều là điểm dòng bằng 0, không tính là đổi chiều giữa chừng. Trong <strong>giây đầu tiên</strong> chỉ đổi chiều $2f-1$ lần; các giây sau vẫn là $2f$ lần. Đề trắc nghiệm hay hỏi đúng chỗ này.</p>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Dòng điện $i=4\cos\left(100\pi t-\dfrac{\pi}{3}\right)\ \text{A}$. Phát biểu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q2" id="tl13-q2a"><label for="tl13-q2a" class="tl-opt tl-no">A. Tần số $f=100\ \text{Hz}$</label>
+<input type="radio" name="tl13-q2" id="tl13-q2b"><label for="tl13-q2b" class="tl-opt tl-no">B. Chu kì $T=0{,}2\ \text{s}$</label>
+<input type="radio" name="tl13-q2" id="tl13-q2c"><label for="tl13-q2c" class="tl-opt tl-ok">C. Trong 1 s dòng điện đổi chiều 100 lần</label>
+<input type="radio" name="tl13-q2" id="tl13-q2d"><label for="tl13-q2d" class="tl-opt tl-no">D. Pha ban đầu là $+\dfrac{\pi}{3}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\omega=100\pi$ nên $f=50\ \text{Hz}$, $T=0{,}02\ \text{s}$, và đổi chiều $2f=100$ lần/s. Em giải thích được vì sao A, B, D sai chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi hay gặp: lấy $\omega=100\pi$ làm $f$ (phải chia $2\pi$); nhầm $T=0{,}02$ s thành $0{,}2$ s; đọc sai dấu của $\varphi$ (số đứng sau $\omega t$ có dấu trừ nghĩa là $\varphi=-\dfrac{\pi}{3}$).</p></div>
+</div>
+</div>
+
+<h4>II.3 Giá trị hiệu dụng</h4>
+<p>🔑 <strong>Cùng nhiệt · $I=\dfrac{I_0}{\sqrt{2}}$ · Ghi trên thiết bị</strong></p>
+<ul>
+<li>Giá trị trung bình trong một chu kì bằng 0, nhưng dây vẫn nóng lên: nhiệt tỉ lệ với $i^2$ chứ không phải $i$.</li>
+<li><strong>Cường độ hiệu dụng</strong> $I$ là cường độ của dòng không đổi toả nhiệt bằng dòng xoay chiều, khi qua cùng một điện trở trong cùng thời gian.</li>
+<li>$I=\dfrac{I_0}{\sqrt{2}}$ · $U=\dfrac{U_0}{\sqrt{2}}$ · $E=\dfrac{E_0}{\sqrt{2}}$.</li>
+<li>Ampe kế, vôn kế xoay chiều và số ghi trên thiết bị đều là giá trị hiệu dụng. Ổ điện 220 V có $U_0=220\sqrt{2}\approx311\ \text{V}$.</li>
+</ul>
+<p>Mẹo: <strong>"Chia căn hai ra hiệu dụng, nhân căn hai ra đỉnh."</strong></p>
+<figure class="fig" data-tl="1" data-exp="tn-l12-xoaychieu-03"><svg viewBox="0 0 430 266" role="img" aria-label="Đồ thị điện áp lưới 220 V 50 Hz: đỉnh 311 V, hiệu dụng 220 V, chu kì 20 mili giây"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="50" y1="19" x2="400" y2="19" stroke="#f87171" stroke-width="1.6" stroke-dasharray="6 4"/><line x1="50" y1="231" x2="400" y2="231" stroke="#f87171" stroke-width="1.6" stroke-dasharray="6 4"/><line x1="50" y1="50" x2="400" y2="50" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="3 4"/><line x1="50" y1="200" x2="400" y2="200" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="3 4"/><line x1="50" y1="125" x2="406" y2="125" stroke="currentColor" stroke-width="1.5" opacity=".6"/><polyline points="50.0,19.3 54.4,20.6 58.8,24.4 63.1,30.8 67.5,39.5 71.9,50.2 76.2,62.8 80.6,77.0 85.0,92.3 89.4,108.5 93.8,125.0 98.1,141.5 102.5,157.7 106.9,173.0 111.2,187.2 115.6,199.8 120.0,210.5 124.4,219.2 128.8,225.6 133.1,229.4 137.5,230.7 141.9,229.4 146.2,225.6 150.6,219.2 155.0,210.5 159.4,199.8 163.8,187.2 168.1,173.0 172.5,157.7 176.9,141.5 181.2,125.0 185.6,108.5 190.0,92.3 194.4,77.0 198.8,62.8 203.1,50.2 207.5,39.5 211.9,30.8 216.2,24.4 220.6,20.6 225.0,19.3 229.4,20.6 233.8,24.4 238.1,30.8 242.5,39.5 246.9,50.2 251.2,62.8 255.6,77.0 260.0,92.3 264.4,108.5 268.8,125.0 273.1,141.5 277.5,157.7 281.9,173.0 286.2,187.2 290.6,199.8 295.0,210.5 299.4,219.2 303.8,225.6 308.1,229.4 312.5,230.7 316.9,229.4 321.2,225.6 325.6,219.2 330.0,210.5 334.4,199.8 338.8,187.2 343.1,173.0 347.5,157.7 351.9,141.5 356.2,125.0 360.6,108.5 365.0,92.3 369.4,77.0 373.8,62.8 378.1,50.2 382.5,39.5 386.9,30.8 391.2,24.4 395.6,20.6 400.0,19.3" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="94" cy="125" r="4.5" fill="#34d399"/><circle cx="181" cy="125" r="4.5" fill="#34d399"/><circle cx="269" cy="125" r="4.5" fill="#34d399"/><circle cx="356" cy="125" r="4.5" fill="#34d399"/><text x="50" y="141" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">0</text><text x="138" y="141" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">10</text><text x="225" y="141" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">20</text><text x="312" y="141" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">30</text><text x="400" y="141" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">40 ms</text><text x="138" y="13" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">U₀ = 311 V (đỉnh)</text><text x="138" y="44" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">U = 220 V hiệu dụng</text><line x1="50" y1="252" x2="225" y2="252" stroke="#fb923c" stroke-width="2.4"/><line x1="50" y1="246" x2="50" y2="258" stroke="#fb923c" stroke-width="2.4"/><line x1="225" y1="246" x2="225" y2="258" stroke="#fb923c" stroke-width="2.4"/><text x="138" y="244" fill="#fb923c" font-size="12" font-weight="700" text-anchor="middle">T = 20 ms</text></svg><figcaption>Hình 2. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.</figcaption></figure>
+<div class="tl-box tl-box--exp" data-exp="tn-l12-xoaychieu-03">
+<p class="tl-label">🔬 Thí nghiệm: một chiều 12 V so với xoay chiều 12 V</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lần lượt nối cùng một bóng đèn sợi đốt 12 V vào nguồn một chiều 12 V, rồi vào nguồn xoay chiều 12 V (hiệu dụng).</li>
+<li><strong>Quan sát:</strong> độ sáng hai lần như nhau.</li>
+<li><strong>Rút ra:</strong> xoay chiều 12 V hiệu dụng toả nhiệt bằng một chiều 12 V, dù đỉnh của nó là $12\sqrt{2}\approx17\ \text{V}$.</li>
+</ol>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: vì sao lại là $\sqrt{2}$?</summary>
+<p>Trung bình của $\cos^2$ trong một chu kì là $\dfrac{1}{2}$, nên công suất trung bình $P=R\,\overline{i^2}=\dfrac{RI_0^2}{2}$. Đặt bằng $RI^2$ của dòng không đổi, ta được $I^2=\dfrac{I_0^2}{2}$, tức $I=\dfrac{I_0}{\sqrt{2}}$.</p>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Dòng xoay chiều có cường độ hiệu dụng $2\ \text{A}$ và dòng không đổi $2\ \text{A}$ cùng chạy qua một điện trở trong cùng thời gian. Nhiệt lượng toả ra:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q3" id="tl13-q3a"><label for="tl13-q3a" class="tl-opt tl-ok">A. Hai dòng toả bằng nhau</label>
+<input type="radio" name="tl13-q3" id="tl13-q3b"><label for="tl13-q3b" class="tl-opt tl-no">B. Dòng xoay chiều toả nhiều hơn, vì đỉnh là $2\sqrt{2}\ \text{A}$</label>
+<input type="radio" name="tl13-q3" id="tl13-q3c"><label for="tl13-q3c" class="tl-opt tl-no">C. Dòng xoay chiều toả ít hơn, vì trung bình bằng 0</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Đó chính là định nghĩa của giá trị hiệu dụng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A là nhìn vào đỉnh, chọn C là nhìn vào giá trị trung bình. Cả hai đều không phải thứ quyết định nhiệt. Hãy đọc lại định nghĩa: "hiệu dụng" nghĩa là so theo nhiệt toả ra.</p></div>
+</div>
+</div>
+
+<h3>III. Hai cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: lẫn tức thời, cực đại, hiệu dụng</h4>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Giá trị</th><th>Là gì · Dùng khi nào</th></tr></thead>
+<tbody>
+<tr><td>Tức thời $u,i$</td><td>giá trị lúc $t$; viết biểu thức, vẽ đồ thị</td></tr>
+<tr><td>Cực đại $U_0,I_0$</td><td>đỉnh sóng; điện áp đánh thủng cách điện</td></tr>
+<tr><td>Hiệu dụng $U,I$</td><td>$=\dfrac{\text{cực đại}}{\sqrt{2}}$; ghi trên máy, đồng hồ đo, tính công suất, nhiệt</td></tr>
+<tr><td>Trung bình</td><td>luôn bằng 0; không dùng</td></tr>
+</tbody></table></div>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl13-q4-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl13-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Bẫy 1: "trung bình bằng 0 thì không toả nhiệt"</p>
+<p><strong>Câu 4.</strong> Dòng $i=2\cos(100\pi t)\ \text{A}$ chạy qua điện trở $R=10\ \Omega$. Công suất toả nhiệt của $R$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q4" id="tl13-q4a"><label for="tl13-q4a" class="tl-opt tl-no">A. $0\ \text{W}$</label>
+<input type="radio" name="tl13-q4" id="tl13-q4b"><label for="tl13-q4b" class="tl-opt tl-no">B. $40\ \text{W}$</label>
+<input type="radio" name="tl13-q4" id="tl13-q4c"><label for="tl13-q4c" class="tl-opt tl-ok">C. $20\ \text{W}$</label>
+<input type="radio" name="tl13-q4" id="tl13-q4d"><label for="tl13-q4d" class="tl-opt tl-no">D. $28\ \text{W}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> $I=\dfrac{2}{\sqrt{2}}=\sqrt{2}\ \text{A}$, nên $P=I^2R=2\cdot10=20\ \text{W}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra 0 là dùng giá trị trung bình. Ra 40 là dùng nhầm $I_0=2$ thay cho $I$. Ra 28 là nhân $\sqrt{2}$ thay vì chia. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: từ thông cực đại thì suất điện động cực đại</h4>
+<p>🔑 <strong>Cái này đỉnh · cái kia về 0</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Khung ở vị trí</th><th>$\Phi$</th><th>$e$</th></tr></thead>
+<tbody>
+<tr><td>mặt khung vuông góc $\vec{B}$</td><td>cực đại</td><td>bằng 0</td></tr>
+<tr><td>mặt khung song song $\vec{B}$</td><td>bằng 0</td><td>cực đại</td></tr>
+</tbody></table></div>
+<p>Vì $e=-\Phi'$: lúc $\Phi$ đạt đỉnh thì đồ thị nằm ngang, độ dốc bằng 0, nên $e=0$.</p>
+<figure class="fig" data-tl="1" data-exp="tn-l12-xoaychieu-01"><svg viewBox="0 0 430 212" role="img" aria-label="Đồ thị từ thông Φ và suất điện động e theo thời gian, lệch nhau một phần tư chu kì"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="40" y1="105" x2="418" y2="105" stroke="currentColor" stroke-width="1.5" opacity=".6"/><text x="422" y="109" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">t</text><polyline points="40.0,47.0 43.7,47.1 47.4,47.5 51.1,48.0 54.8,48.8 58.5,49.8 62.2,51.1 65.9,52.5 69.6,54.2 73.3,56.0 77.0,58.1 80.7,60.3 84.4,62.7 88.1,65.3 91.8,68.0 95.5,70.9 99.2,73.9 102.9,77.1 106.6,80.3 110.3,83.6 114.0,87.1 117.7,90.6 121.4,94.1 125.1,97.7 128.8,101.4 132.5,105.0 136.2,108.6 139.9,112.3 143.6,115.9 147.3,119.4 151.0,122.9 154.7,126.4 158.4,129.7 162.1,132.9 165.8,136.1 169.5,139.1 173.2,142.0 176.9,144.7 180.6,147.3 184.3,149.7 188.0,151.9 191.7,154.0 195.4,155.8 199.1,157.5 202.8,158.9 206.5,160.2 210.2,161.2 213.9,162.0 217.6,162.5 221.3,162.9 225.0,163.0 228.7,162.9 232.4,162.5 236.1,162.0 239.8,161.2 243.5,160.2 247.2,158.9 250.9,157.5 254.6,155.8 258.3,154.0 262.0,151.9 265.7,149.7 269.4,147.3 273.1,144.7 276.8,142.0 280.5,139.1 284.2,136.1 287.9,132.9 291.6,129.7 295.3,126.4 299.0,122.9 302.7,119.4 306.4,115.9 310.1,112.3 313.8,108.6 317.5,105.0 321.2,101.4 324.9,97.7 328.6,94.1 332.3,90.6 336.0,87.1 339.7,83.6 343.4,80.3 347.1,77.1 350.8,73.9 354.5,70.9 358.2,68.0 361.9,65.3 365.6,62.7 369.3,60.3 373.0,58.1 376.7,56.0 380.4,54.2 384.1,52.5 387.8,51.1 391.5,49.8 395.2,48.8 398.9,48.0 402.6,47.5 406.3,47.1 410.0,47.0" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="round"/><polyline points="40.0,105.0 43.7,101.4 47.4,97.7 51.1,94.1 54.8,90.6 58.5,87.1 62.2,83.6 65.9,80.3 69.6,77.1 73.3,73.9 77.0,70.9 80.7,68.0 84.4,65.3 88.1,62.7 91.8,60.3 95.5,58.1 99.2,56.0 102.9,54.2 106.6,52.5 110.3,51.1 114.0,49.8 117.7,48.8 121.4,48.0 125.1,47.5 128.8,47.1 132.5,47.0 136.2,47.1 139.9,47.5 143.6,48.0 147.3,48.8 151.0,49.8 154.7,51.1 158.4,52.5 162.1,54.2 165.8,56.0 169.5,58.1 173.2,60.3 176.9,62.7 180.6,65.3 184.3,68.0 188.0,70.9 191.7,73.9 195.4,77.1 199.1,80.3 202.8,83.6 206.5,87.1 210.2,90.6 213.9,94.1 217.6,97.7 221.3,101.4 225.0,105.0 228.7,108.6 232.4,112.3 236.1,115.9 239.8,119.4 243.5,122.9 247.2,126.4 250.9,129.7 254.6,132.9 258.3,136.1 262.0,139.1 265.7,142.0 269.4,144.7 273.1,147.3 276.8,149.7 280.5,151.9 284.2,154.0 287.9,155.8 291.6,157.5 295.3,158.9 299.0,160.2 302.7,161.2 306.4,162.0 310.1,162.5 313.8,162.9 317.5,163.0 321.2,162.9 324.9,162.5 328.6,162.0 332.3,161.2 336.0,160.2 339.7,158.9 343.4,157.5 347.1,155.8 350.8,154.0 354.5,151.9 358.2,149.7 361.9,147.3 365.6,144.7 369.3,142.0 373.0,139.1 376.7,136.1 380.4,132.9 384.1,129.7 387.8,126.4 391.5,122.9 395.2,119.4 398.9,115.9 402.6,112.3 406.3,108.6 410.0,105.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="round"/><line x1="40" y1="101" x2="40" y2="109" stroke="currentColor" stroke-width="1.5"/><line x1="132" y1="101" x2="132" y2="109" stroke="currentColor" stroke-width="1.5"/><text x="132" y="123" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">T/4</text><line x1="225" y1="101" x2="225" y2="109" stroke="currentColor" stroke-width="1.5"/><text x="225" y="123" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">T/2</text><line x1="318" y1="101" x2="318" y2="109" stroke="currentColor" stroke-width="1.5"/><text x="318" y="123" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">3T/4</text><line x1="410" y1="101" x2="410" y2="109" stroke="currentColor" stroke-width="1.5"/><text x="40" y="123" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">0</text><text x="410" y="123" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">T</text><line x1="40" y1="30" x2="40" y2="170" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5"/><line x1="132" y1="30" x2="132" y2="170" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity=".5"/><circle cx="40" cy="47" r="4.5" fill="#38bdf8"/><circle cx="40" cy="105" r="4.5" fill="#f87171"/><circle cx="132" cy="47" r="4.5" fill="#f87171"/><circle cx="132" cy="105" r="4.5" fill="#38bdf8"/><text x="46" y="20" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Φ đỉnh · e = 0</text><text x="140" y="20" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">e đỉnh · Φ = 0</text><line x1="40" y1="196" x2="68" y2="196" stroke="#38bdf8" stroke-width="3"/><text x="74" y="200" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">Φ (từ thông)</text><line x1="190" y1="196" x2="218" y2="196" stroke="#f87171" stroke-width="3"/><text x="224" y="200" fill="#f87171" font-size="12" font-weight="600" text-anchor="start">e (suất điện động)</text></svg><figcaption>Hình 3. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.</figcaption></figure>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl13-q5-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl13-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Bẫy 2: "từ thông lớn nhất thì $e$ lớn nhất"</p>
+<p><strong>Câu 5.</strong> Khung dây đang quay đều. Tại lúc mặt khung vuông góc với $\vec{B}$, suất điện động trong khung:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q5" id="tl13-q5a"><label for="tl13-q5a" class="tl-opt tl-no">A. cực đại, vì từ thông cực đại</label>
+<input type="radio" name="tl13-q5" id="tl13-q5b"><label for="tl13-q5b" class="tl-opt tl-ok">B. bằng 0</label>
+<input type="radio" name="tl13-q5" id="tl13-q5c"><label for="tl13-q5c" class="tl-opt tl-no">C. bằng một nửa cực đại</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> $\Phi$ và $e$ vuông pha: $\Phi$ ở đỉnh thì $e=0$. Hệ thức độc lập: $\left(\dfrac{\Phi}{\Phi_0}\right)^2+\left(\dfrac{e}{E_0}\right)^2=1$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn A là nhầm "$\Phi$ lớn" với "$\Phi$ biến thiên nhanh". $e$ tỉ lệ với <em>tốc độ biến thiên</em> của $\Phi$, không tỉ lệ với bản thân $\Phi$. Nếu đã chọn <em>Chắc</em> mà sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: đọc to câu hỏi, nói bằng lời của em, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Vì sao khung quay trong từ trường sinh ra điện xoay chiều? <small>(nói bằng lời của em trước)</small></summary>
+<p>Quay khung · $\Phi$ biến thiên tuần hoàn · $e=-\Phi'$ · $e=E_0\cos\left(\omega t+\varphi-\dfrac{\pi}{2}\right)$ · $E_0=NBS\omega$.</p></details>
+<details class="tl-details"><summary>2. Viết biểu thức $i$ và nêu tên từng đại lượng <small>(nói bằng lời của em trước)</small></summary>
+<p>$i=I_0\cos(\omega t+\varphi)$ · $i$ tức thời · $I_0$ cực đại · $\omega t+\varphi$ pha · $\varphi$ pha ban đầu · $\omega$ tần số góc.</p></details>
+<details class="tl-details"><summary>3. Liên hệ $T$, $f$, $\omega$? Lưới 50 Hz đổi chiều bao nhiêu lần mỗi giây? <small>(nói bằng lời của em trước)</small></summary>
+<p>$T=\dfrac{2\pi}{\omega}=\dfrac{1}{f}$ · $\omega=2\pi f$ · 50 Hz: $T=0{,}02$ s, $\omega=100\pi$, đổi chiều 100 lần/s.</p></details>
+<details class="tl-details"><summary>4. Cường độ hiệu dụng là gì? Vì sao không dùng giá trị trung bình? <small>(nói bằng lời của em trước)</small></summary>
+<p>Cùng nhiệt với dòng không đổi · $I=\dfrac{I_0}{\sqrt{2}}$ · trung bình trong chu kì bằng 0 · nhiệt tỉ lệ $i^2$.</p></details>
+<details class="tl-details"><summary>5. $\Phi$ và $e$ lệch pha bao nhiêu? Khi $e$ cực đại, khung nằm ở đâu? <small>(nói bằng lời của em trước)</small></summary>
+<p>Vuông pha $\dfrac{\pi}{2}$ · $e$ chậm pha hơn $\Phi$ · $e$ cực đại lúc $\Phi=0$, mặt khung song song $\vec{B}$.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: viết biểu thức dòng điện</h3>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Dòng điện xoay chiều có tần số $50\ \text{Hz}$ và cường độ hiệu dụng $2\ \text{A}$. Tại $t=0$, cường độ tức thời là $2\ \text{A}$ và <strong>đang giảm</strong>.</p>
+<p>a) Viết biểu thức $i$. b) Cho dòng này chạy qua $R=25\ \Omega$ trong 1 phút, tính nhiệt lượng toả ra.</p>
+</div>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"tần số 50 Hz"</td><td>$f=50\ \text{Hz}$</td><td>$\omega=2\pi f$</td></tr>
+<tr><td>"hiệu dụng 2 A"</td><td>$I=2\ \text{A}$</td><td>$I_0=I\sqrt{2}$</td></tr>
+<tr><td>"$t=0$, $i=2$ A"</td><td>$i(0)=2\ \text{A}$</td><td>thay $t=0$ tìm $\cos\varphi$</td></tr>
+<tr><td>"đang giảm" (ngầm)</td><td>$i'(0)\lt0$</td><td>$i'=-I_0\omega\sin\varphi$, chọn dấu $\varphi$</td></tr>
+<tr><td>"25 Ω, 1 phút"</td><td>$R=25\ \Omega$, $t=60\ \text{s}$</td><td>$Q=I^2Rt$, dùng hiệu dụng</td></tr>
+</tbody></table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li>$\omega=2\pi\cdot50=100\pi\ \text{rad/s}$ và $I_0=2\sqrt{2}\ \text{A}$.</li>
+<li>$i(0)=2\sqrt{2}\cos\varphi=2$, suy ra $\cos\varphi=\dfrac{1}{\sqrt{2}}$, nên $\varphi=\pm\dfrac{\pi}{4}$.</li>
+<li>"Đang giảm" nghĩa là $i'(0)\lt0$, tức $\sin\varphi\gt0$. Chọn $\varphi=+\dfrac{\pi}{4}$.</li>
+<li><strong>Đáp số a):</strong> $i=2\sqrt{2}\cos\left(100\pi t+\dfrac{\pi}{4}\right)\ \text{A}$</li>
+<li><strong>Đáp số b):</strong> $Q=I^2Rt=2^2\cdot25\cdot60=6000\ \text{J}$</li>
+</ol>
+<p><strong>Kiểm tra:</strong> thay $t=0$: $2\sqrt{2}\cdot\dfrac{\sqrt{2}}{2}=2\ \text{A}$ ✓. Ở câu b, dùng $I_0$ sẽ ra $12\,000\ \text{J}$, gấp đôi, là lỗi hay gặp.</p>
+</details>
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, chỉ đổi thành "đang <strong>tăng</strong>".</p>
+<ol class="tl-steps">
+<li>$\omega=100\pi\ \text{rad/s}$, $I_0=2\sqrt{2}\ \text{A}$, $\cos\varphi=\dfrac{1}{\sqrt{2}}$.</li>
+<li><strong>Bước em điền:</strong> "đang tăng" cho $\sin\varphi$ dấu gì, nên $\varphi=\;?$</li>
+<li>Kết luận: $i=\;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary><p>Đang tăng nên $i'(0)\gt0$, suy ra $\sin\varphi\lt0$ và $\varphi=-\dfrac{\pi}{4}$. Vậy $i=2\sqrt{2}\cos\left(100\pi t-\dfrac{\pi}{4}\right)\ \text{A}$.</p></details></div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Thử sức đổi câu hỏi</p>
+<p><strong>Câu 6.</strong> Với $i=2\sqrt{2}\cos\left(100\pi t+\dfrac{\pi}{4}\right)\ \text{A}$, thời điểm đầu tiên $i=0$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl13-q6" id="tl13-q6a"><label for="tl13-q6a" class="tl-opt tl-no">A. $\dfrac{1}{200}\ \text{s}$</label>
+<input type="radio" name="tl13-q6" id="tl13-q6b"><label for="tl13-q6b" class="tl-opt tl-ok">B. $\dfrac{1}{400}\ \text{s}$</label>
+<input type="radio" name="tl13-q6" id="tl13-q6c"><label for="tl13-q6c" class="tl-opt tl-no">C. $\dfrac{3}{400}\ \text{s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> $i=0$ khi pha bằng $\dfrac{\pi}{2}$: $100\pi t+\dfrac{\pi}{4}=\dfrac{\pi}{2}$, suy ra $t=\dfrac{1}{400}\ \text{s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là bỏ quên $\dfrac{\pi}{4}$ của pha ban đầu. C là đổi nhầm dấu $\varphi$ thành $-\dfrac{\pi}{4}$. Đặt pha bằng $\dfrac{\pi}{2}$ rồi giải lại.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và thử thách</h3>
+<details class="tl-details">
+<summary>🌍 Bấm xem: dòng điện xoay chiều quanh em</summary>
+<ul>
+<li><strong>Ổ điện nhà em:</strong> 220 V – 50 Hz, đỉnh 311 V, đổi chiều 100 lần/s.</li>
+<li><strong>Bộ sạc điện thoại:</strong> nhận xoay chiều 220 V, đổi ra một chiều khoảng 5 V.</li>
+<li><strong>Xưởng cơ khí, máy CNC:</strong> động cơ chạy bằng điện xoay chiều ba pha, đúng loại sinh ra từ ba cuộn dây đặt lệch nhau (bài 14).</li>
+<li><strong>Truyền tải điện đi xa:</strong> dùng xoay chiều vì dễ tăng, giảm điện áp bằng máy biến áp (bài 14).</li>
+</ul>
+</details>
+<details class="tl-details"><summary>⭐ Cơ bản: $u=100\sqrt{2}\cos(100\pi t)\ \text{V}$. Tìm $U$, $f$, $T$.</summary>
+<p>$U=100\ \text{V}$ · $f=50\ \text{Hz}$ · $T=0{,}02\ \text{s}$.</p></details>
+<details class="tl-details"><summary>⭐⭐ Khá: khung $N=100$ vòng, $S=200\ \text{cm}^2$, quay $50$ vòng/s trong $B=0{,}1\ \text{T}$. Tìm $E_0$ và $E$.</summary>
+<p>$\omega=2\pi\cdot50=100\pi$ · $E_0=NBS\omega=100\cdot0{,}1\cdot0{,}02\cdot100\pi\approx62{,}8\ \text{V}$ · $E=\dfrac{E_0}{\sqrt{2}}\approx44{,}4\ \text{V}$.</p></details>
+<details class="tl-details"><summary>⭐⭐⭐ Thách đấu: đèn chỉ sáng khi $|u|\ge110\sqrt{2}\ \text{V}$, mắc vào $u=220\sqrt{2}\cos(100\pi t)\ \text{V}$. Mỗi giây đèn sáng bao lâu?</summary>
+<p>$|u|\ge\dfrac{U_0}{2}$ nên $|\cos(100\pi t)|\ge\dfrac{1}{2}$. Mỗi nửa chu kì ứng với pha quét $\pi$, đỉnh nằm giữa. $|\cos|\ge\dfrac{1}{2}$ khi pha cách đỉnh không quá $\dfrac{\pi}{3}$ mỗi phía, tức $\dfrac{2\pi}{3}$ trong $\pi$. Vậy đèn sáng $\dfrac{2}{3}\ \text{s}$ mỗi giây, chia làm 100 lần chớp.</p></details>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Quay khung:</strong> $\Phi$ đổi · $e=-\Phi'$ · $E_0=NBS\omega$ · $e$ chậm pha $\dfrac{\pi}{2}$ so với $\Phi$.</li>
+<li><strong>Biểu thức:</strong> $i=I_0\cos(\omega t+\varphi)$ · $\omega=2\pi f=\dfrac{2\pi}{T}$.</li>
+<li><strong>Lưới điện VN:</strong> 50 Hz · $T=0{,}02$ s · đổi chiều 100 lần/s.</li>
+<li><strong>Hiệu dụng:</strong> cùng nhiệt · chia $\sqrt{2}$ ra hiệu dụng, nhân $\sqrt{2}$ ra đỉnh.</li>
+<li><strong>Đọc đề:</strong> thấy "đang tăng/giảm" thì dùng nó chọn dấu của $\varphi$.</li>
+</ul>
+</div>

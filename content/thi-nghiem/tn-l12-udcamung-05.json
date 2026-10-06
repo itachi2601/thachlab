@@ -1,0 +1,51 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "lesson_id": 126,
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+  "id": "tn-l12-udcamung-05",
+  "ten": "Một vòng Foucault trong đáy nồi bếp từ",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": ["camung_ud.foucault_nhiet", "camungdt.faraday_toc_do"],
+  "muc_tieu": "Tính công suất nhiệt trung bình của một vòng Foucault khi từ thông biến thiên điều hoà, và phân biệt biên độ với giá trị hiệu dụng.",
+  "dung_cu": [
+    {"ten": "Mô hình số, không cần bếp thật", "so_luong": 1, "ghi_chu": "nếu có bếp từ thì chỉ để xem nồi nào nam châm dính"}
+  ],
+  "cac_buoc": {
+    "lam": ["Đọc Φ = Φ0 cos(ωt) và r trong đề.", "Tính e0 = Φ0·ω rồi E = e0/√2.", "Tính P = E²/r."],
+    "quan_sat": ["Với Φ0 = 2·10⁻⁴ Wb, ω = 1,6·10⁵ rad/s, r = 0,50 Ω thì P = 1024 W.", "Đổi r thành 1,00 Ω thì P = 512 W."],
+    "rut_ra": ["Nhiệt nằm trong đáy nồi.", "Dùng hiệu dụng, không dùng e0 thẳng vào công suất.", "Tần số khoảng 25 kHz, đúng vùng bếp từ."]
+  },
+  "tham_so": [
+    {"ky_hieu": "Phi0", "ten": "Biên độ từ thông", "don_vi": "Wb", "kieu": "dieu_chinh", "min": 0.00005, "max": 0.0004, "mac_dinh": 0.0002, "buoc": 0.00005},
+    {"ky_hieu": "omega", "ten": "Tần số góc", "don_vi": "rad/s", "kieu": "co_dinh", "gia_tri": 160000},
+    {"ky_hieu": "r", "ten": "Điện trở một vòng", "don_vi": "Ω", "kieu": "dieu_chinh", "min": 0.25, "max": 2, "mac_dinh": 0.5, "buoc": 0.25},
+    {"ky_hieu": "P", "ten": "Công suất nhiệt trung bình", "don_vi": "W", "kieu": "tinh_ra"}
+  ],
+  "mo_hinh": {
+    "phuong_trinh": ["e0 = Phi0·omega", "E = e0/sqrt(2)", "P = E^2/r", "f = omega/(2·pi)"],
+    "gia_thiet": ["một vòng tương đương trong đáy nồi", "bỏ qua từ trễ của thép", "dòng hình sin"],
+    "ghi_chu": "Số của bài: e0 = 32 V, E = 16√2 V, P = 1024 W, f ≈ 25,5 kHz."
+  },
+  "so_lieu_mau": {
+    "cot": ["r (Ω)", "e0 (V)", "P (W)"],
+    "hang": [[0.5, 32, 1024], [1.0, 32, 512], [0.25, 32, 2048]],
+    "ghi_chu": "P tính bằng hiệu dụng. Nếu dùng nhầm e0²/r với r = 0,50 Ω sẽ ra 2048 W."
+  },
+  "ket_qua_ky_vong": "P = 1024 W khi r = 0,50 Ω. P tỉ lệ nghịch với r khi Φ0 và ω giữ nguyên.",
+  "hien_tuong_hay_sai": [
+    "Lấy trung bình của sin bằng 0 nên kết luận P = 0.",
+    "Thay e0 vào P thay vì E.",
+    "Cho rằng mặt kính bếp là chỗ toả nhiệt."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "do_thi+bang_so_lieu",
+    "dieu_khien": ["thanh Φ0", "thanh r", "đổi nồi nhiễm từ hoặc nhôm"],
+    "dau_ra": ["P", "đồ thị e(t)", "vùng nóng trên đáy nồi"],
+    "hinh_trong_bai": "Hình 4",
+    "y_tuong": "Học sinh chọn P trước khi mô phỏng vẽ đồ thị."
+  },
+  "an_toan": "Không tháo bếp từ. Nếu quan sát bếp thật: không chạm đáy nồi đang nấu, không để đồ kim loại nhỏ lên mặt bếp."
+}

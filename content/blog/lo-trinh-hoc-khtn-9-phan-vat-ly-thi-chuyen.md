@@ -3,7 +3,7 @@ title: "Lộ Trình Học KHTN 9 Phần Vật Lý & Định Hướng Thi Chuyên
 description: "Lộ trình học KHTN 9 phần Vật lý theo 3 bậc: chắc nền tảng, nâng cao tư duy và luyện thi chuyên Vật lý lớp 10."
 date: "2026-07-08"
 author: "Thầy Thạch"
-cover: "/images/learning-path/khtn-9-vat-ly.png"
+cover: "/images/learning-path/khtn-9-vat-ly.webp"
 category: "KHTN 9"
 tags:
   - "Vật lý THCS"

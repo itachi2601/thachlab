@@ -9,13 +9,13 @@
 // câu đã có mức độ (kể cả do thầy tự gắn tay).
 //
 // LƯU Ý: script này KHÔNG có chế độ dry-run — mỗi lần chạy ghi thẳng vào DB thật ngay (tốn
-// lượt gọi Anthropic API + tiền). Muốn thử trước, truyền [số câu tối đa] nhỏ (vd 20) rồi tự
+// lượt gọi DeepSeek API + tiền). Muốn thử trước, truyền [số câu tối đa] nhỏ (vd 20) rồi tự
 // xem lại vài dòng trong /quan-tri/ngan-hang-cau-hoi trước khi chạy không giới hạn.
 //
 //   npx tsx scripts/backfill-question-bank-difficulty.mts [số câu tối đa]
 //
 // Cần .env.local có NEXT_PUBLIC_SUPABASE_URL, và hỏi SUPABASE_SERVICE_ROLE_KEY +
-// ANTHROPIC_API_KEY nếu chưa có trong env/.env.local.
+// DEEPSEEK_API_KEY nếu chưa có trong env/.env.local.
 
 import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
@@ -27,7 +27,9 @@ import type { ExamQuestion } from "@/features/exams/types";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const BATCH_SIZE = 40;
-const MODEL = "claude-haiku-4-5";
+// Tên model cũ "deepseek-chat" đã ngừng phục vụ từ 2026-07-24 (xem api-docs.deepseek.com/updates),
+// gọi vào sẽ lỗi 400 "Model Not Exist". Tên hiện hành: "deepseek-flash" (hoặc "deepseek-v4-pro").
+const MODEL = "deepseek-flash";
 const DIFFICULTIES = ["de", "trung-binh", "kho"] as const;
 type Difficulty = (typeof DIFFICULTIES)[number];
 
@@ -100,32 +102,36 @@ async function withRetry<T>(fn: () => Promise<T>, label: string): Promise<T> {
 async function classifyBatch(apiKey: string, items: { i: number; text: string }[]): Promise<Map<number, Difficulty>> {
   const res = await withRetry(
     () =>
-      fetch("https://api.anthropic.com/v1/messages", {
+      fetch("https://api.deepseek.com/chat/completions", {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          "x-api-key": apiKey,
-          "anthropic-version": "2023-06-01",
+          authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           model: MODEL,
-          max_tokens: 4096,
-          system:
-            "Bạn là trợ lý đánh giá độ khó câu hỏi trắc nghiệm Vật lý THPT. Chỉ trả về DUY NHẤT một JSON " +
-            'hợp lệ đúng dạng {"results":[{"index":0,"difficulty":"de"}]}, không kèm lời giải thích, ' +
-            "không bọc trong markdown code fence.",
-          messages: [{ role: "user", content: buildPrompt(items) }],
+          max_tokens: 16000,
+          temperature: 0,
+          response_format: { type: "json_object" },
+          messages: [
+            {
+              role: "system",
+              content:
+                "Bạn là trợ lý đánh giá độ khó câu hỏi trắc nghiệm Vật lý THPT. Chỉ trả về DUY NHẤT một JSON " +
+                'hợp lệ đúng dạng {"results":[{"index":0,"difficulty":"de"}]}, không kèm lời giải thích.',
+            },
+            { role: "user", content: buildPrompt(items) },
+          ],
         }),
       }),
     "Gọi AI",
   );
-  if (!res.ok) throw new Error(`Anthropic API lỗi ${res.status}: ${await res.text()}`);
-  const data = (await res.json()) as { content?: { type: string; text?: string }[] };
-  const textBlock = data.content?.find((b) => b.type === "text");
-  const raw = textBlock?.text ?? "";
+  if (!res.ok) throw new Error(`DeepSeek API lỗi ${res.status}: ${await res.text()}`);
+  const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+  const raw = data.choices?.[0]?.message?.content ?? "";
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
-  if (start < 0 || end < 0) throw new Error("AI không trả về JSON hợp lệ.");
+  if (start < 0 || end < 0) throw new Error(`AI không trả về JSON hợp lệ. Phản hồi: ${JSON.stringify(data).slice(0, 400)}`);
   const parsed = JSON.parse(raw.slice(start, end + 1)) as { results?: unknown };
   const rows = Array.isArray(parsed.results) ? parsed.results : [];
   const validIdx = new Set(items.map((it) => it.i));
@@ -152,11 +158,11 @@ async function main() {
     readEnvLocal("SUPABASE_SERVICE_ROLE_KEY") ??
     (await askHidden("Dán SUPABASE_SERVICE_ROLE_KEY (Settings → API → service_role): "));
   if (!serviceKey) fail("thiếu SUPABASE_SERVICE_ROLE_KEY");
-  const anthropicKey =
-    process.env.ANTHROPIC_API_KEY ??
-    readEnvLocal("ANTHROPIC_API_KEY") ??
-    (await askHidden("Dán ANTHROPIC_API_KEY: "));
-  if (!anthropicKey) fail("thiếu ANTHROPIC_API_KEY");
+  const deepseekKey =
+    process.env.DEEPSEEK_API_KEY ??
+    readEnvLocal("DEEPSEEK_API_KEY") ??
+    (await askHidden("Dán DEEPSEEK_API_KEY: "));
+  if (!deepseekKey) fail("thiếu DEEPSEEK_API_KEY");
 
   const supabase = createClient(url, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
 
@@ -192,7 +198,19 @@ async function main() {
       console.log(`\nLô ${batchNo}: ${batch.length} câu…`);
       let results: Map<number, Difficulty>;
       try {
-        results = await classifyBatch(anthropicKey, items);
+        // Model có bước suy luận nên đôi khi trả content rỗng — thử lại tối đa 3 lần trước khi bỏ qua lô.
+        let lastErr: unknown;
+        results = new Map();
+        for (let attempt = 1; attempt <= 3; attempt += 1) {
+          try {
+            results = await classifyBatch(deepseekKey, items);
+            lastErr = undefined;
+            break;
+          } catch (e) {
+            lastErr = e;
+          }
+        }
+        if (lastErr) throw lastErr;
       } catch (e) {
         console.error("  Lỗi gọi AI:", e instanceof Error ? e.message : String(e));
         batch.forEach((r) => failedIds.add(r.id));

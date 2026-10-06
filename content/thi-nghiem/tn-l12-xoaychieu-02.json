@@ -1,0 +1,135 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Đại cương về dòng điện xoay chiều",
+ "lesson_id": 14,
+ "nguon_trong_bai": "content/lesson-samples/l12-dong-dien-xoay-chieu/theory.html",
+ "id": "tn-l12-xoaychieu-02",
+ "ten": "Hai đèn LED mắc ngược chiều: đếm số lần đổi chiều",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "xoaychieu.tan_so",
+  "xoaychieu.doi_chieu_2f"
+ ],
+ "muc_tieu": "Nhìn thấy dòng điện đổi chiều 2 lần mỗi chu kì (2f lần mỗi giây) và vì sao mắt không thấy đèn nhấp nháy ở 50 Hz.",
+ "dung_cu": [
+  {
+   "ten": "Máy phát tín hiệu hình sin",
+   "so_luong": 1,
+   "ghi_chu": "chỉnh f từ 1 Hz đến 50 Hz"
+  },
+  {
+   "ten": "Đèn LED hai màu khác nhau",
+   "so_luong": 2,
+   "ghi_chu": "mắc song song, ngược chiều"
+  },
+  {
+   "ten": "Điện trở bảo vệ",
+   "so_luong": 1,
+   "ghi_chu": "khoảng 330 Ω"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc hai LED song song, ngược chiều, nối tiếp điện trở rồi nối máy phát tín hiệu.",
+   "Chỉnh f = 1 Hz, quan sát.",
+   "Tăng f dần đến 50 Hz."
+  ],
+  "quan_sat": [
+   "Ở 1 Hz hai LED chớp luân phiên, mỗi LED 1 lần mỗi giây.",
+   "Ở 50 Hz cả hai trông như sáng liên tục."
+  ],
+  "rut_ra": [
+   "Mỗi chu kì mỗi LED sáng 1 lần, dòng đổi chiều 2 lần: 2f lần mỗi giây.",
+   "Mắt không phân biệt được 100 lần đổi chiều mỗi giây."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 60,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "N_dc",
+   "ten": "Số lần đổi chiều mỗi giây",
+   "don_vi": "lần/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = 1/f",
+   "omega = 2*pi*f",
+   "N_dc = 2*f"
+  ],
+  "gia_thiet": [
+   "LED sáng khi dòng thuận chiều và đủ lớn",
+   "bỏ qua ngưỡng điện áp của LED"
+  ],
+  "ghi_chu": "Mô phỏng vẽ hai LED chớp theo dấu của u(t); tốc độ chớp theo f; thêm vạch 'giới hạn mắt' quanh 25 Hz."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f (Hz)",
+   "T (s)",
+   "Số lần đổi chiều/s"
+  ],
+  "hang": [
+   [
+    1,
+    1.0,
+    2
+   ],
+   [
+    5,
+    0.2,
+    10
+   ],
+   [
+    25,
+    0.04,
+    50
+   ],
+   [
+    50,
+    0.02,
+    100
+   ]
+  ],
+  "ghi_chu": "Tính từ N_dc = 2f; số liệu minh hoạ từ mô hình."
+ },
+ "ket_qua_ky_vong": "Số lần đổi chiều mỗi giây gấp đôi tần số; ở 50 Hz là 100 lần/s.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng đổi chiều f lần/s thay vì 2f.",
+  "Cho rằng đèn sáng đều nghĩa là dòng không đổi chiều."
+ ],
+ "sai_so_thuong_gap": [
+  "Máy phát tín hiệu không ra đúng tần số ở thang thấp."
+ ],
+ "an_toan": "Dùng nguồn hạ áp vài vôn, không thí nghiệm trực tiếp với điện lưới 220 V.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "f"
+  ],
+  "dau_ra": [
+   "hai LED chớp",
+   "đồ thị u(t) có đánh dấu điểm đổi chiều"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Học sinh kéo f từ 1 đến 50 Hz và dự đoán lúc nào mắt thôi thấy nhấp nháy."
+ }
+}
