@@ -1,0 +1,20 @@
+-- Hoàn tác sổ học phí theo tháng. Xoá khoản đã ghi.
+begin;
+drop function if exists public.thpt_fee_family_lines();
+drop function if exists public.thpt_fee_waive(bigint, boolean);
+drop function if exists public.thpt_fee_record_payment(bigint, integer, text, date, text);
+drop function if exists public.thpt_fee_ledger(bigint, date);
+drop function if exists public.thpt_fee_ensure_month(bigint, date);
+drop function if exists public.thpt_fee_archive_plan(bigint);
+drop function if exists public.thpt_fee_upsert_plan(bigint, text, text, integer, smallint);
+drop function if exists public.thpt_fee_plans(bigint);
+drop function if exists public.thpt_fee_set_visibility(boolean, boolean);
+drop function if exists public.thpt_fee_visibility();
+drop function if exists public.thpt_fee_assert_open(bigint);
+drop function if exists public.thpt_fee_is_clerk();
+drop function if exists public.thpt_fee_billing_key(bigint, text, text, text);
+drop table if exists public.thpt_fee_payments;
+drop table if exists public.thpt_fee_charges;
+drop table if exists public.thpt_fee_plans;
+drop table if exists public.thpt_fee_settings;
+commit;

@@ -226,6 +226,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 
+- **Chờ chạy:** `20261006120000_thpt_fee_ledger.sql` — sổ học phí theo tháng, **ẩn** (`staff_visible` và `family_visible` đều false, không có menu). Không đổi ô "Đã đóng" hiện tại. Bật cho giáo viên bằng SQL `update public.thpt_fee_settings set staff_visible = true, updated_at = now() where id;` rồi mở `/quan-tri/hoc-phi`. Phụ huynh chỉ thấy từng tháng sau khi admin bật "Phụ huynh thấy sổ tháng" trên trang đó. Rollback: cuối file và `perf/rollback/20261006120000_thpt_fee_ledger.down.sql`. Bất kỳ lúc nào.
 - **Đã chạy 6/10/2026:** `20261005140000_weakest_topics.sql` — RPC `get_my_weakest_topics` cho thẻ "3 kỹ năng yếu nhất" (`WeakestSkillsCard`, trang chủ HS `/tai-khoan`). Thẻ tự ẩn khi RPC chưa có. Rollback ở cuối file.
 - **Chờ chạy:** `20261005100000_bank_grade_lop10.sql` — gắn `grade='10'` cho 6.262 câu `question_bank` (277 đề lớp 10, grade đang rỗng). Rollback ở cuối file. Sau đó còn ~10,5k câu chưa có mức độ → `backfill-question-bank-difficulty.mts`.
 - **Migration đã chạy 6/10/2026; còn việc tay (VAPID, deploy, cron):** `20261005160000_push_subscriptions.sql` — bảng `push_subscriptions` + RPC `upsert_my_push_subscription`, `claim_push_reminders_due` (M4 nhắc Web Push). Rollback: `perf/rollback/20261005160000_push_subscriptions.down.sql`. Kèm việc tay: VAPID secrets + deploy `send-daily-push` + lịch cron, xem `docs/PUSH-NHAC-HANG-NGAY.md`.

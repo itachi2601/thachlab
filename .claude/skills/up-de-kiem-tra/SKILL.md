@@ -252,13 +252,28 @@ Chạy nền (`run_in_background: true`); đề nhiều đối tượng nhúng c
 
 **Đọc ảnh trang trong subagent, không đọc thẳng ở phiên chính.** Một trang PNG ≈ 1,5k token
 và nằm lại context đến hết phiên; đề 13 trang nhân với vài trăm request là hàng chục triệu
-token. Spawn một agent `general-purpose` (`run_in_background: false` — bước sau cần kết
-quả ngay), giao đúng việc chép đề:
+token. Spawn agent **`chep-de`** (đã ghim sonnet, xem `.claude/agents/`; `run_in_background: false`
+— bước sau cần kết quả ngay), giao đúng việc chép đề:
 
 > Đọc `out/page-*.png` (đề Vật lí THPT đã render). Chép lại **nguyên văn, đủ tất cả các
 > trang**: số câu, đề bài, phương án A–D kèm **dấu `*` đánh dấu đáp án đúng**, phần
 > "Lời giải" nếu có, mô tả hình vẽ/đồ thị. Công thức gõ sang `$...$` (LaTeX). Không tóm
 > tắt, không bỏ câu nào. Trả về text thuần theo thứ tự câu.
+
+**Đường "ngoài Claude" (thầy chốt 6/10/2026) — khi đề ≥ 10 trang, nhiều hình vẽ/đồ thị, hoặc
+PDF scan mờ:** không chép trong Claude. Dừng lại và in cho Thạch khối sau để làm trên **Cursor
+(Auto)**, rồi chờ file kết quả:
+
+```
+Mở Cursor tại thư mục có out/page-*.png, chế độ Auto, dán:
+"Đọc toàn bộ out/page-*.png (đề Vật lí THPT). Chép nguyên văn đủ mọi trang: số câu, đề bài,
+A–D kèm dấu * ở đáp án đúng, Lời giải nếu có, hình vẽ mô tả trong [hình: ...]. Công thức
+viết $...$ (LaTeX). Không tóm tắt, không bỏ câu. Ghi ra out/de.txt"
+→ nộp lại out/de.txt cho phiên này.
+```
+Nhận `out/de.txt` xong vẫn đi tiếp Bước 2 như thường; Claude chỉ đối chiếu số câu và đáp án
+bị đánh `*` với ảnh ở vài câu ngẫu nhiên, không đọc lại cả đề. Không dán tên học sinh hay dữ
+liệu cá nhân vào prompt Cursor.
 
 Ảnh chết theo subagent; phiên chính chỉ nhận text. Nếu đề ngắn (≤ 3 trang) thì đọc thẳng
 cũng được. Cùng lý do: đừng `Read` lại `de.pdf` sau khi đã có text.

@@ -191,6 +191,12 @@ Bước 5) — lúc đó agent đã tốn công xong rồi, chỉ còn cứu đ�
 
 ## Bước 5 — Chia việc cho agent, LUÔN kèm sẵn kết quả phân loại trong prompt
 
+> **Phân công mô hình (6/10/2026, xem `AGENTS.md` mục "Phân công mô hình"):** file `needs_review`
+> vì OLE MathType/ảnh → đọc ảnh bằng agent `chep-de` (sonnet) theo up-de-kiem-tra; đợt có nhiều
+> file loại này (≥ 5) hoặc đề dày → gợi ý Thạch chạy bước chép đề trên **Cursor (Auto)** cho cả
+> đợt, nộp lại `out/<tên-đề>.txt`, Claude chỉ đăng và đối chiếu mẫu. Trước khi đăng đợt có code/
+> script mới sinh → gọi `kiem-code`.
+
 Với mỗi file thuộc `needs_review`, giao cho một agent chạy skill `up-de-kiem-tra`
 (`Skill({ skill: "up-de-kiem-tra" })` bên trong agent, hoặc agent tự đọc file skill đó)
 — nhưng KHÔNG để agent tự khám phá những gì script đã biết. Prompt cho từng agent phải
