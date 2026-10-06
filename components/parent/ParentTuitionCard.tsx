@@ -1,10 +1,16 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { parentFeeBlocks, parentMonthLine, type TuitionMonth } from "@/features/tuition/ledger";
 import { PAYMENT_STATUS_LABEL, type MyRegistration } from "@/services/thpt-courses";
 import type { ThptCourse } from "@/services/thpt-courses-public";
+import { fetchFamilyTuition } from "@/services/tuition";
 
 /**
  * Học phí — với lớp học thêm, đây là câu hỏi hạng 2–3 của phụ huynh ("tôi đã đóng chưa, đóng bao nhiêu").
- * Chỉ ĐỌC trạng thái thầy đã ghi (thpt_registrations.payment_status), không có nút thanh toán.
- * Chưa đóng nói trung tính, kèm lối hỏi lại: có thể chỉ là thầy chưa kịp ghi.
+ * Mặc định chỉ ĐỌC ô thầy đã ghi (thpt_registrations.payment_status), không có nút thanh toán (P23).
+ * Sổ theo tháng nằm sau cờ family_visible. Cờ tắt hoặc hàm chưa có → mảng rỗng, thẻ giữ nguyên câu cũ.
+ * Có khoản tháng thì nói bằng chữ, không chỉ bằng màu (P12). Chưa đóng nói trung tính, kèm lối hỏi lại.
  */
 export default function ParentTuitionCard({
   registrations,
@@ -13,29 +19,77 @@ export default function ParentTuitionCard({
   registrations: MyRegistration[];
   courses: ThptCourse[];
 }) {
+  const [months, setMonths] = useState<TuitionMonth[]>([]);
   const items = registrations.filter((r) => r.status === "active" || r.status === "catchup");
+  const watch = items.map((r) => r.student_id ?? "").join("|");
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchFamilyTuition().then((rows) => {
+      if (!cancelled) setMonths(rows);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [watch]);
+
   if (items.length === 0) return null;
-  const feeByCourse = new Map(courses.map((c) => [c.id, c.fee_note]));
+
+  const blocks = parentFeeBlocks(
+    items.map((r) => ({
+      id: r.id,
+      courseId: r.course_id,
+      courseName: r.courseName,
+      studentId: r.student_id,
+      paymentStatus: r.payment_status,
+      paymentNote: r.payment_note,
+    })),
+    courses.map((c) => ({
+      id: c.id,
+      name: c.name,
+      feeNote: c.fee_note,
+      pairKey: c.pairKey,
+      pairSlot: c.pairSlot,
+    })),
+    months,
+  );
 
   return (
     <section className="rounded-2xl border border-white/10 bg-panel p-5">
       <h2 className="font-display text-lg font-semibold text-white">Học phí</h2>
       <ul className="mt-3 divide-y divide-white/10">
-        {items.map((r) => {
-          const paid = r.payment_status !== "unpaid";
-          const fee = feeByCourse.get(r.course_id);
+        {blocks.map((block) => {
+          const paid = block.paymentStatus !== "unpaid";
           return (
-            <li key={r.id} className="py-3 first:pt-0 last:pb-0">
-              <p className="font-semibold text-white">{r.courseName}</p>
-              {fee ? <p className="parent-copy text-slate-400">{fee}</p> : null}
-              <p className={`mt-1 font-semibold ${paid ? "text-emerald-300" : "text-amber-300"}`}>
-                {paid ? PAYMENT_STATUS_LABEL[r.payment_status] : "Thầy chưa ghi nhận khoản đóng"}
-              </p>
-              {r.payment_note ? <p className="parent-copy text-slate-300">{r.payment_note}</p> : null}
-              {!paid && (
-                <p className="parent-copy text-slate-400">
-                  Nếu phụ huynh đã đóng rồi, nhắn thầy qua Zalo để thầy cập nhật.
-                </p>
+            <li key={block.key} className="py-3 first:pt-0 last:pb-0">
+              <p className="font-semibold text-white">{block.title}</p>
+              {block.feeNote ? <p className="parent-copy text-slate-400">{block.feeNote}</p> : null}
+              {block.months.length > 0 ? (
+                <ul className="mt-1 space-y-1">
+                  {block.months.map((m) => {
+                    const line = parentMonthLine(m);
+                    return (
+                      <li
+                        key={m.period}
+                        className={`font-semibold ${line.tone === "paid" ? "text-emerald-300" : line.tone === "waived" ? "text-slate-200" : "text-amber-300"}`}
+                      >
+                        {line.text}
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <>
+                  <p className={`mt-1 font-semibold ${paid ? "text-emerald-300" : "text-amber-300"}`}>
+                    {paid ? PAYMENT_STATUS_LABEL[block.paymentStatus] : "Thầy chưa ghi nhận khoản đóng"}
+                  </p>
+                  {block.paymentNote ? <p className="parent-copy text-slate-300">{block.paymentNote}</p> : null}
+                  {!paid && (
+                    <p className="parent-copy text-slate-400">
+                      Nếu phụ huynh đã đóng rồi, nhắn thầy qua Zalo để thầy cập nhật.
+                    </p>
+                  )}
+                </>
               )}
             </li>
           );

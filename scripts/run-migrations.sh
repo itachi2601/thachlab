@@ -17,6 +17,7 @@ FILES=(
   "supabase/migrations/20261005140000_weakest_topics.sql|Tạo RPC get_my_weakest_topics (thẻ 3 kỹ năng yếu nhất ở trang chủ HS)|Bất kỳ lúc nào (chỉ tạo hàm, không đụng dữ liệu)"
   "supabase/migrations/20261005100000_bank_grade_lop10.sql|Gắn grade=10 cho ~6.262 câu ngân hàng từ đề lớp 10 (grade đang rỗng)|Bất kỳ lúc nào (1 UPDATE ngắn, idempotent)"
   "supabase/migrations/20261005160000_push_subscriptions.sql|Tạo bảng push_subscriptions + RPC upsert_my_push_subscription / claim_push_reminders_due (nhắc 1 lần/ngày, GĐ 2.6 M4)|Bất kỳ lúc nào (chỉ tạo bảng/hàm mới)"
+  "supabase/migrations/20261006120000_thpt_fee_ledger.sql|Sổ học phí theo tháng, ẩn mặc định (staff_visible=false, không menu)|Bất kỳ lúc nào (bảng mới, không đụng dữ liệu cũ)"
 )
 # ĐÃ CHẠY 4/10/2026 22:58: 20261004120000_phu_dao_hang_cho, 20261004130000_phu_dao_xem_lai_ly_thuyet, 20261004230000_thpt_course_pairs
 # ĐÃ CHẠY 4/10/2026: 20261004100000_bank_grade_thi_thu_tn
