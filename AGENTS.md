@@ -255,3 +255,14 @@ Hai nhánh, không trộn:
 - Dữ liệu định danh học sinh (tên, điểm, phụ huynh, SĐT) chỉ đi qua Claude — không đưa vào prompt gửi Cursor/DeepSeek/Gemini.
 - Model rẻ làm → `kiem-code` kiểm trước khi merge. Lời giải do model ngoài sinh → Claude đối chiếu đáp án trước khi đăng.
 - Model chạy TRONG app (Edge Function `classify-questions`, `ai-tutor`) chọn bằng env/bảng cấu hình, không hard-code tên model (xem mục "Gọi AI provider trong code").
+
+# Chạy lệnh dài/quan trọng — luôn để thầy theo dõi được (thầy chốt 6/10/2026)
+
+Mọi phiên chạy trên Mac (có Terminal panel) phải theo một quy tắc, không tuỳ phiên:
+- Lệnh chạy lâu (>30 giây), có tiến trình cần xem (build, deploy, migration, backfill, script đăng đề/bài, `npm run dev`) hoặc cần mạng/`.env.local`
+  (Supabase CLI, `*.mts` ghi DB): **mở tab terminal bằng `ToolSearch select:mcp__terminal__run_in_terminal,mcp__terminal__read_terminal,mcp__terminal__open_terminal_tab`**
+  rồi chạy ở đó, sau đó `read_terminal` để theo dõi và báo kết quả. Không giấu vào `Bash` nền.
+- Lệnh ngắn, chỉ đọc (git status, grep, ls, tsc) vẫn dùng `Bash`.
+- `Bash` bị sandbox chặn `*.supabase.co` — gặp 403 CONNECT thì chuyển sang tab terminal, đừng thử lại.
+- Phiên cloud không có Terminal panel: in lệnh cho thầy chạy trên Mac, đừng giả vờ chạy được.
+- Lệnh ghi production vẫn theo mục "Migration Supabase": agent không tự chạy.
