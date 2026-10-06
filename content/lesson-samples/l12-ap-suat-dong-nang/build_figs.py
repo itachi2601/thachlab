@@ -131,7 +131,7 @@ for x, y, nhan in ((197, 128, "300"), (334, 62, "600")):
 b += dot(197, 128, 5, GRN) + dot(334, 62, 5, GRN)
 b += text(203, 142, "6,2", GRN, 11, "start", "700")
 b += text(352, 48, "12,4", GRN, 11, "start", "700")
-b += text(66, 84, "gấp đôi T thì gấp đôi E-đờ", ORG, 11, "start", "700")
+b += text(66, 84, "gấp đôi T thì gấp đôi động năng", ORG, 11, "start", "700")
 b += text(60, 234, "Mọi chất khí đều nằm trên cùng một đường — chỉ phụ thuộc T.", "currentColor", 11, "start", "600")
 fig4 = wrap("0 0 420 244",
             "Đồ thị động năng tịnh tiến trung bình theo nhiệt độ tuyệt đối là đường thẳng qua gốc toạ độ, dùng chung cho mọi chất khí",

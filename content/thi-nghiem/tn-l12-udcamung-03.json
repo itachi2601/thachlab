@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "lesson_id": 126,
+ "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+ "id": "tn-l12-udcamung-03",
+ "ten": "Nam châm rơi trong ống nhựa và ống đồng: dòng Foucault làm rơi chậm",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "udcamung.dong_foucault",
+  "udcamung.luc_ham_lenz",
+  "udcamung.sai_so_do_thoi_gian"
+ ],
+ "muc_tieu": "Đo thời gian nam châm rơi hết ống nhựa và ống đồng cùng chiều dài để thấy lực hãm điện từ của dòng Foucault, và tính trung bình, độ lệch của ba lần đo.",
+ "dung_cu": [
+  {
+   "ten": "Ống nhựa dài 30 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ống đồng dài 30 cm, cùng đường kính trong",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nam châm viên nhỏ đủ lọt ống",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1,
+   "ghi_chu": "sai số bấm tay khoảng ±0,1 s"
+  },
+  {
+   "ten": "Giá giữ ống thẳng đứng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dựng ống nhựa thẳng đứng, thả nam châm từ miệng trên, bấm thời gian tới lúc nam châm ra khỏi đáy.",
+   "Làm 3 lần với ống nhựa, rồi 3 lần với ống đồng.",
+   "Tính trung bình và độ lệch lớn nhất so với trung bình của mỗi ống."
+  ],
+  "quan_sat": [
+   "Ống nhựa: nam châm rơi rất nhanh, khoảng 0,25 s (0,25 · 0,24 · 0,26).",
+   "Ống đồng: nam châm rơi chậm hẳn, khoảng 1,9 s (1,8 · 2,1 · 1,9), nhưng vẫn ra hết ống."
+  ],
+  "rut_ra": [
+   "Ống nhựa gần như rơi tự do: t = √(2h/g) = √(2·0,3/9,8) ≈ 0,25 s.",
+   "Ống đồng dẫn điện: nam châm làm từ thông qua thành ống đổi, sinh dòng Foucault; theo định luật Lenz lực từ chống lại chuyển động nên nam châm gần như rơi đều với tốc độ nhỏ.",
+   "Trung bình 0,25 s và 1,9 s; độ lệch lớn nhất 0,01 s (nhựa) và 0,2 s (đồng): ống đồng tản mát nhiều hơn vì nam châm hay xoay."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Chiều dài ống",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "vt",
+   "ten": "Tốc độ giới hạn của nam châm trong ống đồng (phụ thuộc nam châm và thành ống)",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.157,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t_nhua",
+   "ten": "Thời gian rơi trong ống nhựa",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "t_dong",
+   "ten": "Thời gian rơi trong ống đồng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Ống nhựa (bỏ qua cản không khí): t_nhua = √(2h/g) = √(2·0,30/9,8) ≈ 0,247 s",
+   "Ống đồng: lực hãm tỉ lệ vận tốc, m·dv/dt = m·g − k·v, tốc độ giới hạn v_t = m·g/k, hằng số thời gian τ = v_t/g",
+   "Với h = 0,30 m, v_t = 0,157 m/s: t_đồng ≈ h/v_t + τ = 0,30/0,157 + 0,157/9,8 ≈ 1,93 s"
+  ],
+  "gia_thiet": [
+   "lực hãm Foucault tỉ lệ với vận tốc (xấp xỉ bậc nhất)",
+   "nam châm rơi dọc trục ống, không xoay",
+   "bỏ qua cản không khí"
+  ],
+  "ghi_chu": "Mô phỏng cho chọn vật liệu ống (nhựa/đồng/nhôm), vẽ đồ thị v(t): nhựa tăng đều, đồng tiến nhanh tới v_t rồi đi đều."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "Ống nhựa (s)",
+   "Ống đồng (s)"
+  ],
+  "hang": [
+   [
+    1,
+    0.25,
+    1.8
+   ],
+   [
+    2,
+    0.24,
+    2.1
+   ],
+   [
+    3,
+    0.26,
+    1.9
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ (chưa phải kết quả đo thật), chọn quanh t_nhựa ≈ 0,25 s và t_đồng ≈ 1,93 s của mô hình; trung bình 0,25 s và 1,9 s."
+ },
+ "ket_qua_ky_vong": "Ống nhựa nam châm rơi cỡ 0,25 s, ống đồng chậm hơn nhiều (cỡ vài giây), nam châm vẫn ra hết ống.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng đồng hút nam châm nên nam châm bị dính vào thành ống.",
+  "Cho rằng ống đồng nặng hơn nên nam châm rơi chậm.",
+  "Cho rằng nam châm đứng lại giữa ống đồng (thực tế vẫn rơi, chỉ chậm)."
+ ],
+ "sai_so_thuong_gap": [
+  "Bấm đồng hồ lệch lúc thả và lúc nam châm ra khỏi đáy.",
+  "Ống không thẳng đứng nên nam châm chạm thành.",
+  "Nam châm xoay khi rơi làm thời gian trong ống đồng lệch nhiều hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Hai ống cạnh nhau, thả nam châm cùng lúc; đồ thị v(t) của hai ống chồng nhau.",
+  "diem_nhan": "Ống đồng đạt tốc độ giới hạn rất nhanh rồi rơi đều; ống nhựa tăng tốc đều theo g."
+ }
+}

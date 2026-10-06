@@ -5,7 +5,7 @@
   "lesson_id": 125,
   "nguon_trong_bai": "content/lesson-samples/l12-may-phat-dien-bien-ap/theory.html",
   "id": "tn-l12-mayphatdien-01",
-  "ten": "Máy phát mini quay tay: đo tần số theo tốc độ quay để kiểm f = np",
+  "ten": "Máy phát mini quay bằng động cơ: đo tần số theo tốc độ quay để kiểm f = np",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "kien_thuc": [
@@ -14,7 +14,7 @@
   ],
   "muc_tieu": "Chứng tỏ tần số dòng điện do máy phát ra tỉ lệ với tốc độ quay và với số cặp cực: f = n·p; học sinh đọc bảng số liệu để thấy tỉ số f/n không đổi và nhận xét được sai số.",
   "dung_cu": [
-    { "ten": "Máy phát điện mini quay tay (rô-to 2 cặp cực, có ghi trên vỏ)", "so_luong": 1, "ghi_chu": "kiểm tra vỏ ghi số cặp cực trước khi làm" },
+    { "ten": "Máy phát điện mini (quay bằng động cơ hoặc khoan; rô-to 2 cặp cực, có ghi trên vỏ)", "so_luong": 1, "ghi_chu": "kiểm tra vỏ ghi số cặp cực trước khi làm" },
     { "ten": "Tần số kế hoặc đồng hồ vạn năng có thang Hz", "so_luong": 1, "ghi_chu": "sai số ±0,1 Hz" },
     { "ten": "Dây nối", "so_luong": 2 },
     { "ten": "Bóng đèn LED hoặc bóng đèn sợi đốt nhỏ", "so_luong": 1, "ghi_chu": "dùng để mắt thấy máy phát có điện" },
@@ -66,7 +66,7 @@
       [20, 39.6, 1.98],
       [25, 50.3, 2.01]
     ],
-    "ghi_chu": "Số liệu minh hoạ của một lần đo với máy phát hai cặp cực (p = 2). Giá trị lí thuyết là f = 2n; số đo lệch chút ít vì quay tay không đều và sai số của tần số kế."
+    "ghi_chu": "Số liệu minh hoạ của một lần đo với máy phát hai cặp cực (p = 2). Giá trị lí thuyết là f = 2n; số đo lệch chút ít vì tốc độ quay không đều và sai số của tần số kế."
   },
   "ket_qua_ky_vong": "Tỉ số f/n giữ nguyên (khoảng 1,96–2,01) khi đổi tốc độ quay, đúng bằng số cặp cực; đường biểu diễn f theo n là đường thẳng đi qua gốc toạ độ.",
   "hien_tuong_hay_sai": [
@@ -85,7 +85,7 @@
     "diem_nhan": "Cho thấy đường f(n) luôn là đường thẳng qua gốc và đổi độ dốc khi đổi số cặp cực — học sinh dự đoán được f trước khi bấm chạy."
   },
   "an_toan": [
-    "Máy phát mini quay tay không gây nguy hiểm về điện, nhưng không chạm vào chổi quét khi rô-to đang quay.",
+    "Máy phát mini không gây nguy hiểm về điện, nhưng không chạm vào chổi quét khi rô-to đang quay.",
     "Giữ dây gọn để không vướng vào tay quay."
   ]
 }

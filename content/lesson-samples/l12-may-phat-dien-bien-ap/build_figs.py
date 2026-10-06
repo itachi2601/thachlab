@@ -103,10 +103,10 @@ b += line(92, 148, 110, 122, BLUE, 7, cap="round")
 b += line(110, 122, 128, 96, RED, 7, cap="round")
 b += text(134, 88, "N", RED, 12, "start", "700")
 b += text(80, 164, "S", BLUE, 12, "start", "700")
-b += f'<path d="M 152 78 A 52 52 0 0 1 162 116" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f3-g)"/>'
-b += text(164, 72, "ω", GRN, 14, "start", "700")
-b += text(14, 186, "stato: 3 cuộn giống nhau", "currentColor", 11, "start", "600")
-b += text(14, 204, "rô-to: nam châm quay đều", "currentColor", 11, "start", "600")
+b += f'<path d="M 144 106 A 37 37 0 0 1 147 132" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f3-g)"/>'
+b += text(150, 99, "ω", GRN, 14, "start", "700")
+b += text(14, 216, "stato: 3 cuộn giống nhau", "currentColor", 11, "start", "600")
+b += text(14, 234, "rô-to: nam châm quay đều", "currentColor", 11, "start", "600")
 # đồ thị ba đường hình sin lệch pha nhau 2π/3
 X0, X1, Y0, A = 246, 428, 122, 44
 b += line(240, Y0, 434, Y0, "currentColor", 1.4, "", .55)
@@ -122,7 +122,7 @@ for phi, col in ((0.0, RED), (-2 * math.pi / 3, BLUE), (2 * math.pi / 3, ORG)):
         pts.append(f"{x:.1f},{y:.1f}")
     b += f'<polyline fill="none" stroke="{col}" stroke-width="2.4" points="{" ".join(pts)}"/>'
 b += text(246, 204, "u₁, u₂, u₃ lệch 1/3 chu kì", "currentColor", 11, "start", "600")
-fig3 = wrap("0 0 440 218",
+fig3 = wrap("0 0 440 244",
             "Máy phát ba pha: ba cuộn dây đặt lệch nhau 120 độ trên stato và ba suất điện động lệch pha nhau một phần ba chu kì",
             b,
             "Hình 3. Ba cuộn dây lệch 120° trên stato; nam châm quay đều cho ba suất điện động cùng tần số, cùng biên độ, lệch pha một phần ba chu kì.")
@@ -149,9 +149,9 @@ b += text(310, 96, "thứ cấp", BLUE, 11.5, "start", "700")
 b += text(310, 114, "N₂", BLUE, 11.5, "start", "700")
 b += text(220, 94, "lõi thép", "currentColor", 11, "middle", "600")
 b += text(220, 112, "ghép lá cách điện", "currentColor", 11, "middle", "600")
-b += text(14, 182, "nguồn xoay chiều · U₁/U₂ = N₁/N₂ = I₂/I₁", "currentColor", 12, "start", "700")
-b += text(14, 200, "không đổi tần số · không sinh thêm điện năng", "currentColor", 11, "start", "600")
-fig4 = wrap("0 0 440 212",
+b += text(14, 190, "nguồn xoay chiều · U₁/U₂ = N₁/N₂ = I₂/I₁", "currentColor", 12, "start", "700")
+b += text(14, 208, "không đổi tần số · không sinh thêm điện năng", "currentColor", 11, "start", "600")
+fig4 = wrap("0 0 440 220",
             "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
             b,
             "Hình 4. Hai cuộn dây trên cùng một lõi kín; lõi ghép từ lá thép silic mỏng cách điện để cắt dòng Fu-cô.")

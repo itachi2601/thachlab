@@ -74,13 +74,13 @@ fig2 = wrap("0 0 420 226", "Đường sức từ thẳng đứng có một mũi 
 # ------------------------------------------------- Hình 3: sóng điện từ
 b = defs("f3")
 b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 12.5, "start", "700")
-b += text(210, 92, "phương truyền sóng", "currentColor", 10.5, "middle", "600")
+b += text(410, 136, "phương truyền sóng", "currentColor", 10.5, "end", "600")
 AX, AMP, LAM = 146, 42, 185.0
 b += line(30, AX, 404, AX, "currentColor", 2)
 b += '<path d="M404,140 L415,146 L404,152 z" fill="currentColor"/>'
 e_pts, b_pts = [], []
 x = 30.0
-while x <= 404:
+while x <= 30 + 1.5 * LAM:
     s = math.sin(2 * math.pi * (x - 30) / LAM)
     e_pts.append((x, AX - AMP * s))
     bb = 40 * s

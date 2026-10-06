@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "lesson_id": 126,
+ "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+ "id": "tn-l12-udcamung-02",
+ "ten": "Hai cuộn đặt cạnh nhau: dòng ở cuộn 1 đổi thì cuộn 2 mới có suất điện động",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "udcamung.sac_khong_day",
+  "udcamung.hai_cuon_lien_ket",
+  "udcamung.dong_xoay_chieu_can_thiet"
+ ],
+ "muc_tieu": "Thấy năng lượng chỉ truyền sang cuộn thứ hai khi dòng ở cuộn thứ nhất đang đổi, từ đó hiểu vì sao đế sạc không dây phải dùng điện xoay chiều.",
+ "dung_cu": [
+  {
+   "ten": "Hai cuộn dây lồng được cạnh nhau",
+   "so_luong": 2
+  },
+  {
+   "ten": "Pin 1,5 V kèm công tắc",
+   "so_luong": 1,
+   "ghi_chu": "nối với cuộn 1"
+  },
+  {
+   "ten": "Điện kế số 0 ở giữa",
+   "so_luong": 1,
+   "ghi_chu": "nối với cuộn 2"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối cuộn 1 với pin qua công tắc.",
+   "Đặt cuộn 2 sát cuộn 1, nối hai đầu với điện kế có số 0 ở giữa.",
+   "Bật công tắc, giữ đóng một lúc, rồi ngắt."
+  ],
+  "quan_sat": [
+   "Kim giật lúc bật và lúc ngắt, về hai phía ngược nhau.",
+   "Giữ công tắc đóng thì kim về 0."
+  ],
+  "rut_ra": [
+   "Cuộn 2 chỉ có suất điện động khi dòng ở cuộn 1 đổi (từ thông qua cuộn 2 đổi): e₂ = −M·Δi₁/Δt.",
+   "Dòng một chiều ổn định thì Δi₁/Δt = 0 nên e₂ = 0.",
+   "Đế sạc dùng dòng xoay chiều để Δi₁/Δt khác 0 liên tục: cùng nguyên lí máy biến áp."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "M",
+   "ten": "Hệ số hỗ cảm giữa hai cuộn (minh hoạ)",
+   "don_vi": "mH",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 5,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "I0",
+   "ten": "Dòng ở cuộn 1 (biên độ hoặc độ tăng khi bật)",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian dòng đổi (lúc bật hoặc ngắt)",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.005,
+   "max": 0.1,
+   "mac_dinh": 0.02,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số dòng xoay chiều ở cuộn 1",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 100,
+   "mac_dinh": 50,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "e2",
+   "ten": "Suất điện động trong cuộn 2",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "e₂ = −M·Δi₁/Δt",
+   "Bật: i₁ tăng 0 → 0,5 A trong 0,02 s thì Δi₁/Δt = 25 A/s, e₂ = −2·10⁻³·25 = −0,05 V",
+   "Dòng xoay chiều biên độ I₀, tần số f: e₀ = 2π·f·M·I₀ = 2π·50·2·10⁻³·0,5 ≈ 0,314 V"
+  ],
+  "gia_thiet": [
+   "ghép từ hoàn toàn đều, dùng hệ số hỗ cảm M không đổi",
+   "bỏ qua điện trở của cuộn và điện kế"
+  ],
+  "ghi_chu": "Mô phỏng cho bật/giữ/ngắt công tắc rồi đổi sang nguồn xoay chiều; kim điện kế lệch theo e₂, đồ thị i₁ và e₂ vẽ chồng."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Thao tác",
+   "Δi₁/Δt (A/s)",
+   "e₂ (V)",
+   "Kim điện kế"
+  ],
+  "hang": [
+   [
+    "Bật công tắc",
+    25,
+    -0.05,
+    "giật sang một phía"
+   ],
+   [
+    "Giữ công tắc đóng",
+    0,
+    0,
+    "về 0"
+   ],
+   [
+    "Ngắt công tắc",
+    -25,
+    0.05,
+    "giật sang phía ngược lại"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ e₂ = −M·Δi₁/Δt với M = 2 mH, dòng 0,5 A đổi trong 0,02 s; chưa phải số đo thật (điện kế số 0 ở giữa chỉ cho biết chiều lệch)."
+ },
+ "ket_qua_ky_vong": "Kim điện kế giật khi bật và khi ngắt, về hai phía ngược nhau; giữ công tắc đóng thì kim về 0.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng cuộn 1 có dòng chạy ổn định thì cuộn 2 luôn nhận được điện.",
+  "Cho rằng đế sạc chỉ cần ghép đúng cuộn, không cần dòng đổi.",
+  "Cho rằng bật và ngắt cho kim lệch cùng phía."
+ ],
+ "sai_so_thuong_gap": [
+  "Hai cuộn đặt xa hoặc lệch trục thì kim lệch rất ít (ghép từ yếu).",
+  "Điện kế kém nhạy: phải bật nhanh để thấy kim giật."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "y_tuong": "Hai cuộn đặt cạnh nhau, công tắc ở cuộn 1; đồ thị i₁(t) và e₂(t) chồng nhau, chuyển được sang nguồn xoay chiều.",
+  "diem_nhan": "e₂ chỉ khác 0 khi i₁ đang đổi; tần số càng cao e₂ càng lớn."
+ }
+}

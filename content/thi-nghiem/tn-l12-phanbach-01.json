@@ -57,14 +57,14 @@
       "mỗi lần thả bi rơi vào cùng một vùng của lưới và cùng độ cao",
       "bỏ qua ghim đổ do rung bàn và do bi lăn tiếp sau va chạm"
     ],
-    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt khoảng cách ghim: lưới ghim hiện dần số ghim đổ theo từng thế hệ, kèm con số k ước lượng. Mô hình này KHÔNG đo neutron, chỉ bắt chước hình học của phản ứng dây chuyền."
+    "ghi_chu": "Mô phỏng nên cho kéo thanh trượt khoảng cách ghim: lưới ghim hiện dần số ghim đổ theo từng thế hệ, kèm nhận xét tắt dần/duy trì/lan rộng. Mô hình này KHÔNG đo neutron, chỉ bắt chước hình học của phản ứng dây chuyền."
   },
   "so_lieu_mau": {
-    "cot": ["Khoảng cách ghim (cm)", "Số ghim đổ (3 lần)", "k ước lượng"],
+    "cot": ["Khoảng cách ghim (cm)", "Số ghim đổ (3 lần)", "Nhận xét"],
     "hang": [
-      [4, "3 · 4 · 3", 0.6],
-      [3, "9 · 8 · 10", 1.0],
-      [2, "36 · 34 · 37", 1.6]
+      [4, "3 · 4 · 3", "tắt dần"],
+      [3, "9 · 8 · 10", "giữ ở mức gần nhau"],
+      [2, "36 · 34 · 37", "lan gần hết bàn"]
     ],
     "ghi_chu": "Số liệu minh hoạ từ mô hình, không phải đo thật; cột \"Số ghim đổ (3 lần)\" là tổng số ghim đổ sau khi dây chuyền dừng, còn N(n) là số đổ ở một thế hệ. Xu hướng đúng khi làm thật: khoảng cách càng nhỏ, số ghim đổ càng nhiều và ba lần đếm càng lệch nhau."
   },
@@ -81,7 +81,7 @@
   ],
   "goi_y_mo_phong": {
     "loai": "2d_dong_hoc+bang_so_lieu",
-    "y_tuong": "Lưới ghim 7 × 7 vẽ trên bàn; học sinh kéo thanh trượt khoảng cách rồi bấm \"thả bi\", các ghim đổ lan dần theo từng thế hệ, bảng số liệu tự điền số ghim đổ và k ước lượng.",
+    "y_tuong": "Lưới ghim 7 × 7 vẽ trên bàn; học sinh kéo thanh trượt khoảng cách rồi bấm \"thả bi\", các ghim đổ lan dần theo từng thế hệ, bảng số liệu tự điền số ghim đổ và nhận xét.",
     "diem_nhan": "Cho thấy chỉ một thay đổi hình học (khoảng cách) đủ đưa phản ứng từ tắt dần sang tự duy trì rồi tăng nhanh — đúng vai trò của khối lượng tới hạn và của thanh điều khiển."
   },
   "an_toan": [

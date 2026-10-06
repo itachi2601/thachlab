@@ -29,7 +29,7 @@
     ],
     "quan_sat": [
       "Tờ giấy gần như không làm giảm số đếm của chùm gamma (T ≈ 0,99).",
-      "Tấm nhôm 3 mm giảm ít (T ≈ 0,83), tấm chì 5 mm giảm rõ rệt (T ≈ 0,43, tức còn 154 xung/phút).",
+      "Tấm nhôm 3 mm giảm ít (T ≈ 0,93), tấm chì 5 mm giảm rõ rệt (T ≈ 0,43, tức còn 154 xung/phút).",
       "Muốn giảm mạnh chùm gamma phải tăng bề dày chì lên nhiều lần, không phải chỉ vài milimét."
     ],
     "rut_ra": [
@@ -50,10 +50,10 @@
   "mo_hinh": {
     "phuong_trinh": [
       "Định luật suy giảm theo bề dày: N(x) = N0 · e^(−μ·x)",
-      "Bảng μ theo vật liệu đã chọn: giấy ≈ 0 (coi như không suy giảm); nhôm 0,061 mm⁻¹; chì 0,17 mm⁻¹",
+      "Bảng μ theo vật liệu đã chọn: giấy ≈ 0 (coi như không suy giảm); nhôm 0,024 mm⁻¹; chì 0,17 mm⁻¹",
       "Hệ số truyền qua: T = N/N0",
       "Bề dày để giảm một nửa (chì): x_1/2 = ln2 / μ ≈ 0,693/0,17 ≈ 4,1 mm",
-      "Với nhôm, μ ≈ 0,061 mm⁻¹; với giấy, coi như không suy giảm đáng kể",
+      "Với nhôm, μ ≈ 0,024 mm⁻¹; với giấy, coi như không suy giảm đáng kể",
       "Số đếm chịu sai số thống kê ΔN = √N"
     ],
     "gia_thiet": [
@@ -69,11 +69,11 @@
     "hang": [
       ["không chắn", 360, 1.0],
       ["giấy (0,1 mm)", 355, 0.99],
-      ["nhôm (3 mm)", 300, 0.83],
+      ["nhôm (3 mm)", 335, 0.93],
       ["chì (5 mm)", 154, 0.43],
       ["chì (10 mm)", 66, 0.18]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ N = 360·e^(−μx) với μ = 0,061 mm⁻¹ cho nhôm và 0,17 mm⁻¹ cho chì; bài trong sách giáo khoa làm tròn tấm chì 5 mm thành 150. Sai số đếm ±√N (±19 ở mức 360), nên hai giá trị 360 và 355 coi như bằng nhau — tờ giấy thực tế không suy giảm chùm gamma."
+    "ghi_chu": "Số liệu minh hoạ tính từ N = 360·e^(−μx) với μ = 0,024 mm⁻¹ cho nhôm và 0,17 mm⁻¹ cho chì; bài trong sách giáo khoa làm tròn tấm chì 5 mm thành 150. Sai số đếm ±√N (±19 ở mức 360), nên hai giá trị 360 và 355 coi như bằng nhau — tờ giấy thực tế không suy giảm chùm gamma."
   },
   "ket_qua_ky_vong": "Giấy hầu như không ảnh hưởng tới chùm gamma, nhôm giảm ít, chì giảm mạnh và giảm theo hàm mũ khi tăng bề dày; kết luận phải chọn đúng vật liệu và đủ dày.",
   "hien_tuong_hay_sai": [

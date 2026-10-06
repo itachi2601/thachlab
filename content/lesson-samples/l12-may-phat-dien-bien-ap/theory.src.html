@@ -5,7 +5,7 @@
 <li>Nắm cấu tạo, công thức <strong>máy biến áp</strong>; phân biệt tăng áp với hạ áp.</li>
 <li>Giải thích vì sao phải <strong>tăng áp trước khi truyền tải</strong>.</li>
 </ul>
-<p>Cuối bài, em trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 8 câu tự kiểm tra.</p>
+<p>Cuối bài, em trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 7 câu tự kiểm tra và 1 câu dự đoán.</p>
 </div>
 
 <h3>I. Mở bài: từ tua-bin tới ổ cắm trong phòng em</h3>
@@ -40,11 +40,11 @@
 <li>Pháp tuyến hợp với $\vec{B}$ góc $\alpha = \omega t + \varphi$ nên $\Phi = NBS\cos\alpha$ biến thiên tuần hoàn, sinh suất điện động cảm ứng xoay chiều.</li>
 </ul>
 
-<p>$$e = E_0\cos(\omega t + \varphi)$$</p>
+<p>$$e = E_0\cos(\omega t + \varphi')$$</p>
 
 <p>$$E_0 = NBS\omega$$</p>
 
-<p>Kí hiệu: $e$, $E_0$ (V); $\omega$ (rad/s); $N$ (vòng); $S$ (m²); $B$ (T).</p>
+<p>Kí hiệu: $e$, $E_0$ (V); $\omega$ (rad/s); $N$ (vòng); $S$ (m²); $B$ (T); $\varphi' = \varphi - \dfrac{\pi}{2}$ là pha ban đầu của $e$.</p>
 
 <p>Mẹo (rô-to một cặp cực, $p = 1$): <strong>một vòng quay, một chu kì</strong>.</p>
 
@@ -81,7 +81,7 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l12-mayphatdien-01">
 <p class="tl-label">🔬 Thí nghiệm đo: quay đều và đếm tần số</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> nối máy phát mini (hai cặp cực) với tần số kế; quay đều ở $n = 5$–$25$ vòng/s (bước 5).</li>
+<li><strong>Làm:</strong> nối máy phát mini (hai cặp cực) với tần số kế; quay đều bằng động cơ/khoan ở $n = 5$–$25$ vòng/s (bước 5).</li>
 <li><strong>Quan sát:</strong> quay càng nhanh, kim càng lệch; ghi số đọc vào bảng.</li>
 <li><strong>Rút ra:</strong> tính $f/n$ từng hàng, so với $p = 2$.</li>
 </ol>
@@ -107,7 +107,7 @@
 <details class="tl-details">
 <summary>📊 Bấm xem: bảng cho thấy gì, sai số từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
 <p><strong>Rút ra:</strong> $f/n$ luôn xấp xỉ $2$, đúng bằng số cặp cực, nên $f = np$. Đến $n = 25$ vòng/s thì $f \approx 50\ \text{Hz}$ — đúng tần số lưới điện.</p>
-<p><strong>Sai số:</strong> quay tay không đều nên tốc độ thật lệch tốc độ đã định; tần số kế sai số $\pm 0{,}1\ \text{Hz}$; quay nhanh thì khung dây rung. Vì vậy $f/n$ dao động trong khoảng $1{,}96$–$2{,}01$ chứ không đúng $2{,}00$.</p>
+<p><strong>Sai số:</strong> động cơ hoặc khoan quay không đều nên tốc độ thật lệch tốc độ đã định; tần số kế sai số $\pm 0{,}1\ \text{Hz}$; quay nhanh thì khung dây rung. Vì vậy $f/n$ dao động trong khoảng $1{,}96$–$2{,}01$ chứ không đúng $2{,}00$.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -194,7 +194,7 @@
 <p class="tl-label">🔬 Thí nghiệm đo: tự quấn máy biến áp</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> quấn cuộn sơ cấp $N_1 = 200$ vòng trên lõi kín, nối nguồn $U_1 = 12\ \text{V}$; quấn cuộn thứ cấp 100, 200, 400, 600 vòng, đo $U_2$.</li>
-<li><strong>Quan sát:</strong> $U_2$ tăng theo $N_2$; ở $N_2 = 200$ vòng, vôn kế chỉ khoảng $11{,}7\ \text{V}$ — gần bằng $12\ \text{V}$ của cuộn sơ cấp.</li>
+<li><strong>Quan sát:</strong> $U_2$ tăng theo $N_2$; ở $N_2 = 200$ vòng, vôn kế chỉ khoảng $11{,}7\ \text{V}$.</li>
 <li><strong>Rút ra:</strong> so $\dfrac{U_2}{U_1}$ với $\dfrac{N_2}{N_1}$.</li>
 </ol>
 </div>
@@ -218,7 +218,7 @@
 <details class="tl-details">
 <summary>📊 Bấm xem: vì sao $U_2$ đo thấp hơn tính toán?</summary>
 <p><strong>Rút ra:</strong> tỉ số $\dfrac{U_2}{U_1}$ bám sát $\dfrac{N_2}{N_1}$ (0,48 so với 0,50; 1,96 so với 2,00; 2,92 so với 3,00), nên công thức $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}$ là đúng.</p>
-<p><strong>Sai số:</strong> một phần từ thông rò ra ngoài không khí; cuộn dây bằng đồng có điện trở gây sụt áp; vôn kế sai số khoảng $1\%$. Ba nguồn này đều làm $U_2$ thấp hơn, lệch chừng $2$–$4\%$.</p>
+<p><strong>Sai số:</strong> một phần từ thông rò ra ngoài không khí; cuộn dây bằng đồng có điện trở gây sụt áp. Hai nguồn này đều làm $U_2$ thấp hơn, lệch chừng $2$–$4\%$; riêng vôn kế sai số khoảng $1\%$ có thể lệch về cả hai phía.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -275,7 +275,7 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p>Cùng công suất, tăng điện áp nơi phát lên 10 lần thì hao phí:</p>
+<p><strong>Câu 5.</strong> Cùng công suất, tăng điện áp nơi phát lên 10 lần thì hao phí:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl125-q5" id="tl125-q5a"><label for="tl125-q5a" class="tl-opt tl-no">A. giảm 10 lần</label>
 <input type="radio" name="tl125-q5" id="tl125-q5b"><label for="tl125-q5b" class="tl-opt tl-ok">B. giảm 100 lần</label>
@@ -297,8 +297,8 @@
 <tr><th>Máy phát điện</th><th>Máy biến áp</th></tr>
 </thead>
 <tbody>
-<tr><td>Biến cơ năng thành điện năng</td><td>Đổi mức điện áp xoay chiều</td></tr>
-<tr><td><strong>Sinh ra</strong> công suất $P$</td><td><strong>Giữ nguyên</strong> công suất: $P_1 = P_2$</td></tr>
+<tr><td>Quay rô-to trong từ trường</td><td>Đổi mức điện áp xoay chiều</td></tr>
+<tr><td><strong>Chuyển cơ năng thành điện năng</strong> công suất $P$</td><td><strong>Giữ nguyên</strong> công suất: $P_1 = P_2$</td></tr>
 </tbody>
 </table>
 
@@ -307,7 +307,7 @@
 <p>Nếu tăng áp mà công suất cũng tăng thì năng lượng sinh ra từ hư không — vi phạm định luật bảo toàn năng lượng. Thực tế điện áp tăng bao nhiêu lần thì cường độ hiệu dụng giảm bấy nhiêu lần, tích $UI$ không đổi. Đường dây cao thế không tạo thêm điện; nó chỉ giúp chở điện tới nơi tiêu thụ mà mất ít hơn.</p>
 </details>
 
-<p><strong>Câu 5.</strong> Một máy biến áp lí tưởng tăng điện áp từ $220\ \text{V}$ lên $22\ \text{kV}$. Điều nào sau đây đúng?</p>
+<p><strong>Câu 6.</strong> Một máy biến áp lí tưởng tăng điện áp từ $220\ \text{V}$ lên $22\ \text{kV}$. Điều nào sau đây đúng?</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl125-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl125-q6c" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
 <input type="radio" name="tl125-q6" id="tl125-q6a"><label for="tl125-q6a" class="tl-opt tl-ok">A. Công suất hai cuộn bằng nhau, dòng giảm 100 lần</label>
@@ -315,7 +315,7 @@
 <input type="radio" name="tl125-q6" id="tl125-q6c"><label for="tl125-q6c" class="tl-opt tl-no">C. Công suất thứ cấp nhỏ hơn 100 lần</label>
 <input type="radio" name="tl125-q6" id="tl125-q6d"><label for="tl125-q6d" class="tl-opt tl-no">D. Tần số cũng tăng 100 lần</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Máy tăng áp 100 lần thì dòng điện giảm 100 lần, còn $P = UI$ không đổi. Tần số giữ nguyên vì máy biến áp không tự tạo ra dao động.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B sai vì vi phạm bảo toàn năng lượng; C sai vì công suất không phải là $U$ hay $I$ riêng lẻ; D sai vì máy biến áp không đổi tần số. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B sai vì vi phạm bảo toàn năng lượng; C sai vì máy lí tưởng không mất năng lượng: $P_2 = P_1$, không thể nhỏ hơn; D sai vì máy biến áp không đổi tần số. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>Bẫy 2: "$f = n$, không cần để ý số cặp cực"</h4>
@@ -364,7 +364,7 @@
 <p class="tl-label">🎤 Trả bài</p>
 <details class="tl-details">
 <summary>1. Nguyên tắc tạo dòng điện xoay chiều? Viết biểu thức suất điện động. <small>(nói bằng lời em trước)</small></summary>
-<p><strong>Quay khung · Từ thông biến thiên · Cảm ứng điện từ.</strong> Khung quay đều trong từ trường làm từ thông biến thiên tuần hoàn, sinh ra $e = E_0\cos(\omega t + \varphi)$ với $E_0 = NBS\omega$.</p>
+<p><strong>Quay khung · Từ thông biến thiên · Cảm ứng điện từ.</strong> Khung quay đều trong từ trường làm từ thông biến thiên tuần hoàn, sinh ra $e = E_0\cos(\omega t + \varphi')$ với $E_0 = NBS\omega$.</p>
 </details>
 
 <details class="tl-details">
@@ -446,7 +446,7 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Thử sức: đổi số vòng cuộn thứ cấp</p>
-<p><strong>Câu 6.</strong> Vẫn đề trên ($R = 2\ \Omega$, $U_1 = 500\ \text{V}$), cuộn thứ cấp <strong>10 000 vòng</strong>. Hao phí trên đường dây là:</p>
+<p><strong>Câu 7.</strong> Vẫn đề trên ($R = 2\ \Omega$, $U_1 = 500\ \text{V}$), cuộn thứ cấp <strong>10 000 vòng</strong>. Hao phí trên đường dây là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl125-q7" id="tl125-q7a"><label for="tl125-q7a" class="tl-opt tl-ok">A. $8\ \text{W}$</label>
 <input type="radio" name="tl125-q7" id="tl125-q7b"><label for="tl125-q7b" class="tl-opt tl-no">B. $32\ \text{W}$</label>
@@ -464,7 +464,6 @@
 <li><strong>Nhà máy thuỷ điện:</strong> rô-to quay chậm nên có hàng chục cặp cực.</li>
 <li><strong>Lưới truyền tải:</strong> 500 kV trên đường dây xa rồi hạ dần về 220 V.</li>
 <li><strong>Bộ sạc laptop:</strong> biến áp hạ 220 V xuống 5–20 V rồi chỉnh lưu.</li>
-<li><strong>Xưởng cơ khí:</strong> động cơ ba pha 380 V; máy hàn dùng biến áp hạ áp.</li>
 </ul>
 
 <div class="tl-box tl-box--rule">
