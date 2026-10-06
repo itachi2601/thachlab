@@ -50,3 +50,20 @@ Bài LÝ THUYẾT tương tác để thầy **chiếu giảng trực tiếp** v�
   `lesson_items` để biết bài nào vừa bị phiên khác đăng.
 - **Còn lại**: deploy (site tĩnh build đọc DB); cân nhắc bộ "Kiểm tra nhanh" 20 câu cho từng bài
   (`scripts/data/theory-quiz/<id>.json`, hiện mới có 32 và 58).
+
+## Rà soát + sửa + đăng 25 bài lớp 10 (2026-10-06)
+- **Làm gì**: 5 agent `kiem-code` rà 25 bài `content/lesson-samples/l10-*` (5 bài/agent) → 3 agent `general-purpose` sửa
+  (soạn lại ĐL3 Newton; vá 4 bài lỗi nội dung; vá 8 bài nhẹ) → 2 agent `kiem-code` soát lại độc lập → sửa nốt 3 lỗi
+  do chính lượt sửa tạo ra. Vào `main` qua merge `69bad567a` (đã push). Chưa kiểm bằng mắt trên web.
+- **Đã đăng DB** (chỉ mục `ly_thuyet`, `cap-nhat-ly-thuyet.sh --yes`): bài 47,48,49,51,52,53,55,57,58,61,63,70 (12 bài);
+  13 bài còn lại (46,50,54,56,59,60,62,64,66,68,69,71,72) đã khớp sẵn. Sao lưu ở `scripts/logs/ly-thuyet-bai<N>-backup-*.json`
+  (gitignore). ⚠ Bài 61: thầy từng khôi phục về bản cũ rồi đăng lại bản mới (sao lưu mới nhất = bản CŨ 23971 ký tự —
+  đừng chạy `khoi-phuc` bằng nó nếu không muốn mất bản mới).
+- **Quyết định chốt**: bài công cơ học (68) hàng s=0,80 m, F=0,56 N giữ nguyên (đúng mô hình μ=0,03, độ chia 0,02 N);
+  ĐL3 (61) soạn lại hẳn, prefix quiz theo lesson_id (`tl57-`, `tl58-`, `tl61-`).
+- **Còn chờ thầy**: xác nhận nguồn 3 điểm — bài an toàn (47) `theory.html:349` bước xử lý cồn đổ, `:40` "âm = xanh";
+  bài sai số (48) `:89` thứ nguyên "K" (chuẩn Θ). Các điểm này đã nằm trên web từ trước. Chưa xem bằng mắt: hình 2, 3 bài
+  ma sát ở 375px. `l10-tong-hop-phan-tich-luc/xem-thu/` (27 file, 3 MB) đã bị commit từ 4/10 và ảnh giờ lỗi thời →
+  nên `git rm --cached`. Cảnh báo độ dài còn ở nhiều bài (cao nhất bài ném 2465 từ, trần 2500) — đừng thêm chữ.
+- **Việc của phiên khác (không đụng)**: thư mục chưa theo dõi `l10-bao-toan-dong-luong`, `l10-chuyen-dong-tron-deu`,
+  `l10-dong-luong`, `l10-luc-huong-tam`, `l10-thuc-hanh-dong-luong` + `tn-l10-dongluong-01..03.json`.

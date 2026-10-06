@@ -56,7 +56,7 @@
 ## Việc mới 30/9
 - [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu (số đo 30/9); ⚠ file docs/title-bank-gaps-2026-09-30.md đã MẤT, chạy lại scripts/sql/title-bank-coverage.sql trước khi soạn
-- [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
+- [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md) · 6/10: 25 bài L10 đã rà+sửa+đăng DB (treo: thầy xác nhận nguồn bài 47/48)
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — script cap-nhat-ly-thuyet.sh; bài Giao thoa sóng L11 chờ đăng
 - [Chương 1 VL12 — lý thuyết tương tác](project_thachlab_vl12_chuong1_ly_thuyet.md) — bài 3 Nội năng/ĐL1 (lesson 4) + bài 4 Thực hành (lesson 5) soạn 4/10/2026, CHƯA ghi DB; số đo độ dài + 6 lỗi hình SVG đã gặp
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết tương tác: duyệt là đăng, không PR, ít token
