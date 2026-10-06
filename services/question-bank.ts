@@ -3,7 +3,7 @@
 // (question_topics). Trigger phía DB tự nạp câu khi đề được tạo/sửa; app chỉ đọc,
 // gắn nhãn và lấy câu ra soạn đề. Xem docs/supabase-migration-question-bank.sql.
 
-import type { Difficulty, ExamQuestion, QuestionForm } from "@/features/exams/types";
+import { QUESTION_TYPE_ORDER, type Difficulty, type ExamQuestion, type QuestionForm } from "@/features/exams/types";
 import { FIGURE_MARK_PG, FIGURE_WORDS_PG, HAS_IMAGE_PG, isMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
 
@@ -394,4 +394,61 @@ export function toExamQuestion(b: BankQuestion): ExamQuestion {
   const q = { ...b.question } as ExamQuestion & { bank_id?: number };
   delete q.bank_id;
   return { ...q, topic: b.topicName || undefined, form: b.form || undefined } as ExamQuestion;
+}
+
+// ---------- Soạn đề nhanh (bốc ngẫu nhiên theo cấu trúc đề THPT) ----------
+export interface QuickComposeSpec {
+  grade: string;
+  /** Số câu mỗi dạng. Mặc định theo đề TN THPT 2025: 18 TN · 4 Đúng–Sai · 6 Trả lời ngắn. */
+  counts: Partial<Record<ExamQuestion["type"], number>>;
+  /** Giới hạn theo chủ đề (YCCĐ); rỗng = cả khối. */
+  topicIds?: number[];
+}
+
+export const QUICK_COMPOSE_DEFAULT: Record<string, number> = { multiple_choice: 18, true_false: 4, short_answer: 6 };
+
+/** Tỉ lệ Dễ : Trung bình : Khó khi bốc; thiếu mức nào thì bù bằng mức còn lại. */
+const QUICK_MIX: [Difficulty, number][] = [
+  ["de", 0.4],
+  ["trung-binh", 0.4],
+  ["kho", 0.2],
+];
+
+function shuffled<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/** Bốc `n` câu từ `pool` theo tỉ lệ độ khó, bù phần thiếu từ câu còn lại (kể cả chưa gắn mức). */
+function pickByMix(pool: BankQuestion[], n: number): BankQuestion[] {
+  const rest = shuffled(pool);
+  const out: BankQuestion[] = [];
+  for (const [level, ratio] of QUICK_MIX) {
+    const want = Math.round(n * ratio);
+    const mine = rest.filter((q) => q.difficulty === level).slice(0, want);
+    out.push(...mine);
+    for (const q of mine) rest.splice(rest.indexOf(q), 1);
+  }
+  while (out.length < n && rest.length) out.push(rest.shift()!);
+  return shuffled(out.slice(0, n));
+}
+
+/** Soạn đề nhanh: trả về các câu đã sắp đúng cấu trúc đề thi (TN → Đ–S → TLN → TL), tránh câu thiếu hình. */
+export async function quickComposeFromBank(spec: QuickComposeSpec): Promise<{ picked: BankQuestion[]; short: string[] }> {
+  const picked: BankQuestion[] = [];
+  const short: string[] = [];
+  for (const type of QUESTION_TYPE_ORDER) {
+    const n = spec.counts[type] ?? 0;
+    if (n <= 0) continue;
+    const rows = await fetchBankQuestions({ grade: spec.grade, qtype: type, topicIds: spec.topicIds, limit: 1000 });
+    const pool = rows.filter((r) => !isMissingFigure(r.question));
+    const got = pickByMix(pool, n);
+    picked.push(...got);
+    if (got.length < n) short.push(`${type}: cần ${n}, chỉ có ${got.length}`);
+  }
+  return { picked, short };
 }
