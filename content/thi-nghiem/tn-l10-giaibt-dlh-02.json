@@ -1,0 +1,178 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+ "lesson_id": 65,
+ "nguon_trong_bai": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/theory.html",
+ "id": "tn-l10-giaibt-dlh-02",
+ "ten": "Hệ xe lăn và quả nặng nối dây qua ròng rọc",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dong_luc_hoc.quy_trinh_4_buoc",
+  "dong_luc_hoc.he_vat_noi_day",
+  "do_luong.sai_so_he_thong"
+ ],
+ "muc_tieu": "Dự đoán gia tốc của hệ hai vật nối dây bằng định luật II viết cho từng vật, rồi đo để so; nhận ra sai số hệ thống do ma sát.",
+ "dung_cu": [
+  {
+   "ten": "Xe lăn 0,40 kg và máng ngang",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ròng rọc nhẹ kẹp mép bàn, dây mảnh",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng 0,10 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện và đồng hồ đo thời gian hiện số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ dài",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối xe lăn m1 = 0,40 kg với quả nặng m2 = 0,10 kg qua ròng rọc ở mép bàn.",
+   "Thả hệ từ nghỉ, đo thời gian t xe đi s = 0,80 m bằng cổng quang; làm 5 lần.",
+   "Tính a = 2s/t² cho từng lần."
+  ],
+  "quan_sat": [
+   "t dao động quanh 0,93 s; a đo khoảng 1,77–1,89 m/s²."
+  ],
+  "rut_ra": [
+   "Bỏ ma sát, 4 bước cho a = m2·g/(m1 + m2) = 2,0 m/s².",
+   "Cả 5 lần đều nhỏ hơn 2,0 m/s² (trung bình ≈ 1,83): sai số hệ thống do ma sát trục bánh và ròng rọc, lực cản cỡ 0,08 N.",
+   "Chênh nhau giữa các lần (±0,02 s) là sai số ngẫu nhiên khi thả tay."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m1",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.4,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m2",
+   "ten": "Khối lượng quả nặng",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.5,
+   "mac_dinh": 0.1,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số cản quy đổi (ma sát trục, ròng rọc)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.1,
+   "mac_dinh": 0.02,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Quãng đường đo",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.8
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đi hết s",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.02
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc của hệ",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Lực căng dây",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m1: T − μ·m1·g = m1·a",
+   "m2: m2·g − T = m2·a",
+   "a = (m2·g − μ·m1·g)/(m1 + m2)",
+   "T = m2·(g − a)",
+   "a_đo = 2s/t²"
+  ],
+  "gia_thiet": [
+   "dây nhẹ, không dãn; ròng rọc nhẹ",
+   "lực cản quy đổi thành μ·m1·g với μ = 0,02",
+   "g = 10 m/s²",
+   "thả từ nghỉ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "t (s)",
+   "a (m/s²)"
+  ],
+  "hang": [
+   [
+    1,
+    0.93,
+    1.85
+   ],
+   [
+    2,
+    0.95,
+    1.77
+   ],
+   [
+    3,
+    0.92,
+    1.89
+   ],
+   [
+    4,
+    0.94,
+    1.81
+   ],
+   [
+    5,
+    0.93,
+    1.85
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, không phải đo thật: t sinh từ mô hình a = 1.84 m/s² (t ≈ 0.933 s) cộng dao động ±0,02 s; dự đoán bỏ ma sát 2.0 m/s²."
+ },
+ "ket_qua_ky_vong": "a đo trung bình ≈ 1.83 m/s², thấp hơn dự đoán 2.0 m/s² khoảng 8 %; mọi lần đều thấp hơn.",
+ "sai_so_thuong_gap": [
+  "Ma sát trục bánh xe, ròng rọc (hệ thống, làm a nhỏ đi)",
+  "Dùng g = 10 thay vì 9,8 (dự đoán cao hơn khoảng 2 %)",
+  "Thả tay đẩy nhẹ hoặc giữ lại (ngẫu nhiên)"
+ ],
+ "hien_tuong_hay_sai": [
+  "Viết m2·g = (m1 + m2)·a nhưng quên ma sát, rồi cho rằng số đo 'sai'.",
+  "Chọn chiều dương của vật treo hướng lên, ra phương trình sai dấu.",
+  "Cho rằng lực căng dây bằng trọng lượng quả nặng (T = m2·g)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc+bang_so_lieu",
+  "y_tuong": "Xe trên bàn nối dây qua ròng rọc với quả nặng; thanh trượt m1, m2, μ; hiện T, a; cổng quang ghi t, tự lập bảng 5 lần có nhiễu.",
+  "diem_nhan": "So cột a đo với đường a lý thuyết bỏ ma sát: mọi điểm nằm dưới đường."
+ }
+}

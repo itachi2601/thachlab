@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "lesson_id": 79,
+ "nguon_trong_bai": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/theory.html",
+ "id": "tn-l10-klr-apsuat-04",
+ "ten": "Ống chữ U chứa nước và dầu: so cột chất lỏng ở hai nhánh",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "binh_thong_nhau.cung_muc_ngang_cung_ap_suat",
+  "binh_thong_nhau.rho1h1_bang_rho2h2"
+ ],
+ "muc_tieu": "Thấy cột dầu nhẹ hơn phải cao hơn cột nước mới cân bằng: ρ₁h₁ = ρ₂h₂ tính từ mức ngang của mặt phân cách.",
+ "dung_cu": [
+  {
+   "ten": "Ống nhựa trong suốt uốn chữ U (hoặc ống mềm gắn lên bảng)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nước, dầu hoả (ρ ≈ 800 kg/m³)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước có vạch cm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ nước vào ống: mực nước hai nhánh ngang nhau.",
+   "Rót từ từ dầu vào nhánh trái tới khi cột dầu cao 10 cm.",
+   "Đo chiều cao cột nước bên phải tính từ mức ngang của mặt phân cách dầu–nước."
+  ],
+  "quan_sat": [
+   "Mặt dầu bên trái cao hơn mặt nước bên phải.",
+   "Cột nước bên phải khoảng 8 cm."
+  ],
+  "rut_ra": [
+   "Hai điểm cùng mức ngang trong cùng một chất lỏng (nước) có cùng áp suất.",
+   "ρ_dầu·h_dầu = ρ_nước·h_nước: chất lỏng nhẹ hơn cần cột cao hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h_d",
+   "ten": "Chiều cao cột dầu",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "rho_d",
+   "ten": "Khối lượng riêng chất lỏng rót thêm",
+   "don_vi": "kg/m³",
+   "kieu": "dieu_chinh",
+   "min": 600,
+   "max": 950,
+   "mac_dinh": 800,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "rho_n",
+   "ten": "Khối lượng riêng nước",
+   "don_vi": "kg/m³",
+   "kieu": "co_dinh",
+   "gia_tri": 1000
+  },
+  {
+   "ky_hieu": "h_n",
+   "ten": "Cột nước bên kia, tính từ mức mặt phân cách",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "chenh",
+   "ten": "Độ chênh hai mặt thoáng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "p_A = p_a + rho_d·g·h_d",
+   "p_B = p_a + rho_n·g·h_n",
+   "p_A = p_B ⇒ h_n = rho_d·h_d / rho_n",
+   "chenh = h_d − h_n"
+  ],
+  "gia_thiet": [
+   "dầu và nước không hoà tan",
+   "ống đủ hẹp, hai nhánh cùng tiết diện",
+   "chất lỏng đứng yên"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h dầu (cm)",
+   "h nước (cm)",
+   "chênh (cm)"
+  ],
+  "hang": [
+   [
+    4,
+    3.2,
+    0.8
+   ],
+   [
+    6,
+    4.8,
+    1.2
+   ],
+   [
+    8,
+    6.4,
+    1.6
+   ],
+   [
+    10,
+    8.0,
+    2.0
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ), ρ dầu = 800 kg/m³. Hình 3 trong bài dùng hàng 10 cm."
+ },
+ "ket_qua_ky_vong": "h_nước = 0,8·h_dầu; mặt dầu cao hơn mặt nước 0,2·h_dầu.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ hai mặt thoáng vẫn ngang nhau như khi chỉ có nước.",
+  "So áp suất ở hai điểm cùng mức nhưng một điểm nằm trong dầu, một điểm trong nước.",
+  "Đo h_nước từ đáy ống thay vì từ mức mặt phân cách."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Ống chữ U nhìn ngang; thanh trượt lượng dầu rót vào; hai mặt thoáng tự cân bằng; đường ngang A–B nhấp nháy.",
+  "diem_nhan": "Hỏi trước: mặt dầu cao hơn, thấp hơn hay ngang mặt nước bên kia."
+ }
+}

@@ -130,6 +130,82 @@
   ]
  },
  {
+  "id": "tn-l10-biendang-01",
+  "ten": "Lò xo bút bi: biến dạng đàn hồi và biến dạng dẻo",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 33. Biến dạng của vật rắn",
+  "lesson_id": 78,
+  "kien_thuc": [
+   "bien_dang.dan_hoi_va_deo",
+   "bien_dang.gioi_han_dan_hoi"
+  ],
+  "mo_phong": "2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "F"
+  ]
+ },
+ {
+  "id": "tn-l10-biendang-02",
+  "ten": "Treo quả nặng vào lò xo: đo độ cứng k",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 33. Biến dạng của vật rắn",
+  "lesson_id": 78,
+  "kien_thuc": [
+   "hooke.f_bang_k_delta_l",
+   "hooke.do_cung_k",
+   "hooke.do_thi_f_delta_l"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m",
+   "k"
+  ]
+ },
+ {
+  "id": "tn-l10-biendang-03",
+  "ten": "Hai lò xo, cùng một quả nặng: k là của từng lò xo",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 33. Biến dạng của vật rắn",
+  "lesson_id": 78,
+  "kien_thuc": [
+   "hooke.do_cung_k",
+   "hooke.k_khong_phu_thuoc_luc"
+  ],
+  "mo_phong": "do_thi+2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "F",
+   "k1",
+   "k2"
+  ]
+ },
+ {
+  "id": "tn-l10-biendang-04",
+  "ten": "Cân treo ở chợ: lò xo dài thêm tỉ lệ khối lượng treo",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 33. Biến dạng của vật rắn",
+  "lesson_id": 78,
+  "kien_thuc": [
+   "hooke.f_bang_k_delta_l",
+   "hooke.delta_l_khac_l"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "n"
+  ]
+ },
+ {
   "id": "tn-l10-co-nang-bao-toan-01",
   "ten": "Con lắc qua cổng quang: thế năng thành động năng",
   "loai": "thi_nghiem",
@@ -829,6 +905,70 @@
   ]
  },
  {
+  "id": "tn-l10-giaibt-dlh-01",
+  "ten": "Hai hộp nhẹ và nặng trượt trên ván nghiêng",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+  "lesson_id": 65,
+  "kien_thuc": [
+   "dong_luc_hoc.quy_trinh_4_buoc",
+   "dong_luc_hoc.mat_phang_nghieng",
+   "ma_sat.ap_luc_mat_nghieng"
+  ],
+  "mo_phong": "2d_dong_hoc+so_do_luc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "alpha",
+   "mu",
+   "m"
+  ]
+ },
+ {
+  "id": "tn-l10-giaibt-dlh-02",
+  "ten": "Hệ xe lăn và quả nặng nối dây qua ròng rọc",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+  "lesson_id": 65,
+  "kien_thuc": [
+   "dong_luc_hoc.quy_trinh_4_buoc",
+   "dong_luc_hoc.he_vat_noi_day",
+   "do_luong.sai_so_he_thong"
+  ],
+  "mo_phong": "2d_dong_hoc+so_do_luc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m1",
+   "m2",
+   "mu"
+  ]
+ },
+ {
+  "id": "tn-l10-giaibt-dlh-03",
+  "ten": "Kéo thùng sách bằng dây xiên trên sàn có ma sát",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+  "lesson_id": 65,
+  "kien_thuc": [
+   "dong_luc_hoc.quy_trinh_4_buoc",
+   "dong_luc_hoc.mat_ngang_ma_sat",
+   "ma_sat.ap_luc_khac_mg"
+  ],
+  "mo_phong": "so_do_luc+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "m",
+   "F",
+   "alpha",
+   "mu"
+  ]
+ },
+ {
   "id": "tn-l10-hieu-suat-01",
   "ten": "Sờ vỏ quạt bàn sau khi chạy",
   "loai": "thi_nghiem",
@@ -956,6 +1096,99 @@
   "tham_so_dieu_chinh": [
    "v",
    "goc_ho"
+  ]
+ },
+ {
+  "id": "tn-l10-klr-apsuat-01",
+  "ten": "Đo khối lượng riêng của nhôm bằng cân và bình chia độ",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+  "lesson_id": 79,
+  "kien_thuc": [
+   "khoi_luong_rieng.rho_bang_m_chia_v",
+   "khoi_luong_rieng.dac_trung_cho_chat"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "V"
+  ]
+ },
+ {
+  "id": "tn-l10-klr-apsuat-02",
+  "ten": "Bút chì ép giữa hai ngón tay: cùng áp lực, khác áp suất",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+  "lesson_id": 79,
+  "kien_thuc": [
+   "ap_suat.p_bang_f_chia_s",
+   "ap_suat.ap_luc_vuong_goc"
+  ],
+  "mo_phong": "so_do_luc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "F",
+   "S_nhon"
+  ]
+ },
+ {
+  "id": "tn-l10-klr-apsuat-03",
+  "ten": "Chai nhựa đục lỗ: áp suất nước tăng theo độ sâu, như nhau theo mọi phương",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+  "lesson_id": 79,
+  "kien_thuc": [
+   "ap_suat_chat_long.tang_theo_do_sau",
+   "ap_suat_chat_long.moi_phuong"
+  ],
+  "mo_phong": "2d_dong_hoc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h"
+  ]
+ },
+ {
+  "id": "tn-l10-klr-apsuat-04",
+  "ten": "Ống chữ U chứa nước và dầu: so cột chất lỏng ở hai nhánh",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+  "lesson_id": 79,
+  "kien_thuc": [
+   "binh_thong_nhau.cung_muc_ngang_cung_ap_suat",
+   "binh_thong_nhau.rho1h1_bang_rho2h2"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h_d",
+   "rho_d"
+  ]
+ },
+ {
+  "id": "tn-l10-klr-apsuat-05",
+  "ten": "Bể cá: áp suất và áp lực của nước lên đáy",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+  "lesson_id": 79,
+  "kien_thuc": [
+   "ap_suat_chat_long.p_bang_pa_cong_rho_g_h",
+   "ap_suat_chat_long.ap_luc_day_bang_p_nhan_s",
+   "khoi_luong_rieng.rho_bang_m_chia_v"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "h"
   ]
  },
  {
@@ -1688,6 +1921,67 @@
   "tham_so_dieu_chinh": [
    "h",
    "x"
+  ]
+ },
+ {
+  "id": "tn-l10-thuchanhthl-01",
+  "ten": "Tổng hợp hai lực đồng quy bằng ba lực kế: so F vẽ với lực cân bằng đo được",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 22. Thực hành: Tổng hợp lực",
+  "lesson_id": 67,
+  "kien_thuc": [
+   "thuchanhthl.hinh_binh_hanh",
+   "thuchanhthl.luc_can_bang",
+   "thuchanhthl.sai_so_so_sanh",
+   "thuchanhthl.so_0_luc_ke"
+  ],
+  "mo_phong": "so_do_luc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "F1",
+   "F2",
+   "alpha",
+   "so_0"
+  ]
+ },
+ {
+  "id": "tn-l10-thuchanhthl-02",
+  "ten": "Tổng hợp hai lực song song cùng chiều bằng thanh nhẹ và hai lực kế",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 10,
+  "bai": "Bài 22. Thực hành: Tổng hợp lực",
+  "lesson_id": 67,
+  "kien_thuc": [
+   "thuchanhthl.luc_song_song",
+   "thuchanhthl.quy_tac_momen_hai_luc"
+  ],
+  "mo_phong": "so_do_luc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "dA",
+   "P"
+  ]
+ },
+ {
+  "id": "tn-l10-thuchanhthl-03",
+  "ten": "Treo vật bằng hai dây: lực căng mỗi dây tăng khi góc giữa hai dây tăng",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 10,
+  "bai": "Bài 22. Thực hành: Tổng hợp lực",
+  "lesson_id": 67,
+  "kien_thuc": [
+   "thuchanhthl.hinh_binh_hanh",
+   "thuchanhthl.luc_cang_hai_day"
+  ],
+  "mo_phong": "so_do_luc+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "alpha",
+   "P"
   ]
  },
  {

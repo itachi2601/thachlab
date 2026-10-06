@@ -1,0 +1,217 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 22. Thực hành: Tổng hợp lực",
+ "lesson_id": 67,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/theory.html",
+ "id": "tn-l10-thuchanhthl-01",
+ "ten": "Tổng hợp hai lực đồng quy bằng ba lực kế: so F vẽ với lực cân bằng đo được",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thuchanhthl.hinh_binh_hanh",
+  "thuchanhthl.luc_can_bang",
+  "thuchanhthl.sai_so_so_sanh",
+  "thuchanhthl.so_0_luc_ke"
+ ],
+ "muc_tieu": "Tổng hợp F1, F2 bằng hình bình hành theo tỉ lệ xích 1 cm ứng 0,5 N, so F vẽ với F3 đọc trên lực kế 3 qua độ lệch δ và sai số Δ = 0,3 N; nhận ra lần 3 vượt Δ là do đổi sang lực kế 3 khác chưa chỉnh số 0.",
+ "dung_cu": [
+  {
+   "ten": "Giá đỡ + bảng giấy",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 5 N, độ chia 0,1 N",
+   "so_luong": 3
+  },
+  {
+   "ten": "Dây mảnh buộc nút O",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vật nặng móc vào lực kế 3",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ (1 mm), thước đo độ (1°), bút",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chỉnh số 0 từng lực kế ở đúng tư thế dùng; buộc ba dây vào nút O; hai lực kế móc vào hai chốt trên giá, lực kế 3 treo vật.",
+   "Đợi nút O đứng yên; chấm hai điểm trên mỗi dây để đánh dấu phương; đọc F1, F2, F3 (nhìn thẳng mặt chỉ).",
+   "Lấy giấy ra, nối các chấm qua O, đo góc α giữa hai dây; làm 3 lần, đổi vị trí chốt hoặc đổi vật."
+  ],
+  "quan_sat": [
+   "Bảng F1, F2, α, F3 ba lần; nút O đứng yên mỗi lần; F3 giảm khi α tăng nếu F1, F2 giữ nguyên."
+  ],
+  "rut_ra": [
+   "Vẽ hình bình hành cạnh F1/0,5 và F2/0,5 cm, hợp góc α; đo chéo (cm), F vẽ = chéo·0,5; δ = |F vẽ − F3|; Δ = ΔF1 + ΔF2 + ΔF3 = 0,3 N.",
+   "Ba lần: δ = 0,05; 0,05; 0,35 N so với Δ = 0,3 N; lần 3 vượt vì đổi sang lực kế 3 khác chưa chỉnh số 0 (treo thẳng đứng, chưa móc vật chỉ 0,3 N; hai lần đầu lực kế 3 đã chỉnh đúng); trừ số lệch thì F3 = 1,8 N, δ = 0,05 N. Sai số thước (0,05 N) và góc (~0,02 N) không đủ giải thích; vượt sát Δ thì tìm nguyên nhân hệ thống trước khi kết luận."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F1",
+   "ten": "Lực kế 1 chỉ",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2.5,
+   "mac_dinh": 2.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "F2",
+   "ten": "Lực kế 2 chỉ",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 2.5,
+   "mac_dinh": 2.0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc giữa hai dây ở nút O",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 180,
+   "mac_dinh": 60,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "so_0",
+   "ten": "Số 0 lệch của lực kế 3",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.4,
+   "mac_dinh": 0,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "xich",
+   "ten": "Tỉ lệ xích",
+   "don_vi": "N/cm",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "dF",
+   "ten": "Sai số một lực kế (độ chia)",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "F3",
+   "ten": "Lực kế 3 chỉ (treo vật)",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "F_ve",
+   "ten": "Lực tổng hợp đo trên hình vẽ",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "delta",
+   "ten": "Độ lệch |F vẽ − F3|",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "Delta",
+   "ten": "Sai số gộp ΔF1 + ΔF2 + ΔF3",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = sqrt(F1² + F2² + 2·F1·F2·cos α) (α là góc giữa hai lực chung gốc O)",
+   "chéo (cm) = F/0,5 làm tròn 0,1 cm; F vẽ = chéo·0,5",
+   "F3 (lý tưởng) = F vì nút O đứng yên: F3 cân bằng với F",
+   "F3 đọc = F3 thật + số 0 lệch",
+   "δ = |F vẽ − F3 đọc|; Δ = 3·0,1 = 0,3 N (cận trên: ΔF vẽ ≤ ΔF1 + ΔF2)"
+  ],
+  "gia_thiet": [
+   "dây không dãn, bỏ qua ma sát ở nút",
+   "sai số góc ±1° gây dưới 0,03 N trong ba lần đo nên bỏ qua",
+   "số liệu F1, F2, F3 là số đọc minh hoạ (độ chia 0,1 N), F3 thật lệch công thức không quá 0,2 N",
+   "F1, F2 tối đa 2,5 N để F3 ≈ F không vượt thang lực kế 5 N"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "F1 (N)",
+   "F2 (N)",
+   "α (độ)",
+   "F3 đọc (N)",
+   "số 0 lệch (N)",
+   "chéo (cm)",
+   "F vẽ (N)",
+   "δ (N)",
+   "Δ (N)"
+  ],
+  "hang": [
+   [
+    1,
+    1.6,
+    2.1,
+    80,
+    2.9,
+    0.0,
+    5.7,
+    2.85,
+    0.05,
+    0.3
+   ],
+   [
+    2,
+    2.0,
+    2.0,
+    60,
+    3.5,
+    0.0,
+    6.9,
+    3.45,
+    0.05,
+    0.3
+   ],
+   [
+    3,
+    1.4,
+    1.6,
+    110,
+    2.1,
+    0.3,
+    3.5,
+    1.75,
+    0.35,
+    0.3
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, không phải đo thật. Lần 3: đổi sang lực kế 3 khác chưa chỉnh số 0, F3 đọc 2,1 N gồm số 0 lệch 0,3 N (hai lần đầu số 0 đã chỉnh đúng); trừ ra 1,8 N thì δ = 0,05 N. Lần 1, 2: δ ≤ Δ; lần 3 (chưa trừ): δ = 0,35 N > Δ."
+ },
+ "ket_qua_ky_vong": "Hai lần δ ≤ Δ ngay; lần 3 vượt Δ do dùng lực kế 3 khác chưa chỉnh số 0 và hết vượt sau khi trừ số lệch: hợp quy tắc hình bình hành trong sai số.",
+ "hien_tuong_hay_sai": [
+  "Cộng hai độ lớn F1 + F2 như hai lực cùng phương, cùng chiều.",
+  "Dùng góc bù 180° − α khi vẽ hai lực chung gốc.",
+  "Quên chỉnh số 0 đúng tư thế rồi coi δ > Δ là quy tắc sai.",
+  "Cho rằng lực tổng hợp F cùng chiều với F3 thay vì ngược chiều."
+ ],
+ "sai_so_thuong_gap": "Số 0 lực kế lệch khi đổi tư thế; chấm phương dây không chính xác; đọc số nhìn xiên mặt chỉ; nút O chưa đứng yên; thước đo độ đặt lệch tâm O.",
+ "an_toan": "Vật nặng móc chắc vào lực kế, không đứng dưới vật khi treo.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Nút O trên bảng; kéo hai lực kế quanh O đổi F1, F2, α; vẽ hình bình hành, lực kế 3 hiện F; bảng tự tính chéo, F vẽ, δ, Δ.",
+  "diem_nhan": "Thanh trượt 'số 0 lệch' của lực kế 3: kéo lên thì δ vượt Δ; đặt về 0 thì δ trở lại dưới Δ."
+ }
+}

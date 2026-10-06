@@ -1,0 +1,120 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 22. Thực hành: Tổng hợp lực",
+ "lesson_id": 67,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/theory.html",
+ "id": "tn-l10-thuchanhthl-03",
+ "ten": "Treo vật bằng hai dây: lực căng mỗi dây tăng khi góc giữa hai dây tăng",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thuchanhthl.hinh_binh_hanh",
+  "thuchanhthl.luc_cang_hai_day"
+ ],
+ "muc_tieu": "Thấy lực căng mỗi dây T = P/(2cos(α/2)) tăng theo α và bằng P khi α = 120°; hai lực tổng hợp luôn bằng P.",
+ "dung_cu": [
+  {
+   "ten": "Vật nặng 2,0 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai dây giống nhau + hai lực kế 5 N",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai móc dời được trên giá",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo vật P = 2,0 N bằng hai dây giống nhau, đối xứng, hai lực kế đo lực căng T.",
+   "Dời hai móc để α = 60°, 90°, 120°, 150° và đọc T."
+  ],
+  "quan_sat": [
+   "T tăng dần theo α: 1,15; 1,41; 2,00; 3,86 N."
+  ],
+  "rut_ra": [
+   "T = P/(2cos(α/2)); hai lực T tổng hợp bằng P hướng lên; α = 120° thì T = P."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc giữa hai dây",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 160,
+   "mac_dinh": 60,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng vật",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 4.0,
+   "mac_dinh": 2.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Lực căng mỗi dây",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "2·T·cos(α/2) = P",
+   "T = P/(2cos(α/2))"
+  ],
+  "gia_thiet": [
+   "hai dây giống nhau, đối xứng, dây không dãn",
+   "số liệu tính từ mô hình, làm tròn 0,01 N"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (độ)",
+   "T (N)",
+   "T so với P (%)"
+  ],
+  "hang": [
+   [
+    60,
+    1.15,
+    58.0
+   ],
+   [
+    90,
+    1.41,
+    71.0
+   ],
+   [
+    120,
+    2.0,
+    100.0
+   ],
+   [
+    150,
+    3.86,
+    193.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. P = 2,0 N."
+ },
+ "ket_qua_ky_vong": "T tăng từ 1,15 N (α = 60°) lên 3,86 N (α = 150°); bằng P tại α = 120°.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng mỗi dây luôn chịu P/2.",
+  "Cho rằng dây xoạc ra thì lực căng giảm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "y_tuong": "Khung ảnh treo bằng hai dây, kéo hai đinh xa nhau; hai mũi tên T và hình bình hành lực; đồ thị T theo α.",
+  "diem_nhan": "Kéo α lên gần 180° thì T tăng rất nhanh; dây phơi căng thẳng thì dễ đứt."
+ }
+}

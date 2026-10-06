@@ -1,0 +1,142 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "lesson_id": 79,
+ "nguon_trong_bai": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/theory.html",
+ "id": "tn-l10-klr-apsuat-01",
+ "ten": "Đo khối lượng riêng của nhôm bằng cân và bình chia độ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "khoi_luong_rieng.rho_bang_m_chia_v",
+  "khoi_luong_rieng.dac_trung_cho_chat"
+ ],
+ "muc_tieu": "Đo m và V của bốn khối nhôm to nhỏ khác nhau, thấy ρ = m/V gần như không đổi; đọc bảng và nhận ra sai số đọc thể tích lớn nhất ở khối nhỏ.",
+ "dung_cu": [
+  {
+   "ten": "Cân điện tử (độ chia 0,1 g)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bình chia độ 100 cm³ (độ chia 1 cm³)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khối nhôm to nhỏ khác nhau, buộc chỉ",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cân từng khối nhôm, ghi m.",
+   "Đọc mực nước trong bình chia độ, thả khối nhôm chìm hẳn, đọc lại mực nước; V = mực sau − mực trước.",
+   "Tính ρ = m/V cho từng khối."
+  ],
+  "quan_sat": [
+   "Bốn khối có m và V rất khác nhau nhưng ρ đều gần 2,7 g/cm³.",
+   "Khối nhỏ nhất (8 cm³) cho ρ lệch nhiều nhất so với 2,70 g/cm³."
+  ],
+  "rut_ra": [
+   "Khối lượng riêng là đặc trưng của chất, không phụ thuộc vật to hay nhỏ.",
+   "Sai số chủ yếu do đọc vạch bình chia độ (±0,5 cm³); V càng nhỏ, sai số tương đối càng lớn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "rho",
+   "ten": "Khối lượng riêng của nhôm",
+   "don_vi": "g/cm³",
+   "kieu": "co_dinh",
+   "gia_tri": 2.7
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Thể tích khối nhôm",
+   "don_vi": "cm³",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 60,
+   "mac_dinh": 25,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng đọc trên cân",
+   "don_vi": "g",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "V_doc",
+   "ten": "Thể tích đọc trên bình chia độ",
+   "don_vi": "cm³",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  },
+  {
+   "ky_hieu": "rho_do",
+   "ten": "Khối lượng riêng tính được",
+   "don_vi": "g/cm³",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m = rho·V",
+   "rho_do = m / V_doc",
+   "sai số tương đối của rho_do ≈ ΔV/V + Δm/m (ΔV = 0,5 cm³, Δm = 0,05 g)"
+  ],
+  "gia_thiet": [
+   "nhôm đặc, không có lỗ rỗng",
+   "khối chìm hẳn, không mang theo bọt khí",
+   "thể tích sợi chỉ bỏ qua"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (g)",
+   "V (cm³)",
+   "ρ = m/V (g/cm³)"
+  ],
+  "hang": [
+   [
+    21.1,
+    8,
+    2.64
+   ],
+   [
+    40.9,
+    15,
+    2.73
+   ],
+   [
+    67.2,
+    25,
+    2.69
+   ],
+   [
+    99.7,
+    37,
+    2.69
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ (chưa phải số đo thật), lệch quanh ρ = 2,70 g/cm³ trong giới hạn đọc ±0,5 cm³ của bình chia độ."
+ },
+ "ket_qua_ky_vong": "ρ của mọi khối ≈ 2,7 g/cm³ = 2700 kg/m³; độ lệch giảm dần khi khối to lên.",
+ "sai_so_thuong_gap": [
+  "Đọc vạch bình chia độ ±0,5 cm³, nặng nhất ở khối nhỏ.",
+  "Bọt khí bám vào khối làm V đọc lớn hơn thật, ρ ra nhỏ hơn.",
+  "Nhìn vạch không ngang tầm mắt (đọc mép cong của mặt nước)."
+ ],
+ "hien_tuong_hay_sai": [
+  "Nghĩ khối to thì khối lượng riêng lớn hơn.",
+  "Lấy mực nước sau làm V mà không trừ mực trước.",
+  "Đổi g/cm³ ra kg/m³ bằng cách nhân 1000 nhầm thành chia 1000."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo khối nhôm thả vào bình chia độ, mực nước dâng; đọc vạch có nhiễu ±0,5 cm³; bảng tự thêm hàng m – V – ρ; đồ thị m theo V là đường thẳng qua gốc, hệ số góc = ρ.",
+  "diem_nhan": "Hỏi trước: khối to gấp 4 thì ρ gấp mấy (vẫn 1)."
+ }
+}

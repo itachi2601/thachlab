@@ -1,0 +1,149 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 22. Thực hành: Tổng hợp lực",
+ "lesson_id": 67,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/theory.html",
+ "id": "tn-l10-thuchanhthl-02",
+ "ten": "Tổng hợp hai lực song song cùng chiều bằng thanh nhẹ và hai lực kế",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thuchanhthl.luc_song_song",
+  "thuchanhthl.quy_tac_momen_hai_luc"
+ ],
+ "muc_tieu": "Thấy hợp lực hai lực song song cùng chiều bằng tổng độ lớn và đặt tại điểm treo vật; F_A·d_A = F_B·d_B.",
+ "dung_cu": [
+  {
+   "ten": "Thanh nhẹ AB dài 60 cm (trọng lượng nhỏ hơn 0,1 N)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lực kế 5 N, độ chia 0,1 N",
+   "so_luong": 2
+  },
+  {
+   "ten": "Vật nặng 3,0 N có móc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá đỡ, dây treo, thước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chỉnh số 0 hai lực kế khi treo thẳng đứng; treo hai đầu thanh AB vào hai lực kế, thanh nằm ngang.",
+   "Treo vật P = 3,0 N cách A một đoạn d_A = 10; 20; 30 cm, đọc F_A và F_B."
+  ],
+  "quan_sat": [
+   "F_A + F_B = 3,0 N mọi lần; lực kế ở đầu gần vật chỉ lớn hơn."
+  ],
+  "rut_ra": [
+   "Hợp lực F = F_A + F_B = P đặt tại điểm treo vật; F_A·d_A = F_B·d_B (d_B = 60 − d_A)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "dA",
+   "ten": "Khoảng cách từ A tới điểm treo vật",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 55,
+   "mac_dinh": 20,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Trọng lượng vật",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 1.0,
+   "max": 5.0,
+   "mac_dinh": 3.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài thanh",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 60
+  },
+  {
+   "ky_hieu": "FA",
+   "ten": "Lực kế A chỉ",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "FB",
+   "ten": "Lực kế B chỉ",
+   "don_vi": "N",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d_B = L − d_A",
+   "F_A = P·d_B/L; F_B = P·d_A/L",
+   "F_A + F_B = P; F_A·d_A = F_B·d_B"
+  ],
+  "gia_thiet": [
+   "thanh nhẹ, bỏ qua trọng lượng thanh",
+   "số đọc làm tròn 0,1 N, ba vị trí chọn để tích F·d là số nguyên"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d_A (cm)",
+   "d_B (cm)",
+   "F_A (N)",
+   "F_B (N)",
+   "F_A·d_A (N·cm)",
+   "F_B·d_B (N·cm)"
+  ],
+  "hang": [
+   [
+    10,
+    50,
+    2.5,
+    0.5,
+    25.0,
+    25.0
+   ],
+   [
+    20,
+    40,
+    2.0,
+    1.0,
+    40.0,
+    40.0
+   ],
+   [
+    30,
+    30,
+    1.5,
+    1.5,
+    45.0,
+    45.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình thanh nhẹ, không phải đo thật."
+ },
+ "ket_qua_ky_vong": "F_A + F_B = 3,0 N ở cả ba vị trí; F_A·d_A = F_B·d_B.",
+ "hien_tuong_hay_sai": [
+  "Lấy hiệu hai lực như hai lực ngược chiều.",
+  "Quên đổi d_B = L − d_A.",
+  "Cho rằng điểm đặt của hợp lực nằm giữa thanh bất kể vị trí treo vật."
+ ],
+ "sai_so_thuong_gap": "Số 0 lực kế chỉnh sai tư thế; thanh không thật nằm ngang; trọng lượng thanh không nhỏ.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Thanh AB, vật trượt dọc thanh; hai lực kế hiện F_A, F_B; bảng tính tổng và mô-men.",
+  "diem_nhan": "Kéo vật về phía A: F_A tăng, F_B giảm, tổng vẫn bằng P."
+ }
+}

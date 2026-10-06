@@ -1,0 +1,119 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 33. Biến dạng của vật rắn",
+ "lesson_id": 78,
+ "nguon_trong_bai": "content/lesson-samples/l10-bien-dang-vat-ran/theory.html",
+ "id": "tn-l10-biendang-04",
+ "ten": "Cân treo ở chợ: lò xo dài thêm tỉ lệ khối lượng treo",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "hooke.f_bang_k_delta_l",
+  "hooke.delta_l_khac_l"
+ ],
+ "muc_tieu": "Thấy cái tỉ lệ với khối lượng treo là độ dãn Δl, không phải chiều dài l của lò xo.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo treo + túi 200 g (hoặc cân treo đồ chơi)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đo chiều dài lò xo khi chưa treo (20 cm).",
+   "Treo 1 túi 200 g, đo lại (22 cm).",
+   "Dự đoán rồi đo khi treo 2 túi."
+  ],
+  "quan_sat": [
+   "2 túi: lò xo dài 24 cm, không phải 44 cm."
+  ],
+  "rut_ra": [
+   "Độ dãn tỉ lệ khối lượng treo: 1 túi dãn 2 cm, 2 túi dãn 4 cm.",
+   "Cân treo chia vạch đều theo độ dãn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Số túi 200 g",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 1,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Độ cứng",
+   "don_vi": "N/m",
+   "kieu": "co_dinh",
+   "gia_tri": 100.0
+  },
+  {
+   "ky_hieu": "l0",
+   "ten": "Chiều dài tự nhiên",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 20.0
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài khi treo",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = n·m·g",
+   "|Δl| = F / k",
+   "l = l0 + |Δl|"
+  ],
+  "gia_thiet": [
+   "g = 10 m/s²",
+   "lò xo nhẹ, trong giới hạn đàn hồi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "số túi",
+   "m (g)",
+   "l (cm)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0,
+    20.0
+   ],
+   [
+    1,
+    200.0,
+    22.0
+   ],
+   [
+    2,
+    400.0,
+    24.0
+   ],
+   [
+    3,
+    600.0,
+    26.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình; khớp câu dự đoán ở mục I (đáp án 24 cm)."
+ },
+ "ket_qua_ky_vong": "Chiều dài tăng đều 2 cm mỗi túi: l = 20 + 2n (cm).",
+ "hien_tuong_hay_sai": [
+  "Gấp đôi cả chiều dài (44 cm) thay vì gấp đôi độ dãn.",
+  "Gấp đôi chiều dài tự nhiên (40 cm)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo từng túi vào móc lò xo, thước bên cạnh; ẩn chiều dài lò xo cho tới khi học sinh nhập dự đoán.",
+  "diem_nhan": "Bắt nhập dự đoán chiều dài khi treo 2 túi trước khi cho thả."
+ }
+}

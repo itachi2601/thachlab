@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+ "lesson_id": 65,
+ "nguon_trong_bai": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/theory.html",
+ "id": "tn-l10-giaibt-dlh-01",
+ "ten": "Hai hộp nhẹ và nặng trượt trên ván nghiêng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dong_luc_hoc.quy_trinh_4_buoc",
+  "dong_luc_hoc.mat_phang_nghieng",
+  "ma_sat.ap_luc_mat_nghieng"
+ ],
+ "muc_tieu": "Thấy hai vật cùng chất liệu đáy, khác khối lượng, trượt xuống dốc với cùng gia tốc; giải thích bằng a = g(sinα − μcosα).",
+ "dung_cu": [
+  {
+   "ten": "Tấm ván phẳng dài khoảng 1 m, kê nghiêng khoảng 30°",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hộp bút nhựa giống nhau (một rỗng, một nhét đầy tẩy và bút)",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kê tấm ván nghiêng khoảng 30°.",
+   "Đặt hai hộp cạnh nhau ở đầu ván, thả cùng lúc."
+  ],
+  "quan_sat": [
+   "Hai hộp tới chân ván gần như cùng lúc dù một hộp nặng hơn nhiều."
+  ],
+  "rut_ra": [
+   "Chiếu định luật II lên trục dọc dốc: mg·sinα − μ·mg·cosα = m·a, m giản ước.",
+   "Gia tốc trượt a = g(sinα − μcosα) không phụ thuộc khối lượng; hai bạn trên cầu trượt đôi cũng vậy."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc nghiêng",
+   "don_vi": "°",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 60,
+   "mac_dinh": 30,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát trượt",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.6,
+   "mac_dinh": 0.3,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng hộp",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài ván",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc trượt",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian trượt hết ván",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "N = m·g·cosα",
+   "a = g·(sinα − μ·cosα)",
+   "t = √(2L/a)",
+   "trượt nếu tanα > μ_n"
+  ],
+  "gia_thiet": [
+   "hộp coi là chất điểm, thả từ nghỉ",
+   "bỏ qua sức cản không khí",
+   "μ = 0,3 (giả định, nhựa trên gỗ)",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "a (m/s²)",
+   "t (s)"
+  ],
+  "hang": [
+   [
+    0.05,
+    2.4,
+    0.91
+   ],
+   [
+    0.1,
+    2.4,
+    0.91
+   ],
+   [
+    0.2,
+    2.4,
+    0.91
+   ],
+   [
+    0.4,
+    2.4,
+    0.91
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ), α = 30°, μ = 0,3, L = 1 m: mọi khối lượng cho cùng a và t."
+ },
+ "ket_qua_ky_vong": "a ≈ 2.40 m/s², t ≈ 0.91 s cho mọi khối lượng.",
+ "hien_tuong_hay_sai": [
+  "Dự đoán hộp nặng xuống nhanh hơn vì lực kéo xuống dốc lớn hơn.",
+  "Dự đoán hộp nhẹ xuống nhanh hơn vì ma sát nhỏ hơn.",
+  "Tính áp lực bằng mg thay vì mg·cosα."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Hai hộp khác khối lượng trên cùng một dốc; thanh trượt α, μ, m; mũi tên P, N, F_ms tỉ lệ độ lớn; đồng hồ đo thời gian tới chân dốc.",
+  "diem_nhan": "Cho học sinh chọn trước hộp nào tới trước rồi mới bấm thả."
+ }
+}

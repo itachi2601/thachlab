@@ -1,0 +1,122 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "lesson_id": 79,
+ "nguon_trong_bai": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/theory.html",
+ "id": "tn-l10-klr-apsuat-03",
+ "ten": "Chai nhựa đục lỗ: áp suất nước tăng theo độ sâu, như nhau theo mọi phương",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "ap_suat_chat_long.tang_theo_do_sau",
+  "ap_suat_chat_long.moi_phuong"
+ ],
+ "muc_tieu": "Thấy tia nước ở lỗ sâu hơn phun mạnh hơn, và các lỗ cùng độ sâu phun mạnh như nhau theo mọi hướng.",
+ "dung_cu": [
+  {
+   "ten": "Chai nhựa 1,5 lít",
+   "so_luong": 2
+  },
+  {
+   "ten": "Đinh nung nóng để đục lỗ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khay hứng nước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chai 1: đục 3 lỗ thẳng hàng dọc thân, ở ba độ cao khác nhau.",
+   "Chai 2: đục 4 lỗ quanh thân, cùng một độ cao.",
+   "Bịt lỗ, đổ đầy nước, rồi mở cùng lúc."
+  ],
+  "quan_sat": [
+   "Chai 1: tia ở lỗ thấp nhất (sâu nhất) phun mạnh nhất.",
+   "Chai 2: bốn tia phun mạnh như nhau về bốn phía."
+  ],
+  "rut_ra": [
+   "Áp suất nước tăng theo độ sâu.",
+   "Ở cùng độ sâu, nước ép như nhau theo mọi phương."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ sâu của lỗ dưới mặt nước",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.25,
+   "mac_dinh": 0.1,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "rho",
+   "ten": "Khối lượng riêng nước",
+   "don_vi": "kg/m³",
+   "kieu": "co_dinh",
+   "gia_tri": 1000
+  },
+  {
+   "ky_hieu": "p_du",
+   "ten": "Áp suất dư tại lỗ",
+   "don_vi": "Pa",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ tia nước ra khỏi lỗ",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "p_du = rho·g·h",
+   "v = √(2·g·h) (định luật Torricelli, ngoài chương trình)"
+  ],
+  "gia_thiet": [
+   "lỗ nhỏ so với chai",
+   "mực nước coi như không đổi trong lúc quan sát",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (cm)",
+   "p dư (Pa)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    5.0,
+    500.0,
+    1.0
+   ],
+   [
+    10.0,
+    1000.0,
+    1.41
+   ],
+   [
+    15.0,
+    1500.0,
+    1.73
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ); bài chỉ dùng định tính."
+ },
+ "ket_qua_ky_vong": "Lỗ sâu hơn có áp suất dư lớn hơn nên tia ra nhanh hơn; các lỗ cùng độ sâu như nhau.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nước chỉ ép xuống đáy, không ép ngang lên thành chai.",
+  "Nghĩ lỗ trên cao phun mạnh hơn vì 'nước ở trên đầy hơn'."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Chai nhìn ngang, kéo vị trí lỗ lên xuống; tia nước là parabol với tốc độ ra √(2gh); mực nước tụt dần.",
+  "diem_nhan": "Cho học sinh đoán lỗ nào phun mạnh nhất trước khi mở nút."
+ }
+}

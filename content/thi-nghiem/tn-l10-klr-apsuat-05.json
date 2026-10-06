@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "lesson_id": 79,
+ "nguon_trong_bai": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/theory.html",
+ "id": "tn-l10-klr-apsuat-05",
+ "ten": "Bể cá: áp suất và áp lực của nước lên đáy",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "ap_suat_chat_long.p_bang_pa_cong_rho_g_h",
+  "ap_suat_chat_long.ap_luc_day_bang_p_nhan_s",
+  "khoi_luong_rieng.rho_bang_m_chia_v"
+ ],
+ "muc_tieu": "Tính khối lượng nước, áp suất do nước và áp suất toàn phần ở đáy, áp lực lên đáy, áp suất tại một điểm giữa bể.",
+ "dung_cu": [
+  {
+   "ten": "Bể cá thành thẳng đứng, đáy 60 cm × 40 cm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ nước cao 50 cm.",
+   "Tính áp suất tại đáy và tại điểm M cách đáy 20 cm."
+  ],
+  "quan_sat": [
+   "Áp suất do nước ở đáy 5000 Pa; tại M (sâu 30 cm) 3000 Pa."
+  ],
+  "rut_ra": [
+   "Độ sâu đo từ mặt thoáng xuống, không đo từ đáy lên.",
+   "Thành thẳng đứng: áp lực của nước lên đáy bằng trọng lượng nước (1200 N)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Mực nước",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.6,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "S",
+   "ten": "Diện tích đáy",
+   "don_vi": "m²",
+   "kieu": "co_dinh",
+   "gia_tri": 0.24
+  },
+  {
+   "ky_hieu": "p_a",
+   "ten": "Áp suất khí quyển",
+   "don_vi": "Pa",
+   "kieu": "co_dinh",
+   "gia_tri": 100000.0
+  },
+  {
+   "ky_hieu": "p_nuoc",
+   "ten": "Áp suất do nước ở đáy",
+   "don_vi": "Pa",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Áp lực của nước lên đáy",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m = rho·S·h",
+   "p_nuoc = rho·g·h",
+   "p = p_a + rho·g·h",
+   "F = p_nuoc·S"
+  ],
+  "gia_thiet": [
+   "nước đứng yên",
+   "g = 10 m/s²",
+   "áp suất khí quyển ép lên mặt nước và dưới đáy bể như nhau"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "độ sâu (cm)",
+   "p do nước (Pa)",
+   "p toàn phần (Pa)"
+  ],
+  "hang": [
+   [
+    10.0,
+    1000.0,
+    101000.0
+   ],
+   [
+    30.0,
+    3000.0,
+    103000.0
+   ],
+   [
+    50.0,
+    5000.0,
+    105000.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; hàng 30 cm là điểm M, hàng 50 cm là đáy bể của bài toán mẫu."
+ },
+ "ket_qua_ky_vong": "m = 120 kg; p đáy do nước 5000 Pa, toàn phần 1,05·10⁵ Pa; F = 1200 N; p tại M (do nước) 3000 Pa.",
+ "hien_tuong_hay_sai": [
+  "Lấy 20 cm (khoảng cách tới đáy) làm độ sâu của M.",
+  "Cộng áp suất khí quyển khi đề chỉ hỏi áp suất do nước.",
+  "Thế h = 50 (cm) vào ρgh."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Bể nhìn ngang, kéo điểm M lên xuống; đồng hồ hiện áp suất dư và toàn phần; thanh trượt mực nước.",
+  "diem_nhan": "Hỏi trước: điểm M cách đáy 20 cm thì độ sâu là bao nhiêu."
+ }
+}

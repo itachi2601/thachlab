@@ -1,0 +1,154 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+ "lesson_id": 65,
+ "nguon_trong_bai": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/theory.html",
+ "id": "tn-l10-giaibt-dlh-03",
+ "ten": "Kéo thùng sách bằng dây xiên trên sàn có ma sát",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dong_luc_hoc.quy_trinh_4_buoc",
+  "dong_luc_hoc.mat_ngang_ma_sat",
+  "ma_sat.ap_luc_khac_mg"
+ ],
+ "muc_tieu": "Áp 4 bước cho vật trên mặt ngang; thấy kéo xiên lên làm áp lực N = mg − F·sinα nhỏ hơn mg, nên ma sát giảm.",
+ "dung_cu": [
+  {
+   "ten": "Thùng carton đựng sách, dây kéo, lực kế (nếu làm thật)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kéo thùng sách 20 kg trên sàn bằng lực ngang 80 N (μ = 0,3), rồi bằng lực 100 N xiên lên các góc khác nhau (μ = 0,2)."
+  ],
+  "quan_sat": [
+   "Kéo ngang: N = 200 N, a = 1 m/s².",
+   "Kéo xiên 30°: N = 150 N, ma sát 30 N."
+  ],
+  "rut_ra": [
+   "Chiếu lên Oy để tìm N, không mặc định N = mg.",
+   "Chiếu lên Ox: F·cosα − μN = m·a."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng thùng",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 40,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 200,
+   "mac_dinh": 100,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "alpha",
+   "ten": "Góc dây so với sàn",
+   "don_vi": "°",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 80,
+   "mac_dinh": 30,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "mu",
+   "ten": "Hệ số ma sát trượt",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.6,
+   "mac_dinh": 0.2,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Áp lực",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "a",
+   "ten": "Gia tốc",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "N = m·g − F·sinα",
+   "F_ms = μ·N",
+   "a = (F·cosα − μ·N)/m"
+  ],
+  "gia_thiet": [
+   "thùng trượt (đã thắng ma sát nghỉ)",
+   "F·sinα < m·g (thùng không bị nhấc khỏi sàn)",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α (°)",
+   "N (N)",
+   "F_ms (N)",
+   "a (m/s²)"
+  ],
+  "hang": [
+   [
+    0,
+    200.0,
+    40.0,
+    3.0
+   ],
+   [
+    15,
+    174.1,
+    34.8,
+    3.09
+   ],
+   [
+    30,
+    150.0,
+    30.0,
+    2.83
+   ],
+   [
+    45,
+    129.3,
+    25.9,
+    2.24
+   ],
+   [
+    60,
+    113.4,
+    22.7,
+    1.37
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ), m = 20 kg, F = 100 N, μ = 0,2. Hàng α = 30° là Câu 1 trong bài."
+ },
+ "ket_qua_ky_vong": "N giảm khi α tăng; a lớn nhất quanh tanα = μ (α ≈ 11°), rồi giảm vì F·cosα giảm.",
+ "hien_tuong_hay_sai": [
+  "Coi N = mg khi dây kéo xiên.",
+  "Cộng F·sinα vào N thay vì trừ.",
+  "Lấy F·cosα làm áp lực."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+do_thi",
+  "y_tuong": "Thùng trên sàn, xoay góc dây; mũi tên P, N, F, F_ms co giãn theo độ lớn; đồ thị a theo α.",
+  "diem_nhan": "Hỏi trước: kéo xiên lên có nhẹ tay hơn kéo ngang không?"
+ }
+}

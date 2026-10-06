@@ -1,0 +1,118 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 33. Biến dạng của vật rắn",
+ "lesson_id": 78,
+ "nguon_trong_bai": "content/lesson-samples/l10-bien-dang-vat-ran/theory.html",
+ "id": "tn-l10-biendang-01",
+ "ten": "Lò xo bút bi: biến dạng đàn hồi và biến dạng dẻo",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "bien_dang.dan_hoi_va_deo",
+  "bien_dang.gioi_han_dan_hoi"
+ ],
+ "muc_tieu": "Thấy cùng một lò xo: lực nhỏ cho biến dạng đàn hồi (thôi lực thì về), lực vượt giới hạn đàn hồi cho biến dạng dẻo (không về).",
+ "dung_cu": [
+  {
+   "ten": "Lò xo lấy từ bút bi bấm",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kéo nhẹ hai đầu lò xo rồi thả.",
+   "Kéo thật mạnh cho lò xo duỗi hẳn ra rồi thả."
+  ],
+  "quan_sat": [
+   "Kéo nhẹ: lò xo co về đúng chiều dài cũ.",
+   "Kéo mạnh: lò xo dài ra hẳn, các vòng thưa mãi, không co về."
+  ],
+  "rut_ra": [
+   "Lực nhỏ: biến dạng đàn hồi.",
+   "Lực vượt giới hạn đàn hồi: biến dạng dẻo, lò xo hỏng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Độ cứng (trong giới hạn đàn hồi)",
+   "don_vi": "N/m",
+   "kieu": "co_dinh",
+   "gia_tri": 200.0
+  },
+  {
+   "ky_hieu": "F_gh",
+   "ten": "Lực ứng với giới hạn đàn hồi",
+   "don_vi": "N",
+   "kieu": "co_dinh",
+   "gia_tri": 4.0
+  },
+  {
+   "ky_hieu": "dl",
+   "ten": "Độ dãn",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "nếu F ≤ F_gh: Δl = F / k, thôi lực thì Δl dư = 0",
+   "nếu F > F_gh: không còn tỉ lệ, thôi lực còn độ dãn dư > 0"
+  ],
+  "gia_thiet": [
+   "k = 200 N/m, F_gh = 4 N là số minh hoạ cho lò xo bút bi",
+   "kéo dọc trục lò xo"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "F (N)",
+   "Δl khi đang kéo (cm)",
+   "sau khi thả"
+  ],
+  "hang": [
+   [
+    1.0,
+    0.5,
+    "về đúng chiều dài cũ"
+   ],
+   [
+    2.0,
+    1.0,
+    "về đúng chiều dài cũ"
+   ],
+   [
+    3.0,
+    1.5,
+    "về đúng chiều dài cũ"
+   ],
+   [
+    6.0,
+    "không còn tỉ lệ",
+    "dài hẳn ra, không về"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình; thí nghiệm định tính, bài không hiện bảng."
+ },
+ "ket_qua_ky_vong": "Trong giới hạn đàn hồi lò xo về đúng chiều dài cũ; vượt giới hạn thì còn độ dãn dư.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng lò xo kéo mạnh tới đâu cũng co về được.",
+  "Cho rằng biến dạng dẻo chỉ xảy ra với vật mềm như đất nặn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Lò xo nằm ngang, thanh trượt F; thả tay thì lò xo co về; vượt F_gh thì vòng giãn thưa vĩnh viễn và nút 'Làm lại' mới khôi phục.",
+  "diem_nhan": "Hỏi trước: kéo 6 N rồi thả, lò xo có về chiều dài cũ không?"
+ }
+}

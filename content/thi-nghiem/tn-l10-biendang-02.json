@@ -1,0 +1,162 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 33. Biến dạng của vật rắn",
+ "lesson_id": 78,
+ "nguon_trong_bai": "content/lesson-samples/l10-bien-dang-vat-ran/theory.html",
+ "id": "tn-l10-biendang-02",
+ "ten": "Treo quả nặng vào lò xo: đo độ cứng k",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "hooke.f_bang_k_delta_l",
+  "hooke.do_cung_k",
+  "hooke.do_thi_f_delta_l"
+ ],
+ "muc_tieu": "Đo chiều dài lò xo khi treo 1–5 quả nặng 50 g, tính F/|Δl| để thấy lực đàn hồi tỉ lệ độ dãn và tìm k.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo xoắn nhẹ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng 50 g có móc",
+   "so_luong": 5
+  },
+  {
+   "ten": "Giá treo + thước mm đặt dọc lò xo",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo lò xo cạnh thước, đọc chiều dài tự nhiên l0 = 10,0 cm.",
+   "Lần lượt móc 1, 2, 3, 4, 5 quả nặng 50 g; chờ đứng yên rồi đọc chiều dài l."
+  ],
+  "quan_sat": [
+   "Mỗi quả nặng thêm, lò xo dài thêm gần như đều nhau, khoảng 2 cm.",
+   "F/|Δl| ≈ 25,8; 25,1; 24,9; 24,8; 25,0 N/m."
+  ],
+  "rut_ra": [
+   "Vật đứng yên: lực đàn hồi cân bằng trọng lượng, F = mg.",
+   "F/|Δl| gần như không đổi, trung bình k ≈ 25,1 N/m; hàng đầu lệch nhiều nhất vì độ dãn nhỏ nhất nên sai số đọc thước tương đối lớn nhất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Tổng khối lượng treo",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Độ cứng lò xo",
+   "don_vi": "N/m",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 100,
+   "mac_dinh": 25.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "l0",
+   "ten": "Chiều dài tự nhiên",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài đọc trên thước",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "F",
+   "ten": "Lực đàn hồi = trọng lượng",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = m·g",
+   "|Δl| = F / k",
+   "l = l0 + |Δl|",
+   "k = F / |Δl|"
+  ],
+  "gia_thiet": [
+   "g = 9,8 m/s²",
+   "lò xo nhẹ, trong giới hạn đàn hồi",
+   "đọc thước ±0,1 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (g)",
+   "F (N)",
+   "l (cm)",
+   "Δl (cm)",
+   "F/Δl (N/m)"
+  ],
+  "hang": [
+   [
+    50.0,
+    0.49,
+    11.9,
+    1.9,
+    25.8
+   ],
+   [
+    100.0,
+    0.98,
+    13.9,
+    3.9,
+    25.1
+   ],
+   [
+    150.0,
+    1.47,
+    15.9,
+    5.9,
+    24.9
+   ],
+   [
+    200.0,
+    1.96,
+    17.9,
+    7.9,
+    24.8
+   ],
+   [
+    250.0,
+    2.45,
+    19.8,
+    9.8,
+    25.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ (chưa phải số đo thật): l lệch mô hình k = 25 N/m không quá 0,1 cm (sai số đọc thước). Bài hiện các cột F, l, Δl; học sinh tự tính F/Δl."
+ },
+ "ket_qua_ky_vong": "F/|Δl| gần như không đổi, k ≈ 25.1 N/m; các điểm (Δl, F) nằm trên một đường thẳng qua gốc.",
+ "hien_tuong_hay_sai": [
+  "Tính F/l (chiều dài) thay cho F/Δl nên tỉ số giảm dần.",
+  "Quên đổi cm ra m nên k nhỏ đi 100 lần.",
+  "Cho rằng k tăng khi treo thêm quả nặng."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc thước ±0,1 cm: sai số tương đối lớn nhất ở lần dãn ít nhất.",
+  "Đọc khi quả nặng còn dao động lên xuống."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "y_tuong": "Lò xo treo cạnh thước; kéo thả quả nặng vào móc; bảng tự thêm hàng F – l – Δl có nhiễu ±0,1 cm; đồ thị F theo Δl vẽ dần từng chấm.",
+  "diem_nhan": "Hỏi trước: treo 4 quả thì dài bao nhiêu (≈ 17,8 cm, không phải 4 × 11,9)."
+ }
+}

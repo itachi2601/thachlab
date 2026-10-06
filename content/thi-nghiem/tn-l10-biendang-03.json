@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 33. Biến dạng của vật rắn",
+ "lesson_id": 78,
+ "nguon_trong_bai": "content/lesson-samples/l10-bien-dang-vat-ran/theory.html",
+ "id": "tn-l10-biendang-03",
+ "ten": "Hai lò xo, cùng một quả nặng: k là của từng lò xo",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "hooke.do_cung_k",
+  "hooke.k_khong_phu_thuoc_luc"
+ ],
+ "muc_tieu": "Thấy cùng một lực, lò xo cứng dãn ít, lò xo mềm dãn nhiều; k thuộc về lò xo chứ không đổi theo lực.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo dây to và lò xo dây mảnh",
+   "so_luong": 2
+  },
+  {
+   "ten": "Quả nặng 100 g",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá treo + thước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo quả nặng 100 g vào lò xo dây to, đọc độ dãn.",
+   "Chuyển quả nặng sang lò xo dây mảnh, đọc độ dãn."
+  ],
+  "quan_sat": [
+   "Lò xo dây to dãn khoảng 1.96 cm, lò xo dây mảnh dãn khoảng 3.92 cm."
+  ],
+  "rut_ra": [
+   "Cùng lực, độ dãn khác nhau vì k khác nhau.",
+   "Muốn đổi k phải đổi lò xo (vật liệu, độ dày dây, kích thước), không phải đổi lực."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "F",
+   "ten": "Lực kéo chung",
+   "don_vi": "N",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "k1",
+   "ten": "Độ cứng lò xo dây to",
+   "don_vi": "N/m",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 100,
+   "mac_dinh": 50.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "k2",
+   "ten": "Độ cứng lò xo dây mảnh",
+   "don_vi": "N/m",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 100,
+   "mac_dinh": 25.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "dl",
+   "ten": "Độ dãn mỗi lò xo",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "|Δl1| = F / k1",
+   "|Δl2| = F / k2",
+   "đồ thị F theo Δl: hai đường thẳng qua gốc, độ dốc k1, k2"
+  ],
+  "gia_thiet": [
+   "g = 9,8 m/s²",
+   "k1 = 50 N/m, k2 = 25 N/m là số minh hoạ",
+   "trong giới hạn đàn hồi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "lò xo",
+   "k (N/m)",
+   "Δl với 100 g (cm)"
+  ],
+  "hang": [
+   [
+    "lò xo dây to",
+    50.0,
+    1.96
+   ],
+   [
+    "lò xo dây mảnh",
+    25.0,
+    3.92
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Hình 5 của bài dùng cùng hai độ cứng, đọc ở F = 1 N: 2 cm và 4 cm."
+ },
+ "ket_qua_ky_vong": "Cùng lực, độ dãn tỉ lệ nghịch với k; mỗi lò xo có một đường thẳng F–Δl riêng.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng kéo mạnh hơn thì k lớn hơn.",
+  "Cho rằng lò xo dài hơn thì luôn cứng hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+2d_dong_hoc",
+  "y_tuong": "Hai lò xo treo cạnh nhau, cùng thanh trượt F; đồ thị F–Δl vẽ hai đường; kéo F lên thì điểm chạy dọc đường thẳng, độ dốc không đổi.",
+  "diem_nhan": "Hỏi trước: tăng F gấp đôi thì độ dốc (k) có đổi không?"
+ }
+}
