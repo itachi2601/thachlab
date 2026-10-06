@@ -20,6 +20,9 @@ const env = (k: string) => {
 const argv = process.argv.slice(2);
 const lessonId = Number(argv[argv.indexOf("--lesson") + 1]);
 const dry = argv.includes("--dry-run"), yes = argv.includes("--yes");
+// --giu-cu: các dạng ĐANG có trong DB (chưa phải dạng mới) được nối vào sau dạng mới, không bị ghi đè.
+const keepOld = argv.includes("--giu-cu");
+const fromBackup = argv.includes("--cu-tu") ? argv[argv.indexOf("--cu-tu") + 1] : undefined; // khôi phục dạng cũ từ file sao lưu
 if (!Number.isInteger(lessonId)) fail("cần --lesson <id>");
 
 const file = path.join(DATA_DIR, `${lessonId}.json`);
@@ -61,6 +64,12 @@ if (!yes) {
   rl.close();
   if (!/^y$/i.test(a.trim())) { console.log("Dừng."); process.exit(0); }
 }
-const upd = await sb.from("lesson_items").update({ questions }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
+let finalQ: unknown[] = questions;
+if (keepOld || fromBackup) {
+  const old = (fromBackup ? JSON.parse(fs.readFileSync(fromBackup, "utf8")).questions : item.questions) as { problem_html?: string }[];
+  finalQ = [...questions, ...old.filter((q) => !q.problem_html)];
+  console.log(`Giữ ${finalQ.length - questions.length} dạng cũ sau ${questions.length} dạng mới.`);
+}
+const upd = await sb.from("lesson_items").update({ questions: finalQ }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
 if (upd.error || upd.data?.length !== 1) fail(upd.error?.message ?? "UPDATE không đúng 1 dòng");
 console.log(`✓ Đã ghi. Hoàn tác: cập nhật lại questions từ ${path.relative(root, backup)}. Rồi: bash scripts/deploy.sh`);
