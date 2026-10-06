@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ExamResultSummary, { type ResultBadge } from "@/components/exams/ExamResultSummary";
+import ExamAdaptiveFeedback from "@/components/exams/ExamAdaptiveFeedback";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
 import Button from "@/components/ui/Button";
 import type { Exam, QuestionResponse } from "@/features/exams/types";
@@ -99,6 +100,12 @@ export default function ExamDoneView({
             {` · ${exam.title} · ${formatClock(usedSeconds)}`}
           </>
         }
+      />
+      <ExamAdaptiveFeedback
+        questions={exam.questions}
+        responses={responses}
+        lessonByTopic={lessonByTopic}
+        detailAnchor="xem-lai-bai-lam"
       />
       {hasEssay && (
         <p className="mt-3 text-center text-xs text-violet-300">
