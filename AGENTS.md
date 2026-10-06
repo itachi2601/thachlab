@@ -81,6 +81,14 @@ và cũng không có `SUPABASE_SERVICE_ROLE_KEY` / mật khẩu DB. Khóa servic
 đưa vào hội thoại. Claude Code chạy trên macOS có sẵn `.env.local` và CLI đã `link` —
 đó là nơi duy nhất chạy được.
 
+## Trước khi chạy migration — kiểm số thứ tự và kiểm đã chạy chưa
+- Mảng `FILES` trong `scripts/run-migrations.sh` bị nhiều phiên cùng sửa, số thứ tự đổi bất ngờ (06/10/2026: `--only 4` chạy nhầm
+  file sổ học phí thay vì dọn trùng). Ngay trước khi chạy: `bash scripts/run-migrations.sh --list`, đối chiếu **tên file**, rồi mới
+  dùng `--only N` — hoặc chạy thẳng `supabase db query --linked -f <file>`.
+- Kiểm migration đã chạy chưa: xem `scripts/logs/` (log cùng tên file), bảng sao lưu `*_backup_*` đã tồn tại chưa, và mục
+  "ĐANG CHỜ" / "ĐÃ CHẠY" trong `STATE.md`. Chạy lại migration có `create table` sao lưu sẽ báo lỗi "already exists".
+  Bổ sung sau khi file đã chạy → tách file mới (bảng sao lưu tên khác), không sửa file cũ.
+
 ## Sau khi migration chạy xong
 - Sinh lại sơ đồ bảng: `node scripts/gen-database-doc.mjs` (ghi `docs/DATABASE.md` + `DATABASE-RPC.md`),
   rồi chuyển mục vừa chạy từ "ĐANG CHỜ" trong `docs/STATE.md` sang `docs/STATE-archive.md`.
