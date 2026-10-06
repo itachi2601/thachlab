@@ -1,0 +1,169 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 29. Định luật bảo toàn động lượng",
+ "lesson_id": 74,
+ "nguon_trong_bai": "content/lesson-samples/l10-bao-toan-dong-luong/theory.html",
+ "id": "tn-l10-baotoandl-01",
+ "ten": "Va chạm mềm trên ray đệm khí, đo bằng cổng quang",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "baotoandl.he_kin",
+  "baotoandl.dinh_luat",
+  "baotoandl.va_cham_mem"
+ ],
+ "muc_tieu": "Đo vận tốc xe 1 trước va chạm và vận tốc chung của hai xe dính nhau sau va chạm với 4 giá trị m2; thấy m1·v1 ≈ (m1 + m2)·v trong phạm vi sai số, còn động năng giảm rõ.",
+ "dung_cu": [
+  {
+   "ten": "Ray đệm khí nằm ngang + máy thổi khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe trượt 0,20 kg gắn đầu kim",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe trượt gắn miếng sáp, có chỗ thêm gia trọng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian, tấm chắn 10 mm",
+   "so_luong": 2
+  },
+  {
+   "ten": "Gia trọng 0,10 kg",
+   "so_luong": 4
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cân bằng ray cho nằm ngang (xe đặt yên không tự trôi).",
+   "Đặt xe 2 (khối lượng m2) đứng yên giữa hai cổng quang.",
+   "Đẩy nhẹ xe 1 (m1 = 0,20 kg): cổng quang 1 đo v1; hai xe dính nhau qua cổng quang 2 đo v.",
+   "Thêm gia trọng cho m2 = 0,20; 0,30; 0,40; 0,60 kg, lặp lại: 4 lần đo."
+  ],
+  "quan_sat": [
+   "Hai xe dính nhau đi chậm hơn xe 1 lúc đầu; m2 càng lớn, v càng nhỏ.",
+   "v1 (m/s): 0,52; 0,60; 0,57; 0,66. v (m/s): 0,25; 0,24; 0,19; 0,16."
+  ],
+  "rut_ra": [
+   "p trước = m1·v1 ≈ p sau = (m1 + m2)·v, lệch không quá 3,8 %, nằm trong sai số.",
+   "p sau thường không lớn hơn p trước; nếu lớn hơn thì nằm trong phạm vi sai số (ma sát còn sót thường chỉ làm mất bớt động lượng).",
+   "Động năng sau va chạm chỉ còn m1/(m1 + m2) động năng trước: va chạm mềm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m1",
+   "ten": "Khối lượng xe 1",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.2
+  },
+  {
+   "ky_hieu": "m2",
+   "ten": "Khối lượng xe 2",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Vận tốc xe 1 trước va chạm",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc chung sau va chạm",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.005
+  },
+  {
+   "ky_hieu": "p_truoc",
+   "ten": "Động lượng trước",
+   "don_vi": "kg·m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "p_sau",
+   "ten": "Động lượng sau",
+   "don_vi": "kg·m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "p_truoc = m1·v1",
+   "p_sau = (m1 + m2)·v",
+   "lý tưởng: v = m1·v1/(m1 + m2)",
+   "Wđ_sau/Wđ_truoc = m1/(m1 + m2)"
+  ],
+  "gia_thiet": [
+   "ray nằm ngang, ma sát rất nhỏ (mô hình mất 1,5–2,5 % động lượng giữa hai cổng)",
+   "va chạm xảy ra rất nhanh so với thời gian chạy giữa hai cổng",
+   "v ghi làm tròn 0,01 m/s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m2 (kg)",
+   "v1 (m/s)",
+   "v (m/s)",
+   "p trước (kg·m/s)",
+   "p sau (kg·m/s)"
+  ],
+  "hang": [
+   [
+    0.2,
+    0.52,
+    0.25,
+    0.104,
+    0.1
+   ],
+   [
+    0.3,
+    0.6,
+    0.24,
+    0.12,
+    0.12
+   ],
+   [
+    0.4,
+    0.57,
+    0.19,
+    0.114,
+    0.114
+   ],
+   [
+    0.6,
+    0.66,
+    0.16,
+    0.132,
+    0.128
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: v = m1·v1/(m1 + m2) nhân hệ số mất mát 0.975, 0.985, 0.98, 0.975 rồi làm tròn 0,01 m/s; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "p sau ≈ p trước, lệch 0 đến 3,8 % và luôn ≤ p trước; lần 1 (m2 = m1) động năng còn 50 %.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng sau va chạm hai xe giữ nguyên vận tốc của xe 1.",
+  "Cho rằng động năng cũng được bảo toàn như động lượng.",
+  "Coi chênh lệch vài phần trăm là định luật sai."
+ ],
+ "sai_so_thuong_gap": [
+  "Ray không thật nằm ngang làm xe tăng/giảm tốc giữa hai cổng.",
+  "Làm tròn v tới 0,01 m/s: sai số tương đối lớn khi v nhỏ (khoảng 3 % ở v = 0,16 m/s)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt m2 và v1; hai xe chạy trên ray, cổng quang hiện số; bảng tự điền p trước, p sau, Wđ trước, Wđ sau.",
+  "diem_nhan": "Hỏi trước: m2 = m1 thì sau va chạm hai xe chạy nhanh bằng mấy phần xe 1 lúc đầu?"
+ }
+}

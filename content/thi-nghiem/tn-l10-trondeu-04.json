@@ -1,0 +1,118 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 31. Động học của chuyển động tròn đều",
+ "lesson_id": 76,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-tron-deu/theory.html",
+ "id": "tn-l10-trondeu-04",
+ "ten": "Giọt nước văng khỏi bánh xe đạp: bay theo phương tiếp tuyến",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "trondeu.van_toc_tiep_tuyen"
+ ],
+ "muc_tieu": "Thấy vectơ vận tốc trong chuyển động tròn nằm theo tiếp tuyến: vật rời đường tròn thì bay thẳng theo tiếp tuyến.",
+ "dung_cu": [
+  {
+   "ten": "Xe đạp (bánh Ø660 mm) dựng ngược trên yên và tay lái",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bình xịt nước nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm bìa cứng chắn phía sau để thấy vệt nước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Xịt nước lên lốp rồi quay bánh xe bằng tay; người xem đứng lệch sang bên, tránh mặt phẳng bánh."
+  ],
+  "quan_sat": [
+   "Giọt nước bắn thành vệt thẳng, sát vành bánh, không bắn theo bán kính ra ngoài."
+  ],
+  "rut_ra": [
+   "Giọt nước rời bánh thì giữ vận tốc ở chỗ rời: phương tiếp tuyến, chiều theo chiều quay."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Tốc độ quay của bánh xe",
+   "don_vi": "vòng/phút",
+   "kieu": "dieu_chinh",
+   "min": 60,
+   "max": 300,
+   "mac_dinh": 180,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Đường kính bánh xe",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.66
+  },
+  {
+   "ky_hieu": "omega",
+   "ten": "Tốc độ góc của bánh xe",
+   "don_vi": "rad/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ giọt nước lúc rời vành bánh",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "omega = 2·pi·n/60",
+   "v = omega·D/2",
+   "hướng v: tiếp tuyến, vuông góc bán kính tại điểm rời"
+  ],
+  "gia_thiet": [
+   "bỏ qua trọng lực và lực cản trong đoạn bay ngắn ngay sau khi rời bánh"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n (vòng/phút)",
+   "ω (rad/s)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    60,
+    6.3,
+    2.1
+   ],
+   [
+    180,
+    18.8,
+    6.2
+   ],
+   [
+    300,
+    31.4,
+    10.4
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình với bánh Ø660 mm; 180 vòng/phút là tốc độ quay bằng tay khá nhanh."
+ },
+ "ket_qua_ky_vong": "Giọt nước rời bánh với tốc độ khoảng 6 m/s theo đúng phương tiếp tuyến tại điểm tiếp xúc.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ giọt nước bắn theo bán kính, ra xa tâm.",
+  "Nghĩ giọt nước còn cong theo vành bánh một đoạn rồi mới bay thẳng.",
+  "Lấy đúng phương tiếp tuyến nhưng ngược chiều quay."
+ ],
+ "an_toan": "Đứng lệch sang bên, không đưa tay vào nan hoa khi bánh đang quay.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Bánh xe quay, chọn điểm trên vành; giọt nước rời bánh vẽ vệt thẳng; bật/tắt mũi tên vận tốc tiếp tuyến.",
+  "diem_nhan": "Cho học sinh đoán hướng tia lửa trước khi giọt nước rời bánh ở điểm thấp nhất."
+ }
+}

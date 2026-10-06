@@ -1,0 +1,129 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 31. Động học của chuyển động tròn đều",
+ "lesson_id": 76,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-tron-deu/theory.html",
+ "id": "tn-l10-trondeu-02",
+ "ten": "Một radian dài bao nhiêu: quấn sợi chỉ dài bằng bán kính quanh nắp nồi",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "trondeu.radian"
+ ],
+ "muc_tieu": "Thấy được 1 rad là góc chắn cung dài bằng bán kính, khoảng 57°, không phụ thuộc cỡ đường tròn.",
+ "dung_cu": [
+  {
+   "ten": "Nắp nồi hoặc đĩa tròn các cỡ",
+   "so_luong": 3
+  },
+  {
+   "ten": "Sợi chỉ, kéo, thước kẻ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ, bút dạ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đo bán kính r của nắp; cắt sợi chỉ dài đúng bằng r.",
+   "Quấn sát sợi chỉ theo vành nắp từ điểm A, đánh dấu điểm cuối B; nối A, B với tâm O.",
+   "Đo góc AOB bằng thước đo độ; làm lại với hai nắp cỡ khác."
+  ],
+  "quan_sat": [
+   "Góc AOB đo được khoảng 57° ở cả ba nắp."
+  ],
+  "rut_ra": [
+   "1 rad là góc ở tâm chắn cung dài bằng bán kính: θ = s/r.",
+   "Cả vòng dài 2πr nên ứng với 2π rad, tức 180° = π rad."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "r",
+   "ten": "Bán kính nắp",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 15,
+   "mac_dinh": 10,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "s",
+   "ten": "Độ dài sợi chỉ quấn theo vành",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 30,
+   "mac_dinh": 10,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "theta",
+   "ten": "Góc ở tâm chắn cung",
+   "don_vi": "rad",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "theta_do",
+   "ten": "Góc đo bằng thước đo độ",
+   "don_vi": "°",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "theta = s/r (rad)",
+   "theta_do = theta·180/pi"
+  ],
+  "gia_thiet": [
+   "sợi chỉ không giãn, quấn sát vành",
+   "vành nắp là đường tròn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (cm)",
+   "s (cm)",
+   "θ lí thuyết (°)",
+   "θ đo (°)"
+  ],
+  "hang": [
+   [
+    8.0,
+    8.0,
+    57.3,
+    56
+   ],
+   [
+    10.0,
+    10.0,
+    57.3,
+    58
+   ],
+   [
+    12.5,
+    12.5,
+    57.3,
+    57
+   ]
+  ],
+  "ghi_chu": "Cột θ đo là số minh hoạ (lệch ±1° do quấn chỉ và đọc thước đo độ); chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Góc chắn cung dài bằng bán kính luôn xấp xỉ 57,3° = 1 rad với mọi cỡ nắp.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nắp to thì 1 rad lớn hơn.",
+  "Nhầm 1 rad với 1°.",
+  "Dùng θ = s·r hoặc r/s thay vì s/r."
+ ],
+ "sai_so_thuong_gap": "Sợi chỉ quấn không sát vành hoặc bị giãn; xác định tâm nắp lệch; đọc thước đo độ lệch 1°.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo độ dài cung s trên đường tròn bán kính r; góc θ = s/r hiện cả rad và độ.",
+  "diem_nhan": "Đặt s = r ở mọi r: góc luôn 57,3°."
+ }
+}

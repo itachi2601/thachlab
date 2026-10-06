@@ -1,0 +1,131 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 29. Định luật bảo toàn động lượng",
+ "lesson_id": 74,
+ "nguon_trong_bai": "content/lesson-samples/l10-bao-toan-dong-luong/theory.html",
+ "id": "tn-l10-baotoandl-03",
+ "ten": "Tên lửa bóng bay chạy trên sợi cước",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "baotoandl.phan_luc"
+ ],
+ "muc_tieu": "Thấy khí phụt ra phía sau thì bóng lao về phía trước, không cần đẩy vào vật nào bên ngoài: chuyển động bằng phản lực.",
+ "dung_cu": [
+  {
+   "ten": "Bóng bay",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ống hút",
+   "so_luong": 1
+  },
+  {
+   "ten": "Sợi cước dài khoảng 5 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Căng sợi cước nằm ngang ngang lớp, xỏ qua ống hút.",
+   "Thổi căng bóng, bóp miệng bóng, dán bóng vào ống hút (miệng bóng hướng về một đầu dây).",
+   "Buông tay."
+  ],
+  "quan_sat": [
+   "Khí phụt ra phía sau, bóng lao về phía trước dọc sợi cước."
+  ],
+  "rut_ra": [
+   "Khí phụt ra mang động lượng về sau thì bóng nhận động lượng về trước, tổng vẫn gần bằng 0.",
+   "Chuyển động bằng phản lực: V = −(m/M)·v."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng khí phụt ra (mỗi đợt)",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.001,
+   "max": 0.01,
+   "mac_dinh": 0.003,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc khí phụt ra (so với đất)",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 30,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "M",
+   "ten": "Khối lượng bóng + ống hút còn lại",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.006
+  },
+  {
+   "ky_hieu": "V",
+   "ten": "Vận tốc bóng",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m·v + M·V = 0",
+   "V = −(m/M)·v"
+  ],
+  "gia_thiet": [
+   "xét một đợt phụt ngắn, hệ ban đầu đứng yên",
+   "bỏ qua ma sát ống hút–cước và sức cản không khí trong đợt phụt",
+   "mô hình phụt tức thời, không phải tên lửa phụt liên tục"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (g)",
+   "v (m/s)",
+   "V (m/s)"
+  ],
+  "hang": [
+   [
+    1,
+    15,
+    -2.5
+   ],
+   [
+    2,
+    15,
+    -5.0
+   ],
+   [
+    3,
+    15,
+    -7.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ V = −(m/M)·v với M = 6 g; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Bóng chuyển động ngược chiều khí phụt; khí phụt càng nhiều, càng nhanh thì bóng càng nhanh.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng bóng chạy được vì khí 'đẩy vào không khí phía sau'.",
+  "Cho rằng trong chân không tên lửa không chuyển động được."
+ ],
+ "an_toan": [
+  "Không đứng trên ghế để căng dây; buộc dây ở độ cao vừa tầm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Bóng trên dây; mỗi lần bấm phụt một gói khí m với v; vẽ hai mũi tên động lượng bằng nhau, ngược chiều.",
+  "diem_nhan": "Hỏi trước: đặt bóng trong buồng chân không thì bóng còn chạy không?"
+ }
+}

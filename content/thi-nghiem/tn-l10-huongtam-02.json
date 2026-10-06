@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+ "lesson_id": 77,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-huong-tam/theory.html",
+ "id": "tn-l10-huongtam-02",
+ "ten": "Đồng xu trên bàn xoay: ma sát nghỉ giữ xu đi vòng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "huong_tam.vai_tro_ma_sat_nghi",
+  "huong_tam.a_omega2_r"
+ ],
+ "muc_tieu": "Thấy lực giữ vật trên vòng tròn là ma sát nghỉ; quay đủ nhanh thì ma sát nghỉ không đủ và vật trượt.",
+ "dung_cu": [
+  {
+   "ten": "Bàn xoay (loại xoay bánh kem) hoặc đĩa quay",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng xu",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt đồng xu cách tâm đĩa khoảng 10 cm.",
+   "Quay chậm rồi tăng dần tốc độ quay."
+  ],
+  "quan_sat": [
+   "Lúc đầu xu quay theo đĩa, không trượt.",
+   "Quay đủ nhanh thì xu trượt ra khỏi vòng tròn."
+  ],
+  "rut_ra": [
+   "Ma sát nghỉ của đĩa đóng vai lực hướng tâm.",
+   "Khi m·ω²·r cần lớn hơn ma sát nghỉ lớn nhất, xu trượt."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách xu tới tâm",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.03,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Tốc độ quay",
+   "don_vi": "vòng/phút",
+   "kieu": "dieu_chinh",
+   "min": 10,
+   "max": 90,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Tỉ số ma sát nghỉ lớn nhất / trọng lượng",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.3
+  },
+  {
+   "ky_hieu": "a_ht",
+   "ten": "Gia tốc hướng tâm cần có",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "ω = 2π·n / 60",
+   "a_ht = ω²·r",
+   "trượt nếu ω²·r > k·g",
+   "r_max = k·g / ω²"
+  ],
+  "gia_thiet": [
+   "đĩa nằm ngang, quay đều",
+   "k = 0,3 (giả định)",
+   "g = 10 m/s²",
+   "khối lượng xu không ảnh hưởng ngưỡng trượt"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n (vòng/phút)",
+   "ω (rad/s)",
+   "a_ht (m/s²)",
+   "trượt?"
+  ],
+  "hang": [
+   [
+    20,
+    2.09,
+    0.44,
+    "không"
+   ],
+   [
+    30,
+    3.14,
+    0.99,
+    "không"
+   ],
+   [
+    45,
+    4.71,
+    2.22,
+    "không"
+   ],
+   [
+    60,
+    6.28,
+    3.95,
+    "có"
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ), r = 10 cm, k = 0,3: ngưỡng a = 3 m/s², ứng với khoảng 52 vòng/phút."
+ },
+ "ket_qua_ky_vong": "Xu trượt khi ω > √(k·g/r) ≈ 5.48 rad/s (≈ 52 vòng/phút) với r = 10 cm.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng xu trượt vì 'lực li tâm' đẩy ra; thật ra ma sát nghỉ không đủ làm lực hướng tâm.",
+  "Cho rằng xu bay ra theo bán kính; thật ra nó rời đi gần theo tiếp tuyến."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Đĩa nhìn từ trên, thanh trượt n và r; vẽ ma sát nghỉ chĩa vào tâm, thanh đo 'ma sát cần có / ma sát lớn nhất'; vượt 100 % thì xu trượt.",
+  "diem_nhan": "Cho đặt hai xu ở hai bán kính, hỏi trước xu nào trượt trước."
+ }
+}

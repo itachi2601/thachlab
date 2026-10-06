@@ -1,0 +1,380 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Đo góc bằng <strong>radian</strong>; tính <strong>độ dịch chuyển góc</strong> $\theta = s/r$.</li>
+<li>Dùng được <strong>tốc độ góc</strong> $\omega$, <strong>chu kì</strong> $T$, <strong>tần số</strong> $f$ và đổi vòng/phút sang rad/s.</li>
+<li>Giải thích vì sao điểm xa tâm chạy nhanh hơn: $v = \omega r$.</li>
+<li>Vẽ đúng <strong>vectơ vận tốc tiếp tuyến</strong>: tốc độ không đổi nhưng vận tốc luôn đổi hướng.</li>
+</ul>
+<p>Đọc khoảng __PHUT__ phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: đội hình xoay trên sân băng</h3>
+
+<p>Trên sân băng, cả nhóm nắm tay thành một hàng ngang. Người đầu hàng đứng trụ, xoay tại chỗ; cả hàng quay quanh người đó như một kim đồng hồ.</p>
+
+<p>Người đứng trụ gần như chỉ xoay người. Người ngoài cùng thì phải đạp chân liên tục mới theo kịp hàng.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Hàng người vẫn thẳng suốt lúc xoay. So người thứ hai (gần tâm) với người ngoài cùng, nhận xét nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q0" id="tl76-q0a"><label for="tl76-q0a" class="tl-opt tl-no">A. Hai người như nhau về mọi mặt, vì nắm tay nhau</label>
+<input type="radio" name="tl76-q0" id="tl76-q0b"><label for="tl76-q0b" class="tl-opt tl-ok">B. Cùng quay hết một vòng trong cùng thời gian, nhưng người ngoài chạy nhanh hơn</label>
+<input type="radio" name="tl76-q0" id="tl76-q0c"><label for="tl76-q0c" class="tl-opt tl-no">C. Người ngoài cùng quay hết một vòng mất ít thời gian hơn</label>
+<input type="radio" name="tl76-q0" id="tl76-q0d"><label for="tl76-q0d" class="tl-opt tl-no">D. Người gần tâm chạy nhanh hơn, vì ở gần trục quay</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hàng thẳng nên mọi người quét cùng một góc trong cùng thời gian — cùng "quay nhanh". Nhưng vòng tròn của người ngoài dài hơn, nên trong cùng thời gian người đó phải đi quãng đường dài hơn. Bài này đặt tên cho hai kiểu "nhanh" đó: <strong>tốc độ góc</strong> và <strong>tốc độ</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang dùng một chữ "nhanh" cho hai ý khác nhau. Hàng luôn thẳng nên ai cũng quay hết một vòng cùng lúc (cùng tốc độ góc). Nhưng vòng tròn bên ngoài dài hơn, nên người ngoài phải đi nhiều mét hơn trong cùng thời gian (tốc độ lớn hơn). Mục II tách hai ý này ra.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: góc, vòng và tốc độ</h3>
+
+<h4>1. Chuyển động tròn đều và radian</h4>
+
+<p><strong>🔑 Quỹ đạo tròn · Tốc độ không đổi · Góc đo bằng rad</strong></p>
+
+<ul>
+<li><strong>Chuyển động tròn:</strong> quỹ đạo là một đường tròn.</li>
+<li><strong>Chuyển động tròn đều:</strong> quỹ đạo tròn và <strong>tốc độ không đổi</strong>.</li>
+<li>Vị trí của vật cho bằng <strong>cung $s$</strong> đã đi, hoặc bằng <strong>độ dịch chuyển góc $\theta$</strong> — góc ở tâm mà bán kính nối vật quét được.</li>
+<li>Đo góc bằng radian: $\theta = \dfrac{s}{r}$ (rad). Cung dài đúng bằng bán kính thì $\theta = 1\ \text{rad}$.</li>
+<li>Đổi đơn vị: $180^\circ = \pi\ \text{rad}$, nên $1\ \text{rad} \approx 57{,}3^\circ$.</li>
+</ul>
+
+<!--FIG2-->
+
+<details class="tl-details">
+<summary>📏 Bấm xem: bảng đổi độ ↔ radian hay dùng</summary>
+<ul>
+<li>$30^\circ = \dfrac{\pi}{6}$; $45^\circ = \dfrac{\pi}{4}$; $60^\circ = \dfrac{\pi}{3}$</li>
+<li>$90^\circ = \dfrac{\pi}{2}$; $180^\circ = \pi$; $360^\circ = 2\pi$ (một vòng)</li>
+<li>Độ sang rad: nhân $\dfrac{\pi}{180}$. Rad sang độ: nhân $\dfrac{180}{\pi}$.</li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trondeu-02">
+<p class="tl-label">🔬 Thí nghiệm: một radian dài bao nhiêu?</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đo bán kính một nắp nồi. Cắt sợi chỉ dài đúng bằng bán kính, quấn sát theo vành nắp từ điểm A, đánh dấu điểm cuối B. Nối A và B với tâm.</li>
+<li><strong>Quan sát:</strong> góc AOB đo bằng thước đo độ được khoảng $57^\circ$, nắp to hay nhỏ đều vậy.</li>
+<li><strong>Rút ra:</strong> 1 rad là góc chắn cung dài bằng bán kính, không phụ thuộc cỡ đường tròn. Cả vòng dài $2\pi r$ nên ứng với $2\pi\ \text{rad}$.</li>
+</ol>
+</div>
+
+<p><strong>Câu 1.</strong> Một vật đi được cung dài $3{,}14\ \text{m}$ trên đường tròn bán kính $2\ \text{m}$. Độ dịch chuyển góc của vật là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q1" id="tl76-q1a"><label for="tl76-q1a" class="tl-opt tl-no">A. $6{,}28\ \text{rad}$</label>
+<input type="radio" name="tl76-q1" id="tl76-q1b"><label for="tl76-q1b" class="tl-opt tl-no">B. $0{,}64\ \text{rad}$</label>
+<input type="radio" name="tl76-q1" id="tl76-q1c"><label for="tl76-q1c" class="tl-opt tl-ok">C. $1{,}57\ \text{rad}$</label>
+<input type="radio" name="tl76-q1" id="tl76-q1d"><label for="tl76-q1d" class="tl-opt tl-no">D. $3{,}14\ \text{rad}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\theta = \dfrac{s}{r} = \dfrac{3{,}14}{2} = 1{,}57\ \text{rad}$, tức $\dfrac{\pi}{2}$ — vật đi đúng một phần tư vòng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $6{,}28$ là nhân $s \cdot r$ thay vì chia. Ra $0{,}64$ là chia ngược $r/s$. Ra $3{,}14$ là lấy luôn độ dài cung làm góc, quên chia cho bán kính. Nhớ: góc (rad) = cung chia bán kính.</p></div>
+</div>
+
+<h4>2. Tốc độ góc, chu kì, tần số</h4>
+
+<p><strong>🔑 ω: góc mỗi giây · T: một vòng · f: vòng mỗi giây</strong></p>
+
+<ul>
+<li><strong>Tốc độ góc</strong> $\omega = \dfrac{\Delta\theta}{\Delta t}$ (rad/s): bán kính quét góc bao nhiêu mỗi giây. Chuyển động tròn đều thì $\omega$ không đổi.</li>
+<li><strong>Chu kì</strong> $T$ (s): thời gian đi hết <strong>một vòng</strong>. Quay $n$ vòng trong $\Delta t$ thì $T = \dfrac{\Delta t}{n}$.</li>
+<li><strong>Tần số</strong> $f$ (Hz = vòng/s): số vòng đi được trong một giây, $f = \dfrac{1}{T} = \dfrac{n}{\Delta t}$.</li>
+<li>Một vòng là $2\pi\ \text{rad}$, nên $\omega = \dfrac{2\pi}{T} = 2\pi f$.</li>
+</ul>
+
+<p>Ví dụ: kim giây quay một vòng mất $60\ \text{s}$, nên $\omega = \dfrac{2\pi}{60} = \dfrac{\pi}{30}\ \text{rad/s}$. Trái Đất tự quay một vòng mất $24\ \text{h} = 86\,400\ \text{s}$.</p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trondeu-03">
+<p class="tl-label">🔬 Thí nghiệm đo: chu kì đĩa xoay lò vi sóng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt cốc nước nhỏ ở giữa đĩa làm tải, dán một mẩu băng dính lên mép đĩa xoay, cách tâm $r = 14{,}0\ \text{cm}$, rồi mới bật lò. Bấm đồng hồ đo thời gian đĩa quay <strong>3 vòng</strong>. Làm 5 lần.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ, chưa phải số đo thật).</li>
+<li><strong>Rút ra:</strong> từ thời gian 3 vòng suy ra $T$, rồi $f$ và $\omega$.</li>
+</ol>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lần đo</th><th>Thời gian 3 vòng (s)</th></tr>
+</thead>
+<tbody>
+__BANG_DO__
+</tbody>
+</table>
+</div>
+<details class="tl-details">
+<summary>🧮 Bấm xem: xử lí bảng số liệu và sai số</summary>
+<p>Trung bình: $\overline{\Delta t} = __TB__\ \text{s}$, nên $T = \dfrac{__TB__}{3} \approx __T__\ \text{s}$.</p>
+<p>$f = \dfrac{1}{T} \approx __F__\ \text{Hz}$; $\omega = \dfrac{2\pi}{T} \approx __W__\ \text{rad/s}$.</p>
+<p>Sai số chủ yếu do phản xạ tay khi bấm đồng hồ (cỡ $0{,}2\ \text{s}$ mỗi lần bấm). Lần __LECH__ lệch xa trung bình nhất. Đo 3 vòng rồi chia 3 thì sai số tay chia ba; đo 10 vòng còn tốt hơn.</p>
+</details>
+</div>
+
+<p><strong>Câu 2.</strong> Kim phút của đồng hồ có tốc độ góc bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q2" id="tl76-q2a"><label for="tl76-q2a" class="tl-opt tl-ok">A. $\dfrac{\pi}{1800}\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q2" id="tl76-q2b"><label for="tl76-q2b" class="tl-opt tl-no">B. $\dfrac{\pi}{30}\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q2" id="tl76-q2c"><label for="tl76-q2c" class="tl-opt tl-no">C. $\dfrac{\pi}{21\,600}\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q2" id="tl76-q2d"><label for="tl76-q2d" class="tl-opt tl-no">D. $120\pi\ \text{rad/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Kim phút quay một vòng mất $1\ \text{h} = 3600\ \text{s}$: $\omega = \dfrac{2\pi}{3600} = \dfrac{\pi}{1800} \approx 1{,}75 \cdot 10^{-3}\ \text{rad/s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $\dfrac{\pi}{30}$ là của kim giây ($T = 60\ \text{s}$). $\dfrac{\pi}{21\,600}$ là của kim giờ ($T = 12\ \text{h}$). $120\pi$ là nhân $2\pi \cdot 60$ thay vì chia. Xác định $T$ trước, đổi ra giây, rồi mới $\omega = 2\pi/T$.</p></div>
+</div>
+
+<h4>3. Tốc độ và tốc độ góc: $v = \omega r$</h4>
+
+<p><strong>🔑 Cùng ω · Xa tâm hơn thì nhanh hơn</strong></p>
+
+<ul>
+<li>Tốc độ (còn gọi là tốc độ dài): $v = \dfrac{s}{t}$, không đổi trong chuyển động tròn đều.</li>
+<li>Cung $s = \theta r$, chia cho $t$: $v = \omega r$.</li>
+<li>Một vòng dài $2\pi r$ đi hết trong $T$: $v = \dfrac{2\pi r}{T} = 2\pi f r$.</li>
+<li>Mọi điểm trên cùng một vật quay có cùng $\omega$, $T$, $f$; điểm xa tâm có $v$ lớn hơn.</li>
+</ul>
+
+<!--FIG3-->
+
+<p>Quay lại sân băng: người ngoài cùng cách tâm $6\ \text{m}$, cả hàng quay một vòng hết $5\ \text{s}$. Người đó chạy với $v = \dfrac{2\pi \cdot 6}{5} \approx 7{,}5\ \text{m/s}$ — khoảng $27\ \text{km/h}$, nên phải đạp chân liên tục.</p>
+
+<h4>4. Vectơ vận tốc: luôn tiếp tuyến</h4>
+
+<p><strong>🔑 Phương tiếp tuyến · Độ lớn không đổi · Hướng luôn đổi</strong></p>
+
+<ul>
+<li><strong>Phương:</strong> tiếp tuyến với đường tròn, vuông góc với bán kính tại điểm đó.</li>
+<li><strong>Chiều:</strong> theo chiều chuyển động.</li>
+<li><strong>Độ lớn:</strong> bằng tốc độ $v$, không đổi.</li>
+<li>Phương thay đổi theo vị trí, nên <strong>vectơ vận tốc luôn đổi hướng</strong>.</li>
+</ul>
+
+<!--FIG4-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-trondeu-04">
+<p class="tl-label">🔬 Ví dụ ngoài sân: giọt nước văng khỏi bánh xe đạp</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dựng xe đạp ngược trên yên và tay lái, nhỏ nước lên lốp rồi quay bánh xe bằng tay (người xem đứng lệch sang bên, tránh mặt phẳng bánh).</li>
+<li><strong>Quan sát:</strong> các giọt nước bắn ra thành vệt <strong>thẳng</strong>, sát vành bánh, không bắn theo bán kính ra ngoài.</li>
+<li><strong>Rút ra:</strong> giọt nước rời bánh thì giữ vận tốc ở chỗ rời, tức là tiếp tuyến với vành bánh.</li>
+</ol>
+</div>
+
+<p><strong>Câu 3.</strong> Nhìn từ bên cạnh, bánh xe đạp quay ngược chiều kim đồng hồ. Giọt nước văng ra từ <strong>điểm thấp nhất</strong> của vành bánh, <strong>ngay lúc rời bánh</strong>, bay theo hướng nào? (Bỏ qua trọng lực: chỉ xét hướng vận tốc lúc vừa rời.)</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q3" id="tl76-q3a"><label for="tl76-q3a" class="tl-opt tl-no">A. Thẳng xuống, ra xa tâm bánh</label>
+<input type="radio" name="tl76-q3" id="tl76-q3b"><label for="tl76-q3b" class="tl-opt tl-no">B. Nằm ngang, sang trái</label>
+<input type="radio" name="tl76-q3" id="tl76-q3c"><label for="tl76-q3c" class="tl-opt tl-no">C. Cong theo vành bánh một đoạn rồi mới bay thẳng</label>
+<input type="radio" name="tl76-q3" id="tl76-q3d"><label for="tl76-q3d" class="tl-opt tl-ok">D. Nằm ngang, sang phải</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ở điểm thấp nhất, bán kính thẳng đứng nên tiếp tuyến nằm ngang. Quay ngược chiều kim đồng hồ thì điểm thấp nhất đang đi sang phải — giọt nước giữ đúng vận tốc đó.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> "Thẳng xuống" là đi theo bán kính — vận tốc không bao giờ dọc bán kính. "Sang trái" đúng phương nhưng ngược chiều quay: thử vẽ mặt đồng hồ, đi ngược chiều kim từ số 6 thì tới số 5, 4, 3 — tức sang phải. "Cong theo vành" là tưởng vật còn "nhớ" đường tròn; rời bánh rồi thì không còn gì kéo nó cong.</p></div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<h4>Bẫy 1: "tốc độ không đổi thì vận tốc không đổi"</h4>
+
+<p><strong>🔑 Tốc độ: một con số · Vận tốc: có hướng</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Tốc độ $v$</th><th>Vectơ vận tốc $\vec v$</th></tr>
+</thead>
+<tbody>
+<tr><td>Chỉ có độ lớn</td><td>Có độ lớn và hướng</td></tr>
+<tr><td>Tròn đều: <strong>không đổi</strong></td><td>Tròn đều: <strong>đổi hướng liên tục</strong></td></tr>
+<tr><td>Đồng hồ tốc độ xe đọc được</td><td>Phải vẽ mũi tên tiếp tuyến</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Vận tốc đổi (dù chỉ đổi hướng) thì vật có gia tốc. Gia tốc đó hướng về đâu, lớn bao nhiêu — Bài 32 sẽ trả lời.</p>
+
+<p><strong>Câu 4.</strong> Ô tô chạy vòng xuyến với tốc độ không đổi $10\ \text{m/s}$. Sau một phần tư vòng, độ lớn của <strong>độ biến thiên vận tốc</strong> $\Delta\vec v = \vec v_2 - \vec v_1$ là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl76-q4-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="tl76-q4-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q4" id="tl76-q4a"><label for="tl76-q4a" class="tl-opt tl-no">A. $0$</label>
+<input type="radio" name="tl76-q4" id="tl76-q4b"><label for="tl76-q4b" class="tl-opt tl-ok">B. $14{,}1\ \text{m/s}$</label>
+<input type="radio" name="tl76-q4" id="tl76-q4c"><label for="tl76-q4c" class="tl-opt tl-no">C. $20\ \text{m/s}$</label>
+<input type="radio" name="tl76-q4" id="tl76-q4d"><label for="tl76-q4d" class="tl-opt tl-no">D. $10\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sau một phần tư vòng, $\vec v_2$ vuông góc với $\vec v_1$, cùng độ lớn $10\ \text{m/s}$. Hiệu hai vectơ vuông góc: $|\Delta\vec v| = \sqrt{10^2 + 10^2} \approx 14{,}1\ \text{m/s}$. Tốc độ không đổi mà vận tốc vẫn đổi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0$ là trừ hai <em>tốc độ</em> $10 - 10$ — đúng cái bẫy này. Ra $20\ \text{m/s}$ là trường hợp nửa vòng ($\vec v_2$ ngược $\vec v_1$), không phải một phần tư vòng. Ra $10\ \text{m/s}$ là cộng trừ vectơ như số thường. Vẽ hai mũi tên vuông góc rồi trừ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>Bẫy 2: "cùng quay theo một vật thì cùng tốc độ"</h4>
+
+<p><strong>Câu 5.</strong> Cánh quạt trần quay đều. Điểm A ở đầu cánh cách trục $60\ \text{cm}$, điểm B cách trục $20\ \text{cm}$. So sánh nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q5" id="tl76-q5a"><label for="tl76-q5a" class="tl-opt tl-ok">A. $\omega_A = \omega_B$; $v_A = 3v_B$</label>
+<input type="radio" name="tl76-q5" id="tl76-q5b"><label for="tl76-q5b" class="tl-opt tl-no">B. $v_A = v_B$; $\omega_A = 3\omega_B$</label>
+<input type="radio" name="tl76-q5" id="tl76-q5c"><label for="tl76-q5c" class="tl-opt tl-no">C. $\omega_A = 3\omega_B$; $v_A = 3v_B$</label>
+<input type="radio" name="tl76-q5" id="tl76-q5d"><label for="tl76-q5d" class="tl-opt tl-no">D. $\omega_A = \omega_B$; $v_A = v_B$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng một cánh nên cùng $\omega$. $v = \omega r$ tỉ lệ với $r$: $\dfrac{v_A}{v_B} = \dfrac{60}{20} = 3$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai điểm trên cùng một cánh quạt luôn quét cùng góc trong cùng thời gian, nên $\omega$ bằng nhau — loại B và C. Còn D quên rằng điểm xa trục đi vòng dài hơn: $v = \omega r$ nên $r$ gấp 3 thì $v$ gấp 3.</p></div>
+</div>
+
+<p><strong>🔑 Chung ω, T, f · Riêng v theo r</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Mọi điểm trên vật quay</th><th>Khác nhau theo từng điểm</th></tr>
+</thead>
+<tbody>
+<tr><td>Tốc độ góc $\omega$</td><td>Tốc độ $v = \omega r$</td></tr>
+<tr><td>Chu kì $T$, tần số $f$</td><td>Quãng đường một vòng $2\pi r$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Ví dụ: kim giây dài 2 cm hay 20 cm đều quay một vòng hết 60 s, nhưng đầu kim dài chạy nhanh gấp 10 lần.</p>
+
+<h4>Bẫy 3: đổi vòng/phút sang rad/s</h4>
+
+<p><strong>🔑 Chia 60 · Nhân 2π</strong></p>
+
+<ul>
+<li>Máy móc ghi tốc độ quay bằng <strong>vòng/phút</strong> (rpm): chia 60 được vòng/s, tức là $f$.</li>
+<li>Mỗi vòng là $2\pi\ \text{rad}$: $\omega = 2\pi f$.</li>
+<li>Gộp lại: $\omega = \dfrac{2\pi n}{60}$ với $n$ tính bằng vòng/phút.</li>
+<li>Ví dụ: quạt $900$ vòng/phút → $f = 15\ \text{Hz}$ → $\omega = 30\pi \approx 94{,}2\ \text{rad/s}$.</li>
+</ul>
+
+<p><strong>Câu 6.</strong> Lồng vắt của một máy giặt quay $1500$ vòng/phút. Tốc độ góc của lồng là:</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl76-q6-chac" value="chac"> Chắc</label>
+<label><input type="radio" name="tl76-q6-chac" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q6" id="tl76-q6a"><label for="tl76-q6a" class="tl-opt tl-no">A. $25\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q6" id="tl76-q6b"><label for="tl76-q6b" class="tl-opt tl-no">B. $9425\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q6" id="tl76-q6c"><label for="tl76-q6c" class="tl-opt tl-ok">C. $157\ \text{rad/s}$</label>
+<input type="radio" name="tl76-q6" id="tl76-q6d"><label for="tl76-q6d" class="tl-opt tl-no">D. $0{,}25\ \text{rad/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $f = \dfrac{1500}{60} = 25\ \text{Hz}$, rồi $\omega = 2\pi \cdot 25 = 50\pi \approx 157\ \text{rad/s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $25$ là mới đổi sang vòng/s, quên nhân $2\pi$ — đó là $f$, không phải $\omega$. Ra $9425$ là nhân $2\pi$ nhưng quên chia 60. Ra $0{,}25$ là lật ngược phân số ($2\pi \cdot 60/1500$). Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<p>Em đọc to câu trả lời bằng lời của mình trước, rồi mới bấm xem đáp án.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
+<details class="tl-details">
+<summary>1. Chuyển động tròn đều là gì? Vị trí của vật cho bằng gì? <small>(nói bằng lời của em trước)</small></summary>
+<p>Quỹ đạo tròn · tốc độ không đổi. Vị trí: cung $s$ hoặc độ dịch chuyển góc $\theta$.</p>
+</details>
+<details class="tl-details">
+<summary>2. 1 rad là gì? Viết công thức góc theo cung và cách đổi độ sang rad. <small>(nói bằng lời của em trước)</small></summary>
+<p>Góc chắn cung dài bằng bán kính; $\theta = s/r$; $180^\circ = \pi\ \text{rad}$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Định nghĩa tốc độ góc, chu kì, tần số kèm đơn vị. <small>(nói bằng lời của em trước)</small></summary>
+<p>$\omega = \Delta\theta/\Delta t$ (rad/s); $T$: thời gian một vòng (s); $f$: số vòng mỗi giây (Hz).</p>
+</details>
+<details class="tl-details">
+<summary>4. Viết các hệ thức nối $\omega$, $T$, $f$, $v$. <small>(nói bằng lời của em trước)</small></summary>
+<p>$\omega = 2\pi/T = 2\pi f$; $f = 1/T$; $v = \omega r = 2\pi r/T = 2\pi f r$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Vectơ vận tốc trong chuyển động tròn đều có phương, chiều, độ lớn thế nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Tiếp tuyến · theo chiều chuyển động · độ lớn $v$ không đổi · hướng luôn đổi.</p>
+</details>
+<details class="tl-details">
+<summary>6. Đổi $n$ vòng/phút sang rad/s thế nào? <small>(nói bằng lời của em trước)</small></summary>
+<p>Chia 60 ra $f$; nhân $2\pi$ ra $\omega$; $\omega = 2\pi n/60$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: tốc độ điểm trên vành bánh xe đạp</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Bánh xe đạp đường kính $60\ \text{cm}$ quay đều $120$ vòng/phút quanh trục.</p>
+<p>a) Tính tần số và chu kì quay của bánh xe.</p>
+<p>b) Tính tốc độ góc của bánh xe.</p>
+<p>c) Tính tốc độ của một điểm trên vành bánh xe (so với trục), theo m/s và km/h.</p>
+</div>
+
+<p>Với mỗi câu của đề, tự hỏi hai điều: <strong>đề cho dữ liệu gì</strong>, <strong>gọi ra kiến thức nào?</strong></p>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"đường kính 60 cm"</td><td>$r = 0{,}3\ \text{m}$ → bán kính là nửa đường kính, đổi ra mét</td></tr>
+<tr><td>"quay đều 120 vòng/phút"</td><td>$n = 120$ vòng/phút → chia 60 ra $f$</td></tr>
+<tr><td>"chu kì"</td><td>cần $T$ → $T = 1/f$</td></tr>
+<tr><td>"tốc độ góc"</td><td>cần $\omega$ → $\omega = 2\pi f$</td></tr>
+<tr><td>"điểm trên vành bánh xe"</td><td>cần $v$ ở $r$ lớn nhất → $v = \omega r$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: $f = \dfrac{120}{60} = 2\ \text{Hz}$; $T = \dfrac{1}{f} = 0{,}5\ \text{s}$.</li>
+<li>Câu b: $\omega = 2\pi f = 4\pi \approx 12{,}6\ \text{rad/s}$.</li>
+<li>Câu c: bán kính $r = \dfrac{60}{2} = 30\ \text{cm} = 0{,}3\ \text{m}$, nên $v = \omega r = 4\pi \cdot 0{,}3 \approx 3{,}77\ \text{m/s}$.</li>
+<li>Đổi sang km/h: $3{,}77 \cdot 3{,}6 \approx 13{,}6\ \text{km/h}$.</li>
+<li>Kiểm tra bằng cách khác: mỗi vòng, điểm trên vành đi được $\pi d = \pi \cdot 0{,}6 \approx 1{,}885\ \text{m}$; $120$ vòng mỗi phút được $1{,}885 \cdot 120 \approx 226\ \text{m/phút} \approx 3{,}77\ \text{m/s}$ — khớp. Cách tính tắt: $v = \pi d n$.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p><strong>✍️ Điền bước còn thiếu</strong> — bánh xe đạp trẻ em đường kính $40\ \text{cm}$, quay đều $150$ vòng/phút.</p>
+<ol class="tl-steps">
+<li>$f = \dfrac{150}{60} = 2{,}5\ \text{Hz}$; $T = 0{,}4\ \text{s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $\omega = \;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $r = \;?$ (đổi ra mét) rồi $v = \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$\omega = 2\pi \cdot 2{,}5 = 5\pi \approx 15{,}7\ \text{rad/s}$. $r = 20\ \text{cm} = 0{,}2\ \text{m}$, nên $v = 5\pi \cdot 0{,}2 = \pi \approx 3{,}14\ \text{m/s}$ (khoảng $11{,}3\ \text{km/h}$). Lỗi hay gặp: lấy $r = 40\ \text{cm}$ là quên chia đôi đường kính.</p>
+</details>
+</div>
+
+<p><strong>Câu 7.</strong> Một chiếc xe đạp bánh nhỏ có bánh xe đường kính $30\ \text{cm}$ (bằng nửa bánh ở bài mẫu). Muốn điểm trên vành có đúng tốc độ như bài mẫu, bánh xe phải quay:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl76-q7" id="tl76-q7a"><label for="tl76-q7a" class="tl-opt tl-no">A. $60$ vòng/phút</label>
+<input type="radio" name="tl76-q7" id="tl76-q7b"><label for="tl76-q7b" class="tl-opt tl-no">B. $120$ vòng/phút</label>
+<input type="radio" name="tl76-q7" id="tl76-q7c"><label for="tl76-q7c" class="tl-opt tl-no">C. $480$ vòng/phút</label>
+<input type="radio" name="tl76-q7" id="tl76-q7d"><label for="tl76-q7d" class="tl-opt tl-ok">D. $240$ vòng/phút</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v = \omega r$ giữ nguyên mà $r$ giảm một nửa thì $\omega$ phải gấp đôi: $240$ vòng/phút. Kiểm: $\pi \cdot 0{,}3 \cdot 240 \approx 226\ \text{m/phút}$, đúng bằng ở bài mẫu.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $60$ là giảm $n$ theo đường kính — làm ngược. $120$ là giữ nguyên $n$, khi đó tốc độ chỉ còn một nửa. $480$ là tưởng $v$ tỉ lệ $r^2$. Viết $v = \omega r$: $r$ nhỏ đi bao nhiêu lần thì $\omega$ phải lớn lên bấy nhiêu lần.</p></div>
+</div>
+
+<h3>VI. Đời sống và mang về</h3>
+
+<ul>
+<li><strong>Trái Đất tự quay:</strong> $T = 24\ \text{h}$, người ở xích đạo đi với $v = \dfrac{2\pi R}{T} \approx 463\ \text{m/s}$ mà không hề thấy.</li>
+<li><strong>Máy giặt vắt:</strong> nước rời lồng theo phương tiếp tuyến, thoát qua các lỗ nhỏ.</li>
+<li><strong>Xe đạp:</strong> bánh càng nhỏ thì càng phải quay nhiều vòng mỗi phút mới giữ được cùng tốc độ.</li>
+<li><strong>Trượt băng:</strong> vận động viên xoay tại chỗ $3$ vòng/s có $\omega = 6\pi \approx 19\ \text{rad/s}$.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
+<p><strong>⭐</strong> Động cơ quay $3000$ vòng/phút. Tính $\omega$. <em>Gợi ý:</em> $f = 50\ \text{Hz}$, $\omega = 100\pi \approx 314\ \text{rad/s}$.</p>
+<p><strong>⭐⭐</strong> Kim phút dài $10\ \text{cm}$, kim giờ dài $6\ \text{cm}$. Tốc độ đầu kim phút gấp mấy lần đầu kim giờ? <em>Gợi ý:</em> $\omega$ gấp 12 lần (1 h so với 12 h), $r$ gấp $\dfrac{10}{6}$ lần, nên $v$ gấp $12 \cdot \dfrac{10}{6} = 20$ lần.</p>
+<p><strong>⭐⭐⭐</strong> Hà Nội ở vĩ độ khoảng $21^\circ$, bán kính Trái Đất $R = 6370\ \text{km}$. Tính tốc độ của một người đứng yên ở Hà Nội do Trái Đất tự quay ($T = 24\ \text{h}$). Vì sao không dùng thẳng $R$? <em>Gợi ý:</em> người đó quay quanh <strong>trục</strong> Trái Đất, bán kính quỹ đạo là $r = R\cos 21^\circ \approx 5947\ \text{km}$, nên $v = \dfrac{2\pi r}{T} \approx 432\ \text{m/s}$, nhỏ hơn ở xích đạo.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Tròn đều:</strong> quỹ đạo tròn · tốc độ không đổi.</li>
+<li><strong>Radian:</strong> $\theta = s/r$; $180^\circ = \pi\ \text{rad}$; một vòng $2\pi$.</li>
+<li><strong>Ba đại lượng chung:</strong> $\omega = 2\pi/T = 2\pi f$; $f = 1/T$.</li>
+<li><strong>Dạng đảo:</strong> $T = 2\pi/\omega$; $f = \omega/2\pi$; $\Delta t = n\cdot T$ cho $n$ vòng.</li>
+<li><strong>Mốc quen:</strong> Trái Đất quanh Mặt Trời $T = 365$ ngày; quanh trục $T = 24\ \text{h}$.</li>
+<li><strong>Tốc độ:</strong> $v = \omega r$; xa tâm thì nhanh.</li>
+<li><strong>Vận tốc:</strong> tiếp tuyến · độ lớn giữ nguyên · hướng luôn đổi.</li>
+<li><strong>Vòng/phút → rad/s:</strong> chia 60 · nhân $2\pi$.</li>
+<li><strong>Đọc đề:</strong> gặp "đường kính" thì chia đôi; gặp "vòng/phút" thì đổi đơn vị trước.</li>
+</ul>
+</div>

@@ -1,0 +1,155 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 28. Động lượng",
+ "lesson_id": 73,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-luong/theory.html",
+ "id": "tn-l10-dongluong-01",
+ "ten": "Đo độ biến thiên động lượng và xung lượng khi xe bật vào đệm lò xo",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dongluong.do_bien_thien_dong_luong",
+  "dongluong.xung_luong",
+  "dongluong.dinh_ly_xung_luong"
+ ],
+ "muc_tieu": "Xe 0,250 kg chạy trên ray đệm khí, bật ngược lại khi va vào đệm lò xo gắn cảm biến lực; so sánh Δp tính từ hai lần đo tốc độ với xung lượng cảm biến ghi được, thấy Δp = F·Δt.",
+ "dung_cu": [
+  {
+   "ten": "Ray đệm khí kèm bơm khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe trượt 0,250 kg có tấm chắn sáng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian hiện số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cảm biến lực nối máy tính, đầu gắn đệm lò xo (nếu trường có)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt cổng quang gần đầu ray có đệm lò xo gắn cảm biến lực. Chọn chiều dương là chiều xe chạy tới đệm.",
+   "Đẩy xe cho chạy tới đệm; cổng quang đo tốc độ v1 lúc tới và v2 lúc bật ngược lại.",
+   "Cảm biến lực vẽ đồ thị F theo t; phần mềm tính diện tích dưới đồ thị (xung lượng).",
+   "Lặp lại 4 lần với tốc độ đẩy tăng dần."
+  ],
+  "quan_sat": [
+   "v2 luôn ngược dấu v1 và nhỏ hơn về độ lớn (xe bật lại chậm hơn).",
+   "Xung lượng đo được tăng theo tốc độ đẩy: 0,176; 0,268; 0,352; 0,445 N·s."
+  ],
+  "rut_ra": [
+   "Độ lớn m(v2 − v1) khớp xung lượng cảm biến trong khoảng 1,5–2,2 %: Δp = F·Δt.",
+   "Δp và xung lượng của đệm cùng hướng: ngược chiều xe chạy tới."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v1",
+   "ten": "Tốc độ xe lúc chạy tới đệm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.2,
+   "mac_dinh": 0.6,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Tỉ số tốc độ bật lại / tốc độ tới của đệm lò xo",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.0,
+   "max": 1.0,
+   "mac_dinh": 0.8,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.25
+  },
+  {
+   "ky_hieu": "v2",
+   "ten": "Vận tốc xe lúc bật lại (âm)",
+   "don_vi": "m/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "J",
+   "ten": "Xung lượng cảm biến ghi được",
+   "don_vi": "N·s",
+   "kieu": "do_duoc",
+   "sai_so_do": "2 %"
+  },
+  {
+   "ky_hieu": "dp",
+   "ten": "Độ biến thiên động lượng m(v2 − v1)",
+   "don_vi": "kg·m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v2 = −e·v1",
+   "Δp = m·(v2 − v1)",
+   "J = ∫F dt = Δp (bỏ qua ma sát trên ray)"
+  ],
+  "gia_thiet": [
+   "ray nằm ngang, đệm khí làm ma sát không đáng kể",
+   "chỉ lực đệm tác dụng theo phương ngang trong lúc va chạm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v1 (m/s)",
+   "v2 (m/s)",
+   "Xung lượng cảm biến (N·s)"
+  ],
+  "hang": [
+   [
+    0.4,
+    -0.32,
+    0.176
+   ],
+   [
+    0.6,
+    -0.49,
+    0.268
+   ],
+   [
+    0.8,
+    -0.63,
+    0.352
+   ],
+   [
+    1.0,
+    -0.81,
+    0.445
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, không phải số đo thật: v2 ứng với e ≈ 0,79–0,82; Δp = m(v2 − v1) cho 0,180; 0,2725; 0,3575; 0,4525 kg·m/s; số cảm biến nhỏ hơn đều 1,5–2,2 % (cảm biến lấy mẫu sót phần đầu, cuối của xung)."
+ },
+ "ket_qua_ky_vong": "|Δp| khớp xung lượng cảm biến, chênh dưới 2,5 %; cả 4 lần cảm biến đều nhỏ hơn một chút (sai số hệ thống).",
+ "hien_tuong_hay_sai": [
+  "Tính Δp bằng hiệu tốc độ 0,40 − 0,32 (quên v2 ngược chiều), ra 0,02 kg·m/s.",
+  "Cho rằng xe bật lại nên lực của đệm cùng chiều xe chạy tới."
+ ],
+ "sai_so_thuong_gap": [
+  "Cổng quang ±0,01 m/s cho mỗi tốc độ, nên Δp sai cỡ ±0,005 kg·m/s.",
+  "Cảm biến lực ±2 %, lấy mẫu thưa làm sót phần đầu và cuối của xung."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt v1 và e; xe chạy tới đệm, đồ thị F(t) hiện vùng tô màu bằng Δp; vector p trước, p sau và Δp vẽ cạnh nhau.",
+  "diem_nhan": "Hỏi trước: xe tới 0,40 m/s, bật lại 0,32 m/s — Δp bằng 0,02 hay 0,18 kg·m/s?"
+ }
+}

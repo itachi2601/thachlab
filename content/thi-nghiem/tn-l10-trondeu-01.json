@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 31. Động học của chuyển động tròn đều",
+ "lesson_id": 76,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-tron-deu/theory.html",
+ "id": "tn-l10-trondeu-01",
+ "ten": "Đội hình xoay trên sân băng: cùng tốc độ góc, khác tốc độ",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "trondeu.toc_do_goc",
+  "trondeu.v_bang_omega_r"
+ ],
+ "muc_tieu": "Phân biệt tốc độ góc (chung cho cả hàng) với tốc độ (tăng theo khoảng cách tới tâm) qua một đội hình xoay trên sân băng.",
+ "dung_cu": [
+  {
+   "ten": "Nhóm 4 người trượt băng nắm tay thành hàng ngang",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Người đầu hàng đứng trụ ở tâm, cả hàng nắm tay giữ thẳng rồi xoay quanh người trụ.",
+   "Bấm giờ thời gian cả hàng quay một vòng; đo khoảng cách từng người tới người trụ."
+  ],
+  "quan_sat": [
+   "Cả hàng luôn thẳng: mọi người quay hết một vòng cùng lúc.",
+   "Người ngoài cùng phải đạp chân liên tục, người gần tâm gần như chỉ xoay người."
+  ],
+  "rut_ra": [
+   "Mọi người có cùng tốc độ góc ω = 2π/T.",
+   "Tốc độ v = ωr tỉ lệ với khoảng cách tới tâm: người ngoài cùng nhanh nhất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T",
+   "ten": "Thời gian cả hàng quay một vòng",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 3,
+   "max": 10,
+   "mac_dinh": 5.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách từ người đang xét tới tâm",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 6,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "omega",
+   "ten": "Tốc độ góc chung của cả hàng",
+   "don_vi": "rad/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ của người cách tâm r",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "omega = 2·pi/T",
+   "v = omega·r",
+   "v = 2·pi·r/T"
+  ],
+  "gia_thiet": [
+   "hàng người giữ thẳng như một vật rắn",
+   "cả hàng quay đều quanh người trụ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (m)",
+   "ω (rad/s)",
+   "v (m/s)",
+   "v (km/h)"
+  ],
+  "hang": [
+   [
+    0,
+    1.257,
+    0.0,
+    0.0
+   ],
+   [
+    2,
+    1.257,
+    2.51,
+    9.0
+   ],
+   [
+    4,
+    1.257,
+    5.03,
+    18.1
+   ],
+   [
+    6,
+    1.257,
+    7.54,
+    27.1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình với T = 5 s; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Mọi người cùng ω ≈ 1,26 rad/s; người cách tâm 6 m chạy khoảng 7,5 m/s (≈ 27 km/h).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nắm tay nhau thì mọi người cùng tốc độ.",
+  "Nghĩ người ngoài cùng quay hết một vòng nhanh hơn (khác chu kì).",
+  "Nghĩ người gần trục chạy nhanh hơn."
+ ],
+ "an_toan": "Chỉ làm khi có huấn luyện viên; người ngoài cùng là người trượt vững nhất.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hàng chấm tròn quay quanh tâm nhìn từ trên; thanh trượt T và chọn người; mỗi người để lại vệt cung trong cùng Δt, bảng ω và v tự cập nhật.",
+  "diem_nhan": "Cùng Δt mọi vệt quét cùng góc nhưng vệt ngoài dài gấp nhiều lần vệt trong."
+ }
+}

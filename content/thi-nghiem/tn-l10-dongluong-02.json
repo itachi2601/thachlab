@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 28. Động lượng",
+ "lesson_id": 73,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-luong/theory.html",
+ "id": "tn-l10-dongluong-02",
+ "ten": "Bi lăn từ máng nghiêng va vào khúc gỗ",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dongluong.dinh_nghia",
+  "dongluong.phu_thuoc_m_va_v"
+ ],
+ "muc_tieu": "Thấy khả năng truyền chuyển động của viên bi cho khúc gỗ tăng khi bi nặng hơn hoặc lăn nhanh hơn: dẫn tới đại lượng p = mv.",
+ "dung_cu": [
+  {
+   "ten": "Máng nghiêng có vạch độ cao",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bi thép 50 g và 100 g",
+   "so_luong": 2
+  },
+  {
+   "ten": "Khúc gỗ nhỏ đặt ở chân máng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo độ dịch chuyển",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả bi 50 g từ độ cao 10 cm rồi 20 cm; đo quãng khúc gỗ bị đẩy đi.",
+   "Đổi sang bi 100 g, thả lại từ 10 cm và 20 cm."
+  ],
+  "quan_sat": [
+   "Cùng bi, thả cao hơn (bi tới nhanh hơn) thì khúc gỗ đi xa hơn.",
+   "Cùng độ cao, bi nặng hơn thì khúc gỗ đi xa hơn."
+  ],
+  "rut_ra": [
+   "Khả năng truyền chuyển động phụ thuộc cả khối lượng lẫn vận tốc: gộp thành p = mv."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng bi",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.2,
+   "mac_dinh": 0.05,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Độ cao thả bi",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.3,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ bi ở chân máng",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "p",
+   "ten": "Động lượng bi ngay trước va chạm",
+   "don_vi": "kg·m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v = √(10·g·h/7) (bi đặc lăn không trượt)",
+   "p = m·v"
+  ],
+  "gia_thiet": [
+   "bi lăn không trượt, bỏ qua ma sát lăn",
+   "khúc gỗ giống nhau ở mọi lần thả"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m (kg)",
+   "h (m)",
+   "v (m/s)",
+   "p (kg·m/s)"
+  ],
+  "hang": [
+   [
+    0.05,
+    0.1,
+    1.18,
+    0.059
+   ],
+   [
+    0.05,
+    0.2,
+    1.67,
+    0.084
+   ],
+   [
+    0.1,
+    0.1,
+    1.18,
+    0.118
+   ],
+   [
+    0.1,
+    0.2,
+    1.67,
+    0.167
+   ]
+  ],
+  "ghi_chu": "Số tính từ mô hình, không phải số đo; thí nghiệm trên lớp chỉ cần so sánh quãng đi của khúc gỗ (định tính)."
+ },
+ "ket_qua_ky_vong": "Khúc gỗ đi xa nhất khi bi 100 g thả từ 20 cm (p lớn nhất), gần nhất khi bi 50 g thả từ 10 cm.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng chỉ tốc độ quyết định (bi nào nhanh hơn thì đẩy mạnh hơn).",
+  "Cho rằng bi nặng gấp đôi thì lăn xuống nhanh gấp đôi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hai thanh trượt m và h; bi lăn xuống va khúc gỗ, hiện p của bi và quãng khúc gỗ đi.",
+  "diem_nhan": "Hỏi trước: bi 50 g thả 20 cm hay bi 100 g thả 10 cm đẩy khúc gỗ xa hơn?"
+ }
+}

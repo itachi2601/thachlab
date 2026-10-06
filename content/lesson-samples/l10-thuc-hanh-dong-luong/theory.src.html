@@ -1,0 +1,404 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Đo <strong>tốc độ xe</strong> bằng cổng quang: $v = \dfrac{s}{t}$, rồi tính <strong>động lượng</strong> $p = mv$ có dấu.</li>
+<li>Làm hai phép đo: <strong>va chạm mềm</strong> (hai xe dính nhau) và <strong>hai xe đẩy nhau</strong> (lò xo ở giữa).</li>
+<li>So <strong>tổng động lượng trước và sau</strong>, kết luận có xét sai số.</li>
+<li>Giải thích vì sao $p'$ lệch $p$ vài phần trăm: hệ <strong>không kín hoàn toàn</strong>.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: đẩy nhau trên sân băng</h3>
+
+<p>Hai bạn đứng yên đối mặt trên sân băng. Bạn nhẹ đẩy một cái: cả hai trượt ra hai phía, bạn nhẹ đi xa hơn hẳn. Trước khi đẩy, tổng động lượng bằng $0$. Muốn biết sau đó nó có còn bằng $0$ không, phải đo tốc độ từng bạn, mà trên sân băng không ai cầm đồng hồ kịp. Phòng thí nghiệm thay sân băng bằng băng đệm khí.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Hai xe đứng yên trên băng đệm khí, lò xo bị nén ở giữa và buộc bằng sợi dây. Xe 2 nặng gấp đôi xe 1. Cắt dây. Điều gì xảy ra?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q1" id="tl75-q1a"><label for="tl75-q1a" class="tl-opt tl-no">A. Hai xe chạy nhanh bằng nhau, vì lực lò xo lên hai xe bằng nhau</label>
+<input type="radio" name="tl75-q1" id="tl75-q1b"><label for="tl75-q1b" class="tl-opt tl-no">B. Xe 2 nặng hơn nên chạy nhanh hơn, vì có nhiều "đà" hơn</label>
+<input type="radio" name="tl75-q1" id="tl75-q1c"><label for="tl75-q1c" class="tl-opt tl-ok">C. Xe 1 chạy nhanh gấp đôi xe 2, hai xe đi ngược chiều</label>
+<input type="radio" name="tl75-q1" id="tl75-q1d"><label for="tl75-q1d" class="tl-opt tl-no">D. Hai xe vẫn đứng yên, vì hai lực triệt tiêu nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Trước khi cắt, tổng $p = 0$; sau khi cắt vẫn $0$ nên hai động lượng bằng nhau về độ lớn: $m_1v_1 = m_2v_2$. $m_2 = 2m_1$ thì $v_1 = 2v_2$. Muốn kiểm bằng số, phải đo $v$ của từng xe.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lực bằng nhau nhưng khối lượng khác nhau thì gia tốc khác nhau. B ngược: xe nặng khó tăng tốc hơn. D: hai lực đặt lên hai vật khác nhau nên không triệt tiêu lên từng xe; cái cộng lại bằng $0$ là hai động lượng.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: phương án đo và xử lí số liệu</h3>
+
+<h4>1. Ý tưởng: đo $v$ để có $p$</h4>
+
+<p><strong>🔑 Đo $t$ · tính $v$ · tính $p$ · so $p'$ với $p$</strong></p>
+
+<ul>
+<li>Tấm cản quang rộng $s$ chắn tia sáng trong $t$ giây: $v = \dfrac{s}{t}$.</li>
+<li>Động lượng: $p = mv$. Hệ kín thì tổng $p$ trước bằng tổng $p'$ sau.</li>
+<li>Đồng hồ chỉ cho $t \gt 0$: <strong>dấu của $v$ do em gán</strong> sau khi chọn chiều dương.</li>
+<li>$v = s/t$ là tốc độ trung bình lúc qua cổng; xe chạy đều và $s$ nhỏ thì coi là tốc độ của xe.</li>
+<li><strong>Trước khi đo:</strong> tấm cản quang song song với băng · cấp điện cho bơm khí · chọn chế độ đồng hồ đo thời gian vật chắn cổng · nhấn reset về $0{,}000$ · chọn đúng thang cân.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Dụng cụ</th><th>Để làm gì · độ chia</th></tr>
+</thead>
+<tbody>
+<tr><td>Băng đệm khí + bơm</td><td>Xe lướt trên lớp khí, ma sát rất nhỏ</td></tr>
+<tr><td>Cổng quang + đồng hồ</td><td>Đo $t$, độ chia $0{,}001\ \text{s}$</td></tr>
+<tr><td>Tấm cản quang</td><td>Đo $s$ bằng thước kẹp: $0{,}0500\ \text{m}$</td></tr>
+<tr><td>Cân điện tử</td><td>Đo $m$, độ chia $0{,}001\ \text{kg}$</td></tr>
+<tr><td>Chốt ghim + sáp, lò xo</td><td>Hai xe dính nhau / đẩy nhau</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG1-->
+
+<h4>2. Thí nghiệm 1: va chạm mềm</h4>
+
+<p><strong>🔑 Xe 2 đứng yên · $p = m_1v_1$ · sau: $p' = (m_1 + m_2)v'$</strong></p>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-thuchanhdl-01">
+<p class="tl-label">🔬 Thí nghiệm: xe 1 đâm vào xe 2 đứng yên rồi dính nhau</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> chỉnh băng nằm ngang. Xe 2 đứng yên giữa hai cổng, xe 1 ở ngoài cổng 1. Đẩy xe 1 tới va chạm; hai xe dính nhau, cùng chạy qua cổng 2. Đọc $t_1$ (xe 1 qua cổng 1) và $t_1'$ (cặp xe qua cổng 2): lấy số đo lần đầu của đồng hồ. Làm 3 lần, đổi gia trọng mỗi lần.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ); $t_1'$ luôn lớn hơn $t_1$ nhiều, tức xe chạy chậm đi sau va chạm.</li>
+<li><strong>Rút ra:</strong> tính $p$ và $p'$ từng lần rồi so sánh.</li>
+</ol>
+</div>
+
+__BANG_A1__
+
+<p>Lần 1 ($s = 0{,}0500\ \text{m}$):</p>
+<ol class="tl-steps">
+<li>$v_1 = \dfrac{0{,}0500}{0{,}099} \approx 0{,}505\ \text{m/s}$, nên $p = m_1v_1 = 0{,}205 \cdot 0{,}505 \approx 0{,}1035\ \text{kg}\cdot\text{m/s}$ (xe 2 đứng yên, $p_2 = 0$).</li>
+<li>$v' = \dfrac{0{,}0500}{0{,}199} \approx 0{,}251\ \text{m/s}$, nên $p' = (m_1 + m_2)v' = 0{,}403 \cdot 0{,}251 \approx 0{,}1012\ \text{kg}\cdot\text{m/s}$.</li>
+</ol>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Lần 3: $m_1 = 0{,}405\ \text{kg}$, tấm cản quang rộng $5{,}00\ \text{cm}$, $t_1 = 0{,}105\ \text{s}$. Động lượng $p$ trước va chạm là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q2" id="tl75-q2a"><label for="tl75-q2a" class="tl-opt tl-no">A. $19{,}3\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q2" id="tl75-q2b"><label for="tl75-q2b" class="tl-opt tl-no">B. $0{,}382\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q2" id="tl75-q2c"><label for="tl75-q2c" class="tl-opt tl-no">C. $0{,}0021\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q2" id="tl75-q2d"><label for="tl75-q2d" class="tl-opt tl-ok">D. $0{,}193\ \text{kg}\cdot\text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v_1 = \dfrac{0{,}0500}{0{,}105} \approx 0{,}476\ \text{m/s}$; $p = 0{,}405 \cdot 0{,}476 \approx 0{,}193\ \text{kg}\cdot\text{m/s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: để $s = 5{,}00$ chứ chưa đổi cm sang m, $v$ lớn gấp $100$ lần. B: dùng cả hai khối lượng, trong khi trước va chạm xe 2 đứng yên nên chỉ xe 1 có động lượng. C: tính $v = s \cdot t$ thay vì $s / t$.</p></div>
+</div>
+</div>
+
+<h4>3. Xử lí số liệu: so $p'$ với $p$</h4>
+
+<p>Kết quả cả ba lần ($\delta$ và $\varepsilon$ giải thích ngay dưới bảng):</p>
+
+__BANG_A2__
+
+<p><strong>🔑 Độ lệch $\delta$ · sai số $\varepsilon$ · $\delta \le \varepsilon$ thì bảo toàn trong sai số</strong></p>
+
+<ul>
+<li>Độ lệch: $$\delta = \dfrac{|p' - p|}{p}$$</li>
+<li>Sai số của một động lượng: $\dfrac{\Delta p}{p} = \dfrac{\Delta m}{m} + \dfrac{\Delta t}{t}$ (với $\Delta m = 0{,}001\ \text{kg}$, $\Delta t = 0{,}001\ \text{s}$).</li>
+<li>Gộp trước và sau: $\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$; $\varepsilon$ là cận trên của sai số. Với $p'$ thì $\Delta m = 0{,}002\ \text{kg}$ (cân hai xe).</li>
+<li>$\delta \le \varepsilon$: không phân biệt được $p'$ với $p$.</li>
+<li>Cùng tấm cản quang cho $p$ và $p'$, nên sai số của $s$ triệt tiêu khi so sánh.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: tính $\varepsilon$ và $\delta$ lần 1</summary>
+<p>Lần 1: $\dfrac{\Delta p}{p} = \dfrac{0{,}001}{0{,}205} + \dfrac{0{,}001}{0{,}099} \approx 0{,}0150$; $\dfrac{\Delta p'}{p'} = \dfrac{0{,}002}{0{,}403} + \dfrac{0{,}001}{0{,}199} \approx 0{,}0100$; vậy $\varepsilon \approx 2{,}5\,\%$. Còn $\delta = \dfrac{0{,}1035 - 0{,}1012}{0{,}1035} \approx 2{,}2\,\%$.</p>
+</details>
+
+<p>Lần 3 có $\delta = 2{,}5\,\% \gt \varepsilon = 1{,}9\,\%$: chưa kết luận định luật sai, mà kiểm lại băng nằm ngang, cổng quang rồi đo lại.</p>
+
+<!--FIG2-->
+
+<h4>4. Thí nghiệm 2: hai xe đẩy nhau</h4>
+
+<p><strong>🔑 Trước: $p = 0$ · sau: hai $p$ ngược dấu · tổng $\approx 0$</strong></p>
+
+<ul>
+<li>Hai xe đứng yên giữa hai cổng, lò xo nén buộc dây: tổng $p = 0$.</li>
+<li>Trong đề, thí nghiệm này hay gọi là <strong>va chạm đàn hồi</strong> (hai xe đẩy nhau bằng lò xo, không dính nhau).</li>
+<li>Cắt dây: xe 1 đi sang trái qua cổng 1, xe 2 sang phải qua cổng 2.</li>
+<li>Chiều dương sang phải: $p_1' = -m_1v_1'$, $p_2' = +m_2v_2'$; $p' = p_1' + p_2'$.</li>
+<li>$p = 0$ không chia được: so $|p'|$ với $\Delta p' = \Delta p_1' + \Delta p_2'$.</li>
+</ul>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-thuchanhdl-02">
+<p class="tl-label">🔬 Thí nghiệm: nén lò xo giữa hai xe rồi cắt dây</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> gắn lò xo vào một xe, nén lại bằng dây buộc hai xe. Cắt dây. Đọc $t_1'$ (cổng 1) và $t_2'$ (cổng 2). Đổi gia trọng, làm 3 lần.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ); khi hai xe nặng khác nhau thì $t_1'$ và $t_2'$ khác nhau.</li>
+<li><strong>Rút ra:</strong> tính $p_1'$, $p_2'$ có dấu rồi cộng.</li>
+</ol>
+</div>
+
+__BANG_B1__
+
+__BANG_B2__
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Cùng thí nghiệm, $m_1 = 0{,}300\ \text{kg}$, $m_2 = 0{,}150\ \text{kg}$. Xe 2 qua cổng 2 hết $t_2' = 0{,}150\ \text{s}$. Thời gian $t_1'$ của xe 1 qua cổng 1 gần nhất với (bỏ qua mất mát):</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q3" id="tl75-q3a"><label for="tl75-q3a" class="tl-opt tl-ok">A. $0{,}300\ \text{s}$</label>
+<input type="radio" name="tl75-q3" id="tl75-q3b"><label for="tl75-q3b" class="tl-opt tl-no">B. $0{,}075\ \text{s}$</label>
+<input type="radio" name="tl75-q3" id="tl75-q3c"><label for="tl75-q3c" class="tl-opt tl-no">C. $0{,}150\ \text{s}$</label>
+<input type="radio" name="tl75-q3" id="tl75-q3d"><label for="tl75-q3d" class="tl-opt tl-no">D. $0{,}450\ \text{s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai động lượng bằng nhau về độ lớn: $\dfrac{m_1s}{t_1'} = \dfrac{m_2s}{t_2'}$, nên $t_1' = t_2' \cdot \dfrac{m_1}{m_2} = 0{,}150 \cdot 2 = 0{,}300\ \text{s}$. Xe nặng hơn đi chậm hơn nên mất nhiều thời gian hơn để qua cổng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B nhân nhầm thành $t_2'/2$, tức cho xe nặng đi nhanh gấp đôi. C coi hai xe qua cổng cùng lúc, chỉ đúng khi hai xe cùng khối lượng. D là $3$ lần: không có hệ thức nào cho hệ số $3$. Viết $m_1v_1' = m_2v_2'$ rồi thay $v = s/t$.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: quên dấu</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đồng hồ cho</th><th>Em phải làm</th></tr>
+</thead>
+<tbody>
+<tr><td>$t \gt 0$ nên $v \gt 0$</td><td>Chọn chiều dương, gán dấu</td></tr>
+<tr><td>Hai xe cùng "dương"</td><td>Xe đi ngược chiều dương: $p \lt 0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Chọn chiều dương trước · gán dấu sau</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Hai xe đẩy nhau: xe 1 ($0{,}250\ \text{kg}$) đi sang trái với $0{,}400\ \text{m/s}$, xe 2 ($0{,}500\ \text{kg}$) đi sang phải với $0{,}200\ \text{m/s}$. Chọn chiều dương hướng sang <strong>trái</strong>. Tổng động lượng sau $p'$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q4" id="tl75-q4a"><label for="tl75-q4a" class="tl-opt tl-no">A. $+0{,}200\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q4" id="tl75-q4b"><label for="tl75-q4b" class="tl-opt tl-ok">B. $0\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q4" id="tl75-q4c"><label for="tl75-q4c" class="tl-opt tl-no">C. $-0{,}200\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q4" id="tl75-q4d"><label for="tl75-q4d" class="tl-opt tl-no">D. $+0{,}100\ \text{kg}\cdot\text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương sang trái: $p_1' = +0{,}250 \cdot 0{,}400 = +0{,}100$ và $p_2' = -0{,}500 \cdot 0{,}200 = -0{,}100$. Tổng bằng $0$, khớp với tổng trước ($0$). Đổi chiều dương thì dấu đổi nhưng tổng vẫn $0$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và C cộng hai độ lớn, như thể hai xe cùng đi một chiều. D chỉ lấy động lượng của xe 1, bỏ xe 2. Gợi ý: xe nào đi ngược chiều dương thì động lượng mang dấu trừ.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: sau va chạm mềm chỉ tính một xe</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Trước va chạm</th><th>Sau va chạm</th></tr>
+</thead>
+<tbody>
+<tr><td>Chỉ xe 1 chạy: $p = m_1v_1$</td><td>Cả hai xe dính nhau, cùng $v'$</td></tr>
+<tr><td>Xe 2 đứng yên: $p_2 = 0$</td><td>Khối lượng chuyển động: $m_1 + m_2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Dính nhau thì cộng khối lượng</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl75-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl75-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Va chạm mềm: $m_1 = 0{,}205\ \text{kg}$, $m_2 = 0{,}398\ \text{kg}$. Sau va chạm hai xe dính nhau qua cổng 2 với $v' = 0{,}170\ \text{m/s}$. Động lượng $p'$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q5" id="tl75-q5a"><label for="tl75-q5a" class="tl-opt tl-no">A. $0{,}0349\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q5" id="tl75-q5b"><label for="tl75-q5b" class="tl-opt tl-no">B. $0{,}170\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q5" id="tl75-q5c"><label for="tl75-q5c" class="tl-opt tl-ok">C. $0{,}103\ \text{kg}\cdot\text{m/s}$</label>
+<input type="radio" name="tl75-q5" id="tl75-q5d"><label for="tl75-q5d" class="tl-opt tl-no">D. $0{,}0677\ \text{kg}\cdot\text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $p' = (0{,}205 + 0{,}398) \cdot 0{,}170 = 0{,}603 \cdot 0{,}170 \approx 0{,}103\ \text{kg}\cdot\text{m/s}$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A chỉ tính xe 1 ($0{,}205 \cdot 0{,}170$), D chỉ tính xe 2: cả hai xe cùng chuyển động nên phải cộng khối lượng. B lấy tốc độ làm động lượng, quên nhân khối lượng. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: "$p'$ khác $p$ là thí nghiệm hỏng"</h4>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Lệch lên xuống</th><th>Lệch cùng một phía</th></tr>
+</thead>
+<tbody>
+<tr><td>Sai số ngẫu nhiên</td><td>Sai số hệ thống</td></tr>
+<tr><td>Làm nhiều lần thì giảm</td><td>Làm nhiều lần không giảm</td></tr>
+<tr><td>Ví dụ: đọc đồng hồ, thả xe lệch</td><td>Ví dụ: ma sát, băng nghiêng</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Hệ không kín hoàn toàn · ngoại lực nhỏ làm $p'$ lệch $p$</strong></p>
+
+<ul>
+<li>Ma sát lớp khí, sức cản không khí làm xe chậm dần trên đường từ cổng 1 tới chỗ va chạm và tới cổng 2, nên $p'$ <strong>nhỏ hơn</strong> $p$.</li>
+<li>Băng nghiêng thì lệch về phía nào tuỳ chiều nghiêng: nghiêng xuống phía cổng 2 làm $p'$ <strong>lớn hơn</strong>, nghiêng ngược lại làm $p'$ nhỏ hơn.</li>
+<li>Va chạm rất ngắn, nội lực lớn hơn hẳn ngoại lực: động lượng vẫn gần như bảo toàn.</li>
+<li>Thao tác chưa đúng (quên reset đồng hồ, tấm cản quang nghiêng) làm một lần đo lạc hẳn: đo thêm vài lần.</li>
+<li>Giảm lệch: chỉnh băng nằm ngang, đặt cổng sát chỗ va chạm, tăng áp bơm.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Một nhóm khác làm 3 lần va chạm mềm. Cả ba lần đều có $p' \lt p$, với $\delta$ lần lượt $2{,}1\,\%;\ 2{,}3\,\%;\ 2{,}0\,\%$ và $\varepsilon \approx 2{,}5\,\%$ mỗi lần. Kết luận phù hợp nhất:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q6" id="tl75-q6a"><label for="tl75-q6a" class="tl-opt tl-no">A. Định luật sai, vì cả ba lần đều cho $p'$ không bằng $p$ chính xác</label>
+<input type="radio" name="tl75-q6" id="tl75-q6b"><label for="tl75-q6b" class="tl-opt tl-no">B. Thí nghiệm hỏng, phải làm lại cho tới khi $p' = p$ đúng từng chữ số</label>
+<input type="radio" name="tl75-q6" id="tl75-q6c"><label for="tl75-q6c" class="tl-opt tl-no">C. Sai số ngẫu nhiên, nên lấy trung bình ba lần thì $p'$ sẽ bằng $p$</label>
+<input type="radio" name="tl75-q6" id="tl75-q6d"><label for="tl75-q6d" class="tl-opt tl-ok">D. Phù hợp trong sai số; lệch cùng phía gợi ý sai số hệ thống</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhóm này có $\delta \lt \varepsilon$ ở cả ba lần nên không bác bỏ được bảo toàn. Ba lần cùng một phía là dấu hiệu sai số hệ thống (như ngoại lực nhỏ), không phải ngẫu nhiên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B đòi hai số bằng nhau tuyệt đối, trong khi mọi phép đo đều có sai số. C: lệch cùng phía thì lấy trung bình không làm mất lệch. Gợi ý: so $\delta$ với $\varepsilon$, rồi nhìn dấu của ba độ lệch.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>📐 Bấm xem: băng nghiêng bao nhiêu thì lệch bấy nhiêu</summary>
+<div class="tl-box tl-box--exp" data-exp="tn-l10-thuchanhdl-03">
+<p class="tl-label">🔬 Thí nghiệm: kê cao một đầu băng</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> băng dài $L = 1{,}20\ \text{m}$; kê một đầu cao thêm $h$. Xe chạy xuống dốc, qua cổng 1 với $v = 0{,}505\ \text{m/s}$, rồi tới chỗ va chạm cách cổng $x = 0{,}300\ \text{m}$.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ tính từ mô hình): tốc độ thật ở chỗ va chạm lớn hơn số đọc ở cổng 1.</li>
+<li><strong>Rút ra:</strong> chỉ nghiêng vài milimét đã lệch vài phần trăm, cỡ độ lệch $\delta$ ở trên: phải chỉnh ngang trước khi đo.</li>
+</ol>
+</div>
+__BANG_NGHIENG__
+<p>Cách kiểm băng ngang: bơm khí, đặt xe đứng yên giữa băng; xe trôi một phía là băng nghiêng, chỉnh chân vít.</p>
+</details>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Đo tốc độ xe bằng cổng quang thế nào, cần điều kiện gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v = \dfrac{s}{t}$ · $s$: bề rộng tấm cản quang · $t$: thời gian chắn tia sáng · $s$ nhỏ, xe chạy đều · $t$ luôn dương.</p>
+</details>
+<details class="tl-details">
+<summary>2. Động lượng của xe tính thế nào, dấu ra sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$p = mv$ · chọn chiều dương trước · cùng chiều dương: $p \gt 0$ · ngược chiều: $p \lt 0$.</p>
+</details>
+<details class="tl-details">
+<summary>3. Thí nghiệm va chạm mềm: đo gì, tính $p$ và $p'$ thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đo $m_1$, $m_2$, $t_1$, $t_1'$ · $p = m_1v_1$ (xe 2 đứng yên) · $p' = (m_1 + m_2)v'$.</p>
+</details>
+<details class="tl-details">
+<summary>4. Thí nghiệm hai xe đẩy nhau: trước $p$ bằng bao nhiêu, cần kiểm điều gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Trước: $p = 0$ · sau: $p_1'$ và $p_2'$ ngược dấu · kiểm $p' = p_1' + p_2' \approx 0$, tức $m_1v_1' \approx m_2v_2'$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Khi nào kết luận "bảo toàn trong sai số"? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$\delta = \dfrac{|p' - p|}{p}$ · $\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$ · $\delta \le \varepsilon$ · với $p = 0$: $|p'| \le \Delta p'$.</p>
+</details>
+<details class="tl-details">
+<summary>6. Vì sao $p'$ lệch $p$ vài phần trăm, và giảm bằng cách nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Hệ không kín hoàn toàn · ma sát khí, sức cản làm $p'$ nhỏ hơn · băng nghiêng thì lệch tuỳ chiều nghiêng · chỉnh băng ngang, cổng sát chỗ va chạm.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Va chạm mềm trên băng đệm khí. Tấm cản quang rộng $s = 0{,}0500\ \text{m}$. $m_1 = 0{,}305\ \text{kg}$, $m_2 = 0{,}200\ \text{kg}$ (xe 2 đứng yên). Xe 1 qua cổng 1 hết $t_1 = 0{,}083\ \text{s}$; hai xe dính nhau qua cổng 2 hết $t_1' = 0{,}140\ \text{s}$. Cân và đồng hồ có $\Delta m = 0{,}001\ \text{kg}$, $\Delta t = 0{,}001\ \text{s}$. Tính $p$, $p'$, $\delta$, $\varepsilon$ và cho biết động lượng có bảo toàn trong sai số không.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"qua cổng 1 hết $0{,}083\ \text{s}$"</td><td>$v_1 = s/t_1$</td></tr>
+<tr><td>"xe 2 đứng yên" (ngầm)</td><td>$p_2 = 0$ nên $p = m_1v_1$</td></tr>
+<tr><td>"dính nhau qua cổng 2"</td><td>$v' = s/t_1'$ · $p' = (m_1 + m_2)v'$</td></tr>
+<tr><td>"$\Delta m$, $\Delta t$"</td><td>$\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$</td></tr>
+<tr><td>"bảo toàn trong sai số"</td><td>So $\delta$ với $\varepsilon$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Trước:</strong> $v_1 = \dfrac{0{,}0500}{0{,}083} \approx 0{,}602\ \text{m/s}$; $p = 0{,}305 \cdot 0{,}602 \approx 0{,}1836\ \text{kg}\cdot\text{m/s}$.</li>
+<li><strong>Sau:</strong> $v' = \dfrac{0{,}0500}{0{,}140} \approx 0{,}357\ \text{m/s}$; $p' = 0{,}505 \cdot 0{,}357 \approx 0{,}1803\ \text{kg}\cdot\text{m/s}$.</li>
+<li><strong>Độ lệch:</strong> $\delta = \dfrac{0{,}1836 - 0{,}1803}{0{,}1836} \approx 0{,}018 = 1{,}8\,\%$.</li>
+<li><strong>Sai số:</strong> $\dfrac{\Delta p}{p} = \dfrac{0{,}001}{0{,}305} + \dfrac{0{,}001}{0{,}083} \approx 0{,}0153$; $\dfrac{\Delta p'}{p'} = \dfrac{0{,}002}{0{,}505} + \dfrac{0{,}001}{0{,}140} \approx 0{,}0111$; $\varepsilon \approx 0{,}0264 = 2{,}6\,\%$.</li>
+<li><strong>Kết luận:</strong> $\delta = 1{,}8\,\% \lt \varepsilon = 2{,}6\,\%$: bảo toàn trong sai số.</li>
+<li><strong>Kiểm tra:</strong> $p' \lt p$ như thường gặp (ma sát, sức cản) ✓; $v' \lt v_1$ vì khối lượng chuyển động tăng ✓.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng cách làm: $m_1 = 0{,}405\ \text{kg}$, $m_2 = 0{,}398\ \text{kg}$, $t_1 = 0{,}110\ \text{s}$, $t_1' = 0{,}221\ \text{s}$; $\varepsilon = 1{,}9\,\%$.</p>
+<ol class="tl-steps">
+<li>$v_1 = \dfrac{0{,}0500}{0{,}110} \approx 0{,}455$, nên $p = 0{,}405 \cdot 0{,}455 \approx 0{,}1843$.</li>
+<li><strong>Bước 2 (em điền):</strong> $v' = \;?$ và $p' = \;?$ — gợi ý: khối lượng chuyển động là $m_1 + m_2$.</li>
+<li><strong>Bước 3 (em điền):</strong> $\delta = \;?$ rồi so với $\varepsilon$.</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$v' = \dfrac{0{,}0500}{0{,}221} \approx 0{,}226$; $p' = 0{,}803 \cdot 0{,}226 \approx 0{,}1815$. $\delta = \dfrac{0{,}1843 - 0{,}1815}{0{,}1843} \approx 1{,}5\,\% \lt 1{,}9\,\%$: bảo toàn trong sai số.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: xe 2 chạy ngược lại</summary>
+<p>Xe 1 ($0{,}205\ \text{kg}$) chạy sang phải với $0{,}500\ \text{m/s}$; xe 2 ($0{,}198\ \text{kg}$) chạy sang trái với $0{,}250\ \text{m/s}$, rồi dính nhau. Chọn chiều dương sang phải: $p = 0{,}205 \cdot 0{,}500 - 0{,}198 \cdot 0{,}250 = 0{,}0530\ \text{kg}\cdot\text{m/s}$. Hai xe dính nhau: $v' = \dfrac{0{,}0530}{0{,}403} \approx 0{,}1315\ \text{m/s}$, dương nên cặp xe đi sang phải, và qua tấm cản quang hết $t_1' = \dfrac{0{,}0500}{0{,}1315} \approx 0{,}380\ \text{s}$.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl75-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl75-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Va chạm mềm. Nhóm thêm gia trọng để <strong>cả hai xe nặng gấp đôi</strong>, vẫn đẩy xe 1 sao cho $t_1$ như cũ. Thời gian $t_1'$ của cặp xe qua cổng 2 thay đổi thế nào (bỏ qua mất mát)?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl75-q7" id="tl75-q7a"><label for="tl75-q7a" class="tl-opt tl-no">A. Giảm một nửa, vì xe nặng hơn thì có nhiều đà hơn</label>
+<input type="radio" name="tl75-q7" id="tl75-q7b"><label for="tl75-q7b" class="tl-opt tl-ok">B. Không đổi, vì $v'$ chỉ phụ thuộc tỉ số $m_1 : m_2$</label>
+<input type="radio" name="tl75-q7" id="tl75-q7c"><label for="tl75-q7c" class="tl-opt tl-no">C. Gấp đôi, vì khối lượng của cặp xe tăng gấp đôi</label>
+<input type="radio" name="tl75-q7" id="tl75-q7d"><label for="tl75-q7d" class="tl-opt tl-no">D. Gấp bốn, vì cả $p$ lẫn $m$ cùng gấp đôi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v' = \dfrac{m_1}{m_1 + m_2}v_1$: nhân đôi cả $m_1$ và $m_2$ thì tỉ số không đổi, $v'$ không đổi, $t_1' = s/v'$ không đổi. $p$ và $p'$ cùng gấp đôi nhưng $v'$ vẫn vậy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: động lượng gấp đôi nhưng khối lượng cũng gấp đôi, tốc độ không nhanh hơn. C và D bỏ quên rằng $v'$ là thương của hai đại lượng cùng gấp đôi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại $m_1v_1 = (m_1 + m_2)v'$.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>📷 Bấm xem: cổng quang ngoài phòng thí nghiệm</summary>
+<ul>
+<li><strong>Cổng bấm giờ ở sân chạy, camera đo tốc độ xe:</strong> cảm biến quang đo thời gian đi qua quãng đường biết trước bằng đúng nguyên lí $v = s/t$.</li>
+<li><strong>Thử va chạm ô tô:</strong> đo tốc độ xe trước và sau va chạm để tính động lượng và động năng mất đi.</li>
+<li><strong>Súng giật, tên lửa:</strong> hai phần tách nhau từ trạng thái nghỉ, như hai xe đẩy nhau: $p$ tổng vẫn $0$.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Xe 1 ($0{,}205\ \text{kg}$) qua cổng 1 hết $t_1 = 0{,}125\ \text{s}$ ($s = 0{,}0500\ \text{m}$), rồi dính với xe 2 ($0{,}205\ \text{kg}$) đứng yên. Tốc độ chung (bỏ qua mất mát)? <em>($v_1 = 0{,}400\ \text{m/s}$; $v' = \dfrac{0{,}205 \cdot 0{,}400}{0{,}410} = 0{,}200\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐</strong> Hai xe đẩy nhau: $m_1 = 0{,}400\ \text{kg}$, $m_2 = 0{,}250\ \text{kg}$; xe 1 qua cổng 1 hết $t_1' = 0{,}250\ \text{s}$. Dự đoán $t_2'$ (bỏ qua mất mát). <em>($t_2' = t_1' \cdot \dfrac{m_2}{m_1} = 0{,}250 \cdot 0{,}625 \approx 0{,}156\ \text{s}$)</em></li>
+<li><strong>⭐⭐⭐</strong> Một nhóm làm 5 lần va chạm mềm, cả 5 lần đều có $p' \gt p$, $\delta \approx 3\,\%$, $\varepsilon \approx 2\,\%$. Ma sát có giải thích được không? Đề xuất một nguyên nhân và cách kiểm. <em>(Ma sát và sức cản chỉ làm xe chậm, làm $p'$ nhỏ hơn. $p' \gt p$ cùng phía gợi ý băng nghiêng xuống về phía cổng 2: xe nhanh dần trên đường từ cổng 1 tới chỗ va chạm và tới cổng 2. Kiểm: đặt xe đứng yên, xem có trôi không, rồi chỉnh chân vít.)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Đo</strong>: $v = \dfrac{s}{t}$ · $p = mv$ · chiều dương trước, dấu sau.</li>
+<li><strong>Va chạm mềm</strong>: $m_1v_1 = (m_1 + m_2)v'$ · xe 2 đứng yên.</li>
+<li><strong>Hai xe đẩy nhau</strong>: $p = 0$ · $m_1v_1' \approx m_2v_2'$ ngược dấu.</li>
+<li><strong>So sánh</strong>: $\delta = \dfrac{|p' - p|}{p}$ · $\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$ · $\delta \le \varepsilon$ thì bảo toàn trong sai số.</li>
+<li><strong>Lệch cùng phía</strong>: sai số hệ thống · ma sát, sức cản, băng nghiêng.</li>
+<li>Đọc đề: ghi chiều dương · $p'$ gồm mọi xe chuyển động · đổi cm sang m.</li>
+</ul>
+</div>

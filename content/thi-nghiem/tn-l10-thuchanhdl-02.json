@@ -1,0 +1,193 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm",
+ "lesson_id": 75,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-dong-luong/theory.html",
+ "id": "tn-l10-thuchanhdl-02",
+ "ten": "Hai xe đẩy nhau bằng lò xo: kiểm tổng động lượng sau bằng 0",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thuchanhdl.dau_cua_dong_luong",
+  "thuchanhdl.hai_xe_day_nhau",
+  "thuchanhdl.sai_so_so_sanh"
+ ],
+ "muc_tieu": "Gán dấu cho p1', p2' theo chiều dương, cộng được p' ≈ 0 và so |p'| với Δp'; thấy t' tỉ lệ thuận với khối lượng xe.",
+ "dung_cu": [
+  {
+   "ten": "Băng đệm khí + bơm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai xe có tấm cản quang s = 0,0500 m, gia trọng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lò xo (hoặc thanh chữ U + dây cao su) gắn vào một xe",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai cổng quang + đồng hồ hiện số 0,001 s",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cân điện tử 0,001 kg, sợi dây buộc hai xe",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Hai xe đứng yên giữa hai cổng, nén lò xo, buộc dây.",
+   "Cắt dây; đọc t1' (cổng 1) và t2' (cổng 2); đổi gia trọng, làm 3 lần."
+  ],
+  "quan_sat": [
+   "Xe 1 đi sang trái, xe 2 đi sang phải; t1' và t2' khác nhau khi hai xe nặng khác nhau."
+  ],
+  "rut_ra": [
+   "Chiều dương sang phải: p1' = −m1·s/t1', p2' = +m2·s/t2', p' = p1' + p2'.",
+   "Ba lần p' = +0,0007; −0,0007; −0,0006 kg·m/s, đều trong Δp' (0,0010; 0,0007; 0,0007)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Bề rộng tấm cản quang",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "m1",
+   "ten": "Khối lượng xe 1",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.19,
+   "max": 0.6,
+   "mac_dinh": 0.205,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m2",
+   "ten": "Khối lượng xe 2",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.19,
+   "max": 0.6,
+   "mac_dinh": 0.198,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "p0",
+   "ten": "Độ lớn động lượng mỗi xe do lò xo truyền",
+   "don_vi": "kg·m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.1,
+   "mac_dinh": 0.05,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "dcnn_t",
+   "ten": "Độ chia nhỏ nhất đồng hồ",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "t1p",
+   "ten": "Thời gian xe 1 chắn cổng 1",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "t2p",
+   "ten": "Thời gian xe 2 chắn cổng 2",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Tổng động lượng sau, có dấu",
+   "don_vi": "kg·m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "p1' = −m1·s/t1'; p2' = +m2·s/t2' (chiều dương sang phải)",
+   "p' = p1' + p2'",
+   "Δp' = |p1'|(Δm/m1 + Δt/t1') + |p2'|(Δm/m2 + Δt/t2')",
+   "Lý tưởng: m1·s/t1' = m2·s/t2' nên t1'/t2' = m1/m2"
+  ],
+  "gia_thiet": [
+   "đây là va chạm đàn hồi theo cách gọi trong đề: hai xe đẩy nhau bằng lò xo, không dính nhau",
+   "ma sát khí và sức cản làm giảm cả hai độ lớn gần như như nhau nên gần như triệt tiêu trong p'",
+   "thời gian t' đã làm tròn 0,001 s, v 0,001 m/s, p 0,0001 kg·m/s"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "m1 (kg)",
+   "m2 (kg)",
+   "t1' (s)",
+   "t2' (s)",
+   "p1' (kg·m/s)",
+   "p2' (kg·m/s)",
+   "p' (kg·m/s)",
+   "Δp' (kg·m/s)"
+  ],
+  "hang": [
+   [
+    1,
+    0.205,
+    0.198,
+    0.205,
+    0.195,
+    -0.05,
+    0.0507,
+    0.0007,
+    0.001
+   ],
+   [
+    2,
+    0.405,
+    0.198,
+    0.404,
+    0.2,
+    -0.0502,
+    0.0495,
+    -0.0007,
+    0.0007
+   ],
+   [
+    3,
+    0.205,
+    0.398,
+    0.205,
+    0.402,
+    -0.05,
+    0.0494,
+    -0.0006,
+    0.0007
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. Dấu của p' lẫn lộn (+, −, −) và |p'| ≤ Δp' cả ba lần."
+ },
+ "ket_qua_ky_vong": "p' ≈ 0 trong sai số ở cả ba lần; t1'/t2' xấp xỉ m1/m2 (lần 2: 0,404/0,200 ≈ 2,0 so với m1/m2 ≈ 2,05).",
+ "hien_tuong_hay_sai": [
+  "Cộng độ lớn hai động lượng, quên dấu.",
+  "Cho rằng lực lò xo bằng nhau thì hai xe chạy nhanh bằng nhau.",
+  "Cố chia cho p = 0 để tính δ."
+ ],
+ "sai_so_thuong_gap": "Cắt dây không đồng thời làm lò xo bung lệch; xe chưa thật đứng yên trước khi cắt; băng nghiêng làm hai xe lệch tốc độ.",
+ "an_toan": "Cắt dây bằng kéo nhỏ, tay tránh xa lò xo đang nén.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Hai xe giữa hai cổng; nút cắt dây; đồng hồ hiện t1', t2'; bảng tự tính p1', p2' có dấu, p' và Δp'.",
+  "diem_nhan": "Đổi chiều dương: dấu của p1', p2' đổi nhưng p' vẫn xấp xỉ 0."
+ }
+}

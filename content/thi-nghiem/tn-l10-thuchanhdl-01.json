@@ -1,0 +1,232 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm",
+ "lesson_id": 75,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-dong-luong/theory.html",
+ "id": "tn-l10-thuchanhdl-01",
+ "ten": "Va chạm mềm trên băng đệm khí: so động lượng trước và sau bằng cổng quang",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thuchanhdl.v_bang_s_chia_t",
+  "thuchanhdl.dong_luong_truoc_sau",
+  "thuchanhdl.sai_so_so_sanh",
+  "thuchanhdl.he_khong_kin_hoan_toan"
+ ],
+ "muc_tieu": "Đo t1 và t1' bằng cổng quang, tính v = s/t, p = m1·v1 và p' = (m1+m2)·v'; so p' với p qua độ lệch δ và sai số ε; nhận ra p' < p cùng phía ở cả ba lần là sai số hệ thống.",
+ "dung_cu": [
+  {
+   "ten": "Băng đệm khí + bơm nén khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai xe trượt, gia trọng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai cổng quang + đồng hồ đo thời gian hiện số, độ chia 0,001 s",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm cản quang rộng s = 0,0500 m (đo bằng thước kẹp)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cân điện tử, độ chia 0,001 kg",
+   "so_luong": 1
+  },
+  {
+   "ten": "Chốt ghim + miếng sáp để hai xe dính nhau",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chỉnh băng nằm ngang (xe đặt yên không trôi); tấm cản quang song song băng; bật bơm khí, chọn chế độ đo thời gian vật chắn cổng, reset 0,000; chọn thang cân, cân hai xe, ghi m1, m2.",
+   "Xe 2 đứng yên giữa hai cổng, xe 1 ngoài cổng 1; đẩy xe 1 va vào xe 2 cho dính nhau.",
+   "Đọc t1 (cổng 1) và t1' (cổng 2), lấy số đo lần đầu của đồng hồ; thêm gia trọng và làm 3 lần."
+  ],
+  "quan_sat": [
+   "Bảng t1, t1' ba lần; t1' lớn hơn t1 nhiều (xe chậm đi sau va chạm)."
+  ],
+  "rut_ra": [
+   "p = m1·s/t1; p' = (m1+m2)·s/t1'; δ = |p'−p|/p; ε = Δp/p + Δp'/p'.",
+   "Ba lần: δ = 2,2 %; 1,6 %; 2,5 % so với ε = 2,5 %; 2,2 %; 1,9 %; lần 1, 2 có δ ≤ ε, lần 3 có δ > ε: chưa kết luận định luật sai mà kiểm lại băng nằm ngang, vị trí cổng quang rồi đo lại. Cả ba lần cùng p' < p nên nghi sai số hệ thống."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "s",
+   "ten": "Bề rộng tấm cản quang",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "m1",
+   "ten": "Khối lượng xe 1 (kể gia trọng)",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.19,
+   "max": 0.6,
+   "mac_dinh": 0.205,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "m2",
+   "ten": "Khối lượng xe 2 (kể gia trọng)",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.19,
+   "max": 0.6,
+   "mac_dinh": 0.198,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Tốc độ xe 1 trước va chạm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.3,
+   "max": 0.8,
+   "mac_dinh": 0.505,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "mat",
+   "ten": "Tỉ lệ động lượng mất do ma sát, sức cản",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.05,
+   "mac_dinh": 0.022,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "dcnn_t",
+   "ten": "Độ chia nhỏ nhất đồng hồ",
+   "don_vi": "s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "dcnn_m",
+   "ten": "Độ chia nhỏ nhất cân",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.001
+  },
+  {
+   "ky_hieu": "t1",
+   "ten": "Thời gian xe 1 chắn cổng 1",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "t1p",
+   "ten": "Thời gian cặp xe chắn cổng 2",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.001
+  },
+  {
+   "ky_hieu": "delta",
+   "ten": "Độ lệch tương đối giữa p' và p",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "eps",
+   "ten": "Sai số tương đối gộp",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v1 = s/t1; p = m1·v1 (xe 2 đứng yên)",
+   "v' = (m1·v1/(m1+m2))·(1 − mat)",
+   "t1' = s/v'; p' = (m1+m2)·v'",
+   "δ = |p'−p|/p",
+   "ε = Δm/m1 + Δt/t1 + 2Δm/(m1+m2) + Δt/t1' (Δs triệt tiêu vì cùng tấm cản quang); ε là cận trên của sai số"
+  ],
+  "gia_thiet": [
+   "va chạm mềm hoàn toàn, hai xe dính nhau",
+   "mất động lượng do ma sát khí và sức cản quy về hệ số 'mat' ≈ 2 %",
+   "v và p làm tròn half-up (v: 0,001; p: 0,0001)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "m1 (kg)",
+   "m2 (kg)",
+   "t1 (s)",
+   "t1' (s)",
+   "v1 (m/s)",
+   "p (kg·m/s)",
+   "v' (m/s)",
+   "p' (kg·m/s)",
+   "δ (%)",
+   "ε (%)"
+  ],
+  "hang": [
+   [
+    1,
+    0.205,
+    0.198,
+    0.099,
+    0.199,
+    0.505,
+    0.1035,
+    0.251,
+    0.1012,
+    2.2,
+    2.5
+   ],
+   [
+    2,
+    0.405,
+    0.198,
+    0.101,
+    0.153,
+    0.495,
+    0.2005,
+    0.327,
+    0.1972,
+    1.6,
+    2.2
+   ],
+   [
+    3,
+    0.405,
+    0.398,
+    0.105,
+    0.214,
+    0.476,
+    0.1928,
+    0.234,
+    0.1879,
+    2.5,
+    1.9
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. s = 0,0500 m, Δm = Δt = 0,001. Lần 1, 2: δ ≤ ε; lần 3: δ > ε; cả ba lần p' < p."
+ },
+ "ket_qua_ky_vong": "Hai trong ba lần δ ≤ ε, lần 3 vượt nhẹ; cả ba cùng p' < p (trung bình δ ≈ 2,1 %): bảo toàn gần đúng, còn sai số hệ thống do ngoại lực nhỏ.",
+ "hien_tuong_hay_sai": [
+  "Sau va chạm chỉ nhân v' với m1 mà quên m2.",
+  "Đổi 5 cm sang mét sai (v lệch 100 lần).",
+  "Coi δ ≠ 0 là thí nghiệm hỏng, không so với ε.",
+  "Lấy trung bình ba lần rồi cho rằng sai số hệ thống đã mất."
+ ],
+ "sai_so_thuong_gap": "Băng không ngang; cổng 1 đặt xa chỗ va chạm nên xe đã chậm bớt; ma sát khí; tấm cản quang không song song băng; xe 2 chưa thật đứng yên.",
+ "an_toan": "Giữ xe không tuột khỏi đầu băng; không để tay vào lỗ khí khi bơm chạy.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
+  "y_tuong": "Băng đệm khí, hai xe, hai cổng; nút đẩy; đồng hồ hiện t1, t1'; bảng tự tính p, p', δ, ε và đồ thị p'/p kèm thanh sai số.",
+  "diem_nhan": "Thanh trượt 'mat': kéo lên thì p'/p tụt dưới 1 ở mọi lần, thanh sai số không còn chạm 1."
+ }
+}

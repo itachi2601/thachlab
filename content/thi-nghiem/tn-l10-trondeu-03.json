@@ -1,0 +1,161 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 31. Động học của chuyển động tròn đều",
+ "lesson_id": 76,
+ "nguon_trong_bai": "content/lesson-samples/l10-chuyen-dong-tron-deu/theory.html",
+ "id": "tn-l10-trondeu-03",
+ "ten": "Đo chu kì quay của đĩa xoay lò vi sóng, suy ra tần số và tốc độ góc",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "trondeu.chu_ki_tan_so",
+  "trondeu.toc_do_goc"
+ ],
+ "muc_tieu": "Đo thời gian nhiều vòng để tìm chu kì T, suy ra f và ω; nhận xét sai số do bấm đồng hồ bằng tay.",
+ "dung_cu": [
+  {
+   "ten": "Lò vi sóng có đĩa xoay, cốc nước nhỏ đặt giữa đĩa",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính màu",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây (điện thoại)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dán băng dính lên mép đĩa xoay, cách tâm 14,0 cm; đặt cốc nước nhỏ giữa đĩa.",
+   "Bật lò, bấm đồng hồ đo thời gian đĩa quay 3 vòng; làm 5 lần."
+  ],
+  "quan_sat": [
+   "Thời gian 3 vòng: 30,2; 29,8; 30,1; 30,4; 29,9 s."
+  ],
+  "rut_ra": [
+   "T ≈ 10,03 s, f ≈ 0,100 Hz, ω ≈ 0,627 rad/s.",
+   "Đo nhiều vòng rồi chia giúp giảm sai số do phản xạ tay khi bấm đồng hồ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T0",
+   "ten": "Chu kì thật của đĩa xoay",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 8,
+   "max": 12,
+   "mac_dinh": 10.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách băng dính tới tâm",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.15,
+   "mac_dinh": 0.14,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Số vòng đếm mỗi lần đo",
+   "don_vi": "vòng",
+   "kieu": "co_dinh",
+   "gia_tri": 3
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian n vòng đo bằng đồng hồ",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì suy ra",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "omega",
+   "ten": "Tốc độ góc",
+   "don_vi": "rad/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = dt/n",
+   "f = 1/T",
+   "omega = 2·pi/T",
+   "v = omega·r"
+  ],
+  "gia_thiet": [
+   "đĩa quay đều",
+   "sai số chủ yếu do phản xạ tay khi bấm (cỡ 0,2 s mỗi lần)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "Thời gian 3 vòng (s)",
+   "T = dt/3 (s)"
+  ],
+  "hang": [
+   [
+    1,
+    30.2,
+    10.067
+   ],
+   [
+    2,
+    29.8,
+    9.933
+   ],
+   [
+    3,
+    30.1,
+    10.033
+   ],
+   [
+    4,
+    30.4,
+    10.133
+   ],
+   [
+    5,
+    29.9,
+    9.967
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ quanh T0 = 10.0 s (đĩa lò vi sóng thường 5–6 vòng/phút); trung bình 30.08 s → T = 10.027 s, ω = 0.627 rad/s, tốc độ băng dính v = 0.0877 m/s. Chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "T ≈ 10 s, f ≈ 0,1 Hz, ω ≈ 0,63 rad/s; các lần đo 3 vòng lệch nhau dưới 0,4 s.",
+ "hien_tuong_hay_sai": [
+  "Đo một vòng rồi lấy luôn làm T (sai số tay lớn).",
+  "Quên chia cho số vòng khi tính T.",
+  "Nhầm f với ω (quên nhân 2π)."
+ ],
+ "sai_so_thuong_gap": "Phản xạ tay khi bấm bắt đầu/kết thúc; khó nhận đúng lúc băng dính qua mốc; đĩa có thể khựng nhẹ khi bánh xe lăn qua chỗ gồ.",
+ "an_toan": "Không bật lò khi trống: luôn đặt cốc nước bên trong; không cho kim loại vào lò.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Đĩa quay nhìn từ trên với mốc băng dính; học sinh bấm nút bắt đầu/dừng như đồng hồ, mô phỏng cộng thêm độ trễ phản xạ ngẫu nhiên; bảng tự tính T, f, ω.",
+  "diem_nhan": "So sai số khi đếm 1 vòng và 10 vòng."
+ }
+}

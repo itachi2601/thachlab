@@ -1,0 +1,160 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+ "lesson_id": 77,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-huong-tam/theory.html",
+ "id": "tn-l10-huongtam-03",
+ "ten": "Nút cao su quay trên đầu ống: kiểm F = m·v²/r",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "huong_tam.f_bang_m_v2_chia_r",
+  "huong_tam.vai_tro_luc_cang"
+ ],
+ "muc_tieu": "Đo thời gian 10 vòng để tính m·v²/r và so với lực căng dây Mg đã biết.",
+ "dung_cu": [
+  {
+   "ten": "Nút cao su 0,050 kg buộc đầu dây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ống nhựa cứng (thân bút bi to) để luồn dây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bộ quả nặng 0,10 kg",
+   "so_luong": 3
+  },
+  {
+   "ten": "Kẹp giấy đánh dấu trên dây",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây (phản xạ tay ±0,2 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước dây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Luồn dây qua ống, buộc nút cao su ở đầu trên, treo quả nặng M ở đầu dưới.",
+   "Đặt kẹp sao cho bán kính quỹ đạo r = 0,50 m (từ trục ống tới nút).",
+   "Quay nút thành vòng tròn nằm ngang, giữ kẹp đứng yên ngay dưới ống; bấm thời gian t10 của 10 vòng.",
+   "Làm với M = 0,10; 0,20; 0,30 kg."
+  ],
+  "quan_sat": [
+   "Quả nặng càng lớn, phải quay càng nhanh thì kẹp mới đứng yên: t10 = 10,2 s; 7,0 s; 5,7 s.",
+   "m·v²/r ≈ 0,95; 2,01; 3,04 N so với Mg = 0,98; 1,96; 2,94 N."
+  ],
+  "rut_ra": [
+   "Lực căng dây Mg đóng vai lực hướng tâm.",
+   "m·v²/r khớp Mg trong khoảng 4 %, cỡ sai số bấm giờ: F_ht = m·v²/r được xác nhận."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng nút cao su",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.05
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Bán kính quỹ đạo",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "M",
+   "ten": "Khối lượng quả nặng",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.05,
+   "max": 0.5,
+   "mac_dinh": 0.1,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "t10",
+   "ten": "Thời gian 10 vòng",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  },
+  {
+   "ky_hieu": "F_ht",
+   "ten": "m·v²/r tính từ số đo",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = t10 / 10",
+   "v = 2π·r / T",
+   "F_ht = m·v² / r",
+   "F_ht = M·g (lý thuyết)",
+   "t10 = 10·2π·√(m·r / (M·g))"
+  ],
+  "gia_thiet": [
+   "dây nằm ngang, bỏ qua trọng lượng nút làm dây chùng",
+   "bỏ qua ma sát dây với miệng ống",
+   "g = 9,8 m/s²",
+   "kẹp đứng yên nên r không đổi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "M (kg)",
+   "Mg (N)",
+   "t10 (s)",
+   "v (m/s)",
+   "m·v²/r (N)"
+  ],
+  "hang": [
+   [
+    0.1,
+    0.98,
+    10.2,
+    3.08,
+    0.95
+   ],
+   [
+    0.2,
+    1.96,
+    7.0,
+    4.49,
+    2.01
+   ],
+   [
+    0.3,
+    2.94,
+    5.7,
+    5.51,
+    3.04
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ (chưa phải số đo thật): t10 lệch ngẫu nhiên quanh mô hình (10,04; 7,10; 5,79 s), mỗi hàng lệch dưới 4 %, nằm trong sai số bấm giờ 2·0,2/t10. Bài chỉ hiện các cột Mg, t10, m·v²/r."
+ },
+ "ket_qua_ky_vong": "m·v²/r ≈ Mg ở cả ba lần đo; sai số tương đối lớn nhất ở lần quay nhanh nhất (t10 ngắn nhất, ≈ 7 %).",
+ "hien_tuong_hay_sai": [
+  "Cho rằng quay nhanh thì nút 'bị kéo ra' nên kẹp tụt lên; thật ra cần lực hướng tâm lớn hơn, quả nặng không đủ giữ.",
+  "Đo r từ tay chứ không từ trục ống."
+ ],
+ "sai_so_thuong_gap": [
+  "Bấm giờ ±0,2 s; F ~ 1/T² nên sai số tương đối của F gấp đôi của t.",
+  "Dây không nằm ngang hẳn (nút có trọng lượng) và dây cọ miệng ống."
+ ],
+ "an_toan": "Quay ở nơi rộng, không ai đứng trong vòng quay; buộc chặt nút cao su.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Nút quay quanh ống (nhìn nghiêng), thanh trượt M; đồng hồ đếm 10 vòng có nhiễu ±0,2 s; bảng tự thêm hàng Mg – t10 – m·v²/r.",
+  "diem_nhan": "Hỏi trước: M gấp 4 thì t10 giảm mấy lần (2, vì t ~ 1/√M)."
+ }
+}

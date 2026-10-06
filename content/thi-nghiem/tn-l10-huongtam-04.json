@@ -1,0 +1,116 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+ "lesson_id": 77,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-huong-tam/theory.html",
+ "id": "tn-l10-huongtam-04",
+ "ten": "Viên bi trong vòng có chỗ hở: mất lực hướng tâm thì đi theo tiếp tuyến",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "huong_tam.khong_co_luc_li_tam",
+  "huong_tam.bay_theo_tiep_tuyen"
+ ],
+ "muc_tieu": "Thấy vật mất lực hướng tâm thì đi thẳng theo tiếp tuyến, không bật ra theo bán kính.",
+ "dung_cu": [
+  {
+   "ten": "Nắp hộp tròn có thành (đường kính ~20 cm), cắt bỏ một đoạn thành ~1/6 vòng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Viên bi",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt nắp hộp trên bàn phẳng.",
+   "Búng viên bi chạy vòng sát thành, hướng về phía chỗ hở."
+  ],
+  "quan_sat": [
+   "Tới chỗ hở, bi lăn thẳng theo tiếp tuyến tại điểm thành kết thúc.",
+   "Bi không bật ra theo bán kính."
+  ],
+  "rut_ra": [
+   "Thành vòng đẩy bi vào tâm, đóng vai lực hướng tâm.",
+   "Mất lực đó, bi đi thẳng theo quán tính."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "R",
+   "ten": "Bán kính vòng",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ bi",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.5,
+   "mac_dinh": 0.6,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "goc_ho",
+   "ten": "Vị trí bắt đầu chỗ hở",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 330,
+   "mac_dinh": 0,
+   "buoc": 30
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Lực thành đẩy bi",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "trên thành: N = m·v² / R, hướng vào tâm",
+   "ở chỗ hở: N = 0, bi chuyển động thẳng đều theo tiếp tuyến tại điểm rời thành"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát lăn trong thời gian quan sát",
+   "bi coi là chất điểm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "N (N) với m = 0,02 kg"
+  ],
+  "hang": [
+   [
+    0.4,
+    0.032
+   ],
+   [
+    0.6,
+    0.072
+   ],
+   [
+    0.8,
+    0.128
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ); thí nghiệm này định tính, bài không hiện bảng."
+ },
+ "ket_qua_ky_vong": "Quỹ đạo sau chỗ hở là đường thẳng tiếp tuyến với vòng tại điểm rời thành.",
+ "hien_tuong_hay_sai": [
+  "Dự đoán bi bật thẳng ra ngoài theo bán kính vì 'lực li tâm'.",
+  "Dự đoán bi tiếp tục đi cong một đoạn sau khi rời thành."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Nhìn từ trên, kéo chỗ hở tới vị trí bất kỳ; bi rời thành đi thẳng; vẽ mờ đường 'bán kính' để so.",
+  "diem_nhan": "Cho học sinh vẽ dự đoán đường đi trước khi bấm chạy."
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 28. Động lượng",
+ "lesson_id": 73,
+ "nguon_trong_bai": "content/lesson-samples/l10-dong-luong/theory.html",
+ "id": "tn-l10-dongluong-03",
+ "ten": "Cùng độ biến thiên động lượng: mặt cứng và mặt mềm",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "dongluong.dinh_ly_xung_luong",
+  "dongluong.keo_dai_thoi_gian_giam_luc"
+ ],
+ "muc_tieu": "Một vật dừng lại với cùng Δp trên mặt cứng (Δt ngắn) và mặt mềm (Δt dài): diện tích dưới đồ thị F–t bằng nhau, lực cực đại trên mặt mềm nhỏ hơn nhiều.",
+ "dung_cu": [
+  {
+   "ten": "Quả bóng hoặc túi cát nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Mặt bàn cứng và tấm đệm xốp",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cảm biến lực (tuỳ chọn) để vẽ đồ thị F–t",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Thả cùng một túi cát từ cùng độ cao xuống mặt cứng rồi xuống tấm đệm xốp (nếu có cảm biến lực thì đặt dưới mặt đỡ)."
+  ],
+  "quan_sat": [
+   "Trên mặt cứng: tiếng 'bộp' gọn, đồ thị F–t là xung hẹp và cao. Trên đệm: lún sâu, đồ thị thấp và rộng."
+  ],
+  "rut_ra": [
+   "Δp như nhau nên diện tích dưới hai đồ thị bằng nhau; kéo dài Δt thì lực trung bình giảm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian va chạm",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.005,
+   "max": 0.2,
+   "mac_dinh": 0.04,
+   "buoc": 0.005
+  },
+  {
+   "ky_hieu": "dp",
+   "ten": "Độ lớn độ biến thiên động lượng",
+   "don_vi": "kg·m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.45
+  },
+  {
+   "ky_hieu": "F_tb",
+   "ten": "Lực trung bình",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "F_max",
+   "ten": "Lực cực đại (xung nửa hình sin)",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F_tb = Δp/Δt",
+   "F(t) = F_max·sin(πt/Δt), 0 ≤ t ≤ Δt",
+   "F_max = π·Δp/(2·Δt)"
+  ],
+  "gia_thiet": [
+   "bỏ qua trọng lực so với lực va chạm",
+   "dạng xung nửa hình sin chỉ để vẽ minh hoạ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Δt (s)",
+   "F_tb (N)",
+   "F_max (N)"
+  ],
+  "hang": [
+   [
+    0.01,
+    45.0,
+    70.7
+   ],
+   [
+    0.04,
+    11.25,
+    17.7
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ cho Δp = 0,45 kg·m/s; hai dòng ứng với hai đồ thị của Hình 3 trong bài."
+ },
+ "ket_qua_ky_vong": "Kéo Δt dài gấp 4 thì lực trung bình và lực cực đại đều nhỏ đi 4 lần; Δp không đổi.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng đệm mềm làm giảm độ biến thiên động lượng.",
+  "Cho rằng đệm mềm làm vật dừng 'nhẹ nhàng' vì xung lượng nhỏ hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Thanh trượt Δt; vẽ xung F(t) với diện tích cố định bằng Δp, đọc F_tb và F_max.",
+  "diem_nhan": "Hỏi trước: đổi sang đệm mềm thì diện tích dưới đồ thị tăng, giảm hay giữ nguyên?"
+ }
+}

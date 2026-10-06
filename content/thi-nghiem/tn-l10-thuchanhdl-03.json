@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm",
+ "lesson_id": 75,
+ "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-dong-luong/theory.html",
+ "id": "tn-l10-thuchanhdl-03",
+ "ten": "Băng đệm khí nghiêng nhẹ làm lệch tốc độ đo được",
+ "loai": "thi_nghiem",
+ "muc_do": "nang_cao",
+ "kien_thuc": [
+  "thuchanhdl.he_khong_kin_hoan_toan",
+  "thuchanhdl.chinh_bang_ngang"
+ ],
+ "muc_tieu": "Thấy băng nghiêng vài milimét đã làm tốc độ thật tại chỗ va chạm lệch vài phần trăm so với số đọc ở cổng 1; biết cách kiểm băng nằm ngang.",
+ "dung_cu": [
+  {
+   "ten": "Băng đệm khí dài 1,20 m + bơm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm đệm mỏng để kê chân băng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe, cổng quang, đồng hồ hiện số",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Kê một đầu băng cao thêm h = 2; 4; 6 mm.",
+   "Đẩy xe xuống dốc qua cổng 1 với v = 0,505 m/s rồi đo tốc độ tại chỗ cách cổng 1 một đoạn x = 0,300 m."
+  ],
+  "quan_sat": [
+   "Tốc độ ở chỗ va chạm lớn hơn số đọc ở cổng 1, và lớn dần khi h tăng."
+  ],
+  "rut_ra": [
+   "a = g·h/L; v_va_cham = sqrt(v² + 2ax).",
+   "h = 6 mm đã lệch khoảng 5,6 %: phải chỉnh băng ngang trước khi đo."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ kê cao một đầu băng",
+   "don_vi": "mm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 4,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "x",
+   "ten": "Khoảng cách từ cổng 1 tới chỗ va chạm",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.6,
+   "mac_dinh": 0.3,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài băng",
+   "don_vi": "m",
+   "kieu": "co_dinh",
+   "gia_tri": 1.2
+  },
+  {
+   "ky_hieu": "v_cong",
+   "ten": "Tốc độ đọc ở cổng 1",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 0.505
+  },
+  {
+   "ky_hieu": "lech",
+   "ten": "Độ lệch tốc độ thật so với số đọc",
+   "don_vi": "%",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin α ≈ h/L; a = g·h/L (g = 9,8 m/s²)",
+   "v_thật = sqrt(v_cong² + 2·a·x) khi xe chạy xuống dốc",
+   "lệch = (v_thật/v_cong − 1)·100 %"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát và sức cản",
+   "góc nghiêng nhỏ nên sin α ≈ tan α ≈ h/L"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (mm)",
+   "a (m/s²)",
+   "v_thật (m/s)",
+   "lệch (%)"
+  ],
+  "hang": [
+   [
+    2,
+    0.0163,
+    0.5146,
+    1.9
+   ],
+   [
+    4,
+    0.0327,
+    0.524,
+    3.77
+   ],
+   [
+    6,
+    0.049,
+    0.5333,
+    5.61
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật."
+ },
+ "ket_qua_ky_vong": "h = 2; 4; 6 mm cho lệch +1,9 %; +3,8 %; +5,6 %.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng nghiêng vài milimét không đáng kể.",
+  "Kiểm băng ngang chỉ bằng mắt thay vì thả xe đứng yên."
+ ],
+ "sai_so_thuong_gap": "Chân vít chỉnh lệch; băng võng ở giữa; mặt bàn không phẳng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Thanh trượt độ kê cao h; xe trượt xuống, hai đồng hồ ở cổng 1 và cổng 2 hiện v.",
+  "diem_nhan": "Kéo h lên thì độ lệch tăng; đặt h = 0 thì hai số đọc trùng nhau."
+ }
+}

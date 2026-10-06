@@ -1,0 +1,121 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 29. Định luật bảo toàn động lượng",
+ "lesson_id": 74,
+ "nguon_trong_bai": "content/lesson-samples/l10-bao-toan-dong-luong/theory.html",
+ "id": "tn-l10-baotoandl-02",
+ "ten": "Va chạm gần đàn hồi giữa hai xe cùng khối lượng có đệm lò xo",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "baotoandl.va_cham_dan_hoi",
+  "baotoandl.dinh_luat"
+ ],
+ "muc_tieu": "Thấy hai xe cùng khối lượng va chạm đàn hồi trực diện thì đổi vận tốc cho nhau: xe 1 dừng, xe 2 đi tiếp với vận tốc của xe 1.",
+ "dung_cu": [
+  {
+   "ten": "Ray đệm khí nằm ngang + máy thổi khí",
+   "so_luong": 1
+  },
+  {
+   "ten": "Xe trượt cùng khối lượng gắn vòng lò xo lá ở đầu",
+   "so_luong": 2
+  },
+  {
+   "ten": "Cổng quang điện + đồng hồ đo thời gian (tuỳ chọn)",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt xe 2 đứng yên giữa ray.",
+   "Đẩy xe 1 tới va thẳng vào xe 2 qua vòng lò xo lá."
+  ],
+  "quan_sat": [
+   "Xe 1 gần như dừng hẳn ngay sau va chạm.",
+   "Xe 2 lao đi với tốc độ gần bằng tốc độ xe 1 lúc đầu."
+  ],
+  "rut_ra": [
+   "Va chạm gần đàn hồi: động lượng và động năng đều được chuyển gần trọn từ xe 1 sang xe 2.",
+   "Hai vật bằng khối lượng va chạm đàn hồi trực diện thì đổi vận tốc cho nhau."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng mỗi xe",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.2
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Vận tốc xe 1 trước va chạm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1.0,
+   "mac_dinh": 0.5,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "v1_sau",
+   "ten": "Vận tốc xe 1 sau va chạm",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v2_sau",
+   "ten": "Vận tốc xe 2 sau va chạm",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v1' = ((m1 − m2)·v1 + 2·m2·v2)/(m1 + m2)",
+   "v2' = ((m2 − m1)·v2 + 2·m1·v1)/(m1 + m2)",
+   "m1 = m2, v2 = 0 ⇒ v1' = 0, v2' = v1"
+  ],
+  "gia_thiet": [
+   "va chạm trực diện, đàn hồi hoàn toàn",
+   "bỏ qua ma sát của ray"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v1 (m/s)",
+   "v1' (m/s)",
+   "v2' (m/s)"
+  ],
+  "hang": [
+   [
+    0.3,
+    0.0,
+    0.3
+   ],
+   [
+    0.5,
+    0.0,
+    0.5
+   ],
+   [
+    0.8,
+    0.0,
+    0.8
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình đàn hồi lý tưởng, m1 = m2; xe thật mất vài phần trăm động năng ở lò xo."
+ },
+ "ket_qua_ky_vong": "Xe 1 dừng, xe 2 đi với vận tốc bằng vận tốc ban đầu của xe 1.",
+ "hien_tuong_hay_sai": [
+  "Đoán hai xe cùng đi với một nửa tốc độ (nhầm với va chạm mềm).",
+  "Đoán xe 1 bật ngược lại với cùng tốc độ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Thanh trượt m2/m1 từ 0,2 đến 5; cho thấy m2 = m1 thì xe 1 dừng, m2 > m1 thì xe 1 bật lùi, m2 < m1 thì xe 1 đi tiếp chậm hơn.",
+  "diem_nhan": "Hỏi trước: va chạm đàn hồi, hai xe bằng nhau, xe 1 sẽ làm gì?"
+ }
+}

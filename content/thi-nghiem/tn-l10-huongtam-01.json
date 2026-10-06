@@ -1,0 +1,153 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+ "lesson_id": 77,
+ "nguon_trong_bai": "content/lesson-samples/l10-luc-huong-tam/theory.html",
+ "id": "tn-l10-huongtam-01",
+ "ten": "Ô tô qua khúc cua phẳng: ma sát nghỉ làm lực hướng tâm",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "huong_tam.a_v2_chia_r",
+  "huong_tam.vai_tro_ma_sat_nghi",
+  "huong_tam.toc_do_toi_da_qua_cua"
+ ],
+ "muc_tieu": "Thấy xe tốc độ không đổi qua cua vẫn có gia tốc hướng vào tâm; tính lực hướng tâm cần có và tốc độ tối đa trước khi trượt.",
+ "dung_cu": [
+  {
+   "ten": "Mô hình/ảnh nhìn từ trên của khúc cua tròn, ô tô đồ chơi",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho xe 1200 kg chạy đều qua khúc cua phẳng bán kính 50 m với tốc độ 5; 10; 15; 17 m/s.",
+   "Tính a_ht = v²/r và F_ht = m·v²/r; so với ma sát nghỉ lớn nhất 0,5·m·g = 6000 N."
+  ],
+  "quan_sat": [
+   "Kim tốc độ đứng yên nhưng hướng vận tốc đổi liên tục.",
+   "F_ht cần có tăng theo v²: 600 N → 2400 N → 5400 N → 6936 N; ở 17 m/s vượt 6000 N."
+  ],
+  "rut_ra": [
+   "Ma sát nghỉ giữa lốp và mặt đường đóng vai lực hướng tâm.",
+   "Tốc độ tối đa v_max = √(F_max·r/m) ≈ 15,8 m/s ≈ 57 km/h; nhanh hơn thì xe trượt khỏi đường cong."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng xe",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 1200
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Bán kính khúc cua",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 20,
+   "max": 200,
+   "mac_dinh": 50,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ xe",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 25,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Tỉ số ma sát nghỉ lớn nhất / trọng lượng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 0.8,
+   "mac_dinh": 0.5,
+   "buoc": 0.02
+  },
+  {
+   "ky_hieu": "a_ht",
+   "ten": "Gia tốc hướng tâm",
+   "don_vi": "m/s²",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "F_ht",
+   "ten": "Lực hướng tâm cần có",
+   "don_vi": "N",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "a_ht = v² / r",
+   "F_ht = m·v² / r",
+   "F_max = k·m·g",
+   "trượt nếu F_ht > F_max",
+   "v_max = √(k·g·r)"
+  ],
+  "gia_thiet": [
+   "đường nằm ngang, P và N triệt tiêu",
+   "xe coi là chất điểm, chạy đều",
+   "g = 10 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "v (km/h)",
+   "a_ht (m/s²)",
+   "F_ht (N)",
+   "trượt?"
+  ],
+  "hang": [
+   [
+    5,
+    18.0,
+    0.5,
+    600.0,
+    "không"
+   ],
+   [
+    10,
+    36.0,
+    2.0,
+    2400.0,
+    "không"
+   ],
+   [
+    15,
+    54.0,
+    4.5,
+    5400.0,
+    "không"
+   ],
+   [
+    17,
+    61.2,
+    5.78,
+    6936.0,
+    "có"
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình (minh hoạ), m = 1200 kg, r = 50 m, k = 0,5. Bài toán mẫu dùng hàng v = 10 m/s; biến thể trời mưa k = 0,16 cho F_max = 1920 N, v_max ≈ 8,9 m/s."
+ },
+ "ket_qua_ky_vong": "F_ht tăng theo v²; xe trượt khi v > √(k·g·r) ≈ 15.8 m/s, không phụ thuộc khối lượng xe.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng tốc độ không đổi thì không có gia tốc.",
+  "Vẽ thêm một 'lực hướng tâm' bên cạnh ma sát (đếm một lực hai lần).",
+  "Thế thẳng km/h vào v²/r, không đổi ra m/s."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Xe nhìn từ trên chạy trên cung tròn; thanh trượt v, r, k; mũi tên v (tiếp tuyến), F_ms và a_ht (vào tâm) cập nhật; vượt F_max thì xe trượt theo hướng gần tiếp tuyến.",
+  "diem_nhan": "Hỏi trước: tăng tốc độ gấp đôi thì lực cần có gấp mấy (4, không phải 2)."
+ }
+}

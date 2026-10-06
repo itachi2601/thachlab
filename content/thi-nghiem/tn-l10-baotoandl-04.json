@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 10,
+ "bai": "Bài 29. Định luật bảo toàn động lượng",
+ "lesson_id": 74,
+ "nguon_trong_bai": "content/lesson-samples/l10-bao-toan-dong-luong/theory.html",
+ "id": "tn-l10-baotoandl-04",
+ "ten": "Cú ôm trên sân băng (va chạm mềm, vật 2 đứng yên)",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "baotoandl.he_kin",
+  "baotoandl.va_cham_mem"
+ ],
+ "muc_tieu": "Dự đoán vận tốc chung khi một bạn đang trượt ôm một bạn đứng yên trên băng; thấy động lượng giữ nguyên còn động năng giảm.",
+ "dung_cu": [
+  {
+   "ten": "Sân băng (tình huống đời sống)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "An (50 kg) trượt 4 m/s tới ôm Bình (50 kg) đang đứng yên."
+  ],
+  "quan_sat": [
+   "Sau cú ôm hai bạn cùng lướt đi chậm hơn An lúc đầu, rồi chậm dần và dừng do ma sát nhỏ của băng."
+  ],
+  "rut_ra": [
+   "Ngay trước và ngay sau cú ôm, hệ kín: 50·4 = 100·v ⇒ v = 2 m/s.",
+   "Động năng giảm từ 400 J còn 200 J: va chạm mềm.",
+   "Quãng lướt dài sau đó không dùng bảo toàn động lượng được vì ma sát tác dụng lâu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m1",
+   "ten": "Khối lượng An",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 80,
+   "mac_dinh": 50,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "m2",
+   "ten": "Khối lượng Bình",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 80,
+   "mac_dinh": 50,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "v1",
+   "ten": "Vận tốc An trước cú ôm",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 6,
+   "mac_dinh": 4,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Vận tốc chung",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "m1·v1 = (m1 + m2)·v",
+   "Wđ_truoc = m1·v1²/2",
+   "Wđ_sau = (m1 + m2)·v²/2"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát của băng trong lúc ôm",
+   "chuyển động trên một đường thẳng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "m1 (kg)",
+   "m2 (kg)",
+   "v1 (m/s)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    50,
+    50,
+    4,
+    2.0
+   ],
+   [
+    50,
+    30,
+    4,
+    2.5
+   ],
+   [
+    40,
+    60,
+    5,
+    2.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình."
+ },
+ "ket_qua_ky_vong": "v = 2 m/s khi hai bạn nặng bằng nhau; động năng còn một nửa.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng hai bạn giữ nguyên 4 m/s.",
+  "Cho rằng động năng được giữ nguyên nên v ≈ 2,8 m/s."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Hai người que trên băng; thanh trượt khối lượng và vận tốc; hiện cột động lượng và động năng trước/sau.",
+  "diem_nhan": "Hỏi trước: sau cú ôm hai bạn lướt nhanh bao nhiêu?"
+ }
+}
