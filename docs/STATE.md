@@ -216,6 +216,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` mục 3); theory.html + bundle.json đã đồng bộ. **Thầy đã ghi DB 3/10/2026**
   (item 45, sao lưu `scripts/logs/ly-thuyet-bai27-backup-1790986956595.json`), deploy lại để bản tĩnh 27.json cập nhật.
 
+- **Tách JS theo vai (6/10/2026, nhánh `perf-tach-js`, CHƯA vào main/CHƯA deploy)** — 3 commit `2cd436588`, `00e5ba526`, `669f7be9f`. JS đầu (KB thô, chunks-report): `/tai-khoan` 1468→973, `/phu-huynh` 1174→989, `/lop-hoc/bai` 1107→1092 (chưa <1000: QuestionCard còn dùng chung WorkedQuestionsGrid), `/kiem-tra/lam` 1045→1046 (không đổi). Chưa kiểm bằng đăng nhập thật (HS THPT/CNC, GV, PH) và chưa làm thực nghiệm xoá-chunk A6. Spec: `docs/BAN-GIAO-PERF-TACH-JS-2026-10-06.md`.
+
 ## Migration — ĐANG CHỜ
 
 - **Đã chạy 6/10/2026:** `20261005140000_weakest_topics.sql` — RPC `get_my_weakest_topics` cho thẻ "3 kỹ năng yếu nhất" (`WeakestSkillsCard`, trang chủ HS `/tai-khoan`). Thẻ tự ẩn khi RPC chưa có. Rollback ở cuối file.
