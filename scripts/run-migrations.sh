@@ -19,6 +19,7 @@ FILES=(
   "supabase/migrations/20261005160000_push_subscriptions.sql|Tạo bảng push_subscriptions + RPC upsert_my_push_subscription / claim_push_reminders_due (nhắc 1 lần/ngày, GĐ 2.6 M4)|Bất kỳ lúc nào (chỉ tạo bảng/hàm mới)"
   "supabase/migrations/20261006120000_question_bank_dedup.sql|Xoá 2468 câu trùng 1.00 (giữ 1/cụm), lưu trữ 1109 câu giống 0.9–<1.00; có bảng sao lưu|NGOÀI giờ HS làm bài (DELETE ~2.5k dòng)"
   "supabase/migrations/20261006120000_thpt_fee_ledger.sql|Sổ học phí theo tháng, ẩn mặc định (staff_visible=false, không menu)|Bất kỳ lúc nào (bảng mới, không đụng dữ liệu cũ)"
+  "supabase/migrations/20261006180000_similar_bank_questions.sql|Tạo RPC get_similar_bank_questions (câu tương tự cho HS, trả cả đáp án — chỉ bài luyện tự chấm) + index (topic_id, form) partial|Bất kỳ lúc nào (chỉ tạo hàm + index nhỏ)"
 )
 # ĐÃ CHẠY 4/10/2026 22:58: 20261004120000_phu_dao_hang_cho, 20261004130000_phu_dao_xem_lai_ly_thuyet, 20261004230000_thpt_course_pairs
 # ĐÃ CHẠY 4/10/2026: 20261004100000_bank_grade_thi_thu_tn

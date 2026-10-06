@@ -107,7 +107,17 @@ export function normalizeLessonKind(kind: unknown): LessonKind {
 // Nội dung mới của mục này là đề gắn qua exam_ids — em chọn đáp án rồi mới mở lời giải.
 export interface LessonWorkedQuestion {
   label: string;
+  /** Đề + lời giải đầy đủ gộp một khối — luôn có (bản cũ, trang tĩnh, importer chỉ đọc trường này). */
   body_html: string;
+  /** Dạng bài tập mẫu có cấu trúc (skill soan-bai-tap-mau): đề + gợi ý từng bước + lời giải + nhãn tìm bài tương tự. */
+  problem_html?: string;
+  /** Gợi ý theo tầng, mở lần lượt: kiến thức & điều kiện áp dụng → dữ kiện/hướng giải → công thức. */
+  hints_html?: string[];
+  solution_html?: string;
+  /** Tên YCCĐ (khớp question_topics.name) và Dạng (question_bank.form) để tìm bài tương tự trong ngân hàng. */
+  topic?: string;
+  topic_id?: number;
+  form?: string;
 }
 
 export interface LessonItem {

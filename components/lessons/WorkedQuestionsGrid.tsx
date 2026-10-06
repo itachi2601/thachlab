@@ -3,7 +3,47 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
+import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
+
+/** Dạng có cấu trúc: đề → gợi ý mở dần → (HS chọn) lời giải đầy đủ → làm bài tương tự. Dạng cũ chỉ có body_html. */
+function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }) {
+  const hints = q.hints_html ?? [];
+  const [shown, setShown] = useState(0);
+  const [solved, setSolved] = useState(false);
+  return (
+    <div className="space-y-3">
+      <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
+      <p className="text-xs text-slate-400">Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý.</p>
+      {hints.slice(0, shown).map((h, i) => (
+        <div key={i} className="rounded-lg border border-white/10 p-3">
+          <p className="mb-1 text-xs font-semibold" style={{ color }}>
+            Gợi ý {i + 1}/{hints.length}
+          </p>
+          <ContentHtml html={h} className="block leading-relaxed" />
+        </div>
+      ))}
+      <div className="flex flex-wrap gap-2">
+        {shown < hints.length && (
+          <button type="button" className="lesson-btn-ghost" onClick={() => setShown((n) => n + 1)}>
+            Gợi ý {shown + 1}/{hints.length}
+          </button>
+        )}
+        {!solved && (
+          <button type="button" className="lesson-btn-ghost" onClick={() => setSolved(true)}>
+            Xem lời giải đầy đủ
+          </button>
+        )}
+      </div>
+      {solved && (
+        <>
+          <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
+          {q.topic_id ? <SimilarBankPractice topicId={q.topic_id} form={q.form} color={color} /> : null}
+        </>
+      )}
+    </div>
+  );
+}
 
 /** Các "dạng bài" (bài tập mẫu): hàng thu/mở, tên dạng hiện rõ, lời giải mở ngay dưới hàng đó. */
 export default function WorkedQuestionsGrid({
@@ -49,7 +89,11 @@ export default function WorkedQuestionsGrid({
             </button>
             {open && (
               <div className="lesson-worked-body">
-                <ContentHtml html={q.body_html} className="block leading-relaxed" />
+                {q.problem_html && q.solution_html ? (
+                  <StructuredBody q={q} color={color} />
+                ) : (
+                  <ContentHtml html={q.body_html} className="block leading-relaxed" />
+                )}
               </div>
             )}
           </div>

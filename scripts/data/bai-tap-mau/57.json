@@ -1,0 +1,47 @@
+{
+ "lesson_id": 57,
+ "lesson_title": "Chuyển động ném",
+ "generated_at": "2026-10-06",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập 6/10/2026 (kiem-code): 3 dạng đúng đáp số; đã sửa đề Dạng 3 (điểm ném, cây trên đường bay), thêm L vào khung D1, gợi ý 1 D2."
+ },
+ "dang_bai": [
+  {
+   "label": "Dạng 1 · Ném ngang: tìm thời gian bay và tầm xa",
+   "topic": "Tầm xa, thời gian bay của vật bị ném",
+   "form": "bai_tap",
+   "problem_html": "<p>Máy bay cứu hộ bay ngang ở độ cao $h=490\\ \\text{m}$ với vận tốc $v_0=60\\ \\text{m/s}$ rồi thả một gói hàng. Bỏ qua lực cản của không khí, lấy $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Sau bao lâu gói hàng chạm đất?</li><li>Phi công phải thả gói khi máy bay còn cách điểm cần rơi trúng bao xa theo phương ngang?</li></ol>",
+   "hints_html": [
+    "<p>Điều kiện: gói hàng chỉ chịu trọng lực, vận tốc đầu nằm ngang. Vậy theo phương ngang gia tốc bằng bao nhiêu, theo phương thẳng đứng gia tốc bằng bao nhiêu? Gói hàng \"rơi\" theo kiểu chuyển động nào ở mỗi phương?</p>",
+    "<p>Đề cho: độ cao $h$ và vận tốc ném $v_0$. Đề hỏi: thời gian chạm đất và quãng đường đi được theo phương ngang. Chọn gốc O tại chỗ thả, Oy hướng xuống: lúc chạm đất thì $y=h$.</p>",
+    "<p>Thời gian chỉ lấy từ phương đứng: $y=\\dfrac{1}{2}gt^2$ với $y=h$. Có $t$ rồi mới thay vào phương ngang $x=v_0t$.</p>"
+   ],
+   "solution_html": "<div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang là ném vật với vận tốc đầu $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập; trọng lực chỉ gây gia tốc theo phương thẳng đứng.</li><li><strong>Công thức</strong> (Ox ngang, Oy hướng xuống, gốc O tại điểm ném): $x=v_0t$ (tầm xa $L$ là $x$ lúc chạm đất); $y=\\dfrac{1}{2}gt^2$; $v_x=v_0$; $v_y=gt$.</li><li><strong>Điều kiện áp dụng:</strong> bỏ qua lực cản của không khí và chỉ có trọng lực tác dụng.</li></ol></div><ol class=\"tl-steps\"><li>Phương đứng, lúc chạm đất $y=h$: $h=\\dfrac{1}{2}gt^2\\Rightarrow t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot 490}{9{,}8}}=\\sqrt{100}=10\\ \\text{s}$.</li><li>Phương ngang (thẳng đều): $L=x=v_0t=60\\cdot 10=600\\ \\text{m}$.</li><li>Kiểm tra: $t$ không phụ thuộc $v_0$; $v_0$ chỉ làm đổi $L$. Đơn vị: m/s nhân s ra m, hợp lí.</li></ol><p><strong>Đáp số:</strong> a) $10\\ \\text{s}$; b) $600\\ \\text{m}$.</p><p>Nhận dạng: đề cho <strong>độ cao</strong> và <strong>vận tốc ném ngang</strong>, hỏi về thời gian/tầm xa → tách hai phương, tìm $t$ từ phương đứng trước. 3 ngày sau che lời giải và giải lại từ đầu.</p>"
+  },
+  {
+   "label": "Dạng 2 · Ném ngang: vận tốc khi chạm đất và góc so với phương ngang",
+   "topic": "Phân tích chuyển động ném ngang theo hai phương",
+   "form": "bai_tap",
+   "problem_html": "<p>Từ mép một vách đá cao $h=78{,}4\\ \\text{m}$, một hòn đá được ném ngang với $v_0=30\\ \\text{m/s}$. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$. Tại lúc hòn đá chạm đất, tính:</p><ol type=\"a\"><li>độ lớn vận tốc;</li><li>góc hợp bởi vectơ vận tốc và phương ngang.</li></ol>",
+   "hints_html": [
+    "<p>Điều kiện: chỉ có trọng lực tác dụng. Vậy thành phần nào của vận tốc thay đổi theo thời gian, thành phần nào giữ nguyên? Hai thành phần đó vuông góc hay không?</p>",
+    "<p>Đề cho $h$ và $v_0$. Muốn có $v_y$ lúc chạm đất thì cần biết thời gian rơi $t$ — tìm $t$ từ độ cao $h$ trước. $v_x$ thì đã biết ngay.</p>",
+    "<p>$t=\\sqrt{2h/g}$; $v_y=gt$; $v=\\sqrt{v_x^2+v_y^2}$; góc $\\alpha$ với phương ngang: $\\tan\\alpha=\\dfrac{v_y}{v_x}$.</p>"
+   ],
+   "solution_html": "<div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang là ném vật với vận tốc đầu $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập; trọng lực chỉ gây gia tốc theo phương thẳng đứng.</li><li><strong>Công thức</strong> (Ox ngang, Oy hướng xuống, gốc O tại điểm ném): $x=v_0t$; $y=\\dfrac{1}{2}gt^2$; $v_x=v_0$; $v_y=gt$.</li><li><strong>Điều kiện áp dụng:</strong> bỏ qua lực cản của không khí và chỉ có trọng lực tác dụng.</li><li><strong>Tổng hợp vận tốc:</strong> $v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$ và $\\tan\\alpha=\\dfrac{v_y}{v_x}$.</li></ol></div><ol class=\"tl-steps\"><li>Thời gian rơi: $t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot 78{,}4}{9{,}8}}=\\sqrt{16}=4\\ \\text{s}$.</li><li>Các thành phần: $v_x=v_0=30\\ \\text{m/s}$; $v_y=gt=9{,}8\\cdot 4=39{,}2\\ \\text{m/s}$.</li><li>Độ lớn: $v=\\sqrt{30^2+39{,}2^2}=\\sqrt{2436{,}64}\\approx 49{,}4\\ \\text{m/s}$.</li><li>Góc: $\\tan\\alpha=\\dfrac{39{,}2}{30}\\approx 1{,}307\\Rightarrow \\alpha\\approx 52{,}6^\\circ$ (so với phương ngang, hướng xuống).</li><li>Kiểm tra: $v\\gt v_0$ vì có thêm $v_y$; $\\alpha\\lt 90^\\circ$ vì $v_x$ vẫn còn.</li></ol><p><strong>Đáp số:</strong> a) $\\approx 49{,}4\\ \\text{m/s}$; b) $\\approx 52{,}6^\\circ$.</p><p>Nhận dạng: đề hỏi <strong>vận tốc / góc</strong> tại một điểm → tìm $t$, rồi tổng hợp $v_x$ và $v_y$. 3 ngày sau che lời giải và giải lại từ đầu.</p>"
+  },
+  {
+   "label": "Dạng 3 · Bài ngược: biết tầm xa, tìm vận tốc ném rồi kiểm tra vật cản",
+   "topic": "Tầm xa, thời gian bay của vật bị ném",
+   "form": "bai_tap",
+   "problem_html": "<p>Từ mép mái một ngôi nhà, ở độ cao $h=19{,}6\\ \\text{m}$ so với mặt đất, một người ném ngang một hòn đá (coi là chất điểm). Hòn đá chạm đất cách chân nhà $15\\ \\text{m}$ theo phương ngang. Bỏ qua lực cản, $g=9{,}8\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính vận tốc ném $v_0$.</li><li>Trên đường bay của hòn đá, cách chân nhà $10\\ \\text{m}$ có một cây cao $10\\ \\text{m}$ mọc trên mặt đất bằng phẳng. Hòn đá có bay qua ngọn cây không?</li></ol>",
+   "hints_html": [
+    "<p>Điều kiện: vẫn là ném ngang, chỉ có trọng lực. Hai phương độc lập — vậy \"thời gian\" nối hai phương với nhau; muốn tìm $v_0$ thì thời gian lấy từ phương nào, và tầm xa 15 m thuộc phương nào?</p>",
+    "<p>Đề cho $h$ và tầm xa $L$, hỏi $v_0$ (ngược với Dạng 1). Ở câu b: cây ở vị trí ngang $x=10\\ \\text{m}$ — tìm lúc hòn đá tới vị trí đó, rồi hỏi lúc đó hòn đá đã rơi xuống bao nhiêu.</p>",
+    "<p>$t=\\sqrt{2h/g}$, $v_0=L/t$. Câu b: $t_1=x/v_0$, độ rơi $y_1=\\dfrac{1}{2}gt_1^2$, độ cao còn lại $=h-y_1$ so với ngọn cây.</p>"
+   ],
+   "solution_html": "<div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ném ngang là ném vật với vận tốc đầu $\\vec v_0$ nằm ngang.</li><li><strong>Định luật:</strong> hai phương độc lập; trọng lực chỉ gây gia tốc theo phương thẳng đứng.</li><li><strong>Công thức</strong> (Ox ngang, Oy hướng xuống, gốc O tại điểm ném): $x=v_0t$; $y=\\dfrac{1}{2}gt^2$; $v_x=v_0$; $v_y=gt$.</li><li><strong>Điều kiện áp dụng:</strong> bỏ qua lực cản của không khí và chỉ có trọng lực tác dụng.</li></ol></div><ol class=\"tl-steps\"><li>Thời gian bay: $t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot 19{,}6}{9{,}8}}=2\\ \\text{s}$.</li><li>Tầm xa $L=v_0t\\Rightarrow v_0=\\dfrac{L}{t}=\\dfrac{15}{2}=7{,}5\\ \\text{m/s}$.</li><li>Tới chỗ cây ($x=10\\ \\text{m}$): $t_1=\\dfrac{x}{v_0}=\\dfrac{10}{7{,}5}=\\dfrac{4}{3}\\ \\text{s}$.</li><li>Lúc đó đã rơi: $y_1=\\dfrac{1}{2}gt_1^2=4{,}9\\cdot\\dfrac{16}{9}\\approx 8{,}7\\ \\text{m}$, nên cách mặt đất $19{,}6-8{,}7\\approx 10{,}9\\ \\text{m}$.</li><li>$10{,}9\\gt 10$: hòn đá bay qua ngọn cây, cao hơn ngọn khoảng $0{,}9\\ \\text{m}$ (khá sát, nên cần kiểm số).</li></ol><p><strong>Đáp số:</strong> a) $7{,}5\\ \\text{m/s}$; b) có, cao hơn ngọn cây $\\approx 0{,}9\\ \\text{m}$.</p><p>Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi ngược $v_0$ hoặc hỏi một điểm trên đường đi → tìm $t$ từ độ cao, dùng $t$ nối hai phương. 3 ngày sau che lời giải và giải lại từ đầu.</p>"
+  }
+ ]
+}
