@@ -70,7 +70,7 @@ import {
   type TutoringNeed,
   type TutoringSlot,
 } from "@/services/tutoring";
-import TutoringExitQuiz from "@/components/results/TutoringExitQuiz";
+import TutoringExitQuiz from "@/components/results/TutoringExitQuizLazy";
 import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
