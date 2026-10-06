@@ -834,6 +834,9 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 .lesson-panel-empty { margin: 0; color: var(--color-muted); font-size: 12.5px; }
 .lesson-panel-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; color: var(--lesson-accent-text); font-size: 12.5px; font-weight: 600; text-decoration: none; }
 .lesson-panel-link:hover { text-decoration: underline; }
+/* Dock admin "Xem thử như…" (bên trái): nằm trên thanh đáy điện thoại/máy tính bảng, không che thanh. */
+.admin-dock { bottom: 20px; }
+@media (max-width: 1023px) { .admin-dock { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); } }
 .lesson-toc ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
 .lesson-toc a { display: grid; gap: 1px; border-left: 2px solid transparent; padding: 5px 6px; color: var(--color-muted); font-size: 13px; line-height: 1.4; text-decoration: none; }
 .lesson-toc-item { color: var(--color-muted); font-size: 12px; font-weight: 600; letter-spacing: .02em; opacity: .75; }
