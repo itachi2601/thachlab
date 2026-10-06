@@ -72,3 +72,4 @@
 - [AI Tutor Socratic (GĐ 4)](project_thachlab_ai_tutor.md) — 6/10: docs/AI-TUTOR.md + scripts/eval-ai-tutor.mts đã vào main; KHÔNG xây tutor trước Q2/2027; treo: thầy chạy eval 30 câu + chấm, thêm OPENAI/ANTHROPIC key, rà is_correct lệch
 - [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick
 - [Thay ví dụ xưởng bằng đời sống](project_thachlab_vi_du_doi_song_thay_xuong.md) — 6/10: 53 bài L10–L12 đã sửa + ghi DB + deploy; treo: xem-thu cũ, 4 bài L10 mới chưa kiểm
+- [Lớp 10 lý thuyết Ch5–7 (6/10)](project_thachlab_l10_ly_thuyet_ch5_7.md) — 9 bài đã soạn+ghi DB+deploy; treo xem ảnh B30/B28, đối chiếu SGK B20/B22; lớp 11 còn 6 bài, lớp 12 còn 1
