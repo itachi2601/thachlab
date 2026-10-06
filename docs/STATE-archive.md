@@ -3,6 +3,11 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 06/10/2026 (sổ học phí; đã chạy 17:14)
+Log: `scripts/logs/20261006-171434-20261006120000_thpt_fee_ledger.log`. Đã xác nhận 4 bảng `thpt_fee_*` + 13 RPC trong DATABASE.md.
+
+- `20261006120000_thpt_fee_ledger.sql` — sổ học phí theo tháng, **ẩn** (`staff_visible` và `family_visible` đều false, không có menu). Không đổi ô "Đã đóng" hiện tại. Bật cho giáo viên bằng SQL `update public.thpt_fee_settings set staff_visible = true, updated_at = now() where id;` rồi mở `/quan-tri/hoc-phi`. Phụ huynh chỉ thấy từng tháng sau khi admin bật "Phụ huynh thấy sổ tháng" trên trang đó. Rollback: cuối file và `perf/rollback/20261006120000_thpt_fee_ledger.down.sql`. Bất kỳ lúc nào.
+
 ## Migration — 03/10/2026 (đã chạy; dọn khỏi STATE.md 5/10/2026)
 Log: `scripts/logs/20261003-225719-*` (130000, 140000, 150000 — chạy 3/10 22:57). `20261002110000`, `20261001100000`, `20260930160000_rank_title_distinct_questions` đã chạy trước 3/10 13:20 (kiểm trên production).
 Chưa có UI gọi RPC `rank_theory_open/submit` (140000) và chưa bài nào có dòng khoá, nên chưa cộng RP cho ai.

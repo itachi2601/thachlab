@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 264 hàm, sinh tự động 2026-10-05
+# Hàm SQL / RPC (schema public) — 277 hàm, sinh tự động 2026-10-06
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -162,8 +162,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
@@ -215,6 +215,19 @@ repo — xem trên Supabase Dashboard).
 - `thpt_attach_student(p_id bigint, p_student_id uuid)` → void
 - `thpt_course_grade(p_course_id bigint)` → text
 - `thpt_course_seats(p_course_ids bigint[])` → TABLE(course_id bigint, taken integer)
+- `thpt_fee_archive_plan(p_plan bigint)` → void
+- `thpt_fee_assert_open(p_class bigint)` → void
+- `thpt_fee_billing_key(p_course_id bigint, p_name text, p_pair_key text, p_pair_slot text)` → text
+- `thpt_fee_ensure_month(p_class bigint, p_period date)` → integer
+- `thpt_fee_family_lines()` → TABLE(student_id uuid, student_name text, billing_key text, label text, period date, amount_vnd integer, paid_vnd integer, waived boolean, due_day smallint)
+- `thpt_fee_is_clerk()` → boolean
+- `thpt_fee_ledger(p_class bigint, p_period date)` → TABLE(charge_id bigint, plan_id bigint, student_id uuid, student_name text, billing_key text, label text, period date, amount_vnd integer, paid_vnd integer, waived boolean, due_day smallint)
+- `thpt_fee_plans(p_class bigint)` → TABLE(id bigint, class_id bigint, billing_key text, label text, amount_vnd integer, due_day smallint, active boolean)
+- `thpt_fee_record_payment(p_charge bigint, p_amount integer, p_method text, p_paid_on date, p_note text)` → void
+- `thpt_fee_set_visibility(p_staff boolean, p_family boolean)` → void
+- `thpt_fee_upsert_plan(p_class bigint, p_billing_key text, p_label text, p_amount integer, p_due_day smallint)` → bigint
+- `thpt_fee_visibility()` → TABLE(staff_visible boolean, family_visible boolean)
+- `thpt_fee_waive(p_charge bigint, p_waived boolean)` → void
 - `thpt_has_registration(p_course_id bigint)` → boolean
 - `thpt_register(p_course_id bigint, p_student_id uuid, p_child_name text, p_contact text, p_note text)` → jsonb
 - `thpt_registration_display_name(p_reg thpt_registrations)` → text
