@@ -43,6 +43,7 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   topic_id: topics?.find((t) => t.name.trim() === d.topic.trim())?.id,
   form: d.form ?? "bai_tap",
 }));
+if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối
 console.log(`Bài ${lessonId} "${data.lesson_title ?? ""}": ${questions.length} dạng → chỉ ghi lesson_items.questions (kind=bai_tap_mau)`);
 questions.forEach((q, i) => console.log(`  ${i + 1}. ${q.label} · topic_id=${q.topic_id ?? "?"} · form=${q.form}`));
 if (dry) { console.log("[DRY-RUN] chưa ghi gì."); process.exit(0); }

@@ -38,7 +38,7 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
   if (!Number.isInteger(data.lesson_id)) errors.push("thiếu lesson_id (số nguyên)");
   if (!data.review?.checked) errors.push("review.checked chưa true — chưa qua bước kiểm chéo");
   const ds: Dang[] = data.dang_bai;
-  if (!Array.isArray(ds) || ds.length < 2 || ds.length > 4) { errors.push("dang_bai cần 2–4 dạng"); return { errors, warnings }; }
+  if (!Array.isArray(ds) || ds.length < 2 || ds.length > 8) { errors.push("dang_bai cần 2–8 dạng, xếp từ dễ đến khó"); return { errors, warnings }; }
   ds.forEach((d, i) => {
     const at = `dạng ${i + 1}`;
     for (const k of ["label", "topic", "problem_html", "solution_html"] as const)
@@ -56,5 +56,6 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
       else if (hit.parent_id === null) warnings.push(`${at}: topic là chủ đề cha — nên chọn YCCĐ con sát dạng`);
     } else warnings.push("chưa có question-topics.json — không kiểm topic");
   });
+  if (data.tu_luan && (!data.tu_luan.label || !String(data.tu_luan.body_html ?? "").trim())) errors.push("tu_luan cần label + body_html");
   return { errors, warnings };
 }
