@@ -3237,7 +3237,7 @@
  },
  {
   "id": "tn-l12-mayphatdien-01",
-  "ten": "Máy phát mini quay tay: đo tần số theo tốc độ quay để kiểm f = np",
+  "ten": "Máy phát mini quay bằng động cơ: đo tần số theo tốc độ quay để kiểm f = np",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 12,
@@ -3885,94 +3885,105 @@
  },
  {
   "id": "tn-l12-udcamung-01",
-  "ten": "Nam châm chạy qua cuộn nối loa",
+  "ten": "Nam châm chạy qua cuộn nối loa: chỉ khi từ thông đổi mới có tiếng",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
   "kien_thuc": [
-   "camung_ud.pickup_day_thep",
-   "camungdt.tu_thong_bien_thien"
+   "udcamung.pickup_guitar",
+   "udcamung.tu_thong_bien_thien",
+   "udcamung.nam_cham_dung_yen"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
   "co_video": false,
   "tham_so_dieu_chinh": [
-   "v"
+   "N",
+   "dPhi",
+   "dt"
   ]
  },
  {
   "id": "tn-l12-udcamung-02",
-  "ten": "Hai cuộn đặt sát nhau, đóng ngắt dòng một chiều",
+  "ten": "Hai cuộn đặt cạnh nhau: dòng ở cuộn 1 đổi thì cuộn 2 mới có suất điện động",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
   "kien_thuc": [
-   "camung_ud.sac_hai_cuon",
-   "camungdt.tu_thong_bien_thien"
+   "udcamung.sac_khong_day",
+   "udcamung.hai_cuon_lien_ket",
+   "udcamung.dong_xoay_chieu_can_thiet"
   ],
-  "mo_phong": "2d_dong_hoc+do_thi",
+  "mo_phong": "so_do_luc+do_thi",
   "co_video": false,
   "tham_so_dieu_chinh": [
-   "d",
+   "M",
+   "I0",
+   "dt",
    "f"
   ]
  },
  {
   "id": "tn-l12-udcamung-03",
-  "ten": "Nam châm rơi trong ống đồng và ống nhựa",
+  "ten": "Nam châm rơi trong ống nhựa và ống đồng: dòng Foucault làm rơi chậm",
   "loai": "thi_nghiem",
-  "muc_do": "co_ban",
+  "muc_do": "trung_binh",
   "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
   "kien_thuc": [
-   "camung_ud.foucault_luc_ham",
-   "camungdt.lenz"
+   "udcamung.dong_foucault",
+   "udcamung.luc_ham_lenz",
+   "udcamung.sai_so_do_thoi_gian"
   ],
-  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "mo_phong": "2d_dong_hoc+do_thi",
   "co_video": false,
   "tham_so_dieu_chinh": [
-   "B"
+   "h",
+   "vt"
   ]
  },
  {
   "id": "tn-l12-udcamung-04",
-  "ten": "Con lắc tấm nhôm đặc và tấm có rãnh",
+  "ten": "Tấm nhôm đặc và tấm xẻ rãnh dao động giữa hai cực nam châm",
   "loai": "thi_nghiem",
-  "muc_do": "co_ban",
+  "muc_do": "trung_binh",
   "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
   "kien_thuc": [
-   "camung_ud.foucault_luc_ham",
-   "camung_ud.cat_vong_xoay"
+   "udcamung.dong_foucault",
+   "udcamung.cat_vong_xoay",
+   "udcamung.loi_may_bien_ap"
   ],
-  "mo_phong": "2d_dong_hoc+so_do_luc",
+  "mo_phong": "2d_dong_hoc+do_thi",
   "co_video": false,
   "tham_so_dieu_chinh": [
-   "n_ranh",
+   "n",
    "B"
   ]
  },
  {
   "id": "tn-l12-udcamung-05",
-  "ten": "Một vòng Foucault trong đáy nồi bếp từ",
+  "ten": "Bài toán mẫu: công suất toả nhiệt của vòng Foucault tương đương trong đáy nồi",
   "loai": "vi_du",
   "muc_do": "trung_binh",
   "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
+  "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
   "kien_thuc": [
-   "camung_ud.foucault_nhiet",
-   "camungdt.faraday_toc_do"
+   "udcamung.bep_tu",
+   "udcamung.cong_suat_hieu_dung",
+   "udcamung.e_bien_do_tu_thong"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
   "co_video": false,
   "tham_so_dieu_chinh": [
    "Phi0",
+   "omega",
    "r"
   ]
  },
