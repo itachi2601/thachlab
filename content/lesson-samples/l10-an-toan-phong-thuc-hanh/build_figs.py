@@ -273,7 +273,7 @@ lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.p
 out = subprocess.run([sys.executable, str(lint), str(tmp)], capture_output=True, text=True).stdout
 tmp.unlink()
 m = re.search(r"~?(\d+(?:[.,]\d+)?)\s*phút", out)
-phut = round(float(m.group(1).replace(",", "."))) if m else None
+phut = -int(-float(m.group(1).replace(",", ".")) // 1) if m else None  # làm tròn LÊN (16,5 -> 17)
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
@@ -320,12 +320,12 @@ tn = [
      "ten": "Nhiệt độ cạnh ngọn đèn cồn theo khoảng cách",
      "loai": "thi_nghiem", "muc_do": "trung_binh",
      "kien_thuc": ["antoan.khoang_cach_an_toan", "antoan.vat_nong"],
-     "muc_tieu": "Thấy nhiệt độ giảm rất nhanh khi ra xa nguồn nóng (gấp đôi khoảng cách thì phần nóng thêm còn khoảng 1/4), từ đó hiểu quy tắc giữ khoảng cách an toàn.",
+     "muc_tieu": "Thấy nhiệt độ giảm rất nhanh khi ra xa nguồn nóng (số chỉ minh hoạ, không phải quy luật 1/r²), từ đó hiểu quy tắc giữ khoảng cách an toàn.",
      "dung_cu": [{"ten": "Đèn cồn", "so_luong": 1}, {"ten": "Nhiệt kế đo tới 200 °C", "so_luong": 1},
                  {"ten": "Thước, giá đỡ nhiệt kế", "so_luong": 1}],
      "cac_buoc": {"lam": ["Giáo viên đặt nhiệt kế cạnh ngọn đèn cồn, cách lần lượt 2; 5; 10; 20 cm, đợi số chỉ ổn định.",
                           "Cả lớp đứng xa quan sát, ghi số chỉ."],
-                  "quan_sat": ["Nhiệt kế chỉ lần lượt " + "; ".join(str(t) for t in TN) + " °C (nhiệt độ phòng 25 °C).",
+                  "quan_sat": ["Nhiệt kế chỉ lần lượt " + "; ".join(str(t) for t in TN) + " °C (nhiệt độ phòng 25 °C; nhiệt kế đo tới 200 °C; số chỉ minh hoạ, không phải quy luật 1/r²).",
                                "Từ 5 cm ra 10 cm, phần nóng thêm giảm từ 16 °C còn 4 °C."],
                   "rut_ra": ["Gần ngọn lửa nóng rất nhiều, ra xa thì nguội nhanh.", "Nhiều thí nghiệm nung nóng, laser, vật bắn ra cần giữ khoảng cách an toàn."]},
      "tham_so": [{"ky_hieu": "d", "ten": "Khoảng cách tới ngọn lửa", "don_vi": "cm", "kieu": "dieu_chinh", "min": 2, "max": 40, "mac_dinh": 10, "buoc": 1},
@@ -336,7 +336,7 @@ tn = [
                  "gia_thiet": ["mô hình đơn giản, số liệu minh hoạ", "nguồn nhỏ, đo cạnh ngọn lửa, bỏ qua gió"]},
      "so_lieu_mau": {"cot": ["d (cm)", "T (°C)", "T − 25 (°C)"],
                      "hang": [[d, t, t - 25] for d, t in zip(DK, TN)],
-                     "ghi_chu": "Số liệu minh hoạ tính từ mô hình T = 25 + 400/d², làm tròn 1 °C."},
+                     "ghi_chu": "Số liệu minh hoạ tính từ mô hình đơn giản T = 25 + 400/d² (chọn cho dễ tính, không phải quy luật 1/r² của ngọn lửa thật), làm tròn 1 °C; nhiệt kế đo tới 200 °C."},
      "ket_qua_ky_vong": "125; 41; 29; 26 °C; phần nóng thêm 100; 16; 4; 1 °C.",
      "hien_tuong_hay_sai": ["Tưởng càng xa thì nhiệt độ giảm đều từng cm.", "Tưởng ngoài 'vùng đỏ' của lửa thì không nóng."],
      "sai_so_thuong_gap": "Nhiệt kế đặt lệch ngọn lửa, gió thổi, chưa đợi ổn định.",

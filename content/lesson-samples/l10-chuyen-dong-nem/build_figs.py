@@ -21,10 +21,10 @@ def seg(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
     return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{c}" stroke-width="{w}"{d} opacity="{op}"/>'
 
 
-def sub(x, y, base, s, c="currentColor", size=11, anchor="start", weight="700"):
+def sub(x, y, base, s, c="currentColor", size=14, anchor="start", weight="700"):
     """Nhãn có chỉ số dưới: v + tspan nhỏ (không dùng KaTeX trong SVG)."""
     return (f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">'
-            f'{base}<tspan dy="4" font-size="{size - 2}">{s}</tspan></text>')
+            f'{base}<tspan dy="4" font-size="{size - 3}">{s}</tspan></text>')
 
 
 # ================= Hình 1: máy bay cứu hộ thả gói hàng =================
@@ -37,9 +37,9 @@ b += '<rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="curr
 b += '<path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/>'
 b += seg(54, 67, 45, 78, "currentColor", 2.2)
 b += '<circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-b += text(24, 38, "máy bay cứu hộ", "currentColor", 11, "start", "400")
+b += text(24, 36, "máy bay cứu hộ", "currentColor", 14, "start", "400")
 b += arrow("f1", "r", 70, Y0, 128, Y0, 3)
-b += text(132, Y0 - 5, "v₀", RED, 12, "start", "700")
+b += text(132, Y0 - 4, "v₀", RED, 14, "start", "700")
 # quỹ đạo gói hàng thả từ máy bay
 par = [(70 + (XL - 70) * u / 40, Y0 + (YL - Y0) * (u / 40) ** 2) for u in range(0, 41)]
 b += poly(par, GRN, 2.4)
@@ -51,7 +51,7 @@ b += seg(XH - 13, 58, XH - 30, 53, "currentColor", 2)                        # �
 b += f'<circle cx="{XH - 30}" cy="53" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
 b += seg(XH - 12, 74, XH + 12, 74, "currentColor", 2)                        # thanh trượt
 b += seg(XH - 8, 65, XH - 8, 74, "currentColor", 1.4) + seg(XH + 8, 65, XH + 8, 74, "currentColor", 1.4)
-b += text(XH - 52, 38, "trực thăng đứng yên", "currentColor", 11, "start", "400")
+b += text(432, 36, "trực thăng đứng yên", "currentColor", 14, "end", "400")
 # các vị trí sau những khoảng thời gian bằng nhau
 b += seg(XH, Y0, XH, YL - 2, ORG, 1.8, "5 4", .85)
 for u in (0.4, 0.6, 0.8, 1.0):
@@ -61,9 +61,9 @@ for u in (0.4, 0.6, 0.8, 1.0):
     b += dot(XH, yj, 4.2, ORG)
     if u < 1:
         b += seg(xj + 6, yj, XH - 6, yj, "currentColor", 1.1, "4 4", .35)
-b += text(150, 26, "cùng độ cao, cùng lúc", "currentColor", 11, "start", "400")
+b += text(150, 16, "cùng độ cao, cùng lúc", "currentColor", 14, "start", "400")
 b += '<rect x="20" y="206" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += text(20, 238, "mặt đất", "currentColor", 11, "start", "400")
+b += text(20, 238, "mặt đất", "currentColor", 14, "start", "400")
 fig1 = wrap("0 0 440 250",
             "Máy bay cứu hộ bay ngang thả gói hàng rơi theo parabol; trực thăng đứng yên thả gói rơi thẳng đứng từ cùng độ cao, hai gói luôn nằm ngang nhau",
             b,
@@ -74,12 +74,12 @@ OX, OY = 40, 40          # gốc toạ độ
 XEND, YEND = 300, 205
 b = defs("f2")
 b += arrow("f2", "r", OX, OY, OX + 58, OY, 3)
-b += text(OX + 62, OY - 4, "v₀", RED, 12, "start", "700")
+b += text(OX + 62, OY - 4, "v₀", RED, 14, "start", "700")
 b += seg(OX, OY, 352, OY, "currentColor", 1.6)          # Ox
 b += seg(OX, OY, OX, 226, "currentColor", 1.6)          # Oy
-b += text(358, OY + 5, "x", "currentColor", 12, "start", "700")
-b += text(OX - 20, 224, "y", "currentColor", 12, "start", "700")
-b += text(OX - 20, OY - 6, "O", "currentColor", 12, "start", "700")
+b += text(358, OY + 5, "x", "currentColor", 14, "start", "700")
+b += text(OX - 20, 224, "y", "currentColor", 14, "start", "700")
+b += text(OX - 20, OY - 6, "O", "currentColor", 14, "start", "700")
 curve = [(OX + (XEND - OX) * u / 40, OY + (YEND - OY) * (u / 40) ** 2) for u in range(0, 41)]
 b += poly(curve, GRN, 2.6)
 xs = [OX + (XEND - OX) * k / 5 for k in range(6)]
@@ -89,11 +89,11 @@ for k, (x, y) in enumerate(zip(xs[1:], [OY + (YEND - OY) * (k / 5) ** 2 for k in
 ys = [OY] + [OY + (YEND - OY) * (k / 5) ** 2 for k in range(1, 6)]
 for y in ys[1:]:
     b += seg(OX - 5, y, OX + 5, y, "currentColor", 1.4)
-b += text(140, 16, "Ox: mỗi khoảng thời gian bằng nhau", "currentColor", 11, "start", "400")
-b += text(140, 30, "→ đoạn ngang bằng nhau", "currentColor", 11, "start", "400")
-b += text(20, 246, "Oy: các đoạn rơi tăng theo tỉ lệ 1 : 3 : 5 : 7 : 9", "currentColor", 11, "start", "400")
-b += text(20, 262, "→ quỹ đạo là một phần parabol", GRN, 11, "start", "700")
-fig2 = wrap("0 0 440 272",
+b += text(140, 16, "Ox: mỗi khoảng thời gian bằng nhau", "currentColor", 14, "start", "400")
+b += text(140, 32, "→ đoạn ngang bằng nhau", "currentColor", 14, "start", "400")
+b += text(20, 248, "Oy: các đoạn rơi tăng theo tỉ lệ 1 : 3 : 5 : 7 : 9", "currentColor", 14, "start", "400")
+b += text(20, 267, "→ quỹ đạo là một phần parabol", GRN, 14, "start", "700")
+fig2 = wrap("0 0 440 278",
             "Hệ trục Oxy: theo Ox các đoạn bằng nhau sau những khoảng thời gian bằng nhau, theo Oy các đoạn rơi tăng dần theo tỉ lệ 1:3:5:7:9, nên quỹ đạo là parabol",
             b,
             "Hình 2. Chọn Ox ngang, Oy thẳng đứng hướng xuống. Sau những khoảng thời gian bằng nhau, vật đi được <strong>đoạn ngang bằng nhau</strong> (Ox thẳng đều) nhưng <strong>đoạn rơi tăng dần 1 : 3 : 5 : 7 : 9</strong> (Oy rơi tự do). Ghép hai chuyển động đó lại thành quỹ đạo parabol.")
@@ -103,22 +103,22 @@ O3X, O3Y, G3 = 40, 45, 200
 b = defs("f3")
 b += seg(20, G3, 420, G3, "currentColor", 1.8)
 b += arrow("f3", "r", O3X, O3Y, O3X + 150, O3Y, 3)
-b += arrow("f3", "r", O3X, O3Y, O3X + 52, O3Y, 3)
-b += text(O3X + 156, O3Y - 9, "v₀ = 4,5 m/s", RED, 11, "start", "700")
-b += text(O3X + 58, O3Y - 9, "v₀ = 1,5 m/s", RED, 11, "start", "700")
-for xend, c in ((170, GRN), (360, GRN)):
+b += arrow("f3", "r", O3X, O3Y, O3X + 50, O3Y, 3)
+b += text(O3X + 160, O3Y - 12, "v₀ = 4,5 m/s", RED, 14, "start", "700")
+b += text(O3X + 56, O3Y - 12, "v₀ = 1,5 m/s", RED, 14, "start", "700")
+for xend, c in ((150, GRN), (370, GRN)):  # tầm xa 110 : 330 = 1 : 3 đúng tỉ lệ vận tốc
     pts = [(O3X + (xend - O3X) * u / 40, O3Y + (G3 - O3Y) * (u / 40) ** 2) for u in range(0, 41)]
     b += poly(pts, c, 2.4)
-b += dot(170, G3, 5, ORG) + dot(360, G3, 5, ORG)
+b += dot(150, G3, 5, ORG) + dot(370, G3, 5, ORG)
 b += seg(O3X, O3Y, O3X, G3 - 6, ORG, 1.8, "5 4", .85)
-b += text(O3X + 6, 104, "h = 0,80 m", ORG, 11, "start", "700")
-for x1, x2, yb, lab in ((O3X, 170, 212, "L = 0,61 m"), (O3X, 360, 236, "L = 1,82 m")):
+b += text(O3X + 6, 182, "h = 0,80 m", ORG, 14, "start", "700")
+for x1, x2, yb, lab in ((O3X, 150, 212, "L = 0,61 m"), (O3X, 370, 236, "L = 1,82 m")):
     b += seg(x1, yb, x2, yb, ORG, 1.4)
     b += seg(x1, yb - 4, x1, yb + 4, ORG, 1.4) + seg(x2, yb - 4, x2, yb + 4, ORG, 1.4)
-    b += text((x1 + x2) / 2, yb + 15, lab, ORG, 11, "middle", "700")
-b += text(20, 18, "cùng độ cao h → cùng thời gian rơi t = 0,404 s", "currentColor", 11, "start", "400")
-b += text(20, 268, "v₀ lớn hơn → tầm xa lớn hơn, thời gian rơi không đổi", "currentColor", 11, "start", "400")
-fig3 = wrap("0 0 440 280",
+    b += text((x1 + x2) / 2, yb + 15, lab, ORG, 14, "middle", "700")
+b += text(20, 16, "cùng độ cao h → cùng thời gian rơi t = 0,404 s", "currentColor", 14, "start", "400")
+b += text(20, 274, "v₀ lớn hơn → tầm xa lớn hơn, thời gian rơi không đổi", "currentColor", 14, "start", "400")
+fig3 = wrap("0 0 440 286",
             "Hai vật ném ngang từ cùng độ cao với vận tốc khác nhau: cùng thời gian rơi, tầm xa tỉ lệ với vận tốc ném",
             b,
             "Hình 3. Cùng độ cao $h=0{,}80$ m nên cùng thời gian rơi 0,404 s. Vận tốc ném gấp ba thì tầm xa gấp ba (0,61 m so với 1,82 m) — <strong>vận tốc ném không làm đổi thời gian rơi</strong>.")
@@ -144,12 +144,12 @@ for u, (x, y) in zip(US, pts):
 xe, ye = pts[-1][0] + VX, pts[-1][1] + VY[0.9]
 b += seg(pts[-1][0] + VX, pts[-1][1], xe, ye, "currentColor", 1.1, "4 4", .35)
 b += seg(pts[-1][0], pts[-1][1] + VY[0.9], xe, ye, "currentColor", 1.1, "4 4", .35)
-b += sub(pts[0][0] + 20, pts[0][1] - 8, "v", "x", BLUE)
+b += sub(pts[0][0] + 20, pts[0][1] - 20, "v", "x", BLUE)
 b += sub(pts[0][0] - 22, pts[0][1] + VY[0.35] + 18, "v", "y", ORG)
-b += text(xe + 6, ye + 2, "v", RED, 12, "start", "700")
-b += text(20, 240, "Thành phần ngang không đổi · thành phần đứng lớn dần", "currentColor", 11, "start", "400")
-b += text(20, 256, "v là tổng hai vectơ vuông góc", "currentColor", 11, "start", "400")
-fig4 = wrap("0 0 440 268",
+b += text(xe + 6, ye + 2, "v", RED, 14, "start", "700")
+b += text(20, 244, "Thành phần ngang không đổi · thành phần đứng lớn dần", "currentColor", 14, "start", "400")
+b += text(20, 263, "v là tổng hai vectơ vuông góc", "currentColor", 14, "start", "400")
+fig4 = wrap("0 0 440 274",
             "Ba thời điểm trên quỹ đạo: thành phần ngang không đổi, thành phần thẳng đứng lớn dần, vecto vận tốc tổng hợp là tổng hai vectơ vuông góc",
             b,
             "Hình 4. Trên đường parabol: $v_x$ (xanh) <strong>không đổi</strong>, $v_y$ (cam) <strong>lớn dần</strong>, còn $\\vec v$ (đỏ) là tổng hai vectơ vuông góc nên $v=\\sqrt{v_0^2+(gt)^2}$ và ngày càng dốc xuống.")

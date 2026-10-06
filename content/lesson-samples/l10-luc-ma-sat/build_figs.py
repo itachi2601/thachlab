@@ -76,11 +76,11 @@ b = defs("f1")
 b += arrow("f1", "k", OX, OY, 420, OY, 2, name="trục F") + arrow("f1", "k", OX, OY, OX, 18, 2, name="trục Fms")
 for F in (1, 2, 3):
     x = OX + SX * F
-    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5, check=False) + text(x, OY + 20, str(F), "currentColor", 13, "middle", "500")
-b += text(OX - 8, OY + 20, "0", "currentColor", 13, "end", "500")
+    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5, check=False) + text(x, OY + 20, str(F), "currentColor", 14, "middle", "500")
+b += text(OX - 8, OY + 20, "0", "currentColor", 14, "end", "500")
 for v in (1.0, FTR, FMAX):
     y = OY - SY * v
-    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5, check=False) + text(OX - 8, y + 5, num(v), "currentColor", 13, "end", "500")
+    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5, check=False) + text(OX - 8, y + 5, num(v), "currentColor", 14, "end", "500")
 xp, yp = OX + SX * FMAX, OY - SY * FMAX
 ytr = OY - SY * FTR
 b += line(OX, yp, xp, yp, "currentColor", 1, "3 5", .4, check=False) + line(OX, ytr, xp, ytr, "currentColor", 1, "3 5", .4, check=False)

@@ -45,7 +45,7 @@ t1 = dict(base, **{
                                  "chữ L hai cạnh a, b vuông góc: s = a + b, d = √(a² + b²)"],
                 "gia_thiet": ["xe coi là chất điểm", "ray nằm trên mặt phẳng ngang", "s đo bằng chỉ lệch ≤ 1 cm, d đo bằng thước lệch ≤ 0,2 cm"]},
     "so_lieu_mau": {"cot": ["Hình ray", "s mô hình (cm)", "s đo (cm)", "d mô hình (cm)", "d đo (cm)"], "hang": hang,
-                    "ghi_chu": "Số liệu minh hoạ: cột mô hình tính từ phương trình; cột đo lệch không quá sai số dụng cụ (chỉ ±1 cm, thước ±0,2 cm)."},
+                    "ghi_chu": "Số liệu minh hoạ: cột mô hình tính từ phương trình; cột đo lệch không quá sai số dụng cụ (sợi chỉ ±1 cm, thước ±0,2 cm)."},
     "ket_qua_ky_vong": "d = s ở ray thẳng; d < s ở ba hình còn lại; d = 0 ở vòng kín. Cột s đo lệch mô hình nhiều hơn cột d vì sợi chỉ khó đặt sát ray cong.",
     "hien_tuong_hay_sai": ["Tưởng d của vòng kín là chu vi 62,8 cm.", "Tưởng d của nửa vòng là nửa chu vi 31,4 cm thay vì đường kính 20 cm.",
                            "Cộng 30 + 40 = 70 cm làm độ dịch chuyển của hình chữ L."],
