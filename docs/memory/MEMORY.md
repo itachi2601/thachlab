@@ -71,3 +71,4 @@
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 6/10: 130 đề đăng (item 57=41, 59=28, 60=15 ẨN; item 58 Cuối HK1 +49 ở Bản nháp); 40 bộ LỆCH còn lại cần vá tay (7 bộ đề 0 câu); script `--nam l11` đã commit 471489729, chưa push; treo: thầy xem + bật Hiện, lời giải/nhãn chưa có, 693/701 do phiên khác chuyển vào item 58
 - [AI Tutor Socratic (GĐ 4)](project_thachlab_ai_tutor.md) — 6/10: docs/AI-TUTOR.md + scripts/eval-ai-tutor.mts đã vào main; KHÔNG xây tutor trước Q2/2027; treo: thầy chạy eval 30 câu + chấm, thêm OPENAI/ANTHROPIC key, rà is_correct lệch
 - [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick
+- [Thay ví dụ xưởng bằng đời sống](project_thachlab_vi_du_doi_song_thay_xuong.md) — 6/10: 53 bài L10–L12 đã sửa + ghi DB + deploy; treo: xem-thu cũ, 4 bài L10 mới chưa kiểm
