@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // PWA (GĐ 2.6 M1): manifest do app/manifest.ts sinh ra; iOS cần apple-touch-icon riêng.
   icons: { apple: "/icons/apple-touch-icon.png" },
-  appleWebApp: { capable: true, title: "ThachLab", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "ThachLab", statusBarStyle: "black" },
   title: {
     default: "ThachLab — Vật lý không chỉ là công thức",
     template: "%s | ThachLab",
