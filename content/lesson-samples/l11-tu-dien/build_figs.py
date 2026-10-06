@@ -12,13 +12,15 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
 def dot(x, y, r=4, c="currentColor"): return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
 def sub(base, s, x, y, c="currentColor", size=13, anchor="start", weight="700"):
+    size = max(size, 13)
     """Chữ có chỉ số dưới (không dùng KaTeX trong SVG)."""
     return (f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">'
-            f'{base}<tspan baseline-shift="sub" font-size="{size-3}">{s}</tspan></text>')
+            f'{base}<tspan baseline-shift="sub" font-size="{max(size-3, 11)}">{s}</tspan></text>')
 
 def subs(parts, x, y, c="currentColor", size=12, anchor="start", weight="600"):
+    size = max(size, 13)
     """Một dòng chữ nhiều chỉ số dưới: parts = [("U = U", "1"), (" + U", "2")]."""
-    t = "".join(f'<tspan>{a}</tspan><tspan baseline-shift="sub" font-size="{size-3}">{s}</tspan>' for a, s in parts)
+    t = "".join(f'<tspan>{a}</tspan><tspan baseline-shift="sub" font-size="{max(size-3, 11)}">{s}</tspan>' for a, s in parts)
     return f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{t}</text>'
 
 def cap_sym(x, y, h=30, gap=10, c="currentColor"):

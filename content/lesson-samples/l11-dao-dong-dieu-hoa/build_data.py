@@ -77,8 +77,8 @@ def q(question, opts, ans, expl): return {"type": "multiple_choice", "question":
 exam = {"title": "Luyện tập — Dao động điều hoà", "duration_minutes": 10, "questions": [
   q("Vật dao động theo $x = 4\\cos(\\pi t)$ cm. Khi vật ở biên phía âm, li độ bằng:", ["4 cm", "−4 cm", "0", "8 cm"], 1, "Li độ là vị trí so với VTCB: biên phía âm có x = −A = −4 cm."),
   q("Biên độ của dao động $x = -3\\cos(2t)$ cm là:", ["−3 cm", "3 cm", "6 cm", "2 cm"], 1, "Biên độ luôn dương; −cos α = cos(α + π)."),
-  q("Vật dao động theo $x = 10\\cos(2\\pi t)$ cm. Lúc t = 0,25 s, li độ bằng:", ["10 cm", "−10 cm", "0", "5 cm"], 2, "Pha = 2π·0,25 = π/2, nên x = 10cos(π/2) = 0."),
-  q("Vật dao động theo $x = 6\\cos(5\\pi t + \\pi/2)$ cm. Lúc t = 0,1 s, li độ bằng:", ["6 cm", "0", "−6 cm", "3 cm"], 2, "Pha = 5π·0,1 + π/2 = π, nên x = 6cosπ = −6 cm."),
+  q("Vật dao động theo $x = 10\\cos(2\\pi t)$ cm. Lúc $t = 0{,}25$ s, li độ bằng:", ["10 cm", "−10 cm", "0", "5 cm"], 2, "Pha = 2π·0,25 = π/2, nên x = 10cos(π/2) = 0."),
+  q("Vật dao động theo $x = 6\\cos(5\\pi t + \\pi/2)$ cm. Lúc $t = 0{,}1$ s, li độ bằng:", ["6 cm", "0", "−6 cm", "3 cm"], 2, "Pha = 5π·0,1 + π/2 = π, nên x = 6cosπ = −6 cm."),
   q("Dao động $x = 5\\cos(2\\pi t + \\pi/3)$ cm có li độ lúc t = 0 là:", ["5 cm", "2,5 cm", "0", "4,33 cm"], 1, "x(0) = 5cos(π/3) = 2,5 cm."),
 ]}
 import re

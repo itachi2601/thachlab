@@ -23,8 +23,8 @@ cards = [
 for x, y, c, t, l1, l2 in cards:
     b += f'<rect x="{x}" y="{y}" width="205" height="90" rx="10" fill="none" stroke="{c}" stroke-width="2.4"/>'
     b += text(x + 12, y + 28, t, c, 13, "start", "700")
-    b += text(x + 12, y + 54, l1, "currentColor", 11.5, "start", "400")
-    b += text(x + 12, y + 72, l2, "currentColor", 11.5, "start", "400")
+    b += text(x + 12, y + 54, l1, "currentColor", 13, "start", "400")
+    b += text(x + 12, y + 72, l2, "currentColor", 13, "start", "400")
 fig1 = wrap("0 0 440 212", "Bản đồ bốn họ bài tập sóng và dấu hiệu nhận ra họ trong đề",
             b, "Hình 1. Bốn họ gom 15 dạng: nhìn <strong>từ khoá trong đề</strong> là biết dùng công thức nào.")
 
@@ -38,10 +38,10 @@ for k in range(-3, 4):
     b += dot(x0 + (2 - k / 2) * px, y, 6, RED)
 for k in range(-4, 4):
     b += dot(x0 + (2 - (k + .5) / 2) * px, y, 4.5, BLUE)
-b += dot(14, 128, 6, RED) + text(26, 132, "cực đại: 7 điểm", RED, 12, "start", "700")
-b += dot(160, 128, 4.5, BLUE) + text(172, 132, "cực tiểu: 8 điểm", BLUE, 12, "start", "700")
-b += text(x0, 18, "Hai nguồn cùng pha, AB = 4λ", "currentColor", 12, "start")
-b += text(x0, 156, "k = −3 … 3 (cực đại) · k + ½ = −3,5 … 3,5 (cực tiểu)", "currentColor", 11.5, "start", "400")
+b += dot(14, 128, 6, RED) + text(26, 132, "cực đại: 7 điểm", RED, 13, "start", "700")
+b += dot(160, 128, 4.5, BLUE) + text(172, 132, "cực tiểu: 8 điểm", BLUE, 13, "start", "700")
+b += text(x0, 18, "Hai nguồn cùng pha, AB = 4λ", "currentColor", 13, "start")
+b += text(x0, 156, "k = −3 … 3 (cực đại) · k + ½ = −3,5 … 3,5 (cực tiểu)", "currentColor", 13, "start", "400")
 fig2 = wrap("0 0 440 168", "Trên đoạn AB bằng 4 bước sóng, hai nguồn cùng pha: 7 cực đại và 8 cực tiểu, A và B không phải điểm đếm",
             b, "Hình 2. Với $AB=4\\lambda$: cực đại xen kẽ cực tiểu, hai cực đại liền kề cách nhau $\\tfrac{\\lambda}{2}$. A, B <strong>không được đếm</strong>.")
 fig2 = fig2.replace('<figure class="fig" data-tl="1">', '<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-02">', 1)
@@ -61,10 +61,10 @@ for x in (lam / 4, 3 * lam / 4, 5 * lam / 4):
     yy = ya - amp if x == lam / 4 else (ya + amp if x == 3 * lam / 4 else ya - amp * math.sin(2 * math.pi * x / lam))
     b += dot(x0 + x, yy, 5.5, ORG)
 b += f'<circle cx="{x0+L}" cy="{ya-amp}" r="9" fill="none" stroke="{ORG}" stroke-width="2"/>'
-b += text(x0, 28, "Đầu cố định (nút)", "currentColor", 12, "start", "400")
-b += text(x0 + L - 4, 28, "Đầu tự do (bụng)", ORG, 12, "end", "700")
-b += text(x0, 168, "L = 5·λ/4 = (2n+1)·λ/4 với n = 2: 3 bụng, 3 nút", GRN, 12, "start", "700")
-b += text(x0, 188, "chấm sáng: nút · chấm cam: bụng", "currentColor", 11.5, "start", "400")
+b += text(x0, 28, "Đầu cố định (nút)", "currentColor", 13, "start", "400")
+b += text(x0 + L - 4, 28, "Đầu tự do (bụng)", ORG, 13, "end", "700")
+b += text(x0, 168, "L = 5·λ/4 = (2n+1)·λ/4 với n = 2: 3 bụng, 3 nút", GRN, 13, "start", "700")
+b += text(x0, 188, "chấm sáng: nút · chấm cam: bụng", "currentColor", 13, "start", "400")
 fig3 = wrap("0 0 440 200", "Sóng dừng trên dây một đầu cố định một đầu tự do với L bằng năm phần tư bước sóng: 3 nút và 3 bụng",
             b, "Hình 3. Một đầu cố định (nút), một đầu tự do (bụng): $L=(2n+1)\\tfrac{\\lambda}{4}$. Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.")
 fig3 = fig3.replace('<figure class="fig" data-tl="1">', '<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-04">', 1)

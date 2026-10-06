@@ -41,7 +41,7 @@ for k in range(4):
     for s in (-1, 1): b += hyp((k + .5) * lam / 2, s, BLUE, "6 4")
 b += line(cx - c, cy, cx + c, cy, "currentColor", 1.2, "2 3", .5)
 b += dot(cx - c, cy, 6, ORG) + dot(cx + c, cy, 6, ORG)
-b += text(cx - c, cy + 22, "A", "currentColor", 14, "middle", "700") + text(cx + c, cy + 22, "B", "currentColor", 14, "middle", "700")
+b += text(cx - c - 16, cy + 5, "A", "currentColor", 14, "middle", "700") + text(cx + c + 16, cy + 5, "B", "currentColor", 14, "middle", "700")
 b += text(cx, 14, "k = 0", RED, 12, "middle", "700")
 for k, xx in ((1, cx + 18), (2, cx + 36), (3, cx + 54)):
     pass
