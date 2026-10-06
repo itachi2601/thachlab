@@ -89,6 +89,13 @@ và cũng không có `SUPABASE_SERVICE_ROLE_KEY` / mật khẩu DB. Khóa servic
   "ĐANG CHỜ" / "ĐÃ CHẠY" trong `STATE.md`. Chạy lại migration có `create table` sao lưu sẽ báo lỗi "already exists".
   Bổ sung sau khi file đã chạy → tách file mới (bảng sao lưu tên khác), không sửa file cũ.
 
+## Dọn câu trùng ngân hàng câu hỏi — quét bằng ghép cặp, lặp tới khi sạch
+- 2026-10-06 · Đợt dọn 1 dùng RPC `find_similar_bank_questions*` (giới hạn 20 cặp/câu, 300 cặp/lần, timeout ở chủ đề lớn) nên bỏ sót
+  597 cặp giống 1,00 và 4 chủ đề khối 12; quét lại mới thấy → đợt 2. Dọn trùng: quét bằng truy vấn ghép cặp trực tiếp
+  (`supabase db query --linked` với `set statement_timeout = 0`, `question_bank_plain_text(question) % ...`), xoá cặp 1,00 (giữ 1 câu/cụm),
+  chỉ lưu trữ cặp 0,9–<1,00, rồi **quét lại ngay và lặp tới khi không còn cặp 1,00**. Mỗi đợt một bảng sao lưu tên khác
+  (`question_bank_dedup_backup_<ngày>[b|c]`). Truy vấn đếm theo từng dải trên cả khối dễ bị gateway 524 — chỉ đếm dải ≥0,9.
+
 ## Sau khi migration chạy xong
 - Sinh lại sơ đồ bảng: `node scripts/gen-database-doc.mjs` (ghi `docs/DATABASE.md` + `DATABASE-RPC.md`),
   rồi chuyển mục vừa chạy từ "ĐANG CHỜ" trong `docs/STATE.md` sang `docs/STATE-archive.md`.
