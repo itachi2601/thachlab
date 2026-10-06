@@ -20,12 +20,19 @@ Mục **Bài tập mẫu** (`lesson_items.kind='bai_tap_mau'`, cột `questions`
 6. **Nền trước, kỹ năng sau** (9.2): các dạng trong một bài xếp **từ cơ bản → kết hợp**, dạng sau dùng lại cách làm dạng trước. Dạng khó nhất là dạng 3–4.
 7. **KHÔNG dùng vai "thầy/cô"** trong nội dung (feedback 2/10/2026, validator chặn). Giọng trung tính, câu ngắn, đánh số khi nhiều ý, không mở bằng lời khen.
 
+## Mỗi gợi ý = HÌNH + LỜI (thầy chốt 7/10/2026)
+
+Học sinh được gợi ý bằng hình hiệu quả hơn chỉ lời. Mỗi dạng có **4 hình**: 1 hình đề (đủ dữ kiện, dấu "?" ở đại lượng cần tìm) + **1 hình cho mỗi gợi ý**, cùng một cảnh, hiện dần: gợi ý 1 = hình thể hiện điều kiện/tách phương (mũi tên thành phần, đối xứng, tam giác vận tốc); gợi ý 2 = dữ kiện + hệ trục + đại lượng cần tìm; gợi ý 3 = công thức đặt đúng chỗ trên hình (①②③ theo thứ tự làm). Hình đứng **trước** lời trong cùng gợi ý. Validator báo lỗi nếu một gợi ý thiếu `<svg`.
+- Dựng bằng `scripts/hinh.py` (quỹ đạo tính thật từ số liệu: `ngang_geom`, `xien_geom`, `dim`, `arc`, `axes`…, màu theo `svg_lib.py`: đỏ v · xanh dương vₓ/phương ngang · cam v_y/độ cao · xanh lá quỹ đạo). Mẫu: `scripts/data/bai-tap-mau/build-hinh-57.py` (idempotent: xoá `figure[data-bt]` cũ rồi chèn lại vào JSON). Không vẽ tay quỹ đạo.
+- Quy ước hình theo `soan-bai-ly-thuyet-tuong-tac/references/hinh-svg.md` (mỗi hình một tiền tố marker, chữ ≥ 12, không KaTeX, ≤ ~8 nhãn). Chú thích "Hình minh hoạ, không đúng tỉ lệ".
+- **Xem bằng mắt trước khi đăng**: ghi mỗi dạng ra một trang HTML, mở bằng `python3 -m http.server` + trình duyệt, chụp. Lỗi gặp ở bài 57: nhãn cắt mép trái/dưới (viewBox thiếu chỗ cho thước đo ở `ground+20`/`+38`), nhãn đè mũi tên hoặc quỹ đạo, nhãn đặt trên mặt đất.
+
 ## Quy trình
 
 1. **Chọn bài** (`lesson_id`). Đọc `public/data/lessons/<id>.json` mục `ly_thuyet` (để dạng bài **khớp đúng kiến thức bài đã dạy**, cùng ký hiệu), và mục `bai_tap_mau` hiện có (không để mất ví dụ hay đang có — đưa lại thành 1 dạng nếu tốt). Nếu thiếu `public/data`: `npm ci && node scripts/build-content.mjs`.
 2. **Chốt 2–4 dạng** (mặc định thử **1 bài trước**, thầy duyệt rồi mới nhân ra cả chương). Mỗi dạng = một kiểu bài học sinh sẽ gặp lặp lại trong đề (không phải 4 bài số khác nhau của cùng một cách làm). Với mỗi dạng chọn **`topic` = tên YCCĐ con** sát dạng nhất trong `scripts/data/question-topics.json` (đúng `lesson_id` của bài; sao chép nguyên văn). Vì bài tương tự lấy theo YCCĐ, YCCĐ quá rộng → bài lạc dạng; chỉ có chủ đề cha → ghi rõ cho thầy.
    - Soát nhanh ngân hàng trước khi chốt: `topic` đó có bao nhiêu câu `bai_tap` chưa lưu trữ (`select count(*) from question_bank where topic_id=… and form='bai_tap' and not archived`, chạy trên Mac). < 6 câu → báo thầy, vì nút bài tương tự sẽ nhanh hết.
-3. **Soạn từng dạng** (đề riêng, số liệu mới; không chép câu có trong ngân hàng nguyên văn): `problem_html`, `hints_html` (đúng 3), `solution_html`. LaTeX `$…$`; `<`/`>` trong công thức viết `\lt`/`\gt`. Hình cần thiết: SVG tự vẽ như bài lý thuyết (`soan-bai-ly-thuyet-tuong-tac/references/hinh-svg.md`), ảnh nén ≤ ~1200px (AGENTS.md "Đăng nội dung").
+3. **Soạn từng dạng** (rồi dựng 4 hình/dạng ở mục trên) (đề riêng, số liệu mới; không chép câu có trong ngân hàng nguyên văn): `problem_html`, `hints_html` (đúng 3), `solution_html`. LaTeX `$…$`; `<`/`>` trong công thức viết `\lt`/`\gt`. Hình cần thiết: SVG tự vẽ như bài lý thuyết (`soan-bai-ly-thuyet-tuong-tac/references/hinh-svg.md`), ảnh nén ≤ ~1200px (AGENTS.md "Đăng nội dung").
 4. **Kiểm chéo bắt buộc**: giao subagent `kiem-code` đọc lại **từng dạng**, tự giải độc lập (không nhìn lời giải) rồi so; trả đúng/sai/nghi ngờ + lý do. Sai số, đơn vị, hoặc gợi ý lộ đáp án → sửa. Chỉ đặt `review.checked: true` sau bước này.
 5. **Validate**: `npx tsx .claude/skills/soan-bai-tap-mau/scripts/validate.mts scripts/data/bai-tap-mau/<id>.json`.
 6. **Báo cáo** + in lệnh cho thầy trên Mac (xem mục "Đăng"). Viết "Rút kinh nghiệm" theo AGENTS.md vào Nhật ký cuối file này.
@@ -69,3 +76,4 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-06 · YCCĐ trong bank có 2 con/bài (bài 57) nên Dạng 1 và 3 cùng `topic` → bài tương tự của hai dạng sẽ trùng nguồn; chấp nhận, nhưng ngân hàng không có nhãn "dạng bài con".
 
 - 2026-10-06 · Đăng bài 57 không cờ giữ cũ → ghi đè 19 dạng cũ bằng 3 dạng mới (có sao lưu, đã nối lại) → script đăng phải mặc định cảnh báo số dạng cũ sẽ mất; dùng `--giu-cu` cho bài đã có nội dung.
+- 2026-10-07 · Thầy: gợi ý bằng hình hiệu quả hơn lời → mỗi gợi ý có hình (4 hình/dạng, dựng từ quỹ đạo tính thật); lần chạy đầu 12/24 hình lỗi bố cục (cắt mép, nhãn đè) → luôn chụp xem từng hình trước khi đăng; thước đo dưới mặt đất cần viewBox cao hơn `ground+40`.

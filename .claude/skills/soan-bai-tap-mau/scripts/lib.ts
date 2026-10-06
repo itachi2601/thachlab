@@ -45,6 +45,8 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
       if (typeof d[k] !== "string" || !d[k].trim()) errors.push(`${at}: thiếu ${k}`);
     if (!Array.isArray(d.hints_html) || d.hints_html.length !== 3 || d.hints_html.some((h) => !String(h).trim()))
       errors.push(`${at}: cần đúng 3 gợi ý (kiến thức+điều kiện → dữ kiện/hướng → công thức)`);
+    if (!/<svg/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có hình`);
+    (d.hints_html ?? []).forEach((h, j) => { if (!/<svg/.test(String(h))) errors.push(`${at}: gợi ý ${j + 1} chưa có hình (mỗi gợi ý = hình + lời)`); });
     const all = [d.problem_html, d.solution_html, ...(d.hints_html ?? [])].join("\n");
     if (!dollarsBalanced(all)) errors.push(`${at}: số dấu $ lẻ`);
     if (/[<>]/.test((all.match(/\$[^$]*\$/g) ?? []).join(""))) errors.push(`${at}: công thức có < hoặc > — viết \\lt / \\gt`);
