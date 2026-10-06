@@ -96,13 +96,13 @@ assert round(TS, 2) == 0.64 and round(TV, 2) == 0.68
 SAI_SO_S = 1 / FPS
 assert abs(SAI_SO_S - 0.017) < 5e-4
 
-# TN3: CNC chạy hình vuông cạnh 150 mm, 1200 mm/phút, 4 góc, mỗi góc mất 0,75 s giảm tốc.
-L_CNC, V_CNC, N_GOC, T_GOC = 600.0, 1200.0, 4, 0.75
-T_LT = L_CNC / V_CNC * 60
+# TN3: robot hút bụi đi hình vuông cạnh 1,5 m, 0,2 m/s, 4 góc, mỗi góc mất 0,75 s khi rẽ.
+L_CNC, V_CNC, N_GOC, T_GOC = 6.0, 0.2, 4, 0.75
+T_LT = round(L_CNC / V_CNC, 6)
 T_DO = T_LT + N_GOC * T_GOC
 assert T_LT == 30 and T_DO == 33 and abs((T_DO - T_LT) / T_LT - 0.10) < 1e-9     # "lệch 10 %"
-# thử thách ⭐⭐: 900 mm, 1500 mm/phút, đo 39 s, 0,75 s/góc
-T2 = 900 / 1500 * 60
+# thử thách ⭐⭐: 9 m, 0,25 m/s, đo 39 s, 0,75 s/góc
+T2 = 9 / 0.25
 assert T2 == 36 and (39 - T2) / 0.75 == 4
 
 # ================= Hình 1: thang cấp độ từ vi mô tới vĩ mô
@@ -295,29 +295,29 @@ tn = [
                         "y_tuong": "Ba làn thả cạnh nhau, đồng hồ khung hình chạy; thanh trượt độ cao và hệ số cản; bảng tự điền số khung hình ba lần với pha buông ngẫu nhiên.",
                         "diem_nhan": "Tắt không khí (k_can = 1) thì giấy và sách chạm sàn cùng lúc, thấy rõ giả thuyết 'không khí cản'."}},
     {**BASE, "id": "tn-l10-lam-quen-03",
-     "ten": "Máy CNC chạy hình vuông: dự đoán lí thuyết 30 s, đo thật 33 s",
+     "ten": "Robot hút bụi đi hình vuông: dự đoán lí thuyết 30 s, đo thật 33 s",
      "loai": "vi_du", "muc_do": "trung_binh",
      "kien_thuc": ["lamquen.ly_thuyet", "lamquen.thuc_nghiem", "lamquen.ly_thuyet_thuc_nghiem_bo_sung"],
-     "muc_tieu": "Thấy lí thuyết và thực nghiệm bổ sung nhau: dự đoán t = L/v, đo thật lệch vì bỏ sót giảm tốc ở góc; chênh lệch chỉ ra chỗ cần sửa mô hình.",
-     "dung_cu": [{"ten": "Không cần (ví dụ phân tích; ngoài đời dùng máy CNC phay)", "so_luong": 0}],
-     "cac_buoc": {"lam": ["Lập trình chạy dao theo hình vuông cạnh 150 mm (chu vi 600 mm) với tốc độ 1200 mm/phút.", "Tính lí thuyết: t = 600/1200 phút = 30 s."],
-                  "quan_sat": ["Đồng hồ máy báo 33 s (số liệu minh hoạ)."],
-                  "rut_ra": ["Dự đoán 30 s lệch số đo 33 s là 3 s (10 %).", "Nguyên nhân: mô hình chỉ tính chạy đều, bỏ sót giảm tốc ở 4 góc (mỗi góc khoảng 0,75 s).", "Sửa mô hình rồi đo lại: lí thuyết giải thích thực nghiệm, thực nghiệm kiểm chứng lí thuyết."]},
-     "tham_so": [{"ky_hieu": "L", "ten": "Chiều dài đường chạy dao", "don_vi": "mm", "kieu": "dieu_chinh", "min": 200, "max": 1200, "mac_dinh": L_CNC, "buoc": 100},
-                 {"ky_hieu": "v", "ten": "Tốc độ chạy dao", "don_vi": "mm/phút", "kieu": "dieu_chinh", "min": 600, "max": 3000, "mac_dinh": V_CNC, "buoc": 100},
-                 {"ky_hieu": "n_goc", "ten": "Số góc của đường chạy dao", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 8, "mac_dinh": N_GOC, "buoc": 1},
-                 {"ky_hieu": "t_goc", "ten": "Thời gian mất thêm mỗi góc do giảm tốc", "don_vi": "s", "kieu": "co_dinh", "gia_tri": T_GOC},
+     "muc_tieu": "Thấy lí thuyết và thực nghiệm bổ sung nhau: dự đoán t = L/v, đo thật lệch vì bỏ sót giảm tốc khi rẽ ở góc; chênh lệch chỉ ra chỗ cần sửa mô hình.",
+     "dung_cu": [{"ten": "Không cần (ví dụ phân tích; ngoài đời dùng robot hút bụi và đồng hồ bấm giây)", "so_luong": 0}],
+     "cac_buoc": {"lam": ["Cho robot hút bụi đi dọc bốn cạnh một ô vuông cạnh 1,5 m (chu vi 6 m) với tốc độ 0,2 m/s.", "Tính lí thuyết: t = 6/0,2 = 30 s."],
+                  "quan_sat": ["Đồng hồ bấm giây báo 33 s (số liệu minh hoạ)."],
+                  "rut_ra": ["Dự đoán 30 s lệch số đo 33 s là 3 s (10 %).", "Nguyên nhân: mô hình chỉ tính chạy đều, bỏ sót giảm tốc khi rẽ ở 4 góc (mỗi góc khoảng 0,75 s).", "Sửa mô hình rồi đo lại: lí thuyết giải thích thực nghiệm, thực nghiệm kiểm chứng lí thuyết."]},
+     "tham_so": [{"ky_hieu": "L", "ten": "Chiều dài đường đi của robot", "don_vi": "m", "kieu": "dieu_chinh", "min": 2, "max": 12, "mac_dinh": L_CNC, "buoc": 1},
+                 {"ky_hieu": "v", "ten": "Tốc độ của robot", "don_vi": "m/s", "kieu": "dieu_chinh", "min": 0.1, "max": 0.5, "mac_dinh": V_CNC, "buoc": 0.05},
+                 {"ky_hieu": "n_goc", "ten": "Số góc của đường đi", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 8, "mac_dinh": N_GOC, "buoc": 1},
+                 {"ky_hieu": "t_goc", "ten": "Thời gian mất thêm mỗi góc do rẽ", "don_vi": "s", "kieu": "co_dinh", "gia_tri": T_GOC},
                  {"ky_hieu": "t", "ten": "Thời gian chạy", "don_vi": "s", "kieu": "tinh_ra"}],
-     "mo_hinh": {"phuong_trinh": ["t_lí_thuyết = 60·L/v", "t_đo = t_lí_thuyết + n_goc·t_goc"],
+     "mo_hinh": {"phuong_trinh": ["t_lí_thuyết = L/v", "t_đo = t_lí_thuyết + n_goc·t_goc"],
                  "gia_thiet": ["t_goc = 0,75 s là GIẢ ĐỊNH minh hoạ", "bỏ qua thời gian tăng tốc ban đầu và dừng cuối"]},
-     "so_lieu_mau": {"cot": ["L (mm)", "v (mm/phút)", "Số góc", "t lí thuyết (s)", "t đo (s)"],
-                     "hang": [[L_CNC, V_CNC, N_GOC, T_LT, T_DO], [900, 1500, N_GOC, T2, T2 + N_GOC * T_GOC]],
+     "so_lieu_mau": {"cot": ["L (m)", "v (m/s)", "Số góc", "t lí thuyết (s)", "t đo (s)"],
+                     "hang": [[L_CNC, V_CNC, N_GOC, T_LT, T_DO], [9, 0.25, N_GOC, T2, T2 + N_GOC * T_GOC]],
                      "ghi_chu": "Số liệu minh hoạ tính từ mô hình; hàng 2 là thử thách ⭐⭐ (đo thật 39 s)."},
-     "ket_qua_ky_vong": "Lí thuyết 30 s, đo 33 s, lệch 10 %; nguyên nhân: giảm tốc ở 4 góc.",
+     "ket_qua_ky_vong": "Lí thuyết 30 s, đo 33 s, lệch 10 %; nguyên nhân: giảm tốc khi rẽ ở 4 góc.",
      "hien_tuong_hay_sai": ["Bỏ kết quả đo vì lí thuyết 'đã tính chắc chắn'.", "Bỏ cả phép tính vì lệch 10 %."],
      "sai_so_thuong_gap": "Đồng hồ máy làm tròn giây; tốc độ thực khác tốc độ đặt.",
      "goi_y_mo_phong": {"loai": "2d_dong_hoc+bang_so_lieu",
-                        "y_tuong": "Dao chạy theo hình vuông; hai đồng hồ: dự đoán lí thuyết và thời gian đo; thanh trượt số góc và t_goc.",
+                        "y_tuong": "Robot chạy theo hình vuông; hai đồng hồ: dự đoán lí thuyết và thời gian đo; thanh trượt số góc và t_goc.",
                         "diem_nhan": "Cho t_goc = 0 thì hai đồng hồ trùng nhau, thấy yếu tố bị bỏ sót."}},
 ]
 for d in tn:

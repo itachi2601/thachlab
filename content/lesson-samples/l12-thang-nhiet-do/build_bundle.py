@@ -52,7 +52,7 @@ EXAM = {
         },
         {
             "type": "multiple_choice",
-            "question": "Một chi tiết thép nguội từ 200 °C xuống 30 °C. Độ giảm nhiệt độ đó là",
+            "question": "Một khay bánh vừa ra lò nguội từ 200 °C xuống 30 °C. Độ giảm nhiệt độ đó là",
             "options": [
                 "170 °C, tức 170 K và 306 °F.",
                 "170 °C, tức 443 K và 306 °F.",

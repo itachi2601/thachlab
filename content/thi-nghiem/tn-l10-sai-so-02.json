@@ -5,7 +5,7 @@
  "lesson_id": 48,
  "nguon_trong_bai": "content/lesson-samples/l10-thuc-hanh-sai-so/theory.html",
  "id": "tn-l10-sai-so-02",
- "ten": "Một thước thép, hai chi tiết CNC: cùng sai số tuyệt đối, khác sai số tỉ đối",
+ "ten": "Một thước kẻ, hai vật đo: cùng sai số tuyệt đối, khác sai số tỉ đối",
  "loai": "thi_nghiem",
  "muc_do": "co_ban",
  "kien_thuc": [
@@ -16,30 +16,30 @@
  "muc_tieu": "Hiểu sai số dụng cụ bằng nửa ĐCNN và so độ chính xác của hai phép đo bằng sai số tỉ đối, không bằng sai số tuyệt đối.",
  "dung_cu": [
   {
-   "ten": "Thước thép vạch chia 1 mm",
+   "ten": "Thước kẻ vạch chia 1 mm",
    "so_luong": 1
   },
   {
-   "ten": "Tấm nhôm dài khoảng 250 mm",
+   "ten": "Tấm bìa dài khoảng 250 mm",
    "so_luong": 1
   },
   {
-   "ten": "Chốt nhôm đường kính khoảng 12 mm",
+   "ten": "Cục tẩy dày khoảng 12 mm",
    "so_luong": 1
   }
  ],
  "cac_buoc": {
   "lam": [
-   "Đo 1 lần chiều dài tấm nhôm và đường kính chốt bằng thước vạch 1 mm.",
+   "Đo 1 lần chiều dài tấm bìa và độ dày cục tẩy bằng thước vạch 1 mm.",
    "Lấy sai số dụng cụ bằng nửa ĐCNN = 0,5 mm."
   ],
   "quan_sat": [
-   "Tấm: (250,0 ± 0,5) mm. Chốt: (12,0 ± 0,5) mm.",
+   "Tấm bìa: (250,0 ± 0,5) mm. Cục tẩy: (12,0 ± 0,5) mm.",
    "Hai phép đo có cùng sai số tuyệt đối 0,5 mm."
   ],
   "rut_ra": [
-   "Sai số tỉ đối: tấm 0,5/250,0 ≈ 0,2 %; chốt 0,5/12,0 ≈ 4,2 %.",
-   "Phải so δ, không so Δ: phép đo tấm chính xác hơn."
+   "Sai số tỉ đối: tấm bìa 0,5/250,0 ≈ 0,2 %; cục tẩy 0,5/12,0 ≈ 4,2 %.",
+   "Phải so δ, không so Δ: phép đo tấm bìa chính xác hơn."
   ]
  },
  "tham_so": [
@@ -89,28 +89,28 @@
  },
  "so_lieu_mau": {
   "cot": [
-   "Chi tiết",
+   "Vật đo",
    "d (mm)",
    "ΔA (mm)",
    "δA (%)"
   ],
   "hang": [
    [
-    "Tấm nhôm",
+    "Tấm bìa",
     250.0,
     0.5,
     0.2
    ],
    [
-    "Chốt",
+    "Cục tẩy",
     12.0,
     0.5,
     4.17
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Chốt cần δ ≤ 0,5 % thì ΔA ≤ 0,06 mm (thước cặp/panme)."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Cục tẩy cần δ ≤ 0,5 % thì ΔA ≤ 0,06 mm (thước điện tử cầm tay)."
  },
- "ket_qua_ky_vong": "δ tấm ≈ 0,2 %, δ chốt ≈ 4,2 %: phép đo tấm chính xác hơn dù cùng ΔA = 0,5 mm.",
+ "ket_qua_ky_vong": "δ tấm bìa ≈ 0,2 %, δ cục tẩy ≈ 4,2 %: phép đo tấm bìa chính xác hơn dù cùng ΔA = 0,5 mm.",
  "hien_tuong_hay_sai": [
   "So hai sai số tuyệt đối rồi kết luận hai phép đo như nhau.",
   "Cho rằng vật nhỏ thì ít sai số."
@@ -119,6 +119,6 @@
  "goi_y_mo_phong": {
   "loai": "2d_dong_hoc+bang_so_lieu",
   "y_tuong": "Thước kéo được trên vật đo; thanh trượt kích thước vật và ĐCNN; bảng hiện ΔA và δA, thanh màu δA đổi theo.",
-  "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của chốt rơi từ 4,2 % xuống dưới 0,5 %."
+  "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của cục tẩy rơi từ 4,2 % xuống dưới 0,5 %."
  }
 }

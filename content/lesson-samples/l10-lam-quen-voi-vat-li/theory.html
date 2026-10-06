@@ -90,14 +90,14 @@
 <tbody>
 <tr><td>Thông tin liên lạc</td><td>internet, điện thoại thông minh</td></tr>
 <tr><td>Y tế</td><td>X-quang, chụp cộng hưởng từ (MRI), siêu âm, nội soi, xạ trị</td></tr>
-<tr><td>Công nghiệp</td><td>dây chuyền tự động hoá, trí tuệ nhân tạo, vật liệu nano, điện toán đám mây, máy CNC</td></tr>
+<tr><td>Công nghiệp</td><td>dây chuyền tự động hoá, trí tuệ nhân tạo, vật liệu nano, điện toán đám mây, robot hút bụi, xe tự lái</td></tr>
 <tr><td>Nông nghiệp</td><td>đèn LED trồng cây, nhà kính (năng suất cao)</td></tr>
 <tr><td>Nghiên cứu</td><td>kính hiển vi điện tử, nhiễu xạ tia X, máy quang phổ</td></tr>
 </tbody>
 </table>
 </div>
 
-<p>Cách mạng công nghiệp lần thứ tư (từ thế kỉ XXI) thay sản xuất thủ công bằng dây chuyền tự động hoá. Máy CNC chạy nhờ động cơ, cảm biến, điều khiển số: toàn là vật lí.</p>
+<p>Cách mạng công nghiệp lần thứ tư (từ thế kỉ XXI) thay sản xuất thủ công bằng dây chuyền tự động hoá. Robot hút bụi chạy nhờ động cơ, cảm biến, điều khiển số: toàn là vật lí.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -190,10 +190,10 @@
 <h4>Bẫy 1: "Đã có lí thuyết thì khỏi cần đo"</h4>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-lam-quen-03">
-<p class="tl-label">🔬 Ví dụ: dự đoán thời gian chạy dao của máy CNC</p>
+<p class="tl-label">🔬 Ví dụ: dự đoán thời gian chạy của robot hút bụi</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> lập trình chạy dao theo hình vuông cạnh $150\ \text{mm}$ (chu vi $600\ \text{mm}$) với tốc độ $1200\ \text{mm/phút}$. Lí thuyết dự đoán: $600 : 1200 = 0{,}5$ phút, tức $30\ \text{s}$.</li>
-<li><strong>Quan sát:</strong> đồng hồ máy báo $33\ \text{s}$ (số liệu minh hoạ).</li>
+<li><strong>Làm:</strong> cho robot hút bụi đi dọc bốn cạnh một ô vuông cạnh $1{,}5\ \text{m}$ (chu vi $6\ \text{m}$) với tốc độ $0{,}2\ \text{m/s}$. Lí thuyết dự đoán: $6 : 0{,}2 = 30\ \text{s}$.</li>
+<li><strong>Quan sát:</strong> đồng hồ bấm giây báo $33\ \text{s}$ (số liệu minh hoạ).</li>
 <li><strong>Rút ra:</strong> dự đoán và số đo lệch nhau $3\ \text{s}$.</li>
 </ol>
 </div>
@@ -204,7 +204,7 @@
 <tr><th>Dự đoán lí thuyết</th><th>Thực nghiệm</th></tr>
 </thead>
 <tbody>
-<tr><td>$30\ \text{s}$, tính bằng công thức</td><td>$33\ \text{s}$, đọc trên máy</td></tr>
+<tr><td>$30\ \text{s}$, tính bằng công thức</td><td>$33\ \text{s}$, đo bằng đồng hồ bấm giây</td></tr>
 <tr><td>Cần đo để kiểm chứng</td><td>Cần lí thuyết để giải thích</td></tr>
 </tbody>
 </table>
@@ -217,14 +217,14 @@
 <label><input type="radio" name="tl46-q5-conf" value="khong"> Không chắc</label></p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Lí thuyết dự đoán $30\ \text{s}$, máy thật chạy $33\ \text{s}$. Kết luận hợp lí nhất?</p>
+<p><strong>Câu 4.</strong> Lí thuyết dự đoán $30\ \text{s}$, robot thật chạy $33\ \text{s}$. Kết luận hợp lí nhất?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl46-q5" id="tl46-q5a"><label for="tl46-q5a" class="tl-opt tl-no">A. Máy hỏng nên phải bỏ kết quả đo</label>
+<input type="radio" name="tl46-q5" id="tl46-q5a"><label for="tl46-q5a" class="tl-opt tl-no">A. Robot hỏng nên phải bỏ kết quả đo</label>
 <input type="radio" name="tl46-q5" id="tl46-q5b"><label for="tl46-q5b" class="tl-opt tl-no">B. Lí thuyết sai hoàn toàn nên bỏ phép tính</label>
 <input type="radio" name="tl46-q5" id="tl46-q5c"><label for="tl46-q5c" class="tl-opt tl-no">C. Phép đo sai vì lí thuyết đã tính chắc chắn</label>
 <input type="radio" name="tl46-q5" id="tl46-q5d"><label for="tl46-q5d" class="tl-opt tl-ok">D. Mô hình thiếu yếu tố; sửa rồi đo lại</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Phép tính chỉ đúng với điều đã đưa vào mô hình. Chênh $3\ \text{s}$ gợi ý yếu tố bị bỏ sót: máy giảm tốc ở $4$ góc, mỗi góc mất khoảng $0{,}75\ \text{s}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đổ cho máy mà chưa kiểm tra gì. B vứt cả phép tính chỉ vì lệch $10\,\%$. C tin lí thuyết hơn số đo. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: lệch thì tìm nguyên nhân, không bỏ bên nào.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Phép tính chỉ đúng với điều đã đưa vào mô hình. Chênh $3\ \text{s}$ gợi ý yếu tố bị bỏ sót: robot giảm tốc khi rẽ ở $4$ góc, mỗi góc mất khoảng $0{,}75\ \text{s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đổ cho robot mà chưa kiểm tra gì. B vứt cả phép tính chỉ vì lệch $10\,\%$. C tin lí thuyết hơn số đo. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: lệch thì tìm nguyên nhân, không bỏ bên nào.</p></div>
 </div>
 </div>
 
@@ -305,7 +305,7 @@
 </details>
 <details class="tl-details">
 <summary>3. Kể năm lĩnh vực chịu ảnh hưởng của vật lí, mỗi lĩnh vực một ví dụ. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Liên lạc: smartphone · y tế: MRI · công nghiệp: tự động hoá, CNC · nông nghiệp: đèn LED trồng cây · nghiên cứu: kính hiển vi điện tử.</p>
+<p>Liên lạc: smartphone · y tế: MRI · công nghiệp: tự động hoá, robot · nông nghiệp: đèn LED trồng cây · nghiên cứu: kính hiển vi điện tử.</p>
 </details>
 <details class="tl-details">
 <summary>4. Hai phương pháp nghiên cứu là gì, quan hệ với nhau thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
@@ -393,7 +393,7 @@
 <details class="tl-details">
 <summary>🏗️ Bấm xem: ba nơi vật lí đang làm việc quanh em</summary>
 <ul>
-<li><strong>Xưởng CNC:</strong> động cơ, cảm biến vị trí và bộ điều khiển số đưa dao đi đúng tới từng phần mười milimét.</li>
+<li><strong>Robot hút bụi:</strong> động cơ, cảm biến và bộ điều khiển số đưa robot đi hết căn phòng mà không va vào chân bàn ghế.</li>
 <li><strong>Sân trượt băng:</strong> lưỡi giày trượt có ma sát rất nhỏ, cho phép lướt xa chỉ với một cú đạp.</li>
 <li><strong>Điện thoại:</strong> sóng điện từ truyền tin, màn hình cảm ứng, camera: mỗi bộ phận là một ứng dụng của vật lí.</li>
 </ul>
@@ -403,7 +403,7 @@
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
 <li><strong>⭐</strong> Xếp vào vi mô hay vĩ mô: nguyên tử, ngôi sao, quả bóng, phân tử oxi. <em>(vi mô: nguyên tử, phân tử oxi; vĩ mô: ngôi sao, quả bóng)</em></li>
-<li><strong>⭐⭐</strong> Lí thuyết dự đoán máy chạy hết $36\ \text{s}$ (đường chạy dao $900\ \text{mm}$, tốc độ $1500\ \text{mm/phút}$), đo thật hết $39\ \text{s}$. Nếu mỗi góc mất thêm $0{,}75\ \text{s}$ khi giảm tốc, chương trình có bao nhiêu góc? <em>($900 : 1500 = 0{,}6$ phút $= 36\ \text{s}$; chênh $3\ \text{s}$; $3 : 0{,}75 = 4$ góc)</em></li>
+<li><strong>⭐⭐</strong> Lí thuyết dự đoán robot chạy hết $36\ \text{s}$ (đường đi $9\ \text{m}$, tốc độ $0{,}25\ \text{m/s}$), đo thật hết $39\ \text{s}$. Nếu mỗi góc mất thêm $0{,}75\ \text{s}$ khi rẽ, đường đi có bao nhiêu góc? <em>($9 : 0{,}25 = 36\ \text{s}$; chênh $3\ \text{s}$; $3 : 0{,}75 = 4$ góc)</em></li>
 <li><strong>⭐⭐⭐</strong> Nêu cách kiểm tra giả thuyết "giày trượt lướt xa hơn trên băng lạnh hơn": điều cần <strong>giữ nguyên</strong>, điều <strong>đổi</strong>, và dự đoán. <em>(giữ nguyên: người trượt, lực đạp, giày; đổi: nhiệt độ mặt băng; dự đoán: băng lạnh hơn thì quãng lướt dài hơn, đo nhiều lần rồi so với sai số; kết quả đo có thể bác bỏ giả thuyết này, và bác bỏ cũng là kết quả)</em></li>
 </ul>
 </details>

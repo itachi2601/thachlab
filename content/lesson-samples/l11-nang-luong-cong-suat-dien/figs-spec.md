@@ -26,8 +26,8 @@ bị mang nhãn **W/kW** (công suất) — đặt nền cho câu dự đoán ng
    rẽ ba nhánh (đường gấp khúc) tới ba thiết bị ở cột phải.
 4. Cột phải (x ≈ 260–430), ba thiết bị xếp dọc, mỗi cái có hình đơn giản + nhãn hai dòng (tên + nhãn công suất):
    - y ≈ 40: **bóng đèn** (vòng tròn r = 14 + đuôi nhỏ), nhãn `Đèn` / `100 W` (text-anchor start, x = 300).
-   - y ≈ 115: **trục chính CNC** (hình chữ nhật đứng 24×36 + mũi khoan tam giác phía dưới), nhãn
-     `Trục chính CNC` / `2,2 kW` (x = 300).
+   - y ≈ 115: **lò nướng** (hình chữ nhật đứng 24×36 + chân tam giác phía dưới), nhãn
+     `Lò nướng` / `2,2 kW` (x = 300).
    - y ≈ 190: **ấm siêu tốc** (hình thang + quai), nhãn `Ấm đun` / `1800 W` (x = 300).
 5. Mũi tên nhỏ màu đỏ `#f87171` dọc dây vào công tơ (chiều từ lưới → công tơ) và trên mỗi nhánh ra (chiều
    công tơ → thiết bị): chiều dòng năng lượng **đi từ lưới qua công tơ tới thiết bị**, không ngược lại.
@@ -38,7 +38,7 @@ bị mang nhãn **W/kW** (công suất) — đặt nền cho câu dự đoán ng
 chữ `0312,4 kWh` nằm gọn trong màn hình; mọi text-anchor middle cách mép ≥ 40 px.
 
 **figcaption:** `Hình 1. Công tơ đếm kWh; mỗi thiết bị ghi công suất W.`
-**aria-label:** `Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, trục chính CNC 2,2 kW, ấm đun 1800 W`.
+**aria-label:** `Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, lò nướng 2,2 kW, ấm đun 1800 W`.
 **data-exp:** `tn-l11-nang-luong-dien-01` (đặt trên `<figure>`).
 
 ---

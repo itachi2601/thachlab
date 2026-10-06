@@ -124,9 +124,9 @@ fig1 = c.svg("Đường đua trượt băng hình bầu dục nhìn từ trên x
              "Hình 1. Đường đua trượt băng cự li ngắn nhìn từ trên xuống: xuất phát và về đích ở cùng một vạch (hình không theo tỉ lệ).")
 ERR += c.check()
 
-# ---------------- Hình 2: đầu dao CNC đi nửa vòng tròn — quãng đường (cam) và độ dịch chuyển (đỏ)
+# ---------------- Hình 2: xe đồ chơi đi nửa vòng tròn — quãng đường (cam) và độ dịch chuyển (đỏ)
 c = Canvas("f2", 400, 262)
-OX, OY, R = 200, 178, 120                    # R = 120 px ứng với 20 mm
+OX, OY, R = 200, 178, 120                    # R = 120 px ứng với 20 cm
 AX, BX = OX - R, OX + R
 end_ang = math.radians(6)                    # cung dừng trước B một chút để đỉnh marker rơi đúng quanh B
 ex, ey = OX + R * math.cos(end_ang), OY - R * math.sin(end_ang)
@@ -134,7 +134,7 @@ c.markers.add(("o", 12))
 c.add(f'<path d="M{AX},{OY} A{R},{R} 0 0 1 {ex:.1f},{ey:.1f}" fill="none" stroke="{ORG}" stroke-width="3.2" '
       f'marker-end="url(#f2-o12)"/>')
 # kiểm: đỉnh marker (dài 12 theo tiếp tuyến chiều kim đồng hồ trên màn hình) gần B
-tx, ty = math.sin(end_ang), math.cos(end_ang)           # tiếp tuyến chiều chạy dao tại điểm cuối (đi xuống)
+tx, ty = math.sin(end_ang), math.cos(end_ang)           # tiếp tuyến chiều xe chạy tại điểm cuối (đi xuống)
 tipx, tipy = ex + 12 * tx, ey + 12 * ty
 if math.hypot(tipx - BX, tipy - OY) > 6:
     ERR.append(f"f2: đầu mũi cung lệch B {math.hypot(tipx - BX, tipy - OY):.1f}px")
@@ -153,7 +153,7 @@ c.text(MX - 10, MY - 8, "M", size=15, anchor="end", italic=True)
 c.text(OX, OY - R - 14, "quãng đường s = πR", ORG, 13, "middle", "600")
 c.text(OX, OY + 50, "độ dịch chuyển d = AB = 2R", RED, 13, "middle", "600")
 fig2 = c.svg("Nửa đường tròn tâm O bán kính R từ A tới B: cung màu cam là quãng đường, mũi tên đỏ từ A tới B là độ dịch chuyển, điểm M trên cung",
-             "Hình 2. Đầu dao đi nửa vòng tròn từ <em>A</em> tới <em>B</em>: quãng đường là cung cam ($s = \\pi R$), độ dịch chuyển là mũi tên đỏ thẳng ($d = 2R$).",
+             "Hình 2. Xe đi nửa vòng tròn từ <em>A</em> tới <em>B</em>: quãng đường là cung cam ($s = \\pi R$), độ dịch chuyển là mũi tên đỏ thẳng ($d = 2R$).",
              exp="tn-l10-tdvt-02")
 ERR += c.check()
 ERR += c.label_hits_arrow(["d"])

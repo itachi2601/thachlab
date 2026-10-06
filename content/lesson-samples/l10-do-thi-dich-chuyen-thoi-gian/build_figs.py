@@ -124,7 +124,7 @@ def slope(p, q):
     return (q[1] - p[1]) / (q[0] - p[0])
 
 
-# ---------------- Hình 1: màn hình CNC — toạ độ x của bàn máy theo t, KHÔNG ghi số (không lộ đáp án)
+# ---------------- Hình 1: đồ thị chuyến đi xe đạp — toạ độ x theo t, KHÔNG ghi số (không lộ đáp án)
 g = Graph("f1", 400, 250, 50, 210, 30, 22)
 g.axes(10.8, 7.9, tlab="t", dlab="x")
 F1 = [(0, 0), (3, 6), (6, 6), (9.5, 0)]
@@ -141,8 +141,8 @@ for k, (a, b, lab) in enumerate(((px[0], px[1], "①"), (px[1], px[2], "②"), (
 # kiểm: đoạn ② nằm ngang, ① đi lên, ③ đi xuống
 if not (slope(F1[0], F1[1]) > 0 and slope(F1[1], F1[2]) == 0 and slope(F1[2], F1[3]) < 0):
     ERR.append("f1: dạng ba đoạn sai")
-fig1 = g.svg("Đồ thị toạ độ x của bàn máy CNC theo thời gian t gồm ba đoạn thẳng: đoạn 1 đi lên, đoạn 2 nằm ngang, đoạn 3 đi xuống về trục t",
-             "Hình 1. Màn hình máy CNC: toạ độ <em>x</em> của bàn máy theo thời gian <em>t</em> trong một lần gia công (gốc toạ độ ở chỗ xuất phát).")
+fig1 = g.svg("Đồ thị toạ độ x của bạn đi xe đạp theo thời gian t gồm ba đoạn thẳng: đoạn 1 đi lên, đoạn 2 nằm ngang, đoạn 3 đi xuống về trục t",
+             "Hình 1. Ứng dụng bản đồ trên điện thoại: toạ độ <em>x</em> của bạn đi xe đạp theo thời gian <em>t</em> trong một buổi sáng (gốc toạ độ ở nhà bạn).")
 ERR += g.check()
 
 # ---------------- Hình 2: thí nghiệm bọt khí — điểm đo + đường thẳng kẻ qua + tam giác độ dốc
@@ -216,7 +216,7 @@ fig3 = g.svg("Bốn đường độ dịch chuyển theo thời gian: đường 
              "Hình 3. Bốn xe trên cùng một đường thẳng: ① đi lên dốc nhiều, ② đi lên dốc ít, ③ nằm ngang, ④ đi xuống (hai đầu ghi số 14 và 2 trên trục). Chấm tròn: chỗ đường ① cắt đường ④.")
 ERR += g.check()
 
-# ---------------- Hình 4: bài toán mẫu — xe tự hành O(0;0) A(4;8) B(6;8) C(10;0)
+# ---------------- Hình 4: bài toán mẫu — xe đồ chơi O(0;0) A(4;8) B(6;8) C(10;0)
 PTS = {"O": (0, 0), "A": (4, 8), "B": (6, 8), "C": (10, 0)}
 g = Graph("f4", 400, 280, 56, 235, 28, 21)
 g.axes(11.5, 9.6, tticks=(2, 4, 6, 8, 10), dticks=(2, 4, 6, 8))
@@ -242,8 +242,8 @@ if s_tot != 16 or PTS["C"][1] != 0 or s_tot / 10 != 1.6:
     ERR.append("f4: s, d, tốc độ trung bình không khớp lời giải")
 if 8 + (-2) * (8 - 6) != 4:
     ERR.append("f4: vị trí lúc 8 s")
-fig4 = g.svg("Đồ thị độ dịch chuyển – thời gian của xe tự hành: từ O lên A tại 4 giây 8 mét, nằm ngang tới B tại 6 giây, rồi đi xuống về C tại 10 giây 0 mét",
-             "Hình 4. Đồ thị độ dịch chuyển – thời gian của xe tự hành (chiều dương từ kho ra máy).",
+fig4 = g.svg("Đồ thị độ dịch chuyển – thời gian của xe đồ chơi: từ O lên A tại 4 giây 8 mét, nằm ngang tới B tại 6 giây, rồi đi xuống về C tại 10 giây 0 mét",
+             "Hình 4. Đồ thị độ dịch chuyển – thời gian của xe đồ chơi (chiều dương từ vạch mốc ra cọc cờ).",
              exp="tn-l10-dt-dctg-03")
 ERR += g.check()
 

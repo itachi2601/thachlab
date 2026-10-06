@@ -41,7 +41,7 @@ exam = {
          "answer": 1,
          "explanation": "Lực đẩy do chênh lệch áp suất giữa mặt dưới và mặt trên, Δp = ρgΔh, không đổi khi hạ sâu; F_A = ρgV không chứa độ sâu h."},
         {"type": MC,
-         "question": "Chi tiết nhôm treo vào lực kế chỉ 5,4 N ngoài không khí (ρ nhôm = 2700 kg/m³, ρ nước = 1000 kg/m³, g = 10 m/s²). Nhúng một nửa thể tích vào nước, lực kế chỉ:",
+         "question": "Khối nhôm treo vào lực kế chỉ 5,4 N ngoài không khí (ρ nhôm = 2700 kg/m³, ρ nước = 1000 kg/m³, g = 10 m/s²). Nhúng một nửa thể tích vào nước, lực kế chỉ:",
          "options": ["3,4 N", "1,0 N", "4,4 N", "5,4 N"],
          "answer": 2,
          "explanation": "V = 0,54/2700 = 2·10⁻⁴ m³; phần chìm 10⁻⁴ m³ nên F_A = 1 N; T = 5,4 − 1 = 4,4 N. Ra 3,4 N là lấy V cả vật."},

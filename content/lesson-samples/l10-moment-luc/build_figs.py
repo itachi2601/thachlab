@@ -83,15 +83,15 @@ def expect(cond, msg):
 
 VB = {}
 
-# ---------------- Hình 1: cờ lê, hai chỗ cầm (mở bài) ----------------
+# ---------------- Hình 1: búa nhổ đinh, hai chỗ cầm (mở bài) ----------------
 CUR["fig"] = 1
 VB[1] = (440, 150)
-PXM = 1000                       # 1000 px cho 1 m (cán cờ lê)
+PXM = 1000                       # 1000 px cho 1 m (cán búa)
 PXN = 80 / 300                   # 300 N -> 80 px
 OX1, OY1 = 60, 110
 b = defs("f1")
 hexa = " ".join(f"{OX1 + 22*math.cos(math.radians(30 + 60*k)):.1f},{OY1 + 22*math.sin(math.radians(30 + 60*k)):.1f}" for k in range(6))
-b += f'<polygon points="{hexa}" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2.4"/>'
+b += f'<rect x="{OX1-24}" y="{OY1-20}" width="48" height="40" rx="5" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2.4"/>'
 b += f'<circle cx="{OX1}" cy="{OY1}" r="3.5" fill="currentColor"/>'
 b += f'<rect x="{OX1+22}" y="{OY1-9}" width="{400-OX1-22}" height="18" rx="9" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.2"/>'
 seg(OX1 + 22, OY1 - 9, 400, OY1 - 9); seg(OX1 + 22, OY1 + 9, 400, OY1 + 9)
@@ -100,16 +100,16 @@ for who, dm, F, c in (("Minh", 0.08, 300, "r"), ("anh Tuấn", 0.30, 150, "b")):
     L = F * PXN
     b += arrow("f1", c, x, OY1 - 9 - L - 2, x, OY1 - 9 - 2, 3.2)       # ấn xuống, đầu mũi chạm mặt trên cán
     sgn = moment_sign(OX1, OY1, x, OY1, 0, 1)
-    expect(sgn > 0, f"Hình 1: lực của {who} phải làm quay thuận kim (siết)")
+    expect(sgn > 0, f"Hình 1: lực của {who} phải làm quay thuận kim (nhổ đinh)")
 b += text(OX1 + 0.08 * PXM + 8, OY1 - 9 - 300 * PXN + 12, "300 N", RED, 14, "start")
 b += text(OX1 + 0.30 * PXM - 8, OY1 - 9 - 150 * PXN + 6, "150 N", BLUE, 14, "end")
-b += arc_arrow("f1", "k", OX1, OY1, 34, -150, -40, 2.4)        # siết: thuận kim
-b += text(OX1 + 6, 50, "siết", "currentColor", 13, "start", "600")
-expect(-40 > -150, "Hình 1: cung siết phải thuận kim")
+b += arc_arrow("f1", "k", OX1, OY1, 34, -150, -40, 2.4)        # nhổ đinh: thuận kim
+b += text(OX1 + 6, 50, "nhổ đinh", "currentColor", 13, "start", "600")
+expect(-40 > -150, "Hình 1: cung nhổ đinh phải thuận kim")
 expect(abs(300 * 0.08 - 24) < 1e-9 and abs(150 * 0.30 - 45) < 1e-9, "Hình 1: số moment")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Cờ lê siết đai ốc: Minh ấn 300 N sát đai ốc, anh Tuấn ấn 150 N ở cuối cán", b,
-            "Hình 1. Minh ấn lực lớn (đỏ) sát đai ốc, anh Tuấn ấn lực nhỏ (xanh) ở cuối cán. Mũi tên vẽ tỉ lệ độ lớn lực.")
+            "Búa nhổ đinh: Minh ấn 300 N sát đầu búa, anh Tuấn ấn 150 N ở cuối cán", b,
+            "Hình 1. Minh ấn lực lớn (đỏ) sát đầu búa, anh Tuấn ấn lực nhỏ (xanh) ở cuối cán. Mũi tên vẽ tỉ lệ độ lớn lực.")
 
 # ---------------- Hình 2: lực xiên — cánh tay đòn là khoảng cách tới GIÁ ----------------
 CUR["fig"] = 2
@@ -231,7 +231,7 @@ fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Ngẫu lực trên vô lăng: tay trái đẩy lên, tay phải kéo xuống, hai lực bằng nhau; d là khoảng cách giữa hai giá", b,
             "Hình 4. Ngẫu lực: <em>F</em><sub>1</sub> = <em>F</em><sub>2</sub>, song song, ngược chiều. Cả hai cùng làm vô lăng quay thuận kim; <em>d</em> là khoảng cách giữa hai giá (nét đứt).")
 
-# ---------------- Hình 5: bài toán mẫu — thanh thép trên giá đỡ ----------------
+# ---------------- Hình 5: bài toán mẫu — thanh gỗ trên giá đỡ ----------------
 CUR["fig"] = 5
 VB[5] = (440, 270)
 SM = 300                          # px/m
@@ -268,14 +268,14 @@ expect(abs((xO - xA) / SM - 0.4) < 1e-9 and abs((xG - xO) / SM - 0.2) < 1e-9, "H
 expect(moment_sign(xO, BY, xA, BY, 0, 1) < 0 and moment_sign(xO, BY, xG, BY, 0, 1) > 0,
        "Hình 5: P1 ở A quay ngược kim, P ở G quay thuận kim")
 fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
-            "Thanh thép AB dài 1,2 m kê trên giá đỡ O cách A 0,4 m; trọng lượng 40 N đặt tại trung điểm G; hộp P1 treo ở A; lực giá đỡ N hướng lên", b,
-            "Hình 5. Ba lực lên thanh: <em>P</em><sub>1</sub> (hộp, ở <em>A</em>), <em>P</em> (trọng lượng thanh, ở <em>G</em>), <em>N</em> (giá đỡ, ở <em>O</em>). Mũi tên vẽ tỉ lệ độ lớn lực.")
+            "Thanh gỗ AB dài 1,2 m kê trên giá đỡ O cách A 0,4 m; trọng lượng 40 N đặt tại trung điểm G; túi gạo P1 treo ở A; lực giá đỡ N hướng lên", b,
+            "Hình 5. Ba lực lên thanh: <em>P</em><sub>1</sub> (túi gạo, ở <em>A</em>), <em>P</em> (trọng lượng thanh, ở <em>G</em>), <em>N</em> (giá đỡ, ở <em>O</em>). Mũi tên vẽ tỉ lệ độ lớn lực.")
 fig5 = fig5.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-moment-luc-04"', 1)
 
 
 # ---------------- Kiểm toạ độ nhãn ----------------
 def seg_hits_box(x1, y1, x2, y2, bx0, by0, bx1, by1):
-    """Liang–Barsky: đoạn thẳng có đi qua hộp không."""
+    """Liang–Barsky: đoạn thẳng có đi qua túi gạo không."""
     dx, dy = x2 - x1, y2 - y1
     t0, t1 = 0.0, 1.0
     for p, q in ((-dx, x1 - bx0), (dx, bx1 - x1), (-dy, y1 - by0), (dy, by1 - y1)):

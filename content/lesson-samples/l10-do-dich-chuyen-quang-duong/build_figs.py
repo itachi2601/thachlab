@@ -115,42 +115,42 @@ fig1 = c.svg("Sân băng hình bầu dục, đường trượt một vòng sát 
              exp="tn-l10-dd-qd-03")
 ERR += c.check()
 
-# ---------------- Hình 2: đầu dao CNC trên trục X: 20 -> 80 -> 50 mm
+# ---------------- Hình 2: xe điều khiển trên trục X: 20 -> 80 -> 50 cm
 c = Canvas("f2", 420, 215)
-AX_Y, X0, K = 130, 40, 3.4             # 1 mm = 3,4 px; x = 0 tại px 40
-px = lambda mm: X0 + K * mm
+AX_Y, X0, K = 130, 40, 3.4             # 1 cm = 3,4 px; x = 0 tại px 40
+px = lambda cm: X0 + K * cm
 c.line(24, AX_Y, 396, AX_Y, "currentColor", 2.2)
 c.add(f'<path d="M408,{AX_Y} L396,{AX_Y-6} L396,{AX_Y+6} Z" fill="currentColor"/>')
-for mm in range(0, 101, 10):
-    c.line(px(mm), AX_Y - 5, px(mm), AX_Y + 5, "currentColor", 1.6, obstacle=False)
+for cm in range(0, 101, 10):
+    c.line(px(cm), AX_Y - 5, px(cm), AX_Y + 5, "currentColor", 1.6, obstacle=False)
 c.text(px(0), 152, "O", size=14, anchor="middle", italic=True)
-for mm in (20, 50, 80, 100):
-    c.text(px(mm), 152, str(mm), size=13, anchor="middle", weight="600")
-c.text(404, 116, "X (mm)", size=14, anchor="end", italic=True)
+for cm in (20, 50, 80, 100):
+    c.text(px(cm), 152, str(cm), size=13, anchor="middle", weight="600")
+c.text(404, 116, "X (cm)", size=14, anchor="end", italic=True)
 x1, xq, x2 = 20, 80, 50
 YA, YB = 70, 95
 c.arr("toi", "o", px(x1), YA, px(xq), YA, 3.2)
 c.line(px(xq), YA, px(xq), YB, ORG, 2, "3 3", 1)
 c.arr("lui", "o", px(xq), YB, px(x2), YB, 3.2)
 c.line(px(x1), YA, px(x1), AX_Y, "currentColor", 1.2, "3 4", .5)
-c.text((px(x1) + px(xq)) / 2, YA - 10, "đi tới 60 mm", ORG, 13, "middle", "600")
-c.text((px(xq) + px(x2)) / 2 + 30, YB + 18, "lùi 30 mm", ORG, 13, "middle", "600")
-for mm in (x1, x2, xq):
-    c.dot(px(mm), AX_Y, 4.5)
+c.text((px(x1) + px(xq)) / 2, YA - 10, "đi tới 60 cm", ORG, 13, "middle", "600")
+c.text((px(xq) + px(x2)) / 2 + 30, YB + 18, "lùi 30 cm", ORG, 13, "middle", "600")
+for cm in (x1, x2, xq):
+    c.dot(px(cm), AX_Y, 4.5)
 YD = 180
 c.line(px(x1), 160, px(x1), YD, GRN, 1.2, "3 3", .7, obstacle=False)
 c.line(px(x2), 160, px(x2), YD, GRN, 1.2, "3 3", .7, obstacle=False)
 c.arr("d", "g", px(x1), YD, px(x2), YD, 3.4)
 c.text(px(x1) - 8, YD + 5, sub("x", "1"), size=15, anchor="end", italic=True)
 c.text(px(x2) + 8, YD + 5, sub("x", "2"), size=15, italic=True)
-c.text((px(x1) + px(x2)) / 2, YD + 24, "d = 30 mm", GRN, 14, "middle")
-c.text(16, 24, "Trục X của máy CNC, gốc O là điểm chuẩn", size=13, weight="600")
+c.text((px(x1) + px(x2)) / 2, YD + 24, "d = 30 cm", GRN, 14, "middle")
+c.text(16, 24, "Xe điều khiển chạy dọc thước, gốc O là đầu thước", size=13, weight="600")
 # kiểm: d = x2 - x1 đúng tỉ lệ, cùng chiều trục; tổng hai đoạn cam = s
 xa, _, xb, _ = c.arrows["d"]
 ERR += [] if abs((xb - xa) / K - (x2 - x1)) < 1e-9 else ["f2: độ dài d sai tỉ lệ"]
 ERR += [] if abs((c.arrows["toi"][2] - c.arrows["toi"][0]) / K - 60) < 1e-9 and abs((c.arrows["lui"][0] - c.arrows["lui"][2]) / K - 30) < 1e-9 else ["f2: đoạn cam sai"]
-fig2 = c.svg("Trục X của máy CNC: đầu dao đi từ 20 mm tới 80 mm rồi lùi về 50 mm; mũi tên xanh lá d nối 20 mm tới 50 mm",
-             "Hình 2. Đường cam: đầu dao đi tới rồi lùi, tổng $90\\ \\text{mm}$. Mũi tên xanh lá: độ dịch chuyển chỉ nối điểm đầu với điểm cuối.",
+fig2 = c.svg("Trục X dọc thước: xe đi từ 20 cm tới 80 cm rồi lùi về 50 cm; mũi tên xanh lá d nối 20 cm tới 50 cm",
+             "Hình 2. Đường cam: xe đi tới rồi lùi, tổng $90\\ \\text{cm}$. Mũi tên xanh lá: độ dịch chuyển chỉ nối điểm đầu với điểm cuối.",
              exp="tn-l10-dd-qd-02")
 ERR += c.check()
 

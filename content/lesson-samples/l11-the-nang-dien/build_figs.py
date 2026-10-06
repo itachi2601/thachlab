@@ -37,19 +37,19 @@ def sub(main, s):
     return f'{main}<tspan baseline-shift="sub" font-size="9">{s}</tspan>'
 
 
-# ---- Hình 1: súng phun sơn tĩnh điện, hai đường bay cùng đầu, cùng cuối
+# ---- Hình 1: máy lọc không khí (đầu kim và tấm thu), hai đường bay cùng đầu, cùng cuối
 S = (95, 115)
 N1 = (340, 93)
 b = kdefs("f1")
-# súng phun
+# đầu kim
 b += '<rect x="20" y="104" width="62" height="22" rx="5" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
 b += '<rect x="40" y="126" width="14" height="34" rx="3" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
 b += line(82, 115, S[0], S[1], "currentColor", 4)
-b += text(20, 182, "súng phun", "currentColor", 12, "start")
-b += text(20, 96, "hạt sơn (−)", BLUE, 12, "start")
-# chi tiết nối đất
+b += text(20, 182, "đầu kim", "currentColor", 12, "start")
+b += text(20, 96, "hạt bụi (−)", BLUE, 12, "start")
+# tấm thu nối đất
 b += '<rect x="340" y="40" width="44" height="150" rx="4" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
-b += text(362, 30, "chi tiết", "currentColor", 12, "middle")
+b += text(362, 30, "tấm thu", "currentColor", 12, "middle")
 b += line(362, 190, 362, 206, "currentColor", 2) + line(348, 206, 376, 206, "currentColor", 2) + line(353, 211, 371, 211, "currentColor", 2) + line(358, 216, 366, 216, "currentColor", 2)
 b += text(392, 214, "nối đất", "currentColor", 11, "start", "400")
 # đường 1 thẳng, đường 2 cong (Bezier bậc 2, điểm điều khiển (200,250))
@@ -59,8 +59,8 @@ b += dot(S[0], S[1], 6, BLUE)
 b += dot(N1[0], N1[1], 5, "currentColor") + text(N1[0] - 8, N1[1] - 10, "N", "currentColor", 14, "end", "700")
 b += text(200, 88, "đường 1: bay thẳng", RED, 12, "middle", "700")
 b += text(215, 204, "đường 2: lượn cong, dài hơn", BLUE, 12, "middle", "700")
-fig1 = wrap("0 0 440 226", "Súng phun sơn tĩnh điện: hai hạt sơn cùng rời đầu súng, cùng tới điểm N theo đường thẳng và đường cong",
-            b, "Hình 1. Hai hạt sơn mang điện âm cùng rời đầu súng, cùng bám vào điểm N: một hạt bay thẳng (đỏ), một hạt lượn cong (xanh).")
+fig1 = wrap("0 0 440 226", "Máy lọc không khí: hai hạt bụi cùng rời đầu kim, cùng tới điểm N theo đường thẳng và đường cong",
+            b, "Hình 1. Hai hạt bụi mang điện âm cùng rời đầu kim, cùng bám vào điểm N: một hạt bay thẳng (đỏ), một hạt lượn cong (xanh).")
 
 # ---- Hình 2: điện trường đều giữa hai bản, ba đường M -> N, hình chiếu d
 M2, P2, N2 = (110, 80), (300, 80), (300, 180)

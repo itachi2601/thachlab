@@ -57,7 +57,7 @@ b += text(372, 180, "trưa", "currentColor", 12, "middle", "700")
 b += text(372, 198, "47 °C · 5,3 bar", RED, 12, "middle", "700")
 b += text(220, 216, "thể tích bình không đổi", GRN, 11, "middle", "700")
 fig1 = wrap("0 0 440 228",
-            "Bình khí nén kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
+            "Bình khí nén mini kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
             b, "Hình 1. Bình kín, lượng khí không đổi, thể tích không đổi: chỉ nhiệt độ tăng mà kim áp kế đã nhích từ 5,0 lên 5,3 bar — đó là quá trình đẳng tích.",
             exp="tn-l12-pttrangthai-03")
 

@@ -102,7 +102,7 @@ fig1 = c.svg("Trái Đất và bốn vật ở bốn nơi, trọng lực của m
              "Hình 1. Ở bất kì đâu, trọng lực <em>P</em> cũng có phương thẳng đứng tại chỗ đó và hướng về tâm Trái Đất (hình không theo tỉ lệ).")
 ERR += c.check()
 
-# ---------------- Hình 2: tìm trọng tâm bằng dây dọi (a, b) + vòng đệm (c)
+# ---------------- Hình 2: tìm trọng tâm bằng dây dọi (a, b) + đĩa CD (c)
 shape = [(0, 0), (90, -8), (104, 40), (70, 92), (18, 74), (-8, 34)]   # tấm bìa bất kì (toạ độ riêng)
 
 
@@ -164,7 +164,7 @@ for panel, (hole, hole2, ox) in enumerate(((HA, None, 76), (HB, HA, 226))):
     gx_lab = g[0] + 9 if panel == 0 else g[0] + 10
     c.text(gx_lab, g[1] + 18, "G", RED, 15, italic=True)
     c.text(ox, 240, "(a) treo ở A" if panel == 0 else "(b) treo ở B", size=13, anchor="middle", weight="600")
-# (c) vòng đệm: G ở tâm lỗ
+# (c) đĩa CD: G ở tâm lỗ
 vx0, vy0, Ro, Ri = 372, 118, 40, 20
 c.line(vx0 - 14, 30, vx0 + 14, 30, "currentColor", 3)
 c.line(vx0, 30, vx0, vy0 - Ro, "currentColor", 1.8)
@@ -173,9 +173,9 @@ c.add(f'<path d="M{vx0-Ro},{vy0} a{Ro},{Ro} 0 1,0 {2*Ro},0 a{Ro},{Ro} 0 1,0 {-2*
 c.line(vx0, vy0 - Ro, vx0, 205, BLUE, 1.6, "5 4", .8)
 c.dot(vx0, vy0, 4.5, RED)
 c.text(vx0 + 7, vy0 + 5, "G", RED, 15, italic=True)
-c.text(vx0, 240, "(c) vòng đệm", size=13, anchor="middle", weight="600")
-fig2 = c.svg("Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; vòng đệm có trọng tâm ở tâm lỗ",
-             "Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm vòng đệm ở tâm lỗ, ngoài phần vật chất.",
+c.text(vx0, 240, "(c) đĩa CD", size=13, anchor="middle", weight="600")
+fig2 = c.svg("Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; đĩa CD có trọng tâm ở tâm lỗ",
+             "Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm đĩa CD ở tâm lỗ, ngoài phần vật chất.",
              exp="tn-l10-trong-luc-luc-cang-01")
 ERR += c.check()
 

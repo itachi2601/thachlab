@@ -265,16 +265,16 @@ NX = 170
 c.add(f'<rect x="40" y="26" width="290" height="10" fill="currentColor" opacity=".45"/>')
 c.line(NX, 36, NX, 54, "currentColor", 2)
 c.add(f'<path d="M{NX},54 q-7,0 -7,6" fill="none" stroke="currentColor" stroke-width="2"/>')
-hexa = " ".join(f"{NX + 8 * math.cos(math.radians(30 + 60 * k)):.1f},{Y_NUT + 8 * math.sin(math.radians(30 + 60 * k)):.1f}" for k in range(6))
-c.add(f'<polygon points="{hexa}" fill="{ORG}" stroke="currentColor" stroke-width="1.2"/>')
+# chậu hoa vẽ hình tròn (cam), vị trí lúc t − 1 vẽ vòng nét đứt
+c.add(f'<circle cx="{NX}" cy="{Y_NUT}" r="8" fill="{ORG}" stroke="currentColor" stroke-width="1.2"/>')
 c.line(NX, Y_NUT + 10, NX, Y_SAN, "currentColor", 1.2, "3 4", op=.5)
-c.add(f'<polygon points="{" ".join(f"{NX + 8 * math.cos(math.radians(30 + 60 * k)):.1f},{Y_T1 + 8 * math.sin(math.radians(30 + 60 * k)):.1f}" for k in range(6))}" fill="none" stroke="{ORG}" stroke-width="1.6" stroke-dasharray="3 2"/>')
+c.add(f'<circle cx="{NX}" cy="{Y_T1}" r="8" fill="none" stroke="{ORG}" stroke-width="1.6" stroke-dasharray="3 2"/>')
 c.line(NX + 12, Y_T1, NX + 26, Y_T1, "currentColor", 1.4)
 c.text(NX + 32, Y_T1 + 5, "lúc t − 1", size=14, weight="600")
 c.line(30, Y_SAN, 370, Y_SAN, "currentColor", 2.5)
 for xx in range(36, 370, 14):
     c.line(xx, Y_SAN + 2, xx - 8, Y_SAN + 10, "currentColor", 1, op=.5)
-c.text(NX + 32, Y_SAN - 8, "chạm sàn: lúc t", size=14, weight="600")
+c.text(NX + 32, Y_SAN - 8, "chạm đất: lúc t", size=14, weight="600")
 c.bracket(118, Y_NUT, Y_SAN)
 c.text(106, (Y_NUT + Y_SAN) / 2 + 5, "h = 20 m", size=14, anchor="end")
 c.bracket(352, Y_T1, Y_SAN, ORG)
@@ -285,8 +285,8 @@ c.arr("g", "g", 204, 52, 204, 96, 3)
 c.text(214, 82, "g", GRN, 18, italic=True)
 ERR += [] if near((Y_T1 - Y_NUT) / (Y_SAN - Y_NUT), 0.25) else ["f4: vị trí t − 1 sai tỉ lệ"]
 ERR += [] if c.arrows["g"][3] > c.arrows["g"][1] and c.arrows["duong"][3] > c.arrows["duong"][1] else ["f4: g / chiều dương phải hướng xuống"]
-fig4 = c.svg("Con ốc treo ở móc cầu trục cao 20 m so với sàn, rơi thẳng xuống; trục dương hướng xuống; đánh dấu vị trí lúc t trừ 1 giây và lúc chạm sàn, ngoặc 'giây cuối' chưa biết",
-             "Hình 4. Con ốc tuột khỏi móc cầu trục ở độ cao 20 m. Chiều dương hướng xuống, gốc tại móc. Quãng \"giây cuối\" là từ vị trí lúc <em>t</em> − 1 tới sàn.")
+fig4 = c.svg("Chậu hoa treo ở móc ban công cao 20 m so với mặt đất, rơi thẳng xuống; trục dương hướng xuống; đánh dấu vị trí lúc t trừ 1 giây và lúc chạm đất, ngoặc 'giây cuối' chưa biết",
+             "Hình 4. Chậu hoa tuột khỏi móc ở ban công cao 20 m. Chiều dương hướng xuống, gốc tại móc. Quãng \"giây cuối\" là từ vị trí lúc <em>t</em> − 1 tới mặt đất.")
 ERR += c.check(obstacles=[(NX - 9, Y_NUT - 9, NX + 9, Y_NUT + 9), (NX - 9, Y_T1 - 9, NX + 9, Y_T1 + 9), (196, 52, 212, 96)])
 
 if ERR:

@@ -36,10 +36,10 @@ exam = {
          "answer": 0,
          "explanation": "Điểm cuối trùng điểm đầu nên d = 0; quãng đường cộng từng đoạn: 5 + 0 + 5 = 10 m."},
         {"type": MC,
-         "question": "Xe tự hành có đồ thị d–t qua O(0;0), A(4 s; 8 m), B(6 s; 8 m), C(10 s; 0), chiều dương từ kho ra máy. Nếu chọn chiều dương từ máy về kho (gốc vẫn ở kho) thì vận tốc đoạn BC và độ dịch chuyển lúc t = 4 s là:",
+         "question": "Xe đồ chơi có đồ thị d–t qua O(0;0), A(4 s; 8 m), B(6 s; 8 m), C(10 s; 0), chiều dương từ vạch mốc ra cọc cờ. Nếu chọn chiều dương từ cọc cờ về vạch mốc (gốc vẫn ở vạch mốc) thì vận tốc đoạn BC và độ dịch chuyển lúc t = 4 s là:",
          "options": ["v = −2 m/s; d = 8 m", "v = 2 m/s; d = 8 m", "v = 2 m/s; d = −8 m", "v = −2 m/s; d = −8 m"],
          "answer": 2,
-         "explanation": "Đổi chiều dương thì mọi đại lượng có hướng đổi dấu: d lúc 4 s từ 8 m thành −8 m; đoạn BC xe chạy về kho, nay là chiều dương, v = 2 m/s."},
+         "explanation": "Đổi chiều dương thì mọi đại lượng có hướng đổi dấu: d lúc 4 s từ 8 m thành −8 m; đoạn BC xe chạy về vạch mốc, nay là chiều dương, v = 2 m/s."},
     ],
 }
 

@@ -210,8 +210,8 @@ b += f'<rect x="{RX-17}" y="166" width="34" height="40" rx="3" fill="rgba(251,14
 b += text(384, 228, "nước", BLUE, 13, "end", "600")
 b += text(RX, 254, "chìm hoàn toàn", "currentColor", 13, "middle", "600")
 fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
-            "Chi tiết nhôm treo vào lực kế: ngoài không khí lực kế chỉ 5,4 N; nhúng chìm hoàn toàn trong nước thì số chỉ cần tìm", b,
-            "Hình 5. Cùng một chi tiết nhôm: treo ngoài không khí lực kế chỉ 5,4&nbsp;N; nhúng chìm hoàn toàn trong nước thì lực kế chỉ bao nhiêu?")
+            "Khối nhôm treo vào lực kế: ngoài không khí lực kế chỉ 5,4 N; nhúng chìm hoàn toàn trong nước thì số chỉ cần tìm", b,
+            "Hình 5. Cùng một khối nhôm: treo ngoài không khí lực kế chỉ 5,4&nbsp;N; nhúng chìm hoàn toàn trong nước thì lực kế chỉ bao nhiêu?")
 
 fig1 = fig1.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-luc-can-luc-nang-01"', 1)
 

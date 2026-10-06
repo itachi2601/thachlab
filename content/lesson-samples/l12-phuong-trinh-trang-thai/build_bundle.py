@@ -57,7 +57,7 @@ EXAM = {
         },
         {
             "type": "multiple_choice",
-            "question": "Bình khí nén 40 lít để ngoài nắng: buổi sáng 27 °C, áp suất 5,0.10⁵ Pa; giữa trưa 47 °C, thể tích bình không đổi. Áp suất giữa trưa là",
+            "question": "Bình khí nén mini 4 lít để ngoài nắng: buổi sáng 27 °C, áp suất 5,0.10⁵ Pa; giữa trưa 47 °C, thể tích bình không đổi. Áp suất giữa trưa là",
             "options": [
                 "8,7.10⁵ Pa.",
                 "5,3.10⁵ Pa.",

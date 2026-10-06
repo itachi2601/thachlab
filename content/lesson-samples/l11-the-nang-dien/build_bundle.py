@@ -13,7 +13,7 @@ exam = {
     "duration_minutes": 8,
     "questions": [
         {"type": MC,
-         "question": "Hai hạt sơn giống hệt nhau cùng rời đầu súng phun tĩnh điện, cùng bám vào một điểm N; một hạt bay thẳng, một hạt lượn cong. Chỉ xét lực điện, công của lực điện làm mỗi hạt dịch chuyển:",
+         "question": "Hai hạt bụi giống hệt nhau cùng rời đầu kim phóng điện trong máy lọc không khí, cùng bám vào một điểm N; một hạt bay thẳng, một hạt lượn cong. Chỉ xét lực điện, công của lực điện làm mỗi hạt dịch chuyển:",
          "options": ["Hạt bay cong lớn hơn, vì đi quãng dài hơn",
                      "Hạt bay thẳng lớn hơn, vì luôn đi đúng hướng lực",
                      "Bằng nhau",

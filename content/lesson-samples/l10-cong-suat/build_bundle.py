@@ -13,7 +13,7 @@ exam = {
     "duration_minutes": 8,
     "questions": [
         {"type": MC,
-         "question": "Cần cẩu nâng đều khối 200 kg lên cao 6 m trong 4 s (g = 10 m/s²). Công suất trung bình của lực nâng là:",
+         "question": "Thang máy nâng đều nhóm học sinh tổng khối lượng 200 kg lên cao 6 m trong 4 s (g = 10 m/s²). Công suất trung bình của lực nâng là:",
          "options": ["12 000 W", "300 W", "3 000 W", "48 000 W"],
          "answer": 2,
          "explanation": "Nâng đều: F = mg = 2 000 N; A = F·d = 12 000 J; P = A/t = 3 000 W. 12 000 là công (J), 300 W là quên g, 48 000 là nhân với t."},

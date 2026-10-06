@@ -5,95 +5,194 @@
   "lesson_id": 127,
   "nguon_trong_bai": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/theory.html",
   "id": "tn-l12-dttruong-03",
-  "ten": "Radio rè khi máy hàn chạy: nguồn phát sóng điện từ ngay trong xưởng",
+  "ten": "Radio rè khi bếp từ chạy: nguồn phát sóng điện từ ngay trong bếp",
   "loai": "vi_du",
   "muc_do": "co_ban",
   "kien_thuc": [
     "dttruong.nguon_phat_song_dien_tu",
     "dttruong.song_dien_tu"
   ],
-  "muc_tieu": "Phân tích tình huống quen thuộc trong xưởng cơ khí: dòng xoay chiều lớn trong cáp hàn sinh từ trường biến thiên, từ trường này cảm ứng vào ăng ten radio thành tín hiệu nhiễu — không cần dây dẫn nối hai thiết bị.",
+  "muc_tieu": "Phân tích tình huống quen thuộc trong nhà bếp: dòng xoay chiều tần số cao trong bếp từ và dây nguồn sinh từ trường biến thiên, từ trường này cảm ứng vào ăng ten radio thành tín hiệu nhiễu — không cần dây dẫn nối hai thiết bị.",
   "dung_cu": [
-    { "ten": "Máy hàn điểm hoặc máy hàn hồ quang chạy điện xoay chiều", "so_luong": 1 },
-    { "ten": "Radio chạy pin (hoặc điện thoại có chức năng radio FM)", "so_luong": 1, "ghi_chu": "đặt cách máy hàn 0,5–4 m" },
-    { "ten": "Thước dây", "so_luong": 1 },
-    { "ten": "Điện thoại quay video để ghi lại tiếng rè", "so_luong": 1 },
-    { "ten": "Từ kế xoay chiều cầm tay (nếu có) để đo cảm ứng từ", "so_luong": 1, "ghi_chu": "sai số ±0,5 μT" }
+    {
+      "ten": "Bếp từ đơn có nồi đang đun nước",
+      "so_luong": 1
+    },
+    {
+      "ten": "Radio chạy pin (hoặc điện thoại có chức năng radio FM)",
+      "so_luong": 1,
+      "ghi_chu": "đặt cách bếp từ 0,5–4 m"
+    },
+    {
+      "ten": "Thước dây",
+      "so_luong": 1
+    },
+    {
+      "ten": "Điện thoại quay video để ghi lại tiếng rè",
+      "so_luong": 1
+    },
+    {
+      "ten": "Từ kế xoay chiều cầm tay (nếu có) để đo cảm ứng từ",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,1 μT"
+    }
   ],
   "cac_buoc": {
     "lam": [
-      "Đặt radio chạy pin ở các khoảng cách 0,5 m; 1 m; 2 m; 3 m; 4 m so với cáp hàn, giữ nguyên đài đang thu.",
-      "Cho máy hàn chạy và ghi lại mức rè ở mỗi khoảng cách; nếu có từ kế thì đo cảm ứng từ xoay chiều tại cùng vị trí.",
-      "Bọc cáp hàn bằng ống sắt non hoặc đặt radio sau tấm tôn sắt rồi làm lại ở khoảng cách 1 m.",
+      "Đặt radio chạy pin ở các khoảng cách 0,5 m; 1 m; 2 m; 3 m; 4 m so với bếp từ, giữ nguyên đài đang thu.",
+      "Bật bếp từ và ghi lại mức rè ở mỗi khoảng cách; nếu có từ kế thì đo cảm ứng từ xoay chiều tại cùng vị trí.",
+      "Đặt radio sau một tấm tôn sắt rồi làm lại ở khoảng cách 1 m.",
       "Đổi radio sang đài phát mạnh, chạy lại và so sánh mức rè."
     ],
     "quan_sat": [
-      "Radio rè ngay khi máy hàn chạy và hết rè khi máy hàn tắt, dù radio chạy pin và không có dây nối với máy hàn.",
-      "Càng gần cáp hàn thì rè càng mạnh; cảm ứng từ đo được cũng lớn hơn khi lại gần.",
-      "Đặt tấm tôn sắt che giữa cáp hàn và radio thì rè giảm rõ rệt.",
+      "Radio rè ngay khi bếp từ chạy và hết rè khi bếp tắt, dù radio chạy pin và không có dây nối với bếp.",
+      "Càng gần bếp thì rè càng mạnh; cảm ứng từ đo được cũng lớn hơn khi lại gần.",
+      "Đặt tấm tôn sắt che giữa bếp và radio thì rè giảm rõ rệt.",
       "Đài phát mạnh bị rè ít hơn vì tín hiệu có ích lớn hơn tín hiệu nhiễu."
     ],
     "rut_ra": [
-      "Dòng xoay chiều lớn trong cáp hàn là một nguồn phát sóng điện từ đặt ngay trong xưởng.",
+      "Dòng xoay chiều tần số cao trong bếp từ là một nguồn phát sóng điện từ đặt ngay trong nhà bếp.",
       "Từ trường biến thiên của nó cảm ứng vào ăng ten radio một suất điện động biến thiên, nghe thành tiếng rè.",
-      "Nhiễu giảm theo khoảng cách và giảm khi che bằng vật liệu sắt từ — cách chống nhiễu thường dùng trong xưởng."
+      "Nhiễu giảm theo khoảng cách và giảm khi che bằng vật liệu sắt từ — cách chống nhiễu thường dùng."
     ]
   },
   "tham_so": [
-    { "ky_hieu": "I_han", "ten": "Cường độ dòng hàn", "don_vi": "A", "kieu": "dieu_chinh", "min": 10, "max": 300, "mac_dinh": 60, "buoc": 5 },
-    { "ky_hieu": "d", "ten": "Khoảng cách từ cáp hàn tới ăng ten radio", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.2, "max": 10, "mac_dinh": 2, "buoc": 0.1 },
-    { "ky_hieu": "f", "ten": "Tần số thành phần của dòng nhiễu", "don_vi": "Hz", "kieu": "dieu_chinh", "min": 50, "max": 5000, "mac_dinh": 50, "buoc": 50 },
-    { "ky_hieu": "N_A", "ten": "Số vòng dây của cuộn ăng ten radio", "don_vi": "vòng", "kieu": "dieu_chinh", "min": 20, "max": 200, "mac_dinh": 100, "buoc": 10 },
-    { "ky_hieu": "A_A", "ten": "Tiết diện cuộn ăng ten", "don_vi": "m2", "kieu": "co_dinh", "gia_tri": 0.0001 },
-    { "ky_hieu": "mu0", "ten": "Độ từ thẩm của chân không", "don_vi": "H/m", "kieu": "co_dinh", "gia_tri": 1.2566e-06 },
-    { "ky_hieu": "B", "ten": "Cảm ứng từ tại vị trí radio", "don_vi": "T", "kieu": "tinh_ra" },
-    { "ky_hieu": "B_do", "ten": "Cảm ứng từ đo bằng từ kế", "don_vi": "μT", "kieu": "do_duoc", "sai_so_do": 0.5 },
-    { "ky_hieu": "e_nhieu", "ten": "Suất điện động nhiễu cảm ứng vào ăng ten", "don_vi": "μV", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "I_bep",
+      "ten": "Cường độ dòng điện trong dây nguồn bếp từ",
+      "don_vi": "A",
+      "kieu": "dieu_chinh",
+      "min": 2,
+      "max": 15,
+      "mac_dinh": 10,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "d",
+      "ten": "Khoảng cách từ bếp từ tới ăng ten radio",
+      "don_vi": "m",
+      "kieu": "dieu_chinh",
+      "min": 0.2,
+      "max": 10,
+      "mac_dinh": 2,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "f",
+      "ten": "Tần số thành phần của dòng nhiễu",
+      "don_vi": "Hz",
+      "kieu": "dieu_chinh",
+      "min": 50,
+      "max": 50000,
+      "mac_dinh": 25000,
+      "buoc": 50
+    },
+    {
+      "ky_hieu": "N_A",
+      "ten": "Số vòng dây của cuộn ăng ten radio",
+      "don_vi": "vòng",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 200,
+      "mac_dinh": 100,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "A_A",
+      "ten": "Tiết diện cuộn ăng ten",
+      "don_vi": "m2",
+      "kieu": "co_dinh",
+      "gia_tri": 0.0001
+    },
+    {
+      "ky_hieu": "mu0",
+      "ten": "Độ từ thẩm của chân không",
+      "don_vi": "H/m",
+      "kieu": "co_dinh",
+      "gia_tri": 1.2566e-06
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ tại vị trí radio",
+      "don_vi": "T",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "B_do",
+      "ten": "Cảm ứng từ đo bằng từ kế",
+      "don_vi": "μT",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.5
+    },
+    {
+      "ky_hieu": "e_nhieu",
+      "ten": "Suất điện động nhiễu cảm ứng vào ăng ten",
+      "don_vi": "μV",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
       "Cảm ứng từ quanh dây dẫn thẳng dài: B = μ0·I/(2πd)",
-      "Với I = 60 A, d = 2 m: B = 1,2·10⁻⁵/2 = 6·10⁻⁶ T = 6 μT",
+      "Với I = 10 A, d = 2 m: B = 2·10⁻⁶ T·m/2 = 1·10⁻⁶ T = 1 μT",
       "Suất điện động cảm ứng vào cuộn ăng ten: e = N_A·A_A·2πf·B",
-      "Với N_A = 100 vòng, A_A = 1 cm², f = 50 Hz, B = 6 μT: e ≈ 19 μV — đủ để radio nghe thành tiếng rè"
+      "Với N_A = 100 vòng, A_A = 1 cm², f = 25 kHz, B = 1 μT: e ≈ 1,6 mV — đủ để radio nghe thành tiếng rè"
     ],
     "gia_thiet": [
-      "coi cáp hàn là dây dẫn thẳng dài, bỏ qua hiệu ứng của vỏ máy",
+      "coi dây dẫn dòng điện của bếp là dây thẳng dài, bỏ qua hiệu ứng của vỏ bếp",
       "cuộn ăng ten đặt vuông góc với đường sức từ để từ thông qua nó lớn nhất",
-      "chỉ xét thành phần tần số thấp 50 Hz; thực tế còn hài bậc cao và tia lửa điện nên nhiễu mạnh hơn"
+      "chỉ xét thành phần dòng ở tần số làm việc cỡ 25 kHz của bếp từ; thực tế còn nhiều hài bậc cao nên nhiễu phức tạp hơn"
     ],
-    "ghi_chu": "Mô phỏng nên có máy hàn, cáp hàn và radio kéo được trên mặt bằng; cảm ứng từ hiện theo khoảng cách, tiếng rè to nhỏ theo mức nhiễu. Thêm tuỳ chọn đặt tấm chắn sắt để thấy nhiễu giảm."
+    "ghi_chu": "Mô phỏng nên có bếp từ, nồi và radio kéo được trên mặt bàn bếp; cảm ứng từ hiện theo khoảng cách, tiếng rè to nhỏ theo mức nhiễu. Thêm tuỳ chọn đặt tấm chắn sắt để thấy nhiễu giảm."
   },
   "so_lieu_mau": {
-    "cot": ["Khoảng cách d (m)", "Cảm ứng từ B (μT)"],
-    "hang": [
-      [0.5, 24.0],
-      [1.0, 12.0],
-      [2.0, 6.0],
-      [3.0, 4.0],
-      [4.0, 3.0]
+    "cot": [
+      "Khoảng cách d (m)",
+      "Cảm ứng từ B (μT)"
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ B = μ0·I/(2πd) với I = 60 A. Cảm ứng từ giảm tỉ lệ nghịch với khoảng cách, nên nhiễu giảm rất nhanh khi kéo radio ra xa cáp hàn."
+    "hang": [
+      [
+        0.5,
+        4.0
+      ],
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        1.0
+      ],
+      [
+        3.0,
+        0.67
+      ],
+      [
+        4.0,
+        0.5
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ B = μ0·I/(2πd) với I = 10 A. Cảm ứng từ giảm tỉ lệ nghịch với khoảng cách, nên nhiễu giảm rất nhanh khi kéo radio ra xa bếp."
   },
-  "ket_qua_ky_vong": "Radio rè ngay khi máy hàn chạy, mạnh nhất khi ở gần cáp hàn, tắt khi máy hàn ngừng — chứng tỏ nhiễu truyền qua không gian bằng điện từ trường chứ không qua dây dẫn.",
+  "ket_qua_ky_vong": "Radio rè ngay khi bếp từ chạy, mạnh nhất khi ở gần bếp, tắt khi bếp ngừng — chứng tỏ nhiễu truyền qua không gian bằng điện từ trường chứ không qua dây dẫn.",
   "hien_tuong_hay_sai": [
-    "Cho rằng radio rè vì nhiệt của mối hàn truyền trong không khí tới mạch điện.",
-    "Cho rằng radio rè vì tiếng động của máy hàn làm rung màng loa.",
-    "Cho rằng phải có dây điện chung giữa máy hàn và radio thì mới có nhiễu.",
+    "Cho rằng radio rè vì nhiệt của mặt bếp truyền trong không khí tới mạch điện.",
+    "Cho rằng radio rè vì tiếng động của bếp làm rung màng loa.",
+    "Cho rằng phải có dây điện chung giữa bếp và radio thì mới có nhiễu.",
     "Cho rằng tắt loa radio là hết nhiễu, tức nhiễu chỉ ảnh hưởng phần âm thanh chứ không vào mạch điện."
   ],
   "sai_so_thuong_gap": [
-    "Từ kế cầm tay bị chính dòng hàn cảm ứng, phải đo ở chế độ xoay chiều và tránh để đầu dò sát cáp.",
+    "Từ kế cầm tay đo sai nếu không đặt ở chế độ xoay chiều; tránh để đầu dò sát mặt bếp.",
     "Mức rè phụ thuộc cả hướng ăng ten radio; xoay radio đi một góc là số đo đã khác.",
-    "Nhiễu còn do tia lửa điện ở mối hàn, thành phần này có tần số rất cao nên không tính được bằng mô hình 50 Hz."
+    "Nhiễu thực còn có thành phần tần số rất cao do bộ nguồn đóng ngắt, không tính được bằng mô hình một tần số."
   ],
   "goi_y_mo_phong": {
     "loai": "2d_dong_hoc+bang_so_lieu",
-    "y_tuong": "Mặt bằng xưởng có máy hàn, cáp hàn và radio kéo được; cảm ứng từ và mức nhiễu hiện theo khoảng cách, có nút bật tấm chắn sắt.",
+    "y_tuong": "Mặt bàn bếp có bếp từ, nồi và radio kéo được; cảm ứng từ và mức nhiễu hiện theo khoảng cách, có nút bật tấm chắn sắt.",
     "diem_nhan": "Kéo radio ra xa thì nhiễu tắt dần theo 1/d, còn bật tấm chắn sắt thì nhiễu giảm ngay — hai cách chống nhiễu khác nhau."
   },
   "an_toan": [
-    "Không lại gần mối hàn đang chạy: tia lửa điện gây bỏng mắt và cháy da.",
-    "Đeo kính hàn và găng da khi thao tác quanh máy hàn; không chạm vào cáp hàn đang có dòng."
+    "Không đặt tay lên mặt bếp và đáy nồi đang nóng; chỉ dùng nồi nước ít, không để cạn.",
+    "Người đeo máy tạo nhịp tim không đứng sát bếp từ đang chạy; giữ khoảng cách theo hướng dẫn của nhà sản xuất."
   ]
 }

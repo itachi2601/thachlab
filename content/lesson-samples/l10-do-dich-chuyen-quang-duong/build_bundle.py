@@ -13,10 +13,10 @@ exam = {
     "duration_minutes": 8,
     "questions": [
         {"type": MC,
-         "question": "Trên trục X (chiều dương sang phải), đầu dao máy CNC đi từ x₁ = 70 mm tới 90 mm rồi lùi về x₂ = 40 mm. Độ dịch chuyển của đầu dao là:",
-         "options": ["30 mm", "70 mm", "−50 mm", "−30 mm"],
+         "question": "Trên trục X (chiều dương sang phải), xe điều khiển từ xa đi từ x₁ = 70 cm tới 90 cm rồi lùi về x₂ = 40 cm. Độ dịch chuyển của xe là:",
+         "options": ["30 cm", "70 cm", "−50 cm", "−30 cm"],
          "answer": 3,
-         "explanation": "d = x₂ − x₁ = 40 − 70 = −30 mm (điểm cuối nằm về phía âm). 70 mm là quãng đường (20 + 50); 30 mm là quên dấu; −50 mm chỉ tính đoạn lùi cuối."},
+         "explanation": "d = x₂ − x₁ = 40 − 70 = −30 cm (điểm cuối nằm về phía âm). 70 cm là quãng đường (20 + 50); 30 cm là quên dấu; −50 cm chỉ tính đoạn lùi cuối."},
         {"type": MC,
          "question": "Trường hợp nào độ lớn độ dịch chuyển bằng quãng đường đi được?",
          "options": ["Thang máy đi thẳng từ tầng 1 lên tầng 8, không dừng và không quay xuống",

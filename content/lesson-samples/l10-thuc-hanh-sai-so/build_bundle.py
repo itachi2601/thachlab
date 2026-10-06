@@ -36,13 +36,13 @@ exam = {
          "answer": 0,
          "explanation": "Đây là sai số hệ thống: lệch cùng một phía 0,3 g ở cả 5 lần nên trung bình cũng lệch 0,3 g. Lấy trung bình chỉ làm giảm sai số ngẫu nhiên; muốn sửa phải chỉnh cân về số 0."},
         {"type": MC,
-         "question": "Thước thép vạch 1 mm (sai số dụng cụ 0,5 mm) đo tấm nhôm (250,0 ± 0,5) mm và chốt (12,0 ± 0,5) mm. Phép đo nào chính xác hơn, vì sao?",
-         "options": ["Chốt, vì vật nhỏ nên ít sai số",
+         "question": "Thước kẻ vạch 1 mm (sai số dụng cụ 0,5 mm) đo tấm bìa (250,0 ± 0,5) mm và cục tẩy (12,0 ± 0,5) mm. Phép đo nào chính xác hơn, vì sao?",
+         "options": ["Cục tẩy, vì vật nhỏ nên ít sai số",
                      "Như nhau, vì cùng Δ = 0,5 mm",
-                     "Chốt, vì δ ≈ 0,2 % nhỏ hơn tấm",
-                     "Tấm, vì δ ≈ 0,2 % nhỏ hơn δ ≈ 4,2 % của chốt"],
+                     "Cục tẩy, vì δ ≈ 0,2 % nhỏ hơn tấm",
+                     "Tấm bìa, vì δ ≈ 0,2 % nhỏ hơn δ ≈ 4,2 % của cục tẩy"],
          "answer": 3,
-         "explanation": "Tấm: 0,5/250 ≈ 0,2 %. Chốt: 0,5/12 ≈ 4,2 %. Cùng sai số tuyệt đối thì vật nhỏ có sai số tỉ đối lớn hơn; so độ chính xác phải so δ, không so Δ."},
+         "explanation": "Tấm bìa: 0,5/250 ≈ 0,2 %. Cục tẩy: 0,5/12 ≈ 4,2 %. Cùng sai số tuyệt đối thì vật nhỏ có sai số tỉ đối lớn hơn; so độ chính xác phải so δ, không so Δ."},
     ],
 }
 

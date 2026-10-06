@@ -132,7 +132,7 @@ assert f"{G_BAR * dg2 / 100:.2f}" == "0.18" and round(9.80 * 0.018, 2) == 0.18
 dT20 = DT / (2 * TBAR) * 100
 assert f"{dT20:.3f}" == "0.374" and f"{0.1 + 2 * dT20:.2f}" == "0.85" and f"{G_BAR * (0.1 + 2 * dT20) / 100:.2f}" == "0.08"
 assert 2 * TBAR == 40.14 or abs(2 * TBAR - 40.14) < 1e-9
-# TN2: thước thép 1 mm, ΔA = 0,5 mm
+# TN2: thước kẻ 1 mm, ΔA = 0,5 mm
 D_TAM, D_CHOT, DA = 250.0, 12.0, 0.5
 assert f"{DA / D_TAM * 100:.1f}" == "0.2" and f"{DA / D_CHOT * 100:.1f}" == "4.2"
 assert abs(0.005 * 12 - 0.06) < 1e-12
@@ -155,11 +155,11 @@ def vc(x, nd=2):
     return f"{x:.{nd}f}".replace(".", ",")
 
 
-# ================= Hình 1: thước 1 mm, đầu chốt ở vạch 12
+# ================= Hình 1: thước 1 mm, mép cục tẩy ở vạch 12
 c = Canvas("f1", 410, 215)
 X1 = lambda v: 40 + (v - 9) * 55
 c.add(f'<rect x="12" y="28" width="{X1(12) - 12}" height="42" fill="{ORG}" fill-opacity=".35" stroke="currentColor" stroke-width="2"/>')
-c.text(26, 55, "chốt", size=14)
+c.text(26, 55, "cục tẩy", size=14)
 c.add('<rect x="14" y="90" width="382" height="62" fill="none" stroke="currentColor" stroke-width="2"/>')
 for v in range(9, 16):
     c.line(X1(v), 90, X1(v), 112, "currentColor", 2)
@@ -180,8 +180,8 @@ c.text(X1(12), 200, "12,0 ± 0,5 mm", GRN, 14, anchor="middle")
 ERR += [] if all(abs((X1(v + 1) - X1(v)) - 55) < 1e-9 for v in range(9, 15)) else ["f1: vạch thước không cách đều"]
 ERR += [] if abs((X1(12) - b1) - (b2 - X1(12))) < 1e-9 and abs((b2 - b1) - 55) < 1e-9 else ["f1: khoảng ±0,5 mm lệch tâm"]
 ERR += [] if (c.arrows["l"][2] > X1(13) and c.arrows["r"][2] < X1(14)) else ["f1: mũi tên ĐCNN ra ngoài hai vạch"]
-fig1 = c.svg("Thước thép vạch chia 1 milimét; đầu chiếc chốt nằm đúng vạch 12; dưới thước là khoảng 12,0 ± 0,5 mm",
-             "Hình 1. Thước vạch 1 mm (ĐCNN = 1 mm). Đầu chốt nằm đúng vạch 12: kết quả ghi (12,0 ± 0,5) mm, với sai số dụng cụ bằng nửa ĐCNN.",
+fig1 = c.svg("Thước kẻ vạch chia 1 milimét; mép cục tẩy nằm đúng vạch 12; dưới thước là khoảng 12,0 ± 0,5 mm",
+             "Hình 1. Thước vạch 1 mm (ĐCNN = 1 mm). Mép cục tẩy nằm đúng vạch 12: kết quả ghi (12,0 ± 0,5) mm, với sai số dụng cụ bằng nửa ĐCNN.",
              exp="tn-l10-sai-so-02")
 ERR += c.check()
 
@@ -316,30 +316,30 @@ tn = [
                         "diem_nhan": "Thanh trượt 'độ lệch bấm tay' và số lần đo: đo nhiều lần thì t̄ ổn định hơn, nhưng đổi sang đồng hồ chia nhỏ hơn thì Δt gần như không đổi."}},
     {**BASE,
      "id": "tn-l10-sai-so-02",
-     "ten": "Một thước thép, hai chi tiết CNC: cùng sai số tuyệt đối, khác sai số tỉ đối",
+     "ten": "Một thước kẻ, hai vật đo: cùng sai số tuyệt đối, khác sai số tỉ đối",
      "loai": "thi_nghiem", "muc_do": "co_ban",
      "kien_thuc": ["saiso.dung_cu_dcnn", "saiso.ti_doi", "saiso.so_sanh_do_chinh_xac"],
      "muc_tieu": "Hiểu sai số dụng cụ bằng nửa ĐCNN và so độ chính xác của hai phép đo bằng sai số tỉ đối, không bằng sai số tuyệt đối.",
-     "dung_cu": [{"ten": "Thước thép vạch chia 1 mm", "so_luong": 1}, {"ten": "Tấm nhôm dài khoảng 250 mm", "so_luong": 1},
-                 {"ten": "Chốt nhôm đường kính khoảng 12 mm", "so_luong": 1}],
-     "cac_buoc": {"lam": ["Đo 1 lần chiều dài tấm nhôm và đường kính chốt bằng thước vạch 1 mm.", "Lấy sai số dụng cụ bằng nửa ĐCNN = 0,5 mm."],
-                  "quan_sat": ["Tấm: (250,0 ± 0,5) mm. Chốt: (12,0 ± 0,5) mm.", "Hai phép đo có cùng sai số tuyệt đối 0,5 mm."],
-                  "rut_ra": ["Sai số tỉ đối: tấm 0,5/250,0 ≈ 0,2 %; chốt 0,5/12,0 ≈ 4,2 %.", "Phải so δ, không so Δ: phép đo tấm chính xác hơn."]},
+     "dung_cu": [{"ten": "Thước kẻ vạch chia 1 mm", "so_luong": 1}, {"ten": "Tấm bìa dài khoảng 250 mm", "so_luong": 1},
+                 {"ten": "Cục tẩy dày khoảng 12 mm", "so_luong": 1}],
+     "cac_buoc": {"lam": ["Đo 1 lần chiều dài tấm bìa và độ dày cục tẩy bằng thước vạch 1 mm.", "Lấy sai số dụng cụ bằng nửa ĐCNN = 0,5 mm."],
+                  "quan_sat": ["Tấm bìa: (250,0 ± 0,5) mm. Cục tẩy: (12,0 ± 0,5) mm.", "Hai phép đo có cùng sai số tuyệt đối 0,5 mm."],
+                  "rut_ra": ["Sai số tỉ đối: tấm bìa 0,5/250,0 ≈ 0,2 %; cục tẩy 0,5/12,0 ≈ 4,2 %.", "Phải so δ, không so Δ: phép đo tấm bìa chính xác hơn."]},
      "tham_so": [{"ky_hieu": "d", "ten": "Kích thước vật đo", "don_vi": "mm", "kieu": "dieu_chinh", "min": 5, "max": 300, "mac_dinh": 12, "buoc": 1},
                  {"ky_hieu": "dcnn", "ten": "Độ chia nhỏ nhất của dụng cụ", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0.01, "max": 1, "mac_dinh": 1, "buoc": 0.01},
                  {"ky_hieu": "delta_A", "ten": "Sai số dụng cụ (= nửa ĐCNN)", "don_vi": "mm", "kieu": "tinh_ra"},
                  {"ky_hieu": "delta_ti_doi", "ten": "Sai số tỉ đối", "don_vi": "%", "kieu": "tinh_ra"}],
      "mo_hinh": {"phuong_trinh": ["ΔA = ĐCNN/2", "δA = ΔA/d · 100 %", "ΔA cần có để δA ≤ 0,5 % : ΔA ≤ 0,005·d"],
                  "gia_thiet": ["đo 1 lần, chỉ có sai số dụng cụ", "đầu vật nằm đúng vạch"]},
-     "so_lieu_mau": {"cot": ["Chi tiết", "d (mm)", "ΔA (mm)", "δA (%)"],
-                     "hang": [["Tấm nhôm", D_TAM, DA, round(DA / D_TAM * 100, 2)], ["Chốt", D_CHOT, DA, round(DA / D_CHOT * 100, 2)]],
-                     "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Chốt cần δ ≤ 0,5 % thì ΔA ≤ 0,06 mm (thước cặp/panme)."},
-     "ket_qua_ky_vong": "δ tấm ≈ 0,2 %, δ chốt ≈ 4,2 %: phép đo tấm chính xác hơn dù cùng ΔA = 0,5 mm.",
+     "so_lieu_mau": {"cot": ["Vật đo", "d (mm)", "ΔA (mm)", "δA (%)"],
+                     "hang": [["Tấm bìa", D_TAM, DA, round(DA / D_TAM * 100, 2)], ["Cục tẩy", D_CHOT, DA, round(DA / D_CHOT * 100, 2)]],
+                     "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Cục tẩy cần δ ≤ 0,5 % thì ΔA ≤ 0,06 mm (thước điện tử cầm tay)."},
+     "ket_qua_ky_vong": "δ tấm bìa ≈ 0,2 %, δ cục tẩy ≈ 4,2 %: phép đo tấm bìa chính xác hơn dù cùng ΔA = 0,5 mm.",
      "hien_tuong_hay_sai": ["So hai sai số tuyệt đối rồi kết luận hai phép đo như nhau.", "Cho rằng vật nhỏ thì ít sai số."],
      "sai_so_thuong_gap": "Đặt thước không sát đầu vật; nhìn xiên gây sai số thị sai.",
      "goi_y_mo_phong": {"loai": "2d_dong_hoc+bang_so_lieu",
                         "y_tuong": "Thước kéo được trên vật đo; thanh trượt kích thước vật và ĐCNN; bảng hiện ΔA và δA, thanh màu δA đổi theo.",
-                        "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của chốt rơi từ 4,2 % xuống dưới 0,5 %."}},
+                        "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của cục tẩy rơi từ 4,2 % xuống dưới 0,5 %."}},
     {**BASE,
      "id": "tn-l10-sai-so-03",
      "ten": "Đo g bằng con lắc đơn: sai số của phép đo gián tiếp",

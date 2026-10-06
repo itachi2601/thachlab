@@ -144,11 +144,11 @@ c1.add(f'<circle cx="279" cy="38" r="13" fill="rgba(251,191,36,.25)" stroke="cur
 c1.add(rect(273, 51, 12, 7, 1.5) + line(274, 62, 284, 62, "currentColor", 2))
 c1.t(304, 36, "Đèn", "currentColor", 15, "start", "700")
 c1.t(304, 54, "100 W", RED, 15, "start", "700")
-# trục chính CNC
+# lò nướng
 c1.add(rect(267, 97, 24, 36, 2, SLATE))
 c1.add(path("M273,133 L285,133 L279,148 Z", "currentColor", 2, SLATE))
 c1.add(line(267, 105, 291, 105, "currentColor", 1.5))
-c1.t(304, 111, "Trục chính CNC", "currentColor", 15, "start", "700")
+c1.t(304, 111, "Lò nướng", "currentColor", 15, "start", "700")
 c1.t(304, 129, "2,2 kW", RED, 15, "start", "700")
 # ấm đun
 c1.add(path("M270,203 L294,203 L290,178 L274,178 Z", "currentColor", 2, SLATE))
@@ -163,17 +163,17 @@ c1.obstacle_seg("riser", 234, 40, 234, 190)
 for y in ROWS:
     c1.obstacle_seg(f"nhanh{y}", 234, y, 258, y)
 c1.obstacle_rect("tb-den", 265, 25, 293, 63)
-c1.obstacle_rect("tb-cnc", 267, 97, 291, 148)
+c1.obstacle_rect("tb-lo", 267, 97, 291, 148)
 c1.obstacle_rect("tb-am", 270, 175, 296, 203)
 c1.obstacle_rect("congto", 90, 70, 210, 160)
 c1.obstacle_rect("o-cam", 12, 98, 52, 132)
 # kiểm: nhánh ra kết thúc x≈258 (mũi 254 + 1,4·2,5 = 257,5) và nhãn thiết bị bắt đầu ≥ 300
-assert abs(254 + 1.4 * 2.5 - 258) < 1 and all(l[1] >= 300 for l in c1.labels if l[0] in ("Đèn", "100 W", "Trục chính CNC", "2,2 kW", "Ấm đun", "1800 W"))
+assert abs(254 + 1.4 * 2.5 - 258) < 1 and all(l[1] >= 300 for l in c1.labels if l[0] in ("Đèn", "100 W", "Lò nướng", "2,2 kW", "Ấm đun", "1800 W"))
 screen_w = 0.6 * 14 * len("0312,4 kWh")           # chữ monospace nằm gọn màn hình 105..195
 assert 150 - screen_w / 2 > 105 and 150 + screen_w / 2 < 195, screen_w
 c1.check(allow={("0312,4 kWh", "congto"), ("Công tơ điện", "congto")})
 fig1 = fig("0 0 440 240",
-           "Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, trục chính CNC 2,2 kW, ấm đun 1800 W",
+           "Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, lò nướng 2,2 kW, ấm đun 1800 W",
            c1.body, "Hình 1. Công tơ đếm kWh (số chỉ cộng dồn); thiết bị ghi công suất W.", exp="tn-l11-nang-luong-dien-01")
 
 # =====================================================================================

@@ -54,27 +54,27 @@ t1 = dict(base, **{
                        "y_tuong": "Kéo thanh trượt góc cung từ 0 đến 2π: xe chạy trên cung tròn, vệt cam là s, mũi tên xanh lá nối đầu–cuối là d; bảng cập nhật s, d.",
                        "diem_nhan": "Cho học sinh đoán d ở nửa vòng và trọn vòng trước khi kéo; d lớn nhất ở nửa vòng rồi giảm về 0."}})
 
-# ---- 02: CNC trục X
+# ---- 02: xe điều khiển trên trục X
 def cnc(x1, xq, x2):
     return [x1, xq, x2, abs(xq - x1) + abs(x2 - xq), x2 - x1]
 t2 = dict(base, **{
     "id": "tn-l10-dd-qd-02",
-    "ten": "Đầu dao máy CNC chạy tới rồi lùi trên trục X: d = x₂ − x₁ có dấu",
+    "ten": "Xe điều khiển từ xa chạy tới rồi lùi trên trục X: d = x₂ − x₁ có dấu",
     "loai": "vi_du", "muc_do": "co_ban",
     "kien_thuc": ["dong_hoc.he_quy_chieu", "dong_hoc.do_dich_chuyen"],
-    "muc_tieu": "Đọc toạ độ đầu dao trên trục X của máy CNC để tính quãng đường và độ dịch chuyển có dấu khi dao đổi chiều.",
-    "dung_cu": [{"ten": "Máy phay CNC (hoặc mô hình bàn trượt có thước)", "so_luong": 1}, {"ten": "Màn hình toạ độ X (mm)", "so_luong": 1}],
-    "cac_buoc": {"lam": ["Gốc O là điểm chuẩn của máy, trục X chiều dương sang phải.", "Đầu dao đi từ x₁ = 20 mm tới x = 80 mm, rồi lùi về x₂ = 50 mm."],
-                 "quan_sat": ["Màn hình toạ độ chỉ lần lượt 20 → 80 → 50 mm."],
-                 "rut_ra": ["s = 60 + 30 = 90 mm.", "d = x₂ − x₁ = 30 mm, dương vì điểm cuối nằm bên phải điểm đầu."]},
-    "tham_so": [{"ky_hieu": "x1", "ten": "Toạ độ đầu", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 20},
-                {"ky_hieu": "xq", "ten": "Toạ độ chỗ đổi chiều", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 80},
-                {"ky_hieu": "x2", "ten": "Toạ độ cuối", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 50},
-                {"ky_hieu": "s", "ten": "Quãng đường", "don_vi": "mm", "kieu": "tinh_ra"},
-                {"ky_hieu": "d", "ten": "Độ dịch chuyển", "don_vi": "mm", "kieu": "tinh_ra"}],
+    "muc_tieu": "Đọc toạ độ xe trên trục X dọc thước để tính quãng đường và độ dịch chuyển có dấu khi xe đổi chiều.",
+    "dung_cu": [{"ten": "Xe đồ chơi điều khiển từ xa (chạy dọc thước dài)", "so_luong": 1}, {"ten": "Thước dán trên sàn, vạch chia cm", "so_luong": 1}],
+    "cac_buoc": {"lam": ["Gốc O là đầu thước, trục X chiều dương sang phải.", "Xe đi từ x₁ = 20 cm tới x = 80 cm, rồi lùi về x₂ = 50 cm."],
+                 "quan_sat": ["Vạch thước chỉ lần lượt 20 → 80 → 50 cm."],
+                 "rut_ra": ["s = 60 + 30 = 90 cm.", "d = x₂ − x₁ = 30 cm, dương vì điểm cuối nằm bên phải điểm đầu."]},
+    "tham_so": [{"ky_hieu": "x1", "ten": "Toạ độ đầu", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 20},
+                {"ky_hieu": "xq", "ten": "Toạ độ chỗ đổi chiều", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 80},
+                {"ky_hieu": "x2", "ten": "Toạ độ cuối", "don_vi": "cm", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 50},
+                {"ky_hieu": "s", "ten": "Quãng đường", "don_vi": "cm", "kieu": "tinh_ra"},
+                {"ky_hieu": "d", "ten": "Độ dịch chuyển", "don_vi": "cm", "kieu": "tinh_ra"}],
     "mo_hinh": {"phuong_trinh": ["s = |xq − x1| + |x2 − xq|", "d = x2 − x1"],
-                "gia_thiet": ["đầu dao chỉ chạy dọc trục X", "đổi chiều đúng một lần tại xq"]},
-    "so_lieu_mau": {"cot": ["x1 (mm)", "xq (mm)", "x2 (mm)", "s (mm)", "d (mm)"],
+                "gia_thiet": ["xe chỉ chạy dọc trục X", "đổi chiều đúng một lần tại xq"]},
+    "so_lieu_mau": {"cot": ["x1 (cm)", "xq (cm)", "x2 (cm)", "s (cm)", "d (cm)"],
                     "hang": [cnc(20, 80, 50), cnc(70, 90, 40), cnc(10, 60, 60)],
                     "ghi_chu": "Hàng 1 là ví dụ trong bài (Hình 2), hàng 2 là câu tự kiểm tra (d âm), hàng 3 không đổi chiều nên d = s."},
     "ket_qua_ky_vong": "Khi đổi chiều, s > |d|; d mang dấu theo chiều dương đã chọn.",

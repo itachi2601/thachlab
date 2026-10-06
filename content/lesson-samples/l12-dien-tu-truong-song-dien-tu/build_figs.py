@@ -38,11 +38,11 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: tiếng rè trong xưởng
+# ------------------------------------------------- Hình 1: tiếng rè bên bếp từ
 b = defs("f1")
 b += text(14, 22, "Không có dây nối, radio vẫn rè", "currentColor", 12.5, "start", "700")
 b += rect(14, 62, 96, 74)
-b += text(62, 92, "máy hàn", "currentColor", 12, "middle", "700")
+b += text(62, 92, "bếp từ", "currentColor", 12, "middle", "700")
 b += text(62, 110, "dòng xoay chiều", "currentColor", 9.5, "middle", "600")
 b += text(62, 124, "biến thiên", "currentColor", 9.5, "middle", "600")
 for r, op in ((26, .95), (44, .7), (62, .45)):
@@ -54,8 +54,8 @@ b += text(294, 128, "cách 2 m", "currentColor", 9.5, "middle", "600")
 b += line(294, 64, 282, 30, "currentColor", 2.4)
 b += text(14, 168, "Dòng biến thiên sinh điện từ trường,", BLUE, 11, "start", "600")
 b += text(14, 184, "trường lan tới ăng ten radio thành tín hiệu nhiễu.", BLUE, 11, "start", "600")
-fig1 = wrap("0 0 420 198", "Máy hàn chạy dòng xoay chiều đặt cạnh một radio chạy pin: sóng điện từ lan từ máy hàn tới ăng ten radio",
-            b, "Hình 1. Máy hàn chạy dòng xoay chiều: điện từ trường lan tới ăng ten radio cách hai mét.",
+fig1 = wrap("0 0 420 198", "Bếp từ chạy dòng xoay chiều đặt cạnh một radio chạy pin: sóng điện từ lan từ bếp từ tới ăng ten radio",
+            b, "Hình 1. Bếp từ chạy dòng xoay chiều: điện từ trường lan tới ăng ten radio cách hai mét.",
             exp="tn-l12-dttruong-03")
 
 # ------------------------------------------------- Hình 2: điện trường xoáy

@@ -28,12 +28,12 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------------- Hình 1: cảnh chụp ảnh phóng xạ mối hàn
+# ------------------------------------------------------- Hình 1: cảnh xạ trị áp sát
 b = defs("f1")
 b += text(14, 22, "Đứng xa · sau tấm chắn · bấm nút từ xa", "currentColor", 12, "start", "700")
 b += line(16, 206, 424, 206, "currentColor", 2, "", 0.9)
-b += rect(26, 176, 96, 24, "rgba(148,163,184,.18)", "currentColor", 2, 4)      # dầm thép
-b += text(74, 192, "dầm thép", "currentColor", 10, "middle", "600")
+b += rect(26, 176, 96, 24, "rgba(148,163,184,.18)", "currentColor", 2, 4)      # bệnh nhân
+b += text(74, 192, "bệnh nhân", "currentColor", 10, "middle", "600")
 b += f'<circle cx="74" cy="170" r="7" fill="{ORG}"/>'                          # nguồn
 b += text(30, 146, "nguồn Ir-192", ORG, 11, "start", "700")
 b += line(48, 152, 68, 164, ORG, 1.2, "4 3", 0.9)
@@ -50,8 +50,8 @@ b += line(74, 218, 74, 230, "currentColor", 1.2)
 b += line(340, 218, 340, 230, "currentColor", 1.2)
 b += text(207, 240, "khoảng cách 3 m", "currentColor", 10, "middle", "600")
 fig1 = wrap("0 0 440 250",
-            "Sơ đồ chụp ảnh phóng xạ mối hàn: nguồn đặt sát mối hàn, tấm chắn chì ở giữa, kỹ thuật viên đứng xa đeo liều kế",
-            b, "Hình 1. Chụp ảnh phóng xạ mối hàn: nguồn sát mối hàn, người đứng xa sau tấm chắn chì, đeo liều kế — đủ ba nguyên tắc an toàn.")
+            "Sơ đồ xạ trị áp sát trong bệnh viện: nguồn đặt sát khối u, tấm chắn chì ở giữa, kỹ thuật viên đứng xa đeo liều kế",
+            b, "Hình 1. Xạ trị áp sát: nguồn sát khối u, người đứng xa sau tấm chắn chì, đeo liều kế — đủ ba nguyên tắc an toàn.")
 
 # ------------------------------------------------------- Hình 2: thang liều quen thuộc (lôgarit)
 b = defs("f2")
