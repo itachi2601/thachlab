@@ -17,6 +17,11 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: BG,
     theme_color: BG,
+    // Nhấn giữ icon app (Android, iOS 16+ qua Safari không hỗ trợ — chỉ Android/desktop) để vào thẳng.
+    shortcuts: [
+      { name: "Lớp học", short_name: "Lớp học", url: "/lop-hoc/", icons: [{ src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }] },
+      { name: "Luyện tập", short_name: "Luyện tập", url: "/luyen-tap/", icons: [{ src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }] },
+    ],
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
       { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
