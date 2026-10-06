@@ -1,5 +1,4 @@
 import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
-import PreviewAsTaToggle from "@/components/tro-giang/PreviewAsTaToggle";
 import BugReportWidget from "@/components/BugReportWidget";
 
 /**
@@ -20,7 +19,6 @@ export default function PublicShell({ children }: { children: React.ReactNode })
     <>
       {children}
       <PreviewAsStudentToggle />
-      <PreviewAsTaToggle />
       <BugReportWidget />
     </>
   );

@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Drama, LogOut, Wrench } from "lucide-react";
+import { Drama, GraduationCap, LogOut, Wrench, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
-import { useTaDemoMode } from "@/lib/tro-giang/demo";
+import { setTaDemoMode, useTaDemoMode } from "@/lib/tro-giang/demo";
 // previewCttcEnroll/previewCttcUnenroll (services/preview-cttc.ts) gọi supabase — import
 // ĐỘNG trong enterCttc/exitCttc bên dưới, vì component này render ở MỌI trang kể cả
 // trang công khai (qua PublicShell.tsx); import thẳng ở đây sẽ luôn kéo theo
@@ -30,6 +30,7 @@ export default function PreviewAsStudentToggle() {
   const [taDemo] = useTaDemoMode();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   if (realProfile?.role !== "admin") return null;
   // Đang xem giả lập trợ giảng — banner của chế độ đó chiếm chỗ này rồi.
@@ -70,25 +71,56 @@ export default function PreviewAsStudentToggle() {
     "flex items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-bold shadow-xl backdrop-blur-md";
 
   if (!previewMode) {
+    // Một nút tròn 44px thay cho 3 nút chữ dài (che thanh đáy/cột bên); bấm mới xổ menu lên trên.
+    const item =
+      "flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-xs font-bold hover:bg-white/10 disabled:opacity-60";
     return (
-      <div className="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-2">
+      <div className="admin-dock fixed left-4 z-50 flex flex-col items-start gap-2">
         {error && <p className="max-w-xs rounded-xl bg-rose-500/15 px-3 py-2 text-xs text-rose-200">{error}</p>}
+        {menuOpen && (
+          <div className="w-64 rounded-2xl border border-white/15 bg-panel/95 p-1.5 shadow-xl backdrop-blur-md">
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                setPreviewMode("student");
+              }}
+              className={`${item} text-slate-200`}
+            >
+              <Drama size={15} className="text-fuchsia-300" /> Xem như học sinh
+            </button>
+            <Link
+              href="/tro-giang?gialap=1"
+              onClick={() => {
+                setMenuOpen(false);
+                setTaDemoMode(true);
+              }}
+              className={`${item} text-slate-200`}
+            >
+              <GraduationCap size={15} className="text-sky-300" /> Xem như trợ giảng
+            </Link>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => {
+                setMenuOpen(false);
+                void enterCttc();
+              }}
+              className={`${item} text-orange-100`}
+            >
+              <Wrench size={15} className="text-orange-300" />
+              {busy ? "Đang ghi danh 3 môn…" : "Xem như SV CTTC (3 môn)"}
+            </button>
+          </div>
+        )}
         <button
           type="button"
-          onClick={() => setPreviewMode("student")}
-          className={`${pill} border-white/15 bg-panel/95 text-slate-200 hover:border-white/30`}
+          aria-label={menuOpen ? "Đóng menu xem thử" : "Xem thử như học sinh, trợ giảng, SV CTTC"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-panel/95 text-fuchsia-300 shadow-xl backdrop-blur-md hover:border-white/30"
         >
-          <Drama size={15} className="text-fuchsia-300" />
-          Xem như học sinh
-        </button>
-        <button
-          type="button"
-          disabled={busy}
-          onClick={() => void enterCttc()}
-          className={`${pill} border-orange-400/25 bg-panel/95 text-orange-100 hover:border-orange-400/50 disabled:opacity-60`}
-        >
-          <Wrench size={15} className="text-orange-300" />
-          {busy ? "Đang ghi danh 3 môn…" : "Xem như SV CTTC (CNC · Tiện phay · SHCN)"}
+          {menuOpen ? <X size={18} /> : <Drama size={18} />}
         </button>
       </div>
     );
@@ -97,7 +129,7 @@ export default function PreviewAsStudentToggle() {
   if (previewMode === "cttc") {
     const link = "rounded-full bg-orange-500/15 px-2.5 py-1 text-orange-100 hover:bg-orange-500/25";
     return (
-      <div className="fixed bottom-5 left-5 z-50 flex flex-col items-start gap-2">
+      <div className="admin-dock fixed left-4 z-50 flex flex-col items-start gap-2">
         {error && <p className="max-w-xs rounded-xl bg-rose-500/15 px-3 py-2 text-xs text-rose-200">{error}</p>}
         <div className={`${pill} flex-wrap border-orange-400/30 bg-panel/95 text-orange-200`}>
           <Wrench size={15} />
@@ -119,7 +151,7 @@ export default function PreviewAsStudentToggle() {
   }
 
   return (
-    <div className={`fixed bottom-5 left-5 z-50 ${pill} border-fuchsia-400/30 bg-panel/95 text-fuchsia-200`}>
+    <div className={`admin-dock fixed left-4 z-50 max-w-[calc(100vw-2rem)] flex-wrap ${pill} border-fuchsia-400/30 bg-panel/95 text-fuchsia-200`}>
       <Drama size={15} />
       Đang xem giao diện học sinh (giả lập)
       <Link
