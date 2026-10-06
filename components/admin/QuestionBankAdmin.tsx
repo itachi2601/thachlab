@@ -56,6 +56,8 @@ import {
   updateBankQuestions,
   writeBasket,
   writeHandoff,
+  quickComposeFromBank,
+  QUICK_COMPOSE_DEFAULT,
   type BankQuestion,
   type BankTopicCount,
   type SimilarPair,
@@ -121,6 +123,7 @@ export default function QuestionBankAdmin() {
   const [basketItems, setBasketItems] = useState<BankQuestion[]>([]);
   const [basketOpen, setBasketOpen] = useState(false);
   const [randomN, setRandomN] = useState(10);
+  const [quickBusy, setQuickBusy] = useState<string | null>(null);
   const [bulkTopic, setBulkTopic] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
   const [aiProgress, setAiProgress] = useState<{ done: number; total: number } | null>(null);
@@ -461,6 +464,36 @@ export default function QuestionBankAdmin() {
     }
   }
 
+  async function quickCompose(g: string) {
+    if (quickBusy) return;
+    setQuickBusy(g);
+    try {
+      const topicIds =
+        g === grade && node.kind === "topic"
+          ? (topicIdsFilter ?? []).filter((t): t is number => t !== null)
+          : undefined;
+      const { picked, short } = await quickComposeFromBank({ grade: g, counts: QUICK_COMPOSE_DEFAULT, topicIds });
+      if (!picked.length) {
+        toast("error", "Ngân hàng chưa có câu phù hợp để soạn nhanh.");
+        return;
+      }
+      if (short.length) toast("info", `Không đủ câu cho một số dạng (${short.join("; ")}) — đề ngắn hơn chuẩn.`);
+      const d = new Date();
+      const label = g === "9" ? "KHTN 9" : `lớp ${g}`;
+      writeHandoff({
+        title: `Đề nhanh ${label} · ${d.getDate()}/${d.getMonth() + 1}`,
+        grade: g,
+        questions: picked.map(toExamQuestion),
+        bankIds: picked.map((q) => q.id),
+      });
+      router.push("/quan-tri/dang-de/");
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : String(e));
+    } finally {
+      setQuickBusy(null);
+    }
+  }
+
   const nodeTitle = (() => {
     if (node.kind === "all") return `Tất cả câu khối ${grade}`;
     if (node.kind === "untagged") return "Câu chưa gắn năng lực";
@@ -495,6 +528,29 @@ export default function QuestionBankAdmin() {
           ))}
         </div>
       </header>
+
+      <section className="admin-card flex flex-wrap items-center gap-2" aria-label="Soạn đề nhanh">
+        <span className="inline-flex items-center gap-1 text-sm font-semibold text-slate-200">
+          <Wand2 size={15} /> Soạn đề nhanh
+        </span>
+        <span className="text-xs text-slate-400">
+          18 TN · 4 Đúng–Sai · 6 Trả lời ngắn, bốc ngẫu nhiên 4 Dễ : 4 TB : 2 Khó
+          {node.kind === "topic" ? " — chỉ trong năng lực đang chọn ở lớp hiện tại" : ""}
+        </span>
+        <div className="ml-auto flex flex-wrap gap-2">
+          {GRADES.map((g) => (
+            <button
+              key={g}
+              type="button"
+              onClick={() => quickCompose(g)}
+              disabled={quickBusy !== null}
+              className="inline-flex items-center gap-1 admin-btn admin-btn--primary disabled:opacity-40"
+            >
+              {quickBusy === g ? "Đang bốc…" : g === "9" ? "KHTN 9" : `Lớp ${g}`}
+            </button>
+          ))}
+        </div>
+      </section>
 
       <div className="grid gap-5 lg:grid-cols-[300px_1fr]">
         {/* ===== Cây năng lực ===== */}

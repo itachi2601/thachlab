@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import EmptyState from "@/components/ui/EmptyState";
+import ExamShelf from "@/components/lop-hoc/ExamShelf";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
@@ -701,24 +702,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       </div>
                     )}
 
-                    {!isParent && classExams.length > 0 && (
-                      <section className="lesson-section">
-                        <h2>Đề thi</h2>
-                        <ol className="class-lessons class-lessons--flat">
-                          {classExams.map((exam) => (
-                            <li key={exam.id}>
-                              <Link href={`/kiem-tra/lam?id=${exam.id}`} className="class-lesson">
-                                <span className="class-lesson-title">{exam.title}</span>
-                                <span className="class-meta">
-                                  {exam.question_count} câu · {exam.duration_minutes} phút
-                                  {exam.difficulty && ` · ${DIFFICULTY_LABELS[exam.difficulty]}`}
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ol>
-                      </section>
-                    )}
+                    {!isParent && <ExamShelf exams={classExams} />}
 
                     {!session && (
                       <p className="lesson-muted class-login-hint">
