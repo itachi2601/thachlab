@@ -39,7 +39,7 @@ def sub(main, s):
 
 # ---- Hình 1: súng phun sơn tĩnh điện, hai đường bay cùng đầu, cùng cuối
 S = (95, 115)
-N1 = (340, 90)
+N1 = (340, 93)
 b = kdefs("f1")
 # súng phun
 b += '<rect x="20" y="104" width="62" height="22" rx="5" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
@@ -53,8 +53,8 @@ b += text(362, 30, "chi tiết", "currentColor", 12, "middle")
 b += line(362, 190, 362, 206, "currentColor", 2) + line(348, 206, 376, 206, "currentColor", 2) + line(353, 211, 371, 211, "currentColor", 2) + line(358, 216, 366, 216, "currentColor", 2)
 b += text(392, 214, "nối đất", "currentColor", 11, "start", "400")
 # đường 1 thẳng, đường 2 cong (Bezier bậc 2, điểm điều khiển (200,250))
-b += f'<line x1="{S[0]}" y1="{S[1]}" x2="{N1[0]-6}" y2="{N1[1]+0.6}" stroke="{RED}" stroke-width="2.5" marker-end="url(#f1-r)"/>'
-b += f'<path d="M{S[0]},{S[1]} Q200,250 {N1[0]-4},{N1[1]+4}" fill="none" stroke="{BLUE}" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#f1-b)"/>'
+b += f'<line x1="{S[0]}" y1="{S[1]}" x2="{N1[0]-4}" y2="{N1[1]-13}" stroke="{RED}" stroke-width="2.5" marker-end="url(#f1-r)"/>'
+b += f'<path d="M{S[0]},{S[1]} Q200,250 {N1[0]-4},{N1[1]+13}" fill="none" stroke="{BLUE}" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#f1-b)"/>'
 b += dot(S[0], S[1], 6, BLUE)
 b += dot(N1[0], N1[1], 5, "currentColor") + text(N1[0] - 8, N1[1] - 10, "N", "currentColor", 14, "end", "700")
 b += text(200, 88, "đường 1: bay thẳng", RED, 12, "middle", "700")
@@ -71,7 +71,7 @@ for x in (50, 400):
     b += karrow("f2", x, 42, x, 216)
 b += text(58, 140, "E", "currentColor", 14, "start", "700")
 # đường thẳng (đỏ)
-b += f'<line x1="{M2[0]}" y1="{M2[1]}" x2="{N2[0]-5}" y2="{N2[1]-2.6}" stroke="{RED}" stroke-width="2.5" marker-end="url(#f2-r)"/>'
+b += f'<line x1="{M2[0]}" y1="{M2[1]}" x2="{N2[0]-16}" y2="{N2[1]-8.5}" stroke="{RED}" stroke-width="2.5" marker-end="url(#f2-r)"/>'
 # gấp khúc M -> P -> N (xanh)
 b += f'<line x1="{M2[0]}" y1="{M2[1]}" x2="{P2[0]-6}" y2="{P2[1]}" stroke="{BLUE}" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#f2-b)"/>'
 b += f'<line x1="{P2[0]}" y1="{P2[1]}" x2="{N2[0]}" y2="{N2[1]-6}" stroke="{BLUE}" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#f2-b)"/>'

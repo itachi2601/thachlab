@@ -6,6 +6,7 @@ import pathlib, re
 from svg_lib import *
 
 HERE = pathlib.Path(__file__).resolve().parent
+EMF = '<tspan font-style="italic" font-family="Georgia,\'Times New Roman\',serif" font-size="1.1em">E</tspan>'
 YEL = "#fbbf24"
 VB_W = 440
 
@@ -169,7 +170,7 @@ f1.add(poly([node_p, (node_p[0], MY), (MX + MR, MY)]))
 f1.add(poly([node_m, (node_m[0], MY), (MX - MR, MY)]))
 f1.add(ring(MX, MY, MR, "currentColor", "M", 13))
 f1.add(line(node_p[0], 106, node_p[0], 132, ORG, 2.2, marker="f1-i"))
-f1.T(node_p[0] - 17, 124, "I ≈ 0,5 A", ORG, 12, "end", "600")
+f1.T(node_p[0] - 6, 124, "I ≈ 0,53 A", ORG, 13, "end", "600")
 f1.add(f'<rect x="357" y="118" width="56" height="20" rx="3" fill="rgba(248,113,113,.14)" stroke="{RED}" stroke-width="1.5"/>')
 f1.T(385, 133, "1,06 V", RED, 13, "middle", "700")
 # assert: vôn kế song song hai cực pin (đầu dây trùng cực), dòng cam chỉ ở khung phải, số đúng
@@ -182,7 +183,7 @@ fig1 = fig(f1, "Hai khung: pin với vôn kế hở mạch đọc 1,50 V; pin n�
            exp="tn-l11-do-sdd-pin-03")
 
 # =====================================================================
-# Hình 2: sơ đồ mạch đo ℰ và r
+# Hình 2: sơ đồ mạch đo E và r
 # =====================================================================
 f2 = Fig("f2", 230)
 f2.add(f'<defs><marker id="f2-i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{ORG}"/></marker>'
@@ -201,7 +202,7 @@ f2.add(poly([(200, BOTY), (L, BOTY), (L, MINUS_Y)]))
 # pin: vạch dài (+) trên, vạch ngắn dày (−) dưới
 f2.add(line(L - 12, PLUS_Y, L + 12, PLUS_Y, "currentColor", 2.5))
 f2.add(line(L - 6, MINUS_Y, L + 6, MINUS_Y, "currentColor", 5))
-f2.T(14, 118, "ℰ, r", "currentColor", 14, "start", "700")
+f2.T(14, 118, EMF + ", r", "currentColor", 14, "start", "700")
 f2.add(dot(*M_PT, 3) + dot(*N_PT, 3))
 f2.T(50, 82, "M", "currentColor", 13, "start", "700")
 f2.T(50, 152, "N", "currentColor", 13, "start", "700")
@@ -323,7 +324,7 @@ for (x, y) in pts3:
 f3.add(dot(*p0, 4, GRN)); f3.D(*p0, 4)
 f3.add(dot(*A3, 4, YEL, "currentColor")); f3.D(*A3, 4)
 f3.add(dot(*B3, 4, YEL, "currentColor")); f3.D(*B3, 4)
-f3.T(68, 70, "ℰ ≈ 1,50 V", GRN, 13, "start", "700")
+f3.T(68, 70, EMF + " ≈ 1,50 V", GRN, 13, "start", "700")
 f3.T(68, 86, "A", "currentColor", 13, "start", "700")
 f3.T(344, 207, "B", "currentColor", 13, "end", "700")
 f3.T((A3[0] + B3[0]) / 2, 87, "ΔI = 0,500 A", "currentColor", 13, "middle", "400")
@@ -331,7 +332,7 @@ f3.T(B3[0] + 6, 157, "ΔU = 0,41 V", "currentColor", 13, "start", "400")
 f3.T(200, 44, "r = ΔU/ΔI = 0,82 Ω", "currentColor", 13, "start", "700")
 assert abs(A3[1] - B3[1]) == abs(vc(1.50) - vc(1.09)) and abs((1.50 - 1.09) - 0.41) < 1e-9
 fig3 = fig(f3, "Đồ thị U theo I với sáu điểm đo nằm gần một đường thẳng dốc xuống, cắt trục U tại 1,50 V; hai điểm A và B trên đường tạo tam giác hệ số góc.",
-           "Hình 3. Đồ thị pin cũ: đường khớp cắt trục U tại ℰ ≈ 1,50 V; A, B cho r = 0,82 Ω.")
+           "Hình 3. Đồ thị pin cũ: đường khớp cắt trục U tại E ≈ 1,50 V; A, B cho r = 0,82 Ω.")
 
 # ---------- Hình 4: hai pin cùng hệ trục
 f4 = Fig("f4", 290)
@@ -364,7 +365,7 @@ for (x, y) in pn:
 f4.add(dot(XD, yo, 3, RED) + dot(XD, yn, 3, BLUE)); f4.D(XD, yo, 3); f4.D(XD, yn, 3)
 f4.T(XD - 7, yo + 17, "1,09 V", RED, 13, "end", "700")
 f4.T(XD + 7, yn - 7, "1,45 V", BLUE, 13, "start", "700")
-f4.T(XD, 268, "0,5 A", "currentColor", 12, "middle", "700")
+f4.T(XD, 268, "0,5 A", "currentColor", 13, "middle", "700")
 f4.T(250, 78, "pin mới · r ≈ 0,26 Ω", BLUE, 13, "start", "700")
 f4.T(332, 214, "pin cũ", RED, 13, "start", "700")
 f4.T(332, 229, "r ≈ 0,82 Ω", RED, 13, "start", "700")

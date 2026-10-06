@@ -209,7 +209,7 @@
 <tbody>
 <tr><td>Của từng electron</td><td>Của điện trường dọc dây</td></tr>
 <tr><td>Cỡ mm/s hoặc nhỏ hơn (dây điện nhà: dưới 1 mm/s)</td><td>Gần $3\cdot10^{8}$ m/s</td></tr>
-<tr><td>Có trong $I = Snve$, tỉ lệ với $I$</td><td>Không phụ thuộc $I$</td></tr>
+<tr><td>Đặc trưng cho chuyển động của hạt tải điện</td><td>Đặc trưng cho sự lan truyền của điện trường</td></tr>
 </tbody>
 </table>
 </div>
@@ -234,7 +234,7 @@
 <tr><td>Chiều không đổi</td><td>Chiều không đổi</td></tr>
 <tr><td>Cường độ không đổi</td><td>Cường độ có thể thay đổi</td></tr>
 <tr><td>Đồ thị $I(t)$: đường nằm ngang</td><td>Đồ thị $I(t)$: nằm trọn một phía trục $t$</td></tr>
-<tr><td>Pin cấp cho đèn</td><td>Đèn LED sau bộ chỉnh lưu</td></tr>
+<tr><td>Pin cấp cho đèn</td><td>Dòng nạp acquy từ bộ nguồn</td></tr>
 </tbody>
 </table>
 </div>
@@ -345,7 +345,7 @@
 <li>a) $\Delta q = I\,\Delta t = 120\cdot60 = 7200$ C.</li>
 <li>b) $N = \dfrac{\Delta q}{e} = \dfrac{7200}{1{,}6\cdot10^{-19}} = 4{,}5\cdot10^{22}$ electron.</li>
 <li>c) Từ $I = Snve$: $v = \dfrac{I}{S n e}$.</li>
-<li>$$S n e = 25\cdot10^{-6}\cdot8{,}5\cdot10^{28}$$ $$\cdot1{,}6\cdot10^{-19} = 3{,}4\cdot10^{5}\ \text{C/m}$$</li>
+<li>$$\begin{aligned}S n e &= 25\cdot10^{-6}\cdot8{,}5\cdot10^{28}\cdot1{,}6\cdot10^{-19}\\ &= 3{,}4\cdot10^{5}\ \text{C/m}\end{aligned}$$</li>
 <li>$v = \dfrac{120}{3{,}4\cdot10^{5}} = 3{,}5\cdot10^{-4}$ m/s $= 0{,}35$ mm/s.</li>
 <li>Kiểm tra: thay lại $Snve = 3{,}4\cdot10^{5}\cdot3{,}5\cdot10^{-4} \approx 119$ A, khớp 120 A (lệch do làm tròn $v$). Dòng hàn 120 A mà electron trôi chưa tới nửa milimét mỗi giây: hợp với bảng ở mục II.4.</li>
 <li>d) $j = \dfrac{I}{S} = \dfrac{120}{25\cdot10^{-6}} = 4{,}8\cdot10^{6}$ A/m².</li>
@@ -393,6 +393,14 @@
 <li><strong>Chọn tiết diện dây:</strong> theo $I$; dây nhỏ thì $j$ lớn, dây nóng.</li>
 <li><strong>Máy hàn, máy CNC:</strong> kim ampe kế báo tải; dòng tăng vọt là kẹt dao.</li>
 </ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Nghĩ nhanh</p>
+<details class="tl-details">
+<summary>Hai dây đồng cùng tải 16 A, dây nào nóng hơn: 1,5 mm² hay 4 mm²? Nói theo $j = I/S$ rồi bấm xem.</summary>
+<p>Dây 1,5 mm² nóng hơn: cùng $I$ mà $S$ nhỏ thì $j$ lớn, electron trôi nhanh hơn và va chạm nhiều hơn trong mỗi đơn vị tiết diện.</p>
+</details>
+</div>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🎯 Thử thách phân tầng</p>

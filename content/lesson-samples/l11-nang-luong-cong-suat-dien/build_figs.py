@@ -174,7 +174,7 @@ assert 150 - screen_w / 2 > 105 and 150 + screen_w / 2 < 195, screen_w
 c1.check(allow={("0312,4 kWh", "congto"), ("Công tơ điện", "congto")})
 fig1 = fig("0 0 440 240",
            "Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, trục chính CNC 2,2 kW, ấm đun 1800 W",
-           c1.body, "Hình 1. Công tơ đếm kWh; thiết bị ghi công suất W.", exp="tn-l11-nang-luong-dien-01")
+           c1.body, "Hình 1. Công tơ đếm kWh (số chỉ cộng dồn); thiết bị ghi công suất W.", exp="tn-l11-nang-luong-dien-01")
 
 # =====================================================================================
 # Hình 2: ℰI = UI + I²r

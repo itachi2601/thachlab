@@ -109,7 +109,7 @@ T_DRAG = [round(t_drag(vt, H1), 3) for _, vt in VT_LIST]
 T_FREE1 = round(t_ff(G, H1), 3)
 assert T_DRAG[0] - T_FREE1 < 0.01 and T_DRAG[1] - T_DRAG[0] < 0.05 and T_DRAG[2] > 1.8 * T_DRAG[0], T_DRAG
 
-# TN2: ảnh hoạt nghiệm mỗi 0,1 s (cm)
+# TN2: ảnh chụp nhiều lần mỗi 0,1 s (cm)
 T2 = 0.1
 POS2 = [100 * s_ff(G, n * T2) for n in range(6)]          # 0; 4,9; 19,6; 44,1; 78,4; 122,5
 GAP2 = [b - a for a, b in zip(POS2, POS2[1:])]            # 4,9; 14,7; 24,5; 34,3; 44,1
@@ -199,21 +199,21 @@ fig1 = c.svg("Hai ống Newton thả cùng lúc một lông chim và một hòn 
              exp="tn-l10-roi-tu-do-01")
 ERR += c.check(obstacles=[(68, TOP, 132, BOT), (248, TOP, 312, BOT)])
 
-# ================= Hình 2: ảnh hoạt nghiệm viên bi, mỗi 0,1 s, cạnh thước và dây dọi
-c = Canvas("f2", 400, 350)
+# ================= Hình 2: ảnh chụp nhiều lần viên bi, mỗi 0,1 s, cạnh thước và dây dọi
+c = Canvas("f2", 400, 396)
 Y0, SC = 44, 2.2            # 1 cm = 2,2 đơn vị
 RX, BX = 72, 136            # thước, dây dọi / bi
-c.line(RX, Y0, RX, Y0 + SC * 125, "currentColor", 2)
-for cm in range(0, 121, 20):
+c.line(RX, Y0, RX, Y0 + SC * 150, "currentColor", 2)
+for cm in range(0, 151, 20):
     y = Y0 + SC * cm
     c.line(RX, y, RX + 10, y, "currentColor", 2)
     c.text(RX - 8, y + 5, str(cm), size=14, anchor="end", weight="600")
-for cm in range(10, 121, 20):
+for cm in range(10, 151, 20):
     y = Y0 + SC * cm
     c.line(RX, y, RX + 6, y, "currentColor", 1.4)
 c.text(14, 22, "s (cm)", size=14, weight="600")
-c.line(BX, 18, BX, 330, "currentColor", 1.2, "3 4", op=.6)    # dây dọi
-c.add(f'<path d="M{BX - 7},330 L{BX + 7},330 L{BX},344 Z" fill="currentColor" opacity=".6"/>')
+c.line(BX, 18, BX, 372, "currentColor", 1.2, "3 4", op=.6)    # dây dọi
+c.add(f'<path d="M{BX - 7},372 L{BX + 7},372 L{BX},386 Z" fill="currentColor" opacity=".6"/>')
 YS = [Y0 + SC * p for p in POS2]
 for k, y in enumerate(YS):
     c.ball(BX, y, 5)
@@ -225,14 +225,14 @@ c.text(244, 90, "hơn khoảng trước", GRN, 14)
 c.text(244, 110, f"{vt(100 * G * T2 * T2, 1)} cm", GRN, 14)
 c.arr("g", "g", 300, 170, 300, 250, 3)
 c.text(312, 216, "g", GRN, 18, italic=True)
-c.text(150, 344, "dây dọi", size=14, weight="600")
+c.text(150, 386, "dây dọi", size=14, weight="600")
 x1, y1, x2, y2 = c.arrows["g"]
 ERR += [] if y2 > y1 and x1 == x2 else ["f2: mũi tên g phải thẳng đứng hướng xuống"]
 ERR += [] if all(b > a for a, b in zip(YS, YS[1:])) else ["f2: vị trí bi phải đi xuống"]
 fig2 = c.svg("Vị trí viên bi rơi sau mỗi 0,1 giây cạnh thước dựng đứng và dây dọi: bi rơi dọc dây dọi, các khoảng 4,9; 14,7; 24,5; 34,3; 44,1 cm dài dần, mỗi khoảng dài hơn khoảng trước 9,8 cm",
-             "Hình 2. Ảnh hoạt nghiệm (số liệu minh hoạ): vị trí bi sau mỗi 0,1 s. Bi rơi dọc dây dọi; các khoảng dài dần đều đặn, tỉ lệ 1 : 3 : 5 : 7 : 9 — chuyển động nhanh dần đều.",
+             "Hình 2. Ảnh chụp nhiều lần (số liệu minh hoạ): vị trí bi sau mỗi 0,1 s. Bi rơi dọc dây dọi; các khoảng dài dần đều đặn, tỉ lệ 1 : 3 : 5 : 7 : 9 — chuyển động nhanh dần đều.",
              exp="tn-l10-roi-tu-do-02")
-ERR += c.check(obstacles=[(BX - 6, Y0 - 6, BX + 6, YS[-1] + 6), (292, 170, 308, 250), (RX, Y0, RX + 10, Y0 + SC * 125)])
+ERR += c.check(obstacles=[(BX - 6, Y0 - 6, BX + 6, YS[-1] + 6), (292, 170, 308, 250), (RX, Y0, RX + 10, Y0 + SC * 150)])
 
 # ================= Hình 3: "giây thứ n" và "n giây đầu" (g = 9,8), đặt SAU Câu 4
 c = Canvas("f3", 400, 310)
@@ -385,9 +385,9 @@ tn = [
      "loai": "thi_nghiem", "muc_do": "co_ban",
      "kien_thuc": ["roitudo.phuong_thang_dung", "roitudo.chieu_tren_xuong", "roitudo.nhanh_dan_deu"],
      "muc_tieu": "Từ vị trí bi cách đều thời gian, nhận ra rơi tự do theo phương thẳng đứng, chiều từ trên xuống, nhanh dần đều (các khoảng tỉ lệ 1 : 3 : 5…).",
-     "dung_cu": [{"ten": "Dây dọi", "so_luong": 1}, {"ten": "Thước mét dựng đứng", "so_luong": 1},
+     "dung_cu": [{"ten": "Dây dọi", "so_luong": 1}, {"ten": "Thước dài 1,5 m dựng đứng", "so_luong": 1},
                  {"ten": "Hòn bi thép", "so_luong": 1}, {"ten": "Điện thoại quay chậm (≥ 120 hình/s)", "so_luong": 1}],
-     "cac_buoc": {"lam": ["Treo dây dọi cạnh thước mét dựng đứng.", "Thả hòn bi sát dây, quay video chậm.",
+     "cac_buoc": {"lam": ["Treo dây dọi cạnh thước dài 1,5 m dựng đứng.", "Thả hòn bi sát dây, quay video chậm.",
                           "Dừng hình mỗi 0,1 s, đánh dấu vị trí bi (6 vị trí từ t = 0 đến 0,5 s)."],
                   "quan_sat": ["Bi rơi dọc theo dây dọi.",
                                "Các khoảng giữa hai vị trí liền nhau: " + "; ".join(vt(g_, 1) for g_ in GAP2) + " cm — mỗi khoảng dài hơn khoảng trước 9,8 cm."],

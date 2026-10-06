@@ -101,10 +101,10 @@
 <p>Muốn tính $R$ chính xác nhất từ <strong>một</strong> hàng, chọn hàng nào?</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl42-sure3" value="chac"> Chắc</label> <label><input type="radio" name="tl42-sure3" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
-<input type="radio" name="tl42-q3" id="tl42-q3a"><label for="tl42-q3a" class="tl-opt tl-no">A. Hàng 1,0 V, vì gần gốc toạ độ</label>
-<input type="radio" name="tl42-q3" id="tl42-q3b"><label for="tl42-q3b" class="tl-opt tl-no">B. Hàng nào cũng như nhau, vì đều ra 10 Ω</label>
-<input type="radio" name="tl42-q3" id="tl42-q3c"><label for="tl42-q3c" class="tl-opt tl-no">C. Hàng 3,0 V, vì nằm giữa bảng</label>
-<input type="radio" name="tl42-q3" id="tl42-q3d"><label for="tl42-q3d" class="tl-opt tl-ok">D. Hàng 5,0 V, vì sai số dụng cụ chia cho số đo lớn nhất</label>
+<input type="radio" name="tl42-q3" id="tl42-q3a"><label for="tl42-q3a" class="tl-opt tl-no">A. Hàng 1,0 V, vì nằm gần gốc toạ độ nhất</label>
+<input type="radio" name="tl42-q3" id="tl42-q3b"><label for="tl42-q3b" class="tl-opt tl-no">B. Hàng nào cũng như nhau, vì đều cùng ra 10 Ω</label>
+<input type="radio" name="tl42-q3" id="tl42-q3c"><label for="tl42-q3c" class="tl-opt tl-no">C. Hàng 3,0 V, vì nằm ở giữa của cả bảng</label>
+<input type="radio" name="tl42-q3" id="tl42-q3d"><label for="tl42-q3d" class="tl-opt tl-ok">D. Hàng 5,0 V, vì số đo lớn nhất ít bị lệch nhất</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sai số của dụng cụ ($\pm 0{,}1$ V, $\pm 0{,}01$ A) cố định; số đo càng lớn thì phần lệch tương đối càng nhỏ: 20 % ở hàng đầu, chỉ 4 % ở hàng cuối. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — ở 1,0 V, lệch $\pm 0{,}1$ V đã là 10 % của số đo, tệ nhất bảng. B — các hàng cùng ra 10 Ω nhưng độ tin cậy khác nhau. C — "ở giữa" không làm số đo chính xác hơn; cái quyết định là số đo lớn so với sai số dụng cụ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
@@ -191,7 +191,7 @@
 <p>$$R = R_0\,[1 + \alpha\,(t - t_0)]$$</p>
 <ul>
 <li>$R_0$: điện trở ở $t_0$ (thường 20 °C); $R$: ở nhiệt độ $t$.</li>
-<li>$\alpha$: hệ số nhiệt điện trở (K⁻¹); đồng $3{,}9\cdot10^{-3}$, vonfram $4{,}5\cdot10^{-3}$.</li>
+<li>$\alpha$: hệ số nhiệt điện trở (K⁻¹); đồng $3{,}9\cdot10^{-3}$, vonfram $4{,}5\cdot10^{-3}$ (tra cứu, gần đúng).</li>
 <li>Điện trở suất cũng vậy: $\rho = \rho_0[1 + \alpha(t - t_0)]$ (Ω·m); $\rho_0$: điện trở suất ở $t_0$.</li>
 </ul>
 </div>
@@ -200,10 +200,10 @@
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p>Bảng đo đèn: $R$ là 7,7 Ω ở 2,0 V nhưng 12 Ω ở 6,0 V. Vì sao?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl42-q4" id="tl42-q4a"><label for="tl42-q4a" class="tl-opt tl-no">A. Vì đo sai, dây tóc chỉ có một điện trở</label>
-<input type="radio" name="tl42-q4" id="tl42-q4b"><label for="tl42-q4b" class="tl-opt tl-no">B. Vì $U$ lớn hơn thì $R$ lớn hơn, theo $R = U/I$</label>
-<input type="radio" name="tl42-q4" id="tl42-q4c"><label for="tl42-q4c" class="tl-opt tl-ok">C. Vì ở 6,0 V dây tóc nóng hơn, ion nút mạng rung mạnh, cản electron nhiều hơn</label>
-<input type="radio" name="tl42-q4" id="tl42-q4d"><label for="tl42-q4d" class="tl-opt tl-no">D. Vì ở 6,0 V dây tóc có ít electron tự do hơn</label>
+<input type="radio" name="tl42-q4" id="tl42-q4a"><label for="tl42-q4a" class="tl-opt tl-no">A. Vì đo sai, dây tóc vốn chỉ có đúng một điện trở</label>
+<input type="radio" name="tl42-q4" id="tl42-q4b"><label for="tl42-q4b" class="tl-opt tl-no">B. Vì $U$ lớn hơn thì $R$ lớn hơn, theo công thức $R = U/I$</label>
+<input type="radio" name="tl42-q4" id="tl42-q4c"><label for="tl42-q4c" class="tl-opt tl-ok">C. Vì ở 6,0 V dây tóc nóng hơn nên cản electron nhiều hơn</label>
+<input type="radio" name="tl42-q4" id="tl42-q4d"><label for="tl42-q4d" class="tl-opt tl-no">D. Vì ở 6,0 V dây tóc có ít electron tự do hơn hẳn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thứ làm $R$ đổi là <em>nhiệt độ</em>, không phải $U$. Dòng lớn hơn làm dây tóc nóng hơn, va chạm electron – ion tăng, $R$ tăng. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bảng đo không sai; dây tóc ở hai nhiệt độ khác nhau thì có hai điện trở khác nhau. B — $R = U/I$ là <em>cách tính</em>, không phải nguyên nhân: điện trở 10 Ω ở trên, $U$ tăng mà $R$ vẫn 10 Ω. D — số electron tự do trong kim loại hầu như không đổi theo nhiệt độ; cái đổi là mức va chạm.</p></div>
 </div>
@@ -256,7 +256,7 @@
 <thead><tr><th>$R$ do cái gì quyết định</th><th>$R = U/I$ nói gì</th></tr></thead>
 <tbody>
 <tr><td>Vật liệu, kích thước, nhiệt độ</td><td>Cách đo: $U$ chia $I$</td></tr>
-<tr><td>Không phải $U$ (nhiệt độ giữ nguyên)</td><td>$I$ tăng theo $U$, tỉ số giữ nguyên</td></tr>
+<tr><td>Ví dụ: dây 5 Ω chịu 3,0 V rồi 6,0 V</td><td>$I$ từ 0,60 A lên 1,20 A, $U/I$ vẫn 5 Ω</td></tr>
 </tbody>
 </table>
 </div>
@@ -306,7 +306,7 @@
 <thead><tr><th>Đồ thị $I$ theo $U$</th><th>Đồ thị $U$ theo $I$</th></tr></thead>
 <tbody>
 <tr><td>Độ dốc $= 1/R$</td><td>Độ dốc $= R$</td></tr>
-<tr><td>Dốc hơn → $R$ nhỏ hơn</td><td>Dốc hơn → $R$ lớn hơn</td></tr>
+<tr><td>Trục đứng là $I$: dốc đọc ra $1/R$</td><td>Trục đứng là $U$: dốc đọc ra $R$</td></tr>
 </tbody>
 </table>
 </div>
@@ -451,7 +451,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐⭐ Cuộn dây đồng động cơ CNC: 1,50 Ω ở 20 °C; chạy một giờ, tắt máy đo ngay được 1,80 Ω. Cuộn dây nóng bao nhiêu độ? Vì sao phải đo "ngay"?</summary>
-<p>$\alpha_{\text{Cu}} = 3{,}9\cdot10^{-3}$ K⁻¹. $R/R_0 = 1{,}80/1{,}50 = 1{,}20 = 1 + 3{,}9\cdot10^{-3}(t - 20)$ → $t - 20 = 0{,}20/(3{,}9\cdot10^{-3}) \approx 51$ → $t \approx 71$ °C. Phải đo ngay vì cuộn dây nguội dần sau khi tắt, chờ lâu thì $R$ giảm và tính ra nhiệt độ thấp hơn thực. Đây là phép đo tiêu chuẩn khi kiểm tra động cơ.</p>
+<p>$\alpha_{\text{Cu}} = 3{,}9\cdot10^{-3}$ K⁻¹ (tra cứu, gần đúng). $R/R_0 = 1{,}80/1{,}50 = 1{,}20 = 1 + 3{,}9\cdot10^{-3}(t - 20)$ → $t - 20 = 0{,}20/(3{,}9\cdot10^{-3}) \approx 51$ → $t \approx 71$ °C. Phải đo ngay vì cuộn dây nguội dần sau khi tắt, chờ lâu thì $R$ giảm và tính ra nhiệt độ thấp hơn thực. Đây là phép đo tiêu chuẩn khi kiểm tra động cơ.</p>
 </details>
 </div>
 

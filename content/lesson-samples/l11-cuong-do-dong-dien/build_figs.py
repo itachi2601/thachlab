@@ -28,19 +28,23 @@ class Fig:
         m += f' marker-start="url(#{self.p}-{start})"' if start else ""
         self.add(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="{w}"{d}{o}{m}/>')
 
-    def text(self, x, y, segs, c=CC, size=11, anchor="start", weight="600", italic=False, reg=True):
+    def text(self, x, y, segs, c=CC, size=11, anchor="start", weight="600", italic=False, reg=True, serif=False):
+        size = max(size, 13)
         """segs: chuỗi hoặc danh sách [chuỗi | ("sub", chuỗi)]."""
         if isinstance(segs, str):
             segs = [segs]
         inner, width = "", 0.0
         for sg in segs:
             if isinstance(sg, tuple):
-                inner += f'<tspan baseline-shift="sub" font-size="9">{sg[1]}</tspan>'
-                width += 0.55 * 9 * len(sg[1])
+                inner += f'<tspan baseline-shift="sub" font-size="11">{sg[1]}</tspan>'
+                width += 0.55 * 11 * len(sg[1])
             else:
                 inner += sg
                 width += 0.55 * size * len(sg)
         it = ' font-style="italic"' if italic else ""
+        if serif:
+            it += ' font-family="Georgia, \'Times New Roman\', serif" font-style="italic"'
+            if italic: it = it.replace(' font-style="italic"','',1)
         self.add(f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}"{it}>{inner}</text>')
         x0 = x if anchor == "start" else x - width if anchor == "end" else x - width / 2
         if reg:
@@ -102,7 +106,7 @@ f.text(385, 119, "Đèn", CC, 12, "start", "700")
 RED_ARR = {"top": (100, TOP, 170, TOP), "right": (RX, 60, RX, 90), "bottom": (320, BOT, 250, BOT), "left": (LX, 170, LX, 145)}
 for a in RED_ARR.values():
     f.line(*a, RED, 2.5, marker="r")
-f.text(135, 42, "I", RED, 14, "middle", "700")
+f.text(135, 42, "I", RED, 15, "middle", "700", serif=True)
 # mũi tên xanh: electron, ngược chiều
 BLU_ARR = {"top": (170, 64, 100, 64), "bottom": (250, 166, 320, 166)}
 for a in BLU_ARR.values():
@@ -131,7 +135,7 @@ SLOPE = I_AMP * 60                           # C/phút = 90
 f.line(OX, OY, 400, OY, CC, 2, marker="k")
 f.line(OX, OY, OX, 20, CC, 2, marker="k")
 f.text(54, 238, "0", CC, 11, "end")
-f.text(400, 250, "Δt (phút)", CC, 11, "end")
+f.text(400, 255, "Δt (phút)", CC, 11, "end")
 f.text(14, 16, "Δq (C)", CC, 11, "start")
 ts = [10, 20, 30, 40, 50]
 qs = [SLOPE * t for t in ts]                 # 900 … 4500
@@ -160,22 +164,23 @@ fig2 = f.html("Đồ thị điện lượng theo thời gian: năm chấm số l
               "tn-l11-cuong-do-dong-dien-02")
 
 # ============================================================ Hình 3: hai đồ thị I–t
-f = Fig("f3", 420, 170)
+f = Fig("f3", 420, 192)
 Y0, Y_TOP, IY = 130, 70, 70
 for ox, tt, title, tx in ((40, "Không đổi", None, 110), (240, "Một chiều", None, 320)):
     f.line(ox, Y0, ox + 160, Y0, CC, 2, marker="k")
     f.line(ox, Y0, ox, 30, CC, 2, marker="k")
     f.text(ox + 156, 148, "t", CC, 12, "end")
-    f.text(ox - 12, 34, "I", CC, 12, "end")
+    f.text(ox - 12, 34, "I", CC, 14, "end", serif=True)
     f.text(ox - 6, 146, "0", CC, 11, "end")
     f.text(tx, 20, tt, CC, 12, "middle", "700")
-    f.text(ox - 6, IY + 4, ["I", ("sub", "0")], RED, 12, "end", "700")
+    f.text(ox - 6, IY + 4, ["I", ("sub", "0")], RED, 14, "end", "700", serif=True)
 left = [(40, IY), (195, IY)]
 poly(f, left, RED, 2.5)
 f.line(240, IY, 400, IY, CC, 1, "3 3", .4)
 bump = [(240 + s, Y0 - 60 * abs(math.sin(math.pi * s / 40))) for s in range(0, 161, 2)]
 poly(f, bump, RED, 2.5)
-f.text(12, 164, "cả hai: chiều không đổi · chỉ bên trái cường độ cũng không đổi", CC, 11, "start", "600")
+f.text(12, 168, "cả hai: chiều không đổi", CC, 13, "start", "600")
+f.text(12, 186, "chỉ bên trái cường độ cũng không đổi", CC, 13, "start", "600")
 # kiểm
 assert all(y == IY for _, y in left)
 assert all(IY - 1e-9 <= y <= Y0 + 1e-9 for _, y in bump)                    # không bao giờ xuống dưới trục t
@@ -200,7 +205,7 @@ f.add(f'<rect x="{X0}" y="{PT}" width="{XS - X0}" height="{PB - PT}" fill="{GRN}
 f.add(f'<ellipse cx="{X0}" cy="{YC}" rx="10" ry="{RYE:.0f}" fill="none" stroke="{GRN}" stroke-width="1.2" stroke-dasharray="4 3"/>')
 f.add(f'<ellipse cx="{XS}" cy="{YC}" rx="10" ry="{RYE:.0f}" fill="{RED}" fill-opacity="0.15" stroke="{RED}" stroke-width="2" stroke-dasharray="5 3"/>')
 f.line(XS, 34, XS, PT - 2, RED, 1.2)
-f.text(XS, 30, "S", RED, 14, "middle", "700")
+f.text(XS, 30, "S", RED, 15, "middle", "700", serif=True)
 f.text(32, 50, "n hạt trong mỗi m³", CC, 11, "start", "600")
 IN = [(170, 80), (200, 118), (225, 85), (245, 125), (190, 100), (255, 100)]
 OUT = [(90, 90), (115, 125), (330, 95)]
@@ -217,7 +222,7 @@ f.text((X0 + XS) / 2, 178, "v·Δt", CC, 12, "middle", "700")
 f.text(32, 178, "N = n·S·v·Δt hạt", GRN, 11, "start", "600")
 I_ARR = (300, 190, 380, 190)
 f.line(*I_ARR, RED, 3, marker="r")
-f.text(340, 184, "I", RED, 14, "middle", "700")
+f.text(340, 184, "I", RED, 15, "middle", "700", serif=True)
 # kiểm
 for cx, cy in IN:
     assert X0 + 7 <= cx <= XS - 7 and PT + 7 <= cy <= PB - 7, (cx, cy)

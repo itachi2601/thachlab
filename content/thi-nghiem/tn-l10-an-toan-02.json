@@ -12,7 +12,7 @@
   "antoan.khoang_cach_an_toan",
   "antoan.vat_nong"
  ],
- "muc_tieu": "Thấy nhiệt độ giảm rất nhanh khi ra xa nguồn nóng (gấp đôi khoảng cách thì phần nóng thêm còn khoảng 1/4), từ đó hiểu quy tắc giữ khoảng cách an toàn.",
+ "muc_tieu": "Thấy nhiệt độ giảm rất nhanh khi ra xa nguồn nóng (số chỉ minh hoạ, không phải quy luật 1/r²), từ đó hiểu quy tắc giữ khoảng cách an toàn.",
  "dung_cu": [
   {
    "ten": "Đèn cồn",
@@ -33,7 +33,7 @@
    "Cả lớp đứng xa quan sát, ghi số chỉ."
   ],
   "quan_sat": [
-   "Nhiệt kế chỉ lần lượt 125; 41; 29; 26 °C (nhiệt độ phòng 25 °C).",
+   "Nhiệt kế chỉ lần lượt 125; 41; 29; 26 °C (nhiệt độ phòng 25 °C; nhiệt kế đo tới 200 °C; số chỉ minh hoạ, không phải quy luật 1/r²).",
    "Từ 5 cm ra 10 cm, phần nóng thêm giảm từ 16 °C còn 4 °C."
   ],
   "rut_ra": [
@@ -112,7 +112,7 @@
     1
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình T = 25 + 400/d², làm tròn 1 °C."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình đơn giản T = 25 + 400/d² (chọn cho dễ tính, không phải quy luật 1/r² của ngọn lửa thật), làm tròn 1 °C; nhiệt kế đo tới 200 °C."
  },
  "ket_qua_ky_vong": "125; 41; 29; 26 °C; phần nóng thêm 100; 16; 4; 1 °C.",
  "hien_tuong_hay_sai": [

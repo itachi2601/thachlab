@@ -15,6 +15,7 @@ def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
     return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{w}"{d} marker-end="url(#{p}-{c})"/>'
 
 def text(x, y, s, c="currentColor", size=13, anchor="start", weight="600"):
+    size = max(size, 13)
     return f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{s}</text>'
 
 def person(x, ground, s=1.0, arm_to=None, arm_y=None):

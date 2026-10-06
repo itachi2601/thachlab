@@ -315,7 +315,7 @@ tn = [
      "dung_cu": [{"ten": "Viên bi thép", "so_luong": 1}, {"ten": "Máng nghiêng", "so_luong": 1},
                  {"ten": "Điện thoại quay video (30 hình/s)", "so_luong": 1}, {"ten": "Thước dán dọc đường lăn", "so_luong": 1}],
      "cac_buoc": {"lam": ["Quay video bi lăn trên mặt bàn ngang, lăn xuống máng nghiêng, rồi lăn lên máng nghiêng.",
-                          "Dừng hình mỗi 0,2 s (cứ 6 khung hình), lấy 5 vị trí từ t = 0 đến 0,8 s, chấm lên giấy."],
+                          "Dừng hình mỗi 0,2 s (cứ 6 khung hình), mỗi giai đoạn lấy 5 vị trí từ t = 0 đến 0,8 s, chấm lên giấy."],
                   "quan_sat": ["Trên bàn: các chấm gần cách đều.", "Xuống dốc: khoảng cách dài dần.", "Lên dốc: khoảng cách ngắn dần."],
                   "rut_ra": ["Khoảng đi được trong mỗi 0,2 s thay đổi thì vận tốc thay đổi: chuyển động biến đổi.",
                              "Dài dần: nhanh dần (a cùng chiều v); ngắn dần: chậm dần (a ngược chiều v)."]},

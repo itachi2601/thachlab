@@ -11,7 +11,7 @@ def vec(p, c, x, y, ang, L, w=3, dash=""):
     """Mũi tên từ (x,y), góc ang (độ, ngược chiều kim đồng hồ, trục y hướng lên), dài L; trả (chuỗi, đầu mút)."""
     a = math.radians(ang); x2, y2 = x + L * math.cos(a), y - L * math.sin(a)
     return arrow(p, c, x, y, round(x2, 1), round(y2, 1), w, dash), (x2, y2)
-def sub(base, s): return f'{base}<tspan dy="4" font-size="9">{s}</tspan>'
+def sub(base, s): return f'{base}<tspan dy="4" font-size="11">{s}</tspan>'
 def arc(x, y, r, a1, a2, c="currentColor", w=1.5):
     p1 = (x + r * math.cos(math.radians(a1)), y - r * math.sin(math.radians(a1)))
     p2 = (x + r * math.cos(math.radians(a2)), y - r * math.sin(math.radians(a2)))
@@ -31,12 +31,12 @@ b += arrow("f1", "r", ox, oy, round(x1, 1), round(y1, 1), 3.2) + arrow("f1", "b"
 b += arrow("f1", "g", ox, oy, round(xf, 1), round(yf, 1), 3.6)
 b += arc(ox, oy, 46, a1, a2, "currentColor") + text(ox + 26, oy - 44, "α", "currentColor", 14, "start", "700")
 fa = math.degrees(math.atan2(oy - yf, xf - ox))
-b += arc(ox, oy, 78, a1, fa, GRN) + text(ox + 82, oy - 40, "θ", GRN, 13, "start", "700")
+b += arc(ox, oy, 78, a1, fa, GRN) + text(ox + 82, oy - 40, "θ", GRN, 14, "start", "700")
 b += text(x1 - 34, y1 + 30, sub("F", "1"), RED, 15, "end", "700")
 b += text(x2 - 10, y2 + 4, sub("F", "2"), BLUE, 15, "end", "700")
 b += text(xf + 10, yf + 8, "F", GRN, 16, "start", "700")
 b += dot(ox, oy, 4)
-b += text(ox - 6, oy + 18, "O", "currentColor", 12, "end", "600")
+b += text(ox - 6, oy + 18, "O", "currentColor", 14, "end", "600")
 fig1 = wrap("0 0 440 220", "Quy tắc hình bình hành: hai lực F1, F2 hợp nhau góc alpha, đường chéo là hợp lực F",
             b, "Hình 1. Quy tắc hình bình hành: đường chéo xuất phát từ O (xanh lá) là hợp lực <em>F</em>; α là góc giữa hai lực.")
 
@@ -56,8 +56,8 @@ b += line(ex, hy, ex, ey, ORG, 2.4)  # trục dựng
 b += line(hx, hy, ex, ey, RED, 0)    # không vẽ thêm
 b += arc(hx, hy, 52, 0, alpha, "currentColor") + text(hx + 56, hy - 8, "α", "currentColor", 14, "start", "700")
 b += text((hx + ex) / 2 - 12, (hy + ey) / 2 - 8, "F", RED, 16, "end", "700")
-b += text(hx + 8, hy + 20, sub("F", "x") + " = F cos α", GRN, 13, "start", "700")
-b += text(ex + 8, (hy + ey) / 2 + 4, sub("F", "y") + " = F sin α", ORG, 13, "start", "700")
+b += text(hx + 8, hy + 26, sub("F", "x") + " = F cos α", GRN, 14, "start", "700")
+b += text(ex + 8, (hy + ey) / 2 + 4, sub("F", "y") + " = F sin α", ORG, 14, "start", "700")
 fig2 = wrap("0 0 440 220", "Phân tích lực kéo F của tay thành thành phần nằm ngang Fx và thẳng đứng Fy",
             b, "Hình 2. Lực kéo nghiêng <em>F</em> phân tích thành <em>F<sub>x</sub></em> (làm xe chạy) và <em>F<sub>y</sub></em> (nhấc bớt xe lên); α là góc với phương ngang.")
 
@@ -85,8 +85,8 @@ px, pyy = Lp * math.sin(math.radians(al)), Lp * math.cos(math.radians(al))
 b += arrow("f3", "g", round(gx0, 1), round(gy0, 1), round(gx0 - px * math.cos(math.radians(al)), 1), round(gy0 + px * math.sin(math.radians(al)), 1), 3)   # Px dọc dốc xuống
 b += arrow("f3", "o", round(gx0, 1), round(gy0, 1), round(gx0 + pyy * math.sin(math.radians(al)), 1), round(gy0 + pyy * math.cos(math.radians(al)), 1), 3)   # Py vuông góc, vào dốc
 b += text(gx0 + 10, gy0 + Lp + 4, "P", RED, 16, "start", "700")
-b += text(gx0 - px * math.cos(math.radians(al)) - 4, gy0 + px * math.sin(math.radians(al)) - 12, sub("P", "x") + " = P sin α", GRN, 13, "end", "700")
-b += text(gx0 + pyy * math.sin(math.radians(al)) + 10, gy0 + pyy * math.cos(math.radians(al)) - 4, sub("P", "y"), ORG, 14, "start", "700") + text(gx0 + pyy * math.sin(math.radians(al)) + 10, gy0 + pyy * math.cos(math.radians(al)) + 12, "= P cos α", ORG, 12, "start", "700")
+b += text(gx0 - px * math.cos(math.radians(al)) - 4, gy0 + px * math.sin(math.radians(al)) - 18, sub("P", "x") + " = P sin α", GRN, 14, "end", "700")
+b += text(gx0 + pyy * math.sin(math.radians(al)) + 10, gy0 + pyy * math.cos(math.radians(al)) - 4, sub("P", "y"), ORG, 14, "start", "700") + text(gx0 + pyy * math.sin(math.radians(al)) + 10, gy0 + pyy * math.cos(math.radians(al)) + 12, "= P cos α", ORG, 14, "start", "700")
 b += arc(bx, by, 70, 0, al, "currentColor") + text(bx + 78, by - 8, "α", "currentColor", 14, "start", "700")
 fig3 = wrap("0 0 440 232", "Vật trên mặt phẳng nghiêng góc alpha: trọng lực P phân tích thành Px dọc dốc và Py vuông góc dốc",
             b, "Hình 3. Trên dốc nghiêng góc α, trọng lực <em>P</em> phân tích thành <em>P<sub>x</sub></em> = <em>P</em> sin α (dọc dốc) và <em>P<sub>y</sub></em> = <em>P</em> cos α (ép vào dốc).")
@@ -118,8 +118,8 @@ b += f'<path d="M{ox-20},{oy+98} L{ox+20},{oy+98} L{ox+14},{oy+132} L{ox-14},{oy
 b += text(ox - dx / nrm * Tl - 14, oy - dy / nrm * Tl + 18, sub("T", "1"), RED, 15, "end", "700")
 b += text(ox + dx / nrm * Tl + 14, oy - dy / nrm * Tl + 18, sub("T", "2"), BLUE, 15, "start", "700")
 b += text(ox + 10, oy + 66, "P", ORG, 16, "start", "700")
-b += text(ox, oy - Fy - 7, sub("F", "12") + " = P", GRN, 13, "middle", "700")
-b += arc(ox, oy, 44, 90 - half, 90 + half, "currentColor") + text(ox, oy - 28, "α", "currentColor", 13, "middle", "700")
+b += text(ox, oy - Fy - 12, sub("F", "12") + " = P", GRN, 14, "middle", "700")
+b += arc(ox, oy, 44, 90 - half, 90 + half, "currentColor") + text(ox, oy - 28, "α", "currentColor", 14, "middle", "700")
 fig4 = wrap("0 0 440 304", "Đèn treo bằng hai dây: hai lực căng T1, T2 có hợp lực F12 cân bằng với trọng lực P",
             b, "Hình 4. Đèn đứng yên: hợp lực <em>F</em><sub>12</sub> của hai lực căng <em>T</em><sub>1</sub>, <em>T</em><sub>2</sub> cân bằng với trọng lực <em>P</em>; α là góc giữa hai dây.")
 

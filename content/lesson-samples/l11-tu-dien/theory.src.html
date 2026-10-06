@@ -41,18 +41,21 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> mắc nối tiếp pin 9 V, tụ 1000 μF và một đèn LED (có điện trở bảo vệ). Sau đó tháo pin, nối hai đầu tụ qua LED nhưng <strong>đảo chiều LED</strong> so với lúc nạp (dòng phóng ngược chiều dòng nạp).</li>
 <li><strong>Quan sát:</strong> lúc vừa nối pin, LED loé rồi tắt hẳn dù pin còn nối. Tháo pin, nối tụ với LED: LED lại loé rồi mờ dần.</li>
-<li><strong>Rút ra:</strong> tụ <strong>nạp</strong> điện tích rồi giữ lại, sau đó <strong>phóng</strong> ra được. Dòng một chiều <strong>không đi qua</strong> tụ: giữa hai bản là chất cách điện.</li>
 </ol>
 </div>
 <p>Vì sao LED tắt hẳn dù pin vẫn còn nối?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl40-q1" id="tl40-q1a"><label for="tl40-q1a" class="tl-opt tl-no">A. Pin đã hết điện ngay sau cú loé</label>
-<input type="radio" name="tl40-q1" id="tl40-q1b"><label for="tl40-q1b" class="tl-opt tl-no">B. Điện tích đi xuyên qua lớp điện môi rồi mất</label>
-<input type="radio" name="tl40-q1" id="tl40-q1c"><label for="tl40-q1c" class="tl-opt tl-no">C. Đèn LED bị cháy vì dòng quá lớn</label>
-<input type="radio" name="tl40-q1" id="tl40-q1d"><label for="tl40-q1d" class="tl-opt tl-ok">D. Tụ đã nạp đầy, điện tích không qua được lớp cách điện nên dòng ngừng</label>
+<input type="radio" name="tl40-q1" id="tl40-q1a"><label for="tl40-q1a" class="tl-opt tl-no">A. Pin hết điện ngay sau cú loé</label>
+<input type="radio" name="tl40-q1" id="tl40-q1b"><label for="tl40-q1b" class="tl-opt tl-no">B. Điện tích xuyên qua điện môi rồi mất</label>
+<input type="radio" name="tl40-q1" id="tl40-q1c"><label for="tl40-q1c" class="tl-opt tl-no">C. Đèn LED cháy vì dòng quá lớn</label>
+<input type="radio" name="tl40-q1" id="tl40-q1d"><label for="tl40-q1d" class="tl-opt tl-ok">D. Tụ nạp đầy nên dòng ngừng hẳn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dòng chỉ chạy trong lúc tụ đang nạp. Nạp đầy thì hết dòng: tụ chặn dòng một chiều.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Pin vẫn tốt và LED vẫn loé lại được khi tụ phóng, nên A và C không đúng. B sai vì điện môi không cho điện tích đi qua. Câu hỏi đúng là: tụ đầy thì còn chỗ cho điện tích chạy tiếp không?</p></div>
 </div>
+<details class="tl-details">
+<summary>👀 Bấm xem: rút ra từ thí nghiệm</summary>
+<p>Tụ <strong>nạp</strong> điện tích rồi giữ lại, sau đó <strong>phóng</strong> ra được. Dòng một chiều <strong>không đi qua</strong> tụ: giữa hai bản là chất cách điện.</p>
+</details>
 
 <h4>2. Điện dung C = Q/U</h4>
 <p><strong>🔑 C = Q/U · khả năng tích điện · đơn vị fara</strong></p>
@@ -63,7 +66,7 @@
 <p>$Q$: điện tích (C) · $U$: hiệu điện thế giữa hai bản (V) · $C$: điện dung (F, fara).</p>
 <ul>
 <li><strong>1 F</strong> là điện dung của tụ tích được 1 C khi đặt vào 1 V. Đơn vị này rất lớn.</li>
-<li>Tụ thường gặp có C từ $10^{-12}$ đến $10^{-6}$ F, nên dùng ước số:</li>
+<li>Tụ thường gặp có C từ $10^{-12}$ đến $10^{-3}$ F, nên dùng ước số:</li>
 </ul>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Ước số</th><th>Quy đổi</th></tr></thead>
@@ -83,7 +86,6 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> tụ ghi "470 μF – 16 V". Nạp tụ bằng nguồn chỉnh được ở 5 mức: 2, 4, 6, 8, 10 V. Mỗi lần cho tụ phóng qua cảm biến điện tích của bộ thí nghiệm số để đọc $Q$.</li>
 <li><strong>Quan sát:</strong> bảng dưới; cột cuối là $Q/U$ tính ra.</li>
-<li><strong>Rút ra:</strong> $Q$ tỉ lệ thuận với $U$; tỉ số $Q/U$ gần như không đổi, đó là $C$ của tụ.</li>
 </ol>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>U (V)</th><th>Q (μC)</th><th>Q/U (μF)</th></tr></thead>
@@ -105,6 +107,10 @@
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trung bình năm giá trị $Q/U$ là $\approx 481$ μF. Lần đo ở 2 V lệch nhiều nhất (490) vì $Q$ nhỏ nên sai số đọc chiếm tỉ lệ lớn. Lệch 470 → 480 là bình thường: tụ hoá thường có sai số chế tạo tới ±20%.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A dựa vào đúng lần đo kém tin cậy nhất ($Q$ nhỏ, sai số tương đối lớn). B là số danh định, không phải số đo. D nhầm điện tích (μC) thành điện dung. Hãy lấy trung bình cột $Q/U$.</p></div>
 </div>
+<details class="tl-details">
+<summary>👀 Bấm xem: rút ra từ bảng</summary>
+<p>$Q$ tỉ lệ thuận với $U$; tỉ số $Q/U$ gần như không đổi, đó là $C$ của tụ.</p>
+</details>
 <!--FIG2-->
 
 <h4>3. C do cấu tạo quyết định</h4>
@@ -182,13 +188,13 @@
 
 <h4>Bẫy 1: "C = Q/U nên tăng U thì C giảm"</h4>
 <p><strong>🔑 Q/U để đo · cấu tạo quyết định</strong></p>
-<p>Công thức $C = Q/U$ là cách <strong>tính</strong> C, không phải cái <strong>làm ra</strong> C. Tăng $U$ thì $Q$ tăng theo đúng tỉ lệ, tỉ số giữ nguyên.</p>
+<p>Công thức $C = Q/U$ là cách <strong>tính</strong> C, không phải cái <strong>làm ra</strong> C. Tăng $S$ thì $C$ tăng; còn $Q$ và $W$ theo $C$ và $U$ mà đổi.</p>
 <div class="table-scroll"><table class="tl-table">
-<thead><tr><th>Đại lượng</th><th>Phụ thuộc vào</th><th>Khi U gấp đôi</th></tr></thead>
+<thead><tr><th>Đại lượng</th><th>Phụ thuộc vào</th><th>Khi $S$ gấp đôi, $U$ giữ nguyên</th></tr></thead>
 <tbody>
-<tr><td>$C$</td><td>$S$, $d$, $\varepsilon$</td><td>Giữ nguyên</td></tr>
+<tr><td>$C$</td><td>$S$, $d$, $\varepsilon$</td><td>Gấp đôi</td></tr>
 <tr><td>$Q = CU$</td><td>$C$ và $U$</td><td>Gấp đôi</td></tr>
-<tr><td>$W$</td><td>$C$ và $U$</td><td>Gấp bốn</td></tr>
+<tr><td>$W$</td><td>$C$ và $U$</td><td>Gấp đôi</td></tr>
 </tbody>
 </table></div>
 <p class="tl-conf">Em chắc bao nhiêu?
@@ -233,10 +239,10 @@
 <h4>Bẫy 3: còn nối nguồn hay đã ngắt nguồn</h4>
 <p><strong>🔑 Nối nguồn: U giữ · Ngắt nguồn: Q giữ</strong></p>
 <div class="table-scroll"><table class="tl-table">
-<thead><tr><th>Tình huống</th><th>Không đổi</th><th>Kéo bản xa ra</th></tr></thead>
+<thead><tr><th>Tình huống</th><th>Không đổi</th><th>Chèn điện môi ($C$ tăng)</th></tr></thead>
 <tbody>
-<tr><td>Vẫn nối nguồn</td><td>$U$</td><td>$Q = CU$ giảm</td></tr>
-<tr><td>Đã ngắt nguồn</td><td>$Q$</td><td>$U = Q/C$ tăng</td></tr>
+<tr><td>Vẫn nối nguồn</td><td>$U$</td><td>$Q = CU$ tăng</td></tr>
+<tr><td>Đã ngắt nguồn</td><td>$Q$</td><td>$U = Q/C$ giảm</td></tr>
 </tbody>
 </table></div>
 <p>Tụ phẳng nạp xong thì <strong>ngắt khỏi nguồn</strong>, rồi kéo hai bản ra xa gấp đôi. Hiệu điện thế giữa hai bản:</p>

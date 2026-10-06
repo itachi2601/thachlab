@@ -32,7 +32,7 @@ def dbl_v(x, y1, y2, c, w=1.6):
 
 def text_sub(x, y, base, sub, c="currentColor", size=15, anchor="middle", weight="700"):
     return (f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">'
-            f'{base}<tspan baseline-shift="sub" font-size="{max(10, int(size*0.72))}">{sub}</tspan></text>')
+            f'{base}<tspan baseline-shift="sub" font-size="{max(13, int(size*0.72))}">{sub}</tspan></text>')
 
 def with_exp(fig, exp):
     return fig.replace('<figure class="fig" data-tl="1">',
@@ -121,12 +121,12 @@ b += f'<path d="M{ax0:.1f},{ay0:.1f} A34,34 0 0 1 {ax1:.1f},{ay1:.1f}" fill="non
 b += dot(Mx, My, 5.5, RED)
 b += dot(Px, Py, 4.5, ORG)
 b += arrow("f2", "g", Mx, My, t2[0], t2[1], 2.2)
-lx = cx + 50 * math.cos(PHI / 2)
-ly = cy - 50 * math.sin(PHI / 2)
-b += text_sub(lx, ly + 4, "φ", "0", GRN, 15, "middle", "700")
+lx = cx + 22 * math.cos(PHI / 2)
+ly = cy - 22 * math.sin(PHI / 2)
+b += text_sub(Mx + 6, cy - 20, "φ", "0", GRN, 14, "start", "700")
 b += text(cx - R - 8, cy + 20, "−A", "currentColor", 14, "end", "700")
 b += text(cx + R + 4, cy - 10, "+A", "currentColor", 14, "start", "700")
-b += text(cx - 14, cy + 18, "O", "currentColor", 14, "end", "700")
+b += text(cx - 6, cy + 18, "O", "currentColor", 14, "end", "700")
 b += text(Mx + 12, My - 14, "M", RED, 15, "start", "700")
 b += text(Px + 8, Py + 18, "P", ORG, 14, "start", "700")
 # nhãn t = 0 ở góc trống, không đè nét đứt M–P và không chạm chú thích phải

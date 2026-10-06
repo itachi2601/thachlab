@@ -347,7 +347,7 @@ tn = [
      "kien_thuc": ["saiso.gian_tiep_tich_thuong", "saiso.gian_tiep_so_mu", "saiso.ghi_ket_qua"],
      "muc_tieu": "Tính g = 4π²l/T² từ l và T đo trực tiếp; cộng sai số tỉ đối (số mũ 2 nhân với δT); ghi g = trung bình ± Δg đúng chữ số có nghĩa.",
      "dung_cu": [{"ten": "Không cần (bài toán mẫu dùng số liệu của TN1)", "so_luong": 0}],
-     "cac_buoc": {"lam": ["Dùng l = 1,000 m (thước ĐCNN 1 mm, lấy Δl = 1 mm) và t = (20,07 ± 0,15) s cho 10 dao động; T = t/10."],
+     "cac_buoc": {"lam": ["Dùng l = 1,000 m (thước ĐCNN 1 mm; đề quy ước lấy Δl = một ĐCNN = 1 mm, không phải nửa ĐCNN) và t = (20,07 ± 0,15) s cho 10 dao động; T = t/10."],
                   "quan_sat": ["T = 2,007 s, δT ≈ 0,747 %; δl = 0,1 %."],
                   "rut_ra": ["δg = δl + 2δT ≈ 1,6 %; g ≈ 9,80 m/s²; Δg ≈ 0,16 m/s².", "Kết quả g = (9,80 ± 0,16) m/s²; giá trị chuẩn 9,81 nằm trong khoảng."]},
      "tham_so": [{"ky_hieu": "dl", "ten": "Sai số tuyệt đối của chiều dài", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.0005, "max": 0.005, "mac_dinh": 0.001, "buoc": 0.0005},

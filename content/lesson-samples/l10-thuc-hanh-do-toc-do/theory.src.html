@@ -10,7 +10,7 @@
 
 <h3>I. Mở bài: hai con số cho một lượt chạy</h3>
 
-<p>Tiết thể dục, Minh chạy $100\ \text{m}$. Hai bạn đứng ở vạch đích, mỗi bạn một chiếc đồng hồ bấm giây, cùng bấm khi Minh chạm vạch. Đồng hồ thứ nhất hiện $14{,}2\ \text{s}$, đồng hồ thứ hai hiện $14{,}6\ \text{s}$. Cùng một lượt chạy, hai con số khác nhau.</p>
+<p>Tiết thể dục, Minh chạy $100\ \text{m}$. Hai bạn đứng ở vạch đích, mỗi bạn một đồng hồ bấm giây; cả hai bấm chạy khi cô giáo hạ cờ ở vạch xuất phát và bấm dừng khi Minh chạm vạch. Đồng hồ thứ nhất hiện $14{,}2\ \text{s}$, đồng hồ thứ hai hiện $14{,}6\ \text{s}$. Cùng một lượt chạy, hai con số khác nhau.</p>
 
 <!--FIG1-->
 
@@ -18,10 +18,10 @@
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Hai con số khác nhau thì nên làm gì?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl51-q1" id="tl51-q1a"><label for="tl51-q1a" class="tl-opt tl-no">A. Một bạn bấm sai: bỏ số đó và lấy số còn lại</label>
+<input type="radio" name="tl51-q1" id="tl51-q1a"><label for="tl51-q1a" class="tl-opt tl-no">A. Một bạn bấm sai: bỏ số đó và lấy số còn lại làm kết quả chính thức của lượt chạy</label>
 <input type="radio" name="tl51-q1" id="tl51-q1b"><label for="tl51-q1b" class="tl-opt tl-ok">B. Cả hai đều hợp lí: người bấm luôn trễ hoặc sớm chút ít. Đo nhiều lần, lấy trung bình, ghi kèm sai số</label>
-<input type="radio" name="tl51-q1" id="tl51-q1c"><label for="tl51-q1c" class="tl-opt tl-no">C. Mua đồng hồ bấm giây đắt hơn thì hai số sẽ trùng nhau</label>
-<input type="radio" name="tl51-q1" id="tl51-q1d"><label for="tl51-q1d" class="tl-opt tl-no">D. Hai bạn đo hai đại lượng khác nhau vì Minh nhanh dần ở cuối đoạn</label>
+<input type="radio" name="tl51-q1" id="tl51-q1c"><label for="tl51-q1c" class="tl-opt tl-no">C. Mua đồng hồ bấm giây đắt hơn, chính xác hơn thì hai bạn chắc chắn sẽ bấm ra hai số trùng nhau</label>
+<input type="radio" name="tl51-q1" id="tl51-q1d"><label for="tl51-q1d" class="tl-opt tl-no">D. Hai bạn đo hai đại lượng khác nhau vì Minh nhanh dần ở cuối đoạn nên mỗi người thấy một thời điểm chạm vạch</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Chênh $0{,}4\ \text{s}$ là cỡ độ trễ phản xạ của người bấm. Không số nào "sai", mỗi số chỉ là một lần đo. Muốn tin được thì đo nhiều lần và <strong>ghi sai số</strong> — đó là việc của cả bài thực hành này.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: không có cơ sở nào để coi một số là sai, hai số cùng đáng tin như nhau. C: đồng hồ tốt hơn không sửa được độ trễ của người bấm. D: hai bạn đo cùng một đại lượng, là thời gian chạy cả $100\ \text{m}$.</p></div>
 </div>
@@ -86,6 +86,11 @@ __BANG_TN1__
 <li>Tính $v = \dfrac{\Delta x}{\Delta t}$ cho từng khoảng, hoặc để phần mềm Tracker vẽ đồ thị.</li>
 </ul>
 
+<details class="tl-details">
+<summary>🎞️ Thử tính: video 30 khung hình mỗi giây thì hai khung liền nhau cách bao lâu?</summary>
+<p>$\Delta t = \dfrac{1}{30} \approx 0{,}033\ \text{s}$. Xe dịch được $\Delta x$ giữa hai khung thì $v = \dfrac{\Delta x}{0{,}033}$; khung càng dày thì khoảng thời gian càng ngắn, tốc độ tính được càng gần tốc độ tại thời điểm đó.</p>
+</details>
+
 <h4>3. Cổng quang và tấm chắn</h4>
 
 <p><strong>🔑 Tấm chắn che tia sáng · $v = d/t$</strong></p>
@@ -123,9 +128,9 @@ __BANG_TN2__
 <p><strong>Câu 1.</strong> Vì sao đồng hồ hiện số nối cổng quang cho thời gian ít sai số hơn bấm tay?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl51-q2" id="tl51-q2a"><label for="tl51-q2a" class="tl-opt tl-ok">A. Thời điểm bắt đầu và kết thúc do tia sáng bị chắn quyết định, không có độ trễ của người bấm</label>
-<input type="radio" name="tl51-q2" id="tl51-q2b"><label for="tl51-q2b" class="tl-opt tl-no">B. Vì xe chạy chậm hơn khi qua cổng quang</label>
-<input type="radio" name="tl51-q2" id="tl51-q2c"><label for="tl51-q2c" class="tl-opt tl-no">C. Vì $d/t$ luôn đúng bằng tốc độ tức thời tại cổng</label>
-<input type="radio" name="tl51-q2" id="tl51-q2d"><label for="tl51-q2d" class="tl-opt tl-no">D. Vì đồng hồ hiện số hoàn toàn không có sai số</label>
+<input type="radio" name="tl51-q2" id="tl51-q2b"><label for="tl51-q2b" class="tl-opt tl-no">B. Vì xe bị cổng quang làm chạy chậm lại khi đi qua nên đồng hồ ghi được rõ hơn</label>
+<input type="radio" name="tl51-q2" id="tl51-q2c"><label for="tl51-q2c" class="tl-opt tl-no">C. Vì $d/t$ luôn đúng bằng tốc độ tức thời tại cổng nên không còn sai số nào đáng kể</label>
+<input type="radio" name="tl51-q2" id="tl51-q2d"><label for="tl51-q2d" class="tl-opt tl-no">D. Vì đồng hồ hiện số hoàn toàn không có sai số nên kết quả luôn đúng tuyệt đối</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia sáng bị chắn thì đồng hồ chạy, hết chắn thì đồng hồ dừng, không cần tay người. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: cách đo không làm xe đổi tốc độ. C: $d/t$ vẫn là tốc độ trung bình trên bề rộng tấm chắn (xem mục 4). D: đồng hồ chỉ chia tới $0{,}001\ \text{s}$ nên vẫn có sai số, chỉ là nhỏ hơn bấm tay.</p></div>
 </div>
@@ -182,9 +187,9 @@ __BANG_TN3__
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Nhóm em bấm tay, mỗi lần bấm lệch cỡ $0{,}1\ \text{s}$. Cách nào giảm sai số tương đối hợp lí nhất?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl51-q3" id="tl51-q3a"><label for="tl51-q3a" class="tl-opt tl-no">A. Dùng đồng hồ bấm giây đắt hơn, vẫn bấm tay</label>
-<input type="radio" name="tl51-q3" id="tl51-q3b"><label for="tl51-q3b" class="tl-opt tl-no">B. Chỉ bấm một lần, nhưng bấm thật dứt khoát</label>
-<input type="radio" name="tl51-q3" id="tl51-q3c"><label for="tl51-q3c" class="tl-opt tl-no">C. Rút ngắn đường chạy để dễ nhìn xe hơn</label>
+<input type="radio" name="tl51-q3" id="tl51-q3a"><label for="tl51-q3a" class="tl-opt tl-no">A. Dùng đồng hồ bấm giây đắt tiền hơn, vẫn bấm tay như cũ ở mỗi lần đo</label>
+<input type="radio" name="tl51-q3" id="tl51-q3b"><label for="tl51-q3b" class="tl-opt tl-no">B. Chỉ bấm đúng một lần, nhưng bấm thật dứt khoát và tập trung nhìn xe</label>
+<input type="radio" name="tl51-q3" id="tl51-q3c"><label for="tl51-q3c" class="tl-opt tl-no">C. Rút ngắn đường chạy để dễ nhìn xe hơn, chạy xong thì bấm ngay</label>
 <input type="radio" name="tl51-q3" id="tl51-q3d"><label for="tl51-q3d" class="tl-opt tl-ok">D. Kéo dài đường chạy (cùng tốc độ), đo nhiều lần rồi lấy trung bình</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đường dài gấp đôi thì $t$ dài gấp đôi, còn độ lệch bấm vẫn cỡ $0{,}1\ \text{s}$, nên $\delta t$ giảm một nửa. Đo nhiều lần cho thêm trung bình và ước lượng sai số.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: đồng hồ đắt không sửa được độ trễ của người bấm. B: một lần bấm thì không có gì để lấy trung bình, cũng không ước được sai số. C: đường ngắn làm $t$ ngắn đi, $\delta t$ còn lớn hơn.</p></div>
@@ -247,10 +252,10 @@ __BANG_TN3__
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 4.</strong> Phép đo (I): $100\ \text{m}$, sai số $0{,}5\ \text{m}$. Phép đo (II): $0{,}50\ \text{m}$, sai số $0{,}5\ \text{cm}$. Phép đo nào chính xác hơn?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl51-q5" id="tl51-q5a"><label for="tl51-q5a" class="tl-opt tl-no">A. (II), vì $0{,}5\ \text{cm}$ nhỏ hơn $0{,}5\ \text{m}$</label>
+<input type="radio" name="tl51-q5" id="tl51-q5a"><label for="tl51-q5a" class="tl-opt tl-no">A. (II), vì $0{,}5\ \text{cm}$ nhỏ hơn $0{,}5\ \text{m}$ nên (II) sát giá trị thật hơn</label>
 <input type="radio" name="tl51-q5" id="tl51-q5b"><label for="tl51-q5b" class="tl-opt tl-ok">B. (I), vì sai số tương đối của (I) nhỏ hơn của (II)</label>
-<input type="radio" name="tl51-q5" id="tl51-q5c"><label for="tl51-q5c" class="tl-opt tl-no">C. Như nhau, vì cùng ghi "$0{,}5$"</label>
-<input type="radio" name="tl51-q5" id="tl51-q5d"><label for="tl51-q5d" class="tl-opt tl-no">D. Không so sánh được vì hai đơn vị khác nhau</label>
+<input type="radio" name="tl51-q5" id="tl51-q5c"><label for="tl51-q5c" class="tl-opt tl-no">C. Như nhau, vì cả hai phép đo cùng ghi sai số là "$0{,}5$"</label>
+<input type="radio" name="tl51-q5" id="tl51-q5d"><label for="tl51-q5d" class="tl-opt tl-no">D. Không so sánh được vì hai phép đo dùng hai đơn vị khác nhau</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> (I): $\dfrac{0{,}5}{100} = 0{,}5\ \%$. (II): $\dfrac{0{,}5}{50} = 1\ \%$ (đổi $0{,}50\ \text{m} = 50\ \text{cm}$). (I) chính xác hơn.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A so sánh hai số khác đơn vị. C so sánh chữ số, không so với giá trị đo. D: sai số tương đối không có đơn vị nên so sánh được. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất: đổi cùng đơn vị rồi chia.</p></div>
 </div>

@@ -52,8 +52,8 @@ v_left = True
 a_left = {"mA": False, "mH": False, "O": None, "pH": True, "pA": True}
 
 b = defs("f1")
-b += text(16, 22, "xanh lá: v", GRN, 12, "start", "700")
-b += text(150, 22, "đỏ: a, luôn hướng về O", RED, 12, "start", "700")
+b += text(16, 22, "xanh lá: v", GRN, 13, "start", "700")
+b += text(150, 22, "đỏ: a, luôn hướng về O", RED, 13, "start", "700")
 # ray + chiều dương
 b += line(36, 112, 400, 112, "currentColor", 2)
 b += '<path d="M393,107 L404,112 L393,117" fill="currentColor"/>'
@@ -66,14 +66,14 @@ for key, x in pos.items():
 for key, x in pos.items():
     L = vlen[key]
     if L < 1:
-        b += text(x, 58, "v = 0", GRN, 11, "middle", "700")
+        b += text(x, 58, "v = 0", GRN, 13, "middle", "700")
     else:
         b += arrow("f1", "g", x, 78, x - L, 78, 2.6)
 # mũi a (y = 150)
 for key, x in pos.items():
     L = alen[key]
     if L < 1:
-        b += text(x, 168, "a = 0", RED, 11, "middle", "700")
+        b += text(x, 168, "a = 0", RED, 13, "middle", "700")
     elif a_left[key]:
         b += arrow("f1", "r", x, 150, x - L, 150, 2.6)
     else:
@@ -81,8 +81,8 @@ for key, x in pos.items():
 labels = (("mA", "−A"), ("mH", "−A/2"), ("O", "O"), ("pH", "+A/2"), ("pA", "+A"))
 for key, lab in labels:
     b += text(pos[key], 196, lab, "currentColor", 13, "middle", "700")
-b += text(16, 216, "Từ +A về O: v và a cùng chiều, nhanh dần.", "currentColor", 11, "start", "500")
-b += text(16, 232, "Từ O ra −A: v và a ngược chiều, chậm dần.", "currentColor", 11, "start", "500")
+b += text(16, 216, "Từ +A về O: v và a cùng chiều, nhanh dần.", "currentColor", 13, "start", "500")
+b += text(16, 232, "Từ O ra −A: v và a ngược chiều, chậm dần.", "currentColor", 13, "start", "500")
 fig1 = wrap(
     "0 0 440 246",
     "Năm thời điểm của con lắc lò xo, nửa chu kì từ biên dương sang biên âm",
@@ -111,10 +111,10 @@ def Y(base, norm):
     return base - AMP * norm
 
 b = defs("f2")
-b += text(220, 16, "φ = 0", "currentColor", 12, "middle", "700")
-b += text(16, 16, "cam: x", ORG, 12, "start", "700")
-b += text(300, 16, "xanh: v", GRN, 12, "start", "700")
-b += text(372, 16, "đỏ: a", RED, 12, "start", "700")
+b += text(220, 16, "φ = 0", "currentColor", 13, "middle", "700")
+b += text(16, 16, "cam: x", ORG, 13, "start", "700")
+b += text(300, 16, "xanh: v", GRN, 13, "start", "700")
+b += text(372, 16, "đỏ: a", RED, 13, "start", "700")
 ths = [i * 2 * math.pi / 80 for i in range(81)]
 curves = {
     "x": (ORG, lambda th: math.cos(th)),
@@ -133,7 +133,7 @@ for name, (col, fn) in curves.items():
     b += line(X0, base, X1 + 12, base, "currentColor", 1.4)
     b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="currentColor"/>' % (
         X1 + 6, base - 3.2, X1 + 14, base, X1 + 6, base + 3.2)
-    b += text(X1 + 16, base + 4, "t", "currentColor", 12, "start", "700")
+    b += text(X1 + 16, base + 4, "t", "currentColor", 13, "start", "700")
     b += text(18, base + 4, name, "currentColor", 13, "start", "700")
     b += poly([(X(th), Y(base, fn(th))) for th in ths], col, 2.3)
 # lưới T/4, T/2, 3T/4
@@ -141,7 +141,7 @@ for k, lab in ((1, "T/4"), (2, "T/2"), (3, "3T/4")):
     x = X(k * math.pi / 2)
     b += line(x, 46, x, 276, "currentColor", 1, "3 3", 0.35)
 for k, lab in ((0, "0"), (1, "T/4"), (2, "T/2"), (3, "3T/4"), (4, "T")):
-    b += text(X(k * math.pi / 2), 294, lab, "currentColor", 11, "middle", "600")
+    b += text(X(k * math.pi / 2), 294, lab, "currentColor", 13, "middle", "600")
 # chấm t = 0: x cực đại, v = 0, a cực tiểu
 b += dot(X(0), Y(bases["x"], 1), 4, ORG)
 b += dot(X(0), Y(bases["v"], 0), 4, GRN)
@@ -192,16 +192,16 @@ b += dot(u[0], u[1], 4, GRN)
 b += dot(d[0], d[1], 4, GRN)
 b += text(390, CY - 12, "x", "currentColor", 13, "start", "700")
 b += text(CX - 16, 22, "v", "currentColor", 13, "end", "700")
-b += text(r[0] + 6, CY - 12, "+A", ORG, 12, "start", "700")
-b += text(l[0] - 6, CY - 12, "−A", ORG, 12, "end", "700")
-b += text(u[0] + 14, u[1] - 8, "+Aω", GRN, 12, "start", "700")
-b += text(d[0] + 14, d[1] + 18, "−Aω", GRN, 12, "start", "700")
-b += text(16, 244, "Chiều mũi tên: chiều kim đồng hồ khi θ tăng.", "currentColor", 11, "start", "500")
+b += text(r[0] + 6, CY - 12, "+A", ORG, 13, "start", "700")
+b += text(l[0] - 6, CY - 12, "−A", ORG, 13, "end", "700")
+b += text(u[0] + 14, u[1] - 8, "+Aω", GRN, 13, "start", "700")
+b += text(d[0] + 14, d[1] + 18, "−Aω", GRN, 13, "start", "700")
+b += text(16, 244, "Chiều mũi tên: chiều kim đồng hồ khi θ tăng.", "currentColor", 13, "start", "500")
 fig3 = wrap(
     "0 0 440 258",
     "Elip li độ và vận tốc, phương trình (x/A) bình phương cộng (v chia A omega) bình phương bằng 1",
     b,
-    "Hình 3. Đồ thị x–v là elip: (x/A)² + (v/(ωA))² = 1. Trục chia đều.",
+    "Hình 3. Đồ thị x–v là elip: (x/A)² + (v/(ωA))² = 1. Hai trục khác thang.",
 )
 
 
@@ -235,7 +235,7 @@ assert q2[0] < q1[0]  # θ tăng, v giảm (sang trái)
 
 b = defs("f4")
 # panel trái
-b += text(LX, 18, "a theo x", RED, 12, "middle", "700")
+b += text(LX, 18, "a theo x", RED, 13, "middle", "700")
 b += line(LX - H - 18, LY, LX + H + 22, LY, "currentColor", 1.4)
 b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="currentColor"/>' % (
     LX + H + 14, LY - 3, LX + H + 24, LY, LX + H + 14, LY + 3)
@@ -247,14 +247,14 @@ b += '<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="2.
 b += dot(p_pos[0], p_pos[1], 4, RED)
 b += dot(p_neg[0], p_neg[1], 4, RED)
 b += dot(LX, LY, 3.5, "currentColor")
-b += text(LX + H + 26, LY + 4, "x", "currentColor", 12, "start", "700")
-b += text(LX + 8, LY - H - 20, "a", "currentColor", 12, "start", "700")
-b += text(p_pos[0] - 4, LY + 16, "+A", ORG, 11, "end", "700")
-b += text(p_neg[0] + 4, LY + 16, "−A", ORG, 11, "start", "700")
-b += text(LX + 8, p_neg[1] - 2, "+ω²A", RED, 11, "start", "700")
-b += text(p_pos[0] - 2, p_pos[1] + 16, "−ω²A", RED, 11, "end", "700")
+b += text(LX + H + 26, LY + 4, "x", "currentColor", 13, "start", "700")
+b += text(LX + 8, LY - H - 20, "a", "currentColor", 13, "start", "700")
+b += text(p_pos[0], LY + 16, "+A", ORG, 13, "middle", "700")
+b += text(p_neg[0], LY + 16, "−A", ORG, 13, "middle", "700")
+b += text(LX + 8, p_neg[1] - 2, "+ω²A", RED, 13, "start", "700")
+b += text(p_pos[0] - 2, p_pos[1] + 16, "−ω²A", RED, 13, "end", "700")
 # panel phải
-b += text(RXC, 18, "v và a", GRN, 12, "middle", "700")
+b += text(RXC, 18, "v và a", GRN, 13, "middle", "700")
 b += line(RXC - RV - 16, RYC, RXC + RV + 18, RYC, "currentColor", 1.4)
 b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="currentColor"/>' % (
     RXC + RV + 10, RYC - 3, RXC + RV + 20, RYC, RXC + RV + 10, RYC + 3)
@@ -269,12 +269,12 @@ b += dot(right[0], right[1], 4, BLUE)
 b += dot(left[0], left[1], 4, BLUE)
 b += dot(top[0], top[1], 4, RED)
 b += dot(bot[0], bot[1], 4, RED)
-b += text(RXC + RV + 22, RYC - 12, "v", "currentColor", 12, "start", "700")
-b += text(RXC - 8, RYC - RA - 10, "a", "currentColor", 12, "end", "700")
-b += text(right[0] + 4, RYC + 16, "+Aω", BLUE, 11, "start", "700")
-b += text(left[0] - 4, RYC + 4, "−Aω", BLUE, 11, "end", "700")
-b += text(top[0] + 12, top[1] - 2, "+ω²A", RED, 11, "start", "700")
-b += text(bot[0] + 12, bot[1] + 16, "−ω²A", RED, 11, "start", "700")
+b += text(RXC + RV + 22, RYC - 12, "v", "currentColor", 13, "start", "700")
+b += text(RXC - 8, RYC - RA - 10, "a", "currentColor", 13, "end", "700")
+b += text(right[0] + 4, RYC + 16, "+Aω", BLUE, 13, "start", "700")
+b += text(left[0] - 2, RYC - 10, "−Aω", BLUE, 13, "end", "700")
+b += text(top[0] + 12, top[1] - 2, "+ω²A", RED, 13, "start", "700")
+b += text(bot[0] + 12, bot[1] + 16, "−ω²A", RED, 13, "start", "700")
 fig4 = wrap(
     "0 0 440 230",
     "Đoạn thẳng gia tốc theo li độ qua gốc, và elip vận tốc với gia tốc",

@@ -10,7 +10,7 @@
 
 <h3>I. Mở bài: pin "còn 1,5 V" mà xe không chạy</h3>
 
-<p>Chiếc xe đồ chơi chạy pin AA đứng ì. Đo hai đầu viên pin bằng đồng hồ đa năng: <strong>1,50 V</strong>, bằng pin mới trong vỉ. "Pin còn tốt mà?"</p>
+<p>Chiếc xe đồ chơi chạy pin AA đứng ì. Đo hai đầu viên pin bằng đồng hồ đa năng: <strong>1,50 V</strong>, gần bằng pin mới trong vỉ. "Pin còn tốt mà?"</p>
 
 <p>Lắp pin vào, động cơ chỉ rên ư ử. Đo lại hai đầu pin <em>trong lúc</em> động cơ quay: chỉ còn <strong>1,06 V</strong>. Cùng một viên pin, hai số đo lệch nhau gần nửa vôn.</p>
 
@@ -20,12 +20,12 @@
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Vì sao số đo tụt từ 1,50 V xuống 1,06 V khi động cơ quay?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl45-q1" id="tl45-q1a"><label for="tl45-q1a" class="tl-opt tl-no">A. Đồng hồ đo sai khi có dòng chạy trong mạch</label>
-<input type="radio" name="tl45-q1" id="tl45-q1b"><label for="tl45-q1b" class="tl-opt tl-no">B. Động cơ "hút" bớt suất điện động của pin</label>
-<input type="radio" name="tl45-q1" id="tl45-q1c"><label for="tl45-q1c" class="tl-opt tl-ok">C. Có dòng thì pin sụt áp $Ir$ bên trong; pin cũ có $r$ lớn nên sụt nhiều</label>
-<input type="radio" name="tl45-q1" id="tl45-q1d"><label for="tl45-q1d" class="tl-opt tl-no">D. Pin hết năng lượng, chỉ còn "điện áp ảo"</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Lúc hở mạch $I = 0$, vôn kế đọc đúng $\mathcal{E} = 1{,}50$ V. Khi động cơ kéo dòng $I \approx 0{,}5$ A, hai đầu pin chỉ còn $U = \mathcal{E} - Ir$. Pin cũ có $r$ cỡ $0{,}8\ \Omega$ nên mất $0{,}4$ V ngay trong lòng pin. Bài này đo chính $\mathcal{E}$ và $r$ đó.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — đồng hồ đo đúng cả hai lần; chính hai số đo khác nhau mới là hiện tượng cần giải thích. B — suất điện động là đặc tính hoá học của pin, động cơ không "hút" được; thứ bị mất là $Ir$ bên trong pin. D — pin vẫn đẩy được dòng $0{,}5$ A, nghĩa là vẫn có năng lượng, chỉ là năng lượng hao một phần trên $r$. Nhớ lại bài Nguồn điện: $U = \mathcal{E} - Ir$.</p></div>
+<input type="radio" name="tl45-q1" id="tl45-q1a"><label for="tl45-q1a" class="tl-opt tl-no">A. Đồng hồ đo sai mỗi khi có dòng chạy trong mạch</label>
+<input type="radio" name="tl45-q1" id="tl45-q1b"><label for="tl45-q1b" class="tl-opt tl-no">B. Động cơ "hút" bớt suất điện động của viên pin</label>
+<input type="radio" name="tl45-q1" id="tl45-q1c"><label for="tl45-q1c" class="tl-opt tl-ok">C. Có dòng thì pin sụt áp $Ir$ bên trong, pin cũ sụt nhiều</label>
+<input type="radio" name="tl45-q1" id="tl45-q1d"><label for="tl45-q1d" class="tl-opt tl-no">D. Pin hết năng lượng nên chỉ còn "điện áp ảo" ở hai cực</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Lúc hở mạch $I = 0$, vôn kế đọc đúng $\mathcal{E} = 1{,}50$ V. Khi động cơ kéo dòng $I \approx 0{,}53$ A, hai đầu pin chỉ còn $U = \mathcal{E} - Ir$. Pin cũ có $r$ cỡ $0{,}8\ \Omega$ nên mất cỡ $0{,}44$ V ngay trong lòng pin. Bài này đo chính $\mathcal{E}$ và $r$ đó.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — đồng hồ đo đúng cả hai lần; chính hai số đo khác nhau mới là hiện tượng cần giải thích. B — suất điện động là đặc tính hoá học của pin, động cơ không "hút" được; thứ bị mất là $Ir$ bên trong pin. D — pin vẫn đẩy được dòng $0{,}53$ A, nghĩa là vẫn có năng lượng, chỉ là năng lượng hao một phần trên $r$. Nhớ lại bài Nguồn điện: $U = \mathcal{E} - Ir$.</p></div>
 </div>
 </div>
 
@@ -104,9 +104,9 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <p>Vì sao phải mắc thêm điện trở bảo vệ $R_0 = 2{,}0\ \Omega$ nối tiếp với biến trở?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl45-q3" id="tl45-q3a"><label for="tl45-q3a" class="tl-opt tl-no">A. Để vôn kế đọc đúng $\mathcal{E}$ mà không cần ngắt K</label>
-<input type="radio" name="tl45-q3" id="tl45-q3b"><label for="tl45-q3b" class="tl-opt tl-ok">B. Khi biến trở về $0$, mạch ngoài vẫn còn $2\ \Omega$, dòng không vọt như đoản mạch</label>
-<input type="radio" name="tl45-q3" id="tl45-q3c"><label for="tl45-q3c" class="tl-opt tl-no">C. Để tăng suất điện động của pin lên</label>
-<input type="radio" name="tl45-q3" id="tl45-q3d"><label for="tl45-q3d" class="tl-opt tl-no">D. Để đồ thị $U$–$I$ thành đường thẳng</label>
+<input type="radio" name="tl45-q3" id="tl45-q3b"><label for="tl45-q3b" class="tl-opt tl-ok">B. Khi biến trở về $0$, mạch ngoài còn $2\ \Omega$, dòng không vọt</label>
+<input type="radio" name="tl45-q3" id="tl45-q3c"><label for="tl45-q3c" class="tl-opt tl-no">C. Để làm tăng suất điện động của pin lên một chút</label>
+<input type="radio" name="tl45-q3" id="tl45-q3d"><label for="tl45-q3d" class="tl-opt tl-no">D. Để đồ thị $U$–$I$ trở thành một đường thẳng</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Không có $R_0$, lúc $R_x = 0$ thì $I = \mathcal{E}/r \approx 1{,}5/0{,}8 \approx 1{,}9$ A: pin nóng nhanh, ampe kế sát thang 2 A, dễ quá tải. Có $R_0$, dòng lớn nhất chỉ $1{,}5/2{,}8 \approx 0{,}54$ A.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — K đóng là có dòng, vôn kế đọc $U = \mathcal{E} - Ir \lt \mathcal{E}$ dù có $R_0$; chỉ hở mạch ($I = 0$) mới đọc $\mathcal{E}$. C — không linh kiện ngoài nào đổi được $\mathcal{E}$ của pin. D — đồ thị là đường thẳng do $U = \mathcal{E} - Ir$, có hay không có $R_0$ cũng vậy. Hãy nghĩ tới lúc biến trở ở $0\ \Omega$.</p></div>
 </div>
@@ -203,10 +203,10 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p>Một bạn lỡ mắc ampe kế <strong>song song</strong> với hai cực pin. Chuyện gì xảy ra?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl45-q6" id="tl45-q6a"><label for="tl45-q6a" class="tl-opt tl-ok">A. Ampe kế nối tắt hai cực: dòng rất lớn, pin nóng nhanh, ampe kế sát thang, dễ quá tải</label>
-<input type="radio" name="tl45-q6" id="tl45-q6b"><label for="tl45-q6b" class="tl-opt tl-no">B. Ampe kế chỉ $0$, vì không có dòng qua nó</label>
-<input type="radio" name="tl45-q6" id="tl45-q6c"><label for="tl45-q6c" class="tl-opt tl-no">C. Ampe kế đọc đúng dòng qua biến trở, không sao</label>
-<input type="radio" name="tl45-q6" id="tl45-q6d"><label for="tl45-q6d" class="tl-opt tl-no">D. Vôn kế chỉ $\mathcal{E}$ chính xác hơn</label>
+<input type="radio" name="tl45-q6" id="tl45-q6a"><label for="tl45-q6a" class="tl-opt tl-ok">A. Ampe kế nối tắt hai cực: dòng rất lớn, pin nóng, ampe kế quá tải</label>
+<input type="radio" name="tl45-q6" id="tl45-q6b"><label for="tl45-q6b" class="tl-opt tl-no">B. Ampe kế chỉ $0$, vì không có dòng nào đi qua nó</label>
+<input type="radio" name="tl45-q6" id="tl45-q6c"><label for="tl45-q6c" class="tl-opt tl-no">C. Ampe kế đọc đúng dòng qua biến trở nên không sao</label>
+<input type="radio" name="tl45-q6" id="tl45-q6d"><label for="tl45-q6d" class="tl-opt tl-no">D. Vôn kế chỉ $\mathcal{E}$ chính xác hơn khi không có $R_0$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện trở ampe kế gần $0$ nên nó nối tắt hai cực pin: $I = \mathcal{E}/r \approx 1{,}9$ A chạy qua ampe kế — sát thang 2 A, pin nóng nhanh. Đây đúng là tình huống đoản mạch mà phần an toàn cảnh báo.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — chỉ $0$ là chuyện của <em>vôn kế mắc nhầm chỗ ampe kế</em> (điện trở lớn chặn dòng); ampe kế thì ngược lại, dẫn gần như dây. C — ampe kế đo dòng qua chính nó, mà nó đang là đường tắt, không còn liên quan tới biến trở. D — khi đoản mạch, $U$ hai cực tụt gần $0$, vôn kế đọc càng xa $\mathcal{E}$. Nhớ: nhỏ thì nối tiếp, lớn thì song song.</p></div>
 </div>
@@ -234,7 +234,7 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <input type="radio" name="tl45-q7" id="tl45-q7a"><label for="tl45-q7a" class="tl-opt tl-no">A. Đúng, vì $R = U/I$ áp dụng cho mọi đoạn mạch</label>
 <input type="radio" name="tl45-q7" id="tl45-q7b"><label for="tl45-q7b" class="tl-opt tl-no">B. Sai, phải tính $r = I/U = 0{,}25\ \Omega$</label>
 <input type="radio" name="tl45-q7" id="tl45-q7c"><label for="tl45-q7c" class="tl-opt tl-no">C. Sai, phải lấy $\mathcal{E}/I = 1{,}50/0{,}311 \approx 4{,}8\ \Omega$</label>
-<input type="radio" name="tl45-q7" id="tl45-q7d"><label for="tl45-q7d" class="tl-opt tl-ok">D. Sai: $4{,}0\ \Omega$ là $R_0 + R_x = 2 + 2$, điện trở mạch ngoài lần đo đó</label>
+<input type="radio" name="tl45-q7" id="tl45-q7d"><label for="tl45-q7d" class="tl-opt tl-ok">D. Sai: $4{,}0\ \Omega$ là $R_0 + R_x$, điện trở mạch ngoài lần đo đó</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lần 5 vặn $R_x = 2\ \Omega$, cộng $R_0 = 2\ \Omega$ là $4\ \Omega$ — đúng bằng $U/I$. Vôn kế đo $U$ hai đầu mạch ngoài, nên $U/I$ chỉ nói về mạch ngoài. Muốn ra $r$ phải dùng thêm $\mathcal{E}$: $(1{,}50 - 1{,}25)/0{,}311 \approx 0{,}8\ \Omega$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $U/I$ đúng là một điện trở, nhưng là điện trở của đoạn mạch mà vôn kế đang kẹp vào: mạch ngoài. B — $I/U$ không có nghĩa vật lí nào ở đây; $0{,}25$ chỉ là con số đảo ngược. C — $\mathcal{E}/I$ là điện trở <em>toàn mạch</em> $R_0 + R_x + r$, vẫn chưa tách được $r$. Hãy so $4{,}0\ \Omega$ với giá trị biến trở ở lần đo 5.</p></div>
 </div>
@@ -287,7 +287,6 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 <p>b) Xác định $\mathcal{E}$ và $r$ của pin.</p>
 <p>c) Ước lượng sai số và viết kết quả dạng $\mathcal{E} = \ldots \pm \ldots$; $r = \ldots \pm \ldots$</p>
 </div>
-
 <!--FIG3-->
 
 <p>Mỗi cụm của đề: <strong>dữ liệu gì</strong>, <strong>kiến thức nào</strong>?</p>
@@ -305,13 +304,19 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 </div>
 
 <details class="tl-details">
-<summary>🧮 Bấm xem: lời giải</summary>
+<summary>🧮 Bấm xem: lời giải câu a, b</summary>
 <ol class="tl-steps">
 <li><strong>Câu a:</strong> trục ngang $I$ từ $0$ đến $0{,}6$ A, trục dọc $U$ từ $1{,}0$ đến $1{,}7$ V. Chấm 6 điểm, kẻ đường thẳng sao cho các điểm nằm đều hai bên (hình 3); máy khớp bình phương tối thiểu cho $U = 1{,}496 - 0{,}806\,I$.</li>
 <li><strong>Câu b:</strong> kéo dài đường thẳng cắt trục $U$ tại $U_0 = 1{,}50$ V $\Rightarrow \mathcal{E} = 1{,}50$ V.</li>
 <li><strong>Câu b (tiếp):</strong> chọn hai điểm <strong>trên đường thẳng</strong>, xa nhau: A$(0;\ 1{,}50)$ và B$(0{,}500;\ 1{,}09)$.
 $$r = \dfrac{U_A - U_B}{I_B - I_A}$$
 $$= \dfrac{1{,}50 - 1{,}09}{0{,}500 - 0} = 0{,}82\ \Omega$$</li>
+</ol>
+</details>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem: câu c và kiểm tra</summary>
+<ol class="tl-steps">
 <li><strong>Câu c:</strong> mỗi $U$ đọc lệch $\pm 0{,}01$ V, mỗi $I$ lệch $\pm 0{,}002$ A. Sai số tỉ đối của $r$:
 $$\dfrac{\Delta r}{r} = \dfrac{0{,}01 + 0{,}01}{0{,}41}$$
 $$+ \dfrac{0{,}002 + 0{,}002}{0{,}500} \approx 0{,}057$$
@@ -364,7 +369,7 @@ $\Delta r \approx 0{,}82 \cdot 0{,}057 \approx 0{,}05\ \Omega$. Với $\mathcal{
 
 <ul>
 <li><strong>Pin máy khoan cầm tay:</strong> pin chai, $r$ tăng; ấn mũi khoan vào thép là máy khựng dù đèn báo vẫn "đầy".</li>
-<li><strong>Acquy xe máy sáng lạnh:</strong> đề kéo vài chục ampe, $r$ tăng khi lạnh, đèn tối lúc bấm đề.</li>
+<li><strong>Ắc quy xe máy sáng lạnh:</strong> đề kéo vài chục ampe, $r$ tăng khi lạnh, đèn tối lúc bấm đề.</li>
 <li><strong>Điện thoại 20 % sập nguồn khi bật camera:</strong> pin chai $r$ lớn, dòng tăng vọt, $U$ tụt dưới ngưỡng, máy tắt.</li>
 </ul>
 
@@ -372,8 +377,8 @@ $\Delta r \approx 0{,}82 \cdot 0{,}057 \approx 0{,}05\ \Omega$. Với $\mathcal{
 <p class="tl-label">🎯 Thử thách phân tầng</p>
 
 <details class="tl-details">
-<summary>⭐ Đường $U$–$I$ của acquy cắt trục $U$ tại $12{,}6$ V, qua $(20\ \text{A};\ 11{,}6\ \text{V})$. Tính $r$.</summary>
-<p>$r = \dfrac{12{,}6 - 11{,}6}{20 - 0} = 0{,}05\ \Omega$. Acquy có $r$ rất nhỏ nên mới cấp được dòng đề hàng chục ampe.</p>
+<summary>⭐ Đường $U$–$I$ của ắc quy cắt trục $U$ tại $12{,}6$ V, qua $(20\ \text{A};\ 11{,}6\ \text{V})$. Tính $r$.</summary>
+<p>$r = \dfrac{12{,}6 - 11{,}6}{20 - 0} = 0{,}05\ \Omega$. Ắc quy có $r$ rất nhỏ nên mới cấp được dòng đề hàng chục ampe.</p>
 </details>
 
 <details class="tl-details">

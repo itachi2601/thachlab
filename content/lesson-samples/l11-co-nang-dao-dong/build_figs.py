@@ -76,12 +76,12 @@ b += poly(arc, GRN, 2.2)
 ax, ay = arc[-1]
 b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f Z" fill="%s"/>' % (
     ax + 9, ay, ax - 2, ay - 5, ax - 2, ay + 5, GRN)
-b += T(hx - 10, hy - 16, "biên", ORG, 13, "end")
-b += T(hx - 10, hy + 28, "v = 0", ORG, 12, "end")
+b += T(hx, hy + 28, "biên", ORG, 13, "middle")
+b += T(hx, hy + 45, "v = 0", ORG, 13, "middle")
 b += T(lx + 14, ly - 8, "VTCB", BLUE, 13, "start")
-b += T(lx + 14, ly + 14, "v lớn", BLUE, 12, "start")
-b += T(300, 78, "lò xo cửa", ORG, 12, "start")
-b += T(300, 148, "nam châm tủ", BLUE, 12, "start")
+b += T(lx + 14, ly + 14, "v lớn", BLUE, 13, "start")
+b += T(300, 78, "lò xo cửa", ORG, 13, "start")
+b += T(300, 148, "nam châm tủ", BLUE, 13, "start")
 # lò xo nhỏ
 zx = [300 + 8 * i for i in range(8)]
 zy = [96 + (8 if i % 2 else -8) for i in range(8)]
@@ -89,8 +89,8 @@ b += poly(list(zip(zx, zy)), ORG, 2)
 # hai cực nam châm, mũi hút vào nhau
 b += '<rect x="300" y="162" width="28" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
 b += '<rect x="346" y="162" width="28" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-b += T(314, 174, "N", "currentColor", 11, "middle")
-b += T(360, 174, "S", "currentColor", 11, "middle")
+b += T(314, 174, "N", "currentColor", 13, "middle")
+b += T(360, 174, "S", "currentColor", 13, "middle")
 b += line(330, 170, 344, 170, GRN, 2)
 b += '<path d="M336,166 L344,170 L336,174 Z" fill="%s"/>' % GRN
 fig1 = wrap("0 0 440 214",
@@ -138,13 +138,14 @@ for sgn in (-1, 1):
     b += dot(X(sgn * xi), Yet(xi), 5, RED)
 b += T(OX - 22, yW - 22, "E", "currentColor", 13, "end")
 b += T(X(1) + 8, OY + 4, "x", "currentColor", 13, "start")
-b += T(X(-1), OY + 20, "−A", "currentColor", 12, "middle")
-b += T(OX, OY + 20, "0", "currentColor", 12, "middle")
-b += T(X(1), OY + 20, "+A", "currentColor", 12, "middle")
+b += T(X(-1), OY + 20, "−A", "currentColor", 13, "middle")
+b += T(OX, OY + 20, "0", "currentColor", 13, "middle")
+b += T(X(1), OY + 20, "+A", "currentColor", 13, "middle")
 b += T(X(-0.78), yW - 18, "W", GRN, 13, "middle")
 b += T(X(0.16), yW + 28, "Ed", BLUE, 13, "start")
 b += T(OX + 36, OY - 18, "Et", ORG, 13, "start")
-b += T(X(1) + 10, Yet(xi) + 4, "A/√2", RED, 12, "start")
+b += T(X(-xi), OY + 20, "−A/√2", RED, 13, "middle")
+b += T(X(xi), OY + 20, "A/√2", RED, 13, "middle")
 fig2 = wrap("0 0 440 252",
             "Đồ thị thế năng lõm lên và động năng lõm xuống theo li độ, cắt nhau tại cộng trừ A trên căn hai",
             b, "Hình 2. $E_t$ lõm lên, $E_d$ lõm xuống.<br>Cắt nhau tại x = ±A/√2.")
@@ -189,8 +190,8 @@ b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="none" stroke="%s" stroke-
 b += T(x0 - 6, yW + 4, "E", "currentColor", 13, "end")
 b += T(x1 + 8, y0 + 4, "t", "currentColor", 13, "start")
 b += T(x1 - 4, yW - 8, "W", GRN, 13, "end")
-b += T(x0 + 10, yW - 16, "Et", ORG, 12, "start")
-b += T(Xt(0.25), yW + 48, "Ed", BLUE, 12, "middle")
+b += T(x0 + 10, yW - 16, "Et", ORG, 13, "start")
+b += T(Xt(0.25), yW + 48, "Ed", BLUE, 13, "middle")
 b += T((Xt(0) + Xt(0.5)) / 2, y0 + 34, "T/2", GRN, 13, "middle")
 fig3 = wrap("0 0 440 246",
             "Thế năng và động năng ngược pha, chu kì bằng nửa chu kì li độ; cơ năng là đường nằm ngang",
