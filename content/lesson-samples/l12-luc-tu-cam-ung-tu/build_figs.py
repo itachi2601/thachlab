@@ -67,15 +67,17 @@ b += line(240, 88, 300, 88, "currentColor", 3.5)
 b += line(240, 116, 300, 116, "currentColor", 3.5)
 b += line(240, 144, 300, 144, "currentColor", 3.5)
 b += line(240, 172, 300, 172, "currentColor", 3.5)
-b += line(166, 76, 140, 30, "currentColor", 3.5)                                # ngón cái
+b += line(166, 76, 150, 46, "currentColor", 3.5)                                # ngón cái
+b += arrow("f2", "r", 152, 50, 140, 28, 3)                                      # F: chiều ngón cái
 b += line(150, 130, 124, 130, "currentColor", 3.5)                              # cổ tay
 b += vao(195, 130, 16, BLUE)                                                    # B xuyên vào lòng bàn tay
 b += text(195, 108, "B", BLUE, 14, "middle", "700")
 b += text(140, 20, "F", RED, 15, "middle", "700")
-b += text(312, 126, "I", ORG, 15, "start", "700")
-b += text(312, 146, "cổ tay → ngón tay", ORG, 11, "start", "600")
-b += text(16, 236, "⊗: đường sức từ xuyên vào lòng bàn tay · ngón cái choãi 90° chỉ chiều F", BLUE, 11, "start", "600")
-fig2 = wrap("0 0 440 250", "Bàn tay trái duỗi thẳng: các đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo chiều dòng điện, ngón cái choãi ra chỉ chiều lực từ",
+b += arrow("f2", "o", 150, 206, 296, 206, 3)                                     # I: cổ tay → ngón tay
+b += text(322, 211, "I", ORG, 15, "start", "700")
+b += text(150, 228, "chiều dòng điện: cổ tay → ngón tay", ORG, 11, "start", "600")
+b += text(16, 248, "⊗: đường sức từ xuyên vào lòng bàn tay · ngón cái choãi 90° chỉ chiều F", BLUE, 11, "start", "600")
+fig2 = wrap("0 0 440 260", "Bàn tay trái duỗi thẳng: các đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo chiều dòng điện, ngón cái choãi ra chỉ chiều lực từ",
             b, "Hình 2. Bàn tay trái: đường sức (⊗) xuyên vào lòng bàn tay, cổ tay → ngón tay theo chiều I, ngón cái chỉ F.")
 
 # ------------------------------------------------- Hình 3: đồ thị F theo I của thí nghiệm đo

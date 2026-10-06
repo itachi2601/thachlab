@@ -13,7 +13,7 @@
     "nhietluong.nhiet_dung_rieng",
     "dl1.do_bien_thien_noi_nang"
   ],
-  "muc_tieu": "Từ nhiệt lượng bếp truyền vào nước suy ra nhiệt dung riêng của nước, so với giá trị tra bảng 4180 J/(kg·K), và giải thích vì sao giá trị đo được luôn nhỏ hơn.",
+  "muc_tieu": "Từ nhiệt lượng bếp truyền vào nước suy ra nhiệt dung riêng của nước, so với giá trị tra bảng 4180 J/(kg·K), và giải thích vì sao giá trị đo được luôn lớn hơn.",
   "dung_cu": [
     { "ten": "Nhiệt lượng kế bằng nhựa có vỏ xốp, nắp đậy", "so_luong": 1 },
     { "ten": "Bếp điện hoặc điện trở nhiệt gắn trong bình", "so_luong": 1 },
@@ -34,12 +34,12 @@
     ],
     "quan_sat": [
       "Nhiệt độ tăng gần như tuyến tính theo thời gian: các điểm trên đồ thị t(τ) nằm gần một đường thẳng.",
-      "Bốn giá trị c tính ra nằm trong khoảng 4,0.10³ đến 4,2.10³ J/(kg·K), đều nhỏ hơn 4180.",
-      "Giá trị c tính theo độ dốc đồ thị lệch không quá 3% so với giá trị tính theo từng mốc; sai khác thấy rõ nhất ở mốc cuối vì nhiệt độ nước đã cao nên mất nhiệt ra môi trường mạnh hơn."
+      "Bốn giá trị c tính ra nằm trong khoảng 4,3.10³ đến 4,4.10³ J/(kg·K), đều lớn hơn 4180.",
+      "Giá trị c tính theo độ dốc đồ thị lệch không quá 3% so với giá trị tính theo từng mốc; sai khác thấy rõ nhất ở mốc cuối vì nhiệt độ nước đã cao nên mất nhiệt ra môi trường mạnh hơn (c tăng dần từ mốc đầu tới mốc cuối)."
     ],
     "rut_ra": [
       "Nhiệt lượng bếp truyền vào nước là Q = P·τ, và hệ thức Q = m·c·Δt cho phép suy ra c.",
-      "c đo được nhỏ hơn giá trị tra bảng vì một phần nhiệt truyền cho bình, nắp và thoát ra môi trường chứ không vào nước.",
+      "c đo được lớn hơn giá trị tra bảng vì một phần nhiệt truyền cho bình, nắp và thoát ra môi trường chứ không vào nước: Δt đo được nhỏ hơn Δt lí tưởng nên c = P·τ/(m·Δt) bị đẩy lên.",
       "Sai số hệ thống (mất nhiệt) làm c luôn lệch về một phía; nếu chỉ có sai số ngẫu nhiên thì các lần đo sẽ lệch cả hai phía của giá trị thật."
     ]
   },
@@ -59,7 +59,7 @@
       "Nhiệt bếp truyền cho hệ: Q = P·τ",
       "Phần nhiệt vào nước làm nước nóng lên: Q_nước = m·c·Δt",
       "Bỏ qua mất mát: c = P·τ / (m·Δt)",
-      "Kể cả bình và hao phí: P·τ = m·c·Δt + m_b·c_b·Δt + Q_hao, do đó c_đo < c_thật",
+      "Kể cả bình và hao phí: P·τ = m·c·Δt + m_b·c_b·Δt + Q_hao, Δt đo được nhỏ hơn Δt lí tưởng, do đó c_đo > c_thật",
       "Tính theo độ dốc đồ thị t(τ) với k = Δt/Δτ: c = P / (m·k)"
     ],
     "gia_thiet": [
@@ -67,22 +67,22 @@
       "nước được khuấy đều nên nhiệt độ trong bình đồng nhất",
       "khối lượng bình khoảng 0,05 kg nhôm và nhiệt hao ra môi trường khoảng 5% trong 80 giây"
     ],
-    "ghi_chu": "Mô phỏng nên có hai chế độ: 'bình cách nhiệt hoàn hảo' cho c đúng 4180, và 'bình thật' cộng thêm nhiệt dung bình + hao phí để c ra khoảng 4000–4100 — học sinh thấy sai số hệ thống chứ không phải sai số ngẫu nhiên."
+    "ghi_chu": "Mô phỏng nên có hai chế độ: 'bình cách nhiệt hoàn hảo' cho c đúng 4180, và 'bình thật' cộng thêm nhiệt dung bình + hao phí để Δt nhỏ hơn lí tưởng, c ra khoảng 4350–4420 — học sinh thấy sai số hệ thống chứ không phải sai số ngẫu nhiên."
   },
   "so_lieu_mau": {
     "cot": ["Thời gian τ (s)", "Nhiệt độ t (°C)", "Q = P·τ (J)", "c = Q/(m·Δt) (J/(kg·K))"],
     "hang": [
       [0, 25.0, 0, 0],
-      [20, 29.8, 10000, 4167],
-      [40, 34.9, 20000, 4040],
-      [60, 39.7, 30000, 4082],
-      [80, 44.6, 40000, 4082]
+      [20, 29.6, 10000, 4348],
+      [40, 34.1, 20000, 4396],
+      [60, 38.6, 30000, 4412],
+      [80, 43.1, 40000, 4420]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,500 kg, P = 500 W, c_hiệu dụng ≈ 4,1.10³ J/(kg·K) (đã kể nhiệt dung bình và hao phí ~2%). Giá trị c tính ra ở cột cuối dùng Δt so với nhiệt độ ban đầu 25,0 °C."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,500 kg, P = 500 W, hao phí tăng dần từ ~4% (20 s) đến ~5,5% (80 s) nên Δt đo nhỏ hơn Δt lí tưởng (c_thật = 4180) và c_đo ≈ 4,4.10³ J/(kg·K), cao hơn khoảng 5%. Giá trị c tính ra ở cột cuối dùng Δt so với nhiệt độ ban đầu 25,0 °C."
   },
-  "ket_qua_ky_vong": "Nhiệt độ nước tăng gần như đều theo thời gian; c tính từ số đo nằm trong khoảng 4,0.10³ đến 4,2.10³ J/(kg·K), luôn nhỏ hơn 4180. Hai cách tính (từng mốc và theo độ dốc đồ thị) cho kết quả lệch nhau dưới 3%.",
+  "ket_qua_ky_vong": "Nhiệt độ nước tăng gần như đều theo thời gian; c tính từ số đo nằm trong khoảng 4,3.10³ đến 4,4.10³ J/(kg·K), luôn lớn hơn 4180 (cao hơn khoảng 5%). Hai cách tính (từng mốc và theo độ dốc đồ thị) cho kết quả lệch nhau dưới 3%.",
   "hien_tuong_hay_sai": [
-    "Cho rằng c đo được nhỏ hơn vì 'nhiệt kế đọc sai' — thực ra nguyên nhân chính là nhiệt mất cho bình và môi trường, tức sai số hệ thống.",
+    "Cho rằng c đo được khác giá trị bảng vì 'nhiệt kế đọc sai' — thực ra nguyên nhân chính là nhiệt mất cho bình và môi trường, tức sai số hệ thống.",
     "Cho rằng đồ thị t(τ) phải là đường cong vì nước nóng lên ngày càng nhanh — thực tế gần như đường thẳng khi P không đổi.",
     "Cho rằng phải đun tới 100 °C mới tính được c, trong khi chỉ cần một khoảng Δt bất kì miễn là chưa sôi."
   ],
@@ -95,7 +95,7 @@
   "goi_y_mo_phong": {
     "loai": "do_thi+bang_so_lieu",
     "y_tuong": "Bình nhiệt lượng kế có điện trở nhiệt, oát kế hiện P và τ, nhiệt kế leo theo thời gian; đồ thị t(τ) vẽ dần và một bảng tự điền c theo từng mốc 20 giây.",
-    "diem_nhan": "Công tắc 'bọc cách nhiệt hoàn hảo' cho c đúng 4180 còn 'bình thật' cho c thấp hơn — qua đó học sinh phân biệt sai số hệ thống với sai số ngẫu nhiên và biết vì sao bài thực hành phải tính sai số."
+    "diem_nhan": "Công tắc 'bọc cách nhiệt hoàn hảo' cho c đúng 4180 còn 'bình thật' cho c cao hơn — qua đó học sinh phân biệt sai số hệ thống với sai số ngẫu nhiên và biết vì sao bài thực hành phải tính sai số."
   },
   "an_toan": [
     "Không chạm tay vào điện trở nhiệt khi đang bật nguồn.",

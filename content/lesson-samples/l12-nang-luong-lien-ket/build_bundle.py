@@ -23,12 +23,12 @@ EXAM = {
             "type": "multiple_choice",
             "question": "Khối lượng của một hạt nhân giảm đi $0{,}030377\\ \\text{u}$ khi nó được tạo thành từ các nuclôn rời. Năng lượng giải phóng tương ứng là",
             "options": [
-                "$0{,}030377\\ \\text{MeV}$ vì khối lượng tính theo u thì năng lượng tính theo MeV.",
                 "$28{,}3\\ \\text{MeV}$.",
+                "$0{,}030377\\ \\text{MeV}$ vì khối lượng tính theo u thì năng lượng tính theo MeV.",
                 "$3 \\cdot 10^8\\ \\text{MeV}$ vì phải nhân với tốc độ ánh sáng.",
                 "$9 \\cdot 10^{16}\\ \\text{MeV}$ vì phải nhân với $c^2$.",
             ],
-            "answer": 1,
+            "answer": 0,
             "explanation": "E = Δm·c², và với Δm tính theo u thì hệ số đổi 931,5 MeV/u đã bao sẵn c²: E = 0,030377 × 931,5 = 28,3 MeV. Không nhân thêm c hay c² lần nữa, và đơn vị u không phải MeV.",
         },
         {
@@ -36,12 +36,12 @@ EXAM = {
             "question": "Một hạt nhân có năng lượng liên kết $492\\ \\text{MeV}$ và số khối $A = 56$. Năng lượng liên kết riêng của nó là",
             "options": [
                 "$492\\ \\text{MeV}$ cho mỗi nuclôn.",
-                "$8{,}79\\ \\text{MeV}$ cho mỗi nuclôn.",
                 "$2{,}76 \\cdot 10^4\\ \\text{MeV}$ cho mỗi nuclôn.",
                 "$18{,}9\\ \\text{MeV}$ cho mỗi nuclôn.",
+                "$8{,}79\\ \\text{MeV}$ cho mỗi nuclôn.",
             ],
-            "answer": 1,
-            "explanation": "Năng lượng liên kết riêng là năng lượng tính cho MỘT nuclôn: E_lkr = E_lk/A = 492/56 = 8,79 MeV. Phương án A là chưa chia; C là làm phép nhân 492 × 56; D là chia cho 26 prôtôn thay vì chia cho cả 56 nuclôn.",
+            "answer": 3,
+            "explanation": "Năng lượng liên kết riêng là năng lượng tính cho MỘT nuclôn: E_lkr = E_lk/A = 492/56 = 8,79 MeV. Phương án A là chưa chia; B là làm phép nhân 492 × 56; C là chia cho 26 prôtôn thay vì chia cho cả 56 nuclôn.",
         },
         {
             "type": "multiple_choice",
@@ -57,14 +57,14 @@ EXAM = {
         },
         {
             "type": "multiple_choice",
-            "question": "Phản ứng $^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$ có độ hụt khối $0{,}018883\\ \\text{u}$. Năng lượng toả ra khi một phản ứng xảy ra là",
+            "question": "Phản ứng $^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$ có khối lượng giảm đi $0{,}018883\\ \\text{u}$ (tổng khối lượng sau nhỏ hơn tổng khối lượng trước). Năng lượng toả ra khi một phản ứng xảy ra là",
             "options": [
                 "$17{,}6\\ \\text{MeV}$ cho mỗi nuclôn tham gia.",
-                "$17{,}6\\ \\text{MeV}$ cho một phản ứng.",
                 "$3{,}52\\ \\text{MeV}$ cho một phản ứng.",
+                "$17{,}6\\ \\text{MeV}$ cho một phản ứng.",
                 "$0{,}018883\\ \\text{MeV}$ cho một phản ứng.",
             ],
-            "answer": 1,
+            "answer": 2,
             "explanation": "E = Δm·c² = 0,018883 × 931,5 = 17,6 MeV cho một phản ứng. Có 5 nuclôn tham gia nên nếu tính cho mỗi nuclôn thì được khoảng 3,5 MeV, nhưng đề hỏi cho một phản ứng. Phương án D bỏ luôn hệ số 931,5 nên ra đúng con số khối lượng.",
         },
     ],

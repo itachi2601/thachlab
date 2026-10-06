@@ -1,7 +1,8 @@
 """Chèn 3 hình SVG tự vẽ vào theory.html (idempotent). Chạy từ thư mục này:
 python3 build_figs.py"""
 import math, re, sys
-sys.path.insert(0, "/home/user/thachlab/.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts")
+import pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
 from svg_lib import *
 
 def wrap(vb, label, body, cap, exp=""):
@@ -55,7 +56,7 @@ b += arrow("f3", "g", 30, 60, 110, 60, 3) + text(30, 50, "nam châm tiến lại
 b += '<ellipse cx="300" cy="101" rx="16" ry="48" fill="none" stroke="currentColor" stroke-width="3"/>'
 b += text(300, 168, "vòng dây kín", "currentColor", 12, "middle")
 b += arrow("f3", "b", 292, 101, 215, 101, 3)
-b += text(138, 140, "đầu gần = cực Bắc", BLUE, 12)
+b += text(278, 124, "đầu gần = cực Bắc", BLUE, 12, "end")
 b += text(222, 90, "B", BLUE, 14, "start", "700").replace("</text>", '<tspan dy="4" font-size="9">cảm ứng</tspan></text>')
 b += arrow("f3", "r", 76, 134, 26, 134, 3)
 b += text(24, 156, "lực đẩy cản lại", RED, 12)
@@ -63,15 +64,9 @@ b += text(24, 192, "Từ thông tăng → từ trường cảm ứng ngược ch
 fig3 = wrap("0 0 430 205", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra",
             b, "Hình 3. Từ thông tăng nên vòng dây tạo cực Bắc ở đầu gần: hai cực cùng tên <em>đẩy</em> nhau, cản nam châm tiến vào.")
 
-h = open("theory.html").read()
-h = re.sub(r'<figure class="fig" data-tl="1"[^>]*>.*?</figure>\n', "", h, flags=re.S)
-anchors = [
- ('<div class="tl-box tl-box--exp" data-exp="tn-l12-camungdt-03">', fig1),
- ('<div class="tl-box tl-box--exp" data-exp="tn-l12-camungdt-01">', fig2),
- ('<div class="tl-box tl-box--exp" data-exp="tn-l12-camungdt-02">', fig3),
-]
-for a, f in anchors:
-    assert a in h, a
-    h = h.replace(a, f + "\n" + a, 1)
-open("theory.html", "w").write(h)
-print("ok")
+src = open("theory.src.html", encoding="utf8").read()
+for n, f in enumerate((fig1, fig2, fig3), 1):
+    assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
+    src = src.replace(f"<!--FIG{n}-->", f)
+open("theory.html", "w", encoding="utf8").write(src)
+print("ok", len(src), "bytes")

@@ -24,8 +24,8 @@ QUESTIONS = [
     {
         "type": "multiple_choice",
         "question": "Ống thuỷ tinh hở phía trên, bên trong có cột thuỷ ngân cao 50 mm; áp suất khí quyển là 760 mmHg. Áp suất của khí bị nhốt ở đáy ống là",
-        "options": ["710 mmHg.", "810 mmHg.", "760 mmHg.", "50 mmHg."],
-        "answer": 1,
+        "options": ["710 mmHg.", "760 mmHg.", "50 mmHg.", "810 mmHg."],
+        "answer": 3,
         "explanation": "Ống hở phía trên nên khí quyển và cột thuỷ ngân cùng đè xuống khí bị nhốt: p = p0 + h = 760 + 50 = 810 mmHg. Chỉ khi ống hở phía dưới mới lấy p = p0 − h.",
     },
     {

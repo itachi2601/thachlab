@@ -1,51 +1,135 @@
 {
-  "mon": "vat-ly",
-  "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
-  "lesson_id": 126,
-  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
-  "id": "tn-l12-udcamung-04",
-  "ten": "Con lắc tấm nhôm đặc và tấm có rãnh",
-  "loai": "thi_nghiem",
-  "muc_do": "co_ban",
-  "kien_thuc": ["camung_ud.foucault_luc_ham", "camung_ud.cat_vong_xoay"],
-  "muc_tieu": "Thấy tấm đặc bị hãm mạnh, tấm xẻ rãnh dao động lâu hơn vì đường Foucault bị cắt.",
-  "dung_cu": [
-    {"ten": "Nam châm chữ U mạnh", "so_luong": 1, "ghi_chu": "khe đủ cho tấm lọt qua"},
-    {"ten": "Tấm nhôm đặc", "so_luong": 1, "ghi_chu": "treo như con lắc"},
-    {"ten": "Tấm nhôm cùng cỡ có rãnh", "so_luong": 1, "ghi_chu": "nhiều khe song song"}
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "lesson_id": 126,
+ "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+ "id": "tn-l12-udcamung-04",
+ "ten": "Tấm nhôm đặc và tấm xẻ rãnh dao động giữa hai cực nam châm",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "udcamung.dong_foucault",
+  "udcamung.cat_vong_xoay",
+  "udcamung.loi_may_bien_ap"
+ ],
+ "muc_tieu": "So sánh tấm nhôm đặc với tấm xẻ rãnh dao động trong từ trường vuông góc mặt tấm, để thấy rãnh cắt đường khép kín của dòng Foucault làm lực hãm yếu đi.",
+ "dung_cu": [
+  {
+   "ten": "Nam châm điện hoặc nam châm chữ U mạnh",
+   "so_luong": 1,
+   "ghi_chu": "từ trường vuông góc mặt tấm khi tấm lọt giữa hai cực"
+  },
+  {
+   "ten": "Tấm nhôm đặc treo như con lắc",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm nhôm cùng cỡ xẻ 3 rãnh song song",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cho tấm nhôm đặc dao động như con lắc qua khe giữa hai cực nam châm mạnh, đếm số dao động tới khi gần dừng.",
+   "Lặp lại với tấm cùng cỡ nhưng xẻ rãnh."
   ],
-  "cac_buoc": {
-    "lam": ["Kéo tấm lệch cùng một góc rồi thả giữa hai cực.", "Đếm thời gian tới khi biên độ còn khoảng một nửa.", "Làm với tấm đặc rồi tấm có rãnh."],
-    "quan_sat": ["Tấm đặc dừng rất nhanh, khoảng 2,6 s.", "Tấm có rãnh đung đưa lâu, khoảng 15 s."],
-    "rut_ra": ["Rãnh cắt vòng kín của dòng Foucault.", "Lực hãm giảm.", "Cùng lý do lõi biến áp phải ghép bằng lá tôn cách điện."]
-  },
-  "tham_so": [
-    {"ky_hieu": "n_ranh", "ten": "Số rãnh trên tấm", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 8, "mac_dinh": 0, "buoc": 1},
-    {"ky_hieu": "B", "ten": "Cảm ứng từ trong khe nam châm", "don_vi": "T", "kieu": "dieu_chinh", "min": 0, "max": 0.4, "mac_dinh": 0.2, "buoc": 0.05},
-    {"ky_hieu": "t_tat", "ten": "Thời gian biên độ còn một nửa", "don_vi": "s", "kieu": "tinh_ra"}
+  "quan_sat": [
+   "Tấm đặc dừng rất nhanh, chỉ vài dao động.",
+   "Tấm có rãnh đung đưa lâu hơn nhiều."
   ],
-  "mo_hinh": {
-    "phuong_trinh": ["Lực hãm tỉ lệ với B² và với độ liền mạch của đường Foucault", "t_tat tăng khi n_ranh tăng", "t_tat rất lớn khi B = 0"],
-    "gia_thiet": ["bỏ qua ma sát ổ treo so với lực hãm của tấm đặc", "hai tấm cùng khối lượng gần đúng"],
-    "ghi_chu": "2,6 s và 15 s trong bài là số minh hoạ cho cùng biên độ đầu, không phải số đo một bộ nam châm cụ thể."
+  "rut_ra": [
+   "Tấm đặc có vòng Foucault lớn, khép kín nên lực hãm mạnh.",
+   "Rãnh cắt đường khép kín của dòng Foucault, vòng xoáy nhỏ lại và lực hãm yếu đi.",
+   "Cũng vì vậy lõi máy biến áp và lõi động cơ ghép bằng lá tôn mỏng cách điện: cắt vòng xoáy để giảm nhiệt có hại."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Số rãnh xẻ trên tấm (0 là tấm đặc)",
+   "don_vi": "rãnh",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 3,
+   "buoc": 1
   },
-  "so_lieu_mau": {
-    "cot": ["Tấm", "Số rãnh", "Thời gian tắt (s)"],
-    "hang": [["đặc", 0, 2.6], ["có rãnh", 6, 15]],
-    "ghi_chu": "Số minh hoạ cùng hướng với thí nghiệm SGK: tấm rãnh dao động lâu hơn nhiều lần."
+  {
+   "ky_hieu": "B",
+   "ten": "Độ lớn từ trường giữa hai cực (vuông góc mặt tấm)",
+   "don_vi": "T",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 1,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
   },
-  "ket_qua_ky_vong": "Tấm đặc tắt nhanh. Tăng số rãnh thì thời gian tắt tăng.",
-  "hien_tuong_hay_sai": [
-    "Cho rằng tấm rãnh lâu hơn vì nhẹ hơn rõ rệt.",
-    "Cho rằng nam châm hút nhôm."
+  {
+   "ky_hieu": "N_dd",
+   "ten": "Số dao động tới khi biên độ còn khoảng 10%",
+   "don_vi": "dao động",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Mô hình giả định: số dao động tới khi biên độ còn 10% tăng gần tỉ lệ với (1 + n): N_dd ≈ 2·(1 + n)",
+   "n = 0 (tấm đặc): 2 dao động; n = 3: 8 dao động"
   ],
-  "goi_y_mo_phong": {
-    "loai": "2d_dong_hoc+so_do_luc",
-    "dieu_khien": ["kéo thả con lắc", "thêm rãnh", "tắt nam châm"],
-    "dau_ra": ["dao động tắt dần", "vòng Foucault", "mũi tên lực hãm"],
-    "hinh_trong_bai": "Hình 3",
-    "y_tuong": "Học sinh đoán tấm nào dừng trước khi thả."
-  },
-  "an_toan": "Nam châm mạnh: không kẹp da giữa hai cực."
+  "gia_thiet": [
+   "quan hệ tuyến tính (1 + n) chỉ là giả định minh hoạ cho xu hướng, không phải định luật",
+   "từ trường đều, vuông góc mặt tấm, tấm lọt hoàn toàn giữa hai cực"
+  ],
+  "ghi_chu": "Mô phỏng cho kéo thanh trượt số rãnh, vẽ vòng Foucault co nhỏ lại và đồ thị biên độ giảm dần."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Số rãnh n",
+   "Loại tấm",
+   "Số dao động tới khi biên độ còn 10%"
+  ],
+  "hang": [
+   [
+    0,
+    "tấm đặc",
+    2
+   ],
+   [
+    1,
+    "xẻ 1 rãnh",
+    4
+   ],
+   [
+    3,
+    "xẻ 3 rãnh",
+    8
+   ],
+   [
+    5,
+    "xẻ 5 rãnh",
+    12
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ tính từ mô hình giả định N_dd ≈ 2·(1 + n), chưa phải số đo thật; bài lý thuyết chỉ nêu so sánh định tính 'tấm đặc dừng nhanh, tấm có rãnh đung đưa lâu hơn'."
+ },
+ "ket_qua_ky_vong": "Tấm đặc dừng sau vài dao động; tấm có rãnh đung đưa lâu hơn nhiều, càng nhiều rãnh càng lâu.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng tấm đặc dừng nhanh vì nặng hơn tấm có rãnh.",
+  "Cho rằng rãnh làm tấm không còn dẫn điện nên không có từ thông.",
+  "Cho rằng nam châm hút tấm nhôm (nhôm không bị hút, chỉ bị hãm khi chuyển động)."
+ ],
+ "sai_so_thuong_gap": [
+  "Khó xác định lúc biên độ còn 10% bằng mắt.",
+  "Hai tấm không cùng khối lượng và cùng độ dài treo thì so sánh sai."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Con lắc tấm nhôm qua khe nam châm; vòng Foucault hiện trên tấm, rãnh cắt vòng khi tăng số rãnh.",
+  "diem_nhan": "Cùng từ trường, cùng khối lượng: chỉ rãnh thay đổi mà thời gian tắt khác hẳn."
+ }
 }

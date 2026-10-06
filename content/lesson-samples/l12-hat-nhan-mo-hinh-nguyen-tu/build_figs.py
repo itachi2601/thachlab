@@ -59,12 +59,12 @@ b += text(300, 168, "hầu hết bay thẳng", GRN, 11, "start", "700")
 b += (f'<path d="M102,126 L237,104 L404,52" fill="none" stroke="{ORG}" stroke-width="2.4"'
       f' marker-end="url(#f1-o)"/>')
 b += text(404, 44, "lệch mạnh: vài hạt", ORG, 11, "end", "700")
-b += arrow("f1", "r", 102, 126, 62, 44, 2.6)
-b += text(46, 40, "bật ngược", RED, 11, "start", "700")
+b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
+b += text(126, 50, "bật ngược", RED, 11, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
-b += text(24, 190, "Cùng một chùm hạt, ba số phận khác nhau", "currentColor", 10, "start", "500")
+b += text(24, 190, "Một chùm hạt, ba số phận", "currentColor", 10, "start", "500")
 fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại",
-             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha bay thẳng qua khe giữa các nguyên tử; chỉ hạt đi sát hạt nhân mới bị lệch mạnh hoặc bật ngược.")
+             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống bên trong nguyên tử; chỉ hạt đi sát hạt nhân mới bị lệch mạnh hoặc bật ngược.")
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")
@@ -99,16 +99,16 @@ fig2 = wrap2("0 0 440 250", "Ba mô hình nguyên tử đặt cạnh nhau: Thoms
 # ---------------------------------------------- Hình 3: kí hiệu hạt nhân
 b = defs("f3")
 b += text(14, 26, "Đọc kí hiệu hạt nhân", "currentColor", 12, "start", "700")
-b += text(120, 118, "Cu", "currentColor", 40, "middle", "700")
-b += text(122, 74, "65", RED, 24, "middle", "700")
-b += text(120, 158, "29", BLUE, 24, "middle", "700")
-b += text(96, 182, "kí hiệu hoá học", "currentColor", 10, "middle", "500")
-b += arrow("f3", "r", 156, 62, 236, 62, 1.8)
-b += text(242, 58, "A = số nuclôn", RED, 12, "start", "700")
-b += text(242, 74, "= prôtôn + nơtron", RED, 10, "start", "500")
-b += arrow("f3", "b", 144, 158, 236, 158, 1.8)
-b += text(242, 154, "Z = số prôtôn", BLUE, 12, "start", "700")
-b += text(242, 170, "= điện tích hạt nhân", BLUE, 10, "start", "500")
+b += text(210, 118, "Cu", "currentColor", 40, "start", "700")
+b += text(204, 102, "65", RED, 24, "end", "700")
+b += text(204, 140, "29", BLUE, 24, "end", "700")
+b += text(232, 162, "kí hiệu hoá học", "currentColor", 10, "middle", "500")
+b += arrow("f3", "r", 124, 94, 170, 94, 1.8)
+b += text(14, 90, "A = số nuclôn", RED, 12, "start", "700")
+b += text(14, 106, "= prôtôn + nơtron", RED, 10, "start", "500")
+b += arrow("f3", "b", 124, 132, 170, 132, 1.8)
+b += text(14, 128, "Z = số prôtôn", BLUE, 12, "start", "700")
+b += text(14, 144, "= điện tích hạt nhân", BLUE, 10, "start", "500")
 b += text(14, 212, "Ví dụ: Cu có 29 prôtôn, 65 nuclôn nên có 65 − 29 = 36 nơtron", "currentColor", 11, "start", "600")
 b += text(14, 230, "Cùng 29 prôtôn mà khác số nơtron thì gọi là hai đồng vị", "currentColor", 11, "start", "600")
 fig3 = wrap2("0 0 440 244", "Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A, chỉ số dưới là số prôtôn Z",

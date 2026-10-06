@@ -22,9 +22,9 @@ EXAM = {
         {
             "type": "multiple_choice",
             "question": "Đoạn dây dài 10 cm mang dòng điện 2 A đặt vuông góc với đường sức từ, tại chỗ có cảm ứng từ B = 0,05 T. Lực từ tác dụng lên đoạn dây bằng",
-            "options": ["0,01 N.", "0,1 N.", "0,005 N.", "0,02 N."],
-            "answer": 0,
-            "explanation": "Dây vuông góc đường sức nên F = BIl = 0,05 × 2 × 0,10 = 0,01 N. Phải đổi 10 cm = 0,10 m trước khi thay số; các phương án sai ứng với việc quên đổi đơn vị (l = 1 m, 5 cm hoặc 20 cm).",
+            "options": ["0,02 N.", "0,1 N.", "0,005 N.", "0,01 N."],
+            "answer": 3,
+            "explanation": "Dây vuông góc đường sức nên F = BIl = 0,05 × 2 × 0,10 = 0,01 N. Phải đổi 10 cm = 0,10 m trước khi thay số; các phương án sai ứng với quên đổi cm sang m (l = 1 m) hoặc đọc nhầm chiều dài (l = 5 cm, 20 cm).",
         },
         {
             "type": "multiple_choice",
@@ -41,8 +41,8 @@ EXAM = {
         {
             "type": "multiple_choice",
             "question": "Một ống dây dài có 1000 vòng dây trên mỗi mét, mang dòng điện 1 A. Cảm ứng từ trong lòng ống dây bằng",
-            "options": ["1,26·10⁻³ T.", "12,6·10⁻³ T.", "0,126·10⁻³ T.", "1,26·10⁻⁵ T."],
-            "answer": 0,
+            "options": ["1,26·10⁻⁵ T.", "12,6·10⁻³ T.", "0,126·10⁻³ T.", "1,26·10⁻³ T."],
+            "answer": 3,
             "explanation": "B = 4π·10⁻⁷·n·I = 4π·10⁻⁷ × 1000 × 1 ≈ 1,26·10⁻³ T = 1,26 mT. Trong lòng ống dây dài, cảm ứng từ chỉ phụ thuộc số vòng trên một mét và cường độ dòng điện, không phụ thuộc bán kính ống.",
         },
         {

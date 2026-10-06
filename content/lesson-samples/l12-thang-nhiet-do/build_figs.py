@@ -70,7 +70,7 @@ b += text(330, 168, "cân bằng nhiệt — hết truyền", GRN, 11, "middle",
 fig2 = wrap("0 0 440 186", "Hai vật A nóng và B lạnh tiếp xúc nhau: nhiệt năng truyền từ A sang B cho tới khi hai vật cùng nhiệt độ",
             b, "Hình 2. Hai vật tiếp xúc: nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn cho tới khi hai nhiệt độ bằng nhau — lúc đó hai vật ở trạng thái cân bằng nhiệt.")
 
-# ------------------------------------------------------- Hình 3: ba thang đo
+# ------------------------------------------------------- Hình 4 (mốc FIG3): ba thang đo
 b = defs("f3")
 b += text(100, 24, "Celsius", RED, 13, "middle", "700")
 b += text(230, 24, "Kelvin", BLUE, 13, "middle", "700")
@@ -81,17 +81,17 @@ for x, col in ((100, RED), (230, BLUE), (360, ORG)):
     b += line(x, 44, x, 214, "currentColor", 2)
     b += line(x - 8, 74, x + 8, 74, col, 3)
     b += line(x - 8, 190, x + 8, 190, col, 3)
-b += text(88, 78, "100 °C", RED, 12, "end", "700") + text(88, 194, "0 °C", RED, 12, "end", "700")
-b += text(218, 78, "373 K", BLUE, 12, "end", "700") + text(218, 194, "273 K", BLUE, 12, "end", "700")
-b += text(348, 78, "212 °F", ORG, 12, "end", "700") + text(348, 194, "32 °F", ORG, 12, "end", "700")
+b += text(88, 66, "100 °C", RED, 12, "end", "700") + text(88, 182, "0 °C", RED, 12, "end", "700")
+b += text(218, 66, "373 K", BLUE, 12, "end", "700") + text(218, 182, "273 K", BLUE, 12, "end", "700")
+b += text(348, 66, "212 °F", ORG, 12, "end", "700") + text(348, 182, "32 °F", ORG, 12, "end", "700")
 b += text(88, 138, "100 khoảng", GRN, 11, "end", "600")
 b += text(218, 138, "100 khoảng", GRN, 11, "end", "600")
 b += text(348, 138, "180 khoảng", ORG, 11, "end", "600")
 b += text(16, 238, "mốc dưới: nước đá đang tan · mốc trên: hơi nước đang sôi", "currentColor", 11)
 fig3 = wrap("0 0 440 250", "Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212",
-            b, "Hình 3. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.")
+            b, "Hình 4. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.")
 
-# ------------------------------------------------------- Hình 4: ngoại suy về 0 K
+# ------------------------------------------------------- Hình 3 (mốc FIG4): ngoại suy về 0 K
 b = defs("f4")
 b += line(70, 205, 420, 205, "currentColor", 2)
 b += line(70, 205, 70, 40, "currentColor", 2)
@@ -110,7 +110,7 @@ b += text(384, 224, "100", "currentColor", 12, "middle", "600")
 b += text(150, 62, "kéo dài đường thẳng", GRN, 11, "start", "600")
 b += text(150, 80, "→ cắt trục ở -273 °C", GRN, 11, "start", "600")
 fig4 = wrap("0 0 440 250", "Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C",
-            b, "Hình 4. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ. Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.")
+            b, "Hình 3. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ. Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.")
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

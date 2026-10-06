@@ -34,9 +34,9 @@ EXAM = {
         {
             "type": "multiple_choice",
             "question": "Bếp 150 W đun 0,200 kg nước; trong 300 s nhiệt độ nước tăng 60 °C. Nhiệt dung riêng đo được là",
-            "options": ["1,25 J/(kg·K).", "3 750 J/(kg·K).", "18 000 J/(kg·K).", "45 000 J/(kg·K)."],
+            "options": ["12,5 J/(kg·K).", "3 750 J/(kg·K).", "225 000 J/(kg·K).", "45 000 J/(kg·K)."],
             "answer": 1,
-            "explanation": "c = P·τ/(m·Δt) = (150 × 300)/(0,200 × 60) = 45 000/12 = 3 750 J/(kg·K). Muốn ra số thấp hơn 4 180 thì nhiệt kế phải đọc cao hơn thực tế; còn nếu nhiệt mất ra môi trường (Δt nhỏ đi) thì c lại cao hơn — hai hướng sai số khác nhau, phải phân biệt khi báo cáo.",
+            "explanation": "c = P·τ/(m·Δt) = (150 × 300)/(0,200 × 60) = 45 000/12 = 3 750 J/(kg·K). Ra 12,5 là quên τ; ra 225 000 là quên Δt; ra 45 000 mới là nhiệt lượng Q (jun), chưa chia cho mΔt. Muốn ra số thấp hơn 4 180 thì nhiệt kế phải đọc cao hơn thực tế; còn nếu nhiệt mất ra môi trường (Δt nhỏ đi) thì c lại cao hơn — hai hướng sai số khác nhau, phải phân biệt khi báo cáo.",
         },
         {
             "type": "multiple_choice",

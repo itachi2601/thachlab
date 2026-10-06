@@ -65,7 +65,7 @@ def trace_bounce(start, v, n_pts, box):
 
 # ======================================================= Hình 1: vì sao hạt bụi nhảy múa
 b = defs("f1")
-b += text(14, 24, "Hạt bụi bị phân tử khí đập lệch", "currentColor", 13, "start", "700")
+b += text(14, 24, "Hạt khói bị phân tử khí đập lệch", "currentColor", 13, "start", "700")
 b += rect(12, 36, 396, 190, "rgba(148,163,184,.08)", "currentColor", 1.6, 12)
 # các phân tử khí
 for x, y in ((70, 80), (120, 52), (300, 62), (350, 150), (86, 180), (330, 196)):
@@ -80,13 +80,13 @@ b += arrow("f1", "b", 324, 190, 230, 148, 2.2)
 # hạt bụi
 b += f'<circle cx="210" cy="120" r="20" fill="rgba(248,113,113,.28)" stroke="{RED}" stroke-width="2.5"/>'
 b += dot(210, 120, 8, RED)
-b += text(210, 162, "hạt bụi", RED, 12.5, "middle", "700")
+b += text(210, 162, "hạt khói", RED, 12.5, "middle", "700")
 # hướng bị đẩy lệch (hợp lực không triệt tiêu)
 b += arrow("f1", "o", 236, 124, 306, 124, 2.6)
 b += text(272, 112, "hạt bị đẩy lệch", ORG, 11, "middle", "700")
 b += text(16, 214, "chấm xanh: phân tử khí · mũi tên xanh: hướng va đập (dài ngắn khác nhau)", "currentColor", 10.5, "start", "500")
-fig1 = wrap("0 0 420 240", "Hạt bụi ở giữa bị nhiều phân tử khí va đập từ mọi phía với mức khác nhau, nên bị đẩy lệch",
-            b, "Hình 1. Hạt bụi bị phân tử khí va đập từ mọi phía; hai bên không bao giờ cân bằng nên hạt bị đẩy lệch liên tục — đó là chuyển động Brown.")
+fig1 = wrap("0 0 420 240", "Hạt khói ở giữa bị nhiều phân tử khí va đập từ mọi phía với mức khác nhau, nên bị đẩy lệch",
+            b, "Hình 1. Hạt khói bị phân tử khí va đập từ mọi phía; hai bên không bao giờ cân bằng nên hạt bị đẩy lệch liên tục — đó là chuyển động Brown.")
 
 # ======================================================= Hình 2: ba nội dung thuyết động học phân tử
 b = defs("f2")
@@ -94,8 +94,10 @@ b += text(14, 26, "Ba điều phải nhớ của thuyết động học phân t�
 # a) kích thước bé xíu so với khoảng cách
 b += text(14, 52, "a) Kích thước bé xíu", "currentColor", 11.5, "start", "700")
 b += dot(40, 78, 6, BLUE) + dot(150, 78, 6, BLUE)
-b += arrow("f2", "b", 52, 78, 92, 78, 2)
-b += arrow("f2", "b", 138, 78, 98, 78, 2)
+b += line(48, 78, 142, 78, "currentColor", 1.4, "4 4", .7)
+b += line(48, 72, 48, 84, "currentColor", 1.4, "", .7)
+b += line(142, 72, 142, 84, "currentColor", 1.4, "", .7)
+b += text(95, 68, "rất xa", "currentColor", 10.5, "middle", "600")
 b += text(200, 74, "khoảng cách giữa các phân tử lớn hơn", "currentColor", 11, "start", "500")
 b += text(200, 90, "kích thước mỗi phân tử rất nhiều", "currentColor", 11, "start", "500")
 # b) hỗn loạn, nóng thì nhanh

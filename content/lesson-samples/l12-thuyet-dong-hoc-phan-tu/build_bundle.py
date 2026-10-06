@@ -11,10 +11,10 @@ EXAM = {
             "type": "multiple_choice",
             "question": "Đặt một hộp kính kín chứa khói hương trên bàn, không có gió. Các hạt khói trong hộp chuyển động hỗn loạn vì",
             "options": [
-                "hạt bụi tự bò như một con vật tí hon.",
-                "ánh sáng chiếu vào hộp đã đẩy các hạt bụi đi.",
+                "hạt khói tự bò như một con vật tí hon.",
+                "ánh sáng chiếu vào hộp đã đẩy các hạt khói đi.",
                 "trong hộp kín luôn có một dòng khí nhẹ thổi qua.",
-                "các phân tử khí va đập vào hạt bụi từ mọi phía, lúc mạnh lúc yếu, không cân bằng nhau.",
+                "các phân tử khí va đập vào hạt khói từ mọi phía, lúc mạnh lúc yếu, không cân bằng nhau.",
             ],
             "answer": 3,
             "explanation": "Hạt khói to hơn phân tử khí hàng nghìn lần nên không tự chuyển động được. Nó bị các phân tử khí va đập từ mọi phía; số va đập hai phía không bao giờ cân bằng tuyệt đối nên hạt bị đẩy lệch liên tục — đó là chuyển động Brown, bằng chứng gián tiếp cho chuyển động hỗn loạn không ngừng của phân tử.",

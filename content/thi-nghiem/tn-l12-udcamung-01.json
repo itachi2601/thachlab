@@ -1,52 +1,154 @@
 {
-  "mon": "vat-ly",
-  "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
-  "lesson_id": 126,
-  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
-  "id": "tn-l12-udcamung-01",
-  "ten": "Nam châm chạy qua cuộn nối loa",
-  "loai": "thi_nghiem",
-  "muc_do": "co_ban",
-  "kien_thuc": ["camung_ud.pickup_day_thep", "camungdt.tu_thong_bien_thien"],
-  "muc_tieu": "Nghe thấy dòng cảm ứng khi nam châm chuyển động trong cuộn, và im khi nam châm đứng yên — cùng nguyên lí pickup guitar.",
-  "dung_cu": [
-    {"ten": "Cuộn dây nhiều vòng", "so_luong": 1, "ghi_chu": "vài trăm vòng"},
-    {"ten": "Loa nhỏ hoặc tai nghe", "so_luong": 1, "ghi_chu": "nối thẳng hai đầu cuộn"},
-    {"ten": "Thanh nam châm", "so_luong": 1, "ghi_chu": "biết cực Bắc"}
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "lesson_id": 126,
+ "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+ "id": "tn-l12-udcamung-01",
+ "ten": "Nam châm chạy qua cuộn nối loa: chỉ khi từ thông đổi mới có tiếng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "udcamung.pickup_guitar",
+  "udcamung.tu_thong_bien_thien",
+  "udcamung.nam_cham_dung_yen"
+ ],
+ "muc_tieu": "Thấy loa chỉ kêu khi nam châm chuyển động so với cuộn (từ thông qua cuộn đổi), và hiểu dây thép rung trước cuộn của pickup guitar là nam châm nhỏ đang chuyển động rất nhanh.",
+ "dung_cu": [
+  {
+   "ten": "Cuộn dây nhiều vòng (cỡ 500 vòng)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Loa nhỏ hoặc tai nghe",
+   "so_luong": 1,
+   "ghi_chu": "nối hai đầu cuộn"
+  },
+  {
+   "ten": "Nam châm thẳng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây thép mảnh và dây nylon (để thay dây đàn)",
+   "so_luong": 2,
+   "ghi_chu": "tuỳ chọn, để so sánh"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối hai đầu một cuộn dây với loa nhỏ hoặc tai nghe.",
+   "Đưa nam châm vào cuộn rồi rút ra, lần đầu chậm, lần sau nhanh.",
+   "Giữ nam châm đứng yên trong cuộn."
   ],
-  "cac_buoc": {
-    "lam": ["Nối cuộn với loa.", "Đưa nam châm vào rồi rút ra, nhanh và chậm.", "Giữ nam châm đứng yên trong cuộn."],
-    "quan_sat": ["Mỗi lần đưa vào hoặc rút ra, loa kêu một tiếng.", "Đưa nhanh thì tiếng mạnh hơn.", "Giữ yên thì im."],
-    "rut_ra": ["Tiếng kêu là dòng cảm ứng.", "Dây thép của guitar là nam châm nhỏ rung trước cuộn.", "Dây nylon không nhiễm từ nên pickup gần như im."]
-  },
-  "tham_so": [
-    {"ky_hieu": "v", "ten": "Tốc độ đưa nam châm", "don_vi": "m/s", "kieu": "dieu_chinh", "min": 0, "max": 1, "mac_dinh": 0.3, "buoc": 0.05},
-    {"ky_hieu": "N", "ten": "Số vòng cuộn", "don_vi": "vòng", "kieu": "co_dinh", "gia_tri": 400},
-    {"ky_hieu": "e", "ten": "Suất điện động cảm ứng", "don_vi": "V", "kieu": "tinh_ra"}
+  "quan_sat": [
+   "Mỗi lần đưa vào hoặc rút ra, loa kêu một tiếng; đưa nhanh thì tiếng rõ hơn.",
+   "Rút ra cho xung điện ngược chiều với lúc đưa vào.",
+   "Giữ nam châm yên thì loa im."
   ],
-  "mo_hinh": {
-    "phuong_trinh": ["e = -N·dΦ/dt", "dΦ/dt tỉ lệ với v khi nam châm đang vào hoặc ra", "e = 0 khi v = 0"],
-    "gia_thiet": ["bỏ qua điện cảm của cuộn", "loa chỉ để nghe, không tính công suất âm"],
-    "ghi_chu": "Mô phỏng nên có nút giữ yên để thấy im lặng dù nam châm vẫn nằm trong cuộn."
+  "rut_ra": [
+   "Có dòng cảm ứng chạy qua loa khi từ thông qua cuộn đổi: e = −N·ΔΦ/Δt, nên đổi càng nhanh thì e càng lớn.",
+   "Nam châm nằm yên trong cuộn thì ΔΦ = 0 và e = 0, dù nam châm mạnh đến đâu.",
+   "Pickup guitar: dây thép bị nam châm từ hoá, dây rung làm từ thông qua cuộn đổi cùng tần số rung. Dây nylon không nhiễm từ nên gần như không có tín hiệu."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "N",
+   "ten": "Số vòng của cuộn",
+   "don_vi": "vòng",
+   "kieu": "dieu_chinh",
+   "min": 100,
+   "max": 1000,
+   "mac_dinh": 500,
+   "buoc": 100
   },
-  "so_lieu_mau": {
-    "cot": ["v (m/s)", "Trạng thái", "Độ lớn tiếng (quy ước)"],
-    "hang": [[0, "đứng yên", 0], [0.1, "đưa vào", 1], [0.3, "đưa vào", 3], [0.3, "rút ra", 3]],
-    "ghi_chu": "Số liệu minh hoạ tỉ lệ với tốc độ, không phải đo decibel."
+  {
+   "ky_hieu": "dPhi",
+   "ten": "Độ biến thiên từ thông qua mỗi vòng khi đưa nam châm vào",
+   "don_vi": "µWb",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 50,
+   "mac_dinh": 20,
+   "buoc": 5
   },
-  "ket_qua_ky_vong": "Loa chỉ kêu khi từ thông đang đổi. Đứng yên thì im, dù từ trường vẫn mạnh.",
-  "hien_tuong_hay_sai": [
-    "Cho rằng nam châm nằm trong cuộn thì loa kêu liên tục.",
-    "Cho rằng dây nylon vẫn tạo tín hiệu vì cuộn còn nam châm."
+  {
+   "ky_hieu": "dt",
+   "ten": "Thời gian đưa nam châm vào",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 0.5,
+   "mac_dinh": 0.05,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Suất điện động cảm ứng trong cuộn",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "e = −N·ΔΦ/Δt (dấu trừ: định luật Lenz, đảo dấu khi rút nam châm ra)",
+   "Với N = 500, ΔΦ = 20 µWb = 2·10⁻⁵ Wb: Δt = 0,05 s thì |e| = 500·2·10⁻⁵/0,05 = 0,2 V; Δt = 0,4 s thì |e| = 0,025 V",
+   "Nam châm đứng yên: ΔΦ = 0 nên e = 0"
   ],
-  "sai_so_thuong_gap": ["Tai nghe quá nhạy, nhiễu điện 50 Hz tưởng là tín hiệu nam châm."],
-  "goi_y_mo_phong": {
-    "loai": "2d_dong_hoc+do_thi",
-    "dieu_khien": ["kéo nam châm", "đổi tốc độ", "đổi dây thép hoặc nylon"],
-    "dau_ra": ["tiếng loa", "đồ thị e theo t", "từ thông qua cuộn"],
-    "hinh_trong_bai": "Hình 1",
-    "y_tuong": "Học sinh dự đoán lúc nào loa kêu trước khi kéo nam châm."
-  },
-  "an_toan": "Không nối cuộn vào ổ điện."
+  "gia_thiet": [
+   "từ thông biến thiên đều trong khoảng Δt (lấy giá trị trung bình)",
+   "bỏ qua điện trở cuộn và loa, chỉ xét độ lớn suất điện động"
+  ],
+  "ghi_chu": "Mô phỏng cho kéo thanh trượt tốc độ nam châm, hiện xung e theo thời gian và phát tiếng 'tạch' có độ lớn tỉ lệ với |e|."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Thao tác",
+   "Δt (s)",
+   "e (V)",
+   "Loa"
+  ],
+  "hang": [
+   [
+    "Đưa nam châm vào chậm",
+    0.4,
+    -0.025,
+    "kêu rất khẽ"
+   ],
+   [
+    "Đưa nam châm vào nhanh",
+    0.05,
+    -0.2,
+    "kêu rõ"
+   ],
+   [
+    "Rút nam châm ra nhanh",
+    0.05,
+    0.2,
+    "kêu rõ, xung ngược chiều"
+   ],
+   [
+    "Giữ nam châm yên",
+    "—",
+    0,
+    "im"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình e = −N·ΔΦ/Δt với N = 500, ΔΦ = 2·10⁻⁵ Wb; chưa phải kết quả đo thật (loa không cho đọc ra vôn)."
+ },
+ "ket_qua_ky_vong": "Loa chỉ kêu trong lúc nam châm chuyển động; đưa vào và rút ra cho hai xung ngược chiều; giữ yên thì im.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng nam châm đặt trong cuộn thì cuộn có dòng điện, vì nam châm mạnh.",
+  "Cho rằng dây nylon cũng cho tín hiệu như dây thép vì cùng rung.",
+  "Cho rằng đưa vào và rút ra cho dòng cùng chiều."
+ ],
+ "sai_so_thuong_gap": [
+  "Nam châm đưa vào không đều nên tiếng kêu to nhỏ khác nhau giữa các lần.",
+  "Cuộn ít vòng hoặc loa nghe kém thì tiếng quá khẽ khi đưa chậm."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Thanh trượt kéo nam châm qua cuộn; đồ thị e theo thời gian có xung dương khi rút, âm khi đưa vào; chuyển sang chế độ dây đàn rung để thấy dòng cùng tần số.",
+  "diem_nhan": "Đứng yên thì e = 0 dù nam châm mạnh; đổi càng nhanh thì xung càng lớn."
+ }
 }

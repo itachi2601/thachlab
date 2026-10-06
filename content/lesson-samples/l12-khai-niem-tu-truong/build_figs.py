@@ -35,8 +35,8 @@ b += f'<circle cx="72" cy="140" r="42" fill="none" stroke="currentColor" stroke-
 b += f'<circle cx="72" cy="140" r="4" fill="currentColor"/>'
 b += f'<polygon points="72,106 78,140 72,134 66,140" fill="{RED}"/>'
 b += f'<polygon points="72,174 78,140 72,146 66,140" fill="{BLUE}"/>'
-b += text(72, 100, "N", RED, 11, "middle", "700")
-b += text(72, 192, "S", BLUE, 11, "middle", "700")
+b += text(72, 91, "N", RED, 12, "middle", "700")
+b += text(72, 199, "S", BLUE, 12, "middle", "700")
 b += text(84, 238, "la bàn trong máy", "currentColor", 10, "start", "500")
 b += text(150, 132, "kim chỉ bắc", RED, 12, "start", "700")
 b += text(150, 158, "dù xoay máy", "currentColor", 11, "start", "500")
@@ -85,11 +85,19 @@ b += text(78, 93, "N", RED, 13, "middle", "700")
 b += text(146, 93, "S", BLUE, 13, "middle", "700")
 b += f'<path d="M78,72 C78,42 146,42 146,72" fill="none" stroke="{RED}" stroke-width="1.8"/>'
 b += f'<path d="M78,102 C78,132 146,132 146,102" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += f'<path d="M78,72 C54,42 34,44 34,74 C34,98 56,102 78,102" fill="none" stroke="{RED}" stroke-width="1.8"/>'
+b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8"/>'
+b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8"/>'
 b += arrow("f3", "r", 100, 50, 118, 49, 1.8)
 b += arrow("f3", "r", 108, 125, 126, 124, 1.8)
-b += arrow("f3", "r", 35, 60, 35, 78, 1.8)
-b += text(14, 152, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
+b += arrow("f3", "r", 100, 34, 124, 34, 1.8)
+b += arrow("f3", "r", 100, 140, 124, 140, 1.8)
+def _bz(P, t):
+    u = 1 - t
+    return tuple(u**3*P[0][k] + 3*u*u*t*P[1][k] + 3*u*t*t*P[2][k] + t**3*P[3][k] for k in (0, 1))
+for P in (((112, 34), (204, 34), (210, 87), (180, 87)), ((112, 140), (204, 140), (210, 87), (180, 87))):
+    a, c = _bz(P, 0.66), _bz(P, 0.74)
+    b += arrow("f3", "r", round(a[0], 1), round(a[1], 1), round(c[0], 1), round(c[1], 1), 1.8)
+b += text(14, 166, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
 b += text(232, 20, "b) Chữ U", "currentColor", 11, "start", "700")
 b += f'<path d="M244,50 L244,64 Q244,84 264,84 L316,84 Q336,84 336,64 L336,50" fill="none" stroke="currentColor" stroke-width="5"/>'
@@ -123,25 +131,30 @@ fig3 = wrap("0 0 440 288",
 
 # ------------------------------------------- Hình 4: từ trường Trái Đất
 b = defs("f4")
-b += f'<circle cx="150" cy="150" r="96" fill="rgba(56,189,248,.10)" stroke="currentColor" stroke-width="2"/>'
-b += line(150, 54, 150, 246, "currentColor", 1.2, "6 5", .5)
-b += text(150, 34, "Bắc", "currentColor", 12, "middle", "700")
-b += text(150, 274, "Nam", "currentColor", 12, "middle", "700")
-b += line(150, 62, 150, 238, "currentColor", 4)
-b += f'<path d="M150,62 L142,78 L158,78 z" fill="{BLUE}"/>'
-b += f'<path d="M150,238 L142,222 L158,222 z" fill="{RED}"/>'
-b += text(168, 80, "cực từ nam", BLUE, 11, "start", "700")
-b += text(176, 210, "cực từ bắc", RED, 11, "start", "700")
-b += f'<path d="M54,102 Q150,56 246,102" fill="none" stroke="{GRN}" stroke-width="1.8"/>'
-b += f'<path d="M54,198 Q150,244 246,198" fill="none" stroke="{GRN}" stroke-width="1.8"/>'
-b += arrow("f4", "g", 88, 88, 110, 76, 2)
-b += arrow("f4", "g", 184, 218, 208, 213, 2)
-b += text(16, 140, "đường sức vào", GRN, 11, "start", "600")
-b += text(16, 158, "ở cực từ nam", GRN, 11, "start", "600")
-b += f'<g transform="translate(330,150) rotate(-80)"><rect x="-20" y="-7" width="40" height="14" rx="7" fill="{RED}"/><rect x="-20" y="-7" width="20" height="14" rx="7" fill="{BLUE}"/><path d="M20,0 L6,-7 L6,7 z" fill="{RED}"/></g>'
-b += text(330, 118, "kim la bàn", "currentColor", 11, "middle", "700")
-b += text(330, 190, "theo đường sức", GRN, 11, "middle", "600")
-b += line(302, 150, 288, 150, GRN, 1.4, "5 4", .8)
+CX = 190
+b += f'<circle cx="{CX}" cy="150" r="96" fill="rgba(56,189,248,.10)" stroke="currentColor" stroke-width="2"/>'
+b += line(CX, 54, CX, 246, "currentColor", 1.2, "6 5", .5)
+b += text(CX, 34, "Bắc", "currentColor", 12, "middle", "700")
+b += text(CX, 276, "Nam", "currentColor", 12, "middle", "700")
+b += line(CX, 62, CX, 238, "currentColor", 4)
+b += f'<path d="M{CX},62 L{CX-8},78 L{CX+8},78 z" fill="{BLUE}"/>'
+b += f'<path d="M{CX},238 L{CX-8},222 L{CX+8},222 z" fill="{RED}"/>'
+b += text(CX + 12, 98, "cực từ", BLUE, 12, "start", "700")
+b += text(CX + 12, 113, "nam", BLUE, 12, "start", "700")
+b += text(CX - 12, 200, "cực từ", RED, 12, "end", "700")
+b += text(CX - 12, 215, "bắc", RED, 12, "end", "700")
+for dx in (150, 230):
+    for sg in (1, -1):
+        b += f'<path d="M{CX},238 C{CX+sg*dx},262 {CX+sg*dx},38 {CX},62" fill="none" stroke="{GRN}" stroke-width="1.8"/>'
+        xm = CX + sg * dx * 0.75
+        b += arrow("f4", "g", xm, 162, xm, 138, 2)
+b += f'<g transform="translate(408,150) rotate(-80)"><rect x="-20" y="-7" width="40" height="14" rx="7" fill="{RED}"/><rect x="-20" y="-7" width="20" height="14" rx="7" fill="{BLUE}"/><path d="M20,0 L6,-7 L6,7 z" fill="{RED}"/></g>'
+b += text(408, 108, "kim la bàn", "currentColor", 12, "middle", "700")
+b += text(408, 196, "nằm theo", GRN, 12, "middle", "600")
+b += text(408, 211, "đường sức", GRN, 12, "middle", "600")
+b += line(390, 150, CX + 230 * 0.75 + 4, 150, GRN, 1.4, "5 4", .8)
+b += text(14, 18, "đường sức", GRN, 12, "start", "600")
+b += text(14, 33, "vào cực từ nam", GRN, 12, "start", "600")
 fig4 = wrap("0 0 440 296",
             "Trái Đất như một nam châm khổng lồ: gần bắc địa lí là cực từ nam, đường sức đi vào đó; kim la bàn nằm theo đường sức",
             b, "Hình 4. Gần bắc địa lí là <strong>cực từ nam</strong>, nên cực bắc của kim bị hút về đó.")
@@ -157,7 +170,7 @@ b += f'<circle cx="224" cy="196" r="7" fill="currentColor"/>'
 b += arrow("f5", "g", 224, 196, 224, 136, 3)
 b += text(216, 140, "Bđ = 30 µT", GRN, 12, "end", "700")
 b += arrow("f5", "r", 224, 196, 304, 196, 3)
-b += text(264, 216, "B1 = 40 µT", RED, 12, "middle", "700")
+b += text(264, 216, "B3 = 40 µT", RED, 12, "middle", "700")
 b += arrow("f5", "b", 224, 196, 304, 136, 3)
 b += text(312, 130, "B = 50 µT", BLUE, 12, "start", "700")
 b += line(304, 136, 304, 196, "currentColor", 1.2, "5 4", .45)

@@ -1,51 +1,143 @@
 {
-  "mon": "vat-ly",
-  "lop": 12,
-  "bai": "Một số ứng dụng của cảm ứng điện từ",
-  "lesson_id": 126,
-  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
-  "id": "tn-l12-udcamung-05",
-  "ten": "Một vòng Foucault trong đáy nồi bếp từ",
-  "loai": "vi_du",
-  "muc_do": "trung_binh",
-  "kien_thuc": ["camung_ud.foucault_nhiet", "camungdt.faraday_toc_do"],
-  "muc_tieu": "Tính công suất nhiệt trung bình của một vòng Foucault khi từ thông biến thiên điều hoà, và phân biệt biên độ với giá trị hiệu dụng.",
-  "dung_cu": [
-    {"ten": "Mô hình số, không cần bếp thật", "so_luong": 1, "ghi_chu": "nếu có bếp từ thì chỉ để xem nồi nào nam châm dính"}
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "lesson_id": 126,
+ "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung/theory.html",
+ "id": "tn-l12-udcamung-05",
+ "ten": "Bài toán mẫu: công suất toả nhiệt của vòng Foucault tương đương trong đáy nồi",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "udcamung.bep_tu",
+  "udcamung.cong_suat_hieu_dung",
+  "udcamung.e_bien_do_tu_thong"
+ ],
+ "muc_tieu": "Tính công suất toả nhiệt trung bình của một vòng dây tương đương cho mọi dòng Foucault ở đáy nồi khi từ thông biến thiên điều hoà, và thấy P tỉ lệ nghịch với r khi e₀ không đổi.",
+ "dung_cu": [
+  {
+   "ten": "Máy tính cầm tay",
+   "so_luong": 1,
+   "ghi_chu": "bài toán tính toán, không có dụng cụ thí nghiệm"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đạo hàm Φ = Φ₀cos(ωt) để có e = Φ₀ω·sin(ωt), rồi đọc biên độ e₀ = Φ₀ω.",
+   "Đổi sang giá trị hiệu dụng E = e₀/√2.",
+   "Tính P = E²/r; đổi r rồi tính lại."
   ],
-  "cac_buoc": {
-    "lam": ["Đọc Φ = Φ0 cos(ωt) và r trong đề.", "Tính e0 = Φ0·ω rồi E = e0/√2.", "Tính P = E²/r."],
-    "quan_sat": ["Với Φ0 = 2·10⁻⁴ Wb, ω = 1,6·10⁵ rad/s, r = 0,50 Ω thì P = 1024 W.", "Đổi r thành 1,00 Ω thì P = 512 W."],
-    "rut_ra": ["Nhiệt nằm trong đáy nồi.", "Dùng hiệu dụng, không dùng e0 thẳng vào công suất.", "Tần số khoảng 25 kHz, đúng vùng bếp từ."]
-  },
-  "tham_so": [
-    {"ky_hieu": "Phi0", "ten": "Biên độ từ thông", "don_vi": "Wb", "kieu": "dieu_chinh", "min": 0.00005, "max": 0.0004, "mac_dinh": 0.0002, "buoc": 0.00005},
-    {"ky_hieu": "omega", "ten": "Tần số góc", "don_vi": "rad/s", "kieu": "co_dinh", "gia_tri": 160000},
-    {"ky_hieu": "r", "ten": "Điện trở một vòng", "don_vi": "Ω", "kieu": "dieu_chinh", "min": 0.25, "max": 2, "mac_dinh": 0.5, "buoc": 0.25},
-    {"ky_hieu": "P", "ten": "Công suất nhiệt trung bình", "don_vi": "W", "kieu": "tinh_ra"}
+  "quan_sat": [
+   "e₀ = 2·10⁻⁴ · 1,6·10⁵ = 32 V; E = 16√2 ≈ 22,6 V.",
+   "r = 0,50 Ω cho P = 1024 W; r = 1,00 Ω cho P = 512 W."
   ],
-  "mo_hinh": {
-    "phuong_trinh": ["e0 = Phi0·omega", "E = e0/sqrt(2)", "P = E^2/r", "f = omega/(2·pi)"],
-    "gia_thiet": ["một vòng tương đương trong đáy nồi", "bỏ qua từ trễ của thép", "dòng hình sin"],
-    "ghi_chu": "Số của bài: e0 = 32 V, E = 16√2 V, P = 1024 W, f ≈ 25,5 kHz."
+  "rut_ra": [
+   "Không thay e₀ thẳng vào P vì e đổi dấu theo thời gian: dùng hiệu dụng (nếu dùng e₀²/r sẽ ra 2048 W, gấp đôi).",
+   "e₀ không phụ thuộc r; P tỉ lệ nghịch với r.",
+   "Đây là mô hình rút gọn: một vòng tương đương đại diện cho toàn bộ dòng xoáy ở đáy nồi, f = ω/2π ≈ 25 kHz đúng vùng tần số bếp từ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "Phi0",
+   "ten": "Biên độ từ thông qua vòng tương đương",
+   "don_vi": "µWb",
+   "kieu": "dieu_chinh",
+   "min": 50,
+   "max": 500,
+   "mac_dinh": 200,
+   "buoc": 10
   },
-  "so_lieu_mau": {
-    "cot": ["r (Ω)", "e0 (V)", "P (W)"],
-    "hang": [[0.5, 32, 1024], [1.0, 32, 512], [0.25, 32, 2048]],
-    "ghi_chu": "P tính bằng hiệu dụng. Nếu dùng nhầm e0²/r với r = 0,50 Ω sẽ ra 2048 W."
+  {
+   "ky_hieu": "omega",
+   "ten": "Tần số góc của từ thông",
+   "don_vi": "krad/s",
+   "kieu": "dieu_chinh",
+   "min": 80,
+   "max": 320,
+   "mac_dinh": 160,
+   "buoc": 10
   },
-  "ket_qua_ky_vong": "P = 1024 W khi r = 0,50 Ω. P tỉ lệ nghịch với r khi Φ0 và ω giữ nguyên.",
-  "hien_tuong_hay_sai": [
-    "Lấy trung bình của sin bằng 0 nên kết luận P = 0.",
-    "Thay e0 vào P thay vì E.",
-    "Cho rằng mặt kính bếp là chỗ toả nhiệt."
+  {
+   "ky_hieu": "r",
+   "ten": "Điện trở của vòng tương đương",
+   "don_vi": "Ω",
+   "kieu": "dieu_chinh",
+   "min": 0.25,
+   "max": 2,
+   "mac_dinh": 0.5,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "e0",
+   "ten": "Biên độ suất điện động",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất toả nhiệt trung bình",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Φ = Φ₀·cos(ωt)  ⇒  e = −dΦ/dt = Φ₀·ω·sin(ωt), biên độ e₀ = Φ₀·ω",
+   "E = e₀/√2; P = E²/r = (Φ₀·ω)²/(2r)",
+   "Φ₀ = 2·10⁻⁴ Wb, ω = 1,6·10⁵ rad/s: e₀ = 32 V; r = 0,50 Ω thì P = 1024 W",
+   "Tần số f = ω/(2π) ≈ 25,5 kHz"
   ],
-  "goi_y_mo_phong": {
-    "loai": "do_thi+bang_so_lieu",
-    "dieu_khien": ["thanh Φ0", "thanh r", "đổi nồi nhiễm từ hoặc nhôm"],
-    "dau_ra": ["P", "đồ thị e(t)", "vùng nóng trên đáy nồi"],
-    "hinh_trong_bai": "Hình 4",
-    "y_tuong": "Học sinh chọn P trước khi mô phỏng vẽ đồ thị."
-  },
-  "an_toan": "Không tháo bếp từ. Nếu quan sát bếp thật: không chạm đáy nồi đang nấu, không để đồ kim loại nhỏ lên mặt bếp."
+  "gia_thiet": [
+   "mô hình rút gọn: toàn bộ dòng Foucault ở đáy nồi gộp thành một vòng dây tương đương, số vòng N = 1",
+   "bỏ qua tự cảm của vòng, chỉ tính toả nhiệt trên điện trở r"
+  ],
+  "ghi_chu": "Mô phỏng vẽ chồng Φ(t), e(t) và P(t) tức thời (P tức thời dao động quanh trung bình E²/r), kèm thanh trượt r."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "r (Ω)",
+   "e₀ (V)",
+   "E (V)",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    0.25,
+    32,
+    22.6,
+    2048
+   ],
+   [
+    0.5,
+    32,
+    22.6,
+    1024
+   ],
+   [
+    1.0,
+    32,
+    22.6,
+    512
+   ],
+   [
+    2.0,
+    32,
+    22.6,
+    256
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình P = (Φ₀ω)²/(2r) với Φ₀ = 2·10⁻⁴ Wb, ω = 1,6·10⁵ rad/s; chưa phải số đo bếp thật."
+ },
+ "ket_qua_ky_vong": "P = 1024 W với r = 0,50 Ω; đổi r = 1,00 Ω thì còn 512 W.",
+ "hien_tuong_hay_sai": [
+  "Dùng e₀²/r thay cho E²/r nên ra 2048 W (gấp đôi).",
+  "Lấy trung bình của e có dấu nên ra 0 W.",
+  "Nhầm 32 (số vôn của e₀) với công suất."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "y_tuong": "Hai thanh trượt Φ₀, r và hiển thị e₀, E, P; đồ thị P(t) tức thời dao động quanh mức trung bình.",
+  "diem_nhan": "Cho thấy vì sao phải dùng hiệu dụng: P tức thời không đổi dấu nhưng e thì có."
+ }
 }
