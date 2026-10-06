@@ -52,7 +52,7 @@
    "don_vi": "mm",
    "kieu": "dieu_chinh",
    "min": 0.2,
-   "max": 1.0,
+   "max": 1,
    "mac_dinh": 0.5,
    "buoc": 0.1
   },
@@ -61,8 +61,8 @@
    "ten": "Khoảng cách khe tới màn",
    "don_vi": "m",
    "kieu": "dieu_chinh",
-   "min": 1.0,
-   "max": 3.0,
+   "min": 1,
+   "max": 3,
    "mac_dinh": 1.5,
    "buoc": 0.1
   },
@@ -142,5 +142,15 @@
   "hinh_trong_bai": "không có",
   "y_tuong": "Thanh trượt a, D; hiện các vạch sáng tối và thước đo L."
  },
- "an_toan": "Không chiếu laser vào mắt."
+ "an_toan": "Không chiếu laser vào mắt.",
+ "video": {
+  "youtube_id": "qAGkgZeRvtY",
+  "nhan": "laser qua khe Young, vân trên thước",
+  "nhin_vao": "Hệ vân sáng tối trên màn có thước milimét trông thế nào?",
+  "giay_bat_dau": 50,
+  "giay_ket_thuc": 70,
+  "ten": "Giao thoa ánh sáng - Vật lí 11",
+  "kenh": "VQT GV",
+  "da_kiem": "2026-10-06"
+ }
 }

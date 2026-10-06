@@ -37,6 +37,7 @@ function opt(name: string): string | undefined {
 const APPLY = argv.includes("--apply");
 const JSON_OUT = argv.includes("--json");
 const KIEM = argv.includes("--kiem");
+const LAM_LAI = argv.includes("--lam-lai");
 const only = opt("--bai") || undefined;
 const khoDir = path.resolve(root, opt("--kho") || "content/thi-nghiem");
 const lessonRoot = path.resolve(root, opt("--root") || "content/lesson-samples");
@@ -200,16 +201,81 @@ function findAnchor(html: string, expId: string): { start: number; end: number }
   return null;
 }
 
+/**
+ * Bỏ các khối video DO SCRIPT chèn (nhận ra bằng marker `<!--video:…-->` ngay trước khối) để chèn
+ * lại bằng bản mới — dùng khi sửa `nhan`/`nhin_vao` trong kho. Khối chèn TAY (không có marker,
+ * ví dụ 4 clip của bài Giao thoa) giữ nguyên, không đụng.
+ */
+function boKhoiDaChen(html: string): { html: string; soKhoi: number } {
+  let out = html;
+  let soKhoi = 0;
+  const marks: number[] = [];
+  for (const m of out.matchAll(/<!--video:[^>]*-->/g)) if (m.index !== undefined) marks.push(m.index);
+  for (const idx of marks.reverse()) {
+    const endMark = out.indexOf("-->", idx) + 3;
+    const startBlock = out.indexOf('<div class="tl-box tl-box--video">', endMark);
+    if (startBlock === -1 || startBlock > endMark + 200) continue;
+    const divRe = /<div\b[^>]*>|<\/div>/g;
+    divRe.lastIndex = startBlock;
+    let depth = 0;
+    let end = -1;
+    let d: RegExpExecArray | null;
+    while ((d = divRe.exec(out))) {
+      if (d[0].startsWith("</")) {
+        depth--;
+        if (depth === 0) {
+          end = d.index + d[0].length;
+          break;
+        }
+      } else {
+        depth++;
+      }
+    }
+    if (end === -1) continue;
+    out = out.slice(0, idx) + out.slice(end);
+    soKhoi++;
+  }
+  return { html: out, soKhoi };
+}
+
 type KetQuaFile = { file: string; chen: string[]; boQua: string[] };
+
+/**
+ * Mốc chỉ có trong `theory.html`: hình do `build_figs.py` sinh từ `<!--FIGn-->` mang `data-exp`,
+ * nhưng `theory.src.html` không hề có `data-exp` đó. Muốn khối video sống sót qua lần build lại
+ * hình thì phải chèn vào src ngay SAU đúng placeholder đã sinh ra hình ấy. Thứ tự placeholder
+ * trong src khớp thứ tự `<figure>` trong html (kiểm bằng số lượng), nên ánh xạ theo chỉ số là
+ * chắc chắn. Không ánh xạ được thì trả null (bỏ qua src và báo rõ, không đoán bừa).
+ */
+function viTriTheoFigPlaceholder(
+  srcHtml: string,
+  htmlThamChieu: string,
+  expId: string,
+): number | null {
+  const figs = [...htmlThamChieu.matchAll(/<figure\b[^>]*>/g)];
+  const phs = [...srcHtml.matchAll(/<!--FIG[^>]*-->/g)];
+  if (figs.length === 0 || phs.length !== figs.length) return null;
+  const idx = figs.findIndex((f) => f[0].includes(`data-exp="${expId}"`));
+  if (idx === -1) return null;
+  const ph = phs[idx];
+  return ph.index + ph[0].length;
+}
 
 function chenVaoHtml(
   html: string,
   kho: Map<string, KhoEntry>,
   pool: Map<string, Video>,
   theoBai: ViTriBai[] = [],
+  htmlThamChieu?: string,
 ): { html: string; chen: string[]; boQua: string[] } {
   const ids: string[] = [];
-  for (const m of html.matchAll(/data-exp="([^"]+)"/g)) if (!ids.includes(m[1])) ids.push(m[1]);
+  const themId = (x: string) => {
+    if (!ids.includes(x)) ids.push(x);
+  };
+  for (const m of html.matchAll(/data-exp="([^"]+)"/g)) themId(m[1]);
+  // theory.src.html không có `data-exp` của những hình do build_figs.py sinh ra → lấy thêm id
+  // từ theory.html để còn ánh xạ qua mốc <!--FIGn--> (xem viTriTheoFigPlaceholder).
+  if (htmlThamChieu) for (const m of htmlThamChieu.matchAll(/data-exp="([^"]+)"/g)) themId(m[1]);
 
   const chen: string[] = [];
   const boQua: string[] = [];
@@ -228,13 +294,19 @@ function chenVaoHtml(
       continue;
     }
     const anchor = findAnchor(html, id);
-    if (!anchor) {
-      boQua.push(`${id} (không thấy hộp .tl-box--exp/figure mang data-exp này)`);
+    let pos = anchor ? anchor.end : null;
+    let quaFig = false;
+    if (pos === null && htmlThamChieu) {
+      pos = viTriTheoFigPlaceholder(html, htmlThamChieu, id);
+      quaFig = pos !== null;
+    }
+    if (pos === null) {
+      boQua.push(`${id} (không thấy mốc chèn trong file này)`);
       continue;
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, "Xem thí nghiệm thật");
-    inserts.push({ pos: anchor.end, block: renderBlock(id, tieuDeHop, nhan || entry.expTen, video) });
-    chen.push(`${id} → ${video.youtube_id}`);
+    inserts.push({ pos, block: renderBlock(id, tieuDeHop, nhan || entry.expTen, video) });
+    chen.push(`${id} → ${video.youtube_id}${quaFig ? " (qua mốc <!--FIGn-->, khớp hình trong theory.html)" : ""}`);
   }
 
   // Video gắn theo BÀI (mở bài / trước-sau một mốc) — khai ở video-theo-bai.json
@@ -408,8 +480,15 @@ async function main() {
     for (const file of [src, html]) {
       if (!fs.existsSync(file)) continue;
       const before = fs.readFileSync(file, "utf8");
-      const kq = chenVaoHtml(before, kho, pool, videoBai.get(slug) ?? []);
-      if (kq.chen.length === 0) {
+      // --lam-lai: gỡ khối cũ do script chèn rồi chèn lại (khi sửa chữ trong kho)
+      const goc = LAM_LAI ? boKhoiDaChen(before) : { html: before, soKhoi: 0 };
+      if (LAM_LAI && goc.soKhoi > 0) files.push({ file, chen: [`gỡ ${goc.soKhoi} khối cũ để chèn lại`], boQua: [] });
+      const beforeMoi = goc.html;
+      // khi chèn vào src thì đưa theory.html làm bản tham chiếu để ánh xạ mốc <!--FIGn-->
+      const thamChieu = file === src && fs.existsSync(html) ? fs.readFileSync(html, "utf8") : undefined;
+      const kq = chenVaoHtml(beforeMoi, kho, pool, videoBai.get(slug) ?? [], thamChieu);
+      const coThayDoi = kq.chen.length > 0 || (LAM_LAI && goc.soKhoi > 0);
+      if (!coThayDoi) {
         if (kq.boQua.length > 0) files.push({ file, chen: [], boQua: kq.boQua });
         continue;
       }
