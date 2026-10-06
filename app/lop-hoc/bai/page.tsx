@@ -11,7 +11,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
-import PracticeSession from "@/components/lessons/PracticeSession";
+import PracticeSession from "@/components/lessons/PracticeSessionLazy";
 import ChapterTree from "@/components/lessons/ChapterTree";
 import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
