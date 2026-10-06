@@ -1,0 +1,367 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Giải thích <strong>guitar điện</strong> và <strong>sạc không dây</strong> bằng từ thông biến thiên.</li>
+<li>Nêu dòng <strong>Foucault</strong>: cách sinh ra, lực hãm, toả nhiệt, và cách giảm khi có hại.</li>
+<li>Tính công suất toả nhiệt trung bình của dòng Foucault từ biểu thức từ thông $\Phi=\Phi_0\cos\omega t$.</li>
+<li>Tự trả lời <strong>6 câu ở mục Trả bài</strong>. Khoảng 15 phút · 6 mục · 8 câu tự kiểm tra.</li>
+</ul>
+</div>
+
+<h3>I. Mở bài: loa kêu, pin đầy, nồi sôi</h3>
+<p>Trong giờ văn nghệ, một bạn gảy đàn guitar điện. Thân đàn đặc, không có thùng rỗng, vậy mà loa vẫn kêu. Tối về, em đặt điện thoại lên một mặt đế phẳng, không cắm dây, pin vẫn tăng. Bếp nhà thì nồi sôi, mặt kính bếp vẫn ít nóng.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Ba việc đó cùng dựa vào điều gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q0" id="tl15-q0a"><label for="tl15-q0a" class="tl-opt tl-no">A. Nam châm hút pin, hút dây đàn, hút nồi</label>
+<input type="radio" name="tl15-q0" id="tl15-q0b"><label for="tl15-q0b" class="tl-opt tl-no">B. Nhiệt mặt bếp biến thành điện cho pin và loa</label>
+<input type="radio" name="tl15-q0" id="tl15-q0c"><label for="tl15-q0c" class="tl-opt tl-no">C. Sóng Wi-Fi mang năng lượng sang cả ba</label>
+<input type="radio" name="tl15-q0" id="tl15-q0d"><label for="tl15-q0d" class="tl-opt tl-ok">D. Từ thông biến thiên sinh suất điện động cảm ứng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Guitar, đế sạc và bếp từ đều cần từ thông đổi theo thời gian. Nam châm đứng yên, nhiệt, hay Wi-Fi không giải thích được cả ba.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hãy tách từng thiết bị: loa kêu khi dây rung, pin đầy khi đế có điện xoay chiều, nồi nóng trong khi mặt kính ít nóng. Cái chung là từ trường đang đổi, không phải lực hút hay sóng Wi-Fi.</p></div>
+</div>
+</div>
+
+<h3>II. Ba cách dùng cảm ứng điện từ</h3>
+
+<h4>II.1 Đàn guitar điện</h4>
+<p>🔑 <strong>Dây thép · Nam châm từ hoá · Cuộn sinh dòng</strong></p>
+<ul>
+<li>Thân đàn đặc. Dưới mỗi dây thép (1): nam châm (2) nằm trong cuộn dây (3).</li>
+<li>Đoạn dây sát nam châm bị từ hoá, thành một nam châm nhỏ.</li>
+<li>Dây rung thì từ thông qua cuộn đổi: cuộn có dòng cảm ứng cùng tần số với dây, đưa vào máy tăng âm rồi loa.</li>
+</ul>
+<!--FIG1-->
+<div class="tl-box tl-box--exp" data-exp="tn-l12-udcamung-01">
+<p class="tl-label">🔬 Thí nghiệm: nam châm chạy qua cuộn nối loa</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nối hai đầu một cuộn dây với loa nhỏ hoặc tai nghe. Đưa nam châm vào rồi rút ra. Sau đó giữ nam châm đứng yên trong cuộn.</li>
+<li><strong>Quan sát:</strong> mỗi lần đưa vào hoặc rút ra, loa kêu một tiếng. Giữ yên thì im.</li>
+<li><strong>Rút ra:</strong> tiếng kêu cho thấy có dòng cảm ứng chạy qua loa. Dây thép rung trước cuộn của đàn chính là nam châm nhỏ đang chuyển động rất nhanh.</li>
+</ol>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Thay dây thép bằng dây nylon, gảy cùng cách. Tín hiệu vào loa thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q1" id="tl15-q1a"><label for="tl15-q1a" class="tl-opt tl-no">A. To hơn, vì dây nylon nhẹ, rung mạnh hơn</label>
+<input type="radio" name="tl15-q1" id="tl15-q1b"><label for="tl15-q1b" class="tl-opt tl-no">B. Như cũ, vì nam châm trong cuộn vẫn còn</label>
+<input type="radio" name="tl15-q1" id="tl15-q1c"><label for="tl15-q1c" class="tl-opt tl-ok">C. Gần như mất, vì dây nylon không bị từ hoá</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Pickup chỉ nghe được khi từ thông đổi. Dây nylon không nhiễm từ, từ thông qua cuộn gần như đứng yên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nam châm nằm yên trong cuộn thì tự nó không tạo dòng. Cần vật nhiễm từ chuyển động làm từ thông đổi. Dây nylon không làm được việc đó.</p></div>
+</div>
+</div>
+
+<h4>II.2 Sạc không dây</h4>
+<p>🔑 <strong>Hai cuộn · Điện xoay chiều · Như biến áp</strong></p>
+<ul>
+<li>Cuộn trong đế sạc nối với điện xoay chiều: vai trò cuộn sơ cấp.</li>
+<li>Cuộn sau lưng điện thoại nối với pin: vai trò cuộn thứ cấp.</li>
+<li>Hai cuộn đặt sát nhau, không chạm kim loại.</li>
+<li>Từ thông biến thiên xuyên sang cuộn máy, sinh suất điện động để nạp pin.</li>
+<li>Cùng nguyên lí máy biến áp (bài 14). Dòng một chiều ổn định thì pin không được nạp.</li>
+</ul>
+<!--FIG2-->
+<div class="tl-box tl-box--exp" data-exp="tn-l12-udcamung-02">
+<p class="tl-label">🔬 Thí nghiệm: hai cuộn đặt cạnh nhau</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cuộn 1 nối pin qua công tắc. Cuộn 2 đặt sát cuộn 1, nối điện kế số 0 ở giữa. Bật, giữ, rồi ngắt.</li>
+<li><strong>Quan sát:</strong> kim giật lúc bật và lúc ngắt, về hai phía ngược nhau. Giữ công tắc đóng thì kim về 0.</li>
+<li><strong>Rút ra:</strong> năng lượng chỉ sang cuộn 2 khi dòng ở cuộn 1 đang đổi. Đế sạc phải dùng điện xoay chiều để sự đổi đó xảy ra liên tục.</li>
+</ol>
+</div>
+
+<h4>II.3 Dòng điện Foucault</h4>
+<p>🔑 <strong>Dòng cảm ứng trong khối kim loại</strong></p>
+<ul>
+<li>Sinh trong khối dẫn (đồng, nhôm, sắt…), không cần khung dây có sẵn, khi khối chuyển động trong từ trường hoặc nằm trong từ trường biến thiên.</li>
+<li>Đường đi khép kín, dạng xoáy trong khối.</li>
+</ul>
+<!--FIG3-->
+<div class="tl-box tl-box--exp" data-exp="tn-l12-udcamung-03">
+<p class="tl-label">🔬 Thí nghiệm: nam châm rơi trong ống</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> thả cùng một nam châm vào ống nhựa rồi ống đồng dài 30 cm dựng thẳng, bấm thời gian tới lúc ra khỏi đáy. Mỗi ống 3 lần.</li>
+<li><strong>Quan sát:</strong> ống nhựa rơi rất nhanh. Ống đồng rơi chậm, nam châm vẫn ra hết.</li>
+<li><strong>Rút ra:</strong> thành đồng có dòng Foucault. Theo Lenz, lực từ hãm nam châm. Nhựa không dẫn điện nên không có dòng đó.</li>
+</ol>
+</div>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lần</th><th>Ống nhựa (s)</th><th>Ống đồng (s)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>0,25</td><td>1,8</td></tr>
+<tr><td>2</td><td>0,24</td><td>2,1</td></tr>
+<tr><td>3</td><td>0,26</td><td>1,9</td></tr>
+</tbody>
+</table></div>
+<p><em>Bảng <strong>số minh hoạ</strong>, chưa phải kết quả đo thật. Khi làm thí nghiệm, ghi số đo của lớp vào đây. Ống nhựa gần rơi tự do: $\sqrt{2\cdot 0{,}3/9{,}8}\approx 0{,}25$ s.</em></p>
+<details class="tl-details">
+<summary>📊 Trung bình và sai số của bảng này <small>(tính trước, rồi mới bấm)</small></summary>
+<p>Trung bình nhựa: $(0{,}25+0{,}24+0{,}26)/3 = 0{,}25$ s. Trung bình đồng: $(1{,}8+2{,}1+1{,}9)/3 = 1{,}9$ s.</p>
+<p>Độ lệch lớn nhất so với trung bình: nhựa $0{,}01$ s, đồng $0{,}2$ s. Nguồn sai số: bấm đồng hồ lệch, ống không thẳng, nam châm xoay khi rơi.</p>
+</details>
+<div class="tl-box tl-box--exp" data-exp="tn-l12-udcamung-04">
+<p class="tl-label">🔬 Thí nghiệm: tấm đặc và tấm có rãnh</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cho tấm nhôm đặc dao động giữa hai cực nam châm mạnh. Lặp lại với tấm cùng cỡ nhưng xẻ rãnh.</li>
+<li><strong>Quan sát:</strong> tấm đặc dừng rất nhanh. Tấm có rãnh đung đưa lâu hơn nhiều.</li>
+<li><strong>Rút ra:</strong> rãnh cắt đường khép kín của dòng Foucault nên lực hãm yếu đi.</li>
+</ol>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Vì sao nam châm rơi trong ống đồng chậm hơn ống nhựa?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q2" id="tl15-q2a"><label for="tl15-q2a" class="tl-opt tl-ok">A. Dòng Foucault trong đồng sinh lực hãm</label>
+<input type="radio" name="tl15-q2" id="tl15-q2b"><label for="tl15-q2b" class="tl-opt tl-no">B. Đồng hút nam châm nên nam châm bị dính</label>
+<input type="radio" name="tl15-q2" id="tl15-q2c"><label for="tl15-q2c" class="tl-opt tl-no">C. Ống đồng nặng hơn nên nam châm rơi chậm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đồng không nhiễm từ: nam châm vẫn rơi hết ống, chỉ chậm. Lực hãm do dòng Foucault, ngược chiều chuyển động.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhìn lại bảng: nam châm vẫn ra khỏi ống đồng, không đứng yên. Ống đồng dựng thẳng và đứng yên, khối lượng của nó không kéo nam châm lại. Cái đổi giữa hai ống là thành ống có dẫn điện hay không.</p></div>
+</div>
+</div>
+
+<h4>II.4 Hãm, toả nhiệt, và lúc phải chặn</h4>
+<p>🔑 <strong>Foucault vừa hãm vừa đốt nóng</strong></p>
+<ul>
+<li>Khối kim loại chuyển động trong từ trường chịu lực hãm điện từ.</li>
+<li>Dùng làm phanh điện từ trên ô tô hạng nặng, tàu, tàu lượn.</li>
+<li>Đặt trong từ trường biến thiên thì nóng lên vì nhiệt Joule.</li>
+<li>Có ích: bếp từ, lò nung cảm ứng, nhiệt luyện bề mặt chi tiết thép.</li>
+<li>Có hại: lõi động cơ và máy biến áp bị nóng. Ghép bằng lá tôn silic mỏng, cách điện nhau, để cắt đường xoáy.</li>
+</ul>
+<details class="tl-details">
+<summary>Vì sao lá tôn mỏng, không đúc một khối sắt?</summary>
+<p>Từ trường vẫn xuyên dọc các lá. Dòng Foucault muốn chạy ngang qua nhiều lá thì bị lớp cách điện chặn, vòng xoáy nhỏ đi, nhiệt giảm.</p>
+</details>
+
+<details class="tl-details">
+<summary>🔑 Nhắc lại: công suất toả nhiệt của suất điện động xoay chiều <small>(cần cho bài toán mẫu)</small></summary>
+<p>Từ thông $\Phi=\Phi_0\cos(\omega t)$ thì $e=-\Phi'=\Phi_0\omega\sin(\omega t)$, biên độ $e_0=\Phi_0\omega$. Hiệu dụng $E=e_0/\sqrt{2}$, công suất trung bình trên điện trở $r$ là $P=E^2/r$. Không thay $e_0$ thẳng vào $P$, vì $e$ đổi dấu theo thời gian.</p>
+</details>
+
+<h3>III. Ba chỗ dễ nhầm</h3>
+
+<h4>III.1 Nam châm mạnh không thay được đế sạc</h4>
+<p>🔑 <strong>Đứng yên · Từ thông không đổi · Suất điện động bằng không</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Cách nghĩ hay gặp</th><th>Cách nghĩ đúng</th></tr></thead>
+<tbody>
+<tr><td>Nam châm hút mặt lưng nên pin đầy</td><td>Hút là lực từ. Nạp pin cần suất điện động</td></tr>
+<tr><td>Nam châm càng mạnh, sạc càng nhanh</td><td>Mạnh mà không đổi theo thời gian thì $e=0$</td></tr>
+<tr><td>Chỉ cần úp đúng cuộn trong máy</td><td>Cuộn đó cần từ thông biến thiên liên tục</td></tr>
+</tbody>
+</table></div>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl15-q3-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl15-q3-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Để điện thoại lên một nam châm vĩnh cửu, không có đế sạc. Pin có được nạp không?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q3" id="tl15-q3a"><label for="tl15-q3a" class="tl-opt tl-no">A. Có. Nam châm càng mạnh, pin càng mau đầy</label>
+<input type="radio" name="tl15-q3" id="tl15-q3b"><label for="tl15-q3b" class="tl-opt tl-ok">B. Không. Từ thông của nam châm đứng yên không đổi</label>
+<input type="radio" name="tl15-q3" id="tl15-q3c"><label for="tl15-q3c" class="tl-opt tl-no">C. Có, nếu úp đúng mặt có cuộn dây</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $e=-\Delta\Phi/\Delta t$. Nam châm nằm yên thì $\Delta\Phi=0$. Đế sạc phải phát từ trường biến thiên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lực hút và suất điện động là hai việc khác nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại: điều kiện có dòng cảm ứng là từ thông đổi, không phải từ trường mạnh.</p></div>
+</div>
+</div>
+
+<h4>III.2 Phanh Foucault chỉ hãm khi đang chuyển động</h4>
+<p>🔑 <strong>Hết chuyển động · Hết lực hãm Foucault</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
+<tbody>
+<tr><td>Đĩa kim loại quay trong nam châm một chiều</td><td>Có dòng Foucault, lực hãm, năng lượng thành nhiệt</td></tr>
+<tr><td>Đĩa đã đứng yên, nam châm một chiều vẫn bật</td><td>Từ thông không đổi, không hãm</td></tr>
+</tbody>
+</table></div>
+<p>Phanh Foucault biến cơ năng thành nhiệt trên đĩa. Xe dừng hẳn vẫn cần phanh ma sát để giữ xe.</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl15-q4-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl15-q4-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Xe đã dừng. Phanh Foucault (nam châm một chiều kẹp đĩa) còn hãm không?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q4" id="tl15-q4a"><label for="tl15-q4a" class="tl-opt tl-no">A. Còn, vì nam châm vẫn bật</label>
+<input type="radio" name="tl15-q4" id="tl15-q4b"><label for="tl15-q4b" class="tl-opt tl-no">B. Còn, nhưng yếu dần theo thời gian</label>
+<input type="radio" name="tl15-q4" id="tl15-q4c"><label for="tl15-q4c" class="tl-opt tl-ok">C. Không, vì đĩa đứng yên, từ thông không đổi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực hãm Foucault chống lại chuyển động. Hết chuyển động thì hết dòng xoáy, hết lực hãm. Giữ xe lúc đỗ là việc của phanh ma sát.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nam châm một chiều chỉ sinh dòng trong đĩa khi đĩa đang cắt từ thông. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, nhớ: Lenz chống sự đổi từ thông, không tự tạo chuyển động từ trạng thái đứng yên.</p></div>
+</div>
+</div>
+
+<h4>III.3 Nồi nào dùng được trên bếp từ</h4>
+<p>🔑 <strong>Nam châm dính đáy · Mới có Foucault mạnh</strong></p>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Đáy nồi</th><th>Trên bếp từ</th></tr></thead>
+<tbody>
+<tr><td>Gang, thép, inox nhiễm từ</td><td>Nóng nhanh. Đáy gom đường sức từ, dòng Foucault lớn, cộng thêm nhiệt do từ hoá đổi chiều liên tục</td></tr>
+<tr><td>Nhôm, đồng</td><td>Thường không nấu được: không gom từ thông nên suất điện động cảm ứng nhỏ, bếp nhận tải không hợp và ngắt. Nồi nhôm có đĩa thép dán đáy là ngoại lệ</td></tr>
+<tr><td>Thuỷ tinh, sứ</td><td>Không dẫn điện, không có dòng Foucault</td></tr>
+</tbody>
+</table></div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Nồi nào sôi trên bếp từ thông thường?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q5" id="tl15-q5a"><label for="tl15-q5a" class="tl-opt tl-no">A. Nồi nhôm trơn, đáy dày</label>
+<input type="radio" name="tl15-q5" id="tl15-q5b"><label for="tl15-q5b" class="tl-opt tl-ok">B. Nồi gang, nam châm dính được vào đáy</label>
+<input type="radio" name="tl15-q5" id="tl15-q5c"><label for="tl15-q5c" class="tl-opt tl-no">C. Nồi thuỷ tinh</label>
+<input type="radio" name="tl15-q5" id="tl15-q5d"><label for="tl15-q5d" class="tl-opt tl-no">D. Nồi đồng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thử nhanh ở nhà: nam châm dính đáy thì thường dùng được với bếp từ (trừ vài loại inox, nên xem ký hiệu trên nồi). Nhiệt sinh ngay trong đáy nồi, không phải trong mặt kính.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhôm và đồng dẫn điện nhưng không gom từ thông như sắt từ, nên suất điện động cảm ứng nhỏ, đáy nóng rất kém và bếp thường ngắt. Thuỷ tinh không dẫn điện nên không có dòng Foucault. Hãy chọn loại đáy mà nam châm hút được.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nói bằng lời của em, rồi mới bấm</p>
+<details class="tl-details">
+<summary>1. Khi nào thì có suất điện động cảm ứng? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Khi từ thông qua mạch biến thiên. Đứng yên trong từ trường không đổi thì $e=0$.</p>
+</details>
+<details class="tl-details">
+<summary>2. Pickup guitar gồm những gì, dòng ra có tần số thế nào? <small>(nói trước, rồi bấm)</small></summary>
+<p>Nam châm trong cuộn, đặt dưới dây thép. Dây bị từ hoá và rung. Dòng cảm ứng cùng tần số với dây, vào máy tăng âm.</p>
+</details>
+<details class="tl-details">
+<summary>3. Sạc không dây giống bộ phận nào? Vì sao phải là điện xoay chiều? <small>(nói trước, rồi bấm)</small></summary>
+<p>Giống biến áp: cuộn đế là sơ cấp, cuộn máy là thứ cấp. Xoay chiều mới làm từ thông đổi liên tục.</p>
+</details>
+<details class="tl-details">
+<summary>4. Dòng Foucault sinh ở đâu, bằng hai cách nào? <small>(nói trước, rồi bấm)</small></summary>
+<p>Trong khối kim loại. Cách 1: khối chuyển động trong từ trường. Cách 2: khối đứng trong từ trường biến thiên.</p>
+</details>
+<details class="tl-details">
+<summary>5. Vì sao tấm có rãnh đung đưa lâu, và lõi biến áp phải ghép lá tôn? <small>(nói trước, rồi bấm)</small></summary>
+<p>Rãnh và khe cách điện cắt vòng Foucault. Lực hãm yếu đi, nhiệt có hại giảm.</p>
+</details>
+<details class="tl-details">
+<summary>6. Với $\Phi=\Phi_0\cos(\omega t)$, viết $e_0$ và công suất trung bình. <small>(nói trước, rồi bấm)</small></summary>
+<p>$e_0=\Phi_0\omega$. $E=e_0/\sqrt{2}$. $P=E^2/r$. Không thay $e_0$ thẳng vào $P$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: đáy nồi trên bếp từ</h3>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📄 Đề bài</p>
+<p>Coi toàn bộ dòng Foucault trong đáy nồi như <strong>một vòng dây tương đương</strong> (mô hình rút gọn) có điện trở $r=0{,}50\ \Omega$. Từ thông qua vòng đó là</p>
+<p>$$\Phi=2\cdot 10^{-4}\cos(1{,}6\cdot 10^{5}t)\ \text{Wb}$$</p>
+<p>$t$ tính bằng giây. Tính công suất toả nhiệt trung bình trên vòng.</p>
+</div>
+<!--FIG4-->
+<p>Với mỗi cụm của đề, ghi dữ liệu và gọi đúng kiến thức trước khi tính.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"một vòng dây tương đương"</td><td>$N=1$</td><td>$e=-\Phi'$</td></tr>
+<tr><td>"điện trở $r=0{,}50\ \Omega$"</td><td>$r=0{,}50\ \Omega$</td><td>$P=E^2/r$</td></tr>
+<tr><td>"$\Phi=2\cdot 10^{-4}\cos(1{,}6\cdot 10^{5}t)$"</td><td>$\Phi_0=2\cdot 10^{-4}$ Wb, $\omega=1{,}6\cdot 10^{5}$ rad/s</td><td>$e_0=\Phi_0\omega$</td></tr>
+<tr><td>"công suất toả nhiệt trung bình"</td><td>cần giá trị hiệu dụng</td><td>$E=e_0/\sqrt{2}$, không dùng $e_0$ trực tiếp</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li>Đạo hàm: $e=-\Phi'= \Phi_0\omega\sin(\omega t)$.</li>
+<li>$e_0=\Phi_0\omega=2\cdot 10^{-4}\cdot 1{,}6\cdot 10^{5}=32$ V.</li>
+<li>Hiệu dụng: $E=e_0/\sqrt{2}=16\sqrt{2}$ V.</li>
+<li>$P=E^2/r=(16\sqrt{2})^2/0{,}50=512/0{,}50=1024$ W.</li>
+<li><strong>Kiểm:</strong> $f=\omega/(2\pi)\approx 25$ kHz, đúng vùng tần số bếp từ. $P\approx 1$ kW là cỡ công suất một bếp từ nhà, vì vòng tương đương đại diện cho <em>toàn bộ</em> dòng xoáy ở đáy nồi. Ra 0 W là đã lấy trung bình của $\sin$. Ra 2048 W là đã dùng $e_0^2/r$.</li>
+</ol>
+</details>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, chỉ đổi $r=1{,}00\ \Omega$.</p>
+<ol class="tl-steps">
+<li>$e_0=\Phi_0\omega=32$ V, không phụ thuộc $r$.</li>
+<li><strong>Bước 2 (em điền):</strong> $E=\;?$</li>
+<li><strong>Bước 3 (em điền):</strong> $P=\;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$E$ vẫn $16\sqrt{2}$ V. $P=512/1{,}00=512$ W. Điện trở gấp đôi thì công suất còn một nửa, vì $e_0$ không đổi.</p>
+</details>
+</div>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl15-q6-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl15-q6-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Với số của đề bài, công suất trung bình trên vòng là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q6" id="tl15-q6a"><label for="tl15-q6a" class="tl-opt tl-no">A. 2048 W</label>
+<input type="radio" name="tl15-q6" id="tl15-q6b"><label for="tl15-q6b" class="tl-opt tl-no">B. 0 W</label>
+<input type="radio" name="tl15-q6" id="tl15-q6c"><label for="tl15-q6c" class="tl-opt tl-no">C. 32 W</label>
+<input type="radio" name="tl15-q6" id="tl15-q6d"><label for="tl15-q6d" class="tl-opt tl-ok">D. 1024 W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $e_0=32$ V, $E=16\sqrt{2}$ V, $P=E^2/r=1024$ W.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 2048 W là dùng biên độ thay cho hiệu dụng. 0 W là lấy trung bình của suất điện động có dấu. 32 là số vôn của $e_0$, chưa phải oát. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, viết lại $E=e_0/\sqrt{2}$ trước khi tính $P$.</p></div>
+</div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🔁 Thử sức đổi số</p>
+<p><strong>Câu 7.</strong> Giữ nguyên $\Phi$, đổi $r=1{,}00\ \Omega$. Công suất mới là</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q7" id="tl15-q7a"><label for="tl15-q7a" class="tl-opt tl-ok">A. 512 W</label>
+<input type="radio" name="tl15-q7" id="tl15-q7b"><label for="tl15-q7b" class="tl-opt tl-no">B. 2048 W</label>
+<input type="radio" name="tl15-q7" id="tl15-q7c"><label for="tl15-q7c" class="tl-opt tl-no">C. 1024 W</label>
+<input type="radio" name="tl15-q7" id="tl15-q7d"><label for="tl15-q7d" class="tl-opt tl-no">D. 256 W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $E$ không đổi, $P$ tỉ lệ nghịch với $r$, nên 1024 W thành 512 W.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đổi $r$ không đổi $\Phi_0$ và $\omega$. Công suất trung bình giảm đúng bằng số lần $r$ tăng, nếu vẫn dùng hiệu dụng.</p></div>
+</div>
+</div>
+
+<h3>VI. Ứng dụng quanh em</h3>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Gặp ở đâu</th><th>Cơ chế</th></tr></thead>
+<tbody>
+<tr><td>Micro, dynamo xe đạp, đèn pin quay tay</td><td>Cuộn hoặc dây chuyển động trong từ trường</td></tr>
+<tr><td>Sạc điện thoại, tai nghe; thẻ RFID, thẻ gửi xe</td><td>Hai cuộn, từ thông biến thiên, như biến áp</td></tr>
+<tr><td>Bếp từ, lò nung cảm ứng, hàn nắp chai</td><td>Foucault trong kim loại thành nhiệt</td></tr>
+<tr><td>Phanh tàu, tàu lượn, tách nhôm tái chế</td><td>Foucault thành lực hãm</td></tr>
+<tr><td>Máy dò kim loại, dò nứt mối hàn</td><td>Làm lệch từ trường cuộn dò</td></tr>
+<tr><td>Lõi biến áp, lõi động cơ</td><td>Cắt vòng xoáy, hoặc chắn từ trường đổi</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>📎 Từng ứng dụng một dòng <small>(bấm khi cần tra)</small></summary>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Thiết bị</th><th>Việc từ thông đổi làm ra</th></tr></thead>
+<tbody>
+<tr><td>Micro điện động</td><td>Màng kéo cuộn trong khe nam châm</td></tr>
+<tr><td>Dynamo xe đạp, đèn pin quay</td><td>Nam châm quay cạnh cuộn, đèn sáng</td></tr>
+<tr><td>Thẻ RFID, cổng từ, thẻ gửi xe</td><td>Cuộn đọc nuôi thẻ, thẻ không cần pin</td></tr>
+<tr><td>Lò nung cảm ứng</td><td>Nấu chảy kim loại bằng Foucault, ngọn lửa không chạm mẻ nấu</td></tr>
+<tr><td>Hàn nắp chai, miệng túi</td><td>Lá nhôm trên nắp nóng lên, keo chảy, dán kín</td></tr>
+<tr><td>Phanh tàu, tàu lượn</td><td>Đĩa hoặc ray cắt từ trường, toả nhiệt, giảm ma sát má phanh</td></tr>
+<tr><td>Tách nhôm tái chế</td><td>Nam châm quay đẩy mảnh nhôm văng khỏi băng tải</td></tr>
+<tr><td>Máy dò kim loại</td><td>Vật kim loại sinh Foucault, cuộn thu thấy từ trường lệch</td></tr>
+</tbody>
+</table></div>
+</details>
+<p><strong>Thử thách.</strong> Tự nói đáp án, rồi mới mở.</p>
+<details class="tl-details">
+<summary>⭐ Nam châm thả trong ống đồng chậm hơn ống nhựa. Năng lượng cơ mất đi thành gì?</summary>
+<p>Thành nhiệt Joule của dòng Foucault trong thành đồng. Ống nhựa không có dòng đó.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐ Tàu đã đứng yên. Phanh Foucault còn giữ tàu không? Cần thêm phanh nào?</summary>
+<p>Không giữ. Hết chuyển động thì hết lực hãm Foucault. Cần phanh ma sát để đỗ.</p>
+</details>
+<details class="tl-details">
+<summary>⭐⭐⭐ Vì sao lõi biến áp là lá tôn mỏng cách điện, còn đáy nồi bếp từ lại là khối liền?</summary>
+<p>Lõi biến áp cần dẫn từ, không muốn Foucault nên phải cắt vòng xoáy. Đáy nồi muốn Foucault mạnh để đun, nên để khối liền và nhiễm từ.</p>
+</details>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Từ thông đổi thì mới có suất điện động.</li>
+<li>Guitar: dây thép rung, cuộn sinh dòng cùng tần số.</li>
+<li>Sạc không dây: sơ cấp xoay chiều, thứ cấp trong máy.</li>
+<li>Foucault: xoáy trong khối kim loại, vừa hãm vừa nóng. Rãnh, lá tôn cắt vòng xoáy khi có hại.</li>
+<li>$e_0=\Phi_0\omega$, $P=E^2/r$, $E=e_0/\sqrt{2}$.</li>
+<li>Đọc đề: tìm chỗ từ thông đổi, rồi mới tính.</li>
+</ul>
+</div>
