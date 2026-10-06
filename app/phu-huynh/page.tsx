@@ -8,15 +8,11 @@ import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import ReadingZone from "@/components/ui/ReadingZone";
 import { useAuth } from "@/components/auth/AuthProvider";
-import StudentResultsDashboard from "@/components/results/StudentResultsDashboard";
-import CatchupCard from "@/components/results/CatchupCard";
-import ParentHomeworkNotes from "@/components/results/ParentHomeworkNotes";
+import StudentResultsDashboard from "@/components/results/StudentResultsDashboardLazy";
+import ParentChildCards from "@/components/parent/ParentChildCardsLazy";
 import ParentFaq from "@/components/parent/ParentFaq";
 import ParentGuestLanding from "@/components/parent/ParentGuestLanding";
 import TeacherContact from "@/components/parent/TeacherContact";
-import ParentUpcoming from "@/components/parent/ParentUpcoming";
-import ParentAttendanceCard from "@/components/parent/ParentAttendanceCard";
-import ParentStanding from "@/components/parent/ParentStanding";
 import ParentTuitionCard from "@/components/parent/ParentTuitionCard";
 import { fetchCoursesByIds } from "@/services/parent-view";
 import type { ThptCourse } from "@/services/thpt-courses-public";
@@ -201,22 +197,12 @@ function ParentHome() {
         title={`Con: ${selected.fullName}`}
         afterSummary={
           selected.classId !== null ? (
-            <>
-              <ParentUpcoming key={`upcoming-${selected.studentId}`} classId={selected.classId} courses={selectedCourses} />
-              <ParentAttendanceCard key={`attendance-${selected.studentId}`} studentId={selected.studentId} />
-              <ParentHomeworkNotes
-                key={`homework-${selected.studentId}`}
-                classId={selected.classId}
-                studentId={selected.studentId}
-              />
-              <CatchupCard
-                key={`catchup-${selected.studentId}`}
-                studentId={selected.studentId}
-                classId={selected.classId}
-                viewer="parent"
-              />
-              <ParentStanding key={`standing-${selected.studentId}`} studentId={selected.studentId} classId={selected.classId} />
-            </>
+            <ParentChildCards
+              key={selected.studentId}
+              studentId={selected.studentId}
+              classId={selected.classId}
+              courses={selectedCourses}
+            />
           ) : null
         }
       />
