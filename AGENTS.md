@@ -214,3 +214,29 @@ phần "Rút kinh nghiệm"** — không có thì chưa tính là xong phiên. L
   trước khi commit**: nếu diff còn lẫn việc của phiên khác thì đừng commit cả file (bỏ lại cho phiên đó), và nhớ
   `git commit -- <path>` chỉ nhận file git đã biết — file MỚI phải `git add <path>` trước, nếu không sẽ báo
   `pathspec ... did not match any file(s) known to git`.
+
+# Phân công mô hình (thầy chốt 6/10/2026) — Claude làm việc của Claude, việc khác gợi ý Cursor
+
+Hai nhánh, không trộn:
+
+**Nhánh Claude — giao subagent trong `.claude/agents/`, mỗi agent đã ghim model:**
+
+| Việc | Agent | Model |
+|---|---|---|
+| Schema, RLS, migration, YCCĐ–danh hiệu–phụ đạo, backup, đổi vùng, dependency lớn | `kien-truc-du-lieu` | opus |
+| Review diff trước commit/merge; soát nội dung lý thuyết sắp đăng; soát UI | `kiem-code` | sonnet |
+| Chép đề từ ảnh trang đã render (thay cho `general-purpose`) | `chep-de` | sonnet |
+| Import roster, điểm danh Zalo, bảng điểm, học phí — mọi dữ liệu có tên học sinh | `nhap-du-lieu-hoc-sinh` | haiku |
+| Soạn bài lý thuyết, quiz, tin tức, AI tutor giải đủ, UI học sinh | phiên chính (sonnet/opus) | — |
+
+**Nhánh ngoài Claude — KHÔNG tự làm, KHÔNG viết router gọi API ngoài. Dừng lại, in hướng dẫn cho Thạch làm trên Cursor
+(chế độ Auto, Cursor tự chọn model), kèm prompt mẫu và tên file kết quả cần nộp lại, rồi chờ:**
+- OCR đề thi nhiều hình vẽ / công thức MathType dạng ảnh, PDF scan dày (Gemini Flash làm tốt và rẻ hơn).
+- Sinh lời giải chi tiết hàng loạt cho ngân hàng câu (Gemini/DeepSeek), sau đó quay lại Claude đối chiếu đáp án.
+- Code thường không đụng schema/RLS: bugfix, refactor component, script một lần.
+- Tin tức/xu hướng cần dữ liệu thời gian thực từ X (Grok).
+
+**Ranh giới không đổi:**
+- Dữ liệu định danh học sinh (tên, điểm, phụ huynh, SĐT) chỉ đi qua Claude — không đưa vào prompt gửi Cursor/DeepSeek/Gemini.
+- Model rẻ làm → `kiem-code` kiểm trước khi merge. Lời giải do model ngoài sinh → Claude đối chiếu đáp án trước khi đăng.
+- Model chạy TRONG app (Edge Function `classify-questions`, `ai-tutor`) chọn bằng env/bảng cấu hình, không hard-code tên model (xem mục "Gọi AI provider trong code").
