@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,7 +602,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 12. Chuyển động ném — Lý thuyết trọng tâm</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 272" role="img" aria-label="Hệ trục Oxy: theo Ox các đoạn bằng nhau sau những khoảng thời gian bằng nhau, theo Oy các đoạn rơi tăng dần theo tỉ lệ 1:3:5:7:9, nên quỹ đạo là parabol"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="40" y1="40" x2="98" y2="40" stroke="#f87171" stroke-width="3" marker-end="url(#f2-r)"/><text x="102" y="36" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">v₀</text><line x1="40" y1="40" x2="352" y2="40" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="40" y1="40" x2="40" y2="226" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="358" y="45" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">x</text><text x="20" y="224" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">y</text><text x="20" y="34" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">O</text><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="40.0,40.0 46.5,40.1 53.0,40.4 59.5,40.9 66.0,41.6 72.5,42.6 79.0,43.7 85.5,45.1 92.0,46.6 98.5,48.4 105.0,50.3 111.5,52.5 118.0,54.9 124.5,57.4 131.0,60.2 137.5,63.2 144.0,66.4 150.5,69.8 157.0,73.4 163.5,77.2 170.0,81.2 176.5,85.5 183.0,89.9 189.5,94.6 196.0,99.4 202.5,104.5 209.0,109.7 215.5,115.2 222.0,120.8 228.5,126.7 235.0,132.8 241.5,139.1 248.0,145.6 254.5,152.3 261.0,159.2 267.5,166.3 274.0,173.7 280.5,181.2 287.0,188.9 293.5,196.9 300.0,205.0"/><line x1="92.0" y1="35" x2="92.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="92.0" cy="46.6" r="4.2" fill="#fb923c"/><line x1="144.0" y1="35" x2="144.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="144.0" cy="66.4" r="4.2" fill="#fb923c"/><line x1="196.0" y1="35" x2="196.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="196.0" cy="99.4" r="4.2" fill="#fb923c"/><line x1="248.0" y1="35" x2="248.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="248.0" cy="145.60000000000002" r="4.2" fill="#fb923c"/><line x1="300.0" y1="35" x2="300.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="300.0" cy="205.0" r="4.2" fill="#fb923c"/><line x1="35" y1="46.6" x2="45" y2="46.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="66.4" x2="45" y2="66.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="99.4" x2="45" y2="99.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="145.60000000000002" x2="45" y2="145.60000000000002" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="205.0" x2="45" y2="205.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="140" y="16" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">Ox: mỗi khoảng thời gian bằng nhau</text><text x="140" y="30" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">→ đoạn ngang bằng nhau</text><text x="20" y="246" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">Oy: các đoạn rơi tăng theo tỉ lệ 1 : 3 : 5 : 7 : 9</text><text x="20" y="262" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">→ quỹ đạo là một phần parabol</text></svg><figcaption>Hình 2. Chọn Ox ngang, Oy thẳng đứng hướng xuống. Sau những khoảng thời gian bằng nhau, vật đi được <strong>đoạn ngang bằng nhau</strong> (Ox thẳng đều) nhưng <strong>đoạn rơi tăng dần 1 : 3 : 5 : 7 : 9</strong> (Oy rơi tự do). Ghép hai chuyển động đó lại thành quỹ đạo parabol.</figcaption></figure></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 278" role="img" aria-label="Hệ trục Oxy: theo Ox các đoạn bằng nhau sau những khoảng thời gian bằng nhau, theo Oy các đoạn rơi tăng dần theo tỉ lệ 1:3:5:7:9, nên quỹ đạo là parabol"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="40" y1="40" x2="98" y2="40" stroke="#f87171" stroke-width="3" marker-end="url(#f2-r)"/><text x="102" y="36" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">v₀</text><line x1="40" y1="40" x2="352" y2="40" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="40" y1="40" x2="40" y2="226" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="358" y="45" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">x</text><text x="20" y="224" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">y</text><text x="20" y="34" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">O</text><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="40.0,40.0 46.5,40.1 53.0,40.4 59.5,40.9 66.0,41.6 72.5,42.6 79.0,43.7 85.5,45.1 92.0,46.6 98.5,48.4 105.0,50.3 111.5,52.5 118.0,54.9 124.5,57.4 131.0,60.2 137.5,63.2 144.0,66.4 150.5,69.8 157.0,73.4 163.5,77.2 170.0,81.2 176.5,85.5 183.0,89.9 189.5,94.6 196.0,99.4 202.5,104.5 209.0,109.7 215.5,115.2 222.0,120.8 228.5,126.7 235.0,132.8 241.5,139.1 248.0,145.6 254.5,152.3 261.0,159.2 267.5,166.3 274.0,173.7 280.5,181.2 287.0,188.9 293.5,196.9 300.0,205.0"/><line x1="92.0" y1="35" x2="92.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="92.0" cy="46.6" r="4.2" fill="#fb923c"/><line x1="144.0" y1="35" x2="144.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="144.0" cy="66.4" r="4.2" fill="#fb923c"/><line x1="196.0" y1="35" x2="196.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="196.0" cy="99.4" r="4.2" fill="#fb923c"/><line x1="248.0" y1="35" x2="248.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="248.0" cy="145.60000000000002" r="4.2" fill="#fb923c"/><line x1="300.0" y1="35" x2="300.0" y2="45" stroke="currentColor" stroke-width="1.4" opacity="1"/><circle cx="300.0" cy="205.0" r="4.2" fill="#fb923c"/><line x1="35" y1="46.6" x2="45" y2="46.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="66.4" x2="45" y2="66.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="99.4" x2="45" y2="99.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="145.60000000000002" x2="45" y2="145.60000000000002" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="35" y1="205.0" x2="45" y2="205.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="140" y="16" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">Ox: mỗi khoảng thời gian bằng nhau</text><text x="140" y="32" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">→ đoạn ngang bằng nhau</text><text x="20" y="248" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">Oy: các đoạn rơi tăng theo tỉ lệ 1 : 3 : 5 : 7 : 9</text><text x="20" y="267" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">→ quỹ đạo là một phần parabol</text></svg><figcaption>Hình 2. Chọn Ox ngang, Oy thẳng đứng hướng xuống. Sau những khoảng thời gian bằng nhau, vật đi được <strong>đoạn ngang bằng nhau</strong> (Ox thẳng đều) nhưng <strong>đoạn rơi tăng dần 1 : 3 : 5 : 7 : 9</strong> (Oy rơi tự do). Ghép hai chuyển động đó lại thành quỹ đạo parabol.</figcaption></figure></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>

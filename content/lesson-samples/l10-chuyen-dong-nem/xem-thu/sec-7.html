@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,19 +602,19 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 12. Chuyển động ném — Lý thuyết trọng tâm</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>VII. Đời sống và mang về</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>VII. Đời sống và mang về</h3>
 
 <ul>
-<li><strong>Thả hàng cứu trợ:</strong> phải thả trước đích đúng một tầm xa $L=v_0\sqrt{2h/g}$; bay nhanh gấp đôi thì phải thả xa gấp đôi.</li>
-<li><strong>Xưởng CNC:</strong> tia dung dịch làm mát và máng hứng phải tính theo tầm xa; phun mạnh hơn thì dịch máng ra xa hơn.</li>
-<li><strong>Thể thao:</strong> đánh đầu bóng từ trên cao là bài toán ném ngang; cú ném rổ, phát bóng tennis là ném xiên.</li>
+<li><strong>Thả hàng cứu trợ:</strong> thả trước đích đúng một tầm xa $L=v_0\sqrt{2h/g}$.</li>
+<li><strong>Thể thao:</strong> đánh đầu bóng từ trên cao là ném ngang; cú ném rổ, sút phạt là ném xiên (người ta chọn góc để vượt rào hay vào rổ).</li>
 </ul>
 
 <details class="tl-details" open>
 <summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
 <p><strong>⭐</strong> Ném ngang từ $h=45$ m, lấy $g=10$ m/s². Tính thời gian rơi. <em>Gợi ý:</em> $t=\sqrt{2h/g}=\sqrt{9}=3$ s, không liên quan vận tốc ném.</p>
 <p><strong>⭐⭐</strong> Cũng bài đó với $v_0=20$ m/s. Tính tầm xa và vận tốc chạm đất. <em>Gợi ý:</em> $L=v_0t=60$ m; $v_y=gt=30$ m/s nên $v=\sqrt{20^2+30^2}\approx36$ m/s.</p>
-<p><strong>⭐⭐⭐</strong> Máy bay cứu trợ bay ngang ở độ cao 500 m với tốc độ 100 m/s, lấy $g=10$ m/s². Phải thả hàng khi máy bay còn cách đích bao xa theo phương ngang? Vì sao phi công không thả khi đang ở ngay trên đích? <em>Gợi ý:</em> $t=\sqrt{1000/10}=10$ s, hàng bay tiếp $L=100\times10=1000$ m — thả khi còn cách đích 1 km. Thả đúng trên đích thì hàng rơi xuống trước đích 1 km.</p>
+<p><strong>⭐⭐</strong> Ném xiên từ mặt đất với $v_0=20$ m/s, $\alpha=45^\circ$, $g=10$ m/s². Tính $H$ và $L$. <em>Gợi ý:</em> $H=\dfrac{400\times0{,}5}{20}=10$ m; $L=\dfrac{400\times1}{10}=40$ m.</p>
+<p><strong>⭐⭐⭐</strong> Máy bay cứu trợ bay ngang ở độ cao 500 m với tốc độ 100 m/s, lấy $g=10$ m/s². Phải thả hàng khi máy bay còn cách đích bao xa theo phương ngang? Vì sao phi công không thả khi đang ở ngay trên đích? <em>Gợi ý:</em> $t=\sqrt{1000/10}=10$ s, hàng bay tiếp $L=100\times10=1000$ m — thả khi còn cách đích 1 km. Thả đúng trên đích thì hàng bay tiếp và vượt quá đích 1 km.</p>
 </details>
 
 <div class="tl-box tl-box--rule">
@@ -585,7 +625,9 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <li><strong>Thời gian:</strong> $t=\sqrt{\dfrac{2h}{g}}$ · không chứa $v_0$ · không chứa khối lượng.</li>
 <li><strong>Tầm xa:</strong> $L=v_0\sqrt{\dfrac{2h}{g}}$ · $L$ tỉ lệ $\sqrt{h}$ và tỉ lệ $v_0$.</li>
 <li><strong>Vận tốc:</strong> $v=\sqrt{v_0^2+(gt)^2}$ · $v_{cd}=\sqrt{v_0^2+2gh}$ · $\tan\alpha=\dfrac{gt}{v_0}$.</li>
-<li><strong>Ném xiên:</strong> $H=\dfrac{v_0^2\sin^2\alpha}{2g}$ · $L=\dfrac{v_0^2\sin 2\alpha}{g}$ · xa nhất ở $45^\circ$.</li>
+<li><strong>Ném xiên:</strong> tách $v_{0x}=v_0\cos\alpha$ · $v_{0y}=v_0\sin\alpha$; Ox đều, Oy lên chậm dần rồi xuống nhanh dần.</li>
+<li><strong>Công thức ném xiên:</strong> $H=\dfrac{v_0^2\sin^2\alpha}{2g}$ · $t=\dfrac{2v_0\sin\alpha}{g}$ · $L=\dfrac{v_0^2\sin 2\alpha}{g}$ · xa nhất ở $45^\circ$; hai góc phụ nhau cùng $L$.</li>
+<li><strong>Điểm cao nhất:</strong> $v_y=0$ nhưng $v=v_0\cos\alpha\neq0$.</li>
 <li><strong>Đọc đề:</strong> gạch ngay $h$ và $v_0$; hỏi thời gian chỉ dùng $h$, hỏi tầm xa mới cần $v_0$.</li>
 </ul>
 </div>

@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,100 +602,60 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 12. Chuyển động ném — Lý thuyết trọng tâm</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>III. Ba cái bẫy sập nhiều nhất</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
 <h4>Bẫy 1: "máy bay bay nhanh hơn thì gói hàng rơi lâu hơn"</h4>
 
-<p>Nhìn gói hàng thả từ máy bay bay nhanh, ta thấy nó ở trên không lâu hơn; thật ra nó chỉ <strong>đi xa hơn</strong>. Thời gian rơi chỉ do độ cao.</p>
-
 <p><strong>🔑 $v_0$ đổi tầm xa · $h$ đổi thời gian</strong></p>
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Nghĩ vậy</th><th>Thực tế</th></tr>
-</thead>
-<tbody>
-<tr><td>Bay nhanh hơn thì gói ở trên không lâu hơn</td><td>$t=\sqrt{2h/g}$ không chứa $v_0$; bay nhanh chỉ làm gói rơi xa hơn theo phương ngang</td></tr>
-<tr><td>Gói rơi xa hơn thì phải thả từ cao hơn</td><td>Cùng độ cao vẫn có tầm xa khác nhau; $v_0$ quyết định tầm xa, $h$ quyết định thời gian</td></tr>
-</tbody>
-</table>
-</div>
-
 <div class="tl-box tl-box--think">
-<p><strong>Câu 4.</strong> Hai vật cùng được ném ngang từ độ cao 20 m, lấy $g=10$ m/s². Vật A có $v_0=5$ m/s, vật B có $v_0=20$ m/s. Kết luận đúng là:</p>
+<p><strong>Câu 2.</strong> Hai vật cùng được ném ngang từ độ cao 20 m, lấy $g=10$ m/s². Vật A có $v_0=5$ m/s, vật B có $v_0=20$ m/s. Kết luận đúng là:</p>
 <p class="tl-conf">Em chắc bao nhiêu?
-<label><input type="radio" name="tl12-q4c" value="chac"> Chắc</label>
-<label><input type="radio" name="tl12-q4c" value="khong"> Không chắc</label></p>
+<label><input type="radio" name="tl57-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="tl57-q4c" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q4" id="tl12-q4a"><label for="tl12-q4a" class="tl-opt tl-no">A. A chạm đất trước B</label>
-<input type="radio" name="tl12-q4" id="tl12-q4b"><label for="tl12-q4b" class="tl-opt tl-no">B. B chạm đất trước A</label>
-<input type="radio" name="tl12-q4" id="tl12-q4c" checked><label for="tl12-q4c" class="tl-opt tl-ok">C. Hai vật chạm đất cùng lúc, B bay xa gấp bốn lần A</label>
-<input type="radio" name="tl12-q4" id="tl12-q4d"><label for="tl12-q4d" class="tl-opt tl-no">D. Hai vật chạm đất cùng lúc và cùng tầm xa</label>
+<input type="radio" name="tl57-q4" id="tl57-q4a"><label for="tl57-q4a" class="tl-opt tl-no">A. A chạm đất trước B</label>
+<input type="radio" name="tl57-q4" id="tl57-q4b"><label for="tl57-q4b" class="tl-opt tl-no">B. B chạm đất trước A</label>
+<input type="radio" name="tl57-q4" id="tl57-q4c"><label for="tl57-q4c" class="tl-opt tl-no">C. Hai vật chạm đất cùng lúc và cùng tầm xa</label>
+<input type="radio" name="tl57-q4" id="tl57-q4d" checked><label for="tl57-q4d" class="tl-opt tl-ok">D. Hai vật chạm đất cùng lúc, B bay xa gấp bốn lần A</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $t=\sqrt{\dfrac{2\times20}{10}}=2$ s cho cả hai. Tầm xa $L=v_0t$: A được 10 m, B được 40 m — gấp bốn vì $v_0$ gấp bốn.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu em chọn A hoặc B, em vẫn đang cho vận tốc ném ảnh hưởng tới thời gian rơi. Nếu chọn D, em quên rằng tầm xa $L=v_0t$ tỉ lệ với $v_0$: cùng $t$ mà $v_0$ gấp bốn thì $L$ gấp bốn. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu em chọn A hoặc B, em vẫn đang cho vận tốc ném ảnh hưởng tới thời gian rơi. Nếu chọn C, em quên rằng tầm xa $L=v_0t$ tỉ lệ với $v_0$: cùng $t$ mà $v_0$ gấp bốn thì $L$ gấp bốn.</p></div>
 </div>
 </div>
 
 <h4>Bẫy 2: "vật bay xa dần nên theo phương ngang cũng nhanh dần"</h4>
 
-<p>Vật ra xa dần vì <strong>thời gian trôi</strong>, không phải vì nhanh hơn. Theo Ox không có lực nào nên $v_x=v_0$ suốt chuyển động: cứ mỗi 0,5 s vật đi đúng một đoạn ngang như nhau.</p>
+<p>Theo Ox không có lực nào nên $v_x=v_0$ suốt chuyển động: vật ra xa dần vì <strong>thời gian trôi</strong>, không phải vì nhanh hơn.</p>
 
 <p><strong>🔑 Ox đều · Oy nhanh dần</strong></p>
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Đại lượng</th><th>Phương Ox</th><th>Phương Oy</th></tr>
-</thead>
-<tbody>
-<tr><td>Gia tốc</td><td>$a_x=0$</td><td>$a_y=g$</td></tr>
-<tr><td>Vận tốc</td><td>$v_x=v_0$, không đổi</td><td>$v_y=gt$, tăng đều</td></tr>
-<tr><td>Quãng đường mỗi giây</td><td>bằng nhau</td><td>tăng theo tỉ lệ $1:3:5$</td></tr>
-</tbody>
-</table>
-</div>
-
 <div class="tl-box tl-box--think">
-<p><strong>Câu 5.</strong> Trong chuyển động ném ngang (bỏ qua lực cản), quãng đường vật đi được theo phương ngang trong mỗi khoảng 0,5 s liên tiếp thì:</p>
+<p><strong>Câu 3.</strong> Trong chuyển động ném ngang (bỏ qua lực cản), quãng đường vật đi được theo phương ngang trong mỗi khoảng 0,5 s liên tiếp thì:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q5" id="tl12-q5a"><label for="tl12-q5a" class="tl-opt tl-no">A. Tăng dần, vì vật bay càng lúc càng nhanh</label>
-<input type="radio" name="tl12-q5" id="tl12-q5b" checked><label for="tl12-q5b" class="tl-opt tl-ok">B. Bằng nhau, vì $v_x=v_0$ không đổi</label>
-<input type="radio" name="tl12-q5" id="tl12-q5c"><label for="tl12-q5c" class="tl-opt tl-no">C. Giảm dần, vì vật mất dần năng lượng</label>
-<input type="radio" name="tl12-q5" id="tl12-q5d"><label for="tl12-q5d" class="tl-opt tl-no">D. Tăng rồi giảm, vì quỹ đạo là parabol</label>
+<input type="radio" name="tl57-q5" id="tl57-q5a"><label for="tl57-q5a" class="tl-opt tl-no">A. Tăng dần, vì vật bay càng lúc càng nhanh</label>
+<input type="radio" name="tl57-q5" id="tl57-q5b"><label for="tl57-q5b" class="tl-opt tl-no">B. Giảm dần, vì vật mất dần năng lượng</label>
+<input type="radio" name="tl57-q5" id="tl57-q5c" checked><label for="tl57-q5c" class="tl-opt tl-ok">C. Bằng nhau, vì $v_x=v_0$ không đổi</label>
+<input type="radio" name="tl57-q5" id="tl57-q5d"><label for="tl57-q5d" class="tl-opt tl-no">D. Tăng rồi giảm, vì quỹ đạo là parabol</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ có thành phần $v_y$ tăng đều; theo Ox vật chuyển động thẳng đều nên mỗi 0,5 s đi được $0{,}5v_0$ — các đoạn bằng nhau.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn "tăng dần" là nhìn tổng quãng đường (đường chéo) chứ không nhìn riêng phương ngang. Chọn "giảm dần" hay "tăng rồi giảm" là gán cho Ox tính chất của Oy hoặc của cả quỹ đạo. Tách hai phương ra rồi xét riêng Ox.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn "tăng dần" là nhìn tổng quãng đường (đường chéo) chứ không nhìn riêng phương ngang. Tách hai phương ra rồi xét riêng Ox.</p></div>
 </div>
 </div>
 
 <h4>Bẫy 3: "ném ngang là chuyển động nhanh dần đều"</h4>
 
-<p>Gia tốc không đổi ($\vec a=\vec g$), nên đây là chuyển động <strong>biến đổi đều</strong>. Nhưng nó không phải chuyển động thẳng, và <strong>tốc độ không tăng đều</strong>: chỉ thành phần $v_y=gt$ mới tăng đều.</p>
+<p>Gia tốc $\vec a=\vec g$ không đổi, nhưng chuyển động không thẳng và <strong>tốc độ không tăng đều</strong>: chỉ $v_y=gt$ tăng đều.</p>
 
 <p><strong>🔑 Chỉ $v_y$ tăng đều · Tốc độ $v$ tăng không đều</strong></p>
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Tưởng vậy</th><th>Đúng là</th></tr>
-</thead>
-<tbody>
-<tr><td>Tốc độ tăng đều mỗi giây</td><td>$v=\sqrt{v_0^2+(gt)^2}$ tăng không đều: lúc mới ném gần như không tăng, về sau mới tăng nhanh</td></tr>
-<tr><td>Quỹ đạo thẳng vì chuyển động biến đổi đều</td><td>Quỹ đạo cong (parabol) vì hai thành phần vuông góc</td></tr>
-<tr><td>$\vec v$ luôn cùng phương với $\vec g$</td><td>$\vec v$ dốc dần xuống; chỉ khi rơi đã lâu mới gần trùng phương $\vec g$</td></tr>
-</tbody>
-</table>
-</div>
-
 <div class="tl-box tl-box--think">
-<p><strong>Câu 6.</strong> Trong chuyển động ném ngang, đại lượng tăng đều theo thời gian là:</p>
+<p><strong>Câu 4.</strong> Trong chuyển động ném ngang, đại lượng tăng đều theo thời gian là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q6" id="tl12-q6a"><label for="tl12-q6a" class="tl-opt tl-no">A. Tốc độ $v$ của vật</label>
-<input type="radio" name="tl12-q6" id="tl12-q6b"><label for="tl12-q6b" class="tl-opt tl-no">B. Vận tốc theo phương ngang $v_x$</label>
-<input type="radio" name="tl12-q6" id="tl12-q6c" checked><label for="tl12-q6c" class="tl-opt tl-ok">C. Vận tốc theo phương thẳng đứng $v_y$</label>
-<input type="radio" name="tl12-q6" id="tl12-q6d"><label for="tl12-q6d" class="tl-opt tl-no">D. Tầm xa $L$ của vật</label>
+<input type="radio" name="tl57-q6" id="tl57-q6a" checked><label for="tl57-q6a" class="tl-opt tl-ok">A. Vận tốc theo phương thẳng đứng $v_y$</label>
+<input type="radio" name="tl57-q6" id="tl57-q6b"><label for="tl57-q6b" class="tl-opt tl-no">B. Vận tốc theo phương ngang $v_x$</label>
+<input type="radio" name="tl57-q6" id="tl57-q6c"><label for="tl57-q6c" class="tl-opt tl-no">C. Tốc độ $v$ của vật</label>
+<input type="radio" name="tl57-q6" id="tl57-q6d"><label for="tl57-q6d" class="tl-opt tl-no">D. Tầm xa $L$ của vật</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v_y=gt$ là hàm bậc nhất của thời gian nên tăng đều. $v_x$ không đổi, còn $v=\sqrt{v_0^2+(gt)^2}$ tăng không đều.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $v$ là lẫn "tốc độ lớn dần" với "tốc độ tăng đều": gia tốc của tốc độ lúc đầu bằng 0 vì $\vec g$ vuông góc với $\vec v$, về sau mới tiến tới $g$. Chọn $v_x$ thì sai hẳn vì Ox không có gia tốc; còn $L$ chỉ có nghĩa khi vật đã chạm đất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $v$ là lẫn "tốc độ lớn dần" với "tốc độ tăng đều": gia tốc của tốc độ lúc đầu bằng 0 vì $\vec g$ vuông góc với $\vec v$, về sau mới tiến tới $g$. $v_x$ không đổi.</p></div>
 </div>
 </div>
 

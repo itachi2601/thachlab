@@ -1,4 +1,4 @@
-"""Sinh 4 hình SVG cho bài Chuyển động ném (Vật lí 10) và thay các mốc <!--FIGn--> trong theory.src.html.
+"""Sinh 6 hình SVG cho bài Chuyển động ném (Vật lí 10) và thay các mốc <!--FIGn--> trong theory.src.html.
 Chạy: python3 build_figs.py   (từ thư mục bài)
 
 Quy ước màu dùng chung cả bài: RED = vecto vận tốc (v₀, v) · BLUE = thành phần ngang vₓ ·
@@ -154,8 +154,59 @@ fig4 = wrap("0 0 440 274",
             b,
             "Hình 4. Trên đường parabol: $v_x$ (xanh) <strong>không đổi</strong>, $v_y$ (cam) <strong>lớn dần</strong>, còn $\\vec v$ (đỏ) là tổng hai vectơ vuông góc nên $v=\\sqrt{v_0^2+(gt)^2}$ và ngày càng dốc xuống.")
 
+# ================= Hình 5: ném xiên từ mặt đất — tách v₀, đỉnh, tầm cao, tầm xa =================
+G5, O5X, L5, H5 = 200, 50, 340, 130
+b = defs("f5")
+b += seg(20, G5, 420, G5, "currentColor", 1.8)
+par5 = [(O5X + L5 * u / 40, G5 - 4 * H5 * (u / 40) * (1 - u / 40)) for u in range(0, 41)]
+b += poly(par5, GRN, 2.5)
+VX5, VY5 = 43.6, 67.0                                    # tan(alpha) = 4H/L = 1,53 (khoảng 57°)
+b += arrow("f5", "r", O5X, G5, O5X + VX5, G5 - VY5, 3)
+b += arrow("f5", "b", O5X, G5, O5X + VX5, G5, 2.6)
+b += arrow("f5", "o", O5X, G5, O5X, G5 - VY5, 2.6)
+b += seg(O5X + VX5, G5 - VY5, O5X + VX5, G5, "currentColor", 1.1, "4 4", .35)
+b += seg(O5X, G5 - VY5, O5X + VX5, G5 - VY5, "currentColor", 1.1, "4 4", .35)
+b += text(O5X + 14, G5 - VY5 - 8, "v₀", RED, 14, "start", "700")
+b += sub(O5X + VX5 - 12, G5 + 17, "v", "0x", BLUE)
+b += sub(O5X - 8, G5 - VY5 + 24, "v", "0y", ORG, 14, "end")
+b += text(O5X + 32, G5 - 6, "α", "currentColor", 14, "start", "700")
+AX = O5X + L5 / 2
+b += dot(AX, G5 - H5, 4.5, ORG)
+b += seg(AX, G5 - H5, AX, G5, ORG, 1.6, "5 4", .9)
+b += text(AX + 8, G5 - H5 / 2, "tầm cao H", ORG, 14, "start", "700")
+b += arrow("f5", "r", AX, G5 - H5, AX + 44, G5 - H5, 3)
+b += text(AX + 50, G5 - H5 - 4, "v nằm ngang", RED, 14, "start", "700")
+b += text(AX, 34, "đỉnh: không còn thành phần đứng", "currentColor", 14, "middle", "400")
+b += dot(O5X, G5, 4.5, ORG) + dot(O5X + L5, G5, 4.5, ORG)
+b += seg(O5X, 226, O5X + L5, 226, ORG, 1.4)
+b += seg(O5X, 222, O5X, 230, ORG, 1.4) + seg(O5X + L5, 222, O5X + L5, 230, ORG, 1.4)
+b += text(AX, 246, "tầm xa L", ORG, 14, "middle", "700")
+fig5 = wrap("0 0 440 256",
+            "Ném xiên từ mặt đất: vận tốc đầu tách thành thành phần ngang và thẳng đứng, tại đỉnh vận tốc nằm ngang, tầm cao H và tầm xa L",
+            b,
+            "Hình 5. Ném xiên từ mặt đất: $\\vec v_0$ (đỏ) tách thành $v_{0x}$ (xanh) và $v_{0y}$ (cam). Ở <strong>đỉnh</strong> chỉ còn thành phần ngang; quỹ đạo đối xứng qua đỉnh nên bóng rơi xuống cùng độ cao lúc ném.")
+
+# ================= Hình 6: hai góc phụ nhau (30° và 60°) cùng tầm xa =================
+G6, O6X, L6 = 200, 50, 340
+b = defs("f6")
+b += seg(20, G6, 420, G6, "currentColor", 1.8)
+for H6, dash, w in ((147, "", 2.6), (49, "7 5", 2.4)):
+    pts = [(O6X + L6 * u / 40, G6 - 4 * H6 * (u / 40) * (1 - u / 40)) for u in range(0, 41)]
+    b += poly(pts, GRN, w, dash)
+    b += dot(O6X + L6 / 2, G6 - H6, 4.2, ORG)
+b += dot(O6X, G6, 4.5, ORG) + dot(O6X + L6, G6, 4.5, ORG)
+b += seg(O6X, 224, O6X + L6, 224, ORG, 1.4)
+b += seg(O6X, 220, O6X, 228, ORG, 1.4) + seg(O6X + L6, 220, O6X + L6, 228, ORG, 1.4)
+b += text(O6X + L6 / 2, 244, "cùng tầm xa L", ORG, 14, "middle", "700")
+b += text(20, 18, "α = 60° (nét liền): lên cao gấp 3, bay lâu hơn", GRN, 14, "start", "700")
+b += text(20, 38, "α = 30° (nét đứt): thấp hơn, bay nhanh hơn", GRN, 14, "start", "700")
+fig6 = wrap("0 0 440 254",
+            "Hai góc ném phụ nhau 30 độ và 60 độ với cùng vận tốc đầu cho cùng tầm xa; góc 60 độ lên cao gấp ba và bay lâu hơn",
+            b,
+            "Hình 6. Cùng $v_0$, ném ở $30^\\circ$ và $60^\\circ$ (hai góc <strong>phụ nhau</strong>): hai quỹ đạo rơi xuống <strong>cùng một điểm</strong>, nhưng quỹ đạo $60^\\circ$ cao gấp ba ($H\\sim\\sin^2\\alpha$) và bay lâu hơn.")
+
 h = open("theory.src.html", encoding="utf8").read()
-for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
+for n, f in enumerate((fig1, fig2, fig3, fig4, fig5, fig6), 1):
     assert f"<!--FIG{n}-->" in h, f"thiếu mốc FIG{n}"
     h = h.replace(f"<!--FIG{n}-->", f)
 open("theory.html", "w", encoding="utf8").write(h)

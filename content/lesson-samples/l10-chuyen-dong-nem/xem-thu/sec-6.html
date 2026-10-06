@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,37 +602,131 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 12. Chuyển động ném — Lý thuyết trọng tâm</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>VI. Ném xiên: vẫn là tách hai phương</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>VI. Ném xiên: vẫn là tách hai phương</h3>
+
+<p>Cú sút phạt vượt hàng rào cầu thủ: bóng <em>lên cao trước</em> rồi mới rơi xuống. Đó là ném xiên; ở đây chọn Oy hướng <em>lên</em> nên $g$ mang dấu trừ.</p>
+
+<h4>1. Phân tích vận tốc ban đầu</h4>
 
 <p><strong>🔑 Ngang: đều · Dọc: lên chậm dần, xuống nhanh dần</strong></p>
 
 <ul>
-<li><strong>Ném xiên</strong> là ném vật với vận tốc đầu $\vec v_0$ hợp với phương ngang góc $\alpha$; vật vẫn chỉ chịu trọng lực.</li>
-<li>Tách $\vec v_0$ thành hai thành phần: $v_{0x}=v_0\cos\alpha$ (phương ngang) và $v_{0y}=v_0\sin\alpha$ (phương thẳng đứng hướng lên).</li>
-<li>Ox vẫn thẳng đều. Oy lúc đầu ngược chiều $\vec g$ nên vật <strong>lên chậm dần đều</strong>, dừng lại ở đỉnh rồi <strong>xuống nhanh dần đều</strong>.</li>
+<li><strong>Ném xiên:</strong> vận tốc đầu $\vec v_0$ hợp với phương ngang góc $\alpha$; sau đó chỉ còn trọng lực.</li>
+<li>Tách $\vec v_0$: $v_{0x}=v_0\cos\alpha$ (ngang) và $v_{0y}=v_0\sin\alpha$ (thẳng đứng, hướng lên).</li>
+<li>Ox: thẳng đều. Oy: ngược chiều $\vec g$ nên <strong>lên chậm dần</strong>, dừng ở đỉnh, rồi <strong>xuống nhanh dần</strong>.</li>
 </ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 256" role="img" aria-label="Ném xiên từ mặt đất: vận tốc đầu tách thành thành phần ngang và thẳng đứng, tại đỉnh vận tốc nằm ngang, tầm cao H và tầm xa L"><defs><marker id="f5-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f5-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f5-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f5-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="20" y1="200" x2="420" y2="200" stroke="currentColor" stroke-width="1.8" opacity="1"/><polyline fill="none" stroke="#34d399" stroke-width="2.5" opacity="1" points="50.0,200.0 58.5,187.3 67.0,175.3 75.5,163.9 84.0,153.2 92.5,143.1 101.0,133.7 109.5,124.9 118.0,116.8 126.5,109.3 135.0,102.5 143.5,96.3 152.0,90.8 160.5,85.9 169.0,81.7 177.5,78.1 186.0,75.2 194.5,72.9 203.0,71.3 211.5,70.3 220.0,70.0 228.5,70.3 237.0,71.3 245.5,72.9 254.0,75.2 262.5,78.1 271.0,81.7 279.5,85.9 288.0,90.8 296.5,96.3 305.0,102.5 313.5,109.3 322.0,116.8 330.5,124.9 339.0,133.7 347.5,143.1 356.0,153.2 364.5,163.9 373.0,175.3 381.5,187.3 390.0,200.0"/><line x1="50" y1="200" x2="93.6" y2="133.0" stroke="#f87171" stroke-width="3" marker-end="url(#f5-r)"/><line x1="50" y1="200" x2="93.6" y2="200" stroke="#38bdf8" stroke-width="2.6" marker-end="url(#f5-b)"/><line x1="50" y1="200" x2="50" y2="133.0" stroke="#fb923c" stroke-width="2.6" marker-end="url(#f5-o)"/><line x1="93.6" y1="133.0" x2="93.6" y2="200" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><line x1="50" y1="133.0" x2="93.6" y2="133.0" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><text x="64" y="125.0" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">v₀</text><text x="81.6" y="217" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">v<tspan dy="4" font-size="11">0x</tspan></text><text x="42" y="157.0" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">v<tspan dy="4" font-size="11">0y</tspan></text><text x="82" y="194" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text><circle cx="220.0" cy="70" r="4.5" fill="#fb923c"/><line x1="220.0" y1="70" x2="220.0" y2="200" stroke="#fb923c" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.9"/><text x="228.0" y="135.0" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">tầm cao H</text><line x1="220.0" y1="70" x2="264.0" y2="70" stroke="#f87171" stroke-width="3" marker-end="url(#f5-r)"/><text x="270.0" y="66" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">v nằm ngang</text><text x="220.0" y="34" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">đỉnh: không còn thành phần đứng</text><circle cx="50" cy="200" r="4.5" fill="#fb923c"/><circle cx="390" cy="200" r="4.5" fill="#fb923c"/><line x1="50" y1="226" x2="390" y2="226" stroke="#fb923c" stroke-width="1.4" opacity="1"/><line x1="50" y1="222" x2="50" y2="230" stroke="#fb923c" stroke-width="1.4" opacity="1"/><line x1="390" y1="222" x2="390" y2="230" stroke="#fb923c" stroke-width="1.4" opacity="1"/><text x="220.0" y="246" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">tầm xa L</text></svg><figcaption>Hình 5. Ném xiên từ mặt đất: $\vec v_0$ (đỏ) tách thành $v_{0x}$ (xanh) và $v_{0y}$ (cam). Ở <strong>đỉnh</strong> chỉ còn thành phần ngang; quỹ đạo đối xứng qua đỉnh nên bóng rơi xuống cùng độ cao lúc ném.</figcaption></figure>
 
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
-<tr><th>Đại lượng</th><th>Ném ngang</th><th>Ném xiên (từ mặt đất)</th></tr>
+<tr><th>Phương</th><th>Chuyển động · công thức</th></tr>
 </thead>
 <tbody>
-<tr><td>Vận tốc ban đầu</td><td>ngang · $v_0$</td><td>xiên góc $\alpha$ · $v_0$</td></tr>
-<tr><td>Phương Ox</td><td>$x=v_0t$</td><td>$x=v_{0x}t$</td></tr>
-<tr><td>Phương Oy</td><td>$y=\dfrac{1}{2}gt^2$</td><td>$y=v_{0y}t-\dfrac{1}{2}gt^2$</td></tr>
-<tr><td>Thời gian bay</td><td>$t=\sqrt{\dfrac{2h}{g}}$</td><td>$t=\dfrac{2v_0\sin\alpha}{g}$</td></tr>
-<tr><td>Tầm xa</td><td>$L=v_0\sqrt{2h/g}$</td><td>$L=\dfrac{v_0^2\sin 2\alpha}{g}$</td></tr>
+<tr><td>Ox</td><td>thẳng đều · $v_x=v_0\cos\alpha$ · $x=v_0\cos\alpha\,t$</td></tr>
+<tr><td>Oy (<em>lên</em>)</td><td>$a_y=-g$ · $v_y=v_0\sin\alpha-gt$ · $y=v_0\sin\alpha\,t-\dfrac{1}{2}gt^2$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>2. Điểm cao nhất, thời gian bay, tầm xa</h4>
+
+<p><strong>🔑 Đỉnh: $v_y=0$ · Chạm đất: $y=0$</strong></p>
+
+<ul>
+<li>Tại đỉnh $v_y=0$, suy ra thời gian lên $t_{lên}=\dfrac{v_0\sin\alpha}{g}$ và tầm cao $H=\dfrac{v_0^2\sin^2\alpha}{2g}$.</li>
+<li>Chạm đất khi $y=0$: thời gian bay $t=\dfrac{2v_0\sin\alpha}{g}$, gấp đôi thời gian lên (lên và xuống đối xứng).</li>
+<li>Tầm xa $L=v_0\cos\alpha\cdot t=\dfrac{v_0^2\sin 2\alpha}{g}$.</li>
+</ul>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">📊 Đọc bảng: cùng $v_0=10$ m/s, $g=10$ m/s², đổi góc ném</p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Góc $\alpha$</th><th>Tầm cao $H$</th><th>Tầm xa $L$</th></tr>
+</thead>
+<tbody>
+<tr><td>$30^\circ$</td><td>1,25 m</td><td>8,7 m</td></tr>
+<tr><td>$45^\circ$</td><td>2,5 m</td><td><strong>10,0 m</strong></td></tr>
+<tr><td>$60^\circ$</td><td>3,75 m</td><td>8,7 m</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Rút ra:</strong> $H$ tăng theo góc. $L$ lớn nhất ở $45^\circ$, và hai góc <strong>phụ nhau</strong> (như $30^\circ$ với $60^\circ$) cho cùng tầm xa.</p>
+</div>
+
+<details class="tl-details" open>
+<summary>👀 Bấm xem: vì sao hai góc phụ nhau cho cùng tầm xa?</summary>
+<p>Vì $\sin 2\alpha$ lấy cùng giá trị ở $\alpha$ và $90^\circ-\alpha$: $\sin\big(2(90^\circ-\alpha)\big)=\sin(180^\circ-2\alpha)=\sin 2\alpha$. Góc lớn thì lên cao, bay lâu nhưng ngang chậm; góc nhỏ thì ngược lại — hai bên bù nhau đúng bằng nhau.</p>
+</details>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 254" role="img" aria-label="Hai góc ném phụ nhau 30 độ và 60 độ với cùng vận tốc đầu cho cùng tầm xa; góc 60 độ lên cao gấp ba và bay lâu hơn"><defs><marker id="f6-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f6-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f6-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f6-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="20" y1="200" x2="420" y2="200" stroke="currentColor" stroke-width="1.8" opacity="1"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="50.0,200.0 58.5,185.7 67.0,172.1 75.5,159.2 84.0,147.1 92.5,135.7 101.0,125.0 109.5,115.1 118.0,105.9 126.5,97.5 135.0,89.8 143.5,82.8 152.0,76.5 160.5,71.0 169.0,66.2 177.5,62.2 186.0,58.9 194.5,56.3 203.0,54.5 211.5,53.4 220.0,53.0 228.5,53.4 237.0,54.5 245.5,56.3 254.0,58.9 262.5,62.2 271.0,66.2 279.5,71.0 288.0,76.5 296.5,82.8 305.0,89.8 313.5,97.5 322.0,105.9 330.5,115.1 339.0,125.0 347.5,135.7 356.0,147.1 364.5,159.2 373.0,172.1 381.5,185.7 390.0,200.0"/><circle cx="220.0" cy="53" r="4.2" fill="#fb923c"/><polyline fill="none" stroke="#34d399" stroke-width="2.4" stroke-dasharray="7 5" opacity="1" points="50.0,200.0 58.5,195.2 67.0,190.7 75.5,186.4 84.0,182.4 92.5,178.6 101.0,175.0 109.5,171.7 118.0,168.6 126.5,165.8 135.0,163.2 143.5,160.9 152.0,158.8 160.5,157.0 169.0,155.4 177.5,154.1 186.0,153.0 194.5,152.1 203.0,151.5 211.5,151.1 220.0,151.0 228.5,151.1 237.0,151.5 245.5,152.1 254.0,153.0 262.5,154.1 271.0,155.4 279.5,157.0 288.0,158.8 296.5,160.9 305.0,163.2 313.5,165.8 322.0,168.6 330.5,171.7 339.0,175.0 347.5,178.6 356.0,182.4 364.5,186.4 373.0,190.7 381.5,195.2 390.0,200.0"/><circle cx="220.0" cy="151" r="4.2" fill="#fb923c"/><circle cx="50" cy="200" r="4.5" fill="#fb923c"/><circle cx="390" cy="200" r="4.5" fill="#fb923c"/><line x1="50" y1="224" x2="390" y2="224" stroke="#fb923c" stroke-width="1.4" opacity="1"/><line x1="50" y1="220" x2="50" y2="228" stroke="#fb923c" stroke-width="1.4" opacity="1"/><line x1="390" y1="220" x2="390" y2="228" stroke="#fb923c" stroke-width="1.4" opacity="1"/><text x="220.0" y="244" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">cùng tầm xa L</text><text x="20" y="18" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">α = 60° (nét liền): lên cao gấp 3, bay lâu hơn</text><text x="20" y="38" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">α = 30° (nét đứt): thấp hơn, bay nhanh hơn</text></svg><figcaption>Hình 6. Cùng $v_0$, ném ở $30^\circ$ và $60^\circ$ (hai góc <strong>phụ nhau</strong>): hai quỹ đạo rơi xuống <strong>cùng một điểm</strong>, nhưng quỹ đạo $60^\circ$ cao gấp ba ($H\sim\sin^2\alpha$) và bay lâu hơn.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Hai quả bóng được đá từ mặt đất với cùng tốc độ $v_0$, một quả hợp góc $30^\circ$, quả kia hợp góc $60^\circ$ so với phương ngang (bỏ qua lực cản). So sánh nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl57-q8" id="tl57-q8a"><label for="tl57-q8a" class="tl-opt tl-no">A. Quả $60^\circ$ bay xa hơn vì lên cao hơn</label>
+<input type="radio" name="tl57-q8" id="tl57-q8b"><label for="tl57-q8b" class="tl-opt tl-no">B. Quả $30^\circ$ bay xa hơn vì có thành phần ngang lớn hơn</label>
+<input type="radio" name="tl57-q8" id="tl57-q8c" checked><label for="tl57-q8c" class="tl-opt tl-ok">C. Hai quả cùng tầm xa; quả $60^\circ$ lên cao hơn và bay lâu hơn</label>
+<input type="radio" name="tl57-q8" id="tl57-q8d"><label for="tl57-q8d" class="tl-opt tl-no">D. Hai quả cùng thời gian bay và cùng tầm xa</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $L=\dfrac{v_0^2\sin2\alpha}{g}$ với $\sin60^\circ=\sin120^\circ$ nên $L$ bằng nhau. Quả $60^\circ$ bay lâu hơn và lên cao gấp ba ($\sin^260^\circ:\sin^230^\circ=3$).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Góc lớn: bay lâu nhưng $v_0\cos\alpha$ nhỏ. Góc nhỏ: $v_0\cos\alpha$ lớn nhưng bay ngắn. Hai tác động bù nhau đúng bằng nhau ở hai góc phụ nhau; chỉ thời gian bay và tầm cao là khác.</p></div>
+</div>
+</div>
+
+<h4>3. Bẫy: "lên tới đỉnh thì vật dừng lại"</h4>
+
+<p><strong>🔑 Đỉnh: $v_y=0$ · $v=v_0\cos\alpha\neq0$ · $a=g$ hướng xuống</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Vật ném xiên từ mặt đất với $v_0=20$ m/s, góc $\alpha=60^\circ$. Tại điểm cao nhất, vận tốc của vật là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl57-q9" id="tl57-q9a"><label for="tl57-q9a" class="tl-opt tl-no">A. $0$</label>
+<input type="radio" name="tl57-q9" id="tl57-q9b" checked><label for="tl57-q9b" class="tl-opt tl-ok">B. $10$ m/s, nằm ngang</label>
+<input type="radio" name="tl57-q9" id="tl57-q9c"><label for="tl57-q9c" class="tl-opt tl-no">C. $17{,}3$ m/s, nằm ngang</label>
+<input type="radio" name="tl57-q9" id="tl57-q9d"><label for="tl57-q9d" class="tl-opt tl-no">D. $20$ m/s, nằm ngang</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ở đỉnh chỉ còn thành phần ngang: $v=v_0\cos60^\circ=20\times0{,}5=10$ m/s.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0$ là nhầm "$v_y=0$" với "$v=0$": vật vẫn bay ngang. Ra $17{,}3$ m/s là dùng $\sin60^\circ$ thay cho $\cos60^\circ$ (đó là $v_{0y}$, thành phần đã mất hết khi lên tới đỉnh). Ra $20$ m/s là quên tách $\vec v_0$.</p></div>
+</div>
+</div>
+
+<h4>4. Bài toán mẫu ném xiên</h4>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📝 Đề bài</p>
+<p>Cầu thủ sút quả bóng từ mặt sân với $v_0=20$ m/s, hướng hợp với phương ngang góc $30^\circ$. Bỏ qua sức cản của không khí, lấy $g=10$ m/s².</p>
+<p>a) Bóng lên cao nhất bao nhiêu? b) Bóng bay trong bao lâu? c) Bóng rơi cách chỗ sút bao xa? d) Tính vận tốc của bóng tại điểm cao nhất.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"sút từ mặt sân"</td><td>$y_0=0$</td><td>chạm đất khi $y=0$</td></tr>
+<tr><td>"$v_0=20$ m/s, góc $30^\circ$"</td><td>$v_{0x}\approx17{,}3$ · $v_{0y}=10$ m/s</td><td>tách $\vec v_0$</td></tr>
+<tr><td>"lên cao nhất"</td><td>cần $H$</td><td>đỉnh: $v_y=0$</td></tr>
+<tr><td>"bay trong bao lâu"</td><td>cần $t$</td><td>$t=2t_{lên}$</td></tr>
+<tr><td>"rơi cách bao xa"</td><td>cần $L$</td><td>$L=v_{0x}t$</td></tr>
 </tbody>
 </table>
 </div>
 
 <details class="tl-details" open>
-<summary>👀 Bấm xem: tầm cao, tầm xa và mẹo nhớ công thức ném xiên</summary>
-<p><strong>Tầm cao</strong> (độ cao lớn nhất): tại đỉnh $v_y=0$, từ $v_y=v_0\sin\alpha-gt$ rút ra $t_{len}=\dfrac{v_0\sin\alpha}{g}$, thay vào $y$ được $H=\dfrac{v_0^2\sin^2\alpha}{2g}$.</p>
-<p><strong>Mẹo nhớ:</strong> chữ <em>S</em> là <em>sin</em> — tầm cao và thời gian bay dùng $\sin\alpha$; tầm xa dùng $\sin 2\alpha$ nên lớn nhất khi $2\alpha=90^\circ$, tức ném ở $45^\circ$.</p>
-<p><strong>Ví dụ số:</strong> $v_0=10$ m/s, $\alpha=30^\circ$, $g=10$ m/s² thì $H=\dfrac{100\times0{,}25}{20}=1{,}25$ m; $t=\dfrac{2\times10\times0{,}5}{10}=1$ s; $L=\dfrac{100\times\sin 60^\circ}{10}\approx8{,}7$ m.</p>
-<p><strong>Liên hệ với ném ngang:</strong> ném xiên từ mặt đất chỉ là trường hợp $v_{0y}\neq0$ của cùng một cách làm — vẫn tách hai phương, vẫn dùng $x=v_{0x}t$ và các công thức biến đổi đều cho phương Oy.</p>
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Tách: $v_{0x}=20\cos30^\circ\approx17{,}3$ m/s; $v_{0y}=20\sin30^\circ=10$ m/s.</li>
+<li>Câu a: $H=\dfrac{v_{0y}^2}{2g}=\dfrac{10^2}{2\times10}=5$ m.</li>
+<li>Câu b: $t_{lên}=\dfrac{v_{0y}}{g}=1$ s nên $t=2t_{lên}=2$ s.</li>
+<li>Câu c: $L=v_{0x}t=17{,}3\times2\approx34{,}6$ m.</li>
+<li>Câu d: ở đỉnh $v_y=0$ nên $v=v_{0x}\approx17{,}3$ m/s, nằm ngang.</li>
+<li>Kiểm tra: $L=\dfrac{v_0^2\sin2\alpha}{g}=\dfrac{400\times\sin60^\circ}{10}\approx34{,}6$ m — trùng bước 4. Lúc chạm sân, bóng cũng có tốc độ 20 m/s vì cùng độ cao lúc sút.</li>
+</ol>
 </details>
 
 </span></div></div>

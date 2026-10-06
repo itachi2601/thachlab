@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,24 +602,22 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 12. Chuyển động ném — Lý thuyết trọng tâm</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>I. Mở bài: máy bay cứu hộ thả gói hàng</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>I. Mở bài: máy bay cứu hộ thả gói hàng</h3>
 
-<p>Máy bay cứu hộ bay ngang qua vùng lũ rồi thả một gói hàng. Nhìn từ mặt đất, gói hàng không rơi thẳng đứng: nó vừa rơi vừa bay tới trước thành parabol.</p>
+<p>Máy bay cứu hộ bay ngang qua vùng lũ rồi thả gói hàng. Nhìn từ mặt đất, gói vừa rơi vừa bay tới trước thành parabol, nên phi công phải thả <em>trước</em> khi tới đích.</p>
 
-<p>Phi công phải thả hàng <em>trước</em> khi tới đích. Nghĩ trước khi đọc tiếp: <em>gói thả từ máy bay và gói thả từ trực thăng đứng yên ở cùng độ cao — gói nào chạm đất trước?</em></p>
-
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Máy bay cứu hộ bay ngang thả gói hàng rơi theo parabol; trực thăng đứng yên thả gói rơi thẳng đứng từ cùng độ cao, hai gói luôn nằm ngang nhau"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="54" y1="67" x2="45" y2="78" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="24" y="38" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">máy bay cứu hộ</text><line x1="70" y1="67" x2="128" y2="67" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r)"/><text x="132" y="62" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">v₀</text><polyline fill="none" stroke="#34d399" stroke-width="2.4" opacity="1" points="70.0,67.0 75.8,67.1 81.5,67.3 87.2,67.8 93.0,68.4 98.8,69.2 104.5,70.1 110.2,71.3 116.0,72.6 121.8,74.0 127.5,75.7 133.2,77.5 139.0,79.5 144.8,81.7 150.5,84.0 156.2,86.5 162.0,89.2 167.8,92.1 173.5,95.1 179.2,98.4 185.0,101.8 190.8,105.3 196.5,109.0 202.2,113.0 208.0,117.0 213.8,121.3 219.5,125.7 225.2,130.3 231.0,135.1 236.8,140.1 242.5,145.2 248.2,150.5 254.0,156.0 259.8,161.6 265.5,167.4 271.2,173.4 277.0,179.6 282.8,185.9 288.5,192.4 294.2,199.1 300.0,206.0"/><line x1="334" y1="46" x2="366" y2="46" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="350" y1="46" x2="350" y2="52" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="337" y="52" width="26" height="13" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="337" y1="58" x2="320" y2="53" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="320" cy="53" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="338" y1="74" x2="362" y2="74" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="342" y1="65" x2="342" y2="74" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="358" y1="65" x2="358" y2="74" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="298" y="38" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">trực thăng đứng yên</text><line x1="350" y1="67" x2="350" y2="204" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/><circle cx="162.0" cy="89.24000000000001" r="4.2" fill="#34d399"/><circle cx="350" cy="89.24000000000001" r="4.2" fill="#fb923c"/><line x1="168.0" y1="89.24000000000001" x2="344" y2="89.24000000000001" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="208.0" cy="117.03999999999999" r="4.2" fill="#34d399"/><circle cx="350" cy="117.03999999999999" r="4.2" fill="#fb923c"/><line x1="214.0" y1="117.03999999999999" x2="344" y2="117.03999999999999" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="254.0" cy="155.96" r="4.2" fill="#34d399"/><circle cx="350" cy="155.96" r="4.2" fill="#fb923c"/><line x1="260.0" y1="155.96" x2="344" y2="155.96" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="300.0" cy="206.0" r="4.2" fill="#34d399"/><circle cx="350" cy="206.0" r="4.2" fill="#fb923c"/><text x="150" y="26" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">cùng độ cao, cùng lúc</text><rect x="20" y="206" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/><text x="20" y="238" fill="currentColor" font-size="11" font-weight="400" text-anchor="start">mặt đất</text></svg><figcaption>Hình 1. Gói thả từ máy bay rơi theo parabol (xanh), gói thả từ trực thăng rơi thẳng đứng (cam). Hai gói <strong>luôn ngang nhau</strong>: cùng hàng thì cùng lúc chạm đất.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Máy bay cứu hộ bay ngang thả gói hàng rơi theo parabol; trực thăng đứng yên thả gói rơi thẳng đứng từ cùng độ cao, hai gói luôn nằm ngang nhau"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="54" y1="67" x2="45" y2="78" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="24" y="36" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">máy bay cứu hộ</text><line x1="70" y1="67" x2="128" y2="67" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r)"/><text x="132" y="63" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">v₀</text><polyline fill="none" stroke="#34d399" stroke-width="2.4" opacity="1" points="70.0,67.0 75.8,67.1 81.5,67.3 87.2,67.8 93.0,68.4 98.8,69.2 104.5,70.1 110.2,71.3 116.0,72.6 121.8,74.0 127.5,75.7 133.2,77.5 139.0,79.5 144.8,81.7 150.5,84.0 156.2,86.5 162.0,89.2 167.8,92.1 173.5,95.1 179.2,98.4 185.0,101.8 190.8,105.3 196.5,109.0 202.2,113.0 208.0,117.0 213.8,121.3 219.5,125.7 225.2,130.3 231.0,135.1 236.8,140.1 242.5,145.2 248.2,150.5 254.0,156.0 259.8,161.6 265.5,167.4 271.2,173.4 277.0,179.6 282.8,185.9 288.5,192.4 294.2,199.1 300.0,206.0"/><line x1="334" y1="46" x2="366" y2="46" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="350" y1="46" x2="350" y2="52" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="337" y="52" width="26" height="13" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="337" y1="58" x2="320" y2="53" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="320" cy="53" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="338" y1="74" x2="362" y2="74" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="342" y1="65" x2="342" y2="74" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="358" y1="65" x2="358" y2="74" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="432" y="36" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">trực thăng đứng yên</text><line x1="350" y1="67" x2="350" y2="204" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.85"/><circle cx="162.0" cy="89.24000000000001" r="4.2" fill="#34d399"/><circle cx="350" cy="89.24000000000001" r="4.2" fill="#fb923c"/><line x1="168.0" y1="89.24000000000001" x2="344" y2="89.24000000000001" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="208.0" cy="117.03999999999999" r="4.2" fill="#34d399"/><circle cx="350" cy="117.03999999999999" r="4.2" fill="#fb923c"/><line x1="214.0" y1="117.03999999999999" x2="344" y2="117.03999999999999" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="254.0" cy="155.96" r="4.2" fill="#34d399"/><circle cx="350" cy="155.96" r="4.2" fill="#fb923c"/><line x1="260.0" y1="155.96" x2="344" y2="155.96" stroke="currentColor" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.35"/><circle cx="300.0" cy="206.0" r="4.2" fill="#34d399"/><circle cx="350" cy="206.0" r="4.2" fill="#fb923c"/><text x="150" y="16" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">cùng độ cao, cùng lúc</text><rect x="20" y="206" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/><text x="20" y="238" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">mặt đất</text></svg><figcaption>Hình 1. Gói thả từ máy bay rơi theo parabol (xanh), gói thả từ trực thăng rơi thẳng đứng (cam). Hai gói <strong>luôn ngang nhau</strong>: cùng hàng thì cùng lúc chạm đất.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Cùng độ cao, cùng lúc: một gói thả từ máy bay, một gói thả từ trực thăng đứng yên (bỏ qua lực cản). Gói nào chạm đất trước?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Gói từ máy bay, vì nó đang bay nhanh</label>
-<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-no">B. Gói từ trực thăng, vì nó rơi thẳng đứng</label>
-<input type="radio" name="tl12-q0" id="tl12-q0c" checked><label for="tl12-q0c" class="tl-opt tl-ok">C. Hai gói chạm đất cùng lúc, vì phần rơi giống hệt nhau</label>
-<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Tuỳ tốc độ bay: máy bay càng nhanh thì gói càng lâu chạm đất</label>
+<input type="radio" name="tl57-q0" id="tl57-q0a" checked><label for="tl57-q0a" class="tl-opt tl-ok">A. Hai gói chạm đất cùng lúc, vì phần rơi giống hệt nhau</label>
+<input type="radio" name="tl57-q0" id="tl57-q0b"><label for="tl57-q0b" class="tl-opt tl-no">B. Gói từ trực thăng, vì nó rơi thẳng đứng</label>
+<input type="radio" name="tl57-q0" id="tl57-q0c"><label for="tl57-q0c" class="tl-opt tl-no">C. Gói từ máy bay, vì nó đang bay nhanh</label>
+<input type="radio" name="tl57-q0" id="tl57-q0d"><label for="tl57-q0d" class="tl-opt tl-no">D. Tuỳ tốc độ bay: máy bay càng nhanh thì gói càng lâu chạm đất</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai gói đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$. Tốc độ máy bay chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đường đi dài hơn không có nghĩa là rơi lâu hơn: phần chuyển động ngang không làm chậm phần rơi. Hai phương vuông góc <em>độc lập</em> với nhau — đó chính là điều mục II chứng minh bằng thí nghiệm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đường đi dài hơn không có nghĩa là rơi lâu hơn: hai phương vuông góc <em>độc lập</em> với nhau — mục II sẽ chứng minh bằng thí nghiệm.</p></div>
 </div>
 </div>
 
