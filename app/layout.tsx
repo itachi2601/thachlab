@@ -77,6 +77,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#05070b",
 };
 
 // Structured data toàn site — giúp Google nhận diện thương hiệu.

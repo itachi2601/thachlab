@@ -34,9 +34,15 @@ html {
   scroll-behavior: smooth;
   color-scheme: dark;
   overflow-x: hidden;
+  /* PWA/điện thoại: không phóng chữ khi xoay ngang, không hiện ô xám khi chạm. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  /* Kéo xuống quá đầu trang không làm tải lại cả app (chế độ standalone) / không "nảy" nền. */
+  overscroll-behavior-y: none;
   background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
@@ -46,6 +52,13 @@ body {
      `clip` vẫn chặn tràn ngang nhưng KHÔNG tạo scroll container. */
   overflow-x: clip;
 }
+
+/* iOS Safari tự phóng to trang khi ô nhập < 16px — ép 16px trên màn cảm ứng. */
+@media (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { font-size: max(16px, 1em); }
+}
+/* Chạm là chạm: bỏ trễ 300ms và chặn zoom đúp trên điều khiển. */
+a, button, [role="button"], summary, label { touch-action: manipulation; }
 
 /* Light theme: giữ màu nhận diện xanh của ThachLab, tăng độ tương phản trên nền sáng. */
 /* Màu chữ danh hiệu theo mức (WornTitle, TitleShowcase): pastel cho nền tối, tông đậm cho nền sáng (≥4,5:1 trên trắng). */
@@ -2025,6 +2038,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   top: 0;
   display: flex;
   height: 100vh;
+  height: 100dvh;
   flex-direction: column;
   border-right: 1px solid var(--a-line);
   background: var(--a-side);

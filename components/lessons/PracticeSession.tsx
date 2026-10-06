@@ -17,6 +17,7 @@ import {
   type Exam,
   type QuestionResponse,
 } from "@/features/exams/types";
+import { pendingCount } from "@/lib/offline-queue";
 import { markFirstPracticeDone } from "@/lib/pwa-install";
 import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
 import {
@@ -151,7 +152,7 @@ export default function PracticeSession({
   const [cur, setCur] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [usedSeconds, setUsedSeconds] = useState(0);
-  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "queued" | "failed">("idle");
   // Thang độ khó: level = mức hiện tại của em ở mục này; free = tắt thang, bốc ngẫu nhiên như cũ.
   const [levelOverride, setLevelOverride] = useState<LadderLevel | null>(null);
   const [free, setFree] = useState(false);
@@ -258,7 +259,7 @@ export default function PracticeSession({
         timedOut,
         clientToken: clientTokenRef.current,
       }).then((ok) => {
-        setSaveState(ok ? "saved" : "failed");
+        setSaveState(!ok ? "failed" : pendingCount(session.user.id) > 0 ? "queued" : "saved");
         if (ok) markFirstPracticeDone();
         const played = sessionLevelRef.current;
         if (!ok || !played) return;

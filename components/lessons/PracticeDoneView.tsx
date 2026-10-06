@@ -32,7 +32,7 @@ export default function PracticeDoneView({
   questions: ExamQuestion[];
   responses: QuestionResponse[];
   usedSeconds: number;
-  saveState: "idle" | "saving" | "saved" | "failed";
+  saveState: "idle" | "saving" | "saved" | "queued" | "failed";
   passScore: number | null;
   ladderNote?: string | null;
   onRetry: () => void;
@@ -71,6 +71,7 @@ export default function PracticeDoneView({
         )}
         <p className="mt-2 text-xs text-slate-500">
           {saveState === "saving" && "Đang lưu…"}
+          {saveState === "queued" && "Đang offline — kết quả đã giữ trên máy, sẽ tự gửi khi có mạng"}
           {saveState === "saved" && "✓ Đã ghi lại để thầy biết em cần ôn phần nào"}
           {saveState === "idle" && "Điểm luyện tập không tính vào bảng điểm"}
         </p>
