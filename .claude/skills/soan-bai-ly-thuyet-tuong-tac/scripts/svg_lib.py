@@ -63,3 +63,36 @@ def field_path(d, tip, direction, c="currentColor", w=1.8, dash="6 4", L=12):
     """Đường sức cong: path nét đứt `d` + đầu V đặt tại điểm `tip`=(x,y) theo tiếp tuyến `direction`=(dx,dy)."""
     return (f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}"/>'
             + chevron(tip[0], tip[1], direction[0], direction[1], c, w, L))
+
+
+# ---- Hình 3D che khuất (dây thẳng, vòng dây, ống dây). Duyệt 7/10/2026.
+# Quy ước: vật ở phía TRƯỚC thì nét liền đè lên; vật ở phía SAU bị che thì nét bị NGẮT một khe nhỏ chỗ vật trước đi qua.
+# Đường tròn nhìn xiên = ellipse: tham số t (độ), x = cx + rx·cos t, y = cy + ry·sin t; t∈[0,180] là nửa TRƯỚC (thấp hơn trên hình), t∈[180,360] là nửa SAU.
+def arc_pts(cx, cy, rx, ry, t0, t1, n=40):
+    return [(cx + rx * _m.cos(_m.radians(t0 + (t1 - t0) * i / n)), cy + ry * _m.sin(_m.radians(t0 + (t1 - t0) * i / n))) for i in range(n + 1)]
+
+def pts_path(pts, c="currentColor", w=2, dash=""):
+    d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    da = f' stroke-dasharray="{dash}"' if dash else ""
+    return f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}"{da} stroke-linecap="round" stroke-linejoin="round"/>'
+
+def ell_tan(rx, ry, t, sgn=1):
+    """Hướng tiếp tuyến của ellipse tại tham số t (sgn=+1: t tăng, -1: t giảm)."""
+    r = _m.radians(t)
+    return (-rx * _m.sin(r) * sgn, ry * _m.cos(r) * sgn)
+
+def ell_pt(cx, cy, rx, ry, t):
+    r = _m.radians(t)
+    return cx + rx * _m.cos(r), cy + ry * _m.sin(r)
+
+def cubic(p0, p1, p2, p3, n=60):
+    out = []
+    for i in range(n + 1):
+        t = i / n; u = 1 - t
+        out.append((u**3*p0[0] + 3*u*u*t*p1[0] + 3*u*t*t*p2[0] + t**3*p3[0], u**3*p0[1] + 3*u*u*t*p1[1] + 3*u*t*t*p2[1] + t**3*p3[1]))
+    return out
+
+def chev_on(P, i, c, w=2.2, L=12):
+    """Đầu V tại điểm thứ i của đường gấp khúc P, hướng theo chiều đi của P."""
+    (x, y), (x2, y2) = P[i], P[i + 1]
+    return chevron(x, y, x2 - x, y2 - y, c, w, L)

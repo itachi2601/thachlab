@@ -1997,7 +1997,7 @@
    "tonghopluc.can_bang_ba_luc"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "alpha"
   ]
@@ -4445,6 +4445,80 @@
   ]
  },
  {
+  "id": "tn-l12-thuchanhtu-01",
+  "ten": "Đo cảm ứng từ bằng cân dòng điện (cân điện tử đo phản lực)",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+  "lesson_id": 12,
+  "kien_thuc": [
+   "thuchanhtu.can_dong_dien",
+   "thuchanhtu.do_cam_ung_tu",
+   "thuchanhtu.sai_so"
+  ],
+  "mo_phong": "do_thi+bang_so_lieu",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "I"
+  ]
+ },
+ {
+  "id": "tn-l12-thuchanhtu-02",
+  "ten": "Đảo chiều dòng điện: số cân đổi dấu",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+  "lesson_id": 12,
+  "kien_thuc": [
+   "thuchanhtu.can_dong_dien",
+   "thuchanhtu.dao_chieu_dong"
+  ],
+  "mo_phong": "so_do_luc",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "chieu_I"
+  ]
+ },
+ {
+  "id": "tn-l12-thuchanhtu-03",
+  "ten": "Dây hợp góc với đường sức: lực giảm theo sin θ",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+  "lesson_id": 12,
+  "kien_thuc": [
+   "thuchanhtu.luc_tu_theo_goc",
+   "thuchanhtu.sai_so"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "theta"
+  ]
+ },
+ {
+  "id": "tn-l12-thuchanhtu-04",
+  "ten": "Mô phỏng cân dòng điện: tăng giảm và đảo chiều I",
+  "loai": "thi_nghiem",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+  "lesson_id": 12,
+  "kien_thuc": [
+   "thuchanhtu.can_dong_dien",
+   "thuchanhtu.dao_chieu_dong"
+  ],
+  "mo_phong": "so_do_luc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "I",
+   "chieu_I"
+  ]
+ },
+ {
   "id": "tn-l12-tutruong-01",
   "ten": "Dòng điện tác dụng lực từ lên kim la bàn",
   "loai": "thi_nghiem",
@@ -4639,7 +4713,7 @@
    "ungdungcutu.dong_cam_ung_cung_tan_so"
   ],
   "mo_phong": "do_thi+2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "d",
@@ -4660,7 +4734,7 @@
    "ungdungcutu.may_bien_ap_khong_loi"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U1",
    "N1",
@@ -4681,7 +4755,7 @@
    "ungdungcutu.dong_foucault_toa_nhiet"
   ],
   "mo_phong": "do_thi+2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "P",
    "m",
@@ -4701,7 +4775,7 @@
    "ungdungcutu.luc_ham_dien_tu"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "n",
    "e",

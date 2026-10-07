@@ -2,6 +2,17 @@
 import math
 from svg_lib import *
 
+_COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
+def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Vectơ lực theo quy ước đầu V nhọn (hai vạch lệch 30°), không dùng marker: thân mảnh + đầu chevron."""
+    col = _COL[c]
+    w = min(w, 2.8)
+    d = f' stroke-dasharray="{dash}"' if dash else ""
+    n = math.hypot(x2 - x1, y2 - y1) or 1
+    L = min(12, n * 0.45)
+    return (f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{w}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, col, w, L))
+
 def P(x, y): return f"{x:.1f},{y:.1f}"
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
     d = f' stroke-dasharray="{dash}"' if dash else ""
@@ -124,7 +135,127 @@ fig4 = wrap("0 0 440 304", "Đèn treo bằng hai dây: hai lực căng T1, T2 c
             b, "Hình 4. Đèn đứng yên: hợp lực <em>F</em><sub>12</sub> của hai lực căng <em>T</em><sub>1</sub>, <em>T</em><sub>2</sub> cân bằng với trọng lực <em>P</em>; α là góc giữa hai dây.")
 
 fig4 = fig4.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-tonghopluc-03"', 1)
+
+def _chips(name, cls, angles, checked):
+    row = f'<div class="tl-sim__row"><b>{name}</b>'
+    for a in angles:
+        cid = f"tl58-{cls}{a}"
+        on = " checked" if a == checked else ""
+        row += f'<input type="radio" name="tl58-{cls}" class="{cls}-a{a}" id="{cid}"{on}>'
+        row += f'<label for="{cid}" class="tl-sim__chip">{a}°</label>'
+    return row + "</div>\n"
+
+def sim_keo():
+    """Nhìn từ trên xuống: F1, F2 vẽ từ xe; hai nét đứt khép thành hình bình hành; đường chéo là hợp lực F."""
+    parts = []
+    ox, oy, sc = 210, 206, 0.8
+    for alpha, F in ((0, 200), (60, 173), (90, 141), (120, 100), (180, 0)):
+        h = math.radians(alpha / 2)
+        nud = 7 if alpha == 0 else 0
+        t1 = (ox - 100 * sc * math.sin(h) - nud, oy - 100 * sc * math.cos(h))
+        t2 = (ox + 100 * sc * math.sin(h) + nud, oy - 100 * sc * math.cos(h))
+        tf = (ox, oy - F * sc)
+        b = defs(f"k{alpha}")
+        b += '<rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/>'
+        if 0 < alpha < 180:
+            b += line(t1[0], t1[1], tf[0], tf[1], "currentColor", 1.6, "5 4", .6)
+            b += line(t2[0], t2[1], tf[0], tf[1], "currentColor", 1.6, "5 4", .6)
+        b += f'<rect x="{ox-28}" y="{oy}" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/>'
+        b += f'<circle cx="{ox-16}" cy="{oy+34}" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="{ox+16}" cy="{oy+34}" r="5" fill="none" stroke="currentColor" stroke-width="2"/>'
+        b += arrow(f"k{alpha}", "r", ox - nud, oy, round(t1[0], 1), round(t1[1], 1), 3.2)
+        b += arrow(f"k{alpha}", "b", ox + nud, oy, round(t2[0], 1), round(t2[1], 1), 3.2)
+        if F > 0:
+            b += arrow(f"k{alpha}", "g", ox, oy, round(tf[0], 1), round(tf[1], 1), 4)
+            b += text(tf[0] + 14, tf[1] + 8, "F", GRN, 18, "start", "700")
+        else:
+            b += dot(ox, oy, 5, GRN)
+        b += text(t1[0] - 12, t1[1] - 4, sub("F", "1"), RED, 18, "end", "700")
+        b += text(t2[0] + 12, t2[1] - 4, sub("F", "2"), BLUE, 18, "start", "700")
+        if alpha > 0:
+            half = alpha / 2
+            b += arc(ox, oy, 28, 90 - half, 90 + half, "currentColor", 1.8)
+            b += text(ox + 5, oy - 34, "α", "currentColor", 16, "start", "700")
+        b += text(30, 36, f"α = {alpha}°", "currentColor", 17, "start", "700")
+        b += text(210, 268, f"F₁ = F₂ = 100 N  →  hợp lực F = {F} N", GRN, 17, "middle", "700")
+        parts.append(
+            f'<svg class="k-a{alpha}" viewBox="0 0 420 280" role="img" '
+            f'aria-label="Hai lực kéo 100 niutơn hợp góc {alpha} độ; đường chéo hình bình hành là hợp lực {F} niutơn">{b}</svg>'
+        )
+    h = '<div class="tl-box tl-sim tl-sim--keo">\n'
+    h += '<p class="tl-label">🎛️ Mô phỏng: hai dây kéo xe (nhìn từ trên xuống)</p>\n'
+    h += _chips("Góc giữa hai dây", "k", (0, 60, 90, 120, 180), 0)
+    h += "\n".join(parts) + "\n"
+    h += '<p><strong>Quy tắc hình bình hành:</strong> lấy <span class="lg-F">F₁</span>, <span class="lg-B">F₂</span> làm hai cạnh; <strong class="lg-N">đường chéo</strong> từ xe là hợp lực <em>F</em>.</p>\n</div>\n'
+    return h
+
+def sim_doc():
+    """Ván nghiêng, lực kế nằm dọc ván. P = 2,0 N. Số trên lực kế là Px = P sin α."""
+    rows = ((0, 0.0, 2.0, "0", "2,0"), (15, 0.52, 1.93, "0,52", "1,93"),
+            (30, 1.0, 1.73, "1,0", "1,73"), (45, 1.41, 1.41, "1,41", "1,41"),
+            (60, 1.73, 1.0, "1,73", "1,0"))
+    parts = []
+    foot, Lslope = (96, 274), 236
+    for alpha, px, py, spx, spy in rows:
+        a = math.radians(alpha)
+        U = (math.cos(a), -math.sin(a))
+        Nout = (-math.sin(a), -math.cos(a))
+
+        def along(t, lift=0):
+            return (foot[0] + t * Lslope * U[0] + lift * Nout[0],
+                    foot[1] + t * Lslope * U[1] + lift * Nout[1])
+
+        top = along(1)
+        b = defs(f"n{alpha}")
+        if alpha == 0:
+            b += f'<rect x="{foot[0]:.0f}" y="{foot[1]:.0f}" width="{Lslope}" height="12" rx="2" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2.2"/>'
+        else:
+            b += f'<polygon points="{P(*foot)} {P(*top)} {P(top[0], foot[1])}" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/>'
+            b += arc(foot[0], foot[1], 46, 0, alpha, "currentColor")
+            b += text(foot[0] + 54, foot[1] - 8, "α", "currentColor", 17, "start", "700")
+        c, hw, hh = along(0.26), 26, 18
+        corners = []
+        for sx, sy in ((-1, 0), (1, 0), (1, 1), (-1, 1)):
+            corners.append((c[0] + sx * hw * U[0] + sy * hh * Nout[0],
+                            c[1] + sx * hw * U[1] + sy * hh * Nout[1]))
+        b += f'<polygon points="{" ".join(P(*q) for q in corners)}" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/>'
+        t0, slen, thick = 0.46, 78, 26
+        hook = along(t0, 1)
+        face = (c[0] + hw * U[0] + (hh * 0.55) * Nout[0], c[1] + hw * U[1] + (hh * 0.55) * Nout[1])
+        b += line(face[0], face[1], *along(t0, thick / 2), "currentColor", 2)
+        b += (f'<g transform="translate({hook[0]:.1f},{hook[1]:.1f}) rotate({-alpha})">'
+              f'<rect x="0" y="{-thick}" width="{slen}" height="{thick}" rx="7" '
+              f'fill="rgba(52,211,153,.18)" stroke="{GRN}" stroke-width="2.2"/>'
+              f'<path d="M12,{-thick / 2:.0f} l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="{GRN}" stroke-width="1.6"/>'
+              f"</g>")
+        b += f'<circle cx="{along(t0, thick / 2)[0]:.1f}" cy="{along(t0, thick / 2)[1]:.1f}" r="3.5" fill="none" stroke="{GRN}" stroke-width="2"/>'
+        pin = along(t0 + slen / Lslope, thick / 2)
+        b += dot(pin[0], pin[1], 4.5, GRN)
+        mid = along(t0 + (slen / 2) / Lslope, thick + 58)
+        outer = along(t0 + (slen / 2) / Lslope, thick)
+        inward = (math.sin(a), math.cos(a))
+        tx = 46 / abs(inward[0]) if abs(inward[0]) > 1e-6 else 1e9
+        ty = 16 / abs(inward[1]) if abs(inward[1]) > 1e-6 else 1e9
+        hit = min(tx, ty)
+        edge = (mid[0] + inward[0] * hit, mid[1] + inward[1] * hit)
+        b += line(outer[0], outer[1], edge[0], edge[1], GRN, 1.6)
+        b += f'<rect x="{mid[0] - 46:.1f}" y="{mid[1] - 16:.1f}" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="{GRN}" stroke-width="2"/>'
+        b += text(mid[0], mid[1] + 7, f"{spx} N", GRN, 20, "middle", "700")
+        g = (c[0] + (hh * 0.45) * Nout[0], c[1] + (hh * 0.45) * Nout[1])
+        b += arrow(f"n{alpha}", "r", round(g[0] - 2, 1), round(g[1] - 46, 1), round(g[0] - 2, 1), round(g[1] - 6, 1), 3.2)
+        b += text(g[0] - 12, g[1] - 34, "P", RED, 17, "end", "700")
+        parts.append(
+            f'<svg class="n-a{alpha}" viewBox="0 0 440 324" role="img" '
+            f'aria-label="Dốc {alpha} độ, lực kế chỉ {spx} niutơn">{b}</svg>'
+        )
+    h = '<div class="tl-box tl-box--exp tl-sim tl-sim--doc">\n'
+    h += '<p class="tl-label">🎛️ Thí nghiệm: đổi góc, đọc lực kế</p>\n'
+    h += _chips("Góc nghiêng", "n", (0, 15, 30, 45, 60), 30)
+    h += "\n".join(parts) + "\n</div>\n"
+    return h
+
 h = open("theory.src.html", encoding="utf8").read()
+assert "<!--SIMKEO-->" in h and "<!--SIMDOC-->" in h
+h = h.replace("<!--SIMKEO-->", sim_keo()).replace("<!--SIMDOC-->", sim_doc())
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in h, n
     h = h.replace(f"<!--FIG{n}-->", f)
