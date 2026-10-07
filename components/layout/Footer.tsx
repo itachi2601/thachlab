@@ -65,9 +65,8 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
         <div className={`grid grid-cols-1 gap-12 ${gridColumns}`}>
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white font-display">
-                T
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/logo-mark.svg" alt="" width={32} height={32} className="h-8 w-8" />
               <span className="font-display text-lg font-semibold text-ink">
                 ThachLab
               </span>
