@@ -111,9 +111,9 @@ export default function Navbar() {
           <span className="font-display text-lg font-semibold tracking-tight text-white">
             Thach<span className="text-[#3B82F6]">Lab</span>
           </span>
-          <span className="rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold leading-none text-amber-300 sm:text-xs">
-            <span className="sm:hidden">Alpha</span>
-            <span className="hidden sm:inline">Alpha test · miễn phí</span>
+          <span className="shrink-0 whitespace-nowrap lg:hidden xl:inline-block rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold leading-none text-amber-300 sm:text-xs">
+            <span className="2xl:hidden">Alpha</span>
+            <span className="hidden 2xl:inline">Alpha test · miễn phí</span>
           </span>
         </Link>
 
