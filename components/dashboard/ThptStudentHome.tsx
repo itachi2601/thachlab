@@ -304,8 +304,11 @@ export default function ThptStudentHome({
   // Thẻ "Hôm nay em làm gì": bài kiểm tra được giao → BTVN ôn tập → rankNextSteps (mở khoá → làm lại → học tiếp → ôn lại).
   // Việc đầu là nút nổi duy nhất của trang (B2, L5); tối đa 3 việc phụ (N2). Chờ đủ điểm + bài giao + danh mục mới vẽ.
   const attentionReady = scoresLoaded && assessmentsLoaded && catalogLoaded;
+  const seenExamIds = new Set<number>(todayNote?.examId ? [todayNote.examId] : []);
+  const uniqueByExam = <T extends { examId: number }>(items: T[]) =>
+    items.filter((item) => (seenExamIds.has(item.examId) ? false : (seenExamIds.add(item.examId), true)));
   const assignedSteps: NextStep[] = [
-    ...todoExams.map((item) => ({
+    ...uniqueByExam(todoExams).map((item) => ({
       kind: "assigned" as const,
       key: `a-${item.id}`,
       action: "Làm bài",
@@ -313,7 +316,7 @@ export default function ThptStudentHome({
       hint: "Bài kiểm tra · chưa làm",
       href: `/kiem-tra/lam?id=${item.examId}`,
     })),
-    ...todoReviewHomework.map((item) => ({
+    ...uniqueByExam(todoReviewHomework).map((item) => ({
       kind: "assigned" as const,
       key: `r-${item.id}`,
       action: "Làm bài",
@@ -322,7 +325,9 @@ export default function ThptStudentHome({
       href: `/kiem-tra/lam?id=${item.examId}`,
     })),
   ];
-  const todaySteps = attentionReady ? [...assignedSteps, ...nextSteps].slice(0, 4) : [];
+  const todaySteps = attentionReady
+    ? [...assignedSteps, ...nextSteps.filter((s) => !(s.kind === "review" && assignedSteps.length > 0))].slice(0, 4)
+    : [];
   const primaryStep = todaySteps[0] ?? null;
   const secondarySteps = todaySteps.slice(1);
   const alertText =
@@ -331,7 +336,7 @@ export default function ThptStudentHome({
         ? "Bài kiểm tra gần đây bị ghi nhận rời màn hình nhiều lần — trợ giảng sẽ kiểm tra lại kiến thức của em."
         : "Điểm kiểm tra đang thấp — trợ giảng sẽ liên hệ sắp lịch phụ đạo."
       : null;
-  const showToday = Boolean(todayNote) || primaryStep !== null || alertText !== null;
+  const showToday = attentionReady && (Boolean(todayNote) || primaryStep !== null || alertText !== null);
 
   const liveWindows = liveExitWindows(openWindows, needs, nowMs);
   const showTutoring = needs.length > 0 || slots.length > 0 || liveWindows.length > 0;
@@ -376,7 +381,7 @@ export default function ThptStudentHome({
               <p className="mt-1 text-[13px] text-slate-400 sm:text-sm">
                 Lớp {className}
                 <span className="text-slate-600"> · </span>
-                <Link href="/lop-hoc" className="inline-flex min-h-11 items-center gap-0.5 text-blue-200 hover:text-white">
+                <Link href="/lop-hoc" className="-my-3 inline-flex min-h-11 items-center gap-0.5 text-blue-200 hover:text-white">
                   Chương trình lớp <ChevronRight size={14} />
                 </Link>
               </p>

@@ -74,8 +74,7 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     });
   }
 
-  if (locked) steps.push(locked);
-
+  // Không còn việc làm được ngay → "Ôn lại" giữ chỗ nút nổi; chủ đề đang chờ giãn cách (mờ) xếp sau nó.
   if (steps.length === 0) {
     steps.push({
       kind: "review",
@@ -86,5 +85,6 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
       href: "/lop-hoc",
     });
   }
+  if (locked) steps.push(locked);
   return steps.slice(0, 3);
 }
