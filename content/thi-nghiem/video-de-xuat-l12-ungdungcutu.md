@@ -47,6 +47,7 @@ YouTube (1 khung/giây)**, chưa nghe tiếng — chỗ nào cần nghe lại đ
 - Đã đăng DB: item **#145** (`ly_thuyet`) của lesson 126, 46 291 → 48 919 ký tự; đối chiếu trước/sau cho thấy **chỉ số khối video đổi 0 → 5**, hai mục #146 `luyen_tap` và #283 `bai_tap_mau` không đổi.
 - Sao lưu để hoàn tác: `scripts/logs/ly-thuyet-bai126-backup-1791376046541.json`.
 - Deploy xong 7/10/2026 (nhánh `deploy`), commit nguồn `f89521898`.
+- **19:35 cùng ngày — thay clip hộp 04 bằng clip tiếng Anh** `MglUIiBy2lQ` (0:51–1:51) và **cắt lại hộp 01** còn 1:16–2:11 (phát hiện nhờ phụ đề: đoạn cũ rơi vào lời giảng cơ chế + hoạt hình pickup). Ghi DB lại item #145 (48 919 → 48 977 ký tự, vẫn 5 khối, ngoài khối video không đổi), sao lưu `scripts/logs/ly-thuyet-bai126-backup-1791376523277.json`, commit `3f37fd7f5`, deploy lại, web đã cập nhật 19:40.
 
 Khối lệnh đã dùng:
 
