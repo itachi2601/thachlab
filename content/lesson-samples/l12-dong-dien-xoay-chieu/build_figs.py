@@ -15,7 +15,7 @@ def wrap(vb, label, body, cap, exp=""):
 # ---- Hình 1: khung quay, nhìn dọc trục
 b = defs("f1")
 for y in (48, 88, 128, 168):
-    b += f'<line x1="14" y1="{y}" x2="410" y2="{y}" stroke="{RED}" stroke-width="1.8" opacity=".7" marker-end="url(#f1-r)"/>'
+    b += field_line(14, y, 410, y, RED, 1.9)
 b += text(16, 38, "đường sức, vectơ B", RED, 12)
 cx, cy, a = 250, 108, math.radians(40)
 nx, ny = math.cos(a), -math.sin(a)

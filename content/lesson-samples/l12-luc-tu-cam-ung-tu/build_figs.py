@@ -48,8 +48,8 @@ b += rect(96, 30, 228, 30, "rgba(148,163,184,.16)", "currentColor", 2, 8)       
 b += rect(96, 190, 228, 30, "rgba(148,163,184,.16)", "currentColor", 2, 8)      # cực S
 b += text(210, 52, "N", "currentColor", 16, "middle", "700")
 b += text(210, 212, "S", "currentColor", 16, "middle", "700")
-b += arrow("f1", "b", 150, 68, 150, 184, 2.6)                                   # đường sức B
-b += arrow("f1", "b", 300, 68, 300, 184, 2.6)
+b += field_line(150, 68, 150, 184, BLUE, 2.2)                                   # đường sức B
+b += field_line(300, 68, 300, 184, BLUE, 2.2)
 b += text(160, 88, "B", BLUE, 14, "start", "700")
 b += line(30, 120, 390, 120, "currentColor", 3.5)                               # dây dẫn
 b += arrow("f1", "o", 58, 120, 108, 120, 3)
@@ -115,7 +115,7 @@ b += text(126, 162, "B", BLUE, 13, "start", "700")
 # b) vòng dây
 b += text(158, 20, "b) vòng dây", "currentColor", 11, "start", "700")
 b += ellipse(222, 140, 44, 17, "currentColor", 3)
-b += arrow("f4", "b", 222, 178, 222, 96, 2.6)
+b += field_line(222, 178, 222, 96, BLUE, 2.2)
 b += arrow("f4", "o", 176, 132, 176, 154, 2.4)
 b += arrow("f4", "o", 268, 148, 268, 126, 2.4)
 b += text(166, 122, "I", ORG, 13, "start", "700")
@@ -125,7 +125,7 @@ b += text(300, 20, "c) ống dây", "currentColor", 11, "start", "700")
 b += line(304, 140, 430, 140, "currentColor", 1.2, "5 5", .35)
 for x in (312, 337, 362, 387, 412):
     b += ellipse(x, 140, 8, 24, "currentColor", 2.4)
-b += arrow("f4", "b", 308, 140, 424, 140, 2.6)
+b += field_line(308, 140, 424, 140, BLUE, 2.2)
 b += text(366, 100, "B", BLUE, 13, "middle", "700")
 fig4 = wrap("0 0 440 206", "Ba dạng dòng điện: dây dẫn thẳng có đường sức là đường tròn đồng tâm, vòng dây có cảm ứng từ vuông góc mặt phẳng vòng dây, ống dây có từ trường đều song song trục ống",
             b, "Hình 4. Dây thẳng — đường sức là đường tròn đồng tâm; vòng dây — B vuông góc mặt phẳng vòng; ống dây — B đều trong lòng.")

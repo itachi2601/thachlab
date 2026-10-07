@@ -34,3 +34,32 @@ def wrap(vb, label, body, cap):
     return (f'<figure class="fig" data-tl="1"><svg viewBox="{vb}" role="img" aria-label="{label}">{body}</svg>'
             f'<figcaption>{cap}</figcaption></figure>')
 
+
+
+# ---- Đường sức: nét đứt + đầu mũi tên chữ V (hai vạch chéo 30° so với đường chính, đầu nhọn).
+# Quy tắc chốt 7/10/2026 (xem references/hinh-svg.md). Không dùng marker: marker co theo bề dày nét làm đầu tù.
+import math as _m
+
+def chevron(x, y, dx, dy, c="currentColor", w=2, L=12, ang=30):
+    """Đầu mũi tên chữ V tại (x, y) hướng (dx, dy): hai vạch dài L, mỗi vạch lệch `ang`° so với đường chính; góc nhọn (miter)."""
+    n = _m.hypot(dx, dy) or 1
+    ux, uy = dx / n, dy / n
+    t = _m.radians(ang)
+    pts = []
+    for s in (1, -1):
+        c_, s_ = _m.cos(t), _m.sin(s * t)
+        bx, by = ux * c_ - uy * s_, ux * s_ + uy * c_      # hướng đường chính quay s·ang°
+        pts.append((x - L * bx, y - L * by))
+    (ax, ay), (bx, by) = pts
+    return (f'<path d="M{ax:.1f},{ay:.1f} L{x:.1f},{y:.1f} L{bx:.1f},{by:.1f}" fill="none" stroke="{c}" stroke-width="{w}" '
+            f'stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>')
+
+def field_line(x1, y1, x2, y2, c="currentColor", w=1.8, dash="6 4", L=12):
+    """Đường sức thẳng: nét đứt từ (x1,y1) tới đỉnh mũi tên (x2,y2) + đầu V."""
+    return (f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}"/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, c, w, L))
+
+def field_path(d, tip, direction, c="currentColor", w=1.8, dash="6 4", L=12):
+    """Đường sức cong: path nét đứt `d` + đầu V đặt tại điểm `tip`=(x,y) theo tiếp tuyến `direction`=(dx,dy)."""
+    return (f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}"/>'
+            + chevron(tip[0], tip[1], direction[0], direction[1], c, w, L))

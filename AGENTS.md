@@ -269,3 +269,8 @@ Mọi phiên chạy trên Mac (có Terminal panel) phải theo một quy tắc, 
 - `Bash` bị sandbox chặn `*.supabase.co` — gặp 403 CONNECT thì chuyển sang tab terminal, đừng thử lại.
 - Phiên cloud không có Terminal panel: in lệnh cho thầy chạy trên Mac, đừng giả vờ chạy được.
 - Lệnh ghi production vẫn theo mục "Migration Supabase": agent không tự chạy.
+
+# Quy tắc hình và chú thích trong bài học (thầy chốt 7/10/2026)
+
+- Chú thích, ghi chú, đáp án, bảng ký hiệu có nhiều ý (kể cả trong bài lý thuyết và bài tập): **mỗi ý một dòng riêng**, không ghép nhiều ý vào một dòng bằng "·", ";" hay dấu phẩy. Ngoại lệ duy nhất: dòng 🔑 từ khoá 3–6 chữ.
+- **Đường sức từ vẽ nét đứt; đầu mũi tên là hai vạch chéo lệch 30° so với đường chính, đầu nhọn** (helper `field_line`/`field_path`/`chevron` trong `.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/svg_lib.py`; chi tiết ở `references/hinh-svg.md`). Hình cũ vẽ đường sức bằng `arrow()`/marker đặc thì sửa khi đụng tới bài.

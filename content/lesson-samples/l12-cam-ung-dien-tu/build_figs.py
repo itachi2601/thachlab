@@ -13,7 +13,7 @@ def wrap(vb, label, body, cap, exp=""):
 # ---- Hình 1: từ thông, pháp tuyến, góc alpha (nhìn cạnh khung)
 b = defs("f1")
 for y in (60, 110, 160):
-    b += f'<line x1="20" y1="{y}" x2="400" y2="{y}" stroke="{RED}" stroke-width="1.8" opacity=".75" marker-end="url(#f1-r)"/>'
+    b += field_line(20, y, 400, y, RED, 1.9)
 b += text(24, 50, "đường sức, vectơ B", RED, 12)
 cx, cy, a = 270, 110, math.radians(40)
 nx, ny = math.cos(a), -math.sin(a)

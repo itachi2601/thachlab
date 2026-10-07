@@ -83,28 +83,28 @@ b += rect(44, 72, 68, 30, "rgba(248,113,113,.18)", RED, 2, 4)
 b += rect(112, 72, 68, 30, "rgba(56,189,248,.18)", BLUE, 2, 4)
 b += text(78, 93, "N", RED, 13, "middle", "700")
 b += text(146, 93, "S", BLUE, 13, "middle", "700")
-b += f'<path d="M78,72 C78,42 146,42 146,72" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += f'<path d="M78,102 C78,132 146,132 146,102" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += arrow("f3", "r", 100, 50, 118, 49, 1.8)
-b += arrow("f3", "r", 108, 125, 126, 124, 1.8)
-b += arrow("f3", "r", 100, 34, 124, 34, 1.8)
-b += arrow("f3", "r", 100, 140, 124, 140, 1.8)
+b += f'<path d="M78,72 C78,42 146,42 146,72" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
+b += f'<path d="M78,102 C78,132 146,132 146,102" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
+b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
+b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
+b += chevron(118, 49, 18.0, -1.0, RED, 1.8, 10)
+b += chevron(126, 124, 18.0, -1.0, RED, 1.8, 10)
+b += chevron(124, 34, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(124, 140, 24.0, 0.0, RED, 1.8, 10)
 def _bz(P, t):
     u = 1 - t
     return tuple(u**3*P[0][k] + 3*u*u*t*P[1][k] + 3*u*t*t*P[2][k] + t**3*P[3][k] for k in (0, 1))
 for P in (((112, 34), (204, 34), (210, 87), (180, 87)), ((112, 140), (204, 140), (210, 87), (180, 87))):
     a, c = _bz(P, 0.66), _bz(P, 0.74)
-    b += arrow("f3", "r", round(a[0], 1), round(a[1], 1), round(c[0], 1), round(c[1], 1), 1.8)
+    b += chevron(round(c[0], 1), round(c[1], 1), c[0] - a[0], c[1] - a[1], RED, 1.8, 10)
 b += text(14, 166, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
 b += text(232, 20, "b) Chữ U", "currentColor", 11, "start", "700")
 b += f'<path d="M244,50 L244,64 Q244,84 264,84 L316,84 Q336,84 336,64 L336,50" fill="none" stroke="currentColor" stroke-width="5"/>'
 b += text(242, 44, "N", RED, 12, "start", "700")
 b += text(338, 44, "S", BLUE, 12, "end", "700")
-for y in (54, 67, 80):
-    b += arrow("f3", "b", 268, y, 312, y, 1.8)
+for y in (52, 64, 76):
+    b += field_line(268, y, 312, y, BLUE, 1.8, "5 3", 7)
 b += text(232, 114, "song song, cách đều", GRN, 10, "start", "600")
 b += text(232, 129, "→ từ trường đều", GRN, 10, "start", "600")
 # c) từ phổ mạt sắt
@@ -118,16 +118,17 @@ b += text(86, 274, "ảnh thật", "currentColor", 10, "middle", "500")
 # d) đường vẽ theo quy ước
 b += text(232, 186, "d) Đường quy ước", "currentColor", 11, "start", "700")
 b += rect(236, 196, 190, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-b += f'<path d="M248,254 C280,198 384,198 414,254" fill="none" stroke="{RED}" stroke-width="1.6"/>'
-b += f'<path d="M250,242 C288,204 374,204 412,242" fill="none" stroke="{RED}" stroke-width="1.6"/>'
-b += f'<path d="M256,208 L408,208" fill="none" stroke="{RED}" stroke-width="1.6"/>'
-b += arrow("f3", "r", 278, 224, 308, 215, 1.8)
-b += arrow("f3", "r", 344, 208, 366, 208, 1.8)
-b += text(236, 274, "mũi tên chỉ chiều · không cắt nhau", "currentColor", 10, "start", "500")
-fig3 = wrap("0 0 440 288",
+b += f'<path d="M248,254 C280,198 384,198 414,254" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
+b += f'<path d="M250,242 C288,204 374,204 412,242" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
+b += f'<path d="M256,208 L408,208" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
+b += chevron(308, 215, 30.0, -9.0, RED, 1.8, 10)
+b += chevron(366, 208, 22.0, 0.0, RED, 1.8, 10)
+b += text(236, 274, "mũi tên chỉ chiều", "currentColor", 10, "start", "500")
+b += text(236, 286, "không cắt nhau", "currentColor", 10, "start", "500")
+fig3 = wrap("0 0 440 296",
             "Bốn khung: đường sức từ của thanh nam châm, của nam châm chữ U (từ trường đều), từ phổ mạt sắt và đường sức vẽ theo quy ước",
-            b, "Hình 3. a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín. b) Chữ U: từ trường đều. "
-               "c) Từ phổ. d) Đường vẽ theo quy ước.")
+            b, "Hình 3.<br>a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín.<br>b) Chữ U: từ trường đều.<br>"
+               "c) Từ phổ.<br>d) Đường vẽ theo quy ước.")
 
 # ------------------------------------------- Hình 4: từ trường Trái Đất
 b = defs("f4")
@@ -145,9 +146,9 @@ b += text(CX - 12, 200, "cực từ", RED, 12, "end", "700")
 b += text(CX - 12, 215, "bắc", RED, 12, "end", "700")
 for dx in (150, 230):
     for sg in (1, -1):
-        b += f'<path d="M{CX},238 C{CX+sg*dx},262 {CX+sg*dx},38 {CX},62" fill="none" stroke="{GRN}" stroke-width="1.8"/>'
+        b += f'<path d="M{CX},238 C{CX+sg*dx},262 {CX+sg*dx},38 {CX},62" fill="none" stroke="{GRN}" stroke-width="1.8" stroke-dasharray="6 4"/>'
         xm = CX + sg * dx * 0.75
-        b += arrow("f4", "g", xm, 162, xm, 138, 2)
+        b += chevron(xm, 138, 0, -1, GRN, 1.8, 10)
 b += f'<g transform="translate(408,150) rotate(-80)"><rect x="-20" y="-7" width="40" height="14" rx="7" fill="{RED}"/><rect x="-20" y="-7" width="20" height="14" rx="7" fill="{BLUE}"/><path d="M20,0 L6,-7 L6,7 z" fill="{RED}"/></g>'
 b += text(408, 108, "kim la bàn", "currentColor", 12, "middle", "700")
 b += text(408, 196, "nằm theo", GRN, 12, "middle", "600")

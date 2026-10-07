@@ -53,7 +53,7 @@ b += text(206, 188, "chữ U", "currentColor", 14, "start", "600")
 b += text(30, 272, "cân điện tử chia 0,01 g", "currentColor", 14, "start", "600")
 b += text(30, 291, "nguồn một chiều + ampe kế nối với khung", "currentColor", 14, "start", "600")
 fig1 = wrap("0 0 380 300", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm, cân chỉ 1,45 gam",
-            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe. Dây không chạm vào cân hay nam châm.")
+            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.")
 
 # ======================================================= Hình 2: lực và phản lực (mặt cắt khe nam châm)
 b = defs("f2")
@@ -65,8 +65,7 @@ b += rect(190, 110, 50, 130, BLUE_F, BLUE, 2, 3)
 b += rect(30, 200, 210, 40, GREY_F, "currentColor", 2, 3)
 b += text(55, 160, "N", RED, 18, "middle", "700")
 b += text(215, 160, "S", BLUE, 18, "middle", "700")
-b += arrow("f2", "g", 88, 172, 182, 172, 3)
-b += arrow("f2", "g", 88, 189, 182, 189, 3)
+b += field_line(88, 172, 182, 172, GRN, 2.2) + field_line(88, 189, 182, 189, GRN, 2.2)
 b += text(106, 166, "B", GRN, 16, "middle", "700")
 b += line(135, 50, 135, 141, "currentColor", 1.5)
 b += '<circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="135" cy="150" r="3" fill="currentColor"/>'
@@ -76,7 +75,7 @@ b += arrow("f2", "o", 262, 130, 262, 195, 3.5)
 b += text(272, 150, "F′ lên", ORG, 14, "start", "700")
 b += text(272, 168, "nam châm", ORG, 14, "start", "700")
 fig2 = wrap("0 0 380 290", "Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống làm cân tăng",
-            b, "Hình 2. Mặt cắt khe nam châm chữ U. Đường sức từ đi từ cực N sang cực S. Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.")
+            b, "Hình 2. Mặt cắt khe nam châm chữ U.<br>Đường sức từ đi từ cực N sang cực S.<br>Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.")
 
 # ======================================================= Hình 3: đồ thị Δm–I
 X0, Y0, KX, KY = 56, 215, 56, 62     # gốc, px mỗi A, px mỗi g
@@ -100,12 +99,12 @@ for i, m in pts:
 b += text(78, 92, "độ dốc ≈ 0,489 g/A", GRN, 14, "start", "700")
 b += text(78, 112, "→ B ≈ 0,12 T", GRN, 14, "start", "700")
 fig3 = wrap("0 0 380 272", "Đồ thị khối lượng tăng theo cường độ dòng điện: năm điểm đo nằm gần đường thẳng qua gốc toạ độ có độ dốc khoảng 0,489 gam trên ampe",
-            b, "Hình 3. Δm tăng gần tỉ lệ với $I$: năm điểm đo (số liệu minh hoạ) nằm sát đường thẳng qua gốc toạ độ. Độ dốc đường thẳng bằng $Bl/g$.",
+            b, "Hình 3. Δm tăng gần tỉ lệ với $I$: năm điểm đo (số liệu minh hoạ) nằm sát đường thẳng qua gốc toạ độ.<br>Độ dốc đường thẳng bằng $Bl/g$.",
             "tn-l12-thuchanhtu-01")
 
 # ======================================================= Hình 4: dây hợp góc với đường sức
 b = defs("f4")
-b += arrow("f4", "g", 40, 150, 330, 150, 3)
+b += field_line(40, 150, 330, 150, GRN, 2.2)
 b += text(342, 157, "B", GRN, 16, "start", "700")
 b += line(120, 150, 195, 20, "currentColor", 4)
 b += '<circle cx="120" cy="150" r="5" fill="currentColor"/>'
@@ -116,7 +115,7 @@ b += '<circle cx="64" cy="204" r="9" fill="none" stroke="' + RED + '" stroke-wid
 b += text(82, 209, "lực từ F hướng ra khỏi trang", RED, 14, "start", "700")
 b += text(40, 238, "F = B·I·l·sin θ", "currentColor", 16, "start", "700")
 fig4 = wrap("0 0 380 250", "Dây hợp với đường sức từ một góc 60 độ; lực từ hướng ra khỏi trang và có độ lớn B nhân I nhân l nhân sin theta",
-            b, "Hình 4. Dây hợp với đường sức góc $\\theta$ (vẽ trong mặt phẳng chứa $\\vec B$ và dây). Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\\sin\\theta$.",
+            b, "Hình 4. Dây hợp với đường sức góc $\\theta$ (vẽ trong mặt phẳng chứa $\\vec B$ và dây).<br>Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\\sin\\theta$.",
             "tn-l12-thuchanhtu-03")
 
 
@@ -170,7 +169,7 @@ def sim_html():
     sv += f'<path d="{UP}" fill="{GREY_F}" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>'
     sv += text(60, 150, "N", RED, 17, "middle", "700") + text(210, 150, "S", BLUE, 17, "middle", "700")
     # đường sức B
-    sv += arrow("sm", "g", 88, 122, 122, 122, 3) + arrow("sm", "g", 148, 122, 182, 122, 3)
+    sv += field_line(88, 122, 122, 122, GRN, 2.2, "5 3", 10) + field_line(148, 122, 182, 122, GRN, 2.2, "5 3", 10)
     # giá gá cứng: đế bắt xuống bàn, trụ, tay đỡ, thanh treo, ngàm ôm dây, bu lông
     sv += rect(284, 326, 60, 10, "rgba(148,163,184,.45)", "currentColor", 2, 2) + hatch(286, 342, 337, 6)
     sv += rect(306, 50, 16, 278, "rgba(148,163,184,.4)", "currentColor", 2, 2)
@@ -204,10 +203,22 @@ def sim_html():
     fb += text(76, CY - 8, "G", "currentColor", 14, "start", "700") + text(203, CY - 8, "G", "currentColor", 14, "start", "700") + text(330, CY - 8, "G", "currentColor", 14, "start", "700")
     fbd = (f'<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật">{fb}</svg>'
            '<ul class="tl-sim__leg">'
-           '<li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ · <span class="lg lg-Q">●</span> Q lực giữ của giá (ngược F, dây đứng yên). Trọng lực của dây rất nhỏ nên bỏ qua.</li>'
-           '<li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực · <span class="lg lg-Fp">●</span> F′ phản lực của F · <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′).</li>'
-           '<li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực · <span class="lg lg-N">●</span> N′ áp lực của nam châm (bằng N) · <span class="lg lg-B">●</span> phản lực của mặt bàn.</li>'
-           '</ul><p>G là trọng tâm: dây ở tâm tiết diện, cân ở tâm bệ, còn nam châm chữ U có G nằm <em>trong khe</em>, trên gông. Mũi tên F, F′ phóng to cho dễ thấy; các mũi tên khác không vẽ theo tỉ lệ.</p></div>')
+           '<li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li>'
+           '<li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li>'
+           '<li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li>'
+           '<li><strong>Nam châm:</strong> <span class="lg lg-Fp">●</span> F′ phản lực của F</li>'
+           '<li><strong>Nam châm:</strong> <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′)</li>'
+           '<li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực</li>'
+           '<li><strong>Cân:</strong> <span class="lg lg-N">●</span> N′ áp lực của nam châm, bằng N</li>'
+           '<li><strong>Cân:</strong> <span class="lg lg-B">●</span> phản lực của mặt bàn</li>'
+           '<li><strong>Dây:</strong> trọng lực rất nhỏ nên bỏ qua.</li>'
+           '</ul>'
+           '<p>G là trọng tâm của từng vật.</p>'
+           '<p>Dây: G ở tâm tiết diện.</p>'
+           '<p>Cân: G ở tâm bệ cân.</p>'
+           '<p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p>'
+           '<p>Mũi tên F, F′ phóng to cho dễ thấy.</p>'
+           '<p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></div>')
 
     h = '<div class="tl-box tl-box--exp tl-sim" data-exp="tn-l12-thuchanhtu-04">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
     h += '<div class="tl-sim__row"><b>Cường độ dòng điện</b>'
@@ -223,8 +234,8 @@ def sim_html():
     for i, (m, f, bb) in VAL.items():
         for sg, sc in (("p", "+"), ("n", "−")):
             h += (f'<div class="tl-sim__st st-{i}{sg}"><p>Cân: <strong>{sc}{vn(m, 2)} g</strong></p>'
-                  f'<p>$F = \\Delta m\\, g \\approx {vm(f, 2)}\\ \\text{{mN}}$ · $B = \\dfrac{{F}}{{Il}} \\approx {vm(bb, 3)}\\ \\text{{T}}$</p></div>\n')
-    h += '</div>\n' + fbd + '\n<p>Thử: (1) tăng $I$ từng nấc — số cân và mũi tên đổi thế nào? (2) đảo chiều ở cùng $I$. (3) bật <em>Hiện các lực</em> và so độ dài $N$ với $P$ của nam châm. Số liệu minh hoạ, khớp bảng ở mục II.3 ($l = 4{,}0\\ \\text{cm}$).</p>\n</div>'
+                  f'<p>$F = \\Delta m\\, g \\approx {vm(f, 2)}\\ \\text{{mN}}$</p><p>$B = \\dfrac{{F}}{{Il}} \\approx {vm(bb, 3)}\\ \\text{{T}}$</p></div>\n')
+    h += '</div>\n' + fbd + '\n<p>Thử:</p>\n<p>1. Tăng $I$ từng nấc: số cân và mũi tên đổi thế nào?</p>\n<p>2. Đảo chiều ở cùng $I$.</p>\n<p>3. Bật <em>Hiện các lực</em>, so độ dài $N$ với $P$ của nam châm.</p>\n<p>Số liệu minh hoạ, khớp bảng ở mục II.3 ($l = 4{,}0\\ \\text{cm}$).</p>\n</div>'
     return h
 
 # ------------------------------------------------------- thay vào theory.html

@@ -20,3 +20,8 @@ Dùng `scripts/svg_lib.py`: `defs(prefix)` (mũi tên 4 màu), `arrow`, `text`, 
 
 ## Quy trình
 Viết script → `python3 build_figs.py` (thay khối `data-tl="1"`, chèn trước các mốc anchor) → `preview.mjs` chụp từng `figure.fig` → xem ảnh → sửa → chạy lại.
+
+## Đường sức và chú thích hình (thầy chốt 7/10/2026)
+
+- **Đường sức (từ) vẽ NÉT ĐỨT**, đầu mũi tên là **hai vạch chéo, mỗi vạch lệch 30° so với đường chính (chữ V mở), đầu nhọn** — không dùng tam giác đặc, không dùng `marker` (marker co theo bề dày nét làm đầu tù). Dùng `svg_lib.field_line(x1,y1,x2,y2,màu)` cho đường thẳng, `field_path(d, tip, hướng, màu)` cho đường cong, `chevron(x,y,dx,dy)` khi chỉ cần đầu mũi tên. Vectơ lực/vận tốc/dòng điện vẫn dùng mũi tên đặc `arrow()`.
+- **Chú thích tách từng dòng**: mỗi ý một dòng `<text>` riêng (trong hình) hoặc một `<li>`/dòng riêng (dưới hình, ghi chú); không nối nhiều ý bằng "·", ";" hay dấu phẩy trong một dòng. Chú thích dài quá bề ngang thì xuống dòng, đừng thu nhỏ chữ.
