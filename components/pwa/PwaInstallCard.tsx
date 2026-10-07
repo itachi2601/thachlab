@@ -37,8 +37,14 @@ function standalone() {
   );
 }
 
-export default function PwaInstallCard() {
-  const [mode, setMode] = useState<"hidden" | "prompt" | "ios" | "mac">("hidden");
+export default function PwaInstallCard({
+  guideFallback = false,
+}: {
+  guideFallback?: boolean;
+}) {
+  const [mode, setMode] = useState<
+    "hidden" | "prompt" | "ios" | "mac" | "guide"
+  >("hidden");
   const [showSteps, setShowSteps] = useState(false);
 
   useEffect(() => {
@@ -46,15 +52,23 @@ export default function PwaInstallCard() {
     const w = window as Win;
     const ua = navigator.userAgent;
     // iPhone/iPad và Safari trên Mac (iPadOS đời mới báo là Macintosh nhưng có cảm ứng) đều cài thủ công.
-    const safari = /safari/i.test(ua) && !/chrome|crios|fxios|edg|android/i.test(ua);
-    const ios = /iphone|ipad|ipod/i.test(ua) || (safari && /macintosh/i.test(ua));
+    const safari =
+      /safari/i.test(ua) && !/chrome|crios|fxios|edg|android/i.test(ua);
+    const ios =
+      /iphone|ipad|ipod/i.test(ua) || (safari && /macintosh/i.test(ua));
     const sync = () => {
       if (w.__thachlabInstallPrompt) setMode("prompt");
-      else if (ios) setMode(/macintosh/i.test(ua) && navigator.maxTouchPoints === 0 ? "mac" : "ios");
+      else if (guideFallback && !ios) setMode("guide");
+      else if (ios)
+        setMode(
+          /macintosh/i.test(ua) && navigator.maxTouchPoints === 0
+            ? "mac"
+            : "ios",
+        );
     };
     sync();
     // Sự kiện có thể đến sau lần render đầu.
-    const onPrompt = () => window.setTimeout(sync, 0);
+    const onPrompt = () => window.setTimeout(() => sync(), 0);
     const onInstalled = () => setMode("hidden");
     window.addEventListener("beforeinstallprompt", onPrompt);
     window.addEventListener("appinstalled", onInstalled);
@@ -62,7 +76,7 @@ export default function PwaInstallCard() {
       window.removeEventListener("beforeinstallprompt", onPrompt);
       window.removeEventListener("appinstalled", onInstalled);
     };
-  }, []);
+  }, [guideFallback]);
 
   if (mode === "hidden") return null;
 
@@ -78,6 +92,10 @@ export default function PwaInstallCard() {
   const install = async () => {
     if (mode === "ios" || mode === "mac") {
       setShowSteps((v) => !v);
+      return;
+    }
+    if (mode === "guide") {
+      window.location.href = "/cai-app/";
       return;
     }
     const w = window as Win;
@@ -107,8 +125,13 @@ export default function PwaInstallCard() {
           <Smartphone size={20} />
         </span>
         <div className="min-w-0">
-          <h2 className="text-base font-bold text-white">Cài ThachLab thành một app</h2>
-          <p className="mt-1 text-sm leading-relaxed text-slate-300">Mở ThachLab trong cửa sổ riêng, một lần chạm, không cần nhớ địa chỉ web.</p>
+          <h2 className="text-base font-bold text-white">
+            Cài ThachLab thành một app
+          </h2>
+          <p className="mt-1 text-sm leading-relaxed text-slate-300">
+            Mở ThachLab trong cửa sổ riêng, một lần chạm, không cần nhớ địa chỉ
+            web.
+          </p>
         </div>
       </div>
       {(mode === "ios" || mode === "mac") && showSteps && (
@@ -133,14 +156,22 @@ export default function PwaInstallCard() {
           onClick={install}
           className="min-h-11 flex-1 rounded-xl bg-blue-600 px-4 sm:flex-none sm:px-6 text-base font-semibold text-white"
         >
-          {mode !== "prompt" ? (showSteps ? "Ẩn hướng dẫn" : "Xem cách cài") : "Cài ngay"}
+          {mode === "guide"
+            ? "Xem hướng dẫn cài"
+            : mode !== "prompt"
+              ? showSteps
+                ? "Ẩn hướng dẫn"
+                : "Xem cách cài"
+              : "Cài ngay"}
         </button>
-        <a
-          href="/cai-app/"
-          className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/15 px-4 text-sm text-slate-200"
-        >
-          Hướng dẫn
-        </a>
+        {mode !== "guide" && (
+          <a
+            href="/cai-app/"
+            className="inline-flex min-h-11 items-center justify-center rounded-xl border border-white/15 px-4 text-sm text-slate-200"
+          >
+            Hướng dẫn
+          </a>
+        )}
       </div>
     </section>
   );

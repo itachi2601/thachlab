@@ -9,6 +9,7 @@ import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
 import LearningPath from "@/components/home/LearningPath";
 import HonorBoard from "@/components/home/HonorBoard";
 import AboutFounder from "@/components/home/AboutFounder";
+import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
@@ -19,6 +20,11 @@ export default function Home() {
       <Navbar />
       <main>
         <PhysicsSimulationHero />
+        <div className="bg-[#05070B] px-6 pt-4 lg:px-12">
+          <div className="mx-auto max-w-6xl">
+            <PwaInstallCard guideFallback />
+          </div>
+        </div>
         <OpenClasses stats={stats} />
         <ForParents courses={stats?.courses ?? null} />
         <Features />
