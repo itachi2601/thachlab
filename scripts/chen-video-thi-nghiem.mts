@@ -168,9 +168,13 @@ function viTriChon(html: string, viTri: string): number | null {
   return m[1] === "truoc" ? anchor.start : anchor.end;
 }
 
-/** Vị trí kết thúc của hộp thí nghiệm / figure chứa `data-exp="<id>"`. */
+/**
+ * Vị trí kết thúc của hộp thí nghiệm / figure / `<details>` chứa `data-exp="<id>"`.
+ * Nhiều bài gói thí nghiệm đo trong `<details class="tl-details" data-exp="…">` (không phải
+ * `.tl-box--exp`) — thiếu nhánh này thì clip của thí nghiệm đó bị bỏ qua im lặng.
+ */
 function findAnchor(html: string, expId: string): { start: number; end: number } | null {
-  const tagRe = /<(div|figure)\b[^>]*>/g;
+  const tagRe = /<(div|figure|details)\b[^>]*>/g;
   let m: RegExpExecArray | null;
   while ((m = tagRe.exec(html))) {
     const tag = m[0];
@@ -183,8 +187,8 @@ function findAnchor(html: string, expId: string): { start: number; end: number }
       if (close === -1) return null;
       return { start: m.index, end: close + "</figure>".length };
     }
-    // đếm độ sâu <div>…</div> kể từ thẻ mở của hộp thí nghiệm
-    const divRe = /<div\b[^>]*>|<\/div>/g;
+    // đếm độ sâu <div>…</div> / <details>…</details> kể từ thẻ mở của hộp thí nghiệm
+    const divRe = name === "details" ? /<details\b[^>]*>|<\/details>/g : /<div\b[^>]*>|<\/div>/g;
     divRe.lastIndex = m.index;
     let depth = 0;
     let d: RegExpExecArray | null;
