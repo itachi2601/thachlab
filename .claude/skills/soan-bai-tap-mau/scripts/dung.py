@@ -72,6 +72,7 @@ def tu_luan_tu(old, order, muc, label="Bài tập tự luận (xếp từ dễ �
         h = old[i]["body_html"]
         h = re.sub(r"Ví dụ \d+:?", f"Bài {k}.", h, count=1)
         h = h.replace("Hướng dẫn giải", "", 1)
+        h = re.sub(r"<(?![a-zA-Z/!?])", r"\\lt ", h)   # `<` trần trong $…$ bị trình duyệt hiểu là thẻ → mất cả đoạn (gặp ở bài 49 Bài 5)
         if "</table></div>" in h:
             de, gi = h.split("</table></div>", 1)
             parts.append(f'<h4>Bài {k} · {muc.get(i, "")}</h4>{de}</table></div><details><summary>Hướng dẫn giải</summary>{gi}</details>')
