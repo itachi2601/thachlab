@@ -169,29 +169,6 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
         </span>
       </div>
 
-      {compact ? (
-        <p className="text-sm text-slate-200" aria-live="polite">
-          d₂ − d₁ = <b className="text-white">{delta.toFixed(2)} λ</b> → <b className="text-white">{label}</b>
-          <span className="text-slate-400"> · chạm bản đồ để đổi chỗ đứng</span>
-        </p>
-      ) : (
-      <div className="grid gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200 sm:grid-cols-2">
-        <div>
-          <span className="text-slate-400">Vị trí tai (chấm xanh lá):</span> ngang {(mic.x * 100).toFixed(0)} cm, cách màn {(mic.y * 100).toFixed(0)} cm
-        </div>
-        <div>
-          <span className="text-slate-400">Hiệu đường đi d₂ − d₁:</span> {delta.toFixed(2)} λ
-          <span className="text-slate-400"> (nguyên λ → to, bán nguyên → nhỏ)</span>
-        </div>
-        <div>
-          <span className="text-slate-400">Cường độ so với hai nguồn không giao thoa:</span> ×{ratio.toFixed(2)} → <b className="text-white">{label}</b>
-        </div>
-        <div>
-          <span className="text-slate-400">Khoảng vân ở cách màn 1 m:</span> i ≈ λL/d = {(spacing * 100).toFixed(0)} cm
-        </div>
-      </div>
-      )}
-
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm text-slate-200">
           Tần số: <b className="text-white">{f} Hz</b> (λ = {(lambda * 100).toFixed(1)} cm)
@@ -232,6 +209,29 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
       >
         {playing ? "■ Tắt âm" : "▶ Phát âm đơn sắc"}
       </button>
+
+      {compact ? (
+        <p className="text-sm text-slate-200" aria-live="polite">
+          d₂ − d₁ = <b className="text-white">{delta.toFixed(2)} λ</b> → <b className="text-white">{label}</b>
+          <span className="text-slate-400"> · chạm bản đồ để đổi chỗ đứng</span>
+        </p>
+      ) : (
+      <div className="grid gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200 sm:grid-cols-2">
+        <div>
+          <span className="text-slate-400">Vị trí tai (chấm xanh lá):</span> ngang {(mic.x * 100).toFixed(0)} cm, cách màn {(mic.y * 100).toFixed(0)} cm
+        </div>
+        <div>
+          <span className="text-slate-400">Hiệu đường đi d₂ − d₁:</span> {delta.toFixed(2)} λ
+          <span className="text-slate-400"> (nguyên λ → to, bán nguyên → nhỏ)</span>
+        </div>
+        <div>
+          <span className="text-slate-400">Cường độ so với hai nguồn không giao thoa:</span> ×{ratio.toFixed(2)} → <b className="text-white">{label}</b>
+        </div>
+        <div>
+          <span className="text-slate-400">Khoảng vân ở cách màn 1 m:</span> i ≈ λL/d = {(spacing * 100).toFixed(0)} cm
+        </div>
+      </div>
+      )}
 
       {!compact && (
         <>

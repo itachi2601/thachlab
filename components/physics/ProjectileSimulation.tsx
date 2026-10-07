@@ -615,6 +615,44 @@ export function ProjectileSimulation() {
         )}
       </div>
 
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <div className="flex overflow-hidden rounded-lg border border-white/10" role="group" aria-label="Chọn gia tốc trọng trường">
+          {(Object.keys(GRAVITIES) as GravityKey[]).map((key) => (
+            <button
+              key={key}
+              type="button"
+              aria-pressed={sim.gKey === key}
+              onClick={() => sim.setGravity(key)}
+              className={`${BUTTON_BASE} px-3 ${
+                sim.gKey === key
+                  ? "bg-cyan-300/[0.14] text-cyan-300"
+                  : "text-slate-400 hover:bg-white/[0.06]"
+              }`}
+            >
+              {GRAVITIES[key].label}
+            </button>
+          ))}
+        </div>
+
+        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-slate-400">
+          <input
+            type="checkbox"
+            checked={sim.showDots}
+            onChange={sim.toggleDots}
+            className="h-4 w-4 accent-[#22D3EE]"
+          />
+          Chấm mỗi 0,1 s
+        </label>
+
+        <button
+          type="button"
+          onClick={sim.clearTrails}
+          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+        >
+          Xoá vết ném
+        </button>
+      </div>
+
       <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono lg:grid-cols-6">
         <div>
           <dt className="text-[13px] text-slate-500">Góc ném</dt>
@@ -665,44 +703,6 @@ export function ProjectileSimulation() {
       >
         {sim.message.text}
       </p>
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <div className="flex overflow-hidden rounded-lg border border-white/10" role="group" aria-label="Chọn gia tốc trọng trường">
-          {(Object.keys(GRAVITIES) as GravityKey[]).map((key) => (
-            <button
-              key={key}
-              type="button"
-              aria-pressed={sim.gKey === key}
-              onClick={() => sim.setGravity(key)}
-              className={`${BUTTON_BASE} px-3 ${
-                sim.gKey === key
-                  ? "bg-cyan-300/[0.14] text-cyan-300"
-                  : "text-slate-400 hover:bg-white/[0.06]"
-              }`}
-            >
-              {GRAVITIES[key].label}
-            </button>
-          ))}
-        </div>
-
-        <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[13px] text-slate-400">
-          <input
-            type="checkbox"
-            checked={sim.showDots}
-            onChange={sim.toggleDots}
-            className="h-4 w-4 accent-[#22D3EE]"
-          />
-          Chấm mỗi 0,1 s
-        </label>
-
-        <button
-          type="button"
-          onClick={sim.clearTrails}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
-        >
-          Xoá vết ném
-        </button>
-      </div>
 
       {sim.gKey === "moon" && (
         <p className="mt-2 text-[13px] text-slate-500">

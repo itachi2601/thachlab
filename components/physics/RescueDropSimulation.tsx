@@ -536,45 +536,6 @@ export function RescueDropSimulation() {
         />
       </div>
 
-      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
-        <div>
-          <dt className="text-[13px] text-slate-500">Độ cao h</dt>
-          <dd className="text-sm text-ink">{formatNumber(sim.h, 1)} m</dd>
-        </div>
-        <div>
-          <dt className="text-[13px] text-slate-500">Tốc độ v₀</dt>
-          <dd className="text-sm text-ink">{formatNumber(sim.v0, 1)} m/s</dd>
-        </div>
-        <div>
-          <dt className="text-[13px] text-slate-500">Thời gian rơi t</dt>
-          <dd className="text-sm text-ink">{formatNumber(fallTime(sim.h, G_EARTH), 2)} s</dd>
-        </div>
-        <div>
-          <dt className="text-[13px] text-slate-500">Gói đã rơi</dt>
-          <dd className="text-sm text-ink">
-            {sim.packagePos ? `${formatNumber(tFall, 2)} s` : "—"}
-          </dd>
-        </div>
-        <div>
-          <dt className="text-[13px] text-slate-500">Còn cao</dt>
-          <dd className="text-sm text-ink">
-            {sim.packagePos ? `${formatNumber(sim.packagePos.y, 1)} m` : "—"}
-          </dd>
-        </div>
-        <div>
-          <dt className="text-[13px] text-slate-500">Lệch bãi đáp</dt>
-          <dd className="text-sm text-ink">{landingText}</dd>
-        </div>
-      </dl>
-
-      <p
-        role="status"
-        aria-live="polite"
-        className={`mt-3 min-h-[3.5rem] rounded-lg border px-3 py-2 text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
-      >
-        {sim.message.text}
-      </p>
-
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <button
           type="button"
@@ -626,6 +587,45 @@ export function RescueDropSimulation() {
           Chấm mỗi 0,1 s
         </label>
       </div>
+
+      <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
+        <div>
+          <dt className="text-[13px] text-slate-500">Độ cao h</dt>
+          <dd className="text-sm text-ink">{formatNumber(sim.h, 1)} m</dd>
+        </div>
+        <div>
+          <dt className="text-[13px] text-slate-500">Tốc độ v₀</dt>
+          <dd className="text-sm text-ink">{formatNumber(sim.v0, 1)} m/s</dd>
+        </div>
+        <div>
+          <dt className="text-[13px] text-slate-500">Thời gian rơi t</dt>
+          <dd className="text-sm text-ink">{formatNumber(fallTime(sim.h, G_EARTH), 2)} s</dd>
+        </div>
+        <div>
+          <dt className="text-[13px] text-slate-500">Gói đã rơi</dt>
+          <dd className="text-sm text-ink">
+            {sim.packagePos ? `${formatNumber(tFall, 2)} s` : "—"}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[13px] text-slate-500">Còn cao</dt>
+          <dd className="text-sm text-ink">
+            {sim.packagePos ? `${formatNumber(sim.packagePos.y, 1)} m` : "—"}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[13px] text-slate-500">Lệch bãi đáp</dt>
+          <dd className="text-sm text-ink">{landingText}</dd>
+        </div>
+      </dl>
+
+      <p
+        role="status"
+        aria-live="polite"
+        className={`mt-3 min-h-[3.5rem] rounded-lg border px-3 py-2 text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
+      >
+        {sim.message.text}
+      </p>
     </div>
   );
 }

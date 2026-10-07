@@ -689,19 +689,41 @@ export function InterferenceSimulation() {
         />
       </div>
 
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
-        {playing
-          ? "Đang chạy sóng (tua chậm): nước chạy qua lại, nhưng các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau, không phải không có sóng tới."
-          : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ)."}
-      </p>
-
-      <p
-        role="status"
-        aria-live="polite"
-        className={`mt-3 min-h-[3.5rem] rounded-lg border px-3 py-2 text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
-      >
-        {sim.message.text}
-      </p>
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          aria-pressed={playing}
+          onClick={() => setPlaying((value) => !value)}
+          className={`${BUTTON_BASE} ${
+            playing
+              ? "bg-cyan-300/[0.16] text-cyan-300 hover:bg-cyan-300/[0.22]"
+              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+          }`}
+        >
+          {playing ? <Pause size={15} /> : <Play size={15} />}
+          {playing ? "Dừng sóng" : "Chạy sóng"}
+        </button>
+        <button
+          type="button"
+          aria-pressed={sim.sourceBOn}
+          onClick={sim.toggleSourceB}
+          className={`${BUTTON_BASE} ${
+            sim.sourceBOn
+              ? "bg-cyan-300/[0.14] text-cyan-300 hover:bg-cyan-300/[0.2]"
+              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
+          }`}
+        >
+          {sim.sourceBOn ? "Nguồn B: bật" : "Nguồn B: tắt"}
+        </button>
+        <button
+          type="button"
+          onClick={sim.reset}
+          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
+        >
+          <RotateCcw size={15} />
+          Đặt lại
+        </button>
+      </div>
 
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <div>
@@ -759,6 +781,20 @@ export function InterferenceSimulation() {
         </div>
       </div>
 
+      <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+        {playing
+          ? "Đang chạy sóng (tua chậm): nước chạy qua lại, nhưng các đường sáng/tối vẫn đứng yên — chỗ tối là nơi hai sóng luôn triệt tiêu nhau, không phải không có sóng tới."
+          : "Chạm vào khay để đặt điểm M (hoặc dùng phím mũi tên). Đường sáng: cực đại (d₂ − d₁ = kλ) · đường tối: cực tiểu ((k + ½)λ)."}
+      </p>
+
+      <p
+        role="status"
+        aria-live="polite"
+        className={`mt-3 min-h-[3.5rem] rounded-lg border px-3 py-2 text-sm leading-relaxed ${MESSAGE_STYLE[sim.message.kind]}`}
+      >
+        {sim.message.text}
+      </p>
+
       <dl className="mt-3 grid grid-cols-3 gap-x-3 gap-y-2 font-mono">
         <div>
           <dt className="text-[13px] text-slate-500">λ = v/f</dt>
@@ -773,42 +809,6 @@ export function InterferenceSimulation() {
           <dd className="text-sm text-ink">{sim.counts.minima}</dd>
         </div>
       </dl>
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          aria-pressed={playing}
-          onClick={() => setPlaying((value) => !value)}
-          className={`${BUTTON_BASE} ${
-            playing
-              ? "bg-cyan-300/[0.16] text-cyan-300 hover:bg-cyan-300/[0.22]"
-              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
-          }`}
-        >
-          {playing ? <Pause size={15} /> : <Play size={15} />}
-          {playing ? "Dừng sóng" : "Chạy sóng"}
-        </button>
-        <button
-          type="button"
-          aria-pressed={sim.sourceBOn}
-          onClick={sim.toggleSourceB}
-          className={`${BUTTON_BASE} ${
-            sim.sourceBOn
-              ? "bg-cyan-300/[0.14] text-cyan-300 hover:bg-cyan-300/[0.2]"
-              : "border border-white/10 text-slate-200 hover:bg-white/[0.08]"
-          }`}
-        >
-          {sim.sourceBOn ? "Nguồn B: bật" : "Nguồn B: tắt"}
-        </button>
-        <button
-          type="button"
-          onClick={sim.reset}
-          className={`${BUTTON_BASE} border border-white/10 text-slate-200 hover:bg-white/[0.08]`}
-        >
-          <RotateCcw size={15} />
-          Đặt lại
-        </button>
-      </div>
     </div>
   );
 }
