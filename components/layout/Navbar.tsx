@@ -256,8 +256,8 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           {isEvaluator && (CONTACT.phone || CONTACT.zalo) && (
-            // P10: gọi/nhắn thầy bấm được ngay tại chỗ đang đọc. Chỉ từ 2xl vì dưới đó thanh đã đủ chật (N2); mobile có trong menu ☰.
-            <span className="hidden items-center gap-1.5 whitespace-nowrap 2xl:flex">
+            // P10: gọi/nhắn thầy bấm được ngay tại chỗ đang đọc. Chỉ từ 1800px vì dưới đó thanh đã đủ chật (N2); mobile có trong menu ☰.
+            <span className="hidden items-center gap-1.5 whitespace-nowrap min-[1800px]:flex">
               {CONTACT.zalo && (
                 <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]">
                   <MessageCircle size={16} aria-hidden /> Nhắn Zalo
