@@ -125,30 +125,90 @@ VAL = {1: (0.50, 4.91, 0.123), 2: (0.97, 9.52, 0.119), 3: (1.45, 14.22, 0.119), 
 vn = lambda x, d: f"{x:.{d}f}".replace(".", ",")
 vm = lambda x, d: f"{x:.{d}f}".replace(".", "{,}")
 
+# Nam châm chữ U: hai cánh 40×140 + gông 190×40; trọng tâm tính từ ba hình chữ nhật.
+UP = "M40,112 H80 V252 H190 V112 H230 V292 H40 Z"
+_parts = [(40 * 140, 60, 182), (40 * 140, 210, 182), (190 * 40, 135, 272)]
+GX = sum(a * x for a, x, _ in _parts) / sum(a for a, _, _ in _parts)
+GY = sum(a * y for a, _, y in _parts) / sum(a for a, _, _ in _parts)
+GXr, GYr = round(GX), round(GY)
+
+COL = {"F": RED, "Fp": ORG, "Q": "#a78bfa", "N": GRN, "P": "#94a3b8", "B": BLUE}
+
+
+def arr(cx, cy, key, cls, w):
+    """Mũi tên có độ dài/ chiều do CSS (--L, --sg) quyết định; đuôi ở đúng (cx, cy)."""
+    c = COL[key]
+    return (f'<g transform="translate({cx},{cy})">'
+            f'<rect class="sim-sh {cls}" x="{-w/2}" y="-120" width="{w}" height="120" fill="{c}"/>'
+            f'<polygon class="sim-hd {cls}" points="0,0 -7,13 7,13" fill="{c}"/></g>')
+
+
+def wire(cx, cy):
+    return (f'<circle cx="{cx}" cy="{cy}" r="9" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
+            f'<circle class="sim-wp" cx="{cx}" cy="{cy}" r="3" fill="currentColor"/>'
+            f'<path class="sim-wn" d="M{cx-5},{cy-5} L{cx+5},{cy+5} M{cx+5},{cy-5} L{cx-5},{cy+5}" stroke="currentColor" stroke-width="2"/>')
+
+
+def hatch(x1, x2, y, n, c="currentColor"):
+    step = (x2 - x1) / n
+    return "".join(line(x1 + k * step, y, x1 + k * step - 9, y + 11, c, 1.6, "", .7) for k in range(n + 1))
+
 
 def sim_html():
+    WY = 150  # tâm dây
     sv = defs("sm")
-    sv += text(20, 26, "B đi từ N sang S →", GRN, 14, "start", "700")
-    sv += rect(20, 240, 230, 46, GREY_F)
-    sv += text(135, 258, "cân điện tử", "currentColor", 14, "middle", "700")
-    sv += rect(30, 272, 210, 8, "none", "currentColor", 1, 3)
-    sv += '<rect class="sim-shaft sim-bar" x="135" y="270" width="100" height="12" rx="3" fill="#fb923c"/>'
-    sv += text(20, 296, "−", "currentColor", 14, "middle", "700") + text(250, 296, "+", "currentColor", 14, "middle", "700")
-    sv += rect(30, 110, 50, 130, RED_F, RED, 2, 3)
-    sv += rect(190, 110, 50, 130, BLUE_F, BLUE, 2, 3)
-    sv += rect(30, 200, 210, 40, GREY_F, "currentColor", 2, 3)
-    sv += text(55, 160, "N", RED, 18, "middle", "700") + text(215, 160, "S", BLUE, 18, "middle", "700")
-    sv += line(135, 50, 135, 141, "currentColor", 1.5)
-    sv += '<circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/>'
-    sv += '<circle class="sim-wp" cx="135" cy="150" r="3" fill="currentColor"/>'
-    sv += '<path class="sim-wn" d="M129,144 L141,156 M141,144 L129,156" stroke="currentColor" stroke-width="2"/>'
-    sv += f'<rect class="sim-shaft sim-F" x="150" y="92" width="5" height="50" fill="{RED}"/>'
-    sv += f'<polygon class="sim-head sim-Fh" points="152,122 145,136 159,136" fill="{RED}"/>'
-    sv += f'<rect class="sim-shaft sim-R" x="260" y="150" width="5" height="50" fill="{ORG}"/>'
-    sv += f'<polygon class="sim-head sim-Rh" points="262,170 255,156 269,156" fill="{ORG}"/>'
-    sv += text(172, 100, "F (dây)", RED, 14, "start", "700")
-    sv += text(274, 128, "F′ (nam", ORG, 14, "start", "700") + text(274, 146, "châm)", ORG, 14, "start", "700")
-    svg = f'<svg viewBox="0 0 380 304" role="img" aria-label="Mô phỏng cân dòng điện: chọn cường độ và chiều dòng điện, mũi tên lực và số cân đổi theo">{sv}</svg>'
+    sv += text(20, 22, "B đi từ N sang S →", GRN, 14, "start", "700")
+    # mặt bàn + cân
+    sv += line(8, 336, 372, 336, "currentColor", 3) + hatch(14, 366, 337, 26)
+    sv += rect(20, 292, 230, 44, GREY_F)
+    sv += text(135, 311, "cân điện tử", "currentColor", 14, "middle", "700")
+    sv += rect(40, 318, 190, 10, "none", "currentColor", 1, 3)
+    sv += '<rect class="sim-bar" x="135" y="318" width="95" height="10" rx="3" fill="#fb923c"/>'
+    sv += text(28, 327, "−", "currentColor", 14, "middle", "700") + text(242, 327, "+", "currentColor", 14, "middle", "700")
+    # nam châm chữ U: cực N, S ở đầu cánh
+    sv += rect(40, 112, 40, 64, RED_F, "none", 0, 0) + rect(190, 112, 40, 64, BLUE_F, "none", 0, 0)
+    sv += f'<path d="{UP}" fill="{GREY_F}" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>'
+    sv += text(60, 150, "N", RED, 17, "middle", "700") + text(210, 150, "S", BLUE, 17, "middle", "700")
+    # đường sức B
+    sv += arrow("sm", "g", 88, 122, 122, 122, 3) + arrow("sm", "g", 148, 122, 182, 122, 3)
+    # giá gá cứng: đế bắt xuống bàn, trụ, tay đỡ, thanh treo, ngàm ôm dây, bu lông
+    sv += rect(284, 326, 60, 10, "rgba(148,163,184,.45)", "currentColor", 2, 2) + hatch(286, 342, 337, 6)
+    sv += rect(306, 50, 16, 278, "rgba(148,163,184,.4)", "currentColor", 2, 2)
+    sv += rect(135, 50, 187, 14, "rgba(148,163,184,.4)", "currentColor", 2, 2)
+    sv += rect(130, 64, 10, 70, "rgba(148,163,184,.4)", "currentColor", 2, 2)
+    sv += f'<path d="M118,128 H152 V{WY} a17,17 0 0 1 -34,0 Z" fill="rgba(148,163,184,.55)" stroke="currentColor" stroke-width="2"/>'
+    for (bx, by) in ((314, 58), (314, 100), (314, 300), (135, 98), (135, 124)):
+        sv += f'<circle cx="{bx}" cy="{by}" r="3.2" fill="currentColor"/>'
+    sv += text(150, 42, "giá gá cứng xuống bàn", "currentColor", 14, "start", "700")
+    sv += wire(135, WY)
+    sv += f'<circle cx="{GXr}" cy="{GYr}" r="4" fill="currentColor"/>' + text(GXr + 9, GYr - 6, "G", "currentColor", 14, "start", "700")
+    sv += arr(135, WY, "F", "a-F", 4) + arr(GXr, GYr, "Fp", "a-Fp", 4)
+    sv += text(160, 150, "F", RED, 15, "start", "700") + text(GXr + 22, GYr + 20, "F′", ORG, 15, "start", "700")
+    scene = (f'<svg viewBox="0 0 380 346" role="img" aria-label="Mô phỏng cân dòng điện: nam châm chữ U đặt trên cân, dây gá cứng trên giá, chọn dòng điện để đổi lực và số cân">{sv}</svg>')
+
+    # biểu đồ lực: ba vật, đuôi mũi tên đặt đúng trọng tâm
+    CY = 180
+    fb = ""
+    for k, (cx, ten) in enumerate(((63, "Dây điện"), (190, "Nam châm"), (317, "Cân"))):
+        fb += text(cx, 20, ten, "currentColor", 14, "middle", "700")
+    fb += wire(63, CY)
+    ux, uy, us = 190, CY, .55
+    fb += f'<g transform="translate({ux - GX * us:.2f},{uy - GY * us:.2f}) scale({us})">{rect(40,112,40,64,RED_F,"none",0,0)}{rect(190,112,40,64,BLUE_F,"none",0,0)}<path d="{UP}" fill="{GREY_F}" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g>'
+    fb += rect(262, CY - 22, 110, 44, GREY_F)
+    # mũi tên dày (trọng lực, phản lực pháp tuyến) vẽ trước, mũi tên mảnh (lực từ, lực giữ) đè lên
+    fb += arr(190, CY, "P", "a-Pm", 6) + arr(190, CY, "N", "a-N", 6)
+    fb += arr(317, CY, "P", "a-Pc", 6) + arr(317, CY, "N", "a-Np", 6) + arr(317, CY, "B", "a-Qb", 6)
+    fb += arr(63, CY, "F", "a-F", 3.6) + arr(63, CY, "Q", "a-Q", 3.6) + arr(190, CY, "Fp", "a-Fp", 3.6)
+    for cx in (63, 190, 317):
+        fb += f'<circle cx="{cx}" cy="{CY}" r="4" fill="currentColor"/>'
+    fb += text(76, CY - 8, "G", "currentColor", 14, "start", "700") + text(203, CY - 8, "G", "currentColor", 14, "start", "700") + text(330, CY - 8, "G", "currentColor", 14, "start", "700")
+    fbd = (f'<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật">{fb}</svg>'
+           '<ul class="tl-sim__leg">'
+           '<li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ · <span class="lg lg-Q">●</span> Q lực giữ của giá (ngược F, dây đứng yên). Trọng lực của dây rất nhỏ nên bỏ qua.</li>'
+           '<li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực · <span class="lg lg-Fp">●</span> F′ phản lực của F · <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′).</li>'
+           '<li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực · <span class="lg lg-N">●</span> N′ áp lực của nam châm (bằng N) · <span class="lg lg-B">●</span> phản lực của mặt bàn.</li>'
+           '</ul><p>G là trọng tâm: dây ở tâm tiết diện, cân ở tâm bệ, còn nam châm chữ U có G nằm <em>trong khe</em>, trên gông. Mũi tên F, F′ phóng to cho dễ thấy; các mũi tên khác không vẽ theo tỉ lệ.</p></div>')
+
     h = '<div class="tl-box tl-box--exp tl-sim" data-exp="tn-l12-thuchanhtu-04">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
     h += '<div class="tl-sim__row"><b>Cường độ dòng điện</b>'
     for i in range(6):
@@ -157,13 +217,14 @@ def sim_html():
     h += '</div>\n<div class="tl-sim__row"><b>Chiều dòng điện</b>'
     h += '<input type="radio" name="tls12-d" class="tls-dir-f" id="tls12-df" checked><label for="tls12-df" class="tl-sim__chip">⊙ ra khỏi trang</label>'
     h += '<input type="radio" name="tls12-d" class="tls-dir-r" id="tls12-dr"><label for="tls12-dr" class="tl-sim__chip">⊗ vào trong trang</label></div>\n'
-    h += svg + '\n<div aria-live="polite">\n'
+    h += '<div class="tl-sim__row"><input type="checkbox" class="tls-force" id="tls12-force"><label for="tls12-force" class="tl-sim__chip">Hiện các lực</label></div>\n'
+    h += scene + '\n<div aria-live="polite">\n'
     h += '<div class="tl-sim__st st-0"><p>Cân: <strong>0,00 g</strong></p><p>Không có dòng điện nên không có lực từ.</p></div>\n'
     for i, (m, f, bb) in VAL.items():
         for sg, sc in (("p", "+"), ("n", "−")):
             h += (f'<div class="tl-sim__st st-{i}{sg}"><p>Cân: <strong>{sc}{vn(m, 2)} g</strong></p>'
                   f'<p>$F = \\Delta m\\, g \\approx {vm(f, 2)}\\ \\text{{mN}}$ · $B = \\dfrac{{F}}{{Il}} \\approx {vm(bb, 3)}\\ \\text{{T}}$</p></div>\n')
-    h += '</div>\n<p>Thử: (1) tăng $I$ từng nấc — số cân và mũi tên đổi thế nào? (2) đảo chiều ở cùng $I$. (3) so $B$ ở 1 A và 5 A. Số liệu minh hoạ, khớp bảng ở mục II.3 ($l = 4{,}0\\ \\text{cm}$).</p>\n</div>'
+    h += '</div>\n' + fbd + '\n<p>Thử: (1) tăng $I$ từng nấc — số cân và mũi tên đổi thế nào? (2) đảo chiều ở cùng $I$. (3) bật <em>Hiện các lực</em> và so độ dài $N$ với $P$ của nam châm. Số liệu minh hoạ, khớp bảng ở mục II.3 ($l = 4{,}0\\ \\text{cm}$).</p>\n</div>'
     return h
 
 # ------------------------------------------------------- thay vào theory.html
