@@ -163,13 +163,13 @@ export default function Navbar() {
           <span className="font-display text-lg font-semibold tracking-tight text-white">
             Thach<span className="text-[#3B82F6]">Lab</span>
           </span>
-          <span className="shrink-0 whitespace-nowrap hidden sm:inline-block lg:hidden 2xl:inline-block rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold leading-none text-amber-300 sm:text-xs">
+          <span className="shrink-0 whitespace-nowrap rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold leading-none text-amber-300 sm:text-xs">
             <span className="2xl:hidden">Alpha</span>
             <span className="hidden 2xl:inline">Alpha test · miễn phí</span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
+        <ul className="hidden items-center gap-4 lg:flex xl:gap-5 2xl:gap-8">
           {navLinks.map((link) => {
             const quick: { label: string; href: string; hint?: string }[] | undefined = link.menu ?? (link.href === "/lop-hoc" ? THPT_QUICK_LINKS : undefined);
             const hasQuick = !!quick;
@@ -393,7 +393,8 @@ export default function Navbar() {
                 href="/dang-ky"
                 className="hidden min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-flex sm:px-5"
               >
-                Học thử miễn phí
+                <span className="xl:hidden">Đăng ký</span>
+                <span className="hidden xl:inline">Học thử miễn phí</span>
               </Link>
             </>
           )}
