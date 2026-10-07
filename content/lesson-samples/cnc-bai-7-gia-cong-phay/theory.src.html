@@ -1,0 +1,323 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<ul>
+<li>Nêu được <strong>thứ tự gia công</strong> một tấm phay: mặt phẳng → bậc và biên dạng → khoan → tarô.</li>
+<li>Chọn <strong>gốc W</strong> hợp lý và viết tọa độ các điểm của một biên dạng có cung lượn.</li>
+<li>Giải thích <strong>bù bán kính dao</strong> ở mức khái niệm: đường lập trình là biên dạng chi tiết.</li>
+<li>Tính <strong>đường kính mũi khoan trước khi tarô</strong> cho ren hệ mét thông dụng.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở tài liệu. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: bốn lỗ lệch cùng một hướng</h3>
+
+<p>Ở buổi thực tập, nhóm em phay xong mặt phẳng và biên dạng một tấm đế nhôm, kích thước đều đúng. Sau đó tháo ra, gá lại để khoan và tarô bốn lỗ ren. Đặt lên bản vẽ kiểm tra, cả <strong>bốn lỗ đều lệch 3 mm</strong> sang phải so với biên dạng (Hình 1). Hình dáng từng lỗ vẫn tròn, đường kính vẫn đúng.</p>
+
+__FIG1__
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Nguyên nhân nhiều khả năng nhất khiến cả bốn lỗ cùng lệch về một phía?</p>
+<div class="tl-quiz">
+<input type="radio" name="cnc6-q1" id="cnc6-q1a"><label for="cnc6-q1a" class="tl-opt tl-no">A. Mũi khoan bị mòn nên khoan lệch</label>
+<input type="radio" name="cnc6-q1" id="cnc6-q1b"><label for="cnc6-q1b" class="tl-opt tl-ok">B. Gốc W đặt lại sau khi gá bị lệch</label>
+<input type="radio" name="cnc6-q1" id="cnc6-q1c"><label for="cnc6-q1c" class="tl-opt tl-no">C. Tốc độ quay trục chính chọn quá thấp khi khoan</label>
+<input type="radio" name="cnc6-q1" id="cnc6-q1d"><label for="cnc6-q1d" class="tl-opt tl-no">D. Mỗi lỗ nhập sai tọa độ một kiểu riêng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Mỗi lần gá khác phải xác lập lại W. Mọi tọa độ trong chương trình tính từ W nên W lệch thì cả nhóm lỗ dịch <strong>cùng một vector</strong> so với biên dạng đã phay. Cả bài xoay quanh câu hỏi: tính từ đâu, đi theo thứ tự nào.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mũi mòn hay tốc độ sai làm lỗ xấu hoặc to, không dời cả nhóm; nhập sai từng lỗ sẽ cho các độ lệch khác nhau. Gợi ý: điều gì chung cho cả bốn lỗ?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Phay mặt phẳng</h4>
+
+<p><strong>🔑 Mặt chuẩn trước · Dao to · Các vệt chồng nhau</strong></p>
+
+<ul>
+<li><strong>Phay mặt phẳng</strong> tạo mặt chuẩn để đo chiều cao và gá các nguyên công sau.</li>
+<li>Dùng <strong>dao phay mặt đầu</strong> đường kính lớn, chạy từng đường song song kín mặt phôi.</li>
+<li>Khoảng cách hai đường kề nhau <strong>nhỏ hơn đường kính dao</strong> để các vệt chồng lên nhau.</li>
+<li><strong>Chọn gốc W:</strong> thường đặt <strong>Z0 ở mặt trên đã phay</strong>, X0 Y0 ở một góc hoặc tâm phôi. Chọn điểm có trên bản vẽ để khỏi phải cộng trừ thêm.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Làm ngay: ghép dải bìa</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cắt vài dải bìa rộng 3 cm (mỗi dải là một vệt cắt). Dịch dải thứ hai đi 4 cm so với dải thứ nhất (so cùng mép trái), rồi làm lại với 2,5 cm.</li>
+<li><strong>Quan sát:</strong> cách 4 cm thì hở một dải 1 cm; cách 2,5 cm thì chồng nhau 0,5 cm.</li>
+<li><strong>Rút ra:</strong> bước chạy lớn hơn bề rộng vệt cắt sẽ để sót, nên chọn nhỏ hơn đường kính dao.</li>
+</ol>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc6-c2" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc6-c2" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Phay mặt phẳng bằng dao Ø63 mm. Sau khi chạy, giữa hai đường chạy kề nhau còn một dải chưa cắt. Cách khắc phục hợp lý nhất:</p>
+<input type="radio" name="cnc6-q2" id="cnc6-q2a"><label for="cnc6-q2a" class="tl-opt tl-no">A. Tăng tốc độ quay trục chính</label>
+<input type="radio" name="cnc6-q2" id="cnc6-q2b"><label for="cnc6-q2b" class="tl-opt tl-no">B. Thay bằng một dao có đường kính nhỏ hơn</label>
+<input type="radio" name="cnc6-q2" id="cnc6-q2c"><label for="cnc6-q2c" class="tl-opt tl-ok">C. Dời các đường chạy lại gần nhau hơn</label>
+<input type="radio" name="cnc6-q2" id="cnc6-q2d"><label for="cnc6-q2d" class="tl-opt tl-no">D. Tăng chiều sâu mỗi lát cắt</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dải sót nghĩa là hai đường chạy cách nhau xa hơn bề rộng vệt cắt; dời lại gần cho hai vệt chồng lên nhau một chút thì không sót.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tốc độ quay, chiều sâu hay dao nhỏ hơn đều không làm vệt cắt rộng thêm (dao nhỏ còn làm vệt hẹp hơn). Dải sót do khoảng cách giữa hai đường chạy; hãy xem khoảng cách ấy.</p></div>
+</div>
+
+<h4>2. Phay bậc, cong, cung</h4>
+
+<p><strong>🔑 Thẳng G01 · Cung G02 cùng chiều kim · G03 ngược chiều</strong></p>
+
+<ul>
+<li><strong>Phay bậc:</strong> tạo hai mặt vuông góc; dao đi theo đường thẳng song song trục X hoặc Y, chiều sâu theo Z.</li>
+<li><strong>Đường thẳng:</strong> G01. <strong>Cung tròn:</strong> G02 theo chiều kim đồng hồ, G03 ngược chiều kim đồng hồ.</li>
+<li>Chiều cung luôn xét khi <strong>nhìn từ trên xuống mặt phẳng XY</strong> (X sang phải, Y lên trên).</li>
+<li>Cung cần <strong>điểm đầu, điểm cuối và tâm</strong>: tâm cho bằng I, J (hiệu tọa độ tâm trừ điểm đầu theo X, Y) hoặc bằng bán kính R.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Làm ngay: mặt đồng hồ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> nhìn đồng hồ treo tường như mặt phẳng XY; kim đi từ vị trí 12 giờ sang 3 giờ.</li>
+<li><strong>Quan sát:</strong> kim quay theo chiều quen thuộc của kim đồng hồ.</li>
+<li><strong>Rút ra:</strong> cung từ 12 giờ sang 3 giờ là chiều G02.</li>
+</ol>
+</div>
+
+<div class="tl-quiz">
+<p>Dao đang ở $(30;\ 0)$, cần cung bán kính 10 mm tới $(20;\ 10)$, tâm cung ở $(20;\ 0)$, nhìn từ trên xuống. Lệnh cung là:</p>
+<input type="radio" name="cnc6-q3" id="cnc6-q3a"><label for="cnc6-q3a" class="tl-opt tl-ok">A. G03, vì đi ngược chiều kim đồng hồ</label>
+<input type="radio" name="cnc6-q3" id="cnc6-q3b"><label for="cnc6-q3b" class="tl-opt tl-no">B. G02, vì tâm nằm bên trái</label>
+<input type="radio" name="cnc6-q3" id="cnc6-q3c"><label for="cnc6-q3c" class="tl-opt tl-no">C. G01, vì điểm cuối nằm trong mặt phẳng XY</label>
+<input type="radio" name="cnc6-q3" id="cnc6-q3d"><label for="cnc6-q3d" class="tl-opt tl-no">D. G02, vì cung chạy lên trên</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điểm đầu nằm bên phải tâm (3 giờ), điểm cuối nằm phía trên tâm (12 giờ): đi theo chiều ngược kim đồng hồ nên G03.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng nhìn dao đi sang phải hay lên trên; hãy xét điểm đầu và điểm cuối so với <em>tâm</em> như hai vị trí trên mặt đồng hồ, rồi xem kim đi theo chiều nào. G01 chỉ cho đường thẳng.</p></div>
+</div>
+
+<h4>3. Phay theo biên dạng (profile)</h4>
+
+<p><strong>🔑 Lập trình theo biên dạng · Máy bù bán kính dao · G41 trái · G42 phải · G40 hủy</strong></p>
+
+<ul>
+<li><strong>Biên dạng (profile)</strong> là đường bao của chi tiết trên bản vẽ: đoạn thẳng nối với cung.</li>
+<li>Tâm dao thực tế phải chạy <strong>cách biên dạng đúng một bán kính dao</strong> (Hình 2).</li>
+<li><strong>Bù bán kính dao:</strong> em lập trình theo biên dạng, máy tự dời tâm dao ra một bán kính.</li>
+<li><strong>G41:</strong> dao nằm bên trái hướng chạy. <strong>G42:</strong> bên phải. <strong>G40:</strong> hủy bù.</li>
+<li>Bán kính dao khai trong bảng bù dao; cách gọi (ô D hay H), đoạn dẫn vào/ra theo hướng dẫn của giảng viên.</li>
+</ul>
+
+__FIG2__
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Làm ngay: đồng xu quanh mép giấy</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt một đồng xu sát mép tờ giấy hình chữ nhật, lăn quanh mép; chấm điểm tâm đồng xu sau mỗi bước.</li>
+<li><strong>Quan sát:</strong> dọc cạnh thẳng, các chấm nằm trên đường song song với mép, cách mép bằng bán kính đồng xu. Quanh góc vuông, các chấm vẽ thành cung.</li>
+<li><strong>Rút ra:</strong> đường tâm dao là biên dạng dời ra một bán kính; chính bán kính dao quyết định cung ở góc.</li>
+</ol>
+</div>
+
+<h4>4. Khoan lỗ và tarô</h4>
+
+<p><strong>🔑 Khoan tâm → Khoan → Tarô · Mũi khoan = D − P</strong></p>
+
+<ul>
+<li>Thứ tự: <strong>khoan tâm</strong> định vị, <strong>khoan</strong> đúng cỡ, rồi <strong>tarô</strong> tạo ren trong.</li>
+<li>Chu trình khoan (theo FANUC): <strong>G81</strong> khoan thường, <strong>G83</strong> khoan lỗ sâu theo từng nhịp lùi, <strong>G84</strong> tarô ren phải (ren trái dùng G74), <strong>G80</strong> hủy chu trình.</li>
+<li>Tarô cứng: tốc độ tiến bằng <strong>tốc độ quay nhân bước ren</strong>; máy phải đồng bộ trục chính với trục Z; cách bật tarô cứng theo máy xưởng (có máy cần thêm M29).</li>
+<li>Ren hệ mét bước thô: <strong>đường kính mũi khoan ≈ đường kính ngoài D trừ bước ren P</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Quan sát tại xưởng: lỗ ren và bu lông</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> lấy một bu lông M8 và một đai ốc M8; nhìn vào lỗ đai ốc, rồi so với thân bu lông.</li>
+<li><strong>Quan sát:</strong> lòng đai ốc hẹp hơn thân bu lông; phần chênh là các đỉnh ren cắm vào.</li>
+<li><strong>Rút ra:</strong> lỗ phải nhỏ hơn đường kính ngoài để còn kim loại cho mũi tarô tạo ren; độ chênh cỡ một bước ren.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>📋 Xem thêm: bảng mũi khoan thông dụng</summary>
+<p>M6×1 → Ø5 · M8×1,25 → Ø6,8 · M10×1,5 → Ø8,5. Bảng làm tròn theo cỡ mũi có sẵn: $D - P$ ra $6{,}75$ thì dùng mũi $6{,}8$.</p>
+</details>
+
+<h4>5. Bài tập tổng hợp: sắp thứ tự nguyên công</h4>
+
+<p><strong>🔑 Một lần gá · Thô trước tinh sau · Tarô sau khoan</strong></p>
+
+<ul>
+<li>Đọc bản vẽ, chọn <strong>gốc W</strong> và mặt gá; <strong>gia công trọn trong một lần gá</strong> để W không đổi.</li>
+<li>Thô trước, tinh sau; <strong>gom các nguyên công cùng dao</strong> để ít phải thay dao.</li>
+<li>Khoan trước, tarô sau; tarô <strong>luôn là nguyên công cuối</strong> của lỗ ren.</li>
+<li>Cuối cùng: kiểm tra kích thước, tháo phôi, vệ sinh máy.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🧭 Xem thêm: một thứ tự mẫu cho tấm đế</summary>
+<ol class="tl-steps">
+<li>Gá phôi, xác lập X0 Y0 ở góc dưới trái, gọi dao.</li>
+<li>Phay mặt phẳng trên.</li>
+<li>Chạm dao trên mặt vừa phay để đặt Z0.</li>
+<li>Phay thô rồi tinh biên dạng ngoài (có bù bán kính).</li>
+<li>Khoan tâm, khoan, tarô bốn lỗ.</li>
+<li>Kiểm tra, tháo phôi.</li>
+</ol>
+<p>Thứ tự có thể đổi theo bản vẽ và cách gá; tiêu chuẩn là giữ nguyên tắc ở trên.</p>
+</details>
+
+<h3>III. Ba cái bẫy hay gặp</h3>
+
+<h4>Bẫy 1: "Ren M12 thì khoan mũi 12"</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc6-c4" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc6-c4" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Cần tarô lỗ ren M12×1,75 (bước thô). Mũi khoan có sẵn gần nhất với đường kính cần khoan trước khi tarô là:</p>
+<input type="radio" name="cnc6-q4" id="cnc6-q4a"><label for="cnc6-q4a" class="tl-opt tl-no">A. 12 mm</label>
+<input type="radio" name="cnc6-q4" id="cnc6-q4b"><label for="cnc6-q4b" class="tl-opt tl-no">B. 13,75 mm</label>
+<input type="radio" name="cnc6-q4" id="cnc6-q4c"><label for="cnc6-q4c" class="tl-opt tl-no">C. 1,75 mm</label>
+<input type="radio" name="cnc6-q4" id="cnc6-q4d"><label for="cnc6-q4d" class="tl-opt tl-ok">D. 10,2 mm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $D - P = 12 - 1{,}75 = 10{,}25$ mm, chọn mũi 10,2 mm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Khoan bằng đúng 12 mm thì không còn kim loại để tạo ren; 13,75 là phép cộng thay vì trừ; 1,75 chỉ là bước ren. Mũi khoan bằng đường kính ngoài trừ bước ren.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Cách làm</th><th>Hậu quả</th></tr></thead>
+<tbody>
+<tr><td>Khoan lỗ quá bé</td><td>Mũi tarô chịu lực lớn, dễ gãy</td></tr>
+<tr><td>Khoan lỗ quá to</td><td>Ren nông, lỏng</td></tr>
+<tr><td>Khoan bằng $D - P$</td><td>Ren đủ sâu, mũi tarô ăn nhẹ</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 2: Dao nằm bên nào của đường chạy?</h4>
+
+<div class="tl-quiz">
+<p>Phay ngoài một biên dạng, nhìn từ trên xuống (X sang phải, Y lên). Dao chạy <strong>ngược chiều kim đồng hồ</strong> quanh chi tiết, dao nằm bên ngoài. Cần bật bù bán kính bằng lệnh:</p>
+<input type="radio" name="cnc6-q5" id="cnc6-q5a"><label for="cnc6-q5a" class="tl-opt tl-no">A. G40 (hủy bù)</label>
+<input type="radio" name="cnc6-q5" id="cnc6-q5b"><label for="cnc6-q5b" class="tl-opt tl-ok">B. G42 (dao bên phải hướng chạy)</label>
+<input type="radio" name="cnc6-q5" id="cnc6-q5c"><label for="cnc6-q5c" class="tl-opt tl-no">C. G41 (dao bên trái hướng chạy)</label>
+<input type="radio" name="cnc6-q5" id="cnc6-q5d"><label for="cnc6-q5d" class="tl-opt tl-no">D. G03 (cung ngược chiều kim đồng hồ)</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đi ngược chiều kim đồng hồ quanh chi tiết thì chi tiết nằm bên trái, dao ở ngoài nên nằm bên phải: G42.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Vẽ nhanh chi tiết và mũi tên chạy, đứng trên đường chạy nhìn theo mũi tên: dao ở bên nào? G40 là hủy bù; G03 là lệnh vẽ cung, không phải lệnh bù.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lệnh</th><th>Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td>G41 / G42</td><td>Bật bù, dao bên trái / phải hướng chạy</td></tr>
+<tr><td>G40</td><td>Hủy bù, tâm dao trở về đường lập trình</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 3: Cung lõm nhỏ hơn dao</h4>
+
+<div class="tl-quiz">
+<p>Rãnh trong của chi tiết có góc lượn lõm bán kính 6 mm. Dao phay ngón nào phay hết được góc đó?</p>
+<input type="radio" name="cnc6-q6" id="cnc6-q6a"><label for="cnc6-q6a" class="tl-opt tl-no">A. Dao Ø16</label>
+<input type="radio" name="cnc6-q6" id="cnc6-q6b"><label for="cnc6-q6b" class="tl-opt tl-no">B. Dao Ø20, nhanh hơn</label>
+<input type="radio" name="cnc6-q6" id="cnc6-q6c"><label for="cnc6-q6c" class="tl-opt tl-ok">C. Dao Ø10</label>
+<input type="radio" name="cnc6-q6" id="cnc6-q6d"><label for="cnc6-q6d" class="tl-opt tl-no">D. Dao Ø14</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bán kính dao 5 mm nhỏ hơn 6 mm nên lọt vào góc lượn; các dao còn lại có bán kính 7 mm trở lên, lớn hơn 6 mm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Muốn phay ra cung lõm bán kính 6 mm, dao phải có <strong>bán kính không lớn hơn 6 mm</strong>, tức đường kính không quá 12 mm. Đổi đường kính sang bán kính trước khi so sánh.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Cung của biên dạng</th><th>Điều kiện cho dao</th></tr></thead>
+<tbody>
+<tr><td>Lõm (trong rãnh, túi)</td><td>Bán kính dao ≤ bán kính cung</td></tr>
+<tr><td>Lồi (ngoài chi tiết)</td><td>Cung này không giới hạn cỡ dao</td></tr>
+</tbody></table></div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Vì sao phay mặt phẳng làm trước và bước chạy phải nhỏ hơn đường kính dao? <small>(nói bằng lời của em trước)</small></summary><p>Tạo mặt chuẩn · vệt chồng nhau, không sót dải.</p></details>
+<details class="tl-details"><summary>2. G01, G02, G03 khác nhau thế nào? <small>(nói bằng lời của em trước)</small></summary><p>G01 thẳng · G02 cung cùng chiều kim · G03 ngược chiều kim, nhìn từ trên xuống.</p></details>
+<details class="tl-details"><summary>3. Bù bán kính dao để làm gì, G41 và G42 khác nhau ra sao? <small>(nói bằng lời của em trước)</small></summary><p>Lập trình theo biên dạng, máy dời tâm dao một bán kính. G41 dao bên trái, G42 bên phải, G40 hủy.</p></details>
+<details class="tl-details"><summary>4. Công thức mũi khoan trước tarô và thứ tự ba bước lỗ ren? <small>(nói bằng lời của em trước)</small></summary><p>D trừ P · khoan tâm → khoan → tarô.</p></details>
+<details class="tl-details"><summary>5. Nêu nguyên tắc sắp thứ tự nguyên công. <small>(nói bằng lời của em trước)</small></summary><p>Một lần gá · thô trước tinh sau · tarô sau khoan · gom cùng dao.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: tấm đế bốn lỗ ren</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đề bài</p>
+<p>Tấm đế hình chữ nhật 100 × 60 mm, bốn góc lượn bán kính 10 mm. Gốc W ở góc dưới trái, mặt trên. Bốn lỗ ren M8×1,25 có tâm tại $(20;\ 15)$, $(80;\ 15)$, $(80;\ 45)$, $(20;\ 45)$. Viết tọa độ điểm đầu và điểm cuối các cung của biên dạng (đi ngược chiều kim đồng hồ từ điểm $A$), chọn mũi khoan trước khi tarô, và cho biết điểm đầu của đường tâm dao Ø10 khi phay ngoài (Hình 3).</p>
+</div>
+
+__FIG3__
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"100 × 60, góc dưới trái là W"</td><td>$X: 0 \to 100$, $Y: 0 \to 60$ → tọa độ từ W</td></tr>
+<tr><td>"bốn góc lượn bán kính 10"</td><td>$R = 10$ → cung nối tiếp thẳng, tâm cách hai cạnh 10</td></tr>
+<tr><td>"M8×1,25"</td><td>$D = 8$, $P = 1{,}25$ → mũi khoan $D - P$</td></tr>
+<tr><td>"dao Ø10, đường tâm dao"</td><td>$r = 5$ → đường tâm dao dời ra 5 mm</td></tr>
+</tbody></table></div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li>Cạnh dưới đi từ $A(10;\ 0)$ đến $B(90;\ 0)$ (G01).</li>
+<li>Góc dưới phải là cung tâm $(90;\ 10)$ từ $B$ tới $C(100;\ 10)$; cạnh phải từ $C$ tới $D(100;\ 50)$.</li>
+<li>Cung tâm $(90;\ 50)$ từ $D$ tới $E(90;\ 60)$; cạnh trên từ $E$ tới $F(10;\ 60)$. Cung tâm $(10;\ 50)$ từ $F$ tới $G(0;\ 50)$; cạnh trái từ $G$ tới $H(0;\ 10)$; cung tâm $(10;\ 10)$ từ $H$ về $A$.</li>
+<li>Mũi khoan: $D - P = 8 - 1{,}25 = 6{,}75$, chọn mũi $\varnothing 6{,}8$ có sẵn.</li>
+<li>Đường tâm dao dời ra $r = 5$: điểm đầu $(10;\ -5)$; ở các góc, cung có bán kính $10 + 5 = 15$ cùng tâm với cung biên dạng.</li>
+<li>Đi ngược chiều kim đồng hồ nên bốn cung đều là G03; dao ở ngoài chi tiết nên bật G42 (như Bẫy 2).</li>
+<li><strong>Kiểm tra:</strong> mỗi điểm cuối cung cách tâm đúng 10 (ví dụ $C$: $100 - 90 = 10$); hai cung kề nhau nối tiếp thẳng nên không có gờ.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — thêm lỗ ren M6×1 cho cùng tấm.</p>
+<ol class="tl-steps">
+<li>Có $D = 6$, $P = 1$.</li>
+<li><strong>Bước 2 (em điền):</strong> $D - P = \;?$</li>
+<li>Kết luận: mũi khoan trước khi tarô có đường kính bao nhiêu?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary><p>$6 - 1 = 5$, nên dùng mũi $\varnothing 5$ trước khi tarô M6.</p></details></div>
+
+<h4>Thử sức đổi số</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc6-c7" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc6-c7" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Tấm khác 80 × 50 mm, góc lượn bán kính 8 mm, cùng gốc W ở góc dưới trái. Điểm cuối của cung góc dưới phải (đi ngược chiều kim đồng hồ) có tọa độ:</p>
+<input type="radio" name="cnc6-q7" id="cnc6-q7a"><label for="cnc6-q7a" class="tl-opt tl-no">A. $(80;\ 0)$</label>
+<input type="radio" name="cnc6-q7" id="cnc6-q7b"><label for="cnc6-q7b" class="tl-opt tl-no">B. $(72;\ 8)$</label>
+<input type="radio" name="cnc6-q7" id="cnc6-q7c"><label for="cnc6-q7c" class="tl-opt tl-no">C. $(88;\ 8)$</label>
+<input type="radio" name="cnc6-q7" id="cnc6-q7d"><label for="cnc6-q7d" class="tl-opt tl-ok">D. $(80;\ 8)$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tâm cung ở $(72;\ 8)$; điểm cuối nằm trên cạnh phải $X = 80$, cao hơn đáy một bán kính: $(80;\ 8)$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Điểm đầu cung ở $(72;\ 0)$ trên cạnh dưới, điểm cuối ở cạnh phải $X = 80$. A là góc sắc của chữ nhật, B là tâm cung, C nằm ngoài chi tiết. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy vẽ nhanh góc dưới phải và ghi các số.</p></div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: M14×2 dùng mũi khoan nào?</summary>
+<p>$14 - 2 = 12$, dùng mũi $\varnothing 12$.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: chi tiết có túi trong góc lượn R4. Dao ngón lớn nhất có thể dùng?</summary>
+<p>Bán kính dao không quá 4 mm nên đường kính tối đa 8 mm. Dao to hơn không vào hết góc.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: khoảng cách giữa tâm hai lỗ $(20;\ 15)$ và $(80;\ 45)$?</summary>
+<p>$\Delta X = 60$, $\Delta Y = 30$: $\sqrt{60^2 + 30^2} \approx 67{,}1$ mm.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Phay mặt phẳng trước; vệt chồng nhau; Z0 mặt trên.</li>
+<li>G01 thẳng · G02 cùng chiều kim · G03 ngược chiều.</li>
+<li>Lập trình theo biên dạng; G41 trái · G42 phải · G40 hủy.</li>
+<li>Khoan tâm → khoan → tarô; mũi khoan $= D - P$.</li>
+<li>Một lần gá · thô trước tinh sau · tarô sau khoan.</li>
+<li>Đọc đề: tìm gốc W, bán kính dao và chiều đi trước khi tính.</li>
+</ul>
+</div>

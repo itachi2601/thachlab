@@ -1,0 +1,379 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<ul>
+<li>Kể được <strong>hai phần của máy MILL 55</strong> và các điểm phải kiểm trước khi cấp điện.</li>
+<li>Mở máy, về <strong>Reference</strong>, chạy <strong>JOG</strong> và <strong>MDI</strong> (gọi dao, quay trục chính) đúng trình tự.</li>
+<li>Cài <strong>chiều dài, bán kính dao</strong> số 2, số 4 và <strong>gốc phôi W</strong> theo Z, X, Y.</li>
+<li>Kiểm tra cài đặt bằng <strong>G43 H…</strong> trước khi phay.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong>. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: máy còn số của nhóm trước</h3>
+
+<p>Đầu ca, nhóm em nhận máy phay <strong>EMCO MILL 55</strong> (Hình 1). Nhóm ca sáng đã cài dao và gốc phôi cho phôi của họ. Nhóm em gá phôi <strong>khác chiều cao</strong>, lắp lại dao số 2 nhô dài khác. Một bạn đề nghị: "Số còn sẵn trong máy, chạy luôn cho nhanh."</p>
+
+__FIG1__
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Nếu chạy luôn với Offset và gốc phôi của nhóm trước, chuyện gì dễ xảy ra nhất?</p>
+<div class="tl-quiz">
+<input type="radio" name="cnc4m-q1" id="cnc4m-q1a"><label for="cnc4m-q1a" class="tl-opt tl-no">A. Không sao, gốc máy M không đổi nên mọi tọa độ vẫn đúng như cũ</label>
+<input type="radio" name="cnc4m-q1" id="cnc4m-q1b"><label for="cnc4m-q1b" class="tl-opt tl-no">B. Máy tự đo lại dao và phôi rồi mới cắt</label>
+<input type="radio" name="cnc4m-q1" id="cnc4m-q1c"><label for="cnc4m-q1c" class="tl-opt tl-ok">C. Dao đi tới vị trí lệch, có thể đâm vào phôi hoặc ê-tô</label>
+<input type="radio" name="cnc4m-q1" id="cnc4m-q1d"><label for="cnc4m-q1d" class="tl-opt tl-no">D. Chỉ bề mặt hơi nhám hơn, kích thước vẫn đạt</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chương trình tính theo <strong>gốc phôi W</strong> và <strong>chiều dài dao</strong> đang lưu. Phôi khác, dao nhô khác mà giữ số cũ thì dao đến sai chỗ. Cả bài này là quy trình xóa số cũ, cài số mới và kiểm lại.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> M đứng yên, nhưng W và chiều dài dao đã đổi. Máy không tự biết em vừa thay phôi hay lắp lại dao; nó tin số đang lưu. Gợi ý: số nào trong máy gắn với phôi và dao của nhóm trước?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Cấu tạo máy phay MILL 55</h4>
+
+<p><strong>🔑 Điều khiển xử lý · Chấp hành chuyển động</strong></p>
+
+<ul>
+<li><strong>Phần điều khiển</strong> xử lý chương trình: tủ điều khiển, màn hình, bàn phím CNC, bàn phím máy tính, thùng CPU.</li>
+<li><strong>Phần chấp hành</strong> tạo chuyển động tương đối dao – phôi: trục chính, ổ tích dao, cơ cấu thay dao, bảng điều khiển, bàn máy, động cơ dẫn động, đế máy.</li>
+<li>Dụng cụ, collet, thiết bị đo, phụ kiện: <strong>vệ sinh, kiểm đếm, cất đúng vị trí</strong> trong tủ.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📋 Ví dụ: thiếu một collet thì sao?</summary>
+<p>Cuối ca kiểm đếm thấy thiếu collet Ø6. Báo ngay lúc đó thì tìm được trong phoi trên bàn máy; để sang ca sau thì không ai biết rơi ở đâu, và nhóm sau không gá được dao Ø6.</p>
+</details>
+
+<h4>2. Kiểm tra trước khi cấp điện</h4>
+
+<p><strong>🔑 Dừng khẩn · Dao · Ê-tô · Máy tính · Vùng trống</strong></p>
+
+<ul>
+<li>Nút <strong>dừng khẩn cấp</strong>, cửa bảo vệ, không gian hành trình các trục.</li>
+<li>Trục chính, ổ gá dao/ổ tích dao, cơ cấu thay dao.</li>
+<li>Ê-tô, bàn máy, phôi, đồ gá; không vật cản trong vùng gia công.</li>
+<li>Màn hình, bàn phím CNC, bàn phím máy tính, chuột, thùng CPU.</li>
+<li>Dao <strong>kẹp chắc, đúng chiều dài</strong>; không người, không vật trong vùng chuyển động.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🔬 Làm ngay tại máy: đi một vòng năm điểm</summary>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> trước khi đóng điện, đi quanh máy theo thứ tự trong dòng 🔑, chạm tay vào từng thứ.</li>
+<li><strong>Quan sát:</strong> hay gặp là cờ lê siết ê-tô để quên trên bàn máy, hoặc dao nhô dài hơn hôm trước.</li>
+<li><strong>Rút ra:</strong> vật để quên nằm trên đường đi của dao; chưa có điện là lúc an toàn nhất để dọn.</li>
+</ol>
+</details>
+
+<h4>3. Mở máy, về Reference, di chuyển JOG</h4>
+
+<p><strong>🔑 CP → Power máy tính → WinNC → Reference → JOG</strong></p>
+
+<ul>
+<li>Đóng <strong>CP</strong> của máy; nhấn <strong>Power</strong> máy tính; mở phần mềm <strong>WinNC FANUC 21M</strong>.</li>
+<li>Chọn <strong>Reference</strong>, đặt phần trăm bước tiến phù hợp, nhấn phím Reference.</li>
+<li>Chuyển <strong>JOG</strong>: dùng +X, −X, +Y, −Y, +Z, −Z để di chuyển dao.</li>
+<li>Dao gần phôi, ê-tô hoặc đồng hồ đo: <strong>giảm bước tiến</strong>, đi từng bước.</li>
+</ul>
+
+<div class="tl-quiz">
+<p>Vừa mở xong WinNC, bạn cùng nhóm định vào MDI gõ T02 M6 để gọi dao. Việc cần làm trước là gì?</p>
+<input type="radio" name="cnc4m-q2" id="cnc4m-q2a"><label for="cnc4m-q2a" class="tl-opt tl-ok">A. Đưa máy về Reference</label>
+<input type="radio" name="cnc4m-q2" id="cnc4m-q2b"><label for="cnc4m-q2b" class="tl-opt tl-no">B. Chạy thử chương trình với bước tiến 100 %</label>
+<input type="radio" name="cnc4m-q2" id="cnc4m-q2c"><label for="cnc4m-q2c" class="tl-opt tl-no">C. Chuyển JOG, đưa dao chạm phôi để dò gốc</label>
+<input type="radio" name="cnc4m-q2" id="cnc4m-q2d"><label for="cnc4m-q2d" class="tl-opt tl-no">D. Tắt CP rồi bật lại máy tính</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Về Reference để máy xác lập lại tọa độ; sau đó mới gọi dao, cài đặt hay chạy chương trình.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chạy chương trình hay dò gốc khi máy chưa có tọa độ tham chiếu đều là đoán vị trí; tắt CP thì phải mở lại từ đầu. Bước nào trong dòng 🔑 nằm ngay sau WinNC?</p></div>
+</div>
+
+<p>📌 Quy tắc: về Reference <strong>trước</strong> khi gọi dao, cài đặt phôi hay chạy chương trình.</p>
+
+<h4>4. Trục chính, thay dao, MDI</h4>
+
+<p><strong>🔑 MDI · Program MDI · T02 M6; · M3 S500;</strong></p>
+
+<ul>
+<li><strong>M03</strong>: trục chính quay thuận; <strong>M04</strong>: quay nghịch. Xác nhận đúng chiều quay của dụng cụ.</li>
+<li>Gọi dao trong MDI: chọn <strong>MDI</strong>, mở <strong>Program MDI</strong>, nhập <strong>T02 M6;</strong> và <strong>M3 S500;</strong> rồi chạy.</li>
+<li>Gọi đúng dao xong, chuyển JOG để chạy X, Y, Z bằng tay.</li>
+<li>Tháo dao bằng nút tháo dao: <strong>giữ chắc chuôi dao</strong>, không đứng dưới dụng cụ.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Quan sát: một dòng MDI, hai việc của máy</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> được giảng viên cho phép, chạy T02 M6; rồi M3 S500; khi chưa gá phôi.</li>
+<li><strong>Quan sát:</strong> máy thay dao 2 vào trục chính; rồi trục chính quay.</li>
+<li><strong>Rút ra:</strong> T chọn dao, M6 thay dao; M3 cho quay, S là số vòng/phút.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>⚠️ Vì sao không đứng dưới dao khi nhấn nút tháo?</summary>
+<p>Nhấn nút là dao được nhả khỏi trục chính. Tay không giữ chuôi thì dao có thể rơi: lưỡi cắt va vào bàn máy hoặc người đứng dưới.</p>
+</details>
+
+<h4>5. Gá phôi và gá dao phay</h4>
+
+<p><strong>🔑 Sạch · Đủ 6 bậc tự do · Siết chắc · Nhô vừa đủ</strong></p>
+
+<ul>
+<li>Vệ sinh ê-tô và phôi; định vị phôi <strong>đủ sáu bậc tự do</strong>; siết ê-tô chắc chắn.</li>
+<li>Ổ dao có <strong>8 vị trí</strong>: dao phay mặt đầu, dao phay ngón, mũi khoan, mũi tarô.</li>
+<li>Chọn đúng collet/chấu kẹp, kiểm tra <strong>chiều dài nhô</strong>, siết đúng lực.</li>
+</ul>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc4m-c3" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc4m-c3" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Mũi khoan vừa gá nhô dài hơn hẳn các dao khác, phôi trên ê-tô khá cao. Trước lần thay dao tự động đầu tiên, cần kiểm gì?</p>
+<input type="radio" name="cnc4m-q3" id="cnc4m-q3a"><label for="cnc4m-q3a" class="tl-opt tl-no">A. Chỉ cần kiểm chiều quay trục chính M3 hay M4</label>
+<input type="radio" name="cnc4m-q3" id="cnc4m-q3b"><label for="cnc4m-q3b" class="tl-opt tl-ok">B. Khoảng hở giữa mũi khoan với phôi và ê-tô</label>
+<input type="radio" name="cnc4m-q3" id="cnc4m-q3c"><label for="cnc4m-q3c" class="tl-opt tl-no">C. Tăng bước tiến để thay dao xong nhanh hơn</label>
+<input type="radio" name="cnc4m-q3" id="cnc4m-q3d"><label for="cnc4m-q3d" class="tl-opt tl-no">D. Không cần kiểm, ổ dao đủ chỗ cho 8 dao</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dao nhô dài cộng phôi cao làm khoảng hở nhỏ lại; lúc thay dao tự động, mũi khoan có thể quệt vào phôi hoặc ê-tô.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chiều quay chỉ liên quan lúc cắt; tăng bước tiến làm va chạm nặng hơn; 8 vị trí là chuyện số chỗ, không phải chuyện khoảng hở. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy hình dung đường đi của dao khi ổ dao đưa dao vào trục chính.</p></div>
+</div>
+
+<p>📌 Mỗi dao mới gá: kiểm tra đường kính, chiều dài dao và nguy cơ <strong>va chạm khi thay dao tự động</strong>.</p>
+
+<h4>6. Bài tập vận hành phay bằng tay</h4>
+
+<p><strong>🔑 60 ± 0,1 · Rz20 · Theo dõi tọa độ · Đo rồi ghi</strong></p>
+
+<ul>
+<li>Phay mặt đầu đạt kích thước <strong>$60 \pm 0{,}1\ \text{mm}$</strong>, bề mặt đạt nhám <strong>Rz20</strong>.</li>
+<li>Theo dõi tọa độ X, Y, Z; chỉnh bước tiến khi dao vào/ra phôi.</li>
+<li>Đo kiểm, đối chiếu bản vẽ, ghi nguyên nhân sai lệch nếu chưa đạt.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📏 Khoảng đạt của $60 \pm 0{,}1\ \text{mm}$ là bao nhiêu?</summary>
+<p>Từ $59{,}9\ \text{mm}$ đến $60{,}1\ \text{mm}$. Đo được $59{,}85\ \text{mm}$ là đã cắt quá, không sửa lại được bằng cách phay thêm.</p>
+</details>
+
+<h4>7. Điểm chuẩn và xóa dữ liệu cũ</h4>
+
+<p><strong>🔑 M máy · W phôi · R tham chiếu · N chuẩn dao · P mũi dao</strong></p>
+
+__FIG2__
+
+<ul>
+<li><strong>M</strong>: gốc máy; <strong>W</strong>: gốc phôi; <strong>R</strong>: điểm tham chiếu; <strong>N</strong>: chuẩn dao; <strong>P</strong>: đỉnh mũi dao.</li>
+<li>Offset Setting → <strong>Work Shift/Work Coordinates</strong>: xóa X, Y, Z của phôi.</li>
+<li>Offset Setting → <strong>Offset</strong>: xóa chiều dài và bán kính dao.</li>
+<li>Xác nhận <strong>đúng hàng dao</strong> và đúng hệ tọa độ phôi trước khi nhập số mới.</li>
+</ul>
+
+<h4>8. Cài chiều dài và bán kính dao số 2, số 4</h4>
+
+<p><strong>🔑 Đồng hồ chuẩn · Chạm nhẹ · Zdao = Zmachine − Zphôi</strong></p>
+
+<ul>
+<li>Dùng <strong>đồng hồ chuẩn cao $50\ \text{mm}$</strong>; khi đo dao, đồng hồ đóng vai "phôi". Theo tài liệu EMCO: Zphôi tạm $= 50 + 0 = 50\ \text{mm}$, nhập vào Work Shift.</li>
+<li><strong>Dao 2:</strong> MDI gọi T02 M6; nhấn <strong>POS</strong> xem tọa độ Machine; JOG đưa dao vào tâm đồng hồ.</li>
+<li>Giảm bước tiến, <strong>chạm nhẹ</strong> mặt trên đồng hồ; tính $Z_{dao2} = Z_{machine2} - Z_{phôi}$.</li>
+<li>Chiều dài dao 2 nhập <strong>hàng 2</strong>, bán kính $R_{dao2}$ nhập <strong>hàng 12</strong>. Rút dao, về Reference.</li>
+<li><strong>Dao 4</strong> đo riêng, cùng cách: T04 M6, chạm đồng hồ, $Z_{dao4} = Z_{machine4} - Z_{phôi}$; chiều dài <strong>hàng 4</strong>, bán kính <strong>hàng 14</strong>; rút dao, về Reference.</li>
+</ul>
+
+<div class="tl-quiz">
+<p>Đo dao số 4: màn hình POS báo $Z_{machine4} = 141{,}2\ \text{mm}$ (số minh hoạ), Zphôi tạm là $50\ \text{mm}$. Nhập gì, vào đâu?</p>
+<input type="radio" name="cnc4m-q4" id="cnc4m-q4a"><label for="cnc4m-q4a" class="tl-opt tl-no">A. $191{,}2\ \text{mm}$ tại hàng 4</label>
+<input type="radio" name="cnc4m-q4" id="cnc4m-q4b"><label for="cnc4m-q4b" class="tl-opt tl-no">B. $91{,}2\ \text{mm}$ tại hàng 14</label>
+<input type="radio" name="cnc4m-q4" id="cnc4m-q4c"><label for="cnc4m-q4c" class="tl-opt tl-ok">C. $91{,}2\ \text{mm}$ tại hàng 4</label>
+<input type="radio" name="cnc4m-q4" id="cnc4m-q4d"><label for="cnc4m-q4d" class="tl-opt tl-no">D. $141{,}2\ \text{mm}$ tại hàng 4</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $Z_{dao4} = 141{,}2 - 50 = 91{,}2\ \text{mm}$, là chiều dài nên vào hàng 4; hàng 14 dành cho bán kính.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A cộng thay vì trừ; D quên trừ chiều cao đồng hồ; B tính đúng nhưng ghi vào hàng bán kính. Kiểm lại cả phép tính lẫn hàng.</p></div>
+</div>
+
+<h4>9. Cài gốc phôi W theo Z, X, Y</h4>
+
+<p><strong>🔑 Z: ZMA + ZAW1 · X, Y: Xmachine + Rdao</strong></p>
+
+<ul>
+<li><strong>Z:</strong> $Z_{phôi} = Z_{MA} + Z_{AW1}$. Ví dụ tài liệu EMCO MILL 55 (kiểm lại với xưởng): $Z_{MA} = 28\ \text{mm}$, chiều cao phôi $Z_{AW1} = 50\ \text{mm}$, nên $Z_{phôi} = 78\ \text{mm}$.</li>
+<li><strong>X:</strong> gọi T02 M6; M3 S800; JOG chạm <strong>cạnh trái</strong> phôi; $X_{phôi} = X_{machine} + R_{dao}$.</li>
+<li><strong>Y:</strong> chạm <strong>cạnh trước</strong> phôi, giảm bước tiến; $Y_{phôi} = Y_{machine} + R_{dao}$.</li>
+<li>Nhập Xphôi, Yphôi, Zphôi vào Work Shift/Work Coordinates (hệ tọa độ phôi <strong>G54</strong>; ô cụ thể theo hướng dẫn của giảng viên), rồi về Reference.</li>
+</ul>
+
+__FIG3__
+
+<h4>10. Kiểm tra cài đặt trước khi phay</h4>
+
+<p><strong>🔑 Gọi dao · G43 H đúng số · Z50 rồi Z0 · F thấp</strong></p>
+
+<ul>
+<li><strong>Dao 2</strong> (MDI): T02 M6; M3 S500; G43 H2; G0 X0 Y0 Z50; G1 Z0 F200;</li>
+<li><strong>Dao 4</strong>: như trên, thay T04 và <strong>H4</strong>. Chạy MDI từng câu, tay sẵn trên nút dừng.</li>
+<li>Theo dõi Position: đúng dao, đúng H, đúng chiều trục chính, đúng gốc X0 Y0 Z0.</li>
+<li>Dao tới sai chỗ hoặc sắp va chạm: <strong>dừng máy</strong>, kiểm lại Work Shift, chiều dài, bán kính dao.</li>
+</ul>
+
+<details class="tl-details">
+<summary>💡 Vì sao dừng ở Z50 trước rồi mới G1 xuống Z0?</summary>
+<p>G0 chạy nhanh; dừng cách mặt phôi $50\ \text{mm}$ để em kiểm X0 Y0 bằng mắt khi dao còn xa. Đoạn xuống Z0 dùng G1 F200 chậm, kịp dừng nếu dao xuống sai độ cao.</p>
+</details>
+
+<h3>III. Ba cái bẫy hay gặp</h3>
+
+<h4>Bẫy 1: Nhầm M3 với M4, nhầm thứ tự T – M6</h4>
+
+<div class="tl-quiz">
+<p>Muốn gọi dao số 3 và cho trục chính quay thuận $800$ vòng/phút trong MDI. Dòng nhập đúng là:</p>
+<input type="radio" name="cnc4m-q5" id="cnc4m-q5a"><label for="cnc4m-q5a" class="tl-opt tl-no">A. T03 M6; M4 S800;</label>
+<input type="radio" name="cnc4m-q5" id="cnc4m-q5b"><label for="cnc4m-q5b" class="tl-opt tl-no">B. T800 M6; M3 S03;</label>
+<input type="radio" name="cnc4m-q5" id="cnc4m-q5c"><label for="cnc4m-q5c" class="tl-opt tl-no">C. M3 S800; rồi mới T03 M6;</label>
+<input type="radio" name="cnc4m-q5" id="cnc4m-q5d"><label for="cnc4m-q5d" class="tl-opt tl-ok">D. T03 M6; M3 S800;</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thay dao trước, quay sau: T03 M6; chọn và lắp dao 3, M3 S800; quay thuận $800$ vòng/phút.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A dùng M4 là quay nghịch; B đổi chỗ số dao với số vòng; C cho trục chính quay khi chưa lắp dao cần dùng. T đi với số dao, S đi với số vòng.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lệnh</th><th>Nghĩa</th></tr></thead>
+<tbody>
+<tr><td>T04 M6</td><td>Chọn dao 4, thay vào trục chính</td></tr>
+<tr><td>M3 S500</td><td>Quay thuận $500$ vòng/phút</td></tr>
+<tr><td>M4</td><td>Quay nghịch: chỉ dùng khi dụng cụ cần</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 2: Quên bán kính dao khi dò cạnh</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc4m-c6" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc4m-c6" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Dao phay ngón Ø10 chạm cạnh trái phôi; POS báo $X_{machine} = 112{,}0\ \text{mm}$ (số minh hoạ). Xphôi bằng:</p>
+<input type="radio" name="cnc4m-q6" id="cnc4m-q6a"><label for="cnc4m-q6a" class="tl-opt tl-ok">A. $117{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q6" id="cnc4m-q6b"><label for="cnc4m-q6b" class="tl-opt tl-no">B. $122{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q6" id="cnc4m-q6c"><label for="cnc4m-q6c" class="tl-opt tl-no">C. $107{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q6" id="cnc4m-q6d"><label for="cnc4m-q6d" class="tl-opt tl-no">D. $112{,}0\ \text{mm}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ø10 nên $R_{dao} = 5\ \text{mm}$; tâm dao nằm bên trái cạnh $5\ \text{mm}$, nên $X_{phôi} = 112{,}0 + 5 = 117{,}0\ \text{mm}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B cộng cả đường kính; C trừ bán kính (nhầm phía); D lấy tọa độ tâm dao làm cạnh phôi. Màn hình báo vị trí <em>tâm</em> dao. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại Hình 3.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Dao Ø12 chạm cạnh trái</th><th>Kết quả</th></tr></thead>
+<tbody>
+<tr><td>Cộng $R = 6\ \text{mm}$</td><td>Đúng cạnh phôi</td></tr>
+<tr><td>Quên R</td><td>W lệch $6\ \text{mm}$ ra ngoài phôi, sang trái</td></tr>
+<tr><td>Cộng cả đường kính $12\ \text{mm}$</td><td>W lệch $6\ \text{mm}$ vào trong phôi</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 3: Gọi dao này, bù chiều dài dao kia</h4>
+
+<div class="tl-quiz">
+<p>Dao số 4 dài hơn dao số 2. Kiểm dao 4 nhưng gõ nhầm: T04 M6; M3 S500; G43 H2; G0 X0 Y0 Z50; Dao sẽ dừng ở đâu?</p>
+<input type="radio" name="cnc4m-q7" id="cnc4m-q7a"><label for="cnc4m-q7a" class="tl-opt tl-no">A. Đúng Z50, máy tự đổi H2 thành H4</label>
+<input type="radio" name="cnc4m-q7" id="cnc4m-q7b"><label for="cnc4m-q7b" class="tl-opt tl-no">B. Đúng Z50, vì X0 Y0 đã được kiểm đúng từ trước</label>
+<input type="radio" name="cnc4m-q7" id="cnc4m-q7c"><label for="cnc4m-q7c" class="tl-opt tl-no">C. Lệch theo X một bán kính dao</label>
+<input type="radio" name="cnc4m-q7" id="cnc4m-q7d"><label for="cnc4m-q7d" class="tl-opt tl-ok">D. Lệch Z bằng hiệu chiều dài hai dao</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Máy bù theo chiều dài ở hàng 2 cho một dao khác; dao 4 dài hơn nên mũi dao xuống thấp hơn dự kiến, có thể chạm phôi. (Dao ngắn hơn thì ngược lại: dừng cao hơn.)</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Máy không tự sửa số H; X0 Y0 đúng không cứu được sai Z; G43 là bù <em>chiều dài</em>, không liên quan bán kính. Số sau H phải trùng số dao.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Sai gì</th><th>Hậu quả</th></tr></thead>
+<tbody>
+<tr><td>Không xóa Work Shift cũ</td><td>Gốc W còn ở phôi của nhóm trước</td></tr>
+<tr><td>Nhập chiều dài dao 2 vào hàng 12</td><td>H2 đọc hàng 2 vẫn bằng 0</td></tr>
+</tbody></table></div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Năm điểm kiểm trước khi cấp điện? <small>(nói bằng lời của em trước)</small></summary><p>Dừng khẩn + cửa + hành trình · trục chính, ổ dao · ê-tô, phôi, vật cản · máy tính · dao kẹp chắc, vùng trống.</p></details>
+<details class="tl-details"><summary>2. Trình tự mở máy? <small>(nói bằng lời của em trước)</small></summary><p>CP → Power máy tính → WinNC FANUC 21M → Reference → JOG.</p></details>
+<details class="tl-details"><summary>3. Gọi dao 2, quay thuận $500$ vòng/phút trong MDI? <small>(nói bằng lời của em trước)</small></summary><p>T02 M6; M3 S500;</p></details>
+<details class="tl-details"><summary>4. Công thức chiều dài dao và gốc phôi X? <small>(nói bằng lời của em trước)</small></summary><p>$Z_{dao} = Z_{machine} - Z_{phôi}$; $X_{phôi} = X_{machine} + R_{dao}$.</p></details>
+<details class="tl-details"><summary>5. Dòng kiểm dao 4 tại gốc phôi? <small>(nói bằng lời của em trước)</small></summary><p>T04 M6; M3 S500; G43 H4; G0 X0 Y0 Z50; G1 Z0 F200;</p></details>
+</div>
+
+<h3>V. Tình huống mẫu: cài máy cho phôi mới</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Tình huống</p>
+<p>Máy đã bật, đã về Reference, còn số của nhóm trước. Nhóm em gá phôi mới trên ê-tô, dùng dao số 2 (phay ngón Ø10) và dao số 4. Nêu trình tự cài đặt đến khi kiểm xong dao 2 tại gốc phôi.</p>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong tình huống</th><th>Dữ kiện → quy tắc</th></tr></thead>
+<tbody>
+<tr><td>"còn số của nhóm trước"</td><td>Xóa Work Shift và Offset trước</td></tr>
+<tr><td>"dao số 2, dao số 4"</td><td>Đo riêng từng dao: hàng 2/12, hàng 4/14</td></tr>
+<tr><td>"phay ngón Ø10"</td><td>$R_{dao} = 5\ \text{mm}$ → cộng khi dò cạnh</td></tr>
+<tr><td>"phôi mới trên ê-tô"</td><td>Cài W theo Z, X, Y</td></tr>
+<tr><td>"kiểm xong dao 2"</td><td>G43 H2, Z50 rồi Z0 chậm</td></tr>
+</tbody></table></div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem các bước</summary>
+<ol class="tl-steps">
+<li><strong>Xóa số cũ:</strong> Offset Setting → Work Shift/Work Coordinates xóa X, Y, Z; → Offset xóa chiều dài, bán kính dao.</li>
+<li><strong>Zphôi tạm:</strong> nhập $50 + 0 = 50$ (chiều cao đồng hồ chuẩn) vào Work Shift.</li>
+<li><strong>Dao 2:</strong> T02 M6; POS; JOG vào tâm đồng hồ, chạm nhẹ; $Z_{dao2} = Z_{machine2} - 50$ vào hàng 2; $R = 5$ vào hàng 12; rút dao, về Reference.</li>
+<li><strong>Dao 4:</strong> T04 M6; đo y như dao 2; hàng 4 và hàng 14; rút dao, về Reference.</li>
+<li><strong>Gốc phôi Z:</strong> $Z_{phôi} = Z_{MA} + Z_{AW1}$ theo phôi mới.</li>
+<li><strong>Gốc phôi X, Y:</strong> T02 M6; M3 S800; chạm cạnh trái → $X_{machine} + 5$; chạm cạnh trước → $Y_{machine} + 5$. Nhập vào Work Shift (G54), về Reference.</li>
+<li><strong>Kiểm tra:</strong> T02 M6; M3 S500; G43 H2; G0 X0 Y0 Z50; G1 Z0 F200; Position phải báo X0 Y0, tâm dao dừng ngay trên góc trái – trước của phôi.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong>: kiểm dao số 4 tại gốc phôi.</p>
+<ol class="tl-steps">
+<li>T04 M6; M3 S500;</li>
+<li><strong>Bước 2 (em điền):</strong> lệnh bù chiều dài = ?</li>
+<li>G0 X0 Y0 Z50; rồi bước 4 = ?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2 và 4</summary><p>Bước 2: G43 H4; Bước 4: G1 Z0 F200;</p></details></div>
+
+<h4>Thử sức đổi tình huống</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc4m-c8" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc4m-c8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Nhóm khác dò gốc Y bằng dao Ø8, chạm cạnh trước phôi; POS báo $Y_{machine} = 64{,}0\ \text{mm}$ (số minh hoạ). Yphôi nhập vào Work Shift là:</p>
+<input type="radio" name="cnc4m-q8" id="cnc4m-q8a"><label for="cnc4m-q8a" class="tl-opt tl-no">A. $72{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q8" id="cnc4m-q8b"><label for="cnc4m-q8b" class="tl-opt tl-ok">B. $68{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q8" id="cnc4m-q8c"><label for="cnc4m-q8c" class="tl-opt tl-no">C. $64{,}0\ \text{mm}$</label>
+<input type="radio" name="cnc4m-q8" id="cnc4m-q8d"><label for="cnc4m-q8d" class="tl-opt tl-no">D. $60{,}0\ \text{mm}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_{dao} = 4\ \text{mm}$, $Y_{phôi} = 64{,}0 + 4 = 68{,}0\ \text{mm}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A cộng đường kính; C quên bán kính; D trừ bán kính. Ø8 thì bán kính là bao nhiêu, và cộng hay trừ?</p></div>
+</div>
+
+<h3>VI. Ở xưởng và tổng kết</h3>
+
+<p>Ở xưởng, mỗi lần đổi ca, đổi phôi đều lặp chuỗi này.</p>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: vì sao kiểm máy khi chưa cấp điện, không phải sau?</summary>
+<p>Chưa có điện thì không trục nào chạy bất ngờ; dọn vật cản, siết dao lúc này là an toàn nhất.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: chạy kiểm dao 2, Position báo đúng X0 Y0 nhưng dao dừng lệch cạnh phôi khoảng $5\ \text{mm}$. Nghi số nào?</summary>
+<p>$5\ \text{mm}$ đúng bằng bán kính dao Ø10: nghi quên cộng $R_{dao}$ khi tính Xphôi hoặc Yphôi. Dừng máy, kiểm lại Work Shift.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: phay mặt đầu, đo được $60{,}14\ \text{mm}$. Đạt chưa? Xử lý thế nào?</summary>
+<p>Chưa đạt: vượt giới hạn trên $60{,}1\ \text{mm}$ là $0{,}04\ \text{mm}$. Còn thừa vật liệu nên sửa được: phay thêm khoảng $0{,}14\ \text{mm}$ để về gần $60{,}00\ \text{mm}$, đo lại và ghi nguyên nhân.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Kiểm khi chưa có điện: dừng khẩn, dao, ê-tô, máy tính, vùng trống.</li>
+<li>CP → máy tính → WinNC → Reference → JOG.</li>
+<li>T02 M6; M3 S500; thay trước, quay sau.</li>
+<li>Xóa số cũ · đo dao 2, 4 · cài W theo Z, X, Y.</li>
+<li>Dò cạnh: cộng bán kính, không cộng đường kính.</li>
+<li>G43 H trùng số dao · Z50 rồi Z0 chậm.</li>
+<li>Đọc tình huống: số cũ, số dao, đường kính dao.</li>
+</ul>
+</div>

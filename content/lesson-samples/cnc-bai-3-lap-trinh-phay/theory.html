@@ -1,0 +1,359 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<ul>
+<li>Gọi đúng <strong>5 điểm chuẩn</strong> và đọc được một <strong>khối lệnh FANUC 21M</strong>.</li>
+<li>Viết tọa độ biên dạng theo <strong>G90 và G91</strong> khi gốc W đặt ở tâm phôi.</li>
+<li>Chọn đúng lệnh <strong>mặt phẳng, dịch chuyển, bù dao, chu trình khoan – tarô – doa</strong> và mã M.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở tài liệu. Đọc khoảng 16 phút.</p>
+</div>
+
+<h3>I. Mở bài: dao chạy lệch khỏi phôi</h3>
+
+<p>Giờ thực tập, một bạn nhập chương trình phay viền tấm phôi 60 × 40 mm vào Win-NC32, W ở tâm phôi (Hình 1). Bốn góc tính đúng bản vẽ; dao xuất phát ngay trên W. Mô phỏng: đoạn đầu tới góc 1 đúng, các đoạn sau lệch dần rồi chạy ra ngoài phôi. Dòng đầu chương trình ghi G91.</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 298" role="img" aria-label="Tấm phôi chữ nhật, gốc W ở tâm, bốn góc đánh số"><defs><marker id="c3ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><rect x="90" y="70" width="240" height="160" fill="none" stroke="currentColor" stroke-width="3"/><line x1="210" y1="150" x2="375" y2="150" stroke="currentColor" stroke-width="2.5" marker-end="url(#c3ak)"/><text x="380" y="156" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">+X</text><line x1="210" y1="150" x2="210" y2="35" stroke="currentColor" stroke-width="2.5" marker-end="url(#c3ak)"/><text x="218" y="42" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">+Y</text><circle cx="210" cy="150" r="7" fill="#f87171"/><text x="220" y="174" fill="#f87171" font-size="18" font-weight="700" text-anchor="start">W</text><circle cx="90" cy="230" r="6" fill="#34d399"/><text x="82" y="250" fill="#34d399" font-size="18" font-weight="700" text-anchor="end">1</text><circle cx="330" cy="230" r="6" fill="#34d399"/><text x="338" y="250" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">2</text><circle cx="330" cy="70" r="6" fill="#34d399"/><text x="338" y="62" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">3</text><circle cx="90" cy="70" r="6" fill="#34d399"/><text x="82" y="62" fill="#34d399" font-size="18" font-weight="700" text-anchor="end">4</text><line x1="90" y1="262" x2="330" y2="262" stroke="currentColor" stroke-width="1.5"/><line x1="90" y1="254" x2="90" y2="270" stroke="currentColor" stroke-width="1.5"/><line x1="330" y1="254" x2="330" y2="270" stroke="currentColor" stroke-width="1.5"/><text x="210" y="288" fill="currentColor" font-size="15" font-weight="600" text-anchor="middle">60 mm</text><line x1="58" y1="70" x2="58" y2="230" stroke="currentColor" stroke-width="1.5"/><line x1="50" y1="70" x2="66" y2="70" stroke="currentColor" stroke-width="1.5"/><line x1="50" y1="230" x2="66" y2="230" stroke="currentColor" stroke-width="1.5"/><text x="46" y="155" fill="currentColor" font-size="15" font-weight="600" text-anchor="end">40</text></svg><figcaption>Hình 1. Tấm phôi 60 × 40 mm nhìn từ trên xuống (mặt phẳng XY). Gốc W ở tâm; 1, 2, 3, 4 là bốn góc của biên dạng.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<div class="tl-quiz">
+<p>Vì sao số đúng bản vẽ mà dao vẫn chạy lệch?</p>
+<input type="radio" name="cnc3-q1" id="cnc3-q1a"><label for="cnc3-q1a" class="tl-opt tl-no">A. Tốc độ trục chính quá thấp, dao bị trượt khỏi đường cắt</label>
+<input type="radio" name="cnc3-q1" id="cnc3-q1b"><label for="cnc3-q1b" class="tl-opt tl-ok">B. Máy đọc mỗi số là quãng dịch từ điểm trước</label>
+<input type="radio" name="cnc3-q1" id="cnc3-q1c"><label for="cnc3-q1c" class="tl-opt tl-no">C. Lệnh G01 không dùng được khi chạy theo biên dạng</label>
+<input type="radio" name="cnc3-q1" id="cnc3-q1d"><label for="cnc3-q1d" class="tl-opt tl-no">D. Gốc W đặt ở tâm phôi thì máy không đọc được các tọa độ mang dấu âm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> G91 biến mỗi số thành <strong>lượng dịch chuyển</strong> tính từ điểm trước. Số tính từ W mà đọc theo G91 thì sai cộng dồn. Cả bài xoay quanh câu hỏi: con số trong khối lệnh được tính từ đâu.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tốc độ trục chính không đổi được đường đi của dao; G01 vẫn là lệnh cắt thẳng quen thuộc; tọa độ âm là chuyện bình thường khi W ở tâm. Gợi ý: dòng nào trong chương trình quyết định cách máy <em>đọc</em> các con số?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Năm điểm chuẩn trên máy phay</h4>
+
+<p><strong>🔑 M máy · W phôi · R tham chiếu · T/N dao · P mũi cắt</strong></p>
+
+<ul>
+<li><strong>M</strong> (Machine zero): gốc tọa độ máy, <strong>cố định</strong>.</li>
+<li><strong>W</strong> (Workpiece zero): gốc phôi, <strong>đổi theo cách gá</strong> và chương trình.</li>
+<li><strong>R</strong> (Reference point): điểm tham chiếu cố định của máy.</li>
+<li><strong>T/N</strong> (Tool reference point): điểm chuẩn dao, <strong>không đổi</strong>.</li>
+<li><strong>P</strong> (Cutter point): đỉnh mũi dao cắt gọt, <strong>đổi theo dụng cụ</strong>.</li>
+</ul>
+
+<p>Ví dụ: gá phôi ở chỗ khác trên ê-tô, M vẫn thế, W phải xác lập lại.</p>
+
+<div class="tl-quiz">
+<p>Gá phôi giữ nguyên, em thay dao phay ngón bằng một mũi khoan ngắn hơn. Điểm nào thay đổi?</p>
+<input type="radio" name="cnc3-q2" id="cnc3-q2a"><label for="cnc3-q2a" class="tl-opt tl-no">A. Điểm M, gốc tọa độ của máy</label>
+<input type="radio" name="cnc3-q2" id="cnc3-q2b"><label for="cnc3-q2b" class="tl-opt tl-no">B. Điểm W, gốc tọa độ của phôi</label>
+<input type="radio" name="cnc3-q2" id="cnc3-q2c"><label for="cnc3-q2c" class="tl-opt tl-no">C. Điểm R, điểm tham chiếu</label>
+<input type="radio" name="cnc3-q2" id="cnc3-q2d"><label for="cnc3-q2d" class="tl-opt tl-ok">D. Điểm P, mũi dao</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> P gắn với từng dụng cụ; đổi dao là đổi P. Phôi không xê dịch nên W giữ nguyên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> M và R thuộc về máy; W chỉ đổi khi gá phôi khác. Cái gì vừa được thay?</p></div>
+</div>
+
+<h4>2. Cấu trúc chương trình FANUC 21M</h4>
+
+<p><strong>🔑 Oxxxx · N G X Y Z M S F T ; · G90 tuyệt đối · G91 tương đối</strong></p>
+
+<ul>
+<li>Chương trình chính + chương trình con, chạy <strong>lần lượt từng khối</strong>.</li>
+<li>Tên chương trình: <strong>Oxxxx</strong>, ví dụ O1601.</li>
+<li>Khối lệnh: <code>N_ G_ X_ Y_ Z_ M_ S_ F_ T_ ;</code> — kết thúc bằng dấu <strong>;</strong></li>
+<li><strong>N</strong> số thứ tự · <strong>G</strong> chức năng chuẩn bị · <strong>X/Y/Z</strong> tọa độ.</li>
+<li><strong>M</strong> chức năng phụ · <strong>S</strong> tốc độ trục chính · <strong>F</strong> tốc độ chạy dao · <strong>T</strong> chọn dao.</li>
+<li><strong>G90:</strong> tọa độ tuyệt đối, tính từ W. <strong>G91:</strong> lượng dịch chuyển so với điểm trước.</li>
+<li>W ở tâm phôi: xác định đúng <strong>dấu X, Y</strong> và <strong>chiều sâu Z</strong> của từng điểm.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📋 Xem thêm: đọc một khối lệnh</summary>
+<p><code>N50 G01 X15 Y10 F120;</code> — khối số 50 · cắt thẳng · tới X15 Y10 · tốc độ chạy dao 120 · hết khối.</p>
+</details>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thử trên Win-NC32: cùng con số, hai cách đọc</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dao đứng ở góc 1 của Hình 1. Viết <code>G01 X30 F150;</code>, chạy mô phỏng hai lần: một lần có G90, một lần có G91.</li>
+<li><strong>Quan sát:</strong> với G90, dao tới góc 2. Với G91, dao chỉ đi 30 mm, dừng ở giữa cạnh dưới.</li>
+<li><strong>Rút ra:</strong> G90: "đích ở đâu so với W?"; G91: "đi thêm bao nhiêu?".</li>
+</ol>
+</div>
+
+<h4>3. Mặt phẳng, đơn vị và lệnh dịch chuyển</h4>
+
+<p><strong>🔑 G17 XY · G71 mét · G94 mm/phút · G00 chạy nhanh · G01 thẳng · G02/G03 cung</strong></p>
+
+<ul>
+<li><strong>G17 / G18 / G19:</strong> mặt phẳng XOY / XOZ / YOZ; phay biên dạng thường dùng G17.</li>
+<li><strong>G70:</strong> inch; <strong>G71:</strong> hệ mét (cách ghi trên Win-NC32 của xưởng).</li>
+<li><strong>G94:</strong> chạy dao mm/phút (thường dùng khi phay); <strong>G95:</strong> mm/vòng.</li>
+<li><strong>G00 X… Y… Z…</strong> chạy nhanh, <strong>không cắt</strong>.</li>
+<li><strong>G01 X… Y… Z… F…</strong> cắt thẳng; thêm R để bo góc, C để vát góc.</li>
+<li><strong>G02 / G03 X… Y… Z… I… J… K… F…</strong> (hoặc dùng R): cung tròn cùng / ngược chiều kim đồng hồ.</li>
+</ul>
+
+<p>Ví dụ: đưa dao từ trên cao xuống sát mặt phôi, chưa chạm vật liệu, là việc của G00.</p>
+
+<div class="tl-quiz">
+<p>Phôi 60 × 40 mm, W ở tâm, máy ở G90 và G94, dao đang ở góc 1. Khối nào cho dao <em>cắt</em> thẳng tới góc 2 $(30;\ -20)$ với tốc độ chạy dao 150 mm/phút?</p>
+<input type="radio" name="cnc3-q3" id="cnc3-q3a"><label for="cnc3-q3a" class="tl-opt tl-ok">A. G01 X30 Y-20 F150;</label>
+<input type="radio" name="cnc3-q3" id="cnc3-q3b"><label for="cnc3-q3b" class="tl-opt tl-no">B. G00 X30 Y-20 F150;</label>
+<input type="radio" name="cnc3-q3" id="cnc3-q3c"><label for="cnc3-q3c" class="tl-opt tl-no">C. G02 X30 Y-20 R40 F150;</label>
+<input type="radio" name="cnc3-q3" id="cnc3-q3d"><label for="cnc3-q3d" class="tl-opt tl-no">D. G01 X30 Y-20 S150;</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> G01 là nội suy đường thẳng có cắt, F là tốc độ chạy dao.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B dùng G00: chạy nhanh, không cắt. C là cung tròn, không phải đường thẳng. D ghi S: đó là tốc độ trục chính, không phải tốc độ chạy dao.</p></div>
+</div>
+
+<p>Chiều cung G02/G03: Hình 2.</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 252" role="img" aria-label="Chiều cung tròn G02 và G03 trong mặt phẳng G17"><defs><marker id="c3bb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="c3bo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="c3bk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><text x="210" y="26" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">Nhìn từ +Z xuống mặt XY (G17)</text><path d="M40,140 A65,65 0 0 1 170,140" fill="none" stroke="#38bdf8" stroke-width="3.5" marker-end="url(#c3bb)"/><circle cx="40" cy="140" r="5" fill="#38bdf8"/><circle cx="105" cy="140" r="3" fill="currentColor"/><text x="105" y="196" fill="#38bdf8" font-size="20" font-weight="700" text-anchor="middle">G02</text><text x="105" y="220" fill="#38bdf8" font-size="15" font-weight="600" text-anchor="middle">cùng chiều</text><text x="105" y="240" fill="#38bdf8" font-size="15" font-weight="600" text-anchor="middle">kim đồng hồ</text><path d="M380,140 A65,65 0 0 0 250,140" fill="none" stroke="#fb923c" stroke-width="3.5" marker-end="url(#c3bo)"/><circle cx="380" cy="140" r="5" fill="#fb923c"/><circle cx="315" cy="140" r="3" fill="currentColor"/><text x="315" y="196" fill="#fb923c" font-size="20" font-weight="700" text-anchor="middle">G03</text><text x="315" y="220" fill="#fb923c" font-size="15" font-weight="600" text-anchor="middle">ngược chiều</text><text x="315" y="240" fill="#fb923c" font-size="15" font-weight="600" text-anchor="middle">kim đồng hồ</text><line x1="190" y1="236" x2="232" y2="236" stroke="currentColor" stroke-width="2" marker-end="url(#c3bk)"/><text x="236" y="241" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">+X</text><line x1="190" y1="236" x2="190" y2="198" stroke="currentColor" stroke-width="2" marker-end="url(#c3bk)"/><text x="190" y="190" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+Y</text></svg><figcaption>Hình 2. Mặt phẳng G17, nhìn từ +Z xuống: G02 chạy cung cùng chiều kim đồng hồ, G03 ngược chiều. Chấm lớn là điểm đầu cung, chấm nhỏ là tâm cung (I, J).</figcaption></figure>
+
+<h4>4. Bù bán kính và bù chiều dài dao</h4>
+
+<p><strong>🔑 G41 trái · G42 phải · G40 hủy · G43/G44 chiều dài · G49 hủy</strong></p>
+
+<ul>
+<li><strong>G41 / G42:</strong> bù bán kính, dao nằm <strong>trái / phải</strong> biên dạng, nhìn theo hướng chạy dao. <strong>G40:</strong> hủy.</li>
+<li>Kèm địa chỉ <strong>H</strong> chọn ô bù bán kính (theo máy EMCO của xưởng), ví dụ <code>G41 H2</code>.</li>
+<li><strong>G43:</strong> bù chiều dài hướng dương; <strong>G44:</strong> hướng âm; <strong>G49:</strong> hủy.</li>
+<li>Kèm <strong>H</strong> chọn ô chiều dài, ví dụ <code>G43 H12</code>.</li>
+<li>Gọi bù ở <strong>vị trí tiếp cận an toàn</strong>; hủy G40 trong khối <strong>đưa dao rời biên dạng</strong>, trước khi kết thúc.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📋 Xem thêm: vì sao gọi bù ở ngoài phôi?</summary>
+<p>Ở khối gọi G41/G42, tâm dao được dời ra một khoảng bằng bán kính. Gọi ngay trên biên dạng thì dao có thể ăn lẹm vào chi tiết. Vì vậy gọi bù khi dao còn ngoài phôi, hủy G40 trong khối đưa dao rời biên dạng.</p>
+</details>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thử trên Win-NC32: một chương trình, hai cỡ dao</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> giữ nguyên chương trình biên dạng có G41. Nhập bán kính dao vào ô bù theo hướng dẫn của giảng viên, mô phỏng; rồi đổi sang bán kính lớn hơn, mô phỏng lại.</li>
+<li><strong>Quan sát:</strong> tâm dao lùi xa biên dạng hơn, mép chi tiết vẫn đúng bản vẽ.</li>
+<li><strong>Rút ra:</strong> chương trình tả <strong>chi tiết</strong>; máy tự dời tâm dao theo ô bù.</li>
+</ol>
+</div>
+
+<h4>5. Chu trình khoan G81, G83, G73</h4>
+
+<p><strong>🔑 X/Y tâm lỗ · Z đáy · R an toàn · G98 về đầu · G99 về R</strong></p>
+
+<ul>
+<li><strong>G81 X… Y… Z… R… F…</strong> khoan hết chiều sâu một lần.</li>
+<li><strong>G83 X… Y… Z… R… P… Q… F… K…</strong> khoan lỗ sâu: Q chiều sâu mỗi lát, P dừng ở đáy, K số lần lặp.</li>
+<li><strong>G73 X… Y… Z… R… P… Q… F…</strong> khoan cao tốc, rút dao ngắn để bẻ và thoát phoi.</li>
+<li><strong>R:</strong> mặt phẳng an toàn phía trên mặt phôi; <strong>Z:</strong> đáy lỗ.</li>
+<li><strong>G98:</strong> rút về mặt phẳng ban đầu; <strong>G99:</strong> rút về mặt phẳng R (Hình 3).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 262" role="img" aria-label="Chu trình khoan: mặt phẳng ban đầu, mặt R, đáy lỗ, G98 và G99"><defs><marker id="c3cb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="c3co" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker></defs><line x1="80" y1="50" x2="410" y2="50" stroke="currentColor" stroke-width="1.8" stroke-dasharray="7 5"/><text x="6" y="55" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">Ban đầu</text><line x1="80" y1="125" x2="410" y2="125" stroke="currentColor" stroke-width="1.8" stroke-dasharray="7 5"/><text x="6" y="130" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">Mặt R</text><rect x="90" y="170" width="310" height="85" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="6" y="175" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">Mặt phôi</text><text x="6" y="235" fill="currentColor" font-size="15" font-weight="600" text-anchor="start">Đáy Z</text><line x1="80" y1="230" x2="150" y2="230" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"/><rect x="161" y="170" width="18" height="60" fill="none" stroke="currentColor" stroke-width="2"/><line x1="166" y1="125" x2="166" y2="228" stroke="#38bdf8" stroke-width="3" marker-end="url(#c3cb)"/><rect x="311" y="170" width="18" height="60" fill="none" stroke="currentColor" stroke-width="2"/><line x1="316" y1="125" x2="316" y2="228" stroke="#38bdf8" stroke-width="3" marker-end="url(#c3cb)"/><line x1="174" y1="228" x2="174" y2="127" stroke="#fb923c" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#c3co)"/><line x1="324" y1="228" x2="324" y2="52" stroke="#fb923c" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#c3co)"/><text x="188" y="154" fill="#fb923c" font-size="15" font-weight="700" text-anchor="start">G99: về R</text><text x="312" y="96" fill="#fb923c" font-size="15" font-weight="700" text-anchor="end">G98: về mặt ban đầu</text></svg><figcaption>Hình 3. Chu trình khoan nhìn từ bên cạnh: mũi xanh là khoan với tốc độ F tới đáy Z; mũi cam nét đứt là rút dao, G99 về mặt R, G98 về mặt phẳng ban đầu.</figcaption></figure>
+
+<p>Ví dụ: lỗ sâu gấp nhiều lần đường kính, phoi dễ kẹt → chọn G83 thay G81.</p>
+
+<h4>6. Chu trình tarô và doa</h4>
+
+<p><strong>🔑 G84 ren phải · G74 ren trái · G89 doa có dừng · F đồng bộ S</strong></p>
+
+<ul>
+<li><strong>G84:</strong> tarô ren phải; <strong>G74:</strong> tarô ren trái; cấu trúc X, Y, Z, R, P, F, K.</li>
+<li>Tarô: tốc độ tiến dao <strong>đồng bộ</strong> với tốc độ trục chính và bước ren.</li>
+<li><strong>G89 X… Y… Z… R… P… F… K…</strong> doa, dừng P ở đáy rồi mới rút.</li>
+<li>Xong nhóm chu trình cố định: <strong>hủy chu trình</strong> (G80) trước chuyển động khác.</li>
+</ul>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc3-c4" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc3-c4" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Tarô ren M10 × 1,5 (bước ren $1{,}5\ \text{mm}$), trục chính S300, máy ở G94. Giá trị F đúng là:</p>
+<input type="radio" name="cnc3-q4" id="cnc3-q4a"><label for="cnc3-q4a" class="tl-opt tl-no">A. F200</label>
+<input type="radio" name="cnc3-q4" id="cnc3-q4b"><label for="cnc3-q4b" class="tl-opt tl-no">B. F300</label>
+<input type="radio" name="cnc3-q4" id="cnc3-q4c"><label for="cnc3-q4c" class="tl-opt tl-ok">C. F450</label>
+<input type="radio" name="cnc3-q4" id="cnc3-q4d"><label for="cnc3-q4d" class="tl-opt tl-no">D. F1.5</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi vòng dao tiến đúng một bước ren: $F = S \times p = 300 \times 1{,}5 = 450\ \text{mm/phút}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A chia S cho bước ren; B lấy luôn S; D là lượng tiến mỗi vòng, chỉ hợp khi dùng G95. Mỗi vòng quay, dao phải tiến bao nhiêu? Chọn <em>Chắc</em> mà sai thì xem lại chữ "đồng bộ".</p></div>
+</div>
+
+<h4>7. Mã M trong chương trình phay</h4>
+
+<p><strong>🔑 M03/M04/M05 trục chính · M06 thay dao · M08/M09 tưới · M30 hết</strong></p>
+
+<ul>
+<li><strong>M00</strong> dừng vô điều kiện; <strong>M01</strong> dừng có điều kiện; <strong>M30</strong> kết thúc chương trình.</li>
+<li><strong>M03 / M04 / M05:</strong> trục chính quay thuận / nghịch / dừng; <strong>M06:</strong> thay dao.</li>
+<li><strong>M08 / M09:</strong> bật / tắt tưới nguội.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📋 Xem thêm: mã M cho kẹp phôi, phân độ, thổi phoi</summary>
+<p><strong>M71 / M72:</strong> bật / tắt thổi phoi. <strong>M10 / M11:</strong> khóa / mở khóa đầu phân độ. <strong>M19:</strong> định vị trí dừng trục chính. <strong>M25 / M26:</strong> mở / siết ê-tô kẹp phôi.</p>
+</details>
+
+<h3>III. Ba cái bẫy hay gặp</h3>
+
+<h4>Bẫy 1: G90 hay G91?</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc3-c5" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc3-c5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>W ở tâm phôi, dao đang ở góc 1 $(-30;\ -20)$. Khối tiếp theo là <code>G91 G01 X60 F150;</code>. Dao dừng ở đâu?</p>
+<input type="radio" name="cnc3-q5" id="cnc3-q5a"><label for="cnc3-q5a" class="tl-opt tl-no">A. $X60,\ Y{-20}$</label>
+<input type="radio" name="cnc3-q5" id="cnc3-q5b"><label for="cnc3-q5b" class="tl-opt tl-no">B. $X90,\ Y{-20}$</label>
+<input type="radio" name="cnc3-q5" id="cnc3-q5c"><label for="cnc3-q5c" class="tl-opt tl-ok">C. $X30,\ Y{-20}$</label>
+<input type="radio" name="cnc3-q5" id="cnc3-q5d"><label for="cnc3-q5d" class="tl-opt tl-no">D. $X60,\ Y0$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> G91: $-30 + 60 = 30$; Y không ghi nên không đổi. Dao tới góc 2.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và D đọc X60 như tọa độ tuyệt đối (D còn tự đưa Y về 0); B lấy nhầm −30 thành +30 rồi cộng 60. G91: lấy vị trí đang đứng cộng lượng dịch.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Dao ở X10, khối ghi X25</th><th>Dao tới</th></tr></thead>
+<tbody>
+<tr><td>G90 (tuyệt đối)</td><td>X25, đo từ W</td></tr>
+<tr><td>G91 (tương đối)</td><td>X35 = 10 + 25</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 2: G41/G42 và G43 cùng có H</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc3-c6" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc3-c6" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Phay biên dạng ngoài, nhìn từ trên xuống dao đi <strong>cùng chiều kim đồng hồ</strong> quanh chi tiết, dao phải nằm phía ngoài. Lệnh bù cần gọi là:</p>
+<input type="radio" name="cnc3-q6" id="cnc3-q6a"><label for="cnc3-q6a" class="tl-opt tl-ok">A. G41</label>
+<input type="radio" name="cnc3-q6" id="cnc3-q6b"><label for="cnc3-q6b" class="tl-opt tl-no">B. G42</label>
+<input type="radio" name="cnc3-q6" id="cnc3-q6c"><label for="cnc3-q6c" class="tl-opt tl-no">C. G43</label>
+<input type="radio" name="cnc3-q6" id="cnc3-q6d"><label for="cnc3-q6d" class="tl-opt tl-no">D. G40</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đi cạnh trên theo +X: phía ngoài là +Y, tức bên <strong>trái</strong> hướng chạy dao, nên G41.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> G43 bù <em>chiều dài</em> theo Z, G40 là hủy bù. Giữa G41 và G42: đứng sau dao, nhìn theo hướng nó chạy trên cạnh trên, phía ngoài chi tiết nằm bên tay nào?</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Nhóm lệnh</th><th>Bù cái gì, theo đâu</th></tr></thead>
+<tbody>
+<tr><td>G41 / G42 (G40 hủy)</td><td>Bán kính dao, trong mặt phẳng XY</td></tr>
+<tr><td>G43 / G44 (G49 hủy)</td><td>Chiều dài dao, theo trục Z</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 3: rút dao về đâu giữa hai lỗ?</h4>
+
+<div class="tl-quiz">
+<p>Giữa lỗ thứ hai và lỗ thứ ba có một má kẹp cao hơn mặt phẳng R. Muốn mũi khoan đi qua an toàn, chu trình cần kèm:</p>
+<input type="radio" name="cnc3-q7" id="cnc3-q7a"><label for="cnc3-q7a" class="tl-opt tl-no">A. G99</label>
+<input type="radio" name="cnc3-q7" id="cnc3-q7b"><label for="cnc3-q7b" class="tl-opt tl-no">B. G80</label>
+<input type="radio" name="cnc3-q7" id="cnc3-q7c"><label for="cnc3-q7c" class="tl-opt tl-no">C. G49</label>
+<input type="radio" name="cnc3-q7" id="cnc3-q7d"><label for="cnc3-q7d" class="tl-opt tl-ok">D. G98</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> G98 rút dao về mặt phẳng ban đầu, cao hơn má kẹp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> G99 chỉ rút tới R, thấp hơn má kẹp nên va. G80 hủy chu trình, G49 hủy bù chiều dài: không lệnh nào trong hai lệnh này nâng dao qua vật cản.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Lệnh</th><th>Dùng khi</th></tr></thead>
+<tbody>
+<tr><td>G99 (về R)</td><td>Mặt phôi phẳng, không vật cản</td></tr>
+<tr><td>G98 (về mặt ban đầu)</td><td>Có bậc, gờ hoặc đồ gá nhô cao giữa các lỗ</td></tr>
+</tbody></table></div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Năm điểm chuẩn, điểm nào đổi? <small>(nói bằng lời của em trước)</small></summary><p>M, R, T/N cố định · W theo gá · P theo dao.</p></details>
+<details class="tl-details"><summary>2. Một khối lệnh FANUC gồm những địa chỉ nào? <small>(nói bằng lời của em trước)</small></summary><p>N · G · X Y Z · M · S · F · T, kết thúc bằng dấu ;</p></details>
+<details class="tl-details"><summary>3. G90 khác G91 thế nào? <small>(nói bằng lời của em trước)</small></summary><p>G90: tọa độ so với W. G91: lượng dịch so với điểm trước.</p></details>
+<details class="tl-details"><summary>4. Bù bán kính và bù chiều dài: lệnh gọi, lệnh hủy? <small>(nói bằng lời của em trước)</small></summary><p>G41/G42 → G40 · G43/G44 → G49 · đều kèm H.</p></details>
+<details class="tl-details"><summary>5. G81, G83, G73, G84, G74, G89 làm gì? <small>(nói bằng lời của em trước)</small></summary><p>Khoan một lần · khoan sâu từng lát · khoan cao tốc bẻ phoi · tarô ren phải · tarô ren trái · doa có dừng.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: bốn góc của tấm phôi</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đề bài</p>
+<p>Phay viền ngoài tấm phôi chữ nhật 60 × 40 mm, sâu 2 mm (Hình 1). Gốc W đặt ở tâm, trên mặt phôi. Dao đi theo thứ tự góc 1 → 2 → 3 → 4 → 1. Viết tọa độ G90 của bốn góc, chiều sâu Z, và lượng dịch G91 của từng đoạn. (Bỏ qua bán kính dao: phần đó để G41/G42 lo.)</p>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"60 × 40 mm"</td><td>nửa cạnh: 30 và 20 → khoảng cách từ tâm</td></tr>
+<tr><td>"W ở tâm, trên mặt phôi"</td><td>góc bên trái/dưới mang dấu âm; mặt phôi là Z0</td></tr>
+<tr><td>"sâu 2 mm"</td><td>đáy nằm dưới mặt phôi → Z âm</td></tr>
+<tr><td>"tọa độ G90… lượng dịch G91"</td><td>G90 so với W; G91 = điểm sau − điểm trước</td></tr>
+</tbody></table></div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li>G90: góc 1 $(-30;\ -20)$, góc 2 $(30;\ -20)$, góc 3 $(30;\ 20)$, góc 4 $(-30;\ 20)$.</li>
+<li>Chiều sâu: $Z = -2$.</li>
+<li>G91: 1 → 2: X60 · 2 → 3: Y40.</li>
+<li>Viết đoạn chương trình: <code>G90 G00 X-30 Y-20;</code> · <code>G01 Z-2 F100;</code> rồi <code>X30;</code> · <code>Y20;</code> · <code>X-30;</code> · <code>Y-20;</code></li>
+<li><strong>Kiểm tra:</strong> tổng các lượng dịch G91 của một vòng kín phải bằng 0: $60 + 0 - 60 + 0 = 0$ theo X, $0 + 40 + 0 - 40 = 0$ theo Y.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — vẫn tấm phôi ấy, tính tiếp hai đoạn cuối theo G91.</p>
+<ol class="tl-steps">
+<li>3 → 4: lấy góc 4 trừ góc 3 theo X.</li>
+<li><strong>Bước 2 (em điền):</strong> 4 → 1: lượng dịch theo Y $= \;?$</li>
+</ol>
+<details class="tl-details"><summary>Xem kết quả</summary><p>3 → 4: $-30 - 30 = -60$ → X-60. 4 → 1: $-20 - 20 = -40$ → Y-40.</p></details></div>
+
+<h4>Thử sức đổi gốc</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc3-c8" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc3-c8" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Phôi 60 × 40 mm, góc 1 dưới trái, góc 3 trên phải (Hình 1). Gá lại, lần này chọn W ở <strong>góc 1</strong>. Tọa độ G90 của góc 3 là:</p>
+<input type="radio" name="cnc3-q8" id="cnc3-q8a"><label for="cnc3-q8a" class="tl-opt tl-no">A. $(30;\ 20)$</label>
+<input type="radio" name="cnc3-q8" id="cnc3-q8b"><label for="cnc3-q8b" class="tl-opt tl-ok">B. $(60;\ 40)$</label>
+<input type="radio" name="cnc3-q8" id="cnc3-q8c"><label for="cnc3-q8c" class="tl-opt tl-no">C. $(-60;\ -40)$</label>
+<input type="radio" name="cnc3-q8" id="cnc3-q8d"><label for="cnc3-q8d" class="tl-opt tl-no">D. $(90;\ 60)$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Góc 3 cách góc 1 đúng một chiều dài và một chiều rộng: $(60;\ 40)$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A giữ tọa độ cũ khi W ở tâm; C lấy ngược dấu; D cộng nhầm tọa độ cũ vào. Đặt bút ở góc 1, đi tới góc 3 bao nhiêu mm theo X, theo Y?</p></div>
+</div>
+
+<h3>VI. Xưởng thực tập và tổng kết</h3>
+
+<div class="tl-box">
+<p class="tl-label">🛠️ Bài tập lập trình: chương trình O0005</p>
+<p>Phay biên dạng ngoài sâu 2 mm, khoan 4 lỗ sâu 6 mm, hai dao, kiểm tra bằng mô phỏng.</p>
+<ul>
+<li>Đầu chương trình: <code>G17 G90</code>; dao T02, <code>G43 H02</code>, <code>S1000 M03</code>, tiếp cận từ vị trí an toàn.</li>
+<li>Biên dạng: G01 + G02, bù <code>G41 H12</code>, hủy bằng <code>G40</code> khi dao rời đường bao.</li>
+<li>Khoan: dao T04, <code>G43 H04</code>, <code>G99 G73 Z-6 R5 P1000 Q3 F100</code>.</li>
+<li>Tâm lỗ: X12 Y25 · X25 Y38 · X38 Y25 · X25 Y12; kết thúc <code>M30</code>.</li>
+<li>Nộp file <strong>.NC</strong> + ảnh mô phỏng 3D không còn va chạm, lỗi quỹ đạo.</li>
+</ul>
+</div>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: trong O0005, lệnh nào bật trục chính, lệnh nào kết thúc?</summary>
+<p>S1000 M03: trục chính quay thuận 1000 vòng/phút. M30: kết thúc chương trình.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: dời W từ tâm sang góc 1, các lượng dịch G91 của bài toán mẫu có đổi không?</summary>
+<p>Không. G91 chỉ phụ thuộc hiệu giữa hai điểm liên tiếp; dời W làm mọi tọa độ G90 cùng dịch một lượng nên hiệu không đổi.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: bốn lỗ của O0005 nằm trên vòng tròn nào? Nếu đặt W ở tâm vòng đó, tọa độ G90 các lỗ là gì?</summary>
+<p>Tâm $(25;\ 25)$, bán kính $13\ \text{mm}$. Đổi gốc: $(-13;\ 0)$, $(0;\ 13)$, $(13;\ 0)$, $(0;\ -13)$. Khoảng cách hai lỗ kề nhau: $13\sqrt{2} \approx 18{,}4\ \text{mm}$.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>M, R, T/N cố định · W theo gá · P theo dao.</li>
+<li>Khối lệnh: N G X Y Z M S F T ;</li>
+<li>G90 so với W · G91 so với điểm trước.</li>
+<li>G17 XY · G00 nhanh · G01 thẳng · G02 cùng / G03 ngược kim đồng hồ.</li>
+<li>G41/G42 bán kính · G43/G44 chiều dài · H chọn ô bù.</li>
+<li>G98 về đầu · G99 về R · F tarô = S × bước ren.</li>
+<li>Đọc đề: tìm W, dấu X Y, chiều sâu Z trước.</li>
+</ul>
+</div>
