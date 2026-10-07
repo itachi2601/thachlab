@@ -226,6 +226,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 
+- **Đã chạy 7/10/2026:** `20261007070000_rls_backup_tables.sql` — bật RLS + revoke anon trên 7 bảng sao lưu (Supabase báo CRITICAL `rls_disabled_in_public` 3/10). Chạy tay thêm `revoke all on question_bank_grade_fix_20261005 from anon, authenticated` (bảng này đã có RLS, chỉ thu quyền). Kiểm lại: 0 bảng `*_backup_*`/`*_fix_*` thiếu RLS. Rollback ở cuối file.
 - **Chờ chạy:** `20261006180000_similar_bank_questions.sql` — RPC `get_similar_bank_questions(p_topic_id, p_form, p_exclude_ids, p_limit)` SECURITY DEFINER cho HS đã đăng nhập lấy câu tương tự (chủ đề + con 1 tầng, ưu tiên cùng Dạng, loại essay, ≤10 câu). **Trả cả đáp án** — chỉ dùng cho bài luyện tự chấm. Kèm index `idx_question_bank_topic_form_active`. Rollback ở cuối file.
 - **Đã chạy 6/10/2026:** `20261005140000_weakest_topics.sql` — RPC `get_my_weakest_topics` cho thẻ "3 kỹ năng yếu nhất" (`WeakestSkillsCard`, trang chủ HS `/tai-khoan`). Thẻ tự ẩn khi RPC chưa có. Rollback ở cuối file.
 - **Chờ chạy:** `20261005100000_bank_grade_lop10.sql` — gắn `grade='10'` cho 6.262 câu `question_bank` (277 đề lớp 10, grade đang rỗng). Rollback ở cuối file. Sau đó còn ~10,5k câu chưa có mức độ → `backfill-question-bank-difficulty.mts`.

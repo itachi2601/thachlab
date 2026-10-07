@@ -96,6 +96,9 @@ và cũng không có `SUPABASE_SERVICE_ROLE_KEY` / mật khẩu DB. Khóa servic
   chỉ lưu trữ cặp 0,9–<1,00, rồi **quét lại ngay và lặp tới khi không còn cặp 1,00**. Mỗi đợt một bảng sao lưu tên khác
   (`question_bank_dedup_backup_<ngày>[b|c]`). Truy vấn đếm theo từng dải trên cả khối dễ bị gateway 524 — chỉ đếm dải ≥0,9.
 
+## Bảng mới tạo trong `public` — bật RLS ngay trong cùng file
+- 2026-10-07 · Supabase báo CRITICAL `rls_disabled_in_public` (3/10): 8 bảng sao lưu (`*_backup_*`, `*_fix_*`) tạo bằng `create table ... as select` không có RLS nên khoá `anon` đọc/ghi/xoá được. Mọi `create table` trong `public` (kể cả bảng sao lưu tạm) phải kèm `alter table ... enable row level security` và `revoke all ... from anon, authenticated` ngay trong file migration; bảng sao lưu không cần policy (service_role/postgres vẫn bypass). Sau mỗi đợt dọn dữ liệu, kiểm: `select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind=chr(114) and not c.relrowsecurity` phải trả 0 dòng.
+
 ## Sau khi migration chạy xong
 - Sinh lại sơ đồ bảng: `node scripts/gen-database-doc.mjs` (ghi `docs/DATABASE.md` + `DATABASE-RPC.md`),
   rồi chuyển mục vừa chạy từ "ĐANG CHỜ" trong `docs/STATE.md` sang `docs/STATE-archive.md`.

@@ -21,6 +21,7 @@ FILES=(
   "supabase/migrations/20261006120000_thpt_fee_ledger.sql|Sổ học phí theo tháng, ẩn mặc định (staff_visible=false, không menu)|Bất kỳ lúc nào (bảng mới, không đụng dữ liệu cũ)"
   "supabase/migrations/20261006180000_similar_bank_questions.sql|Tạo RPC get_similar_bank_questions (câu tương tự cho HS, trả cả đáp án — chỉ bài luyện tự chấm) + index (topic_id, form) partial|Bất kỳ lúc nào (chỉ tạo hàm + index nhỏ)"
 )
+# ĐÃ CHẠY 7/10/2026: 20261007070000_rls_backup_tables
 # ĐÃ CHẠY 4/10/2026 22:58: 20261004120000_phu_dao_hang_cho, 20261004130000_phu_dao_xem_lai_ly_thuyet, 20261004230000_thpt_course_pairs
 # ĐÃ CHẠY 4/10/2026: 20261004100000_bank_grade_thi_thu_tn
 # ĐÃ CHẠY 3/10/2026 22:57: 20261003130000_parent_attendance_announcements, 20261003140000_rank_theory_rp, 20261003150000_phu_dao_kiem_tra_cuoi_buoi
