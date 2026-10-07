@@ -1,0 +1,530 @@
+/* ======================================================================
+   SÁCH VẬT LÍ 10 — CHƯƠNG 2 · ĐỘNG HỌC · A4 đen–trắng, tự học có chỗ ghi
+   Quy tắc: không dùng màu; phân cấp bằng nét, độ đậm, đảo nền (trắng trên đen),
+   khung có bóng cứng (offset shadow) và chỗ chấm để viết.
+   ====================================================================== */
+:root{
+  --ink:#0d0d0d; --g1:#3a3a3a; --g2:#6a6a6a; --g3:#9a9a9a; --g4:#d9d9d9; --g5:#f0f0f0;
+  --body:'Be Vietnam Pro',system-ui,sans-serif;
+  --disp:'Bricolage Grotesque','Be Vietnam Pro',sans-serif;
+  --hand:'Caveat','Be Vietnam Pro',cursive;
+  --pitch:8mm;                       /* khoảng cách dòng chấm: vừa chữ viết tay */
+}
+@page{size:A4}
+
+/* ---------- Trang: bài học (cột chính + cột ghi chú ngoài lề) ---------- */
+@page lesson:right{margin:17mm 20mm 20mm 20mm}
+@page lesson:left {margin:17mm 20mm 20mm 20mm}
+@page lesson:first{margin:17mm 20mm 20mm 20mm}
+@page work{margin:17mm 18mm 20mm 18mm}
+@page keys{margin:15mm 14mm 18mm 14mm}
+
+/* Đầu trang / chân trang */
+@page lesson{
+  @top-left{content:string(chap);font:700 7.6pt/1 var(--body);letter-spacing:.14em;color:var(--g2);text-align:left;vertical-align:bottom;padding-bottom:3mm}
+  @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
+  @bottom-center{content:string(map);font:400 7.6pt/1 var(--body);letter-spacing:.2em;color:var(--ink);vertical-align:top;padding-top:6mm}
+}
+@page lesson:right{@bottom-right{content:counter(page);font:800 9.6pt/1 var(--disp);color:var(--ink);text-align:right;vertical-align:top;padding:5mm 0 0 0}}
+@page lesson:left {@bottom-left{content:counter(page);font:800 9.6pt/1 var(--disp);color:var(--ink);text-align:left;vertical-align:top;padding:5mm 0 0 0}}
+@page work{
+  @top-left{content:string(chap);font:700 7.6pt/1 var(--body);letter-spacing:.14em;color:var(--g2);vertical-align:bottom;padding-bottom:3mm}
+  @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
+  @bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:5mm}
+}
+@page keys{
+  @top-left{content:string(chap);font:700 7.6pt/1 var(--body);letter-spacing:.14em;color:var(--g2);vertical-align:bottom;padding-bottom:3mm}
+  @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
+  @bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:4mm}
+}
+.lesson{string-set:chap attr(data-chap),lesson attr(data-lesson),map attr(data-map)}
+
+/* Cột ghi chú: nền trang + nhãn */
+.pagedjs_page{position:relative}
+.pagedjs_lesson_page.pagedjs_right_page{background:url(../assets/notes-right.svg) 0 0/210mm 297mm no-repeat}
+.pagedjs_lesson_page.pagedjs_left_page{background:url(../assets/notes-left.svg) 0 0/210mm 297mm no-repeat}
+.pagedjs_lesson_page::before{content:"GHI CHÚ\A từ khoá, chỗ chưa hiểu…";white-space:pre;position:absolute;top:13.4mm;
+  font:700 7.6pt/1.7 var(--body);letter-spacing:.14em;color:var(--g1)}
+.pagedjs_lesson_page::first-line{font-weight:700}
+.pagedjs_lesson_page.pagedjs_right_page::before{left:145mm}
+.pagedjs_lesson_page.pagedjs_left_page::before{left:18mm}
+.pagedjs_lesson_page.pagedjs_first_page::before{display:none}
+
+/* ---------- Chữ ---------- */
+html{font-family:var(--body);font-size:9.6pt;line-height:1.62;color:var(--ink);hyphens:manual;text-align:left}
+body{margin:0;font-variant-numeric:lining-nums}
+p{margin:0 0 2.4mm;orphans:2;widows:2}
+strong,b{font-weight:700}
+em{font-style:italic}
+sub,sup{font-size:.72em;line-height:0}
+.katex{font-size:1.04em}
+.katex-display{margin:2.2mm 0;overflow:visible}
+svg{color:var(--ink)}
+.ic{width:1.18em;height:1.18em;vertical-align:-.22em}
+.ico{display:inline-block;margin-right:.35em}
+.tick{font-family:'Be Vietnam Pro';font-weight:700}
+.cn{display:inline-block;width:1.2em;height:1.2em;line-height:1.2em;border:.8pt solid var(--ink);border-radius:50%;text-align:center;font-size:.72em;font-weight:700;vertical-align:.1em}
+.cb{display:inline-block;width:3.1mm;height:3.1mm;border:.9pt solid var(--ink);vertical-align:-.5mm;margin:0 .6mm}
+.blank{display:inline-block;min-width:16mm;border-bottom:.9pt dotted var(--ink);vertical-align:baseline;height:1em}
+.blank.wide{min-width:30mm}
+ul,ol{margin:0 0 2.6mm;padding-left:5.2mm}
+li{margin:0 0 1mm}
+ul{list-style:none}
+ul>li{position:relative}
+ul>li::before{content:"";position:absolute;left:-4.4mm;top:.62em;width:1.7mm;height:1.7mm;background:var(--ink)}
+ol>li::marker{font-weight:700}
+.kref{font-size:7.6pt;font-weight:700;color:var(--g2);margin-left:1.5mm;vertical-align:baseline}
+
+/* ---------- Mở đầu bài ---------- */
+.lesson{page:lesson}
+.lopen{margin:0 -70mm 0 -18mm;height:100mm;background:#000;color:#fff;position:relative;padding:11mm 18mm 0 18mm;overflow:hidden;
+  break-after:avoid}
+.lopen::before{content:"";position:absolute;inset:0;background:url(../assets/strobe.svg) right 8mm top 16mm/98mm auto no-repeat;opacity:.85}
+.lo-top{position:relative;display:flex;justify-content:space-between;width:122mm;font:700 7.6pt/1 var(--body);letter-spacing:.18em;border-bottom:.8pt solid #fff;padding-bottom:2.6mm}
+.lo-num{position:absolute;left:15mm;top:17mm;font:800 112pt/1 var(--disp);color:transparent;-webkit-text-stroke:.9pt #fff;letter-spacing:-.02em}
+.lo-title{position:absolute;left:18mm;bottom:12mm;width:118mm;margin:0;font:800 25pt/1.04 var(--disp);letter-spacing:-.01em;color:#fff}
+.lo-qr{position:absolute;right:18mm;bottom:12mm;display:flex;align-items:flex-end;gap:3mm;flex-direction:row-reverse;color:#fff}
+.lo-qr .qr{display:block;width:21mm;height:21mm;background:#fff;padding:1.6mm}
+.lo-qr .qr svg{width:100%;height:100%;display:block}
+.qr-t{font:500 7.6pt/1.35 var(--body);text-align:right;letter-spacing:.04em}
+
+.objectives{margin:7mm 0 3mm;padding:3.4mm 4mm 2.2mm;border:1.4pt solid var(--ink);box-shadow:1.4mm 1.4mm 0 var(--ink);break-inside:avoid;background:#fff}
+.ob-h{font:800 8.4pt/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2.2mm}
+.objectives ul{margin-bottom:1.5mm}
+.ob-t{font-size:8.4pt;color:var(--g1);margin:0;font-style:italic}
+
+/* ---------- Đề mục ---------- */
+h3{display:flex;align-items:center;gap:3.2mm;margin:9mm 0 3.2mm;break-after:avoid;border-bottom:1.6pt solid var(--ink);padding-bottom:2mm;font-size:inherit}
+h3 .rn{flex:none;min-width:9.5mm;height:9.5mm;padding:0 1mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 11.6pt/9.5mm var(--disp);text-align:center}
+h3 .ht{font:800 13.6pt/1.15 var(--disp);letter-spacing:-.005em}
+h4{display:flex;gap:2.4mm;align-items:baseline;margin:6mm 0 2mm;break-after:avoid;font:700 9.6pt/1.3 var(--disp)}
+h4 .n{flex:none;width:6.2mm;height:6.2mm;border-radius:50%;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 8.4pt/6.2mm var(--body);text-align:center;transform:translateY(-.3mm)}
+h4.trap{align-items:center}
+h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:800 7.6pt/1.2 var(--disp);letter-spacing:.16em;transform:rotate(-3deg);background:#fff;box-shadow:.8mm .8mm 0 var(--ink)}
+
+/* ---------- Khung nội dung ---------- */
+.key{position:relative;margin:4.2mm 0 3.4mm;padding:3mm 3.4mm 2.4mm;border:1.4pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);break-inside:avoid;background:#fff}
+.key-l{position:absolute;top:-2.5mm;left:3mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 7.6pt/1 var(--disp);letter-spacing:.16em;padding:.9mm 2mm}
+.key p{margin:0;font-weight:700}
+
+.quiz{position:relative;margin:4mm 0;padding:3mm 3.4mm 2.4mm;border:1.1pt dashed var(--ink);break-inside:avoid}
+.q-h{display:flex;align-items:center;gap:2.4mm;margin-bottom:1.8mm}
+.q-tag{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 7.6pt/1 var(--disp);letter-spacing:.14em;padding:1.1mm 2.2mm}
+.q-sub{font:500 7.6pt/1 var(--body);color:var(--g2)}
+.q-t p{margin:0 0 1.6mm}
+.opts{list-style:none;margin:1.2mm 0 1.6mm;padding:0;display:grid;gap:1.2mm 4mm}
+.opts.short{grid-template-columns:1fr 1fr}
+.opts li{margin:0;display:flex;gap:2mm;align-items:baseline}
+.opts li::before{display:none}
+.ob{flex:none;width:5.2mm;height:5.2mm;border:1pt solid var(--ink);border-radius:50%;text-align:center;font:700 7.6pt/5.0mm var(--body);transform:translateY(.2mm)}
+.ot{min-width:0}
+.q-f{display:flex;justify-content:space-between;align-items:baseline;border-top:.7pt dotted var(--g2);margin-top:1.6mm;padding-top:1.4mm;font-size:8.4pt}
+.q-k{font-size:7.6pt;color:var(--g2)}
+.conf{font-size:8.4pt;color:var(--g1);margin:3mm 0 -2mm;text-align:right}
+
+.think{margin:4mm 0;padding:3mm 3.4mm 1.4mm;border:1.1pt dashed var(--ink)}
+.th-h{font:800 9.6pt/1.3 var(--disp);letter-spacing:.02em;margin-bottom:2mm}
+.think.trabai{border:1.4pt solid var(--ink);background:var(--g5)}
+.think.trabai .th-h{display:inline-block;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:1.2mm 2.6mm;margin-bottom:2.6mm}
+
+.selfq{margin:3mm 0;padding-left:3.2mm;border-left:2.4pt solid var(--ink);break-inside:avoid}
+.sq-h{display:flex;gap:2.4mm;align-items:flex-start;font-weight:700;font-size:9.6pt;line-height:1.45}
+.sq-n{flex:none;min-width:5.2mm;height:5.2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 7.6pt/5.2mm var(--body);text-align:center;margin-top:.4mm}
+.sq-k{font-size:7.6pt;color:var(--g2);margin-top:1mm}
+
+.reveal{margin:3.6mm 0;border:1pt solid var(--ink)}
+.rv-h{background:var(--g4);padding:1.6mm 3mm;font:800 8.4pt/1.3 var(--disp);letter-spacing:.04em}
+.rv-b{padding:2.4mm 3mm 0.4mm}
+.rv-b>*:last-child{margin-bottom:1.4mm}
+.sol-inline .rv-h{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink)}
+
+.challenge{margin:4mm 0;border:1.4pt solid var(--ink);padding:0 3.4mm 1mm;position:relative;break-inside:avoid}
+.ch-h{margin:0 -3.4mm 2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:1.4mm 3.4mm;font:800 8.4pt/1.2 var(--disp);letter-spacing:.16em}
+.ch-i{margin-bottom:2mm;break-inside:avoid}
+.ch-q{font-size:9.6pt}
+
+.exp{margin:4.4mm 0;border:1.5pt solid var(--ink);break-inside:avoid}
+.exp .tbl{margin:2mm 3mm 3mm;width:calc(100% - 6mm)}
+.exp-h{display:flex;justify-content:space-between;align-items:center;gap:3mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:1.6mm 3mm;font:800 8.4pt/1.2 var(--disp);letter-spacing:.03em}
+.simtag{flex:none;font:700 7.6pt/1 var(--body);letter-spacing:.1em;text-transform:uppercase;border:.8pt solid currentColor;padding:.8mm 1.8mm}
+.exp>p,.exp>ul{margin:2mm 3mm 0}
+.step{display:grid;grid-template-columns:19mm 1fr;border-top:.7pt solid var(--g3);padding:1.8mm 3mm;gap:2mm}
+.step:first-of-type{border-top:none}
+.st-l{font:800 7.6pt/1.5 var(--disp);letter-spacing:.1em;text-transform:uppercase}
+.st-b{min-width:0}
+.st-b>*:last-child,.step p{margin-bottom:0}
+.exp-w{border-top:.7pt dashed var(--g2);padding:1.4mm 3mm 1mm;font-size:7.6pt;font-weight:700;color:var(--g1)}
+.exp-w .dl{margin-top:-1mm}
+
+.problem{margin:4mm 0;padding:2.6mm 3.4mm 1mm;border-left:3pt solid var(--ink);background:var(--g5);break-inside:avoid}
+.pb-h{font:800 7.6pt/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.6mm}
+
+.takeaway{margin:6mm 0 2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:4mm 5mm 2.6mm;break-inside:avoid}
+.takeaway .tk-h{font:800 9.6pt/1.1 var(--disp);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2.4mm;border-bottom:.8pt solid #fff;padding-bottom:1.6mm}
+.takeaway ul>li::before{background:#fff}
+.takeaway .katex{font-size:1.02em}
+
+/* ---------- Bảng ---------- */
+.tbl{width:100%;border-collapse:collapse;margin:3mm 0 4mm;font-size:8.4pt;line-height:1.45}
+.tbl tr{break-inside:avoid}
+.tbl th{font-weight:700;text-align:left;padding:1.6mm 2mm;border-top:1.5pt solid var(--ink);border-bottom:.9pt solid var(--ink);background:var(--g5)}
+.tbl td{padding:1.5mm 2mm;border-bottom:.5pt solid var(--g3);vertical-align:top}
+.tbl tr:last-child td{border-bottom:1.5pt solid var(--ink)}
+.tbl.data td:first-child{font-style:italic}
+.tbl p{margin:0}
+
+/* ---------- Hình ---------- */
+.fig{position:relative;margin:4mm 0;padding:2.4mm 2.4mm 2mm;border:.9pt solid var(--ink);break-inside:avoid;text-align:center;background:#fff}
+.fig svg{display:block;width:100%;height:auto;max-height:92mm;margin:0 auto}
+.fig figcaption{margin-top:1.6mm;padding-top:1.4mm;border-top:.6pt solid var(--g3);font-size:8.4pt;line-height:1.45;text-align:left;color:var(--g1)}
+.fig-sim{position:absolute;top:-2.4mm;right:2.4mm;background:#fff;color:var(--ink)}
+.fig .simtag{font-size:7.6pt}
+
+/* ---------- Chỗ chấm để viết ---------- */
+.dl{display:grid;margin:1.4mm 0 .6mm}
+.dl i{display:block;height:var(--pitch);border-bottom:.9pt dotted var(--g2)}
+
+/* ---------- Bài tập mẫu / tự luyện ---------- */
+.btsec{page:lesson;break-before:page}
+.tlsec{page:work;break-before:page}
+.sec-band{margin:-4mm -70mm 5mm -18mm;padding:5.5mm 18mm 4.5mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+.tlsec .sec-band{margin:-4mm -18mm 6mm -18mm}
+.sb-k{font:800 13.6pt/1 var(--disp);letter-spacing:.14em}
+.sb-t{font:500 7.6pt/1.2 var(--body);letter-spacing:.04em;max-width:62mm;text-align:right}
+.btsec .sec-band{width:auto}
+.dang{margin:0 0 7mm}
+.dang-h{display:flex;align-items:center;gap:3mm;flex-wrap:wrap;border-bottom:1.6pt solid var(--ink);padding-bottom:2mm;margin-bottom:3mm;break-after:avoid}
+.dang-n{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 8.4pt/1 var(--disp);letter-spacing:.14em;padding:1.8mm 3mm}
+.lvl{font:800 7.6pt/1 var(--disp);letter-spacing:.12em;border:1.1pt solid var(--ink);padding:1.4mm 2.4mm}
+.dang-h h3{all:unset;flex:1 0 100%;font:800 11.6pt/1.2 var(--disp);display:block}
+.de,.pt,.try,.sol{position:relative;margin:0 0 3.6mm}
+.de-l,.pt-l,.try-l,.sol-l{display:inline-block;font:800 7.6pt/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.6mm;padding:1mm 2.2mm}
+.de-l{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink)}
+.pt-l,.try-l{border:1.1pt solid var(--ink)}
+.sol-l{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink)}
+.sol-l small{font:500 7.6pt var(--body);letter-spacing:.02em;text-transform:none}
+.de{padding:0}
+.de ol{padding-left:6mm}
+.de ol[type=a]{list-style:lower-alpha}
+.sol{border-top:2pt solid var(--ink);padding-top:2.4mm}
+.try .dl{margin-top:0}
+.recall{border:1pt dashed var(--ink);padding:2.2mm 3mm .6mm;margin:0 0 3mm;font-size:9.6pt;break-inside:avoid}
+.rc-h{font:800 7.6pt/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4mm}
+.recall ol{margin-bottom:1mm}
+.bt-step{margin:0 0 2.6mm;padding-left:8.6mm;position:relative;break-inside:avoid}
+.bt-step-title{display:flex;font-weight:700;margin:0 0 1mm}
+.bt-step-n{position:absolute;left:0;top:-.2mm;width:6.2mm;height:6.2mm;border-radius:50%;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 8.4pt/6.2mm var(--body);text-align:center}
+.bt-ans{display:inline-block;border:1.1pt solid var(--ink);padding:0 3mm;margin:.4mm 0 1.4mm;background:#fff}
+.bt-ans .katex-display{margin:1.4mm 0}
+.bt-final{border:1.5pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);padding:2.4mm 3.6mm 1mm;margin:3.4mm 1.3mm 3mm 0;break-inside:avoid}
+.bt-final p:first-child{font:800 7.6pt/1 var(--disp);letter-spacing:.18em;text-transform:uppercase}
+.bt-note{font-size:8.4pt;color:var(--g1);font-style:italic}
+
+.tl-prob{border:1.2pt solid var(--ink);margin:0 0 5mm;break-inside:avoid}
+.tp-h{display:flex;align-items:center;gap:3mm;padding:2mm 3mm;border-bottom:1pt solid var(--ink);background:var(--g5)}
+.tp-n{background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 8.4pt/1 var(--disp);letter-spacing:.14em;padding:1.5mm 2.6mm}
+.tp-k{margin-left:auto;font-size:7.6pt;color:var(--g2)}
+.tp-t{padding:2.6mm 3.4mm 0}
+.tp-t p{margin:0 0 1.8mm}
+.pimg{display:block;max-width:100%;max-height:62mm;margin:1mm auto 2mm}
+.tp-w{padding:0 3.4mm 1.4mm}
+.tp-w .dl{margin-top:0}
+
+/* ---------- Đáp án ---------- */
+.keys-wrap{page:keys;break-before:page}
+.keys{font-size:8.4pt;line-height:1.5}
+.keys-h{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.8pt solid var(--ink);padding-bottom:2.4mm;margin-bottom:4mm}
+.keys-tag{font:800 17pt/1 var(--disp);letter-spacing:.1em}
+.keys-tip{font-size:7.6pt;color:var(--g1);max-width:80mm;text-align:right;font-style:italic}
+.keys-c{column-count:2;column-gap:9mm;column-rule:.5pt dotted var(--g3)}
+.k{break-inside:avoid;margin:0 0 3.4mm}
+.k-h{display:flex;align-items:center;gap:2mm;margin-bottom:1mm;border-bottom:.6pt solid var(--g3);padding-bottom:.8mm}
+.k-n{flex:none;min-width:5mm;height:5mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 7.6pt/5mm var(--body);text-align:center}
+.k-t{font:800 8.4pt/1.1 var(--disp);flex:1}
+.k-t small{font:400 7.6pt var(--body);color:var(--g2);margin-left:1mm}
+.k-a{flex:none;width:6mm;height:6mm;border:1.4pt solid var(--ink);border-radius:50%;text-align:center;font:800 8.4pt/5.4mm var(--disp)}
+.k-b p{margin:0 0 1mm}
+.k-no{color:var(--g1)}
+.k-b .katex{font-size:1em}
+.k-b ul,.k-b ol{margin-bottom:1mm}
+.k-b img{max-width:100%;max-height:40mm}
+
+.table-scroll{display:block}
+.src{font-size:7.6pt;color:var(--g2);font-style:italic}
+.sub-l{font-weight:800;margin-right:1mm}
+.tp-t p{font-weight:400}
+
+/* ======================================================================
+   PHẦN ĐẦU / CUỐI SÁCH
+   ====================================================================== */
+@page cover{margin:0}
+@page plain{margin:17mm 18mm 18mm 18mm}
+@page chapter{margin:0}
+@page free{margin:17mm 18mm 20mm 18mm}
+@page free{@bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:5mm}}
+@page plain{@bottom-center{content:counter(page);font:700 8.4pt/1 var(--body);color:var(--g2);vertical-align:top;padding-top:5mm}}
+
+.cover{page:cover;position:relative;width:210mm;height:297mm;background:#000;color:#fff;overflow:hidden;break-after:page}
+.cv-art{position:absolute;left:10mm;top:150mm;width:190mm}
+.cv-art svg{width:190mm;height:auto;display:block}
+.cv-top{position:absolute;left:18mm;right:18mm;top:15mm;display:flex;justify-content:space-between;font:700 8.4pt/1 var(--body);letter-spacing:.24em;border-bottom:.9pt solid #fff;padding-bottom:3mm}
+.cv-num{position:absolute;left:12mm;top:26mm;font:800 205pt/1 var(--disp);color:transparent;-webkit-text-stroke:1.1pt #fff;letter-spacing:-.04em}
+.cv-title{position:absolute;left:18mm;top:78mm;margin:0;font:800 74pt/.9 var(--disp);letter-spacing:-.02em;color:#fff}
+.cv-sub{position:absolute;left:18mm;top:130mm;width:105mm;margin:0;font:500 9.6pt/1.45 var(--body);color:#fff}
+.cv-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;justify-content:space-between;align-items:flex-end;border-top:.9pt solid #fff;padding-top:4mm}
+.cv-rules{display:flex;gap:6mm;font:800 8.4pt/1 var(--disp);letter-spacing:.18em}
+.cv-rules span+span::before{content:"→";margin-right:6mm;font-weight:400}
+.cv-brand{text-align:right;font:500 8.4pt/1.5 var(--body)}.cv-brand b{display:block;font:800 13.6pt/1 var(--disp);letter-spacing:.14em}
+.cv-tag{position:absolute;right:18mm;top:132mm;border:1pt solid #fff;padding:1.4mm 3mm;font:800 7.6pt/1 var(--disp);letter-spacing:.2em;transform:rotate(-4deg)}
+
+.plain{page:plain;break-before:page}
+.pg-h{margin:0 0 6mm;font:800 24pt/1.05 var(--disp);letter-spacing:-.01em;border-bottom:2pt solid var(--ink);padding-bottom:3mm;display:block}
+.pg-k{display:block;font:700 7.6pt/1 var(--body);letter-spacing:.24em;margin-bottom:3mm;color:var(--g1)}
+.lead{font-size:9.6pt;line-height:1.6;margin:0 0 6mm;max-width:150mm}
+.note-box{border:1.4pt solid var(--ink);box-shadow:1.4mm 1.4mm 0 var(--ink);padding:3.4mm 4.4mm;margin:6mm 1.4mm 6mm 0;font-size:9.6pt;line-height:1.55}
+.dl-lab{font:800 8.4pt/1.3 var(--disp);letter-spacing:.06em;margin:6mm 0 1mm}
+.steps4{list-style:none;padding:0;margin:0 0 4mm;display:grid;gap:5mm}
+.steps4>li{display:grid;grid-template-columns:11mm 1fr;gap:4mm;margin:0}
+.steps4>li::before{display:none}
+.s4-n{display:inline-block;width:9mm;height:9mm;border-radius:50%;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 11.6pt/9mm var(--disp);text-align:center}
+.steps4 h4{margin:0 0 .6mm;font:800 11.6pt/1.2 var(--disp);display:block}
+.steps4 p{margin:0;font-size:9.6pt}
+
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm 7mm;margin-bottom:2mm}
+.sym{break-inside:avoid}
+.sym p{font-size:8.4pt;margin:2mm 0 0;line-height:1.45}
+.sym-demo{min-height:30mm;display:flex;align-items:center;justify-content:center}
+.sym-demo>*{width:100%;margin:0}
+.sm.key,.sm.quiz{margin:3mm 0;font-size:8.4pt}
+.sm.exp{font-size:8.4pt}.sm.selfq{font-size:8.4pt}.sm.challenge{font-size:8.4pt}
+.qrdemo .qr{display:block;width:26mm;height:26mm}.qrdemo .qr svg{width:100%;height:100%}
+
+.lg-box{display:grid;gap:3.4mm;margin:2mm 0 4mm}
+.lg-r{display:grid;grid-template-columns:44mm 38mm 1fr;align-items:center;gap:4mm;border-bottom:.6pt dotted var(--g2);padding-bottom:2.4mm}
+.lg-s .lg{width:40mm;height:8mm;display:block}
+.lg-n{font:800 9.6pt/1 var(--disp)}
+.lg-d{font-size:9.6pt;color:var(--g1)}
+.dotgrid{height:88mm;margin-top:3mm;background-image:radial-gradient(circle,var(--g2) .5pt,transparent .6pt);background-size:5mm 5mm;background-position:2.5mm 2.5mm;border:.8pt solid var(--ink)}
+.dotgrid.full{height:236mm;margin-top:0}
+
+.toc{list-style:none;padding:0;margin:0 0 10mm}
+.toc li{margin:0;display:flex;align-items:baseline;gap:4mm;padding:3.6mm 0;border-bottom:.7pt solid var(--g3);font-size:11.6pt}
+.toc li::before{display:none}
+.t-n{font:800 22pt/1 var(--disp);width:14mm;color:var(--ink);-webkit-text-stroke:0}
+.toc li.prac .t-n{color:transparent;-webkit-text-stroke:.8pt var(--ink)}
+.t-t{font:700 11.6pt/1.2 var(--disp)}
+.toc li.prac .t-t::after{content:" · thực hành";font:500 8.4pt var(--body);letter-spacing:.1em;margin-left:2mm;color:var(--g2)}
+.t-d{flex:1;border-bottom:1.2pt dotted var(--ink);transform:translateY(-1mm)}
+.t-p{font:800 13.6pt/1 var(--disp);min-width:10mm;text-align:right}
+.toc-extra{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.toc-extra div{border:1.2pt solid var(--ink);padding:3.4mm 4.4mm}
+.toc-extra b{display:block;font:800 8.4pt/1 var(--disp);letter-spacing:.16em;margin-bottom:2mm;text-transform:uppercase}
+.toc-extra span{display:block;font-size:9.6pt;line-height:1.7}
+.toc-extra span::before{content:"■ ";font-size:7.6pt;vertical-align:.15em}
+
+.metro-wrap{margin:2mm 0 6mm}
+.metro{width:100%;height:auto;display:block}
+.map-list{display:grid;grid-template-columns:1fr 1fr;gap:3mm 6mm;font-size:9.6pt}
+.map-list div{border-top:1.4pt solid var(--ink);padding-top:1.6mm}
+.map-list b{display:block;font:800 8.4pt var(--disp);letter-spacing:.06em}
+
+.chapter-open{page:chapter;position:relative;width:210mm;height:297mm;background:#000;color:#fff;overflow:hidden;break-before:page;break-after:page}
+.co-art{position:absolute;left:10mm;top:148mm;width:190mm;opacity:.9}
+.co-art svg{width:190mm;height:auto;display:block}
+.co-top{position:absolute;left:18mm;right:18mm;top:16mm;display:flex;justify-content:space-between;font:700 8.4pt/1 var(--body);letter-spacing:.24em;border-bottom:.9pt solid #fff;padding-bottom:3mm}
+.co-num{position:absolute;left:12mm;top:28mm;font:800 260pt/1 var(--disp);color:transparent;-webkit-text-stroke:1.2pt #fff;letter-spacing:-.04em}
+.co-title{position:absolute;left:18mm;top:96mm;margin:0;font:800 62pt/1 var(--disp);color:#fff;letter-spacing:-.02em}
+.co-q{position:absolute;left:18mm;top:118mm;width:160mm;margin:0;font:500 13.6pt/1.5 var(--body)}
+.co-q i{font-style:normal;border-bottom:1.4pt solid #fff}
+.co-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;gap:8mm;font:800 8.4pt/1 var(--disp);letter-spacing:.18em;border-top:.9pt solid #fff;padding-top:4mm}
+
+.warm-q{display:flex;gap:4mm;align-items:flex-start;margin:7mm 0 0;font-size:9.6pt;line-height:1.45}
+.warm-q .s4-n{flex:none}
+.free{page:free;break-before:page}
+.free-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2pt solid var(--ink);padding-bottom:2.4mm;margin-bottom:4mm}
+.free-h>span:first-child{font:800 13.6pt/1 var(--disp);letter-spacing:.14em}
+.free-t{font:500 8.4pt var(--body);color:var(--g1)}
+.sum-grid{display:grid;gap:4mm}
+.sum-b{display:grid;grid-template-columns:16mm 1fr;gap:4mm;border-top:1.4pt solid var(--ink);padding-top:2.6mm;break-inside:avoid}
+.sum-n{font:800 24pt/1 var(--disp);color:transparent;-webkit-text-stroke:.9pt var(--ink)}
+.sum-c h4{margin:0 0 1.4mm;font:800 9.6pt/1.2 var(--disp);display:block}
+.sum-c ul{margin:0;font-size:8.4pt;line-height:1.45;columns:2;column-gap:6mm}
+.sum-c li{margin:0 0 .6mm;break-inside:avoid}
+.selfeval td:not(:first-child),.selfeval th:not(:first-child){text-align:center;width:16mm}
+.selfeval td{padding:3mm 2mm}
+.selfeval .cb{width:5mm;height:5mm}
+
+.k-q{font-weight:700;font-style:italic;color:var(--g1)}
+.lead-p{font-size:9.6pt;line-height:1.62}
+.lead-p::first-letter{font:800 30pt/.8 var(--disp);float:left;margin:1.2mm 1.6mm 0 0;padding:1mm 1.4mm .8mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink)}
+
+
+/* ======================================================================
+   v2 — sách mỏng, dùng trên lớp cùng web; không nền đen chữ trắng
+   ====================================================================== */
+:root{--pitch:7.5mm}
+html{font-size:9.6pt}
+.pagedjs_lesson_page.pagedjs_right_page,.pagedjs_lesson_page.pagedjs_left_page{background:none}
+.pagedjs_lesson_page::before{display:none}
+
+.lopen{margin:0 0 5mm;height:auto;min-height:0;background:#fff;color:var(--ink);padding:0;overflow:visible;border-top:3.2pt solid var(--ink);border-bottom:.9pt solid var(--ink);
+  display:grid;grid-template-columns:44mm 1fr 27mm;grid-template-rows:auto auto;column-gap:5mm;align-items:center}
+.lopen::before{display:none}
+.lo-top{grid-column:1/-1;width:auto;border-bottom:none;padding:2.2mm 0 0;color:var(--g1);position:static}
+.lo-num{position:static;grid-row:2;font:800 80pt/.9 var(--disp);color:#ececec;-webkit-text-stroke:1.3pt var(--ink);letter-spacing:-.03em;margin:0 0 2mm}
+.lo-title{position:static;grid-row:2;width:auto;font:800 21pt/1.1 var(--disp);color:var(--ink);padding:2mm 0 3mm}
+.lo-qr{position:static;grid-row:2;display:flex;flex-direction:column;align-items:center;gap:1.2mm;color:var(--ink);padding:2mm 0 3mm}
+.lo-qr .qr{width:23mm;height:23mm;border:1pt solid var(--ink);padding:1.2mm;background:#fff}
+.qr-t{text-align:center;font:500 7.6pt/1.3 var(--body);color:var(--g1)}
+.use-row{display:flex;gap:6mm;font-size:8.4pt;line-height:1.4;margin:2mm 0 0;padding-top:2mm;border-top:.6pt dotted var(--g2)}
+.use-row b{display:block;font:800 7.6pt var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.objectives{margin-top:3mm}
+
+.cover,.chapter-open{background:#fff;color:var(--ink)}
+.cv-top,.co-top{border-bottom-color:var(--ink)}
+.cv-num,.co-num{color:#ededed;-webkit-text-stroke-color:var(--ink)}
+.cv-title,.co-title,.cv-sub,.co-q{color:var(--ink)}
+.cv-foot,.co-foot{border-top-color:var(--ink)}
+.cv-tag{border-color:var(--ink);background:#fff}
+.co-q i{border-bottom-color:var(--ink)}
+
+.takeaway{background:#fff;color:var(--ink);border:1.5pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);padding:0 4mm 1.4mm}
+.takeaway .tk-h{background:var(--g5);margin:0 -4mm 2.4mm;padding:2mm 4mm;border-bottom:1pt solid var(--ink);color:var(--ink)}
+.takeaway ul>li::before{background:var(--ink)}
+.sec-band{margin:0 0 5mm;padding:3.2mm 4mm;background:var(--g5);color:var(--ink);border-top:2.6pt solid var(--ink);border-bottom:.9pt solid var(--ink);border-left:0;border-right:0}
+.tlsec .sec-band{margin:0 0 5mm}
+.sb-t{max-width:none}
+
+.gnote{margin:4mm 0;border:1.1pt dashed var(--ink);padding:1.8mm 3mm .4mm;break-inside:avoid}
+.gn-l{font:800 7.6pt/1 var(--disp);letter-spacing:.1em;text-transform:uppercase}
+.gnote .dl{margin:.8mm 0 0}
+.q-why{font-size:8.4pt;color:var(--g1);margin:1.2mm 0 0}
+.q-why+.dl{margin-top:-1mm}
+.fig-web{display:flex;align-items:center;gap:3mm;margin-top:1.8mm;padding-top:1.6mm;border-top:.6pt dotted var(--g2);font-size:7.6pt;line-height:1.4;color:var(--g1);text-align:left}
+.qr.mini{display:block;flex:none;width:13mm;height:13mm}
+.qr.mini svg{width:100%;height:100%;display:block}
+.lg-box{max-width:150mm}
+
+/* lời giải mẫu dời về cuối bài, in gọn */
+.k-sol .recall,.k-sol .bt-note{display:none}
+.k-sol .bt-step{padding-left:6.2mm;margin:0 0 1.4mm}
+.k-sol .bt-step-n{width:4.6mm;height:4.6mm;font-size:7.6pt;line-height:4.6mm}
+.k-sol .bt-ans{padding:0 2mm;margin:0 0 1mm}
+.k-sol .katex-display{margin:.8mm 0}
+.k-sol .bt-final{margin:2mm 1mm 1mm 0;padding:1.6mm 2.4mm .4mm;box-shadow:.8mm .8mm 0 var(--ink)}
+.k-sol .bt-step-title{margin:0 0 .6mm}
+.try{margin-bottom:5mm}
+.sq-k{font-size:7.6pt;color:var(--g2);margin-top:1mm}
+
+html{font-size:9.6pt}
+@page lesson:right{margin:15mm 18mm 18mm 18mm}
+@page lesson:left{margin:15mm 18mm 18mm 18mm}
+@page lesson:first{margin:15mm 18mm 18mm 18mm}
+@page work{margin:15mm 18mm 18mm 18mm}
+.fig svg{max-height:64mm;width:88%}
+.fig{margin:3mm 0}
+.more-web{font-size:8.4pt;color:var(--g1);border:1pt dotted var(--g2);padding:2mm 3mm;text-align:center}
+h3{margin:7mm 0 2.6mm}
+h4{margin:4.6mm 0 1.6mm}
+.dang{margin-bottom:5mm}
+
+.dang-top{break-inside:avoid}
+.try{break-inside:avoid}
+.pt{break-inside:auto}
+
+/* ---------- chữ to hơn, dòng thoáng hơn ---------- */
+html{font-size:9.6pt;line-height:1.72}
+p{margin:0 0 3mm}
+li{margin:0 0 1.4mm}
+.katex{font-size:1.06em}
+.fig figcaption{font-size:8.4pt}
+.tbl{font-size:9.6pt;line-height:1.55}
+.q-t p{margin:0 0 2mm}
+.opts li{line-height:1.5}
+.q-k,.sq-k,.q-why{font-size:7.6pt}
+.exp-w,.gn-l{font-size:8.4pt}
+.keys{font-size:8.4pt;line-height:1.55}
+.k-t small{font-size:7.6pt}
+.ob-t{font-size:9.6pt}
+.use-row{font-size:8.4pt}
+.sq-h,.ch-q{font-size:9.6pt}
+.step{font-size:9.6pt}
+.recall{font-size:9.6pt}
+
+/* ---------- ô điền khuyết ---------- */
+.fb{display:inline-block;position:relative;min-width:16mm;height:1.5em;border-bottom:1.1pt dotted var(--ink);vertical-align:-.45em;margin:0 .6mm;background:linear-gradient(transparent 80%,transparent 0)}
+.fbn{position:absolute;left:0;top:-.15em;font:700 7.6pt/1 var(--body);font-style:normal;border:.8pt solid var(--ink);padding:.2mm .9mm;background:#fff}
+.fb-disp{position:relative;height:13mm;margin:2.2mm 14mm;border-bottom:1.1pt dotted var(--ink)}
+.fb-disp .fbn{top:2mm}
+.fill{min-height:13mm;background:repeating-linear-gradient(transparent 0,transparent 5.6mm,var(--g3) 5.7mm,var(--g3) 5.9mm)}
+.te{font-weight:400;color:var(--g2)}
+.tbl.data td{vertical-align:top}
+.tbl.data td:not(:first-child){width:32%}
+.fm-box{border:1.2pt solid var(--ink);padding:2mm 3mm;margin:0 0 4mm;break-inside:avoid}
+.fm-h{font:800 8.4pt/1.2 var(--disp);letter-spacing:.06em;margin-bottom:1.6mm}
+.fm-h small{font:400 7.6pt var(--body);color:var(--g2);letter-spacing:0}
+.fm-g{display:grid;grid-template-columns:1fr 1fr;gap:1.4mm 6mm}
+.fm{display:flex;gap:2mm;align-items:center;font-size:8.4pt}
+.fm .fbn{position:static;flex:none}
+.websec{display:flex;gap:6mm;align-items:center;border:1.4pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);padding:4mm 5mm;margin:6mm 1.3mm 3mm 0;break-inside:avoid}
+.websec .qr{display:block;flex:none;width:28mm;height:28mm;padding:1.4mm;border:1pt solid var(--ink)}
+.websec .qr svg{width:100%;height:100%;display:block}
+.ws-h{font:800 11.6pt/1.2 var(--disp);margin-bottom:1.4mm}
+.websec p{margin:0;font-size:9.6pt}
+.pt{break-inside:avoid}
+.tbl.data{break-inside:avoid}
+
+/* ---- v4: chữ nhỏ gọn, thang cỡ đều (7.6 / 8.4 / 9.6 / 11.6 / 13.6) ---- */
+html{font-size:9.6pt;line-height:1.5}
+p{margin:0 0 2.2mm}
+li{margin:0 0 .8mm}
+.katex{font-size:1em}
+.katex-display{margin:1.6mm 0}
+h3{margin:5mm 0 2mm}
+h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
+.lead-p{font-size:9.6pt;line-height:1.5}
+.lead-p::first-letter{font-size:22pt}
+.tbl{font-size:8.4pt;line-height:1.4}
+.keys{font-size:8.4pt;line-height:1.45}
+.opts li,.sq-h,.ch-q,.step,.recall{font-size:9.6pt;line-height:1.45}
+.fig figcaption{font-size:8.4pt}
+.fig svg{max-height:56mm}
+.key,.quiz,.think,.exp,.problem,.objectives{margin-top:2.6mm;margin-bottom:2.6mm}
+.dl i{height:7mm}
+.fig-web{display:none}
+
+/* ---- v5: tiết kiệm giấy ---- */
+.fig svg{height:auto;max-height:none}
+.fig{margin:2.4mm 0;padding:2mm 2.4mm 1.6mm}
+.exp,.pt,.tbl.data,.think,.reveal,.problem{break-inside:auto}
+.fill{min-height:9mm;background:none}
+.tbl.data td:not(:first-child){border-bottom-color:transparent}
+.tbl.data tr:last-child td{border-bottom:1.5pt solid var(--ink)}
+.websec{display:grid;grid-template-columns:1fr 1fr;gap:5mm;border:1.4pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);padding:3.4mm 4mm;margin:4mm 1.3mm 0 0;align-items:start}
+.ws-i{display:flex;gap:3mm;align-items:center}
+.websec .qr{width:23mm;height:23mm;padding:1.2mm;flex:none}
+.ws-h{font:800 9.6pt/1.2 var(--disp);margin-bottom:1mm}
+.websec p{font-size:8.4pt;line-height:1.4}
+
+.pg-h{font-size:19pt;margin-bottom:4mm;padding-bottom:2mm}
+.pg-h2{margin-top:7mm}
+.sym-demo{min-height:20mm}
+.steps4{gap:3mm;margin-bottom:5mm}
+.toc li{padding:2.2mm 0}
+.t-n{font-size:17pt}
+.metro-wrap{margin:1mm 0 3mm}
+.lg-box{gap:2mm;margin:1mm 0 2mm}
+.lg-r{padding-bottom:1.2mm}
+.note-box{margin:4mm 1.4mm 3mm 0}
+.lead{font-size:9.6pt}
+
+.dang-top{break-inside:auto}
+.dang-h{break-after:avoid}
+.de{break-inside:auto}
+.fill{min-height:7mm}
+.tbl.data th:first-child,.tbl.data td:first-child{width:40%}
+.dang{margin-bottom:3mm}
+.tbl.data{margin:2mm 0 3mm}
+.pt-l{margin-bottom:1mm}
+.websec{break-inside:avoid}
+.btsec{break-before:auto}.sec-band{break-after:avoid}.websec{margin-top:3mm}

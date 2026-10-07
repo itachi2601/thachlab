@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // Trang cá nhân/thao tác không cần Google index
-      disallow: ["/tai-khoan/", "/tin-nhan/", "/quan-tri/", "/dang-nhap/"],
+      disallow: ["/tai-khoan/", "/tin-nhan/", "/quan-tri/", "/dang-nhap/", "/sach/"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

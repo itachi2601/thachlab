@@ -1,0 +1,30 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/be-vietnam-pro/400.css">
+<link rel="stylesheet" href="../node_modules/@fontsource/be-vietnam-pro/700.css">
+<style>
+@page{size:A4}
+@page :right{margin:18mm 78mm 20mm 18mm}
+@page :left{margin:18mm 18mm 20mm 78mm}
+@page first{margin:0 0 20mm 0}
+body{font-family:'Be Vietnam Pro';font-size:10pt}
+.band{page:first;background:#000;color:#fff;height:70mm;padding:20mm 18mm}
+.pagedjs_right_page{background:linear-gradient(#eee,#eee) 140mm 0/50mm 100% no-repeat}
+.wide{margin-right:-50mm;background:#ddd}
+@page{@bottom-right{content:counter(page)}}
+</style>
+<script src="../node_modules/katex/dist/katex.min.js"></script>
+<script src="../node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script>window.PagedConfig={auto:false}</script>
+<script src="../node_modules/pagedjs/dist/paged.polyfill.js"></script>
+</head><body>
+<div class="band"><h1>Bài 4. Độ dịch chuyển</h1></div>
+<p>Vận tốc $v=\frac{s}{t}$ và quãng đường. Tiếng Việt: Đường đi ước lượng.</p>
+<p class="wide">Rộng quá khổ rộng quá khổ rộng quá khổ rộng quá khổ rộng quá khổ rộng quá khổ rộng quá khổ</p>
+<script>
+(async()=>{try{
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+await document.fonts.ready;
+await window.PagedPolyfill.preview();
+window.__bookDone=true;}catch(e){window.__bookError=String(e)}})();
+</script></body></html>
