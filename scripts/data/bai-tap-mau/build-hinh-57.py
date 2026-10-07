@@ -2,20 +2,13 @@
 Chạy: python3 scripts/data/bai-tap-mau/build-hinh-57.py   (thêm --preview để ghi bản xem thử HTML ở scratchpad)"""
 import json, math, re, sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.claude/skills/soan-bai-tap-mau/scripts"))
-from hinh import *
+from dung import *
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 J = os.path.join(HERE, "57.json")
 VB = "0 0 420 240"
 VB3 = "0 0 420 258"
 NOTE = "Hình minh hoạ, không đúng tỉ lệ."
-
-def sub(x, y, base, s, c="currentColor", size=13, anchor="start"):
-    return (f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{size}" font-weight="700" text-anchor="{anchor}">'
-            f'{base}<tspan dy="4" font-size="{size - 3}">{s}</tspan></text>')
-
-def smil(attr, vals, dur):
-    return f'<animate attributeName="{attr}" values="{";".join(f"{v:.1f}" for v in vals)}" dur="{dur:.2f}s" begin="indefinite" fill="freeze"/>'
 
 def live(p, pts, vx_px, vy_px, hold, sec_per_interval):
     """Quả cầu + hai mũi tên vận tốc chạy theo quỹ đạo TÍNH THẬT (mẫu cách đều thời gian, nội suy tuyến tính → đúng vật lí).
@@ -28,12 +21,6 @@ def live(p, pts, vx_px, vy_px, hold, sec_per_interval):
     out += f'<line stroke="{BLUE}" stroke-width="3" marker-end="url(#{p}-b)">{smil("x1", X, dur)}{smil("y1", Y, dur)}{smil("x2", [x + v for x, v in zip(X, VX)], dur)}{smil("y2", Y, dur)}</line>'
     out += f'<line stroke="{ORG}" stroke-width="3" marker-end="url(#{p}-o)">{smil("x1", X, dur)}{smil("y1", Y, dur)}{smil("x2", X, dur)}{smil("y2", [y + v for y, v in zip(Y, VY)], dur)}</line>'
     return out
-
-def ball(pts, hold, sec_per_interval):
-    """Mô phỏng hiện tượng: quả cầu chạy dọc quỹ đạo TÍNH THẬT (mẫu cách đều thời gian). hold = số mẫu dừng ở cuối trước khi lặp."""
-    n = len(pts); idx = list(range(n)); dur = sec_per_interval * (len(idx) - 1)   # chạy MỘT lần khi bấm nút, dừng ở khung cuối (B4)
-    return (f'<circle cx="{pts[0][0]:.1f}" cy="{pts[0][1]:.1f}" r="5.5" fill="{GRN}" stroke="currentColor" stroke-width="1.5">'
-            f'{smil("cx", [pts[i][0] for i in idx], dur)}{smil("cy", [pts[i][1] for i in idx], dur)}</circle>')
 
 # ───────────── Dạng 1: máy bay thả gói, h=490, v0=60 ─────────────
 def d1(k):
@@ -60,18 +47,18 @@ def d1(k):
         b += lbl(O[0] + 24, g["pts"][10][1] - 12, "vₓ không đổi", BLUE, 13, "start", "700")
         b += lbl(g["pts"][30][0] - 14, g["pts"][30][1] + 44, "v_y tăng dần", ORG, 13, "end", "700")
         b += lbl(250, 28, "Ox: a = 0 (đều)", BLUE, 13, "start", "700") + lbl(250, 46, "Oy: a = g (rơi tự do)", ORG, 13, "start", "700")
-        return fig("d1-1", VB, "Ở ba thời điểm cách đều nhau, mũi tên vận tốc ngang bằng nhau còn mũi tên vận tốc thẳng đứng dài dần", b, "Gợi ý 1: hai phương độc lập. Hình động chạy đúng thời gian thật (10 s). " + NOTE.replace("Hình minh hoạ, không đúng tỉ lệ.", "Quỹ đạo tính theo công thức."))
+        return fig("d1-1", VB, "Ở ba thời điểm cách đều nhau, mũi tên vận tốc ngang bằng nhau còn mũi tên vận tốc thẳng đứng dài dần", b, "Dữ kiện: hai phương độc lập. Hình động chạy đúng thời gian thật (10 s). " + NOTE.replace("Hình minh hoạ, không đúng tỉ lệ.", "Quỹ đạo tính theo công thức."))
     if k == 2:
         b += axes(p, O[0], O[1], False, 50)
         b += dim(p, "o", O[0] - 60, O[1], O[0] - 60, g["gy"], "h", O[0] - 52, (O[1] + g["gy"]) / 2 + 4)
         b += lbl(g["land"][0] - 6, g["land"][1] - 12, "chạm đất: y = h", ORG, 13, "end", "700")
         b += arrow(p, "r", O[0], O[1], O[0] + 62, O[1], 3) + lbl(O[0] + 24, O[1] - 8, "v₀", RED, 13, "start", "700")
         b += lbl(250, 28, "Đề cho: h, v₀", "currentColor", 13) + lbl(250, 46, "Hỏi: t, L", ORG, 13, "start", "700")
-        return fig("d1-2", VB, "Hệ trục Oxy gốc tại chỗ thả, Oy hướng xuống; khi chạm đất y bằng h", b, "Gợi ý 2: chọn gốc O, Oy xuống; chạm đất thì y = h. " + NOTE)
+        return fig("d1-2", VB, "Hệ trục Oxy gốc tại chỗ thả, Oy hướng xuống; khi chạm đất y bằng h", b, "Dữ kiện: chọn gốc O, Oy xuống; chạm đất thì y = h. " + NOTE)
     b += dim(p, "o", O[0] - 4, O[1] + 8, O[0] - 4, g["gy"], "", 0, 0)
     b += lbl(O[0] + 8, (O[1] + g["gy"]) / 2, "① h = ½gt² → t", ORG, 13, "start", "700")
     b += dim(p, "b", O[0], g["gy"] + 20, g["land"][0], g["gy"] + 20, "② L = v₀·t", (O[0] + g["land"][0]) / 2 - 36, g["gy"] + 38)
-    return fig("d1-3", VB, "Bước một dùng phương thẳng đứng để tìm thời gian, bước hai dùng phương ngang để tìm tầm xa", b, "Gợi ý 3: ① phương đứng tìm t, ② phương ngang tìm L. " + NOTE)
+    return fig("d1-3", VB, "Bước một dùng phương thẳng đứng để tìm thời gian, bước hai dùng phương ngang để tìm tầm xa", b, "Dữ kiện: ① phương đứng tìm t, ② phương ngang tìm L. " + NOTE)
 
 # ───────────── Dạng 2: vách đá, h=78,4, v0=30 ─────────────
 def d2(k):
@@ -101,15 +88,15 @@ def d2(k):
         b += arrow(p, "r", *tan, lx, ly - 2, 3) + inset(True)
         b += lbl(210, 232, "Vận tốc lúc chạm đất = vₓ ⊥ v_y", "currentColor", 12, "start", "400")
         b += lbl(O[0] + 70, O[1] - 12, "vₓ không đổi", BLUE, 13, "start", "700")
-        return fig("d2-1", VB, "Tam giác vận tốc lúc chạm đất: vận tốc ngang và vận tốc thẳng đứng vuông góc, tổng hợp thành vận tốc v", b, "Gợi ý 1: v là tổng hợp của hai thành phần vuông góc. " + NOTE)
+        return fig("d2-1", VB, "Tam giác vận tốc lúc chạm đất: vận tốc ngang và vận tốc thẳng đứng vuông góc, tổng hợp thành vận tốc v", b, "Dữ kiện: v là tổng hợp của hai thành phần vuông góc. " + NOTE)
     if k == 2:
         b += axes(p, O[0], O[1], False, 46)
         b += dim(p, "o", O[0] + 16, O[1] + 4, O[0] + 16, g["gy"], "t = ? (từ h)", O[0] + 24, (O[1] + g["gy"]) / 2 + 4)
         b += arrow(p, "b", O[0], O[1], O[0] + 58, O[1], 3) + lbl(O[0] + 64, O[1] - 8, "vₓ = v₀ = 30 (đã biết)", BLUE, 13, "start", "700")
         b += lbl(200, 232, "① tìm t từ h  ② v_y = g·t", ORG, 13, "start", "700")
-        return fig("d2-2", VB, "Chọn gốc tại mép vách; thời gian rơi tìm từ độ cao còn vận tốc ngang đã biết", b, "Gợi ý 2: tìm t từ h trước, vₓ đã biết ngay. " + NOTE)
+        return fig("d2-2", VB, "Chọn gốc tại mép vách; thời gian rơi tìm từ độ cao còn vận tốc ngang đã biết", b, "Dữ kiện: tìm t từ h trước, vₓ đã biết ngay. " + NOTE)
     b += arrow(p, "r", *tan, lx, ly - 2, 3) + inset(True, True)
-    return fig("d2-3", VB, "Tam giác vận tốc với công thức độ lớn vận tốc và tang của góc", b, "Gợi ý 3: công thức tổng hợp vận tốc. " + NOTE)
+    return fig("d2-3", VB, "Tam giác vận tốc với công thức độ lớn vận tốc và tang của góc", b, "Dữ kiện: công thức tổng hợp vận tốc. " + NOTE)
 
 # ───────────── Dạng 3: mái nhà, h=19,6, L=15, cây 10 m ở x=10 m ─────────────
 def d3(k):
@@ -131,16 +118,16 @@ def d3(k):
         b += dim(p, "o", O[0] + 12, O[1] + 4, O[0] + 12, gy, "h → t", O[0] + 18, (O[1] + gy) / 2 + 4)
         b += dim(p, "b", O[0], gy + 20, g["land"][0], gy + 20, "L → v₀ = L / t", (O[0] + g["land"][0]) / 2 - 40, gy + 38)
         b += lbl(250, 70, "Thời gian t chung", ORG, 14, "start", "700") + lbl(250, 90, "nối hai phương", ORG, 14, "start", "700")
-        return fig("d3-1", VB3, "Thời gian bay tìm từ độ cao, rồi dùng chính thời gian đó với tầm xa để tìm vận tốc ném", b, "Gợi ý 1: thời gian là cầu nối giữa hai phương. " + NOTE)
+        return fig("d3-1", VB3, "Thời gian bay tìm từ độ cao, rồi dùng chính thời gian đó với tầm xa để tìm vận tốc ném", b, "Dữ kiện: thời gian là cầu nối giữa hai phương. " + NOTE)
     if k == 2:
         b += dot(tx, ty, 5, ORG) + seg(O[0], ty, tx, ty, ORG, 1.6, "5 4") + seg(tx, ty, tx, O[1], ORG, 1.6, "5 4")
         b += dim(p, "o", tx + 12, O[1], tx + 12, ty, "", 0, 0) + lbl(tx + 18, (O[1] + ty) / 2 + 4, "y₁ = đã rơi", ORG, 13, "start", "700")
         b += lbl(tx + 18, (ty + ttop) / 2 + 24, "so với ngọn cây?", "#4ade80", 13, "start", "700")
         b += lbl(tx, gy + 20, "x = 10 m", BLUE, 13, "middle", "700")
-        return fig("d3-2", VB3, "Tại vị trí cây, tìm hòn đá đã rơi xuống bao nhiêu rồi so với ngọn cây", b, "Gợi ý 2: tìm lúc đá tới x = 10 m, rồi độ cao còn lại. " + NOTE)
+        return fig("d3-2", VB3, "Tại vị trí cây, tìm hòn đá đã rơi xuống bao nhiêu rồi so với ngọn cây", b, "Dữ kiện: tìm lúc đá tới x = 10 m, rồi độ cao còn lại. " + NOTE)
     for i, t in enumerate(["① t = √(2h/g)", "② v₀ = L / t", "③ t₁ = x / v₀", "④ y₁ = ½g·t₁²", "⑤ h − y₁ so với 10 m"]):
         b += lbl(250, 50 + i * 24, t, RED if i < 2 else ORG, 13, "start", "700")
-    return fig("d3-3", VB3, "Năm bước tính: thời gian bay, vận tốc ném, thời gian tới cây, độ rơi, độ cao còn lại", b, "Gợi ý 3: các công thức theo thứ tự. " + NOTE)
+    return fig("d3-3", VB3, "Năm bước tính: thời gian bay, vận tốc ném, thời gian tới cây, độ rơi, độ cao còn lại", b, "Dữ kiện: các công thức theo thứ tự. " + NOTE)
 
 # ───────────── Dạng 4: ném xiên mặt đất, v0=9,8, α=30° ─────────────
 def d4(k):
@@ -162,17 +149,17 @@ def d4(k):
         b += live(p, g["pts"], [60 * g["vx"] / 9.8 * 0.9] * 61, [-v * 7.1 for v in vyv], 20, 3 / 60)
         b += lbl(O[0] + 6, O[1] + 20, "vₓ không đổi", BLUE, 13, "start", "700") + lbl(16, 26, "v_y: lên → 0 → xuống", ORG, 13, "start", "700")
         b += lbl(top[0] - 20, top[1] - 16, "đỉnh: chỉ còn vₓ (v_y = 0)", BLUE, 12, "start", "700")
-        return fig("d4-1", vb, "Vận tốc đầu tách thành thành phần ngang không đổi và thành phần thẳng đứng hướng lên; tại đỉnh chỉ còn thành phần ngang", b, "Gợi ý 1: v₀ tách thành hai thành phần; hình động chạy chậm 3 lần. Quỹ đạo tính theo công thức.")
+        return fig("d4-1", vb, "Vận tốc đầu tách thành thành phần ngang không đổi và thành phần thẳng đứng hướng lên; tại đỉnh chỉ còn thành phần ngang", b, "Dữ kiện: v₀ tách thành hai thành phần; hình động chạy chậm 3 lần. Quỹ đạo tính theo công thức.")
     if k == 2:
         b += seg(top[0], top[1], top[0], 112, "currentColor", 1.2, "4 4", .6)
         b += dim(p, "g", O[0], top[1] - 18, top[0], top[1] - 18, "lên: t₁", O[0] + 24, top[1] - 24) + dim(p, "g", top[0], top[1] - 18, land[0], top[1] - 18, "xuống: t₁", top[0] + 30, top[1] - 24)
         b += dot(*top, 4.5, ORG) + lbl(top[0] + 6, top[1] + 18, "v_y = 0", ORG, 13, "start", "700")
         b += lbl(360, 100, "cùng độ cao → xuống = lên", "currentColor", 12, "end", "400")
-        return fig("d4-2", vb, "Quỹ đạo đối xứng qua đỉnh: thời gian đi lên bằng thời gian đi xuống vì điểm rơi cùng độ cao điểm bật", b, "Gợi ý 2: tại đỉnh v_y = 0; lên và xuống đối xứng. " + NOTE)
+        return fig("d4-2", vb, "Quỹ đạo đối xứng qua đỉnh: thời gian đi lên bằng thời gian đi xuống vì điểm rơi cùng độ cao điểm bật", b, "Dữ kiện: tại đỉnh v_y = 0; lên và xuống đối xứng. " + NOTE)
     b += dim(p, "o", top[0], top[1] + 2, top[0], 112, "H = v₀y² / 2g", top[0] + 6, (top[1] + 112) / 2 + 6)
     b += dim(p, "b", O[0], 134, land[0], 134, "L = vₓ·t", (O[0] + land[0]) / 2 - 24, 152)
     b += lbl(O[0] + 4, 24, "t₁ = v₀y / g ;  t = 2t₁", "currentColor", 13, "start", "700")
-    return fig("d4-3", vb, "Công thức tầm cao, thời gian bay và tầm xa ghi lên quỹ đạo", b, "Gợi ý 3: công thức cho từng đại lượng. " + NOTE)
+    return fig("d4-3", vb, "Công thức tầm cao, thời gian bay và tầm xa ghi lên quỹ đạo", b, "Dữ kiện: công thức cho từng đại lượng. " + NOTE)
 
 # ───────────── Dạng 5: ném xiên từ vách, h=22,05, v0=14,7, α=30° ─────────────
 def d5(k):
@@ -195,16 +182,16 @@ def d5(k):
         b += lbl(O[0] + 6, O[1] - 30, "công thức quen", "currentColor", 12, "start", "700") + lbl(O[0] + 6, O[1] - 16, "chỉ đúng từ O tới A", "currentColor", 12, "start", "700")
         b += dim(p, "o", A[0], O[1] + 4, A[0], gy, "h", A[0] - 10, (O[1] + gy) / 2 + 4, "end")
         b += lbl(A[0] - 16, (O[1] + gy) / 2 + 40, "đất thấp hơn A một đoạn h", ORG, 12, "end", "700")
-        return fig("d5-1", vb, "Quỹ đạo quay lại độ cao điểm ném tại điểm A rồi còn rơi thêm một đoạn h xuống mặt đất", b, "Gợi ý 1: công thức quen chỉ đúng khi rơi cùng độ cao. " + NOTE)
+        return fig("d5-1", vb, "Quỹ đạo quay lại độ cao điểm ném tại điểm A rồi còn rơi thêm một đoạn h xuống mặt đất", b, "Dữ kiện: công thức quen chỉ đúng khi rơi cùng độ cao. " + NOTE)
     if k == 2:
         b += axes(p, O[0], O[1], True, 36) + dim(p, "o", O[0] + 10, O[1] + 4, O[0] + 10, gy, "", 0, 0)
         b += lbl(O[0] + 16, (O[1] + gy) / 2 + 6, "vị trí đất so với O?", ORG, 13, "start", "700")
         b += lbl(land[0] + 6, land[1] + 24, "chạm đất", ORG, 13, "end", "700")
         b += lbl(250, 44, "→ phương trình theo t", "currentColor", 13, "start", "700") + lbl(250, 62, "→ nghiệm nào nhận?", "currentColor", 13, "start", "700")
-        return fig("d5-2", vb, "Hệ trục gốc tại mép vách, Oy hướng lên; mặt đất nằm dưới gốc toạ độ một đoạn bằng độ cao vách", b, "Gợi ý 2: đặt trục Oy lên; mặt đất ở dưới O. " + NOTE)
+        return fig("d5-2", vb, "Hệ trục gốc tại mép vách, Oy hướng lên; mặt đất nằm dưới gốc toạ độ một đoạn bằng độ cao vách", b, "Dữ kiện: đặt trục Oy lên; mặt đất ở dưới O. " + NOTE)
     for i, t in enumerate(["① y(t) khi chạm đất → t", "② L = vₓ·t", "③ H_max = h + v₀y²/2g", "④ v = √(vₓ² + v_y²)"]):
         b += lbl(130, 112 + i * 20, t, ORG if i != 1 else BLUE, 12, "start", "700")
-    return fig("d5-3", vb, "Bốn bước: giải phương trình toạ độ tìm thời gian, tầm xa, độ cao lớn nhất, vận tốc chạm đất", b, "Gợi ý 3: thứ tự bốn bước tính. " + NOTE)
+    return fig("d5-3", vb, "Bốn bước: giải phương trình toạ độ tìm thời gian, tầm xa, độ cao lớn nhất, vận tốc chạm đất", b, "Dữ kiện: thứ tự bốn bước tính. " + NOTE)
 
 # ───────────── Dạng 6: bài ngược góc ném, v0=14, L=15 ─────────────
 def d6(k):
@@ -228,22 +215,16 @@ def d6(k):
     b += lbl(O[0] + 38, O[1] - 5, "α₁", GRN, 13, "start", "700") + lbl(O[0] + 12, O[1] - 52, "α₂", "#a78bfa", 13, "start", "700")
     if k == 1:
         b += lbl(250, 40, "cùng tầm xa L = 15 m", "currentColor", 13, "start", "700") + lbl(250, 58, "mấy góc ném thoả mãn?", ORG, 13, "start", "700")
-        return fig("d6-1", "0 0 420 262", "Hai quỹ đạo khác nhau, một thấp một cao, cùng rơi đúng điểm cách pháo 15 m", b, "Gợi ý 1: hai góc ném khác nhau có thể cùng tầm xa. " + NOTE)
+        return fig("d6-1", "0 0 420 262", "Hai quỹ đạo khác nhau, một thấp một cao, cùng rơi đúng điểm cách pháo 15 m", b, "Dữ kiện: hai góc ném khác nhau có thể cùng tầm xa. " + NOTE)
     if k == 2:
         b += poly(g45["pts"], ORG, 2, "6 4", .9) + dot(*g45["land"], 4.5, ORG)
         b += lbl(g45["land"][0], O[1] - 36, "45°: xa nhất", ORG, 12, "end", "700")
         b += lbl(250, 40, "α₁ + α₂ = 90°", "currentColor", 13, "start", "700")
-        return fig("d6-2", "0 0 420 262", "Quỹ đạo ném góc 45 độ đi xa nhất; hai góc phụ nhau cho cùng tầm xa", b, "Gợi ý 2: góc 45° xa nhất, hai góc phụ nhau trùng tầm xa. " + NOTE)
+        return fig("d6-2", "0 0 420 262", "Quỹ đạo ném góc 45 độ đi xa nhất; hai góc phụ nhau cho cùng tầm xa", b, "Dữ kiện: góc 45° xa nhất, hai góc phụ nhau trùng tầm xa. " + NOTE)
     b += lbl(250, 36, "sin2α = g·L / v₀²", RED, 14, "start", "700") + lbl(250, 58, "t = 2v₀·sinα / g", ORG, 13, "start", "700") + lbl(250, 78, "L_max = v₀² / g  (α = 45°)", ORG, 13, "start", "700")
-    return fig("d6-3", "0 0 420 262", "Công thức tìm góc, thời gian bay và tầm xa lớn nhất", b, "Gợi ý 3: công thức cần dùng. " + NOTE)
+    return fig("d6-3", "0 0 420 262", "Công thức tìm góc, thời gian bay và tầm xa lớn nhất", b, "Dữ kiện: công thức cần dùng. " + NOTE)
 
 BUILD = [d1, d2, d3, d4, d5, d6]
-
-def tbl(rows):
-    body = "".join(f"<tr><td>{c}</td><td>{d_}</td><td>{k_}</td></tr>" for c, d_, k_ in rows)
-    return ('<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p>'
-            '<div class="table-scroll"><table class="tl-table tl-table--data"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody>'
-            + body + '</tbody></table></div>')
 
 DK_NGANG = "⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)"
 ANALYSIS = [
@@ -287,24 +268,6 @@ ANALYSIS = [
   ("\"tầm xa lớn nhất\"", "Cần $L_{max}$", "$\\sin2\\alpha\\le1$: $L_{max}=\\dfrac{v_0^2}{g}$ khi $\\alpha=45^\\circ$")],
 ]
 
-
-# ───────────── Lời giải: ngắt dòng, mỗi công thức một dòng (docs/QUY-TAC-THIET-KE C1/C4/H5/B3/N7) ─────────────
-def M(x):   return ("m", x)
-def P(x):   return ("p", x)
-def A(x):   return ("a", x)
-def sol(recall, steps, finals, note):
-    out = '<div class="bt-sol">'
-    out += '<div class="tl-box"><p class="tl-label">Kiến thức cần gọi lại</p><ol>' + "".join(f"<li>{r}</li>" for r in recall) + "</ol></div>"
-    for n, (title, els) in enumerate(steps, 1):
-        out += f'<div class="bt-step"><p class="bt-step-title"><span class="bt-step-n">{n}</span><span>{title}</span></p>'
-        for kind, x in els:
-            if kind == "p": out += f"<p>{x}</p>"
-            elif kind == "m": out += f"$${x}$$"
-            else: out += f'<div class="bt-ans">$${x}$$</div>' if not x.startswith("T:") else f'<div class="bt-ans"><p>{x[2:]}</p></div>'
-        out += "</div>"
-    out += '<div class="bt-final"><p><strong>Đáp số</strong></p>' + "".join(f"<p>{f}</p>" for f in finals) + "</div>"
-    out += f'<p class="bt-note">{note}</p><p class="bt-note">3 ngày sau che lời giải và giải lại từ đầu.</p></div>'
-    return out
 
 RN = ["<strong>Khái niệm:</strong> ném ngang, $\\vec v_0$ nằm ngang.",
       "<strong>Định luật:</strong> hai phương độc lập.",
@@ -364,15 +327,4 @@ SOLS = [
   "Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi <strong>góc</strong> → rút $\\sin2\\alpha$, nhớ có hai góc phụ nhau."),
 ]
 
-def strip(html):
-    return re.sub(r'<figure class="fig"[^>]*data-bt="[^"]*".*?</figure>', "", html, flags=re.S)
-
-d = json.load(open(J))
-for i, fn in enumerate(BUILD):
-    q = d["dang_bai"][i]
-    q["problem_html"] = strip(q["problem_html"]) + fn(0)          # mô phỏng hiện tượng nằm DƯỚI đề
-    q["analysis_html"] = fn(2) + tbl(ANALYSIS[i])                  # thay gợi ý: hình dữ kiện + bảng phân tích đề (như bài mẫu trong lý thuyết)
-    q.pop("hints_html", None)
-    q["solution_html"] = SOLS[i]                                   # lời giải ngắt dòng, mỗi công thức một dòng
-json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
-print("ok", len(d["dang_bai"]))
+inject(J, BUILD, ANALYSIS, SOLS)
