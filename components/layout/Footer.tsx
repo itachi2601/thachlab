@@ -61,7 +61,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
         {/* Canh trái + chừa lề phải ~9rem ở điện thoại để nút nổi "Báo lỗi / Góp ý" (bug-fab) không đè lên chữ;
             không lặp link Báo lỗi vì nút nổi đã có. */}
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 px-6 py-3 pr-36 text-[13px] text-muted sm:pr-6">
-          <span className="inline-flex min-h-11 items-center">&copy; {new Date().getFullYear()} ThachLab</span>
+          <span className="inline-flex min-h-11 items-center">&copy; {new Date().getFullYear()} ThachLab · Bản alpha test miễn phí</span>
           {CONTACT.zalo && (
             <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className={link}>
               Nhắn Zalo cho thầy
@@ -89,6 +89,9 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
               <img src="/brand/logo-mark.svg" alt="" width={32} height={32} className="h-8 w-8" />
               <span className="font-display text-lg font-semibold text-ink">
                 ThachLab
+              </span>
+              <span className="rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-300">
+                Alpha test · miễn phí
               </span>
             </div>
             <p className={`mt-4 max-w-xs leading-relaxed ${textCls}`}>

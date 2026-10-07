@@ -174,7 +174,7 @@ export async function fetchMyClassRequest(userId: string): Promise<MyClassReques
   return { classId: best.class_id, className: schoolClass?.name ?? "", status: best.status };
 }
 
-/** Học sinh tự gửi yêu cầu vào 1 khối lớp (chờ giáo viên duyệt). Gửi lại được sau khi bị từ chối. */
+/** Học sinh tự vào 1 khối lớp, không cần giáo viên duyệt (alpha test miễn phí, 7/10/2026). Vào lại được sau khi bị từ chối/đang chờ. */
 export async function requestClassJoin(classId: number): Promise<void> {
   const supabase = getSupabase();
   const { data: auth } = await supabase.auth.getUser();
@@ -183,13 +183,13 @@ export async function requestClassJoin(classId: number): Promise<void> {
 
   const { error: insertError } = await supabase
     .from("user_classes")
-    .insert({ user_id: userId, class_id: classId, status: "pending" });
+    .insert({ user_id: userId, class_id: classId, status: "active" });
   if (!insertError) return;
   if (insertError.code !== "23505") throw insertError; // đã có dòng (ví dụ đã từng bị từ chối) -> chuyển sang cập nhật
 
   const { error: updateError } = await supabase
     .from("user_classes")
-    .update({ status: "pending", requested_at: new Date().toISOString(), reviewed_by: null, reviewed_at: null })
+    .update({ status: "active", requested_at: new Date().toISOString(), reviewed_by: null, reviewed_at: null })
     .eq("user_id", userId)
     .eq("class_id", classId);
   if (updateError) throw updateError;

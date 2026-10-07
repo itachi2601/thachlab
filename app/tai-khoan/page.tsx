@@ -88,7 +88,7 @@ function ClassJoinPicker({onSubmitted}:{onSubmitted:()=>void}){
       ))}
       {classes.length===0&&<p className="col-span-2 text-sm text-slate-500">Chưa có khối lớp nào.</p>}
     </div>
-    <button onClick={submit} disabled={busy||!selected} className="w-full rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-50">{busy?"Đang gửi…":"Gửi yêu cầu vào lớp"}</button>
+    <button onClick={submit} disabled={busy||!selected} className="w-full rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white disabled:opacity-50">{busy?"Đang vào lớp…":"Vào lớp"}</button>
     {message&&<p className="text-sm text-amber-200">{message}</p>}
   </div>;
 }
@@ -99,7 +99,7 @@ function StudentTrackChooser({onSubmitted}:{onSubmitted:()=>void}){
   if(track==="thpt")return <section className="rounded-3xl border border-dashed border-white/10 bg-panel p-10 text-center">
     <GraduationCap className="mx-auto text-blue-300" size={36}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Chọn khối lớp</h1>
-    <p className="mt-2 text-slate-400">Gửi yêu cầu vào khối lớp — giáo viên sẽ duyệt trước khi bạn xem được nội dung của lớp.</p>
+    <p className="mt-2 text-slate-400">Chọn khối lớp của bạn để vào lớp ngay, không cần chờ duyệt.</p>
     <ClassJoinPicker onSubmitted={onSubmitted}/>
     <button onClick={()=>setTrack(null)} className="mt-4 text-xs text-slate-500 hover:text-slate-300">← Chọn lại luồng học</button>
   </section>;
@@ -126,7 +126,7 @@ function ClassRequestNotice({request,onRetry}:{request:MyClassRequest;onRetry:()
   if(request.status==="rejected")return <section className="rounded-3xl border border-dashed border-red-500/20 bg-panel p-10 text-center">
     <ShieldCheck className="mx-auto text-red-300" size={38}/>
     <h1 className="mt-4 font-display text-2xl font-bold text-white">Yêu cầu chưa được duyệt</h1>
-    <p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã bị từ chối. Kiểm tra lại đúng khối lớp rồi gửi lại.</p>
+    <p className="mt-2 text-slate-400">Yêu cầu vào lớp <strong className="text-white">{request.className}</strong> đã bị từ chối. Chọn lại đúng khối lớp để vào.</p>
     <ClassJoinPicker onSubmitted={onRetry}/>
   </section>;
   return null;
@@ -184,7 +184,7 @@ function Account(){
     return <section className="rounded-3xl border border-dashed border-blue-400/20 bg-panel p-10 text-center">
       <GraduationCap className="mx-auto text-blue-300" size={36}/>
       <h1 className="mt-4 font-display text-2xl font-bold text-white">Chọn khối lớp</h1>
-      <p className="mt-2 text-slate-400">Gửi yêu cầu vào khối lớp — giáo viên sẽ duyệt trước khi bạn xem được nội dung của lớp.</p>
+      <p className="mt-2 text-slate-400">Chọn khối lớp của bạn để vào lớp ngay, không cần chờ duyệt.</p>
       <ClassJoinPicker onSubmitted={reload}/>
     </section>;
   }
