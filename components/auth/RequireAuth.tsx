@@ -7,7 +7,7 @@ import { supabaseConfigured } from "@/services/supabase";
 function Notice({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
     <div
-      className={`mx-auto rounded-2xl border border-white/10 bg-panel p-6 sm:p-8 ${
+      className={`mx-auto mt-10 rounded-2xl border border-white/10 bg-panel p-6 sm:mt-16 sm:p-8 ${
         wide ? "max-w-3xl text-left text-slate-300" : "max-w-xl text-center text-slate-300"
       }`}
     >
