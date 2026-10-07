@@ -4,8 +4,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
   {
-    title: "Lý thuyết trọng tâm",
-    desc: "Ngắn gọn, đúng yêu cầu cần đạt của chương trình 2018, có công thức và hình minh họa đi kèm.",
+    title: "Lý thuyết tương tác",
+    desc: "Mở bằng mục tiêu bài học (khoảng 15–20 phút) và một tình huống đời thường, em dự đoán trước rồi mới học. Mỗi kiến thức có hình vẽ, thí nghiệm để em tự đổi thông số, và câu tự kiểm tra chấm ngay. Có mục \"Những cái bẫy hay gặp\" và \"Trả bài\" để nhớ lại trước khi sang bài tập.",
   },
   {
     title: "Bài tập mẫu",
