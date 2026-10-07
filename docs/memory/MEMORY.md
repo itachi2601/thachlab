@@ -73,4 +73,4 @@
 - [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick
 - [Thay ví dụ xưởng bằng đời sống](project_thachlab_vi_du_doi_song_thay_xuong.md) — 6/10: 53 bài L10–L12 đã sửa + ghi DB + deploy; treo: xem-thu cũ, 4 bài L10 mới chưa kiểm
 - [Lớp 10 lý thuyết Ch5–7 (6/10)](project_thachlab_l10_ly_thuyet_ch5_7.md) — 9 bài đã soạn+ghi DB+deploy; treo xem ảnh B30/B28, đối chiếu SGK B20/B22; lớp 11 còn 6 bài, lớp 12 còn 1
-- [Sách in Chương 2 lớp 10](project_thachlab_sach_in_chuong2.md) — 7/10: pipeline book/ (HTML→PDF Paged.js), A4 đen–trắng; thầy chốt: mỏng, ghi chú chỉ chỗ cần, không nền đen chữ trắng, dùng trên lớp + web; chưa in thử
+- [Sách in Chương 2 lớp 10](project_thachlab_sach_in_chuong2.md) — 7/10: pipeline book/ (HTML→PDF Paged.js), A4 đen–trắng; thầy chốt: mỏng, ghi chú chỉ chỗ cần, không nền đen chữ trắng, dùng trên lớp + web; chưa in thử · v6 123 trang (dùng TRÊN LỚP: ô lời giải Dạng chung, ⏱ 1′, vạch tiết, bảng đáp án thuần); skill sach-in-tu-web; treo dang-chung.json/tiet.json chờ thầy chốt

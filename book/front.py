@@ -101,8 +101,8 @@ def build_front(pages):
   <h2 class="pg-h"><span class="pg-k">CÁCH DÙNG SÁCH</span>Học để nhớ lâu, không phải để thuộc nhanh</h2>
   <ol class="steps4">
     <li><span class="s4-n">1</span><div><h4>Đoán trước khi đọc</h4><p>Gặp khung <b>DỰ ĐOÁN</b>, em chọn theo cảm giác rồi ghi vì sao. Đoán sai không sao — đó là lúc não chú ý nhất.</p></div></li>
-    <li><span class="s4-n">2</span><div><h4>Điền chỗ trống khi nghe giảng</h4><p>Công thức quan trọng và bảng phân tích đề để trống: em tự điền bằng bút chì, ghi bằng lời của mình.</p></div></li>
-    <li><span class="s4-n">3</span><div><h4>Làm xong rồi mới quét đáp án</h4><p>Đáp án, gợi ý và lời giải bài tập mẫu nằm trên web: quét mã QR cuối bài. Luyện tập và giải đề cũng làm trên web.</p></div></li>
+    <li><span class="s4-n">2</span><div><h4>Trên lớp: tự điền trước, rồi mới chữa</h4><p>Thầy đọc đề → em <b>tự điền 1 phút</b> (bút chì) → thầy chữa → em <b>sửa bằng bút khác màu</b>. Khung nào có dấu ''' + build.timer() + ''' là khung em phải thử trước khi thầy công bố: công thức GHI NHỚ, bảng phân tích đề, ô lời giải, số liệu thí nghiệm.</p></div></li>
+    <li><span class="s4-n">3</span><div><h4>Ở nhà: làm xong rồi mới mở đáp án</h4><p>Đáp án trắc nghiệm, công thức và đáp số <b>Luyện thêm</b> ở bảng cuối sách; phân tích và lời giải đầy đủ trên web — quét mã QR cuối bài. Luyện tập và giải đề cũng làm trên web.</p></div></li>
     <li><span class="s4-n">4</span><div><h4>Ba ngày sau, làm lại</h4><p>Che các ô đã điền và nhớ lại vào <b>ngày thứ ba</b>. Nhớ lại khó một chút mới là lúc học được nhiều nhất.</p></div></li>
   </ol>
   <div class="sym-grid">
@@ -110,8 +110,10 @@ def build_front(pages):
     <div class="sym"><div class="sym-demo"><div style="padding:3mm">Vậy <span class="fb" style="min-width:26mm"><i class="fbn">1</i></span> là công thức cần nhớ.</div></div><p><b>Ô điền</b> — chấm trống có số nhỏ; đáp án cùng số trên web.</p></div>
     <div class="sym"><div class="sym-demo"><div class="quiz sm"><div class="q-h"><span class="q-tag">CÂU 1</span></div><p>Khung nét đứt, 4 đáp án</p></div></div><p><b>Câu hỏi</b> — khoanh một đáp án, ghi “em chọn”.</p></div>
     <div class="sym"><div class="sym-demo"><div class="exp sm"><div class="exp-h"><span>THÍ NGHIỆM</span></div><div class="step"><div class="st-l">LÀM</div><div class="st-b">…</div></div></div></div><p><b>Thí nghiệm</b> — Làm · Quan sát · Rút ra, có chỗ ghi số liệu.</p></div>
+    <div class="sym"><div class="sym-demo"><div class="solbox sm"><div class="sol-l">Lời giải — ghi cùng thầy cô</div>''' + build.timer() + '''</div></div><p><b>Ô lời giải</b> — Dạng chung nhất của bài: thầy chữa trên bảng, em ghi vào đây (đã thử 1 phút trước).</p></div>
+    <div class="sym"><div class="sym-demo"><div style="position:relative;width:100%;padding:4mm 0 2mm 16mm">''' + build.tiet_mark(1) + '''</div></div><p><b>Vạch chia tiết</b> — vạch ở lề cho biết tiết học kết thúc ở đâu; phần sau là tiết kế tiếp.</p></div>
   </div>
-  <div class="note-box"><b>Dùng cùng website.</b> Trên lớp, thầy cô chiếu mô phỏng; em quét mã QR ở đầu bài hoặc cạnh hình có nhãn “mô phỏng trên web” để tự chạy lại ở nhà. Một bài đọc lý thuyết khoảng 15–20 phút.</div>
+  <div class="note-box"><b>Dùng cùng website.</b> Trên lớp, thầy cô giảng lý thuyết, chữa bài tập mẫu và chiếu mô phỏng; sách là giấy làm việc của em. Ở nhà: quét mã QR cuối bài để luyện tập, giải đề và xem lời giải đầy đủ.</div>
 </section>'''
     # 3 — cách đọc hình + mục lục
     html += f'''<section class="plain p-toc">
@@ -140,8 +142,28 @@ def filler(label='TRANG GHI CHÚ TỰ DO'):
     return (f'<section class="free"><div class="free-h"><span>{label}</span><span class="free-t">vẽ sơ đồ tư duy của bài · ghi điều em còn băn khoăn</span></div><div class="dotgrid full"></div></section>')
 
 
-def build_back(pages, takeaways):
-    html = head_html('Tổng kết chương 2', 1)
+def answer_table(answers):
+    """Bảng đáp án THUẦN cuối sách (mục tiêu 2 trang): chỉ số câu + chữ cái, công thức ô điền, đáp số Luyện thêm và
+    Thử thách. Không phân tích (phân tích ở web /sach/dap-an). Sinh từ cùng dữ liệu với public/sach-data/dap-an-<id>.json."""
+    blocks = []
+    for lid in CHAPTER['lessons']:
+        d = answers.get(lid)
+        if not d: continue
+        fm = ' '.join(f'<span class="ak-i"><i>{f["n"]}</i>${f["tex"]}$</span>' for f in d['formulas'])
+        qz = ' '.join(f'<span class="ak-i"><i>{it["n"]}</i><b>{it["letter"] or "—"}</b></span>' for it in d['items'] if it['kind'] == 'quiz')
+        lt = ''.join(f'<div class="ak-r"><i>D{w["n"]}</i><span>{w["answer"]}</span></div>' for w in d['worked'] if not w['inClass'] and w['answer'])
+        th = ''.join(f'<div class="ak-r"><i>{it["n"]}</i><span>{it["body"]}</span></div>' for it in d['items'] if it['kind'] == 'thuthach')
+        rows = ''
+        if fm: rows += f'<div class="ak-g"><b>Công thức</b> {fm}</div>'
+        if qz: rows += f'<div class="ak-g"><b>Câu hỏi</b> {qz}</div>'
+        if lt: rows += f'<div class="ak-g ak-list"><b>Luyện thêm</b>{lt}</div>'
+        if th: rows += f'<div class="ak-g ak-list"><b>Thử thách</b>{th}</div>'
+        blocks.append(f'<div class="ak"><h4><span class="ak-n">{d["num"]:02d}</span>{d["name"]}</h4>{rows}</div>')
+    return bw.to_print(''.join(blocks))
+
+
+def build_back(pages, takeaways, answers=None, start=1):
+    html = head_html('Tổng kết chương 2', start)
     # tổng kết chương
     rows = ''.join(f'<div class="sum-b"><div class="sum-n">{n:02d}</div><div class="sum-c"><h4>{t}</h4>{h}</div></div>' for n, t, h in takeaways)
     html += f'''<section class="plain p-sum">
@@ -162,6 +184,12 @@ def build_back(pages, takeaways):
   <tr><td>Phân tích chuyển động ném thành hai chuyển động độc lập</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>12</td></tr>
   </tbody></table>
   <div class="dl-lab">Điều em còn băn khoăn sau chương này:</div>''' + build.dl(5) + '</section>'
+    if answers:
+        html += f'''<section class="plain p-ak">
+  <h2 class="pg-h"><span class="pg-k">BẢNG ĐÁP ÁN</span>Đối chiếu nhanh — chỉ đáp án, không phân tích</h2>
+  <p class="lead ak-lead">Số là số in trong bài. <b>Công thức</b>: ô điền có số nhỏ. <b>Câu hỏi</b>: CÂU và DỰ ĐOÁN, chỉ chữ cái đúng. <b>Luyện thêm</b>: đáp số theo Dạng (D3 = Dạng 3). <b>Thử thách</b>: đáp số theo số câu. Trả bài, Tự hỏi, Điền bước, phân tích vì sao sai và lời giải đầy đủ: quét mã QR cuối mỗi bài.</p>
+  <div class="ak-wrap">{answer_table(answers)}</div>
+</section>'''
     html += '</body></html>'
     out = SRC / 'back.html'; out.write_text(html); return out
 

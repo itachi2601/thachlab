@@ -1,0 +1,12 @@
+{
+  "_ghi_chu": "Vị trí vạch lề '▌hết tiết n' trong mỗi bài. Anchor: 'muc:<số La Mã>' = hết mục đó trong lý thuyết; 'dang:<k>' = hết Dạng k của bài tập mẫu; 'bai-tap-mau' = hết toàn bộ Dạng chung (trước Luyện thêm). MẶC ĐỊNH (chờ thầy chỉnh): tiết 1 hết mục II (Kiến thức), tiết 2 hết Bài tập mẫu; bài thực hành (51, 56) không có bài tập mẫu nên tiết 2 hết mục V. Sửa xong chạy lại `cd book && python3 make.py`.",
+  "49": ["muc:II", "bai-tap-mau"],
+  "50": ["muc:II", "bai-tap-mau"],
+  "51": ["muc:II", "muc:V"],
+  "52": ["muc:II", "bai-tap-mau"],
+  "53": ["muc:II", "bai-tap-mau"],
+  "54": ["muc:II", "bai-tap-mau"],
+  "55": ["muc:II", "bai-tap-mau"],
+  "56": ["muc:II", "muc:V"],
+  "57": ["muc:II", "bai-tap-mau"]
+}

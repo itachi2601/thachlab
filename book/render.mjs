@@ -25,7 +25,7 @@ const diag = await page.evaluate(() => {
     area.querySelectorAll('*').forEach(el => {
       if (el.closest('svg') && el.tagName !== 'svg') return;
       const r = el.getBoundingClientRect();
-      if (r.width > 0 && (r.right > ar.right + 3 || r.left < ar.left - 3) && !el.closest('.lopen,.sec-band,.cover,.chapter-open')) {
+      if (r.width > 0 && (r.right > ar.right + 3 || r.left < ar.left - 3) && !el.closest('.lopen,.sec-band,.cover,.chapter-open,.tiet')) {
         if (out.overflow.length < 12) out.overflow.push(`p${i+1} <${el.tagName.toLowerCase()} class="${(el.className&&el.className.baseVal!==undefined)?el.className.baseVal:el.className}"> +${Math.round(r.right-ar.right)}px`);
       }
     });

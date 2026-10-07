@@ -29,6 +29,35 @@ def lesson_url(lid): return f'{BASE_URL}/lop-hoc/bai?id={lid}'
 def answers_url(lid): return f'{BASE_URL}/sach/dap-an/?bai={lid}'
 
 
+def _cfg(name):
+    p = SRC / name
+    d = json.load(open(p)) if p.exists() else {}
+    return {int(k): v for k, v in d.items() if not k.startswith('_')}
+
+
+DANG_CHUNG = _cfg('dang-chung.json')   # {lid: [chỉ số Dạng được giảng trên lớp]}; mặc định [1, 2]
+TIET = _cfg('tiet.json')               # {lid: ['muc:II', 'bai-tap-mau', ...]}; mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu
+
+
+def dang_chung(lid, n):
+    want = DANG_CHUNG.get(lid) or [1, 2]
+    return [k for k in want if 1 <= k <= n]
+
+
+def tiet_marks(lid, has_bt):
+    anchors = TIET.get(lid) or (['muc:II', 'bai-tap-mau'] if has_bt else ['muc:II', 'muc:V'])
+    return {a: i + 1 for i, a in enumerate(anchors)}
+
+
+def tiet_mark(n):
+    return f'<div class="tiet"><span class="tiet-l">hết tiết {n}</span></div>'
+
+
+def timer():
+    """Biểu tượng cố định ở góc mọi khung có ô điền: em tự điền 1 phút trước khi thầy chữa."""
+    return f'<span class="t1">{bw.ICONS["clock"]}1′</span>'
+
+
 # ------------------------------------------------------------------ đọc dữ liệu
 def load_lesson(lid):
     d = json.load(open(REPO / f'public/data/lessons/{lid}.json'))
@@ -113,6 +142,7 @@ class Keys:
     """Gom đáp án để in ở cuối bài."""
     def __init__(self):
         self.items = []; self.where = ''; self.counter = 0; self.formulas = []
+        self.challenges = []   # thử thách phân tầng (dời xuống Luyện thêm)
     def fadd(self, tex, display):
         self.formulas.append({'tex': tex, 'display': display}); return len(self.formulas)
 
@@ -140,7 +170,7 @@ def conv_details(det, keys, ctx=''):
     body = det.decode_contents()
     low = s_plain
     if 'Thử thách' in low:
-        out = ['<div class="challenge"><div class="ch-h">★ THỬ THÁCH PHÂN TẦNG</div>']
+        # v6: thử thách phân tầng dời xuống mục "Luyện thêm" cuối bài (chỉ in đề, em làm vào vở)
         for li in det.find_all('li'):
             li_html = li.decode_contents()
             mm = re.search(r'^(.*?)(<em>\s*(?:\(|Đáp)[\s\S]*)$', li_html, re.S)
@@ -149,10 +179,12 @@ def conv_details(det, keys, ctx=''):
                 ans = ans[1:-1] if ans.startswith('(') and ans.endswith(')') else ans
             else:
                 qtxt, ans = li_html, ''
+            sm = re.match(r'\s*((?:★|⭐)+)\s*', qtxt)
+            stars = sm.group(1).replace('⭐', '★') if sm else ''
+            qtxt = qtxt[sm.end():] if sm else qtxt
             keys.add(kind='thuthach', title='Thử thách', body=ans, tag='Thử thách')
-            out.append(f'<div class="ch-i"><div class="ch-q">{qtxt}<sup class="kref">→ {keys.counter}</sup></div>{dl(2)}</div>')
-        out.append('</div>')
-        return ''.join(out)
+            keys.challenges.append({'n': keys.counter, 'stars': stars, 'q': qtxt})
+        return ''
     if low.startswith('Xem bước'):
         n = keys.add(kind='fill', body=body, tag='Điền bước còn thiếu')
         return (f'<div class="selfq"><div class="sq-h"><span class="sq-n">{n}</span> Em điền các bước còn thiếu</div>'
@@ -170,7 +202,7 @@ def conv_details(det, keys, ctx=''):
     title = clean_summary(s_html)
     title = re.sub(r'^(<span class="ico">.*?</span>)?\s*(Bấm xem|Xem thêm)\s*:?\s*', r'\1 ', title).strip()
     if 'lời giải' in low.lower():
-        return ('<div class="gnote"><div class="gn-l">Lời giải — ghi cùng thầy cô, hoặc xem trên web (quét mã QR đầu bài)</div>'
+        return ('<div class="gnote"><div class="gn-l">Lời giải — ghi cùng thầy cô, hoặc xem trên web (quét mã QR đầu bài)' + timer() + '</div>'
                 + dl(4) + '</div>')
     is_sol = False
     cls = 'reveal sol-inline' if is_sol else 'reveal'
@@ -259,7 +291,7 @@ def conv_exp(box):
     rest = box.decode_contents()
     sim = '<span class="simtag">▶ có mô phỏng trên web</span>' if box.get('data-exp') else ''
     return (f'<div class="exp"><div class="exp-h"><span>{lab_html}</span>{sim}</div>{steps_html}{rest}'
-            f'<div class="exp-w"><span>Số liệu / điều em quan sát:</span>{dl(2)}</div></div>')
+            f'<div class="exp-w"><span>Số liệu / điều em quan sát:</span>{timer()}{dl(2)}</div></div>')
 
 
 def conv_box(box):
@@ -340,7 +372,8 @@ def final_pass(body, keys):
     return str(soup)
 
 
-def convert_theory(raw, lid, keys):
+def convert_theory(raw, lid, keys, marks=None):
+    marks = marks or {}
     html = raw
     # bước chuỗi
     html = re.sub(r'<p><strong>🔑\s*(.*?)</strong></p>',
@@ -369,6 +402,7 @@ def convert_theory(raw, lid, keys):
         cls = el.get('class', []) if hasattr(el, 'get') else []
         name = el.name
         if name == 'h3':
+            if roman and f'muc:{roman}' in marks: out.append(tiet_mark(marks[f'muc:{roman}']))
             h, roman = conv_h3(el); keys.where = roman; out.append(h)
         elif name == 'h4':
             out.append(conv_h4(el))
@@ -382,7 +416,10 @@ def convert_theory(raw, lid, keys):
             tb['class'] = ('tbl data' if is_data else 'tbl').split()
             out.append(blank_table(str(tb)) if is_data else str(tb))
         elif name == 'div' and 'key' in cls:
-            out.append(blank_math(str(el), keys, 'key'))
+            k = blank_math(str(el), keys, 'key')
+            if 'class="fbn"' in k:   # khung GHI NHỚ có ô điền → ⏱ 1′
+                k = k.replace('<span class="key-l">GHI NHỚ</span>', '<span class="key-l">GHI NHỚ</span>' + timer(), 1)
+            out.append(k)
         elif name in ('p', 'ul', 'ol') and roman == 'II':
             out.append(blank_math(str(el), keys, 'body'))
         elif name == 'div' and 'tl-box' in cls:
@@ -396,6 +433,7 @@ def convert_theory(raw, lid, keys):
             el['class'] = ['tbl']; out.append(str(el))
         else:
             out.append(str(el))
+    if roman and f'muc:{roman}' in marks: out.append(tiet_mark(marks[f'muc:{roman}']))
     body = final_pass('\n'.join(out), keys)
     body = re.sub(r'(</h3>\s*)<p>', r'\1<p class="lead-p">', body, count=1)
     body = restore_svgs(body, store)
@@ -433,14 +471,41 @@ def sol_clean(html):
     return html
 
 
-def render_bt(bt, lid, keys):
+def dang_parts(x, k):
+    parts = [p.strip() for p in x['label'].split('·')]
+    num = parts[0].upper() if parts else f'DẠNG {k}'
+    lvl = parts[1] if len(parts) > 1 else ''
+    stars, lvl_name = LEVEL.get(lvl, ('', lvl.upper()))
+    title = ' · '.join(parts[2:]) if len(parts) > 2 else x.get('topic', '')
+    return num, stars, lvl_name, title
+
+
+def dang_answer(x):
+    """Đáp số (khối 'Đáp số' cuối lời giải) — in ở bảng đáp án thuần cuối sách."""
+    m = re.search(r'<div class="bt-final">(.*?)</div>', x.get('solution_html', ''), re.S)
+    if not m: return ''
+    return re.sub(r'<p>\s*<strong>Đáp số</strong>\s*</p>', '', m.group(1)).strip()
+
+
+def similar_to(x, bt, main):
+    """Dạng luyện thêm 'tương tự Dạng n' = Dạng chung có cùng chủ đề (YCCĐ); không có thì để trống."""
+    for k in main:
+        if bt['dang_bai'][k - 1].get('topic') == x.get('topic'): return k
+    return 0
+
+
+GRAPH_RE = re.compile(r'đồ thị|hình (?:vẽ|bên|dưới|trên)|như hình', re.I)
+
+
+def render_bt(bt, lid, keys, marks=None):
+    """Bài tập mẫu v6: chỉ Dạng CHUNG NHẤT (dang-chung.json) giữ đủ đề + hình + bảng phân tích + ô lời giải
+    ghi cùng thầy cô; các Dạng còn lại + thử thách phân tầng gộp thành 'Luyện thêm' (chỉ in đề)."""
+    marks = marks or {}
+    main = dang_chung(lid, len(bt['dang_bai']))
     out = []
-    for k, x in enumerate(bt['dang_bai'], 1):
-        parts = [p.strip() for p in x['label'].split('·')]
-        num = parts[0].upper() if parts else f'DẠNG {k}'
-        lvl = parts[1] if len(parts) > 1 else ''
-        stars, lvl_name = LEVEL.get(lvl, ('', lvl.upper()))
-        title = ' · '.join(parts[2:]) if len(parts) > 2 else x.get('topic', '')
+    for k in main:
+        x = bt['dang_bai'][k - 1]
+        num, stars, lvl_name, title = dang_parts(x, k)
         prob = clean_fig_caption_bt(x['problem_html'])
         ana = re.sub(r'<figure class="fig".*?</figure>', '', clean_fig_caption_bt(x['analysis_html']), flags=re.S)
         ana = blank_table(ana)
@@ -448,9 +513,40 @@ def render_bt(bt, lid, keys):
         out.append(f'''<article class="dang">
 <div class="dang-top"><header class="dang-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span><h3>{title}</h3></header>
 <div class="de"><div class="de-l">Đề bài</div>{prob}</div></div>
-<div class="pt"><div class="pt-l">Phân tích đề — em tự điền</div>{ana}</div>
+<div class="pt"><div class="pt-l">Phân tích đề — em tự điền</div>{timer()}{ana}</div>
+<div class="solbox"><div class="sol-l">Lời giải — ghi cùng thầy cô</div>{timer()}</div>
 </article>''')
-    return bw.to_print('\n'.join(out))
+        if f'dang:{k}' in marks: out.append(tiet_mark(marks[f'dang:{k}']))
+    if 'bai-tap-mau' in marks: out.append(tiet_mark(marks['bai-tap-mau']))
+    return bw.to_print('\n'.join(out)), main
+
+
+def render_luyen_them(bt, lid, keys, main):
+    """Luyện thêm — bài tương tự: các Dạng không giảng trên lớp + thử thách phân tầng. Chỉ đề, không bảng
+    phân tích, không mô phỏng, không ô lời giải (làm vào vở). Đáp số ở bảng cuối sách; lời giải đầy đủ trên web."""
+    items = []
+    if bt:
+        for k, x in enumerate(bt['dang_bai'], 1):
+            if k in main: continue
+            num, stars, lvl_name, title = dang_parts(x, k)
+            prob = clean_fig_caption_bt(x['problem_html'])
+            txt = re.sub(r'<figure.*?</figure>', '', prob, flags=re.S)
+            if GRAPH_RE.search(re.sub(r'<[^>]+>', '', txt)):
+                # đề đọc đồ thị: giữ hình (thu nhỏ) vì không có hình thì không làm được
+                prob = re.sub(r'<span class="simtag fig-sim">.*?</span>', '', prob, flags=re.S).replace('<figure class="fig"', '<figure class="fig fig-sm"')
+            else:
+                prob = txt
+            sim = similar_to(x, bt, main)
+            rel = f'<span class="lt-rel">tương tự Dạng {sim}</span>' if sim else '<span class="lt-rel">dạng riêng · lời giải trên web</span>'
+            items.append(f'<div class="lt"><div class="lt-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span>{rel}<span class="lt-k">đáp số: bảng cuối sách</span></div>'
+                         f'<div class="lt-t">{title}</div>{prob}</div>')
+    for c in keys.challenges:
+        items.append(f'<div class="lt lt-ch"><div class="lt-h"><span class="dang-n">THỬ THÁCH</span><span class="lvl">{c["stars"]}</span>'
+                     f'<span class="lt-k">đáp số: bảng cuối sách, số <b>{c["n"]}</b></span></div><p>{c["q"]}</p></div>')
+    if not items: return ''
+    return bw.to_print(f'<section class="ltsec"><div class="sec-band"><span class="sb-k">LUYỆN THÊM — BÀI TƯƠNG TỰ</span>'
+                       f'<span class="sb-t">Làm vào vở · chọn mức ★ vừa sức · đáp số ở bảng cuối sách · lời giải đầy đủ: quét mã QR</span></div>'
+                       + ''.join(items) + '</section>')
 
 
 # ------------------------------------------------------------------ tự luận
@@ -608,11 +704,14 @@ def head_html(title, start=1, extra=''):
 def build_lesson(lid, start=1, filler=False):
     L = load_lesson(lid)
     keys = Keys(); CUR['lid'] = lid
-    theory, obj = convert_theory(L['theory'], lid, keys)
+    marks = tiet_marks(lid, bool(L['bt']))
+    theory, obj = convert_theory(L['theory'], lid, keys, marks)
     bt_html = tl_html = ''
+    main = []
     if L['bt']:
-        bt_html = render_bt(L['bt'], lid, keys)
+        bt_html, main = render_bt(L['bt'], lid, keys, marks)
         tl_html = ''
+    lt_html = render_luyen_them(L['bt'], lid, keys, main)
     keys_html = render_keys(keys, lid)
     chap = f'CHƯƠNG {CHAPTER["num"]} · {CHAPTER["title"].upper()}'
     idx = CHAPTER['lessons'].index(lid)
@@ -620,7 +719,7 @@ def build_lesson(lid, start=1, filler=False):
     obj_html = ''
     if obj:
         lis = ''.join(f'<li>{x}</li>' for x in obj['lis'])
-        obj_html = f'<div class="objectives"><div class="ob-h">{bw.ICONS["target"]} Mục tiêu bài học</div><ul>{lis}</ul><p class="ob-t">{obj["tail"]}</p><div class="use-row"><span><b>Trên lớp</b>lý thuyết, thí nghiệm, bài tập mẫu — chiếu mô phỏng trên web</span><span><b>Ở nhà</b>luyện tập, giải đề và xem lời giải trên web</span></div></div>'
+        obj_html = f'<div class="objectives"><div class="ob-h">{bw.ICONS["target"]} Mục tiêu bài học</div><ul>{lis}</ul><p class="ob-t">{obj["tail"]}</p></div>'
         obj_html = bw.to_print(obj_html)
     nn = f'{L["num"]:02d}'
     hero = f'''<header class="lopen">
@@ -636,11 +735,12 @@ def build_lesson(lid, start=1, filler=False):
 <div class="theory">{theory}</div>
 </section>'''
     if bt_html:
-        html += f'<section class="btsec"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức. Lời giải xem trên web</span></div>{bt_html}</section>'
-    web = (f'<div class="websec"><div class="ws-i"><span class="qr" data-url="{lesson_url(lid)}"></span><div><div class="ws-h">Luyện tập &amp; giải đề</div>'
-           '<p>Làm trên web: trắc nghiệm, tự luận ba mức, lời giải chi tiết, theo dõi tiến độ.</p></div></div>'
+        html += f'<section class="btsec"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức · ghi lời giải cùng thầy cô</span></div>{bt_html}</section>'
+    html += lt_html
+    web = (f'<div class="websec"><div class="ws-i"><span class="qr" data-url="{lesson_url(lid)}"></span><div><div class="ws-h">Ở nhà: luyện tập &amp; giải đề</div>'
+           '<p>Trắc nghiệm, tự luận ba mức, lời giải chi tiết, theo dõi tiến độ.</p></div></div>'
            f'<div class="ws-i"><span class="qr" data-url="{answers_url(lid)}"></span><div><div class="ws-h">Đáp án &amp; gợi ý</div>'
-           '<p>Đáp án các ô điền và câu hỏi đánh số trong bài, lời giải bài tập mẫu. Làm xong rồi hãy quét.</p></div></div></div>')
+           '<p>Phân tích từng câu, ô điền, lời giải mọi Dạng. Làm xong rồi hãy quét.</p></div></div></div>')
     html += web
     if tl_html:
         html += f'<section class="tlsec"><div class="sec-band"><span class="sb-k">TỰ LUYỆN</span><span class="sb-t">Từ dễ đến khó · viết bài làm vào chỗ chấm</span></div>{tl_html}</section>'
@@ -667,19 +767,23 @@ def export_web(lid):
                           'where': k.get('where', ''), 'letter': k.get('letter', ''), 'q': k.get('q', ''),
                           'ok': k.get('ok', ''), 'no': k.get('no', ''), 'body': k.get('body', '')})
         worked = []
-        for i, x in enumerate((L['bt'] or {}).get('dang_bai', []), 1):
+        bt = L['bt'] or {'dang_bai': []}
+        main = dang_chung(lid, len(bt['dang_bai']))
+        for i, x in enumerate(bt['dang_bai'], 1):
             parts = [p.strip() for p in x['label'].split('·')]
             worked.append({'n': i, 'label': ' · '.join(parts[:2]), 'title': ' · '.join(parts[2:]) or x.get('topic', ''),
-                           'solution': x['solution_html']})
+                           'solution': x['solution_html'], 'answer': bw.to_print(dang_answer(x)),
+                           'inClass': i in main, 'similarTo': 0 if i in main else similar_to(x, bt, main)})
     finally:
         bw.WEB = False
-    data = {'lessonId': lid, 'title': L['title'], 'chapter': f'CHƯƠNG {CHAPTER["num"]} · {CHAPTER["title"].upper()}',
+    data = {'lessonId': lid, 'title': L['title'], 'num': L['num'], 'name': L['name'],
+            'chapter': f'CHƯƠNG {CHAPTER["num"]} · {CHAPTER["title"].upper()}',
             'formulas': [{'n': i, 'tex': f['tex'], 'display': f['display']} for i, f in enumerate(keys.formulas, 1)],
             'items': items, 'worked': worked}
     out = REPO / 'public' / 'sach-data' / f'dap-an-{lid}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(_json.dumps(data, ensure_ascii=False))
-    return out
+    return out, data
 
 
 if __name__ == '__main__':
@@ -689,7 +793,7 @@ if __name__ == '__main__':
         print(p, len(k.items), 'đáp án')
     elif cmd == 'web':
         for lid in CHAPTER['lessons']:
-            print(export_web(lid))
+            print(export_web(lid)[0])
     elif cmd == 'all':
         for lid in CHAPTER['lessons']:
             p, k = build_lesson(lid); print(p, len(k.items))

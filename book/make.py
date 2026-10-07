@@ -50,7 +50,7 @@ def main():
     # 3) dựng lại với số trang thật
     with ThreadPoolExecutor(3) as ex:
         list(ex.map(lambda l: lesson_job(l, pages[str(l)]['start'], fill[l]), lessons))
-    for l in lessons: build.export_web(l)
+    answers = {l: build.export_web(l)[1] for l in lessons}   # cùng nguồn với public/sach-data/dap-an-<id>.json
     # 4) phần đầu / cuối
     front.build_front(pages); render(ROOT / 'src/front.html', OUT / 'front.pdf')
     take = []
@@ -58,7 +58,8 @@ def main():
         L = build.load_lesson(l)
         m = re.search(r'<div class="tl-box tl-box--rule">\s*<p class="tl-label">[^<]*Mang về[^<]*</p>(.*?)</div>', L['theory'], re.S)
         if m: take.append((L['num'], L['name'], bw_clean(m.group(1))))
-    front.build_back(pages, take); n_back = render(ROOT / 'src/back.html', OUT / 'back.pdf')
+    back_start = FRONT_PAGES + 1 + sum(res[l] for l in lessons)
+    front.build_back(pages, take, answers, back_start); n_back = render(ROOT / 'src/back.html', OUT / 'back.pdf')
     # 5) ghép
     book = fitz.open()
     toc = []
@@ -68,7 +69,7 @@ def main():
     add(OUT / 'front.pdf', 'Bìa & phần đầu')
     for l in lessons:
         L = build.load_lesson(l); add(OUT / f'lesson-{l}.pdf', L['title'])
-    add(OUT / 'back.pdf', 'Tổng kết chương & tự đánh giá')
+    add(OUT / 'back.pdf', 'Tổng kết chương, tự đánh giá & bảng đáp án')
     book.set_toc(toc)
     out = OUT / 'vat-li-10-chuong-2-dong-hoc.pdf'
     book.save(out, deflate=True, garbage=3)

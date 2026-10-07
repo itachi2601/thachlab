@@ -252,6 +252,8 @@ def to_print(html: str) -> str:
     for tok in _TOKEN.split(html):
         if WEB:
             out.append(fix_math(tok) if tok.startswith('$') else tok)
+        elif tok.startswith('<svg class="ic"'):
+            out.append(tok)          # icon vẽ sẵn (⏱, 🎯…): không ép cỡ, không chèn pattern
         elif tok.startswith('<svg'):
             out.append(gray_svg(rewrite_color_words(tok)))
         elif tok.startswith('$'):

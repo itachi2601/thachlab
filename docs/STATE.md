@@ -226,6 +226,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 
 ## Migration — ĐANG CHỜ
 
+- **Sách in Chương 2 lớp 10 — bản v6 (7/10/2026, 123 trang, commit book/):** dùng TRÊN LỚP; Dạng chung nhất có ô lời giải, Luyện thêm chỉ đề, ⏱ 1′, vạch chia tiết, bảng đáp án thuần 2 trang cuối. **Chờ thầy chỉnh (đang là MẶC ĐỊNH):** `book/src/dang-chung.json` (Dạng 1–2 mỗi bài) và `book/src/tiet.json` (tiết 1 hết mục II, tiết 2 hết Bài tập mẫu). **Web đáp án:** `public/sach-data/*.json` bản v6 CHƯA commit/deploy (bản v5 đang chạy, số thứ tự trùng nên QR vẫn đúng); trang `/sach/dap-an` chưa kiểm lại sau v6 → kiểm rồi mới commit + deploy. Chưa in thử giấy thật. Chi tiết: `docs/memory/project_thachlab_sach_in_chuong2.md`, skill `.claude/skills/sach-in-tu-web/SKILL.md`.
 - **Đã đăng 7/10/2026:** hình 1 bài Chuyển động ném L10 có mô phỏng (commit e568477ec) ghi vào lesson 57 bằng `cap-nhat-ly-thuyet.sh`; chưa xem trên web thật.
 
 - **Đã chạy 7/10/2026:** `20261007070000_rls_backup_tables.sql` — bật RLS + revoke anon trên 7 bảng sao lưu (Supabase báo CRITICAL `rls_disabled_in_public` 3/10). Chạy tay thêm `revoke all on question_bank_grade_fix_20261005 from anon, authenticated` (bảng này đã có RLS, chỉ thu quyền). Kiểm lại: 0 bảng `*_backup_*`/`*_fix_*` thiếu RLS. Rollback ở cuối file.
