@@ -685,7 +685,7 @@ export function InterferenceSimulation() {
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onKeyDown={onKeyDown}
-          className="relative block aspect-[2] w-full cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+          className="relative block aspect-[1.5] w-full sm:aspect-[2] lg:aspect-[2.1] cursor-crosshair touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
         />
       </div>
 

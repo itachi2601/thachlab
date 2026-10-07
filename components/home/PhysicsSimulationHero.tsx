@@ -9,9 +9,10 @@
  * cho tầm xa lớn nhất. Tab 2 — "Thả hàng": máy bay cứu hộ bay ngang ở độ cao h,
  * bấm thả đúng lúc để gói hàng rơi trúng bãi đáp (chuyển động ném ngang, Vật lí 10
  * Bài 12). Tab 3 — "Giao thoa": khay sóng hai nguồn (Bài 12, Vật lí 11), kéo điểm M
- * để tự đọc ra d₂ − d₁ = kλ. Tab 4 — "Hình chiếu": bóng của điểm M quay đều và một
- * con lắc lò xo nằm ngang trên cùng một trục x (Bài 1. Dao động điều hoà, Vật lí 11)
- * — học sinh tự khớp ω để giữ nhịp rồi tự thử xem biên độ có đổi nhịp không.
+ * để tự đọc ra d₂ − d₁ = kλ. Tab 4 — "Sóng âm": hai loa trái/phải của máy phát cùng một
+ * âm sin (hai nguồn kết hợp), học sinh bật âm, che một tai và dịch đầu để nghe chỗ to chỗ
+ * nhỏ, đối chiếu với bản đồ vân. Tab "Hình chiếu" (ShadowSpringSimulation) đã rời hero
+ * 7/10/2026 — code giữ nguyên để nhúng vào bài Dao động lớp 11.
  *
  * Con lắc lò xo (HarmonicPanel) đã rời hero 5/10/2026 — code giữ nguyên để nhúng
  * vào bài Dao động lớp 11 khi Giai đoạn 3 làm (xem docs/ROADMAP.md).
@@ -61,10 +62,10 @@ const InterferenceSimulation = dynamic(
   }
 );
 
-// Mô hình "Hình chiếu": canvas 2 làn + toán hình chiếu, cũng chỉ có nghĩa khi học
-// sinh thật sự chọn tab này.
-const ShadowSpringSimulation = dynamic(
-  () => import("@/components/physics/ShadowSpringSimulation").then((m) => m.ShadowSpringSimulation),
+// Mô hình "Sóng âm": hai loa của máy phát âm đơn sắc + bản đồ vân giao thoa; Web Audio
+// chỉ có nghĩa khi học sinh thật sự chọn tab này.
+const SoundWavesSimulation = dynamic(
+  () => import("@/components/physics/SoundInterferenceSimulation").then((m) => () => <m.SoundInterferenceSimulation compact />),
   {
     ssr: false,
     loading: () => (
@@ -79,7 +80,7 @@ const TABS = [
   { key: "projectile", label: "Ném xiên" },
   { key: "rescue", label: "Thả hàng" },
   { key: "interference", label: "Giao thoa" },
-  { key: "projection", label: "Hình chiếu" },
+  { key: "sound", label: "Sóng âm" },
 ] as const;
 
 type TabKey = (typeof TABS)[number]["key"];
@@ -111,12 +112,12 @@ const COPY: Record<
     after: "?",
     body: "Kéo điểm M trên khay sóng hai nguồn — đọc hiệu đường đi, biết chỗ sáng hay tối.",
   },
-  projection: {
-    line1: "Kéo xa gấp đôi",
-    before: "nhịp có ",
-    accent: "đổi",
+  sound: {
+    line1: "Hai loa cùng phát",
+    before: "sao có chỗ ",
+    accent: "im",
     after: "?",
-    body: "Khớp bóng quay đều với con lắc lò xo — rồi kéo ra xa, xem nhịp có chậm đi.",
+    body: "Bật âm, che một tai rồi dịch đầu sang ngang — nghe tiếng to nhỏ đổi theo chỗ ngồi.",
   },
 };
 
@@ -155,7 +156,7 @@ export function PhysicsSimulationHero() {
   };
 
   return (
-    <section id="thpt" className="relative overflow-hidden bg-[#05070B] px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
+    <section id="thpt" className="relative overflow-clip bg-[#05070B] px-6 pb-10 pt-24 sm:pb-16 sm:pt-28 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
       <div
         aria-hidden
@@ -163,12 +164,12 @@ export function PhysicsSimulationHero() {
       />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-10">
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
+        <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
           <p className="font-mono text-xs uppercase tracking-widest text-cyan-300">
             Có bao giờ em tự hỏi…
           </p>
 
-          <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[2.9rem]">
+          <h1 className="mt-2 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:mt-5 sm:text-5xl lg:text-[2.4rem]">
             {copy.line1}
             <br />
             {copy.before}
@@ -176,12 +177,12 @@ export function PhysicsSimulationHero() {
             {copy.after}
           </h1>
 
-          <p className="mt-3 max-w-md text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
+          <p className="mt-3 hidden max-w-md text-base leading-relaxed text-muted sm:mt-5 sm:block">
             {copy.body}
           </p>
         </div>
 
-        <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
+        <div className="order-3 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-2 lg:self-start">
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/lop-hoc"
@@ -202,7 +203,7 @@ export function PhysicsSimulationHero() {
             Học miễn phí trên web, theo đúng nhịp lớp trên trường.
           </p>
         </div>
-        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl shadow-black/30 sm:p-5 lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1">
+        <div className="relative rounded-2xl border border-line bg-panel p-2.5 shadow-xl shadow-black/30 sm:p-5 order-2 lg:order-none lg:col-span-8 lg:col-start-5 lg:row-span-2 lg:row-start-1">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2 sm:mb-3">
             <p className="font-mono text-[13px] uppercase tracking-widest text-muted">
               Thí nghiệm
@@ -254,7 +255,7 @@ export function PhysicsSimulationHero() {
               </LazyErrorBoundary>
             ) : (
               <LazyErrorBoundary fallback={panelFallback}>
-                <ShadowSpringSimulation />
+                <SoundWavesSimulation />
               </LazyErrorBoundary>
             )}
           </div>

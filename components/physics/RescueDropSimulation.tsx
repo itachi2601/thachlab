@@ -43,8 +43,8 @@ const PAD_L = 26; // chừa chỗ cho nửa thân máy bay khi nó ở mép trá
 const PAD_R = 12;
 const PAD_T = 12;
 const PAD_B = 28; // chừa chỗ ghi thước đo dưới mặt đất
-const VIEW_X = 400; // bề ngang khung nhìn (m)
-const VIEW_Y = 132; // chiều cao khung nhìn (m) — cao hơn h lớn nhất
+const VIEW_X = 370; // bề ngang khung nhìn (m)
+const VIEW_Y = 122; // chiều cao khung nhìn (m) — cao hơn h lớn nhất (110)
 const STAGE_BG_TOP = "#070C15";
 const STAGE_BG_BOTTOM = "#04070C";
 const ACCENT = "#22D3EE";
@@ -532,7 +532,7 @@ export function RescueDropSimulation() {
           }
           onPointerUp={onCanvasPointerUp}
           onKeyDown={onKeyDown}
-          className="block aspect-[2.2] w-full select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 sm:aspect-[2.1] lg:aspect-[2.7]"
+          className="block aspect-[2.4] w-full select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 sm:aspect-[2.5] lg:aspect-[2.7]"
         />
       </div>
 

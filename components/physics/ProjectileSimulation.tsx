@@ -70,8 +70,8 @@ interface Geometry {
 function geometryFor(box: Box, gKey: GravityKey): Geometry {
   const g = GRAVITIES[gKey].g;
   // Mặt Trăng: cùng v₀ bay xa ~6 lần nên khung nhìn phải rộng hơn mới thấy hết quỹ đạo.
-  const xMax = gKey === "moon" ? 285 : 52;
-  const yMax = ((V0_MAX * V0_MAX) / 2 / g) * 1.18; // đỉnh cao nhất có thể (α = 45°) + lề
+  const xMax = gKey === "moon" ? 262 : 46; // tầm xa lớn nhất: 40,8 m (Trái Đất) / 247 m (Mặt Trăng)
+  const yMax = ((V0_MAX * V0_MAX) / 2 / g) * 0.8; // đỉnh khi v₀ lớn nhất, α ≈ 62° — phát bắn dốc hơn nữa có thể chạm mép trên, đổi lấy khung thấp, ít khoảng trống
   const s = Math.min((box.w - PAD_L - PAD_R) / xMax, (box.h - PAD_T - PAD_B) / yMax);
   const groundY = box.h - PAD_B;
   return { w: box.w, h: box.h, s, xMax, yMax, groundY, anchor: { x: PAD_L, y: groundY } };
@@ -604,7 +604,7 @@ export function ProjectileSimulation() {
           onPointerUp={finishPointer}
           onPointerCancel={finishPointer}
           onKeyDown={onKeyDown}
-          className="block aspect-[2.2] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.1] lg:aspect-[2.3]"
+          className="block aspect-[2.3] w-full cursor-grab touch-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 active:cursor-grabbing sm:aspect-[2.4] lg:aspect-[2.6]"
         />
         {/* Dòng gợi ý nằm trên nền canvas luôn tối nên phải dùng màu cố định: lớp phủ theme sáng
             trong globals.css đổi .text-slate-200 thành chữ sẫm → chữ sẫm trên nền tối (M2). */}
