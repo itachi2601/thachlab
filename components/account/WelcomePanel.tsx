@@ -14,6 +14,7 @@ export type WelcomeVariant =
   | "thpt_pick_class"
   | "thpt_pending"
   | "thpt_active"
+  | "welcome_back"
   | "cttc_join"
   | "cttc_pending"
   | "cttc_active"
@@ -58,6 +59,13 @@ const CONTENT: Record<WelcomeVariant, Content> = {
       { label: "Xem bảng xếp hạng", href: "/lop-hoc/xep-hang" },
       { label: "Kết quả của em", href: "/lop-hoc/ket-qua" },
     ],
+  },
+  // Học sinh đã vào lớp, mỗi lần đăng nhập lại: ngắn, một việc, một nút (khác thpt_active: gợi ý dài, đóng một lần).
+  welcome_back: {
+    tone: "blue",
+    title: "Chào mừng em quay lại",
+    lead: "Mỗi ngày một ít là đủ. Vào lớp và làm tiếp bài đang dở nhé.",
+    primary: { label: "Vào lớp học", href: "/lop-hoc" },
   },
   cttc_join: {
     tone: "orange",
@@ -121,7 +129,8 @@ const TONE: Record<Content["tone"], string> = {
 };
 
 const EVENT = "thachlab-welcome-change";
-const keyOf = (userId: string, variant: WelcomeVariant) => `thachlab_welcome_off_${userId}_${variant}`;
+const keyOf = (userId: string, variant: WelcomeVariant, loginKey?: string | null) =>
+  `thachlab_welcome_off_${userId}_${variant}${loginKey ? `_${loginKey}` : ""}`;
 
 function subscribe(onChange: () => void) {
   window.addEventListener("storage", onChange);
@@ -144,12 +153,15 @@ export default function WelcomePanel({
   variant,
   userId,
   name,
+  loginKey,
 }: {
   variant: WelcomeVariant;
   userId: string;
   name?: string | null;
+  /** Dấu của lần đăng nhập (user.last_sign_in_at): đổi mỗi lần đăng nhập lại nên bảng hiện lại; làm mới token không đổi. */
+  loginKey?: string | null;
 }) {
-  const key = keyOf(userId, variant);
+  const key = keyOf(userId, variant, loginKey);
   // Server/lần render đầu coi như đã đóng để không chớp hình rồi biến mất.
   const dismissed = useSyncExternalStore(
     subscribe,

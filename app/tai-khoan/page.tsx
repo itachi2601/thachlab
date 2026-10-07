@@ -147,7 +147,7 @@ function Account(){
   useEffect(()=>{reload();},[reload]);
 
   if(!session)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
-  const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name}/>;
+  const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name} loginKey={v==="welcome_back"?session.user.last_sign_in_at:undefined}/>;
   if(isStaff)return <>{welcome(profile?.role==="admin"?"admin":"instructor")}<StaffAccountCard/></>;
   if(isParent)return <>{welcome("parent")}<ParentAccountCard/></>;
   if(enrollment===undefined||classRequest===undefined)return <p className="rounded-2xl border border-white/10 bg-panel p-6 text-slate-400">Đang tải không gian học tập…</p>;
@@ -204,7 +204,7 @@ function Account(){
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
   })();
-  return <>{variant==="thpt_active"?null:welcome(variant)}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
+  return <>{variant==="thpt_active"?welcome("welcome_back"):welcome(variant)}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer variant="app"/></>}
