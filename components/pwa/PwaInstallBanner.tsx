@@ -114,7 +114,10 @@ export default function PwaInstallBanner() {
             ? "Bấm nút Chia sẻ (ô vuông có mũi tên lên) ở thanh Safari, rồi chọn “Thêm vào Màn hình chính”."
             : "Mở bài luyện chỉ với một lần chạm, như một ứng dụng."}
         </p>
-        <div className="mt-3 flex gap-2">
+        <a href="/cai-app/" className="mt-1 inline-block min-h-11 py-2 text-sm text-cyan-300 underline">
+          Xem hướng dẫn chi tiết
+        </a>
+        <div className="mt-1 flex gap-2">
           {!iosMode && (
             <button
               type="button"
