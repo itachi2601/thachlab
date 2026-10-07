@@ -221,6 +221,25 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
           <li>Thử <b>Chỉ loa trái</b> / <b>Chỉ loa phải</b>: một loa thì âm đều, không còn chỗ to chỗ nhỏ — chứng tỏ cần hai nguồn kết hợp.</li>
           <li>Tăng tần số (λ nhỏ) thì vân sít lại, khoảng vân i = λL/d giảm. Căn phòng vọng nhiều có thể làm vân mờ đi.</li>
         </ol>
+        <p className="mt-3 font-semibold text-white">Thiết bị cần có hai loa tách trái – phải</p>
+        <p className="mt-1 leading-relaxed text-slate-300">
+          Thí nghiệm chỉ chạy khi máy phát được âm stereo qua <b>hai loa cách nhau vài chục cm</b>. Máy chỉ có một loa (hoặc hai loa sát nhau) sẽ không có vân giao thoa.
+        </p>
+        <p className="mt-3 font-semibold text-white">iPhone (7 trở lên)</p>
+        <ul className="mt-1 list-disc space-y-1 pl-5 leading-relaxed">
+          <li>Gạt công tắc im lặng sang chế độ <b>có tiếng</b> (không thấy vạch cam) và tăng âm lượng bằng nút bên hông.</li>
+          <li>Xoay máy <b>nằm ngang</b>: loa dưới và loa thoại phía trên thành loa trái – phải. Loa thoại nhỏ hơn loa dưới nên hai bên không bằng nhau, vân sẽ mờ hơn.</li>
+          <li>Đặt d khoảng 13–15 cm (chiều dài máy), tần số 4000–5000 Hz, giữ máy cách tai 30–40 cm rồi <b>trượt máy sang trái – phải</b> chừng 15 cm.</li>
+        </ul>
+        <p className="mt-3 font-semibold text-white">iPad</p>
+        <ul className="mt-1 list-disc space-y-1 pl-5 leading-relaxed">
+          <li>Chạy tốt nhất trên <b>iPad Pro, iPad Air, iPad mini, iPad thế hệ 10</b> (loa ở hai cạnh khi xoay ngang). iPad đời cũ có hai loa sát nhau cùng một cạnh thì không phù hợp.</li>
+          <li>Xoay iPad nằm ngang, đặt d khoảng 20–25 cm, tần số 3000–4000 Hz, ngồi cách màn hình 40–50 cm rồi nghiêng đầu hoặc dịch người sang hai bên.</li>
+          <li>Khi xoay ngang, đừng che hai cạnh có loa bằng tay hoặc ốp lưng.</li>
+        </ul>
+        <p className="mt-3 text-xs text-slate-400">
+          Khoảng cách hai loa chỉ là ước chừng theo kích thước máy; nếu vân không rõ, thử đổi tần số hoặc kiểm bằng nút "Chỉ loa trái / Chỉ loa phải" xem cả hai loa có kêu không.
+        </p>
       </details>
 
       {warn && (
