@@ -10,6 +10,7 @@ import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
+import PwaInstallCard from "@/components/pwa/PwaInstallCard";
 import TodayCard, { AnnouncementNote } from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import { rankNextSteps, type NextStep } from "@/features/learning/next-steps";
@@ -64,6 +65,7 @@ import {
 } from "@/services/tutoring";
 import TutoringExitQuiz from "@/components/results/TutoringExitQuizLazy";
 import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
+import { setTodayBadge } from "@/lib/today-badge";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -338,6 +340,11 @@ export default function ThptStudentHome({
       : null;
   const showToday = attentionReady && (Boolean(todayNote) || primaryStep !== null || alertText !== null);
 
+  // Chấm đỏ ở nút "Hôm nay" của thanh đáy: chỉ cập nhật khi đã tải đủ dữ liệu (tránh chớp tắt).
+  useEffect(() => {
+    if (attentionReady) setTodayBadge(studentId, showToday || homeworkNotes.length > 0);
+  }, [attentionReady, showToday, homeworkNotes.length, studentId]);
+
   const liveWindows = liveExitWindows(openWindows, needs, nowMs);
   const showTutoring = needs.length > 0 || slots.length > 0 || liveWindows.length > 0;
 
@@ -430,6 +437,8 @@ export default function ThptStudentHome({
           onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
         />
       )}
+
+      <PwaInstallCard />
 
       {/* Mục 2 — Bài tập về nhà (ghi chú của GV) */}
       {homeworkNotes.length > 0 && (
