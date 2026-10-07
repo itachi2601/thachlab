@@ -1,3 +1,4 @@
+// Ghi cả `subtitle` ("N dạng bài kèm lời giải") theo số dạng thật — trước đây subtitle cũ ("19 dạng…") còn sót sau khi thay dạng.
 // Đăng "Bài tập mẫu có cấu trúc" (scripts/data/bai-tap-mau/<lesson_id>.json, do skill soan-bai-tap-mau sinh)
 // vào CHỈ cột `questions` của mục kind='bai_tap_mau' của đúng bài. Không đụng exam_ids/lý thuyết/luyện tập.
 // CHẠY TRÊN MAC (service role). --dry-run không kết nối DB. Tự sao lưu `questions` cũ ra scripts/logs/.
@@ -71,6 +72,6 @@ if (keepOld || fromBackup) {
   finalQ = [...questions, ...old.filter((q) => !q.problem_html)];
   console.log(`Giữ ${finalQ.length - questions.length} dạng cũ sau ${questions.length} dạng mới.`);
 }
-const upd = await sb.from("lesson_items").update({ questions: finalQ }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
+const upd = await sb.from("lesson_items").update({ questions: finalQ, subtitle: `${finalQ.length} dạng bài kèm lời giải` }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
 if (upd.error || upd.data?.length !== 1) fail(upd.error?.message ?? "UPDATE không đúng 1 dòng");
 console.log(`✓ Đã ghi. Hoàn tác: cập nhật lại questions từ ${path.relative(root, backup)}. Rồi: bash scripts/deploy.sh`);
