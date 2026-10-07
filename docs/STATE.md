@@ -11,6 +11,10 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- [x] **Trang chủ HS gọn lại** (7/10/2026, commit 273585178 + 4cd492776): một thẻ "Hôm nay em làm gì" (`TodayCard`), một khối
+  Phụ đạo chỉ hiện khi có việc (`TutoringSection`), bù bài bỏ danh sách buổi, rank gọn; `ClassRankBoard` + `HonorVisibilityPicker`
+  sang `/lop-hoc/xep-hang`; xoá `NextStepsCard`, `TitleShowcase`. **Chưa chụp 375px bằng tài khoản HS** — thầy xem thật sau deploy
+  (ghi chú ở phụ lục B1 `docs/QUY-TAC-THIET-KE.md`).
 - **Hero có tab 4 "Hình chiếu" — bóng của M quay đều đồng nhịp với con lắc lò xo (4/10/2026)**:
   `components/physics/ShadowSpringSimulation.tsx` + `hooks/useCircularProjection.ts` + `lib/circularProjection.ts`
   (toán thuần; 34 kiểm ở `tmp/hero-review/hinhchieu-check.mts`, gồm đối chiếu `so_lieu_mau` của spec
