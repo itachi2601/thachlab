@@ -40,15 +40,20 @@ function standalone() {
 export default function PwaInstallCard() {
   const [mode, setMode] = useState<"hidden" | "prompt" | "ios">("hidden");
   const [showSteps, setShowSteps] = useState(false);
+  const [mac, setMac] = useState(false);
 
   useEffect(() => {
     if (standalone() || snoozed()) return;
     const w = window as Win;
-    const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const ua = navigator.userAgent;
+    // iPhone/iPad và Safari trên Mac (iPadOS đời mới báo là Macintosh nhưng có cảm ứng) đều cài thủ công.
+    const safari = /safari/i.test(ua) && !/chrome|crios|fxios|edg|android/i.test(ua);
+    const ios = /iphone|ipad|ipod/i.test(ua) || (safari && /macintosh/i.test(ua));
     const sync = () => {
       if (w.__thachlabInstallPrompt) setMode("prompt");
       else if (ios) setMode("ios");
     };
+    setMac(/macintosh/i.test(ua) && navigator.maxTouchPoints === 0);
     sync();
     // Sự kiện có thể đến sau lần render đầu.
     const onPrompt = () => window.setTimeout(sync, 0);
@@ -104,22 +109,31 @@ export default function PwaInstallCard() {
           <Smartphone size={20} />
         </span>
         <div className="min-w-0">
-          <h2 className="text-base font-bold text-white">Cài ThachLab lên màn hình chính</h2>
-          <p className="mt-1 text-sm leading-relaxed text-slate-300">Mở bài luyện chỉ với một lần chạm, như một app.</p>
+          <h2 className="text-base font-bold text-white">Cài ThachLab thành một app</h2>
+          <p className="mt-1 text-sm leading-relaxed text-slate-300">Mở ThachLab trong cửa sổ riêng, một lần chạm, không cần nhớ địa chỉ web.</p>
         </div>
       </div>
       {mode === "ios" && showSteps && (
         <ol className="mt-3 space-y-1.5 pl-1 text-sm leading-relaxed text-slate-200">
-          <li>1. Mở trang này bằng Safari.</li>
-          <li>2. Bấm nút Chia sẻ (ô vuông có mũi tên lên).</li>
-          <li>3. Chọn “Thêm vào Màn hình chính”.</li>
+          {mac ? (
+            <>
+              <li>1. Trên thanh menu Safari, chọn Tệp (File).</li>
+              <li>2. Chọn “Thêm vào Dock”.</li>
+            </>
+          ) : (
+            <>
+              <li>1. Mở trang này bằng Safari.</li>
+              <li>2. Bấm nút Chia sẻ (ô vuông có mũi tên lên).</li>
+              <li>3. Chọn “Thêm vào Màn hình chính”.</li>
+            </>
+          )}
         </ol>
       )}
-      <div className="mt-3 flex gap-2">
+      <div className="mt-3 flex gap-2 sm:justify-end">
         <button
           type="button"
           onClick={install}
-          className="min-h-11 flex-1 rounded-xl bg-blue-600 px-4 text-base font-semibold text-white"
+          className="min-h-11 flex-1 rounded-xl bg-blue-600 px-4 sm:flex-none sm:px-6 text-base font-semibold text-white"
         >
           {mode === "ios" ? (showSteps ? "Ẩn hướng dẫn" : "Xem cách cài") : "Cài ngay"}
         </button>
