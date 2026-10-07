@@ -36,6 +36,7 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
   const [mic, setMic] = useState({ x: 0.35, y: 0.9 });
   const [playing, setPlaying] = useState(false);
   const [vol, setVol] = useState(0.15);
+  const [warn, setWarn] = useState(false);
 
   const audio = useRef<{ ctx: AudioContext; osc: OscillatorNode; gl: GainNode; gr: GainNode; master: GainNode } | null>(null);
 
@@ -204,11 +205,49 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
 
       <button
         type="button"
-        onClick={playing ? stop : start}
+        onClick={playing ? stop : () => setWarn(true)}
         className={`min-h-12 w-full rounded-xl px-5 text-base font-bold text-white sm:w-auto ${playing ? "bg-rose-500" : "bg-emerald-500"}`}
       >
         {playing ? "■ Tắt âm" : "▶ Phát âm đơn sắc"}
       </button>
+
+      {warn && (
+        <div
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="snd-warn-title"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setWarn(false)}
+        >
+          <div
+            className="w-full max-w-sm space-y-3 rounded-2xl border border-amber-400/40 bg-slate-900 p-5 text-slate-100 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 id="snd-warn-title" className="text-lg font-bold text-amber-300">
+              ⚠ Sắp phát âm thanh
+            </h3>
+            <p className="text-sm leading-relaxed">
+              Thí nghiệm sẽ phát âm đơn sắc (có thể chói tai ở tần số cao). Hãy hạ âm lượng thiết bị, không đeo tai nghe sát tai, và tắt âm khi không dùng.
+            </p>
+            <div className="flex gap-3">
+              <button type="button" onClick={() => setWarn(false)} className="min-h-12 flex-1 rounded-xl border border-white/20 font-bold">
+                Huỷ
+              </button>
+              <button
+                type="button"
+                autoFocus
+                onClick={() => {
+                  setWarn(false);
+                  start();
+                }}
+                className="min-h-12 flex-1 rounded-xl bg-emerald-500 font-bold text-white"
+              >
+                Phát âm
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {compact ? (
         <p className="text-sm text-slate-200" aria-live="polite">
