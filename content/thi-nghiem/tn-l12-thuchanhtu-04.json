@@ -1,0 +1,161 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+ "lesson_id": 12,
+ "nguon_trong_bai": "content/lesson-samples/l12-thuc-hanh-cam-ung-tu/theory.html",
+ "loai": "thi_nghiem",
+ "id": "tn-l12-thuchanhtu-04",
+ "ten": "Mô phỏng cân dòng điện: tăng giảm và đảo chiều I",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thuchanhtu.can_dong_dien",
+  "thuchanhtu.dao_chieu_dong"
+ ],
+ "muc_tieu": "Tự chọn cường độ 0–5 A và chiều dòng điện, quan sát mũi tên lực, số cân và B suy ra thay đổi.",
+ "dung_cu": [
+  {
+   "ten": "Cân điện tử chia 0,01 g",
+   "so_luong": 1,
+   "ghi_chu": "có nút TARE"
+  },
+  {
+   "ten": "Nam châm chữ U đặt trên đĩa cân",
+   "so_luong": 1,
+   "ghi_chu": "B trong khe cỡ 0,12 T"
+  },
+  {
+   "ten": "Khung dây một vòng treo trên giá đứng riêng",
+   "so_luong": 1,
+   "ghi_chu": "cạnh dưới l = 4,0 cm nằm trong khe, đo bằng thước kẹp ±0,5 mm"
+  },
+  {
+   "ten": "Nguồn một chiều 0–12 V và biến trở",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế một chiều",
+   "so_luong": 1,
+   "ghi_chu": "sai số ±0,05 A"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chọn I = 0 rồi tăng từng nấc đến 5 A.",
+   "Ở mỗi nấc, đổi chiều dòng điện.",
+   "Đọc số cân, F và B hiện bên dưới."
+  ],
+  "quan_sat": [
+   "Số cân tăng đều theo I.",
+   "Đảo chiều thì số cân đổi dấu và mũi tên đảo hướng.",
+   "B tính ra luôn cỡ 0,12 T."
+  ],
+  "rut_ra": [
+   "F tỉ lệ thuận với I.",
+   "Lực từ và phản lực luôn ngược chiều nhau.",
+   "B là đặc trưng của khe nam châm, không đổi theo I."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "chieu_I",
+   "ten": "Chiều dòng điện (+1 ra khỏi trang, −1 vào trong)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": -1,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "dm",
+   "ten": "Số đọc của cân",
+   "don_vi": "g",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Lực từ lên cạnh khung vuông góc đường sức: F = B·I·l",
+   "Cân đọc phản lực lên nam châm: F = Δm·g, g = 9,81 m/s²",
+   "Δm_lt (g) = 1000·B·I·l/g = 0,4893·I (với B = 0,12 T, l = 0,040 m)",
+   "Suy B từ số đo: B = Δm·g/(I·l); hoặc B = k·g/l với k là độ dốc đồ thị Δm–I",
+   "Sai số: ΔB/B ≈ Δ(Δm)/Δm + ΔI/I + Δl/l"
+  ],
+  "gia_thiet": [
+   "từ trường trong khe coi như đều, vuông góc đúng 90° với cạnh khung",
+   "chỉ cạnh dưới nằm trong khe; hai cạnh bên không chịu lực từ đáng kể",
+   "bỏ qua lực đẩy của không khí và từ trường rò ở mép khe",
+   "giá đỡ khung không chạm cân hay nam châm"
+  ],
+  "ghi_chu": "Mô phỏng: thanh trượt I, kim cân nhích theo, đồ thị Δm–I vẽ dần từng điểm đo và hiện đường thẳng độ dốc; bật/tắt chế độ hiện sai số để thấy sai số tương đối nhỏ dần khi I tăng."
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "I (A)",
+   "Δm đo (g)",
+   "F = Δm·g (mN)",
+   "B = Δm·g/(I·l) (T)"
+  ],
+  "hang": [
+   [
+    1,
+    0.5,
+    4.91,
+    0.123
+   ],
+   [
+    2,
+    0.97,
+    9.52,
+    0.119
+   ],
+   [
+    3,
+    1.45,
+    14.22,
+    0.119
+   ],
+   [
+    4,
+    1.97,
+    19.33,
+    0.121
+   ],
+   [
+    5,
+    2.44,
+    23.94,
+    0.12
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình B = 0,12 T, l = 4,0 cm (Δm lí thuyết 0,489·I g), thêm sai lệch cỡ ±0,02 g; không phải số đo thật. Trung bình B = 0,120 T; độ dốc 0,4885 g/A cho B = 0,1198 T."
+ },
+ "ket_qua_ky_vong": "Số cân và độ dài mũi tên tỉ lệ với I; đảo chiều thì dấu số cân và chiều mũi tên đảo, độ lớn giữ nguyên; B suy ra luôn quanh 0,12 T.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng đảo chiều dòng làm cân về 0.",
+  "Cho rằng B suy ra thay đổi theo I."
+ ],
+ "sai_so_thuong_gap": [
+  "Số liệu mô phỏng là số minh hoạ, có sai lệch ±0,02 g so với mô hình lí tưởng."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Đã cài bằng radio + CSS trong bài (6 mức I × 2 chiều, không JS); bản canvas liên tục để làm sau.",
+  "diem_nhan": "Mũi tên F và F′ luôn ngược chiều, cùng độ dài."
+ },
+ "an_toan": [
+  "Dòng tới 5 A làm dây nóng: mỗi lần chỉ đóng mạch vài giây rồi ngắt.",
+  "Không để khung chạm vào hai cực nam châm gây đoản mạch."
+ ]
+}

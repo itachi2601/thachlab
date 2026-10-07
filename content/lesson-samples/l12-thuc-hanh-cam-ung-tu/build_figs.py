@@ -119,8 +119,57 @@ fig4 = wrap("0 0 380 250", "Dây hợp với đường sức từ một góc 60 
             b, "Hình 4. Dây hợp với đường sức góc $\\theta$ (vẽ trong mặt phẳng chứa $\\vec B$ và dây). Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\\sin\\theta$.",
             "tn-l12-thuchanhtu-03")
 
+
+# ======================================================= Mô phỏng (radio + CSS, không JS)
+VAL = {1: (0.50, 4.91, 0.123), 2: (0.97, 9.52, 0.119), 3: (1.45, 14.22, 0.119), 4: (1.97, 19.33, 0.121), 5: (2.44, 23.94, 0.120)}
+vn = lambda x, d: f"{x:.{d}f}".replace(".", ",")
+vm = lambda x, d: f"{x:.{d}f}".replace(".", "{,}")
+
+
+def sim_html():
+    sv = defs("sm")
+    sv += text(20, 26, "B đi từ N sang S →", GRN, 14, "start", "700")
+    sv += rect(20, 240, 230, 46, GREY_F)
+    sv += text(135, 258, "cân điện tử", "currentColor", 14, "middle", "700")
+    sv += rect(30, 272, 210, 8, "none", "currentColor", 1, 3)
+    sv += '<rect class="sim-shaft sim-bar" x="135" y="270" width="100" height="12" rx="3" fill="#fb923c"/>'
+    sv += text(20, 296, "−", "currentColor", 14, "middle", "700") + text(250, 296, "+", "currentColor", 14, "middle", "700")
+    sv += rect(30, 110, 50, 130, RED_F, RED, 2, 3)
+    sv += rect(190, 110, 50, 130, BLUE_F, BLUE, 2, 3)
+    sv += rect(30, 200, 210, 40, GREY_F, "currentColor", 2, 3)
+    sv += text(55, 160, "N", RED, 18, "middle", "700") + text(215, 160, "S", BLUE, 18, "middle", "700")
+    sv += line(135, 50, 135, 141, "currentColor", 1.5)
+    sv += '<circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/>'
+    sv += '<circle class="sim-wp" cx="135" cy="150" r="3" fill="currentColor"/>'
+    sv += '<path class="sim-wn" d="M129,144 L141,156 M141,144 L129,156" stroke="currentColor" stroke-width="2"/>'
+    sv += f'<rect class="sim-shaft sim-F" x="150" y="92" width="5" height="50" fill="{RED}"/>'
+    sv += f'<polygon class="sim-head sim-Fh" points="152,122 145,136 159,136" fill="{RED}"/>'
+    sv += f'<rect class="sim-shaft sim-R" x="260" y="150" width="5" height="50" fill="{ORG}"/>'
+    sv += f'<polygon class="sim-head sim-Rh" points="262,170 255,156 269,156" fill="{ORG}"/>'
+    sv += text(172, 100, "F (dây)", RED, 14, "start", "700")
+    sv += text(274, 128, "F′ (nam", ORG, 14, "start", "700") + text(274, 146, "châm)", ORG, 14, "start", "700")
+    svg = f'<svg viewBox="0 0 380 304" role="img" aria-label="Mô phỏng cân dòng điện: chọn cường độ và chiều dòng điện, mũi tên lực và số cân đổi theo">{sv}</svg>'
+    h = '<div class="tl-box tl-box--exp tl-sim" data-exp="tn-l12-thuchanhtu-04">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
+    h += '<div class="tl-sim__row"><b>Cường độ dòng điện</b>'
+    for i in range(6):
+        h += f'<input type="radio" name="tls12-i" class="tls-i{i}" id="tls12-i{i}"' + (" checked" if i == 0 else "") + ">"
+        h += f'<label for="tls12-i{i}" class="tl-sim__chip">{i} A</label>'
+    h += '</div>\n<div class="tl-sim__row"><b>Chiều dòng điện</b>'
+    h += '<input type="radio" name="tls12-d" class="tls-dir-f" id="tls12-df" checked><label for="tls12-df" class="tl-sim__chip">⊙ ra khỏi trang</label>'
+    h += '<input type="radio" name="tls12-d" class="tls-dir-r" id="tls12-dr"><label for="tls12-dr" class="tl-sim__chip">⊗ vào trong trang</label></div>\n'
+    h += svg + '\n<div aria-live="polite">\n'
+    h += '<div class="tl-sim__st st-0"><p>Cân: <strong>0,00 g</strong></p><p>Không có dòng điện nên không có lực từ.</p></div>\n'
+    for i, (m, f, bb) in VAL.items():
+        for sg, sc in (("p", "+"), ("n", "−")):
+            h += (f'<div class="tl-sim__st st-{i}{sg}"><p>Cân: <strong>{sc}{vn(m, 2)} g</strong></p>'
+                  f'<p>$F = \\Delta m\\, g \\approx {vm(f, 2)}\\ \\text{{mN}}$ · $B = \\dfrac{{F}}{{Il}} \\approx {vm(bb, 3)}\\ \\text{{T}}$</p></div>\n')
+    h += '</div>\n<p>Thử: (1) tăng $I$ từng nấc — số cân và mũi tên đổi thế nào? (2) đảo chiều ở cùng $I$. (3) so $B$ ở 1 A và 5 A. Số liệu minh hoạ, khớp bảng ở mục II.3 ($l = 4{,}0\\ \\text{cm}$).</p>\n</div>'
+    return h
+
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
+assert "<!--SIM-->" in src
+src = src.replace("<!--SIM-->", sim_html())
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
