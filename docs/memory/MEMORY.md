@@ -36,6 +36,7 @@
 - [Skill azota](project_thachlab_azota_skill.md)
 - [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md)
 - [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md)
+- [Skill tài nguyên bài học](project_thachlab_tai_nguyen_bai_hoc_skill.md) — kế hoạch hình/PhET/video; đã chép vào repo 7/10
 - [Skill latex](project_thachlab_latex_skill.md)
 - [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md)
 - [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md)
