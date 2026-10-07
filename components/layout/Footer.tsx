@@ -46,11 +46,31 @@ const gridColumns = hasContact
   : "md:grid-cols-[1.4fr_1fr_1fr_1fr]";
 
 /**
+ * variant="app": trang trong app của học sinh đã đăng nhập (/tai-khoan, /lop-hoc/xep-hang, /lop-hoc/ket-qua, /thong-bao —
+ * thầy chốt 7/10/2026). Footer tiếp thị (cột Lớp học, Về thầy Thạch, Blog, mạng xã hội) xếp dọc rất dài ở 375px và không
+ * phục vụ việc học (N1), lại trùng thanh đáy MobileTabBar → chỉ còn một dòng: bản quyền · Zalo (D2 ≥44px); Báo lỗi đã có nút nổi.
  * variant="parent": dùng ở /phu-huynh (docs/QUY-TAC-THIET-KE-PHU-HUYNH.md). Bản mặc định nền #04060A cố định nên
  * trên trang sáng tiêu đề cột (màu ink = chữ tối) chìm hẳn vào nền đen, và chữ 12–14px dưới sàn 15px của phụ huynh
  * (P1, P2). Bản parent theo theme (bg-panel), chữ ≥15px, link cao ≥48px (P4). Trang khác không đổi.
  */
-export default function Footer({ variant = "default" }: { variant?: "default" | "parent" }) {
+export default function Footer({ variant = "default" }: { variant?: "default" | "parent" | "app" }) {
+  if (variant === "app") {
+    const link = "inline-flex min-h-11 items-center text-[13px] text-muted transition-colors hover:text-primary";
+    return (
+      <footer className="border-t border-line bg-panel">
+        {/* Canh trái + chừa lề phải ~9rem ở điện thoại để nút nổi "Báo lỗi / Góp ý" (bug-fab) không đè lên chữ;
+            không lặp link Báo lỗi vì nút nổi đã có. */}
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 px-6 py-3 pr-36 text-[13px] text-muted sm:pr-6">
+          <span className="inline-flex min-h-11 items-center">&copy; {new Date().getFullYear()} ThachLab</span>
+          {CONTACT.zalo && (
+            <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className={link}>
+              Nhắn Zalo cho thầy
+            </a>
+          )}
+        </div>
+      </footer>
+    );
+  }
   const parent = variant === "parent";
   const bg = parent ? "bg-panel" : "bg-[#04060A]";
   const headCls = parent ? "font-display text-base font-bold text-ink" : "font-display text-sm font-semibold text-ink";

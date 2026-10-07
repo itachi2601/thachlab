@@ -46,7 +46,7 @@ export default function XepHangPage() {
           </RequireAuth>
         )}
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

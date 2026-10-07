@@ -30,7 +30,7 @@ export default function KetQuaPage() {
           </RequireAuth>
         )}
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

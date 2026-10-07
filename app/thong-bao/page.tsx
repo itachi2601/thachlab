@@ -100,7 +100,7 @@ export default function ThongBaoPage() {
           <Inbox />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

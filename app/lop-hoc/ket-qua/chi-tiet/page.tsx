@@ -181,7 +181,7 @@ export default function KetQuaChiTietPage() {
           )}
         </div>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }
