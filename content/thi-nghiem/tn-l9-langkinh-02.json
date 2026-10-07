@@ -1,0 +1,152 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 7. Lăng kính",
+ "lesson_id": 85,
+ "nguon_trong_bai": "content/lesson-samples/l9-lang-kinh-tan-sac/theory.html",
+ "id": "tn-l9-langkinh-02",
+ "ten": "Hứng quang phổ ánh sáng trắng trên tường",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "langkinh.tan_sac",
+  "langkinh.anh_sang_trang_hon_hop"
+ ],
+ "muc_tieu": "Thấy chùm sáng trắng hẹp qua lăng kính tách thành dải màu từ đỏ đến tím.",
+ "dung_cu": [
+  {
+   "ten": "Lăng kính thuỷ tinh",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn pin ánh sáng trắng (hoặc nắng qua khe rèm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm bìa có khe hẹp khoảng 2 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tường hoặc màn trắng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt tấm bìa có khe hẹp trước đèn pin để có chùm sáng hẹp.",
+   "Cho chùm sáng qua lăng kính, hứng trên tường trắng.",
+   "Xoay lăng kính đến khi dải màu rõ nhất."
+  ],
+  "quan_sat": [
+   "Dải màu liên tục: đỏ, cam, vàng, lục, lam, chàm, tím.",
+   "Đỏ ở đầu xa đáy (trên), tím ở đầu gần đáy (dưới)."
+  ],
+  "rut_ra": [
+   "Ánh sáng trắng là hỗn hợp nhiều ánh sáng màu.",
+   "Lăng kính tách các màu có sẵn theo các hướng khác nhau (tán sắc)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Góc chiết quang",
+   "don_vi": "độ",
+   "kieu": "co_dinh",
+   "gia_tri": 60
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 70,
+   "mac_dinh": 48,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Khoảng cách lăng kính – màn",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "dD",
+   "ten": "Chênh góc lệch tím – đỏ",
+   "don_vi": "độ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "mỗi màu có chiết suất riêng: n_đỏ < n_cam < n_vàng < n_lục < n_lam < n_chàm < n_tím",
+   "mỗi màu dò riêng theo định luật khúc xạ ở hai mặt bên",
+   "bề rộng dải trên màn ≈ L·(D_tím − D_đỏ) (góc tính bằng radian)"
+  ],
+  "gia_thiet": [
+   "chùm sáng tới đủ hẹp",
+   "chiết suất giả định 1,50 (đỏ) đến 1,62 (tím) trong hình vẽ, phóng đại; thuỷ tinh crown thật khoảng 1,51–1,53"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Màu",
+   "n (giả định)",
+   "D (độ), A = 60°, i = 48°"
+  ],
+  "hang": [
+   [
+    "đỏ",
+    1.5,
+    37.2
+   ],
+   [
+    "cam",
+    1.52,
+    39.0
+   ],
+   [
+    "vàng",
+    1.54,
+    40.8
+   ],
+   [
+    "lục",
+    1.56,
+    42.7
+   ],
+   [
+    "lam",
+    1.58,
+    44.7
+   ],
+   [
+    "chàm",
+    1.6,
+    46.8
+   ],
+   [
+    "tím",
+    1.62,
+    49.1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình với chiết suất giả định (phóng đại), khớp Hình 3 của bài; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Dải màu đỏ → tím; đỏ lệch ít nhất, tím lệch nhiều nhất.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ lăng kính nhuộm màu cho ánh sáng.",
+  "Nghĩ đỏ lệch nhiều nhất.",
+  "Nghĩ các màu có ranh giới rõ, đúng bảy vạch."
+ ],
+ "sai_so_thuong_gap": "Khe quá rộng làm các màu chồng nhau thành viền trắng giữa dải; phòng quá sáng làm dải nhạt.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Chùm trắng vào lăng kính tách thành 7 tia màu, hứng trên màn; thanh trượt i và L đổi vị trí, bề rộng dải.",
+  "diem_nhan": "Chặn lại chỉ cho một màu qua lăng kính thứ hai: không tách thêm (lăng kính không tạo màu)."
+ }
+}

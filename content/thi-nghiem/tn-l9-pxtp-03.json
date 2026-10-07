@@ -1,0 +1,111 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 6. Phản xạ toàn phần",
+ "lesson_id": 84,
+ "nguon_trong_bai": "content/lesson-samples/l9-phan-xa-toan-phan/theory.html",
+ "id": "tn-l9-pxtp-03",
+ "ten": "Cốc nước thành gương: nhìn chếch từ dưới lên mặt nước",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "pxtp.dieu_kien",
+  "pxtp.chieu_truyen"
+ ],
+ "muc_tieu": "Thấy mặt nước sáng bạc khi nhìn từ dưới chếch lên (nước → không khí, góc tới lớn) và không thấy khi nhìn từ trên xuống.",
+ "dung_cu": [
+  {
+   "ten": "Cốc thủy tinh trong, thành thẳng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Rót đầy nước vào cốc, nâng cốc cao hơn mắt, nhúng ngón tay vào nước.",
+   "Nhìn chếch từ dưới lên mặt nước qua thành cốc; sau đó nhìn từ trên xuống."
+  ],
+  "quan_sat": [
+   "Nhìn từ dưới, chếch nhiều: mặt nước sáng bạc, thấy ảnh ngón tay lộn ngược.",
+   "Nhìn từ trên xuống: mặt nước trong, không có lớp bạc."
+  ],
+  "rut_ra": [
+   "Lớp bạc chỉ có khi ánh sáng đi từ nước ra không khí với góc tới lớn: đúng hai điều kiện phản xạ toàn phần."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới tại mặt nước",
+   "don_vi": "°",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 89,
+   "mac_dinh": 50,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất nước",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.33
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Góc khúc xạ ra không khí",
+   "don_vi": "°",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "1,33·sin i = sin r (khi 1,33·sin i ≤ 1)",
+   "sin i_th = 1/1,33, i_th ≈ 48,8°"
+  ],
+  "gia_thiet": [
+   "mặt nước phẳng",
+   "thành cốc mỏng, bỏ qua khúc xạ qua thành cốc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "i (°)",
+   "r (°)",
+   "Kết quả"
+  ],
+  "hang": [
+   [
+    30,
+    41.7,
+    "ló ra"
+   ],
+   [
+    45,
+    70.1,
+    "ló ra"
+   ],
+   [
+    50,
+    "không có",
+    "phản xạ toàn phần"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ định luật khúc xạ với n = 1,33, không phải đo thật."
+ },
+ "ket_qua_ky_vong": "Từ khoảng 49° trở lên mặt nước như gương khi nhìn từ dưới; nhìn từ trên xuống không bao giờ thấy.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ mặt nước 'phản chiếu như gương' từ phía nào cũng như nhau.",
+  "Nghĩ lớp bạc là do bọt khí bám mặt nước."
+ ],
+ "sai_so_thuong_gap": "Cốc có hoa văn hoặc thành dày làm méo ảnh; mặt nước dao động.",
+ "an_toan": "Cầm chắc cốc thủy tinh, tránh làm vỡ.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Mắt đặt dưới mặt nước, kéo hướng nhìn; khi i vượt 48,8° mặt nước chuyển sang phản chiếu đáy.",
+  "diem_nhan": "Đặt mắt phía trên mặt nước: kéo mọi góc vẫn nhìn xuyên qua được."
+ }
+}

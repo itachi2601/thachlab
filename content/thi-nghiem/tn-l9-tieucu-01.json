@@ -1,0 +1,146 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+ "lesson_id": 87,
+ "nguon_trong_bai": "content/lesson-samples/l9-thuc-hanh-tieu-cu/theory.html",
+ "id": "tn-l9-tieucu-01",
+ "ten": "Cách 1: hứng ảnh của vật rất xa, đo gần đúng tiêu cự",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "tieucu.cach_vat_xa",
+  "tieucu.chum_song_song_hoi_tu_tai_f"
+ ],
+ "muc_tieu": "Nhận ra khi vật rất xa thì ảnh nằm ở tiêu điểm, nên khoảng cách từ màn tới thấu kính xấp xỉ tiêu cự; dùng kết quả gần đúng này để biết cỡ f trước khi làm cách 2.",
+ "dung_cu": [
+  {
+   "ten": "Ghế quang học (hoặc thước dài 1 m, độ chia 1 mm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính hội tụ có giá đỡ, f cỡ 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn trắng có giá, trượt được dọc thước",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cây hoặc toà nhà cách 20 m trở lên nhìn qua cửa sổ (không dùng Mặt Trời)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Hướng thấu kính ra cây ở xa (từ 20 m trở lên) qua cửa sổ, đặt màn sau thấu kính.",
+   "Dịch màn tới lui cho ảnh nét nhất, đo khoảng cách từ màn tới tâm thấu kính; lặp 3 lần."
+  ],
+  "quan_sat": [
+   "Ảnh cây nhỏ xíu, ngược chiều.",
+   "d' = 10,2; 9,9; 10,1 cm."
+  ],
+  "rut_ra": [
+   "Trung bình 10,1 cm nên f ≈ 10,1 cm.",
+   "Kết quả gần đúng vì ảnh nét nhất là một đoạn vài mm và vật không ở vô cực; dùng để biết cỡ f."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự thật của thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 20,
+   "mac_dinh": 10.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách vật – thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 5000,
+   "mac_dinh": 2000.0,
+   "buoc": 100
+  },
+  {
+   "ky_hieu": "nhieu",
+   "ten": "Biên độ sai lệch khi xác định vị trí ảnh nét",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.4,
+   "mac_dinh": 0.15,
+   "buoc": 0.05
+  },
+  {
+   "ky_hieu": "dcnn",
+   "ten": "Độ chia nhỏ nhất của thước",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "dp",
+   "ten": "Khoảng cách màn – thấu kính đo được",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "f_do",
+   "ten": "Tiêu cự ước lượng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d' = f·d/(d − f)",
+   "khi d rất lớn: d' → f",
+   "f_ước_lượng ≈ trung bình các lần đo d'"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng, tia gần trục",
+   "d = 20 m, f = 10 cm: d' lớn hơn f khoảng 0,5 mm",
+   "nhiễu là dãy cố định để tái lập: +0,15; −0,15; +0,05 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "d' (cm)"
+  ],
+  "hang": [
+   [
+    1,
+    10.2
+   ],
+   [
+    2,
+    9.9
+   ],
+   [
+    3,
+    10.1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (f = 10,0 cm; vật cách 20 m) rồi thêm sai lệch nhỏ làm tròn mm, không phải đo thật. Trung bình 10.1 cm."
+ },
+ "ket_qua_ky_vong": "f ≈ 10,1 cm (gần đúng); vật cách 2 m thì d' ≈ 10,5 cm, lệch khoảng 5 % nên phải dùng vật từ 20 m trở lên.",
+ "hien_tuong_hay_sai": [
+  "Dùng Mặt Trời làm vật rất xa: nguy hiểm và có thể gây cháy.",
+  "Dùng vật quá gần (vài mét) rồi coi d' = f.",
+  "Dừng ngay khi thấy ảnh tạm nét, không tìm điểm giữa khoảng nét."
+ ],
+ "sai_so_thuong_gap": "Ảnh nét nhất là một đoạn vài mm; đo từ mép giá đỡ thay vì tâm thấu kính; vật chưa đủ xa.",
+ "an_toan": "Không nhìn Mặt Trời qua thấu kính; không để thấu kính hứng nắng gần giấy, vải, da.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Chùm tia song song tới thấu kính; kéo màn tới lui, ảnh nét nhất khi màn chạm F'. Thanh trượt 'khoảng cách vật' cho thấy d' tiến dần tới f.",
+  "diem_nhan": "Kéo d từ 2 m lên 20 m: độ lệch d' − f giảm từ 5 % xuống 0,5 %."
+ }
+}

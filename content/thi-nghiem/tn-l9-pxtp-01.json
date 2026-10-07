@@ -1,0 +1,154 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 6. Phản xạ toàn phần",
+ "lesson_id": 84,
+ "nguon_trong_bai": "content/lesson-samples/l9-phan-xa-toan-phan/theory.html",
+ "id": "tn-l9-pxtp-01",
+ "ten": "Khối bán trụ thủy tinh: tăng góc tới tới khi tia khúc xạ biến mất",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "pxtp.hien_tuong",
+  "pxtp.goc_toi_han",
+  "pxtp.dieu_kien"
+ ],
+ "muc_tieu": "Thấy tia khúc xạ lệch xa pháp tuyến và mờ dần khi tăng góc tới, đi sát mặt phân cách ở góc tới hạn rồi biến mất; đọc bảng i–r và ước lượng góc tới hạn.",
+ "dung_cu": [
+  {
+   "ten": "Bút laser (hoặc đèn chiếu chùm hẹp)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khối bán trụ thủy tinh/acrylic",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vòng chia độ in trên tấm nhựa, độ chia 1°",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt khối bán trụ trên vòng chia độ, mặt phẳng hướng lên, tâm trùng tâm vòng.",
+   "Chiếu tia laser vào mặt cong, hướng vào tâm I (tia đi theo bán kính nên không gãy khi vào thủy tinh).",
+   "Tăng dần góc tới i tại I, đọc góc khúc xạ r ở i = 20°, 30°, 35°, 40°, 41°, 42°."
+  ],
+  "quan_sat": [
+   "i nhỏ: có tia khúc xạ và tia phản xạ mờ.",
+   "i tăng: tia khúc xạ lệch xa pháp tuyến, mờ dần; tia phản xạ sáng dần.",
+   "Khoảng 42°: tia khúc xạ sát mặt phẳng; vượt quá chỉ còn tia phản xạ."
+  ],
+  "rut_ra": [
+   "Vượt góc tới hạn, ánh sáng bị phản xạ toàn phần.",
+   "Góc tới hạn nằm giữa 41° và 42°; tính đúng i_th = 41.8° (n = 1,5)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất khối bán trụ",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1.3,
+   "max": 2.5,
+   "mac_dinh": 1.5,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới tại tâm I",
+   "don_vi": "°",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 89,
+   "mac_dinh": 30,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "n_kk",
+   "ten": "Chiết suất không khí",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Góc khúc xạ đọc trên vòng chia độ",
+   "don_vi": "°",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  },
+  {
+   "ky_hieu": "i_th",
+   "ten": "Góc tới hạn",
+   "don_vi": "°",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "n·sin i = n_kk·sin r (khi n·sin i ≤ 1)",
+   "sin i_th = n_kk/n",
+   "i ≥ i_th: không có tia khúc xạ, phản xạ toàn phần (góc phản xạ = i)"
+  ],
+  "gia_thiet": [
+   "tia tới đi theo bán kính nên không khúc xạ ở mặt cong",
+   "n_kk = 1",
+   "bỏ qua bề rộng vệt laser"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "i (°)",
+   "r đọc (°)",
+   "r tính (°)"
+  ],
+  "hang": [
+   [
+    20,
+    31,
+    30.9
+   ],
+   [
+    30,
+    49,
+    48.6
+   ],
+   [
+    35,
+    60,
+    59.4
+   ],
+   [
+    40,
+    74,
+    74.6
+   ],
+   [
+    41,
+    80,
+    79.8
+   ],
+   [
+    42,
+    "không còn",
+    "không có"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình n = 1,5, số đọc làm tròn tới vạch 1° và lệch tối đa 0,6° so với tính; i_th = 41.81°."
+ },
+ "ket_qua_ky_vong": "r tăng nhanh dần khi i gần 42°; ở 42° không còn tia khúc xạ; i_th ≈ 41,8°.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng tia khúc xạ luôn còn, chỉ lệch thêm.",
+  "Cho rằng khi có tia khúc xạ thì không có tia phản xạ.",
+  "Đo góc từ mặt phẳng thay vì từ pháp tuyến."
+ ],
+ "sai_so_thuong_gap": "Gần góc tới hạn tia khúc xạ rất mờ và r đổi tới 5° khi i đổi 1°; vệt laser có bề rộng; chiếu lệch tâm I làm tia gãy ở mặt cong.",
+ "an_toan": "Không chiếu laser vào mắt; dùng bút laser công suất thấp.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Khối bán trụ trên vòng chia độ, thanh trượt góc tới; độ sáng tia khúc xạ/phản xạ đổi theo i; bảng tự ghi r.",
+  "diem_nhan": "Thanh trượt chiết suất: n lớn thì góc tới hạn nhỏ (kim cương 24,4°)."
+ }
+}

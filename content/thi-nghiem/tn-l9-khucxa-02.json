@@ -1,0 +1,134 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 5. Khúc xạ ánh sáng",
+ "lesson_id": 83,
+ "nguon_trong_bai": "content/lesson-samples/l9-khuc-xa-anh-sang/theory.html",
+ "id": "tn-l9-khucxa-02",
+ "ten": "Đo góc khúc xạ qua khối nhựa bán trụ trên đĩa chia độ",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "khucxa.dinh_luat",
+  "khucxa.chiet_suat"
+ ],
+ "muc_tieu": "Từ số đo i và r, thấy tỉ số sin i / sin r gần như không đổi và bằng chiết suất của nhựa.",
+ "dung_cu": [
+  {
+   "ten": "Khối nhựa trong hình bán trụ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đĩa chia độ tròn, vạch 1°",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút laser (hoặc đèn chiếu khe hẹp)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt mặt phẳng của khối bán trụ đi qua tâm đĩa, vuông góc đường 0°.",
+   "Chiếu tia laser từ không khí vào đúng tâm với i = 20°, 35°, 50°, 65°, 80°.",
+   "Đọc góc khúc xạ r trên đĩa ở mỗi lần."
+  ],
+  "quan_sat": [
+   "r luôn nhỏ hơn i; i tăng thì r tăng.",
+   "Tia ló ra khỏi mặt cong không gãy thêm."
+  ],
+  "rut_ra": [
+   "sin i / sin r gần như không đổi: đó là chiết suất của nhựa so với không khí.",
+   "Sai lệch do đọc góc tới 1°; góc nhỏ thì sai lệch tương đối lớn hơn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 80,
+   "mac_dinh": 45,
+   "buoc": 15
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất nhựa",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Góc khúc xạ đọc được",
+   "don_vi": "độ",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  },
+  {
+   "ky_hieu": "q",
+   "ten": "Tỉ số sin i / sin r",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin(i) = n·sin(r)",
+   "q = sin(i)/sin(r)"
+  ],
+  "gia_thiet": [
+   "tia tới đi đúng tâm đĩa",
+   "mặt cong: tia đi theo bán kính nên không gãy",
+   "đọc góc làm tròn tới 1°"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "i (độ)",
+   "r đọc (độ)",
+   "sin i / sin r"
+  ],
+  "hang": [
+   [
+    20,
+    13,
+    1.52
+   ],
+   [
+    35,
+    22,
+    1.53
+   ],
+   [
+    50,
+    31,
+    1.49
+   ],
+   [
+    65,
+    37,
+    1.51
+   ],
+   [
+    80,
+    41,
+    1.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: r tính từ n = 1,5 rồi làm tròn tới 1°, chưa phải số đo thật. Trung bình tỉ số 1.51."
+ },
+ "ket_qua_ky_vong": "Tỉ số trung bình khoảng 1.51, khớp n = 1,5 trong sai số đọc góc.",
+ "hien_tuong_hay_sai": [
+  "Tính i / r thay cho sin i / sin r.",
+  "Đọc r từ mặt phẳng của khối thay vì từ pháp tuyến."
+ ],
+ "sai_so_thuong_gap": "Vạch chia 1°, tia laser có bề rộng, tia không đi đúng tâm đĩa.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Xoay đèn quanh tâm đĩa, đọc r, bảng tự điền sin i / sin r.",
+  "diem_nhan": "i / r thay đổi nhiều, sin i / sin r gần như đứng yên."
+ }
+}

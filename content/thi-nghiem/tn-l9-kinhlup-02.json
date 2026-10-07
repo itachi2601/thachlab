@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 10. Kính lúp. Bài tập thấu kính",
+ "lesson_id": 88,
+ "nguon_trong_bai": "content/lesson-samples/l9-kinh-lup-bai-tap-thau-kinh/theory.html",
+ "id": "tn-l9-kinhlup-02",
+ "ten": "Soi chữ nhỏ trên vỏ hộp sữa bằng kính lúp 2,5x, nâng kính dần lên",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "kinhlup.anh_ao",
+  "kinhlup.cach_dung",
+  "thaukinh.anh_theo_vi_tri"
+ ],
+ "muc_tieu": "Thấy kính lúp chỉ cho ảnh ảo cùng chiều, to hơn khi vật nằm trong khoảng tiêu cự; quá tiêu điểm thì ảnh nhoè rồi lộn ngược.",
+ "dung_cu": [
+  {
+   "ten": "Kính lúp ghi 2,5x (f = 10 cm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vỏ hộp sữa có dòng chữ hạn dùng nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt kính sát dòng chữ nhỏ trên vỏ hộp sữa, mắt gần kính.",
+   "Nâng kính lên từng 2 cm tới khoảng 10 cm, mắt luôn nhìn qua kính.",
+   "Nâng kính lên 15 cm rồi lùi mắt ra xa kính khoảng 60 cm (ảnh thật ở cách kính 30 cm)."
+  ],
+  "quan_sat": [
+   "Chữ to dần, cùng chiều.",
+   "Ở gần 10 cm chữ nhoè hẳn.",
+   "Ở 15 cm, mắt ở xa kính: chữ lộn ngược."
+  ],
+  "rut_ra": [
+   "Kính chỉ phóng to cùng chiều khi vật nằm trong khoảng tiêu cự (ảnh ảo).",
+   "Kính 2,5x có f khoảng 10 cm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách chữ → kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 16,
+   "mac_dinh": 6,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "d'",
+   "ten": "Vị trí ảnh (âm: ảnh ảo)",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Số phóng đại |d'|/d",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "1/f = 1/d + 1/d'",
+   "k = |d'|/d"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng",
+   "d' < 0: ảnh ảo cùng phía vật",
+   "d = f không có ảnh: mô phỏng hiện cảnh báo, không tính d', k",
+   "ảnh thật (d > f) chỉ nhìn rõ khi mắt cách ảnh ≥ 25 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "d' (cm)",
+   "k"
+  ],
+  "hang": [
+   [
+    2,
+    -2.5,
+    1.25
+   ],
+   [
+    4,
+    -6.7,
+    1.67
+   ],
+   [
+    6,
+    -15.0,
+    2.5
+   ],
+   [
+    8,
+    -40.0,
+    5.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình f = 10 cm; thí nghiệm trong bài chỉ quan sát định tính."
+ },
+ "ket_qua_ky_vong": "d < 10 cm: ảnh ảo cùng chiều, to dần khi d tăng; gần 10 cm: nhoè; d = 15 cm, mắt cách kính 60 cm: thấy chữ lộn ngược (ảnh thật cách kính 30 cm).",
+ "hien_tuong_hay_sai": [
+  "Tưởng kính lúp đặt ở đâu cũng phóng to cùng chiều.",
+  "Tưởng đưa mắt ra xa kính sẽ thấy rộng hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo vị trí vật qua F, vẽ hai tia đặc biệt; ảnh ảo nét đứt đổi sang ảnh thật nét liền khi d > f.",
+  "diem_nhan": "Tại d = f hai tia ló song song: không có ảnh (nhoè)."
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 8. Thấu kính",
+ "lesson_id": 86,
+ "nguon_trong_bai": "content/lesson-samples/l9-thau-kinh/theory.html",
+ "id": "tn-l9-thaukinh-02",
+ "ten": "Hứng ảnh cửa sổ lên tờ giấy bằng kính lúp",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thaukinh.anh_that",
+  "thaukinh.do_tieu_cu_nhanh"
+ ],
+ "muc_tieu": "Thấy ảnh thật, ngược chiều, nhỏ của vật ở xa hứng được trên giấy, và đo nhanh tiêu cự.",
+ "dung_cu": [
+  {
+   "ten": "Kính lúp (thấu kính hội tụ)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tờ giấy trắng hoặc bìa cứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đứng cách cửa sổ vài mét, quay mặt về phía cửa sổ; cầm tờ giấy trắng phía sau kính lúp (xa cửa sổ hơn).",
+   "Dịch tờ giấy tới lui đến khi thấy hình cửa sổ rõ nét.",
+   "Đo khoảng cách từ kính tới giấy."
+  ],
+  "quan_sat": [
+   "Hình cửa sổ nhỏ, lộn ngược, rõ nét trên giấy.",
+   "Khoảng cách kính – giấy gần bằng tiêu cự ghi trên kính."
+  ],
+  "rut_ra": [
+   "Vật rất xa cho ảnh thật, ngược chiều, nhỏ hơn vật, nằm gần tiêu điểm F'.",
+   "Ảnh thật hứng được trên màn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách cửa sổ tới kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 100,
+   "max": 1000,
+   "mac_dinh": 400.0,
+   "buoc": 50
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự kính lúp",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "d'",
+   "ten": "Khoảng cách giấy tới kính khi ảnh rõ",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "1/f = 1/d + 1/d'",
+   "h'/h = d'/d"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng",
+   "cửa sổ coi như vật phẳng vuông góc trục chính"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "d' (cm)",
+   "d' - f (cm)"
+  ],
+  "hang": [
+   [
+    200,
+    10.53,
+    0.53
+   ],
+   [
+    400,
+    10.26,
+    0.26
+   ],
+   [
+    800,
+    10.13,
+    0.13
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình f = 10 cm: vật càng xa, ảnh càng sát F'."
+ },
+ "ket_qua_ky_vong": "Ảnh cửa sổ lộn ngược, nhỏ, rõ nét khi giấy cách kính khoảng f.",
+ "hien_tuong_hay_sai": [
+  "Tưởng ảnh hứng trên giấy là bóng của kính.",
+  "Tưởng ảnh qua kính lúp lúc nào cũng to và cùng chiều."
+ ],
+ "an_toan": "Không hướng kính lúp về phía Mặt Trời khi đang nhìn qua kính.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo vị trí tờ giấy, ảnh nhoè thành vệt khi lệch khỏi d', rõ nét tại d'.",
+  "diem_nhan": "Vật càng xa, chỗ ảnh rõ càng tiến sát F'."
+ }
+}

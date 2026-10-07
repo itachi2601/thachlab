@@ -1,0 +1,177 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+ "lesson_id": 87,
+ "nguon_trong_bai": "content/lesson-samples/l9-thuc-hanh-tieu-cu/theory.html",
+ "id": "tn-l9-tieucu-02",
+ "ten": "Cách 2: đo d và d' ở 5 vị trí vật, tính f trung bình và sai số",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "tieucu.cong_thuc_f_tu_d_dp",
+  "tieucu.sai_so_do_lech_lon_nhat",
+  "tieucu.do_toi_tam_thau_kinh"
+ ],
+ "muc_tieu": "Đo d và d' khi ảnh rõ nét ở 5 vị trí vật, tính f từ f = dd'/(d + d'), lấy trung bình và sai số bằng độ lệch lớn nhất, viết f = f̄ ± Δf.",
+ "dung_cu": [
+  {
+   "ten": "Ghế quang học (hoặc thước dài 1 m, độ chia 1 mm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính hội tụ có giá đỡ, f cỡ 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn trắng có giá, trượt được dọc thước",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vật sáng hình mũi tên cao 3,0 cm (khe mũi tên trước đèn LED)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt vật tại d = 15,0; 20,0; 25,0; 30,0; 40,0 cm (đo tới tâm thấu kính).",
+   "Mỗi lần dịch màn cho ảnh nét nhất, đọc d' trên thước chia tới 1 mm, rồi tính f = dd'/(d + d')."
+  ],
+  "quan_sat": [
+   "d càng lớn thì d' càng nhỏ.",
+   "d' = 30,4; 19,7; 16,9; 14,6; 13,6 cm.",
+   "f = 10,0; 9,9; 10,1; 9,8; 10,1 cm."
+  ],
+  "rut_ra": [
+   "f̄ = 9.98 cm, làm tròn 10,0 cm (cùng độ chia 0,1 cm) rồi mới tính độ lệch.",
+   "Δf_i = 0,0; 0,1; 0,1; 0,2; 0,1 cm; Δf = độ lệch lớn nhất = 0,2 cm.",
+   "f = 10,0 ± 0,2 cm; khoảng 9,8 – 10,2 cm khớp cách 1 (10,1) và cách 3 (10,1)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự thật của thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 10,
+   "mac_dinh": 10.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách vật – thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 12,
+   "max": 50,
+   "mac_dinh": 20.0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "nhieu",
+   "ten": "Biên độ sai lệch khi xác định vị trí ảnh nét",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 0.6,
+   "mac_dinh": 0.3,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "lech_goc",
+   "ten": "Đoạn đo hụt do đo tới mặt giá đỡ thay vì tâm (mỗi phía)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 2,
+   "mac_dinh": 0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "dcnn",
+   "ten": "Độ chia nhỏ nhất của thước",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 0.1
+  },
+  {
+   "ky_hieu": "dp",
+   "ten": "Khoảng cách màn – thấu kính đo được",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "f_do",
+   "ten": "Tiêu cự tính từ từng lần đo",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d'_lý_thuyết = f·d/(d − f)",
+   "d'_đo = d'_lý_thuyết + nhiễu_lần, làm tròn 0,1 cm",
+   "f_i = d·d'_đo/(d + d'_đo), làm tròn 0,1 cm",
+   "f̄ = trung bình f_i; Δf_i = |f_i − f̄|; Δf = max Δf_i",
+   "f = f̄ ± Δf"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng, tia gần trục",
+   "f thật = 10,0 cm",
+   "nhiễu là dãy cố định để tái lập: +0,4; −0,3; +0,2; −0,4; +0,3 cm",
+   "phải giữ d ≥ 1,2·f (ảnh thật, không quá xa): với f ≤ 10 cm thì d ≥ 12 cm",
+   "khi lech_goc > 0: d và d' cùng giảm lech_goc nên f tính ra nhỏ hơn thật"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "d' (cm)",
+   "f (cm)"
+  ],
+  "hang": [
+   [
+    15.0,
+    30.4,
+    10.0
+   ],
+   [
+    20.0,
+    19.7,
+    9.9
+   ],
+   [
+    25.0,
+    16.9,
+    10.1
+   ],
+   [
+    30.0,
+    14.6,
+    9.8
+   ],
+   [
+    40.0,
+    13.6,
+    10.1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (f = 10,0 cm) rồi thêm sai lệch nhỏ làm tròn mm, không phải đo thật. f̄ = 9.98 ≈ 10.0; Δf = 0.2."
+ },
+ "ket_qua_ky_vong": "f = 10,0 ± 0,2 cm; lệch lớn nhất ở lần d = 30,0 cm (f = 9,8 cm).",
+ "hien_tuong_hay_sai": [
+  "Đo d, d' tới mép giá đỡ: d và d' cùng hụt nên f nhỏ hơn thật (d = d' = 19,0 cm cho f = 9,5 cm thay vì 10,0 cm).",
+  "Ghi d' khi ảnh mới 'tạm nét', không lấy trung điểm khoảng nét.",
+  "Chỉ đo một lần rồi lấy luôn f."
+ ],
+ "sai_so_thuong_gap": "Xác định vị trí ảnh nét (khoảng nét rộng cỡ 1 cm); đo từ mép giá đỡ; vật và màn không vuông góc trục.",
+ "an_toan": "Dùng đèn LED, không cầm bóng đèn nóng; không để thấu kính hứng nắng.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Ghế quang học: kéo vật tới d, kéo màn tìm ảnh nét; bảng tự điền d, d', f và tính f̄, Δf.",
+  "diem_nhan": "Thanh trượt 'đo hụt ở giá đỡ': kéo lên thì cả năm lần f cùng nhỏ đi, lấy trung bình không sửa được."
+ }
+}

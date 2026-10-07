@@ -1,0 +1,132 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 10. Kính lúp. Bài tập thấu kính",
+ "lesson_id": 88,
+ "nguon_trong_bai": "content/lesson-samples/l9-kinh-lup-bai-tap-thau-kinh/theory.html",
+ "id": "tn-l9-kinhlup-03",
+ "ten": "Ảnh ngọn nến qua thấu kính f = 10 cm ở ba vị trí (bài mẫu 1)",
+ "loai": "vi_du",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thaukinh.dung_anh",
+  "thaukinh.anh_theo_vi_tri",
+  "thaukinh.cong_thuc"
+ ],
+ "muc_tieu": "Dựng ảnh và nêu tính chất ảnh khi d > 2f, f < d < 2f, d < f; ảnh nào hứng được trên tường.",
+ "dung_cu": [
+  {
+   "ten": "Kính lúp dùng làm thấu kính hội tụ f = 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ngọn nến cao 6 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn hứng (bức tường hoặc tấm bìa)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt nến vuông góc trục chính, cách thấu kính lần lượt 30 cm, 15 cm, 6 cm.",
+   "Dịch màn tìm ảnh rõ."
+  ],
+  "quan_sat": [
+   "30 cm: ảnh thật nhỏ, ngược chiều.",
+   "15 cm: ảnh thật lớn, ngược chiều.",
+   "6 cm: không hứng được; nhìn qua kính thấy ảnh cùng chiều lớn."
+  ],
+  "rut_ra": [
+   "Vị trí vật so với f và 2f quyết định tính chất ảnh.",
+   "Chỉ ảnh thật hứng được trên màn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách nến → thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 40,
+   "mac_dinh": 15,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Chiều cao nến",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 6
+  },
+  {
+   "ky_hieu": "d'",
+   "ten": "Vị trí ảnh",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "h'",
+   "ten": "Chiều cao ảnh",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "1/f = 1/d + 1/d'",
+   "k = |d'|/d",
+   "h' = k·h"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng",
+   "nến vuông góc trục chính, chân nến trên trục",
+   "d = f không có ảnh: mô phỏng hiện cảnh báo, không tính d', k"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "d' (cm)",
+   "h' (cm)"
+  ],
+  "hang": [
+   [
+    30,
+    15.0,
+    3.0
+   ],
+   [
+    15,
+    30.0,
+    12.0
+   ],
+   [
+    6,
+    -15.0,
+    15.0
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình; d' âm là ảnh ảo."
+ },
+ "ket_qua_ky_vong": "d = 30: ảnh thật 3 cm; d = 15: ảnh thật 12 cm; d = 6: ảnh ảo 15 cm cùng chiều.",
+ "hien_tuong_hay_sai": [
+  "Tưởng ảnh qua thấu kính hội tụ luôn là ảnh thật.",
+  "Vẽ ảnh ảo bằng nét liền.",
+  "Tưởng ảnh ảo hứng được trên màn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo nến dọc trục chính; tia sáng và ảnh cập nhật; vạch F, 2F trên trục.",
+  "diem_nhan": "Ảnh đổi từ thật sang ảo khi nến đi qua F."
+ }
+}

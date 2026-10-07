@@ -1,0 +1,139 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 7. Lăng kính",
+ "lesson_id": 85,
+ "nguon_trong_bai": "content/lesson-samples/l9-lang-kinh-tan-sac/theory.html",
+ "id": "tn-l9-langkinh-01",
+ "ten": "Vẽ đường đi của tia laser đỏ qua lăng kính",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "langkinh.khuc_xa_hai_lan",
+  "langkinh.lech_ve_day"
+ ],
+ "muc_tieu": "Thấy tia sáng đơn sắc khúc xạ hai lần ở hai mặt bên và tia ló lệch về phía đáy lăng kính.",
+ "dung_cu": [
+  {
+   "ten": "Lăng kính thuỷ tinh tiết diện tam giác đều",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút laser đỏ công suất thấp (≤ 1 mW)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tờ giấy trắng, bút chì, thước, thước đo góc",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt lăng kính nằm trên tờ giấy trắng, vạch viền lăng kính.",
+   "Chiếu bút laser sát mặt giấy vào một mặt bên.",
+   "Chấm vài điểm trên vệt sáng trước và sau lăng kính, nối lại thành tia tới và tia ló.",
+   "Xoay nhẹ lăng kính, lặp lại với góc tới khác."
+  ],
+  "quan_sat": [
+   "Vệt sáng gãy khúc ở cả hai mặt bên.",
+   "Tia ló luôn ngả về phía đáy so với phương tia tới.",
+   "Góc lệch thay đổi khi xoay lăng kính."
+  ],
+  "rut_ra": [
+   "Tia sáng đơn sắc khúc xạ hai lần khi qua lăng kính.",
+   "Vào thuỷ tinh: gần pháp tuyến; ra không khí: xa pháp tuyến.",
+   "Tia ló lệch về phía đáy."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Góc chiết quang",
+   "don_vi": "độ",
+   "kieu": "co_dinh",
+   "gia_tri": 60
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất (giả định) với ánh sáng đỏ",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.5
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới ở mặt thứ nhất",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 30,
+   "max": 70,
+   "mac_dinh": 45,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Góc lệch giữa tia tới và tia ló",
+   "don_vi": "độ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin i = n·sin r1 (mặt thứ nhất)",
+   "r2 = A − r1",
+   "sin i2 = n·sin r2 (mặt thứ hai)",
+   "D = i + i2 − A (dùng cho mô phỏng, không dạy ở lớp 9)"
+  ],
+  "gia_thiet": [
+   "lăng kính đặt trong không khí (n ≈ 1)",
+   "tia nằm trong mặt phẳng tiết diện",
+   "bỏ qua phần ánh sáng phản xạ ở hai mặt"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "i (độ)",
+   "D (độ)"
+  ],
+  "hang": [
+   [
+    30,
+    47.1
+   ],
+   [
+    40,
+    38.5
+   ],
+   [
+    45,
+    37.4
+   ],
+   [
+    50,
+    37.2
+   ],
+   [
+    60,
+    38.9
+   ],
+   [
+    70,
+    42.9
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình với n = 1,5, A = 60°; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Tia ló lệch về phía đáy; với n = 1,5, i = 45° thì D ≈ 37,4°.",
+ "hien_tuong_hay_sai": [
+  "Vẽ tia ló lệch về phía cạnh (đỉnh).",
+  "Vẽ tia đi thẳng qua lăng kính.",
+  "Ở mặt thứ hai vẫn vẽ tia gãy lại gần pháp tuyến."
+ ],
+ "sai_so_thuong_gap": "Laser không sát mặt giấy nên vệt mờ; chấm điểm lệch tay; lăng kính xê dịch khi vạch.",
+ "an_toan": "Không chiếu laser vào mắt người; chỉ dùng bút laser công suất thấp.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Kéo thanh trượt góc tới i, tia tới–tia trong–tia ló vẽ theo định luật khúc xạ, hiện pháp tuyến và cung góc lệch D.",
+  "diem_nhan": "Lật lăng kính (đáy lên trên) thì tia ló lật theo: luôn lệch về đáy."
+ }
+}

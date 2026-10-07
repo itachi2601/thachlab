@@ -1,0 +1,129 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+ "lesson_id": 87,
+ "nguon_trong_bai": "content/lesson-samples/l9-thuc-hanh-tieu-cu/theory.html",
+ "id": "tn-l9-tieucu-03",
+ "ten": "Cách 3: tìm vị trí ảnh bằng vật, f = L/4",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "tieucu.cach_anh_bang_vat",
+  "tieucu.d_bang_dp_bang_2f"
+ ],
+ "muc_tieu": "Nhận ra khi ảnh cao đúng bằng vật thì d = d' = 2f, nên khoảng cách vật – màn L = 4f và f = L/4; sai số của L chia cho 4 khi tính f.",
+ "dung_cu": [
+  {
+   "ten": "Ghế quang học (hoặc thước dài 1 m, độ chia 1 mm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính hội tụ có giá đỡ, f cỡ 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn trắng có giá, trượt được dọc thước",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vật sáng hình mũi tên cao 3,0 cm (khe mũi tên trước đèn LED)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt vật, thấu kính, màn trên ghế quang học.",
+   "Dịch thấu kính và màn cho ảnh nét và cao đúng 3,0 cm như vật, rồi đo khoảng cách L từ vật tới màn."
+  ],
+  "quan_sat": [
+   "L = 40,4 cm.",
+   "Ảnh thật, ngược chiều, cao bằng vật."
+  ],
+  "rut_ra": [
+   "f = L/4 = 40,4/4 = 10,1 cm, khớp cách 1 và cách 2.",
+   "ΔL chia 4 khi tính f nên cách này cho f khá chính xác."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự thật của thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 20,
+   "mac_dinh": 10.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "sai_L",
+   "ten": "Sai lệch khi xác định L (ảnh bằng vật chưa thật chuẩn)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0.4,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Chiều cao vật",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Khoảng cách vật – màn đo được",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "f_do",
+   "ten": "Tiêu cự tính ra",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "d = d' = 2f khi k = d'/d = 1",
+   "L = d + d' = 4f",
+   "L_đo = 4f + sai_L",
+   "f = L/4; Δf = ΔL/4"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng, tia gần trục",
+   "f thật = 10,0 cm",
+   "sai_L = +0,4 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "L (cm)",
+   "f = L/4 (cm)"
+  ],
+  "hang": [
+   [
+    40.4,
+    10.1
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình (f = 10,0 cm, L lệch +0,4 cm), không phải đo thật."
+ },
+ "ket_qua_ky_vong": "f = 10,1 cm; với L = 48,0 cm thì f = 12,0 cm.",
+ "hien_tuong_hay_sai": [
+  "Nhớ nhầm f = L/2 (đó là d, không phải f).",
+  "Coi ảnh bằng vật khi chỉ mới gần bằng, không so chiều cao ảnh với vật bằng thước.",
+  "Quên L = d + d' gồm hai đoạn 2f."
+ ],
+ "sai_so_thuong_gap": "Ảnh bằng vật chỉ nhận ra với sai lệch cỡ mm; đo L từ mặt giá đỡ thay vì từ vật và màn.",
+ "an_toan": "Dùng đèn LED, không cầm bóng đèn nóng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+so_do_luc",
+  "y_tuong": "Kéo thấu kính dọc ghế; hiện chiều cao ảnh so với vật, khi hai chiều cao bằng nhau thì hiện L và f = L/4.",
+  "diem_nhan": "Thanh trượt L: nếu L < 4f thì không có vị trí nào cho ảnh nét hứng được trên màn."
+ }
+}

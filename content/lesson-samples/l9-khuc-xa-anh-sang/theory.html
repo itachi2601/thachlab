@@ -1,0 +1,454 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li><strong>Mô tả</strong> hiện tượng khúc xạ và <strong>vẽ đúng</strong> đường truyền tia sáng: tia tới, pháp tuyến, tia khúc xạ, góc tới $i$, góc khúc xạ $r$.</li>
+<li>Hiểu <strong>chiết suất</strong> $n = \dfrac{c}{v}$: ánh sáng càng chậm, $n$ càng lớn.</li>
+<li>Dùng <strong>định luật khúc xạ</strong> $n_1\sin i = n_2\sin r$ để tính góc.</li>
+<li>Giải thích vì sao đáy hồ bơi <strong>trông nông hơn</strong> thực tế.</li>
+</ul>
+<p>Đọc khoảng 16 phút. Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách.</p>
+</div>
+
+<h3>I. Mở bài: chiếc ống hút bị "gãy"</h3>
+
+<p>Cắm một chiếc ống hút thẳng vào ly nước trong rồi nhìn chéo từ trên xuống. Ống hút trông như <strong>gãy gập</strong> đúng ở mặt nước. Rút ống ra: ống vẫn thẳng tắp.</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 296" role="img" aria-label="Ống hút thẳng cắm trong ly nước trông như bị gãy ở mặt nước"><polygon points="125.6,130.0 294.4,130.0 285.0,280.0 135.0,280.0" fill="rgba(56,189,248,.14)"/><polygon points="120.0,40.0 300.0,40.0 285.0,280.0 135.0,280.0" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="125.6" y1="130.0" x2="294.4" y2="130.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><path d="M305,14 L240,130 L170,200" fill="none" stroke="#fb923c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><text x="306" y="136" fill="#38bdf8" font-size="17" font-weight="600" text-anchor="start">mặt nước</text><text x="318" y="34" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">ống hút</text><text x="16" y="64" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">Trông như</text><text x="16" y="86" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">gãy ở đây</text><line x1="100.0" y1="92.0" x2="230.0" y2="127.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.8"/></svg><figcaption>Hình 1. Nhìn chéo từ trên xuống: ống hút thẳng trông như gãy đúng ở mặt nước.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Vì sao ống hút trông như gãy ở mặt nước?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q1" id="tl83-q1a"><label for="tl83-q1a" class="tl-opt tl-no">A. Nước đẩy làm ống hút cong thật</label>
+<input type="radio" name="tl83-q1" id="tl83-q1b"><label for="tl83-q1b" class="tl-opt tl-ok">B. Ánh sáng đổi hướng khi ra khỏi nước</label>
+<input type="radio" name="tl83-q1" id="tl83-q1c"><label for="tl83-q1c" class="tl-opt tl-no">C. Mặt nước phản chiếu ống hút như gương</label>
+<input type="radio" name="tl83-q1" id="tl83-q1d"><label for="tl83-q1d" class="tl-opt tl-no">D. Thành ly cong làm mắt nhìn bị nhoè</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Ống hút không hề cong. Ánh sáng từ phần ống dưới nước bị <strong>đổi hướng</strong> khi vượt qua mặt nước, nên mắt "đặt" phần ấy sai chỗ. Hiện tượng này tên là <em>khúc xạ ánh sáng</em>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Rút ống ra thì ống vẫn thẳng, nên nó không bị uốn. Phản chiếu cho ảnh nằm <em>trên</em> mặt nước, còn chỗ "gãy" là phần nằm <em>dưới</em> nước. Hãy nghĩ tới đường đi của ánh sáng từ phần ống dưới nước tới mắt.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: khúc xạ, chiết suất, định luật</h3>
+
+<h4>1. Hiện tượng khúc xạ ánh sáng</h4>
+
+<p><strong>🔑 Truyền xiên qua mặt phân cách · tia gãy khúc</strong></p>
+
+<ul>
+<li><strong>Khúc xạ ánh sáng</strong>: tia sáng bị <strong>gãy khúc</strong> (đổi phương) khi truyền <strong>xiên góc</strong> qua mặt phân cách giữa hai môi trường trong suốt khác nhau.</li>
+<li>Cùng lúc, một phần ánh sáng bị <strong>hắt trở lại</strong> môi trường cũ (phản xạ).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 340" role="img" aria-label="Tia tới SI, pháp tuyến NN' nét đứt, tia khúc xạ IR, tia phản xạ mờ, góc tới i và góc khúc xạ r"><rect x="10" y="170" width="400" height="164" fill="rgba(56,189,248,.14)"/><line x1="10.0" y1="170.0" x2="410.0" y2="170.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="210.0" y1="26.0" x2="210.0" y2="322.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.75"/><line x1="95.1" y1="73.6" x2="210.0" y2="170.0" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M153.8,114.4 L158.3,126.6 L145.5,124.4" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="210.0" y1="170.0" x2="324.9" y2="73.6" stroke="#f87171" stroke-width="2.2" opacity="0.45"/><g opacity="0.45"><path d="M260.4,119.2 L273.2,117.0 L268.8,129.2" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="210.0" y1="170.0" x2="296.4" y2="292.6" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M256.3,224.5 L257.5,237.4 L245.7,232.0" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><path d="M210.0,124.0 A46,46 0 0 0 174.8,140.4" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="182.95243124859525" y="111.9963016296544" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">i</text><path d="M245.2,140.4 A46,46 0 0 0 210.0,124.0" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="237.04756875140475" y="111.9963016296544" fill="currentColor" font-size="17" font-weight="600" text-anchor="middle">i'</text><path d="M210.0,220.0 A50,50 0 0 0 238.8,210.9" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="230.54294912620813" y="244.82273706962724" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">r</text><text x="89.0933335321533" y="67.5818585470191" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">S</text><text x="330.9066664678467" y="67.5818585470191" fill="#f87171" font-size="17" font-weight="600" text-anchor="start">S'</text><text x="304.3959898254486" y="306.62027948949134" fill="#f87171" font-size="18" font-weight="700" text-anchor="start">R</text><text x="202" y="192" fill="currentColor" font-size="18" font-weight="700" text-anchor="end">I</text><text x="218" y="40" fill="currentColor" font-size="18" font-weight="700" text-anchor="start">N</text><text x="218" y="330" fill="currentColor" font-size="18" font-weight="700" text-anchor="start">N'</text><text x="100" y="130" fill="#f87171" font-size="17" font-weight="700" text-anchor="end">tia tới</text><text x="272" y="236" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">tia khúc xạ</text><text x="300" y="120" fill="#f87171" font-size="17" font-weight="600" text-anchor="start">tia phản xạ</text><text x="16" y="160" fill="currentColor" font-size="17" font-weight="600" text-anchor="start">Không khí</text><text x="16" y="196" fill="#38bdf8" font-size="17" font-weight="600" text-anchor="start">Nước</text></svg><figcaption>Hình 2. Ánh sáng đi từ không khí vào nước. Pháp tuyến NN' vẽ nét đứt; góc tới <em>i</em> và góc khúc xạ <em>r</em> đều đo từ pháp tuyến. Tia phản xạ IS' vẽ mờ.</figcaption></figure>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Kí hiệu</th><th>Tên gọi</th></tr>
+</thead>
+<tbody>
+<tr><td>$SI$</td><td>tia tới</td></tr>
+<tr><td>$I$</td><td>điểm tới</td></tr>
+<tr><td>$NN'$</td><td>pháp tuyến tại $I$: vuông góc mặt phân cách, vẽ nét đứt</td></tr>
+<tr><td>$IR$</td><td>tia khúc xạ</td></tr>
+<tr><td>$IS'$</td><td>tia phản xạ</td></tr>
+<tr><td>$i$</td><td>góc tới $\widehat{SIN}$: giữa tia tới và pháp tuyến</td></tr>
+<tr><td>$r$</td><td>góc khúc xạ $\widehat{RIN'}$: giữa tia khúc xạ và pháp tuyến</td></tr>
+<tr><td>$i'$</td><td>góc phản xạ $\widehat{S'IN}$, luôn bằng $i$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-khucxa-01">
+<p class="tl-label">🔬 Thí nghiệm: tia laser đi vào bể nước</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> pha vài giọt sữa vào bể kính đựng nước để thấy vệt sáng; đốt một que hương cho khói bay trên mặt nước. Chiếu bút laser xiên xuống mặt nước, rồi đổi dần góc chiếu.</li>
+<li><strong>Quan sát:</strong> vệt sáng trong khói và vệt sáng trong nước <strong>không nằm trên một đường thẳng</strong>: tia bị gãy ở mặt nước. Một vệt mờ hắt ngược lên khói.</li>
+<li><strong>Rút ra:</strong> qua mặt phân cách không khí – nước, ánh sáng đổi phương (khúc xạ) và một phần bị phản xạ.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Chiếu tia laser <strong>vuông góc</strong> với mặt nước (góc tới $i = 0^\circ$). Tia sáng đi vào nước thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q2" id="tl83-q2a"><label for="tl83-q2a" class="tl-opt tl-no">A. Gãy khúc, lệch về một bên</label>
+<input type="radio" name="tl83-q2" id="tl83-q2b"><label for="tl83-q2b" class="tl-opt tl-no">B. Bị hắt ngược lên hết</label>
+<input type="radio" name="tl83-q2" id="tl83-q2c"><label for="tl83-q2c" class="tl-opt tl-ok">C. Đi thẳng, không đổi phương</label>
+<input type="radio" name="tl83-q2" id="tl83-q2d"><label for="tl83-q2d" class="tl-opt tl-no">D. Toả ra nhiều hướng trong nước</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $i = 0^\circ$ thì $r = 0^\circ$: tia đi thẳng theo pháp tuyến. Định nghĩa nói rõ <em>xiên góc</em> mới gãy khúc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đọc lại định nghĩa: tia chỉ gãy khi truyền <em>xiên góc</em>. Tia vuông góc thì không có "bên" nào để lệch về; phần lớn ánh sáng vẫn đi vào nước chứ không bị hắt hết.</p></div>
+</div>
+</div>
+
+<h4>2. Chiết suất của môi trường</h4>
+
+<p><strong>🔑 n = c/v · chậm hơn, n lớn hơn</strong></p>
+
+<ul>
+<li>Ánh sáng đi <strong>chậm hơn</strong> khi vào nước, thuỷ tinh. Môi trường làm ánh sáng chậm bao nhiêu lần được đo bằng <strong>chiết suất</strong>:</li>
+</ul>
+
+$$n = \frac{c}{v}$$
+
+<ul>
+<li>$c = {3 \cdot 10^8}\ \text{m/s}$: tốc độ ánh sáng trong chân không (không khí gần bằng).</li>
+<li>$v$: tốc độ ánh sáng trong môi trường đang xét.</li>
+<li>Không khí $n \approx 1$, nhỏ nhất; mọi môi trường khác $n \gt 1$.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Môi trường</th><th>Chiết suất $n$</th></tr>
+</thead>
+<tbody>
+<tr><td>Không khí</td><td>$\approx 1{,}00$</td></tr>
+<tr><td>Nước</td><td>$1{,}33 \approx \dfrac{4}{3}$</td></tr>
+<tr><td>Thuỷ tinh thường</td><td>$\approx 1{,}5$</td></tr>
+<tr><td>Kim cương</td><td>$2{,}42$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Ví dụ: trong nước, $v = \dfrac{c}{n} = \dfrac{3 \cdot 10^8}{1{,}33}$, tức khoảng ${2{,}26 \cdot 10^8}\ \text{m/s}$, chậm hơn trong không khí khoảng một phần tư.</p>
+
+<p><strong>🔑 Môi trường n lớn hơn = chiết quang hơn</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Ánh sáng đi trong một khối nhựa trong suốt với tốc độ ${1{,}5 \cdot 10^8}\ \text{m/s}$. Chiết suất của khối nhựa là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q3" id="tl83-q3a"><label for="tl83-q3a" class="tl-opt tl-ok">A. $2$</label>
+<input type="radio" name="tl83-q3" id="tl83-q3b"><label for="tl83-q3b" class="tl-opt tl-no">B. $0{,}5$</label>
+<input type="radio" name="tl83-q3" id="tl83-q3c"><label for="tl83-q3c" class="tl-opt tl-no">C. $4{,}5$</label>
+<input type="radio" name="tl83-q3" id="tl83-q3d"><label for="tl83-q3d" class="tl-opt tl-no">D. $1{,}5$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $n = \dfrac{3 \cdot 10^8}{1{,}5 \cdot 10^8} = 2$. Kiểm nhanh: $n \gt 1$, hợp lí.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0{,}5$ là chia ngược $v/c$ (chiết suất không thể nhỏ hơn 1). Ra $4{,}5$ là nhân $3 \cdot 1{,}5$ thay vì chia. Chọn $1{,}5$ là chép số của tốc độ, chưa tính. Viết lại $n = c/v$ rồi thay số.</p></div>
+</div>
+</div>
+
+<h4>3. Định luật khúc xạ ánh sáng</h4>
+
+<p><strong>🔑 Cùng mặt phẳng · hai bên pháp tuyến · tỉ số sin không đổi</strong></p>
+
+<ul>
+<li>Tia khúc xạ nằm trong <strong>mặt phẳng tới</strong> (mặt phẳng chứa tia tới và pháp tuyến).</li>
+<li>Tia tới và tia khúc xạ nằm <strong>ở hai bên</strong> pháp tuyến.</li>
+<li>Với hai môi trường nhất định, $\dfrac{\sin i}{\sin r}$ là <strong>hằng số</strong>, gọi là chiết suất tỉ đối $n_{21}$:</li>
+</ul>
+
+$$\frac{\sin i}{\sin r} = n_{21} = \frac{n_2}{n_1}$$
+$$n_1 \sin i = n_2 \sin r$$
+
+<p>$n_1$: chiết suất môi trường chứa tia tới; $n_2$: môi trường chứa tia khúc xạ. Bấm phím <strong>sin</strong> và <strong>sin⁻¹</strong> trên máy tính để tính góc.</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 294" role="img" aria-label="Hai chiều truyền: vào thuỷ tinh tia lệch gần pháp tuyến; ra không khí tia lệch xa pháp tuyến"><line x1="210.0" y1="18.0" x2="210.0" y2="244.0" stroke="currentColor" stroke-width="1" opacity="0.35"/><rect x="8" y="140" width="194" height="104" fill="rgba(148,163,184,.2)"/><line x1="8.0" y1="140.0" x2="202.0" y2="140.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="105.0" y1="26.0" x2="105.0" y2="238.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.75"/><line x1="28.4" y1="75.7" x2="105.0" y2="140.0" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M66.1,98.9 L70.5,111.1 L57.7,108.8" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="105.0" y1="140.0" x2="156.1" y2="226.0" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M132.9,174.3 L133.1,187.3 L121.8,180.9" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><path d="M105.0,100.0 A40,40 0 0 0 74.4,114.3" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="81.33337734252083" y="89.24676392594759" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">i</text><path d="M105.0,182.0 A42,42 0 0 0 126.4,176.1" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="120.35844029127567" y="205.9295835119422" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">r</text><text x="202" y="126" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">Không khí</text><text x="12" y="162" fill="currentColor" font-size="17" font-weight="600" text-anchor="start">Thuỷ tinh</text><text x="105" y="266" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">(a) r &lt; i</text><text x="105" y="286" fill="#34d399" font-size="17" font-weight="600" text-anchor="middle">gần pháp tuyến</text><rect x="218" y="18" width="194" height="122" fill="rgba(148,163,184,.2)"/><line x1="218.0" y1="140.0" x2="412.0" y2="140.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="315.0" y1="26.0" x2="315.0" y2="238.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.75"/><line x1="257.6" y1="58.1" x2="315.0" y2="140.0" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M288.1,90.2 L289.2,103.1 L277.4,97.6" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="315.0" y1="140.0" x2="401.0" y2="191.0" stroke="#f87171" stroke-width="2.6" opacity="1"/><g opacity="1"><path d="M355.9,156.7 L362.3,168.0 L349.3,167.9" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><path d="M315.0,100.0 A40,40 0 0 0 292.1,107.2" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="298.1604752277607" y="86.5918507580993" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">i</text><path d="M315.0,182.0 A42,42 0 0 0 351.1,161.4" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="343.71793791292555" y="200.3912695020611" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">r</text><text x="412" y="126" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">Thuỷ tinh</text><text x="222" y="162" fill="currentColor" font-size="17" font-weight="600" text-anchor="start">Không khí</text><text x="315" y="266" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">(b) r &gt; i</text><text x="315" y="286" fill="#34d399" font-size="17" font-weight="600" text-anchor="middle">xa pháp tuyến</text></svg><figcaption>Hình 3. (a) Không khí → thuỷ tinh, <em>i</em> = 50°, <em>r</em> ≈ 31°. (b) Thuỷ tinh → không khí, <em>i</em> = 35°, <em>r</em> ≈ 59°. Vùng tô xám là thuỷ tinh.</figcaption></figure>
+
+<ul>
+<li>Vào môi trường <strong>chiết quang hơn</strong>, $n_2 \gt n_1$: $r \lt i$, tia lệch <strong>gần</strong> pháp tuyến.</li>
+<li>Vào môi trường <strong>kém chiết quang hơn</strong>, $n_2 \lt n_1$: $r \gt i$, tia lệch <strong>xa</strong> pháp tuyến.</li>
+</ul>
+
+<details class="tl-details">
+<summary>🔁 Bấm xem: tính thuận nghịch</summary>
+<p>Ánh sáng đi theo đường nào thì đi ngược lại được theo đường ấy, nên $n_{12} = \dfrac{1}{n_{21}}$.</p>
+</details>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-khucxa-02">
+<p class="tl-label">🔬 Thí nghiệm đo: khối nhựa bán trụ trên vòng chia độ</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt khối nhựa trong hình bán trụ lên đĩa chia độ (vạch $1^\circ$), mặt phẳng đi qua tâm đĩa. Chiếu tia laser từ không khí vào đúng tâm, lần lượt với $i = 20^\circ, 35^\circ, 50^\circ, 65^\circ, 80^\circ$; đọc góc khúc xạ $r$.</li>
+<li><strong>Quan sát:</strong> $r$ luôn nhỏ hơn $i$; $i$ tăng thì $r$ tăng. Tia ló khỏi mặt cong không gãy thêm vì đi theo bán kính (pháp tuyến của mặt cong đi qua tâm).</li>
+<li><strong>Rút ra:</strong> tỉ số $\dfrac{\sin i}{\sin r}$ gần như không đổi, đó là chiết suất của nhựa.</li>
+</ol>
+</div>
+
+<details class="tl-details">
+<summary>📊 Bấm xem: bảng số liệu (số liệu minh hoạ) và câu hỏi về sai số</summary>
+<p>Số liệu minh hoạ, tính từ mô hình $n = 1{,}5$ rồi làm tròn như khi đọc trên vạch $1^\circ$:</p>
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$i$ và $r$ đọc được</th><th>$\sin i / \sin r$</th></tr>
+</thead>
+<tbody>
+<tr><td>$i = 20^\circ$, $r = 13^\circ$</td><td>$1{,}52$</td></tr>
+<tr><td>$i = 35^\circ$, $r = 22^\circ$</td><td>$1{,}53$</td></tr>
+<tr><td>$i = 50^\circ$, $r = 31^\circ$</td><td>$1{,}49$</td></tr>
+<tr><td>$i = 65^\circ$, $r = 37^\circ$</td><td>$1{,}51$</td></tr>
+<tr><td>$i = 80^\circ$, $r = 41^\circ$</td><td>$1{,}50$</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Đọc số liệu</p>
+<p>Trung bình năm tỉ số là bao nhiêu? Lần đo nào lệch nhiều nhất, vì sao?</p>
+<p><strong>Nhận xét:</strong> trung bình $1{,}51$, rất gần $n = 1{,}5$. Lệch nhiều nhất là lần $i = 35^\circ$ (tỉ số $1{,}53$): góc thật khoảng $22{,}5^\circ$ nhưng chỉ đọc được $22^\circ$ vì vạch chia $1^\circ$. Sai số chủ yếu do đọc góc và tia laser có bề rộng; muốn chính xác hơn, đo nhiều lần rồi lấy trung bình.</p>
+</div>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Tia sáng đi từ không khí vào thuỷ tinh ($n = 1{,}5$) với góc tới $60^\circ$. Góc khúc xạ gần bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q4" id="tl83-q4a"><label for="tl83-q4a" class="tl-opt tl-no">A. $40^\circ$</label>
+<input type="radio" name="tl83-q4" id="tl83-q4b"><label for="tl83-q4b" class="tl-opt tl-no">B. $60^\circ$</label>
+<input type="radio" name="tl83-q4" id="tl83-q4c"><label for="tl83-q4c" class="tl-opt tl-no">C. Không có tia khúc xạ</label>
+<input type="radio" name="tl83-q4" id="tl83-q4d"><label for="tl83-q4d" class="tl-opt tl-ok">D. $35{,}3^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1 \cdot \sin 60^\circ = 1{,}5 \sin r$ nên $\sin r \approx 0{,}577$, $r \approx 35{,}3^\circ \lt 60^\circ$: vào môi trường chiết quang hơn thì lệch gần pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $40^\circ$ là lấy $60 : 1{,}5$, tức chia <em>góc</em> thay vì chia <em>sin</em>. Giữ $60^\circ$ là quên khúc xạ. "Không có tia khúc xạ" là đã nhân $1{,}5 \cdot \sin 60^\circ \gt 1$, đặt nhầm $n$ sang vế tia tới.</p></div>
+</div>
+</div>
+
+<h4>4. Nhìn vật qua mặt nước: thấy ảnh</h4>
+
+<p><strong>🔑 Khác môi trường · mắt thấy ảnh · ảnh nổi lên</strong></p>
+
+<ul>
+<li>Mắt và vật <strong>cùng một môi trường</strong>: mắt nhìn thấy chính vật.</li>
+<li>Giữa mắt và vật có <strong>mặt phân cách</strong>: tia khúc xạ vào mắt, mắt thấy <strong>ảnh</strong> nằm trên đường kéo dài của tia tới mắt.</li>
+<li>Dựng ảnh: vẽ hai tia từ vật, một tia vuông góc mặt phân cách (đi thẳng) và một tia xiên; kéo dài ngược hai tia khúc xạ (nét đứt), giao điểm là <strong>ảnh ảo</strong>.</li>
+<li>Ảnh thật: các tia khúc xạ cắt nhau trực tiếp. Ảnh ảo: phải kéo dài ngược mới gặp nhau.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 300" role="img" aria-label="Hai tia từ viên sỏi khúc xạ ở mặt nước; kéo dài ngược hai tia vào mắt gặp nhau tại ảnh nằm cao hơn viên sỏi"><rect x="10" y="110" width="400" height="182" fill="rgba(56,189,248,.14)"/><line x1="10.0" y1="110.0" x2="410.0" y2="110.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="10.0" y1="292.0" x2="410.0" y2="292.0" stroke="currentColor" stroke-width="2.4" opacity="1"/><line x1="120.0" y1="270.0" x2="120.0" y2="110.0" stroke="#f87171" stroke-width="2.4" opacity="1"/><g opacity="1"><path d="M113.5,193.3 L120.0,182.0 L126.5,193.3" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="120.0" y1="110.0" x2="120.0" y2="50.0" stroke="#f87171" stroke-width="2.4" opacity="1"/><g opacity="1"><path d="M113.5,88.3 L120.0,77.0 L126.5,88.3" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="120.0" y1="270.0" x2="178.2" y2="110.0" stroke="#f87171" stroke-width="2.4" opacity="1"/><g opacity="1"><path d="M142.1,190.4 L152.0,182.0 L154.3,194.8" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="178.2" y1="110.0" x2="208.9" y2="50.0" stroke="#f87171" stroke-width="2.4" opacity="1"/><g opacity="1"><path d="M184.2,84.1 L195.1,77.0 L195.8,90.0" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></g><line x1="120.0" y1="110.0" x2="120.0" y2="224.0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 5" opacity="0.95"/><line x1="178.2" y1="110.0" x2="120.0" y2="224.0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 5" opacity="0.95"/><line x1="178.2" y1="66.0" x2="178.2" y2="160.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.75"/><circle cx="120" cy="270" r="7" fill="#fb923c" stroke="currentColor" stroke-width="1.6"/><circle cx="120.0" cy="224.0" r="7" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="3 3"/><path d="M124.4,38 Q164.4,10 204.4,38 Q164.4,66 124.4,38 Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="164.4" cy="38" r="6" fill="currentColor"/><text x="212.441424095795" y="44" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">mắt</text><text x="108" y="276" fill="#fb923c" font-size="17" font-weight="700" text-anchor="end">sỏi thật</text><text x="108.0" y="218.00935238092552" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="end">ảnh</text><text x="108.0" y="238.00935238092552" fill="#38bdf8" font-size="17" font-weight="600" text-anchor="end">(mắt thấy)</text><text x="16" y="98" fill="currentColor" font-size="17" font-weight="600" text-anchor="start">Không khí</text><text x="16" y="136" fill="#38bdf8" font-size="17" font-weight="600" text-anchor="start">Nước</text></svg><figcaption>Hình 4. Tia thẳng đứng đi thẳng; tia xiên lệch xa pháp tuyến khi ra không khí. Kéo dài ngược (nét đứt xanh) gặp nhau ở <strong>ảnh</strong>, ở khoảng 0,7 độ sâu thật. Nhìn càng xiên, ảnh càng nổi cao.</figcaption></figure>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l9-khucxa-03">
+<p class="tl-label">🔬 Thí nghiệm: đồng xu "hiện ra"</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt đồng xu dưới đáy một cái bát. Lùi đầu dần tới khi thành bát vừa che khuất đồng xu, giữ yên mắt. Một bạn rót nước từ từ vào bát.</li>
+<li><strong>Quan sát:</strong> đồng xu <strong>hiện ra</strong> dù mắt và bát không nhúc nhích.</li>
+<li><strong>Rút ra:</strong> ánh sáng từ đồng xu gãy ở mặt nước, đi vòng qua mép bát tới mắt; mắt thấy ảnh đồng xu nằm cao hơn chỗ thật.</li>
+</ol>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "Tia khúc xạ luôn lệch về phía pháp tuyến"</h4>
+
+<p>Nhiều bạn chỉ nhớ hình không khí → nước rồi áp cho mọi trường hợp.</p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl83-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl83-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Ánh sáng từ viên sỏi dưới đáy hồ đi từ nước ($n = 1{,}33$) ra không khí, góc tới $40^\circ$. Góc khúc xạ gần bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q5" id="tl83-q5a"><label for="tl83-q5a" class="tl-opt tl-no">A. $28{,}9^\circ$</label>
+<input type="radio" name="tl83-q5" id="tl83-q5b"><label for="tl83-q5b" class="tl-opt tl-no">B. $40^\circ$</label>
+<input type="radio" name="tl83-q5" id="tl83-q5c"><label for="tl83-q5c" class="tl-opt tl-ok">C. $58{,}7^\circ$</label>
+<input type="radio" name="tl83-q5" id="tl83-q5d"><label for="tl83-q5d" class="tl-opt tl-no">D. $50^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1{,}33 \sin 40^\circ = 1 \cdot \sin r$ nên $\sin r \approx 0{,}855$, $r \approx 58{,}7^\circ \gt 40^\circ$. Ra môi trường kém chiết quang thì tia lệch <em>xa</em> pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $28{,}9^\circ$ là đã đặt $n = 1{,}33$ nhầm sang phía không khí, như thể ánh sáng đi vào nước. Giữ $40^\circ$ là quên khúc xạ. Ra $50^\circ$ là lấy $90^\circ - 40^\circ$. Tia tới đang ở trong nước, nên $n_1 = 1{,}33$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Vào môi trường n lớn hơn</th><th>Vào môi trường n nhỏ hơn</th></tr>
+</thead>
+<tbody>
+<tr><td>Không khí → thuỷ tinh</td><td>Thuỷ tinh → không khí</td></tr>
+<tr><td>$r \lt i$, gần pháp tuyến</td><td>$r \gt i$, xa pháp tuyến</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Bẫy 2: đo góc từ mặt nước thay vì từ pháp tuyến</h4>
+
+<p>Đề hay cho "tia sáng <em>hợp với mặt nước</em> góc …". Đó <strong>chưa</strong> phải góc tới.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Tia sáng từ không khí chiếu xuống, hợp với mặt nước ($n = 1{,}33$) một góc $60^\circ.$ Góc khúc xạ gần bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q6" id="tl83-q6a"><label for="tl83-q6a" class="tl-opt tl-no">A. $40{,}6^\circ$</label>
+<input type="radio" name="tl83-q6" id="tl83-q6b"><label for="tl83-q6b" class="tl-opt tl-ok">B. $22{,}1^\circ$</label>
+<input type="radio" name="tl83-q6" id="tl83-q6c"><label for="tl83-q6c" class="tl-opt tl-no">C. $30^\circ$</label>
+<input type="radio" name="tl83-q6" id="tl83-q6d"><label for="tl83-q6d" class="tl-opt tl-no">D. $67{,}9^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Góc tới $i = 90^\circ - 60^\circ = 30^\circ$; $\sin r = \dfrac{\sin 30^\circ}{1{,}33} \approx 0{,}376$, nên $r \approx 22{,}1^\circ$ đo từ pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $40{,}6^\circ$ là coi $60^\circ$ là góc tới. Ra $67{,}9^\circ$ là tính đúng rồi lại đo $r$ từ mặt nước. Còn $30^\circ$ mới là góc tới, chưa khúc xạ. Đổi về góc với pháp tuyến trước, rồi mới dùng định luật.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Đo sai: từ mặt phân cách</th><th>Đo đúng: từ pháp tuyến</th></tr>
+</thead>
+<tbody>
+<tr><td>Tia hợp mặt kính $70^\circ$</td><td>góc tới $i = 20^\circ$</td></tr>
+<tr><td>Tia "gần như sát mặt"</td><td>$i$ gần $90^\circ$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Góc tới, góc khúc xạ: luôn đo từ pháp tuyến</strong></p>
+
+<h4>Bẫy 3: "Thấy vật dưới nước ở đâu thì vật nằm đúng chỗ đó"</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl83-q7-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl83-q7-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Đứng trên bờ, em thấy một con cá trong hồ nước trong. Muốn chiếc vợt trúng con cá, em phải đưa vợt tới đâu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q7" id="tl83-q7a"><label for="tl83-q7a" class="tl-opt tl-no">A. Đúng chỗ nhìn thấy cá</label>
+<input type="radio" name="tl83-q7" id="tl83-q7b"><label for="tl83-q7b" class="tl-opt tl-no">B. Nông hơn chỗ nhìn thấy cá</label>
+<input type="radio" name="tl83-q7" id="tl83-q7c"><label for="tl83-q7c" class="tl-opt tl-no">C. Gần bờ hơn chỗ nhìn thấy cá</label>
+<input type="radio" name="tl83-q7" id="tl83-q7d"><label for="tl83-q7d" class="tl-opt tl-ok">D. Sâu hơn chỗ nhìn thấy cá</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Em chỉ thấy <strong>ảnh</strong> của cá, nằm cao hơn con cá thật. Cá thật ở sâu hơn chỗ thấy. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Giữa mắt và cá có mặt nước nên mắt chỉ thấy ảnh. Tia từ cá ra không khí lệch xa pháp tuyến; kéo ngược tia vào mắt thì gặp nhau ở điểm <em>cao hơn</em> cá thật. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại Hình 4.</p></div>
+</div>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Vật thật</th><th>Ảnh mắt thấy</th></tr>
+</thead>
+<tbody>
+<tr><td>Đáy hồ bơi sâu $1{,}6\ \text{m}$</td><td>Trông chỉ sâu khoảng $1{,}2\ \text{m}$ (nhìn gần thẳng đứng)</td></tr>
+<tr><td>Nằm trên đường thật của ánh sáng</td><td>Nằm trên đường kéo dài, vẽ nét đứt</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Vì vậy, nhảy xuống hồ lạ mà "nhìn thấy nông" vẫn có thể bị đuối nước. Hỏi độ sâu thật trước khi xuống.</p>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Khúc xạ ánh sáng là gì? Khi nào tia sáng không bị gãy? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p><strong>Xiên qua mặt phân cách · tia gãy khúc.</strong> Chiếu vuông góc ($i = 0^\circ$) thì đi thẳng.</p>
+</details>
+<details class="tl-details">
+<summary>2. Vẽ hình, gọi tên: tia tới, điểm tới, pháp tuyến, tia khúc xạ, $i$, $r$. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$SI$ tia tới; $I$ điểm tới; $NN'$ pháp tuyến (nét đứt); $IR$ tia khúc xạ; $i$, $r$ đo từ <strong>pháp tuyến</strong>.</p>
+</details>
+<details class="tl-details">
+<summary>3. Chiết suất là gì? Viết công thức, nêu tên và đơn vị từng đại lượng. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$n = \dfrac{c}{v}$, không có đơn vị. $c = {3 \cdot 10^8}\ \text{m/s}$; $v$ tốc độ trong môi trường. Không khí $n \approx 1$, còn lại $n \gt 1$.</p>
+</details>
+<details class="tl-details">
+<summary>4. Phát biểu định luật khúc xạ (ba ý). <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cùng mặt phẳng tới · hai bên pháp tuyến · $n_1 \sin i = n_2 \sin r$.</p>
+</details>
+<details class="tl-details">
+<summary>5. Khi nào $r \lt i$, khi nào $r \gt i$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vào $n$ lớn hơn: $r \lt i$, gần pháp tuyến. Vào $n$ nhỏ hơn: $r \gt i$, xa pháp tuyến.</p>
+</details>
+<details class="tl-details">
+<summary>6. Vì sao đáy hồ trông nông hơn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Khác môi trường · mắt thấy <strong>ảnh ảo</strong> · ảnh nằm cao hơn vật.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Chiếu tia laser từ không khí xuống mặt nước bể bơi. Tia sáng hợp với mặt nước góc $37^\circ$. Chiết suất của nước là $\dfrac{4}{3}$. Tính góc tới, góc khúc xạ, góc lệch giữa tia khúc xạ và phương tia tới, và tốc độ ánh sáng trong nước. Lấy $\sin 53^\circ \approx 0{,}8$.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"từ không khí xuống mặt nước"</td><td>$n_1 = 1$, $n_2 = \dfrac{4}{3}$ → vào môi trường chiết quang hơn, $r \lt i$</td></tr>
+<tr><td>hợp với mặt nước góc $37^\circ$</td><td>chưa phải góc tới; góc tới là $90^\circ - 37^\circ$</td></tr>
+<tr><td>"góc khúc xạ"</td><td>$n_1 \sin i = n_2 \sin r$</td></tr>
+<tr><td>"góc lệch"</td><td>$D = i - r$</td></tr>
+<tr><td>"tốc độ ánh sáng trong nước"</td><td>$v = \dfrac{c}{n}$, $c = {3 \cdot 10^8}\ \text{m/s}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Góc tới:</strong> $i = 90^\circ - 37^\circ = 53^\circ$.</li>
+<li><strong>Góc khúc xạ:</strong> $1 \cdot 0{,}8 = \dfrac{4}{3}\sin r$ nên $\sin r = 0{,}6$, $r \approx 37^\circ$.</li>
+<li><strong>Góc lệch:</strong> $D = 53^\circ - 37^\circ = 16^\circ$.</li>
+<li><strong>Tốc độ:</strong> $v = \dfrac{3 \cdot 10^8}{4/3}$, tức $v = {2{,}25 \cdot 10^8}\ \text{m/s}$.</li>
+<li><strong>Kiểm tra:</strong> $r = 37^\circ \lt i = 53^\circ$, đúng chiều "vào nước thì gần pháp tuyến"; $v \lt c$, hợp lí.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Cùng đề, nhưng tia hợp với mặt nước góc $45^\circ$ ($\sin 45^\circ \approx 0{,}71$).</p>
+<ol class="tl-steps">
+<li><strong>Bước 1 (em điền):</strong> $i = \;?$</li>
+<li><strong>Bước 2 (em điền):</strong> $\sin r = \dfrac{\sin i}{4/3} = \;?$, suy ra $r \approx \;?$</li>
+<li>Kiểm tra: $r$ có nhỏ hơn $i$ không?</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 1–2</summary>
+<p>$i = 90^\circ - 45^\circ = 45^\circ$; $\sin r = 0{,}71 \cdot \dfrac{3}{4} \approx 0{,}53$, $r \approx 32^\circ \lt 45^\circ$.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi chiều: tia đi từ đáy bể lên</summary>
+<p>Tia sáng từ đáy bể đi lên, gặp mặt nước với góc tới $37^\circ$ ($\sin 37^\circ \approx 0{,}6$). Ra không khí: $\dfrac{4}{3} \cdot 0{,}6 = \sin r$, nên $\sin r = 0{,}8$, $r \approx 53^\circ$. Đúng đường cũ đi ngược lại: tính <strong>thuận nghịch</strong>.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl83-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl83-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Tia sáng đi từ thuỷ tinh ($n = 1{,}5$) ra không khí với góc tới $30^\circ$. Góc khúc xạ gần bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl83-q8" id="tl83-q8a"><label for="tl83-q8a" class="tl-opt tl-ok">A. $48{,}6^\circ$</label>
+<input type="radio" name="tl83-q8" id="tl83-q8b"><label for="tl83-q8b" class="tl-opt tl-no">B. $19{,}5^\circ$</label>
+<input type="radio" name="tl83-q8" id="tl83-q8c"><label for="tl83-q8c" class="tl-opt tl-no">C. $30^\circ$</label>
+<input type="radio" name="tl83-q8" id="tl83-q8d"><label for="tl83-q8d" class="tl-opt tl-no">D. $45^\circ$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1{,}5 \sin 30^\circ = \sin r$ nên $\sin r = 0{,}75$, $r \approx 48{,}6^\circ \gt 30^\circ$: ra môi trường kém chiết quang thì lệch xa pháp tuyến.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $19{,}5^\circ$ là đặt $n = 1{,}5$ nhầm sang phía không khí. Ra $45^\circ$ là nhân <em>góc</em> $30 \cdot 1{,}5$ thay vì nhân <em>sin</em>. Giữ $30^\circ$ là quên khúc xạ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 2 lời giải mẫu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🌈 Bấm xem: khúc xạ quanh em</summary>
+<ul>
+<li><strong>Bể cá cảnh:</strong> nhìn chéo qua kính, cá trông gần hơn và lệch chỗ so với vị trí thật.</li>
+<li><strong>Cầu vồng:</strong> ánh nắng khúc xạ khi đi vào và ra khỏi giọt mưa; mỗi màu lệch một chút khác nhau (học ở bài Tán sắc).</li>
+<li><strong>Kính cận, kính lúp:</strong> mặt kính cong làm các tia khúc xạ hội tụ hoặc phân kì.</li>
+<li><strong>Đường nhựa "ướt" ngày nắng:</strong> lớp không khí nóng sát mặt đường làm tia sáng từ bầu trời cong dần lên mắt.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Tính tốc độ ánh sáng trong kim cương ($n = 2{,}42$). <em>(khoảng ${1{,}24 \cdot 10^8}\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐</strong> Tia sáng từ không khí vào một chất lỏng: $i = 45^\circ$, $r = 30^\circ$. Tính chiết suất chất lỏng và tốc độ ánh sáng trong nó. <em>($n \approx 1{,}41$; $v \approx {2{,}12 \cdot 10^8}\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐⭐</strong> Tia sáng đi từ nước ($n = \dfrac{4}{3}$) sang thuỷ tinh ($n = 1{,}5$), góc tới bằng $60^\circ$; tính góc khúc xạ và giải thích vì sao $r \lt i$ dù ánh sáng không đi từ không khí. <em>($r \approx 50{,}3^\circ$; thuỷ tinh chiết quang hơn nước)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Khúc xạ</strong>: xiên qua mặt phân cách, tia gãy khúc.</li>
+<li>Vuông góc mặt phân cách: đi thẳng.</li>
+<li><strong>Chiết suất</strong>: $n = c/v$; không khí gần bằng 1.</li>
+<li><strong>Định luật</strong>: $n_1 \sin i = n_2 \sin r$.</li>
+<li>Vào $n$ lớn: gần pháp tuyến. Vào $n$ nhỏ: xa pháp tuyến.</li>
+<li>Khác môi trường: mắt thấy ảnh, ảnh nổi lên.</li>
+<li>Đọc đề: "hợp với mặt nước" → đổi sang góc với pháp tuyến trước.</li>
+</ul>
+</div>

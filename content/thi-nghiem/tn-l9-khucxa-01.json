@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 5. Khúc xạ ánh sáng",
+ "lesson_id": 83,
+ "nguon_trong_bai": "content/lesson-samples/l9-khuc-xa-anh-sang/theory.html",
+ "id": "tn-l9-khucxa-01",
+ "ten": "Tia laser đi từ không khí vào bể nước có pha sữa",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "khucxa.hien_tuong",
+  "khucxa.phan_xa_kem_theo"
+ ],
+ "muc_tieu": "Thấy tận mắt tia sáng gãy khúc ở mặt nước khi chiếu xiên, và một phần ánh sáng bị phản xạ.",
+ "dung_cu": [
+  {
+   "ten": "Bể kính (hoặc hộp nhựa trong) đựng nước",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút laser đỏ công suất thấp",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vài giọt sữa, que hương và bật lửa",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Pha vài giọt sữa vào nước cho thấy vệt sáng.",
+   "Đốt que hương cho khói bay sát trên mặt nước.",
+   "Chiếu laser xiên xuống mặt nước, đổi dần góc chiếu; chiếu thêm một lần vuông góc."
+  ],
+  "quan_sat": [
+   "Vệt sáng trong khói và trong nước không thẳng hàng: tia gãy ở mặt nước.",
+   "Một vệt mờ hắt ngược lên khói (phản xạ).",
+   "Chiếu vuông góc thì tia đi thẳng."
+  ],
+  "rut_ra": [
+   "Ánh sáng đổi phương khi truyền xiên qua mặt phân cách hai môi trường trong suốt (khúc xạ).",
+   "Tia khúc xạ trong nước lệch gần pháp tuyến hơn tia tới.",
+   "i = 0 thì r = 0."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 85,
+   "mac_dinh": 45,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "n1",
+   "ten": "Chiết suất không khí",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1
+  },
+  {
+   "ky_hieu": "n2",
+   "ten": "Chiết suất nước",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.33
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Góc khúc xạ",
+   "don_vi": "độ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "n1·sin(i) = n2·sin(r)",
+   "i' = i (tia phản xạ)"
+  ],
+  "gia_thiet": [
+   "mặt nước phẳng, nằm yên",
+   "ánh sáng đơn sắc đỏ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "i (độ)",
+   "r (độ)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0
+   ],
+   [
+    20,
+    14.9
+   ],
+   [
+    40,
+    28.9
+   ],
+   [
+    60,
+    40.6
+   ],
+   [
+    80,
+    47.8
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình n = 1,33; thí nghiệm này chỉ quan sát định tính."
+ },
+ "ket_qua_ky_vong": "Tia trong nước gãy về phía pháp tuyến; góc tới càng lớn, tia càng gãy rõ; chiếu vuông góc thì không gãy.",
+ "hien_tuong_hay_sai": [
+  "Tưởng chiếu vuông góc thì tia cũng gãy.",
+  "Đo góc từ mặt nước thay vì từ pháp tuyến.",
+  "Tưởng toàn bộ ánh sáng đi vào nước, không có phần phản xạ."
+ ],
+ "an_toan": "Không chiếu laser vào mắt; dùng bút laser công suất thấp.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo thanh trượt góc tới, tia khúc xạ và tia phản xạ mờ cập nhật theo định luật.",
+  "diem_nhan": "Tại i = 0 tia đi thẳng; tia khúc xạ luôn ở bên kia pháp tuyến."
+ }
+}

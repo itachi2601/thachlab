@@ -1,0 +1,109 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 6. Phản xạ toàn phần",
+ "lesson_id": 84,
+ "nguon_trong_bai": "content/lesson-samples/l9-phan-xa-toan-phan/theory.html",
+ "id": "tn-l9-pxtp-02",
+ "ten": "Dòng nước dẫn ánh sáng (sợi quang bằng nước)",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "pxtp.cap_quang",
+  "pxtp.dieu_kien"
+ ],
+ "muc_tieu": "Thấy ánh sáng laser đi cong theo dòng nước nhờ phản xạ toàn phần liên tiếp, giống ánh sáng trong sợi quang.",
+ "dung_cu": [
+  {
+   "ten": "Chai nhựa trong, đục một lỗ nhỏ gần đáy",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút laser",
+   "so_luong": 1
+  },
+  {
+   "ten": "Chậu hứng nước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đổ đầy nước vào chai cho tia nước chảy ra chậu.",
+   "Tắt đèn phòng; chiếu laser xuyên qua chai, thẳng vào lỗ, từ phía đối diện."
+  ],
+  "quan_sat": [
+   "Vệt sáng cong theo dòng nước.",
+   "Chỗ dòng nước chạm chậu sáng lên một đốm."
+  ],
+  "rut_ra": [
+   "Nước chiết quang hơn không khí; ánh sáng phản xạ toàn phần nhiều lần trên mặt dòng nước nên đi cong theo nó."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất chất lỏng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1.3,
+   "max": 1.6,
+   "mac_dinh": 1.33,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới tại mặt dòng nước",
+   "don_vi": "°",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "i_th",
+   "ten": "Góc tới hạn chất lỏng – không khí",
+   "don_vi": "°",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin i_th = 1/n",
+   "i ≥ i_th tại mọi điểm chạm thì ánh sáng không thoát ra"
+  ],
+  "gia_thiet": [
+   "dòng nước cong đều, không vỡ giọt",
+   "bỏ qua hấp thụ của nước"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Chất lỏng",
+   "n",
+   "i_th (°)"
+  ],
+  "hang": [
+   [
+    "Nước",
+    1.33,
+    48.8
+   ],
+   [
+    "Dầu ăn",
+    1.47,
+    42.9
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ sin i_th = 1/n, không phải đo thật."
+ },
+ "ket_qua_ky_vong": "Ánh sáng đi theo dòng nước cong; đoạn dòng nước vỡ thành giọt thì ánh sáng tán ra.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ ánh sáng tự 'uốn cong' trong nước.",
+  "Nghĩ dòng nước phải thẳng thì mới dẫn được sáng."
+ ],
+ "sai_so_thuong_gap": "Laser không nhắm đúng lỗ; phòng còn sáng nên khó thấy vệt; dòng nước rung làm vệt chập chờn.",
+ "an_toan": "Không chiếu laser vào mắt; lau khô sàn sau thí nghiệm.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Chai, lỗ, dòng nước parabol; tia laser phản xạ zigzag trong dòng nước.",
+  "diem_nhan": "Thanh trượt độ cao lỗ: dòng nước cong gắt hơn thì có chỗ góc tới < i_th, ánh sáng lọt ra."
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 8. Thấu kính",
+ "lesson_id": 86,
+ "nguon_trong_bai": "content/lesson-samples/l9-thau-kinh/theory.html",
+ "id": "tn-l9-thaukinh-03",
+ "ten": "Đo d, d' trên thước quang học và tính tiêu cự",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thaukinh.cong_thuc",
+  "thaukinh.anh_that"
+ ],
+ "muc_tieu": "Từ các cặp d, d' đo được, thấy f = d·d'/(d + d') gần như không đổi.",
+ "dung_cu": [
+  {
+   "ten": "Thước quang học dài 1 m, chia 1 mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn LED hình chữ F",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính hội tụ ghi f = 10 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màn ảnh",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt đèn chữ F, thấu kính, màn trên thước.",
+   "Đặt vật lần lượt cách thấu kính d = 12, 16, 24, 36, 50 cm.",
+   "Mỗi lần dịch màn tới chỗ ảnh rõ nhất, đọc d'."
+  ],
+  "quan_sat": [
+   "d giảm thì d' tăng, ảnh to dần.",
+   "Khi d gần f, ảnh rõ trong một đoạn dài."
+  ],
+  "rut_ra": [
+   "f = d·d'/(d + d') gần như không đổi, xấp xỉ 10 cm.",
+   "Sai lệch lớn nhất khi d gần f vì khó chọn chỗ ảnh rõ nhất."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách vật tới thấu kính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 11,
+   "max": 50,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "d'",
+   "ten": "Khoảng cách ảnh tới thấu kính",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "f_tn",
+   "ten": "Tiêu cự tính từ số đo",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "1/f = 1/d + 1/d'",
+   "d' = d·f/(d - f)",
+   "d'_doc = lam_tron(d' + lech, 0,1 cm)",
+   "f_tn = d·d'_doc/(d + d'_doc)"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng",
+   "lech là độ lệch khi tìm chỗ ảnh rõ: -3.0, 0.2, 0.1, -0.05, 0.05 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (cm)",
+   "d' đọc (cm)",
+   "f tính ra (cm)"
+  ],
+  "hang": [
+   [
+    12,
+    57.0,
+    9.91
+   ],
+   [
+    16,
+    26.9,
+    10.03
+   ],
+   [
+    24,
+    17.2,
+    10.02
+   ],
+   [
+    36,
+    13.8,
+    9.98
+   ],
+   [
+    50,
+    12.6,
+    10.06
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: d' tính từ f = 10 cm cộng độ lệch tìm ảnh rõ, chưa phải số đo thật. Trung bình f = 10.00 cm."
+ },
+ "ket_qua_ky_vong": "f trung bình khoảng 10.00 cm; lệch nhiều nhất ở d = 12 cm.",
+ "hien_tuong_hay_sai": [
+  "Tính f = d + d' hoặc f = (d + d')/2.",
+  "Dịch màn đến chỗ ảnh to nhất thay vì rõ nhất."
+ ],
+ "sai_so_thuong_gap": "Tìm chỗ ảnh rõ bằng mắt (nhất là khi d gần f), tâm thấu kính không trùng vạch đọc.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo vị trí vật và màn; ảnh nhoè theo độ lệch khỏi d'; bảng tự tính f.",
+  "diem_nhan": "d gần f thì vùng ảnh rõ kéo dài, sai số lớn."
+ }
+}

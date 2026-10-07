@@ -1,0 +1,127 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 8. Thấu kính",
+ "lesson_id": 86,
+ "nguon_trong_bai": "content/lesson-samples/l9-thau-kinh/theory.html",
+ "id": "tn-l9-thaukinh-01",
+ "ten": "Ba vệt sáng song song qua thấu kính rìa mỏng và rìa dày",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thaukinh.nhan_biet",
+  "thaukinh.tieu_diem"
+ ],
+ "muc_tieu": "Thấy chùm sáng song song hội tụ sau thấu kính rìa mỏng và loe ra sau thấu kính rìa dày.",
+ "dung_cu": [
+  {
+   "ten": "Hộp đèn ba khe (hoặc đèn pin + tấm bìa có ba khe hẹp)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính rìa mỏng (tiết diện phẳng, đặt đứng trên giấy)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thấu kính rìa dày (tiết diện phẳng)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tờ giấy trắng khổ A4",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hộp đèn trên giấy trắng để có ba vệt sáng song song.",
+   "Đặt thấu kính rìa mỏng chắn ngang ba vệt, vuông góc với vệt giữa.",
+   "Thay bằng thấu kính rìa dày, giữ nguyên vị trí."
+  ],
+  "quan_sat": [
+   "Sau kính rìa mỏng, ba vệt gặp nhau tại một điểm.",
+   "Sau kính rìa dày, ba vệt toả rộng ra, không gặp nhau.",
+   "Vệt giữa (đi qua tâm kính) không đổi hướng."
+  ],
+  "rut_ra": [
+   "Thấu kính rìa mỏng là thấu kính hội tụ; điểm gặp nhau là tiêu điểm F'.",
+   "Thấu kính rìa dày là thấu kính phân kì; đường kéo dài của các tia ló gặp nhau tại F' phía trước kính.",
+   "Tia qua quang tâm đi thẳng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tiêu cự (có dấu: hội tụ dương, phân kì âm)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": -20,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "y",
+   "ten": "Khoảng cách từ vệt sáng tới trục chính",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": -3,
+   "max": 3,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "goc",
+   "ten": "Góc lệch của tia ló so với trục chính",
+   "don_vi": "độ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "tia ló (hoặc đường kéo dài) đi qua F' = (f, 0)",
+   "tan(goc) = y / f"
+  ],
+  "gia_thiet": [
+   "thấu kính mỏng",
+   "tia gần trục chính",
+   "ánh sáng đơn sắc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "y (cm)",
+   "góc lệch với f = 10 cm (độ)",
+   "góc lệch với f = -10 cm (độ)"
+  ],
+  "hang": [
+   [
+    -2,
+    -11.3,
+    11.3
+   ],
+   [
+    0,
+    0.0,
+    0.0
+   ],
+   [
+    2,
+    11.3,
+    -11.3
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình thấu kính mỏng; thí nghiệm này chỉ quan sát định tính. Góc dương: tia ló đi về phía trục chính."
+ },
+ "ket_qua_ky_vong": "Rìa mỏng: ba tia gặp nhau tại F' sau kính. Rìa dày: ba tia loe ra, kéo dài ngược gặp nhau tại F' trước kính.",
+ "hien_tuong_hay_sai": [
+  "Tưởng thấu kính phân kì cũng có điểm sáng thật phía sau.",
+  "Tưởng tia qua tâm thấu kính cũng bị bẻ cong.",
+  "Nhận biết thấu kính theo độ to nhỏ thay vì theo rìa mỏng/rìa dày."
+ ],
+ "an_toan": "Không nhìn thẳng vào đèn khe; hộp đèn có thể nóng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo thanh trượt f từ âm sang dương, ba tia song song qua kính cập nhật; đổi kí hiệu kính tương ứng.",
+  "diem_nhan": "Với f âm, vẽ đường kéo dài nét đứt gặp nhau tại F' phía trước."
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 5. Khúc xạ ánh sáng",
+ "lesson_id": 83,
+ "nguon_trong_bai": "content/lesson-samples/l9-khuc-xa-anh-sang/theory.html",
+ "id": "tn-l9-khucxa-03",
+ "ten": "Đồng xu hiện ra khi rót nước vào bát",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "khucxa.anh_qua_mat_phan_cach"
+ ],
+ "muc_tieu": "Thấy ảnh của vật dưới nước nằm cao hơn vật thật do khúc xạ.",
+ "dung_cu": [
+  {
+   "ten": "Bát sứ không trong suốt",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng xu",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bình nước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt đồng xu dưới đáy bát.",
+   "Lùi đầu tới khi thành bát vừa che khuất đồng xu; giữ yên mắt.",
+   "Một bạn rót nước từ từ vào bát."
+  ],
+  "quan_sat": [
+   "Đồng xu hiện ra dù mắt và bát không di chuyển."
+  ],
+  "rut_ra": [
+   "Tia từ đồng xu ra không khí lệch xa pháp tuyến, đi qua mép bát tới mắt.",
+   "Mắt thấy ảnh đồng xu nằm cao hơn vị trí thật."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "h",
+   "ten": "Độ sâu nước",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 6,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "n",
+   "ten": "Chiết suất nước",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.33
+  },
+  {
+   "ky_hieu": "h_anh",
+   "ten": "Độ sâu ảnh khi nhìn gần thẳng đứng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "n·sin(r_nuoc) = sin(r_khong_khi)",
+   "h_anh ≈ h / n (nhìn gần thẳng đứng)"
+  ],
+  "gia_thiet": [
+   "mặt nước phẳng",
+   "mắt cố định"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "h (cm)",
+   "h_anh (cm)"
+  ],
+  "hang": [
+   [
+    2,
+    1.5
+   ],
+   [
+    4,
+    3.0
+   ],
+   [
+    6,
+    4.5
+   ],
+   [
+    8,
+    6.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ h_anh ≈ h / 1,33, chỉ đúng khi nhìn gần thẳng đứng."
+ },
+ "ket_qua_ky_vong": "Đồng xu hiện ra khi mực nước đủ cao; ảnh nằm cao hơn đáy bát.",
+ "hien_tuong_hay_sai": [
+  "Tưởng đồng xu bị nước đẩy nổi lên.",
+  "Tưởng thấy vật dưới nước ở đâu thì vật nằm đúng chỗ đó."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Kéo mực nước, vẽ tia từ đồng xu qua mép bát tới mắt và ảnh nét đứt.",
+  "diem_nhan": "Ảnh nổi lên khi nước dâng; mắt không cần di chuyển."
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 7. Lăng kính",
+ "lesson_id": 85,
+ "nguon_trong_bai": "content/lesson-samples/l9-lang-kinh-tan-sac/theory.html",
+ "id": "tn-l9-langkinh-03",
+ "ten": "Đo góc lệch của ba tia laser đỏ, lục, tím qua cùng lăng kính",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "langkinh.chiet_suat_theo_mau",
+  "langkinh.tan_sac"
+ ],
+ "muc_tieu": "Từ số đo góc lệch, kết luận chiết suất (và độ lệch) tăng dần từ đỏ đến tím; so chênh lệch với sai số đo.",
+ "dung_cu": [
+  {
+   "ten": "Lăng kính thuỷ tinh pha chì, A = 60°",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút laser đỏ, lục, tím công suất thấp",
+   "so_luong": 3
+  },
+  {
+   "ten": "Giấy trắng, thước, thước đo góc chia độ 1°",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt lăng kính trên giấy, vạch viền và pháp tuyến tại điểm tới.",
+   "Lần lượt chiếu ba laser vào cùng một điểm, cùng góc tới 50°.",
+   "Vạch tia tới, tia ló; đo góc lệch D bằng thước đo góc.",
+   "Mỗi màu đo 3 lần, tính trung bình."
+  ],
+  "quan_sat": [
+   "D trung bình: đỏ 47,7°; lục 49,3°; tím 52,3°."
+  ],
+  "rut_ra": [
+   "Góc lệch tăng dần đỏ → lục → tím: chiết suất tăng dần.",
+   "Chênh lệch đỏ – tím (4,6°) lớn hơn nhiều sai số ±1°; đỏ – lục (khoảng 1,7°) chỉ nhỉnh hơn sai số, cần đo thêm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Góc chiết quang",
+   "don_vi": "độ",
+   "kieu": "co_dinh",
+   "gia_tri": 60
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Góc tới",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 40,
+   "max": 70,
+   "mac_dinh": 50,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "n_do",
+   "ten": "Chiết suất với đỏ (giả định)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.612
+  },
+  {
+   "ky_hieu": "n_luc",
+   "ten": "Chiết suất với lục (giả định)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.627
+  },
+  {
+   "ky_hieu": "n_tim",
+   "ten": "Chiết suất với tím (giả định)",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 1.652
+  },
+  {
+   "ky_hieu": "D",
+   "ten": "Góc lệch",
+   "don_vi": "độ",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "sin i = n·sin r1",
+   "r2 = A − r1",
+   "sin i2 = n·sin r2",
+   "D = i + i2 − A"
+  ],
+  "gia_thiet": [
+   "lăng kính trong không khí",
+   "chiết suất giả định gần thuỷ tinh pha chì",
+   "số đọc làm tròn tới 1° như thước đo góc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Màu",
+   "n (giả định)",
+   "D mô hình (độ)",
+   "D lần 1",
+   "D lần 2",
+   "D lần 3",
+   "D trung bình"
+  ],
+  "hang": [
+   [
+    "đỏ",
+    1.612,
+    47.7,
+    47,
+    48,
+    48,
+    47.7
+   ],
+   [
+    "lục",
+    1.627,
+    49.3,
+    49,
+    50,
+    49,
+    49.3
+   ],
+   [
+    "tím",
+    1.652,
+    52.2,
+    52,
+    53,
+    52,
+    52.3
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ: cột mô hình tính từ chiết suất giả định; ba lần đo là giá trị làm tròn tới 1° quanh mô hình; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "D_đỏ < D_lục < D_tím; chênh đỏ – tím rõ ràng so với sai số.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ đỏ lệch nhiều nhất.",
+  "Kết luận chắc chắn từ một chênh lệch cỡ sai số."
+ ],
+ "sai_so_thuong_gap": "Vệt laser có bề rộng; vạch tia lệch tay; kẻ pháp tuyến chưa vuông; lăng kính xê dịch giữa các lần đo.",
+ "an_toan": "Không chiếu laser vào mắt; laser tím khó thấy vệt, cẩn thận hơn.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+2d_dong_hoc",
+  "y_tuong": "Ba tia laser cùng điểm tới, thanh trượt i; bảng tự ghi D theo màu với nhiễu ±1°.",
+  "diem_nhan": "So chênh lệch giữa hai màu với sai số một lần đo trước khi kết luận."
+ }
+}
