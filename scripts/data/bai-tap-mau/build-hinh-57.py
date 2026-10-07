@@ -38,16 +38,21 @@ def ball(pts, hold, sec_per_interval):
 # ───────────── Dạng 1: máy bay thả gói, h=490, v0=60 ─────────────
 def d1(k):
     O = (104, 58); g = ngang_geom(490, 60, O, 270, 140); p = f"d1{k}"
-    b = defs(p) + ground(g["gy"]) + plane(O[0], O[1] - 3) + dot(*O, 4.5, "currentColor")
+    pl = plane(O[0] + 23, O[1] - 3)  # tâm máy bay nằm ngay trên gói hàng
+    if k == 0:   # máy bay giữ vận tốc ngang v₀ khi thả: luôn nằm ngay trên gói hàng (đúng vật lí), cùng nhịp với quả cầu
+        dx = g["land"][0] - O[0]; idx = list(range(41)) + [40] * 8; dur = (10 / 40) * (len(idx) - 1)
+        vals = ";".join(f"{dx * min(i, 40) / 40:.1f} 0" for i in idx)
+        pl += arrow(p, "r", O[0], O[1], O[0] + 50, O[1], 3) + lbl(O[0] - 26, O[1] - 26, "v₀ = 60 m/s", RED, 12, "start", "700")
+        pl = f'<g><animateTransform attributeName="transform" type="translate" values="{vals}" dur="{dur:.2f}s" repeatCount="indefinite"/>{pl}</g>'
+    b = defs(p) + ground(g["gy"]) + pl + dot(*O, 4.5, "currentColor")
     b += lbl(16, 22, "máy bay", "currentColor", 13, "start", "400")
     b += poly(g["pts"], GRN, 2.4, "" if k else "6 4") + dot(*g["land"], 4.5, GRN)
     if k == 0:
-        b += arrow(p, "r", O[0], O[1], O[0] + 62, O[1], 3) + lbl(O[0] + 20, O[1] - 8, "v₀ = 60 m/s", RED, 13, "start", "700")
         b += dim(p, "o", O[0] - 60, O[1], O[0] - 60, g["gy"], "h = 490 m", O[0] - 52, (O[1] + g["gy"]) / 2 + 4)
         b += dim(p, "b", O[0], g["gy"] + 20, g["land"][0], g["gy"] + 20, "L = ?", (O[0] + g["land"][0]) / 2 - 18, g["gy"] + 38)
         b += lbl(O[0] + 70, O[1] + 70, "t = ?", ORG, 13, "start", "700")
         b += ball(g["pts"], 8, 10 / 40)
-        return fig("d1-0", VB, "Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất", b, "Mô phỏng: gói hàng rơi (đúng thời gian thật, 10 s). Quỹ đạo tính theo công thức.")
+        return fig("d1-0", VB, "Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất", b, "Mô phỏng: máy bay giữ vận tốc ngang v₀, gói hàng luôn ở ngay dưới máy bay (đúng thời gian thật, 10 s). Quỹ đạo tính theo công thức.")
     if k == 1:
         for u in (10, 20, 30):
             b += dot(*g["pts"][u], 3.5, GRN)
