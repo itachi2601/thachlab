@@ -112,7 +112,7 @@ export default function WeakestSkillsCard() {
       >
         <Zap size={16} aria-hidden />
         {starting ? "Đang chuẩn bị…" : "Luyện nhanh 10 câu"}
-        <span className="font-medium opacity-80">· khoảng 5 phút</span>
+        <span className="hidden font-medium opacity-80 sm:inline">· khoảng 5 phút</span>
       </button>
       <p className="mt-1.5 text-[13px] text-slate-400">
         {startError

@@ -37,6 +37,9 @@ export function liveExitWindows(openWindows: ExitWindow[], needs: TutoringNeed[]
  * một trong ba (N3) — không còn khối lịch trống "Chưa có buổi nào được mở" như 3a42d5a92.
  * Không có nút nền đặc: nút nổi duy nhất của trang là ở thẻ "Hôm nay em làm gì" (B2).
  */
+/** Số chủ đề cần mở khoá nhìn thấy ngay; còn lại gập sau "Xem thêm" (N2 ≤4 thao tác mỗi vùng). */
+const VISIBLE_NEEDS = 3;
+
 export default function TutoringSection({
   needs,
   slots,
@@ -63,6 +66,25 @@ export default function TutoringSection({
   onQuiz: (need: TutoringNeed, window?: ExitWindow) => void;
   onToggleSlot: (slot: TutoringSlot) => void;
 }) {
+  const renderNeed = (need: TutoringNeed) => {
+    const wait = nextExitAttemptAt(lastExitAttempt.get(need.id), nowMs);
+    return (
+      <div key={need.id} className="flex flex-wrap items-center gap-1.5">
+        <span className={`rounded-full border px-3 py-1 text-[13px] font-semibold ${NEED_TONE[need.status]}`}>
+          {needLabel(need)} · {NEED_STATUS_LABEL_STUDENT[need.status]}
+        </span>
+        <button
+          type="button"
+          onClick={() => onQuiz(need)}
+          disabled={wait !== null}
+          className="min-h-11 rounded-full border border-white/15 px-4 py-2 text-[13px] font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {wait ? `Lượt tiếp theo mở lúc ${formatExitWait(wait)}` : "Tự kiểm tra"}
+        </button>
+      </div>
+    );
+  };
+
   return (
     <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
       <div className="flex items-center gap-2">
@@ -107,28 +129,18 @@ export default function TutoringSection({
               Mở khoá bằng cách đăng ký buổi bên dưới, hoặc tự kiểm tra (đạt từ 80%, hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ).
             </p>
             <div className="space-y-1.5">
-              {needs.map((need) => {
-                const wait = nextExitAttemptAt(lastExitAttempt.get(need.id), nowMs);
-                return (
-                  <div key={need.id} className="flex flex-wrap items-center gap-1.5">
-                    <span className={`rounded-full border px-3 py-1 text-[13px] font-semibold ${NEED_TONE[need.status]}`}>
-                      {needLabel(need)} · {NEED_STATUS_LABEL_STUDENT[need.status]}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => onQuiz(need)}
-                      disabled={wait !== null}
-                      className="min-h-11 rounded-full border border-white/15 px-4 py-2 text-[13px] font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
-                    >
-                      {wait ? `Lượt tiếp theo mở lúc ${formatExitWait(wait)}` : "Tự kiểm tra"}
-                    </button>
-                  </div>
-                );
-              })}
+              {needs.slice(0, VISIBLE_NEEDS).map((need) => renderNeed(need))}
             </div>
+            {needs.length > VISIBLE_NEEDS && (
+              <details className="mt-1.5">
+                <summary className="inline-flex min-h-11 cursor-pointer items-center text-[13px] font-semibold text-slate-300 hover:text-white">
+                  Xem thêm {needs.length - VISIBLE_NEEDS} chủ đề
+                </summary>
+                <div className="mt-1.5 space-y-1.5">{needs.slice(VISIBLE_NEEDS).map((need) => renderNeed(need))}</div>
+              </details>
+            )}
           </div>
         )}
-
         {slots.length > 0 && (
           <div>
             <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>

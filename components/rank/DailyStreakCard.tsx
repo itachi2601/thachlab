@@ -29,7 +29,7 @@ export default function DailyStreakCard({
 
   return (
     <div
-      className={`flex items-center gap-3 rounded-2xl border p-4 sm:p-5 ${className}`}
+      className={`flex min-w-0 items-center gap-3 rounded-2xl border p-4 sm:p-5 ${className}`}
       style={{
         borderColor: today_done ? "#f59e0b55" : "rgba(255,255,255,.1)",
         background: today_done ? "linear-gradient(135deg, #f59e0b26 0%, rgba(11,16,32,0) 60%)" : undefined,

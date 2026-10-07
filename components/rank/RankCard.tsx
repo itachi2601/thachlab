@@ -34,7 +34,7 @@ export default function RankCard({
   const meta = tierMeta(status?.tier?.code, paragon);
   const inner = (
     <div
-      className={`relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${className}`}
+      className={`relative min-w-0 overflow-hidden rounded-2xl border p-4 sm:p-5 ${className}`}
       style={{
         borderColor: `${meta.color}55`,
         background: `linear-gradient(135deg, ${meta.color}26 0%, rgba(11,16,32,0) 60%)`,
@@ -107,7 +107,8 @@ export default function RankCard({
 
   if (!href) return inner;
   return (
-    <Link href={href} className="block transition-transform hover:-translate-y-0.5 motion-reduce:transform-none">
+    // min-w-0: thẻ nằm trong grid, chữ nowrap bên trong (TierName) không được kéo cột lưới rộng quá màn hình (đo 7/10/2026: 464px ở 375px).
+    <Link href={href} className="block min-w-0 transition-transform hover:-translate-y-0.5 motion-reduce:transform-none">
       {inner}
     </Link>
   );
