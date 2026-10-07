@@ -81,7 +81,37 @@ def line_legend():
     return defs + hatch + out
 
 
-def build_front(pages):
+def toc_full(pages, toc):
+    """Mục lục đủ một trang: phần đầu, mỗi bài kèm trang Lý thuyết · Bài tập mẫu · Luyện thêm, phần cuối."""
+    sec = toc.get('sections', {}); back = toc.get('back', {})
+    def row(num, title, page, sub='', cls=''):
+        n = f'<span class="t-n">{num}</span>' if num else '<span class="t-n t-n0"></span>'
+        s = f'<div class="t-sub">{sub}</div>' if sub else ''
+        return f'<li class="{cls}">{n}<span class="t-t">{title}{s}</span><span class="t-d"></span><span class="t-p">{page}</span></li>'
+    out = ['<ol class="toc toc-full">',
+           '<li class="t-grp">Phần đầu</li>',
+           row('', 'Cách dùng sách — tự điền trước, rồi chữa', 2),
+           row('', 'Cách đọc hình (nét thay màu)', 4),
+           row('', 'Bản đồ chương', 5),
+           '<li class="t-grp">Chín bài</li>']
+    for lid in CHAPTER['lessons']:
+        L = load_lesson(lid); st = pages.get(str(lid), {}).get('start', '')
+        sp = sec.get(lid, {})
+        parts = [f'Lý thuyết <b>{st}</b>']
+        if sp.get('bt'): parts.append(f'Bài tập mẫu <b>{sp["bt"]}</b>')
+        if sp.get('lt'): parts.append(f'Luyện thêm <b>{sp["lt"]}</b>')
+        practical = 'Thực hành' in L['name']
+        out.append(row(f'{L["num"]:02d}', L['name'], st, ' · '.join(parts), 'prac' if practical else ''))
+    out.append('<li class="t-grp">Phần cuối</li>')
+    out.append(row('', 'Tổng kết chương — mang về sau 9 bài', back.get('sum', '')))
+    out.append(row('', 'Tự đánh giá', back.get('self', '')))
+    out.append(row('', 'Bảng đáp án — chỉ đáp án, không phân tích', back.get('ak', '')))
+    out.append('</ol>')
+    return ''.join(out)
+
+
+def build_front(pages, toc=None):
+    toc = toc or {}
     total = sum(p['n'] for p in pages.values()) if pages else 0
     html = head_html('Vật lí 10 — Chương 2 · Động học (bản thử)', 1)
     mp = metro(pages)
@@ -115,14 +145,18 @@ def build_front(pages):
   </div>
   <div class="note-box"><b>Dùng cùng website.</b> Trên lớp, thầy cô giảng lý thuyết, chữa bài tập mẫu và chiếu mô phỏng; sách là giấy làm việc của em. Ở nhà: quét mã QR cuối bài để luyện tập, giải đề và xem lời giải đầy đủ.</div>
 </section>'''
-    # 3 — cách đọc hình + mục lục
+    # 3 — mục lục (một trang riêng)
     html += f'''<section class="plain p-toc">
+  <h2 class="pg-h"><span class="pg-k">MỤC LỤC</span>Chương 2 · Động học</h2>
+  {toc_full(pages, toc)}
+</section>'''
+    # 4 — cách đọc hình
+    html += f'''<section class="plain p-legend">
   <h2 class="pg-h"><span class="pg-k">CÁCH ĐỌC HÌNH</span>Sách in đen–trắng: mỗi màu là một kiểu nét</h2>
   <div class="lg-box">{line_legend()}</div>
-  <h2 class="pg-h pg-h2"><span class="pg-k">MỤC LỤC</span>Chương 2 · Động học</h2>
-  <ol class="toc">{toc_rows(pages)}</ol>
+  <p class="lead">Trên web mỗi đại lượng một màu; trong sách mỗi đại lượng một kiểu nét. Gặp hình khó đọc, quét mã QR đầu bài để xem bản màu và mô phỏng.</p>
 </section>'''
-    # 4 — bản đồ chương
+    # 5 — bản đồ chương
     html += f'''<section class="plain p-map">
   <h2 class="pg-h"><span class="pg-k">BẢN ĐỒ CHƯƠNG</span>Chín ga trên tuyến “Động học”</h2>
   <p class="lead">Bài này dựng trên bài trước. Đi lần lượt từ ga 4 đến ga 12 — nếu lạc, quay lại ga liền trước.</p>

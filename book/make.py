@@ -11,7 +11,7 @@ import build, front, assets_gen
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'out'
-FRONT_PAGES = 4
+FRONT_PAGES = 5   # bìa, cách dùng, mục lục, cách đọc hình, bản đồ chương
 
 
 def render(html, pdf):
@@ -52,7 +52,6 @@ def main():
         list(ex.map(lambda l: lesson_job(l, pages[str(l)]['start'], fill[l]), lessons))
     answers = {l: build.export_web(l)[1] for l in lessons}   # cùng nguồn với public/sach-data/dap-an-<id>.json
     # 4) phần đầu / cuối
-    front.build_front(pages); render(ROOT / 'src/front.html', OUT / 'front.pdf')
     take = []
     for l in lessons:
         L = build.load_lesson(l)
@@ -60,6 +59,16 @@ def main():
         if m: take.append((L['num'], L['name'], bw_clean(m.group(1))))
     back_start = FRONT_PAGES + 1 + sum(res[l] for l in lessons)
     front.build_back(pages, take, answers, back_start); n_back = render(ROOT / 'src/back.html', OUT / 'back.pdf')
+    # mục lục đủ: trang mục con lấy từ PDF đã dựng (bài tập mẫu, luyện thêm, tổng kết, tự đánh giá, bảng đáp án)
+    toc = {'sections': {}, 'back': {}}
+    for l in lessons:
+        toc['sections'][l] = {k: page_of(OUT / f'lesson-{l}.pdf', t, pages[str(l)]['start'])
+                              for k, t in (('bt', 'BÀI TẬP MẪU'), ('lt', 'LUYỆN THÊM'))}
+    for k, t in (('sum', 'TỔNG KẾT CHƯƠNG'), ('self', 'TỰ ĐÁNH GIÁ'), ('ak', 'BẢNG ĐÁP ÁN')):
+        toc['back'][k] = page_of(OUT / 'back.pdf', t, back_start)
+    front.build_front(pages, toc); n_front = render(ROOT / 'src/front.html', OUT / 'front.pdf')
+    if n_front != FRONT_PAGES:
+        raise SystemExit(f'phần đầu sách {n_front} trang, make.py đang giả định FRONT_PAGES={FRONT_PAGES} — sửa hằng rồi chạy lại')
     # 5) ghép
     book = fitz.open()
     toc = []
@@ -74,6 +83,14 @@ def main():
     out = OUT / 'vat-li-10-chuong-2-dong-hoc.pdf'
     book.save(out, deflate=True, garbage=3)
     print('XONG', out, len(book), 'trang', f'{time.time()-t0:.0f}s')
+
+
+def page_of(pdf, text, start):
+    """Số trang (trong sách) của trang đầu tiên chứa `text` trong một PDF con; 0 nếu không có."""
+    d = fitz.open(pdf); key = re.sub(r'\s+', '', text)   # chữ dãn (letter-spacing) bị tách "T Ổ N G" khi trích
+    for i, pg in enumerate(d):
+        if key in re.sub(r'\s+', '', pg.get_text()): return start + i
+    return 0
 
 
 def bw_clean(h):
