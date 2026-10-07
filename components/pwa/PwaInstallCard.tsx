@@ -38,9 +38,8 @@ function standalone() {
 }
 
 export default function PwaInstallCard() {
-  const [mode, setMode] = useState<"hidden" | "prompt" | "ios">("hidden");
+  const [mode, setMode] = useState<"hidden" | "prompt" | "ios" | "mac">("hidden");
   const [showSteps, setShowSteps] = useState(false);
-  const [mac, setMac] = useState(false);
 
   useEffect(() => {
     if (standalone() || snoozed()) return;
@@ -51,9 +50,8 @@ export default function PwaInstallCard() {
     const ios = /iphone|ipad|ipod/i.test(ua) || (safari && /macintosh/i.test(ua));
     const sync = () => {
       if (w.__thachlabInstallPrompt) setMode("prompt");
-      else if (ios) setMode("ios");
+      else if (ios) setMode(/macintosh/i.test(ua) && navigator.maxTouchPoints === 0 ? "mac" : "ios");
     };
-    setMac(/macintosh/i.test(ua) && navigator.maxTouchPoints === 0);
     sync();
     // Sự kiện có thể đến sau lần render đầu.
     const onPrompt = () => window.setTimeout(sync, 0);
@@ -78,7 +76,7 @@ export default function PwaInstallCard() {
   };
 
   const install = async () => {
-    if (mode === "ios") {
+    if (mode === "ios" || mode === "mac") {
       setShowSteps((v) => !v);
       return;
     }
@@ -113,9 +111,9 @@ export default function PwaInstallCard() {
           <p className="mt-1 text-sm leading-relaxed text-slate-300">Mở ThachLab trong cửa sổ riêng, một lần chạm, không cần nhớ địa chỉ web.</p>
         </div>
       </div>
-      {mode === "ios" && showSteps && (
+      {(mode === "ios" || mode === "mac") && showSteps && (
         <ol className="mt-3 space-y-1.5 pl-1 text-sm leading-relaxed text-slate-200">
-          {mac ? (
+          {mode === "mac" ? (
             <>
               <li>1. Trên thanh menu Safari, chọn Tệp (File).</li>
               <li>2. Chọn “Thêm vào Dock”.</li>
@@ -135,7 +133,7 @@ export default function PwaInstallCard() {
           onClick={install}
           className="min-h-11 flex-1 rounded-xl bg-blue-600 px-4 sm:flex-none sm:px-6 text-base font-semibold text-white"
         >
-          {mode === "ios" ? (showSteps ? "Ẩn hướng dẫn" : "Xem cách cài") : "Cài ngay"}
+          {mode !== "prompt" ? (showSteps ? "Ẩn hướng dẫn" : "Xem cách cài") : "Cài ngay"}
         </button>
         <a
           href="/cai-app/"
