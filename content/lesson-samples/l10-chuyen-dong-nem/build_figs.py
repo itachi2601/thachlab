@@ -33,13 +33,18 @@ XL, YL = 300, 206        # gói của máy bay chạm đất
 XH = 350                 # trực thăng đứng yên, thả gói rơi thẳng đứng
 b = defs("f1")
 # máy bay (nhìn nghiêng, kiểu que)
-b += '<rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/>'
-b += '<path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += seg(54, 67, 45, 78, "currentColor", 2.2)
-b += '<circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+pl = '<rect x="26" y="56" width="58" height="11" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/>'
+pl += '<path d="M34,56 L26,46 L26,56 Z" fill="none" stroke="currentColor" stroke-width="2"/>'
+pl += seg(54, 67, 45, 78, "currentColor", 2.2)
+pl += '<circle cx="73" cy="61" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>'
 b += text(24, 36, "máy bay cứu hộ", "currentColor", 14, "start", "400")
-b += arrow("f1", "r", 70, Y0, 128, Y0, 3)
-b += text(132, Y0 - 4, "v₀", RED, 14, "start", "700")
+pl += arrow("f1", "r", 70, Y0, 128, Y0, 3)
+pl += text(132, Y0 - 4, "v₀", RED, 14, "start", "700")
+NS = 40; DUR = 4.0   # mô phỏng thu gọn: 40 mẫu cách đều thời gian, chạy 1 lần khi bấm nút
+def smil(attr, vals):
+    return f'<animate attributeName="{attr}" values="{";".join(f"{v:.1f}" for v in vals)}" dur="{DUR}s" begin="indefinite" fill="freeze"/>'
+tr = ";".join(f"{(XL - 70) * u / NS:.1f} 0" for u in range(NS + 1))
+b += f'<g><animateTransform attributeName="transform" type="translate" values="{tr}" dur="{DUR}s" begin="indefinite" fill="freeze"/>{pl}</g>'
 # quỹ đạo gói hàng thả từ máy bay
 par = [(70 + (XL - 70) * u / 40, Y0 + (YL - Y0) * (u / 40) ** 2) for u in range(0, 41)]
 b += poly(par, GRN, 2.4)
@@ -61,6 +66,9 @@ for u in (0.4, 0.6, 0.8, 1.0):
     b += dot(XH, yj, 4.2, ORG)
     if u < 1:
         b += seg(xj + 6, yj, XH - 6, yj, "currentColor", 1.1, "4 4", .35)
+PA = [(70 + (XL - 70) * u / NS, Y0 + (YL - Y0) * (u / NS) ** 2) for u in range(NS + 1)]
+b += f'<circle cx="70" cy="{Y0}" r="5.5" fill="{GRN}" stroke="currentColor" stroke-width="1.5">{smil("cx", [p[0] for p in PA])}{smil("cy", [p[1] for p in PA])}</circle>'
+b += f'<circle cx="{XH}" cy="{Y0}" r="5.5" fill="{ORG}" stroke="currentColor" stroke-width="1.5">{smil("cy", [p[1] for p in PA])}</circle>'
 b += text(150, 16, "cùng độ cao, cùng lúc", "currentColor", 14, "start", "400")
 b += '<rect x="20" y="206" width="400" height="9" fill="none" stroke="currentColor" stroke-width="2"/>'
 b += text(20, 238, "mặt đất", "currentColor", 14, "start", "400")
@@ -205,6 +213,7 @@ fig6 = wrap("0 0 440 254",
             b,
             "Hình 6. Cùng $v_0$, ném ở $30^\\circ$ và $60^\\circ$ (hai góc <strong>phụ nhau</strong>): hai quỹ đạo rơi xuống <strong>cùng một điểm</strong>, nhưng quỹ đạo $60^\\circ$ cao gấp ba ($H\\sim\\sin^2\\alpha$) và bay lâu hơn.")
 
+fig1 = fig1.replace("</svg>", '</svg><button type="button" class="bt-run" data-bt-run="1">▶ Chạy mô phỏng</button>', 1)
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4, fig5, fig6), 1):
     assert f"<!--FIG{n}-->" in h, f"thiếu mốc FIG{n}"
