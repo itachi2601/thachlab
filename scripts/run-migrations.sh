@@ -14,11 +14,10 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261007120000_tu_vao_lop_thpt.sql|THPT tự vào lớp không cần duyệt (sửa RLS user_classes, duyệt luôn yêu cầu đang chờ, có bảng sao lưu)|bất kỳ lúc nào"
 )
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
-# ĐÃ CHẠY 7/10/2026: 20261007070000_rls_backup_tables
+# ĐÃ CHẠY 7/10/2026: 20261007070000_rls_backup_tables, 20261007120000_tu_vao_lop_thpt
 # ĐÃ CHẠY 4/10/2026 22:58: 20261004120000_phu_dao_hang_cho, 20261004130000_phu_dao_xem_lai_ly_thuyet, 20261004230000_thpt_course_pairs
 # ĐÃ CHẠY 4/10/2026: 20261004100000_bank_grade_thi_thu_tn
 # ĐÃ CHẠY 3/10/2026 22:57: 20261003130000_parent_attendance_announcements, 20261003140000_rank_theory_rp, 20261003150000_phu_dao_kiem_tra_cuoi_buoi
