@@ -1,0 +1,125 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+ "lesson_id": 12,
+ "nguon_trong_bai": "content/lesson-samples/l12-thuc-hanh-cam-ung-tu/theory.html",
+ "loai": "thi_nghiem",
+ "id": "tn-l12-thuchanhtu-03",
+ "ten": "Dây hợp góc với đường sức: lực giảm theo sin θ",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "thuchanhtu.luc_tu_theo_goc",
+  "thuchanhtu.sai_so"
+ ],
+ "muc_tieu": "Chứng tỏ lực từ lên dây tỉ lệ với sin của góc giữa dây và đường sức, nên dây lệch làm B tính theo F = BIl bị thấp hơn thật.",
+ "dung_cu": [
+  {
+   "ten": "Bộ cân dòng điện như thí nghiệm 01",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước đo góc gắn trên giá khung dây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt cạnh khung vuông góc đường sức (θ = 90°), I = 3,0 A, đọc Δm.",
+   "Xoay giá để cạnh khung hợp với đường sức các góc 60° và 30°, giữ I = 3,0 A.",
+   "Ở mỗi góc ngắt mạch, đóng lại vài giây rồi đọc Δm."
+  ],
+  "quan_sat": [
+   "θ = 90°: Δm = 1,45 g.",
+   "θ = 60°: Δm ≈ 1,26 g.",
+   "θ = 30°: Δm ≈ 0,73 g."
+  ],
+  "rut_ra": [
+   "Δm (nên cả F) tỉ lệ với sin θ: 1,26/1,45 ≈ 0,87 = sin 60°; 0,73/1,45 ≈ 0,50 = sin 30°.",
+   "Dùng F = BIl khi dây lệch làm B tính ra nhỏ hơn thật 13% ở 60°.",
+   "Phải chỉnh cạnh khung vuông góc đường sức trước khi đo."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "theta",
+   "ten": "Góc giữa cạnh khung và đường sức",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 90,
+   "mac_dinh": 90,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện",
+   "don_vi": "A",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "dm",
+   "ten": "Số đọc của cân",
+   "don_vi": "g",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "F = B·I·l·sin θ",
+   "Δm = 1000·B·I·l·sin θ / g, với B = 0,12 T, I = 3,0 A, l = 0,040 m: Δm ≈ 1,47·sin θ (g)",
+   "Nếu dùng B' = Δm·g/(I·l) thì B'/B = sin θ"
+  ],
+  "gia_thiet": [
+   "cạnh khung vẫn nằm trong vùng từ trường đều",
+   "θ là góc giữa cạnh khung và đường sức, trong mặt phẳng chứa cả hai"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "θ (độ)",
+   "Δm đo (g)",
+   "sin θ",
+   "Δm/Δm(90°)"
+  ],
+  "hang": [
+   [
+    90,
+    1.45,
+    1.0,
+    1.0
+   ],
+   [
+    60,
+    1.26,
+    0.866,
+    0.869
+   ],
+   [
+    30,
+    0.73,
+    0.5,
+    0.503
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình Δm = 1,47·sin θ, làm tròn 0,01 g; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Tỉ số Δm(θ)/Δm(90°) khớp sin θ; B tính theo F = BIl thấp hơn thật khi dây không vuông góc.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng B của nam châm thay đổi khi xoay dây.",
+  "Cho rằng lực lớn nhất khi dây song song đường sức."
+ ],
+ "sai_so_thuong_gap": [
+  "Đọc góc trên thước đo không chính xác (lệch vài độ).",
+  "Không để ý giá đỡ bị nghiêng làm θ ≠ 90° ngay từ đầu."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "y_tuong": "Xoay cạnh khung bằng thanh trượt θ; mũi tên F co lại theo sin θ, số cân và đồ thị Δm–θ cập nhật.",
+  "diem_nhan": "Lực lớn nhất khi θ = 90° và bằng 0 khi dây song song đường sức."
+ },
+ "an_toan": [
+  "Ngắt mạch khi xoay giá."
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "mon": "vat-ly",
+ "lop": 12,
+ "bai": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+ "lesson_id": 12,
+ "nguon_trong_bai": "content/lesson-samples/l12-thuc-hanh-cam-ung-tu/theory.html",
+ "loai": "thi_nghiem",
+ "id": "tn-l12-thuchanhtu-02",
+ "ten": "Đảo chiều dòng điện: số cân đổi dấu",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "thuchanhtu.can_dong_dien",
+  "thuchanhtu.dao_chieu_dong"
+ ],
+ "muc_tieu": "Chứng tỏ lực từ lên dây đổi chiều khi đổi chiều dòng điện và cân đọc phản lực lên nam châm: số cân đổi dấu, độ lớn giữ nguyên.",
+ "dung_cu": [
+  {
+   "ten": "Bộ cân dòng điện như thí nghiệm 01",
+   "so_luong": 1
+  },
+  {
+   "ten": "Công tắc đảo chiều (hoặc đổi tay hai đầu nguồn)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Bấm TARE khi chưa có dòng.",
+   "Đóng mạch I = 3,0 A vài giây, đọc cân rồi ngắt.",
+   "Đảo hai đầu nguồn, đóng mạch lại với I = 3,0 A, đọc cân."
+  ],
+  "quan_sat": [
+   "Chiều thứ nhất cân chỉ +1,45 g.",
+   "Sau khi đảo chiều cân chỉ −1,45 g.",
+   "Ngắt mạch cân về 0,00 g."
+  ],
+  "rut_ra": [
+   "Lực từ lên dây đổi chiều khi I đổi chiều; độ lớn không đổi.",
+   "Cân đọc lực lên nam châm nên dấu số cân đổi theo.",
+   "Tính B lấy |Δm|."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "chieu_I",
+   "ten": "Chiều dòng điện (+1 hoặc −1)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": -1,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Độ lớn dòng điện",
+   "don_vi": "A",
+   "kieu": "co_dinh",
+   "gia_tri": 3.0
+  },
+  {
+   "ky_hieu": "dm",
+   "ten": "Số đọc của cân",
+   "don_vi": "g",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Δm = chieu_I · 1000·B·I·l/g",
+   "Với B = 0,12 T, I = 3,0 A, l = 0,040 m: |Δm| ≈ 1,47 g (số đo minh hoạ 1,45 g)"
+  ],
+  "gia_thiet": [
+   "cùng cách bố trí như thí nghiệm 01",
+   "bỏ qua trôi số của cân"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Chiều dòng",
+   "Δm (g)"
+  ],
+  "hang": [
+   [
+    "thuận",
+    1.45
+   ],
+   [
+    "đảo",
+    -1.45
+   ],
+   [
+    "ngắt",
+    0.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ, đối xứng theo chiều dòng điện."
+ },
+ "ket_qua_ky_vong": "Số cân đổi dấu khi đảo chiều dòng, độ lớn bằng nhau, về 0 khi ngắt mạch.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng đảo chiều dòng thì cân về 0 vì hai chiều triệt tiêu.",
+  "Cho rằng cân vẫn tăng vì khối lượng không thể giảm."
+ ],
+ "sai_so_thuong_gap": [
+  "Quên TARE nên số hai chiều không đối xứng quanh 0.",
+  "Dây nóng lên làm số hai lần đo lệch nhau."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "y_tuong": "Nút đảo chiều dòng; mũi tên lực lên dây và lực lên nam châm cùng đổi chiều, màn hình cân đổi dấu.",
+  "diem_nhan": "Hai mũi tên luôn ngược chiều nhau; số cân đối xứng quanh 0."
+ },
+ "an_toan": [
+  "Ngắt mạch trước khi đảo hai đầu nguồn."
+ ]
+}
