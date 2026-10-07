@@ -44,7 +44,7 @@ export default function ParentGuestLanding() {
         </p>
       </div>
 
-      <section>
+      <section id="phu-huynh-thay-gi" className="scroll-mt-24">
         <h2 className="font-display text-lg font-bold text-white">Phụ huynh sẽ thấy gì</h2>
         <ul className="mt-3 grid gap-4 sm:grid-cols-3">
           {SEES.map(({ icon: Icon, title, desc }) => (
@@ -124,10 +124,10 @@ export default function ParentGuestLanding() {
         </p>
       </section>
 
+      {/* Các mã neo (#ket-qua, #phu-huynh-thay-gi, #thay-dung-lop) dựng sau hydrate nên cần tự cuộn; để ngoài điều kiện ảnh. */}
+      <ScrollToHash />
       {PARENT_SHOTS.length > 0 && (
         <section id="ket-qua" className="scroll-mt-24">
-          {/* Link "Xem điểm thi tốt nghiệp" ở trang chủ trỏ tới #ket-qua; khối này dựng sau hydrate nên cần tự cuộn. */}
-          <ScrollToHash />
           <h2 className="font-display text-lg font-bold text-white">Kết quả học sinh của thầy</h2>
           <div className={`mt-3 grid gap-4 ${PARENT_SHOTS.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
             {PARENT_SHOTS.map((shot) => (
@@ -152,7 +152,7 @@ export default function ParentGuestLanding() {
         </section>
       )}
 
-      <section className="flex flex-col gap-4 rounded-2xl border border-white/10 p-5 sm:flex-row sm:items-center">
+      <section id="thay-dung-lop" className="flex scroll-mt-24 flex-col gap-4 rounded-2xl border border-white/10 p-5 sm:flex-row sm:items-center">
         {CONTACT.teacherPhoto && (
           <Image
             src={CONTACT.teacherPhoto}
