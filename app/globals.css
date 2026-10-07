@@ -3022,3 +3022,26 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
+
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }

@@ -30,6 +30,9 @@ Thầy bỏ cách "3 gợi ý mở dần" và bỏ hình động trong gợi ý.
 Dựng bằng `scripts/hinh.py` (`ngang_geom`, `xien_geom`, `dim`, `arc`, `axes`…) và mẫu `scripts/data/bai-tap-mau/build-hinh-57.py` (`ball()` hình động SMIL, `tbl()` + `ANALYSIS` cho bảng; idempotent). Màu theo `svg_lib.py`: đỏ v · xanh dương vₓ · cam v_y/độ cao · xanh lá quỹ đạo. SMIL: lấy mẫu cách đều thời gian rồi nội suy tuyến tính ⇒ đúng vật lí; ≈ 3 KB/hình, không JS; `ContentHtml` tự bỏ `<animate>` khi bật "giảm chuyển động". Chưa có nút phát/tạm dừng (muốn thế phải làm component dùng chung, lazy + `LazyErrorBoundary`).
 **Xem bằng mắt trước khi đăng** (ghi ra HTML, `python3 -m http.server`, chụp): lỗi hay gặp là nhãn cắt mép, nhãn đè mũi tên/quỹ đạo, thước đo dưới mặt đất thiếu chỗ ở viewBox.
 
+### Lời giải ngắt dòng (thầy chốt 7/10/2026)
+Lời giải viết liền khó đọc → mỗi lời giải dựng bằng `sol()` trong `build-hinh-57.py` theo `docs/QUY-TAC-THIET-KE.md` C1/C4/H5/B3/N7: khung "Kiến thức cần gọi lại" (≤ 5 dòng, mỗi dòng một ý) → **mỗi bước một khối** `bt-step` (số + tiêu đề đậm, 1 câu dẫn ≤ 1 dòng, **mỗi công thức một dòng `$$…$$`**, tách "công thức chữ" / "thế số" / "kết quả" thành 3 dòng, kết quả trong ô nền nhạt `bt-ans`) → ô **Đáp số** mỗi ý một dòng → dòng "Nhận dạng" nhỏ, mờ. Khoảng cách trong bước (6–10px) < giữa các bước (22px). CSS ở cuối `app/globals.css` (`.bt-*`). Không viết `<ol class="tl-steps">` liền nhiều công thức trong một dòng nữa. Đã xem ở 375px: không tràn ngang, công thức dài tự cuộn trong dòng.
+
 ## Quy trình
 
 1. **Chọn bài** (`lesson_id`). Đọc `public/data/lessons/<id>.json` mục `ly_thuyet` (để dạng bài **khớp đúng kiến thức bài đã dạy**, cùng ký hiệu), và mục `bai_tap_mau` hiện có (không để mất ví dụ hay đang có — đưa lại thành 1 dạng nếu tốt). Nếu thiếu `public/data`: `npm ci && node scripts/build-content.mjs`.
@@ -82,3 +85,4 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-07 · Thầy: gợi ý bằng hình hiệu quả hơn lời → mỗi gợi ý có hình (4 hình/dạng, dựng từ quỹ đạo tính thật); lần chạy đầu 12/24 hình lỗi bố cục (cắt mép, nhãn đè) → luôn chụp xem từng hình trước khi đăng; thước đo dưới mặt đất cần viewBox cao hơn `ground+40`.
 - 2026-10-07 · Hình động SMIL cho bài ném: dựng quỹ đạo từ công thức (mẫu cách đều t), 2 hình ≈ +7 KB thô; bố cục chữ vẫn phải chụp xem (nhãn dài bị cắt mép trái).
 - 2026-10-07 · Thầy bỏ gợi ý 3 tầng và hình động trong gợi ý; chuyển mô phỏng xuống dưới đề, thay gợi ý bằng bảng phân tích đề như bài mẫu trong lý thuyết → bản 3-gợi ý không còn là mặc định (UI vẫn đọc `hints_html` cũ). Hỏi lại ý thầy sớm khi cấu trúc UI đổi nhiều lần trong một buổi.
+- 2026-10-07 · Lời giải viết liền → ngắt theo bước/dòng công thức, dựng bằng `sol()` + CSS `.bt-*`; xem thật ở dev server (đừng kết luận CSS lỗi khi dev chưa nạp: `touch app/globals.css` + tải lại). Lời giải 14 bài tự luận cũ vẫn viết liền (chưa biên tập).

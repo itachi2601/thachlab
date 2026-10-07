@@ -287,6 +287,83 @@ ANALYSIS = [
   ("\"tầm xa lớn nhất\"", "Cần $L_{max}$", "$\\sin2\\alpha\\le1$: $L_{max}=\\dfrac{v_0^2}{g}$ khi $\\alpha=45^\\circ$")],
 ]
 
+
+# ───────────── Lời giải: ngắt dòng, mỗi công thức một dòng (docs/QUY-TAC-THIET-KE C1/C4/H5/B3/N7) ─────────────
+def M(x):   return ("m", x)
+def P(x):   return ("p", x)
+def A(x):   return ("a", x)
+def sol(recall, steps, finals, note):
+    out = '<div class="bt-sol">'
+    out += '<div class="tl-box"><p class="tl-label">Kiến thức cần gọi lại</p><ol>' + "".join(f"<li>{r}</li>" for r in recall) + "</ol></div>"
+    for n, (title, els) in enumerate(steps, 1):
+        out += f'<div class="bt-step"><p class="bt-step-title"><span class="bt-step-n">{n}</span><span>{title}</span></p>'
+        for kind, x in els:
+            if kind == "p": out += f"<p>{x}</p>"
+            elif kind == "m": out += f"$${x}$$"
+            else: out += f'<div class="bt-ans">$${x}$$</div>' if not x.startswith("T:") else f'<div class="bt-ans"><p>{x[2:]}</p></div>'
+        out += "</div>"
+    out += '<div class="bt-final"><p><strong>Đáp số</strong></p>' + "".join(f"<p>{f}</p>" for f in finals) + "</div>"
+    out += f'<p class="bt-note">{note}</p><p class="bt-note">3 ngày sau che lời giải và giải lại từ đầu.</p></div>'
+    return out
+
+RN = ["<strong>Khái niệm:</strong> ném ngang, $\\vec v_0$ nằm ngang.",
+      "<strong>Định luật:</strong> hai phương độc lập.",
+      "Ox thẳng đều: $x=v_0t$ · $v_x=v_0$",
+      "Oy rơi tự do: $y=\\dfrac{1}{2}gt^2$ · $v_y=gt$",
+      "⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực."]
+RX = ["<strong>Khái niệm:</strong> ném xiên, $\\vec v_0$ hợp phương ngang góc $\\alpha$ (hướng lên).",
+      "<strong>Định luật:</strong> hai phương độc lập; Oy lên là dương, gia tốc $-g$.",
+      "Tách vận tốc đầu: $v_{0x}=v_0\\cos\\alpha$ · $v_{0y}=v_0\\sin\\alpha$",
+      "Ox đều: $x=v_{0x}t$ · Oy: $y=v_{0y}t-\\dfrac{1}{2}gt^2$",
+      "⚠ <strong>Điều kiện:</strong> bỏ qua lực cản, chỉ có trọng lực."]
+
+SOLS = [
+ sol(RN, [
+  ("Thời gian rơi (phương đứng)", [P("Chạm đất khi $y=h$:"), M(r"h=\dfrac{1}{2}gt^2"), M(r"t=\sqrt{\dfrac{2h}{g}}=\sqrt{\dfrac{2\cdot490}{9{,}8}}=\sqrt{100}"), A(r"t=10\ \text{s}")]),
+  ("Tầm xa (phương ngang)", [P("Ox thẳng đều:"), M(r"L=v_0t=60\cdot10"), A(r"L=600\ \text{m}")]),
+  ("Kiểm tra", [P("$t$ không phụ thuộc $v_0$; $v_0$ chỉ làm đổi $L$."), P("Đơn vị: m/s · s = m ✓")])],
+  ["a) $t=10\\ \\text{s}$", "b) $L=600\\ \\text{m}$"],
+  "Nhận dạng: đề cho <strong>độ cao</strong> và <strong>vận tốc ném ngang</strong> → tìm $t$ từ phương đứng trước."),
+ sol(RN + ["Tổng hợp: $v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$ · $\\tan\\alpha=\\dfrac{v_y}{v_x}$"], [
+  ("Thời gian rơi", [M(r"t=\sqrt{\dfrac{2h}{g}}=\sqrt{\dfrac{2\cdot78{,}4}{9{,}8}}=\sqrt{16}"), A(r"t=4\ \text{s}")]),
+  ("Hai thành phần lúc chạm đất", [M(r"v_x=v_0=30\ \text{m/s}"), M(r"v_y=gt=9{,}8\cdot4=39{,}2\ \text{m/s}")]),
+  ("Độ lớn vận tốc", [P("$v_x\\perp v_y$ nên:"), M(r"v=\sqrt{v_x^2+v_y^2}=\sqrt{30^2+39{,}2^2}=\sqrt{2436{,}64}"), A(r"v\approx49{,}4\ \text{m/s}")]),
+  ("Góc so với phương ngang", [M(r"\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{39{,}2}{30}\approx1{,}307"), A(r"\alpha\approx52{,}6^\circ"), P("(hướng xuống)")]),
+  ("Kiểm tra", [P("$v\\gt v_0$ vì có thêm $v_y$."), P("$\\alpha\\lt90^\\circ$ vì $v_x$ vẫn còn.")])],
+  ["a) $v\\approx49{,}4\\ \\text{m/s}$", "b) $\\alpha\\approx52{,}6^\\circ$"],
+  "Nhận dạng: đề hỏi <strong>vận tốc / góc</strong> tại một điểm → tìm $t$, rồi tổng hợp $v_x$ và $v_y$."),
+ sol(RN, [
+  ("Thời gian bay", [M(r"t=\sqrt{\dfrac{2h}{g}}=\sqrt{\dfrac{2\cdot19{,}6}{9{,}8}}"), A(r"t=2\ \text{s}")]),
+  ("Vận tốc ném", [P("Ox thẳng đều, tầm xa $L=15$ m:"), M(r"v_0=\dfrac{L}{t}=\dfrac{15}{2}"), A(r"v_0=7{,}5\ \text{m/s}")]),
+  ("Lúc đá tới chỗ cây", [P("Cây ở $x=10$ m:"), M(r"t_1=\dfrac{x}{v_0}=\dfrac{10}{7{,}5}=\dfrac{4}{3}\ \text{s}")]),
+  ("Độ cao còn lại", [M(r"y_1=\dfrac{1}{2}gt_1^2=4{,}9\cdot\dfrac{16}{9}\approx8{,}7\ \text{m}"), P("Còn cách mặt đất:"), M(r"19{,}6-8{,}7\approx10{,}9\ \text{m}")]),
+  ("So với ngọn cây", [M(r"10{,}9\gt10"), A("T:Hòn đá <strong>bay qua</strong> ngọn cây, cao hơn khoảng $0{,}9\\ \\text{m}$ (khá sát).")])],
+  ["a) $v_0=7{,}5\\ \\text{m/s}$", "b) Có, cao hơn ngọn cây khoảng $0{,}9\\ \\text{m}$"],
+  "Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi ngược $v_0$ hoặc một điểm trên đường đi → $t$ nối hai phương."),
+ sol(RX, [
+  ("Hai thành phần của $\\vec v_0$", [M(r"v_{0x}=9{,}8\cos30^\circ\approx8{,}49\ \text{m/s}"), M(r"v_{0y}=9{,}8\sin30^\circ=4{,}9\ \text{m/s}")]),
+  ("Lên tới điểm cao nhất", [P("Tại đỉnh $v_y=0$:"), M(r"t_1=\dfrac{v_{0y}}{g}=\dfrac{4{,}9}{9{,}8}"), A(r"t_1=0{,}5\ \text{s}"), M(r"H=\dfrac{v_{0y}^2}{2g}=\dfrac{4{,}9^2}{2\cdot9{,}8}"), A(r"H\approx1{,}23\ \text{m}")]),
+  ("Thời gian bay", [P("Rơi cùng độ cao nên lên và xuống đối xứng:"), M(r"t=2t_1"), A(r"t=1\ \text{s}")]),
+  ("Tầm xa", [M(r"L=v_{0x}t=8{,}49\cdot1"), A(r"L\approx8{,}49\ \text{m}"), P("Kiểm tra bằng công thức tầm xa:"), M(r"L=\dfrac{v_0^2\sin2\alpha}{g}=\dfrac{9{,}8^2\sin60^\circ}{9{,}8}\approx8{,}49\ \text{m}")])],
+  ["a) $v_{0x}\\approx8{,}49$ và $v_{0y}=4{,}9\\ \\text{m/s}$", "b) $t_1=0{,}5\\ \\text{s}$ · $H\\approx1{,}23\\ \\text{m}$", "c) $t=1\\ \\text{s}$ · $L\\approx8{,}49\\ \\text{m}$"],
+  "Nhận dạng: đề cho <strong>vận tốc và góc ném</strong> từ mặt đất → tách $v_{0x},v_{0y}$, dùng $v_y=0$ tại đỉnh."),
+ sol(RX, [
+  ("Hai thành phần của $\\vec v_0$", [M(r"v_{0x}=14{,}7\cos30^\circ\approx12{,}73\ \text{m/s}"), M(r"v_{0y}=14{,}7\sin30^\circ=7{,}35\ \text{m/s}")]),
+  ("Thời gian chạm đất", [P("Chạm đất thấp hơn điểm ném $h$ nên $y=-h$ (Oy lên):"), M(r"-h=v_{0y}t-\dfrac{1}{2}gt^2"), M(r"-22{,}05=7{,}35t-4{,}9t^2"), M(r"t^2-1{,}5t-4{,}5=0"), P("Nghiệm $t=3$ s hoặc $t=-1{,}5$ s (loại)."), A(r"t=3\ \text{s}")]),
+  ("Tầm xa", [M(r"L=v_{0x}t=12{,}73\cdot3"), A(r"L\approx38{,}2\ \text{m}")]),
+  ("Độ cao lớn nhất", [P("Cao hơn điểm ném:"), M(r"\dfrac{v_{0y}^2}{2g}=\dfrac{7{,}35^2}{19{,}6}\approx2{,}76\ \text{m}"), P("So với mặt đất:"), M(r"22{,}05+2{,}76"), A(r"H_{max}\approx24{,}8\ \text{m}")]),
+  ("Vận tốc khi chạm đất", [M(r"v_y=v_{0y}-gt=7{,}35-9{,}8\cdot3=-22{,}05\ \text{m/s}"), M(r"v=\sqrt{v_x^2+v_y^2}=\sqrt{12{,}73^2+22{,}05^2}"), A(r"v\approx25{,}5\ \text{m/s}"), P("Kiểm tra:"), M(r"v=\sqrt{v_0^2+2gh}=\sqrt{14{,}7^2+2\cdot9{,}8\cdot22{,}05}\approx25{,}5\ \text{m/s}")])],
+  ["a) $t=3\\ \\text{s}$", "b) $L\\approx38{,}2\\ \\text{m}$", "c) $H_{max}\\approx24{,}8\\ \\text{m}$", "d) $v\\approx25{,}5\\ \\text{m/s}$"],
+  "Nhận dạng: ném xiên mà <strong>điểm rơi khác độ cao điểm ném</strong> → lập $y(t)$ với $y=-h$, giải bậc hai."),
+ sol(RX + ["Cùng độ cao: $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$ · $t=\\dfrac{2v_0\\sin\\alpha}{g}$"], [
+  ("Rút $\\sin2\\alpha$ từ tầm xa", [M(r"L=\dfrac{v_0^2\sin2\alpha}{g}"), M(r"\sin2\alpha=\dfrac{gL}{v_0^2}=\dfrac{9{,}8\cdot15}{14^2}=0{,}75")]),
+  ("Hai góc ném", [M(r"2\alpha\approx48{,}6^\circ\ \ \text{hoặc}\ \ 2\alpha\approx131{,}4^\circ"), A(r"\alpha_1\approx24{,}3^\circ\ \ ;\ \ \alpha_2\approx65{,}7^\circ"), P("Hai góc phụ nhau.")]),
+  ("Thời gian bay mỗi trường hợp", [M(r"t=\dfrac{2v_0\sin\alpha}{g}"), M(r"t_1\approx1{,}18\ \text{s}\ \ ;\ \ t_2\approx2{,}60\ \text{s}"), P("Góc lớn bay lâu hơn.")]),
+  ("Tầm xa lớn nhất", [P("$\\sin2\\alpha\\le1$ nên:"), M(r"L_{max}=\dfrac{v_0^2}{g}=\dfrac{14^2}{9{,}8}"), A(r"L_{max}=20\ \text{m}\ \ (\alpha=45^\circ)"), P("Kiểm tra: $15\\lt20$ nên có nghiệm.")])],
+  ["a) $\\alpha\\approx24{,}3^\\circ$ hoặc $\\alpha\\approx65{,}7^\\circ$", "b) $t\\approx1{,}18\\ \\text{s}$ và $t\\approx2{,}60\\ \\text{s}$", "c) $L_{max}=20\\ \\text{m}$ ở $45^\\circ$"],
+  "Nhận dạng: đề cho <strong>tầm xa</strong> rồi hỏi <strong>góc</strong> → rút $\\sin2\\alpha$, nhớ có hai góc phụ nhau."),
+]
+
 def strip(html):
     return re.sub(r'<figure class="fig"[^>]*data-bt="[^"]*".*?</figure>', "", html, flags=re.S)
 
@@ -296,5 +373,6 @@ for i, fn in enumerate(BUILD):
     q["problem_html"] = strip(q["problem_html"]) + fn(0)          # mô phỏng hiện tượng nằm DƯỚI đề
     q["analysis_html"] = fn(2) + tbl(ANALYSIS[i])                  # thay gợi ý: hình dữ kiện + bảng phân tích đề (như bài mẫu trong lý thuyết)
     q.pop("hints_html", None)
+    q["solution_html"] = SOLS[i]                                   # lời giải ngắt dòng, mỗi công thức một dòng
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
 print("ok", len(d["dang_bai"]))
