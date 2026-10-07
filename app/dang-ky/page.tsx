@@ -132,6 +132,8 @@ export default function RegisterPage() {
             birth_date: birthDate,
             gender,
             student_code: studentId,
+            // Nguồn đăng ký (?ref=… hoặc tên miền trang giới thiệu) — chỉ để phân nhóm người dùng alpha; ngày đăng ký đã có ở profiles.created_at.
+            signup_source: signupSource(),
           },
         },
       });
@@ -397,4 +399,14 @@ export default function RegisterPage() {
       <Footer />
     </>
   );
+}
+
+function signupSource(): string {
+  try {
+    const ref = new URLSearchParams(window.location.search).get("ref");
+    if (ref) return ref.slice(0, 40);
+    return document.referrer ? new URL(document.referrer).hostname.slice(0, 60) : "truc-tiep";
+  } catch {
+    return "";
+  }
 }
