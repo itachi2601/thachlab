@@ -202,3 +202,216 @@ chính" giờ lên web thật.
   Dòng ĐANG CHỜ gốc: - `20261003120000_distractor_notes.sql` (**ghi chú phương án nhiễu** cho Luyện tập "Từng câu": `question_content_hash` bỏ qua key `distractorNotes` — bắt buộc trước khi ghi ghi chú, nếu không trigger đồng bộ đề↔ngân hàng sinh dòng trùng — + hàm `bank_set_distractor_notes`; ngoài giờ HS; rollback `perf/rollback/20261003120000_distractor_notes.down.sql`; test `docs/supabase-test-distractor-notes.sql` — sạch trong begin…rollback) — ĐANG CHỜ. Client Luyện tập Từng câu (`PracticeStepView`, công tắc Từng câu/Cả bài) KHÔNG cần migration này (chưa có ghi chú thì chỉ hiện lời giải). Sau khi chạy: thử `npx tsx scripts/backfill-distractor-notes.mts 20 --dry-run` rồi `… 20` (ghi thật, cần service role + ANTHROPIC_API_KEY), xem trong Luyện tập, rồi mới chạy hết. | - `20261003110000_rank_rp_first_attempt.sql` (**RP chỉ tính lượt đầu** của mỗi bài trong mùa: `create or replace rank_on_result`, cờ mùa `rp_first_attempt_only` mặc định 1; RP đã cộng giữ nguyên; ngoài giờ HS làm bài; rollback `perf/rollback/20261003110000_rank_rp_first_attempt.down.sql`; test `docs/supabase-test-rank-rp-first.sql` — chạy thử trong begin…rollback: FAIL khi chưa có migration, PASS khi có) — ĐANG CHỜ. Đề xuất config **mùa 2** (thầy quyết lúc mở mùa): `practice_max_rp 30`, `weekly_goal_rp 40`, giữ `fix_max_rp 30`. Việc tay: gắn `challenge_exam_id` cho cao_thu/thach_dau season 4 để 3 em Đại Sư có đích; sau khi thi thích ứng chạy thì bỏ gán. | - `20261003100000_rank_gate_adaptive.sql` (**thi thăng hạng thích ứng**: b
 
 - **ĐÃ CHẠY 7/10/2026:** `20261007120000_tu_vao_lop_thpt.sql` — học sinh THPT tự vào lớp (RLS `user_classes` cho ghi `active`); 17 yêu cầu đang chờ đã chuyển `active`, sao lưu ở `user_classes_backup_20261007`. Đã đối chiếu DB: 0 pending, 2 policy đúng. Còn lại: deploy code.
+
+## Chuyển từ STATE.md ngày 7/10/2026 (mục "Đã hoàn thành" cũ)
+- **Hero có tab 4 "Hình chiếu" — bóng của M quay đều đồng nhịp với con lắc lò xo (4/10/2026)**:
+  `components/physics/ShadowSpringSimulation.tsx` + `hooks/useCircularProjection.ts` + `lib/circularProjection.ts`
+  (toán thuần; 34 kiểm ở `tmp/hero-review/hinhchieu-check.mts`, gồm đối chiếu `so_lieu_mau` của spec
+  `tn-l11-daodongdieuhoa-03`). Hai hệ chạy trên **cùng một trục x**: làn trên là đường tròn bán kính A₁ = 6 cm có
+  điểm M quay đều (Q là hình chiếu, có chấm mỗi 0,1 s để thấy bóng KHÔNG chuyển động đều), làn dưới là con lắc
+  lò xo **nằm ngang** (k = 4 N/m, chỉnh m) — học sinh tự khớp ω = √(k/m) rồi tự thử câu hỏi chính: *kéo con lắc
+  ra xa gấp đôi thì nhịp có đổi không?* (không: T = 2π√(m/k) không chứa A).
+  Câu nhận xét tách **5 trạng thái**; `samePeriod` là chỗ dễ nói sai nhất: **khớp ω chỉ làm hiệu pha THÔI TĂNG,
+  không xoá phần đã lệch** — cùng chu kì vẫn có thể khác pha, muốn trùng nhau phải thả cùng lúc (nút "Đặt lại").
+  Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary`: JS tải đầu trang chủ **216 KB gzip — không đổi** so với
+  baseline 3 tab, chunk riêng 17 KB raw / 6 KB gzip. Hàng tab 4 mục lộ hết ở 360px, mỗi nhãn 1 dòng, không tràn
+  ngang (D4 — nhãn phải `whitespace-nowrap` + chữ 13px ở mobile). Quy tắc áp dụng: B4, B8, N1, N2, N7, C1, D2,
+  D4, M2, M4, H3.
+  **Chặng 2 CHƯA làm**: nhúng bản tương tác này vào bài 1 lớp 11 (lesson 20, mục 5 "Liên hệ với chuyển động tròn
+  đều") — chưa có cơ chế nào để nhúng mô phỏng vào `theory.html`; phải thêm placeholder + mount trong
+  `components/exams/ContentHtml.tsx` (nhớ: mount SAU khi KaTeX render xong, và chỉ bài đó trả giá chunk).
+  **Chưa deploy.**
+- **Hero: tab 2 đổi từ "Dao động" (con lắc lò xo) sang "Thả hàng" — máy bay cứu hộ thả gói hàng (5/10/2026)**:
+  đúng cảnh mở bài của **Bài 12. Chuyển động ném, Vật lí 10 (lesson 57, đang published)** và đúng cái bẫy đã
+  ghi trong `content/thi-nghiem/tn-l10-nemngang-01.json` ("máy bay bay nhanh hơn thì gói rơi lâu hơn").
+  `components/physics/RescueDropSimulation.tsx` + `hooks/useRescueDrop.ts` + `lib/horizontalProjectile.ts`
+  (toán thuần, kiểm bằng `tmp/hero-review/thahang-check.mts`: thả đúng vạch → trúng tâm bãi đáp sai số 0 với
+  **mọi** cặp h–v₀; chấm 0,1 s cách đều theo phương ngang; t = √(2h/g) không phụ thuộc v₀). Bãi đáp rộng 40 m
+  và sau mỗi lượt hiện vạch "phải thả ở đây" + độ lệch — cố ý để không thành bài đo phản xạ. Không tự bay khi
+  mới mở, chỉ chạy khi học sinh bấm (B4). Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary` → JS tải đầu
+  trang chủ không đổi. `HarmonicPanel`/`SpringSimulation` **giữ nguyên code**, chờ nhúng vào bài Dao động
+  (Giai đoạn 3). Hero còn 3 tab: Ném xiên · Thả hàng · Giao thoa. Quy tắc áp dụng: B1, B4, B8, D2, M2, M5, C1.
+- **Hero có thêm tab "Giao thoa" — khay sóng hai nguồn (5/10/2026)**: mô phỏng theo đúng spec
+  `content/thi-nghiem/tn-l11-giaothoa-01.json` (Bài 12 Giao thoa sóng, Vật lí 11):
+  `components/physics/InterferenceSimulation.tsx` + `hooks/useInterferenceTank.ts` + `lib/interference.ts`
+  (toán thuần, test được). Hai chế độ hình trên canvas 2D: **đứng yên** (vẽ bao hình biên độ — đúng cái khay
+  sóng thật cho thấy vân sáng/tối đứng yên) và **"Chạy sóng"** do học sinh bấm (li độ tức thời
+  u = Σaᵢ·cos(ωt − k·dᵢ), tua chậm 0,4–1,5 s mỗi chu kỳ; pha C = Σaᵢcos(k·dᵢ), S = Σaᵢsin(k·dᵢ) tính sẵn một
+  lần khi đổi f/v/AB nên mỗi khung hình chỉ còn 2 phép nhân + tra bảng màu — đo được **60 khung hình/giây** ở
+  375px). Vòng lặp tự dừng khi bấm Dừng, khi khay ra khỏi tầm mắt (IntersectionObserver) hoặc khi đổi tab
+  (B4, không đốt pin). Học sinh chạm/kéo điểm M để tự đọc ra d₂ − d₁ = kλ (cực đại) và (k + ½)λ (cực tiểu),
+  bấm **tắt nguồn B** để thấy vân biến mất; N_max/N_min khớp cả 4 hàng `so_lieu_mau` của spec (kiểm bằng
+  `tmp/hero-review/interference-math.mts`); ảnh động kiểm bằng `tmp/hero-review/interference-anim.py`
+  (trung bình theo thời gian trùng ảnh bao hình, tương quan **0,998** → vân đứng yên còn nước thì chạy, cột
+  nút tối nhất vẫn tối). Tab nạp chậm qua `next/dynamic` + `LazyErrorBoundary`; `lib/interference.ts` chỉ được
+  hai file trên import (đã grep) nên **chunk tải đầu trang chủ không đổi**. Quy tắc áp dụng: B4, D2, D4 (3 tab
+  vẫn lộ hết ở 375px), M2, M4 (nói bằng chữ, không chỉ bằng màu), N7, C1, H3. Phần gắn tab trong
+  `components/home/PhysicsSimulationHero.tsx` đã vào main ở commit của phiên kia (`be5bc6a76`).
+- **Hero trang chủ thành mô phỏng chuyển động ném xiên (5/10/2026)**: thay con lắc lò xo mặc định bằng
+  thí nghiệm kéo-thả ná cao su (`components/physics/ProjectileSimulation.tsx` + `hooks/useProjectileMotion.ts`
+  + `lib/projectile.ts`), con lắc lò xo chuyển thành tab 2 và được **nạp chậm** (`HarmonicPanel.tsx` qua
+  `next/dynamic`), không tự chạy khi mới mở. Học sinh tự tìm ra α = 45° cho tầm xa lớn nhất, phát hiện hai
+  góc phụ nhau cho cùng tầm xa, so Trái Đất ↔ Mặt Trăng (g nhỏ 6 lần). JS tải đầu trang chủ 213 → 215 KB
+  gzip (đo bằng `tmp/hero-review/firstload.mjs`). Quy tắc áp dụng: B1, B4, B8, N2, D2, D3, C1, M5.
+- **Nốt 13 bài Vật lí 12 còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
+  `soan-bai-ly-thuyet-tuong-tac` cho toàn bộ bài học lớp 12 còn thiếu, **trừ các bài Kiểm tra và hai bài
+  Thực hành đo** (Bài 4 id 5, Bài 11 id 12 — Bài 4 đã do phiên khác làm). Danh sách đã đăng DB (chỉ ghi mục
+  Lý thuyết, tự sao lưu): **Bài 5 (id 6), Bài 6 (7), Bài 7 (8), Bài 8 (9)** chương Khí lí tưởng · **Bài 9
+  (10), Bài 10 (11), Bài 14 (125), Bài 16 (127)** chương Từ trường · **Bài 14 hạt nhân (15), Bài 15 (16),
+  Bài 16 (17), Bài 17 (18), Bài 18 (19)** chương Vật lí hạt nhân. Mỗi bài: theory.html 6 phần + 3–4 hình SVG
+  tự vẽ + 2–4 file `content/thi-nghiem/tn-l12-*` + bundle.json, mỗi bài 7–8 quiz tự chấm, mục Trả bài, bài
+  toán mẫu có bảng *Câu trong đề/Dữ liệu/Kiến thức* + bài điền bước trống + biến thể, thử thách ⭐–⭐⭐⭐,
+  khung "Mang về". Lint sạch toàn bộ (`lint_theory` · `lint_do_dai` 2.4–2.5k từ hiện ngay · `check_quizzes` ·
+  `thi_nghiem` 96 mục · `validate_bundle` ok:true) · `--kiem-tran` không mục nào tràn ngang ở 375 px.
+  Cách làm: **1 bài chạy thử + 3 lô subagent song song (3+5+5 bài), mỗi bài có một subagent kiểm chéo độc lập
+  rồi một subagent sửa**; ~50 lượt subagent, ~2 giờ. Mọi bài đều bị kiểm chéo bắt ít nhất 1 lỗi `chan`
+  (số liệu thí nghiệm mâu thuẫn, mũi tay SVG ngược chiều, phản hồi quiz gọi tên phương án không có, số hình
+  sai thứ tự); 5 bài phải sửa hai vòng (6, 7, 10, 16, 19). Quy trình + bài học đã ghi vào SKILL.md mục
+  "Làm nhiều bài một đợt — thuê subagent song song". File bài nằm trong `content/lesson-samples/l12-*`;
+  **`xem-thu/` (43 MB cho 13 bài) không commit** — sinh lại bằng `build_preview.py` + `chup_anh.py`.
+  Log đăng: `scripts/logs/dang-13-bai-l12-*.log` (0 bài lỗi). **CHƯA deploy** — deploy xong mới lên web.
+  Lưu ý: **bài 15 (id 126)** do một phiên khác đã soạn (`content/lesson-samples/l12-ung-dung-cam-ung/`) và
+  đăng trước, nên **không ghi đè** (bản của phiên này ở `l12-ung-dung-cam-ung-dien-tu/`, để nguyên, chưa đăng).
+  `scripts/chup_anh.py` cũng được vá: mục dài >5 000 px tự cắt thành `sec-2a/sec-2b…` (WebP có trần 16 383 px).
+- **Chương 1 Vật lí 12 — nốt hai bài còn lại thành lý thuyết tương tác (4/10/2026)**: soạn theo skill
+  `soan-bai-ly-thuyet-tuong-tac`, **CHƯA ghi DB** (chờ thầy duyệt + chạy trên Mac).
+  (1) **Bài 3. Nội năng. Định luật 1 của nhiệt động lực học** — `content/lesson-samples/l12-noi-nang-dl1/`
+  (`theory.html` 40 KB, `bundle.json`, `build_figs.py`, bản xem thử 375px). Bản cũ trên web chỉ
+  460 từ và **thiếu hẳn định luật I** (item `ly_thuyet` 173, lesson 4); bản mới 6 mục: mở bài thanh chắn kim loại
+  ở 5 °C, nội năng, hai cách đổi nội năng, `Q = mcΔt`, `ΔU = A + Q` với quy ước dấu, bảng số liệu đo c
+  bằng bếp 500 W; 3 cái bẫy (nội năng ↔ nhiệt độ, nhiệt lượng không chứa trong vật, dấu của A), Trả bài
+  6 câu, bài toán mẫu bơm xe + điền bước trống + biến thể, thử thách ⭐–⭐⭐⭐. 6 quiz, 4 thí nghiệm/ví dụ
+  mới `tn-l12-noinang-01..02`.
+  (2) **Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng** —
+  `content/lesson-samples/l12-thuc-hanh-nhiet/` (44 KB + bundle + 4 hình SVG + xem thử). Bản cũ là văn SGK
+  (lesson 5, item `ly_thuyet` 175); bản mới xoay sang **kỹ năng thực hành**: dụng cụ và cách suy Q = Pτ,
+  đọc đồ thị t(τ) (đoạn ngang = chuyển thể), công thức `c`, `λ`, `L` kèm hai bảng số liệu thật, 3 cái bẫy
+  (nhiệt kế đứng yên ≠ hết truyền nhiệt · hai cách tính c · trộn đơn vị), Trả bài 6 câu, bài toán mẫu
+  nhiệt hoá hơi + điền bước + biến thể, thử thách ⭐–⭐⭐⭐. 6 quiz, 2 mục mới `tn-l12-thuchanh-01..02`.
+  Lint cả hai bài: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK (41 mục trong `index.json`) ·
+  `validate_bundle` ok:true; `lint_do_dai` **2.496** và **2.491** từ hiện ngay (~18 phút, còn 1 cảnh báo ⚠
+  tổng > 2.000 mỗi bài; từng mục ≤ 467 từ). Đã soát ảnh 375px từng mục + từng hình bằng mắt (sửa 6 lỗi
+  chồng nhãn) và **kiểm chéo độc lập bằng subagent** — lượt đó tìm ra 11 mục sai, đã sửa hết: 1 lỗi chết
+  người (bài 4 câu 3 có **hai phương án cùng đúng** $3\ 750$ J/(kg·K)), **hướng sai số hệ thống bị viết
+  ngược** (mất nhiệt ⇒ $\Delta t$ nhỏ đi ⇒ $c$ đo được **cao hơn** thật, ở 4 vị trí), bảng bài 4 trộn hai
+  khối lượng (0,100 kg nhưng lấy thời gian của 0,200 kg → 838 s phải là 419 s), Hình 3 sai phần trăm
+  (phải là 0,7 / 11,0 / 13,8 / 74,5%), "gần 7 lần" (thực 5,4), thiếu heading III ở bài 3, `$c = 4180$`
+  trong `<text>` SVG (SVG không vẽ `<span>` của KaTeX → mất chữ), và xáo lại vị trí đáp án đúng (bài 3
+  B–C–A–B–D–B, bài 4 B–A–B–B–C–B). Chi tiết + bài học quy trình: `docs/memory/project_thachlab_vl12_chuong1_ly_thuyet.md`.
+  Lệnh đăng (chỉ ghi mục Lý thuyết):
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-noi-nang-dl1/theory.html 4` rồi
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-thuc-hanh-nhiet/theory.html 5`, sau đó deploy.
+- **Bài 13. Sóng dừng (Vật lí 11) — bản lý thuyết tương tác (3/10/2026)**: soạn theo skill
+  `soan-bai-ly-thuyet-tuong-tac` tại `content/lesson-samples/l11-song-dung/` (`theory.html` 44 KB + `bundle.json`
+  + `build_figs.py` 4 hình SVG + bản xem thử 375px). 8 quiz tự chấm, 3 thí nghiệm (dây thun rung tay · đo
+  λ, v bằng bảng số liệu thật · đổi sang đầu tự do), 3 cái bẫy, mục Trả bài, bài toán mẫu + điền bước trống,
+  thử thách ⭐–⭐⭐⭐. Lint sạch: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK (4 mục mới
+  `tn-l11-songdung-01..04`) · `validate_bundle` ok:true; `lint_do_dai` 2.384 từ hiện ngay (~17 phút, còn 1
+  cảnh báo ⚠ tổng > 2.000 — từng mục ≤ 288 từ, đoạn liền dài nhất 205 từ). Đã kiểm chéo độc lập 8 quiz +
+  5 câu đề (13/13 đáp án đúng) và sửa theo góp ý: Hình 1 (ngón bấm đúng trung điểm, vẫn 1 bó), phản hồi
+  câu 6–7, số liệu đo có sai số ±0,1 m/s, xáo vị trí đáp án (A2/B2/C2/D2). **CHƯA ghi DB**, chờ thầy xem
+  `content/lesson-samples/l11-song-dung/xem-thu/xem-thu.html`: `bash scripts/cap-nhat-ly-thuyet.sh
+  content/lesson-samples/l11-song-dung/theory.html 32` rồi deploy. Bộ "Kiểm tra nhanh" 20 câu
+  (`scripts/data/theory-quiz/32.json`) đã có trong git, validate đạt, cũng chưa đăng.
+- **Bài 13. Tổng hợp và phân tích lực. Cân bằng lực (Vật lí 10, lesson 58) — bản lý thuyết tương tác (3/10/2026)**:
+  soạn theo skill `soan-bai-ly-thuyet-tuong-tac` tại `content/lesson-samples/l10-tong-hop-phan-tich-luc/` (`theory.html`
+  39 KB + `bundle.json` + `build_figs.py` 4 hình SVG + bản xem thử 375px). 6 mục, 7 quiz tự chấm, 3 thí nghiệm
+  (`tn-l10-tonghopluc-01..03`), 3 cái bẫy, mục Trả bài (6 câu), 2 bài toán mẫu + điền bước trống + biến thể,
+  thử thách ⭐–⭐⭐⭐. Lint sạch: `lint_theory` OK · `check_quizzes` OK · `thi_nghiem` OK · `validate_bundle`
+  ok:true; `lint_do_dai` 2.307 từ hiện ngay (~16 phút, 1 cảnh báo ⚠ tổng > 2.000). Đã kiểm chéo độc lập
+  (subagent tính lại toàn bộ): 7/7 quiz + 5 câu đề + 2 bài toán mẫu + bảng số liệu + thử thách đều ĐÚNG; sửa
+  theo góp ý: Hình 4 (nhãn α đè vectơ T₂), **xáo vị trí đáp án đúng** (trước đó cả 7 quiz và 5 câu đề Luyện tập
+  đều đúng ở B → nay A2/B1/C2/D2), ví dụ kẹp phôi CNC (bỏ suy luận "đối diện thì vô dụng"), định nghĩa
+  $d_1, d_2$, $F_y$ của lực kéo vali, ba lực cân bằng (nói rõ đồng phẳng), mẹo kề/đối, phản hồi sai câu 1, đổi
+  tên nhóm radio "Em chắc" cho khỏi trùng id phương án. **ĐÃ ĐĂNG 4/10/2026**: ghi đúng mục Lý thuyết
+  (item 108, `body_html` 10.981 → 39.581 ký tự; mục Bài tập mẫu và Luyện tập giữ nguyên) bằng
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l10-tong-hop-phan-tich-luc/theory.html 58 --yes`,
+  sao lưu `scripts/logs/ly-thuyet-bai58-backup-1791083195069.json`, hoàn tác
+  `npx tsx scripts/khoi-phuc-ly-thuyet.mts <file sao lưu>`; đã deploy (`bash scripts/deploy.sh`). Chưa có bộ
+  "Kiểm tra nhanh" 20 câu (`scripts/data/theory-quiz/58.json`).
+- **Đợt tối ưu tốc độ (perf, 24–25/09)**: Lighthouse trang chủ 68→91, trang bài 78→83; `out/` 41→34 MB; ảnh 4,6 MB→0,6 MB; bỏ Google Fonts; Supabase request trang bài 10→4. Chi tiết: `perf/RESULT.md`.
+- **Đợt Giai đoạn 0–1 (feat, 25/09)**: cột `difficulty` + `difficulty_source`, UI chọn mức ở Đăng đề, backfill bằng AI; nạp bundle lý thuyết lớp 12; RPC `get_lesson_mastery` / `get_chapter_mastery` + nhãn Nắm vững / Cần luyện thêm / Chưa đạt. Chi tiết: `feat/RESULT.md`.
+- Hệ thống Rank/RP 7 bậc (Đồng → Cao Thủ, đổi theo bậc Liên Quân Mobile 28/9/2026 — migration đã chạy 23:47, xem `STATE-archive.md`), nhiệm vụ hằng ngày, chuỗi ngày.
+- Danh vị Thách Đấu (Vô Song/Paragon) trên Cao Thủ: migration `20260926100000_rank_paragon.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/…rank_paragon.down.sql`); chế độ admin "Xem như học sinh" mở khoá hết (features/rank/preview.ts).
+- Loại GV/admin khỏi rank RP: migration `20260926110000_rank_exclude_staff.sql` ĐÃ chạy 26/9/2026 — chặn tận gốc (3 hàm) việc tài khoản không phải role='student' bị cộng RP/lọt bảng xếp hạng khi tự test bài, đã dọn sạch dữ liệu rác (rollback `perf/rollback/20260926110000_rank_exclude_staff.down.sql`).
+- Vá 2 lỗ hổng RLS tautology + `class_assessments using(true)`: migration `20260926140000_fix_rls_tautology.sql` ĐÃ chạy 26/9/2026 (rollback `perf/rollback/20260926140000_fix_rls_tautology.down.sql`).
+- Sửa `find_similar_bank_questions` (quét câu trùng ở `/quan-tri/ngan-hang-cau-hoi`) bị `statement
+  timeout` vì self-join O(n²) mỗi topic → nested loop dùng index GIN trigram + set_limit + cap 20
+  câu giống/mỗi câu: migration `20260926150000_fix_question_bank_similarity_timeout.sql` ĐÃ chạy
+  27/9/2026 (log `scripts/logs/20260927-073246-*`, rollback
+  `perf/rollback/20260926150000_fix_question_bank_similarity_timeout.down.sql`). Chưa xác nhận lại
+  trên UI thật là mục "Nghi trùng lặp" đã lên danh sách.
+- **Bảng chào mừng theo vai (30/9/2026, PR #17, đã merge main + deploy)**: `components/account/WelcomePanel.tsx`
+  gắn ở `Account()` (`app/tai-khoan/page.tsx`) — 11 tình huống (HS THPT/CTTC theo trạng thái ghi danh, GV,
+  admin, trợ giảng, phụ huynh); đóng được, nhớ localStorage `thachlab_welcome_off_<userId>_<variant>`.
+  Kèm gợi ý theo số liệu thật: HS THPT "Còn X RP là lên {bậc}" (X≤50) ở `ThptStudentHome.tsx`; GV THPT khối
+  "Nên làm trước" ở `TeacherThptOverview.tsx`. KHÔNG thêm truy vấn Supabase, không migration. **Chưa kiểm bằng
+  mắt trên web thật** từng vai. Còn lại: gợi ý số liệu cho phụ huynh/admin/CTTC (cần RPC gộp = migration mới);
+  số bài tự luận chưa chấm của GV chưa có nguồn dữ liệu.
+- **Trang chủ ghép 4 ý từ bản DeepSeek (1/10/2026, nhánh `claude/gracious-mayer-53030i`)**: thanh vào nhanh dưới Navbar
+  (`components/home/PublicSubNav.tsx`: KHTN 9 · Lý 10/11/12 · CTTC · Xếp hạng · Phụ huynh, chỉ ở `/`); lưới 4 lớp
+  kèm số chương · bài · mục + dải tổng "4 lớp · 22 chương · 116 bài · 257 mục" (`OpenClasses.tsx`, thay
+  `AudienceChooser.tsx`); số đọc LÚC BUILD từ `public/data/home-stats.json` (sinh thêm trong
+  `scripts/build-content.mjs`, đọc bằng `home-stats.server.ts`) — KHÔNG thêm truy vấn Supabase khi tải `/`;
+  Testimonials mặc định 4 ảnh. Giữ nguyên nền tối/cyan, hero mô phỏng, HonorBoard, AboutFounder. Số liệu chỉ
+  cập nhật khi deploy lại (prebuild chạy build-content).
+  Sửa tiếp cùng ngày: bỏ thanh phụ (2 dòng nav xấu) → menu thả xuống dưới "THPT – THCS" ở Navbar (desktop hover/focus,
+  mobile hàng chip) `components/layout/Navbar.tsx`; `/phu-huynh` khách thấy lời nhắc riêng cho phụ huynh (prop
+  `guestNotice`/`loginHref`/`showSignUp` của `RequireAuth`), `/dang-nhap?next=/duong-dan` quay lại trang vừa chặn,
+  phụ huynh đăng nhập mặc định về `/phu-huynh`; Footer thêm link "Phụ huynh xem kết quả của con".
+- **Đồng bộ trang chương ↔ trang bài, đợt 1 (2/10/2026, PR #33, đã merge main)**: `chapterDisplayTitle` dời sang
+  `features/lessons/types.ts` + thêm `chapterLabel`; cây chương trang bài hết lặp số chương và có đơn vị "bài";
+  breadcrumb/link quay lại/tiêu đề ngăn kéo dùng "Chương N · Tên" (`chapterFullLabel`); trang chương đổi thanh
+  tiến độ thành "x/y mục", hai nút "Tiếp tục học". Không đổi bố cục, không thêm request Supabase, không migration.
+  Ảnh: `docs/anh/trang-chuong-2026-10/`. Đợt 2–4 chỉ bắt đầu sau khi PR này merge (prompt
+  `docs/prompt-dong-bo-trang-chuong-2026-10.md`, prompt này chưa có trên `main`).
+- **Đồng bộ trang chương ↔ trang bài, đợt 2 (2/10/2026, PR #38, đã merge main)**: tách `components/lessons/ChapterTree.tsx`
+  dùng chung cho trang bài (mode `learn`) và trang chương (mode `pick`); trang chương ≥1024 dùng `.lesson-layout`
+  (cột trái 272px là cây chương, cột giữa chỉ chương đang chọn, thẻ "Tiếp tục học" lên cột trái), <1024 giữ nguyên
+  accordion; chọn chương ghi `?chapter=` lên URL. Đo hình học: 375/768 không đổi, 1024/1280 cột giữa bằng trang bài.
+  Ảnh `dot2-*.webp` trong `docs/anh/trang-chuong-2026-10/`. Không xoá rule `.class-*` (để đợt 4). Đợt 3 làm sau khi PR này merge.
+
+- **Rà phần Báo lỗi & Góp ý (30/9/2026, chỉ đọc code — sandbox không truy cập được bảng `bug_reports` thật)**: đã sửa 4 điểm
+  không cần quyết định: (1) form chung không còn cho chọn loại `cau_hoi` (chỉ dành cho nút "Báo lỗi câu này" có gắn
+  đề/câu); (2) ô chọn ảnh chỉ nhận png/jpeg/webp/heic (bucket từ chối gif/svg → trước đó báo lỗi khó hiểu); (3) ô ghi
+  chú xử lý trước ghi "chỉ admin thấy" nhưng `/bao-loi-cua-toi` hiển thị cho học sinh → đổi lại nhãn cho đúng;
+  (4) `BugReportsAdmin` chống kết quả tab cũ ghi đè tab mới + xoá lỗi cũ khi tải lại. Chưa deploy. Còn chờ thầy quyết:
+  chống spam khách (không giới hạn), báo cho admin khi có báo lỗi mới, báo cho học sinh khi được phản hồi, đọc ~15 báo lỗi thật.
+
+- **Đọc 31 báo lỗi thật (30/9/2026, sau khi có env)** — 22 mục còn "Mới". Phát hiện: (a) **đăng nhập Google đang TẮT** trên
+  Supabase project mới (`/auth/v1/settings` → `external.google=false`; 3 báo lỗi #22/#27/#30) — khả năng mất cấu hình khi
+  chuyển Singapore, thầy phải bật lại ở Dashboard; (b) **watermark "thukhoadaihoc.vn" rác trong lời giải** ~409 chỗ / 34 đề
+  (chỉ trong `explanation`) — script `scripts/clean-exam-watermark.mjs` (dry-run mặc định, `--apply` có backup), CHƯA chạy;
+  (c) báo lỗi #23/#24/#26/#28 chọn loại "câu hỏi" ở form chung nên không gắn được câu (đã ẩn loại này khỏi form chung);
+  (d) đề 237 câu 3 mở đầu "(Tiếp câu trên)" — hỏng ngữ cảnh khi đảo thứ tự câu.
+- **Xử lý đợt báo lỗi 06/10/2026 (58 báo lỗi, đóng 14 mục `da_xu_ly`)**:
+  (1) Sửa câu 71 Đề 72 (Bài 8 Lớp 12): phương án B `127°C.` -> `27°C.` tránh trùng với đáp án đúng `400 K.` (giải quyết #57).
+  (2) Cô lập 24 câu thiếu ảnh/đồ thị khỏi đề luyện tập & ngân hàng câu hỏi: Đề 44 (20 câu, còn 35 câu), Đề 49 (3 câu, còn 66 câu), Đề 259 (câu 21, còn 20 câu); đã sao lưu đầy đủ vào `scripts/logs/isolated-questions-backup-*.json` và đánh dấu `archived=true` trong `question_bank` (giải quyết #58, #55, #54, #44).
+  (3) Mở rộng hạn mức học sinh phụ đạo (`lib/tro-giang/policy.ts` + `GhiBuoiForm.tsx`): bỏ giới hạn chặn 4 học sinh, giữ hệ số 1.4 cho từ 3 em trở lên (giải quyết #56, #49).
+  (4) Chuẩn hoá câu 2 đề 474 bỏ dấu sao thừa, giải thích & đóng các báo lỗi #4, #5, #45, #47, #48, #51, #52.
+
+
+- **Luyện tập: thời gian mỗi câu tăng 15s/45s → 30s/90s** (30/9/2026, theo góp ý #21 của học sinh, thầy duyệt): `SECONDS_PER_FORM`
+  ở `features/exams/types.ts` + dòng mô tả ở `PracticeSession.tsx`. Chỉ tính phía client, không đổi DB. **Chưa deploy** (`bash scripts/deploy.sh`).
+  Phiên đang dở đã lưu vẫn giữ tổng giờ cũ.
+- **Đồng bộ trang chương ↔ trang bài, đợt 3 (2/10/2026, PR #41, đã merge main + deploy cùng ngày)**: trang chương dưới 640px có thanh đáy
+  3 nút (‹ Lớp học · Tiếp tục học · Mở tất cả/Thu gọn) dùng lại CSS `.lesson-bottombar--mobile` của trang bài; thanh này
+  **thay** tabbar toàn site (2 rule `:has()` ở cuối `globals.css`), chừa đáy đúng 62px như trang bài. Đợt 4 (cột giữa giàu
+  thông tin + rail phải) chờ `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` vào `main`.
+- **Bài Mô tả sóng soạn lại + chốt phong cách soạn bài (2/10/2026, đã commit `main`)**: bản xem thử Bài 8 Mô tả sóng
+  (lớp 11) ở `content/lesson-samples/l11-mo-ta-song/` (theory.html + bundle.json + 2 thí nghiệm trong
+  `content/thi-nghiem/` + ảnh xem thử `xem-thu/`) — **CHƯA ghi DB, chưa deploy**, chờ thầy duyệt
+  (`bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` rồi deploy).
+  Skill `soan-bai-ly-thuyet-tuong-tac` đã cập nhật: **bỏ vai "thầy" trong bài**, checklist 14 nét dạy học Trung Quốc
+  (`references/phuong-phap-day-tq.md`), thêm `scripts/build_preview.py` + `chup_anh.py` (xem thử **đúng 375 px** bằng Chrome qua CDP,
+  Mac không có Playwright) + cờ `--kiem-tran` soát tràn ngang/công thức phải cuộn + `check_quizzes.py` (kiểm tự chấm không cần trình duyệt); đã sync Library plugin + `~/.codex`.
+- **Độ dài bài lý thuyết — hạn mức + bộ đo (2/10/2026)**: `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` (cơ chế bỏ cuộc,
+  hạn mức, cách kiểm chứng bằng mastery) + `scripts/lint_do_dai.py` trong skill soạn bài (exit 1 khi vượt trần).
+  Đo 5 bài: bài Mô tả sóng là bài dài nhất (3.021 từ hiện ngay, mục con 489 từ, đoạn liền 478 từ) → **đã cắt còn
+  2.457 từ**, 3 bảng 3 cột bị bóp chữ ở 375px đưa về 2 cột. Dòng ở mục trên ("CHƯA ghi DB") là **đã cũ**: log
+  `scripts/logs/ly-thuyet-bai27-backup-*.json` (22:51) cho thấy bản Mô tả sóng **đã ghi DB**; bản cắt này
+  **chưa ghi DB, chưa deploy** — chờ thầy duyệt rồi chạy `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l11-mo-ta-song/theory.html 27` + deploy.
+  3/10/2026: cắt thêm đoạn mở bài trùng câu Dự đoán → "tới việc đầu" 165→142 từ (lint mới, xem
+  `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` mục 3); theory.html + bundle.json đã đồng bộ. **Thầy đã ghi DB 3/10/2026**
+  (item 45, sao lưu `scripts/logs/ly-thuyet-bai27-backup-1790986956595.json`), deploy lại để bản tĩnh 27.json cập nhật.
+
