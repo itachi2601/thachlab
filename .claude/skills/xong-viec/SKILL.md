@@ -38,3 +38,7 @@ Thầy đã chốt: không hỏi từng bước. Làm tuần tự, cuối cùng 
 
 ## Câu trả lời cuối (gọn, một lần)
 Đã làm gì · commit hash · đã deploy/chưa · việc thầy phải chạy (nếu có, mỗi lệnh một khối) · rút kinh nghiệm (nếu áp dụng).
+
+## Nhật ký rút kinh nghiệm
+- 2026-10-07 · Thầy sửa tab "Thí nghiệm" ở hero trang chủ nhiều lần, sau đó thấy trang thật "quay về như cũ": thay đổi nằm trong working tree, chưa commit nên deploy (build từ commit) không có → khi thầy báo "đã sửa mà web vẫn cũ", chạy `git status` + `git show HEAD:<file> | grep <từ khoá mới>` TRƯỚC; thấy chưa commit thì commit đúng file (`git commit -- <path>`, file mới `git add` trước) rồi deploy, đừng dò nguyên nhân khác.
+- 2026-10-07 · Working tree còn WIP của phiên khác nên không build thẳng được → deploy từ worktree sạch: `git worktree add --detach /tmp/tl-deploy HEAD`, `cp .env.local`, **`cp -cR node_modules`** (clone APFS, nhanh); symlink `node_modules` làm Turbopack panic "Symlink [project]/node_modules is invalid", rồi chạy `bash scripts/deploy.sh` ở tab terminal (build ~5 phút, bước TypeScript/gom trang im lặng lâu là bình thường), xong `git worktree remove --force` và `git push origin main`.
