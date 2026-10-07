@@ -23,6 +23,7 @@ import {
   classGrade,
   displayClassesByGrade,
   expandClassIdsByGrade,
+  fetchMyClassRequest,
 } from "@/services/classes";
 import {
   fetchMyProgressMarks,
@@ -144,6 +145,26 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     fetchLessonsStatic(setLessons).then(setLessons);
     fetchPublishedPosts().then(setPosts);
   }, [classSlug]);
+
+  // Học sinh THPT đã được duyệt vào lớp thì không cần bộ chọn lớp: vào thẳng lớp của em (thầy chốt 7/10/2026).
+  const [classRedirect, setClassRedirect] = useState(false);
+  useEffect(() => {
+    if (classSlug || !classes || !supabaseConfigured || !session || profile?.role !== "student" || profile.track === "cttc") return;
+    let cancelled = false;
+    fetchMyClassRequest(session.user.id)
+      .then((request) => {
+        if (cancelled || request?.status !== "active") return;
+        const grade = classGrade(request.className);
+        const target = displayClassesByGrade(classes).find((c) => classGrade(c.name) === grade);
+        if (!target) return;
+        setClassRedirect(true);
+        router.replace(`/lop-hoc/${target.slug}`);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [classSlug, classes, session, profile, router]);
 
   // đề thi yêu cầu đăng nhập (RLS) — chỉ tải khi có session
   // đề thi yêu cầu đăng nhập (RLS) — chỉ tải khi có session; dấu "đã học" tải cùng lúc,
@@ -788,7 +809,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             </header>
             {!supabaseConfigured ? (
               <p className="lesson-muted">Hệ thống đang được cấu hình.</p>
-            ) : !classes ? (
+            ) : !classes || classRedirect ? (
               <SkeletonGrid count={2} />
             ) : classes.length === 0 ? (
               <EmptyState title="Chưa có lớp nào" description="Lớp học sẽ hiện ở đây khi hệ thống mở." />

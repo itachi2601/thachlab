@@ -266,7 +266,7 @@ html[data-theme="light"] [class~="text-[#3B82F6]"] { color: #1d4ed8 !important; 
   background: var(--color-panel);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-.mobile-tabbar a {
+.mobile-tabbar a, .mobile-tabbar button {
   display: flex;
   min-height: 56px;
   flex-direction: column;
@@ -279,12 +279,25 @@ html[data-theme="light"] [class~="text-[#3B82F6]"] { color: #1d4ed8 !important; 
   font-weight: 600;
   text-decoration: none;
 }
-.mobile-tabbar a.is-active { color: var(--color-primary); }
-.mobile-tabbar a.is-active svg { color: var(--color-primary); }
+.mobile-tabbar button { border: 0; background: none; font-family: inherit; cursor: pointer; }
+.mobile-tabbar a.is-active, .mobile-tabbar button.is-active { color: var(--color-primary); }
+.mobile-tabbar a.is-active svg, .mobile-tabbar button.is-active svg { color: var(--color-primary); }
+.mobile-tabbar .tab-ic { position: relative; display: inline-flex; }
+.mobile-tabbar .tab-dot { position: absolute; top: -2px; right: -4px; width: 10px; height: 10px; border-radius: 9999px; background: #ef4444; box-shadow: 0 0 0 2px var(--color-panel); }
+.mobile-tabbar .tab-count { position: absolute; top: -6px; left: 12px; min-width: 18px; border-radius: 9999px; background: #ef4444; padding: 1px 5px; box-shadow: 0 0 0 2px var(--color-panel); color: #fff; font-size: 12px; font-weight: 700; line-height: 16px; text-align: center; }
+/* Thanh đáy phụ huynh (tuổi 45–60): nút cao hơn, chữ lớn hơn. */
+.mobile-tabbar--big a, .mobile-tabbar--big button { min-height: 64px; font-size: 14px; }
+/* Menu "Thêm" của thanh đáy học sinh: bảng nổi ngay trên thanh, mỗi dòng cao ≥ 48px. */
+.mobile-more-backdrop { position: fixed; inset: 0; z-index: 41; border: 0; background: rgba(0,0,0,.4); }
+.mobile-more { position: fixed; right: 8px; bottom: calc(64px + env(safe-area-inset-bottom, 0px)); z-index: 42; display: grid; min-width: 220px; overflow: hidden; border: 1px solid var(--color-line); border-radius: 16px; background: var(--color-panel); box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+.mobile-more a, .mobile-more button { display: flex; min-height: 48px; align-items: center; border: 0; background: none; padding: 0 18px; color: var(--color-ink); font-family: inherit; font-size: 15px; font-weight: 600; text-align: left; text-decoration: none; cursor: pointer; }
+.mobile-more a + a, .mobile-more a + button { border-top: 1px solid var(--color-line); }
+.mobile-more .is-danger { color: #fca5a5; }
 
 @media (max-width: 1023px) {
   /* Chừa chỗ để thanh đáy không che nội dung cuối trang (trang bài học tự chừa riêng). */
   body:has(.mobile-tabbar) { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.mobile-tabbar--big) { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ---------- Không gian học tập Gia công CNC ---------- */
