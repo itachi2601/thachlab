@@ -1,98 +1,155 @@
 {
- "ghi_chu": "Video gắn vào BÀI nhưng không thuộc một hộp thí nghiệm nào — thường là clip MỞ BÀI (đặt vấn đề bằng hiện tượng thật). Video của từng hộp thí nghiệm ghi trong tn-*.json (field `video`). Mỗi mục: slug (tên thư mục bài trong content/lesson-samples), lesson_id (để đối chiếu), videos[] với vi_tri = `mo_bai` | `truoc:<data-exp>` | `sau:<data-exp>`, youtube_id (11 ký tự), nhan, nhin_vao (bắt buộc, câu hỏi mở bài), giay_bat_dau/giay_ket_thuc (≤ 90 giây), tieu_de_hop (mặc định 'Xem thực tế'). Quy ước đầy đủ: README.md mục Video thí nghiệm.",
- "bai": [
-  {
-   "slug": "l11-giao-thoa-song",
-   "lesson_id": 31,
-   "videos": [
+  "ghi_chu": "Video gắn vào BÀI nhưng không thuộc một hộp thí nghiệm nào — thường là clip MỞ BÀI (đặt vấn đề bằng hiện tượng thật). Video của từng hộp thí nghiệm ghi trong tn-*.json (field `video`). Mỗi mục: slug (tên thư mục bài trong content/lesson-samples), lesson_id (để đối chiếu), videos[] với vi_tri = `mo_bai` | `truoc:<data-exp>` | `sau:<data-exp>`, youtube_id (11 ký tự), nhan, nhin_vao (bắt buộc, câu hỏi mở bài), giay_bat_dau/giay_ket_thuc (≤ 90 giây), tieu_de_hop (mặc định 'Xem thực tế'). Quy ước đầy đủ: README.md mục Video thí nghiệm.",
+  "bai": [
     {
-     "vi_tri": "mo_bai",
-     "video": {
-      "youtube_id": "b87QZtYKmqo",
-      "nhan": "hai loa phát cùng một âm",
-      "nhin_vao": "Tiếng to lên, nhỏ đi ở những chỗ nào khi người hoặc micro di chuyển?",
-      "ten": "Interference Demo: Speakers",
-      "kenh": "Physics Demos",
-      "da_kiem": "2026-10-06"
-     }
-    }
-   ]
-  },
-  {
-   "slug": "l11-mo-ta-song",
-   "lesson_id": 27,
-   "videos": [
+      "slug": "l11-giao-thoa-song",
+      "lesson_id": 31,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "b87QZtYKmqo",
+            "nhan": "hai loa phát cùng một âm",
+            "nhin_vao": "Tiếng to lên, nhỏ đi ở những chỗ nào khi người hoặc micro di chuyển?",
+            "ten": "Interference Demo: Speakers",
+            "kenh": "Physics Demos",
+            "da_kiem": "2026-10-06"
+          }
+        }
+      ]
+    },
     {
-     "vi_tri": "mo_bai",
-     "video": {
-      "youtube_id": "hq387m0PRac",
-      "nhan": "khán đài làm sóng người",
-      "nhin_vao": "Người trên khán đài có rời chỗ ngồi không?",
-      "giay_bat_dau": 15,
-      "giay_ket_thuc": 24,
-      "ten": "Massive Mexican Wave! - London 2012 Olympic Stadium",
-      "kenh": "Andy Webb",
-      "da_kiem": "2026-10-06"
-     }
-    }
-   ]
-  },
-  {
-   "slug": "l11-song-dung",
-   "lesson_id": 32,
-   "videos": [
+      "slug": "l11-mo-ta-song",
+      "lesson_id": 27,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "hq387m0PRac",
+            "nhan": "khán đài làm sóng người",
+            "nhin_vao": "Người trên khán đài có rời chỗ ngồi không?",
+            "giay_bat_dau": 15,
+            "giay_ket_thuc": 24,
+            "ten": "Massive Mexican Wave! - London 2012 Olympic Stadium",
+            "kenh": "Andy Webb",
+            "da_kiem": "2026-10-06"
+          }
+        }
+      ]
+    },
     {
-     "vi_tri": "mo_bai",
-     "video": {
-      "youtube_id": "Voq8d2PKCGU",
-      "nhan": "bấm phím, nốt cao lên",
-      "nhin_vao": "Bấm phím rồi gảy: nốt cao lên hay thấp đi?",
-      "giay_bat_dau": 0,
-      "giay_ket_thuc": 8,
-      "ten": "Harmonics - Pitch Change with String Length",
-      "kenh": "Mr. Mangiacapre",
-      "da_kiem": "2026-10-06"
-     }
-    }
-   ]
-  },
-  {
-   "slug": "l12-thuc-hanh-cam-ung-tu",
-   "lesson_id": 12,
-   "videos": [
+      "slug": "l11-song-dung",
+      "lesson_id": 32,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "Voq8d2PKCGU",
+            "nhan": "bấm phím, nốt cao lên",
+            "nhin_vao": "Bấm phím rồi gảy: nốt cao lên hay thấp đi?",
+            "giay_bat_dau": 0,
+            "giay_ket_thuc": 8,
+            "ten": "Harmonics - Pitch Change with String Length",
+            "kenh": "Mr. Mangiacapre",
+            "da_kiem": "2026-10-06"
+          }
+        }
+      ]
+    },
     {
-     "vi_tri": "mo_bai",
-     "video": {
-      "youtube_id": "h8N9Un-Pp-w",
-      "nhan": "cân điện tử, dây dẫn và nam châm",
-      "nhin_vao": "Số trên cân thay đổi thế nào khi nối pin vào dây?",
-      "giay_bat_dau": 0,
-      "giay_ket_thuc": 40,
-      "ten": "Effect of magnetic force on electronic balance",
-      "kenh": "Jl Ang",
-      "da_kiem": "2026-10-07"
-     }
-    }
-   ]
-  },
-  {
-   "slug": "l12-ung-dung-cam-ung-dien-tu",
-   "lesson_id": 126,
-   "videos": [
+      "slug": "l12-thuc-hanh-cam-ung-tu",
+      "lesson_id": 12,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "h8N9Un-Pp-w",
+            "nhan": "cân điện tử, dây dẫn và nam châm",
+            "nhin_vao": "Số trên cân thay đổi thế nào khi nối pin vào dây?",
+            "giay_bat_dau": 0,
+            "giay_ket_thuc": 40,
+            "ten": "Effect of magnetic force on electronic balance",
+            "kenh": "Jl Ang",
+            "da_kiem": "2026-10-07"
+          }
+        }
+      ]
+    },
     {
-     "vi_tri": "mo_bai",
-     "video": {
-      "youtube_id": "8SQyN0tOYw4",
-      "nhan": "nồi nước sôi, tay sờ mặt kính",
-      "nhin_vao": "Nồi nước sôi mà tay vẫn đặt được lên mặt bếp — chỗ nào nóng lên trước?",
-      "giay_bat_dau": 6,
-      "giay_ket_thuc": 96,
-      "ten": "Bếp từ có nóng không? Thí nghiệm bếp từ.",
-      "kenh": "Huy Vinh",
-      "da_kiem": "2026-10-07"
-     }
+      "slug": "l12-ung-dung-cam-ung-dien-tu",
+      "lesson_id": 126,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "8SQyN0tOYw4",
+            "nhan": "nồi nước sôi, tay sờ mặt kính",
+            "nhin_vao": "Nồi nước sôi mà tay vẫn đặt được lên mặt bếp — chỗ nào nóng lên trước?",
+            "giay_bat_dau": 6,
+            "giay_ket_thuc": 96,
+            "ten": "Bếp từ có nóng không? Thí nghiệm bếp từ.",
+            "kenh": "Huy Vinh",
+            "da_kiem": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "l9-khuc-xa-anh-sang",
+      "lesson_id": 83,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "h-hDeF8Gj00",
+            "nhan": "ống hút, dĩa, thìa nhúng vào nước",
+            "nhin_vao": "Ống thẳng nhúng vào nước, nhìn chéo từ bên: ngay chỗ mặt nước ống trông thế nào?",
+            "giay_bat_dau": 7,
+            "giay_ket_thuc": 33,
+            "ten": "A pencil immersed in a glass of water appears bent/REFRACTION OF LIGHT",
+            "kenh": "JJ'S PHYSICS CLASS",
+            "da_kiem": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "l9-thau-kinh",
+      "lesson_id": 86,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "nz6Ve_DOIwE",
+            "nhan": "một kính lúp, vật gần và vật xa",
+            "nhin_vao": "Cùng một kính lúp: đưa sát mặt giấy rồi nhìn xa ra sân, hình trong kính thay đổi thế nào?",
+            "giay_bat_dau": 11,
+            "giay_ket_thuc": 33,
+            "ten": "Magnifying Glass Inverted Image",
+            "kenh": "Physics 61",
+            "da_kiem": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "l9-thuc-hanh-tieu-cu",
+      "lesson_id": 87,
+      "videos": [
+        {
+          "vi_tri": "mo_bai",
+          "video": {
+            "youtube_id": "7D2QYJBzrh4",
+            "nhan": "kính lúp chiếu cảnh ngoài cửa lên tường",
+            "nhin_vao": "Cảnh ngoài cửa hiện trên tường ngược hay xuôi so với cảnh thật?",
+            "giay_bat_dau": 46,
+            "giay_ket_thuc": 94,
+            "ten": "Reverse Image Magnifying Glass experiment / Why does a Magnifying Glass flip a image?",
+            "kenh": "Kids Fun Science",
+            "da_kiem": "2026-10-07"
+          }
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
