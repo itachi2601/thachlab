@@ -3045,3 +3045,8 @@ html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,
 html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
 html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
 html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }

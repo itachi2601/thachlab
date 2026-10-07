@@ -9,7 +9,9 @@ const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
 function withoutAnimationIfReduced(html: string): string {
   if (!html.includes("<animate")) return html;
   if (typeof window === "undefined" || !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return html;
-  return html.replace(/<animate\b[^>]*?(?:\/>|>\s*<\/animate>)/g, "");
+  return html
+    .replace(/<animate(?:Transform)?\b[^>]*?(?:\/>|>\s*<\/animate(?:Transform)?>)/g, "")
+    .replace(/<button[^>]*data-bt-run[^>]*>[\s\S]*?<\/button>/g, "");
 }
 
 /**
@@ -224,6 +226,13 @@ export default function ContentHtml({
   /** Bấm nút phát (uỷ quyền sự kiện): đổi đúng nút đó thành player, không tải player trước. */
   function handleClick(event: React.MouseEvent<HTMLSpanElement>) {
     if (!(event.target instanceof Element)) return;
+    // Mô phỏng SVG (SMIL begin="indefinite"): chạy MỘT lần mỗi lần bấm, không tự chạy khi đang đọc (B4).
+    const run = event.target.closest("button[data-bt-run]");
+    if (run instanceof HTMLButtonElement) {
+      run.closest("figure")?.querySelectorAll("animate, animateTransform").forEach((a) => (a as SVGAnimationElement).beginElement?.());
+      run.textContent = "↻ Chạy lại";
+      return;
+    }
     const button = event.target.closest("button.tl-video-play");
     if (!(button instanceof HTMLButtonElement)) return;
     const slot = Number(button.dataset.ytSlot);

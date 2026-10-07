@@ -43,8 +43,9 @@ def dim(p, c, x1, y1, x2, y2, label, lx, ly, anchor="start"):
     return arrow(p, c, x1, y1, x2, y2, 1.8) + arrow(p, c, x2, y2, x1, y1, 1.8) + lbl(lx, ly, label, {"o": ORG, "b": BLUE, "r": RED, "g": GRN}[c], 13, anchor, "700")
 
 def fig(bt, vb, alt, body, cap):
+    run = '<button type="button" class="bt-run" data-bt-run="1">▶ Chạy mô phỏng</button>' if "<animate" in body else ""
     return (f'<figure class="fig" data-tl="1" data-bt="{bt}"><svg viewBox="{vb}" role="img" aria-label="{alt}">{body}</svg>'
-            f'<figcaption>{cap}</figcaption></figure>')
+            f'{run}<figcaption>{cap}</figcaption></figure>')
 
 def plane(x, y):
     """Máy bay nhìn nghiêng, mũi quay phải, đáy khoang tại y."""
