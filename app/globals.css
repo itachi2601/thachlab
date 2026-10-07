@@ -1541,6 +1541,11 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   overflow-wrap: break-word;
   word-break: break-word;
 }
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
+}
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
    nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
