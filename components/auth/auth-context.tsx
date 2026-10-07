@@ -12,7 +12,7 @@
 // AuthProvider.tsx (bản đầy đủ) dùng CHÍNH context này (AuthContext), nên useContext ở
 // đây vẫn nhận đúng giá trị thật trên các trang có bọc <AuthProvider> — chỉ khi KHÔNG có
 // AuthProvider nào ở trên (các trang công khai) thì mới rơi về giá trị mặc định bên dưới.
-import { createContext, useContext } from "react";
+import { createContext, useContext, useSyncExternalStore } from "react";
 import type { Session } from "@supabase/supabase-js";
 
 export interface Profile {
@@ -73,4 +73,39 @@ export const AuthContext = createContext<AuthState>(defaultAuthState);
 
 export function useAuth() {
   return useContext(AuthContext);
+}
+
+// ---- Ảnh chụp auth cho component nằm NGOÀI cây AuthProvider (MobileTabBar ở app/layout.tsx) ----
+// 7/10/2026: thanh đáy theo vai (c86298e6f) đọc useAuth() nhưng được render ở layout gốc, ngoài mọi
+// AuthProvider → luôn nhận giá trị mặc định "khách", học sinh đã đăng nhập vẫn thấy tab "Đăng nhập".
+// AuthProvider đẩy {session, profile, signOut} vào kho này mỗi khi đổi; không có AuthProvider (trang
+// công khai) thì kho giữ giá trị gần nhất (đăng xuất đi qua AuthProvider nên vẫn được cập nhật).
+// Không import supabase-js, nên trang công khai không nặng thêm.
+export interface AuthSnapshot {
+  session: Session | null;
+  profile: Profile | null;
+  signOut: () => Promise<void>;
+}
+
+const EMPTY_SNAPSHOT: AuthSnapshot = { session: null, profile: null, signOut: async () => {} };
+let authSnapshot: AuthSnapshot = EMPTY_SNAPSHOT;
+const snapshotListeners = new Set<() => void>();
+
+/** AuthProvider gọi mỗi khi session/profile đổi. */
+export function publishAuthSnapshot(next: AuthSnapshot) {
+  if (next.session === authSnapshot.session && next.profile === authSnapshot.profile && next.signOut === authSnapshot.signOut) return;
+  authSnapshot = next;
+  snapshotListeners.forEach((fn) => fn());
+}
+
+function subscribeSnapshot(fn: () => void) {
+  snapshotListeners.add(fn);
+  return () => {
+    snapshotListeners.delete(fn);
+  };
+}
+
+/** Đọc ảnh chụp auth mới nhất, dùng được cả khi không có AuthProvider phía trên. SSR → rỗng. */
+export function useAuthSnapshot(): AuthSnapshot {
+  return useSyncExternalStore(subscribeSnapshot, () => authSnapshot, () => EMPTY_SNAPSHOT);
 }

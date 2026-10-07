@@ -3,12 +3,13 @@
 import {
   useCallback,
   useEffect,
+  useMemo,
   useState,
   useSyncExternalStore,
 } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
-import { AuthContext, type Profile, type PreviewMode } from "./auth-context";
+import { AuthContext, publishAuthSnapshot, type Profile, type PreviewMode } from "./auth-context";
 
 // Types + context + hook useAuth giờ sống ở auth-context.tsx (không import supabase-js) —
 // re-export ở đây để các file đang import từ "@/components/auth/AuthProvider" không phải
@@ -136,10 +137,18 @@ export default function AuthProvider({
   // sessionStorage sau khi đăng xuất/đăng nhập tài khoản khác không phải admin.
   // Chế độ "cttc" ghi đè luôn track để /tai-khoan đi đúng nhánh sinh viên CTTC
   // (RPC preview_cttc_enroll đã ghi danh admin vào 3 môn, còn track thật thì giữ nguyên).
-  const effectiveProfile: Profile | null =
-    previewMode && profile?.role === "admin"
-      ? { ...profile, role: "student", admin_area: null, track: previewMode === "cttc" ? "cttc" : profile.track }
-      : profile;
+  const effectiveProfile: Profile | null = useMemo(
+    () =>
+      previewMode && profile?.role === "admin"
+        ? { ...profile, role: "student", admin_area: null, track: previewMode === "cttc" ? "cttc" : profile.track }
+        : profile,
+    [previewMode, profile],
+  );
+
+  // Đẩy ảnh chụp cho component ngoài cây Provider (MobileTabBar ở app/layout.tsx) — xem auth-context.tsx.
+  useEffect(() => {
+    publishAuthSnapshot({ session, profile: effectiveProfile, signOut });
+  }, [session, effectiveProfile, signOut]);
 
   return (
     <AuthContext.Provider

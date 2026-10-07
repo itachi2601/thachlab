@@ -26,7 +26,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { useAuth } from "@/components/auth/auth-context";
+import { useAuth, useAuthSnapshot } from "@/components/auth/auth-context";
 import { useTodayBadge } from "@/lib/today-badge";
 
 const HIDDEN_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/lop-hoc/bai", "/tro-giang/ghi"];
@@ -266,7 +266,13 @@ function badgeLabel(item: TabItem) {
 export default function MobileTabBar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { session, profile, signOut } = useAuth();
+  // Thanh này render ở app/layout.tsx, NGOÀI AuthProvider → useAuth() là giá trị mặc định "khách";
+  // lấy phiên thật từ ảnh chụp AuthProvider đẩy ra (auth-context.tsx), ưu tiên context nếu có.
+  const ctx = useAuth();
+  const snap = useAuthSnapshot();
+  const session = ctx.session ?? snap.session;
+  const profile = ctx.profile ?? snap.profile;
+  const signOut = ctx.session ? ctx.signOut : snap.signOut;
   const isMobile = useSyncExternalStore(subscribeViewport, isMobileViewport, () => false);
   const [moreOpen, setMoreOpen] = useState(false);
 
