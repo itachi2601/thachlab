@@ -853,6 +853,8 @@ html[data-theme="light"] .lesson-tabs button.is-complete svg { color: #047857; }
 /* Nút Báo lỗi nổi: trang bài có thanh đáy cố định (z 45) che mất nút → nâng lên trên thanh. */
 /* Thanh đáy MobileTabBar (56px + tai thỏ) cũng che nút — nâng lên trên thanh. */
 @media (max-width: 1023px) { body:has(.mobile-tabbar) .bug-fab { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); } }
+/* Trang làm đề: thanh Trước/Sau nằm ở đáy màn hình lúc mới mở → nâng nút Báo lỗi lên trên thanh để không che nút Sau. */
+@media (max-width: 639px) { body:has(.exam-nav-row) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); } }
 @media (max-width: 639px) { body:has(.lesson-bottombar) .bug-fab { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 46; } }
 .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 14px; }
 .lesson-panel-title { margin: 0 0 10px; color: var(--color-ink); font-size: 13px; font-weight: 700; }
