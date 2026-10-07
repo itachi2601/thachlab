@@ -19,10 +19,10 @@ YouTube (1 khung/giây)**, chưa nghe tiếng — chỗ nào cần nghe lại đ
 | # | Bài | Vị trí | Link | Kênh | Thời lượng | Nhãn | Nhìn vào | Cờ | Duyệt? | start–end |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | l12-ung-dung-cam-ung-dien-tu | mo_bai | https://www.youtube.com/watch?v=8SQyN0tOYw4 | Huy Vinh (DigiCity) | 2:22 | nồi nước sôi, tay sờ mặt kính | Nồi nước sôi mà tay vẫn đặt được lên mặt bếp — chỗ nào nóng lên trước? | Phải cắt: 0:00–0:06 là thẻ tiêu đề "MẶT KÍNH KHÔNG NÓNG?" (nói sẵn kết luận) và 2:14–2:20 là outro; logo kênh nằm góc phải suốt clip. Đoạn sờ tay mặt kính trùng chi tiết bài đã nêu ngay trước hộp Dự đoán (không thêm thông tin mới, không lộ cơ chế). **Trùng chủ đề với hộp 03** (đều là bếp từ) — nếu thầy thấy thừa thì bỏ 1 trong 2. Không có thuyết minh; nếu đoạn cắt có lời giải thích cơ chế thì cắt hẹp lại (V7) | x | 0:06–1:36 |
-| 2 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-01 | https://www.youtube.com/watch?v=TvbfvmeILwo | VQT GV | 4:33 | dây đàn rung trên cuộn dây, kim điện kế | Dây đàn rung thì kim điện kế có đứng yên không? Lúc dây tắt thì sao? | Là clip bài giảng (có người dẫn) — **chỉ lấy đúng hai đoạn quay thiết bị**, không lấy đoạn giảng: 1:25–2:09 cận cảnh tay gảy dây trên pickup, 2:19–2:49 cuộn dây + nam châm + điện kế/dao động ký. Mốc ước từ storyboard, **chưa nghe tiếng**: nếu người dẫn nói lý thuyết đè lên hai đoạn này thì phải cắt hẹp hơn nữa hoặc bỏ (V1, V4) | x | 1:25–2:55 |
+| 2 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-01 | https://www.youtube.com/watch?v=TvbfvmeILwo | VQT GV | 4:33 | cận cảnh dây đàn và pickup của đàn ghi ta điện | Sáu dây đàn nằm ngay trên sáu nam châm nhỏ có cuộn dây — dây rung thì cái gì biến đổi? | **Đã sửa sau khi nghe phụ đề**: 1:59–2:26 của clip là lời giảng cơ chế ("khi một nam châm di chuyển qua cuộn dây nó sẽ tạo ra dòng điện… đây được gọi là hiện tượng cảm ứng điện từ") và đoạn 2:09–2:49 chỉ là **hoạt hình** mô phỏng pickup (trùng hình SVG của bài — V6) → **cắt còn 1:16–2:11 (55 s)**: cận cảnh dây đàn + pickup thật, dừng ngay trước câu giảng cơ chế. Mốc lấy từ **phụ đề chính thức**, không còn ước từ storyboard | x | 1:16–2:11 |
 | 3 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-02 | https://www.youtube.com/watch?v=J45EjAyInPU | Khám Phá Khoa Học | 3:29 | cuộn dây này sáng bóng đèn kia, không dây nối | Hai cuộn dây không nối nhau bằng dây nào, vì sao bóng đèn vẫn sáng? | Phải cắt: 0:00–0:31 là intro hoạt hình, 3:25 là outro; đoạn cắt 2:21–3:11 là LED sáng khi áp hai cuộn lại gần. Có tiếng người dẫn tiếng Việt ở đoạn đầu — nếu đoạn cắt còn lời giải thích cơ chế thì cắt hẹp lại. Clip quay tay (rung, tối) — chấp nhận được vì phần chữ của hộp đã đủ | x | 2:21–3:11 |
 | 4 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-03 | https://www.youtube.com/watch?v=IaQTpaY40fA | Bếp Cường Thịnh | 1:09 | đun nước trên tờ giấy đặt giữa nồi và mặt bếp | Nước sôi mà tờ giấy dưới đáy nồi vẫn nguyên — nhiệt sinh ra ở đâu? | Video gốc là clip quảng cáo nước ngoài, chữ "SIEMENS EH975SK11 INDUCTION DEMO" hiện ở 0:00–0:06 và 1:06–1:08 — **đã cắt cả hai**; không có thuyết minh, chỉ có hình. Đoạn cắt: 0:08–0:40 đặt giấy + nồi, 0:40–1:02 nước sôi và rút tờ giấy ra nguyên vẹn. Mốc ước từ storyboard, chưa nghe tiếng | x | 0:08–1:02 |
-| 5 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-04 | https://www.youtube.com/watch?v=2GT_gQJaue0 | Nỡ Nguyễn | 3:36 | hai tấm nhôm đung đưa giữa hai cực nam châm | Tấm nào tắt dao động trước: tấm liền khối hay tấm có rãnh xẻ? | **Cần thầy xem lại giúp**: storyboard cho thấy 0:18–1:43 là khung gỗ + hai tấm treo + nam châm, nhưng chưa chắc clip quay **đủ cả tấm liền khối lẫn tấm có rãnh xẻ** (có khung thấy rõ rãnh xẻ, có khung chỉ thấy một tấm). 1:43 trở đi là slide chữ (cắt). Nếu thiếu tấm liền khối thì dùng clip tiếng Anh `MglUIiBy2lQ` (0:31–2:38, có thuyết minh tiếng Anh, mô tả ghi rõ so sánh tấm có rãnh) | x | 0:18–1:43 |
+| 5 | l12-ung-dung-cam-ung-dien-tu | tn-l12-ungdungcutu-04 | https://www.youtube.com/watch?v=MglUIiBy2lQ | Electric and Magnetic Fields | 4:43 | tấm liền khối, tấm có rãnh và tấm rãnh tới đáy | Tấm nào tắt dao động trước: tấm liền khối hay tấm có rãnh xẻ? | **Thầy chốt 7/10/2026: thay bằng clip tiếng Anh.** Clip tiếng Anh (V4) nhưng phần chính là thao tác trên bàn; cắt **0:51–1:51 (60 s)** đúng ba lần thử: tấm liền khối tắt và dừng (1:22), tấm có rãnh tắt chậm hơn (1:34), tấm rãnh tới đáy đung đưa tự do (1:44–1:51); dừng **trước 1:51** vì từ đó là đoạn giảng cơ chế. Mốc cắt lấy từ **phụ đề chính thức** (`yt-dlp --write-subs`), không còn ước từ storyboard | x | 0:51–1:51 |
 
 ## Đã xem, không đưa vào bảng
 
@@ -40,7 +40,15 @@ YouTube (1 khung/giây)**, chưa nghe tiếng — chỗ nào cần nghe lại đ
 
 ## Đã chốt
 
-**Thầy chốt 7/10/2026: "đăng lên hết luôn" → duyệt cả 5 dòng, giữ nguyên mốc cắt đã đề xuất.** Đã nhập kho + chèn vào bài + đăng bằng khối lệnh dưới đây:
+**Thầy chốt 7/10/2026: "đăng lên hết luôn" → duyệt cả 5 dòng, giữ nguyên mốc cắt đã đề xuất.** Đã chạy xong:
+
+- Nhập kho: `tn-l12-ungdungcutu-01…04.json` + `video-theo-bai.json` (kèm `ten`/`kenh`/`da_kiem` 2026-10-07).
+- Chèn vào `content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/` (5 khối × `theory.src.html` + `theory.html` + `theory_html` trong `bundle.json`).
+- Đã đăng DB: item **#145** (`ly_thuyet`) của lesson 126, 46 291 → 48 919 ký tự; đối chiếu trước/sau cho thấy **chỉ số khối video đổi 0 → 5**, hai mục #146 `luyen_tap` và #283 `bai_tap_mau` không đổi.
+- Sao lưu để hoàn tác: `scripts/logs/ly-thuyet-bai126-backup-1791376046541.json`.
+- Deploy xong 7/10/2026 (nhánh `deploy`), commit nguồn `f89521898`.
+
+Khối lệnh đã dùng:
 
 ```
 npx tsx scripts/nhap-video-de-xuat.mts content/thi-nghiem/video-de-xuat-l12-ungdungcutu.md --ra /tmp/kho-thu
@@ -52,3 +60,7 @@ bash scripts/cap-nhat-ly-thuyet-hang-loat.sh l12-ung-dung-cam-ung-dien-tu:126 --
 ```
 
 (`--chi-video` chạy được: `so-file-voi-db --bai 126` ngày 7/10/2026 báo `theory.html` của bài này **khớp DB**.)
+
+Bỏ qua bước `chen-video-thi-nghiem.mts --kiem --apply` (bước này ghi `da_kiem` = hôm nay vào **mọi** clip trong kho,
+kể cả của bài khác) — thay bằng `--kiem --kho /tmp/kho-thu` để kiểm 5 link mới rồi điền `ten`/`kenh`/`da_kiem`
+cho đúng 5 mục vừa thêm.
