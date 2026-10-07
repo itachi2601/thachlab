@@ -14,6 +14,21 @@ def sub(x, y, base, s, c="currentColor", size=13, anchor="start"):
     return (f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{size}" font-weight="700" text-anchor="{anchor}">'
             f'{base}<tspan dy="4" font-size="{size - 3}">{s}</tspan></text>')
 
+def smil(attr, vals, dur):
+    return f'<animate attributeName="{attr}" values="{";".join(f"{v:.1f}" for v in vals)}" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+
+def live(p, pts, vx_px, vy_px, hold, sec_per_interval):
+    """Quả cầu + hai mũi tên vận tốc chạy theo quỹ đạo TÍNH THẬT (mẫu cách đều thời gian, nội suy tuyến tính → đúng vật lí).
+    vx_px, vy_px: độ dài mũi tên (px, dương = sang phải / xuống) tại từng mẫu. hold: số mẫu giữ nguyên ở cuối trước khi lặp."""
+    n = len(pts); idx = list(range(n)) + [n - 1] * hold
+    dur = sec_per_interval * (len(idx) - 1)
+    X = [pts[i][0] for i in idx]; Y = [pts[i][1] for i in idx]
+    VX = [vx_px[i] for i in idx]; VY = [vy_px[i] for i in idx]
+    out = f'<circle r="5.5" fill="{GRN}" stroke="currentColor" stroke-width="1.5">{smil("cx", X, dur)}{smil("cy", Y, dur)}</circle>'
+    out += f'<line stroke="{BLUE}" stroke-width="3" marker-end="url(#{p}-b)">{smil("x1", X, dur)}{smil("y1", Y, dur)}{smil("x2", [x + v for x, v in zip(X, VX)], dur)}{smil("y2", Y, dur)}</line>'
+    out += f'<line stroke="{ORG}" stroke-width="3" marker-end="url(#{p}-o)">{smil("x1", X, dur)}{smil("y1", Y, dur)}{smil("x2", X, dur)}{smil("y2", [y + v for y, v in zip(Y, VY)], dur)}</line>'
+    return out
+
 # ───────────── Dạng 1: máy bay thả gói, h=490, v0=60 ─────────────
 def d1(k):
     O = (104, 58); g = ngang_geom(490, 60, O, 270, 140); p = f"d1{k}"
@@ -27,14 +42,13 @@ def d1(k):
         b += lbl(O[0] + 70, O[1] + 70, "t = ?", ORG, 13, "start", "700")
         return fig("d1-0", VB, "Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất", b, "Đề: gói hàng thả từ máy bay. " + NOTE)
     if k == 1:
-        for i in (1, 2, 3):
-            u = i * 10; x, y = g["pts"][u]
-            vy = 60 * i / 3
-            b += arrow(p, "b", x, y, x + 46, y, 3) + arrow(p, "o", x, y, x, y + 14 + vy * 0.9, 3) + dot(x, y, 4, GRN)
+        for u in (10, 20, 30):
+            b += dot(*g["pts"][u], 3.5, GRN)
+        b += live(p, g["pts"], [46] * 41, [0.0 + 70 * u / 40 for u in range(41)], 8, 10 / 40)
         b += lbl(O[0] + 24, g["pts"][10][1] - 12, "vₓ không đổi", BLUE, 13, "start", "700")
         b += lbl(g["pts"][30][0] - 14, g["pts"][30][1] + 44, "v_y tăng dần", ORG, 13, "end", "700")
         b += lbl(250, 28, "Ox: a = 0 (đều)", BLUE, 13, "start", "700") + lbl(250, 46, "Oy: a = g (rơi tự do)", ORG, 13, "start", "700")
-        return fig("d1-1", VB, "Ở ba thời điểm cách đều nhau, mũi tên vận tốc ngang bằng nhau còn mũi tên vận tốc thẳng đứng dài dần", b, "Gợi ý 1: hai phương độc lập. " + NOTE)
+        return fig("d1-1", VB, "Ở ba thời điểm cách đều nhau, mũi tên vận tốc ngang bằng nhau còn mũi tên vận tốc thẳng đứng dài dần", b, "Gợi ý 1: hai phương độc lập. Hình động chạy đúng thời gian thật (10 s). " + NOTE.replace("Hình minh hoạ, không đúng tỉ lệ.", "Quỹ đạo tính theo công thức."))
     if k == 2:
         b += axes(p, O[0], O[1], False, 50)
         b += dim(p, "o", O[0] - 60, O[1], O[0] - 60, g["gy"], "h", O[0] - 52, (O[1] + g["gy"]) / 2 + 4)
@@ -128,12 +142,12 @@ def d4(k):
         b += lbl(250, 30, "t bay = ?", ORG, 13, "start", "700")
         return fig("d4-0", vb, "Vận động viên bật nhảy từ mặt đất với vận tốc 9,8 m/s hợp phương ngang 30 độ, cần tìm tầm cao, thời gian bay và tầm xa", b, "Đề: ném xiên từ mặt đất. " + NOTE)
     if k == 1:
-        L = 70
-        b += seg(O[0] + L * math.cos(ang), O[1], O[0] + L * math.cos(ang), O[1] - L * math.sin(ang), "currentColor", 1.2, "4 4", .6) + seg(O[0], O[1] - L * math.sin(ang), O[0] + L * math.cos(ang), O[1] - L * math.sin(ang), "currentColor", 1.2, "4 4", .6)
-        b += arrow(p, "r", *O, O[0] + L * math.cos(ang), O[1] - L * math.sin(ang), 3) + arrow(p, "b", *O, O[0] + L * math.cos(ang), O[1], 3) + arrow(p, "o", *O, O[0], O[1] - L * math.sin(ang), 3)
-        b += lbl(O[0] + 6, O[1] + 20, "v₀ₓ = v₀cosα", BLUE, 13, "start", "700") + lbl(O[0] - 8, O[1] - L * math.sin(ang) / 2 + 4, "v₀y = v₀sinα", ORG, 13, "end", "700") + lbl(O[0] + L * math.cos(ang) + 4, O[1] - L * math.sin(ang) - 6, "v₀", RED, 14, "start", "700")
-        b += arrow(p, "b", top[0] - 20, top[1] - 8, top[0] + 30, top[1] - 8, 3) + lbl(top[0] - 20, top[1] - 16, "đỉnh: chỉ còn vₓ (v_y = 0)", BLUE, 12, "start", "700")
-        return fig("d4-1", vb, "Vận tốc đầu tách thành thành phần ngang không đổi và thành phần thẳng đứng hướng lên; tại đỉnh chỉ còn thành phần ngang", b, "Gợi ý 1: tách v₀ thành hai thành phần. " + NOTE)
+        ts = [i / 60 for i in range(61)]
+        vyv = [g["vy"] - G * t * g["T"] for t in ts]            # m/s, dương = lên
+        b += live(p, g["pts"], [60 * g["vx"] / 9.8 * 0.9] * 61, [-v * 7.1 for v in vyv], 20, 3 / 60)
+        b += lbl(O[0] + 6, O[1] + 20, "vₓ không đổi", BLUE, 13, "start", "700") + lbl(16, 26, "v_y: lên → 0 → xuống", ORG, 13, "start", "700")
+        b += lbl(top[0] - 20, top[1] - 16, "đỉnh: chỉ còn vₓ (v_y = 0)", BLUE, 12, "start", "700")
+        return fig("d4-1", vb, "Vận tốc đầu tách thành thành phần ngang không đổi và thành phần thẳng đứng hướng lên; tại đỉnh chỉ còn thành phần ngang", b, "Gợi ý 1: v₀ tách thành hai thành phần; hình động chạy chậm 3 lần. Quỹ đạo tính theo công thức.")
     if k == 2:
         b += seg(top[0], top[1], top[0], 112, "currentColor", 1.2, "4 4", .6)
         b += dim(p, "g", O[0], top[1] - 18, top[0], top[1] - 18, "lên: t₁", O[0] + 24, top[1] - 24) + dim(p, "g", top[0], top[1] - 18, land[0], top[1] - 18, "xuống: t₁", top[0] + 30, top[1] - 24)

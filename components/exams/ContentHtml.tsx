@@ -5,6 +5,13 @@ import imageDimensions from "@/features/lessons/image-dimensions.json";
 
 const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
 
+/** Hình SVG có hoạt hình SMIL (`<animate>`): người dùng bật "giảm chuyển động" thì bỏ hoạt hình, hình đứng yên ở khung đầu. */
+function withoutAnimationIfReduced(html: string): string {
+  if (!html.includes("<animate")) return html;
+  if (typeof window === "undefined" || !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return html;
+  return html.replace(/<animate\b[^>]*?(?:\/>|>\s*<\/animate>)/g, "");
+}
+
 /**
  * Ảnh tĩnh (hình vẽ, công thức quét) không có width/height trong HTML lưu —
  * trình duyệt không biết trước tỉ lệ nên chừa 0px chỗ rồi "nhảy" layout khi
@@ -170,7 +177,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withImageDimensions(withVideoFacades(stripWordArtifacts(html))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(stripWordArtifacts(html)))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);

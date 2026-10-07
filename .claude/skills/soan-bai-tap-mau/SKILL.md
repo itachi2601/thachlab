@@ -27,6 +27,9 @@ Học sinh được gợi ý bằng hình hiệu quả hơn chỉ lời. Mỗi d
 - Quy ước hình theo `soan-bai-ly-thuyet-tuong-tac/references/hinh-svg.md` (mỗi hình một tiền tố marker, chữ ≥ 12, không KaTeX, ≤ ~8 nhãn). Chú thích "Hình minh hoạ, không đúng tỉ lệ".
 - **Xem bằng mắt trước khi đăng**: ghi mỗi dạng ra một trang HTML, mở bằng `python3 -m http.server` + trình duyệt, chụp. Lỗi gặp ở bài 57: nhãn cắt mép trái/dưới (viewBox thiếu chỗ cho thước đo ở `ground+20`/`+38`), nhãn đè mũi tên hoặc quỹ đạo, nhãn đặt trên mặt đất.
 
+### Hình CHUYỂN ĐỘNG (SMIL, thử ở bài 57 — 7/10/2026)
+Hình gợi ý 1 của Dạng 1 (ném ngang, thời gian thật 10 s) và Dạng 4 (ném xiên, chậm 3 lần) là SVG có `<animate>`: quả cầu + mũi tên vₓ/v_y chạy theo quỹ đạo tính thật (`live()` trong `build-hinh-57.py`: lấy mẫu cách đều thời gian rồi nội suy tuyến tính ⇒ đúng vật lí; vₓ không đổi, v_y = g·t / đổi dấu ở đỉnh). Không thêm JS, mỗi hình ≈ +3 KB. `ContentHtml` tự bỏ `<animate>` khi người dùng bật "giảm chuyển động". Ghi rõ tốc độ phát trong chú thích. Chưa có nút phát/tạm dừng (muốn thế phải làm component dùng chung, lazy + `LazyErrorBoundary`).
+
 ## Quy trình
 
 1. **Chọn bài** (`lesson_id`). Đọc `public/data/lessons/<id>.json` mục `ly_thuyet` (để dạng bài **khớp đúng kiến thức bài đã dạy**, cùng ký hiệu), và mục `bai_tap_mau` hiện có (không để mất ví dụ hay đang có — đưa lại thành 1 dạng nếu tốt). Nếu thiếu `public/data`: `npm ci && node scripts/build-content.mjs`.
@@ -77,3 +80,4 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 
 - 2026-10-06 · Đăng bài 57 không cờ giữ cũ → ghi đè 19 dạng cũ bằng 3 dạng mới (có sao lưu, đã nối lại) → script đăng phải mặc định cảnh báo số dạng cũ sẽ mất; dùng `--giu-cu` cho bài đã có nội dung.
 - 2026-10-07 · Thầy: gợi ý bằng hình hiệu quả hơn lời → mỗi gợi ý có hình (4 hình/dạng, dựng từ quỹ đạo tính thật); lần chạy đầu 12/24 hình lỗi bố cục (cắt mép, nhãn đè) → luôn chụp xem từng hình trước khi đăng; thước đo dưới mặt đất cần viewBox cao hơn `ground+40`.
+- 2026-10-07 · Hình động SMIL cho bài ném: dựng quỹ đạo từ công thức (mẫu cách đều t), 2 hình ≈ +7 KB thô; bố cục chữ vẫn phải chụp xem (nhãn dài bị cắt mép trái).
