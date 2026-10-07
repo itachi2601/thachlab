@@ -6,25 +6,44 @@ import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
-/** Dạng có cấu trúc: đề → gợi ý mở dần → (HS chọn) lời giải đầy đủ → làm bài tương tự. Dạng cũ chỉ có body_html. */
+/** Dạng có cấu trúc: đề + mô phỏng → (HS chọn) phân tích đề → (HS chọn) lời giải đầy đủ → làm bài tương tự.
+ *  Bản cũ có `hints_html` (gợi ý theo tầng) vẫn hiển thị như trước. Dạng cũ chỉ có body_html ở dưới. */
 function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }) {
   const hints = q.hints_html ?? [];
   const [shown, setShown] = useState(0);
+  const [analysed, setAnalysed] = useState(false);
   const [solved, setSolved] = useState(false);
+  const hasAnalysis = !!q.analysis_html;
   return (
     <div className="space-y-3">
       <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
-      <p className="text-xs text-slate-400">Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý.</p>
-      {hints.slice(0, shown).map((h, i) => (
-        <div key={i} className="rounded-lg border border-white/10 p-3">
+      <p className="text-xs text-slate-400">
+        {hasAnalysis ? "Tự thử giải trên giấy trước, kẹt thì mở phân tích đề." : "Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý."}
+      </p>
+      {hasAnalysis && analysed && (
+        <div className="rounded-lg border border-white/10 p-3">
           <p className="mb-1 text-xs font-semibold" style={{ color }}>
-            Gợi ý {i + 1}/{hints.length}
+            Phân tích đề
           </p>
-          <ContentHtml html={h} className="block leading-relaxed" />
+          <ContentHtml html={q.analysis_html ?? ""} className="block leading-relaxed" />
         </div>
-      ))}
+      )}
+      {!hasAnalysis &&
+        hints.slice(0, shown).map((h, i) => (
+          <div key={i} className="rounded-lg border border-white/10 p-3">
+            <p className="mb-1 text-xs font-semibold" style={{ color }}>
+              Gợi ý {i + 1}/{hints.length}
+            </p>
+            <ContentHtml html={h} className="block leading-relaxed" />
+          </div>
+        ))}
       <div className="flex flex-wrap gap-2">
-        {shown < hints.length && (
+        {hasAnalysis && !analysed && (
+          <button type="button" className="lesson-btn-ghost" onClick={() => setAnalysed(true)}>
+            Phân tích đề
+          </button>
+        )}
+        {!hasAnalysis && shown < hints.length && (
           <button type="button" className="lesson-btn-ghost" onClick={() => setShown((n) => n + 1)}>
             Gợi ý {shown + 1}/{hints.length}
           </button>

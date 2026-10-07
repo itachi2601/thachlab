@@ -37,7 +37,7 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   label: d.label,
   body_html: composeBody(d),
   problem_html: d.problem_html,
-  hints_html: d.hints_html,
+  analysis_html: d.analysis_html,
   solution_html: d.solution_html,
   topic: d.topic,
   topic_id: topics?.find((t) => t.name.trim() === d.topic.trim())?.id,

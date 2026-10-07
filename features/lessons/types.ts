@@ -111,7 +111,9 @@ export interface LessonWorkedQuestion {
   body_html: string;
   /** Dạng bài tập mẫu có cấu trúc (skill soan-bai-tap-mau): đề + gợi ý từng bước + lời giải + nhãn tìm bài tương tự. */
   problem_html?: string;
-  /** Gợi ý theo tầng, mở lần lượt: kiến thức & điều kiện áp dụng → dữ kiện/hướng giải → công thức. */
+  /** Phân tích đề (bảng Câu trong đề | Dữ liệu | Kiến thức liên quan, như bài toán mẫu trong lý thuyết) — mở bằng một nút, trước lời giải. */
+  analysis_html?: string;
+  /** Cách cũ: gợi ý theo tầng mở lần lượt. Dạng có `analysis_html` không dùng. */
   hints_html?: string[];
   solution_html?: string;
   /** Tên YCCĐ (khớp question_topics.name) và Dạng (question_bank.form) để tìm bài tương tự trong ngân hàng. */

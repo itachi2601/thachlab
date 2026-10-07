@@ -22,14 +22,13 @@ export interface Dang {
   topic_id?: number;
   form?: string;
   problem_html: string;
-  hints_html: string[];
+  analysis_html: string;
   solution_html: string;
 }
 
 /** Gộp thành body_html để mọi nơi cũ (trang tĩnh, importer, accordion) vẫn đọc được. */
 export function composeBody(d: Dang): string {
-  const hints = d.hints_html.map((h, i) => `<p><strong>Gợi ý ${i + 1}.</strong></p>${h}`).join("\n");
-  return `${d.problem_html}\n<details><summary>Gợi ý và lời giải</summary>\n${hints}\n${d.solution_html}\n</details>`;
+  return `${d.problem_html}\n<details><summary>Phân tích đề và lời giải</summary>\n${d.analysis_html}\n${d.solution_html}\n</details>`;
 }
 
 export function validate(data: any, topics: Topic[] | null): { errors: string[]; warnings: string[] } {
@@ -43,15 +42,14 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
     const at = `dạng ${i + 1}`;
     for (const k of ["label", "topic", "problem_html", "solution_html"] as const)
       if (typeof d[k] !== "string" || !d[k].trim()) errors.push(`${at}: thiếu ${k}`);
-    if (!Array.isArray(d.hints_html) || d.hints_html.length !== 3 || d.hints_html.some((h) => !String(h).trim()))
-      errors.push(`${at}: cần đúng 3 gợi ý (kiến thức+điều kiện → dữ kiện/hướng → công thức)`);
-    if (!/<svg/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có hình`);
-    (d.hints_html ?? []).forEach((h, j) => { if (!/<svg/.test(String(h))) errors.push(`${at}: gợi ý ${j + 1} chưa có hình (mỗi gợi ý = hình + lời)`); });
-    const all = [d.problem_html, d.solution_html, ...(d.hints_html ?? [])].join("\n");
+    if (typeof d.analysis_html !== "string" || !/tl-table--data/.test(d.analysis_html))
+      errors.push(`${at}: thiếu analysis_html (bảng Câu trong đề | Dữ liệu | Kiến thức liên quan, class tl-table--data)`);
+    else if (!/⚠/.test(d.analysis_html)) errors.push(`${at}: bảng phân tích chưa có hàng ⚠ điều kiện áp dụng (AI-TUTOR 9.1)`);
+    if (!/<svg[\s\S]*<animate/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có mô phỏng chuyển động ngay dưới đề`);
+    const all = [d.problem_html, d.solution_html, d.analysis_html].join("\n");
     if (!dollarsBalanced(all)) errors.push(`${at}: số dấu $ lẻ`);
     if (/[<>]/.test((all.match(/\$[^$]*\$/g) ?? []).join(""))) errors.push(`${at}: công thức có < hoặc > — viết \\lt / \\gt`);
     if (ROLE_THAY.test(all)) errors.push(`${at}: có vai "thầy/cô" trong nội dung bài`);
-    if (!/điều kiện/i.test(d.hints_html?.[0] ?? "")) warnings.push(`${at}: gợi ý 1 chưa nhắc "điều kiện áp dụng" (quy tắc AI-TUTOR 9.1)`);
     if (topics) {
       const hit = topics.find((t) => t.name.trim() === d.topic?.trim());
       if (!hit) errors.push(`${at}: topic "${d.topic}" không có trong question-topics.json`);

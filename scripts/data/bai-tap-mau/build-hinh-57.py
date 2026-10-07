@@ -29,6 +29,12 @@ def live(p, pts, vx_px, vy_px, hold, sec_per_interval):
     out += f'<line stroke="{ORG}" stroke-width="3" marker-end="url(#{p}-o)">{smil("x1", X, dur)}{smil("y1", Y, dur)}{smil("x2", X, dur)}{smil("y2", [y + v for y, v in zip(Y, VY)], dur)}</line>'
     return out
 
+def ball(pts, hold, sec_per_interval):
+    """Mô phỏng hiện tượng: quả cầu chạy dọc quỹ đạo TÍNH THẬT (mẫu cách đều thời gian). hold = số mẫu dừng ở cuối trước khi lặp."""
+    n = len(pts); idx = list(range(n)) + [n - 1] * hold; dur = sec_per_interval * (len(idx) - 1)
+    return (f'<circle r="5.5" fill="{GRN}" stroke="currentColor" stroke-width="1.5">'
+            f'{smil("cx", [pts[i][0] for i in idx], dur)}{smil("cy", [pts[i][1] for i in idx], dur)}</circle>')
+
 # ───────────── Dạng 1: máy bay thả gói, h=490, v0=60 ─────────────
 def d1(k):
     O = (104, 58); g = ngang_geom(490, 60, O, 270, 140); p = f"d1{k}"
@@ -40,7 +46,8 @@ def d1(k):
         b += dim(p, "o", O[0] - 60, O[1], O[0] - 60, g["gy"], "h = 490 m", O[0] - 52, (O[1] + g["gy"]) / 2 + 4)
         b += dim(p, "b", O[0], g["gy"] + 20, g["land"][0], g["gy"] + 20, "L = ?", (O[0] + g["land"][0]) / 2 - 18, g["gy"] + 38)
         b += lbl(O[0] + 70, O[1] + 70, "t = ?", ORG, 13, "start", "700")
-        return fig("d1-0", VB, "Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất", b, "Đề: gói hàng thả từ máy bay. " + NOTE)
+        b += ball(g["pts"], 8, 10 / 40)
+        return fig("d1-0", VB, "Máy bay bay ngang ở độ cao 490 m thả gói hàng, gói rơi theo nhánh parabol xuống đất", b, "Mô phỏng: gói hàng rơi (đúng thời gian thật, 10 s). Quỹ đạo tính theo công thức.")
     if k == 1:
         for u in (10, 20, 30):
             b += dot(*g["pts"][u], 3.5, GRN)
@@ -83,7 +90,8 @@ def d2(k):
         b += arrow(p, "r", O[0], O[1], O[0] + 58, O[1], 3) + lbl(O[0] + 12, O[1] - 8, "v₀ = 30 m/s", RED, 13, "start", "700")
         b += dim(p, "o", O[0] + 10, O[1] + 4, O[0] + 10, g["gy"], "h = 78,4 m", O[0] + 18, (O[1] + g["gy"]) / 2 + 4)
         b += arrow(p, "r", *tan, lx, ly - 2, 3) + lbl(lx - 8, ly - 46, "v = ?  α = ?", RED, 13, "end", "700")
-        return fig("d2-0", VB, "Hòn đá ném ngang từ mép vách đá cao 78,4 m, cần tìm vận tốc và góc lúc chạm đất", b, "Đề: ném ngang từ vách đá. " + NOTE)
+        b += ball(g["pts"], 8, 4 / 40)
+        return fig("d2-0", VB, "Hòn đá ném ngang từ mép vách đá cao 78,4 m, cần tìm vận tốc và góc lúc chạm đất", b, "Mô phỏng: hòn đá ném ngang (đúng thời gian thật, 4 s). Quỹ đạo tính theo công thức.")
     if k == 1:
         b += arrow(p, "r", *tan, lx, ly - 2, 3) + inset(True)
         b += lbl(210, 232, "Vận tốc lúc chạm đất = vₓ ⊥ v_y", "currentColor", 12, "start", "400")
@@ -112,7 +120,8 @@ def d3(k):
         b += dim(p, "o", O[0] + 12, O[1] + 4, O[0] + 12, gy, "", 0, 0) + lbl(O[0] + 18, (O[1] + gy) / 2 - 4, "h =", ORG, 13, "start", "700") + lbl(O[0] + 18, (O[1] + gy) / 2 + 12, "19,6 m", ORG, 12, "start", "700")
         b += dim(p, "b", O[0], gy + 20, g["land"][0], gy + 20, "L = 15 m", (O[0] + g["land"][0]) / 2 - 24, gy + 38)
         b += lbl(250, 60, "Ném từ mép mái nhà", "currentColor", 13, "start", "400") + lbl(250, 80, "Cây cách chân nhà 10 m", "currentColor", 13, "start", "400")
-        return fig("d3-0", VB3, "Hòn đá ném ngang từ mép mái nhà cao 19,6 m, rơi cách chân nhà 15 m, trên đường bay có một cây cao 10 m cách nhà 10 m", b, "Đề: biết tầm xa, tìm vận tốc ném, xét vật cản. " + NOTE)
+        b += ball(g["pts"], 8, 2 * 2 / 40)
+        return fig("d3-0", VB3, "Hòn đá ném ngang từ mép mái nhà cao 19,6 m, rơi cách chân nhà 15 m, trên đường bay có một cây cao 10 m cách nhà 10 m", b, "Mô phỏng: hòn đá ném từ mái nhà (chạy chậm 2 lần). Quỹ đạo tính theo công thức.")
     if k == 1:
         b += dim(p, "o", O[0] + 12, O[1] + 4, O[0] + 12, gy, "h → t", O[0] + 18, (O[1] + gy) / 2 + 4)
         b += dim(p, "b", O[0], gy + 20, g["land"][0], gy + 20, "L → v₀ = L / t", (O[0] + g["land"][0]) / 2 - 40, gy + 38)
@@ -140,7 +149,8 @@ def d4(k):
         b += dim(p, "o", top[0], top[1] + 2, top[0], 112, "H = ?", top[0] + 6, (top[1] + 112) / 2 + 6)
         b += dim(p, "b", O[0], 134, land[0], 134, "L = ?", (O[0] + land[0]) / 2 - 18, 152)
         b += lbl(250, 30, "t bay = ?", ORG, 13, "start", "700")
-        return fig("d4-0", vb, "Vận động viên bật nhảy từ mặt đất với vận tốc 9,8 m/s hợp phương ngang 30 độ, cần tìm tầm cao, thời gian bay và tầm xa", b, "Đề: ném xiên từ mặt đất. " + NOTE)
+        b += ball(g["pts"], 20, 4 / 60)
+        return fig("d4-0", vb, "Vận động viên bật nhảy từ mặt đất với vận tốc 9,8 m/s hợp phương ngang 30 độ, cần tìm tầm cao, thời gian bay và tầm xa", b, "Mô phỏng: ném xiên từ mặt đất (chạy chậm 4 lần). Quỹ đạo tính theo công thức.")
     if k == 1:
         ts = [i / 60 for i in range(61)]
         vyv = [g["vy"] - G * t * g["T"] for t in ts]            # m/s, dương = lên
@@ -172,7 +182,8 @@ def d5(k):
         b += lbl(20, O[1] + 40, "h =", ORG, 13, "start", "700") + lbl(20, O[1] + 58, "22,05 m", ORG, 12, "start", "700")
         b += dim(p, "b", O[0], gy + 20, land[0], gy + 20, "L = ?", (O[0] + land[0]) / 2 - 18, gy + 38)
         b += lbl(236, 24, "H_max (so với đất) = ?", ORG, 12, "start", "700") + lbl(300, 100, "t bay = ?", ORG, 13, "start", "700")
-        return fig("d5-0", vb, "Hòn đá ném lên từ mép vách cao 22,05 m với vận tốc 14,7 m/s hợp phương ngang 30 độ rồi rơi xuống chân vách", b, "Đề: ném xiên từ độ cao. " + NOTE)
+        b += ball(g["pts"], 10, 1.5 * 3 / 60)
+        return fig("d5-0", vb, "Hòn đá ném lên từ mép vách cao 22,05 m với vận tốc 14,7 m/s hợp phương ngang 30 độ rồi rơi xuống chân vách", b, "Mô phỏng: ném xiên từ mép vách (chạy chậm 1,5 lần). Quỹ đạo tính theo công thức.")
     if k == 1:
         b += seg(O[0], O[1], A[0] + 40, O[1], "currentColor", 1.4, "5 4", .7) + dot(*A, 5, ORG)
         b += lbl(A[0] + 8, O[1] - 8, "A: cùng độ cao với O", ORG, 12, "start", "700")
@@ -204,7 +215,8 @@ def d6(k):
         b += arrow(p, "r", *O, O[0] + L * math.cos(ang), O[1] - L * math.sin(ang), 3) + lbl(O[0] + L * math.cos(ang) + 6, O[1] - L * math.sin(ang), "v₀ = 14 m/s", RED, 13, "start", "700")
         b += arc(*O, 30, 0, 45, RED) + lbl(O[0] + 34, O[1] - 8, "α = ?", RED, 13, "start", "700")
         b += flag + dim(p, "b", O[0], O[1] + 24, tgt, O[1] + 24, "L = 15 m", (O[0] + tgt) / 2 - 24, O[1] + 42)
-        return fig("d6-0", "0 0 420 262", "Pháo ở mặt đất bắn đạn với tốc độ 14 m/s, cần chọn góc nghiêng để đạn rơi trúng cờ cách 15 m", b, "Đề: tìm góc ném để rơi đúng tầm xa 15 m. " + NOTE)
+        b += poly(g45["pts"], ORG, 2, "6 4", .9) + ball(g45["pts"], 10, 2 * 2.02 / 60)
+        return fig("d6-0", "0 0 420 262", "Pháo ở mặt đất bắn đạn với tốc độ 14 m/s, cần chọn góc nghiêng để đạn rơi trúng cờ cách 15 m", b, "Mô phỏng: một lần bắn thử ở góc 45° rơi quá cờ; cần chỉnh góc để rơi đúng 15 m (chạy chậm 2 lần).")
     b += poly(g1["pts"], GRN, 2.4) + poly(g2["pts"], "#a78bfa", 2.4) + flag
     b += dot(*g1["land"], 4.5, GRN) + dot(*g2["land"], 4.5, "#a78bfa")
     b += arc(*O, 34, 0, a1, GRN) + arc(*O, 46, 0, a2, "#a78bfa")
@@ -222,24 +234,62 @@ def d6(k):
 
 BUILD = [d1, d2, d3, d4, d5, d6]
 
+def tbl(rows):
+    body = "".join(f"<tr><td>{c}</td><td>{d_}</td><td>{k_}</td></tr>" for c, d_, k_ in rows)
+    return ('<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p>'
+            '<div class="table-scroll"><table class="tl-table tl-table--data"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody>'
+            + body + '</tbody></table></div>')
+
+DK_NGANG = "⚠ Chỉ có trọng lực: $a_x=0$; $a_y=g$ (Ox đều, Oy rơi tự do)"
+ANALYSIS = [
+ [("\"bay ngang … thả một gói hàng\"", "$\\vec v_0$ nằm ngang, $v_0=60$ m/s", "Ném ngang: tách hai phương độc lập"),
+  ("\"độ cao $h=490$ m\"", "$h=490$ m", "Chạm đất khi $y=h$: $h=\\dfrac{1}{2}gt^2$"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", DK_NGANG),
+  ("\"sau bao lâu chạm đất?\"", "Cần $t$", "$t$ chỉ phụ thuộc $h$ và $g$, không phụ thuộc $v_0$"),
+  ("\"còn cách … bao xa theo phương ngang\"", "Cần tầm xa $L$", "$L=v_0t$ (Ox thẳng đều)")],
+ [("\"ném ngang … $v_0=30$ m/s\"", "$v_0=30$ m/s; $v_x=v_0$", "Ném ngang: $v_x$ không đổi"),
+  ("\"vách đá cao $h=78{,}4$ m\"", "$h=78{,}4$ m", "Chạm đất khi $y=h$ → tìm $t$"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", DK_NGANG),
+  ("\"tại lúc chạm đất\"", "Thời điểm $t$ vừa tìm", "$v_y=gt$ tại đúng thời điểm đó"),
+  ("\"độ lớn vận tốc\"", "Cần $v$", "$v_x\\perp v_y$ nên $v=\\sqrt{v_x^2+v_y^2}$"),
+  ("\"góc hợp bởi vận tốc và phương ngang\"", "Cần $\\alpha$", "$\\tan\\alpha=\\dfrac{v_y}{v_x}$")],
+ [("\"mép mái … cao $h=19{,}6$ m\"", "$h=19{,}6$ m", "Chạm đất khi $y=h$ → tìm $t$"),
+  ("\"ném ngang\"", "$v_0$ chưa biết", "Ném ngang: $x=v_0t$"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", DK_NGANG),
+  ("\"chạm đất cách chân nhà 15 m\"", "$L=15$ m", "$L=v_0t$ → $v_0=L/t$ ($t$ nối hai phương)"),
+  ("\"cách chân nhà 10 m có một cây cao 10 m\"", "$x=10$ m; ngọn cây cao $10$ m", "Tới $x$ lúc $t_1=x/v_0$; đã rơi $y_1=\\dfrac{1}{2}gt_1^2$"),
+  ("\"có bay qua ngọn cây không?\"", "So sánh $h-y_1$ với $10$ m", "Còn cao hơn $10$ m thì bay qua")],
+ [("\"bật khỏi mặt đất, $v_0=9{,}8$ m/s, góc $30^\\circ$\"", "$v_0$, $\\alpha=30^\\circ$", "Ném xiên: $v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$ (hướng lên)"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", "⚠ Ox thẳng đều; Oy có gia tốc $-g$ (lên là dương)"),
+  ("\"điểm tiếp đất cùng độ cao điểm bật\"", "Cùng độ cao", "⚠ Điều kiện để lên và xuống đối xứng: $t=2t_1$"),
+  ("\"các thành phần $v_{0x}$ và $v_{0y}$\"", "Cần $v_{0x}$, $v_{0y}$", "Hai thành phần của $\\vec v_0$"),
+  ("\"lên tới điểm cao nhất, tầm cao $H$\"", "Cần $t_1$, $H$", "Tại đỉnh $v_y=0$: $t_1=\\dfrac{v_{0y}}{g}$; $H=\\dfrac{v_{0y}^2}{2g}$"),
+  ("\"thời gian bay và tầm xa $L$\"", "Cần $t$, $L$", "$t=2t_1$; $L=v_{0x}t$")],
+ [("\"vách đá thẳng đứng cao $h=22{,}05$ m\"", "$h=22{,}05$ m", "Điểm ném cao hơn mặt đất $h$"),
+  ("\"ném lên $v_0=14{,}7$ m/s, góc $30^\\circ$\"", "$v_0$, $\\alpha=30^\\circ$", "$v_{0x}=v_0\\cos\\alpha$; $v_{0y}=v_0\\sin\\alpha$"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", "⚠ Ox đều; Oy gia tốc $-g$"),
+  ("\"chạm đất\" (thấp hơn điểm ném)", "Lúc đó $y=-h$", "⚠ Không dùng công thức cùng độ cao; lập $y(t)$ rồi giải: $-h=v_{0y}t-\\dfrac{1}{2}gt^2$"),
+  ("\"thời gian từ lúc ném đến lúc chạm đất\"", "Cần $t$", "Nghiệm bậc hai: nhận nghiệm dương"),
+  ("\"tầm xa tính từ chân vách\"", "Cần $L$", "$L=v_{0x}t$"),
+  ("\"độ cao lớn nhất so với mặt đất\"", "Cần $H_{max}$", "Cao hơn điểm ném $\\dfrac{v_{0y}^2}{2g}$, rồi cộng $h$"),
+  ("\"độ lớn vận tốc khi chạm đất\"", "Cần $v$", "$v=\\sqrt{v_x^2+v_y^2}$ với $v_y=v_{0y}-gt$")],
+ [("\"bắn đạn lên, $v_0=14$ m/s, nòng nghiêng góc $\\alpha$\"", "$v_0=14$ m/s; $\\alpha$ chưa biết", "Ném xiên: $L$ phụ thuộc $v_0$ và $\\alpha$"),
+  ("\"rơi xuống mặt phẳng ngang cùng độ cao nòng pháo\"", "Cùng độ cao", "⚠ Điều kiện dùng $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$"),
+  ("\"bỏ qua lực cản\"", "Chỉ có trọng lực", "⚠ Ox đều; Oy gia tốc $-g$"),
+  ("\"đạn rơi cách pháo 15 m\"", "$L=15$ m", "$\\sin2\\alpha=\\dfrac{gL}{v_0^2}$"),
+  ("\"góc nghiêng bao nhiêu\"", "Cần $\\alpha$", "$\\sin2\\alpha$ cho hai góc $2\\alpha$ → hai góc phụ nhau ($\\alpha$ và $90^\\circ-\\alpha$)"),
+  ("\"thời gian bay trong từng trường hợp\"", "Cần $t$ cho mỗi góc", "$t=\\dfrac{2v_0\\sin\\alpha}{g}$"),
+  ("\"tầm xa lớn nhất\"", "Cần $L_{max}$", "$\\sin2\\alpha\\le1$: $L_{max}=\\dfrac{v_0^2}{g}$ khi $\\alpha=45^\\circ$")],
+]
+
 def strip(html):
     return re.sub(r'<figure class="fig"[^>]*data-bt="[^"]*".*?</figure>', "", html, flags=re.S)
 
 d = json.load(open(J))
-preview = []
 for i, fn in enumerate(BUILD):
     q = d["dang_bai"][i]
-    q["problem_html"] = fn(0) + strip(q["problem_html"])
-    for h in range(3):
-        q["hints_html"][h] = fn(h + 1) + strip(q["hints_html"][h])
-    preview += [q["label"]] + [fn(k) for k in range(4)]
+    q["problem_html"] = strip(q["problem_html"]) + fn(0)          # mô phỏng hiện tượng nằm DƯỚI đề
+    q["analysis_html"] = fn(2) + tbl(ANALYSIS[i])                  # thay gợi ý: hình dữ kiện + bảng phân tích đề (như bài mẫu trong lý thuyết)
+    q.pop("hints_html", None)
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
-if "--preview" in sys.argv:
-    out = sys.argv[sys.argv.index("--preview") + 1]
-    css = "body{background:#0f172a;color:#e2e8f0;font-family:sans-serif;padding:12px}figure.fig{max-width:420px;margin:8px auto}figure.fig svg{width:100%;height:auto;display:block}figcaption{font-size:12px;color:#94a3b8;text-align:center}h4{margin:20px 0 4px}.g{display:grid;grid-template-columns:repeat(2,420px);gap:8px}"
-    html = "<html><meta charset=utf-8><style>" + css + "</style><body>"
-    for x in preview:
-        html += (f"<h4>{x}</h4><div class=g>" if not x.startswith("<figure") else x)
-        if not x.startswith("<figure"): continue
-    open(out, "w").write(html)
 print("ok", len(d["dang_bai"]))
