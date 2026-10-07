@@ -1,0 +1,329 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<ul>
+<li>Phân biệt <strong>máy vạn năng – NC – CNC</strong> và nêu được cấu tạo hai phần của máy CNC.</li>
+<li>Đặt đúng <strong>hệ trục X, Y, Z</strong> (tiện và phay) và đổi tọa độ cực sang tọa độ Đề-các.</li>
+<li>Gọi tên và phân biệt <strong>5 điểm chuẩn M, W, R, N/T, P</strong>.</li>
+<li>Nêu được việc phải làm khi nhận máy, cuối ca và cuối tuần.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở tài liệu. Đọc khoảng 16 phút.</p>
+</div>
+
+<h3>I. Mở bài: 50 chi tiết giống hệt nhau</h3>
+
+<p>Một đơn hàng cần <strong>50 trục bậc</strong> giống hệt nhau, dung sai vài phần trăm milimét. Trên máy tiện vạn năng, người thợ phải tự quay tay quay, đọc thước, nhớ vị trí từng nhát cắt; đến chi tiết thứ 30 thì mắt mỏi, tay lệch, số đo bắt đầu xê dịch. Trên máy CNC, người thợ nạp chương trình một lần rồi nhấn chạy; chi tiết thứ 50 ra y hệt chi tiết thứ nhất (Hình 1).</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 256" role="img" aria-label="Sơ đồ khối máy CNC"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="20" y="10" width="170" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="105" y="38" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Chương trình</text><rect x="230" y="10" width="170" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="315" y="38" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Phôi</text><rect x="20" y="100" width="170" height="54" rx="8" fill="none" stroke="#38bdf8" stroke-width="2.5"/><text x="105" y="132" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">ĐIỀU KHIỂN</text><rect x="230" y="100" width="170" height="54" rx="8" fill="none" stroke="#fb923c" stroke-width="2.5"/><text x="315" y="132" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">CHẤP HÀNH</text><rect x="230" y="200" width="170" height="44" rx="8" fill="none" stroke="#34d399" stroke-width="2.5"/><text x="315" y="228" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">Chi tiết</text><line x1="105" y1="54" x2="105" y2="98" stroke="currentColor" stroke-width="3" marker-end="url(#a)"/><line x1="315" y1="54" x2="315" y2="98" stroke="currentColor" stroke-width="3" marker-end="url(#a)"/><line x1="315" y1="154" x2="315" y2="198" stroke="#34d399" stroke-width="3" marker-end="url(#g)"/><line x1="192" y1="115" x2="228" y2="115" stroke="#38bdf8" stroke-width="3" marker-end="url(#b)"/><line x1="228" y1="140" x2="192" y2="140" stroke="#fb923c" stroke-width="3" marker-end="url(#o)"/><text x="105" y="182" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">lệnh →</text><text x="105" y="204" fill="#fb923c" font-size="15" font-weight="700" text-anchor="middle">← phản hồi</text></svg><figcaption>Hình 1. Máy CNC: phần điều khiển ra lệnh, phần chấp hành thực hiện và phản hồi vị trí, lỗi. Vào: phôi + chương trình; ra: chi tiết.</figcaption></figure>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Điều gì làm máy CNC cho ra 50 chi tiết đồng đều, còn máy vạn năng thì khó?</p>
+<div class="tl-quiz">
+<input type="radio" name="cnc1-q1" id="cnc1-q1a"><label for="cnc1-q1a" class="tl-opt tl-no">A. Động cơ của máy CNC mạnh hơn nên cắt sâu hơn mỗi nhát</label>
+<input type="radio" name="cnc1-q1" id="cnc1-q1b"><label for="cnc1-q1b" class="tl-opt tl-ok">B. Mọi chuyển động do chương trình ra lệnh, chạy lại là lặp lại đúng như cũ</label>
+<input type="radio" name="cnc1-q1" id="cnc1-q1c"><label for="cnc1-q1c" class="tl-opt tl-no">C. Dao của máy CNC làm bằng vật liệu cứng hơn nên không mòn</label>
+<input type="radio" name="cnc1-q1" id="cnc1-q1d"><label for="cnc1-q1d" class="tl-opt tl-no">D. Máy CNC tự đo chi tiết bằng mắt rồi quyết định cắt thêm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Máy CNC lặp lại <strong>cùng một chương trình</strong> nên sai khác giữa các chi tiết rất nhỏ. Cả bài hôm nay xoay quanh câu hỏi: chương trình ấy ra lệnh cho cái gì, và tính từ đâu.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Sức mạnh động cơ hay độ cứng dao ảnh hưởng tốc độ và tuổi thọ dao, không quyết định độ đồng đều. Máy CNC cơ bản cũng không tự "nhìn" chi tiết. Gợi ý: cái gì được <em>lặp lại y hệt</em> mỗi lần chạy?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Từ máy vạn năng đến máy CNC</h4>
+
+<p><strong>🔑 Tay → Chương trình → Máy tính</strong></p>
+
+<ul>
+<li><strong>Máy vạn năng:</strong> người vận hành trực tiếp điều khiển chuyển động.</li>
+<li><strong>Máy NC</strong> (Numerical Control): chạy theo chương trình điều khiển số đã thiết lập.</li>
+<li><strong>Máy CNC</strong> (Computer Numerical Control): thêm máy tính và bộ xử lý để <strong>lưu trữ và hiệu chỉnh chương trình</strong> linh hoạt, kể cả điều khiển theo đường biên.</li>
+</ul>
+
+<p>Ví dụ: sửa một số liệu sai trong chương trình, trên máy CNC chỉ cần gõ lại ngay tại bàn phím máy rồi chạy tiếp.</p>
+
+<h4>2. Cấu tạo chung: hai phần trao đổi tín hiệu</h4>
+
+<p><strong>🔑 Điều khiển ⇄ Chấp hành · Vào: phôi + chương trình · Ra: chi tiết</strong></p>
+
+<ul>
+<li><strong>Phần điều khiển:</strong> chương trình, bàn phím, màn hình, cơ cấu điều khiển tay hoặc tự động.</li>
+<li><strong>Phần chấp hành:</strong> máy cắt kim loại và cơ cấu tự động hóa (tay máy, ổ chứa dao, cấp phôi, hút phoi).</li>
+<li>Hai phần liên tục trao đổi: lệnh chuyển động, vận tốc, vị trí và <strong>trạng thái lỗi</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Quan sát tại xưởng: một dòng chương trình, một chuyển động</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> được giảng viên cho phép, bật chế độ chạy <em>từng khối lệnh</em> khi máy chạy không tải (không phôi). Mỗi lần nhấn chạy là thực hiện một dòng chương trình.</li>
+<li><strong>Quan sát:</strong> mỗi lần nhấn, bàn dao dịch đúng một đoạn rồi dừng; số trên màn hình đổi theo.</li>
+<li><strong>Rút ra:</strong> mỗi dòng lệnh của phần điều khiển thành một chuyển động của phần chấp hành; vị trí thật được báo ngược về màn hình.</li>
+</ol>
+</div>
+
+<p>Em thử tự trả lời trước khi bấm:</p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc1-c2" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc1-c2" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Khi máy đang cắt, bộ phận đo báo bàn dao trượt vượt giới hạn hành trình. Tín hiệu lỗi này đi theo chiều nào?</p>
+<input type="radio" name="cnc1-q2" id="cnc1-q2a"><label for="cnc1-q2a" class="tl-opt tl-no">A. Từ phần điều khiển sang phần chấp hành</label>
+<input type="radio" name="cnc1-q2" id="cnc1-q2b"><label for="cnc1-q2b" class="tl-opt tl-no">B. Từ phôi sang chương trình</label>
+<input type="radio" name="cnc1-q2" id="cnc1-q2c"><label for="cnc1-q2c" class="tl-opt tl-ok">C. Từ phần chấp hành về phần điều khiển</label>
+<input type="radio" name="cnc1-q2" id="cnc1-q2d"><label for="cnc1-q2d" class="tl-opt tl-no">D. Không đi đâu, người thợ tự nhìn thấy rồi ngắt máy</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vị trí và lỗi được <strong>phản hồi ngược</strong> từ chấp hành về điều khiển, nhờ đó máy tự dừng hoặc báo cảnh báo.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chiều lệnh (điều khiển → chấp hành) và chiều phản hồi là hai chiều khác nhau; lỗi hành trình sinh ra ở nơi nào, rồi cần báo cho ai? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h4>3. Bộ phận chính của máy tiện và máy phay</h4>
+
+<p><strong>🔑 Tiện: trục chính + mâm dao + bàn dao · Phay: trục chính + ổ dao + bàn máy</strong></p>
+
+<ul>
+<li><strong>Máy tiện CNC:</strong> phôi quay, dao tịnh tiến để tạo hình tròn xoay.</li>
+<li><strong>Máy phay CNC:</strong> dao quay, bàn máy mang phôi di chuyển để tạo mặt phẳng, rãnh, lỗ, biên dạng.</li>
+</ul>
+
+<details class="tl-details">
+<summary>📋 Xem thêm: danh sách bộ phận đầy đủ</summary>
+<p><strong>Máy tiện:</strong> băng máy, trục chính, mâm dao, động cơ bàn dao ngang, động cơ xoay dao, động cơ bàn dao dọc, bộ truyền trục chính, bàn dao ngang, ụ động.</p>
+<p><strong>Máy phay:</strong> trục chính, ổ tích dao, cơ cấu thay dao, bảng điều khiển, bàn máy, động cơ dẫn động, đế máy.</p>
+</details>
+
+<h4>4. Đặc tính kỹ thuật của máy CNC</h4>
+
+<p><strong>🔑 Tự động · Linh hoạt · Tập trung nguyên công · Chính xác · Biên dạng phức tạp</strong></p>
+
+<ul>
+<li><strong>Tự động hóa cao:</strong> ít phụ thuộc thao tác tay của người vận hành.</li>
+<li><strong>Linh hoạt:</strong> đổi sản phẩm bằng cách đổi chương trình, không đổi máy.</li>
+<li><strong>Tập trung nguyên công:</strong> nhiều bước gia công trong một lần gá đặt.</li>
+<li><strong>Chính xác, bề mặt đẹp;</strong> gia công được biên dạng phức tạp.</li>
+<li>Hiệu quả kinh tế - kỹ thuật khi tổ chức sản xuất phù hợp (loạt vừa và nhỏ đến loạt lớn, không phải mọi chi tiết đơn lẻ).</li>
+</ul>
+
+<h4>5. Hệ trục tọa độ</h4>
+
+<p><strong>🔑 X, Y, Z · Bàn tay phải · Z trùng trục chính · Dụng cụ chuyển động tương đối</strong></p>
+
+<ul>
+<li>Vị trí mô tả bằng tọa độ <strong>Đề-các X, Y, Z</strong>; chiều dương theo <strong>quy tắc bàn tay phải</strong>.</li>
+<li>Trục <strong>Z trùng trục chính</strong> của máy.</li>
+<li><strong>Máy tiện:</strong> +Z hướng ra xa mâm cặp; X theo phương đường kính; máy tiện cơ bản <strong>không có trục Y</strong>.</li>
+<li><strong>Máy phay:</strong> X, Y nằm trên mặt bàn máy; Z theo trục chính (Hình 2).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 320" role="img" aria-label="Hệ trục tọa độ máy tiện và máy phay"><defs><marker id="x" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="y" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker><marker id="z" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker></defs><text x="10" y="22" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">MÁY TIỆN</text><rect x="30" y="50" width="26" height="90" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="43" y="42" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Mâm cặp</text><rect x="56" y="82" width="190" height="26" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="20" y1="95" x2="330" y2="95" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 5"/><text x="150" y="130" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Phôi</text><line x1="256" y1="95" x2="340" y2="95" stroke="#38bdf8" stroke-width="3" marker-end="url(#z)"/><text x="345" y="100" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start">+Z</text><line x1="300" y1="95" x2="300" y2="38" stroke="#f87171" stroke-width="3" marker-end="url(#x)"/><text x="310" y="52" fill="#f87171" font-size="16" font-weight="700" text-anchor="start">+X</text><line x1="180" y1="60" x2="180" y2="82" stroke="#34d399" stroke-width="4"/><text x="190" y="66" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">Dao</text><text x="360" y="125" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">(Y: không có)</text><text x="10" y="182" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">MÁY PHAY</text><rect x="60" y="272" width="220" height="22" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="170" y="310" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Bàn máy</text><rect x="130" y="246" width="100" height="26" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="180" y1="196" x2="180" y2="246" stroke="#34d399" stroke-width="8"/><text x="192" y="215" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">Dao</text><line x1="330" y1="280" x2="330" y2="205" stroke="#38bdf8" stroke-width="3" marker-end="url(#z)"/><text x="340" y="212" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start">+Z</text><line x1="330" y1="280" x2="400" y2="280" stroke="#f87171" stroke-width="3" marker-end="url(#x)"/><text x="372" y="302" fill="#f87171" font-size="16" font-weight="700" text-anchor="start">+X</text><line x1="330" y1="280" x2="372" y2="242" stroke="#34d399" stroke-width="3" marker-end="url(#y)"/><text x="380" y="244" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">+Y</text></svg><figcaption>Hình 2. Máy tiện: Z dọc trục chính (+Z xa mâm cặp), X theo đường kính, không có Y. Máy phay: X, Y trên mặt bàn, Z theo trục chính.</figcaption></figure>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Làm ngay: bàn tay phải</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> xòe bàn tay phải, ba ngón <em>cái – trỏ – giữa</em> vuông góc đôi một. Gán ngón cái là +X, ngón trỏ là +Y.</li>
+<li><strong>Quan sát:</strong> ngón giữa chỉ về hướng nào so với mặt bàn khi lòng bàn tay úp xuống?</li>
+<li><strong>Rút ra:</strong> ngón giữa chính là +Z. Ba trục luôn là một bộ vuông góc, đổi chỗ hai trục thì +Z đảo chiều.</li>
+</ol>
+</div>
+
+<p><strong>Tọa độ cực</strong> (máy CNC hiện đại cho phép): vị trí = <strong>bán kính R + góc</strong>. Thuận tiện cho các lỗ bố trí trên vòng tròn. Đổi sang Đề-các:</p>
+
+$$X = R\cos\theta,\qquad Y = R\sin\theta$$
+
+<div class="tl-quiz">
+<p>Một lỗ có tọa độ cực P (R40; 90°), gốc ở tâm. Tọa độ Đề-các $(X; Y)$ của lỗ là:</p>
+<input type="radio" name="cnc1-q3" id="cnc1-q3a"><label for="cnc1-q3a" class="tl-opt tl-no">A. $(40;\ 0)$</label>
+<input type="radio" name="cnc1-q3" id="cnc1-q3b"><label for="cnc1-q3b" class="tl-opt tl-no">B. $(28{,}3;\ 28{,}3)$</label>
+<input type="radio" name="cnc1-q3" id="cnc1-q3c"><label for="cnc1-q3c" class="tl-opt tl-no">C. $(40;\ 40)$</label>
+<input type="radio" name="cnc1-q3" id="cnc1-q3d"><label for="cnc1-q3d" class="tl-opt tl-ok">D. $(0;\ 40)$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $X = 40\cos 90^\circ = 0$, $Y = 40\sin 90^\circ = 40$: lỗ nằm ngay trên trục Y.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính lại từng thành phần: $\cos 90^\circ$ và $\sin 90^\circ$ bằng bao nhiêu? Góc đo từ trục +X, ngược chiều kim đồng hồ. A hoán đổi X với Y; B là kết quả của góc $45^\circ$; C coi cả hai thành phần bằng R.</p></div>
+</div>
+
+<h4>6. Các điểm chuẩn</h4>
+
+<p><strong>🔑 M máy · W phôi · R tham chiếu · N/T giá dao · P mũi dao</strong></p>
+
+<ul>
+<li><strong>M</strong> (Machine zero): gốc tọa độ máy, nhà sản xuất định, <strong>không đổi</strong>.</li>
+<li><strong>W</strong> (Workpiece zero): gốc tọa độ phôi, <strong>đổi theo cách gá</strong> và yêu cầu lập trình.</li>
+<li><strong>R</strong> (Reference point): điểm tham chiếu cố định, để máy xác lập lại tọa độ.</li>
+<li><strong>N/T</strong>: điểm chuẩn của ổ/cơ cấu gá dao.</li>
+<li><strong>P</strong> (Cutter point): đỉnh mũi dao tạo hình bề mặt, <strong>đổi theo từng dao</strong>.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 244" role="img" aria-label="Các điểm chuẩn trên máy tiện CNC"><defs><marker id="h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><rect x="20" y="70" width="40" height="120" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="40" y="62" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Mâm cặp</text><rect x="60" y="100" width="190" height="60" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="10" y1="130" x2="410" y2="130" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 5"/><rect x="290" y="14" width="120" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="310" cy="39" r="6" fill="#fb923c"/><text x="326" y="45" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">N/T</text><line x1="300" y1="64" x2="232" y2="100" stroke="#34d399" stroke-width="4"/><circle cx="232" cy="100" r="6" fill="#34d399"/><text x="212" y="92" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">P</text><circle cx="60" cy="130" r="6" fill="#38bdf8"/><circle cx="250" cy="130" r="6" fill="#f87171"/><circle cx="395" cy="130" r="6" fill="currentColor"/><line x1="60" y1="130" x2="60" y2="205" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/><text x="60" y="228" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="middle">M</text><line x1="250" y1="130" x2="250" y2="205" stroke="#f87171" stroke-width="2" stroke-dasharray="4 4"/><text x="250" y="228" fill="#f87171" font-size="18" font-weight="700" text-anchor="middle">W</text><line x1="395" y1="130" x2="395" y2="205" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/><text x="395" y="228" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">R</text></svg><figcaption>Hình 3. Máy tiện: M gốc máy (cố định), W gốc phôi (đổi theo gá), R điểm tham chiếu, N/T điểm chuẩn ổ dao, P mũi dao.</figcaption></figure>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Ví dụ: cây bút làm "phôi"</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đặt hai cây bút (hai "phôi") ở hai chỗ khác nhau trên mặt bàn; lấy đầu mỗi cây làm W; mép bàn góc trái làm M.</li>
+<li><strong>Quan sát:</strong> khoảng cách từ M đến W của hai cây khác nhau, còn M thì vẫn là một góc bàn.</li>
+<li><strong>Rút ra:</strong> M gắn với máy nên đứng yên; W gắn với phôi nên đi theo mỗi lần gá.</li>
+</ol>
+</div>
+
+<h4>7. Lắp đặt, bảo quản, bảo dưỡng</h4>
+
+<p><strong>🔑 Nhận máy → Kiểm tra · Cuối ca → Vệ sinh + tra dầu · Cuối tuần → Tổng vệ sinh</strong></p>
+
+<ul>
+<li>Kiểm tra máy và phụ tùng <strong>ngay khi được phân máy</strong>; báo thiếu hỏng lúc nhận, không báo lúc trả.</li>
+<li>Bảo quản vật tư, thiết bị suốt quá trình thực tập.</li>
+<li><strong>Cuối ca:</strong> vệ sinh, tra dầu nhớt. <strong>Cuối tuần:</strong> tổng vệ sinh máy và xưởng.</li>
+</ul>
+
+<h3>III. Ba cái bẫy hay gặp</h3>
+
+<h4>Bẫy 1: "Có chương trình số là CNC"</h4>
+
+<div class="tl-quiz">
+<p>Ở xưởng, thợ phát hiện chương trình chạy dao sai 0,5 mm; họ sửa số ngay trên màn hình máy rồi chạy lại. Việc này làm được vì máy:</p>
+<input type="radio" name="cnc1-q4" id="cnc1-q4a"><label for="cnc1-q4a" class="tl-opt tl-ok">A. Có máy tính và bộ xử lý để lưu và hiệu chỉnh chương trình</label>
+<input type="radio" name="cnc1-q4" id="cnc1-q4b"><label for="cnc1-q4b" class="tl-opt tl-no">B. Là máy vạn năng được lắp thêm tay quay điện</label>
+<input type="radio" name="cnc1-q4" id="cnc1-q4c"><label for="cnc1-q4c" class="tl-opt tl-no">C. Dùng động cơ ba pha thay vì một pha</label>
+<input type="radio" name="cnc1-q4" id="cnc1-q4d"><label for="cnc1-q4d" class="tl-opt tl-no">D. Có ụ động chống tâm phía bên phải</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Máy tính trên máy là điểm làm nên chữ <strong>C</strong> của CNC.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Loại động cơ hay ụ động không liên quan tới việc sửa chương trình; máy vạn năng thì không có chương trình để sửa. Hỏi: chữ <em>C</em> trong CNC là viết tắt của gì?</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Loại máy</th><th>Ai ra lệnh chuyển động?</th></tr></thead>
+<tbody>
+<tr><td>Vạn năng</td><td>Tay người vận hành</td></tr>
+<tr><td>NC</td><td>Chương trình số lập sẵn</td></tr>
+<tr><td>CNC</td><td>Chương trình số + máy tính lưu, sửa ngay trên máy</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 2: Gốc máy và gốc phôi</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc1-c5" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc1-c5" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Hôm qua gá một phôi ngắn, hôm nay gá phôi dài hơn và kẹp ở vị trí khác. Điểm nào phải xác lập lại, điểm nào giữ nguyên?</p>
+<input type="radio" name="cnc1-q5" id="cnc1-q5a"><label for="cnc1-q5a" class="tl-opt tl-no">A. Xác lập lại M, giữ nguyên W</label>
+<input type="radio" name="cnc1-q5" id="cnc1-q5b"><label for="cnc1-q5b" class="tl-opt tl-ok">B. Xác lập lại W, giữ nguyên M</label>
+<input type="radio" name="cnc1-q5" id="cnc1-q5c"><label for="cnc1-q5c" class="tl-opt tl-no">C. Giữ nguyên cả M và W vì cùng một máy</label>
+<input type="radio" name="cnc1-q5" id="cnc1-q5d"><label for="cnc1-q5d" class="tl-opt tl-no">D. Xác lập lại cả M và W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> W gắn với phôi nên đổi theo cách gá; M là của máy nên cố định.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hỏi: điểm nào do nhà sản xuất định, điểm nào do người lập trình chọn theo phôi? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Điểm</th><th>Khi nào thay đổi?</th></tr></thead>
+<tbody>
+<tr><td>M</td><td>Không bao giờ (cố định của máy)</td></tr>
+<tr><td>W</td><td>Mỗi lần gá khác, mỗi bài lập trình khác</td></tr>
+<tr><td>P</td><td>Mỗi lần đổi dao</td></tr>
+</tbody></table></div>
+
+<h4>Bẫy 3: Trục X trên máy tiện</h4>
+
+<div class="tl-quiz">
+<p>Trên máy tiện CNC cơ bản, em muốn dao tiến lại gần tâm phôi hơn (giảm đường kính cắt). Trục nào thay đổi?</p>
+<input type="radio" name="cnc1-q6" id="cnc1-q6a"><label for="cnc1-q6a" class="tl-opt tl-no">A. Trục Z</label>
+<input type="radio" name="cnc1-q6" id="cnc1-q6b"><label for="cnc1-q6b" class="tl-opt tl-no">B. Trục Y</label>
+<input type="radio" name="cnc1-q6" id="cnc1-q6c"><label for="cnc1-q6c" class="tl-opt tl-ok">C. Trục X</label>
+<input type="radio" name="cnc1-q6" id="cnc1-q6d"><label for="cnc1-q6d" class="tl-opt tl-no">D. Cả Y và Z</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> X mô tả chuyển động theo phương <strong>đường kính</strong>; dao vào gần tâm thì X giảm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Z trùng trục chính, tức dao chạy dọc theo phôi; máy tiện cơ bản không có trục Y. Dao tiến vào tâm là chuyển động theo phương nào so với trục chính?</p></div>
+</div>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Máy tiện</th><th>Máy phay</th></tr></thead>
+<tbody>
+<tr><td>Z: dọc trục chính, +Z xa mâm cặp</td><td>Z: dọc trục chính</td></tr>
+<tr><td>X: phương đường kính</td><td>X, Y: trên mặt bàn máy</td></tr>
+<tr><td>Không có trục Y (cơ bản)</td><td>Có đủ X, Y, Z</td></tr>
+</tbody></table></div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Phân biệt vạn năng – NC – CNC trong một câu. <small>(nói bằng lời của em trước)</small></summary><p>Tay → chương trình số lập sẵn → chương trình số + máy tính lưu, hiệu chỉnh.</p></details>
+<details class="tl-details"><summary>2. Hai phần của máy CNC và đầu vào, đầu ra? <small>(nói bằng lời của em trước)</small></summary><p>Điều khiển ⇄ chấp hành. Vào: phôi + chương trình. Ra: chi tiết đúng yêu cầu.</p></details>
+<details class="tl-details"><summary>3. Kể 5 đặc tính kỹ thuật của máy CNC. <small>(nói bằng lời của em trước)</small></summary><p>Tự động · linh hoạt · tập trung nguyên công · chính xác · biên dạng phức tạp.</p></details>
+<details class="tl-details"><summary>4. Quy ước trục Z, và máy tiện khác máy phay thế nào? <small>(nói bằng lời của em trước)</small></summary><p>Z trùng trục chính. Tiện: +Z xa mâm cặp, X theo đường kính, không có Y. Phay: X, Y trên mặt bàn.</p></details>
+<details class="tl-details"><summary>5. Năm điểm chuẩn và điểm nào đổi theo cách gá? <small>(nói bằng lời của em trước)</small></summary><p>M, W, R, N/T, P. W đổi theo cách gá; P đổi theo dao; M, R cố định.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: ba lỗ trên mặt bích</h3>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Đề bài</p>
+<p>Mặt bích tròn có 3 lỗ nằm trên vòng tròn bán kính 100 mm, tâm bích trùng gốc W. Theo bản vẽ, ba lỗ ở các góc 30°, 150° và 270° so với trục +X, ngược chiều kim đồng hồ. Viết tọa độ cực và tọa độ Đề-các của ba lỗ để nhập vào chương trình.</p>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"bán kính 100 mm"</td><td>$R = 100\ \text{mm}$ → tọa độ cực</td></tr>
+<tr><td>"ba lỗ ở 30°, 150°, 270°"</td><td>$\theta_1,\theta_2,\theta_3$ → $X = R\cos\theta$, $Y = R\sin\theta$</td></tr>
+<tr><td>"tâm bích trùng gốc W"</td><td>gốc tọa độ ở W → không cộng thêm độ dời</td></tr>
+<tr><td>"ngược chiều kim đồng hồ từ +X"</td><td>góc dương → giữ nguyên dấu sin, cos</td></tr>
+</tbody></table></div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải từng bước</summary>
+<ol class="tl-steps">
+<li>Tọa độ cực: P1 (R100; 30°), P2 (R100; 150°), P3 (R100; 270°).</li>
+<li>P1: $X = 100\cos 30^\circ \approx 86{,}6$; $Y = 100\sin 30^\circ = 50{,}0$.</li>
+<li>P2: $X = 100\cos 150^\circ \approx -86{,}6$; $Y = 100\sin 150^\circ = 50{,}0$.</li>
+<li>P3: $X = 100\cos 270^\circ = 0$; $Y = 100\sin 270^\circ = -100{,}0$.</li>
+<li><strong>Kiểm tra:</strong> $X^2 + Y^2 = 100^2$ với cả ba lỗ (ví dụ P1: $86{,}6^2 + 50^2 \approx 10\,000$). P2 đối xứng P1 qua trục Y nên chỉ khác dấu X.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng mặt bích, thêm lỗ P4 (R100; 90°).</p>
+<ol class="tl-steps">
+<li>Biết $\cos 90^\circ = 0$.</li>
+<li><strong>Bước 2 (em điền):</strong> $Y = 100\sin 90^\circ = \;?$</li>
+<li>Kết luận: P4 nằm trên trục nào?</li>
+</ol>
+<details class="tl-details"><summary>Xem bước 2–3</summary><p>$Y = 100$, nên P4 $(0;\ 100)$ nằm trên trục +Y.</p></details></div>
+
+<h4>Thử sức đổi số</h4>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc1-c7" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc1-c7" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Bích khác có 4 lỗ trên vòng tròn R60 tại 0°, 90°, 180°, 270°. Tọa độ Đề-các của lỗ ở 180° là:</p>
+<input type="radio" name="cnc1-q7" id="cnc1-q7a"><label for="cnc1-q7a" class="tl-opt tl-no">A. $(0;\ -60)$</label>
+<input type="radio" name="cnc1-q7" id="cnc1-q7b"><label for="cnc1-q7b" class="tl-opt tl-no">B. $(60;\ 0)$</label>
+<input type="radio" name="cnc1-q7" id="cnc1-q7c"><label for="cnc1-q7c" class="tl-opt tl-no">C. $(0;\ 60)$</label>
+<input type="radio" name="cnc1-q7" id="cnc1-q7d"><label for="cnc1-q7d" class="tl-opt tl-ok">D. $(-60;\ 0)$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $X = 60\cos 180^\circ = -60$, $Y = 60\sin 180^\circ = 0$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\cos 180^\circ$ và $\sin 180^\circ$. B ứng với 0°, C với 90°, A với 270°. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy vẽ nhanh vòng tròn và đánh dấu bốn góc.</p></div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>⭐ Thử thách 1: kể 3 lý do nên làm 500 chi tiết giống nhau trên máy CNC, không phải máy vạn năng</summary>
+<p>Đồng đều giữa các chi tiết · ít phụ thuộc tay thợ · đổi mẫu bằng cách đổi chương trình · gom nhiều nguyên công một lần gá.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐ Thử thách 2: gá lệch làm W dời 5 mm theo +Z; vì sao không phải viết lại chương trình?</summary>
+<p>Chương trình mô tả tọa độ <strong>so với W</strong>. Chỉ cần xác lập lại W tại vị trí mới, mọi tọa độ trong chương trình vẫn đúng.</p>
+</details>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Thử thách 3: khoảng cách giữa hai lỗ P1 và P2 của bài toán mẫu là bao nhiêu?</summary>
+<p>$P_1(86{,}6;\ 50)$ và $P_2(-86{,}6;\ 50)$ cùng $Y$, nên khoảng cách $= 2\times 86{,}6 = 173{,}2\ \text{mm}$. Kiểm tra bằng dây cung: $2R\sin 60^\circ = 173{,}2\ \text{mm}$.</p>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Tay → Chương trình → Máy tính.</li>
+<li>Điều khiển ⇄ chấp hành; vào phôi + chương trình, ra chi tiết.</li>
+<li>Z trùng trục chính; tiện không Y; bàn tay phải.</li>
+<li>Cực → Đề-các: $X = R\cos\theta$, $Y = R\sin\theta$.</li>
+<li>M cố định · W theo gá · P theo dao.</li>
+<li>Nhận máy kiểm tra · cuối ca vệ sinh · cuối tuần tổng vệ sinh.</li>
+<li>Đọc đề: tìm gốc W, đơn vị và chiều góc trước khi tính.</li>
+</ul>
+</div>
