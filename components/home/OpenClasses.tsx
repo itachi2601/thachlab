@@ -31,8 +31,8 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
   return (
     <section className="bg-[#05070B] px-6 pb-8 pt-2 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-display text-lg font-bold text-ink">Chọn lớp</h2>
-        <ul className="mt-3 flex gap-2 overflow-x-auto pb-1">
+        <h2 className="font-display text-xl font-bold text-white sm:text-2xl">Chọn lớp để bắt đầu</h2>
+        <ul className="mt-4 flex gap-3 overflow-x-auto pb-2">
           {MANAGED_CLASSES.map((managed) => {
             const copy = CLASS_COPY[managed.slug] ?? { title: managed.name };
             const s = statsByGrade.get(classGrade(managed.name));
@@ -41,28 +41,37 @@ export default function OpenClasses({ stats }: { stats: HomeStats | null }) {
               <li key={managed.slug} className="shrink-0">
                 <Link
                   href={`/lop-hoc/${managed.slug}`}
-                  title={detail}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-sm font-semibold text-ink transition-colors hover:bg-white/[0.04]"
+                  style={{ borderColor: `${managed.color}99`, boxShadow: `inset 3px 0 0 ${managed.color}` }}
+                  className="flex min-h-14 min-w-36 flex-col justify-center rounded-xl border bg-white/[0.07] py-2 pl-5 pr-5 text-white transition-colors hover:bg-white/[0.14]"
                 >
-                  <span
-                    aria-hidden
-                    className="h-2 w-2 shrink-0 rounded-full"
-                    style={{ backgroundColor: managed.color }}
-                  />
-                  {copy.title}
+                  <span className="text-base font-bold">{copy.title}</span>
+                  {detail && <span className="text-sm text-slate-300">{detail}</span>}
                 </Link>
               </li>
             );
           })}
         </ul>
 
-        <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted">
-          <Link href="/lop-hoc/cttc" className="inline-flex min-h-11 items-center font-medium text-ink hover:underline">
-            Sinh viên CTTC
+        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:max-w-xl">
+          <Link
+            href="/lop-hoc/cttc"
+            style={{ borderColor: "#fbbf2499", boxShadow: "inset 3px 0 0 #fbbf24" }}
+            className="flex min-h-14 flex-col justify-center rounded-xl border bg-white/[0.07] py-2 pl-5 pr-5 text-white transition-colors hover:bg-white/[0.14]"
+          >
+            <span className="text-base font-bold">Sinh viên CTTC</span>
+            <span className="text-sm text-slate-300">Vào lớp học phần của em</span>
           </Link>
-          <Link href="/khoa-hoc" className="inline-flex min-h-11 items-center font-medium text-cyan-300 hover:underline">
-            Khoá học đang mở
+          <Link
+            href="/khoa-hoc"
+            style={{ borderColor: "#67e8f999", boxShadow: "inset 3px 0 0 #67e8f9" }}
+            className="flex min-h-14 flex-col justify-center rounded-xl border bg-white/[0.07] py-2 pl-5 pr-5 text-white transition-colors hover:bg-white/[0.14]"
+          >
+            <span className="text-base font-bold">Khoá học đang mở</span>
+            <span className="text-sm text-slate-300">Xem và ghi danh</span>
           </Link>
+        </div>
+
+        <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-300">
           {stats && (
             <span className="inline-flex min-h-11 flex-wrap items-center gap-x-3">
               <span>{formatCount(stats.totals.lessons)} bài giảng</span>
