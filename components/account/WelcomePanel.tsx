@@ -23,14 +23,18 @@ export type WelcomeVariant =
   | "parent";
 
 interface Tip { label: string; href: string }
-interface Content { title: string; lead: string; note?: string; primary: Tip; secondary?: Tip[]; tone: "blue" | "orange" | "emerald" | "cyan" }
+interface Content { title: string; lead: string; note?: string[]; primary: Tip; secondary?: Tip[]; tone: "blue" | "orange" | "emerald" | "cyan" }
 
 const CONTENT: Record<WelcomeVariant, Content> = {
   student_new: {
     tone: "blue",
     title: "Chào mừng em đến ThachLab",
     lead: "Em chọn THPT hoặc CTTC bên dưới, rồi chọn môn học hoặc lớp học: em vào lớp ngay, không cần chờ duyệt. Riêng CTTC cần mã khóa do giảng viên cấp.",
-    note: "Bảng và website còn rất mới nên chắc chắn còn lỗi. Nếu em gặp lỗi hay thấy chỗ nào khó dùng, bấm nút “Báo lỗi / Góp ý” ở góc màn hình. Thầy rất mong sự thông cảm của em, và mỗi góp ý của em giúp ThachLab tốt lên từng ngày. Thấy hay thì rủ bạn bè cùng học nhé!",
+    note: [
+      "Website còn rất mới nên chắc chắn còn lỗi. Thầy mong em thông cảm.",
+      "Gặp lỗi hay thấy chỗ khó dùng, bấm nút “Báo lỗi / Góp ý” ở góc màn hình. Mỗi góp ý của em giúp ThachLab tốt lên từng ngày.",
+      "Thấy hay thì rủ bạn bè cùng học nhé!",
+    ],
     primary: { label: "Xem các bài học mẫu", href: "/lop-hoc" },
   },
   thpt_pick_class: {
@@ -177,7 +181,11 @@ export default function WelcomePanel({
       {firstName && <p className="text-xs font-semibold text-slate-400">{greeting()}, {firstName}</p>}
       <h2 className="mt-1 font-display text-xl font-bold text-white">{c.title}</h2>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-300">{c.lead}</p>
-      {c.note && <p className="mt-3 max-w-2xl rounded-xl border border-white/10 bg-white/[.04] p-3 text-sm leading-relaxed text-slate-300">💬 {c.note}</p>}
+      {c.note && (
+        <div className="mt-3 max-w-2xl space-y-2 border-l-2 border-white/20 pl-4 text-sm leading-relaxed text-slate-300">
+          {c.note.map((line) => <p key={line}>{line}</p>)}
+        </div>
+      )}
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <Link href={c.primary.href} className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white">
           {c.primary.label}
