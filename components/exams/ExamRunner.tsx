@@ -552,7 +552,8 @@ export default function ExamRunner({
           />
         </QuestionSlide>
 
-        <div className="mt-6 flex items-center gap-2">
+        {/* mb-28: chừa chỗ để cuộn thanh nút lên khỏi nút Báo lỗi nổi + banner giả lập (D2/D3) */}
+        <div className="mb-28 mt-6 flex items-center gap-2">
           <Button variant="outline" className="min-h-11" disabled={cur === 0} onClick={() => goTo(cur - 1)}>
             ← Trước
           </Button>
