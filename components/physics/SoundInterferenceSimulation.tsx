@@ -211,6 +211,18 @@ export function SoundInterferenceSimulation({ compact = false }: { compact?: boo
         {playing ? "■ Tắt âm" : "▶ Phát âm đơn sắc"}
       </button>
 
+      <details className="rounded-xl border border-white/10 bg-white/[0.03] p-3 text-sm text-slate-200">
+        <summary className="min-h-11 cursor-pointer py-2 font-semibold text-white">Cách dùng thí nghiệm</summary>
+        <ol className="mt-2 list-decimal space-y-1.5 pl-5 leading-relaxed">
+          <li>Dùng loa ngoài của máy tính (laptop hoặc hai loa rời), <b>không đeo tai nghe</b> — mỗi tai nghe chỉ nhận một loa nên không có giao thoa.</li>
+          <li>Hạ âm lượng thiết bị xuống thấp, bấm <b>▶ Phát âm đơn sắc</b>, rồi chỉnh thanh âm lượng cho vừa nghe.</li>
+          <li>Ngồi thẳng trước màn hình, <b>nghiêng đầu hoặc dịch người sang trái–phải</b> khoảng 10–20 cm: âm lúc to lúc nhỏ là các vân giao thoa.</li>
+          <li>Chạm vào bản đồ để đặt chấm xanh lá (vị trí tai) và đọc hiệu đường đi d₂ − d₁: số nguyên lần λ → to, bán nguyên → nhỏ.</li>
+          <li>Thử <b>Chỉ loa trái</b> / <b>Chỉ loa phải</b>: một loa thì âm đều, không còn chỗ to chỗ nhỏ — chứng tỏ cần hai nguồn kết hợp.</li>
+          <li>Tăng tần số (λ nhỏ) thì vân sít lại, khoảng vân i = λL/d giảm. Căn phòng vọng nhiều có thể làm vân mờ đi.</li>
+        </ol>
+      </details>
+
       {warn && (
         <div
           role="alertdialog"
