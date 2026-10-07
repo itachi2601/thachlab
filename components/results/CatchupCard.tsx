@@ -23,15 +23,19 @@ import { fetchCatchupForStudent, type MyRegistration } from "@/services/thpt-cou
  * Dùng ở trang học sinh (viewer = student, tự đăng ký) và trang phụ huynh (viewer = parent,
  * đăng ký hộ con — policy "parent registers child" trong supabase-migration-bu-bai.sql).
  * Không có đăng ký đang bù bài thì không hiện gì.
+ * showSlots=false (trang chủ HS, thầy chốt 7/10/2026): chỉ danh sách bài cần bù, không lặp lịch buổi + nút đăng ký
+ * đã có ở khối Phụ đạo ngay dưới (N4), và không gọi lại 3 truy vấn buổi/đăng ký/hàng chờ.
  */
 export default function CatchupCard({
   studentId,
   classId,
   viewer,
+  showSlots = true,
 }: {
   studentId: string;
   classId: number | null;
   viewer: "student" | "parent";
+  showSlots?: boolean;
 }) {
   const toast = useToast();
   const [reg, setReg] = useState<MyRegistration | null | undefined>(undefined);
@@ -43,14 +47,14 @@ export default function CatchupCard({
 
   const reload = useCallback(() => {
     fetchCatchupForStudent(studentId).then(setReg).catch(() => setReg(null));
-    if (classId !== null) {
+    if (classId !== null && showSlots) {
       fetchUpcomingSlots(classId).then(setSlots).catch(() => setSlots([]));
       fetchMySlotRegistrations(studentId).then((ids) => setMine(new Set(ids))).catch(() => setMine(new Set()));
       fetchMyWaitlist(studentId)
         .then((rows) => setWaitlist(new Map(rows.map((r) => [r.slotId, r]))))
         .catch(() => setWaitlist(new Map()));
     }
-  }, [studentId, classId]);
+  }, [studentId, classId, showSlots]);
 
   useEffect(() => {
     reload();
@@ -133,7 +137,7 @@ export default function CatchupCard({
           type="button"
           onClick={() => toggle(slot)}
           disabled={busySlot === slot.id}
-          className={`mt-2 w-full rounded-lg py-2 text-xs font-bold disabled:opacity-40 ${registered || waiting ? "border border-white/15 text-slate-300" : full ? "border border-amber-400/40 text-amber-200" : "bg-blue-600 text-white"}`}
+          className={`mt-2 min-h-11 w-full rounded-lg border py-2 text-sm font-bold disabled:opacity-40 ${registered || waiting ? "border-white/15 text-slate-300" : full ? "border-amber-400/40 text-amber-200" : "border-blue-400/50 text-blue-100 hover:bg-blue-500/10"}`}
         >
           {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : viewer === "parent" ? "Đăng ký cho con" : "Đăng ký"}
         </button>
@@ -142,12 +146,12 @@ export default function CatchupCard({
   }
 
   return (
-    <section className="rounded-2xl border border-amber-400/25 bg-gradient-to-r from-amber-500/10 to-transparent p-5">
+    <section className="rounded-2xl border border-amber-400/25 bg-panel p-4 sm:p-5">
       <div className="flex items-center gap-2 text-amber-300">
         <BookOpenCheck size={18} />
         <h2 className="font-display font-bold text-white">Bù bài trước khi vào lớp chính thức</h2>
       </div>
-      <p className="mt-1 text-sm text-amber-100/80">
+      <p className="mt-1 text-sm text-slate-300">
         {who === "con" ? "Con" : "Em"} vào <strong className="text-white">{reg.courseName}</strong> sau khai giảng. Học bù theo thứ tự dưới đây:
         bài lớp vừa học trước để theo kịp ngay, rồi lùi dần về các bài trước.
       </p>
@@ -167,11 +171,11 @@ export default function CatchupCard({
         ))}
       </ol>
 
-      {classId === null ? (
+      {!showSlots ? null : classId === null ? (
         <p className="mt-4 text-sm text-slate-400">Giáo viên duyệt xong sẽ thấy lịch phụ đạo của khối ở đây.</p>
       ) : (
         <div className="mt-4">
-          <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">Ca phụ đạo của trợ giảng khối</p>
+          <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Ca phụ đạo của trợ giảng khối</p>
           {slots.length === 0 ? (
             <p className="text-sm text-slate-500">Trợ giảng chưa đăng ca nào trong tuần tới. Quay lại sau vài ngày.</p>
           ) : (

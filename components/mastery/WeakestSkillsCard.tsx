@@ -39,7 +39,8 @@ function PracticeModal(props: ComponentProps<typeof PracticeModalLazy>) {
 }
 
 /**
- * Thẻ "3 kỹ năng yếu nhất" ở trang chủ học sinh (N3: tối đa 3 mục, một việc để làm).
+ * Thẻ "3 kỹ năng yếu nhất" ở trang chủ học sinh (N3: tối đa 3 mục, một việc để làm). Nền panel + nút viền
+ * (7/10/2026, B2): nút nền đặc duy nhất của trang là ở thẻ "Hôm nay em làm gì".
  * Mỗi dòng: nhãn bằng chữ + icon (không chỉ màu), tên YCCĐ, bài chứa nó, % đúng; bấm → bài đó
  * (thẻ mastery cuối bài có nút "Luyện 10 câu phần này"). Nút "Luyện nhanh 10 câu" (M2, GĐ 2.6) mở
  * thẳng modal luyện cho kỹ năng yếu nhất: 10 câu, từng câu một, ghi phiên luyện như mọi lượt luyện (D2, N1). Không có dữ liệu / RPC lỗi → ẩn hẳn.
@@ -75,10 +76,10 @@ export default function WeakestSkillsCard() {
     }
   }
   return (
-    <section className="rounded-2xl border border-amber-400/25 bg-gradient-to-r from-amber-500/10 to-transparent p-4 sm:p-5">
+    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
       <div className="flex items-center gap-2">
         <Target size={18} className="text-amber-300" />
-        <h2 className="font-display font-bold text-white">3 kỹ năng em nên luyện trước</h2>
+        <h2 className="font-display font-bold text-white">Kỹ năng cần luyện thêm</h2>
       </div>
       <ul className="mt-3 space-y-2">
         {items.map((t) => (
@@ -107,7 +108,7 @@ export default function WeakestSkillsCard() {
         type="button"
         onClick={startQuick}
         disabled={starting}
-        className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 text-sm font-bold text-slate-900 hover:bg-amber-300 disabled:opacity-60"
+        className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-amber-400/50 px-4 text-sm font-bold text-amber-200 hover:bg-amber-500/10 disabled:opacity-60"
       >
         <Zap size={16} aria-hidden />
         {starting ? "Đang chuẩn bị…" : "Luyện nhanh 10 câu"}

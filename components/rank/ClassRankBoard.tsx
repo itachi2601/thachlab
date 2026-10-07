@@ -22,7 +22,7 @@ function daysLeft(endsOn: string): number {
 }
 
 /**
- * Trang chủ HS: bảng tuần của lớp — top 3 theo RP KIẾM ĐƯỢC TRONG TUẦN (reset Thứ Hai),
+ * Trang Rank (/lop-hoc/xep-hang, chuyển từ trang chủ HS 7/10/2026): bảng tuần của lớp — top 3 theo RP KIẾM ĐƯỢC TRONG TUẦN (reset Thứ Hai),
  * vị trí của em + 1 bạn ngay trên/dưới, và ghi nhận tuần này. Vị trí của em chỉ so với bạn CÙNG BẬC, không hiện thứ tự tuyệt đối.
  */
 export default function ClassRankBoard({ classId }: { classId: number }) {

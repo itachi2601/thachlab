@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AlertTriangle, CalendarClock, ChevronRight, LogOut, Megaphone, Trophy, Users } from "lucide-react";
+import { CalendarClock, ChevronRight, LogOut, Megaphone } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -10,8 +10,9 @@ import type { Chapter, Lesson } from "@/features/lessons/types";
 import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
-import NextStepsCard from "@/components/learning/NextStepsCard";
-import { rankNextSteps } from "@/features/learning/next-steps";
+import TodayCard, { AnnouncementNote } from "@/components/dashboard/TodayCard";
+import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
+import { rankNextSteps, type NextStep } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
 import WeakestSkillsCard from "@/components/mastery/WeakestSkillsCard";
 import {
@@ -33,12 +34,9 @@ import {
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import RankCard from "@/components/rank/RankCard";
 import WornTitle from "@/components/rank/WornTitle";
-import TitleShowcase from "@/components/rank/TitleShowcase";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
-import ClassRankBoard from "@/components/rank/ClassRankBoard";
-import HonorVisibilityPicker from "@/components/rank/HonorVisibilityPicker";
-import type { RankStatus, RankTitle } from "@/features/rank/types";
-import { fetchMyRankStatus, fetchMyTitles } from "@/services/rank";
+import type { RankStatus } from "@/features/rank/types";
+import { fetchMyRankStatus } from "@/services/rank";
 import {
   fetchLatestAnnouncements,
   fetchRecentAnnouncements,
@@ -47,15 +45,10 @@ import {
 } from "@/services/announcements";
 import {
   ACTIVE_NEED_STATUSES,
-  formatExitWait,
   nextExitAttemptAt,
-  NEED_STATUS_LABEL_STUDENT,
-  EXIT_COOLDOWN_HOURS,
   cancelRegistration,
   fetchMyExitAttempts,
   fetchMyOpenExitWindows,
-  WINDOW_QUIZ_PASS_PCT,
-  WINDOW_QUIZ_QUESTION_COUNT,
   fetchMyNeeds,
   fetchMyRegistrations,
   fetchMyWaitlist,
@@ -66,7 +59,6 @@ import {
   needLabel,
   registerForSlot,
   type ExitWindow,
-  type NeedStatus,
   type TutoringNeed,
   type TutoringSlot,
 } from "@/services/tutoring";
@@ -74,14 +66,6 @@ import TutoringExitQuiz from "@/components/results/TutoringExitQuizLazy";
 import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
-
-const NEED_TONE: Record<NeedStatus, string> = {
-  open: "border-sky-500/40 bg-sky-500/10 text-sky-200",
-  assigned: "border-indigo-500/40 bg-indigo-500/10 text-indigo-200",
-  tutored: "border-blue-500/40 bg-blue-500/10 text-blue-200",
-  cleared: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
-  dismissed: "border-white/15 bg-white/5 text-slate-400",
-};
 
 function Section({
   icon: Icon,
@@ -108,30 +92,6 @@ function Section({
   );
 }
 
-function AnnouncementNote({ item }: { item: ClassAnnouncement }) {
-  return (
-    <div className="rounded-xl border border-blue-400/20 bg-blue-500/5 p-3">
-      <p className="whitespace-pre-wrap text-sm text-blue-100">{item.body}</p>
-      <p className="mt-1.5 text-[13px] text-slate-400">
-        {item.createdByName || "Giáo viên"} ·{" "}
-        {new Date(item.createdAt).toLocaleString("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}
-      </p>
-      {item.examId && (
-        <Link
-          href={`/kiem-tra/lam?id=${item.examId}`}
-          className="mt-2.5 flex items-center justify-between gap-2 rounded-lg bg-blue-500/15 px-3 py-2 text-sm font-bold text-blue-100 hover:bg-blue-500/25"
-        >
-          <span className="flex min-w-0 items-center gap-2">
-            <Trophy size={14} className="shrink-0 text-amber-300" />
-            <span className="truncate">{item.examTitle ?? "Làm bài"}</span>
-          </span>
-          <ChevronRight size={16} className="shrink-0" />
-        </Link>
-      )}
-    </div>
-  );
-}
-
 export default function ThptStudentHome({
   profile,
   studentId,
@@ -153,12 +113,13 @@ export default function ThptStudentHome({
   const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
-  const [titles, setTitles] = useState<RankTitle[] | null | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [scoresLoaded, setScoresLoaded] = useState(false);
   const [assessmentsLoaded, setAssessmentsLoaded] = useState(false);
   const [lastLessonId, setLastLessonId] = useState(0);
+  // Danh mục lớp/chương/bài đã về (kể cả lỗi) — trước đó chưa biết "bài kế" nên chưa vẽ việc hôm nay, tránh chớp "Ôn lại".
+  const [catalogLoaded, setCatalogLoaded] = useState(false);
 
   const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
   const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
@@ -190,7 +151,8 @@ export default function ThptStudentHome({
         setChapters(chs);
         setLessons(ls);
       })
-      .catch(() => undefined);
+      .catch(() => undefined)
+      .finally(() => setCatalogLoaded(true));
   }, []);
 
   useEffect(() => {
@@ -202,7 +164,6 @@ export default function ThptStudentHome({
     fetchMyProgressMarks(studentId).then(setProgressMarks).catch(() => setProgressMarks(null));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
-    fetchMyTitles().then(setTitles).catch(() => setTitles(null));
     fetchClassAssessments(classId)
       .then(setAssessments)
       .catch(() => setAssessments([]))
@@ -340,30 +301,40 @@ export default function ThptStudentHome({
     [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter],
   );
 
-  const pendingCount = todoExams.length + todoReviewHomework.length;
-  const attentionReady = scoresLoaded && assessmentsLoaded;
-  const showSuggestions = attentionReady && pendingCount === 0;
-
-  const todoItems = [
-    ...todoExams.map((item) => ({ key: `a-${item.id}`, href: `/kiem-tra/lam?id=${item.examId}`, title: item.examTitle, kind: "Bài kiểm tra" })),
-    ...todoReviewHomework.map((item) => ({ key: `r-${item.id}`, href: `/kiem-tra/lam?id=${item.examId}`, title: item.title, kind: "BTVN ôn tập" })),
+  // Thẻ "Hôm nay em làm gì": bài kiểm tra được giao → BTVN ôn tập → rankNextSteps (mở khoá → làm lại → học tiếp → ôn lại).
+  // Việc đầu là nút nổi duy nhất của trang (B2, L5); tối đa 3 việc phụ (N2). Chờ đủ điểm + bài giao + danh mục mới vẽ.
+  const attentionReady = scoresLoaded && assessmentsLoaded && catalogLoaded;
+  const assignedSteps: NextStep[] = [
+    ...todoExams.map((item) => ({
+      kind: "assigned" as const,
+      key: `a-${item.id}`,
+      action: "Làm bài",
+      title: item.examTitle,
+      hint: "Bài kiểm tra · chưa làm",
+      href: `/kiem-tra/lam?id=${item.examId}`,
+    })),
+    ...todoReviewHomework.map((item) => ({
+      kind: "assigned" as const,
+      key: `r-${item.id}`,
+      action: "Làm bài",
+      title: item.title,
+      hint: "BTVN ôn tập · chưa làm",
+      href: `/kiem-tra/lam?id=${item.examId}`,
+    })),
   ];
-  const primaryTodo = attentionReady ? todoItems[0] ?? null : null;
-  const otherTodos = primaryTodo ? todoItems.slice(1) : [];
-  const hasAlert = attentionReady && Boolean(alert && alert.kind !== "missed_assessment");
-  const hasTodayContent =
-    Boolean(todayNote) || Boolean(primaryTodo) || hasAlert || (Boolean(nextLesson) && !showSuggestions);
+  const todaySteps = attentionReady ? [...assignedSteps, ...nextSteps].slice(0, 4) : [];
+  const primaryStep = todaySteps[0] ?? null;
+  const secondarySteps = todaySteps.slice(1);
+  const alertText =
+    attentionReady && alert && alert.kind !== "missed_assessment"
+      ? alert.kind === "exam_violation"
+        ? "Bài kiểm tra gần đây bị ghi nhận rời màn hình nhiều lần — trợ giảng sẽ kiểm tra lại kiến thức của em."
+        : "Điểm kiểm tra đang thấp — trợ giảng sẽ liên hệ sắp lịch phụ đạo."
+      : null;
+  const showToday = Boolean(todayNote) || primaryStep !== null || alertText !== null;
 
-  const nearTier = rank?.next && rank.next.rp_needed > 0 && rank.next.rp_needed <= 50
-    ? `Còn ${rank.next.rp_needed} RP là lên ${rank.next.name}`
-    : null;
-  const dailySuggestion = todoExams.length > 0
-    ? `Gợi ý: làm bài kiểm tra "${todoExams[0].examTitle}".${nearTier ? ` ${nearTier}!` : ""}`
-    : nextLesson
-      ? `Gợi ý: học tiếp "${nextLesson.title}" rồi làm phần luyện tập.${nearTier ? ` ${nearTier}!` : ""}`
-      : needs.length > 0
-        ? `Gợi ý: luyện thêm chủ đề "${needs[0].topicName}" đang cần phụ đạo.`
-        : null;
+  const liveWindows = liveExitWindows(openWindows, needs, nowMs);
+  const showTutoring = needs.length > 0 || slots.length > 0 || liveWindows.length > 0;
 
   async function toggleRegistration(slot: TutoringSlot) {
     setBusySlotId(slot.id);
@@ -402,7 +373,13 @@ export default function ThptStudentHome({
                 Chào {profile?.full_name || "bạn"} 👋
               </h1>
               {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
-              <p className="mt-1 text-xs text-slate-400 sm:text-sm">Lớp {className}</p>
+              <p className="mt-1 text-[13px] text-slate-400 sm:text-sm">
+                Lớp {className}
+                <span className="text-slate-600"> · </span>
+                <Link href="/lop-hoc" className="inline-flex min-h-11 items-center gap-0.5 text-blue-200 hover:text-white">
+                  Chương trình lớp <ChevronRight size={14} />
+                </Link>
+              </p>
             </div>
           </div>
           <button
@@ -438,69 +415,18 @@ export default function ThptStudentHome({
         </div>
       </section>
 
-      {showSuggestions && (
-        <NextStepsCard
-          steps={nextSteps}
+      {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
+      {showToday && (
+        <TodayCard
+          note={todayNote}
+          primary={primaryStep}
+          secondary={secondarySteps}
+          alertText={alertText}
           onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
         />
       )}
 
-      {/* Mục 1 — MỘT thẻ việc cần làm hôm nay: đúng một nút nổi ("Làm bài" hoặc "Học tiếp"), cảnh báo chỉ là một dòng nhỏ (N3, B2) */}
-      {hasTodayContent && <Section icon={Megaphone} title="Việc cần làm hôm nay">
-        <div className="mt-3 space-y-2.5">
-          {todayNote && <AnnouncementNote item={todayNote} />}
-
-          {primaryTodo ? (
-            <Link
-              href={primaryTodo.href}
-              className="flex min-h-12 items-center justify-between gap-3 rounded-xl bg-primary p-3 text-white hover:bg-primary-dark"
-            >
-              <div className="min-w-0">
-                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-100">Làm bài</small>
-                <p className="mt-0.5 truncate text-sm font-bold">{primaryTodo.title}</p>
-                <p className="text-[13px] text-blue-100">{primaryTodo.kind} · chưa làm</p>
-              </div>
-              <ChevronRight className="shrink-0" size={18} />
-            </Link>
-          ) : nextLesson && !showSuggestions ? (
-            <Link
-              href={`/lop-hoc/bai?id=${nextLesson.id}&chapter=${nextLesson.chapter_id}`}
-              className="flex min-h-12 items-center justify-between gap-3 rounded-xl bg-primary p-3 text-white hover:bg-primary-dark"
-            >
-              <div className="min-w-0">
-                <small className="text-[13px] font-bold uppercase tracking-wider text-blue-100">Học tiếp</small>
-                <p className="mt-0.5 truncate text-sm font-bold">{nextLesson.title}</p>
-                {nextChapter && <p className="truncate text-[13px] text-blue-100">{nextChapter.title}</p>}
-              </div>
-              <ChevronRight className="shrink-0" size={18} />
-            </Link>
-          ) : null}
-
-          {otherTodos.length > 0 && (
-            <ul className="space-y-0.5">
-              {otherTodos.map((item) => (
-                <li key={item.key}>
-                  <Link href={item.href} className="flex min-h-11 items-center justify-between gap-2 text-sm text-slate-300 hover:text-white">
-                    <span className="min-w-0 truncate">{item.title} <span className="text-[13px] text-slate-400">· {item.kind}</span></span>
-                    <ChevronRight size={16} className="shrink-0 text-slate-500" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {attentionReady && alert && alert.kind !== "missed_assessment" && (
-            <p className="flex items-start gap-1.5 text-[13px] text-amber-200/80">
-              <AlertTriangle size={14} className="mt-0.5 shrink-0 text-amber-300" />
-              {alert.kind === "exam_violation"
-                ? "Bài kiểm tra gần đây bị ghi nhận rời màn hình nhiều lần — trợ giảng sẽ kiểm tra lại kiến thức của em."
-                : "Điểm kiểm tra đang thấp — trợ giảng sẽ liên hệ sắp lịch phụ đạo."}
-            </p>
-          )}
-        </div>
-      </Section>}
-
-      {/* Mục 2 — Bài tập về nhà */}
+      {/* Mục 2 — Bài tập về nhà (ghi chú của GV) */}
       {homeworkNotes.length > 0 && (
         <Section icon={CalendarClock} title="Bài tập về nhà">
           <div className="mt-3 space-y-2">
@@ -509,151 +435,34 @@ export default function ThptStudentHome({
         </Section>
       )}
 
-      {/* Mục 3 — Chủ đề cần phụ đạo */}
-      <CatchupCard studentId={studentId} classId={classId} viewer="student" />
+      {/* Mục 3 — Luyện thêm: kỹ năng yếu (tự ẩn khi không có), bù bài cho em vào lớp trễ (tự ẩn), rồi MỘT khối phụ đạo */}
       <WeakestSkillsCard />
+      <CatchupCard studentId={studentId} classId={classId} viewer="student" showSlots={false} />
+      {showTutoring && (
+        <TutoringSection
+          needs={needs}
+          slots={slots}
+          windows={liveWindows}
+          windowDone={windowDone}
+          nowMs={nowMs}
+          lastExitAttempt={lastExitAttempt}
+          myRegistrations={myRegistrations}
+          myWaitlist={myWaitlist}
+          busySlotId={busySlotId}
+          onQuiz={(need, w) => {
+            setQuizNeed(need);
+            setQuizWindow(w ?? null);
+          }}
+          onToggleSlot={toggleRegistration}
+        />
+      )}
 
-      {openWindows
-        .filter((w) => new Date(w.closesAt).getTime() > nowMs)
-        .map((w) => {
-          const mine = needs.filter((n) => w.topicIds.includes(n.topicId));
-          if (mine.length === 0) return null;
-          const minutesLeft = Math.max(1, Math.ceil((new Date(w.closesAt).getTime() - nowMs) / 60000));
-          return (
-            <div key={w.id} className="rounded-2xl border border-sky-400/40 bg-sky-500/10 p-4 sm:p-5">
-              <h2 className="font-display font-bold text-white">Bài kiểm tra cuối buổi phụ đạo đã mở</h2>
-              <p className="mt-1 text-sm text-sky-100">
-                Em tự làm một mình, {WINDOW_QUIZ_QUESTION_COUNT} câu, đạt từ {WINDOW_QUIZ_PASS_PCT}%. Còn khoảng{" "}
-                {minutesLeft} phút.
-              </p>
-              <div className="mt-3 space-y-2">
-                {mine.map((need) => {
-                  const done = windowDone.has(`${w.id}|${need.id}`);
-                  return (
-                    <button
-                      key={need.id}
-                      type="button"
-                      disabled={done}
-                      onClick={() => {
-                        setQuizNeed(need);
-                        setQuizWindow(w);
-                      }}
-                      className="flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-sky-400/30 bg-black/20 p-3 text-left text-sm font-semibold text-white hover:bg-black/30 disabled:opacity-50"
-                    >
-                      <span className="min-w-0 truncate">{needLabel(need)}</span>
-                      <span className="shrink-0 text-[13px] text-sky-200">{done ? "Đã làm" : "Bắt đầu"}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-
-      <Section icon={Users} title="Lịch phụ đạo của trợ giảng">
-        <div className="mt-3 space-y-4">
-          {needs.length > 0 && (
-            <>
-              <p className="text-sm text-slate-400">
-                Mở khoá bằng cách <strong className="text-slate-200">đăng ký phụ đạo</strong> bên dưới, hoặc{" "}
-                <strong className="text-slate-200">tự kiểm tra</strong> (xem lại lý thuyết rồi làm bài, đạt từ 80%). Hai lượt cách nhau {EXIT_COOLDOWN_HOURS} giờ.
-              </p>
-              <div className="space-y-1.5">
-                {needs.map((need) => {
-                  const wait = nextExitAttemptAt(lastExitAttempt.get(need.id));
-                  return (
-                    <div key={need.id} className="flex flex-wrap items-center gap-1.5">
-                      <span className={`rounded-full border px-3 py-1 text-[13px] font-semibold ${NEED_TONE[need.status]}`}>
-                        {needLabel(need)} · {NEED_STATUS_LABEL_STUDENT[need.status]}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setQuizNeed(need)}
-                        disabled={wait !== null}
-                        className="min-h-11 rounded-full border border-white/15 px-4 py-2 text-[13px] font-semibold text-slate-300 hover:border-white/30 disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        {wait ? `Lượt tiếp theo mở lúc ${formatExitWait(wait)}` : "Tự kiểm tra"}
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-            </>
-          )}
-
-          <div>
-            <p className="mb-2 text-[13px] font-bold uppercase tracking-wide text-slate-400">Buổi phụ đạo sắp tới</p>
-            {slots.length === 0 ? (
-              <p className="text-sm text-slate-400">
-                Chưa có buổi nào được mở. Khi trợ giảng đăng lịch, buổi sẽ hiện ở đây để em bấm đăng ký.
-              </p>
-            ) : (
-              <div className="space-y-2">
-                {slots.map((slot) => {
-                  const registered = myRegistrations.has(slot.id);
-                  const full = slot.registeredCount >= slot.capacity && !registered;
-                  const waiting = myWaitlist.get(slot.id);
-                  return (
-                    <div key={slot.id} className="rounded-xl border border-white/10 bg-white/[.02] p-3">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <strong className="text-sm text-white">
-                          {new Date(`${slot.workDate}T00:00:00`).toLocaleDateString("vi-VN", {
-                            weekday: "short",
-                            day: "2-digit",
-                            month: "2-digit",
-                          })}{" "}
-                          · {slot.startTime.slice(0, 5)}–{slot.endTime.slice(0, 5)}
-                        </strong>
-                        <span className="text-xs text-slate-500">{slot.assistantName}</span>
-                        <span className="ml-auto text-xs text-slate-500">
-                          {slot.registeredCount}/{slot.capacity}
-                        </span>
-                      </div>
-                      {slot.note && <p className="mt-1 text-xs text-slate-400">{slot.note}</p>}
-                      {waiting && (
-                        <p className="mt-1 text-xs text-amber-300">
-                          Em đang ở hàng chờ: thứ {waiting.position}/{waiting.total}. Có chỗ trống em sẽ được xếp vào tự động.
-                        </p>
-                      )}
-                      <button
-                        type="button"
-                        onClick={() => toggleRegistration(slot)}
-                        disabled={busySlotId === slot.id}
-                        className={`mt-2 min-h-11 w-full rounded-lg py-2 text-sm font-bold disabled:opacity-40 ${
-                          registered || waiting
-                            ? "border border-white/15 text-slate-300"
-                            : full
-                              ? "border border-amber-400/40 text-amber-200"
-                              : "bg-blue-600 text-white"
-                        }`}
-                      >
-                        {registered ? "Huỷ đăng ký" : waiting ? "Rời hàng chờ" : full ? "Đã đủ chỗ — vào hàng chờ" : "Đăng ký"}
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
-      </Section>
-
-      <Link
-        href="/lop-hoc"
-        className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-panel p-4 text-sm font-semibold text-slate-200 hover:bg-white/5 sm:p-5"
-      >
-        Xem toàn bộ chương trình lớp {className}
-        <ChevronRight size={16} className="shrink-0 text-slate-500" />
-      </Link>
-
-      <div className="grid gap-4 sm:grid-cols-[1.15fr_1fr] sm:items-start">
-        <RankCard status={rank} />
-        <TitleShowcase titles={titles} displayCode={rank?.display_title?.code ?? null} className="h-full" />
+      {/* Mục 4 — Rank gọn: bậc + RP còn thiếu (link sang /lop-hoc/xep-hang) và chuỗi ngày. Bộ sưu tập, bảng tuần
+          của lớp, chọn hiển thị vinh danh đã chuyển sang trang Rank (L3, N1 — thầy chốt 7/10/2026). */}
+      <div className="grid gap-4 sm:grid-cols-2 sm:items-stretch">
+        <RankCard status={rank} className="h-full" />
+        <DailyStreakCard status={rank} className="h-full" />
       </div>
-      <DailyStreakCard status={rank} suggestion={dailySuggestion} />
-      <ClassRankBoard classId={classId} />
-      <HonorVisibilityPicker />
-
 
       {quizNeed && (
         <TutoringExitQuiz

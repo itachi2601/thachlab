@@ -1,6 +1,6 @@
 ---
 name: thachlab-class-rank-board
-description: "Bảng tuần của lớp trên trang chủ HS (/tai-khoan): top 3 theo RP tuần, vị trí của em + hàng xóm, ghi nhận tuần — đã chạy migration + deploy 25/9/2026; khối 3 (phân bố bậc) chưa làm"
+description: "Bảng tuần của lớp — 7/10/2026 chuyển từ trang chủ HS sang /lop-hoc/xep-hang (RankPage nhận classId): top 3 theo RP tuần, vị trí của em + hàng xóm, ghi nhận tuần — đã chạy migration + deploy 25/9/2026; khối 3 (phân bố bậc) chưa làm"
 metadata:
   type: project
 ---
@@ -22,3 +22,7 @@ em chỉ thấy 1 bạn ngay trên/ngay dưới, "tiến bộ nhất tuần" ch�
 - Admin (thầy) xem /tai-khoan bằng "Xem như học sinh" thì khối 2 ẩn (me = null vì lọc role='student') — bình thường.
 - Chưa test bằng tài khoản HS thật với dữ liệu thật (tuần 21/9 chưa có ledger, chỉ test bằng row tạm cho 4 tài khoản test rồi xoá).
 - Trang chủ công khai: 28/9/2026 đã làm "Vinh danh tuần theo khối" — xem [[thachlab-public-honor-board]]; "Vinh danh mùa" (2 tuần sau khi mùa kết thúc) vẫn chưa làm.
+
+- 7/10/2026: thầy chốt chuyển `ClassRankBoard` + `HonorVisibilityPicker` từ trang chủ HS sang `RankPage` (`/lop-hoc/xep-hang`
+  tự lấy lớp qua `fetchMyClassRequest`); trang chủ chỉ còn `RankCard` + `DailyStreakCard`. Lý do: L3/N1 — phần thưởng không
+  chen vào phần học. Chưa kiểm bằng tài khoản HS thật sau khi chuyển.

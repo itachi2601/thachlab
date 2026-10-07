@@ -1,11 +1,15 @@
-// "Bước tiếp theo" ở trang chủ học sinh — bản rút gọn, rule-based, chỉ dùng dữ liệu trang chủ đã tải sẵn
+// "Bước tiếp theo" ở trang chủ học sinh (thẻ "Hôm nay em làm gì", components/dashboard/TodayCard.tsx) — bản rút gọn, rule-based, chỉ dùng dữ liệu trang chủ đã tải sẵn
 // (tutoring_needs, điểm bài làm, tiến độ bài). Không có RPC/migration mới. Xem docs/ROADMAP.md, Giai đoạn 2.
 
-export type NextStepKind = "unlock" | "retry" | "lesson" | "review";
+/** "assigned" không do rankNextSteps sinh — trang chủ tự thêm bài kiểm tra/BTVN được giao lên trước. */
+export type NextStepKind = "assigned" | "unlock" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
   key: string;
+  /** Nhãn hành động ngắn, in nhỏ phía trên tên ("Mở khoá", "Làm lại", "Học tiếp", "Ôn lại"). */
+  action: string;
+  /** Tên việc, không kèm nhãn hành động. */
   title: string;
   hint: string;
   /** Có href → liên kết; không có → bấm gọi onUnlock. */
@@ -39,7 +43,8 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     const step: NextStep = {
       kind: "unlock",
       key: `unlock-${input.need.id}`,
-      title: `Mở khoá chủ đề: ${input.need.label}`,
+      action: "Mở khoá chủ đề",
+      title: input.need.label,
       hint: "Xem lại lý thuyết, làm bài, đạt từ 80% là mở khoá",
       needId: input.need.id,
     };
@@ -51,7 +56,8 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     steps.push({
       kind: "retry",
       key: `retry-${input.retryExam.examId}`,
-      title: `Làm lại: ${input.retryExam.examTitle}`,
+      action: "Làm lại",
+      title: input.retryExam.examTitle,
       hint: `Lần trước ${input.retryExam.score.toLocaleString("vi-VN")} điểm — làm lại để chốt kiến thức`,
       href: `/kiem-tra/lam?id=${input.retryExam.examId}`,
     });
@@ -61,7 +67,8 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     steps.push({
       kind: "lesson",
       key: `lesson-${input.nextLesson.id}`,
-      title: `Học tiếp: ${input.nextLesson.title}`,
+      action: "Học tiếp",
+      title: input.nextLesson.title,
       hint: input.nextLesson.chapterTitle ?? "",
       href: `/lop-hoc/bai?id=${input.nextLesson.id}&chapter=${input.nextLesson.chapterId}`,
     });
@@ -73,7 +80,8 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     steps.push({
       kind: "review",
       key: "review",
-      title: "Ôn lại các bài đã học",
+      action: "Ôn lại",
+      title: "Các bài đã học",
       hint: "Chọn một bài bất kỳ để luyện thêm",
       href: "/lop-hoc",
     });

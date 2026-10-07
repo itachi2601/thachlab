@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
@@ -8,16 +9,26 @@ import RequireAuth from "@/components/auth/RequireAuth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import RankPage from "@/components/rank/RankPage";
 import { supabaseConfigured } from "@/services/supabase";
+import { fetchMyClassRequest } from "@/services/classes";
 
 function Content() {
   const { session, profile } = useAuth();
+  const userId = session?.user.id ?? null;
+  // Lớp đang học (status active) → RankPage hiện "Bảng tuần của lớp"; không có lớp thì bỏ qua khối đó.
+  const [classId, setClassId] = useState<number | null>(null);
+  useEffect(() => {
+    if (!userId) return;
+    fetchMyClassRequest(userId)
+      .then((r) => setClassId(r?.status === "active" ? r.classId : null))
+      .catch(() => setClassId(null));
+  }, [userId]);
   if (!session) return null;
   return (
     <div className="mx-auto w-full max-w-4xl px-4 pb-20 pt-28 sm:px-6">
       <Link href="/tai-khoan/" className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white">
         <ChevronLeft size={16} /> Về trang của em
       </Link>
-      <RankPage studentId={session.user.id} studentName={profile?.full_name ?? "Học sinh"} />
+      <RankPage studentId={session.user.id} studentName={profile?.full_name ?? "Học sinh"} classId={classId} />
     </div>
   );
 }

@@ -15,6 +15,8 @@ import TitleCollection from "@/components/rank/TitleCollection";
 import TitleGradeRoadmap from "@/components/rank/TitleGradeRoadmap";
 import TierLadder from "@/components/rank/TierLadder";
 import WornTitle from "@/components/rank/WornTitle";
+import ClassRankBoard from "@/components/rank/ClassRankBoard";
+import HonorVisibilityPicker from "@/components/rank/HonorVisibilityPicker";
 import {
   LEDGER_KIND_LABELS,
   LEVEL_LABELS,
@@ -72,7 +74,8 @@ function Condition({ done, children }: { done: boolean; children: React.ReactNod
   );
 }
 
-export default function RankPage({ studentId, studentName }: { studentId: string; studentName: string }) {
+/** classId: lớp đang học (null = chưa có / admin xem thử) → có mới hiện "Bảng tuần của lớp" (chuyển từ trang chủ HS 7/10/2026). */
+export default function RankPage({ studentId, studentName, classId = null }: { studentId: string; studentName: string; classId?: number | null }) {
   const toast = useToast();
   const reduceMotion = useReducedMotion();
   const [status, setStatus] = useState<RankStatus | null | undefined>(undefined);
@@ -295,6 +298,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
         </div>
       )}
 
+      {classId !== null && <ClassRankBoard classId={classId} />}
+
       <Section icon={Medal} title="Bộ sưu tập danh hiệu" aside={`${status?.titles_count ?? 0} đã mở`}>
         {titles.length === 0 ? (
           <EmptyState title="Chưa có dữ liệu danh hiệu" description="Danh hiệu tính từ các bài kiểm tra em đã làm." />
@@ -334,6 +339,8 @@ export default function RankPage({ studentId, studentName }: { studentId: string
           </>
         )}
       </Section>
+
+      <HonorVisibilityPicker />
 
       <div className="grid gap-4 sm:grid-cols-2">
         <Section icon={History} title="Lịch sử nhận RP">

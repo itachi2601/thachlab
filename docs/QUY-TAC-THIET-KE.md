@@ -163,6 +163,14 @@ Phạm vi: trang chủ HS (`/tai-khoan` → `components/dashboard/ThptStudentHom
 | 3 | `WelcomePanel` lặp lời chào với h1 "Chào {tên} 👋" của hero (2 lời chào) | N4 | Với HS đã có lớp, bỏ WelcomePanel hoặc bỏ h1 |
 | 3 | Lời chào có tên + emoji, thanh "Năng lượng học tập" đếm theo cả lớp (%) | L2 | Giữ 1 con số: bài đang dở; % cả lớp để ở trang lớp |
 
+**Đã sửa 7/10/2026 (thầy chốt sau khi kiểm lại góp ý):** trang chủ còn 5 khối theo thứ tự hero (kèm link "Chương trình lớp") →
+`TodayCard` "Hôm nay em làm gì" (một nút nổi + ≤3 việc phụ, nguồn thứ tự duy nhất là `rankNextSteps`; thay `NextStepsCard`,
+khối "Việc cần làm" và dòng gợi ý ở thẻ chuỗi ngày — N4, B2, L5) → BTVN → `WeakestSkillsCard` + `CatchupCard` (bỏ danh sách
+buổi, chỉ bài cần bù) + `TutoringSection` (một khối, chỉ hiện khi có chủ đề/buổi/cửa sổ kiểm tra — N3; bỏ cách "luôn hiện lịch
+trống" của 3a42d5a92) → `RankCard` + `DailyStreakCard`. `TitleShowcase`, `ClassRankBoard`, `HonorVisibilityPicker` chuyển sang
+`/lop-hoc/xep-hang` (L3, N1). Các thẻ phụ hạ cấp: nền panel, nút viền (B2); nút Đăng ký ≥44px (D2). **Chưa chụp 375px bằng tài
+khoản HS** — cần kiểm trước khi deploy.
+
 ### B2. `/lop-hoc/ket-qua` (`StudentResultsDashboard`)
 | Ưu tiên | Vấn đề | Vi phạm | Hướng sửa |
 |---|---|---|---|
