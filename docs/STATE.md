@@ -11,6 +11,11 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- [x] **Trang chủ HS: sửa sau khi xem trên web thật** (7/10/2026 tối, commit 1fdb79a27 + 0b7eff921, đã deploy + host đã kéo):
+  thẻ Rank/Chuỗi ngày hết tràn mép phải ở 375px (grid item thiếu `min-w-0`), nút Luyện nhanh một dòng, chủ đề mở khoá gập còn 3;
+  thanh đáy theo vai (c86298e6f) nhận đúng phiên — trước đó render ngoài AuthProvider nên HS đã đăng nhập thấy tab "Đăng nhập"
+  (`useAuthSnapshot` trong `auth-context.tsx`). Còn treo: HTML không có `Cache-Control` nên trình duyệt giữ bản cũ nhiều giờ —
+  đề xuất thêm `no-cache` cho `.html`/`.txt` vào `.htaccess` trong `scripts/deploy.sh`, chờ thầy gật.
 - [x] **Trang chủ HS gọn lại** (7/10/2026, commit 273585178 + 4cd492776): một thẻ "Hôm nay em làm gì" (`TodayCard`), một khối
   Phụ đạo chỉ hiện khi có việc (`TutoringSection`), bù bài bỏ danh sách buổi, rank gọn; `ClassRankBoard` + `HonorVisibilityPicker`
   sang `/lop-hoc/xep-hang`; xoá `NextStepsCard`, `TitleShowcase`. **Chưa chụp 375px bằng tài khoản HS** — thầy xem thật sau deploy
