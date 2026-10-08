@@ -24,7 +24,7 @@
 <input type="radio" name="tl57-q0" id="tl57-q0b"><label for="tl57-q0b" class="tl-opt tl-no">B. Gói từ trực thăng, vì nó rơi thẳng đứng</label>
 <input type="radio" name="tl57-q0" id="tl57-q0c"><label for="tl57-q0c" class="tl-opt tl-no">C. Gói từ máy bay, vì nó đang bay nhanh</label>
 <input type="radio" name="tl57-q0" id="tl57-q0d"><label for="tl57-q0d" class="tl-opt tl-no">D. Tuỳ tốc độ bay: máy bay càng nhanh thì gói càng lâu chạm đất</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai gói đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$. Tốc độ máy bay chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Theo phương thẳng đứng, cả hai gói đều bắt đầu với $v_y=0$ và cùng gia tốc $g$, nên cùng thời gian rơi $t=\sqrt{2h/g}$ ($h$ là độ cao thả, công thức có ở mục II.3). Tốc độ máy bay chỉ đổi <em>tầm xa</em>, không đổi thời gian rơi.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đường đi dài hơn không có nghĩa là rơi lâu hơn: hai phương vuông góc <em>độc lập</em> với nhau — mục II sẽ chứng minh bằng thí nghiệm.</p></div>
 </div>
 </div>
@@ -96,7 +96,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> kẹp súng bắn bi, nòng nằm ngang, ở ba độ cao $h=0{,}45$ m; $0{,}80$ m; $1{,}25$ m; giấy than đánh dấu điểm chạm; bốn lần bắn (độ cao $0{,}80$ m bắn hai lần).</li>
 <li><strong>Quan sát:</strong> thời gian rơi $t=\sqrt{2h/g}$ là 0,303 s; 0,404 s; 0,505 s. Bảng là tầm xa đo được và vận tốc ném suy ra.</li>
-<li><strong>Rút ra:</strong> cả bốn lần đo đều cho $v_0\approx 1{,}50$ m/s: cùng một súng bắn, cùng một vận tốc ném, chỉ khác độ cao nên chỉ khác thời gian rơi và tầm xa.</li>
+<li><strong>Rút ra:</strong> cả bốn lần đo đều cho $v_0\approx 1{,}50$ m/s: cùng súng, chỉ khác độ cao nên chỉ khác thời gian rơi và tầm xa.</li>
 </ol>
 <div class="table-scroll">
 <table class="tl-table">
@@ -114,7 +114,7 @@
 <details class="tl-details">
 <summary>🧮 Bấm xem: tính mẫu và chỗ sai số hay đến</summary>
 <p>Lần $h=0{,}45$ m: $t=\sqrt{\dfrac{2\times0{,}45}{9{,}8}}\approx0{,}303$ s, rồi $v_0=\dfrac{L}{t}=\dfrac{0{,}451}{0{,}303}\approx1{,}49$ m/s.</p>
-<p>Bốn lần đo lệch nhau chưa tới $0{,}02$ m/s (khoảng $1\%$). Sai số hay đến từ: đọc vạch thước trên giấy ($\pm2$ mm trên $0{,}6$ m, cỡ $0{,}3\%$), lò xo súng nhả hơi khác nhau giữa các lần bắn, viên bi còn quay nên bị lệch nhẹ, và lực cản không khí — bỏ qua nên kết quả đo hơi nhỏ hơn tính toán.</p>
+<p>Bốn lần đo lệch nhau nhiều nhất $0{,}02$ m/s (khoảng $1\%$). Sai số hay đến từ:<br>– đọc vạch thước trên giấy ($\pm2$ mm trên $0{,}6$ m, cỡ $0{,}3\%$)<br>– lò xo súng nhả hơi khác nhau giữa các lần bắn<br>– viên bi còn quay nên bị lệch nhẹ<br>– lực cản không khí làm $L$ đo hơi ngắn, nên $v_0=L/t$ suy ra hơi nhỏ hơn vận tốc thật của súng.</p>
 </details>
 </div>
 
@@ -142,7 +142,7 @@
 
 <ul>
 <li>Tại thời điểm $t$: $\vec v=\vec v_x+\vec v_y$, hai thành phần vuông góc nên $v=\sqrt{v_x^2+v_y^2}=\sqrt{v_0^2+(gt)^2}$.</li>
-<li>Khi chạm đất $v_y=gt=\sqrt{2gh}$, do đó $v_{cd}=\sqrt{v_0^2+2gh}$.</li>
+<li>Khi chạm đất $t=\sqrt{\dfrac{2h}{g}}$ nên $v_y=g\sqrt{\dfrac{2h}{g}}=\sqrt{2gh}$, do đó vận tốc chạm đất $v_{cd}=\sqrt{v_0^2+2gh}$.</li>
 <li>Góc lệch so với phương ngang: $\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{gt}{v_0}$ — càng rơi, $\vec v$ càng dốc xuống.</li>
 </ul>
 
@@ -199,15 +199,15 @@
 <input type="radio" name="tl57-q6" id="tl57-q6a"><label for="tl57-q6a" class="tl-opt tl-ok">A. Vận tốc theo phương thẳng đứng $v_y$</label>
 <input type="radio" name="tl57-q6" id="tl57-q6b"><label for="tl57-q6b" class="tl-opt tl-no">B. Vận tốc theo phương ngang $v_x$</label>
 <input type="radio" name="tl57-q6" id="tl57-q6c"><label for="tl57-q6c" class="tl-opt tl-no">C. Tốc độ $v$ của vật</label>
-<input type="radio" name="tl57-q6" id="tl57-q6d"><label for="tl57-q6d" class="tl-opt tl-no">D. Tầm xa $L$ của vật</label>
+<input type="radio" name="tl57-q6" id="tl57-q6d"><label for="tl57-q6d" class="tl-opt tl-no">D. Toạ độ $y$ của vật</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v_y=gt$ là hàm bậc nhất của thời gian nên tăng đều. $v_x$ không đổi, còn $v=\sqrt{v_0^2+(gt)^2}$ tăng không đều.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $v$ là lẫn "tốc độ lớn dần" với "tốc độ tăng đều": gia tốc của tốc độ lúc đầu bằng 0 vì $\vec g$ vuông góc với $\vec v$, về sau mới tiến tới $g$. $v_x$ không đổi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn $v$ là lẫn "tốc độ lớn dần" với "tốc độ tăng đều": với $v_0=10$ m/s, $g=10$ m/s², tại $t=0$, $1$ s, $2$ s thì $v$ lần lượt bằng $10$ m/s, $14{,}1$ m/s và $22{,}4$ m/s — giây sau tăng nhiều hơn giây trước.<br>$v_x$ không đổi.<br>Toạ độ $y=\dfrac{1}{2}gt^2$ tăng theo $t^2$ nên cũng không đều.</p></div>
 </div>
 </div>
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<p>Em đọc to câu trả lời bằng lời của mình trước, rồi mới bấm xem đáp án.</p>
+<p>Em đọc to câu trả lời bằng lời của mình trước, rồi mới bấm xem đáp án. Câu 6 để dành tới khi học xong mục VI.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
@@ -292,7 +292,7 @@
 
 <h3>VI. Ném xiên: vẫn là tách hai phương</h3>
 
-<p>Cú sút phạt vượt hàng rào cầu thủ: bóng <em>lên cao trước</em> rồi mới rơi xuống. Đó là ném xiên; ở đây chọn Oy hướng <em>lên</em> nên $g$ mang dấu trừ.</p>
+<p>Cú sút phạt vượt hàng rào cầu thủ: bóng <em>lên cao trước</em> rồi mới rơi xuống. Đó là ném xiên; ở đây chọn Oy hướng <em>lên</em> nên $a_y=-g$ ($g$ vẫn là số dương).</p>
 
 <div class="tl-box tl-box--video">
 <p class="tl-label">🎬 Xem thử: vật ném xiên bay thành parabol</p>
@@ -305,7 +305,7 @@
 <p><strong>🔑 Ngang: đều · Dọc: lên chậm dần, xuống nhanh dần</strong></p>
 
 <ul>
-<li><strong>Ném xiên:</strong> vận tốc đầu $\vec v_0$ hợp với phương ngang góc $\alpha$; sau đó chỉ còn trọng lực.</li>
+<li><strong>Ném xiên:</strong> vận tốc đầu $\vec v_0$ hợp với phương ngang góc $\alpha$ (góc ném, khác góc lệch của vận tốc ở mục II.4); sau đó chỉ còn trọng lực.</li>
 <li>Tách $\vec v_0$: $v_{0x}=v_0\cos\alpha$ (ngang) và $v_{0y}=v_0\sin\alpha$ (thẳng đứng, hướng lên).</li>
 <li>Ox: thẳng đều. Oy: ngược chiều $\vec g$ nên <strong>lên chậm dần</strong>, dừng ở đỉnh, rồi <strong>xuống nhanh dần</strong>.</li>
 </ul>
@@ -329,9 +329,9 @@
 <p><strong>🔑 Đỉnh: $v_y=0$ · Chạm đất: $y=0$</strong></p>
 
 <ul>
-<li>Tại đỉnh $v_y=0$, suy ra thời gian lên $t_{lên}=\dfrac{v_0\sin\alpha}{g}$ và tầm cao $H=\dfrac{v_0^2\sin^2\alpha}{2g}$.</li>
-<li>Chạm đất khi $y=0$: thời gian bay $t=\dfrac{2v_0\sin\alpha}{g}$, gấp đôi thời gian lên (lên và xuống đối xứng).</li>
-<li>Tầm xa $L=v_0\cos\alpha\cdot t=\dfrac{v_0^2\sin 2\alpha}{g}$.</li>
+<li>Tại đỉnh $v_y=0$, suy ra thời gian lên $t_{lên}=\dfrac{v_0\sin\alpha}{g}$; thế $t_{lên}$ vào $y$ được tầm cao $H=\dfrac{v_0^2\sin^2\alpha}{2g}$.</li>
+<li>Chạm đất khi $y=0$: $t\big(v_0\sin\alpha-\tfrac{1}{2}gt\big)=0$, bỏ nghiệm $t=0$ (lúc ném) được thời gian bay $t=\dfrac{2v_0\sin\alpha}{g}=2t_{lên}$.</li>
+<li>Tầm xa $L=v_0\cos\alpha\cdot t=\dfrac{2v_0^2\sin\alpha\cos\alpha}{g}=\dfrac{v_0^2\sin 2\alpha}{g}$ (vì $2\sin\alpha\cos\alpha=\sin2\alpha$).</li>
 </ul>
 
 <div class="tl-box tl-box--think">
@@ -419,7 +419,8 @@
 <li>Câu b: $t_{lên}=\dfrac{v_{0y}}{g}=1$ s nên $t=2t_{lên}=2$ s.</li>
 <li>Câu c: $L=v_{0x}t=17{,}3\times2\approx34{,}6$ m.</li>
 <li>Câu d: ở đỉnh $v_y=0$ nên $v=v_{0x}\approx17{,}3$ m/s, nằm ngang.</li>
-<li>Kiểm tra: $L=\dfrac{v_0^2\sin2\alpha}{g}=\dfrac{400\times\sin60^\circ}{10}\approx34{,}6$ m — trùng bước 4. Lúc chạm sân, bóng cũng có tốc độ 20 m/s vì cùng độ cao lúc sút.</li>
+<li>Kiểm tra: $L=\dfrac{v_0^2\sin2\alpha}{g}=\dfrac{400\times\sin60^\circ}{10}\approx34{,}6$ m — trùng bước 4.</li>
+<li>Thêm: lúc chạm sân $v_y=v_{0y}-gt=10-10\times2=-10$ m/s, nên $v=\sqrt{17{,}3^2+10^2}\approx20$ m/s — bằng tốc độ lúc sút vì bóng về lại cùng độ cao.</li>
 </ol>
 </details>
 
@@ -432,8 +433,8 @@
 
 <details class="tl-details">
 <summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
-<p><strong>⭐</strong> Ném ngang từ $h=45$ m, lấy $g=10$ m/s². Tính thời gian rơi. <em>Gợi ý:</em> $t=\sqrt{2h/g}=\sqrt{9}=3$ s, không liên quan vận tốc ném.</p>
-<p><strong>⭐⭐</strong> Cũng bài đó với $v_0=20$ m/s. Tính tầm xa và vận tốc chạm đất. <em>Gợi ý:</em> $L=v_0t=60$ m; $v_y=gt=30$ m/s nên $v=\sqrt{20^2+30^2}\approx36$ m/s.</p>
+<p><strong>⭐</strong> Ném ngang từ $h=80$ m, lấy $g=10$ m/s². Tính thời gian rơi. <em>Gợi ý:</em> $t=\sqrt{2h/g}=\sqrt{16}=4$ s, không liên quan vận tốc ném.</p>
+<p><strong>⭐⭐</strong> Cũng bài đó với $v_0=25$ m/s. Tính tầm xa và vận tốc chạm đất. <em>Gợi ý:</em> $L=v_0t=100$ m.<br>$v_y=gt=40$ m/s nên $v=\sqrt{25^2+40^2}\approx47{,}2$ m/s.</p>
 <p><strong>⭐⭐</strong> Ném xiên từ mặt đất với $v_0=20$ m/s, $\alpha=45^\circ$, $g=10$ m/s². Tính $H$ và $L$. <em>Gợi ý:</em> $H=\dfrac{400\times0{,}5}{20}=10$ m; $L=\dfrac{400\times1}{10}=40$ m.</p>
 <p><strong>⭐⭐⭐</strong> Máy bay cứu trợ bay ngang ở độ cao 500 m với tốc độ 100 m/s, lấy $g=10$ m/s². Phải thả hàng khi máy bay còn cách đích bao xa theo phương ngang? Vì sao phi công không thả khi đang ở ngay trên đích? <em>Gợi ý:</em> $t=\sqrt{1000/10}=10$ s, hàng bay tiếp $L=100\times10=1000$ m — thả khi còn cách đích 1 km. Thả đúng trên đích thì hàng bay tiếp và vượt quá đích 1 km.</p>
 </details>
@@ -446,7 +447,7 @@
 <li><strong>Thời gian:</strong> $t=\sqrt{\dfrac{2h}{g}}$ · không chứa $v_0$ · không chứa khối lượng.</li>
 <li><strong>Tầm xa:</strong> $L=v_0\sqrt{\dfrac{2h}{g}}$ · $L$ tỉ lệ $\sqrt{h}$ và tỉ lệ $v_0$.</li>
 <li><strong>Vận tốc:</strong> $v=\sqrt{v_0^2+(gt)^2}$ · $v_{cd}=\sqrt{v_0^2+2gh}$ · $\tan\alpha=\dfrac{gt}{v_0}$.</li>
-<li><strong>Ném xiên:</strong> tách $v_{0x}=v_0\cos\alpha$ · $v_{0y}=v_0\sin\alpha$; Ox đều, Oy lên chậm dần rồi xuống nhanh dần.</li>
+<li><strong>Ném xiên:</strong> tách $v_{0x}=v_0\cos\alpha$ · $v_{0y}=v_0\sin\alpha$ ($\alpha$ ở đây là góc ném).</li>
 <li><strong>Công thức ném xiên:</strong> $H=\dfrac{v_0^2\sin^2\alpha}{2g}$ · $t=\dfrac{2v_0\sin\alpha}{g}$ · $L=\dfrac{v_0^2\sin 2\alpha}{g}$ · xa nhất ở $45^\circ$; hai góc phụ nhau cùng $L$.</li>
 <li><strong>Điểm cao nhất:</strong> $v_y=0$ nhưng $v=v_0\cos\alpha\neq0$.</li>
 <li><strong>Đọc đề:</strong> gạch ngay $h$ và $v_0$; hỏi thời gian chỉ dùng $h$, hỏi tầm xa mới cần $v_0$.</li>

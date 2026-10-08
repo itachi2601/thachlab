@@ -1,0 +1,105 @@
+{
+  "bai": "l10-thuc-hanh-do-toc-do",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng vào khung nguyên tắc: đại lượng đo một lần thì Δ lấy bằng sai số dụng cụ (nửa hoặc một độ chia nhỏ nhất), bù chữ bằng cách gộp dòng đo s, t vào dòng công thức."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích ngay sau công thức: ở đây Δt là khoảng thời gian giữa hai khung, không phải sai số."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài dùng ô số liệu @@DT2@@/@@TBAR2@@, không có chuỗi 0,0012/0,100)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài dùng ô số liệu @@DT1@@/@@TBAR@@, không có chuỗi 0,11/3,03)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 5 lời giải giải thích thước kẹp và thêm điều kiện: tấm chắn rộng chỉ hợp khi xe chạy gần đều, xe đổi tốc độ thì xem mục 4."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ dòng đường ngắn/dài khỏi bảng một lần/nhiều lần, thay bằng một câu riêng dưới bảng nêu lí do δt giảm khi đường dài."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi A sửa thành: 0,5 cm đúng là nhỏ hơn nhưng đó là sai số tuyệt đối, phải chia cho giá trị đo mới so được."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ví dụ mở Bẫy 3 sang số khác Câu 4 và ghi rõ phần trăm: 1 cm trên 10 m là 0,1 %, 1 mm trên 2 cm là 5 %."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4 đổi thành \"tốc độ tức thời tại cổng (lúc mép trước chạm tia sáng)\" để khớp cách gọi ở Bẫy 2 và Câu 3."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 1 lời giải thêm phép đổi d = 2,0 cm = 0,020 m để lời nhắc ở Câu 5 trỏ đúng chỗ."
+      },
+      {
+        "id": "q-du-doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đây là câu dự đoán trước khi học, phản hồi đã giải thích rõ lỗi A, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn, và bài đã nêu đồng hồ chia tới 0,001 s cùng phản hồi D nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở câu dự đoán và phần mở Bẫy 1 rằng đồng hồ tốt không sửa độ trễ, bỏ qua."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: trung bình chỉ bù độ lệch ngẫu nhiên, tấm chắn rộng lệch cùng một phía nên không bù được."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước câu: cần so với giá trị đo, tức dùng sai số tương đối, bỏ qua."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Dữ liệu → kiến thức và bước 1 lời giải (đã sửa) đều thể hiện việc đổi cm ra m, bỏ qua."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: thêm dòng sai số dụng cụ (Δ của đại lượng đo một lần lấy bằng nửa hoặc một độ chia nhỏ nhất). Gộp dòng \"đo s bằng thước, t bằng đồng hồ\" vào dòng công thức v = s/t.",
+      "Mục II.2 (video): ghi rõ Δt = 1/(số khung hình mỗi giây) là khoảng thời gian giữa hai khung, không phải sai số.",
+      "Mục II.4: \"tốc độ lúc vào cổng\" đổi thành \"tốc độ tức thời tại cổng (lúc mép trước chạm tia sáng)\".",
+      "Bẫy 1: bỏ dòng bảng \"đường ngắn/đường dài\", thêm câu dưới bảng: độ lệch bấm không đổi nên đường dài hơn thì δt nhỏ hơn.",
+      "Bẫy 2: thêm dòng ⚠ trước Câu 3 về độ lệch ngẫu nhiên và độ lệch cùng một phía.",
+      "Bẫy 3: đổi số ví dụ mở đầu thành 1 cm trên 10 m = 0,1 % và 1 mm trên 2 cm = 5 % (trước trùng số liệu Câu 4). Không có kết quả phụ thuộc.",
+      "Câu 4: sửa phản hồi phương án A (lỗi là so sai số tuyệt đối, không phải khác đơn vị).",
+      "Bài toán mẫu bước 1: thêm phép đổi d = 2,0 cm = 0,020 m, kết quả không đổi.",
+      "Bài toán mẫu bước 5: giải thích thước kẹp (chia tới 0,1 mm hoặc nhỏ hơn) và thêm điều kiện: tấm chắn rộng chỉ hợp khi xe chạy gần đều."
+    ],
+    "so_tu_them": 38,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-toc-do/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

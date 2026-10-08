@@ -1,0 +1,110 @@
+{
+  "bai": "l10-su-roi-tu-do",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng II.3 ghi lại ba công thức Bài 9 (v = v₀ + at, d = v₀t + ½at², v² − v₀² = 2ad) rồi thay v₀ = 0, a = g; bỏ phần v₀, a lặp ở dòng gốc toạ độ để bù chữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ d là độ dịch chuyển và từ đây bài chỉ dùng s, giữ nguyên công thức."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn là mốc số liệu __DSS__, không phải 9,8 cm)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Rút ra TN2 nói mỗi khoảng chia 0,1 s là tốc độ trung bình, nên khoảng dài thêm đều tức vận tốc tăng đều (không gắn số để khỏi lệch số liệu minh hoạ)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất so lực cản với \"trọng lượng (độ lớn của trọng lực)\" ở II.1 và Trả bài 1."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vế \"càng gần địa cực, g càng lớn (xem bảng)\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn dùng mốc __GMIN__/__GMAX__)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details: đánh dấu mở rộng, thêm s = ½g(t − δ)² ⇒ √s = √(g/2)(t − δ) và giải nghĩa hệ số góc là độ dốc."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "B là phương án nhiễu có chủ đích, phản hồi đã giải thích Mặt Trăng vẫn hút vật; mục II đã vượt trần nên không thêm dòng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề Thử sức ghi \"gấp 4 đề gốc 20 m (tức 80 m)\" và lời giải nói rõ đề gốc 20 m."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng \"lực cản không đáng kể so với trọng lượng\" ngay trước câu 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: quãng đường là ½gt², không phải gt²."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn \"không còn lực cản, mọi vật cùng gia tốc g\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và bảng đã phân biệt giây thứ n với n giây đầu."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã tách riêng dòng gấp 4 và gấp 2."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: rút h từ v² = 2gh đừng quên số 2 ở mẫu."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.3: thêm ba công thức tổng quát Bài 9 (v = v₀ + at, d = v₀t + ½at², v² − v₀² = 2ad) rồi thay v₀ = 0, a = g; dòng gốc toạ độ bỏ phần v₀ = 0, a = g lặp lại.",
+      "II.3: nói rõ d là độ dịch chuyển, bằng quãng đường s vì vật không đổi chiều, bài chỉ dùng s.",
+      "II.2 TN2 Rút ra: thêm lập luận khoảng/0,1 s = tốc độ trung bình nên khoảng dài thêm đều ⇒ vận tốc tăng đều.",
+      "II.1: so lực cản với \"trọng lượng (độ lớn của trọng lực)\"; Trả bài 1 đổi \"trọng lực\" thành \"trọng lượng\" và tách mỗi ý một dòng.",
+      "II.4: thêm g tăng dần từ xích đạo về địa cực (khớp bảng 9,78 → 9,83).",
+      "II.4 details sai số: thêm s = ½g(t − δ)², √s = √(g/2)(t − δ), hệ số góc √(g/2), đánh dấu mở rộng.",
+      "Thêm dòng ⚠ trước Câu 2 (hệ số ½) và trước Câu 6 (số 2 ở mẫu khi rút h).",
+      "V Thử sức: ghi rõ gấp 4 so với đề gốc 20 m.",
+      "Cắt bù: gộp hai dòng đầu II.1, bỏ câu lặp cuối phản hồi sai Câu 1."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-su-roi-tu-do/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

@@ -2,7 +2,7 @@
 
 | Bài (thư mục trong content/lesson-samples) | lesson_id | Trạng thái | Ghi chú |
 |---|---|---|---|
-| l10-do-dich-chuyen-quang-duong | 49 | chua-gui | Ch2 L10 Bài 4; bản Gemini đầu tiên đã xuất gemini/gui nhưng không nhận JSON — chuyển sang batch Claude |
+| l10-do-dich-chuyen-quang-duong | 49 | da-dang | Bài 4. Độ dịch chuyển và quãng đường đi được: API sửa 10/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
 | l12-khai-niem-tu-truong | 10 | da-sua | Ch3 L12 Bài 9. Lý thuyết vòng 2 (8/10): Gemini 3 + Opus 16 + Sonnet 10 góp ý đã sửa (câu c bài mẫu 30 µT→45°, Câu 2 có nhiễu 'bắc → nam'), build + lint xong, chưa ghi DB. Bài tập mẫu: nháp vòng 1 LOẠI, cần dán lại gui/trung-binh-3-bai-tap-mau.txt |
 | l12-luc-tu-cam-ung-tu | 11 | loi-lint | Bài 10. Lực từ. Cảm ứng từ: API sửa 14/23 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-thuc-hanh-cam-ung-tu | 12 | loi-lint | Bài 11. Thực hành đo độ lớn cảm ứng từ: API sửa 15/21 góp ý (vòng 1), LỖI lint — sửa tay |
@@ -24,11 +24,11 @@
 | l12-phan-hach-nhiet-hach | 17 | loi-lint | Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng: API sửa 23/30 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-phong-xa | 18 | loi-lint | Bài 17. Hiện tượng phóng xạ: API sửa 16/23 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-an-toan-phong-xa | 19 | loi-lint | Bài 18. An toàn phóng xạ: API sửa 16/20 góp ý (vòng 1), LỖI lint — sửa tay |
-| l10-toc-do-van-toc | 50 | chua-gui | Ch2 L10 Bài 5 |
-| l10-thuc-hanh-do-toc-do | 51 | chua-gui | Ch2 L10 Bài 6 (thực hành) |
-| l10-do-thi-dich-chuyen-thoi-gian | 52 | chua-gui | Ch2 L10 Bài 7 |
-| l10-chuyen-dong-bien-doi-gia-toc | 53 | chua-gui | Ch2 L10 Bài 8 |
-| l10-chuyen-dong-thang-bien-doi-deu | 54 | chua-gui | Ch2 L10 Bài 9 |
-| l10-su-roi-tu-do | 55 | chua-gui | Ch2 L10 Bài 10 |
-| l10-thuc-hanh-do-g | 56 | chua-gui | Ch2 L10 Bài 11 (thực hành) |
-| l10-chuyen-dong-nem | 57 | chua-gui | Ch2 L10 Bài 12 (hình 1 có mô phỏng đã đăng 7/10) |
+| l10-toc-do-van-toc | 50 | loi-lint | Bài 5. Tốc độ và vận tốc: API sửa 13/21 góp ý (vòng 1), LỖI lint — sửa tay |
+| l10-thuc-hanh-do-toc-do | 51 | da-dang | Bài 6. Thực hành: Đo tốc độ của vật chuyển động: API sửa 9/16 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-do-thi-dich-chuyen-thoi-gian | 52 | da-dang | Bài 7. Đồ thị độ dịch chuyển - thời gian: API sửa 11/20 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-chuyen-dong-bien-doi-gia-toc | 53 | da-dang | Bài 8. Chuyển động biến đổi. Gia tốc: API sửa 9/16 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-chuyen-dong-thang-bien-doi-deu | 54 | da-dang | Bài 9. Chuyển động thẳng biến đổi đều: API sửa 8/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-su-roi-tu-do | 55 | da-dang | Bài 10. Sự rơi tự do: API sửa 9/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-thuc-hanh-do-g | 56 | da-dang | Bài 11. Thực hành: Đo gia tốc rơi tự do: API sửa 17/22 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-chuyen-dong-nem | 57 | loi-lint | Bài 12. Chuyển động ném: API sửa 13/20 góp ý (vòng 1), LỖI lint — sửa tay |
