@@ -11,10 +11,10 @@
 | l12-may-phat-dien-bien-ap | 125 | loi-lint | Bài 14. Máy phát điện xoay chiều. Máy biến áp: API sửa 17/24 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-ung-dung-cam-ung-dien-tu | 126 | loi-lint | Bài 15. Một số ứng dụng của cảm ứng điện từ: API sửa 17/22 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-dien-tu-truong-song-dien-tu | 127 | loi-lint | Bài 16. Điện từ trường. Mô hình sóng điện từ: API sửa 14/22 góp ý (vòng 1), LỖI lint — sửa tay |
-| l12-su-chuyen-the | 2 | da-sua | Bài 1. Sự chuyển thể: API sửa 20/24 góp ý (vòng 1) — bản sửa bị mất khỏi cây, khôi phục từ `stash@{0}` 8/10 tối, cắt còn <2500 từ, lint sạch |
-| l12-thang-nhiet-do | 3 | da-sua | Bài 2. Thang nhiệt độ: API sửa 16/23 góp ý (vòng 1) — khôi phục từ `stash@{0}` 8/10 tối, cắt còn <2500 từ, lint sạch |
-| l12-noi-nang-dl1 | 4 | da-dang | Bài 3. Nội năng. Định luật 1 của nhiệt động lực học: API sửa 15/25 góp ý (vòng 1), đã đăng 8/10 13:20; file repo khôi phục từ `stash@{0}` 8/10 tối nay khớp DB |
-| l12-thuc-hanh-nhiet | 5 | da-sua | Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng: API sửa 19/27 góp ý (vòng 1) — khôi phục từ `stash@{0}` 8/10 tối, cắt còn <2500 từ, lint sạch |
+| l12-su-chuyen-the | 2 | da-dang | Bài 1. Sự chuyển thể: API sửa 20/24 góp ý (vòng 1) — khôi phục từ `stash@{0}`, cắt còn 2.434 từ, soát vật lí, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
+| l12-thang-nhiet-do | 3 | da-dang | Bài 2. Thang nhiệt độ: API sửa 16/23 góp ý (vòng 1) — khôi phục từ `stash@{0}`, cắt còn 2.445 từ, sửa định nghĩa nhiệt năng + dòng 🔑, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
+| l12-noi-nang-dl1 | 4 | da-dang | Bài 3. Nội năng. Định luật 1 của nhiệt động lực học: API sửa 15/25 góp ý (vòng 1) — khôi phục từ `stash@{0}`, soát vật lí sửa 3 chỗ (phản hồi quiz Câu 3/4, định nghĩa λ), 2.484 từ → đã đăng lý thuyết 8/10, chờ TA rà |
+| l12-thuc-hanh-nhiet | 5 | da-dang | Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng: API sửa 19/27 góp ý (vòng 1) — khôi phục từ `stash@{0}`, cắt còn 2.436 từ, sửa chú thích Hình 2, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
 | l12-thuyet-dong-hoc-phan-tu | 6 | loi-lint | Bài 5. Thuyết động học phân tử chất khí: API sửa 17/24 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-boyle-charles | 7 | loi-lint | Bài 6. Định luật Boyle. Định luật Charles: API sửa 18/26 góp ý (vòng 1), LỖI lint — sửa tay |
 | l12-phuong-trinh-trang-thai | 8 | loi-lint | Bài 7. Phương trình trạng thái của khí lí tưởng: API sửa 14/22 góp ý (vòng 1), LỖI lint — sửa tay |
