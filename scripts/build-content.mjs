@@ -15,10 +15,15 @@
 //                                      questions (question_bank chưa archive). Ba bảng này khoá RLS với
 //                                      anon nên chỉ đếm được khi có SUPABASE_SERVICE_ROLE_KEY; thiếu khoá
 //                                      thì để null (trang chủ tự ẩn số), KHÔNG ghi 0 vì 0 là số sai.
+//   public/data/exam-samples.json    — đúng 3 đề mẫu trên trang chủ (giữa kì 11, cuối kì 12,
+//                                      thi thử). Chỉ CÂU 1, đã gỡ đáp án và lời giải. Cần
+//                                      service role vì anon không đọc được exams. Thiếu khoá
+//                                      thì giữ file cũ, không ghi đè bằng danh sách rỗng.
 //
 // Chỉ dùng ANON key (đúng RLS của khách chưa đăng nhập) — file tĩnh không bao giờ
 // chứa thứ mà người chưa đăng nhập không xem được. Đề thi (exams.questions, có đáp án)
-// và lời giải bài tập mẫu (lesson_items.questions) TUYỆT ĐỐI không đưa vào đây.
+// và lời giải bài tập mẫu (lesson_items.questions) TUYỆT ĐỐI không đưa vào đây,
+// trừ câu 1 đã gỡ đáp án trong exam-samples.json.
 //
 // Không làm fail build: thiếu env / Supabase lỗi → in cảnh báo, giữ file cũ nếu có,
 // không có thì ghi manifest rỗng; client tự lùi về gọi Supabase như cũ.
@@ -226,9 +231,208 @@ function buildHomeStats(generatedAt, classes, chapters, lessons, itemsByLesson, 
   };
 }
 
+const EXAM_SAMPLE_SLOTS = [
+  { shelf: "giua-ki", grades: ["11", "12", "10"], label: "Giữa kì" },
+  { shelf: "cuoi-ki", grades: ["12", "11", "10"], label: "Cuối kì" },
+  { shelf: "thi-thu", grades: ["12", "11", "10"], label: "Thi thử tốt nghiệp" },
+];
+
+const GRADE_SPECS = [
+  { grade: "12", slug: "lop-12", label: "Vật lý 12", test: (name, slug) => name === "12" || slug === "lop-12" },
+  { grade: "11", slug: "lop-11", label: "Vật lý 11", test: (name, slug) => name === "11" || slug === "lop-11" },
+  { grade: "10", slug: "lop-10", label: "Vật lý 10", test: (name, slug) => name === "10" || slug === "lop-10" },
+  { grade: "9", slug: "khtn-9", label: "KHTN 9", test: (name, slug) => name === "KHTN 9" || slug === "khtn-9" },
+];
+
+function examShelfOf(title) {
+  const t = title.toLowerCase();
+  if (/thi thử|tốt nghiệp|\btn\s*thpt|minh họa|minh hoạ|đề thi sở|sở gd/.test(t)) return "thi-thu";
+  // "Giữa HK1" chứa "HK1" — phải nhận giữa kì trước, không để rơi vào cuối kì.
+  if (/giữa|\bgk\s*\d?\b/.test(t)) return "giua-ki";
+  if (/cuối|cuoi|\bck\s*\d?\b|\bhk\s*\d\b/.test(t)) return "cuoi-ki";
+  return "chuong";
+}
+
+function gradeToken(title) {
+  const lop = title.match(/lớp\s*(9|10|11|12)/i);
+  if (lop) return lop[1];
+  // "– 11 –" là khối lớp. Không lấy số đứng sau "lần" ("Lan 12" là lần ra đề).
+  const between = title.match(/(?:–|—|-)\s*(10|11|12)\s*(?:–|—|-)/);
+  return between ? between[1] : "";
+}
+
+function paperRank(row) {
+  const cut = /lược|thiếu câu|chưa đủ/i.test(row.title ?? "") ? 1 : 0;
+  return cut;
+}
+
+function yearOf(title) {
+  const years = title.match(/20\d{2}/g);
+  return years ? years[years.length - 1] : "";
+}
+
+/** Câu đưa ra trang công khai: chỉ đề bài và phương án, không đáp án, không lời giải. */
+function publicFirstQuestion(questions) {
+  const q = Array.isArray(questions) ? questions[0] : null;
+  if (!q || typeof q.question !== "string" || !q.question.trim()) return null;
+  if (q.question.includes("base64,") || q.question.length > 80000) return null;
+  if (q.type === "multiple_choice" && Array.isArray(q.options) && q.options.length >= 2) {
+    if (q.options.some((opt) => String(opt).includes("base64,") || String(opt).length > 80000)) return null;
+    return { type: "multiple_choice", question: q.question, options: q.options.map((opt) => String(opt)) };
+  }
+  if (q.type === "true_false" && Array.isArray(q.statements)) {
+    const statements = q.statements
+      .map((s) => ({ text: String(s?.text ?? "") }))
+      .filter((s) => s.text && !s.text.includes("base64,") && s.text.length <= 80000);
+    if (statements.length === 0) return null;
+    return { type: "true_false", question: q.question, statements };
+  }
+  if (q.type === "short_answer") return { type: "short_answer", question: q.question };
+  return null;
+}
+
+function classForGrade(grade, classById) {
+  for (const [classId, spec] of classById) {
+    if (spec.grade === grade) return { ...spec, classId };
+  }
+  return null;
+}
+
+function gradesOf(row, classById) {
+  const found = [];
+  for (const link of row.exam_classes ?? []) {
+    const spec = classById.get(link.class_id);
+    if (!spec || found.some((g) => g.grade === spec.grade)) continue;
+    found.push({ ...spec, classId: link.class_id });
+  }
+  if (found.length > 0) return found;
+  let token = gradeToken(String(row.title ?? ""));
+  if (!token && examShelfOf(row.title ?? "") === "thi-thu") token = "12";
+  const spec = token ? classForGrade(token, classById) : null;
+  return spec ? [spec] : [];
+}
+
+function pickExamSample(rows, slot, used) {
+  const pool = rows.filter((row) => row.shelf === slot.shelf && !used.has(row.id) && row.question_count >= 5);
+  for (const grade of slot.grades) {
+    const ranked = pool
+      .map((row) => ({ row, grade: row.grades.find((g) => g.grade === grade) ?? null }))
+      .filter((item) => item.grade)
+      .sort(
+        (a, b) =>
+          paperRank(a.row) - paperRank(b.row) ||
+          new Date(b.row.created_at).getTime() - new Date(a.row.created_at).getTime(),
+      );
+    if (ranked[0]) return ranked[0];
+  }
+  return null;
+}
+
+/**
+ * Ba đề mẫu cho trang chủ. Ghi public/data/exam-samples.json.
+ * Trả về số đề, hoặc null nếu không ghi (giữ file cũ).
+ */
+async function writeExamSamples(url, serviceKey) {
+  const dest = join(OUT_DIR, "exam-samples.json");
+  mkdirSync(OUT_DIR, { recursive: true });
+  if (!url || !serviceKey) {
+    warn("thiếu SUPABASE_SERVICE_ROLE_KEY — giữ nguyên exam-samples.json nếu có.");
+    return null;
+  }
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const admin = createClient(url, serviceKey, { auth: { persistSession: false } });
+    const [examRows, classRes] = await Promise.all([
+      fetchAll(() =>
+        admin
+          .from("exams")
+          .select("id, title, duration_minutes, question_count, created_at, subject_code, cnc_key, exam_classes(class_id)")
+          .eq("published", true),
+      ),
+      admin.from("classes").select("id, name, slug"),
+    ]);
+    if (classRes.error) throw classRes.error;
+    const classById = new Map();
+    for (const row of classRes.data ?? []) {
+      const spec = GRADE_SPECS.find((g) => g.test(row.name, row.slug));
+      if (spec) classById.set(row.id, spec);
+    }
+    const candidates = examRows
+      .filter((row) => !row.cnc_key && (row.subject_code == null || row.subject_code === "vat-ly"))
+      .map((row) => ({
+        ...row,
+        shelf: examShelfOf(row.title ?? ""),
+        grades: gradesOf(row, classById),
+      }))
+      .filter((row) => row.shelf !== "chuong" && row.grades.length > 0);
+
+    const used = new Set();
+    const picked = [];
+    for (const slot of EXAM_SAMPLE_SLOTS) {
+      const hit = pickExamSample(candidates, slot, used);
+      if (!hit) continue;
+      used.add(hit.row.id);
+      picked.push({ slot, ...hit });
+    }
+    if (picked.length === 0) {
+      warn("không chọn được đề mẫu — giữ nguyên exam-samples.json nếu có.");
+      return null;
+    }
+
+    const { data: questionRows, error } = await admin
+      .from("exams")
+      .select("id, questions")
+      .in(
+        "id",
+        picked.map((item) => item.row.id),
+      );
+    if (error) throw error;
+    const questionById = new Map((questionRows ?? []).map((row) => [row.id, row.questions]));
+
+    const samples = [];
+    for (const item of picked) {
+      const question = publicFirstQuestion(questionById.get(item.row.id));
+      if (!question || !item.grade?.classId) {
+        warn(`bỏ đề #${item.row.id} — câu 1 không đưa ra được hoặc không gắn lớp.`);
+        continue;
+      }
+      samples.push({
+        id: item.row.id,
+        shelf: item.slot.shelf,
+        label: item.slot.label,
+        gradeLabel: item.grade.label,
+        grade: item.grade.grade,
+        classId: item.grade.classId,
+        classSlug: item.grade.slug,
+        year: yearOf(item.row.title ?? ""),
+        questionCount: item.row.question_count,
+        durationMinutes: item.row.duration_minutes,
+        question,
+      });
+    }
+    if (samples.length === 0) {
+      warn("đề mẫu không có câu 1 hợp lệ — giữ nguyên exam-samples.json nếu có.");
+      return null;
+    }
+    writeJson(dest, { generatedAt: new Date().toISOString(), samples });
+    console.log(
+      `[build-content] đề mẫu: ${samples.map((s) => `#${s.id} ${s.label} ${s.gradeLabel}`).join(" · ")}`,
+    );
+    return samples.length;
+  } catch (e) {
+    warn(`không ghi được exam-samples.json: ${e?.message ?? e} — giữ file cũ nếu có.`);
+    return null;
+  }
+}
+
 async function main() {
   const started = Date.now();
   const { url, anonKey, serviceKey } = loadEnv();
+  if (process.argv.includes("--only-exam-samples")) {
+    if (!url) return bail("thiếu NEXT_PUBLIC_SUPABASE_URL.");
+    await writeExamSamples(url, serviceKey);
+    return;
+  }
   if (!url || !anonKey) return bail("thiếu NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY.");
 
   const { createClient } = await import("@supabase/supabase-js");
@@ -394,6 +598,7 @@ async function main() {
     items: itemRows.length,
   });
 
+  await writeExamSamples(url, serviceKey);
   const files = readdirSync(LESSONS_DIR).length + 2;
   const countsText = Object.entries(counts)
     .map(([key, value]) => `${key}=${value ?? "?"}`)

@@ -5,6 +5,7 @@ import ForParents from "@/components/home/ForParents";
 import { readHomeStats } from "@/components/home/home-stats.server";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
 import Features from "@/components/home/Features";
+import ExamSamples from "@/components/home/ExamSamples";
 import PhysicsEverywhere from "@/components/home/PhysicsEverywhere";
 import LearningPath from "@/components/home/LearningPath";
 import HonorBoard from "@/components/home/HonorBoard";
@@ -28,6 +29,7 @@ export default function Home() {
         <OpenClasses stats={stats} />
         <ForParents courses={stats?.courses ?? null} />
         <Features />
+        <ExamSamples />
         <PhysicsEverywhere />
         <LearningPath />
         <HonorBoard />

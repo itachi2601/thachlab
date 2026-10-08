@@ -93,6 +93,7 @@ export default function ExamDoneView({
         responses={responses}
         detailAnchor="xem-lai-bai-lam"
         badge={badge}
+        reportHint
         meta={
           <>
             {profile?.full_name}

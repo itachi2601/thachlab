@@ -7,10 +7,17 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useToast } from "@/components/ui/Toast";
-import { fetchClasses } from "@/services/classes";
+import { fetchClasses, requestClassJoin } from "@/services/classes";
 import type { SchoolClass } from "@/features/exams/types";
 
 const inputCls = "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
+
+function readInternalNext(): string | null {
+  if (typeof window === "undefined") return null;
+  const next = new URLSearchParams(window.location.search).get("next");
+  if (next && /^\/(?!\/)/.test(next)) return next;
+  return null;
+}
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -36,6 +43,16 @@ export default function RegisterPage() {
   useEffect(() => {
     fetchClasses().then(setClasses).catch(() => setClasses([]));
   }, []);
+
+  useEffect(() => {
+    const lop = new URLSearchParams(window.location.search).get("lop");
+    if (!lop || classes.length === 0) return;
+    setClassId((cur) => {
+      if (cur) return cur;
+      const hit = classes.find((item) => item.slug === lop || item.name === lop);
+      return hit ? String(hit.id) : cur;
+    });
+  }, [classes]);
 
   const validateForm = (): boolean => {
     setError("");
@@ -150,10 +167,20 @@ export default function RegisterPage() {
         return;
       }
 
-      toast("success", "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.");
+      if (authData.session && classId) {
+        await requestClassJoin(Number(classId)).catch(() => undefined);
+      }
+
+      const next = readInternalNext();
+      toast(
+        "success",
+        next
+          ? "Đăng ký thành công. Đăng nhập để làm tiếp đề."
+          : "Đăng ký thành công! Hồ sơ đang chờ giáo viên duyệt vào lớp.",
+      );
 
       setTimeout(() => {
-        router.push("/dang-nhap");
+        router.push(next ? `/dang-nhap?next=${encodeURIComponent(next)}` : "/dang-nhap");
       }, 2000);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Đăng ký thất bại");

@@ -65,6 +65,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
         questions={detail.questions}
         responses={detail.responses}
         detailAnchor="xem-lai-tung-cau"
+        reportHint={!fromParent}
         meta={
           rp?.sourceEnabled ? (
             <span className="inline-flex items-center gap-1.5">

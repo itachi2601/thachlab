@@ -104,6 +104,8 @@ interface Props {
   detailAnchor?: string;
   /** Đạt/Chưa đạt/Chờ chấm — chỉ hiện khi giáo viên đã cấu hình ngưỡng cho đề này. */
   badge?: ResultBadge | null;
+  /** Nhắc báo lỗi ngay cạnh điểm, lúc xem lại bài làm. */
+  reportHint?: boolean;
 }
 
 export default function ExamResultSummary({
@@ -112,6 +114,7 @@ export default function ExamResultSummary({
   meta,
   detailAnchor,
   badge,
+  reportHint = false,
 }: Props) {
   const summary = gradeExam(questions, responses);
   const pct = Math.round(summary.max > 0 ? (summary.earned / summary.max) * 100 : 0);
@@ -162,6 +165,12 @@ export default function ExamResultSummary({
             </div>
           </dl>
         </div>
+
+        {reportHint && (
+          <p className="mt-4 text-base leading-relaxed text-slate-300">
+            Câu nào sai hoặc khó hiểu, bấm Báo lỗi câu này.
+          </p>
+        )}
 
         {detailAnchor && (
           <a
