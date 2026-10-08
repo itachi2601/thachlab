@@ -11,6 +11,15 @@ Gemini đọc bài như học sinh lớp 10–12 rồi ghi góp ý ra file. Clau
 
 Prompt gửi Gemini và schema: `references/PROMPT-GEMINI-HOC-SINH.md`. Chỉ gửi nội dung bài, **không gửi dữ liệu định danh học sinh**.
 
+## Chạy tự động (thầy cho phép 8/10/2026, ngoại lệ riêng cho việc này)
+
+Thầy đã đồng ý cho script gọi Gemini thay vì dán tay: `scripts/gemini-phan-hoi.mts` (chạy trong tab terminal trên Mac; cần `GEMINI_API_KEY` + `GEMINI_MODEL` trong `.env.local`, không hard-code tên model).
+```
+npx tsx scripts/gemini-phan-hoi.mts --bai <thư-mục-bài> --ten "<tên bài>" --dry-run   # xem trước, không gọi API
+npx tsx scripts/gemini-phan-hoi.mts --bai <thư-mục-bài> --ten "<tên bài>"             # 3 vai × 2 lượt, lưu vào phan-hoi-hs/
+```
+Mỗi vai gọi 2 lượt: quiz "mù" (bài đã bỏ lời giải/đáp án) rồi đọc đủ + góp ý. Chỉ gửi nội dung bài, không dữ liệu học sinh. Xong thì chạy bước 1 bên dưới. Chế độ bài tập mẫu: thêm `--che-do bai-tap-mau --lesson-id <id>`.
+
 ## Quy trình
 
 1. **Gộp**: `python3 .claude/skills/chinh-ly-thuyet-theo-phan-hoi/scripts/gop-phan-hoi.py content/lesson-samples/<bài>`
