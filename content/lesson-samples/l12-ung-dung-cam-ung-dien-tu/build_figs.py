@@ -70,8 +70,8 @@ b += text(14, 214, "dòng Foucault sinh ra trong đáy nồi", GRN, 11)
 b += text(14, 232, "dòng đó toả nhiệt (Joule) làm nồi nóng lên", RED, 11)
 fig1 = wrap("0 0 440 250",
             "Mặt cắt bếp từ: cuộn dây dưới mặt kính tạo từ trường biến thiên xuyên vào đáy nồi gang, sinh dòng Foucault và toả nhiệt trong đáy nồi",
-            b, "Hình 1. Từ trường biến thiên của cuộn dây xuyên qua mặt kính vào đáy nồi gang, sinh dòng "
-               "Foucault toả nhiệt ngay trong đáy nồi.")
+            b, "Hình 1. Từ trường biến thiên xuyên qua mặt kính, sinh dòng Foucault toả nhiệt "
+               "ngay trong đáy nồi gang.")
 
 # ------------------------------------------------- Hình 2: đàn ghi ta điện
 b = defs("f2")
@@ -99,8 +99,8 @@ b += f'<polyline points="{pts}" fill="none" stroke="{GRN}" stroke-width="2.2"/>'
 b += text(258, 166, "ra loa: cùng tần số dây", "currentColor", 11)
 fig2 = wrap("0 0 440 200",
             "Sơ đồ đàn ghi ta điện: dây thép dao động trên nam châm và cuộn dây cảm ứng, dòng điện cảm ứng cùng tần số đi ra máy tăng âm và loa",
-            b, "Hình 2. Bộ cảm ứng: dây thép dao động trong từ trường của nam châm, cuộn dây cho dòng cảm ứng "
-               "cùng tần số, đưa qua máy tăng âm rồi ra loa.")
+            b, "Hình 2. Bộ cảm ứng: dây thép dao động trên nam châm, cuộn dây cho dòng cảm ứng "
+               "cùng tần số ra loa.")
 
 # ------------------------------------------------- Hình 3: sạc không dây (2 ô)
 b = defs("f3")
@@ -132,13 +132,13 @@ pts = " ".join(f"{280 + d * 35},{205 - int(u * 15.47)}" for d, u in ((0, 8.4), (
 b += f'<polyline points="{pts}" fill="none" stroke="{GRN}" stroke-width="2.2"/>'
 fig3 = wrap("0 0 440 240",
             "Sạc không dây: hai cuộn dây rời nhau ghép qua từ trường, và đồ thị điện áp cuộn thứ cấp giảm dần khi tăng khoảng cách",
-            b, "Hình 3. Sạc không dây là máy biến áp không lõi: hai cuộn rời ghép qua từ trường. Đồ thị vẽ số đo "
-               "ở mục II.2, luôn thấp hơn đường lí tưởng 9,0 V.")
+            b, "Hình 3. Sạc không dây = máy biến áp không lõi: hai cuộn rời ghép qua từ trường; "
+               "số đo luôn thấp hơn lí tưởng 9,0 V.")
 
 # ------------------------------------------------- Hình 4: tấm Foucault
 b = defs("f4")
 b += text(12, 20, "a) Tấm liền khối", "currentColor", 11, "start", "700")
-b += text(12, 36, "6 dao động · tắt sau 3,8 s", GRN, 11, "start", "700")
+b += text(12, 36, "6 lần qua · tắt sau 3,8 s", GRN, 11, "start", "700")
 b += line(60, 40, 150, 40, "currentColor", 2)
 b += line(105, 40, 105, 58, "currentColor", 1.5)
 b += rect(75, 58, 60, 80, "rgba(148,163,184,.22)", "currentColor", 2)
@@ -151,7 +151,7 @@ b += text(164, 102, "S", BLUE, 11, "middle", "700")
 b += text(14, 196, "dòng khép kín lớn", GRN, 11)
 b += text(14, 214, "→ hãm mạnh", GRN, 11)
 b += text(228, 20, "b) Tấm có rãnh xẻ", "currentColor", 11, "start", "700")
-b += text(228, 36, "21 dao động · tắt sau 13,3 s", GRN, 11, "start", "700")
+b += text(228, 36, "21 lần qua · tắt sau 13,3 s", GRN, 11, "start", "700")
 b += line(270, 40, 370, 40, "currentColor", 2)
 b += line(320, 40, 320, 58, "currentColor", 1.5)
 for x in (290, 306, 322, 338):
@@ -165,8 +165,7 @@ b += rect(360, 76, 30, 44, "rgba(56,189,248,.22)", BLUE, 2, 4)
 b += text(375, 102, "S", BLUE, 11, "middle", "700")
 fig4 = wrap("0 0 440 224",
             "Hai tấm nhôm dao động giữa hai cực nam châm: tấm liền khối có dòng Foucault khép kín lớn nên tắt nhanh, tấm có rãnh xẻ bị cắt đường dòng nên dao động lâu hơn",
-            b, "Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối có dòng khép kín lớn nên tắt sau vài "
-               "giây; rãnh xẻ cắt đường dòng nên dao động lâu hơn.")
+            b, "Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối tắt nhanh, tấm có rãnh xẻ lâu hơn.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

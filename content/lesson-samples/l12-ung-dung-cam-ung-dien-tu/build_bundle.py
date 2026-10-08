@@ -53,9 +53,9 @@ EXAM = {
         {
             "type": "multiple_choice",
             "question": "Một máy biến áp trong bộ sạc có cuộn sơ cấp 600 vòng nối với điện áp xoay chiều 220 V, cuộn thứ cấp 150 vòng. Coi gần đúng lí tưởng, điện áp ra của cuộn thứ cấp là",
-            "options": ["55 V.", "880 V.", "110 V.", "220 V."],
+            "options": ["55 V.", "880 V.", "165 V.", "220 V."],
             "answer": 0,
-            "explanation": "U2 = U1·N2/N1 = 220 × 150/600 = 220 × 0,25 = 55 V. Cuộn thứ cấp ít vòng hơn nên điện áp ra nhỏ hơn điện áp vào (máy hạ áp). Các phương án sai là ba lỗi hay gặp: đảo tỉ số vòng (880 V), chia nhầm thành một nửa (110 V), và tưởng máy biến áp giữ nguyên điện áp (220 V).",
+            "explanation": "U2 = U1·N2/N1 = 220 × 150/600 = 220 × 0,25 = 55 V. Cuộn thứ cấp ít vòng hơn nên điện áp ra nhỏ hơn điện áp vào (máy hạ áp). Các phương án sai là ba lỗi hay gặp: đảo tỉ số vòng (880 V), lấy hiệu số vòng (165 V), và tưởng máy biến áp giữ nguyên điện áp (220 V).",
         },
     ],
 }
