@@ -45,14 +45,16 @@ function PracticeModal(props: ComponentProps<typeof PracticeModalLazy>) {
  * (thẻ mastery cuối bài có nút "Luyện 10 câu phần này"). Nút "Luyện nhanh 10 câu" (M2, GĐ 2.6) mở
  * thẳng modal luyện cho kỹ năng yếu nhất: 10 câu, từng câu một, ghi phiên luyện như mọi lượt luyện (D2, N1). Không có dữ liệu / RPC lỗi → ẩn hẳn.
  */
-export default function WeakestSkillsCard() {
-  const [items, setItems] = useState<WeakTopic[]>([]);
+export default function WeakestSkillsCard({ topics }: { topics?: WeakTopic[] } = {}) {
+  const [own, setOwn] = useState<WeakTopic[] | null>(null);
+  const items = own ?? topics ?? [];
   const [run, setRun] = useState<{ lessonId: number; examIds: number[]; topicName: string } | null>(null);
   const [starting, setStarting] = useState(false);
   const [startError, setStartError] = useState(false);
+  // Trang chủ tải một lần rồi truyền xuống (cùng nguồn với thẻ "Hôm nay"); dùng riêng lẻ thì tự tải.
   useEffect(() => {
-    fetchMyWeakestTopics(3).then(setItems).catch(() => setItems([]));
-  }, []);
+    if (topics === undefined) fetchMyWeakestTopics(3).then(setOwn).catch(() => setOwn([]));
+  }, [topics]);
   if (items.length === 0) return null;
   const weakest = items[0];
 
@@ -126,7 +128,7 @@ export default function WeakestSkillsCard() {
           topicName={run.topicName}
           count={10}
           onClose={() => setRun(null)}
-          onFinished={() => fetchMyWeakestTopics(3).then(setItems).catch(() => {})}
+          onFinished={() => fetchMyWeakestTopics(3).then(setOwn).catch(() => {})}
         />
       )}
     </section>

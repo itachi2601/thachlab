@@ -38,7 +38,9 @@ import RankCard from "@/components/rank/RankCard";
 import WornTitle from "@/components/rank/WornTitle";
 import DailyStreakCard from "@/components/rank/DailyStreakCard";
 import type { RankStatus } from "@/features/rank/types";
-import { fetchMyRankStatus } from "@/services/rank";
+import { fetchMyRankStatus, fetchMyStreakDays, type StreakDay } from "@/services/rank";
+import { fetchMyWeakestTopics, type WeakTopic } from "@/services/mastery";
+import WelcomeBackDialog from "@/components/dashboard/WelcomeBackDialog";
 import {
   fetchLatestAnnouncements,
   fetchRecentAnnouncements,
@@ -116,6 +118,9 @@ export default function ThptStudentHome({
   const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
   const [scores, setScores] = useState<ScorePoint[]>([]);
   const [rank, setRank] = useState<RankStatus | null | undefined>(undefined);
+  const [streakDays, setStreakDays] = useState<StreakDay[] | null>(null);
+  // undefined = đang tải; [] = không có / RPC chưa chạy. Một lần tải, dùng cho cả thẻ "Hôm nay" lẫn thẻ kỹ năng yếu.
+  const [weakTopics, setWeakTopics] = useState<WeakTopic[] | undefined>(undefined);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [scoresLoaded, setScoresLoaded] = useState(false);
@@ -167,6 +172,8 @@ export default function ThptStudentHome({
     fetchMyProgressMarks(studentId).then(setProgressMarks).catch(() => setProgressMarks(null));
     fetchMyAlert(studentId).then(setAlert).catch(() => setAlert(null));
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
+    fetchMyStreakDays().then(setStreakDays);
+    fetchMyWeakestTopics(3).then(setWeakTopics).catch(() => setWeakTopics([]));
     fetchClassAssessments(classId)
       .then(setAssessments)
       .catch(() => setAssessments([]))
@@ -291,6 +298,22 @@ export default function ThptStudentHome({
     return [...worst.values()].filter((p) => p.score < 6.5).sort((a, b) => a.score - b.score)[0] ?? null;
   }, [scores]);
 
+  // Kỹ năng yếu nhất (chỉ khi bài chứa nó có trong lớp để dựng được liên kết) và bài đã học xong gần nhất (để ôn cách quãng).
+  const weakStep = useMemo(() => {
+    const top = weakTopics?.[0];
+    const lesson = top && classLessons?.find((l) => l.id === top.lessonId);
+    return top && lesson ? { topicId: top.topicId, topicName: top.topicName, lessonId: top.lessonId, chapterId: lesson.chapter_id, pct: top.pct } : null;
+  }, [weakTopics, classLessons]);
+  const reviewLesson = useMemo(() => {
+    if (!classLessons) return null;
+    const done = classLessons.filter((l) => {
+      const summary = progress.get(l.id);
+      return summary && summary.total > 0 && summary.completed >= summary.total;
+    });
+    const last = done[done.length - 1];
+    return last ? { id: last.id, chapterId: last.chapter_id, title: last.title } : null;
+  }, [classLessons, progress]);
+
   const nextSteps = useMemo(
     () =>
       rankNextSteps({
@@ -300,13 +323,15 @@ export default function ThptStudentHome({
         nextLesson: nextLesson
           ? { id: nextLesson.id, chapterId: nextLesson.chapter_id, title: nextLesson.title, chapterTitle: nextChapter?.title }
           : null,
+        weak: weakStep,
+        reviewLesson,
       }),
-    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter],
+    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, weakStep, reviewLesson],
   );
 
   // Thẻ "Hôm nay em làm gì": bài kiểm tra được giao → BTVN ôn tập → rankNextSteps (mở khoá → làm lại → học tiếp → ôn lại).
   // Việc đầu là nút nổi duy nhất của trang (B2, L5); tối đa 3 việc phụ (N2). Chờ đủ điểm + bài giao + danh mục mới vẽ.
-  const attentionReady = scoresLoaded && assessmentsLoaded && catalogLoaded;
+  const attentionReady = scoresLoaded && assessmentsLoaded && catalogLoaded && weakTopics !== undefined;
   const seenExamIds = new Set<number>(todayNote?.examId ? [todayNote.examId] : []);
   const uniqueByExam = <T extends { examId: number }>(items: T[]) =>
     items.filter((item) => (seenExamIds.has(item.examId) ? false : (seenExamIds.add(item.examId), true)));
@@ -439,6 +464,16 @@ export default function ThptStudentHome({
         />
       )}
 
+      <WelcomeBackDialog
+        userId={studentId}
+        name={profile?.full_name}
+        rank={rank}
+        days={streakDays}
+        primary={primaryStep}
+        ready={attentionReady}
+        onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
+      />
+
       <PwaInstallCard />
 
       {/* Tìm bài theo tên — dưới việc hôm nay để không đẩy việc chính xuống (B1). */}
@@ -463,7 +498,7 @@ export default function ThptStudentHome({
       )}
 
       {/* Mục 3 — Luyện thêm: kỹ năng yếu (tự ẩn khi không có), bù bài cho em vào lớp trễ (tự ẩn), rồi MỘT khối phụ đạo */}
-      <WeakestSkillsCard />
+      <WeakestSkillsCard topics={weakTopics ?? []} />
       <CatchupCard studentId={studentId} classId={classId} viewer="student" showSlots={false} />
       {showTutoring && (
         <TutoringSection
@@ -488,7 +523,7 @@ export default function ThptStudentHome({
           của lớp, chọn hiển thị vinh danh đã chuyển sang trang Rank (L3, N1 — thầy chốt 7/10/2026). */}
       <div className="grid gap-4 sm:grid-cols-2 sm:items-stretch">
         <RankCard status={rank} className="h-full" />
-        <DailyStreakCard status={rank} className="h-full" />
+        <DailyStreakCard status={rank} days={streakDays} className="h-full" />
       </div>
 
       {quizNeed && (

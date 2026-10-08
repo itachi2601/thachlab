@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261008120000_rank_streak_week_theory_review.sql|RPC dải chuỗi 7 ngày rank_my_streak_days + bảng theory_reviews, RPC rank_theory_review_open/submit (RP ôn lại bài lý thuyết; chỉ thêm hàm/bảng mới)|giờ nào cũng được; rollback perf/rollback/20261008120000_rank_streak_week_theory_review.down.sql"
 )
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
