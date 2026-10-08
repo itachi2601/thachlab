@@ -204,7 +204,7 @@ function Account(){
   if(classRequest)return <ClassRequestNotice request={classRequest} onRetry={reload}/>;
   return <StudentTrackChooser onSubmitted={reload}/>;
   })();
-  return <>{variant==="thpt_active"?welcome("welcome_back"):welcome(variant)}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
+  return <>{variant==="thpt_active"?null:welcome(variant)}{body}{profile?.role==="student"&&<LazyErrorBoundary><DailyReminderCard/></LazyErrorBoundary>}<ProfileEditCard/></>;
 }
 
 export default function AccountPage(){return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24 pt-28 lg:px-8"><RequireAuth><Account/></RequireAuth></main><Footer variant="app"/></>}
