@@ -1,0 +1,55 @@
+# Tự gộp nhánh claude/* vào main ngay khi phiên cloud push.
+# - Fast-forward được → push thẳng, main = nhánh.
+# - Không fast-forward nhưng merge sạch → tạo merge commit rồi push.
+# - Đụng nhau → job đỏ + cảnh báo, thầy merge tay trên Mac.
+# Deploy không gắn với main (nhánh deploy riêng) nên gộp tự động không ảnh hưởng web.
+name: Gộp nhánh claude vào main
+
+on:
+  push:
+    branches: ['claude/**']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gop-vao-main
+  cancel-in-progress: false
+
+jobs:
+  gop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Gộp vào main
+        env:
+          BR: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -e
+          git config user.name "thachlab-bot"
+          git config user.email "bot@thachlab.local"
+          git fetch origin "$BR"
+
+          if git merge-base --is-ancestor "$SHA" origin/main; then
+            echo "::notice::$BR đã nằm trong main, không làm gì."
+            exit 0
+          fi
+
+          if git merge-base --is-ancestor origin/main "$SHA"; then
+            git push origin "$SHA:refs/heads/main"
+            echo "::notice::main ← $BR (fast-forward)"
+            exit 0
+          fi
+
+          if git merge --no-ff --no-edit -m "gộp $BR vào main (tự động)" "$SHA"; then
+            git push origin HEAD:main
+            echo "::notice::main ← $BR (merge commit, không xung đột)"
+          else
+            echo "::warning::$BR XUNG ĐỘT với main — merge tay trên Mac: git fetch origin && git merge origin/$BR"
+            exit 1
+          fi

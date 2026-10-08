@@ -220,3 +220,8 @@ Cuối mỗi phiên (trước khi báo xong / `/ban-giao`), thêm 1–3 gạch �
 1. **Token**: việc nào đốt token vô ích (đọc cả file lớn thay vì grep/đọc đoạn, đọc ảnh ở phiên chính, dò schema thay vì `docs/DATABASE.md`, lặp tool call, báo tiến độ giữa chừng…), cách làm rẻ hơn lần sau. Nếu phiên đọc file nạp-mỗi-phiên (`AGENTS.md`, `MEMORY.md`, `STATE.md`) thấy phình thì rút gọn/chuyển bớt ngay.
 2. **Đối thoại**: thầy chỉnh/khen cách trả lời nào (độ dài, giọng, mức hỏi lại, mức tự quyết) → ghi vào `docs/memory/user_thach_phong_cach_doi_thoai.md` (thêm mục, không viết lại), không chỉ nói miệng.
 Không có gì mới thì ghi "không có bài học mới" — không bịa cho đủ. Bài học nhỏ, gộp vào mục có sẵn thay vì tạo file mới.
+
+# Nhánh claude/* tự vào main (từ 8/10/2026)
+Workflow `.github/workflows/gop-claude-vao-main.yml`: mỗi lần push nhánh `claude/*`, GitHub tự fast-forward hoặc merge sạch vào
+`main`. Chỉ khi job báo đỏ (xung đột) mới cần merge tay trên Mac. Cuối phiên vẫn báo tên nhánh, nhưng không cần in lệnh merge
+nếu job xanh — kiểm tại tab Actions. Trên Mac chỉ cần `git pull origin main`.
