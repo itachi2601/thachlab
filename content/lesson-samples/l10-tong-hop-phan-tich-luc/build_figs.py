@@ -61,14 +61,13 @@ hx, hy = gx + 106, 160        # điểm đặt lực (tay kéo)
 alpha = 40
 s, (ex, ey) = vec("f2", "r", hx, hy, alpha, 140, 3.4)
 b += s
-b += line(hx, hy, ex, hy, GRN, 2.4, "", 1) + arrow("f2", "g", hx, hy, round(ex, 1), hy, 3)
-b += arrow("f2", "o", ex, hy, round(ex, 1), round(ey, 1), 3)
-b += line(ex, hy, ex, ey, ORG, 2.4)  # trục dựng
-b += line(hx, hy, ex, ey, RED, 0)    # không vẽ thêm
+b += line(ex, hy, ex, ey, "currentColor", 1.5, "5 4", .6) + line(hx, ey, ex, ey, "currentColor", 1.5, "5 4", .6)
+b += arrow("f2", "g", hx, hy, round(ex, 1), hy, 3)
+b += arrow("f2", "o", hx, hy, hx, round(ey, 1), 3)
 b += arc(hx, hy, 52, 0, alpha, "currentColor") + text(hx + 56, hy - 8, "α", "currentColor", 14, "start", "700")
 b += text((hx + ex) / 2 - 12, (hy + ey) / 2 - 8, "F", RED, 16, "end", "700")
-b += text(hx + 8, hy + 26, sub("F", "x") + " = F cos α", GRN, 14, "start", "700")
-b += text(ex + 8, (hy + ey) / 2 + 4, sub("F", "y") + " = F sin α", ORG, 14, "start", "700")
+b += text(hx + 8, hy + 22, sub("F", "x") + " = F cos α", GRN, 14, "start", "700")
+b += text(hx - 8, (hy + ey) / 2 + 4, sub("F", "y") + " = F sin α", ORG, 14, "end", "700")
 fig2 = wrap("0 0 440 220", "Phân tích lực kéo F của tay thành thành phần nằm ngang Fx và thẳng đứng Fy",
             b, "Hình 2. Lực kéo nghiêng <em>F</em> phân tích thành <em>F<sub>x</sub></em> (làm xe chạy) và <em>F<sub>y</sub></em> (nhấc bớt xe lên); α là góc với phương ngang.")
 
@@ -91,6 +90,9 @@ b += f'<polygon points="{" ".join(P(*p) for p in pts)}" fill="rgba(251,146,60,.1
 gx0, gy0 = cx0 + 12 * nvec[0], cy0 + 12 * nvec[1]       # trọng tâm
 b += dot(gx0, gy0, 3.5)
 Lp = 96
+_px_t = (gx0 - Lp * math.sin(math.radians(al)) * math.cos(math.radians(al)), gy0 + Lp * math.sin(math.radians(al)) * math.sin(math.radians(al)))
+_py_t = (gx0 + Lp * math.cos(math.radians(al)) * math.sin(math.radians(al)), gy0 + Lp * math.cos(math.radians(al)) * math.cos(math.radians(al)))
+b += line(_px_t[0], _px_t[1], gx0, gy0 + Lp, "currentColor", 1.5, "5 4", .6) + line(_py_t[0], _py_t[1], gx0, gy0 + Lp, "currentColor", 1.5, "5 4", .6)
 b += arrow("f3", "r", round(gx0, 1), round(gy0, 1), round(gx0, 1), round(gy0 + Lp, 1), 3.4)               # P thẳng đứng xuống
 px, pyy = Lp * math.sin(math.radians(al)), Lp * math.cos(math.radians(al))
 b += arrow("f3", "g", round(gx0, 1), round(gy0, 1), round(gx0 - px * math.cos(math.radians(al)), 1), round(gy0 + px * math.sin(math.radians(al)), 1), 3)   # Px dọc dốc xuống
@@ -212,13 +214,13 @@ def sim_doc():
             b += f'<polygon points="{P(*foot)} {P(*top)} {P(top[0], foot[1])}" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/>'
             b += arc(foot[0], foot[1], 46, 0, alpha, "currentColor")
             b += text(foot[0] + 54, foot[1] - 8, "α", "currentColor", 17, "start", "700")
-        c, hw, hh = along(0.26), 26, 18
+        c, hw, hh = along(0.42), 26, 18
         corners = []
         for sx, sy in ((-1, 0), (1, 0), (1, 1), (-1, 1)):
             corners.append((c[0] + sx * hw * U[0] + sy * hh * Nout[0],
                             c[1] + sx * hw * U[1] + sy * hh * Nout[1]))
         b += f'<polygon points="{" ".join(P(*q) for q in corners)}" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/>'
-        t0, slen, thick = 0.46, 78, 26
+        t0, slen, thick = 0.58, 78, 26
         hook = along(t0, 1)
         face = (c[0] + hw * U[0] + (hh * 0.55) * Nout[0], c[1] + hw * U[1] + (hh * 0.55) * Nout[1])
         b += line(face[0], face[1], *along(t0, thick / 2), "currentColor", 2)
@@ -241,8 +243,21 @@ def sim_doc():
         b += f'<rect x="{mid[0] - 46:.1f}" y="{mid[1] - 16:.1f}" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="{GRN}" stroke-width="2"/>'
         b += text(mid[0], mid[1] + 7, f"{spx} N", GRN, 20, "middle", "700")
         g = (c[0] + (hh * 0.45) * Nout[0], c[1] + (hh * 0.45) * Nout[1])
-        b += arrow(f"n{alpha}", "r", round(g[0] - 2, 1), round(g[1] - 46, 1), round(g[0] - 2, 1), round(g[1] - 6, 1), 3.2)
-        b += text(g[0] - 12, g[1] - 34, "P", RED, 17, "end", "700")
+        Lp = 84
+        ptip = (g[0], g[1] + Lp)
+        pxv = (-U[0] * Lp * math.sin(a), -U[1] * Lp * math.sin(a))
+        pyv = (-Nout[0] * Lp * math.cos(a), -Nout[1] * Lp * math.cos(a))
+        if alpha > 0:
+            b += line(g[0] + pxv[0], g[1] + pxv[1], ptip[0], ptip[1], "currentColor", 2, "5 4", .9)
+            b += line(g[0] + pyv[0], g[1] + pyv[1], ptip[0], ptip[1], "currentColor", 2, "5 4", .9)
+            b += arrow(f"n{alpha}", "g", round(g[0], 1), round(g[1], 1), round(g[0] + pxv[0], 1), round(g[1] + pxv[1], 1), 3)
+            b += arrow(f"n{alpha}", "o", round(g[0], 1), round(g[1], 1), round(g[0] + pyv[0], 1), round(g[1] + pyv[1], 1), 3)
+        b += arrow(f"n{alpha}", "r", round(g[0], 1), round(g[1], 1), round(ptip[0], 1), round(ptip[1], 1), 3.2)
+        b += dot(g[0], g[1], 3.5)
+        b += text(ptip[0] + 10, ptip[1] + 6, "P", RED, 17, "start", "700")
+        if alpha > 0:
+            b += text(g[0] + pxv[0] - 8, g[1] + pxv[1] + 4, sub("P", "x"), GRN, 17, "end", "700")
+            b += text(g[0] + pyv[0] + 8, g[1] + pyv[1] + 16, sub("P", "y"), ORG, 17, "start", "700")
         parts.append(
             f'<svg class="n-a{alpha}" viewBox="0 0 440 324" role="img" '
             f'aria-label="Dốc {alpha} độ, lực kế chỉ {spx} niutơn">{b}</svg>'

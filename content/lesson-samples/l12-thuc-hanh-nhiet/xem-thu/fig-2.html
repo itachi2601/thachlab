@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,7 +602,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 292" role="img" aria-label="Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Đun 0,500 kg nước đá bằng bếp 500 W</text><line x1="62" y1="214" x2="428" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="62" y1="214" x2="62" y2="44" stroke="currentColor" stroke-width="2" opacity="1"/><text x="424" y="234" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">τ</text><text x="28" y="44" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="start">t (°C)</text><text x="40" y="219" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">0</text><text x="40" y="106" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">100</text><line x1="62" y1="102" x2="424" y2="102" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/><polyline fill="none" stroke="#34d399" stroke-width="2.8" points="68,224 72,206 110,206 155,102 282,102 400,102 424,102"/><circle cx="68" cy="224" r="3.4" fill="#34d399"/><circle cx="72" cy="206" r="3.4" fill="#34d399"/><circle cx="110" cy="206" r="3.4" fill="#34d399"/><circle cx="155" cy="102" r="3.4" fill="#34d399"/><circle cx="282" cy="102" r="3.4" fill="#34d399"/><circle cx="400" cy="102" r="3.4" fill="#34d399"/><line x1="58" y1="224" x2="428" y2="224" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.35"/><text x="40" y="229" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="end">−10</text><text x="292" y="74" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">4. Hoá hơi ở 100 °C</text><text x="292" y="88" fill="#f87171" font-size="10.5" font-weight="600" text-anchor="start">L = Pτ/m</text><line x1="292" y1="92" x2="340" y2="100" stroke="#f87171" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="196" y="148" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">3. Nước 0 → 100 °C</text><text x="196" y="162" fill="#38bdf8" font-size="10.5" font-weight="600" text-anchor="start">c = Pτ/(mΔt)</text><line x1="196" y1="152" x2="140" y2="140" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="112" y="168" fill="#fb923c" font-size="11" font-weight="700" text-anchor="start">2. Tan ở 0 °C</text><text x="112" y="182" fill="#fb923c" font-size="10.5" font-weight="600" text-anchor="start">λ = Pτ/m</text><line x1="114" y1="186" x2="92" y2="202" stroke="#fb923c" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="16" y="250" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">Đoạn ngang = nhiệt dùng để chuyển thể, không làm nhiệt độ đổi.</text></svg><figcaption>Hình 2. Đường cong đun nóng: hai đoạn nằm ngang là hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Nhìn độ dài đoạn ngang để thấy nhiệt chuyển thể lớn hơn nhiều so với nhiệt làm nóng.</figcaption></figure></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 322" role="img" aria-label="Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Đun 0,500 kg nước đá bằng bếp 500 W</text><line x1="62" y1="266.0" x2="428" y2="266.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="62" y1="266.0" x2="62" y2="46" stroke="currentColor" stroke-width="2" opacity="1"/><text x="428" y="288" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">τ</text><text x="28" y="44" fill="currentColor" font-size="11.5" font-weight="600" text-anchor="start">t (°C)</text><text x="54" y="254.0" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">0</text><text x="54" y="94.0" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">100</text><text x="54" y="270.0" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">−10</text><line x1="62" y1="90.0" x2="424" y2="90.0" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/><line x1="62" y1="250.0" x2="424" y2="250.0" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/><polyline fill="none" stroke="#34d399" stroke-width="2.8" points="68,266.0 72,250.0 110,250.0 155,90.0 400,90.0 424,90.0"/><circle cx="68" cy="266.0" r="3.4" fill="#34d399"/><circle cx="72" cy="250.0" r="3.4" fill="#34d399"/><circle cx="110" cy="250.0" r="3.4" fill="#34d399"/><circle cx="155" cy="90.0" r="3.4" fill="#34d399"/><circle cx="400" cy="90.0" r="3.4" fill="#34d399"/><text x="262" y="62" fill="#f87171" font-size="11.5" font-weight="700" text-anchor="start">4. Hoá hơi ở 100 °C</text><text x="262" y="77" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">L = Pτ/m</text><line x1="300" y1="82" x2="320" y2="88.0" stroke="#f87171" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="196" y="168" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="start">3. Nước 0 → 100 °C</text><text x="196" y="183" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="start">c = Pτ/(mΔt)</text><line x1="192" y1="166" x2="136" y2="166" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="196" y="222" fill="#fb923c" font-size="11.5" font-weight="700" text-anchor="start">2. Tan ở 0 °C</text><text x="196" y="237" fill="#fb923c" font-size="11" font-weight="600" text-anchor="start">λ = Pτ/m</text><line x1="192" y1="232" x2="116" y2="249" stroke="#fb923c" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/><text x="16" y="310" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">Đoạn ngang = nhiệt dùng để chuyển thể, không làm nhiệt độ đổi.</text></svg><figcaption>Hình 2. Đường cong đun nóng: hai đoạn nằm ngang là hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Nhìn độ dài đoạn ngang để thấy nhiệt chuyển thể lớn hơn nhiều so với nhiệt làm nóng.</figcaption></figure></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>

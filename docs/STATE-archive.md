@@ -415,3 +415,5 @@ chính" giờ lên web thật.
   `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` mục 3); theory.html + bundle.json đã đồng bộ. **Thầy đã ghi DB 3/10/2026**
   (item 45, sao lưu `scripts/logs/ly-thuyet-bai27-backup-1790986956595.json`), deploy lại để bản tĩnh 27.json cập nhật.
 
+
+- **Đã chạy 8/10/2026 23:27:** `20261008120000_rank_streak_week_theory_review.sql` — RPC `rank_my_streak_days` (dải chuỗi 7 ngày), bảng `theory_reviews`, RPC `rank_theory_review_open/submit` (RP ôn lại lý thuyết, cấu hình `theory_review_*`). Rollback: `perf/rollback/20261008120000_rank_streak_week_theory_review.down.sql`.

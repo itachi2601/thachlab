@@ -15,6 +15,11 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   overflow-wrap: break-word;
   word-break: break-word;
 }
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
+}
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
    nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
@@ -168,9 +173,90 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
 html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: .95rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: .95rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +270,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +279,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -557,6 +668,34 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -584,6 +723,13 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <li><strong>Rút ra:</strong> hợp lực của $\vec F_1$, $\vec F_2$ cùng độ lớn, ngược chiều $\vec F_3$: quy tắc hình bình hành đúng với lực.</li>
 </ol>
 </div>
+<!--video:tn-l10-tonghopluc-01-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: hai lực kế, thước đo góc</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/4duh8FCeRwM?rel=0&start=50&end=135" title="hai lực kế, thước đo góc" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Hai lực kế kéo lệch nhau. Dây treo quả nặng nằm về phía nào so với góc giữa hai lực kế?</p>
+</div>
+
 
 <details class="tl-details" open>
 <summary>📊 Bấm xem: bảng số liệu mẫu và câu hỏi về sai số</summary>
@@ -644,7 +790,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 $$F^2 = F_1^2 + F_2^2 + 2F_1F_2\cos\alpha$$
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 220" role="img" aria-label="Quy tắc hình bình hành: hai lực F1, F2 hợp nhau góc alpha, đường chéo là hợp lực F"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="273.5" y1="140.8" x2="284.0" y2="21.3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="100.5" y1="70.5" x2="284.0" y2="21.3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="90" y1="190" x2="273.5" y2="140.8" stroke="#f87171" stroke-width="3.2" marker-end="url(#f1-r)"/><line x1="90" y1="190" x2="100.5" y2="70.5" stroke="#38bdf8" stroke-width="3.2" marker-end="url(#f1-b)"/><line x1="90" y1="190" x2="284.0" y2="21.3" stroke="#34d399" stroke-width="3.6" marker-end="url(#f1-g)"/><path d="M134.4,178.1 A46,46 0 0 0 94.0,144.2" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="116" y="146" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text><path d="M165.3,169.8 A78,78 0 0 0 148.9,138.8" fill="none" stroke="#34d399" stroke-width="1.5"/><text x="172" y="150" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">θ</text><text x="239.525906994923" y="170.82438143052104" fill="#f87171" font-size="15" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="9">1</tspan></text><text x="90.45868912971898" y="74.45663622899053" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="9">2</tspan></text><text x="293.98459612464194" y="29.281017659511576" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">F</text><circle cx="90.0" cy="190.0" r="4" fill="currentColor"/><text x="84" y="208" fill="currentColor" font-size="12" font-weight="600" text-anchor="end">O</text></svg><figcaption>Hình 1. Quy tắc hình bình hành: đường chéo xuất phát từ O (xanh lá) là hợp lực <em>F</em>; α là góc giữa hai lực.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 220" role="img" aria-label="Quy tắc hình bình hành: hai lực F1, F2 hợp nhau góc alpha, đường chéo là hợp lực F"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="273.5" y1="140.8" x2="284.0" y2="21.3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="100.5" y1="70.5" x2="284.0" y2="21.3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="90" y1="190" x2="273.5" y2="140.8" stroke="#f87171" stroke-width="2.8"/><path d="M261.9,137.7 L273.5,140.8 L265.0,149.3" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="90" y1="190" x2="100.5" y2="70.5" stroke="#38bdf8" stroke-width="2.8"/><path d="M93.6,80.3 L100.5,70.5 L105.6,81.4" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="90" y1="190" x2="284.0" y2="21.3" stroke="#34d399" stroke-width="2.8"/><path d="M272.2,23.6 L284.0,21.3 L280.1,32.6" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M134.4,178.1 A46,46 0 0 0 94.0,144.2" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="116" y="146" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text><path d="M165.3,169.8 A78,78 0 0 0 148.9,138.8" fill="none" stroke="#34d399" stroke-width="1.5"/><text x="172" y="150" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">θ</text><text x="239.525906994923" y="170.82438143052104" fill="#f87171" font-size="15" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="90.45868912971898" y="74.45663622899053" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">2</tspan></text><text x="293.98459612464194" y="29.281017659511576" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">F</text><circle cx="90.0" cy="190.0" r="4" fill="currentColor"/><text x="84" y="208" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">O</text></svg><figcaption>Hình 1. Quy tắc hình bình hành: đường chéo xuất phát từ O (xanh lá) là hợp lực <em>F</em>; α là góc giữa hai lực.</figcaption></figure>
 
 <p><strong>🔑 Góc càng mở · hợp lực càng nhỏ</strong></p>
 
@@ -670,16 +816,16 @@ $$\cos\theta = \frac{F^2 + F_1^2 - F_2^2}{2FF_1}$$
 </details>
 
 <p class="tl-conf">Em chắc bao nhiêu?
-<label><input type="radio" name="tl13-q2-conf" value="chac"> Chắc</label>
-<label><input type="radio" name="tl13-q2-conf" value="khong"> Không chắc</label></p>
+<label><input type="radio" name="tl58-q2-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl58-q2-conf" value="khong"> Không chắc</label></p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Hai lực đồng quy, mỗi lực $10$ N, hợp nhau góc $120^\circ$. Độ lớn hợp lực là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl13-q2" id="tl13-q2a" checked><label for="tl13-q2a" class="tl-opt tl-ok">A. $10$ N</label>
-<input type="radio" name="tl13-q2" id="tl13-q2b"><label for="tl13-q2b" class="tl-opt tl-no">B. $20$ N</label>
-<input type="radio" name="tl13-q2" id="tl13-q2c"><label for="tl13-q2c" class="tl-opt tl-no">C. $17{,}3$ N</label>
-<input type="radio" name="tl13-q2" id="tl13-q2d"><label for="tl13-q2d" class="tl-opt tl-no">D. $0$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2a" checked><label for="tl58-q2a" class="tl-opt tl-ok">A. $10$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2b"><label for="tl58-q2b" class="tl-opt tl-no">B. $20$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2c"><label for="tl58-q2c" class="tl-opt tl-no">C. $17{,}3$ N</label>
+<input type="radio" name="tl58-q2" id="tl58-q2d"><label for="tl58-q2d" class="tl-opt tl-no">D. $0$ N</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = 2F_1\cos\dfrac{\alpha}{2} = 2 \cdot 10 \cdot \cos 60^\circ = 10$ N. Ba vectơ $\vec F_1$, $\vec F_2$, $\vec F$ cùng độ dài, tạo thành tam giác đều.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu chọn $20$ N là đã cộng số (chỉ đúng khi $\alpha = 0^\circ$); nếu chọn $17{,}3$ N là đã lấy nhầm $\alpha = 60^\circ$ thay vì $120^\circ$. Với $\alpha = 120^\circ$ thì $\dfrac{\alpha}{2} = 60^\circ$: tính lại rồi thế vào. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
@@ -713,7 +859,7 @@ $$F_x = F\cos\alpha \qquad F_y = F\sin\alpha$$
 
 <p>Ví dụ: kéo vali bằng tay kéo nghiêng. Thành phần nằm ngang $F_x$ làm vali chạy; thành phần thẳng đứng $F_y$ làm giảm áp lực của vali lên mặt đường.</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 220" role="img" aria-label="Phân tích lực kéo F của tay thành thành phần nằm ngang Fx và thẳng đứng Fy"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="20.0" y1="190.0" x2="420.0" y2="190.0" stroke="currentColor" stroke-width="2" opacity="0.7"/><rect x="80" y="146" width="96" height="44" rx="4" fill="rgba(148,163,184,.2)" stroke="currentColor" stroke-width="2.4"/><circle cx="100" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="158" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="176" y1="160" x2="283.2" y2="70.0" stroke="#f87171" stroke-width="3.4" marker-end="url(#f2-r)"/><line x1="176.0" y1="160.0" x2="283.2" y2="160.0" stroke="#34d399" stroke-width="2.4" opacity="1"/><line x1="176" y1="160" x2="283.2" y2="160" stroke="#34d399" stroke-width="3" marker-end="url(#f2-g)"/><line x1="283.24622203665695" y1="160" x2="283.2" y2="70.0" stroke="#fb923c" stroke-width="3" marker-end="url(#f2-o)"/><line x1="283.2" y1="160.0" x2="283.2" y2="70.0" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="176.0" y1="160.0" x2="283.2" y2="70.0" stroke="#f87171" stroke-width="0" opacity="1"/><path d="M228.0,160.0 A52,52 0 0 0 215.8,126.6" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="232" y="152" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text><text x="217.62311101832847" y="107.00486732194224" fill="#f87171" font-size="16" font-weight="700" text-anchor="end">F</text><text x="184" y="180" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="9">x</tspan> = F cos α</text><text x="291.24622203665695" y="119.00486732194224" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="9">y</tspan> = F sin α</text></svg><figcaption>Hình 2. Lực kéo nghiêng <em>F</em> phân tích thành <em>F<sub>x</sub></em> (làm xe chạy) và <em>F<sub>y</sub></em> (nhấc bớt xe lên); α là góc với phương ngang.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 220" role="img" aria-label="Phân tích lực kéo F của tay thành thành phần nằm ngang Fx và thẳng đứng Fy"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="20.0" y1="190.0" x2="420.0" y2="190.0" stroke="currentColor" stroke-width="2" opacity="0.7"/><rect x="80" y="146" width="96" height="44" rx="4" fill="rgba(148,163,184,.2)" stroke="currentColor" stroke-width="2.4"/><circle cx="100" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="158" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="176" y1="160" x2="283.2" y2="70.0" stroke="#f87171" stroke-width="2.8"/><path d="M271.4,72.1 L283.2,70.0 L279.1,81.3" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="283.2" y1="160.0" x2="283.2" y2="70.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="176.0" y1="70.0" x2="283.2" y2="70.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="176" y1="160" x2="283.2" y2="160" stroke="#34d399" stroke-width="2.8"/><path d="M272.8,154.0 L283.2,160.0 L272.8,166.0" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="176" y1="160" x2="176" y2="70.0" stroke="#fb923c" stroke-width="2.8"/><path d="M170.0,80.4 L176.0,70.0 L182.0,80.4" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M228.0,160.0 A52,52 0 0 0 215.8,126.6" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="232" y="152" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text><text x="217.62311101832847" y="107.00486732194224" fill="#f87171" font-size="16" font-weight="700" text-anchor="end">F</text><text x="184" y="182" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">x</tspan> = F cos α</text><text x="168" y="119.00486732194224" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">y</tspan> = F sin α</text></svg><figcaption>Hình 2. Lực kéo nghiêng <em>F</em> phân tích thành <em>F<sub>x</sub></em> (làm xe chạy) và <em>F<sub>y</sub></em> (nhấc bớt xe lên); α là góc với phương ngang.</figcaption></figure>
 
 <p><strong>🔑 Góc kề: cos · Góc đối: sin</strong></p>
 
@@ -726,7 +872,18 @@ $$F_x = F\cos\alpha \qquad F_y = F\sin\alpha$$
 </ol>
 </div>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 232" role="img" aria-label="Vật trên mặt phẳng nghiêng góc alpha: trọng lực P phân tích thành Px dọc dốc và Py vuông góc dốc"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="40.0,200.0 334.4,30.0 334.4,200.0" fill="rgba(148,163,184,.12)" stroke="currentColor" stroke-width="2.4"/><polygon points="188.1,114.5 247.0,80.5 235.0,59.7 176.1,93.7" fill="rgba(251,146,60,.18)" stroke="currentColor" stroke-width="2.4"/><circle cx="211.5" cy="87.1" r="3.5" fill="currentColor"/><line x1="211.5" y1="87.1" x2="211.5" y2="183.1" stroke="#f87171" stroke-width="3.4" marker-end="url(#f3-r)"/><line x1="211.5" y1="87.1" x2="170.0" y2="111.1" stroke="#34d399" stroke-width="3" marker-end="url(#f3-g)"/><line x1="211.5" y1="87.1" x2="253.1" y2="159.1" stroke="#fb923c" stroke-width="3" marker-end="url(#f3-o)"/><text x="221.53520777580994" y="187.10769515458674" fill="#f87171" font-size="16" font-weight="700" text-anchor="start">P</text><text x="165.96598839415688" y="99.10769515458674" fill="#34d399" font-size="13" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="9">x</tspan> = P sin α</text><text x="263.10442715746296" y="155.10769515458674" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="9">y</tspan></text><text x="263.10442715746296" y="171.10769515458674" fill="#fb923c" font-size="12" font-weight="700" text-anchor="start">= P cos α</text><path d="M110.0,200.0 A70,70 0 0 0 100.6,165.0" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="118" y="192" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text></svg><figcaption>Hình 3. Trên dốc nghiêng góc α, trọng lực <em>P</em> phân tích thành <em>P<sub>x</sub></em> = <em>P</em> sin α (dọc dốc) và <em>P<sub>y</sub></em> = <em>P</em> cos α (ép vào dốc).</figcaption></figure>
+<div class="tl-box tl-box--exp tl-sim tl-sim--doc">
+<p class="tl-label">🎛️ Thí nghiệm: đổi góc, đọc lực kế</p>
+<div class="tl-sim__row"><b>Góc nghiêng</b><input type="radio" name="tl58-n" class="n-a0" id="tl58-n0"><label for="tl58-n0" class="tl-sim__chip">0°</label><input type="radio" name="tl58-n" class="n-a15" id="tl58-n15"><label for="tl58-n15" class="tl-sim__chip">15°</label><input type="radio" name="tl58-n" class="n-a30" id="tl58-n30" checked><label for="tl58-n30" class="tl-sim__chip">30°</label><input type="radio" name="tl58-n" class="n-a45" id="tl58-n45"><label for="tl58-n45" class="tl-sim__chip">45°</label><input type="radio" name="tl58-n" class="n-a60" id="tl58-n60"><label for="tl58-n60" class="tl-sim__chip">60°</label></div>
+<svg class="n-a0" viewBox="0 0 440 324" role="img" aria-label="Dốc 0 độ, lực kế chỉ 0 niutơn"><defs><marker id="n0-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="n0-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="n0-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="n0-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="96" y="274" width="236" height="12" rx="2" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2.2"/><polygon points="169.1,274.0 221.1,274.0 221.1,256.0 169.1,256.0" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/><line x1="221.1" y1="264.1" x2="232.9" y2="261.0" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="translate(232.9,273.0) rotate(0)"><rect x="0" y="-26" width="78" height="26" rx="7" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2.2"/><path d="M12,-13 l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="#34d399" stroke-width="1.6"/></g><circle cx="232.9" cy="261.0" r="3.5" fill="none" stroke="#34d399" stroke-width="2"/><circle cx="310.9" cy="261.0" r="4.5" fill="#34d399"/><line x1="271.9" y1="248.0" x2="271.9" y2="206.0" stroke="#34d399" stroke-width="1.6" opacity="1"/><rect x="225.9" y="174.0" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="#34d399" stroke-width="2"/><text x="271.88" y="197.0" fill="#34d399" font-size="20" font-weight="700" text-anchor="middle">0 N</text><line x1="195.1" y1="265.9" x2="195.1" y2="349.9" stroke="#f87171" stroke-width="2.8"/><path d="M201.1,339.5 L195.1,349.9 L189.1,339.5" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="195.1" cy="265.9" r="3.5" fill="currentColor"/><text x="205.12" y="355.9" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">P</text></svg>
+<svg class="n-a15" viewBox="0 0 440 324" role="img" aria-label="Dốc 15 độ, lực kế chỉ 0,52 niutơn"><defs><marker id="n15-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="n15-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="n15-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="n15-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="96.0,274.0 324.0,212.9 324.0,274.0" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/><path d="M142.0,274.0 A46,46 0 0 0 140.4,262.1" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="150" y="266" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α</text><polygon points="166.6,255.1 216.9,241.6 212.2,224.2 162.0,237.7" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/><line x1="214.3" y1="232.1" x2="224.9" y2="226.0" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="translate(228.0,237.6) rotate(-15)"><rect x="0" y="-26" width="78" height="26" rx="7" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2.2"/><path d="M12,-13 l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="#34d399" stroke-width="1.6"/></g><circle cx="224.9" cy="226.0" r="3.5" fill="none" stroke="#34d399" stroke-width="2"/><circle cx="300.2" cy="205.8" r="4.5" fill="#34d399"/><line x1="259.2" y1="203.4" x2="248.4" y2="163.3" stroke="#34d399" stroke-width="1.6" opacity="1"/><rect x="198.1" y="131.3" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="#34d399" stroke-width="2"/><text x="244.14623453910957" y="154.3411369390869" fill="#34d399" font-size="20" font-weight="700" text-anchor="middle">0,52 N</text><line x1="168.6" y1="246.1" x2="189.6" y2="324.5" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="210.6" y1="318.9" x2="189.6" y2="324.5" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="189.6" y1="240.5" x2="168.6" y2="246.1" stroke="#34d399" stroke-width="2.8"/><path d="M178.0,248.6 L168.6,246.1 L175.5,239.2" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="189.6" y1="240.5" x2="210.6" y2="318.9" stroke="#fb923c" stroke-width="2.8"/><path d="M213.7,307.3 L210.6,318.9 L202.1,310.4" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="189.6" y1="240.5" x2="189.6" y2="324.5" stroke="#f87171" stroke-width="2.8"/><path d="M195.6,314.1 L189.6,324.5 L183.6,314.1" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="189.6" cy="240.5" r="3.5" fill="currentColor"/><text x="199.64613363644202" y="330.52185705649674" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">P</text><text x="160.64613363644202" y="250.1487900975503" fill="#34d399" font-size="17" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="11">x</tspan></text><text x="218.64613363644202" y="334.89492401544317" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="11">y</tspan></text></svg>
+<svg class="n-a30" viewBox="0 0 440 324" role="img" aria-label="Dốc 30 độ, lực kế chỉ 1,0 niutơn"><defs><marker id="n30-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="n30-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="n30-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="n30-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="96.0,274.0 300.4,156.0 300.4,274.0" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/><path d="M142.0,274.0 A46,46 0 0 0 135.8,251.0" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="150" y="266" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α</text><polygon points="159.3,237.4 204.4,211.4 195.4,195.9 150.3,221.9" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/><line x1="199.4" y1="202.9" x2="208.0" y2="194.3" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="translate(214.0,204.7) rotate(-30)"><rect x="0" y="-26" width="78" height="26" rx="7" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2.2"/><path d="M12,-13 l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="#34d399" stroke-width="1.6"/></g><circle cx="208.0" cy="194.3" r="3.5" fill="none" stroke="#34d399" stroke-width="2"/><circle cx="275.6" cy="155.3" r="4.5" fill="#34d399"/><line x1="235.3" y1="163.5" x2="215.6" y2="129.3" stroke="#34d399" stroke-width="1.6" opacity="1"/><rect x="160.3" y="97.3" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="#34d399" stroke-width="2"/><text x="206.3165480176071" y="120.31386608210715" fill="#34d399" font-size="20" font-weight="700" text-anchor="middle">1,0 N</text><line x1="141.4" y1="238.4" x2="177.8" y2="301.4" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="214.2" y1="280.4" x2="177.8" y2="301.4" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="177.8" y1="217.4" x2="141.4" y2="238.4" stroke="#34d399" stroke-width="2.8"/><path d="M153.4,238.4 L141.4,238.4 L147.4,228.0" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="177.8" y1="217.4" x2="214.2" y2="280.4" stroke="#fb923c" stroke-width="2.8"/><path d="M214.2,268.4 L214.2,280.4 L203.8,274.4" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="177.8" y1="217.4" x2="177.8" y2="301.4" stroke="#f87171" stroke-width="2.8"/><path d="M183.8,291.0 L177.8,301.4 L171.8,291.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="177.8" cy="217.4" r="3.5" fill="currentColor"/><text x="187.79043802311355" y="307.42519422934606" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">P</text><text x="133.41737106416713" y="242.42519422934603" fill="#34d399" font-size="17" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="11">x</tspan></text><text x="222.16350498205998" y="296.42519422934606" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="11">y</tspan></text></svg>
+<svg class="n-a45" viewBox="0 0 440 324" role="img" aria-label="Dốc 45 độ, lực kế chỉ 1,41 niutơn"><defs><marker id="n45-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="n45-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="n45-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="n45-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="96.0,274.0 262.9,107.1 262.9,274.0" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/><path d="M142.0,274.0 A46,46 0 0 0 128.5,241.5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="150" y="266" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α</text><polygon points="147.7,222.3 184.5,185.5 171.7,172.8 135.0,209.6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/><line x1="177.5" y1="178.5" x2="183.6" y2="168.0" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="translate(192.1,176.5) rotate(-45)"><rect x="0" y="-26" width="78" height="26" rx="7" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2.2"/><path d="M12,-13 l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="#34d399" stroke-width="1.6"/></g><circle cx="183.6" cy="168.0" r="3.5" fill="none" stroke="#34d399" stroke-width="2"/><circle cx="238.8" cy="112.9" r="4.5" fill="#34d399"/><line x1="202.0" y1="131.2" x2="177.0" y2="106.2" stroke="#34d399" stroke-width="1.6" opacity="1"/><rect x="115.0" y="74.2" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="#34d399" stroke-width="2"/><text x="160.96897105541998" y="97.23708970524004" fill="#34d399" font-size="20" font-weight="700" text-anchor="middle">1,41 N</text><line x1="118.4" y1="240.2" x2="160.4" y2="282.2" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="202.4" y1="240.2" x2="160.4" y2="282.2" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="160.4" y1="198.2" x2="118.4" y2="240.2" stroke="#34d399" stroke-width="2.8"/><path d="M130.0,237.1 L118.4,240.2 L121.5,228.6" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="160.4" y1="198.2" x2="202.4" y2="240.2" stroke="#fb923c" stroke-width="2.8"/><path d="M199.3,228.6 L202.4,240.2 L190.8,237.1" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="160.4" y1="198.2" x2="160.4" y2="282.2" stroke="#f87171" stroke-width="2.8"/><path d="M166.4,271.8 L160.4,282.2 L154.4,271.8" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="160.4" cy="198.2" r="3.5" fill="currentColor"/><text x="170.36085922359953" y="288.18401092117836" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">P</text><text x="110.36085922359953" y="244.18401092117838" fill="#34d399" font-size="17" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="11">x</tspan></text><text x="210.36085922359953" y="256.18401092117836" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="11">y</tspan></text></svg>
+<svg class="n-a60" viewBox="0 0 440 324" role="img" aria-label="Dốc 60 độ, lực kế chỉ 1,73 niutơn"><defs><marker id="n60-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="n60-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="n60-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="n60-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="96.0,274.0 214.0,69.6 214.0,274.0" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.2"/><path d="M142.0,274.0 A46,46 0 0 0 119.0,234.2" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="150" y="266" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α</text><polygon points="132.6,210.7 158.6,165.6 143.0,156.6 117.0,201.7" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.2"/><line x1="150.0" y1="160.7" x2="153.2" y2="149.0" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="translate(163.6,155.0) rotate(-60)"><rect x="0" y="-26" width="78" height="26" rx="7" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2.2"/><path d="M12,-13 l6,-6 l6,12 l6,-12 l6,12 l6,-6" fill="none" stroke="#34d399" stroke-width="1.6"/></g><circle cx="153.2" cy="149.0" r="3.5" fill="none" stroke="#34d399" stroke-width="2"/><circle cx="192.2" cy="81.4" r="4.5" fill="#34d399"/><line x1="161.4" y1="108.7" x2="138.9" y2="95.7" stroke="#34d399" stroke-width="1.6" opacity="1"/><rect x="65.2" y="63.7" width="92" height="32" rx="8" fill="rgba(52,211,153,.16)" stroke="#34d399" stroke-width="2"/><text x="111.19386608210715" y="86.68345198239294" fill="#34d399" font-size="20" font-weight="700" text-anchor="middle">1,73 N</text><line x1="102.2" y1="247.1" x2="138.5" y2="268.1" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="174.9" y1="205.1" x2="138.5" y2="268.1" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/><line x1="138.5" y1="184.1" x2="102.2" y2="247.1" stroke="#34d399" stroke-width="2.8"/><path d="M112.6,241.1 L102.2,247.1 L102.2,235.1" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="138.5" y1="184.1" x2="174.9" y2="205.1" stroke="#fb923c" stroke-width="2.8"/><path d="M168.9,194.7 L174.9,205.1 L162.9,205.1" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="138.5" y1="184.1" x2="138.5" y2="268.1" stroke="#f87171" stroke-width="2.8"/><path d="M144.5,257.7 L138.5,268.1 L132.5,257.7" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="138.5" cy="184.1" r="3.5" fill="currentColor"/><text x="148.54519422934604" y="274.1095619768864" fill="#f87171" font-size="17" font-weight="700" text-anchor="start">P</text><text x="94.17212727039961" y="251.10956197688643" fill="#34d399" font-size="17" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="11">x</tspan></text><text x="182.91826118829246" y="221.10956197688643" fill="#fb923c" font-size="17" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="11">y</tspan></text></svg>
+</div>
+
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 232" role="img" aria-label="Vật trên mặt phẳng nghiêng góc alpha: trọng lực P phân tích thành Px dọc dốc và Py vuông góc dốc"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><polygon points="40.0,200.0 334.4,30.0 334.4,200.0" fill="rgba(148,163,184,.12)" stroke="currentColor" stroke-width="2.4"/><polygon points="188.1,114.5 247.0,80.5 235.0,59.7 176.1,93.7" fill="rgba(251,146,60,.18)" stroke="currentColor" stroke-width="2.4"/><circle cx="211.5" cy="87.1" r="3.5" fill="currentColor"/><line x1="170.0" y1="111.1" x2="211.5" y2="183.1" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="253.1" y1="159.1" x2="211.5" y2="183.1" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/><line x1="211.5" y1="87.1" x2="211.5" y2="183.1" stroke="#f87171" stroke-width="2.8"/><path d="M217.5,172.7 L211.5,183.1 L205.5,172.7" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="211.5" y1="87.1" x2="170.0" y2="111.1" stroke="#34d399" stroke-width="2.8"/><path d="M182.0,111.1 L170.0,111.1 L176.0,100.7" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="211.5" y1="87.1" x2="253.1" y2="159.1" stroke="#fb923c" stroke-width="2.8"/><path d="M253.1,147.1 L253.1,159.1 L242.7,153.1" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="221.53520777580994" y="187.10769515458674" fill="#f87171" font-size="16" font-weight="700" text-anchor="start">P</text><text x="165.96598839415688" y="93.10769515458674" fill="#34d399" font-size="14" font-weight="700" text-anchor="end">P<tspan dy="4" font-size="11">x</tspan> = P sin α</text><text x="263.10442715746296" y="155.10769515458674" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">P<tspan dy="4" font-size="11">y</tspan></text><text x="263.10442715746296" y="171.10769515458674" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">= P cos α</text><path d="M110.0,200.0 A70,70 0 0 0 100.6,165.0" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="118" y="192" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">α</text></svg><figcaption>Hình 3. Trên dốc nghiêng góc α, trọng lực <em>P</em> phân tích thành <em>P<sub>x</sub></em> = <em>P</em> sin α (dọc dốc) và <em>P<sub>y</sub></em> = <em>P</em> cos α (ép vào dốc).</figcaption></figure>
 
 <p>Xe tải đỗ trên dốc: dốc càng đứng thì $P_x$ càng lớn, nên càng cần phanh tay chắc.</p>
 
@@ -746,10 +903,10 @@ $$F_x = F\cos\alpha \qquad F_y = F\sin\alpha$$
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Chất điểm đứng yên chịu ba lực. Hai lực $F_1 = 3$ N và $F_2 = 4$ N vuông góc nhau. Lực thứ ba $F_3$ phải có độ lớn và hướng nào?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl13-q3" id="tl13-q3a"><label for="tl13-q3a" class="tl-opt tl-no">A. $7$ N, cùng hướng hợp của $\vec F_1$, $\vec F_2$</label>
-<input type="radio" name="tl13-q3" id="tl13-q3b"><label for="tl13-q3b" class="tl-opt tl-no">B. $1$ N, ngược hướng với $\vec F_2$</label>
-<input type="radio" name="tl13-q3" id="tl13-q3c"><label for="tl13-q3c" class="tl-opt tl-no">C. $5$ N, cùng hướng với hợp của $\vec F_1$, $\vec F_2$</label>
-<input type="radio" name="tl13-q3" id="tl13-q3d" checked><label for="tl13-q3d" class="tl-opt tl-ok">D. $5$ N, ngược hướng với hợp của $\vec F_1$, $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3a"><label for="tl58-q3a" class="tl-opt tl-no">A. $7$ N, cùng hướng hợp của $\vec F_1$, $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3b"><label for="tl58-q3b" class="tl-opt tl-no">B. $1$ N, ngược hướng với $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3c"><label for="tl58-q3c" class="tl-opt tl-no">C. $5$ N, cùng hướng với hợp của $\vec F_1$, $\vec F_2$</label>
+<input type="radio" name="tl58-q3" id="tl58-q3d" checked><label for="tl58-q3d" class="tl-opt tl-ok">D. $5$ N, ngược hướng với hợp của $\vec F_1$, $\vec F_2$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hợp của $\vec F_1$, $\vec F_2$ là $\sqrt{3^2 + 4^2} = 5$ N; để cân bằng, $\vec F_3$ phải <strong>cùng độ lớn, ngược hướng</strong> với hợp lực ấy.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai lỗi hay gặp: cộng số $3 + 4 = 7$ trong khi hai lực vuông góc; hoặc để $\vec F_3$ cùng hướng với hợp lực thì ba lực cộng lại thành $10$ N, không phải $0$. Tính hợp lực trước, rồi tìm lực "đối" của nó.</p></div>
 </div>

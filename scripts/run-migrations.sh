@@ -14,8 +14,9 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261008120000_rank_streak_week_theory_review.sql|RPC dải chuỗi 7 ngày rank_my_streak_days + bảng theory_reviews, RPC rank_theory_review_open/submit (RP ôn lại bài lý thuyết; chỉ thêm hàm/bảng mới)|giờ nào cũng được; rollback perf/rollback/20261008120000_rank_streak_week_theory_review.down.sql"
+  "supabase/migrations/20261006150000_quiz_live.sql|Đố vui lớp học (kiểu Kahoot): 4 bảng quiz_* + RPC cho học sinh ẩn danh/người điều khiển + tìm câu/đưa câu vào ngân hàng|Bất kỳ lúc nào (bảng/hàm mới, không đụng dữ liệu cũ; rollback perf/rollback/20261006150000_quiz_live.down.sql)"
 )
+# ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
 # ĐÃ CHẠY 7/10/2026: 20261007070000_rls_backup_tables, 20261007120000_tu_vao_lop_thpt

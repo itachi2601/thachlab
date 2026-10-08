@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,13 +602,13 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>I. Mở bài: chọn bình đun cho xưởng</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>I. Mở bài: chọn bình đun cho xưởng</h3>
 
 <p>Một xưởng nhỏ định mua bình đun nước pha dung dịch làm mát. Người bán nói: "Bình 2 kW, đun 10 lít nước từ 25 °C lên 80 °C hết khoảng 20 phút".</p>
 
 <p>Muốn tự kiểm con số đó, em cần biết nước nhận bao nhiêu nhiệt thì nóng lên 1 °C, và <em>đo</em> bằng cách nào?</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 370" role="img" aria-label="Sơ đồ bố trí thí nghiệm đo nhiệt lượng: nhiệt lượng kế có điện trở nhiệt và nhiệt kế, nối sang oát kế, số liệu ghi vào bảng"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Bố trí một phép đo nhiệt lượng</text><rect x="24" y="84" width="112" height="120" rx="8" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.5"/><rect x="32" y="92" width="96" height="104" rx="8" fill="rgba(56,189,248,.14)" stroke="#38bdf8" stroke-width="2"/><line x1="32" y1="122" x2="128" y2="122" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="80" y="108" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="middle">nước</text><line x1="68" y1="122" x2="68" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><line x1="92" y1="122" x2="92" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><line x1="68" y1="184" x2="92" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><text x="24" y="310" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">nhiệt lượng kế vỏ xốp + nắp, que khuấy</text><text x="24" y="290" fill="#f87171" font-size="10" font-weight="600" text-anchor="start">điện trở nhiệt trong bình</text><rect x="100" y="64" width="14" height="62" rx="6" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/><rect x="103" y="80" width="8" height="44" rx="4" fill="#34d399" stroke="#34d399" stroke-width="0"/><circle cx="107" cy="126" r="8" fill="rgba(52,211,153,.35)" stroke="#34d399" stroke-width="2"/><text x="122" y="68" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="start">nhiệt kế 0,1 °C</text><polyline fill="none" stroke="#fb923c" stroke-width="2.2" points="92,184 154,184 154,236"/><polyline fill="none" stroke="#fb923c" stroke-width="2.2" points="68,184 44,250 154,250 154,268"/><text x="196" y="84" fill="#fb923c" font-size="11.5" font-weight="700" text-anchor="start">oát kế</text><text x="196" y="100" fill="#fb923c" font-size="10.5" font-weight="600" text-anchor="start">hiện P (W)</text><text x="196" y="116" fill="#fb923c" font-size="10.5" font-weight="600" text-anchor="start">và thời gian τ (s)</text><rect x="196" y="130" width="230" height="190" rx="8" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2"/><text x="206" y="152" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">Ghi vào vở mỗi 20 s:</text><line x1="206" y1="162" x2="416" y2="162" stroke="currentColor" stroke-width="1" opacity="0.5"/><text x="206" y="182" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">τ (s)     t (°C)     P (W)</text><text x="206" y="200" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">0            25,0        500</text><text x="206" y="218" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">20          29,8        500</text><text x="206" y="236" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">40          34,9        500</text><text x="206" y="254" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">60          39,7        500</text><text x="206" y="272" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">80          44,6        500</text><text x="206" y="290" fill="currentColor" font-size="10.5" font-weight="500" text-anchor="start">100        49,5        500</text><text x="196" y="342" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">Cân điện tử đo m riêng, trước khi</text><text x="196" y="358" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">đổ nước vào bình.</text></svg><figcaption>Hình 1. Một phép đo nhiệt lượng cần bốn số: công suất P và thời gian τ (oát kế), khối lượng m (cân), độ tăng nhiệt độ Δt (nhiệt kế). Không có dụng cụ nào đọc thẳng nhiệt lượng.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 328" role="img" aria-label="Sơ đồ bố trí thí nghiệm đo nhiệt lượng: nhiệt lượng kế có điện trở nhiệt và nhiệt kế, điện trở nối với oát kế, cân điện tử đo khối lượng nước, số liệu ghi vào bảng"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Bố trí một phép đo nhiệt lượng</text><text x="16" y="50" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">nhiệt lượng kế vỏ xốp, có nắp</text><line x1="50" y1="56" x2="50" y2="84" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><rect x="24" y="84" width="126" height="120" rx="8" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.5"/><rect x="32" y="92" width="110" height="104" rx="8" fill="rgba(56,189,248,.14)" stroke="#38bdf8" stroke-width="2"/><line x1="32" y1="122" x2="142" y2="122" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="60" y="112" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">nước</text><line x1="56" y1="130" x2="56" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><line x1="80" y1="130" x2="80" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><line x1="56" y1="184" x2="80" y2="184" stroke="#f87171" stroke-width="4" opacity="1"/><text x="88" y="170" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="start">điện trở</text><rect x="112" y="64" width="14" height="62" rx="6" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/><rect x="115" y="80" width="8" height="44" rx="4" fill="#34d399" stroke="#34d399" stroke-width="0"/><circle cx="119" cy="128" r="8" fill="rgba(52,211,153,.35)" stroke="#34d399" stroke-width="2"/><text x="134" y="70" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">nhiệt kế 0,1 °C</text><rect x="190" y="90" width="236" height="140" rx="8" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2"/><text x="202" y="112" fill="currentColor" font-size="11.5" font-weight="700" text-anchor="start">Ghi vào vở mỗi 100 s</text><line x1="202" y1="120" x2="414" y2="120" stroke="currentColor" stroke-width="1" opacity="0.5"/><text x="232" y="138" fill="currentColor" font-size="11" font-weight="700" text-anchor="middle">τ (s)</text><text x="312" y="138" fill="currentColor" font-size="11" font-weight="700" text-anchor="middle">t (°C)</text><text x="388" y="138" fill="currentColor" font-size="11" font-weight="700" text-anchor="middle">P (W)</text><text x="232" y="160" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">0</text><text x="312" y="160" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">28,0</text><text x="388" y="160" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">150</text><text x="232" y="178" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">100</text><text x="312" y="178" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">45,8</text><text x="388" y="178" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">150</text><text x="232" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">200</text><text x="312" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">63,5</text><text x="388" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">150</text><text x="232" y="214" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">300</text><text x="312" y="214" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">81,3</text><text x="388" y="214" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">150</text><polyline fill="none" stroke="#fb923c" stroke-width="2.4" points="80,184 80,254 190,254"/><polyline fill="none" stroke="#fb923c" stroke-width="2.4" points="56,184 56,278 190,278"/><rect x="190" y="242" width="112" height="48" rx="8" fill="rgba(251,146,60,.14)" stroke="#fb923c" stroke-width="2"/><text x="246" y="262" fill="#fb923c" font-size="11.5" font-weight="700" text-anchor="middle">oát kế</text><text x="246" y="280" fill="#fb923c" font-size="10.5" font-weight="600" text-anchor="middle">P = 150 W, đo τ</text><rect x="318" y="242" width="108" height="48" rx="8" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2"/><text x="372" y="262" fill="currentColor" font-size="11" font-weight="700" text-anchor="middle">cân điện tử</text><text x="372" y="280" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="middle">m = 0,200 kg</text><text x="16" y="316" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">Cân nước trước khi đổ vào bình; oát kế cho P và τ.</text></svg><figcaption>Hình 1. Một phép đo nhiệt lượng cần bốn số: công suất P và thời gian τ (oát kế), khối lượng m (cân), độ tăng nhiệt độ Δt (nhiệt kế). Không có dụng cụ nào đọc thẳng nhiệt lượng.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>

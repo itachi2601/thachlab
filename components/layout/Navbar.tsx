@@ -3,75 +3,25 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, KeyRound, LayoutDashboard, LogOut, Menu, MessageCircle, Phone, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import NotificationBell from "@/components/layout/NotificationBell";
 import Avatar from "@/components/ui/Avatar";
-import { CONTACT } from "@/lib/contact";
 
 // các đường dẫn thuộc luồng CTTC (dưới /lop-hoc nhưng là hub riêng)
 const CTTC_PATHS = ["/lop-hoc/cttc", "/lop-hoc/cnc", "/lop-hoc/tien-phay"];
 
 // Mục "Phụ huynh" chỉ hiện với khách và học sinh: phụ huynh đã có mục "Kết quả của con" trong menu
 // tài khoản, giáo viên/admin không dùng trang đó — thêm cho mọi role sẽ chật thanh điều hướng.
-type NavLink = { label: string; href: string; audience?: "guest-student"; menu?: { label: string; href: string; hint?: string }[]; note?: string };
+type NavLink = { label: string; href: string; audience?: "guest-student" };
 
-// N2 cho phép tối đa 4 mục nhìn thấy; "Thêm" là chỗ gom phần còn lại. "Luyện tập" vẫn để ngoài
-// vì đây là việc học sinh mở mỗi ngày — giấu vào "Thêm" thì em không thấy trang. Đo 1024px vẫn một hàng.
 const links: NavLink[] = [
   { label: "THPT – THCS", href: "/lop-hoc" },
-  { label: "Luyện tập", href: "/luyen-tap" },
   { label: "CTTC", href: "/lop-hoc/cttc" },
   { label: "Đăng ký học", href: "/khoa-hoc" },
   { label: "Phụ huynh", href: "/phu-huynh", audience: "guest-student" },
-];
-
-// Khách và phụ huynh đang cân nhắc cho con học (P8, P10, P14): mỗi mục trả lời một câu hỏi họ tự hỏi, không dùng từ nội bộ
-// ("CTTC", "THPT – THCS"). Học sinh đã đăng nhập giữ bộ `links` ở trên (việc học hằng ngày).
-const EVALUATOR_LINKS: NavLink[] = [
-  // "Con học được gì?" — vào thẳng từng lớp, và có chỗ xem thử không cần tài khoản (P14: chỉ link tới thứ có thật)
-  {
-    label: "Học thử",
-    href: "/lop-hoc",
-    menu: [
-      { label: "KHTN 9", href: "/lop-hoc/khtn-9" },
-      { label: "Vật lý 10", href: "/lop-hoc/lop-10" },
-      { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
-      { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
-      { label: "Thí nghiệm mô phỏng", href: "/#thpt", hint: "Tự kéo, tự thử — không cần đăng nhập" },
-      { label: "Giao thoa sóng âm", href: "/mo-phong/giao-thoa-am", hint: "Nghe bằng hai loa của máy" },
-    ],
-  },
-  // "Có hiệu quả không?"
-  {
-    label: "Kết quả học sinh",
-    href: "/phu-huynh",
-    menu: [
-      { label: "Bảng kết quả thật", href: "/phu-huynh#ket-qua" },
-      { label: "Phụ huynh xem được gì", href: "/phu-huynh#phu-huynh-thay-gi", hint: "Điểm, điểm danh, học phí của con" },
-      { label: "Bảng xếp hạng", href: "/lop-hoc/xep-hang" },
-    ],
-  },
-  // "Ai dạy?" — số năm và nơi công tác lấy từ lib/contact.ts, không viết tay ở đây
-  {
-    label: "Về thầy",
-    href: "/#about",
-    note: `${CONTACT.years} năm dạy Vật lý · ${CONTACT.school}`,
-    menu: [
-      { label: "Giới thiệu thầy", href: "/#about" },
-      { label: "Thầy đứng lớp", href: "/phu-huynh#thay-dung-lop", hint: "Ảnh thật và cách liên hệ" },
-    ],
-  },
-  // "Học khi nào, bao nhiêu?"
-  { label: "Lớp & học phí", href: "/khoa-hoc" },
-];
-const EVALUATOR_MORE: NavLink[] = [
-  { label: "Luyện tập", href: "/luyen-tap" },
-  { label: "Blog", href: "/blog" },
-  { label: "Tin tức", href: "/tin-tuc" },
-  { label: "Liên hệ", href: "/#contact" },
 ];
 
 // Gom vào mục "Thêm" trên desktop (N2: ≤4 lựa chọn/vùng); menu mobile vẫn liệt kê đủ.
@@ -105,15 +55,10 @@ export default function Navbar() {
   const isStaff = profile?.role === "admin" || profile?.role === "instructor";
   const isTa = profile?.role === "tro_giang";
   const showParentLink = !session || profile?.role === "student";
-  // Chỉ khách = người đang đánh giá (phụ huynh đã đăng nhập có ParentHome, không có các mã neo của trang khách).
-  const isEvaluator = !session;
-  const navLinks = isEvaluator ? EVALUATOR_LINKS : links.filter((link) => link.audience !== "guest-student" || showParentLink);
-  const moreLinks = isEvaluator ? EVALUATOR_MORE : MORE_LINKS;
-  // Thanh đáy đã có Lớp học và Luyện tập: khi nó hiện thì menu ☰ bỏ hai hàng đó (giữ chip vào nhanh từng lớp).
+  const navLinks = links.filter((link) => link.audience !== "guest-student" || showParentLink);
+  // Thanh đáy đã có Lớp học: khi nó hiện thì menu ☰ bỏ hàng "THPT – THCS" (giữ chip vào nhanh từng lớp).
   const tabBarShown = tabBarShownOn(pathname);
-  // Chỉ thanh đáy của khách và học sinh THPT có Lớp học/Học thử + Luyện tập; vai khác (phụ huynh, CTTC, GV, TA) thì menu ☰ vẫn giữ hai hàng đó.
-  const barHasClassAndPractice = !session || (profile?.role === "student" && profile.track !== "cttc");
-  const mobileLinks = isEvaluator ? [...navLinks, ...moreLinks] : [...navLinks.slice(0, 3), ...moreLinks.slice(0, 2), ...navLinks.slice(3), ...moreLinks.slice(2)];
+  const mobileLinks = [...navLinks.slice(0, 3), ...MORE_LINKS.slice(0, 2), ...navLinks.slice(3), ...MORE_LINKS.slice(2)];
 
   useEffect(() => {
     if (!accountMenuOpen) return;
@@ -158,34 +103,22 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/logo-mark.svg" alt="" width={32} height={32} className="h-8 w-8" />
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
+            T
+          </span>
           <span className="font-display text-lg font-semibold tracking-tight text-white">
             Thach<span className="text-[#3B82F6]">Lab</span>
           </span>
-          <span className="shrink-0 whitespace-nowrap rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold leading-none text-amber-300 sm:text-xs">
-            <span className="2xl:hidden">Alpha</span>
-            <span className="hidden 2xl:inline">Alpha test · miễn phí</span>
-          </span>
         </Link>
 
-        <ul className="hidden items-center gap-4 lg:flex xl:gap-5 2xl:gap-8">
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navLinks.map((link) => {
-            const quick: { label: string; href: string; hint?: string }[] | undefined = link.menu ?? (link.href === "/lop-hoc" ? THPT_QUICK_LINKS : undefined);
-            const hasQuick = !!quick;
-            const inCttc = CTTC_PATHS.some((path) => pathname.startsWith(path));
-            const isActive =
-              !link.href.startsWith("/#") &&
-              (pathname === link.href || pathname.startsWith(`${link.href}/`)) &&
-              (link.href !== "/lop-hoc" || !inCttc);
+            const hasQuick = link.href === "/lop-hoc";
             return (
               <li key={link.href} className={hasQuick ? "group relative" : undefined}>
                 <Link
                   href={link.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-white ${
-                    isActive ? "text-white" : "text-slate-300"
-                  }`}
+                  className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-slate-300 transition-colors hover:text-white"
                 >
                   {link.label}
                   {hasQuick && (
@@ -195,19 +128,15 @@ export default function Navbar() {
                 {hasQuick && (
                   // pt-3 làm "cầu" để chuột đi từ chữ xuống menu không bị đóng; hiện khi hover hoặc focus (bàn phím).
                   <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                    <ul className="w-64 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50">
-                      {link.note && <li className="px-3.5 pb-1 pt-2 text-xs font-medium text-slate-400">{link.note}</li>}
-                      {quick!.map((q) => (
+                    <ul className="w-52 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50">
+                      {THPT_QUICK_LINKS.map((q) => (
                         <li key={q.href}>
                           <Link
                             href={q.href}
-                            className="flex items-center justify-between gap-2 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                            className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
                           >
-                            <span>
-                              {q.label}
-                              {q.hint && <span className="block text-xs font-normal text-slate-400">{q.hint}</span>}
-                            </span>
-                            <ChevronRight size={15} className="shrink-0 text-slate-500" />
+                            {q.label}
+                            <ChevronRight size={15} className="text-slate-500" />
                           </Link>
                         </li>
                       ))}
@@ -228,7 +157,7 @@ export default function Navbar() {
             </button>
             <div className="invisible absolute right-0 top-full pt-3 opacity-0 transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
               <ul className="w-48 overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/[0.98] p-1.5 shadow-2xl shadow-black/50">
-                {moreLinks.map((q) => (
+                {MORE_LINKS.map((q) => (
                   <li key={q.href}>
                     <Link
                       href={q.href}
@@ -239,37 +168,12 @@ export default function Navbar() {
                     </Link>
                   </li>
                 ))}
-                {isEvaluator && CONTACT.zalo && (
-                  <li className="mt-1 border-t border-white/10 pt-1">
-                    <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:bg-white/[0.07] hover:text-white"><MessageCircle size={15} aria-hidden /> Nhắn Zalo cho thầy</a>
-                  </li>
-                )}
-                {isEvaluator && CONTACT.phone && (
-                  <li>
-                    <a href={`tel:${CONTACT.phone}`} className="flex items-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:bg-white/[0.07] hover:text-white"><Phone size={15} aria-hidden /> Gọi {CONTACT.phone}</a>
-                  </li>
-                )}
               </ul>
             </div>
           </li>
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          {isEvaluator && (CONTACT.phone || CONTACT.zalo) && (
-            // P10: gọi/nhắn thầy bấm được ngay tại chỗ đang đọc. Chỉ từ 1800px vì dưới đó thanh đã đủ chật (N2); mobile có trong menu ☰.
-            <span className="hidden items-center gap-1.5 whitespace-nowrap min-[1800px]:flex">
-              {CONTACT.zalo && (
-                <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]">
-                  <MessageCircle size={16} aria-hidden /> Nhắn Zalo
-                </a>
-              )}
-              {CONTACT.phone && (
-                <a href={`tel:${CONTACT.phone}`} className="inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]">
-                  <Phone size={16} aria-hidden /> Gọi thầy
-                </a>
-              )}
-            </span>
-          )}
           <span className="hidden sm:inline-flex">
             <ThemeToggle />
           </span>
@@ -355,6 +259,15 @@ export default function Navbar() {
                       <ClipboardList size={16} /> Khu trợ giảng
                     </Link>
                   )}
+                  {(isStaff || isTa) && (
+                    <Link
+                      href="/tro-giang/do-vui"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.07] hover:text-white"
+                    >
+                      <Gamepad2 size={16} /> Đố vui lớp học
+                    </Link>
+                  )}
                   {profile?.role === "admin" && (
                     <Link
                       href="/quan-tri"
@@ -391,10 +304,9 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/dang-ky"
-                className="hidden min-h-11 items-center whitespace-nowrap rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-flex sm:px-5"
+                className="hidden whitespace-nowrap rounded-full bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-block sm:px-5"
               >
-                <span className="xl:hidden">Đăng ký</span>
-                <span className="hidden xl:inline">Học thử miễn phí</span>
+                Đăng ký
               </Link>
             </>
           )}
@@ -427,12 +339,10 @@ export default function Navbar() {
                   pathname.startsWith(link.href) &&
                   // hai luồng riêng: /lop-hoc/cttc, /cnc, /tien-phay không tính cho mục THPT
                   (link.href !== "/lop-hoc" || !inCttc);
-                const onTabBar = tabBarShown && barHasClassAndPractice && (link.href === "/lop-hoc" || link.href === "/luyen-tap");
-                if (onTabBar && link.href !== "/lop-hoc") return null;
 
                 return (
                   <li key={link.href}>
-                    {!onTabBar && (
+                    {!(link.href === "/lop-hoc" && tabBarShown) && (
                     <Link
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
@@ -447,9 +357,9 @@ export default function Navbar() {
                       <ChevronRight size={18} className="text-slate-500" />
                     </Link>
                     )}
-                    {(link.menu ?? (link.href === "/lop-hoc" ? THPT_QUICK_LINKS : null)) && (
+                    {link.href === "/lop-hoc" && (
                       <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
-                        {(link.menu ?? THPT_QUICK_LINKS).map((q) => (
+                        {THPT_QUICK_LINKS.map((q) => (
                           <Link
                             key={q.href}
                             href={q.href}
@@ -470,20 +380,6 @@ export default function Navbar() {
                   <ThemeToggle />
                 </div>
               </li>
-              {isEvaluator && (CONTACT.phone || CONTACT.zalo) && (
-                <li className="grid grid-cols-2 gap-2 border-t border-white/10 px-2 pb-1 pt-2">
-                  {CONTACT.zalo && (
-                    <a href={CONTACT.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 text-[15px] font-semibold text-slate-100 hover:bg-white/[0.07]">
-                      <MessageCircle size={18} aria-hidden /> Nhắn Zalo
-                    </a>
-                  )}
-                  {CONTACT.phone && (
-                    <a href={`tel:${CONTACT.phone}`} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 text-[15px] font-semibold text-slate-100 hover:bg-white/[0.07]">
-                      <Phone size={18} aria-hidden /> Gọi thầy
-                    </a>
-                  )}
-                </li>
-              )}
               {!session && (
                 <li className="border-t border-white/10 pt-1 sm:hidden">
                   <Link
@@ -491,7 +387,7 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold text-blue-300 transition-colors hover:bg-blue-500/10"
                   >
-                    Học thử miễn phí
+                    Đăng ký
                     <ChevronRight size={18} />
                   </Link>
                 </li>

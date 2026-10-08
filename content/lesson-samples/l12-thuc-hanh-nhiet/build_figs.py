@@ -121,7 +121,7 @@ b += text(196, 237, "λ = Pτ/m", ORG, 11, "start", "600")
 b += line(192, 232, 116, 249, ORG, 1, "3 3", .8)
 b += text(16, 310, "Đoạn ngang = nhiệt dùng để chuyển thể, không làm nhiệt độ đổi.", "currentColor", 10.5, "start", "600")
 fig2 = wrap("0 0 440 322", "Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi",
-            b, "Hình 2. Đường cong đun nóng: hai đoạn nằm ngang là hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Nhìn độ dài đoạn ngang để thấy nhiệt chuyển thể lớn hơn nhiều so với nhiệt làm nóng.")
+            b, "Hình 2. Đường cong đun nóng: hai đoạn nằm ngang ứng với hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Đoạn ngang nghĩa là nhiệt đưa vào dùng để chuyển thể, không làm nhiệt độ đổi.")
 
 # ======================================================= Hình 3: bốn giai đoạn, tỉ lệ nhiệt
 b = defs("f3")

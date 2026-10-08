@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,7 +602,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-03"><svg viewBox="0 0 440 240" role="img" aria-label="Hai bản nằm ngang, bản trên dương, bản dưới âm, đường sức hướng xuống. Điện tích dương bay ngang vào giữa, chịu lực hướng xuống, cong theo parabol về bản âm. Electron chịu lực hướng lên, cong về bản dương. Ra khỏi bản cả hai đi thẳng"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="60" y="30" width="270" height="8" rx="2" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="60" y="202" width="270" height="8" rx="2" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="60" y="22" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">+ + + + + + + + +</text><text x="60" y="228" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">− − − − − − − − −</text><line x1="110.0" y1="40.0" x2="110.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="150.0" y1="40.0" x2="150.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="250.0" y1="40.0" x2="250.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="290.0" y1="40.0" x2="290.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><text x="256" y="186" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">E</text><line x1="14.0" y1="120.0" x2="54.0" y2="120.0" stroke="#34d399" stroke-width="3" opacity="1" marker-end="url(#f3-g)"/><text x="24" y="112.0" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">v₀</text><polyline fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,120.1 78.0,120.2 84.0,120.4 90.0,120.6 96.0,120.9 102.0,121.2 108.0,121.6 114.0,122.0 120.0,122.5 126.0,123.0 132.0,123.6 138.0,124.2 144.0,124.8 150.0,125.6 156.0,126.3 162.0,127.1 168.0,128.0 174.0,128.9 180.0,129.9 186.0,130.9 192.0,132.0 198.0,133.1 204.0,134.2 210.0,135.4 216.0,136.7 222.0,138.0 228.0,139.4 234.0,140.8 240.0,142.2 246.0,143.7 252.0,145.3 258.0,146.9 264.0,148.5 270.0,150.2 276.0,152.0 282.0,153.8 288.0,155.7 294.0,157.6 300.0,159.5 306.0,161.5 312.0,163.6 318.0,165.7 324.0,167.8 330.0,170.0"/><line x1="330.0" y1="170.0" x2="420.0" y2="203.3" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="160" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">q &gt; 0</text><circle cx="195.0" cy="132.5" r="5" fill="currentColor"/><line x1="195.0" y1="138.5" x2="195.0" y2="166.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="166.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,119.9 78.0,119.8 84.0,119.6 90.0,119.4 96.0,119.1 102.0,118.8 108.0,118.4 114.0,118.0 120.0,117.5 126.0,117.0 132.0,116.4 138.0,115.8 144.0,115.2 150.0,114.4 156.0,113.7 162.0,112.9 168.0,112.0 174.0,111.1 180.0,110.1 186.0,109.1 192.0,108.0 198.0,106.9 204.0,105.8 210.0,104.6 216.0,103.3 222.0,102.0 228.0,100.6 234.0,99.2 240.0,97.8 246.0,96.3 252.0,94.7 258.0,93.1 264.0,91.5 270.0,89.8 276.0,88.0 282.0,86.2 288.0,84.3 294.0,82.4 300.0,80.5 306.0,78.5 312.0,76.4 318.0,74.3 324.0,72.2 330.0,70.0"/><line x1="330.0" y1="70.0" x2="420.0" y2="36.7" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="92" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">electron</text><circle cx="195.0" cy="107.5" r="5" fill="#38bdf8"/><line x1="195.0" y1="101.5" x2="195.0" y2="73.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="81.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text></svg><figcaption>Hình 3. Cùng bay ngang vào giữa: $q \gt 0$ bị lực $F$ kéo về <strong>bản âm</strong>, electron về <strong>bản dương</strong>. Trong khe: parabol; ra khỏi bản: đi thẳng. Sơ đồ <strong>không đúng tỉ lệ</strong>.</figcaption></figure></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-03"><svg viewBox="0 0 440 240" role="img" aria-label="Hai bản nằm ngang, bản trên dương, bản dưới âm, đường sức hướng xuống. Điện tích dương bay ngang vào giữa, chịu lực hướng xuống, cong theo parabol về bản âm. Electron chịu lực hướng lên, cong về bản dương. Ra khỏi bản cả hai đi thẳng"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="60" y="30" width="270" height="8" rx="2" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="60" y="202" width="270" height="8" rx="2" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="60" y="22" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">+ + + + + + + + +</text><text x="60" y="228" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">− − − − − − − − −</text><line x1="110.0" y1="40.0" x2="110.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="150.0" y1="40.0" x2="150.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="250.0" y1="40.0" x2="250.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="290.0" y1="40.0" x2="290.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><text x="256" y="186" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">E</text><line x1="14.0" y1="120.0" x2="54.0" y2="120.0" stroke="#34d399" stroke-width="3" opacity="1" marker-end="url(#f3-g)"/><text x="24" y="112.0" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">v₀</text><polyline fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,120.1 78.0,120.2 84.0,120.4 90.0,120.6 96.0,120.9 102.0,121.2 108.0,121.6 114.0,122.0 120.0,122.5 126.0,123.0 132.0,123.6 138.0,124.2 144.0,124.8 150.0,125.6 156.0,126.3 162.0,127.1 168.0,128.0 174.0,128.9 180.0,129.9 186.0,130.9 192.0,132.0 198.0,133.1 204.0,134.2 210.0,135.4 216.0,136.7 222.0,138.0 228.0,139.4 234.0,140.8 240.0,142.2 246.0,143.7 252.0,145.3 258.0,146.9 264.0,148.5 270.0,150.2 276.0,152.0 282.0,153.8 288.0,155.7 294.0,157.6 300.0,159.5 306.0,161.5 312.0,163.6 318.0,165.7 324.0,167.8 330.0,170.0"/><line x1="330.0" y1="170.0" x2="420.0" y2="203.3" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="160" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">q &gt; 0</text><circle cx="195.0" cy="132.5" r="5" fill="currentColor"/><line x1="195.0" y1="138.5" x2="195.0" y2="166.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="166.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,119.9 78.0,119.8 84.0,119.6 90.0,119.4 96.0,119.1 102.0,118.8 108.0,118.4 114.0,118.0 120.0,117.5 126.0,117.0 132.0,116.4 138.0,115.8 144.0,115.2 150.0,114.4 156.0,113.7 162.0,112.9 168.0,112.0 174.0,111.1 180.0,110.1 186.0,109.1 192.0,108.0 198.0,106.9 204.0,105.8 210.0,104.6 216.0,103.3 222.0,102.0 228.0,100.6 234.0,99.2 240.0,97.8 246.0,96.3 252.0,94.7 258.0,93.1 264.0,91.5 270.0,89.8 276.0,88.0 282.0,86.2 288.0,84.3 294.0,82.4 300.0,80.5 306.0,78.5 312.0,76.4 318.0,74.3 324.0,72.2 330.0,70.0"/><line x1="330.0" y1="70.0" x2="420.0" y2="36.7" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="92" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">electron</text><circle cx="195.0" cy="107.5" r="5" fill="#38bdf8"/><line x1="195.0" y1="101.5" x2="195.0" y2="73.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="81.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text></svg><figcaption>Hình 3. Cùng bay ngang vào giữa: $q \gt 0$ bị lực $F$ kéo về <strong>bản âm</strong>, electron về <strong>bản dương</strong>. Trong khe: parabol; ra khỏi bản: đi thẳng. Sơ đồ <strong>không đúng tỉ lệ</strong>.</figcaption></figure></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
