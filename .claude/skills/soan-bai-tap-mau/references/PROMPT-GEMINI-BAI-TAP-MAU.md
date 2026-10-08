@@ -1,6 +1,6 @@
 # Prompt gửi Gemini: viết BẢN NHÁP bài tập mẫu (Claude kiểm + dựng + đăng)
 
-Cách dùng (thầy làm trên Cursor/Gemini app): đính kèm **chỉ** `theory.html` của bài (để cùng ký hiệu với bài đã dạy) và dán prompt dưới đây. Lưu kết quả:
+Cách dùng (thầy làm trên Cursor/Gemini app): đính kèm **chỉ** `theory.html` (hoặc, nếu đang trong cuộc chat học sinh ảo, gửi file `<vai>-3-bai-tap-mau.txt` ngay sau khi Gemini đã đọc bài) của bài (để cùng ký hiệu với bài đã dạy) và dán prompt dưới đây. Lưu kết quả:
 `scripts/data/bai-tap-mau/gemini/<lesson_id>.json`
 Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không đính dữ liệu học sinh.
 
@@ -8,10 +8,17 @@ Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không �
 
 ## PROMPT (sao chép từ đây)
 
-Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP 2–4 DẠNG BÀI TẬP MẪU cho bài "{TÊN BÀI}" (lớp {LỚP}), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm.
+Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP **ĐÚNG 4 DẠNG** BÀI TẬP MẪU, xếp theo HỆ THỐNG BÀI TẬP BẮC CẦU 4 CẤP ĐỘ (scaffolding), cho bài "{TÊN BÀI}" (lớp {LỚP}), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm.
+
+HỆ THỐNG BẮC CẦU 4 CẤP (mỗi dạng đại diện đúng một cấp, theo thứ tự này)
+- Cấp 1 · Áp dụng trực tiếp (DỄ, nhận biết): dữ kiện cho thẳng, một khái niệm/công thức, 1–2 bước. Học sinh chỉ cần nhận ra công thức và thế số.
+- Cấp 2 · Có điều kiện hoặc bẫy (TRUNG BÌNH, thông hiểu): cùng cách làm cấp 1 nhưng phải chọn đúng điều kiện áp dụng, đổi đơn vị, xét dấu/hướng, hoặc tránh một lỗi phổ biến của bài.
+- Cấp 3 · Kết hợp nhiều bước (TRUNG BÌNH–KHÁ, vận dụng): chia thành 3+ bước; một bước con chính là bài cấp 2.
+- Cấp 4 · Tình huống mới (KHÓ, vận dụng cao): đề đời sống, dữ kiện ẩn cần tự rút ra, hoặc bài ngược/nhiều ý (a, b, c) buộc dùng cả ba cấp trước.
+Quy tắc bắc cầu: mỗi dạng sau **dùng lại cách làm của dạng liền trước và chỉ thêm đúng MỘT độ khó mới**. Ghi rõ trong `cau_noi`: dạng này dùng lại gì, thêm gì mới. Cấp càng cao, lời giải càng ngắn ở phần đã quen, dài ở phần mới.
 
 QUY TẮC NỘI DUNG
-1. Mỗi dạng là một KIỂU bài học sinh sẽ gặp lặp lại trong đề, không phải bài số khác của cùng một cách làm. Xếp từ cơ bản → kết hợp; dạng sau dùng lại cách làm dạng trước.
+1. Mỗi dạng là một KIỂU bài học sinh sẽ gặp lặp lại trong đề, không phải bài số khác của cùng một cách làm.
 2. Đề có số liệu RIÊNG, thực tế (đơn vị SI hoặc đơn vị thường dùng, giá trị hợp lí). Đề có hình học phải nói rõ điểm xuất phát, mốc đo, vật cản nằm đâu. Không chép đề trong sách.
 3. Chủ động nêu **điều kiện áp dụng** của định luật/công thức dùng (bỏ qua cản, chuyển động thẳng không đổi chiều, …).
 4. Lời giải đi **từng bước**, mỗi bước có: tên bước, công thức chữ, thế số, kết quả kèm đơn vị, và kiểm tra đơn vị/độ hợp lí. Không nhảy bước. Giữ 3–4 chữ số có nghĩa.
@@ -30,7 +37,10 @@ QUY TẮC NỘI DUNG
   "dang_bai": [
     {
       "label": "Dạng 1 · Tên dạng ngắn",
-      "muc_do": "co_ban | ket_hop",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp | Có điều kiện/bẫy | Kết hợp nhiều bước | Tình huống mới",
+      "nhan_thuc": "nhận biết | thông hiểu | vận dụng | vận dụng cao",
+      "cau_noi": "dùng lại gì từ dạng trước, thêm MỘT độ khó mới nào (dạng 1 ghi 'nền tảng')",
       "yccd_de_xuat": "tên yêu cầu cần đạt gần nhất (Claude sẽ khớp với danh mục)",
       "de_bai": "đề đầy đủ, có $…$ nếu cần",
       "dieu_kien_ap_dung": "một câu",

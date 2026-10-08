@@ -177,6 +177,12 @@ async function main() {
         path.join(out, `${vai}-2-doc-day-du.txt`),
         `${prompt}\n\nLưu ý: trong tin nhắn trước bạn đã làm quiz mù; giữ nguyên các đáp án đó trong tra_loi_quiz/ly_do_chon và chỉ góp ý thêm.\n\n=== NỘI DUNG BÀI (HTML, ĐẦY ĐỦ LỜI GIẢI) ===\n${full}`,
       );
+      const btmMd = fs.readFileSync(path.join(root, ".claude/skills/soan-bai-tap-mau/references/PROMPT-GEMINI-BAI-TAP-MAU.md"), "utf8");
+      const btm = fill(btmMd.split(marker)[1].split("\n---\n")[0].trim());
+      fs.writeFileSync(
+        path.join(out, `${vai}-3-bai-tap-mau.txt`),
+        `Bây giờ thôi đóng vai học sinh. Dựa trên chính bài bạn vừa đọc (không cần gửi lại), hãy làm nhiệm vụ sau.\n\n${btm}`,
+      );
       console.log(`Đã xuất ${vai} → ${path.relative(root, out)}/${vai}-1-quiz-mu.txt và ${vai}-2-doc-day-du.txt`);
       continue;
     }

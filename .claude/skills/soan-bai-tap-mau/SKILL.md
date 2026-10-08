@@ -35,7 +35,7 @@ Lời giải viết liền khó đọc → mỗi lời giải dựng bằng `sol
 
 ## Bản nháp do Gemini viết (thầy chốt 8/10/2026) — Claude vẫn kiểm, dựng, đăng
 
-Phần chữ (đề, số liệu, lời giải nháp) có thể giao Gemini ngoài Claude; mọi thứ còn lại vẫn của skill này:
+Phần chữ (đề, số liệu, lời giải nháp) có thể giao Gemini ngoài Claude. Bản nháp theo **hệ bắc cầu 4 cấp** (thầy chốt 8/10/2026): đúng 4 dạng = Áp dụng trực tiếp → Có điều kiện/bẫy → Kết hợp nhiều bước → Tình huống mới; mỗi dạng dùng lại cách làm dạng trước và thêm một độ khó (xem prompt). Định nghĩa 4 cấp nằm ở prompt, sửa ở đó nếu thầy đổi; mọi thứ còn lại vẫn của skill này:
 1. Thầy gửi Gemini prompt ở `references/PROMPT-GEMINI-BAI-TAP-MAU.md` kèm `theory.html`; lưu `scripts/data/bai-tap-mau/gemini/<lesson_id>.json`.
 2. **Kiểm máy trước**: `python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py <file>` (tính lại `kiem_tinh`, trích đề, từ cấm, `<`/`>`, YCCĐ). Có ✗ thì sửa số/đề trước khi làm tiếp; mục `dieu_ban_khong_chac` tự giải lại trước tiên.
 3. **Không đăng nguyên văn**: tự viết lại lời giải theo "Phong cách" ở trên (khung kiến thức, bước đánh số, ⚠ điều kiện, nhận dạng), dựng mô phỏng + bảng phân tích bằng `hinh.py`, khớp `topic` với `question-topics.json`, rồi đi tiếp từ bước 4 của "Quy trình" (kiểm chéo độc lập bằng `kiem-code`, validate, đăng).

@@ -9,7 +9,7 @@ Thoát 1 nếu có lỗi (✗); cảnh báo (!) không chặn.
 """
 import json, sys, re, math, os, difflib
 
-CAN = ("label", "de_bai", "phan_tich", "can_tim", "cac_buoc", "dap_so", "kiem_tinh", "nhan_dang", "mo_phong_goi_y")
+CAN = ("label", "cap_do", "de_bai", "phan_tich", "can_tim", "cac_buoc", "dap_so", "kiem_tinh", "nhan_dang", "mo_phong_goi_y")
 CAM = re.compile(r"\b(thầy|cô giáo|cô)\b", re.I)
 SAFE = {"math": math, "abs": abs, "round": round, "min": min, "max": max, "pow": pow, "sum": sum}
 
@@ -34,14 +34,18 @@ def main():
     names = [t["name"] for t in topics]
 
     err = warn = 0
+    err_pre = 0
     def E(msg):
         nonlocal err; err += 1; print("  ✗", msg)
     def W(msg):
         nonlocal warn; warn += 1; print("  !", msg)
 
     dang = j.get("dang_bai") or []
-    if not 2 <= len(dang) <= 4:
-        print(f"! số dạng = {len(dang)} (nên 2–4)")
+    if len(dang) != 4:
+        print(f"! số dạng = {len(dang)} (hệ bắc cầu cần ĐÚNG 4)")
+    caps = [d.get("cap_do") for d in dang]
+    if caps != [1, 2, 3, 4][:len(dang)]:
+        print(f"✗ cap_do phải là 1,2,3,4 theo thứ tự, hiện là {caps}"); err_pre = 1
     for i, d in enumerate(dang, 1):
         print(f"\n[Dạng {i}] {d.get('label','?')}")
         for k in CAN:
@@ -87,9 +91,11 @@ def main():
                 W(f"yccd '{y}' chưa có trong danh mục lesson {lid}; gần nhất: {gan}")
             elif sum(1 for n in names if n == y) == 1:
                 pass
+        if d.get("cap_do", 1) > 1 and not d.get("cau_noi"):
+            W("thiếu 'cau_noi' (dạng này dùng lại gì từ dạng trước, thêm gì mới)")
         if d.get("dieu_ban_khong_chac"):
             W("Gemini tự khai chỗ không chắc: " + "; ".join(d["dieu_ban_khong_chac"])[:200])
     print(f"\nTổng: {err} lỗi, {warn} cảnh báo")
-    sys.exit(1 if err else 0)
+    sys.exit(1 if (err or err_pre) else 0)
 
 main()
