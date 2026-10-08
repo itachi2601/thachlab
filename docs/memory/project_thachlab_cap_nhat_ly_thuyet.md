@@ -27,3 +27,20 @@ Bài Giao thoa sóng Vật lí 11 (lesson 31) soạn xong tại `content/lesson-
 
 Bài 13 Tổng hợp và phân tích lực (lớp 10, lesson 58) đã đăng theo đúng quy tắc này 4/10/2026 (item 108, sao lưu
 `scripts/logs/ly-thuyet-bai58-backup-1791083195069.json`), đã deploy; mục #109 và #110 giữ nguyên.
+
+## 8/10/2026 tối — mẻ sửa lý thuyết 20 bài L12 bị `git stash` + `reset` nuốt mất (và bị nuốt LẦN HAI trong lúc sửa)
+
+Batch `scripts/batch-ra-soat-bai.mts --che-do sua-ly-thuyet` ghi thẳng vào `content/lesson-samples/<bài>/theory.src.html`
+trong working tree (13:04), **không commit**. 22:44 một bước dọn cây để pull (`git stash` + `git reset`) cất cả mẻ vào
+`stash@{0}` và trả cây về bản trước khi sửa — trong khi `content/gemini/hang-doi.md` vẫn ghi `loi-lint`/`da-sua` như thật.
+Hậu quả: DB của bài 4, 14, 15, 17, 18, 125, 126 là bản ĐÃ SỬA còn file repo là bản CŨ (đăng lại từ repo là lùi nội dung);
+19 bài còn lại mất phần sửa.
+
+- Cách moi lại: `git stash show --name-only stash@{0}` → `git show "stash@{0}:<đường-dẫn>" > <đường-dẫn>` (chỉ lấy file của
+  mình, đừng `stash pop` cả mẻ). Rồi `cd content/lesson-samples/<bài> && python3 build_figs.py && python3 build_bundle.py`.
+- Đã làm xong chương 1 L12 (Bài 1–4, lesson 2–5): cắt còn 2.434/2.445/2.484/2.436 từ hiện ngay, soát vật lí độc lập
+  (sửa 3 chỗ bài 3, 1 chỗ bài 2, 1 chú thích hình bài 4), 4 lệnh lint/quiz/bundle sạch, đăng DB, `so-file-voi-db.mts` xác nhận file = DB.
+- **15 bài L12 còn lại chưa khôi phục** — cùng mẻ, cùng cách làm.
+- Trong lúc sửa, tiến trình khác lại `git stash` + `git reset` (23:18, 23:24) → mất việc lần hai. Cách chống: commit NGAY sau
+  `--nhan`, và khi cây chính đang bận (merge) thì cứu việc bằng `git worktree add <tmp> -b claude/... origin/main` rồi commit/push
+  ở worktree đó (không `git commit -- <path>` được khi đang merge: "cannot do a partial commit during a merge").
