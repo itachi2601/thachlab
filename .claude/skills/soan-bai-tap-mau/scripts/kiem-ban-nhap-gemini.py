@@ -4,7 +4,8 @@
   python3 kiem-ban-nhap-gemini.py content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json --lesson-id <id>
 
 Bắt: JSON/thiếu trường · tính lại `kiem_tinh` · đáp số lệch kiem_tinh · trích_đề không có trong đề ·
-hàng "cần tìm" lộ số · từ cấm (thầy/cô) · `<`/`>` trong $…$ · yccd không khớp danh mục (gợi ý gần nhất).
+hàng "cần tìm" lộ số · từ cấm (thầy/cô) · `<`/`>` trong $…$ · yccd không khớp danh mục (gợi ý gần nhất;
+0/4 khớp = LỖI, bản nháp lạc phạm vi).
 Thoát 1 nếu có lỗi (✗); cảnh báo (!) không chặn.
 """
 import json, sys, re, math, os, difflib
@@ -37,6 +38,7 @@ def main():
 
     err = warn = 0
     err_pre = 0
+    yccd_khop = 0
     def E(msg):
         nonlocal err; err += 1; print("  ✗", msg)
     def W(msg):
@@ -91,12 +93,17 @@ def main():
             if y not in names:
                 gan = difflib.get_close_matches(y, names, n=3, cutoff=0.3)
                 W(f"yccd '{y}' chưa có trong danh mục lesson {lid}; gần nhất: {gan}")
-            elif sum(1 for n in names if n == y) == 1:
-                pass
+            else:
+                yccd_khop += 1
         if d.get("cap_do", 1) > 1 and not d.get("cau_noi"):
             W("thiếu 'cau_noi' (dạng này dùng lại gì từ dạng trước, thêm gì mới)")
         if d.get("dieu_ban_khong_chac"):
             W("Gemini tự khai chỗ không chắc: " + "; ".join(d["dieu_ban_khong_chac"])[:200])
+    if names and dang and yccd_khop == 0:
+        # Bài 9 L12 (8/10/2026): 4 dạng đều về góc từ khuynh — số học đúng hết nhưng lạc khỏi bài.
+        err += 1
+        print(f"\n✗ Không dạng nào khớp danh mục YCCĐ của lesson {lid} → bản nháp LẠC PHẠM VI, loại và gửi lại "
+              f"(prompt phải có danh mục YCCĐ: xuất lại bằng gemini-phan-hoi.mts --xuat --lesson-id {lid}). Danh mục: {names}")
     print(f"\nTổng: {err} lỗi, {warn} cảnh báo")
     sys.exit(1 if (err or err_pre) else 0)
 

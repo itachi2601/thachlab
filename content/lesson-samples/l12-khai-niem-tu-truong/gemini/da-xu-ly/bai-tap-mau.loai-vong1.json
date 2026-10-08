@@ -1,0 +1,360 @@
+{
+  "lesson_title": "Khái niệm từ trường",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tổng hợp hai thành phần vuông góc của từ trường Trái Đất",
+      "cap_do": 1,
+      "ten_cap_do": "Áp dụng trực tiếp",
+      "nhan_thuc": "nhận biết",
+      "cau_noi": "nền tảng",
+      "yccd_de_xuat": "Nêu được từ trường là trường lực; nhận biết và mô tả được từ trường Trái Đất qua hai thành phần vuông góc",
+      "de_bai": "Tại trạm quan trắc địa từ Đà Lạt, thành phần nằm ngang của từ trường Trái Đất đo được là $B_h = 36{,}0\\ \\mu\\text{T}$, thành phần thẳng đứng đo được là $B_v = 27{,}0\\ \\mu\\text{T}$. Xác định độ lớn cảm ứng từ tổng cộng $B_0$ của từ trường Trái Đất tại vị trí quan trắc này.",
+      "dieu_kien_ap_dung": "Vectơ thành phần nằm ngang $\\vec{B}_h$ vuông góc với vectơ thành phần thẳng đứng $\\vec{B}_v$ tại cùng một vị trí quan trắc.",
+      "phan_tich": [
+        {
+          "trich_de": "thành phần nằm ngang của từ trường Trái Đất đo được là $B_h = 36{,}0\\ \\mu\\text{T}$",
+          "du_lieu": "$B_h = 36{,}0\\ \\mu\\text{T}$",
+          "kien_thuc": "Thành phần nằm ngang của vectơ cảm ứng từ địa từ"
+        },
+        {
+          "trich_de": "thành phần thẳng đứng đo được là $B_v = 27{,}0\\ \\mu\\text{T}$",
+          "du_lieu": "$B_v = 27{,}0\\ \\mu\\text{T}$",
+          "kien_thuc": "Thành phần thẳng đứng của vectơ cảm ứng từ địa từ"
+        },
+        {
+          "trich_de": "Xác định độ lớn cảm ứng từ tổng cộng $B_0$ của từ trường Trái Đất",
+          "du_lieu": "$B_0$",
+          "kien_thuc": "Quy tắc cộng vectơ vuông góc: $B_0 = \\sqrt{B_h^2 + B_v^2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "B_0",
+        "cong_thuc": "B_0 = \\sqrt{B_h^2 + B_v^2}"
+      },
+      "kien_thuc_goi_lai": [
+        "Vectơ cảm ứng từ Trái Đất $\\vec{B}_0$ phân tích thành hai thành phần vuông góc: $\\vec{B}_0 = \\vec{B}_h + \\vec{B}_v$.",
+        "$\\vec{B}_h$ nằm trong mặt phẳng nằm ngang, chỉ về cực Bắc từ.",
+        "$\\vec{B}_v$ có phương thẳng đứng.",
+        "Độ lớn tổng cộng tuân theo định lí Pythagore: $B_0 = \\sqrt{B_h^2 + B_v^2}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Tính độ lớn cảm ứng từ tổng cộng của từ trường Trái Đất",
+          "cong_thuc_chu": "$B_0 = \\sqrt{B_h^2 + B_v^2}$",
+          "the_so": "$B_0 = \\sqrt{36{,}0^2 + 27{,}0^2} = \\sqrt{1296 + 729} = \\sqrt{2025}$",
+          "ket_qua": "$45{,}0\\ \\mu\\text{T}$",
+          "kiem_tra": "$B_0 \\gt B_h$ và $B_0 \\gt B_v$, giá trị $45{,}0\\ \\mu\\text{T}$ phù hợp với dải địa từ thực tế ở Việt Nam ($35\\ \\mu\\text{T} - 50\\ \\mu\\text{T}$)."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "B_0",
+          "gia_tri": 45.0,
+          "don_vi": "µT"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn B_0",
+          "bieu_thuc": "math.sqrt(36.0**2 + 27.0**2)",
+          "ky_vong": 45.0,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề bài cho sẵn hai thành phần vuông góc $B_h$ và $B_v$ của từ trường $\\rightarrow$ áp dụng trực tiếp định lí Pythagore để tìm độ lớn cảm ứng từ tổng hợp.",
+      "bay_thuong_gap": [
+        "Cộng đại số trực tiếp $B_0 = B_h + B_v$ thay vì cộng hình học (vectơ vuông góc).",
+        "Quên kiểm tra tính đồng nhất của đơn vị khi $B_h$ và $B_v$ khác bậc tiền tố."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hoạt hình trạm quan trắc địa từ với hệ trục toạ độ gồm phương ngang (hướng Bắc Nam từ) và phương thẳng đứng. Vectơ Bh vẽ nằm ngang màu xanh lam, vectơ Bv vẽ thẳng đứng hướng xuống màu xanh lá. Hai vectơ hợp thành hình chữ nhật và vectơ tổng hợp B0 là đường chéo màu đỏ. Các nhãn gồm B_h, B_v, B_0 và kí hiệu góc vuông."
+    },
+    {
+      "label": "Dạng 2 · Xác định thành phần nằm ngang của địa từ qua góc từ khuynh",
+      "cap_do": 2,
+      "ten_cap_do": "Có điều kiện/bẫy",
+      "nhan_thuc": "thông hiểu",
+      "cau_noi": "Dùng lại mô hình tam giác vuông giữa các vectơ thành phần từ Dạng 1, thêm một độ khó mới: đề cho cảm ứng từ tổng cộng $B_0$ (đơn vị tesla) và góc từ khuynh $\\theta$ so với mặt phẳng ngang, đòi hỏi chọn đúng hệ thức lượng $\\cos\\theta$ và đổi đơn vị sang microtesla, tránh bẫy nhầm góc khuynh với góc so với phương thẳng đứng.",
+      "yccd_de_xuat": "Mô tả được từ trường Trái Đất; giải thích được ý nghĩa góc từ khuynh và tính toán thành phần nằm ngang tác dụng lên kim la bàn",
+      "de_bai": "Tại trạm nghiên cứu địa từ ở Hà Nội, cảm ứng từ tổng cộng của từ trường Trái Đất có độ lớn $B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T}$ và góc từ khuynh là $\\theta = 30{,}0^\\circ$ (vectơ cảm ứng từ nghiêng xuống dưới một góc $30{,}0^\\circ$ so với mặt phẳng nằm ngang). Hãy xác định độ lớn thành phần nằm ngang $B_h$ của từ trường Trái Đất tại vị trí này.",
+      "dieu_kien_ap_dung": "Góc từ khuynh $\\theta$ được xác định là góc giữa vectơ cảm ứng từ $\\vec{B}_0$ và mặt phẳng nằm ngang tại điểm khảo sát.",
+      "phan_tich": [
+        {
+          "trich_de": "cảm ứng từ tổng cộng của từ trường Trái Đất có độ lớn $B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T}$",
+          "du_lieu": "$B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T} = 40{,}0\\ \\mu\\text{T}$",
+          "kien_thuc": "Cảm ứng từ tổng cộng của từ trường Trái Đất"
+        },
+        {
+          "trich_de": "góc từ khuynh là $\\theta = 30{,}0^\\circ$ (vectơ cảm ứng từ nghiêng xuống dưới một góc $30{,}0^\\circ$ so với mặt phẳng nằm ngang)",
+          "du_lieu": "$\\theta = 30{,}0^\\circ$",
+          "kien_thuc": "Góc giữa $\\vec{B}_0$ và hình chiếu của nó trên mặt phẳng ngang $\\vec{B}_h$"
+        },
+        {
+          "trich_de": "xác định độ lớn thành phần nằm ngang $B_h$ của từ trường Trái Đất tại vị trí này",
+          "du_lieu": "$B_h$",
+          "kien_thuc": "Hệ thức lượng trong tam giác vuông: $B_h = B_0 \\cos\\theta$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "B_h",
+        "cong_thuc": "B_h = B_0 \\cos\\theta"
+      },
+      "kien_thuc_goi_lai": [
+        "Trong mặt phẳng kinh tuyến từ, tam giác tạo bởi $\\vec{B}_0, \\vec{B}_h, \\vec{B}_v$ vuông tại đỉnh của $\\vec{B}_h$.",
+        "Góc từ khuynh $\\theta$ kề với cạnh $B_h$ và huyền là $B_0$.",
+        "Thành phần nằm ngang: $B_h = B_0 \\cos\\theta$.",
+        "Thành phần thẳng đứng: $B_v = B_0 \\sin\\theta$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Tính thành phần nằm ngang của cảm ứng từ Trái Đất",
+          "cong_thuc_chu": "$B_h = B_0 \\cos\\theta$",
+          "the_so": "$B_h = 4{,}00 \\cdot 10^{-5} \\cdot \\cos(30{,}0^\\circ) = 4{,}00 \\cdot 10^{-5} \\cdot 0{,}8660$",
+          "ket_qua": "$3{,}46 \\cdot 10^{-5}\\ \\text{T}$",
+          "kiem_tra": "$B_h \\lt B_0$ và mang giá trị dương, đơn vị quy đổi $34{,}6\\ \\mu\\text{T}$ hợp lí với thành phần nằm ngang ở vĩ độ Việt Nam."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "B_h",
+          "gia_tri": 3.464e-05,
+          "don_vi": "T"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thành phần Bh (đơn vị T)",
+          "bieu_thuc": "4.00e-5 * math.cos(math.radians(30.0))",
+          "ky_vong": 3.464e-05,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi đề cho độ lớn tổng $B_0$ và góc nghiêng $\\theta$ so với mặt phẳng ngang $\\rightarrow$ dùng hàm $\\cos\\theta$ để tìm hình chiếu nằm ngang $B_h$.",
+      "bay_thuong_gap": [
+        "Dùng nhầm hàm $\\sin\\theta$ thay vì $\\cos\\theta$ do nhầm góc nghiêng so với phương ngang với góc so với phương thẳng đứng.",
+        "Quên đổi đơn vị từ tesla ($10^{-5}\\ \\text{T}$) sang microtesla ($\\mu\\text{T}$) hoặc ngược lại khi đề yêu cầu đơn vị cụ thể."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Mô tả một kim la bàn có trục quay nằm ngang đặt trong mặt phẳng kinh tuyến từ (kim từ khuynh), kim nghiêng một góc theta so với vạch nằm ngang. Mũi tên vectơ B_0 chĩa chếch xuống dọc theo kim, hình chiếu xuống vạch ngang là vectơ B_h. Các nhãn gồm B_0, B_h, theta và đường nằm ngang tham chiếu."
+    },
+    {
+      "label": "Dạng 3 · Độ lệch của kim la bàn trong từ trường tổng hợp",
+      "cap_do": 3,
+      "ten_cap_do": "Kết hợp nhiều bước",
+      "nhan_thuc": "vận dụng",
+      "cau_noi": "Dùng lại trọn vẹn bước tính thành phần nằm ngang $B_h$ từ Dạng 2 (như một bước con), thêm một độ khó mới: xuất hiện thêm từ trường ngoài $\\vec{B}_n$ nằm ngang vuông góc với kinh tuyến từ, đòi hỏi tổng hợp hai vectơ và dùng tỉ số lượng giác $\\tan\\alpha$ để xác định góc lệch của kim la bàn cùng độ lớn từ trường tổng hợp tác dụng lên kim.",
+      "yccd_de_xuat": "Vận dụng được quy tắc tổng hợp từ trường và sự định hướng của kim nam châm trong từ trường tổng hợp để tính góc lệch của la bàn",
+      "de_bai": "Một la bàn đặt nằm ngang trên bàn thí nghiệm tại nơi có từ trường Trái Đất với $B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T}$ và góc từ khuynh $\\theta = 30{,}0^\\circ$. Khi chưa có từ trường ngoài, kim la bàn định hướng dọc theo kinh tuyến từ (hướng Bắc - Nam). Người ta đặt một nam châm thẳng tạo ra tại vị trí đặt la bàn một từ trường ngoài có phương nằm ngang, hướng từ Tây sang Đông và có độ lớn $B_n = 2{,}00 \\cdot 10^{-5}\\ \\text{T}$. Xác định góc lệch $\\alpha$ của kim la bàn so với phương Bắc từ và độ lớn cảm ứng từ tổng hợp $B_{th}$ tác dụng lên kim.",
+      "dieu_kien_ap_dung": "Kim la bàn chỉ quay được trong mặt phẳng nằm ngang, chỉ chịu tác dụng định hướng bởi các thành phần từ trường nằm ngang; bỏ qua ma sát ở trục quay.",
+      "phan_tich": [
+        {
+          "trich_de": "từ trường Trái Đất với $B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T}$ và góc từ khuynh $\\theta = 30{,}0^\\circ$",
+          "du_lieu": "$B_0 = 4{,}00 \\cdot 10^{-5}\\ \\text{T}, \\theta = 30{,}0^\\circ$",
+          "kien_thuc": "Thành phần nằm ngang địa từ: $B_h = B_0 \\cos\\theta$"
+        },
+        {
+          "trich_de": "từ trường ngoài có phương nằm ngang, hướng từ Tây sang Đông và có độ lớn $B_n = 2{,}00 \\cdot 10^{-5}\\ \\text{T}$",
+          "du_lieu": "$B_n = 2{,}00 \\cdot 10^{-5}\\ \\text{T}$",
+          "kien_thuc": "Từ trường ngoài vuông góc với kinh tuyến từ trong mặt phẳng ngang: $\\vec{B}_n \\perp \\vec{B}_h$"
+        },
+        {
+          "trich_de": "Xác định góc lệch $\\alpha$ của kim la bàn so với phương Bắc từ và độ lớn cảm ứng từ tổng hợp $B_{th}$ tác dụng lên kim",
+          "du_lieu": "$\\alpha, B_{th}$",
+          "kien_thuc": "Hệ thức lượng giác trong tam giác vuông vectơ: $\\tan\\alpha = \\frac{B_n}{B_h}$ và $B_{th} = \\sqrt{B_h^2 + B_n^2}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "\\alpha, B_{th}",
+        "cong_thuc": "\\alpha = \\arctan\\left(\\frac{B_n}{B_0 \\cos\\theta}\\right), B_{th} = \\sqrt{(B_0 \\cos\\theta)^2 + B_n^2}"
+      },
+      "kien_thuc_goi_lai": [
+        "Kim la bàn đặt nằm ngang chỉ phản ứng với các vectơ từ trường nằm ngang: $\\vec{B}_{th} = \\vec{B}_h + \\vec{B}_n$.",
+        "$\\vec{B}_h$ hướng về cực Bắc từ, $\\vec{B}_n$ hướng vuông góc (hướng Đông) $\\rightarrow \\vec{B}_n \\perp \\vec{B}_h$.",
+        "Kim nam châm cân bằng dọc theo phương của vectơ cảm ứng từ tổng hợp $\\vec{B}_{th}$.",
+        "Góc lệch $\\alpha$ so với phương Bắc từ thoả mãn: $\\tan\\alpha = \\frac{B_n}{B_h}$.",
+        "Độ lớn cảm ứng từ tổng hợp: $B_{th} = \\sqrt{B_h^2 + B_n^2}$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Bước 1: Tính thành phần nằm ngang của từ trường Trái Đất (bài toán Dạng 2)",
+          "cong_thuc_chu": "$B_h = B_0 \\cos\\theta$",
+          "the_so": "$B_h = 4{,}00 \\cdot 10^{-5} \\cdot \\cos(30{,}0^\\circ)$",
+          "ket_qua": "$3{,}464 \\cdot 10^{-5}\\ \\text{T}$",
+          "kiem_tra": "Kết quả kế thừa chính xác từ Dạng 2, $B_h \\lt B_0$."
+        },
+        {
+          "tieu_de": "Bước 2: Tính góc lệch của kim la bàn so với phương Bắc từ",
+          "cong_thuc_chu": "$\\tan\\alpha = \\frac{B_n}{B_h}$",
+          "the_so": "$\\tan\\alpha = \\frac{2{,}00 \\cdot 10^{-5}}{3{,}464 \\cdot 10^{-5}} \\approx 0{,}5774$",
+          "ket_qua": "$30{,}0^\\circ$",
+          "kiem_tra": "Vì $\\tan(30{,}0^\\circ) = \\frac{1}{\\sqrt{3}} \\approx 0{,}5774$, góc lệch $\\alpha = 30{,}0^\\circ$ về phía Đông là chính xác."
+        },
+        {
+          "tieu_de": "Bước 3: Tính độ lớn cảm ứng từ tổng hợp tác dụng lên kim la bàn",
+          "cong_thuc_chu": "$B_{th} = \\sqrt{B_h^2 + B_n^2}$",
+          "the_so": "$B_{th} = \\sqrt{(3{,}464 \\cdot 10^{-5})^2 + (2{,}00 \\cdot 10^{-5})^2} = \\sqrt{1{,}200 \\cdot 10^{-9} + 4{,}00 \\cdot 10^{-10}} = \\sqrt{1{,}600 \\cdot 10^{-9}}$",
+          "ket_qua": "$4{,}00 \\cdot 10^{-5}\\ \\text{T}$",
+          "kiem_tra": "$B_{th} \\gt B_h$ và $B_{th} \\gt B_n$, giá trị $40{,}0\\ \\mu\\text{T}$ hoàn toàn hợp lí."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "alpha",
+          "gia_tri": 30.0,
+          "don_vi": "độ"
+        },
+        {
+          "y": "B_th",
+          "gia_tri": 4e-05,
+          "don_vi": "T"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "thành phần Bh",
+          "bieu_thuc": "4.00e-5 * math.cos(math.radians(30.0))",
+          "ky_vong": 3.464e-05,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "góc lệch alpha (độ)",
+          "bieu_thuc": "math.degrees(math.atan(2.00e-5 / (4.00e-5 * math.cos(math.radians(30.0)))))",
+          "ky_vong": 30.0,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "cảm ứng từ tổng hợp Bth (T)",
+          "bieu_thuc": "math.sqrt((4.00e-5 * math.cos(math.radians(30.0)))**2 + (2.00e-5)**2)",
+          "ky_vong": 4e-05,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi có la bàn đặt trong từ trường Trái Đất và chịu thêm từ trường ngoài vuông góc với phương Bắc Nam $\\rightarrow$ tính $B_h$, sau đó dùng $\\tan\\alpha = B_n / B_h$ và $B_{th} = \\sqrt{B_h^2 + B_n^2}$.",
+      "bay_thuong_gap": [
+        "Dùng trực tiếp $B_0$ vào công thức $\\tan\\alpha = B_n / B_0$ thay vì dùng thành phần nằm ngang $B_h$, quên mất la bàn quay trong mặt phẳng ngang.",
+        "Nhầm lẫn giữa phương vuông góc của $B_n$ với phương của $B_v$ (thẳng đứng)."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hoạt hình mặt phẳng ngang của la bàn: ban đầu kim chỉ hướng Bắc. Xuất hiện một thanh nam châm ở phía Tây tạo từ trường B_n hướng sang Đông. Kim la bàn từ từ quay lệch một góc alpha về phía Đông và nằm cân bằng dọc theo đường chéo B_th. Các nhãn gồm B_h (hướng Bắc), B_n (hướng Đông), B_th (hướng lệch), góc alpha và mặt số la bàn."
+    },
+    {
+      "label": "Dạng 4 · Bài toán bù từ trên tàu thủy và xác định các thông số địa từ",
+      "cap_do": 4,
+      "ten_cap_do": "Tình huống mới",
+      "nhan_thuc": "vận dụng cao",
+      "cau_noi": "Dùng lại hệ thức góc lệch la bàn $\\tan\\alpha = B_n / B_h$ từ Dạng 3 và liên hệ phân tích thành phần địa từ từ Dạng 1, Dạng 2, thêm một độ khó mới: bài toán thực nghiệm đời sống có dữ kiện ẩn (cả thành phần địa từ $B_h$ và từ trường lạ do tàu gây ra đều chưa biết), đòi hỏi lập luận cân bằng triệt tiêu từ trường lạ bằng dòng điện bù từ, từ đó giải ngược tìm $B_h$ và cảm ứng từ toàn phần của Trái Đất $B_0$.",
+      "yccd_de_xuat": "Vận dụng kiến thức từ trường và sự định hướng của la bàn để giải thích nguyên lí hiệu chỉnh la bàn trên tàu thuyền và xác định các thông số từ trường chưa biết",
+      "de_bai": "Một tàu khảo sát biển di chuyển theo hướng Bắc địa từ. Do khối kim loại của thân tàu bị nhiễm từ, tại vị trí đặt la bàn xuất hiện một từ trường lạ $\\vec{B}_x$ có phương nằm ngang hướng vuông góc sang mạn phải (hướng Đông), làm kim la bàn bị lệch một góc $\\alpha_1 = 30{,}0^\\circ$ về phía Đông so với phương Bắc từ. Để hiệu chỉnh la bàn chỉ đúng hướng Bắc, các kỹ sư kích hoạt một cuộn dây bù từ gắn cố định cạnh la bàn, tạo ra từ trường chuẩn $\\vec{B}_c$ nằm ngang hướng ngược lại sang mạn trái (hướng Tây). Khi điều chỉnh độ lớn $B_c = 20{,}0\\ \\mu\\text{T}$, kim la bàn quay về chỉ đúng phương Bắc từ. Biết góc từ khuynh tại vùng biển này là $\\theta = 45{,}0^\\circ$. Hãy xác định:\na) Độ lớn của từ trường lạ $B_x$ do thân tàu gây ra.\nb) Độ lớn thành phần nằm ngang $B_h$ của từ trường Trái Đất tại vùng biển đó.\nc) Độ lớn cảm ứng từ tổng cộng $B_0$ của từ trường Trái Đất tại khu vực này.",
+      "dieu_kien_ap_dung": "La bàn nằm ngang; từ trường bù $\\vec{B}_c$ cùng phương và ngược chiều hoàn toàn với từ trường lạ $\\vec{B}_x$; coi từ trường Trái Đất đồng đều trong khu vực khảo sát.",
+      "phan_tich": [
+        {
+          "trich_de": "Khi điều chỉnh độ lớn $B_c = 20{,}0\\ \\mu\\text{T}$, kim la bàn quay về chỉ đúng phương Bắc từ",
+          "du_lieu": "$\\vec{B}_c \\uparrow\\downarrow \\vec{B}_x, B_c = 20{,}0\\ \\mu\\text{T}$",
+          "kien_thuc": "Điều kiện triệt tiêu từ trường lạ nằm ngang: $B_x = B_c$"
+        },
+        {
+          "trich_de": "làm kim la bàn bị lệch một góc $\\alpha_1 = 30{,}0^\\circ$ về phía Đông so với phương Bắc từ",
+          "du_lieu": "$\\alpha_1 = 30{,}0^\\circ, \\vec{B}_x \\perp \\vec{B}_h$",
+          "kien_thuc": "Độ lệch la bàn khi chưa bù: $\\tan\\alpha_1 = \\frac{B_x}{B_h}$"
+        },
+        {
+          "trich_de": "Biết góc từ khuynh tại vùng biển này là $\\theta = 45{,}0^\\circ$",
+          "du_lieu": "$\\theta = 45{,}0^\\circ$",
+          "kien_thuc": "Hệ thức lượng địa từ: $B_h = B_0 \\cos\\theta \\implies B_0 = \\frac{B_h}{\\cos\\theta}$"
+        },
+        {
+          "trich_de": "Độ lớn của từ trường lạ $B_x$ do thân tàu gây ra",
+          "du_lieu": "$B_x$",
+          "kien_thuc": "Cân bằng vectơ bù từ: $B_x = B_c$"
+        },
+        {
+          "trich_de": "Độ lớn thành phần nằm ngang $B_h$ của từ trường Trái Đất tại vùng biển đó",
+          "du_lieu": "$B_h$",
+          "kien_thuc": "Giải ngược từ góc lệch: $B_h = \\frac{B_x}{\\tan\\alpha_1}$"
+        },
+        {
+          "trich_de": "Độ lớn cảm ứng từ tổng cộng $B_0$ của từ trường Trái Đất tại khu vực này",
+          "du_lieu": "$B_0$",
+          "kien_thuc": "Độ lớn cảm ứng từ tổng cộng: $B_0 = \\frac{B_h}{\\cos\\theta}$"
+        }
+      ],
+      "can_tim": {
+        "ky_hieu": "B_x, B_h, B_0",
+        "cong_thuc": "B_x = B_c;\\ B_h = \\frac{B_x}{\\tan\\alpha_1};\\ B_0 = \\frac{B_h}{\\cos\\theta}"
+      },
+      "kien_thuc_goi_lai": [
+        "Để kim la bàn chỉ đúng phương Bắc từ, tổng các thành phần từ trường ngoài theo phương Đông - Tây phải triệt tiêu: $\\vec{B}_x + \\vec{B}_c = \\vec{0}$.",
+        "Khi chưa bù từ, kim la bàn lệch góc $\\alpha_1$ so với phương Bắc do tác dụng của $\\vec{B}_h$ và $\\vec{B}_x$: $\\tan\\alpha_1 = \\frac{B_x}{B_h}$.",
+        "Thành phần nằm ngang của từ trường Trái Đất liên hệ với cảm ứng từ tổng cộng $B_0$ qua góc từ khuynh: $B_h = B_0 \\cos\\theta$."
+      ],
+      "cac_buoc": [
+        {
+          "tieu_de": "Ý a: Xác định độ lớn từ trường lạ B_x do thân tàu gây ra",
+          "cong_thuc_chu": "$\\vec{B}_{th} = \\vec{B}_h + (\\vec{B}_x + \\vec{B}_c) = \\vec{B}_h \\implies B_x = B_c$",
+          "the_so": "$B_x = 20{,}0\\ \\mu\\text{T}$",
+          "ket_qua": "$20{,}0\\ \\mu\\text{T}$",
+          "kiem_tra": "Hai vectơ cùng phương ngược chiều triệt tiêu nhau hoàn toàn khi độ lớn bằng nhau, kim la bàn chỉ còn chịu $\\vec{B}_h$ nên chỉ đúng hướng Bắc."
+        },
+        {
+          "tieu_de": "Ý b: Xác định thành phần nằm ngang B_h của từ trường Trái Đất",
+          "cong_thuc_chu": "$B_h = \\frac{B_x}{\\tan\\alpha_1}$",
+          "the_so": "$B_h = \\frac{20{,}0}{\\tan(30{,}0^\\circ)} = \\frac{20{,}0}{0{,}5774}$",
+          "ket_qua": "$34{,}6\\ \\mu\\text{T}$",
+          "kiem_tra": "Góc lệch $30{,}0^\\circ$ ứng với tỉ số $\\frac{1}{\\sqrt{3}}$, $B_h = 20{,}0\\sqrt{3} \\approx 34{,}64\\ \\mu\\text{T}$, hoàn toàn phù hợp với thực tế."
+        },
+        {
+          "tieu_de": "Ý c: Xác định cảm ứng từ tổng cộng B_0 của từ trường Trái Đất",
+          "cong_thuc_chu": "$B_0 = \\frac{B_h}{\\cos\\theta}$",
+          "the_so": "$B_0 = \\frac{34{,}64 \\cdot 10^{-6}}{\\cos(45{,}0^\\circ)} = \\frac{34{,}64 \\cdot 10^{-6}}{0{,}7071}$",
+          "ket_qua": "$49{,}0\\ \\mu\\text{T}$",
+          "kiem_tra": "$B_0 \\gt B_h$ và ở vĩ độ có góc khuynh $45{,}0^\\circ$ giá trị $\\approx 49{,}0\\ \\mu\\text{T}$ hoàn toàn phù hợp với bản đồ địa từ quốc tế (IGRF)."
+        }
+      ],
+      "dap_so": [
+        {
+          "y": "a",
+          "gia_tri": 20.0,
+          "don_vi": "µT"
+        },
+        {
+          "y": "b",
+          "gia_tri": 34.6,
+          "don_vi": "µT"
+        },
+        {
+          "y": "c",
+          "gia_tri": 49.0,
+          "don_vi": "µT"
+        }
+      ],
+      "kiem_tinh": [
+        {
+          "mo_ta": "độ lớn Bx (uT)",
+          "bieu_thuc": "20.0",
+          "ky_vong": 20.0,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "độ lớn Bh (uT)",
+          "bieu_thuc": "20.0 / math.tan(math.radians(30.0))",
+          "ky_vong": 34.64,
+          "sai_so_tuong_doi": 0.01
+        },
+        {
+          "mo_ta": "độ lớn B0 (uT)",
+          "bieu_thuc": "(20.0 / math.tan(math.radians(30.0))) / math.cos(math.radians(45.0))",
+          "ky_vong": 48.99,
+          "sai_so_tuong_doi": 0.01
+        }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi có sự sai lệch của la bàn do nguồn từ trường cục bộ và dùng phương pháp bù từ để hiệu chỉnh $\\rightarrow$ khai thác điều kiện triệt tiêu từ trường lạ, dùng công thức góc lệch giải ngược ra $B_h$, sau đó dùng góc từ khuynh tính ra $B_0$.",
+      "bay_thuong_gap": [
+        "Nghĩ rằng khi bù từ thì $B_c$ cộng dồn với $B_x$ thay vì trừ đi vectơ do hai vectơ ngược chiều.",
+        "Nhầm công thức $B_h = B_x \\cdot \\tan\\alpha_1$ thay vì $B_h = B_x / \\tan\\alpha_1$.",
+        "Nhầm $B_0 = B_h \\cos\\theta$ thay vì $B_0 = B_h / \\cos\\theta$."
+      ],
+      "dieu_ban_khong_chac": [],
+      "mo_phong_goi_y": "Hoạt hình nhìn từ trên xuống buồng lái tàu thủy: tàu đang hướng lên trên (hướng Bắc). Kim la bàn bị kéo lệch sang phải (hướng Đông) do vectơ B_x màu cam. Khi người dùng kéo thanh trượt tăng dòng điện cuộn bù B_c (vectơ màu lam chỉ sang trái), vectơ tổng nằm ngang dần co lại về trục Bắc. Khi B_c = B_x, kim la bàn thẳng tắp hướng Bắc. Nhãn gồm: Mũi tàu, Bắc từ, B_x, B_c, B_h, góc alpha_1."
+    }
+  ]
+}

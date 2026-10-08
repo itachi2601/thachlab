@@ -6,6 +6,17 @@
 """
 import json, sys, glob, os, collections
 
+def doc_json(path):
+    """json.load nhưng chịu được ```json … ``` và chữ thừa ngoài JSON (Gemini web hay bọc fence)."""
+    t = open(path, encoding="utf8").read().strip()
+    try:
+        return json.loads(t)
+    except Exception:
+        a, b = t.find("{"), t.rfind("}")
+        if a < 0 or b < 0:
+            raise
+        return json.loads(t[a:b + 1])
+
 MUC = {"chặn": 0, "chan": 0, "khó": 1, "kho": 1, "nhỏ": 2, "nho": 2}
 VAI_OK = {"yeu", "trung-binh", "kha"}
 CAN = ("id", "vi_tri", "trich_nguyen_van", "loai", "muc", "de_xuat")
@@ -19,7 +30,7 @@ def main():
         sys.exit(f"Chưa có thư mục {d} (bài chưa có phản hồi Gemini)")
     xl = os.path.join(args[0], "gemini", "da-xu-ly"); os.makedirs(xl, exist_ok=True)
     sổ_path = os.path.join(xl, "so-quyet-dinh.json")
-    sổ = json.load(open(sổ_path)) if os.path.exists(sổ_path) else {"files": [], "quyet_dinh": {}}
+    sổ = doc_json(sổ_path) if os.path.exists(sổ_path) else {"files": [], "quyet_dinh": {}}
     files = sorted(glob.glob(os.path.join(d, "hoc-sinh-*.json")))
     moi = [f for f in files if os.path.basename(f) not in sổ["files"]]
     if not moi:
@@ -27,14 +38,14 @@ def main():
     dap_an = {}
     p = os.path.join(d, "dap-an-that.json")
     if os.path.exists(p):
-        dap_an = json.load(open(p))
+        dap_an = doc_json(p)
 
     nhom = collections.defaultdict(list)   # (vi_tri, loai) -> [(vai, gop_y)]
     quiz = collections.defaultdict(dict)   # cau -> {vai: đáp án}
     loi = 0
     for f in moi:
         try:
-            j = json.load(open(f))
+            j = doc_json(f)
         except Exception as e:
             print(f"✗ {os.path.basename(f)}: JSON hỏng ({e})"); loi += 1; continue
         vai = j.get("vai", "?")

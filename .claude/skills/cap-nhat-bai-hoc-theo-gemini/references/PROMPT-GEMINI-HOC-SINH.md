@@ -1,6 +1,6 @@
 # Prompt gửi Gemini: đóng vai học sinh đọc thử bài lý thuyết
 
-Cách dùng (thầy làm trên Cursor/Gemini): gửi **3 lượt riêng**, mỗi lượt thay `{VAI}`; đính kèm `theory.html` (hoặc dán text bài). Lưu kết quả đúng tên:
+Cách dùng: KHÔNG dán prompt này tay. `scripts/gemini-phan-hoi.mts --xuat` điền `{VAI}`, `{TÊN BÀI}`, `{LỚP}` và ghép sẵn bài vào `gemini/gui/<vai>-2-doc-day-du.txt` (tin nhắn 2, sau tin nhắn 1 là quiz mù). Mỗi vai một cuộc chat mới trên gemini.google.com. Lưu kết quả đúng tên:
 `content/lesson-samples/<bài>/gemini/nhan/hoc-sinh-<yeu|trung-binh|kha>.json`
 Chỉ đính nội dung bài. Không đính tên, điểm, SĐT học sinh thật.
 

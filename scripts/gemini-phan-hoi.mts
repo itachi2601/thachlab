@@ -2,10 +2,13 @@
 // vào đúng thư mục mà skill `chinh-ly-thuyet-theo-phan-hoi` / `soan-bai-tap-mau` đọc.
 //
 //   npx tsx scripts/gemini-phan-hoi.mts --bai l10-do-dich-chuyen-quang-duong --ten "Độ dịch chuyển và quãng đường đi được" [--lop 10]
-//        [--vai yeu,trung-binh,kha] [--dry-run]
+//        --lesson-id <id> [--vai yeu,trung-binh,kha] --xuat        ← đường mặc định (xuất file dán tay)
+//        [--dry-run]                                                 ← đường phụ (gọi Gemini trực tiếp)
 //   npx tsx scripts/gemini-phan-hoi.mts --che-do bai-tap-mau --bai <thư mục> --ten "<tên bài>" --lesson-id <id> [--dry-run]
 //
-// Hai đường gọi: (a) Gemini CLI đăng nhập tài khoản Google, không cần API key (mặc định khi thiếu GEMINI_API_KEY);
+// ĐƯỜNG MẶC ĐỊNH (thầy chốt 8/10/2026): `--xuat` — không gọi Gemini, chỉ xuất file để thầy dán tay vào
+// gemini.google.com (xem skill cap-nhat-bai-hoc-theo-gemini). Hai đường dưới là đường phụ, không dùng:
+// (a) Gemini CLI đăng nhập tài khoản Google, không cần API key (mặc định khi thiếu GEMINI_API_KEY);
 // (b) API nếu có GEMINI_API_KEY + GEMINI_MODEL trong .env.local. KHÔNG hard-code tên model
 // (model bị khai tử theo thời gian, xem AGENTS.md "Gọi AI provider trong code"). Chỉ gửi nội dung bài —
 // không có dữ liệu học sinh. Chạy trong tab terminal (cần mạng). Không ghi DB, chỉ ghi file.
@@ -76,8 +79,37 @@ if (!rawMd.includes(marker)) {
   process.exit(1);
 }
 const promptTpl = rawMd.split(marker)[1].split("\n---\n")[0].trim();
+// Danh mục YCCĐ của bài (scripts/data/question-topics.json) để nhúng vào prompt bài tập mẫu — Gemini lạc
+// phạm vi khi không có danh mục (Bài 9 L12: 4 dạng đều về góc từ khuynh, thứ bài không dạy).
+const lessonId = arg("lesson-id");
+function danhMucYccd(): string {
+  if (!lessonId) return "(không có danh mục — chỉ dùng đúng các mục kiến thức xuất hiện trong bài)";
+  const tp = path.join(root, "scripts/data/question-topics.json");
+  if (!fs.existsSync(tp)) return "(không có danh mục)";
+  const all = JSON.parse(fs.readFileSync(tp, "utf8")) as { id: number; lesson_id: number; name: string; parent_id: number | null }[];
+  const mine = all.filter((t) => String(t.lesson_id) === String(lessonId));
+  const leaves = mine.filter((t) => !mine.some((u) => u.parent_id === t.id));
+  const list = leaves.length ? leaves : mine;
+  return list.length ? list.map((t) => `- ${t.name}`).join("\n") : "(không có danh mục)";
+}
 const fill = (s: string, vai = "") =>
-  s.replaceAll("{TÊN BÀI}", ten).replaceAll("{LỚP}", lop).replaceAll("{VAI}", vai);
+  s.replaceAll("{TÊN BÀI}", ten).replaceAll("{LỚP}", lop).replaceAll("{VAI}", vai).replaceAll("{YCCĐ}", danhMucYccd());
+
+// Đáp án đúng của các câu trong bài (lớp `tl-ok`) → nhan/dap-an-that.json, để gop-phan-hoi.py đối chiếu
+// quiz của vai. Nhãn: khối "Dự đoán" → du_doan; khối có "Câu N." gần nhất phía trước → cauN.
+function dapAnThat(html: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  const parts = html.split('<div class="tl-quiz">');
+  for (let i = 1; i < parts.length; i++) {
+    const before = parts[i - 1];
+    const cau = [...before.matchAll(/Câu\s+(\d+)\./g)].pop();
+    const duDoan = before.lastIndexOf("Dự đoán");
+    const key = duDoan >= 0 && (!cau || duDoan > (cau.index ?? -1)) ? "du_doan" : cau ? `cau${cau[1]}` : `q${i}`;
+    const ok = parts[i].match(/<label[^>]*class="[^"]*\btl-ok\b[^"]*"[^>]*>\s*([A-D])\./);
+    if (ok) out[key] = ok[1];
+  }
+  return out;
+}
 
 // --- gọi Gemini -------------------------------------------------------------------------------
 function parseJsonText(text: string): unknown {
@@ -166,24 +198,37 @@ async function main() {
       // Không gọi Gemini: xuất sẵn file để thầy dán tay vào gemini.google.com (mỗi vai một cuộc chat, 2 tin nhắn)
       const out = path.join(dir, "gemini", "gui");
       fs.mkdirSync(out, { recursive: true });
+      // Gemini desktop trên Mac ghi được thẳng vào repo → nhắc nó tự lưu JSON vào nhan/, thầy không phải dán lại
+      const luu = (tenFile: string) =>
+        `\n\nKHÔNG in JSON hay nội dung trả lời vào khung chat. Chỉ ghi đúng JSON thuần (không dấu \`\`\`, không chữ giải thích) vào file ${path.join(dest, tenFile)} (ghi đè nếu đã có). Xong chỉ nhắn đúng một dòng: "Đã lưu ${tenFile}".`;
       const blindIns =
         `Bạn là học sinh lớp ${lop} hồ sơ "${vai}" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). ` +
         `Dưới đây là bài "${ten}" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. ` +
         `Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. ` +
-        `Trả về duy nhất JSON: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. ` +
+        `KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. ` +
         `Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").`;
       fs.writeFileSync(path.join(out, `${vai}-1-quiz-mu.txt`), `${blindIns}\n\n=== NỘI DUNG BÀI (HTML) ===\n${blind}`);
       fs.writeFileSync(
         path.join(out, `${vai}-2-doc-day-du.txt`),
-        `${prompt}\n\nLưu ý: trong tin nhắn trước bạn đã làm quiz mù; giữ nguyên các đáp án đó trong tra_loi_quiz/ly_do_chon và chỉ góp ý thêm.\n\n=== NỘI DUNG BÀI (HTML, ĐẦY ĐỦ LỜI GIẢI) ===\n${full}`,
+        `${prompt}\n\nLưu ý: trong tin nhắn trước bạn đã làm quiz mù; giữ nguyên các đáp án đó trong tra_loi_quiz/ly_do_chon và chỉ góp ý thêm.${luu(`hoc-sinh-${vai}.json`)}\n\n=== NỘI DUNG BÀI (HTML, ĐẦY ĐỦ LỜI GIẢI) ===\n${full}`,
       );
-      const btmMd = fs.readFileSync(path.join(root, ".claude/skills/soan-bai-tap-mau/references/PROMPT-GEMINI-BAI-TAP-MAU.md"), "utf8");
-      const btm = fill(btmMd.split(marker)[1].split("\n---\n")[0].trim());
-      fs.writeFileSync(
-        path.join(out, `${vai}-3-bai-tap-mau.txt`),
-        `Bây giờ thôi đóng vai học sinh. Dựa trên chính bài bạn vừa đọc (không cần gửi lại), hãy làm nhiệm vụ sau.\n\n${btm}`,
-      );
-      console.log(`Đã xuất ${vai} → ${path.relative(root, out)}/${vai}-1-quiz-mu.txt và ${vai}-2-doc-day-du.txt`);
+      // Tin nhắn 3 (nháp bài tập mẫu) chỉ cần ở MỘT vai: trung-binh, hoặc vai duy nhất được xuất
+      const vaiBtm = vais.includes("trung-binh") ? "trung-binh" : vais[0];
+      let log = `Đã xuất ${vai} → ${path.relative(root, out)}/${vai}-1-quiz-mu.txt, ${vai}-2-doc-day-du.txt`;
+      if (vai === vaiBtm) {
+        const btmMd = fs.readFileSync(path.join(root, ".claude/skills/soan-bai-tap-mau/references/PROMPT-GEMINI-BAI-TAP-MAU.md"), "utf8");
+        const btm = fill(btmMd.split(marker)[1].split("\n---\n")[0].trim());
+        fs.writeFileSync(
+          path.join(out, `${vai}-3-bai-tap-mau.txt`),
+          `Bây giờ thôi đóng vai học sinh. Dựa trên chính bài bạn vừa đọc (không cần gửi lại), hãy làm nhiệm vụ sau.\n\n${btm}`,
+        );
+        log += `, ${vai}-3-bai-tap-mau.txt`;
+        if (!lessonId) log += "\n  ! thiếu --lesson-id nên tin nhắn 3 không có danh mục YCCĐ — Gemini dễ lạc phạm vi";
+      }
+      const da = dapAnThat(full);
+      fs.writeFileSync(path.join(dest, "dap-an-that.json"), JSON.stringify(da, null, 2) + "\n");
+      log += `\n  đáp án thật ${Object.keys(da).length} câu → ${path.relative(root, dest)}/dap-an-that.json`;
+      console.log(log);
       continue;
     }
     if (flag("dry-run")) {
@@ -196,7 +241,7 @@ async function main() {
         `Bạn là học sinh lớp {LỚP} hồ sơ "{VAI}" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). ` +
           `Dưới đây là bài "{TÊN BÀI}" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. ` +
           `Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. ` +
-          `Trả về duy nhất JSON: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. ` +
+          `KHÔNG in đáp án vào khung chat: hãy ghi nhớ và chỉ nhắn đúng một dòng "Đã làm xong quiz". Dạng JSON cần nhớ để dùng ở tin nhắn sau: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. ` +
           `Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").`,
         vai,
       );
