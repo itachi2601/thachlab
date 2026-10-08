@@ -115,7 +115,7 @@ fig1 = c.svg("Sân băng hình bầu dục, đường trượt một vòng sát 
              exp="tn-l10-dd-qd-03")
 ERR += c.check()
 
-# ---------------- Hình 2: xe điều khiển trên trục X: 20 -> 80 -> 50 cm
+# ---------------- Hình 2: xe điều khiển trên trục Ox: 20 -> 80 -> 50 cm
 c = Canvas("f2", 420, 215)
 AX_Y, X0, K = 130, 40, 3.4             # 1 cm = 3,4 px; x = 0 tại px 40
 px = lambda cm: X0 + K * cm
@@ -126,7 +126,7 @@ for cm in range(0, 101, 10):
 c.text(px(0), 152, "O", size=14, anchor="middle", italic=True)
 for cm in (20, 50, 80, 100):
     c.text(px(cm), 152, str(cm), size=13, anchor="middle", weight="600")
-c.text(404, 116, "X (cm)", size=14, anchor="end", italic=True)
+c.text(404, 116, "x (cm)", size=14, anchor="end", italic=True)
 x1, xq, x2 = 20, 80, 50
 YA, YB = 70, 95
 c.arr("toi", "o", px(x1), YA, px(xq), YA, 3.2)
@@ -149,7 +149,7 @@ c.text(16, 24, "Xe điều khiển chạy dọc thước, gốc O là đầu th�
 xa, _, xb, _ = c.arrows["d"]
 ERR += [] if abs((xb - xa) / K - (x2 - x1)) < 1e-9 else ["f2: độ dài d sai tỉ lệ"]
 ERR += [] if abs((c.arrows["toi"][2] - c.arrows["toi"][0]) / K - 60) < 1e-9 and abs((c.arrows["lui"][0] - c.arrows["lui"][2]) / K - 30) < 1e-9 else ["f2: đoạn cam sai"]
-fig2 = c.svg("Trục X dọc thước: xe đi từ 20 cm tới 80 cm rồi lùi về 50 cm; mũi tên xanh lá d nối 20 cm tới 50 cm",
+fig2 = c.svg("Trục Ox dọc thước: xe đi từ 20 cm tới 80 cm rồi lùi về 50 cm; mũi tên xanh lá d nối 20 cm tới 50 cm",
              "Hình 2. Đường cam: xe đi tới rồi lùi, tổng $90\\ \\text{cm}$. Mũi tên xanh lá: độ dịch chuyển chỉ nối điểm đầu với điểm cuối.",
              exp="tn-l10-dd-qd-02")
 ERR += c.check()
