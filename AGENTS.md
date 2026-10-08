@@ -112,6 +112,10 @@ Mỗi phiên cloud chạy trên nhánh `claude/<tên>` riêng, tách từ `main`
   **thêm dòng/mục mới**, không viết lại hay sắp xếp lại phần có sẵn — để hai phiên cùng thêm vẫn merge sạch.
 - Migration: tên file theo timestamp, không sửa/xoá migration của phiên khác; chỉ nối thêm vào mảng `FILES`.
 - Không xoá, reset, force-push nhánh hay worktree của phiên khác. Thấy lạ thì ghi vào `STATE.md`, đừng tự dọn.
+- Script/batch ghi thẳng vào file nguồn (`theory.src.html`, `theory.html`, `bundle.json`) là thay đổi **chưa commit**:
+  commit (hoặc ít nhất `git add`) NGAY sau khi chạy xong, trước mọi `git pull`/`merge`/`reset`. **Không dọn cây bằng
+  `git stash` rồi `reset`** — mẻ sửa lý thuyết 20 bài L12 (8/10/2026) mất khỏi cây đúng như vậy, phải moi lại từ
+  `stash@{0}` (xem `docs/STATE.md`). Cần cây sạch để pull thì tạo nhánh/worktree riêng.
 - Skill mới/sửa: chỉ ở `.claude/skills/<tên>/` trong repo (nguồn duy nhất). Không chép tay sang `~/.codex`, Library plugin.
 
 ## Cuối phiên — việc "xong" nghĩa là đã tới `main`
