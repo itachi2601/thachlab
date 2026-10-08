@@ -454,7 +454,7 @@ function params(b: Bai, dang = 1): Anthropic.MessageCreateParamsNonStreaming {
   return {
     model: MODEL,
     // Suy nghĩ (effort high) tính chung vào trần này; 16000 từng cắt JSON bài 10 ở góp ý 19 (8/10/2026).
-    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" ? 64000 : 32000, // sua: trả cả file HTML + suy nghĩ; viet: mỗi dạng một request
+    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" || CHE_DO === "viet-bai-tap-mau" ? 64000 : 32000, // sua: cả file HTML; viet: 1 dạng/request vẫn chạm 32k (dạng 4 bài 13) vì suy nghĩ dài
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: userMessage(b, dang) }],
     output_config: { effort: EFFORT, format: { type: "json_schema", schema: SCHEMA_CUA(CHE_DO) } },
@@ -506,7 +506,9 @@ async function gui() {
   if (!bai.length) fail("không có bài nào khớp bộ lọc");
   const requests = bai.flatMap((b) =>
     CHE_DO === "viet-bai-tap-mau"
-      ? Array.from({ length: SO_DANG }, (_, i) => ({ custom_id: `${PREFIX}${b.lessonId}-${i + 1}`, params: params(b, i + 1) }))
+      ? Array.from({ length: SO_DANG }, (_, i) => i + 1)
+          .filter((n) => !arg("dang") || arg("dang")!.split(",").map(Number).includes(n)) // --dang 4: gửi lại riêng dạng hỏng
+          .map((n) => ({ custom_id: `${PREFIX}${b.lessonId}-${n}`, params: params(b, n) }))
       : [{ custom_id: `${PREFIX}${b.lessonId}`, params: params(b) }],
   );
   const batch = await client.messages.batches.create({ requests });
