@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import OpenClasses from "@/components/home/OpenClasses";
+import ContentSearch from "@/components/home/ContentSearch";
 import ForParents from "@/components/home/ForParents";
 import { readHomeStats } from "@/components/home/home-stats.server";
 import { PhysicsSimulationHero } from "@/components/home/PhysicsSimulationHero";
@@ -27,6 +28,7 @@ export default function Home() {
           </div>
         </div>
         <OpenClasses stats={stats} />
+        <ContentSearch />
         <ForParents courses={stats?.courses ?? null} />
         <Features />
         <ExamSamples />

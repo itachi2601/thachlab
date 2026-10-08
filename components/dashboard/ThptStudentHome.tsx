@@ -11,6 +11,7 @@ import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
+import ContentSearch from "@/components/home/ContentSearch";
 import TodayCard, { AnnouncementNote } from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
 import { rankNextSteps, type NextStep } from "@/features/learning/next-steps";
@@ -439,6 +440,9 @@ export default function ThptStudentHome({
       )}
 
       <PwaInstallCard />
+
+      {/* Tìm bài theo tên — dưới việc hôm nay để không đẩy việc chính xuống (B1). */}
+      <ContentSearch variant="account" />
 
       {/* Mục 2 — Bài tập về nhà (ghi chú của GV) */}
       {homeworkNotes.length > 0 && (
