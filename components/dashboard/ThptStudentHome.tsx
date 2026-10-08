@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CalendarClock, ChevronRight, LogOut, Megaphone } from "lucide-react";
+import { ChevronRight, Flame, LogOut, Trophy } from "lucide-react";
 import type { Profile } from "@/components/auth/AuthProvider";
 import AvatarUploader from "@/components/account/AvatarUploader";
 import type { SchoolClass } from "@/features/exams/types";
@@ -11,12 +11,11 @@ import { expandClassIdsByGrade } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { useToast } from "@/components/ui/Toast";
 import PwaInstallCard from "@/components/pwa/PwaInstallCard";
-import ContentSearch from "@/components/home/ContentSearch";
-import TodayCard, { AnnouncementNote } from "@/components/dashboard/TodayCard";
+import TodayCard from "@/components/dashboard/TodayCard";
 import TutoringSection, { liveExitWindows } from "@/components/dashboard/TutoringSection";
-import { rankNextSteps, type NextStep } from "@/features/learning/next-steps";
+import { rankNextSteps } from "@/features/learning/next-steps";
 import CatchupCard from "@/components/results/CatchupCard";
-import WeakestSkillsCard from "@/components/mastery/WeakestSkillsCard";
+import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
 import {
   fetchMyProgressMarks,
   summarizeLessonProgress,
@@ -25,28 +24,14 @@ import {
   type MyProgressMarks,
 } from "@/services/lessons";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
-import {
-  fetchClassAssessments,
-  fetchMyAlert,
-  fetchMyScoreHistory,
-  type ClassAssessment,
-  type ScorePoint,
-  type StudentAlert,
-} from "@/services/analytics";
+import { fetchMyAlert, fetchMyScoreHistory, type ScorePoint, type StudentAlert } from "@/services/analytics";
 import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
-import RankCard from "@/components/rank/RankCard";
 import WornTitle from "@/components/rank/WornTitle";
-import DailyStreakCard from "@/components/rank/DailyStreakCard";
+import StreakWeek from "@/components/rank/StreakWeek";
 import type { RankStatus } from "@/features/rank/types";
 import { fetchMyRankStatus, fetchMyStreakDays, type StreakDay } from "@/services/rank";
 import { fetchMyWeakestTopics, type WeakTopic } from "@/services/mastery";
 import WelcomeBackDialog from "@/components/dashboard/WelcomeBackDialog";
-import {
-  fetchLatestAnnouncements,
-  fetchRecentAnnouncements,
-  type AnnouncementKind,
-  type ClassAnnouncement,
-} from "@/services/announcements";
 import {
   ACTIVE_NEED_STATUSES,
   nextExitAttemptAt,
@@ -67,33 +52,64 @@ import {
   type TutoringSlot,
 } from "@/services/tutoring";
 import TutoringExitQuiz from "@/components/results/TutoringExitQuizLazy";
-import { fetchOpenClassReviewHomework, type ClassReviewHomework } from "@/services/homework";
 import { setTodayBadge } from "@/lib/today-badge";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
-function Section({
-  icon: Icon,
-  title,
-  action,
-  children,
+function HeroStats({
+  rank,
+  days,
+  weekGain,
 }: {
-  icon: typeof Megaphone;
-  title: string;
-  action?: ReactNode;
-  children: ReactNode;
+  rank: RankStatus | null | undefined;
+  days: StreakDay[] | null;
+  weekGain: number | null;
 }) {
+  const daily = rank?.season ? rank.daily : null;
+  const next = rank?.next;
+  const freezeLeft = daily ? Math.max(0, (daily.freeze_per_week ?? 0) - (daily.freeze_used_week ?? 0)) : 0;
+  if (!rank?.season && weekGain === null) return null;
   return (
-    <section className="rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Icon size={18} className="text-blue-300" />
-          <h2 className="font-display font-bold text-white">{title}</h2>
+    <div className="relative mt-4 space-y-3 sm:mt-5">
+      {next && rank && (
+        <div>
+          <div className="flex items-center justify-between gap-3 text-[13px] text-slate-300">
+            <span className="flex items-center gap-1.5">
+              <Trophy size={14} className="shrink-0 text-amber-300" aria-hidden />
+              Còn <b className="text-white">{next.rp_needed} RP</b> nữa là lên {next.name}
+            </span>
+            <Link href="/lop-hoc/xep-hang" className="-my-3 inline-flex min-h-11 shrink-0 items-center gap-0.5 text-blue-200 hover:text-white">
+              Xếp hạng <ChevronRight size={14} />
+            </Link>
+          </div>
+          <div className="mt-1 h-2 overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full bg-amber-400"
+              style={{ width: `${Math.max(3, Math.min(100, Math.round((100 * rank.rp) / Math.max(1, rank.rp + next.rp_needed))))}%` }}
+            />
+          </div>
         </div>
-        {action}
-      </div>
-      {children}
-    </section>
+      )}
+      {daily && (
+        <div className="space-y-2 border-t border-white/10 pt-3">
+          <p className="flex items-center gap-2 text-sm font-semibold text-white">
+            <Flame size={18} className={daily.streak > 0 ? "text-amber-400" : "text-slate-500"} fill={daily.streak > 0 ? "currentColor" : "none"} aria-hidden />
+            {daily.streak > 0 ? `Chuỗi ${daily.streak} ngày` : "Bắt đầu chuỗi ngày"}
+            {daily.today_done && <span className="text-xs font-normal text-emerald-300">đã giữ hôm nay ✓</span>}
+          </p>
+          {days && days.length > 0 && <StreakWeek days={days} />}
+          {daily.streak > 0 && freezeLeft > 0 && !daily.today_done && (
+            <p className="text-[13px] text-sky-300">Tuần này còn {freezeLeft} lượt đóng băng: lỡ một ngày chuỗi vẫn không gãy.</p>
+          )}
+        </div>
+      )}
+      {weekGain !== null && (
+        <p className="border-t border-white/10 pt-3 text-[13px] text-slate-300">
+          Tiến bộ so với tuần trước:{" "}
+          <b className="text-emerald-300">{weekGain > 0 ? `+${String(weekGain).replace(".", ",")} điểm` : "giữ vững phong độ"}</b>
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -121,17 +137,13 @@ export default function ThptStudentHome({
   const [streakDays, setStreakDays] = useState<StreakDay[] | null>(null);
   // undefined = đang tải; [] = không có / RPC chưa chạy. Một lần tải, dùng cho cả thẻ "Hôm nay" lẫn thẻ kỹ năng yếu.
   const [weakTopics, setWeakTopics] = useState<WeakTopic[] | undefined>(undefined);
-  const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
   const [alert, setAlert] = useState<StudentAlert | null>(null);
   const [scoresLoaded, setScoresLoaded] = useState(false);
-  const [assessmentsLoaded, setAssessmentsLoaded] = useState(false);
   const [lastLessonId, setLastLessonId] = useState(0);
   // Danh mục lớp/chương/bài đã về (kể cả lỗi) — trước đó chưa biết "bài kế" nên chưa vẽ việc hôm nay, tránh chớp "Ôn lại".
   const [catalogLoaded, setCatalogLoaded] = useState(false);
 
-  const [todayNote, setTodayNote] = useState<ClassAnnouncement | null>(null);
-  const [homeworkNotes, setHomeworkNotes] = useState<ClassAnnouncement[]>([]);
-  const [reviewHomework, setReviewHomework] = useState<ClassReviewHomework[]>([]);
+  const [practice, setPractice] = useState<QuickPracticeRequest | null>(null);
   const [needs, setNeeds] = useState<TutoringNeed[]>([]);
   const [slots, setSlots] = useState<TutoringSlot[]>([]);
   const [myRegistrations, setMyRegistrations] = useState<Set<number>>(new Set());
@@ -174,22 +186,7 @@ export default function ThptStudentHome({
     fetchMyRankStatus().then(setRank).catch(() => setRank(null));
     fetchMyStreakDays().then(setStreakDays);
     fetchMyWeakestTopics(3).then(setWeakTopics).catch(() => setWeakTopics([]));
-    fetchClassAssessments(classId)
-      .then(setAssessments)
-      .catch(() => setAssessments([]))
-      .finally(() => setAssessmentsLoaded(true));
-  }, [studentId, classId]);
-
-  function reloadAnnouncements() {
-    fetchLatestAnnouncements(classId)
-      .then((byKind) => setTodayNote(byKind.today_task))
-      .catch(() => setTodayNote(null));
-    fetchRecentAnnouncements(classId, "homework" as AnnouncementKind, 5)
-      .then(setHomeworkNotes)
-      .catch(() => setHomeworkNotes([]));
-    fetchOpenClassReviewHomework(classId).then(setReviewHomework).catch(() => setReviewHomework([]));
-  }
-  useEffect(reloadAnnouncements, [classId]);
+  }, [studentId]);
 
   function reloadTutoring() {
     fetchMyNeeds(studentId)
@@ -244,18 +241,6 @@ export default function ThptStudentHome({
     [classLessons, progressMarks],
   );
 
-  const totals = useMemo(() => {
-    if (!classLessons) return null;
-    let completed = 0;
-    let total = 0;
-    for (const lesson of classLessons) {
-      const summary = progress.get(lesson.id);
-      completed += summary?.completed ?? 0;
-      total += summary?.total ?? lesson.itemCount;
-    }
-    return { completed, total, pct: total > 0 ? Math.round((completed / total) * 100) : 0 };
-  }, [classLessons, progress]);
-
   const nextLesson = useMemo(() => {
     if (!classLessons?.length) return null;
     const unfinished = (lesson: Lesson) => {
@@ -270,24 +255,25 @@ export default function ThptStudentHome({
     );
   }, [classLessons, progress, lastLessonId]);
 
-  // L2: tiến độ của bài đang dở (không phải cả lớp); chưa có thì quay về tổng.
-  const lessonProgress = useMemo(() => {
-    if (!nextLesson) return null;
-    const summary = progress.get(nextLesson.id);
-    const total = summary?.total ?? nextLesson.itemCount;
-    if (!total) return null;
-    const completed = summary?.completed ?? 0;
-    return { completed, total, pct: Math.round((completed / total) * 100) };
-  }, [nextLesson, progress]);
-  const shownProgress = lessonProgress ?? totals;
-
   const nextChapter = classChapters?.find((chapter) => chapter.id === nextLesson?.chapter_id) ?? null;
-  const avgScore = scores.length
-    ? Math.round((scores.reduce((sum, point) => sum + point.score, 0) / scores.length) * 10) / 10
-    : null;
-  const doneExamIds = useMemo(() => new Set(scores.map((point) => point.examId)), [scores]);
-  const todoExams = assessments.filter((item) => !doneExamIds.has(item.examId)).slice(0, 5);
-  const todoReviewHomework = reviewHomework.filter((item) => !doneExamIds.has(item.examId)).slice(0, 3);
+  // "Tiến bộ so với tuần trước" (thay Điểm TB, thầy chốt 8/10/2026): điểm TB 7 ngày qua so với 7 ngày trước đó.
+  // Chỉ hiện khi tăng hoặc bằng và cả hai tuần đều có bài — điểm giảm thì không khoe số (L4, không so sánh làm nản).
+  const weekGain = useMemo(() => {
+    const now = nowMs;
+    const DAY = 86_400_000;
+    const avg = (from: number, to: number) => {
+      const xs = scores.filter((p) => {
+        const t = new Date(p.at).getTime();
+        return t >= from && t < to;
+      });
+      return xs.length ? { mean: xs.reduce((sum, p) => sum + p.score, 0) / xs.length, n: xs.length } : null;
+    };
+    const cur = avg(now - 7 * DAY, now + DAY);
+    const prev = avg(now - 14 * DAY, now - 7 * DAY);
+    if (!cur || !prev) return null;
+    const diff = Math.round((cur.mean - prev.mean) * 10) / 10;
+    return diff >= 0 ? diff : null;
+  }, [scores, nowMs]);
   // Bài đã làm nhưng chưa đạt — gợi ý làm lại khi không còn bài nào tồn đọng.
   const retryExam = useMemo(() => {
     const worst = new Map<number, ScorePoint>();
@@ -299,11 +285,16 @@ export default function ThptStudentHome({
   }, [scores]);
 
   // Kỹ năng yếu nhất (chỉ khi bài chứa nó có trong lớp để dựng được liên kết) và bài đã học xong gần nhất (để ôn cách quãng).
-  const weakStep = useMemo(() => {
-    const top = weakTopics?.[0];
-    const lesson = top && classLessons?.find((l) => l.id === top.lessonId);
-    return top && lesson ? { topicId: top.topicId, topicName: top.topicName, lessonId: top.lessonId, chapterId: lesson.chapter_id, pct: top.pct } : null;
-  }, [weakTopics, classLessons]);
+  const weakList = useMemo(
+    () =>
+      (weakTopics ?? []).flatMap((t) => {
+        const lesson = classLessons?.find((l) => l.id === t.lessonId);
+        return lesson
+          ? [{ topicId: t.topicId, topicName: t.topicName, lessonId: t.lessonId, lessonTitle: t.lessonTitle, chapterId: lesson.chapter_id, pct: t.pct }]
+          : [];
+      }),
+    [weakTopics, classLessons],
+  );
   const reviewLesson = useMemo(() => {
     if (!classLessons) return null;
     const done = classLessons.filter((l) => {
@@ -321,41 +312,25 @@ export default function ThptStudentHome({
         needAvailableAt: needs[0] ? nextExitAttemptAt(lastExitAttempt.get(needs[0].id), nowMs) : null,
         retryExam,
         nextLesson: nextLesson
-          ? { id: nextLesson.id, chapterId: nextLesson.chapter_id, title: nextLesson.title, chapterTitle: nextChapter?.title }
+          ? {
+              id: nextLesson.id,
+              chapterId: nextLesson.chapter_id,
+              title: nextLesson.title,
+              chapterTitle: nextChapter?.title,
+              completed: progress.get(nextLesson.id)?.completed,
+              total: progress.get(nextLesson.id)?.total ?? nextLesson.itemCount,
+            }
           : null,
-        weak: weakStep,
+        weak: weakList,
         reviewLesson,
       }),
-    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, weakStep, reviewLesson],
+    [needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
   );
 
-  // Thẻ "Hôm nay em làm gì": bài kiểm tra được giao → BTVN ôn tập → rankNextSteps (mở khoá → làm lại → học tiếp → ôn lại).
-  // Việc đầu là nút nổi duy nhất của trang (B2, L5); tối đa 3 việc phụ (N2). Chờ đủ điểm + bài giao + danh mục mới vẽ.
-  const attentionReady = scoresLoaded && assessmentsLoaded && catalogLoaded && weakTopics !== undefined;
-  const seenExamIds = new Set<number>(todayNote?.examId ? [todayNote.examId] : []);
-  const uniqueByExam = <T extends { examId: number }>(items: T[]) =>
-    items.filter((item) => (seenExamIds.has(item.examId) ? false : (seenExamIds.add(item.examId), true)));
-  const assignedSteps: NextStep[] = [
-    ...uniqueByExam(todoExams).map((item) => ({
-      kind: "assigned" as const,
-      key: `a-${item.id}`,
-      action: "Làm bài",
-      title: item.examTitle,
-      hint: "Bài kiểm tra · chưa làm",
-      href: `/kiem-tra/lam?id=${item.examId}`,
-    })),
-    ...uniqueByExam(todoReviewHomework).map((item) => ({
-      kind: "assigned" as const,
-      key: `r-${item.id}`,
-      action: "Làm bài",
-      title: item.title,
-      hint: "BTVN ôn tập · chưa làm",
-      href: `/kiem-tra/lam?id=${item.examId}`,
-    })),
-  ];
-  const todaySteps = attentionReady
-    ? [...assignedSteps, ...nextSteps.filter((s) => !(s.kind === "review" && assignedSteps.length > 0))].slice(0, 4)
-    : [];
+  // Thẻ "Hôm nay em làm gì": chỉ việc thích ứng theo hồ sơ em (rankNextSteps). Việc đầu là nút nổi duy nhất của trang (B2, L5);
+  // tối đa 3 lựa chọn khác (N2). Chờ đủ điểm + kỹ năng yếu + danh mục mới vẽ (tránh chớp "Ôn lại").
+  const attentionReady = scoresLoaded && catalogLoaded && weakTopics !== undefined;
+  const todaySteps = attentionReady ? nextSteps : [];
   const primaryStep = todaySteps[0] ?? null;
   const secondarySteps = todaySteps.slice(1);
   const alertText =
@@ -368,8 +343,8 @@ export default function ThptStudentHome({
 
   // Chấm đỏ ở nút "Hôm nay" của thanh đáy: chỉ cập nhật khi đã tải đủ dữ liệu (tránh chớp tắt).
   useEffect(() => {
-    if (attentionReady) setTodayBadge(studentId, showToday || homeworkNotes.length > 0 || Boolean(todayNote));
-  }, [attentionReady, showToday, homeworkNotes.length, todayNote, studentId]);
+    if (attentionReady) setTodayBadge(studentId, showToday);
+  }, [attentionReady, showToday, studentId]);
 
   const liveWindows = liveExitWindows(openWindows, needs, nowMs);
   const showTutoring = needs.length > 0 || slots.length > 0 || liveWindows.length > 0;
@@ -408,7 +383,7 @@ export default function ThptStudentHome({
             </RankAvatarFrame>
             <div className="min-w-0">
               <h1 className="font-display text-xl font-bold leading-tight text-white sm:text-3xl">
-                Chào {profile?.full_name || "bạn"} 👋
+                Chào {profile?.full_name || "bạn"} quay lại
               </h1>
               {rank?.display_title && <WornTitle title={rank.display_title} size="md" className="mt-1 max-w-full" />}
               <p className="mt-1 text-[13px] text-slate-400 sm:text-sm">
@@ -429,28 +404,7 @@ export default function ThptStudentHome({
             <span className="hidden sm:inline">Đăng xuất</span>
           </button>
         </div>
-        <div className="relative mt-4 flex items-end gap-3 sm:mt-5 sm:gap-5">
-          <div className="min-w-0 flex-1">
-            <div className="mb-1.5 flex items-end justify-between gap-3 text-xs">
-              <b className="text-blue-200">{lessonProgress ? "Bài đang học" : "Năng lượng học tập"}</b>
-              <span className="whitespace-nowrap font-mono text-[13px] text-slate-400">
-                {shownProgress ? `${shownProgress.completed}/${shownProgress.total} mục · ${shownProgress.pct}%` : "…"}
-              </span>
-            </div>
-            <div className="h-3 overflow-hidden rounded-full border border-white/10 bg-[#050914] sm:h-3.5">
-              <div
-                className="h-full rounded-full bg-primary transition-[width]"
-                style={{ width: `${shownProgress?.pct ?? 0}%` }}
-              />
-            </div>
-          </div>
-          <div className="shrink-0 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-right">
-            <strong className="block font-display text-lg leading-none text-white sm:text-xl">
-              {avgScore !== null ? avgScore.toLocaleString("vi-VN") : "—"}
-            </strong>
-            <span className="text-[13px] font-bold uppercase tracking-wide text-blue-300">Điểm TB</span>
-          </div>
-        </div>
+        <HeroStats rank={rank} days={streakDays} weekGain={weekGain} />
       </section>
 
       {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
@@ -461,6 +415,7 @@ export default function ThptStudentHome({
           secondary={secondarySteps}
           alertText={alertText}
           onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
+          onQuickPractice={(step) => step.practice && setPractice(step.practice)}
         />
       )}
 
@@ -472,33 +427,22 @@ export default function ThptStudentHome({
         primary={primaryStep}
         ready={attentionReady}
         onUnlock={(needId) => setQuizNeed(needs.find((n) => n.id === needId) ?? null)}
+        onQuickPractice={(step) => step.practice && setPractice(step.practice)}
+      />
+      <QuickPractice
+        request={practice}
+        onClose={() => setPractice(null)}
+        onFinished={() => fetchMyWeakestTopics(3).then(setWeakTopics).catch(() => undefined)}
+        onUnavailable={(req) => {
+          setPractice(null);
+          const lesson = classLessons?.find((l) => l.id === req.lessonId);
+          window.location.assign(`/lop-hoc/bai?id=${req.lessonId}${lesson ? `&chapter=${lesson.chapter_id}` : ""}`);
+        }}
       />
 
       <PwaInstallCard />
 
-      {/* Tìm bài theo tên — dưới việc hôm nay để không đẩy việc chính xuống (B1). */}
-      <ContentSearch variant="account" />
-
-      {/* Mục 2 — Bài tập về nhà (ghi chú của GV) */}
-      {homeworkNotes.length > 0 && (
-        <Section icon={CalendarClock} title="Bài tập về nhà">
-          <div className="mt-3 space-y-2">
-            {homeworkNotes.map((item) => <AnnouncementNote key={item.id} item={item} />)}
-          </div>
-        </Section>
-      )}
-
-      {/* Ghi chú chung của GV cho cả lớp: hạ xuống dưới việc cá nhân (thầy chốt 8/10/2026) */}
-      {todayNote && (
-        <Section icon={Megaphone} title="Thầy nhắn">
-          <div className="mt-3">
-            <AnnouncementNote item={todayNote} />
-          </div>
-        </Section>
-      )}
-
       {/* Mục 3 — Luyện thêm: kỹ năng yếu (tự ẩn khi không có), bù bài cho em vào lớp trễ (tự ẩn), rồi MỘT khối phụ đạo */}
-      <WeakestSkillsCard topics={weakTopics ?? []} />
       <CatchupCard studentId={studentId} classId={classId} viewer="student" showSlots={false} />
       {showTutoring && (
         <TutoringSection
@@ -518,13 +462,6 @@ export default function ThptStudentHome({
           onToggleSlot={toggleRegistration}
         />
       )}
-
-      {/* Mục 4 — Rank gọn: bậc + RP còn thiếu (link sang /lop-hoc/xep-hang) và chuỗi ngày. Bộ sưu tập, bảng tuần
-          của lớp, chọn hiển thị vinh danh đã chuyển sang trang Rank (L3, N1 — thầy chốt 7/10/2026). */}
-      <div className="grid gap-4 sm:grid-cols-2 sm:items-stretch">
-        <RankCard status={rank} className="h-full" />
-        <DailyStreakCard status={rank} days={streakDays} className="h-full" />
-      </div>
 
       {quizNeed && (
         <TutoringExitQuiz

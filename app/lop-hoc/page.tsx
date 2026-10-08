@@ -9,6 +9,7 @@ import Footer from "@/components/layout/Footer";
 import { SkeletonGrid } from "@/components/ui/Skeleton";
 import EmptyState from "@/components/ui/EmptyState";
 import ExamShelf from "@/components/lop-hoc/ExamShelf";
+import ContentSearch from "@/components/home/ContentSearch";
 import type { SchoolClass } from "@/features/exams/types";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
@@ -695,6 +696,9 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
                         )}
                         {renderNextCard()}
+
+                        {/* Ô tìm bài theo tên: chuyển từ trang chủ HS sang đây (thầy chốt 8/10/2026) — trang chủ chỉ giữ việc thích ứng. */}
+                        <ContentSearch variant="account" />
 
                         {classChapters.length > 1 && (
                           <div className="class-toc-toolbar">

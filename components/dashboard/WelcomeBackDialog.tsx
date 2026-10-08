@@ -38,6 +38,7 @@ export default function WelcomeBackDialog({
   primary,
   ready,
   onUnlock,
+  onQuickPractice,
 }: {
   userId: string;
   name?: string | null;
@@ -47,6 +48,7 @@ export default function WelcomeBackDialog({
   /** Dữ liệu việc hôm nay đã tải đủ (tránh hiện rồi đổi nội dung). */
   ready: boolean;
   onUnlock: (needId: number) => void;
+  onQuickPractice: (step: NextStep) => void;
 }) {
   const [open, setOpen] = useState(false);
   const decided = useRef(false);
@@ -121,7 +123,7 @@ export default function WelcomeBackDialog({
 
         <div className="mt-5">
           <p className="mb-2 text-[13px] text-slate-400">Việc đầu tiên hôm nay</p>
-          {primary.href ? (
+          {primary.href && !primary.practice ? (
             <Link href={primary.href} ref={ctaRef as React.Ref<HTMLAnchorElement>} onClick={close} className={ctaClass}>
               {primary.action}: {primary.title}
             </Link>
@@ -132,7 +134,8 @@ export default function WelcomeBackDialog({
               disabled={Boolean(primary.lockedUntil)}
               onClick={() => {
                 close();
-                if (primary.needId !== undefined) onUnlock(primary.needId);
+                if (primary.practice) onQuickPractice(primary);
+                else if (primary.needId !== undefined) onUnlock(primary.needId);
               }}
               className={`${ctaClass} disabled:opacity-60`}
             >

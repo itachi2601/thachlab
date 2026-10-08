@@ -30,11 +30,6 @@ function quizGroupNames(html: string): string[] {
   return [...names];
 }
 
-function mmss(sec: number): string {
-  const s = Math.max(0, Math.round(sec));
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-}
-
 function Row({ done, label, value }: { done: boolean; label: string; value: string }) {
   // M4: trạng thái đạt/chưa không chỉ bằng màu — có biểu tượng và chữ.
   return (
@@ -256,6 +251,10 @@ export default function TheoryReviewStep({
   const quizNow = Math.min(quizTotal, Math.max(answeredCount, server.quizAnswered));
   const reqSec = server.requiredSeconds;
   const timeNow = Math.min(reqSec, Math.max(activeSec, server.activeSeconds));
+  // Đồng hồ không hiện cho em (thầy chốt 8/10/2026: đồng hồ chạy tạo áp lực, em lướt nhanh). Máy chủ vẫn đòi đủ thời gian xem
+  // thật; khi hai mục kia xong mà chưa đủ thì nói bằng lời, không đếm số.
+  const mainDone = secNow >= secTotal && (quizTotal === 0 || quizNow >= quizNeed);
+  const needMoreTime = mainDone && timeNow < reqSec;
 
   if (phase === "loading") return <p className="text-sm text-slate-400">Đang mở bài lý thuyết…</p>;
   if (phase === "error") {
@@ -272,7 +271,7 @@ export default function TheoryReviewStep({
         <p className="text-xs font-semibold uppercase tracking-wide text-sky-300">Bước 1 · Xem lại lý thuyết</p>
         <p className="mt-1 text-sm text-slate-300">
           Đọc bài <strong className="text-white">{item?.title || needLabel(need)}</strong>, làm các câu tự kiểm tra
-          trong bài. Xong cả ba mục dưới đây thì mở bài thoát phụ đạo.
+          trong bài. Xong các mục dưới đây thì mở bài thoát phụ đạo.
         </p>
       </div>
 
@@ -281,7 +280,6 @@ export default function TheoryReviewStep({
         {quizTotal > 0 && (
           <Row done={quizNow >= quizNeed} label="Trả lời câu tự kiểm tra" value={`${quizNow}/${quizNeed} câu`} />
         )}
-        <Row done={timeNow >= reqSec} label="Thời gian đọc" value={`${mmss(timeNow)}/${mmss(reqSec)}`} />
       </ul>
 
       <div
@@ -302,7 +300,7 @@ export default function TheoryReviewStep({
       </div>
 
       <Button onClick={() => onReadyRef.current()} disabled={!done} className="w-full">
-        {done ? "Sang bài thoát phụ đạo" : "Hoàn thành cả ba mục để mở bài thoát"}
+        {done ? "Sang bài thoát phụ đạo" : needMoreTime ? "Em đọc kỹ thêm một chút nữa nhé" : "Hoàn thành các mục trên để mở bài thoát"}
       </Button>
     </div>
   );
