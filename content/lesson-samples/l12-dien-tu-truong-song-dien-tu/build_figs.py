@@ -52,9 +52,7 @@ b += text(294, 96, "radio", "currentColor", 12, "middle", "700")
 b += text(294, 114, "chạy pin", "currentColor", 9.5, "middle", "600")
 b += text(294, 128, "cách 2 m", "currentColor", 9.5, "middle", "600")
 b += line(294, 64, 282, 30, "currentColor", 2.4)
-b += text(14, 168, "Dòng biến thiên sinh điện từ trường,", BLUE, 11, "start", "600")
-b += text(14, 184, "trường lan tới ăng ten radio thành tín hiệu nhiễu.", BLUE, 11, "start", "600")
-fig1 = wrap("0 0 420 198", "Bếp từ chạy dòng xoay chiều đặt cạnh một radio chạy pin: sóng điện từ lan từ bếp từ tới ăng ten radio",
+fig1 = wrap("0 0 420 158", "Bếp từ chạy dòng xoay chiều đặt cạnh một radio chạy pin: sóng điện từ lan từ bếp từ tới ăng ten radio",
             b, "Hình 1. Bếp từ chạy dòng xoay chiều: điện từ trường lan tới ăng ten radio cách hai mét.",
             exp="tn-l12-dttruong-03")
 

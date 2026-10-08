@@ -56,8 +56,7 @@ b += text(3, 168, "nhiệt của phản ứng → hơi nước → tua bin → �
 b += text(3, 192, "nguồn nhiệt nằm trong lòng thanh nhiên liệu, không có ngọn lửa nào", "currentColor", 12)
 fig1 = wrap("0 0 440 210",
             "Sơ đồ nhà máy điện hạt nhân: lò phản ứng cấp nhiệt cho bộ trao đổi nhiệt, hơi nước chạy tua bin rồi máy phát điện",
-            b, "Hình 1. Nhà máy điện hạt nhân: lò phản ứng → bộ trao đổi nhiệt → tua bin → máy phát điện, "
-               "không hề đốt nhiên liệu.")
+            b, "Hình 1. Nhà máy điện hạt nhân: nhiệt từ thanh urani, không đốt gì.")
 
 # ------------------------------------------------- Hình 2: phân hạch U-235
 b = defs("f2")
@@ -82,8 +81,7 @@ b += text(296, 178, "2–3 nơtron mới", BLUE, 12.5, "start", "700")
 b += text(432, 200, "toả ≈ 173 MeV", ORG, 13, "end", "700")
 fig2 = wrap("0 0 440 210",
             "Một nơtron chậm bị U-235 hấp thụ, hạt nhân vỡ thành hai mảnh Ba-144 và Kr-89, nhả thêm 2 đến 3 nơtron và toả năng lượng",
-            b, "Hình 2. Nơtron chậm bị U-235 hấp thụ: hạt nhân vỡ thành Ba-144 và Kr-89, nhả thêm "
-               "2–3 nơtron và toả cỡ 173 MeV.")
+            b, "Hình 2. Nơtron chậm làm U-235 vỡ thành hai mảnh và nhả thêm nơtron.")
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền
 b = defs("f3")
@@ -113,7 +111,7 @@ b += text(310, 180, "k &lt; 1: tắt dần", BLUE, 12.5, "start", "700")
 b += text(56, 232, "mỗi điểm là một thế hệ nơtron; k = tỉ số hai thế hệ liền nhau", "currentColor", 11.5)
 fig3 = wrap("0 0 440 240",
             "Đồ thị số nơtron theo thế hệ với ba trường hợp: k nhỏ hơn 1 giảm dần, k bằng 1 giữ nguyên, k lớn hơn 1 tăng nhanh",
-            b, "Hình 3. Ba kiểu phát triển: k &lt; 1 giảm dần rồi tắt, k = 1 giữ nguyên, k &gt; 1 tăng nhanh.")
+            b, "Hình 3. Số nơtron theo từng thế hệ: ba kiểu phát triển.")
 
 # ------------------------------------------------- Hình 4: nhiệt hạch và Mặt trời
 b = defs("f4")
@@ -139,8 +137,7 @@ b += text(330, 186, "lõi ~15 triệu K", "currentColor", 12, "middle")
 b += text(330, 202, "giam bằng lực hấp dẫn", "currentColor", 12, "middle")
 fig4 = wrap("0 0 440 216",
             "Nhiệt hạch: bốn prôtôn kết hợp thành hạt nhân heli và toả năng lượng; Mặt trời là lò nhiệt hạch tự nhiên",
-            b, "Hình 4. Nhiệt hạch: hạt nhân rất nhẹ kết hợp thành hạt nhân nặng hơn và toả năng lượng; "
-               "Mặt trời là lò nhiệt hạch tự nhiên.")
+            b, "Hình 4. Nhiệt hạch: hạt nhân nhẹ kết hợp lại; Mặt trời là lò tự nhiên.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

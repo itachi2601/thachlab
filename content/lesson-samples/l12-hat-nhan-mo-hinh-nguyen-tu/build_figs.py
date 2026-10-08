@@ -64,7 +64,7 @@ b += text(126, 50, "bật ngược", RED, 11, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
 b += text(24, 190, "Một chùm hạt, ba số phận", "currentColor", 10, "start", "500")
 fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại",
-             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống bên trong nguyên tử; chỉ hạt đi sát hạt nhân mới bị lệch mạnh hoặc bật ngược.")
+             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.")
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")
@@ -94,7 +94,7 @@ b += text(352, 166, "quỹ đạo cho phép,", "currentColor", 10, "middle", "50
 b += text(352, 180, "có năng lượng xác định", "currentColor", 10, "middle", "500")
 b += text(16, 238, "Nguyên tử gần như trống: hạt nhân chiếm một phần mười nghìn tỉ thể tích", "currentColor", 10, "start", "500")
 fig2 = wrap2("0 0 440 250", "Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép",
-             b, "Hình 2. Ba mô hình nguyên tử: Thomson (cầu dương đặc) bị thí nghiệm lá vàng bác bỏ; Rutherford có hạt nhân nhỏ, nặng, mang điện dương; Bohr thêm điều kiện êlectron chỉ ở các quỹ đạo xác định.")
+             b, "Hình 2. Ba mô hình nguyên tử: Thomson bị thí nghiệm lá vàng bác bỏ; Rutherford có hạt nhân nhỏ, nặng; Bohr thêm các quỹ đạo xác định.")
 
 # ---------------------------------------------- Hình 3: kí hiệu hạt nhân
 b = defs("f3")
@@ -112,7 +112,7 @@ b += text(14, 144, "= điện tích hạt nhân", BLUE, 10, "start", "500")
 b += text(14, 212, "Ví dụ: Cu có 29 prôtôn, 65 nuclôn nên có 65 − 29 = 36 nơtron", "currentColor", 11, "start", "600")
 b += text(14, 230, "Cùng 29 prôtôn mà khác số nơtron thì gọi là hai đồng vị", "currentColor", 11, "start", "600")
 fig3 = wrap2("0 0 440 244", "Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A, chỉ số dưới là số prôtôn Z",
-             b, "Hình 3. Kí hiệu hạt nhân $^A_Z X$: trên là số nuclôn $A$, dưới là số prôtôn $Z$ (điện tích hạt nhân); $N = A - Z$.")
+             b, "Hình 3. Kí hiệu hạt nhân $^A_Z X$: $A$ là số nuclôn, $Z$ là số prôtôn.")
 
 # ---------------------------------------------- Hình 4: vạch quang phổ của hai đồng vị hiđrô
 b = defs("f4")
@@ -142,7 +142,7 @@ for wl, nhan, c in ((486.0, "486,0", BLUE), (656.1, "656,1", RED)):
     b += text(x, 248, nhan, c, 9, "middle", "600")
 b += text(16, 268, "Vạch D lệch về phía bước sóng ngắn hơn: ~0,2 nm ở Hα, ~0,1 nm ở Hβ", "currentColor", 10, "start", "500")
 fig4 = wrap2("0 0 440 278", "So sánh hai bộ vạch quang phổ của hiđrô và đơteri: các vạch nằm gần cùng vị trí, vạch của đơteri hơi dịch về phía bước sóng ngắn hơn",
-             b, "Hình 4. Hai đồng vị hiđrô: hiđrô và đơteri cho hai bộ vạch quang phổ gần giống nhau, chỉ lệch chút ít — vạch của đơteri dịch về phía bước sóng ngắn hơn (0,2 nm ở Hα, 0,1 nm ở Hβ).")
+             b, "Hình 4. Hai đồng vị hiđrô cho hai bộ vạch quang phổ gần giống nhau; vạch của đơteri dịch nhẹ về phía bước sóng ngắn hơn.")
 
 # ---------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

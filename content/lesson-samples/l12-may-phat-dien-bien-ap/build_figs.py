@@ -89,7 +89,7 @@ b += text(232, 178, "ra mạch ngoài", "currentColor", 11, "start", "600")
 fig2 = wrap("0 0 440 196",
             "Hai cách bố trí máy phát điện xoay chiều một pha: cho nam châm quay thì lấy điện trực tiếp; cho khung dây quay thì phải dùng vành khuyên và chổi quét",
             b,
-            "Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay — cần vành khuyên và chổi quét.")
+            "Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay — cần vành khuyên.")
 
 # ------------------------------------------------- Hình 3: ba pha — ba cuộn dây và ba suất điện động
 b = defs("f3")
@@ -125,7 +125,7 @@ b += text(246, 204, "u₁, u₂, u₃ lệch 1/3 chu kì", "currentColor", 11, "
 fig3 = wrap("0 0 440 244",
             "Máy phát ba pha: ba cuộn dây đặt lệch nhau 120 độ trên stato và ba suất điện động lệch pha nhau một phần ba chu kì",
             b,
-            "Hình 3. Ba cuộn dây lệch 120° trên stato; nam châm quay đều cho ba suất điện động cùng tần số, cùng biên độ, lệch pha một phần ba chu kì.")
+            "Hình 3. Ba cuộn dây lệch 120° trên stato cho ba suất điện động lệch pha một phần ba chu kì.")
 
 # ------------------------------------------------- Hình 4: máy biến áp
 b = defs("f4")
@@ -154,7 +154,7 @@ b += text(14, 208, "không đổi tần số · không sinh thêm điện năng"
 fig4 = wrap("0 0 440 220",
             "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
             b,
-            "Hình 4. Hai cuộn dây trên cùng một lõi kín; lõi ghép từ lá thép silic mỏng cách điện để cắt dòng Fu-cô.")
+            "Hình 4. Hai cuộn dây trên cùng một lõi kín ghép từ lá thép silic mỏng cách điện.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
