@@ -40,7 +40,7 @@ Hậu quả: DB của bài 4, 14, 15, 17, 18, 125, 126 là bản ĐÃ SỬA còn
   mình, đừng `stash pop` cả mẻ). Rồi `cd content/lesson-samples/<bài> && python3 build_figs.py && python3 build_bundle.py`.
 - Đã làm xong chương 1 L12 (Bài 1–4, lesson 2–5): cắt còn 2.434/2.445/2.484/2.436 từ hiện ngay, soát vật lí độc lập
   (sửa 3 chỗ bài 3, 1 chỗ bài 2, 1 chú thích hình bài 4), 4 lệnh lint/quiz/bundle sạch, đăng DB, `so-file-voi-db.mts` xác nhận file = DB.
-- **15 bài L12 còn lại chưa khôi phục** — cùng mẻ, cùng cách làm.
+- **16 bài L12 còn lại chưa khôi phục** — lesson 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 125, 126, 127; cùng mẻ, cùng cách làm.
 - Trong lúc sửa, tiến trình khác lại `git stash` + `git reset` (23:18, 23:24) → mất việc lần hai. Cách chống: commit NGAY sau
   `--nhan`, và khi cây chính đang bận (merge) thì cứu việc bằng `git worktree add <tmp> -b claude/... origin/main` rồi commit/push
   ở worktree đó (không `git commit -- <path>` được khi đang merge: "cannot do a partial commit during a merge").
