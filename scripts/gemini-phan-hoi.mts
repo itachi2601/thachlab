@@ -162,6 +162,24 @@ async function main() {
   fs.mkdirSync(dest, { recursive: true });
   for (const vai of vais) {
     const prompt = fill(promptTpl, vai);
+    if (flag("xuat")) {
+      // Không gọi Gemini: xuất sẵn file để thầy dán tay vào gemini.google.com (mỗi vai một cuộc chat, 2 tin nhắn)
+      const out = path.join(dest, "gui-gemini");
+      fs.mkdirSync(out, { recursive: true });
+      const blindIns =
+        `Bạn là học sinh lớp ${lop} hồ sơ "${vai}" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). ` +
+        `Dưới đây là bài "${ten}" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. ` +
+        `Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. ` +
+        `Trả về duy nhất JSON: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. ` +
+        `Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").`;
+      fs.writeFileSync(path.join(out, `${vai}-1-quiz-mu.txt`), `${blindIns}\n\n=== NỘI DUNG BÀI (HTML) ===\n${blind}`);
+      fs.writeFileSync(
+        path.join(out, `${vai}-2-doc-day-du.txt`),
+        `${prompt}\n\nLưu ý: trong tin nhắn trước bạn đã làm quiz mù; giữ nguyên các đáp án đó trong tra_loi_quiz/ly_do_chon và chỉ góp ý thêm.\n\n=== NỘI DUNG BÀI (HTML, ĐẦY ĐỦ LỜI GIẢI) ===\n${full}`,
+      );
+      console.log(`Đã xuất ${vai} → ${path.relative(root, out)}/${vai}-1-quiz-mu.txt và ${vai}-2-doc-day-du.txt`);
+      continue;
+    }
     if (flag("dry-run")) {
       console.log(`[dry-run] ${vai} · prompt ${prompt.length} ký tự · bài đầy đủ ${full.length} · bản mù ${blind.length}`);
       continue;
