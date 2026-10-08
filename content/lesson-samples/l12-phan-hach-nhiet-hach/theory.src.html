@@ -36,16 +36,16 @@
 
 <ul>
 <li><strong>Tự phát:</strong> hạt nhân không bền tự vỡ ra — ví dụ phân rã phóng xạ.</li>
-<li><strong>Kích thích:</strong> bị hạt khác bắn vào rồi biến đổi — ví dụ phân hạch, nhiệt hạch.</li>
+<li><strong>Kích thích:</strong> tương tác với hạt khác rồi biến đổi — ví dụ phân hạch (nơtron bắn vào), nhiệt hạch (hạt nhân nhẹ va chạm nhau ở nhiệt độ rất cao).</li>
 </ul>
 
-<p>Xét phản ứng $A + B \to C + D$ ($A_i$ là số nuclôn, $Z_i$ là điện tích). Luôn có:</p>
+<p>Xét phản ứng $A + B \to C + D$, hạt thứ $i$ (lần lượt A, B, C, D) có số nuclôn $A_i$ và điện tích $Z_i$. Luôn có:</p>
 
 <ul>
 <li>Bảo toàn điện tích: $Z_1 + Z_2 = Z_3 + Z_4$.</li>
 <li>Bảo toàn số nuclôn: $A_1 + A_2 = A_3 + A_4$.</li>
 <li>Bảo toàn năng lượng toàn phần và động lượng.</li>
-<li><strong>Không</strong> bảo toàn khối lượng nghỉ — phần hụt ấy chính là năng lượng.</li>
+<li><strong>Không</strong> bảo toàn khối lượng nghỉ (khối lượng của hạt khi đứng yên) — phần hụt ấy chính là năng lượng.</li>
 </ul>
 
 <div class="tl-box tl-box--think">
@@ -53,13 +53,14 @@
 <p><strong>Câu 1.</strong> Cho phản ứng phân hạch:</p>
 <p>${}^{235}_{92}\text{U} + {}^{1}_{0}\text{n} \to {}^{144}_{56}\text{Ba} + {}^{89}_{36}\text{Kr} + x\,{}^{1}_{0}\text{n}$</p>
 <p>Giá trị của $x$ là:</p>
+<p>⚠ Cộng đủ nuclôn cả hai vế, kể cả nơtron bắn vào ở vế trái.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl17-q1" id="tl17-q1a"><label for="tl17-q1a" class="tl-opt tl-no">A. $x = 2$</label>
 <input type="radio" name="tl17-q1" id="tl17-q1b"><label for="tl17-q1b" class="tl-opt tl-ok">B. $x = 3$</label>
 <input type="radio" name="tl17-q1" id="tl17-q1c"><label for="tl17-q1c" class="tl-opt tl-no">C. $x = 4$</label>
 <input type="radio" name="tl17-q1" id="tl17-q1d"><label for="tl17-q1d" class="tl-opt tl-no">D. $x = 1$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $235 + 1 = 144 + 89 + x \Rightarrow x = 3$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em cộng thiếu một vế: bên phải có cả Ba, Kr <em>và</em> $x$ nơtron. Tổng nuclôn hai bên phải bằng nhau: $235 + 1 = 144 + 89 + x$. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng quên nơtron bắn vào ở vế trái, còn bên phải có cả Ba, Kr <em>và</em> $x$ nơtron. Tổng nuclôn hai bên phải bằng nhau: $235 + 1 = 144 + 89 + x$. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -67,11 +68,12 @@
 
 <p><strong>🔑 Trước nặng hơn thì toả</strong></p>
 
-<p>Với $m_A, m_B$ là khối lượng hai hạt trước, $m_C, m_D$ là hai hạt sau:</p>
+<p>Với $m_A, m_B$ là khối lượng hai hạt trước, $m_C, m_D$ là hai hạt sau (sau có nhiều hạt thì cộng đủ, kể cả các nơtron):</p>
 
 $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 
 <ul>
+<li>$\Delta m = \sum m_{\text{trước}} - \sum m_{\text{sau}}$ là độ hụt khối <em>của phản ứng</em>, khác độ hụt khối của một hạt nhân.</li>
 <li>$W \gt 0$: khối lượng nghỉ giảm, phản ứng <strong>toả</strong> năng lượng.</li>
 <li>$W \lt 0$: khối lượng nghỉ tăng, phản ứng <strong>thu</strong> năng lượng.</li>
 <li>$1\ \text{u} = 931{,}5\ \text{MeV}/c^2$; $1\ \text{MeV} = 1{,}6\cdot10^{-13}\ \text{J}$.</li>
@@ -79,7 +81,7 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-phanbach-04">
 <p class="tl-label">🔬 Thí nghiệm: cân khối lượng để tìm năng lượng toả ra</p>
-<p>Đọc bảng rồi tính $W$ cho phản ứng ở Câu 1 (sai số cỡ $0{,}0002$–$0{,}0003\ \text{u}$).</p>
+<p>Đọc bảng rồi tính $W$ cho phản ứng ở Câu 1 (sai số cỡ $0{,}0002$–$0{,}0003\ \text{u}$). Đối chiếu lời giải ở mục V, câu b.</p>
 <table class="tl-table">
 <thead>
 <tr><th>Hạt</th><th>Khối lượng đo (u)</th><th>Sai số (±u)</th></tr>
@@ -102,11 +104,11 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <p><strong>Câu 2.</strong> Phản ứng có tổng khối lượng nghỉ của các hạt trước <em>nhỏ hơn</em> của các hạt sau thì:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl17-q2" id="tl17-q2a"><label for="tl17-q2a" class="tl-opt tl-no">A. Toả năng lượng, vì khối lượng giảm</label>
-<input type="radio" name="tl17-q2" id="tl17-q2b"><label for="tl17-q2b" class="tl-opt tl-ok">B. Phải cấp thêm năng lượng cho phản ứng</label>
+<input type="radio" name="tl17-q2" id="tl17-q2b"><label for="tl17-q2b" class="tl-opt tl-ok">B. Thu năng lượng, phải cấp thêm cho phản ứng</label>
 <input type="radio" name="tl17-q2" id="tl17-q2c"><label for="tl17-q2c" class="tl-opt tl-no">C. Không trao đổi, khối lượng bảo toàn</label>
 <input type="radio" name="tl17-q2" id="tl17-q2d"><label for="tl17-q2d" class="tl-opt tl-no">D. Toả năng lượng, vì khối lượng tăng</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khối lượng sau lớn hơn nên $W \lt 0$: thu năng lượng.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đọc ngược dấu rồi. Nhớ câu "trước nặng hơn thì toả": khối lượng trước <em>lớn hơn</em> khối lượng sau mới có năng lượng toả ra. Ở đây khối lượng sau lớn hơn, nên phản ứng thu năng lượng. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đọc ngược dấu rồi. Nhớ câu "trước nặng hơn thì toả": khối lượng trước <em>lớn hơn</em> khối lượng sau mới có năng lượng toả ra. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -117,7 +119,7 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <ul>
 <li><strong>Phân hạch</strong>: hạt nhân rất nặng hấp thụ nơtron rồi vỡ thành hai hạt nhân nhẹ hơn.</li>
 <li>Ví dụ: ${}^{235}_{92}\text{U} + {}^{1}_{0}\text{n} \to {}^{144}_{56}\text{Ba} + {}^{89}_{36}\text{Kr} + 3\,{}^{1}_{0}\text{n}$, toả cỡ $173\ \text{MeV}$.</li>
-<li>Mỗi phân hạch nhả 2–3 nơtron và tia $\gamma$; toả vì hai mảnh vỡ bền hơn nên năng lượng liên kết riêng tăng.</li>
+<li>Mỗi phân hạch nhả 2–3 nơtron và tia $\gamma$; toả vì hai mảnh vỡ bền hơn: năng lượng liên kết riêng tăng nên tổng khối lượng nghỉ giảm.</li>
 <li>1 g U-235 toả cỡ $7\cdot10^{10}\ \text{J}$, bằng đốt chừng 2,6 tấn than.</li>
 </ul>
 
@@ -126,13 +128,14 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Phân hạch U-235 toả năng lượng vì:</p>
+<p>⚠ Nơtron bị hấp thụ chỉ mồi phản ứng, không phải nguồn năng lượng.</p>
 <div class="tl-quiz">
-<input type="radio" name="tl17-q3" id="tl17-q3a"><label for="tl17-q3a" class="tl-opt tl-ok">A. Khối lượng nghỉ các mảnh vỡ nhỏ hơn</label>
+<input type="radio" name="tl17-q3" id="tl17-q3a"><label for="tl17-q3a" class="tl-opt tl-ok">A. Tổng khối lượng nghỉ sau phản ứng nhỏ hơn trước</label>
 <input type="radio" name="tl17-q3" id="tl17-q3b"><label for="tl17-q3b" class="tl-opt tl-no">B. Nơtron bị hấp thụ, thành nhiệt</label>
 <input type="radio" name="tl17-q3" id="tl17-q3c"><label for="tl17-q3c" class="tl-opt tl-no">C. Hai hạt nhân urani kết hợp lại</label>
 <input type="radio" name="tl17-q3" id="tl17-q3d"><label for="tl17-q3d" class="tl-opt tl-no">D. Êlectron chuyển mức, phát sáng</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Năng lượng lấy từ phần khối lượng nghỉ hụt của cả phản ứng.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đọc lại ý "khối lượng nghỉ giảm": năng lượng bằng phần <em>hụt khối của cả phản ứng</em>. Phương án C nói hai hạt nhân urani kết hợp lại — đó là chiều ngược với phân hạch (kết hợp hạt nhân), và urani không kết hợp được theo kiểu đó; còn D chỉ là chuyển mức êlectron, năng lượng cỡ vài êlectron vôn, quá nhỏ so với cỡ MeV của phản ứng hạt nhân. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Năng lượng bằng phần <em>hụt khối của cả phản ứng</em>.<br>B: nơtron chậm chỉ mồi phản ứng, động năng của nó rất nhỏ.<br>C: hạt nhân kết hợp lại là chiều ngược với phân hạch.<br>D: chuyển mức êlectron chỉ cỡ eV, quá nhỏ so với cỡ MeV.<br>Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -162,9 +165,9 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <tr><th>Khoảng cách ghim</th><th>Số ghim đổ (3 lần)</th><th>Dây chuyền</th></tr>
 </thead>
 <tbody>
-<tr><td>4 cm</td><td>3 · 4 · 3</td><td>tắt dần</td></tr>
-<tr><td>3 cm</td><td>9 · 8 · 10</td><td>giữ ở mức gần nhau</td></tr>
-<tr><td>2 cm</td><td>36 · 34 · 37</td><td>lan gần hết bàn</td></tr>
+<tr><td>4 cm</td><td>3 · 4 · 3</td><td>tắt dần, như $k \lt 1$</td></tr>
+<tr><td>3 cm</td><td>9 · 8 · 10</td><td>tự duy trì, như $k \approx 1$</td></tr>
+<tr><td>2 cm</td><td>36 · 34 · 37</td><td>lan gần hết bàn, như $k \gt 1$</td></tr>
 </tbody>
 </table>
 <details class="tl-details">
@@ -182,7 +185,7 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <input type="radio" name="tl17-q4" id="tl17-q4b"><label for="tl17-q4b" class="tl-opt tl-ok">B. Số nơtron tăng dần theo từng thế hệ, vì $k \gt 1$</label>
 <input type="radio" name="tl17-q4" id="tl17-q4c"><label for="tl17-q4c" class="tl-opt tl-no">C. Không đổi, vì $k$ xấp xỉ 1</label>
 <input type="radio" name="tl17-q4" id="tl17-q4d"><label for="tl17-q4d" class="tl-opt tl-no">D. Dừng ngay, vì $k$ khác 1</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k = 1{,}002 \gt 1$ nên mỗi thế hệ có nhiều nơtron hơn thế hệ trước một chút — số nơtron tăng dần; muốn công suất không đổi phải giữ đúng $k = 1$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $k = 1{,}002 \gt 1$ nên mỗi thế hệ có nhiều nơtron hơn thế hệ trước một chút — số nơtron tăng dần.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi hay gặp là lấy mốc so sánh sai: $k$ so với <em>1</em>, không so với 2. $k = 1{,}002$ tuy chỉ hơn 1 một chút nhưng vẫn $k \gt 1$, nên số nơtron tăng dần. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
@@ -192,7 +195,7 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <p><strong>🔑 Giữ $k = 1$ bằng thanh điều khiển</strong></p>
 
 <ul>
-<li><strong>Thanh nhiên liệu</strong>: urani đã làm giàu, ngâm trong chất tải nhiệt.</li>
+<li><strong>Thanh nhiên liệu</strong>: urani đã làm giàu (tăng tỉ lệ U-235 lên vài phần trăm), ngâm trong chất tải nhiệt.</li>
 <li><strong>Thanh điều khiển</strong> (bo, cađimi) hấp thụ nơtron mạnh: đẩy vào thì $k$ giảm, kéo ra thì $k$ tăng.</li>
 <li><strong>Chất tải nhiệt</strong> mang nhiệt sang bộ trao đổi nhiệt để đun nước thành hơi.</li>
 <li><strong>Tua bin và máy phát điện</strong> biến nhiệt thành điện — xem lại Hình 1.</li>
@@ -217,8 +220,8 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 <ul>
 <li><strong>Nhiệt hạch</strong>: các hạt nhân rất nhẹ kết hợp thành hạt nhân nặng hơn.</li>
 <li>Ví dụ: ${}^{2}_{1}\text{H} + {}^{3}_{1}\text{H} \to {}^{4}_{2}\text{He} + {}^{1}_{0}\text{n}$, toả cỡ $17{,}6\ \text{MeV}$.</li>
-<li><strong>Điều kiện</strong>: $10^8$–$10^9\ \text{K}$, mật độ đủ lớn, duy trì đủ lâu — hạt nhân cùng dấu đẩy nhau. Trong Mặt trời: $4\,{}^{1}_{1}\text{H} \to {}^{4}_{2}\text{He} + 2\,\text{e}^{+} + 2\nu$, toả $26{,}7\ \text{MeV}$.</li>
-<li>Trên Trái Đất chưa phát điện bằng nhiệt hạch; JET, ITER giam plasma bằng từ trường.</li>
+<li><strong>Điều kiện</strong> (với lò trên Trái Đất): $10^8$–$10^9\ \text{K}$, mật độ đủ lớn, duy trì đủ lâu — hạt nhân cùng dấu đẩy nhau. Trong Mặt trời: $4\,{}^{1}_{1}\text{H} \to {}^{4}_{2}\text{He} + 2\,\text{e}^{+} + 2\nu$, toả $26{,}7\ \text{MeV}$.<br>$\text{e}^{+}$: pôzitron, điện tích $+1$.<br>$\nu$: nơtrinô, không mang điện.</li>
+<li>Trên Trái Đất chưa phát điện bằng nhiệt hạch; JET, ITER giam plasma (khí đã ion hoá, gồm hạt nhân và êlectron tự do) bằng từ trường.</li>
 </ul>
 
 <!--FIG4-->
@@ -281,7 +284,7 @@ $$W = \left(m_A + m_B - m_C - m_D\right)c^2$$
 
 <details class="tl-details">
 <summary>👀 Bấm xem: khối lượng "hụt" đi đâu?</summary>
-<p>Phần khối lượng nghỉ hụt đi không biến mất: nó chuyển thành động năng của các hạt sinh ra và bức xạ $\gamma$. Vì $E = mc^2$ cho phép đổi qua lại giữa khối lượng và năng lượng, nên định luật đúng ở đây là bảo toàn <em>năng lượng toàn phần</em>, tính cả phần ứng với khối lượng nghỉ.</p>
+<p>Phần khối lượng nghỉ hụt đi không biến mất: nó chuyển thành động năng của các hạt sinh ra và bức xạ $\gamma$. Năng lượng nghỉ $E = mc^2$ tỉ lệ với khối lượng nghỉ, và phần chênh giữa hai vế chính là $W = \Delta m\,c^2$ ở mục 2. Vì thế định luật đúng ở đây là bảo toàn <em>năng lượng toàn phần</em>, tính cả phần ứng với khối lượng nghỉ.</p>
 </details>
 
 <h4>Bẫy 3: "phân hạch và nhiệt hạch là một"</h4>
@@ -359,6 +362,7 @@ $${}^{235}_{92}\text{U} + {}^{1}_{0}\text{n} \to {}^{144}_{56}\text{Ba} + {}^{89
 <ul>
 <li>$m_{\text{U}} = 235{,}0439\ \text{u}$; $m_{\text{n}} = 1{,}0087\ \text{u}$; $m_{\text{Ba}} = 143{,}9230\ \text{u}$; $m_{\text{Kr}} = 88{,}9176\ \text{u}$.</li>
 <li>$1\ \text{u} = 931{,}5\ \text{MeV}/c^2$; $1\ \text{MeV} = 1{,}6\cdot10^{-13}\ \text{J}$.</li>
+<li>$N_A = 6{,}02\cdot10^{23}\ \text{mol}^{-1}$.</li>
 <li>Than toả $2{,}7\cdot10^{7}\ \text{J/kg}$.</li>
 </ul>
 <p>a) Tìm $x$ và kiểm tra các định luật bảo toàn.<br>
@@ -386,8 +390,8 @@ d) Năng lượng đó bằng đốt cháy bao nhiêu kilôgam than?</p>
 <ol class="tl-steps">
 <li>Câu a: bảo toàn số nuclôn $235 + 1 = 144 + 89 + x \Rightarrow x = 3$. Kiểm tra điện tích: $92 + 0 = 56 + 36 + 0$, khớp.</li>
 <li>Câu b: khối lượng trước $= 235{,}0439 + 1{,}0087 = 236{,}0526\ \text{u}$; khối lượng sau $= 143{,}9230 + 88{,}9176 + 3 \times 1{,}0087 = 235{,}8667\ \text{u}$. Độ hụt khối $\Delta m = 0{,}1859\ \text{u}$.</li>
-<li>Câu b (tiếp): $W = 0{,}1859 \times 931{,}5 \approx 173{,}2\ \text{MeV}$, tức $W \approx 173\ \text{MeV}$.</li>
-<li>Câu c: $N = \dfrac{1}{235} \times 6{,}02\cdot10^{23} \approx 2{,}56\cdot10^{21}$ hạt; $W_{1g} = 2{,}56\cdot10^{21} \times 173{,}2 \times 1{,}6\cdot10^{-13} \approx 7{,}1\cdot10^{10}\ \text{J}$.</li>
+<li>Câu b (tiếp): $W = \Delta m\,c^2 = 0{,}1859\ \text{u}\cdot c^2$; thay $1\ \text{u} = 931{,}5\ \text{MeV}/c^2$ thì $c^2$ tự triệt tiêu: $W = 0{,}1859 \times 931{,}5 \approx 173{,}2\ \text{MeV}$, tức $W \approx 173\ \text{MeV}$.</li>
+<li>Câu c: $N = \dfrac{m}{M}N_A = \dfrac{1}{235} \times 6{,}02\cdot10^{23} \approx 2{,}56\cdot10^{21}$ hạt; $W_{1g} = 2{,}56\cdot10^{21} \times 173{,}2 \times 1{,}6\cdot10^{-13} \approx 7{,}1\cdot10^{10}\ \text{J}$.</li>
 <li>Câu d: $m_{\text{than}} = \dfrac{7{,}1\cdot10^{10}}{2{,}7\cdot10^{7}} \approx 2{,}6\cdot10^{3}\ \text{kg} \approx 2{,}6$ tấn than.</li>
 <li>Kiểm tra: $173{,}2\ \text{MeV} = 2{,}77\cdot10^{-11}\ \text{J}$; nhân $2{,}56\cdot10^{21}$ hạt cho lại $7{,}1\cdot10^{10}\ \text{J}$ — khớp câu c.</li>
 </ol>
@@ -395,7 +399,7 @@ d) Năng lượng đó bằng đốt cháy bao nhiêu kilôgam than?</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
-<p>Vẫn lò đó, nhưng mỗi phân hạch toả $200\ \text{MeV}$.</p>
+<p>Tính trung bình trên mọi cặp mảnh vỡ (không riêng cặp Ba–Kr ở trên), mỗi phân hạch U-235 toả cỡ $200\ \text{MeV}$.</p>
 <ol class="tl-steps">
 <li>Bước 1: đổi ra jun — $200 \times 1{,}6\cdot10^{-13} = 3{,}2\cdot10^{-11}\ \text{J}$.</li>
 <li><strong>Em điền:</strong> muốn có đúng $1\ \text{J}$ thì cần bao nhiêu phân hạch?</li>
@@ -414,9 +418,9 @@ d) Năng lượng đó bằng đốt cháy bao nhiêu kilôgam than?</p>
 <input type="radio" name="tl17-q8" id="tl17-q8a"><label for="tl17-q8a" class="tl-opt tl-ok">A. $3{,}1\cdot10^{10}$</label>
 <input type="radio" name="tl17-q8" id="tl17-q8b"><label for="tl17-q8b" class="tl-opt tl-no">B. $3{,}1\cdot10^{13}$</label>
 <input type="radio" name="tl17-q8" id="tl17-q8c"><label for="tl17-q8c" class="tl-opt tl-no">C. $1{,}25\cdot10^{10}$</label>
-<input type="radio" name="tl17-q8" id="tl17-q8d"><label for="tl17-q8d" class="tl-opt tl-no">D. $5{,}0\cdot10^{12}$</label>
+<input type="radio" name="tl17-q8" id="tl17-q8d"><label for="tl17-q8d" class="tl-opt tl-no">D. $6{,}25\cdot10^{12}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $200\ \text{MeV} = 200 \times 1{,}6\cdot10^{-13} = 3{,}2\cdot10^{-11}\ \text{J}$, rồi $N = \dfrac{1}{3{,}2\cdot10^{-11}} \approx 3{,}1\cdot10^{10}$ hạt.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi nằm ở bước đổi đơn vị: quên rằng $1\ \text{MeV} = 1{,}6\cdot10^{-13}\ \text{J}$ chứ không phải $10^{-16}$, hoặc lấy $W = 500\ \text{MeV}$ thay vì $200\ \text{MeV}$. Làm lại hai bước: đổi MeV ra jun, rồi lấy $1\ \text{J}$ chia cho năng lượng một phân hạch.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi thường nằm ở bước đổi đơn vị.<br>B: lấy $1\ \text{MeV} = 1{,}6\cdot10^{-16}\ \text{J}$ (nhầm với keV).<br>C: lấy $500\ \text{MeV}$ thay vì $200\ \text{MeV}$.<br>D: quên nhân với 200, chỉ tính $1 \div 1{,}6\cdot10^{-13}$.<br>Làm lại hai bước: đổi MeV ra jun, rồi lấy $1\ \text{J}$ chia cho năng lượng một phân hạch.</p></div>
 </div>
 </div>
 
@@ -424,7 +428,7 @@ d) Năng lượng đó bằng đốt cháy bao nhiêu kilôgam than?</p>
 
 <ul>
 <li><strong>Nhà máy điện hạt nhân:</strong> điện nền 24/7, gần như không thải khí nhà kính.</li>
-<li><strong>An ninh và hướng phát triển:</strong> nhà máy có thể thành mục tiêu bị tấn công nên phải bảo vệ nghiêm ngặt; tương lai là lò thế hệ IV và công nghệ xử lí chất thải an toàn hơn.</li>
+<li><strong>An ninh và hướng phát triển:</strong> nhà máy phải được bảo vệ nghiêm ngặt; tương lai là lò thế hệ IV an toàn hơn.</li>
 <li><strong>Tàu ngầm, tàu phá băng nguyên tử:</strong> nạp nhiên liệu một lần, chạy hàng chục năm.</li>
 <li><strong>Y học:</strong> nơtron trong lò tạo đồng vị phóng xạ để chẩn đoán và xạ trị ung thư.</li>
 <li><strong>Mặt trời và các sao:</strong> lò nhiệt hạch tự nhiên nuôi gần như mọi sự sống.</li>
@@ -440,7 +444,7 @@ d) Năng lượng đó bằng đốt cháy bao nhiêu kilôgam than?</p>
 
 <details class="tl-details">
 <summary>⭐⭐ Khá: vì sao trong lò phải giữ $k = 1$ mà không để $k$ lớn hơn một chút?</summary>
-<p>Vì $k \gt 1$ làm số nơtron tăng theo cấp số nhân: công suất và nhiệt độ vùng tâm lò tăng vọt ngoài tầm kiểm soát, có thể làm hỏng thanh nhiên liệu và gây sự cố. Giữ $k = 1$ nghĩa là mỗi thế hệ nơtron vừa đủ thay thế thế hệ trước, công suất đứng yên ở mức mong muốn. Muốn tăng công suất thì nâng $k$ lên hơi quá 1 trong thời gian ngắn rồi kéo thanh điều khiển về lại.</p>
+<p>Vì $k \gt 1$ làm số nơtron tăng theo cấp số nhân: công suất và nhiệt độ vùng tâm lò tăng vọt ngoài tầm kiểm soát, có thể làm hỏng thanh nhiên liệu và gây sự cố. Giữ $k = 1$ nghĩa là mỗi thế hệ nơtron vừa đủ thay thế thế hệ trước, công suất đứng yên ở mức mong muốn. Muốn tăng công suất thì rút thanh điều khiển ra một chút cho $k$ hơi lớn hơn 1, đạt công suất mới thì đẩy thanh vào lại để $k$ trở về 1.</p>
 </details>
 
 <details class="tl-details">

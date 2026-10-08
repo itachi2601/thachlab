@@ -14,15 +14,9 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
-  "supabase/migrations/20261005140000_weakest_topics.sql|Tạo RPC get_my_weakest_topics (thẻ 3 kỹ năng yếu nhất ở trang chủ HS)|Bất kỳ lúc nào (chỉ tạo hàm, không đụng dữ liệu)"
-  "supabase/migrations/20261005100000_bank_grade_lop10.sql|Gắn grade=10 cho ~6.262 câu ngân hàng từ đề lớp 10 (grade đang rỗng)|Bất kỳ lúc nào (1 UPDATE ngắn, idempotent)"
-  "supabase/migrations/20261005160000_push_subscriptions.sql|Tạo bảng push_subscriptions + RPC upsert_my_push_subscription / claim_push_reminders_due (nhắc 1 lần/ngày, GĐ 2.6 M4)|Bất kỳ lúc nào (chỉ tạo bảng/hàm mới)"
-  "supabase/migrations/20261006120000_thpt_fee_ledger.sql|Sổ học phí theo tháng, ẩn mặc định (staff_visible=false, không menu)|Bất kỳ lúc nào (bảng mới, không đụng dữ liệu cũ)"
   "supabase/migrations/20261006150000_quiz_live.sql|Đố vui lớp học (kiểu Kahoot): 4 bảng quiz_* + RPC cho học sinh ẩn danh/người điều khiển + tìm câu/đưa câu vào ngân hàng|Bất kỳ lúc nào (bảng/hàm mới, không đụng dữ liệu cũ; rollback perf/rollback/20261006150000_quiz_live.down.sql)"
-  "supabase/migrations/20261006120000_fix_grade_ngan_hang_5_de_l11.sql|Đổi grade 10→11 cho 129 câu ngân hàng thuộc 5 đề lớp 11 (638, 639, 658, 693, 701)|Bất kỳ lúc nào (chỉ UPDATE cột grade; rollback ở cuối file)"
-  "supabase/migrations/20261006130000_gan_lai_chu_de_5_de_l11.sql|Gắn lại chủ đề (topic_id/topic_name) cho 129 câu lớp 11 của 5 đề 638/639/658/693/701; 11 câu ngoài chương trình để trống chủ đề|Bất kỳ lúc nào (UPDATE 129 dòng; có bảng sao lưu question_bank_backup_20261006_topic, rollback ở cuối file; chạy SAU file fix_grade)"
-  "supabase/migrations/20261008120000_rank_streak_week_theory_review.sql|RPC dải chuỗi 7 ngày rank_my_streak_days + bảng theory_reviews, RPC rank_theory_review_open/submit (RP ôn lại bài lý thuyết; chỉ thêm hàm/bảng mới)|giờ nào cũng được; rollback perf/rollback/20261008120000_rank_streak_week_theory_review.down.sql"
 )
+# ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
 # ĐÃ CHẠY 7/10/2026: 20261007070000_rls_backup_tables, 20261007120000_tu_vao_lop_thpt
