@@ -81,3 +81,45 @@
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo dang-chung.json/tiet.json
 - [Cloud ↔ main tự gộp](project_thachlab_concurrent_sessions.md) — workflow gop-claude-vao-main; cuối phiên kiểm origin/main==HEAD, xanh thì không in lệnh merge
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill + vòng thật Bài 9 L12 8/10; treo duyệt lý thuyết, dán lại tin nhắn 3, gói sửa nhỏ
+- [Up đề](project_thachlab_up_de_skill.md) — đường chính Azota + Chủ đề/Dạng → /quan-tri/dang-de; ⚠ bug tự gắn thêm Luyện tập, soát exam_ids
+- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word cho trang Đăng đề kèm nhãn YCCĐ
+- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py → /quan-tri/dang-de
+- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
+- [Skill latex](project_thachlab_latex_skill.md) — bản codex: cache công thức + sinh HTML bằng script
+- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — _CongCu/mtef_to_omml_v2.py; kiểm công cụ có sẵn trước khi cho agent viết lại
+- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
+- [Đề thi thử trường/sở](project_thachlab_de_thi_thu_truong_so.md) — 93 đề mục 277; 3/10 đã lọc 304 file (133 sạch, 164 chỉ [lưu ý], 5 bẩn) nhưng CHƯA ĐĂNG, chờ thầy chốt đích + kiểm trùng
+- [Chống đề mất hình](project_thachlab_missing_figures.md) — xong 25/9; treo: thầy duyệt 80 hình AI, 43 câu cần ảnh thật
+- [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — /quan-tri/sua-de; deploy 25/9, chưa test sửa+lưu web thật
+- [Ngân hàng câu hỏi](project_thachlab_question_bank.md) — question_bank + Dễ/TB/Khó + cảnh báo trùng; chưa test UI
+- [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, CHƯA làm gì
+## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap GĐ 1–1b ở docs/ROADMAP.md
+- [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc theo mùa (28/9 đổi tên theo LQM, migration 20260928190000 chờ chạy); mùa thử nghiệm 21/9–25/10/2026
+- [Danh hiệu đeo + khung sưu tập](project_thachlab_title_showcase.md) — 28/9 xong + 3 mức theo độ khó; chưa test HS thật
+- [Thiết kế huy hiệu](project_thachlab_specialist_badge_design.md) — design system Cowork; 96/96 + 13 BST đã có
+- [Bảng tuần của lớp](project_thachlab_class_rank_board.md) — top tuần / vị trí em; khối phân bố bậc chưa làm
+- [Mastery theo YCCĐ](project_thachlab_mastery_yccd.md) — Nắm vững/Cần luyện/Chưa đạt ở /lop-hoc; chưa test UI
+- [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%, tối đa 3 lượt; gộp lương TA; chưa test UI
+- [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ + sửa nhãn tay
+- [Quy chế trợ giảng 10/2026](project_thachlab_ta_policy.md) — chấm tháng + hệ số lương; đã deploy
+- [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
+- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — phát hiện 25/9, trạng thái sửa CHƯA RÕ
+- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục đang ẩn, chờ gắn đề
+- [GĐ 1b rank – gộp main + deploy](project_thachlab_gd1b_rank.md) — #1–5 đã vào main, còn kiểm deploy + dọn docs/stash
+## Việc mới 30/9
+- [Bảng chào mừng theo vai](project_thachlab_welcome_panel.md) — WelcomePanel + gợi ý HS/GV THPT; PR #17 đã merge main + deploy 2026-09-30, còn chờ kiểm bằng mắt từng vai
+- [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — 5 danh hiệu thiếu 66 câu (số đo 30/9); ⚠ file docs/title-bank-gaps-2026-09-30.md đã MẤT, chạy lại scripts/sql/title-bank-coverage.sql trước khi soạn
+- [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill soan-bai-ly-thuyet-tuong-tac + bài mẫu ĐL III Newton + kho `content/thi-nghiem`; PR #22 chờ merge (2026-10-01); bài lesson 61 CHƯA lên web, chờ thầy báo kết quả chẩn đoán; hook mới nói cloud có thể ghi DB (đọc docs/CLOUD-GHI-DB.md)
+- [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — script cap-nhat-ly-thuyet.sh; bài Giao thoa sóng L11 chờ đăng
+- [Chương 1 VL12 — lý thuyết tương tác](project_thachlab_vl12_chuong1_ly_thuyet.md) — bài 3 Nội năng/ĐL1 (lesson 4) + bài 4 Thực hành (lesson 5) soạn 4/10/2026, CHƯA ghi DB; số đo độ dài + 6 lỗi hình SVG đã gặp
+- [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết tương tác: duyệt là đăng, không PR, ít token
+- [Khả năng đọc WCAG 2/10](project_thachlab_kha_nang_doc.md) — P0+P1/P2 đã vào main; chuẩn docs/UI.md, `npm run check:a11y`; treo: xem ReadingZone khi đăng nhập, text-violet theme sáng
+- [Rank: thi thăng hạng thích ứng + luyện từng câu](project_thachlab_rank_gate_adaptive.md) — đánh giá 3/10 + spec bàn giao Sonnet (docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md)
+- [Claude API: thinking tính vào max_tokens](reference_anthropic_api_thinking_max_tokens.md) — script backfill để max_tokens ≥16000 + effort low; log stop_reason
+- [Bài mẫu trống dù DB còn (4/10)](project_thachlab_worked_examples_blank.md) — file tĩnh không chứa lời giải, lượt Supabase hỏng → trống; đã vá + deploy 5967310a8; nguyên nhân gốc trên máy thầy chưa xác nhận
+- [Đề Vật lí 10 năm 24-25](project_thachlab_de_lop10_24_25.md) — 364 bộ/1190 file, script dang-de-l10-24-25.py; 4/10 chạy hết: 176 đề (exam 475–650) vào 4 mục Kiểm tra giữa/cuối kì lớp 10 ĐANG ẨN; 167 bộ chưa được ở scripts/data/de-l10-24-25-can-xem.md; nhãn + lời giải + tự luận chưa làm Thêm bộ /23 (cờ --nam 23, 4/10): 100/444 bộ đã đăng (exam 651+, ẩn), 309 bỏ vì thiếu đáp án.
+- [Top bar Navbar 4/10](project_thachlab_navbar_topbar.md) — sửa N2/D2/M2 + dropdown "Thêm", đã live 2026-10-04 (e1c8e7651, a849aa18c); chờ kiểm khi đăng nhập ở 360/375px
+- [Hero tab 4 "Hình chiếu"](project_thachlab_hero_hinhchieu.md) — bóng của M quay đều đồng nhịp với con lắc lò xo nằm ngang trên CÙNG một trục x (4/10); 34 kiểm toán + ảnh 360/375/1440, JS tải đầu trang chủ không đổi (216 KB gzip); quyết định đã chốt: "đồng nhịp ≠ trùng vị trí" (khớp ω chỉ làm hiệu pha THÔI TĂNG) · treo: chưa deploy, chưa nhúng vào bài 1 lớp 11 (repo chưa có cơ chế mount mô phỏng trong ContentHtml)
+- [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 6/10: 130 đề đăng (item 57=41, 59=28, 60=15 ẨN; item 58 Cuối HK1 +49 ở Bản nháp); 40 bộ LỆCH còn lại cần vá tay (7 bộ đề 0 câu); script `--nam l11` đã commit 471489729, chưa push; treo: thầy xem + bật Hiện, lời giải/nhãn chưa có, 693/701 do phiên khác chuyển vào item 58
+- [Rà soát 18 bài L12 (6/10)](project_thachlab_l12_ra_soat_2026_10_06.md) — đã sửa + vào main; treo: ghi DB, thầy đối chiếu SGK (Boyle/Charles, khí thực, bếp từ), xem 375px
+- [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick

@@ -171,6 +171,21 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +199,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +208,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -562,7 +602,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-03"><svg viewBox="0 0 440 212" role="img" aria-label="Bài toán mẫu vẽ đúng tỉ lệ: hai bản dài 5 cm cách nhau 2 cm, bản trên dương. Electron bay vào chính giữa với v0, lực điện hướng lên, lệch 2,5 mm khi ra khỏi bản rồi đi thẳng"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="80" y="44" width="250.0" height="6" rx="2" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="80" y="150.0" width="250.0" height="6" rx="2" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="80" y="36" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">+ + + + + + +   U = 91 V</text><text x="80" y="172" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">− − − − − − −</text><line x1="80.0" y1="100.0" x2="340.0" y2="100.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/><line x1="20.0" y1="100.0" x2="74.0" y2="100.0" stroke="#34d399" stroke-width="3" opacity="1" marker-end="url(#f4-g)"/><text x="28" y="92.0" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">v₀</text><line x1="110.0" y1="54.0" x2="110.0" y2="88.0" stroke="#fb923c" stroke-width="2" opacity="1" marker-end="url(#f4-o)"/><text x="116" y="76" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">E</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round" points="80.0,100.0 85.0,100.0 90.0,100.0 95.0,100.0 100.0,99.9 105.0,99.9 110.0,99.8 115.0,99.8 120.0,99.7 125.0,99.6 130.0,99.5 135.0,99.4 140.0,99.3 145.0,99.2 150.0,99.0 155.0,98.9 160.0,98.7 165.0,98.6 170.0,98.4 175.0,98.2 180.0,98.0 185.0,97.8 190.0,97.6 195.0,97.4 200.0,97.1 205.0,96.9 210.0,96.6 215.0,96.4 220.0,96.1 225.0,95.8 230.0,95.5 235.0,95.2 240.0,94.9 245.0,94.6 250.0,94.2 255.0,93.9 260.0,93.5 265.0,93.2 270.0,92.8 275.0,92.4 280.0,92.0 285.0,91.6 290.0,91.2 295.0,90.8 300.0,90.3 305.0,89.9 310.0,89.4 315.0,89.0 320.0,88.5 325.0,88.0 330.0,87.5"/><line x1="330.0" y1="87.5" x2="420.0" y2="78.5" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><circle cx="205.0" cy="96.9" r="5" fill="#38bdf8"/><line x1="205.0" y1="90.9" x2="205.0" y2="64.9" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f4-r)"/><text x="213.0" y="76.875" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text><text x="195.0" y="116.875" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="end">electron</text><line x1="346.0" y1="100.0" x2="346.0" y2="87.5" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="341.0" y1="100.0" x2="351.0" y2="100.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="341.0" y1="87.5" x2="351.0" y2="87.5" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="356" y="114.0" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">y = 2,5 mm</text><line x1="80.0" y1="184.0" x2="330.0" y2="184.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="80.0" y1="178.0" x2="80.0" y2="190.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="330.0" y1="178.0" x2="330.0" y2="190.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="205.0" y="202" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">L = 5,0 cm</text><line x1="430.0" y1="50.0" x2="430.0" y2="150.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="424.0" y1="50.0" x2="436.0" y2="50.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="424.0" y1="150.0" x2="436.0" y2="150.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="424" y="142.0" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">d = 2,0 cm</text></svg><figcaption>Hình 4. Bài toán mẫu, vẽ đúng tỉ lệ. Electron lệch lên về bản dương; ra khỏi bản lệch $2{,}5$ mm, nhỏ hơn $10$ mm từ đường giữa tới bản trên nên không chạm.</figcaption></figure></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-03"><svg viewBox="0 0 440 212" role="img" aria-label="Bài toán mẫu vẽ đúng tỉ lệ: hai bản dài 5 cm cách nhau 2 cm, bản trên dương. Electron bay vào chính giữa với v0, lực điện hướng lên, lệch 2,5 mm khi ra khỏi bản rồi đi thẳng"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="80" y="44" width="250.0" height="6" rx="2" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="80" y="150.0" width="250.0" height="6" rx="2" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="80" y="36" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">+ + + + + + +   U = 91 V</text><text x="80" y="172" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">− − − − − − −</text><line x1="80.0" y1="100.0" x2="340.0" y2="100.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/><line x1="20.0" y1="100.0" x2="74.0" y2="100.0" stroke="#34d399" stroke-width="3" opacity="1" marker-end="url(#f4-g)"/><text x="28" y="92.0" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">v₀</text><line x1="110.0" y1="54.0" x2="110.0" y2="88.0" stroke="#fb923c" stroke-width="2" opacity="1" marker-end="url(#f4-o)"/><text x="116" y="76" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">E</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round" points="80.0,100.0 85.0,100.0 90.0,100.0 95.0,100.0 100.0,99.9 105.0,99.9 110.0,99.8 115.0,99.8 120.0,99.7 125.0,99.6 130.0,99.5 135.0,99.4 140.0,99.3 145.0,99.2 150.0,99.0 155.0,98.9 160.0,98.7 165.0,98.6 170.0,98.4 175.0,98.2 180.0,98.0 185.0,97.8 190.0,97.6 195.0,97.4 200.0,97.1 205.0,96.9 210.0,96.6 215.0,96.4 220.0,96.1 225.0,95.8 230.0,95.5 235.0,95.2 240.0,94.9 245.0,94.6 250.0,94.2 255.0,93.9 260.0,93.5 265.0,93.2 270.0,92.8 275.0,92.4 280.0,92.0 285.0,91.6 290.0,91.2 295.0,90.8 300.0,90.3 305.0,89.9 310.0,89.4 315.0,89.0 320.0,88.5 325.0,88.0 330.0,87.5"/><line x1="330.0" y1="87.5" x2="420.0" y2="78.5" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><circle cx="205.0" cy="96.9" r="5" fill="#38bdf8"/><line x1="205.0" y1="90.9" x2="205.0" y2="64.9" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f4-r)"/><text x="213.0" y="76.875" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text><text x="195.0" y="116.875" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="end">electron</text><line x1="346.0" y1="100.0" x2="346.0" y2="87.5" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="341.0" y1="100.0" x2="351.0" y2="100.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="341.0" y1="87.5" x2="351.0" y2="87.5" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="346" y="114.0" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">y = 2,5 mm</text><line x1="80.0" y1="184.0" x2="330.0" y2="184.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="80.0" y1="178.0" x2="80.0" y2="190.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="330.0" y1="178.0" x2="330.0" y2="190.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="205.0" y="202" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">L = 5,0 cm</text><line x1="430.0" y1="50.0" x2="430.0" y2="150.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="424.0" y1="50.0" x2="436.0" y2="50.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><line x1="424.0" y1="150.0" x2="436.0" y2="150.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="424" y="142.0" fill="currentColor" font-size="13" font-weight="700" text-anchor="end">d = 2,0 cm</text></svg><figcaption>Hình 4. Bài toán mẫu, vẽ đúng tỉ lệ. Electron lệch lên về bản dương; ra khỏi bản lệch $2{,}5$ mm, nhỏ hơn $10$ mm từ đường giữa tới bản trên nên không chạm.</figcaption></figure></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>

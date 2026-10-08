@@ -15,6 +15,11 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   overflow-wrap: break-word;
   word-break: break-word;
 }
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
+}
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
    nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
@@ -168,9 +173,90 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
 html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: .95rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: .95rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +270,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,17 +279,42 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
+  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
+  .lesson-layout--pick .class-continue--main {
+    gap: 2px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 2px;
+    align-items: start;
+  }
+  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
+  .lesson-layout--pick .class-lesson-title,
+  .lesson-layout--pick .class-meta { grid-column: 2; }
+  .lesson-layout--pick .class-meta { justify-self: start; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
@@ -557,6 +668,34 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -570,14 +709,26 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Hai bạn kéo cùng lúc, mỗi bạn 100 N. <strong>Hợp lực</strong> tác dụng lên xe là bao nhiêu?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl13-q1" id="tl13-q1a"><label for="tl13-q1a" class="tl-opt tl-no">A. Luôn bằng 200 N, vì 100 + 100</label>
-<input type="radio" name="tl13-q1" id="tl13-q1b"><label for="tl13-q1b" class="tl-opt tl-no">B. Luôn bằng 100 N, vì xe chỉ có một chiều chạy</label>
-<input type="radio" name="tl13-q1" id="tl13-q1c" checked><label for="tl13-q1c" class="tl-opt tl-ok">C. Từ 0 đến 200 N, tuỳ <em>góc giữa hai dây</em></label>
-<input type="radio" name="tl13-q1" id="tl13-q1d"><label for="tl13-q1d" class="tl-opt tl-no">D. Luôn bằng 0, vì hai lực kéo triệt tiêu nhau</label>
+<input type="radio" name="tl58-q1" id="tl58-q1a"><label for="tl58-q1a" class="tl-opt tl-no">A. Luôn bằng 200 N, vì 100 + 100</label>
+<input type="radio" name="tl58-q1" id="tl58-q1b"><label for="tl58-q1b" class="tl-opt tl-no">B. Luôn bằng 100 N, vì xe chỉ có một chiều chạy</label>
+<input type="radio" name="tl58-q1" id="tl58-q1c" checked><label for="tl58-q1c" class="tl-opt tl-ok">C. Từ 0 đến 200 N, tuỳ <em>góc giữa hai dây</em></label>
+<input type="radio" name="tl58-q1" id="tl58-q1d"><label for="tl58-q1d" class="tl-opt tl-no">D. Luôn bằng 0, vì hai lực kéo triệt tiêu nhau</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Lực là <strong>vectơ</strong>: ngoài độ lớn còn có hướng. Hai dây song song cùng chiều cho 200 N; càng mở rộng góc, hợp lực càng nhỏ. Cả bài này xoay quanh một việc: <em>cộng vectơ lực</em>.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Thử nghĩ tới hai trường hợp ở đầu bài: dây song song và dây lệch hẳn sang hai bên. Hai trường hợp ấy có cho cùng một kết quả không? Chọn lại nhé.</p></div>
 </div>
 </div>
+
+<div class="tl-box tl-sim tl-sim--keo">
+<p class="tl-label">🎛️ Mô phỏng: hai dây kéo xe (nhìn từ trên xuống)</p>
+<div class="tl-sim__row"><b>Góc giữa hai dây</b><input type="radio" name="tl58-k" class="k-a0" id="tl58-k0" checked><label for="tl58-k0" class="tl-sim__chip">0°</label><input type="radio" name="tl58-k" class="k-a60" id="tl58-k60"><label for="tl58-k60" class="tl-sim__chip">60°</label><input type="radio" name="tl58-k" class="k-a90" id="tl58-k90"><label for="tl58-k90" class="tl-sim__chip">90°</label><input type="radio" name="tl58-k" class="k-a120" id="tl58-k120"><label for="tl58-k120" class="tl-sim__chip">120°</label><input type="radio" name="tl58-k" class="k-a180" id="tl58-k180"><label for="tl58-k180" class="tl-sim__chip">180°</label></div>
+<svg class="k-a0" viewBox="0 0 420 280" role="img" aria-label="Hai lực kéo 100 niutơn hợp góc 0 độ; đường chéo hình bình hành là hợp lực 200 niutơn"><defs><marker id="k0-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="k0-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="k0-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="k0-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/><rect x="182" y="206" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/><circle cx="194" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="226" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="203" y1="206" x2="203.0" y2="126.0" stroke="#f87171" stroke-width="2.8"/><path d="M197.0,136.4 L203.0,126.0 L209.0,136.4" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="217" y1="206" x2="217.0" y2="126.0" stroke="#38bdf8" stroke-width="2.8"/><path d="M211.0,136.4 L217.0,126.0 L223.0,136.4" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="210" y2="46.0" stroke="#34d399" stroke-width="2.8"/><path d="M204.0,56.4 L210.0,46.0 L216.0,56.4" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="224" y="54.0" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">F</text><text x="191.0" y="122.0" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="229.0" y="122.0" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">2</tspan></text><text x="30" y="36" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α = 0°</text><text x="210" y="268" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">F₁ = F₂ = 100 N  →  hợp lực F = 200 N</text></svg>
+<svg class="k-a60" viewBox="0 0 420 280" role="img" aria-label="Hai lực kéo 100 niutơn hợp góc 60 độ; đường chéo hình bình hành là hợp lực 173 niutơn"><defs><marker id="k60-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="k60-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="k60-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="k60-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/><line x1="170.0" y1="136.7" x2="210.0" y2="67.6" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><line x1="250.0" y1="136.7" x2="210.0" y2="67.6" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><rect x="182" y="206" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/><circle cx="194" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="226" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="210" y1="206" x2="170.0" y2="136.7" stroke="#f87171" stroke-width="2.8"/><path d="M170.0,148.7 L170.0,136.7 L180.4,142.7" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="250.0" y2="136.7" stroke="#38bdf8" stroke-width="2.8"/><path d="M239.6,142.7 L250.0,136.7 L250.0,148.7" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="210" y2="67.6" stroke="#34d399" stroke-width="2.8"/><path d="M204.0,78.0 L210.0,67.6 L216.0,78.0" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="224" y="75.6" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">F</text><text x="158.0" y="132.7179676972449" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="262.0" y="132.7179676972449" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">2</tspan></text><path d="M224.0,181.8 A28,28 0 0 0 196.0,181.8" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="215" y="172" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">α</text><text x="30" y="36" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α = 60°</text><text x="210" y="268" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">F₁ = F₂ = 100 N  →  hợp lực F = 173 N</text></svg>
+<svg class="k-a90" viewBox="0 0 420 280" role="img" aria-label="Hai lực kéo 100 niutơn hợp góc 90 độ; đường chéo hình bình hành là hợp lực 141 niutơn"><defs><marker id="k90-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="k90-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="k90-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="k90-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/><line x1="153.4" y1="149.4" x2="210.0" y2="93.2" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><line x1="266.6" y1="149.4" x2="210.0" y2="93.2" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><rect x="182" y="206" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/><circle cx="194" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="226" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="210" y1="206" x2="153.4" y2="149.4" stroke="#f87171" stroke-width="2.8"/><path d="M156.5,161.0 L153.4,149.4 L165.0,152.5" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="266.6" y2="149.4" stroke="#38bdf8" stroke-width="2.8"/><path d="M255.0,152.5 L266.6,149.4 L263.5,161.0" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="210" y2="93.2" stroke="#34d399" stroke-width="2.8"/><path d="M204.0,103.6 L210.0,93.2 L216.0,103.6" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="224" y="101.19999999999999" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">F</text><text x="141.4314575050762" y="145.4314575050762" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="278.5685424949238" y="145.4314575050762" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">2</tspan></text><path d="M229.8,186.2 A28,28 0 0 0 190.2,186.2" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="215" y="172" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">α</text><text x="30" y="36" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α = 90°</text><text x="210" y="268" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">F₁ = F₂ = 100 N  →  hợp lực F = 141 N</text></svg>
+<svg class="k-a120" viewBox="0 0 420 280" role="img" aria-label="Hai lực kéo 100 niutơn hợp góc 120 độ; đường chéo hình bình hành là hợp lực 100 niutơn"><defs><marker id="k120-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="k120-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="k120-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="k120-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/><line x1="140.7" y1="166.0" x2="210.0" y2="126.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><line x1="279.3" y1="166.0" x2="210.0" y2="126.0" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.6"/><rect x="182" y="206" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/><circle cx="194" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="226" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="210" y1="206" x2="140.7" y2="166.0" stroke="#f87171" stroke-width="2.8"/><path d="M146.7,176.4 L140.7,166.0 L152.7,166.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="279.3" y2="166.0" stroke="#38bdf8" stroke-width="2.8"/><path d="M267.3,166.0 L279.3,166.0 L273.3,176.4" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="210" y2="126.0" stroke="#34d399" stroke-width="2.8"/><path d="M204.0,136.4 L210.0,126.0 L216.0,136.4" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="224" y="134.0" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">F</text><text x="128.71796769724492" y="162.0" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="291.28203230275506" y="162.0" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">2</tspan></text><path d="M234.2,192.0 A28,28 0 0 0 185.8,192.0" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="215" y="172" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">α</text><text x="30" y="36" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α = 120°</text><text x="210" y="268" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">F₁ = F₂ = 100 N  →  hợp lực F = 100 N</text></svg>
+<svg class="k-a180" viewBox="0 0 420 280" role="img" aria-label="Hai lực kéo 100 niutơn hợp góc 180 độ; đường chéo hình bình hành là hợp lực 0 niutơn"><defs><marker id="k180-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="k180-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="k180-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="k180-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="14" y="10" width="392" height="236" rx="12" fill="rgba(56,189,248,.08)" stroke="currentColor" stroke-width="1.4"/><rect x="182" y="206" width="56" height="30" rx="6" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2.4"/><circle cx="194" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="226" cy="240" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="210" y1="206" x2="130.0" y2="206.0" stroke="#f87171" stroke-width="2.8"/><path d="M140.4,212.0 L130.0,206.0 L140.4,200.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210" y1="206" x2="290.0" y2="206.0" stroke="#38bdf8" stroke-width="2.8"/><path d="M279.6,200.0 L290.0,206.0 L279.6,212.0" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="210.0" cy="206.0" r="5" fill="#34d399"/><text x="118.0" y="202.0" fill="#f87171" font-size="18" font-weight="700" text-anchor="end">F<tspan dy="4" font-size="11">1</tspan></text><text x="302.0" y="202.0" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="start">F<tspan dy="4" font-size="11">2</tspan></text><path d="M238.0,206.0 A28,28 0 0 0 182.0,206.0" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="215" y="172" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">α</text><text x="30" y="36" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">α = 180°</text><text x="210" y="268" fill="#34d399" font-size="17" font-weight="700" text-anchor="middle">F₁ = F₂ = 100 N  →  hợp lực F = 0 N</text></svg>
+<p><strong>Quy tắc hình bình hành:</strong> lấy <span class="lg-F">F₁</span>, <span class="lg-B">F₂</span> làm hai cạnh; <strong class="lg-N">đường chéo</strong> từ xe là hợp lực <em>F</em>.</p>
+</div>
+
 
 </span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>

@@ -1,0 +1,404 @@
+Bạn là học sinh lớp 10 hồ sơ "trung-binh" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). Dưới đây là bài "Độ dịch chuyển và quãng đường đi được" đã bị ẩn lời giải/đáp án. Chỉ dựa vào bài và kiến thức lớp dưới. Trả lời mọi câu dự đoán và câu tự kiểm tra: ghi đáp án chọn và lí do ngắn. Trả về duy nhất JSON: {"tra_loi_quiz":{"du_doan":"A","cau1":"B"},"ly_do_chon":{"du_doan":"…"}}. Khoá của tra_loi_quiz đặt theo nhãn câu trong bài (cau1, cau2…; câu dự đoán đặt "du_doan").
+
+=== NỘI DUNG BÀI (HTML) ===
+<div>
+<p>🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu được <strong>chất điểm</strong>, <strong>quỹ đạo</strong>, <strong>hệ quy chiếu</strong>; xác định vị trí bằng toạ độ.</li>
+<li>Định nghĩa <strong>độ dịch chuyển</strong> $\vec d$ và tính $d = x_2 - x_1$ trên một đường thẳng.</li>
+<li>So sánh <strong>quãng đường đi được</strong> $s$ với độ dịch chuyển; tính <strong>tốc độ trung bình</strong>.</li>
+<li>Tìm độ dịch chuyển khi vật đi theo hai hướng vuông góc.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 16 phút.</p>
+</div>
+
+<h3>I. Mở bài: một vòng sân băng</h3>
+
+<p>Hết giờ trượt tự do, em trượt đúng <strong>một vòng</strong> sát rào chắn rồi dừng lại ngay cửa vào sân. Đồng hồ thể thao trên tay báo: đã đi $60\ \text{m}$ (số liệu minh hoạ). Bạn em đứng ở cửa cười: "Cậu có dịch chuyển tí nào đâu, vẫn đứng ở cửa mà!"</p>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 1. Trượt một vòng sát rào chắn: chỗ xuất phát và chỗ dừng là cùng một điểm (cửa vào).</figcaption></figure>
+
+<div>
+<p>🤔 Dự đoán trước khi học</p>
+<p>Đồng hồ nói "đi $60\ \text{m}$", bạn nói "không dịch chuyển". Ai đúng?</p>
+<div>
+<input><label>A. Chỉ đồng hồ đúng: đi $60\ \text{m}$ tức là dịch chuyển $60\ \text{m}$</label>
+<input><label>B. Cả hai đúng: đồng hồ đo độ dài đường đi, bạn nói về sự thay đổi vị trí</label>
+<input><label>C. Chỉ bạn đúng: em về chỗ cũ nên đồng hồ đo sai</label>
+<input><label>D. Cả hai sai: dịch chuyển phải là nửa vòng, $30\ \text{m}$</label>
+
+
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Chuyển động, chất điểm, quỹ đạo</h4>
+
+<p><strong>🔑 Vị trí đổi theo thời gian · so với vật mốc</strong></p>
+
+<ul>
+<li><strong>Chuyển động cơ</strong>: vị trí của vật thay đổi so với vật khác theo thời gian.</li>
+<li>Chuyển động có <strong>tính tương đối</strong>: ngồi trên xe buýt, em đứng yên so với ghế nhưng chuyển động so với cột đèn.</li>
+<li><strong>Chất điểm</strong>: vật có kích thước <strong>rất nhỏ so với độ dài đường đi</strong> (hoặc khoảng cách đang xét). Chất điểm có khối lượng bằng khối lượng của vật.</li>
+<li><strong>Quỹ đạo</strong>: đường mà chất điểm vạch ra khi chuyển động.</li>
+</ul>
+
+<p>Ví dụ: xe khách chạy Hà Nội – Huế (khoảng $650\ \text{km}$) là chất điểm trên bản đồ. Cũng chiếc xe đó lùi vào bến đỗ hẹp thì <strong>không</strong> coi là chất điểm được, vì từng mét thân xe đều quan trọng.</p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Trường hợp nào vật được coi là chất điểm?</p>
+<div>
+<input><label>A. Ô tô đang lùi vào chỗ đỗ trong gara</label>
+<input><label>B. Vận động viên trượt băng đang xoay tròn tại chỗ</label>
+<input><label>C. Xe khách chạy từ Hà Nội vào Huế</label>
+<input><label>D. Trái Đất khi xét chuyển động tự quay quanh trục</label>
+
+
+</div>
+</div>
+
+<h4>2. Hệ quy chiếu: xác định vị trí và thời điểm</h4>
+
+<p><strong>🔑 Vật mốc + trục toạ độ + đồng hồ</strong></p>
+
+<ul>
+<li><strong>Vị trí</strong>: chọn vật mốc $O$, trục $Ox$ dọc đường đi. Vật ở điểm $M$ có toạ độ $x = \overline{OM}$ (có dấu).</li>
+<li><strong>Thời điểm</strong>: chọn một <strong>gốc thời gian</strong>, dùng đồng hồ đo thời gian từ gốc đến lúc cần xét.</li>
+<li><strong>Hệ quy chiếu</strong> = hệ toạ độ gắn với vật mốc + gốc thời gian và đồng hồ.</li>
+</ul>
+
+<p>Ví dụ: xe điều khiển từ xa chạy dọc một cây thước dài đặt trên sàn. Lấy <strong>đầu thước</strong> làm gốc $O$, trục $X$ dương sang phải. Xe đang ở vạch $80\ \text{cm}$ nghĩa là xe cách gốc $80\ \text{cm}$ về phía dương.</p>
+
+<details>
+<summary>⏱️ Thời điểm khác khoảng thời gian thế nào? (nghĩ trước rồi bấm)</summary>
+<p>Thời điểm là một mốc trên trục thời gian: "lúc $7$ giờ". Khoảng thời gian là hiệu hai thời điểm: "từ $7$ giờ đến $7$ giờ $45$ phút" kéo dài $\Delta t = 45$ phút. Đổi gốc thời gian thì số ghi thời điểm đổi, còn khoảng thời gian giữ nguyên.</p>
+</details>
+
+<h4>3. Độ dịch chuyển</h4>
+
+<p><strong>🔑 Mũi tên đầu → cuối · vectơ · $d = x_2 - x_1$</strong></p>
+
+<ul>
+<li><strong>Độ dịch chuyển</strong> là đại lượng <strong>vectơ</strong>, cho biết độ dài và hướng của sự thay đổi vị trí. Kí hiệu $\vec d$.</li>
+<li>Vẽ bằng <strong>mũi tên</strong> nối vị trí đầu tới vị trí cuối; độ lớn = khoảng cách giữa hai vị trí.</li>
+<li>Trên đường thẳng $Ox$: $d = \Delta x = x_2 - x_1$. Dấu của $d$ cho biết hướng so với chiều dương.</li>
+</ul>
+
+<div>
+<p>🔬 Ví dụ: xe điều khiển từ xa chạy tới rồi lùi</p>
+<ol>
+<li><strong>Làm:</strong> xe đi từ $x_1 = 20\ \text{cm}$ tới $80\ \text{cm}$, rồi lùi về $x_2 = 50\ \text{cm}$ (Hình 2).</li>
+<li><strong>Quan sát:</strong> màn hình lần lượt chỉ $20 \to 80 \to 50$.</li>
+<li><strong>Rút ra:</strong> đoạn đã chạy $60 + 30 = 90\ \text{cm}$, nhưng $d = 50 - 20 = 30\ \text{cm}$. Độ dịch chuyển chỉ cần <strong>điểm đầu và điểm cuối</strong>.</li>
+</ol>
+</div>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 2. Đường cam: xe đi tới rồi lùi, tổng $90\ \text{cm}$. Mũi tên xanh lá: độ dịch chuyển chỉ nối điểm đầu với điểm cuối.</figcaption></figure>
+
+<p>Em chắc bao nhiêu?
+<label><input> Chắc</label>
+<label><input> Không chắc</label></p>
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Cùng trục $X$ như Hình 2. Xe đi từ $x_1 = 70\ \text{cm}$ tới $90\ \text{cm}$ rồi lùi về $x_2 = 40\ \text{cm}$. Độ dịch chuyển là:</p>
+<div>
+<input><label>A. $30\ \text{cm}$</label>
+<input><label>B. $70\ \text{cm}$</label>
+<input><label>C. $-50\ \text{cm}$</label>
+<input><label>D. $-30\ \text{cm}$</label>
+
+
+</div>
+</div>
+
+<h4>4. Quãng đường đi được và so sánh với độ dịch chuyển</h4>
+
+<p><strong>🔑 $s$ cộng dồn · luôn $\geq 0$ · $d \leq s$</strong></p>
+
+<ul>
+<li><strong>Quãng đường đi được</strong> $s$: độ dài vật đi được trong suốt quá trình. Là đại lượng <strong>vô hướng, không âm</strong>.</li>
+<li>Thẳng, <strong>không đổi chiều</strong>: độ lớn $d = s$.</li>
+<li>Đổi chiều hoặc đi đường cong: độ lớn $d \lt s$. Quay về chỗ cũ: $d = 0$.</li>
+</ul>
+
+<div>
+<p>🔬 Thí nghiệm: xe đồ chơi trên ray uốn</p>
+<ol>
+<li><strong>Làm:</strong> uốn ray nhựa thành 4 hình (thẳng, nửa vòng tròn bán kính $10\ \text{cm}$, chữ L $30 + 40\ \text{cm}$, trọn vòng). Mỗi hình cho xe chạy một lần, dán băng dính ở điểm đầu và điểm dừng. Đo $s$ bằng sợi chỉ đặt dọc ray; đo $d$ bằng thước nối thẳng hai điểm.</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ).</li>
+<li><strong>Rút ra:</strong> chỉ ray thẳng cho $d \approx s$; vòng kín cho $d = 0$ dù xe chạy hơn $60\ \text{cm}$.</li>
+</ol>
+</div>
+
+<div>
+<table>
+<thead>
+<tr><th>Hình ray</th><th>$s$ đo (cm)</th><th>$d$ đo (cm)</th></tr>
+</thead>
+<tbody>
+<tr><td>thẳng 30 cm</td><td>30,2</td><td>30,0</td></tr>
+<tr><td>nửa vòng tròn r = 10 cm</td><td>31,9</td><td>20,1</td></tr>
+<tr><td>chữ L 30 cm + 40 cm</td><td>70,6</td><td>49,9</td></tr>
+<tr><td>trọn vòng tròn r = 10 cm</td><td>63,5</td><td>0,0</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>📊 Đọc bảng: vì sao cột $s$ lệch nhiều hơn cột $d$? (tự trả lời rồi bấm)</summary>
+<p>Tính theo hình: nửa vòng có $s = \pi r \approx 31{,}4\ \text{cm}$, $d = 2r = 20\ \text{cm}$; chữ L có $d = \sqrt{30^2 + 40^2} = 50\ \text{cm}$. Cột $d$ lệch tối đa $0{,}1\ \text{cm}$ vì thước đặt thẳng giữa hai dấu. Cột $s$ lệch tới $0{,}7\ \text{cm}$: sợi chỉ khó bám sát chỗ cong và hay bị đặt dư, nên $s$ đo thường <strong>lớn hơn</strong> giá trị đúng. Sai số dụng cụ: sợi chỉ $\pm 1\ \text{cm}$, thước $\pm 0{,}2\ \text{cm}$.</p>
+</details>
+
+<h4>5. Tốc độ trung bình</h4>
+
+<p><strong>🔑 Quãng đường chia thời gian · không âm</strong></p>
+
+<ul>
+<li>$v_{tb} = \dfrac{s}{t}$, đơn vị $\text{m/s}$ hoặc $\text{km/h}$; $1\ \text{m/s} = 3{,}6\ \text{km/h}$.</li>
+<li>Cho biết vật đi <strong>nhanh hay chậm</strong>, không cho biết hướng.</li>
+<li>Thay $s$ bằng độ dịch chuyển theo một phương ($d/t$) sẽ được <strong>vận tốc</strong>, có hướng — học kĩ ở Bài 5.</li>
+</ul>
+
+<div>
+<p>🔬 Ví dụ: quay lại vòng sân băng</p>
+<ol>
+<li><strong>Làm:</strong> trượt một vòng $60\ \text{m}$ hết $20\ \text{s}$ (minh hoạ).</li>
+<li><strong>Quan sát:</strong> $s = 60\ \text{m}$, $d = 0$.</li>
+<li><strong>Rút ra:</strong> $v_{tb} = 60/20 = 3\ \text{m/s}$, khác $0$ dù $d = 0$.</li>
+</ol>
+</div>
+
+<details>
+<summary>🔄 Đổi đơn vị: $3\ \text{m/s}$ bằng bao nhiêu $\text{km/h}$? (tự tính rồi bấm)</summary>
+<p>$1\ \text{m/s} = \dfrac{3{,}6\ \text{km}}{1\ \text{h}}$ vì $3\,600\ \text{s} = 1\ \text{h}$. Vậy $3\ \text{m/s} = 10{,}8\ \text{km/h}$ — cỡ tốc độ trượt băng thong thả.</p>
+</details>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: "đi bao nhiêu thì dịch chuyển bấy nhiêu"</h4>
+
+<p>Trong đời thường "đi $5\ \text{km}$" và "dịch chuyển $5\ \text{km}$" nghe như nhau. Trong vật lí chúng chỉ trùng nhau ở <strong>một trường hợp</strong>.</p>
+
+<div>
+<table>
+<thead>
+<tr><th>Độ dịch chuyển $\vec d$</th><th>Quãng đường $s$</th></tr>
+</thead>
+<tbody>
+<tr><td>Vectơ: có độ lớn và hướng</td><td>Vô hướng: chỉ có độ lớn</td></tr>
+<tr><td>Chỉ cần điểm đầu, điểm cuối</td><td>Cộng dồn cả đường đi</td></tr>
+<tr><td>Trên trục: dương, âm hoặc $0$</td><td>Không âm</td></tr>
+<tr><td>Bằng nhau về độ lớn <strong>chỉ khi</strong> chuyển động thẳng, không đổi chiều</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Thẳng + không đổi chiều mới có $d = s$</strong></p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Trường hợp nào độ lớn độ dịch chuyển <strong>bằng</strong> quãng đường đi được?</p>
+<div>
+<input><label>A. Thang máy đi thẳng từ tầng 1 lên tầng 8, không dừng và không quay xuống</label>
+<input><label>B. Vận động viên chạy đúng một vòng sân vận động $400\ \text{m}$</label>
+<input><label>C. Xe đi thẳng từ A đến B rồi quay về A trên cùng con đường</label>
+<input><label>D. Ô tô chạy theo đường đèo uốn lượn từ chân lên đỉnh dốc</label>
+
+
+</div>
+</div>
+
+<h4>Bẫy 2: thấy dấu âm là gạch bỏ</h4>
+
+<p>Nhiều bạn nghĩ "độ dài thì làm sao âm" nên bỏ dấu của $d$. Dấu âm không phải lỗi: nó cho biết vật dịch chuyển <strong>ngược chiều dương</strong> đã chọn. Còn $s$ thì không bao giờ âm.</p>
+
+<div>
+<table>
+<thead>
+<tr><th>Đi theo chiều dương</th><th>Đi ngược chiều dương</th></tr>
+</thead>
+<tbody>
+<tr><td>$x_2 \gt x_1$, $d \gt 0$</td><td>$x_2 \lt x_1$, $d \lt 0$</td></tr>
+<tr><td>$s = d$ (nếu không đổi chiều)</td><td>$s = -d = |d|$ (nếu không đổi chiều)</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Dấu của $d$ = hướng · $s$ luôn dương</strong></p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Chọn trục $Ox$ hướng từ Tây sang Đông. Một xe đi thẳng $5\ \text{km}$ về phía Tây, không đổi chiều. Nhận xét đúng là:</p>
+<div>
+<input><label>A. $d = 5\ \text{km}$; $s = -5\ \text{km}$</label>
+<input><label>B. $d = -5\ \text{km}$; $s = 5\ \text{km}$</label>
+<input><label>C. $d = -5\ \text{km}$; $s = -5\ \text{km}$</label>
+<input><label>D. $d = 5\ \text{km}$; $s = 5\ \text{km}$, vì độ dài không bao giờ âm</label>
+
+
+</div>
+</div>
+
+<h4>Bẫy 3: cộng độ dịch chuyển như cộng số</h4>
+
+<p>Đi $3\ \text{m}$ về Bắc rồi $4\ \text{m}$ về Đông: quãng đường là $7\ \text{m}$, nhưng độ dịch chuyển <strong>không phải</strong> $7\ \text{m}$. Hai mũi tên vuông góc nối đuôi nhau; độ dịch chuyển tổng là cạnh huyền.</p>
+
+<div>
+<table>
+<thead>
+<tr><th>Hai đoạn cùng phương</th><th>Hai đoạn vuông góc</th></tr>
+</thead>
+<tbody>
+<tr><td>Cùng chiều: độ lớn $d = d_1 + d_2$</td><td>Độ lớn $d = \sqrt{d_1^2 + d_2^2}$</td></tr>
+<tr><td>Ngược chiều: độ lớn $d = |d_1 - d_2|$</td><td>Hướng: góc $\alpha$ so với đoạn 1, $\tan\alpha = d_2 / d_1$</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Vectơ nối đuôi · vuông góc dùng Pi-ta-go</strong></p>
+
+<div>
+<p>✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Robot hút bụi đi thẳng $6\ \text{m}$ về phía Bắc, rồi rẽ đi thẳng $8\ \text{m}$ về phía Đông. Độ lớn độ dịch chuyển của robot là:</p>
+<div>
+<input><label>A. $14\ \text{m}$</label>
+<input><label>B. $2\ \text{m}$</label>
+<input><label>C. $10\ \text{m}$</label>
+<input><label>D. $48\ \text{m}$</label>
+
+
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div>
+<p>🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details>
+<summary>1. Chuyển động cơ là gì? Vì sao nói chuyển động có tính tương đối? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vị trí đổi theo thời gian · so với vật khác. Đổi vật mốc → có thể đang đứng yên hoặc đang chuyển động.</p>
+</details>
+<details>
+<summary>2. Khi nào coi vật là chất điểm? Quỹ đạo là gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Kích thước rất nhỏ so với đường đi · giữ khối lượng của vật. Quỹ đạo: đường chất điểm vạch ra.</p>
+</details>
+<details>
+<summary>3. Hệ quy chiếu gồm những gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vật mốc + hệ toạ độ · gốc thời gian + đồng hồ. Vị trí: $x = \overline{OM}$.</p>
+</details>
+<details>
+<summary>4. Độ dịch chuyển là gì, vẽ thế nào, tính thế nào trên một trục? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vectơ · mũi tên từ vị trí đầu tới vị trí cuối · $d = x_2 - x_1$, có dấu.</p>
+</details>
+<details>
+<summary>5. Nêu ba điểm khác nhau giữa $d$ và $s$. Khi nào độ lớn của chúng bằng nhau? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Vectơ / vô hướng · đầu–cuối / cộng dồn · có thể âm / không âm. Bằng nhau khi thẳng, không đổi chiều.</p>
+</details>
+<details>
+<summary>6. Tốc độ trung bình tính thế nào? Đi một vòng kín thì $d$ và $v_{tb}$ ra sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$v_{tb} = s/t$, không âm. Vòng kín: $d = 0$ nhưng $v_{tb} \gt 0$.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div>
+<p>📝 Đề bài</p>
+<p>Một bạn đạp xe từ nhà, đi thẳng $1{,}2\ \text{km}$ về phía Đông tới ngã tư, rồi rẽ trái đi thẳng $0{,}5\ \text{km}$ về phía Bắc thì tới trường (Hình 3). Cả quãng hết $6$ phút. Tính quãng đường đi được, độ dịch chuyển (độ lớn và hướng) và tốc độ trung bình.</p>
+</div>
+
+<figure>[hình vẽ minh hoạ]<figcaption>Hình 3. Đường cam: đường đạp xe thật. Mũi tên nét đứt xanh lá: độ dịch chuyển $\vec d$ từ nhà tới trường, hợp với hướng Đông góc α.</figcaption></figure>
+
+<div>
+<table>
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"đi thẳng $1{,}2\ \text{km}$ về phía Đông"</td><td>$d_1 = 1{,}2\ \text{km}$, hướng Đông → đoạn 1 thẳng, không đổi chiều</td></tr>
+<tr><td>"rẽ trái … $0{,}5\ \text{km}$ về phía Bắc"</td><td>$d_2 = 0{,}5\ \text{km}$, hướng Bắc → vuông góc với đoạn 1</td></tr>
+<tr><td>"từ nhà … tới trường"</td><td>điểm đầu: nhà, điểm cuối: trường → $\vec d$ nối nhà tới trường</td></tr>
+<tr><td>"hết $6$ phút"</td><td>$t = 0{,}1\ \text{h}$ → $v_{tb} = s/t$</td></tr>
+<tr><td>"quãng đường … độ dịch chuyển"</td><td>$s = ?$, $d = ?$ → Bẫy 1 và Bẫy 3</td></tr>
+</tbody>
+</table>
+</div>
+
+<details>
+<summary>🧮 Bấm xem lời giải</summary>
+<ol>
+<li><strong>Quãng đường</strong> (cộng dồn): $s = 1{,}2 + 0{,}5 = 1{,}7\ \text{km}$.</li>
+<li><strong>Độ lớn độ dịch chuyển</strong> (hai đoạn vuông góc): $d = \sqrt{1{,}2^2 + 0{,}5^2} = \sqrt{1{,}69} = 1{,}3\ \text{km}$.</li>
+<li><strong>Hướng</strong>: $\tan\alpha = \dfrac{0{,}5}{1{,}2} \approx 0{,}417$, nên $\alpha \approx 23^\circ$, lệch từ hướng Đông về phía Bắc.</li>
+<li><strong>Tốc độ trung bình</strong>: $v_{tb} = \dfrac{1{,}7\ \text{km}}{0{,}1\ \text{h}} = 17\ \text{km/h}$.</li>
+<li><strong>Kiểm tra:</strong> $d = 1{,}3\ \text{km} \lt s = 1{,}7\ \text{km}$ ✓ (có rẽ nên $d \lt s$). $d$ lớn hơn từng cạnh, nhỏ hơn tổng hai cạnh ✓.</li>
+</ol>
+</details>
+
+<div>
+<p>✍️ Điền bước còn thiếu</p>
+<p>Cùng hình, đổi số: $0{,}8\ \text{km}$ về Đông, $0{,}6\ \text{km}$ về Bắc, hết $6$ phút.</p>
+<ol>
+<li>$s = 0{,}8 + 0{,}6 = 1{,}4\ \text{km}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $d = \;?$ — gợi ý: cộng hay dùng Pi-ta-go?</li>
+<li><strong>Bước 3 (em điền):</strong> $v_{tb} = \;?$ — dùng $s$ hay $d$?</li>
+</ol>
+<details>
+<summary>Xem bước 2–3</summary>
+<p>$d = \sqrt{0{,}8^2 + 0{,}6^2} = 1{,}0\ \text{km}$; $v_{tb} = 1{,}4 / 0{,}1 = 14\ \text{km/h}$. Kiểm: $1{,}0 \lt 1{,}4$ ✓.</p>
+</details>
+</div>
+
+<p>Em chắc bao nhiêu?
+<label><input> Chắc</label>
+<label><input> Không chắc</label></p>
+<div>
+<p>🔁 Thử sức đổi chiều</p>
+<p><strong>Câu 6.</strong> Hôm sau, bạn đó đi $1{,}2\ \text{km}$ về phía Đông, rồi <strong>quay lại</strong> $0{,}5\ \text{km}$ về phía Tây trên cùng con đường, hết $6$ phút. Độ lớn độ dịch chuyển và tốc độ trung bình là:</p>
+<div>
+<input><label>A. $1{,}3\ \text{km}$ và $17\ \text{km/h}$</label>
+<input><label>B. $1{,}7\ \text{km}$ và $17\ \text{km/h}$</label>
+<input><label>C. $0{,}7\ \text{km}$ và $7\ \text{km/h}$</label>
+<input><label>D. $0{,}7\ \text{km}$ và $17\ \text{km/h}$</label>
+
+
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details>
+<summary>🏗️ Bấm xem: bốn nơi đang dùng bài này</summary>
+<ul>
+<li><strong>Xe buýt trên tuyến thẳng:</strong> lấy bến đầu làm gốc, vị trí ghi theo km ($X$ là vị trí); hiệu hai vị trí là độ dịch chuyển có dấu ($\Delta X$).</li>
+<li><strong>Bản đồ trên điện thoại:</strong> "khoảng cách theo đường chim bay" là độ lớn độ dịch chuyển; "quãng đường đi" dài hơn.</li>
+<li><strong>Đồng hồ thể thao:</strong> cộng dồn quãng đường, nên chạy vòng sân vẫn ra vài km.</li>
+<li><strong>Trượt băng nghệ thuật:</strong> bài thi đi kín sân rồi kết thúc gần chỗ bắt đầu — quãng đường hàng trăm mét, độ dịch chuyển gần $0$.</li>
+</ul>
+</details>
+
+<details>
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Xe đi trên trục $Ox$ từ $x_1 = 15\ \text{km}$ đến $x_2 = 5\ \text{km}$, không đổi chiều. Tìm $d$ và $s$. <em>($d = -10\ \text{km}$; $s = 10\ \text{km}$)</em></li>
+<li><strong>⭐⭐</strong> Chạy $1{,}5$ vòng quanh sân tròn bán kính $50\ \text{m}$. Tìm $s$ và độ lớn $d$. <em>($s = 150\pi \approx 471\ \text{m}$; $d = 100\ \text{m}$ — bằng đường kính)</em></li>
+<li><strong>⭐⭐⭐</strong> Có khi nào độ lớn độ dịch chuyển <strong>lớn hơn</strong> quãng đường không? Lập luận. <em>(Không: đoạn thẳng là đường ngắn nhất nối hai điểm, nên $d \leq s$; dấu bằng khi thẳng, không đổi chiều.)</em></li>
+</ul>
+</details>
+
+<div>
+<p>✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Chất điểm</strong>: nhỏ so với đường đi · giữ khối lượng.</li>
+<li><strong>Hệ quy chiếu</strong>: vật mốc + trục toạ độ + đồng hồ.</li>
+<li><strong>Độ dịch chuyển</strong>: vectơ · đầu → cuối · $d = x_2 - x_1$ có dấu.</li>
+<li><strong>Quãng đường</strong>: cộng dồn · không âm · $d \leq s$.</li>
+<li>$d = s$ <strong>chỉ khi</strong> thẳng, không đổi chiều.</li>
+<li>Hai đoạn vuông góc: Pi-ta-go, không cộng.</li>
+<li>$v_{tb} = s/t$ dùng quãng đường.</li>
+<li>Đọc đề: gạch "quay lại", "rẽ", "vòng" — dấu hiệu $d \neq s$.</li>
+</ul>
+</div>
