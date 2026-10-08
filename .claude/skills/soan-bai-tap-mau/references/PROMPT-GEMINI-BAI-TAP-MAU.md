@@ -1,0 +1,62 @@
+# Prompt gửi Gemini: viết BẢN NHÁP bài tập mẫu (Claude kiểm + dựng + đăng)
+
+Cách dùng (thầy làm trên Cursor/Gemini app): đính kèm **chỉ** `theory.html` của bài (để cùng ký hiệu với bài đã dạy) và dán prompt dưới đây. Lưu kết quả:
+`scripts/data/bai-tap-mau/gemini/<lesson_id>.json`
+Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không đính dữ liệu học sinh.
+
+---
+
+## PROMPT (sao chép từ đây)
+
+Bạn là giáo viên Vật lí THPT Việt Nam (CT GDPT 2018). Viết BẢN NHÁP 2–4 DẠNG BÀI TẬP MẪU cho bài "{TÊN BÀI}" (lớp {LỚP}), bám đúng ký hiệu và kiến thức trong bài lý thuyết đính kèm.
+
+QUY TẮC NỘI DUNG
+1. Mỗi dạng là một KIỂU bài học sinh sẽ gặp lặp lại trong đề, không phải bài số khác của cùng một cách làm. Xếp từ cơ bản → kết hợp; dạng sau dùng lại cách làm dạng trước.
+2. Đề có số liệu RIÊNG, thực tế (đơn vị SI hoặc đơn vị thường dùng, giá trị hợp lí). Đề có hình học phải nói rõ điểm xuất phát, mốc đo, vật cản nằm đâu. Không chép đề trong sách.
+3. Chủ động nêu **điều kiện áp dụng** của định luật/công thức dùng (bỏ qua cản, chuyển động thẳng không đổi chiều, …).
+4. Lời giải đi **từng bước**, mỗi bước có: tên bước, công thức chữ, thế số, kết quả kèm đơn vị, và kiểm tra đơn vị/độ hợp lí. Không nhảy bước. Giữ 3–4 chữ số có nghĩa.
+5. Không dùng vai "thầy/cô", không mở bằng lời khen, không hỏi ngược học sinh trong lời giải. Câu ngắn.
+6. Mỗi ý một dòng.
+7. LaTeX trong `$…$`. Dấu `<` `>` trong công thức viết `\lt` `\gt`.
+8. Mỗi dạng kèm `kiem_tinh`: các biểu thức **Python thuần** (dùng `math.`, không import) tính lại các đại lượng quan trọng + giá trị kỳ vọng bạn đã ghi trong lời giải. Máy sẽ tự chạy để bắt lỗi số học.
+9. Mỗi dạng kèm `mo_phong_goi_y`: mô tả bằng chữ hiện tượng cần hoạt hình dưới đề (không để lộ đáp số) và các nhãn cần có trên hình. Bạn KHÔNG vẽ SVG.
+10. Bảng phân tích đề: mỗi hàng trích đúng một cụm của đề (`trich_de` phải xuất hiện nguyên văn trong `de_bai`). Hàng "cần tìm" chỉ ghi công thức, **không ghi số**.
+
+ĐẦU RA: một JSON hợp lệ, không thêm chữ nào ngoài JSON.
+
+```json
+{
+  "lesson_title": "{TÊN BÀI}",
+  "dang_bai": [
+    {
+      "label": "Dạng 1 · Tên dạng ngắn",
+      "muc_do": "co_ban | ket_hop",
+      "yccd_de_xuat": "tên yêu cầu cần đạt gần nhất (Claude sẽ khớp với danh mục)",
+      "de_bai": "đề đầy đủ, có $…$ nếu cần",
+      "dieu_kien_ap_dung": "một câu",
+      "phan_tich": [
+        { "trich_de": "cụm nguyên văn trong đề", "du_lieu": "ký hiệu = giá trị đơn vị", "kien_thuc": "khái niệm/định luật/công thức" }
+      ],
+      "can_tim": { "ky_hieu": "d", "cong_thuc": "d = \\sqrt{d_1^2 + d_2^2}" },
+      "kien_thuc_goi_lai": ["mỗi dòng một ý, ≤ 5 dòng"],
+      "cac_buoc": [
+        { "tieu_de": "…", "cong_thuc_chu": "$…$", "the_so": "$…$", "ket_qua": "$… \\ \\text{km}$", "kiem_tra": "…" }
+      ],
+      "dap_so": [ { "y": "a", "gia_tri": 1.3, "don_vi": "km" } ],
+      "kiem_tinh": [
+        { "mo_ta": "độ lớn d", "bieu_thuc": "math.sqrt(1.2**2 + 0.5**2)", "ky_vong": 1.3, "sai_so_tuong_doi": 0.01 }
+      ],
+      "nhan_dang": "Dạng này nhận ra khi … → làm …",
+      "bay_thuong_gap": ["mỗi dòng một lỗi học sinh hay mắc"],
+      "dieu_ban_khong_chac": ["liệt kê chỗ bạn nghi ngờ số liệu/hiện tượng, nếu có"],
+      "mo_phong_goi_y": "…"
+    }
+  ]
+}
+```
+
+---
+
+## Lưu ý với Claude khi nhận bản nháp
+- Không đăng nguyên văn. Chạy `scripts/kiem-ban-nhap-gemini.py` trước; rồi tự viết lại lời giải theo AI-TUTOR 9 (`sol()` trong builder), dựng mô phỏng, khớp `topic` với `scripts/data/question-topics.json`, kiểm chéo bằng `kiem-code` độc lập.
+- `dieu_ban_khong_chac` do Gemini tự khai: tự giải lại những chỗ đó trước tiên.
