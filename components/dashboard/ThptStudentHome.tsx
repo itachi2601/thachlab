@@ -339,12 +339,12 @@ export default function ThptStudentHome({
         ? "Bài kiểm tra gần đây bị ghi nhận rời màn hình nhiều lần — trợ giảng sẽ kiểm tra lại kiến thức của em."
         : "Điểm kiểm tra đang thấp — trợ giảng sẽ liên hệ sắp lịch phụ đạo."
       : null;
-  const showToday = attentionReady && (Boolean(todayNote) || primaryStep !== null || alertText !== null);
+  const showToday = attentionReady && (primaryStep !== null || alertText !== null);
 
   // Chấm đỏ ở nút "Hôm nay" của thanh đáy: chỉ cập nhật khi đã tải đủ dữ liệu (tránh chớp tắt).
   useEffect(() => {
-    if (attentionReady) setTodayBadge(studentId, showToday || homeworkNotes.length > 0);
-  }, [attentionReady, showToday, homeworkNotes.length, studentId]);
+    if (attentionReady) setTodayBadge(studentId, showToday || homeworkNotes.length > 0 || Boolean(todayNote));
+  }, [attentionReady, showToday, homeworkNotes.length, todayNote, studentId]);
 
   const liveWindows = liveExitWindows(openWindows, needs, nowMs);
   const showTutoring = needs.length > 0 || slots.length > 0 || liveWindows.length > 0;
@@ -431,7 +431,7 @@ export default function ThptStudentHome({
       {/* Mục 1 — MỘT thẻ việc hôm nay (N4, B2, L5): thay cho NextStepsCard + khối "Việc cần làm" + dòng gợi ý ở thẻ chuỗi ngày (7/10/2026) */}
       {showToday && (
         <TodayCard
-          note={todayNote}
+          rank={rank}
           primary={primaryStep}
           secondary={secondarySteps}
           alertText={alertText}
@@ -449,6 +449,15 @@ export default function ThptStudentHome({
         <Section icon={CalendarClock} title="Bài tập về nhà">
           <div className="mt-3 space-y-2">
             {homeworkNotes.map((item) => <AnnouncementNote key={item.id} item={item} />)}
+          </div>
+        </Section>
+      )}
+
+      {/* Ghi chú chung của GV cho cả lớp: hạ xuống dưới việc cá nhân (thầy chốt 8/10/2026) */}
+      {todayNote && (
+        <Section icon={Megaphone} title="Thầy nhắn">
+          <div className="mt-3">
+            <AnnouncementNote item={todayNote} />
           </div>
         </Section>
       )}
