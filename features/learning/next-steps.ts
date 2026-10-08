@@ -2,7 +2,7 @@
 // (tutoring_needs, điểm bài làm, tiến độ bài). Không có RPC/migration mới. Xem docs/ROADMAP.md, Giai đoạn 2.
 
 /** "assigned" không do rankNextSteps sinh — trang chủ tự thêm bài kiểm tra/BTVN được giao lên trước. */
-export type NextStepKind = "assigned" | "unlock" | "retry" | "lesson" | "review";
+export type NextStepKind = "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
@@ -25,14 +25,18 @@ export interface NextStepInput {
   needAvailableAt: Date | null;
   retryExam: { examId: number; examTitle: string; score: number } | null;
   nextLesson: { id: number; chapterId: number; title: string; chapterTitle?: string } | null;
+  /** Kỹ năng (YCCĐ) yếu nhất từ get_my_weakest_topics — chỉ dùng khi em không có chủ đề phụ đạo (một việc sửa lỗi mỗi lần). */
+  weak?: { topicId: number; topicName: string; lessonId: number; chapterId: number; pct: number } | null;
+  /** Bài đã học xong gần nhất — việc "ôn lại cách quãng" khi hết việc khác (thay cho dòng "chọn một bài bất kỳ"). */
+  reviewLesson?: { id: number; chapterId: number; title: string } | null;
 }
 
 /** Điểm tốt nhất của đề dưới ngưỡng này mới gợi ý làm lại. */
 export const RETRY_BELOW_SCORE = 6.5;
 
 /**
- * Tối đa 3 việc, đúng thứ tự: mở khoá chủ đề phụ đạo → làm lại đề điểm thấp → học bài kế.
- * Chỉ MỘT chủ đề phụ đạo được đưa ra mỗi lần (em yếu không thấy toàn việc sửa lỗi); "học bài kế" luôn
+ * Tối đa 3 việc, đúng thứ tự: mở khoá chủ đề phụ đạo (hoặc, nếu không có, luyện kỹ năng yếu nhất) → làm lại đề điểm thấp
+ * → học bài kế. Chỉ MỘT việc sửa lỗi được đưa ra mỗi lần (em yếu không thấy toàn việc sửa lỗi); "học bài kế" luôn
  * giữ chỗ khi còn bài để mỗi ngày có ít nhất một việc dễ thắng. Chủ đề đang chờ giãn cách bị đẩy xuống cuối.
  */
 export function rankNextSteps(input: NextStepInput): NextStep[] {
@@ -50,6 +54,17 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     };
     if (input.needAvailableAt) locked = { ...step, lockedUntil: input.needAvailableAt };
     else steps.push(step);
+  }
+
+  if (!input.need && input.weak) {
+    steps.push({
+      kind: "weak",
+      key: `weak-${input.weak.topicId}`,
+      action: "Luyện kỹ năng yếu",
+      title: input.weak.topicName,
+      hint: `Đang đúng ${input.weak.pct}% — luyện nhanh 10 câu ở cuối bài để nâng mức`,
+      href: `/lop-hoc/bai?id=${input.weak.lessonId}&chapter=${input.weak.chapterId}`,
+    });
   }
 
   if (input.retryExam && input.retryExam.score < RETRY_BELOW_SCORE) {
@@ -76,14 +91,26 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
 
   // Không còn việc làm được ngay → "Ôn lại" giữ chỗ nút nổi; chủ đề đang chờ giãn cách (mờ) xếp sau nó.
   if (steps.length === 0) {
-    steps.push({
-      kind: "review",
-      key: "review",
-      action: "Ôn lại",
-      title: "Các bài đã học",
-      hint: "Chọn một bài bất kỳ để luyện thêm",
-      href: "/lop-hoc",
-    });
+    const r = input.reviewLesson;
+    steps.push(
+      r
+        ? {
+            kind: "review",
+            key: `review-${r.id}`,
+            action: "Ôn lại",
+            title: r.title,
+            hint: "Đọc lại, làm lại phần kiểm tra nhanh và thử câu thử thách ⭐⭐⭐ — ôn cách vài ngày giúp nhớ lâu",
+            href: `/lop-hoc/bai?id=${r.id}&chapter=${r.chapterId}`,
+          }
+        : {
+            kind: "review",
+            key: "review",
+            action: "Ôn lại",
+            title: "Các bài đã học",
+            hint: "Chọn một bài bất kỳ để luyện thêm",
+            href: "/lop-hoc",
+          },
+    );
   }
   if (locked) steps.push(locked);
   return steps.slice(0, 3);

@@ -2,6 +2,8 @@
 
 import { Flame, Snowflake } from "lucide-react";
 import { type RankStatus } from "@/features/rank/types";
+import type { StreakDay } from "@/services/rank";
+import StreakWeek from "@/components/rank/StreakWeek";
 
 /**
  * Chuỗi ngày kiểu Duolingo/Snapchat: ngọn lửa sáng khi hôm nay đã giữ chuỗi
@@ -12,11 +14,14 @@ import { type RankStatus } from "@/features/rank/types";
 export default function DailyStreakCard({
   status,
   suggestion,
+  days,
   className = "",
 }: {
   status: RankStatus | null | undefined;
   /** Gợi ý việc nên làm hôm nay, hiện khi chưa giữ chuỗi. */
   suggestion?: string | null;
+  /** 7 ngày gần nhất; null/undefined (RPC chưa chạy) → không vẽ dải. */
+  days?: StreakDay[] | null;
   className?: string;
 }) {
   if (status === undefined) {
@@ -29,12 +34,13 @@ export default function DailyStreakCard({
 
   return (
     <div
-      className={`flex min-w-0 items-center gap-3 rounded-2xl border p-4 sm:p-5 ${className}`}
+      className={`min-w-0 rounded-2xl border p-4 sm:p-5 ${className}`}
       style={{
         borderColor: today_done ? "#f59e0b55" : "rgba(255,255,255,.1)",
         background: today_done ? "linear-gradient(135deg, #f59e0b26 0%, rgba(11,16,32,0) 60%)" : undefined,
       }}
     >
+      <div className="flex min-w-0 items-center gap-3">
       <span
         className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${
           today_done ? "bg-amber-500/20" : "bg-white/5"
@@ -66,6 +72,8 @@ export default function DailyStreakCard({
           </p>
         )}
       </div>
+      </div>
+      {days && days.length > 0 && <StreakWeek days={days} className="mt-3" />}
     </div>
   );
 }

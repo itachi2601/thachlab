@@ -16,4 +16,11 @@ assert.equal(cooling[2].lockedUntil, wait);
 assert.deepEqual(kinds(rankNextSteps({ need: null, needAvailableAt: null, retryExam: { ...retry, score: 8 }, nextLesson: lesson })), ["lesson"]);
 // hết việc → ôn lại
 assert.deepEqual(kinds(rankNextSteps({ need: null, needAvailableAt: null, retryExam: null, nextLesson: null })), ["review"]);
+// kỹ năng yếu: thay chủ đề phụ đạo khi không có; không chen khi đã có phụ đạo; vẫn giữ chỗ cho bài kế
+const weak = { topicId: 5, topicName: "Định luật II", lessonId: 4, chapterId: 2, pct: 40 };
+assert.deepEqual(kinds(rankNextSteps({ need: null, needAvailableAt: null, retryExam: retry, nextLesson: lesson, weak })), ["weak", "retry", "lesson"]);
+assert.deepEqual(kinds(rankNextSteps({ need, needAvailableAt: null, retryExam: null, nextLesson: lesson, weak })), ["unlock", "lesson"]);
+// hết việc có bài đã học → ôn lại đúng bài, trỏ vào bài
+const review = rankNextSteps({ need: null, needAvailableAt: null, retryExam: null, nextLesson: null, reviewLesson: { id: 2, chapterId: 1, title: "Bài 2" } });
+assert.equal(review[0].href, "/lop-hoc/bai?id=2&chapter=1");
 console.log("next-steps: OK");

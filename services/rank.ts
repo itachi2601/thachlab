@@ -39,6 +39,27 @@ export async function fetchMyRankStatus(): Promise<RankStatus | null> {
   return isStudentPreview() ? unlockStatus(status) : status;
 }
 
+/** Một ô của dải chuỗi 7 ngày: done = đã giữ chuỗi, frozen = ngày trống được đóng băng, none = chưa làm. */
+export interface StreakDay {
+  d: string;
+  state: "done" | "frozen" | "none";
+}
+
+/**
+ * 7 ngày gần nhất (cũ → mới, cuối là hôm nay) cho dải chuỗi. RPC rank_my_streak_days thuộc migration
+ * 20261008120000; RPC chưa chạy / lỗi → null để UI ẩn dải, không báo lỗi.
+ */
+export async function fetchMyStreakDays(): Promise<StreakDay[] | null> {
+  try {
+    const { data, error } = await getSupabase().rpc("rank_my_streak_days", { p_days: 7 });
+    if (error) return null;
+    const days = (data as { days?: StreakDay[] } | null)?.days;
+    return Array.isArray(days) && days.length > 0 ? days : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function fetchRankStatusOf(studentId: string): Promise<RankStatus | null> {
   const { data, error } = await getSupabase().rpc("rank_status_of", { p_student: studentId });
   if (error) throw error;
