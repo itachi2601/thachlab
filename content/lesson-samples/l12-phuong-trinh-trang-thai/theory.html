@@ -11,7 +11,7 @@
 
 <h3>I. Mở bài: kim đồng hồ nhích lên giữa trưa nắng</h3>
 
-<p>Chiếc bình khí nén mini dùng bơm xe đạp được để ngoài sân. Không ai bơm thêm khí, vậy mà giữa trưa kim đồng hồ nhích từ <strong>5,0 bar</strong> lên hơn <strong>5,3 bar</strong>.</p>
+<p>Chiếc bình khí nén mini dùng bơm xe đạp được để ngoài sân. Không ai bơm thêm khí, vậy mà giữa trưa kim đồng hồ nhích từ <strong>5,0 bar</strong> lên hơn <strong>5,3 bar</strong> (1 bar = $10^5$ Pa).</p>
 
 <p>Bình kín, lượng khí không đổi, thể tích bình cũng không đổi. Vậy cái gì đã đẩy kim lên?</p>
 
@@ -22,7 +22,7 @@
 <input type="radio" name="tl8-q0" id="tl8-q0a"><label for="tl8-q0a" class="tl-opt tl-no">A. $47/27 \approx 1{,}74$ lần</label>
 <input type="radio" name="tl8-q0" id="tl8-q0b"><label for="tl8-q0b" class="tl-opt tl-ok">B. $320/300 \approx 1{,}07$ lần</label>
 <input type="radio" name="tl8-q0" id="tl8-q0c"><label for="tl8-q0c" class="tl-opt tl-no">C. Không tăng, vì thể tích bình không đổi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bình kín thì áp suất tỉ lệ thuận với <em>nhiệt độ tuyệt đối</em>: $5{,}0 \times \dfrac{320}{300} \approx 5{,}3$ bar — khớp đúng kim đồng hồ.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lượng khí và thể tích bình không đổi thì áp suất tỉ lệ thuận với <em>nhiệt độ tuyệt đối</em>: $5{,}0 \times \dfrac{320}{300} \approx 5{,}3$ bar — khớp đúng kim đồng hồ.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là chỗ sai phổ biến nhất của bài: lấy tỉ số hai nhiệt độ <em>Celsius</em>. Thang Celsius có gốc 0 không thật, nên $47/27$ vô nghĩa. Phải đổi ra Kelvin trước: $300\ \text{K} \to 320\ \text{K}$, rồi mới chia. Chọn lại nhé.</p></div>
 </div>
 </div>
@@ -39,16 +39,20 @@
 <li>Một lượng khí xác định được mô tả bằng <strong>ba thông số trạng thái</strong>: áp suất $p$, thể tích $V$, nhiệt độ tuyệt đối $T$.</li>
 <li>Khí đi từ trạng thái 1 sang trạng thái 2 thì tỉ số $pV/T$ <em>không đổi</em>.</li>
 <li>Hằng số ấy chỉ phụ thuộc <strong>lượng khí</strong> đang xét, không phụ thuộc cách biến đổi.</li>
-<li>Đơn vị: $p$ (Pa), $V$ (m³ hoặc lít), $T$ (K). Đổi $t = 27\ ^\circ\text{C} \to T = 300\ \text{K}$ trước khi bấm máy.</li>
+<li>Đơn vị: $T$ luôn tính bằng kelvin, $T\ (\text{K}) = t\ (^\circ\text{C}) + 273$. Khi lập tỉ số hai trạng thái, $p$ và $V$ chỉ cần cùng đơn vị ở hai vế (lít, cm³ đều được).</li>
 </ul>
 
 <p>$$\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} = \text{hằng số}$$</p>
 
-<p>Đây là <strong>phương trình trạng thái của khí lí tưởng</strong>, còn gọi là phương trình Clapeyron. Mẹo nhớ: <strong>ba chữ, một hằng số</strong> — $p$, $V$, $T$ đi liền nhau, $T$ luôn ở dưới mẫu.</p>
+<p>Đây là <strong>phương trình trạng thái của khí lí tưởng</strong>, nối hai trạng thái của cùng một lượng khí. Đừng nhầm với phương trình Clapeyron – Mendeleev $pV = nRT$ ở mục 4: chỉ xét một trạng thái và cần biết số mol.</p>
 
 <details class="tl-details">
 <summary>🧠 Phương trình này từ đâu ra?</summary>
 <p><strong>Kết hợp định luật Boyle (giữ $T$ không đổi) với định luật Charles (giữ $p$ không đổi)</strong> cho ra hệ thức chung cho cả ba thông số $p$, $V$, $T$ — đó chính là phương trình trạng thái. Vì thế nó dùng được cho mọi quá trình của một lượng khí xác định, còn ba định luật chỉ là ba trường hợp riêng.</p>
+<p>Đi qua trạng thái trung gian 1' có áp suất $p_2$, nhiệt độ $T_1$, thể tích $V'$:<br>
+1 → 1' đẳng nhiệt: $p_1V_1 = p_2V'$.<br>
+1' → 2 đẳng áp: $\dfrac{V'}{T_1} = \dfrac{V_2}{T_2}$, suy ra $V' = \dfrac{V_2T_1}{T_2}$.<br>
+Thay vào: $p_1V_1 = \dfrac{p_2V_2T_1}{T_2}$, tức $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$.</p>
 </details>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-pttrangthai-01">
@@ -82,12 +86,10 @@
 <li><strong>Quá trình đẳng tích</strong> là quá trình biến đổi trạng thái khi <strong>thể tích không đổi</strong>.</li>
 <li>Trong quá trình đẳng tích của một lượng khí nhất định, <strong>áp suất tỉ lệ thuận với nhiệt độ tuyệt đối</strong>.</li>
 <li>Hệ thức: $p_1/T_1 = p_2/T_2$, tức $p/T = \text{hằng số}$.</li>
-<li>Hằng số này phụ thuộc vào <strong>lượng khí</strong> và <strong>thể tích</strong> của bình chứa.</li>
+<li>Hằng số này phụ thuộc vào <strong>lượng khí</strong> và <strong>thể tích</strong> của bình chứa — khác hằng số $pV/T$ ở mục 1, vốn chỉ phụ thuộc lượng khí.</li>
 </ul>
 
 <p>$$\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$$</p>
-
-<p>Ví dụ: khí trơ trong bóng đèn dây tóc; bình gas để ngoài nắng; lốp xe vừa chạy đường dài.</p>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-pttrangthai-02">
 <p class="tl-label">🔬 Thí nghiệm đo: bình kín ngâm nước ở năm nhiệt độ</p>
@@ -114,7 +116,7 @@
 </div>
 
 <details class="tl-details">
-<summary>🤏 Câu hỏi về sai số: vì sao cột $p/T$ không giống nhau tuyệt đối?</summary>
+<summary>🤏 Câu hỏi về sai số: đo thật thì vì sao cột $p/T$ sẽ không bằng nhau tuyệt đối?</summary>
 <p>Cột $p/T$ chỉ đúng 0,366 vì số liệu đã làm tròn. Đo thật, cảm biến áp suất sai khoảng <strong>±1 kPa</strong> (1% ở mức 100 kPa) còn nhiệt kế sai <strong>±0,5 °C</strong> (0,17% ở 300 K) — nên $p/T$ được phép lệch tới cỡ 1%, tức khoảng 0,004 kPa/K. Ba nguồn lệch khác: bình chưa kịp đạt nhiệt độ của nước đã đọc số, bình rò khí, và ở gần 100 °C khí thực không còn lí tưởng hoàn hảo. Ghi kết quả đo bao giờ cũng phải kèm sai số.</p>
 </details>
 
@@ -173,9 +175,9 @@
 
 <ul>
 <li>Hằng số $pV/T$ của một lượng khí bằng $nR$, với $n$ là số mol khí.</li>
-<li>Với $n$ mol khí: $pV = nRT$, trong đó $R = 8{,}31\ \text{J/(mol·K)}$ là hằng số khí.</li>
-<li>Số mol: $n = \dfrac{m}{M}$ — $m$ là khối lượng khí, $M$ là khối lượng mol.</li>
-<li>Ở điều kiện tiêu chuẩn ($0\ ^\circ\text{C}$, 1 atm): 1 mol khí chiếm <strong>22,4 lít</strong>. Ở điều kiện chuẩn ($25\ ^\circ\text{C}$, 1 bar): <strong>24,79 lít</strong>.</li>
+<li>Với $n$ mol khí: $pV = nRT$, trong đó $R = 8{,}31\ \text{J/(mol·K)}$ là hằng số khí. Dùng $R$ này thì bắt buộc $p$ tính bằng Pa, $V$ tính bằng m³.</li>
+<li>Số mol: $n = \dfrac{m}{M}$ — $m$ là khối lượng khí, $M$ là khối lượng mol. Hai đại lượng phải cùng đơn vị (cùng g hoặc cùng kg).</li>
+<li>Điều kiện <strong>tiêu chuẩn</strong> ($0\ ^\circ\text{C}$, 1 atm $\approx 1{,}013.10^5$ Pa): 1 mol khí chiếm <strong>22,4 lít</strong>.<br>Điều kiện <strong>chuẩn</strong> ($25\ ^\circ\text{C}$, 1 bar $= 10^5$ Pa): <strong>24,79 lít</strong>.</li>
 </ul>
 
 <p>$$pV = nRT$$</p>
@@ -183,6 +185,13 @@
 <details class="tl-details">
 <summary>🧠 Vì sao hai bình giống nhau lại có hằng số $pV/T$ khác nhau?</summary>
 <p>Vì hằng số ấy bằng $nR$, mà $n$ là <em>số mol khí trong bình</em>. Hai bình cùng dung tích nhưng một bình nạp nhiều khí hơn thì $n$ lớn hơn, hằng số lớn hơn. Muốn áp dụng phương trình trạng thái cho hai trạng thái, điều kiện bắt buộc là <strong>lượng khí không đổi</strong>.</p>
+</details>
+
+<details class="tl-details">
+<summary>🧮 Ví dụ: 32 g khí oxygen chiếm bao nhiêu lít ở $27\ ^\circ\text{C}$, $1{,}0.10^5\ \text{Pa}$?</summary>
+<p>Số mol: $n = \dfrac{m}{M} = \dfrac{32\ \text{g}}{32\ \text{g/mol}} = 1\ \text{mol}$ ($m$ và $M$ cùng dùng gam).<br>
+Đổi nhiệt độ: $T = 27 + 273 = 300\ \text{K}$.<br>
+$V = \dfrac{nRT}{p} = \dfrac{1 \times 8{,}31 \times 300}{1{,}0.10^5} \approx 2{,}49.10^{-2}\ \text{m}^3 \approx 24{,}9$ lít.</p>
 </details>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
@@ -232,7 +241,7 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 5.</strong> Xả bớt khí cho vơi bình, rồi đem phơi cho nóng lên. Có dùng được $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$ cho trạng thái trước và sau không?</p>
+<p><strong>Câu 5.</strong> Xả bớt khí cho vơi bình, rồi đem phơi cho nóng lên. Có dùng được $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$ cho trạng thái trước khi xả khí và trạng thái sau khi phơi nắng không?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q5" id="tl8-q5a"><label for="tl8-q5a" class="tl-opt tl-no">A. Có, vì bình vẫn kín và thể tích không đổi</label>
 <input type="radio" name="tl8-q5" id="tl8-q5b"><label for="tl8-q5b" class="tl-opt tl-no">B. Có, vì $pV/T$ là một hằng số chung cho mọi bình khí</label>
@@ -277,7 +286,7 @@
 
 <details class="tl-details">
 <summary>1. Trạng thái của một lượng khí được xác định bởi những thông số nào? Viết phương trình trạng thái. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p><strong>Ba thông số: p, V, T.</strong> Phương trình trạng thái: $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} = \text{hằng số}$ — còn gọi là phương trình Clapeyron. Hằng số chỉ phụ thuộc lượng khí đang xét.</p>
+<p><strong>Ba thông số: p, V, T.</strong> Phương trình trạng thái: $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} = \text{hằng số}$. Hằng số chỉ phụ thuộc lượng khí đang xét.</p>
 </details>
 
 <details class="tl-details">
@@ -338,7 +347,7 @@
 <li>Đổi nhiệt độ ra Kelvin: $T_1 = 27 + 273 = 300\ \text{K}$, $T_2 = 87 + 273 = 360\ \text{K}$.</li>
 <li>Câu a: phương trình trạng thái $\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}$, suy ra $p_2 = p_1 \times \dfrac{V_1}{V_2} \times \dfrac{T_2}{T_1} = 1{,}0.10^5 \times 5 \times 1{,}2 = 6{,}0.10^5\ \text{Pa}$.</li>
 <li>Câu b: nhiệt độ không đổi nên dùng định luật Boyle: $p'_2 = p_1 \times \dfrac{V_1}{V_2} = 1{,}0.10^5 \times 5 = 5{,}0.10^5\ \text{Pa}$.</li>
-<li>Câu c: $n = \dfrac{pV}{RT} = \dfrac{6{,}0.10^5 \times 40.10^{-6}}{8{,}31 \times 360} = \dfrac{24}{2991{,}6} \approx 8{,}0.10^{-3}\ \text{mol}$.</li>
+<li>Câu c: $R = 8{,}31$ đòi đơn vị SI nên phải đổi $V_2 = 40\ \text{cm}^3 = 40.10^{-6}\ \text{m}^3$ (vì $1\ \text{cm}^3 = 10^{-6}\ \text{m}^3$). Câu a, b không cần đổi vì chỉ lấy tỉ số $V_1/V_2$.<br>$n = \dfrac{pV}{RT} = \dfrac{6{,}0.10^5 \times 40.10^{-6}}{8{,}31 \times 360} = \dfrac{24}{2991{,}6} \approx 8{,}0.10^{-3}\ \text{mol}$.</li>
 <li>Kiểm tra kết quả: $p_1V_1/T_1 = 1{,}0.10^5 \times 200/300 = 66\,667$ và $p_2V_2/T_2 = 6{,}0.10^5 \times 40/360 = 66\,667$ — bằng nhau, đúng; câu b cũng nhất quán ($5{,}0.10^5 \times 40/300 = 66\,667$). Nén nhanh làm khí nóng lên nên áp suất cao hơn nén chậm đúng $1{,}0.10^5\ \text{Pa}$.</li>
 </ol>
 </details>
@@ -358,7 +367,7 @@
 </div>
 
 <div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi quá trình</p>
+<p class="tl-label">✍️ Thử sức: quay lại bình khí nén ở đầu bài</p>
 <p><strong>Câu 7.</strong> Bình khí nén mini 4 lít để ngoài nắng: buổi sáng $27\ ^\circ\text{C}$, áp suất $5{,}0.10^5\ \text{Pa}$; giữa trưa $47\ ^\circ\text{C}$, thể tích bình không đổi. Áp suất giữa trưa là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q7" id="tl8-q7a"><label for="tl8-q7a" class="tl-opt tl-no">A. $8{,}7.10^5\ \text{Pa}$</label>
@@ -382,8 +391,8 @@
 <p class="tl-label">🎯 Thử thách phân tầng</p>
 
 <details class="tl-details">
-<summary>⭐ Cơ bản: bình kín chứa khí ở $27\ ^\circ\text{C}$, $p = 2{,}0.10^5\ \text{Pa}$. Nung lên $87\ ^\circ\text{C}$. Tính $p$.</summary>
-<p>Đẳng tích, với $T_1 = 300\ \text{K}$ và $T_2 = 360\ \text{K}$: $p_2 = 2{,}0.10^5 \times 360/300 = 2{,}4.10^5\ \text{Pa}$.</p>
+<summary>⭐ Cơ bản: xilanh có pittông chuyển động tự do (áp suất khí không đổi) chứa 3,0 lít khí ở $27\ ^\circ\text{C}$. Nung lên $127\ ^\circ\text{C}$. Tính thể tích khí.</summary>
+<p>Đẳng áp (định luật Charles), với $T_1 = 300\ \text{K}$ và $T_2 = 400\ \text{K}$: $V_2 = 3{,}0 \times 400/300 = 4{,}0$ lít.</p>
 </details>
 
 <details class="tl-details">
@@ -392,8 +401,10 @@
 </details>
 
 <details class="tl-details">
-<summary>⭐⭐⭐ Thách đấu: bình khí nén mini 4 lít có van an toàn mở ở $8{,}0.10^5\ \text{Pa}$. Buổi sáng $27\ ^\circ\text{C}$, áp suất $6{,}0.10^5\ \text{Pa}$. Nắng lên tới nhiệt độ nào thì van mở?</summary>
-<p>Van mở khi $p_2 = 8{,}0.10^5\ \text{Pa}$. Quá trình đẳng tích nên $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$, suy ra $T_2 = T_1 \times \dfrac{p_2}{p_1} = 300 \times \dfrac{8{,}0}{6{,}0} = 400\ \text{K}$, tức $t_2 = 400 - 273 = 127\ ^\circ\text{C}$. Kết luận: $127\ ^\circ\text{C}$ là <em>ngưỡng van an toàn mở</em> — biên thiết kế, không phải nhiệt độ nắng ngoài trời. Nắng thật chỉ làm khí nóng thêm vài chục độ, nhưng áp suất đã tăng theo đúng tỉ số Kelvin: chỉ cần nắng làm nhiệt độ khí nhích lên là áp suất nhích theo, nên van an toàn và chỗ râm là bắt buộc — và phải kiểm tra van trước mùa nắng.</p>
+<summary>⭐⭐⭐ Thách đấu: bình khí nén mini 4 lít có van an toàn mở ở $8{,}0.10^5\ \text{Pa}$. Buổi sáng $27\ ^\circ\text{C}$, áp suất $6{,}0.10^5\ \text{Pa}$. Khí trong bình nóng tới nhiệt độ nào thì van mở?</summary>
+<p>Van mở khi $p_2 = 8{,}0.10^5\ \text{Pa}$. Quá trình đẳng tích nên $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$, suy ra $T_2 = T_1 \times \dfrac{p_2}{p_1} = 300 \times \dfrac{8{,}0}{6{,}0} = 400\ \text{K}$, tức $t_2 = 400 - 273 = 127\ ^\circ\text{C}$.<br>
+Kết luận: van mở khi <em>khí trong bình</em> nóng tới $127\ ^\circ\text{C}$.<br>
+Nắng thường không đẩy khí tới mức đó, nhưng áp suất luôn tăng theo tỉ số Kelvin, nên vẫn phải để chỗ râm và kiểm tra van trước mùa nắng.</p>
 </details>
 </div>
 
@@ -406,6 +417,6 @@
 <li><strong>Ba định luật:</strong> giữ $T$ → Boyle · giữ $p$ → Charles · giữ $V$ → Gay-Lussac.</li>
 <li><strong>Clapeyron – Mendeleev:</strong> $pV = nRT$, $R = 8{,}31\ \text{J/(mol·K)}$, $n = m/M$.</li>
 <li><strong>Điều kiện áp dụng:</strong> một lượng khí xác định — không bơm thêm, không xì bớt.</li>
-<li><strong>Đọc đề:</strong> gặp chữ "bình kín", "thể tích không đổi" thì nghĩ ngay tới $p/T$; gặp °C thì đổi ra Kelvin trước khi chia.</li>
+<li><strong>Đọc đề:</strong> "kín" → lượng khí không đổi.<br>"Bình cứng, thể tích không đổi" → mới nghĩ tới $p/T$.<br>Gặp °C → đổi ra Kelvin trước khi chia.</li>
 </ul>
 </div>

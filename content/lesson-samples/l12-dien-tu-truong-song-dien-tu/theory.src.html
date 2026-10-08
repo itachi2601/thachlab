@@ -49,7 +49,7 @@
 <p class="tl-label">🔬 Thí nghiệm: nam châm rơi qua ống dây</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> nối ống dây với điện kế; thả rơi nam châm thẳng qua lòng ống, lần chậm rồi nhanh.</li>
-<li><strong>Quan sát:</strong> kim lệch khi nam châm <em>chuyển động</em>, lệch mạnh hơn khi thả nhanh, về 0 khi nam châm nằm yên.</li>
+<li><strong>Quan sát:</strong> kim lệch khi nam châm <em>chuyển động</em>, lệch mạnh hơn khi thả nhanh, về 0 khi giữ nam châm đứng yên trong lòng ống (từ trường vẫn có nhưng không đổi).</li>
 <li><strong>Rút ra:</strong> thứ gây ra điện trường trong dây là <strong>từ trường biến thiên</strong>, không phải từ trường mạnh.</li>
 </ol>
 </div>
@@ -71,7 +71,7 @@
 <p><strong>🔑 Tụ nạp xả · Dòng điện dịch · Từ trường khép kín</strong></p>
 
 <ul>
-<li>Khi tụ tích hoặc phóng điện, điện tích hai bản thay đổi nên giữa hai bản có <strong>điện trường biến thiên</strong> (cả độ lớn lẫn chiều).</li>
+<li>Khi tụ tích hoặc phóng điện, điện tích hai bản thay đổi nên giữa hai bản có <strong>điện trường biến thiên</strong>.</li>
 <li>Điện trường biến thiên ấy tương đương một dòng điện chạy qua tụ, gọi là <strong>dòng điện dịch</strong>.</li>
 <li>Dòng điện dịch gây ra <strong>từ trường</strong> có đường sức kín, bao quanh các đường sức điện.</li>
 </ul>
@@ -81,7 +81,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> mắc tụ $C = 1{,}0\ \mu\text{F}$ nối tiếp với đồng hồ vạn năng (thang dòng xoay chiều) vào máy phát tần số, giữ $U = 12\ \text{V}$; đọc dòng ở 50, 100, 200, 400, 800 Hz.</li>
 <li><strong>Quan sát:</strong> tần số càng lớn thì dòng càng mạnh; dòng chia cho tần số gần như không đổi.</li>
-<li><strong>Rút ra:</strong> giữa hai bản tụ là chất cách điện mà mạch vẫn có dòng — điện trường biến thiên ở đó chính là dòng điện dịch, và nó sinh ra từ trường.</li>
+<li><strong>Rút ra:</strong> giữa hai bản tụ là chất cách điện mà mạch vẫn có dòng — điện trường biến thiên ở đó đóng vai trò dòng điện dịch. Thí nghiệm chỉ đo dòng, còn việc dòng điện dịch sinh từ trường như dòng điện thường là kết luận của Maxwell.</li>
 </ol>
 </div>
 
@@ -100,7 +100,8 @@
 
 <details class="tl-details">
 <summary>🤏 Vì sao số đo luôn thấp hơn tính toán chừng 2–5%?</summary>
-<p>Tụ 1,0 μF có dung sai ±5%, đồng hồ có sai số ±(1% + 3 số cuối), dây nối cũng ăn bớt chút điện áp. Cột $I/f$ của bảng cho cả năm giá trị 0,072–0,074 mA/Hz — tỉ số gần như không đổi, đúng điều cần thấy: <strong>dòng qua tụ tỉ lệ với tần số</strong>. Lý thuyết $I = U \cdot 2\pi f C$ cho $U \cdot 2\pi C \approx 0{,}075\ \text{mA/Hz}$; số đo thấp hơn 2–5% (trung bình gần 3%) — nằm gọn trong dung sai của tụ.</p>
+<p>Tụ 1,0 μF có dung sai ±5%, đồng hồ có sai số ±(1% + 3 số cuối), dây nối cũng ăn bớt chút điện áp. Cột $I/f$ của bảng cho cả năm giá trị 0,072–0,074 mA/Hz — tỉ số gần như không đổi, đúng điều cần thấy: <strong>dòng qua tụ tỉ lệ với tần số</strong>.</p>
+<p>Đối chiếu lý thuyết (công thức dòng qua tụ trong mạch xoay chiều, chỉ để so, không cần nhớ): $I = U \cdot 2\pi f C$.<br>Thay số: $U \cdot 2\pi C = 12 \cdot 2\pi \cdot 10^{-6} \approx 7{,}5 \cdot 10^{-5}$ A/Hz $= 0{,}075\ \text{mA/Hz}$.<br>Số đo thấp hơn 2–5% (trung bình gần 3%) — nằm gọn trong dung sai của tụ.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -124,6 +125,7 @@
 <ul>
 <li><strong>Kết luận Maxwell:</strong> từ trường biến thiên sinh điện trường biến thiên; điện trường biến thiên cũng sinh từ trường biến thiên.</li>
 <li>Hai trường đó là hai mặt của một trường thống nhất — <strong>điện từ trường</strong> — cùng tồn tại trong không gian và chuyển hoá qua lại lẫn nhau.</li>
+<li>Điện trường tĩnh hoặc từ trường không đổi đứng riêng thì <strong>không phải</strong> điện từ trường.</li>
 <li>Tại mỗi điểm của điện từ trường, $\vec{E}$ <strong>luôn vuông góc với</strong> $\vec{B}$.</li>
 <li><strong>Ví dụ:</strong> giữa hai bản tụ ở thí nghiệm trên không có điện tích nào mà $\vec{E}$, $\vec{B}$ vẫn cùng biến thiên.</li>
 </ul>
@@ -137,7 +139,7 @@
 <input type="radio" name="tl127-q3" id="tl127-q3c"><label for="tl127-q3c" class="tl-opt tl-no">C. Từ trường của nam châm vĩnh cửu</label>
 <input type="radio" name="tl127-q3" id="tl127-q3d"><label for="tl127-q3d" class="tl-opt tl-no">D. Hai trường riêng biệt, không liên quan nhau</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện từ trường chỉ có khi cả hai trường đều <em>biến thiên</em>; chúng là hai mặt của một trường thống nhất và tại mỗi điểm thì vuông góc nhau.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai lỗi hay gặp nằm ở C và D: điện từ trường <em>không</em> tách rời thành hai trường riêng, và nó đòi hỏi sự <em>biến thiên</em> — nam châm vĩnh cửu chỉ có từ trường không đổi, còn điện trường tĩnh quanh điện tích đứng yên cũng không phải điện từ trường. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai lỗi hay gặp nằm ở C và D: điện từ trường <em>không</em> tách rời thành hai trường riêng, và nó đòi hỏi sự <em>biến thiên</em> — nam châm vĩnh cửu chỉ có từ trường không đổi. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -150,6 +152,7 @@
 <li>Sóng điện từ là <strong>sóng ngang</strong>: $\vec{E} \perp \vec{B}$ và cả hai vuông góc phương truyền.</li>
 <li>$\vec{E}$ và $\vec{B}$ biến thiên điều hoà, luôn <strong>cùng pha</strong> nhau.</li>
 <li>Truyền trong chân không với $c = 3 \cdot 10^8$ m/s; $\lambda = cT = \frac{c}{f}$ ($T$ là chu kì, $f$ là tần số).</li>
+<li>Trong môi trường khác, sóng chậm hơn ($v \lt c$) nên dùng $\lambda = \frac{v}{f}$.</li>
 <li><strong>Mang năng lượng</strong>: tần số càng cao thì năng lượng càng lớn.</li>
 <li>Tuân theo quy luật truyền thẳng, phản xạ, khúc xạ, giao thoa, nhiễu xạ như sóng cơ.</li>
 </ul>
@@ -164,7 +167,7 @@
 <input type="radio" name="tl127-q4" id="tl127-q4b"><label for="tl127-q4b" class="tl-opt tl-no">B. Sóng không truyền được trong chân không</label>
 <input type="radio" name="tl127-q4" id="tl127-q4c"><label for="tl127-q4c" class="tl-opt tl-ok">C. $\vec{E}$ vuông góc $\vec{B}$, cả hai vuông góc phương truyền và cùng pha</label>
 <input type="radio" name="tl127-q4" id="tl127-q4d"><label for="tl127-q4d" class="tl-opt tl-no">D. Hai vectơ lệch pha $\pi/2$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ba đặc điểm đi liền nhau: sóng ngang, $\vec{E} \perp \vec{B}$, và $\vec{E}$, $\vec{B}$ cùng pha. Em giải thích được cho bạn ngồi cạnh vì sao "cùng pha" lại quan trọng chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ba đặc điểm đi liền nhau: sóng ngang, $\vec{E} \perp \vec{B}$, và $\vec{E}$, $\vec{B}$ cùng pha.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Sóng điện từ là <em>sóng ngang</em> nên $\vec{E}$ và $\vec{B}$ không thể cùng nằm trên phương truyền; chúng cũng <em>không</em> lệch pha $\pi/2$ mà cùng đạt cực đại và cùng triệt tiêu. Còn chân không thì sóng điện từ truyền được — ánh sáng Mặt Trời chính là bằng chứng. Chọn lại nhé.</p></div>
 </div>
 </div>
@@ -195,16 +198,18 @@
 </tbody>
 </table>
 
+<p><small>Đổi đơn vị:<br>$1\ \text{mm} = 1000\ \mu\text{m} = 10^{-3}$ m<br>$1\ \mu\text{m} = 1000\ \text{nm} = 10^{-6}$ m<br>$1\ \text{nm} = 10^{-9}$ m</small></p>
+
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Cách sắp xếp nào đúng theo bước sóng giảm dần?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl127-q5" id="tl127-q5a"><label for="tl127-q5a" class="tl-opt tl-no">A. Gamma → tia X → tử ngoại → hồng ngoại → vô tuyến</label>
-<input type="radio" name="tl127-q5" id="tl127-q5b"><label for="tl127-q5b" class="tl-opt tl-no">B. Vô tuyến → tử ngoại → nhìn thấy → hồng ngoại → tia X</label>
-<input type="radio" name="tl127-q5" id="tl127-q5c"><label for="tl127-q5c" class="tl-opt tl-no">C. Nhìn thấy → vô tuyến → tia X → gamma → hồng ngoại</label>
+<input type="radio" name="tl127-q5" id="tl127-q5a"><label for="tl127-q5a" class="tl-opt tl-no">A. Gamma → tia X → tử ngoại → nhìn thấy → hồng ngoại → vô tuyến</label>
+<input type="radio" name="tl127-q5" id="tl127-q5b"><label for="tl127-q5b" class="tl-opt tl-no">B. Vô tuyến → tử ngoại → nhìn thấy → hồng ngoại → tia X → gamma</label>
+<input type="radio" name="tl127-q5" id="tl127-q5c"><label for="tl127-q5c" class="tl-opt tl-no">C. Vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → gamma → tia X</label>
 <input type="radio" name="tl127-q5" id="tl127-q5d"><label for="tl127-q5d" class="tl-opt tl-ok">D. Vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → gamma</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đi từ trái sang phải, bước sóng giảm dần và tần số tăng dần. Mẹo nhớ: <strong>"Vô-Hồng-Nhìn-Tử-X-Gam"</strong> — đọc xuôi là bước sóng giảm.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A đúng thứ tự nhưng <em>tăng</em> dần bước sóng, tức ngược yêu cầu; B và C thì đảo lộn vị trí các vùng. Cứ nhớ mốc neo: ánh sáng nhìn thấy nằm giữa, hồng ngoại ở phía bước sóng dài hơn, tử ngoại ở phía bước sóng ngắn hơn. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A đúng chuỗi nhưng đọc ngược chiều, tức bước sóng <em>tăng</em> dần. B đổi chỗ hồng ngoại với tử ngoại. C đổi chỗ tia X với gamma. Cứ nhớ mốc neo: ánh sáng nhìn thấy nằm giữa, hồng ngoại ở phía bước sóng dài hơn, tử ngoại ở phía bước sóng ngắn hơn. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -212,7 +217,7 @@
 
 <h4>Bẫy 1: "điện trường xoáy cũng như điện trường tĩnh"</h4>
 
-<p>Giống ở cách vẽ đường sức, khác ở bản chất:</p>
+<p>Giống ở quy tắc vẽ đường sức, khác ở hình dạng đường sức và nguồn sinh ra:</p>
 
 <table class="tl-table">
 <thead>
@@ -253,7 +258,7 @@
 
 <h4>Bẫy 3: "E và B lệch pha như dòng và áp trong mạch điện"</h4>
 
-<p>Trong mạch chỉ có tụ, dòng điện sớm pha $\pi/2$ so với điện áp. Nhiều em mang thói quen đó sang sóng điện từ:</p>
+<p>Trong mạch chỉ có tụ, dòng điện sớm pha $\pi/2$ so với điện áp, nghĩa là $i$ đạt cực đại đúng lúc $u = 0$. Nhiều em mang thói quen đó sang sóng điện từ:</p>
 
 <table class="tl-table">
 <thead>
@@ -275,7 +280,7 @@
 <input type="radio" name="tl127-q6" id="tl127-q6b"><label for="tl127-q6b" class="tl-opt tl-no">B. Cực đại, vì hai vectơ lệch pha $\pi/2$</label>
 <input type="radio" name="tl127-q6" id="tl127-q6c"><label for="tl127-q6c" class="tl-opt tl-no">C. Cực đại, vì năng lượng điện bằng 0</label>
 <input type="radio" name="tl127-q6" id="tl127-q6d"><label for="tl127-q6d" class="tl-opt tl-no">D. Luôn khác 0</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai vectơ cùng pha nên cùng đạt cực đại và cùng triệt tiêu. Cách giải thích "năng lượng điện chuyển hết thành năng lượng từ" chỉ đúng với mạch dao động kín, không dùng cho sóng điện từ đang lan truyền. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai vectơ cùng pha nên cùng đạt cực đại và cùng triệt tiêu. Cách giải thích "năng lượng điện chuyển hết thành năng lượng từ" chỉ đúng với mạch gồm tụ và cuộn cảm, nơi năng lượng dồn qua lại giữa hai linh kiện, không dùng cho sóng điện từ đang lan truyền. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang lấy pha của mạch điện (tụ, cuộn cảm) áp vào sóng điện từ. Trong sóng, $\vec{E}$ và $\vec{B}$ <em>cùng pha</em>: điện trường bằng 0 thì từ trường cũng bằng 0. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây chính là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
 </div>
 </div>
@@ -328,9 +333,9 @@
 <tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 </thead>
 <tbody>
-<tr><td>"tần số 100 MHz"</td><td>$f = 100\ \text{MHz} = 10^8\ \text{Hz}$</td><td>đổi về Hz rồi dùng $\lambda = c/f$</td></tr>
+<tr><td>"phát ở 100 MHz"</td><td>$f = 100\ \text{MHz} = 10^8\ \text{Hz}$</td><td>đổi về Hz rồi dùng $\lambda = c/f$</td></tr>
 <tr><td>"máy thu cách đài 30 km"</td><td>$30\ \text{km} = 3 \cdot 10^4$ m</td><td>nhỏ hơn đường qua vệ tinh hơn 2000 lần</td></tr>
-<tr><td>"vệ tinh cao 35 786 km"</td><td>$h = 3{,}5786 \cdot 10^7$ m</td><td>quãng đường qua vệ tinh: $s = 2h$</td></tr>
+<tr><td>"ở độ cao 35 786 km"</td><td>$h = 3{,}5786 \cdot 10^7$ m</td><td>quãng đường qua vệ tinh: $s = 2h$</td></tr>
 <tr><td>"sóng truyền trong chân không"</td><td>$c = 3 \cdot 10^8$ m/s</td><td>tốc độ không phụ thuộc tần số</td></tr>
 <tr><td>"bỏ qua thời gian xử lý"</td><td>trễ chỉ do truyền sóng</td><td>dữ kiện ngầm: dùng $t = s/c$</td></tr>
 <tr><td>"thuộc vùng nào của thang sóng"</td><td>$\lambda = 3$ m</td><td>đối chiếu thang sóng: vùng vô tuyến</td></tr>
@@ -342,7 +347,7 @@
 <summary>🧮 Bấm xem: lời giải từng bước</summary>
 <ol class="tl-steps">
 <li>Câu a: bước sóng $\lambda = \dfrac{c}{f} = \dfrac{3 \cdot 10^8}{10^8} = 3$ m.</li>
-<li>Câu b: sóng đi đài → vệ tinh → máy thu, quãng đường $s \approx 2h = 7{,}1572 \cdot 10^7$ m. Thời gian $t = \dfrac{s}{c} \approx 0{,}239$ s, làm tròn 0,24 s.</li>
+<li>Câu b: đài và máy thu chỉ cách nhau 30 km, rất nhỏ so với $h$, nên coi cả hai nằm ngay dưới vệ tinh: đường lên $\approx h$, đường xuống $\approx h$, còn 30 km không cần dùng tới.<br>Quãng đường đài → vệ tinh → máy thu $s \approx 2h = 7{,}1572 \cdot 10^7$ m. Thời gian $t = \dfrac{s}{c} \approx 0{,}239$ s, làm tròn 0,24 s.</li>
 <li>Câu c: $\lambda = 3$ m nằm trong vùng sóng vô tuyến. Tia X có bước sóng 0,01 nm đến 10 nm — nhỏ hơn bước sóng này rất nhiều.</li>
 <li>Kiểm tra kết quả: $f = \dfrac{c}{\lambda} = 10^8$ Hz = 100 MHz, khớp đúng đề.</li>
 </ol>
@@ -350,15 +355,15 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
-<p>Vẫn vệ tinh đó, nhưng đài phát ở <strong>150 MHz</strong>. Em điền bước sóng và thời gian trễ.</p>
+<p>Vẫn vệ tinh đó, nhưng đài phát ở <strong>120 MHz</strong>. Em điền bước sóng và thời gian trễ.</p>
 <ol class="tl-steps">
-<li>Bước 1: đổi tần số, $f = 1{,}5 \cdot 10^8$ Hz.</li>
+<li>Bước 1: đổi tần số, $f = 1{,}2 \cdot 10^8$ Hz.</li>
 <li><strong>Em điền:</strong> bước sóng $\lambda = \dfrac{c}{f} = \;?$</li>
 <li><strong>Em điền:</strong> thời gian qua vệ tinh có thay đổi so với câu b không? Vì sao?</li>
 </ol>
 <details class="tl-details">
 <summary>Bấm xem bước 2–3</summary>
-<p>$\lambda = \dfrac{3 \cdot 10^8}{1{,}5 \cdot 10^8} = 2$ m. Thời gian trễ <strong>không đổi</strong>, vẫn khoảng 0,24 s: trong chân không mọi sóng điện từ đều truyền với cùng tốc độ $c$, đổi tần số chỉ làm bước sóng ngắn lại chứ không làm tín hiệu đi nhanh hơn.</p>
+<p>$\lambda = \dfrac{3 \cdot 10^8}{1{,}2 \cdot 10^8} = 2{,}5$ m. Thời gian trễ <strong>không đổi</strong>, vẫn khoảng 0,24 s: trong chân không mọi sóng điện từ đều truyền với cùng tốc độ $c$, đổi tần số chỉ làm bước sóng ngắn lại chứ không làm tín hiệu đi nhanh hơn.</p>
 </details>
 </div>
 
@@ -379,7 +384,7 @@
 <h3>VI. Đời sống, thử thách và mang về</h3>
 
 <ul>
-<li><strong>Điện thoại, wifi, lò vi sóng:</strong> sóng vô tuyến và vi ba (2,4 GHz → 12,5 cm).</li>
+<li><strong>Điện thoại, wifi, lò vi sóng:</strong> sóng vi ba, một phần của vùng vô tuyến (2,4 GHz → 12,5 cm).</li>
 <li><strong>Điều khiển từ xa:</strong> chùm tia hồng ngoại mắt không thấy, đầu thu trong tivi giải mã.</li>
 <li><strong>Nhiễu điện từ:</strong> bếp từ, sạc không dây đặt gần radio gây rè — đúng cơ chế ở đầu bài.</li>
 </ul>
@@ -394,7 +399,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐ Khá: ánh sáng đỏ bước sóng $0{,}75\ \mu\text{m}$ (trong chân không) đi vào thuỷ tinh có chiết suất $n = 1{,}5$. Tần số, tốc độ, bước sóng thay đổi thế nào?</summary>
-<p>Tần số $f = \dfrac{c}{\lambda} = \dfrac{3 \cdot 10^8}{0{,}75 \cdot 10^{-6}} = 4 \cdot 10^{14}$ Hz và <strong>không đổi</strong> khi đổi môi trường (nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu). Tốc độ giảm: $v = \dfrac{c}{n} = 2 \cdot 10^8$ m/s. Bước sóng ngắn lại: $\lambda' = \dfrac{v}{f} = \dfrac{\lambda}{n} = 0{,}5\ \mu\text{m}$.</p>
+<p>Tần số $f = \dfrac{c}{\lambda} = \dfrac{3 \cdot 10^8}{0{,}75 \cdot 10^{-6}} = 4 \cdot 10^{14}$ Hz và <strong>không đổi</strong> khi đổi môi trường (nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu). Tốc độ giảm: $v = \dfrac{c}{n} = 2 \cdot 10^8$ m/s (chiết suất $n$ cho biết ánh sáng trong môi trường chậm hơn trong chân không $n$ lần). Bước sóng ngắn lại: $\lambda' = \dfrac{v}{f} = \dfrac{\lambda}{n} = 0{,}5\ \mu\text{m}$.</p>
 </details>
 
 <details class="tl-details">

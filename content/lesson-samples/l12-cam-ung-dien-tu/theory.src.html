@@ -42,8 +42,8 @@
 <p class="tl-label">🔬 Thí nghiệm: quay khung, từ thông đổi theo góc</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt khung dây có nối điện kế giữa hai cực nam châm chữ U (từ trường đều). Quay từ từ khung từ vị trí mặt khung vuông góc với đường sức đến vị trí song song.</li>
-<li><strong>Quan sát:</strong> mặt khung càng nghiêng thì càng ít đường sức xuyên qua, lúc song song thì không còn đường nào. Trong lúc quay, điện kế có dòng.</li>
-<li><strong>Rút ra:</strong> $\Phi = BS\cos\alpha$ đổi khi $\alpha$ đổi, dù $B$ và $S$ giữ nguyên.</li>
+<li><strong>Quan sát:</strong> kim điện kế lệch trong lúc quay khung, về 0 khi dừng quay.</li>
+<li><strong>Rút ra:</strong> mặt khung càng nghiêng thì càng ít đường sức xuyên qua (song song thì không còn đường nào), nên $\Phi = BS\cos\alpha$ đổi khi $\alpha$ đổi, dù $B$ và $S$ giữ nguyên.</li>
 </ol>
 </div>
 <details class="tl-details">
@@ -79,7 +79,7 @@
 <li><strong>Quan sát:</strong> kim lệch khi đưa vào và khi rút ra, <em>về hai phía ngược nhau</em>. Đưa nhanh thì lệch nhiều hơn. Giữ yên thì về 0. Đổi cực thì đổi chiều lệch.</li>
 <li><strong>Rút ra:</strong> dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh, dòng càng mạnh; chiều dòng phụ thuộc từ thông đang tăng hay giảm.</li>
 </ol>
-<p><strong>📊 Bảng số liệu</strong> (số minh hoạ tính theo tỉ lệ thuận với $v$, không phải số đo thật):</p>
+<p><strong>📊 Bảng số liệu</strong> (số minh hoạ: tỉ lệ thuận với $v$, cộng dao động nhỏ như sai số đo, không phải số đo thật):</p>
 <div class="table-scroll"><table class="tl-table tl-table--data">
 <thead>
 <tr><th>$v$ (m/s)</th><th>Chiều</th><th>$i$ (mA)</th></tr>
@@ -95,10 +95,12 @@
 <p><strong>Câu hỏi sai số:</strong> với sai số $\pm0{,}5\ \text{mA}$, hàng nào kém tin cậy nhất? Tỉ số $i/v$ của ba hàng đưa vào nói lên điều gì?</p>
 <details class="tl-details">
 <summary>Bấm xem trả lời</summary>
-<p>Hàng $v = 0{,}1$ kém tin cậy nhất: sai số tương đối $0{,}5/1{,}0 = 50\ \%$; hàng $v = 0{,}4$ chỉ khoảng $13\ \%$. Tỉ số $i/v$ lần lượt $10$; $10{,}5$; $9{,}75$ (mA·s/m), gần như không đổi nên $i$ <strong>tỉ lệ thuận</strong> với $v$ trong phạm vi sai số. Hai hàng $\pm2\ \text{mA}$ lệch nhau $0{,}1\ \text{mA}$, nhỏ hơn sai số: đưa vào và rút ra cho dòng ngược chiều, cùng độ lớn.</p>
+<p>Hàng $v = 0{,}1$ kém tin cậy nhất: sai số tương đối $0{,}5/1{,}0 = 50\ \%$, còn hàng $v = 0{,}4$ chỉ khoảng $13\ \%$.<br>
+Tỉ số $i/v$ lần lượt $10$; $10{,}5$; $9{,}75$ (mA·s/m), gần như không đổi nên $i$ <strong>tỉ lệ thuận</strong> với $v$ trong phạm vi sai số.<br>
+Hai hàng $v = 0{,}2\ \text{m/s}$ ($2{,}1\ \text{mA}$ khi đưa vào, $-2{,}0\ \text{mA}$ khi rút ra) lệch nhau $0{,}1\ \text{mA}$ về độ lớn, nhỏ hơn sai số: đưa vào và rút ra cho dòng ngược chiều, cùng độ lớn.</p>
 </details>
 </div>
-<p>Từ $\Phi = BS\cos\alpha$, có ba cách làm từ thông biến thiên: đổi $B$ (đưa nam châm lại gần/ra xa, đổi dòng điện nam châm điện), đổi $S$ (kéo dãn khung), hoặc đổi $\alpha$ (quay khung). Máy phát điện dùng một trong các cách đó.</p>
+<p>Từ $\Phi = BS\cos\alpha$, có ba cách làm từ thông biến thiên: đổi $B$ (đưa nam châm lại gần/ra xa, đổi dòng điện nam châm điện), đổi $S$ (kéo dãn khung), hoặc đổi $\alpha$ (quay khung).</p>
 <h4>Bẫy: "từ thông lớn thì có dòng điện"</h4>
 <div class="table-scroll"><table class="tl-table">
 <thead>
@@ -126,16 +128,17 @@
 
 <h3>IV. Chiều của dòng điện cảm ứng: định luật Lenz</h3>
 <p><strong>🔑 Chống lại sự biến thiên · Tiến thì đẩy · Lùi thì kéo</strong></p>
-<p>Đưa vào và rút ra thì dòng điện ngược chiều nhau. Làm sao biết chiều mà không phải thử? Quy tắc của Lenz:</p>
+<p>Chiều dòng cảm ứng tuân theo định luật Lenz:</p>
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Định luật Lenz</p>
 <p>Dòng điện cảm ứng có chiều sao cho từ trường mà nó sinh ra <strong>chống lại sự biến thiên</strong> của từ thông đã sinh ra nó.</p>
 </div>
-<p>Cách hiểu: <strong>mạch luôn cản trở sự thay đổi</strong>. Đẩy nam châm vào cuộn dây kín, tay em thấy nặng hơn, và đẩy càng nhanh càng nặng.</p>
+<p>Cách hiểu: <strong>mạch luôn cản trở sự thay đổi</strong>. Đẩy nam châm vào cuộn dây kín thấy nặng tay, đẩy càng nhanh càng nặng.</p>
 <ul>
 <li><strong>Từ thông tăng</strong> (nam châm lại gần): từ trường cảm ứng <em>ngược chiều</em> từ trường ngoài, cuộn dây đẩy nam châm ra.</li>
 <li><strong>Từ thông giảm</strong> (nam châm rút ra): từ trường cảm ứng <em>cùng chiều</em> từ trường ngoài, cuộn dây kéo nam châm lại.</li>
 </ul>
+<p>Mặt vòng dây có đường sức cảm ứng đi ra là <strong>mặt Bắc</strong>, đi vào là <strong>mặt Nam</strong>. Từ chiều từ trường cảm ứng, suy ra chiều dòng bằng <strong>quy tắc nắm tay phải</strong>: ngón cái chỉ chiều từ trường cảm ứng trong lòng vòng, các ngón khum chỉ chiều dòng.</p>
 <details class="tl-details">
 <summary>⚡ Bấm xem: vì sao Lenz chính là bảo toàn năng lượng</summary>
 <p>Nếu cuộn dây <em>hút</em> nam châm đang tiến vào, nam châm sẽ càng nhanh, từ thông tăng càng nhanh, dòng càng mạnh, cứ thế tự tăng mà không ai tốn công: vô lí. Thực tế em phải <em>tốn công</em> thắng lực cản, và công đó biến thành điện năng.</p>
@@ -145,8 +148,8 @@
 <p class="tl-label">🔬 Thí nghiệm: nam châm rơi chậm trong ống nhôm</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> thả cùng lúc hai vật cùng hình dạng từ miệng một ống nhôm (hoặc đồng) thẳng đứng: một cục nam châm và một cục nhôm không từ tính.</li>
-<li><strong>Quan sát:</strong> cục nhôm rơi ra đáy ống gần như ngay. Cục nam châm rơi <em>chậm hơn rất nhiều</em>, như bị ai giữ lại.</li>
-<li><strong>Rút ra:</strong> nam châm rơi làm từ thông qua từng đoạn thành ống biến thiên, sinh dòng xoáy trong thành ống. Theo Lenz, dòng này cản chuyển động của nam châm: đó là nguyên lý <strong>phanh từ</strong>.</li>
+<li><strong>Quan sát:</strong> cục nhôm rơi ra đáy ống gần như ngay, cục nam châm rơi <em>chậm hơn rất nhiều</em>.</li>
+<li><strong>Rút ra:</strong> nam châm rơi làm từ thông qua thành ống biến thiên, sinh trong thành ống <strong>dòng xoáy</strong> (dòng cảm ứng khép kín trong khối kim loại). Theo Lenz, dòng này cản chuyển động của nam châm: đó là nguyên lý <strong>phanh từ</strong>.</li>
 </ol>
 </div>
 <div class="tl-box tl-box--think">
@@ -158,7 +161,7 @@
 <input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-ok">C. cực Bắc và đẩy nam châm ra</label>
 <input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. cực Bắc và hút nam châm vào</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ thông đang tăng nên vòng dây phải chống lại: nó tạo cực Bắc ở đầu gần, hai cực cùng tên đẩy nhau, cản nam châm tiến vào.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hai điều cần nhớ: (1) nam châm tiến lại gần thì cuộn dây phải <em>cản</em> nó, tức là đẩy; (2) hai cực <em>cùng tên</em> thì đẩy nhau, khác tên thì hút. Từ đó suy ra tên cực của đầu vòng dây.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> (1) Nam châm tiến lại gần thì cuộn dây phải <em>cản</em> nó, tức là đẩy.<br>(2) Hai cực <em>cùng tên</em> thì đẩy nhau, khác tên thì hút.<br>Từ đó suy ra tên cực của đầu vòng dây.</p></div>
 </div>
 </div>
 <h4>Bẫy: "từ trường cảm ứng luôn ngược chiều từ trường ngoài"</h4>
@@ -181,8 +184,8 @@
 <input type="radio" name="tl12-q4" id="tl12-q4b"><label for="tl12-q4b" class="tl-opt tl-ok">B. cực Bắc, kéo nam châm lại gần</label>
 <input type="radio" name="tl12-q4" id="tl12-q4c"><label for="tl12-q4c" class="tl-opt tl-no">C. cực Bắc, đẩy nam châm ra xa</label>
 <input type="radio" name="tl12-q4" id="tl12-q4d"><label for="tl12-q4d" class="tl-opt tl-no">D. cực Nam, kéo nam châm lại gần</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nam châm rút ra thì từ thông giảm, vòng dây phải <em>bù lại</em>: kéo nam châm lại. Hai cực khác tên mới hút nhau, nên đầu gần là cực Bắc đối diện với cực Nam của nam châm.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Từ thông đang <em>giảm</em> nên vòng dây chống lại bằng cách <em>kéo</em> nam châm lại (lùi thì kéo), không phải đẩy. Hút nhau thì phải khác tên: đầu vòng dây cần là cực ngược với cực Nam. Ghép hai điều đó lại để chọn.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nam châm rút ra thì từ thông giảm, vòng dây phải <em>bù lại</em>: kéo nam châm lại. Hai cực khác tên mới hút nhau, nên đầu gần là cực Bắc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Từ thông đang <em>giảm</em> nên vòng dây chống lại bằng cách <em>kéo</em> nam châm lại (lùi thì kéo), không phải đẩy.<br>Hút nhau thì phải khác tên: đầu vòng dây cần là cực ngược với cực Nam.</p></div>
 </div>
 </div>
 
@@ -191,21 +194,22 @@
 <p>Thí nghiệm cho thấy đưa nhanh thì kim lệch nhiều. Faraday làm gọn điều đó thành công thức, dùng <strong>suất điện động cảm ứng</strong> $e_c$ để đo độ mạnh của hiện tượng.</p>
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Định luật Faraday</p>
-<p>Độ lớn suất điện động cảm ứng trong mạch kín bằng <strong>tốc độ biến thiên từ thông</strong> qua mạch:</p>
+<p>Độ lớn suất điện động cảm ứng trong mạch bằng <strong>tốc độ biến thiên từ thông</strong> qua mạch:</p>
 <p>$$|e_c| = \left|\frac{\Delta\Phi}{\Delta t}\right|$$</p>
-<p>Dấu trừ trong $e_c = -\dfrac{\Delta\Phi}{\Delta t}$ chính là định luật Lenz. Mạch có điện trở $R$ thì $i = \dfrac{|e_c|}{R}$.</p>
+<p>Dấu trừ trong $e_c = -\dfrac{\Delta\Phi}{\Delta t}$ chính là định luật Lenz. Mạch kín có điện trở $R$ thì có dòng $i = \dfrac{|e_c|}{R}$, mạch hở vẫn có $e_c$ nhưng không có dòng.</p>
 </div>
 <p>Ví dụ: đưa nam châm vào trong 1 s hay 0,1 s thì $\Delta\Phi$ như nhau, nhưng $\Delta t$ nhỏ hơn 10 lần nên $e_c$ lớn hơn 10 lần. Cuộn $N$ vòng giống nhau thì $|e_c| = N\left|\dfrac{\Delta\Phi}{\Delta t}\right|$, với $\Phi$ là từ thông qua <em>một vòng</em>.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Từ thông qua một mạch kín giảm đều từ $6\ \text{mWb}$ về $0$ trong $0{,}03\ \text{s}$. Độ lớn suất điện động cảm ứng trong mạch là:</p>
+<p>⚠ Bẫy hay gặp: chia lũy thừa của 10 lệch một bậc. Viết $0{,}03 = 3\times10^{-2}$ trước khi chia.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q5" id="tl12-q5a"><label for="tl12-q5a" class="tl-opt tl-ok">A. $0{,}2\ \text{V}$</label>
 <input type="radio" name="tl12-q5" id="tl12-q5b"><label for="tl12-q5b" class="tl-opt tl-no">B. $2\ \text{V}$</label>
 <input type="radio" name="tl12-q5" id="tl12-q5c"><label for="tl12-q5c" class="tl-opt tl-no">C. $0{,}02\ \text{V}$</label>
 <input type="radio" name="tl12-q5" id="tl12-q5d"><label for="tl12-q5d" class="tl-opt tl-no">D. $1{,}8\times10^{-4}\ \text{V}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $|e_c| = \dfrac{6\times10^{-3}}{0{,}03} = 0{,}2\ \text{V}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $\Delta\Phi$ phải đổi ra Wb ($1\ \text{mWb} = 10^{-3}\ \text{Wb}$), rồi <em>chia</em> cho $\Delta t$, không nhân. Tính lại xem.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $\Delta\Phi$ phải đổi ra Wb ($1\ \text{mWb} = 10^{-3}\ \text{Wb}$), rồi <em>chia</em> cho $\Delta t$, không nhân.<br>Cẩn thận số mũ khi chia: $10^{-3} : 10^{-2} = 10^{-1}$.<br>Tính lại xem.</p></div>
 </div>
 </div>
 
