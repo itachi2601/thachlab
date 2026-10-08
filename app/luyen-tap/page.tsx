@@ -1,5 +1,6 @@
 "use client";
 
+import ForYouRow from "@/components/mastery/ForYouRow";
 import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -232,6 +233,8 @@ function Content() {
         Chọn bài, yêu cầu cần đạt và mức độ để luyện đúng chỗ còn thiếu danh hiệu. Câu đã giải đúng rồi không
         được tính lại cho danh hiệu — làm câu mới mới tiến thêm.
       </p>
+
+      {session && <ForYouRow />}
 
       <div role="tablist" aria-label="Kiểu luyện tập" className="mt-5 grid grid-cols-2 gap-2">
         {(

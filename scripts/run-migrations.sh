@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261009100000_notify_exam_assigned.sql|Trigger báo chuông cho học sinh khi thầy giao bài kiểm tra / bài tập có đề (class_assessments, class_announcements); chỉ thêm hàm + trigger mới|giờ nào cũng được; rollback perf/rollback/20261009100000_notify_exam_assigned.down.sql"
   "supabase/migrations/20261006150000_quiz_live.sql|Đố vui lớp học (kiểu Kahoot): 4 bảng quiz_* + RPC cho học sinh ẩn danh/người điều khiển + tìm câu/đưa câu vào ngân hàng|Bất kỳ lúc nào (bảng/hàm mới, không đụng dữ liệu cũ; rollback perf/rollback/20261006150000_quiz_live.down.sql)"
 )
 # ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
