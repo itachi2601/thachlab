@@ -1,0 +1,129 @@
+{
+  "bai": "l10-do-thi-dich-chuyen-thoi-gian",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào câu mở bài: gốc toạ độ ở nhà cũng là chỗ xuất phát, nên ở đây x chính là độ dịch chuyển d."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (cụm \"hai đầu ghi số 14 và 2 trên trục\" không có trong bài)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa câu đầu Bẫy 1 thành \"độ dịch chuyển tính từ gốc, tức là vị trí của vật\" để nối hai tên gọi."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài viết dạng phân số 30 cm/6 s trong details, không có câu \"Độ dốc: 30 cm : 6 s\")."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 5 nay tính v của ① từ (0; 0) và (2 s; 8 m) thay vì đưa sẵn 4 m/s."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu hỏi 🧮 nêu rõ \"với cùng tốc độ\", lời giải ghi tốc độ 1,5 m/s."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"đường ray thẳng\" thành cụm có trong đề \"chạy trên đường thẳng\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details Thử sức, viết d = d₀ + v(t − t₀) với t₀ = 6 s và nói rõ vì sao không thay vào d = 8 − 2t."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 2 đã vượt trần nên thêm dòng ⚠ trước Câu 7 nêu quy tắc đổi dấu d và v, phản hồi sai trỏ về dòng này."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ thang máy nay nói vị trí trùng độ cao vì thang đi thẳng đứng, độ dốc là vận tốc (âm khi đi xuống)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ trượt băng ghi rõ đường vòng không thẳng nên vẽ quãng đường s, không phải d; tiêu đề đổi thành \"đồ thị kiểu d–t\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa thêm \"đi một chiều\" và \"tức vận tốc không đổi\", bù bằng cách cắt câu lặp ở gạch tốc độ trung bình; Trả bài 1 sửa theo."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn (phản hồi sai giải thích B và dòng 🔑 \"Nằm ngang = đứng yên\"), không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở gạch \"Quay đầu\" và phản hồi phương án C, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Dốc âm = đi ngược\" và phản hồi \"quên dấu\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Dốc nhiều = nhanh\" và phản hồi D đảo nhanh/chậm, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Độ dốc không đổi: vận tốc không đổi\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng \"Hai đường cắt nhau: cùng vị trí\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng Bẫy 3 \"so với điểm đầu\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 7: đổi chiều dương thì cả d lẫn v đổi dấu, kể cả đoạn đang đi xuống trên hình cũ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục I: thêm câu gốc toạ độ ở nhà cũng là chỗ xuất phát nên x = d (cần đối chiếu Hình 1 bắt đầu tại x = 0).",
+      "Mục II.1: định nghĩa chuyển động thẳng đều thêm \"đi một chiều, vận tốc không đổi\", cắt câu lặp \"Đi một chiều: bằng nhau về độ lớn\". Trả bài 1 sửa theo.",
+      "Mục II.2 (🧮): câu hỏi giả thiết rõ xe chạy về với cùng tốc độ 1,5 m/s, đáp số giữ −1,5 m/s.",
+      "Mục II.3: bỏ cụm \"(5 lần đọc)\" trong thí nghiệm bọt khí để bù độ dài.",
+      "Câu 5 (phản hồi đúng): v₁ = (8 − 0)/(2 − 0) = 4 m/s, giả định đường ① qua gốc (0; 0) như x = 4t ở ⭐⭐ (cần đối chiếu Hình 3).",
+      "Bẫy 1: trục đứng là độ dịch chuyển tính từ gốc, tức vị trí của vật.",
+      "Bẫy 3: rút gọn câu thành \"cộng độ lớn từng đoạn\".",
+      "Mục V bảng dữ liệu: \"đường ray thẳng\" thành \"chạy trên đường thẳng\".",
+      "Mục V Thử sức: dùng d = d₀ + v(t − t₀) với t₀ = 6 s, d₀ = 8 m, kết quả vẫn d = 4 m lúc t = 8 s.",
+      "Câu 7: thêm dòng ⚠ đổi chiều dương thì d và v cùng đổi dấu. Phản hồi sai trỏ về dòng ⚠ thay vì bảng dữ liệu.",
+      "Mục VI: thang máy có vị trí trùng độ cao, độ dốc là vận tốc (âm khi đi xuống).",
+      "Mục VI: trượt băng vòng vẽ quãng đường s, không phải d. Tiêu đề đổi thành \"đồ thị kiểu d–t\".",
+      "Trả bài: bỏ câu hướng dẫn lặp với chú thích nhỏ của từng câu."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

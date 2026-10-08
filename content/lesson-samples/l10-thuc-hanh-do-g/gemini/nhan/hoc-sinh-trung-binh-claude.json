@@ -1,0 +1,193 @@
+{
+  "bai": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Xử lí số liệu",
+      "trich_nguyen_van": "Sai số tương đối ($t$ bình phương nên có hệ số $2$)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh chỉ học thuộc rằng có số 2. Bài không nói vì sao các sai số tương đối lại cộng với nhau, cũng không nói vì sao sai số tương đối của t² gấp đôi của t. Mục Trả bài câu 4 cũng chỉ khẳng định lại điều đó.",
+      "de_xuat": "Thêm một dòng quy tắc: với g = 2s/t² thì δg = δs + 2δt (lũy thừa n nhân sai số tương đối lên n lần). Kèm một ví dụ số nhỏ: t lệch 1% thì t² lệch khoảng 2%."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Xử lí số liệu",
+      "trich_nguyen_van": "Sai số của $t$: $\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết vì sao phải cộng thêm sai số dụng cụ vào sai số trung bình. Các em dễ bỏ sót số hạng này khi tự làm.",
+      "de_xuat": "Thêm nửa câu giải thích: sai số trung bình phản ánh độ phân tán giữa các lần đo, còn sai số dụng cụ là giới hạn của đồng hồ, nên phải cộng cả hai."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Xử lí số liệu",
+      "trich_nguyen_van": "$\\Delta t_i$ (s)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cột Δt_i xuất hiện trong bảng trước khi có định nghĩa Δt_i = |t_i − t̄|. Học sinh chưa biết giá trị 0,002 ở lần 1 từ đâu ra.",
+      "de_xuat": "Ghi ngay ở tiêu đề cột: Δt_i = |t_i − t̄| (với t̄ = 0,321 s), hoặc đưa phần định nghĩa lên trước bảng."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Phương án đo",
+      "trich_nguyen_van": "Thước, độ chia $1\\ \\text{mm}$ → $\\Delta s = 0{,}001\\ \\text{m}$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài ngầm lấy sai số dụng cụ bằng một độ chia nhưng không nói rõ quy ước. Học sinh từng nghe quy ước 'nửa độ chia' sẽ phân vân không biết dùng 0,001 hay 0,0005.",
+      "de_xuat": "Thêm câu: 'Trong bài này lấy sai số dụng cụ bằng một độ chia nhỏ nhất (có tài liệu lấy nửa độ chia).'"
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Xử lí số liệu",
+      "trich_nguyen_van": "lấy trung bình chỉ giảm phần ngẫu nhiên, sai số dụng cụ vẫn còn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi Câu 2 dùng khái niệm 'sai số ngẫu nhiên', nhưng tới Bẫy 2 bài mới định nghĩa. Học sinh chưa hiểu 'phần ngẫu nhiên' là phần nào.",
+      "de_xuat": "Thêm ngoặc ngắn: '(phần lệch lên xuống giữa các lần, xem Bẫy 2)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Xử lí số liệu",
+      "trich_nguyen_van": "C bỏ quên hệ số $2$ và $\\Delta t$ lớn hơn.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh có thể so trực tiếp Δt = 0,0022 s với Δs = 0,001 m. Hai đại lượng này khác đơn vị nên không so được, trong khi ý đúng là Δt/t̄ lớn hơn Δs/s.",
+      "de_xuat": "Sửa thành 'C bỏ quên hệ số 2, và ngay cả Δt/t̄ ≈ 0,7% cũng đã lớn hơn Δs/s = 0,2%'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Phương án thứ hai: đồ thị $s$–$t^2$",
+      "trich_nguyen_van": "Lợi: dùng cả năm độ cao, điểm nào lệch thì thấy ngay.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài nói cái lợi là dùng cả năm điểm, nhưng ngay sau đó lại tính độ dốc chỉ từ hai điểm trong bảng. Học sinh không hiểu ba điểm còn lại dùng để làm gì và lấy hai điểm nào cho đúng.",
+      "de_xuat": "Nói rõ: vẽ đường thẳng qua gốc khớp nhất với cả năm điểm, rồi lấy hai điểm xa nhau nằm trên đường thẳng đó để tính độ dốc (ở đây lấy điểm số liệu cho đơn giản)."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "1. Nguyên lí đo",
+      "trich_nguyen_van": "Thả bi từ $s = 0{,}300\\ \\text{m}$; đồng hồ ghi $t = 0{,}247\\ \\text{s}$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ở mục 4 cho cùng độ cao 0,300 m nhưng t̄ = 0,249 s, tức g ≈ 9,68. Câu 1 lại cho 9,83. Học sinh so hai chỗ sẽ nghĩ có một chỗ sai.",
+      "de_xuat": "Ghi chú 'số liệu một lần đo khác, minh hoạ' ở Câu 1, hoặc thống nhất số liệu giữa hai chỗ."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 2: lấy trung bình là hết sai số",
+      "trich_nguyen_van": "Nam châm còn từ dư nên bi luôn rời muộn khoảng $0{,}002\\ \\text{s}$ ở mọi lần thả.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Mục Phương án đo viết 'ngắt công tắc: bi rời nam châm, đồng hồ bắt đầu đếm', khiến học sinh tưởng hai việc xảy ra đồng thời. Vì vậy em không thấy vì sao bi rời muộn lại làm t đọc lớn hơn.",
+      "de_xuat": "Thêm câu: 'Đồng hồ bắt đầu đếm ngay lúc ngắt điện, còn bi rời muộn 0,002 s, nên t đọc được dài hơn thời gian rơi thật.'"
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 2: lấy trung bình là hết sai số",
+      "trich_nguyen_van": "A. Dao động giữa các lần giảm, nhưng $\\bar t$ vẫn lớn hơn thật",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Lấy trung bình không làm các lần đo bớt dao động; nó chỉ làm sai số ngẫu nhiên của giá trị trung bình nhỏ đi. Học sinh có thể loại đáp án đúng vì thấy vế đầu vô lí.",
+      "de_xuat": "Sửa vế đầu thành 'Sai số ngẫu nhiên của t̄ giảm'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 1: đo $s$ sai gốc",
+      "trich_nguyen_van": "$s$ quá dài, $g$ lệch cùng phía",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng không nói g lệch lên hay xuống. Học sinh chưa biết hướng lệch khi bước vào Câu 3.",
+      "de_xuat": "Sửa thành '$s$ quá dài nên $g$ tính ra lớn hơn thật, ở mọi lần'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 2: lấy trung bình là hết sai số",
+      "trich_nguyen_van": "Ví dụ: thả bi lệch vài phần nghìn giây",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm 'thả bi lệch' dễ bị hiểu là thả lệch vị trí. Học sinh không rõ cái gì lệch vài phần nghìn giây.",
+      "de_xuat": "Sửa thành 'Ví dụ: t mỗi lần đo lên xuống vài phần nghìn giây (như bảng 5 lần đo)'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Cùng cách làm, nhóm khác: $s = 0{,}450\\ \\text{m}$, $\\bar t = 0{,}303\\ \\text{s}$, $\\Delta t = 0{,}0022\\ \\text{s}$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề không cho Δs. Học sinh phải đoán Δs = 0,001 m từ 'cùng cách làm', và có thể bỏ số hạng Δs/s hoặc dùng số khác.",
+      "de_xuat": "Thêm '$\\Delta s = 0{,}001\\ \\text{m}$' vào đề bài tập điền."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "I. Mở bài: bấm tay hay cổng quang?",
+      "trich_nguyen_van": "Độ trễ vài phần mười giây không đáng kể khi đo vài giây",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phương án B nói 'cỡ 0,1 s', phản hồi lại nói 'vài phần mười giây' nhưng phép tính dùng 0,1. Học sinh không rõ độ trễ là bao nhiêu.",
+      "de_xuat": "Thống nhất một con số: 'Độ trễ cỡ 0,1 s trở lên'."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "Bẫy 3: \"khác $9{,}8$ là thí nghiệm hỏng\"",
+      "trich_nguyen_van": "Còn sai số hệ thống chưa tìm ra",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh sẽ cho rằng khoảng không chứa 9,8 thì chắc chắn có sai số hệ thống. Bài không nhắc khả năng sai số đã ước lượng thiếu, cũng không nhắc 9,8 chỉ là giá trị làm tròn (mục Đời sống cho 9,78–9,83).",
+      "de_xuat": "Sửa thành 'Có thể còn sai số hệ thống chưa tìm ra hoặc đã ước lượng sai số quá nhỏ'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan_muc_I",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tin rằng đồng hồ hiện số nhiều chữ số thì đo tuyệt đối chính xác.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C: nhiều chữ số không có nghĩa là hết sai số, vẫn còn sai số dụng cụ."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ s ∝ t² nhưng quên hệ số 1/2, nên tính g = s/t².",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B là $s/t^2$: quên nhân $2$."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ rằng đo 5 lần rồi lấy trung bình là hết sai số. Lúc này bài chưa dạy phân biệt sai số ngẫu nhiên và hệ thống.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lẫn quãng rơi thật với số ghi sai. Em nghĩ s dài thì bi rơi chậm hơn nên g nhỏ hơn, mà quên t đã đo đúng và s nằm ở tử số.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "$s$ quá dài, $g$ lệch cùng phía"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhận ra t đọc lớn hơn nhưng suy luận ngược chiều: quên t nằm ở mẫu nên t lớn thì g nhỏ. D lại gần giống A nên dễ nhầm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất 'sai số nhỏ' với 'đúng giá trị', bỏ qua việc kiểm tra khoảng có chứa 9,8 hay không.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Xét cả khoảng, không xét riêng $\\bar g$"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi t tỉ lệ thuận với s: s gấp 4 thì t gấp 4. Trước câu này bài chưa nêu rõ t ∝ √s.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "bai": "l10-chuyen-dong-nem",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không dời mục (đổi cấu trúc), chỉ thêm câu dặn 'Câu 6 để dành tới khi học xong mục VI' ở đầu mục IV."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu α (đổi sang β phải sửa khoảng 10 chỗ, vượt phạm vi), thay bằng chú thích α là góc ném ở VI.1 và ở dòng Ném xiên của Mang về."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước trung gian 2v0²sinαcosα/g và nêu 2sinαcosα = sin2α (công thức nhân đôi chưa học ở Toán 10)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ thế t_lên vào y để ra H, và giải t(v0sinα − ½gt) = 0 bỏ nghiệm t = 0 để ra t = 2t_lên."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'a_y = −g (g vẫn là số dương)'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án D thành 'Toạ độ y của vật' (tăng theo t², không đều) và thêm phản hồi riêng cho D."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ câu 'gia tốc của tốc độ', thay bằng ví dụ số v = 10; 14,1; 22,4 m/s tại t = 0; 1; 2 s."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước v_y = g√(2h/g) = √(2gh) và ghi rõ v_cd là vận tốc chạm đất."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: lực cản làm L đo hơi ngắn nên v0 = L/t suy ra hơi nhỏ hơn vận tốc thật, đồng thời tách các nguồn sai số thành từng dòng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa 'chưa tới 0,02' thành 'nhiều nhất 0,02 m/s'."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(h là độ cao thả, công thức có ở mục II.3)' vào phản hồi câu dự đoán."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một bước trong lời giải: v_y = 10 − 10×2 = −10 m/s, nên v = √(17,3² + 10²) ≈ 20 m/s."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thử thách ⭐/⭐⭐ sang h = 80 m, v0 = 25 m/s và tính lại kết quả (chọn 25 thay vì 15 để tầm xa không trùng 60 m)."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh ở phản hồi sai, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh lỗi quên dấu căn ở phản hồi, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh ở phản hồi và ở dòng 🔑 của Bẫy 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh ở đoạn Bẫy 2 và ở phản hồi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh phương án C, còn phân vân về D đã xử lí ở c6."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu thời gian bay khác nhau, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mạnh lỗi nhầm sin/cos ở phản hồi."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 4 (tl57-q6): phương án nhiễu D đổi từ 'Tầm xa L' thành 'Toạ độ y'; phản hồi sai thêm giải thích y = ½gt² không đều.",
+      "Câu 4, phản hồi sai: thay câu 'gia tốc của tốc độ lúc đầu bằng 0...' bằng ví dụ v0 = 10 m/s, g = 10 m/s² → v = 10; 14,1; 22,4 m/s tại t = 0; 1; 2 s.",
+      "VI.2: thêm bước thế t_lên vào y để ra H, và giải y = 0: t(v0sinα − ½gt) = 0 → t = 2v0sinα/g = 2t_lên.",
+      "VI.2: thêm bước trung gian L = 2v0²sinαcosα/g = v0²sin2α/g.",
+      "VI mở mục: 'g mang dấu trừ' → 'a_y = −g (g vẫn là số dương)'.",
+      "II.4: thêm bước v_y = g√(2h/g) = √(2gh), ghi rõ v_cd là vận tốc chạm đất.",
+      "Thí nghiệm 2 (details): 'chưa tới 0,02 m/s' → 'nhiều nhất 0,02 m/s'; lực cản làm L đo ngắn nên v0 = L/t suy ra hơi nhỏ hơn vận tốc thật.",
+      "Bài toán mẫu ném xiên (details): thêm bước lúc chạm sân v_y = −10 m/s, v = √(17,3² + 10²) ≈ 20 m/s.",
+      "Thử thách ⭐/⭐⭐: đổi h = 45 → 80 m, v0 = 20 → 25 m/s; tính lại t = 4 s, L = 100 m, v_y = 40 m/s, v ≈ 47,2 m/s.",
+      "Mang về, dòng Ném xiên: bỏ ý 'Ox đều, Oy lên chậm dần rồi xuống nhanh dần', thêm '(α ở đây là góc ném)'.",
+      "VI.1: thêm chú thích α là góc ném, khác góc lệch vận tốc ở II.4."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-nem/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

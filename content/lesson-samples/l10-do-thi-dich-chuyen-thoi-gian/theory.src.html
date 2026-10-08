@@ -11,7 +11,7 @@
 
 <h3>I. Mở bài: đồ thị chuyến đi xe đạp</h3>
 
-<p>Ứng dụng bản đồ trên điện thoại vẽ <strong>toạ độ $x$ của một bạn đi xe đạp theo thời gian $t$</strong>. Bạn chỉ đi qua lại trên một con đường thẳng, gốc toạ độ ở nhà bạn. Một buổi sáng, màn hình vẽ ra ba đoạn thẳng ①, ②, ③ như Hình 1.</p>
+<p>Ứng dụng bản đồ trên điện thoại vẽ <strong>toạ độ $x$ của một bạn đi xe đạp theo thời gian $t$</strong>. Bạn chỉ đi qua lại trên một con đường thẳng, gốc toạ độ ở nhà bạn, cũng là chỗ xuất phát, nên ở đây $x$ chính là độ dịch chuyển $d$. Một buổi sáng, màn hình vẽ ra ba đoạn thẳng ①, ②, ③ như Hình 1.</p>
 
 <!--FIG1-->
 
@@ -37,10 +37,10 @@
 <ul>
 <li><strong>Quỹ đạo:</strong> đường vật vạch ra khi chuyển động.</li>
 <li><strong>Chuyển động thẳng:</strong> quỹ đạo là đường thẳng.</li>
-<li><strong>Chuyển động thẳng đều:</strong> quỹ đạo thẳng, tốc độ không đổi.</li>
+<li><strong>Chuyển động thẳng đều:</strong> quỹ đạo thẳng, đi một chiều, tốc độ không đổi (tức vận tốc không đổi).</li>
 <li>Đi <strong>một chiều</strong> không đổi: độ lớn độ dịch chuyển bằng quãng đường, $\lvert d\rvert = s$; vận tốc và tốc độ có độ lớn như nhau.</li>
 <li><strong>Quay đầu:</strong> quãng đường vẫn cộng thêm (luôn dương), còn độ dịch chuyển giảm, có thể âm. Tốc độ luôn dương; vận tốc âm khi đi ngược chiều dương.</li>
-<li><strong>Tốc độ trung bình</strong> $= \dfrac{s}{t}$ (không âm); <strong>vận tốc trung bình</strong> $= \dfrac{d}{t}$ (có dấu). Đi một chiều: bằng nhau về độ lớn.</li>
+<li><strong>Tốc độ trung bình</strong> $= \dfrac{s}{t}$ (không âm); <strong>vận tốc trung bình</strong> $= \dfrac{d}{t}$ (có dấu).</li>
 </ul>
 
 <p>Ví dụ: trượt băng thẳng $30\ \text{m}$, quay lại $10\ \text{m}$: $s = 40\ \text{m}$, $d = 20\ \text{m}$.</p>
@@ -72,8 +72,8 @@
 <p>Ví dụ: xe đồ chơi xuất phát cách vạch mốc $2\ \text{m}$, chạy ra xa vạch mốc với $1{,}5\ \text{m/s}$ (chiều dương từ vạch mốc ra): $x = 2 + 1{,}5t$ (m).</p>
 
 <details class="tl-details">
-<summary>🧮 Tự tính trước: lúc $t = 4\ \text{s}$ xe ở đâu? Chạy về vạch mốc thì $v$ bằng bao nhiêu?</summary>
-<p>$x = 2 + 1{,}5 \cdot 4 = 8\ \text{m}$. Chạy về vạch mốc là ngược chiều dương: $v = -1{,}5\ \text{m/s}$.</p>
+<summary>🧮 Tự tính trước: lúc $t = 4\ \text{s}$ xe ở đâu? Nếu xe chạy về vạch mốc với cùng tốc độ thì $v$ bằng bao nhiêu?</summary>
+<p>$x = 2 + 1{,}5 \cdot 4 = 8\ \text{m}$. Chạy về vạch mốc là ngược chiều dương, cùng tốc độ $1{,}5\ \text{m/s}$: $v = -1{,}5\ \text{m/s}$.</p>
 </details>
 
 <h4>3. Vẽ đồ thị từ bảng số liệu</h4>
@@ -89,7 +89,7 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l10-dt-dctg-01">
 <p class="tl-label">🔬 Thí nghiệm: bọt khí trong ống nước</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> ống thuỷ tinh dài khoảng $60\ \text{cm}$ đựng đầy nước, còn một bọt khí; dán vạch $0$, $10$, $20$, $30$, $40$, $50\ \text{cm}$. Đặt ống nghiêng, bấm đồng hồ khi bọt khí qua vạch $0$, đọc thời điểm nó qua từng vạch (5 lần đọc).</li>
+<li><strong>Làm:</strong> ống thuỷ tinh dài khoảng $60\ \text{cm}$ đựng đầy nước, còn một bọt khí; dán vạch $0$, $10$, $20$, $30$, $40$, $50\ \text{cm}$. Đặt ống nghiêng, bấm đồng hồ khi bọt khí qua vạch $0$, đọc thời điểm nó qua từng vạch.</li>
 <li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ); các điểm $(t, d)$ gần như nằm trên một đường thẳng (Hình 2).</li>
 <li><strong>Rút ra:</strong> bọt khí chuyển động thẳng đều; độ dốc của đường cho vận tốc của nó.</li>
 </ol>
@@ -198,7 +198,7 @@
 
 <h4>Bẫy 1: coi đồ thị là con đường</h4>
 
-<p>Đồ thị xiên lên không có nghĩa là vật leo dốc. Trục đứng là <strong>độ dịch chuyển</strong>, không phải độ cao.</p>
+<p>Đồ thị xiên lên không có nghĩa là vật leo dốc. Trục đứng là <strong>độ dịch chuyển</strong> tính từ gốc, tức là vị trí của vật, không phải độ cao.</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -259,14 +259,14 @@
 <input type="radio" name="tl52-q6" id="tl52-q6b"><label for="tl52-q6b" class="tl-opt tl-no">B. Xe ④ chạy nhanh hơn xe ①, vì lúc $t = 0$ đường ④ nằm cao hơn</label>
 <input type="radio" name="tl52-q6" id="tl52-q6c"><label for="tl52-q6c" class="tl-opt tl-no">C. Lúc $t = 2\ \text{s}$, cả hai xe đều đứng yên</label>
 <input type="radio" name="tl52-q6" id="tl52-q6d"><label for="tl52-q6d" class="tl-opt tl-ok">D. Lúc $t = 2\ \text{s}$, hai xe ở cùng chỗ $d = 8\ \text{m}$ nhưng chạy ngược chiều nhau</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giao điểm cho cùng vị trí: $d = 4 \cdot 2 = 8\ \text{m}$ và $d = 14 - 3 \cdot 2 = 8\ \text{m}$. Đường ① đi lên ($v = 4\ \text{m/s}$), đường ④ đi xuống ($v = -3\ \text{m/s}$): ngược chiều.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giao điểm cho cùng vị trí: với ④, $d = 14 - 3 \cdot 2 = 8\ \text{m}$. Đường ① đi lên từ $(0;\ 0)$ tới $(2\ \text{s};\ 8\ \text{m})$: $v = \dfrac{8 - 0}{2 - 0} = 4\ \text{m/s}$. Đường ④ đi xuống ($v = -3\ \text{m/s}$): ngược chiều.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhầm giao điểm với cùng độ dốc. B dùng độ cao để so nhanh chậm: ④ chỉ <em>xuất phát ở xa hơn</em>, độ dốc của nó ($3\ \text{m/s}$ về độ lớn) nhỏ hơn của ① ($4\ \text{m/s}$). C: cả hai đường đều nghiêng, không xe nào đứng yên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bảng ngay trên.</p></div>
 </div>
 </div>
 
 <h4>Bẫy 3: đọc quãng đường ở điểm cuối của đồ thị</h4>
 
-<p>Điểm cuối của đồ thị chỉ cho <strong>độ dịch chuyển</strong>. Vật có quay đầu thì quãng đường phải <strong>cộng từng đoạn</strong>, đoạn đi xuống cũng tính độ lớn.</p>
+<p>Điểm cuối của đồ thị chỉ cho <strong>độ dịch chuyển</strong>. Vật có quay đầu thì quãng đường phải <strong>cộng độ lớn từng đoạn</strong>.</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -299,10 +299,9 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
-<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
 <details class="tl-details">
 <summary>1. Chuyển động thẳng đều là gì? Khi nào $\lvert d\rvert = s$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Quỹ đạo thẳng · tốc độ không đổi. $\lvert d\rvert = s$ khi đi <strong>một chiều</strong>, không quay đầu.</p>
+<p>Quỹ đạo thẳng, đi một chiều, tốc độ không đổi.<br>$\lvert d\rvert = s$ khi đi <strong>một chiều</strong>, không quay đầu.</p>
 </details>
 <details class="tl-details">
 <summary>2. Viết phương trình chuyển động thẳng đều, nêu nghĩa từng kí hiệu. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
@@ -341,7 +340,7 @@
 <tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 </thead>
 <tbody>
-<tr><td>"đường ray thẳng"</td><td>chuyển động thẳng → dùng được đồ thị $d$–$t$</td></tr>
+<tr><td>"chạy trên đường thẳng"</td><td>chuyển động thẳng → dùng được đồ thị $d$–$t$</td></tr>
 <tr><td>"chiều dương từ vạch mốc ra cọc cờ"</td><td>$d$ tăng: đi ra cọc cờ · $d$ giảm: đi về vạch mốc</td></tr>
 <tr><td>đoạn OA, từ 0 đến 4 s</td><td>d từ 0 lên 8 m → tính độ dốc</td></tr>
 <tr><td>đoạn AB, từ 4 đến 6 s</td><td>d giữ 8 m → đứng yên</td></tr>
@@ -378,9 +377,10 @@
 
 <details class="tl-details">
 <summary>🔁 Thử sức đổi điểm: xe ở đâu lúc $t = 8\ \text{s}$?</summary>
-<p>Trong đoạn $BC$, đếm thời gian từ lúc bắt đầu đoạn ($t = 6\ \text{s}$, $d = 8\ \text{m}$): $d = 8 + (-2)(t - 6)$. Lúc $t = 8\ \text{s}$: $d = 8 - 4 = 4\ \text{m}$, đúng điểm giữa đoạn $BC$ trên Hình 4.</p>
+<p>Đoạn $BC$ không bắt đầu lúc $t = 0$, nên đếm thời gian từ lúc bắt đầu đoạn ($t_0 = 6\ \text{s}$, $d_0 = 8\ \text{m}$): $d = d_0 + v(t - t_0) = 8 + (-2)(t - 6)$. Thay thẳng vào $d = 8 - 2t$ là sai. Lúc $t = 8\ \text{s}$: $t - t_0 = 2\ \text{s}$, $d = 8 - 4 = 4\ \text{m}$, đúng điểm giữa đoạn $BC$ trên Hình 4.</p>
 </details>
 
+<p>⚠ Đổi chiều dương thì mọi đại lượng có hướng đều đổi dấu: cả $d$ lẫn $v$, kể cả đoạn đang "đi xuống" trên hình cũ.</p>
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl52-q8-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl52-q8-conf" value="khong"> Không chắc</label></p>
@@ -393,19 +393,19 @@
 <input type="radio" name="tl52-q8" id="tl52-q8c"><label for="tl52-q8c" class="tl-opt tl-ok">C. $v_{BC} = 2\ \text{m/s}$; $d = -8\ \text{m}$</label>
 <input type="radio" name="tl52-q8" id="tl52-q8d"><label for="tl52-q8d" class="tl-opt tl-no">D. $v_{BC} = -2\ \text{m/s}$; $d = -8\ \text{m}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đổi chiều dương thì mọi giá trị có hướng đổi dấu: lúc $t = 4\ \text{s}$ xe ở phía cọc cờ, nay là phía âm, $d = -8\ \text{m}$; đoạn $BC$ xe chạy về vạch mốc, nay là chiều dương, $v = 2\ \text{m/s}$. Đồ thị lật ngược qua trục $t$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A giữ nguyên mọi dấu, quên rằng đã đổi chiều dương. B chỉ đổi dấu vận tốc mà quên độ dịch chuyển cũng có hướng. D đổi dấu $d$ nhưng giữ dấu $v$ — xe đang chạy về vạch mốc, mà chiều về vạch mốc nay là chiều dương. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại dòng "chiều dương" trong bảng dữ liệu.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A giữ nguyên mọi dấu, quên rằng đã đổi chiều dương. B chỉ đổi dấu vận tốc mà quên độ dịch chuyển cũng có hướng. D đổi dấu $d$ nhưng giữ dấu $v$ — xe đang chạy về vạch mốc, mà chiều về vạch mốc nay là chiều dương. Nếu đã chọn <em>Chắc</em> mà vẫn sai, đọc lại dòng ⚠ ngay trên câu này.</p></div>
 </div>
 </div>
 
 <h3>VI. Đời sống và tổng kết</h3>
 
 <details class="tl-details">
-<summary>🚆 Bấm xem: bốn nơi đang dùng đồ thị $d$–$t$</summary>
+<summary>🚆 Bấm xem: bốn nơi đang dùng đồ thị kiểu $d$–$t$</summary>
 <ul>
 <li><strong>Biểu đồ chạy tàu:</strong> ngành đường sắt vẽ vị trí từng đoàn tàu theo thời gian. Hai đường cắt nhau là hai tàu gặp nhau, phải bố trí tránh ở ga.</li>
-<li><strong>Thang máy chung cư:</strong> đồ thị độ cao theo thời gian cho biết thang đi nhanh hay chậm; độ dốc chính là tốc độ đó (m/s), đoạn nằm ngang là lúc thang dừng mở cửa.</li>
+<li><strong>Thang máy chung cư:</strong> thang đi theo đường thẳng đứng, nên vị trí của thang chính là độ cao. Độ dốc của đồ thị độ cao – thời gian là vận tốc của thang (m/s, âm khi thang đi xuống); đoạn nằm ngang là lúc thang dừng mở cửa.</li>
 <li><strong>Ứng dụng chạy bộ:</strong> đoạn đồ thị nằm ngang là lúc dừng đèn đỏ; đoạn thoải là lúc đi chậm lại.</li>
-<li><strong>Trượt băng tốc độ:</strong> vẽ quãng đường theo thời gian từng vòng, vòng nào đường thoải hơn là vòng đó trượt chậm đi.</li>
+<li><strong>Trượt băng tốc độ:</strong> đường trượt là vòng cong, không thẳng, nên ở đây vẽ quãng đường $s$ (không phải độ dịch chuyển $d$) theo thời gian từng vòng; vòng nào đường thoải hơn là vòng đó trượt chậm đi.</li>
 </ul>
 </details>
 
