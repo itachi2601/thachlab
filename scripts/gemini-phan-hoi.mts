@@ -68,7 +68,7 @@ const blind = full
 const promptFile =
   mode === "bai-tap-mau"
     ? ".claude/skills/soan-bai-tap-mau/references/PROMPT-GEMINI-BAI-TAP-MAU.md"
-    : ".claude/skills/chinh-ly-thuyet-theo-phan-hoi/references/PROMPT-GEMINI-HOC-SINH.md";
+    : ".claude/skills/cap-nhat-bai-hoc-theo-gemini/references/PROMPT-GEMINI-HOC-SINH.md";
 const marker = "## PROMPT (sao chép từ đây)";
 const rawMd = fs.readFileSync(path.join(root, promptFile), "utf8");
 if (!rawMd.includes(marker)) {
@@ -149,22 +149,22 @@ async function main() {
       return;
     }
     const out = await callGemini(prompt, full);
-    const dest = path.join(root, "scripts", "data", "bai-tap-mau", "gemini");
+    const dest = path.join(dir, "gemini", "nhan");
     fs.mkdirSync(dest, { recursive: true });
-    const file = path.join(dest, `${id}.json`);
+    const file = path.join(dest, "bai-tap-mau.json");
     fs.writeFileSync(file, JSON.stringify(out, null, 2));
-    console.log(`Đã lưu ${path.relative(root, file)}\nTiếp: python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py ${path.relative(root, file)}`);
+    console.log(`Đã lưu ${path.relative(root, file)}\nTiếp: python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py ${path.relative(root, file)} --lesson-id ${id}`);
     return;
   }
 
   const vais = (arg("vai") ?? "yeu,trung-binh,kha").split(",").map((s) => s.trim());
-  const dest = path.join(dir, "phan-hoi-hs");
+  const dest = path.join(dir, "gemini", "nhan");
   fs.mkdirSync(dest, { recursive: true });
   for (const vai of vais) {
     const prompt = fill(promptTpl, vai);
     if (flag("xuat")) {
       // Không gọi Gemini: xuất sẵn file để thầy dán tay vào gemini.google.com (mỗi vai một cuộc chat, 2 tin nhắn)
-      const out = path.join(dest, "gui-gemini");
+      const out = path.join(dir, "gemini", "gui");
       fs.mkdirSync(out, { recursive: true });
       const blindIns =
         `Bạn là học sinh lớp ${lop} hồ sơ "${vai}" (yeu = nền yếu, hay quên; trung-binh = hiểu khi ví dụ rõ, hay nhầm điều kiện; kha = nắm nhanh). ` +
@@ -207,12 +207,12 @@ async function main() {
     step2.vai = vai;
     step2.tra_loi_quiz = step1.tra_loi_quiz ?? step2.tra_loi_quiz;
     step2.ly_do_chon = step1.ly_do_chon ?? step2.ly_do_chon;
-    const file = path.join(dest, `${today}-${vai}.json`);
+    const file = path.join(dest, `hoc-sinh-${vai}.json`);
     fs.writeFileSync(file, JSON.stringify(step2, null, 2));
     console.log(`  → ${path.relative(root, file)} (${step2.gop_y?.length ?? 0} góp ý)`);
   }
   if (!flag("dry-run"))
-    console.log(`\nTiếp: python3 .claude/skills/chinh-ly-thuyet-theo-phan-hoi/scripts/gop-phan-hoi.py content/lesson-samples/${bai}`);
+    console.log(`\nTiếp: python3 .claude/skills/cap-nhat-bai-hoc-theo-gemini/scripts/gop-phan-hoi.py content/lesson-samples/${bai}`);
 }
 
 main().catch((e) => {

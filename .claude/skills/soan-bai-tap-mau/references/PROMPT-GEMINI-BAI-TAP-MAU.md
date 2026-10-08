@@ -1,7 +1,7 @@
 # Prompt gửi Gemini: viết BẢN NHÁP bài tập mẫu (Claude kiểm + dựng + đăng)
 
 Cách dùng (thầy làm trên Cursor/Gemini app): đính kèm **chỉ** `theory.html` (hoặc, nếu đang trong cuộc chat học sinh ảo, gửi file `<vai>-3-bai-tap-mau.txt` ngay sau khi Gemini đã đọc bài) của bài (để cùng ký hiệu với bài đã dạy) và dán prompt dưới đây. Lưu kết quả:
-`scripts/data/bai-tap-mau/gemini/<lesson_id>.json`
+`content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json`
 Rồi gõ cho Claude "kiểm bản nháp bài tập mẫu <lesson_id>". Không đính dữ liệu học sinh.
 
 ---

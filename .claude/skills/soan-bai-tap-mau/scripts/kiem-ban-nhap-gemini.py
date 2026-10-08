@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Kiểm bản nháp bài tập mẫu do Gemini viết (trước khi Claude dựng).
 
-  python3 kiem-ban-nhap-gemini.py scripts/data/bai-tap-mau/gemini/<lesson_id>.json
+  python3 kiem-ban-nhap-gemini.py content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json --lesson-id <id>
 
 Bắt: JSON/thiếu trường · tính lại `kiem_tinh` · đáp số lệch kiem_tinh · trích_đề không có trong đề ·
 hàng "cần tìm" lộ số · từ cấm (thầy/cô) · `<`/`>` trong $…$ · yccd không khớp danh mục (gợi ý gần nhất).
@@ -20,13 +20,15 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     path = sys.argv[1]
+    lid_arg = sys.argv[sys.argv.index("--lesson-id") + 1] if "--lesson-id" in sys.argv else None
     try:
         j = json.load(open(path))
     except Exception as e:
         sys.exit(f"✗ JSON hỏng: {e}")
     lid = None
     m = re.search(r"(\d+)\.json$", path)
-    if m: lid = int(m.group(1))
+    if lid_arg: lid = int(lid_arg)
+    elif m: lid = int(m.group(1))
     topics = []
     tp = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "scripts", "data", "question-topics.json")
     if os.path.exists(tp):

@@ -2,7 +2,7 @@
 """Gộp phản hồi của học sinh ảo (Gemini) cho một bài lý thuyết.
 
   python3 gop-phan-hoi.py content/lesson-samples/<bài>            # in góp ý chưa xử lý
-  python3 gop-phan-hoi.py content/lesson-samples/<bài> --danh-dau  # ghi các file đã gộp vào da-xu-ly.json
+  python3 gop-phan-hoi.py content/lesson-samples/<bài> --danh-dau  # ghi các file đã gộp vào gemini/da-xu-ly/so-quyet-dinh.json
 """
 import json, sys, glob, os, collections
 
@@ -14,13 +14,13 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not args:
         sys.exit(__doc__)
-    d = os.path.join(args[0], "phan-hoi-hs")
+    d = os.path.join(args[0], "gemini", "nhan")
     if not os.path.isdir(d):
-        sys.exit(f"Chưa có thư mục {d}")
-    sổ_path = os.path.join(d, "da-xu-ly.json")
+        sys.exit(f"Chưa có thư mục {d} (bài chưa có phản hồi Gemini)")
+    xl = os.path.join(args[0], "gemini", "da-xu-ly"); os.makedirs(xl, exist_ok=True)
+    sổ_path = os.path.join(xl, "so-quyet-dinh.json")
     sổ = json.load(open(sổ_path)) if os.path.exists(sổ_path) else {"files": [], "quyet_dinh": {}}
-    files = sorted(f for f in glob.glob(os.path.join(d, "*.json"))
-                   if os.path.basename(f) not in ("da-xu-ly.json", "dap-an-that.json"))
+    files = sorted(glob.glob(os.path.join(d, "hoc-sinh-*.json")))
     moi = [f for f in files if os.path.basename(f) not in sổ["files"]]
     if not moi:
         print("Không có file phản hồi mới."); return

@@ -1,7 +1,7 @@
 # Prompt gửi Gemini: đóng vai học sinh đọc thử bài lý thuyết
 
 Cách dùng (thầy làm trên Cursor/Gemini): gửi **3 lượt riêng**, mỗi lượt thay `{VAI}`; đính kèm `theory.html` (hoặc dán text bài). Lưu kết quả đúng tên:
-`content/lesson-samples/<bài>/phan-hoi-hs/AAAA-MM-DD-<yeu|trung-binh|kha>.json`
+`content/lesson-samples/<bài>/gemini/nhan/hoc-sinh-<yeu|trung-binh|kha>.json`
 Chỉ đính nội dung bài. Không đính tên, điểm, SĐT học sinh thật.
 
 ---
