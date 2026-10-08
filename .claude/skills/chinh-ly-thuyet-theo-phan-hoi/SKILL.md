@@ -13,7 +13,7 @@ Prompt gửi Gemini và schema: `references/PROMPT-GEMINI-HOC-SINH.md`. Chỉ g�
 
 ## Chạy tự động (thầy cho phép 8/10/2026, ngoại lệ riêng cho việc này)
 
-Thầy đã đồng ý cho script gọi Gemini thay vì dán tay: `scripts/gemini-phan-hoi.mts` (chạy trong tab terminal trên Mac; cần `GEMINI_API_KEY` + `GEMINI_MODEL` trong `.env.local`, không hard-code tên model).
+Thầy đã đồng ý cho script gọi Gemini thay vì dán tay: `scripts/gemini-phan-hoi.mts` (chạy trong tab terminal trên Mac). Không có API key thì dùng **Gemini CLI đăng nhập tài khoản Google** (`npm i -g @google/gemini-cli`, chạy `gemini` một lần để đăng nhập); có `GEMINI_API_KEY` + `GEMINI_MODEL` trong `.env.local` thì gọi API. Không hard-code tên model.
 ```
 npx tsx scripts/gemini-phan-hoi.mts --bai <thư-mục-bài> --ten "<tên bài>" --dry-run   # xem trước, không gọi API
 npx tsx scripts/gemini-phan-hoi.mts --bai <thư-mục-bài> --ten "<tên bài>"             # 3 vai × 2 lượt, lưu vào phan-hoi-hs/

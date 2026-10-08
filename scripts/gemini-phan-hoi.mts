@@ -5,13 +5,15 @@
 //        [--vai yeu,trung-binh,kha] [--dry-run]
 //   npx tsx scripts/gemini-phan-hoi.mts --che-do bai-tap-mau --bai <thư mục> --ten "<tên bài>" --lesson-id <id> [--dry-run]
 //
-// Cần GEMINI_API_KEY và GEMINI_MODEL trong .env.local (hoặc biến môi trường). KHÔNG hard-code tên model
+// Hai đường gọi: (a) Gemini CLI đăng nhập tài khoản Google, không cần API key (mặc định khi thiếu GEMINI_API_KEY);
+// (b) API nếu có GEMINI_API_KEY + GEMINI_MODEL trong .env.local. KHÔNG hard-code tên model
 // (model bị khai tử theo thời gian, xem AGENTS.md "Gọi AI provider trong code"). Chỉ gửi nội dung bài —
 // không có dữ liệu học sinh. Chạy trong tab terminal (cần mạng). Không ghi DB, chỉ ghi file.
 //
 // Chế độ học sinh gọi 2 lượt mỗi vai: (1) "mù" — bài đã bỏ lời giải/đáp án của các câu tự kiểm tra, vai chọn
 // đáp án; (2) đọc đủ bài, nêu góp ý (có kèm đáp án lượt 1 để so). Nhờ vậy phép thử quiz có nghĩa.
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -78,13 +80,39 @@ const fill = (s: string, vai = "") =>
   s.replaceAll("{TÊN BÀI}", ten).replaceAll("{LỚP}", lop).replaceAll("{VAI}", vai);
 
 // --- gọi Gemini -------------------------------------------------------------------------------
+function parseJsonText(text: string): unknown {
+  const t = text.trim().replace(/^```(?:json)?\s*|\s*```$/g, "");
+  const a = t.indexOf("{"), b = t.lastIndexOf("}");
+  try {
+    return JSON.parse(a >= 0 ? t.slice(a, b + 1) : t);
+  } catch {
+    throw new Error(`Gemini trả JSON hỏng: ${text.slice(0, 300)}`);
+  }
+}
+
+// Không cần API key: dùng Gemini CLI đăng nhập bằng tài khoản Google (gói Pro/miễn phí). Cài một lần:
+//   npm i -g @google/gemini-cli && gemini      (chọn "Login with Google", đăng nhập trên trình duyệt)
+function callGeminiCli(prompt: string, bodyText: string): unknown {
+  const model = envVar("GEMINI_MODEL");
+  const args = ["-p", `${prompt}\n\nCHỈ IN MỘT JSON HỢP LỆ, KHÔNG DÙNG CÔNG CỤ, KHÔNG THÊM CHỮ NÀO KHÁC.`];
+  if (model) args.push("-m", model);
+  const r = spawnSync("gemini", args, {
+    input: `=== NỘI DUNG BÀI (HTML) ===\n${bodyText}`,
+    encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
+    timeout: 10 * 60 * 1000,
+  });
+  if (r.error) {
+    throw new Error(`Không chạy được lệnh gemini (${r.error.message}). Cài: npm i -g @google/gemini-cli, chạy \`gemini\` một lần để đăng nhập Google.`);
+  }
+  if (r.status !== 0) throw new Error(`gemini thoát mã ${r.status}: ${(r.stderr || r.stdout).slice(0, 400)}`);
+  return parseJsonText(r.stdout);
+}
+
 async function callGemini(prompt: string, bodyText: string): Promise<unknown> {
   const key = envVar("GEMINI_API_KEY");
   const model = envVar("GEMINI_MODEL");
-  if (!key || !model) {
-    console.error("Thiếu GEMINI_API_KEY hoặc GEMINI_MODEL trong .env.local (mở ai.google.dev lấy tên model hiện hành).");
-    process.exit(1);
-  }
+  if (!key || !model) return callGeminiCli(prompt, bodyText); // không có API key → dùng Gemini CLI
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
   for (let attempt = 1; attempt <= 3; attempt++) {
     const res = await fetch(url, {
@@ -104,11 +132,7 @@ async function callGemini(prompt: string, bodyText: string): Promise<unknown> {
     if (!res.ok) throw new Error(`Gemini ${res.status}: ${JSON.stringify(j).slice(0, 400)}`);
     const text: string | undefined = j.candidates?.[0]?.content?.parts?.map((p: any) => p.text ?? "").join("");
     if (!text) throw new Error(`Gemini không trả văn bản: ${JSON.stringify(j).slice(0, 400)}`);
-    try {
-      return JSON.parse(text.replace(/^```json\s*|\s*```$/g, ""));
-    } catch {
-      throw new Error(`Gemini trả JSON hỏng: ${text.slice(0, 300)}`);
-    }
+    return parseJsonText(text);
   }
   throw new Error("Gemini lỗi sau 3 lần thử");
 }
