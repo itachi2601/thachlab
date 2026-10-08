@@ -78,3 +78,4 @@
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo dang-chung.json/tiet.json
+- [Cloud ↔ main tự gộp](project_thachlab_concurrent_sessions.md) — workflow gop-claude-vao-main; cuối phiên kiểm origin/main==HEAD, xanh thì không in lệnh merge

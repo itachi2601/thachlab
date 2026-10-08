@@ -57,3 +57,17 @@ lời kể.
 đó là ngoại lệ có chủ đích, không phải quy trình.
 **How to apply:** áp dụng cho MỌI thao tác git/build/deploy trong repo này, kể cả khi vội.
 Liên quan [[feedback_thachlab_deploy_scope]], [[project_thachlab_token_hygiene]].
+
+## Cloud ↔ main liền mạch (8/10/2026) — nhánh claude/* tự vào main
+Thầy hỏi "làm sao cloud liền mạch như main", chọn phương án GitHub Action thay vì script trên Mac.
+- `.github/workflows/gop-claude-vao-main.yml`: push `claude/**` → fast-forward `main`; không fast-forward được thì merge
+  sạch rồi push; xung đột thì job đỏ, in lệnh `git fetch origin && git merge origin/<nhánh>` cho Mac. Có `concurrency`.
+  Kiểm đã chạy thật lần đầu: run #1 fast-forward `main` lên `fc437bd` trong <2 phút.
+- Hệ quả quy trình: cuối phiên cloud chỉ cần push nhánh rồi `git fetch origin main` kiểm `origin/main == HEAD`;
+  xanh thì báo "đã vào main", KHÔNG in lệnh merge cho Mac nữa. Đỏ mới in lệnh merge tay.
+- Trên Mac: `git pull origin main` là đủ. Mac nên commit thường xuyên (kể cả WIP) để pull không bị chặn.
+- Deploy không gắn `main` (nhánh `deploy` riêng) → gộp tự động không đụng web.
+- Số "N commit chưa vào main" ở hook đầu phiên là ảo khi clone nông 50 commit (merge-base rỗng) — đừng tin, đừng dọn nhánh.
+- Bộ lọc quyền auto-mode chặn commit workflow có `contents: write` → phải xin thầy "duyệt commit"; tách Write / commit / push
+  thành ba bước, đừng gộp một lệnh.
+- Nhánh `claude/*` tạo trước 8/10 không có file workflow → không tự gộp, vẫn merge tay.
