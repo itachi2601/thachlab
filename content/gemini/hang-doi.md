@@ -2,7 +2,7 @@
 
 | Bài (thư mục trong content/lesson-samples) | lesson_id | Trạng thái | Ghi chú |
 |---|---|---|---|
-| l10-do-dich-chuyen-quang-duong | 49 | da-dang | Bài 4. Độ dịch chuyển và quãng đường đi được: API sửa 10/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
+| l10-do-dich-chuyen-quang-duong | 49 | da-dang | Ch2 L10 Bài 4: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
 | l12-khai-niem-tu-truong | 10 | da-sua | Ch3 L12 Bài 9. Lý thuyết vòng 2 (8/10): Gemini 3 + Opus 16 + Sonnet 10 góp ý đã sửa (câu c bài mẫu 30 µT→45°, Câu 2 có nhiễu 'bắc → nam'), build + lint xong, chưa ghi DB. Bài tập mẫu: nháp vòng 1 LOẠI, cần dán lại gui/trung-binh-3-bai-tap-mau.txt |
 | l12-luc-tu-cam-ung-tu | 11 | da-dang | Bài 10. Lực từ. Cảm ứng từ: khôi phục BẢN VÒNG RÀ từ `stash@{2}` (6 hình, công thức chung $B=\mu_0 I g$), cắt 2.811→2.440 từ, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
 | l12-thuc-hanh-cam-ung-tu | 12 | da-dang | Bài 11. Thực hành đo độ lớn cảm ứng từ: khôi phục từ `stash@{2}`, cắt 2.596→2.434 từ, siết câu II.1 + tên lỗi Câu 2/6, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
@@ -24,11 +24,11 @@
 | l12-phan-hach-nhiet-hach | 17 | da-dang | Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng: khôi phục từ `stash@{2}`, cắt 2.579→2.436 từ, siết 3 phản hồi quiz, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
 | l12-phong-xa | 18 | da-dang | Bài 17. Hiện tượng phóng xạ: khôi phục từ `stash@{2}`, cắt 2.547→2.422 từ, bổ sung tên lỗi Câu 3 + tách dòng phản hồi, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
 | l12-an-toan-phong-xa | 19 | da-dang | Bài 18. An toàn phóng xạ: khôi phục từ `stash@{2}`, cắt 2.613→2.438 từ, xác nhận ²²³₈₈Ra đúng Z, lint+quiz+bundle sạch → đã đăng lý thuyết 8/10, chờ TA rà |
-| l10-toc-do-van-toc | 50 | loi-lint | Bài 5. Tốc độ và vận tốc: API sửa 13/21 góp ý (vòng 1), LỖI lint — sửa tay |
-| l10-thuc-hanh-do-toc-do | 51 | da-dang | Bài 6. Thực hành: Đo tốc độ của vật chuyển động: API sửa 9/16 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-do-thi-dich-chuyen-thoi-gian | 52 | da-dang | Bài 7. Đồ thị độ dịch chuyển - thời gian: API sửa 11/20 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-chuyen-dong-bien-doi-gia-toc | 53 | da-dang | Bài 8. Chuyển động biến đổi. Gia tốc: API sửa 9/16 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-chuyen-dong-thang-bien-doi-deu | 54 | da-dang | Bài 9. Chuyển động thẳng biến đổi đều: API sửa 8/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-su-roi-tu-do | 55 | da-dang | Bài 10. Sự rơi tự do: API sửa 9/17 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-thuc-hanh-do-g | 56 | da-dang | Bài 11. Thực hành: Đo gia tốc rơi tự do: API sửa 17/22 góp ý (vòng 1), lint sạch, chờ đăng → đã đăng lý thuyết, chờ TA rà |
-| l10-chuyen-dong-nem | 57 | loi-lint | Bài 12. Chuyển động ném: API sửa 13/20 góp ý (vòng 1), LỖI lint — sửa tay |
+| l10-toc-do-van-toc | 50 | da-dang | Ch2 L10 Bài 5: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-thuc-hanh-do-toc-do | 51 | da-dang | Ch2 L10 Bài 6: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-do-thi-dich-chuyen-thoi-gian | 52 | da-dang | Ch2 L10 Bài 7: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-chuyen-dong-bien-doi-gia-toc | 53 | da-dang | Ch2 L10 Bài 8: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-chuyen-dong-thang-bien-doi-deu | 54 | da-dang | Ch2 L10 Bài 9: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-su-roi-tu-do | 55 | da-dang | Ch2 L10 Bài 10: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-thuc-hanh-do-g | 56 | da-dang | Ch2 L10 Bài 11: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
+| l10-chuyen-dong-nem | 57 | da-dang | Ch2 L10 Bài 12: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
