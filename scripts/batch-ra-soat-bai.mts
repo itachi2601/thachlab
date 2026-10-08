@@ -252,12 +252,26 @@ const SCHEMA_VIET = obj({
   },
   luu_y_tro_giang: ARR_S,
 });
+// viet-bai-tap-mau gửi MỖI DẠNG một request (4 dạng/bài): một lần trả cả 4 dạng kèm SVG vượt 64k token (bài 13, 8/10/2026).
+const SCHEMA_VIET_1 = obj({
+  dang: obj({
+    label: S,
+    topic: S,
+    form: { type: "string", enum: ["bai_tap", "ly_thuyet"] },
+    problem_html: S,
+    analysis_html: S,
+    solution_html: S,
+    dap_so: ARR_S,
+    ghi_chu_kiem: ARR_S,
+  }),
+  luu_y_tro_giang: ARR_S,
+});
 const SCHEMA_KC = obj({
   dang: { type: "array", items: obj({ label: S, ket_luan: { type: "string", enum: ["dung", "sai", "nghi_ngo"] }, dap_so_doc_lap: ARR_S, ly_do: S, sua_de_xuat: S }) },
   tong_ket: S,
 });
 const SCHEMA_CUA = (c: string) =>
-  c === "bai-tap-mau" ? SCHEMA_BTM : c === "sua-ly-thuyet" ? SCHEMA_SUA : c === "viet-bai-tap-mau" ? SCHEMA_VIET : c === "kiem-cheo" ? SCHEMA_KC : SCHEMA;
+  c === "bai-tap-mau" ? SCHEMA_BTM : c === "sua-ly-thuyet" ? SCHEMA_SUA : c === "viet-bai-tap-mau" ? SCHEMA_VIET_1 : c === "kiem-cheo" ? SCHEMA_KC : SCHEMA;
 
 // ── nội dung bài ──────────────────────────────────────────────────────────────
 // Giữ HTML (tên mục, lớp tl-ok lộ đáp án đúng — prompt dựa vào đó), bỏ phần nặng vô nghĩa với model.
@@ -287,7 +301,7 @@ function danhMucYccd(lessonId: number): string {
 interface Bai {
   lessonId: number; itemId: number; ten: string; lop: string; chuong: string; html: string; nguon: "repo" | "db";
   // chỉ sua-ly-thuyet: thư mục bài, theory.src.html nguyên văn, JSON góp ý các lượt, sổ quyết định vòng trước
-  dir?: string; src?: string; gopY?: string; quyetDinhCu?: string;
+  dir?: string; src?: string; gopY?: string; quyetDinhCu?: string; lintLoi?: string;
   // viet-bai-tap-mau: bản nháp + log kiểm máy; kiem-cheo: file bài tập mẫu đã viết
   nhap?: string; kiemLog?: string; btm?: string;
 }
@@ -349,6 +363,14 @@ async function layBai(): Promise<Bai[]> {
       b.src = fs.readFileSync(srcP, "utf8");
       b.gopY = gopFiles.map((f) => `// ${f}\n${fs.readFileSync(path.join(nhanDir, f), "utf8")}`).join("\n\n");
       b.quyetDinhCu = fs.existsSync(qdP) ? fs.readFileSync(qdP, "utf8").slice(0, 8000) : "";
+      // Vòng trước API đã sửa nhưng lint báo lỗi → gửi lại kèm log lint để nó khắc phục đúng chỗ (vòng 2).
+      const kqSua = path.join(KQ_DIR, `${l.id}.sua.json`);
+      if (fs.existsSync(kqSua)) {
+        try {
+          const k = JSON.parse(fs.readFileSync(kqSua, "utf8")) as KetQua<KetQuaSua>;
+          if (k.sua?.trang_thai === "loi-lint") b.lintLoi = Object.entries(k.sua.lint).filter(([, v]) => /✗/.test(v)).map(([t, v]) => `[${t}]\n${v.split("\n").filter((x) => /✗|tổng|mục|>/.test(x)).join("\n")}`).join("\n\n");
+        } catch { /* bỏ */ }
+      }
     }
     if (CHE_DO === "viet-bai-tap-mau") {
       // Nháp: ưu tiên kết quả batch (ket-qua/<id>.bai-tap-mau.nhap.json), không có thì gemini/nhan/bai-tap-mau.json.
@@ -384,12 +406,17 @@ function userMessageSua(b: Bai): string {
     `<gop_y>`, b.gopY ?? "", `</gop_y>`,
     ``,
     `<quyet_dinh_cu>`, b.quyetDinhCu || "(chưa có vòng trước)", `</quyet_dinh_cu>`,
+    ...(b.lintLoi
+      ? [``, `<lint_loi>`, `Bản <bai_hoc> này là bản vòng trước đã sửa theo góp ý, nhưng máy kiểm báo lỗi dưới đây. VIỆC CHÍNH vòng này: khắc phục đúng lỗi lint (cắt câu lặp ý/so sánh thừa/chú thích dài cho đủ số từ, ưu tiên cắt ở mục dài nhất; không cắt quiz, không cắt bảng Trả bài), giữ nguyên mọi sửa đã có. Góp ý đã xử lý thì ghi da_sua_truoc.`, b.lintLoi, `</lint_loi>`]
+      : []),
   ].join("\n");
 }
 
-function userMessageViet(b: Bai): string {
+const SO_DANG = 4;
+function userMessageViet(b: Bai, dang = 1): string {
   return [
     `Lớp: ${b.lop}`, `Chương: ${b.chuong}`, `Bài: ${b.ten}`, `lesson_id: ${b.lessonId}`, ``,
+    `CHỈ VIẾT DẠNG ${dang} (trong ${SO_DANG} dạng của bản nháp). Vẫn đọc cả ${SO_DANG} nháp để giữ hệ bắc cầu (dạng sau dùng lại cách làm dạng trước), nhưng đầu ra chỉ gồm dạng ${dang}. Tiền tố id marker SVG: d${dang}0- và d${dang}2-.`, ``,
     `<ban_nhap>`, b.nhap ?? "", `</ban_nhap>`, ``,
     `<kiem_may>`, b.kiemLog || "(không có log)", `</kiem_may>`, ``,
     `<yccd>`, danhMucYccdDayDu(b.lessonId), `</yccd>`, ``,
@@ -408,9 +435,9 @@ function danhMucYccdDayDu(lessonId: number): string {
   return mine.length ? mine.map((t) => `- ${t.name}${t.parent_id === null ? "   (chủ đề cha)" : "   (YCCĐ con — ưu tiên)"}`).join("\n") : "(không có danh mục)";
 }
 
-function userMessage(b: Bai): string {
+function userMessage(b: Bai, dang = 1): string {
   if (CHE_DO === "sua-ly-thuyet") return userMessageSua(b);
-  if (CHE_DO === "viet-bai-tap-mau") return userMessageViet(b);
+  if (CHE_DO === "viet-bai-tap-mau") return userMessageViet(b, dang);
   if (CHE_DO === "kiem-cheo") return userMessageKc(b);
   return [
     `Lớp: ${b.lop}`,
@@ -423,13 +450,13 @@ function userMessage(b: Bai): string {
   ].join("\n");
 }
 
-function params(b: Bai): Anthropic.MessageCreateParamsNonStreaming {
+function params(b: Bai, dang = 1): Anthropic.MessageCreateParamsNonStreaming {
   return {
     model: MODEL,
     // Suy nghĩ (effort high) tính chung vào trần này; 16000 từng cắt JSON bài 10 ở góp ý 19 (8/10/2026).
-    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" || CHE_DO === "viet-bai-tap-mau" ? 64000 : 32000, // sua/viet: trả HTML dài + suy nghĩ
+    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" ? 64000 : 32000, // sua: trả cả file HTML + suy nghĩ; viet: mỗi dạng một request
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
-    messages: [{ role: "user", content: userMessage(b) }],
+    messages: [{ role: "user", content: userMessage(b, dang) }],
     output_config: { effort: EFFORT, format: { type: "json_schema", schema: SCHEMA_CUA(CHE_DO) } },
   };
 }
@@ -467,7 +494,7 @@ async function duToan() {
     tongIn += c.input_tokens;
     console.log(`  ${String(b.lessonId).padStart(4)} L${b.lop} ${b.ten.slice(0, 50).padEnd(50)} ${c.input_tokens.toLocaleString()} tok · ${b.nguon}`);
   }
-  const uocOut = bai.length * ({ "bai-tap-mau": 24000, "sua-ly-thuyet": 26000, "viet-bai-tap-mau": 30000, "kiem-cheo": 8000 }[CHE_DO as string] ?? 14000); // token ra/bài (JSON + thinking high) — đo thật bài 10: 14,5k (8/10/2026)
+  const uocOut = bai.length * ({ "bai-tap-mau": 24000, "sua-ly-thuyet": 26000, "viet-bai-tap-mau": 4 * 9000, "kiem-cheo": 8000 }[CHE_DO as string] ?? 14000); // token ra/bài (JSON + thinking high) — đo thật bài 10: 14,5k (8/10/2026)
   if (p) {
     const usd = ((tongIn * p.input + uocOut * p.output) / 1e6) * 0.5;
     console.log(`\nTổng vào ${tongIn.toLocaleString()} tok · ra ước ${uocOut.toLocaleString()} tok → ≈ $${usd.toFixed(2)} (giá batch ½, chưa trừ cache system prompt)`);
@@ -477,7 +504,11 @@ async function duToan() {
 async function gui() {
   const bai = await layBai();
   if (!bai.length) fail("không có bài nào khớp bộ lọc");
-  const requests = bai.map((b) => ({ custom_id: `${PREFIX}${b.lessonId}`, params: params(b) }));
+  const requests = bai.flatMap((b) =>
+    CHE_DO === "viet-bai-tap-mau"
+      ? Array.from({ length: SO_DANG }, (_, i) => ({ custom_id: `${PREFIX}${b.lessonId}-${i + 1}`, params: params(b, i + 1) }))
+      : [{ custom_id: `${PREFIX}${b.lessonId}`, params: params(b) }],
+  );
   const batch = await client.messages.batches.create({ requests });
   const manifest = {
     batch_id: batch.id,
@@ -490,7 +521,7 @@ async function gui() {
   };
   const mp = path.join(LOG_DIR, `${batch.id}.manifest.json`);
   fs.writeFileSync(mp, JSON.stringify(manifest, null, 2));
-  console.log(`✓ Đã gửi batch ${batch.id} — chế độ ${CHE_DO}, ${bai.length} bài, model ${MODEL}, effort ${EFFORT}`);
+  console.log(`✓ Đã gửi batch ${batch.id} — chế độ ${CHE_DO}, ${bai.length} bài (${requests.length} request), model ${MODEL}, effort ${EFFORT}`);
   console.log(`  manifest: ${path.relative(root, mp)}`);
   console.log(`  lấy kết quả: npx tsx scripts/batch-ra-soat-bai.mts --nhan ${batch.id} --cho`);
   console.log(`  thử 1 bài trước: ${bai.length === 1 ? "đang làm" : "nên --gui --lesson-ids <id> trước khi chạy cả kho"}`);
@@ -682,7 +713,9 @@ async function nhan() {
   const loi: string[] = [];
   const thuMuc = thuMucCuaBai();
   for await (const r of await client.messages.batches.results(id)) {
-    const lessonId = Number(r.custom_id.replace(prefix, ""));
+    const [idStr, partStr] = r.custom_id.replace(prefix, "").split("-");
+    const lessonId = Number(idStr);
+    const part = partStr ? Number(partStr) : 0;
     const m = meta.get(lessonId) ?? { lesson_id: lessonId, ten: "?", lop: "?", chuong: "" };
     if (r.result.type !== "succeeded") {
       loi.push(`${r.custom_id}: ${r.result.type}${r.result.type === "errored" ? ` — ${JSON.stringify(r.result.error).slice(0, 200)}` : ""}`);
@@ -723,10 +756,20 @@ async function nhan() {
       daGhiNhan = true;
     }
     if (cheDo === "viet-bai-tap-mau") {
-      const r = xuLyViet(lessonId, data as KetQuaViet, m.ten);
+      // Lưu từng dạng; đủ SO_DANG phần mới ghép thành file bài và kiểm.
+      const partData = data as unknown as { dang: KetQuaViet["dang_bai"][number]; luu_y_tro_giang: string[] };
+      fs.writeFileSync(path.join(KQ_DIR, `${lessonId}.viet.part${part}.json`), JSON.stringify({ part, usage: msg.usage, cost_usd: usd, ...partData }, null, 1));
+      const parts = Array.from({ length: SO_DANG }, (_, i) => path.join(KQ_DIR, `${lessonId}.viet.part${i + 1}.json`));
+      if (!parts.every((pp) => fs.existsSync(pp))) { console.log(`  · ${String(lessonId).padStart(4)} dạng ${part}/${SO_DANG} đã về (${partData.dang.label.slice(0, 50)}) · $${(usd ?? 0).toFixed(3)}`); continue; }
+      const ps = parts.map((pp) => JSON.parse(fs.readFileSync(pp, "utf8")) as { usage: Anthropic.Usage; cost_usd: number | null; dang: KetQuaViet["dang_bai"][number]; luu_y_tro_giang: string[] });
+      const data4: KetQuaViet = { lesson_title: m.ten, dang_bai: ps.map((x) => x.dang), luu_y_tro_giang: ps.flatMap((x) => x.luu_y_tro_giang) };
+      kq.cost_usd = ps.reduce((sum, x) => sum + (x.cost_usd ?? 0), 0);
+      tongUsd += kq.cost_usd - (usd ?? 0);
+      const r = xuLyViet(lessonId, data4, m.ten);
+      data = data4;
       kq.viet = r;
       fs.writeFileSync(kqPath, JSON.stringify({ ...kq, data: { ...(data as KetQuaViet), dang_bai: `(đã ghi vào ${r.ghi_vao ?? "—"})` } }, null, 2));
-      console.log(`  ${r.ok ? "✓" : "✗"} ${String(lessonId).padStart(4)} L${m.lop} ${m.ten.slice(0, 45).padEnd(45)} ${(data as KetQuaViet).dang_bai.length} dạng · ${r.ok ? "validate sạch" : "validate LỖI"} · $${(usd ?? 0).toFixed(3)}`);
+      console.log(`  ${r.ok ? "✓" : "✗"} ${String(lessonId).padStart(4)} L${m.lop} ${m.ten.slice(0, 45).padEnd(45)} ${(data as KetQuaViet).dang_bai.length} dạng · ${r.ok ? "validate sạch" : "validate LỖI"} · $${(kq.cost_usd ?? 0).toFixed(3)} (4 dạng)`);
       if (!r.ok) console.log(`      ${r.loi.join(" | ").slice(0, 400)}`);
     } else if (cheDo === "kiem-cheo") {
       const r = xuLyKiemCheo(lessonId, data as KetQuaKc);
