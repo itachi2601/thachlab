@@ -62,7 +62,7 @@ b += dot(342, 138, 4, BLUE) + arrow("f1", "b", 338, 134, 320, 120, 2.4)
 b += text(315, 184, "va chạm dày, mạnh", BLUE, 11, "middle", "600")
 fig1 = wrap("0 0 420 200",
             "Hai trạng thái của quả bóng bàn: khí nguội thì phân tử đập thưa và nhẹ, khí nóng thì phân tử đập dày và mạnh nên đẩy vỏ bóng phồng ra",
-            b, "Hình 1. Khí nguội: phân tử đập thưa, nhẹ nên vỏ bẹp. Gặp nước nóng: phân tử bay nhanh hơn, đập dày và mạnh hơn nên đẩy vỏ phồng lại.",
+            b, "Hình 1. Khí nguội: phân tử đập thưa nên vỏ bẹp. Khí nóng: phân tử bay nhanh hơn, đập dày và mạnh hơn nên đẩy vỏ phồng lại.",
             exp="tn-l12-apsuatdongnang-03")
 
 # ------------------------------------------------- Hình 2: một phân tử va chạm vào thành
@@ -86,7 +86,7 @@ b += text(350, 190, "thành bình, diện tích S = l²", RED, 11, "end", "700")
 b += text(210, 214, "Độ biến thiên động lượng: 2mv", ORG, 12, "middle", "700")
 fig2 = wrap("0 0 420 224",
             "Phân tử khối lượng m bay song song trục Ox với tốc độ v, đập vào thành bình rồi bật ngược lại với cùng tốc độ",
-            b, "Hình 2. Động lượng của phân tử đổi chiều từ +mv thành -mv khi va chạm; thành bình nhận đúng 2mv.")
+            b, "Hình 2. Động lượng đổi chiều từ +mv thành -mv; thành bình nhận đúng 2mv.")
 
 # ------------------------------------------------- Hình 3: nhiều tốc độ, lấy trung bình bình phương
 b = defs("f3")
@@ -135,7 +135,7 @@ b += text(66, 84, "gấp đôi T thì gấp đôi động năng", ORG, 11, "star
 b += text(60, 234, "Mọi chất khí đều nằm trên cùng một đường — chỉ phụ thuộc T.", "currentColor", 11, "start", "600")
 fig4 = wrap("0 0 420 244",
             "Đồ thị động năng tịnh tiến trung bình theo nhiệt độ tuyệt đối là đường thẳng qua gốc toạ độ, dùng chung cho mọi chất khí",
-            b, "Hình 4. Động năng tịnh tiến trung bình tỉ lệ thuận với nhiệt độ tuyệt đối: đường thẳng qua gốc, dùng chung cho mọi chất khí.")
+            b, "Hình 4. Động năng trung bình tỉ lệ thuận với nhiệt độ tuyệt đối: đường thẳng qua gốc, dùng chung cho mọi chất khí.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
