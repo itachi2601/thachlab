@@ -11,6 +11,8 @@ Thầy được cấp **$100 credit khuyến mãi Anthropic** (ghi nhận 8/10/2
 
 **Cách tận dụng (đã xây 8/10/2026):** `scripts/batch-ra-soat-bai.mts` — Batch API (giá ½), Claude đọc mục lý thuyết
 của từng bài như "lượt Claude" (bước 1b skill `cap-nhat-bai-hoc-theo-gemini`), trả JSON góp ý + bẫy quiz chưa nhấn.
+Chế độ 2 (`--che-do bai-tap-mau`): nháp đúng 4 dạng bài tập mẫu bắc cầu 4 cấp bám lý thuyết + YCCĐ (prompt của skill
+`soan-bai-tap-mau`), tự chạy `kiem-ban-nhap-gemini.py`, báo cáo `BAO-CAO-BAI-TAP-MAU.md`; vẫn phải viết lại trước khi đăng.
 Chế độ: `--du-toan` (đếm token, không tốn tiền) → `--gui` → `--nhan --cho` → `BAO-CAO.md` xếp bài cần sửa.
 Kết quả: `scripts/logs/batch-ra-soat/ket-qua/<lesson_id>.json`; bài có thư mục trong `content/gemini/hang-doi.md`
 thì ghi thêm `gemini/nhan/hoc-sinh-trung-binh-claude.json` để `/gemini-nhan` xử lý tiếp. Ước ~$0.05–0.10/bài Opus 5.5

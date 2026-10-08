@@ -27,7 +27,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Credit chỉ áp dụng API/Batch/Agent SDK, không áp dụng Claude Code. Script mới `scripts/batch-ra-soat-bai.mts` (8/10/2026): Batch API,
   Claude rà từng bài lý thuyết như "lượt Claude" (bước 1b skill cap-nhat-bai-hoc-theo-gemini). Cần `ANTHROPIC_API_KEY` trong `.env.local`.
   Thứ tự: `--du-toan` (miễn phí) → `--gui --lesson-ids 10` (thử 1 bài, xem `scripts/logs/batch-ra-soat/ket-qua/10.json`) → `--gui` cả kho →
-  `--nhan --cho` → đọc `scripts/logs/batch-ra-soat/BAO-CAO.md`, chọn bài sửa theo chế độ 2 của skill. Chi tiết: memory `project_thachlab_anthropic_credit.md`.
+  `--nhan --cho` → đọc `scripts/logs/batch-ra-soat/BAO-CAO.md`, chọn bài sửa theo chế độ 2 của skill.
+  Chế độ 2: `--che-do bai-tap-mau --gui --lesson-ids <id>` → nháp 4 dạng bài tập mẫu bắc cầu bám lý thuyết + YCCĐ, tự kiểm máy, báo cáo `BAO-CAO-BAI-TAP-MAU.md`; viết lại theo skill soan-bai-tap-mau trước khi đăng. Chi tiết: memory `project_thachlab_anthropic_credit.md`.
 
 ## Migration — ĐANG CHỜ
 
