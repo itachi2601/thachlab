@@ -27,5 +27,40 @@
   ],
   "dap_an_that": "nhan/dap-an-that.json (sinh tự động từ tl-ok)"
  },
- "bai_tap_mau_vong1": "LOẠI: 4 dạng đều về góc từ khuynh/thành phần thẳng đứng, bài không dạy; 0/4 YCCĐ khớp. File giữ ở da-xu-ly/bai-tap-mau.loai-vong1.json. Đã xuất lại gui/trung-binh-3-bai-tap-mau.txt có danh mục YCCĐ để thầy dán lại."
+ "bai_tap_mau_vong1": "LOẠI: 4 dạng đều về góc từ khuynh/thành phần thẳng đứng, bài không dạy; 0/4 YCCĐ khớp. File giữ ở da-xu-ly/bai-tap-mau.loai-vong1.json. Đã xuất lại gui/trung-binh-3-bai-tap-mau.txt có danh mục YCCĐ để thầy dán lại.",
+ "files": [
+  "hoc-sinh-trung-binh.json",
+  "hoc-sinh-trung-binh-claude.json"
+ ],
+ "quiz_sai_khong_gop_y": {
+  "cau1": "Gemini chọn B ('cùng chiều thì đẩy') do kéo quy tắc 'cùng cực đẩy' của nam châm sang dòng điện. Bài chỉ nêu 'hai dây song song cùng chiều hút nhau' trong ngoặc ở mục 1 và chỉ giải thích 'dây không có cực' TRONG phản hồi sau khi chọn sai (tl-fb--no). Trước quiz chưa nhấn. ĐỀ XUẤT (chưa sửa): thêm một dòng ⚠ ngay sau gạch đầu dòng mục 1: 'Dây dẫn không có cực N, S — đừng ghép với cùng cực đẩy; chỉ nhớ: cùng chiều hút, ngược chiều đẩy.' (+1 dòng, ≈20 từ)",
+  "cau6": "Gemini chọn A ('gần bắc địa lí có cực bắc từ'). Bảng Bẫy 3 đã ghi 'Gần đó là cực từ nam' nhưng không nói VÌ SAO (khác tên hút nhau) trước quiz; lí do chỉ nằm trong phản hồi. Học sinh trung bình đọc bảng vẫn nhớ 'bắc' đi với 'bắc'. ĐỀ XUẤT (chưa sửa): thêm một dòng dưới bảng Bẫy 3: 'Cách nhớ: đầu N của kim bị hút → nơi hút nó là cực S từ, dù nằm ở phía bắc địa lí.' Trùng góp ý c10 lượt Claude."
+ },
+ "luot_claude_vong1": {
+  "file": "nhan/hoc-sinh-trung-binh-claude.json (17 góp ý, 8 du_doan_loi_sai; subagent Sonnet, không đọc gemini/)",
+  "trung_voi_gemini": {
+   "g2~c7": "cùng chỗ 1/8 nhưng ngược hướng: Gemini đòi nói rõ không phải quy luật chung, Claude đòi bỏ so sánh cho ngắn → giữ bản đã sửa (một câu, có ý của Gemini).",
+   "g3~c14": "cùng chỗ 'Điền bước còn thiếu': Gemini chê vòng vo (đã sửa), Claude muốn ghi quy trình 'chia theo trục bắc/đông rồi cộng riêng từng trục' → đáng nhận, một câu.",
+   "g1": "Claude không nêu vì đã sửa trước lượt Claude (c4 lại bắt được hệ quả: 'từ trường đều' nay lặp 2 lần trong mục 3)."
+  },
+  "script_gop_0_trung": "vi_tri+loai chép khác chuỗi (Gemini 'Mục 4. Thí nghiệm đo (Câu hỏi về sai số)' vs Claude 'Mục 4. Đo từ trường: …') → giới hạn gộp theo chuỗi đã biết, cần gộp theo trích dẫn.",
+  "moi_dang_nhan": {
+   "c4": "'Từ trường đều' nói 2 lần trong mục 3 (gạch 2 và gạch 4) — hệ quả của sửa g1; gộp về một gạch.",
+   "c12": "Bảng phân tích bài toán mẫu dùng $B_3$ trong khi đề chỉ có $B_1$, $B_đ$; đã kiểm nguồn, đúng. Đổi $B_3$ → $B_1$.",
+   "c13": "Câu c bài toán mẫu ra đúng 53° như câu a (vì B_1 câu a cũng = 40 µT) → câu c không dạy thêm gì. Đã kiểm, đúng. HỎI THẦY: đổi số câu c (vd 30 µT → α = 45°) hay giữ.",
+   "c2+c10": "Trùng hai câu quiz sai, xem quiz_sai_khong_gop_y.",
+   "c9": "'Từ trường tổng hợp' chỉ được định nghĩa trong phản hồi Câu 5, rồi dùng ở bài toán mẫu → thêm nửa câu định nghĩa trước Câu 5 hoặc đầu mục V.",
+   "c15": "'30 − 40 → 10 µT hướng nam' thiếu quy ước dấu; thêm 'lấy bắc làm dương'.",
+   "c8": "Đoạn sai số: tách 2 ý ra 2 dòng (quy tắc 7/10 mỗi ý một dòng).",
+   "c5,c6,c11": "Thuật ngữ 'tiếp tuyến', B là vectơ, 'kinh tuyến' — đúng là chưa giải thích; mỗi chỗ ≤1 câu, nhưng bài đang 2499/2500 từ → phải cắt chỗ khác (c7/c8 gợi chỗ cắt)."
+  },
+  "bao_dong_gia_hoac_tu_choi": {
+   "c7": "ngược với g2 đã chấp nhận; từ chối.",
+   "c16": "Câu 7 không cần nói phía đông/tây ban đầu, 'phía đối diện' đủ; từ chối.",
+   "c3": "trích 'đầu N rời cực bắc' không tìm thấy nguyên văn trong nguồn → nghi chép sai, không xử lý.",
+   "c1": "mở bài cố ý dùng từ trước khi định nghĩa (tình huống đời thường); từ chối.",
+   "c17": "phương án nhiễu Câu 2 quá lộ — nhận xét đúng nhưng đổi phương án là đổi quiz, HỎI THẦY."
+  },
+  "ket_luan": "Gemini 3 góp ý, nhận 3. Claude 17: 9 đáng nhận (trong đó 2 trùng chỗ Gemini), 5 từ chối/giả, 2 hỏi thầy, 1 nghi chép sai. Chi phí ~100k token Sonnet. Lượt Claude bắt được lỗi ký hiệu/lặp/thiếu định nghĩa mà Gemini bỏ qua; Gemini cho tín hiệu quiz sai mà Claude không có."
+ }
 }
