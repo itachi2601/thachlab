@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gộp phản hồi của học sinh ảo (Gemini) cho một bài lý thuyết.
+"""Gộp phản hồi của học sinh ảo (Gemini, và lượt Claude nếu có "nguon":"claude") cho một bài lý thuyết.
 
   python3 gop-phan-hoi.py content/lesson-samples/<bài>            # in góp ý chưa xử lý
   python3 gop-phan-hoi.py content/lesson-samples/<bài> --danh-dau  # ghi các file đã gộp vào gemini/da-xu-ly/so-quyet-dinh.json
@@ -31,6 +31,7 @@ def main():
     xl = os.path.join(args[0], "gemini", "da-xu-ly"); os.makedirs(xl, exist_ok=True)
     sổ_path = os.path.join(xl, "so-quyet-dinh.json")
     sổ = doc_json(sổ_path) if os.path.exists(sổ_path) else {"files": [], "quyet_dinh": {}}
+    sổ.setdefault("files", [])   # so-quyet-dinh.json viết tay có thể chưa có khoá này
     files = sorted(glob.glob(os.path.join(d, "hoc-sinh-*.json")))
     moi = [f for f in files if os.path.basename(f) not in sổ["files"]]
     if not moi:
@@ -49,16 +50,20 @@ def main():
         except Exception as e:
             print(f"✗ {os.path.basename(f)}: JSON hỏng ({e})"); loi += 1; continue
         vai = j.get("vai", "?")
+        nguon = j.get("nguon", "gemini")
+        nhan_vai = vai if nguon == "gemini" else f"{vai}@{nguon}"   # Gemini và Claude cùng vai vẫn là 2 nguồn khác nhau
         if vai not in VAI_OK:
             print(f"! {os.path.basename(f)}: vai '{vai}' lạ")
         for c, a in (j.get("tra_loi_quiz") or {}).items():
-            quiz[c][vai] = a
-        print(f"• {os.path.basename(f)} · {vai} · ~{j.get('phut_doc_uoc_tinh','?')} phút · {len(j.get('gop_y',[]))} góp ý")
+            quiz[c][nhan_vai] = a
+        print(f"• {os.path.basename(f)} · {nhan_vai} · ~{j.get('phut_doc_uoc_tinh','?')} phút · {len(j.get('gop_y',[]))} góp ý")
+        for d_ in j.get("du_doan_loi_sai", []):
+            print(f"  ~ {d_.get('cau','?')}: dễ chọn {d_.get('dap_an_sai_hap_dan','?')} — {d_.get('loi_tu_duy','')} [bài {'đã' if d_.get('bai_da_nhan_manh') else 'CHƯA'} nhấn]")
         for g in j.get("gop_y", []):
             thieu = [k for k in CAN if not g.get(k)]
             if thieu:
                 print(f"  ! {g.get('id','?')} thiếu {thieu}"); 
-            nhom[(g.get("vi_tri", "?"), g.get("loai", "?"))].append((vai, g))
+            nhom[(g.get("vi_tri", "?"), g.get("loai", "?"))].append((nhan_vai, g))
 
     print("\n=== GÓP Ý GỘP (≥2 vai trước, rồi mức chặn→nhỏ) ===")
     def key(item):
@@ -89,6 +94,9 @@ def main():
         n = sum(1 for c, ans in quiz.items() if c in dap_an and "trung-binh" in ans)
         if n:
             print(f"  → vai trung-bình đúng {tot}/{n} ({100*tot//n}%). Mục tiêu ≥ 90%.")
+        sai_tb = [c for c, ans in sorted(quiz.items()) if c in dap_an and "trung-binh" in ans and ans["trung-binh"] != dap_an[c]]
+        if sai_tb:
+            print(f"  ! Vai trung-bình sai: {', '.join(sai_tb)} → đọc lại mục liên quan dù Gemini không nêu góp ý; ghi vào so-quyet-dinh 'quiz_sai_khong_gop_y'.")
 
     if "--danh-dau" in sys.argv and not loi:
         sổ["files"] += [os.path.basename(f) for f in moi]
