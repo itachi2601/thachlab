@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type TouchEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Home, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -639,6 +639,16 @@ function LessonSkeleton() {
         </div>
       </div>
     </div>
+  );
+}
+
+/** Lối thoát khỏi trang bài: thanh đáy toàn site bị ẩn ở đây, nên cần một nút về lại 5 nút chính (Hôm nay…). */
+function LessonHomeLink() {
+  const { session } = useAuth();
+  return (
+    <Link href={session ? "/tai-khoan" : "/"} className="lesson-bottom-link lesson-bottom-home" aria-label="Về trang chính">
+      <Home size={18} aria-hidden />
+    </Link>
   );
 }
 
@@ -1355,7 +1365,8 @@ function LessonLoader() {
           </div>
         </div>
 
-        <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
+        <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--home" aria-label="Điều hướng bài học">
+        <LessonHomeLink />
           <button
             type="button"
             className="lesson-bottom-link"
@@ -2071,7 +2082,8 @@ function LessonLoader() {
         </aside>
       </div>
 
-      <nav className="lesson-bottombar lesson-bottombar--mobile" aria-label="Điều hướng bài học">
+      <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--home" aria-label="Điều hướng bài học">
+        <LessonHomeLink />
         <button
           type="button"
           className="lesson-bottom-link"

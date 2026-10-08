@@ -1357,6 +1357,9 @@ html[data-theme="light"] .lesson-shell .class-chapter-progress-bar { background:
   .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 6px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
   .lesson-bottombar--mobile { min-height: 62px; }
   .lesson-bottom-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 5px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; color: var(--color-ink); font-size: 12.5px; font-weight: 700; text-decoration: none; cursor: pointer; }
+  /* Nút Home (icon) đầu thanh: đường về 5 nút chính vì tabbar toàn site bị ẩn ở trang bài. */
+  .lesson-bottombar--home { grid-template-columns: 48px repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .lesson-bottombar--home .lesson-bottom-done { gap: 6px; font-size: 12.5px; }
   .lesson-bottom-link.is-empty { opacity: .35; }
   .lesson-bottom-link--next { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
   .lesson-drawer-toggle { display: inline-flex; }
@@ -2763,12 +2766,13 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
 }
 
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
+/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
+   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
 @media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
+  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
+  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
