@@ -30,6 +30,8 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
   `--nhan --cho` → đọc `scripts/logs/batch-ra-soat/BAO-CAO.md`, chọn bài sửa theo chế độ 2 của skill.
   Chế độ 2: `--che-do bai-tap-mau --gui --lesson-ids <id>` → nháp 4 dạng bài tập mẫu bắc cầu bám lý thuyết + YCCĐ, tự kiểm máy, báo cáo `BAO-CAO-BAI-TAP-MAU.md`; viết lại theo skill soan-bai-tap-mau trước khi đăng. Chi tiết: memory `project_thachlab_anthropic_credit.md`.
 
+- 8/10 chiều: key đã vào .env.local (workspace Default), batch chạy thật. Bài 10 lý thuyết + BTM đã đăng. Đang chạy: rà 20 bài L12 + nháp BTM 18 bài L12. Chế độ mới `sua-ly-thuyet` (API tự sửa HTML, máy build/lint) chưa chạy thật. Thầy chốt: Claude tự chốt góp ý và đăng, trợ giảng rà trên web, Gemini bỏ khỏi đường chính.
+
 ## Migration — ĐANG CHỜ
 
 - **Bài 11 VL12 Thực hành cảm ứng từ (7/10/2026, commit a04812d1c):** CHƯA ghi DB — `upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`; 4 bài L12 đã sửa đường sức nét đứt chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14`; sau đó deploy (CSS `.tl-sim` mới). Clip mở bài/hộp đo chưa xác nhận mốc cắt bằng mắt.

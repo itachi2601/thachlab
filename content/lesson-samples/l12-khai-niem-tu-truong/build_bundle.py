@@ -23,8 +23,8 @@ EXAM = {
             "type": "multiple_choice",
             "question": "Hướng của từ trường tại một điểm được quy ước là",
             "options": [
-                "hướng từ đông sang tây.",
-                "hướng nam – bắc của kim nam châm nhỏ nằm cân bằng tại điểm đó.",
+                "chiều bắc → nam của kim nam châm nhỏ nằm cân bằng tại điểm đó.",
+                "chiều nam → bắc của kim nam châm nhỏ nằm cân bằng tại điểm đó.",
                 "hướng từ vật nặng sang vật nhẹ đặt gần đó.",
                 "hướng chuyển động của các hạt mang điện đặt tại điểm đó.",
             ],

@@ -1,3 +1,48 @@
+Bạn là một học sinh lớp 12 Việt Nam vừa mở bài học "Khái niệm từ trường" trên website để TỰ HỌC, không có giáo viên bên cạnh. Hồ sơ của bạn: **trung-binh**.
+- `yeu`: nền yếu, hay quên đơn vị và định nghĩa, đọc chậm, dễ bỏ cuộc khi gặp đoạn dài hoặc thuật ngữ lạ.
+- `trung-binh`: hiểu được khi ví dụ rõ, đôi lúc nhầm điều kiện áp dụng, hay nhầm các phương án gần giống nhau.
+- `kha`: nắm nhanh, nhưng bực khi lặp ý; chú ý chỗ mơ hồ, thiếu chặt chẽ.
+
+LUẬT BẮT BUỘC
+1. Chỉ dùng kiến thức có TRONG bài và kiến thức lớp dưới. Coi như bạn chưa biết phần vật lí lớp trên. Đừng "bổ sung giúp" chỗ bài viết thiếu; hãy ghi đó là chỗ thiếu.
+2. Đọc tuần tự từ đầu đến cuối. Với mỗi câu dự đoán và mỗi câu "Tự kiểm tra", **chọn đáp án TRƯỚC khi đọc lời giải** của câu đó, rồi ghi lại lựa chọn và lí do ngắn.
+3. Mỗi lần dừng lại, đọc lại, bối rối, hoặc thấy chán, ghi thành một góp ý. Không khen xã giao. Không viết góp ý nếu bạn thực sự hiểu.
+4. Mỗi góp ý phải **trích nguyên văn** ≤ 25 chữ của đoạn gây vấn đề để người sửa tìm đúng chỗ. Không trích được thì không ghi.
+5. Không sửa vật lí, không viết lại bài. Chỉ nói em hiểu là gì và đề xuất sửa 1 câu.
+6. Ước lượng số phút bạn cần để đọc hết bài.
+
+ĐẦU RA: duy nhất một JSON hợp lệ, không thêm chữ nào ngoài JSON.
+
+```json
+{
+  "bai": "Khái niệm từ trường",
+  "vai": "trung-binh",
+  "phut_doc_uoc_tinh": 0,
+  "tra_loi_quiz": { "du_doan": "A", "cau1": "C", "cau2": "A" },
+  "ly_do_chon": { "du_doan": "…", "cau1": "…" },
+  "gop_y": [
+    {
+      "id": "g1",
+      "vi_tri": "tên mục/Bẫy/Câu gần nhất",
+      "trich_nguyen_van": "…",
+      "loai": "mơ_hồ | thiếu_ví_dụ | từ_chưa_giải_thích | nhảy_bước | quá_dài | lặp_ý | phương_án_nhiễu_khó_hiểu | nghi_sai_đáp_án | khác",
+      "muc": "chặn | khó | nhỏ",
+      "em_hieu_la": "tôi đã hiểu đoạn này thành…",
+      "de_xuat": "một câu sửa cụ thể"
+    }
+  ],
+  "diem_hay": ["tối đa 2 chỗ giúp hiểu nhanh nhất, kèm trích dẫn"],
+  "tom_tat_bai_bang_loi_em": "3 câu, dùng để kiểm xem em hiểu đúng ý chính chưa"
+}
+```
+
+Định nghĩa `muc`: **chặn** = không đi tiếp được hoặc hiểu sai nghiêm trọng; **khó** = hiểu được nhưng phải đọc lại; **nhỏ** = chỉ thấy hơi vấp.
+
+Lưu ý: trong tin nhắn trước bạn đã làm quiz mù; giữ nguyên các đáp án đó trong tra_loi_quiz/ly_do_chon và chỉ góp ý thêm.
+
+KHÔNG in JSON hay nội dung trả lời vào khung chat. Chỉ ghi đúng JSON thuần (không dấu ```, không chữ giải thích) vào file /Users/MAC/Projects/thachlab/content/lesson-samples/l12-khai-niem-tu-truong/gemini/nhan/hoc-sinh-trung-binh.json (ghi đè nếu đã có). Xong chỉ nhắn đúng một dòng: "Đã lưu hoc-sinh-trung-binh.json".
+
+=== NỘI DUNG BÀI (HTML, ĐẦY ĐỦ LỜI GIẢI) ===
 <div class="tl-box">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
@@ -15,7 +60,7 @@
 
 <p>Cái gì đẩy kim lệch khỏi hướng bắc?</p>
 
-<!--FIG1-->
+<figure class="fig" data-tl="1">[hình vẽ minh hoạ]<figcaption>Hình 1. La bàn chỉ một phía; gần cửa sắt thì kim lệch.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
@@ -25,7 +70,7 @@
 <input type="radio" name="tl10-q0" id="tl10-q0b"><label for="tl10-q0b" class="tl-opt tl-ok">B. Trái Đất là một nam châm khổng lồ, từ trường của nó định hướng kim</label>
 <input type="radio" name="tl10-q0" id="tl10-q0c"><label for="tl10-q0c" class="tl-opt tl-no">C. Không khí quanh Trái Đất đẩy kim quay theo</label>
 <input type="radio" name="tl10-q0" id="tl10-q0d"><label for="tl10-q0d" class="tl-opt tl-no">D. Trọng lực kéo đầu nặng hơn của kim xuống phía bắc</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trái Đất có từ trường của chính nó. Kim chỉ gần hướng bắc ở nơi từ trường Trái Đất mạnh hơn từ trường các vật quanh đó — vì thế đặt cạnh cửa sắt thì kim lệch.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trái Đất có từ trường của chính nó. Kim chỉ đúng hướng bắc ở nơi từ trường Trái Đất mạnh hơn từ trường các vật quanh đó — vì thế đặt cạnh cửa sắt thì kim lệch.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu kim bị điện thoại hay trọng lực chi phối thì nó đã chỉ theo hướng của điện thoại, và xoay máy là kim xoay theo. Thử nghĩ: chỉ có một thứ luôn ở cùng một phía dù em đứng ở đâu — chính là Trái Đất. Chọn lại nhé.</p></div>
 </div>
 </div>
@@ -39,17 +84,17 @@
 <ul>
 <li><strong>Nam châm</strong> hút được sắt vụn (sắt, thép, niken, coban), có hai cực <strong>bắc (N)</strong>, <strong>nam (S)</strong>; không có nam châm một cực.</li>
 <li><strong>Cùng cực đẩy, khác cực hút</strong> — lực đó là <strong>lực từ</strong>.</li>
-<li>Ba cặp có tương tác từ: <strong>nam châm – nam châm</strong> · <strong>nam châm – dòng điện</strong> · <strong>dòng điện – dòng điện</strong> (hai dây song song cùng chiều hút nhau; dây không có cực N, S).</li>
+<li>Ba cặp có tương tác từ: <strong>nam châm – nam châm</strong> · <strong>nam châm – dòng điện</strong> · <strong>dòng điện – dòng điện</strong> (hai dây song song cùng chiều hút nhau).</li>
 </ul>
 
-<!--FIG2-->
+<figure class="fig" data-tl="1">[hình vẽ minh hoạ]<figcaption>Hình 2. Khác cực hút, cùng cực đẩy; dòng điện cũng có từ tính.</figcaption></figure>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-tutruong-01">
 <p class="tl-label">🔬 Thí nghiệm: dòng điện làm lệch kim la bàn</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> luồn dây đồng thẳng qua lỗ giữa tấm bìa, kéo dây thẳng đứng, đặt la bàn lên bìa ở phía bắc hoặc nam của dây; nối dây với pin 1,5 V, đóng mạch vài giây rồi ngắt.</li>
 <li><strong>Quan sát:</strong> đóng mạch, kim lệch khỏi hướng bắc; ngắt mạch, kim trở về; đảo đầu pin, kim lệch phía kia.</li>
-<li><strong>Rút ra:</strong> dòng điện tác dụng lực từ lên kim; đổi chiều dòng thì đổi chiều lực.</li>
+<li><strong>Rút ra:</strong> dòng điện tạo từ trường quanh nó và tác dụng lực từ lên kim; đổi chiều dòng thì đổi chiều lực — cơ sở chế tạo động cơ điện.</li>
 </ol>
 </div>
 
@@ -77,18 +122,18 @@
 
 <details class="tl-details" data-exp="tn-l12-tutruong-02">
 <summary>🔬 Bấm xem thí nghiệm: kim nam châm làm "đầu dò" hướng từ trường</summary>
-<p><strong>Làm:</strong> đặt kim nam châm nhỏ ở nhiều vị trí quanh thanh nam châm, chờ kim đứng yên rồi ghi đầu N. <strong>Quan sát:</strong> đầu N luôn quay ra xa cực bắc, hướng về cực nam của thanh nam châm. <strong>Rút ra:</strong> kim nam châm nhỏ xác định <em>hướng</em> từ trường.</p>
+<p><strong>Làm:</strong> đặt kim nam châm nhỏ ở nhiều vị trí quanh thanh nam châm, chờ kim đứng yên rồi ghi đầu N. <strong>Quan sát:</strong> đầu N luôn rời cực bắc, vào cực nam. <strong>Rút ra:</strong> kim nam châm nhỏ xác định <em>hướng</em> từ trường.</p>
 </details>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Hướng của từ trường tại một điểm được quy ước là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl10-q2" id="tl10-q2a"><label for="tl10-q2a" class="tl-opt tl-no">A. Chiều bắc → nam của kim nam châm nhỏ cân bằng tại đó</label>
-<input type="radio" name="tl10-q2" id="tl10-q2b"><label for="tl10-q2b" class="tl-opt tl-ok">B. Chiều nam → bắc của kim nam châm nhỏ cân bằng tại đó</label>
+<input type="radio" name="tl10-q2" id="tl10-q2a"><label for="tl10-q2a" class="tl-opt tl-no">A. Hướng từ đông sang tây</label>
+<input type="radio" name="tl10-q2" id="tl10-q2b"><label for="tl10-q2b" class="tl-opt tl-ok">B. Hướng nam – bắc của kim nam châm nhỏ cân bằng tại đó</label>
 <input type="radio" name="tl10-q2" id="tl10-q2c"><label for="tl10-q2c" class="tl-opt tl-no">C. Hướng từ vật nặng sang vật nhẹ đặt gần đó</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ trường định hướng cho kim nam châm nhỏ; lấy chiều từ cực nam sang cực bắc của kim lúc kim đã đứng yên làm chiều của từ trường tại điểm đó.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A lấy ngược chiều: chiều từ trường là chiều <em>nam → bắc</em> của kim, tức chiều đầu N đang chỉ. Phương án C lẫn sang khối lượng, không liên quan. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Từ trường không có hướng đông – tây cố định, cũng không liên quan đến khối lượng. Hướng của nó được <em>định nghĩa qua kim nam châm nhỏ</em>: kim nằm cân bằng, đầu nào chỉ về đâu thì lấy chiều nam → bắc của kim làm chiều từ trường. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -97,22 +142,24 @@
 <p><strong>🔑 Vẽ theo quy ước · Khép kín · Không cắt nhau</strong></p>
 
 <ul>
-<li><strong>Đường sức từ</strong> là đường vẽ sao cho <strong>tiếp tuyến tại mỗi điểm trùng hướng từ trường</strong> (tiếp tuyến: hướng đường cong đang đi tại điểm đó).</li>
-<li>Ra ở <strong>cực bắc</strong>, vào ở <strong>cực nam</strong>; trong nam châm chúng đi tiếp từ nam sang bắc nên đường sức <strong>cong kín</strong>.</li>
+<li><strong>Đường sức từ</strong> là đường vẽ sao cho <strong>tiếp tuyến tại mỗi điểm trùng hướng từ trường</strong>.</li>
+<li>Ra ở <strong>cực bắc</strong>, vào ở <strong>cực nam</strong>; trong nam châm chúng đi tiếp từ nam sang bắc nên đường sức <strong>cong kín</strong>; ở <strong>từ trường đều</strong> chúng là <strong>đường thẳng song song, cách đều</strong>.</li>
 <li>Qua mỗi điểm chỉ vẽ được <strong>một</strong> đường (không cắt nhau); <strong>mau</strong> thì mạnh, <strong>thưa</strong> thì yếu.</li>
-<li><strong>Từ trường đều</strong>: đường sức thẳng, song song, cách đều — ở khe giữa hai cực nam châm chữ U, trong ống dây dài.</li>
+<li><strong>Từ trường đều</strong>: đường sức song song, cách đều — giữa hai cực chữ U, trong ống dây dài.</li>
 </ul>
 
-<!--FIG3-->
+<figure class="fig" data-tl="1">[hình vẽ minh hoạ]<figcaption>Hình 3.<br>a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín.<br>b) Chữ U: từ trường đều.<br>c) Từ phổ.<br>d) Đường vẽ theo quy ước.</figcaption></figure>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-tutruong-03">
 <p class="tl-label">🔬 Thí nghiệm: rắc mạt sắt xem hình dạng đường sức</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đặt thanh nam châm dưới tấm nhựa trong, rắc mạt sắt mịn lên rồi gõ nhẹ mép tấm; lặp lại với hai thanh đặt cùng cực đối diện, rồi với nam châm chữ U.</li>
+<li><strong>Làm:</strong> đặt thanh nam châm dưới tấm nhựa trong, rắc mạt sắt mịn lên rồi gõ nhẹ mép tấm.</li>
 <li><strong>Quan sát:</strong> mạt sắt nối thành chuỗi hạt rõ nét — đó là <strong>từ phổ</strong>. Giữa hai cực cùng tên, các chuỗi đẩy nhau ra xa; giữa hai cực chữ U thì song song, cách đều.</li>
 <li><strong>Rút ra:</strong> từ phổ là <em>ảnh thật</em>, đường sức từ là <em>đường vẽ theo quy ước</em>.</li>
 </ol>
 </div>
+
+<figure class="fig" data-tl="1">[hình vẽ minh hoạ]<figcaption>Hình 4. Gần bắc địa lí là <strong>cực từ nam</strong>, nên cực bắc của kim bị hút về đó.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -128,9 +175,7 @@
 
 <details class="tl-details">
 <summary>🌀 Từ trường của dòng điện thẳng, dòng điện tròn, ống dây — bấm xem</summary>
-<p><strong>Dòng điện thẳng dài:</strong> đường sức là những đường tròn vuông góc với dây, tâm trên dây; chiều theo <em>quy tắc nắm tay phải</em> — ngón cái chỉ chiều dòng điện, các ngón khum lại chỉ chiều đường sức.</p>
-<p><strong>Dòng điện tròn:</strong> vào <em>mặt nam</em>, ra <em>mặt bắc</em> — mặt nam là mặt nhìn vào thấy dòng điện chạy theo chiều kim đồng hồ, mặt bắc thì ngược lại.</p>
-<p><strong>Ống dây dài:</strong> bên trong là từ trường đều.</p>
+<p><strong>Điện thẳng dài:</strong> đường sức là những đường tròn vuông góc với dây, tâm trên dây; chiều theo <em>quy tắc nắm tay phải</em> — ngón cái chỉ chiều dòng điện, các ngón khum lại chỉ chiều đường sức. <strong>Điện tròn:</strong> vào <em>mặt nam</em>, ra <em>mặt bắc</em> — mặt nam là mặt nhìn vào thấy dòng điện chạy theo chiều kim đồng hồ, mặt bắc thì ngược lại. <strong>Ống dây dài:</strong> bên trong là từ trường đều.</p>
 </details>
 
 <h4>4. Đo từ trường: mật độ đường sức và độ mạnh</h4>
@@ -138,9 +183,8 @@
 <p><strong>🔑 Xa nguồn thì yếu · Mau thì mạnh · Đơn vị tesla</strong></p>
 
 <ul>
-<li>Cảm ứng từ $\vec B$ là vectơ: hướng là hướng từ trường, độ lớn $B$ cho biết từ trường mạnh hay yếu; đơn vị <strong>tesla</strong> ($\text{T}$): $1\ \text{mT} = 10^{-3}\ \text{T}$, $1\ \mu\text{T} = 10^{-6}\ \text{T}$.</li>
+<li>Cảm ứng từ $B$ đặc trưng cho độ mạnh yếu của từ trường; đơn vị <strong>tesla</strong> ($\text{T}$): $1\ \text{mT} = 10^{-3}\ \text{T}$, $1\ \mu\text{T} = 10^{-6}\ \text{T}$.</li>
 <li>Càng xa nguồn từ trường càng yếu — đường sức càng thưa; ở nước ta, từ trường Trái Đất vài chục $\mu\text{T}$.</li>
-<li>Nhiều nguồn cùng tác dụng: <strong>từ trường tổng hợp</strong> tại một điểm là tổng vectơ các từ trường thành phần.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l12-tutruong-04">
@@ -148,7 +192,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt cảm biến từ trường của điện thoại trên trục nam châm trụ, cách mặt cực bắc 2, 4, 6, 8, 10 cm.</li>
 <li><strong>Quan sát:</strong> số đọc giảm nhanh khi ra xa (bảng dưới); ba lần đọc lệch 1–2 $\mu\text{T}$.</li>
-<li><strong>Rút ra:</strong> gần cực, số đọc lớn nhất, mạt sắt ở mục 3 cũng dày nhất — <strong>mật độ đường sức biểu diễn độ mạnh từ trường</strong>.</li>
+<li><strong>Rút ra:</strong> chỗ số đọc lớn đúng là chỗ đường sức mau — <strong>mật độ đường sức biểu diễn độ mạnh từ trường</strong>.</li>
 </ol>
 </div>
 
@@ -170,9 +214,7 @@
 
 <details class="tl-details">
 <summary>🤏 Câu hỏi về sai số: vì sao ba lần đọc không giống nhau, và số nào đáng tin?</summary>
-<p><strong>Nguồn lệch:</strong> cảm biến điện thoại có sai số vài $\mu\text{T}$, tay đặt lệch vài milimét, từ trường của chính điện thoại cũng góp vào. Vì vậy đọc ba lần lấy trung bình, ghi kèm sai số như $(1000 \pm 2)\ \mu\text{T}$.</p>
-<p><strong>Đáng tin nhất</strong> là <em>xu hướng</em>: khi nam châm còn lấn át từ trường Trái Đất (cặp $2 \to 4$ cm), $d$ gấp đôi thì cảm ứng từ còn khoảng <em>một phần tám</em> ($1000 \to 129\ \mu\text{T}$) — quy luật này là của nam châm; nguồn khác (dây dẫn thẳng) giảm chậm hơn.</p>
-<p>Cặp $4 \to 8$ cm <strong>không</strong> theo quy luật ấy ($129 \to 34\ \mu\text{T}$, chỉ giảm gần 4 lần) vì số đọc đã chạm nền từ trường Trái Đất cỡ $30\ \mu\text{T}$; ra xa nữa số đọc chững lại chứ không về 0.</p>
+<p><strong>Nguồn lệch:</strong> cảm biến điện thoại có sai số vài $\mu\text{T}$, tay đặt lệch vài milimét, từ trường của chính điện thoại cũng góp vào. Vì vậy đọc ba lần lấy trung bình, ghi kèm sai số như $(1000 \pm 2)\ \mu\text{T}$. <strong>Đáng tin nhất</strong> là <em>xu hướng</em>: khi nam châm còn lấn át từ trường Trái Đất (cặp $2 \to 4$ cm), $d$ gấp đôi thì cảm ứng từ còn khoảng <em>một phần tám</em> ($1000 \to 129\ \mu\text{T}$) — quy luật này là của nam châm; nguồn khác (dây dẫn thẳng) giảm chậm hơn. Cặp $4 \to 8$ cm <strong>không</strong> theo quy luật ấy ($129 \to 34\ \mu\text{T}$, chỉ giảm gần 4 lần) vì số đọc đã chạm nền từ trường Trái Đất cỡ $30\ \mu\text{T}$; ra xa nữa số đọc chững lại chứ không về 0.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -212,7 +254,7 @@
 
 <h4>Bẫy 2: đường sức từ có thật?</h4>
 
-<p>Mạt sắt xếp thành chuỗi là chuyện có thật, nhưng đường sức từ là <em>đường vẽ theo quy ước</em>. Vẽ ít hay nhiều đường đều được, miễn chỗ mạnh mau hơn chỗ yếu trên cùng hình.</p>
+<p>Mạt sắt xếp thành chuỗi là chuyện có thật, nhưng đường sức từ là <em>đường vẽ theo quy ước</em>. Vẽ ít hay nhiều đường đều được, miễn đúng dạng, chiều, mật độ.</p>
 
 <table class="tl-table">
 <thead>
@@ -221,6 +263,7 @@
 <tbody>
 <tr><td>Ảnh thật, mỗi lần rắc một khác</td><td>Đường vẽ theo quy ước</td></tr>
 <tr><td>Cho biết hình dạng, mật độ tương đối</td><td>Cho biết hình dạng, chiều, độ mạnh</td></tr>
+<tr><td>Không chỉ được chiều từ trường</td><td>Có mũi tên chỉ chiều</td></tr>
 </tbody>
 </table>
 
@@ -247,12 +290,11 @@
 <tbody>
 <tr><td>Trục quay của Trái Đất, cố định</td><td>Lệch trục quay khoảng $10^\circ$ theo mô hình địa từ, vị trí còn dịch chuyển</td></tr>
 <tr><td>Bắc địa lí ở Bắc Băng Dương</td><td>Gần đó là <em>cực từ nam</em></td></tr>
+<tr><td>Không đổi theo thời gian</td><td>Đảo cực vài trăm nghìn năm một lần</td></tr>
 </tbody>
 </table>
 
-<!--FIG4-->
-
-<p>Kim la bàn nằm theo phương từ trường Trái Đất, không theo đúng kinh tuyến (đường nối hai cực địa lí); góc lệch đó là <strong>độ từ thiên</strong>.</p>
+<p>Kim la bàn nằm theo phương từ trường Trái Đất, không theo đúng kinh tuyến; góc lệch đó là <strong>độ từ thiên</strong>.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -289,7 +331,7 @@
 
 <details class="tl-details">
 <summary>4. Nêu định nghĩa và bốn tính chất của đường sức từ; thế nào là từ trường đều?</summary>
-<p><strong>Định nghĩa:</strong> tiếp tuyến tại mỗi điểm trùng hướng từ trường. <strong>Tính chất:</strong> qua mỗi điểm chỉ một đường; cong kín, hoặc thẳng song song (từ trường đều); ra ở bắc, vào ở nam; mau mạnh, thưa yếu. <strong>Từ trường đều:</strong> song song, cách đều.</p>
+<p><strong>Định nghĩa:</strong> tiếp tuyến tại mỗi điểm trùng hướng từ trường. <strong>Tính chất:</strong> qua mỗi điểm chỉ một đường; cong kín, hoặc đường thẳng kéo dài vô hạn ở hai đầu (từ trường đều); ra ở bắc, vào ở nam; mau mạnh, thưa yếu. <strong>Từ trường đều:</strong> song song, cách đều.</p>
 </details>
 
 </div>
@@ -301,7 +343,7 @@
 <p>Một la bàn nằm ngang đặt dưới một dây dẫn thẳng, dây nằm theo phương bắc – nam; thành phần nằm ngang của từ trường Trái Đất tại đó là $B_\text{đ} = 30\ \mu\text{T}$ hướng bắc.</p>
 <p>a) Nối dòng điện: từ trường dây nằm ngang, vuông góc phương bắc – nam, độ lớn $B_1$; kim lệch $53^\circ$. Tính $B_1$.</p>
 <p>b) Quay dây cho từ trường của dây hướng đúng về phương bắc, vẫn độ lớn $B_1$. Tính cảm ứng từ tổng hợp; kim có lệch?</p>
-<p>c) Giảm dòng để từ trường của dây còn $B_2 = 30\ \mu\text{T}$, vẫn vuông góc với từ trường Trái Đất. Tính cảm ứng từ tổng hợp, góc lệch của kim.</p>
+<p>c) Tăng dòng để từ trường của dây đạt $40\ \mu\text{T}$ và lại vuông góc với từ trường Trái Đất. Tính cảm ứng từ tổng hợp, góc lệch của kim.</p>
 </div>
 
 <div class="table-scroll">
@@ -312,20 +354,21 @@
 <tbody>
 <tr><td>"dây theo phương bắc – nam", "kim lệch $53^\circ$"</td><td>từ trường của dây nằm ngang, vuông góc $B_\text{đ}$</td><td>kim chỉ theo từ trường tổng hợp: $\tan\alpha = B_1/B_\text{đ}$</td></tr>
 <tr><td>"từ trường của dây hướng về phương bắc"</td><td>hai từ trường cùng phương, cùng chiều</td><td>cộng đại số, kim không lệch</td></tr>
-<tr><td>"$B_2 = 30\ \mu\text{T}$, vẫn vuông góc"</td><td>$B_2 \perp B_\text{đ}$, $B_2 = B_\text{đ}$</td><td>tổng hợp hai vectơ vuông góc: $B = \sqrt{B_2^2 + B_\text{đ}^2}$</td></tr>
+<tr><td>"$B_\text{đ} = 30\ \mu\text{T}$"</td><td>$B_\text{đ} = 30\ \mu\text{T}$</td><td>thành phần nằm ngang của từ trường Trái Đất</td></tr>
+<tr><td>"$B_3 = 40\ \mu\text{T}$ vuông góc $B_\text{đ}$"</td><td>$B_3 \perp B_\text{đ}$</td><td>tổng hợp hai vectơ vuông góc: $B = \sqrt{B_3^2 + B_\text{đ}^2}$</td></tr>
 </tbody>
 </table>
 </div>
 
-<!--FIG5-->
+<figure class="fig" data-tl="1">[hình vẽ minh hoạ]<figcaption>Hình 5. Kim chỉ theo vectơ tổng hợp $B = 50\ \mu\text{T}$, lệch $53^\circ$.</figcaption></figure>
 
 <details class="tl-details">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
-<li>Câu a: kim chỉ theo <em>từ trường tổng hợp</em>; góc lệch là góc giữa $\vec B$ tổng hợp và $\vec B_\text{đ}$; trong tam giác vuông, $B_1$ là cạnh đối, $B_\text{đ}$ là cạnh kề nên $\tan 53^\circ = \dfrac{B_1}{B_\text{đ}}$, suy ra $B_1 = 30\tan 53^\circ \approx 40\ \mu\text{T}$.</li>
-<li>Câu b: hai từ trường cùng phương, cùng chiều nên $B = 70\ \mu\text{T}$, vectơ tổng hợp vẫn hướng bắc — kim <strong>không lệch</strong>. Đảo chiều dòng (vẫn cùng phương): lấy bắc làm dương, $30 - 40 = -10$, tức $B = 10\ \mu\text{T}$ hướng nam, kim quay nửa vòng. Hai từ trường vuông góc thì khác — xem Câu 7.</li>
-<li>Câu c: $B = \sqrt{30^2 + 30^2} = 30\sqrt{2} \approx 42\ \mu\text{T}$ và $\tan\alpha = 30/30 = 1$, cho $\alpha = 45^\circ$.</li>
-<li>Kiểm tra: $B_2$ nhỏ hơn $B_1$ nên kim lệch ít hơn câu a ($45^\circ \lt 53^\circ$); hai cạnh bằng nhau thì vectơ tổng là đường chéo hình vuông, lệch đúng $45^\circ$.</li>
+<li>Câu a: kim chỉ theo <em>từ trường tổng hợp</em>; hai thành phần vuông góc nên $\tan 53^\circ = \dfrac{B_1}{B_\text{đ}}$, suy ra $B_1 = 30\tan 53^\circ \approx 40\ \mu\text{T}$.</li>
+<li>Câu b: hai từ trường cùng phương, cùng chiều nên $B = 70\ \mu\text{T}$, vectơ tổng hợp vẫn hướng bắc — kim <strong>không lệch</strong>. Đảo chiều dòng thì $B = 10\ \mu\text{T}$ hướng nam, kim quay nửa vòng.</li>
+<li>Câu c: $B = \sqrt{30^2 + 40^2} = 50\ \mu\text{T}$ và $\tan\alpha = 40/30 \approx 1{,}33$, cho $\alpha \approx 53^\circ$.</li>
+<li>Kiểm tra: thay ngược $\tan\alpha = 40/30$ được $\alpha = 53^\circ$ — khớp đề. Bộ ba $30 - 40 - 50$ là tam giác vuông nên $50\ \mu\text{T}$ hợp lí.</li>
 </ol>
 </details>
 
@@ -333,7 +376,7 @@
 <p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
 <p>Vẫn la bàn đó, $B_\text{đ} = 30\ \mu\text{T}$ hướng bắc. Lần này có hai dây: dây thứ nhất tạo từ trường $40\ \mu\text{T}$ hướng bắc, dây thứ hai tạo từ trường $30\ \mu\text{T}$ hướng đông.</p>
 <ol class="tl-steps">
-<li>Bước 1: chia ba từ trường theo hai trục <em>bắc</em> và <em>đông</em>, cộng riêng từng trục. Trục bắc (dây thứ nhất và Trái Đất): $40 + 30 = ?\ \mu\text{T}$.</li>
+<li>Bước 1: hai từ trường của hai dây <em>vuông góc</em> nhau (bắc và đông). Gộp các từ trường <em>cùng hướng bắc</em>: $40 + 30 = ?\ \mu\text{T}$.</li>
 <li><strong>Em điền:</strong> tổng thành phần bắc, thành phần đông, rồi tính cảm ứng từ tổng hợp.</li>
 <li><strong>Em điền:</strong> kim la bàn lệch bao nhiêu độ so với hướng bắc?</li>
 </ol>
@@ -359,22 +402,23 @@
 <h3>VI. Đời sống, thử thách và mang về</h3>
 
 <ul>
+<li><strong>Dẫn đường:</strong> la bàn, la bàn số trong điện thoại.</li>
 <li><strong>Cực quang:</strong> hạt mang điện từ Mặt Trời chạy theo đường sức, dồn về hai vùng cực rồi va vào khí quyển, phát sáng.</li>
 <li><strong>Động vật di cư:</strong> chim, rùa biển cảm nhận từ trường Trái Đất để giữ hướng đi.</li>
-<li><strong>Thiết bị quanh em:</strong> loa, động cơ điện, khoá cửa từ, máy chụp cộng hưởng từ đều dựa trên tương tác từ.</li>
+<li><strong>Thiết bị quanh em:</strong> loa, động cơ điện, chuông điện, khoá cửa từ, máy chụp cộng hưởng từ đều dựa trên tương tác từ. Bão từ làm lệch la bàn, hại lưới điện.</li>
 </ul>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🎯 Thử thách phân tầng</p>
 
 <details class="tl-details">
-<summary>⭐ Cơ bản: nêu hai cách để biết tại một điểm trong phòng có từ trường nào khác ngoài từ trường Trái Đất.</summary>
-<p>Đặt kim nam châm nhỏ: kim lệch khỏi hướng bắc thì có thêm từ trường khác. Hoặc đặt dây có dòng, thấy dây chịu lực từ.</p>
+<summary>⭐ Cơ bản: nêu hai cách để biết tại một điểm trong phòng có từ trường hay không.</summary>
+<p>Đặt kim nam châm nhỏ: kim đứng yên theo hướng khác hướng bắc. Hoặc đặt dây có dòng, thấy dây chịu lực từ.</p>
 </details>
 
 <details class="tl-details">
 <summary>⭐⭐ Khá: hai nam châm đặt gần nhau thì những chỗ nào từ trường mạnh nhất, chỗ nào có thể coi bằng không?</summary>
-<p>Mạnh nhất ở <em>giữa hai cực khác tên</em>: hai từ trường cùng chiều, đường sức dồn lại rất mau. Yếu nhất ở <em>giữa hai cực cùng tên</em>: tại một điểm ở đó hai từ trường bằng nhau, ngược chiều nên triệt tiêu.</p>
+<p>Mạnh nhất ở <em>giữa hai cực khác tên</em>: hai từ trường cùng chiều, đường sức dồn lại rất mau. Yếu nhất ở <em>giữa hai cực cùng tên</em>: hai từ trường triệt tiêu nhau.</p>
 </details>
 
 <details class="tl-details">
@@ -387,10 +431,11 @@
 <p class="tl-label">✅ Mang về sau bài học</p>
 <ul>
 <li><strong>Tương tác từ:</strong> nam châm – nam châm · nam châm – dòng điện · dòng điện – dòng điện.</li>
+<li><strong>Nam châm:</strong> hai cực N và S · cùng tên đẩy · khác tên hút.</li>
 <li><strong>Từ trường:</strong> dạng vật chất quanh nam châm, dòng điện · biểu hiện bằng lực từ.</li>
 <li><strong>Hướng từ trường:</strong> chiều nam → bắc của kim nam châm nhỏ.</li>
-<li><strong>Đường sức từ:</strong> tiếp tuyến trùng hướng từ trường · cong kín · không cắt nhau · mau thì mạnh.</li>
-<li><strong>Từ trường đều:</strong> đường sức thẳng, song song, cách đều — khe nam châm chữ U, trong ống dây dài.</li>
+<li><strong>Đường sức từ:</strong> tiếp tuyến trùng hướng từ trường · cong kín, hoặc thẳng song song ở từ trường đều · không cắt nhau · mau thì mạnh.</li>
+<li><strong>Từ trường đều:</strong> đường sức song song, cách đều — giữa hai cực chữ U, trong ống dây dài.</li>
 <li><strong>Trái Đất:</strong> một nam châm khổng lồ · gần bắc địa lí là cực từ nam · la bàn lệch khỏi kinh tuyến.</li>
 <li><strong>Đọc đề:</strong> gặp hai từ trường, tự hỏi ngay — chúng <em>cùng phương</em> (cộng đại số) hay <em>vuông góc</em> (dùng $\sqrt{B_1^2 + B_2^2}$)?</li>
 </ul>

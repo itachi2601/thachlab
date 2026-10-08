@@ -19,11 +19,14 @@
 //   npx tsx scripts/batch-ra-soat-bai.mts --nhan [batch_id] [--cho]                    # lấy kết quả (mặc định batch mới nhất; --cho = đợi tới khi xong)
 //   npx tsx scripts/batch-ra-soat-bai.mts --tong-hop                                   # gộp mọi kết quả đã nhận → BAO-CAO*.md
 //   npx tsx scripts/batch-ra-soat-bai.mts --che-do bai-tap-mau --gui --lesson-ids 10   # nháp 4 dạng bài tập mẫu cho bài 10
+//   npx tsx scripts/batch-ra-soat-bai.mts --che-do sua-ly-thuyet --gui --lesson-ids 10 # Claude tự chốt góp ý (gemini/nhan/hoc-sinh-*.json)
+//        và trả cả theory.src.html đã sửa → --nhan ghi nguồn (sao lưu), build, lint, cập nhật so-quyet-dinh + hang-doi (8/10/2026)
 //
 // Tuỳ chọn: --model claude-opus-5-5 (mặc định) | claude-sonnet-5-5 · --effort high (mặc định) · --vai trung-binh
 //           --limit N (số bài tối đa) · --chua-ra-soat (bỏ bài đã có kết quả)
 //
-// Cần .env.local: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY.
+// Cần .env.local: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
+//   (+ ANTHROPIC_WORKSPACE_ID=wrkspc_... nếu key cấp tổ chức, API báo "not scoped to a workspace").
 // Chạy trong tab terminal của thầy (Bash sandbox chặn *.supabase.co). Giá tra 8/10/2026, chỉ để ước tính.
 
 import Anthropic from "@anthropic-ai/sdk";
@@ -47,10 +50,13 @@ const flag = (n: string) => process.argv.includes(`--${n}`);
 const MODEL = arg("model") ?? "claude-opus-5-5";
 const EFFORT = (arg("effort") ?? "high") as "low" | "medium" | "high" | "xhigh" | "max";
 const VAI = arg("vai") ?? "trung-binh";
-const CHE_DO = (arg("che-do") ?? "hoc-sinh") as "hoc-sinh" | "bai-tap-mau";
-if (!["hoc-sinh", "bai-tap-mau"].includes(CHE_DO)) fail("--che-do phải là hoc-sinh | bai-tap-mau");
-const PREFIX = CHE_DO === "bai-tap-mau" ? "btm-" : "lesson-";
-const SUFFIX = CHE_DO === "bai-tap-mau" ? ".bai-tap-mau.json" : ".json";
+type CheDo = "hoc-sinh" | "bai-tap-mau" | "sua-ly-thuyet";
+const CHE_DO = (arg("che-do") ?? "hoc-sinh") as CheDo;
+if (!["hoc-sinh", "bai-tap-mau", "sua-ly-thuyet"].includes(CHE_DO)) fail("--che-do phải là hoc-sinh | bai-tap-mau | sua-ly-thuyet");
+const prefixCua = (c: string) => (c === "bai-tap-mau" ? "btm-" : c === "sua-ly-thuyet" ? "sua-" : "lesson-");
+const suffixCua = (c: string) => (c === "bai-tap-mau" ? ".bai-tap-mau.json" : c === "sua-ly-thuyet" ? ".sua.json" : ".json");
+const PREFIX = prefixCua(CHE_DO);
+const SUFFIX = suffixCua(CHE_DO);
 
 function envVar(key: string): string | undefined {
   if (process.env[key]) return process.env[key];
@@ -111,7 +117,14 @@ function loadPromptBtm(): string {
     .replace("{YCCĐ}", "  (danh mục nằm trong tin nhắn, mục \"Danh mục yêu cầu cần đạt\")")
     .replaceAll('"{TÊN BÀI}"', "\"{tên bài ghi trong tin nhắn}\"");
 }
-const SYSTEM = CHE_DO === "bai-tap-mau" ? loadPromptBtm() : loadPrompt();
+const SUA_PROMPT_FILE = ".claude/skills/cap-nhat-bai-hoc-theo-gemini/references/PROMPT-CLAUDE-SUA-LY-THUYET.md";
+function loadPromptSua(): string {
+  const raw = fs.readFileSync(path.join(root, SUA_PROMPT_FILE), "utf8");
+  const marker = "## PROMPT (sao chép từ đây)";
+  if (!raw.includes(marker)) fail(`không thấy "${marker}" trong ${SUA_PROMPT_FILE}`);
+  return raw.split(marker)[1].split("\n## Lưu ý khi đọc kết quả")[0].trim();
+}
+const SYSTEM = CHE_DO === "bai-tap-mau" ? loadPromptBtm() : CHE_DO === "sua-ly-thuyet" ? loadPromptSua() : loadPrompt();
 
 // JSON schema khớp đầu ra trong prompt — structured output để khỏi vỡ JSON.
 const LOAI = ["mơ_hồ", "thiếu_ví_dụ", "từ_chưa_giải_thích", "nhảy_bước", "quá_dài", "lặp_ý", "phương_án_nhiễu_khó_hiểu", "nghi_sai_đáp_án", "khác"];
@@ -188,6 +201,14 @@ const SCHEMA_BTM = obj({
   },
 });
 
+const SCHEMA_SUA = obj({
+  html: S,
+  quyet_dinh: { type: "array", items: obj({ id: S, quyet_dinh: { type: "string", enum: ["chap_nhan", "tu_choi", "da_sua_truoc"] }, ghi_chu: S }) },
+  doi_noi_dung: ARR_S,
+  so_tu_them: { type: "integer" },
+});
+const SCHEMA_CUA = (c: string) => (c === "bai-tap-mau" ? SCHEMA_BTM : c === "sua-ly-thuyet" ? SCHEMA_SUA : SCHEMA);
+
 // ── nội dung bài ──────────────────────────────────────────────────────────────
 // Giữ HTML (tên mục, lớp tl-ok lộ đáp án đúng — prompt dựa vào đó), bỏ phần nặng vô nghĩa với model.
 function stripHeavy(html: string): string {
@@ -213,7 +234,11 @@ function danhMucYccd(lessonId: number): string {
   return list.length ? list.map((t) => `- ${t.name}`).join("\n") : "(không có danh mục)";
 }
 
-interface Bai { lessonId: number; itemId: number; ten: string; lop: string; chuong: string; html: string }
+interface Bai {
+  lessonId: number; itemId: number; ten: string; lop: string; chuong: string; html: string; nguon: "repo" | "db";
+  // chỉ sua-ly-thuyet: thư mục bài, theory.src.html nguyên văn, JSON góp ý các lượt, sổ quyết định vòng trước
+  dir?: string; src?: string; gopY?: string; quyetDinhCu?: string;
+}
 
 async function layBai(): Promise<Bai[]> {
   const url = envVar("NEXT_PUBLIC_SUPABASE_URL") ?? fail("thiếu NEXT_PUBLIC_SUPABASE_URL");
@@ -235,6 +260,7 @@ async function layBai(): Promise<Bai[]> {
   for (const r of cc.data!) if (!chapterClass.has(r.chapter_id)) chapterClass.set(r.chapter_id, className.get(r.class_id) ?? "");
   const lessonById = new Map(lessons.data!.map((l) => [l.id, l]));
 
+  const thuMucNguon = thuMucCuaBai();
   const ids = arg("lesson-ids")?.split(",").map((s) => Number(s.trim()));
   const lopFilter = arg("lop");
   const out: Bai[] = [];
@@ -245,17 +271,52 @@ async function layBai(): Promise<Bai[]> {
     const lopName = chapterClass.get(l.chapter_id) ?? "";
     const lop = lopName.match(/\d+/)?.[0] ?? "?";
     if (lopFilter && lop !== lopFilter) continue;
-    const html = stripHeavy(it.body_html ?? "");
+    // Bài có thư mục nguồn trong repo (content/gemini/hang-doi.md) → đọc theory.html ở repo, vì repo có thể
+    // đã sửa mà chưa đăng; DB chỉ là nguồn khi không có thư mục. Góp ý phải khớp bản sắp đăng (8/10/2026).
+    const dirRepo = thuMucNguon.get(l.id);
+    const repoHtml = dirRepo ? path.join(root, "content/lesson-samples", dirRepo, "theory.html") : undefined;
+    const nguon = repoHtml && fs.existsSync(repoHtml) ? "repo" : "db";
+    const html = stripHeavy(nguon === "repo" ? fs.readFileSync(repoHtml!, "utf8") : (it.body_html ?? ""));
     if (html.replace(/<[^>]+>/g, "").trim().length < 400) continue; // mục trống/quá ngắn, chưa có bài
     if (flag("chua-ra-soat") && fs.existsSync(path.join(KQ_DIR, `${l.id}${SUFFIX}`))) continue;
-    out.push({ lessonId: l.id, itemId: it.id, ten: l.title, lop, chuong: chapterTitle.get(l.chapter_id) ?? "", html });
+    const b: Bai = { lessonId: l.id, itemId: it.id, ten: l.title, lop, chuong: chapterTitle.get(l.chapter_id) ?? "", html, nguon };
+    if (CHE_DO === "sua-ly-thuyet") {
+      // Cần đủ bộ: thư mục nguồn + theory.src.html + ít nhất một JSON góp ý trong gemini/nhan/.
+      if (!dirRepo) { console.warn(`  bỏ ${l.id} ${l.title}: không có thư mục trong hang-doi.md`); continue; }
+      const dirAbs = path.join(root, "content/lesson-samples", dirRepo);
+      const srcP = path.join(dirAbs, "theory.src.html");
+      const nhanDir = path.join(dirAbs, "gemini/nhan");
+      const gopFiles = fs.existsSync(nhanDir) ? fs.readdirSync(nhanDir).filter((f) => /^hoc-sinh-.*\.json$/.test(f)).sort() : [];
+      if (!fs.existsSync(srcP) || !gopFiles.length) { console.warn(`  bỏ ${l.id} ${l.title}: thiếu theory.src.html hoặc gemini/nhan/hoc-sinh-*.json`); continue; }
+      const qdP = path.join(dirAbs, "gemini/da-xu-ly/so-quyet-dinh.json");
+      b.dir = dirRepo;
+      b.src = fs.readFileSync(srcP, "utf8");
+      b.gopY = gopFiles.map((f) => `// ${f}\n${fs.readFileSync(path.join(nhanDir, f), "utf8")}`).join("\n\n");
+      b.quyetDinhCu = fs.existsSync(qdP) ? fs.readFileSync(qdP, "utf8").slice(0, 8000) : "";
+    }
+    out.push(b);
   }
   out.sort((a, b) => a.lessonId - b.lessonId);
   const limit = Number(arg("limit") ?? 0);
   return limit ? out.slice(0, limit) : out;
 }
 
+function userMessageSua(b: Bai): string {
+  return [
+    `Lớp: ${b.lop}`,
+    `Chương: ${b.chuong}`,
+    `Bài: ${b.ten}`,
+    ``,
+    `<bai_hoc>`, b.src ?? "", `</bai_hoc>`,
+    ``,
+    `<gop_y>`, b.gopY ?? "", `</gop_y>`,
+    ``,
+    `<quyet_dinh_cu>`, b.quyetDinhCu || "(chưa có vòng trước)", `</quyet_dinh_cu>`,
+  ].join("\n");
+}
+
 function userMessage(b: Bai): string {
+  if (CHE_DO === "sua-ly-thuyet") return userMessageSua(b);
   return [
     `Lớp: ${b.lop}`,
     `Chương: ${b.chuong}`,
@@ -270,10 +331,11 @@ function userMessage(b: Bai): string {
 function params(b: Bai): Anthropic.MessageCreateParamsNonStreaming {
   return {
     model: MODEL,
-    max_tokens: CHE_DO === "bai-tap-mau" ? 32000 : 16000,
+    // Suy nghĩ (effort high) tính chung vào trần này; 16000 từng cắt JSON bài 10 ở góp ý 19 (8/10/2026).
+    max_tokens: CHE_DO === "bai-tap-mau" ? 48000 : CHE_DO === "sua-ly-thuyet" ? 64000 : 32000, // sua: trả cả file HTML (~15k) + suy nghĩ
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: userMessage(b) }],
-    output_config: { effort: EFFORT, format: { type: "json_schema", schema: CHE_DO === "bai-tap-mau" ? SCHEMA_BTM : SCHEMA } },
+    output_config: { effort: EFFORT, format: { type: "json_schema", schema: SCHEMA_CUA(CHE_DO) } },
   };
 }
 
@@ -292,7 +354,12 @@ function thuMucCuaBai(): Map<number, string> {
 }
 
 // ── chế độ ────────────────────────────────────────────────────────────────────
-const client = new Anthropic({ apiKey: envVar("ANTHROPIC_API_KEY") ?? fail("thiếu ANTHROPIC_API_KEY trong .env.local") });
+const WORKSPACE_ID = envVar("ANTHROPIC_WORKSPACE_ID");
+const client = new Anthropic({
+  apiKey: envVar("ANTHROPIC_API_KEY") ?? fail("thiếu ANTHROPIC_API_KEY trong .env.local"),
+  // Key cấp tổ chức (không gắn workspace) bắt buộc kèm header này; key gắn workspace thì bỏ trống.
+  ...(WORKSPACE_ID ? { defaultHeaders: { "anthropic-workspace-id": WORKSPACE_ID } } : {}),
+});
 
 async function duToan() {
   const bai = await layBai();
@@ -303,9 +370,9 @@ async function duToan() {
   for (const b of bai) {
     const c = await client.messages.countTokens({ model: MODEL, system: SYSTEM, messages: params(b).messages });
     tongIn += c.input_tokens;
-    console.log(`  ${String(b.lessonId).padStart(4)} L${b.lop} ${b.ten.slice(0, 50).padEnd(50)} ${c.input_tokens.toLocaleString()} tok`);
+    console.log(`  ${String(b.lessonId).padStart(4)} L${b.lop} ${b.ten.slice(0, 50).padEnd(50)} ${c.input_tokens.toLocaleString()} tok · ${b.nguon}`);
   }
-  const uocOut = bai.length * (CHE_DO === "bai-tap-mau" ? 12000 : 4000); // token ra/bài (JSON + thinking high) — ước
+  const uocOut = bai.length * (CHE_DO === "bai-tap-mau" ? 24000 : CHE_DO === "sua-ly-thuyet" ? 26000 : 14000); // token ra/bài (JSON + thinking high) — đo thật bài 10: 14,5k (8/10/2026)
   if (p) {
     const usd = ((tongIn * p.input + uocOut * p.output) / 1e6) * 0.5;
     console.log(`\nTổng vào ${tongIn.toLocaleString()} tok · ra ước ${uocOut.toLocaleString()} tok → ≈ $${usd.toFixed(2)} (giá batch ½, chưa trừ cache system prompt)`);
@@ -343,10 +410,80 @@ function manifestMoiNhat(): string | undefined {
 
 interface KetQuaHS { gop_y: { muc: string; loai: string }[]; du_doan_loi_sai: { bai_da_nhan_manh: boolean }[] }
 interface KetQuaBTM { lesson_title: string; dang_bai: { label: string; cap_do: number; yccd_de_xuat: string; dieu_ban_khong_chac: string[] }[] }
-interface KetQua<T = KetQuaHS | KetQuaBTM> {
+interface KetQuaSua { html: string; quyet_dinh: { id: string; quyet_dinh: string; ghi_chu: string }[]; doi_noi_dung: string[]; so_tu_them: number }
+interface KetQua<T = KetQuaHS | KetQuaBTM | KetQuaSua> {
   lesson_id: number; ten: string; lop: string; chuong: string; batch_id: string; che_do: string; model: string;
   usage: Anthropic.Usage; cost_usd: number | null; data: T;
   kiem?: { ok: boolean; loi: number; canh_bao: number; log: string }; // chỉ bai-tap-mau: kết quả kiem-ban-nhap-gemini.py
+  sua?: KetQuaXuLySua; // chỉ sua-ly-thuyet
+}
+
+interface KetQuaXuLySua { ok: boolean; trang_thai: "da-sua" | "loi-lint" | "loi-cau-truc" | "khong-thu-muc"; loi: string[]; ghi_vao?: string; sao_luu?: string; lint: Record<string, string> }
+
+// Ghi HTML đã sửa vào theory.src.html (sao lưu bản cũ), build hình + bundle, chạy lint; không ghi DB.
+function xuLySua(lessonId: number, dir: string | undefined, data: KetQuaSua, ten: string): KetQuaXuLySua {
+  const r: KetQuaXuLySua = { ok: false, trang_thai: "khong-thu-muc", loi: [], lint: {} };
+  if (!dir) { r.loi.push("không có thư mục bài"); return r; }
+  const dirAbs = path.join(root, "content/lesson-samples", dir);
+  const srcP = path.join(dirAbs, "theory.src.html");
+  const cu = fs.readFileSync(srcP, "utf8");
+  const moi = data.html;
+  // Kiểm cấu trúc: số mốc hình, số mục, số quiz phải y nguyên.
+  const dem = (h: string, re: RegExp) => (h.match(re) ?? []).length;
+  const kiem: [string, RegExp][] = [["mốc <!--FIGn-->", /<!--FIG\d+-->/g], ["<h3>", /<h3[\s>]/g], ["tl-quiz", /class="[^"]*\btl-quiz\b/g], ["tl-ok", /\btl-ok\b/g]];
+  for (const [t, re] of kiem) if (dem(cu, re) !== dem(moi, re)) r.loi.push(`${t}: cũ ${dem(cu, re)} ≠ mới ${dem(moi, re)}`);
+  if (moi.length < cu.length * 0.7) r.loi.push(`HTML mới ngắn bất thường (${moi.length} so với ${cu.length} ký tự)`);
+  if (r.loi.length) { r.trang_thai = "loi-cau-truc"; fs.writeFileSync(path.join(KQ_DIR, `${lessonId}.sua.html`), moi); return r; }
+  // Sao lưu rồi ghi.
+  const daXuLy = path.join(dirAbs, "gemini/da-xu-ly");
+  fs.mkdirSync(daXuLy, { recursive: true });
+  const moc = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+  const saoLuu = path.join(daXuLy, `theory.src.${moc}.html`);
+  fs.copyFileSync(srcP, saoLuu);
+  fs.writeFileSync(srcP, moi);
+  r.sao_luu = path.relative(root, saoLuu);
+  r.ghi_vao = path.relative(root, srcP);
+  // Build + lint.
+  const chay = (cmd: string, args: string[], cwd = root) => { const x = spawnSync(cmd, args, { cwd, encoding: "utf8" }); return { ok: x.status === 0, log: ((x.stdout ?? "") + (x.stderr ?? "")).trim() }; };
+  const SK = ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts";
+  const theoryP = path.join(dirAbs, "theory.html");
+  const buoc: [string, () => { ok: boolean; log: string }][] = [
+    ["build_figs", () => (fs.existsSync(path.join(dirAbs, "build_figs.py")) ? chay("python3", ["build_figs.py"], dirAbs) : { ok: true, log: "(không có build_figs.py)" })],
+    ["build_bundle", () => (fs.existsSync(path.join(dirAbs, "build_bundle.py")) ? chay("python3", ["build_bundle.py"], dirAbs) : { ok: true, log: "(không có build_bundle.py)" })],
+    ["lint_theory", () => chay("python3", [`${SK}/lint_theory.py`, theoryP])],
+    ["lint_do_dai", () => chay("python3", [`${SK}/lint_do_dai.py`, theoryP])],
+    ["check_quizzes", () => chay("python3", [`${SK}/check_quizzes.py`, theoryP])],
+  ];
+  let lintOk = true;
+  for (const [t, f] of buoc) {
+    const x = f();
+    r.lint[t] = x.log.slice(-1500);
+    if (!x.ok) { lintOk = false; r.loi.push(`${t} lỗi`); }
+  }
+  r.ok = lintOk;
+  r.trang_thai = lintOk ? "da-sua" : "loi-lint";
+  // Sổ quyết định: nối thêm một vòng, không viết lại vòng cũ.
+  const qdP = path.join(daXuLy, "so-quyet-dinh.json");
+  let qd: Record<string, unknown> = {};
+  try { qd = fs.existsSync(qdP) ? JSON.parse(fs.readFileSync(qdP, "utf8")) : {}; } catch { qd = { ghi_chu_json_cu_hong: true }; }
+  const vongCu = Number(qd.vong ?? 0);
+  qd.bai ??= dir;
+  qd.vong = vongCu + 1;
+  const vongKey = `vong${qd.vong}_sua_api`;
+  qd[vongKey] = { ngay: new Date().toISOString().slice(0, 10), model: MODEL, quyet_dinh: data.quyet_dinh, doi_noi_dung: data.doi_noi_dung, so_tu_them: data.so_tu_them, trang_thai: r.trang_thai, loi: r.loi, sao_luu: r.sao_luu };
+  fs.writeFileSync(qdP, JSON.stringify(qd, null, 2));
+  // hang-doi.md: cập nhật cột trạng thái + ghi chú của đúng dòng.
+  const hdP = path.join(root, "content/gemini/hang-doi.md");
+  if (fs.existsSync(hdP)) {
+    const lines = fs.readFileSync(hdP, "utf8").split("\n").map((l) => {
+      const c = l.split("|").map((x) => x.trim());
+      if (c.length < 5 || c[1] !== dir) return l;
+      const nhan = data.quyet_dinh.filter((x) => x.quyet_dinh === "chap_nhan").length;
+      return `| ${c[1]} | ${c[2]} | ${r.trang_thai} | ${ten}: API sửa ${nhan}/${data.quyet_dinh.length} góp ý ${qd.vong ? `(vòng ${qd.vong})` : ""}${lintOk ? ", lint sạch, chờ đăng" : ", LỖI lint — sửa tay"} |`;
+    });
+    fs.writeFileSync(hdP, lines.join("\n"));
+  }
+  return r;
 }
 
 // Chạy kiểm máy của skill soan-bai-tap-mau lên bản nháp vừa nhận (số học, trích đề, YCCĐ, từ cấm).
@@ -371,8 +508,8 @@ async function nhan() {
     ? (JSON.parse(fs.readFileSync(mp, "utf8")) as { model: string; che_do?: string; vai?: string; bai: { lesson_id: number; ten: string; lop: string; chuong: string }[] })
     : { model: MODEL, che_do: CHE_DO, vai: VAI, bai: [] };
   const cheDo = manifest.che_do ?? "hoc-sinh";
-  const prefix = cheDo === "bai-tap-mau" ? "btm-" : "lesson-";
-  const suffix = cheDo === "bai-tap-mau" ? ".bai-tap-mau.json" : ".json";
+  const prefix = prefixCua(cheDo);
+  const suffix = suffixCua(cheDo);
   const meta = new Map(manifest.bai.map((b) => [b.lesson_id, b]));
 
   let batch = await client.messages.batches.retrieve(id);
@@ -420,14 +557,26 @@ async function nhan() {
     // Bài có thư mục nguồn → ghi đúng chỗ chế độ /gemini-nhan đọc (không ghi đè bản đã có).
     const dir = thuMuc.get(lessonId);
     const destName = cheDo === "bai-tap-mau" ? "bai-tap-mau.json" : `hoc-sinh-${manifest.vai ?? VAI}-claude.json`;
-    const dest = dir ? path.join(root, "content/lesson-samples", dir, "gemini/nhan", destName) : undefined;
+    const dest = dir && cheDo !== "sua-ly-thuyet" ? path.join(root, "content/lesson-samples", dir, "gemini/nhan", destName) : undefined;
     let daGhiNhan = false;
-    if (dest && !fs.existsSync(dest)) {
+    if (dest) {
       fs.mkdirSync(path.dirname(dest), { recursive: true });
+      if (fs.existsSync(dest)) { // bản cũ dời sang da-xu-ly/ kèm mốc giờ, không mất
+        const cu = path.join(root, "content/lesson-samples", dir!, "da-xu-ly", `${path.basename(dest, ".json")}.${new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "")}.json`);
+        fs.mkdirSync(path.dirname(cu), { recursive: true });
+        fs.renameSync(dest, cu);
+      }
       fs.writeFileSync(dest, JSON.stringify(cheDo === "bai-tap-mau" ? data : { ...data, nguon: "claude" }, null, 2));
       daGhiNhan = true;
     }
-    if (cheDo === "bai-tap-mau") {
+    if (cheDo === "sua-ly-thuyet") {
+      const r = xuLySua(lessonId, dir, data as KetQuaSua, m.ten);
+      kq.sua = r;
+      fs.writeFileSync(kqPath, JSON.stringify({ ...kq, data: { ...(data as KetQuaSua), html: `(đã ghi vào ${r.ghi_vao ?? "—"})` } }, null, 2));
+      const qd = (data as KetQuaSua).quyet_dinh;
+      console.log(`  ${r.ok ? "✓" : "✗"} ${String(lessonId).padStart(4)} L${m.lop} ${m.ten.slice(0, 45).padEnd(45)} nhận ${qd.filter((x) => x.quyet_dinh === "chap_nhan").length}/${qd.length} · ${r.trang_thai} · $${(usd ?? 0).toFixed(3)}`);
+      if (!r.ok) console.log(`      ${r.loi.join(" | ").slice(0, 300)}`);
+    } else if (cheDo === "bai-tap-mau") {
       // Bản nháp thuần (đúng định dạng kiem-ban-nhap-gemini.py đọc) để riêng, kiểm máy ngay.
       const nhapPath = path.join(KQ_DIR, `${lessonId}.bai-tap-mau.nhap.json`);
       fs.writeFileSync(nhapPath, JSON.stringify(data, null, 2));
@@ -455,6 +604,30 @@ function docKetQua<T>(re: RegExp): KetQua<T>[] {
 function tongHop() {
   tongHopHocSinh();
   tongHopBaiTapMau();
+  tongHopSua();
+}
+
+function tongHopSua() {
+  const all = docKetQua<KetQuaSua>(/^\d+\.sua\.json$/);
+  if (!all.length) return;
+  all.sort((a, b) => Number(a.sua?.ok ?? false) - Number(b.sua?.ok ?? false) || a.lesson_id - b.lesson_id); // lỗi lên đầu
+  const lines = [
+    `# Báo cáo sửa lý thuyết bằng Claude (Batch API, chế độ sua-ly-thuyet)`,
+    ``,
+    `Cập nhật: ${now()} · ${all.length} bài · tổng ≈ $${all.reduce((s, k) => s + (k.cost_usd ?? 0), 0).toFixed(2)}`,
+    `Bài \`da-sua\`: theory.src.html đã ghi (bản cũ ở gemini/da-xu-ly/theory.src.<mốc>.html), theory.html + bundle.json đã build, lint sạch → đăng bằng \`bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/<bài>/theory.html <id> --yes\`.`,
+    `Bài \`loi-lint\`: đã ghi nguồn nhưng lint báo lỗi → Claude Code sửa tay phần lỗi (xem \`ket-qua/<id>.sua.json\` → sua.lint). Bài \`loi-cau-truc\`: KHÔNG ghi, HTML trả về ở \`ket-qua/<id>.sua.html\`.`,
+    ``,
+    `| lesson_id | Lớp | Bài | Trạng thái | Nhận/tổng | Đổi nội dung | Lỗi |`,
+    `|---|---|---|---|---|---|---|`,
+  ];
+  for (const k of all) {
+    const qd = k.data.quyet_dinh ?? [];
+    lines.push(`| ${k.lesson_id} | ${k.lop} | ${k.ten} | ${k.sua?.trang_thai ?? "—"} | ${qd.filter((x) => x.quyet_dinh === "chap_nhan").length}/${qd.length} | ${(k.data.doi_noi_dung ?? []).length} | ${(k.sua?.loi ?? []).join("; ").slice(0, 120)} |`);
+  }
+  const bp = path.join(LOG_DIR, "BAO-CAO-SUA.md");
+  fs.writeFileSync(bp, lines.join("\n") + "\n");
+  console.log(`→ ${path.relative(root, bp)}`);
 }
 
 function tongHopHocSinh() {

@@ -1,6 +1,6 @@
 {
  "bai": "l12-khai-niem-tu-truong",
- "vong": 1,
+ "vong": 2,
  "quyet_dinh": [
   {
    "id": "g1",
@@ -62,5 +62,168 @@
    "c17": "phương án nhiễu Câu 2 quá lộ — nhận xét đúng nhưng đổi phương án là đổi quiz, HỎI THẦY."
   },
   "ket_luan": "Gemini 3 góp ý, nhận 3. Claude 17: 9 đáng nhận (trong đó 2 trùng chỗ Gemini), 5 từ chối/giả, 2 hỏi thầy, 1 nghi chép sai. Chi phí ~100k token Sonnet. Lượt Claude bắt được lỗi ký hiệu/lặp/thiếu định nghĩa mà Gemini bỏ qua; Gemini cho tín hiệu quiz sai mà Claude không có."
+ },
+ "vong2_claude_opus": {
+  "nguon": "scripts/logs/batch-ra-soat/ket-qua/10.json (19 góp ý Opus, sinh trên bản DB cũ) + 10 góp ý Sonnet đang nhận ở luot_claude_vong1",
+  "opus": [
+   {
+    "id": "c1",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Mở bài: 'chỉ đúng hướng bắc' → 'chỉ gần hướng bắc' (khớp Bẫy 3)."
+   },
+   {
+    "id": "c2",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Rút ra TN mục 1 bỏ 'tạo từ trường' (chưa định nghĩa) → 'dòng điện tác dụng lực từ lên kim'; bỏ luôn đuôi 'cơ sở chế tạo động cơ' (trùng mục VI) để giữ hạn mức."
+   },
+   {
+    "id": "c3",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "TN mục 2: 'đầu N luôn quay ra xa cực bắc, hướng về cực nam của thanh nam châm'."
+   },
+   {
+    "id": "c4",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Câu 2: A → 'Chiều bắc → nam của kim…' (bẫy thật); B đổi thành 'Chiều nam → bắc…' cho song song; phản hồi sai viết lại; bundle exam Câu 2 đổi theo."
+   },
+   {
+    "id": "c5",
+    "quyet_dinh": "da_sua_truoc",
+    "ghi_chu": "'dài vô hạn' đã bỏ ở mục 3 (g1); sửa nốt chỗ còn sót ở Trả bài câu 4."
+   },
+   {
+    "id": "c6",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Bước Làm TN mạt sắt thêm: lặp lại với hai thanh cùng cực đối diện, rồi nam châm chữ U."
+   },
+   {
+    "id": "c7",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Chuyển Hình 4 (cực từ Trái Đất) xuống Bẫy 3, ngay dưới bảng — đồng thời xử lý quiz_sai cau6 (chú thích hình nêu lí do 'cực bắc kim bị hút')."
+   },
+   {
+    "id": "c8",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "'Điện thẳng/Điện tròn' → 'Dòng điện thẳng dài/Dòng điện tròn'; tách 3 ý thành 3 dòng."
+   },
+   {
+    "id": "c9",
+    "quyet_dinh": "da_sua_truoc",
+    "ghi_chu": "1/8 đã sửa ở g2 (quy luật của nam châm, dây dẫn giảm chậm hơn)."
+   },
+   {
+    "id": "c10",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Rút ra TN đo: 'gần cực, số đọc lớn nhất, mạt sắt ở mục 3 cũng dày nhất'."
+   },
+   {
+    "id": "c11",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Bẫy 2: 'miễn chỗ mạnh mau hơn chỗ yếu trên cùng hình'."
+   },
+   {
+    "id": "c12",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Mục 4: B là vectơ (hướng + độ lớn); thêm gạch định nghĩa 'từ trường tổng hợp = tổng vectơ' trước Câu 5 (gộp với Sonnet c6, c9)."
+   },
+   {
+    "id": "c13",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Câu c đổi: giảm dòng còn B2 = 30 µT ⊥ Bđ → B = 30√2 ≈ 42 µT, α = 45°; bước kiểm tra viết lại (45° < 53°, đường chéo hình vuông)."
+   },
+   {
+    "id": "c14",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Lời giải câu a: góc lệch giữa vectơ tổng hợp và Bđ; B1 cạnh đối, Bđ cạnh kề nên dùng tan."
+   },
+   {
+    "id": "c15",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Bỏ B3: câu c đặt tên B2 ngay trong đề; bảng phân tích dùng B2; nhãn Hình 5 'B3' → 'B1'."
+   },
+   {
+    "id": "c16",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Câu b lời giải: thêm '(vẫn cùng phương)… Hai từ trường vuông góc thì khác — xem Câu 7' (trong details, không tính độ dài)."
+   },
+   {
+    "id": "c17",
+    "quyet_dinh": "da_sua_truoc",
+    "ghi_chu": "Vòng vo B12 đã bỏ ở g3; Bước 1 ghi thêm quy trình chia trục (Sonnet c14)."
+   },
+   {
+    "id": "c18",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Thử thách ⭐: hỏi 'có từ trường nào khác ngoài từ trường Trái Đất'; đáp 'kim lệch khỏi hướng bắc thì có thêm từ trường khác'."
+   },
+   {
+    "id": "c19",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "⭐⭐: 'tại một điểm ở đó hai từ trường bằng nhau, ngược chiều nên triệt tiêu'."
+   }
+  ],
+  "sonnet_dang_nhan": [
+   {
+    "id": "c4",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Gộp hai chỗ 'từ trường đều' ở mục 3 về một gạch; 'khe giữa hai cực nam châm chữ U'."
+   },
+   {
+    "id": "c12",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Như Opus c15 (B3 → B2 đặt trong đề); bỏ dòng Bđ lặp trong bảng phân tích."
+   },
+   {
+    "id": "c13",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Như Opus c13: câu c = 30 µT, kết quả 42 µT, 45°."
+   },
+   {
+    "id": "c9",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Định nghĩa 'từ trường tổng hợp' ở mục 4 trước Câu 5."
+   },
+   {
+    "id": "c15",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "'Lấy bắc làm dương: 30 − 40 = −10, tức 10 µT hướng nam'."
+   },
+   {
+    "id": "c8",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Đoạn sai số tách 3 dòng (nguồn lệch / quy luật 1/8 / chạm nền Trái Đất)."
+   },
+   {
+    "id": "c5",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Thêm '(tiếp tuyến: hướng đường cong đang đi tại điểm đó)'."
+   },
+   {
+    "id": "c6",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "B là vectơ — gộp với Opus c12."
+   },
+   {
+    "id": "c11",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "'kinh tuyến (đường nối hai cực địa lí)'."
+   },
+   {
+    "id": "c14",
+    "quyet_dinh": "chap_nhan",
+    "ghi_chu": "Bước 1 'Điền bước còn thiếu': chia ba từ trường theo trục bắc/đông, cộng riêng từng trục."
+   }
+  ],
+  "sonnet_chot_lai": {
+   "c13": "chap_nhan (thầy giao Claude chốt): câu c 30 µT",
+   "c17": "chap_nhan: thay phương án A Câu 2 như Opus c4"
+  },
+  "quiz_sai_khong_gop_y_da_xu_ly": {
+   "cau1": "mục 1 gạch 3 thêm 'dây không có cực N, S'",
+   "cau6": "Hình 4 chuyển xuống cạnh bảng Bẫy 3, chú thích nêu lí do"
+  },
+  "cat_de_giu_han_muc": "bỏ gạch 'Dẫn đường' và 'Nam châm' (Mang về, trùng mục 1), 'chuông điện', 'Bão từ…', hàng 'đảo cực' (Bẫy 3), hàng 'chiều' trùng (bảng Bẫy 2), đuôi 'cơ sở chế tạo động cơ điện'.",
+  "lint": "2487/2500 từ hiện ngay, ~17.8 phút, 8 quiz, 0 lỗi cứng; check_quizzes OK; validate_bundle ok; không tràn 375px",
+  "ket_luan": "Opus 19: nhận 16, đã sửa trước 3, từ chối 0. Sonnet 10 đang nhận: nhận cả 10 (nhiều chỗ trùng Opus)."
  }
 }

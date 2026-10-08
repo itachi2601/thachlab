@@ -23,3 +23,5 @@ Việc khác credit áp dụng được: phân loại/mức độ câu hỏi ng�
 
 **Why:** credit sắp hết hạn, chi phí Claude Code (subscription) không giảm nếu không dùng API.
 **How to apply:** trước 22/10 nhắc thầy chạy batch; sau ngày đó script vẫn dùng được nhưng tính tiền thật. Xem [[project-thachlab-cap-nhat-bai-theo-gemini]].
+
+- 2026-10-08 · ANTHROPIC_API_KEY đã có trong `.env.local` (key gắn workspace Default). Key cấp tổ chức bị API 400 "not scoped to a workspace" → script `batch-ra-soat-bai.mts` đã hỗ trợ thêm biến `ANTHROPIC_WORKSPACE_ID` nếu gặp lại. Ước giá lớp 12: 22 bài ≈ $1.70; lesson 96 là đề kiểm tra, không phải lý thuyết, nên bỏ khỏi lượt rà.

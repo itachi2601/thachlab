@@ -171,7 +171,7 @@ b += f'<circle cx="224" cy="196" r="7" fill="currentColor"/>'
 b += arrow("f5", "g", 224, 196, 224, 136, 3)
 b += text(216, 140, "Bđ = 30 µT", GRN, 12, "end", "700")
 b += arrow("f5", "r", 224, 196, 304, 196, 3)
-b += text(264, 216, "B3 = 40 µT", RED, 12, "middle", "700")
+b += text(264, 216, "B1 = 40 µT", RED, 12, "middle", "700")
 b += arrow("f5", "b", 224, 196, 304, 136, 3)
 b += text(312, 130, "B = 50 µT", BLUE, 12, "start", "700")
 b += line(304, 136, 304, 196, "currentColor", 1.2, "5 4", .45)
