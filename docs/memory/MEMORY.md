@@ -24,6 +24,7 @@
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
 ## Hạ tầng & tra cứu
+- [Credit $100 Anthropic API](project_thachlab_anthropic_credit.md) — hết hạn 22/10/2026, chỉ API/Batch; đốt bằng scripts/batch-ra-soat-bai.mts
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f`
 - [Hosting](project_thachlab_hosting.md) — DirectAdmin, Thachlab.id.vn
@@ -79,3 +80,4 @@
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo dang-chung.json/tiet.json
 - [Cloud ↔ main tự gộp](project_thachlab_concurrent_sessions.md) — workflow gop-claude-vao-main; cuối phiên kiểm origin/main==HEAD, xanh thì không in lệnh merge
+- [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill + vòng thật Bài 9 L12 8/10; treo duyệt lý thuyết, dán lại tin nhắn 3, gói sửa nhỏ

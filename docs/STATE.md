@@ -23,6 +23,12 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - (Các mục hoàn thành trước 7/10/2026 đã chuyển sang `docs/STATE-archive.md`, mục cuối file; grep khi cần.)
 - **Tách JS theo vai (6/10/2026, nhánh `perf-tach-js`, CHƯA vào main/CHƯA deploy)** — 3 commit `2cd436588`, `00e5ba526`, `669f7be9f`. JS đầu (KB thô, chunks-report): `/tai-khoan` 1468→973, `/phu-huynh` 1174→989, `/lop-hoc/bai` 1107→1092 (chưa <1000: QuestionCard còn dùng chung WorkedQuestionsGrid), `/kiem-tra/lam` 1045→1046 (không đổi). Chưa kiểm bằng đăng nhập thật (HS THPT/CNC, GV, PH) và chưa làm thực nghiệm xoá-chunk A6. Spec: `docs/BAN-GIAO-PERF-TACH-JS-2026-10-06.md`.
 
+## Credit $100 Anthropic API — ĐANG CHỜ thầy chạy (hết hạn 22/10/2026)
+- Credit chỉ áp dụng API/Batch/Agent SDK, không áp dụng Claude Code. Script mới `scripts/batch-ra-soat-bai.mts` (8/10/2026): Batch API,
+  Claude rà từng bài lý thuyết như "lượt Claude" (bước 1b skill cap-nhat-bai-hoc-theo-gemini). Cần `ANTHROPIC_API_KEY` trong `.env.local`.
+  Thứ tự: `--du-toan` (miễn phí) → `--gui --lesson-ids 10` (thử 1 bài, xem `scripts/logs/batch-ra-soat/ket-qua/10.json`) → `--gui` cả kho →
+  `--nhan --cho` → đọc `scripts/logs/batch-ra-soat/BAO-CAO.md`, chọn bài sửa theo chế độ 2 của skill. Chi tiết: memory `project_thachlab_anthropic_credit.md`.
+
 ## Migration — ĐANG CHỜ
 
 - **Bài 11 VL12 Thực hành cảm ứng từ (7/10/2026, commit a04812d1c):** CHƯA ghi DB — `upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`; 4 bài L12 đã sửa đường sức nét đứt chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14`; sau đó deploy (CSS `.tl-sim` mới). Clip mở bài/hộp đo chưa xác nhận mốc cắt bằng mắt.
