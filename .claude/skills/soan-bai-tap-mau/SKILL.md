@@ -41,6 +41,18 @@ Phần chữ (đề, số liệu, lời giải nháp) có thể giao Gemini ngo�
 3. **Không đăng nguyên văn**: tự viết lại lời giải theo "Phong cách" ở trên (khung kiến thức, bước đánh số, ⚠ điều kiện, nhận dạng), dựng mô phỏng + bảng phân tích bằng `hinh.py`, khớp `topic` với `question-topics.json`, rồi đi tiếp từ bước 4 của "Quy trình" (kiểm chéo độc lập bằng `kiem-code`, validate, đăng).
 4. Dữ liệu định danh học sinh không đi qua Gemini (AGENTS.md).
 
+## Hàng loạt qua Batch API (thầy chốt 8/10/2026 — credit API, không cần Gemini, không duyệt trước)
+Ba chế độ nối nhau trong `scripts/batch-ra-soat-bai.mts` (chạy trong tab terminal của thầy; bài phải có dòng trong `content/gemini/hang-doi.md`):
+1. `--che-do bai-tap-mau --gui --lop 12` → `--nhan --cho`: nháp 4 dạng + kiểm máy → `scripts/logs/batch-ra-soat/ket-qua/<id>.bai-tap-mau.nhap.json`.
+2. `--che-do viet-bai-tap-mau --gui …` → `--nhan --cho`: API viết hoàn chỉnh (HTML + SVG mô phỏng + bảng phân tích + lời giải theo
+   `references/PROMPT-CLAUDE-VIET-BAI-TAP-MAU.md`, system prompt nhúng AI-TUTOR mục 9 + dạng 2 bài 10 làm mẫu) → ghi
+   `scripts/data/bai-tap-mau/<id>.json` (`review.checked=false`, bản cũ sao lưu `old/<id>.truoc-api-*.json`), chạy `validate.mts`, chụp
+   `scripts/logs/batch-ra-soat/xem-thu/<id>/dang-N.png`.
+3. `--che-do kiem-cheo --gui …` → `--nhan --cho`: request khác tự giải độc lập (`references/PROMPT-CLAUDE-KIEM-CHEO.md`); cả 4 "dung" →
+   `review.checked=true`. Có "sai"/"nghi_ngo" → ghi vào `review.kiem_cheo`, Claude Code sửa tay rồi chạy lại kiem-cheo cho bài đó.
+4. Xem ảnh `dang-N.png` bằng mắt (subagent, không đọc ảnh ở phiên chính), sửa hình hỏng, rồi đăng `publish-bai-tap-mau.mts --lesson <id> --yes`
+   (`--giu-cu` nếu bài có dạng cũ). Báo cáo gộp: `--tong-hop` → `BAO-CAO-VIET-BTM.md`.
+
 ## Nhân ra nhiều bài (chương)
 Mỗi bài một subagent theo `references/huong-dan-nhan-ra.md` (mẫu = bài 57), chạy song song; sau đó **mỗi bài thêm một subagent `kiem-code` khác tự giải độc lập** (không nhìn lời giải) → sửa → `review.checked=true` → phiên chính publish từng bài (`--lesson <id>`, dạng cũ vào `tu_luan` nên KHÔNG dùng `--giu-cu`) rồi deploy một lần. Dạng cũ lấy từ `scripts/dump-bai-tap-mau-cu.mts <id…>` → `scripts/data/bai-tap-mau/old/<id>.json` (chạy trước khi publish ghi đè). Xem thử bằng `scripts/xem-thu.py` (Chrome headless, khung cuối của mô phỏng).
 
@@ -106,3 +118,4 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-08 · Thêm đường "bản nháp Gemini" (prompt + `kiem-ban-nhap-gemini.py`) → chưa chạy vòng thật; sau bài đầu ghi: lỗi số học/đơn vị Gemini hay mắc, mức công Claude phải viết lại.
 - 2026-10-08 · Nháp 4 dạng có thể sinh hàng loạt bằng `scripts/batch-ra-soat-bai.mts --che-do bai-tap-mau` (Claude qua Batch API, credit API) — vẫn là BẢN NHÁP, đi đủ kiểm máy → viết lại → kiem-code → đăng (từ 8/10/2026 thầy không duyệt trước; trợ giảng rà trên web).
 - 2026-10-08 · Thầy chốt: nháp BTM không cần Gemini, đi thẳng batch Claude (`--che-do bai-tap-mau`); Claude viết lại, kiểm chéo rồi đăng luôn, trợ giảng người thật rà trên web. Bài 10 đã có `scripts/data/bai-tap-mau/10.json` (4 dạng, review.checked) từ 7/10 và DB nay đã có mục `bai_tap_mau` ("Các dạng bài tập") → chỉ cần publish.
+- 2026-10-08 · Viết hai chế độ batch `viet-bai-tap-mau` + `kiem-cheo` để API làm trọn phần chữ + SVG, Claude Code chỉ xem ảnh/sửa hình. CHƯA chạy thật — sau bài đầu ghi: tỉ lệ validate sạch, chất lượng SVG do API vẽ (nhãn cắt mép? lộ đáp số?), tỉ lệ kiem-cheo đạt.
