@@ -1,0 +1,432 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Vẽ được <strong>đồ thị độ dịch chuyển – thời gian</strong> từ bảng số liệu; nhận ra chuyển động thẳng đều cho một <strong>đường thẳng</strong>.</li>
+<li>Tính <strong>vận tốc từ độ dốc</strong> $v = \dfrac{\Delta d}{\Delta t}$, giữ đúng dấu.</li>
+<li><strong>Đọc đồ thị</strong> để kể lại chuyển động: lúc nào đi, dừng, nhanh, chậm, đổi chiều.</li>
+<li>Tách được <strong>quãng đường</strong> và <strong>độ dịch chuyển</strong> khi vật quay đầu.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng __PHUT__ phút.</p>
+</div>
+
+<h3>I. Mở bài: đồ thị chuyến đi xe đạp</h3>
+
+<p>Ứng dụng bản đồ trên điện thoại vẽ <strong>toạ độ $x$ của một bạn đi xe đạp theo thời gian $t$</strong>. Bạn chỉ đi qua lại trên một con đường thẳng, gốc toạ độ ở nhà bạn. Một buổi sáng, màn hình vẽ ra ba đoạn thẳng ①, ②, ③ như Hình 1.</p>
+
+<!--FIG1-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Trong đoạn ② (nằm ngang), bạn đi xe đạp đang làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q1" id="tl52-q1a"><label for="tl52-q1a" class="tl-opt tl-no">A. Đi trên một đoạn đường nằm ngang, bằng phẳng</label>
+<input type="radio" name="tl52-q1" id="tl52-q1b"><label for="tl52-q1b" class="tl-opt tl-no">B. Chạy đều, tốc độ không đổi</label>
+<input type="radio" name="tl52-q1" id="tl52-q1c"><label for="tl52-q1c" class="tl-opt tl-ok">C. Đứng yên một lúc</label>
+<input type="radio" name="tl52-q1" id="tl52-q1d"><label for="tl52-q1d" class="tl-opt tl-no">D. Đạp ngược về nhà</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Thời gian cứ trôi mà toạ độ $x$ không đổi, tức là bạn không dịch chuyển: bạn đứng yên (lúc đó đang dừng đèn đỏ). Đồ thị nằm ngang nghĩa là <strong>đứng yên</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là đọc đồ thị như bản vẽ con đường — đồ thị không phải hình dạng đường đi. B nhầm "nằm ngang" với "đều": chạy đều thì $x$ vẫn tăng đều, đồ thị là đường xiên. D ứng với đoạn ③, nơi $x$ giảm dần. Gợi ý: trong đoạn ②, $x$ có thay đổi không?</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: từ chuyển động thẳng đến đồ thị</h3>
+
+<h4>1. Quỹ đạo, độ dịch chuyển và quãng đường</h4>
+
+<p><strong>🔑 Một chiều: $\lvert d\rvert = s$ · Quay đầu: $\lvert d\rvert \ne s$</strong></p>
+
+<ul>
+<li><strong>Quỹ đạo:</strong> đường vật vạch ra khi chuyển động.</li>
+<li><strong>Chuyển động thẳng:</strong> quỹ đạo là đường thẳng.</li>
+<li><strong>Chuyển động thẳng đều:</strong> quỹ đạo thẳng, tốc độ không đổi.</li>
+<li>Đi <strong>một chiều</strong> không đổi: độ lớn độ dịch chuyển bằng quãng đường, $\lvert d\rvert = s$; vận tốc và tốc độ có độ lớn như nhau.</li>
+<li><strong>Quay đầu:</strong> quãng đường vẫn cộng thêm (luôn dương), còn độ dịch chuyển giảm, có thể âm. Tốc độ luôn dương; vận tốc âm khi đi ngược chiều dương.</li>
+<li><strong>Tốc độ trung bình</strong> $= \dfrac{s}{t}$ (không âm); <strong>vận tốc trung bình</strong> $= \dfrac{d}{t}$ (có dấu). Đi một chiều: bằng nhau về độ lớn.</li>
+</ul>
+
+<p>Ví dụ: trượt băng thẳng $30\ \text{m}$, quay lại $10\ \text{m}$: $s = 40\ \text{m}$, $d = 20\ \text{m}$.</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Một bạn trượt thẳng $25\ \text{m}$ theo chiều dương rồi quay lại $15\ \text{m}$ trên cùng đường. Quãng đường $s$ và độ dịch chuyển $d$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q2" id="tl52-q2a"><label for="tl52-q2a" class="tl-opt tl-ok">A. $s = 40\ \text{m}$; $d = 10\ \text{m}$</label>
+<input type="radio" name="tl52-q2" id="tl52-q2b"><label for="tl52-q2b" class="tl-opt tl-no">B. $s = 10\ \text{m}$; $d = 40\ \text{m}$</label>
+<input type="radio" name="tl52-q2" id="tl52-q2c"><label for="tl52-q2c" class="tl-opt tl-no">C. $s = 40\ \text{m}$; $d = 40\ \text{m}$</label>
+<input type="radio" name="tl52-q2" id="tl52-q2d"><label for="tl52-q2d" class="tl-opt tl-no">D. $s = 10\ \text{m}$; $d = 10\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Quãng đường cộng mọi đoạn: $25 + 15 = 40\ \text{m}$. Độ dịch chuyển chỉ so điểm cuối với điểm đầu: $25 - 15 = 10\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B đảo vai hai đại lượng. C coi $d = s$, chỉ đúng khi không quay đầu. D trừ cả quãng đường — nhưng đoạn quay về vẫn là đoạn bạn đã trượt, nên $s$ phải cộng.</p></div>
+</div>
+</div>
+
+<h4>2. Phương trình chuyển động thẳng đều</h4>
+
+<p><strong>🔑 $x = x_0 + vt$ · dấu của $v$ là chiều đi</strong></p>
+
+<ul>
+<li>Vận tốc: $v = \dfrac{\Delta x}{\Delta t} = \dfrac{x - x_0}{t}$ (chọn $t_0 = 0$).</li>
+<li>$x_0$: toạ độ lúc $t_0 = 0$; $x$: toạ độ lúc $t$.</li>
+<li>$v \gt 0$: đi theo chiều dương; $v \lt 0$: đi ngược chiều dương.</li>
+<li>Gốc toạ độ đặt ở chỗ xuất phát ($x_0 = 0$) thì $x = d = vt$.</li>
+</ul>
+
+<p>Ví dụ: xe đồ chơi xuất phát cách vạch mốc $2\ \text{m}$, chạy ra xa vạch mốc với $1{,}5\ \text{m/s}$ (chiều dương từ vạch mốc ra): $x = 2 + 1{,}5t$ (m).</p>
+
+<details class="tl-details">
+<summary>🧮 Tự tính trước: lúc $t = 4\ \text{s}$ xe ở đâu? Chạy về vạch mốc thì $v$ bằng bao nhiêu?</summary>
+<p>$x = 2 + 1{,}5 \cdot 4 = 8\ \text{m}$. Chạy về vạch mốc là ngược chiều dương: $v = -1{,}5\ \text{m/s}$.</p>
+</details>
+
+<h4>3. Vẽ đồ thị từ bảng số liệu</h4>
+
+<p><strong>🔑 Chấm điểm · kẻ một đường thẳng · thẳng là đều</strong></p>
+
+<ul>
+<li>Trục ngang: $t$; trục đứng: $d$. Ghi đơn vị ở đầu mỗi trục.</li>
+<li>Chuyển động thẳng đều: $d = vt$ có dạng $y = ax$, nên đồ thị là <strong>đường thẳng</strong>, hệ số góc là $v$.</li>
+<li>Điểm đo lệch nhẹ do sai số: kẻ <strong>một</strong> đường thẳng đi gần mọi điểm, không nối gấp khúc.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-dt-dctg-01">
+<p class="tl-label">🔬 Thí nghiệm: bọt khí trong ống nước</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> ống thuỷ tinh dài khoảng $60\ \text{cm}$ đựng đầy nước, còn một bọt khí; dán vạch $0$, $10$, $20$, $30$, $40$, $50\ \text{cm}$. Đặt ống nghiêng, bấm đồng hồ khi bọt khí qua vạch $0$, đọc thời điểm nó qua từng vạch (5 lần đọc).</li>
+<li><strong>Quan sát:</strong> bảng dưới (số liệu minh hoạ); các điểm $(t, d)$ gần như nằm trên một đường thẳng (Hình 2).</li>
+<li><strong>Rút ra:</strong> bọt khí chuyển động thẳng đều; độ dốc của đường cho vận tốc của nó.</li>
+</ol>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>$d$ (cm)</th><th>$t$ (s)</th><th>$d/t$ (cm/s)</th></tr>
+</thead>
+<tbody>
+<tr><td>10</td><td>2,1</td><td>4,76</td></tr>
+<tr><td>20</td><td>3,9</td><td>5,13</td></tr>
+<tr><td>30</td><td>6,1</td><td>4,92</td></tr>
+<tr><td>40</td><td>7,9</td><td>5,06</td></tr>
+<tr><td>50</td><td>10,0</td><td>5,00</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG2-->
+
+<details class="tl-details">
+<summary>📊 Đọc bảng (số liệu minh hoạ): vì sao hàng $10\ \text{cm}$ lệch nhiều nhất?</summary>
+<p>Bấm đồng hồ bằng tay sai cỡ $0{,}1\ \text{s}$ mỗi lần. Ở $t = 2{,}1\ \text{s}$, $0{,}1\ \text{s}$ là gần $5\,\%$; ở $t = 10{,}0\ \text{s}$ chỉ còn $1\,\%$. Vì vậy $d/t$ ở hàng đầu lệch xa $5$ nhất ($4{,}76$), hàng cuối gần nhất. Cách tốt hơn là không chia từng hàng, mà <strong>kẻ một đường thẳng qua các điểm rồi lấy độ dốc</strong> giữa hai điểm xa nhau trên đường, ở đây $\dfrac{30\ \text{cm}}{6\ \text{s}} = 5\ \text{cm/s}$. Nguồn sai số khác: mắt nhìn lệch vạch, bọt khí to nhỏ khác nhau.</p>
+</details>
+
+<h4>4. Độ dốc là vận tốc</h4>
+
+<p><strong>🔑 Dốc nhiều = nhanh · Dốc âm = đi ngược · Nằm ngang = đứng yên</strong></p>
+
+<ul>
+<li>Độ dốc (hệ số góc) của đồ thị: $v = \dfrac{\Delta d}{\Delta t} = \dfrac{d_2 - d_1}{t_2 - t_1}$.</li>
+<li>Lấy hai điểm xa nhau trên đường, đọc số trên trục, giữ đơn vị.</li>
+<li>Độ dốc không đổi: vận tốc không đổi.</li>
+<li>Nhanh hay chậm: so <strong>độ lớn</strong> độ dốc, bỏ dấu. Đường đi xuống dốc nhiều: ngược chiều và nhanh.</li>
+</ul>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Dạng đường</th><th>Vật đang…</th></tr>
+</thead>
+<tbody>
+<tr><td>Đi lên, dốc nhiều</td><td>đi nhanh theo chiều dương</td></tr>
+<tr><td>Đi lên, dốc ít</td><td>đi chậm theo chiều dương</td></tr>
+<tr><td>Nằm ngang</td><td>đứng yên, $v = 0$</td></tr>
+<tr><td>Đi xuống</td><td>đi ngược chiều dương, $v \lt 0$</td></tr>
+</tbody>
+</table>
+</div>
+
+<!--FIG3-->
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Theo Hình 3, vận tốc của xe ④ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q3" id="tl52-q3a"><label for="tl52-q3a" class="tl-opt tl-no">A. $3\ \text{m/s}$</label>
+<input type="radio" name="tl52-q3" id="tl52-q3b"><label for="tl52-q3b" class="tl-opt tl-no">B. $-3{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl52-q3" id="tl52-q3c"><label for="tl52-q3c" class="tl-opt tl-no">C. $0{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl52-q3" id="tl52-q3d"><label for="tl52-q3d" class="tl-opt tl-ok">D. $-3\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai điểm $(0\ \text{s};\ 14\ \text{m})$ và $(4\ \text{s};\ 2\ \text{m})$: $v = \dfrac{2 - 14}{4 - 0} = -3\ \text{m/s}$. Dấu trừ: xe ④ đi ngược chiều dương.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $3\ \text{m/s}$ là quên dấu — đường đi xuống thì $v$ âm. $3{,}5\ \text{m/s}$ (kèm dấu trừ) là lấy $14/4$, chia giá trị đầu cho thời gian chứ không lấy hiệu. $0{,}5\ \text{m/s}$ là lấy $2/4$, chia một giá trị $d$ cho $t$; độ dốc phải là <strong>hiệu</strong> $\Delta d$ chia <strong>hiệu</strong> $\Delta t$.</p></div>
+</div>
+</div>
+
+<details class="tl-details">
+<summary>➕ Xem thêm: đồ thị cong thì sao?</summary>
+<p>Vật chạy nhanh dần hay chậm dần thì đồ thị $d$–$t$ là đường cong. Vận tốc tại một thời điểm (vận tốc tức thời) bằng độ dốc của <strong>tiếp tuyến</strong> với đường cong tại điểm đó. Chỗ đường cong dốc hơn, vật chạy nhanh hơn.</p>
+</details>
+
+<h4>5. Đọc đồ thị: kể lại chuyển động</h4>
+
+<p><strong>🔑 Chia đoạn · đọc dốc từng đoạn · kể thành câu</strong></p>
+
+<ul>
+<li>Chia đồ thị theo các điểm gãy.</li>
+<li>Mỗi đoạn: dấu độ dốc cho chiều đi; độ lớn cho nhanh/chậm; nằm ngang là dừng.</li>
+<li>Đồ thị đang đi lên chuyển sang đi xuống: vật <strong>đổi chiều</strong>.</li>
+</ul>
+
+<div class="tl-box tl-box--exp" data-exp="tn-l10-dt-dctg-02">
+<p class="tl-label">🔬 Thí nghiệm: đi bộ "vẽ" đồ thị</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> trải thước dây $10\ \text{m}$ dọc hành lang. Một bạn đi chậm ra xa vạch $0$ tới vạch $5\ \text{m}$, đứng lại $3\ \text{s}$, rồi bước nhanh về vạch $0$. Một bạn bấm giờ, một bạn ghi vị trí mỗi giây; chấm các điểm lên giấy kẻ ô.</li>
+<li><strong>Quan sát:</strong> đồ thị có ba đoạn: xiên lên thoải, nằm ngang, xiên xuống dốc hơn.</li>
+<li><strong>Rút ra:</strong> chậm hay nhanh, đứng hay đi, đi ra hay đi về — mỗi kiểu đi cho một dạng đường riêng.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Đồ thị $d$–$t$ của một người gồm: đoạn 1 xiên lên, dốc ít; đoạn 2 nằm ngang; đoạn 3 xiên xuống, dốc hơn đoạn 1. Mô tả đúng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q4" id="tl52-q4a"><label for="tl52-q4a" class="tl-opt tl-no">A. Đi lên dốc, đi trên đường bằng, rồi xuống dốc</label>
+<input type="radio" name="tl52-q4" id="tl52-q4b"><label for="tl52-q4b" class="tl-opt tl-ok">B. Đi chậm ra xa, đứng lại, rồi quay về nhanh hơn</label>
+<input type="radio" name="tl52-q4" id="tl52-q4c"><label for="tl52-q4c" class="tl-opt tl-no">C. Đi chậm, đi đều, rồi đi nhanh, cùng một chiều</label>
+<input type="radio" name="tl52-q4" id="tl52-q4d"><label for="tl52-q4d" class="tl-opt tl-no">D. Đi nhanh ra xa, đứng lại, rồi quay về chậm hơn</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dốc ít, dương: ra xa chậm. Nằm ngang: đứng. Dốc nhiều, âm: quay về nhanh. Đúng như bạn trong thí nghiệm đi bộ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đọc đồ thị như hình dạng con đường. C quên rằng đoạn nằm ngang là đứng yên và đoạn đi xuống là đổi chiều. D đảo nhanh/chậm: dốc <strong>ít</strong> là chậm, dốc <strong>nhiều</strong> là nhanh.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy của bài này</h3>
+
+<h4>Bẫy 1: coi đồ thị là con đường</h4>
+
+<p>Đồ thị xiên lên không có nghĩa là vật leo dốc. Trục đứng là <strong>độ dịch chuyển</strong>, không phải độ cao.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Quỹ đạo</th><th>Đồ thị $d$–$t$</th></tr>
+</thead>
+<tbody>
+<tr><td>Hình dạng đường đi, vẽ trong không gian</td><td>Vị trí theo thời gian, vẽ trên hai trục $t$, $d$</td></tr>
+<tr><td>Chuyển động thẳng: luôn là đường thẳng</td><td>Có thể gãy khúc, nằm ngang, đi xuống</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Trục đứng là vị trí, không phải độ cao</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl52-q5-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl52-q5-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Xe chạy trên đường thẳng nằm ngang; đồ thị $d$–$t$ của xe là một đường thẳng xiên lên. Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q5" id="tl52-q5a"><label for="tl52-q5a" class="tl-opt tl-no">A. Xe đang leo dốc</label>
+<input type="radio" name="tl52-q5" id="tl52-q5b"><label for="tl52-q5b" class="tl-opt tl-ok">B. Xe đi theo chiều dương, vận tốc không đổi</label>
+<input type="radio" name="tl52-q5" id="tl52-q5c"><label for="tl52-q5c" class="tl-opt tl-no">C. Xe đang tăng tốc, vì đồ thị đi lên</label>
+<input type="radio" name="tl52-q5" id="tl52-q5d"><label for="tl52-q5d" class="tl-opt tl-no">D. Xe đi ngược chiều dương</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đường thẳng: độ dốc không đổi, nên vận tốc không đổi. Đi lên: $d$ tăng, xe đi theo chiều dương. Em giải thích được cho bạn ngồi cạnh vì sao "đi lên" không phải "tăng tốc" chưa?</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là bẫy "đồ thị là con đường". C nhầm $d$ tăng với $v$ tăng — $d$ tăng đều thì $v$ không đổi; tăng tốc mới cho đường cong. D ngược dấu: $d$ tăng là đi theo chiều dương. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 2: đường nằm cao hơn là xe nhanh hơn</h4>
+
+<p>Độ cao của điểm cho biết vật <strong>ở đâu</strong>; độ nghiêng mới cho biết <strong>nhanh cỡ nào</strong>. Hai đường cắt nhau: hai vật <strong>gặp nhau</strong>.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Giá trị $d$ (điểm cao, thấp)</th><th>Độ dốc (đường nghiêng)</th></tr>
+</thead>
+<tbody>
+<tr><td>Vật đang ở đâu</td><td>Vật chạy nhanh cỡ nào, chiều nào</td></tr>
+<tr><td>Hai đường cắt nhau: cùng vị trí</td><td>Hai đường song song: cùng vận tốc</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Cao là ở xa · dốc là nhanh</strong></p>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl52-q6-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl52-q6-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Ở Hình 3, đường ① và đường ④ cắt nhau tại $t = 2\ \text{s}$. Câu nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q6" id="tl52-q6a"><label for="tl52-q6a" class="tl-opt tl-no">A. Lúc $t = 2\ \text{s}$, hai xe có cùng vận tốc</label>
+<input type="radio" name="tl52-q6" id="tl52-q6b"><label for="tl52-q6b" class="tl-opt tl-no">B. Xe ④ chạy nhanh hơn xe ①, vì lúc $t = 0$ đường ④ nằm cao hơn</label>
+<input type="radio" name="tl52-q6" id="tl52-q6c"><label for="tl52-q6c" class="tl-opt tl-no">C. Lúc $t = 2\ \text{s}$, cả hai xe đều đứng yên</label>
+<input type="radio" name="tl52-q6" id="tl52-q6d"><label for="tl52-q6d" class="tl-opt tl-ok">D. Lúc $t = 2\ \text{s}$, hai xe ở cùng chỗ $d = 8\ \text{m}$ nhưng chạy ngược chiều nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giao điểm cho cùng vị trí: $d = 4 \cdot 2 = 8\ \text{m}$ và $d = 14 - 3 \cdot 2 = 8\ \text{m}$. Đường ① đi lên ($v = 4\ \text{m/s}$), đường ④ đi xuống ($v = -3\ \text{m/s}$): ngược chiều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhầm giao điểm với cùng độ dốc. B dùng độ cao để so nhanh chậm: ④ chỉ <em>xuất phát ở xa hơn</em>, độ dốc của nó ($3\ \text{m/s}$ về độ lớn) nhỏ hơn của ① ($4\ \text{m/s}$). C: cả hai đường đều nghiêng, không xe nào đứng yên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bảng ngay trên.</p></div>
+</div>
+</div>
+
+<h4>Bẫy 3: đọc quãng đường ở điểm cuối của đồ thị</h4>
+
+<p>Điểm cuối của đồ thị chỉ cho <strong>độ dịch chuyển</strong>. Vật có quay đầu thì quãng đường phải <strong>cộng từng đoạn</strong>, đoạn đi xuống cũng tính độ lớn.</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Độ dịch chuyển $d$</th><th>Quãng đường $s$</th></tr>
+</thead>
+<tbody>
+<tr><td>Đọc ở điểm cuối (so với điểm đầu)</td><td>Cộng độ lớn $\lvert\Delta d\rvert$ của từng đoạn</td></tr>
+<tr><td>Có thể bằng $0$ hoặc âm</td><td>Không âm, chỉ tăng</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>🔑 Điểm cuối cho $d$ · cộng từng đoạn cho $s$</strong></p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Bạn trong thí nghiệm đi bộ đi ra $5\ \text{m}$, đứng $3\ \text{s}$, rồi về đúng vạch $0$. Tính cho cả lượt:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q7" id="tl52-q7a"><label for="tl52-q7a" class="tl-opt tl-ok">A. $d = 0$; $s = 10\ \text{m}$</label>
+<input type="radio" name="tl52-q7" id="tl52-q7b"><label for="tl52-q7b" class="tl-opt tl-no">B. $d = 10\ \text{m}$; $s = 10\ \text{m}$</label>
+<input type="radio" name="tl52-q7" id="tl52-q7c"><label for="tl52-q7c" class="tl-opt tl-no">C. $d = 0$; $s = 0$</label>
+<input type="radio" name="tl52-q7" id="tl52-q7d"><label for="tl52-q7d" class="tl-opt tl-no">D. $d = 5\ \text{m}$; $s = 10\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điểm cuối trùng điểm đầu nên $d = 0$; quãng đường $5 + 0 + 5 = 10\ \text{m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B cộng cả độ dịch chuyển như quãng đường. C đọc quãng đường ở điểm cuối của đồ thị — đúng cái bẫy này. D lấy điểm xa nhất làm độ dịch chuyển, trong khi $d$ chỉ so điểm cuối với điểm đầu.</p></div>
+</div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
+<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<details class="tl-details">
+<summary>1. Chuyển động thẳng đều là gì? Khi nào $\lvert d\rvert = s$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Quỹ đạo thẳng · tốc độ không đổi. $\lvert d\rvert = s$ khi đi <strong>một chiều</strong>, không quay đầu.</p>
+</details>
+<details class="tl-details">
+<summary>2. Viết phương trình chuyển động thẳng đều, nêu nghĩa từng kí hiệu. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$x = x_0 + vt$ · $x_0$: toạ độ lúc $t_0 = 0$ · $x$: toạ độ lúc $t$ · $v \gt 0$ chiều dương, $v \lt 0$ ngược chiều dương.</p>
+</details>
+<details class="tl-details">
+<summary>3. Đồ thị $d$–$t$ của chuyển động thẳng đều có dạng gì? Vì sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Đường thẳng · vì $d = vt$ có dạng $y = ax$ · hệ số góc là $v$.</p>
+</details>
+<details class="tl-details">
+<summary>4. Tính vận tốc từ đồ thị thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Hai điểm xa nhau · $v = \dfrac{\Delta d}{\Delta t}$ · đọc số trên trục · giữ dấu và đơn vị.</p>
+</details>
+<details class="tl-details">
+<summary>5. Nhìn đồ thị, làm sao biết vật dừng, nhanh, chậm, đổi chiều? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Nằm ngang: dừng · dốc nhiều: nhanh · dốc ít: chậm · đi xuống: ngược chiều dương · từ lên chuyển sang xuống: đổi chiều.</p>
+</details>
+<details class="tl-details">
+<summary>6. Hai đường cắt nhau nghĩa là gì? Quãng đường đọc ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Cắt nhau: <strong>gặp nhau</strong>, cùng vị trí, không cùng vận tốc · $s$: cộng $\lvert\Delta d\rvert$ từng đoạn, không đọc ở điểm cuối.</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu</h3>
+
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một xe đồ chơi điều khiển từ xa chạy trên đường thẳng ở sân trường. Hình 4 là đồ thị độ dịch chuyển – thời gian của xe, chiều dương từ vạch mốc ra cọc cờ. a) Mô tả chuyển động của xe trong từng đoạn $OA$, $AB$, $BC$. b) Tính vận tốc mỗi đoạn. c) Tính quãng đường, độ dịch chuyển, tốc độ trung bình và vận tốc trung bình trong $10\ \text{s}$.</p>
+</div>
+
+<!--FIG4-->
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+</thead>
+<tbody>
+<tr><td>"đường ray thẳng"</td><td>chuyển động thẳng → dùng được đồ thị $d$–$t$</td></tr>
+<tr><td>"chiều dương từ vạch mốc ra cọc cờ"</td><td>$d$ tăng: đi ra cọc cờ · $d$ giảm: đi về vạch mốc</td></tr>
+<tr><td>đoạn OA, từ 0 đến 4 s</td><td>d từ 0 lên 8 m → tính độ dốc</td></tr>
+<tr><td>đoạn AB, từ 4 đến 6 s</td><td>d giữ 8 m → đứng yên</td></tr>
+<tr><td>đoạn BC, từ 6 đến 10 s</td><td>d từ 8 m về 0 → độ dốc âm</td></tr>
+<tr><td>"quãng đường … độ dịch chuyển"</td><td>$s$ cộng từng đoạn · $d$ đọc ở điểm cuối (Bẫy 3)</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>a) Mô tả:</strong> $OA$: đi đều ra phía cọc cờ. $AB$: đứng yên $2\ \text{s}$ ở chỗ cách vạch mốc $8\ \text{m}$ (dừng chờ lệnh). $BC$: đi đều ngược lại, về đúng vạch mốc.</li>
+<li><strong>b) Vận tốc:</strong> $v_{OA} = \dfrac{8 - 0}{4 - 0} = 2\ \text{m/s}$; $v_{AB} = 0$; $v_{BC} = \dfrac{0 - 8}{10 - 6} = -2\ \text{m/s}$.</li>
+<li><strong>c) Quãng đường:</strong> $s = 8 + 0 + 8 = 16\ \text{m}$. <strong>Độ dịch chuyển:</strong> điểm cuối $C$ ở $d = 0$, nên $d = 0$.</li>
+<li><strong>Trung bình:</strong> tốc độ trung bình $= \dfrac{s}{t} = \dfrac{16}{10} = 1{,}6\ \text{m/s}$; vận tốc trung bình $= \dfrac{d}{t} = 0$.</li>
+<li><strong>Kiểm tra:</strong> $1{,}6\ \text{m/s}$ nhỏ hơn $2\ \text{m/s}$ (tốc độ khi chạy), hợp lí vì có $2\ \text{s}$ đứng yên. Vận tốc trung bình $0$ vì xe về đúng chỗ cũ.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Hôm sau, đồ thị đổi số: $OA$ từ $0$ đến $3\ \text{s}$ lên $9\ \text{m}$; $AB$ đứng yên tới $5\ \text{s}$; $BC$ từ $5$ đến $8\ \text{s}$ về $d = 0$.</p>
+<ol class="tl-steps">
+<li>$v_{OA} = \dfrac{9}{3} = 3\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $v_{BC} = \;?$ — gợi ý: hiệu $d$ cuối trừ $d$ đầu của đoạn.</li>
+<li><strong>Bước 3 (em điền):</strong> $s = \;?$ và tốc độ trung bình trong $8\ \text{s}$ $= \;?$</li>
+</ol>
+<details class="tl-details">
+<summary>Xem bước 2–3</summary>
+<p>$v_{BC} = \dfrac{0 - 9}{8 - 5} = -3\ \text{m/s}$. $s = 9 + 9 = 18\ \text{m}$; tốc độ trung bình $= \dfrac{18}{8} = 2{,}25\ \text{m/s}$. Vận tốc trung bình vẫn bằng $0$.</p>
+</details>
+</div>
+
+<details class="tl-details">
+<summary>🔁 Thử sức đổi điểm: xe ở đâu lúc $t = 8\ \text{s}$?</summary>
+<p>Trong đoạn $BC$, đếm thời gian từ lúc bắt đầu đoạn ($t = 6\ \text{s}$, $d = 8\ \text{m}$): $d = 8 + (-2)(t - 6)$. Lúc $t = 8\ \text{s}$: $d = 8 - 4 = 4\ \text{m}$, đúng điểm giữa đoạn $BC$ trên Hình 4.</p>
+</details>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tl52-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl52-q8-conf" value="khong"> Không chắc</label></p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p><strong>Câu 7.</strong> Giữ nguyên chuyển động của xe ở đề gốc, nhưng chọn <strong>chiều dương từ cọc cờ về vạch mốc</strong> (gốc vẫn ở vạch mốc). Vận tốc đoạn $BC$ và độ dịch chuyển lúc $t = 4\ \text{s}$ là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl52-q8" id="tl52-q8a"><label for="tl52-q8a" class="tl-opt tl-no">A. $v_{BC} = -2\ \text{m/s}$; $d = 8\ \text{m}$</label>
+<input type="radio" name="tl52-q8" id="tl52-q8b"><label for="tl52-q8b" class="tl-opt tl-no">B. $v_{BC} = 2\ \text{m/s}$; $d = 8\ \text{m}$</label>
+<input type="radio" name="tl52-q8" id="tl52-q8c"><label for="tl52-q8c" class="tl-opt tl-ok">C. $v_{BC} = 2\ \text{m/s}$; $d = -8\ \text{m}$</label>
+<input type="radio" name="tl52-q8" id="tl52-q8d"><label for="tl52-q8d" class="tl-opt tl-no">D. $v_{BC} = -2\ \text{m/s}$; $d = -8\ \text{m}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đổi chiều dương thì mọi giá trị có hướng đổi dấu: lúc $t = 4\ \text{s}$ xe ở phía cọc cờ, nay là phía âm, $d = -8\ \text{m}$; đoạn $BC$ xe chạy về vạch mốc, nay là chiều dương, $v = 2\ \text{m/s}$. Đồ thị lật ngược qua trục $t$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A giữ nguyên mọi dấu, quên rằng đã đổi chiều dương. B chỉ đổi dấu vận tốc mà quên độ dịch chuyển cũng có hướng. D đổi dấu $d$ nhưng giữ dấu $v$ — xe đang chạy về vạch mốc, mà chiều về vạch mốc nay là chiều dương. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại dòng "chiều dương" trong bảng dữ liệu.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống và tổng kết</h3>
+
+<details class="tl-details">
+<summary>🚆 Bấm xem: bốn nơi đang dùng đồ thị $d$–$t$</summary>
+<ul>
+<li><strong>Biểu đồ chạy tàu:</strong> ngành đường sắt vẽ vị trí từng đoàn tàu theo thời gian. Hai đường cắt nhau là hai tàu gặp nhau, phải bố trí tránh ở ga.</li>
+<li><strong>Thang máy chung cư:</strong> đồ thị độ cao theo thời gian cho biết thang đi nhanh hay chậm; độ dốc chính là tốc độ đó (m/s), đoạn nằm ngang là lúc thang dừng mở cửa.</li>
+<li><strong>Ứng dụng chạy bộ:</strong> đoạn đồ thị nằm ngang là lúc dừng đèn đỏ; đoạn thoải là lúc đi chậm lại.</li>
+<li><strong>Trượt băng tốc độ:</strong> vẽ quãng đường theo thời gian từng vòng, vòng nào đường thoải hơn là vòng đó trượt chậm đi.</li>
+</ul>
+</details>
+
+<details class="tl-details">
+<summary>⭐ Thử thách phân tầng</summary>
+<ul>
+<li><strong>⭐</strong> Đồ thị $d$–$t$ của một vận động viên trượt băng là đường thẳng qua $(0;\ 0)$ và $(8\ \text{s};\ 96\ \text{m})$. Tính vận tốc. <em>($12\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐</strong> Xe ① có $x = 4t$, xe ④ có $x = 14 - 3t$ ($x$ tính bằng m, $t$ tính bằng s) — chính là hai đường ở Hình 3. Tính thời điểm và vị trí hai xe gặp nhau, so với hình. <em>($4t = 14 - 3t$ nên $t = 2\ \text{s}$, $x = 8\ \text{m}$)</em></li>
+<li><strong>⭐⭐⭐</strong> Một xe đồ chơi chạy ra $120\ \text{cm}$ trong $4\ \text{s}$, dừng $2\ \text{s}$, chạy về $60\ \text{cm}$ trong $3\ \text{s}$. Vẽ đồ thị, tính tốc độ trung bình và vận tốc trung bình trong $9\ \text{s}$. <em>($s = 180\ \text{cm}$, $d = 60\ \text{cm}$; tốc độ trung bình $20\ \text{cm/s}$, vận tốc trung bình $\approx 6{,}7\ \text{cm/s}$)</em></li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Thẳng đều</strong>: $x = x_0 + vt$ · đồ thị là đường thẳng.</li>
+<li><strong>Độ dốc = vận tốc</strong>: $v = \dfrac{\Delta d}{\Delta t}$ · giữ dấu.</li>
+<li>Nằm ngang: đứng yên · đi xuống: ngược chiều dương.</li>
+<li><strong>Cao là ở xa · dốc là nhanh</strong>.</li>
+<li>Cắt nhau: gặp nhau, không phải cùng vận tốc.</li>
+<li>Điểm cuối cho $d$ · cộng từng đoạn cho $s$.</li>
+<li>Đọc đề: gạch "chiều dương", đọc đơn vị hai trục, đánh dấu các điểm gãy.</li>
+</ul>
+</div>

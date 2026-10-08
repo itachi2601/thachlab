@@ -1,0 +1,136 @@
+{
+  "bai": "l10-thuc-hanh-do-g",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay ngoặc bằng quy tắc: tích, thương thì cộng sai số tương đối, t² = t·t nên phần của t tính hai lần; ví dụ 1 % → 2 % đưa vào đáp án Trả bài câu 4 (trong details)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc ngắn: độ phân tán giữa các lần cộng giới hạn của đồng hồ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: tiêu đề cột nằm trong bảng chèn tự động __BANG_TN1__, không có trong bài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề cột bảng dụng cụ ghi rõ sai số dụng cụ lấy bằng 1 độ chia."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 thêm ngoặc: lên xuống giữa các lần, xem Bẫy 2."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành so sai số tương đối: riêng Δt/t̄ ≈ 0,7 % đã lớn hơn Δs/s = 0,2 %."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nói rõ vẽ đường thẳng qua gốc khớp cả năm điểm, lấy hai điểm xa nhau trên đường (ở đây dùng luôn hai điểm số liệu nằm sát đường)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu 1 ghi thêm '(một lần đo riêng)' để không mâu thuẫn với t̄ của bảng mục 4."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 4 nói rõ bi rời muộn 0,002 s sau lúc đồng hồ bắt đầu đếm."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vế đầu đáp án A sửa thành 'Sai số ngẫu nhiên của t̄ giảm' cho đúng vật lí."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Chiều lệch của g là đúng nội dung Câu 3 ngay sau, nêu trước trong bảng sẽ lộ đáp án; thay bằng dòng ⚠ nhắc t đo vẫn đúng."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa ví dụ thành 't mỗi lần lên xuống vài phần nghìn giây'."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm Δs = 0,001 m vào đề bài tập điền, kết quả giữ nguyên."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi mở bài thống nhất 'độ trễ cỡ 0,1 s'."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'Có thể còn sai số hệ thống, hoặc đã ước lượng sai số quá nhỏ'."
+      },
+      {
+        "id": "q-du_doan_muc_I",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi quên nhân 2 ở phản hồi, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: lấy trung bình không xoá được Δt_dc."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: ghi sai s không làm bi rơi khác đi, t đo được vẫn đúng."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 4: t nằm ở mẫu số của g = 2s/t²."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 'Xét cả khoảng' và bảng Bẫy 3 đã nhấn, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: s tỉ lệ với t², không phải với t."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3: giải thích hệ số 2 bằng quy tắc cộng sai số tương đối cho tích/thương (t² = t·t), Trả bài câu 4 thêm ví dụ t lệch 1 % thì t² lệch khoảng 2 %.",
+      "Mục II.3: chú thích Δt = độ phân tán giữa các lần cộng giới hạn của đồng hồ.",
+      "Mục II.2: bảng dụng cụ ghi quy ước sai số dụng cụ lấy bằng 1 độ chia.",
+      "Câu 2 phản hồi: so Δt/t̄ ≈ 0,7 % với Δs/s = 0,2 % (0,0022/0,321 ≈ 0,0069).",
+      "Mục II.4: độ dốc lấy từ hai điểm trên đường thẳng khớp nhất (ở đây dùng hai điểm số liệu), k và g giữ nguyên 4,86 và 9,72.",
+      "Câu 1: ghi chú 'một lần đo riêng' để phân biệt với t̄ = 0,249 s ở bảng mục 4.",
+      "Câu 4: đề nêu bi rời muộn so với lúc đồng hồ bắt đầu đếm; đáp án A sửa vế đầu thành 'sai số ngẫu nhiên của t̄ giảm'.",
+      "Bẫy 3: hàng 'không chứa 9,8' đổi thành có thể còn sai số hệ thống hoặc ước lượng sai số quá nhỏ.",
+      "Bài tập điền: thêm Δs = 0,001 m vào đề, kết quả 9,80 ± 0,16 m/s² không đổi.",
+      "Thêm 4 dòng ⚠ trước Câu 2, 3, 4, 6."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-g/gemini/da-xu-ly/theory.src.202610081648.html"
+  }
+}

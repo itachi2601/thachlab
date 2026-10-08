@@ -1,0 +1,110 @@
+{
+  "bai": "l10-chuyen-dong-thang-bien-doi-deu",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài ghi \"Bài hai xe gặp nhau\"), và đề xuất đòi chuyển mục nên thuộc diện đổi cấu trúc."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ký hiệu bề rộng tấm chắn thành $b$: $v = b/\\tau$ ở bước Làm, $\\tau = b/v$ ở gợi ý và lời giải đọc bảng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn vì các ô bảng bị ghép bằng dấu '|', nhưng lỗi có thật ($0{,}44/0{,}892 \\approx 0{,}49$) nên đã tự sửa ô $v/t$ hàng 2 thành 0,49."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details đã thêm dẫn \"Từ định nghĩa $a = (v - v_0)/t$ với $v = 0$\" trước phương trình."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"quãng đường\" thành \"độ dịch chuyển\" nhỏ dần, thậm chí âm, vì quãng đường không âm."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6 về lúc khoảng cách tăng và giảm, phản hồi sai giờ dẫn về dòng đó thay vì Bẫy 3."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn vì ghép hai ô bảng bằng \"…\", và việc thêm chỉ số chỉ là ý thích ký hiệu."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước $(t - 5)(t + 15) = 0$ và ghi rõ xe máy ở $x_{02} = +75\\ \\text{m}$, phía trước vạch."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"từ $v^2 - v_0^2 = 2ad$ với $v_0 = 0$ (máy bay xuất phát từ nghỉ)\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay câu \"bù phần bị bỏ xa\" bằng lập luận vận tốc trung bình bằng nhau: $(0 + v_1)/2 = 10$, suy ra $v_1 = 20\\ \\text{m/s}$."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán và mục II.4 (quãng phanh theo $v_0^2$), không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"dốc xuống thì $a \\lt 0$\" ở mục 2, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn vận tốc trung bình × thời gian ở mục 3, không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng ⚠ trước Câu 6 phân biệt khoảng cách giữa hai xe với quãng đường mỗi xe đã đi (gộp với c6)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm máng nghiêng: ký hiệu bề rộng tấm chắn đổi từ d sang b (v = b/τ, gợi ý τ = b/v), số liệu giữ nguyên.",
+      "Bảng thí nghiệm hàng 2: ô v/t sửa 0,50 → 0,49 (0,44/0,892 = 0,493).",
+      "Bẫy 2, bảng: \"Ra quãng đường nhỏ dần, thậm chí âm\" → \"Ra độ dịch chuyển nhỏ dần, thậm chí âm\".",
+      "Thêm dòng ⚠ trước Câu 6: khoảng cách giữa hai xe tăng khi xe đi trước nhanh hơn, giảm khi xe đi sau nhanh hơn.",
+      "Phản hồi sai Câu 6: dẫn về dòng ⚠ thay cho Bẫy 3.",
+      "Lời giải bài mẫu bước 6: giải thích 'gấp đôi' bằng (0 + v₁)/2 = 10, suy ra v₁ = 20 m/s.",
+      "Thử sức đổi chiều: thêm x₀₂ = +75 m và bước (t − 5)(t + 15) = 0, kết quả t = 5 s, x = 25 m giữ nguyên.",
+      "Đời sống, đường băng: ghi rõ v² − v₀² = 2ad với v₀ = 0, kết quả ≈ 1 400 m giữ nguyên (75²/4 ≈ 1 406 m).",
+      "Details trượt băng: thêm dẫn từ định nghĩa a = (v − v₀)/t với v = 0, kết quả t = 12 s giữ nguyên."
+    ],
+    "so_tu_them": 34,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/gemini/da-xu-ly/theory.src.202610081648.html"
+  }
+}

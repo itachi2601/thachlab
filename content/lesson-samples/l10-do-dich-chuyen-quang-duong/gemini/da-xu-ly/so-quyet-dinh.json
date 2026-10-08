@@ -1,0 +1,113 @@
+{
+  "bai": "l10-do-dich-chuyen-quang-duong",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'trục $X$' thành 'trục $Ox$' ở ví dụ thước (mục 2) và ở đề Câu 2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi $X$, $\\Delta X$ thành $x$, $\\Delta x$ trong mục Đời sống cho khớp mục 3."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm giải thích $\\overline{OM}$ là độ dài đại số ($x = OM$ hoặc $x = -OM$), bù chữ bằng cách rút gọn câu vạch 80 cm và câu thao tác thí nghiệm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành $|d| = s$ ở chìa khoá Bẫy 1 và mục Mang về, vì $d$ có dấu nên $d = -5 \\neq s$ khi đi ngược chiều dương."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết $|d| \\leq s$ ở chìa khoá mục 4, dòng Quãng đường trong Mang về và lời giải thử thách ⭐⭐⭐."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng dưới bảng Bẫy 3 nói rõ $d_1$, $d_2$ là độ lớn (số dương), bù bằng cách bỏ câu lặp 'Còn $s$ thì không bao giờ âm' ở Bẫy 2."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong lời giải (details) thêm cách bấm SHIFT tan ở chế độ độ (D), ra $22{,}6^\\circ \\approx 23^\\circ$."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ $t = 6/60 = 0{,}1\\ \\text{h}$ kèm lí do đổi ra giờ."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ 'không dừng và' khỏi phương án đúng A, phản hồi đúng đổi 'một mạch' thành 'không đổi chiều' để không gợi điều kiện thừa."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán mở bài, phản hồi đã phân biệt rõ quãng đường và độ dịch chuyển, không cần ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích B và D là vật quay tại chỗ, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn dấu của $d$ ở mục 3 và phản hồi 'quên dấu'."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 và phản hồi đã nêu đường cong cho độ lớn $d \\lt s$."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn mở Bẫy 2 đã nhấn dấu âm chỉ hướng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn mở Bẫy 3 đã nhấn cộng như số ra quãng đường."
+      },
+      {
+        "id": "q-cau6-C",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 5 đã nêu $v_{tb} = s/t$ và phân biệt với vận tốc $d/t$."
+      },
+      {
+        "id": "q-cau6-B",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 6 về việc thay độ lớn $d_2 = 0{,}5$ vào $|d_1 - d_2|$, và bổ sung nguyên nhân này vào phản hồi sai cho B."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2: toạ độ $x = \\overline{OM}$ được giải thích là độ dài đại số ($x = OM$ nếu $M$ ở phía dương, $x = -OM$ nếu ở phía âm).",
+      "Mục 2: ví dụ thước đổi thành 'trục $Ox$' và 'Xe ở vạch 80 cm thì $x = +80$ cm'.",
+      "Câu 2: 'Cùng trục $X$' đổi thành 'Cùng trục $Ox$'; trợ giảng kiểm nhãn trục trong Hình 2 có còn ghi X hoa không.",
+      "Đời sống (Xe buýt): $X$, $\\Delta X$ đổi thành $x$, $\\Delta x$.",
+      "Chìa khoá Bẫy 1 và Mang về: $d = s$ đổi thành $|d| = s$.",
+      "Chìa khoá mục 4, Mang về và thử thách ⭐⭐⭐: $d \\leq s$ đổi thành $|d| \\leq s$.",
+      "Bẫy 3: thêm dòng nói $d_1$, $d_2$ trong bảng là độ lớn (số dương).",
+      "Bẫy 2: bỏ câu 'Còn $s$ thì không bao giờ âm' (đã có trong chìa khoá và bảng).",
+      "Câu 3: phương án đúng A bỏ 'không dừng và'; phản hồi đúng đổi 'một mạch' thành 'không đổi chiều'.",
+      "Bài toán mẫu: bảng dữ liệu ghi $t = 6/60 = 0{,}1$ h; lời giải thêm cách bấm máy được $\\alpha \\approx 22{,}6^\\circ \\approx 23^\\circ$ (số liệu không đổi).",
+      "Câu 6: thêm dòng ⚠ về $d_2 = 0{,}5$ (không phải $-0{,}5$); phản hồi sai cho B thêm nguyên nhân $|1{,}2 - (-0{,}5)| = 1{,}7$.",
+      "Thí nghiệm ray uốn: rút gọn câu thao tác thành 'Mỗi hình chạy một lần, đánh dấu điểm đầu và điểm dừng'."
+    ],
+    "so_tu_them": 33,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

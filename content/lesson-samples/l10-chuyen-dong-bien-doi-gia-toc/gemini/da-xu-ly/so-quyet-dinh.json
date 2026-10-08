@@ -1,0 +1,104 @@
+{
+  "bai": "l10-chuyen-dong-bien-doi-gia-toc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài, có thể nằm trong chú thích hình không gửi kèm)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ sinα ≈ 0,05 và g = 9,8 m/s² khỏi thí nghiệm, ghi \"máng nghiêng nhẹ\" để α chỉ còn dùng cho đồ thị và gia tốc chỉ tính từ Δv/Δt."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu \"luôn tính a bằng số đọc trên hai trục, không đo góc trên hình\", còn trường hợp đồ thị đi xuống thì a âm đã có ở gạch đầu dòng ngay sau."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ: khi v < 0 (chạy theo chiều âm) thì đi lên là chậm dần, đi xuống là nhanh dần."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mẹo đổi thành \"mỗi giây, vận tốc thay đổi 2 m/s\" cho khớp Trả bài và Mang về, đồng thời sửa câu nhắc lại mẹo trong phản hồi Câu 1."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C nêu rõ C ứng với a = 1 : 0,5 = 2 m/s², gấp 4 lần đề cho, rồi mới đưa con số đúng 0,25 m/s."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm câu: lúc lên dốc bi chậm dần nên a ngược chiều v, tức a hướng xuống dốc."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ (15 + 0)/2 = 7,5 m/s và nói cách lấy trung bình cộng chỉ đúng với biến đổi đều, tách thành dòng riêng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi s = d vì xe không đổi chiều, khớp với mục 4."
+      },
+      {
+        "id": "q-Dự đoán (mở bài)",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi (C chỉ nhìn Δv mà quên thời gian), không thêm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo đọc đơn vị ngay trước câu đã nhấn gia tốc nói về vận tốc, Trả bài nhấn lại \"không phải mỗi giây đi 3 m\"."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 2: lấy Δv = v₂ − v₁, đồ thị không bắt đầu từ v = 0 thì phải trừ vận tốc đầu."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua ví dụ xe máy a = (10 − 0)/5 ở mục 2, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua dòng 🔑 \"Xét tích a·v\" và bảng dấu ngay trước câu, không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng tốc độ/vận tốc và dòng 🔑 ngay trước câu, không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng phân tích đề (chia 3,6) và bước 1 lời giải mẫu, không thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2, thí nghiệm xe lăn: bỏ số liệu sinα ≈ 0,05 và g = 9,8 m/s², chỉ còn \"máng nghiêng nhẹ\" → trợ giảng kiểm bảng __BANG_TN1__ không còn nhắc tới g hay sinα.",
+      "Mục II.2, mẹo đọc đơn vị: \"tăng thêm 2 m/s\" → \"thay đổi 2 m/s\". Phản hồi Câu 1 sửa theo.",
+      "Phản hồi sai Câu 1: phương án C giải thích là ứng với a = 1 : 0,5 = 2 m/s², gấp 4 lần 0,5 m/s².",
+      "Mục II.4, độ dốc: bỏ ý \"dốc hơn thì a lớn hơn (khi chọn cùng tỉ lệ hai trục)\", thay bằng \"luôn tính a từ số đọc trên trục, không đo góc trên hình\".",
+      "Mục II.4, trường hợp v < 0: đồ thị đi lên là chậm dần, đi xuống là nhanh dần.",
+      "Thêm dòng ⚠ Δv = v₂ − v₁ trước Câu 2.",
+      "Mục II.3, details bi lên dốc: thêm lí do a hướng xuống dốc (lên dốc chậm dần nên a ngược v).",
+      "Mục V, lời giải mẫu: s = d vì xe không đổi chiều. Vận tốc trung bình ghi (15 + 0)/2 = 7,5 m/s, chỉ đúng với biến đổi đều. Kết quả 37,5 m không đổi."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-bien-doi-gia-toc/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

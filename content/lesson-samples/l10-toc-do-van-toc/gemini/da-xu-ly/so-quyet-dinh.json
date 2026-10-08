@@ -1,0 +1,131 @@
+{
+  "bai": "l10-toc-do-van-toc",
+  "vong": 1,
+  "vong1_sua_api": {
+    "ngay": "2026-10-08",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Vectơ vận tốc trung bình: … hướng theo độ dịch chuyển\" (kèm câu hỏi Trả bài 3), tách rõ với vận tốc tức thời."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào ý vận tốc tức thời: trên quỹ đạo cong là tiếp tuyến với quỹ đạo tại điểm đó, đồng thời rút gọn phản hồi đúng Câu 2 để bù chữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ ghi \"đi về phía đầu tàu (cùng chiều tàu chạy)\" và \"hai vectơ cùng chiều nên $v_{13} = 1 + 10 = 11$ m/s\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi số liệu dòng bơi ngược dòng ở bảng Bẫy 3 thành 1 m/s và 3 m/s (kết quả 2 m/s theo chiều dòng nước), để Câu 6 không bị lộ đáp án."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ý c) của đề ghi rõ A là chỗ xuất phát, B là điểm đối diện, C là điểm cập bến."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước b) lời giải (trong details) thay \"thành phần\" bằng giải thích: nước chảy dọc bờ không đưa ca nô lại gần bờ bên kia, chỉ $\\vec v_{12}$ làm ca nô sang sông."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi lý do chọn 120 km (chia hết cho 40 và 60) và kiểm bằng 240 km cũng ra 48 km/h; cắt câu hỏi phụ ở phản hồi Câu 4 để bù chữ."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào đáp án ⭐⭐⭐ (trong details): $\\vec v_{13} \\perp \\vec v_{23}$ nên $\\vec v_{12}$ là cạnh huyền, $v_{12}^2 = v_{13}^2 + v_{23}^2$, mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: ước lượng thời gian chuyến đi bằng tổng quãng đường chia tốc độ trung bình, không dùng khoảng cách đường chim bay."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở bài ghi thống nhất \"khoảng 12,3 m/s\" như phản hồi."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ ví dụ đoạn 20 m, đi mất khoảng 16 s (trong details)."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ \"không phải trung bình cộng $(7 + 1) : 2 = 4$ m/s (Bẫy 2)\"."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một ý riêng ở mục 1: tốc độ là đại lượng vô hướng, chỉ có độ lớn, không có hướng; giữ nguyên dòng 🔑; rút gọn ví dụ tốc kế ở mục 2 để bù chữ."
+      },
+      {
+        "id": "q-Dự đoán mở bài",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi và tổng kết đã nhấn độ dịch chuyển bằng 0, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"tốc độ trung bình chỉ là một số cho cả chuyến đi\", không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn hướng vận tốc tức thời, nay thêm \"tiếp tuyến\" và tách rõ với vận tốc trung bình (c1, c2), không cần ⚠."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Định nghĩa kéo theo đã có, ví dụ nay ghi rõ cùng chiều (c3), không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 ngay trước câu đã nhấn, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn trường hợp cùng thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng cộng vận tốc và bảng Bẫy 3 (đã đổi số) đều nhấn chiều theo vận tốc lớn hơn, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng phân tích đề đã nhấn chỉ $\\vec v_{12}$ đưa ca nô sang, lời giải b) nay có giải thích thêm (c6), không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: số trên bảng điện tử đổi từ \"khoảng 12 m/s\" thành \"khoảng 12,3 m/s\" (111 : 9 ≈ 12,3), khớp phản hồi dự đoán.",
+      "Mục II.3: ghi rõ vectơ vận tốc trung bình hướng theo độ dịch chuyển, vận tốc tức thời trên quỹ đạo cong là tiếp tuyến (sửa cả câu hỏi Trả bài 3).",
+      "Mục II.4: ví dụ toa tàu nêu rõ người đi cùng chiều tàu nên $v_{13} = 1 + 10 = 11$ m/s.",
+      "Bảng Bẫy 3, dòng bơi ngược dòng: số liệu đổi từ 1,5 và 2 m/s thành 1 và 3 m/s, viết sai 1 + 3 = 4 m/s, viết đúng |1 − 3| = 2 m/s theo chiều dòng nước (Câu 6 giữ nguyên 1,5 và 2 m/s, đáp án 0,5 m/s).",
+      "Phản hồi đúng Câu 5: thêm kiểm với 240 km, t = 3 + 2 = 5 h, $v_{tb}$ = 48 km/h.",
+      "Details sai số đo: thêm đoạn 20 m đi mất khoảng 16 s, 0,3 : 16 ≈ 2 %.",
+      "Bài toán mẫu: đề định nghĩa A (xuất phát), B (đối diện A), C (cập bến), số liệu không đổi.",
+      "Thử thách ⭐⭐⭐: thêm lý do $v_{12}$ là cạnh huyền, $v_{12}^2 = v_{13}^2 + v_{23}^2$, kết quả giữ 4 m/s, 30 s, khoảng 37°."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-toc-do-van-toc/gemini/da-xu-ly/theory.src.202610081647.html"
+  }
+}

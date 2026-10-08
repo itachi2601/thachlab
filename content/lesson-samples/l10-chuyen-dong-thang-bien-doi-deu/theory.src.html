@@ -45,7 +45,7 @@
 
 <details class="tl-details">
 <summary>🤔 Thế thì sao: sau bao lâu người đó dừng hẳn? (tự tính rồi bấm)</summary>
-<p>$0 = 6 + (-0{,}5)t$, nên $t = 12\ \text{s}$. Mỗi giây mất $0{,}5\ \text{m/s}$, mất hết $6\ \text{m/s}$ thì cần $12$ giây.</p>
+<p>Từ định nghĩa $a = \dfrac{v - v_0}{t}$ với $v = 0$ (dừng hẳn): $0 = 6 + (-0{,}5)t$, nên $t = 12\ \text{s}$. Mỗi giây mất $0{,}5\ \text{m/s}$, mất hết $6\ \text{m/s}$ thì cần $12$ giây.</p>
 </details>
 
 <h4>2. Công thức vận tốc và đồ thị v–t</h4>
@@ -64,7 +64,7 @@
 <div class="tl-box tl-box--exp" data-exp="tn-l10-ctbdd-01">
 <p class="tl-label">🔬 Thí nghiệm: đo vận tốc xe lăn trên máng nghiêng</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> thả xe lăn từ nghỉ trên máng nghiêng. Cổng quang điện đặt lần lượt cách chỗ thả $10$, $20$, $40$, $60\ \text{cm}$. Đồng hồ hiện số (chia $0{,}001\ \text{s}$) đo $t$ từ lúc thả, và thời gian $\tau$ tấm chắn rộng $d = 2{,}00\ \text{cm}$ đi qua cổng. Tính $v = d/\tau$.</li>
+<li><strong>Làm:</strong> thả xe lăn từ nghỉ trên máng nghiêng. Cổng quang điện đặt lần lượt cách chỗ thả $10$, $20$, $40$, $60\ \text{cm}$. Đồng hồ hiện số (chia $0{,}001\ \text{s}$) đo $t$ từ lúc thả, và thời gian $\tau$ tấm chắn rộng $b = 2{,}00\ \text{cm}$ đi qua cổng. Tính $v = b/\tau$.</li>
 <li><strong>Quan sát:</strong> bảng dưới (số minh hoạ, tính từ mô hình $a = 0{,}5\ \text{m/s}^2$ cộng sai số đọc).</li>
 <li><strong>Rút ra:</strong> $v/t$ gần như không đổi, nên $v = at$: đồ thị $v$–$t$ là đường thẳng qua gốc, $a \approx 0{,}50\ \text{m/s}^2$.</li>
 </ol>
@@ -77,7 +77,7 @@
 </thead>
 <tbody>
 <tr><td>0,635</td><td>0,31</td><td>0,49</td></tr>
-<tr><td>0,892</td><td>0,44</td><td>0,50</td></tr>
+<tr><td>0,892</td><td>0,44</td><td>0,49</td></tr>
 <tr><td>1,262</td><td>0,63</td><td>0,50</td></tr>
 <tr><td>1,551</td><td>0,77</td><td>0,50</td></tr>
 </tbody>
@@ -85,8 +85,8 @@
 </div>
 
 <details class="tl-details">
-<summary>📊 Đọc bảng: hàng nào có $v$ kém tin cậy nhất? (gợi ý: $\tau = d/v$; tự trả lời rồi bấm)</summary>
-<p>Hàng cuối. Ở đó $\tau = 0{,}026\ \text{s}$, sai một vạch $0{,}001\ \text{s}$ là lệch khoảng $4\,\%$; ở hàng đầu $\tau = 0{,}064\ \text{s}$ chỉ lệch khoảng $1{,}6\,\%$. Xe càng nhanh, $\tau$ càng ngắn, sai số tương đối càng lớn. Nguồn sai khác: $v = d/\tau$ thật ra là vận tốc <em>trung bình</em> lúc đi qua cổng; bề rộng tấm chắn đo bằng thước; ma sát dọc máng không đều.</p>
+<summary>📊 Đọc bảng: hàng nào có $v$ kém tin cậy nhất? (gợi ý: $\tau = b/v$; tự trả lời rồi bấm)</summary>
+<p>Hàng cuối. Ở đó $\tau = 0{,}026\ \text{s}$, sai một vạch $0{,}001\ \text{s}$ là lệch khoảng $4\,\%$; ở hàng đầu $\tau = 0{,}064\ \text{s}$ chỉ lệch khoảng $1{,}6\,\%$. Xe càng nhanh, $\tau$ càng ngắn, sai số tương đối càng lớn. Nguồn sai khác: $v = b/\tau$ thật ra là vận tốc <em>trung bình</em> lúc đi qua cổng; bề rộng tấm chắn đo bằng thước; ma sát dọc máng không đều.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -218,7 +218,7 @@
 </thead>
 <tbody>
 <tr><td>Thay ngay $t$ của đề vào công thức</td><td>Tính trước lúc dừng: $t_d = \dfrac{v_0}{|a|}$</td></tr>
-<tr><td>Ra quãng đường nhỏ dần, thậm chí âm</td><td>$t \gt t_d$ thì lấy $d = \dfrac{v_0^2}{2|a|}$</td></tr>
+<tr><td>Ra độ dịch chuyển nhỏ dần, thậm chí âm</td><td>$t \gt t_d$ thì lấy $d = \dfrac{v_0^2}{2|a|}$</td></tr>
 </tbody>
 </table>
 </div>
@@ -333,7 +333,7 @@
 <li><strong>Gặp nhau:</strong> $t^2 = 10t$, nên $t = 0$ (lúc xuất phát) hoặc $t = 10\ \text{s}$. Lấy $t = 10\ \text{s}$.</li>
 <li><strong>Vị trí:</strong> $x = 10 \cdot 10 = 100\ \text{m}$ tính từ vạch dừng.</li>
 <li><strong>Vận tốc ô tô:</strong> $v_1 = 2 \cdot 10 = 20\ \text{m/s}$.</li>
-<li><strong>Kiểm tra bằng đồ thị:</strong> diện tích dưới hai đường $v$–$t$ từ $0$ đến $10\ \text{s}$ đều bằng $100\ \text{m}$ ✓ (vẽ ở Hình 4, mở sau Câu 6). Ô tô gặp xe máy khi đã nhanh gấp đôi, đúng vì nó phải bù phần bị bỏ xa.</li>
+<li><strong>Kiểm tra bằng đồ thị:</strong> diện tích dưới hai đường $v$–$t$ từ $0$ đến $10\ \text{s}$ đều bằng $100\ \text{m}$ ✓ (vẽ ở Hình 4, mở sau Câu 6). Ô tô gặp xe máy khi đã nhanh gấp đôi: cùng quãng đường, cùng thời gian nên vận tốc trung bình bằng nhau, $\dfrac{0 + v_1}{2} = 10$, suy ra $v_1 = 20\ \text{m/s}$.</li>
 </ol>
 </details>
 
@@ -353,8 +353,10 @@
 
 <details class="tl-details">
 <summary>🔁 Thử sức đổi chiều: xe máy chạy ngược lại</summary>
-<p>Cùng lúc đèn xanh, xe máy ở cách vạch dừng $75\ \text{m}$, chạy đều $10\ \text{m/s}$ <strong>về phía</strong> ô tô. Giữ chiều dương như cũ: $x_2 = 75 - 10t$. Gặp nhau: $t^2 = 75 - 10t$, tức $t^2 + 10t - 75 = 0$, nên $t = 5\ \text{s}$ (loại nghiệm $-15$). Chỗ gặp: $x = 25\ \text{m}$ tính từ vạch dừng.</p>
+<p>Cùng lúc đèn xanh, xe máy ở cách vạch dừng $75\ \text{m}$, chạy đều $10\ \text{m/s}$ <strong>về phía</strong> ô tô. Giữ chiều dương như cũ, xe máy ở phía trước vạch, $x_{02} = +75\ \text{m}$: $x_2 = 75 - 10t$. Gặp nhau: $t^2 = 75 - 10t$, tức $t^2 + 10t - 75 = 0$, hay $(t - 5)(t + 15) = 0$, nên $t = 5\ \text{s}$ (loại nghiệm $-15$). Chỗ gặp: $x = 25\ \text{m}$ tính từ vạch dừng.</p>
 </details>
+
+<p>⚠ Khoảng cách giữa hai xe khác quãng đường mỗi xe đã đi: nó còn tăng khi xe đi trước còn nhanh hơn, và bắt đầu giảm khi xe đi sau nhanh hơn.</p>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl54-q7-conf" value="chac"> Chắc</label>
@@ -368,7 +370,7 @@
 <input type="radio" name="tl54-q7" id="tl54-q7c"><label for="tl54-q7c" class="tl-opt tl-no">C. Khoảng cách tăng đều, không có lúc nào lớn nhất</label>
 <input type="radio" name="tl54-q7" id="tl54-q7d"><label for="tl54-q7d" class="tl-opt tl-ok">D. Lúc $t = 5\ \text{s}$, khi hai xe cùng vận tốc</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trước $5\ \text{s}$ xe máy nhanh hơn nên bỏ xa thêm; sau $5\ \text{s}$ ô tô nhanh hơn nên rút ngắn. Khoảng cách lớn nhất: $10 \cdot 5 - 5^2 = 25\ \text{m}$, đúng bằng phần tô xanh ở Hình 4 (bấm mở ngay dưới câu này).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lúc đó hai xe cùng ở vạch, khoảng cách bằng $0$. B: lúc $10\ \text{s}$ hai xe gặp nhau, khoảng cách cũng bằng $0$. C quên rằng ô tô nhanh dần, đến lúc nào đó sẽ nhanh hơn xe máy. Khoảng cách đổi từ tăng sang giảm khi hai vận tốc bằng nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại Bẫy 3.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lúc đó hai xe cùng ở vạch, khoảng cách bằng $0$. B: lúc $10\ \text{s}$ hai xe gặp nhau, khoảng cách cũng bằng $0$. C quên rằng ô tô nhanh dần, đến lúc nào đó sẽ nhanh hơn xe máy. Khoảng cách đổi từ tăng sang giảm khi hai vận tốc bằng nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đọc lại dòng ⚠ ngay trên câu này.</p></div>
 </div>
 </div>
 
@@ -384,7 +386,7 @@
 <ul>
 <li><strong>Khoảng cách an toàn khi lái xe:</strong> quãng phanh theo $v_0^2$, nên biển báo khoảng cách tăng rất nhanh theo tốc độ.</li>
 <li><strong>Thang máy chung cư:</strong> thang không nhảy ngay lên tốc độ chạy mà tăng tốc, rồi giảm tốc nhẹ nhàng trước khi dừng; đồ thị $v$–$t$ của mỗi chuyến là hình thang.</li>
-<li><strong>Đường băng sân bay:</strong> từ $v^2 = 2ad$, máy bay cần đạt $75\ \text{m/s}$ với $a = 2\ \text{m/s}^2$ phải chạy khoảng $1\,400\ \text{m}$ (số minh hoạ).</li>
+<li><strong>Đường băng sân bay:</strong> từ $v^2 - v_0^2 = 2ad$ với $v_0 = 0$ (máy bay xuất phát từ nghỉ), máy bay cần đạt $75\ \text{m/s}$ với $a = 2\ \text{m/s}^2$ phải chạy khoảng $1\,400\ \text{m}$ (số minh hoạ).</li>
 <li><strong>Trượt băng:</strong> thả trôi trên băng gần như chậm dần đều; đo quãng trôi là ước lượng được gia tốc do ma sát.</li>
 </ul>
 </details>
