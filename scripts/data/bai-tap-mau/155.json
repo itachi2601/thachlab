@@ -1,0 +1,755 @@
+{
+ "lesson_id": 155,
+ "lesson_title": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại khớp; đã sửa theo báo cáo."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tổng hợp hai lực đồng quy: cùng chiều, ngược chiều, vuông góc, hợp góc α",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "problem_html": "<p>Hai lực $\\vec F_1$ và $\\vec F_2$ cùng đặt vào một vật nhỏ, có độ lớn $F_1=30\\ \\text{N}$ và $F_2=40\\ \\text{N}$.</p><ol type=\"a\"><li>Tính độ lớn hợp lực khi hai lực cùng phương, cùng chiều; rồi khi cùng phương, ngược chiều.</li><li>Tính độ lớn hợp lực khi hai lực vuông góc với nhau.</li><li>Hai lực khác có độ lớn $21\\ \\text{N}$ và $24\\ \\text{N}$ hợp với nhau góc $60^\\circ$. Tính độ lớn hợp lực.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Một vật nhỏ chịu hai lực vuông góc, 30 niutơn hướng lên và 40 niutơn hướng sang phải, và chuyển động theo hướng của hợp lực\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"45.0\" y=\"157.0\" width=\"50.0\" height=\"30.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;80.0 -60.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"45.0\" y=\"157.0\" width=\"50.0\" height=\"30.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"95.0\" y1=\"172\" x2=\"175.0\" y2=\"172.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M165.0,166.2 L175.0,172.0 L165.0,177.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"181.0\" y=\"177\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₂ = 40 N</text><line x1=\"70\" y1=\"157.0\" x2=\"70.0\" y2=\"97.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M64.2,107.0 L70.0,97.0 L75.8,107.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"78\" y=\"91.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₁ = 30 N</text></g><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hai lực vuông góc</text><text x=\"16\" y=\"44\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật chuyển động theo hướng của hợp lực (hướng vẽ đúng tỉ lệ hai lực, quãng đường minh hoạ). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hợp lực là một lực thay thế hai lực cùng tác dụng lên vật mà gây ra tác dụng như hai lực đó.</li><li><strong>Quy tắc:</strong> hợp lực là đường chéo của hình bình hành dựng trên hai lực vẽ cùng gốc.</li><li><strong>Công thức:</strong> $R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$ ($\\alpha$ là góc giữa hai lực).</li><li>Trường hợp riêng : cùng chiều ($\\alpha=0^\\circ$), ngược chiều ($\\alpha=180^\\circ$), vuông góc ($\\alpha=90^\\circ$).</li><li>⚠ <strong>Điều kiện:</strong> hai lực cùng đặt vào một vật ; luôn có $|F_1-F_2|\\le R\\le F_1+F_2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hai lực cùng chiều</span></p><p>Cùng phương, cùng chiều ($\\alpha=0^\\circ$, $\\cos\\alpha=1$) : độ lớn cộng lại.</p>$$R=F_1+F_2=30+40$$<div class=\"bt-ans\">$$R=70\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hai lực ngược chiều</span></p><p>Ngược chiều ($\\alpha=180^\\circ$, $\\cos\\alpha=-1$) : lấy hiệu hai độ lớn, hợp lực cùng chiều với lực lớn hơn.</p>$$R=F_2-F_1=40-30$$<div class=\"bt-ans\">$$R=10\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hai lực vuông góc</span></p><p>Hợp lực là đường chéo của hình chữ nhật dựng trên hai lực :</p>$$R=\\sqrt{F_1^2+F_2^2}=\\sqrt{30^2+40^2}=\\sqrt{2500}$$<div class=\"bt-ans\">$$R=50\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hai lực hợp góc $60^\\circ$</span></p><p>Dùng công thức tổng quát với $\\cos60^\\circ=0{,}5$ :</p>$$R^2=21^2+24^2+2\\cdot21\\cdot24\\cdot\\cos60^\\circ$$$$R^2=441+576+504=1521$$<div class=\"bt-ans\">$$R=\\sqrt{1521}=39\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Với $30\\ \\text{N}$ và $40\\ \\text{N}$ : $10\\ \\text{N}\\le R\\le70\\ \\text{N}$ ; các kết quả $70$, $10$, $50\\ \\text{N}$ đều thoả.</p><p>Với $21\\ \\text{N}$ và $24\\ \\text{N}$ : $3\\ \\text{N}\\le R\\le45\\ \\text{N}$ ; $R=39\\ \\text{N}$ thoả.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) cùng chiều $R=70\\ \\text{N}$ ; ngược chiều $R=10\\ \\text{N}$</p><p>b) $R=50\\ \\text{N}$</p><p>c) $R=39\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>hai lực cùng đặt vào một vật</strong> → hợp lực phụ thuộc góc giữa hai lực ; luôn kiểm tra $R$ nằm giữa $|F_1-F_2|$ và $F_1+F_2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c1-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hợp lực của hai lực cùng chiều, ngược chiều, vuông góc và hợp góc anpha được dựng theo quy tắc hình bình hành\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Cùng chiều: R = F₁ + F₂</text><text x=\"222\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Ngược chiều: R = |F₂ − F₁|</text><line x1=\"30\" y1=\"46\" x2=\"110.0\" y2=\"46.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M100.0,40.2 L110.0,46.0 L100.0,51.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"116\" y=\"50\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₂</text><line x1=\"30\" y1=\"62\" x2=\"90.0\" y2=\"62.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M80.0,56.2 L90.0,62.0 L80.0,67.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"96\" y=\"66\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₁</text><line x1=\"270\" y1=\"54\" x2=\"350.0\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M340.0,48.2 L350.0,54.0 L340.0,59.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"356\" y=\"58\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₂</text><line x1=\"270\" y1=\"54\" x2=\"210.0\" y2=\"54.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M220.0,59.8 L210.0,54.0 L220.0,48.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"204\" y=\"58\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F₁</text><text x=\"16\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Vuông góc:</text><text x=\"16\" y=\"126\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">R² = F₁² + F₂²</text><line x1=\"40.0\" y1=\"140.0\" x2=\"120.0\" y2=\"140.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"120.0\" y1=\"140.0\" x2=\"120.0\" y2=\"200.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"40.0\" y1=\"200.0\" x2=\"120.0\" y2=\"140.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"40\" y1=\"200\" x2=\"120.0\" y2=\"200.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M110.0,194.2 L120.0,200.0 L110.0,205.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"128\" y=\"205\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₂</text><line x1=\"40\" y1=\"200\" x2=\"40.0\" y2=\"140.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M34.2,150.0 L40.0,140.0 L45.8,150.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"32\" y=\"174.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F₁</text><text x=\"128\" y=\"144\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><text x=\"222\" y=\"108\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Hợp góc α:</text><text x=\"222\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">R² = F₁² + F₂² + 2F₁F₂cosα</text><line x1=\"310.0\" y1=\"200.0\" x2=\"331.0\" y2=\"163.6\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"283.0\" y1=\"163.6\" x2=\"331.0\" y2=\"163.6\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"262.0\" y1=\"200.0\" x2=\"331.0\" y2=\"163.6\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"262\" y1=\"200\" x2=\"310.0\" y2=\"200.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M300.0,194.2 L310.0,200.0 L300.0,205.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"318\" y=\"205\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F₂</text><line x1=\"262\" y1=\"200\" x2=\"283.0\" y2=\"163.6\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M273.0,169.4 L283.0,163.6 L283.0,175.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"277.0\" y=\"157.6\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F₁</text><path d=\"M280.0,200.0 A18,18 0 0 0 271.0,184.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"284\" y=\"192\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text></svg><figcaption>Dữ kiện: quy tắc hình bình hành cho từng trường hợp (cùng một tỉ lệ cho mọi lực; riêng hình hợp góc dùng hai lực khác của câu c). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai lực … cùng đặt vào một vật nhỏ\"</td><td>Hai lực đồng quy tại vật</td><td>⚠ Hợp lực chỉ có nghĩa khi hai lực cùng tác dụng lên một vật</td></tr><tr><td>\"$F_1=30$ N và $F_2=40$ N\"</td><td>$F_1=30$ N ; $F_2=40$ N</td><td>Lực là đại lượng vectơ : có độ lớn, phương, chiều</td></tr><tr><td>\"cùng phương, cùng chiều … ngược chiều\"</td><td>$\\alpha=0^\\circ$ rồi $\\alpha=180^\\circ$</td><td>Cùng chiều : $R=F_1+F_2$ ; ngược chiều : $R=|F_1-F_2|$</td></tr><tr><td>\"vuông góc với nhau\"</td><td>$\\alpha=90^\\circ$</td><td>Hợp lực là đường chéo hình chữ nhật : $R^2=F_1^2+F_2^2$</td></tr><tr><td>\"hợp với nhau góc $60^\\circ$\"</td><td>$F_1=21$ N ; $F_2=24$ N ; $\\alpha=60^\\circ$</td><td>⚠ $\\alpha$ là góc giữa hai vectơ vẽ cùng gốc : $R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$</td></tr><tr><td>\"tính độ lớn hợp lực\"</td><td>Cần $R$</td><td>Kiểm tra bằng $|F_1-F_2|\\le R\\le F_1+F_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai lực cùng đặt vào một vật</b> → nghĩ tới <b>hợp lực</b> : cộng, trừ hay dùng cosα tuỳ góc giữa hai lực.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hợp lực cùng chiều",
+     "hoi": "Hợp lực của hai lực cùng phương, cùng chiều?",
+     "dap_so": 70,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng căn bậc hai tổng bình phương cho mọi trường hợp — công thức đó chỉ đúng khi hai lực vuông góc."
+    },
+    {
+     "tieu_de": "Hợp lực ngược chiều",
+     "hoi": "Hợp lực của hai lực cùng phương, ngược chiều?",
+     "dap_so": 10,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng hai độ lớn như khi cùng chiều ; ngược chiều thì lực này triệt tiêu bớt lực kia.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R=|F_2-F_1|$ : ngược chiều thì lấy hiệu hai độ lớn",
+       "dung": true
+      },
+      {
+       "text": "$R=F_1+F_2$",
+       "dung": false,
+       "vi_sao": "Cộng độ lớn chỉ khi cùng chiều ; ngược chiều thì hai lực triệt tiêu bớt."
+      },
+      {
+       "text": "$R=\\sqrt{F_2^2-F_1^2}$",
+       "dung": false,
+       "vi_sao": "Không có quy tắc nào dùng căn của hiệu bình phương ; hai lực cùng phương thì chỉ cần lấy hiệu độ lớn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hợp lực vuông góc",
+     "hoi": "Hợp lực khi hai lực vuông góc?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng thẳng độ lớn hai lực ; quên rằng hợp lực là đường chéo hình chữ nhật, ngắn hơn tổng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R=\\sqrt{F_1^2+F_2^2}$ (đường chéo hình chữ nhật)",
+       "dung": true
+      },
+      {
+       "text": "$R=F_1+F_2$",
+       "dung": false,
+       "vi_sao": "Cộng độ lớn chỉ khi cùng chiều. Hai lực vuông góc là hai cạnh, hợp lực là đường chéo nên ngắn hơn tổng."
+      },
+      {
+       "text": "$R=|F_2-F_1|$",
+       "dung": false,
+       "vi_sao": "Hiệu độ lớn chỉ đúng khi hai lực ngược chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hợp lực khi hợp góc $60^\\circ$",
+     "hoi": "Độ lớn hợp lực của hai lực $21\\ \\text{N}$ và $24\\ \\text{N}$ hợp góc $60^\\circ$?",
+     "dap_so": 39,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $R=\\sqrt{F_1^2+F_2^2}$ (chỉ đúng khi vuông góc), hoặc viết dấu trừ trước số hạng $2F_1F_2\\cos\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "$R^2=F_1^2+F_2^2$",
+       "dung": false,
+       "vi_sao": "Công thức đó ứng với $\\cos\\alpha=0$, tức hai lực vuông góc ; ở đây $\\alpha=60^\\circ$."
+      },
+      {
+       "text": "$R^2=F_1^2+F_2^2-2F_1F_2\\cos\\alpha$",
+       "dung": false,
+       "vi_sao": "Dấu trừ ứng với góc ngoài ; $\\alpha$ là góc giữa hai vectơ cùng gốc, kiểm tra bằng $\\alpha=0^\\circ$ phải ra tổng $F_1+F_2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Cân bằng ba lực: vật treo bằng hai dây, lực căng và giới hạn đứt dây",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "problem_html": "<p>Một chiếc đèn khối lượng $m=6\\ \\text{kg}$ được treo vào trần nhà bằng hai sợi dây nhẹ giống nhau. Hai dây đối xứng qua phương thẳng đứng, mỗi dây hợp với phương ngang góc $\\theta$ với $\\sin\\theta=0{,}6$ và $\\cos\\theta=0{,}8$ (khi đó $\\theta\\approx37^\\circ$). Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính lực căng của mỗi dây.</li><li>Mỗi dây chịu được lực căng tối đa $55\\ \\text{N}$. Dây có bị đứt không? Muốn dây không đứt thì góc $\\theta$ phải không nhỏ hơn bao nhiêu độ?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Đèn treo bằng hai dây, hai điểm treo dang rộng dần nên dây thoải dần đến góc xấp xỉ 37 độ so với phương ngang\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"52.0\" x2=\"404.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"106.0\" y1=\"52.0\" x2=\"210.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"0.35\"/><line x1=\"314.0\" y1=\"52.0\" x2=\"210.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"0.35\"/><path d=\"M132.0,67.0 A30,30 0 0 0 136.0,52.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M284.0,52.0 A30,30 0 0 0 288.0,67.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"144.0\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">θ</text><text x=\"276.0\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">θ</text><line x1=\"176.4\" y1=\"52\" x2=\"210\" y2=\"177.6\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x1\" values=\"176.4;170.8;165.4;160.0;154.7;149.6;144.5;139.6;134.8;130.2;125.7;121.4;117.3;113.3;109.6;106.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"177.6;176.0;174.1;172.0;169.7;167.1;164.3;161.3;158.1;154.6;151.0;147.1;143.1;138.9;134.5;130.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"243.6\" y1=\"52\" x2=\"210\" y2=\"177.6\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"x1\" values=\"243.6;249.2;254.6;260.0;265.3;270.4;275.5;280.4;285.2;289.8;294.3;298.6;302.7;306.7;310.4;314.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"177.6;176.0;174.1;172.0;169.7;167.1;164.3;161.3;158.1;154.6;151.0;147.1;143.1;138.9;134.5;130.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.0 -1.6;0.0 -3.5;0.0 -5.6;0.0 -7.9;0.0 -10.5;0.0 -13.3;0.0 -16.3;0.0 -19.5;0.0 -23.0;0.0 -26.6;0.0 -30.4;0.0 -34.5;0.0 -38.7;0.0 -43.0;0.0 -47.6\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"202.0\" y=\"177.6\" width=\"16.0\" height=\"9.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"199.6\" r=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/></g><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đèn m = 6 kg</text><text x=\"222\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">θ giảm dần tới 37°</text><text x=\"158.0\" y=\"160.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">T = ?</text><text x=\"262.0\" y=\"160.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai điểm treo dang rộng dần, độ dài mỗi dây giữ nguyên, dây thoải dần tới θ ≈ 37° (sinθ = 0,6) so với phương ngang. Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật cân bằng khi đứng yên hoặc chuyển động thẳng đều ; khi đó hợp lực tác dụng lên vật bằng 0.</li><li><strong>Điều kiện:</strong> $\\sum\\vec F=0$, tức tổng các thành phần theo mỗi phương bằng 0.</li><li><strong>Công thức:</strong> lực căng $T$ có thành phần đứng $T\\sin\\theta$ và thành phần ngang $T\\cos\\theta$ ($\\theta$ đo với phương ngang) ; $P=10m$.</li><li>⚠ <strong>Điều kiện:</strong> dây nhẹ nên lực căng hai đầu dây bằng nhau ; giới hạn đứt tính cho từng dây ; đổi góc đo thì sin và cos đổi chỗ (lý thuyết đo góc giữa hai dây hoặc với phương thẳng đứng thì dùng $\\cos$ ; đề này đo với phương ngang nên dùng $\\sin$).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng lượng của đèn</span></p>$$P=10m=10\\cdot6$$<div class=\"bt-ans\">$$P=60\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực căng mỗi dây</span></p><p>Đèn đứng yên nên hợp lực bằng 0. Hai thành phần ngang của lực căng bằng nhau và ngược chiều nên triệt tiêu ; theo phương thẳng đứng :</p>$$2T\\sin\\theta=P$$$$T=\\dfrac{P}{2\\sin\\theta}=\\dfrac{60}{2\\cdot0{,}6}$$<div class=\"bt-ans\">$$T=50\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dây có đứt không?</span></p><p>So lực căng vừa tìm với giới hạn của từng dây :</p>$$T=50\\ \\text{N}\\lt T_{max}=55\\ \\text{N}$$<div class=\"bt-ans\"><p>Dây không bị đứt.</p></div><p>Lưu ý : trọng lượng $P=60\\ \\text{N}$ lớn hơn $55\\ \\text{N}$, nhưng mỗi dây chỉ chịu lực căng $T=50\\ \\text{N}$ của chính nó.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc nhỏ nhất để dây không đứt</span></p><p>Cho lực căng bằng đúng giới hạn $T=T_{max}$ :</p>$$\\sin\\theta_{min}=\\dfrac{P}{2T_{max}}=\\dfrac{60}{2\\cdot55}\\approx0{,}545$$<div class=\"bt-ans\">$$\\theta_{min}\\approx33{,}1^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Với $\\theta=33{,}1^\\circ$ : $T=\\dfrac{60}{2\\cdot0{,}545}=55\\ \\text{N}$, đúng bằng giới hạn ✓ ; góc của đề ($36{,}9^\\circ$) lớn hơn $33{,}1^\\circ$ nên dây an toàn ✓</p><p>Dây càng thoải thì lực căng càng lớn : với $\\theta=60^\\circ$ chỉ cần $T=\\dfrac{60}{2\\cdot0{,}866}\\approx34{,}6\\ \\text{N}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=50\\ \\text{N}$</p><p>b) dây không bị đứt ; $\\theta\\ge33{,}1^\\circ$ (khoảng $33^\\circ$)</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật treo đứng yên bằng nhiều dây</strong> → $\\sum\\vec F=0$, chiếu lên phương thẳng đứng : $2T\\sin\\theta=P$ ($\\theta$ đo với phương ngang).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-2\"><svg viewBox=\"0 0 420 282\" role=\"img\" aria-label=\"Đèn treo bằng hai dây đối xứng hợp với phương ngang góc xấp xỉ 37 độ; trọng lực P hướng xuống\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"52.0\" x2=\"404.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"106.0\" y1=\"52.0\" x2=\"210.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"314.0\" y1=\"52.0\" x2=\"210.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><rect x=\"202.0\" y=\"130.0\" width=\"16.0\" height=\"9.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"152.0\" r=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><path d=\"M132.0,67.0 A30,30 0 0 0 136.0,52.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M284.0,52.0 A30,30 0 0 0 288.0,67.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"144.0\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">θ</text><text x=\"276.0\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">θ</text><line x1=\"210\" y1=\"152.0\" x2=\"210.0\" y2=\"206.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M215.8,196.0 L210.0,206.0 L204.2,196.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220\" y=\"190.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">θ ≈ 37° (sinθ = 0,6) so với phương ngang</text><text x=\"16\" y=\"232\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Đèn đứng yên: ΣF = 0</text><text x=\"16\" y=\"252\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Thành phần ngang: hai lực triệt tiêu</text><text x=\"16\" y=\"272\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Thành phần đứng: 2T·sinθ = P</text></svg><figcaption>Dữ kiện: góc θ đo với phương ngang nên thành phần đứng của lực căng là T·sinθ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đèn khối lượng $m=6$ kg\"</td><td>$m=6$ kg</td><td>$P=10m$ ; trọng lực hướng xuống</td></tr><tr><td>\"hai sợi dây nhẹ giống nhau, đối xứng\"</td><td>Hai lực căng bằng nhau $T_1=T_2=T$</td><td>⚠ Dây nhẹ nên lực căng như nhau suốt dây ; đối xứng nên hai thành phần ngang triệt tiêu</td></tr><tr><td>\"mỗi dây hợp với phương ngang góc $\\theta$, $\\sin\\theta=0{,}6$\"</td><td>$\\sin\\theta=0{,}6$ ; $\\theta\\approx37^\\circ$ so với phương ngang</td><td>Thành phần đứng của lực căng là $T\\sin\\theta$ (góc đo với phương ngang)</td></tr><tr><td>\"tính lực căng\"</td><td>Cần $T$</td><td>Đèn đứng yên nên $\\sum\\vec F=0$ : $2T\\sin\\theta=P$</td></tr><tr><td>\"chịu được lực căng tối đa $55$ N\"</td><td>$T_{max}=55$ N</td><td>⚠ Giới hạn áp dụng cho từng dây ; dây đứt khi $T\\gt T_{max}$</td></tr><tr><td>\"$\\theta$ không nhỏ hơn bao nhiêu độ\"</td><td>Cần $\\theta_{min}$</td><td>Cho $T=T_{max}$ : $\\sin\\theta_{min}=\\dfrac{P}{2T_{max}}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật treo đứng yên bằng hai dây nghiêng</b> → nghĩ tới <b>ΣF = 0</b>, chiếu lên phương đứng : 2T·sinθ = P.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng lượng của đèn",
+     "hoi": "Trọng lượng P của đèn?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Ghi $P=6\\ \\text{N}$ (lấy $P=m$, quên $g=10$) hoặc coi khối lượng là một lực."
+    },
+    {
+     "tieu_de": "Lực căng mỗi dây",
+     "hoi": "Lực căng T của mỗi dây?",
+     "dap_so": 50,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy $T=\\dfrac{P}{2}$ vì tưởng hai dây chia đều trọng lượng mà quên góc nghiêng ; hoặc dùng cosθ thay cho sinθ. ⚠ Đổi quy ước góc : bài lý thuyết đo góc giữa hai dây (hay với phương thẳng đứng) nên dùng cos, còn đề này đo với phương ngang nên dùng sin.",
+     "chon_buoc_ke": [
+      {
+       "text": "$2T\\sin\\theta=P$ : hai dây cùng đỡ đèn, góc đo với phương ngang",
+       "dung": true
+      },
+      {
+       "text": "$2T\\cos\\theta=P$",
+       "dung": false,
+       "vi_sao": "$\\theta$ đo với phương ngang nên thành phần đứng của lực căng là $T\\sin\\theta$ ; $\\cos\\theta$ là thành phần ngang."
+      },
+      {
+       "text": "$T=\\dfrac{P}{2}$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi hai dây thẳng đứng. Dây nghiêng thì mỗi dây phải căng hơn để thành phần đứng đủ đỡ đèn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dây có đứt không?",
+     "hoi": "Dây có bị đứt không?",
+     "lua_chon": [
+      {
+       "text": "Không : lực căng mỗi dây nhỏ hơn giới hạn",
+       "dung": true
+      },
+      {
+       "text": "Có : lực căng mỗi dây vượt giới hạn",
+       "dung": false,
+       "vi_sao": "Lực căng tìm được ở câu a là $50\\ \\text{N}$, nhỏ hơn giới hạn $55\\ \\text{N}$ nên dây chưa đứt."
+      },
+      {
+       "text": "Chưa kết luận được vì không biết chiều dài dây",
+       "dung": false,
+       "vi_sao": "Lực căng chỉ phụ thuộc trọng lượng và góc nghiêng, không phụ thuộc chiều dài dây."
+      }
+     ],
+     "loi_hay_gap": "So trọng lượng đèn (thay vì lực căng) với giới hạn, hoặc cộng hai lực căng rồi so với giới hạn của một dây.",
+     "chon_buoc_ke": [
+      {
+       "text": "So lực căng mỗi dây tìm được ở câu a với giới hạn $55\\ \\text{N}$",
+       "dung": true
+      },
+      {
+       "text": "So trọng lượng đèn với giới hạn $55\\ \\text{N}$",
+       "dung": false,
+       "vi_sao": "Mỗi dây chỉ chịu lực căng của chính nó, không chịu cả trọng lượng : $P=60\\ \\text{N}$ vượt $55\\ \\text{N}$ nhưng mỗi dây chỉ căng $50\\ \\text{N}$, nên so như vậy sẽ kết luận sai là dây đứt."
+      },
+      {
+       "text": "Cộng hai lực căng rồi so với giới hạn $55\\ \\text{N}$",
+       "dung": false,
+       "vi_sao": "Giới hạn $55\\ \\text{N}$ áp dụng cho từng dây, không phải cho tổng hai dây ($2T=100\\ \\text{N}$ sẽ cho kết luận sai là dây đứt)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc nhỏ nhất để dây không đứt",
+     "hoi": "Góc θ nhỏ nhất để dây không đứt (độ)?",
+     "dap_so": 33.1,
+     "sai_so": 0.5,
+     "don_vi": "độ",
+     "loi_hay_gap": "Dùng $T_{max}\\sin\\theta=P$ (một dây chịu hết ; ra $\\sin\\theta\\gt1$, vô lý) hoặc dùng cosθ — ra góc $57^\\circ$ thay vì $33^\\circ$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cho $T=T_{max}$ trong $2T\\sin\\theta=P$ rồi tìm $\\theta$",
+       "dung": true
+      },
+      {
+       "text": "$2T_{max}\\cos\\theta=P$",
+       "dung": false,
+       "vi_sao": "$\\theta$ đo với phương ngang nên thành phần đứng là $T\\sin\\theta$."
+      },
+      {
+       "text": "$T_{max}\\sin\\theta=P$",
+       "dung": false,
+       "vi_sao": "Có hai dây cùng đỡ đèn nên tổng thành phần đứng là $2T\\sin\\theta$ ; viết như vậy còn ra $\\sin\\theta=60/55\\gt1$, vô lý."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Ma sát nghỉ và ma sát trượt trên sàn ngang",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "problem_html": "<p>Một thùng hàng khối lượng $m=50\\ \\text{kg}$ đặt trên sàn nằm ngang. Hệ số ma sát nghỉ cực đại giữa thùng và sàn là $\\mu_n=0{,}4$, hệ số ma sát trượt là $\\mu_t=0{,}3$. Người ta kéo thùng bằng lực $\\vec F$ nằm ngang. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Khi $F=120\\ \\text{N}$, thùng có chuyển động không? Tính lực ma sát tác dụng lên thùng.</li><li>Lực kéo nhỏ nhất để thùng bắt đầu trượt là bao nhiêu (tính xấp xỉ, coi thùng bắt đầu trượt khi lực kéo vừa tới ma sát nghỉ cực đại)?</li><li>Khi thùng đã trượt, phải kéo bằng lực bao nhiêu để thùng trượt đều?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-0\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Thùng hàng được kéo trượt đều ba mét trên sàn nằm ngang bằng lực kéo nằm ngang đo bằng lực kế\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"118.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"24.0\" y=\"78.0\" width=\"64.0\" height=\"40.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;120.0 0.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"24.0\" y=\"78.0\" width=\"64.0\" height=\"40.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"56.0\" y=\"103.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">m = 50 kg</text><line x1=\"88.0\" y1=\"98.0\" x2=\"128.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"128.0\" y=\"86.0\" width=\"56.0\" height=\"24.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"156\" y=\"103.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">lực kế</text><text x=\"156\" y=\"78.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">F = ?</text></g><line x1=\"24.0\" y1=\"146.0\" x2=\"144.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"24.0\" y1=\"140.0\" x2=\"24.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"24\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"64.0\" y1=\"140.0\" x2=\"64.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"64\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"104.0\" y1=\"140.0\" x2=\"104.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"104\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"144.0\" y1=\"140.0\" x2=\"144.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"144\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">3 m</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">trượt đều</text><text x=\"16\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">μ<tspan dy=\"4\" font-size=\"10\">t</tspan><tspan dy=\"-4\"> = 0,3</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng trượt đều 3 m trên thước (tốc độ minh hoạ 1 m/s, chạy 3 s). Số chỉ lực kế là đại lượng cần tìm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ma sát nghỉ giữ vật đứng yên khi có lực kéo ; ma sát trượt xuất hiện khi vật đang trượt.</li><li><strong>Công thức:</strong> ma sát nghỉ $0\\le F_{msn}\\le\\mu_nN$ ; ma sát trượt $F_{mst}=\\mu_tN$ ; thường $\\mu_n\\ge\\mu_t$.</li><li>Trên sàn ngang, không có lực thẳng đứng nào khác : $N=P=10m$.</li><li>⚠ <strong>Điều kiện:</strong> chưa trượt thì $F_{msn}=F$ (không phải $\\mu_nN$) ; đang trượt đều thì $F=F_{mst}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phản lực của sàn</span></p><p>Thùng cân bằng theo phương thẳng đứng :</p>$$N=P=10m=10\\cdot50$$<div class=\"bt-ans\">$$N=500\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ma sát nghỉ cực đại (câu b)</span></p>$$F_{msn,\\max}=\\mu_nN=0{,}4\\cdot500$$<div class=\"bt-ans\">$$F_{msn,\\max}=200\\ \\text{N}$$</div><p>Thùng bắt đầu trượt khi $F\\gt200\\ \\text{N}$, tức lực kéo nhỏ nhất xấp xỉ $200\\ \\text{N}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ma sát khi $F=120\\ \\text{N}$ (câu a)</span></p><p>$F=120\\ \\text{N}\\lt200\\ \\text{N}$ nên thùng đứng yên, ma sát nghỉ cân bằng với lực kéo :</p>$$F_{ms}=F$$<div class=\"bt-ans\">$$F_{ms}=120\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kéo đều khi đang trượt (câu c)</span></p><p>Thùng đã trượt nên dùng ma sát trượt. Trượt đều thì hợp lực bằng 0 :</p>$$F=F_{mst}=\\mu_tN=0{,}3\\cdot500$$<div class=\"bt-ans\">$$F=150\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$F_{msn,\\max}=200\\ \\text{N}\\gt F_{mst}=150\\ \\text{N}$ : lúc bắt đầu trượt phải kéo mạnh hơn lúc đã trượt.</p><p>Nếu kéo $220\\ \\text{N}$ thì thùng trượt nhanh dần, nhưng ma sát vẫn là $\\mu_tN=150\\ \\text{N}$ (không phụ thuộc $F$).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) thùng đứng yên, $F_{ms}=120\\ \\text{N}$</p><p>b) $F_{min}\\approx200\\ \\text{N}$</p><p>c) $F=150\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>ma sát nghỉ / bắt đầu trượt / trượt đều</strong> → chưa trượt : $F_{ms}=F$ ; sắp trượt : $\\mu_nN$ ; đang trượt : $\\mu_tN$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Bên trái các lực tác dụng lên thùng khi chưa trượt; bên phải đồ thị lực ma sát theo lực kéo: tăng dần tới cực đại rồi giảm xuống giá trị trượt\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"170.0\" width=\"204\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"68.0\" y=\"130.0\" width=\"64.0\" height=\"40.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"100\" y1=\"150.0\" x2=\"100.0\" y2=\"70.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M94.2,80.0 L100.0,70.0 L105.8,80.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"108\" y=\"78.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><line x1=\"100\" y1=\"150.0\" x2=\"100.0\" y2=\"230.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M105.8,220.0 L100.0,230.0 L94.2,220.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"108\" y=\"226.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"132.0\" y1=\"150.0\" x2=\"151.2\" y2=\"150.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M141.2,144.2 L151.2,150.0 L141.2,155.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"157.2\" y=\"144.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><line x1=\"68.0\" y1=\"150.0\" x2=\"48.8\" y2=\"150.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M58.8,155.8 L48.8,150.0 L58.8,144.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"42.8\" y=\"144.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan></text><text x=\"16\" y=\"16\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Chưa trượt: F<tspan dy=\"4\" font-size=\"9\">ms</tspan><tspan dy=\"-4\"> = F</tspan></text><text x=\"16\" y=\"33\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Sắp trượt: F<tspan dy=\"4\" font-size=\"9\">ms</tspan><tspan dy=\"-4\"> = μ</tspan><tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\">·N</tspan></text><text x=\"16\" y=\"50\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Đang trượt: F<tspan dy=\"4\" font-size=\"9\">ms</tspan><tspan dy=\"-4\"> = μ</tspan><tspan dy=\"4\" font-size=\"9\">t</tspan><tspan dy=\"-4\">·N</tspan></text><line x1=\"262\" y1=\"214\" x2=\"408\" y2=\"214\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M400.4,209.6 L408.0,214.0 L400.4,218.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"408\" y=\"230\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F</text><line x1=\"262\" y1=\"214\" x2=\"262\" y2=\"76\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M257.6,83.6 L262.0,76.0 L266.4,83.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"268\" y=\"80\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan></text><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.6\" opacity=\"1\" points=\"262.0,214.0 336.0,118.0\"/><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.6\" opacity=\"1\" points=\"336.0,150.0 404.0,150.0\"/><line x1=\"336.0\" y1=\"118.0\" x2=\"336.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.6\" stroke-dasharray=\"4 4\" opacity=\"1\"/><line x1=\"262.0\" y1=\"118.0\" x2=\"336.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"262.0\" y1=\"150.0\" x2=\"336.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"256\" y=\"122\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">μ<tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\">·N</tspan></text><text x=\"256\" y=\"154\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">μ<tspan dy=\"4\" font-size=\"9\">t</tspan><tspan dy=\"-4\">·N</tspan></text><text x=\"314\" y=\"206\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">ma sát nghỉ</text><text x=\"340\" y=\"170\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">ma sát trượt</text></svg><figcaption>Dữ kiện: ma sát nghỉ tăng theo lực kéo tới cực đại μ<sub>n</sub>·N, thùng trượt thì ma sát tụt về μ<sub>t</sub>·N (đồ thị không ghi số). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khối lượng $m=50$ kg … sàn nằm ngang\"</td><td>$m=50$ kg ; sàn ngang</td><td>$P=10m$ ; ⚠ trên sàn ngang, không có lực thẳng đứng nào khác : $N=P$</td></tr><tr><td>\"ma sát nghỉ cực đại $\\mu_n=0{,}4$, ma sát trượt $\\mu_t=0{,}3$\"</td><td>$\\mu_n=0{,}4$ ; $\\mu_t=0{,}3$</td><td>$F_{msn,\\max}=\\mu_nN$ ; $F_{mst}=\\mu_tN$ ; ⚠ ma sát nghỉ biến thiên từ $0$ đến $\\mu_nN$, chỉ cực đại khi vật sắp trượt</td></tr><tr><td>\"khi $F=120$ N, thùng có chuyển động không\"</td><td>$F=120$ N</td><td>So $F$ với $F_{msn,\\max}$ : nhỏ hơn thì thùng đứng yên và $F_{ms}=F$</td></tr><tr><td>\"lực kéo nhỏ nhất để thùng bắt đầu trượt\"</td><td>Cần $F_{min}$</td><td>Thùng trượt khi $F$ vượt ma sát nghỉ cực đại</td></tr><tr><td>\"khi thùng đã trượt … trượt đều\"</td><td>Hợp lực bằng 0</td><td>⚠ Đang trượt thì dùng ma sát trượt : $F=F_{mst}=\\mu_tN$ (không dùng $\\mu_n$)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kéo thùng, hỏi lực để trượt / trượt đều</b> → phân biệt <b>μₙ, μₜ</b> ; chưa trượt thì F_ms = F.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phản lực của sàn",
+     "hoi": "Phản lực N của sàn lên thùng?",
+     "dap_so": 500,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy $N=m=50$ (quên hệ số $g=10$)."
+    },
+    {
+     "tieu_de": "Ma sát nghỉ cực đại",
+     "hoi": "Lực ma sát nghỉ cực đại?",
+     "dap_so": 200,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng hệ số ma sát trượt $\\mu_t$ thay cho $\\mu_n$ ; hoặc nhân với trọng lượng thay vì phản lực (ở sàn ngang hai số trùng nhưng ý khác).",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_{msn,\\max}=\\mu_nN$",
+       "dung": true
+      },
+      {
+       "text": "$F_{msn,\\max}=\\mu_tN$",
+       "dung": false,
+       "vi_sao": "$\\mu_t$ dùng khi thùng đã trượt ; lúc sắp trượt dùng hệ số ma sát nghỉ cực đại $\\mu_n$."
+      },
+      {
+       "text": "$F_{msn,\\max}=F$",
+       "dung": false,
+       "vi_sao": "$F$ là lực kéo, còn ma sát nghỉ cực đại do bề mặt quyết định, không phụ thuộc lực kéo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ma sát khi thùng chưa trượt",
+     "hoi": "Lực ma sát tác dụng lên thùng ở câu a?",
+     "dap_so": 120,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Ghi luôn $\\mu_nN$ vì tưởng ma sát nghỉ luôn cực đại ; hoặc ghi $0$ vì thùng không chuyển động.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lực kéo nhỏ hơn ma sát nghỉ cực đại nên thùng đứng yên và $F_{ms}=F$",
+       "dung": true
+      },
+      {
+       "text": "$F_{ms}=\\mu_nN$ vì ma sát nghỉ luôn bằng cực đại",
+       "dung": false,
+       "vi_sao": "Ma sát nghỉ chỉ đạt cực đại khi thùng sắp trượt ; còn nhỏ hơn thì chỉ cần cân bằng lực kéo."
+      },
+      {
+       "text": "$F_{ms}=0$ vì thùng không chuyển động",
+       "dung": false,
+       "vi_sao": "Thùng đứng yên chính vì ma sát nghỉ cân bằng với lực kéo ; không có ma sát thì thùng đã bị kéo đi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kéo đều khi đang trượt",
+     "hoi": "Lực kéo F để thùng trượt đều?",
+     "dap_so": 150,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $\\mu_nN$ (đã đổi ra số lớn hơn) vì quên rằng khi đã trượt phải dùng hệ số ma sát trượt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trượt đều thì $F=F_{mst}=\\mu_tN$",
+       "dung": true
+      },
+      {
+       "text": "$F=F_{msn,\\max}=\\mu_nN$",
+       "dung": false,
+       "vi_sao": "Đó là lực cần để bắt đầu trượt ; khi đã trượt, ma sát giảm về $\\mu_tN$."
+      },
+      {
+       "text": "$F\\gt\\mu_tN$ để thùng chuyển động",
+       "dung": false,
+       "vi_sao": "Muốn trượt đều (vận tốc không đổi) hợp lực phải bằng 0 ; $F$ lớn hơn ma sát sẽ làm thùng nhanh dần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Mặt phẳng nghiêng có ma sát: đứng yên hay trượt, lực kéo đều, góc nghiêng giới hạn",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "problem_html": "<p>Vật khối lượng $m=10\\ \\text{kg}$ đặt trên mặt phẳng nghiêng dài $5\\ \\text{m}$, cao $3\\ \\text{m}$ (khi đó $\\sin\\alpha=0{,}6$ và $\\cos\\alpha=0{,}8$). Hệ số ma sát nghỉ cực đại giữa vật và mặt phẳng nghiêng là $\\mu_n=0{,}8$, hệ số ma sát trượt là $\\mu_t=0{,}6$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Thả nhẹ vật, vật có tự trượt xuống không? Tính lực ma sát tác dụng lên vật.</li><li>Tính lực kéo $F$ song song với mặt phẳng nghiêng, hướng lên, để kéo vật đi lên đều.</li><li>Nâng dần mặt phẳng nghiêng (giữ nguyên bề mặt). Vật bắt đầu trượt khi góc nghiêng đạt bao nhiêu độ (tính xấp xỉ, coi vật bắt đầu trượt khi ma sát nghỉ vừa đạt cực đại)?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Vật được kéo đều lên dốc dài năm mét, cao ba mét bằng dây song song mặt dốc\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"40.0,190.0 240.0,190.0 240.0,40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M74.0,190.0 A34,34 0 0 0 67.2,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"80\" y=\"182\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"148.0\" y=\"145.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 5 m</text><line x1=\"260\" y1=\"43\" x2=\"260\" y2=\"187\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M264.1,180.0 L260.0,187.0 L255.9,180.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"187\" x2=\"260\" y2=\"43\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M255.9,50.0 L260.0,43.0 L264.1,50.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"272\" y=\"119.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 3 m</text><g transform=\"translate(40 190) rotate(-36.87)\"><rect x=\"30.0\" y=\"-30.0\" width=\"44.0\" height=\"30.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;100.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"30.0\" y=\"-30.0\" width=\"44.0\" height=\"30.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"74.0\" y1=\"-15.0\" x2=\"120.0\" y2=\"-15.0\" stroke=\"#f87171\" stroke-width=\"2.8\" opacity=\"1\"/></g></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;80.0 -60.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"129.4\" y=\"93.2\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></g><text x=\"300\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 10 kg</text><text x=\"300\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">μ<tspan dy=\"4\" font-size=\"10\">n</tspan><tspan dy=\"-4\"> = 0,8</tspan></text><text x=\"300\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">μ<tspan dy=\"4\" font-size=\"10\">t</tspan><tspan dy=\"-4\"> = 0,6</tspan></text><text x=\"300\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 10 m/s²</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật được kéo đều lên dốc bằng dây song song mặt dốc (tốc độ minh hoạ, chạy 4 s). Lực kéo F là đại lượng cần tìm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên mặt phẳng nghiêng, trọng lực $\\vec P$ phân tích thành $P_\\parallel=P\\sin\\alpha$ (dọc dốc) và $P_\\perp=P\\cos\\alpha$ (vuông góc dốc).</li><li>Phản lực pháp tuyến $N=P\\cos\\alpha$ (không phải $N=P$).</li><li><strong>Công thức:</strong> $F_{msn,\\max}=\\mu_nN$ ; $F_{mst}=\\mu_tN$.</li><li>⚠ <strong>Điều kiện:</strong> vật nằm yên khi $P_\\parallel\\le\\mu_nN$, tức $\\tan\\alpha\\le\\mu_n$ ; khi đó $F_{ms}=P_\\parallel$.</li><li>Vật đi lên : ma sát trượt hướng xuống dốc. Vật đi xuống : ma sát hướng lên dốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thành phần trọng lực dọc dốc</span></p>$$P=10m=100\\ \\text{N}$$$$P_\\parallel=P\\sin\\alpha=100\\cdot0{,}6$$<div class=\"bt-ans\">$$P_\\parallel=60\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phản lực của mặt phẳng nghiêng</span></p><p>Vuông góc mặt dốc vật cân bằng :</p>$$N=P\\cos\\alpha=100\\cdot0{,}8$$<div class=\"bt-ans\">$$N=80\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ma sát nghỉ cực đại</span></p>$$F_{msn,\\max}=\\mu_nN=0{,}8\\cdot80$$<div class=\"bt-ans\">$$F_{msn,\\max}=64\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vật có trượt không? (câu a)</span></p><p>$P_\\parallel=60\\ \\text{N}\\lt64\\ \\text{N}$ nên vật đứng yên. Ma sát nghỉ chỉ cần cân bằng $P_\\parallel$, hướng lên dốc :</p>$$F_{ms}=P_\\parallel$$<div class=\"bt-ans\">$$F_{ms}=60\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lực kéo lên đều (câu b)</span></p><p>Vật đi lên nên ma sát trượt hướng xuống dốc, cùng chiều $P_\\parallel$. Hợp lực bằng 0 :</p>$$F=P_\\parallel+\\mu_tN=60+0{,}6\\cdot80$$<div class=\"bt-ans\">$$F=108\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Góc nghiêng giới hạn (câu c)</span></p><p>Vừa trượt khi $P\\sin\\alpha=\\mu_nP\\cos\\alpha$ ; khối lượng triệt tiêu :</p>$$\\tan\\alpha=\\mu_n=0{,}8$$<div class=\"bt-ans\">$$\\alpha\\approx38{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Đề cho $\\tan\\alpha=\\dfrac{0{,}6}{0{,}8}=0{,}75\\lt0{,}8=\\mu_n$ nên vật đứng yên, khớp câu a ✓</p><p>Dốc $\\alpha=45^\\circ$ ($\\tan\\alpha=1\\gt0{,}8$) thì vật trượt ; góc $38{,}7^\\circ$ lớn hơn góc của đề ($36{,}9^\\circ$) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) vật đứng yên, $F_{ms}=60\\ \\text{N}$ (hướng lên dốc)</p><p>b) $F=108\\ \\text{N}$</p><p>c) $\\alpha\\approx38{,}7^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật trên dốc có ma sát</strong> → so $P_\\parallel$ với $\\mu_nN$ (hay $\\tan\\alpha$ với $\\mu_n$) ; đi lên cộng $\\mu_tN$, đi xuống trừ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-2\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Trọng lực P của vật trên dốc được phân tích thành thành phần dọc mặt dốc P song song và thành phần vuông góc mặt dốc P vuông góc\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"40.0,190.0 240.0,190.0 240.0,40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M74.0,190.0 A34,34 0 0 0 67.2,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"80\" y=\"182\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"148.0\" y=\"145.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 5 m</text><line x1=\"260\" y1=\"43\" x2=\"260\" y2=\"187\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M264.1,180.0 L260.0,187.0 L255.9,180.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"187\" x2=\"260\" y2=\"43\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M255.9,50.0 L260.0,43.0 L264.1,50.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"272\" y=\"119.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 3 m</text><g transform=\"translate(40 190) rotate(-36.87)\"><rect x=\"78.0\" y=\"-30.0\" width=\"44.0\" height=\"30.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><line x1=\"111.0\" y1=\"118.0\" x2=\"111.0\" y2=\"178.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M116.8,168.0 L111.0,178.0 L105.2,168.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"119.0\" y=\"184.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"111.0\" y1=\"118.0\" x2=\"82.2\" y2=\"139.6\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\"/><path d=\"M92.3,138.4 L82.2,139.6 L86.2,130.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"76.2\" y=\"153.6\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">P∥</text><line x1=\"111.0\" y1=\"118.0\" x2=\"139.8\" y2=\"156.4\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\"/><path d=\"M138.6,146.3 L139.8,156.4 L130.5,152.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"145.8\" y=\"162.4\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">P⊥</text><line x1=\"82.2\" y1=\"139.6\" x2=\"111.0\" y2=\"178.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"3 4\" opacity=\"1\"/><line x1=\"139.8\" y1=\"156.4\" x2=\"111.0\" y2=\"178.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"3 4\" opacity=\"1\"/><text x=\"300\" y=\"40\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P∥ = P·sinα</text><text x=\"300\" y=\"62\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P⊥ = P·cosα</text><text x=\"300\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">N = P⊥</text></svg><figcaption>Dữ kiện: dốc dài 5 m, cao 3 m nên sinα = 0,6 và cosα = 0,8; P phân tích theo hai phương dọc dốc và vuông góc dốc. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"mặt phẳng nghiêng dài $5$ m, cao $3$ m\"</td><td>$l=5$ m ; $h=3$ m ; $\\sin\\alpha=0{,}6$ ; $\\cos\\alpha=0{,}8$</td><td>Phân tích $\\vec P$ : $P_\\parallel=P\\sin\\alpha$ (dọc dốc), $P_\\perp=P\\cos\\alpha$ (vuông góc dốc)</td></tr><tr><td>\"vật khối lượng $m=10$ kg\"</td><td>$m=10$ kg</td><td>$P=10m$ ; phản lực $N=P\\cos\\alpha$</td></tr><tr><td>\"$\\mu_n=0{,}8$, $\\mu_t=0{,}6$\"</td><td>$\\mu_n=0{,}8$ ; $\\mu_t=0{,}6$</td><td>⚠ Hai hệ số dùng ở hai tình huống khác nhau : $\\mu_nN$ khi sắp trượt, $\\mu_tN$ khi đang trượt</td></tr><tr><td>\"thả nhẹ vật, có tự trượt xuống không\"</td><td>So $P_\\parallel$ với $\\mu_nN$</td><td>⚠ Đứng yên khi $P_\\parallel\\le\\mu_nN$ ; lúc đó $F_{ms}=P_\\parallel$ (không phải $\\mu_nN$)</td></tr><tr><td>\"kéo … đi lên đều\"</td><td>Hợp lực bằng 0, vật trượt lên</td><td>⚠ Vật đi lên thì ma sát trượt hướng xuống dốc : $F=P_\\parallel+\\mu_tN$</td></tr><tr><td>\"nâng dần … bắt đầu trượt\"</td><td>Lúc vừa trượt : $P_\\parallel=\\mu_nN$</td><td>Suy ra $\\tan\\alpha=\\mu_n$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật trên dốc có ma sát</b> → so <b>P∥ với μₙN</b> ; kéo lên đều thì ma sát hướng xuống dốc.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thành phần trọng lực dọc dốc",
+     "hoi": "Thành phần trọng lực dọc mặt phẳng nghiêng $P_\\parallel$?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $P\\cos\\alpha$ (thành phần vuông góc) cho lực kéo vật xuống dốc, hoặc lấy cả $P$."
+    },
+    {
+     "tieu_de": "Phản lực của mặt phẳng nghiêng",
+     "hoi": "Phản lực N của mặt phẳng nghiêng?",
+     "dap_so": 80,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy $N=P$ như trên mặt ngang ; mặt phẳng nghiêng chỉ chịu thành phần vuông góc $P\\cos\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$N=P\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "$N=P$",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi mặt phẳng nằm ngang ; trên dốc chỉ thành phần vuông góc mặt dốc ép vào mặt phẳng."
+      },
+      {
+       "text": "$N=P\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "$P\\sin\\alpha$ là thành phần dọc dốc, kéo vật xuống chứ không ép vào mặt phẳng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ma sát nghỉ cực đại",
+     "hoi": "Lực ma sát nghỉ cực đại?",
+     "dap_so": 64,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $\\mu_nP$ (áp lực là $N$, không phải $P$) hoặc dùng $\\mu_t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_{msn,\\max}=\\mu_nN$",
+       "dung": true
+      },
+      {
+       "text": "$F_{msn,\\max}=\\mu_nP$",
+       "dung": false,
+       "vi_sao": "Ma sát tỉ lệ với áp lực $N$ vuông góc mặt dốc, không phải với trọng lượng."
+      },
+      {
+       "text": "$F_{msn,\\max}=\\mu_tN$",
+       "dung": false,
+       "vi_sao": "Lúc sắp trượt dùng hệ số ma sát nghỉ cực đại $\\mu_n$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ma sát thực tế khi vật đứng yên",
+     "hoi": "Lực ma sát thực tế tác dụng lên vật (câu a)?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Ghi luôn ma sát nghỉ cực đại làm lực ma sát đang có ; ma sát nghỉ chỉ bằng đúng lực cần để cân bằng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật đứng yên nên $F_{ms}=P_\\parallel$, miễn là $P_\\parallel\\le F_{msn,\\max}$",
+       "dung": true
+      },
+      {
+       "text": "$F_{ms}=\\mu_nN$",
+       "dung": false,
+       "vi_sao": "Đó chỉ là giá trị tối đa của ma sát nghỉ ; ma sát thực tế chỉ lớn bằng mức cần để vật đứng yên."
+      },
+      {
+       "text": "$F_{ms}=\\mu_tN$",
+       "dung": false,
+       "vi_sao": "Ma sát trượt chỉ có khi vật đang trượt, mà vật này đứng yên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo lên đều",
+     "hoi": "Lực kéo F song song dốc để kéo vật đi lên đều?",
+     "dap_so": 108,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Trừ ma sát (cho rằng ma sát hướng lên) hoặc dùng $\\mu_n$ thay cho $\\mu_t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F=P_\\parallel+\\mu_tN$ (ma sát trượt hướng xuống dốc)",
+       "dung": true
+      },
+      {
+       "text": "$F=P_\\parallel-\\mu_tN$",
+       "dung": false,
+       "vi_sao": "Vật đi lên nên ma sát trượt hướng xuống, cùng chiều $P_\\parallel$ ; phải cộng."
+      },
+      {
+       "text": "$F=P_\\parallel+\\mu_nN$",
+       "dung": false,
+       "vi_sao": "Đang chuyển động đều dùng ma sát trượt $\\mu_t$, không phải $\\mu_n$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc nghiêng giới hạn",
+     "hoi": "Góc nghiêng lớn nhất để vật còn đứng yên (độ)?",
+     "dap_so": 38.7,
+     "sai_so": 0.3,
+     "don_vi": "độ",
+     "loi_hay_gap": "Viết $\\sin\\alpha=\\mu_n$ hoặc $\\cos\\alpha=\\mu_n$ — quên chia hai vế cho $P\\cos\\alpha$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lúc vừa trượt $P\\sin\\alpha=\\mu_nP\\cos\\alpha$, suy ra $\\tan\\alpha=\\mu_n$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin\\alpha=\\mu_n$",
+       "dung": false,
+       "vi_sao": "Đẳng thức $P\\sin\\alpha=\\mu_nP\\cos\\alpha$ chia hai vế cho $P\\cos\\alpha$ cho $\\tan\\alpha=\\mu_n$, không phải $\\sin\\alpha$."
+      },
+      {
+       "text": "$\\cos\\alpha=\\mu_n$",
+       "dung": false,
+       "vi_sao": "Chia hai vế cho $P\\cos\\alpha$ mới ra $\\tan\\alpha$ ; không có đẳng thức $\\cos\\alpha=\\mu_n$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Đòn bẩy: quy tắc moment với thanh có khối lượng và nhiều lực",
+   "topic": "Moment lực và quy tắc moment",
+   "problem_html": "<p>Thanh AB đồng chất, tiết diện đều, dài $1\\ \\text{m}$, khối lượng $2\\ \\text{kg}$, nằm ngang. Đầu A tựa vào bản lề gắn vào tường (thanh quay tự do quanh A). Đầu B được giữ bằng một lực kế treo thẳng đứng. Một vật khối lượng $3\\ \\text{kg}$ được treo vào điểm C của thanh, với $AC=0{,}8\\ \\text{m}$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính số chỉ của lực kế khi thanh nằm ngang.</li><li>Tính lực của bản lề tác dụng lên thanh tại A (độ lớn và chiều).</li><li>Thay lực kế bằng một lực kế khác chỉ đo được tối đa $28\\ \\text{N}$. Vật phải treo cách A tối đa bao nhiêu để lực kế không vượt thang đo?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c5-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Thanh nằm ngang tựa bản lề ở A, treo vào lực kế ở B; vật 3 kg được dời dần từ gần A tới điểm C, kim lực kế dịch xuống\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"132.0\" x2=\"340.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"7\" opacity=\"1\"/><rect x=\"18.0\" y=\"92.0\" width=\"8.0\" height=\"90.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polygon points=\"40.0,136.0 28.0,154.0 52.0,154.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"40.0\" cy=\"132.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"300.0\" y1=\"22.0\" x2=\"380.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"340.0\" y1=\"22.0\" x2=\"340.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"340.0\" y1=\"96.0\" x2=\"340.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"327.0\" y=\"54.0\" width=\"26.0\" height=\"42.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"48\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"354\" y=\"152\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"280.0\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C</text><line x1=\"280.0\" y1=\"124.0\" x2=\"280.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"327.0\" y1=\"64.8\" x2=\"334.0\" y2=\"64.8\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.6\"/><line x1=\"327.0\" y1=\"71.6\" x2=\"334.0\" y2=\"71.6\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.6\"/><line x1=\"327.0\" y1=\"78.4\" x2=\"334.0\" y2=\"78.4\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.6\"/><line x1=\"327.0\" y1=\"85.2\" x2=\"334.0\" y2=\"85.2\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.6\"/><line x1=\"329\" y1=\"66.8\" x2=\"351\" y2=\"66.8\" stroke=\"#f87171\" stroke-width=\"3\"><animate attributeName=\"y1\" values=\"66.8;81.1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"66.8;81.1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;210.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"70.0\" y1=\"136.0\" x2=\"70.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"55.0\" y=\"154.0\" width=\"30.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"70.0\" y=\"172\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">3 kg</text></g><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">thanh AB: 2 kg, dài 1 m</text><text x=\"16\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 10 m/s²</text><text x=\"318\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F = ?</text><line x1=\"40\" y1=\"214\" x2=\"280.0\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M273.0,209.9 L280.0,214.0 L273.0,218.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"280.0\" y1=\"214\" x2=\"40\" y2=\"214\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M47.0,218.1 L40.0,214.0 L47.0,209.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"160.0\" y=\"232\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">AC = 0,8 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật dời chậm từ gần A tới C (AC = 0,8 m), thanh luôn nằm ngang; kim lực kế dịch xuống dần (thang đo không ghi số). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> moment của lực đối với trục quay $M=F\\,d$ ; $d$ là cánh tay đòn, khoảng cách từ trục quay tới đường tác dụng của lực.</li><li><strong>Quy tắc moment:</strong> vật có trục quay cân bằng khi tổng moment làm vật quay thuận chiều kim đồng hồ bằng tổng moment làm vật quay ngược lại.</li><li>Thanh đồng chất : trọng lực đặt tại trung điểm. Cân bằng còn đòi $\\sum\\vec F=0$ để tìm lực của trục.</li><li>⚠ <strong>Điều kiện:</strong> chọn trục quay tại điểm có lực chưa biết (bản lề) để moment của lực đó bằng 0 ; cánh tay đòn đo vuông góc với đường tác dụng của lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Moment của trọng lực thanh</span></p><p>Thanh đồng chất nên $G$ là trung điểm, $AG=0{,}5\\ \\text{m}$ ; $P_t=10\\cdot2=20\\ \\text{N}$ :</p>$$M_t=P_t\\cdot AG=20\\cdot0{,}5$$<div class=\"bt-ans\">$$M_t=10\\ \\text{N·m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Moment của trọng lực vật</span></p><p>$P_v=10\\cdot3=30\\ \\text{N}$ ; cánh tay đòn tính từ trục quay A đến C :</p>$$M_v=P_v\\cdot AC=30\\cdot0{,}8$$<div class=\"bt-ans\">$$M_v=24\\ \\text{N·m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chỉ lực kế (câu a)</span></p><p>Cân bằng moment đối với trục A (lực bản lề có cánh tay đòn bằng 0) :</p>$$F\\cdot AB=M_t+M_v=10+24$$$$F=\\dfrac{34}{1}$$<div class=\"bt-ans\">$$F=34\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực của bản lề (câu b)</span></p><p>Cân bằng lực theo phương thẳng đứng, gọi $R$ là lực bản lề hướng lên :</p>$$R+F=P_t+P_v$$$$R=20+30-34$$<div class=\"bt-ans\">$$R=16\\ \\text{N}$$</div><p>Dấu dương : lực bản lề hướng lên.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vị trí tối đa của vật (câu c)</span></p><p>Cho lực kế đạt giá trị lớn nhất $F_{max}=28\\ \\text{N}$, gọi $x$ là khoảng cách từ A tới vật :</p>$$F_{max}\\cdot AB=P_t\\cdot AG+P_v\\cdot x$$$$28=10+30x$$<div class=\"bt-ans\">$$x=0{,}6\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Moment đối với B : $R\\cdot AB=P_t\\cdot BG+P_v\\cdot BC=20\\cdot0{,}5+30\\cdot0{,}2=16\\ \\text{N·m}$, khớp $R=16\\ \\text{N}$ ✓</p><p>Vật càng xa A, lực kế càng lớn : ở A thì $F=10\\ \\text{N}$, ở B thì $F=40\\ \\text{N}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=34\\ \\text{N}$</p><p>b) $R=16\\ \\text{N}$, hướng lên</p><p>c) $x_{max}=0{,}6\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>thanh có khối lượng, bản lề, nhiều lực</strong> → chọn trục tại bản lề, viết $\\sum M=0$ rồi $\\sum\\vec F=0$ để tìm lực bản lề.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c5-2\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Thanh AB chịu trọng lực của thanh ở trung điểm G, trọng lực của vật ở C, lực kéo của lực kế ở B và lực của bản lề ở A\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"132.0\" x2=\"340.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"7\" opacity=\"1\"/><rect x=\"18.0\" y=\"92.0\" width=\"8.0\" height=\"90.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polygon points=\"40.0,136.0 28.0,154.0 52.0,154.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"40.0\" cy=\"132.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"300.0\" y1=\"22.0\" x2=\"380.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"340.0\" y1=\"22.0\" x2=\"340.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"340.0\" y1=\"96.0\" x2=\"340.0\" y2=\"132.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"327.0\" y=\"54.0\" width=\"26.0\" height=\"42.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"48\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"354\" y=\"152\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"280.0\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">C</text><line x1=\"280.0\" y1=\"124.0\" x2=\"280.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"190.0\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">G</text><line x1=\"190.0\" y1=\"132\" x2=\"190.0\" y2=\"162.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M195.8,152.0 L190.0,162.0 L184.2,152.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"198.0\" y=\"170\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">t</tspan></text><line x1=\"280.0\" y1=\"132\" x2=\"280.0\" y2=\"177.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M285.8,167.0 L280.0,177.0 L274.2,167.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"288.0\" y=\"184\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">v</tspan></text><text x=\"318\" y=\"70\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F = ?</text><text x=\"58\" y=\"170\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = ?</text><line x1=\"40\" y1=\"190\" x2=\"190.0\" y2=\"190\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M183.0,185.9 L190.0,190.0 L183.0,194.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"190.0\" y1=\"190\" x2=\"40\" y2=\"190\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M47.0,194.1 L40.0,190.0 L47.0,185.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"198.0\" y=\"194\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">AG = 0,5 m</text><line x1=\"40\" y1=\"208\" x2=\"280.0\" y2=\"208\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M273.0,203.9 L280.0,208.0 L273.0,212.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"280.0\" y1=\"208\" x2=\"40\" y2=\"208\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M47.0,212.1 L40.0,208.0 L47.0,203.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"288.0\" y=\"212\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">AC = 0,8 m</text><line x1=\"40\" y1=\"226\" x2=\"340\" y2=\"226\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M333.0,221.9 L340.0,226.0 L333.0,230.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"340\" y1=\"226\" x2=\"40\" y2=\"226\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M47.0,230.1 L40.0,226.0 L47.0,221.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"348\" y=\"230\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">AB = 1 m</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Trục quay: bản lề A</text><text x=\"16\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Σ moment đối với A = 0</text></svg><figcaption>Dữ kiện: cánh tay đòn tính từ trục quay A; lực của lực kế và bản lề chưa biết nên chỉ ghi nhãn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thanh AB đồng chất … dài $1$ m, khối lượng $2$ kg\"</td><td>$AB=1$ m ; $m_t=2$ kg</td><td>Trọng lực thanh đặt tại trung điểm G : $AG=\\dfrac{AB}{2}$ ; $P_t=10m_t$</td></tr><tr><td>\"đầu A tựa vào bản lề\"</td><td>Trục quay qua A</td><td>⚠ Chọn trục quay tại A để moment của lực bản lề bằng 0 (cánh tay đòn bằng 0)</td></tr><tr><td>\"đầu B được giữ bằng lực kế treo thẳng đứng\"</td><td>Lực $\\vec F$ vuông góc thanh tại B</td><td>$M_F=F\\cdot AB$ (lực vuông góc thanh nên cánh tay đòn là $AB$)</td></tr><tr><td>\"vật $3$ kg treo vào C, $AC=0{,}8$ m\"</td><td>$m_v=3$ kg ; $AC=0{,}8$ m</td><td>$P_v=10m_v$ ; $M_v=P_v\\cdot AC$</td></tr><tr><td>\"thanh nằm ngang\" (cân bằng)</td><td>Thanh cân bằng</td><td>⚠ Hai điều kiện : $\\sum M=0$ (chọn trục A) và $\\sum\\vec F=0$ (để tìm lực bản lề)</td></tr><tr><td>\"số chỉ của lực kế\"</td><td>Cần $F$</td><td>$F\\cdot AB=P_t\\cdot AG+P_v\\cdot AC$</td></tr><tr><td>\"lực của bản lề\"</td><td>Cần $R$</td><td>$R+F=P_t+P_v$</td></tr><tr><td>\"lực kế đo tối đa $28$ N … vật cách A tối đa\"</td><td>$F_{max}=28$ N ; cần $x$</td><td>$F_{max}\\cdot AB=P_t\\cdot AG+P_v\\cdot x$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thanh có khối lượng, bản lề, lực kế, vật treo</b> → chọn <b>trục tại bản lề</b>, ΣM = 0 rồi ΣF = 0.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Moment trọng lực thanh",
+     "hoi": "Moment của trọng lực thanh đối với trục quay tại A?",
+     "dap_so": 10,
+     "sai_so": 0.2,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Lấy cánh tay đòn bằng cả chiều dài thanh thay vì tới trung điểm, hoặc bỏ qua khối lượng thanh."
+    },
+    {
+     "tieu_de": "Moment trọng lực vật",
+     "hoi": "Moment của trọng lực vật đối với trục tại A?",
+     "dap_so": 24,
+     "sai_so": 0.5,
+     "don_vi": "N·m",
+     "loi_hay_gap": "Dùng khối lượng (kg) thay cho trọng lượng, hoặc lấy cánh tay đòn $CB$ thay vì $AC$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$M_v=P_v\\cdot AC$ (cánh tay đòn tính từ trục quay A)",
+       "dung": true
+      },
+      {
+       "text": "$M_v=P_v\\cdot CB$",
+       "dung": false,
+       "vi_sao": "Cánh tay đòn tính từ trục quay A đến đường tác dụng của lực, không phải từ C đến B."
+      },
+      {
+       "text": "$M_v=P_v\\cdot AB$",
+       "dung": false,
+       "vi_sao": "$AB$ là chiều dài thanh ; vật treo ở C nên cánh tay đòn là $AC$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số chỉ lực kế",
+     "hoi": "Số chỉ F của lực kế?",
+     "dap_so": 34,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Cộng thẳng trọng lượng thanh và vật (ra lực không đúng) vì quên rằng các lực ở xa trục phải tính theo moment ; hoặc quên moment của thanh.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F\\cdot AB=M_t+M_v$ (cân bằng moment đối với A)",
+       "dung": true
+      },
+      {
+       "text": "$F=P_t+P_v$",
+       "dung": false,
+       "vi_sao": "Các lực đặt ở những điểm khác nhau nên không cộng thẳng được để cân bằng moment ; điều kiện cân bằng lực dùng để tìm lực bản lề."
+      },
+      {
+       "text": "$F\\cdot AB=M_v$",
+       "dung": false,
+       "vi_sao": "Thanh có khối lượng nên trọng lực thanh cũng tạo moment, không được bỏ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực của bản lề",
+     "hoi": "Độ lớn lực của bản lề tác dụng lên thanh?",
+     "dap_so": 16,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho rằng bản lề đỡ toàn bộ trọng lượng ; lực kế cũng kéo thanh lên nên bản lề chỉ đỡ phần còn lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "$R+F=P_t+P_v$ (cân bằng lực theo phương đứng)",
+       "dung": true
+      },
+      {
+       "text": "$R=P_t+P_v$",
+       "dung": false,
+       "vi_sao": "Lực kế cũng kéo thanh lên nên bản lề chỉ đỡ phần còn lại."
+      },
+      {
+       "text": "$R=F$",
+       "dung": false,
+       "vi_sao": "Hai lực này không đối nhau : tổng lực lên phải bằng tổng trọng lượng của thanh và vật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí tối đa của vật",
+     "hoi": "Khoảng cách tối đa x từ A tới vật để lực kế không vượt thang?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Quên moment của trọng lực thanh hoặc dùng $AB$ thay cho $x$ làm cánh tay đòn của vật.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_{max}\\cdot AB=M_t+P_v\\cdot x$",
+       "dung": true
+      },
+      {
+       "text": "$F_{max}=P_v\\cdot x$",
+       "dung": false,
+       "vi_sao": "Quên moment của trọng lực thanh và quên chia cho cánh tay đòn $AB$ của lực kế."
+      },
+      {
+       "text": "$F_{max}\\cdot x=M_t+P_v\\cdot AB$",
+       "dung": false,
+       "vi_sao": "Cánh tay đòn của lực kế là $AB$, của vật là $x$ ; đổi chỗ sẽ sai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Nâng cao · Lực đàn hồi kết hợp ma sát nghỉ: khoảng độ giãn để vật nằm yên trên dốc",
+   "topic": "Định luật Hooke và lực đàn hồi của lò xo",
+   "problem_html": "<p>Một vật khối lượng $m=4\\ \\text{kg}$ đặt trên mặt phẳng nghiêng dài $5\\ \\text{m}$, cao $3\\ \\text{m}$ (khi đó $\\sin\\alpha=0{,}6$ và $\\cos\\alpha=0{,}8$). Vật được nối với một lò xo nhẹ có độ cứng $k=200\\ \\text{N/m}$; trục lò xo song song với mặt phẳng nghiêng, đầu kia của lò xo cố định ở phía trên. Hệ số ma sát nghỉ cực đại giữa vật và mặt phẳng nghiêng là $\\mu=0{,}5$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Nếu không có lò xo, vật có nằm yên được trên mặt phẳng nghiêng không?</li><li>Với lò xo (đang giãn), vật nằm yên. Tìm độ giãn nhỏ nhất và lớn nhất của lò xo.</li><li>Khi lò xo giãn $10\\ \\text{cm}$, tính độ lớn lực ma sát tác dụng lên vật và cho biết chiều của nó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Vật được hạ chậm xuống dốc, lò xo nối với điểm cố định ở phía trên giãn dần rồi vật nằm yên\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"40.0,190.0 240.0,190.0 240.0,40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M74.0,190.0 A34,34 0 0 0 67.2,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"80\" y=\"182\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"148.0\" y=\"145.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 5 m</text><line x1=\"260\" y1=\"43\" x2=\"260\" y2=\"187\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M264.1,180.0 L260.0,187.0 L255.9,180.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"187\" x2=\"260\" y2=\"43\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M255.9,50.0 L260.0,43.0 L264.1,50.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"272\" y=\"119.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 3 m</text><g transform=\"translate(40 190) rotate(-36.87)\"><rect x=\"232.0\" y=\"-42.0\" width=\"6.0\" height=\"42.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"88.0\" y=\"-32.0\" width=\"44.0\" height=\"32.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><path d=\"M132.0,-16.0 L140.0,-16.0 L144.7,-9.0 L154.0,-23.0 L163.3,-9.0 L172.7,-23.0 L182.0,-9.0 L191.3,-23.0 L200.7,-9.0 L210.0,-23.0 L219.3,-9.0 L224.0,-16.0 L232.0,-16.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\"><animate attributeName=\"d\" values=\"M132.0,-16.0 L140.0,-16.0 L144.7,-9.0 L154.0,-23.0 L163.3,-9.0 L172.7,-23.0 L182.0,-9.0 L191.3,-23.0 L200.7,-9.0 L210.0,-23.0 L219.3,-9.0 L224.0,-16.0 L232.0,-16.0;M92.0,-16.0 L103.2,-16.0 L109.7,-9.0 L122.8,-23.0 L135.9,-9.0 L148.9,-23.0 L162.0,-9.0 L175.1,-23.0 L188.1,-9.0 L201.2,-23.0 L214.3,-9.0 L220.8,-16.0 L232.0,-16.0\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></path><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;-40.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"88.0\" y=\"-32.0\" width=\"44.0\" height=\"32.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"0\" y=\"0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\"></text></g></g><text x=\"300\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 4 kg</text><text x=\"300\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">k = 200 N/m</text><text x=\"300\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">μ = 0,5</text><text x=\"300\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 10 m/s²</text><text x=\"300\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δl = 10 cm</text><text x=\"300\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">(ở cuối mô phỏng)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật được hạ chậm xuống dốc, lò xo giãn dần tới 10 cm rồi vật nằm yên (độ giãn vẽ phóng đại). Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực đàn hồi của lò xo chống lại biến dạng và tỉ lệ với độ biến dạng (định luật Hooke).</li><li><strong>Công thức:</strong> $F_{đh}=k\\,\\Delta l$ ($\\Delta l$ đổi ra mét) ; $P_\\parallel=P\\sin\\alpha$ ; $N=P\\cos\\alpha$.</li><li>Ma sát nghỉ : $0\\le F_{ms}\\le\\mu N$, ngược chiều xu hướng trượt.</li><li>⚠ <strong>Điều kiện:</strong> vật nằm yên khi các lực dọc dốc cân bằng ; hai biên của độ giãn ứng với lúc ma sát nghỉ đạt cực đại, một lần hướng lên dốc, một lần hướng xuống dốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thành phần trọng lực dọc dốc</span></p>$$P=10m=40\\ \\text{N}$$$$P_\\parallel=P\\sin\\alpha=40\\cdot0{,}6$$<div class=\"bt-ans\">$$P_\\parallel=24\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ma sát nghỉ cực đại</span></p><p>$N=P\\cos\\alpha=40\\cdot0{,}8=32\\ \\text{N}$ :</p>$$F_{msn,\\max}=\\mu N=0{,}5\\cdot32$$<div class=\"bt-ans\">$$F_{msn,\\max}=16\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Không lò xo, vật có nằm yên? (câu a)</span></p><p>So $P_\\parallel$ với ma sát nghỉ cực đại :</p>$$P_\\parallel=24\\ \\text{N}\\gt F_{msn,\\max}=16\\ \\text{N}$$<div class=\"bt-ans\"><p>Vật không nằm yên được, trượt xuống (cũng vì tanα = 0,75 lớn hơn μ = 0,5).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ giãn nhỏ nhất (câu b)</span></p><p>Biên một : vật sắp trượt xuống, ma sát nghỉ cực đại hướng lên dốc cùng với lực đàn hồi giữ vật :</p>$$F_{đh}+F_{msn,\\max}=P_\\parallel\\Rightarrow F_{đh}=24-16=8\\ \\text{N}$$$$\\Delta l_{min}=\\dfrac{F_{đh}}{k}=\\dfrac{8}{200}=0{,}04\\ \\text{m}$$<div class=\"bt-ans\">$$\\Delta l_{min}=4\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Độ giãn lớn nhất (câu b)</span></p><p>Biên hai : vật sắp trượt lên, ma sát nghỉ cực đại hướng xuống dốc :</p>$$F_{đh}=P_\\parallel+F_{msn,\\max}=24+16=40\\ \\text{N}$$$$\\Delta l_{max}=\\dfrac{40}{200}=0{,}2\\ \\text{m}$$<div class=\"bt-ans\">$$\\Delta l_{max}=20\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Ma sát khi $\\Delta l=10\\ \\text{cm}$ (câu c)</span></p>$$F_{đh}=k\\,\\Delta l=200\\cdot0{,}1=20\\ \\text{N}$$<p>$F_{đh}=20\\ \\text{N}\\lt P_\\parallel=24\\ \\text{N}$ : lò xo chưa đủ giữ vật, ma sát nghỉ phải bù phần còn thiếu, hướng lên dốc :</p>$$F_{ms}=P_\\parallel-F_{đh}=24-20$$<div class=\"bt-ans\">$$F_{ms}=4\\ \\text{N}$$</div><p>Dấu dương : ma sát nghỉ hướng lên dốc.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>$\\Delta l=10\\ \\text{cm}$ nằm trong đoạn từ $4\\ \\text{cm}$ đến $20\\ \\text{cm}$ ✓</p><p>$F_{ms}=4\\ \\text{N}\\le F_{msn,\\max}=16\\ \\text{N}$ nên vật nằm yên ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) vật không nằm yên được (trượt xuống)</p><p>b) $4\\ \\text{cm}\\le\\Delta l\\le20\\ \\text{cm}$</p><p>c) $F_{ms}=4\\ \\text{N}$, hướng lên dốc</p></div><p class=\"bt-note\">Nhận dạng: <strong>lò xo + ma sát nghỉ + dốc, hỏi khoảng nằm yên</strong> → viết hai biên $F_{đh}=P_\\parallel\\mp\\mu N$ rồi chia cho $k$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Vật trên dốc nối với lò xo giãn có trục song song mặt dốc, đầu trên của lò xo cố định\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"40.0,190.0 240.0,190.0 240.0,40.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linejoin=\"round\"/><path d=\"M74.0,190.0 A34,34 0 0 0 67.2,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"80\" y=\"182\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"148.0\" y=\"145.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l = 5 m</text><g transform=\"translate(40 190) rotate(-36.87)\"><rect x=\"232.0\" y=\"-42.0\" width=\"6.0\" height=\"42.0\" rx=\"0\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"70.0\" y=\"-32.0\" width=\"44.0\" height=\"32.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M114.0,-16.0 L123.4,-16.0 L128.9,-9.0 L140.0,-23.0 L151.0,-9.0 L162.0,-23.0 L173.0,-9.0 L184.0,-23.0 L195.0,-9.0 L206.0,-23.0 L217.1,-9.0 L222.6,-16.0 L232.0,-16.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/></g><line x1=\"104.00000000000001\" y1=\"122.00000000000001\" x2=\"104.0\" y2=\"170.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M109.8,160.0 L104.0,170.0 L98.2,160.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"112.0\" y=\"176.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><text x=\"300\" y=\"40\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">đh</tspan><tspan dy=\"-4\"> = k·Δl</tspan></text><text x=\"300\" y=\"62\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">0 ≤ F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> ≤ μ·N</tspan></text><text x=\"300\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Hai biên:</text><text x=\"300\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">sắp trượt xuống</text><text x=\"300\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">sắp trượt lên</text></svg><figcaption>Dữ kiện: lò xo giãn kéo vật lên dốc; ma sát nghỉ ngược xu hướng trượt, tối đa μN. Hình minh hoạ, không đúng tỉ lệ. Độ giãn vẽ phóng đại.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vật $4$ kg … mặt phẳng nghiêng dài $5$ m, cao $3$ m\"</td><td>$m=4$ kg ; $\\sin\\alpha=0{,}6$ ; $\\cos\\alpha=0{,}8$</td><td>$P=10m$ ; $P_\\parallel=P\\sin\\alpha$ ; $N=P\\cos\\alpha$</td></tr><tr><td>\"hệ số ma sát nghỉ cực đại $\\mu=0{,}5$\"</td><td>$\\mu=0{,}5$</td><td>$F_{msn,\\max}=\\mu N$ ; ⚠ ma sát nghỉ nằm trong $0\\le F_{ms}\\le\\mu N$, ngược xu hướng trượt</td></tr><tr><td>\"lò xo nhẹ, $k=200$ N/m, trục song song mặt phẳng nghiêng\"</td><td>$k=200$ N/m</td><td>$F_{đh}=k\\,\\Delta l$ ($\\Delta l$ đổi ra mét) ; lò xo giãn thì kéo vật về phía đầu cố định, tức lên dốc</td></tr><tr><td>\"nếu không có lò xo\"</td><td>Chỉ còn $P_\\parallel$ và ma sát</td><td>⚠ Nằm yên chỉ khi $P_\\parallel\\le\\mu N$ (hay $\\tan\\alpha\\le\\mu$)</td></tr><tr><td>\"vật nằm yên … độ giãn nhỏ nhất và lớn nhất\"</td><td>Hai trạng thái biên của ma sát nghỉ</td><td>⚠ Biên một : vật sắp trượt xuống ; biên hai : vật sắp trượt lên (ma sát nghỉ đạt cực đại, đổi chiều)</td></tr><tr><td>\"lò xo giãn $10$ cm … lực ma sát\"</td><td>$\\Delta l=10$ cm</td><td>$F_{đh}=k\\,\\Delta l$ ; cân bằng dọc dốc : $F_{đh}+F_{ms}=P_\\parallel$ nếu $F_{đh}\\lt P_\\parallel$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>lò xo + ma sát nghỉ trên dốc, hỏi khoảng nằm yên</b> → viết hai biên <b>F_đh = P∥ ∓ μN</b> rồi chia k.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thành phần trọng lực dọc dốc",
+     "hoi": "Thành phần trọng lực dọc mặt phẳng nghiêng?",
+     "dap_so": 24,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $P\\cos\\alpha$ cho thành phần dọc dốc, hoặc quên hệ số $g=10$."
+    },
+    {
+     "tieu_de": "Ma sát nghỉ cực đại",
+     "hoi": "Lực ma sát nghỉ cực đại?",
+     "dap_so": 16,
+     "sai_so": 0.5,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $\\mu P$ thay cho $\\mu N$ (áp lực lên dốc là $P\\cos\\alpha$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_{msn,\\max}=\\mu\\,P\\cos\\alpha$",
+       "dung": true
+      },
+      {
+       "text": "$F_{msn,\\max}=\\mu\\,P$",
+       "dung": false,
+       "vi_sao": "Áp lực lên mặt phẳng nghiêng là $P\\cos\\alpha$, không phải $P$."
+      },
+      {
+       "text": "$F_{msn,\\max}=\\mu\\,P\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "Thành phần dọc dốc không ép vật vào mặt phẳng nên không tạo ma sát."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Không lò xo, vật có nằm yên?",
+     "hoi": "Nếu không có lò xo, vật có nằm yên được không?",
+     "lua_chon": [
+      {
+       "text": "Không : thành phần dọc dốc lớn hơn ma sát nghỉ cực đại, vật trượt xuống",
+       "dung": true
+      },
+      {
+       "text": "Có : vì có ma sát nên vật luôn đứng yên",
+       "dung": false,
+       "vi_sao": "Ma sát nghỉ có giới hạn $\\mu N$ ; vượt giới hạn thì vật vẫn trượt."
+      },
+      {
+       "text": "Có : vì $\\mu$ nhỏ hơn $1$",
+       "dung": false,
+       "vi_sao": "Phải so $P_\\parallel$ với $\\mu N$ (hay $\\tan\\alpha$ với $\\mu$) ; $\\mu\\lt1$ chưa kết luận được."
+      }
+     ],
+     "loi_hay_gap": "Thấy có ma sát và $\\mu\\lt1$ nên kết luận vật đứng yên mà không so $P_\\parallel$ với $\\mu N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $P_\\parallel$ với $F_{msn,\\max}$",
+       "dung": true
+      },
+      {
+       "text": "Tính ngay độ giãn của lò xo",
+       "dung": false,
+       "vi_sao": "Câu này hỏi khi không có lò xo, chưa liên quan đến lò xo."
+      },
+      {
+       "text": "Chỉ nhìn $\\mu\\lt1$ rồi kết luận",
+       "dung": false,
+       "vi_sao": "Hệ số ma sát nhỏ hơn $1$ chưa đủ để kết luận ; phải so thành phần dọc dốc với $\\mu N$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ giãn nhỏ nhất",
+     "hoi": "Độ giãn nhỏ nhất của lò xo (cm)?",
+     "dap_so": 4,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Bỏ qua ma sát nghỉ (cho lò xo đỡ cả $P_\\parallel$) hoặc quên đổi mét ra xentimét.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật sắp trượt xuống : $F_{đh}+F_{msn,\\max}=P_\\parallel$",
+       "dung": true
+      },
+      {
+       "text": "$F_{đh}=P_\\parallel$",
+       "dung": false,
+       "vi_sao": "Bỏ qua ma sát nghỉ ; thực tế ma sát cũng giúp giữ vật nên lò xo không phải đỡ cả $P_\\parallel$."
+      },
+      {
+       "text": "$F_{đh}=P_\\parallel+F_{msn,\\max}$",
+       "dung": false,
+       "vi_sao": "Dấu cộng ứng với lúc vật sắp trượt lên (ma sát hướng xuống) — đó là biên lớn nhất, không phải nhỏ nhất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ giãn lớn nhất",
+     "hoi": "Độ giãn lớn nhất của lò xo (cm)?",
+     "dap_so": 20,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng chung một chiều ma sát cho cả hai biên ; biên lớn nhất cần ma sát hướng xuống dốc.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật sắp trượt lên : $F_{đh}=P_\\parallel+F_{msn,\\max}$",
+       "dung": true
+      },
+      {
+       "text": "$F_{đh}=P_\\parallel-F_{msn,\\max}$",
+       "dung": false,
+       "vi_sao": "Đó là biên nhỏ nhất ; biên lớn nhất khi ma sát nghỉ cực đại hướng cùng chiều $P_\\parallel$."
+      },
+      {
+       "text": "$F_{đh}=\\mu P$",
+       "dung": false,
+       "vi_sao": "Ma sát nghỉ không phải lực đàn hồi, và áp lực không phải $P$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ma sát khi lò xo giãn $10\\ \\text{cm}$",
+     "hoi": "Độ lớn lực ma sát nghỉ khi lò xo giãn $10\\ \\text{cm}$ (N)?",
+     "dap_so": 4,
+     "sai_so": 0.2,
+     "don_vi": "N",
+     "loi_hay_gap": "Ghi luôn $\\mu N$ (ma sát cực đại) hoặc lấy ma sát bằng lực đàn hồi.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_{đh}\\lt P_\\parallel$ nên ma sát nghỉ hướng lên dốc và bù phần thiếu",
+       "dung": true
+      },
+      {
+       "text": "$F_{ms}=\\mu N$ vì ma sát nghỉ luôn đạt cực đại",
+       "dung": false,
+       "vi_sao": "Ma sát nghỉ chỉ lớn bằng mức cần để vật đứng yên, không phải lúc nào cũng cực đại."
+      },
+      {
+       "text": "$F_{ms}=k\\,\\Delta l$",
+       "dung": false,
+       "vi_sao": "$k\\,\\Delta l$ là lực đàn hồi của lò xo, không phải lực ma sát."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Hai lực $9\\ \\text{N}$ và $12\\ \\text{N}$ cùng đặt vào một vật. Tính độ lớn hợp lực khi hai lực :</p><p>a) cùng phương, cùng chiều ;</p><p>b) cùng phương, ngược chiều ;</p><p>c) vuông góc với nhau.</p><details><summary>Hướng dẫn giải</summary><p>a) $R=9+12=21\\ \\text{N}$.</p><p>b) $R=12-9=3\\ \\text{N}$.</p><p>c) $R=\\sqrt{9^2+12^2}=\\sqrt{225}=15\\ \\text{N}$.</p><p>Kiểm tra : $3\\ \\text{N}\\le R\\le21\\ \\text{N}$ ✓.</p></details><h4>Bài 2 · Dễ</h4><p>Một hộp khối lượng $8\\ \\text{kg}$ đặt trên sàn nằm ngang. Hệ số ma sát nghỉ cực đại là $0{,}3$, hệ số ma sát trượt là $0{,}25$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Đẩy hộp bằng lực nằm ngang $15\\ \\text{N}$ : hộp có trượt không ? Tính lực ma sát.</p><p>b) Tính lực đẩy nằm ngang nhỏ nhất để hộp bắt đầu trượt.</p><p>c) Tính lực đẩy ngang để hộp trượt đều.</p><details><summary>Hướng dẫn giải</summary><p>$N=P=10\\cdot8=80\\ \\text{N}$.</p><p>a) $F_{msn,\\max}=0{,}3\\cdot80=24\\ \\text{N}$ và $15\\ \\text{N}\\lt24\\ \\text{N}$ : hộp đứng yên, $F_{ms}=15\\ \\text{N}$.</p><p>b) Hộp bắt đầu trượt khi lực đẩy vượt $24\\ \\text{N}$ nên lực đẩy nhỏ nhất xấp xỉ $24\\ \\text{N}$.</p><p>c) $F=F_{mst}=0{,}25\\cdot80=20\\ \\text{N}$.</p></details><h4>Bài 3 · Dễ</h4><p>Một lò xo có chiều dài tự nhiên $20\\ \\text{cm}$. Treo vào lò xo một vật khối lượng $0{,}4\\ \\text{kg}$ thì lò xo dài $24\\ \\text{cm}$ (vật đứng yên). Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính độ cứng của lò xo.</p><p>b) Treo vật $0{,}7\\ \\text{kg}$ thì lò xo dài bao nhiêu ? (coi chưa vượt giới hạn đàn hồi).</p><details><summary>Hướng dẫn giải</summary><p>a) $\\Delta l=24-20=4\\ \\text{cm}=0{,}04\\ \\text{m}$ ; $F_{đh}=P=10\\cdot0{,}4=4\\ \\text{N}$ ; $k=\\dfrac{F_{đh}}{\\Delta l}=\\dfrac{4}{0{,}04}=100\\ \\text{N/m}$.</p><p>b) $F_{đh}=10\\cdot0{,}7=7\\ \\text{N}$ ; $\\Delta l=\\dfrac{7}{100}=0{,}07\\ \\text{m}=7\\ \\text{cm}$ ; chiều dài $20+7=27\\ \\text{cm}$.</p></details><h4>Bài 4 · Trung bình</h4><p>Một thanh AB đồng chất, dài $90\\ \\text{cm}$, khối lượng $3\\ \\text{kg}$, đặt trên điểm tựa O cách đầu A $30\\ \\text{cm}$. Treo vào A một vật khối lượng $24\\ \\text{kg}$. Cần tác dụng vào đầu B một lực $F$ hướng xuống, vuông góc với thanh, để thanh nằm ngang cân bằng. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính $F$ nếu bỏ qua khối lượng thanh.</p><p>b) Tính $F$ khi kể đến khối lượng thanh.</p><details><summary>Hướng dẫn giải</summary><p>Trọng lượng vật $P_v=240\\ \\text{N}$, cánh tay đòn $OA=0{,}3\\ \\text{m}$ ; $OB=0{,}6\\ \\text{m}$.</p><p>a) $F\\cdot OB=P_v\\cdot OA\\Rightarrow F=\\dfrac{240\\cdot0{,}3}{0{,}6}=120\\ \\text{N}$.</p><p>b) Trọng tâm G cách A $45\\ \\text{cm}$ nên cách O $15\\ \\text{cm}$, về phía B ; $P_t=30\\ \\text{N}$.</p><p>$F\\cdot OB+P_t\\cdot OG=P_v\\cdot OA\\Rightarrow F\\cdot0{,}6=72-30\\cdot0{,}15=67{,}5$.</p><p>$F=\\dfrac{67{,}5}{0{,}6}=112{,}5\\ \\text{N}$ (nhỏ hơn câu a vì trọng lực thanh cũng giúp quay về phía B).</p></details><h4>Bài 5 · Trung bình</h4><p>Một quả cầu khối lượng $3\\ \\text{kg}$ được treo vào tường thẳng đứng nhẵn bằng một sợi dây. Dây hợp với tường góc $\\alpha$ có $\\cos\\alpha=0{,}8$ và $\\tan\\alpha=0{,}75$. Lấy $g=10\\ \\text{m/s}^2$. Tính lực căng dây và lực nén của quả cầu lên tường.</p><details><summary>Hướng dẫn giải</summary><p>Quả cầu chịu ba lực : trọng lực $P=30\\ \\text{N}$, lực căng $T$ (dọc dây), phản lực $N$ của tường (vuông góc tường, tức nằm ngang).</p><p>Theo phương thẳng đứng : $T\\cos\\alpha=P\\Rightarrow T=\\dfrac{30}{0{,}8}=37{,}5\\ \\text{N}$.</p><p>Theo phương ngang : $N=T\\sin\\alpha=P\\tan\\alpha=30\\cdot0{,}75=22{,}5\\ \\text{N}$.</p><p>Lực nén lên tường có độ lớn bằng $N$ (định luật III), tức $22{,}5\\ \\text{N}$.</p></details><h4>Bài 6 · Khó</h4><p>Vật khối lượng $20\\ \\text{kg}$ đặt trên mặt phẳng nghiêng dài $10\\ \\text{m}$, cao $6\\ \\text{m}$ (nên $\\sin\\alpha=0{,}6$ và $\\cos\\alpha=0{,}8$). Coi hệ số ma sát nghỉ cực đại và hệ số ma sát trượt cùng bằng $0{,}5$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Vật có tự đứng yên được không ?</p><p>b) Tính lực nhỏ nhất, song song mặt dốc và hướng lên, để giữ vật đứng yên.</p><p>c) Tính lực song song mặt dốc, hướng lên, để kéo vật đi lên đều.</p><details><summary>Hướng dẫn giải</summary><p>$P=200\\ \\text{N}$ ; $P_\\parallel=200\\cdot0{,}6=120\\ \\text{N}$ ; $N=200\\cdot0{,}8=160\\ \\text{N}$ ; $\\mu N=0{,}5\\cdot160=80\\ \\text{N}$.</p><p>a) $P_\\parallel=120\\ \\text{N}\\gt80\\ \\text{N}$ (cũng vì $\\tan\\alpha=0{,}75\\gt0{,}5$) : vật không tự đứng yên.</p><p>b) Lực nhỏ nhất khi ma sát nghỉ cực đại hướng lên dốc : $F+80=120\\Rightarrow F=40\\ \\text{N}$.</p><p>c) Đi lên đều, ma sát hướng xuống : $F=120+80=200\\ \\text{N}$.</p></details><h4>Bài 7 · Khó</h4><p>Một thùng khối lượng $20\\ \\text{kg}$ trên sàn nằm ngang, hệ số ma sát trượt $\\mu=0{,}75$. Lấy $g=10\\ \\text{m/s}^2$. Kéo thùng trượt đều :</p><p>a) bằng lực nằm ngang ; tính lực kéo.</p><p>b) bằng lực hợp với phương ngang góc $\\alpha$ hướng lên, với $\\cos\\alpha=0{,}8$ và $\\sin\\alpha=0{,}6$ ; tính lực kéo.</p><p>c) bằng lực hợp góc $\\alpha$ với $\\cos\\alpha=0{,}6$ và $\\sin\\alpha=0{,}8$ ; tính lực kéo và so sánh ba kết quả.</p><details><summary>Hướng dẫn giải</summary><p>$P=200\\ \\text{N}$.</p><p>a) $F=\\mu P=0{,}75\\cdot200=150\\ \\text{N}$.</p><p>b) Phản lực $N=P-F\\sin\\alpha$ ; trượt đều : $F\\cos\\alpha=\\mu(P-F\\sin\\alpha)$, suy ra $F=\\dfrac{\\mu P}{\\cos\\alpha+\\mu\\sin\\alpha}=\\dfrac{150}{0{,}8+0{,}75\\cdot0{,}6}=\\dfrac{150}{1{,}25}=120\\ \\text{N}$.</p><p>c) $F=\\dfrac{150}{0{,}6+0{,}75\\cdot0{,}8}=\\dfrac{150}{1{,}2}=125\\ \\text{N}$.</p><p>So sánh : $120\\ \\text{N}\\lt125\\ \\text{N}\\lt150\\ \\text{N}$. Kéo xiên lên thì lực nén của sàn giảm nên ma sát giảm ; lực kéo nhỏ nhất khi $\\tan\\alpha=\\mu$ (đúng với câu b, $\\tan\\alpha=0{,}75$).</p></details><h4>Bài 8 · Nâng cao</h4><p>Thang AB đồng chất, dài $5\\ \\text{m}$, khối lượng $20\\ \\text{kg}$. Đầu A tựa vào tường thẳng đứng nhẵn, đầu B đặt trên sàn nằm ngang ; chân thang cách tường $3\\ \\text{m}$ (A cao $4\\ \\text{m}$). Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính phản lực của tường, lực ma sát nghỉ của sàn tác dụng lên thang và hệ số ma sát nghỉ tối thiểu của sàn để thang đứng yên.</p><p>b) Một người khối lượng $60\\ \\text{kg}$ leo lên điểm cách chân thang $3\\ \\text{m}$ (đo dọc thang). Tính lại hệ số ma sát nghỉ tối thiểu.</p><details><summary>Hướng dẫn giải</summary><p>Lực tác dụng lên thang : trọng lực thang $P=200\\ \\text{N}$ tại trung điểm ; phản lực tường $N_t$ (nằm ngang, tại A) ; phản lực sàn $N_s$ (thẳng đứng) và ma sát nghỉ $F_{ms}$ (nằm ngang) tại B.</p><p>Chọn trục quay tại B để loại $N_s$ và $F_{ms}$. Khoảng cách ngang từ B tới điểm cách B một đoạn $s$ dọc thang là $0{,}6s$ ; độ cao của A là $4\\ \\text{m}$.</p><p>a) Trọng tâm cách B $2{,}5\\ \\text{m}$ nên cánh tay đòn ngang $1{,}5\\ \\text{m}$ : $N_t\\cdot4=200\\cdot1{,}5\\Rightarrow N_t=75\\ \\text{N}$.</p><p>Theo phương ngang : $F_{ms}=N_t=75\\ \\text{N}$ ; theo phương đứng : $N_s=P=200\\ \\text{N}$ ; $\\mu_{min}=\\dfrac{75}{200}=0{,}375$.</p><p>b) Người cách B $3\\ \\text{m}$ nên cánh tay đòn ngang $1{,}8\\ \\text{m}$ ; trọng lượng người $600\\ \\text{N}$ : $N_t\\cdot4=200\\cdot1{,}5+600\\cdot1{,}8=1380\\Rightarrow N_t=345\\ \\text{N}$.</p><p>$F_{ms}=345\\ \\text{N}$ ; $N_s=200+600=800\\ \\text{N}$ ; $\\mu_{min}=\\dfrac{345}{800}\\approx0{,}43$ (người leo càng cao thì càng dễ trượt).</p></details>"
+ }
+}

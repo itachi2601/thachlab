@@ -1,0 +1,622 @@
+{
+ "lesson_id": 154,
+ "lesson_title": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại khớp; đã sửa theo báo cáo."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Áp suất chất lỏng nhiều lớp, áp lực lên đáy và lên nắp ở thành bình",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một bình hình trụ thẳng đứng, đáy nằm ngang có diện tích $S=200\\ \\text{cm}^2$, chứa hai lớp chất lỏng không hòa tan: lớp nước dày $40\\ \\text{cm}$ ở dưới và lớp dầu dày $20\\ \\text{cm}$ nổi phía trên. Khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$, của dầu là $800\\ \\text{kg/m}^3$. Bình để hở; chỉ tính áp suất do hai lớp chất lỏng gây ra, bỏ qua áp suất khí quyển. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính áp suất do chất lỏng gây ra tại đáy bình.</li><li>Tính áp lực của chất lỏng lên đáy bình.</li><li>Ở thành bình có một lỗ tròn diện tích $5\\ \\text{cm}^2$, tâm lỗ cách đáy $10\\ \\text{cm}$, được bịt kín bằng một nắp. Tính lực tối thiểu cần giữ để nắp không bị bật ra (coi áp suất tại mọi điểm của lỗ bằng áp suất tại tâm lỗ).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e1-0\"><svg viewBox=\"0 0 420 234\" role=\"img\" aria-label=\"Bình trụ thẳng đứng chứa lớp nước ở dưới và lớp dầu nổi phía trên, thành bình có một lỗ nhỏ bịt nắp gần đáy\"><defs><marker id=\"e10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"150.0\" y=\"110.0\" width=\"100.0\" height=\"96.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"><animate attributeName=\"y\" values=\"206.0;110.0;110.0\" keyTimes=\"0;0.6;1\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;96.0;96.0\" keyTimes=\"0;0.6;1\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"150.0\" y=\"62.0\" width=\"100.0\" height=\"48.0\" fill=\"#facc15\" fill-opacity=\"0.4\" stroke=\"none\"><animate attributeName=\"y\" values=\"110.0;110.0;62.0\" keyTimes=\"0;0.6;1\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;0.0;48.0\" keyTimes=\"0;0.6;1\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"150,48.0 150,206 250,206 250,48.0\"/><line x1=\"150.0\" y1=\"110.0\" x2=\"250.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><rect x=\"248.0\" y=\"177.0\" width=\"10.0\" height=\"10.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"200\" y=\"90.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">dầu</text><text x=\"200\" y=\"150.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">nước</text><text x=\"266\" y=\"176.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">lỗ có nắp</text><text x=\"266\" y=\"198.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">S<tspan dy=\"4\" font-size=\"9\">l</tspan><tspan dy=\"-4\"> = 5 cm²</tspan></text><line x1=\"128\" y1=\"63.0\" x2=\"128\" y2=\"109.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M132.1,102.0 L128.0,109.0 L123.9,102.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"128\" y1=\"109.0\" x2=\"128\" y2=\"63.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M123.9,70.0 L128.0,63.0 L132.1,70.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"122\" y=\"90.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h<tspan dy=\"4\" font-size=\"9\">d</tspan><tspan dy=\"-4\"> = 20 cm</tspan></text><line x1=\"128\" y1=\"111.0\" x2=\"128\" y2=\"205\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M132.1,198.0 L128.0,205.0 L123.9,198.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"128\" y1=\"205\" x2=\"128\" y2=\"111.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M123.9,118.0 L128.0,111.0 L132.1,118.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"122\" y=\"162.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h<tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\"> = 40 cm</tspan></text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">S = 200 cm²</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"9\">d</tspan><tspan dy=\"-4\"> = 800 kg/m³</tspan></text><text x=\"16\" y=\"62\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\"> = 1000 kg/m³</tspan></text><text x=\"200\" y=\"228\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">p_đáy = ?   F_đáy = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: rót nước tới 40 cm rồi rót dầu 20 cm lên trên (chạy 3 s). Lỗ có nắp ở thành bình, cách đáy 10 cm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chất lỏng gây áp suất lên đáy, thành bình và mọi vật trong lòng nó.</li><li><strong>Công thức:</strong> $p=d\\,h=10D\\,h$ ; áp lực $F=p\\,S$.</li><li>Nhiều lớp không hòa tan chồng nhau : $p=d_1h_1+d_2h_2+\\dots$</li><li>⚠ <strong>Điều kiện:</strong> $h$ đo từ mặt thoáng (hoặc từ mặt phân cách, với lớp bên dưới) xuống điểm xét ; $S$ đổi ra m².</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Áp suất của lớp dầu tại mặt phân cách</span></p><p>Trọng lượng riêng của dầu $d_d=10D_d=8000\\ \\text{N/m}^3$, của nước $d_n=10000\\ \\text{N/m}^3$.</p>$$p_1=d_d\\,h_d=8000\\cdot0{,}2$$<div class=\"bt-ans\">$$p_1=1600\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Áp suất tại đáy bình</span></p><p>Cột nước dày $40\\ \\text{cm}$ gây thêm áp suất, cộng vào áp suất của lớp dầu:</p>$$p_{đáy}=p_1+d_n\\,h_n=1600+10000\\cdot0{,}4$$<div class=\"bt-ans\">$$p_{đáy}=5600\\ \\text{Pa}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Áp lực lên đáy bình</span></p><p>Đổi $S=200\\ \\text{cm}^2=0{,}02\\ \\text{m}^2$:</p>$$F_{đáy}=p_{đáy}\\,S=5600\\cdot0{,}02$$<div class=\"bt-ans\">$$F_{đáy}=112\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực giữ nắp ở thành bình</span></p><p>Tâm lỗ cách đáy $10\\ \\text{cm}$ nên nằm trong lớp nước, cách mặt phân cách $40-10=30\\ \\text{cm}$:</p>$$p_l=p_1+d_n\\cdot0{,}3=1600+10000\\cdot0{,}3=4600\\ \\text{Pa}$$<p>Đổi $S_l=5\\ \\text{cm}^2=5\\cdot10^{-4}\\ \\text{m}^2$:</p>$$F_l=p_l\\,S_l=4600\\cdot5\\cdot10^{-4}$$<div class=\"bt-ans\">$$F_l=2{,}3\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Trọng lượng nước : $10\\cdot1000\\cdot0{,}02\\cdot0{,}4=80\\ \\text{N}$ ; trọng lượng dầu : $10\\cdot800\\cdot0{,}02\\cdot0{,}2=32\\ \\text{N}$.</p><p>Tổng $112\\ \\text{N}$ bằng áp lực lên đáy ✓ (bình trụ thẳng đứng thì áp lực lên đáy bằng trọng lượng chất lỏng).</p><p>$p_l\\lt p_{đáy}$ vì lỗ cao hơn đáy $10\\ \\text{cm}$ ✓. Tính $h$ từ đáy lên sẽ ra áp suất sai nhiều lần.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $p_{đáy}=5600\\ \\text{Pa}$</p><p>b) $F_{đáy}=112\\ \\text{N}$</p><p>c) $F_l=2{,}3\\ \\text{N}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>nhiều lớp chất lỏng chồng nhau</strong> → cộng $d\\,h$ của từng lớp ; <strong>độ sâu đo từ mặt thoáng</strong>, không đo từ đáy.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e1-2\"><svg viewBox=\"0 0 420 234\" role=\"img\" aria-label=\"Bình hai lớp chất lỏng: độ sâu h của lỗ đo từ mặt thoáng của lớp dầu xuống tâm lỗ\"><defs><marker id=\"e12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"150.0\" y=\"110.0\" width=\"100.0\" height=\"96.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><rect x=\"150.0\" y=\"62.0\" width=\"100.0\" height=\"48.0\" fill=\"#facc15\" fill-opacity=\"0.4\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"150,48.0 150,206 250,206 250,48.0\"/><line x1=\"150.0\" y1=\"110.0\" x2=\"250.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><rect x=\"248.0\" y=\"177.0\" width=\"10.0\" height=\"10.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"200\" y=\"90.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">dầu</text><text x=\"200\" y=\"150.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">nước</text><text x=\"266\" y=\"176.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">lỗ có nắp</text><text x=\"266\" y=\"198.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">S<tspan dy=\"4\" font-size=\"9\">l</tspan><tspan dy=\"-4\"> = 5 cm²</tspan></text><line x1=\"128\" y1=\"63.0\" x2=\"128\" y2=\"109.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M132.1,102.0 L128.0,109.0 L123.9,102.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"128\" y1=\"109.0\" x2=\"128\" y2=\"63.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M123.9,70.0 L128.0,63.0 L132.1,70.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"122\" y=\"90.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h<tspan dy=\"4\" font-size=\"9\">d</tspan><tspan dy=\"-4\"> = 20 cm</tspan></text><line x1=\"128\" y1=\"111.0\" x2=\"128\" y2=\"205\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M132.1,198.0 L128.0,205.0 L123.9,198.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"128\" y1=\"205\" x2=\"128\" y2=\"111.0\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M123.9,118.0 L128.0,111.0 L132.1,118.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"122\" y=\"162.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h<tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\"> = 40 cm</tspan></text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">S = 200 cm²</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"9\">d</tspan><tspan dy=\"-4\"> = 800 kg/m³</tspan></text><text x=\"16\" y=\"62\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"9\">n</tspan><tspan dy=\"-4\"> = 1000 kg/m³</tspan></text><line x1=\"380\" y1=\"63.0\" x2=\"380\" y2=\"181.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M384.1,174.0 L380.0,181.0 L375.9,174.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"380\" y1=\"181.0\" x2=\"380\" y2=\"63.0\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M375.9,70.0 L380.0,63.0 L384.1,70.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"388\" y=\"126.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h</text><line x1=\"258.0\" y1=\"182.0\" x2=\"380.0\" y2=\"182.0\" stroke=\"#fb923c\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><line x1=\"350\" y1=\"183.0\" x2=\"350\" y2=\"205\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M354.1,198.0 L350.0,205.0 L345.9,198.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"350\" y1=\"205\" x2=\"350\" y2=\"183.0\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M345.9,190.0 L350.0,183.0 L354.1,190.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"356\" y=\"199.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">10 cm</text><text x=\"260\" y=\"114.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">mặt phân cách</text></svg><figcaption>Dữ kiện: h đo từ mặt thoáng xuống điểm xét ; lỗ nằm trong lớp nước. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai lớp chất lỏng không hòa tan … nước dày $40$ cm, dầu dày $20$ cm nổi phía trên\"</td><td>$h_n=40$ cm ; $h_d=20$ cm</td><td>⚠ Hai lớp chồng nhau : áp suất tại đáy là tổng áp suất của từng lớp</td></tr><tr><td>\"khối lượng riêng nước $1000$, dầu $800$ kg/m³\"</td><td>$D_n=1000$ ; $D_d=800$ kg/m³</td><td>$d=10D$ ; $p=d\\,h$</td></tr><tr><td>\"bỏ qua áp suất khí quyển\"</td><td>Chỉ tính $p$ do chất lỏng</td><td>⚠ $h$ đo từ mặt thoáng (hoặc từ mặt phân cách, với lớp bên dưới) xuống điểm xét, không đo từ đáy lên</td></tr><tr><td>\"áp suất … tại đáy bình\"</td><td>Cần $p_{đáy}$</td><td>$p=d_dh_d+d_nh_n$</td></tr><tr><td>\"áp lực … lên đáy ; $S=200$ cm²\"</td><td>$S=200$ cm²</td><td>$F=p\\,S$ ; đổi cm² ra m²</td></tr><tr><td>\"lỗ tròn $5$ cm², tâm lỗ cách đáy $10$ cm\"</td><td>$S_l=5$ cm² ; cách đáy $10$ cm</td><td>Lỗ nằm trong lớp nước ; độ sâu tính từ mặt thoáng ; $F=p_l\\,S_l$</td></tr><tr><td>\"lực tối thiểu giữ nắp\"</td><td>Cần $F$</td><td>Lực giữ bằng áp lực chất lỏng lên nắp : $F=p_l\\,S_l$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều lớp chất lỏng chồng nhau</b> → nghĩ tới <b>cộng d·h của từng lớp</b>, h đo từ mặt thoáng xuống.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Áp suất của lớp dầu tại mặt phân cách",
+     "hoi": "Áp suất do lớp dầu gây ra tại mặt phân cách là bao nhiêu?",
+     "dap_so": 1600,
+     "sai_so": 10,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Quên đổi khối lượng riêng sang trọng lượng riêng ($d=10D$) nên ra áp suất nhỏ hơn 10 lần."
+    },
+    {
+     "tieu_de": "Áp suất tại đáy bình",
+     "hoi": "Áp suất do chất lỏng gây ra tại đáy bình là bao nhiêu?",
+     "dap_so": 5600,
+     "sai_so": 30,
+     "don_vi": "Pa",
+     "loi_hay_gap": "Coi cả cột $60\\ \\text{cm}$ là nước ($p=d_n\\cdot0{,}6$), hoặc bỏ lớp dầu vì nó nằm phía trên.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng áp suất của hai lớp : $p=d_dh_d+d_nh_n$",
+       "dung": true
+      },
+      {
+       "text": "$p=d_n\\,(h_d+h_n)$ coi cả cột chất lỏng là nước",
+       "dung": false,
+       "vi_sao": "Dầu nhẹ hơn nước ($d_d=8000\\ \\text{N/m}^3$) nên cột dầu gây áp suất nhỏ hơn cột nước cùng độ cao."
+      },
+      {
+       "text": "$p=d_n\\,h_n$ vì dầu nằm trên nước nên không đè xuống",
+       "dung": false,
+       "vi_sao": "Mọi lớp chất lỏng nằm phía trên điểm xét đều gây áp suất ; lớp dầu truyền áp suất xuống tận đáy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Áp lực lên đáy bình",
+     "hoi": "Áp lực của chất lỏng lên đáy bình bằng bao nhiêu?",
+     "dap_so": 112,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Giữ nguyên $S=200$ (cm²) khi nhân với áp suất tính bằng Pa nên ra kết quả sai $10^4$ lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F=p\\,S$ với $S$ đổi ra $\\text{m}^2$",
+       "dung": true
+      },
+      {
+       "text": "$F=\\dfrac{p}{S}$",
+       "dung": false,
+       "vi_sao": "Áp suất là lực trên một đơn vị diện tích nên lực là tích $p\\cdot S$, không phải thương."
+      },
+      {
+       "text": "$F=p\\,S$ với $S=200$ (giữ nguyên cm²)",
+       "dung": false,
+       "vi_sao": "Áp suất tính bằng Pa $=\\text{N/m}^2$ nên diện tích phải đổi ra $\\text{m}^2$ : $200\\ \\text{cm}^2=0{,}02\\ \\text{m}^2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực giữ nắp ở thành bình",
+     "hoi": "Lực tối thiểu giữ nắp bằng bao nhiêu?",
+     "dap_so": 2.3,
+     "sai_so": 0.05,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy độ sâu của lỗ là $10\\ \\text{cm}$ (khoảng cách tới đáy) hoặc dùng luôn áp suất tại đáy cho lỗ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Độ sâu đo từ mặt thoáng ; áp suất tại lỗ = áp suất lớp dầu + áp suất cột nước từ mặt phân cách xuống lỗ",
+       "dung": true
+      },
+      {
+       "text": "Độ sâu của lỗ là khoảng cách tới đáy nên $p=d_n\\cdot0{,}1$",
+       "dung": false,
+       "vi_sao": "$h$ trong $p=d\\,h$ đo từ mặt thoáng xuống điểm xét, không đo từ đáy lên."
+      },
+      {
+       "text": "Lỗ ở sát đáy nên dùng luôn áp suất tại đáy",
+       "dung": false,
+       "vi_sao": "Lỗ cao hơn đáy nên áp suất nhỏ hơn áp suất tại đáy ; mỗi độ sâu có một áp suất riêng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Bình thông nhau chứa hai chất lỏng không hòa tan (tiết diện hai nhánh khác nhau)",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "problem_html": "<p>Một ống chữ U có hai nhánh hình trụ thẳng đứng, tiết diện nhánh trái $S_1=30\\ \\text{cm}^2$, nhánh phải $S_2=20\\ \\text{cm}^2$. Ban đầu ống chứa nước, mỗi nhánh có cột nước cao $40\\ \\text{cm}$ tính từ đáy ống, hai mặt thoáng ngang nhau. Người ta đổ dầu ($D_d=800\\ \\text{kg/m}^3$) vào nhánh trái cho tới khi cột dầu cao $h_d=25\\ \\text{cm}$. Dầu không hòa tan và không chảy sang nhánh phải ; $D_n=1000\\ \\text{kg/m}^3$.</p><ol type=\"a\"><li>Tính độ cao $h_n$ của cột nước ở nhánh phải, tính từ mặt phân cách dầu – nước ở nhánh trái.</li><li>Mực nước ở nhánh phải dâng thêm bao nhiêu so với trước khi đổ dầu?</li><li>Mặt thoáng ở nhánh nào cao hơn và cao hơn bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e2-0\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Ống chữ U hai nhánh tiết diện khác nhau chứa nước, đổ dầu vào nhánh trái làm mực nước nhánh phải dâng lên\"><defs><marker id=\"e20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"90.0\" y=\"122.4\" width=\"66.0\" height=\"112.6\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"><animate attributeName=\"y\" values=\"107.0;122.4\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"128.0;112.6\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"262.0\" y=\"84.0\" width=\"44.0\" height=\"151.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"><animate attributeName=\"y\" values=\"107.0;84.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"128.0;151.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"90.0\" y=\"74.4\" width=\"66.0\" height=\"48.0\" fill=\"#facc15\" fill-opacity=\"0.4\" stroke=\"none\"><animate attributeName=\"y\" values=\"107.0;74.4\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;48.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><rect x=\"156.0\" y=\"215.0\" width=\"106.0\" height=\"20.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"90,34 90,235 306,235 306,34\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"156,34 156,215 262,215 262,34\"/><text x=\"123.0\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">S<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 30 cm²</tspan></text><text x=\"284.0\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">S<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = 20 cm²</tspan></text><text x=\"123.0\" y=\"98.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">dầu</text><text x=\"123.0\" y=\"150.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">nước</text><text x=\"318\" y=\"70\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"8\">d</tspan><tspan dy=\"-4\"> = 800 kg/m³</tspan></text><text x=\"318\" y=\"88\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"8\">n</tspan><tspan dy=\"-4\"> = 1000 kg/m³</tspan></text><text x=\"318\" y=\"120\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">đề: dầu 25 cm</text><text x=\"318\" y=\"138\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">hình: dầu 15 cm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đổ dần dầu vào nhánh trái (cột dầu mẫu 15 cm để quan sát hiện tượng, không phải 25 cm của đề): nước ở nhánh phải dâng, hai mặt thoáng lệch nhau.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai điểm cùng độ cao trong cùng một chất lỏng đứng yên có áp suất bằng nhau.</li><li><strong>Phương pháp:</strong> chọn mặt phẳng chuẩn qua mặt phân cách thấp nhất, lập $p_A=p_B$.</li><li>Bảo toàn thể tích nước : $S_1x=S_2y$ ; cột nước trên mặt phẳng chuẩn : $h_n=x+y$.</li><li>⚠ <strong>Điều kiện:</strong> hai chất lỏng không hòa tan ; chỉ cùng một chất lỏng mới có mặt thoáng ngang nhau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cột nước bên phải: cân bằng áp suất</span></p><p>Mặt phẳng chuẩn là mặt phẳng ngang qua mặt phân cách dầu – nước ở nhánh trái (điểm A). Điểm B ở nhánh phải cùng độ cao, trong nước.</p>$$p_A=p_B\\Rightarrow d_d\\,h_d=d_n\\,h_n$$$$h_n=\\dfrac{d_d\\,h_d}{d_n}=\\dfrac{8000\\cdot25}{10000}$$<div class=\"bt-ans\">$$h_n=20\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nước ở nhánh phải dâng bao nhiêu</span></p><p>Nước ở nhánh trái hạ $x$, nhánh phải dâng $y$ ; thể tích nước chuyển sang bằng nhau:</p>$$S_1x=S_2y\\Rightarrow x=\\dfrac{S_2}{S_1}\\,y$$<p>Cột nước phía trên mặt phẳng chuẩn ở nhánh phải gồm cả đoạn nước hạ ở nhánh trái:</p>$$h_n=x+y=y\\left(1+\\dfrac{S_2}{S_1}\\right)$$$$y=\\dfrac{h_n\\,S_1}{S_1+S_2}=\\dfrac{20\\cdot30}{30+20}$$<div class=\"bt-ans\">$$y=12\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ chênh hai mặt thoáng</span></p><p>Mặt thoáng dầu cách mặt phẳng chuẩn $h_d$, mặt thoáng nước cách mặt phẳng chuẩn $h_n$ :</p>$$\\Delta h=h_d-h_n=25-20$$<div class=\"bt-ans\">$$\\Delta h=5\\ \\text{cm}$$</div><p>Mặt thoáng dầu ở nhánh trái cao hơn, vì dầu nhẹ hơn nước.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Hạ ở nhánh trái : $x=h_n-y=8\\ \\text{cm}$ ; $S_1x=30\\cdot8=240\\ \\text{cm}^3=S_2y=20\\cdot12$ ✓.</p><p>Áp suất tại A : $8000\\cdot0{,}25=2000\\ \\text{Pa}$ ; tại B : $10000\\cdot0{,}2=2000\\ \\text{Pa}$ ✓.</p><p>Nếu coi $x=y$ sẽ ra $y=10\\ \\text{cm}$ và $S_1x\\ne S_2y$ — trái bảo toàn thể tích.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $h_n=20\\ \\text{cm}$</p><p>b) $y=12\\ \\text{cm}$</p><p>c) Mặt thoáng dầu (nhánh trái) cao hơn mặt thoáng nước $5\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>hai chất lỏng trong ống chữ U</strong> → mặt phẳng chuẩn qua mặt phân cách, $p_A=p_B$ ; <strong>tiết diện khác nhau</strong> → $S_1x=S_2y$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e2-2\"><svg viewBox=\"0 0 420 252\" role=\"img\" aria-label=\"Ống chữ U: mặt phẳng chuẩn đi qua mặt phân cách dầu nước, hai điểm A và B nằm trên mặt phẳng đó\"><defs><marker id=\"e22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"90.0\" y=\"122.4\" width=\"66.0\" height=\"112.6\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><rect x=\"262.0\" y=\"84.0\" width=\"44.0\" height=\"151.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><rect x=\"90.0\" y=\"74.4\" width=\"66.0\" height=\"48.0\" fill=\"#facc15\" fill-opacity=\"0.4\" stroke=\"none\"></rect><rect x=\"156.0\" y=\"215.0\" width=\"106.0\" height=\"20.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"90,34 90,235 306,235 306,34\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"156,34 156,215 262,215 262,34\"/><text x=\"123.0\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">S<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 30 cm²</tspan></text><text x=\"284.0\" y=\"28\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">S<tspan dy=\"4\" font-size=\"9\">2</tspan><tspan dy=\"-4\"> = 20 cm²</tspan></text><text x=\"123.0\" y=\"98.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">dầu</text><text x=\"123.0\" y=\"150.4\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">nước</text><line x1=\"82.0\" y1=\"107.0\" x2=\"314.0\" y2=\"107.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><text x=\"209\" y=\"101.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">mức nước ban đầu</text><line x1=\"82.0\" y1=\"122.4\" x2=\"314.0\" y2=\"122.4\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"0.95\"/><circle cx=\"124.0\" cy=\"122.4\" r=\"4.5\" fill=\"#34d399\"/><text x=\"116\" y=\"114.4\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><circle cx=\"284.0\" cy=\"122.4\" r=\"4.5\" fill=\"#34d399\"/><text x=\"292\" y=\"114.4\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"209\" y=\"138.4\" fill=\"#34d399\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">mặt phẳng chuẩn</text><line x1=\"68\" y1=\"75.36\" x2=\"68\" y2=\"121.36\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M72.1,114.3 L68.0,121.4 L63.9,114.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"68\" y1=\"121.36\" x2=\"68\" y2=\"75.36\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M63.9,82.4 L68.0,75.4 L72.1,82.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"62\" y=\"102.4\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h<tspan dy=\"4\" font-size=\"10\">d</tspan></text><line x1=\"334\" y1=\"84.96\" x2=\"334\" y2=\"121.36\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M338.1,114.3 L334.0,121.4 L329.9,114.3\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"334\" y1=\"121.36\" x2=\"334\" y2=\"84.96\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M329.9,92.0 L334.0,85.0 L338.1,92.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"340\" y=\"107.2\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h<tspan dy=\"4\" font-size=\"10\">n</tspan></text><text x=\"16\" y=\"246\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">x : nước nhánh trái hạ · y : nước nhánh phải dâng · h<tspan dy=\"4\" font-size=\"8\">n</tspan><tspan dy=\"-4\"> = x + y</tspan></text></svg><figcaption>Dữ kiện: A trên mặt phân cách (nhánh trái), B cùng độ cao trong nước (nhánh phải). Hình vẽ với dầu 15 cm ; đề là 25 cm. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ống chữ U … nước … đổ dầu vào nhánh trái\"</td><td>Hai chất lỏng không hòa tan</td><td>⚠ Chỉ cùng một chất lỏng đứng yên mới có mặt thoáng ngang nhau ; ở đây hai mặt thoáng lệch nhau</td></tr><tr><td>\"tiết diện $S_1=30$ cm², $S_2=20$ cm²\"</td><td>$S_1=30$ cm² ; $S_2=20$ cm²</td><td>⚠ Tiết diện khác nhau : nước hạ $x$ ở nhánh trái, dâng $y$ ở nhánh phải với $S_1x=S_2y$ (không phải $x=y$)</td></tr><tr><td>\"cột dầu cao $h_d=25$ cm\"</td><td>$h_d=25$ cm ; $D_d=800$ ; $D_n=1000$ kg/m³</td><td>Mặt phẳng chuẩn qua mặt phân cách ; $p_A=d_dh_d$</td></tr><tr><td>\"độ cao $h_n$ của cột nước ở nhánh phải\"</td><td>Cần $h_n$</td><td>$p_B=d_nh_n$ ; $p_A=p_B$</td></tr><tr><td>\"mực nước ở nhánh phải dâng thêm\"</td><td>Cần $y$</td><td>$h_n=x+y$ ; $S_1x=S_2y$</td></tr><tr><td>\"mặt thoáng ở nhánh nào cao hơn\"</td><td>So $h_d$ với $h_n$</td><td>Hai mặt thoáng cách mặt phẳng chuẩn lần lượt $h_d$ và $h_n$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai chất lỏng trong ống chữ U</b> → nghĩ tới <b>mặt phẳng chuẩn qua mặt phân cách, p_A = p_B</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cột nước bên phải: cân bằng áp suất",
+     "hoi": "Cột nước ở nhánh phải, tính từ mặt phẳng chuẩn, cao bao nhiêu?",
+     "dap_so": 20,
+     "sai_so": 0.3,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $h_n$ là độ cao mặt nước nhánh phải so với đáy ống, hoặc là phần nước dâng thêm $y$, thay vì cột nước tính từ mặt phẳng chuẩn."
+    },
+    {
+     "tieu_de": "Nước ở nhánh phải dâng bao nhiêu",
+     "hoi": "Nước ở nhánh phải dâng thêm bao nhiêu so với lúc đầu?",
+     "dap_so": 12,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cho rằng nước hạ ở nhánh trái bằng nước dâng ở nhánh phải ($x=y$), hoặc coi cột nước $h_n$ chính là đoạn dâng $y$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $S_1x=S_2y$ và $h_n=x+y$",
+       "dung": true
+      },
+      {
+       "text": "$x=y$ vì nước chuyển từ nhánh này sang nhánh kia",
+       "dung": false,
+       "vi_sao": "Hai nhánh có tiết diện khác nhau nên thể tích nước chuyển bằng nhau chứ độ cao thì khác : $S_1x=S_2y$."
+      },
+      {
+       "text": "$h_n=y$ vì chỉ nhánh phải có nước phía trên mặt phẳng chuẩn",
+       "dung": false,
+       "vi_sao": "Mặt phân cách ở nhánh trái đã hạ $x$ so với mức đầu nên cột nước trên mặt phẳng chuẩn là $x+y$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ chênh hai mặt thoáng",
+     "hoi": "Mặt thoáng dầu cao hơn mặt thoáng nước bao nhiêu?",
+     "dap_so": 5,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cho rằng bình thông nhau thì hai mặt thoáng luôn ngang nhau, hoặc trừ $h_d$ cho phần dâng $y$ thay vì cho $h_n$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta h=h_d-h_n$ vì hai mặt thoáng cách mặt phẳng chuẩn lần lượt $h_d$ và $h_n$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta h=0$ vì bình thông nhau luôn có mặt thoáng ngang nhau",
+       "dung": false,
+       "vi_sao": "Nguyên tắc đó chỉ đúng với MỘT chất lỏng đứng yên ; ở đây có hai chất lỏng khác khối lượng riêng."
+      },
+      {
+       "text": "$\\Delta h=h_d-y$",
+       "dung": false,
+       "vi_sao": "$y$ là độ dâng so với mức ban đầu, không phải khoảng cách tới mặt phẳng chuẩn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Vật nổi: phần chìm, quả cân đè và mực nước dâng trong bình",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Một khối gỗ hình hộp chữ nhật có đáy diện tích $S_g=40\\ \\text{cm}^2$, cao $h=20\\ \\text{cm}$, khối lượng riêng $D_g=700\\ \\text{kg/m}^3$. Khối gỗ được thả nổi thẳng đứng (đáy nằm ngang) trong một bình trụ có diện tích đáy $S=160\\ \\text{cm}^2$, ban đầu chứa nước sâu $30\\ \\text{cm}$ (nước không tràn, khối gỗ không chạm đáy bình). Lấy $D_n=1000\\ \\text{kg/m}^3$, $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính chiều cao phần khối gỗ chìm trong nước.</li><li>Đặt lên mặt trên khối gỗ một quả cân để khối gỗ vừa chìm hoàn toàn (mặt trên ngang mặt nước). Tính khối lượng tối thiểu của quả cân.</li><li>Khi chưa đặt quả cân, mực nước trong bình dâng thêm bao nhiêu so với trước khi thả khối gỗ?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e3-0\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Khối gỗ thả xuống mặt nước, dao động rồi nổi yên với một phần chìm trong nước\"><defs><marker id=\"e30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"40.0\" y=\"120.0\" width=\"340.0\" height=\"70.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"40,60 40,190 380,190 380,60\"/><line x1=\"40.0\" y1=\"120.0\" x2=\"380.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 -64.0;0.0 0.0;0.0 -8.0;0.0 0.0;0.0 -2.0;0.0 0.0\" keyTimes=\"0;0.35;0.55;0.75;0.9;1\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"190.0\" y=\"90.0\" width=\"60.0\" height=\"60.0\" rx=\"0\" fill=\"#92400e\" fill-opacity=\".35\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/></g><text x=\"52\" y=\"84\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">gỗ mẫu : D = 500 kg/m³</text><text x=\"52\" y=\"102\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">nước : D = 1000 kg/m³</text><text x=\"262\" y=\"40\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">khối của đề : D = 700 kg/m³</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khối gỗ mẫu có D = 500 kg/m³ nên chìm một nửa ; khối gỗ của đề có D khác nên phần chìm khác. Chạy 2,4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực đẩy Archimedes $F_A=10D_{cl}V_{ch}$ hướng lên, $V_{ch}$ là thể tích phần chìm.</li><li><strong>Điều kiện nổi:</strong> $P=F_A$ ; chìm hoàn toàn thì $F_A$ đạt cực đại $F_{A(max)}=10D_{cl}V$.</li><li>Khối hộp thẳng đứng : $\\dfrac{h_{ch}}{h}=\\dfrac{D_v}{D_{cl}}$ ; nước dâng $\\Delta h=\\dfrac{V_{ch}}{S_{bình}}$.</li><li>⚠ <strong>Điều kiện:</strong> $V_{ch}$ là phần CHÌM, không phải cả khối ; $S$ trong $\\Delta h$ là tiết diện của BÌNH.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phần khối gỗ chìm</span></p><p>Gỗ nổi cân bằng, $P=F_A$ :</p>$$10D_gS_gh=10D_nS_gh_{ch}$$$$h_{ch}=h\\,\\dfrac{D_g}{D_n}=20\\cdot\\dfrac{700}{1000}$$<div class=\"bt-ans\">$$h_{ch}=14\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Quả cân để khối gỗ vừa chìm hết</span></p><p>Thể tích khối gỗ : $V=S_gh=40\\cdot20=800\\ \\text{cm}^3=8\\cdot10^{-4}\\ \\text{m}^3$.</p>$$P_{gỗ}=10D_gV=10\\cdot700\\cdot8\\cdot10^{-4}=5{,}6\\ \\text{N}$$$$F_{A(max)}=10D_nV=10\\cdot1000\\cdot8\\cdot10^{-4}=8\\ \\text{N}$$<p>Vừa chìm hết : lực đẩy cực đại cân bằng trọng lượng gỗ cộng quả cân :</p>$$P_{cân}=F_{A(max)}-P_{gỗ}=8-5{,}6=2{,}4\\ \\text{N}$$$$m=\\dfrac{P_{cân}}{10}$$<div class=\"bt-ans\">$$m=0{,}24\\ \\text{kg}=240\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Mực nước dâng trong bình</span></p><p>Nước bị chiếm chỗ đúng bằng thể tích phần chìm :</p>$$V_{ch}=S_gh_{ch}=40\\cdot14=560\\ \\text{cm}^3$$<p>Thể tích này dàn ra trên tiết diện cả bình :</p>$$\\Delta h=\\dfrac{V_{ch}}{S}=\\dfrac{560}{160}$$<div class=\"bt-ans\">$$\\Delta h=3{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Lực đẩy khi nổi : $10\\cdot1000\\cdot560\\cdot10^{-6}=5{,}6\\ \\text{N}=P_{gỗ}$ ✓.</p><p>Mực nước mới $30+3{,}5=33{,}5\\ \\text{cm}\\gt h_{ch}=14\\ \\text{cm}$ nên khối gỗ không chạm đáy ✓.</p><p>Dùng cả thể tích $800\\ \\text{cm}^3$ sẽ ra $\\Delta h=5\\ \\text{cm}$ — lớn hơn thực tế, vì gỗ nổi chỉ chiếm chỗ phần chìm.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $h_{ch}=14\\ \\text{cm}$</p><p>b) $m=240\\ \\text{g}$</p><p>c) $\\Delta h=3{,}5\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật nổi thẳng đứng</strong> → $P=F_A$, $\\dfrac{h_{ch}}{h}=\\dfrac{D_v}{D_n}$ ; <strong>nước dâng trong bình</strong> → $\\Delta h=\\dfrac{V_{ch}}{S_{bình}}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e3-2\"><svg viewBox=\"0 0 420 204\" role=\"img\" aria-label=\"Bên trái khối gỗ nổi tự do với trọng lực và lực đẩy bằng nhau; bên phải quả cân đặt lên làm khối gỗ vừa chìm hoàn toàn\"><defs><marker id=\"e32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"8.0\" y=\"120.0\" width=\"190.0\" height=\"70.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"8,70 8,190 198,190 198,70\"/><line x1=\"8.0\" y1=\"120.0\" x2=\"198.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><rect x=\"70.0\" y=\"102.0\" width=\"60.0\" height=\"60.0\" rx=\"0\" fill=\"#92400e\" fill-opacity=\".35\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><line x1=\"100.0\" y1=\"132.0\" x2=\"100.0\" y2=\"172.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M105.8,162.0 L100.0,172.0 L94.2,162.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"122.0\" y=\"172.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"100.0\" y1=\"132.0\" x2=\"100.0\" y2=\"92.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M94.2,102.0 L100.0,92.0 L105.8,102.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"122.0\" y=\"102.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">A</tspan></text><line x1=\"144\" y1=\"121\" x2=\"144\" y2=\"161.0\" stroke=\"#f87171\" stroke-width=\"1.8\"/><path d=\"M148.1,154.0 L144.0,161.0 L139.9,154.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"144\" y1=\"161.0\" x2=\"144\" y2=\"121\" stroke=\"#f87171\" stroke-width=\"1.8\"/><path d=\"M139.9,128.0 L144.0,121.0 L148.1,128.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"150\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h<tspan dy=\"4\" font-size=\"10\">ch</tspan></text><text x=\"14\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Nổi tự do : P = F<tspan dy=\"4\" font-size=\"10\">A</tspan></text><text x=\"14\" y=\"58\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">(hai vectơ bằng nhau)</text><rect x=\"222.0\" y=\"120.0\" width=\"190.0\" height=\"70.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"222,70 222,190 412,190 412,70\"/><line x1=\"222.0\" y1=\"120.0\" x2=\"412.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><rect x=\"322.0\" y=\"120.0\" width=\"60.0\" height=\"60.0\" rx=\"0\" fill=\"#92400e\" fill-opacity=\".35\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><rect x=\"336.0\" y=\"96.0\" width=\"32.0\" height=\"24.0\" rx=\"0\" fill=\"#475569\" fill-opacity=\".5\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"352\" y=\"112\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">m</text><text x=\"228\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Quả cân : chìm vừa hết</text><text x=\"228\" y=\"58\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"8\">A</tspan><tspan dy=\"-4\"> đạt cực đại</tspan></text><line x1=\"308\" y1=\"121\" x2=\"308\" y2=\"179\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M312.1,172.0 L308.0,179.0 L303.9,172.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"308\" y1=\"179\" x2=\"308\" y2=\"121\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M303.9,128.0 L308.0,121.0 L312.1,128.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"302\" y=\"156\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">h = 20 cm</text></svg><figcaption>Dữ kiện: nổi tự do thì P = F_A (vectơ bằng nhau) ; thêm quả cân đến khi chìm vừa hết thì lực đẩy cực đại. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thả nổi thẳng đứng\"</td><td>Cân bằng : hợp lực bằng 0</td><td>⚠ Vật nổi : $P=F_A$ với $F_A$ tính theo thể tích phần CHÌM $V_{ch}$, không phải cả khối</td></tr><tr><td>\"$S_g=40$ cm², $h=20$ cm, $D_g=700$ kg/m³\"</td><td>$S_g=40$ cm² ; $h=20$ cm ; $D_g=700$ kg/m³</td><td>$P=10D_gS_gh$ ; $F_A=10D_nS_gh_{ch}$</td></tr><tr><td>\"chiều cao phần khối gỗ chìm\"</td><td>Cần $h_{ch}$</td><td>$P=F_A\\Rightarrow\\dfrac{h_{ch}}{h}=\\dfrac{D_g}{D_n}$</td></tr><tr><td>\"quả cân … vừa chìm hoàn toàn\"</td><td>$V_{ch}=V$ (cả khối)</td><td>⚠ $F_A$ cực đại khi chìm hết : $P_{gỗ}+P_{cân}=F_{A(max)}$</td></tr><tr><td>\"khối lượng tối thiểu của quả cân\"</td><td>Cần $m$</td><td>$P_{cân}=F_{A(max)}-P_{gỗ}$ ; $m=\\dfrac{P_{cân}}{10}$</td></tr><tr><td>\"bình trụ $S=160$ cm², nước sâu $30$ cm\"</td><td>$S=160$ cm²</td><td>Nước dâng vì bị vật chiếm chỗ : $\\Delta h=\\dfrac{V_{ch}}{S}$ (tiết diện BÌNH)</td></tr><tr><td>\"mực nước dâng thêm\"</td><td>Cần $\\Delta h$</td><td>$V_{ch}=S_g\\,h_{ch}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật nổi thẳng đứng</b> → nghĩ tới <b>P = F_A</b>, h_ch/h = D_v/D_n ; <b>nước dâng</b> → chia cho tiết diện bình.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phần khối gỗ chìm",
+     "hoi": "Chiều cao phần khối gỗ chìm trong nước là bao nhiêu?",
+     "dap_so": 14,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Đảo tỉ số ($h_{ch}=h\\,D_n/D_g$) nên ra phần chìm lớn hơn cả chiều cao khối gỗ."
+    },
+    {
+     "tieu_de": "Quả cân để khối gỗ vừa chìm hết",
+     "hoi": "Khối lượng tối thiểu của quả cân là bao nhiêu?",
+     "dap_so": 240,
+     "sai_so": 2,
+     "don_vi": "g",
+     "loi_hay_gap": "Quên trọng lượng khối gỗ (coi $P_{cân}=F_{A(max)}$), hoặc nhầm đơn vị kg và g.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_{gỗ}+P_{cân}=F_{A(max)}$ với $V_{ch}=V$ (cả khối)",
+       "dung": true
+      },
+      {
+       "text": "$P_{cân}=F_{A(max)}$",
+       "dung": false,
+       "vi_sao": "Lực đẩy phải nâng cả khối gỗ lẫn quả cân ; khối gỗ cũng có trọng lượng."
+      },
+      {
+       "text": "$P_{cân}=P_{gỗ}$ (quả cân nặng bằng khối gỗ)",
+       "dung": false,
+       "vi_sao": "Khối lượng đó thừa ; điều kiện tối thiểu là tổng trọng lượng bằng đúng lực đẩy cực đại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mực nước dâng trong bình",
+     "hoi": "Mực nước trong bình dâng thêm bao nhiêu khi thả khối gỗ (chưa có quả cân)?",
+     "dap_so": 3.5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia thể tích cả khối gỗ (thay vì phần chìm) hoặc chia cho tiết diện khối gỗ thay vì tiết diện bình.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta h=\\dfrac{V_{ch}}{S_{bình}}$ : thể tích phần chìm chia tiết diện bình",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta h=\\dfrac{V_{gỗ}}{S_{bình}}$ : dùng thể tích cả khối",
+       "dung": false,
+       "vi_sao": "Gỗ nổi chỉ chiếm chỗ phần chìm, không phải cả khối."
+      },
+      {
+       "text": "$\\Delta h=h_{ch}$ : mực dâng bằng phần chìm",
+       "dung": false,
+       "vi_sao": "Thể tích bị chiếm chỗ dàn ra trên tiết diện cả bình nên mực dâng nhỏ hơn nhiều phần chìm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Vật chịu thêm lực căng: lực kế (trọng lượng biểu kiến) và dây buộc đáy bình",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Một quả cầu đặc bằng kim loại được treo vào lực kế. Lực kế chỉ $3{,}6\\ \\text{N}$ khi quả cầu ở trong không khí, chỉ $2{,}4\\ \\text{N}$ khi quả cầu chìm hoàn toàn trong nước và chỉ $2{,}76\\ \\text{N}$ khi chìm hoàn toàn trong chất lỏng X. Lấy $D_n=1000\\ \\text{kg/m}^3$, $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính thể tích và khối lượng riêng của quả cầu.</li><li>Tính khối lượng riêng của chất lỏng X.</li><li>Một khối nhựa có thể tích $500\\ \\text{cm}^3$ và khối lượng $200\\ \\text{g}$ được buộc vào đáy bình nước bằng một sợi dây nhẹ, không giãn, khối nhựa chìm hoàn toàn. Tính lực căng của dây.</li><li>Cắt dây, khối nhựa nổi lên và nằm yên trên mặt nước. Tính thể tích phần khối nhựa chìm trong nước.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e4-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Quả cầu kim loại treo vào lực kế được hạ từ không khí xuống chìm hoàn toàn trong nước\"><defs><marker id=\"e40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"130.0\" y=\"166.0\" width=\"160.0\" height=\"66.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"130,126 130,232 290,232 290,126\"/><line x1=\"130.0\" y1=\"166.0\" x2=\"290.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 -44.0;0.0 0.0\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"210.0\" cy=\"48.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"195.0\" y=\"54.0\" width=\"30.0\" height=\"50.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"60.0\" x2=\"210.0\" y2=\"98.0\" stroke=\"#94a3b8\" stroke-width=\"3\" stroke-dasharray=\"4 3\" opacity=\"1\"/><line x1=\"210.0\" y1=\"104.0\" x2=\"210.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"210.0\" cy=\"186.0\" r=\"16\" fill=\"#64748b\" fill-opacity=\".55\" stroke=\"currentColor\" stroke-width=\"2.6\"/><text x=\"210\" y=\"83\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">N</text></g><text x=\"12\" y=\"40\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Trong không khí : 3,6 N</text><text x=\"12\" y=\"60\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Chìm trong nước : 2,4 N</text><text x=\"12\" y=\"80\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Chìm trong chất lỏng X : 2,76 N</text><text x=\"300\" y=\"166\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nước</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạ quả cầu từ không khí xuống chìm hoàn toàn trong nước (chạy 2,5 s). Số chỉ lực kế ghi theo đề.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trọng lượng biểu kiến (số chỉ lực kế khi nhúng) $P_{bk}=P-F_A$.</li><li><strong>Vật chìm treo lực kế:</strong> $P=F_A+P_{bk}$ · <strong>Vật nhẹ bị dây buộc đáy:</strong> $F_A=P+T$.</li><li>$F_A=10D_{cl}V$ ; $D=\\dfrac{m}{V}$ với $m=\\dfrac{P}{10}$.</li><li>⚠ <strong>Điều kiện:</strong> xác định chiều của lực căng (lên hay xuống) trước khi lập phương trình cân bằng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực đẩy của nước lên quả cầu</span></p><p>Số chỉ lực kế khi nhúng là trọng lượng biểu kiến, nên lực đẩy là độ giảm số chỉ :</p>$$F_{A1}=P-P_1=3{,}6-2{,}4$$<div class=\"bt-ans\">$$F_{A1}=1{,}2\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khối lượng riêng của quả cầu</span></p><p>Quả cầu chìm hoàn toàn nên $V$ là thể tích quả cầu :</p>$$V=\\dfrac{F_{A1}}{10D_n}=\\dfrac{1{,}2}{10\\cdot1000}=1{,}2\\cdot10^{-4}\\ \\text{m}^3=120\\ \\text{cm}^3$$$$m=\\dfrac{P}{10}=0{,}36\\ \\text{kg}$$$$D=\\dfrac{m}{V}=\\dfrac{0{,}36}{1{,}2\\cdot10^{-4}}$$<div class=\"bt-ans\">$$D=3000\\ \\text{kg/m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khối lượng riêng của chất lỏng X</span></p><p>Cùng quả cầu, cùng thể tích $V$ :</p>$$F_{A2}=P-P_2=3{,}6-2{,}76=0{,}84\\ \\text{N}$$$$D_X=\\dfrac{F_{A2}}{10V}=\\dfrac{0{,}84}{10\\cdot1{,}2\\cdot10^{-4}}$$<div class=\"bt-ans\">$$D_X=700\\ \\text{kg/m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực căng dây giữ khối nhựa</span></p><p>$V=500\\ \\text{cm}^3=5\\cdot10^{-4}\\ \\text{m}^3$ ; $P=10m=2\\ \\text{N}$ ; lực đẩy khi chìm hết :</p>$$F_A=10D_nV=10\\cdot1000\\cdot5\\cdot10^{-4}=5\\ \\text{N}$$<p>Dây buộc ở đáy kéo khối nhựa xuống, vật đứng yên :</p>$$F_A=P+T\\Rightarrow T=F_A-P=5-2$$<div class=\"bt-ans\">$$T=3\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Cắt dây: phần chìm khi nổi yên</span></p><p>Hết lực căng, vật nổi cân bằng :</p>$$P=F_A'=10D_nV_{ch}$$$$V_{ch}=\\dfrac{P}{10D_n}=\\dfrac{2}{10\\cdot1000}=2\\cdot10^{-4}\\ \\text{m}^3$$<div class=\"bt-ans\">$$V_{ch}=200\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Quả cầu : $D=3000\\gt D_n$ nên chìm, đúng với đề ; $D_X=700\\lt D_n$ nên lực đẩy trong X nhỏ hơn trong nước ✓ (số chỉ $2{,}76\\gt2{,}4$).</p><p>Khối nhựa : $D=\\dfrac{0{,}2}{5\\cdot10^{-4}}=400\\lt D_n$ nên mới cần dây giữ chìm ✓. Phần chìm $\\dfrac{200}{500}=40\\%=\\dfrac{D}{D_n}$ ✓.</p><p>Nhầm $F_{A1}$ bằng số chỉ $2{,}4\\ \\text{N}$ sẽ ra $V=240\\ \\text{cm}^3$ — gấp đôi.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V=120\\ \\text{cm}^3$ · $D=3000\\ \\text{kg/m}^3$</p><p>b) $D_X=700\\ \\text{kg/m}^3$</p><p>c) $T=3\\ \\text{N}$</p><p>d) $V_{ch}=200\\ \\text{cm}^3$</p></div><p class=\"bt-note\">Nhận dạng: <strong>số chỉ lực kế khi nhúng</strong> → $F_A=P-P_{bk}$ ; <strong>dây buộc đáy giữ vật nhẹ</strong> → $F_A=P+T$ (dây kéo xuống).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e4-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Bên trái lực kế giữ quả cầu chìm trong nước; bên phải khối nhựa bị dây buộc xuống đáy bình\"><defs><marker id=\"e42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"10.0\" y=\"130.0\" width=\"190.0\" height=\"80.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"10,90 10,210 200,210 200,90\"/><line x1=\"10.0\" y1=\"130.0\" x2=\"200.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><line x1=\"100.0\" y1=\"26.0\" x2=\"100.0\" y2=\"144.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"100.0\" cy=\"160.0\" r=\"16\" fill=\"#64748b\" fill-opacity=\".55\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"128\" y1=\"160\" x2=\"128.0\" y2=\"210.4\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M133.8,200.4 L128.0,210.4 L122.2,200.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"136\" y=\"208\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">P = 3,6 N</text><line x1=\"128\" y1=\"160\" x2=\"128.0\" y2=\"126.4\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M122.2,136.4 L128.0,126.4 L133.8,136.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"136\" y=\"130\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T = 2,4 N</text><text x=\"60\" y=\"164\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> ↑ ?</tspan></text><text x=\"14\" y=\"14\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Lực kế : P = T + F<tspan dy=\"4\" font-size=\"9\">A</tspan></text><rect x=\"232.0\" y=\"120.0\" width=\"180.0\" height=\"90.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"232,90 232,210 412,210 412,90\"/><line x1=\"232.0\" y1=\"120.0\" x2=\"412.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><line x1=\"322.0\" y1=\"170.0\" x2=\"322.0\" y2=\"210.0\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><rect x=\"302.0\" y=\"130.0\" width=\"40.0\" height=\"40.0\" rx=\"0\" fill=\"#d97706\" fill-opacity=\".4\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"330\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">dây</text><text x=\"294\" y=\"144\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> ↑</tspan></text><text x=\"352\" y=\"142\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P ↓</text><text x=\"352\" y=\"160\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">T ↓ (dây)</text><text x=\"238\" y=\"14\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Dây buộc đáy : F<tspan dy=\"4\" font-size=\"9\">A</tspan><tspan dy=\"-4\"> = P + T</tspan></text></svg><figcaption>Dữ kiện: lực kế kéo lên (P và T vẽ đúng tỉ lệ), dây buộc đáy kéo vật xuống ; lực đẩy chưa biết độ lớn nên chỉ ghi hướng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"treo vào lực kế … nhúng chìm hoàn toàn\"</td><td>$P=3{,}6$ N ; $P_{bk}=2{,}4$ N</td><td>⚠ Số chỉ lực kế khi nhúng là trọng lượng biểu kiến $P-F_A$, không phải lực đẩy</td></tr><tr><td>\"chìm hoàn toàn trong chất lỏng X … $2{,}76$ N\"</td><td>$P_2=2{,}76$ N ; cùng thể tích $V$</td><td>Cùng vật, cùng chìm hết nên $V$ không đổi ; chỉ khối lượng riêng chất lỏng khác</td></tr><tr><td>\"thể tích và khối lượng riêng của quả cầu\"</td><td>Cần $V$, $D$</td><td>$F_A=10D_nV$ ; $D=\\dfrac{m}{V}$ với $m=\\dfrac{P}{10}$</td></tr><tr><td>\"khối lượng riêng của chất lỏng X\"</td><td>Cần $D_X$</td><td>$P-P_2=10D_XV$</td></tr><tr><td>\"buộc vào đáy bình … chìm hoàn toàn\"</td><td>$V=500$ cm³ ; $m=200$ g</td><td>⚠ Dây buộc ở đáy kéo vật XUỐNG (vật nhẹ hơn nước) : $F_A=P+T$</td></tr><tr><td>\"lực căng của dây\"</td><td>Cần $T$</td><td>$T=F_A-P$ với $F_A=10D_nV$</td></tr><tr><td>\"cắt dây … nằm yên trên mặt nước\"</td><td>Cần $V_{ch}$</td><td>⚠ Hết dây : $P=F_A'$ với $F_A'=10D_nV_{ch}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số chỉ lực kế khi nhúng</b> → <b>F_A = P − P_bk</b> ; thấy <b>dây buộc đáy</b> → <b>F_A = P + T</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực đẩy của nước lên quả cầu",
+     "hoi": "Lực đẩy Archimedes của nước tác dụng lên quả cầu là bao nhiêu?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy chính số chỉ lực kế khi nhúng làm lực đẩy ; số đó là trọng lượng biểu kiến, lực đẩy là phần trọng lượng bị mất."
+    },
+    {
+     "tieu_de": "Khối lượng riêng của quả cầu",
+     "hoi": "Khối lượng riêng của quả cầu là bao nhiêu?",
+     "dap_so": 3000,
+     "sai_so": 50,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Lấy trọng lượng chia thể tích (ra trọng lượng riêng), quên chia thêm 10 để ra khối lượng riêng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm $V$ từ $F_A=10D_nV$, rồi $D=\\dfrac{m}{V}$ với $m=\\dfrac{P}{10}$",
+       "dung": true
+      },
+      {
+       "text": "$V$ từ $F_A=10D_nV$, rồi $D=\\dfrac{P}{V}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{P}{V}$ là trọng lượng riêng $d$ (N/m³) ; khối lượng riêng phải dùng $m=\\dfrac{P}{10}$."
+      },
+      {
+       "text": "$V=\\dfrac{P_1}{10D_n}$ với $P_1$ là số chỉ lực kế khi nhúng",
+       "dung": false,
+       "vi_sao": "Số chỉ khi nhúng là trọng lượng biểu kiến $P-F_A$, không phải lực đẩy ; lực đẩy mới dùng để tìm $V$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng riêng của chất lỏng X",
+     "hoi": "Khối lượng riêng của chất lỏng X là bao nhiêu?",
+     "dap_so": 700,
+     "sai_so": 10,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Lập tỉ số các số chỉ lực kế thay vì tỉ số các lực đẩy ; hoặc cho rằng thể tích quả cầu đổi khi sang chất lỏng khác.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cùng $V$ : $P-P_2=10D_XV$",
+       "dung": true
+      },
+      {
+       "text": "$D_X=D_n\\cdot\\dfrac{P_2}{P_1}$ (tỉ số số chỉ lực kế)",
+       "dung": false,
+       "vi_sao": "Phải so các lực đẩy ($P-P_2$ và $P-P_1$), không so số chỉ lực kế."
+      },
+      {
+       "text": "Chất lỏng X nhẹ hơn nên $V$ cũng khác",
+       "dung": false,
+       "vi_sao": "Quả cầu chìm hoàn toàn nên $V$ không đổi ; chỉ khối lượng riêng chất lỏng khác."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực căng dây giữ khối nhựa",
+     "hoi": "Lực căng của dây giữ khối nhựa là bao nhiêu?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "N",
+     "loi_hay_gap": "Lập $P=F_A+T$ như khi treo lực kế ; nhưng dây buộc ở đáy kéo vật xuống, vì vật nhẹ hơn nước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dây kéo xuống : $F_A=P+T$",
+       "dung": true
+      },
+      {
+       "text": "$P=F_A+T$ như lực kế treo từ trên xuống",
+       "dung": false,
+       "vi_sao": "Dây buộc ở đáy bình kéo khối nhựa xuống, vật nhẹ hơn nước nên $F_A\\gt P$."
+      },
+      {
+       "text": "$T=F_A$ vì vật đứng yên",
+       "dung": false,
+       "vi_sao": "Vật còn chịu trọng lực $P$ hướng xuống nên $T=F_A-P$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cắt dây: phần chìm khi nổi yên",
+     "hoi": "Thể tích phần khối nhựa chìm khi nổi yên là bao nhiêu?",
+     "dap_so": 200,
+     "sai_so": 2,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Cho rằng khối nhựa vẫn chìm hết ($V_{ch}=V$), hoặc tính $V_{ch}$ từ lực căng cũ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nổi yên : $P=F_A'=10D_nV_{ch}$",
+       "dung": true
+      },
+      {
+       "text": "$V_{ch}=V$ vì vật vẫn ở trong nước",
+       "dung": false,
+       "vi_sao": "Sau khi cắt dây vật nổi lên, chỉ chìm một phần."
+      },
+      {
+       "text": "$V_{ch}=\\dfrac{T}{10D_n}$ vì lực đẩy giảm đúng bằng $T$",
+       "dung": false,
+       "vi_sao": "Lực đẩy mới phải cân bằng với trọng lượng $P$ của vật, không liên quan tới $T$ cũ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Biến thiên mực nước: cục đá chứa dị vật tan hết",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Một bình trụ có diện tích đáy $S=85\\ \\text{cm}^2$ chứa nước ở $0\\ ^\\circ\\text{C}$. Một cục nước đá khối lượng $540\\ \\text{g}$ (chưa kể mẩu sắt) có gắn một mẩu sắt khối lượng $39\\ \\text{g}$, nổi trong bình. Khối lượng riêng của nước là $1\\ \\text{g/cm}^3$, của nước đá là $0{,}9\\ \\text{g/cm}^3$, của sắt là $7{,}8\\ \\text{g/cm}^3$. Nước đá tan hết mà nhiệt độ vẫn là $0\\ ^\\circ\\text{C}$.</p><ol type=\"a\"><li>Tính thể tích nước bị cục đá (kèm mẩu sắt) chiếm chỗ lúc đầu.</li><li>Tính thể tích bị chiếm chỗ sau khi đá tan hết. Mực nước trong bình thay đổi bao nhiêu?</li><li>Nếu mẩu sắt được thay bằng mẩu sáp cùng khối lượng ($D=0{,}8\\ \\text{g/cm}^3$) thì mực nước sau khi đá tan thay đổi thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e5-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Cục nước đá chứa mẩu sắt nổi trong bình nước; đá tan dần và mẩu sắt chìm xuống đáy bình\"><defs><marker id=\"e50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"130.0\" y=\"120.0\" width=\"160.0\" height=\"85.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"130,70 130,205 290,205 290,70\"/><line x1=\"130.0\" y1=\"120.0\" x2=\"330.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><rect x=\"170\" y=\"114\" width=\"80\" height=\"56\" rx=\"5\" fill=\"#e0f2fe\" fill-opacity=\".7\" stroke=\"currentColor\" stroke-width=\"2.4\"><animate attributeName=\"height\" values=\"56.0;0.0;0.0\" keyTimes=\"0;0.7;1\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1.0;0.2;0.0\" keyTimes=\"0;0.7;1\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><circle cx=\"210\" cy=\"142\" r=\"6\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cy\" values=\"142.0;142.0;197.0\" keyTimes=\"0;0.4;1\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"300\" y=\"124\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mực nước ban đầu</text><text x=\"300\" y=\"144\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">mực nước sau : ?</text><text x=\"12\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đá 540 g (chưa kể sắt)</text><text x=\"12\" y=\"60\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">gắn sắt 39 g ; nước, đá ở 0 °C</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: đá tan hết, mẩu sắt rơi xuống đáy (chạy 3 s). Mực nước sau khi tan là điều cần tìm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật nổi thì thể tích chiếm chỗ $V_{ch}=\\dfrac{m}{D_n}$ (theo khối lượng) ; vật chìm chiếm chỗ đúng thể tích thật của nó.</li><li><strong>Công thức:</strong> $\\Delta h=\\dfrac{V_{trước}-V_{sau}}{S}$ (dương là mực nước hạ).</li><li>Nước đá nguyên chất tan thành nước có thể tích đúng bằng phần chìm ban đầu.</li><li>⚠ <strong>Điều kiện:</strong> khối lượng không đổi khi tan ; chỉ dị vật chìm xuống đáy mới làm thể tích chiếm chỗ giảm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thể tích chiếm chỗ lúc đầu</span></p><p>Cả cục đá và mẩu sắt cùng nổi, $P=F_A$ :</p>$$10(m_đ+m_s)=10D_nV_1$$$$V_1=\\dfrac{m_đ+m_s}{D_n}=\\dfrac{540+39}{1}$$<div class=\"bt-ans\">$$V_1=579\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thể tích chiếm chỗ sau khi đá tan</span></p><p>Đá tan thành nước, khối lượng giữ nguyên $540\\ \\text{g}$ ; nước ở $0\\ ^\\circ\\text{C}$ có $D=1\\ \\text{g/cm}^3$ :</p>$$V_{nước}=\\dfrac{m_đ}{D_n}=540\\ \\text{cm}^3$$<p>Mẩu sắt chìm xuống đáy, chiếm đúng thể tích thật của nó :</p>$$V_s=\\dfrac{m_s}{D_s}=\\dfrac{39}{7{,}8}=5\\ \\text{cm}^3$$$$V_2=V_{nước}+V_s=540+5$$<div class=\"bt-ans\">$$V_2=545\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Mực nước thay đổi</span></p>$$V_1-V_2=579-545=34\\ \\text{cm}^3$$$$\\Delta h=\\dfrac{V_1-V_2}{S}=\\dfrac{34}{85}$$<div class=\"bt-ans\">$$\\Delta h=0{,}4\\ \\text{cm}$$</div><p>Thể tích chiếm chỗ giảm nên mực nước <strong>hạ</strong> $0{,}4\\ \\text{cm}$ ($4\\ \\text{mm}$).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thay sắt bằng sáp</span></p><p>Sáp có $D=0{,}8\\lt D_n$, sau khi đá tan sáp tự nổi, vẫn chiếm chỗ $\\dfrac{m}{D_n}=39\\ \\text{cm}^3$ như lúc còn trong đá :</p>$$V_2=540+39=579\\ \\text{cm}^3=V_1$$<div class=\"bt-ans\"><p>Mực nước <strong>không đổi</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hệ ban đầu nổi thật : khối lượng riêng trung bình $\\dfrac{579}{600+5}\\approx0{,}96\\lt1$ ✓ (thể tích đá $\\dfrac{540}{0{,}9}=600\\ \\text{cm}^3$).</p><p>Công thức nhanh : $\\Delta V=m_s\\left(\\dfrac{1}{D_n}-\\dfrac{1}{D_s}\\right)=39\\cdot\\left(1-\\dfrac{1}{7{,}8}\\right)=34\\ \\text{cm}^3$ ✓.</p><p>Cục đá nguyên chất (không dị vật) tan thì mực nước không đổi — hiệu ứng ở đây chỉ do mẩu sắt chìm.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $V_1=579\\ \\text{cm}^3$</p><p>b) $V_2=545\\ \\text{cm}^3$ · mực nước hạ $0{,}4\\ \\text{cm}$</p><p>c) Mực nước không đổi</p></div><p class=\"bt-note\">Nhận dạng: <strong>đá tan có dị vật bên trong</strong> → dị vật nổi thì mực không đổi, dị vật chìm thì mực <strong>hạ</strong> một đoạn $\\dfrac{m_s(1/D_n-1/D_s)}{S}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e5-2\"><svg viewBox=\"0 0 420 234\" role=\"img\" aria-label=\"Trước khi tan đá và sắt nổi chung; sau khi tan nước mới chiếm thể tích theo khối lượng, sắt chìm chiếm thể tích thật\"><defs><marker id=\"e52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"10.0\" y=\"112.0\" width=\"180.0\" height=\"90.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"10,62 10,202 190,202 190,62\"/><line x1=\"10.0\" y1=\"112.0\" x2=\"410.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><rect x=\"60.0\" y=\"106.0\" width=\"80.0\" height=\"56.0\" rx=\"5\" fill=\"#e0f2fe\" fill-opacity=\".7\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"100.0\" cy=\"134.0\" r=\"6\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"100\" y=\"98\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">đá + sắt NỔI</text><text x=\"14\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trước : P = F<tspan dy=\"4\" font-size=\"10\">A</tspan></text><text x=\"100\" y=\"224\" fill=\"#fb923c\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"8\">1</tspan><tspan dy=\"-4\"> = (m đá + m sắt) / D</tspan><tspan dy=\"4\" font-size=\"8\">n</tspan></text><rect x=\"230.0\" y=\"112.0\" width=\"180.0\" height=\"90.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"230,62 230,202 410,202 410,62\"/><circle cx=\"320.0\" cy=\"195.0\" r=\"6\" fill=\"#475569\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"320\" y=\"98\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nước mới + sắt CHÌM</text><text x=\"234\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Sau khi đá tan</text><text x=\"320\" y=\"224\" fill=\"#fb923c\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">V<tspan dy=\"4\" font-size=\"8\">2</tspan><tspan dy=\"-4\"> = m đá / D</tspan><tspan dy=\"4\" font-size=\"8\">n</tspan><tspan dy=\"-4\"> + m sắt / D</tspan><tspan dy=\"4\" font-size=\"8\">s</tspan></text><text x=\"396\" y=\"130\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">?</text></svg><figcaption>Dữ kiện: trước đó cả hệ nổi (thể tích chiếm chỗ tính theo khối lượng), sau đó sắt chìm (thể tích chiếm chỗ tính theo thể tích thật). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cục nước đá 540 g (chưa kể mẩu sắt) có gắn mẩu sắt 39 g, nổi trong bình\"</td><td>$m_đ=540$ g ; $m_s=39$ g</td><td>⚠ Cả hệ đang NỔI : $P=F_A$ nên thể tích chiếm chỗ là $\\dfrac{m_đ+m_s}{D_n}$ (không phải tổng thể tích thật)</td></tr><tr><td>\"nước $1$, nước đá $0{,}9$, sắt $7{,}8$ g/cm³\"</td><td>$D_n=1$ ; $D_đ=0{,}9$ ; $D_s=7{,}8$ g/cm³</td><td>Sắt có $D_s\\gt D_n$ nên sẽ chìm khi không còn đá giữ</td></tr><tr><td>\"đá tan hết mà nhiệt độ vẫn là $0\\ ^\\circ$C\"</td><td>Nước mới có $D=1$ g/cm³</td><td>⚠ Khối lượng không đổi khi tan : nước mới chiếm $\\dfrac{m_đ}{D_n}$</td></tr><tr><td>\"thể tích nước bị chiếm chỗ lúc đầu\"</td><td>Cần $V_1$</td><td>$V_1=\\dfrac{m_đ+m_s}{D_n}$</td></tr><tr><td>\"thể tích bị chiếm chỗ sau khi đá tan\"</td><td>Cần $V_2$</td><td>$V_2=\\dfrac{m_đ}{D_n}+\\dfrac{m_s}{D_s}$ (sắt chìm chiếm thể tích thật)</td></tr><tr><td>\"mực nước thay đổi bao nhiêu ; $S=85$ cm²\"</td><td>$S=85$ cm²</td><td>$\\Delta h=\\dfrac{V_1-V_2}{S}$</td></tr><tr><td>\"thay bằng mẩu sáp cùng khối lượng\"</td><td>$D_{sáp}\\lt D_n$</td><td>Vật nhẹ hơn nước tự nổi : vẫn chiếm chỗ $\\dfrac{m}{D_n}$ như lúc còn trong đá</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đá tan có dị vật bên trong</b> → nghĩ tới <b>dị vật nổi: mực không đổi ; dị vật chìm: mực hạ</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thể tích chiếm chỗ lúc đầu",
+     "hoi": "Thể tích nước bị cục đá kèm mẩu sắt chiếm chỗ lúc đầu là bao nhiêu?",
+     "dap_so": 579,
+     "sai_so": 1,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Cộng thể tích thật của đá và sắt ; nhưng cả hệ nổi, thể tích chiếm chỗ được tính theo khối lượng chia $D_n$."
+    },
+    {
+     "tieu_de": "Thể tích chiếm chỗ sau khi đá tan",
+     "hoi": "Sau khi đá tan hết, thể tích bị chiếm chỗ là bao nhiêu?",
+     "dap_so": 545,
+     "sai_so": 1,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Giữ nguyên cho sắt thể tích chiếm chỗ cũ (khối lượng chia $D_n$), hoặc lấy thể tích nước mới bằng thể tích cục đá.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nước mới chiếm $\\dfrac{m_đ}{D_n}$ ; sắt chìm chiếm thể tích thật $\\dfrac{m_s}{D_s}$",
+       "dung": true
+      },
+      {
+       "text": "Sắt vẫn chiếm chỗ $\\dfrac{m_s}{D_n}$ như lúc còn trong đá",
+       "dung": false,
+       "vi_sao": "Lúc đầu cả hệ nổi nên mới tính theo khối lượng ; sắt đã rơi xuống đáy thì chỉ chiếm đúng thể tích thật của nó."
+      },
+      {
+       "text": "Nước mới chiếm $\\dfrac{m_đ}{D_đ}$, bằng thể tích cục đá",
+       "dung": false,
+       "vi_sao": "Đá tan thành nước có cùng khối lượng nhưng khối lượng riêng lớn hơn, nên thể tích nhỏ hơn thể tích cục đá."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Mực nước thay đổi",
+     "hoi": "Mực nước trong bình hạ bao nhiêu?",
+     "dap_so": 0.4,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Chia thể tích còn lại cho $S$ thay vì chia độ giảm thể tích, hoặc kết luận mực nước không đổi như với đá nguyên chất.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta h=\\dfrac{V_1-V_2}{S}$ : độ giảm thể tích chiếm chỗ chia tiết diện bình",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta h=\\dfrac{V_2}{S}$",
+       "dung": false,
+       "vi_sao": "Mực nước thay đổi theo độ GIẢM thể tích chiếm chỗ, không theo thể tích còn lại."
+      },
+      {
+       "text": "Mực nước không đổi vì đá tan bù đúng phần đã chìm",
+       "dung": false,
+       "vi_sao": "Đúng với đá nguyên chất ; ở đây mẩu sắt rơi xuống đáy nên thể tích chiếm chỗ giảm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thay sắt bằng sáp",
+     "hoi": "Nếu thay mẩu sắt bằng mẩu sáp cùng khối lượng thì mực nước sau khi đá tan sẽ thế nào?",
+     "lua_chon": [
+      {
+       "text": "Không đổi",
+       "dung": true
+      },
+      {
+       "text": "Hạ xuống",
+       "dung": false,
+       "vi_sao": "Sáp nhẹ hơn nước nên nổi lên, vẫn chiếm chỗ $\\dfrac{m}{D_n}$ như lúc còn trong đá ; thể tích chiếm chỗ không giảm."
+      },
+      {
+       "text": "Dâng lên",
+       "dung": false,
+       "vi_sao": "Đá tan bù đúng phần chìm của nó và sáp vẫn chiếm chỗ như cũ nên tổng không tăng."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng dị vật nào cũng làm mực nước hạ ; chỉ dị vật chìm xuống đáy mới làm thể tích chiếm chỗ giảm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét sáp có chìm hay nổi sau khi hết đá rồi so thể tích chiếm chỗ",
+       "dung": true
+      },
+      {
+       "text": "Dị vật nào cũng rơi xuống đáy khi hết đá giữ",
+       "dung": false,
+       "vi_sao": "Chỉ vật có $D\\gt D_n$ mới chìm ; sáp $D=0{,}8\\lt D_n$ tự nổi."
+      },
+      {
+       "text": "Chỉ cần so khối lượng hai mẩu vì chúng bằng nhau",
+       "dung": false,
+       "vi_sao": "Thể tích chiếm chỗ còn phụ thuộc vật nổi hay chìm, không chỉ khối lượng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Nâng cao · Đòn bẩy kết hợp lực đẩy Archimedes: bài ngược tìm khối lượng riêng",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "problem_html": "<p>Thanh AB dài $40\\ \\text{cm}$, khối lượng không đáng kể, được treo vật 1 khối lượng $300\\ \\text{g}$ ở đầu A và vật 2 (đặc, chưa biết khối lượng) ở đầu B bằng hai sợi dây nhẹ. Thanh nằm ngang cân bằng khi điểm tựa O cách A $10\\ \\text{cm}$. Sau đó nhúng chìm hoàn toàn vật 2 trong một bình nước (vật không chạm đáy): thanh mất cân bằng, và muốn thanh nằm ngang trở lại phải dời điểm tựa về phía A thêm $2\\ \\text{cm}$. Lấy $D_n=1000\\ \\text{kg/m}^3$, $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính khối lượng của vật 2.</li><li>Tính khối lượng riêng của chất liệu làm vật 2.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"e6-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Đòn bẩy treo một vật ở đầu A và một vật nhúng chìm trong nước ở đầu B; thanh nghiêng về phía đầu A\"><defs><marker id=\"e60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"120.0,63.0 104.0,90.0 136.0,90.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><line x1=\"92.0\" y1=\"90.0\" x2=\"148.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"316.0\" y=\"140.0\" width=\"88.0\" height=\"82.0\" fill=\"#38bdf8\" fill-opacity=\"0.3\" stroke=\"none\"></rect><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"round\" points=\"316,120 316,222 404,222 404,120\"/><line x1=\"316.0\" y1=\"140.0\" x2=\"404.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.5\"/><line x1=\"40\" y1=\"60\" x2=\"360\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"6\"><animate attributeName=\"x1\" values=\"40.0;40.3\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"60.0;67.0\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"360.0;359.1\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"60.0;39.1\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;0.3 7.0\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"40.0\" y1=\"60.0\" x2=\"40.0\" y2=\"100.0\" stroke=\"#94a3b8\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"24.0\" y=\"100.0\" width=\"32.0\" height=\"30.0\" rx=\"0\" fill=\"#64748b\" fill-opacity=\".5\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"40\" y=\"120\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">300 g</text></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0.0;-0.9 -20.9\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"360.0\" y1=\"60.0\" x2=\"360.0\" y2=\"190.0\" stroke=\"#94a3b8\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"346.0\" y=\"190.0\" width=\"28.0\" height=\"26.0\" rx=\"0\" fill=\"#92400e\" fill-opacity=\".45\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><text x=\"360\" y=\"207\" fill=\"currentColor\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">vật 2</text></g><circle cx=\"120.0\" cy=\"60.0\" r=\"4\" fill=\"currentColor\"/><text x=\"40\" y=\"48\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"360\" y=\"38\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"120\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O</text><text x=\"12\" y=\"160\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">OA = 10 cm</text><text x=\"12\" y=\"180\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">AB = 40 cm</text><text x=\"12\" y=\"210\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">vật 2 nhúng chìm hoàn toàn</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng chiều quay (góc nghiêng phóng đại): khi vật 2 chìm trong nước, đầu B nhẹ đi nên đầu A hạ xuống. Chưa dời điểm tựa. Chạy 2,5 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đòn bẩy cân bằng khi tổng mômen hai lực quanh điểm tựa bằng nhau.</li><li><strong>Công thức:</strong> $P_1\\cdot OA=P_2\\cdot OB$ ; vật nhúng chìm : $P_2'=P_2-F_A$, $F_A=10D_nV$.</li><li>Khối lượng riêng $D=\\dfrac{m}{V}$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua khối lượng thanh ; dời điểm tựa làm cả hai cánh tay đòn đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Khối lượng vật 2 (cân bằng ban đầu)</span></p><p>$P_1=10m_1=3\\ \\text{N}$ ; $OA=10\\ \\text{cm}$ ; $OB=40-10=30\\ \\text{cm}$ (hai cánh tay đòn cùng đơn vị nên lập tỉ số được ngay) :</p>$$P_1\\cdot OA=P_2\\cdot OB\\Rightarrow P_2=\\dfrac{3\\cdot10}{30}=1\\ \\text{N}$$$$m_2=\\dfrac{P_2}{10}$$<div class=\"bt-ans\">$$m_2=0{,}1\\ \\text{kg}=100\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực kéo ở B sau khi nhúng</span></p><p>Dời O về phía A $2\\ \\text{cm}$ : $O'A=10-2=8\\ \\text{cm}$ ; $O'B=30+2=32\\ \\text{cm}$.</p><p>Thanh nằm ngang cân bằng trở lại, lực của dây ở B là $P_2'$ :</p>$$P_1\\cdot O'A=P_2'\\cdot O'B$$$$P_2'=\\dfrac{3\\cdot8}{32}$$<div class=\"bt-ans\">$$P_2'=0{,}75\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực đẩy Archimedes lên vật 2</span></p><p>Nhúng nước làm lực kéo của dây ở B giảm đúng bằng lực đẩy :</p>$$F_A=P_2-P_2'=1-0{,}75$$<div class=\"bt-ans\">$$F_A=0{,}25\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thể tích vật 2</span></p><p>Vật chìm hoàn toàn nên $V_{ch}=V_2$ :</p>$$V_2=\\dfrac{F_A}{10D_n}=\\dfrac{0{,}25}{10\\cdot1000}=2{,}5\\cdot10^{-5}\\ \\text{m}^3$$<div class=\"bt-ans\">$$V_2=25\\ \\text{cm}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khối lượng riêng của vật 2</span></p>$$D_2=\\dfrac{m_2}{V_2}=\\dfrac{0{,}1}{2{,}5\\cdot10^{-5}}$$<div class=\"bt-ans\">$$D_2=4000\\ \\text{kg/m}^3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$D_2=4000\\gt D_n$ nên vật chìm hoàn toàn khi nhúng vào nước, phù hợp với đề.</p><p>Thế ngược : $P_2'\\cdot O'B=0{,}75\\cdot32=24=P_1\\cdot O'A=3\\cdot8$ ✓.</p><p>Quên đổi cánh tay đòn mới (giữ $OA=10$) thì ra $P_2'=1\\ \\text{N}$, $F_A=0$ — vô lí vì vật đã nhúng nước.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $m_2=100\\ \\text{g}$</p><p>b) $D_2=4000\\ \\text{kg/m}^3$</p></div><p class=\"bt-note\">Nhận dạng: <strong>đòn bẩy có vật nhúng nước</strong> → lực kéo ở đầu đó giảm đúng $F_A$ ; <strong>dời điểm tựa</strong> → cả hai cánh tay đòn đổi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"e6-2\"><svg viewBox=\"0 0 420 346\" role=\"img\" aria-label=\"Đòn bẩy trước và sau khi nhúng vật 2 vào nước; điểm tựa dời về phía A hai xentimét\"><defs><marker id=\"e62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"e62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"e62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"e62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"150.0,83.0 134.0,110.0 166.0,110.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><line x1=\"122.0\" y1=\"110.0\" x2=\"178.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"70.0\" y1=\"80.0\" x2=\"390.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"80.0\" r=\"5\" fill=\"currentColor\"/><circle cx=\"390.0\" cy=\"80.0\" r=\"5\" fill=\"currentColor\"/><circle cx=\"150.0\" cy=\"80.0\" r=\"3.5\" fill=\"#f8fafc\"/><text x=\"66\" y=\"68\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"394\" y=\"68\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"150\" y=\"68\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"70\" y1=\"82\" x2=\"70.0\" y2=\"136.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M75.8,126.0 L70.0,136.0 L64.2,126.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62\" y=\"114\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 3 N</tspan></text><text x=\"412\" y=\"116\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"390.0\" y1=\"82.0\" x2=\"390.0\" y2=\"94.0\" stroke=\"#94a3b8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70\" y1=\"144\" x2=\"150\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M143.0,139.9 L150.0,144.0 L143.0,148.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"144\" x2=\"70\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M77.0,148.1 L70.0,144.0 L77.0,139.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"110.0\" y=\"162\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">OA = 10 cm</text><line x1=\"150\" y1=\"144\" x2=\"390\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M383.0,139.9 L390.0,144.0 L383.0,148.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"390\" y1=\"144\" x2=\"150\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M157.0,148.1 L150.0,144.0 L157.0,139.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"270.0\" y=\"162\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">OB = 30 cm</text><text x=\"12\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trước : vật 2 trong không khí</text><polygon points=\"134.0,235.0 118.0,262.0 150.0,262.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><line x1=\"106.0\" y1=\"262.0\" x2=\"162.0\" y2=\"262.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"70.0\" y1=\"232.0\" x2=\"390.0\" y2=\"232.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"232.0\" r=\"5\" fill=\"currentColor\"/><circle cx=\"390.0\" cy=\"232.0\" r=\"5\" fill=\"currentColor\"/><circle cx=\"134.0\" cy=\"232.0\" r=\"3.5\" fill=\"#f8fafc\"/><text x=\"66\" y=\"220\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"394\" y=\"220\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"134\" y=\"220\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"70\" y1=\"234\" x2=\"70.0\" y2=\"288.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M75.8,278.0 L70.0,288.0 L64.2,278.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62\" y=\"266\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"9\">1</tspan><tspan dy=\"-4\"> = 3 N</tspan></text><text x=\"412\" y=\"268\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">P<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">′ = ?</tspan></text><text x=\"376\" y=\"206\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"10\">A</tspan><tspan dy=\"-4\"> ↑ ?</tspan></text><line x1=\"70\" y1=\"296\" x2=\"134\" y2=\"296\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M127.0,291.9 L134.0,296.0 L127.0,300.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"134\" y1=\"296\" x2=\"70\" y2=\"296\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M77.0,300.1 L70.0,296.0 L77.0,291.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"102.0\" y=\"314\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">O′A = 8 cm</text><line x1=\"134\" y1=\"296\" x2=\"390\" y2=\"296\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M383.0,291.9 L390.0,296.0 L383.0,300.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"390\" y1=\"296\" x2=\"134\" y2=\"296\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M141.0,300.1 L134.0,296.0 L141.0,291.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"262.0\" y=\"314\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">O′B = 32 cm</text><text x=\"12\" y=\"190\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Sau : vật 2 nhúng nước, dời O về phía A 2 cm</text></svg><figcaption>Dữ kiện: P₁ vẽ đúng tỉ lệ ; P₂, P₂′ và F_A chưa biết nên chỉ ghi ký hiệu. Dời O thì cả hai cánh tay đòn đều đổi. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thanh AB dài $40$ cm … khối lượng không đáng kể … O cách A $10$ cm\"</td><td>$AB=40$ cm ; $OA=10$ cm ; $OB=30$ cm</td><td>⚠ Bỏ qua khối lượng thanh : chỉ xét mômen của hai lực tại A, B ; cánh tay đòn tính từ điểm tựa O</td></tr><tr><td>\"vật 1 khối lượng $300$ g ở đầu A\"</td><td>$m_1=300$ g</td><td>$P_1=10m_1$ ; $P_1\\cdot OA=P_2\\cdot OB$</td></tr><tr><td>\"vật 2 (đặc, chưa biết khối lượng) ở đầu B\"</td><td>Cần $m_2$</td><td>$P_2=\\dfrac{P_1\\cdot OA}{OB}$ ; $m_2=\\dfrac{P_2}{10}$</td></tr><tr><td>\"nhúng chìm hoàn toàn vật 2 trong nước\"</td><td>$V_{ch}=V_2$</td><td>⚠ Lực kéo của dây ở B giảm đúng bằng $F_A$ : $P_2'=P_2-F_A$</td></tr><tr><td>\"dời điểm tựa về phía A thêm $2$ cm\"</td><td>$O'A=8$ cm ; $O'B=32$ cm</td><td>⚠ Dời O thì cả hai cánh tay đòn đều đổi : $O'A$ giảm, $O'B$ tăng cùng $2$ cm ; $P_1\\cdot O'A=P_2'\\cdot O'B$</td></tr><tr><td>\"khối lượng riêng của chất liệu làm vật 2\"</td><td>Cần $D_2$</td><td>$F_A=10D_nV_2$ ; $D_2=\\dfrac{m_2}{V_2}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vật nhúng nước trên đòn bẩy</b> → lực đầu đó <b>giảm F_A</b> ; <b>dời điểm tựa</b> → <b>cả hai cánh tay đòn đổi</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Khối lượng vật 2 (cân bằng ban đầu)",
+     "hoi": "Khối lượng của vật 2 là bao nhiêu?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "g",
+     "loi_hay_gap": "Lập cân bằng với $OB=40\\ \\text{cm}$ (chiều dài thanh) thay vì $OB=AB-OA$, hoặc nhầm đơn vị kg và g."
+    },
+    {
+     "tieu_de": "Lực kéo ở B sau khi nhúng",
+     "hoi": "Sau khi nhúng và dời điểm tựa, lực của dây tác dụng lên đầu B là bao nhiêu?",
+     "dap_so": 0.75,
+     "sai_so": 0.01,
+     "don_vi": "N",
+     "loi_hay_gap": "Giữ cánh tay đòn cũ (khi đó lại ra đúng trọng lượng vật 2), hoặc chỉ dời một cánh tay đòn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập cân bằng mới với cánh tay đòn mới : $P_1\\cdot O'A=P_2'\\cdot O'B$",
+       "dung": true
+      },
+      {
+       "text": "Giữ cánh tay đòn cũ : $P_1\\cdot OA=P_2'\\cdot OB$",
+       "dung": false,
+       "vi_sao": "Điểm tựa đã dời nên $OA$ và $OB$ đều đã đổi ; giữ cũ thì chỉ trở lại trọng lượng ban đầu của vật 2."
+      },
+      {
+       "text": "Chỉ $OB$ tăng $2\\ \\text{cm}$, còn $OA$ giữ $10\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Dời O về phía A thì $OA$ giảm $2\\ \\text{cm}$ và $OB$ tăng $2\\ \\text{cm}$ (tổng $AB$ không đổi)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực đẩy Archimedes lên vật 2",
+     "hoi": "Lực đẩy Archimedes tác dụng lên vật 2 là bao nhiêu?",
+     "dap_so": 0.25,
+     "sai_so": 0.01,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy lực đẩy bằng chính lực còn lại ở B, hoặc lẫn trọng lượng vật 1 vào phép trừ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lực kéo ở B giảm đúng bằng lực đẩy : $F_A=P_2-P_2'$",
+       "dung": true
+      },
+      {
+       "text": "$F_A=P_2'$",
+       "dung": false,
+       "vi_sao": "$P_2'$ là lực còn lại sau khi trừ lực đẩy, không phải chính lực đẩy."
+      },
+      {
+       "text": "$F_A=P_1-P_2'$",
+       "dung": false,
+       "vi_sao": "$P_1$ là trọng lượng vật ở đầu A, không liên quan tới lực đẩy lên vật 2."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích vật 2",
+     "hoi": "Thể tích của vật 2 là bao nhiêu?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "cm³",
+     "loi_hay_gap": "Quên hệ số 10 trong $F_A=10D_nV$ nên ra thể tích lớn gấp 10 lần ; hoặc lấy $V=m_2/D_n$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật chìm hoàn toàn : $F_A=10D_nV_2$",
+       "dung": true
+      },
+      {
+       "text": "$V_2=\\dfrac{m_2}{D_n}$",
+       "dung": false,
+       "vi_sao": "Đó là thể tích nước có cùng khối lượng với vật, chỉ đúng nếu vật có khối lượng riêng bằng nước."
+      },
+      {
+       "text": "$V_2=\\dfrac{F_A}{D_n}$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số 10 : $F_A=d_nV=10D_nV$, nên thể tích bị tính lớn gấp 10 lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng riêng của vật 2",
+     "hoi": "Khối lượng riêng của chất liệu làm vật 2 là bao nhiêu?",
+     "dap_so": 4000,
+     "sai_so": 50,
+     "don_vi": "kg/m³",
+     "loi_hay_gap": "Dùng trọng lượng chia thể tích (ra trọng lượng riêng) hoặc nhầm khối lượng riêng của nước với của vật.",
+     "chon_buoc_ke": [
+      {
+       "text": "$D_2=\\dfrac{m_2}{V_2}$",
+       "dung": true
+      },
+      {
+       "text": "$D_2=\\dfrac{P_2}{V_2}$",
+       "dung": false,
+       "vi_sao": "Đó là trọng lượng riêng (N/m³) ; khối lượng riêng dùng khối lượng $m_2$."
+      },
+      {
+       "text": "$D_2=\\dfrac{F_A}{10V_2}$",
+       "dung": false,
+       "vi_sao": "Biểu thức đó cho khối lượng riêng của chất lỏng (nước), vì $F_A=10D_nV_2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Một thợ lặn ở độ sâu $35\\ \\text{m}$ dưới biển. Khối lượng riêng của nước biển là $1030\\ \\text{kg/m}^3$, áp suất khí quyển trên mặt biển là $p_0=10^5\\ \\text{Pa}$. Tính áp suất toàn phần tác dụng lên bộ đồ lặn. Lấy $g=10\\ \\text{m/s}^2$.</p><details><summary>Hướng dẫn giải</summary><p>$d=10D=10300\\ \\text{N/m}^3$ ; áp suất do nước : $p_n=d\\,h=10300\\cdot35=360500\\ \\text{Pa}$.</p><p>Áp suất toàn phần : $p=p_0+p_n=10^5+360500=460500\\ \\text{Pa}\\approx4{,}6\\cdot10^5\\ \\text{Pa}$.</p></details><h4>Bài 2 · Dễ</h4><p>Một bình hình trụ chứa dầu hỏa ($D=800\\ \\text{kg/m}^3$) cao $80\\ \\text{cm}$. Đáy bình có diện tích $150\\ \\text{cm}^2$. Tính áp suất và áp lực của dầu lên đáy bình.</p><details><summary>Hướng dẫn giải</summary><p>$p=10D\\,h=10\\cdot800\\cdot0{,}8=6400\\ \\text{Pa}$.</p><p>$F=p\\,S=6400\\cdot0{,}015=96\\ \\text{N}$.</p><p>Kiểm tra : trọng lượng dầu $10\\cdot800\\cdot0{,}015\\cdot0{,}8=96\\ \\text{N}$ ✓ (bình trụ).</p></details><h4>Bài 3 · Dễ</h4><p>Một vật bằng kim loại, khi treo vào lực kế trong không khí thì lực kế chỉ $7{,}8\\ \\text{N}$, khi nhúng chìm hoàn toàn trong nước thì lực kế chỉ $6{,}8\\ \\text{N}$. Tính khối lượng riêng của kim loại. Lấy $D_n=1000\\ \\text{kg/m}^3$.</p><details><summary>Hướng dẫn giải</summary><p>$F_A=7{,}8-6{,}8=1\\ \\text{N}$ ; $V=\\dfrac{F_A}{10D_n}=\\dfrac{1}{10^4}=10^{-4}\\ \\text{m}^3$.</p><p>$m=\\dfrac{7{,}8}{10}=0{,}78\\ \\text{kg}$ ; $D=\\dfrac{m}{V}=\\dfrac{0{,}78}{10^{-4}}=7800\\ \\text{kg/m}^3$ (sắt).</p></details><h4>Bài 4 · Dễ</h4><p>Một khối gỗ hình hộp chữ nhật có đáy $60\\ \\text{cm}^2$, cao $15\\ \\text{cm}$, nổi thẳng đứng trong nước, phần nhô khỏi mặt nước cao $3\\ \\text{cm}$. Tính khối lượng riêng của gỗ.</p><details><summary>Hướng dẫn giải</summary><p>Phần chìm : $h_{ch}=15-3=12\\ \\text{cm}$.</p><p>$P=F_A\\Rightarrow D_g=D_n\\dfrac{h_{ch}}{h}=1000\\cdot\\dfrac{12}{15}=800\\ \\text{kg/m}^3$.</p></details><h4>Bài 5 · Trung bình</h4><p>Một ống chữ U tiết diện mỗi nhánh $5\\ \\text{cm}^2$ chứa thủy ngân ($D=13600\\ \\text{kg/m}^3$). Đổ vào nhánh trái một cột nước cao $27{,}2\\ \\text{cm}$. Tính độ chênh lệch giữa hai mực thủy ngân.</p><details><summary>Hướng dẫn giải</summary><p>Mặt phẳng chuẩn qua mặt phân cách nước – thủy ngân ở nhánh trái. Cột thủy ngân ở nhánh phải cao hơn mặt phẳng này một đoạn $\\Delta h$.</p><p>$d_{Hg}\\Delta h=d_nh_n\\Rightarrow\\Delta h=\\dfrac{1000\\cdot27{,}2}{13600}=2\\ \\text{cm}$.</p><p>Mực thủy ngân ở nhánh phải cao hơn nhánh trái $2\\ \\text{cm}$.</p></details><h4>Bài 6 · Trung bình</h4><p>Một ống chữ U chứa nước. Đổ dầu ($D=800\\ \\text{kg/m}^3$) vào nhánh trái, cột dầu cao $20\\ \\text{cm}$ ; đổ xăng ($D=700\\ \\text{kg/m}^3$) vào nhánh phải, cột xăng cao $10\\ \\text{cm}$. Tính độ chênh lệch giữa hai mặt phân cách nước – chất lỏng.</p><details><summary>Hướng dẫn giải</summary><p>Áp suất do cột dầu : $d_dh_d=8000\\cdot0{,}2=1600\\ \\text{Pa}$ ; do cột xăng : $d_xh_x=7000\\cdot0{,}1=700\\ \\text{Pa}$.</p><p>Chênh áp suất $900\\ \\text{Pa}$ được cân bằng bởi cột nước : $d_n\\Delta h=900\\Rightarrow\\Delta h=0{,}09\\ \\text{m}=9\\ \\text{cm}$.</p><p>Mặt phân cách ở nhánh trái (có dầu) thấp hơn mặt phân cách ở nhánh phải $9\\ \\text{cm}$.</p></details><h4>Bài 7 · Trung bình</h4><p>Một quả cầu bằng đồng có khối lượng $890\\ \\text{g}$ và thể tích ngoài $150\\ \\text{cm}^3$. Quả cầu rỗng hay đặc ? Thả vào nước nó nổi hay chìm ? Biết $D_{Cu}=8900\\ \\text{kg/m}^3$.</p><details><summary>Hướng dẫn giải</summary><p>Thể tích đồng nếu đặc : $\\dfrac{890}{8{,}9}=100\\ \\text{cm}^3\\lt150\\ \\text{cm}^3$ nên quả cầu <strong>rỗng</strong> (phần rỗng $50\\ \\text{cm}^3$).</p><p>Khối lượng riêng trung bình : $\\dfrac{890}{150}\\approx5{,}93\\ \\text{g/cm}^3\\gt1\\ \\text{g/cm}^3$ nên quả cầu <strong>chìm</strong>.</p></details><h4>Bài 8 · Trung bình</h4><p>Một khối gỗ hình lập phương cạnh $10\\ \\text{cm}$, $D=700\\ \\text{kg/m}^3$, được giữ chìm hoàn toàn trong dầu ($D_d=800\\ \\text{kg/m}^3$) bằng một sợi dây buộc vào đáy bình. Tính lực căng của dây.</p><details><summary>Hướng dẫn giải</summary><p>$V=10^{-3}\\ \\text{m}^3$ ; $F_A=10\\cdot800\\cdot10^{-3}=8\\ \\text{N}$ ; $P=10\\cdot700\\cdot10^{-3}=7\\ \\text{N}$.</p><p>Dây kéo xuống : $T=F_A-P=1\\ \\text{N}$.</p></details><h4>Bài 9 · Trung bình</h4><p>Một khối băng hình lập phương nổi trên mặt biển. Phần nổi có thể tích $150\\ \\text{m}^3$. Biết $D_{băng}=900\\ \\text{kg/m}^3$, $D_{biển}=1030\\ \\text{kg/m}^3$. Tính thể tích toàn bộ khối băng.</p><details><summary>Hướng dẫn giải</summary><p>Nổi cân bằng : $\\dfrac{V_{ch}}{V}=\\dfrac{D_{băng}}{D_{biển}}=\\dfrac{900}{1030}$, nên phần nổi chiếm $1-\\dfrac{900}{1030}=\\dfrac{130}{1030}$ thể tích.</p><p>$V=150\\cdot\\dfrac{1030}{130}\\approx1188{,}5\\ \\text{m}^3$.</p></details><h4>Bài 10 · Trung bình</h4><p>Một khối sắt khối lượng $1{,}56\\ \\text{kg}$ được treo vào lực kế rồi nhúng ngập hoàn toàn (không chạm đáy) vào một bình nước đặt trên cân. Trước khi nhúng, cân chỉ $2{,}5\\ \\text{kg}$. Số chỉ của lực kế và của cân thay đổi thế nào ? Biết $D_{sắt}=7800\\ \\text{kg/m}^3$.</p><details><summary>Hướng dẫn giải</summary><p>$V=\\dfrac{1{,}56}{7800}=2\\cdot10^{-4}\\ \\text{m}^3$ ; $F_A=10\\cdot1000\\cdot2\\cdot10^{-4}=2\\ \\text{N}$.</p><p>Lực kế giảm từ $15{,}6\\ \\text{N}$ xuống $13{,}6\\ \\text{N}$.</p><p>Nước tác dụng lên sắt lực đẩy $2\\ \\text{N}$ nên sắt tác dụng lại nước lực $2\\ \\text{N}$ hướng xuống : cân tăng thêm $2\\ \\text{N}$, tức chỉ $2{,}7\\ \\text{kg}$.</p></details><h4>Bài 11 · Trung bình</h4><p>Một bình thông nhau có hai nhánh hình trụ tiết diện $S_1=100\\ \\text{cm}^2$ và $S_2=200\\ \\text{cm}^2$ chứa nước. Thả nhẹ một khối gỗ khối lượng $1\\ \\text{kg}$ vào nhánh $S_1$, khối gỗ nổi. Mực nước ở mỗi nhánh dâng lên bao nhiêu ?</p><details><summary>Hướng dẫn giải</summary><p>Gỗ nổi nên $V_{ch}=\\dfrac{m}{D_n}=1000\\ \\text{cm}^3$.</p><p>Nước hai nhánh thông nhau nên dâng cùng một đoạn : $\\Delta h=\\dfrac{V_{ch}}{S_1+S_2}=\\dfrac{1000}{300}\\approx3{,}33\\ \\text{cm}$.</p></details><h4>Bài 12 · Trung bình</h4><p>Một cục nước đá nguyên chất khối lượng $200\\ \\text{g}$ nổi trong một cốc nước hình trụ diện tích đáy $50\\ \\text{cm}^2$. Mực nước trong cốc thay đổi bao nhiêu khi đá tan hết ?</p><details><summary>Hướng dẫn giải</summary><p>Lúc đầu : $V_{ch}=\\dfrac{200}{1}=200\\ \\text{cm}^3$. Sau khi tan : nước mới có thể tích $\\dfrac{200}{1}=200\\ \\text{cm}^3$.</p><p>Hai thể tích bằng nhau nên mực nước <strong>không đổi</strong> ($\\Delta h=0$).</p></details><h4>Bài 13 · Khó</h4><p>Một quả cầu rỗng, kín, làm từ $390\\ \\text{g}$ sắt ($D_s=7800\\ \\text{kg/m}^3$), có thể tích ngoài $500\\ \\text{cm}^3$. Quả cầu nổi hay chìm trong nước ? Tính thể tích phần rỗng. Với cùng lượng sắt đó, phần rỗng phải có thể tích tối thiểu bao nhiêu để quả cầu không chìm ?</p><details><summary>Hướng dẫn giải</summary><p>Thể tích sắt : $\\dfrac{390}{7{,}8}=50\\ \\text{cm}^3$ ; phần rỗng : $500-50=450\\ \\text{cm}^3$.</p><p>$P=10\\cdot0{,}39=3{,}9\\ \\text{N}$ ; $F_{A(max)}=10\\cdot1000\\cdot500\\cdot10^{-6}=5\\ \\text{N}\\gt P$ nên quả cầu <strong>nổi</strong>.</p><p>Không chìm khi $F_{A(max)}\\ge P$ (dấu $=$ là lơ lửng) : $10D_nV_{ngoài}\\ge10m\\Rightarrow V_{ngoài}\\ge\\dfrac{390}{1}=390\\ \\text{cm}^3$.</p><p>Phần rỗng tối thiểu : $390-50=340\\ \\text{cm}^3$.</p></details><h4>Bài 14 · Khó</h4><p>Một khối gỗ hình lập phương cạnh $20\\ \\text{cm}$ nổi thẳng trong nước, phần chìm cao $18\\ \\text{cm}$.</p><p>a) Tính khối lượng riêng của gỗ.</p><p>b) Đổ dầu ($D_d=800\\ \\text{kg/m}^3$) lên trên mặt nước tới khi mặt dầu vừa ngang mặt trên khối gỗ. Khối gỗ vẫn nằm thẳng, đáy ngang. Tính chiều cao phần gỗ chìm trong nước và trong dầu.</p><details><summary>Hướng dẫn giải</summary><p>a) $D_g=D_n\\dfrac{h_{ch}}{a}=1000\\cdot\\dfrac{18}{20}=900\\ \\text{kg/m}^3$.</p><p>b) Gọi $h_n$, $h_d$ là chiều cao phần gỗ trong nước và trong dầu : $h_n+h_d=20\\ \\text{cm}$.</p><p>$P=F_{An}+F_{Ad}\\Rightarrow D_ga=D_nh_n+D_dh_d$ : $900\\cdot20=1000h_n+800(20-h_n)$.</p><p>$18000=200h_n+16000\\Rightarrow h_n=10\\ \\text{cm}$, $h_d=10\\ \\text{cm}$.</p><p>Đổ thêm dầu cho mặt dầu cao hơn mặt trên khối gỗ thì kết quả không đổi, vì khối gỗ đã nằm hoàn toàn trong hai chất lỏng.</p></details><h4>Bài 15 · Nâng cao</h4><p>Một thanh đồng chất, tiết diện đều, dài $L=60\\ \\text{cm}$. Đầu trên O của thanh được gắn vào bản lề cố định đặt phía trên mặt nước ; thanh nghiêng so với mặt nước và đầu dưới A nhúng một phần trong nước. Khi cân bằng, thanh hợp với mặt nước góc $30^\\circ$. Biết tỉ số khối lượng riêng của thanh và của nước là $\\dfrac{D_t}{D_n}=0{,}5$. Tính chiều dài phần thanh ngập trong nước.</p><details><summary>Hướng dẫn giải</summary><p>Gọi $x$ là chiều dài phần chìm (tính từ A). Trọng lực đặt ở trung điểm, cách O một đoạn $\\dfrac{L}{2}$ ; lực đẩy đặt ở trung điểm phần chìm, cách O một đoạn $L-\\dfrac{x}{2}$. Cả hai lực thẳng đứng nên cánh tay đòn lần lượt là $\\dfrac{L}{2}\\cos30^\\circ$ và $\\left(L-\\dfrac{x}{2}\\right)\\cos30^\\circ$ ($\\cos30^\\circ$ giản ước, góc nghiêng không ảnh hưởng kết quả).</p><p>$P\\cdot\\dfrac{L}{2}=F_A\\left(L-\\dfrac{x}{2}\\right)$ với $P=10D_tSL$, $F_A=10D_nSx$ :</p><p>$D_t\\dfrac{L^2}{2}=D_n\\,x\\left(L-\\dfrac{x}{2}\\right)\\Rightarrow x^2-2Lx+L^2\\dfrac{D_t}{D_n}=0$.</p><p>$x=L\\left(1-\\sqrt{1-\\dfrac{D_t}{D_n}}\\right)=60\\left(1-\\sqrt{0{,}5}\\right)\\approx17{,}6\\ \\text{cm}$ (nghiệm còn lại lớn hơn $L$ nên loại).</p></details><h4>Bài 16 · Nâng cao</h4><p><strong>(Bình thông nhau có khoá đáy, thả vật nổi)</strong> Hai nhánh thẳng đứng tiết diện $S_1=100\\ \\text{cm}^2$ và $S_2=200\\ \\text{cm}^2$ được nối với nhau ở đáy bằng một ống nhỏ có khoá K (bỏ qua thể tích ống). Ban đầu K đóng : nhánh $S_1$ chứa nước ($D_n=1000\\ \\text{kg/m}^3$) cao $h_1=40\\ \\text{cm}$, nhánh $S_2$ chứa dầu ($D_d=800\\ \\text{kg/m}^3$) cao $h_2=30\\ \\text{cm}$.</p><p>a) Mở khoá K. Tính độ dịch chuyển của mặt thoáng mỗi nhánh khi chất lỏng cân bằng.</p><p>b) Sau đó thả vào nhánh $S_2$ một khối gỗ lập phương cạnh $10\\ \\text{cm}$, $D_g=600\\ \\text{kg/m}^3$. Mặt thoáng mỗi nhánh thay đổi thế nào so với trước khi thả gỗ ?</p><details><summary>Hướng dẫn giải</summary><p>a) Áp suất đáy : nhánh 1 là $4000\\ \\text{Pa}$, nhánh 2 là $2400\\ \\text{Pa}$ nên nước chảy sang nhánh 2, nằm dưới dầu. Gọi $x$ là độ hạ mực nước nhánh 1, $y$ là độ cao cột nước ở nhánh 2 : $S_1x=S_2y\\Rightarrow x=2y$.</p><p>Cân bằng áp suất tại đáy : $1000(40-2y)=1000y+800\\cdot30\\Rightarrow y=\\dfrac{16}{3}\\approx5{,}33\\ \\text{cm}$, $x\\approx10{,}67\\ \\text{cm}$.</p><p>Mặt thoáng nhánh 1 hạ $10{,}67\\ \\text{cm}$ ; mặt thoáng dầu nhánh 2 dâng $5{,}33\\ \\text{cm}$ (dầu giữ nguyên cột $30\\ \\text{cm}$, nước chui vào bên dưới).</p><p>b) Khối gỗ nổi trong dầu ($600\\lt800$) : $V_{ch}=\\dfrac{m}{D_d}=\\dfrac{0{,}6}{800}=750\\ \\text{cm}^3$, tức phần chìm $7{,}5\\ \\text{cm}$, nhỏ hơn bề dày lớp dầu nên gỗ không chạm nước.</p><p>Gỗ làm tăng áp suất tại đáy nhánh 2 thêm $\\dfrac{10m}{S_2}=\\dfrac{6}{0{,}02}=300\\ \\text{Pa}$, đẩy nước từ nhánh 2 về nhánh 1. Gọi $\\Delta h_1$ là độ dâng nhánh 1, $\\Delta h_2$ là độ hạ mặt phân cách ở nhánh 2 : $\\Delta h_1=2\\Delta h_2$ và $d_n(\\Delta h_1+\\Delta h_2)=300$.</p><p>$30000\\,\\Delta h_2\\ (\\text{m})=300\\Rightarrow\\Delta h_2=1\\ \\text{cm}$, $\\Delta h_1=2\\ \\text{cm}$.</p><p>Mặt thoáng dầu : dầu và gỗ chiếm cột cao $\\dfrac{(S_2\\cdot30+750)}{S_2}=33{,}75\\ \\text{cm}$ trên mặt phân cách, nên mặt thoáng dầu dâng $3{,}75-1=2{,}75\\ \\text{cm}$.</p><p>Kết quả : nhánh 1 dâng $2\\ \\text{cm}$ ; mặt thoáng dầu nhánh 2 dâng $2{,}75\\ \\text{cm}$.</p></details><h4>Bài 17 · Nâng cao</h4><p><strong>(Hệ hai vật liên kết)</strong> Hai quả cầu đặc A và B cùng thể tích $V=100\\ \\text{cm}^3$ được nối bằng sợi dây mảnh, nhẹ, không giãn dài $20\\ \\text{cm}$ rồi thả vào chậu nước sâu. A bằng gỗ có $D_A=600\\ \\text{kg/m}^3$, B bằng kim loại có $D_B=2400\\ \\text{kg/m}^3$ ; $D_n=1000\\ \\text{kg/m}^3$.</p><p>a) Chứng minh hệ chìm xuống đáy.</p><p>b) Buộc thêm vào A một khối xốp có $D_x=100\\ \\text{kg/m}^3$ để hệ lơ lửng trong nước. Tính thể tích khối xốp.</p><p>c) Khi hệ lơ lửng, tính lực căng của dây nối A với B.</p><details><summary>Hướng dẫn giải</summary><p>a) $P_A=10\\cdot600\\cdot10^{-4}=0{,}6\\ \\text{N}$ ; $P_B=2{,}4\\ \\text{N}$ ; tổng $3{,}0\\ \\text{N}$. Lực đẩy cực đại khi cả hai chìm hoàn toàn : $10\\cdot1000\\cdot2\\cdot10^{-4}=2{,}0\\ \\text{N}\\lt3{,}0\\ \\text{N}$ nên hệ chìm xuống đáy.</p><p>b) Lơ lửng khi tổng trọng lượng bằng tổng lực đẩy (xốp chìm hoàn toàn) : $3{,}0+1000V_x=2{,}0+10000V_x\\Rightarrow V_x=\\dfrac{1}{9000}\\ \\text{m}^3\\approx111{,}1\\ \\text{cm}^3$.</p><p>c) Xét vật B : $F_{AB}+T=P_B\\Rightarrow T=2{,}4-1{,}0=1{,}4\\ \\text{N}$.</p><p>Kiểm tra với A và xốp : lực đẩy $1{,}0+1{,}11=2{,}11\\ \\text{N}$, trọng lượng $0{,}6+0{,}11=0{,}71\\ \\text{N}$, hiệu $1{,}4\\ \\text{N}=T$ ✓.</p></details><h4>Bài 18 · Nâng cao</h4><p><strong>(Đòn bẩy và lực đẩy)</strong> Thanh AB dài $40\\ \\text{cm}$, khối lượng không đáng kể, treo vật khối lượng $m_1=200\\ \\text{g}$ ở A và vật đặc khối lượng $m_2$ ở B ; thanh nằm ngang cân bằng khi điểm tựa O cách A $15\\ \\text{cm}$.</p><p>a) Tính $m_2$.</p><p>b) Nhúng ngập hoàn toàn vật $m_2$ trong nước ($D_n=1000\\ \\text{kg/m}^3$). Biết vật làm bằng chất có $D_2=4000\\ \\text{kg/m}^3$. Phải dời điểm tựa về phía nào và một đoạn bao nhiêu để thanh lại nằm ngang ?</p><details><summary>Hướng dẫn giải</summary><p>a) $P_1=2\\ \\text{N}$ ; $OB=40-15=25\\ \\text{cm}$ : $P_2=\\dfrac{P_1\\cdot OA}{OB}=\\dfrac{2\\cdot15}{25}=1{,}2\\ \\text{N}$, $m_2=120\\ \\text{g}$.</p><p>b) $V_2=\\dfrac{0{,}12}{4000}=3\\cdot10^{-5}\\ \\text{m}^3=30\\ \\text{cm}^3$ ; $F_A=10\\cdot1000\\cdot3\\cdot10^{-5}=0{,}3\\ \\text{N}$ ; lực kéo ở B còn $P_2'=1{,}2-0{,}3=0{,}9\\ \\text{N}$.</p><p>Lực ở B giảm nên cánh tay đòn ở B phải dài ra : dời O về phía A. Đặt $O'A=x$ : $P_1x=P_2'(40-x)\\Rightarrow2x=0{,}9(40-x)\\Rightarrow x=\\dfrac{36}{2{,}9}\\approx12{,}41\\ \\text{cm}$.</p><p>Đoạn dời : $15-12{,}41\\approx2{,}59\\ \\text{cm}$ về phía A.</p></details><h4>Bài 19 · Nâng cao</h4><p><strong>(Thực hành)</strong> Phòng thực hành có một ống thủy tinh hình chữ U hai nhánh hở thẳng đứng, một thước thẳng có độ chia nhỏ nhất $1\\ \\text{mm}$, bình nước đã biết $D_n=1000\\ \\text{kg/m}^3$ và cốc chất lỏng X không hòa tan trong nước, nhẹ hơn nước.</p><p>a) Trình bày các bước xác định khối lượng riêng $D_X$ của chất lỏng X.</p><p>b) Thiết lập công thức tính $D_X$ theo các đại lượng đo được.</p><p>c) Nêu các nguồn sai số chính và cách giảm sai số.</p><details><summary>Hướng dẫn giải</summary><p>a) Các bước : (1) rót nước vào ống chữ U tới khoảng một phần ba chiều cao, chờ hai mặt nước ngang nhau ; (2) rót chất lỏng X vào một nhánh tới khi cột X cao khoảng $15$ – $25\\ \\text{cm}$ ; (3) đo $h_X$ là chiều cao cột X từ mặt phân cách tới mặt thoáng của X ; (4) đo $h_n$ là độ cao mặt thoáng nước ở nhánh kia so với mặt phân cách ; (5) lặp lại ba lần với lượng X khác nhau rồi lấy trung bình.</p><p>b) Mặt phẳng chuẩn qua mặt phân cách, hai điểm cùng độ cao có áp suất bằng nhau : $10D_Xh_X=10D_nh_n\\Rightarrow D_X=D_n\\dfrac{h_n}{h_X}$.</p><p>c) Sai số đọc mặt phân cách và mặt thoáng (mặt khum do sức căng bề mặt) : đặt mắt ngang tầm, đọc theo đáy mặt khum. Mỗi chiều cao là hiệu của hai lần đọc (mặt phân cách và mặt thoáng) nên $\\Delta h\\approx2\\ \\text{mm}$ khi mỗi lần đọc sai $1\\ \\text{mm}$. Sai số tỉ đối $\\dfrac{\\Delta D_X}{D_X}=\\dfrac{\\Delta h_n}{h_n}+\\dfrac{\\Delta h_X}{h_X}$ nên dùng cột chất lỏng càng cao càng tốt ; ví dụ $h_X=20\\ \\text{cm}$, $h_n=16\\ \\text{cm}$ cho $\\dfrac{2}{160}+\\dfrac{2}{200}\\approx2{,}3\\%$, tức khoảng $2\\%$.</p><p>Ống phải thẳng đứng, X không hòa tan hay phản ứng với nước ; nếu hòa tan một phần phải dùng chất lỏng thứ ba không độc làm chất đệm.</p></details>"
+ }
+}

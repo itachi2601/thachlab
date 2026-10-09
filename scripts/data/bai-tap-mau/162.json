@@ -1,0 +1,786 @@
+{
+ "lesson_id": 162,
+ "lesson_title": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại khớp; đã sửa theo báo cáo."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tốc độ trung bình: chia theo quãng đường, chia theo thời gian, đi rồi về",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "problem_html": "<p>Một xe đạp điện chạy trên đoạn đường thẳng $AB$ dài $24\\ \\text{km}$.</p><ol type=\"a\"><li>Nửa quãng đường đầu xe chạy với tốc độ $12\\ \\text{km/h}$, nửa quãng đường sau chạy với tốc độ $24\\ \\text{km/h}$. Tính tốc độ trung bình của xe trên cả đoạn $AB$.</li><li>Ở một lần đi khác, xe chạy $12\\ \\text{km/h}$ trong nửa thời gian đầu và $24\\ \\text{km/h}$ trong nửa thời gian sau. Tính tốc độ trung bình của xe trên đoạn $AB$ trong lần đi này.</li><li>Quay lại lần đi ở câu a: đến $B$ xe quay về $A$ theo đúng đường cũ, lượt về cũng mất thời gian bằng lượt đi. Tính tốc độ trung bình và độ lớn vận tốc trung bình trên cả hành trình đi và về.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-1-0\"><svg viewBox=\"0 0 420 208\" role=\"img\" aria-label=\"Hai lần xe đạp điện đi từ A đến B dài 24 km, lần thứ nhất chia đôi quãng đường, lần thứ hai chia đôi thời gian\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lần a: chia theo quãng đường</text><text x=\"390\" y=\"22\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = ?</tspan></text><line x1=\"30.0\" y1=\"62.0\" x2=\"390.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"55.0\" x2=\"30.0\" y2=\"69.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"55.0\" x2=\"210.0\" y2=\"69.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"390.0\" y1=\"55.0\" x2=\"390.0\" y2=\"69.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"120.0\" y=\"46\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 km/h</text><text x=\"300.0\" y=\"46\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">24 km/h</text><text x=\"30\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"390\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"210\" y=\"86\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">AB = 24 km</text><circle cx=\"30.0\" cy=\"62\" r=\"6\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"30.0;60.0;90.0;120.0;150.0;180.0;210.0;270.0;330.0;390.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"16\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lần b: chia theo thời gian</text><text x=\"390\" y=\"114\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"134\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Nửa thời gian đầu: 12 km/h</text><text x=\"16\" y=\"152\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Nửa thời gian sau: 24 km/h</text><line x1=\"30.0\" y1=\"174.0\" x2=\"390.0\" y2=\"174.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"167.0\" x2=\"30.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"390.0\" y1=\"167.0\" x2=\"390.0\" y2=\"181.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"30\" y=\"198\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"390\" y=\"198\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><circle cx=\"30.0\" cy=\"174\" r=\"6\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"30.0;60.0;90.0;120.0;150.0;210.0;270.0;330.0;390.0;390.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lần đi cùng xuất phát từ A, chạy nhanh 1200 lần (1 giờ thật = 3 giây).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> tốc độ trung bình là quãng đường đã đi chia thời gian đi ; vận tốc trung bình là độ dịch chuyển chia thời gian.</li><li><strong>Công thức:</strong> $v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}$ ; $t_i=\\dfrac{s_i}{v_i}$ ; $s_i=v_it_i$.</li><li>Chia đều quãng đường : $v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}$ · Chia đều thời gian : $v_{tb}=\\dfrac{v_1+v_2}{2}$.</li><li>⚠ <strong>Điều kiện:</strong> trung bình cộng các tốc độ chỉ đúng khi các chặng có thời gian bằng nhau ; đi rồi về đúng chỗ cũ thì vận tốc trung bình bằng $0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thời gian đi hết $AB$ ở câu a</span></p><p>Nửa quãng đường : $s_1=s_2=\\dfrac{24}{2}=12\\ \\text{km}$.</p>$$t_1=\\dfrac{s_1}{v_1}=\\dfrac{12}{12}=1\\ \\text{h}$$$$t_2=\\dfrac{s_2}{v_2}=\\dfrac{12}{24}=0{,}5\\ \\text{h}$$$$t=t_1+t_2$$<div class=\"bt-ans\">$$t=1{,}5\\ \\text{h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ trung bình ở câu a</span></p><p>Lấy tổng quãng đường chia tổng thời gian :</p>$$v_{tb}=\\dfrac{s}{t}=\\dfrac{24}{1{,}5}$$<div class=\"bt-ans\">$$v_{tb}=16\\ \\text{km/h}$$</div><p>Gần $12$ hơn $24$ vì xe mất nhiều thời gian ở chặng chậm.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tốc độ trung bình ở câu b</span></p><p>Gọi $t$ là tổng thời gian ; mỗi nửa kéo dài $\\dfrac{t}{2}$ :</p>$$s=12\\cdot\\dfrac{t}{2}+24\\cdot\\dfrac{t}{2}=18\\,t$$$$v_{tb}=\\dfrac{s}{t}=\\dfrac{18\\,t}{t}$$<div class=\"bt-ans\">$$v_{tb}=18\\ \\text{km/h}$$</div><p>Bằng trung bình cộng vì hai chặng có thời gian bằng nhau. Kiểm tra : $t=\\dfrac{24}{18}=\\dfrac43\\ \\text{h}$, mỗi nửa $\\dfrac23\\ \\text{h}$ đi được $8\\ \\text{km}$ và $16\\ \\text{km}$, tổng $24\\ \\text{km}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ trung bình cả đi lẫn về</span></p><p>Quãng đường cả hành trình $s=2\\cdot24=48\\ \\text{km}$ ; thời gian $t=1{,}5+1{,}5=3\\ \\text{h}$ :</p>$$v_{tb}=\\dfrac{48}{3}$$<div class=\"bt-ans\">$$v_{tb}=16\\ \\text{km/h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vận tốc trung bình cả đi lẫn về</span></p><p>Xe về đúng $A$ nên độ dịch chuyển bằng $0$ :</p>$$|\\vec v_{tb}|=\\dfrac{|\\Delta x|}{t}=\\dfrac{0}{3}$$<div class=\"bt-ans\">$$|\\vec v_{tb}|=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Tốc độ trung bình luôn dương khi xe đang chạy ; vận tốc trung bình có thể bằng $0$ dù xe đã đi $48\\ \\text{km}$.</p><p>Câu a nhỏ hơn câu b vì ở câu a xe chạy chậm lâu hơn (chặng $12\\ \\text{km/h}$ mất $1\\ \\text{h}$, chặng $24\\ \\text{km/h}$ chỉ $0{,}5\\ \\text{h}$).</p><p>Cả hai kết quả nằm giữa $12$ và $24\\ \\text{km/h}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{tb}=16\\ \\text{km/h}$</p><p>b) $v_{tb}=18\\ \\text{km/h}$</p><p>c) tốc độ trung bình $16\\ \\text{km/h}$ · vận tốc trung bình $0$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nửa quãng đường</strong> → cộng thời gian từng chặng rồi chia ; thấy <strong>nửa thời gian</strong> → cộng quãng đường từng chặng ; thấy <strong>đi rồi về</strong> → vận tốc trung bình bằng $0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-1-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Hai cách chia hành trình: chia theo quãng đường và chia theo thời gian\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a) Hai chặng có quãng đường bằng nhau</text><line x1=\"30.0\" y1=\"58.0\" x2=\"390.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"51.0\" x2=\"30.0\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"51.0\" x2=\"210.0\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"390.0\" y1=\"51.0\" x2=\"390.0\" y2=\"65.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"120.0\" y=\"44\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 km/h</text><text x=\"300.0\" y=\"44\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">24 km/h</text><line x1=\"32\" y1=\"78\" x2=\"208\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M201.0,73.9 L208.0,78.0 L201.0,82.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"208\" y1=\"78\" x2=\"32\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M39.0,82.1 L32.0,78.0 L39.0,73.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"120.0\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 km</text><line x1=\"212\" y1=\"78\" x2=\"388\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M381.0,73.9 L388.0,78.0 L381.0,82.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"388\" y1=\"78\" x2=\"212\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M219.0,82.1 L212.0,78.0 L219.0,73.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"300.0\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 km</text><text x=\"16\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">b) Hai chặng có thời gian bằng nhau</text><rect x=\"30.0\" y=\"142.0\" width=\"180.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"210.0\" y=\"142.0\" width=\"180.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"120.0\" y=\"160\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">12 km/h</text><text x=\"300.0\" y=\"160\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">24 km/h</text><line x1=\"32\" y1=\"184\" x2=\"208\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M201.0,179.9 L208.0,184.0 L201.0,188.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"208\" y1=\"184\" x2=\"32\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M39.0,188.1 L32.0,184.0 L39.0,179.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"120.0\" y=\"204\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t/2</text><line x1=\"212\" y1=\"184\" x2=\"388\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M381.0,179.9 L388.0,184.0 L381.0,188.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"388\" y1=\"184\" x2=\"212\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M219.0,188.1 L212.0,184.0 L219.0,179.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"300.0\" y=\"204\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t/2</text></svg><figcaption>Dữ kiện: ở câu a mỗi chặng dài 12 km ; ở câu b mỗi chặng kéo dài nửa tổng thời gian. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đoạn đường thẳng $AB$ dài $24$ km\"</td><td>$AB=24$ km</td><td>Tốc độ trung bình $v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}$ ; ⚠ không phải trung bình cộng các tốc độ</td></tr><tr><td>\"nửa quãng đường đầu $12$ km/h, nửa sau $24$ km/h\"</td><td>$s_1=s_2=12$ km ; $v_1=12$, $v_2=24$ km/h</td><td>$t_i=\\dfrac{s_i}{v_i}$ ; ⚠ hai chặng dài bằng nhau nên thời gian không bằng nhau</td></tr><tr><td>\"tốc độ trung bình trên cả đoạn $AB$\" (câu a)</td><td>Cần $v_{tb}$</td><td>$v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}$</td></tr><tr><td>\"nửa thời gian đầu $12$ km/h, nửa thời gian sau $24$ km/h\"</td><td>$t_1=t_2=\\dfrac{t}{2}$ ; $v_1=12$, $v_2=24$ km/h</td><td>$s_i=v_it_i$ ; ⚠ gọi tổng thời gian là $t$ rồi cộng quãng đường hai chặng</td></tr><tr><td>\"quay về $A$ theo đúng đường cũ … thời gian bằng lượt đi\"</td><td>Đi và về đều dài $24$ km, cùng thời gian</td><td>⚠ Tốc độ trung bình dùng tổng quãng đường ; vận tốc trung bình dùng độ dịch chuyển (về đúng chỗ xuất phát thì bằng $0$)</td></tr><tr><td>\"tốc độ trung bình và độ lớn vận tốc trung bình\"</td><td>Cần $v_{tb}$ và $|\\vec v_{tb}|$ cả hành trình</td><td>$v_{tb}=\\dfrac{s}{t}$ ; $|\\vec v_{tb}|=\\dfrac{|\\Delta x|}{t}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nửa quãng đường</b> → cộng thời gian từng chặng ; <b>nửa thời gian</b> → cộng quãng đường từng chặng.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thời gian đi hết $AB$ ở câu a",
+     "hoi": "Tổng thời gian xe đi hết $AB$ ở câu a?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "h",
+     "loi_hay_gap": "Lấy cả $24\\ \\text{km}$ chia cho từng tốc độ, thay vì chỉ chia nửa quãng đường cho tốc độ của chính nửa đó."
+    },
+    {
+     "tieu_de": "Tốc độ trung bình ở câu a",
+     "hoi": "Tốc độ trung bình của xe ở câu a?",
+     "dap_so": 16,
+     "sai_so": 0.1,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Lấy trung bình cộng hai tốc độ — chỉ đúng khi hai chặng có thời gian bằng nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}$ với $t_{\\text{tổng}}$ vừa tính",
+       "dung": true
+      },
+      {
+       "text": "$v_{tb}=\\dfrac{v_1+v_2}{2}$",
+       "dung": false,
+       "vi_sao": "Trung bình cộng chỉ đúng khi hai chặng có thời gian bằng nhau ; ở đây hai chặng có quãng đường bằng nhau nên chặng chậm chiếm nhiều thời gian hơn."
+      },
+      {
+       "text": "$v_{tb}=v_1+v_2$",
+       "dung": false,
+       "vi_sao": "Tốc độ trung bình không thể lớn hơn tốc độ lớn nhất của các chặng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ trung bình ở câu b",
+     "hoi": "Tốc độ trung bình của xe ở câu b?",
+     "dap_so": 18,
+     "sai_so": 0.1,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Dùng lại cách làm câu a (hai chặng cùng quãng đường) trong khi câu b chia theo thời gian.",
+     "chon_buoc_ke": [
+      {
+       "text": "Gọi $t$ là tổng thời gian, mỗi nửa $\\dfrac{t}{2}$ ; cộng quãng đường hai chặng",
+       "dung": true
+      },
+      {
+       "text": "Tính $t_1=\\dfrac{12}{12}$ và $t_2=\\dfrac{12}{24}$ như câu a",
+       "dung": false,
+       "vi_sao": "Câu b không cho mỗi chặng dài $12\\ \\text{km}$ ; hai chặng có thời gian bằng nhau nên quãng đường khác nhau."
+      },
+      {
+       "text": "$v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}$",
+       "dung": false,
+       "vi_sao": "Công thức đó dành cho chia đều quãng đường ; câu b chia đều thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ trung bình cả đi lẫn về",
+     "hoi": "Tốc độ trung bình trên cả hành trình đi và về?",
+     "dap_so": 16,
+     "sai_so": 0.1,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Chỉ tính quãng đường lượt đi, hoặc lẫn tốc độ trung bình với vận tốc trung bình.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v_{tb}=\\dfrac{\\text{tổng quãng đường đi và về}}{\\text{tổng thời gian}}$",
+       "dung": true
+      },
+      {
+       "text": "$v_{tb}=\\dfrac{0}{3}$ vì về đúng chỗ xuất phát",
+       "dung": false,
+       "vi_sao": "Đó là vận tốc trung bình (dùng độ dịch chuyển). Tốc độ trung bình dùng tổng quãng đường đã đi nên không triệt tiêu khi đổi chiều."
+      },
+      {
+       "text": "$v_{tb}=\\dfrac{24}{3}$ (chỉ tính lượt đi)",
+       "dung": false,
+       "vi_sao": "Tổng quãng đường phải gồm cả lượt về."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc trung bình cả đi lẫn về",
+     "hoi": "Độ lớn vận tốc trung bình trên cả hành trình?",
+     "dap_so": 0,
+     "sai_so": 0.05,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Lấy bằng tốc độ trung bình vì quên rằng vận tốc trung bình dùng độ dịch chuyển, mà xe đã về đúng chỗ xuất phát.",
+     "chon_buoc_ke": [
+      {
+       "text": "$|\\vec v_{tb}|=\\dfrac{|\\Delta x|}{t}$ với độ dịch chuyển của cả hành trình",
+       "dung": true
+      },
+      {
+       "text": "$|\\vec v_{tb}|=\\dfrac{48}{3}$",
+       "dung": false,
+       "vi_sao": "$48\\ \\text{km}$ là quãng đường, không phải độ dịch chuyển ; về đúng điểm xuất phát nên độ dịch chuyển bằng $0$."
+      },
+      {
+       "text": "$|\\vec v_{tb}|=\\dfrac{24}{1{,}5}$ (lấy riêng lượt đi)",
+       "dung": false,
+       "vi_sao": "Câu hỏi nói cả hành trình đi và về ; lượt đi và lượt về có độ dịch chuyển ngược dấu nên triệt tiêu nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Hai xe chuyển động ngược chiều: thời điểm gặp, vị trí gặp, lúc cách nhau một khoảng cho trước",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "problem_html": "<p>Hai thành phố $A$ và $B$ cách nhau $150\\ \\text{km}$. Lúc $6$ giờ, một ô tô xuất phát từ $A$ đi về $B$ với tốc độ $60\\ \\text{km/h}$. Cùng lúc đó, một xe máy xuất phát từ $B$ đi về $A$ với tốc độ $40\\ \\text{km/h}$. Coi hai xe chuyển động thẳng đều.</p><ol type=\"a\"><li>Hai xe gặp nhau lúc mấy giờ? Chỗ gặp cách $A$ bao nhiêu kilômét?</li><li>Lúc mấy giờ hai xe cách nhau $30\\ \\text{km}$? (Xét cả hai khả năng.)</li><li>Khi ô tô đến $B$, xe máy còn cách $A$ bao nhiêu kilômét?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-2-0\"><svg viewBox=\"0 0 420 184\" role=\"img\" aria-label=\"Ô tô đi từ A về B và xe máy đi từ B về A, ngược chiều nhau\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"30.0\" y1=\"70.0\" x2=\"390.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"118.0\" x2=\"390.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"40.0\" x2=\"30.0\" y2=\"134.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><line x1=\"390.0\" y1=\"40.0\" x2=\"390.0\" y2=\"134.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.7\"/><text x=\"30\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"390\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"34\" y1=\"150\" x2=\"386\" y2=\"150\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M379.0,145.9 L386.0,150.0 L379.0,154.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"386\" y1=\"150\" x2=\"34\" y2=\"150\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M41.0,154.1 L34.0,150.0 L41.0,145.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"210\" y=\"144\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">AB = 150 km</text><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ô tô từ A, xe máy từ B, cùng lúc</text><text x=\"390\" y=\"20\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">gặp nhau: ?</text><g transform=\"translate(30.0 70.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"30.0 70.0;102.0 70.0;174.0 70.0;246.0 70.0;318.0 70.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"-17.0\" y=\"-17.0\" width=\"34.0\" height=\"11.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline points=\"-9,-17 -5,-24 7,-24 11,-17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-9.0\" cy=\"-4.0\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"9.0\" cy=\"-4.0\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"0\" y=\"-30\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">60 km/h</text></g><g transform=\"translate(390.0 118.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"390.0 118.0;342.0 118.0;294.0 118.0;246.0 118.0;198.0 118.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"-11.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"11.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M-11,-6 L-3,-15 L6,-15 L11,-6 M-3,-15 L-6,-21 M6,-15 L3,-22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"-30\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">40 km/h</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ô tô (xanh, 60 km/h) và xe máy (cam, 40 km/h) 1 giờ thật ứng với 2 giây mô phỏng.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> toạ độ $x$ tính từ gốc $O$ ; vật chuyển động thẳng đều có $x=x_0+vt$ ($v\\gt0$ theo chiều dương, $v\\lt0$ ngược chiều dương).</li><li><strong>Định luật:</strong> hai vật gặp nhau khi toạ độ bằng nhau $x_1=x_2$ ; khoảng cách giữa chúng $d=|x_1-x_2|$.</li><li><strong>Công thức:</strong> $x_1=v_1t$ ; $x_2=x_{02}-v_2t$ (xe thứ hai đi ngược chiều dương).</li><li>⚠ <strong>Điều kiện:</strong> hai xe cùng mốc thời gian ; $d=30$ có hai nghiệm (chưa gặp và đã qua nhau).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thời điểm gặp nhau</span></p><p>Gốc $O$ tại $A$, chiều dương từ $A$ đến $B$, mốc thời gian lúc $6$ giờ :</p>$$x_1=60\\,t$$$$x_2=150-40\\,t$$<p>Gặp nhau khi $x_1=x_2$ :</p>$$60\\,t=150-40\\,t$$$$t=\\dfrac{150}{100}$$<div class=\"bt-ans\">$$t=1{,}5\\ \\text{h}$$</div><p>Lúc $6+1{,}5$, tức $7$ giờ $30$ phút.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vị trí gặp nhau</span></p>$$x=x_1=60\\cdot1{,}5$$<div class=\"bt-ans\">$$x=90\\ \\text{km}$$</div><p>Chỗ gặp nhau cách $A$ $90\\ \\text{km}$, nghiêng về phía $B$ vì ô tô chạy nhanh hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cách nhau $30\\ \\text{km}$: lúc chưa gặp</span></p><p>Chưa gặp nhau thì $x_2\\gt x_1$, nên $d=x_2-x_1$ :</p>$$150-40\\,t-60\\,t=30$$$$100\\,t=120$$<div class=\"bt-ans\">$$t=1{,}2\\ \\text{h}$$</div><p>Lúc $6$ giờ $+\\ 1{,}2\\ \\text{h}$ $=$ $7$ giờ $12$ phút.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cách nhau $30\\ \\text{km}$: lúc đã qua nhau</span></p><p>Đã qua nhau thì $x_1\\gt x_2$, nên $d=x_1-x_2$ :</p>$$60\\,t-(150-40\\,t)=30$$$$100\\,t=180$$<div class=\"bt-ans\">$$t=1{,}8\\ \\text{h}$$</div><p>Lúc $6$ giờ $+\\ 1{,}8\\ \\text{h}$ $=$ $7$ giờ $48$ phút.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Xe máy khi ô tô đến $B$</span></p><p>Ô tô đến $B$ khi $x_1=150$ :</p>$$t=\\dfrac{150}{60}=2{,}5\\ \\text{h}$$<p>Lúc đó toạ độ xe máy :</p>$$x_2=150-40\\cdot2{,}5$$<div class=\"bt-ans\">$$x_2=50\\ \\text{km}$$</div><p>Gốc $O$ đặt tại $A$ nên xe máy còn cách $A$ $50\\ \\text{km}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Lúc $t=1{,}2\\ \\text{h}$ : $x_1=72$, $x_2=102$, $d=30\\ \\text{km}$ ✓.</p><p>Lúc $t=1{,}8\\ \\text{h}$ : $x_1=108$, $x_2=78$, $d=30\\ \\text{km}$ ✓.</p><p>Hai thời điểm đối xứng quanh lúc gặp nhau ($1{,}5\\pm0{,}3\\ \\text{h}$) vì tốc độ lại gần và tốc độ ra xa đều là $100\\ \\text{km/h}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $7$ giờ $30$ phút · cách $A$ $90\\ \\text{km}$</p><p>b) $7$ giờ $12$ phút và $7$ giờ $48$ phút</p><p>c) $50\\ \\text{km}$</p></div><p class=\"bt-note\">Nhận dạng: hai xe <strong>đi ngược chiều, xuất phát cùng lúc</strong> → chọn gốc ở một bến, giải $x_1=x_2$ ; hỏi <strong>cách nhau $d$</strong> → xét $x_2-x_1=\\pm d$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-2-2\"><svg viewBox=\"0 0 420 180\" role=\"img\" aria-label=\"Trục toạ độ gốc tại A, ô tô đi theo chiều dương, xe máy đi ngược chiều dương\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"30.0\" y1=\"78.0\" x2=\"390.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"128.0\" x2=\"390.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"30\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"390\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><g transform=\"translate(30 78)\"><rect x=\"-17.0\" y=\"-17.0\" width=\"34.0\" height=\"11.0\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline points=\"-9,-17 -5,-24 7,-24 11,-17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/><circle cx=\"-9.0\" cy=\"-4.0\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"9.0\" cy=\"-4.0\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/></g><g transform=\"translate(390 128)\"><circle cx=\"-11.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"11.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M-11,-6 L-3,-15 L6,-15 L11,-6 M-3,-15 L-6,-21 M6,-15 L3,-22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/></g><line x1=\"54\" y1=\"66\" x2=\"102.0\" y2=\"66.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M92.0,60.2 L102.0,66.0 L92.0,71.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"108.0\" y=\"70\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₁ = 60 km/h</text><line x1=\"366\" y1=\"116\" x2=\"334.0\" y2=\"116.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M344.0,121.8 L334.0,116.0 L344.0,110.2\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"328.0\" y=\"120\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">v₂ = 40 km/h</text><line x1=\"30\" y1=\"152\" x2=\"404\" y2=\"152\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M396.4,147.6 L404.0,152.0 L396.4,156.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"406\" y=\"156\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x</text><text x=\"38\" y=\"146\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">O ≡ A</text><text x=\"382\" y=\"146\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">x₀₂ = 150 km</text><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Gốc O tại A, chiều dương từ A đến B</text></svg><figcaption>Dữ kiện: ô tô có v > 0, xe máy có v < 0 ; hai xe xuất phát cùng lúc. Mũi tên vẽ đúng tỉ lệ độ lớn vận tốc.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$A$ và $B$ cách nhau $150$ km\"</td><td>$AB=150$ km</td><td>Gốc $O$ tại $A$, chiều dương từ $A$ đến $B$ : $x=x_0+vt$</td></tr><tr><td>\"lúc $6$ giờ … ô tô từ $A$ … $60$ km/h\"</td><td>$x_{01}=0$ ; $v_1=+60$ km/h</td><td>$x_1=60t$</td></tr><tr><td>\"cùng lúc … xe máy từ $B$ … $40$ km/h\"</td><td>$x_{02}=150$ km ; $v_2=-40$ km/h</td><td>⚠ Xe máy đi ngược chiều dương nên $v_2\\lt0$ ; hai xe cùng mốc thời gian : $x_2=150-40t$</td></tr><tr><td>\"gặp nhau lúc mấy giờ, cách $A$ bao nhiêu\"</td><td>Cần $t$ và $x$</td><td>Gặp nhau khi $x_1=x_2$</td></tr><tr><td>\"cách nhau $30$ km\"</td><td>$d=30$ km</td><td>$d=|x_1-x_2|$ ; ⚠ có hai khả năng : chưa gặp ($x_2\\gt x_1$) và đã qua nhau ($x_1\\gt x_2$)</td></tr><tr><td>\"khi ô tô đến $B$, xe máy còn cách $A$\"</td><td>Điều kiện $x_1=150$</td><td>Tìm $t$ lúc $x_1=150$ rồi tính $x_2$ ; khoảng cách tới $A$ chính là $x_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai xe ngược chiều, xuất phát cùng lúc</b> → giải $x_1=x_2$ ; hỏi <b>cách nhau d</b> → xét hai khả năng.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Thời điểm gặp nhau",
+     "hoi": "Hai xe gặp nhau sau bao lâu kể từ lúc xuất phát?",
+     "dap_so": 1.5,
+     "sai_so": 0.02,
+     "don_vi": "h",
+     "loi_hay_gap": "Quên đổi dấu vận tốc của xe máy (viết $x_2=150+40t$) hoặc lấy hiệu hai tốc độ thay vì giải $x_1=x_2$."
+    },
+    {
+     "tieu_de": "Vị trí gặp nhau",
+     "hoi": "Chỗ gặp nhau cách $A$ bao nhiêu kilômét?",
+     "dap_so": 90,
+     "sai_so": 0.5,
+     "don_vi": "km",
+     "loi_hay_gap": "Lấy quãng đường xe máy đi (tính từ $B$) làm khoảng cách tới $A$ ; hoặc cho rằng hai xe gặp nhau ở trung điểm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế thời gian gặp vào phương trình toạ độ của ô tô",
+       "dung": true
+      },
+      {
+       "text": "Lấy $x=v_2t$ của xe máy",
+       "dung": false,
+       "vi_sao": "Xe máy xuất phát từ $B$ nên toạ độ của nó là $150-v_2t$ ; $v_2t$ chỉ là quãng đường nó đã đi."
+      },
+      {
+       "text": "Lấy $x=\\dfrac{150}{2}$ vì hai xe gặp ở giữa",
+       "dung": false,
+       "vi_sao": "Hai xe có tốc độ khác nhau nên không gặp ở trung điểm ; xe nhanh đi được quãng đường dài hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cách nhau $30\\ \\text{km}$: lúc chưa gặp",
+     "hoi": "Hai xe cách nhau $30\\ \\text{km}$ lần thứ nhất sau bao lâu?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "h",
+     "loi_hay_gap": "Chỉ giải $x_1-x_2=30$ (chiều đã qua nhau) nên ra nghiệm lớn hơn thời gian gặp ; hoặc quên rằng có hai nghiệm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $d=x_2-x_1=30$ với $x_2\\gt x_1$ (chưa gặp) rồi giải",
+       "dung": true
+      },
+      {
+       "text": "Viết $x_1-x_2=30$",
+       "dung": false,
+       "vi_sao": "Đó là trường hợp đã qua nhau ; lần cách nhau $30\\ \\text{km}$ đầu tiên là lúc xe máy còn ở phía trước ô tô."
+      },
+      {
+       "text": "Lấy $\\dfrac{30}{60+40}$",
+       "dung": false,
+       "vi_sao": "$30\\ \\text{km}$ là khoảng cách còn lại, không phải quãng đường hai xe cùng đi được từ lúc xuất phát."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cách nhau $30\\ \\text{km}$: lúc đã qua nhau",
+     "hoi": "Hai xe cách nhau $30\\ \\text{km}$ lần thứ hai sau bao lâu?",
+     "dap_so": 1.8,
+     "sai_so": 0.02,
+     "don_vi": "h",
+     "loi_hay_gap": "Dùng lại phương trình của lần trước ($x_2-x_1=30$) hoặc viết toạ độ xe máy là $40t$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $d=x_1-x_2=30$ với $x_1\\gt x_2$ (đã qua nhau) rồi giải",
+       "dung": true
+      },
+      {
+       "text": "Giải lại $x_2-x_1=30$ như lần trước",
+       "dung": false,
+       "vi_sao": "Phương trình đó chỉ cho đúng một nghiệm (lúc chưa gặp). Sau khi gặp, ô tô ở phía xa hơn nên $x_1\\gt x_2$."
+      },
+      {
+       "text": "Viết $x_1-x_2=30$ nhưng thay $x_2=40t$",
+       "dung": false,
+       "vi_sao": "Toạ độ xe máy là $150-40t$ ; $40t$ chỉ là quãng đường nó đi được."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Xe máy khi ô tô đến $B$",
+     "hoi": "Khi ô tô đến $B$, xe máy cách $A$ bao nhiêu kilômét?",
+     "dap_so": 50,
+     "sai_so": 0.5,
+     "don_vi": "km",
+     "loi_hay_gap": "Lấy thời gian gặp nhau thay cho thời gian ô tô đến $B$ ; hoặc tính quãng đường xe máy đã đi thay vì khoảng cách tới $A$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tìm lúc ô tô đến $B$ ($x_1=AB$) rồi tính $x_2$ tại đó",
+       "dung": true
+      },
+      {
+       "text": "Tính $x_2$ tại thời điểm hai xe gặp nhau",
+       "dung": false,
+       "vi_sao": "Đó là lúc hai xe gặp nhau ; ô tô còn phải đi tiếp đến $B$."
+      },
+      {
+       "text": "Tính $x_2$ lúc xe máy đến $A$",
+       "dung": false,
+       "vi_sao": "Đó là lúc $x_2=0$ ; cần thời điểm ô tô đến $B$ chứ không phải lúc xe máy đến $A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Vật có chiều dài: đoàn tàu qua người, qua cầu, gặp và vượt đoàn tàu khác",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "problem_html": "<p>Một đoàn tàu dài $L_1=180\\ \\text{m}$ chạy đều với tốc độ $54\\ \\text{km/h}$.</p><ol type=\"a\"><li>Tàu chạy qua một người đứng yên bên đường mất bao lâu?</li><li>Tàu chạy qua một cây cầu dài $S=420\\ \\text{m}$ mất bao lâu (tính từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu)?</li><li>Tàu gặp một đoàn tàu thứ hai dài $L_2=140\\ \\text{m}$ chạy ngược chiều trên đường ray song song với tốc độ $36\\ \\text{km/h}$. Tính thời gian từ lúc hai đầu tàu ngang nhau đến lúc hai đuôi tàu rời nhau.</li><li>Nếu đoàn tàu thứ hai chạy cùng chiều, ở phía trước, với tốc độ $36\\ \\text{km/h}$ thì tàu thứ nhất vượt qua nó mất bao lâu (từ lúc đầu tàu thứ nhất ngang đuôi tàu thứ hai đến lúc đuôi tàu thứ nhất ngang đầu tàu thứ hai)?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-3-0\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Đoàn tàu dài 180 mét chạy qua cây cầu dài 420 mét, tính từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"110.0\" x2=\"110.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"320.0\" y1=\"110.0\" x2=\"408.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"113.0\" x2=\"320.0\" y2=\"113.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"1\"/><line x1=\"150.0\" y1=\"116.0\" x2=\"150.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"280.0\" y1=\"116.0\" x2=\"280.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"4\" opacity=\"1\"/><path d=\"M150,146 Q215.0,140 280.0,146\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\".6\"/><line x1=\"110\" y1=\"164\" x2=\"320.0\" y2=\"164\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M313.0,159.9 L320.0,164.0 L313.0,168.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"320.0\" y1=\"164\" x2=\"110\" y2=\"164\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M117.0,168.1 L110.0,164.0 L117.0,159.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"215.0\" y=\"182\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">cầu dài S = 420 m</text><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Tàu dài L₁ = 180 m, v = 54 km/h</text><text x=\"408\" y=\"20\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">t = ?</text><g transform=\"translate(20.0 110.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"20.0 110.0;320.0 110.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><polygon points=\"0,0 0,-20 82.0,-20 90.0,-11 90.0,0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\" opacity=\"1\"/><line x1=\"30.0\" y1=\"0.0\" x2=\"30.0\" y2=\"-20.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"0.0\" x2=\"60.0\" y2=\"-20.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><circle cx=\"8.6\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"21.4\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"38.6\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"51.4\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"68.6\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"81.4\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu (1 s mô phỏng ứng với 10 s thật). Chiều dài tàu và cầu vẽ đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vật có kích thước đáng kể thì chọn một điểm chuẩn (đầu tàu) ; quãng đường điểm chuẩn đi được là chiều dài thực của sự dịch chuyển.</li><li><strong>Công thức:</strong> $s=vt$ ; qua vật đứng yên : $s=L_1$ ; qua cầu : $s=L_1+S$ ; hai tàu : $t=\\dfrac{L_1+L_2}{v_{\\text{tđ}}}$.</li><li>Ngược chiều : $v_{\\text{tđ}}=v_1+v_2$ · Cùng chiều : $v_{\\text{tđ}}=v_1-v_2$.</li><li>⚠ <strong>Điều kiện:</strong> đổi tốc độ ra m/s khi chiều dài tính bằng mét ; xác định đúng mốc bắt đầu và mốc kết thúc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị</span></p><p>Chiều dài tính bằng mét nên đổi tốc độ ra m/s :</p>$$v_1=\\dfrac{54}{3{,}6}$$<div class=\"bt-ans\">$$v_1=15\\ \\text{m/s}$$</div><p>Tàu thứ hai : $v_2=\\dfrac{36}{3{,}6}=10\\ \\text{m/s}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Qua người đứng yên</span></p><p>Đầu tàu phải đi đúng chiều dài tàu : $s=L_1=180\\ \\text{m}$.</p>$$t=\\dfrac{s}{v_1}=\\dfrac{180}{15}$$<div class=\"bt-ans\">$$t=12\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Qua cầu</span></p><p>Từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu, đầu tàu đi :</p>$$s=L_1+S=180+420=600\\ \\text{m}$$$$t=\\dfrac{s}{v_1}=\\dfrac{600}{15}$$<div class=\"bt-ans\">$$t=40\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hai tàu ngược chiều</span></p><p>Vận tốc tương đối và quãng đường tương đối :</p>$$v_{\\text{tđ}}=v_1+v_2=15+10=25\\ \\text{m/s}$$$$s_{\\text{tđ}}=L_1+L_2=180+140=320\\ \\text{m}$$$$t=\\dfrac{s_{\\text{tđ}}}{v_{\\text{tđ}}}=\\dfrac{320}{25}$$<div class=\"bt-ans\">$$t=12{,}8\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hai tàu cùng chiều</span></p><p>Cùng chiều thì tốc độ lại gần nhau là hiệu :</p>$$v_{\\text{tđ}}=v_1-v_2=15-10=5\\ \\text{m/s}$$$$t=\\dfrac{L_1+L_2}{v_{\\text{tđ}}}=\\dfrac{320}{5}$$<div class=\"bt-ans\">$$t=64\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Cùng chiều lâu hơn ngược chiều ($64\\ \\text{s}\\gt12{,}8\\ \\text{s}$) vì hai tàu lại gần nhau chậm hơn nhiều ($5\\ \\text{m/s}$ so với $25\\ \\text{m/s}$) ✓.</p><p>Nếu quên chiều dài tàu ở câu b sẽ ra $\\dfrac{420}{15}=28\\ \\text{s}$, ngắn hơn thực tế.</p><p>Đổi lại : $12{,}8\\ \\text{s}\\times25\\ \\text{m/s}=320\\ \\text{m}=L_1+L_2$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $12\\ \\text{s}$</p><p>b) $40\\ \\text{s}$</p><p>c) $12{,}8\\ \\text{s}$</p><p>d) $64\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>tàu có chiều dài</strong> → quãng đường tính theo đầu tàu cộng chiều dài cần vượt ($L_1$, $L_1+S$ hoặc $L_1+L_2$) ; hai tàu <strong>ngược chiều</strong> cộng tốc độ, <strong>cùng chiều</strong> trừ tốc độ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-3-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Đoàn tàu qua cầu và hai đoàn tàu ngược chiều gặp nhau\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"70.0\" x2=\"120.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"288.0\" y1=\"70.0\" x2=\"408.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"120.0\" y1=\"73.0\" x2=\"288.0\" y2=\"73.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"1\"/><g transform=\"translate(48.0 70)\"><polygon points=\"0,0 0,-18 64.0,-18 72.0,-9 72.0,0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\" opacity=\"1\"/><line x1=\"24.0\" y1=\"0.0\" x2=\"24.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"48.0\" y1=\"0.0\" x2=\"48.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><circle cx=\"7.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"16.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"31.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"40.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"55.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"64.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></g><g transform=\"translate(288.0 70)\"><polygon points=\"0,0 0,-18 64.0,-18 72.0,-9 72.0,0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\" opacity=\"0.4\"/><line x1=\"24.0\" y1=\"0.0\" x2=\"24.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.4\"/><line x1=\"48.0\" y1=\"0.0\" x2=\"48.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.4\"/><circle cx=\"7.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"16.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"31.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"40.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"55.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"64.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></g><text x=\"84.0\" y=\"44\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">L₁</text><text x=\"204.0\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">S</text><text x=\"324.0\" y=\"44\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">L₁</text><line x1=\"120\" y1=\"26\" x2=\"360.0\" y2=\"26\" stroke=\"#f87171\" stroke-width=\"1.8\"/><path d=\"M353.0,21.9 L360.0,26.0 L353.0,30.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"360.0\" y1=\"26\" x2=\"120\" y2=\"26\" stroke=\"#f87171\" stroke-width=\"1.8\"/><path d=\"M127.0,30.1 L120.0,26.0 L127.0,21.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"210\" y=\"16\" fill=\"#f87171\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">đầu tàu đi được quãng đường nào?</text><line x1=\"16.0\" y1=\"160.0\" x2=\"408.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g transform=\"translate(20 160)\"><polygon points=\"0,0 0,-18 64.0,-18 72.0,-9 72.0,0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\" opacity=\"1\"/><line x1=\"24.0\" y1=\"0.0\" x2=\"24.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"48.0\" y1=\"0.0\" x2=\"48.0\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><circle cx=\"7.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"16.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"31.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"40.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"55.3\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"64.7\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></g><g transform=\"translate(290 160)\"><polygon points=\"0,0 0,-18 48.0,-18 56.0,-9 56.0,0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\" opacity=\"1\"/><line x1=\"18.7\" y1=\"0.0\" x2=\"18.7\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"37.3\" y1=\"0.0\" x2=\"37.3\" y2=\"-18.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><circle cx=\"6.1\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"12.6\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"24.8\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"31.2\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"43.4\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><circle cx=\"49.9\" cy=\"3.0\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></g><line x1=\"96.0\" y1=\"151\" x2=\"144.6\" y2=\"151.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M134.6,145.2 L144.6,151.0 L134.6,156.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"120.3\" y=\"180\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">54 km/h</text><line x1=\"286\" y1=\"151\" x2=\"253.6\" y2=\"151.0\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M263.6,156.8 L253.6,151.0 L263.6,145.2\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"269.8\" y=\"180\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">36 km/h</text><text x=\"56.0\" y=\"134\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">L₁</text><text x=\"318.0\" y=\"134\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">L₂ = 140 m</text><text x=\"16\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Hai tàu ngược chiều gặp nhau</text></svg><figcaption>Dữ kiện: tàu có chiều dài nên phải chọn điểm chuẩn (đầu tàu). Mũi tên vận tốc vẽ đúng tỉ lệ độ lớn ; chiều dài tàu và cầu vẽ đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đoàn tàu dài $L_1=180$ m … $54$ km/h\"</td><td>$L_1=180$ m ; $v_1=54$ km/h</td><td>⚠ Đổi cùng hệ đơn vị : $54$ km/h $=\\dfrac{54}{3{,}6}$ m/s ; chọn đầu tàu làm điểm chuẩn</td></tr><tr><td>\"qua một người đứng yên\"</td><td>Người coi như một điểm</td><td>Đầu tàu phải đi đúng chiều dài tàu : $s=L_1$</td></tr><tr><td>\"cầu dài $S=420$ m … từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu\"</td><td>$S=420$ m</td><td>⚠ Đầu tàu đi từ đầu cầu đến lúc đuôi tàu rời cầu : $s=L_1+S$</td></tr><tr><td>\"tàu thứ hai dài $140$ m ngược chiều $36$ km/h\"</td><td>$L_2=140$ m ; $v_2=36$ km/h</td><td>Ngược chiều : $v_{\\text{tđ}}=v_1+v_2$ ; $s_{\\text{tđ}}=L_1+L_2$</td></tr><tr><td>\"từ lúc hai đầu tàu ngang nhau đến lúc hai đuôi tàu rời nhau\"</td><td>Mốc đầu và mốc cuối của sự gặp nhau</td><td>$t=\\dfrac{L_1+L_2}{v_1+v_2}$</td></tr><tr><td>\"cùng chiều … tàu thứ nhất vượt qua\"</td><td>Cùng chiều, $v_1\\gt v_2$</td><td>⚠ Cùng chiều : $v_{\\text{tđ}}=v_1-v_2$ (chỉ vượt được khi $v_1\\gt v_2$) ; $s_{\\text{tđ}}=L_1+L_2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tàu có chiều dài</b> → quãng đường cộng thêm chiều dài cần vượt ; <b>ngược chiều</b> cộng tốc độ, <b>cùng chiều</b> trừ tốc độ.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đổi đơn vị",
+     "hoi": "Tốc độ của tàu thứ nhất bằng bao nhiêu mét trên giây?",
+     "dap_so": 15,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Nhân với $3{,}6$ thay vì chia, hoặc thay thẳng $54$ vào công thức với chiều dài tính bằng mét."
+    },
+    {
+     "tieu_de": "Qua người đứng yên",
+     "hoi": "Tàu qua hết người đứng yên bên đường mất bao lâu?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "s",
+     "loi_hay_gap": "Coi tàu là một điểm nên cho thời gian bằng $0$, hoặc chia chiều dài cho $54$ chưa đổi đơn vị.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đầu tàu đi đúng chiều dài tàu : $s=L_1$",
+       "dung": true
+      },
+      {
+       "text": "Coi tàu là điểm : $s=0$",
+       "dung": false,
+       "vi_sao": "Đoàn tàu dài $180\\ \\text{m}$ nên người chỉ qua hết khi cả đuôi tàu đã qua người."
+      },
+      {
+       "text": "$s=L_1$ nhưng dùng $v=54$ trực tiếp",
+       "dung": false,
+       "vi_sao": "Chiều dài tính bằng mét còn tốc độ tính bằng km/h : phải đổi cùng hệ đơn vị trước khi chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Qua cầu",
+     "hoi": "Tàu qua hết cầu (đầu tàu lên cầu → đuôi tàu rời cầu) mất bao lâu?",
+     "dap_so": 40,
+     "sai_so": 0.5,
+     "don_vi": "s",
+     "loi_hay_gap": "Chỉ lấy chiều dài cầu ($420\\ \\text{m}$) hoặc lấy hiệu hai chiều dài.",
+     "chon_buoc_ke": [
+      {
+       "text": "$s=L_1+S$",
+       "dung": true
+      },
+      {
+       "text": "$s=S$",
+       "dung": false,
+       "vi_sao": "Tàu chỉ qua hết cầu khi đuôi tàu rời cầu : đầu tàu còn phải đi thêm đúng chiều dài tàu sau khi ra khỏi cầu."
+      },
+      {
+       "text": "$s=S-L_1$",
+       "dung": false,
+       "vi_sao": "Hiệu đó là quãng đường mũi tàu đi trong khoảng thời gian cả đoàn tàu nằm trọn trên cầu, chưa phải từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hai tàu ngược chiều",
+     "hoi": "Hai tàu ngược chiều vượt qua nhau hoàn toàn mất bao lâu?",
+     "dap_so": 12.8,
+     "sai_so": 0.1,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy hiệu hai tốc độ (đó là trường hợp cùng chiều) hoặc chỉ cộng một chiều dài tàu.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tốc độ tương đối $v_1+v_2$ ; quãng đường tương đối $L_1+L_2$",
+       "dung": true
+      },
+      {
+       "text": "Tốc độ tương đối $v_1-v_2$",
+       "dung": false,
+       "vi_sao": "Hai tàu ngược chiều nên tốc độ lại gần nhau là tổng ; hiệu chỉ dùng khi cùng chiều."
+      },
+      {
+       "text": "Quãng đường tương đối chỉ là $L_1$",
+       "dung": false,
+       "vi_sao": "Hai tàu vượt nhau hoàn toàn khi cả hai đoàn đã qua nhau : phải cộng chiều dài của cả hai."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hai tàu cùng chiều",
+     "hoi": "Tàu thứ nhất vượt qua hết tàu thứ hai (cùng chiều) mất bao lâu?",
+     "dap_so": 64,
+     "sai_so": 0.5,
+     "don_vi": "s",
+     "loi_hay_gap": "Cộng hai tốc độ như trường hợp ngược chiều, hoặc chỉ lấy $L_1$ làm quãng đường tương đối.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tốc độ tương đối $v_1-v_2$ ; quãng đường tương đối $L_1+L_2$",
+       "dung": true
+      },
+      {
+       "text": "Tốc độ tương đối $v_1+v_2$ như câu c",
+       "dung": false,
+       "vi_sao": "Cùng chiều thì tàu nhanh chỉ tiến lại gần tàu chậm với tốc độ bằng hiệu hai tốc độ."
+      },
+      {
+       "text": "Quãng đường tương đối $L_1$",
+       "dung": false,
+       "vi_sao": "Tàu thứ nhất phải vượt hết chiều dài tàu thứ hai và cả chiều dài của chính nó : $L_1+L_2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Chuyển động trên dòng nước: xuôi dòng, ngược dòng, bè trôi, phao rơi",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "problem_html": "<p>Hai bến $A$ và $B$ trên một khúc sông thẳng cách nhau $90\\ \\text{km}$. Một canô chạy xuôi dòng từ $A$ đến $B$ mất $3$ giờ và chạy ngược dòng từ $B$ về $A$ mất $5$ giờ. Tốc độ riêng của canô (so với nước) và tốc độ dòng nước đều không đổi.</p><ol type=\"a\"><li>Tính tốc độ của dòng nước và tốc độ riêng của canô.</li><li>Một chiếc bè thả trôi theo dòng nước từ $A$ thì mất bao lâu để tới $B$?</li><li>Một lần khác, canô đang chạy ngược dòng thì làm rơi một chiếc phao nổi (phao trôi theo dòng nước). Sau $20$ phút người lái mới phát hiện, lập tức quay đầu chạy xuôi dòng (giữ nguyên tốc độ riêng) để vớt phao. Tính thời gian từ lúc quay đầu đến lúc vớt được phao và quãng đường phao đã trôi kể từ chỗ rơi.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-4-0\"><svg viewBox=\"0 0 420 212\" role=\"img\" aria-label=\"Canô đi xuôi dòng từ A đến B mất 3 giờ rồi đi ngược dòng từ B về A mất 5 giờ\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16.0\" y=\"38.0\" width=\"388.0\" height=\"50.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" opacity=\"0.8\"/><line x1=\"70\" y1=\"74\" x2=\"120\" y2=\"74\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M112.2,69.5 L120.0,74.0 L112.2,78.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"250\" y1=\"74\" x2=\"300\" y2=\"74\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M292.2,69.5 L300.0,74.0 L292.2,78.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"16\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lượt xuôi dòng: A → B</text><text x=\"185\" y=\"78\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">dòng nước</text><rect x=\"16.0\" y=\"114.0\" width=\"388.0\" height=\"50.0\" rx=\"6\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" opacity=\"0.8\"/><line x1=\"70\" y1=\"150\" x2=\"120\" y2=\"150\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M112.2,145.5 L120.0,150.0 L112.2,154.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"250\" y1=\"150\" x2=\"300\" y2=\"150\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M292.2,145.5 L300.0,150.0 L292.2,154.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"16\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Lượt ngược dòng: B → A</text><text x=\"185\" y=\"154\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">dòng nước</text><g transform=\"translate(30.0 56.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"30.0 56.0;150.0 56.0;270.0 56.0;390.0 56.0;390.0 56.0;390.0 56.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M-14,-6 L14,-6 L8,6 L-8,6 Z\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/></g><g transform=\"translate(390.0 132.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"390.0 132.0;318.0 132.0;246.0 132.0;174.0 132.0;102.0 132.0;30.0 132.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M-14,-6 L14,-6 L8,6 L-8,6 Z\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/></g><text x=\"30\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"390\" y=\"204\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"34\" y1=\"186\" x2=\"386\" y2=\"186\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M379.0,181.9 L386.0,186.0 L379.0,190.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"386\" y1=\"186\" x2=\"34\" y2=\"186\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M41.0,190.1 L34.0,186.0 L41.0,181.9\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"210\" y=\"180\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">AB = 90 km</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai lượt chạy cùng lúc, nhanh 3000 lần (1 giờ thật = 1,2 giây). Nét đứt chỉ chiều dòng nước.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $v_t$ là tốc độ canô so với nước, $v_n$ là tốc độ dòng nước so với bờ.</li><li><strong>Định luật:</strong> cộng vận tốc : xuôi dòng $v_x=v_t+v_n$ · ngược dòng $v_{ng}=v_t-v_n$.</li><li><strong>Công thức:</strong> $v_n=\\dfrac{v_x-v_{ng}}{2}$ ; $v_t=\\dfrac{v_x+v_{ng}}{2}$ ; bè trôi : $t=\\dfrac{s}{v_n}$.</li><li>⚠ <strong>Điều kiện:</strong> $v_t\\gt v_n$ mới ngược dòng được ; vật trôi theo dòng đứng yên trong hệ quy chiếu gắn với nước.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ xuôi dòng và ngược dòng</span></p>$$v_x=\\dfrac{s}{t_x}=\\dfrac{90}{3}$$<div class=\"bt-ans\">$$v_x=30\\ \\text{km/h}$$</div>$$v_{ng}=\\dfrac{s}{t_{ng}}=\\dfrac{90}{5}=18\\ \\text{km/h}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ dòng nước và tốc độ riêng</span></p><p>Xuôi dòng cộng $v_n$, ngược dòng trừ $v_n$ :</p>$$v_t+v_n=30$$$$v_t-v_n=18$$<p>Trừ vế theo vế :</p>$$2\\,v_n=12$$<div class=\"bt-ans\">$$v_n=6\\ \\text{km/h}$$</div><p>Cộng vế theo vế : $2\\,v_t=48$, suy ra $v_t=24\\ \\text{km/h}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian bè trôi</span></p><p>Bè không có máy, tốc độ so với bờ đúng bằng tốc độ dòng nước :</p>$$t=\\dfrac{s}{v_n}=\\dfrac{90}{6}$$<div class=\"bt-ans\">$$t=15\\ \\text{h}$$</div><p>Công thức nhanh : $\\dfrac{2\\,t_x\\,t_{ng}}{t_{ng}-t_x}=\\dfrac{2\\cdot3\\cdot5}{5-3}=15\\ \\text{h}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian quay lại vớt phao</span></p><p>Chọn hệ quy chiếu gắn với dòng nước : phao đứng yên ; canô rời phao với tốc độ riêng $v_t$ trong $t_1=20$ phút rồi quay lại với đúng tốc độ riêng $v_t$.</p>$$t_2=t_1$$<div class=\"bt-ans\">$$t_2=20\\ \\text{phút}$$</div><p>Đi ra xa và quay về cùng tốc độ nên cùng thời gian.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Quãng đường phao đã trôi</span></p><p>Phao trôi theo dòng nước suốt $20+20=40$ phút $=\\dfrac23\\ \\text{h}$ :</p>$$s_{phao}=v_n\\,(t_1+t_2)=6\\cdot\\dfrac23$$<div class=\"bt-ans\">$$s_{phao}=4\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Theo hệ quy chiếu gắn với bờ, trong $20$ phút đầu canô đi ngược dòng được $18\\cdot\\dfrac13=6\\ \\text{km}$ còn phao trôi xuống $6\\cdot\\dfrac13=2\\ \\text{km}$ : hai bên cách nhau $8\\ \\text{km}$.</p><p>Sau khi quay đầu, canô đi xuôi ($30\\ \\text{km/h}$) đuổi phao ($6\\ \\text{km/h}$) nên tiến lại gần với tốc độ $24\\ \\text{km/h}$ :</p>$$t_2=\\dfrac{8}{24}=\\dfrac13\\ \\text{h}=20\\ \\text{phút}$$<p>✓ Khớp với cách giải trong hệ quy chiếu gắn với nước.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_n=6\\ \\text{km/h}$ · $v_t=24\\ \\text{km/h}$</p><p>b) $15\\ \\text{giờ}$</p><p>c) $20\\ \\text{phút}$ · phao trôi $4\\ \\text{km}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>bè trôi</strong> hoặc <strong>phao rơi</strong> → vật đó chỉ có tốc độ $v_n$ ; thấy <strong>xuôi và ngược</strong> → lập hai phương trình $v_t\\pm v_n$ ; bài phao thì chuyển sang hệ quy chiếu gắn với nước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-4-2\"><svg viewBox=\"0 0 420 196\" role=\"img\" aria-label=\"Thanh thời gian: xuôi dòng 3 giờ, ngược dòng 5 giờ, bè trôi chưa biết\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cùng quãng đường AB, hai thời gian khác nhau</text><rect x=\"30.0\" y=\"40.0\" width=\"150.0\" height=\"24.0\" rx=\"0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"105.0\" y=\"57\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">xuôi 3 h</text><rect x=\"30.0\" y=\"78.0\" width=\"250.0\" height=\"24.0\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"155.0\" y=\"95\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ngược 5 h</text><rect x=\"30.0\" y=\"116.0\" width=\"350.0\" height=\"24.0\" rx=\"0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-dasharray=\"6 4\" opacity=\"1\"/><text x=\"205.0\" y=\"133\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">bè trôi: t = ?</text><text x=\"16\" y=\"168\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Bè không có máy: chỉ dòng nước đưa đi</text><text x=\"16\" y=\"186\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Phao rơi cũng chỉ trôi theo dòng nước</text></svg><figcaption>Dữ kiện: thời gian xuôi và ngược cho cùng một quãng đường 90 km. Độ dài thanh bè trôi chỉ là chỗ trống, chưa theo đáp số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"khúc sông thẳng $AB=90$ km\"</td><td>$s=90$ km</td><td>$v=\\dfrac{s}{t}$ trên mỗi lượt</td></tr><tr><td>\"xuôi dòng mất $3$ giờ, ngược dòng mất $5$ giờ\"</td><td>$t_x=3$ h ; $t_{ng}=5$ h</td><td>$v_x=v_t+v_n=\\dfrac{s}{t_x}$ ; $v_{ng}=v_t-v_n=\\dfrac{s}{t_{ng}}$</td></tr><tr><td>\"tốc độ riêng … và dòng nước không đổi\"</td><td>$v_t$ và $v_n$ không đổi</td><td>⚠ $v_t$ là tốc độ so với nước ; $v_n=\\dfrac{v_x-v_{ng}}{2}$</td></tr><tr><td>\"bè thả trôi theo dòng nước\"</td><td>Tốc độ bè $=v_n$</td><td>$t=\\dfrac{s}{v_n}$ ; ⚠ bè không có tốc độ riêng</td></tr><tr><td>\"phao nổi, trôi theo dòng nước\"</td><td>Phao chuyển động như dòng nước</td><td>⚠ Trong hệ quy chiếu gắn với nước, phao đứng yên</td></tr><tr><td>\"sau $20$ phút mới phát hiện, quay đầu, giữ nguyên tốc độ riêng\"</td><td>$t_1=20$ phút</td><td>Canô rời phao và quay lại với cùng tốc độ riêng $v_t$ nên $t_2=t_1$</td></tr><tr><td>\"quãng đường phao đã trôi kể từ chỗ rơi\"</td><td>Cần $s_{phao}$</td><td>$s_{phao}=v_n(t_1+t_2)$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bè trôi</b> hoặc <b>phao rơi</b> → tốc độ chỉ bằng dòng nước ; thấy <b>xuôi và ngược</b> → lập $v_t\\pm v_n$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ xuôi dòng",
+     "hoi": "Tốc độ của canô so với bờ khi xuôi dòng?",
+     "dap_so": 30,
+     "sai_so": 0.2,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Chia thời gian cho quãng đường (đảo ngược $v=\\dfrac{s}{t}$) hoặc cho rằng tốc độ xuôi là tốc độ riêng của canô."
+    },
+    {
+     "tieu_de": "Tốc độ dòng nước",
+     "hoi": "Tốc độ dòng nước bằng bao nhiêu?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Lấy hiệu hai tốc độ mà không chia $2$, hoặc lấy trung bình cộng (đó là tốc độ riêng của canô).",
+     "chon_buoc_ke": [
+      {
+       "text": "Lập hệ $v_t+v_n=v_x$ và $v_t-v_n=v_{ng}$ rồi trừ vế theo vế : $v_n=\\dfrac{v_x-v_{ng}}{2}$",
+       "dung": true
+      },
+      {
+       "text": "$v_n=v_x-v_{ng}$",
+       "dung": false,
+       "vi_sao": "Hiệu hai tốc độ bằng $2v_n$ (xuôi cộng $v_n$, ngược trừ $v_n$) nên phải chia đôi."
+      },
+      {
+       "text": "$v_n=\\dfrac{v_x+v_{ng}}{2}$",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ riêng $v_t$ của canô, không phải của dòng nước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bè trôi",
+     "hoi": "Bè trôi từ $A$ đến $B$ mất bao nhiêu giờ?",
+     "dap_so": 15,
+     "sai_so": 0.1,
+     "don_vi": "h",
+     "loi_hay_gap": "Dùng tốc độ riêng của canô cho bè, hoặc cộng thời gian xuôi và ngược.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bè trôi với tốc độ đúng bằng tốc độ dòng nước : $t=\\dfrac{s}{v_n}$",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{s}{v_t}$",
+       "dung": false,
+       "vi_sao": "Bè không có máy : tốc độ của bè so với bờ chỉ là tốc độ dòng nước, không phải tốc độ riêng của canô."
+      },
+      {
+       "text": "$t=t_x+t_{ng}$",
+       "dung": false,
+       "vi_sao": "Cộng hai thời gian của canô không liên quan tới chuyển động của bè."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian quay lại vớt phao",
+     "hoi": "Từ lúc quay đầu đến lúc vớt được phao mất bao nhiêu phút?",
+     "dap_so": 20,
+     "sai_so": 0.5,
+     "don_vi": "phút",
+     "loi_hay_gap": "Lấy quãng đường canô đã đi ngược dòng (so với bờ) chia cho tốc độ xuôi dòng — quên rằng phao cũng đang trôi.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét trong hệ quy chiếu gắn với dòng nước : phao đứng yên, canô rời ra rồi quay lại với cùng tốc độ riêng",
+       "dung": true
+      },
+      {
+       "text": "Lấy thời gian quay lại bằng quãng đường canô đã đi ngược dòng (so với bờ) chia $v_x$",
+       "dung": false,
+       "vi_sao": "Phao cũng trôi theo dòng nên quãng đường canô cần đuổi không bằng quãng đường canô đã đi so với bờ ; kết quả sai."
+      },
+      {
+       "text": "Quay lại xuôi dòng nhanh hơn nên mất ít thời gian hơn lúc rời đi",
+       "dung": false,
+       "vi_sao": "Dòng nước đẩy cả canô lẫn phao như nhau, nên so với phao thì xuôi hay ngược không làm tốc độ canô thay đổi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường phao đã trôi",
+     "hoi": "Phao đã trôi cách chỗ rơi bao nhiêu kilômét?",
+     "dap_so": 4,
+     "sai_so": 0.1,
+     "don_vi": "km",
+     "loi_hay_gap": "Chỉ tính phao trôi trong $20$ phút đầu, hoặc lấy bằng quãng đường canô đi xuôi dòng khi quay lại.",
+     "chon_buoc_ke": [
+      {
+       "text": "Phao trôi đều với tốc độ dòng nước suốt thời gian từ lúc rơi đến lúc được vớt",
+       "dung": true
+      },
+      {
+       "text": "Phao chỉ trôi trong $20$ phút đầu",
+       "dung": false,
+       "vi_sao": "Phao vẫn trôi trong lúc canô quay lại ; thời gian trôi là tổng của hai khoảng."
+      },
+      {
+       "text": "Quãng đường phao trôi bằng quãng đường canô đi xuôi khi quay lại",
+       "dung": false,
+       "vi_sao": "Canô chạy nhanh hơn dòng nước nên quãng đường của canô lúc quay lại lớn hơn quãng đường phao trôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Đọc đồ thị toạ độ – thời gian: vận tốc từ độ dốc, phương trình từng giai đoạn, điểm gặp nhau",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "problem_html": "<p>Hình dưới là đồ thị toạ độ – thời gian $(x\\text{–}t)$ của hai xe $A$ và $B$ chuyển động trên cùng một đường thẳng ($x$ tính bằng $\\text{km}$, $t$ tính bằng giờ).</p><ul><li>Xe $A$: xuất phát từ $x=0$, lúc $t=1\\ \\text{h}$ ở $x=60\\ \\text{km}$, nghỉ từ $t=1\\ \\text{h}$ đến $t=1{,}5\\ \\text{h}$, rồi đi tiếp thẳng đều đến $x=150\\ \\text{km}$ lúc $t=3\\ \\text{h}$.</li><li>Xe $B$: xuất phát từ $x=120\\ \\text{km}$ lúc $t=0$, chuyển động thẳng đều về phía gốc toạ độ và tới $x=0$ lúc $t=4\\ \\text{h}$.</li></ul><ol type=\"a\"><li>Tính tốc độ của xe $A$ ở từng giai đoạn và của xe $B$. Nói rõ xe $B$ chuyển động theo chiều nào.</li><li>Viết phương trình toạ độ của mỗi xe (xe $A$ theo từng giai đoạn).</li><li>Hai xe gặp nhau lúc nào và ở đâu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-5-g\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Đồ thị toạ độ – thời gian của xe A và xe B\"><defs><marker id=\"d50g-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50g-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50g-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50g-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"56.0\" y1=\"214.0\" x2=\"56.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"56\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"131.0\" y1=\"214.0\" x2=\"131.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"131\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"206.0\" y1=\"214.0\" x2=\"206.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"206\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"281.0\" y1=\"214.0\" x2=\"281.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"281\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">3</text><line x1=\"356.0\" y1=\"214.0\" x2=\"356.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"356\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"56.0\" y1=\"214.0\" x2=\"362.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"218.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"56.0\" y1=\"175.0\" x2=\"362.0\" y2=\"175.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"179.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">30</text><line x1=\"56.0\" y1=\"136.0\" x2=\"362.0\" y2=\"136.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"140.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">60</text><line x1=\"56.0\" y1=\"97.0\" x2=\"362.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"101.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">90</text><line x1=\"56.0\" y1=\"58.0\" x2=\"362.0\" y2=\"58.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"62.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">120</text><line x1=\"56.0\" y1=\"19.0\" x2=\"362.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"23.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">150</text><line x1=\"56\" y1=\"214\" x2=\"382\" y2=\"214\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M374.4,209.6 L382.0,214.0 L374.4,218.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"384\" y=\"219\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">t (h)</text><line x1=\"56\" y1=\"214\" x2=\"56\" y2=\"-5.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,2.6 L56.0,-5.0 L60.4,2.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62\" y=\"-9.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (km)</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,214.0 131.0,136.0 168.5,136.0 281.0,19.0\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,58.0 356.0,214.0\"/><circle cx=\"56.0\" cy=\"214.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"131.0\" cy=\"136.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"168.5\" cy=\"136.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"281.0\" cy=\"19.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"56.0\" cy=\"58.0\" r=\"4\" fill=\"#38bdf8\"/><circle cx=\"356.0\" cy=\"214.0\" r=\"4\" fill=\"#38bdf8\"/><text x=\"289\" y=\"33.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe A</text><text x=\"66\" y=\"50.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe B</text></svg><figcaption>Đồ thị x–t của hai xe. Mỗi ô lưới: 1 h theo trục t, 30 km theo trục x.</figcaption></figure><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-5-0\"><svg viewBox=\"0 0 420 140\" role=\"img\" aria-label=\"Hai xe A và B chuyển động trên cùng một đường thẳng theo đồ thị\"><line x1=\"30.0\" y1=\"70.0\" x2=\"390.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"30.0\" y1=\"104.0\" x2=\"390.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"30\" y=\"132\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><text x=\"390\" y=\"132\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">x = 150 km</text><g transform=\"translate(30.0 70.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"30.0 70.0;66.0 70.0;102.0 70.0;138.0 70.0;174.0 70.0;174.0 70.0;174.0 70.0;210.0 70.0;246.0 70.0;282.0 70.0;318.0 70.0;354.0 70.0;390.0 70.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"0\" y=\"-12\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">A</text></g><g transform=\"translate(318.0 104.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"318.0 104.0;300.0 104.0;282.0 104.0;264.0 104.0;246.0 104.0;228.0 104.0;210.0 104.0;192.0 104.0;174.0 104.0;156.0 104.0;138.0 104.0;120.0 104.0;102.0 104.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"0\" y=\"-12\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">B</text></g><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Chuyển động của hai xe theo đồ thị</text><text x=\"390\" y=\"20\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">gặp nhau: ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: 3 giờ đầu, nhanh 2400 lần (1 giờ thật = 1,5 giây). Xe A dừng nghỉ trong lúc xe B vẫn chạy.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đồ thị $x$–$t$ : độ dốc là vận tốc ; đoạn nằm ngang là đứng yên ; đoạn đi xuống là chuyển động ngược chiều dương.</li><li><strong>Công thức:</strong> $v=\\dfrac{\\Delta x}{\\Delta t}$ ; $x=x_0+v(t-t_0)$ với $(t_0;x_0)$ là điểm đầu giai đoạn.</li><li>Hai xe gặp nhau khi $x_A=x_B$ (giao điểm của hai đường).</li><li>⚠ <strong>Điều kiện:</strong> mỗi phương trình chỉ đúng trong khoảng thời gian của giai đoạn đó ; nghiệm nằm ngoài khoảng thì loại.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Xe $B$: độ dốc của đồ thị</span></p><p>Đồ thị đi xuống, độ dốc :</p>$$v_B=\\dfrac{0-120}{4-0}=-30\\ \\text{km/h}$$<div class=\"bt-ans\">$$|v_B|=30\\ \\text{km/h}$$</div><p>Dấu âm : xe $B$ chuyển động ngược chiều dương, tức là về phía gốc $O$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Xe $A$: giai đoạn cuối</span></p><p>Giai đoạn $1$ ($0\\to1\\ \\text{h}$) : $v=\\dfrac{60-0}{1-0}=60\\ \\text{km/h}$. Giai đoạn $2$ ($1\\to1{,}5\\ \\text{h}$) : đoạn nằm ngang nên $v=0$ (nghỉ).</p><p>Giai đoạn $3$ ($1{,}5\\to3\\ \\text{h}$) :</p>$$v=\\dfrac{150-60}{3-1{,}5}=\\dfrac{90}{1{,}5}$$<div class=\"bt-ans\">$$v=60\\ \\text{km/h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phương trình xe $A$ giai đoạn cuối</span></p><p>Giai đoạn $3$ bắt đầu ở $(1{,}5\\ \\text{h};60\\ \\text{km})$ :</p>$$x_A=60+60\\,(t-1{,}5)=60\\,t-30$$<p>Tại $t=2\\ \\text{h}$ :</p>$$x_A=60\\cdot2-30$$<div class=\"bt-ans\">$$x_A=90\\ \\text{km}$$</div><p>Tóm lại : $x_A=60t$ ($0\\le t\\le1$) · $x_A=60$ ($1\\le t\\le1{,}5$) · $x_A=60t-30$ ($1{,}5\\le t\\le3$) · $x_B=120-30t$ ($0\\le t\\le4$).</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời điểm gặp nhau</span></p><p>Thử giai đoạn $1$ : $60t=120-30t$ cho $t=\\dfrac43\\ \\text{h}\\gt1$ nên loại. Giai đoạn $2$ : $60=120-30t$ cho $t=2\\ \\text{h}\\gt1{,}5$ nên loại.</p><p>Giai đoạn $3$ :</p>$$60\\,t-30=120-30\\,t$$$$90\\,t=150$$<div class=\"bt-ans\">$$t=\\dfrac53\\ \\text{h}\\approx1{,}67\\ \\text{h}$$</div><p>Nằm trong $[1{,}5;3]$ nên nhận.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vị trí gặp nhau</span></p>$$x=x_B=120-30\\cdot\\dfrac53$$<div class=\"bt-ans\">$$x=70\\ \\text{km}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thế vào xe $A$ : $60\\cdot\\dfrac53-30=70\\ \\text{km}$ ✓ (trùng với xe $B$).</p><p>$t=\\dfrac53\\ \\text{h}\\lt4\\ \\text{h}$ nên xe $B$ vẫn đang chạy ✓.</p><p>Giao điểm không nằm đúng nút lưới nên đọc bằng mắt chỉ cho giá trị gần đúng ; phải giải phương trình.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_A$ : $60\\ \\text{km/h}$ · $0$ · $60\\ \\text{km/h}$ ; $|v_B|=30\\ \\text{km/h}$ (ngược chiều dương)</p><p>b) $x_A$ theo ba giai đoạn như trên ; $x_B=120-30t$</p><p>c) $t=\\dfrac53\\ \\text{h}\\approx1\\ \\text{h}\\ 40\\ \\text{phút}$ · $x=70\\ \\text{km}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đồ thị $x$–$t$ có nhiều đoạn</strong> → độ dốc từng đoạn là vận tốc ; <strong>gặp nhau</strong> → giải $x_A=x_B$ rồi kiểm tra nghiệm có thuộc đoạn đang xét.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-5-2\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Đồ thị x–t: ba giai đoạn của xe A và đoạn đi xuống của xe B\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"56.0\" y1=\"214.0\" x2=\"56.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"56\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"131.0\" y1=\"214.0\" x2=\"131.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"131\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"206.0\" y1=\"214.0\" x2=\"206.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"206\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"281.0\" y1=\"214.0\" x2=\"281.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"281\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">3</text><line x1=\"356.0\" y1=\"214.0\" x2=\"356.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"356\" y=\"232\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"56.0\" y1=\"214.0\" x2=\"362.0\" y2=\"214.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"218.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"56.0\" y1=\"175.0\" x2=\"362.0\" y2=\"175.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"179.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">30</text><line x1=\"56.0\" y1=\"136.0\" x2=\"362.0\" y2=\"136.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"140.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">60</text><line x1=\"56.0\" y1=\"97.0\" x2=\"362.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"101.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">90</text><line x1=\"56.0\" y1=\"58.0\" x2=\"362.0\" y2=\"58.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"62.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">120</text><line x1=\"56.0\" y1=\"19.0\" x2=\"362.0\" y2=\"19.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"23.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">150</text><line x1=\"56\" y1=\"214\" x2=\"382\" y2=\"214\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M374.4,209.6 L382.0,214.0 L374.4,218.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"384\" y=\"219\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">t (h)</text><line x1=\"56\" y1=\"214\" x2=\"56\" y2=\"-5.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,2.6 L56.0,-5.0 L60.4,2.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62\" y=\"-9.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (km)</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,214.0 131.0,136.0 168.5,136.0 281.0,19.0\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,58.0 356.0,214.0\"/><circle cx=\"56.0\" cy=\"214.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"131.0\" cy=\"136.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"168.5\" cy=\"136.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"281.0\" cy=\"19.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"56.0\" cy=\"58.0\" r=\"4\" fill=\"#38bdf8\"/><circle cx=\"356.0\" cy=\"214.0\" r=\"4\" fill=\"#38bdf8\"/><text x=\"289\" y=\"33.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe A</text><text x=\"66\" y=\"50.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe B</text><text x=\"149.8\" y=\"128.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nghỉ</text><text x=\"93.5\" y=\"188.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">giai đoạn 1</text><text x=\"183.5\" y=\"32.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">giai đoạn 3</text><text x=\"273.5\" y=\"151.6\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">xe B đi xuống</text></svg><figcaption>Dữ kiện: độ dốc mỗi đoạn là vận tốc ; đoạn nằm ngang là đứng yên ; đoạn đi xuống là chuyển động ngược chiều dương. Giao điểm hai đường là lúc và nơi gặp nhau.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đồ thị $x$–$t$ của hai xe\"</td><td>Đọc toạ độ và thời gian trên lưới</td><td>Độ dốc đoạn thẳng : $v=\\dfrac{\\Delta x}{\\Delta t}$</td></tr><tr><td>\"xe $A$ … nghỉ từ $1$ h đến $1{,}5$ h\"</td><td>Đoạn nằm ngang</td><td>⚠ Đoạn nằm ngang : $\\Delta x=0$ nên $v=0$ ; mỗi phương trình chỉ đúng trong khoảng thời gian của giai đoạn đó</td></tr><tr><td>\"đi tiếp thẳng đều đến $x=150$ km lúc $t=3$ h\"</td><td>$(1{,}5\\ \\text{h};60\\ \\text{km})\\to(3\\ \\text{h};150\\ \\text{km})$</td><td>$x=x_0+v(t-t_0)$ với mốc là điểm đầu giai đoạn</td></tr><tr><td>\"xe $B$ … $120$ km … về gốc … $t=4$ h\"</td><td>$(0;120)\\to(4;0)$</td><td>⚠ Đồ thị đi xuống : $v\\lt0$ (ngược chiều dương), tốc độ là $|v|$</td></tr><tr><td>\"viết phương trình toạ độ\"</td><td>Cần $x_A(t)$ từng giai đoạn, $x_B(t)$</td><td>$x=x_0+v(t-t_0)$</td></tr><tr><td>\"gặp nhau lúc nào, ở đâu\"</td><td>Cần $t_g$, $x_g$</td><td>Giao điểm : $x_A=x_B$ ; ⚠ nghiệm phải thuộc khoảng thời gian của giai đoạn đang xét</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đồ thị x–t nhiều đoạn</b> → độ dốc là vận tốc ; <b>gặp nhau</b> → giải $x_A=x_B$ rồi kiểm tra đoạn.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Xe $B$: độ dốc của đồ thị",
+     "hoi": "Độ lớn tốc độ của xe $B$ bằng bao nhiêu?",
+     "dap_so": 30,
+     "sai_so": 0.2,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Lấy toạ độ cuối chia thời gian (không trừ toạ độ đầu), hoặc nghĩ rằng dấu âm của vận tốc nghĩa là xe chậm đi."
+    },
+    {
+     "tieu_de": "Xe $A$: giai đoạn cuối",
+     "hoi": "Tốc độ của xe $A$ ở giai đoạn đi tiếp (sau lúc nghỉ)?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "km/h",
+     "loi_hay_gap": "Lấy cả hành trình chia cả thời gian (tính luôn lúc nghỉ) thay vì chỉ lấy độ biến thiên trên đoạn đi tiếp.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v=\\dfrac{\\Delta x}{\\Delta t}$ trên đoạn từ $t=1{,}5\\ \\text{h}$ đến $t=3\\ \\text{h}$",
+       "dung": true
+      },
+      {
+       "text": "$v=\\dfrac{150}{3}$ (từ gốc đến cuối)",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ trung bình cả hành trình, tính cả lúc nghỉ ; giai đoạn cuối phải dùng độ biến thiên trên chính đoạn đó."
+      },
+      {
+       "text": "Tính độ dốc từ $t=1\\ \\text{h}$ đến $t=3\\ \\text{h}$",
+       "dung": false,
+       "vi_sao": "Khoảng này có cả lúc nghỉ ; giai đoạn đi tiếp chỉ bắt đầu từ $t=1{,}5\\ \\text{h}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phương trình xe $A$ giai đoạn cuối",
+     "hoi": "Theo phương trình của xe $A$ ở giai đoạn đi tiếp, toạ độ xe $A$ lúc $t=2\\ \\text{h}$ bằng bao nhiêu?",
+     "dap_so": 90,
+     "sai_so": 0.5,
+     "don_vi": "km",
+     "loi_hay_gap": "Viết $x_A=60t$ (phương trình giai đoạn đầu) hoặc thiếu mốc thời gian lúc bắt đầu giai đoạn đi tiếp.",
+     "chon_buoc_ke": [
+      {
+       "text": "$x_A=x_0+v(t-t_0)$ với $(t_0;x_0)$ là điểm đầu giai đoạn đi tiếp",
+       "dung": true
+      },
+      {
+       "text": "$x_A=60t$",
+       "dung": false,
+       "vi_sao": "Đó là phương trình giai đoạn đầu (từ gốc) ; giai đoạn đi tiếp bắt đầu từ $x=60$ lúc $t=1{,}5\\ \\text{h}$ nên phải có $t-1{,}5$."
+      },
+      {
+       "text": "$x_A=60+60t$",
+       "dung": false,
+       "vi_sao": "Thiếu mốc thời gian : giai đoạn này bắt đầu lúc $t=1{,}5\\ \\text{h}$ chứ không phải lúc $t=0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời điểm gặp nhau",
+     "hoi": "Hai xe gặp nhau sau bao lâu (giờ)?",
+     "dap_so": 1.667,
+     "sai_so": 0.01,
+     "don_vi": "h",
+     "loi_hay_gap": "Giải $x_A=x_B$ bằng phương trình giai đoạn đầu rồi nhận nghiệm nằm ngoài đoạn $0\\le t\\le1$ ; hoặc cho hai vận tốc bằng nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $x_A=x_B$ với phương trình xe $A$ ở giai đoạn đi tiếp, rồi kiểm tra $t$ có thuộc đoạn đó không",
+       "dung": true
+      },
+      {
+       "text": "Giải $x_A=x_B$ với $x_A=60t$ (giai đoạn đầu) vì xe $A$ xuất phát từ gốc",
+       "dung": false,
+       "vi_sao": "Mỗi phương trình chỉ đúng trong khoảng thời gian của giai đoạn : giai đoạn đầu chỉ tới $t=1\\ \\text{h}$, nghiệm ngoài đoạn đó vô nghĩa."
+      },
+      {
+       "text": "Cho hai vận tốc bằng nhau",
+       "dung": false,
+       "vi_sao": "Hai xe gặp nhau khi toạ độ bằng nhau, không phải khi vận tốc bằng nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí gặp nhau",
+     "hoi": "Hai xe gặp nhau ở toạ độ nào?",
+     "dap_so": 70,
+     "sai_so": 0.5,
+     "don_vi": "km",
+     "loi_hay_gap": "Đọc toạ độ từ lưới ô vuông bằng mắt, hoặc lấy toạ độ lúc xe $A$ đang nghỉ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế thời điểm gặp vào phương trình của một trong hai xe",
+       "dung": true
+      },
+      {
+       "text": "Đọc toạ độ giao điểm từ lưới ô vuông",
+       "dung": false,
+       "vi_sao": "Giao điểm không nằm đúng nút lưới ($t$ không tròn) nên đọc bằng mắt chỉ gần đúng ; phải tính."
+      },
+      {
+       "text": "Lấy toạ độ xe $A$ lúc nghỉ",
+       "dung": false,
+       "vi_sao": "Xe $A$ nghỉ trong khoảng $1\\ \\text{h}$ đến $1{,}5\\ \\text{h}$, trước lúc hai xe gặp nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Nâng cao · Tổng hợp vận tốc: bơi qua sông sang đúng điểm đối diện và bơi vuông góc bờ",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "problem_html": "<p>Một người muốn bơi từ điểm $A$ ở bờ này sang điểm $B$ ở bờ đối diện, $AB$ vuông góc với bờ và dài $96\\ \\text{m}$. Tốc độ bơi của người so với nước là $2{,}0\\ \\text{m/s}$. Nước chảy song song với bờ, tốc độ $1{,}2\\ \\text{m/s}$. Coi các tốc độ không đổi.</p><ol type=\"a\"><li>Người đó phải bơi theo hướng hợp với $AB$ một góc $\\alpha$ có $\\sin\\alpha$ bằng bao nhiêu và chếch về phía nào để sang đúng $B$? Tính thời gian bơi.</li><li>Nếu người đó luôn bơi vuông góc với bờ thì mất bao lâu để sang đến bờ bên kia và bị nước đẩy trôi xuống phía dưới $B$ một đoạn bao nhiêu?</li><li>Cách bơi nào đưa người sang bờ bên kia nhanh hơn? Cách bơi nào đưa người đến đúng $B$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-6-0\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Người bơi sang đúng điểm B ở bờ đối diện, nước chảy song song bờ\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"52.0\" x2=\"408.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"16.0\" y1=\"148.0\" x2=\"408.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"236\" y1=\"78\" x2=\"296\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M288.2,73.5 L296.0,78.0 L288.2,82.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"236\" y1=\"100\" x2=\"296\" y2=\"100\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M288.2,95.5 L296.0,100.0 L288.2,104.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"236\" y1=\"122\" x2=\"296\" y2=\"122\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M288.2,117.5 L296.0,122.0 L288.2,126.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"250\" y=\"66\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">dòng nước</text><circle cx=\"150.0\" cy=\"148.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"138\" y=\"166\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><circle cx=\"150.0\" cy=\"52.0\" r=\"4\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"138\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"106\" y1=\"145\" x2=\"106\" y2=\"55\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M101.9,62.0 L106.0,55.0 L110.1,62.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"106\" y1=\"55\" x2=\"106\" y2=\"145\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M110.1,138.0 L106.0,145.0 L101.9,138.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"100\" y=\"104.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">AB = 96 m</text><line x1=\"150.0\" y1=\"148.0\" x2=\"150.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><g transform=\"translate(150.0 148.0)\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"150.0 148.0;150.0 52.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"0.0\" r=\"6\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"/></g><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">bơi</tspan><tspan dy=\"-4\"> = 2,0 m/s (so với nước)</tspan></text><text x=\"16\" y=\"40\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">nước</tspan><tspan dy=\"-4\"> = 1,2 m/s</tspan></text><text x=\"408\" y=\"22\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">α = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: người đi thẳng từ A đến B (1 s mô phỏng ứng với 15 s thật). Hình không vẽ hướng đầu người bơi.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vận tốc của người so với bờ là tổng vectơ của vận tốc bơi (so với nước) và vận tốc dòng nước.</li><li><strong>Định luật:</strong> $\\vec v_{\\text{thực}}=\\vec v_b+\\vec v_n$ ; hai chuyển động thành phần độc lập với nhau.</li><li><strong>Công thức:</strong> sang đúng $B$ : $v_b\\sin\\alpha=v_n$, $v_{\\text{thực}}=\\sqrt{v_b^2-v_n^2}$ ; thời gian $t=\\dfrac{d}{v_\\perp}$.</li><li>⚠ <strong>Điều kiện:</strong> chỉ thành phần vuông góc bờ đưa người sang bờ ; nước chảy dọc bờ chỉ làm trôi người, không đổi thời gian sang bờ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hướng bơi để sang đúng $B$</span></p><p>Muốn đi thẳng từ $A$ đến $B$, thành phần vận tốc bơi dọc bờ phải triệt tiêu vận tốc dòng nước : $v_b\\sin\\alpha=v_n$.</p>$$\\sin\\alpha=\\dfrac{v_n}{v_b}=\\dfrac{1{,}2}{2{,}0}$$<div class=\"bt-ans\">$$\\sin\\alpha=0{,}6$$</div><p>$\\alpha\\approx36{,}9^\\circ$ ; người bơi chếch về phía ngược dòng.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ thực so với bờ</span></p><p>Vận tốc thực vuông góc với bờ ; $v_b$ là cạnh huyền của tam giác vận tốc :</p>$$v=\\sqrt{v_b^2-v_n^2}=\\sqrt{2{,}0^2-1{,}2^2}=\\sqrt{2{,}56}$$<div class=\"bt-ans\">$$v=1{,}6\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian bơi sang đúng $B$</span></p>$$t_a=\\dfrac{AB}{v}=\\dfrac{96}{1{,}6}$$<div class=\"bt-ans\">$$t_a=60\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bơi vuông góc bờ: thời gian</span></p><p>Hướng bơi vuông góc với bờ nên thành phần sang bờ chính là $v_b$ :</p>$$t_b=\\dfrac{AB}{v_b}=\\dfrac{96}{2{,}0}$$<div class=\"bt-ans\">$$t_b=48\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Bơi vuông góc bờ: bị trôi</span></p><p>Nước đẩy người dọc bờ trong suốt thời gian bơi :</p>$$\\ell=v_n\\,t_b=1{,}2\\cdot48$$<div class=\"bt-ans\">$$\\ell=57{,}6\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>So sánh hai cách</span></p><p>$t_b=48\\ \\text{s}\\lt t_a=60\\ \\text{s}$ : bơi vuông góc bờ sang nhanh hơn nhưng bị trôi $57{,}6\\ \\text{m}$, không tới $B$.</p><p>Bơi chếch ngược dòng (câu a) chậm hơn nhưng tới đúng $B$.</p><p>Kiểm tra : $v_b\\cos\\alpha=2{,}0\\cdot0{,}8=1{,}6\\ \\text{m/s}=v$ ✓ ; $v_b\\sin\\alpha=1{,}2=v_n$ ✓.</p><div class=\"bt-ans\"><p>Bơi vuông góc bờ <strong>nhanh hơn</strong> ; bơi chếch ngược dòng <strong>đến đúng $B$</strong>.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\sin\\alpha=0{,}6$ (chếch ngược dòng) · $t=60\\ \\text{s}$</p><p>b) $t=48\\ \\text{s}$ · trôi $57{,}6\\ \\text{m}$</p><p>c) vuông góc bờ nhanh hơn ; chếch ngược dòng tới đúng $B$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>sang đúng điểm đối diện</strong> → $v_b\\sin\\alpha=v_n$, $v=\\sqrt{v_b^2-v_n^2}$ ; thấy <strong>bơi vuông góc bờ</strong> → $t=\\dfrac{d}{v_b}$ và trôi $\\ell=v_nt$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-6-2\"><svg viewBox=\"0 0 420 182\" role=\"img\" aria-label=\"Tam giác vận tốc: vận tốc thực vuông góc với bờ bằng tổng của vận tốc bơi và vận tốc dòng nước\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ghép vectơ vận tốc</text><line x1=\"210\" y1=\"150\" x2=\"138\" y2=\"54\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M139.4,65.4 L138.0,54.0 L148.6,58.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"166\" y=\"100\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v<tspan dy=\"4\" font-size=\"10\">bơi</tspan></text><line x1=\"138\" y1=\"54\" x2=\"210\" y2=\"54\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M200.0,48.2 L210.0,54.0 L200.0,59.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"174\" y=\"44\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">v<tspan dy=\"4\" font-size=\"10\">nước</tspan></text><line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"54\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M204.2,64.0 L210.0,54.0 L215.8,64.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"218\" y=\"100\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">thực</tspan></text><line x1=\"200.0\" y1=\"54.0\" x2=\"200.0\" y2=\"64.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"200.0\" y1=\"64.0\" x2=\"210.0\" y2=\"64.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M210.0,120.0 A30,30 0 0 0 192.0,126.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"188\" y=\"112\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"250\" y=\"54\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"9\">thực</tspan><tspan dy=\"-4\"> = v</tspan><tspan dy=\"4\" font-size=\"9\">bơi</tspan><tspan dy=\"-4\"> + v</tspan><tspan dy=\"4\" font-size=\"9\">nước</tspan></text><text x=\"250\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"9\">thực</tspan><tspan dy=\"-4\"> ⟂ bờ</tspan></text><line x1=\"16.0\" y1=\"156.0\" x2=\"408.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"408\" y=\"174\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">bờ sông</text></svg><figcaption>Các mũi tên vẽ đúng tỉ lệ độ lớn các vận tốc trong đề (tam giác vận tốc có ba cạnh tỉ lệ 3 : 4 : 5).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"sông … $AB$ vuông góc với bờ, $AB=96$ m\"</td><td>$d=96$ m</td><td>Thời gian sang bờ $t=\\dfrac{d}{v_\\perp}$ với $v_\\perp$ là thành phần vận tốc vuông góc bờ</td></tr><tr><td>\"tốc độ bơi so với nước $2{,}0$ m/s\"</td><td>$v_b=2{,}0$ m/s (so với nước)</td><td>Quy tắc cộng : $\\vec v_{\\text{thực}}=\\vec v_b+\\vec v_n$</td></tr><tr><td>\"nước chảy song song với bờ $1{,}2$ m/s\"</td><td>$v_n=1{,}2$ m/s</td><td>⚠ Nước chỉ đẩy dọc bờ, không giúp hay cản việc sang bờ</td></tr><tr><td>\"sang đúng $B$\"</td><td>$\\vec v_{\\text{thực}}\\perp$ bờ</td><td>⚠ Thành phần dọc bờ phải triệt tiêu : $v_b\\sin\\alpha=v_n$ ; $v_{\\text{thực}}=\\sqrt{v_b^2-v_n^2}$</td></tr><tr><td>\"bơi vuông góc với bờ\"</td><td>Hướng bơi $\\perp$ bờ</td><td>$t=\\dfrac{d}{v_b}$ ; trôi dọc bờ $\\ell=v_nt$</td></tr><tr><td>\"cách nào nhanh hơn / đến đúng $B$\"</td><td>So hai thời gian và vị trí tới</td><td>So sánh $t_a$ với $t_b$ ; chỉ cách a tới đúng $B$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>sang đúng điểm đối diện</b> → $v_b\\sin\\alpha=v_n$ ; thấy <b>bơi vuông góc bờ</b> → $t=\\dfrac{d}{v_b}$ và trôi $\\ell=v_nt$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hướng bơi để sang đúng $B$",
+     "hoi": "$\\sin\\alpha$ bằng bao nhiêu (α hợp giữa hướng bơi và $AB$)?",
+     "dap_so": 0.6,
+     "sai_so": 0.01,
+     "loi_hay_gap": "Dùng $\\tan\\alpha$ hoặc lẫn $\\sin$ với $\\cos$ ; hoặc cho rằng cứ bơi thẳng về phía $B$ là sang đúng $B$."
+    },
+    {
+     "tieu_de": "Tốc độ thực so với bờ",
+     "hoi": "Độ lớn vận tốc của người so với bờ khi sang đúng $B$?",
+     "dap_so": 1.6,
+     "sai_so": 0.02,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Lấy hiệu hai tốc độ $v_b-v_n$ hoặc cộng bình phương như tam giác vuông cạnh huyền là vận tốc thực.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\vec v$ vuông góc bờ nên $v_b$ là cạnh huyền : $v=\\sqrt{v_b^2-v_n^2}$",
+       "dung": true
+      },
+      {
+       "text": "$v=v_b-v_n$",
+       "dung": false,
+       "vi_sao": "Hai vectơ không cùng phương nên không trừ độ lớn trực tiếp ; vận tốc thực là tổng vectơ."
+      },
+      {
+       "text": "$v=\\sqrt{v_b^2+v_n^2}$",
+       "dung": false,
+       "vi_sao": "Căn tổng bình phương dùng khi $v_b$ và $v_n$ vuông góc nhau (bơi vuông góc bờ). Ở đây vận tốc thực vuông góc với dòng nước nên $v_b$ là cạnh huyền."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bơi sang đúng $B$",
+     "hoi": "Thời gian bơi sang đúng $B$?",
+     "dap_so": 60,
+     "sai_so": 0.5,
+     "don_vi": "s",
+     "loi_hay_gap": "Chia $AB$ cho $v_b$ (quên rằng người không đi theo hướng bơi) hoặc chia cho $v_n$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{AB}{v}$ với $v$ là tốc độ thực vừa tính",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{AB}{v_b}$",
+       "dung": false,
+       "vi_sao": "Người không đi theo hướng bơi : so với bờ chỉ tiến sang bờ kia với tốc độ thực $v$ nhỏ hơn $v_b$."
+      },
+      {
+       "text": "$t=\\dfrac{AB}{v_n}$",
+       "dung": false,
+       "vi_sao": "Dòng nước chảy dọc bờ, không giúp người sang bờ ; thành phần sang bờ là thành phần vuông góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bơi vuông góc bờ: thời gian",
+     "hoi": "Bơi luôn vuông góc bờ thì mất bao lâu để sang bờ bên kia?",
+     "dap_so": 48,
+     "sai_so": 0.5,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng tốc độ thực của câu a, hoặc chia $AB$ cho độ lớn vận tốc thực chéo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hướng bơi vuông góc bờ nên thành phần sang bờ chính là $v_b$ : $t=\\dfrac{d}{v_b}$",
+       "dung": true
+      },
+      {
+       "text": "$t=\\dfrac{d}{v}$ với $v$ của câu a",
+       "dung": false,
+       "vi_sao": "Tốc độ $v$ ở câu a ứng với hướng bơi chếch ; câu b bơi vuông góc nên tốc độ sang bờ là $v_b$."
+      },
+      {
+       "text": "$t=\\dfrac{d}{\\sqrt{v_b^2+v_n^2}}$",
+       "dung": false,
+       "vi_sao": "$d$ không phải quãng đường đi chéo ; thời gian sang bờ chỉ phụ thuộc thành phần vuông góc bờ, tức là $v_b$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bơi vuông góc bờ: bị trôi",
+     "hoi": "Khi sang đến bờ bên kia, người bị nước đẩy trôi xuống phía dưới $B$ bao nhiêu mét?",
+     "dap_so": 57.6,
+     "sai_so": 0.5,
+     "don_vi": "m",
+     "loi_hay_gap": "Dùng thời gian của câu a, hoặc lấy tốc độ bơi $v_b$ thay cho tốc độ dòng nước.",
+     "chon_buoc_ke": [
+      {
+       "text": "Trôi theo dòng nước trong suốt thời gian bơi : $\\ell=v_nt$",
+       "dung": true
+      },
+      {
+       "text": "$\\ell=v_bt$",
+       "dung": false,
+       "vi_sao": "Nước đẩy người dọc bờ với $v_n$ ; $v_b$ là tốc độ bơi vuông góc bờ."
+      },
+      {
+       "text": "$\\ell=v_nt$ với $t$ của câu a",
+       "dung": false,
+       "vi_sao": "Thời gian câu a ứng với cách bơi chếch ; câu b phải dùng thời gian của chính lần bơi vuông góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai cách",
+     "hoi": "Chọn kết luận đúng.",
+     "lua_chon": [
+      {
+       "text": "Bơi vuông góc bờ sang nhanh hơn nhưng bị trôi ; bơi chếch ngược dòng chậm hơn nhưng tới đúng $B$",
+       "dung": true
+      },
+      {
+       "text": "Bơi chếch ngược dòng vừa nhanh hơn vừa tới đúng $B$",
+       "dung": false,
+       "vi_sao": "Thời gian câu a lớn hơn câu b vì thành phần vận tốc sang bờ nhỏ hơn."
+      },
+      {
+       "text": "Bơi vuông góc bờ vừa nhanh hơn vừa tới đúng $B$",
+       "dung": false,
+       "vi_sao": "Bơi vuông góc thì dòng nước làm người lệch xuống phía dưới nên không tới đúng $B$."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng cách tới đúng $B$ cũng là cách nhanh nhất.",
+     "chon_buoc_ke": [
+      {
+       "text": "So thời gian $t_b$ với $t_a$ và so vị trí tới bờ bên kia",
+       "dung": true
+      },
+      {
+       "text": "Chỉ so thời gian",
+       "dung": false,
+       "vi_sao": "Câu hỏi còn hỏi cách nào tới đúng $B$ : phải xét cả vị trí tới."
+      },
+      {
+       "text": "Chỉ so vị trí tới",
+       "dung": false,
+       "vi_sao": "Câu hỏi còn hỏi cách nào nhanh hơn : phải so cả thời gian."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Một ô tô chuyển động trên đoạn đường $120\\ \\text{km}$. Trong nửa thời gian đầu xe chạy với tốc độ $40\\ \\text{km/h}$, nửa thời gian sau chạy với tốc độ $60\\ \\text{km/h}$. Tính tốc độ trung bình của ô tô.</p><details><summary>Hướng dẫn giải</summary><p>Gọi $t$ là tổng thời gian ; mỗi nửa kéo dài $\\dfrac t2$.</p><p>$s=40\\cdot\\dfrac t2+60\\cdot\\dfrac t2=50\\,t$.</p><p>$v_{tb}=\\dfrac st=50\\ \\text{km/h}$.</p><p>Kiểm tra : $t=\\dfrac{120}{50}=2{,}4\\ \\text{h}$ ; mỗi nửa $1{,}2\\ \\text{h}$ đi được $48\\ \\text{km}$ và $72\\ \\text{km}$, tổng $120\\ \\text{km}$ ✓.</p></details><h4>Bài 2 · Dễ</h4><p>Một người đi bộ trên quãng đường $s$. Nửa quãng đường đầu đi với tốc độ $6\\ \\text{km/h}$, nửa quãng đường sau đi với tốc độ $4\\ \\text{km/h}$. Tính tốc độ trung bình của người đó.</p><details><summary>Hướng dẫn giải</summary><p>$t_1=\\dfrac{s/2}{6}=\\dfrac{s}{12}$ ; $t_2=\\dfrac{s/2}{4}=\\dfrac{s}{8}$.</p><p>$t=t_1+t_2=\\dfrac{5s}{24}$.</p><p>$v_{tb}=\\dfrac st=\\dfrac{24}{5}=4{,}8\\ \\text{km/h}$.</p><p>Nhỏ hơn trung bình cộng $5\\ \\text{km/h}$ vì người đi chậm lâu hơn ✓.</p></details><h4>Bài 3 · Dễ</h4><p>Một ô tô chuyển động nhanh dần : giây thứ nhất đi được $2\\ \\text{m}$, giây thứ hai $4\\ \\text{m}$, giây thứ ba $6\\ \\text{m}$, … (mỗi giây đi hơn giây trước $2\\ \\text{m}$). Tính tốc độ trung bình của xe trong $10$ giây đầu.</p><details><summary>Hướng dẫn giải</summary><p>Quãng đường $10$ giây đầu : $s=2+4+6+\\dots+20=2\\,(1+2+\\dots+10)=2\\cdot55=110\\ \\text{m}$.</p><p>$v_{tb}=\\dfrac{110}{10}=11\\ \\text{m/s}$.</p></details><h4>Bài 4 · Dễ</h4><p>Quãng đường của một vật theo thời gian là $s=2t^2$ ($s$ tính bằng mét, $t$ bằng giây). Tính tốc độ trung bình của vật từ $t=1\\ \\text{s}$ đến $t=4\\ \\text{s}$.</p><details><summary>Hướng dẫn giải</summary><p>$s(1)=2\\cdot1^2=2\\ \\text{m}$ ; $s(4)=2\\cdot4^2=32\\ \\text{m}$.</p><p>$\\Delta s=32-2=30\\ \\text{m}$ ; $\\Delta t=4-1=3\\ \\text{s}$.</p><p>$v_{tb}=\\dfrac{\\Delta s}{\\Delta t}=\\dfrac{30}{3}=10\\ \\text{m/s}$.</p></details><h4>Bài 5 · Dễ</h4><p>Một đoàn tàu hoả dài $200\\ \\text{m}$ chạy với tốc độ $72\\ \\text{km/h}$ vượt qua một đoàn tàu khác dài $150\\ \\text{m}$ đang đứng yên trên đường ray bên cạnh (từ lúc đầu tàu thứ nhất ngang đuôi tàu thứ hai đến lúc đuôi tàu thứ nhất ngang đầu tàu thứ hai). Tính thời gian vượt qua.</p><details><summary>Hướng dẫn giải</summary><p>$v=\\dfrac{72}{3{,}6}=20\\ \\text{m/s}$.</p><p>Quãng đường tương đối $s=L_1+L_2=200+150=350\\ \\text{m}$.</p><p>$t=\\dfrac sv=\\dfrac{350}{20}=17{,}5\\ \\text{s}$.</p></details><h4>Bài 6 · Trung bình</h4><p>Một người đi từ $A$ đến $B$. Trên $\\dfrac13$ quãng đường đầu đi với tốc độ $20\\ \\text{km/h}$, trên $\\dfrac13$ quãng đường tiếp theo đi với tốc độ $30\\ \\text{km/h}$, trên $\\dfrac13$ quãng đường cuối đi với tốc độ $60\\ \\text{km/h}$. Tính tốc độ trung bình trên cả quãng đường $AB$.</p><details><summary>Hướng dẫn giải</summary><p>Gọi $s$ là độ dài $AB$ ; mỗi đoạn dài $\\dfrac s3$.</p><p>$t_1=\\dfrac{s/3}{20}=\\dfrac{s}{60}$ ; $t_2=\\dfrac{s/3}{30}=\\dfrac{s}{90}$ ; $t_3=\\dfrac{s/3}{60}=\\dfrac{s}{180}$.</p><p>$t=s\\left(\\dfrac{3+2+1}{180}\\right)=\\dfrac{s}{30}$.</p><p>$v_{tb}=\\dfrac st=30\\ \\text{km/h}$.</p><p>Nhỏ hơn trung bình cộng $\\dfrac{20+30+60}{3}\\approx36{,}7\\ \\text{km/h}$ ✓.</p></details><h4>Bài 7 · Trung bình</h4><p>Hai xe cùng đi từ $A$ về $B$ ($AB=90\\ \\text{km}$). Xe thứ nhất chạy với tốc độ $45\\ \\text{km/h}$. Xe thứ hai chạy với tốc độ $30\\ \\text{km/h}$ nhưng xuất phát trước xe thứ nhất $30$ phút. Xe nào đến $B$ trước và trước bao lâu?</p><details><summary>Hướng dẫn giải</summary><p>Xe thứ nhất đi hết $\\dfrac{90}{45}=2\\ \\text{h}$ ; xe thứ hai đi hết $\\dfrac{90}{30}=3\\ \\text{h}$.</p><p>Lấy mốc là lúc xe thứ nhất xuất phát : xe thứ hai xuất phát lúc $-0{,}5\\ \\text{h}$ nên đến $B$ lúc $3-0{,}5=2{,}5\\ \\text{h}$.</p><p>Xe thứ nhất đến lúc $2\\ \\text{h}$, sớm hơn $0{,}5\\ \\text{h}$ = $30$ phút.</p></details><h4>Bài 8 · Trung bình</h4><p>Lúc $6$ giờ, một người đi xe đạp từ $A$ về $B$ với tốc độ $15\\ \\text{km/h}$. Đến $7$ giờ, một người đi xe máy cũng từ $A$ về $B$ với tốc độ $35\\ \\text{km/h}$. Quãng đường $AB$ dài $70\\ \\text{km}$.</p><p>a) Người đi xe máy đuổi kịp người đi xe đạp lúc mấy giờ và ở chỗ cách $A$ bao nhiêu?</p><p>b) Lúc mấy giờ hai người cách nhau $10\\ \\text{km}$?</p><details><summary>Hướng dẫn giải</summary><p>a) Lúc $7$ giờ, xe đạp đã đi $15\\cdot1=15\\ \\text{km}$ : khoảng cách giữa hai người là $15\\ \\text{km}$.</p><p>Tốc độ lại gần nhau (cùng chiều) : $35-15=20\\ \\text{km/h}$.</p><p>$t=\\dfrac{15}{20}=0{,}75\\ \\text{h}=45$ phút, tức $7$ giờ $45$ phút ; chỗ gặp cách $A$ $35\\cdot0{,}75=26{,}25\\ \\text{km}$.</p><p>b) Chưa kịp : $\\dfrac{15-10}{20}=0{,}25\\ \\text{h}$ sau $7$ giờ, tức $7$ giờ $15$ phút.</p><p>Đã vượt : $\\dfrac{15+10}{20}=1{,}25\\ \\text{h}$ sau $7$ giờ, tức $8$ giờ $15$ phút (xe máy lúc này cách $A$ $43{,}75\\ \\text{km}\\lt70\\ \\text{km}$ nên vẫn hợp lí).</p></details><h4>Bài 9 · Trung bình</h4><p>Hai người đi xe đạp xuất phát cùng lúc từ hai điểm $A$ và $B$ cách nhau $30\\ \\text{km}$, đi ngược chiều nhau. Tốc độ người từ $A$ là $12\\ \\text{km/h}$, người từ $B$ là $18\\ \\text{km/h}$. Một chú chim bay với tốc độ $30\\ \\text{km/h}$, xuất phát cùng lúc từ $A$ bay đến gặp người từ $B$, rồi quay lại gặp người từ $A$, cứ như vậy cho đến khi hai người gặp nhau. Tính tổng quãng đường chim bay được.</p><details><summary>Hướng dẫn giải</summary><p>Hai người gặp nhau sau $t=\\dfrac{30}{12+18}=1\\ \\text{h}$.</p><p>Chim bay liên tục trong đúng $1\\ \\text{h}$ nên tổng quãng đường $s=30\\cdot1=30\\ \\text{km}$.</p><p>Không cần cộng từng chặng bay qua lại.</p></details><h4>Bài 10 · Trung bình</h4><p>Hai đoàn tàu dài bằng nhau $L=100\\ \\text{m}$ chạy trên hai đường ray song song. Nếu chạy cùng chiều, tàu nhanh vượt tàu chậm trong $t_1=40\\ \\text{s}$. Nếu chạy ngược chiều, thời gian từ lúc hai đầu tàu gặp nhau đến lúc hai đuôi tàu rời nhau là $t_2=8\\ \\text{s}$. Tính tốc độ của mỗi đoàn tàu.</p><details><summary>Hướng dẫn giải</summary><p>Tổng chiều dài $200\\ \\text{m}$. Gọi $v_1\\gt v_2$.</p><p>Cùng chiều : $v_1-v_2=\\dfrac{200}{40}=5\\ \\text{m/s}$.</p><p>Ngược chiều : $v_1+v_2=\\dfrac{200}{8}=25\\ \\text{m/s}$.</p><p>Cộng : $2v_1=30$ nên $v_1=15\\ \\text{m/s}=54\\ \\text{km/h}$.</p><p>Trừ : $2v_2=20$ nên $v_2=10\\ \\text{m/s}=36\\ \\text{km/h}$.</p></details><h4>Bài 11 · Trung bình</h4><p>Một canô chạy xuôi dòng một khúc sông mất $1$ giờ $30$ phút và chạy ngược dòng khúc sông đó mất $2$ giờ $30$ phút. Nếu tắt máy để canô trôi theo dòng nước thì mất bao lâu?</p><details><summary>Hướng dẫn giải</summary><p>Gọi $s$ là chiều dài khúc sông : $v_x=\\dfrac{s}{1{,}5}$, $v_{ng}=\\dfrac{s}{2{,}5}$.</p><p>$v_n=\\dfrac{v_x-v_{ng}}{2}=\\dfrac s2\\left(\\dfrac1{1{,}5}-\\dfrac1{2{,}5}\\right)=\\dfrac{s}{7{,}5}$.</p><p>$t_{\\text{trôi}}=\\dfrac{s}{v_n}=7{,}5\\ \\text{h}$ (công thức nhanh : $\\dfrac{2\\cdot1{,}5\\cdot2{,}5}{2{,}5-1{,}5}=7{,}5$ ✓).</p></details><h4>Bài 12 · Trung bình</h4><p>Đúng $12$ giờ trưa, kim giờ và kim phút của một đồng hồ trùng nhau.</p><p>a) Sau ít nhất bao lâu thì hai kim lại trùng nhau ?</p><p>b) Sau ít nhất bao lâu thì hai kim tạo với nhau một góc vuông ($90^\\circ$)?</p><details><summary>Hướng dẫn giải</summary><p>Kim phút : $1$ vòng/giờ ; kim giờ : $\\dfrac1{12}$ vòng/giờ. Tốc độ tương đối $v_{\\text{tđ}}=1-\\dfrac1{12}=\\dfrac{11}{12}$ vòng/giờ.</p><p>a) Kim phút phải hơn kim giờ đúng $1$ vòng : $t=\\dfrac{1}{11/12}=\\dfrac{12}{11}\\ \\text{h}\\approx1$ giờ $5$ phút $27$ giây.</p><p>b) Kim phút phải hơn kim giờ $\\dfrac14$ vòng : $t=\\dfrac{1/4}{11/12}=\\dfrac3{11}\\ \\text{h}\\approx16$ phút $22$ giây.</p></details><h4>Bài 13 · Trung bình</h4><p>Kim giờ và kim phút của một đồng hồ trùng nhau lúc $12$ giờ. Hỏi vào thời điểm nào tiếp theo hai kim tạo với nhau một góc $180^\\circ$ (thẳng hàng, ngược hướng)?</p><details><summary>Hướng dẫn giải</summary><p>Kim phút phải hơn kim giờ $\\dfrac12$ vòng.</p><p>$t=\\dfrac{1/2}{11/12}=\\dfrac6{11}\\ \\text{h}\\approx32$ phút $44$ giây.</p><p>Tức khoảng $12$ giờ $32$ phút $44$ giây.</p></details><h4>Bài 14 · Khó</h4><p>Một canô xuôi dòng từ $A$ đến $B$ rồi lập tức quay về $A$ mất tổng cộng $5$ giờ. Biết $AB=60\\ \\text{km}$ và tốc độ dòng nước là $5\\ \\text{km/h}$. Tính tốc độ riêng của canô.</p><details><summary>Hướng dẫn giải</summary><p>Gọi $v$ là tốc độ riêng ($v\\gt5$) : $\\dfrac{60}{v+5}+\\dfrac{60}{v-5}=5$.</p><p>Chia hai vế cho $5$ : $\\dfrac{12}{v+5}+\\dfrac{12}{v-5}=1$.</p><p>Quy đồng : $12(v-5)+12(v+5)=(v+5)(v-5)$, tức $24v=v^2-25$.</p><p>$v^2-24v-25=0$ cho $v=25$ hoặc $v=-1$ (loại).</p><p>Tốc độ riêng của canô là $25\\ \\text{km/h}$.</p></details><h4>Bài 15 · Khó</h4><p>Một người bơi ngược dòng nước đánh rơi một chiếc mũ nổi. Sau $15$ phút người đó mới phát hiện, lập tức quay lại bơi đuổi theo mũ (tốc độ bơi so với nước không đổi) và đuổi kịp mũ ở chỗ cách nơi làm rơi $1{,}5\\ \\text{km}$. Tính tốc độ dòng nước.</p><details><summary>Hướng dẫn giải</summary><p>Trong hệ quy chiếu gắn với dòng nước, mũ đứng yên : người bơi ra xa mũ $15$ phút thì bơi quay lại gặp mũ cũng mất $15$ phút.</p><p>Mũ trôi theo dòng nước suốt $15+15=30$ phút $=0{,}5\\ \\text{h}$.</p><p>$v_n=\\dfrac{1{,}5}{0{,}5}=3\\ \\text{km/h}$.</p></details><h4>Bài 16 · Khó</h4><p>Một chiếc thuyền đi từ $A$ đến $B$ xuôi dòng, tổng thời gian đi (kể cả lúc chết máy) là $3$ giờ. Giữa đường thuyền chết máy, trôi tự do theo dòng nước $1$ giờ thì sửa xong, rồi chạy tiếp $1$ giờ nữa thì tới $B$. Tốc độ dòng nước là $2\\ \\text{km/h}$ ; tốc độ thuyền khi nước yên lặng là $8\\ \\text{km/h}$. Nếu thuyền không chết máy thì đi từ $A$ đến $B$ mất bao lâu?</p><details><summary>Hướng dẫn giải</summary><p>Tốc độ xuôi dòng khi chạy : $8+2=10\\ \\text{km/h}$.</p><p>Thời gian chạy bình thường : $3-1=2\\ \\text{h}$ ($1\\ \\text{h}$ trước và $1\\ \\text{h}$ sau lúc chết máy). Khi chết máy thuyền trôi $2\\cdot1=2\\ \\text{km}$.</p><p>$AB=10\\cdot2+2=22\\ \\text{km}$.</p><p>Không chết máy : $t=\\dfrac{22}{10}=2{,}2\\ \\text{h}$ ($2$ giờ $12$ phút).</p></details><h4>Bài 17 · Khó</h4><p>Một người đi từ $A$ đến $B$ gồm đoạn dốc lên $AC$ rồi đoạn dốc xuống $CB$. Lên dốc đi với tốc độ $15\\ \\text{km/h}$, xuống dốc đi với tốc độ $30\\ \\text{km/h}$. Thời gian đi từ $A$ đến $B$ là $2{,}5$ giờ, thời gian về từ $B$ đến $A$ là $3{,}5$ giờ. Tính chiều dài $AC$ và $CB$.</p><details><summary>Hướng dẫn giải</summary><p>Đi : $\\dfrac{AC}{15}+\\dfrac{CB}{30}=2{,}5$, tức $2\\,AC+CB=75$.</p><p>Về (đoạn $CB$ thành dốc lên, $AC$ thành dốc xuống) : $\\dfrac{CB}{15}+\\dfrac{AC}{30}=3{,}5$, tức $AC+2\\,CB=105$.</p><p>Giải hệ : $AC=15\\ \\text{km}$ ; $CB=45\\ \\text{km}$.</p><p>Kiểm tra : $\\dfrac{15}{15}+\\dfrac{45}{30}=2{,}5$ ✓ ; $\\dfrac{45}{15}+\\dfrac{15}{30}=3{,}5$ ✓.</p></details><h4>Bài 18 · Khó</h4><p>Một người đứng ở điểm $A$ trên bờ sông rộng $60\\ \\text{m}$ muốn bơi sang điểm $B$ ở bờ đối diện ($AB$ vuông góc với bờ). Tốc độ bơi của người so với nước là $1{,}5\\ \\text{m/s}$, tốc độ dòng nước là $0{,}9\\ \\text{m/s}$.</p><p>a) Người đó phải bơi theo hướng nào để sang đúng $B$?</p><p>b) Tính thời gian bơi sang.</p><details><summary>Hướng dẫn giải</summary><p>a) Vận tốc thực vuông góc với bờ : $v_b\\sin\\alpha=v_n$ nên $\\sin\\alpha=\\dfrac{0{,}9}{1{,}5}=0{,}6$, $\\alpha\\approx36{,}9^\\circ$ (chếch ngược dòng so với $AB$).</p><p>b) $v=\\sqrt{1{,}5^2-0{,}9^2}=\\sqrt{1{,}44}=1{,}2\\ \\text{m/s}$.</p><p>$t=\\dfrac{60}{1{,}2}=50\\ \\text{s}$.</p></details><h4>Bài 19 · Nâng cao</h4><p>Một ôtô và một xe đạp cùng khởi hành từ $A$ đi về $B$ trên đường thẳng, $AB=60\\ \\text{km}$. Xe đạp có tốc độ không đổi $30\\ \\text{km/h}$. Ôtô ban đầu chạy với tốc độ $60\\ \\text{km/h}$ ; sau khi chạy được thời gian $t_1$ thì dừng nghỉ $45$ phút rồi chạy tiếp về $B$ với tốc độ $45\\ \\text{km/h}$. Ôtô đến $B$ cùng lúc với xe đạp.</p><p>a) Vẽ đồ thị toạ độ – thời gian của hai xe trên cùng hệ trục.</p><p>b) Tìm $t_1$.</p><details><summary>Hướng dẫn giải</summary><p>a) Xe đạp đến $B$ sau $\\dfrac{60}{30}=2\\ \\text{h}$ : đoạn thẳng từ $(0;0)$ đến $(2;60)$.</p><p>Ôtô gồm ba đoạn : $(0;0)\\to(t_1;60t_1)$ ; đoạn nằm ngang dài $0{,}75\\ \\text{h}$ ; rồi đến $(2;60)$ với độ dốc $45\\ \\text{km/h}$.</p><p>b) Ôtô nghỉ $0{,}75\\ \\text{h}$ nên chạy tổng cộng $2-0{,}75=1{,}25\\ \\text{h}$ : $t_3=1{,}25-t_1$.</p><p>$60\\,t_1+45\\,(1{,}25-t_1)=60$, tức $15\\,t_1=3{,}75$.</p><p>$t_1=0{,}25\\ \\text{h}=15$ phút.</p><p>Kiểm tra : $s_1=60\\cdot0{,}25=15\\ \\text{km}$ ; $t_3=1\\ \\text{h}$, $s_3=45\\ \\text{km}$ ; $15+45=60\\ \\text{km}$ ✓. Ôtô nghỉ từ phút $15$ đến phút $60$ rồi chạy $1\\ \\text{h}$, đến $B$ lúc $t=2\\ \\text{h}$.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"c13-g3\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Đồ thị toạ độ – thời gian của ôtô (có đoạn nghỉ) và xe đạp, hai xe đến B cùng lúc\"><defs><marker id=\"g3-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"g3-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"g3-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"g3-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"56.0\" y1=\"196.0\" x2=\"56.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"56\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"131.0\" y1=\"196.0\" x2=\"131.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"131.0\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,5</text><line x1=\"206.0\" y1=\"196.0\" x2=\"206.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"206\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"281.0\" y1=\"196.0\" x2=\"281.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"281.0\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,5</text><line x1=\"356.0\" y1=\"196.0\" x2=\"356.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"356\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"56.0\" y1=\"196.0\" x2=\"362.0\" y2=\"196.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"200.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"56.0\" y1=\"160.0\" x2=\"362.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"164.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">15</text><line x1=\"56.0\" y1=\"124.0\" x2=\"362.0\" y2=\"124.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"128.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">30</text><line x1=\"56.0\" y1=\"88.0\" x2=\"362.0\" y2=\"88.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"92.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">45</text><line x1=\"56.0\" y1=\"52.0\" x2=\"362.0\" y2=\"52.0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.45\"/><text x=\"48\" y=\"56.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">60</text><line x1=\"56\" y1=\"196\" x2=\"384\" y2=\"196\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M376.4,191.6 L384.0,196.0 L376.4,200.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"386\" y=\"201\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">t (h)</text><line x1=\"56\" y1=\"196\" x2=\"56\" y2=\"28.0\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,35.6 L56.0,28.0 L60.4,35.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"62\" y=\"24.0\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (km)</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,196.0 93.5,160.0 206.0,160.0 356.0,52.0\"/><polyline fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\" points=\"56.0,196.0 356.0,52.0\"/><circle cx=\"56.0\" cy=\"196.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"93.5\" cy=\"160.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"206.0\" cy=\"160.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"356.0\" cy=\"52.0\" r=\"4\" fill=\"#fb923c\"/><circle cx=\"356.0\" cy=\"52.0\" r=\"4\" fill=\"#38bdf8\"/><text x=\"150.5\" y=\"178.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">ôtô nghỉ</text><text x=\"108.5\" y=\"104.8\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">xe đạp</text><text x=\"281.0\" y=\"124.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ôtô</text></svg><figcaption>Đáp án câu a : xe đạp là đoạn thẳng từ gốc đến (2 h ; 60 km) ; ôtô gồm ba đoạn, đoạn giữa nằm ngang.</figcaption></figure></details><h4>Bài 20 · Nâng cao</h4><p>Ba người đi từ thị trấn $A$ đến thị trấn $B$ cách nhau $30\\ \\text{km}$ với một chiếc xe máy chỉ chở được tối đa hai người (kể cả người lái). Tốc độ đi bộ $5\\ \\text{km/h}$, tốc độ xe máy $30\\ \\text{km/h}$. Để cả ba người đến $B$ cùng lúc, người lái chở người thứ hai đi trước một đoạn rồi thả người đó đi bộ tiếp, quay xe lại đón người thứ ba đang đi bộ từ $A$. Coi chuyển động là thẳng đều, thời gian quay xe không đáng kể.</p><p>a) Tính quãng đường người thứ ba đã đi bộ.</p><p>b) Tính thời gian cả ba người đi từ $A$ đến $B$.</p><details><summary>Hướng dẫn giải</summary><p>Gọi $y$ là quãng đường xe chở người thứ hai ; người thứ ba đi bộ quãng $x$ rồi lên xe.</p><p>Người thứ hai : đi xe $y$, đi bộ $30-y$. Người thứ ba : đi bộ $x$, đi xe $30-x$. Hai người cùng đến $B$ một lúc nên $\\dfrac{y}{30}+\\dfrac{30-y}{5}=\\dfrac{x}{5}+\\dfrac{30-x}{30}$, suy ra $(x+y-30)\\left(\\dfrac15-\\dfrac1{30}\\right)=0$.</p><p>Vậy $x+y=30$ : hai người đi bộ cùng một quãng $x$, và $y=30-x$.</p><p>Xe máy gặp người thứ ba tại điểm cách $A$ đoạn $x$ : người thứ ba mất $\\dfrac x5$ để đi bộ tới đó ; xe máy đi $y$ rồi quay về $y-x$ nên mất $\\dfrac{y+(y-x)}{30}=\\dfrac{2y-x}{30}$.</p><p>$\\dfrac x5=\\dfrac{2(30-x)-x}{30}$, suy ra $6x=60-3x$ và $9x=60$.</p><p>$x=\\dfrac{60}{9}=\\dfrac{20}{3}\\approx6{,}67\\ \\text{km}$.</p><p>a) Người thứ ba đi bộ $\\dfrac{20}{3}\\ \\text{km}\\approx6{,}67\\ \\text{km}$ ; xe chở người thứ hai $y=30-\\dfrac{20}{3}=\\dfrac{70}{3}\\ \\text{km}$.</p><p>b) $t=\\dfrac y{30}+\\dfrac x5=\\dfrac{70/3}{30}+\\dfrac{20/3}{5}=\\dfrac79+\\dfrac43=\\dfrac{19}{9}\\ \\text{h}\\approx2$ giờ $6$ phút $40$ giây.</p></details><h4>Bài 21 · Nâng cao</h4><p>Hai canô khởi hành cùng lúc từ hai điểm $A$ và $B$ ở hai đầu một đường kính của một hồ nước hình tròn. Canô $1$ chạy đều theo chiều kim đồng hồ, canô $2$ chạy đều ngược chiều kim đồng hồ. Lần gặp nhau thứ nhất cách $A$ một cung dài $150\\ \\text{m}$ ; lần gặp nhau thứ hai cách $B$ một cung dài $90\\ \\text{m}$. Tính chu vi hồ (có ba kết quả thoả mãn đề).</p><details><summary>Hướng dẫn giải</summary><p>Gọi $C$ là chu vi. Lần gặp thứ nhất : hai canô chạy ngược chiều, tổng quãng đường là nửa vòng $\\dfrac C2$, trong đó canô $1$ đi $150\\ \\text{m}$ : $\\dfrac{v_1}{v_1+v_2}=\\dfrac{150}{C/2}=\\dfrac{300}{C}$.</p><p>Từ lần gặp thứ nhất đến lần gặp thứ hai, tổng quãng đường hai canô đi được là một vòng $C$, nên canô $1$ đi thêm $C\\cdot\\dfrac{300}{C}=300\\ \\text{m}$.</p><p>Vậy từ $A$ đến lần gặp thứ hai, canô $1$ đi tổng cộng $150+300=450\\ \\text{m}$.</p><p>Lần gặp thứ hai cách $B$ một cung $90\\ \\text{m}$ (cung ngắn, $90\\le\\dfrac C2$). Vị trí của canô $1$ sau khi đi $450\\ \\text{m}$ kể từ $A$ có ba khả năng :</p><p>(i) Chưa tới $B$ : $\\dfrac C2-90=450$ nên $C=1080\\ \\text{m}$.</p><p>(ii) Đã qua $B$, chưa hết vòng : $\\dfrac C2+90=450$ nên $C=720\\ \\text{m}$.</p><p>(iii) Đã chạy hết một vòng, qua $A$ rồi mới tới chỗ gặp, còn cách $B$ cung $90\\ \\text{m}$ : $450-C=\\dfrac C2-90$ nên $C=360\\ \\text{m}$. (Trường hợp $450-C=\\dfrac C2+90$ cho $C=240\\ \\text{m}$ không thoả $C\\gt300\\ \\text{m}$ nên loại.)</p><p>Kiểm tra (ii) : $\\dfrac{v_1}{v_1+v_2}=\\dfrac{300}{720}=\\dfrac5{12}$ ; lần $1$ canô $1$ đi $150\\ \\text{m}$, canô $2$ đi $210\\ \\text{m}$, tổng $360=\\dfrac C2$ ✓.</p><p>Kiểm tra (i) : $\\dfrac{300}{1080}=\\dfrac5{18}$ ; lần $1$ canô $1$ đi $150\\ \\text{m}$, canô $2$ đi $390\\ \\text{m}$, tổng $540=\\dfrac C2$ ✓.</p><p>Kiểm tra (iii) : $\\dfrac{300}{360}=\\dfrac56$ nên $v_1:v_2=5:1$ ; lần $1$ canô $1$ đi $150\\ \\text{m}$, canô $2$ đi $30\\ \\text{m}$, tổng $180=\\dfrac C2$ ✓ ; đến lần $2$ canô $1$ đi $450\\ \\text{m}$ ($=360+90$, đã vượt một vòng), canô $2$ đi $90\\ \\text{m}$ và cách $B$ đúng $90\\ \\text{m}$ ✓.</p><p>Đáp số : ba kết quả $C=360\\ \\text{m}$, $C=720\\ \\text{m}$ hoặc $C=1080\\ \\text{m}$.</p></details><h4>Bài 22 · Nâng cao</h4><p>Trong phòng thực hành có một máng nghiêng thẳng, một viên bi thép nhỏ, một thước thẳng có độ chia nhỏ nhất $1\\ \\text{mm}$, một thước kẹp (hoặc panme) để đo đường kính viên bi, hai cổng quang điện $E$ và $F$ nối với đồng hồ đo thời gian hiện số (độ chính xác $0{,}001\\ \\text{s}$).</p><p>a) Trình bày các bước bố trí và tiến hành thí nghiệm để đo vận tốc trung bình của viên bi trên đoạn $EF$ và vận tốc tức thời của viên bi khi qua cổng $E$.</p><p>b) Thiết lập công thức tính sai số của phép đo vận tốc trung bình.</p><p>c) Làm thế nào để kiểm tra chuyển động của viên bi trên máng là nhanh dần hay đều?</p><details><summary>Hướng dẫn giải</summary><p><strong>a) Vận tốc trung bình trên $EF$.</strong></p><p>Bước 1 : đặt máng nghiêng một góc nhỏ so với mặt bàn, gắn hai cổng $E$, $F$ trên máng cách nhau một đoạn $s$ (khoảng $30$–$50\\ \\text{cm}$).</p><p>Bước 2 : nối cổng $E$ vào ổ $A$, cổng $F$ vào ổ $B$ của đồng hồ ; chọn chế độ đo thời gian từ lúc chắn cổng $E$ đến lúc chắn cổng $F$.</p><p>Bước 3 : dùng thước thẳng đo khoảng cách $s$ giữa hai cổng.</p><p>Bước 4 : thả viên bi không vận tốc đầu từ một vạch đánh dấu cố định trên máng ; đọc thời gian $t$ trên đồng hồ.</p><p>Bước 5 : lặp lại $5$ lần, lấy giá trị trung bình $t_{tb}$ ; tính $v_{tb}=\\dfrac{s}{t_{tb}}$.</p><p><strong>Vận tốc tức thời tại $E$.</strong></p><p>Chuyển đồng hồ sang chế độ đo thời gian bi chắn riêng cổng $E$ : $\\Delta t_E$. Đo đường kính $d$ của bi bằng thước kẹp.</p><p>$v_E\\approx\\dfrac{d}{\\Delta t_E}$ (chính xác hơn khi $\\Delta t_E$ càng nhỏ).</p><p><strong>b) Sai số.</strong></p><p>$v=\\dfrac st$ nên sai số tương đối $\\delta v=\\delta s+\\delta t=\\dfrac{\\Delta s}{s_{tb}}+\\dfrac{\\Delta t}{t_{tb}}$.</p><p>Sai số tuyệt đối $\\Delta v=v_{tb}\\cdot\\delta v$ ; ghi kết quả $v=v_{tb}\\pm\\Delta v$ (kèm đơn vị m/s).</p><p><strong>c) Kiểm tra tính chất chuyển động.</strong></p><p>Chia máng thành ba đoạn liên tiếp dài bằng nhau $s_1=s_2=s_3$ ; đo thời gian bi đi qua từng đoạn : $t_1$, $t_2$, $t_3$.</p><p>Nếu $t_1=t_2=t_3$ : chuyển động đều.</p><p>Nếu $t_1\\gt t_2\\gt t_3$ : vận tốc tăng dần, chuyển động nhanh dần.</p></details>"
+ }
+}

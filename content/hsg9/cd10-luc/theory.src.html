@@ -1,0 +1,320 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học</p>
+<p><strong>Có phần vượt chuẩn lớp 9</strong>, gắn nhãn <strong>Mở rộng HSG</strong>: hợp lực góc bất kì và khoảng giá trị, ghép lò xo, moment $M=Fd$, đòn bẩy nhiều lực, điều kiện $\tan\alpha$ và $\mu$.</p>
+<p>Sau bài này, em làm được:</p>
+<ul>
+<li>Vẽ một lực đúng tỉ lệ và viết đủ bốn yếu tố của nó.</li>
+<li>Tìm hợp lực của hai lực cùng phương, vuông góc, hoặc hợp góc $\alpha$ bất kì: $R^2=F_1^2+F_2^2+2F_1F_2\cos\alpha$ (<strong>Mở rộng HSG</strong>).</li>
+<li>Nêu khoảng giá trị có thể có của hợp lực: $|F_1-F_2|\le R\le F_1+F_2$ (<strong>Mở rộng HSG</strong>).</li>
+<li>Tìm lực căng khi vật treo bằng hai dây; tính độ dãn lò xo từ $k\Delta l=mg$.</li>
+<li>Phân biệt ma sát nghỉ, trượt, lăn; tìm đúng giá trị $F_{ms}$ khi vật đứng yên.</li>
+<li>Xét vật trên mặt dốc: đứng yên khi $\tan\alpha\le\mu$, trượt khi $\tan\alpha\gt\mu$ (<strong>Mở rộng HSG</strong>).</li>
+<li>Giải bài đòn bẩy nhiều lực, có khối lượng thanh, bằng quy tắc moment (<strong>Mở rộng HSG</strong>).</li>
+<li>Quy ước: lấy $g=10\ \text{m/s²}$ trong cả bài.</li>
+</ul>
+<p>Khoảng 15 phút · 7 mục · 8 câu tự kiểm tra. Cuối bài phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<h3>I. Mở bài: hai dây kéo vuông góc</h3>
+<p>Hai bạn cùng kéo một thùng đồ ra khỏi cửa. Dây của Lan hướng thẳng ra cửa, kéo 30 N. Dây của Minh kéo ngang qua cửa, vuông góc với dây Lan, kéo 40 N.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Tác dụng chung của hai lực lên thùng giống một lực có độ lớn:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q0" id="hsg10-q0a"><label for="hsg10-q0a" class="tl-opt tl-no">A. 70 N</label>
+<input type="radio" name="hsg10-q0" id="hsg10-q0b"><label for="hsg10-q0b" class="tl-opt tl-ok">B. 50 N</label>
+<input type="radio" name="hsg10-q0" id="hsg10-q0c"><label for="hsg10-q0c" class="tl-opt tl-no">C. 10 N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai lực vuông góc nên $R=\sqrt{30^2+40^2}=50\ \text{N}$, hướng chếch giữa hai dây. Hợp lực là đường chéo hình chữ nhật, không phải tổng độ dài hai cạnh.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 70 N chỉ có khi hai dây kéo cùng một hướng; 10 N chỉ có khi hai dây kéo ngược nhau. Hai dây vuông góc thì lực tổng nằm giữa hai trường hợp đó.</p></div>
+</div>
+</div>
+
+<h3>II. Lực và tổng hợp lực</h3>
+
+<h4>1. Lực là đại lượng vectơ</h4>
+<p><strong>🔑 Điểm đặt · phương · chiều · độ lớn</strong></p>
+<ul>
+<li>Lực là tác dụng đẩy hoặc kéo; đơn vị N; đo bằng lực kế.</li>
+<li>Vẽ bằng mũi tên: gốc ở điểm đặt, dài tỉ lệ độ lớn.</li>
+<li>Ví dụ: trọng lực của cuốn sách 0,4 kg là $P=4\ \text{N}$, đặt ở giữa sách, hướng xuống. Với 1 cm ứng 10 N, mũi tên dài 0,4 cm.</li>
+</ul>
+<details class="tl-details">
+<summary>🧮 Thử nhanh: mũi tên dài 3 cm, 1 cm ứng 20 N, lực bao nhiêu? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>$3\cdot20=60\ \text{N}$.</p>
+</details>
+
+<h4>2. Hợp lực</h4>
+<p><strong>🔑 Một lực thay nhiều lực · cùng tác dụng</strong></p>
+<ul>
+<li>Cùng phương, cùng chiều: $R=F_1+F_2$.</li>
+<li>Cùng phương, ngược chiều: $R=|F_1-F_2|$, cùng chiều lực lớn.</li>
+<li>Ví dụ: hai đội kéo co 500 N và 460 N ngược chiều cho $R=40\ \text{N}$, nghiêng về đội mạnh.</li>
+<li>Hai lực chung điểm đặt, phương cắt nhau: <strong>quy tắc hình bình hành</strong>, $R$ là đường chéo.</li>
+</ul>
+<!--FIG1-->
+<p><strong>🔑 Hàm số cos · $\alpha$ là góc giữa hai lực</strong> <em>(Mở rộng HSG)</em></p>
+<ul>
+<li>$R^2=F_1^2+F_2^2+2F_1F_2\cos\alpha$.</li>
+<li>Vuông góc ($\alpha=90^\circ$): $R^2=F_1^2+F_2^2$.</li>
+<li>Hình 1: $R^2=50^2+30^2+2\cdot50\cdot30\cdot\cos60^\circ=4900$, nên $R=70\ \text{N}$. Dùng thước đo đường chéo trên hình đúng tỉ lệ cũng ra 70 N.</li>
+<li>Góc càng lớn, hợp lực càng nhỏ: $R$ giảm dần từ $F_1+F_2$ ($\alpha=0^\circ$) tới $|F_1-F_2|$ ($\alpha=180^\circ$).</li>
+</ul>
+<details class="tl-details">
+<summary>🚀 Mở rộng HSG: hai lực bằng nhau và hướng của hợp lực</summary>
+<ul>
+<li>$F_1=F_2=F$: $R=2F\cos\dfrac{\alpha}{2}$. Hai lực 60 N hợp 120° cho $R=60\ \text{N}$.</li>
+<li>Ở Hình 1, $R$ lệch khỏi $F_1$ một góc $\varphi$ với $\tan\varphi=\dfrac{F_2\sin\alpha}{F_1+F_2\cos\alpha}$, tức $\varphi\approx21{,}8^\circ$.</li>
+</ul>
+</details>
+<details class="tl-details">
+<summary>🧮 Thử nhanh: lực 9 N và 12 N vuông góc, hợp lực bao nhiêu? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>$R=\sqrt{9^2+12^2}=15\ \text{N}$.</p>
+</details>
+<p>Hai lực 6 N và 8 N tác dụng vào cùng một điểm, góc giữa chúng thay đổi được. Giá trị nào <strong>không thể</strong> là độ lớn hợp lực?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q1" id="hsg10-q1a"><label for="hsg10-q1a" class="tl-opt tl-ok">A. 15 N</label>
+<input type="radio" name="hsg10-q1" id="hsg10-q1b"><label for="hsg10-q1b" class="tl-opt tl-no">B. 2 N</label>
+<input type="radio" name="hsg10-q1" id="hsg10-q1c"><label for="hsg10-q1c" class="tl-opt tl-no">C. 9 N</label>
+<input type="radio" name="hsg10-q1" id="hsg10-q1d"><label for="hsg10-q1d" class="tl-opt tl-no">D. 14 N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R$ chỉ nằm trong đoạn từ $|8-6|=2\ \text{N}$ đến $8+6=14\ \text{N}$, nên 15 N vượt mức lớn nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 2 N (hai lực ngược chiều) và 14 N (cùng chiều) là hai đầu mút nên đạt được. 9 N đạt được ở một góc $\alpha$ nào đó, vì 9 nằm trong đoạn từ 2 đến 14. Chỉ giá trị nằm ngoài đoạn mới bị loại.</p></div>
+</div>
+
+<h3>III. Cân bằng lực, quán tính, lực đàn hồi</h3>
+
+<h4>1. Cân bằng và quán tính</h4>
+<p><strong>🔑 Hợp lực bằng 0 · đứng yên hoặc thẳng đều · quán tính</strong></p>
+<ul>
+<li>Hai lực cân bằng: cùng vật, cùng phương, ngược chiều, cùng độ lớn.</li>
+<li>Hợp lực bằng 0: vật đứng yên thì cứ đứng yên; đang chuyển động thì chuyển động thẳng đều.</li>
+<li>Quán tính: vật có xu hướng giữ nguyên trạng thái chuyển động.</li>
+<li>Ví dụ: xe buýt phanh gấp, người đứng chúi về trước; giật nhanh tờ giấy dưới cốc, cốc ở lại.</li>
+<li>Ba lực cân bằng: lực này bằng lực đối của hợp hai lực kia.</li>
+</ul>
+<!--FIG2-->
+<p>Hình 2: vật 100 N treo bằng hai dây vuông góc. Hai lực căng hợp lại phải bằng $-P$, nên $2T\cos45^\circ=100$ và $T\approx70{,}7\ \text{N}$, lớn hơn một nửa trọng lượng.</p>
+<ul>
+<li><strong>Mở rộng HSG:</strong> hai dây hợp góc $\theta$ thì $T=\dfrac{P}{2\cos(\theta/2)}$. Hai dây song song ($\theta=0^\circ$): $T=P/2$. Dây xoè tới $160^\circ$: $T\approx2{,}88P$.</li>
+<li><strong>Mở rộng HSG:</strong> bài tập có thể cho góc với phương ngang. Khi đó dùng $\sin$: $2T\sin\varphi=P$, $\varphi$ là góc dây hợp phương ngang.</li>
+</ul>
+<p>Vật 8 kg treo bằng hai dây đối xứng, hai dây hợp với nhau góc 120°. Lực căng mỗi dây:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q2" id="hsg10-q2a"><label for="hsg10-q2a" class="tl-opt tl-no">A. 40 N</label>
+<input type="radio" name="hsg10-q2" id="hsg10-q2b"><label for="hsg10-q2b" class="tl-opt tl-no">B. 69 N</label>
+<input type="radio" name="hsg10-q2" id="hsg10-q2c"><label for="hsg10-q2c" class="tl-opt tl-ok">C. 80 N</label>
+<input type="radio" name="hsg10-q2" id="hsg10-q2d"><label for="hsg10-q2d" class="tl-opt tl-no">D. 160 N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi dây hợp với phương thẳng đứng góc 60°, nên $2T\cos60^\circ=P=80\ \text{N}$ và $T=80\ \text{N}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 40 N là chia đôi $P$, quên rằng dây nghiêng. 69 N là $80\cos30^\circ$, lấy nhầm góc. 160 N là $2P$, cộng độ lớn hai dây. Viết điều kiện thành phần đứng: $2T\cos(\theta/2)=P$.</p></div>
+</div>
+
+<h4>2. Lực đàn hồi</h4>
+<p><strong>🔑 $F=k\Delta l$ · $\Delta l$ là độ dãn · chiều về vị trí tự nhiên</strong></p>
+<ul>
+<li>$F_{đh}=k\,|\Delta l|$ ($k$: N/m; $\Delta l$: m, là độ biến dạng, <strong>không phải</strong> chiều dài).</li>
+<li>Treo vật đứng yên: $k\Delta l=mg$. Ví dụ $k=50\ \text{N/m}$, $m=0{,}3\ \text{kg}$: $\Delta l=3/50=0{,}06\ \text{m}$ $=6\ \text{cm}$.</li>
+<li>Kéo quá giới hạn đàn hồi, lò xo hỏng và công thức hết đúng.</li>
+</ul>
+<details class="tl-details">
+<summary>🚀 Mở rộng HSG: ghép lò xo</summary>
+<ul>
+<li>Song song: $k=k_1+k_2$. Hai lò xo 100 N/m cho 200 N/m.</li>
+<li>Nối tiếp: $\dfrac1k=\dfrac1{k_1}+\dfrac1{k_2}$. Hai lò xo 100 N/m cho 50 N/m.</li>
+</ul>
+</details>
+<p>Lò xo dài tự nhiên 20 cm. Treo vật 0,3 kg, lò xo dài 26 cm. Độ cứng của lò xo:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q3" id="hsg10-q3a"><label for="hsg10-q3a" class="tl-opt tl-ok">A. 50 N/m</label>
+<input type="radio" name="hsg10-q3" id="hsg10-q3b"><label for="hsg10-q3b" class="tl-opt tl-no">B. 15 N/m</label>
+<input type="radio" name="hsg10-q3" id="hsg10-q3c"><label for="hsg10-q3c" class="tl-opt tl-no">C. 11,5 N/m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta l=26-20=6\ \text{cm}$ $=0{,}06\ \text{m}$, nên $k=mg/\Delta l=3/0{,}06=50\ \text{N/m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 15 N/m là $3/0{,}2$, dùng chiều dài tự nhiên; 11,5 N/m là $3/0{,}26$, dùng chiều dài lúc treo. Công thức cần <em>độ dãn</em>, là hiệu hai chiều dài.</p></div>
+</div>
+
+<h3>IV. Lực ma sát</h3>
+
+<h4>1. Ma sát nghỉ, trượt, lăn</h4>
+<p><strong>🔑 Nghỉ: cân bằng lực kéo · trượt: $\mu N$ · lăn: nhỏ nhất</strong></p>
+<ul>
+<li>Ma sát nghỉ giữ vật đứng yên khi bị kéo; luôn bằng lực kéo, miễn chưa vượt cực đại: $0\le F_{msn}\le\mu_nN$.</li>
+<li>Ma sát trượt: $F_{mst}=\mu_tN$, ngược chiều chuyển động; $N$ là áp lực vuông góc, $\mu$ không có đơn vị.</li>
+<li>Ở mức bài này, $F_{mst}$ không phụ thuộc diện tích tiếp xúc hay tốc độ trượt.</li>
+<li>Ma sát lăn nhỏ hơn trượt rất nhiều; vì vậy vali có bánh xe.</li>
+</ul>
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: kéo khối gỗ 0,5 kg trên bàn gỗ <small>(số liệu minh hoạ)</small></p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> móc lực kế vào khối, kéo ngang tăng dần. Sau đó kéo đều khi khối đã trượt, đo bốn lần.</li>
+<li><strong>Quan sát:</strong> kéo 0,5; 1,0; 1,5; 2,0 N thì khối vẫn đứng yên. Lên tới 2,5 N khối bắt đầu trượt, rồi chỉ cần kéo khoảng 2,0 N để trượt đều.</li>
+<li><strong>Rút ra:</strong> khối nặng 5 N nên $\mu_n=2{,}5/5=0{,}50$ và $\mu_t=2{,}0/5=0{,}40$.</li>
+</ol>
+<table class="tl-table">
+<thead><tr><th>Lần kéo đều</th><th>Số chỉ lực kế (N)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>2,0</td></tr>
+<tr><td>2</td><td>2,1</td></tr>
+<tr><td>3</td><td>1,9</td></tr>
+<tr><td>4</td><td>2,0</td></tr>
+</tbody></table>
+</div>
+<details class="tl-details">
+<summary>🧮 Sai số: vì sao ghi $\mu_t=0{,}40\pm0{,}02$ chứ không chỉ 0,4? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Trung bình bốn lần là 2,0 N, các lần lệch tối đa 0,1 N (cũng là độ chia lực kế). Khi đó $\Delta\mu\approx0{,}1/5=0{,}02$. So sánh: $\mu_n=0{,}50$ cách $\mu_t$ tới 0,10, lớn hơn nhiều sai số, nên ma sát nghỉ cực đại thực sự lớn hơn ma sát trượt.</p>
+</details>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="hsg10-q4c" value="chac"> Chắc</label>
+<label><input type="radio" name="hsg10-q4c" value="khong"> Không chắc</label></p>
+<p>Thùng 20 kg trên sàn có $\mu_n=0{,}5$ và $\mu_t=0{,}4$. Người đẩy ngang 60 N, thùng không nhúc nhích. Lực ma sát tác dụng lên thùng là:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q4" id="hsg10-q4a"><label for="hsg10-q4a" class="tl-opt tl-no">A. 80 N</label>
+<input type="radio" name="hsg10-q4" id="hsg10-q4b"><label for="hsg10-q4b" class="tl-opt tl-no">B. 100 N</label>
+<input type="radio" name="hsg10-q4" id="hsg10-q4c"><label for="hsg10-q4c" class="tl-opt tl-no">C. 0</label>
+<input type="radio" name="hsg10-q4" id="hsg10-q4d"><label for="hsg10-q4d" class="tl-opt tl-ok">D. 60 N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thùng đứng yên nên ma sát nghỉ cân bằng lực đẩy: 60 N. Cực đại $0{,}5\cdot200=100\ \text{N}$ chưa bị vượt.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 80 N là $\mu_tN$ và 100 N là $\mu_nN$: hai giá trị đó chỉ là giới hạn, không phải ma sát đang có. 0 là sai vì nếu không có ma sát, 60 N đã đẩy thùng đi. Vật đứng yên thì lực ma sát bằng lực kéo.</p></div>
+</div>
+
+<h4>2. Mặt phẳng nghiêng có ma sát</h4>
+<p><strong>🔑 Phân tích $P$ · $\tan\alpha\gt\mu$ thì trượt · khối lượng triệt tiêu</strong> <em>(Mở rộng HSG: điều kiện $\tan\alpha$ so với $\mu$)</em></p>
+<ul>
+<li>$P$ chia thành $P\sin\alpha$ (kéo xuống dọc dốc) và $P\cos\alpha$ (ép vào dốc), nên $N=P\cos\alpha$.</li>
+<li>Vật trượt khi $P\sin\alpha\gt\mu_nP\cos\alpha$, tức $\tan\alpha\gt\mu_n$; $m$ triệt tiêu.</li>
+<li>Đang đứng yên: $F_{msn}=P\sin\alpha$, không phải $\mu N$.</li>
+<li>Đo $\mu_n$: nâng dốc từ từ tới lúc vật vừa trượt, rồi $\mu_n=\tan\alpha$. Ví dụ vừa trượt ở 27° cho $\mu_n\approx0{,}51$.</li>
+</ul>
+<!--FIG3-->
+<p>Hình 3: vật 10 kg trên dốc 30° có $N\approx86{,}6\ \text{N}$, $F_{msn}=50\ \text{N}$. Nếu $\mu_n=0{,}7$ thì ma sát cực đại là $0{,}7\cdot86{,}6\approx60{,}6\ \text{N}$, lớn hơn 50 N, nên vật đứng yên.</p>
+<p>Vật đặt trên tấm ván, $\mu_n=0{,}6$. Nâng ván từ từ. Vật bắt đầu trượt khi góc nghiêng vượt khoảng:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q5" id="hsg10-q5a"><label for="hsg10-q5a" class="tl-opt tl-no">A. 53°</label>
+<input type="radio" name="hsg10-q5" id="hsg10-q5b"><label for="hsg10-q5b" class="tl-opt tl-ok">B. 31°</label>
+<input type="radio" name="hsg10-q5" id="hsg10-q5c"><label for="hsg10-q5c" class="tl-opt tl-no">C. 37°</label>
+<input type="radio" name="hsg10-q5" id="hsg10-q5d"><label for="hsg10-q5d" class="tl-opt tl-no">D. 60°</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\tan\alpha=0{,}6$ cho $\alpha\approx31^\circ$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 37° ứng với $\sin\alpha=0{,}6$ và 53° ứng với $\cos\alpha=0{,}6$: nhầm hàm lượng giác. 60° là lấy luôn 0,6 làm số đo góc. Điều kiện là $\tan\alpha=\mu_n$.</p></div>
+</div>
+
+<h3>V. Đòn bẩy và moment lực</h3>
+
+<h4>1. Moment và đòn bẩy <small>(Mở rộng HSG)</small></h4>
+<p><strong>🔑 $M=Fd$ · $d$ vuông góc với đường tác dụng · thuận = ngược</strong></p>
+<ul>
+<li>Moment $M=F\cdot d$ (N·m); $d$ là cánh tay đòn, tức khoảng cách từ trục quay tới <strong>đường tác dụng</strong> của lực.</li>
+<li>Lực hợp góc $\theta$ với thanh dài $l$: $d=l\sin\theta$. Chìa vặn dài 0,4 m, kéo 30 N vuông góc cán: 12 N·m; kéo xiên 30° với cán: 6 N·m.</li>
+<li>Cân bằng quay (cùng một trục): tổng moment quay thuận chiều kim đồng hồ bằng tổng moment quay ngược lại.</li>
+<li>Đòn bẩy hai lực: $F_1d_1=F_2d_2$. Cắt giấy gần trục kéo thì nhẹ tay.</li>
+<li>Lợi lực thì thiệt đường đi, công không lợi (xem Chuyên đề 01).</li>
+</ul>
+<p>Cờ lê dài 0,5 m, kéo 40 N hợp góc 30° với cán. Moment của lực đối với trục bu-lông:</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q6" id="hsg10-q6a"><label for="hsg10-q6a" class="tl-opt tl-no">A. 20 N·m</label>
+<input type="radio" name="hsg10-q6" id="hsg10-q6b"><label for="hsg10-q6b" class="tl-opt tl-ok">B. 10 N·m</label>
+<input type="radio" name="hsg10-q6" id="hsg10-q6c"><label for="hsg10-q6c" class="tl-opt tl-no">C. 17 N·m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $d=0{,}5\sin30^\circ=0{,}25\ \text{m}$, $M=40\cdot0{,}25=10\ \text{N·m}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 20 N·m là $F\cdot l$, coi lực vuông góc cán. 17 N·m là $Fl\cos30^\circ$, nhầm sin với cos. Cánh tay đòn phải vuông góc với đường tác dụng của lực.</p></div>
+</div>
+<p>Bập bênh cân bằng: bạn 40 kg ngồi cách trục 1,5 m. Bạn 50 kg phải ngồi cách trục bao xa phía bên kia?</p>
+<div class="tl-quiz">
+<input type="radio" name="hsg10-q7" id="hsg10-q7a"><label for="hsg10-q7a" class="tl-opt tl-no">A. 1,875 m</label>
+<input type="radio" name="hsg10-q7" id="hsg10-q7b"><label for="hsg10-q7b" class="tl-opt tl-no">B. 1,5 m</label>
+<input type="radio" name="hsg10-q7" id="hsg10-q7c"><label for="hsg10-q7c" class="tl-opt tl-ok">C. 1,2 m</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $400\cdot1{,}5=500\cdot d$, nên $d=1{,}2\ \text{m}$. Người nặng hơn ngồi gần trục hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> 1,5 m chỉ đúng khi hai người nặng bằng nhau. 1,875 m là $d=1{,}5\cdot50/40$, đảo ngược tỉ lệ. Lực lớn hơn thì cánh tay đòn phải nhỏ hơn.</p></div>
+</div>
+
+<h4>2. Nhiều lực, thanh có khối lượng <small>(Mở rộng HSG)</small></h4>
+<p><strong>🔑 Chọn trục tại phản lực · $P$ ở trọng tâm · $\Sigma M=0$ và $\Sigma F=0$</strong></p>
+<ul>
+<li>Đặt trục tại điểm có lực chưa biết (phản lực): lực đó có moment bằng 0 và biến mất khỏi phương trình.</li>
+<li>Thanh đồng chất: trọng lượng đặt tại trung điểm.</li>
+<li>Cân bằng đủ hai điều kiện: tổng moment bằng 0 và tổng lực bằng 0.</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">📝 Đề bài</p>
+<p>Thanh đồng chất AB dài 1,2 m, nặng 2 kg, tựa trên điểm O cách A 0,4 m. Treo vật 5 kg ở A. Phải kéo xuống ở B một lực $F$ bằng bao nhiêu để thanh nằm ngang? Tính lực mà điểm tựa O đỡ thanh.</p>
+</div>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"đồng chất, dài 1,2 m, nặng 2 kg"</td><td>$P=20\ \text{N}$ ở trung điểm G, $AG=0{,}6\ \text{m}$</td></tr>
+<tr><td>"tựa trên O cách A 0,4 m"</td><td>chọn trục O; $OG=0{,}2\ \text{m}$, $OB=0{,}8\ \text{m}$</td></tr>
+<tr><td>"vật 5 kg ở A"</td><td>$P_A=50\ \text{N}$, cánh tay 0,4 m</td></tr>
+<tr><td>"kéo xuống ở B"</td><td>$F$ cánh tay 0,8 m, cùng phía G</td></tr>
+</tbody></table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<!--FIG4-->
+<ol class="tl-steps">
+<li>Moment quay phía A: $50\cdot0{,}4=20\ \text{N·m}$.</li>
+<li>Moment quay phía B: $20\cdot0{,}2+F\cdot0{,}8=4+0{,}8F$.</li>
+<li>Cân bằng moment quanh O: $20=4+0{,}8F$, nên $F=20\ \text{N}$.</li>
+<li>Phản lực: $N=50+20+20=90\ \text{N}$.</li>
+<li>Kiểm: thay $F$ vào, hai vế moment cùng 20 N·m.</li>
+</ol>
+</details>
+<details class="tl-details">
+<summary>✍️ Thử đổi: dời điểm tựa O về trung điểm G <small>(tự điền ba chỗ trống rồi bấm xem)</small></summary>
+<ol class="tl-steps">
+<li>Moment của trọng lượng thanh quanh O: ___ (vì cánh tay bằng 0).</li>
+<li>Cánh tay của vật 5 kg và của $F$ cùng bằng 0,6 m, nên $50\cdot0{,}6=F\cdot0{,}6$ và $F=$ ___.</li>
+<li>Phản lực $N=50+20+F=$ ___.</li>
+</ol>
+<p>Đáp án: 0; 50 N; 120 N.</p>
+</details>
+
+<h3>VI. Những cái bẫy</h3>
+<table class="tl-table">
+<thead><tr><th>Hay viết sai</th><th>Viết đúng</th></tr></thead>
+<tbody>
+<tr><td>Lực 20 N và 30 N luôn có hợp lực 50 N</td><td>Chỉ khi cùng chiều; nói chung $10\le R\le50\ \text{N}$</td></tr>
+<tr><td>Hộp nằm yên trên bàn nghiêng: $F_{ms}=\mu N$</td><td>$F_{msn}$ cân bằng với $P\sin\alpha$; $\mu N$ chỉ là giá trị tối đa</td></tr>
+<tr><td>Trên dốc, $N=P$</td><td>$N=P\cos\alpha$; kéo xiên lên còn làm $N$ nhỏ hơn nữa</td></tr>
+<tr><td>Cánh tay đòn là đoạn từ trục tới điểm đặt</td><td>Là khoảng cách vuông góc từ trục tới đường tác dụng</td></tr>
+</tbody></table>
+<ul>
+<li>Đổi cm sang m trước khi thay vào $k\Delta l$.</li>
+<li>Với lực không cùng phương, kiểm lại: kết quả phải nằm trong đoạn $[\,|F_1-F_2|,\ F_1+F_2\,]$.</li>
+</ul>
+<details class="tl-details">
+<summary>🧮 Tự kiểm tra: lực 20 N và 30 N, hợp lực lớn nhất và nhỏ nhất? <small>(nghĩ trước rồi mới bấm)</small></summary>
+<p>Lớn nhất 50 N (cùng chiều), nhỏ nhất 10 N (ngược chiều).</p>
+</details>
+
+<h3>VII. Trả bài và thử thách</h3>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem.</p>
+<details class="tl-details"><summary>Vẽ lực cần những yếu tố nào?</summary><p>Điểm đặt, phương, chiều, độ lớn (độ dài tỉ lệ).</p></details>
+<details class="tl-details"><summary>Hợp lực của hai lực hợp góc $\alpha$: công thức và khoảng giá trị</summary><p>$R^2=F_1^2+F_2^2+2F_1F_2\cos\alpha$; $|F_1-F_2|\le R\le F_1+F_2$.</p></details>
+<details class="tl-details"><summary>Điều kiện cân bằng của vật chịu ba lực đồng quy</summary><p>Hợp hai lực bất kì bằng lực đối của lực còn lại; vật đứng yên hoặc thẳng đều.</p></details>
+<details class="tl-details"><summary>Ma sát nghỉ: khi nào bằng bao nhiêu?</summary><p>Bằng lực kéo (hoặc $P\sin\alpha$ trên dốc), tối đa $\mu_nN$.</p></details>
+<details class="tl-details"><summary>Vật trên dốc trượt khi nào? Vì sao không phụ thuộc khối lượng?</summary><p>$\tan\alpha\gt\mu_n$; $m$ triệt tiêu giữa $P\sin\alpha$ và $\mu P\cos\alpha$.</p></details>
+<details class="tl-details"><summary>Moment, cánh tay đòn và điều kiện cân bằng đòn bẩy</summary><p>$M=Fd$ với $d$ vuông góc đường tác dụng; thuận = ngược; thêm $\Sigma F=0$.</p></details>
+</div>
+<details class="tl-details">
+<summary>🔥 Thử thách phân tầng <small>(tự giải trước rồi mới bấm)</small></summary>
+<ul>
+<li>⭐ Búa nhổ đinh: tay kéo 40 N cách trục 0,25 m, đinh cách trục 0,05 m. Lực kéo đinh: 200 N.</li>
+<li>⭐⭐ Kéo thùng 10 kg lên đều dọc dốc 30°, $\mu_t=0{,}4$, lực song song mặt dốc: $F=P\sin\alpha+\mu_tP\cos\alpha\approx84{,}6\ \text{N}$.</li>
+<li>⭐⭐⭐ Thanh AB dài 2 m, nặng 4 kg, kê trên hai điểm tựa C, D cách A và B mỗi bên 0,5 m. Đặt vật 6 kg cách A 1,25 m. Lấy moment quanh C: $N_D\cdot1=40\cdot0{,}5+60\cdot0{,}75$, nên $N_D=65\ \text{N}$ và $N_C=35\ \text{N}$.</li>
+</ul>
+</details>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li><strong>Lực:</strong> vectơ · bốn yếu tố · vẽ đúng tỉ lệ.</li>
+<li><strong>Hợp lực:</strong> hình bình hành · hàm số cos · $|F_1-F_2|\le R\le F_1+F_2$.</li>
+<li><strong>Cân bằng:</strong> $\Sigma F=0$ · treo hai dây · $k\Delta l=mg$.</li>
+<li><strong>Ma sát:</strong> nghỉ bằng lực kéo · tối đa $\mu_nN$ · dốc: $\tan\alpha$ so với $\mu$.</li>
+<li><strong>Đòn bẩy:</strong> $M=Fd$ · trục tại phản lực · $\Sigma M=0$ và $\Sigma F=0$.</li>
+<li><strong>Đọc đề:</strong> vẽ lực · chọn trục hoặc chiều dương · kiểm đơn vị.</li>
+</ul>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">🔗 Xem thêm</p>
+<ul>
+<li><a href="/lop-hoc/bai?id=58&amp;subject=vat-ly&amp;chapter=12&amp;class=lop-10">Lớp 10, Bài 13: Tổng hợp và phân tích lực. Cân bằng lực</a></li>
+<li><a href="/lop-hoc/bai?id=62&amp;subject=vat-ly&amp;chapter=12&amp;class=lop-10">Lớp 10, Bài 17: Trọng lực và lực căng</a></li>
+<li><a href="/lop-hoc/bai?id=63&amp;subject=vat-ly&amp;chapter=12&amp;class=lop-10">Lớp 10, Bài 18: Lực ma sát</a></li>
+<li><a href="/lop-hoc/bai?id=66&amp;subject=vat-ly&amp;chapter=12&amp;class=lop-10">Lớp 10, Bài 21: Moment lực. Cân bằng của vật rắn</a></li>
+</ul>
+</div>
