@@ -1,0 +1,121 @@
+{
+  "bai": "Bài 23. Năng lượng. Công cơ học",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: hai cảnh ở sân băng",
+      "trich_nguyen_van": "Lan đẩy nhẹ lưng bạn Hà đang đứng trên giày trượt. Hà lướt đi $3$ m",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Lực đẩy của Lan tác dụng suốt 3 m, nên công của Lan bằng F·3. Thực ra tay Lan chỉ chạm lưng Hà trên một đoạn rất ngắn. Cách hiểu này mâu thuẫn với Bẫy 2: phải lấy dịch chuyển của điểm đặt lực khi lực còn tác dụng.",
+      "de_xuat": "Ghi rõ Lan đẩy Hà trong một đoạn ngắn (ví dụ 0,5 m), sau đó Hà tự lướt tiếp đến 3 m, lúc này Lan không còn sinh công."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Công của trọng lực và của lực ma sát",
+      "trich_nguyen_van": "góc giữa $\\vec P$ và $\\vec d$ là $90^\\circ + \\theta$, nên vẫn ra $A_P = -P s\\sin\\theta = -P h$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không biết θ là góc gì vì θ chưa được định nghĩa. Không tự suy ra được cos(90°+θ) = −sinθ và s·sinθ = h, nên đành chép công thức.",
+      "de_xuat": "Định nghĩa θ là góc nghiêng của dốc, rồi viết rõ hai bước: cos(90°+θ) = −sinθ và h = s·sinθ, kèm hình vẽ."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Tổng công $\\approx 310\\ \\text{J} \\gt 0$: ván nhận thêm năng lượng, nhanh dần.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa dạy mối liên hệ giữa tổng công và tốc độ, nên không hiểu vì sao tổng công dương thì ván nhanh dần.",
+      "de_xuat": "Thêm một câu: tổng công dương nghĩa là năng lượng truyền vào ván nhiều hơn phần bị lấy đi, phần dư làm động năng (tốc độ) tăng; quan hệ này sẽ học kĩ ở bài sau."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "<strong>Áp lực:</strong> $N = P - F\\sin 30^\\circ = 300 - 20 = 280\\ \\text{N}$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề gọi N là phản lực nhưng bước này lại gọi là áp lực, nên nghĩ đây là hai lực khác nhau. Cũng chưa rõ vì sao chỗ này dùng sin trong khi công thức công dùng cos.",
+      "de_xuat": "Đổi tên bước thành 'Phản lực N' và ghi chú: F·sin30° là thành phần thẳng đứng của lực kéo, khác với F·cos30° là thành phần dọc đường đi."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "<strong>Phanh xe:</strong> ma sát ở má phanh sinh công cản, động năng thành nhiệt.",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Nghĩ 'Phanh xe máy' và 'Phanh xe' là hai ứng dụng khác nhau, trong khi nội dung trùng nhau.",
+      "de_xuat": "Gộp hai gạch đầu dòng về phanh thành một."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "$A = F s\\cos\\alpha$ · $\\alpha$: góc giữa $\\vec F$ và $\\vec d$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức viết s nhưng góc lại lấy theo d. Bảng Bẫy 1 dùng d = 0, còn câu 6 Trả bài dùng s = 0, nên băn khoăn s và d có phải một đại lượng không.",
+      "de_xuat": "Thống nhất một ký hiệu xuyên suốt, hoặc nhắc lại ngay tại đây rằng d = s khi vật đi thẳng một chiều."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Công của trọng lực và của lực ma sát",
+      "trich_nguyen_van": "xe lăn trọng lượng $P = 2{,}0$ N (lấy $g = 10\\ \\text{m/s}^2$)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đi tìm chỗ phải dùng g để tính, dù đề đã cho sẵn P.",
+      "de_xuat": "Bỏ '(lấy g = 10 m/s²)', hoặc cho khối lượng 0,20 kg rồi mới tính P."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Cứ có dùng lực là coi như có công, không xét vật nhận lực có dịch chuyển hay không.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhầm sin với cos vì góc cho so với phương ngang; 866 và 500 đều là số 'đẹp' nên dễ lẫn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "chỉ <strong>phần lực dọc đường đi</strong>, $F\\cos\\alpha$, mới sinh công"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ chuyển động thẳng đều (hợp lực bằng 0) thì công của từng lực cũng bằng 0.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhân thẳng F·s mà không xét góc 90° giữa lực tay và hướng đi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bưng khay đi ngang: vẫn mỏi | Lực tay hướng lên, $\\alpha = 90^\\circ$: $A = 0$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy quãng 2 m của người đẩy thay vì độ dịch chuyển của thành sân (vật nhận lực).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$s$ của <strong>vật nhận lực</strong> (điểm đặt lực)"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy góc nghiêng 30° của dốc làm α thay vì góc giữa lực và đường đi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đẩy xe hàng dọc dốc $15^\\circ$: lấy $\\alpha = 15^\\circ$ | Lực cùng hướng đường đi: $\\alpha = 0^\\circ$"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Tính lại ma sát với N = mg = 300 N, quên thành phần thẳng đứng của lực kéo làm giảm áp lực.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "phần lực hướng lên $F\\sin 30^\\circ$ làm giảm áp lực"
+    }
+  ]
+}

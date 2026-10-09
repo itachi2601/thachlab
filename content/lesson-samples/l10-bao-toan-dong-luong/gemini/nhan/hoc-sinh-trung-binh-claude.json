@@ -1,0 +1,137 @@
+{
+  "bai": "Bài 29. Định luật bảo toàn động lượng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Phát biểu định luật",
+      "trich_nguyen_van": "$\\vec v$: vận tốc trước tương tác · $\\vec v\\,'$: vận tốc sau",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở đây v là vận tốc TRƯỚC. Nhưng ở bảng thí nghiệm, Hình 2 và công thức va chạm mềm, v lại là vận tốc chung SAU va chạm. Học sinh dễ thế nhầm v trước với v sau.",
+      "de_xuat": "Ghi rõ trong khung va chạm mềm: 'ở đây v (không phẩy) là vận tốc chung sau va chạm'. Hoặc đổi ký hiệu thống nhất, chẳng hạn v' hay v_chung."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Phát biểu định luật",
+      "trich_nguyen_van": "Động năng thì khác hẳn: ở lần 1 chỉ còn",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Tỉ số m1/(m1+m2) xuất hiện mà không có bước suy ra. Nếu tự tính bằng số liệu lần 1 (0,0125 J so với 0,027 J), em chỉ được khoảng 46% và không hiểu vì sao bài ghi 50%.",
+      "de_xuat": "Thêm một dòng: W_sau/W_trước = (m1+m2)v²/(m1v1²), thay v = m1v1/(m1+m2) thì ra m1/(m1+m2). Ghi rõ 50% là giá trị lí thuyết, còn số đo cho khoảng 46%."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "I. Mở bài: cú ôm trên sân băng",
+      "trich_nguyen_van": "C: trên băng không có gì cản hai bạn, không có lí do để dừng.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ở đây bài nói không gì cản nên hai bạn không dừng. Đến Bẫy 3 bài lại nói hai bạn chậm dần rồi dừng do ma sát. Học sinh thấy hai chỗ mâu thuẫn.",
+      "de_xuat": "Sửa thành: 'ngay sau cú ôm, chưa có lực nào kịp làm hai bạn dừng; ma sát nhỏ chỉ làm chậm dần về sau (xem Bẫy 3)'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bẫy 1: quên dấu của vận tốc",
+      "trich_nguyen_van": "Người nhảy khỏi xe về phía sau",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ có công thức tách vật cho hệ ban đầu đứng yên (V = −m/M·v) và bài mẫu về va chạm mềm. Gặp hệ đang chạy rồi tách ra, học sinh dễ áp công thức phản lực hoặc không biết vế trái là (m+M)·2.",
+      "de_xuat": "Ở mục 4, thêm một câu: nếu hệ đang chuyển động thì viết (m+M)v0 = mv + MV, không dùng công thức V = −m/M·v."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "1. Hệ kín",
+      "trich_nguyen_van": "Ngoại lực chỉ triệt tiêu theo một phương → động lượng bảo toàn theo phương đó.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ 'triệt tiêu theo một phương' nghĩa là gì. Ví dụ duy nhất nằm trong mục thử thách ⭐⭐⭐ ẩn ở cuối bài.",
+      "de_xuat": "Thêm ngay sau dòng này một ví dụ ngắn: đá rơi chéo vào xe cát trên ray, ray đỡ theo phương đứng, nên chỉ bảo toàn theo phương ngang."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "1. Hệ kín",
+      "trich_nguyen_van": "D. Hai xe va chạm trên ray đệm khí nằm ngang",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Gặp 'ray đệm khí' trong câu hỏi trước khi bài mô tả nó (Hình 2 và thí nghiệm nằm sau). Học sinh không biết vì sao ma sát gần bằng 0.",
+      "de_xuat": "Chú thích ngắn: 'ray thổi khí nâng xe lên, gần như không ma sát'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Phát biểu định luật",
+      "trich_nguyen_van": "đứng yên giữa hai cổng quang",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không biết cổng quang là thiết bị gì và đo vận tốc bằng cách nào.",
+      "de_xuat": "Thêm ngoặc: '(cảm biến đo thời gian xe chắn tia sáng, từ đó tính vận tốc)'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "2. Phát biểu định luật",
+      "trich_nguyen_van": "Bảng dưới là số liệu minh hoạ (tính từ mô hình, làm tròn như số đọc thật).",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Số liệu tính từ mô hình, vậy mà phần nhận xét lại giải thích độ lệch bằng ma sát còn sót. Học sinh không biết độ lệch thật sự do đâu.",
+      "de_xuat": "Hoặc nói rõ độ lệch ở đây chỉ do làm tròn, hoặc bỏ cụm 'tính từ mô hình' nếu muốn coi đây là số đo thật."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "tl74-q1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Vừa học bảo toàn cơ năng ở chương trước nên mặc định động năng được giữ, rồi tính v sao cho ½mv² không đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bẫy 2: động lượng giữ nguyên thì động năng cũng giữ nguyên"
+    },
+    {
+      "cau": "tl74-q2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Hiểu chữ 'tự do' thành không chịu lực, nên quên trọng lực là ngoại lực không bị cân bằng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ngoại lực: lực do vật ngoài hệ gây ra (Trái Đất hút, mặt băng đỡ, ma sát)."
+    },
+    {
+      "cau": "tl74-q3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ kiểm điều kiện động lượng (2m = 2m) mà quên kiểm động năng, nên nhầm kết quả của va chạm mềm với va chạm đàn hồi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "sau va chạm hai vật dính nhau, chuyển động cùng vận tốc"
+    },
+    {
+      "cau": "tl74-q4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đổi 20 g thành 0,2 kg. Trong phần nội dung, bài chưa nhắc đổi đơn vị khối lượng; chỉ phản hồi sai mới chỉ ra lỗi này.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "tl74-q5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thế vận tốc người là +1 vì đề chỉ cho độ lớn, quên người nhảy ngược chiều chuyển động của xe.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn chiều + trước · ngược chiều mang dấu −"
+    },
+    {
+      "cau": "tl74-q6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy đạn bị chậm hẳn lại nên nghĩ động lượng cũng mất, không xét đến bao cát nhận đúng phần động lượng đó.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Động lượng: luôn giữ · động năng: tuỳ loại va chạm"
+    },
+    {
+      "cau": "tl74-q7",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Áp định nghĩa hệ kín quá cứng (phải không có ngoại lực), nên cho rằng còn ma sát là không dùng được, nhầm điều kiện áp dụng gần đúng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nội lực rất lớn, xảy ra rất nhanh, ngoại lực bỏ qua được"
+    },
+    {
+      "cau": "tl74-q8",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính đúng độ lớn 0,5 nhưng đọc kết quả theo chiều xe 1 (xe chạy nhanh hơn), không đọc dấu âm của kết quả.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dấu của kết quả cho biết chiều"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "bai": "Bài 21. Moment lực. Cân bằng của vật rắn",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: nhổ đinh bằng búa",
+      "trich_nguyen_van": "B. Độ lớn của lực và khoảng cách từ trục quay tới giá của lực",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh chưa biết 'giá của lực' là gì (mục II.1 mới định nghĩa), nên thấy đáp án B lạ và dễ né sang A.",
+      "de_xuat": "Thêm chú thích ngắn trong ngoặc: 'giá của lực (đường thẳng chứa lực)' ngay ở phương án B."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Moment lực",
+      "trich_nguyen_van": "Cầm xa gấp đôi thì lực chỉ cần một nửa.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 1 chỉ có một khoảng cách 30 cm, nên học sinh không biết 'xa gấp đôi' là so với vị trí nào.",
+      "de_xuat": "Nói rõ mốc so sánh, ví dụ: 'Nếu cầm ở 60 cm (xa gấp đôi) thì chỉ cần 60 N'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Quy tắc moment",
+      "trich_nguyen_van": "$F_2 \\cdot d_2$ luôn xấp xỉ $P_1 \\cdot d_1 = 30\\ \\text{N}\\cdot\\text{cm}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Khung định nghĩa quy định d (m), M (N·m), Câu 1 lại bắt lỗi 'để nguyên 30 cm'. Ở đây dùng N·cm mà không nói gì, học sinh không rõ khi nào được giữ cm.",
+      "de_xuat": "Thêm một câu: 'So hai vế cùng đơn vị thì giữ cm cũng được; 30 N·cm = 0,30 N·m. Khi tính ra lực từ moment cho trước theo N·m thì phải đổi sang m.'"
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Quy tắc moment",
+      "trich_nguyen_van": "$$M_1 + M_2 + \\dots = M_1' + M_2' + \\dots$$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức không ghi vế nào là thuận kim, vế nào là ngược kim, nên học sinh không biết M và M' ứng với chiều nào.",
+      "de_xuat": "Ghi chú dưới công thức: 'M: các moment làm quay thuận kim; M′: các moment làm quay ngược kim'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Quy tắc moment",
+      "trich_nguyen_van": "$1{,}5$ m là so lực chứ không so moment",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chọn 1,5 m thực chất là cho hai người ngồi đối xứng, bỏ qua chênh lệch khối lượng. Lời giải thích 'so lực' khiến học sinh không nhận ra lỗi của mình.",
+      "de_xuat": "Sửa thành: '1,5 m là cho Lan ngồi đối xứng với Minh, quên rằng hai người nặng khác nhau'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Điều kiện cân bằng tổng quát của vật rắn",
+      "trich_nguyen_van": "Tổng các moment lực đối với một điểm bất kì bằng 0 (chọn một chiều quay làm chiều dương)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Trước đó M = F·d luôn dương và quy tắc là 'thuận = ngược'. Giờ đột ngột 'tổng bằng 0' với chiều dương, đổi 'trục' thành 'điểm'. Học sinh không biết moment nào phải mang dấu âm.",
+      "de_xuat": "Thêm một dòng: 'Moment theo chiều dương mang dấu +, chiều kia mang dấu −; tổng bằng 0 chính là thuận = ngược. Điểm ở đây là trục vuông góc mặt phẳng hình đi qua điểm đó.'"
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Ngẫu lực",
+      "trich_nguyen_van": "$d = d_1 + d_2$: khoảng cách giữa hai giá (m), còn gọi là cánh tay đòn của ngẫu lực",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh hiểu d₁ + d₂ luôn bằng khoảng cách giữa hai giá với mọi trục. Thực ra điều này chỉ đúng khi trục nằm giữa hai giá; trục nằm ngoài thì hai moment ngược chiều và phải trừ nhau.",
+      "de_xuat": "Ghi điều kiện: 'd = d₁ + d₂ khi trục nằm giữa hai giá; nếu trục nằm ngoài, M = F·d₁ − F·d₂ = F·d'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Ngẫu lực",
+      "trich_nguyen_van": "Biến $x$ biến mất, nên trục ở đâu cũng ra $F d$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Phần chứng minh chỉ xét trục giữa hai giá mà kết luận cho mọi vị trí. Học sinh tin rằng mọi trường hợp đều cộng hai moment.",
+      "de_xuat": "Thêm trường hợp trục ở ngoài, cách giá F₁ đoạn x: M = F(x + d) − F·x = F·d."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: cánh tay đòn là khoảng cách tới điểm đặt lực",
+      "trich_nguyen_van": "Lực xiên góc $\\alpha$: $d = r\\sin\\alpha$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài không nói α là góc giữa lực với cán (với OA) hay với phương vuông góc cán. Học sinh hay nhầm sin/cos và dễ chọn sai ở Câu 3.",
+      "de_xuat": "Ghi rõ trong bảng: 'α là góc giữa lực và đoạn OA (cán); nếu cho góc với phương vuông góc cán thì dùng cos'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "lấy moment quanh $A$: $N \\cdot 0{,}4 = 24$ và $P \\cdot 0{,}6 = 24\\ \\text{N}\\cdot\\text{m}$, khớp.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh thắc mắc lực P₁ của túi gạo đi đâu khi lấy moment quanh A, và vì sao N lại thành lực làm quay.",
+      "de_xuat": "Thêm: 'P₁ đặt tại A nên d = 0, M = 0; N làm quay ngược kim, P làm quay thuận kim'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Thanh ở đề bài đang cân bằng với túi gạo $20$ N ở $A$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ngay trước đó có hai biến thể dời giá đỡ (0,3 m và 0,24 m). Học sinh có thể dùng nhầm OA của biến thể gần nhất.",
+      "de_xuat": "Nhắc lại số liệu trong câu: 'giá đỡ tại O với OA = 0,4 m như đề gốc'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ lực càng lớn thì càng dễ làm quay. Cụm 'giá của lực' ở B lại chưa được định nghĩa nên B càng khó chọn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A thì Minh phải thắng, vì $300$ N lớn hơn $150$ N."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Quên đổi 30 cm sang 0,30 m, chia 36/30.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi $d = 0{,}30$ m rồi dùng $F = M/d$."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lập tỉ lệ ngược: cho người nặng ngồi xa hơn (x = 45·1,5/30).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Người nặng ngồi gần trục hơn."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhầm sin với cos vì bài chưa định nghĩa α là góc với cán.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Lực xiên góc $\\alpha$: $d = r\\sin\\alpha$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Lấy khoảng cách tới điểm đặt (0,8 m) làm cánh tay đòn, cho rằng đặt xa bản lề là quay mạnh nhất.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "đẩy hướng vào bản lề thì cửa không quay dù đẩy mạnh"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chỉ tính một lực với nửa khoảng cách (bán kính 0,18 m), quên rằng cả hai lực cùng làm quay một chiều.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$d = d_1 + d_2$: khoảng cách giữa hai giá"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "So lực thay vì so moment: thêm 10 N bên này thì thêm 10 N bên kia, quên OB gấp đôi OA. Học sinh cũng có thể dùng nhầm OA = 0,3 m hoặc 0,24 m của các biến thể ngay trước đó.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "So moment · không so lực"
+    }
+  ]
+}

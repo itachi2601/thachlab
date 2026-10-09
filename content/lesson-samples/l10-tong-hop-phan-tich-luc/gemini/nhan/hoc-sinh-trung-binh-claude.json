@@ -1,0 +1,202 @@
+{
+  "bai": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Tổng hợp hai lực đồng quy bằng quy tắc hình bình hành",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ hiểu \"đồng quy\" chỉ là \"vẽ chung gốc\". Cả bài không có câu định nghĩa: giá của hai lực cắt nhau tại một điểm. Mục 3 chỉ ghi \"Vẽ F₁, F₂ chung gốc\".",
+      "de_xuat": "Thêm ở đầu mục 3 một câu: \"Hai lực đồng quy là hai lực có giá cắt nhau tại một điểm; ta trượt chúng về điểm đó để chung gốc.\""
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Hai lực song song cùng chiều",
+      "trich_nguyen_van": "Giá của hợp lực nằm giữa hai giá, chia khoảng cách theo tỉ lệ nghịch",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh không biết \"giá\" của lực là gì. Từ này xuất hiện ba lần trong một câu, nên học sinh sẽ coi \"giá\" là điểm đặt lực.",
+      "de_xuat": "Thêm câu ngay trước bullet: \"Giá của lực là đường thẳng chứa vectơ lực.\""
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Hai lực song song cùng chiều",
+      "trich_nguyen_van": "$\\dfrac{30}{20} = \\dfrac{d_2}{d_1}$ nên $d_1 = 0{,}4$ m tính từ thùng 30 N",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh có một phương trình nhưng hai ẩn. Bài không viết d₁ + d₂ = 1 m nên học sinh không biết 0,4 m từ đâu ra.",
+      "de_xuat": "Chèn bước: \"Vai nằm giữa hai thùng nên d₁ + d₂ = 1 m; kết hợp d₂ = 1,5d₁ được d₁ = 0,4 m, d₂ = 0,6 m.\""
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Hai lực song song cùng chiều",
+      "trich_nguyen_van": "Hai lực song song cùng chiều",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục này nằm ngoài danh mục yêu cầu cần đạt (chỉ có hai lực đồng quy, phân tích vuông góc, cân bằng chất điểm). Học sinh tưởng phải học thuộc công thức tỉ lệ nghịch cho bài này.",
+      "de_xuat": "Ghi chú rõ \"Đọc thêm, không thuộc yêu cầu của bài\" hoặc chuyển mục này sang bài moment/quy tắc hợp lực song song."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Phân tích lực",
+      "trich_nguyen_van": "lực kéo bằng thành phần dọc ván $P_x = P\\sin\\alpha$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Vài dòng trước, α là \"góc giữa F và Ox\" và F_x = F cos α. Giờ ký hiệu P_x vẫn là thành phần theo Ox nhưng lại dùng sin. Học sinh sẽ thấy hai công thức mâu thuẫn, không nhận ra α đã đổi nghĩa thành góc nghiêng của ván.",
+      "de_xuat": "Ngay trong thí nghiệm, nói rõ: \"Ở đây α là góc nghiêng của ván, không phải góc giữa P và trục dọc ván, nên công thức đổi thành sin.\""
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 3: nhầm sin và cos khi phân tích lực",
+      "trich_nguyen_van": "Trên dốc nghiêng góc $\\alpha$, thành phần song song dốc của trọng lực là $P\\sin\\alpha$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Câu trước nói α là góc giữa F với phương đang chiếu. Câu sau lại lấy α là góc dốc mà không giải thích vì sao góc giữa P và phương vuông góc với dốc bằng α. Học sinh chỉ thuộc mẹo \"song song = sin\" mà không hiểu lý do.",
+      "de_xuat": "Thêm một câu: \"P thẳng đứng, pháp tuyến dốc lệch khỏi phương thẳng đứng đúng góc α (hai góc có cạnh tương ứng vuông góc), nên P_x đối diện góc α → sin.\""
+    },
+    {
+      "id": "c7",
+      "vi_tri": "5. Phân tích lực",
+      "trich_nguyen_van": "Góc kề: cos · Góc đối: sin",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh đọc thành \"góc kề\" và \"góc đối\", trong khi ý đúng là cạnh (thành phần) kề hoặc đối diện góc α.",
+      "de_xuat": "Sửa thành \"Cạnh kề góc: cos · Cạnh đối góc: sin\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "5. Phân tích lực",
+      "trich_nguyen_van": "Ví dụ: kéo vali bằng tay kéo nghiêng.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Văn bản nói vali, nhưng chú thích Hình 2 nói \"làm xe chạy\", \"nhấc bớt xe lên\". Học sinh không chắc hình minh hoạ cho ví dụ nào.",
+      "de_xuat": "Thống nhất một vật (vali hoặc xe) giữa đoạn văn và chú thích Hình 2."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "6. Cân bằng lực",
+      "trich_nguyen_van": "Ba lực cùng nằm trong một mặt phẳng và tạo thành một tam giác lực khép kín.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ dạy quy tắc hình bình hành, chưa dạy cách nối đuôi các vectơ. Cụm \"tam giác lực khép kín\" cũng đã dùng ở mục 3 và ở phản hồi Câu 1 mà không định nghĩa, nên học sinh không biết vẽ tam giác này thế nào.",
+      "de_xuat": "Thêm câu: \"Đặt các vectơ nối đuôi nhau (gốc vectơ sau trùng ngọn vectơ trước); cân bằng thì ngọn vectơ cuối trùng gốc vectơ đầu.\""
+    },
+    {
+      "id": "c10",
+      "vi_tri": "6. Cân bằng lực",
+      "trich_nguyen_van": "🔑 Đứng yên · hợp lực bằng không",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh hiểu chỉ vật đứng yên mới có hợp lực bằng 0. Nhưng mục \"Mang về\" lại bảo gạch cụm \"đều\" là dữ kiện ngầm, còn mục 6 không hề nói chuyển động thẳng đều cũng là cân bằng. Học sinh sẽ nhầm điều kiện áp dụng.",
+      "de_xuat": "Sửa thành \"Đứng yên hoặc thẳng đều · hợp lực bằng không\" và thêm một câu giải thích trong bullet đầu."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "6. Cân bằng lực",
+      "trich_nguyen_van": "B. $1$ N, ngược hướng với $\\vec F_2$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi sai chỉ giải thích phương án 7 N và phương án cùng hướng. Học sinh chọn B (lấy 4 − 3) không biết mình sai ở đâu.",
+      "de_xuat": "Thêm vào phản hồi: \"1 N là trừ số, chỉ đúng khi hai lực ngược chiều, không phải vuông góc.\""
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 2: hai lực cân bằng và cặp lực – phản lực",
+      "trich_nguyen_van": "Cùng vật: cân bằng · Khác vật: lực – phản lực",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh áp mẹo này vào Câu 4 sẽ chọn B: lực sách ép bàn đặt lên vật khác, cùng độ lớn, cùng chiều xuống. Mẹo chỉ là điều kiện cần. Phản hồi cũng không giải thích vì sao B sai (B là phản lực của N, không phải của P).",
+      "de_xuat": "Bổ sung vào mẹo: \"Lực – phản lực là cặp tương tác giữa đúng hai vật: A tác dụng lên B thì B tác dụng lên A\", và thêm vào phản hồi Câu 4 một câu về phương án B."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "3. Hai lực đồng quy: quy tắc hình bình hành",
+      "trich_nguyen_van": "Trường hợp hai lực vuông góc: $\\cos\\theta = \\dfrac{F_1}{F}$, nên hợp lực lệch về phía lực lớn hơn.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Từ cos θ = F₁/F, học sinh không thấy ngay vì sao suy ra được \"lệch về phía lực lớn hơn\". Chữ \"nên\" thiếu bước so sánh θ với 45°.",
+      "de_xuat": "Thêm: \"F₂ > F₁ thì F₁/F < 1/√2, nên θ > 45°, tức F gần F₂ hơn.\""
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Bài 1: hai bạn kéo xe trượt",
+      "trich_nguyen_van": "$F$ và $\\theta$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "θ chỉ được định nghĩa trong khung \"Bấm xem: hướng của hợp lực\". Học sinh không mở khung đó sẽ không biết θ đo từ lực nào.",
+      "de_xuat": "Ghi ngay trong bảng: \"θ là góc giữa F và hướng đông (F₁)\"."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Tính lực ma sát nghỉ và phản lực vuông góc của dốc.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa giới thiệu \"ma sát nghỉ\" và chưa dạy cân bằng theo từng trục. Đề lại chỉ cho sin 37°, học sinh phải tự suy ra cos 37° = 0,8.",
+      "de_xuat": "Cho thêm cos 37° = 0,8 và gợi ý: \"Thùng đứng yên nên ma sát cân bằng P_x, phản lực cân bằng P_y.\""
+    },
+    {
+      "id": "c16",
+      "vi_tri": "1. Tổng hợp lực",
+      "trich_nguyen_van": "Dây treo quả nặng nằm về phía nào so với góc giữa hai lực kế?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi không có đáp án hay nhận xét đi kèm. Học sinh không biết mình quan sát đúng hay chưa.",
+      "de_xuat": "Thêm một dòng đáp: \"Dây treo nằm trên đường kéo dài của đường chéo hình bình hành, ngược hướng hợp lực của hai lực kế.\""
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cộng số 100 + 100, coi lực là đại lượng vô hướng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lực là vectơ: ngoài độ lớn còn có hướng."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhầm khi lấy góc: dùng cos 30° thay cho cos 60°, tức coi α/2 = 30°.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nếu chọn $17{,}3$ N là đã lấy nhầm $\\alpha = 60^\\circ$ thay vì $120^\\circ$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính đúng 5 N nhưng lẫn hai phương án gần giống nhau, cho F₃ cùng hướng với hợp lực.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Với ba lực: hợp của hai lực bằng và ngược chiều lực thứ ba."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Không xác định hai đầu mút 2 N và 14 N. Chọn 15 N vì thấy gần với tổng 6 + 8.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\lvert F_1 - F_2 \\rvert \\le F \\le F_1 + F_2$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Áp mẹo \"khác vật: lực – phản lực\". Lực sách ép bàn đặt lên vật khác và cùng độ lớn với P, nhưng thực ra nó là phản lực của N, không phải của P.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Dùng F_x = F cos α như ở mục 5 mà không nhận ra α ở đây là góc dốc, nên ra P cos 30° = 43,3 N.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "thành phần song song dốc của trọng lực là $P\\sin\\alpha$, không phải $P\\cos\\alpha$"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhầm chiều biến thiên: nghĩ dây dài hơn thì căng hơn, hoặc góc giảm thì cos(α/2) giảm, T tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Càng mở rộng hai dây thì $\\cos\\dfrac{\\alpha}{2}$ càng nhỏ, $T$ càng lớn"
+    }
+  ]
+}

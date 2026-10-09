@@ -1,0 +1,166 @@
+{
+  "bai": "Bài 16. Định luật 3 Newton",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Thí nghiệm: hai lực kế kéo nhau",
+      "trich_nguyen_van": "Chênh lệch nhỏ hơn sai số đọc và đổi chiều giữa các lần là dấu hiệu của sai số ngẫu nhiên.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bài ghi lực kế đọc tới ±0,1 N và độ chênh đúng bằng 0,1 N. Phương án A nói 'nằm trong sai số', còn phản hồi lại nói 'nhỏ hơn'. Em không biết bằng sai số thì có được coi là sai số hay không.",
+      "de_xuat": "Sửa phản hồi thành 'Chênh lệch không vượt quá sai số đọc (±0,1 N)' cho khớp với phương án A và với thông số lực kế."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Thí nghiệm: hai lực kế kéo nhau",
+      "trich_nguyen_van": "là dấu hiệu của sai số ngẫu nhiên",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục tiêu và câu hỏi chỉ dùng 'sai số đọc'. Đến phản hồi lại xuất hiện 'sai số ngẫu nhiên' mà không có định nghĩa ở đâu, nên em tưởng đây là một loại sai số khác.",
+      "de_xuat": "Thêm nửa câu: 'sai số ngẫu nhiên (lúc lệch lên, lúc lệch xuống, không theo một chiều cố định)', hoặc chỉ dùng thống nhất 'sai số đọc'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Thí nghiệm: hai lực kế kéo nhau",
+      "trich_nguyen_van": "Ở lần 3, lực kế 2 chỉ lớn hơn $0{,}1$ N",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Có thể đọc thành 'lực kế 2 chỉ số lớn hơn 0,1 N'. Đọc vậy thì chẳng có gì lạ, vì nó chỉ 3,1 N.",
+      "de_xuat": "Viết rõ: 'Ở lần 3, số chỉ lực kế 2 lớn hơn lực kế 1 là 0,1 N'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "6. Hệ thức $m_A a_A = m_B a_B$ suy ra từ đâu?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Từ đầu bài đến mục IV, hệ thức này chỉ xuất hiện ở Mục tiêu, chưa được dẫn ra lần nào. Mãi đến mục V nó mới hiện ra ở bước 'Kiểm tra'. Em bị hỏi một thứ chưa được học.",
+      "de_xuat": "Thêm vào Bẫy 2 (hoặc ngay sau bảng xe tải – xe con) một dòng: 'Vì F_AB = F_BA và F = ma nên m_A a_A = m_B a_B (8000·5 = 1000·40)'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Bốn đặc điểm của cặp lực–phản lực",
+      "trich_nguyen_van": "cùng là lực hút, hoặc cùng là lực đẩy, hoặc cùng là ma sát",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài trộn chiều tác dụng (hút/đẩy) với bản chất lực (ma sát), Câu 2 lại gọi 'lực kéo' là một loại. Em dễ nghĩ trọng lực và lực dây đều là 'kéo' nên cùng loại, rồi chọn sai.",
+      "de_xuat": "Định nghĩa 'cùng loại' là cùng bản chất (cùng hấp dẫn, cùng đàn hồi, cùng ma sát…) và ở Câu 2 gọi rõ 'cùng là lực đàn hồi của dây'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "1. Lực và phản lực",
+      "trich_nguyen_van": "F1 đặt lên thành, F2 đặt lên em: bằng nhau về độ lớn, ngược chiều",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Khung định luật vừa dùng F_AB, F_BA thì hình lại đổi sang F1, F2. Em phải tự đoán F1 là F_AB hay F_BA.",
+      "de_xuat": "Ghi trên hình và chú thích: 'F1 = F_em→thành, F2 = F_thành→em', hoặc dùng luôn ký hiệu F_AB, F_BA."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 1: \"bằng nhau, ngược chiều thì triệt tiêu\"",
+      "trich_nguyen_van": "N (lên sách) và N′ (lên bàn) mới là lực – phản lực",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "P, N, N′ chỉ xuất hiện trong chú thích hình, không có dòng nào nói P là trọng lực, N là lực bàn đỡ sách, N′ là lực sách ép bàn.",
+      "de_xuat": "Thêm vào chú thích: 'P: trọng lực; N: bàn đẩy sách; N′: sách ép xuống bàn'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "I. Mở bài: đẩy thành sân mà mình lại trượt lùi",
+      "trich_nguyen_van": "Thành sân đứng im, còn người đẩy thì… vù một cái, trượt ngược ra sau.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đoạn mở bài đã nói luôn kết quả. Câu 'Dự đoán trước khi học' ngay bên dưới vì thế chỉ là chép lại, không còn là dự đoán.",
+      "de_xuat": "Đặt câu dự đoán lên trước đoạn kể chuyện, hoặc bỏ cụm 'trượt ngược ra sau' khỏi đoạn mở bài."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 3: \"phải có thứ gì đó bên ngoài để đẩy\"",
+      "trich_nguyen_van": "Khí đẩy lại tên lửa, chân không cũng vậy",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em có thể hiểu là 'chân không cũng đẩy lại tên lửa', tức là ngược với ý bài.",
+      "de_xuat": "Viết: 'Khí cháy đẩy lại tên lửa, nên trong chân không tên lửa vẫn được đẩy'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "($a = 1\\ \\text{m/s}^2$; $T = 500$ N, vì xe: $T - 300 = 200 \\cdot 1$ và ngựa: $900 - T = 400 \\cdot 1$)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Đáp án thay sẵn a = 1 vào hai phương trình mà không cho biết a = 1 ở đâu ra. Bài cũng chưa từng xét hệ hai vật nối dây.",
+      "de_xuat": "Thêm bước: 'Cộng hai phương trình: 900 − 300 = (400 + 200)a nên a = 1 m/s²', rồi mới tìm T."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "đạp xe, bơi cũng nhờ phản lực: chân đạp bàn đạp, tay đẩy nước về sau",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 'Bơi' đã có ở dòng đầu. Dòng 'Đập bóng, đá bóng' lại nhắc bơi lần nữa và lẫn thêm đạp xe, nên đọc rối.",
+      "de_xuat": "Tách 'đạp xe' thành một gạch riêng và bỏ phần nhắc lại về bơi."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: \"phải có thứ gì đó bên ngoài để đẩy\"",
+      "trich_nguyen_van": "lực chỉ nằm trên đường thẳng nối hai vật, không có lực hướng lên",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Định luật chỉ nêu 'cùng phương', không nói hai lực nằm trên cùng một đường thẳng. Phản hồi Câu 4 dựa vào một ý mà bài chưa dạy.",
+      "de_xuat": "Ghi trong khung định luật 'cùng phương (cùng giá)' hoặc đổi phản hồi thành 'phản lực ngược chiều lực ném, không có lực hướng lên'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy thành sân không chuyển động nên nghĩ thành không tác dụng lực lên mình.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A là nghĩ thành \"đứng im\" thì không tác dụng lực, nhưng nếu vậy em đâu thể lùi."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Hiểu 'phản lực' là lực sinh ra sau, đáp lại lực ban đầu, nên cho rằng có độ trễ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cùng lúc: cùng xuất hiện, cùng mất đi."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy hai lực bằng nhau, ngược chiều là kết luận ngay là lực – phản lực, không kiểm tra điểm đặt. Cách hiểu mơ hồ 'cùng loại = cùng là kéo' càng củng cố lựa chọn này.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỉ được cộng các lực cùng đặt lên một vật."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gộp chung hậu quả (muỗi nát) với độ lớn lực, cho rằng vật nhẹ thì tác dụng lực nhỏ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhưng lực hai bên vẫn bằng nhau; xe con hỏng nặng vì gia tốc lớn hơn"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ rằng muốn chuyển động phải tựa vào một vật bên ngoài, quên rằng búa đẩy lại tay.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đẩy cái gì · cái đó đẩy lại"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Từ lực bằng nhau suy thẳng ra chuyển động như nhau, bỏ qua khối lượng khác nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lực bằng nhau, chuyển động khác nhau vì khối lượng khác nhau."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Coi gia tốc tỉ lệ thuận với khối lượng nên nhân 4 với 2, không dùng m1a1 = m2a2.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lực bằng nhau → vật nhẹ gia tốc lớn: $m_A a_A = m_B a_B$."
+    }
+  ]
+}

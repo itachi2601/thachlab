@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 22. Thực hành: Tổng hợp lực",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Ý tưởng: lực tổng hợp bằng lực cân bằng",
+      "trich_nguyen_van": "Thanh nhẹ AB (nhẹ hơn $0{,}1\\ \\text{N}$) … cân thanh, nặng hơn $0{,}1\\ \\text{N}$ thì trừ",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cột trái nói thanh nhẹ hơn 0,1 N, cột phải lại bảo nặng hơn 0,1 N thì trừ. Em không biết phải cân thanh hay không, và trừ vào lực nào.",
+      "de_xuat": "Ghi rõ: cân thanh trước; nếu nặng hơn 0,1 N thì trừ nửa trọng lượng thanh vào số chỉ mỗi lực kế, nếu nhẹ hơn thì bỏ qua."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Thí nghiệm: tổng hợp rồi so với lực đo",
+      "trich_nguyen_van": "Kiểm bằng công thức: $2 \\cdot 2{,}0 \\cdot \\cos 30^\\circ \\approx 3{,}46\\ \\text{N}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ cho công thức tổng quát có căn và cos α. Em không hiểu vì sao ra 2F₁cos(α/2) và vì sao dùng 30° thay vì 60°.",
+      "de_xuat": "Thêm một dòng: khi F₁ = F₂, công thức tổng quát rút gọn thành F = 2F₁cos(α/2), nên α = 60° cho cos 30°."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Xử lí số liệu: so $F$ vẽ với $F_3$",
+      "trich_nguyen_van": "$\\delta$ ; $\\Delta$ (N)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng cho δ = 0,05 và Δ = 0,30 trước khi em biết hai ký hiệu này là gì. Định nghĩa chỉ xuất hiện ở các gạch đầu dòng ngay dưới bảng.",
+      "de_xuat": "Đưa phần định nghĩa δ và Δ lên trước bảng kết quả."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Xử lí số liệu: so $F$ vẽ với $F_3$",
+      "trich_nguyen_van": "$\\delta \\le \\Delta$: chưa phân biệt được lực vẽ với lực đo.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em không rõ 'chưa phân biệt được' là tốt hay xấu. Mục Mang về lại ghi 'δ ≤ Δ thì hợp quy tắc'. Còn trường hợp δ > Δ thì không có câu nào nói nghĩa là gì.",
+      "de_xuat": "Viết hai dòng song song: δ ≤ Δ thì hợp quy tắc trong sai số; δ > Δ thì chưa hợp, phải kiểm dụng cụ và thao tác trước khi nghi quy tắc."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Một lần vượt $\\Delta$: kiểm gì trước?",
+      "trich_nguyen_van": "Thước và góc cộng lại cỡ $0{,}07\\ \\text{N}$, chưa loại trừ hẳn",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Con số 0,07 N xuất hiện mà không có cách tính. Mục 3 lại gọi Δ = 0,3 N là 'cận trên' dù không tính sai số thước và góc. Em không biết Δ đã gồm sai số vẽ hay chưa.",
+      "de_xuat": "Hoặc ghi cách ra 0,07 N (1 mm ứng 0,05 N cộng phần do sai 1°), hoặc nói rõ Δ = 0,3 N chỉ là sai số do lực kế, chưa tính sai số vẽ."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Một lần vượt $\\Delta$: kiểm gì trước?",
+      "trich_nguyen_van": "$\\delta$ vượt $\\Delta$ sát sao thì tìm nguyên nhân hệ thống trước rồi mới kết luận.",
+      "loai": "quá_dài",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cả một đoạn dài dồn chung số liệu, cách trừ số 0, sai số thước và kết luận. Em dễ bỏ lỡ quy tắc chính nằm ở cuối đoạn.",
+      "de_xuat": "Tách thành các bước đánh số: (1) thấy δ > Δ, (2) kiểm số 0, (3) trừ rồi tính lại δ, (4) kết luận."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Một lần vượt $\\Delta$: kiểm gì trước?",
+      "trich_nguyen_van": "D. Chưa hợp, vì $\\delta = 0{,}5\\ \\text{N}$ vượt $\\Delta$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "B và D cùng dựa vào δ > Δ. Chữ 'Chưa hợp' thiếu chủ ngữ nên em đọc thành 'không hợp quy tắc', tức gần giống B. Em không tách được hai phương án.",
+      "de_xuat": "Sửa D thành 'Kết quả lần này chưa hợp quy tắc trong sai số, vì δ = 0,5 N > Δ; cần kiểm lại và đo lại'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "📐 Bấm xem: hai lực song song (thanh nhẹ và hai lực kế)",
+      "trich_nguyen_van": "$F_A = P\\dfrac{d_B}{AB}$ tăng khi $d_B$ tăng",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức F_A = P·d_B/AB không có trong phần Rút ra; ở đó chỉ có F_A + F_B = P và F_A·d_A = F_B·d_B. Câu hỏi nhanh lại đặt trước bảng số liệu, nên em chưa có số để đối chiếu.",
+      "de_xuat": "Thêm một bước ghép F_A + F_B = P với F_A·d_A = F_B·d_B để ra F_A = P·d_B/AB, và đặt câu hỏi nhanh sau bảng số liệu."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 2: góc giữa hai lực",
+      "trich_nguyen_van": "Nối đuôi: $\\vec F_2$ vẽ từ ngọn $\\vec F_1$ | $180^\\circ - \\alpha$ (góc bù)",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng chỉ nêu góc bù mà không nói dùng nó với công thức nào. Em có thể thay 180° − α vào công thức dấu cộng và ra kết quả sai.",
+      "de_xuat": "Thêm: công thức dấu + luôn dùng α ở nút O; góc bù chỉ là góc trong tam giác khi vẽ nối đuôi, không thay vào công thức này."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 1: số 0 của lực kế",
+      "trich_nguyen_van": "Lệch số $0$ cộng vào <strong>mọi</strong> lần đọc; đo nhiều lần cũng không làm nó biến mất.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ý then chốt để làm Câu 3 lại nằm sau câu hỏi, bên trong khung Tự kiểm tra. Lúc làm Câu 3, em chưa đọc tới ý này.",
+      "de_xuat": "Chuyển dòng 🔑 và gạch đầu dòng này lên ngay dưới bảng tình huống, trước Câu 3."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "giữ $F_1 = F_2 = 2{,}0\\ \\text{N}$ nhưng mở rộng góc từ $\\alpha = 60^\\circ$ lên $90^\\circ$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mở bài vừa dạy 'góc tăng thì lực tăng' khi giữ P cố định. Ở đây giữ F₁, F₂ thì F giảm. Bài không nói rõ hai tình huống khác nhau ở đại lượng nào được giữ cố định, nên em dễ chọn 'Tăng'.",
+      "de_xuat": "Thêm một câu đối chiếu: Mở bài giữ hợp lực P cố định nên lực từng dây tăng; Câu 6 giữ F₁, F₂ cố định nên hợp lực giảm."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "I. Mở bài: khung ảnh treo bằng hai dây",
+      "trich_nguyen_van": "Mỗi lực căng nghiêng nên chỉ một phần của nó hướng lên.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không rõ 'một phần hướng lên' là gì: một nửa lực, hay thành phần thẳng đứng. Bài chưa nói đến phân tích lực.",
+      "de_xuat": "Ghi rõ 'phần hướng lên (thành phần thẳng đứng) bằng T·cos(α/2)' hoặc thêm một hình mũi tên minh hoạ."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ hai dây giống nhau thì chia đều trọng lượng, mỗi dây 1,0 N, bất kể góc.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cộng thẳng hai độ lớn 1,2 + 1,6, quên rằng hai dây vuông góc.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy δ > Δ là kết luận ngay quy tắc sai, không nghĩ tới lỗi dụng cụ; thêm vào đó B và D có lý do giống nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chưa nói quy tắc sai: ở lần này nhóm đổi sang một lực kế 3 khác mà chưa chỉnh số $0$."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ hai lực kế lệch giống nhau thì bù trừ, trong khi hai lệch cùng dấu nên cộng dồn vào hình bình hành.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Số lệch chỉ cộng vào lần đọc của lực kế này"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Dùng góc bù 60° (góc trong tam giác khi vẽ nối đuôi) thay cho α = 120° ở nút O.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\alpha$ đo <strong>ở nút O giữa hai dây</strong>, không phải góc giữa dây với đường thẳng đứng."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lẫn lực tổng hợp F với F₃, cho rằng F cùng chiều với vật kéo xuống.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lực $\\vec F_3$ của lực kế thứ ba <strong>cân bằng</strong> với $\\vec F$: cùng độ lớn, cùng phương, ngược chiều."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp kết luận của Mở bài (góc tăng thì lực tăng, khi P cố định) sang tình huống giữ F₁, F₂ cố định.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau_hoi_nhanh",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tưởng lực kế ở gần vật chịu ít hơn, đảo ngược tỉ lệ F_A·d_A = F_B·d_B.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "vật gần đầu nào, đầu đó gánh nhiều"
+    }
+  ]
+}

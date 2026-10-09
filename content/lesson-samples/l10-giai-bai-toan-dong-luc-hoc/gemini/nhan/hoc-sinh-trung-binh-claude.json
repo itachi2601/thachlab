@@ -1,0 +1,171 @@
+{
+  "bai": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Bốn bước, một cầu nối",
+      "trich_nguyen_van": "chọn hệ trục: Ox theo chiều chuyển động, Oy vuông góc.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Trục Ox phải đổi theo chiều chuyển động. Vì vậy ở Câu 6, khi vật quay đầu, em đổi chiều dương (đúng cái bẫy ở Bẫy 3). Còn ở Câu 7, tủ đứng yên thì em không biết chọn Ox theo chiều nào.",
+      "de_xuat": "Sửa thành: \"Ox theo chiều chuyển động dự kiến (hoặc chiều lực kéo), chọn một lần lúc đầu và giữ nguyên đến hết bài\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Tình huống 3: hai vật nối dây qua ròng rọc",
+      "trich_nguyen_van": "Cộng với phương trình của $m_1$: $P_2 - F_{\\text{ms}} = (m_1 + m_2)\\,a$, lực căng tự triệt tiêu.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Mục 4 chưa viết phương trình cho m1 và chưa nói m1 chịu ma sát. Em không biết F_ms ở đâu ra, cũng không biết phương trình của m1 là gì để cộng.",
+      "de_xuat": "Ghi rõ phương trình của m1 trước khi cộng: \"m1: T − F_ms = m1·a\", và nêu m1 trượt trên bàn có ma sát."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Tình huống 3: hai vật nối dây qua ròng rọc",
+      "trich_nguyen_van": "khi đó $a$ của $m_2$ phải đổi dấu, nếu không thì sai.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tưởng phương trình B vẫn có thể đúng, chỉ cần \"đổi dấu a\" ở đâu đó. Em không hình dung được phương trình đúng theo trục hướng lên trông ra sao.",
+      "de_xuat": "Viết hẳn ra: \"nếu chọn trục của m2 hướng lên thì phải viết T − P2 = −m2·a\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Tình huống 1: mặt ngang có ma sát",
+      "trich_nguyen_van": "D ($17{,}3\\ \\text{N}$) là lấy $F\\cos\\alpha$ làm áp lực",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tính F cosα = 86,6 N, không ra 17,3 N, nên không hiểu phương án D đến từ đâu.",
+      "de_xuat": "Ghi thêm phép tính: \"D: lấy N = F cosα ≈ 86,6 N rồi nhân μ được 17,3 N\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Đo thử: xe lăn kéo bởi quả nặng",
+      "trich_nguyen_van": "Làm 5 lần, tính $a = 2s/t^2$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết công thức này lấy từ đâu, lại tưởng đó là công thức mới cần học thuộc.",
+      "de_xuat": "Thêm: \"(từ s = ½at² vì thả từ nghỉ, v0 = 0)\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Đo thử: xe lăn kéo bởi quả nặng",
+      "trich_nguyen_van": "bỏ ma sát, 4 bước cho $a = \\dfrac{m_2 g}{m_1 + m_2} = 2{,}0\\ \\text{m/s}^2$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức xuất hiện sẵn. Em không thấy nó chính là phương trình ở Câu 3 khi cho F_ms = 0.",
+      "de_xuat": "Thêm một câu: \"lấy P2 − F_ms = (m1 + m2)a ở Câu 3, cho F_ms = 0\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "5. Đo thử: xe lăn kéo bởi quả nặng",
+      "trich_nguyen_van": "Tính ngược: lực cản tổng cộng cỡ $0{,}5 \\cdot (2{,}0 - 1{,}83) \\approx 0{,}08\\ \\text{N}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không biết số 0,5 là gì (dễ nhầm với ½ trong s = ½at²) và không hiểu vì sao lại nhân với hiệu hai gia tốc.",
+      "de_xuat": "Ghi rõ: \"lực cản ≈ (m1 + m2)(a_dự đoán − a_đo) = 0,5 kg · 0,17 m/s²\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 4: ma sát nghỉ cũng tính bằng $\\mu N$",
+      "trich_nguyen_van": "B: $\\mu N = 200\\ \\text{N}$ là mức lớn nhất ma sát nghỉ đạt được",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ngay dưới đó bài ghi \"không vượt quá μ_n N\", còn \"ma sát trượt bằng μN\". Trong khi đó μN lại được gọi là mức trần của ma sát nghỉ. Em lẫn lộn μ với μ_n. Thêm nữa, μ_n chỉ được định nghĩa trong ô \"Xem thêm\" thu gọn.",
+      "de_xuat": "Định nghĩa μ_n ở thân bài (ngay đầu Bẫy 4) và dùng thống nhất μ_n N cho mức trần ma sát nghỉ trong cả đáp án Câu 7."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: thiếu lực, thừa lực",
+      "trich_nguyen_van": "\"Lực hướng tâm\" vẽ thêm",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài này chưa nói gì về lực hướng tâm. Em không hiểu \"là vai của một lực đã có\" nghĩa là gì.",
+      "de_xuat": "Bỏ dòng này hoặc thêm một câu ví dụ ngắn (lực căng dây giữ vật quay tròn đóng vai lực hướng tâm)."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "4. Tình huống 3: hai vật nối dây qua ròng rọc",
+      "trich_nguyen_van": "xét cả hệ thì là <strong>nội lực</strong> (triệt tiêu từng cặp), xét riêng từng vật thì là <strong>ngoại lực</strong>.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa định nghĩa \"nội lực\" và \"ngoại lực\", nên em không hiểu vì sao cùng một lực mà lúc là nội lực, lúc là ngoại lực.",
+      "de_xuat": "Thêm: \"nội lực là lực giữa các vật trong hệ đang xét; ngoại lực do vật ngoài hệ gây ra\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "dốc quá thì cần quá $\\mu_n mg\\cos\\alpha$, xe trượt dù đã phanh.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm \"cần quá\" khó đọc. Em không rõ cái gì vượt quá cái gì.",
+      "de_xuat": "Sửa: \"dốc quá thì mg sinα vượt quá μ_n mg cosα, ma sát nghỉ không giữ nổi, xe trượt dù đã phanh\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán (mục I)",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ nhìn lực kéo xuống dốc lớn hơn ở người nặng, quên khối lượng lớn hơn thì cũng khó tăng tốc hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A hay B là chỉ nhìn lực kéo xuống dốc, quên vật nặng hơn cũng khó tăng tốc hơn"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi N = mg dù dây kéo xiên lên, quên thành phần F sinα nhấc bớt thùng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "dây nhấc bớt thùng, nên Oy cho $N + F\\sin\\alpha - P = 0$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính ma sát bằng μmg như trên mặt ngang, quên trên dốc N = mg cosα.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Oy: $N - P\\cos\\alpha = 0$, nên $N = mg\\cos\\alpha$, <strong>nhỏ hơn</strong> $mg$."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Theo thói quen chọn chiều dương hướng lên cho vật treo, mà vẫn dùng chung a với m1.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chiều dương <strong>đi vòng theo dây</strong> (như Hình 5), để một $a$ dùng chung cho cả hai vật."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ vật đang đi lên thì phải có lực đẩy lên (\"lực đà\"), nhầm quán tính là lực.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B: \"lực đà\" không do vật nào gây ra — đó là quán tính, không phải lực."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy dốc hơn thì trượt mạnh hơn nên nghĩ ma sát lớn hơn, quên F_ms = μN tỉ lệ với N.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C: ma sát trượt tỉ lệ với $N$, không thể đổi ngược chiều với $N$."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Ngầm đổi chiều dương theo chiều đi khi vật quay đầu (quy trình còn ghi \"Ox theo chiều chuyển động\").",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Giữ chiều dương; $v$ đổi dấu, $a$ thì không"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Áp μN cho mọi loại ma sát, kể cả khi tủ đứng yên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ma sát nghỉ tự \"vừa đủ\"; $200\\ \\text{N}$ chỉ là mức trần."
+    },
+    {
+      "cau": "Điền bước còn thiếu (V)",
+      "dap_an_sai_hap_dan": "Ma sát 12 N, a = (10 − 12)/3",
+      "loi_tu_duy": "Thế thẳng μm1g vào công thức gia tốc mà không kiểm trước xem hệ có trượt không.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ma sát là ma sát nghỉ, bằng $T = P_2 = 10\\ \\text{N}$, không phải $12\\ \\text{N}$."
+    }
+  ]
+}

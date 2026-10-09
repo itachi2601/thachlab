@@ -1,0 +1,155 @@
+{
+  "bai": "Bài 24. Công suất",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: hai thang máy trong chung cư",
+      "trich_nguyen_van": "nên công bằng nhau, $A = mgh = 100\\,000\\ \\text{J}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em thấy công thức mgh và con số 100 000 J xuất hiện mà chưa biết lấy g bằng bao nhiêu. Phải sang mục II.1 mới thấy ghi g = 10. Nếu dùng g = 9,8 thì em ra 98 000 J và tưởng mình tính sai.",
+      "de_xuat": "Ghi rõ trong phản hồi: lực nâng F = mg, A = F·h, lấy g = 10 m/s²."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Công suất, lực và vận tốc",
+      "trich_nguyen_van": "Số nhẹ thì đạp nhẹ hơn nhưng xe đi chậm hơn nữa.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu 'đạp nhẹ' là lực nhỏ, mà xe cũng chậm thì cả F và v đều nhỏ. Như vậy trái với kết luận ngay sau đó là 'lực lớn thì vận tốc nhỏ'. Bài không nói F trong P = Fv là lực đẩy xe tiến lên, không phải lực chân ấn lên bàn đạp.",
+      "de_xuat": "Thêm một câu: số nhẹ làm chân ấn nhẹ hơn nhưng lực đẩy xe tiến lên (F trong P = Fv) lại lớn hơn, nên v nhỏ."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Công suất, lực và vận tốc",
+      "trich_nguyen_van": "tăng gấp đôi tốc độ thì chỉ còn $25$ N, nên lên dốc phải đi chậm lại",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Ví dụ chỉ cho thấy đi nhanh thì lực kéo nhỏ. Bài chưa hề nói lên dốc cần lực kéo lớn hơn, nên em không nối được tới kết luận 'lên dốc phải đi chậm'.",
+      "de_xuat": "Chèn bước giữa: lên dốc phải thắng thêm thành phần trọng lực nên cần F lớn hơn, mà F = P/v nên v phải nhỏ."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Ô tô $60$ kW chạy đều $15$ m/s trên đường bằng. Lực cản?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em tính được F = P/v = 4 000 N nhưng đó là lực kéo. Em không biết vì sao nó lại bằng lực cản. Bài chỉ nói 'nâng đều nên F = mg', chưa nói 'chạy đều thì lực kéo bằng lực cản'.",
+      "de_xuat": "Thêm vào lời giải (và vào Bẫy 3): chạy đều nên a = 0, lực kéo bằng lực cản tổng cộng."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 3: xe lên dốc chạy chậm vì động cơ yếu đi",
+      "trich_nguyen_van": "Lực cản lớn hơn (thêm thành phần trọng lực)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không rõ 'thành phần trọng lực' là phần nào. Ký hiệu $P_{\\max}$ trong bảng cũng chưa được định nghĩa, trước đó bài chỉ viết bằng chữ 'công suất tối đa'. Mục bẫy này lại chỉ có bảng, không có câu giải thích nào.",
+      "de_xuat": "Thêm một câu: thành phần trọng lực dọc mặt dốc kéo xe xuống; $P_{\\max}$ là công suất tối đa động cơ phát ra được."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 1: công suất lớn là công lớn",
+      "trich_nguyen_van": "$A_A = 5\\,000 \\cdot 10 = 50\\,000$ J, $A_B = 1\\,000 \\cdot 100 = 100\\,000$ J",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Chữ A cùng lúc là tên máy, là ký hiệu công và là phương án A. Đọc câu 'A và C đều cho rằng…' em dễ lẫn giữa máy A và phương án A.",
+      "de_xuat": "Đổi tên hai máy thành máy 1 và máy 2 (hoặc X và Y như Hình 3), viết công là $A_1$, $A_2$."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 3: xe lên dốc chạy chậm vì động cơ yếu đi",
+      "trich_nguyen_van": "C. Công suất có hạn, $P = F v$ nên $F$ lớn thì $v$ nhỏ",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ phương án C có công thức của bài nên em đoán đúng mà không cần hiểu.",
+      "de_xuat": "Cho các phương án nhiễu cũng dùng ký hiệu, ví dụ 'P = Fv nên giảm số làm tăng P'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Động cơ có công suất $6$ kW, nâng đều, bỏ qua mất mát. Thời gian ngắn nhất để nâng lên:",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề không nói 6 kW là công suất tối đa. Em không hiểu vì sao chữ 'ngắn nhất' lại ứng với việc dùng đúng 6 kW.",
+      "de_xuat": "Viết 'công suất tối đa 6 kW' để nối rõ với chữ 'ngắn nhất'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "nâng đều hàng $800$ kg … Cabin cùng hàng nặng $1\\,600$ kg",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu đầu chỉ nói hàng 800 kg, câu sau lại nói cabin cùng hàng 1 600 kg. Em không biết 800 kg đã gồm cabin chưa, nên không chắc 'tải gấp đôi' là so cái gì với cái gì.",
+      "de_xuat": "Viết thống nhất cả hai câu: 'cabin cùng hàng 800 kg' và 'cabin cùng hàng 1 600 kg'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "3. Công suất, lực và vận tốc",
+      "trich_nguyen_van": "Lực $F$ <strong>cùng hướng</strong> độ dịch chuyển: $A = F d = F v_{tb} t$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tưởng chỉ cần lực cùng hướng là dùng được $P = F v_{tb}$. Bài không nói thêm rằng F phải không đổi trong suốt khoảng thời gian đó.",
+      "de_xuat": "Bổ sung 'F không đổi và cùng hướng chuyển động' vào điều kiện, kể cả ở câu Trả bài 4."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ làm nhanh hơn là làm được nhiều công hơn, tức gắn công với tốc độ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A hoặc C là gắn công với thời gian"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính ra công 12 000 J rồi dừng, không chia cho thời gian, và lẫn J với W.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A là công $12\\,000$ J, chưa chia cho $t$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Coi 1 mã lực xấp xỉ 1 kW nên đọc thẳng 2 CV thành 2 kW.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "D coi $1$ CV bằng $1$ kW"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhân thẳng 1 500 × 72, quên đổi km/h ra m/s.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A nhân thẳng với $72$ mà chưa đổi km/h ra m/s"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng công suất lớn thì công cũng lớn, bỏ qua thời gian chạy trong A = Pt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A và C đều cho rằng công và công suất luôn tăng giảm cùng nhau"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính 100 × 10 = 1 000 rồi gắn luôn đơn vị kWh, không đổi Wh sang kWh.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C quên đổi $\\text{Wh}$ sang $\\text{kWh}$ (chia $1\\,000$)"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy xe chậm lại nên nghĩ động cơ yếu đi, công suất giảm, thay vì hiểu là P không đổi còn F tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bẫy 3: xe lên dốc chạy chậm vì động cơ yếu đi"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chép lại 30 s của bài mẫu, không thấy công suất đã đổi từ 4 kW lên 6 kW.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C là thời gian ở bài mẫu, ứng với $4$ kW"
+    }
+  ]
+}
