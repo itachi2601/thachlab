@@ -1,0 +1,56 @@
+{
+ "title": "Kiểm tra nhanh — Thực hành đo tốc độ truyền âm",
+ "duration_minutes": 8,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Âm 500 Hz trong không khí 20 °C (v ≈ 343 m/s). Trong ống một đầu kín (mặt nước), chiều dài cột khí l₁ của lần cộng hưởng đầu tiên gần bằng",
+   "options": ["69 cm", "34 cm", "8,6 cm", "17 cm"],
+   "answer": 3,
+   "explanation": "λ = v/f = 343/500 = 0,686 m. Lần đầu ứng với l₁ + e = λ/4 ≈ 17,2 cm, trừ e nhỏ nên l₁ ≈ 17 cm. 69 cm là cả bước sóng λ; 34 cm là λ/2; 8,6 cm là λ/8."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Kết quả đo v = 341,6 ± 2,0 m/s. Giá trị tham khảo ở 20 °C là 343 m/s. Nhận xét hợp lý là",
+   "options": [
+    "Thí nghiệm sai, vì 341,6 khác 343 ở hàng đơn vị",
+    "Phù hợp, vì 343 nằm trong khoảng từ 339,6 đến 343,6 m/s",
+    "Phù hợp, vì cả năm lần đo cho cùng một giá trị",
+    "Không so sánh được, vì con số 343 không kèm sai số đo"
+   ],
+   "answer": 1,
+   "explanation": "Kết quả đo là một khoảng 341,6 ± 2,0, tức từ 339,6 đến 343,6 m/s. Giá trị tham khảo nằm trong khoảng ấy nên phép đo phù hợp. Hai số không cần trùng đến hàng đơn vị; năm lần đo luôn lệch nhau chút."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Với f = 400 Hz, An đo l₁ = 20,9 cm, l₂ = 63,8 cm. An tính v = 4l₁f ≈ 334 m/s; Bình tính v = 2(l₂ − l₁)f ≈ 343 m/s (giá trị tham khảo 343 m/s). Nhận xét đúng là",
+   "options": [
+    "Bình đúng, vì hiệu l₂ − l₁ loại được e, còn 4l₁ thì không",
+    "An đúng, vì l₁ là lần to đầu tiên nên ứng với đúng một phần tư bước sóng",
+    "Cả hai cùng đúng, hai kết quả chênh nhau chỉ vì làm tròn số khi tính toán",
+    "Cả hai đều sai, vì ống một đầu kín phải lấy λ = 2l₁ mới đúng"
+   ],
+   "answer": 0,
+   "explanation": "Bụng nằm cao hơn miệng ống một đoạn e ≈ 0,5 cm nên l₁ + e = λ/4; 4l₁ thiếu 4e ≈ 2 cm, v thiếu cỡ 9 m/s. Hiệu l₂ − l₁ trừ mất e. λ = 2l₁ cho v ≈ 167 m/s, chưa bằng nửa giá trị thật."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Giữ nguyên ống và căn phòng, đổi máy phát từ 500 Hz lên 800 Hz. Điều nào đúng?",
+   "options": [
+    "λ không đổi, v tăng lên",
+    "λ giảm, v gần như không đổi",
+    "Cả λ và v đều giảm",
+    "Cả λ và v đều tăng"
+   ],
+   "answer": 1,
+   "explanation": "v do môi trường quyết định (nhiệt độ không đổi nên v ≈ 343 m/s). λ = v/f giảm từ 68,6 cm xuống 42,9 cm. Nguồn quyết định f, môi trường quyết định v."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Cùng ống, cùng 500 Hz nhưng phòng nóng 30 °C (v ≈ 331 + 0,6·30 = 349 m/s). Hiệu l₂ − l₁ dự kiến là",
+   "options": ["69,8 cm", "17,5 cm", "34,9 cm", "34,3 cm"],
+   "answer": 2,
+   "explanation": "l₂ − l₁ = λ/2 = v/(2f) = 349/1000 = 0,349 m = 34,9 cm. 69,8 cm là λ; 17,5 cm là λ/4; 34,3 cm dùng v = 343 m/s của 20 °C, quên phòng đang nóng hơn."
+  }
+ ]
+}

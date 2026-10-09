@@ -1,0 +1,55 @@
+{
+ "slug": "l11-bai-tap-dao-dong",
+ "lesson_id": 23,
+ "tu_hien_ngay": 1994,
+ "phut": 15,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Mở bài: đồng hồ quả lắc treo tường, quả lắc giữa biên trái/biên phải, điện thoại bấm giờ (không số liệu)"
+  },
+  {
+   "so": 2,
+   "noi_dung": "Đồ thị x–t dạng côsin: A (trục→đỉnh), 2A (đỉnh→đáy), T (đỉnh→đỉnh), T/2 (đỉnh→đáy)"
+  },
+  {
+   "so": 3,
+   "noi_dung": "Vòng tròn pha: mốc −A, −A/2, O, A/2, A; cung O→A/2 = T/12, A/2→biên = T/6; nửa trên v<0, nửa dưới v>0; chiều quay ngược kim đồng hồ"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Trong lời giải bài toán mẫu: M quét từ −π/3 tới π/2 (Δφ = 5π/6), trên trục 4 → 8 → 0 cm"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-baitapdaodong-01",
+  "tn-l11-baitapdaodong-02",
+  "tn-l11-baitapdaodong-03"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok (0 lỗi cứng, 0 cảnh báo)",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 4,
+  "da_co": 4,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "TN 01 dùng chùm chìa khoá treo dây (con lắc đơn, T = 2π√(L/g)) chỉ để đo T — công thức con lắc đơn chưa học ở bài 1–4, bài chỉ dùng T đo được",
+  "Quy ước φ ∈ (−π; π] theo bài 2 (biên âm φ = π)",
+  "Số liệu cả 3 thí nghiệm là số minh hoạ sinh từ mô hình (đã ghi trong bài và JSON)"
+ ],
+ "ghi_chu": "Bài chưa có ly_thuyet trong DB (itemCount 0) → đăng bằng upload-lesson.mts hoặc /quan-tri/nhap-bai, cap-nhat-ly-thuyet.sh không dùng được. Ý bắt buộc lấy từ mô tả bài + 4 họ: đọc phương trình/đồ thị; x–v–a + hệ thức độc lập; viết phương trình từ t=0; thời gian–quãng đường–tốc độ TB bằng vòng tròn pha. Chưa chạy thi_nghiem.py (index.json chưa thêm 3 mục; đã kiểm bằng bản sao không ghi index → 0 lỗi). Chưa có video. Có thêm build_thi_nghiem.py sinh 3 file tn-*.json. xem-thu/ không commit. Vòng sửa sau kiểm chéo: đổi mở bài sang đồng hồ quả lắc (biên–biên 0,8 s → T = 1,6 s), Câu 7 hỏi lần thứ hai qua O (7/12 s), cắt về 1.994 từ."
+}

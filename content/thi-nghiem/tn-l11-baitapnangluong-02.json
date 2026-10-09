@@ -1,0 +1,133 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+ "lesson_id": 26,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/theory.html",
+ "id": "tn-l11-baitapnangluong-02",
+ "ten": "Xích đu ở sân trường: cơ năng và tốc độ qua đáy",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.con_lac_don_co_nang",
+  "daodong.bao_toan_co_nang"
+ ],
+ "muc_tieu": "Tính độ cao biên h = l(1 − cos α0), cơ năng và tốc độ qua đáy của xích đu.",
+ "dung_cu": [
+  {
+   "ten": "Xích đu dây dài 2,0 m",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có ứng dụng đo góc",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Bạn 40 kg ngồi xích đu dây 2,0 m; đẩy tới góc lệch lớn nhất 30° (đo bằng ứng dụng đo góc)."
+  ],
+  "quan_sat": [
+   "Ở biên đu dừng một thoáng; qua đáy nhanh nhất."
+  ],
+  "rut_ra": [
+   "h = 2,0(1 − cos 30°) ≈ 0,27 m; W = mgh ≈ 105 J; v qua đáy = √(2gh) ≈ 2,3 m/s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1.5,
+   "max": 3,
+   "mac_dinh": 2,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "α0",
+   "ten": "Góc lệch lớn nhất",
+   "don_vi": "độ",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 45,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng người",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 40.0
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ qua đáy",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "h = l·(1 − cos α0)",
+   "W = m·g·h",
+   "v = √(2·g·l·(cos α − cos α0))"
+  ],
+  "gia_thiet": [
+   "bỏ ma sát trong một lượt",
+   "coi người + ghế là chất điểm ở đầu dây",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "α0 (độ)",
+   "h (m)",
+   "W (J)",
+   "v qua đáy (m/s)"
+  ],
+  "hang": [
+   [
+    10,
+    0.03,
+    11.9,
+    0.77
+   ],
+   [
+    20,
+    0.121,
+    47.3,
+    1.54
+   ],
+   [
+    30,
+    0.268,
+    105.0,
+    2.29
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "α0 = 30°, l = 2,0 m, m = 40 kg: h ≈ 0,27 m, W ≈ 105 J, v ≈ 2,3 m/s.",
+ "hien_tuong_hay_sai": [
+  "Dùng cos α0 thay cho 1 − cos α0.",
+  "Thế góc bằng độ vào công thức góc nhỏ ½mglα0².",
+  "Nghĩ góc gấp đôi thì năng lượng gấp đôi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "l",
+   "α0"
+  ],
+  "dau_ra": [
+   "xích đu đung đưa",
+   "cột thế năng/động năng đổi chỗ",
+   "số đo v qua đáy"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Kéo xích đu tới góc α0 rồi thả; hai cột Wt, Wđ đổi chỗ, tổng không đổi."
+ }
+}

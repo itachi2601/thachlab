@@ -1,0 +1,130 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 11. Sóng điện từ",
+ "lesson_id": 30,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dien-tu/theory.html",
+ "id": "tn-l11-songdientu-01",
+ "ten": "Gọi vào điện thoại đặt trong hộp giấy và trong hộp kim loại",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "songdientu.phan_xa_kim_loai",
+  "songdientu.truyen_qua_vat_lieu"
+ ],
+ "muc_tieu": "Thấy sóng điện từ đi qua giấy, bìa nhưng bị vỏ kim loại kín chặn lại (phản xạ) — vì sao thang máy hay mất sóng.",
+ "dung_cu": [
+  {
+   "ten": "Điện thoại đang bật, có sóng",
+   "so_luong": 2
+  },
+  {
+   "ten": "Hộp giấy bìa có nắp",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hộp bánh quy bằng sắt có nắp kín (hoặc 3 lớp giấy bạc bọc kín)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt điện thoại A vào hộp giấy, đậy nắp; dùng điện thoại B gọi vào A.",
+   "Chuyển A sang hộp sắt, đậy kín nắp; gọi lại."
+  ],
+  "quan_sat": [
+   "Hộp giấy: A vẫn đổ chuông.",
+   "Hộp sắt kín: thường nghe báo 'thuê bao tạm thời không liên lạc được'; hở nắp một khe thì có thể lại có sóng."
+  ],
+  "rut_ra": [
+   "Sóng điện từ đi qua giấy, bìa; vỏ kim loại kín phản xạ gần hết sóng.",
+   "Cabin thang máy bằng kim loại làm điện thoại mất sóng vì cùng lí do."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "vat_lieu",
+   "ten": "Vật liệu vỏ hộp (0 = giấy, 1 = kim loại)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "khe",
+   "ten": "Bề rộng khe hở ở nắp",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 10,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "co_song",
+   "ten": "Điện thoại trong hộp nhận được cuộc gọi",
+   "don_vi": "",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "vỏ giấy: sóng đi qua, co_song = 1",
+   "vỏ kim loại kín (khe = 0): sóng bị phản xạ, co_song = 0",
+   "khe hở cỡ vài cm trở lên (so với λ ≈ 16–33 cm của sóng điện thoại): một phần sóng lọt vào, co_song có thể = 1"
+  ],
+  "gia_thiet": [
+   "mô hình định tính; không tính cường độ",
+   "trạm phát gần, sóng ngoài hộp đủ mạnh"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Vỏ hộp",
+   "Khe hở",
+   "Có đổ chuông?"
+  ],
+  "hang": [
+   [
+    "giấy bìa",
+    "0 cm",
+    "có"
+   ],
+   [
+    "hộp sắt",
+    "0 cm",
+    "không"
+   ],
+   [
+    "hộp sắt",
+    "khoảng 5 cm",
+    "có thể có"
+   ]
+  ],
+  "ghi_chu": "Kết quả định tính điển hình; điện thoại đời mới, trạm phát rất gần có thể vẫn bắt được sóng yếu qua mép nắp."
+ },
+ "ket_qua_ky_vong": "Hộp giấy: có sóng. Hộp sắt đậy kín: mất sóng.",
+ "hien_tuong_hay_sai": [
+  "Tưởng sóng điện thoại đi theo không khí nên hộp kín nào cũng chặn (hộp giấy kín vẫn có sóng).",
+  "Tưởng mất sóng trong thang máy vì 'ở trên cao' hoặc 'thiếu không khí'."
+ ],
+ "an_toan": [
+  "Không bọc giấy bạc quanh điện thoại đang sạc."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "vat_lieu",
+   "khe"
+  ],
+  "dau_ra": [
+   "các vệt sóng từ trạm tới hộp",
+   "vệt sóng dội lại ở vỏ kim loại",
+   "biểu tượng cột sóng của điện thoại"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Hỏi trước: hộp giấy kín và hộp sắt kín, hộp nào chặn sóng? Rồi cho chạy."
+ }
+}

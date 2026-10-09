@@ -1,0 +1,94 @@
+{
+ "slug": "l11-bai-tap-dao-dong",
+ "ok": true,
+ "issues": [
+  {
+   "muc_do": "nen_sua",
+   "vi_tri": "theory.html mục I (Mở bài) + quiz 0",
+   "van_de": "Mở bài trùng ý bài 1 (l11-dao-dong-dieu-hoa): cùng cảnh xích đu/đu ở sân trường và cùng đáp số 3 s, HS đã học bài 1 sẽ nhớ đáp án thay vì dự đoán",
+   "bang_chung": "bài 1: 'Em ngồi trên đu ở sân trường… cứ 3 giây đu lại về đúng chỗ cũ'; bài 4: biên-biên 1,5 s => T = 3 s",
+   "cach_sua": "Đổi cảnh hoặc số (vd. bấm giờ con lắc đồng hồ/cánh quạt, biên-biên 0,8 s => T = 1,6 s) để dự đoán là câu hỏi mới."
+  },
+  {
+   "muc_do": "nen_sua",
+   "vi_tri": "content/thi-nghiem/index.json",
+   "van_de": "3 file tn-l11-baitapdaodong-0{1,2,3}.json chưa có trong index.json (grep = 0) và đang untracked",
+   "bang_chung": "grep -c baitapdaodong index.json = 0; git status ?? cả 3 file",
+   "cach_sua": "Chạy thi_nghiem.py thêm 3 mục vào index rồi git add trước khi đăng; xem-thu/ không commit."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "mục II.2, Câu 3 (sai số T)",
+   "van_de": "Câu sai số t10 nằm trong họ 2 (x–v–a) nhưng không thuộc 4 họ của bài; lệch mạch",
+   "bang_chung": "đáp án A đúng: (12,18−11,89)/2=0,145≈0,15; /10 = 0,0145 làm tròn lên 0,02; B/C/D đều đúng như phản hồi mô tả (0,029≈0,03)",
+   "cach_sua": "Giữ nhưng gắn nhãn 'Kỹ năng thực hành' hoặc chuyển sang cuối họ 1; không ảnh hưởng đúng/sai."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "lint_do_dai",
+   "van_de": "2036 từ hiện ngay > 2000 (trần ~15 phút), cảnh báo duy nhất",
+   "bang_chung": "lint: tổng 2036 từ hiện ngay; họ 4 có 304 từ",
+   "cach_sua": "Cắt ~50 từ (vd. bớt một ví dụ ở Họ 1 hoặc câu dẫn Bẫy 3) để dưới 2000 và 🎯 ghi 14 phút."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "🔑 họ 4 (theory.html, đầu mục II.4)",
+   "van_de": "Dòng 🔑 'Δt = Δφ/ω · T/2 → 2A · T → 4A' dùng dấu '·' làm phân cách nhưng dễ đọc thành phép nhân (Δφ/ω · T/2)",
+   "bang_chung": "ảnh sec-2c hiển thị liền một chuỗi công thức",
+   "cach_sua": "Tách: '🔑 Δt = Δφ/ω' rồi 'T/2 → 2A, T → 4A' ở hai dòng/bullet."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "Trả bài mục 4 và Câu 7",
+   "van_de": "Đáp án Trả bài 4 (O→A/2: T/12…) hiện trước Câu 7 gần như cho sẵn đáp án 1/12 s; Câu 7 là biến thể dễ tra bảng",
+   "bang_chung": "Q7: π/3→π/2 quét π/6, Δt=T/12=1/12 s ✓ đúng nhưng cùng mốc đã liệt kê",
+   "cach_sua": "Đổi biến thể sang φ=−π/6 hoặc hỏi lần thứ hai qua O để buộc vẽ vòng tròn."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "Thử thách ⭐ (mục VI)",
+   "van_de": "Câu hỏi và đáp số nằm cùng một gạch đầu dòng (đáp số in nghiêng ngay sau), trái quy tắc mỗi ý một dòng và lộ đáp án khi mở details",
+   "bang_chung": "ảnh sec-6: '… Chu kì và tốc độ cực đại? (T = 0,5 s; v_max=40π…)'",
+   "cach_sua": "Đưa đáp số vào <details> lồng hoặc xuống dòng riêng sau <br>."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "Hình 1 (build_figs.py, dòng vẽ seat/người)",
+   "van_de": "Ghế và người vẽ nằm ngang/thẳng đứng dù dây nghiêng 30°; ghế thật vuông góc dây",
+   "bang_chung": "seat(): line(sx-20..sx+20, sy) nằm ngang; ảnh fig-1",
+   "cach_sua": "Xoay ghế vuông góc dây hoặc bỏ người, chỉ vẽ ghế; không ảnh hưởng vật lí bài."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "Trả bài mục 5 (theory.src.html/theory.html)",
+   "van_de": "'Trong $T{?}$' hiển thị 'T?' (ngoặc nhóm rỗng thừa)",
+   "bang_chung": "ảnh sec-4: 'Quãng đường trong T/2 và trong T?'",
+   "cach_sua": "Viết '$T$?' ."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "Hình 4 nhãn 'Δφ = 5π/6'",
+   "van_de": "Dùng ký tự φ dạng ϕ trong SVG khác ký hiệu φ trong bài; trục 0/4/8 không ghi đơn vị (chỉ chú thích ở caption)",
+   "bang_chung": "ảnh fig-4",
+   "cach_sua": "Dùng 'φ' (U+03C6) và thêm 'cm' ở nhãn 8."
+  }
+ ],
+ "da_xem_anh": [
+  "fig-1",
+  "fig-2",
+  "fig-3",
+  "fig-4",
+  "sec-0",
+  "sec-1",
+  "sec-2a",
+  "sec-2b",
+  "sec-2c",
+  "sec-3",
+  "sec-4",
+  "sec-5a",
+  "sec-5b",
+  "sec-6"
+ ],
+ "y_bo_sot": [],
+ "ghi_chu": "Không có lỗi chặn. Giải lại độc lập cả 8 quiz và mọi phương án sai: đáp án đúng C,B,D,A,B,D,C,A (mỗi chữ 2), phản hồi sai khớp chữ cái và phép tính. Bài toán mẫu tính lại: T=1 s, v_max=16π≈50,3; Δφ=5π/6, Δt=5/12 s; s=4+8=12 cm; v_tb=28,8 cm/s; vận tốc TB −9,6 cm/s; bước trống Δφ=π, 0,5 s, s=16 cm=2A; ⭐⭐⭐ s=36 cm, 16 cm/s. Vòng tròn pha: chiều ngược kim đồng hồ, nửa trên v<0, T/12 (O→A/2), T/6 (A/2→biên) đúng; φ∈(−π;π] khớp bài 2. TN01 (T=2π√0,36/9,8=1,204; tb 12,03; ω 5,22; v_max 26), TN02 (A=3, T=0,8), TN03 (16 và 32 khung ở 240 fps, T=0,8) khớp JSON. Lint: 0 lỗi cứng; check_quizzes ok; validate_bundle ok; bundle.theory_html==theory.html True; không 'thầy', không script/style/on*=, không $ trong <text>, bảng ≤3 cột, \\lt/\\gt đúng, không ví dụ xưởng. Mô tả catalog và 4 họ đều đủ."
+}

@@ -1,0 +1,54 @@
+{
+ "slug": "l11-bai-tap-nang-luong-dao-dong",
+ "lesson_id": 26,
+ "tu_hien_ngay": 1994,
+ "phut": 15,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Xích đu ở sân trường, hai lần đẩy (góc lần 2 gấp đôi), chỉ vẽ cảnh"
+  },
+  {
+   "so": 2,
+   "noi_dung": "W, Wt, Wđ theo x: hai parabol + đường ngang, cắt tại ±A/√2"
+  },
+  {
+   "so": 3,
+   "noi_dung": "x(t) chu kì T phía trên; Wt, Wđ theo t chu kì T/2, ngược pha; W ngang"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Con lắc đơn: l, α0, α, h = l(1−cos α0), v, mốc ở đáy"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-baitapnangluong-01",
+  "tn-l11-baitapnangluong-02"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok (1994 từ, 14,2 phút, 0 lỗi cứng)",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 4,
+  "da_co": 4,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "Ký hiệu: bài dùng W_đ, W_t (theo đề thi), bài 5 dùng E_d, E_t — có câu nói rõ cùng nghĩa; thầy xem có muốn thống nhất một kiểu cả chương",
+  "Bảng thí nghiệm 01 là số minh hoạ (A = 1–4 cm < Δl = 5 cm; v đo = 0,986·ωA, đọc ±0,5 cm/s), chưa đo thật",
+  "Ngưỡng 'góc nhỏ dưới 10°' cho công thức xấp xỉ — đối chiếu cách SGK/đề thi nêu"
+ ],
+ "ghi_chu": "Bản cũ không có (itemCount 0); ý bắt buộc lấy từ mô tả bài: động năng, thế năng, bảo toàn cơ năng, vận dụng giải bài tập — đều có. Bảng dữ liệu bài toán mẫu giữ 3 cột theo giao việc (ở 375px có ô xuống dòng nhưng đọc được). Chưa chạy thi_nghiem.py (index.json do phiên chính chạy). Chưa có video. xem-thu/ không commit. Đã sửa đủ 7 mục kiểm chéo (vòng 1)."
+}

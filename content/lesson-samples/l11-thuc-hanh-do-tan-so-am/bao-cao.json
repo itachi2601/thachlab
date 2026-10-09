@@ -1,0 +1,55 @@
+{
+ "slug": "l11-thuc-hanh-do-tan-so-am",
+ "lesson_id": 29,
+ "tu_hien_ngay": 1988,
+ "phut": 15,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Mở bài: ukulele và điện thoại hiện bộ lên dây (kim, chữ A, không có số), sóng âm, micro"
+  },
+  {
+   "so": 2,
+   "noi_dung": "Sơ đồ nối âm thoa – micro – CH1 dao động kí, núm TIME/DIV, VOLT/DIV"
+  },
+  {
+   "so": 3,
+   "noi_dung": "Màn dao động kí 10x8 ô, 1 ms/ô, 4 chu kì chiếm 9,1 ô, đánh số khoảng 1–4; thêm số 0, 5, 10 trên trục lưới"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Hai âm 440 Hz và 880 Hz cùng thang thời gian 0–9 ms"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-dotansoam-01",
+  "tn-l11-dotansoam-02",
+  "tn-l11-dotansoam-03"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 0,
+  "da_co": 0,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "Số liệu bài toán mẫu đổi so với giao việc: 2 ms/ô, 5 chu kì chiếm 5,7 ô (không phải 11,4 ô; 11,4 ô vừa sai tần số 220 Hz vừa vượt màn 10 ô; 11,4 ms mới đúng cho 5 chu kì của 440 Hz) → f = 439 ± 8 Hz",
+  "Quy tắc làm tròn Δf một chữ số có nghĩa và cách Δf = trung bình |Δf_i| (chưa cộng sai số dụng cụ ở phần chính, chỉ nêu trong details) cần thầy đối chiếu SGK",
+  "Chưa tìm video (phiên chính làm); không chạy thi_nghiem.py nên index.json chưa có 3 mục dotansoam"
+ ],
+ "ghi_chu": "Bảng dữ liệu bài toán mẫu dùng 2 cột (Câu trong đề | Dữ liệu · Kiến thức) để khỏi gãy chữ ở 375px. 2.000 từ hiện ngay đúng ngưỡng, 0 cảnh báo. Không có ví dụ xưởng, không có chữ thầy. Đã sửa theo kiem-cheo.json (6 mục): sai số Δf = Δf̄ + Δf_dc, kết quả 441 ± 8 Hz."
+}

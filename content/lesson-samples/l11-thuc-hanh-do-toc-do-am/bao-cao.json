@@ -1,0 +1,56 @@
+{
+ "slug": "l11-thuc-hanh-do-toc-do-am",
+ "lesson_id": 34,
+ "tu_hien_ngay": 2211,
+ "phut": 16,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Ba chai nhiều/vừa/ít nước, mũi tên thổi ngang miệng (chỉ cảnh)"
+  },
+  {
+   "so": 2,
+   "noi_dung": "Ống cộng hưởng l1 và l2: nút ở mặt nước, bụng ở miệng (nét đứt e), kích thước l1, l2"
+  },
+  {
+   "so": 3,
+   "noi_dung": "Sơ đồ dụng cụ: máy phát, loa, ống có thước, ống mềm, bình thông nhau"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Đồ thị độ to theo l với hai đỉnh, khoảng λ/2"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-dotocdoam-01",
+  "tn-l11-dotocdoam-02",
+  "tn-l11-dotocdoam-03"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 12,
+  "da_co": 12,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "Bản cũ không có nội dung đặc trưng vật lí/sinh lí của âm (chỉ mô tả bài ghi) nên viết ở mức tần số–độ cao, mức cường độ âm L (dB)–độ to, đồ thị dao động–âm sắc: thầy đối chiếu SGK",
+  "Số liệu bảng 5 lần là minh hoạ sinh từ mô hình, ghi rõ trong bài",
+  "Bản cũ đo 3 lần, bài mới 5 lần theo giao việc",
+  "Ống dùng 16 mm (e ≈ 0,5 cm); bộ của trường 40 mm có e lớn hơn nên số liệu khác (đã ghi trong dụng cụ tn-01)."
+ ],
+ "ghi_chu": "thi_nghiem.py chỉ chạy trong thư mục tạm (không ghi index.json chung); phiên chính cần chạy. Chưa tìm video. xem-thu/ để lại trên máy."
+}

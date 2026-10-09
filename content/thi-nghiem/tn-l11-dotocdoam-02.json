@@ -1,0 +1,116 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+ "lesson_id": 34,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/theory.html",
+ "id": "tn-l11-dotocdoam-02",
+ "ten": "Thổi ngang miệng chai: cột không khí ngắn thì tiếng cao",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "am.cong_huong_cot_khi",
+  "am.do_cao_tan_so"
+ ],
+ "muc_tieu": "Thấy mực nước (chiều dài cột không khí) quyết định cao độ tiếng kêu của chai.",
+ "dung_cu": [
+  {
+   "ten": "Chai nhựa giống nhau",
+   "so_luong": 3
+  },
+  {
+   "ten": "Nước",
+   "so_luong": 1,
+   "ghi_chu": "rót nhiều, vừa, ít"
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Rót nước vào ba chai: A nhiều nhất, B vừa, C ít nhất.",
+   "Thổi ngang miệng từng chai và nghe cao độ."
+  ],
+  "quan_sat": [
+   "Chai A kêu cao nhất, chai C thấp nhất."
+  ],
+  "rut_ra": [
+   "Cột không khí phía trên mặt nước càng ngắn thì tần số cộng hưởng càng lớn, nghe càng cao."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "l",
+   "ten": "Chiều dài cột không khí",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 8,
+   "max": 24,
+   "mac_dinh": 16,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Hiệu chỉnh đầu hở",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 0.5
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số cộng hưởng gần đúng",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "f = v/(4·(l + e))",
+   "v = 343 m/s"
+  ],
+  "gia_thiet": [
+   "coi cột không khí trong chai như ống một đầu kín",
+   "chai thật còn chịu ảnh hưởng của thể tích nên tần số thật thấp hơn, xu hướng vẫn đúng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Chai",
+   "l (cm)",
+   "f (Hz)"
+  ],
+  "hang": [
+   [
+    "A",
+    12,
+    686
+   ],
+   [
+    "B",
+    16,
+    520
+   ],
+   [
+    "C",
+    20,
+    418
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ tính từ mô hình ống một đầu kín, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Chai ít không khí (A) có f lớn nhất, nghe cao nhất; chai nhiều không khí (C) nghe thấp nhất.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng chai nặng hơn thì tiếng thấp hơn.",
+  "Nhầm cao độ (tần số) với độ to."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "l"
+  ],
+  "dau_ra": [
+   "tần số f",
+   "nốt nghe được"
+  ],
+  "hinh_trong_bai": "Hình 1",
+  "y_tuong": "Kéo mặt nước trong chai lên xuống, nghe và đọc f."
+ }
+}

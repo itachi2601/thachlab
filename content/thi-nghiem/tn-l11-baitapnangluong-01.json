@@ -1,0 +1,171 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+ "lesson_id": 26,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/theory.html",
+ "id": "tn-l11-baitapnangluong-01",
+ "ten": "Đo cơ năng con lắc lò xo theo biên độ (lò xo, thước, điện thoại quay chậm)",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "daodong.co_nang",
+  "daodong.co_nang_ti_le_a_binh_phuong",
+  "do_luong.sai_so_tuong_doi"
+ ],
+ "muc_tieu": "Kiểm bằng số đo rằng cơ năng tỉ lệ bình phương biên độ, và thấy sai số tương đối của W gấp đôi sai số của A.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quả nặng 250 g",
+   "so_luong": 1
+  },
+  {
+   "ten": "Giá treo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước thẳng có vạch mm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm 240 hình/giây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Treo quả nặng 250 g, đo độ dãn thêm 5,0 cm, tính k = mg/Δl = 49 N/m (g = 9,8 m/s²).",
+   "Kéo xuống lần lượt A = 1; 1,5; 2; 3; 4 cm (nhỏ hơn Δl để lò xo luôn dãn; thước ±1 mm) rồi thả.",
+   "Quay chậm 240 hình/giây, đo tốc độ khi vật qua vị trí cân bằng."
+  ],
+  "quan_sat": [
+   "Bảng 5 hàng: A, v_max đo, ½mv_max².",
+   "Tỉ số W/A² gần như không đổi, khoảng 2,3–2,4 mJ/cm²."
+  ],
+  "rut_ra": [
+   "W tỉ lệ A²: biên gấp 3 (1 → 3 cm) thì năng lượng gấp khoảng 9.",
+   "Số đo thấp hơn mô hình ½k = 2,45 mJ/cm² chừng 2–7% (video lấy tốc độ trung bình quanh VTCB, lực cản không khí).",
+   "Hàng A = 1 cm kém tin cậy nhất: sai 1 mm là 10% của A, thành 20% của W; hàng 4 cm W chỉ sai cỡ 5% (A sai 2,5%)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m",
+   "ten": "Khối lượng quả nặng",
+   "don_vi": "kg",
+   "kieu": "co_dinh",
+   "gia_tri": 0.25
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Độ cứng lò xo",
+   "don_vi": "N/m",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 4,
+   "mac_dinh": 2,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "v_max",
+   "ten": "Tốc độ qua VTCB",
+   "don_vi": "cm/s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  },
+  {
+   "ky_hieu": "W",
+   "ten": "Cơ năng",
+   "don_vi": "mJ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "k = m·g/Δl",
+   "ω = √(k/m)",
+   "v_max = ω·A",
+   "W = ½·k·A² = ½·m·v_max²",
+   "v_do ≈ 0,986·v_max (trung bình trên 10 khung quanh VTCB)"
+  ],
+  "gia_thiet": [
+   "A < Δl = 5 cm nên lò xo luôn dãn",
+   "bỏ khối lượng lò xo",
+   "mốc thế năng tại VTCB",
+   "lực cản nhỏ trong một phần tư chu kì",
+   "g = 9,8 m/s²"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "A (cm)",
+   "v_max đo (cm/s)",
+   "½mv_max² (mJ)",
+   "½kA² mô hình (mJ)"
+  ],
+  "hang": [
+   [
+    1,
+    13.5,
+    2.3,
+    2.45
+   ],
+   [
+    1.5,
+    20.5,
+    5.3,
+    5.51
+   ],
+   [
+    2,
+    27.5,
+    9.5,
+    9.8
+   ],
+   [
+    3,
+    41.5,
+    21.5,
+    22.05
+   ],
+   [
+    4,
+    55.0,
+    37.8,
+    39.2
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ: tính từ mô hình kèm sai số dụng cụ (đọc tốc độ ±0,5 cm/s), chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "W/A² ≈ 2,3–2,4 mJ/cm², gần ½k = 2,45 mJ/cm²; A tăng 3 lần (1 → 3 cm) thì W tăng khoảng 9 lần.",
+ "sai_so_thuong_gap": [
+  "Đọc biên độ bằng mắt lệch 1 mm: sai số W gấp đôi sai số A.",
+  "Lấy tốc độ trung bình trên nhiều khung hình làm v_max nên W đo hơi nhỏ."
+ ],
+ "hien_tuong_hay_sai": [
+  "Nghĩ biên độ gấp 3 thì năng lượng gấp 3 (quên bình phương).",
+  "Thế A bằng cm vào ½kA² rồi ghi đơn vị J."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "A"
+  ],
+  "dau_ra": [
+   "vật dao động",
+   "thanh W lớn dần theo A²",
+   "bảng số đo"
+  ],
+  "y_tuong": "Kéo thanh A, vật dao động; cột W vẽ cạnh đường cong ½kA² để thấy W tăng theo bình phương."
+ }
+}

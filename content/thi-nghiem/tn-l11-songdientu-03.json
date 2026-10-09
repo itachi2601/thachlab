@@ -1,0 +1,120 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 11. Sóng điện từ",
+ "lesson_id": 30,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dien-tu/theory.html",
+ "id": "tn-l11-songdientu-03",
+ "ten": "Nhìn đèn hồng ngoại của điều khiển ti vi qua camera điện thoại",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "songdientu.thang_song",
+  "songdientu.hong_ngoai",
+  "songdientu.anh_sang_nhin_thay_dai_hep"
+ ],
+ "muc_tieu": "Thấy có bức xạ mắt không thấy nhưng cảm biến camera ghi được: hồng ngoại cùng bản chất với ánh sáng, chỉ khác bước sóng.",
+ "dung_cu": [
+  {
+   "ten": "Điều khiển ti vi (đèn hồng ngoại ở đầu)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có camera (nên dùng camera trước)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chĩa đầu điều khiển vào mắt (cách xa), bấm giữ một nút.",
+   "Chĩa đầu điều khiển vào camera điện thoại đang mở, bấm giữ cùng nút đó."
+  ],
+  "quan_sat": [
+   "Mắt thường: đầu điều khiển không sáng.",
+   "Trên màn hình điện thoại: đầu điều khiển nhấp nháy ánh tím trắng."
+  ],
+  "rut_ra": [
+   "Điều khiển phát hồng ngoại: sóng điện từ có λ dài hơn ánh sáng đỏ, mắt không thấy.",
+   "Ánh sáng nhìn thấy chỉ là một dải hẹp của thang sóng điện từ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "λ",
+   "ten": "Bước sóng bức xạ của đèn",
+   "don_vi": "nm",
+   "kieu": "dieu_chinh",
+   "min": 380,
+   "max": 1100,
+   "mac_dinh": 940,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "r",
+   "ten": "Khoảng cách điều khiển – camera",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 300,
+   "mac_dinh": 30,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số tương ứng",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "f = c/λ = 3·10⁸ / 940·10⁻⁹ ≈ 3,2·10¹⁴ Hz",
+   "mắt thấy 380 nm ≤ λ ≤ 760 nm; cảm biến camera nhạy tới khoảng 1 000 nm"
+  ],
+  "gia_thiet": [
+   "camera không có bộ lọc hồng ngoại quá mạnh (camera trước thường dễ thấy hơn)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Bức xạ",
+   "λ (nm)",
+   "Mắt thấy?"
+  ],
+  "hang": [
+   [
+    "ánh sáng đỏ",
+    700,
+    "có"
+   ],
+   [
+    "đèn điều khiển",
+    940,
+    "không"
+   ],
+   [
+    "ánh sáng tím",
+    400,
+    "có"
+   ]
+  ],
+  "ghi_chu": "λ = 940 nm là giá trị điển hình của đèn LED hồng ngoại trong điều khiển ti vi."
+ },
+ "ket_qua_ky_vong": "Mắt không thấy gì, camera thấy đầu điều khiển nhấp nháy.",
+ "hien_tuong_hay_sai": [
+  "Tưởng điều khiển ti vi dùng sóng âm hoặc sóng vô tuyến.",
+  "Tưởng ánh sáng nhìn thấy chiếm phần lớn thang sóng điện từ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "dieu_khien": [
+   "λ"
+  ],
+  "dau_ra": [
+   "mắt thấy / không thấy",
+   "camera thấy / không thấy"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Thanh trượt λ chạy dọc thang sóng; hai đèn báo 'mắt' và 'camera' sáng theo vùng nhạy."
+ }
+}

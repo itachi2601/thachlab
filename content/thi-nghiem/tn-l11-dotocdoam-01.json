@@ -1,0 +1,203 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+ "lesson_id": 34,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/theory.html",
+ "id": "tn-l11-dotocdoam-01",
+ "ten": "Đo tốc độ truyền âm trong không khí bằng ống cộng hưởng một đầu kín",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "am.toc_do_truyen_am",
+  "song_dung.ong_mot_dau_kin",
+  "am.xu_ly_so_lieu_sai_so"
+ ],
+ "muc_tieu": "Đo hai chiều dài cột khí l1, l2 tại hai lần cộng hưởng liên tiếp ở tần số f đã biết, tính λ = 2(l2 − l1) và v = λf, viết v = v̄ ± Δv rồi so với giá trị tham khảo.",
+ "dung_cu": [
+  {
+   "ten": "Máy phát tần số (tín hiệu sin) và loa điện động",
+   "so_luong": 1,
+   "ghi_chu": "đặt loa sát miệng ống; f = 500 ± 1 Hz"
+  },
+  {
+   "ten": "Ống trụ trong suốt đường kính trong 16 mm, dài 670 mm, gắn thước (bộ của trường dùng ống 40 mm thì e lớn hơn, số liệu khác)",
+   "so_luong": 1,
+   "ghi_chu": "số 0 của thước ở miệng ống"
+  },
+  {
+   "ten": "Bình nước nối ống mềm với đáy ống (hoặc pít-tông có vạch chuẩn)",
+   "so_luong": 1,
+   "ghi_chu": "mặt nước ở ống và ở bình luôn cùng độ cao"
+  },
+  {
+   "ten": "Giá đỡ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Chỉnh máy phát f = 500 Hz, âm vừa đủ nghe; đặt loa sát miệng ống.",
+   "Hạ từ từ bình nước, dừng ở chỗ nghe to nhất lần đầu, đọc l1 ngay tại mặt nước, mắt ngang mặt nước.",
+   "Hạ tiếp tới lần to nhất thứ hai, đọc l2.",
+   "Đưa nước về sát miệng ống, lặp lại để có đủ 5 lần đo.",
+   "Tính λ = 2(l2 − l1), v = λf cho từng lần; lấy trung bình; tính Δλ = 2(Δl1 + Δl2), Δv/v = Δλ/λ + Δf/f."
+  ],
+  "quan_sat": [
+   "Trong ống dài 670 mm chỉ có hai vị trí nghe to nhất, cỡ 17 cm và 51 cm tính từ miệng ống.",
+   "Năm lần đo cho l1, l2 lệch nhau vài mm; v các lần từ 340 đến 343 m/s."
+  ],
+  "rut_ra": [
+   "Hiệu l2 − l1 gần như không đổi; λ̄ = 68,32 cm, v̄ = 341,6 m/s.",
+   "Δv ≈ 2.0 m/s nên v = 341,6 ± 2,0 m/s; giá trị tham khảo 343 m/s nằm trong khoảng 339,6 đến 343,6 m/s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số máy phát",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 1000,
+   "mac_dinh": 500,
+   "buoc": 50
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Nhiệt độ phòng",
+   "don_vi": "°C",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 40,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "e",
+   "ten": "Hiệu chỉnh đầu hở",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1.5,
+   "mac_dinh": 0.5,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài ống",
+   "don_vi": "cm",
+   "kieu": "co_dinh",
+   "gia_tri": 67.0
+  },
+  {
+   "ky_hieu": "l1",
+   "ten": "Cột khí ở lần cộng hưởng thứ nhất",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  },
+  {
+   "ky_hieu": "l2",
+   "ten": "Cột khí ở lần cộng hưởng thứ hai",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền âm",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "lambda",
+   "ten": "Bước sóng",
+   "don_vi": "cm",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v = 331 + 0,6·t (m/s)",
+   "λ = v/f",
+   "l1 + e = λ/4 ; l2 + e = 3λ/4",
+   "λ = 2(l2 − l1) ; v = λf",
+   "Δλ = 2(Δl1 + Δl2) ; Δv/v = Δλ/λ + Δf/f"
+  ],
+  "gia_thiet": [
+   "không khí khô, nhiệt độ đều trong ống",
+   "e ≈ 0,6·bán kính ống = 0,5 cm với ống 16 mm, không đổi giữa hai lần cộng hưởng",
+   "mặt bích hay loa sát miệng làm e lớn hơn 0,6r; sai số đọc ±2 mm quanh giá trị mô hình"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "l1 (cm)",
+   "l2 (cm)",
+   "λ (cm)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    1,
+    16.8,
+    50.8,
+    68.0,
+    340
+   ],
+   [
+    2,
+    16.7,
+    50.9,
+    68.4,
+    342
+   ],
+   [
+    3,
+    16.8,
+    50.9,
+    68.2,
+    341
+   ],
+   [
+    4,
+    16.6,
+    50.8,
+    68.4,
+    342
+   ],
+   [
+    5,
+    16.7,
+    51.0,
+    68.6,
+    343
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ sinh từ mô hình (v = 343 m/s, e = 0,5 cm, f = 500 Hz) cộng sai số đọc tới ±0,2 cm; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "l̄1 = 16,72 cm, l̄2 = 50,88 cm, λ̄ = 68,32 cm, v̄ = 341,6 m/s, Δv ≈ 2.0 m/s; v = 341,6 ± 2,0 m/s, phù hợp 343 m/s.",
+ "hien_tuong_hay_sai": [
+  "Coi λ = 4·l1 (quên hiệu chỉnh đầu hở e): v lệch thấp khoảng 9 m/s.",
+  "Nhầm khoảng cách hai lần cộng hưởng liên tiếp là λ thay vì λ/2.",
+  "Cho rằng đổi tần số thì tốc độ truyền âm đổi theo.",
+  "Đọc vạch ở mép bình hay đỉnh ống thay vì ở mặt nước."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "t",
+   "e"
+  ],
+  "dau_ra": [
+   "cột khí cộng hưởng l1, l2",
+   "đồ thị độ to theo l",
+   "v tính từ hiệu l2 − l1"
+  ],
+  "hinh_trong_bai": "Hình 2, 3, 4",
+  "y_tuong": "Kéo mực nước trong ống; độ to lên cực đại tại l1, l2; hiện hiệu l2 − l1 = λ/2 và v = λf; cho đổi f, t, e."
+ }
+}

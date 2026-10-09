@@ -1,0 +1,56 @@
+{
+ "slug": "l11-song-ngang-song-doc",
+ "lesson_id": 28,
+ "tu_hien_ngay": 2313,
+ "phut": 17,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Mặt hồ: gợn tròn từ chỗ hòn sỏi rơi, phao câu và chiếc lá (chỉ cảnh)"
+  },
+  {
+   "so": 2,
+   "noi_dung": "Sóng ngang trên dây nhảy: mũi tên phương truyền ngang, dải băng dao động lên–xuống"
+  },
+  {
+   "so": 3,
+   "noi_dung": "Sóng dọc trên lò xo slinky: vùng nén/dãn, vòng đánh dấu tiến–lùi dọc trục"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Đồ thị u–x của sóng dọc + hàng phần tử: nén/dãn ở u = 0, nén–nén cách λ (đặt sau quiz Bẫy 2)"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-songngangdoc-01",
+  "tn-l11-songngangdoc-02",
+  "tn-l11-songngangdoc-03"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok (0 lỗi cứng, 1 cảnh báo >2000 từ)",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 19,
+  "da_co": 19,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "Sóng mặt nước được coi là sóng ngang theo SGK (thực tế phần tử nước mặt chuyển động theo vòng nhỏ) — bài theo SGK, cần thầy xác nhận cách nói",
+  "Tốc độ sóng dọc trên slinky 7,0 m/s và bảng 5 lần đo là số minh hoạ (đã ghi trong bài), chưa đo thật",
+  "Ý 'mặt chất lỏng có trọng lực và sức căng mặt ngoài nên có sóng ngang' nằm trong details — đối chiếu SGK",
+  "Sóng S không qua lõi ngoài → lõi ngoài lỏng; vP = 8, vS = 4,5 km/s là số ước lượng điển hình"
+ ],
+ "ghi_chu": "6 ý phương trình sóng/đồ thị/độ lệch pha của bản cũ (thực chất là nội dung bài 8) gom vào details 'Ôn nhanh bài 8' trong mục II.5, ký hiệu khớp bài 8 (d, λ, Δφ = 2πd/λ). Chưa chạy thi_nghiem.py, chưa tìm video (phiên chính làm). Không commit. Đã sửa 9 mục theo kiem-cheo.json (vòng 1)."
+}

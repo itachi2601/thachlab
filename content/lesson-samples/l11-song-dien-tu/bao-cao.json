@@ -1,0 +1,56 @@
+{
+ "slug": "l11-song-dien-tu",
+ "lesson_id": 30,
+ "tu_hien_ngay": 2250,
+ "phut": 17,
+ "so_quiz": 8,
+ "dap_an_dung": {
+  "A": 2,
+  "B": 2,
+  "C": 2,
+  "D": 2
+ },
+ "hinh": [
+  {
+   "so": 1,
+   "noi_dung": "Cảnh mở bài: trạm phát sóng, chung cư có thang máy (người cầm điện thoại trong cabin), chảo thu trên mái, vệ tinh — chỉ cảnh"
+  },
+  {
+   "so": 2,
+   "noi_dung": "Sóng điện từ: E (đỏ, thẳng đứng) ⊥ B (xanh, vẽ xiên, hướng ra phía người xem) ⊥ phương truyền; E×B = +x khớp chiều truyền; cùng pha, vectơ dùng chevron"
+  },
+  {
+   "so": 3,
+   "noi_dung": "Thanh sô-cô-la sau khi quay: các vệt chảy cách đều, khoảng cách d (= λ/2), trong hộp thí nghiệm đo"
+  },
+  {
+   "so": 4,
+   "noi_dung": "Thang sóng điện từ thanh ngang, trục log λ 1 km → dưới 1 pm, hàng f = c/λ, 7 vùng có nhãn, ánh sáng nhìn thấy là vạch hẹp"
+  }
+ ],
+ "thi_nghiem": [
+  "tn-l11-songdientu-01",
+  "tn-l11-songdientu-02",
+  "tn-l11-songdientu-03"
+ ],
+ "lint": {
+  "lint_theory": "ok",
+  "lint_do_dai": "ok (0 lỗi cứng, 1 cảnh báo >2000 từ: 2250)",
+  "check_quizzes": "ok",
+  "validate_bundle": "ok",
+  "kiem_tran": "ok"
+ },
+ "y_bat_buoc_ban_cu": {
+  "tong": 27,
+  "da_co": 27,
+  "bo_sot": []
+ },
+ "da_xem_anh": true,
+ "chua_chac": [
+  "Ranh giới các vùng thang sóng: tử ngoại 10–380 nm, tia X 10 pm–10 nm, gamma < 10 pm (theo bảng SGK KNTT do điều phối chốt; bản cũ ghi 400 nm và 30 pm–3 nm)",
+  "Bảng đo lò vi sóng (d = 6,0/6,2/5,9/6,3/6,1 cm, TB 6,10 → c ≈ 2,99·10⁸ m/s) là số minh hoạ sinh từ mô hình λ/2 với f = 2,45 GHz, đã ghi 'số minh hoạ' trong bảng",
+  "Ý cường độ I = P/(4πr²) và nguồn phát/tính chất từng vùng (hồng ngoại, tử ngoại, tia X, gamma) để trong <details> để giữ dưới 2 300 từ — thầy xem có cần hiện ngay không",
+  "Điện thoại trong hộp sắt kín 'thường' mất sóng (phụ thuộc độ kín nắp, trạm gần) — đã viết 'thường'"
+ ],
+ "ghi_chu": "Mở bài khác bài 9 (phao câu): thang máy + truyền hình vệ tinh. Không dạy Maxwell/mạch LC. Chưa chạy thi_nghiem.py, chưa tìm video (phiên chính làm). Không commit. Đã sửa theo kiem-cheo.json (vòng 1): chú thích Hình 2, đưa bảng Bẫy 1/2 ra sau quiz, thêm tần số vào bảng thang sóng, an toàn lò vi sóng, bổ sung ý bản cũ trong details, tn-03 thêm 2 tham số điều chỉnh."
+}

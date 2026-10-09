@@ -1,0 +1,128 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 10. Thực hành: Đo tần số của sóng âm",
+ "lesson_id": 29,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-tan-so-am/theory.html",
+ "id": "tn-l11-dotansoam-02",
+ "ten": "Đo tần số bằng điện thoại: ghi âm rồi đếm chu kì trên dạng sóng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "amthanh.tan_so_chu_ki",
+  "amthanh.dem_chu_ki_dang_song"
+ ],
+ "muc_tieu": "Đo tần số âm thoa 440 Hz không cần dao động kí: ghi âm, phóng to dạng sóng, đếm N = 10 chu kì liên tiếp và đọc thời gian t của đoạn đó.",
+ "dung_cu": [
+  {
+   "ten": "Âm thoa 440 Hz",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có ứng dụng ghi âm hiển thị dạng sóng",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Ghi âm âm thoa vài giây.",
+   "Mở dạng sóng, phóng to, chọn đoạn có N = 10 chu kì liên tiếp và đọc thời gian t của đoạn.",
+   "Chọn ba đoạn khác nhau."
+  ],
+  "quan_sat": [
+   "t = 22,6; 22,8; 22,7 ms (số minh hoạ)."
+  ],
+  "rut_ra": [
+   "f = N/t ra 442,5; 438,6; 440,5 Hz, trung bình khoảng 440,5 Hz."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số của nguồn âm",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 1000,
+   "mac_dinh": 440,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Số chu kì được đếm",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 20,
+   "mac_dinh": 10,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian của đoạn đếm",
+   "don_vi": "ms",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "f_do",
+   "ten": "Tần số tính được",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "t_that = N·1000/f (ms)",
+   "f = N/t"
+  ],
+  "gia_thiet": [
+   "âm đơn",
+   "đếm đúng N chu kì (n đỉnh là n − 1 chu kì)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "t (ms)",
+   "f (Hz)"
+  ],
+  "hang": [
+   [
+    1,
+    22.6,
+    442.5
+   ],
+   [
+    2,
+    22.8,
+    438.6
+   ],
+   [
+    3,
+    22.7,
+    440.5
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ sinh từ mô hình f = 440 Hz với sai số đọc thời gian cỡ 0,1 ms; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "f ≈ 440,5 Hz, cùng nguyên lý với dao động kí.",
+ "hien_tuong_hay_sai": [
+  "Đếm 10 đỉnh thành 10 chu kì.",
+  "Quên đổi ms ra s."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "N"
+  ],
+  "dau_ra": [
+   "dạng sóng phóng to",
+   "t của đoạn đếm",
+   "f"
+  ],
+  "hinh_trong_bai": null,
+  "y_tuong": "Kéo hai mốc đầu và cuối đoạn, hiện t và f = N/t."
+ }
+}

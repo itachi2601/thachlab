@@ -1,0 +1,145 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 4. Bài tập về dao động điều hoà",
+ "lesson_id": 23,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-dao-dong/theory.html",
+ "id": "tn-l11-baitapdaodong-02",
+ "ten": "Vật dao động tự vẽ đồ thị li độ – thời gian lên băng giấy",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.do_thi_li_do_thoi_gian",
+  "daodong.bien_do",
+  "daodong.chu_ki_tan_so"
+ ],
+ "muc_tieu": "Đọc biên độ và chu kì từ đồ thị thật: đỉnh–đáy = 2A, hai đỉnh liền kề cách nhau đúng một chu kì.",
+ "dung_cu": [
+  {
+   "ten": "Lò xo + quả nặng treo trên giá",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bút dạ gắn vào quả nặng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng giấy dài",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gắn bút dạ vào quả nặng treo lò xo, đầu bút chạm băng giấy.",
+   "Cho quả nặng dao động; một bạn kéo đều băng giấy ngang qua đầu bút, tốc độ 20 cm/s."
+  ],
+  "quan_sat": [
+   "Nét bút là đường hình sin.",
+   "Đỉnh cao nhất cách đáy thấp nhất 6,0 cm; hai đỉnh liền kề cách nhau 16,0 cm."
+  ],
+  "rut_ra": [
+   "A = 6,0/2 = 3,0 cm.",
+   "T = 16/20 = 0,80 s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 3.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.4,
+   "max": 2,
+   "mac_dinh": 0.8,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "u",
+   "ten": "Tốc độ kéo giấy",
+   "don_vi": "cm/s",
+   "kieu": "dieu_chinh",
+   "min": 5,
+   "max": 40,
+   "mac_dinh": 20.0,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "h",
+   "ten": "Khoảng đỉnh–đáy theo phương dao động",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng giữa hai đỉnh liền kề trên giấy",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = A·cos(2π·t/T)",
+   "vị trí dọc giấy s = u·t",
+   "h = 2A",
+   "d = u·T"
+  ],
+  "gia_thiet": [
+   "kéo giấy đều",
+   "bỏ qua ma sát đầu bút làm giảm biên độ"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "u (cm/s)",
+   "h (cm)",
+   "d (cm)",
+   "A (cm)",
+   "T (s)"
+  ],
+  "hang": [
+   [
+    20.0,
+    6.0,
+    16.0,
+    3.0,
+    0.8
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "A = 3,0 cm; T = 0,80 s.",
+ "hien_tuong_hay_sai": [
+  "Đọc khoảng đỉnh–đáy là A (thực ra là 2A).",
+  "Lấy khoảng từ đỉnh tới đáy liền kề làm chu kì (thực ra là T/2)."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "A",
+   "T",
+   "u"
+  ],
+  "dau_ra": [
+   "vật dao động",
+   "băng giấy chạy, nét bút vẽ dần đồ thị"
+  ],
+  "hinh_trong_bai": "Hình 2",
+  "y_tuong": "Tăng tốc độ kéo giấy thì đồ thị giãn ngang nhưng A và T không đổi."
+ }
+}

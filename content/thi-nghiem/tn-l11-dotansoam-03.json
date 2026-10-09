@@ -1,0 +1,116 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 10. Thực hành: Đo tần số của sóng âm",
+ "lesson_id": 29,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-tan-so-am/theory.html",
+ "id": "tn-l11-dotansoam-03",
+ "ten": "So sánh hai âm đơn 440 Hz và 880 Hz trên cùng thang thời gian",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "amthanh.tan_so_do_cao",
+  "amthanh.bien_do_do_to"
+ ],
+ "muc_tieu": "Thấy tần số lớn gấp đôi thì trong cùng khoảng thời gian có số chu kì gấp đôi, âm cao hơn; còn biên độ chỉ đổi độ to.",
+ "dung_cu": [
+  {
+   "ten": "Máy phát tần số và loa",
+   "so_luong": 1
+  },
+  {
+   "ten": "Micro và dao động kí",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Phát âm 440 Hz, ghi lại số chu kì trong 9 ms trên màn.",
+   "Đổi sang 880 Hz, giữ nguyên TIME/DIV và biên độ."
+  ],
+  "quan_sat": [
+   "Trong 9 ms: gần 4 chu kì ở 440 Hz, gần 8 chu kì ở 880 Hz.",
+   "Chiều cao sóng không đổi, tai nghe thấy âm cao hơn."
+  ],
+  "rut_ra": [
+   "f gấp đôi thì T giảm một nửa, số chu kì trong cùng thời gian gấp đôi.",
+   "Biên độ quyết định độ to, tần số quyết định độ cao."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 2000,
+   "mac_dinh": 440,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ (độ to)",
+   "don_vi": "ô",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "ms",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "u(t) = A·sin(2π·f·t)",
+   "T = 1000/f (ms)",
+   "số chu kì trong 9 ms = f·9·10⁻³"
+  ],
+  "gia_thiet": [
+   "âm đơn"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f (Hz)",
+   "T (ms)",
+   "Số chu kì trong 9 ms"
+  ],
+  "hang": [
+   [
+    440,
+    2.27,
+    3.96
+   ],
+   [
+    880,
+    1.14,
+    7.92
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "880 Hz có số chu kì gấp đôi 440 Hz trong cùng 9 ms.",
+ "hien_tuong_hay_sai": [
+  "Cho rằng nhiều đỉnh hơn nghĩa là to hơn.",
+  "Lấy chiều cao sóng làm tần số."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi",
+  "dieu_khien": [
+   "f",
+   "A"
+  ],
+  "dau_ra": [
+   "hai đồ thị sin cùng trục thời gian",
+   "phát âm thật bằng Web Audio"
+  ],
+  "hinh_trong_bai": "Hình 4",
+  "y_tuong": "Hai thanh trượt f và A; đổi A không đổi số chu kì, đổi f không đổi chiều cao."
+ }
+}

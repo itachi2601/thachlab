@@ -1,0 +1,145 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 4. Bài tập về dao động điều hoà",
+ "lesson_id": 23,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-dao-dong/theory.html",
+ "id": "tn-l11-baitapdaodong-03",
+ "ten": "Quay chậm con lắc lò xo: nửa quãng đường không phải nửa thời gian",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "daodong.vong_tron_luong_giac",
+  "daodong.thoi_gian_giua_hai_vi_tri"
+ ],
+ "muc_tieu": "Đếm khung hình quay chậm để thấy O → A/2 mất T/12, A/2 → A mất T/6.",
+ "dung_cu": [
+  {
+   "ten": "Con lắc lò xo nằm ngang trên ray (T ≈ 0,80 s)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Băng dính màu đánh dấu O, 2 cm, 4 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại quay chậm 240 khung/s",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Dán băng dính ở O, ở 2 cm và 4 cm. Kéo vật ra 4,0 cm rồi thả.",
+   "Quay chậm 240 khung/s; xem lại, đếm số khung vật đi O → 2 cm và 2 → 4 cm. Làm 3 lần."
+  ],
+  "quan_sat": [
+   "O → 2 cm: 16, 17, 16 khung.",
+   "2 → 4 cm: 32, 31, 33 khung."
+  ],
+  "rut_ra": [
+   "Nửa đường gần O mất khoảng 16 khung ≈ 0,067 s = T/12.",
+   "Nửa đường gần biên mất khoảng 32 khung ≈ 0,133 s = T/6.",
+   "Nửa quãng đường không phải nửa thời gian: gần biên vật đi chậm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.4,
+   "max": 2,
+   "mac_dinh": 0.8,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Biên độ",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 8,
+   "mac_dinh": 4.0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "fps",
+   "ten": "Số khung hình mỗi giây",
+   "don_vi": "khung/s",
+   "kieu": "co_dinh",
+   "gia_tri": 240
+  },
+  {
+   "ky_hieu": "n1",
+   "ten": "Số khung O → A/2",
+   "don_vi": "khung",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  },
+  {
+   "ky_hieu": "n2",
+   "ten": "Số khung A/2 → A",
+   "don_vi": "khung",
+   "kieu": "do_duoc",
+   "sai_so_do": 1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "x = A·sin(ωt) tính từ lúc qua O",
+   "ω = 2π/T",
+   "t(O→A/2) = arcsin(1/2)/ω = T/12",
+   "t(A/2→A) = (π/2 − π/6)/ω = T/6",
+   "n = t·fps"
+  ],
+  "gia_thiet": [
+   "bỏ qua ma sát trên ray",
+   "sai số ±1 khung do chọn khung bắt đầu/kết thúc"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "O → 2 cm (khung)",
+   "2 → 4 cm (khung)"
+  ],
+  "hang": [
+   [
+    1,
+    16,
+    32
+   ],
+   [
+    2,
+    17,
+    31
+   ],
+   [
+    3,
+    16,
+    33
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ: mô hình cho 16 và 32 khung, cộng/trừ 1 khung do chọn khung; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "O → 2 cm ≈ 16 khung (T/12); 2 → 4 cm ≈ 32 khung (T/6).",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nửa quãng đường O → A mất nửa thời gian T/4, tức T/8.",
+  "Nhầm T/6 là thời gian O → A/2."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+do_thi",
+  "dieu_khien": [
+   "T",
+   "A"
+  ],
+  "dau_ra": [
+   "vật chạy chậm từng khung",
+   "bộ đếm khung ở mỗi mốc",
+   "điểm M quay trên vòng tròn pha"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Chạy song song vật trên ray và điểm M trên vòng tròn; tô màu cung 30° và 60°."
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "title": "Kiểm tra nhanh — Đo tần số của sóng âm",
+ "duration_minutes": 6,
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "Một âm đơn có chu kì T = 5 ms. Tần số của âm là",
+   "options": [
+    "0,2 Hz",
+    "200 Hz",
+    "5 000 Hz",
+    "0,005 Hz"
+   ],
+   "answer": 1,
+   "explanation": "T = 5 ms = 0,005 s nên f = 1/0,005 = 200 Hz. 0,2 Hz là quên đổi ms ra s; 5 000 là nhân thay vì lật ngược; 0,005 chính là T tính bằng giây."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Núm TIME/DIV của dao động kí ở 1 ms/ô. Ba chu kì liên tiếp chiếm 6,0 ô. Tần số của âm là",
+   "options": [
+    "167 Hz",
+    "0,5 Hz",
+    "56 Hz",
+    "500 Hz"
+   ],
+   "answer": 3,
+   "explanation": "T = 6,0·1/3 = 2,0 ms = 2,0·10⁻³ s nên f = 500 Hz. 167 Hz là coi cả 6 ô là một chu kì; 0,5 Hz là chưa đổi ms ra s; 56 Hz là nhân với N thay vì chia."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Núm TIME/DIV ở 0,5 ms/ô. Em đếm được 6 đỉnh dương liên tiếp, từ đỉnh đầu tới đỉnh cuối cách nhau 8,0 ô. Tần số là",
+   "options": [
+    "1 500 Hz",
+    "1 250 Hz",
+    "625 Hz",
+    "250 Hz"
+   ],
+   "answer": 1,
+   "explanation": "6 đỉnh là N = 5 chu kì. T = 8,0·0,5/5 = 0,8 ms nên f = 1 250 Hz. 1 500 Hz ứng với N = 6 (đếm đỉnh thành chu kì); 625 Hz là lấy nhầm độ chia 1 ms/ô; 250 Hz là quên chia cho N."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Núm TIME/DIV ở 0,2 ms/ô. Bốn chu kì chiếm 8,0 ô. Tần số là",
+   "options": [
+    "2,5 Hz",
+    "625 Hz",
+    "25 000 Hz",
+    "2 500 Hz"
+   ],
+   "answer": 3,
+   "explanation": "T = 8,0·0,2/4 = 0,4 ms nên f = 1/(0,4·10⁻³) = 2 500 Hz. 2,5 Hz quên đổi ms ra s; 625 Hz quên chia cho 4 chu kì; 25 000 Hz là đọc nhầm núm thành 0,02 ms/ô."
+  },
+  {
+   "type": "multiple_choice",
+   "question": "Giữ nguyên âm thoa 440 Hz, đổi TIME/DIV sang 0,5 ms/ô và đếm 2 chu kì liên tiếp. Hai chu kì chiếm khoảng",
+   "options": [
+    "4,5 ô",
+    "2,3 ô",
+    "9,1 ô",
+    "13,6 ô"
+   ],
+   "answer": 2,
+   "explanation": "T = 2,27 ms nên L = N·T/k = 2·2,27/0,5 ≈ 9,1 ô. 4,5 ô chỉ đủ một chu kì; 2,3 là T tính bằng ms lấy làm số ô; 13,6 ô ứng với 3 chu kì (lấy số đỉnh 3 làm số chu kì thay vì 2)."
+  }
+ ]
+}

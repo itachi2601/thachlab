@@ -1,0 +1,148 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 11. Sóng điện từ",
+ "lesson_id": 30,
+ "nguon_trong_bai": "content/lesson-samples/l11-song-dien-tu/theory.html",
+ "id": "tn-l11-songdientu-02",
+ "ten": "Đo bước sóng vi sóng trong lò vi sóng bằng thanh sô-cô-la, suy ra tốc độ sóng điện từ",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "songdientu.lambda_bang_c_chia_f",
+  "songdientu.toc_do_c",
+  "do_luong.sai_so_ngau_nhien"
+ ],
+ "muc_tieu": "Đo khoảng cách hai vệt chảy liền nhau (bằng λ/2) trên thanh sô-cô-la, 5 lần; tính λ và c = λf với f = 2,45 GHz ghi trên lò; nhận xét sai số.",
+ "dung_cu": [
+  {
+   "ten": "Lò vi sóng gia đình (ghi 2 450 MHz)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thanh sô-cô-la dài, đặt trên đĩa sứ",
+   "so_luong": 5
+  },
+  {
+   "ten": "Thước kẻ (độ chia 1 mm)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nhấc đĩa xoay ra, úp một đĩa sứ lên trục để thức ăn KHÔNG quay.",
+   "Đặt thanh sô-cô-la lên đĩa, quay khoảng 15–20 giây đến khi thấy vài vệt bắt đầu chảy.",
+   "Đo khoảng cách d giữa tâm hai vệt chảy liền nhau.",
+   "Làm 5 lần, mỗi lần một thanh mới."
+  ],
+  "quan_sat": [
+   "Sô-cô-la chảy thành từng vệt cách đều nhau, giữa các vệt vẫn còn cứng.",
+   "Năm lần đo d lệch nhau vài milimét."
+  ],
+  "rut_ra": [
+   "λ = 2·d_tb = 12,2 cm; c = λf ≈ 2,99·10⁸ m/s, khớp 3·10⁸ m/s trong phạm vi sai số.",
+   "Sai số chủ yếu do vệt chảy rộng, khó xác định tâm; tần số thật của lò có thể lệch chút ít quanh 2,45 GHz."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số vi sóng của lò",
+   "don_vi": "GHz",
+   "kieu": "dieu_chinh",
+   "min": 2.4,
+   "max": 2.5,
+   "mac_dinh": 2.45,
+   "buoc": 0.01
+  },
+  {
+   "ky_hieu": "c",
+   "ten": "Tốc độ sóng điện từ trong không khí",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 300000000.0
+  },
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách tâm hai vệt chảy liền nhau",
+   "don_vi": "cm",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.3
+  },
+  {
+   "ky_hieu": "c_do",
+   "ten": "Tốc độ tính từ số đo",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "λ = c/f",
+   "trong lò có sóng dừng: chỗ nóng nhất (bụng) cách nhau d = λ/2",
+   "c_do = 2·d_tb·f"
+  ],
+  "gia_thiet": [
+   "đĩa không xoay",
+   "coi tốc độ vi sóng trong không khí bằng c",
+   "sai số đọc tâm vệt ±0,3 cm"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "d (cm)"
+  ],
+  "hang": [
+   [
+    1,
+    6.0
+   ],
+   [
+    2,
+    6.2
+   ],
+   [
+    3,
+    5.9
+   ],
+   [
+    4,
+    6.3
+   ],
+   [
+    5,
+    6.1
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ, không phải số đo thật: d thật = λ/2 = 6.122 cm với f = 2,45 GHz, cộng độ lệch đọc tâm vệt ≤ 0,22 cm; trung bình 6.10 cm, λ = 12.2 cm, c ≈ 2.989e+08 m/s."
+ },
+ "ket_qua_ky_vong": "d_tb = 6.10 cm; λ ≈ 12.2 cm; c ≈ 2.99·10⁸ m/s (lệch 0.4 % so với 3·10⁸ m/s).",
+ "hien_tuong_hay_sai": [
+  "Tính λ = d (quên hai vệt liền nhau chỉ cách λ/2), ra c nhỏ đi một nửa.",
+  "Để nguyên cm khi nhân với Hz, ra c lớn gấp 100 lần.",
+  "Nhầm vi sóng (sóng điện từ) với siêu âm (sóng âm)."
+ ],
+ "sai_so_thuong_gap": [
+  "Vệt chảy rộng khoảng 1 cm, khó xác định tâm.",
+  "Quay quá lâu thì các vệt loang vào nhau.",
+  "Tần số thật của lò có thể lệch chút ít quanh 2,45 GHz."
+ ],
+ "an_toan": [
+  "Không cho kim loại vào lò; không quay khi lò trống.",
+  "Sô-cô-la nóng chảy có thể gây bỏng nhẹ."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "f"
+  ],
+  "dau_ra": [
+   "thanh sô-cô-la với các vệt chảy cách λ/2",
+   "bảng 5 lần đo có nhiễu đọc tâm vệt"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Cho học sinh tự đặt thước đo d trên ảnh thanh sô-cô-la, ghi 5 lần, tính c.",
+  "diem_nhan": "Hỏi trước: λ bằng d hay 2d?"
+ }
+}

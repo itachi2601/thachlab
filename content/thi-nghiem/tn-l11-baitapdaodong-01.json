@@ -1,0 +1,163 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 4. Bài tập về dao động điều hoà",
+ "lesson_id": 23,
+ "nguon_trong_bai": "content/lesson-samples/l11-bai-tap-dao-dong/theory.html",
+ "id": "tn-l11-baitapdaodong-01",
+ "ten": "Đo chu kì chùm chìa khoá treo dây bằng đồng hồ điện thoại",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "daodong.chu_ki_tan_so",
+  "daodong.van_toc_cuc_dai",
+  "do_luong.sai_so_ngau_nhien"
+ ],
+ "muc_tieu": "Đo T bằng cách bấm giờ 10 dao động, lặp 5 lần; ghi kết quả T ± ΔT, rồi tính ω = 2π/T và v_max = Aω.",
+ "dung_cu": [
+  {
+   "ten": "Chùm chìa khoá",
+   "so_luong": 1
+  },
+  {
+   "ten": "Sợi dây mảnh dài 36 cm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện thoại có đồng hồ bấm giờ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Thước kẻ (đo độ kéo lệch)",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Buộc chùm chìa khoá vào dây dài 36 cm, treo lên mép bàn.",
+   "Kéo lệch A = 5,0 cm rồi thả nhẹ.",
+   "Bấm giờ 10 dao động (t10), lặp 5 lần."
+  ],
+  "quan_sat": [
+   "t10 (s): 12,12; 11,93; 12,18; 11,89; 12,03."
+  ],
+  "rut_ra": [
+   "t10 trung bình 12,03 s, T = 1,203 s.",
+   "Sai số t10 = (12,18 − 11,89)/2 ≈ 0,15 s nên ΔT ≈ 0,015 s ≈ 0,02 s: T = 1,20 ± 0,02 s.",
+   "ω = 2π/T ≈ 5,22 rad/s; v_max = Aω ≈ 26 cm/s."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "L",
+   "ten": "Chiều dài dây",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 0.2,
+   "max": 1.0,
+   "mac_dinh": 0.36,
+   "buoc": 0.02
+  },
+  {
+   "ky_hieu": "A",
+   "ten": "Độ kéo lệch (biên độ)",
+   "don_vi": "cm",
+   "kieu": "dieu_chinh",
+   "min": 2,
+   "max": 8,
+   "mac_dinh": 5,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "g",
+   "ten": "Gia tốc trọng trường",
+   "don_vi": "m/s²",
+   "kieu": "co_dinh",
+   "gia_tri": 9.8
+  },
+  {
+   "ky_hieu": "t10",
+   "ten": "Thời gian 10 dao động",
+   "don_vi": "s",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.2
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "s",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "v_max",
+   "ten": "Tốc độ cực đại",
+   "don_vi": "cm/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "T = 2π·√(L/g)",
+   "t10 = 10·T + sai lệch bấm tay",
+   "ω = 2π/T",
+   "v_max = A·ω"
+  ],
+  "gia_thiet": [
+   "góc lệch nhỏ (5 cm trên dây 36 cm, khoảng 8°)",
+   "bỏ qua cản không khí trong 10 dao động",
+   "sai lệch bấm tay ngẫu nhiên, cỡ 0,1–0,2 s mỗi lần"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "t10 (s)"
+  ],
+  "hang": [
+   [
+    1,
+    12.12
+   ],
+   [
+    2,
+    11.93
+   ],
+   [
+    3,
+    12.18
+   ],
+   [
+    4,
+    11.89
+   ],
+   [
+    5,
+    12.03
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ: 10·T tính từ T = 2π√(L/g) cộng sai lệch bấm tay giả định, không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "T = 1,20 ± 0,02 s (mô hình 1,204 s); ω ≈ 5,22 rad/s; v_max ≈ 26 cm/s với A = 5,0 cm.",
+ "sai_so_thuong_gap": [
+  "Phản xạ tay khi bấm bắt đầu/kết thúc: 0,1–0,2 s mỗi lần.",
+  "Đếm nhầm số dao động (đếm 'một' ngay lúc thả)."
+ ],
+ "hien_tuong_hay_sai": [
+  "Chia giá trị t10 cho 10 nhưng quên chia sai số cho 10.",
+  "Bấm từ biên này sang biên kia rồi gọi là một chu kì.",
+  "Lấy khoảng chênh lớn nhất làm sai số mà quên chia đôi."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "dieu_khien": [
+   "L",
+   "A"
+  ],
+  "dau_ra": [
+   "con lắc đung đưa",
+   "đồng hồ bấm giờ có độ trễ ngẫu nhiên",
+   "bảng t10 và T ± ΔT"
+  ],
+  "y_tuong": "Cho học sinh bấm nút bắt đầu/dừng thật; so sai số khi đo 1 dao động và 10 dao động."
+ }
+}

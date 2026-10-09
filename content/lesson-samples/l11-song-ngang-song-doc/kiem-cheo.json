@@ -1,0 +1,120 @@
+{
+ "slug": "l11-song-ngang-song-doc",
+ "ok": true,
+ "issues": [
+  {
+   "muc_do": "nen_sua",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:6 (hộp Mục tiêu, trước quiz 1)",
+   "van_de": "Mục tiêu nêu sẵn 'sóng truyền năng lượng mà phần tử ở lại' đứng trước câu Dự đoán, mà đáp án C của quiz 1 chính là ý đó (hộp đứng trước quiz chứa đáp án).",
+   "bang_chung": "dòng 6: 'Giải thích vì sao sóng truyền năng lượng mà phần tử ở lại' vs quiz 1 đáp án C 'Năng lượng dao động; nước ở chỗ phao chỉ lên xuống'",
+   "cach_sua": "Đổi mục tiêu thành 'Nói được sóng truyền đi cái gì và cái gì ở lại tại chỗ' (không nêu đáp án)."
+  },
+  {
+   "muc_do": "nen_sua",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:152 (details II.4) và bảng 'Truyền trong' dòng 142",
+   "van_de": "Cách nói 'mặt nước là sóng ngang' và 'mặt chất lỏng có trọng lực và sức căng mặt ngoài kéo về nên có sóng ngang' là gần đúng: lực hồi phục đúng (trọng lực với sóng dài, sức căng mặt ngoài với gợn nhỏ) nhưng phần tử nước thực ra chuyển động theo quỹ đạo gần tròn/elip nhỏ, không thuần vuông góc. SGK Vật lí 11 (KNTT/CTST/CD) xếp sóng trên mặt nước vào sóng ngang, nên bài khớp SGK; chưa đối chiếu được chữ trong từng sách (không có SGK tại chỗ).",
+   "bang_chung": "Vật lí sóng mặt nước (sóng trọng lực/mao dẫn); quiz 5 'phao dời ≈ 0' vẫn đúng.",
+   "cach_sua": "Thêm một dòng trong details: 'Thực ra phần tử nước vạch quỹ đạo tròn nhỏ; SGK gộp vào sóng ngang vì có thành phần lên – xuống rõ rệt'; đổi 'có sóng ngang' thành 'có thể có sóng ngang'."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:65, :164, :263 (trước quiz 2, 4, 7)",
+   "van_de": "Ba chỗ đứng ngay trước quiz đã nói gần như thẳng đáp án: 'sóng âm trong không khí' liệt vào ví dụ sóng dọc trước quiz 2; 🔑 'W ~ A²f²' trước quiz 4; câu 'Tên gọi so phương dao động với phương truyền' trước quiz 7. Quiz thành điền số/áp dụng chứ không còn dự đoán.",
+   "bang_chung": "quiz 2 đáp án A, quiz 4 đáp án B (2²=4), quiz 7 đáp án B",
+   "cach_sua": "Chấp nhận nếu coi là quiz áp dụng; muốn chặt hơn thì chuyển câu 263 xuống sau quiz 7 và bỏ ví dụ 'sóng âm' khỏi dòng 65 (để quiz 2 tự suy)."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:164-175 (II.5, quiz 4)",
+   "van_de": "Bullet nói 'năng lượng sóng ∝ A², f²' nhưng quiz hỏi 'năng lượng sóng truyền đi mỗi giây' (công suất). Với v không đổi (dây cùng lực căng) thì ×4 đúng, nhưng hai đại lượng bị trộn. Việc có thêm f² vượt chữ SGK (SGK thường chỉ nêu ∝ A²) — đúng vật lí cho cùng môi trường, nhưng không chắc SGK có.",
+   "bang_chung": "P = ½μvω²A² trên dây → ∝ A²f² khi μ,v cố định; đáp án B=4 đúng, A=2, C=1, D=√2 đều sai chắc chắn",
+   "cach_sua": "Đổi bullet thành 'năng lượng (và công suất) sóng tỉ lệ A² và f² trong cùng một môi trường' hoặc đổi quiz thành 'năng lượng sóng truyền qua mỗi giây'."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:418-420 (⭐⭐⭐)",
+   "van_de": "vP = 8 km/s, vS = 4,5 km/s là giá trị manto trên (gần Moho), đúng bậc đại lượng và tỉ số 1,78 hợp lí (thực tế ≈1,73); nhưng ở d ≈ 206 km với động đất nông thì tia sóng chủ yếu trong vỏ (≈6 và 3,5 km/s). Số không nói là minh hoạ.",
+   "bang_chung": "d/4,5 − d/8 = 20 → d = 20/0,097222 = 205,7 km ≈ 206 ✓ phép tính đúng",
+   "cach_sua": "Thêm '(số minh hoạ)' vào đề ⭐⭐⭐."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:95-96 và content/thi-nghiem/tn-l11-songngangdoc-02/03.json",
+   "van_de": "v = 7,0 m/s slinky căng 4 m là số minh hoạ, đã ghi rõ 'số minh hoạ' trong bài và JSON; hợp lí (slinky căng vài m thường vài m/s đến ~10 m/s). Số liệu nhất quán: bảng 5 lần khớp JSON, trung bình 1,154, v = 8/1,154 = 6,93, lệch 0,98 % < 1 %, độ lệch so với 1,143 đều ≤ 0,07 s.",
+   "bang_chung": "tính lại bằng Python: mean=1,154; 2L/mean=6,932; |lệch lần 2|=0,064; lần 3=0,056 (khớp dòng 114)",
+   "cach_sua": "Không cần sửa; khi thầy đo thật thì thay số."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:115 (details 'Đọc bảng')",
+   "van_de": "'Tay bấm trễ ~0,1 s lúc đầu và lúc cuối' — hai độ trễ cùng chiều gần như triệt tiêu nhau, sai số thật chủ yếu là chênh lệch hai độ trễ; câu viết dễ hiểu là cộng 0,2 s.",
+   "bang_chung": "JSON mô hình ghi 'ngẫu nhiên ±0,1 s'",
+   "cach_sua": "Viết 'độ trễ bấm lúc đầu và lúc cuối không bằng nhau, lệch khoảng ±0,1 s'."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:133, :164, bản 'Mang về' 428-434",
+   "van_de": "Các dòng 🔑 dài hơn 3–6 chữ và ghép nhiều ý bằng '·'; hộp Mang về ghép hai ý một dòng bằng ';' (quy tắc 'mỗi ý một dòng'). Cùng kiểu với bài 8 nên chấp nhận được.",
+   "bang_chung": "'🔑 Ngang: rắn + mặt chất lỏng · Dọc: rắn, lỏng, khí · Chân không: không'",
+   "cach_sua": "Rút 🔑 còn 3–6 chữ ('Ngang ⊥, dọc ∥ · cần môi trường'); tách các dòng Mang về có ';' thành hai dòng."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "build_figs.py hình 2 (dòng 'tay vẩy' y=228) và hình 3 (dòng 'đầu đẩy – kéo dọc trục' y=240)",
+   "van_de": "Nhãn đặt xa vật được chỉ: 'tay vẩy' cách chấm tay ~88 px dưới; 'đầu đẩy – kéo dọc trục' cách mũi tên hai đầu trắng ~60 px và bị nhãn cam 'vòng đánh dấu' chen giữa, dễ gán nhầm.",
+   "bang_chung": "ảnh fig-2, fig-3 (viewBox 420, chữ 17, không lỗi chữ nhỏ, không $ trong <text>)",
+   "cach_sua": "Dời 'tay vẩy' lên sát chấm (y≈165) và đưa 'đầu đẩy – kéo' lên ngay dưới mũi tên trắng hoặc đổi sang màu nét khác."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html:356-360 (lời giải bài mẫu)",
+   "van_de": "Danh sách <ol> đánh số tự động 1.–5. trước các chữ a), b), c), d): hiện 'a) ' kèm '1.' (thấy ở ảnh sec-5a: '2. b)', '3. c)'), và bước 'Kiểm tra' thành mục 5.",
+   "bang_chung": "ảnh sec-5a",
+   "cach_sua": "Đổi <ol class='tl-steps'> thành <ul> hoặc bỏ nhãn a), b)."
+  },
+  {
+   "muc_do": "gop_y",
+   "vi_tri": "content/lesson-samples/l11-song-ngang-song-doc/theory.html (lint_do_dai)",
+   "van_de": "2.310 từ hiện ngay > 2000 (~16,5 phút) — cảnh báo gần trần, nhưng trong mức ~2.300 skill cho phép; mục V 283 từ và II.2 255 từ là dài nhất.",
+   "bang_chung": "lint_do_dai: 1 cảnh báo, 0 lỗi cứng; 🎯 ghi 17 phút = ceil(16,5)",
+   "cach_sua": "Không bắt buộc; nếu muốn gọn thì bỏ details 'Ôn nhanh bài 8' bớt 2 ý."
+  }
+ ],
+ "da_xem_anh": [
+  "fig-1",
+  "fig-2",
+  "fig-3",
+  "fig-4",
+  "sec-0",
+  "sec-1",
+  "sec-2a",
+  "sec-2b",
+  "sec-2c",
+  "sec-3a",
+  "sec-5a"
+ ],
+ "da_chay_lenh": {
+  "lint_theory": "OK",
+  "lint_do_dai": "0 lỗi cứng, 1 cảnh báo",
+  "check_quizzes": "8 quiz đủ ok=1/no=3",
+  "validate_bundle": "ok, 0 lỗi/cảnh báo",
+  "grep_thầy": "không có",
+  "tl-quiz": 8,
+  "bundle.theory_html==theory.html": true,
+  "chu_cai_dap_an": "A2 B2 C2 D2",
+  "name_Em_chac": "q5c,q6c,q8c không trùng",
+  "lt_gt": "không còn < > trần trong $…$",
+  "bảng": "tất cả ≤3 cột",
+  "script_style_on": "không",
+  "xuong_CNC": "không",
+  "so_phut": "17 = ceil(16,5)"
+ },
+ "da_giai_lai": "8 quiz từng phương án (đáp án đúng 1, 3 sai chắc chắn, phản hồi gọi đúng chữ cái/phép tính: q5 10 m=v·t, 30 cm=10·3 cm, 20 m=2v·t; q8 1700=340/0,2, 425=λ/4, 68=340·0,2); bài mẫu 340/680=0,5, 0,25, 1500/680=2,206≈2,21; biến thể 340/425=0,8, 0,4, 1500/425=3,53; ⭐ 0,34 m; ⭐⭐ 0,02 W/m² và P≈4,02 W; ⭐⭐⭐ 205,7 km; tn-01 u(2,5;t) tại 0,4/0,6 s = 3,1 cm; tn-02 λ=7/3,5/2/1,4 và điều kiện a·2π/λ<1; tn-03 như trên. Hình: toạ độ nén/dãn hình 3 và 4 đúng (nén tại u=0, đồ thị đi xuống, cách nhau λ), đỉnh sin đặt đúng dải băng, nét 17 px, thứ tự hình 1-2-3-4 đúng.",
+ "y_bo_sot": [
+  "Bản cũ gọi 'cường độ âm' (sóng âm); bản mới đổi thành 'cường độ sóng' — nên thêm một câu 'với sóng âm gọi là cường độ âm'",
+  "Bản cũ: 'hạ âm, siêu âm cũng không truyền được trong chân không' — mới có 'Chân không: không có sóng cơ' (đủ ý, không sót đáng kể)",
+  "Bản cũ giải thích độ trễ Δt = x/v để suy ra pha (chỉ còn trong 'Mang về' bài 8, nhưng có thể thiếu ở details bài này)",
+  "Không bỏ sót ý bắt buộc nào khác: 19/19 ý đã có"
+ ],
+ "ghi_chu": "Ký hiệu khớp bài 8 (u_O = A cos ωt, d, λ, Δφ = 2πd/λ, 'theo chiều truyền thì trừ pha'). Cấu trúc sư phạm đủ: mở bài + dự đoán, 🔑, 3 bẫy có bảng, Trả bài 6 câu, bảng ba cột + bước trống + biến thể, ⭐ phân tầng, Mang về. Chưa xem ảnh sec-2d, 3b, 4, 5b, 6, mau-tra-loi-sai (đọc nội dung theo HTML, không có phần tử hình lạ). Không sửa file nào ngoài kiem-cheo.json."
+}

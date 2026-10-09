@@ -1,0 +1,127 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 15. Thực hành: Đo tốc độ truyền âm",
+ "lesson_id": 34,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/theory.html",
+ "id": "tn-l11-dotocdoam-03",
+ "ten": "Đo tốc độ truyền âm bằng độ trễ giữa hai micro",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "am.toc_do_truyen_am",
+  "am.do_tre_hai_micro"
+ ],
+ "muc_tieu": "Nhận biết phương án đo v = d/Δt từ độ trễ của tiếng động giữa hai micro nối cùng một máy ghi.",
+ "dung_cu": [
+  {
+   "ten": "Hai micro nối chung một máy ghi (hoặc máy tính)",
+   "so_luong": 2
+  },
+  {
+   "ten": "Thước dây",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt hai micro thẳng hàng với nguồn, cách nhau d = 6,00 m.",
+   "Vỗ tay một cái sát micro thứ nhất và ghi âm."
+  ],
+  "quan_sat": [
+   "Đồ thị âm thanh có hai gai; gai thứ hai trễ Δt = 17,5 ms so với gai thứ nhất."
+  ],
+  "rut_ra": [
+   "v = d/Δt = 6,00/0,0175 ≈ 343 m/s. Hai điện thoại riêng lẻ không dùng được vì đồng hồ không đồng bộ."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "d",
+   "ten": "Khoảng cách hai micro",
+   "don_vi": "m",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 10,
+   "mac_dinh": 6,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "t",
+   "ten": "Nhiệt độ phòng",
+   "don_vi": "°C",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 40,
+   "mac_dinh": 20,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "dt",
+   "ten": "Độ trễ giữa hai gai",
+   "don_vi": "ms",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ truyền âm",
+   "don_vi": "m/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "v = d/Δt",
+   "v = 331 + 0,6·t (m/s)"
+  ],
+  "gia_thiet": [
+   "tiếng vỗ tay phát ra ở một điểm sát micro thứ nhất",
+   "hai micro dùng chung một đồng hồ ghi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "d (m)",
+   "Δt (ms)",
+   "v (m/s)"
+  ],
+  "hang": [
+   [
+    2.0,
+    5.8,
+    344.8
+   ],
+   [
+    4.0,
+    11.7,
+    341.9
+   ],
+   [
+    6.0,
+    17.5,
+    342.9
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ sinh từ mô hình v = 343 m/s, độ trễ làm tròn 0,1 ms; không phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Với d = 6,00 m, Δt = 17,5 ms: v ≈ 343 m/s. d càng ngắn thì Δt càng bé, sai số tỉ đối của v càng lớn.",
+ "hien_tuong_hay_sai": [
+  "Dùng hai điện thoại riêng lẻ nên đồng hồ lệch nhau.",
+  "Đặt hai micro không thẳng hàng với nguồn nên d sai."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "d",
+   "t"
+  ],
+  "dau_ra": [
+   "hai gai âm",
+   "Δt",
+   "v"
+  ],
+  "hinh_trong_bai": "Hộp thí nghiệm mục II.6",
+  "y_tuong": "Kéo micro thứ hai ra xa, gai thứ hai lùi dần; hiện v = d/Δt."
+ }
+}

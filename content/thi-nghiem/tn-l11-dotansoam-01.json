@@ -1,0 +1,179 @@
+{
+ "mon": "vat-ly",
+ "lop": 11,
+ "bai": "Bài 10. Thực hành: Đo tần số của sóng âm",
+ "lesson_id": 29,
+ "nguon_trong_bai": "content/lesson-samples/l11-thuc-hanh-do-tan-so-am/theory.html",
+ "id": "tn-l11-dotansoam-01",
+ "ten": "Đo tần số của âm thoa bằng dao động kí và micro",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "amthanh.tan_so_chu_ki",
+  "amthanh.doc_dao_dong_ki",
+  "amthanh.sai_so_nhieu_lan_do"
+ ],
+ "muc_tieu": "Đo tần số của âm thoa 440 Hz: đọc bề rộng L của N chu kì liên tiếp trên màn dao động kí, tính T rồi f, lặp 5 lần, tính f trung bình, sai số tuyệt đối trung bình và viết f = f̄ ± Δf.",
+ "dung_cu": [
+  {
+   "ten": "Âm thoa 440 Hz có hộp cộng hưởng",
+   "so_luong": 1,
+   "ghi_chu": "kèm búa cao su"
+  },
+  {
+   "ten": "Micro",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dao động kí có núm TIME/DIV và VOLT/DIV",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây tín hiệu nối micro vào CH1",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối micro vào CH1 của dao động kí.",
+   "Gõ âm thoa vào búa cao su, đặt sát micro (khoảng 2 cm).",
+   "Chỉnh VOLT/DIV cho sóng cao cỡ 4 ô, TIME/DIV ở 1 ms/ô, chỉnh TRIGGER cho hình đứng yên.",
+   "Đo bề rộng L của N = 4 chu kì liên tiếp, đọc tới 0,1 ô.",
+   "Gõ lại âm thoa và đo như vậy, tổng cộng 5 lần."
+  ],
+  "quan_sat": [
+   "L quanh 9,1 ô, từ 9,0 đến 9,2 ô.",
+   "Sóng nhỏ dần sau mỗi lần gõ."
+  ],
+  "rut_ra": [
+   "Mỗi lần cho f = N/(L·k) hơi khác nhau; f trung bình ≈ 440,6 Hz, Δf̄ ≈ 3,1 Hz.",
+   "Sai số dụng cụ: 0,1 ô tương ứng ≈ 4,8 Hz; Δf = Δf̄ + Δf_dc ≈ 3,1 + 4,8 ≈ 8 Hz.",
+   "Kết quả f = 441 ± 8 Hz, khoảng 433–449 Hz chứa giá trị ghi trên âm thoa (440 Hz)."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số của nguồn âm",
+   "don_vi": "Hz",
+   "kieu": "dieu_chinh",
+   "min": 200,
+   "max": 1000,
+   "mac_dinh": 440,
+   "buoc": 10
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Độ chia thời gian TIME/DIV",
+   "don_vi": "ms/ô",
+   "kieu": "dieu_chinh",
+   "min": 0.1,
+   "max": 5,
+   "mac_dinh": 1,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "N",
+   "ten": "Số chu kì liên tiếp được đo",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 1,
+   "max": 8,
+   "mac_dinh": 4,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "L",
+   "ten": "Bề rộng N chu kì trên màn",
+   "don_vi": "ô",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Chu kì",
+   "don_vi": "ms",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "f_do",
+   "ten": "Tần số tính được",
+   "don_vi": "Hz",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "L_that = N·(1000/f)/k (ô)",
+   "L_doc = L_that + sai số ngẫu nhiên trong ±0,1 ô, làm tròn 0,1 ô",
+   "T = L·k/N (ms)",
+   "f = 1000/T (Hz)",
+   "Δf_i = |f_i − f̄|, Δf = trung bình các Δf_i + Δf_dc (Δf_dc = f̄·0,1/L)"
+  ],
+  "gia_thiet": [
+   "âm đơn, biên độ không đổi trong lúc đọc",
+   "độ chia thời gian chính xác (núm hiệu chỉnh ở vị trí chuẩn)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần",
+   "L (ô)",
+   "f (Hz)"
+  ],
+  "hang": [
+   [
+    1,
+    9.1,
+    439.6
+   ],
+   [
+    2,
+    9.0,
+    444.4
+   ],
+   [
+    3,
+    9.2,
+    434.8
+   ],
+   [
+    4,
+    9.1,
+    439.6
+   ],
+   [
+    5,
+    9.0,
+    444.4
+   ]
+  ],
+  "ghi_chu": "Số minh hoạ, sinh từ mô hình với N = 4, k = 1 ms/ô, f = 440 Hz và sai số đọc màn ±0,1 ô; không phải số đo thật. f̄ ≈ 440,6 Hz; Δf̄ ≈ 3,1 Hz; Δf_dc ≈ 4,8 Hz; Δf ≈ 8 Hz; δ ≈ 1,8 %."
+ },
+ "ket_qua_ky_vong": "f = 441 ± 8 Hz (sai số tỉ đối ≈ 1,8 %), phù hợp nhãn 440 Hz của âm thoa.",
+ "hien_tuong_hay_sai": [
+  "Đếm đỉnh thay vì đếm chu kì (n đỉnh chỉ cho n − 1 chu kì).",
+  "Quên đổi ms ra s trước khi lật ngược.",
+  "Lấy cả bề rộng L làm một chu kì, quên chia cho N."
+ ],
+ "sai_so_thuong_gap": [
+  "đọc ô lệch cỡ 0,1 ô (ngẫu nhiên)",
+  "núm hiệu chỉnh TIME/DIV chưa về vị trí chuẩn (hệ thống)",
+  "âm thoa tắt dần, sóng nhỏ"
+ ],
+ "goi_y_mo_phong": {
+  "loai": "do_thi+bang_so_lieu",
+  "dieu_khien": [
+   "f",
+   "k",
+   "N"
+  ],
+  "dau_ra": [
+   "màn dao động kí 10 ô",
+   "bảng L và f",
+   "f̄ ± Δf"
+  ],
+  "hinh_trong_bai": "Hình 3",
+  "y_tuong": "Kéo hai vạch ngắm trên màn để đọc L; bấm Đo lại thì thêm một hàng lệch ngẫu nhiên ±0,1 ô."
+ }
+}
