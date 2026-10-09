@@ -1,0 +1,618 @@
+{
+ "lesson_id": 22,
+ "lesson_title": "Bài 3. Vận tốc, gia tốc trong dao động điều hoà",
+ "generated_at": "2026-10-09",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập 9/10/2026: 5 dạng tự giải khớp, 23 bước buoc[] khớp; sửa nhãn đè ở hình dạng 2, 3, 4 và bỏ lộ dấu v(0) ở loi_hay_gap dạng 3."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $v$ là đạo hàm của $x$ theo $t$; $a$ là đạo hàm của $v$.</li><li><strong>Công thức:</strong> $v=-A\\omega\\sin(\\omega t+\\varphi)$ · $a=-A\\omega^2\\cos(\\omega t+\\varphi)=-\\omega^2x$</li><li>Cực đại: $v_{max}=A\\omega$ · $a_{max}=A\\omega^2$</li><li>⚠ <strong>Điều kiện:</strong> pha tính bằng rad (máy tính ở chế độ radian).</li><li>$v$, $a$ cùng dấu: nhanh dần · ngược dấu: chậm dần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số góc và tốc độ cực đại</span></p><p>Đọc phương trình: $A=5$ cm, $\\omega=4\\pi$ rad/s, $\\varphi=\\dfrac{\\pi}{3}$.</p>$$v_{max}=A\\omega=5\\cdot4\\pi$$<div class=\"bt-ans\">$$v_{max}=20\\pi\\approx62{,}8\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc cực đại</span></p>$$a_{max}=A\\omega^2=5\\cdot(4\\pi)^2=80\\pi^2$$<div class=\"bt-ans\">$$a_{max}\\approx789{,}6\\ \\text{cm/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phương trình $v(t)$ và $a(t)$</span></p><p>Đạo hàm theo $t$:</p>$$v=-A\\omega\\sin(\\omega t+\\varphi)=-20\\pi\\sin\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{cm/s}$$$$a=-A\\omega^2\\cos(\\omega t+\\varphi)=-80\\pi^2\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{cm/s}^2$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vận tốc tại $t=\\dfrac{1}{12}$ s</span></p><p>Pha lúc đó:</p>$$4\\pi\\cdot\\dfrac{1}{12}+\\dfrac{\\pi}{3}=\\dfrac{2\\pi}{3}$$$$v=-20\\pi\\sin\\dfrac{2\\pi}{3}=-20\\pi\\cdot\\dfrac{\\sqrt3}{2}$$<div class=\"bt-ans\">$$v\\approx-54{,}4\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Gia tốc tại $t=\\dfrac{1}{12}$ s</span></p>$$a=-80\\pi^2\\cos\\dfrac{2\\pi}{3}=-80\\pi^2\\cdot\\left(-\\dfrac{1}{2}\\right)$$<div class=\"bt-ans\">$$a=40\\pi^2\\approx394{,}8\\ \\text{cm/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Chiều chuyển động</span></p><p>$v\\lt0$ còn $a\\gt0$: hai đại lượng ngược dấu.</p><p>Kiểm tra bằng li độ: $x=5\\cos\\dfrac{2\\pi}{3}=-2{,}5$ cm, rồi $a=-\\omega^2x=-16\\pi^2\\cdot(-2{,}5)=40\\pi^2$ ✓.</p><div class=\"bt-ans\"><p>Vật đang <strong>ra biên</strong> (phía âm), chuyển động chậm dần.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{max}\\approx62{,}8\\ \\text{cm/s}$ · $a_{max}\\approx789{,}6\\ \\text{cm/s}^2$</p><p>b) $v=-20\\pi\\sin\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$ cm/s · $a=-80\\pi^2\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$ cm/s²</p><p>c) $v\\approx-54{,}4\\ \\text{cm/s}$ · $a\\approx394{,}8\\ \\text{cm/s}^2$ · vật đang ra biên, chậm dần</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>phương trình li độ</strong> rồi hỏi $v$, $a$ → đạo hàm; cực đại là $A\\omega$ và $A\\omega^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 1 · Dễ · Viết v(t), a(t) từ phương trình li độ; v_max, a_max; v và a tại một thời điểm",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "problem_html": "<p>Một vật dao động điều hoà dọc trục Ox với phương trình $x=5\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$, trong đó $x$ tính bằng cm, $t$ tính bằng s.</p><ol type=\"a\"><li>Tính tốc độ cực đại và độ lớn gia tốc cực đại của vật.</li><li>Viết phương trình vận tốc $v(t)$ và gia tốc $a(t)$.</li><li>Tại $t=\\dfrac{1}{12}\\ \\text{s}$, tính $v$ và $a$. Lúc đó vật đang đi về vị trí cân bằng hay ra biên?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Vật dao động quanh vị trí cân bằng O trên trục Ox với biên độ 5 cm\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"47.6\" y1=\"100.0\" x2=\"372.4\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"94.0\" x2=\"70.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"70\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−5</text><line x1=\"210.0\" y1=\"94.0\" x2=\"210.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"350.0\" y1=\"94.0\" x2=\"350.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"350\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">5</text><text x=\"47.6\" y=\"88\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"210\" y1=\"66\" x2=\"350.0\" y2=\"66\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d10-o)\"/><line x1=\"350.0\" y1=\"66\" x2=\"210\" y2=\"66\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d10-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"280.0\" y=\"58\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = 5 cm</text><text x=\"14\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: v_max, a_max;  v, a lúc t = 1/12 s</text><circle cx=\"280.0\" cy=\"82.0\" r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"280.0;255.0;228.3;200.8;173.8;148.1;124.8;104.7;88.8;77.4;71.2;70.3;74.8;84.4;98.9;117.7;140.0;165.0;191.7;219.2;246.2;271.9;295.2;315.3;331.2;342.6;348.8;349.7;345.2;335.6;321.1;302.3;280.0;255.0;228.3;200.8;173.8;148.1;124.8;104.7;88.8;77.4;71.2;70.3;74.8;84.4;98.9;117.7;140.0;165.0;191.7;219.2;246.2;271.9;295.2;315.3;331.2;342.6;348.8;349.7;345.2;335.6;321.1;302.3;280.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật dao động đúng theo phương trình đề cho (chạy chậm 4 lần, 2 chu kì). Vị trí tính theo công thức.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Từ phương trình đọc biên độ, tần số góc và pha ban đầu\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"47.6\" y1=\"100.0\" x2=\"372.4\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"94.0\" x2=\"70.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"70\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−5</text><line x1=\"210.0\" y1=\"94.0\" x2=\"210.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"350.0\" y1=\"94.0\" x2=\"350.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"350\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">5</text><text x=\"47.6\" y=\"88\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"210\" y1=\"66\" x2=\"350.0\" y2=\"66\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><line x1=\"350.0\" y1=\"66\" x2=\"210\" y2=\"66\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d12-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"280.0\" y=\"58\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"14\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x = A cos(ωt + φ)</text><text x=\"14\" y=\"42\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A, ω, φ đọc từ phương trình</text><text x=\"372.4\" y=\"140\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">t = 1/12 s → pha ωt + φ = ?</text></svg><figcaption>Dữ kiện: A, ω, φ đọc thẳng từ phương trình. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$x=5\\cos(4\\pi t+\\pi/3)$ (cm, s)”</td><td>$A=5$ cm; $\\omega=4\\pi$ rad/s; $\\varphi=\\pi/3$</td><td>Dạng $x=A\\cos(\\omega t+\\varphi)$: đọc $A$, $\\omega$, $\\varphi$</td></tr><tr><td>“tính … theo $t$”</td><td>Pha $\\omega t+\\varphi$ tính bằng rad</td><td>⚠ Pha tính bằng rad: máy tính để chế độ radian</td></tr><tr><td>“tốc độ cực đại”</td><td>Cần $v_{max}$</td><td>$v=-A\\omega\\sin(\\omega t+\\varphi)$ nên $v_{max}=A\\omega$</td></tr><tr><td>“gia tốc cực đại”</td><td>Cần $a_{max}$</td><td>$a=-\\omega^2x$ nên $a_{max}=A\\omega^2$</td></tr><tr><td>“viết $v(t)$ và $a(t)$”</td><td>Cần $v(t)$, $a(t)$</td><td>Đạo hàm lần lượt: $v=x'$, $a=v'$</td></tr><tr><td>“tại $t=1/12$ s, tính $v$ và $a$”</td><td>$t=\\dfrac{1}{12}$ s</td><td>Thế $t$ vào pha rồi vào $v(t)$, $a(t)$</td></tr><tr><td>“về vị trí cân bằng hay ra biên”</td><td>So dấu của $v$ và $a$</td><td>⚠ $v$, $a$ cùng dấu: nhanh dần, về O; ngược dấu: chậm dần, ra biên</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>phương trình li độ</b> rồi hỏi $v$, $a$ → lấy đạo hàm: $v=-A\\omega\\sin(\\cdot)$, $a=-\\omega^2x$.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tần số góc và tốc độ cực đại",
+     "hoi": "Tốc độ cực đại $v_{max}$ bằng bao nhiêu?",
+     "dap_so": 62.8,
+     "sai_so": 0.3,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Hay lấy $v_{max}=A$ (quên $\\omega$) hoặc $\\omega=4$ thay vì $4\\pi$; hệ số đứng trước $t$ mới là $\\omega$."
+    },
+    {
+     "tieu_de": "Gia tốc cực đại",
+     "hoi": "Độ lớn gia tốc cực đại $a_{max}$ bằng bao nhiêu?",
+     "dap_so": 789.6,
+     "sai_so": 4,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Dùng $A\\omega$ (đó là $v_{max}$) hoặc quên bình phương $\\omega$; gia tốc có $\\omega^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$a_{max}=A\\omega^2$ vì $a=-\\omega^2x$ và $|x|_{max}=A$",
+       "dung": true
+      },
+      {
+       "text": "$a_{max}=A\\omega$",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ cực đại; gia tốc có thêm một thừa số $\\omega$ nữa."
+      },
+      {
+       "text": "$a_{max}=\\omega^2x$ với $x=5\\cos\\dfrac{\\pi}{3}$",
+       "dung": false,
+       "vi_sao": "Cực đại phải lấy $|x|=A$, không lấy li độ ở thời điểm $t=0$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Phương trình $v(t)$ và $a(t)$",
+     "hoi": "Chọn phương trình vận tốc đúng.",
+     "lua_chon": [
+      {
+       "text": "$v=-20\\pi\\sin\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$",
+       "dung": true
+      },
+      {
+       "text": "$v=20\\pi\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$",
+       "dung": false,
+       "vi_sao": "Đạo hàm của cos là −sin, không phải cos: $v$ không cùng dạng với $x$."
+      },
+      {
+       "text": "$v=-5\\sin\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$",
+       "dung": false,
+       "vi_sao": "Thiếu thừa số $\\omega$ khi đạo hàm hàm hợp; hệ số ở đầu phải là $A\\omega$."
+      }
+     ],
+     "loi_hay_gap": "Quên dấu trừ, hoặc quên nhân $\\omega$ khi đạo hàm hàm hợp."
+    },
+    {
+     "tieu_de": "Vận tốc tại $t=\\dfrac{1}{12}$ s",
+     "hoi": "Vận tốc $v$ lúc $t=\\dfrac{1}{12}$ s bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -54.4,
+     "sai_so": 0.4,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Thế $t$ mà quên cộng $\\varphi$ vào pha, hoặc để máy tính ở chế độ độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính pha $\\omega t+\\varphi$ trước, rồi thế vào $v(t)$",
+       "dung": true
+      },
+      {
+       "text": "Thế $t$ vào $x$ rồi lấy $v=\\omega x$",
+       "dung": false,
+       "vi_sao": "$v$ và $x$ vuông pha, không tỉ lệ nhau: $v$ lấy từ $v(t)$ hoặc $\\omega\\sqrt{A^2-x^2}$ kèm dấu."
+      },
+      {
+       "text": "Dùng $v_{max}$ vì $v$ cực đại",
+       "dung": false,
+       "vi_sao": "Chỉ ở O thì $|v|$ mới cực đại; pha lúc này chưa tới đó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc tại $t=\\dfrac{1}{12}$ s",
+     "hoi": "Gia tốc $a$ lúc $t=\\dfrac{1}{12}$ s bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": 394.8,
+     "sai_so": 3,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Sai dấu: $a$ luôn trái dấu với $x$ lúc đó; xét dấu của $\\cos$ ở pha vừa tính.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế pha vào $a(t)$, hoặc dùng $a=-\\omega^2x$ với $x$ lúc đó",
+       "dung": true
+      },
+      {
+       "text": "Lấy $a=\\dfrac{dv}{dt}$ bằng $v/t$",
+       "dung": false,
+       "vi_sao": "$a$ là đạo hàm, không phải thương $v/t$ (chuyển động không đều)."
+      },
+      {
+       "text": "Dùng $a_{max}$ vì $a$ cực đại",
+       "dung": false,
+       "vi_sao": "Cực đại chỉ ở biên; lúc này $|x|\\lt A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều chuyển động",
+     "hoi": "Lúc đó vật đang ở trạng thái nào?",
+     "lua_chon": [
+      {
+       "text": "Ra biên, chậm dần",
+       "dung": true
+      },
+      {
+       "text": "Về O, nhanh dần",
+       "dung": false,
+       "vi_sao": "Nhanh dần khi $v$, $a$ cùng dấu; ở đây $v\\lt0$ còn $a\\gt0$."
+      },
+      {
+       "text": "Chuyển động nhanh dần đều",
+       "dung": false,
+       "vi_sao": "Trong dao động điều hoà không có “đều”: $a$ đổi theo vị trí."
+      }
+     ],
+     "loi_hay_gap": "Nhìn vào dấu của riêng $v$ hay $a$ mà không so với nhau.",
+     "chon_buoc_ke": [
+      {
+       "text": "So dấu của $v$ và $a$",
+       "dung": true
+      },
+      {
+       "text": "Chỉ xét dấu của $a$",
+       "dung": false,
+       "vi_sao": "$a\\gt0$ chỉ nói gia tốc hướng về phía dương, chưa nói vật nhanh hay chậm."
+      },
+      {
+       "text": "Chỉ xét độ lớn của $v$",
+       "dung": false,
+       "vi_sao": "Độ lớn của một giá trị đơn lẻ không cho biết đang tăng hay giảm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $v$ và $x$ vuông pha nên không cùng đạt cực đại.</li><li><strong>Hệ thức độc lập:</strong> $A^2=x^2+\\dfrac{v^2}{\\omega^2}$, suy ra $|v|=\\omega\\sqrt{A^2-x^2}$</li><li>$a=-\\omega^2x$ (trái dấu $x$, hướng về O)</li><li>⚠ <strong>Điều kiện:</strong> hệ thức chỉ cho $|v|$; dấu của $v$ lấy từ chiều chuyển động.</li><li>$v$, $a$ cùng dấu: nhanh dần · ngược dấu: chậm dần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ lớn vận tốc tại $x=6$ cm</span></p>$$|v|=\\omega\\sqrt{A^2-x^2}=4\\sqrt{10^2-6^2}=4\\sqrt{64}$$<div class=\"bt-ans\">$$|v|=32\\ \\text{cm/s}$$</div><p>Chiều dương nên $v=+32$ cm/s.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc tại $x=6$ cm</span></p>$$a=-\\omega^2x=-4^2\\cdot6$$<div class=\"bt-ans\">$$a=-96\\ \\text{cm/s}^2$$</div><p>Dấu trừ: gia tốc hướng về O.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Nhanh dần hay chậm dần</span></p><p>$v=+32$ còn $a=-96$: ngược dấu.</p><div class=\"bt-ans\"><p>Vật <strong>chuyển động chậm dần</strong> (đang ra biên dương), không phải “đều”.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tìm li độ khi tốc độ $24$ cm/s</span></p><p>Từ hệ thức độc lập:</p>$$x^2=A^2-\\dfrac{v^2}{\\omega^2}=10^2-\\dfrac{24^2}{4^2}=100-36=64$$<div class=\"bt-ans\">$$|x|=8\\ \\text{cm}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $|v|=32\\ \\text{cm/s}$</p><p>b) $a=-96\\ \\text{cm/s}^2$ · chậm dần</p><p>c) $|x|=8\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>li độ</strong> mà hỏi <strong>tốc độ</strong> (hoặc ngược lại) → $A^2=x^2+v^2/\\omega^2$; $a=-\\omega^2x$; so dấu $v$, $a$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 2 · Trung bình · Biết li độ tìm tốc độ và gia tốc, xét nhanh hay chậm dần; biết tốc độ tìm li độ",
+   "topic": "Công thức vận tốc, gia tốc theo li độ",
+   "problem_html": "<p>Một vật dao động điều hoà trên trục Ox với biên độ $A=10\\ \\text{cm}$ và tần số góc $\\omega=4\\ \\text{rad/s}$. Vật đi qua li độ $x=+6\\ \\text{cm}$ theo chiều dương.</p><ol type=\"a\"><li>Tính độ lớn vận tốc tại vị trí đó.</li><li>Tính gia tốc tại vị trí đó (kể cả dấu). Vật đang chuyển động nhanh dần hay chậm dần?</li><li>Ở một thời điểm khác, tốc độ của vật là $24\\ \\text{cm/s}$. Li độ của vật khi đó có độ lớn bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Vật dao động trên trục Ox, đang qua li độ 6 cm theo chiều dương\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"14.5\" y1=\"104.0\" x2=\"405.5\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"98.0\" x2=\"40.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"40\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−10</text><line x1=\"210.0\" y1=\"98.0\" x2=\"210.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"380.0\" y1=\"98.0\" x2=\"380.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"380\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><text x=\"14.5\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"312.0\" y1=\"52.0\" x2=\"312.0\" y2=\"112.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"312\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x = 6 cm</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = 10 cm,  ω = 4 rad/s</text><text x=\"14\" y=\"40\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: |v|, a tại x = 6 cm;  nhanh hay chậm dần</text><circle cx=\"312.0\" cy=\"86.0\" r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"312.0;336.6;356.3;370.4;378.3;379.7;374.7;363.3;346.0;323.5;296.6;266.4;234.0;200.7;167.8;136.5;108.0;83.4;63.7;49.6;41.7;40.3;45.3;56.7;74.0;96.5;123.4;153.6;186.0;219.3;252.2;283.5;312.0;336.6;356.3;370.4;378.3;379.7;374.7;363.3;346.0;323.5;296.6;266.4;234.0;200.7;167.8;136.5;108.0;83.4;63.7;49.6;41.7;40.3;45.3;56.7;74.0;96.5;123.4;153.6;186.0;219.3;252.2;283.5;312.0\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lúc bắt đầu vật qua x = 6 cm theo chiều dương (đúng thời gian thật, 2 chu kì). Vị trí tính theo công thức.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 156\" role=\"img\" aria-label=\"Vật ở li độ 6 cm, đang đi theo chiều dương của trục Ox\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"14.5\" y1=\"104.0\" x2=\"405.5\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"40.0\" y1=\"98.0\" x2=\"40.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"40\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−10</text><line x1=\"210.0\" y1=\"98.0\" x2=\"210.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"380.0\" y1=\"98.0\" x2=\"380.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"380\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><text x=\"14.5\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"312.0\" y1=\"52.0\" x2=\"312.0\" y2=\"112.0\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"312\" y=\"150\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x = 6 cm</text><line x1=\"324\" y1=\"74\" x2=\"368\" y2=\"74\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d22-b)\"/><text x=\"326\" y=\"59\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều chuyển động</text><circle cx=\"312.0\" cy=\"86.0\" r=\"8\" fill=\"#34d399\"/><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">|v| từ x:  A² = x² + v²/ω²</text></svg><figcaption>Dữ kiện: biết x, A, ω và chiều chuyển động. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“biên độ $A=10$ cm, $\\omega=4$ rad/s”</td><td>$A=10$ cm; $\\omega=4$ rad/s</td><td>$v_{max}=A\\omega$; $a_{max}=A\\omega^2$ là cực trị, chưa phải giá trị tại $x$</td></tr><tr><td>“đi qua li độ $x=+6$ cm”</td><td>$x=+6$ cm</td><td>Hệ thức độc lập: $A^2=x^2+\\dfrac{v^2}{\\omega^2}$</td></tr><tr><td>“theo chiều dương”</td><td>$v\\gt0$</td><td>⚠ Hệ thức chỉ cho $|v|$: dấu của $v$ lấy từ chiều chuyển động</td></tr><tr><td>“tính độ lớn vận tốc”</td><td>Cần $|v|$</td><td>$|v|=\\omega\\sqrt{A^2-x^2}$</td></tr><tr><td>“tính gia tốc (kể cả dấu)”</td><td>Cần $a$</td><td>$a=-\\omega^2x$ (luôn trái dấu $x$, hướng về O)</td></tr><tr><td>“nhanh dần hay chậm dần”</td><td>So dấu $v$ và $a$</td><td>Cùng dấu: nhanh dần; ngược dấu: chậm dần; không có “đều”</td></tr><tr><td>“tốc độ là 24 cm/s”</td><td>$|v|=24$ cm/s</td><td>Giải ngược: $x^2=A^2-\\dfrac{v^2}{\\omega^2}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Biết <b>li độ</b> hỏi <b>tốc độ</b> (hoặc ngược lại) → $A^2=x^2+\\dfrac{v^2}{\\omega^2}$; $a=-\\omega^2x$; so dấu $v$, $a$.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Độ lớn vận tốc tại $x=6$ cm",
+     "hoi": "Độ lớn vận tốc $|v|$ tại li độ đó bằng bao nhiêu?",
+     "dap_so": 32,
+     "sai_so": 0.2,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Lấy $A\\omega$ (chỉ đúng tại O) hoặc quên nhân $\\omega$ sau khi khai căn."
+    },
+    {
+     "tieu_de": "Gia tốc tại $x=6$ cm",
+     "hoi": "Gia tốc $a$ (chiều dương là chiều Ox) bằng bao nhiêu?",
+     "dap_so": -96,
+     "sai_so": 1,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Quên dấu trừ hoặc quên bình phương $\\omega$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$a=-\\omega^2x$ vì gia tốc luôn hướng về O",
+       "dung": true
+      },
+      {
+       "text": "$a=-\\omega x$",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương: đơn vị của $\\omega x$ là cm/s, không phải cm/s²."
+      },
+      {
+       "text": "$a=-\\omega^2A$",
+       "dung": false,
+       "vi_sao": "Đó là gia tốc ở biên; vật đang ở $x\\lt A$ nên phải dùng $x$ hiện tại."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Nhanh dần hay chậm dần",
+     "hoi": "Vật đang chuyển động thế nào?",
+     "lua_chon": [
+      {
+       "text": "Chậm dần, vì $v$ và $a$ ngược dấu",
+       "dung": true
+      },
+      {
+       "text": "Nhanh dần, vì $|a|$ khá lớn",
+       "dung": false,
+       "vi_sao": "Nhanh hay chậm do $v$ và $a$ cùng hay ngược dấu, không do $|a|$ lớn hay nhỏ."
+      },
+      {
+       "text": "Nhanh dần đều, vì vật đi theo chiều dương",
+       "dung": false,
+       "vi_sao": "Không có nhanh dần đều trong dao động điều hoà; chiều dương cũng không quyết định nhanh hay chậm."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng cứ đi theo chiều dương là nhanh dần, hoặc gọi là “nhanh dần đều”.",
+     "chon_buoc_ke": [
+      {
+       "text": "So dấu của $v$ và $a$",
+       "dung": true
+      },
+      {
+       "text": "So $|v|$ với $A\\omega$",
+       "dung": false,
+       "vi_sao": "Phép so đó chỉ cho biết vật gần O hay xa O, chưa cho biết đang nhanh hay chậm dần."
+      },
+      {
+       "text": "Chỉ nhìn chiều chuyển động",
+       "dung": false,
+       "vi_sao": "Chiều chuyển động không đủ: phải so với chiều của gia tốc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tìm li độ khi tốc độ cho trước",
+     "hoi": "Khi tốc độ là 24 cm/s thì $|x|$ bằng bao nhiêu?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Quên chia $v^2$ cho $\\omega^2$ (đơn vị cm²/s² không cộng được với cm²).",
+     "chon_buoc_ke": [
+      {
+       "text": "$x^2=A^2-\\dfrac{v^2}{\\omega^2}$",
+       "dung": true
+      },
+      {
+       "text": "$x^2=A^2-v^2$",
+       "dung": false,
+       "vi_sao": "Thiếu $\\omega^2$ ở mẫu: $v$ và $x$ khác đơn vị, không trừ trực tiếp được."
+      },
+      {
+       "text": "$x=\\dfrac{v}{\\omega}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{v}{\\omega}$ cùng đơn vị với $x$ nhưng bằng $\\sqrt{A^2-x^2}$, không phải $x$."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $v$ sớm $x$ góc $\\dfrac{\\pi}{2}$; $a$ ngược pha $x$ (sớm $x$ góc $\\pi$).</li><li><strong>Đọc đồ thị:</strong> $A$ ở đỉnh · $T$ giữa hai đáy liền nhau · $\\omega=\\dfrac{2\\pi}{T}$</li><li>$x(0)=A\\cos\\varphi$; độ dốc đồ thị tại $t=0$ cùng dấu với $v(0)=-A\\omega\\sin\\varphi$</li><li>⚠ <strong>Điều kiện:</strong> $\\varphi$ phải khớp cả $x(0)$ lẫn hướng đi, không chỉ $x(0)$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đọc $A$, $T$ và tính $\\omega$</span></p><p>Đỉnh cao nhất ở $x=6$ cm nên $A=6$ cm. Hai đáy liền nhau ở $t=0{,}4$ s và $t=1{,}6$ s nên $T=1{,}2$ s.</p>$$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{1{,}2}=\\dfrac{5\\pi}{3}$$<div class=\"bt-ans\">$$\\omega\\approx5{,}24\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Pha ban đầu của $x$</span></p><p>Tại $t=0$: $x(0)=3$ cm.</p>$$\\cos\\varphi=\\dfrac{x(0)}{A}=\\dfrac{3}{6}=\\dfrac{1}{2}\\ \\Rightarrow\\ \\varphi=\\pm\\dfrac{\\pi}{3}$$<p>Đồ thị đang đi xuống nên $v(0)\\lt0$, tức $\\sin\\varphi\\gt0$.</p><div class=\"bt-ans\">$$\\varphi=\\dfrac{\\pi}{3}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Pha của $v$ và $a$</span></p><p>$v$ sớm $x$ góc $\\dfrac{\\pi}{2}$, $a$ sớm $x$ góc $\\pi$:</p>$$v=A\\omega\\cos\\left(\\omega t+\\varphi+\\dfrac{\\pi}{2}\\right)=-10\\pi\\sin\\left(\\dfrac{5\\pi}{3}t+\\dfrac{\\pi}{3}\\right)\\ \\text{cm/s}$$$$a=A\\omega^2\\cos\\left(\\omega t+\\varphi+\\pi\\right)=-\\dfrac{50\\pi^2}{3}\\cos\\left(\\dfrac{5\\pi}{3}t+\\dfrac{\\pi}{3}\\right)\\ \\text{cm/s}^2$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vận tốc tại $t=0$</span></p>$$v(0)=-A\\omega\\sin\\varphi=-10\\pi\\cdot\\dfrac{\\sqrt3}{2}$$<div class=\"bt-ans\">$$v(0)\\approx-27{,}2\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Gia tốc tại $t=0$</span></p>$$a(0)=-\\omega^2x(0)=-\\left(\\dfrac{5\\pi}{3}\\right)^2\\cdot3$$<div class=\"bt-ans\">$$a(0)\\approx-82{,}2\\ \\text{cm/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Hệ thức độc lập:</p>$$x^2+\\dfrac{v^2}{\\omega^2}=9+\\dfrac{27{,}2^2}{5{,}24^2}\\approx9+27=36=A^2\\ \\checkmark$$<p>$v(0)\\lt0$ khớp độ dốc xuống; $a(0)$ trái dấu $x(0)$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=6\\ \\text{cm}$ · $T=1{,}2\\ \\text{s}$ · $\\omega\\approx5{,}24\\ \\text{rad/s}$ · $\\varphi=\\dfrac{\\pi}{3}$</p><p>b) $v=-10\\pi\\sin\\left(\\dfrac{5\\pi}{3}t+\\dfrac{\\pi}{3}\\right)$ cm/s · $a=-\\dfrac{50\\pi^2}{3}\\cos\\left(\\dfrac{5\\pi}{3}t+\\dfrac{\\pi}{3}\\right)$ cm/s² · $v$ sớm $x$ góc $\\dfrac{\\pi}{2}$, $a$ sớm $x$ góc $\\pi$</p><p>c) $v(0)\\approx-27{,}2\\ \\text{cm/s}$ · $a(0)\\approx-82{,}2\\ \\text{cm/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đồ thị $x$–$t$</strong> → đọc $A$, $T$; $x(0)$ cùng hướng đi cho $\\varphi$; rồi dùng quan hệ pha.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 3 · Trung bình · Đọc đồ thị x–t: biên độ, chu kì, pha ban đầu; suy ra v và a",
+   "topic": "Quan hệ pha giữa x, v, a",
+   "problem_html": "<p>Hình vẽ là đồ thị li độ $x$ theo thời gian $t$ của một vật dao động điều hoà ($x$ tính bằng cm, $t$ tính bằng s), vẽ từ $t=0$ đến $t=1{,}8\\ \\text{s}$.</p><ol type=\"a\"><li>Đọc đồ thị để tìm $A$, $T$, $\\omega$ và pha ban đầu $\\varphi$ của li độ.</li><li>Viết phương trình $v(t)$ và $a(t)$; nêu pha của $v$ và $a$ so với pha của $x$.</li><li>Tính $v$ và $a$ tại $t=0$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 266\" role=\"img\" aria-label=\"Đồ thị li độ theo thời gian của một vật dao động điều hoà từ 0 đến 1,8 giây, kèm vật chạy lên xuống theo đồ thị\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"66.0\" y1=\"32.0\" x2=\"66.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"66.0\" y1=\"208.0\" x2=\"66.0\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"66.0\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"103.1\" y1=\"32.0\" x2=\"103.1\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"103.1\" y1=\"208.0\" x2=\"103.1\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"103.1\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"140.2\" y1=\"32.0\" x2=\"140.2\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"140.2\" y1=\"208.0\" x2=\"140.2\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"140.2\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"177.3\" y1=\"32.0\" x2=\"177.3\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"177.3\" y1=\"208.0\" x2=\"177.3\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"177.3\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,6</text><line x1=\"214.4\" y1=\"32.0\" x2=\"214.4\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"214.4\" y1=\"208.0\" x2=\"214.4\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"214.4\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,8</text><line x1=\"251.6\" y1=\"32.0\" x2=\"251.6\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"251.6\" y1=\"208.0\" x2=\"251.6\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"251.6\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"288.7\" y1=\"32.0\" x2=\"288.7\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"288.7\" y1=\"208.0\" x2=\"288.7\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"288.7\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,2</text><line x1=\"325.8\" y1=\"32.0\" x2=\"325.8\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"325.8\" y1=\"208.0\" x2=\"325.8\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"325.8\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,4</text><line x1=\"362.9\" y1=\"32.0\" x2=\"362.9\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"362.9\" y1=\"208.0\" x2=\"362.9\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"362.9\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,6</text><line x1=\"400.0\" y1=\"32.0\" x2=\"400.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"400.0\" y1=\"208.0\" x2=\"400.0\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"400.0\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,8</text><line x1=\"66.0\" y1=\"34.0\" x2=\"400.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"38\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">6</text><line x1=\"66.0\" y1=\"76.0\" x2=\"400.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"80\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"66.0\" y1=\"118.0\" x2=\"400.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><text x=\"58\" y=\"122\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"66.0\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"66.0\" y1=\"202.0\" x2=\"400.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−6</text><line x1=\"66.0\" y1=\"32.0\" x2=\"66.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"66.0\" y1=\"208.0\" x2=\"400.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"72\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><text x=\"58\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"1\" points=\"66.0,76.0 69.7,83.8 73.4,92.0 77.1,100.5 80.8,109.2 84.6,118.0 88.3,126.8 92.0,135.5 95.7,144.0 99.4,152.2 103.1,160.0 106.8,167.4 110.5,174.2 114.2,180.4 118.0,186.0 121.7,190.7 125.4,194.7 129.1,197.9 132.8,200.2 136.5,201.5 140.2,202.0 143.9,201.5 147.6,200.2 151.4,197.9 155.1,194.7 158.8,190.7 162.5,186.0 166.2,180.4 169.9,174.2 173.6,167.4 177.3,160.0 181.0,152.2 184.8,144.0 188.5,135.5 192.2,126.8 195.9,118.0 199.6,109.2 203.3,100.5 207.0,92.0 210.7,83.8 214.4,76.0 218.2,68.6 221.9,61.8 225.6,55.6 229.3,50.0 233.0,45.3 236.7,41.3 240.4,38.1 244.1,35.8 247.8,34.5 251.6,34.0 255.3,34.5 259.0,35.8 262.7,38.1 266.4,41.3 270.1,45.3 273.8,50.0 277.5,55.6 281.2,61.8 285.0,68.6 288.7,76.0 292.4,83.8 296.1,92.0 299.8,100.5 303.5,109.2 307.2,118.0 310.9,126.8 314.6,135.5 318.4,144.0 322.1,152.2 325.8,160.0 329.5,167.4 333.2,174.2 336.9,180.4 340.6,186.0 344.3,190.7 348.0,194.7 351.8,197.9 355.5,200.2 359.2,201.5 362.9,202.0 366.6,201.5 370.3,200.2 374.0,197.9 377.7,194.7 381.4,190.7 385.2,186.0 388.9,180.4 392.6,174.2 396.3,167.4 400.0,160.0\"/><line x1=\"22.0\" y1=\"32.0\" x2=\"22.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.3\"/><line x1=\"30\" y1=\"76.0\" x2=\"66.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\".6\"><animate attributeName=\"x2\" values=\"66.0;71.6;77.1;82.7;88.3;93.8;99.4;105.0;110.5;116.1;121.7;127.2;132.8;138.4;143.9;149.5;155.1;160.6;166.2;171.8;177.3;182.9;188.5;194.0;199.6;205.2;210.7;216.3;221.9;227.4;233.0;238.6;244.1;249.7;255.3;260.8;266.4;272.0;277.5;283.1;288.7;294.2;299.8;305.4;310.9;316.5;322.1;327.6;333.2;338.8;344.3;349.9;355.5;361.0;366.6;372.2;377.7;383.3;388.9;394.4;400.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0;148.1;135.5;122.4;109.2;96.3;83.8;72.3;61.8;52.7;45.3;39.6;35.8;34.1;34.5;36.9;41.3;47.6;55.6;65.1;76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0;148.1;135.5;122.4;109.2;96.3;83.8;72.3;61.8;52.7;45.3;39.6;35.8;34.1;34.5;36.9;41.3;47.6;55.6;65.1;76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"22\" cy=\"76.0\" r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cy\" values=\"76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0;148.1;135.5;122.4;109.2;96.3;83.8;72.3;61.8;52.7;45.3;39.6;35.8;34.1;34.5;36.9;41.3;47.6;55.6;65.1;76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"66.0\" cy=\"76.0\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"66.0;71.6;77.1;82.7;88.3;93.8;99.4;105.0;110.5;116.1;121.7;127.2;132.8;138.4;143.9;149.5;155.1;160.6;166.2;171.8;177.3;182.9;188.5;194.0;199.6;205.2;210.7;216.3;221.9;227.4;233.0;238.6;244.1;249.7;255.3;260.8;266.4;272.0;277.5;283.1;288.7;294.2;299.8;305.4;310.9;316.5;322.1;327.6;333.2;338.8;344.3;349.9;355.5;361.0;366.6;372.2;377.7;383.3;388.9;394.4;400.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0;148.1;135.5;122.4;109.2;96.3;83.8;72.3;61.8;52.7;45.3;39.6;35.8;34.1;34.5;36.9;41.3;47.6;55.6;65.1;76.0;87.9;100.5;113.6;126.8;139.7;152.2;163.7;174.2;183.3;190.7;196.4;200.2;201.9;201.5;199.1;194.7;188.4;180.4;170.9;160.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"400\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">Cần tìm: A, T, ω, φ;  v(0), a(0)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật (bên trái) dao động lên xuống, điểm cam chạy trên đồ thị x–t (chạy chậm 2 lần). Đồ thị tính theo công thức.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 266\" role=\"img\" aria-label=\"Đồ thị li độ: biên độ đo từ trục đến đỉnh, chu kì đo giữa hai đáy liền nhau, li độ ban đầu và hướng đi tại t bằng 0\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"66.0\" y1=\"32.0\" x2=\"66.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"66.0\" y1=\"208.0\" x2=\"66.0\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"66.0\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"103.1\" y1=\"32.0\" x2=\"103.1\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"103.1\" y1=\"208.0\" x2=\"103.1\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"103.1\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"140.2\" y1=\"32.0\" x2=\"140.2\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"140.2\" y1=\"208.0\" x2=\"140.2\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"140.2\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"177.3\" y1=\"32.0\" x2=\"177.3\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"177.3\" y1=\"208.0\" x2=\"177.3\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"177.3\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,6</text><line x1=\"214.4\" y1=\"32.0\" x2=\"214.4\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"214.4\" y1=\"208.0\" x2=\"214.4\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"214.4\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,8</text><line x1=\"251.6\" y1=\"32.0\" x2=\"251.6\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"251.6\" y1=\"208.0\" x2=\"251.6\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"251.6\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1</text><line x1=\"288.7\" y1=\"32.0\" x2=\"288.7\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"288.7\" y1=\"208.0\" x2=\"288.7\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"288.7\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,2</text><line x1=\"325.8\" y1=\"32.0\" x2=\"325.8\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"325.8\" y1=\"208.0\" x2=\"325.8\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"325.8\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,4</text><line x1=\"362.9\" y1=\"32.0\" x2=\"362.9\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"362.9\" y1=\"208.0\" x2=\"362.9\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"362.9\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,6</text><line x1=\"400.0\" y1=\"32.0\" x2=\"400.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.13\"/><line x1=\"400.0\" y1=\"208.0\" x2=\"400.0\" y2=\"213.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"400.0\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">1,8</text><line x1=\"66.0\" y1=\"34.0\" x2=\"400.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"38\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">6</text><line x1=\"66.0\" y1=\"76.0\" x2=\"400.0\" y2=\"76.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"80\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"66.0\" y1=\"118.0\" x2=\"400.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"5 4\" opacity=\"0.55\"/><text x=\"58\" y=\"122\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"66.0\" y1=\"160.0\" x2=\"400.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−3</text><line x1=\"66.0\" y1=\"202.0\" x2=\"400.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.3\"/><text x=\"58\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">−6</text><line x1=\"66.0\" y1=\"32.0\" x2=\"66.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"66.0\" y1=\"208.0\" x2=\"400.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"72\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><text x=\"58\" y=\"230\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.6\" opacity=\"1\" points=\"66.0,76.0 69.7,83.8 73.4,92.0 77.1,100.5 80.8,109.2 84.6,118.0 88.3,126.8 92.0,135.5 95.7,144.0 99.4,152.2 103.1,160.0 106.8,167.4 110.5,174.2 114.2,180.4 118.0,186.0 121.7,190.7 125.4,194.7 129.1,197.9 132.8,200.2 136.5,201.5 140.2,202.0 143.9,201.5 147.6,200.2 151.4,197.9 155.1,194.7 158.8,190.7 162.5,186.0 166.2,180.4 169.9,174.2 173.6,167.4 177.3,160.0 181.0,152.2 184.8,144.0 188.5,135.5 192.2,126.8 195.9,118.0 199.6,109.2 203.3,100.5 207.0,92.0 210.7,83.8 214.4,76.0 218.2,68.6 221.9,61.8 225.6,55.6 229.3,50.0 233.0,45.3 236.7,41.3 240.4,38.1 244.1,35.8 247.8,34.5 251.6,34.0 255.3,34.5 259.0,35.8 262.7,38.1 266.4,41.3 270.1,45.3 273.8,50.0 277.5,55.6 281.2,61.8 285.0,68.6 288.7,76.0 292.4,83.8 296.1,92.0 299.8,100.5 303.5,109.2 307.2,118.0 310.9,126.8 314.6,135.5 318.4,144.0 322.1,152.2 325.8,160.0 329.5,167.4 333.2,174.2 336.9,180.4 340.6,186.0 344.3,190.7 348.0,194.7 351.8,197.9 355.5,200.2 359.2,201.5 362.9,202.0 366.6,201.5 370.3,200.2 374.0,197.9 377.7,194.7 381.4,190.7 385.2,186.0 388.9,180.4 392.6,174.2 396.3,167.4 400.0,160.0\"/><circle cx=\"66.0\" cy=\"76.0\" r=\"5.5\" fill=\"#fb923c\"/><text x=\"76.0\" y=\"64.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x(0)</text><line x1=\"66.0\" y1=\"75.99999999999999\" x2=\"91.97777777777777\" y2=\"129.32570130848598\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d32-o)\"/><text x=\"97.5\" y=\"112.0\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">đang đi xuống</text><circle cx=\"140.2\" cy=\"202.0\" r=\"5\" fill=\"#38bdf8\"/><line x1=\"140.2\" y1=\"236.0\" x2=\"140.2\" y2=\"244.0\" stroke=\"#38bdf8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><circle cx=\"362.9\" cy=\"202.0\" r=\"5\" fill=\"#38bdf8\"/><line x1=\"362.9\" y1=\"236.0\" x2=\"362.9\" y2=\"244.0\" stroke=\"#38bdf8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><line x1=\"140.22222222222223\" y1=\"242\" x2=\"362.88888888888886\" y2=\"242\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d32-b)\"/><line x1=\"362.88888888888886\" y1=\"242\" x2=\"140.22222222222223\" y2=\"242\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d32-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"251.6\" y=\"258\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">T: giữa hai đáy liền nhau</text><circle cx=\"251.6\" cy=\"34.0\" r=\"5\" fill=\"#f87171\"/><line x1=\"265.55555555555554\" y1=\"118\" x2=\"265.55555555555554\" y2=\"34.0\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d32-r)\"/><line x1=\"265.55555555555554\" y1=\"34.0\" x2=\"265.55555555555554\" y2=\"118\" stroke=\"#f87171\" stroke-width=\"1.8\" marker-end=\"url(#d32-r)\"/><text x=\"0\" y=\"0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"273.6\" y=\"80.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text></svg><figcaption>Dữ kiện: A ở đỉnh, T giữa hai đáy; x(0) và hướng đi cho pha ban đầu. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đồ thị li độ $x$ theo $t$”</td><td>Đồ thị cho $x(t)$</td><td>$x=A\\cos(\\omega t+\\varphi)$</td></tr><tr><td>“đọc đồ thị … $A$, $T$”</td><td>$A$ ở đỉnh; $T$ giữa hai đáy (hoặc hai đỉnh) liền nhau</td><td>$\\omega=\\dfrac{2\\pi}{T}$</td></tr><tr><td>“pha ban đầu $\\varphi$”</td><td>$x(0)$ và hướng đi tại $t=0$</td><td>⚠ $\\cos\\varphi=\\dfrac{x(0)}{A}$ cho hai góc đối nhau: chọn góc khớp hướng đi (độ dốc đồ thị là dấu của $v$)</td></tr><tr><td>“pha của $v$ và $a$ so với pha của $x$”</td><td>Cần độ lệch pha</td><td>$v$ sớm $x$ góc $\\dfrac{\\pi}{2}$; $a$ sớm $x$ góc $\\pi$ (ngược pha)</td></tr><tr><td>“viết $v(t)$ và $a(t)$”</td><td>Cần $v(t)$, $a(t)$</td><td>$v=-A\\omega\\sin(\\omega t+\\varphi)$; $a=-A\\omega^2\\cos(\\omega t+\\varphi)$</td></tr><tr><td>“tính $v$ và $a$ tại $t=0$”</td><td>$t=0$</td><td>Thế $t=0$; kiểm bằng $A^2=x^2+\\dfrac{v^2}{\\omega^2}$ và $a=-\\omega^2x$</td></tr></tbody></table></div>",
+   "nhan_dang": "Cho <b>đồ thị $x$–$t$</b> → đọc $A$, $T$; $x(0)$ và hướng đi cho $\\varphi$; $v$ sớm $\\dfrac{\\pi}{2}$, $a$ sớm $\\pi$ so với $x$.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Đọc $A$, $T$ và tính $\\omega$",
+     "hoi": "Tần số góc $\\omega$ bằng bao nhiêu?",
+     "dap_so": 5.24,
+     "sai_so": 0.03,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Lấy $\\omega=\\dfrac{1}{T}$ (đó là $f$), hoặc đọc $T$ từ đỉnh đến đáy (chỉ là nửa chu kì)."
+    },
+    {
+     "tieu_de": "Pha ban đầu của $x$",
+     "hoi": "Pha ban đầu $\\varphi$ của li độ là bao nhiêu?",
+     "lua_chon": [
+      {
+       "text": "$\\varphi=\\dfrac{\\pi}{3}$, vì $x(0)=\\dfrac{A}{2}$ và đồ thị đang đi xuống",
+       "dung": true
+      },
+      {
+       "text": "$\\varphi=-\\dfrac{\\pi}{3}$",
+       "dung": false,
+       "vi_sao": "Cùng $x(0)=\\dfrac{A}{2}$ nhưng ứng với đồ thị đang đi lên ($v\\gt0$)."
+      },
+      {
+       "text": "$\\varphi=\\dfrac{\\pi}{6}$",
+       "dung": false,
+       "vi_sao": "$\\cos\\dfrac{\\pi}{6}=\\dfrac{\\sqrt3}{2}$, không phải $\\dfrac{1}{2}$."
+      }
+     ],
+     "loi_hay_gap": "Chỉ dùng $\\cos\\varphi=\\dfrac{x(0)}{A}$ rồi lấy góc dương, quên xét đồ thị đi lên hay đi xuống.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $x(0)$ để tìm $|\\varphi|$, rồi xét hướng đi để chọn dấu",
+       "dung": true
+      },
+      {
+       "text": "Chọn $\\varphi=0$ vì đồ thị bắt đầu ở $t=0$",
+       "dung": false,
+       "vi_sao": "$\\varphi=0$ chỉ khi $t=0$ ở biên dương; ở đây $x(0)$ chưa phải đỉnh."
+      },
+      {
+       "text": "Chỉ dùng độ dốc đồ thị, bỏ qua $x(0)$",
+       "dung": false,
+       "vi_sao": "Độ dốc chỉ cho dấu của $v(0)$; độ lớn của $\\varphi$ phải lấy từ $x(0)$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Pha của $v$ và $a$",
+     "hoi": "Chọn pha đúng của $v$ và $a$.",
+     "lua_chon": [
+      {
+       "text": "$v$ có pha $\\omega t+\\varphi+\\dfrac{\\pi}{2}$; $a$ có pha $\\omega t+\\varphi+\\pi$",
+       "dung": true
+      },
+      {
+       "text": "$v$ có pha $\\omega t+\\varphi-\\dfrac{\\pi}{2}$; $a$ có pha $\\omega t+\\varphi-\\pi$",
+       "dung": false,
+       "vi_sao": "$v$ là đạo hàm nên sớm pha hơn $x$ góc $\\dfrac{\\pi}{2}$, không trễ."
+      },
+      {
+       "text": "$v$ có pha $\\omega t+\\varphi$; $a$ có pha $\\omega t+\\varphi+\\pi$",
+       "dung": false,
+       "vi_sao": "$v$ vuông pha $x$, không cùng pha: $v=-A\\omega\\sin(\\cdot)$."
+      }
+     ],
+     "loi_hay_gap": "Nhớ ngược: cho rằng $v$ trễ $x$ góc $\\dfrac{\\pi}{2}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $v=x'$ và $a=v'$ rồi đổi $-\\sin$, $-\\cos$ về dạng cos",
+       "dung": true
+      },
+      {
+       "text": "Cho $v$ cùng pha $x$ vì cùng tần số",
+       "dung": false,
+       "vi_sao": "Cùng tần số không có nghĩa cùng pha: $v$ lệch $x$ một góc $\\dfrac{\\pi}{2}$."
+      },
+      {
+       "text": "Lấy pha của $a$ bằng pha của $v$",
+       "dung": false,
+       "vi_sao": "$a$ lệch $v$ thêm $\\dfrac{\\pi}{2}$ nữa, tổng cộng $\\pi$ so với $x$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vận tốc tại $t=0$",
+     "hoi": "Vận tốc $v(0)$ bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -27.2,
+     "sai_so": 0.3,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Dùng $v(0)=A\\omega$ (cực đại) hoặc quên dấu: dấu của $v(0)$ phải khớp độ dốc của đồ thị tại $t=0$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$v(0)=-A\\omega\\sin\\varphi$",
+       "dung": true
+      },
+      {
+       "text": "$v(0)=A\\omega\\cos\\varphi$",
+       "dung": false,
+       "vi_sao": "Nhầm sin với cos: $v$ chứa $\\sin$, còn $\\cos$ là của $x$."
+      },
+      {
+       "text": "$v(0)=\\omega x(0)$",
+       "dung": false,
+       "vi_sao": "$v$ và $x$ vuông pha, không tỉ lệ nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Gia tốc tại $t=0$",
+     "hoi": "Gia tốc $a(0)$ bằng bao nhiêu (kể cả dấu)?",
+     "dap_so": -82.2,
+     "sai_so": 0.8,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Quên dấu trừ trong $a=-\\omega^2x$; hoặc nhân $\\omega$ thay vì $\\omega^2$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$a(0)=-\\omega^2x(0)$",
+       "dung": true
+      },
+      {
+       "text": "$a(0)=-\\omega^2A$",
+       "dung": false,
+       "vi_sao": "Đó là gia tốc ở biên; $t=0$ vật chưa ở biên."
+      },
+      {
+       "text": "$a(0)=-\\omega x(0)$",
+       "dung": false,
+       "vi_sao": "Thiếu bình phương $\\omega$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $|v|$ cực đại ở O, bằng 0 ở biên; $x$ và $v$ vuông pha.</li><li><strong>Hệ thức độc lập:</strong> $\\left(\\dfrac{x}{A}\\right)^2+\\left(\\dfrac{v}{v_{max}}\\right)^2=1$ · $a=-\\omega^2x$</li><li>Vòng tròn lượng giác: $x=A\\cos\\omega t$, góc quét $\\omega t$ đổi sang $t=\\dfrac{\\omega t}{2\\pi}T$.</li><li>⚠ <strong>Điều kiện:</strong> $t=0$ ở biên dương nên $\\varphi=0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ cực đại</span></p>$$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{1{,}2}=\\dfrac{5\\pi}{3}\\ \\text{rad/s}$$$$v_{max}=A\\omega=8\\cdot\\dfrac{5\\pi}{3}$$<div class=\"bt-ans\">$$v_{max}=\\dfrac{40\\pi}{3}\\approx41{,}9\\ \\text{cm/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Li độ khi $|v|=\\dfrac{v_{max}}{2}$</span></p><p>Hệ thức độc lập với $\\dfrac{v}{v_{max}}=\\dfrac{1}{2}$:</p>$$\\left(\\dfrac{x}{A}\\right)^2=1-\\left(\\dfrac{1}{2}\\right)^2=\\dfrac{3}{4}$$$$|x|=\\dfrac{A\\sqrt3}{2}=4\\sqrt3$$<div class=\"bt-ans\">$$|x|\\approx6{,}93\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Thời gian ngắn nhất từ biên dương</span></p><p>$x=A\\cos\\omega t$, cần $x=\\dfrac{A\\sqrt3}{2}$:</p>$$\\cos\\omega t=\\dfrac{\\sqrt3}{2}\\ \\Rightarrow\\ \\omega t=\\dfrac{\\pi}{6}$$$$t=\\dfrac{\\pi/6}{2\\pi}T=\\dfrac{T}{12}=\\dfrac{1{,}2}{12}$$<div class=\"bt-ans\">$$t=0{,}1\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ lớn gia tốc</span></p>$$|a|=\\omega^2|x|=\\left(\\dfrac{5\\pi}{3}\\right)^2\\cdot4\\sqrt3$$<div class=\"bt-ans\">$$|a|\\approx190\\ \\text{cm/s}^2$$</div><p>Kiểm tra: $a_{max}=A\\omega^2\\approx219$ và $\\dfrac{\\sqrt3}{2}a_{max}\\approx190$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{max}\\approx41{,}9\\ \\text{cm/s}$</p><p>b) $|x|\\approx6{,}93\\ \\text{cm}$</p><p>c) $t=0{,}1\\ \\text{s}\\ (=T/12)$</p><p>d) $|a|\\approx190\\ \\text{cm/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>tốc độ bằng một phần của cực đại</strong> → hệ thức độc lập tìm $x$; vòng tròn lượng giác tìm thời gian.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 4 · Khó · Tốc độ bằng nửa cực đại: li độ, thời gian từ biên, độ lớn gia tốc",
+   "topic": "Hệ thức độc lập với thời gian",
+   "problem_html": "<p>Một vật dao động điều hoà trên trục Ox với biên độ $A=8\\ \\text{cm}$, chu kì $T=1{,}2\\ \\text{s}$. Chọn $t=0$ lúc vật ở biên dương.</p><ol type=\"a\"><li>Tính tốc độ cực đại của vật.</li><li>Khi tốc độ của vật bằng một nửa tốc độ cực đại, li độ có độ lớn bao nhiêu?</li><li>Tính khoảng thời gian ngắn nhất từ $t=0$ đến lúc tốc độ lần đầu bằng một nửa tốc độ cực đại.</li><li>Tính độ lớn gia tốc ở thời điểm đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Vật dao động trên trục Ox, bắt đầu từ biên dương\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"7.6\" y1=\"100.0\" x2=\"412.4\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"94.0\" x2=\"34.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"34\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−8</text><line x1=\"210.0\" y1=\"94.0\" x2=\"210.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"386.0\" y1=\"94.0\" x2=\"386.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"386\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8</text><text x=\"7.6\" y=\"88\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"388.0\" y1=\"56\" x2=\"388.0\" y2=\"78\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d40-g)\"/><text x=\"386.0\" y=\"48\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">t = 0</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = 8 cm,  T = 1,2 s</text><text x=\"14\" y=\"40\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: v_max;  x, t, |a| khi |v| = v_max/2</text><circle cx=\"386.0\" cy=\"82.0\" r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"386.0;382.6;372.6;356.3;334.5;307.8;277.4;244.3;210.0;175.7;142.6;112.2;85.5;63.7;47.4;37.4;34.0;37.4;47.4;63.7;85.5;112.2;142.6;175.7;210.0;244.3;277.4;307.8;334.5;356.3;372.6;382.6;386.0;382.6;372.6;356.3;334.5;307.8;277.4;244.3;210.0;175.7;142.6;112.2;85.5;63.7;47.4;37.4;34.0;37.4;47.4;63.7;85.5;112.2;142.6;175.7;210.0;244.3;277.4;307.8;334.5;356.3;372.6;382.6;386.0\" dur=\"4.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật bắt đầu từ biên dương (chạy chậm 2 lần, 2 chu kì). Vị trí tính theo công thức.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Từ biên dương đi về vị trí cân bằng; cần tìm li độ nơi tốc độ bằng một nửa tốc độ cực đại\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"7.6\" y1=\"100.0\" x2=\"412.4\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"34.0\" y1=\"94.0\" x2=\"34.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"34\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">−8</text><line x1=\"210.0\" y1=\"94.0\" x2=\"210.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">O</text><line x1=\"386.0\" y1=\"94.0\" x2=\"386.0\" y2=\"106.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"386\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8</text><text x=\"7.6\" y=\"88\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">x (cm)</text><line x1=\"388.0\" y1=\"56\" x2=\"388.0\" y2=\"78\" stroke=\"#34d399\" stroke-width=\"2\" marker-end=\"url(#d42-g)\"/><text x=\"386.0\" y=\"48\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">t = 0</text><line x1=\"380.0\" y1=\"70\" x2=\"254\" y2=\"70\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d42-o)\"/><text x=\"254\" y=\"55\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">đi về O</text><text x=\"298\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">x = ?  khi |v| = v_max/2</text><text x=\"14\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(x/A)² + (v/v_max)² = 1</text></svg><figcaption>Dữ kiện: gốc thời gian ở biên dương. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“biên độ $A=8$ cm, chu kì $T=1{,}2$ s”</td><td>$A=8$ cm; $T=1{,}2$ s</td><td>$\\omega=\\dfrac{2\\pi}{T}$; $v_{max}=A\\omega$</td></tr><tr><td>“chọn $t=0$ lúc vật ở biên dương”</td><td>$\\varphi=0$</td><td>⚠ $x=A\\cos(\\omega t)$: gốc thời gian ở biên dương</td></tr><tr><td>“tốc độ bằng một nửa tốc độ cực đại”</td><td>$|v|=\\dfrac{v_{max}}{2}$</td><td>Hệ thức độc lập: $\\left(\\dfrac{x}{A}\\right)^2+\\left(\\dfrac{v}{v_{max}}\\right)^2=1$</td></tr><tr><td>“li độ có độ lớn”</td><td>Cần $|x|$</td><td>Giải $|x|$ từ hệ thức trên</td></tr><tr><td>“thời gian ngắn nhất từ $t=0$ đến lúc đó”</td><td>Cần $t$</td><td>Vòng tròn lượng giác: giải $\\cos\\omega t=\\dfrac{x}{A}$ rồi đổi góc sang thời gian</td></tr><tr><td>“độ lớn gia tốc ở thời điểm đó”</td><td>Cần $|a|$</td><td>$|a|=\\omega^2|x|$</td></tr></tbody></table></div>",
+   "nhan_dang": "Hỏi <b>tốc độ bằng một phần của cực đại</b> → hệ thức độc lập tìm $x$; vòng tròn lượng giác tìm thời gian.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ cực đại",
+     "hoi": "Tốc độ cực đại $v_{max}$ bằng bao nhiêu?",
+     "dap_so": 41.9,
+     "sai_so": 0.2,
+     "don_vi": "cm/s",
+     "loi_hay_gap": "Lấy $\\omega=\\dfrac{1}{T}$ hoặc $2\\pi T$; phải là $\\omega=\\dfrac{2\\pi}{T}$."
+    },
+    {
+     "tieu_de": "Li độ khi $|v|=\\dfrac{v_{max}}{2}$",
+     "hoi": "Khi đó $|x|$ bằng bao nhiêu?",
+     "dap_so": 6.93,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cho rằng tốc độ giảm một nửa thì li độ cũng bằng một nửa biên độ — $x$ và $v$ không tỉ lệ (quan hệ là elip).",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $\\left(\\dfrac{x}{A}\\right)^2+\\left(\\dfrac{v}{v_{max}}\\right)^2=1$",
+       "dung": true
+      },
+      {
+       "text": "$|x|=\\dfrac{A}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$",
+       "dung": false,
+       "vi_sao": "$x$ và $v$ vuông pha, không tỉ lệ: quan hệ là elip."
+      },
+      {
+       "text": "$|x|=\\dfrac{v}{\\omega}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{v}{\\omega}$ bằng $\\sqrt{A^2-x^2}$, không phải $x$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian ngắn nhất từ biên dương",
+     "hoi": "Khoảng thời gian ngắn nhất đó bằng bao nhiêu?",
+     "dap_so": 0.1,
+     "sai_so": 0.005,
+     "don_vi": "s",
+     "loi_hay_gap": "Dùng nhầm mốc $\\dfrac{A}{2}$ (ứng với $\\dfrac{T}{6}$) hoặc $\\dfrac{T}{4}$ (tới O).",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $\\cos\\omega t=\\dfrac{x}{A}$ rồi đổi góc sang thời gian",
+       "dung": true
+      },
+      {
+       "text": "Lấy $t=\\dfrac{T}{6}$ vì $x=\\dfrac{A}{2}$",
+       "dung": false,
+       "vi_sao": "Mốc $\\dfrac{T}{6}$ ứng với $x=\\dfrac{A}{2}$; ở đây $x=\\dfrac{A\\sqrt3}{2}$."
+      },
+      {
+       "text": "Lấy $t=\\dfrac{T}{4}$ vì tốc độ cực đại ở O",
+       "dung": false,
+       "vi_sao": "$\\dfrac{T}{4}$ là lúc tới O, tốc độ khi đó đã cực đại chứ chưa bằng một nửa."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn gia tốc",
+     "hoi": "Độ lớn gia tốc $|a|$ lúc đó bằng bao nhiêu?",
+     "dap_so": 190,
+     "sai_so": 1.5,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Cho rằng $v$ giảm một nửa thì $a$ cũng một nửa $a_{max}$; $a$ tỉ lệ với $x$, không với $v$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$|a|=\\omega^2|x|$ với $|x|$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "$|a|=\\dfrac{a_{max}}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$",
+       "dung": false,
+       "vi_sao": "$a$ tỉ lệ với $x$ chứ không với $v$; tốc độ giảm thì $|a|$ lại tăng."
+      },
+      {
+       "text": "$|a|=\\omega^2A$",
+       "dung": false,
+       "vi_sao": "Đó là $a_{max}$ ở biên; lúc này $|x|\\lt A$."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mọi điểm của cùng một dao động có chung $A$ và $\\omega$.</li><li><strong>Hệ thức độc lập:</strong> $A^2=x^2+\\dfrac{v^2}{\\omega^2}$ viết cho từng điểm</li><li>Trừ vế hai hệ thức để khử $A^2$, giải $\\omega$ trước.</li><li>$T=\\dfrac{2\\pi}{\\omega}$ · $v_{max}=A\\omega$ · $a_{max}=A\\omega^2$</li><li>⚠ <strong>Điều kiện:</strong> hai điểm phải thuộc cùng một dao động.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lập hai hệ thức độc lập rồi trừ vế</span></p><p>Cùng $A$, $\\omega$ cho hai điểm:</p>$$A^2=x_1^2+\\dfrac{v_1^2}{\\omega^2}\\qquad A^2=x_2^2+\\dfrac{v_2^2}{\\omega^2}$$<p>Trừ vế để khử $A^2$:</p>$$x_2^2-x_1^2=\\dfrac{v_1^2-v_2^2}{\\omega^2}$$$$\\omega^2=\\dfrac{v_1^2-v_2^2}{x_2^2-x_1^2}=\\dfrac{40^2-30^2}{4^2-3^2}=\\dfrac{700}{7}=100$$<div class=\"bt-ans\">$$\\omega=10\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Biên độ</span></p>$$A^2=x_1^2+\\dfrac{v_1^2}{\\omega^2}=3^2+\\dfrac{40^2}{10^2}=9+16=25$$<div class=\"bt-ans\">$$A=5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chu kì</span></p>$$T=\\dfrac{2\\pi}{\\omega}=\\dfrac{2\\pi}{10}$$<div class=\"bt-ans\">$$T\\approx0{,}628\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cực đại của $v$ và $a$</span></p>$$v_{max}=A\\omega=5\\cdot10=50\\ \\text{cm/s}$$$$a_{max}=A\\omega^2=5\\cdot10^2$$<div class=\"bt-ans\">$$a_{max}=500\\ \\text{cm/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thử lại với điểm 2:</p>$$|v_2|=\\omega\\sqrt{A^2-x_2^2}=10\\sqrt{25-16}=30\\ \\text{cm/s}\\ \\checkmark$$<p>$v_{max}=50\\gt40$ và $\\gt30$: hợp lí vì hai điểm đều chưa phải O.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega=10\\ \\text{rad/s}$ · $T\\approx0{,}628\\ \\text{s}$</p><p>b) $A=5\\ \\text{cm}$</p><p>c) $v_{max}=50\\ \\text{cm/s}$ · $a_{max}=500\\ \\text{cm/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai cặp ($x$, $v$)</strong> rồi hỏi $A$, $\\omega$ → viết hệ thức độc lập hai lần, trừ vế khử $A^2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "label": "Dạng 5 · Khó · Bài ngược: biết hai cặp (li độ, tốc độ), tìm tần số góc, biên độ, chu kì, gia tốc cực đại",
+   "topic": "Hệ thức độc lập với thời gian",
+   "problem_html": "<p>Một vật dao động điều hoà trên đoạn thẳng. Khi vật đi qua vị trí có li độ $x_1=3\\ \\text{cm}$ thì tốc độ là $40\\ \\text{cm/s}$; khi đi qua vị trí có li độ $x_2=4\\ \\text{cm}$ thì tốc độ là $30\\ \\text{cm/s}$.</p><ol type=\"a\"><li>Tính tần số góc $\\omega$ và chu kì $T$.</li><li>Tính biên độ $A$.</li><li>Tính tốc độ cực đại và độ lớn gia tốc cực đại.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 164\" role=\"img\" aria-label=\"Vật dao động trên trục Ox, hai vị trí x1 và x2 được đánh dấu, tại mỗi vị trí đo được một tốc độ\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"104.0\" x2=\"380.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"98.0\" x2=\"210.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"272.0\" y1=\"98.0\" x2=\"272.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"272\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x₁</text><line x1=\"318.0\" y1=\"98.0\" x2=\"318.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"318\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x₂</text><text x=\"380\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">x</text><line x1=\"272.0\" y1=\"58.0\" x2=\"272.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"318.0\" y1=\"58.0\" x2=\"318.0\" y2=\"110.0\" stroke=\"#38bdf8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x₁ = 3 cm:  |v₁| = 40 cm/s</text><text x=\"14\" y=\"42\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x₂ = 4 cm:  |v₂| = 30 cm/s</text><text x=\"380\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">Cần tìm: ω, T, A, a_max</text><circle cx=\"360.0\" cy=\"86.0\" r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"360.0;359.3;357.1;353.5;348.6;342.3;334.7;326.0;316.1;305.2;293.3;280.7;267.4;253.5;239.3;224.7;210.0;195.3;180.7;166.5;152.6;139.3;126.7;114.8;103.9;94.0;85.3;77.7;71.4;66.5;62.9;60.7;60.0;60.7;62.9;66.5;71.4;77.7;85.3;94.0;103.9;114.8;126.7;139.3;152.6;166.5;180.7;195.3;210.0;224.7;239.3;253.5;267.4;280.7;293.3;305.2;316.1;326.0;334.7;342.3;348.6;353.5;357.1;359.3;360.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng một dao động minh hoạ (chạy chậm; không theo tỉ lệ, biên độ chưa phải đáp số): vật đi qua x₁ rồi x₂ với tốc độ nhỏ dần.</figcaption></figure>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 164\" role=\"img\" aria-label=\"Hai vị trí x1 và x2 trên cùng một dao động với tốc độ tương ứng, biên độ và tần số góc chưa biết\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"40.0\" y1=\"104.0\" x2=\"380.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"98.0\" x2=\"210.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">O</text><line x1=\"272.0\" y1=\"98.0\" x2=\"272.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"272\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x₁</text><line x1=\"318.0\" y1=\"98.0\" x2=\"318.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"318\" y=\"130\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">x₂</text><text x=\"380\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">x</text><line x1=\"272.0\" y1=\"58.0\" x2=\"272.0\" y2=\"110.0\" stroke=\"#fb923c\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"318.0\" y1=\"58.0\" x2=\"318.0\" y2=\"110.0\" stroke=\"#38bdf8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"14\" y=\"22\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x₁ = 3 cm:  |v₁| = 40 cm/s</text><text x=\"14\" y=\"42\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">x₂ = 4 cm:  |v₂| = 30 cm/s</text><text x=\"40\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">−A</text><text x=\"380\" y=\"130\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">+A</text><text x=\"380\" y=\"154\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">Hai điểm cùng một dao động: cùng A, cùng ω</text></svg><figcaption>Dữ kiện: hai cặp (x, v); A và ω chưa biết. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đi qua $x_1=3$ cm thì tốc độ 40 cm/s”</td><td>$x_1=3$ cm; $|v_1|=40$ cm/s</td><td>Hệ thức độc lập viết cho điểm 1: $A^2=x_1^2+\\dfrac{v_1^2}{\\omega^2}$</td></tr><tr><td>“đi qua $x_2=4$ cm thì tốc độ 30 cm/s”</td><td>$x_2=4$ cm; $|v_2|=30$ cm/s</td><td>Viết cho điểm 2: $A^2=x_2^2+\\dfrac{v_2^2}{\\omega^2}$</td></tr><tr><td>“một vật dao động điều hoà”</td><td>Hai điểm thuộc một dao động</td><td>⚠ Cùng $A$, cùng $\\omega$: hai phương trình, hai ẩn</td></tr><tr><td>“tính $\\omega$ và chu kì”</td><td>Cần $\\omega$, $T$</td><td>Trừ vế để khử $A^2$; $T=\\dfrac{2\\pi}{\\omega}$</td></tr><tr><td>“tính biên độ”</td><td>Cần $A$</td><td>Thế $\\omega$ vào một trong hai hệ thức</td></tr><tr><td>“tốc độ cực đại, gia tốc cực đại”</td><td>Cần $v_{max}$, $a_{max}$</td><td>$v_{max}=A\\omega$; $a_{max}=A\\omega^2$</td></tr></tbody></table></div>",
+   "nhan_dang": "Cho <b>hai cặp ($x$, $v$)</b> rồi hỏi $A$, $\\omega$ → viết hệ thức độc lập hai lần, trừ vế để khử $A^2$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lập hai hệ thức độc lập rồi trừ vế",
+     "hoi": "Tần số góc $\\omega$ bằng bao nhiêu?",
+     "dap_so": 10,
+     "sai_so": 0.1,
+     "don_vi": "rad/s",
+     "loi_hay_gap": "Cố tìm $A$ trước. Hai hệ thức chung $A^2$, nên trừ vế để khử $A^2$ rồi rút $\\omega^2$; chú ý thứ tự trừ ở tử và ở mẫu."
+    },
+    {
+     "tieu_de": "Biên độ",
+     "hoi": "Biên độ $A$ bằng bao nhiêu?",
+     "dap_so": 5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cộng hai li độ hoặc lấy li độ lớn hơn làm biên độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $\\omega$ vào $A^2=x^2+\\dfrac{v^2}{\\omega^2}$",
+       "dung": true
+      },
+      {
+       "text": "$A=x_1+x_2$",
+       "dung": false,
+       "vi_sao": "Hai li độ thuộc hai thời điểm khác nhau, cộng lại không cho biên độ."
+      },
+      {
+       "text": "$A=x_2$ vì $x_2$ lớn hơn",
+       "dung": false,
+       "vi_sao": "Tại $x_2$ tốc độ vẫn khác 0 nên vật còn đi tiếp tới biên."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chu kì",
+     "hoi": "Chu kì $T$ bằng bao nhiêu?",
+     "dap_so": 0.628,
+     "sai_so": 0.005,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy $T=\\dfrac{\\omega}{2\\pi}$ (đó là $f$) hoặc $T=\\dfrac{1}{\\omega}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$T=\\dfrac{2\\pi}{\\omega}$",
+       "dung": true
+      },
+      {
+       "text": "$T=\\dfrac{\\omega}{2\\pi}$",
+       "dung": false,
+       "vi_sao": "Đó là tần số $f$ (Hz), không phải chu kì."
+      },
+      {
+       "text": "$T=\\dfrac{1}{\\omega}$",
+       "dung": false,
+       "vi_sao": "Thiếu $2\\pi$: $\\omega$ đo bằng rad/s, một vòng ứng với $2\\pi$ rad."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cực đại của $v$ và $a$",
+     "hoi": "Gia tốc cực đại $a_{max}$ bằng bao nhiêu?",
+     "dap_so": 500,
+     "sai_so": 5,
+     "don_vi": "cm/s²",
+     "loi_hay_gap": "Dùng $A\\omega$ (đó là $v_{max}$) hoặc thế $x_2$ thay vì $A$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$a_{max}=A\\omega^2$",
+       "dung": true
+      },
+      {
+       "text": "$a_{max}=A\\omega$",
+       "dung": false,
+       "vi_sao": "Đó là tốc độ cực đại."
+      },
+      {
+       "text": "$a_{max}=\\omega^2x_2$",
+       "dung": false,
+       "vi_sao": "$x_2$ chưa phải biên; cực đại phải lấy $|x|=A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
