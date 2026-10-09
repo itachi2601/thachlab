@@ -23,6 +23,7 @@
 - [Quy tắc thiết kế](feedback_design_research_rules.md) — UI HS theo docs/QUY-TAC-THIET-KE.md, nêu mã quy tắc
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
+- [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Claude Code trên Mac; batch chỉ khi thầy bảo
 ## Hạ tầng & tra cứu
 - [Credit $100 Anthropic API](project_thachlab_anthropic_credit.md) — hết hạn 22/10/2026, chỉ API/Batch; đốt bằng scripts/batch-ra-soat-bai.mts
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
@@ -125,3 +126,4 @@
 - [Mobile PWA GĐ 2.6](project_thachlab_mobile_pwa.md) — M1–M4 (vỏ PWA, Luyện nhanh 10 câu, offline, Web Push) đã vào main + deploy 2026-10-06; treo: thử thiết bị thật, push thật, M4 chưa tick
 - [Bài tập mẫu: quét dạng trước nháp](project_thachlab_btm_quet_dang.md) — số dạng 2–6 theo ngân hàng; bài 17 nháp 5 dạng, chờ kiểm chéo lần cuối và viết lại
 - [L11: 6 bài lý thuyết còn lại 9/10](project_thachlab_l11_6_bai_con_lai.md) — 6/6 đăng + deploy; treo video + thầy đối chiếu SGK; L10/L11/L12 đã đủ bài tương tác
+- [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài seed 10/10; CĐ01(161)+CĐ02(166) đã ghi DB; còn 12 CĐ + 3 mới + đề
