@@ -991,6 +991,10 @@ html[data-theme="light"] .lesson-shell .lesson-summary-title { color: #1e293b; }
 html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { color: #0f172a; }
 html[data-theme="light"] .lesson-shell :is(.theory-nav, .theory-nav-all) { color: #475569; }
 html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg) { color: #0e7490; }
+/* Nút "Tiếp" hai trạng thái, chỉ ở đoạn có quiz — thuần CSS, không đếm, không chặn: đoạn còn quiz chưa
+   chọn đáp án thì nút nhạt hơn (nét đứt, nền trong) để mắt rơi vào câu hỏi trước; chọn xong một đáp án
+   (bất kể đúng/sai) nút trở lại như thường. Cỡ chữ, đích chạm, màu chữ giữ nguyên (N4/D2). */
+.theory-section:has(.tl-quiz):not(:has(.tl-quiz input:checked)) > .theory-next { border-style: dashed; border-color: rgba(34,211,238,.28); background: transparent; }
 /* Thẻ dán cố định mang câu vừa làm sai theo (features/lessons/theory-sections.ts) khi quay lại
    từ "Ôn ngay" — luôn hiện trên đầu khi cuộn, để không quên đang ôn vì sai câu nào. */
 /* position: fixed (không phải sticky) — thẻ này phải nổi giữa màn hình dưới thanh điều hướng,
