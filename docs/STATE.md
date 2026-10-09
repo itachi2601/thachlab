@@ -11,6 +11,7 @@ File này là bản mô tả hiện trạng dùng chung cho mọi phiên Claude.
 - Học liệu tĩnh: `scripts/build-content.mjs` chạy ở `prebuild`, xuất `public/data/` (catalog + 116 file bài). Sửa lý thuyết phải **deploy lại** mới lên web.
 
 ## Đã hoàn thành
+- **9/10/2026 — 6 bài lý thuyết tương tác L11 còn lại (B4, B7, B9, B10, B11, B15; id 23/26/28/29/30/34)** soạn bằng 6 agent + 6 kiểm chéo, ĐÃ GHI DB + deploy (commit `e37d29cc7`; bài 23/26/29 rỗng nên đăng bằng `upload-lesson.mts`, tạo đề 906–908; sao lưu `scripts/logs/ly-thuyet-bai{28,30,34}-backup-*`). Treo: video 4c, thầy đối chiếu SGK (xem `docs/memory/project_thachlab_l11_6_bai_con_lai.md`). L10/L11/L12 không còn bài thiếu.
 - [x] **Trang chủ HS: sửa sau khi xem trên web thật** (7/10/2026 tối, commit 1fdb79a27 + 0b7eff921, đã deploy + host đã kéo):
   thẻ Rank/Chuỗi ngày hết tràn mép phải ở 375px (grid item thiếu `min-w-0`), nút Luyện nhanh một dòng, chủ đề mở khoá gập còn 3;
   thanh đáy theo vai (c86298e6f) nhận đúng phiên — trước đó render ngoài AuthProvider nên HS đã đăng nhập thấy tab "Đăng nhập"

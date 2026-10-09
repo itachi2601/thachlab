@@ -12,5 +12,5 @@ B22 `thuc-hanh-tong-hop-luc` (67). Commit d840ea842 (lô 1), b603f8ea3 (lô 2), 
 Đã `cap-nhat-ly-thuyet.sh` 7/9 bài + deploy 6/10. **B20 (65) và B22 (67) KHÔNG lên DB hôm đó** (lesson_items rỗng, script đòi đúng 1 dòng) — phát hiện 9/10/2026 qua `public/data/lessons/65|67.json` items=[]; 9/10 đã kiểm chéo lại (bài 67 sửa 3 chỗ lộ đáp án, commit 4f56f73e9), đăng bằng `upload-lesson.mts` (tạo mục Lý thuyết + đề Luyện tập 904/905) + deploy. Lớp 10 giờ đủ 34/34 bài lý thuyết tương tác.
 
 **Treo:** chưa xem ảnh `sec-*` B30 và fig B28 sau sửa chữ SVG; B20 nhãn F_ms hình 3–4 hơi chạm mép thùng; B20/B22 chưa đối chiếu SGK
-(bài cũ 65/67 không có nội dung); chưa còn bài lý thuyết tương tác nào thiếu ở lớp 10. Lớp 11 còn: B4, B7, B9, B10, B11, B15; lớp 12: KHÔNG còn bài nào (kiểm DB 9/10/2026: 20/20 bài lý thuyết tương tác, file = DB).
+(bài cũ 65/67 không có nội dung); chưa còn bài lý thuyết tương tác nào thiếu ở lớp 10. Lớp 11: XONG 9/10/2026 (xem project_thachlab_l11_6_bai_con_lai); lớp 12: KHÔNG còn bài nào (kiểm DB 9/10/2026: 20/20 bài lý thuyết tương tác, file = DB).
 Bài học đã ghi ở cuối skill `soan-bai-ly-thuyet-tuong-tac` (chữ SVG ≥17, bảng không đứng trước quiz, `</div>` khung quiz).
