@@ -71,3 +71,4 @@ Dao động (Bài 1–7 = lesson 20–26), Sóng (Bài 8–15 = 27–34), Điệ
 Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
 một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời, không cần thêm dòng.
 
+- 2026-10-09 · Pre-test HSG KHTN 9 tự soạn: 12/20 đáp án rơi vào A, không câu nào D; vài nhiễu không gắn lỗi thật (kiem-code bắt được) → soạn xong đếm phân bố A/B/C/D (≈ đều) và tính ngược mỗi nhiễu từ một lỗi cụ thể TRƯỚC khi giao soát.
