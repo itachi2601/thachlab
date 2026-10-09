@@ -30,7 +30,7 @@ export default function TroGiangPage() {
           <TroGiangLoader />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

@@ -375,7 +375,7 @@ export default function DangKyKhoaHocPage() {
           </Suspense>
         )}
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

@@ -78,7 +78,7 @@ export default function MessagesPage() {
           <Inbox />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

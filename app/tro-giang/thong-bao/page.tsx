@@ -38,7 +38,7 @@ export default function ThongBaoPage() {
           <ThongBaoLoader />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

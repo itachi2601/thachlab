@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Bug, Paperclip, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
@@ -14,10 +14,92 @@ import { BUG_CATEGORY_LABELS, type BugCategory } from "@/lib/bug-report-labels";
 const inputCls =
   "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-primary focus:outline-none";
 
+// Nút nổi kéo lên/xuống để khỏi che nút bấm của trang. Vị trí lưu trên máy em (localStorage), không gửi đi đâu.
+const POSITION_KEY = "bug-fab-bottom";
+const DRAG_THRESHOLD = 6;
+const STEP = 24;
+
+function clampBottom(px: number): number {
+  const min = window.matchMedia("(max-width: 1023px)").matches ? 76 : 8;
+  const max = Math.max(min, window.innerHeight - 56);
+  return Math.min(max, Math.max(min, Math.round(px)));
+}
+
 export default function BugReportWidget() {
   const { session } = useAuth();
   const toast = useToast();
   const [open, setOpen] = useState(false);
+  // null = vị trí mặc định theo CSS (.bug-fab, né thanh đáy trên điện thoại); có số = em đã kéo.
+  const [bottomPx, setBottomPx] = useState<number | null>(null);
+  const fabRef = useRef<HTMLButtonElement>(null);
+  const drag = useRef<{ startY: number; startBottom: number; moved: boolean } | null>(null);
+  const justDragged = useRef(false);
+
+  useEffect(() => {
+    try {
+      const saved = Number(window.localStorage.getItem(POSITION_KEY));
+      // Đọc sau khi mount (không đọc lúc render) để HTML server và lần render đầu của client khớp nhau.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (saved > 0) setBottomPx(clampBottom(saved));
+    } catch {
+      // Trình duyệt chặn localStorage thì dùng vị trí mặc định.
+    }
+  }, []);
+
+  function currentBottom(): number {
+    const rect = fabRef.current?.getBoundingClientRect();
+    return rect ? window.innerHeight - rect.bottom : 20;
+  }
+
+  function savePosition(px: number) {
+    try {
+      window.localStorage.setItem(POSITION_KEY, String(px));
+    } catch {
+      // Không lưu được thì thôi, lần sau về vị trí mặc định.
+    }
+  }
+
+  function onPointerDown(e: React.PointerEvent<HTMLButtonElement>) {
+    drag.current = { startY: e.clientY, startBottom: currentBottom(), moved: false };
+    justDragged.current = false;
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function onPointerMove(e: React.PointerEvent<HTMLButtonElement>) {
+    const d = drag.current;
+    if (!d) return;
+    const dy = e.clientY - d.startY;
+    if (!d.moved && Math.abs(dy) < DRAG_THRESHOLD) return;
+    d.moved = true;
+    setBottomPx(clampBottom(d.startBottom - dy));
+  }
+
+  function onPointerUp() {
+    const d = drag.current;
+    drag.current = null;
+    if (!d?.moved) return;
+    justDragged.current = true;
+    savePosition(Math.round(currentBottom()));
+  }
+
+  function onClick() {
+    // Thả tay sau khi kéo không được tính là bấm mở form.
+    if (justDragged.current) {
+      justDragged.current = false;
+      return;
+    }
+    setOpen(true);
+  }
+
+  function onKeyDown(e: React.KeyboardEvent<HTMLButtonElement>) {
+    if (e.key !== "ArrowUp" && e.key !== "ArrowDown") return;
+    e.preventDefault();
+    const next = clampBottom(currentBottom() + (e.key === "ArrowUp" ? STEP : -STEP));
+    setBottomPx(next);
+    savePosition(next);
+  }
+
+
   const [category, setCategory] = useState<BugCategory>("khac");
   const [description, setDescription] = useState("");
   const [reporterName, setReporterName] = useState("");
@@ -67,9 +149,18 @@ export default function BugReportWidget() {
   return (
     <>
       <button
+        ref={fabRef}
         type="button"
-        onClick={() => setOpen(true)}
-        className="bug-fab fixed bottom-5 right-5 z-40 flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-panel/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
+        onClick={onClick}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onKeyDown={onKeyDown}
+        style={bottomPx === null ? undefined : { bottom: bottomPx }}
+        title="Kéo lên xuống để dời nút; bấm để báo lỗi"
+        aria-label="Báo lỗi / góp ý. Kéo lên xuống để dời nút, hoặc dùng phím mũi tên."
+        className="bug-fab fixed bottom-5 right-5 z-40 flex min-h-11 touch-none select-none items-center gap-2 rounded-full border border-white/15 bg-panel/95 px-4 py-2.5 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md hover:border-white/30"
       >
         <Bug size={16} className="text-amber-300" />
         Báo lỗi / Góp ý

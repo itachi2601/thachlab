@@ -5,8 +5,9 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 
 /**
- * Tìm bài theo tên, trên trang chủ. Danh sách lấy từ /data/catalog.json (file tĩnh lúc build),
- * chỉ tải khi em chạm ô tìm — không gọi Supabase (quy tắc không thêm round-trip cho /).
+ * Tìm bài theo tên, và sâu hơn: tìm cả chữ trong nội dung lý thuyết của từng bài. Danh sách lấy từ
+ * /data/catalog.json, chữ trong bài từ /data/search-index.json (file tĩnh lúc build) — chỉ tải khi em
+ * chạm ô tìm, không gọi Supabase (quy tắc không thêm round-trip cho /).
  * N1 một việc, C1 chữ ≥16px, D2 đích chạm ≥44px, N3 không hiện danh sách trống trước khi gõ.
  */
 
@@ -37,6 +38,10 @@ interface CatalogFile {
   lessons: CatalogLesson[];
 }
 
+interface IndexFile {
+  lessons: { id: number; x: string }[];
+}
+
 interface Hit {
   id: number;
   title: string;
@@ -44,15 +49,46 @@ interface Hit {
   href: string;
   titleHay: string;
   chapterHay: string;
+  /** Chữ bài đã bỏ dấu (cùng độ dài với `text`) và chữ gốc để hiện đoạn trích. */
+  textHay: string;
+  text: string;
   rank: number;
 }
 
+interface Row {
+  hit: Hit;
+  score: number;
+  /** Vị trí khớp đầu tiên trong `text` — chỉ có khi khớp trong nội dung, không khớp ở tên bài. */
+  at: number;
+  span: number;
+}
+
 const MAX_HITS = 8;
+const SNIPPET_BEFORE = 40;
+const SNIPPET_AFTER = 90;
+
+// Bỏ dấu từng ký tự, giữ nguyên số ký tự để vị trí khớp trong chữ đã bỏ dấu map thẳng sang chữ gốc.
+const charCache = new Map<string, string>();
+function foldChar(c: string): string {
+  let out = charCache.get(c);
+  if (out === undefined) {
+    const base = c.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").toLowerCase();
+    out = base.length === 1 ? base : c.toLowerCase().length === 1 ? c.toLowerCase() : c;
+    charCache.set(c, out);
+  }
+  return out;
+}
+
+function foldKeepLength(value: string): string {
+  let out = "";
+  for (const c of value) out += foldChar(c);
+  return out;
+}
 
 function fold(value: string): string {
   return value
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[̀-ͯ]/g, "")
     .replace(/đ/gi, "d")
     .toLowerCase()
     .replace(/\s+/g, " ")
@@ -63,9 +99,10 @@ function classLabel(name: string): string {
   return /^\d+$/.test(name) ? `Lớp ${name}` : name;
 }
 
-function toHits(catalog: CatalogFile): Hit[] {
+function toHits(catalog: CatalogFile, index: IndexFile | null): Hit[] {
   const classes = new Map(catalog.classes.map((item) => [item.id, item]));
   const chapters = new Map(catalog.chapters.map((item) => [item.id, item]));
+  const texts = new Map((index?.lessons ?? []).map((row) => [row.id, row.x]));
   const hits: Hit[] = [];
   for (const lesson of catalog.lessons) {
     if (!lesson.published) continue;
@@ -80,6 +117,7 @@ function toHits(catalog: CatalogFile): Hit[] {
     });
     if (schoolClass?.slug) params.set("class", schoolClass.slug);
     const meta = [grade, chapter.title].filter(Boolean).join(" · ");
+    const text = texts.get(lesson.id) ?? "";
     hits.push({
       id: lesson.id,
       title: lesson.title,
@@ -87,6 +125,8 @@ function toHits(catalog: CatalogFile): Hit[] {
       href: `/lop-hoc/bai/?${params.toString()}`,
       titleHay: fold(lesson.title),
       chapterHay: fold(chapter.title),
+      textHay: foldKeepLength(text),
+      text,
       rank: lesson.sort_order,
     });
   }
@@ -95,17 +135,42 @@ function toHits(catalog: CatalogFile): Hit[] {
 
 let catalogPromise: Promise<Hit[] | null> | null = null;
 
+function fetchJson<T>(url: string): Promise<T | null> {
+  return fetch(url)
+    .then((res) => (res.ok ? (res.json() as Promise<T>) : null))
+    .catch(() => null);
+}
+
 function loadHits(): Promise<Hit[] | null> {
   if (!catalogPromise) {
-    catalogPromise = fetch("/data/catalog.json")
-      .then((res) => (res.ok ? (res.json() as Promise<CatalogFile>) : null))
-      .then((catalog) => {
-        if (!catalog || !Array.isArray(catalog.lessons) || !Array.isArray(catalog.chapters)) return null;
-        return toHits(catalog);
-      })
-      .catch(() => null);
+    catalogPromise = Promise.all([
+      fetchJson<CatalogFile>("/data/catalog.json"),
+      fetchJson<IndexFile>("/data/search-index.json"),
+    ]).then(([catalog, index]) => {
+      if (!catalog || !Array.isArray(catalog.lessons) || !Array.isArray(catalog.chapters)) return null;
+      return toHits(catalog, index && Array.isArray(index.lessons) ? index : null);
+    });
   }
   return catalogPromise;
+}
+
+/** Đoạn trích quanh chỗ khớp, cắt theo ranh giới từ để không lửng giữa chữ. */
+function snippetOf(text: string, at: number, span: number): { before: string; hit: string; after: string } {
+  let start = Math.max(0, at - SNIPPET_BEFORE);
+  if (start > 0) {
+    const space = text.indexOf(" ", start);
+    if (space !== -1 && space < at) start = space + 1;
+  }
+  let end = Math.min(text.length, at + span + SNIPPET_AFTER);
+  if (end < text.length) {
+    const space = text.lastIndexOf(" ", end);
+    if (space > at + span) end = space;
+  }
+  return {
+    before: (start > 0 ? "…" : "") + text.slice(start, at),
+    hit: text.slice(at, at + span),
+    after: text.slice(at + span, end) + (end < text.length ? "…" : ""),
+  };
 }
 
 export default function ContentSearch({ variant = "public" }: { variant?: "public" | "account" }) {
@@ -123,46 +188,63 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
 
   const folded = fold(query);
   const tokens = folded.split(" ").filter((token) => token.length >= 2);
-  const matches =
+  const rows: Row[] =
     !hits || tokens.length === 0 || folded.length < 2
       ? []
       : hits
           .map((hit) => {
             let score = 0;
-            tokens.forEach((token, index) => {
-              const weight = tokens.length - index;
+            let missing = false;
+            let at = -1;
+            let span = 0;
+            tokens.forEach((token, i) => {
+              const weight = tokens.length - i;
               if (hit.titleHay.includes(token)) score += weight * 2;
               else if (hit.chapterHay.includes(token)) score += weight;
+              else if (hit.textHay.includes(token)) {
+                score += weight;
+                const pos = hit.textHay.indexOf(token);
+                if (at === -1 || pos < at) {
+                  at = pos;
+                  span = token.length;
+                }
+              } else missing = true;
             });
-            return score > 0 ? { hit, score } : null;
+            // Mỗi từ phải khớp ở đâu đó (tên, chương hoặc nội dung bài) thì bài mới hiện.
+            if (missing || score === 0) return null;
+            return { hit, score, at, span } satisfies Row;
           })
-          .filter((row): row is { hit: Hit; score: number } => row !== null)
-          .sort((a, b) => b.score - a.score || a.hit.rank - b.hit.rank)
-          .map((row) => row.hit);
+          .filter((row): row is Row => row !== null)
+          // Khớp tên/chương lên trước, rồi tới khớp trong nội dung; trong mỗi nhóm xếp theo điểm, rồi theo thứ tự bài.
+          .sort((a, b) => {
+            const aTitle = a.at === -1 ? 0 : 1;
+            const bTitle = b.at === -1 ? 0 : 1;
+            return aTitle - bTitle || b.score - a.score || a.hit.rank - b.hit.rank;
+          });
 
-  const shown = matches.slice(0, MAX_HITS);
+  const shown = rows.slice(0, MAX_HITS);
   const ready = folded.length >= 2;
 
   const shell =
     variant === "account"
-      ? "rounded-2xl border border-white/10 bg-panel p-4 sm:p-5"
-      : "bg-[#05070B] px-6 pb-10 pt-2 lg:px-12";
+      ? "rounded-2xl border border-white/10 bg-panel p-4"
+      : "bg-[#05070B] px-6 pb-8 pt-1 lg:px-12";
 
   return (
     <section className={shell} aria-label="Tìm bài học">
       <div className={variant === "account" ? "" : "mx-auto max-w-6xl"}>
-        <h2 className="font-display text-xl font-bold text-white sm:text-2xl">Tìm bài học</h2>
+        <h2 className="font-display text-lg font-bold text-white sm:text-xl">Tìm bài học</h2>
         <form
-          className="relative mt-3"
+          className="relative mt-2"
           role="search"
           onSubmit={(event) => {
             event.preventDefault();
             const first = shown[0];
-            if (first) window.location.assign(first.href);
+            if (first) window.location.assign(first.hit.href);
           }}
         >
           <label htmlFor="content-search" className="sr-only">
-            Tên bài học
+            Tên bài hoặc nội dung trong bài
           </label>
           <Search size={18} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
@@ -170,7 +252,7 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
             type="search"
             enterKeyHint="search"
             value={query}
-            placeholder="Gõ tên bài, ví dụ ném ngang"
+            placeholder="Tìm tên bài hoặc nội dung"
             onFocus={ensureLoaded}
             onChange={(event) => {
               ensureLoaded();
@@ -180,44 +262,45 @@ export default function ContentSearch({ variant = "public" }: { variant?: "publi
           />
         </form>
 
-        {!ready && (
-          <p className="mt-3 text-base leading-relaxed text-slate-300">
-            Gõ tên bài. Ví dụ: ném ngang, dao động, điện trường.
-          </p>
-        )}
-        {ready && !failed && !hits && (
-          <p className="mt-3 text-base leading-relaxed text-slate-300">Đang tìm…</p>
-        )}
+        {ready && !failed && !hits && <p className="mt-2 text-base text-slate-300">Đang tìm…</p>}
         {ready && failed && (
-          <p className="mt-3 text-base leading-relaxed text-slate-300">
+          <p className="mt-2 text-base text-slate-300">
             {variant === "account"
               ? "Chưa tải được danh sách bài. Em mở Lớp học để xem."
               : "Chưa tải được danh sách bài. Em chọn lớp ở phía trên để xem."}
           </p>
         )}
         {ready && !failed && hits && shown.length === 0 && (
-          <p className="mt-3 text-base leading-relaxed text-slate-300">
-            Không thấy bài khớp. Thử tên ngắn hơn, ví dụ «dao động».
-          </p>
+          <p className="mt-2 text-base text-slate-300">Không thấy bài khớp. Thử từ khoá khác.</p>
         )}
         {shown.length > 0 && (
-          <ul className="mt-3 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10">
-            {shown.map((hit) => (
-              <li key={hit.id}>
-                <Link
-                  href={hit.href}
-                  className="flex min-h-11 flex-col justify-center px-3 py-2 text-white hover:bg-white/[0.08]"
-                >
-                  <span className="text-base font-semibold leading-snug">{hit.title}</span>
-                  <span className="text-base leading-snug text-slate-300">{hit.meta}</span>
-                </Link>
-              </li>
-            ))}
+          <ul className="mt-2 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10">
+            {shown.map(({ hit, at, span }) => {
+              const snip = at === -1 ? null : snippetOf(hit.text, at, span);
+              return (
+                <li key={hit.id}>
+                  <Link
+                    href={hit.href}
+                    className="flex min-h-11 flex-col justify-center px-3 py-2 text-white hover:bg-white/[0.08]"
+                  >
+                    <span className="text-base font-semibold leading-snug">{hit.title}</span>
+                    <span className="text-sm leading-snug text-slate-300">{hit.meta}</span>
+                    {snip && (
+                      <span className="mt-0.5 text-sm leading-snug text-slate-300">
+                        {snip.before}
+                        <mark className="rounded-sm bg-amber-300/25 px-0.5 text-amber-100">{snip.hit}</mark>
+                        {snip.after}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         )}
-        {matches.length > MAX_HITS && (
-          <p className="mt-2 text-base text-slate-300">
-            Còn {matches.length - MAX_HITS} bài nữa. Gõ thêm chữ để hẹp lại.
+        {rows.length > MAX_HITS && (
+          <p className="mt-2 text-sm text-slate-300">
+            Còn {rows.length - MAX_HITS} bài nữa. Gõ thêm chữ để hẹp lại.
           </p>
         )}
       </div>

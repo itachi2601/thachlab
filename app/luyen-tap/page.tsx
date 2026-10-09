@@ -3,8 +3,6 @@
 import ForYouRow from "@/components/mastery/ForYouRow";
 import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -225,9 +223,6 @@ function Content() {
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 pb-20 pt-28 sm:px-6">
-      <Link href="/tai-khoan/" className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white">
-        <ChevronLeft size={16} /> Về trang của em
-      </Link>
       <h1 className="font-display text-2xl font-semibold text-white">Luyện tập theo yêu cầu cần đạt</h1>
       <p className="mt-1 text-sm text-slate-400">
         Chọn bài, yêu cầu cần đạt và mức độ để luyện đúng chỗ còn thiếu danh hiệu. Câu đã giải đúng rồi không
@@ -528,7 +523,7 @@ export default function LuyenTapPage() {
           </RequireAuth>
         )}
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

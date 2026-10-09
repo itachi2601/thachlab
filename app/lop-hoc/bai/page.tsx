@@ -2190,7 +2190,7 @@ export default function LessonPage() {
           <LessonLoader />
         </Suspense>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

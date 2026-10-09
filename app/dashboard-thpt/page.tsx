@@ -36,7 +36,7 @@ export default function DashboardThptPage() {
           <DashboardThptRouter />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

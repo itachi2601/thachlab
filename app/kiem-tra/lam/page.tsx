@@ -148,7 +148,7 @@ export default function TakeExamPage() {
           </ReadingZone>
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

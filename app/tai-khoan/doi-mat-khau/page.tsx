@@ -138,7 +138,7 @@ export default function DoiMatKhauPage() {
           <ChangePasswordForm />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

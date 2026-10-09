@@ -44,7 +44,7 @@ export default function GhiBuoiPage() {
           </Suspense>
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

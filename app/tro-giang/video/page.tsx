@@ -30,7 +30,7 @@ export default function TroGiangVideoPage() {
           <VideoLoader />
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

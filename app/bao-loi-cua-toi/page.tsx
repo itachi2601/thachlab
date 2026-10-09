@@ -80,7 +80,7 @@ export default function MyBugReportsPage() {
           </div>
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

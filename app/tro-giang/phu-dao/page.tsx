@@ -69,7 +69,7 @@ export default function PhuDaoPage() {
           </Suspense>
         </RequireAuth>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }

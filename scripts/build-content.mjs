@@ -75,6 +75,34 @@ function writeJson(path, value) {
   writeFileSync(path, JSON.stringify(value));
 }
 
+// Chỉ mục tìm sâu trong nội dung bài: chữ thuần của mục lý thuyết/video (đã bỏ thẻ HTML và công thức $…$),
+// một chuỗi cho mỗi bài. Trang chủ/Lớp học tải file này khi em chạm ô tìm, không gọi Supabase.
+function plainTextOf(html) {
+  return html
+    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\$\$[\s\S]*?\$\$|\$[^$]*\$/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function writeSearchIndex(generatedAt, lessons, itemsByLesson) {
+  const rows = lessons.map((l) => ({
+    id: l.id,
+    x: (itemsByLesson.get(l.id) ?? [])
+      .filter((it) => it.body_html)
+      .map((it) => plainTextOf(it.body_html))
+      .join(" "),
+  }));
+  writeJson(join(OUT_DIR, "search-index.json"), { generatedAt, lessons: rows });
+}
+
 function hasOldData() {
   return existsSync(join(OUT_DIR, "catalog.json"));
 }
@@ -583,6 +611,7 @@ async function main() {
     writeFileSync(join(LESSONS_DIR, `${l.id}.json`), json);
   }
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
+  writeSearchIndex(generatedAt, lessons, itemsByLesson);
   const counts = await fetchSiteCounts(url, serviceKey);
   const courses = await fetchPublicCourses(supabase);
   writeJson(

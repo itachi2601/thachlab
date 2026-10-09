@@ -18,5 +18,5 @@ function DashboardRouter() {
 }
 
 export default function DashboardPage() {
-  return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-20 pt-28 lg:px-8"><RequireAuth><DashboardRouter/></RequireAuth></main><Footer/></>;
+  return <><Navbar/><main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-20 pt-28 lg:px-8"><RequireAuth><DashboardRouter/></RequireAuth></main><Footer variant="app" /></>;
 }

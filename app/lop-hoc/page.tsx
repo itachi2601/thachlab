@@ -640,10 +640,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                 )}
               </aside>
               <div className="lesson-main lesson-main--single">
-                <Link href="/lop-hoc" className="lesson-back">
-                  <ArrowLeft size={15} /> Lớp học
-                </Link>
-
                 {!supabaseConfigured ? (
                   <p className="lesson-notice">Hệ thống đang được cấu hình.</p>
                 ) : !classes ? (
@@ -790,7 +786,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             )}
           </div>
         </main>
-        <Footer />
+        <Footer variant="app" />
       </>
     );
   }
@@ -844,7 +840,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer variant="app" />
     </>
   );
 }
