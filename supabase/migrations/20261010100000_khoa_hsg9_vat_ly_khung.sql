@@ -86,7 +86,7 @@ where not exists (
 
 -- ── Mục có sẵn cho 2 chuyên đề làm thử (CĐ01, CĐ02) ─────────────────────
 insert into public.lesson_items (lesson_id, kind, title, subtitle, body_html, sort_order, required, exam_ids, questions, published_at)
-select ls.id, 'ly_thuyet', 'Lý thuyết nâng cao', '', '<p>Đang soạn.</p>', 1, true, '{}', null, now()
+select ls.id, 'ly_thuyet', 'Lý thuyết nâng cao', '', '<p>Đang soạn.</p>', 1, true, '{}', '[]'::jsonb, now()
 from public.lessons ls
 join public.chapters ch on ch.id = ls.chapter_id and ch.subject_code = 'hsg-vat-ly'
 where (ls.title like 'Chuyên đề 01.%' or ls.title like 'Chuyên đề 02.%')
