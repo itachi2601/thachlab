@@ -171,35 +171,39 @@ export default function PracticeStepView({
         review={stage === "feedback"}
       />
 
-      {stage === "feedback" && (
-        <div role="status" aria-live="polite" className="space-y-3">
-          {lastCorrect ? (
-            <p className="flex items-start gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3 text-base text-emerald-100">
-              <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-emerald-300" aria-hidden />
-              <span>{slot.retry ? "Đúng rồi — lần làm lại này không tính điểm." : "Đúng rồi."}</span>
-            </p>
-          ) : (
-            <p className="flex items-start gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-base text-amber-100">
-              <CircleAlert size={20} className="mt-0.5 shrink-0 text-amber-300" aria-hidden />
-              <span>
-                Chưa đúng. Xem đáp án và lời giải ở trên
-                {slot.retry ? "." : ", rồi thử câu tương tự hoặc gặp lại câu này ở cuối phiên."}
-              </span>
-            </p>
-          )}
-          {hints.length > 0 && (
-            <ul className="space-y-2 border-l-2 border-amber-400/60 pl-3 text-base leading-relaxed text-slate-200">
-              {hints.map((h) => (
-                <li key={h.label}>
-                  <b className="text-white">Vì sao em chọn {h.label} chưa đúng:</b> <Html html={h.note} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+      {stage === "feedback" && hints.length > 0 && (
+        <ul className="space-y-2 border-l-2 border-amber-400/60 pl-3 text-base leading-relaxed text-slate-200">
+          {hints.map((h) => (
+            <li key={h.label}>
+              <b className="text-white">Vì sao em chọn {h.label} chưa đúng:</b> <Html html={h.note} />
+            </li>
+          ))}
+        </ul>
       )}
 
-      <div className="flex flex-col gap-2">
+      {/* Thanh chốt dán đáy (D3, B6): nút Kiểm tra/Tiếp luôn trong tầm ngón cái dù câu dài; kết quả đúng/sai (M4, L1) hiện ngay trên nút, không phải cuộn. */}
+      <div
+        className="sticky z-30 -mx-4 -mb-4 flex flex-col gap-2 rounded-b-2xl border-t border-white/10 bg-panel/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-5 sm:-mb-5 sm:px-5"
+        style={{ bottom: "var(--lesson-bottombar-h, 0px)" }}
+      >
+        {stage === "feedback" && (
+          <div role="status" aria-live="polite">
+            {lastCorrect ? (
+              <p className="flex items-start gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-base text-emerald-100">
+                <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-emerald-300" aria-hidden />
+                <span>{slot.retry ? "Đúng rồi — lần làm lại này không tính điểm." : "Đúng rồi."}</span>
+              </p>
+            ) : (
+              <p className="flex items-start gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-base text-amber-100">
+                <CircleAlert size={20} className="mt-0.5 shrink-0 text-amber-300" aria-hidden />
+                <span>
+                  Chưa đúng. Đáp án và lời giải ở phía trên
+                  {slot.retry ? "." : "; câu này sẽ gặp lại cuối phiên."}
+                </span>
+              </p>
+            )}
+          </div>
+        )}
         {stage === "answering" ? (
           <button
             type="button"

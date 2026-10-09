@@ -42,6 +42,7 @@ import {
   type PracticeMode,
 } from "@/features/lessons/practice-step";
 import type { StepItem } from "@/components/lessons/PracticeStepView";
+import TaskRpLine from "@/components/rank/TaskRpLine";
 
 // Màn "đang làm" + "sau khi nộp" của 1 phiên luyện tập (PracticeRunningView.tsx,
 // PracticeDoneView.tsx) — học sinh KHÔNG thấy 2 màn này lúc mới mở bài học (chỉ hiện sau khi bấm
@@ -409,98 +410,113 @@ export default function PracticeSession({
       );
 
     const choices = [...new Set([...COUNT_CHOICES.filter((c) => c < bank.length), bank.length])];
-    const estimate = Math.round(count * averageSeconds(bank.map((p) => p.question)));
+
+    const minutesFor = (n: number) =>
+      mode === "step"
+        ? Math.max(1, Math.round((n * STEP_SECONDS_PER_QUESTION) / 60))
+        : Math.max(1, Math.round((n * averageSeconds(bank.map((p) => p.question))) / 60));
 
     return (
-      <div className="space-y-4 rounded-2xl border border-white/10 bg-panel p-5">
-        <p className="text-sm text-slate-300">
-          Ngân hàng của bài này có{" "}
-          <span className="font-bold text-white">{bank.length} câu</span>. Chọn số câu
-          muốn luyện — hệ thống bốc ngẫu nhiên mỗi lần một khác.
-        </p>
+      <div className="mx-auto max-w-xl space-y-5 rounded-2xl border border-white/10 bg-panel p-4 sm:p-5">
+        {/* RP nói trước khi làm (thầy chốt 9/10/2026): một dòng, không huy hiệu (L3) — ngay đầu để em biết lượt này có "giá" gì rồi mới chọn. */}
+        <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5">
+          <p className="text-sm font-semibold text-slate-400">Điểm xếp hạng (RP)</p>
+          <div className="mt-0.5">
+            <TaskRpLine kind="practice_item" sourceId={itemId} />
+          </div>
+        </div>
+
+        <fieldset>
+          <legend className="text-base font-bold text-white">1. Em muốn luyện kiểu nào?</legend>
+          <div role="radiogroup" aria-label="Cách luyện" className="mt-2 grid gap-2 sm:grid-cols-2">
+            {(
+              [
+                { id: "step", label: "Từng câu", hint: "Biết đúng/sai ngay. Câu sai làm lại cuối phiên. Không đếm giờ." },
+                { id: "whole", label: "Cả bài", hint: "Làm hết rồi nộp, có đồng hồ đếm ngược." },
+              ] as const
+            ).map((m) => (
+              <button
+                key={m.id}
+                type="button"
+                role="radio"
+                aria-checked={mode === m.id}
+                onClick={() => changeMode(m.id)}
+                className={`flex min-h-14 items-start gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-colors ${
+                  mode === m.id ? "" : "border-white/15 hover:border-slate-400"
+                }`}
+                style={mode === m.id ? { borderColor: color, backgroundColor: `${color}33` } : undefined}
+              >
+                <span
+                  aria-hidden
+                  className="mt-1 h-4 w-4 shrink-0 rounded-full border-2"
+                  style={
+                    mode === m.id
+                      ? { borderColor: color, background: `radial-gradient(${color} 45%, transparent 50%)` }
+                      : { borderColor: "#94A3B8" }
+                  }
+                />
+                <span>
+                  <span className="block text-base font-bold text-white">
+                    {m.label}
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-snug text-slate-400">{m.hint}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend className="text-base font-bold text-white">2. Bao nhiêu câu?</legend>
+          <p className="mt-0.5 text-sm text-slate-400">
+            Ngân hàng có {bank.length} câu, mỗi lần bốc ngẫu nhiên một khác.
+          </p>
+          <div role="radiogroup" aria-label="Số câu" className="mt-2 grid grid-cols-3 gap-2">
+            {choices.map((c) => (
+              <button
+                key={c}
+                type="button"
+                role="radio"
+                aria-checked={count === c}
+                onClick={() => setCount(c)}
+                className={`min-h-14 rounded-xl border-2 px-2 py-2 text-center transition-colors ${
+                  count === c ? "" : "border-white/15 hover:border-slate-400"
+                }`}
+                style={count === c ? { borderColor: color, backgroundColor: `${color}33` } : undefined}
+              >
+                <span className="block text-base font-bold text-white">
+                  {c === bank.length ? `Tất cả ${c}` : c} câu
+                </span>
+                <span className="block text-sm text-slate-400">~{minutesFor(c)} phút</span>
+              </button>
+            ))}
+          </div>
+        </fieldset>
+
         {hasLabelledQuestions(bank) && (
-          <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-300">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-white/10 pt-3 text-sm text-slate-300">
             {ladderOn ? (
               <p>
-                Mức hiện tại của em:{" "}
-                <span className="font-bold" style={{ color }}>
-                  {DIFFICULTY_LABELS[level]}
-                </span>{" "}
-                (Dễ → Trung bình → Khó). Đạt {Math.round(LADDER_PASS_RATIO * 100)}% trở lên thì lên mức tiếp.
+                Mức của em: <span className="font-bold text-white">{DIFFICULTY_LABELS[level]}</span>
+                {" "}· đạt {Math.round(LADDER_PASS_RATIO * 100)}% thì lên mức.
               </p>
             ) : (
-              <p>Đang luyện tự do — câu bốc ngẫu nhiên mọi mức, không tính lên mức.</p>
+              <p>Luyện tự do: câu ngẫu nhiên mọi mức.</p>
             )}
             <button
               type="button"
               onClick={() => setFree((f) => !f)}
-              className="mt-1 text-xs font-semibold text-slate-400 underline underline-offset-2 hover:text-slate-200"
+              className="min-h-11 text-sm font-semibold text-slate-300 underline underline-offset-2 hover:text-white"
             >
-              {ladderOn ? "Luyện tự do (bỏ thang mức)" : "Quay lại luyện theo mức"}
+              {ladderOn ? "Luyện tự do" : "Luyện theo mức"}
             </button>
           </div>
         )}
-        <div role="radiogroup" aria-label="Cách luyện" className="grid grid-cols-2 gap-2">
-          {(
-            [
-              { id: "step", label: "Từng câu", hint: "Biết đúng/sai ngay, câu sai làm lại cuối phiên. Không đếm giờ." },
-              { id: "whole", label: "Cả bài", hint: "Làm hết rồi nộp, có đồng hồ đếm ngược." },
-            ] as const
-          ).map((m) => (
-            <button
-              key={m.id}
-              type="button"
-              role="radio"
-              aria-checked={mode === m.id}
-              onClick={() => changeMode(m.id)}
-              className="min-h-11 rounded-xl border px-3 py-2 text-left transition-colors"
-              style={
-                mode === m.id
-                  ? { borderColor: color, backgroundColor: `${color}26` }
-                  : { borderColor: "rgba(255,255,255,0.1)" }
-              }
-            >
-              <span className="block text-sm font-bold" style={{ color: mode === m.id ? color : "#CBD5E1" }}>
-                {m.label}
-              </span>
-              <span className="mt-0.5 block text-sm leading-snug text-slate-400">{m.hint}</span>
-            </button>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {choices.map((c) => (
-            <button
-              key={c}
-              type="button"
-              onClick={() => setCount(c)}
-              className="rounded-xl border px-4 py-2 text-sm font-semibold transition-colors"
-              style={
-                count === c
-                  ? { borderColor: color, backgroundColor: `${color}26`, color }
-                  : { borderColor: "rgba(255,255,255,0.1)", color: "#94A3B8" }
-              }
-            >
-              {c === bank.length ? `Tất cả ${c} câu` : `${c} câu`}
-            </button>
-          ))}
-        </div>
-        {mode === "step" ? (
-          <p className="text-sm text-slate-400">
-            Khoảng{" "}
-            <span className="font-semibold text-white">{Math.max(1, Math.round((count * STEP_SECONDS_PER_QUESTION) / 60))} phút</span>{" "}
-            — em tự đi theo nhịp của mình, không có đồng hồ.
-          </p>
-        ) : (
-          <p className="text-sm text-slate-400">
-            Thời lượng ước tính{" "}
-            <span className="font-mono font-semibold text-white">{formatClock(estimate)}</span>{" "}
-            — mỗi câu lý thuyết 30 giây, mỗi câu bài tập 1 phút 30 giây.
-          </p>
-        )}
+
         <button
           type="button"
           onClick={start}
-          className="rounded-full px-6 py-2.5 text-sm font-bold text-white"
+          className="min-h-12 w-full rounded-full px-6 text-base font-bold text-white"
           style={{ backgroundColor: color }}
         >
           Bắt đầu luyện {count} câu
