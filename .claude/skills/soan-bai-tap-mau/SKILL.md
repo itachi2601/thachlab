@@ -1,6 +1,6 @@
 ---
 name: soan-bai-tap-mau
-description: Soạn mục BÀI TẬP MẪU của một bài học thachlab — 2–4 dạng bài cho mỗi bài, mỗi dạng có đề + MÔ PHỎNG chuyển động ngay dưới đề, bảng PHÂN TÍCH ĐỀ (Câu trong đề | Dữ liệu | Kiến thức liên quan, như bài toán mẫu trong lý thuyết), lời giải đầy đủ theo phong cách thầy Thạch (AI-TUTOR 9.1/9.3/9.5), gắn YCCĐ để web tự tìm 3 bài tương tự trong ngân hàng câu hỏi sau khi học sinh đọc xong. Dùng khi thầy nói "soạn bài tập mẫu cho bài X", "làm các dạng bài tập của bài…", "thêm bài tập mẫu có gợi ý", "bài tập mẫu theo phong cách của tôi". Khác soan-bai-ly-thuyet-tuong-tac (bài lý thuyết, có sẵn "bài toán mẫu" nằm TRONG lý thuyết) và dang-bai-hoc-thachlab (đăng .tex). Soạn + kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
+description: Soạn mục BÀI TẬP MẪU của một bài học thachlab — làm TRỰC TIẾP trên Mac trong phiên Claude Code (không Batch API trừ khi thầy bảo), 2–6 dạng theo quét, mỗi dạng có buoc[] để học sinh tự giải từng bước, mỗi dạng có đề + MÔ PHỎNG chuyển động ngay dưới đề, bảng PHÂN TÍCH ĐỀ (Câu trong đề | Dữ liệu | Kiến thức liên quan, như bài toán mẫu trong lý thuyết), lời giải đầy đủ theo phong cách thầy Thạch (AI-TUTOR 9.1/9.3/9.5), gắn YCCĐ để web tự tìm 3 bài tương tự trong ngân hàng câu hỏi sau khi học sinh đọc xong. Dùng khi thầy nói "soạn bài tập mẫu cho bài X", "làm các dạng bài tập của bài…", "thêm bài tập mẫu có gợi ý", "bài tập mẫu theo phong cách của tôi". Khác soan-bai-ly-thuyet-tuong-tac (bài lý thuyết, có sẵn "bài toán mẫu" nằm TRONG lý thuyết) và dang-bai-hoc-thachlab (đăng .tex). Soạn + kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
 ---
 
 # Soạn Bài tập mẫu có cấu trúc (thầy chốt 6/10/2026)
@@ -57,7 +57,7 @@ Số dạng không cố định 4 (thường 2–6). Không viết nháp khi ch�
 ## Nháp do Claude viết (Gemini đã bỏ — thầy chốt 9/10/2026)
 Nháp theo **hệ bắc cầu cấp độ 1–4** (Áp dụng trực tiếp → Có điều kiện/bẫy → Kết hợp nhiều bước → Tình huống mới; số dạng theo bước 0). Nháp phải đi đủ: kiểm máy → tự viết lại theo "Phong cách" → kiểm chéo độc lập (`kiem-code`) → validate → đăng. Không còn đường dán tay qua Gemini; file `PROMPT-GEMINI-BAI-TAP-MAU.md` và `kiem-ban-nhap-gemini.py` không còn là bước của quy trình.
 
-## Hàng loạt qua Batch API (thầy chốt 8/10/2026 — credit API, không cần Gemini, không duyệt trước)
+## Tuỳ chọn: hàng loạt qua Batch API (CHỈ khi thầy nói rõ "chạy batch" — thầy chốt 9/10/2026: đường chính là làm trực tiếp trên Mac trong phiên Claude Code, không đốt credit API)
 Ba chế độ nối nhau trong `scripts/batch-ra-soat-bai.mts` (chạy trong tab terminal của thầy; bài phải có dòng trong `content/gemini/hang-doi.md`):
 0. `--che-do quet-dang --gui --lop 12` → `--nhan --cho` (hoặc quét trong phiên Claude Code): danh sách dạng, phải xong trước bước 1.
 1. `--che-do bai-tap-mau --gui --lop 12` → `--nhan --cho`: nháp theo danh sách quét + kiểm máy → `scripts/logs/batch-ra-soat/ket-qua/<id>.bai-tap-mau.nhap.json`.
@@ -73,15 +73,18 @@ Ba chế độ nối nhau trong `scripts/batch-ra-soat-bai.mts` (chạy trong ta
 ## Nhân ra nhiều bài (chương)
 Mỗi bài một subagent theo `references/huong-dan-nhan-ra.md` (mẫu = bài 57), chạy song song; sau đó **mỗi bài thêm một subagent `kiem-code` khác tự giải độc lập** (không nhìn lời giải) → sửa → `review.checked=true` → phiên chính publish từng bài (`--lesson <id>`, dạng cũ vào `tu_luan` nên KHÔNG dùng `--giu-cu`) rồi deploy một lần. Dạng cũ lấy từ `scripts/dump-bai-tap-mau-cu.mts <id…>` → `scripts/data/bai-tap-mau/old/<id>.json` (chạy trước khi publish ghi đè). Xem thử bằng `scripts/xem-thu.py` (Chrome headless, khung cuối của mô phỏng).
 
-## Quy trình
+## Quy trình — ĐƯỜNG CHÍNH: làm trực tiếp trên Mac trong phiên Claude Code (thầy chốt 9/10/2026)
 
-1. **Chọn bài** (`lesson_id`). Đọc `public/data/lessons/<id>.json` mục `ly_thuyet` (để dạng bài **khớp đúng kiến thức bài đã dạy**, cùng ký hiệu), và mục `bai_tap_mau` hiện có (không để mất ví dụ hay đang có — đưa lại thành 1 dạng nếu tốt). Nếu thiếu `public/data`: `npm ci && node scripts/build-content.mjs`.
-2. **Chốt 2–4 dạng** (mặc định thử **1 bài trước**, thầy duyệt rồi mới nhân ra cả chương). Mỗi dạng = một kiểu bài học sinh sẽ gặp lặp lại trong đề (không phải 4 bài số khác nhau của cùng một cách làm). Với mỗi dạng chọn **`topic` = tên YCCĐ con** sát dạng nhất trong `scripts/data/question-topics.json` (đúng `lesson_id` của bài; sao chép nguyên văn). Vì bài tương tự lấy theo YCCĐ, YCCĐ quá rộng → bài lạc dạng; chỉ có chủ đề cha → ghi rõ cho thầy.
-   - Soát nhanh ngân hàng trước khi chốt: `topic` đó có bao nhiêu câu `bai_tap` chưa lưu trữ (`select count(*) from question_bank where topic_id=… and form='bai_tap' and not archived`, chạy trên Mac). < 6 câu → báo thầy, vì nút bài tương tự sẽ nhanh hết.
-3. **Soạn từng dạng** (rồi dựng mô phỏng + bảng phân tích ở mục trên) (đề riêng, số liệu mới; không chép câu có trong ngân hàng nguyên văn): `problem_html`, `analysis_html` (hình + bảng), `solution_html`. LaTeX `$…$`; `<`/`>` trong công thức viết `\lt`/`\gt`. Hình cần thiết: SVG tự vẽ như bài lý thuyết (`soan-bai-ly-thuyet-tuong-tac/references/hinh-svg.md`), ảnh nén ≤ ~1200px (AGENTS.md "Đăng nội dung").
-4. **Kiểm chéo bắt buộc**: giao subagent `kiem-code` đọc lại **từng dạng**, tự giải độc lập (không nhìn lời giải) rồi so; trả đúng/sai/nghi ngờ + lý do. Sai số, đơn vị, hoặc bảng phân tích/mô phỏng lộ đáp số → sửa. Chỉ đặt `review.checked: true` sau bước này.
-5. **Validate**: `npx tsx .claude/skills/soan-bai-tap-mau/scripts/validate.mts scripts/data/bai-tap-mau/<id>.json`.
-6. **Báo cáo** + in lệnh cho thầy trên Mac (xem mục "Đăng"). Viết "Rút kinh nghiệm" theo AGENTS.md vào Nhật ký cuối file này.
+Một bài ≈ 1 phiên, mẫu là bài 57 (`scripts/data/bai-tap-mau/build-hinh-57.py`). Không gọi Batch API trừ khi thầy bảo. Giữ token thấp:
+đọc đoạn, không đọc cả file; ảnh chỉ xem trong subagent; không báo tiến độ giữa chừng.
+
+1. **Chọn bài + đọc đúng thứ cần**: `grep -c`/`python3 -c` lấy mục `ly_thuyet` của `public/data/lessons/<id>.json` (file 100+ KB — **không** `grep` thẳng, không đọc cả file), mục `bai_tap_mau` hiện có (dump: `scripts/dump-bai-tap-mau-cu.mts <id>`), YCCĐ của bài trong `scripts/data/question-topics.json` (lọc theo `lesson_id`). Thiếu `public/data`: `node scripts/build-content.mjs`.
+2. **Bước 0 quét dạng** (mục trên) bằng **subagent Sonnet** (prompt `references/PROMPT-SONNET-QUET-DANG.md`, trả JSON ngắn) → 2–6 dạng, cấp 1–4 không giảm, `topic` = YCCĐ con nguyên văn. Soát ngân hàng: `topic` có < 6 câu `bai_tap` → báo thầy.
+3. **Viết `build-hinh-<id>.py`** (chép khung bài 57): `BUILD` (hình mô phỏng + hình dữ kiện bằng `hinh.py`), `ANALYSIS` (bảng), `SOLS` (`sol()`), `STEPS` (`buoc()` — viết cùng lúc với `sol()`, số bước khớp), rồi `inject(J, BUILD, ANALYSIS, SOLS, STEPS)`. Đề + số liệu + lời giải tự viết trong phiên chính (hoặc một subagent Sonnet mỗi bài khi nhân ra chương). LaTeX `\lt`/`\gt`.
+4. **Validate**: `npx tsx .claude/skills/soan-bai-tap-mau/scripts/validate.mts scripts/data/bai-tap-mau/<id>.json` — sửa tới khi sạch (lộ đáp số, lệch số bước… bắt ở đây, rẻ).
+5. **Kiểm chéo bắt buộc**: subagent `kiem-code` tự giải từng dạng từ đề (không nhìn lời giải) + kiểm `buoc[]` (đáp số bước, lựa chọn sai thật, không lộ) → sửa → `review.checked: true`.
+6. **Xem hình** (rẻ nhất): `python3 .claude/skills/soan-bai-tap-mau/scripts/xem-thu.py scripts/data/bai-tap-mau/<id>.json <thư mục>` rồi subagent xem ảnh, phiên chính không đọc ảnh. UI từng bước **không cần chụp lại** (đã cố định; chỉ chụp khi đổi component) — muốn xem thì `publish-bai-tap-mau.mts --lesson <id> --xem-thu` → `/dev/btm?mock=1`.
+7. **Đăng + deploy** (mục "Đăng", tab terminal). Viết "Rút kinh nghiệm" vào Nhật ký cuối file này.
 
 ## Dạng file
 
@@ -154,6 +157,7 @@ Chạy lệnh dài trong tab terminal (AGENTS.md). Phiên cloud: chỉ soạn + 
 - 2026-10-09 · Lỗi tự gây: ghi "bài chưa có danh mục YCCĐ" dựa trên file lý thuyết, nhưng danh mục thật lấy từ chủ đề ngân hàng (`danhMucYccd`). → Trước khi ghi "không có YCCĐ", chạy `kiem-ban-nhap-gemini.py` để xem danh mục thật.
 - 2026-10-09 · Subagent soạn nháp (Opus) làm lệch công thức ngoài bài (E = P·t ở Dạng 5, không có trong lý thuyết) và sai một câu bẫy (Δm). → Kiểm chéo bằng Sonnet độc lập bắt được cả hai; luôn kiểm chéo trước khi đánh dấu `review.checked`.
 - 2026-10-09 · Kiểm chéo đã tự giải trước rồi mới mở lời giải; chỉ kiểm lại đúng dạng bị sửa, không chạy lại cả bài.
+- 2026-10-09 · Thầy chốt: KHÔNG dùng hết credit API — đường chính là làm trực tiếp trên Mac trong phiên Claude Code (quét dạng + viết `build-hinh-<id>.py` + kiem-code), Batch API chỉ khi thầy bảo. Token lớn nhất của phiên là xem ảnh trình duyệt → chỉ chụp khi đổi UI.
 - 2026-10-09 · Prompt `viet-bai-tap-mau` + schema batch sinh luôn `buoc[]` (trường trống = null/[] vì schema strict; `gonBuoc` bỏ null trước khi ghi); kiem-cheo kiểm cả bước. CHƯA chạy thật — bài đầu tiên chạy xong ghi: tỉ lệ validator bắt lộ đáp số, chất lượng lựa chọn sai, số bước API chia có khớp `.bt-step` không.
 - 2026-10-09 · Dựng UI + validator tự giải từng bước trên bài 57 (6 dạng, 26 bước, kiem-code tự giải 20/20 đáp số khớp). Bắt được: lựa chọn "bước kế" của dạng 6 ghi thẳng "α≈24,3°" = đáp số của bước → validator thêm kiểm lộ đáp số; `loi_hay_gap` nêu "37,4°" cũng suy ra 52,6° (góc phụ) → bỏ số. Fading "giấu bước cuối" ban đầu giấu bước "Kiểm tra" (không có câu hỏi) nên không giấu gì → "bước cuối" = bước cuối có `hoi`. Trang `/dev/btm` + `--xem-thu` + `?mock=1` tiết kiệm nhiều lần đăng thử lên DB; RPC bài tương tự trả 401 khi chưa đăng nhập nên phải mock.
 - 2026-10-09 · Thầy bỏ đường nháp Gemini (mục đã gỡ khỏi quy trình, file prompt/kiem-ban-nhap-gemini.py còn nhưng không còn là bước) và chốt 5 quy tắc "tự giải từng bước": lời giải đóng mở theo bước, ví dụ mờ dần theo cấp, chọn bước kế, câu nhận dạng, bài tương tự gỡ rối về đúng bước → JSON thêm `buoc[]`/`nhan_dang`/`fading`/`go_roi`. CHƯA có UI, validator, prompt viết bài tương ứng — làm trên bài 57 trước rồi mới nhân ra.
