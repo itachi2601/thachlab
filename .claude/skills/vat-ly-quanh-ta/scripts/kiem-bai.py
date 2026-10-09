@@ -132,8 +132,14 @@ def kiem(path: Path) -> int:
             w = Image.open(f).size[0]
             if w > 1200:
                 loi.append(f"ảnh {src} rộng {w}px > 1200")
-    if len(re.findall(r"!\[", body)) > 3:
-        canh.append("hơn 3 hình trong bài")
+    so_hinh = len(re.findall(r"!\[", body))
+    if so_hinh < 2:
+        loi.append(f"thân bài có {so_hinh} hình — cần ≥ 2 (cảnh đời sống + sơ đồ vật lí)")
+    elif so_hinh > 4:
+        canh.append(f"{so_hinh} hình trong bài (nên ≤ 4)")
+    for alt, src in re.findall(r"!\[([^\]]*)\]\(([^)\s]+)\)", body):
+        if len(alt.strip()) < 10:
+            canh.append(f"alt quá ngắn cho {src}")
 
     for c in canh:
         print("⚠", c)

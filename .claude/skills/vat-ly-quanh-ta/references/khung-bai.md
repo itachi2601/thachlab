@@ -25,12 +25,13 @@ Slug = tiêu đề không dấu, gạch nối, bỏ "vi-sao" thừa nếu quá d
 ## Thân bài — đúng thứ tự, tiêu đề mục `##` giữ nguyên chữ in đậm dưới đây
 
 1. **Mở (không tiêu đề, 2–4 câu).** Một cảnh em đã thấy, cụ thể, có giác quan: "Tiếng xì của van nồi áp suất…".
-   Kết bằng chính câu hỏi.
+   Kết bằng chính câu hỏi. Ngay sau đoạn mở: **hình 1 — cảnh đời sống** + chú thích in nghiêng.
 2. **`## Đoán thử trước khi đọc`** — 2–3 phương án, có ít nhất 1 phương án "nghe hợp lý mà sai" (quan niệm sai phổ biến).
    Dặn: "Chọn một đáp án trong đầu rồi đọc tiếp." (dự đoán trước làm người đọc nhớ lâu hơn — hiệu ứng thế hệ/kiểm tra trước).
    Câu trả lời đúng phải lộ ra ở mục kế tiếp, nói rõ phương án nào đúng.
 3. **1–3 mục giải thích** (`## …` tiêu đề là một ý, không phải "Phần 1"). Đi từ cái thấy được → đại lượng → định luật.
-   Mỗi mục một ý chính, in đậm từ khoá 1–2 lần/mục, không hơn.
+   Mỗi mục một ý chính, in đậm từ khoá 1–2 lần/mục, không hơn. Đặt **hình 2 — sơ đồ vật lí** (có nhãn đại lượng)
+   ở mục giải thích chính. Cả bài cần **≥ 2 hình** (tối đa 4).
 4. **`## Thử ước lượng bằng số`** — một phép tính 3–5 dòng bằng công thức trong sách (Unicode, có đơn vị), số làm tròn,
    kết luận bằng lời ("tức là gấp khoảng 3 lần…"). Đây là chỗ cho em thấy Vật lí *đo được*, không chỉ kể chuyện.
 5. **`## Tự thử ở nhà`** — 3–5 bước đánh số, dụng cụ an toàn, "Em sẽ thấy…", "Vì sao?" (một câu nối lại lý thuyết).
