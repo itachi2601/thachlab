@@ -65,10 +65,12 @@ def d1(kk):
     cx, W, H = 90, 64, 38
     b += R(cx - 32, FL - H, W, H, sw=2.4)
     cy = FL - H / 2
-    b += arrow(p, "r", cx + 32, cy, cx + 86, cy, 3) + txt(cx + 70, cy - 10, "F", RED)
-    b += arrow(p, "o", cx - 32, cy, cx - 86, cy, 3) + txt(cx - 80, cy - 16, "F_ms", ORG)
-    b += arrow(p, "b", cx, cy, cx, cy - 56, 3) + txt(cx + 8, cy - 50, "N", BLUE)
-    b += arrow(p, "g", cx, cy, cx, FL + 18, 3) + txt(cx + 8, FL + 30, "P", GRN)
+    # tỉ lệ thật: P = N = 400 N, F = F_ms = 100 N (trượt đều) → k = 0.14 px/N
+    K = 0.14
+    b += vec_luc("r", cx + 32, cy, 1, 0, 100, K, 3)[0] + txt(cx + 52, cy - 8, "F", RED)
+    b += vec_luc("o", cx - 32, cy, -1, 0, 100, K, 3)[0] + txt(cx - 70, cy - 8, "F_ms", ORG)
+    b += vec_luc("b", cx, cy, 0, -1, 400, K, 3)[0] + txt(cx + 8, cy - 50, "N", BLUE)
+    b += vec_luc("g", cx, cy, 0, 1, 400, K, 3)[0] + txt(cx + 8, cy + 52, "P", GRN)
     b += txt(16, 22, "Kéo ngang: α = 0°", "currentColor", 13, "start", "400")
     # phải: F' xiên 60° và hai thành phần
     qx = 280
@@ -80,7 +82,7 @@ def d1(kk):
     b += seg(tx, oy, tx, ty, ORG, 2.4, "5 4") + txt(tx + 8, (oy + ty) / 2 - 8, "F′sinα", ORG, 12)
     b += arc(ox, oy, 26, 0, 60, RED, 1.8) + txt(ox + 15, oy - 7, "α", RED, 13)
     b += txt(220, 22, "Kéo xiên: chỉ F′cosα sinh công", "currentColor", 13, "start", "400")
-    return fig("c1-2", "0 0 420 176", "Bên trái bốn lực tác dụng lên thùng khi kéo ngang; bên phải lực kéo xiên góc 60 độ được tách thành hai thành phần",
+    return fig("c1-2", "0 0 420 190", "Bên trái bốn lực tác dụng lên thùng khi kéo ngang; bên phải lực kéo xiên góc 60 độ được tách thành hai thành phần",
                b, "Dữ kiện: lực nào dọc theo dịch chuyển thì sinh công; lực vuông góc không sinh công. " + NOTE)
 
 
@@ -91,7 +93,7 @@ def lever_base(p, px, py, rot=0.0):
     return beam, blk
 
 def d2(kk):
-    p = f"d2{kk}"; px, py = 70, 88
+    p = f"d2{kk}"; px, py = 70, (88 if kk == 0 else 126)   # kk≥1 chừa chỗ cho vectơ P dài 78 px
     th = math.degrees(math.asin(0.05 / 0.2))   # vật lên 5 cm khi cánh tay 20 cm  → sinθ = 0,25
     pivot = tri([(px, py + 4), (px - 18, py + 32), (px + 18, py + 32)], "currentColor", 2.4)
     b = defs(p)
@@ -103,8 +105,11 @@ def d2(kk):
               f'begin="indefinite" fill="freeze"/>{beam}{blk}</g>')
         xs = [px + 240 * math.cos(math.radians(th * i / 12)) for i in range(13)]
         ys = [py + 240 * math.sin(math.radians(th * i / 12)) for i in range(13)]
-        b += (f'<line x1="{xs[0]:.1f}" y1="{ys[0] - 46:.1f}" x2="{xs[0]:.1f}" y2="{ys[0] - 6:.1f}" stroke="{RED}" stroke-width="3" marker-end="url(#{p}-r)">'
+        tr_ = ";".join(f"{x - xs[0]:.1f} {y - ys[0]:.1f}" for x, y in zip(xs, ys))   # đầu V chạy theo thân (không dùng marker)
+        b += (f'<line x1="{xs[0]:.1f}" y1="{ys[0] - 46:.1f}" x2="{xs[0]:.1f}" y2="{ys[0] - 6:.1f}" stroke="{RED}" stroke-width="2.8">'
               f'{smil("x1", xs, dur)}{smil("y1", [y - 46 for y in ys], dur)}{smil("x2", xs, dur)}{smil("y2", [y - 6 for y in ys], dur)}</line>')
+        b += (f'<g>{chevron(xs[0], ys[0] - 6, 0, 1, RED, 2.8, 11)}'
+              f'<animateTransform attributeName="transform" type="translate" values="{tr_}" dur="{dur:.2f}s" begin="indefinite" fill="freeze"/></g>')
         b += txt(px + 252, py - 28, "F = ?", RED)
         b += txt(16, 26, "vật P = 600 N", "currentColor", 13) + txt(16, 44, "nâng lên h = 5 cm", "currentColor", 13, "start", "400")
         b += txt(px + 236, py + 80, "s = ?", ORG)
@@ -115,13 +120,14 @@ def d2(kk):
                    b, "Mô phỏng: vật lên 5 cm, đầu dài đi xuống theo hình học của đòn bẩy. Chạy 4 s.")
     beam, blk = lever_base(p, px, py)
     b += pivot + seg(px - 30, py + 32, px + 30, py + 32, "currentColor", 3) + beam + blk
-    b += arrow(p, "g", px - 24, py - 74, px - 24, py - 34, 3) + txt(px - 14, py - 52, "P", GRN)
-    b += arrow(p, "r", px + 240, py - 46, px + 240, py - 6, 3) + txt(px + 250, py - 28, "F", RED)
+    # tỉ lệ thật: P = 600 N, F = P·l₁/l₂ = 100 N → k = 0.13 px/N (ngọn đặt đúng điểm tác dụng)
+    b += vec_luc("g", px - 24, py - 112, 0, 1, 600, 0.13, 3)[0] + txt(px - 14, py - 70, "P", GRN)
+    b += vec_luc("r", px + 240, py - 19, 0, 1, 100, 0.13, 3)[0] + txt(px + 250, py - 14, "F", RED)
     dy = py + 56
     b += dim(p, "b", px - 40, dy, px, dy, "", 0, 0) + dim(p, "b", px, dy, px + 240, dy, "", 0, 0)
     b += txt(16, dy + 22, "l₁ = 20 cm = 0,2 m", BLUE, 13) + txt(px + 150, dy + 22, "l₂ = 1,2 m", BLUE, 13, "middle")
     b += txt(220, 26, "F·l₂ = P·l₁", "currentColor", 14) + txt(220, 46, "s / h = l₂ / l₁", ORG, 14)
-    return fig("c2-2", "0 0 420 190", "Đòn bẩy cân bằng: trọng lượng P ở cánh tay đòn l1, lực F ở cánh tay đòn l2",
+    return fig("c2-2", "0 0 420 214", "Đòn bẩy cân bằng: trọng lượng P ở cánh tay đòn l1, lực F ở cánh tay đòn l2",
                b, "Dữ kiện: đổi l₁ và l₂ cùng đơn vị rồi lập tỉ số. " + NOTE)
 
 
@@ -148,8 +154,9 @@ def d3(kk):
     for cx, w, h, lab, t_, col in ((110, 46, 36, "50 kg", "20 s", "Máy A"), (290, 46, 28, "30 kg", "8 s", "Máy B")):
         top0 = GY - 40 - h
         b += R(cx - w / 2, top0, w, h, sw=2.4) + txt(cx, top0 + h / 2 + 4, lab, "currentColor", 12, "middle")
-        b += arrow(p, "o", cx, top0 - 6, cx, top0 - 62, 3)
-        b += txt(cx, top0 - 72, f"{col}: {t_}", "currentColor", 13, "middle")
+        Fn = 10 * int(lab.split()[0])                      # lực nâng = trọng lượng (N), k = 0.14 px/N
+        b += vec_luc("o", cx, top0 - 6, 0, -1, Fn, 0.14, 3)[0]
+        b += txt(cx, top0 - 6 - Fn * 0.14 - 10, f"{col}: {t_}", "currentColor", 13, "middle")
     b += txt(200, 40, "cùng h = 4 m", ORG, 13, "middle")
     b += txt(16, 188, "Công: lượng việc đã làm (J)", BLUE, 12, "start", "400") + txt(16, 206, "Công suất: làm nhanh hay chậm (W)", GRN, 12, "start", "400")
     return fig("c3-2", "0 0 420 236", "Máy A và máy B nâng vật lên cùng độ cao với khối lượng và thời gian khác nhau",
@@ -180,12 +187,15 @@ def d4(kk):
     ux, uy = math.cos(tr), -math.sin(tr)            # hướng dọc ván lên
     nx, ny = -math.sin(tr), -math.cos(tr)           # pháp tuyến
     b += f'<g transform="translate({ox} {oy}) rotate({-th:.2f})">{R(103, -26, 34, 26, sw=2.4)}</g>'
-    b += arrow(p, "r", cx, cy, cx + 50 * ux, cy + 50 * uy, 3) + txt(cx + 50 * ux + 4, cy + 50 * uy - 4, "F", RED)
-    b += arrow(p, "o", cx, cy, cx - 44 * ux, cy - 44 * uy, 3) + txt(cx - 44 * ux - 38, cy - 44 * uy + 4, "F_ms", ORG)
-    b += arrow(p, "g", cx, cy, cx, cy + 46, 3) + txt(cx + 8, cy + 40, "P", GRN)
-    b += arrow(p, "b", cx, cy, cx + 44 * nx, cy + 44 * ny, 3) + txt(cx + 44 * nx - 14, cy + 44 * ny - 4, "N", BLUE)
-    b += txt(16, 24, "Công có ích: P·h (theo độ cao h)", BLUE, 13, "start", "400") + txt(16, 44, "Công hao phí: F_ms·l (theo chiều dài l)", ORG, 13, "start", "400")
-    return fig("c4-2", "0 0 420 200", "Vật trên mặt phẳng nghiêng chịu lực đẩy dọc ván, lực ma sát ngược chiều, trọng lực và phản lực",
+    # tỉ lệ thật (k = 0.16 px/N): P = 600, N = P·cosθ, F = P·h/l + F_ms = 240, F_ms = 60
+    K = 0.16; Fa = 600 * 1.5 / 5 + 60; Nn = 600 * math.cos(tr)
+    b += vec_luc("r", cx, cy, ux, uy, Fa, K, 3)[0] + txt(cx + Fa * K * ux + 4, cy + Fa * K * uy - 4, "F", RED)
+    b += vec_luc("o", cx, cy, -ux, -uy, 60, K, 3)[0] + txt(cx - 60 * K * ux - 38, cy - 60 * K * uy + 4, "F_ms", ORG)
+    b += vec_luc("g", cx, cy, 0, 1, 600, K, 3)[0] + txt(cx + 8, cy + 600 * K - 6, "P", GRN)
+    b += vec_luc("b", cx, cy, nx, ny, Nn, K, 3)[0] + txt(cx + Nn * K * nx + 8, cy + Nn * K * ny + 4, "N", BLUE)
+    b += txt(236, 24, "Công có ích: P·h", BLUE, 13, "start", "400") + txt(236, 42, "(theo độ cao h)", BLUE, 12, "start", "400")
+    b += txt(236, 66, "Công hao phí: F_ms·l", ORG, 13, "start", "400") + txt(236, 84, "(theo chiều dài l)", ORG, 12, "start", "400")
+    return fig("c4-2", "0 0 420 272", "Vật trên mặt phẳng nghiêng chịu lực đẩy dọc ván, lực ma sát ngược chiều, trọng lực và phản lực",
                b, "Dữ kiện: công có ích tính theo độ cao h, công hao phí tính theo chiều dài ván l. Hình vẽ đúng tỉ lệ l, h.")
 
 
@@ -275,9 +285,12 @@ def d7(kk):
     cx, cy = ox + X + 30 * math.cos(tr) - 16 * math.sin(tr), oy - X * 0 - (X + 30) * 0 - 30 * math.sin(tr) - 16 * math.cos(tr)
     cy = oy - (X + 0) * math.sin(tr) * 0 - 30 * math.sin(tr) - 16 * math.cos(tr) - X * (ey - oy) / (ex - ox) * -1 * -1 * 0
     cy = oy - ((X + 30) * (oy - ey) / (ex - ox)) - 16
-    b += arrow(p, "r", cx, cy, cx + 44 * ux, cy + 44 * uy, 3) + txt(cx + 44 * ux + 4, cy + 44 * uy - 6, "F", RED)
-    b += arrow(p, "o", cx, cy, cx - 40 * ux, cy - 40 * uy, 3) + txt(cx - 40 * ux - 26, cy - 40 * uy + 2, "F_c", ORG)
-    b += arrow(p, "g", cx, cy, cx, cy + 36, 3) + txt(cx + 8, cy + 36, "P", GRN)
+    # tỉ lệ thật (k = 0.05 px/N): F = 1200 = F_c (450) + P·h/l (750). P = 15000 N không vẽ cùng tỉ lệ được nên chỉ vẽ
+    # thành phần P·h/l dọc dốc, nối đuôi F_c để thấy F bằng tổng hai lực cản.
+    K = 0.05
+    b += vec_luc("r", cx, cy, ux, uy, 1200, K, 3)[0] + txt(cx + 1200 * K * ux + 4, cy + 1200 * K * uy - 6, "F", RED)
+    b += vec_luc("o", cx, cy, -ux, -uy, 450, K, 3)[0] + txt(cx - 225 * K * ux - 6 - 16 * math.sin(tr), cy - 225 * K * uy - 16 * math.cos(tr), "F_c", ORG)
+    b += vec_luc("b", cx - 450 * K * ux, cy - 450 * K * uy, -ux, -uy, 750, K, 3)[0] + txt(cx - 825 * K * ux - 22 - 16 * math.sin(tr), cy - 825 * K * uy - 16 * math.cos(tr), "P·h/l", BLUE, 12)
     b += txt(16, 24, "F = F_c + P·h / l", "currentColor", 13)
     b += txt(16, 44, "P·h / l : trọng lực dọc dốc", BLUE, 12, "start", "400")
     b += txt(16, 64, "P_cs = F·v", "currentColor", 13) + txt(16, 84, "(đổi v ra m/s)", "currentColor", 12, "start", "400")

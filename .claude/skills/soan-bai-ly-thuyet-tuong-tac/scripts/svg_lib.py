@@ -10,9 +10,24 @@ def defs(prefix):
     return out + "</defs>"
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Vectơ: thân thẳng + đầu V 30° (chevron) — KHÔNG dùng marker tam giác đặc (thầy chốt 7/10/2026).
+    `p` giữ cho tương thích chữ ký cũ. Độ dài (x1,y1)→(x2,y2) PHẢI tỉ lệ độ lớn: dùng `vec_luc` cho lực."""
     col = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}[c]
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{w}"{d} marker-end="url(#{p}-{c})"/>'
+    ww = min(w, 2.8)
+    n = _m.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))      # vectơ ngắn → đầu V nhỏ lại, thân vẫn đúng độ dài
+    return (f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, col, ww, L))
+
+def vec_luc(c, x, y, dx, dy, F, k, w=3, dash="", min_len=8):
+    """Vectơ lực/vận tốc từ gốc (x,y), hướng (dx,dy), độ dài = k·F (px) — cùng k cho MỌI vectơ cùng loại trong một hình
+    (lực 2 N dài gấp đôi lực 1 N). Trả (svg, (x_ngọn, y_ngọn)). Ngắn hơn `min_len` thì báo lỗi: tăng k, đừng kéo dài giả."""
+    n = _m.hypot(dx, dy) or 1
+    L = k * F
+    assert L >= min_len, f"vectơ F={F} dài {L:.1f}px < {min_len}: tăng k (tỉ lệ) rồi vẽ lại cả hình"
+    x2, y2 = x + dx / n * L, y + dy / n * L
+    return arrow("", c, x, y, round(x2, 1), round(y2, 1), w, dash), (x2, y2)
 
 def text(x, y, s, c="currentColor", size=13, anchor="start", weight="600"):
     return f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{s}</text>'

@@ -5,7 +5,7 @@ Dùng `scripts/svg_lib.py`: `defs(prefix)` (mũi tên 4 màu), `arrow`, `text`, 
 ## Quy ước
 - **Mỗi hình = một ý.** Hình 1 minh hoạ tình huống mở bài; hình 2 minh hoạ chỗ hiểu lầm; hình 3 minh hoạ số liệu.
 - **Màu có nghĩa, giữ nhất quán cả bài:** đỏ `#f87171` = lực/đại lượng "tác động"; xanh dương `#38bdf8` = phản ứng/đối tượng thứ hai; cam `#fb923c` = nhóm cùng vật; xanh lá `#34d399` = kết quả chuyển động/gia tốc. Chữ và nét thân vật dùng `currentColor`.
-- **Độ dài mũi tên tỉ lệ độ lớn** (lực bằng nhau → dài bằng nhau; gia tốc 3 : 2 → 120 : 80 px).
+- **Độ dài mũi tên tỉ lệ độ lớn — bắt buộc cho mọi vectơ lực/vận tốc/gia tốc** (lực bằng nhau → dài bằng nhau; 3 : 2 → 120 : 80 px). Chọn MỘT hệ số `k` px/đơn vị cho mỗi loại đại lượng trong hình, dùng `svg_lib.vec_luc(c,x,y,dx,dy,F,k)` (độ dài = k·F, tự báo lỗi nếu quá ngắn). Cân bằng (ΣF=0) thì các cặp lực đối nhau phải dài bằng nhau; không có số thì vẽ theo quan hệ (mg, N, F_ms…) rồi ghi chú "độ dài không theo tỉ lệ" chứ không vẽ tuỳ tiện. Mọi `arrow()` giờ vẽ đầu V 30° (không còn marker tam giác).
 - `viewBox` ≈ 420–440 rộng; `figure.fig` tự giới hạn 420 px. Chữ ≥ 11 px sau thu nhỏ; kiểm ở 375 px.
 - Marker mũi tên **mỗi hình một tiền tố** (`f1-r`, `f2-b`…) — id trùng giữa các hình làm mũi tên mất.
 - Chỉ số dưới: `<tspan dy="4" font-size="9">A</tspan><tspan dy="-4">…</tspan>`. Không dùng KaTeX trong SVG.

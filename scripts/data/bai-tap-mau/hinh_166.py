@@ -149,9 +149,11 @@ def d4(k):
     if nrm[1] > 0: nrm = (-nrm[0], -nrm[1])
     M = (A[0] + 0.45 * (B[0] - A[0]), A[1] + 0.45 * (B[1] - A[1])); Mo = (M[0] + nrm[0] * 6, M[1] + nrm[1] * 6)
     b += dot(*Mo, 6, GRN)
-    b += arrow(p, "o", Mo[0], Mo[1], Mo[0], Mo[1] + 60, 3) + lbl(Mo[0] + 8, Mo[1] + 62, "P = mg", ORG, 13, "start", "700")
-    b += arrow(p, "b", Mo[0], Mo[1], Mo[0] + nrm[0] * 52, Mo[1] + nrm[1] * 52, 3) + lbl(Mo[0] + nrm[0] * 52 - 4, Mo[1] + nrm[1] * 52 - 6, "N", BLUE, 13, "end", "700")
-    b += arrow(p, "r", Mo[0], Mo[1], Mo[0] - t_[0] * 48, Mo[1] - t_[1] * 48, 3) + lbl(Mo[0] - t_[0] * 48 - 8, Mo[1] - t_[1] * 48 + 18, "F_ms", RED, 13, "end", "700")
+    # tỉ lệ thật (k = 3 px/N): P = mg = 20 N, N = P·cos α = 16 N, F_ms = μN = 5,6 N
+    K = 3
+    b += vec_luc("o", Mo[0], Mo[1], 0, 1, 20, K, 3)[0] + lbl(Mo[0] + 10, Mo[1] + 20 * K - 6, "P", ORG, 13, "start", "700")
+    b += vec_luc("b", Mo[0], Mo[1], nrm[0], nrm[1], 16, K, 3)[0] + lbl(Mo[0] + nrm[0] * 16 * K - 4, Mo[1] + nrm[1] * 16 * K - 6, "N", BLUE, 13, "end", "700")
+    b += vec_luc("r", Mo[0], Mo[1], -t_[0], -t_[1], 5.6, K, 3)[0] + lbl(Mo[0] - t_[0] * 5.6 * K - 8, Mo[1] - t_[1] * 5.6 * K + 18, "F_ms", RED, 13, "end", "700")
     b += lbl(250, 24, "N = P·cos α", BLUE, 13, "start", "700") + lbl(250, 44, "F_ms = μ·N", RED, 13, "start", "700") + lbl(250, 64, "A_ms = F_ms·l", "currentColor", 13, "start", "700")
     return fig("d4-1", "0 0 420 238", "Các lực tác dụng lên vật trên dốc: trọng lực, phản lực vuông góc với dốc và lực ma sát dọc dốc hướng lên", b,
                "Dữ kiện: lực ma sát song song với dốc, áp lực vuông góc với dốc. " + NOTE)
