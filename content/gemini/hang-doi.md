@@ -32,26 +32,26 @@
 | l10-su-roi-tu-do | 55 | da-dang | Ch2 L10 Bài 10: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
 | l10-thuc-hanh-do-g | 56 | da-dang | Ch2 L10 Bài 11: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
 | l10-chuyen-dong-nem | 57 | da-dang | Ch2 L10 Bài 12: batch sửa lý thuyết 8/10/2026, đã đăng (50, 57 cắt tay về dưới 2.500 từ; 49 sửa nhãn trục Ox). Chờ TA rà trên web |
-| l11-dao-dong-dieu-hoa | 20 | chua-lam | Bài 1. Dao động điều hoà (5 mục DB, chưa chạy batch). |
-| l11-mo-ta-dao-dong | 21 | chua-lam | Bài 2. Mô tả dao động điều hoà (2 mục DB, chưa chạy batch). |
-| l11-van-toc-gia-toc | 22 | chua-lam | Bài 3. Vận tốc, gia tốc trong dao động điều hoà (2 mục DB, chưa chạy batch). |
-| l11-co-nang-dao-dong | 24 | chua-lam | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà (2 mục DB, chưa chạy batch). |
-| l11-tat-dan-cuong-buc | 25 | chua-lam | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng (2 mục DB, chưa chạy batch). |
-| l11-mo-ta-song | 27 | chua-lam | Bài 8. Mô tả sóng (3 mục DB, chưa chạy batch). |
-| l11-giao-thoa-song | 31 | chua-lam | Bài 12. Giao thoa sóng (3 mục DB, chưa chạy batch). |
-| l11-song-dung | 32 | chua-lam | Bài 13. Sóng dừng (2 mục DB, chưa chạy batch). |
-| l11-bai-tap-song | 33 | chua-lam | Bài 14. Bài tập về sóng (3 mục DB, chưa chạy batch). |
-| l11-luc-coulomb | 35 | chua-lam | Bài 16. Lực tương tác giữa hai điện tích (3 mục DB, chưa chạy batch). |
-| l11-khai-niem-dien-truong | 36 | chua-lam | Bài 17. Khái niệm điện trường (3 mục DB, chưa chạy batch). |
-| l11-dien-truong-deu | 37 | chua-lam | Bài 18. Điện trường đều (3 mục DB, chưa chạy batch). |
-| l11-the-nang-dien | 38 | chua-lam | Bài 19. Thế năng điện (3 mục DB, chưa chạy batch). |
-| l11-dien-the | 39 | chua-lam | Bài 20. Điện thế (3 mục DB, chưa chạy batch). |
-| l11-tu-dien | 40 | chua-lam | Bài 21. Tụ điện (3 mục DB, chưa chạy batch). |
-| l11-cuong-do-dong-dien | 41 | chua-lam | Bài 22. Cường độ dòng điện (3 mục DB, chưa chạy batch). |
-| l11-dien-tro-dinh-luat-ohm | 42 | chua-lam | Bài 23. Điện trở. Định luật Ohm (3 mục DB, chưa chạy batch). |
-| l11-nguon-dien | 43 | chua-lam | Bài 24. Nguồn điện (3 mục DB, chưa chạy batch). |
-| l11-nang-luong-cong-suat-dien | 44 | chua-lam | Bài 25. Năng lượng điện và công suất điện (3 mục DB, chưa chạy batch). |
-| l11-thuc-hanh-do-sdd-pin | 45 | chua-lam | Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá (3 mục DB, chưa chạy batch). |
+| l11-dao-dong-dieu-hoa | 20 | da-dang | Bài 1. Dao động điều hoà — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-mo-ta-dao-dong | 21 | da-dang | Bài 2. Mô tả dao động điều hoà — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-van-toc-gia-toc | 22 | da-dang | Bài 3. Vận tốc, gia tốc trong dao động điều hoà — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-co-nang-dao-dong | 24 | da-dang | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và thế năng trong dao động điều hoà — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-tat-dan-cuong-buc | 25 | da-dang | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng hưởng — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-mo-ta-song | 27 | da-dang | Bài 8. Mô tả sóng — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-giao-thoa-song | 31 | da-dang | Bài 12. Giao thoa sóng — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-song-dung | 32 | da-dang | Bài 13. Sóng dừng — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-bai-tap-song | 33 | da-dang | Bài 14. Bài tập về sóng — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-luc-coulomb | 35 | da-dang | Bài 16. Lực tương tác giữa hai điện tích — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-khai-niem-dien-truong | 36 | da-dang | Bài 17. Khái niệm điện trường — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-dien-truong-deu | 37 | da-dang | Bài 18. Điện trường đều — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-the-nang-dien | 38 | da-dang | Bài 19. Thế năng điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-dien-the | 39 | da-dang | Bài 20. Điện thế — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-tu-dien | 40 | da-dang | Bài 21. Tụ điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-cuong-do-dong-dien | 41 | da-dang | Bài 22. Cường độ dòng điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-dien-tro-dinh-luat-ohm | 42 | da-dang | Bài 23. Điện trở. Định luật Ohm — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-nguon-dien | 43 | da-dang | Bài 24. Nguồn điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-nang-luong-cong-suat-dien | 44 | da-dang | Bài 25. Năng lượng điện và công suất điện — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
+| l11-thuc-hanh-do-sdd-pin | 45 | da-dang | Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá — batch sửa lý thuyết 9/10/2026, lint sạch, đã đăng, chờ TA rà trên web |
 | l10-lam-quen-voi-vat-li | 46 | chua-lam | Bài 1. Làm quen với Vật lí (3 mục DB, chưa chạy batch). |
 | l10-an-toan-phong-thuc-hanh | 47 | chua-lam | Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí (3 mục DB, chưa chạy batch). |
 | l10-thuc-hanh-sai-so | 48 | chua-lam | Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo (3 mục DB, chưa chạy batch). |

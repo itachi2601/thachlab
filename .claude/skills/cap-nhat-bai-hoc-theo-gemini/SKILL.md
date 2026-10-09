@@ -1,6 +1,6 @@
 ---
 name: cap-nhat-bai-hoc-theo-gemini
-description: Quy trình CẬP NHẬT một bài thachlab bằng "học sinh ảo" — đường chính (thầy chốt 8/10/2026) là Claude qua Batch API (scripts/batch-ra-soat-bai.mts): (1) rà mục lý thuyết → JSON góp ý → Claude tự kiểm, tự chốt và sửa tối thiểu theory.src.html → build → ĐĂNG, trợ giảng người thật rà lại trên web; (2) nháp 4 dạng bài tập mẫu theo hệ bắc cầu 4 cấp → Claude kiểm số liệu, viết lại theo phong cách thầy, dựng mô phỏng, kiểm chéo, đăng. Gemini (thầy dán tay vào gemini.google.com, không API) chỉ còn là ý kiến thứ hai tuỳ chọn — "/gemini-gui <bài|chương>" xuất file để dán; "/gemini-nhan <bài>" xử lý JSON trả về. Dùng khi thầy nói "rà bài này", "chạy học sinh ảo", "sửa lý thuyết/bài tập mẫu theo góp ý", "gửi bài cho Gemini", "Gemini đã trả kết quả". Soạn/sửa/build chạy được trên cloud; batch API và ĐĂNG lên DB chạy trên Mac.
+description: Quy trình CẬP NHẬT một bài thachlab bằng "học sinh ảo" — đường chính (thầy chốt 8/10/2026) là Claude qua Batch API (scripts/batch-ra-soat-bai.mts): (1) rà mục lý thuyết → JSON góp ý → Claude tự kiểm, tự chốt và sửa tối thiểu theory.src.html → build → ĐĂNG, trợ giảng người thật rà lại trên web; (2) quét số dạng và tên dạng từ lý thuyết + ngân hàng câu hỏi của chủ đề → nháp bài tập mẫu theo hệ bắc cầu (số dạng theo chủ đề, thường 2–6, không cố định 4) → Claude kiểm số liệu, viết lại theo phong cách thầy, dựng mô phỏng, kiểm chéo, đăng. Gemini (thầy dán tay vào gemini.google.com, không API) chỉ còn là ý kiến thứ hai tuỳ chọn — "/gemini-gui <bài|chương>" xuất file để dán; "/gemini-nhan <bài>" xử lý JSON trả về. Dùng khi thầy nói "rà bài này", "chạy học sinh ảo", "sửa lý thuyết/bài tập mẫu theo góp ý", "gửi bài cho Gemini", "Gemini đã trả kết quả". Soạn/sửa/build chạy được trên cloud; batch API và ĐĂNG lên DB chạy trên Mac.
 ---
 
 # Cập nhật bài học theo học sinh ảo (thầy chốt 8/10/2026 — Claude là đường chính, Gemini tuỳ chọn)
@@ -60,7 +60,7 @@ Prompt gốc nằm một nơi: `references/PROMPT-GEMINI-HOC-SINH.md` (skill nà
 
 **B. Bài tập mẫu** (khi có `nhan/bai-tap-mau.json`) — làm theo skill `soan-bai-tap-mau` (đọc nó trước), điểm khác là phần nháp đã có:
 0. Nháp có thể do Gemini (dán tay) hoặc do Claude qua Batch API (`scripts/batch-ra-soat-bai.mts --che-do bai-tap-mau`, tự chép vào `nhan/bai-tap-mau.json` nếu chưa có, đã chạy kiểm máy — xem `scripts/logs/batch-ra-soat/BAO-CAO-BAI-TAP-MAU.md`). Nguồn nào cũng đi đủ các bước dưới.
-1. Kiểm máy: `python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json --lesson-id <id>` (đúng 4 dạng, `cap_do` 1→4, tính lại `kiem_tinh`, trích đề, từ cấm, YCCĐ). Có ✗ thì sửa trước; mục `dieu_ban_khong_chac` tự giải lại đầu tiên. **0/4 YCCĐ khớp = lạc phạm vi**: không viết lại, chuyển file sang `da-xu-ly/bai-tap-mau.loai-vongN.json`, xuất lại tin nhắn 3 (có danh mục YCCĐ) cho thầy dán. Số học đúng hết không có nghĩa là bám bài — đọc 4 đề bằng mắt, so với các mục của bài.
+1. Kiểm máy: `python3 .claude/skills/soan-bai-tap-mau/scripts/kiem-ban-nhap-gemini.py content/lesson-samples/<bài>/gemini/nhan/bai-tap-mau.json --lesson-id <id>` (số dạng khớp danh sách quét ở bước 0, `cap_do` 1→n, tính lại `kiem_tinh`, trích đề, từ cấm, YCCĐ). Có ✗ thì sửa trước; mục `dieu_ban_khong_chac` tự giải lại đầu tiên. **0/4 YCCĐ khớp = lạc phạm vi**: không viết lại, chuyển file sang `da-xu-ly/bai-tap-mau.loai-vongN.json`, xuất lại tin nhắn 3 (có danh mục YCCĐ) cho thầy dán. Số học đúng hết không có nghĩa là bám bài — đọc 4 đề bằng mắt, so với các mục của bài.
 2. **Không đăng nguyên văn**: viết lại lời giải theo "Phong cách" của `soan-bai-tap-mau` (khung kiến thức, bước đánh số, ⚠ điều kiện, nhận dạng), giữ cấu trúc bắc cầu (`cau_noi`), dựng mô phỏng + bảng phân tích, khớp `topic` với `question-topics.json`, lưu `scripts/data/bai-tap-mau/<id>.json`.
 3. Kiểm chéo độc lập bằng `kiem-code` (tự giải không nhìn lời giải) → `review.checked: true` → validate → đăng ngay (8/10/2026: không duyệt trước, TA rà trên web) `npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --dry-run` rồi bỏ `--dry-run` (`--giu-cu` nếu bài đã có dạng cũ). Chạy lệnh ghi DB trong tab terminal của thầy.
 4. Lưu bản đã kiểm vào `da-xu-ly/`. Ghi trạng thái vào `hang-doi.md`.
@@ -71,6 +71,29 @@ Prompt gốc nằm một nơi: `references/PROMPT-GEMINI-HOC-SINH.md` (skill nà
 - Lượt Claude chạy bằng subagent tách biệt, không thấy kết quả Gemini; người kiểm vẫn là phiên chính. Không gửi gì ra ngoài Claude cho lượt này.
 - Học sinh ảo giỏi hơn học sinh thật; vai `yeu` phải ép giả vờ không biết. Sau khi đăng, đối chiếu số liệu làm bài thật của lớp.
 - Từ 8/10/2026 không còn điểm thầy duyệt trước khi đăng: Claude tự chốt góp ý và đăng; trợ giảng rà trên web. Thầy chỉ được báo 1 dòng/bài.
+
+## Bước 0 — quét dạng trước khi nháp (thầy chốt 9/10/2026)
+Số dạng KHÔNG cố định 4. Dạng được rút ra từ hai nguồn, không tự nghĩ ra:
+1. **Lý thuyết của bài** (`theory.html` trong repo): các kiến thức và bài toán mẫu đã có.
+2. **Ngân hàng câu hỏi của chủ đề**: tên chủ đề trong `scripts/data/question-topics.json` (254 mục: `lesson_id`, `name`, `parent_id`) và số câu/dạng trong bảng câu hỏi trên DB (chạy trên Mac; repo không có số câu).
+
+Quy tắc:
+- Mỗi dạng phải có ít nhất một nhóm câu trong ngân hàng cùng chủ đề. Dạng không có câu nào tương ứng thì bỏ.
+- Số dạng: 2–6 tuỳ bài; bài ít nội dung thì ít dạng hơn, không ép cho đủ.
+- Tên dạng lấy theo cách ngân hàng gọi (ví dụ "Tính lực từ tác dụng lên đoạn dây"), không đặt tên mới.
+- Cấp độ 1→n theo thứ tự tăng dần; không tách cấp độ thành dạng riêng.
+- Kết quả là danh sách `dang: [{ten, nguon_cau_hoi, so_cau, cap_do}]` ghi vào `scripts/logs/batch-ra-soat/ket-qua/<id>.quet-dang.json` trước khi chạy nháp; nháp chỉ viết đúng các dạng trong danh sách này.
+
+Model: **Sonnet 5.5, effort medium**. Việc này là đối chiếu và phân loại, không cần suy luận sâu; Opus không cần thiết trừ khi bài có ngân hàng quá lớn (>200 câu) — khi đó chia theo chương.
+
+## Phân công model cho bài tập mẫu (thầy chốt 9/10/2026)
+- **Quét số dạng và tên dạng** (bước 0 của bài tập mẫu, xem mục dưới): Sonnet 5.5, effort medium — việc phân loại theo chủ đề, không sinh lời giải.
+- **Sinh nháp các dạng** (`--che-do bai-tap-mau`): Opus 5.5, effort high — mặc định của script, không truyền `--model`. Lời giải sai số là lỗi nặng nhất, không hạ xuống model rẻ hơn khi chưa thử.
+- **Kiểm chéo độc lập** (`--che-do kiem-cheo`): Sonnet 5.5 — truyền `--model claude-sonnet-5-5`. Người kiểm phải khác người soạn; chi phí chỉ bằng nửa Opus.
+- **Viết lại theo phong cách** (`--che-do viet-bai-tap-mau`, hoặc phiên Claude Code tự viết): Opus 5.5.
+- **Không dùng Haiku 5.5** cho bước nào của bài tập mẫu.
+- Hạ nháp xuống Sonnet chỉ sau khi chạy thử 2 bài (ví dụ bài 17, bài 2) và so chất lượng với nháp Opus; ghi kết quả vào nhật ký bên dưới.
+- Nháp cũ đã lệch lý thuyết sau đợt sửa 8–9/10 thì chạy lại, không tái sử dụng; chuyển bản cũ sang `scripts/logs/batch-ra-soat/da-xu-ly/`.
 
 ## Gemini desktop (Mac) ghi thẳng vào repo (thầy xác nhận 8/10/2026)
 Gemini desktop có quyền vào `/Users/MAC/Projects/thachlab`. File 2 và 3 do `--xuat` sinh đã chứa lệnh "tự ghi JSON vào `<đường dẫn tuyệt đối>/gemini/nhan/…`" — thầy chỉ dán 1→2→3, KHÔNG dán JSON lại cho Claude. Sau khi thầy báo "xong", Claude đọc `nhan/`, kiểm JSON hợp lệ rồi chạy chế độ 2. Sửa script `--xuat` thì giữ phần `luu()`.
@@ -89,3 +112,4 @@ Gemini desktop có quyền vào `/Users/MAC/Projects/thachlab`. File 2 và 3 do 
 - 2026-10-08 · DB có thể đang CHỨA bản đã sửa trong khi file repo là bản cũ (bài 4, 14, 15, 17, 18, 125, 126 L12): đăng lại từ repo là LÙI nội dung. Vì vậy bước "kiểm file với DB" phải chạy trước khi đăng loạt.
 - 2026-10-08 · Ch2 L10 (49–57) xong: 7/9 bài `da-sua`, 50 và 57 `loi-lint` chỉ vì `lint_do_dai` vượt trần 2.500 từ khoảng 40 từ (API thêm 190–260 từ để sửa lỗi vật lí thật). → Thêm vào prompt `sua-ly-thuyet`: sau khi sửa phải đếm lại và cắt chỗ lặp ý để không vượt trần, đừng chờ lint. Cắt tay thì cắt phần lặp (mục "Mang về", phản hồi sai dài, bullet nói sẵn đáp án quiz), giữ nguyên các sửa vật lí. Lint độ dài phải đo trên `theory.html` (bản build), không phải `theory.src.html` (lệch ~140 từ). API đổi chữ (X→Ox) mà không đổi nhãn trong `build_figs.py` → sau batch grep nhãn trục/ký hiệu trong `build_figs.py` theo `doi_noi_dung` có ghi "cần đối chiếu hình". `dang-ly-thuyet-hang-loat.sh` đăng bản trong cây làm việc: nếu `git pull` trước đó thất bại thì nó đăng bản cũ trong im lặng → kiểm `git log -1` và lint trên file trước khi đăng, tách `pull` khỏi chuỗi đăng.
 
+- 2026-10-09 · Đợt L11 (20 bài, 9/10): rà $2,97 + sửa $7,45 (≈ $0,37/bài sửa); batch sửa chạy >3 giờ chưa bài nào xong rồi trả cả loạt một lúc → đừng `--cho` trong tab (mạng chớp là tab chết, "Connection error"), hẹn kiểm mỗi ~50 phút bằng `--nhan` không `--cho`. 17/20 đạt lint ngay; 3 bài (25, 35, 38) vượt 2.500 từ 14–88 từ → subagent cắt: lint không tính phản hồi quiz/ô bấm xem nên chỉ cắt "Mang về", câu dẫn, dòng ⚠ lộ đáp án mới giảm số từ. Kiểm file-với-DB phải chạy trên BẢN TRƯỚC batch (worktree `HEAD~1`, symlink node_modules + copy .env.local) vì sau batch file nào cũng khác DB; 7/20 bài khác DB nhưng DB là bản cũ (repo mới hơn) → đăng an toàn. Hook giới hạn 6 tab terminal/phiên: đóng tab cũ sớm. Đăng 20 bài mất ~25 phút (mỗi bài ~1 phút) → chạy vòng for trong 1 tab và theo dõi bằng log.
