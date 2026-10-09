@@ -1,0 +1,1116 @@
+Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng
+Quy ước dùng chung cho toàn bộ chuyên đề
+Lấy gia tốc trọng trường g = 10 m/s² trong mọi bài toán, trừ khi đề cho giá trị khác.
+Đơn vị: khối lượng m tính bằng kg, vận tốc v tính bằng m/s, độ cao h và quãng đường s tính bằng m, công và năng lượng tính bằng jun (J).
+1 J = 1 N × 1 m = 1 kg × 1 m²/s².
+Đổi đơn vị vận tốc: 1 m/s = 3,6 km/h, muốn đổi từ km/h sang m/s thì chia cho 3,6.
+Kết quả số làm tròn đến 2 chữ số thập phân; khi kết quả là căn không đẹp thì giữ dạng căn rồi mới làm tròn.
+Kí hiệu: Wđ là động năng, Wt là thế năng trọng trường, W là cơ năng, A là công, P là trọng lượng.
+Mọi bài toán đều phải chọn và nói rõ mốc tính thế năng trước khi thay số.
+A. Yêu cầu cần đạt và phạm vi
+A1. Yêu cầu cần đạt theo chương trình (SGK KHTN 9, bộ Kết nối tri thức với cuộc sống)
+1. Nêu được khái niệm năng lượng, động năng, thế năng trọng trường, thế năng đàn hồi và cơ năng.
+2. Viết được công thức tính động năng Wđ = ½mv² và thế năng trọng trường Wt = mgh = Ph; nêu được tên và đơn vị của từng đại lượng.
+3. Nêu được động năng phụ thuộc vào khối lượng và vận tốc của vật; vận tốc tăng gấp đôi thì động năng tăng gấp bốn.
+4. Nêu được thế năng trọng trường phụ thuộc vào khối lượng, độ cao và phụ thuộc vào việc chọn mốc thế năng.
+5. Mô tả được sự chuyển hoá qua lại giữa động năng và thế năng trong các hiện tượng thực tế: vật rơi, vật được ném lên, con lắc dao động, xe lăn xuống dốc.
+6. Phát biểu được định luật bảo toàn cơ năng: khi vật chỉ chịu tác dụng của trọng lực và bỏ qua ma sát, lực cản thì cơ năng của vật không đổi.
+7. Nêu được khi có ma sát hoặc lực cản thì cơ năng của vật giảm dần; phần cơ năng giảm đi đúng bằng công của lực ma sát và đã chuyển hoá thành nhiệt năng.
+8. Vận dụng được các công thức trên để giải bài toán: tính động năng, thế năng, cơ năng; tính vận tốc tại chân dốc; tính độ cao cực đại; tính quãng đường vật trượt cho tới khi dừng lại; giải thích một số hiện tượng an toàn giao thông.
+A2. Yêu cầu mở rộng dành cho học sinh giỏi
+1. Chứng minh và ghi nhớ hệ quả: vật trượt hoặc rơi không ma sát từ độ cao h thì vận tốc cuối chỉ phụ thuộc h và g, hoàn toàn không phụ thuộc khối lượng cũng như độ dài hay độ dốc của đường đi.
+2. Giải thành thạo bài toán mặt phẳng nghiêng có ma sát, gồm cả nhận xét đẹp: công của lực ma sát trên mặt phẳng nghiêng chỉ phụ thuộc hình chiếu ngang của quãng đường.
+3. Giải bài toán nhiều giai đoạn liên tiếp (dốc – mặt ngang – dốc) bằng cách viết biểu thức cơ năng ở từng mốc và trừ dần phần năng lượng bị mất.
+4. Phân tích định tính và bán định lượng con lắc đơn, con lắc lò xo; nêu được vị trí động năng cực đại, thế năng cực đại, vị trí động năng bằng thế năng.
+5. Đọc, lập bảng giá trị và nhận xét được dạng đồ thị năng lượng: động năng và thế năng biến thiên bậc nhất theo độ cao, động năng biến thiên bậc hai theo vận tốc.
+6. Phân tích được vai trò của lực cản không khí trong hiện tượng rơi và trong chuyển động của phương tiện giao thông.
+A3. Phạm vi và giới hạn kiến thức
+Được dùng: Wđ = ½mv², Wt = mgh = Ph, W = Wđ + Wt, A = F × s, hiệu suất.
+Chỉ nêu định tính với thế năng đàn hồi của lò xo. Công thức Wt = ½kx² là kiến thức mở rộng nằm ngoài chương trình KHTN 9, nếu dùng phải ghi rõ là mở rộng và chỉ dùng trong bài nâng cao.
+Không dùng: đạo hàm, tích phân, vectơ động lượng, định luật bảo toàn động lượng, lực hướng tâm, phương trình dao động điều hoà.
+Các công thức động học của chuyển động biến đổi đều (nếu đã học) chỉ dùng để kiểm tra chéo kết quả; lời giải chính của chuyên đề này phải dựa trên năng lượng.
+A4. Kĩ năng cần luyện
+1. Chọn mốc thế năng hợp lí để biểu thức cơ năng đơn giản nhất.
+2. Viết được câu "ở vị trí đầu…, ở vị trí sau…" rồi mới lập phương trình bảo toàn.
+3. Kiểm tra đơn vị và kiểm tra tính hợp lí của kết quả (vận tốc không quá lớn, độ cao không vượt quá độ cao ban đầu khi có ma sát).
+B. Lý thuyết trọng tâm
+B1. Kiến thức chuẩn theo SGK
+1. Năng lượng và cơ năng
+Mọi vật có khả năng thực hiện công thì có năng lượng.
+Năng lượng có thể tồn tại dưới nhiều dạng: cơ năng, nhiệt năng, điện năng, hoá năng, quang năng, năng lượng hạt nhân.
+Cơ năng là năng lượng gắn với chuyển động cơ học của vật, gồm hai phần: động năng và thế năng.
+W = Wđ + Wt
+2. Động năng
+Động năng là năng lượng mà vật có được do nó đang chuyển động.
+Vật có khối lượng càng lớn và chuyển động càng nhanh thì động năng càng lớn.
+Công thức: Wđ = ½mv²
+Trong đó m là khối lượng (kg), v là vận tốc (m/s), Wđ là động năng (J).
+Động năng luôn không âm: Wđ ≥ 0.
+Vì v được bình phương nên khi vận tốc tăng gấp đôi thì động năng tăng gấp bốn; khi vận tốc tăng gấp ba thì động năng tăng gấp chín.
+Vật đứng yên thì động năng bằng 0.
+3. Thế năng trọng trường
+Thế năng trọng trường là năng lượng mà vật có được do nó đang ở một độ cao nào đó so với một mốc đã chọn.
+Vật có khối lượng càng lớn và ở càng cao thì thế năng trọng trường càng lớn.
+Công thức: Wt = mgh
+Viết theo trọng lượng: Wt = Ph, với P = mg là trọng lượng của vật (N).
+Trong đó h là độ cao của vật so với mốc thế năng (m).
+Thế năng phụ thuộc vào việc chọn mốc. Cùng một vật ở cùng một vị trí, nếu chọn mốc khác nhau thì thế năng có giá trị khác nhau. Vật nằm thấp hơn mốc thì thế năng có giá trị âm.
+Trong bài toán, mốc thế năng thường chọn là mặt đất hoặc mặt phẳng ngang đi qua vị trí thấp nhất của quỹ đạo.
+4. Thế năng đàn hồi
+Vật bị biến dạng đàn hồi (lò xo bị nén hoặc bị dãn, dây cao su bị kéo căng, cánh cung bị uốn) cũng có năng lượng, gọi là thế năng đàn hồi.
+Độ biến dạng càng lớn thì thế năng đàn hồi càng lớn.
+Ở lớp 9 chỉ cần nêu định tính; khi lò xo trở về hình dạng ban đầu, thế năng đàn hồi chuyển hoá thành động năng của vật.
+5. Sự chuyển hoá giữa động năng và thế năng
+Trong quá trình vật chuyển động trong trọng trường, động năng và thế năng có thể chuyển hoá qua lại cho nhau.
+Vật đi xuống: độ cao giảm nên thế năng giảm, vận tốc tăng nên động năng tăng. Thế năng chuyển hoá thành động năng.
+Vật đi lên: độ cao tăng nên thế năng tăng, vận tốc giảm nên động năng giảm. Động năng chuyển hoá thành thế năng.
+Tại vị trí cao nhất của quỹ đạo (nếu vật đổi chiều chuyển động), vận tốc bằng 0 nên động năng bằng 0, thế năng đạt cực đại.
+Tại vị trí thấp nhất của quỹ đạo, thế năng nhỏ nhất, động năng lớn nhất.
+6. Định luật bảo toàn cơ năng
+Khi vật chuyển động chỉ dưới tác dụng của trọng lực và bỏ qua ma sát, lực cản thì cơ năng của vật được bảo toàn.
+W₁ = W₂
+Nghĩa là: Wđ1 + Wt1 = Wđ2 + Wt2
+Nói cách khác: động năng tăng bao nhiêu thì thế năng giảm đi bấy nhiêu và ngược lại.
+Hệ quả thường dùng: vật rơi (hoặc trượt không ma sát) từ độ cao h xuống độ cao h′ thì
+½mv² = mg(h − h′)
+v² = 2g(h − h′)
+Khi vật tới nơi thấp nhất, coi h′ = 0, ta có v = √(2gh)
+Công thức này cho thấy vận tốc cuối không phụ thuộc khối lượng của vật.
+7. Ảnh hưởng của ma sát và lực cản
+Trong thực tế luôn có ma sát giữa vật với mặt tiếp xúc và có lực cản của không khí.
+Các lực này sinh công cản, làm cho cơ năng của vật giảm dần. Ta nói cơ năng không được bảo toàn.
+Độ giảm cơ năng đúng bằng công của lực ma sát (lấy giá trị tuyệt đối):
+W₁ − W₂ = Fms × s
+Trong đó s là quãng đường vật đã đi.
+Phần cơ năng bị mất đi đã chuyển hoá thành nhiệt năng làm nóng vật và mặt tiếp xúc, không mất đi.
+Ví dụ: một viên bi lăn trên sàn nhà rồi dừng lại; xe đạp xuống dốc rồi thả cho chạy trên đường bằng thì xe chậm dần và dừng.
+Đây cũng là lí do các quy định an toàn giao thông về tốc độ: vận tốc tăng gấp đôi thì động năng tăng gấp bốn, quãng đường phanh cần thiết tăng lên rất nhiều.
+B2. Mở rộng – nâng cao cho HSG
+1. Độ biến thiên động năng và công của ngoại lực (mở rộng)
+Độ biến thiên động năng của một vật bằng công của tất cả các lực tác dụng lên vật:
+Wđ2 − Wđ1 = A
+Với bài toán chỉ có trọng lực sinh công, ta thu lại được định luật bảo toàn cơ năng.
+Với bài toán có ma sát, công của lực ma sát là công cản nên âm, do đó động năng giảm.
+2. Thế năng phụ thuộc mốc nhưng độ biến thiên thế năng thì không
+Khi đổi mốc thế năng, mọi giá trị Wt đều thay đổi một lượng như nhau là mg × Δh (với Δh là khoảng dịch chuyển của mốc).
+Vì vậy hiệu Wt1 − Wt2 và độ biến thiên của cơ năng không phụ thuộc vào mốc.
+Khi giải bài toán bảo toàn cơ năng, ta có thể chọn mốc bất kì, miễn là dùng thống nhất một mốc từ đầu đến cuối bài.
+3. Công của lực ma sát trên mặt phẳng nghiêng (kết quả hay dùng)
+Vật trượt trên mặt phẳng nghiêng góc α, hệ số ma sát μ, đi được quãng đường s dọc theo mặt nghiêng.
+Lực ma sát: Fms = μmgcosα
+Công của lực ma sát: Ams = Fms × s = μmgcosα × s
+Gọi d = s × cosα là hình chiếu của quãng đường lên phương ngang, ta được:
+Ams = μmg × d
+Kết luận: công của lực ma sát trên mặt phẳng nghiêng chỉ phụ thuộc hình chiếu ngang d của quãng đường, không phụ thuộc độ dốc của mặt nghiêng.
+Trên mặt ngang thì α = 0, cosα = 1 và d chính là quãng đường, ta trở lại công thức quen thuộc Ams = μmg × s.
+4. Hệ quả về vận tốc ở chân dốc
+Vật trượt không ma sát từ đỉnh dốc cao h xuống chân dốc:
+v = √(2gh)
+Kết quả này đúng cho mọi khối lượng và mọi hình dạng dốc (thẳng, cong, bậc thang) miễn là bỏ qua ma sát.
+Vì vậy muốn giảm tốc độ xe ở chân dốc, biện pháp hiệu quả là giảm độ cao của dốc, chứ không phải tăng khối lượng xe.
+5. Chuyển động ném thẳng đứng (bán định lượng)
+Vật ném thẳng đứng lên với vận tốc đầu v₀, bỏ qua lực cản. Tại độ cao cực đại vận tốc bằng 0, toàn bộ động năng ban đầu chuyển thành thế năng:
+½mv₀² = mghmax
+hmax = v₀²/(2g)
+Khi vật rơi trở lại đúng vị trí ném, cơ năng lại bằng cơ năng ban đầu nên vận tốc có độ lớn bằng v₀.
+Nếu vật được ném thẳng đứng xuống dưới với vận tốc đầu v₀ từ độ cao h thì vận tốc khi chạm đất:
+v² = v₀² + 2gh
+6. Con lắc đơn (bán định lượng)
+Con lắc đơn gồm vật nặng treo vào sợi dây không dãn, chiều dài l.
+Kéo vật lệch khỏi vị trí cân bằng để dây treo hợp với phương thẳng đứng góc α₀ rồi thả nhẹ.
+Độ cao của vật so với vị trí cân bằng: h = l × (1 − cosα₀)
+Chọn mốc thế năng tại vị trí cân bằng, theo định luật bảo toàn cơ năng, vận tốc của vật khi dây hợp góc α:
+v² = 2gl × (cosα − cosα₀)
+Tại vị trí cân bằng (α = 0): vmax = √(2gl(1 − cosα₀))
+Công thức trên dùng tỉ số lượng giác của góc nhọn (đã học ở Toán 9), được xem là phần mở rộng. Khi đề cho trực tiếp độ cao nâng vật lên thì chỉ cần dùng v = √(2gh).
+Nhận xét: con lắc đơn dao động qua lại giữa hai vị trí biên, động năng cực đại ở vị trí cân bằng, thế năng cực đại ở hai vị trí biên.
+7. Con lắc lò xo (định tính, bán định lượng)
+Con lắc lò xo gồm vật nặng gắn vào đầu một lò xo. Kéo vật lệch khỏi vị trí cân bằng rồi thả, vật dao động quanh vị trí cân bằng.
+Tại vị trí cân bằng: lò xo không biến dạng, thế năng đàn hồi nhỏ nhất, vận tốc lớn nhất nên động năng cực đại.
+Tại hai vị trí biên: vận tốc bằng 0 nên động năng bằng 0, lò xo biến dạng nhiều nhất nên thế năng đàn hồi cực đại.
+Nếu bỏ qua mọi ma sát, cơ năng của con lắc lò xo được bảo toàn: động năng và thế năng đàn hồi chuyển hoá qua lại cho nhau.
+Nếu có ma sát, cơ năng giảm dần nên biên độ dao động nhỏ dần rồi vật dừng lại; phần cơ năng mất đi biến thành nhiệt.
+Ghi chú mở rộng: thế năng đàn hồi của lò xo có độ cứng k khi biến dạng một đoạn x được tính bằng Wt = ½kx². Công thức này nằm ngoài chương trình KHTN 9, chỉ dùng khi giáo viên yêu cầu và phải ghi rõ là mở rộng.
+8. Đồ thị năng lượng
+Với vật rơi tự do (hoặc trượt không ma sát) từ độ cao H, chọn mốc tại mặt đất:
+Wt = mgh, đồ thị theo h là một đoạn thẳng đi qua gốc toạ độ.
+Wđ = mg(H − h), đồ thị theo h là một đoạn thẳng giảm dần.
+W = Wđ + Wt = mgH, đồ thị là đường thẳng nằm ngang, song song với trục độ cao.
+Hai đường Wđ và Wt cắt nhau tại h = H/2, tại đó Wđ = Wt.
+Đồ thị động năng theo vận tốc là một nhánh parabol vì Wđ tỉ lệ với v².
+Đồ thị động năng theo bình phương vận tốc v² là một đường thẳng đi qua gốc, hệ số góc bằng ½m.
+Với vật chuyển động có ma sát, đồ thị cơ năng theo quãng đường là đường thẳng dốc xuống, vì mỗi mét đi được cơ năng giảm đi một lượng không đổi bằng Fms.
+9. Định luật bảo toàn năng lượng nói chung
+Năng lượng không tự nhiên sinh ra và cũng không tự nhiên mất đi; nó chỉ chuyển hoá từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác.
+Cơ năng "mất đi" trong các bài toán có ma sát thực chất chỉ là chuyển thành nhiệt năng, nội năng của vật và môi trường.
+B3. Công thức cần nhớ (bảng)
+STT
+Đại lượng
+Công thức
+Đơn vị
+Ghi chú
+1
+Động năng
+Wđ = ½mv²
+J
+m tính bằng kg và v tính bằng m/s. Wđ luôn không âm
+2
+Thế năng trọng trường
+Wt = mgh = Ph
+J
+h là độ cao so với mốc đã chọn. P = mg là trọng lượng
+3
+Cơ năng
+W = Wđ + Wt
+J
+giá trị phụ thuộc mốc thế năng
+4
+Công của trọng lực
+AP = mg × (h₁ − h₂)
+J
+bằng độ giảm thế năng
+5
+Công của lực ma sát
+Ams = −Fms × s
+J
+luôn âm vì là công cản
+6
+Bảo toàn cơ năng
+W₁ = W₂
+J
+chỉ khi bỏ qua ma sát và lực cản
+7
+Khi có ma sát
+W₁ − W₂ = Fms × s
+J
+độ giảm cơ năng bằng công cản
+8
+Vận tốc ở chân dốc không ma sát
+v = √(2gh)
+m/s
+không phụ thuộc khối lượng và dạng dốc
+9
+Độ cao cực đại khi ném lên
+hmax = v₀²/(2g)
+m
+tính từ vị trí ném
+10
+Quãng đường trượt tới khi dừng
+s = v₀²/(2μg)
+m
+trường hợp trượt trên mặt ngang, chỉ có ma sát
+11
+Công ma sát trên mặt nghiêng
+Ams = μmg × d
+J
+d là hình chiếu ngang của quãng đường
+12
+Độ biến thiên động năng
+Wđ2 − Wđ1 = A
+J
+mở rộng, dùng để kiểm tra chéo
+
+Kí hiệu
+Ý nghĩa
+Đơn vị
+m
+khối lượng của vật
+kg
+P
+trọng lượng của vật, P = mg
+N
+v, v₀
+vận tốc, vận tốc ban đầu
+m/s
+h, H
+độ cao so với mốc thế năng
+m
+s, d
+quãng đường, hình chiếu ngang của quãng đường
+m
+Wđ, Wt, W
+động năng, thế năng, cơ năng
+J
+A
+công của lực
+J
+Fms
+lực ma sát
+N
+μ
+hệ số ma sát
+không có đơn vị
+α, β
+góc nghiêng của mặt phẳng so với phương ngang
+độ
+g
+gia tốc trọng trường, lấy bằng 10
+m/s²
+
+C. Các dạng bài và phương pháp giải
+Dạng 1. Tính động năng, thế năng và cơ năng của một vật
+Nhận dạng
+Đề cho khối lượng, vận tốc và (có thể) độ cao của vật, yêu cầu tính Wđ, Wt hoặc W.
+Đề có thể yêu cầu so sánh năng lượng của hai vật hoặc của cùng một vật ở hai thời điểm.
+Đề có thể yêu cầu tính lại năng lượng khi thay đổi mốc thế năng.
+Phương pháp
+1. Đọc kĩ đề, ghi rõ các đại lượng đã cho và đổi hết về đơn vị chuẩn: kg, m/s, m.
+2. Chọn mốc thế năng và ghi rõ trong bài làm.
+3. Tính Wđ = ½mv².
+4. Tính Wt = mgh.
+5. Tính W = Wđ + Wt.
+6. Nếu đề hỏi về sự thay đổi thì lập hiệu hai giá trị và nhận xét.
+Ví dụ mẫu
+Một quả cầu khối lượng 0,5 kg đang chuyển động với vận tốc 4 m/s ở độ cao 5 m so với mặt đất. Lấy g = 10 m/s².
+a) Chọn mốc thế năng tại mặt đất, tính động năng, thế năng và cơ năng của quả cầu.
+b) Nếu chọn mốc thế năng tại mặt phẳng nằm ngang cách mặt đất 2 m thì cơ năng của quả cầu bằng bao nhiêu?
+Lời giải
+a) Chọn mốc thế năng tại mặt đất.
+Tóm tắt: m = 0,5 kg, v = 4 m/s, h = 5 m, g = 10 m/s².
+Động năng của quả cầu:
+Wđ = ½mv²
+Wđ = ½ × 0,5 × 4²
+Wđ = ½ × 0,5 × 16
+Wđ = 4 J
+Thế năng của quả cầu:
+Wt = mgh
+Wt = 0,5 × 10 × 5
+Wt = 25 J
+Cơ năng của quả cầu:
+W = Wđ + Wt
+W = 4 + 25
+W = 29 J
+b) Chọn mốc thế năng tại mặt phẳng cách mặt đất 2 m.
+Độ cao của quả cầu so với mốc mới:
+h′ = 5 − 2 = 3 m
+Thế năng mới:
+Wt′ = 0,5 × 10 × 3
+Wt′ = 15 J
+Động năng không đổi vì vận tốc không đổi:
+Wđ′ = 4 J
+Cơ năng mới:
+W′ = 4 + 15
+W′ = 19 J
+Nhận xét: thế năng và cơ năng phụ thuộc vào mốc đã chọn, nhưng độ biến thiên cơ năng thì không.
+Đáp số
+Động năng: Wđ = 4 J
+Thế năng: Wt = 25 J
+Cơ năng: W = 29 J
+Cơ năng khi đổi mốc thế năng: W′ = 19 J
+Lưu ý
+Phải đổi vận tốc từ km/h sang m/s trước khi bình phương.
+Không được viết Wđ = ½ × 0,5 × 4 rồi nhân đôi kết quả.
+Sai sót phổ biến nhất là quên bình phương vận tốc.
+Thế năng có thể mang giá trị âm khi vật nằm thấp hơn mốc đã chọn.
+Giá trị âm của thế năng không ảnh hưởng đến kết quả của định luật bảo toàn cơ năng.
+Cơ năng phụ thuộc mốc, nên khi so sánh cơ năng ở hai thời điểm phải dùng cùng một mốc.
+Dạng 2. Bảo toàn cơ năng trong rơi tự do và ném thẳng đứng
+Nhận dạng
+Vật rơi tự do hoặc được ném thẳng đứng lên, xuống; bỏ qua lực cản không khí.
+Đề hỏi vận tốc ở một độ cao nào đó, hoặc hỏi độ cao cực đại, hoặc hỏi vị trí mà động năng bằng k lần thế năng.
+Phương pháp
+1. Chọn mốc thế năng (thường là mặt đất hoặc vị trí thấp nhất).
+2. Viết cơ năng ở vị trí đầu: W₁ = Wđ1 + Wt1.
+3. Viết cơ năng ở vị trí sau: W₂ = Wđ2 + Wt2.
+4. Cho W₁ = W₂ rồi rút ra đại lượng cần tìm.
+5. Với câu hỏi "động năng bằng k lần thế năng", thay Wđ = k × Wt vào phương trình bảo toàn, giải theo h.
+Ví dụ mẫu
+Một vật nhỏ được thả rơi tự do từ độ cao 45 m so với mặt đất. Bỏ qua lực cản của không khí, lấy g = 10 m/s².
+a) Tính vận tốc của vật khi chạm đất.
+b) Tính vận tốc của vật khi nó đã rơi được 30 m.
+c) Ở độ cao nào thì động năng của vật bằng hai lần thế năng?
+Lời giải
+Tóm tắt: h₁ = 45 m, v₁ = 0, g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Áp dụng định luật bảo toàn cơ năng cho vị trí thả và vị trí chạm đất.
+mgh₁ = ½mv₂²
+Chia cả hai vế cho m:
+gh₁ = ½v₂²
+v₂² = 2gh₁
+v₂ = √(2 × 10 × 45)
+v₂ = √900
+v₂ = 30 m/s
+b) Khi vật rơi được 30 m thì vật ở độ cao:
+h′ = 45 − 30 = 15 m
+Áp dụng bảo toàn cơ năng:
+mgh₁ = mgh′ + ½mv′²
+Chia hai vế cho m:
+gh₁ = gh′ + ½v′²
+v′² = 2g(h₁ − h′)
+v′² = 2 × 10 × 30
+v′² = 600
+v′ = √600 ≈ 24,49 m/s
+c) Gọi h₃ là độ cao mà tại đó Wđ = 2Wt.
+Theo định luật bảo toàn cơ năng:
+Wt1 = Wt3 + Wđ3
+mgh₁ = mgh₃ + 2mgh₃
+mgh₁ = 3mgh₃
+h₃ = h₁ / 3
+h₃ = 45 / 3 = 15 m
+Kiểm tra lại bằng vận tốc tại vị trí đó:
+v₃² = 2g(h₁ − h₃) = 2 × 10 × 30 = 600
+Wđ = ½mv₃² = ½m × 600 = 300m
+Wt = mgh₃ = 150m
+Tỉ số Wđ / Wt = 2, đúng với yêu cầu.
+Đáp số
+Vận tốc khi chạm đất: v₂ = 30 m/s
+Vận tốc sau khi rơi 30 m: v′ ≈ 24,49 m/s
+Độ cao cần tìm: h₃ = 15 m
+Lưu ý
+Khối lượng m luôn bị triệt tiêu trong các bài rơi tự do và ném thẳng đứng, không cần biết m.
+Khi đề hỏi "rơi được 30 m" thì đó là quãng đường, cần tính lại độ cao còn lại so với mốc.
+Vật ném thẳng đứng lên đạt độ cao cực đại hmax = v₀²/(2g) tính từ vị trí ném.
+Nếu ném từ độ cao h₀ thì độ cao cực đại so với mặt đất là h₀ + hmax.
+Khi vật rơi xuống, thế năng giảm đúng bằng động năng tăng, nên có thể dùng cách "bảo toàn độ giảm" cho nhanh.
+Dạng 3. Vật trượt trên mặt phẳng nghiêng không ma sát
+Nhận dạng
+Vật trượt xuống (hoặc được đẩy lên) trên mặt phẳng nghiêng, đề nói rõ bỏ qua ma sát.
+Đề cho độ cao hoặc cho chiều dài dốc và góc nghiêng; hỏi vận tốc ở chân dốc, độ cao cực đại, vị trí động năng bằng thế năng.
+Phương pháp
+1. Xác định độ cao giảm (hoặc tăng) của vật, không cần quan tâm dốc dài bao nhiêu nếu đã biết độ cao.
+2. Nếu đề cho chiều dài dốc l và góc nghiêng α thì tính độ cao h = l × sinα.
+3. Áp dụng bảo toàn cơ năng: mgh = ½mv², suy ra v = √(2gh).
+4. Với câu hỏi về vị trí có Wđ = Wt, giải h′ = h/2 rồi đổi về quãng đường nếu cần.
+Ví dụ mẫu
+Một vật khối lượng 2 kg trượt không vận tốc đầu từ đỉnh dốc cao 5 m xuống chân dốc. Bỏ qua ma sát, lấy g = 10 m/s². Dốc dài 10 m.
+a) Tính vận tốc của vật ở chân dốc.
+b) Tính động năng và thế năng của vật ở chân dốc. So sánh với cơ năng ban đầu.
+c) Tìm vị trí trên dốc mà tại đó động năng bằng thế năng. Vật đã đi được bao xa?
+Lời giải
+Tóm tắt: m = 2 kg, h = 5 m, l = 10 m, g = 10 m/s². Chọn mốc thế năng tại chân dốc.
+a) Áp dụng định luật bảo toàn cơ năng:
+mgh = ½mv²
+v = √(2gh)
+v = √(2 × 10 × 5)
+v = √100
+v = 10 m/s
+b) Cơ năng ban đầu:
+W₁ = mgh = 2 × 10 × 5 = 100 J
+Ở chân dốc, thế năng bằng 0 nên động năng bằng cơ năng:
+Wđ = 100 J
+Wt = 0 J
+Kiểm tra: Wđ = ½ × 2 × 10² = 100 J, khớp với kết quả trên.
+Như vậy toàn bộ thế năng ban đầu đã chuyển hoá thành động năng, cơ năng được bảo toàn.
+c) Gọi h′ là độ cao của vật so với chân dốc khi Wđ = Wt.
+Theo định luật bảo toàn cơ năng:
+W = Wđ + Wt = 2Wt
+100 = 2 × (2 × 10 × h′)
+100 = 40h′
+h′ = 2,5 m
+Vì dốc dài 10 m và cao 5 m nên quãng đường đi được tỉ lệ với độ cao giảm:
+s = 10 × (2,5 / 5)
+s = 5 m
+Vận tốc tại vị trí đó:
+v′ = √(2 × 10 × 2,5)
+v′ = √50 ≈ 7,07 m/s
+Đáp số
+Vận tốc ở chân dốc: v = 10 m/s
+Động năng ở chân dốc: Wđ = 100 J
+Thế năng ở chân dốc: Wt = 0 J
+Vị trí động năng bằng thế năng: h′ = 2,5 m, đã đi được s = 5 m, v′ ≈ 7,07 m/s
+Lưu ý
+Vận tốc ở chân dốc chỉ phụ thuộc độ cao h, không phụ thuộc khối lượng và độ dài dốc. Nếu khối lượng tăng gấp đôi thì vận tốc vẫn là 10 m/s.
+Khi đổi từ độ cao sang quãng đường trên dốc, dùng tỉ lệ s/h = l/hdốc.
+Đừng quên mốc thế năng: nếu chọn mốc ở đỉnh dốc thì cơ năng bằng 0 và thế năng âm, phép tính vẫn ra đúng nhưng dễ nhầm dấu.
+Dạng 4. Có ma sát: cơ năng giảm, phần giảm bằng công của lực ma sát
+Nhận dạng
+Đề cho hệ số ma sát μ hoặc cho lực ma sát, hoặc cho vận tốc thực tế nhỏ hơn vận tốc lí thuyết.
+Đề hỏi vận tốc ở chân dốc, quãng đường trượt tới khi dừng, lực ma sát hoặc hệ số ma sát, nhiệt toả ra.
+Phương pháp
+1. Viết cơ năng ở vị trí đầu W₁ và vị trí sau W₂.
+2. Tính lực ma sát.
+Trên mặt ngang: Fms = μmg.
+Trên mặt nghiêng: Fms = μmgcosα.
+3. Tính công cản: Ams = Fms × s (s là quãng đường thực đi).
+4. Dùng phương trình: W₂ − W₁ = −Fms × s, tức là W₁ − W₂ = Fms × s.
+5. Phần cơ năng giảm chính là nhiệt lượng toả ra Q = Fms × s.
+Ví dụ mẫu 1
+Một vật khối lượng 2 kg trượt không vận tốc đầu từ đỉnh dốc cao 6 m xuống chân dốc. Dốc dài 10 m và hợp với phương ngang góc α với cosα = 0,8. Hệ số ma sát giữa vật và dốc là 0,35. Lấy g = 10 m/s². Tính vận tốc của vật ở chân dốc và nhiệt lượng toả ra trên dốc.
+Lời giải
+Tóm tắt: m = 2 kg, h = 6 m, l = 10 m, cosα = 0,8, μ = 0,35, g = 10 m/s². Chọn mốc thế năng tại chân dốc.
+Cơ năng ban đầu của vật ở đỉnh dốc:
+W₁ = mgh
+W₁ = 2 × 10 × 6 = 120 J
+Trọng lượng của vật:
+P = mg = 2 × 10 = 20 N
+Áp lực của vật lên mặt dốc:
+N = P × cosα = 20 × 0,8 = 16 N
+Lực ma sát:
+Fms = μN = 0,35 × 16 = 5,6 N
+Công của lực ma sát trên đoạn dốc dài 10 m:
+Ams = Fms × l = 5,6 × 10 = 56 J
+Cơ năng của vật ở chân dốc:
+W₂ = W₁ − Ams
+W₂ = 120 − 56 = 64 J
+Ở chân dốc thế năng bằng 0 nên W₂ chính là động năng:
+½mv₂² = 64
+v₂² = 64 / 1 = 64
+v₂ = 8 m/s
+Nhiệt lượng toả ra trên dốc đúng bằng công của lực ma sát:
+Q = 56 J
+Đáp số
+Vận tốc ở chân dốc: v₂ = 8 m/s
+Nhiệt lượng toả ra: Q = 56 J
+Ví dụ mẫu 2
+Một vật khối lượng 2 kg đang trượt trên mặt phẳng ngang với vận tốc 8 m/s thì không còn lực đẩy nào tác dụng. Hệ số ma sát giữa vật và mặt ngang là 0,4. Lấy g = 10 m/s².
+a) Tính quãng đường vật trượt được cho tới khi dừng lại.
+b) Hỏi quãng đường đó thay đổi thế nào nếu vận tốc ban đầu tăng gấp đôi? Nếu hệ số ma sát tăng gấp đôi?
+Lời giải
+Tóm tắt: m = 2 kg, v₀ = 8 m/s, μ = 0,4, g = 10 m/s². Chọn mốc thế năng tại mặt ngang, như vậy thế năng không đổi và chỉ có động năng thay đổi.
+Động năng ban đầu:
+Wđ1 = ½mv₀²
+Wđ1 = ½ × 2 × 8² = 64 J
+Vật dừng lại thì Wđ2 = 0.
+Lực ma sát:
+Fms = μmg = 0,4 × 2 × 10 = 8 N
+Gọi s là quãng đường vật đi được. Độ giảm động năng bằng công của lực ma sát:
+Wđ1 − Wđ2 = Fms × s
+64 − 0 = 8s
+s = 8 m
+b) Từ công thức s = v₀²/(2μg), ta thấy s tỉ lệ với bình phương vận tốc ban đầu và tỉ lệ nghịch với hệ số ma sát.
+Nếu v₀ tăng gấp đôi thì s tăng gấp bốn, tức s = 32 m.
+Nếu μ tăng gấp đôi thì s giảm còn một nửa, tức s = 4 m.
+Đáp số
+Quãng đường tới khi dừng: s = 8 m
+Khi v₀ tăng gấp đôi: s = 32 m
+Khi μ tăng gấp đôi: s = 4 m
+Lưu ý
+Công của lực ma sát luôn âm, nên khi viết "độ giảm cơ năng bằng công lực ma sát" phải dùng giá trị tuyệt đối để tránh nhầm dấu.
+Trên mặt phẳng nghiêng phải dùng Fms = μmgcosα, không được dùng μmg.
+Quãng đường đi được không phụ thuộc khối lượng của vật, vì m triệt tiêu trong cả động năng và lực ma sát.
+Nếu ngoài ma sát còn có lực kéo hoặc lực đẩy sinh công thì không được dùng riêng công thức W₁ − W₂ = Fms × s, phải kể thêm công của lực đó.
+Dạng 5. Con lắc đơn và con lắc lò xo (định tính – bán định lượng)
+Nhận dạng
+Đề nói về con lắc đơn (vật treo vào dây) hoặc con lắc lò xo, bỏ qua ma sát hoặc có ma sát.
+Câu hỏi thường gặp: so sánh động năng, thế năng ở các vị trí; tính vận tốc ở vị trí cân bằng; nhận xét dao động tắt dần.
+Phương pháp
+1. Chọn mốc thế năng tại vị trí cân bằng của vật.
+2. Với con lắc đơn, xác định độ cao nâng vật lên so với vị trí cân bằng. Nếu đề cho góc lệch α₀ thì dùng h = l × (1 − cosα₀).
+3. Áp dụng bảo toàn cơ năng: mgh = ½mvmax², suy ra vmax = √(2gh).
+4. Với con lắc lò xo, chỉ lập luận theo ba vị trí đặc biệt: hai biên và vị trí cân bằng.
+5. Nếu có ma sát, nêu rõ biên độ giảm dần và cơ năng chuyển thành nhiệt.
+Ví dụ mẫu
+Một con lắc đơn có chiều dài dây treo l = 1 m, vật nặng khối lượng 200 g. Kéo vật lệch khỏi vị trí cân bằng sao cho dây treo hợp với phương thẳng đứng một góc 60° rồi thả nhẹ. Bỏ qua mọi ma sát, lấy g = 10 m/s².
+a) Tính độ cao của vật lúc thả so với vị trí cân bằng.
+b) Tính vận tốc của vật khi đi qua vị trí cân bằng.
+c) Nhận xét về sự chuyển hoá năng lượng trong quá trình vật đi từ vị trí biên về vị trí cân bằng.
+Lời giải
+Tóm tắt: l = 1 m, m = 0,2 kg, α₀ = 60°, g = 10 m/s². Chọn mốc thế năng tại vị trí cân bằng.
+a) Độ cao của vật lúc thả:
+h = l × (1 − cosα₀)
+h = 1 × (1 − cos60°)
+h = 1 × (1 − 0,5)
+h = 0,5 m
+b) Áp dụng định luật bảo toàn cơ năng cho vị trí biên và vị trí cân bằng:
+mgh = ½mvmax²
+vmax = √(2gh)
+vmax = √(2 × 10 × 0,5)
+vmax = √10 ≈ 3,16 m/s
+Khối lượng 200 g không xuất hiện trong kết quả, đúng như dự đoán vì m đã triệt tiêu.
+c) Khi vật đi từ vị trí biên về vị trí cân bằng, độ cao giảm nên thế năng giảm, vận tốc tăng nên động năng tăng. Thế năng đã chuyển hoá thành động năng.
+Tại vị trí biên, vật đứng yên tạm thời nên động năng bằng 0, thế năng cực đại và bằng mgh = 0,2 × 10 × 0,5 = 1 J.
+Tại vị trí cân bằng, thế năng bằng 0, động năng cực đại và bằng 1 J.
+Đáp số
+Độ cao lúc thả: h = 0,5 m
+Vận tốc ở vị trí cân bằng: vmax ≈ 3,16 m/s
+Động năng cực đại: Wđ = 1 J
+Lưu ý
+Nếu đề cho trực tiếp độ cao nâng vật lên (ví dụ 0,45 m) thì không cần dùng công thức lượng giác, chỉ dùng v = √(2gh).
+Với con lắc lò xo, không được viết "thế năng bằng mgh" vì đó là thế năng trọng trường.
+Thế năng của con lắc lò xo là thế năng đàn hồi, ở lớp 9 chỉ nêu định tính.
+Khi con lắc có ma sát, biên độ dao động giảm dần.
+Với con lắc lò xo nằm ngang, vị trí cân bằng không thay đổi.
+Con lắc đơn có ma sát cũng mất dần năng lượng rồi dừng lại.
+Nhiệt toả ra trong một lần con lắc đi từ biên này sang biên kia đúng bằng độ giảm cơ năng giữa hai biên.
+Dạng 6. Bài toán đồ thị năng lượng
+Nhận dạng
+Đề cho bảng giá trị hoặc hình dạng đồ thị của Wđ, Wt theo độ cao h, theo quãng đường s hoặc theo vận tốc v.
+Đề yêu cầu đọc giá trị từ đồ thị, nhận xét dạng đồ thị, xác định vị trí hai đường cắt nhau.
+Phương pháp
+1. Lập bảng giá trị Wđ và Wt tại các độ cao được chọn.
+2. Nhớ dạng đồ thị.
+Theo độ cao: cả Wđ và Wt đều là đường thẳng.
+Theo vận tốc: Wđ là một nhánh parabol.
+Theo bình phương vận tốc v²: Wđ là đường thẳng.
+3. Tổng Wđ + Wt luôn bằng cơ năng ban đầu nếu bỏ qua ma sát.
+4. Giao điểm của hai đường Wđ và Wt nằm ở độ cao bằng một nửa độ cao ban đầu.
+5. Nếu có ma sát, đồ thị cơ năng theo quãng đường là đường thẳng dốc xuống, độ dốc bằng Fms.
+Ví dụ mẫu
+Một vật khối lượng 2 kg được thả rơi tự do từ độ cao 20 m. Bỏ qua lực cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Tính cơ năng của vật.
+b) Lập bảng giá trị động năng và thế năng của vật tại các độ cao 20 m, 15 m, 10 m, 5 m và 0 m.
+c) Nhận xét dạng đồ thị của Wđ và Wt theo độ cao. Hai đường này cắt nhau tại độ cao nào?
+d) Tính vận tốc của vật khi ở độ cao 5 m.
+Lời giải
+Tóm tắt: m = 2 kg, H = 20 m, g = 10 m/s².
+a) Cơ năng của vật bằng thế năng ban đầu:
+W = mgH
+W = 2 × 10 × 20 = 400 J
+b) Công thức tại độ cao h:
+Wt = mgh = 20h
+Wđ = W − Wt = 400 − 20h
+Bảng giá trị:
+Độ cao h (m)
+Thế năng Wt (J)
+Động năng Wđ (J)
+Cơ năng W (J)
+20
+400
+0
+400
+15
+300
+100
+400
+10
+200
+200
+400
+5
+100
+300
+400
+0
+0
+400
+400
+
+c) Theo bảng, khi độ cao giảm đều 5 m thì thế năng giảm đều 100 J và động năng tăng đều 100 J. Vậy đồ thị Wt theo h là đường thẳng đi lên, đồ thị Wđ theo h là đường thẳng đi xuống, còn cơ năng là đường thẳng nằm ngang.
+Hai đường cắt nhau khi Wđ = Wt:
+400 − 20h = 20h
+400 = 40h
+h = 10 m
+Vậy hai đường cắt nhau tại độ cao 10 m, tại đó Wđ = Wt = 200 J.
+d) Tại độ cao 5 m, động năng bằng 300 J.
+½mv² = 300
+v² = 300 / 1 = 300
+v = √300 ≈ 17,32 m/s
+Đáp số
+Cơ năng: W = 400 J
+Giao điểm của hai đồ thị: h = 10 m, Wđ = Wt = 200 J
+Vận tốc tại độ cao 5 m: v ≈ 17,32 m/s
+Lưu ý
+Khi vẽ đồ thị Wđ theo vận tốc, phải vẽ đường cong parabol.
+Nếu vẽ thành đường thẳng thì sai bản chất.
+Nếu trục hoành là v² thì mới được vẽ đường thẳng.
+Trong bảng giá trị, cơ năng phải giữ nguyên ở mọi dòng nếu bỏ qua ma sát.
+Nếu thấy cơ năng giảm dần thì bài toán có ma sát.
+Đọc đồ thị luôn phải kèm đơn vị của hai trục.
+Dạng 7. Bài toán nhiều giai đoạn (dốc – mặt ngang – dốc)
+Nhận dạng
+Vật đi qua nhiều đoạn đường khác nhau: đoạn không ma sát, đoạn có ma sát, đoạn lên dốc, đoạn xuống dốc.
+Đề hỏi độ cao cực đại đạt được ở dốc sau, vận tốc tại một điểm trung gian, hoặc tổng quãng đường.
+Phương pháp
+1. Chia bài toán thành từng giai đoạn, mỗi giai đoạn ghi rõ năng lượng vào và năng lượng ra.
+2. Trên đoạn không ma sát: cơ năng không đổi.
+3. Trên đoạn có ma sát: cơ năng giảm một lượng bằng Fms × s.
+4. Cộng dồn: năng lượng ở cuối bằng năng lượng ban đầu trừ tổng công cản.
+5. Kiểm tra xem vật có đủ năng lượng để vượt qua từng đoạn hay không.
+Ví dụ mẫu
+Một vật khối lượng 1 kg trượt không vận tốc đầu từ đỉnh dốc A cao 5 m xuống chân dốc B (bỏ qua ma sát trên đoạn AB). Từ B vật tiếp tục trượt trên mặt phẳng ngang BC dài 4 m có hệ số ma sát 0,5. Sau C, vật đi lên dốc CD không ma sát. Lấy g = 10 m/s².
+a) Tính vận tốc của vật tại B.
+b) Tính vận tốc của vật tại C.
+c) Tính độ cao cực đại mà vật đạt được trên dốc CD.
+Lời giải
+Tóm tắt: m = 1 kg, hA = 5 m, BC = 4 m, μ = 0,5, g = 10 m/s². Chọn mốc thế năng tại mặt phẳng ngang BC.
+a) Trên đoạn AB không ma sát, cơ năng được bảo toàn:
+mghA = ½mvB²
+vB = √(2ghA)
+vB = √(2 × 10 × 5)
+vB = √100 = 10 m/s
+b) Trên đoạn BC có ma sát, lực ma sát:
+Fms = μmg = 0,5 × 1 × 10 = 5 N
+Công cản trên đoạn BC:
+Ams = Fms × BC = 5 × 4 = 20 J
+Cơ năng tại B là động năng:
+WB = ½mvB² = ½ × 1 × 100 = 50 J
+Cơ năng tại C:
+WC = WB − Ams
+WC = 50 − 20 = 30 J
+Vì C nằm trên mặt ngang nên thế năng tại C bằng 0, do đó:
+½mvC² = 30
+vC² = 60
+vC = √60 ≈ 7,75 m/s
+c) Trên đoạn CD không ma sát nên cơ năng được bảo toàn. Tại độ cao cực đại, động năng bằng 0:
+mghmax = WC
+1 × 10 × hmax = 30
+hmax = 3 m
+Kiểm tra tính hợp lí: nếu đoạn BC không có ma sát thì vật sẽ lên tới độ cao 5 m. Có ma sát nên vật chỉ lên được 3 m, phù hợp với thực tế.
+Đáp số
+Vận tốc tại B: vB = 10 m/s
+Vận tốc tại C: vC ≈ 7,75 m/s
+Độ cao cực đại trên dốc CD: hmax = 3 m
+Lưu ý
+Mỗi đoạn phải xử lí riêng rồi nối kết quả, không được áp dụng bảo toàn cơ năng cho toàn bộ hành trình khi có ma sát.
+Sau khi qua một đoạn có ma sát, "cơ năng mới" nhỏ hơn cơ năng ban đầu.
+Các đoạn sau phải dùng cơ năng mới này.
+Nếu đề cho vật đi lên rồi quay lại, nhớ rằng lực ma sát đổi chiều nhưng vẫn sinh công cản, nên cơ năng tiếp tục giảm.
+D. Bài tập ví dụ có lời giải (6 bài, độ khó tăng dần)
+Bài D1
+Đề bài
+Một vật khối lượng 400 g đang chuyển động với vận tốc 18 km/h ở độ cao 8 m so với mặt đất. Lấy g = 10 m/s², chọn mốc thế năng tại mặt đất. Tính động năng, thế năng và cơ năng của vật.
+Tóm tắt
+m = 400 g = 0,4 kg, v = 18 km/h, h = 8 m, g = 10 m/s².
+Lời giải
+Đổi vận tốc:
+v = 18 / 3,6 = 5 m/s
+Động năng của vật:
+Wđ = ½mv²
+Wđ = ½ × 0,4 × 5²
+Wđ = ½ × 0,4 × 25
+Wđ = 5 J
+Thế năng của vật:
+Wt = mgh
+Wt = 0,4 × 10 × 8
+Wt = 32 J
+Cơ năng của vật:
+W = Wđ + Wt
+W = 5 + 32 = 37 J
+Đáp số
+Động năng: Wđ = 5 J
+Thế năng: Wt = 32 J
+Cơ năng: W = 37 J
+Bài D2
+Đề bài
+Một vật khối lượng 0,5 kg được thả rơi tự do từ độ cao 45 m. Bỏ qua lực cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Tính cơ năng của vật.
+b) Tính vận tốc của vật khi chạm đất.
+c) Tính vận tốc của vật khi nó ở độ cao 25 m và khi ở độ cao 5 m.
+Tóm tắt
+m = 0,5 kg, h₁ = 45 m, g = 10 m/s².
+Lời giải
+a) Cơ năng bằng thế năng ban đầu:
+W = mgh₁
+W = 0,5 × 10 × 45 = 225 J
+b) Khi chạm đất, toàn bộ cơ năng chuyển thành động năng:
+½mv₂² = 225
+v₂² = 225 / 0,25 = 900
+v₂ = 30 m/s
+c) Tại độ cao 25 m, độ cao đã giảm:
+Δh = 45 − 25 = 20 m
+Động năng tại đó:
+Wđ = mgΔh = 0,5 × 10 × 20 = 100 J
+Vận tốc:
+½ × 0,5 × v² = 100
+v² = 400
+v = 20 m/s
+Tại độ cao 5 m, độ cao đã giảm:
+Δh′ = 45 − 5 = 40 m
+Wđ′ = 0,5 × 10 × 40 = 200 J
+½ × 0,5 × v′² = 200
+v′² = 800
+v′ = √800 ≈ 28,28 m/s
+Đáp số
+Cơ năng: W = 225 J
+Vận tốc chạm đất: v₂ = 30 m/s
+Vận tốc ở độ cao 25 m: v = 20 m/s
+Vận tốc ở độ cao 5 m: v′ ≈ 28,28 m/s
+Bài D3
+Đề bài
+Một vật khối lượng 2 kg được ném thẳng đứng lên từ mặt đất với vận tốc đầu 10 m/s. Bỏ qua lực cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Tính cơ năng của vật lúc ném.
+b) Tính độ cao cực đại mà vật đạt được.
+c) Tính vận tốc của vật khi nó ở độ cao 3,2 m. Tại độ cao nào thì động năng bằng thế năng?
+Tóm tắt
+m = 2 kg, v₀ = 10 m/s, g = 10 m/s².
+Lời giải
+a) Tại mặt đất, thế năng bằng 0 nên cơ năng bằng động năng:
+W = ½mv₀²
+W = ½ × 2 × 10² = 100 J
+b) Tại độ cao cực đại, vận tốc bằng 0 nên toàn bộ cơ năng là thế năng:
+mghmax = 100
+2 × 10 × hmax = 100
+hmax = 5 m
+c) Tại độ cao 3,2 m, thế năng:
+Wt = 2 × 10 × 3,2 = 64 J
+Động năng:
+Wđ = 100 − 64 = 36 J
+Vận tốc:
+½ × 2 × v² = 36
+v² = 36
+v = 6 m/s
+Gọi h′ là độ cao mà tại đó Wđ = Wt. Khi đó cơ năng bằng hai lần thế năng:
+100 = 2 × (2 × 10 × h′)
+100 = 40h′
+h′ = 2,5 m
+Đáp số
+Cơ năng lúc ném: W = 100 J
+Độ cao cực đại: hmax = 5 m
+Vận tốc ở độ cao 3,2 m: v = 6 m/s
+Độ cao động năng bằng thế năng: h′ = 2,5 m
+Bài D4
+Đề bài
+Một vật khối lượng 2 kg trượt không vận tốc đầu từ đỉnh A của dốc AB dài 10 m, cao 5 m xuống chân dốc B. Bỏ qua ma sát, lấy g = 10 m/s². Chọn mốc thế năng tại B.
+a) Tính vận tốc của vật tại B.
+b) Tìm vị trí trên dốc mà tại đó động năng bằng thế năng; tính vận tốc của vật tại vị trí đó.
+c) Nếu thay vật bằng một vật khác khối lượng 4 kg thì vận tốc tại B bằng bao nhiêu? Giải thích.
+Tóm tắt
+m = 2 kg, l = 10 m, h = 5 m, g = 10 m/s².
+Lời giải
+a) Áp dụng định luật bảo toàn cơ năng cho hai vị trí A và B:
+mgh = ½mvB²
+vB = √(2gh)
+vB = √(2 × 10 × 5) = √100 = 10 m/s
+b) Gọi h′ là độ cao của vật so với B khi Wđ = Wt. Cơ năng bằng hai lần thế năng:
+mgh = 2mgh′
+h′ = h / 2 = 2,5 m
+Vì dốc dài 10 m ứng với độ cao 5 m, quãng đường từ A đến vị trí đó:
+s = 10 × (5 − 2,5) / 5
+s = 5 m
+Vậy vị trí đó cách B một đoạn:
+10 − 5 = 5 m
+Vận tốc tại vị trí đó:
+½mv′² = mgh′
+v′ = √(2gh′) = √(2 × 10 × 2,5)
+v′ = √50 ≈ 7,07 m/s
+c) Với vật khối lượng 4 kg, công thức vB = √(2gh) vẫn cho:
+vB = √(2 × 10 × 5) = 10 m/s
+Khối lượng triệt tiêu trong phương trình bảo toàn cơ năng, nên vận tốc ở chân dốc không phụ thuộc khối lượng.
+Đáp số
+Vận tốc tại B: vB = 10 m/s
+Vị trí Wđ = Wt: cách B 5 m, v′ ≈ 7,07 m/s
+Với vật 4 kg: vẫn là 10 m/s
+Bài D5
+Đề bài
+Một vật khối lượng 1 kg đang trượt trên mặt phẳng ngang với vận tốc 6 m/s thì không còn lực đẩy nào tác dụng. Hệ số ma sát giữa vật và mặt ngang là 0,3. Lấy g = 10 m/s².
+a) Tính động năng ban đầu của vật.
+b) Tính quãng đường vật trượt được cho tới khi dừng lại.
+c) Tính quãng đường vật đi được kể từ lúc vận tốc còn 3 m/s cho tới khi dừng lại. Nhiệt lượng toả ra trong cả quá trình là bao nhiêu?
+Tóm tắt
+m = 1 kg, v₀ = 6 m/s, μ = 0,3, g = 10 m/s².
+Lời giải
+a) Động năng ban đầu:
+Wđ1 = ½mv₀²
+Wđ1 = ½ × 1 × 6² = 18 J
+b) Lực ma sát:
+Fms = μmg = 0,3 × 1 × 10 = 3 N
+Gọi s là quãng đường tới khi dừng. Độ giảm động năng bằng công của lực ma sát:
+Wđ1 − 0 = Fms × s
+18 = 3s
+s = 6 m
+c) Tại thời điểm vật có vận tốc 3 m/s, động năng:
+Wđ2 = ½ × 1 × 3² = 4,5 J
+Động năng đã giảm:
+ΔWđ = 18 − 4,5 = 13,5 J
+Quãng đường đã đi trong giai đoạn đầu:
+s₁ = 13,5 / 3 = 4,5 m
+Quãng đường còn lại tới khi dừng:
+s₂ = s − s₁ = 6 − 4,5 = 1,5 m
+Nhiệt lượng toả ra trong cả quá trình đúng bằng động năng ban đầu đã mất hoàn toàn:
+Q = 18 J
+Đáp số
+Động năng ban đầu: Wđ1 = 18 J
+Quãng đường tới khi dừng: s = 6 m
+Quãng đường từ lúc v = 3 m/s tới khi dừng: s₂ = 1,5 m
+Nhiệt lượng toả ra: Q = 18 J
+Bài D6
+Đề bài
+Một vật khối lượng 0,5 kg được thả rơi tự do từ độ cao 20 m. Bỏ qua lực cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Lập bảng giá trị thế năng và động năng của vật tại các độ cao 20 m, 15 m, 10 m, 5 m, 0 m.
+b) Vẽ phác và nhận xét dạng đồ thị của thế năng, động năng theo độ cao.
+c) Tính vận tốc của vật khi ở độ cao 10 m.
+d) Nếu có lực cản của không khí thì đồ thị cơ năng theo quãng đường có dạng như thế nào?
+Tóm tắt
+m = 0,5 kg, H = 20 m, g = 10 m/s².
+Lời giải
+a) Cơ năng của vật:
+W = mgH = 0,5 × 10 × 20 = 100 J
+Thế năng tại độ cao h:
+Wt = mgh = 5h
+Động năng:
+Wđ = 100 − 5h
+Bảng giá trị:
+Độ cao h (m)
+Thế năng Wt (J)
+Động năng Wđ (J)
+Cơ năng W (J)
+20
+100
+0
+100
+15
+75
+25
+100
+10
+50
+50
+100
+5
+25
+75
+100
+0
+0
+100
+100
+
+b) Đồ thị thế năng theo độ cao là một đoạn thẳng đi lên, xuất phát từ gốc toạ độ và kết thúc tại điểm (20 m; 100 J).
+Đồ thị động năng theo độ cao là một đoạn thẳng đi xuống, xuất phát từ điểm (0 m; 100 J) và kết thúc tại điểm (20 m; 0 J).
+Hai đường thẳng này cắt nhau tại độ cao 10 m, tại đó Wđ = Wt = 50 J.
+Cơ năng là đường thẳng nằm ngang ứng với giá trị 100 J vì cơ năng được bảo toàn.
+c) Tại độ cao 10 m, động năng bằng 50 J:
+½ × 0,5 × v² = 50
+v² = 200
+v ≈ 14,14 m/s
+d) Khi có lực cản của không khí, cơ năng giảm dần theo quãng đường. Mỗi mét rơi, cơ năng giảm một lượng bằng lực cản (nếu coi lực cản không đổi), nên đồ thị cơ năng theo quãng đường là một đường thẳng dốc xuống.
+Đáp số
+Cơ năng: W = 100 J
+Giao điểm hai đồ thị: h = 10 m với Wđ = Wt = 50 J
+Vận tốc tại độ cao 10 m: v ≈ 14,14 m/s
+Đồ thị cơ năng khi có lực cản: đường thẳng dốc xuống
+E. Bài tập tự luyện (12 bài)
+Bài E1. Một vật khối lượng 2 kg chuyển động với vận tốc 36 km/h. Tính động năng của vật.
+Bài E2. Một vật khối lượng 500 g đang ở độ cao 6 m so với mặt đất và đang rơi với vận tốc 4 m/s. Chọn mốc thế năng tại mặt đất, lấy g = 10 m/s². Tính thế năng, động năng và cơ năng của vật.
+Bài E3. Một vật khối lượng 200 g được ném thẳng đứng lên từ mặt đất với vận tốc đầu 20 m/s. Bỏ qua lực cản, g = 10 m/s². Tính động năng lúc ném và độ cao cực đại mà vật đạt được.
+Bài E4. Một vật được thả rơi tự do từ độ cao 80 m. Bỏ qua lực cản, g = 10 m/s². Tính vận tốc của vật khi chạm đất. Nếu khối lượng của vật là 0,5 kg thì động năng khi chạm đất bằng bao nhiêu?
+Bài E5. Một vật rơi tự do từ độ cao h xuống mặt đất với vận tốc khi chạm đất là 15 m/s. Bỏ qua lực cản, g = 10 m/s². Tính độ cao h.
+Bài E6. Một con lắc đơn được kéo lệch sao cho vật nặng được nâng lên cao hơn vị trí cân bằng một đoạn 0,45 m rồi thả nhẹ. Bỏ qua ma sát, g = 10 m/s². Tính vận tốc của vật khi đi qua vị trí cân bằng.
+Bài E7. Một vật trượt không ma sát từ đỉnh dốc cao 5 m xuống chân dốc. Lấy g = 10 m/s². Tính vận tốc của vật ở chân dốc. Nếu thay bằng vật có khối lượng gấp đôi thì vận tốc ở chân dốc bằng bao nhiêu?
+Bài E8. Một vật khối lượng 2 kg trượt trên mặt phẳng ngang với vận tốc 8 m/s thì chỉ còn chịu tác dụng của lực ma sát. Hệ số ma sát là 0,2. Lấy g = 10 m/s². Tính quãng đường vật đi được cho tới khi dừng lại.
+Bài E9. Một vật khối lượng 1 kg trượt không ma sát từ đỉnh dốc cao 5 m xuống chân dốc, rồi tiếp tục trượt trên mặt phẳng ngang có hệ số ma sát 0,25 cho tới khi dừng lại. Lấy g = 10 m/s². Tính quãng đường vật đi được trên mặt ngang.
+Bài E10. Một vật khối lượng 200 g trượt xuống một dốc cao 1,8 m. Do có ma sát nên vận tốc của vật ở chân dốc chỉ là 4 m/s. Lấy g = 10 m/s². Tính độ lớn công của lực ma sát và cho biết phần cơ năng này đã chuyển hoá thành dạng năng lượng nào.
+Bài E11. Một vật khối lượng 2 kg được thả rơi tự do từ độ cao 10 m. Bỏ qua lực cản, g = 10 m/s², chọn mốc thế năng tại mặt đất.
+a) Tính cơ năng của vật.
+b) Tìm độ cao mà tại đó động năng bằng ba lần thế năng.
+c) Tính vận tốc của vật tại độ cao đó.
+Bài E12. Từ độ cao 1,8 m so với mặt đất, người ta ném thẳng đứng lên trên một vật với vận tốc đầu 8 m/s. Bỏ qua lực cản, g = 10 m/s². Tính độ cao cực đại của vật so với mặt đất và vận tốc của vật khi chạm đất.
+F. Đáp án và hướng dẫn ngắn cho mục E
+Bài E1. v = 36 / 3,6 = 10 m/s.
+Wđ = ½ × 2 × 10² = 100 J.
+Bài E2. m = 0,5 kg.
+Wt = 0,5 × 10 × 6 = 30 J.
+Wđ = ½ × 0,5 × 4² = 4 J.
+W = 30 + 4 = 34 J.
+Bài E3. Wđ = ½ × 0,2 × 20² = 40 J.
+hmax = v₀²/(2g) = 400 / 20 = 20 m.
+Bài E4. v = √(2 × 10 × 80) = √1600 = 40 m/s.
+Wđ = ½ × 0,5 × 40² = 400 J.
+Bài E5. h = v²/(2g) = 225 / 20 = 11,25 m.
+Bài E6. v = √(2 × 10 × 0,45) = √9 = 3 m/s.
+Bài E7. v = √(2 × 10 × 5) = 10 m/s.
+Khối lượng không ảnh hưởng, vẫn là 10 m/s.
+Bài E8. Wđ = ½ × 2 × 8² = 64 J.
+Fms = 0,2 × 2 × 10 = 4 N.
+s = 64 / 4 = 16 m.
+Bài E9. Cơ năng ở chân dốc bằng thế năng ban đầu:
+W = 1 × 10 × 5 = 50 J.
+Fms = 0,25 × 1 × 10 = 2,5 N.
+s = 50 / 2,5 = 20 m.
+Bài E10. Cơ năng ban đầu:
+W₁ = 0,2 × 10 × 1,8 = 3,6 J.
+Động năng ở chân dốc: W₂ = ½ × 0,2 × 4² = 1,6 J.
+Độ lớn công của lực ma sát: A = 3,6 − 1,6 = 2 J.
+Phần cơ năng này chuyển hoá thành nhiệt năng làm nóng vật và mặt dốc.
+Bài E11.
+a) W = 2 × 10 × 10 = 200 J.
+b) Wđ = 3Wt nên W = 4Wt, suy ra Wt = 50 J, do đó h = 50 / 20 = 2,5 m.
+c) Wđ = 150 J, suy ra ½ × 2 × v² = 150, v² = 150, v ≈ 12,25 m/s.
+Bài E12. Chọn mốc thế năng tại mặt đất. Cơ năng trên mỗi kilôgam:
+½v₀² + gh₀ = ½ × 64 + 10 × 1,8 = 32 + 18 = 50 J/kg.
+Tại độ cao cực đại: 10 × hmax = 50, suy ra hmax = 5 m.
+Khi chạm đất: ½v² = 50, suy ra v = 10 m/s.
+G. Bài tập nâng cao kiểu đề thi HSG (4 bài, có lời giải đầy đủ)
+Bài G1
+Đề bài
+Một vật khối lượng 2 kg trượt không vận tốc đầu từ đỉnh dốc cao 6 m xuống chân dốc. Dốc dài 10 m, hợp với phương ngang góc α với cosα = 0,8. Hệ số ma sát giữa vật và dốc là 0,25. Sau khi xuống hết dốc, vật tiếp tục trượt trên mặt phẳng ngang có cùng hệ số ma sát 0,25 cho tới khi dừng lại. Lấy g = 10 m/s².
+a) Tính vận tốc của vật ở chân dốc.
+b) Tính quãng đường vật đi được trên mặt phẳng ngang.
+c) Tính tổng quãng đường vật đã đi và kiểm tra lại bằng định luật bảo toàn năng lượng.
+Tóm tắt
+m = 2 kg, h = 6 m, l = 10 m, cosα = 0,8, μ = 0,25, g = 10 m/s².
+Lời giải
+Chọn mốc thế năng tại mặt phẳng ngang.
+a) Cơ năng ban đầu của vật ở đỉnh dốc:
+W₁ = mgh
+W₁ = 2 × 10 × 6 = 120 J
+Trọng lượng của vật:
+P = mg = 2 × 10 = 20 N
+Áp lực lên mặt dốc:
+N = P × cosα = 20 × 0,8 = 16 N
+Lực ma sát trên dốc:
+Fms1 = μN = 0,25 × 16 = 4 N
+Công của lực ma sát trên đoạn dốc:
+A₁ = Fms1 × l = 4 × 10 = 40 J
+Cơ năng ở chân dốc:
+W₂ = W₁ − A₁
+W₂ = 120 − 40 = 80 J
+Vì thế năng tại chân dốc bằng 0 nên:
+½mv₂² = 80
+½ × 2 × v₂² = 80
+v₂² = 80
+v₂ = √80 = 4√5 ≈ 8,94 m/s
+b) Trên mặt phẳng ngang, lực ma sát:
+Fms2 = μmg = 0,25 × 2 × 10 = 5 N
+Gọi s là quãng đường trên mặt ngang. Động năng ở chân dốc chuyển dần thành nhiệt:
+W₂ = Fms2 × s
+80 = 5s
+s = 16 m
+c) Tổng quãng đường vật đã đi:
+S = l + s = 10 + 16 = 26 m
+Kiểm tra bằng bảo toàn năng lượng: toàn bộ cơ năng ban đầu 120 J đã chuyển thành nhiệt năng.
+Tổng công của lực ma sát:
+A = A₁ + A₂ = 40 + 5 × 16 = 40 + 80 = 120 J
+Kết quả trùng khớp với cơ năng ban đầu, phép tính đúng.
+Đáp số
+Vận tốc ở chân dốc: v₂ = 4√5 ≈ 8,94 m/s
+Quãng đường trên mặt ngang: s = 16 m
+Tổng quãng đường: S = 26 m
+Tổng nhiệt toả ra: Q = 120 J
+Bài G2
+Đề bài
+Từ độ cao 10 m so với mặt đất, người ta ném thẳng đứng xuống dưới một vật khối lượng 0,5 kg với vận tốc đầu 5 m/s. Bỏ qua lực cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại mặt đất.
+a) Tính vận tốc của vật khi chạm đất và động năng của vật lúc đó.
+b) Sau khi chạm đất, vật lún sâu vào trong đất một đoạn 0,25 m rồi dừng lại. Tính độ lớn lực cản trung bình của đất tác dụng lên vật.
+c) Nếu bỏ qua phần thế năng giảm thêm trong lòng đất thì lực cản tính được là bao nhiêu? Sai số so với kết quả câu b là bao nhiêu phần trăm?
+Tóm tắt
+m = 0,5 kg, h = 10 m, v₀ = 5 m/s, d = 0,25 m, g = 10 m/s².
+Lời giải
+a) Áp dụng định luật bảo toàn cơ năng cho vị trí ném và mặt đất:
+½mv₀² + mgh = ½mv²
+Chia hai vế cho m:
+½v₀² + gh = ½v²
+½ × 5² + 10 × 10 = ½v²
+12,5 + 100 = 0,5v²
+112,5 = 0,5v²
+v² = 225
+v = 15 m/s
+Động năng khi chạm đất:
+Wđ = ½mv²
+Wđ = ½ × 0,5 × 225
+Wđ = 56,25 J
+b) Trong lòng đất, vật đi thêm một đoạn d = 0,25 m theo phương thẳng đứng rồi dừng lại. Gọi Fc là độ lớn lực cản trung bình của đất.
+Trong đoạn này, trọng lực sinh công có ích:
+AP = mg × d = 0,5 × 10 × 0,25 = 1,25 J
+Lực cản sinh công cản:
+Ac = −Fc × d = −0,25Fc
+Độ biến thiên động năng bằng tổng công của các lực:
+0 − 56,25 = 1,25 − 0,25Fc
+−56,25 − 1,25 = −0,25Fc
+57,5 = 0,25Fc
+Fc = 230 N
+c) Nếu bỏ qua phần thế năng giảm thêm trong lòng đất thì coi AP = 0 và:
+56,25 = 0,25Fc′
+Fc′ = 225 N
+Sai số tương đối:
+δ = (230 − 225) / 230 × 100% ≈ 2,17%
+Như vậy trong bài toán này, việc bỏ qua 1,25 J chỉ gây sai số khoảng 2,2%. Tuy nhiên với độ lún lớn hơn thì sai số sẽ tăng lên đáng kể, nên phải kể đầy đủ các số hạng năng lượng.
+Đáp số
+Vận tốc chạm đất: v = 15 m/s
+Động năng chạm đất: Wđ = 56,25 J
+Lực cản trung bình: Fc = 230 N
+Nếu bỏ qua thế năng: Fc′ = 225 N, sai số ≈ 2,17%
+Bài G3
+Đề bài
+Một con lắc đơn gồm vật nặng khối lượng 200 g treo vào sợi dây mảnh, không dãn, dài 1 m. Kéo vật ra khỏi vị trí cân bằng sao cho dây treo hợp với phương thẳng đứng góc α₀ = 60° rồi thả nhẹ. Bỏ qua mọi ma sát và sức cản của không khí, lấy g = 10 m/s². Chọn mốc thế năng tại vị trí cân bằng.
+a) Tính độ cao của vật so với vị trí cân bằng tại vị trí thả.
+b) Tính vận tốc của vật khi đi qua vị trí cân bằng và động năng cực đại của vật.
+c) Tính vận tốc của vật khi dây treo hợp với phương thẳng đứng góc 30°.
+d) Nếu kéo vật tới vị trí dây treo nằm ngang (góc 90°) rồi thả thì vận tốc ở vị trí cân bằng bằng bao nhiêu? Nhận xét.
+Tóm tắt
+m = 0,2 kg, l = 1 m, α₀ = 60°, g = 10 m/s².
+Lời giải
+a) Độ cao của vật so với vị trí cân bằng:
+h₀ = l × (1 − cosα₀)
+h₀ = 1 × (1 − cos60°)
+h₀ = 1 × (1 − 0,5) = 0,5 m
+b) Áp dụng định luật bảo toàn cơ năng cho vị trí thả và vị trí cân bằng:
+mgh₀ = ½mvmax²
+vmax = √(2gh₀)
+vmax = √(2 × 10 × 0,5) = √10 ≈ 3,16 m/s
+Động năng cực đại:
+Wđ max = mgh₀
+Wđ max = 0,2 × 10 × 0,5 = 1 J
+c) Tại vị trí dây hợp góc 30°, độ cao của vật:
+h = l × (1 − cos30°)
+h = 1 × (1 − 0,866) = 0,134 m
+Độ cao đã giảm so với lúc thả:
+Δh = 0,5 − 0,134 = 0,366 m
+Vận tốc tại đó:
+v = √(2gΔh)
+v = √(2 × 10 × 0,366)
+v = √7,32 ≈ 2,71 m/s
+d) Nếu kéo tới vị trí dây nằm ngang thì α₀ = 90°, cos90° = 0, do đó:
+h₀′ = l × (1 − 0) = 1 m
+vmax′ = √(2 × 10 × 1)
+vmax′ = √20 ≈ 4,47 m/s
+Nhận xét: khi góc lệch ban đầu tăng, độ cao nâng vật lên tăng, do đó vận tốc cực đại tăng theo. Vận tốc cực đại tỉ lệ với căn bậc hai của độ cao nâng lên và không phụ thuộc khối lượng vật nặng.
+Đáp số
+Độ cao lúc thả: h₀ = 0,5 m
+Vận tốc ở vị trí cân bằng: vmax ≈ 3,16 m/s
+Động năng cực đại: Wđ max = 1 J
+Vận tốc tại vị trí góc 30°: v ≈ 2,71 m/s
+Khi thả từ vị trí dây nằm ngang: vmax′ ≈ 4,47 m/s
+Bài G4
+Đề bài
+Một vật khối lượng 2 kg trượt không vận tốc đầu từ đỉnh A của dốc AB cao 6 m xuống chân dốc B. Đoạn AB không có ma sát. Từ B, vật tiếp tục đi lên dốc BC có hệ số ma sát 0,25. Dốc BC hợp với phương ngang góc β với tanβ = 0,5. Lấy g = 10 m/s².
+a) Tính độ cao lớn nhất mà vật đạt được trên dốc BC.
+b) Tính phần cơ năng đã bị mất đi khi vật đi từ B lên tới điểm cao nhất trên dốc BC.
+c) Sau khi lên tới điểm cao nhất, vật trượt trở lại xuống B. Tính vận tốc của vật khi trở lại B.
+d) Nêu nhận xét về chuyển động tiếp theo của vật.
+Tóm tắt
+m = 2 kg, hA = 6 m, μ = 0,25, tanβ = 0,5, g = 10 m/s².
+Lời giải
+Chọn mốc thế năng tại mặt phẳng ngang đi qua chân dốc B.
+a) Cơ năng của vật tại A:
+WA = mghA = 2 × 10 × 6 = 120 J
+Trên đoạn AB không có ma sát nên cơ năng tại B vẫn bằng 120 J.
+Gọi h′ là độ cao lớn nhất vật đạt được trên dốc BC. Trên dốc BC, quãng đường vật đi được là:
+s = h′ / sinβ
+Lực ma sát trên dốc BC:
+Fms = μmg × cosβ
+Công của lực ma sát khi đi lên:
+Ams = Fms × s = μmg × cosβ × h′ / sinβ
+Ams = μmg × h′ / tanβ
+Thay số:
+Ams = 0,25 × 2 × 10 × h′ / 0,5
+Ams = 5 × h′ / 0,5 = 10h′
+Tại điểm cao nhất, vận tốc bằng 0 nên cơ năng chỉ còn thế năng:
+mgh′ = 120 − Ams
+2 × 10 × h′ = 120 − 10h′
+20h′ + 10h′ = 120
+30h′ = 120
+h′ = 4 m
+Vậy vật lên được tới độ cao 4 m trên dốc BC, thấp hơn độ cao ban đầu 6 m.
+b) Phần cơ năng bị mất khi đi từ B lên điểm cao nhất bằng công của lực ma sát:
+Ams = 10 × 4 = 40 J
+Phần năng lượng này đã chuyển hoá thành nhiệt năng làm nóng vật và mặt dốc.
+c) Khi vật trượt từ điểm cao nhất trở lại B, lực ma sát lại sinh công cản với cùng độ lớn vì quãng đường như nhau:
+Ams′ = 40 J
+Cơ năng tại điểm cao nhất (chỉ có thế năng):
+Wđỉnh = mgh′ = 2 × 10 × 4 = 80 J
+Cơ năng tại B khi trở lại:
+WB′ = 80 − 40 = 40 J
+Tại B thế năng bằng 0 nên:
+½mv′² = 40
+½ × 2 × v′² = 40
+v′² = 40
+v′ = √40 ≈ 6,32 m/s
+d) Nhận xét: sau một lần đi lên rồi trở lại, cơ năng của vật đã giảm từ 120 J xuống còn 40 J. Vật tiếp tục đi sang dốc AB (không ma sát) và quay lại B với cơ năng không đổi, rồi lại đi lên dốc BC và lại mất thêm năng lượng. Cứ như vậy, biên độ chuyển động nhỏ dần và cuối cùng vật dừng lại ngay tại chân dốc B, nơi có độ cao nhỏ nhất. Toàn bộ cơ năng ban đầu đã chuyển hoá thành nhiệt năng ở dốc BC.
+Đáp số
+Độ cao lớn nhất trên dốc BC: h′ = 4 m
+Cơ năng mất khi đi lên: 40 J
+Vận tốc khi trở lại B: v′ = √40 ≈ 6,32 m/s
+Vật dừng lại tại B sau một số lần qua lại dốc BC
+H. Lỗi thường gặp và ghi chú sư phạm
+H1. Lỗi thường gặp của học sinh
+1. Không đổi đơn vị vận tốc từ km/h sang m/s trước khi tính động năng, dẫn tới kết quả sai gấp nhiều lần.
+2. Quên bình phương vận tốc, viết Wđ = ½mv thay vì Wđ = ½mv².
+3. Nhầm khối lượng với trọng lượng, hoặc dùng P = m thay vì P = mg khi áp dụng Wt = Ph.
+4. Không chọn mốc thế năng, hoặc đổi mốc giữa bài làm cho phương trình bảo toàn cơ năng mất đúng.
+5. Nhầm độ cao với quãng đường: trên mặt phẳng nghiêng, quãng đường dài hơn độ cao, phải dùng đúng đại lượng mà công thức yêu cầu.
+6. Vẫn áp dụng "cơ năng được bảo toàn" cho bài toán có ma sát.
+7. Dùng Fms = μmg cho mặt phẳng nghiêng mà quên nhân thêm cosα.
+8. Nhầm dấu của công: cho rằng công của lực ma sát là công phát động nên cộng thay vì trừ.
+9. Với con lắc lò xo, dùng công thức thế năng trọng trường mgh cho thế năng đàn hồi, hoặc tự ý dùng công thức ½kx² khi chưa được học.
+10. Làm tròn quá sớm ở các bước trung gian, khiến kết quả cuối lệch so với đáp án.
+11. Không kiểm tra tính hợp lí: kết quả vận tốc lớn hơn vận tốc ánh sáng, độ cao sau khi có ma sát lại lớn hơn độ cao ban đầu, quãng đường âm.
+12. Viết đơn vị sai: dùng N cho năng lượng, dùng J cho lực, hoặc bỏ hẳn đơn vị trong dòng kết quả.
+H2. Ghi chú sư phạm
+1. Trình tự dạy hiệu quả: cho học sinh quan sát hiện tượng thực tế (quả bóng nảy, xe lăn xuống dốc, con lắc dao động) để rút ra nhận xét định tính trước, sau đó mới đưa công thức và bài toán định lượng.
+2. Luôn yêu cầu học sinh viết rõ hai câu: "Ở vị trí đầu, cơ năng gồm…" và "Ở vị trí sau, cơ năng gồm…". Thói quen này giúp tránh phần lớn lỗi ở mục H1.
+3. Nhấn mạnh hai điểm khái niệm: thế năng phụ thuộc mốc nên có thể âm; cơ năng chỉ được bảo toàn khi bỏ qua ma sát và lực cản.
+4. Dùng sơ đồ năng lượng (mũi tên qua lại giữa hai ô "động năng" và "thế năng", kèm mũi tên đi ra ngoài ghi "nhiệt" khi có ma sát) để học sinh thấy rõ sự chuyển hoá.
+5. Khi chữa bài, nên yêu cầu học sinh kiểm tra chéo bằng một cách khác: chẳng hạn sau khi tính vận tốc ở chân dốc bằng năng lượng, kiểm tra lại bằng công thức động học nếu đã học.
+6. Với học sinh giỏi, nên khuyến khích tự đặt câu hỏi ngược: cho vận tốc ở chân dốc, hỏi hệ số ma sát; cho quãng đường trượt, hỏi vận tốc ban đầu.
+7. Bài toán đồ thị năng lượng là dạng còn ít được luyện nhưng rất hiệu quả để kiểm tra hiểu bản chất; nên dành ít nhất một tiết luyện.
+8. Liên hệ thực tế an toàn giao thông và an toàn lao động: động năng tỉ lệ với bình phương vận tốc, đây là cơ sở khoa học của quy định tốc độ và khoảng cách an toàn.

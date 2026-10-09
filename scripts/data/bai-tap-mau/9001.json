@@ -1,0 +1,814 @@
+{
+ "lesson_id": 9001,
+ "lesson_title": "Chuyên đề 01. Công và công suất",
+ "generated_at": "2026-10-10",
+ "review": {
+  "checked": true,
+  "notes": "Kiểm chéo độc lập (kiem-code) 10/10/2026: tự giải lại 7 dạng + tự luận khớp; đã sửa các lỗi lộ đáp số/đề mơ hồ theo báo cáo. lesson_id TẠM — đổi sang id thật sau khi chạy migration 20261010100000."
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công của lực kéo, lực ma sát và lực xiên góc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "problem_html": "<p>Một thùng hàng khối lượng $m=40\\ \\text{kg}$ được kéo trượt đều trên sàn nằm ngang bằng lực kéo $\\vec F$ có phương ngang. Hệ số ma sát giữa thùng và sàn là $\\mu=0{,}25$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính độ lớn lực kéo $F$.</li><li>Tính công của lực kéo và công của lực ma sát (kể cả dấu) khi thùng dịch chuyển $s=8\\ \\text{m}$.</li><li>Một học sinh khác kéo thùng bằng lực $F'=150\\ \\text{N}$ hợp với phương ngang góc $\\alpha=60^\\circ$. Thùng dịch chuyển $8\\ \\text{m}$ theo phương ngang. Tính công của lực $F'$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c1-0\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Thùng hàng được kéo trượt đều 8 mét trên sàn nằm ngang bằng lực kéo nằm ngang\"><defs><marker id=\"d10-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d10-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d10-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d10-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16\" y=\"118.0\" width=\"394\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"26.0\" y=\"80.0\" width=\"64.0\" height=\"38.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;240.0 0.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"26.0\" y=\"80.0\" width=\"64.0\" height=\"38.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"58.0\" y=\"104.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">m = 40 kg</text><line x1=\"90\" y1=\"99.0\" x2=\"142\" y2=\"99.0\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d10-r)\"/><text x=\"98\" y=\"89.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></g><line x1=\"26.0\" y1=\"142.0\" x2=\"266.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"26.0\" y1=\"136.0\" x2=\"26.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"26\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"86.0\" y1=\"136.0\" x2=\"86.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"86\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">2</text><line x1=\"146.0\" y1=\"136.0\" x2=\"146.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"146\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">4</text><line x1=\"206.0\" y1=\"136.0\" x2=\"206.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"206\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6</text><line x1=\"266.0\" y1=\"136.0\" x2=\"266.0\" y2=\"148.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"266\" y=\"164\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">8 m</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">μ = 0,25</text><text x=\"16\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">g = 10 m/s²</text><text x=\"300\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">s = 8 m</text><text x=\"300\" y=\"42\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: thùng trượt đều đúng quãng đường 8 m trên thước (tốc độ minh hoạ 2 m/s, chạy 4 s).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công cơ học: có lực tác dụng và vật dịch chuyển theo phương không vuông góc với lực.</li><li><strong>Công thức:</strong> $A=F\\,s\\cos\\alpha$ ($\\alpha$ là góc giữa lực và dịch chuyển; cùng phương thì $A=Fs$).</li><li>Lực ma sát trượt $F_{ms}=\\mu N$ ; trên sàn ngang $N=P=10m$.</li><li>⚠ <strong>Điều kiện:</strong> chuyển động đều thì hợp lực bằng 0 ($F=F_{ms}$) ; lực vuông góc dịch chuyển không sinh công.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực kéo: cân bằng với ma sát</span></p><p>Trọng lượng và áp lực lên sàn ngang:</p>$$P=10m=10\\cdot40=400\\ \\text{N},\\qquad N=P$$<p>Lực ma sát trượt:</p>$$F_{ms}=\\mu N=0{,}25\\cdot400=100\\ \\text{N}$$<p>Thùng trượt đều nên hợp lực bằng 0:</p><div class=\"bt-ans\">$$F=F_{ms}=100\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của lực kéo</span></p><p>Lực cùng phương dịch chuyển ($\\alpha=0^\\circ$):</p>$$A_F=F\\,s=100\\cdot8$$<div class=\"bt-ans\">$$A_F=800\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực ma sát</span></p><p>Lực ma sát ngược chiều dịch chuyển ($\\alpha=180^\\circ$, $\\cos\\alpha=-1$):</p>$$A_{ms}=-F_{ms}\\,s=-100\\cdot8$$<div class=\"bt-ans\">$$A_{ms}=-800\\ \\text{J}$$</div><p>Độ lớn công cản là $800\\ \\text{J}$. Tổng công của hai lực bằng 0 vì thùng chuyển động đều.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của lực xiên góc</span></p><p>Chỉ thành phần của $F'$ dọc theo dịch chuyển mới sinh công:</p>$$A'=F's\\cos\\alpha$$$$A'=150\\cdot8\\cdot\\cos60^\\circ=150\\cdot8\\cdot0{,}5$$<div class=\"bt-ans\">$$A'=600\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thành phần ngang $F'\\cos\\alpha=75\\ \\text{N}$, nhân với $8\\ \\text{m}$ cũng ra $600\\ \\text{J}$ ✓.</p><p>Thành phần thẳng đứng của $F'$, trọng lực và phản lực vuông góc với dịch chuyển nên không sinh công.</p><p>Quên $\\cos\\alpha$ sẽ ra $1200\\ \\text{J}$ — lớn hơn thực tế.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=100\\ \\text{N}$</p><p>b) $A_F=800\\ \\text{J}$ · $A_{ms}=-800\\ \\text{J}$</p><p>c) $A'=600\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>lực, góc và quãng đường dịch chuyển</strong> → $A=Fs\\cos\\alpha$ ; <strong>trượt đều</strong> → $F=F_{ms}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c1-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Bên trái bốn lực tác dụng lên thùng khi kéo ngang; bên phải lực kéo xiên góc 60 độ được tách thành hai thành phần\"><defs><marker id=\"d12-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d12-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d12-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d12-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"12\" y=\"140.0\" width=\"398\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"58.0\" y=\"102.0\" width=\"64.0\" height=\"38.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"122\" y1=\"121.0\" x2=\"176\" y2=\"121.0\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d12-r)\"/><text x=\"160\" y=\"111.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><line x1=\"58\" y1=\"121.0\" x2=\"4\" y2=\"121.0\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d12-o)\"/><text x=\"10\" y=\"105.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan></text><line x1=\"90\" y1=\"121.0\" x2=\"90\" y2=\"65.0\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d12-b)\"/><text x=\"98\" y=\"71.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><line x1=\"90\" y1=\"121.0\" x2=\"90\" y2=\"158\" stroke=\"#34d399\" stroke-width=\"3\" marker-end=\"url(#d12-g)\"/><text x=\"98\" y=\"170\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Kéo ngang: α = 0°</text><rect x=\"248.0\" y=\"102.0\" width=\"64.0\" height=\"38.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"312\" y1=\"121.0\" x2=\"347.0\" y2=\"60.3782217350893\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d12-r)\"/><text x=\"353.0\" y=\"64.4\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F′</text><line x1=\"312\" y1=\"121.0\" x2=\"347.0\" y2=\"121.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\" marker-end=\"url(#d12-b)\"/><text x=\"353.0\" y=\"126.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">F′cosα</text><line x1=\"347.0\" y1=\"121.0\" x2=\"347.0\" y2=\"60.4\" stroke=\"#fb923c\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"355.0\" y=\"82.7\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">F′sinα</text><path d=\"M338.0,121.0 A26,26 0 0 0 325.0,98.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"327\" y=\"114.0\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α</text><text x=\"220\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Kéo xiên: chỉ F′cosα sinh công</text></svg><figcaption>Dữ kiện: lực nào dọc theo dịch chuyển thì sinh công; lực vuông góc không sinh công. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"kéo trượt đều … lực kéo có phương ngang\"</td><td>Chuyển động đều; $\\alpha=0^\\circ$</td><td>⚠ Chuyển động đều → hợp lực bằng 0, $F=F_{ms}$</td></tr><tr><td>\"$m=40$ kg … $\\mu=0{,}25$\"</td><td>$m=40$ kg; $\\mu=0{,}25$</td><td>$P=10m$ ; $F_{ms}=\\mu N$ với $N=P$ trên sàn ngang</td></tr><tr><td>\"tính độ lớn lực kéo\"</td><td>Cần $F$</td><td>$F=F_{ms}$</td></tr><tr><td>\"công của lực kéo và công của lực ma sát\"</td><td>$s=8$ m</td><td>$A=Fs\\cos\\alpha$ ; ⚠ ma sát ngược chiều dịch chuyển ($\\alpha=180^\\circ$) nên công âm</td></tr><tr><td>\"lực $F'=150$ N hợp với phương ngang góc $60^\\circ$\"</td><td>$F'=150$ N ; $\\alpha=60^\\circ$</td><td>Chỉ thành phần dọc theo dịch chuyển mới sinh công</td></tr><tr><td>\"tính công của lực $F'$\"</td><td>Cần $A'$</td><td>$A'=F's\\cos\\alpha$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>trượt đều</b> thì $F=F_{ms}$ ; thấy <b>lực hợp góc α</b> với dịch chuyển → nghĩ tới <b>A = F·s·cosα</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Lực kéo: cân bằng với ma sát",
+     "hoi": "Lực kéo $F$ bằng bao nhiêu?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Hay tính $F_{ms}=\\mu m=0{,}25\\cdot40=10\\ \\text{N}$ — quên đổi khối lượng sang trọng lượng ($N=P=10m$)."
+    },
+    {
+     "tieu_de": "Công của lực kéo",
+     "hoi": "Công của lực kéo $A_F$ khi thùng đi $8\\ \\text{m}$?",
+     "dap_so": 800,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Lẫn công với lực (ghi $100\\ \\text{J}$) hoặc nhân thêm $\\cos\\alpha$ dù lực kéo đang nằm ngang.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lực cùng phương dịch chuyển nên $A_F=F\\,s$",
+       "dung": true
+      },
+      {
+       "text": "$A_F=F\\,s\\cos60^\\circ$",
+       "dung": false,
+       "vi_sao": "Góc $60^\\circ$ là của lực $F'$ ở câu c ; lực kéo $F$ nằm ngang nên $\\alpha=0^\\circ$, $\\cos\\alpha=1$."
+      },
+      {
+       "text": "$A_F=P\\,s$",
+       "dung": false,
+       "vi_sao": "Trọng lực vuông góc với dịch chuyển nên không sinh công ; công của lực kéo dùng chính lực $F$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực ma sát",
+     "hoi": "Công của lực ma sát $A_{ms}$ (kể cả dấu)?",
+     "dap_so": -800,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Ghi $+800\\ \\text{J}$ — bỏ dấu âm của công cản — hoặc cho rằng bằng 0 vì thùng chuyển động đều.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ma sát ngược chiều dịch chuyển ($\\alpha=180^\\circ$) nên $A_{ms}=-F_{ms}\\,s$",
+       "dung": true
+      },
+      {
+       "text": "$A_{ms}=+F_{ms}\\,s$",
+       "dung": false,
+       "vi_sao": "Lực ma sát ngược chiều dịch chuyển nên công âm ; chỉ độ lớn công cản mới là số dương."
+      },
+      {
+       "text": "$A_{ms}=0$ vì chuyển động đều",
+       "dung": false,
+       "vi_sao": "Chuyển động đều chỉ nói tổng công bằng 0 (hợp lực bằng 0), không nói từng lực không sinh công. Công của $F$ và $F_{ms}$ triệt tiêu nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực xiên góc",
+     "hoi": "Công của lực $F'$ hợp góc $60^\\circ$ với phương ngang?",
+     "dap_so": 600,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Quên $\\cos\\alpha$ nên ra $1200\\ \\text{J}$ ; hoặc dùng $\\sin60^\\circ$ thay cho $\\cos60^\\circ$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A'=F's\\cos\\alpha$ vì chỉ thành phần dọc dịch chuyển sinh công",
+       "dung": true
+      },
+      {
+       "text": "$A'=F's$ vì lực kéo cùng hướng với chuyển động",
+       "dung": false,
+       "vi_sao": "Lực $F'$ hợp với phương ngang một góc nên phải nhân $\\cos\\alpha$."
+      },
+      {
+       "text": "$A'=F's\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "$\\sin\\alpha$ ứng với thành phần thẳng đứng (không sinh công) ; thành phần ngang là $F'\\cos\\alpha$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Dễ · Máy cơ đơn giản và định luật về công: ròng rọc cố định, đòn bẩy",
+   "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
+   "problem_html": "<p>Bỏ qua ma sát và khối lượng của dây, ròng rọc, đòn bẩy.</p><ol type=\"a\"><li>Dùng một ròng rọc cố định kéo vật có trọng lượng $P=500\\ \\text{N}$ lên cao $2\\ \\text{m}$. Tính công của lực kéo.</li><li>Một đòn bẩy có khoảng cách từ điểm tựa tới vật là $l_1=20\\ \\text{cm}$, tới điểm đặt lực là $l_2=1{,}2\\ \\text{m}$. Dùng đòn bẩy nâng vật có trọng lượng $P=600\\ \\text{N}$ lên cao $5\\ \\text{cm}$. Tính lực tác dụng, quãng đường điểm đặt lực đi được và công của lực; so sánh với công nâng vật trực tiếp.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đòn bẩy quay quanh điểm tựa: đầu ngắn mang vật nâng lên 5 cm, đầu dài bị đè xuống\"><defs><marker id=\"d20-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d20-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d20-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d20-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"70.0,92.0 52.0,120.0 88.0,120.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><line x1=\"40.0\" y1=\"120.0\" x2=\"100.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 70 88;14.48 70 88\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"30\" y1=\"88\" x2=\"310\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"6\" stroke-linecap=\"round\"/><rect x=\"32.0\" y=\"57.0\" width=\"28.0\" height=\"28.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><line x1=\"310.0\" y1=\"42.0\" x2=\"310.0\" y2=\"82.0\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d20-r)\"><animate attributeName=\"x1\" values=\"310.0;309.9;309.8;309.5;309.1;308.7;308.1;307.4;306.6;305.7;304.7;303.6;302.4\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"42.0;47.1;52.1;57.2;62.2;67.2;72.2;77.2;82.2;87.2;92.2;97.1;102.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"310.0;309.9;309.8;309.5;309.1;308.7;308.1;307.4;306.6;305.7;304.7;303.6;302.4\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"82.0;87.1;92.1;97.2;102.2;107.2;112.2;117.2;122.2;127.2;132.2;137.1;142.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><text x=\"322\" y=\"60\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text><text x=\"16\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật P = 600 N</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">nâng lên h = 5 cm</text><text x=\"306\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">s = ?</text><line x1=\"30\" y1=\"188\" x2=\"70\" y2=\"188\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d20-b)\"/><line x1=\"70\" y1=\"188\" x2=\"30\" y2=\"188\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d20-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><line x1=\"70\" y1=\"188\" x2=\"310\" y2=\"188\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d20-b)\"/><line x1=\"310\" y1=\"188\" x2=\"70\" y2=\"188\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d20-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"32\" y=\"208\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l₁ = 20 cm</text><text x=\"190\" y=\"208\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l₂ = 1,2 m</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật lên 5 cm, đầu dài đi xuống theo hình học của đòn bẩy. Chạy 4 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> máy cơ đơn giản đổi lực lấy đường đi.</li><li><strong>Định luật về công:</strong> không máy nào cho lợi về công ; lợi bao nhiêu lần về lực thì thiệt bấy nhiêu lần về đường đi.</li><li>Ròng rọc cố định : $F=P$, $s=h$ · Đòn bẩy : $F_1l_1=F_2l_2$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua ma sát và khối lượng máy ; $l_1$, $l_2$ phải cùng đơn vị.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Ròng rọc cố định</span></p><p>Chỉ đổi hướng của lực: $F=P$ và $s=h$.</p>$$A=F\\,s=P\\,h=500\\cdot2$$<div class=\"bt-ans\">$$A=1000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực tác dụng lên đòn bẩy</span></p><p>Đổi cùng đơn vị : $l_1=20\\ \\text{cm}=0{,}2\\ \\text{m}$ ; $l_2=1{,}2\\ \\text{m}$.</p><p>Đòn bẩy cân bằng:</p>$$F\\,l_2=P\\,l_1$$$$F=\\dfrac{P\\,l_1}{l_2}=\\dfrac{600\\cdot0{,}2}{1{,}2}$$<div class=\"bt-ans\">$$F=100\\ \\text{N}$$</div><p>Lợi $\\dfrac{l_2}{l_1}=6$ lần về lực.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Quãng đường điểm đặt lực</span></p><p>Lợi 6 lần về lực thì thiệt 6 lần về đường đi:</p>$$\\dfrac{s}{h}=\\dfrac{l_2}{l_1}$$$$s=h\\,\\dfrac{l_2}{l_1}=0{,}05\\cdot6$$<div class=\"bt-ans\">$$s=0{,}3\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công và so sánh</span></p>$$A=F\\,s=100\\cdot0{,}3$$<div class=\"bt-ans\">$$A=30\\ \\text{J}$$</div><p>Công nâng vật trực tiếp:</p>$$A_{ci}=P\\,h=600\\cdot0{,}05=30\\ \\text{J}$$<p>Hai công bằng nhau : máy cơ đơn giản không cho lợi về công.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=1000\\ \\text{J}$</p><p>b) $F=100\\ \\text{N}$ · $s=0{,}3\\ \\text{m}$ · $A=30\\ \\text{J}$ (bằng công nâng trực tiếp)</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>đòn bẩy / ròng rọc</strong> và <strong>bỏ qua ma sát</strong> → lợi lực bao nhiêu lần thì thiệt đường bấy nhiêu lần, công không đổi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c2-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Đòn bẩy cân bằng: trọng lượng P ở cánh tay đòn l1, lực F ở cánh tay đòn l2\"><defs><marker id=\"d22-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d22-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d22-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d22-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><polygon points=\"70.0,92.0 52.0,120.0 88.0,120.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><line x1=\"40.0\" y1=\"120.0\" x2=\"100.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30\" y1=\"88\" x2=\"310\" y2=\"88\" stroke=\"currentColor\" stroke-width=\"6\" stroke-linecap=\"round\"/><rect x=\"32.0\" y=\"57.0\" width=\"28.0\" height=\"28.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"46\" y1=\"14\" x2=\"46\" y2=\"54\" stroke=\"#34d399\" stroke-width=\"3\" marker-end=\"url(#d22-g)\"/><text x=\"56\" y=\"36\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"310\" y1=\"42\" x2=\"310\" y2=\"82\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d22-r)\"/><text x=\"320\" y=\"60\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><line x1=\"30\" y1=\"144\" x2=\"70\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><line x1=\"70\" y1=\"144\" x2=\"30\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><line x1=\"70\" y1=\"144\" x2=\"310\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><line x1=\"310\" y1=\"144\" x2=\"70\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.8\" marker-end=\"url(#d22-b)\"/><text x=\"0\" y=\"0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"16\" y=\"166\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">l₁ = 20 cm = 0,2 m</text><text x=\"220\" y=\"166\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l₂ = 1,2 m</text><text x=\"220\" y=\"26\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">F·l₂ = P·l₁</text><text x=\"220\" y=\"46\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">s / h = l₂ / l₁</text></svg><figcaption>Dữ kiện: đổi l₁ và l₂ cùng đơn vị rồi lập tỉ số. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ròng rọc cố định … $P=500$ N lên cao $2$ m\"</td><td>$P=500$ N ; $h=2$ m</td><td>Ròng rọc cố định: $F=P$, $s=h$ ; $A=Fs$</td></tr><tr><td>\"bỏ qua ma sát và khối lượng\"</td><td>Máy lí tưởng</td><td>⚠ Chỉ khi bỏ qua ma sát và khối lượng máy thì công của lực bằng công có ích</td></tr><tr><td>\"đòn bẩy … $l_1=20$ cm, $l_2=1{,}2$ m\"</td><td>$l_1=20$ cm ; $l_2=1{,}2$ m</td><td>⚠ Đổi cùng đơn vị trước khi lập tỉ số ; $F_1l_1=F_2l_2$</td></tr><tr><td>\"nâng vật $P=600$ N lên cao $5$ cm\"</td><td>$P=600$ N ; $h=5$ cm</td><td>Đổi $h$ ra mét ; công nâng trực tiếp $P\\,h$</td></tr><tr><td>\"tính lực và quãng đường điểm đặt lực\"</td><td>Cần $F$, $s$</td><td>$F=\\dfrac{Pl_1}{l_2}$ ; $\\dfrac{s}{h}=\\dfrac{l_2}{l_1}$</td></tr><tr><td>\"công … so sánh với công nâng trực tiếp\"</td><td>Cần $A$ và $P\\,h$</td><td>$A=Fs$ ; định luật về công</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đòn bẩy / ròng rọc</b> và <b>bỏ qua ma sát</b> → lợi lực bao nhiêu lần thì <b>thiệt đường bấy nhiêu lần</b>.",
+   "cap_do": 1,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Ròng rọc cố định",
+     "hoi": "Công của lực kéo khi dùng ròng rọc cố định?",
+     "dap_so": 1000,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Cho rằng ròng rọc cố định chia đôi lực ($F=\\dfrac{P}{2}$) ; thực ra nó chỉ đổi hướng nên $F=P$ và $s=h$."
+    },
+    {
+     "tieu_de": "Lực tác dụng lên đòn bẩy",
+     "hoi": "Lực $F$ cần tác dụng ở đầu dài của đòn bẩy?",
+     "dap_so": 100,
+     "sai_so": 1,
+     "don_vi": "N",
+     "loi_hay_gap": "Lập tỉ số $\\dfrac{20}{1{,}2}$ khi chưa đổi cùng đơn vị (sai 100 lần), hoặc đảo tỉ số $\\dfrac{l_2}{l_1}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $l_1$ ra mét rồi dùng $F=\\dfrac{P\\,l_1}{l_2}$",
+       "dung": true
+      },
+      {
+       "text": "$F=\\dfrac{P\\,l_2}{l_1}$",
+       "dung": false,
+       "vi_sao": "Cánh tay đòn của lực dài hơn thì lực nhỏ hơn $P$, không lớn hơn."
+      },
+      {
+       "text": "$F=P\\cdot\\dfrac{20}{1{,}2}$",
+       "dung": false,
+       "vi_sao": "Chưa đổi cùng đơn vị : $20\\ \\text{cm}$ và $1{,}2\\ \\text{m}$ không chia trực tiếp được, kết quả sai 100 lần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường điểm đặt lực",
+     "hoi": "Điểm đặt lực đi được quãng đường $s$ bằng bao nhiêu?",
+     "dap_so": 0.3,
+     "sai_so": 0.01,
+     "don_vi": "m",
+     "loi_hay_gap": "Cho rằng hai đầu đòn bẩy đi cùng một đoạn $5\\ \\text{cm}$, hoặc đảo tỉ số cánh tay đòn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tỉ lệ đường đi bằng tỉ lệ cánh tay đòn : $s=h\\,\\dfrac{l_2}{l_1}$",
+       "dung": true
+      },
+      {
+       "text": "$s=h$ vì vật lên $5\\ \\text{cm}$ thì đầu kia cũng đi $5\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Hai đầu quay cùng một góc nhưng cánh tay đòn khác nhau nên đường đi khác nhau."
+      },
+      {
+       "text": "$s=h\\,\\dfrac{l_1}{l_2}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : cánh tay đòn của lực dài hơn thì điểm đặt lực phải đi quãng dài hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công và so sánh",
+     "hoi": "Công của lực tác dụng lên đòn bẩy?",
+     "dap_so": 30,
+     "sai_so": 0.3,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân lực với $h$ thay vì với $s$, hoặc chia thêm cho số lần được lợi về lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=F\\,s$ rồi so với $P\\,h$",
+       "dung": true
+      },
+      {
+       "text": "$A=F\\,h$ vì vật chỉ lên $5\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Lực $F$ tác dụng ở điểm đặt lực nên nhân với quãng đường của chính điểm đó."
+      },
+      {
+       "text": "$A=\\dfrac{F\\,s}{6}$ vì được lợi 6 lần",
+       "dung": false,
+       "vi_sao": "Định luật về công : lợi lực thì thiệt đường, công không đổi ; không chia thêm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · So sánh công và công suất của hai máy",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "problem_html": "<p>Hai máy nâng hai vật lên cùng độ cao $h=4\\ \\text{m}$. Máy A nâng vật khối lượng $50\\ \\text{kg}$ trong $20\\ \\text{s}$. Máy B nâng vật khối lượng $30\\ \\text{kg}$ trong $8\\ \\text{s}$. Bỏ qua mọi hao phí, lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính công mỗi máy thực hiện.</li><li>Tính công suất mỗi máy.</li><li>Máy nào thực hiện công lớn hơn? Máy nào mạnh hơn? Giải thích vì sao hai câu trả lời khác nhau.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Hai máy nâng hai vật nặng khác nhau lên cùng độ cao 4 mét, máy B xong trước máy A\"><defs><marker id=\"d30-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d30-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d30-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d30-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"40\" y=\"200.0\" width=\"320\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"110\" y=\"16\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Máy A</text><line x1=\"84.0\" y1=\"22.0\" x2=\"136.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"110\" y1=\"22\" x2=\"110\" y2=\"164\" stroke=\"#94a3b8\" stroke-width=\"2\"><animate attributeName=\"y2\" values=\"164.0;36.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 -128.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"87.0\" y=\"164.0\" width=\"46.0\" height=\"36.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"110\" y=\"186.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">50 kg</text></g><text x=\"290\" y=\"16\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Máy B</text><line x1=\"264.0\" y1=\"22.0\" x2=\"316.0\" y2=\"22.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"290\" y1=\"22\" x2=\"290\" y2=\"172\" stroke=\"#94a3b8\" stroke-width=\"2\"><animate attributeName=\"y2\" values=\"172.0;44.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 -128.0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"267.0\" y=\"172.0\" width=\"46.0\" height=\"28.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"290\" y=\"190.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">30 kg</text></g><line x1=\"60.0\" y1=\"72.0\" x2=\"330.0\" y2=\"72.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"196\" y1=\"198\" x2=\"196\" y2=\"74\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d30-o)\"/><line x1=\"196\" y1=\"74\" x2=\"196\" y2=\"198\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d30-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"204\" y=\"140.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">h = 4 m</text><text x=\"110\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">t = 20 s</text><text x=\"290\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">t = 8 s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy nhanh 4 lần (máy A mất 5 s, máy B mất 2 s; tỉ lệ thời gian giữ đúng 20 : 8).</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công đo lượng việc đã làm ; công suất đo việc làm nhanh hay chậm.</li><li><strong>Công thức:</strong> $A=P\\,h=10\\,m\\,h$ · $P_{cs}=\\dfrac{A}{t}$ (oát).</li><li>Mạnh hơn nghĩa là công suất lớn hơn, không phải công lớn hơn.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua hao phí (công của máy = công nâng vật) ; thời gian đổi ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của máy A</span></p>$$A_A=10\\,m_A\\,h=10\\cdot50\\cdot4$$<div class=\"bt-ans\">$$A_A=2000\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của máy B</span></p>$$A_B=10\\,m_B\\,h=10\\cdot30\\cdot4$$<div class=\"bt-ans\">$$A_B=1200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất mỗi máy</span></p><p>Thời gian đã tính bằng giây:</p>$$P_A=\\dfrac{A_A}{t_A}=\\dfrac{2000}{20}=100\\ \\text{W}$$$$P_B=\\dfrac{A_B}{t_B}=\\dfrac{1200}{8}$$<div class=\"bt-ans\">$$P_B=150\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So sánh hai máy</span></p>$$A_A=2000\\ \\text{J}\\gt A_B=1200\\ \\text{J}$$$$P_B=150\\ \\text{W}\\gt P_A=100\\ \\text{W}$$<div class=\"bt-ans\"><p>Máy A thực hiện <strong>công lớn hơn</strong> ; máy B <strong>mạnh hơn</strong> (công suất lớn hơn).</p></div><p>Máy A làm nhiều việc hơn nhưng chậm ; máy B làm ít việc hơn nhưng nhanh hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cùng độ cao nên công tỉ lệ với khối lượng : $50:30=5:3$ ✓.</p><p>Máy B nhanh gấp $\\dfrac{20}{8}=2{,}5$ lần nên công suất lớn hơn, dù công nhỏ hơn.</p><p>Đơn vị : J/s = W ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_A=2000\\ \\text{J}$ · $A_B=1200\\ \\text{J}$</p><p>b) $P_A=100\\ \\text{W}$ · $P_B=150\\ \\text{W}$</p><p>c) Máy A công lớn hơn ; máy B mạnh hơn</p></div><p class=\"bt-note\">Nhận dạng: hỏi <strong>ai mạnh hơn / làm nhanh hơn</strong> → so $P=\\dfrac{A}{t}$ ; hỏi <strong>ai làm nhiều hơn</strong> → so $A$. Hai đáp án có thể khác nhau.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c3-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Máy A và máy B nâng vật lên cùng độ cao với khối lượng và thời gian khác nhau\"><defs><marker id=\"d32-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d32-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d32-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d32-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"40\" y=\"160.0\" width=\"340\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"87.0\" y=\"124.0\" width=\"46.0\" height=\"36.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"110\" y=\"146.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">50 kg</text><line x1=\"110\" y1=\"118\" x2=\"110\" y2=\"62\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d32-o)\"/><text x=\"110\" y=\"52\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Máy A: 20 s</text><rect x=\"267.0\" y=\"132.0\" width=\"46.0\" height=\"28.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"290\" y=\"150.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">30 kg</text><line x1=\"290\" y1=\"126\" x2=\"290\" y2=\"70\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d32-o)\"/><text x=\"290\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Máy B: 8 s</text><text x=\"200\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">cùng h = 4 m</text><text x=\"16\" y=\"188\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Công: lượng việc đã làm (J)</text><text x=\"16\" y=\"206\" fill=\"#34d399\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Công suất: làm nhanh hay chậm (W)</text></svg><figcaption>Dữ kiện: cùng độ cao, khác khối lượng và khác thời gian. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cùng một độ cao $h=4$ m\"</td><td>$h=4$ m (chung)</td><td>Công nâng vật : $A=10\\,m\\,h$</td></tr><tr><td>\"máy A nâng vật $50$ kg trong $20$ s\"</td><td>$m_A=50$ kg ; $t_A=20$ s</td><td>$A_A=10m_Ah$ ; $P_A=\\dfrac{A_A}{t_A}$</td></tr><tr><td>\"máy B nâng vật $30$ kg trong $8$ s\"</td><td>$m_B=30$ kg ; $t_B=8$ s</td><td>$A_B=10m_Bh$ ; $P_B=\\dfrac{A_B}{t_B}$</td></tr><tr><td>\"bỏ qua mọi hao phí\"</td><td>Công của máy = công nâng vật</td><td>⚠ Chỉ khi bỏ qua hao phí mới có $A=10\\,m\\,h$ ; thời gian đã tính bằng giây</td></tr><tr><td>\"máy nào thực hiện công lớn hơn?\"</td><td>So $A_A$ với $A_B$</td><td>Công đo lượng việc đã làm</td></tr><tr><td>\"máy nào mạnh hơn?\"</td><td>So $P_A$ với $P_B$</td><td>Công suất đo tốc độ làm việc : $P=\\dfrac{A}{t}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ai mạnh hơn</b> → so <b>công suất P = A/t</b> ; thấy <b>ai làm nhiều hơn</b> → so <b>công A</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của máy A",
+     "hoi": "Công của máy A bằng bao nhiêu?",
+     "dap_so": 2000,
+     "sai_so": 10,
+     "don_vi": "J",
+     "loi_hay_gap": "Quên hệ số 10 của trọng lượng hoặc chia cho thời gian (đó là công suất)."
+    },
+    {
+     "tieu_de": "Công của máy B",
+     "hoi": "Công của máy B bằng bao nhiêu?",
+     "dap_so": 1200,
+     "sai_so": 10,
+     "don_vi": "J",
+     "loi_hay_gap": "Chia công cho thời gian $8\\ \\text{s}$ — đó là công suất, không phải công.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A=10\\,m\\,h$ : cùng cách tính như máy A",
+       "dung": true
+      },
+      {
+       "text": "$A=m\\,h$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số 10 : trọng lượng là $P=10m$ nên $A=P\\,h=10\\,m\\,h$."
+      },
+      {
+       "text": "$A=\\dfrac{10\\,m\\,h}{t}$",
+       "dung": false,
+       "vi_sao": "Chia cho $t$ ra công suất, không phải công."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất mỗi máy",
+     "hoi": "Công suất của máy B bằng bao nhiêu?",
+     "dap_so": 150,
+     "sai_so": 1,
+     "don_vi": "W",
+     "loi_hay_gap": "Nhân thay vì chia ($A\\cdot t$), hoặc lấy công suất bằng công vì cùng độ cao.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P=\\dfrac{A}{t}$ với $t$ tính bằng giây",
+       "dung": true
+      },
+      {
+       "text": "$P=A\\cdot t$",
+       "dung": false,
+       "vi_sao": "Công suất là công trên mỗi giây, phải chia chứ không nhân."
+      },
+      {
+       "text": "$P=\\dfrac{A}{h}$",
+       "dung": false,
+       "vi_sao": "Chia công cho độ cao ra lực, không phải công suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "So sánh hai máy",
+     "hoi": "Máy nào thực hiện công lớn hơn, máy nào mạnh hơn?",
+     "lua_chon": [
+      {
+       "text": "Máy A công lớn hơn ; máy B mạnh hơn",
+       "dung": true
+      },
+      {
+       "text": "Máy B công lớn hơn và mạnh hơn (làm xong trước)",
+       "dung": false,
+       "vi_sao": "B làm xong trước nhưng nâng vật nhẹ hơn nên công nhỏ hơn : $1200\\ \\text{J}\\lt2000\\ \\text{J}$."
+      },
+      {
+       "text": "Máy A công lớn hơn và mạnh hơn (làm được nhiều hơn)",
+       "dung": false,
+       "vi_sao": "Mạnh hơn nghĩa là công suất lớn hơn : A chỉ có $100\\ \\text{W}$, B có $150\\ \\text{W}$."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng máy nào mạnh hơn thì cũng làm được nhiều công hơn (lẫn công với công suất).",
+     "chon_buoc_ke": [
+      {
+       "text": "So riêng công $A$ và công suất $P$ của hai máy",
+       "dung": true
+      },
+      {
+       "text": "Chỉ cần so công : công lớn hơn thì mạnh hơn",
+       "dung": false,
+       "vi_sao": "Mạnh hơn là công suất lớn hơn, khác với công lớn hơn."
+      },
+      {
+       "text": "Chỉ cần so thời gian : làm xong trước thì công lớn hơn",
+       "dung": false,
+       "vi_sao": "Thời gian ngắn chỉ cho biết làm nhanh ; công còn phụ thuộc vật nâng nặng hay nhẹ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Trung bình · Mặt phẳng nghiêng: công có ích, công hao phí và hiệu suất",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "problem_html": "<p>Người ta đưa một vật khối lượng $m=60\\ \\text{kg}$ lên sàn xe tải cao $h=1{,}5\\ \\text{m}$ bằng một tấm ván dài $l=5\\ \\text{m}$. Lực ma sát giữa vật và tấm ván có độ lớn không đổi $F_{ms}=60\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính công có ích để đưa vật lên sàn xe.</li><li>Tính công hao phí và công toàn phần.</li><li>Tính lực đẩy cần thiết dọc theo tấm ván.</li><li>Tính hiệu suất của mặt phẳng nghiêng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Vật khối lượng 60 kg được đẩy lên sàn xe tải cao 1,5 mét bằng tấm ván dài 5 mét\"><defs><marker id=\"d40-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d40-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d40-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d40-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"184.0\" x2=\"410.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"184.0\" x2=\"294.5\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><rect x=\"294.5\" y=\"109.0\" width=\"96.0\" height=\"75.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"304.5\" y=\"133.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">sàn xe</text><line x1=\"294.5\" y1=\"109.0\" x2=\"294.5\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"374.4848003542364\" y1=\"112.0\" x2=\"374.4848003542364\" y2=\"181\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d40-o)\"/><line x1=\"374.4848003542364\" y1=\"181\" x2=\"374.4848003542364\" y2=\"112.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d40-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"366.5\" y=\"150.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 1,5 m</text><text x=\"164\" y=\"172\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l = 5 m</text><g transform=\"translate(56 184) rotate(-17.46)\"><rect x=\"6.0\" y=\"-26.0\" width=\"34.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.45\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;204.0 0.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"6.0\" y=\"-26.0\" width=\"34.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"23\" y=\"-8\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">60 kg</text><line x1=\"-34\" y1=\"-13\" x2=\"4\" y2=\"-13\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d40-r)\"/><text x=\"-36\" y=\"-24\" fill=\"#f87171\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></g></g><text x=\"250\" y=\"26\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\"> = 60 N</tspan></text><text x=\"250\" y=\"46\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật đi hết chiều dài ván 5 m (tốc độ minh hoạ 1 m/s, chạy 5 s); hình vẽ đúng tỉ lệ l, h.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công có ích $A_{ci}$ (nâng vật), công hao phí $A_{hp}$ (thắng ma sát), công toàn phần $A_{tp}$ (thực sự bỏ ra).</li><li><strong>Công thức:</strong> $A_{ci}=P\\,h$ · $A_{hp}=F_{ms}\\,l$ · $A_{tp}=A_{ci}+A_{hp}=F\\,l$.</li><li>$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%$ (luôn nhỏ hơn $100\\%$).</li><li>⚠ <strong>Điều kiện:</strong> $F_{ms}$ tác dụng suốt chiều dài ván $l$ ; $F$ là lực đẩy dọc ván.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công có ích</span></p><p>Trọng lượng của vật:</p>$$P=10m=10\\cdot60=600\\ \\text{N}$$$$A_{ci}=P\\,h=600\\cdot1{,}5$$<div class=\"bt-ans\">$$A_{ci}=900\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công hao phí</span></p><p>Ma sát tác dụng trên suốt chiều dài ván:</p>$$A_{hp}=F_{ms}\\,l=60\\cdot5$$<div class=\"bt-ans\">$$A_{hp}=300\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công toàn phần</span></p>$$A_{tp}=A_{ci}+A_{hp}=900+300$$<div class=\"bt-ans\">$$A_{tp}=1200\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực đẩy dọc ván</span></p><p>Công toàn phần là công của lực đẩy trên quãng đường $l$:</p>$$F=\\dfrac{A_{tp}}{l}=\\dfrac{1200}{5}$$<div class=\"bt-ans\">$$F=240\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hiệu suất</span></p>$$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%=\\dfrac{900}{1200}\\cdot100\\%$$<div class=\"bt-ans\">$$H=75\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Lực đẩy khi không có ma sát:</p>$$\\dfrac{P\\,h}{l}=\\dfrac{600\\cdot1{,}5}{5}=180\\ \\text{N}$$<p>Cộng thêm $F_{ms}=60\\ \\text{N}$ được $240\\ \\text{N}$ ✓.</p><p>$F\\gt\\dfrac{P\\,h}{l}$ và $H\\lt100\\%$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{ci}=900\\ \\text{J}$</p><p>b) $A_{hp}=300\\ \\text{J}$ · $A_{tp}=1200\\ \\text{J}$</p><p>c) $F=240\\ \\text{N}$</p><p>d) $H=75\\%$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>tấm ván / dốc</strong> kèm <strong>lực ma sát</strong> → công hao phí $=F_{ms}\\,l$, cộng vào công có ích.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c4-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Vật trên mặt phẳng nghiêng chịu lực đẩy dọc ván, lực ma sát ngược chiều, trọng lực và phản lực\"><defs><marker id=\"d42-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d42-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d42-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d42-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"184.0\" x2=\"410.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"184.0\" x2=\"294.5\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><rect x=\"294.5\" y=\"109.0\" width=\"96.0\" height=\"75.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"304.5\" y=\"133.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">sàn xe</text><line x1=\"294.5\" y1=\"109.0\" x2=\"294.5\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"374.4848003542364\" y1=\"112.0\" x2=\"374.4848003542364\" y2=\"181\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d42-o)\"/><line x1=\"374.4848003542364\" y1=\"181\" x2=\"374.4848003542364\" y2=\"112.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d42-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"366.5\" y=\"150.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 1,5 m</text><text x=\"231\" y=\"172\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l = 5 m</text><g transform=\"translate(56 184) rotate(-17.46)\"><rect x=\"103.0\" y=\"-26.0\" width=\"34.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/></g><line x1=\"166.57270417003346\" y1=\"135.5987903815797\" x2=\"214.26966424088073\" y2=\"120.5987903815797\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d42-r)\"/><text x=\"218.3\" y=\"116.6\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><line x1=\"166.57270417003346\" y1=\"135.5987903815797\" x2=\"124.59937930768785\" y2=\"148.7987903815797\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d42-o)\"/><text x=\"86.6\" y=\"152.8\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">ms</tspan></text><line x1=\"166.57270417003346\" y1=\"135.5987903815797\" x2=\"166.57270417003346\" y2=\"181.5987903815797\" stroke=\"#34d399\" stroke-width=\"3\" marker-end=\"url(#d42-g)\"/><text x=\"174.6\" y=\"175.6\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"166.57270417003346\" y1=\"135.5987903815797\" x2=\"153.37270417003347\" y2=\"93.6254655192341\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d42-b)\"/><text x=\"139.4\" y=\"89.6\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N</text><text x=\"16\" y=\"24\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Công có ích: P·h (theo độ cao h)</text><text x=\"16\" y=\"44\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Công hao phí: F<tspan dy=\"4\" font-size=\"10\">ms</tspan><tspan dy=\"-4\">·l (theo chiều dài l)</tspan></text></svg><figcaption>Dữ kiện: công có ích tính theo độ cao h, công hao phí tính theo chiều dài ván l. Hình vẽ đúng tỉ lệ l, h.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tấm ván dài $l=5$ m … sàn xe cao $h=1{,}5$ m\"</td><td>$l=5$ m ; $h=1{,}5$ m</td><td>Công có ích gắn với độ cao : $A_{ci}=P\\,h$</td></tr><tr><td>\"vật khối lượng $m=60$ kg\"</td><td>$m=60$ kg</td><td>$P=10m$</td></tr><tr><td>\"lực ma sát $F_{ms}=60$ N không đổi\"</td><td>$F_{ms}=60$ N</td><td>⚠ Ma sát tác dụng suốt chiều dài ván : $A_{hp}=F_{ms}\\,l$</td></tr><tr><td>\"công có ích\"</td><td>Cần $A_{ci}$</td><td>$A_{ci}=P\\,h$</td></tr><tr><td>\"công hao phí và công toàn phần\"</td><td>Cần $A_{hp}$, $A_{tp}$</td><td>$A_{hp}=F_{ms}\\,l$ ; $A_{tp}=A_{ci}+A_{hp}$</td></tr><tr><td>\"lực đẩy cần thiết dọc theo tấm ván\"</td><td>Cần $F$</td><td>$A_{tp}=F\\,l$</td></tr><tr><td>\"hiệu suất\"</td><td>Cần $H$</td><td>$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tấm ván / dốc</b> kèm <b>lực ma sát</b> → nghĩ tới <b>công hao phí = F_ms·l</b>, cộng vào công có ích.",
+   "cap_do": 2,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công có ích",
+     "hoi": "Công có ích để đưa vật lên sàn xe?",
+     "dap_so": 900,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Dùng $P\\cdot l$ (quãng đường dọc ván) — công có ích chỉ tính theo độ cao $h$ vật được nâng."
+    },
+    {
+     "tieu_de": "Công hao phí",
+     "hoi": "Công hao phí để thắng ma sát?",
+     "dap_so": 300,
+     "sai_so": 3,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhầm $F_{ms}\\cdot h$ (ra $90\\ \\text{J}$) ; ma sát tác dụng trên cả chiều dài ván.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{hp}=F_{ms}\\,l$ vì ma sát tác dụng suốt chiều dài ván",
+       "dung": true
+      },
+      {
+       "text": "$A_{hp}=F_{ms}\\,h$",
+       "dung": false,
+       "vi_sao": "Lực ma sát tác dụng trên toàn bộ quãng đường trượt dọc ván ($l$), không chỉ độ cao $h$."
+      },
+      {
+       "text": "$A_{hp}=P\\,h-F_{ms}\\,l$",
+       "dung": false,
+       "vi_sao": "Biểu thức đó không có ý nghĩa vật lí (hiệu hai công không phải đại lượng nào) ; công hao phí chỉ là công thắng ma sát."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công toàn phần",
+     "hoi": "Công toàn phần bằng bao nhiêu?",
+     "dap_so": 1200,
+     "sai_so": 5,
+     "don_vi": "J",
+     "loi_hay_gap": "Trừ thay vì cộng ($A_{ci}-A_{hp}$) ; công toàn phần phải lớn hơn công có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{tp}=A_{ci}+A_{hp}$",
+       "dung": true
+      },
+      {
+       "text": "$A_{tp}=A_{ci}-A_{hp}$",
+       "dung": false,
+       "vi_sao": "Công toàn phần là công thực sự bỏ ra, lớn hơn công có ích ; phải cộng."
+      },
+      {
+       "text": "$A_{tp}=F_{ms}\\,l$",
+       "dung": false,
+       "vi_sao": "Đó mới chỉ là công thắng ma sát, chưa có công nâng vật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực đẩy dọc ván",
+     "hoi": "Lực đẩy cần thiết dọc theo ván?",
+     "dap_so": 240,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Dùng $F=\\dfrac{P\\,h}{l}$ (mặt phẳng nghiêng lí tưởng) — quên phải thắng thêm ma sát.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F=\\dfrac{A_{tp}}{l}$",
+       "dung": true
+      },
+      {
+       "text": "$F=\\dfrac{P\\,h}{l}$ (mặt phẳng nghiêng lí tưởng)",
+       "dung": false,
+       "vi_sao": "Công thức đó chỉ đúng khi bỏ qua ma sát ; ở đây còn phải thắng $F_{ms}$."
+      },
+      {
+       "text": "$F=\\dfrac{A_{tp}}{h}$",
+       "dung": false,
+       "vi_sao": "Lực đẩy tác dụng trên quãng đường dọc ván ($l$) nên phải chia cho $l$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất",
+     "hoi": "Hiệu suất của mặt phẳng nghiêng (%)?",
+     "dap_so": 75,
+     "sai_so": 1,
+     "don_vi": "%",
+     "loi_hay_gap": "Lấy công toàn phần chia công có ích (ra hơn $100\\%$) ; hiệu suất của máy thực luôn nhỏ hơn $100\\%$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{A_{tp}}{A_{ci}}\\cdot100\\%$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : hiệu suất nhỏ hơn $100\\%$ nên phải lấy công có ích chia công toàn phần."
+      },
+      {
+       "text": "$H=\\dfrac{A_{hp}}{A_{tp}}\\cdot100\\%$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ lệ công hao phí, không phải hiệu suất."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Palăng có ròng rọc động: lực kéo, công và hiệu suất",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "problem_html": "<p>Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng $m_r=4\\ \\text{kg}$. Dùng palăng nâng một vật khối lượng $m=76\\ \\text{kg}$ lên cao $h=3\\ \\text{m}$. Một đầu dây buộc vào giá treo, dây vòng qua ròng rọc động rồi qua ròng rọc cố định (có 2 đoạn dây đỡ ròng rọc động). Bỏ qua ma sát ở ổ trục và khối lượng dây. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính lực kéo $F$ ở đầu dây tự do và quãng đường $s$ đầu dây đi được.</li><li>Tính công toàn phần, công có ích và hiệu suất của palăng.</li><li>Tính công dùng để nâng ròng rọc động rồi kiểm tra lại bằng hệ thức $A_{tp}=A_{ci}+A_{hp}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c5-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Palăng gồm một ròng rọc cố định và một ròng rọc động nâng vật lên 3 mét, đầu dây tự do đi xuống gấp đôi\"><defs><marker id=\"d50-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d50-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d50-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d50-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"80.0\" y1=\"18.0\" x2=\"204.0\" y2=\"18.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"200.0\" x2=\"200.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"154.0\" y1=\"18.0\" x2=\"154.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"154.0\" cy=\"44.0\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><circle cx=\"154.0\" cy=\"44.0\" r=\"2.5\" fill=\"currentColor\"/><path d=\"M142,44 A12,12 0 0 1 166,44\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><circle cx=\"118.0\" cy=\"18.0\" r=\"3\" fill=\"currentColor\"/><line x1=\"118\" y1=\"18\" x2=\"118\" y2=\"144\" stroke=\"#94a3b8\" stroke-width=\"2.4\"><animate attributeName=\"y2\" values=\"144.0;78.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"142\" y1=\"144\" x2=\"142\" y2=\"44\" stroke=\"#94a3b8\" stroke-width=\"2.4\"><animate attributeName=\"y1\" values=\"144.0;78.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"166\" y1=\"44\" x2=\"166\" y2=\"60\" stroke=\"#94a3b8\" stroke-width=\"2.4\"><animate attributeName=\"y2\" values=\"60.0;192.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 -66.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"130.0\" cy=\"144.0\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><circle cx=\"130.0\" cy=\"144.0\" r=\"2.5\" fill=\"currentColor\"/><path d=\"M118,144 A12,12 0 0 0 142,144\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><line x1=\"130.0\" y1=\"156.0\" x2=\"130.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"108.0\" y=\"166.0\" width=\"44.0\" height=\"34.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"130\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">76 kg</text></g><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 132.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"166.0\" cy=\"60.0\" r=\"5\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"2\"/><text x=\"176\" y=\"65\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text></g><line x1=\"80\" y1=\"198\" x2=\"80\" y2=\"136\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d50-o)\"/><line x1=\"80\" y1=\"136\" x2=\"80\" y2=\"198\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d50-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"72\" y=\"171.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 3 m</text><text x=\"236\" y=\"40\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật: m = 76 kg</text><text x=\"236\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ròng rọc động: m<tspan dy=\"4\" font-size=\"10\">r</tspan><tspan dy=\"-4\"> = 4 kg</tspan></text><text x=\"236\" y=\"90\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dây đi xuống: s = ?</text><text x=\"236\" y=\"110\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"10\">tp</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"236\" y=\"130\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">H = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật lên 3 m, đầu dây đi xuống theo đúng tỉ lệ; chạy 5 s.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> palăng có $n$ đoạn dây đỡ khối gồm vật và ròng rọc động.</li><li><strong>Công thức:</strong> $F=\\dfrac{P_t}{n}$ với $P_t=P_v+P_r$ · $s=n\\,h$.</li><li>$A_{tp}=F\\,s$ · $A_{ci}=P_v\\,h$ · $A_r=P_r\\,h$ · $H=\\dfrac{A_{ci}}{A_{tp}}$.</li><li>⚠ <strong>Điều kiện:</strong> ròng rọc động cũng phải được nâng (tính theo $h$, không theo $s$) ; ròng rọc cố định không tốn công nâng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tổng trọng lượng cần nâng</span></p><p>$P_v=10m=760\\ \\text{N}$ ; $P_r=10m_r=40\\ \\text{N}$</p>$$P_t=P_v+P_r=760+40$$<div class=\"bt-ans\">$$P_t=800\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực kéo</span></p><p>Một ròng rọc cố định và một ròng rọc động : $n=2$ đoạn dây đỡ.</p>$$F=\\dfrac{P_t}{n}=\\dfrac{800}{2}$$<div class=\"bt-ans\">$$F=400\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Quãng đường đầu dây</span></p>$$s=n\\,h=2\\cdot3$$<div class=\"bt-ans\">$$s=6\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công toàn phần</span></p>$$A_{tp}=F\\,s=400\\cdot6$$<div class=\"bt-ans\">$$A_{tp}=2400\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hiệu suất</span></p>$$A_{ci}=P_v\\,h=760\\cdot3=2280\\ \\text{J}$$$$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%=\\dfrac{2280}{2400}\\cdot100\\%$$<div class=\"bt-ans\">$$H=95\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Công nâng ròng rọc động, tính theo độ cao $h$:</p>$$A_r=P_r\\,h=40\\cdot3=120\\ \\text{J}$$$$A_{ci}+A_r=2280+120=2400\\ \\text{J}=A_{tp}$$<p>✓ Khớp với hệ thức $A_{tp}=A_{ci}+A_{hp}$.</p><p>Bỏ quên ròng rọc động : $F=\\dfrac{760}{2}=380\\ \\text{N}$, $A_{tp}=2280\\ \\text{J}$ và $H=100\\%$ — vô lí với máy thực.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=400\\ \\text{N}$ · $s=6\\ \\text{m}$</p><p>b) $A_{tp}=2400\\ \\text{J}$ · $A_{ci}=2280\\ \\text{J}$ · $H=95\\%$</p><p>c) $A_r=120\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng ròng rọc động</strong> → cộng trọng lượng ròng rọc vào tải trước khi chia $n$ ; công nâng ròng rọc tính theo $h$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c5-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Hai đoạn dây đỡ khối gồm vật và ròng rọc động; đầu dây tự do kéo xuống\"><defs><marker id=\"d52-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d52-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d52-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d52-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"80.0\" y1=\"18.0\" x2=\"204.0\" y2=\"18.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"200.0\" x2=\"200.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"154.0\" y1=\"18.0\" x2=\"154.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"154.0\" cy=\"44.0\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><circle cx=\"154.0\" cy=\"44.0\" r=\"2.5\" fill=\"currentColor\"/><path d=\"M142,44 A12,12 0 0 1 166,44\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><circle cx=\"118.0\" cy=\"18.0\" r=\"3\" fill=\"currentColor\"/><line x1=\"118\" y1=\"18\" x2=\"118\" y2=\"144\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><line x1=\"142\" y1=\"144\" x2=\"142\" y2=\"44\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><line x1=\"166\" y1=\"44\" x2=\"166\" y2=\"130\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><circle cx=\"130.0\" cy=\"144.0\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><circle cx=\"130.0\" cy=\"144.0\" r=\"2.5\" fill=\"currentColor\"/><path d=\"M118,144 A12,12 0 0 0 142,144\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2.4\"/><line x1=\"130.0\" y1=\"156.0\" x2=\"130.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"108.0\" y=\"166.0\" width=\"44.0\" height=\"34.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"130\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">76 kg</text><line x1=\"166\" y1=\"110\" x2=\"166\" y2=\"148\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d52-r)\"/><text x=\"176\" y=\"144\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><text x=\"110\" y=\"104\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">①</text><text x=\"148\" y=\"104\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">②</text><text x=\"236\" y=\"40\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Đếm đoạn dây đỡ vật</text><text x=\"236\" y=\"56\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">và ròng rọc động</text><text x=\"236\" y=\"84\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">t</tspan><tspan dy=\"-4\"> = P</tspan><tspan dy=\"4\" font-size=\"10\">v</tspan><tspan dy=\"-4\"> + P</tspan><tspan dy=\"4\" font-size=\"10\">r</tspan></text><text x=\"236\" y=\"104\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = P<tspan dy=\"4\" font-size=\"10\">t</tspan><tspan dy=\"-4\"> / n</tspan></text><text x=\"236\" y=\"124\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">s = n·h</text></svg><figcaption>Dữ kiện: đếm đoạn dây đỡ khối vật và ròng rọc động (không đếm số ròng rọc). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"một ròng rọc cố định và một ròng rọc động\"</td><td>$n=2$ đoạn dây đỡ</td><td>Đếm đoạn dây đỡ khối vật và ròng rọc động, không đếm số ròng rọc</td></tr><tr><td>\"ròng rọc động có khối lượng $m_r=4$ kg\"</td><td>$m_r=4$ kg</td><td>⚠ Ròng rọc động cũng phải được nâng : $P_t=P_v+P_r$</td></tr><tr><td>\"nâng vật $m=76$ kg lên cao $h=3$ m\"</td><td>$m=76$ kg ; $h=3$ m</td><td>$P_v=10m$ ; $A_{ci}=P_v\\,h$</td></tr><tr><td>\"bỏ qua ma sát ở ổ trục và khối lượng dây\"</td><td>Hao phí chỉ do nâng ròng rọc động</td><td>⚠ $F=\\dfrac{P_t}{n}$ đúng khi các đoạn dây song song ; $A_{hp}=P_r\\,h$</td></tr><tr><td>\"lực kéo ở đầu dây tự do và quãng đường đầu dây\"</td><td>Cần $F$, $s$</td><td>$F=\\dfrac{P_t}{n}$ ; $s=n\\,h$</td></tr><tr><td>\"công toàn phần, công có ích và hiệu suất\"</td><td>Cần $A_{tp}$, $A_{ci}$, $H$</td><td>$A_{tp}=F\\,s$ ; $A_{ci}=P_v\\,h$ ; $H=\\dfrac{A_{ci}}{A_{tp}}$</td></tr><tr><td>\"công dùng để nâng ròng rọc động, kiểm tra\"</td><td>Cần $A_r$</td><td>$A_r=P_r\\,h$ (theo $h$, không theo $s$) ; $A_{tp}=A_{ci}+A_{r}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>khối lượng ròng rọc động</b> → cộng <b>trọng lượng ròng rọc</b> vào tải trước khi chia cho $n$ ; $A_r=P_r\\,h$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tổng trọng lượng cần nâng",
+     "hoi": "Các đoạn dây phải đỡ tổng trọng lượng bao nhiêu?",
+     "dap_so": 800,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Chỉ cộng trọng lượng vật ($760\\ \\text{N}$), bỏ ròng rọc động — dẫn tới hiệu suất $100\\%$, vô lí với máy thực."
+    },
+    {
+     "tieu_de": "Lực kéo",
+     "hoi": "Lực kéo $F$ ở đầu dây tự do?",
+     "dap_so": 400,
+     "sai_so": 2,
+     "don_vi": "N",
+     "loi_hay_gap": "Đếm số ròng rọc thay vì số đoạn dây đỡ ; hoặc lấy $F=P_t$ vì tưởng ròng rọc cố định cũng lợi lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F=\\dfrac{P_t}{n}$ với $n$ là số đoạn dây đỡ",
+       "dung": true
+      },
+      {
+       "text": "$F=P_t$ vì có ròng rọc cố định",
+       "dung": false,
+       "vi_sao": "Ròng rọc cố định chỉ đổi hướng ; ròng rọc động chia đôi lực nên $F=\\dfrac{P_t}{2}$."
+      },
+      {
+       "text": "$F=\\dfrac{P_v}{2}$ (bỏ ròng rọc động)",
+       "dung": false,
+       "vi_sao": "Ròng rọc động cũng phải được nâng lên nên phải tính cả trọng lượng của nó."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Quãng đường đầu dây",
+     "hoi": "Đầu dây tự do đi được quãng đường $s$?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "m",
+     "loi_hay_gap": "Lấy $s=h$ (đó là ròng rọc cố định) ; lợi lực $n$ lần thì thiệt đường $n$ lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "$s=n\\,h$ với $n=2$",
+       "dung": true
+      },
+      {
+       "text": "$s=h$",
+       "dung": false,
+       "vi_sao": "Đó là ròng rọc cố định ; có ròng rọc động thì dây phải kéo dài gấp $n$ lần."
+      },
+      {
+       "text": "$s=\\dfrac{h}{2}$",
+       "dung": false,
+       "vi_sao": "Lợi lực thì thiệt đường : dây phải kéo nhiều hơn, không ít hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công toàn phần",
+     "hoi": "Công toàn phần của lực kéo?",
+     "dap_so": 2400,
+     "sai_so": 10,
+     "don_vi": "J",
+     "loi_hay_gap": "Nhân lực kéo với $h$ thay vì $s$ (ra $1200\\ \\text{J}$) — lực kéo tác dụng ở đầu dây.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{tp}=F\\,s$ (lực kéo nhân quãng đường đầu dây)",
+       "dung": true
+      },
+      {
+       "text": "$A_{tp}=F\\,h$",
+       "dung": false,
+       "vi_sao": "Lực kéo tác dụng ở đầu dây, điểm này đi quãng $s$ chứ không phải $h$."
+      },
+      {
+       "text": "$A_{tp}=P_v\\,h$",
+       "dung": false,
+       "vi_sao": "Đó là công có ích, chưa có công nâng ròng rọc động."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất",
+     "hoi": "Hiệu suất của palăng (%)?",
+     "dap_so": 95,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Cho rằng bỏ qua ma sát thì $H=100\\%$, hoặc lấy tổng trọng lượng làm công có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $A_{ci}=P_v\\,h$ rồi $H=\\dfrac{A_{ci}}{A_{tp}}$",
+       "dung": true
+      },
+      {
+       "text": "$H=100\\%$ vì bỏ qua ma sát",
+       "dung": false,
+       "vi_sao": "Còn phải nâng ròng rọc động nên công hao phí khác 0, hiệu suất nhỏ hơn $100\\%$."
+      },
+      {
+       "text": "$H=\\dfrac{A_{tp}}{A_{ci}}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : hiệu suất là công có ích chia công toàn phần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 6 · Khó · Công suất toàn phần, công suất có ích và hiệu suất của máy bơm",
+   "topic": "Công suất của động cơ, máy kéo",
+   "problem_html": "<p>Một máy bơm có công suất toàn phần $1250\\ \\text{W}$ và hiệu suất $80\\%$ bơm nước từ giếng sâu $h=12\\ \\text{m}$ lên miệng giếng (nước chỉ được nâng lên, bỏ qua động năng). Khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$, lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính công suất có ích của máy bơm.</li><li>Tính khối lượng nước bơm được trong $6$ phút.</li><li>Tính thể tích nước đó (theo $\\text{m}^3$ và theo lít).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Máy bơm nâng nước từ giếng sâu 12 mét lên miệng giếng rồi đẩy vào bể chứa\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"62.0\" x2=\"110.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"62.0\" x2=\"410.0\" y2=\"62.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"62.0\" x2=\"110.0\" y2=\"206.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"62.0\" x2=\"210.0\" y2=\"206.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"206.0\" x2=\"210.0\" y2=\"206.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"112.0\" y=\"192.0\" width=\"96.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"160.0\" y1=\"198.0\" x2=\"160.0\" y2=\"56.0\" stroke=\"#94a3b8\" stroke-width=\"6\" opacity=\"0.55\"/><rect x=\"138.0\" y=\"28.0\" width=\"44.0\" height=\"26.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"160\" y=\"46\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">bơm</text><line x1=\"182\" y1=\"41\" x2=\"262\" y2=\"41\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d60-b)\"/><rect x=\"262.0\" y=\"24.0\" width=\"70.0\" height=\"36.0\" rx=\"0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"297\" y=\"47\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">bể</text><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;0.0 -122.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"160.0\" cy=\"184.0\" r=\"7\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/></g><line x1=\"86\" y1=\"65\" x2=\"86\" y2=\"203\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d60-o)\"/><line x1=\"86\" y1=\"203\" x2=\"86\" y2=\"65\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d60-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"78\" y=\"138.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 12 m</text><text x=\"236\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">tp</tspan><tspan dy=\"-4\"> = 1250 W</tspan></text><text x=\"236\" y=\"142\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hiệu suất H = 80%</text><text x=\"236\" y=\"164\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">thời gian t = 6 phút</text><text x=\"236\" y=\"196\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">khối lượng nước m = ?</text><text x=\"236\" y=\"216\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">thể tích V = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: một phần tử nước được nâng đúng 12 m (tốc độ minh hoạ, chạy 5 s); số nước bơm được là điều cần tìm.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất toàn phần $P_{tp}$ (máy tiêu thụ), công suất có ích $P_{ci}$ (dùng nâng nước).</li><li><strong>Công thức:</strong> $P_{ci}=H\\,P_{tp}$ · $A_{ci}=P_{ci}\\,t$ · $A_{ci}=10\\,m\\,h$.</li><li>$V=\\dfrac{m}{D}$ với $D=1000\\ \\text{kg/m}^3$ ; $1\\ \\text{m}^3=1000$ lít ; $1$ lít nước nặng $1$ kg.</li><li>⚠ <strong>Điều kiện:</strong> công suất ghi trên máy là toàn phần ; nước chỉ được nâng lên ; đổi $t$ ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công suất có ích</span></p><p>Công suất đề cho là công suất toàn phần:</p>$$P_{ci}=H\\,P_{tp}=0{,}8\\cdot1250$$<div class=\"bt-ans\">$$P_{ci}=1000\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công có ích trong 6 phút</span></p><p>$t=6\\ \\text{phút}=360\\ \\text{s}$.</p>$$A_{ci}=P_{ci}\\,t=1000\\cdot360$$<div class=\"bt-ans\">$$A_{ci}=360000\\ \\text{J}=360\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khối lượng nước</span></p><p>Công này dùng nâng nước lên cao $h$:</p>$$A_{ci}=10\\,m\\,h$$$$m=\\dfrac{A_{ci}}{10\\,h}=\\dfrac{360000}{10\\cdot12}$$<div class=\"bt-ans\">$$m=3000\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thể tích nước</span></p>$$V=\\dfrac{m}{D}=\\dfrac{3000}{1000}$$<div class=\"bt-ans\">$$V=3\\ \\text{m}^3=3000\\ \\text{lít}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Lưu lượng : $\\dfrac{3000\\ \\text{lít}}{360\\ \\text{s}}\\approx8{,}3$ lít/s — hợp lí với máy bơm cỡ $1{,}25\\ \\text{kW}$.</p><p>$P_{ci}\\lt P_{tp}$ ✓ (hiệu suất nhỏ hơn $100\\%$).</p><p>Nếu dùng nhầm $P_{tp}$ sẽ ra $3750\\ \\text{kg}$ — lớn hơn thực tế $25\\%$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $P_{ci}=1000\\ \\text{W}$</p><p>b) $m=3000\\ \\text{kg}$</p><p>c) $V=3\\ \\text{m}^3$ (3000 lít)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất máy kèm hiệu suất</strong> → đổi sang $P_{ci}=H\\,P_{tp}$ trước, rồi $A_{ci}=P_{ci}\\,t=10\\,m\\,h$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c6-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Từ công suất toàn phần của máy bơm suy ra công suất có ích, công có ích rồi khối lượng nước\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><rect x=\"16.0\" y=\"50.0\" width=\"120.0\" height=\"56.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"76\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">P toàn phần</text><text x=\"76\" y=\"96\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"10\">tp</tspan><tspan dy=\"-4\"> = 1250 W</tspan></text><line x1=\"138\" y1=\"78\" x2=\"164\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d62-b)\"/><rect x=\"150.0\" y=\"50.0\" width=\"120.0\" height=\"56.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"210\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">P có ích</text><text x=\"210\" y=\"96\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P<tspan dy=\"4\" font-size=\"10\">ci</tspan><tspan dy=\"-4\"> = H·P</tspan><tspan dy=\"4\" font-size=\"10\">tp</tspan></text><line x1=\"272\" y1=\"78\" x2=\"298\" y2=\"78\" stroke=\"#38bdf8\" stroke-width=\"3\" marker-end=\"url(#d62-b)\"/><rect x=\"284.0\" y=\"50.0\" width=\"120.0\" height=\"56.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"344\" y=\"74\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">A có ích</text><text x=\"344\" y=\"96\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"10\">ci</tspan><tspan dy=\"-4\"> = P</tspan><tspan dy=\"4\" font-size=\"10\">ci</tspan><tspan dy=\"-4\">·t</tspan></text><text x=\"344\" y=\"140\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"10\">ci</tspan><tspan dy=\"-4\"> = 10·m·h</tspan></text><line x1=\"344\" y1=\"112\" x2=\"344\" y2=\"124\" stroke=\"#fb923c\" stroke-width=\"2.4\" marker-end=\"url(#d62-o)\"/><text x=\"16\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">⚠ Công suất ghi trên máy là toàn phần</text><text x=\"16\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1 lít nước = 1 kg · 1 m³ = 1000 lít</text></svg><figcaption>Dữ kiện: chuỗi tính từ công suất toàn phần đến khối lượng nước. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"công suất toàn phần $1250$ W\"</td><td>$P_{tp}=1250$ W</td><td>⚠ Công suất ghi trên máy là toàn phần, chưa phải phần nâng nước</td></tr><tr><td>\"hiệu suất $80\\%$\"</td><td>$H=80\\%$</td><td>$P_{ci}=H\\,P_{tp}$</td></tr><tr><td>\"giếng sâu $h=12$ m\"</td><td>$h=12$ m</td><td>Công nâng nước : $A_{ci}=10\\,m\\,h$</td></tr><tr><td>\"nước chỉ được nâng lên, bỏ qua động năng\"</td><td>Không tính động năng của nước</td><td>⚠ Công có ích chỉ dùng để thắng trọng lực của nước</td></tr><tr><td>\"trong $6$ phút\"</td><td>$t=6$ phút</td><td>Đổi ra giây ; $A_{ci}=P_{ci}\\,t$</td></tr><tr><td>\"khối lượng nước bơm được\"</td><td>Cần $m$</td><td>$m=\\dfrac{A_{ci}}{10\\,h}$</td></tr><tr><td>\"thể tích nước\"</td><td>Cần $V$ ; $D=1000$ kg/m³</td><td>$V=\\dfrac{m}{D}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công suất máy kèm hiệu suất</b> → đổi sang $P_{ci}=H\\,P_{tp}$ trước, rồi $A_{ci}=P_{ci}\\,t=10\\,m\\,h$.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công suất có ích",
+     "hoi": "Công suất có ích của máy bơm?",
+     "dap_so": 1000,
+     "sai_so": 5,
+     "don_vi": "W",
+     "loi_hay_gap": "Lấy luôn công suất ghi trên máy ($1250\\ \\text{W}$) làm công suất nâng nước ; đó là công suất toàn phần."
+    },
+    {
+     "tieu_de": "Công có ích trong 6 phút",
+     "hoi": "Công có ích máy thực hiện trong 6 phút?",
+     "dap_so": 360,
+     "sai_so": 2,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Quên đổi 6 phút ra giây (ra $6\\ \\text{kJ}$) hoặc nhân với $P_{tp}$ thay vì $P_{ci}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{ci}=P_{ci}\\,t$ với $t$ đổi ra giây",
+       "dung": true
+      },
+      {
+       "text": "$A_{ci}=P_{tp}\\,t$",
+       "dung": false,
+       "vi_sao": "Công nâng nước chỉ ứng với công suất có ích ; nhân $P_{tp}$ sẽ tính cả phần hao phí."
+      },
+      {
+       "text": "$A_{ci}=\\dfrac{P_{ci}}{t}$",
+       "dung": false,
+       "vi_sao": "Công bằng công suất nhân thời gian, không chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khối lượng nước",
+     "hoi": "Khối lượng nước bơm được?",
+     "dap_so": 3000,
+     "sai_so": 20,
+     "don_vi": "kg",
+     "loi_hay_gap": "Thiếu hệ số 10 của trọng lượng (ra $30000\\ \\text{kg}$) hoặc lẫn kg với lít.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{ci}=10\\,m\\,h$ nên $m=\\dfrac{A_{ci}}{10\\,h}$",
+       "dung": true
+      },
+      {
+       "text": "$m=\\dfrac{A_{ci}}{h}$",
+       "dung": false,
+       "vi_sao": "Thiếu hệ số 10 : công nâng là $P\\,h=10\\,m\\,h$ ; chia cho $h$ mới ra trọng lượng, chưa phải khối lượng."
+      },
+      {
+       "text": "$m=A_{ci}\\cdot10\\,h$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : khối lượng là công chia cho $10h$, không nhân."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thể tích nước",
+     "hoi": "Thể tích nước bơm được ($\\text{m}^3$)?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "m³",
+     "loi_hay_gap": "Nhân khối lượng với khối lượng riêng, hoặc coi $1\\ \\text{m}^3$ nước nặng $1\\ \\text{kg}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$V=\\dfrac{m}{D}$ với $D=1000\\ \\text{kg/m}^3$",
+       "dung": true
+      },
+      {
+       "text": "$V=m\\cdot D$",
+       "dung": false,
+       "vi_sao": "Nhân sẽ ra đơn vị $\\text{kg}^2/\\text{m}^3$ ; thể tích là khối lượng chia khối lượng riêng."
+      },
+      {
+       "text": "$1\\ \\text{m}^3$ nước nặng $1\\ \\text{kg}$",
+       "dung": false,
+       "vi_sao": "$1$ lít nước nặng $1\\ \\text{kg}$, còn $1\\ \\text{m}^3=1000$ lít nên nặng $1000\\ \\text{kg}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 7 · Nâng cao · Chuyển động đều lên dốc: lực kéo, công, hiệu suất và công suất động cơ",
+   "topic": "Công suất của động cơ, máy kéo",
+   "problem_html": "<p>Một ô tô khối lượng $1{,}5$ tấn chuyển động đều với vận tốc $18\\ \\text{km/h}$ lên một đoạn dốc dài $l=300\\ \\text{m}$ và cao $h=15\\ \\text{m}$. Lực cản (gồm ma sát và sức cản không khí) có độ lớn không đổi $F_c=450\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p><ol type=\"a\"><li>Tính lực kéo của động cơ.</li><li>Tính công của lực kéo khi ô tô lên hết dốc.</li><li>Tính hiệu suất của quá trình, coi công có ích là công đưa ô tô lên độ cao $h$.</li><li>Tính công suất của động cơ.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c7-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Ô tô chuyển động đều lên dốc dài 300 mét, cao 15 mét\"><defs><marker id=\"d70-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d70-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d70-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d70-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"190.0\" x2=\"410.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"24.0\" y1=\"190.0\" x2=\"374.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"374.0\" y1=\"120.0\" x2=\"374.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"396\" y1=\"123\" x2=\"396\" y2=\"187\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d70-o)\"/><line x1=\"396\" y1=\"187\" x2=\"396\" y2=\"123\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d70-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"366\" y=\"179.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 15 m</text><text x=\"190\" y=\"182\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">l = 300 m</text><g transform=\"translate(32 190) rotate(-11.31)\"><rect x=\"0.0\" y=\"-22.0\" width=\"60.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" opacity=\".4\" stroke-width=\"2.4\" opacity=\"1\"/><polyline points=\"14,-22 24,-32 44,-32 52,-22\" fill=\"none\" stroke=\"currentColor\" opacity=\".4\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"14.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" opacity=\".4\" stroke-width=\"2.4\"/><circle cx=\"46.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" opacity=\".4\" stroke-width=\"2.4\"/><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;276.9 0.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><rect x=\"0.0\" y=\"-22.0\" width=\"60.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline points=\"14,-22 24,-32 44,-32 52,-22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"14.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"46.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/></g></g><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 1,5 tấn</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 18 km/h (đều)</text><text x=\"16\" y=\"66\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = 450 N</tspan></text><text x=\"236\" y=\"24\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = ?</text><text x=\"236\" y=\"44\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A = ?   H = ?</text><text x=\"236\" y=\"64\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">cs</tspan><tspan dy=\"-4\"> = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ô tô đi hết chiều dài dốc (chạy nhanh 10 lần: 60 s thật = 6 s); độ nghiêng vẽ phóng đại.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chuyển động đều nên hợp lực bằng 0 : lực kéo bằng tổng các lực cản.</li><li><strong>Công thức:</strong> $F_d=\\dfrac{P\\,h}{l}$ (thành phần trọng lực dọc dốc) · $A_{tp}=F\\,l$ · $A_{ci}=P\\,h$.</li><li>$H=\\dfrac{A_{ci}}{A_{tp}}$ · $P_{cs}=F\\,v=\\dfrac{A}{t}$ (đổi $v$ ra m/s : chia $3{,}6$).</li><li>⚠ <strong>Điều kiện:</strong> lực cản không đổi, lực kéo song song mặt dốc ; $F=F_d+F_c$ (cả hai hướng xuống dốc).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trọng lượng ô tô</span></p><p>$m=1{,}5\\ \\text{tấn}=1500\\ \\text{kg}$ :</p>$$P=10m=10\\cdot1500$$<div class=\"bt-ans\">$$P=15000\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thành phần trọng lực dọc dốc</span></p>$$F_d=\\dfrac{P\\,h}{l}=\\dfrac{15000\\cdot15}{300}$$<div class=\"bt-ans\">$$F_d=750\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Lực kéo của động cơ</span></p><p>Chuyển động đều, hợp lực bằng 0:</p>$$F=F_d+F_c=750+450$$<div class=\"bt-ans\">$$F=1200\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công của lực kéo</span></p>$$A_{tp}=F\\,l=1200\\cdot300$$<div class=\"bt-ans\">$$A_{tp}=360000\\ \\text{J}=360\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hiệu suất</span></p><p>Công có ích là công đưa ô tô lên độ cao $h$:</p>$$A_{ci}=P\\,h=15000\\cdot15=225000\\ \\text{J}$$$$H=\\dfrac{A_{ci}}{A_{tp}}\\cdot100\\%=\\dfrac{225000}{360000}\\cdot100\\%$$<div class=\"bt-ans\">$$H=62{,}5\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Công suất động cơ</span></p><p>$v=18\\ \\text{km/h}=\\dfrac{18}{3{,}6}=5\\ \\text{m/s}$ :</p>$$P_{cs}=F\\,v=1200\\cdot5$$<div class=\"bt-ans\">$$P_{cs}=6000\\ \\text{W}=6\\ \\text{kW}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Thời gian lên dốc $t=\\dfrac{l}{v}=\\dfrac{300}{5}=60\\ \\text{s}$ :</p>$$P_{cs}=\\dfrac{A_{tp}}{t}=\\dfrac{360000}{60}=6000\\ \\text{W}$$<p>Công hao phí thắng lực cản:</p>$$A_{hp}=F_c\\,l=450\\cdot300=135000\\ \\text{J}$$<p>$225000+135000=360000\\ \\text{J}=A_{tp}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F=1200\\ \\text{N}$</p><p>b) $A_{tp}=360\\ \\text{kJ}$</p><p>c) $H=62{,}5\\%$</p><p>d) $P_{cs}=6\\ \\text{kW}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>chuyển động đều lên dốc</strong> → lực kéo $=F_c+\\dfrac{P\\,h}{l}$ ; công suất tức thời $P_{cs}=F\\,v$ (đổi $v$ ra m/s).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c7-2\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Ô tô chuyển động đều lên dốc: lực kéo cân bằng lực cản và thành phần trọng lực dọc dốc\"><defs><marker id=\"d72-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d72-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d72-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d72-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"16.0\" y1=\"190.0\" x2=\"410.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"24.0\" y1=\"190.0\" x2=\"374.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"3.4\" opacity=\"1\"/><line x1=\"374.0\" y1=\"120.0\" x2=\"374.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"396\" y1=\"123\" x2=\"396\" y2=\"187\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d72-o)\"/><line x1=\"396\" y1=\"187\" x2=\"396\" y2=\"123\" stroke=\"#fb923c\" stroke-width=\"1.8\" marker-end=\"url(#d72-o)\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"366\" y=\"179.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">h = 15 m</text><g transform=\"translate(194 190) rotate(-11.31)\"><rect x=\"0.0\" y=\"-22.0\" width=\"60.0\" height=\"12.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline points=\"14,-22 24,-32 44,-32 52,-22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><circle cx=\"14.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"46.0\" cy=\"-6.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/></g><line x1=\"220.27956210851667\" y1=\"134.0\" x2=\"263.42511183891713\" y2=\"125.37089005391991\" stroke=\"#f87171\" stroke-width=\"3\" marker-end=\"url(#d72-r)\"/><text x=\"267.4\" y=\"119.4\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F</text><line x1=\"220.27956210851667\" y1=\"134.0\" x2=\"181.05633508087988\" y2=\"141.84464540552736\" stroke=\"#fb923c\" stroke-width=\"3\" marker-end=\"url(#d72-o)\"/><text x=\"155.1\" y=\"143.8\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F<tspan dy=\"4\" font-size=\"10\">c</tspan></text><line x1=\"220.27956210851667\" y1=\"134.0\" x2=\"220.27956210851667\" y2=\"170.0\" stroke=\"#34d399\" stroke-width=\"3\" marker-end=\"url(#d72-g)\"/><text x=\"228.3\" y=\"170.0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P</text><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">F = F<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> + P·h / l</tspan></text><text x=\"16\" y=\"44\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">P·h / l : trọng lực dọc dốc</text><text x=\"16\" y=\"64\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P<tspan dy=\"4\" font-size=\"10\">cs</tspan><tspan dy=\"-4\"> = F·v</tspan></text><text x=\"16\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">(đổi v ra m/s)</text></svg><figcaption>Dữ kiện: lực kéo thắng cả lực cản lẫn thành phần trọng lực dọc dốc. Hình minh hoạ, không đúng tỉ lệ. Độ nghiêng vẽ phóng đại.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ô tô $1{,}5$ tấn … chuyển động đều\"</td><td>$m=1500$ kg ; hợp lực bằng 0</td><td>⚠ Chuyển động đều → lực kéo cân bằng lực cản và thành phần trọng lực dọc dốc</td></tr><tr><td>\"dốc dài $l=300$ m, cao $h=15$ m\"</td><td>$l=300$ m ; $h=15$ m</td><td>Thành phần trọng lực dọc dốc : $F_d=\\dfrac{P\\,h}{l}$</td></tr><tr><td>\"lực cản không đổi $450$ N\"</td><td>$F_c=450$ N</td><td>$F=F_d+F_c$</td></tr><tr><td>\"vận tốc $18$ km/h\"</td><td>$v=18$ km/h</td><td>Đổi ra m/s (chia $3{,}6$) ; $P_{cs}=F\\,v$</td></tr><tr><td>\"công của lực kéo khi lên hết dốc\"</td><td>Cần $A_{tp}$</td><td>$A_{tp}=F\\,l$</td></tr><tr><td>\"hiệu suất … công có ích là công đưa ô tô lên độ cao $h$\"</td><td>Cần $H$</td><td>$A_{ci}=P\\,h$ ; $H=\\dfrac{A_{ci}}{A_{tp}}$</td></tr><tr><td>\"công suất của động cơ\"</td><td>Cần $P_{cs}$</td><td>$P_{cs}=F\\,v$ (hoặc $\\dfrac{A_{tp}}{t}$)</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chuyển động đều lên dốc</b> → lực kéo $=F_c+\\dfrac{P\\,h}{l}$ ; công suất tức thời $P_{cs}=F\\,v$.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Trọng lượng ô tô",
+     "hoi": "Trọng lượng của ô tô là bao nhiêu?",
+     "dap_so": 15000,
+     "sai_so": 50,
+     "don_vi": "N",
+     "loi_hay_gap": "Quên đổi tấn sang kilôgam ($1{,}5$ thay cho $1500$) hoặc quên hệ số 10."
+    },
+    {
+     "tieu_de": "Thành phần trọng lực dọc dốc",
+     "hoi": "Thành phần trọng lực dọc theo dốc?",
+     "dap_so": 750,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Lấy cả trọng lượng ($P$) làm lực xuống dốc, hoặc đảo tỉ số $\\dfrac{h}{l}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F_d=\\dfrac{P\\,h}{l}$",
+       "dung": true
+      },
+      {
+       "text": "$F_d=P$",
+       "dung": false,
+       "vi_sao": "Chỉ một phần trọng lượng kéo xe xuống dọc dốc ; cả $P$ chỉ khi dốc thẳng đứng."
+      },
+      {
+       "text": "$F_d=\\dfrac{P\\,l}{h}$",
+       "dung": false,
+       "vi_sao": "Ngược tỉ số : dốc thoải ($h$ nhỏ hơn nhiều so với $l$) thì thành phần dọc dốc nhỏ hơn $P$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo của động cơ",
+     "hoi": "Lực kéo của động cơ?",
+     "dap_so": 1200,
+     "sai_so": 5,
+     "don_vi": "N",
+     "loi_hay_gap": "Chỉ lấy lực cản ($F=F_c$, đúng khi đi đường ngang) hoặc trừ thay vì cộng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$F=F_d+F_c$ vì chuyển động đều (hợp lực bằng 0)",
+       "dung": true
+      },
+      {
+       "text": "$F=F_c$ vì chuyển động đều",
+       "dung": false,
+       "vi_sao": "Đó là khi đi trên đường ngang ; lên dốc còn phải thắng thành phần trọng lực dọc dốc."
+      },
+      {
+       "text": "$F=F_d-F_c$",
+       "dung": false,
+       "vi_sao": "Lực cản và thành phần trọng lực dọc dốc đều hướng xuống dốc nên cộng, không trừ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực kéo",
+     "hoi": "Công của lực kéo khi lên hết dốc?",
+     "dap_so": 360,
+     "sai_so": 2,
+     "don_vi": "kJ",
+     "loi_hay_gap": "Nhân với độ cao $h$ thay vì chiều dài dốc $l$ (ra $18\\ \\text{kJ}$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{tp}=F\\,l$",
+       "dung": true
+      },
+      {
+       "text": "$A_{tp}=F\\,h$",
+       "dung": false,
+       "vi_sao": "Lực kéo tác dụng suốt chiều dài dốc $l$ ; $h$ chỉ là độ cao đạt được."
+      },
+      {
+       "text": "$A_{tp}=P\\,h$",
+       "dung": false,
+       "vi_sao": "Đó là công có ích, chưa tính công thắng lực cản."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu suất",
+     "hoi": "Hiệu suất của quá trình (%)?",
+     "dap_so": 62.5,
+     "sai_so": 0.5,
+     "don_vi": "%",
+     "loi_hay_gap": "Lấy công toàn phần chia công có ích, hoặc dùng công thắng lực cản làm công có ích.",
+     "chon_buoc_ke": [
+      {
+       "text": "$A_{ci}=P\\,h$ rồi $H=\\dfrac{A_{ci}}{A_{tp}}$",
+       "dung": true
+      },
+      {
+       "text": "$H=\\dfrac{F_c\\,l}{A_{tp}}$",
+       "dung": false,
+       "vi_sao": "Đó là tỉ lệ công hao phí (thắng lực cản), không phải hiệu suất."
+      },
+      {
+       "text": "$H=\\dfrac{A_{tp}}{A_{ci}}$",
+       "dung": false,
+       "vi_sao": "Ngược rồi : hiệu suất nhỏ hơn $100\\%$ nên lấy công có ích chia công toàn phần."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất động cơ",
+     "hoi": "Công suất của động cơ (kW)?",
+     "dap_so": 6,
+     "sai_so": 0.05,
+     "don_vi": "kW",
+     "loi_hay_gap": "Thế thẳng $v=18$ (km/h) vào $P=F\\,v$ ra $21600\\ \\text{W}$, hoặc chỉ dùng $F_d$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_{cs}=F\\,v$ với $v$ đổi ra m/s",
+       "dung": true
+      },
+      {
+       "text": "$P_{cs}=F\\,v$ với $v=18$ (km/h)",
+       "dung": false,
+       "vi_sao": "Phải đổi $18\\ \\text{km/h}$ ra m/s (chia $3{,}6$) mới ra oát."
+      },
+      {
+       "text": "$P_{cs}=F_d\\,v$",
+       "dung": false,
+       "vi_sao": "Thiếu lực cản : động cơ phải thắng cả $F_c$ nên dùng toàn bộ lực kéo $F$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ],
+ "tu_luan": {
+  "label": "Bài tập tự luận (xếp từ dễ đến khó)",
+  "body_html": "<p>Các bài còn lại của chuyên đề, xếp từ dễ đến khó. Tự giải trên giấy rồi mới mở hướng dẫn.</p><h4>Bài 1 · Dễ</h4><p>Một lực $F=80\\ \\text{N}$ kéo một vật theo phương ngang. Vật dịch chuyển $15\\ \\text{m}$ theo phương của lực. Tính công của lực kéo.</p><details><summary>Hướng dẫn giải</summary><p>$A=F\\,s=80\\cdot15=1200\\ \\text{J}$.</p></details><h4>Bài 2 · Dễ</h4><p>Một máy có công suất $800\\ \\text{W}$ hoạt động liên tục trong $2$ phút. Tính công máy thực hiện được.</p><details><summary>Hướng dẫn giải</summary><p>Đổi $t=2\\ \\text{phút}=120\\ \\text{s}$.</p><p>$A=P_{cs}\\,t=800\\cdot120=96000\\ \\text{J}=96\\ \\text{kJ}$.</p></details><h4>Bài 3 · Dễ</h4><p>Một người kéo một vật bằng lực $F=60\\ \\text{N}$ có phương hợp với phương ngang góc $60^\\circ$. Vật dịch chuyển $10\\ \\text{m}$ theo phương ngang. Tính công của lực kéo.</p><details><summary>Hướng dẫn giải</summary><p>$A=F\\,s\\cos\\alpha=60\\cdot10\\cdot\\cos60^\\circ=60\\cdot10\\cdot0{,}5=300\\ \\text{J}$.</p></details><h4>Bài 4 · Dễ</h4><p>Một người kéo xe hàng bằng lực $F=150\\ \\text{N}$ có phương hợp với phương ngang góc $\\alpha=30^\\circ$. Xe dịch chuyển $s=20\\ \\text{m}$ theo phương ngang. Tính công của lực kéo.</p><details><summary>Hướng dẫn giải</summary><p>$A=F\\,s\\cos\\alpha=150\\cdot20\\cdot\\cos30^\\circ\\approx150\\cdot20\\cdot0{,}866$.</p><p>$A\\approx2598\\ \\text{J}$ (khoảng $2{,}6\\ \\text{kJ}$).</p></details><h4>Bài 5 · Dễ</h4><p>Một vật khối lượng $25\\ \\text{kg}$ được kéo trượt đều trên sàn nằm ngang bằng lực kéo có phương ngang. Hệ số ma sát giữa vật và sàn là $0{,}2$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính độ lớn lực kéo.</p><p>b) Tính công của lực kéo khi vật trượt được $6\\ \\text{m}$.</p><details><summary>Hướng dẫn giải</summary><p>$P=10m=250\\ \\text{N}$ ; $N=P=250\\ \\text{N}$ ; $F_{ms}=\\mu N=0{,}2\\cdot250=50\\ \\text{N}$.</p><p>a) Vật trượt đều nên $F=F_{ms}=50\\ \\text{N}$.</p><p>b) $A=F\\,s=50\\cdot6=300\\ \\text{J}$.</p></details><h4>Bài 6 · Dễ</h4><p>Dùng một ròng rọc động (bỏ qua khối lượng ròng rọc và ma sát) để nâng một vật có trọng lượng $400\\ \\text{N}$ lên cao $3\\ \\text{m}$.</p><p>a) Tính lực kéo ở đầu dây tự do.</p><p>b) Tính quãng đường đầu dây tự do đi được.</p><p>c) Tính công của lực kéo.</p><details><summary>Hướng dẫn giải</summary><p>a) $F=\\dfrac{P}{2}=\\dfrac{400}{2}=200\\ \\text{N}$.</p><p>b) $s=2h=2\\cdot3=6\\ \\text{m}$.</p><p>c) $A=F\\,s=200\\cdot6=1200\\ \\text{J}$. Kiểm tra : $P\\,h=400\\cdot3=1200\\ \\text{J}$ ✓.</p></details><h4>Bài 7 · Dễ</h4><p>Một đòn bẩy có khoảng cách từ điểm tựa đến vật là $15\\ \\text{cm}$ và đến điểm đặt lực là $90\\ \\text{cm}$. Người ta nâng một vật có trọng lượng $900\\ \\text{N}$ lên cao $4\\ \\text{cm}$.</p><p>a) Tính lực cần tác dụng.</p><p>b) Tính quãng đường điểm đặt lực đi được.</p><p>c) Tính công đã thực hiện.</p><details><summary>Hướng dẫn giải</summary><p>a) $F=\\dfrac{P\\,l_1}{l_2}=\\dfrac{900\\cdot15}{90}=150\\ \\text{N}$ (hai cánh tay đòn cùng đơn vị cm nên lập tỉ số được ngay).</p><p>b) $h=4\\ \\text{cm}=0{,}04\\ \\text{m}$ ; $s=h\\,\\dfrac{l_2}{l_1}=0{,}04\\cdot6=0{,}24\\ \\text{m}$.</p><p>c) $A=F\\,s=150\\cdot0{,}24=36\\ \\text{J}$. Kiểm tra : $P\\,h=900\\cdot0{,}04=36\\ \\text{J}$ ✓.</p></details><h4>Bài 8 · Trung bình</h4><p>Người ta dùng một mặt phẳng nghiêng dài $3\\ \\text{m}$, cao $0{,}9\\ \\text{m}$ để đưa vật khối lượng $50\\ \\text{kg}$ lên cao. Bỏ qua ma sát. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính lực đẩy cần thiết.</p><p>b) Tính công đã thực hiện và so sánh với công nâng vật trực tiếp.</p><details><summary>Hướng dẫn giải</summary><p>a) $P=500\\ \\text{N}$ ; $F=\\dfrac{P\\,h}{l}=\\dfrac{500\\cdot0{,}9}{3}=150\\ \\text{N}$.</p><p>b) $A=F\\,l=150\\cdot3=450\\ \\text{J}$ ; nâng trực tiếp $P\\,h=500\\cdot0{,}9=450\\ \\text{J}$. Hai công bằng nhau (định luật về công).</p></details><h4>Bài 9 · Trung bình</h4><p>Một người kéo một gàu nước khối lượng $12\\ \\text{kg}$ từ giếng sâu $8\\ \\text{m}$ lên mặt đất trong $20\\ \\text{s}$. Lấy $g=10\\ \\text{m/s}^2$. Tính công và công suất trung bình của người đó.</p><details><summary>Hướng dẫn giải</summary><p>$P=10m=120\\ \\text{N}$.</p><p>$A=P\\,h=120\\cdot8=960\\ \\text{J}$.</p><p>$P_{tb}=\\dfrac{A}{t}=\\dfrac{960}{20}=48\\ \\text{W}$.</p></details><h4>Bài 10 · Trung bình</h4><p>Một ô tô chuyển động đều với vận tốc $54\\ \\text{km/h}$. Công suất của động cơ là $60\\ \\text{kW}$. Tính độ lớn lực kéo của động cơ.</p><details><summary>Hướng dẫn giải</summary><p>$v=\\dfrac{54}{3{,}6}=15\\ \\text{m/s}$ ; $P_{cs}=60\\ \\text{kW}=60000\\ \\text{W}$.</p><p>$P_{cs}=F\\,v\\Rightarrow F=\\dfrac{P_{cs}}{v}=\\dfrac{60000}{15}=4000\\ \\text{N}$.</p></details><h4>Bài 11 · Trung bình</h4><p>Máy A thực hiện công $7200\\ \\text{J}$ trong $1$ phút. Máy B thực hiện công $5400\\ \\text{J}$ trong $40\\ \\text{s}$. Máy nào có công suất lớn hơn? Máy nào thực hiện công lớn hơn?</p><details><summary>Hướng dẫn giải</summary><p>Đổi $1\\ \\text{phút}=60\\ \\text{s}$.</p><p>$P_A=\\dfrac{7200}{60}=120\\ \\text{W}$ ; $P_B=\\dfrac{5400}{40}=135\\ \\text{W}$.</p><p>Máy B có công suất lớn hơn ($135\\ \\text{W}\\gt120\\ \\text{W}$), nhưng máy A thực hiện công lớn hơn ($7200\\ \\text{J}\\gt5400\\ \\text{J}$).</p></details><h4>Bài 12 · Trung bình</h4><p>Một người đi xe đạp chuyển động đều trên đường nằm ngang với vận tốc $18\\ \\text{km/h}$. Lực cản tác dụng lên xe là $40\\ \\text{N}$.</p><p>a) Tính công suất của người đó.</p><p>b) Tính công người đó thực hiện được trong $30$ phút.</p><details><summary>Hướng dẫn giải</summary><p>a) $v=\\dfrac{18}{3{,}6}=5\\ \\text{m/s}$. Xe chuyển động đều nên $F=F_c=40\\ \\text{N}$ ; $P_{cs}=F\\,v=40\\cdot5=200\\ \\text{W}$.</p><p>b) $t=30\\ \\text{phút}=1800\\ \\text{s}$ ; $s=v\\,t=5\\cdot1800=9000\\ \\text{m}$ ; $A=F\\,s=40\\cdot9000=360000\\ \\text{J}=360\\ \\text{kJ}$.</p><p>Kiểm tra : $P_{cs}\\,t=200\\cdot1800=360000\\ \\text{J}$ ✓.</p></details><h4>Bài 13 · Trung bình</h4><p>Người ta đưa một vật khối lượng $90\\ \\text{kg}$ lên cao $2\\ \\text{m}$ bằng một mặt phẳng nghiêng dài $6\\ \\text{m}$. Lực đẩy thực tế dọc theo mặt phẳng nghiêng là $400\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính công có ích và công toàn phần.</p><p>b) Tính hiệu suất của mặt phẳng nghiêng.</p><details><summary>Hướng dẫn giải</summary><p>a) $A_{ci}=P\\,h=900\\cdot2=1800\\ \\text{J}$ ; $A_{tp}=F\\,l=400\\cdot6=2400\\ \\text{J}$.</p><p>b) $H=\\dfrac{1800}{2400}\\cdot100\\%=75\\%$.</p></details><h4>Bài 14 · Trung bình</h4><p>Người ta đưa một vật khối lượng $80\\ \\text{kg}$ lên sàn xe tải cao $1{,}2\\ \\text{m}$ bằng một tấm ván dài $4\\ \\text{m}$. Lực đẩy cần thiết dọc theo tấm ván là $300\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính công toàn phần và công có ích.</p><p>b) Tính công hao phí và độ lớn lực ma sát.</p><p>c) Tính hiệu suất của mặt phẳng nghiêng.</p><details><summary>Hướng dẫn giải</summary><p>a) $P=800\\ \\text{N}$ ; $A_{tp}=F\\,l=300\\cdot4=1200\\ \\text{J}$ ; $A_{ci}=P\\,h=800\\cdot1{,}2=960\\ \\text{J}$.</p><p>b) $A_{hp}=A_{tp}-A_{ci}=240\\ \\text{J}$ ; $F_{ms}=\\dfrac{A_{hp}}{l}=\\dfrac{240}{4}=60\\ \\text{N}$.</p><p>c) $H=\\dfrac{960}{1200}\\cdot100\\%=80\\%$.</p></details><h4>Bài 15 · Khó</h4><p>Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng $1\\ \\text{kg}$ (2 đoạn dây đỡ ròng rọc động, một đầu dây buộc vào giá treo). Người ta nâng một vật khối lượng $39\\ \\text{kg}$ lên cao $5\\ \\text{m}$. Bỏ qua ma sát ở ổ trục. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính lực kéo ở đầu dây tự do và quãng đường đầu dây đi được.</p><p>b) Tính công toàn phần, công có ích và hiệu suất của palăng.</p><details><summary>Hướng dẫn giải</summary><p>a) $P_v=390\\ \\text{N}$ ; $P_r=10\\ \\text{N}$ ; $P_t=400\\ \\text{N}$ ; $F=\\dfrac{P_t}{2}=200\\ \\text{N}$ ; $s=2h=10\\ \\text{m}$.</p><p>b) $A_{tp}=F\\,s=200\\cdot10=2000\\ \\text{J}$ ; $A_{ci}=P_v\\,h=390\\cdot5=1950\\ \\text{J}$ ; $H=\\dfrac{1950}{2000}\\cdot100\\%=97{,}5\\%$.</p></details><h4>Bài 16 · Khó</h4><p>Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng $3\\ \\text{kg}$ (2 đoạn dây đỡ ròng rọc động, một đầu dây buộc vào giá treo). Người ta nâng một vật khối lượng $47\\ \\text{kg}$ lên cao $4\\ \\text{m}$. Bỏ qua ma sát ở ổ trục và khối lượng dây. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính lực kéo ở đầu dây tự do và quãng đường đầu dây đi được.</p><p>b) Tính công toàn phần, công có ích và hiệu suất của palăng.</p><details><summary>Hướng dẫn giải</summary><p>a) $P_v=470\\ \\text{N}$ ; $P_r=30\\ \\text{N}$ ; $P_t=500\\ \\text{N}$ ; $F=\\dfrac{500}{2}=250\\ \\text{N}$ ; $s=2h=8\\ \\text{m}$.</p><p>b) $A_{tp}=F\\,s=250\\cdot8=2000\\ \\text{J}$ ; $A_{ci}=P_v\\,h=470\\cdot4=1880\\ \\text{J}$ ; $H=\\dfrac{1880}{2000}\\cdot100\\%=94\\%$.</p><p>Kiểm tra : $A_r=P_r\\,h=30\\cdot4=120\\ \\text{J}$ ; $1880+120=2000\\ \\text{J}$ ✓.</p></details><h4>Bài 17 · Khó</h4><p>Một động cơ dùng palăng gồm một ròng rọc cố định và một ròng rọc động (ròng rọc động có khối lượng $2\\ \\text{kg}$, 2 đoạn dây đỡ ròng rọc động, một đầu dây buộc vào giá treo) để nâng một vật khối lượng $58\\ \\text{kg}$ lên cao $10\\ \\text{m}$ trong $25\\ \\text{s}$. Bỏ qua ma sát ở ổ trục. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính lực kéo của động cơ và quãng đường đầu dây đi được.</p><p>b) Tính công toàn phần và hiệu suất của palăng.</p><p>c) Tính công suất của động cơ.</p><details><summary>Hướng dẫn giải</summary><p>a) $P_v=580\\ \\text{N}$ ; $P_r=20\\ \\text{N}$ ; $P_t=600\\ \\text{N}$ ; $F=\\dfrac{600}{2}=300\\ \\text{N}$ ; $s=2h=20\\ \\text{m}$.</p><p>b) $A_{tp}=F\\,s=300\\cdot20=6000\\ \\text{J}$ ; $A_{ci}=P_v\\,h=580\\cdot10=5800\\ \\text{J}$ ; $H=\\dfrac{5800}{6000}\\cdot100\\%\\approx96{,}7\\%$.</p><p>c) $P_{cs}=\\dfrac{A_{tp}}{t}=\\dfrac{6000}{25}=240\\ \\text{W}$.</p></details><h4>Bài 18 · Khó</h4><p>Một máy bơm nước có công suất toàn phần $1250\\ \\text{W}$ và hiệu suất $80\\%$. Máy bơm nước từ độ sâu $8\\ \\text{m}$ lên bể chứa đặt ở mặt đất. Khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính công suất có ích của máy bơm.</p><p>b) Tính khối lượng nước bơm được trong $10$ phút.</p><p>c) Tính thể tích nước bơm được trong $10$ phút.</p><details><summary>Hướng dẫn giải</summary><p>a) $P_{ci}=H\\,P_{tp}=0{,}8\\cdot1250=1000\\ \\text{W}$.</p><p>b) $t=600\\ \\text{s}$ ; $A_{ci}=P_{ci}\\,t=1000\\cdot600=600000\\ \\text{J}$ ; $A_{ci}=10\\,m\\,h\\Rightarrow m=\\dfrac{600000}{10\\cdot8}=7500\\ \\text{kg}$.</p><p>c) $V=\\dfrac{m}{D}=\\dfrac{7500}{1000}=7{,}5\\ \\text{m}^3$ (7500 lít).</p></details><h4>Bài 19 · Nâng cao</h4><p>Một hệ palăng có $4$ đoạn dây song song cùng đỡ một khối gồm vật và hai ròng rọc động (hai ròng rọc động gắn liền với khối, cùng được nâng lên độ cao $h$) ; mỗi ròng rọc động có khối lượng $2{,}5\\ \\text{kg}$. Dùng hệ này nâng vật khối lượng $95\\ \\text{kg}$ lên cao $h=6\\ \\text{m}$ trong $30\\ \\text{s}$. Bỏ qua ma sát ở các ổ trục và khối lượng dây. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Giải thích vì sao lực kéo ở đầu dây tự do chỉ bằng $\\dfrac{P_t}{4}$ rồi tính lực đó.</p><p>b) Tính quãng đường đầu dây tự do đi được.</p><p>c) Tính công có ích, công toàn phần và hiệu suất của hệ palăng.</p><p>d) Tính công suất của lực kéo.</p><details><summary>Hướng dẫn giải</summary><p>a) $n=4$ ; $P_v=950\\ \\text{N}$ ; $P_{rr}=2\\cdot10\\cdot2{,}5=50\\ \\text{N}$ ; $P_t=1000\\ \\text{N}$ ; $F=\\dfrac{P_t}{n}=250\\ \\text{N}$.</p><p>b) $s=n\\,h=4\\cdot6=24\\ \\text{m}$.</p><p>c) $A_{ci}=P_v\\,h=950\\cdot6=5700\\ \\text{J}$ ; $A_{tp}=F\\,s=250\\cdot24=6000\\ \\text{J}$ ; $H=\\dfrac{5700}{6000}\\cdot100\\%=95\\%$. Kiểm tra : $A_{rr}=P_{rr}\\,h=50\\cdot6=300\\ \\text{J}$ ; $5700+300=6000\\ \\text{J}$ ✓.</p><p>d) $P_{cs}=\\dfrac{A_{tp}}{t}=\\dfrac{6000}{30}=200\\ \\text{W}$.</p></details><h4>Bài 20 · Nâng cao</h4><p>Một vật khối lượng $120\\ \\text{kg}$ cần được đưa lên độ cao $h=2\\ \\text{m}$. Cách một : nâng vật trực tiếp theo phương thẳng đứng. Cách hai : dùng mặt phẳng nghiêng dài $l=6\\ \\text{m}$ với lực đẩy $F=500\\ \\text{N}$ dọc theo mặt phẳng nghiêng. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính công thực hiện ở cách một.</p><p>b) Tính công toàn phần và công hao phí ở cách hai.</p><p>c) Tính độ lớn lực ma sát giữa vật và mặt phẳng nghiêng.</p><p>d) Tính hiệu suất của mặt phẳng nghiêng.</p><p>e) So sánh công thực hiện ở hai cách và nêu nhận xét.</p><details><summary>Hướng dẫn giải</summary><p>a) $P=1200\\ \\text{N}$ ; $A_1=P\\,h=1200\\cdot2=2400\\ \\text{J}$.</p><p>b) $A_{tp}=F\\,l=500\\cdot6=3000\\ \\text{J}$ ; $A_{ci}=2400\\ \\text{J}$ ; $A_{hp}=3000-2400=600\\ \\text{J}$.</p><p>c) $F_{ms}=\\dfrac{A_{hp}}{l}=\\dfrac{600}{6}=100\\ \\text{N}$.</p><p>d) $H=\\dfrac{2400}{3000}\\cdot100\\%=80\\%$.</p><p>e) $A_{tp}=3000\\ \\text{J}\\gt A_1=2400\\ \\text{J}$. Mặt phẳng nghiêng lợi về lực ($500\\ \\text{N}$ thay vì $1200\\ \\text{N}$) nhưng thiệt về đường đi ($6\\ \\text{m}$ thay vì $2\\ \\text{m}$) ; phần công tăng thêm chính là công thắng ma sát. Đúng với định luật về công.</p></details><h4>Bài 21 · Nâng cao</h4><p>Một ô tô khối lượng $1{,}2$ tấn chuyển động đều lên một đoạn dốc dài $240\\ \\text{m}$ và cao $12\\ \\text{m}$. Lực cản (gồm ma sát và sức cản không khí) có độ lớn không đổi $400\\ \\text{N}$. Ô tô đi hết đoạn dốc trong $60\\ \\text{s}$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính lực kéo của động cơ ô tô.</p><p>b) Tính công của lực kéo khi ô tô lên hết đoạn dốc.</p><p>c) Tính hiệu suất của quá trình, coi công có ích là công đưa ô tô lên độ cao $h$.</p><p>d) Tính công suất của động cơ.</p><details><summary>Hướng dẫn giải</summary><p>a) $P=12000\\ \\text{N}$ ; $F_d=\\dfrac{P\\,h}{l}=\\dfrac{12000\\cdot12}{240}=600\\ \\text{N}$ ; $F=F_d+F_c=600+400=1000\\ \\text{N}$.</p><p>b) $A_{tp}=F\\,l=1000\\cdot240=240000\\ \\text{J}=240\\ \\text{kJ}$.</p><p>c) $A_{ci}=P\\,h=12000\\cdot12=144000\\ \\text{J}$ ; $H=\\dfrac{144000}{240000}\\cdot100\\%=60\\%$. Kiểm tra : $A_{hp}=F_c\\,l=400\\cdot240=96000\\ \\text{J}$ ; $144000+96000=240000\\ \\text{J}$ ✓.</p><p>d) $P_{cs}=\\dfrac{A_{tp}}{t}=\\dfrac{240000}{60}=4000\\ \\text{W}=4\\ \\text{kW}$.</p></details><h4>Bài 22 · Nâng cao</h4><p>Một người dùng một palăng gồm một ròng rọc cố định và một ròng rọc động để nâng một vật lên cao. Ròng rọc động có khối lượng $4\\ \\text{kg}$ (2 đoạn dây đỡ ròng rọc động, một đầu dây buộc vào giá treo). Người đó kéo đầu dây tự do bằng lực $F=320\\ \\text{N}$ và đầu dây đi được quãng đường $12\\ \\text{m}$ trong $20\\ \\text{s}$. Bỏ qua ma sát ở ổ trục và khối lượng dây. Lấy $g=10\\ \\text{m/s}^2$.</p><p>a) Tính độ cao vật được nâng lên.</p><p>b) Tính khối lượng của vật.</p><p>c) Tính công toàn phần và công suất của người đó.</p><p>d) Tính hiệu suất của palăng.</p><details><summary>Hướng dẫn giải</summary><p>a) $n=2$, $s=2h\\Rightarrow h=\\dfrac{12}{2}=6\\ \\text{m}$.</p><p>b) $P_t=2F=640\\ \\text{N}$ ; $P_r=40\\ \\text{N}$ ; $P_v=P_t-P_r=600\\ \\text{N}$ ; $m=\\dfrac{600}{10}=60\\ \\text{kg}$.</p><p>c) $A_{tp}=F\\,s=320\\cdot12=3840\\ \\text{J}$ ; $P_{cs}=\\dfrac{A_{tp}}{t}=\\dfrac{3840}{20}=192\\ \\text{W}$.</p><p>d) $A_{ci}=P_v\\,h=600\\cdot6=3600\\ \\text{J}$ ; $H=\\dfrac{3600}{3840}\\cdot100\\%=93{,}75\\%$. Kiểm tra : $A_r=P_r\\,h=40\\cdot6=240\\ \\text{J}$ ; $3600+240=3840\\ \\text{J}$ ✓.</p></details>"
+ }
+}

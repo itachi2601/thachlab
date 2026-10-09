@@ -1,0 +1,273 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Phân biệt khi nào có <strong>công</strong>; dùng $A = Fs$ và <strong>$A = Fs\cos\alpha$</strong> (mở rộng).</li>
+<li>Phân biệt <strong>công</strong> với <strong>công suất</strong>; dùng $P = A/t$ và $P = Fv$.</li>
+<li>Đếm nhánh dây của <strong>palăng</strong>; tính đủ công nâng <strong>ròng rọc động</strong>.</li>
+<li>Tách ba dòng <strong>$A_{ích}$, $A_{hp}$, $A_{toàn\ phần}$</strong> và kiểm chéo bằng $A_{tp} = A_{ích} + A_{hp}$.</li>
+</ul>
+<p>Thời gian đọc khoảng <strong>12 phút</strong>. Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong> mà không mở sách. Phần nhãn <strong>Mở rộng HSG</strong> dành cho đội tuyển.</p>
+</div>
+
+<h3>I. Mở bài: tay mỏi mà công bằng 0</h3>
+
+<p>Giữ quả tạ đứng yên cả phút thì mỏi tay. Đẩy chiếc xe nhẹ đi 10 m thì chẳng mỏi mấy. Vậy "mệt" có đo được công không?</p>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Một người giữ quả tạ $30$ kg đứng yên suốt $1$ phút, tay run vì mỏi. Công cơ học của lực giữ là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q1" id="tlh1-q1a"><label for="tlh1-q1a" class="tl-opt tl-no">A. Rất lớn, vì người đó mỏi nhất</label>
+<input type="radio" name="tlh1-q1" id="tlh1-q1b"><label for="tlh1-q1b" class="tl-opt tl-no">B. $A = F\cdot t$, tính theo thời gian giữ</label>
+<input type="radio" name="tlh1-q1" id="tlh1-q1c"><label for="tlh1-q1c" class="tl-opt tl-ok">C. Bằng $0$, vì tạ không dịch chuyển</label>
+<input type="radio" name="tlh1-q1" id="tlh1-q1d"><label for="tlh1-q1d" class="tl-opt tl-no">D. Bằng $300$ J, vì $P = 10m$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Không có dịch chuyển thì $s = 0$ nên $A = F\cdot s = 0$. Mỏi cơ là cảm giác của cơ thể, không phải công cơ học.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mệt hay không mệt không quyết định công. Muốn có công cần đủ hai điều kiện: có lực và vật dịch chuyển theo phương không vuông góc với lực. Ở đây thiếu dịch chuyển.</p></div>
+</div>
+</div>
+
+<h3>II. Công cơ học: khi nào có công</h3>
+
+<p><strong>🔑 Có lực · Có dịch chuyển · Không vuông góc</strong></p>
+<ul>
+<li>Lực sinh công khi vật dịch chuyển theo phương <strong>không vuông góc</strong> với lực.</li>
+<li>Lực cùng phương dịch chuyển: $A = F\cdot s$.</li>
+<li>$A$ đo bằng jun (J), $F$ bằng N, $s$ bằng <strong>mét</strong>; $1\ \text{J} = 1\ \text{N·m}$.</li>
+<li>Khối lượng đổi sang trọng lượng trước: $P = 10m$.</li>
+</ul>
+<p>Ví dụ: kéo thùng $40$ kg trượt đều trên sàn ngang, $\mu = 0{,}25$. Áp lực $N = P = 400$ N, nên $F = F_{ms} = \mu N = 100$ N. Đi $8$ m: công kéo $A_F = 800$ J, công ma sát $A_{ms} = -800$ J (âm vì ngược chiều dịch chuyển). Trọng lực và phản lực không sinh công.</p>
+<p>Hộp trượt trên mặt bàn nằm ngang. Trọng lực tác dụng lên hộp có sinh công không?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q2" id="tlh1-q2a"><label for="tlh1-q2a" class="tl-opt tl-no">A. Có, vì có lực và hộp đang chuyển động</label>
+<input type="radio" name="tlh1-q2" id="tlh1-q2b"><label for="tlh1-q2b" class="tl-opt tl-ok">B. Không, vì trọng lực thẳng đứng còn hộp dịch chuyển ngang</label>
+<input type="radio" name="tlh1-q2" id="tlh1-q2c"><label for="tlh1-q2c" class="tl-opt tl-no">C. Có, vì hộp nặng nên công lớn</label>
+<input type="radio" name="tlh1-q2" id="tlh1-q2d"><label for="tlh1-q2d" class="tl-opt tl-no">D. Có, là công âm vì trọng lực hướng xuống</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trọng lực vuông góc với dịch chuyển nên không sinh công. Phản lực của bàn cũng vậy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Có lực và có chuyển động chưa đủ. Hỏi về <strong>phương</strong>: trọng lực thẳng đứng, hộp đi ngang, hai phương vuông góc. Công âm chỉ có khi lực có thành phần <em>ngược chiều</em> dịch chuyển, như lực ma sát.</p></div>
+</div>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Thí nghiệm: ai có công?</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> bạn A xách cặp sách đứng yên $10$ s, bạn B xách cặp đi thẳng $10$ m trên sàn ngang, bạn C kéo cặp lên cao $3$ m.</li>
+<li><strong>Quan sát:</strong> cặp chỉ dịch chuyển ở B và C. Với B, lực xách hướng lên còn cặp đi ngang.</li>
+<li><strong>Rút ra:</strong> A có công $0$; B có công $0$ của lực xách (vuông góc); chỉ C có công $A = Ph$.</li>
+</ol>
+</div>
+
+<h3>III. Mở rộng HSG: lực xiên góc α</h3>
+
+<p><strong>🔑 Chỉ thành phần dọc dịch chuyển sinh công</strong></p>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 204" role="img" aria-label="Lực kéo hợp với phương ngang góc alpha, chỉ thành phần F cos alpha sinh công"><line x1="20" y1="150" x2="400" y2="150" stroke="currentColor" stroke-width="2"/><rect x="120" y="100" width="70" height="50" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="155" y="130" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">vật</text><line x1="240.0" y1="38.4" x2="240.0" y2="125" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4"/><line x1="190" y1="125" x2="240.0" y2="125" stroke="#34d399" stroke-width="2.6"/><path d="M230.5,119.5 L240.0,125.0 L230.5,130.5" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="190" y1="125" x2="240.0" y2="38.4" stroke="#f87171" stroke-width="2.6"/><path d="M230.5,43.9 L240.0,38.4 L240.0,49.4" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M220,125 A30,30 0 0 0 205,99" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="224" y="112" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">α</text><text x="212" y="70" fill="#f87171" font-size="14" font-weight="600" text-anchor="end">F</text><text x="248" y="66" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">F sin α</text><text x="248" y="82" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">không sinh công</text><text x="248" y="122" fill="#34d399" font-size="12" font-weight="600" text-anchor="start">F cos α</text><text x="248" y="138" fill="#34d399" font-size="12" font-weight="600" text-anchor="start">sinh công</text><line x1="120" y1="176" x2="260" y2="176" stroke="currentColor" stroke-width="1.8"/><path d="M252.2,171.5 L260.0,176.0 L252.2,180.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="190" y="194" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">s: quãng đường dịch chuyển</text></svg><figcaption>Hình 1. Lực xiên góc α: chỉ thành phần dọc theo dịch chuyển sinh công, A = F·s·cos α.</figcaption></figure>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Mở rộng HSG: công của lực xiên</p>
+<p>$$A = F\,s\cos\alpha$$</p>
+<p>$\alpha$ là góc giữa <strong>lực</strong> và <strong>phương dịch chuyển</strong>.</p>
+</div>
+<table class="tl-table">
+<thead><tr><th>Góc α</th><th>Công</th></tr></thead>
+<tbody>
+<tr><td>$0^\circ$</td><td>$A = Fs$ (lớn nhất)</td></tr>
+<tr><td>$60^\circ$</td><td>$A = 0{,}5\,Fs$</td></tr>
+<tr><td>$90^\circ$</td><td>$A = 0$</td></tr>
+<tr><td>$180^\circ$</td><td>$A = -Fs$ (công cản)</td></tr>
+</tbody>
+</table>
+<p><strong>Bẫy:</strong> trước khi thay số, tự hỏi "lực này có cùng phương chuyển động không?". Lực ma sát có $\alpha = 180^\circ$, công âm; đề chỉ hỏi độ lớn công cản thì ghi số dương và nói rõ.</p>
+<p>Kéo vật $40$ kg (như ví dụ mục II, $\mu = 0{{,}}25$) bằng lực $F = 150$ N hợp với phương ngang góc $\alpha = 60^\circ$, vật trượt ngang $s = 8$ m. Công của lực kéo là bao nhiêu?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tlh1-q3c" value="chac"> Chắc</label>
+<label><input type="radio" name="tlh1-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q3" id="tlh1-q3a"><label for="tlh1-q3a" class="tl-opt tl-no">A. $1\,200$ J</label>
+<input type="radio" name="tlh1-q3" id="tlh1-q3b"><label for="tlh1-q3b" class="tl-opt tl-no">B. $1\,039$ J</label>
+<input type="radio" name="tlh1-q3" id="tlh1-q3c"><label for="tlh1-q3c" class="tl-opt tl-no">C. $0$ J</label>
+<input type="radio" name="tlh1-q3" id="tlh1-q3d"><label for="tlh1-q3d" class="tl-opt tl-ok">D. $600$ J</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A = F s\cos\alpha = 150\cdot 8\cdot 0{,}5 = 600$ J. Chỉ nửa lực kéo nằm dọc theo dịch chuyển.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lỗi quên $\cos\alpha$ ($150\cdot 8$). B lấy $\cos 30^\circ$: $\alpha$ là góc giữa lực và phương <em>dịch chuyển</em>, không phải góc với phương thẳng đứng. C nhầm với $\alpha = 90^\circ$.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>Vì sao vật vẫn trượt được ở câu trên?</summary>
+<p>Thành phần ngang $F\cos\alpha = 75$ N. Lực kéo hướng lên làm áp lực giảm $N = 400 - 150\cdot 0{,}866 \approx 270$ N, nên $F_{ms} \approx 67{,}5$ N. Vì $75 \gt 67{,}5$ nên vật trượt. Dạng này chỉ để kiểm tra số liệu, không cần tính trong đề lớp 9.</p>
+</details>
+
+<h3>IV. Công suất: làm nhanh hay chậm</h3>
+
+<p><strong>🔑 Công chia thời gian · Oát · Lực nhân vận tốc</strong></p>
+<ul>
+<li>$P = A/t$; $1\ \text{W} = 1\ \text{J/s}$; $1\ \text{kW} = 1\,000\ \text{W}$.</li>
+<li>Đổi thời gian ra <strong>giây</strong>; $1$ giờ $= 3\,600$ s.</li>
+<li>Công cho biết <em>bao nhiêu việc</em>, công suất cho biết <em>nhanh cỡ nào</em>.</li>
+</ul>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Mở rộng HSG: công suất tức thời</p>
+<p>Chuyển động đều, lực kéo cùng phương vận tốc: $A = Fvt$ nên</p>
+<p>$$P = F\,v$$</p>
+<p>Chuyển động nhanh hay chậm dần: $Fv$ chỉ là công suất <strong>tức thời</strong>; công suất trung bình vẫn là $A/t$. Đổi: $1$ m/s $= 3{,}6$ km/h, đổi km/h sang m/s thì <strong>chia</strong> $3{,}6$.</p>
+</div>
+<p>Người đạp xe đều với $v = 18$ km/h, lực cản $40$ N. Công suất của người đó là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q4" id="tlh1-q4a"><label for="tlh1-q4a" class="tl-opt tl-ok">A. $200$ W</label>
+<input type="radio" name="tlh1-q4" id="tlh1-q4b"><label for="tlh1-q4b" class="tl-opt tl-no">B. $720$ W</label>
+<input type="radio" name="tlh1-q4" id="tlh1-q4c"><label for="tlh1-q4c" class="tl-opt tl-no">C. $2\,592$ W</label>
+<input type="radio" name="tlh1-q4" id="tlh1-q4d"><label for="tlh1-q4d" class="tl-opt tl-no">D. $40$ W</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v = 18/3{,}6 = 5$ m/s, xe đều nên $F = F_c = 40$ N, $P = Fv = 40\cdot 5 = 200$ W.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B quên đổi km/h sang m/s. C <em>nhân</em> $3{,}6$ thay vì chia, kết quả lệch gấp $12{,}96$ lần. D chỉ lấy lực, bỏ vận tốc.</p></div>
+</div>
+
+<p>Máy A nâng vật $50$ kg lên $4$ m trong $20$ s. Máy B nâng vật $30$ kg lên $4$ m trong $8$ s. Máy nào mạnh hơn?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q5" id="tlh1-q5a"><label for="tlh1-q5a" class="tl-opt tl-no">A. Máy A, vì làm nhiều việc hơn</label>
+<input type="radio" name="tlh1-q5" id="tlh1-q5b"><label for="tlh1-q5b" class="tl-opt tl-no">B. Hai máy bằng nhau, vì cùng nâng lên $4$ m</label>
+<input type="radio" name="tlh1-q5" id="tlh1-q5c"><label for="tlh1-q5c" class="tl-opt tl-ok">C. Máy B, vì $P_B = 150$ W lớn hơn $P_A = 100$ W</label>
+<input type="radio" name="tlh1-q5" id="tlh1-q5d"><label for="tlh1-q5d" class="tl-opt tl-no">D. Không so được, vì khối lượng khác nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A_A = 2\,000$ J, $A_B = 1\,200$ J. $P_A = 100$ W, $P_B = 150$ W. A sinh công <em>lớn hơn</em>, B <em>mạnh hơn</em>: hai câu hỏi khác nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mạnh hơn nghĩa là công suất lớn hơn, không phải công lớn hơn. Tính $P = A/t$ cho từng máy rồi so sánh.</p></div>
+</div>
+
+<p>Đọc kĩ đề xem công suất là <strong>toàn phần</strong> hay <strong>có ích</strong>; hai loại liên hệ qua $P_{ích} = H\cdot P_{toàn\ phần}$.</p>
+
+<h3>V. Định luật về công: máy đổi lực lấy đường đi</h3>
+
+<p><strong>🔑 Lợi lực · Thiệt đường · Không lợi công</strong></p>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Định luật về công</p>
+<p>Không máy cơ đơn giản nào cho lợi về công. Lợi bao nhiêu lần về lực thì thiệt bấy nhiêu lần về đường đi.</p>
+</div>
+<ul>
+<li>Ròng rọc cố định: $F = P$, $s = h$ (chỉ đổi hướng lực).</li>
+<li>Ròng rọc động (lí tưởng, bỏ qua khối lượng ròng rọc và dây): $F = P/2$, $s = 2h$.</li>
+<li>Đòn bẩy: $F_1 l_1 = F_2 l_2$; đổi mọi độ dài về mét <em>trước</em> khi lập tỉ số.</li>
+<li>Máy lí tưởng (không ma sát, không khối lượng chi tiết): $A_{máy} = A_{nâng\ trực\ tiếp} = Ph$.</li>
+</ul>
+<p>Ví dụ: ròng rọc cố định nâng $500$ N lên $2$ m: $F = 500$ N, $s = 2$ m, $A = 1\,000$ J, đúng bằng $Ph$. Máy thực thì $A_{toàn\ phần} \gt Ph$, hiệu suất $\lt 100\%$.</p>
+<p>Đòn bẩy cân bằng: vật $P = 600$ N cách điểm tựa $20$ cm, lực tác dụng cách điểm tựa $1{,}2$ m. Lực cần dùng là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q6" id="tlh1-q6a"><label for="tlh1-q6a" class="tl-opt tl-no">A. $3\,600$ N</label>
+<input type="radio" name="tlh1-q6" id="tlh1-q6b"><label for="tlh1-q6b" class="tl-opt tl-ok">B. $100$ N</label>
+<input type="radio" name="tlh1-q6" id="tlh1-q6c"><label for="tlh1-q6c" class="tl-opt tl-no">C. $10\,000$ N</label>
+<input type="radio" name="tlh1-q6" id="tlh1-q6d"><label for="tlh1-q6d" class="tl-opt tl-no">D. $600$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = P\,l_1/l_2 = 600\cdot 0{,}2/1{,}2 = 100$ N. Lợi $6$ lần về lực thì thiệt $6$ lần về đường đi: nâng vật $5$ cm, tay đi $30$ cm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A nhân thay vì chia tỉ số cánh tay đòn. C quên đổi $20$ cm sang mét (sai $100$ lần). D bỏ qua đòn bẩy.</p></div>
+</div>
+
+
+<h3>VI. Mở rộng HSG: palăng có khối lượng ròng rọc</h3>
+
+<p><strong>🔑 Đếm nhánh dây · Cộng trọng lượng ròng rọc động</strong></p>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 240" role="img" aria-label="Palăng một ròng rọc cố định và một ròng rọc động, hai nhánh dây đỡ"><line x1="120" y1="18" x2="300" y2="18" stroke="currentColor" stroke-width="3"/><line x1="212" y1="18" x2="212" y2="44" stroke="currentColor" stroke-width="2"/><circle cx="212" cy="60" r="16" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="180" cy="150" r="16" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="164" y1="18" x2="164" y2="150" stroke="#fb923c" stroke-width="2.6"/><line x1="196" y1="150" x2="196" y2="60" stroke="#fb923c" stroke-width="2.6"/><path d="M196,60 A16,16 0 0 1 228,60" fill="none" stroke="#fb923c" stroke-width="2.6"/><line x1="228" y1="60" x2="228" y2="110" stroke="#fb923c" stroke-width="2.6"/><line x1="228" y1="110" x2="228" y2="170" stroke="#f87171" stroke-width="2.6"/><path d="M233.5,160.5 L228.0,170.0 L222.5,160.5" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="238" y="150" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">F</text><line x1="180" y1="166" x2="180" y2="192" stroke="currentColor" stroke-width="2"/><rect x="150" y="192" width="60" height="38" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="180" y="216" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">vật</text><text x="152" y="104" fill="#fb923c" font-size="13" font-weight="600" text-anchor="end">1</text><text x="204" y="104" fill="#fb923c" font-size="13" font-weight="600" text-anchor="start">2</text><text x="238" y="38" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">ròng rọc cố định</text><text x="156" y="172" fill="currentColor" font-size="12" font-weight="600" text-anchor="end">ròng rọc động</text><text x="262" y="72" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">1 và 2: hai nhánh đỡ</text><text x="262" y="90" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">n = 2</text><text x="262" y="114" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">vật lên h</text><text x="262" y="132" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">đầu dây đi s = 2h</text></svg><figcaption>Hình 2. Palăng 1 cố định + 1 động: đếm nhánh dây đỡ, không đếm ròng rọc.</figcaption></figure>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Mở rộng HSG: palăng n nhánh</p>
+<p>$$F = \frac{P_{vật} + P_{rr\ động}}{n},\qquad s = n\,h$$</p>
+<p>$A_{tp} = F s$; $A_{ích} = P_{vật} h$; $A_{nâng\ rr} = P_{rr}\,h$ (theo độ cao <strong>h</strong> của ròng rọc, không theo $s$).</p>
+</div>
+<ul>
+<li>Đếm <strong>nhánh dây</strong> đỡ khối vật, không đếm ròng rọc: một cố định + hai động nối tiếp (khối palăng có $4$ đoạn dây đỡ) thì $n = 4$.</li>
+<li>Ròng rọc cố định không lên cao nên không tốn công nâng; khối lượng nó chỉ tác động qua ma sát ổ trục.</li>
+<li>Cách mắc lạ: kéo dây $s$ thì $n$ nhánh cùng ngắn, vật lên $h = s/n$.</li>
+</ul>
+<div class="tl-box">
+<p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
+<p>Palăng một ròng rọc cố định, một ròng rọc động nặng $2$ kg. Nâng vật $38$ kg lên $5$ m. Bỏ qua ma sát ổ trục và khối lượng dây.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức</th></tr></thead>
+<tbody>
+<tr><td>"một cố định, một động"</td><td>$n = 2$</td><td>đếm nhánh</td></tr>
+<tr><td>"động nặng 2 kg"</td><td>$P_r = 20$ N</td><td>cộng vào tải</td></tr>
+<tr><td>"vật 38 kg, 5 m"</td><td>$P_v = 380$ N, $h = 5$</td><td>$A_{ích} = P_v h$</td></tr>
+</tbody>
+</table></div>
+<details class="tl-details">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li>$F = (380 + 20)/2 = 200$ N; $s = 2h = 10$ m.</li>
+<li>$A_{tp} = Fs = 2\,000$ J; $A_{ích} = 380\cdot 5 = 1\,900$ J.</li>
+<li>$A_r = 20\cdot 5 = 100$ J. Kiểm chéo: $1\,900 + 100 = 2\,000$ J, khớp.</li>
+<li>$H = 1\,900/2\,000 = 95\%$.</li>
+</ol>
+</details>
+</div>
+<p><strong>Bẫy:</strong> bỏ khối lượng ròng rọc thì $F = 190$ N, $A_{tp} = 1\,900$ J và $H = 100\%$, điều không thể có với máy thực.</p>
+<p>Palăng một cố định, một động nặng $20$ N, nâng vật $380$ N lên $h = 5$ m, đầu dây đi $s = 10$ m. Công dùng để nâng riêng ròng rọc động là bao nhiêu?</p>
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tlh1-q7c" value="chac"> Chắc</label>
+<label><input type="radio" name="tlh1-q7c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q7" id="tlh1-q7a"><label for="tlh1-q7a" class="tl-opt tl-no">A. $200$ J</label>
+<input type="radio" name="tlh1-q7" id="tlh1-q7b"><label for="tlh1-q7b" class="tl-opt tl-no">B. $0$ J</label>
+<input type="radio" name="tlh1-q7" id="tlh1-q7c"><label for="tlh1-q7c" class="tl-opt tl-no">C. $2\,000$ J</label>
+<input type="radio" name="tlh1-q7" id="tlh1-q7d"><label for="tlh1-q7d" class="tl-opt tl-ok">D. $100$ J</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ròng rọc động đi lên đúng $h = 5$ m: $A_r = P_r h = 20\cdot 5 = 100$ J.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A tính theo quãng đường dây $s$: sai, ròng rọc chỉ đi lên $h$. B coi ròng rọc không tốn công: sai với ròng rọc <em>động</em> (ròng rọc cố định mới không lên cao). C là công toàn phần $F s = 200\cdot 10$.</p></div>
+</div>
+
+
+<h3>VII. Mặt phẳng nghiêng và hiệu suất</h3>
+
+<p><strong>🔑 Ích + hao phí = toàn phần</strong></p>
+<ul>
+<li>$A_{ích} = Ph$; $A_{hp} = F_{ms}\,l$; $A_{tp} = A_{ích} + A_{hp} = F\,l$.</li>
+<li>$H = \dfrac{A_{ích}}{A_{tp}}\cdot 100\%$; lí tưởng $F = Ph/l$.</li>
+<li>Viết ba dòng ích, hao phí, toàn phần riêng; thay số sau khi viết hệ thức.</li>
+</ul>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 216" role="img" aria-label="Mặt phẳng nghiêng dài 5 m cao 1,5 m, lực đẩy 240 N dọc ván, lực ma sát 60 N"><path d="M40,200 L326,200 L326,114 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><rect x="136.2" y="133.2" width="48" height="30" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(-16.7 160.2 148.2)"/><line x1="183.2" y1="141.3" x2="252.1" y2="120.6" stroke="#f87171" stroke-width="2.6"/><path d="M241.4,118.1 L252.1,120.6 L244.6,128.6" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="137.2" y1="155.1" x2="120.0" y2="160.3" stroke="#38bdf8" stroke-width="2.6"/><path d="M127.8,162.1 L120.0,160.3 L125.5,154.5" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="244.1" y="106.6" fill="#f87171" font-size="12" font-weight="600" text-anchor="end">F = 240 N</text><text x="126.0" y="136.3" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="end">Fms = 60 N</text><line x1="340" y1="114" x2="340" y2="200" stroke="currentColor" stroke-width="1.6"/><path d="M336.0,120.9 L340.0,114.0 L344.0,120.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M344.0,193.1 L340.0,200.0 L336.0,193.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="348" y="161" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">h = 1,5 m</text><text x="188.8" y="176.2" font-size="12" font-weight="600" fill="currentColor" text-anchor="middle" transform="rotate(-16.7 188.8 176.2)">l = 5 m</text></svg><figcaption>Hình 3. Ma sát tác dụng trên cả chiều dài l, nên A<sub>hp</sub> = F<sub>ms</sub>·l.</figcaption></figure>
+<p>Ví dụ ở Hình 3 ($P = 600$ N):</p>
+<ul>
+<li>$A_{ích} = 600\cdot 1{,}5 = 900$ J.</li>
+<li>$A_{hp} = 60\cdot 5 = 300$ J.</li>
+<li>$A_{tp} = 1\,200$ J, nên $F = 240$ N.</li>
+<li>Kiểm chéo: lực lí tưởng $180$ N cộng $60$ N ma sát.</li>
+<li>$H = 900/1\,200 = 75\%$.</li>
+</ul>
+<p>Đẩy vật $60$ kg lên sàn cao $1{,}5$ m bằng ván dài $5$ m, lực ma sát $60$ N. Công hao phí là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlh1-q8" id="tlh1-q8a"><label for="tlh1-q8a" class="tl-opt tl-ok">A. $300$ J</label>
+<input type="radio" name="tlh1-q8" id="tlh1-q8b"><label for="tlh1-q8b" class="tl-opt tl-no">B. $90$ J</label>
+<input type="radio" name="tlh1-q8" id="tlh1-q8c"><label for="tlh1-q8c" class="tl-opt tl-no">C. $900$ J</label>
+<input type="radio" name="tlh1-q8" id="tlh1-q8d"><label for="tlh1-q8d" class="tl-opt tl-no">D. $1\,200$ J</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A_{hp} = F_{ms}\cdot l = 60\cdot 5 = 300$ J, vì ma sát tác dụng suốt chiều dài ván.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B dùng $F_{ms}\cdot h$: sai, ma sát đâu chỉ tác dụng trên độ cao. C là công có ích, D là công toàn phần.</p></div>
+</div>
+
+<details class="tl-details">
+<summary>⭐⭐⭐ Mở rộng HSG: ô tô lên dốc (xem thêm)</summary>
+<p>Ô tô $1{,}2$ tấn lên đều dốc dài $240$ m cao $12$ m, lực cản $400$ N: lực kéo $F = F_c + Ph/l = 400 + 600 = 1\,000$ N. $A_{tp} = 240$ kJ, $A_{ích} = Ph = 144$ kJ nên $H = 60\%$. Nếu hết dốc sau $60$ s thì $P = A/t = 4$ kW.</p>
+</details>
+
+<h3>VIII. Trả bài và mang về</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Khi nào lực sinh công? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>Có lực, có dịch chuyển, không vuông góc. Giữ đứng yên: $A = 0$.</p></details>
+<details class="tl-details"><summary>Công của lực xiên góc α? Khi nào công âm?</summary>
+<p>$A = Fs\cos\alpha$. Âm khi lực ngược chiều dịch chuyển ($\alpha = 180^\circ$), như ma sát.</p></details>
+<details class="tl-details"><summary>Công khác công suất thế nào? $P = Fv$ dùng khi nào?</summary>
+<p>Công: lượng việc (J). Công suất: tốc độ làm (W), $P = A/t$. $P = Fv$: chuyển động đều, $F$ cùng phương $v$.</p></details>
+<details class="tl-details"><summary>Phát biểu định luật về công.</summary>
+<p>Không máy nào lợi công. Lợi lực bao nhiêu lần, thiệt đường bấy nhiêu lần.</p></details>
+<details class="tl-details"><summary>Palăng có ròng rọc động nặng: viết $F$, $s$, $A_{ích}$, $A_{hp}$.</summary>
+<p>$F = (P_v + P_r)/n$; $s = nh$; $A_{ích} = P_v h$; $A_{hp} = P_r h + A_{ma\ sát}$.</p></details>
+</div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Có công = có lực + có dịch chuyển + không vuông góc.</li>
+<li>Lực xiên: nhân $\cos\alpha$.</li>
+<li>Đổi đơn vị trước: cm sang m, km/h chia $3{,}6$, phút sang giây.</li>
+<li>Đếm nhánh dây, đừng đếm ròng rọc.</li>
+<li>Ròng rọc động tốn công $P_r h$; hao phí mặt phẳng nghiêng là $F_{ms}\,l$.</li>
+<li>Đọc đề: tự hỏi "cùng phương không? toàn phần hay có ích?"; kiểm chéo $A_{tp} = A_{ích} + A_{hp}$.</li>
+</ul>
+</div>
+
+<div class="tl-box">
+<p class="tl-label">📚 Xem thêm</p>
+<ul>
+<li><a href="/lop-hoc/bai?id=131&amp;subject=vat-ly&amp;chapter=23&amp;class=khtn-9">KHTN 9, Bài 4: Công và công suất</a></li>
+<li><a href="/lop-hoc/bai?id=68&amp;subject=vat-ly&amp;chapter=13&amp;class=lop-10">Lớp 10, Bài 23: Năng lượng. Công cơ học</a></li>
+<li><a href="/lop-hoc/bai?id=69&amp;subject=vat-ly&amp;chapter=13&amp;class=lop-10">Lớp 10, Bài 24: Công suất</a></li>
+<li><a href="/lop-hoc/bai?id=72&amp;subject=vat-ly&amp;chapter=13&amp;class=lop-10">Lớp 10, Bài 27: Hiệu suất</a></li>
+</ul>
+</div>

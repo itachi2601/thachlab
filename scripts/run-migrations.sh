@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 
 # "<đường dẫn>|<mô tả ngắn>|<ghi chú thời điểm chạy>"
 FILES=(
+  "supabase/migrations/20261010100000_khoa_hsg9_vat_ly_khung.sql|Thêm KHOÁ 'Vật lí HSG & chuyên' vào KHTN 9: 1 môn hsg-vat-ly + 6 chương + 17 bài (đều published=false) + mục ly_thuyet/bai_tap_mau rỗng cho CĐ01, CĐ02; chỉ thêm dữ liệu, idempotent; cuối file in danh sách lesson_id|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261009180000_an_cau_de_hong_audit.sql|Ẩn (archived=true) 599 câu ngân hàng bị audit AI gắn de_hong (đề cắt cụt/thiếu dữ kiện); có bảng sao lưu question_bank_audit_de_hong_20261009|giờ nào cũng được; rollback ở cuối file"
   "supabase/migrations/20261009100000_notify_exam_assigned.sql|Trigger báo chuông cho học sinh khi thầy giao bài kiểm tra / bài tập có đề (class_assessments, class_announcements); chỉ thêm hàm + trigger mới|giờ nào cũng được; rollback perf/rollback/20261009100000_notify_exam_assigned.down.sql"
   "supabase/migrations/20261006150000_quiz_live.sql|Đố vui lớp học (kiểu Kahoot): 4 bảng quiz_* + RPC cho học sinh ẩn danh/người điều khiển + tìm câu/đưa câu vào ngân hàng|Bất kỳ lúc nào (bảng/hàm mới, không đụng dữ liệu cũ; rollback perf/rollback/20261006150000_quiz_live.down.sql)"

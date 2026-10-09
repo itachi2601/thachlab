@@ -1,0 +1,771 @@
+Chuyên đề 01. Công và công suất
+A. Yêu cầu cần đạt và phạm vi
+Sau khi học xong chuyên đề này, học sinh cần đạt được các yêu cầu sau.
+Về kiến thức
+Nêu được khi nào một lực sinh công cơ học: có lực tác dụng vào vật và vật dịch chuyển theo phương không vuông góc với phương của lực.
+Viết và vận dụng được công thức tính công cơ học A = F.s, nắm được đơn vị jun (J) và các bội số thông dụng.
+Viết và vận dụng được công thức tính công suất P = A/t, nắm được đơn vị oát (W) và các bội số.
+Phân biệt được công có ích, công toàn phần, công hao phí; viết và vận dụng được công thức hiệu suất H = Aích/Atoàn × 100%.
+Phát biểu và vận dụng được định luật về công cho các máy cơ đơn giản: ròng rọc cố định, ròng rọc động, palăng, mặt phẳng nghiêng, đòn bẩy.
+Mở rộng: tính công khi lực hợp với phương dịch chuyển một góc α qua công thức A = F.s.cosα; tính công suất tức thời của chuyển động đều qua công thức P = F.v.
+Về kĩ năng
+Đổi đơn vị thành thạo giữa cm và m, km/h và m/s, phút và giây, lít và kg.
+Phân tích một hệ ròng rọc để xác định số nhánh dây đỡ vật, từ đó suy ra quan hệ giữa lực kéo và trọng lượng, giữa quãng đường dây kéo và độ cao nâng vật.
+Trình bày lời giải theo từng bước, ghi rõ công thức, thay số và đơn vị.
+Ước lượng và kiểm tra tính hợp lí của kết quả trước khi kết luận.
+Phạm vi của chuyên đề
+Chuyên đề bám sát Chương 1 (Năng lượng cơ học) của sách Khoa học tự nhiên 9, bộ Kết nối tri thức với cuộc sống, phần Vật lí, ở hai bài "Công và công suất" và "Máy cơ đơn giản". Phần chuẩn theo sách giáo khoa chỉ xét trường hợp lực cùng phương với phương dịch chuyển. Phần mở rộng dành cho đội tuyển học sinh giỏi bổ sung trường hợp lực hợp với phương dịch chuyển một góc α, công suất tức thời, và các bài toán palăng có kể khối lượng ròng rọc động cùng ma sát ở ổ trục.
+Toàn bộ chuyên đề chỉ dùng kiến thức trong phạm vi Trung học cơ sở. Các em tuyệt đối không cần dùng tới đạo hàm, tích phân, động lượng hay mô men quán tính; những bài toán tưởng như "cần" các công cụ đó đều có thể giải bằng định luật về công và các phép cộng trừ công.
+Quy ước dùng trong toàn chuyên đề: lấy gia tốc trọng trường g = 10 m/s², khối lượng riêng của nước là 1 000 kg/m³ (tức 1 lít nước nặng 1 kg) nếu đề bài không cho giá trị khác.
+B. Lý thuyết trọng tâm
+B1. Kiến thức chuẩn theo SGK
+1. Khi nào có công cơ học?
+Một lực sinh công cơ học khi đồng thời thỏa mãn hai điều kiện:
+Có lực tác dụng vào vật.
+Vật dịch chuyển theo phương không vuông góc với phương của lực.
+Nếu vật dịch chuyển theo phương vuông góc với phương của lực thì lực đó không sinh công. Ví dụ, trọng lực tác dụng lên một vật chuyển động trên mặt bàn nằm ngang không sinh công, vì trọng lực có phương thẳng đứng còn vật dịch chuyển theo phương ngang. Người đang giữ một vật nặng đứng yên cũng không sinh công cơ học, dù rất mỏi tay, vì vật không dịch chuyển.
+2. Công thức tính công cơ học
+Khi lực F cùng phương với phương dịch chuyển, công của lực được tính bằng
+A = F.s
+Trong đó:
+A là công cơ học, đơn vị là jun (kí hiệu J).
+F là độ lớn của lực tác dụng, đơn vị là niutơn (N).
+s là quãng đường vật dịch chuyển theo phương của lực, đơn vị là mét (m).
+Ta có 1 J = 1 N.m. Một số bội số thường dùng: 1 kJ = 1 000 J; 1 MJ = 1 000 000 J.
+3. Công suất
+Công suất là đại lượng đặc trưng cho tốc độ thực hiện công, tức là cho biết một máy, một người hay một động cơ thực hiện công nhanh hay chậm.
+P = A/t
+Trong đó:
+P là công suất, đơn vị là oát (kí hiệu W).
+A là công thực hiện được, đơn vị là jun (J).
+t là thời gian thực hiện công đó, đơn vị là giây (s).
+Ta có 1 W = 1 J/s. Một số bội số thường dùng: 1 kW = 1 000 W; 1 MW = 1 000 000 W.
+4. Công có ích, công toàn phần và hiệu suất
+Khi dùng máy cơ đơn giản để nâng vật, ta phân biệt:
+Công có ích Aích là công dùng để đưa vật lên cao, tức là Aích = P.h = 10.m.h.
+Công hao phí Ahp là công để thắng ma sát và để nâng chính các chi tiết của máy (như ròng rọc động).
+Công toàn phần Atoàn là tổng công mà người hoặc động cơ thực sự bỏ ra.
+Atoàn = Aích + Ahp
+Hiệu suất của máy được tính bằng
+H = Aích/Atoàn × 100%
+Hiệu suất luôn nhỏ hơn 100% đối với mọi máy thực, vì không thể loại bỏ hoàn toàn ma sát và khối lượng của các chi tiết máy.
+5. Máy cơ đơn giản và định luật về công
+Các máy cơ đơn giản thường gặp là ròng rọc cố định, ròng rọc động, palăng, mặt phẳng nghiêng và đòn bẩy.
+Định luật về công: Không một máy cơ đơn giản nào cho ta lợi về công. Được lợi bao nhiêu lần về lực thì lại thiệt bấy nhiêu lần về đường đi, và ngược lại.
+Hệ quả trực tiếp: nếu bỏ qua ma sát và khối lượng các chi tiết máy thì công đưa vật lên bằng máy đúng bằng công nâng vật trực tiếp theo phương thẳng đứng.
+B2. Mở rộng – nâng cao cho HSG
+1. Công của lực hợp với phương dịch chuyển một góc α
+Khi lực F hợp với phương dịch chuyển một góc α, chỉ thành phần của lực nằm dọc theo phương dịch chuyển mới sinh công. Ta có
+A = F.s.cosα
+Một số giá trị cần nhớ:
+α = 0° thì cosα = 1, lực cùng phương chiều với dịch chuyển, công dương lớn nhất, A = F.s.
+α = 60° thì cosα = 0,5, A = 0,5.F.s.
+α = 30° thì cosα ≈ 0,866, A ≈ 0,866.F.s.
+α = 90° thì cosα = 0, lực vuông góc với dịch chuyển, công bằng 0.
+α = 180° thì cosα = −1, lực ngược chiều dịch chuyển, công âm; đây chính là trường hợp lực ma sát hay lực cản.
+Cần hết sức lưu ý: công của lực ma sát luôn âm, nhưng trong nhiều bài toán người ta chỉ hỏi độ lớn của công cản nên viết số dương. Khi tính hiệu suất, công hao phí vẫn lấy giá trị dương vì đó là phần công đã mất đi.
+2. Công suất trung bình và công suất tức thời
+Công suất trung bình trong một khoảng thời gian là
+Ptb = A/t
+Nếu vật chuyển động đều với vận tốc v dưới tác dụng của lực kéo F cùng phương với vận tốc, ta có một cách tính công suất rất tiện lợi:
+A = F.s = F.v.t
+P = A/t = F.v
+Công thức P = F.v cho biết công suất tại từng thời điểm của chuyển động đều, nên được gọi là công suất tức thời. Công thức này dùng rất nhiều cho ô tô, xe máy, tàu thuyền, thang máy và băng tải. Khi vật chuyển động nhanh dần hoặc chậm dần thì P = F.v chỉ cho giá trị tức thời tại đúng thời điểm đang xét, còn công suất trung bình vẫn phải tính bằng A/t.
+3. Palăng – hệ ròng rọc
+Ròng rọc cố định chỉ đổi phương của lực, không cho lợi về lực cũng không cho lợi về đường đi: F = P và s = h.
+Ròng rọc động cho lợi hai lần về lực nhưng thiệt hai lần về đường đi: F = P/2 và s = 2h.
+Palăng là hệ gồm nhiều ròng rọc, trong đó có n nhánh dây trực tiếp đỡ vật (hoặc đỡ khối vật cùng các ròng rọc động). Khi đó
+F = P/n
+s = n.h
+Trong đó F là lực kéo ở đầu dây tự do, P là tổng trọng lượng mà hệ phải nâng, s là quãng đường đầu dây tự do đi được, h là độ cao vật được nâng lên, n là số nhánh dây đỡ.
+Quy tắc xác định n rất đơn giản: đếm số đoạn dây song song trực tiếp chống đỡ khối vật nặng. Với palăng gồm một ròng rọc cố định và một ròng rọc động thì n = 2. Với palăng gồm một ròng rọc cố định và hai ròng rọc động mắc nối tiếp thì n = 4.
+Cần lưu ý một quy ước quan trọng: các hệ thức F = P/n và s = n.h chỉ đúng khi mọi nhánh dây đỡ đều song song với nhau và mọi ròng rọc động đều đi lên cùng một độ cao h. Đây là cách mắc palăng chuẩn dùng trong mọi đề thi học sinh giỏi lớp 9. Nếu gặp một cách mắc khác thường, các em phải quay về nguyên lí gốc: kéo đầu dây tự do một đoạn s thì tổng độ dài đoạn dây giữa các ròng rọc giảm đi s, và vì có n nhánh dây cùng ngắn lại nên vật chỉ được nâng lên một đoạn bằng s/n.
+4. Palăng khi kể khối lượng ròng rọc động
+Đây là điểm học sinh giỏi hay mắc lỗi nhất. Khi ròng rọc động có khối lượng mr thì hệ không chỉ nâng vật mà còn phải nâng chính ròng rọc động. Lúc đó
+F = (Pvật + Pròng rọc)/n
+trong đó Pròng rọc là tổng trọng lượng của tất cả ròng rọc động có trong hệ.
+Về công, ta có:
+Atoàn = F.s
+Aích = Pvật.h
+Ahao phí = Anâng ròng rọc + Athắng ma sát
+Anâng ròng rọc = Pròng rọc.h
+Cần nhấn mạnh rằng công nâng ròng rọc được tính theo độ cao h mà ròng rọc động thực sự đi lên, chứ không phải theo quãng đường s của đầu dây. Ròng rọc cố định tuy có khối lượng nhưng không lên cao, nên không tiêu tốn công nâng; khối lượng của nó chỉ ảnh hưởng gián tiếp qua ma sát ở ổ trục.
+Cần kiểm tra lại kết quả bằng hệ thức Atoàn = Aích + Ahao phí. Nếu hai cách tính cho kết quả khác nhau thì chắc chắn đã bỏ sót một thành phần công nào đó.
+5. Mặt phẳng nghiêng
+Với mặt phẳng nghiêng dài l, cao h, đưa vật trọng lượng P lên:
+Trường hợp lí tưởng, bỏ qua ma sát:
+F = P.h/l
+A = F.l = P.h
+Trường hợp có ma sát:
+Aích = P.h
+Ahao phí = Fms.l
+Atoàn = Aích + Fms.l
+Từ đó suy ra lực đẩy thực tế cần thiết và hiệu suất. Cách viết Atoàn = F.l với F là lực kéo thực tế luôn đúng và thường nhanh hơn, nhưng chỉ nên dùng để kiểm tra chéo chứ không nên dùng thay cho việc phân tích công có ích và công hao phí.
+6. Đòn bẩy
+Với đòn bẩy cân bằng, tích của lực với cánh tay đòn ở hai phía bằng nhau:
+F₁.l₁ = F₂.l₂
+Trong đó l₁ và l₂ là khoảng cách từ điểm tựa đến giá của hai lực. Đòn bẩy cho lợi về lực khi cánh tay đòn của lực lớn hơn cánh tay đòn của vật (llực > lvật), vì khi đó F = P × lvật / llực < P. Đúng theo định luật về công, được lợi bao nhiêu lần về lực thì thiệt bấy nhiêu lần về đường đi: điểm đặt lực phải đi một quãng đường dài hơn đúng bằng tỉ số llực / lvật. Ngược lại, nếu cánh tay đòn của lực nhỏ hơn thì đòn bẩy bị thiệt về lực nhưng lợi về đường đi.
+B3. Công thức cần nhớ
+STT
+Đại lượng
+Công thức
+Ghi chú
+1
+Công cơ học (lực cùng phương)
+A = F.s
+1 J = 1 N.m
+2
+Công cơ học (lực hợp góc α)
+A = F.s.cosα
+α là góc giữa lực và phương dịch chuyển
+3
+Trọng lượng
+P = 10.m
+g = 10 m/s²
+4
+Công suất
+P = A/t
+1 W = 1 J/s
+5
+Công suất tức thời
+P = F.v
+dùng cho chuyển động đều
+6
+Hiệu suất
+H = Aích/Atoàn × 100%
+với máy thực luôn nhỏ hơn 100%; máy lí tưởng (bỏ qua ma sát và khối lượng các chi tiết máy) có H = 100%
+7
+Công toàn phần
+Atoàn = Aích + Ahp
+Ahp là công hao phí
+8
+Công có ích khi nâng vật
+Aích = P.h = 10.m.h
+h là độ cao nâng vật
+9
+Ròng rọc cố định
+F = P; s = h
+chỉ đổi phương của lực
+10
+Ròng rọc động
+F = P/2; s = 2h
+lợi 2 lần về lực
+11
+Palăng n nhánh dây
+F = P/n; s = n.h
+n là số nhánh dây đỡ vật
+12
+Palăng kể ròng rọc động
+F = (Pvật + Prr)/n
+Prr là trọng lượng ròng rọc động
+13
+Mặt phẳng nghiêng (lí tưởng)
+F = P.h/l
+l là chiều dài mặt phẳng nghiêng
+14
+Mặt phẳng nghiêng (có ma sát)
+Atoàn = P.h + Fms.l
+Fms không đổi
+15
+Đòn bẩy cân bằng
+F₁.l₁ = F₂.l₂
+l là cánh tay đòn
+16
+Đổi đơn vị vận tốc
+1 m/s = 3,6 km/h
+chia 3,6 để đổi km/h sang m/s
+
+C. Các dạng bài và phương pháp giải
+Dạng 1. Công cơ học – công của lực kéo và công của lực ma sát
+Nhận dạng
+Đề bài cho một lực kéo (hoặc lực đẩy) tác dụng lên vật, hỏi công của lực đó, công của lực ma sát, hoặc công của trọng lực. Đề thường xuất hiện các cụm từ "chuyển động đều", "trượt trên mặt sàn nằm ngang", "hệ số ma sát μ", "lực hợp với phương ngang một góc α".
+Phương pháp
+1. Xác định các lực tác dụng lên vật và phương, chiều của chúng.
+2. Nếu vật chuyển động đều trên mặt ngang, từ điều kiện cân bằng suy ra lực kéo bằng lực ma sát. Trên mặt ngang, áp lực bằng trọng lượng nên Fms = μ.P = μ.m.g.
+3. Áp dụng A = F.s khi lực cùng phương dịch chuyển, hoặc A = F.s.cosα khi lực hợp với phương dịch chuyển góc α.
+4. Lực ma sát ngược chiều dịch chuyển nên công của nó âm; nếu đề chỉ hỏi độ lớn thì ghi số dương và nói rõ.
+5. Trọng lực và phản lực vuông góc với phương dịch chuyển ngang nên không sinh công.
+Ví dụ mẫu
+Một vật có khối lượng m = 40 kg được kéo trượt đều trên mặt sàn nằm ngang. Lực kéo F hướng theo phương ngang. Hệ số ma sát giữa vật và sàn là μ = 0,25. Lấy g = 10 m/s².
+a) Tính độ lớn của lực kéo. b) Tính công của lực kéo và công của lực ma sát khi vật trượt được quãng đường s = 8 m. c) Một học sinh khác kéo vật bằng lực F' = 150 N có phương hợp với phương ngang một góc α = 60°. Tính công của lực F' khi vật vẫn trượt được quãng đường 8 m theo phương ngang.
+Lời giải
+a) Trọng lượng của vật là
+P = 10.m = 10 × 40 = 400 N
+Vật trượt trên mặt sàn nằm ngang nên áp lực lên sàn bằng trọng lượng:
+N = P = 400 N
+Lực ma sát trượt là
+Fms = μ.N = 0,25 × 400 = 100 N
+Vật chuyển động đều nên hợp lực tác dụng lên vật bằng 0, suy ra lực kéo cân bằng với lực ma sát:
+F = Fms = 100 N
+b) Công của lực kéo là
+AF = F.s = 100 × 8 = 800 J
+Công của lực ma sát là
+Ams = −Fms.s = −100 × 8 = −800 J
+Công của lực ma sát âm vì lực ma sát ngược chiều với chiều dịch chuyển. Độ lớn của công cản này là 800 J.
+Trọng lực và phản lực của sàn đều vuông góc với phương dịch chuyển nên không sinh công.
+c) Khi lực kéo hợp với phương ngang một góc α = 60°, ta dùng công thức
+A' = F'.s.cosα
+A' = 150 × 8 × cos60°
+A' = 150 × 8 × 0,5
+A' = 600 J
+Kiểm tra điều kiện vật vẫn trượt được: thành phần kéo theo phương ngang bằng F'.cosα = 150 × 0,5 = 75 N. Lực kéo có thành phần thẳng đứng hướng lên nên áp lực lên sàn giảm: N = P − F'.sinα = 400 − 150 × 0,866 ≈ 270 N, do đó Fms = μ.N = 0,25 × 270 ≈ 67,5 N. Vì 75 N > 67,5 N nên vật vẫn trượt được theo phương ngang — số liệu của đề bài hợp lí.
+Đáp số: a) F = 100 N. b) AF = 800 J; Ams = −800 J. c) A' = 600 J.
+Lưu ý
+Học sinh rất hay quên nhân cosα ở câu c và cho kết quả 960 J. Hãy nhớ: chỉ thành phần lực dọc theo phương dịch chuyển mới sinh công.
+Trên mặt ngang, áp lực bằng trọng lượng. Nếu lực kéo có thành phần thẳng đứng hướng lên thì áp lực giảm và lực ma sát cũng giảm; dạng bài đó nằm ngoài phạm vi chương trình lớp 9 và không xuất hiện trong đề thi học sinh giỏi lớp 9.
+Khi đề cho khối lượng, bước đầu tiên luôn là đổi sang trọng lượng bằng công thức P = 10.m.
+Dạng 2. Máy cơ đơn giản và định luật về công (ròng rọc cố định, đòn bẩy)
+Nhận dạng
+Đề bài nhắc tới ròng rọc cố định, đòn bẩy, hoặc yêu cầu so sánh công khi dùng máy với công khi nâng trực tiếp. Đề thường có cụm từ "bỏ qua ma sát", "bỏ qua khối lượng ròng rọc", "dùng đòn bẩy để nâng vật".
+Phương pháp
+1. Xác định loại máy cơ đơn giản và quan hệ lực – đường đi của nó.
+2. Với ròng rọc cố định: F = P và s = h.
+3. Với đòn bẩy: dùng F₁.l₁ = F₂.l₂ để tìm lực, và dùng tỉ số cánh tay đòn để tìm quãng đường.
+4. Tính công có ích Aích = P.h và công thực hiện A = F.s, rồi so sánh để kiểm chứng định luật về công.
+5. Nếu đề nói "bỏ qua ma sát" thì A = Aích; nếu có ma sát thì chuyển sang Dạng 5.
+Ví dụ mẫu
+a) Dùng một ròng rọc cố định để đưa một vật có trọng lượng P = 500 N lên cao h = 2 m. Bỏ qua ma sát và khối lượng dây. Tính lực kéo, quãng đường đầu dây tự do đi được và công của lực kéo.
+b) Một đòn bẩy có khoảng cách từ điểm tựa đến vật là l₁ = 20 cm và khoảng cách từ điểm tựa đến điểm đặt lực là l₂ = 1,2 m. Người ta dùng đòn bẩy để nâng một vật có trọng lượng P = 600 N lên cao 5 cm. Bỏ qua khối lượng đòn bẩy và ma sát. Tính lực tác dụng và công đã thực hiện.
+Lời giải
+a) Ròng rọc cố định chỉ đổi phương của lực, không cho lợi về lực và cũng không cho lợi về đường đi, nên
+F = P = 500 N
+s = h = 2 m
+Công của lực kéo là
+A = F.s = 500 × 2 = 1 000 J
+Kiểm tra bằng công có ích:
+Aích = P.h = 500 × 2 = 1 000 J
+Hai kết quả trùng nhau, đúng với định luật về công.
+b) Đổi l₁ = 20 cm = 0,2 m; l₂ = 1,2 m.
+Từ điều kiện cân bằng của đòn bẩy
+F₁.l₁ = F₂.l₂
+Trong đó F₁ là lực cần tác dụng, F₂ = P = 600 N.
+F₁ = P.l₁/l₂
+F₁ = 600 × 0,2/1,2
+F₁ = 100 N
+Đòn bẩy cho lợi 6 lần về lực (600 N xuống còn 100 N) thì cũng thiệt 6 lần về đường đi. Vật nâng lên h₁ = 5 cm = 0,05 m nên điểm đặt lực đi được
+s₂ = h₁.l₂/l₁
+s₂ = 0,05 × 1,2/0,2
+s₂ = 0,05 × 6 = 0,3 m
+Công đã thực hiện là
+A = F₁.s₂ = 100 × 0,3 = 30 J
+Kiểm tra bằng công có ích:
+Aích = P.h₁ = 600 × 0,05 = 30 J
+Hai kết quả bằng nhau, phù hợp với định luật về công.
+Đáp số: a) F = 500 N; s = 2 m; A = 1 000 J. b) F₁ = 100 N; A = 30 J.
+Lưu ý
+Phải đổi 20 cm và 1,2 m về cùng đơn vị trước khi lập tỉ số. Lỗi này khiến rất nhiều em ra kết quả sai 100 lần.
+Tỉ số cánh tay đòn càng lớn thì lực càng nhỏ nhưng đường đi càng dài. Đây chính là nội dung định luật về công.
+Với ròng rọc cố định, nhiều em tưởng được lợi về lực và chia đôi P; đó là ròng rọc động, không phải ròng rọc cố định.
+Dạng 3. Palăng có ròng rọc động và khối lượng ròng rọc
+Nhận dạng
+Đề bài cho một hệ palăng gồm ròng rọc cố định và một hoặc nhiều ròng rọc động, có nêu khối lượng ròng rọc động, hỏi lực kéo, quãng đường dây, công toàn phần, công có ích, hiệu suất hoặc công suất.
+Phương pháp
+1. Đếm số nhánh dây n trực tiếp đỡ vật và các ròng rọc động.
+2. Tính tổng trọng lượng mà hệ phải nâng: Ptổng = Pvật + Pcác ròng rọc động.
+3. Lực kéo ở đầu dây tự do là F = Ptổng/n.
+4. Quãng đường đầu dây tự do đi được là s = n.h.
+5. Công toàn phần Atoàn = F.s. Công có ích Aích = Pvật.h. Công nâng ròng rọc là Pròng rọc.h.
+6. Hiệu suất H = Aích/Atoàn × 100%.
+7. Kiểm tra lại bằng Atoàn = Aích + Anâng ròng rọc + Ama sát.
+Ví dụ mẫu
+Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng mr = 2 kg. Người ta dùng palăng này để nâng một vật có khối lượng m = 38 kg lên cao h = 5 m. Bỏ qua ma sát ở các ổ trục và khối lượng của dây. Lấy g = 10 m/s².
+a) Tính lực kéo ở đầu dây tự do và quãng đường đầu dây đi được. b) Tính công toàn phần và công có ích. c) Tính công dùng để nâng ròng rọc động và hiệu suất của palăng.
+Lời giải
+a) Trọng lượng của vật là
+Pv = 10.m = 10 × 38 = 380 N
+Trọng lượng của ròng rọc động là
+Pr = 10.mr = 10 × 2 = 20 N
+Palăng gồm một ròng rọc cố định và một ròng rọc động có n = 2 nhánh dây đỡ vật và ròng rọc động. Tổng trọng lượng mà hệ phải nâng là
+Ptổng = Pv + Pr = 380 + 20 = 400 N
+Lực kéo ở đầu dây tự do là
+F = Ptổng/2 = 400/2 = 200 N
+Quãng đường đầu dây tự do đi được là
+s = 2h = 2 × 5 = 10 m
+b) Công toàn phần là công của lực kéo trên quãng đường s:
+Atoàn = F.s = 200 × 10 = 2 000 J
+Công có ích là công đưa vật lên cao h:
+Aích = Pv.h = 380 × 5 = 1 900 J
+c) Công dùng để nâng ròng rọc động là
+Ar = Pr.h = 20 × 5 = 100 J
+Kiểm tra:
+Aích + Ar = 1 900 + 100 = 2 000 J = Atoàn
+Kết quả khớp, chứng tỏ phép tính đúng.
+Hiệu suất của palăng là
+H = Aích/Atoàn × 100%
+H = 1 900/2 000 × 100%
+H = 95%
+Đáp số: a) F = 200 N; s = 10 m. b) Atoàn = 2 000 J; Aích = 1 900 J. c) Ar = 100 J; H = 95%.
+Lưu ý
+Sai sót phổ biến nhất là bỏ qua khối lượng ròng rọc động, dẫn tới F = 380/2 = 190 N và Atoàn = 1 900 J, khi đó hiệu suất bằng 100% — một điều không thể xảy ra với máy thực.
+Công nâng ròng rọc tính theo độ cao h mà ròng rọc đi lên, không tính theo quãng đường s của dây.
+Ròng rọc cố định có khối lượng cũng không tiêu tốn công nâng vì nó không dịch chuyển lên cao.
+Với palăng có hai ròng rọc động mắc nối tiếp thì n = 4; phải đếm số nhánh dây chứ không đếm số ròng rọc.
+Dạng 4. Mặt phẳng nghiêng
+Nhận dạng
+Đề bài cho một tấm ván, con dốc, hay mặt phẳng nghiêng có chiều dài l và độ cao h, hỏi lực kéo, công, hiệu suất hoặc lực ma sát.
+Phương pháp
+1. Xác định chiều dài l của mặt phẳng nghiêng và độ cao h cần nâng vật.
+2. Công có ích: Aích = P.h = 10.m.h.
+3. Nếu bỏ qua ma sát: F = P.h/l và A = F.l = P.h.
+4. Nếu có ma sát: Ahao phí = Fms.l, suy ra Atoàn = Aích + Fms.l.
+5. Nếu đề cho lực đẩy thực tế F thì Atoàn = F.l; hiệu suất H = Aích/Atoàn × 100%.
+6. Từ Atoàn suy ngược ra Fms bằng Fms = (Atoàn − Aích)/l.
+7. Kiểm tra: lực đẩy thực tế phải lớn hơn lực đẩy lí tưởng, hiệu suất phải nhỏ hơn 100%.
+Ví dụ mẫu
+Người ta đưa một vật có khối lượng m = 60 kg lên một sàn xe tải cao h = 1,5 m bằng một tấm ván dài l = 5 m. Lực ma sát giữa vật và tấm ván là Fms = 60 N. Lấy g = 10 m/s².
+a) Tính công có ích để đưa vật lên sàn xe. b) Tính công hao phí để thắng ma sát và công toàn phần. c) Tính lực đẩy cần thiết dọc theo tấm ván. d) Tính hiệu suất của mặt phẳng nghiêng.
+Lời giải
+a) Trọng lượng của vật là
+P = 10.m = 10 × 60 = 600 N
+Công có ích để nâng vật lên độ cao h là
+Aích = P.h = 600 × 1,5 = 900 J
+b) Công hao phí để thắng lực ma sát trên suốt chiều dài tấm ván là
+Ahp = Fms.l = 60 × 5 = 300 J
+Công toàn phần là
+Atoàn = Aích + Ahp
+Atoàn = 900 + 300 = 1 200 J
+c) Công toàn phần cũng bằng công của lực đẩy trên quãng đường l, nên
+F.l = Atoàn
+F = Atoàn/l
+F = 1 200/5 = 240 N
+Có thể kiểm tra bằng cách khác: lực đẩy lí tưởng là P.h/l = 600 × 1,5/5 = 180 N, cộng thêm lực thắng ma sát 60 N được 240 N. Hai cách cho cùng kết quả.
+d) Hiệu suất của mặt phẳng nghiêng là
+H = Aích/Atoàn × 100%
+H = 900/1 200 × 100%
+H = 75%
+Đáp số: a) Aích = 900 J. b) Ahp = 300 J; Atoàn = 1 200 J. c) F = 240 N. d) H = 75%.
+Lưu ý
+Công hao phí phải tính theo chiều dài l của mặt phẳng nghiêng, vì lực ma sát tác dụng trên suốt quãng đường đó, không phải chỉ trên độ cao h.
+Nhiều em nhầm Ahao phí = Fms.h; đây là lỗi nghiêm trọng và cho hiệu suất sai hoàn toàn.
+Dốc càng dài (l càng lớn so với h) thì lực đẩy càng nhỏ, nhưng quãng đường càng dài nên công có ích không đổi. Đúng với định luật về công.
+Dạng 5. Tính công suất
+Nhận dạng
+Đề bài hỏi công suất của một người, một máy, một động cơ; hoặc cho công suất rồi hỏi công, thời gian, khối lượng nước bơm được. Đề thường có các đơn vị kW, MW, phút, giờ, lít.
+Phương pháp
+1. Xác định công A mà đối tượng thực hiện (dùng các dạng 1 đến 4) và thời gian t.
+2. Áp dụng P = A/t. Chú ý đổi thời gian ra giây: 1 phút = 60 s, 1 giờ = 3 600 s.
+3. Nếu vật chuyển động đều và đã biết lực kéo cùng vận tốc, dùng ngay P = F.v.
+4. Nếu đề cho công suất của một máy bơm nước, nhớ rằng công có ích là công nâng nước lên độ cao h: Aích = 10.m.h, với m là khối lượng nước tính bằng kilôgam.
+5. Nếu hiệu suất nhỏ hơn 100%, phân biệt rõ công suất toàn phần Ptoàn và công suất có ích Pích theo hệ thức Pích = H.Ptoàn.
+6. Đổi đơn vị: 1 kW = 1 000 W; 1 MW = 1 000 000 W; 1 m³ nước nặng 1 000 kg.
+Ví dụ mẫu
+a) Một người đạp xe chuyển động đều với vận tốc v = 18 km/h. Lực cản tác dụng lên xe là Fc = 40 N. Tính công suất của người đó.
+b) Một máy bơm có công suất toàn phần 1 250 W và hiệu suất 80%. Máy bơm nước từ độ sâu 10 m lên miệng giếng. Tính khối lượng nước bơm được trong 5 phút và thể tích nước tương ứng.
+Lời giải
+a) Đổi vận tốc:
+v = 18 km/h = 18/3,6 = 5 m/s
+Vì xe chuyển động đều nên lực đạp của người có độ lớn bằng lực cản:
+F = Fc = 40 N
+Công suất của người đó là
+P = F.v
+P = 40 × 5 = 200 W
+b) Công suất có ích của máy bơm là
+Pích = H.Ptoàn
+Pích = 0,8 × 1 250 = 1 000 W
+Đổi thời gian: t = 5 phút = 5 × 60 = 300 s.
+Công có ích của máy bơm trong thời gian đó là
+Aích = Pích.t
+Aích = 1 000 × 300 = 300 000 J
+Công có ích này dùng để nâng nước lên độ cao h = 10 m, nên
+Aích = 10.m.h
+Suy ra khối lượng nước bơm được là
+m = Aích/(10.h)
+m = 300 000/(10 × 10)
+m = 300 000/100 = 3 000 kg
+Khối lượng riêng của nước là 1 000 kg/m³ nên thể tích nước là
+V = m/1 000 = 3 000/1 000 = 3 m³
+Đáp số: a) P = 200 W. b) m = 3 000 kg; V = 3 m³ (tức 3 000 lít).
+Lưu ý
+Đổi km/h sang m/s phải chia cho 3,6; nhiều em nhân 3,6 nên sai gấp 12,96 lần.
+Trong công thức P = F.v, F phải là lực cùng phương với vận tốc. Với xe chuyển động đều, F chính là lực kéo (bằng độ lớn lực cản).
+Công suất mà đề cho là công suất toàn phần hay có ích phải đọc kĩ. Nếu đề nói "công suất của máy bơm" mà có hiệu suất thì đó là công suất toàn phần.
+1 m³ = 1 000 lít và 1 lít nước nặng 1 kg; đây là hai chuyển đổi rất hay dùng.
+Dạng 6. So sánh công và so sánh công suất
+Nhận dạng
+Đề bài cho hai hay nhiều người, máy, động cơ với công và thời gian khác nhau, yêu cầu xác định ai khỏe hơn, máy nào mạnh hơn, hoặc so sánh công thực hiện khi dùng các máy khác nhau.
+Phương pháp
+1. Muốn so sánh công suất, phải đưa cả hai về cùng một đơn vị thời gian (thường là giây) rồi tính P = A/t cho từng đối tượng.
+2. Kết luận: đối tượng có công suất lớn hơn thì mạnh hơn (làm việc nhanh hơn), dù công thực hiện có thể ít hơn.
+3. Muốn so sánh công, tính A cho từng đối tượng theo các dạng 1 đến 4 rồi so sánh trực tiếp.
+4. Cảnh giác với câu hỏi "ai thực hiện công lớn hơn" và "ai có công suất lớn hơn" — đây là hai câu hỏi khác nhau và có thể có hai đáp án trái ngược.
+5. Với các máy cơ đơn giản, nhớ trích dẫn định luật về công để giải thích: máy không cho lợi về công, chỉ đổi lực lấy đường đi.
+Ví dụ mẫu
+Hai máy nâng vật lên cùng một độ cao 4 m.
+Máy A nâng vật có khối lượng 50 kg và thực hiện trong thời gian 20 s.
+Máy B nâng vật có khối lượng 30 kg và thực hiện trong thời gian 8 s.
+Lấy g = 10 m/s².
+a) Tính công mà mỗi máy thực hiện. b) Tính công suất của mỗi máy. c) Máy nào thực hiện công lớn hơn? Máy nào mạnh hơn? Giải thích sự khác nhau giữa hai câu trả lời.
+Lời giải
+a) Công của máy A là
+AA = 10.mA.h = 10 × 50 × 4 = 2 000 J
+Công của máy B là
+AB = 10.mB.h = 10 × 30 × 4 = 1 200 J
+b) Công suất của máy A là
+PA = AA/tA = 2 000/20 = 100 W
+Công suất của máy B là
+PB = AB/tB = 1 200/8 = 150 W
+c) So sánh công: AA = 2 000 J lớn hơn AB = 1 200 J, vậy máy A thực hiện công lớn hơn.
+So sánh công suất: PB = 150 W lớn hơn PA = 100 W, vậy máy B mạnh hơn.
+Hai kết luận không mâu thuẫn. Máy A làm nhiều việc hơn (nâng vật nặng gấp 5/3 lần) nhưng làm chậm; máy B làm ít việc hơn nhưng làm rất nhanh. Công cho biết khối lượng công việc, còn công suất cho biết tốc độ hoàn thành công việc.
+Đáp số: a) AA = 2 000 J; AB = 1 200 J. b) PA = 100 W; PB = 150 W. c) Máy A công lớn hơn; máy B mạnh hơn.
+Lưu ý
+Không được so sánh công suất bằng cách so sánh công, và ngược lại. Đây là lỗi khái niệm thường gặp.
+Khi so sánh phải đổi thời gian về cùng đơn vị. Nếu một đề cho 1 phút và một đề cho 40 s thì phải đổi 1 phút = 60 s.
+Khi hai máy nâng cùng một vật lên cùng một độ cao thì công có ích bằng nhau, bất kể dùng ròng rọc cố định, ròng rọc động hay mặt phẳng nghiêng — đó là nội dung định luật về công.
+Dạng 7. Chuyển động đều – công của lực kéo và công suất của động cơ
+Nhận dạng
+Đề bài nói về ô tô, xe máy, tàu hỏa, thang máy, băng tải chuyển động đều, cho vận tốc, lực cản hoặc công suất động cơ, hỏi quãng đường, thời gian, công hoặc lực kéo.
+Phương pháp
+1. Vì vật chuyển động đều nên lực kéo cân bằng với lực cản: Fkéo = Fcản.
+2. Công của lực kéo trên quãng đường s: A = Fkéo.s.
+3. Công suất: P = Fkéo.v; hoặc P = A/t.
+4. Quãng đường: s = v.t. Chú ý đổi đơn vị vận tốc và thời gian cho thống nhất.
+5. Với chuyển động lên dốc, lực kéo phải thắng cả lực cản và thành phần trọng lực theo phương dốc. Thành phần này bằng P.h/l với l là chiều dài dốc, h là độ cao dốc.
+Ví dụ mẫu
+Một ô tô có khối lượng 1,2 tấn chuyển động đều lên một đoạn dốc dài l = 240 m và cao h = 12 m. Lực cản (gồm ma sát và sức cản không khí) tác dụng lên ô tô có độ lớn không đổi là Fc = 400 N. Ô tô đi hết đoạn dốc trong thời gian t = 60 s. Lấy g = 10 m/s².
+a) Tính lực kéo của động cơ ô tô. b) Tính công của lực kéo khi ô tô lên hết dốc. c) Tính hiệu suất của quá trình, coi công có ích là công đưa ô tô lên độ cao h. d) Tính công suất của động cơ ô tô.
+Lời giải
+a) Đổi khối lượng: m = 1,2 tấn = 1 200 kg.
+Trọng lượng của ô tô là
+P = 10.m = 10 × 1 200 = 12 000 N
+Để lên dốc, động cơ phải thắng hai lực: lực cản Fc và thành phần trọng lực theo phương dốc. Thành phần trọng lực theo phương dốc bằng P.h/l.
+Fdốc = P.h/l = 12 000 × 12/240 = 600 N
+Vậy lực kéo của động cơ là
+F = Fdốc + Fc
+F = 600 + 400 = 1 000 N
+b) Công của lực kéo trên cả đoạn dốc là
+Atoàn = F.l = 1 000 × 240 = 240 000 J = 240 kJ
+c) Công có ích là công đưa ô tô lên độ cao h:
+Aích = P.h = 12 000 × 12 = 144 000 J = 144 kJ
+Hiệu suất của quá trình là
+H = Aích/Atoàn × 100%
+H = 144 000/240 000 × 100%
+H = 60%
+d) Công suất của động cơ là
+Pcs = Atoàn/t
+Pcs = 240 000/60 = 4 000 W = 4 kW
+Đáp số: a) F = 1 000 N. b) Atoàn = 240 000 J. c) H = 60%. d) Pcs = 4 kW.
+Lưu ý
+Trên dốc, lực kéo không chỉ thắng lực cản mà còn phải thắng thành phần trọng lực theo phương dốc. Bỏ qua thành phần này là lỗi hay gặp nhất ở dạng bài lên dốc.
+Công hao phí ở đây là công thắng lực cản: Ahp = Fc.l = 400 × 240 = 96 000 J. Kiểm tra: 144 000 + 96 000 = 240 000 J, khớp với công toàn phần.
+Hiệu suất 60% là giá trị hợp lí cho một ô tô leo dốc, vì phần lớn công bị tiêu hao cho lực cản và cho việc nâng chính thân xe.
+D. Bài tập ví dụ có lời giải
+Bài 1. Một người kéo một xe hàng bằng một lực F = 150 N có phương hợp với phương ngang một góc α = 30°. Xe dịch chuyển được một quãng đường s = 20 m theo phương ngang. Tính công của lực kéo.
+Tóm tắt
+F = 150 N; α = 30°; s = 20 m; A = ?
+Lời giải
+Vì lực kéo hợp với phương dịch chuyển một góc α nên công của lực kéo là
+A = F.s.cosα
+Với cos30° ≈ 0,866, ta có
+A = 150 × 20 × 0,866
+A = 3 000 × 0,866
+A ≈ 2 598 J
+Đáp số: A ≈ 2 598 J (xấp xỉ 2,6 kJ).
+Bài 2. Một người đi xe đạp chuyển động đều với vận tốc 18 km/h. Lực cản tác dụng lên xe là 40 N.
+a) Tính công suất của người đó. b) Tính công người đó thực hiện được trong 30 phút.
+Tóm tắt
+v = 18 km/h; Fc = 40 N; t = 30 phút = 1 800 s; P = ?; A = ?
+Lời giải
+a) Đổi vận tốc:
+v = 18/3,6 = 5 m/s
+Vì xe chuyển động đều nên lực đạp có độ lớn bằng lực cản:
+F = Fc = 40 N
+Công suất của người đó là
+P = F.v = 40 × 5 = 200 W
+b) Quãng đường đi được trong 30 phút là
+s = v.t = 5 × 1 800 = 9 000 m
+Công thực hiện được là
+A = F.s = 40 × 9 000 = 360 000 J = 360 kJ
+Kiểm tra bằng công suất:
+A = P.t = 200 × 1 800 = 360 000 J
+Đáp số: a) P = 200 W. b) A = 360 000 J = 360 kJ.
+Bài 3. Người ta đưa một vật có khối lượng 80 kg lên sàn xe tải cao 1,2 m bằng một tấm ván dài 4 m. Lực đẩy cần thiết dọc theo tấm ván là 300 N. Lấy g = 10 m/s².
+a) Tính công toàn phần và công có ích. b) Tính công hao phí và độ lớn lực ma sát. c) Tính hiệu suất của mặt phẳng nghiêng.
+Tóm tắt
+m = 80 kg; h = 1,2 m; l = 4 m; F = 300 N; Atoàn = ?; Aích = ?; Fms = ?; H = ?
+Lời giải
+a) Trọng lượng của vật là
+P = 10.m = 10 × 80 = 800 N
+Công toàn phần là công của lực đẩy trên quãng đường l:
+Atoàn = F.l = 300 × 4 = 1 200 J
+Công có ích là công nâng vật lên độ cao h:
+Aích = P.h = 800 × 1,2 = 960 J
+b) Công hao phí là
+Ahp = Atoàn − Aích
+Ahp = 1 200 − 960 = 240 J
+Lực ma sát có độ lớn là
+Fms = Ahp/l = 240/4 = 60 N
+c) Hiệu suất của mặt phẳng nghiêng là
+H = Aích/Atoàn × 100%
+H = 960/1 200 × 100%
+H = 80%
+Đáp số: a) Atoàn = 1 200 J; Aích = 960 J. b) Ahp = 240 J; Fms = 60 N. c) H = 80%.
+Bài 4. Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng 3 kg. Người ta nâng một vật có khối lượng 47 kg lên cao 4 m. Bỏ qua ma sát ở ổ trục và khối lượng dây. Lấy g = 10 m/s².
+a) Tính lực kéo ở đầu dây tự do và quãng đường đầu dây đi được. b) Tính công toàn phần, công có ích và hiệu suất của palăng.
+Tóm tắt
+mr = 3 kg; m = 47 kg; h = 4 m; F = ?; s = ?; Atoàn = ?; Aích = ?; H = ?
+Lời giải
+a) Trọng lượng của vật là
+Pv = 10 × 47 = 470 N
+Trọng lượng của ròng rọc động là
+Pr = 10 × 3 = 30 N
+Tổng trọng lượng cần nâng là
+Ptổng = 470 + 30 = 500 N
+Với palăng có n = 2 nhánh dây, lực kéo ở đầu dây tự do là
+F = Ptổng/2 = 500/2 = 250 N
+Quãng đường đầu dây tự do đi được là
+s = 2h = 2 × 4 = 8 m
+b) Công toàn phần là
+Atoàn = F.s = 250 × 8 = 2 000 J
+Công có ích là
+Aích = Pv.h = 470 × 4 = 1 880 J
+Kiểm tra công nâng ròng rọc:
+Ar = Pr.h = 30 × 4 = 120 J
+Aích + Ar = 1 880 + 120 = 2 000 J = Atoàn
+Hiệu suất của palăng là
+H = Aích/Atoàn × 100%
+H = 1 880/2 000 × 100%
+H = 94%
+Đáp số: a) F = 250 N; s = 8 m. b) Atoàn = 2 000 J; Aích = 1 880 J; H = 94%.
+Bài 5. Một động cơ dùng palăng gồm một ròng rọc cố định và một ròng rọc động (ròng rọc động có khối lượng 2 kg) để nâng một vật có khối lượng 58 kg lên cao 10 m trong thời gian 25 s. Bỏ qua ma sát ở ổ trục. Lấy g = 10 m/s².
+a) Tính lực kéo của động cơ và quãng đường đầu dây đi được. b) Tính công toàn phần và hiệu suất của palăng. c) Tính công suất của động cơ.
+Tóm tắt
+mr = 2 kg; m = 58 kg; h = 10 m; t = 25 s; F = ?; Atoàn = ?; H = ?; P = ?
+Lời giải
+a) Trọng lượng của vật là
+Pv = 10 × 58 = 580 N
+Trọng lượng của ròng rọc động là
+Pr = 10 × 2 = 20 N
+Tổng trọng lượng cần nâng là
+Ptổng = 580 + 20 = 600 N
+Lực kéo ở đầu dây tự do là
+F = Ptổng/2 = 600/2 = 300 N
+Quãng đường đầu dây tự do đi được là
+s = 2h = 2 × 10 = 20 m
+b) Công toàn phần là
+Atoàn = F.s = 300 × 20 = 6 000 J
+Công có ích là
+Aích = Pv.h = 580 × 10 = 5 800 J
+Hiệu suất của palăng là
+H = Aích/Atoàn × 100%
+H = 5 800/6 000 × 100%
+H ≈ 96,7%
+c) Công suất của động cơ là
+P = Atoàn/t
+P = 6 000/25 = 240 W
+Đáp số: a) F = 300 N; s = 20 m. b) Atoàn = 6 000 J; Aích = 5 800 J; H ≈ 96,7%. c) P = 240 W.
+Bài 6. Một máy bơm nước có công suất toàn phần 1 250 W và hiệu suất 80%. Máy bơm nước từ độ sâu 8 m lên bể chứa đặt ở mặt đất. Khối lượng riêng của nước là 1 000 kg/m³. Lấy g = 10 m/s².
+a) Tính công suất có ích của máy bơm. b) Tính khối lượng nước bơm được trong 10 phút. c) Tính thể tích nước bơm được trong 10 phút.
+Tóm tắt
+Ptoàn = 1 250 W; H = 80%; h = 8 m; t = 10 phút = 600 s; Pích = ?; m = ?; V = ?
+Lời giải
+a) Công suất có ích của máy bơm là
+Pích = H.Ptoàn
+Pích = 0,8 × 1 250 = 1 000 W
+b) Công có ích của máy bơm trong 10 phút là
+Aích = Pích.t
+Aích = 1 000 × 600 = 600 000 J
+Công này dùng để nâng nước lên độ cao h = 8 m:
+Aích = 10.m.h
+Suy ra
+m = Aích/(10.h)
+m = 600 000/(10 × 8)
+m = 600 000/80 = 7 500 kg
+c) Thể tích nước bơm được là
+V = m/1 000 = 7 500/1 000 = 7,5 m³
+Vậy trong 10 phút máy bơm được 7,5 m³ nước, tức 7 500 lít.
+Đáp số: a) Pích = 1 000 W. b) m = 7 500 kg. c) V = 7,5 m³.
+E. Bài tập tự luyện
+Bài 1. Một lực F = 80 N kéo một vật theo phương ngang. Vật dịch chuyển được 15 m theo phương của lực. Tính công của lực kéo.
+Bài 2. Một người kéo một vật bằng lực F = 60 N có phương hợp với phương ngang một góc 60°. Vật dịch chuyển 10 m theo phương ngang. Tính công của lực kéo.
+Bài 3. Một vật có khối lượng 25 kg được kéo trượt đều trên mặt sàn nằm ngang bằng một lực kéo có phương ngang. Hệ số ma sát giữa vật và sàn là 0,2. Lấy g = 10 m/s².
+a) Tính độ lớn của lực kéo.
+b) Tính công của lực kéo khi vật trượt được 6 m.
+Bài 4. Dùng một ròng rọc động (bỏ qua khối lượng ròng rọc và ma sát) để nâng một vật có trọng lượng 400 N lên cao 3 m.
+a) Tính lực kéo ở đầu dây tự do.
+b) Tính quãng đường đầu dây tự do đi được.
+c) Tính công của lực kéo.
+Bài 5. Một đòn bẩy có khoảng cách từ điểm tựa đến vật là 15 cm và khoảng cách từ điểm tựa đến điểm đặt lực là 90 cm. Người ta nâng một vật có trọng lượng 900 N lên cao 4 cm.
+a) Tính lực cần tác dụng.
+b) Tính quãng đường điểm đặt lực đi được.
+c) Tính công đã thực hiện.
+Bài 6. Người ta dùng một mặt phẳng nghiêng dài 3 m, cao 0,9 m để đưa một vật có khối lượng 50 kg lên cao. Bỏ qua ma sát. Lấy g = 10 m/s².
+a) Tính lực đẩy cần thiết.
+b) Tính công đã thực hiện và so sánh với công nâng vật trực tiếp.
+Bài 7. Người ta đưa một vật có khối lượng 90 kg lên cao 2 m bằng một mặt phẳng nghiêng dài 6 m. Lực đẩy thực tế dọc theo mặt phẳng nghiêng là 400 N. Lấy g = 10 m/s².
+a) Tính công có ích và công toàn phần.
+b) Tính hiệu suất của mặt phẳng nghiêng.
+Bài 8. Một palăng gồm một ròng rọc cố định và một ròng rọc động. Ròng rọc động có khối lượng 1 kg. Người ta nâng một vật có khối lượng 39 kg lên cao 5 m. Bỏ qua ma sát ở ổ trục. Lấy g = 10 m/s².
+a) Tính lực kéo ở đầu dây tự do và quãng đường đầu dây đi được.
+b) Tính công toàn phần, công có ích và hiệu suất của palăng.
+Bài 9. Một máy có công suất 800 W hoạt động liên tục trong 2 phút. Tính công mà máy thực hiện được.
+Bài 10. Một người kéo một gàu nước có khối lượng 12 kg từ giếng sâu 8 m lên mặt đất trong thời gian 20 s. Lấy g = 10 m/s². Tính công và công suất trung bình của người đó.
+Bài 11. Một ô tô chuyển động đều với vận tốc 54 km/h. Công suất của động cơ ô tô là 60 kW. Tính độ lớn lực kéo của động cơ.
+Bài 12. Máy A thực hiện công 7 200 J trong 1 phút. Máy B thực hiện công 5 400 J trong 40 s. Máy nào có công suất lớn hơn? Máy nào thực hiện công lớn hơn?
+F. Đáp án và hướng dẫn ngắn cho mục E
+Bài 1. A = F.s = 80 × 15 = 1 200 J.
+Bài 2. A = F.s.cos60° = 60 × 10 × 0,5 = 300 J.
+Bài 3. a) P = 10 × 25 = 250 N; N = 250 N; Fms = 0,2 × 250 = 50 N; vật chuyển động đều nên F = Fms = 50 N. b) A = 50 × 6 = 300 J.
+Bài 4. a) F = P/2 = 400/2 = 200 N. b) s = 2h = 2 × 3 = 6 m. c) A = 200 × 6 = 1 200 J. Kiểm tra: P.h = 400 × 3 = 1 200 J.
+Bài 5. a) F = P.l₁/l₂ = 900 × 15/90 = 150 N. b) Đổi h = 4 cm = 0,04 m; s = h.l₂/l₁ = 0,04 × 6 = 0,24 m. c) A = 150 × 0,24 = 36 J. Kiểm tra: P.h = 900 × 0,04 = 36 J.
+Bài 6. a) P = 500 N; F = P.h/l = 500 × 0,9/3 = 150 N. b) A = F.l = 150 × 3 = 450 J. Công nâng trực tiếp: P.h = 500 × 0,9 = 450 J. Hai công bằng nhau, đúng định luật về công.
+Bài 7. a) Aích = 900 × 2 = 1 800 J; Atoàn = 400 × 6 = 2 400 J. b) H = 1 800/2 400 × 100% = 75%.
+Bài 8. a) Pv = 390 N; Pr = 10 N; Ptổng = 400 N; F = 400/2 = 200 N; s = 2 × 5 = 10 m. b) Atoàn = 200 × 10 = 2 000 J; Aích = 390 × 5 = 1 950 J; H = 1 950/2 000 × 100% = 97,5%.
+Bài 9. Đổi t = 2 phút = 120 s; A = P.t = 800 × 120 = 96 000 J = 96 kJ.
+Bài 10. P = 120 N; A = 120 × 8 = 960 J; Pcs = 960/20 = 48 W.
+Bài 11. v = 54/3,6 = 15 m/s; P = 60 kW = 60 000 W; F = P/v = 60 000/15 = 4 000 N.
+Bài 12. Đổi 1 phút = 60 s. PA = 7 200/60 = 120 W; PB = 5 400/40 = 135 W. Vậy máy B có công suất lớn hơn (135 W so với 120 W), nhưng máy A thực hiện công lớn hơn (7 200 J so với 5 400 J).
+G. Bài tập nâng cao kiểu đề thi HSG
+Bài 1. Một hệ palăng gồm một ròng rọc cố định và hai ròng rọc động mắc nối tiếp, mỗi ròng rọc động có khối lượng 2,5 kg. Người ta dùng hệ này để nâng một vật có khối lượng 95 kg lên cao h = 6 m trong thời gian 30 s. Bỏ qua ma sát ở tất cả các ổ trục và khối lượng của dây. Lấy g = 10 m/s².
+a) Xác định số nhánh dây đỡ vật và tính lực kéo ở đầu dây tự do. b) Tính quãng đường đầu dây tự do đi được. c) Tính công có ích, công toàn phần và hiệu suất của hệ palăng. d) Tính công suất của lực kéo.
+Tóm tắt
+mr = 2,5 kg (mỗi ròng rọc, có 2 ròng rọc động); m = 95 kg; h = 6 m; t = 30 s; n = ?; F = ?; s = ?; Aích = ?; Atoàn = ?; H = ?; P = ?
+Lời giải
+a) Với palăng gồm một ròng rọc cố định và hai ròng rọc động mắc nối tiếp, số nhánh dây song song trực tiếp đỡ khối vật và các ròng rọc động là
+n = 4
+Trọng lượng của vật là
+Pv = 10.m = 10 × 95 = 950 N
+Tổng trọng lượng của hai ròng rọc động là
+Prr = 2 × 10 × 2,5 = 50 N
+Tổng trọng lượng mà hệ phải nâng là
+Ptổng = Pv + Prr
+Ptổng = 950 + 50 = 1 000 N
+Lực kéo ở đầu dây tự do là
+F = Ptổng/n
+F = 1 000/4 = 250 N
+b) Quãng đường đầu dây tự do đi được là
+s = n.h = 4 × 6 = 24 m
+c) Công có ích là công đưa vật lên độ cao h:
+Aích = Pv.h = 950 × 6 = 5 700 J
+Công toàn phần là công của lực kéo:
+Atoàn = F.s = 250 × 24 = 6 000 J
+Kiểm tra bằng công nâng các ròng rọc động:
+Arr = Prr.h = 50 × 6 = 300 J
+Aích + Arr = 5 700 + 300 = 6 000 J = Atoàn
+Hai cách tính khớp nhau.
+Hiệu suất của hệ palăng là
+H = Aích/Atoàn × 100%
+H = 5 700/6 000 × 100%
+H = 95%
+d) Công suất của lực kéo là
+P = Atoàn/t
+P = 6 000/30 = 200 W
+Đáp số: a) n = 4; F = 250 N. b) s = 24 m. c) Aích = 5 700 J; Atoàn = 6 000 J; H = 95%. d) P = 200 W.
+Bài 2. Một vật có khối lượng 120 kg cần được đưa lên độ cao h = 2 m.
+Cách thứ nhất: nâng vật trực tiếp theo phương thẳng đứng.
+Cách thứ hai: dùng một mặt phẳng nghiêng dài l = 6 m với lực đẩy F = 500 N dọc theo mặt phẳng nghiêng.
+Lấy g = 10 m/s².
+a) Tính công thực hiện trong cách thứ nhất. b) Tính công toàn phần và công hao phí trong cách thứ hai. c) Tính độ lớn lực ma sát giữa vật và mặt phẳng nghiêng. d) Tính hiệu suất của mặt phẳng nghiêng. e) So sánh công thực hiện trong hai cách và nêu nhận xét.
+Tóm tắt
+m = 120 kg; h = 2 m; l = 6 m; F = 500 N; A₁ = ?; Atoàn = ?; Ahp = ?; Fms = ?; H = ?
+Lời giải
+a) Trọng lượng của vật là
+P = 10.m = 10 × 120 = 1 200 N
+Công nâng vật trực tiếp là
+A₁ = P.h = 1 200 × 2 = 2 400 J
+b) Trong cách thứ hai, công toàn phần là công của lực đẩy trên chiều dài mặt phẳng nghiêng:
+Atoàn = F.l = 500 × 6 = 3 000 J
+Công có ích vẫn là công đưa vật lên độ cao h:
+Aích = P.h = 2 400 J
+Công hao phí là
+Ahp = Atoàn − Aích
+Ahp = 3 000 − 2 400 = 600 J
+c) Công hao phí dùng để thắng lực ma sát trên suốt chiều dài mặt phẳng nghiêng, nên
+Fms.l = Ahp
+Fms = Ahp/l
+Fms = 600/6 = 100 N
+d) Hiệu suất của mặt phẳng nghiêng là
+H = Aích/Atoàn × 100%
+H = 2 400/3 000 × 100%
+H = 80%
+e) Ta có Atoàn = 3 000 J lớn hơn A₁ = 2 400 J.
+Nhận xét: mặt phẳng nghiêng giúp ta được lợi về lực (chỉ cần đẩy 500 N thay vì phải nâng 1 200 N), nhưng lại thiệt về đường đi (đẩy trên 6 m thay vì chỉ nâng 2 m). Kết quả là công thực hiện khi dùng mặt phẳng nghiêng lớn hơn công nâng trực tiếp. Điều này hoàn toàn phù hợp với định luật về công: máy cơ đơn giản không cho ta lợi về công, phần công tăng thêm chính là công hao phí để thắng ma sát.
+Đáp số: a) A₁ = 2 400 J. b) Atoàn = 3 000 J; Ahp = 600 J. c) Fms = 100 N. d) H = 80%. e) Công khi dùng mặt phẳng nghiêng lớn hơn; máy cơ đơn giản chỉ lợi về lực, không lợi về công.
+Bài 3. Một ô tô có khối lượng 1,2 tấn chuyển động đều lên một đoạn dốc dài 240 m và cao 12 m. Lực cản tác dụng lên ô tô (gồm ma sát và sức cản không khí) có độ lớn không đổi là 400 N. Ô tô đi hết đoạn dốc trong 60 s. Lấy g = 10 m/s².
+a) Tính lực kéo của động cơ ô tô. b) Tính công của lực kéo khi ô tô lên hết đoạn dốc. c) Tính hiệu suất của quá trình, coi công có ích là công đưa ô tô lên độ cao h. d) Tính công suất của động cơ ô tô.
+Tóm tắt
+m = 1,2 tấn = 1 200 kg; l = 240 m; h = 12 m; Fc = 400 N; t = 60 s; F = ?; Atoàn = ?; H = ?; P = ?
+Lời giải
+a) Trọng lượng của ô tô là
+P = 10.m = 10 × 1 200 = 12 000 N
+Thành phần trọng lực theo phương của dốc là
+Fdốc = P.h/l
+Fdốc = 12 000 × 12/240
+Fdốc = 12 000 × 0,05 = 600 N
+Ô tô chuyển động đều nên lực kéo cân bằng với tổng các lực cản:
+F = Fdốc + Fc
+F = 600 + 400 = 1 000 N
+b) Công của lực kéo trên cả đoạn dốc là
+Atoàn = F.l = 1 000 × 240 = 240 000 J = 240 kJ
+c) Công có ích là công đưa ô tô lên độ cao h:
+Aích = P.h = 12 000 × 12 = 144 000 J
+Hiệu suất của quá trình là
+H = Aích/Atoàn × 100%
+H = 144 000/240 000 × 100%
+H = 60%
+Kiểm tra công hao phí: Ahp = Fc.l = 400 × 240 = 96 000 J. Ta có 144 000 + 96 000 = 240 000 J, khớp với công toàn phần.
+d) Công suất của động cơ là
+Pcs = Atoàn/t
+Pcs = 240 000/60 = 4 000 W = 4 kW
+Đáp số: a) F = 1 000 N. b) Atoàn = 240 000 J = 240 kJ. c) H = 60%. d) Pcs = 4 kW.
+Bài 4. Một người dùng một palăng gồm một ròng rọc cố định và một ròng rọc động để nâng một vật lên cao. Ròng rọc động có khối lượng 4 kg. Người đó kéo đầu dây tự do bằng một lực F = 320 N và đầu dây đi được một quãng đường 12 m trong thời gian 20 s. Bỏ qua ma sát ở ổ trục và khối lượng dây. Lấy g = 10 m/s².
+a) Tính độ cao vật được nâng lên. b) Tính khối lượng của vật. c) Tính công toàn phần và công suất của người đó. d) Tính hiệu suất của palăng.
+Tóm tắt
+mr = 4 kg; F = 320 N; s = 12 m; t = 20 s; h = ?; m = ?; Atoàn = ?; P = ?; H = ?
+Lời giải
+a) Với palăng gồm một ròng rọc cố định và một ròng rọc động, ta có n = 2 và
+s = 2h
+Suy ra độ cao vật được nâng lên là
+h = s/2 = 12/2 = 6 m
+b) Trọng lượng của ròng rọc động là
+Pr = 10.mr = 10 × 4 = 40 N
+Tổng trọng lượng mà hệ phải nâng là
+Ptổng = 2F = 2 × 320 = 640 N
+Vậy trọng lượng của vật là
+Pv = Ptổng − Pr
+Pv = 640 − 40 = 600 N
+Khối lượng của vật là
+m = Pv/10 = 600/10 = 60 kg
+c) Công toàn phần là công của lực kéo trên quãng đường s:
+Atoàn = F.s = 320 × 12 = 3 840 J
+Công suất của người đó là
+Pcs = Atoàn/t
+Pcs = 3 840/20 = 192 W
+d) Công có ích là công đưa vật lên độ cao h:
+Aích = Pv.h = 600 × 6 = 3 600 J
+Hiệu suất của palăng là
+H = Aích/Atoàn × 100%
+H = 3 600/3 840 × 100%
+H = 93,75%
+Kiểm tra: công nâng ròng rọc động là Ar = Pr.h = 40 × 6 = 240 J. Ta có 3 600 + 240 = 3 840 J = Atoàn, khớp.
+Đáp số: a) h = 6 m. b) m = 60 kg. c) Atoàn = 3 840 J; P = 192 W. d) H = 93,75%.
+H. Lỗi thường gặp và ghi chú sư phạm
+Nhóm 1. Lỗi về khái niệm công
+Nhầm "có lực tác dụng" với "có công". Người giữ vật nặng đứng yên không sinh công cơ học dù rất mệt. Cần nhấn mạnh: phải có dịch chuyển theo phương không vuông góc với lực.
+Cho rằng trọng lực luôn sinh công. Trọng lực chỉ sinh công khi vật dịch chuyển có thành phần theo phương thẳng đứng.
+Bỏ quên cosα khi lực hợp với phương dịch chuyển một góc α. Cách chống lỗi: trước khi thay số, luôn tự hỏi "lực này có cùng phương với chiều chuyển động không?".
+Viết công của lực ma sát là số dương mà không giải thích. Nên viết Ams = −Fms.s và nói rõ "công cản có độ lớn là...".
+Nhóm 2. Lỗi về đơn vị
+Không đổi cm sang m trước khi tính công, dẫn tới kết quả sai 100 lần. Quy tắc: mọi độ dài trong công thức công phải tính bằng mét.
+Nhân 3,6 thay vì chia 3,6 khi đổi km/h sang m/s.
+Quên đổi phút, giờ sang giây khi tính công suất.
+Lẫn lít với kg khi tính khối lượng nước bơm. Cần nhớ 1 lít nước nặng 1 kg và 1 m³ = 1 000 lít.
+Nhóm 3. Lỗi về máy cơ đơn giản
+Bỏ qua khối lượng ròng rọc động, dẫn tới hiệu suất bằng 100% — điều không thể xảy ra với máy thực. Đây là lỗi nghiêm trọng nhất của chuyên đề, giáo viên cần cho học sinh làm lại nhiều lần dạng này.
+Tính công nâng ròng rọc theo quãng đường s của dây thay vì theo độ cao h của ròng rọc. Cần vẽ hình và chỉ rõ ròng rọc động đi lên đúng một đoạn h.
+Nhầm giữa ròng rọc cố định và ròng rọc động khi suy ra quan hệ lực. Ròng rọc cố định: F = P; ròng rọc động: F = P/2.
+Đếm số ròng rọc thay vì đếm số nhánh dây để xác định n. Với hai ròng rọc động mắc nối tiếp thì n = 4, không phải n = 2.
+Nghĩ rằng máy cơ đơn giản cho lợi về công. Định luật về công phải được phát biểu lại trước mỗi bài toán so sánh.
+Nhóm 4. Lỗi về hiệu suất và công suất
+Lẫn công với công suất. Công đo bằng jun, công suất đo bằng oát; công suất là công chia cho thời gian.
+Lấy Atoàn trừ Aích ra số âm do đặt sai thứ tự. Cách chống lỗi: viết hệ thức Atoàn = Aích + Ahp rồi mới thay số.
+Tính công hao phí của mặt phẳng nghiêng bằng Fms.h thay vì Fms.l.
+Không phân biệt công suất toàn phần và công suất có ích khi đề cho hiệu suất.
+Không kiểm tra chéo kết quả. Một phép kiểm tra rất nhanh và hiệu quả là so sánh Atoàn tính theo lực kéo với tổng Aích + Ahp.
+Ghi chú sư phạm
+Trình tự dạy đề xuất: dạy chắc Dạng 1 và Dạng 2 trước, vì đây là nền tảng. Sau đó dạy Dạng 3 (palăng có khối lượng ròng rọc) với yêu cầu bắt buộc học sinh kiểm tra lại bằng hệ thức Atoàn = Aích + Ahp ở mọi bài. Cuối cùng mới dạy các dạng tổng hợp.
+Bài toán palăng là bài toán phân loại học sinh giỏi rõ nhất trong chuyên đề này. Học sinh trung bình thường quên khối lượng ròng rọc; học sinh khá nhớ nhưng tính sai công nâng ròng rọc; học sinh giỏi làm đúng và biết kiểm tra chéo.
+Nên yêu cầu học sinh ghi rõ "công có ích", "công hao phí", "công toàn phần" thành ba dòng riêng trong bài làm. Thói quen này giúp tránh phần lớn các lỗi tính toán và cũng được giám khảo đánh giá cao.
+Với mỗi bài, nên khuyến khích học sinh ước lượng kết quả trước khi tính: hiệu suất phải nằm trong khoảng từ 50% đến dưới 100% với các máy thực tế thông thường; lực kéo của palăng phải nhỏ hơn trọng lượng vật; công dùng máy phải lớn hơn hoặc bằng công nâng trực tiếp.
+Chỉ dùng g = 10 m/s² cho nhất quán trong suốt chuyên đề và trong các đề thi học sinh giỏi cấp trường, cấp huyện.
+Khi ra đề kiểm tra, nên chọn số liệu sao cho hiệu suất và các phép chia ra giá trị đẹp, giúp học sinh tập trung vào vật lí thay vì vào số học.

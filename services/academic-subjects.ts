@@ -2,6 +2,7 @@ export const ACADEMIC_SUBJECTS = [
   { code: "vat-ly", label: "Vật lý", icon: "⚡" },
   { code: "hoa-hoc", label: "Hóa học", icon: "🧪" },
   { code: "sinh-hoc", label: "Sinh học", icon: "🧬" },
+  { code: "hsg-vat-ly", label: "Vật lí HSG & chuyên", icon: "🏆" },
 ] as const;
 
 export type AcademicSubjectCode = (typeof ACADEMIC_SUBJECTS)[number]["code"];
